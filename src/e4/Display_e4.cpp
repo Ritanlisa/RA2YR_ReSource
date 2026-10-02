@@ -9,7 +9,7 @@
 #include "e4/e4_protos.h"
 
 // 0x5D5A20
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 long long Display::CalculateDefaultSize()
 {
 
@@ -20,6 +20,7 @@ long long Display::CalculateDefaultSize()
   return result; /*0x5d5a46*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x72AD20

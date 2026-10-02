@@ -40,7 +40,7 @@
 #include "e4/classes/Matrix3x3_e4.hpp"
 
 // 0x484680
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 ScenarioClass * * TacticalMap::ComputeScreenTint()
 {
 
@@ -130,6 +130,7 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4F4480
 namespace gamemd {

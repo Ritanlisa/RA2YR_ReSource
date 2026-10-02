@@ -11,7 +11,7 @@
 #include "e4/classes/File_e4.hpp"
 
 // 0x478340
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * FilePipe_38::Release(int a2, char * a3)
 {
 
@@ -121,6 +121,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
   }
 
 }
+}  // G42.18 ns repair
 }
 // 0x4778A0
 namespace gamemd {

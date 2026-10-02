@@ -15,7 +15,7 @@
 #include "e4/classes/OwnerDrawControl_e4.hpp"
 
 // 0x77D1F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void E4Recv_77D1F0::ConnectAndLoginWOL_Connect()
 {
 
@@ -23,4 +23,5 @@ void E4Recv_77D1F0::ConnectAndLoginWOL_Connect()
   ((OwnerDrawControl *)((OwnerDrawControl *)this))->InitVtable(); /*0x77d1f6*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

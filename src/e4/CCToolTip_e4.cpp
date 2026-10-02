@@ -14,7 +14,7 @@
 #include "e4/classes/ToolTipClass_e4.hpp"
 
 // 0x7784A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 CCToolTip * CCToolTip::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -25,4 +25,5 @@ CCToolTip * CCToolTip::QueryInterface(unsigned int * Block, char a2)
   return Block->__pad_0; /*0x7784c0*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

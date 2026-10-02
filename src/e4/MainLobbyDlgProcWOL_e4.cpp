@@ -19,7 +19,7 @@
 #include "e4/classes/Main_e4.hpp"
 
 // 0x624020
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 LRESULT MainLobbyDlgProcWOL_Assign(HWND hWnd, WPARAM wParam, void ** a3)
 {
   LRESULT v5; // esi
@@ -35,6 +35,7 @@ LRESULT MainLobbyDlgProcWOL_Assign(HWND hWnd, WPARAM wParam, void ** a3)
   RA2_OPDEL(v6); /*0x62406e*/
   return v7; /*0x624078*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x77A8D0

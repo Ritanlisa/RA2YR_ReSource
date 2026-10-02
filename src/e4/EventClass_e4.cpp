@@ -36,7 +36,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 
 // 0x48B390
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int EventClass::serializeEvent(void *a1_1)
 {
 
@@ -71,6 +71,7 @@ int EventClass::serializeEvent(void *a1_1)
   return result; /*0x48b405*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x48BAD0
 namespace gamemd {

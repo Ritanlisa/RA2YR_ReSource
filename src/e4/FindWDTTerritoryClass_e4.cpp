@@ -11,7 +11,7 @@
 #include "e4/classes/Conflict_e4.hpp"
 
 // 0x765380
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
 {
 
@@ -40,6 +40,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
   return a2; /*0x7653ee*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x766060

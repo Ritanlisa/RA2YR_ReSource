@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x537B40
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 _DWORD * ScreenCaptureCommandClass::Constructor(void *a1, void *a2, void *a3)
 {
 
@@ -16,6 +16,7 @@ _DWORD * ScreenCaptureCommandClass::Constructor(void *a1, void *a2, void *a3)
   return this->CommandClass; /*0x537b48*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x537B50
 namespace gamemd {

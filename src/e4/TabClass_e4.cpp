@@ -17,7 +17,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x4A2350
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * TabClass::initStripClass()
 {
 
@@ -30,6 +30,7 @@ unsigned int * TabClass::initStripClass()
   return &this->TabClass_field_0x0; /*0x4a2365*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x658330
 namespace gamemd {

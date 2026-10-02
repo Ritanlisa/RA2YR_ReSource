@@ -19,7 +19,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 
 // 0x5E8D40
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_5E8D40()
 {
   const wchar_t *v1; // ebx
@@ -40,6 +40,7 @@ int sub_5E8D40()
   }
   return v2; /*0x5e8d4c*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x5EA8E0

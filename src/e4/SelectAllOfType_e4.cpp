@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x6DA770
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char sub_6DA770()
 {
   int *v0; // esi
@@ -36,4 +36,5 @@ char sub_6DA770()
   (*(void (**)(int *))(*v0 + 336))(v0); /*0x6da7b9*/
   return 1; /*0x6da7c1*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd

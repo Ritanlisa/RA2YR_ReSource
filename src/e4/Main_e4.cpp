@@ -16,7 +16,7 @@
 #include "e4/classes/GameOptions_e4.hpp"
 
 // 0x4E1D00
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Main::CreateDialog()
 {
 
@@ -58,4 +58,5 @@ void Main::CreateDialog()
   ((Debug *)this)->Log(); /*0x4e1dd0*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

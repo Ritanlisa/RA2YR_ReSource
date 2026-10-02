@@ -32,7 +32,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 
 // 0x600750
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void sub_600750()
 {
   unsigned int v0; // eax
@@ -108,6 +108,7 @@ void sub_600750()
   }
   RA2_OPDEL(dword_AC1B48); /*0x600866*/
 }
+}  // G42.18 ns repair
 }
 // 0x600920
 namespace gamemd {

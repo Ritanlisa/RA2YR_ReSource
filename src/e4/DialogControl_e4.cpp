@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4E1450
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int DialogControl::Hide()
 {
 
@@ -19,6 +19,7 @@ int DialogControl::Hide()
   return (*(int (**)(void))(v1 + 84))();
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4E1460
 namespace gamemd {

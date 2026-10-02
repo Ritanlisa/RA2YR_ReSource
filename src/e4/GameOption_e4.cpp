@@ -9,13 +9,14 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x69ACC0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int GameOption::GetField()
 {
 
   return *(unsigned int *)this->field_18C; /*0x69acc8*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x69ACD0
 namespace gamemd {

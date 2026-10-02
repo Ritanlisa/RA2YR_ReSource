@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x659510
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int E4Recv_659510::sub_659510(int a2, int a3)
 {
 
@@ -17,6 +17,7 @@ int E4Recv_659510::sub_659510(int a2, int a3)
   return a2; /*0x65951e*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x659530

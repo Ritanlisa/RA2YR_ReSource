@@ -12,11 +12,12 @@
 #include "e4/classes/AudioConfig_e4.hpp"
 
 // 0x7E0000
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void nullsub_272()
 {
   ; /*0x7e0000*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x7E0001

@@ -33,7 +33,7 @@
 #include "e4/classes/House_e4.hpp"
 
 // 0x4CAF20
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int VoxelAnimClass::ProcessFrame()
 {
 
@@ -104,6 +104,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
   return result; /*0x4cb056*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x7499F0
 namespace gamemd {

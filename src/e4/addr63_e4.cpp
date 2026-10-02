@@ -116,7 +116,7 @@
 #include "e4/classes/PhoneEditor_e4.hpp"
 
 // 0x630310
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
 {
     unsigned int * v12 = 0;
@@ -475,6 +475,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   (*(void (**)(int))(v28->q034)(v28); /*0x630961*/
   return v12; /*0x63032f*/
 }
+}  // G42.18 ns repair
 }
 // 0x630C10
 namespace gamemd {

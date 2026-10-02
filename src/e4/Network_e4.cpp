@@ -44,7 +44,7 @@
 #include "e4/classes/IPXManagerClass_e4.hpp"
 
 // 0x4311C0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Network::SendBeaconDelete(int a2, int a3)
 {
 
@@ -174,6 +174,7 @@ LABEL_5:
   return result; /*0x431258*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x431450
 namespace gamemd {

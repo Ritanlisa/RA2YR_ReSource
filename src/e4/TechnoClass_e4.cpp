@@ -36,7 +36,7 @@
 #include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x41A9E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void TechnoClass_CanFireAtTarget(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   int result; // eax
@@ -65,6 +65,7 @@ void TechnoClass_CanFireAtTarget(void * a1, void * a2, void * a3, void * a4, voi
   }
   return result; /*0x41aa13*/
 }
+}  // G42.18 ns repair
 }
 // 0x6F2B40
 namespace gamemd {

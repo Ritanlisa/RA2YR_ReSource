@@ -31,6 +31,7 @@
 #include "e4/classes/WinModemClass_e4.hpp"
 
 // 0x43A350
+namespace gamemd {  // G42.18 ns repair
 NeuronClass::NeuronClass()
 {
 
@@ -71,7 +72,9 @@ NeuronClass::NeuronClass()
   return (int)this->__pad_0; /*0x43a43c*/
 
 }
+}  // G42.18 ns repair
 // 0x43A9C0
+namespace gamemd {  // G42.18 ns repair
 void * NeuronClass::Reset(unsigned int * Block, char a2)
 {
     unsigned int * v6 = 0;
@@ -119,14 +122,16 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   return Block->__pad_0; /*0x43aa8a*/
 
 }
+}  // G42.18 ns repair
 // 0x43AB20
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int NeuronClass_25::Update(int a2, void *a2_2, void *a3_1, void *a4_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x43ab2a*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x43AB30

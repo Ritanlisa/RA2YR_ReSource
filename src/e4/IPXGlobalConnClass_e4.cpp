@@ -30,7 +30,7 @@
 #include "e4/classes/PacketQueue_e4.hpp"
 
 // 0x540110
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void IPXGlobalConnClass::ReceivePacket(int a2)
 {
 
@@ -98,6 +98,7 @@ LABEL_14:
   ((Debug *)this)->Log(); /*0x540296*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5403F0
 namespace gamemd {

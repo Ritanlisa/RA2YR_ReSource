@@ -69,7 +69,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x770E70
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass aP3)
 {
 
@@ -88,6 +88,7 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass a
   DeleteAndZero((ObjectClass *)&aP3); /*0x770ef6*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x771890
 namespace gamemd {

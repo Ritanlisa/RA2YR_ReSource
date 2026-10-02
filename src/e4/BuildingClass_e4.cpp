@@ -35,7 +35,7 @@
 #include "e4/classes/SuperWeapon_e4.hpp"
 
 // 0x453E20
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void* BuildingClass::LoadFromStream()
 {
 
@@ -244,6 +244,7 @@ LABEL_36:
   return (void *)(result); /*0x45417e*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x455D50
 namespace gamemd {

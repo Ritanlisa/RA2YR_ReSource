@@ -10,7 +10,7 @@
 #include "e4/classes/EventClass_e4.hpp"
 
 // 0x54F000
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 __int16 EventQueue::Process()
 {
 
@@ -25,6 +25,7 @@ __int16 EventQueue::Process()
     return *((unsigned short *)this + v2 + 138); /*0x54f03a*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x54F050
 namespace gamemd {

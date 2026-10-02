@@ -46,7 +46,7 @@
 #include "e4/classes/TeamClass_e4.hpp"
 
 // 0x4116A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_4116A0(unsigned int a1)
 {
   unsigned int v1; // edi
@@ -143,6 +143,7 @@ int sub_4116A0(unsigned int a1)
   }
   return *(unsigned int *)(v3 + 32); /*0x4116da*/
 }
+}  // G42.18 ns repair
 }
 // 0x411820
 namespace gamemd {

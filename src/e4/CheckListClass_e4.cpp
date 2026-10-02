@@ -12,7 +12,7 @@
 #include "e4/classes/ListClass_e4.hpp"
 
 // 0x488520
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
   ListClass *v7; // ecx
@@ -80,6 +80,7 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
   }
   return result; /*0x48867d*/
 }
+}  // G42.18 ns repair
 }
 // 0x4886B0
 int CheckListClass::COMStub()

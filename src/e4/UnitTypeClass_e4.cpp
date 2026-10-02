@@ -23,7 +23,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x6B4DD0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 INIClass * * UnitTypeClass::ReadINIEntry()
 {
 
@@ -65,6 +65,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   return (gamemd::INIClass **)(v4); /*0x6b4e94*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x7470D0
 UnitTypeClass::UnitTypeClass(INIClass * aP1)

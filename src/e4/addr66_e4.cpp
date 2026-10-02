@@ -60,7 +60,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x6613A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Color_ComputeSaturation(unsigned int a1, int a2, int a3)
 {
   int v3; // edi
@@ -141,6 +141,7 @@ void Color_ComputeSaturation(unsigned int a1, int a2, int a3)
   *(unsigned char *)(a3 + 2) = v6; /*0x6614d7*/
   return a3; /*0x6614d4*/
 }
+}  // G42.18 ns repair
 }
 // 0x6615D0
 namespace gamemd {

@@ -35,7 +35,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 
 // 0x46CB60
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 CampaignClass::CampaignClass(ObjectClass * aP1)
 {
 
@@ -64,6 +64,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   return (int)this; /*0x46cc08*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x46CE10
 namespace gamemd {

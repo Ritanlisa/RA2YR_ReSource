@@ -23,7 +23,7 @@
 #include "e4/classes/Init_e4.hpp"
 
 // 0x465450
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 BuildingTypeClass * * BulletTypeClass::ReadArmor()
 {
 
@@ -92,6 +92,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
   return (gamemd::BuildingTypeClass **)(result);
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x465CC0
 namespace gamemd {

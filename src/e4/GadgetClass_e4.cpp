@@ -13,7 +13,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x4E12F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 ControlClass GadgetClass::Construct(int a2, int a3, int a4, int a5, int a6, char a7)
 {
 
@@ -36,6 +36,7 @@ ControlClass GadgetClass::Construct(int a2, int a3, int a4, int a5, int a6, char
   return result; /*0x4e1333*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x4E1390
 namespace gamemd {

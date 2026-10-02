@@ -9,7 +9,7 @@
 #include "e4/classes/Straw_e4.hpp"
 
 // 0x552450
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int LCWStraw::Dtor(void *a1)
 {
 
@@ -26,4 +26,5 @@ int LCWStraw::Dtor(void *a1)
   return Straw::Dtor((Straw *)this); /*0x552483*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

@@ -12,7 +12,7 @@
 #include "e4/classes/TabClass_e4.hpp"
 
 // 0x47A9D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int BufferIOFile::Constructor(char *Source)
 {
 
@@ -23,6 +23,7 @@ int BufferIOFile::Constructor(char *Source)
   return (int)(this->__pad_0); /*0x47a9f0*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x47AA30
 namespace gamemd {

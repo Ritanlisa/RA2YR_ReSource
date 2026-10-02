@@ -18,7 +18,7 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x642B60
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int LoadingScreen::GetColorScheme()
 {
 
@@ -29,6 +29,7 @@ int LoadingScreen::GetColorScheme()
   return FindBuildingAnimByName((gamemd::AbstractClass *)(g_INI_Key_AlliedLoad), 1);
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x72EF60
 namespace gamemd {

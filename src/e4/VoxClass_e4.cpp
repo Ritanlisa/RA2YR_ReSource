@@ -13,7 +13,7 @@
 #include "e4/classes/Voice_e4.hpp"
 
 // 0x752700
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void VoxClass::FindAndPlay(int a3)
 {
 
@@ -43,4 +43,5 @@ void VoxClass::FindAndPlay(int a3)
   return result; /*0x752746*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

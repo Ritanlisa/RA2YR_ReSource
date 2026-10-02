@@ -8,13 +8,14 @@
 #include "e4/e4_protos.h"
 
 // 0x5D2770
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int CampaignProperties_WorldDominationTour_22::Seek(int a2, void *a2_2, void *a3_1)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d277a*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x5D2900

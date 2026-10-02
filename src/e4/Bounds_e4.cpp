@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x487EE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Bounds::Subtract(IUnknown * aP1, unsigned int * a2, void *a3, void *a4)
 {
 
@@ -29,4 +29,5 @@ int Bounds::Subtract(IUnknown * aP1, unsigned int * a2, void *a3, void *a4)
   return (int)(aP1); /*0x487f05*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

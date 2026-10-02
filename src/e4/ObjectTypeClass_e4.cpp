@@ -32,7 +32,7 @@
 #include "e4/classes/WaveClass_e4.hpp"
 
 // 0x46C790
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 BulletTypeClass * ObjectTypeClass::FindOrCreate(ObjectClass * Source)
 {
 
@@ -58,6 +58,7 @@ LABEL_6:
   return (gamemd::BulletTypeClass *)((unsigned char *)*((unsigned int *)dword_A83C84 + v2)); /*0x46c7ff*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x473980
 namespace gamemd {

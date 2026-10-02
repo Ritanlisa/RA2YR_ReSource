@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x636E60
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ArrayClass::GetAt_Wrap(int a2)
 {
 
@@ -31,4 +31,5 @@ int ArrayClass::GetAt_Wrap(int a2)
   return 0; /*0x636e95*/
 
 }
+}  // G42.18 ns repair
 }

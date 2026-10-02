@@ -29,7 +29,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 
 // 0x574600
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 bool sub_574600(int a1, int a2, int a3)
 {
   char v3; // bl
@@ -66,6 +66,7 @@ bool sub_574600(int a1, int a2, int a3)
   }
   return *(unsigned char *)(v4 + 282) == v3; /*0x574669*/
 }
+}  // G42.18 ns repair
 }
 // 0x575EE0
 namespace gamemd {

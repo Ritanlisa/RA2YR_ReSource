@@ -22,7 +22,7 @@
 #include "e4/classes/Vector3_e4.hpp"
 
 // 0x5B20F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, char a7, char a8, char a9)
 {
 
@@ -485,6 +485,7 @@ LABEL_49:
   return Coord::Length((Coord *)&v92); /*0x5b2347*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5B2930
 namespace gamemd {

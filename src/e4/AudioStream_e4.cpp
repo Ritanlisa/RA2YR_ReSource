@@ -27,7 +27,7 @@
 #include "e4/classes/Voice_e4.hpp"
 
 // 0x401910
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void AudioStream::ReleaseSubsystem()
 {
 
@@ -44,6 +44,7 @@ void AudioStream::ReleaseSubsystem()
   return result; /*0x401937*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x4026B0
 namespace gamemd {
@@ -65,7 +66,7 @@ void AudioStream::ReleaseChannel(void *a1_1)
 
 }
 // 0x4033C0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void AudioStream::DestroyAll(void * Block)
 {
 
@@ -97,6 +98,7 @@ void AudioStream::DestroyAll(void * Block)
   __3_YAXPAX_Z(Block); /*0x403453*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x403820
 namespace gamemd {

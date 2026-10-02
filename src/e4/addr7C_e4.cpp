@@ -37,7 +37,7 @@
 #include "e4/classes/AllocCallback_e4.hpp"
 
 // 0x7C0740
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char arg8, char * a5)
 {
   DSurface * v8;
@@ -343,6 +343,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
     return -1; /*0x7c0be3*/
   return result; /*0x7c0be0*/
 }
+}  // G42.18 ns repair
 }
 // 0x7C2590
 namespace gamemd {

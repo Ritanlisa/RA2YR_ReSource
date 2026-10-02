@@ -22,7 +22,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x520AE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Mission::ExecuteTechnoMissionAction()
 {
 
@@ -209,6 +209,7 @@ LABEL_51:
   return result; /*0x520ef4*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x520F40
 namespace gamemd {

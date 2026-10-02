@@ -28,7 +28,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x6442D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
 {
 
@@ -267,6 +267,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   return 1; /*0x644617*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x644700
 namespace gamemd {

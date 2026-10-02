@@ -8,7 +8,7 @@
 #include "e4/classes/Network_e4.hpp"
 
 // 0x6B7BB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int UnitClass::ProcessIdleOrders()
 {
 
@@ -47,4 +47,5 @@ int UnitClass::ProcessIdleOrders()
   return result; /*0x6b7c2f*/
 
 }
+}  // G42.18 ns repair
 }

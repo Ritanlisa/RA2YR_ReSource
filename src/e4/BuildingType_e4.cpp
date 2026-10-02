@@ -24,7 +24,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x4E3560
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int BuildingType::FindDefault(void *a1_1)
 {
 
@@ -58,6 +58,7 @@ int BuildingType::FindDefault(void *a1_1)
   return result; /*0x4e3578*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x510ED0

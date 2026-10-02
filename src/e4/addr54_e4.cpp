@@ -58,13 +58,14 @@
 #include "e4/classes/INIClass_e4.hpp"
 
 // 0x540C50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int E4Recv_540C50::sub_540C50()
 {
 
   return LOBYTE(((unsigned int *)this)[0]); /*0x540c55*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x541170
 namespace gamemd {

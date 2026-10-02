@@ -8,7 +8,7 @@
 #include "e4/classes/Color_e4.hpp"
 
 // 0x4A35A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ColorStruct::SetRGB(uint8_t a2, uint8_t a3, uint8_t a4)
 {
 
@@ -24,4 +24,5 @@ int ColorStruct::SetRGB(uint8_t a2, uint8_t a3, uint8_t a4)
   return -16777216; /*0x4a35de*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

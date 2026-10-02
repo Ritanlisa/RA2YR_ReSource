@@ -17,7 +17,7 @@
 #include "e4/classes/COM_e4.hpp"
 
 // 0x767010
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * COMClass::lockServer(rc_ptr_base * Block, char a2)
 {
 
@@ -59,6 +59,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x7669F0
 namespace gamemd {

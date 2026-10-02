@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x578540
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Type::CheckAmbiguity(int a2, char a3)
 {
 
@@ -37,4 +37,5 @@ int Type::CheckAmbiguity(int a2, char a3)
   return result; /*0x5785dd*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

@@ -31,7 +31,7 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x5F8CE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
 {
 
@@ -177,6 +177,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
   return (gamemd::AbstractClass **)(v2); /*0x5f9059*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x55A730
 namespace gamemd {

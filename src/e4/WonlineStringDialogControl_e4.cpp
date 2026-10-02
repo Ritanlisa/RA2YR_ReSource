@@ -14,7 +14,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x7AC630
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(DialogControl_OwnerDraw * Block, char a2)
 {
 
@@ -27,6 +27,7 @@ void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(Dia
   return (void **)Block; /*0x7ac660*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x7AD690
 namespace gamemd {

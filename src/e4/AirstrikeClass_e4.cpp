@@ -28,7 +28,7 @@
 #include "e4/classes/WTFMode_e4.hpp"
 
 // 0x41D860
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
 {
 
@@ -111,6 +111,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   return result; /*0x41da0b*/
 
 }
+}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x41DA20

@@ -36,7 +36,7 @@
 #include "e4/classes/ThemeClass_e4.hpp"
 
 // 0x660840
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int LoadGame::LoadTriggerEvents()
 {
 
@@ -124,6 +124,7 @@ int LoadGame::LoadTriggerEvents()
            0) >= 0;
 
 }
+}  // G42.18 ns repair
     return 0; /*0x6608e8*/
   v9 = 0; /*0x6608ed*/
   if ( v13 > 0 ) /*0x6608f1*/

@@ -8,7 +8,7 @@
 #include "e4/classes/Function_e4.hpp"
 
 // 0x643E80
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Function::Function_643E80(void * a2)
 {
 
@@ -16,6 +16,7 @@ void Function::Function_643E80(void * a2)
   return a2; /*0x643e87*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x645D00
 namespace gamemd {

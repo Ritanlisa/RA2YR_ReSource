@@ -10,7 +10,7 @@
 #include "e4/e4_protos.h"
 
 // 0x40DCB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char * AbstractType::FindName(void *a1_1)
 {
 
@@ -29,4 +29,5 @@ char * AbstractType::FindName(void *a1_1)
   return (char *)((&off_816EE0)[2 * v1]);
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

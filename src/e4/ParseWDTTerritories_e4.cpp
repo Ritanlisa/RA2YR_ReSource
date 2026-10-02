@@ -9,7 +9,7 @@
 #include "e4/classes/BombClass_e4.hpp"
 
 // 0x76AAF0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * E4Recv_76AAF0::sub_76AAF0()
 {
 
@@ -55,4 +55,5 @@ unsigned int * E4Recv_76AAF0::sub_76AAF0()
   return this; /*0x76ab7f*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

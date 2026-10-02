@@ -11,7 +11,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x76EFE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * WOL::QueryInterface(char a2)
 {
 
@@ -21,4 +21,5 @@ void * WOL::QueryInterface(char a2)
   return this; /*0x76effa*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

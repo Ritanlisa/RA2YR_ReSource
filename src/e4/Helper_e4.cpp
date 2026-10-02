@@ -27,7 +27,7 @@
 #include "e4/classes/DSurface_e4.hpp"
 
 // 0x6F2040
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_6F2040()
 {
   int result; // eax
@@ -41,6 +41,7 @@ int sub_6F2040()
   }
   return result; /*0x6f2063*/
 }
+}  // G42.18 ns repair
 }
 // 0x4371D0
 char Helper::ProcessData(void ** a1, int a2, int * a3)

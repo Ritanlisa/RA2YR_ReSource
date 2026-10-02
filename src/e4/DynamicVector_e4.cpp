@@ -12,7 +12,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x5AC430
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * DynamicVector::Copy(VectorClass_flat * aP1, void *a2_1)
 {
 
@@ -55,6 +55,7 @@ LABEL_8:
   return this->__pad_0; /*0x5ac491*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x413A70
 namespace gamemd {

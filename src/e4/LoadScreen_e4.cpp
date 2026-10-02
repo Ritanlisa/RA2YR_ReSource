@@ -7,11 +7,12 @@
 #include "e4/e4_protos.h"
 
 // 0x643E60
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int LoadScreen::IsActive()
 {
 
   return *((unsigned int *)this + 25) != 0; /*0x643e6a*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

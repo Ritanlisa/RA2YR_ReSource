@@ -30,6 +30,7 @@
 #include "e4/classes/Process_e4.hpp"
 
 // 0x4A7A30
+namespace gamemd {  // G42.18 ns repair
 DiskLaserClass::DiskLaserClass()
 {
 
@@ -61,7 +62,9 @@ DiskLaserClass::DiskLaserClass()
   return (int)this->__pad_0; /*0x4a7abf*/
 
 }
+}  // G42.18 ns repair
 // 0x4A7C90
+namespace gamemd {  // G42.18 ns repair
 void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
 {
 
@@ -89,7 +92,9 @@ void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
   return Block->__pad_0; /*0x4a7d11*/
 
 }
+}  // G42.18 ns repair
 // 0x4A7B90
+namespace gamemd {  // G42.18 ns repair
 int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
 {
 
@@ -113,14 +118,18 @@ int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
   return Prefix_0; /*0x4a7bfe*/
 
 }
+}  // G42.18 ns repair
 // 0x4A7C10
+namespace gamemd {  // G42.18 ns repair
 int DiskLaserClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
   return AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x4a7c24*/
 
 }
+}  // G42.18 ns repair
 // 0x4A7C30
+namespace gamemd {  // G42.18 ns repair
 int DiskLaserClass::ddtor(int a1, unsigned int * a2)
 {
 
@@ -133,17 +142,21 @@ int DiskLaserClass::ddtor(int a1, unsigned int * a2)
   return 0; /*0x4a7c3d*/
 
 }
+}  // G42.18 ns repair
 // 0x4A7C70
+namespace gamemd {  // G42.18 ns repair
 int DiskLaserClass::StubReturn64()
 {
 
   return 64; /*0x4a7c75*/
 
 }
+}  // G42.18 ns repair
 // 0x4A7C80
+namespace gamemd {  // G42.18 ns repair
 int DiskLaserClass::StubReturn73()
 {
 
   return 73; /*0x4a7c85*/
 
-}
+}}  // G42.18 ns repair

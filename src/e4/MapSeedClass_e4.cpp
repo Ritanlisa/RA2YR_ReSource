@@ -24,7 +24,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x5A5B50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
 {
 
@@ -402,6 +402,7 @@ LABEL_73:
   return (gamemd::MapSeedClass **)(v5); /*0x5a64f5*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5A76E0
 namespace gamemd {

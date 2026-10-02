@@ -220,7 +220,7 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x490400
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int E4Recv_490400::sub_490400()
 {
 
@@ -249,6 +249,7 @@ int E4Recv_490400::sub_490400()
   return result; /*0x490457*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x491B40
 namespace gamemd {

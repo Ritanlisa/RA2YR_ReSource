@@ -15,7 +15,7 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x554760
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
@@ -50,6 +50,7 @@ void LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7,
   return this; /*0x55481e*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x554830
 namespace gamemd {

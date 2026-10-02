@@ -36,7 +36,7 @@
 #include "e4/classes/PsyDom_e4.hpp"
 
 // 0x47F510
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
 {
 
@@ -132,6 +132,7 @@ LABEL_9:
   }
 
 }
+}  // G42.18 ns repair
 }
 // 0x4801F0
 namespace gamemd {

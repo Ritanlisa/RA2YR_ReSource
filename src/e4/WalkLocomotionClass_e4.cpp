@@ -29,7 +29,7 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x6A0310
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long long a4)
 {
 
@@ -95,6 +95,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   return v4; /*0x6a0430*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x6A3F50
 namespace gamemd {

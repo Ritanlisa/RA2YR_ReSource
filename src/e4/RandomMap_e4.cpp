@@ -34,7 +34,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x486790
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int RandomMap::Check(void *a1_1, void *a2_1, void *a3_1)
 {
 
@@ -44,6 +44,7 @@ int RandomMap::Check(void *a1_1, void *a2_1, void *a3_1)
   return v1 >= dword_AA0E24 && v1 < dword_AA0E24 + 16; /*0x4867a6*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x58BF70
 namespace gamemd {

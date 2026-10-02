@@ -13,7 +13,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x7228B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 BuildingTypeClass * * AudioClass::ProcessEvent()
 {
 
@@ -101,4 +101,5 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   return result; /*0x722a11*/
 
 }
+}  // G42.18 ns repair
 }

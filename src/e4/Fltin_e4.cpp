@@ -10,9 +10,10 @@
 #include "e4/classes/FlyLocomotionClass_e4.hpp"
 
 // 0x7D7C1B
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_7D7C1B(int a1, int a2)
 {
   return _ld12cvt(a1, a2, &unk_87D3C0); /*0x7d7c30*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd

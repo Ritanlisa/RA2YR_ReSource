@@ -18,7 +18,7 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x69EE90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
 {
 
@@ -49,6 +49,7 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   return OleLoadFromStream((LPSTREAM)v2, &IID_ILocomotion, p_Piggybackee); /*0x69ef01*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x69EF10
 namespace gamemd {

@@ -64,11 +64,12 @@
 #include "e4/classes/XSurface_e4.hpp"
 
 // 0x7B0310
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * * sub_7B0310()
 {
   return (void **)(dword_B77F54);
 }
+}  // G42.18 ns repair
 }
 // 0x7B0340
 namespace gamemd {

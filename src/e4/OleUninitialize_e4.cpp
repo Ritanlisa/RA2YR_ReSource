@@ -8,9 +8,10 @@
 #include "e4/classes/ParticleSystemTypeClass_e4.hpp"
 
 // 0x7C891A
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void OleUninitialize_0()
 {
   OleUninitialize(); /*0x7c891a*/
 }
+}  // G42.18 ns repair
 }

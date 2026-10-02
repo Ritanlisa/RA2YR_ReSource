@@ -14,7 +14,7 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x72C240
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char sub_72C240()
 {
   char result; // al
@@ -29,6 +29,7 @@ char sub_72C240()
   }
   return result; /*0x72c286*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x72C290

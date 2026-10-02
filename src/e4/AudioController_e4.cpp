@@ -9,7 +9,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x409DE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4, signed int * a5)
 {
 
@@ -115,6 +115,7 @@ LABEL_25:
   }
 
 }
+}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x72D170

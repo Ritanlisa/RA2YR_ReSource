@@ -9,7 +9,7 @@
 #include "e4/e4_protos.h"
 
 // 0x6F2070
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Techno::GetOwnerHouse()
 {
 
@@ -26,6 +26,7 @@ int Techno::GetOwnerHouse()
   return result; /*0x6f2092*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x70E360
 namespace gamemd {

@@ -17,7 +17,7 @@
 #include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x65B1E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 RadSiteClass::RadSiteClass()
 {
 
@@ -60,6 +60,7 @@ RadSiteClass::RadSiteClass()
   return this; /*0x65b298*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x65B3A0
 namespace gamemd {

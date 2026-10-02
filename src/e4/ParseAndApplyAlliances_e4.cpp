@@ -8,7 +8,7 @@
 #include "e4/classes/ParasiteClass_e4.hpp"
 
 // 0x69D870
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
 {
 
@@ -30,4 +30,5 @@ unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
   return &this->vtable0; /*0x69d89d*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

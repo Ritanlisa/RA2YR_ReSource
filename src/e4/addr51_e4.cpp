@@ -28,7 +28,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 
 // 0x5108F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int globalHelper_0108F0(unsigned int * a1, unsigned int * a2)
 {
   if ( *a1 == *a2 )
@@ -36,6 +36,7 @@ int globalHelper_0108F0(unsigned int * a1, unsigned int * a2)
   else
     return *a1 >= *a2 ? 1 : -1;
 }
+}  // G42.18 ns repair
 }
 // 0x517360
 namespace gamemd {

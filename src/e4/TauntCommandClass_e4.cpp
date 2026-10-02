@@ -21,7 +21,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x536290
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 _DWORD * TauntCommandClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
 
@@ -30,6 +30,7 @@ _DWORD * TauntCommandClass::Construct(int a2, void *a2_2, void *a3, void *a4, vo
   return this->CommandClass; /*0x53629f*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5362B0
 namespace gamemd {

@@ -14,7 +14,7 @@
 #include "e4/classes/AudioFile_e4.hpp"
 
 // 0x406060
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Mixer::ReleaseChannel(void *a1)
 {
 
@@ -58,6 +58,7 @@ LABEL_14:
   return result; /*0x4060d9*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4083D0
 namespace gamemd {

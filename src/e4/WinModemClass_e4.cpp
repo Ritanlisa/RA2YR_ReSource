@@ -18,7 +18,7 @@
 #include "e4/classes/WonlineStringDialogControl_12_e4.hpp"
 
 // 0x774980
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int WinModemClass::ReadSerial()
 {
 
@@ -124,6 +124,7 @@ int WinModemClass::ReadSerial()
   return v16 != 0; /*0x7749fb*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x774B30
 namespace gamemd {

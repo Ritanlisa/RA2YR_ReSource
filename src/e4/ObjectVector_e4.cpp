@@ -9,7 +9,7 @@
 #include "e4/classes/FootClass_e4.hpp"
 
 // 0x4D0440
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ObjectVector::Construct(int aP1, int aP2)
 {
 
@@ -31,4 +31,5 @@ int ObjectVector::Construct(int aP1, int aP2)
   return this->__pad_0; /*0x4d046d*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

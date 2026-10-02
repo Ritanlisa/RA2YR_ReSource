@@ -26,7 +26,7 @@
 #include "e4/classes/FootClass_e4.hpp"
 
 // 0x544C80
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int CellClass::EnsureFileLoaded()
 {
 
@@ -35,6 +35,7 @@ int CellClass::EnsureFileLoaded()
   return this->sensorsOfHouses[10] != 0; /*0x544ca9*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x56EF50
 namespace gamemd {

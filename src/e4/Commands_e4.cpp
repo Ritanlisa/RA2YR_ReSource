@@ -15,13 +15,14 @@
 #include "app/cmdline.hpp"
 
 // 0x537A50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int32_t Commands::AddRef(void *a1)
 {
 
   return (int32_t)(aMultiplayerdeb); /*0x537a55*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x537A60
 namespace gamemd {

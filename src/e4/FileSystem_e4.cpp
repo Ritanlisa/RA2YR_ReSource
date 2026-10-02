@@ -27,7 +27,7 @@
 #include "e4/classes/StringVector_e4.hpp"
 
 // 0x626DA0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int FileSystem::ProcessNextFileExtension()
 {
 
@@ -193,6 +193,7 @@ LABEL_36:
   return v29; /*0x626eb6*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5F76B0
 namespace gamemd {

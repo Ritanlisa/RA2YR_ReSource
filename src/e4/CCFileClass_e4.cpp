@@ -20,7 +20,7 @@
 #include "e4/classes/FileClass_e4.hpp"
 
 // 0x4325C0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AudioController * * CCFileClass::Close()
 {
     unsigned int v3 = 0;  /* G37 hoist */
@@ -51,6 +51,7 @@ AudioController * * CCFileClass::Close()
   return (gamemd::AudioController **)(result); /*0x4325f4*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x535A70
 namespace gamemd {

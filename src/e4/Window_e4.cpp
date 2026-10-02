@@ -9,7 +9,7 @@
 #include "e4/classes/WinModemClass_e4.hpp"
 
 // 0x4A5110
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Window::IsVisible()
 {
 
@@ -19,6 +19,7 @@ int Window::IsVisible()
   return result; /*0x4a5120*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x776D80
 namespace gamemd {

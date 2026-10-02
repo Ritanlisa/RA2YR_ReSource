@@ -10,7 +10,7 @@
 #include "e4/e4_protos.h"
 
 // 0x53F430
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8, void *a9)
 {
 
@@ -39,4 +39,5 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
   return this; /*0x53f4c3*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

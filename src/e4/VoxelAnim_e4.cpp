@@ -31,7 +31,7 @@
 #include "e4/classes/ScriptAction_e4.hpp"
 
 // 0x7586F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
 {
 
@@ -108,6 +108,7 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
   return 16; /*0x75885c*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x75AEC0
 namespace gamemd {

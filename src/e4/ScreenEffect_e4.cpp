@@ -8,13 +8,14 @@
 #include "e4/e4_protos.h"
 
 // 0x753AE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void ScreenEffect::Stub2()
 {
 
   ; /*0x753ae0*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x754B20
 namespace gamemd {

@@ -11,7 +11,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5C7EC0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void sub_5C7EC0(const void * a1, int a2)
 {
   int * v2;
@@ -167,4 +167,5 @@ void sub_5C7EC0(const void * a1, int a2)
   IDA_LOWORD((&dword_ABF5A0)[0]) = dword_ABF5A4; /*0x5c8091*/
   return 0; /*0x5c809a*/
 }
+}  // G42.18 ns repair
 }

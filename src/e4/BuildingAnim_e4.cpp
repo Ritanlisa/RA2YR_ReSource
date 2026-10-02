@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4E12D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int BuildingAnim::GetType()
 {
 
@@ -21,4 +21,5 @@ int BuildingAnim::GetType()
     return 0; /*0x4e12e7*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

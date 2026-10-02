@@ -74,7 +74,7 @@
 #include "e4/classes/WDTClass_e4.hpp"
 
 // 0x750920
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
 {
   int v5; // ebx
@@ -116,6 +116,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
     SetAudioSource(v5); /*0x7509cc*/
   return (gamemd::AbstractClass **)(v6); /*0x750931*/
 }
+}  // G42.18 ns repair
 }
 // 0x750AC0
 namespace gamemd {

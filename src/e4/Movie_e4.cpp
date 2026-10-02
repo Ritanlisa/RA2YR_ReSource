@@ -35,7 +35,7 @@
 #include "e4/classes/RulesClass_e4.hpp"
 
 // 0x49CAF0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
 {
 
@@ -107,6 +107,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
   return 1; /*0x49cc3d*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x49E3B0
 namespace gamemd {

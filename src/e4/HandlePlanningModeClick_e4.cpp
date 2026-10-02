@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x63DB20
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 BOOL E4Recv_63DB20::sub_63DB20(unsigned int * a2)
 {
 
@@ -26,4 +26,5 @@ BOOL E4Recv_63DB20::sub_63DB20(unsigned int * a2)
   return result; /*0x63db50*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

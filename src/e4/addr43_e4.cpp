@@ -40,7 +40,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x431BC0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
 {
 
@@ -154,6 +154,7 @@ LABEL_14:
   return 1; /*0x431be1*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x4373B0
 namespace gamemd {

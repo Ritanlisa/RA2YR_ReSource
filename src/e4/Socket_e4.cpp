@@ -17,7 +17,7 @@
 #include "e4/classes/SpawnManagerClass_e4.hpp"
 
 // 0x7B2630
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Socket::ConfigureBuffers(SOCKET aP1)
 {
     unsigned int v2 = 0;  /* G37 hoist */
@@ -38,4 +38,5 @@ int Socket::ConfigureBuffers(SOCKET aP1)
   return result; /*0x7b26b0*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

@@ -9,7 +9,7 @@
 #include "e4/classes/WinsockInterfaceClass_e4.hpp"
 
 // 0x7B2050
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char Winsock::VerifyCRC(int a1)
 {
 
@@ -47,4 +47,5 @@ char Winsock::VerifyCRC(int a1)
   return 0; /*0x7b20c9*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

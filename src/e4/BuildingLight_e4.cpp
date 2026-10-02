@@ -21,7 +21,7 @@
 #include "e4/classes/PingPongBuffer_e4.hpp"
 
 // 0x5FF850
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 Coord * * BuildingLight::CalculateShading()
 {
 
@@ -305,8 +305,9 @@ LABEL_23:
   return (gamemd::Coord **)(v5); /*0x5fff77*/
 
 }
+}  // G42.18 ns repair
 // 0x4CAD80
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 double BuildingLight::CalcIntensity(double a1)
 {
 
@@ -316,5 +317,6 @@ double BuildingLight::CalcIntensity(double a1)
   return 4 * v1; /*0x4cada1*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 }

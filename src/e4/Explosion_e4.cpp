@@ -8,7 +8,7 @@
 #include "e4/classes/Event_e4.hpp"
 
 // 0x53DDA0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char Explosion::RemoveItem(int a2, void *a2_2)
 {
 
@@ -34,4 +34,5 @@ char Explosion::RemoveItem(int a2, void *a2_2)
   return 1; /*0x53ddc9*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

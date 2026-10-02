@@ -17,7 +17,7 @@
 #include "e4/classes/Screen_e4.hpp"
 
 // 0x52CB90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char Credits::Screen()
 {
 
@@ -123,4 +123,5 @@ LABEL_15:
   return result; /*0x52cd5f*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

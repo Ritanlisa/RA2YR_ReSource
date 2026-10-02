@@ -25,7 +25,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x431090
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
 {
 
@@ -99,6 +99,7 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
   return 0; /*0x431148*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x4ADCD0
 namespace gamemd {

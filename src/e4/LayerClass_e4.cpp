@@ -25,7 +25,7 @@
 #include "e4/classes/LCWStraw_e4.hpp"
 
 // 0x568300
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int LayerClass::CoordinatesLegal(int16_t *aP1)
 {
 
@@ -45,6 +45,7 @@ int LayerClass::CoordinatesLegal(int16_t *aP1)
   return result; /*0x568337*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x56DC20
 namespace gamemd {

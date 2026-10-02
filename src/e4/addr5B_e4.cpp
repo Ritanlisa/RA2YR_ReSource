@@ -78,7 +78,7 @@
 #include "e4/classes/Stream_e4.hpp"
 
 // 0x5B3B10
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void sub_5B3B10()
 {
     unsigned int v1 = 0;  /* G37 hoist */
@@ -141,6 +141,7 @@ void sub_5B3B10()
     }
   }
 }
+}  // G42.18 ns repair
 }
 // 0x5B3FF0
 namespace gamemd {

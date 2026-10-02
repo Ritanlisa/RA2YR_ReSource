@@ -37,7 +37,7 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x5E3850
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int INIClass::WOLobby_Play(void * a1, void * a2)
 {
 
@@ -82,6 +82,7 @@ v2 = (LPVOID)(ppv);
   return result; /*0x5e38a6*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x78F7F0
 int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)

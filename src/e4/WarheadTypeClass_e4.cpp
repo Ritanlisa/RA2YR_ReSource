@@ -31,7 +31,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 
 // 0x474810
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * WarheadTypeClass::loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4)
 {
 
@@ -49,6 +49,7 @@ void * WarheadTypeClass::loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4)
   return (void *)(result); /*0x47482a*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x525300
 namespace gamemd {

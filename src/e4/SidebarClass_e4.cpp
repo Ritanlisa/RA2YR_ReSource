@@ -47,13 +47,14 @@
 #include "e4/classes/ShapeButton_e4.hpp"
 
 // 0x4C9C50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int SidebarClass::draw()
 {
 
   return (char)this->SidebarClass_field_0x5C; /*0x4c9c53*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4CA170
 namespace gamemd {

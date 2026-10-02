@@ -33,7 +33,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 
 // 0x7937B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int CComObject_CChatEventSink___ATL::DispatchConnectionPairs(void *a1_1)
 {
 
@@ -145,6 +145,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs(void *a1_1)
   return v9; /*0x793927*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x7A4EC0
 namespace gamemd {

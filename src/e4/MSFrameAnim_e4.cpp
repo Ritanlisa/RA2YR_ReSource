@@ -13,7 +13,7 @@
 #include "e4/e4_protos.h"
 
 // 0x769BD0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * MSFrameAnim::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -24,6 +24,7 @@ void * MSFrameAnim::QueryInterface(unsigned int * Block, char a2)
   return Block->__pad_0; /*0x769bf0*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x769FE0
 namespace gamemd {

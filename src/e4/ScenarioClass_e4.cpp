@@ -51,7 +51,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 
 // 0x58BB30
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
 {
 
@@ -108,6 +108,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
   return (gamemd::ScenarioClass **)(result);
 
 }
+}  // G42.18 ns repair
 }
 // 0x5CC330
 namespace gamemd {
@@ -286,7 +287,7 @@ int ScenarioClass::MissionStubReturnZero3()
 
 }
 // 0x5D6BE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ScenarioClass::AssignStartPositions(char a1)
 {
 
@@ -317,6 +318,7 @@ int ScenarioClass::AssignStartPositions(char a1)
   return 1; /*0x5d6c4f*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x6832C0
 namespace gamemd {

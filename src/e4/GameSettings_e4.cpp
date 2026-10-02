@@ -25,7 +25,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 
 // 0x5FA620
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void GameSettings::Read(void *a1, void *a2)
 {
 
@@ -372,6 +372,7 @@ void GameSettings::Read(void *a1, void *a2)
   return (int)GameSettings::ParseNetworkAddress((const char *)_ESI); /*0x5fad09*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5FB050
 namespace gamemd {

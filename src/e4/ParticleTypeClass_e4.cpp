@@ -27,7 +27,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x477900
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void ParticleTypeClass::GetClassIdentifier()
 {
 
@@ -44,6 +44,7 @@ void ParticleTypeClass::GetClassIdentifier()
   this->m_8 = 0; /*0x477924*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x4784F0
 namespace gamemd {

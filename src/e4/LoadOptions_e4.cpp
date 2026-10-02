@@ -21,7 +21,7 @@
 #include "e4/classes/WTFMode_e4.hpp"
 
 // 0x559D60
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char LoadOptions::AddRef(LPCCH lpMultiByteStr)
 {
 
@@ -50,6 +50,7 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
   return Saved; /*0x559e29*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x559E40

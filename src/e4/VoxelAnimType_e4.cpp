@@ -27,7 +27,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 
 // 0x5F7A90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
 {
 
@@ -148,6 +148,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
   return 0; /*0x5f7cf6*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x5F7DB0
 namespace gamemd {

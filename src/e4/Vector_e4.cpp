@@ -11,7 +11,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x4C1B50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Vector::Math_Vector2D_Magnitude()
 {
 
@@ -23,6 +23,7 @@ void Vector::Math_Vector2D_Magnitude()
   return result; /*0x4c1b6e*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x512D30
 namespace gamemd {

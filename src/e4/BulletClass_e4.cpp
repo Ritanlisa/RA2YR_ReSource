@@ -19,7 +19,7 @@
 #include "e4/classes/SlaveManagerClass_e4.hpp"
 
 // 0x466380
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 BulletClass::BulletClass()
 {
 
@@ -74,6 +74,7 @@ BulletClass::BulletClass()
   return (int)this->__pad_0; /*0x4664bc*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x466560
 namespace gamemd {

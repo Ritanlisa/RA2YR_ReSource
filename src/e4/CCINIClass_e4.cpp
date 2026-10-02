@@ -25,7 +25,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 
 // 0x41F2E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
 
@@ -122,6 +122,7 @@ LABEL_28:
   return result; /*0x41f480*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x473450
 namespace gamemd {

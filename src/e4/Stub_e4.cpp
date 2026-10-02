@@ -6,10 +6,11 @@
 #include "e4/e4_protos.h"
 
 // 0x4F4D80
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Stub_InfiniteLoop()
 {
   while ( 1 ) /*0x4f4d80*/
     ; /*0x4f4d80*/
 }
+}  // G42.18 ns repair
 }

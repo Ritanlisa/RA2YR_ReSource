@@ -24,7 +24,7 @@
 #include "e4/classes/Options_e4.hpp"
 
 // 0x5B9750
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int NetworkGameSetup::ReadRulesUnknown()
 {
 
@@ -40,6 +40,7 @@ int NetworkGameSetup::ReadRulesUnknown()
   return result; /*0x5b977e*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5BA970
 namespace gamemd {

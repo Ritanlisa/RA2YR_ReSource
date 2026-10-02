@@ -40,7 +40,7 @@
 #include "e4/classes/TemporalClass_e4.hpp"
 
 // 0x5447C0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6_2)
 {
 
@@ -133,6 +133,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   return this; /*0x5449c4*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x71DA80
 TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)

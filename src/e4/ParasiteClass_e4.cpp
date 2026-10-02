@@ -30,7 +30,7 @@
 #include "e4/classes/AnimClass_e4.hpp"
 
 // 0x629210
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ParasiteClass::Constructor(void *a1, void *a2, void *a3)
 {
 
@@ -61,6 +61,7 @@ int ParasiteClass::Constructor(void *a1, void *a2, void *a3)
   return (int)this; /*0x62929f*/
 
 }
+}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x6292B0

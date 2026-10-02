@@ -30,7 +30,7 @@
 #include "e4/classes/GenericList_e4.hpp"
 
 // 0x526810
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
 {
     unsigned int v13 = 0;  /* G37 hoist */
@@ -118,6 +118,7 @@ LABEL_19:
   return (gamemd::ObjectClass **)(unk_B7882C);
 
 }
+}  // G42.18 ns repair
 }
 // 0x526960
 namespace gamemd {

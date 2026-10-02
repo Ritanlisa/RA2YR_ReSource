@@ -24,11 +24,12 @@
 #include "e4/classes/House_e4.hpp"
 
 // 0x7D7C31
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_7D7C31(int a1, int a2)
 {
   return _ld12cvt(a1, a2, &unk_87D3D8); /*0x7d7c46*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x7D7CC1

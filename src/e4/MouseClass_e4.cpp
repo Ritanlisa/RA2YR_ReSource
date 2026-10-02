@@ -23,7 +23,7 @@
 #include "e4/classes/AssetClass_e4.hpp"
 
 // 0x6D1770
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char MouseClass::ToggleContextGadget(int a1, int a2)
 {
 
@@ -66,6 +66,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x72DDB0
 namespace gamemd {

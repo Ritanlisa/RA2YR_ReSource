@@ -10,7 +10,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4052F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int VocClass::Release()
 {
 
@@ -61,6 +61,7 @@ int VocClass::Release()
   return result; /*0x4053cf*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x751590
 namespace gamemd {

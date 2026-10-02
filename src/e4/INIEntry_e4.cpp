@@ -12,7 +12,7 @@
 #include "e4/classes/TypeClass_e4.hpp"
 
 // 0x476EB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int INIEntry::GetTechnoType(uint8_t *aP1, uint8_t *a2)
 {
 
@@ -39,4 +39,5 @@ int INIEntry::GetTechnoType(uint8_t *aP1, uint8_t *a2)
     return *((unsigned int *)dword_A83C6C + IndexByName); /*0x476f52*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

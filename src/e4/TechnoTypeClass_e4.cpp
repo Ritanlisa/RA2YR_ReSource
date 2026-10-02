@@ -30,7 +30,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x48DCD0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 {
 
@@ -61,6 +61,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
   return (gamemd::AbstractClass **)(result); /*0x48dcef*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x50BDF0
 namespace gamemd {

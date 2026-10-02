@@ -50,7 +50,7 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x52A9E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned char * sub_52A9E0(unsigned char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
 {
     unsigned int v7 = 0;  /* G37 hoist */
@@ -118,6 +118,7 @@ unsigned char * sub_52A9E0(unsigned char * a1, unsigned int * a2, unsigned int *
   *a4 &= ((*a4 & 0x80000000) != 0) - 1; /*0x52aa79*/
   return result; /*0x52aa75*/
 }
+}  // G42.18 ns repair
 }
 // 0x52B750
 namespace gamemd {

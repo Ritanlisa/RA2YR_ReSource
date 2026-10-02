@@ -7,11 +7,12 @@
 #include "e4/e4_protos.h"
 
 // 0x633A80
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 ObjectClass * E4Recv_633A80::ReadPointerFromECX_2()
 {
 
   return (gamemd::ObjectClass *)((int)this->AbstractClass);
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

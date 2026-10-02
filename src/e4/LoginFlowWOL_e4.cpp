@@ -23,7 +23,7 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x786EF0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void sub_786EF0()
 {
   const unsigned int v2;
@@ -76,6 +76,7 @@ void sub_786EF0()
     return 0; /*0x786f3b*/
   }
 }
+}  // G42.18 ns repair
 }
 // 0x72BCA0
 namespace gamemd {

@@ -48,7 +48,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x4880F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
 {
 
@@ -116,6 +116,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   return (gamemd::ConvertClass **)(1); /*0x4881fd*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x489180
 namespace gamemd {
@@ -980,7 +981,7 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
   return v7; /*0x48a6ef*/
 }
 // 0x48A9D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
 {
   double v7; // st7
@@ -1027,6 +1028,7 @@ void Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
     return 1; /*0x48a9f4*/
   }
 }
+}  // G42.18 ns repair
 }
 // 0x48B0E0
 namespace gamemd {

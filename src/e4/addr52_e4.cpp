@@ -67,7 +67,7 @@
 #include "e4/classes/BombClass_e4.hpp"
 
 // 0x522100
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int E4Recv_522100::sub_522100()
 {
 
@@ -111,6 +111,7 @@ LABEL_11:
   return v6; /*0x522115*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x523440
 namespace gamemd {

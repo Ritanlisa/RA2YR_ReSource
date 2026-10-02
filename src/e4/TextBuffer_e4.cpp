@@ -15,7 +15,7 @@
 #include "e4/classes/Text_e4.hpp"
 
 // 0x5BCC90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void TextBuffer::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
@@ -49,4 +49,5 @@ void TextBuffer::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6
   return Text::DrawRepeated((Text *)this, 0, 0, 80, 25); /*0x5bccd4*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

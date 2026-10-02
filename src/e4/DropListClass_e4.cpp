@@ -10,7 +10,7 @@
 #include "e4/classes/DropPodLocomotionClass_e4.hpp"
 
 // 0x4B5030
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
 {
   int v3; // ecx
@@ -38,6 +38,7 @@ void DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
   }
   return result; /*0x4b507f*/
 }
+}  // G42.18 ns repair
 }
 // 0x4B55A0
 int DropListClass::COMStub()

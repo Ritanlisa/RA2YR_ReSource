@@ -13,7 +13,7 @@
 #include "e4/classes/BufferIOFile_e4.hpp"
 
 // 0x7BCB50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4)
 {
 
@@ -292,6 +292,7 @@ LABEL_60:
   return result; /*0x7bcece*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x7C1730
 namespace gamemd {

@@ -34,7 +34,7 @@
 #include "e4/classes/Rect_e4.hpp"
 
 // 0x480180
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * DSurface::Process(void* aP1, int * a2)
 {
 
@@ -59,6 +59,7 @@ AbstractClass * * DSurface::Process(void* aP1, int * a2)
     0);
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4BA5A0
 namespace gamemd {

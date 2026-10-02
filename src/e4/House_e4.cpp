@@ -32,7 +32,7 @@
 #include "e4/classes/Matrix3x4_e4.hpp"
 
 // 0x47D2B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int House::AnnounceUpgrade(int aP1)
 {
 
@@ -444,6 +444,7 @@ LABEL_89:
   return result; /*0x47d56f*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x47FB90
 namespace gamemd {

@@ -10,7 +10,7 @@
 #include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
 
 // 0x691000
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(unsigned int * Block, char a2)
 {
 
@@ -20,6 +20,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(unsigned int * Block
   return Block->__pad_0; /*0x69101c*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x691020
 namespace gamemd {

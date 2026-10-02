@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x487E00
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int MovementAI::IsPathMovementAllowed()
 {
 
@@ -33,6 +33,7 @@ int MovementAI::IsPathMovementAllowed()
   return v3; /*0x487e34*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4A5150
 namespace gamemd {

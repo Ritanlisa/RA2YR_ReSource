@@ -17,7 +17,7 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x798340
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_798340()
 {
   HANDLE *v0; // esi
@@ -29,6 +29,7 @@ int sub_798340()
   while ( (int)v0 < (int)g_WOL_RequestObject ); /*0x79835b*/
   return result; /*0x79835d*/
 }
+}  // G42.18 ns repair
 }
 // 0x72C060
 namespace gamemd {

@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x6C9690
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 float Float::Accumulate(float value, int index)
 {
 
@@ -16,6 +16,7 @@ float Float::Accumulate(float value, int index)
   return index; /*0x6c969e*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x6C96B0
 namespace gamemd {

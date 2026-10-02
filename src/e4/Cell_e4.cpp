@@ -32,7 +32,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 
 // 0x419B00
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 TechnoClass * * Cell::IsOccupied(short * a2, char a3)
 {
 
@@ -94,6 +94,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   return 0; /*0x419c60*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x42B1C0
 namespace gamemd {

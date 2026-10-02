@@ -11,7 +11,7 @@
 #include "e4/classes/E4Recv_5E93F0_e4.hpp"
 
 // 0x408E70
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * Count::DecrementRefCountsAudio()
 {
 
@@ -34,6 +34,7 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   return (gamemd::AbstractClass **)(result);
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x46F6D0
 namespace gamemd {

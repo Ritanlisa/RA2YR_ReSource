@@ -32,7 +32,7 @@
 #include "e4/classes/TextRenderer_e4.hpp"
 
 // 0x710860
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_710860(unsigned int * a1, unsigned int * a2)
 {
   if ( *a1 == *a2 )
@@ -40,6 +40,7 @@ int sub_710860(unsigned int * a1, unsigned int * a2)
   else
     return *a1 >= *a2 ? 1 : -1;
 }
+}  // G42.18 ns repair
 }
 // 0x7187A0
 namespace gamemd {

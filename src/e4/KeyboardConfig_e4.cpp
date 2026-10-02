@@ -28,7 +28,7 @@
 #include "e4/classes/Targeting_e4.hpp"
 
 // 0x533D20
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int KeyboardConfig::LoadINI()
 {
 
@@ -116,6 +116,7 @@ LABEL_14:
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x538B80
 namespace gamemd {

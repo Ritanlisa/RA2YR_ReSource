@@ -38,7 +38,7 @@
 #include "e4/classes/Render_e4.hpp"
 
 // 0x4FCDC0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int TActionClass::executeBuildAction()
 {
 
@@ -59,6 +59,7 @@ int TActionClass::executeBuildAction()
   return result; /*0x4fcddb*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x50D2D0
 namespace gamemd {

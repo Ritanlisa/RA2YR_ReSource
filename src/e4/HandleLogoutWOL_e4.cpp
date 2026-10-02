@@ -6,7 +6,7 @@
 #include "e4/e4_protos.h"
 
 // 0x7AC500
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_7AC500(int a1)
 {
   int v2; // esi
@@ -62,4 +62,5 @@ int sub_7AC500(int a1)
   }
   return 0; /*0x7ac50e*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd

@@ -11,7 +11,7 @@
 #include "e4/classes/Main_e4.hpp"
 
 // 0x69D520
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -51,6 +51,7 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
   return Block->__pad_0; /*0x69d58b*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x69D770
 namespace gamemd {

@@ -9,13 +9,14 @@
 #include "e4/e4_protos.h"
 
 // 0x5CEAB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int MSPCXAnim::Stub()
 {
 
   return *((unsigned char *)this + 41); /*0x5ceab3*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5D09C0
 namespace gamemd {

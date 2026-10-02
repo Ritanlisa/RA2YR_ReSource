@@ -17,7 +17,7 @@
 #include "e4/classes/SyncDelayClass_e4.hpp"
 
 // 0x55E160
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void SyncDelay::Start(void *a1, void *a2)
 {
     unsigned int v1 = 0;  /* G37 hoist */
@@ -199,6 +199,7 @@ LABEL_44:
   return result; /*0x55e3fd*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x55F6C0
 namespace gamemd {

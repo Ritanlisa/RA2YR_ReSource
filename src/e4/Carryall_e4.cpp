@@ -25,7 +25,7 @@
 #include "e4/classes/InfantryClass_e4.hpp"
 
 // 0x416D50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 FootClass * * Carryall::MissionStateMachine()
 {
 
@@ -249,4 +249,5 @@ LABEL_44:
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

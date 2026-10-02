@@ -11,13 +11,14 @@
 #include "e4/classes/GadgetClass_e4.hpp"
 
 // 0x5D6350
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int DialogClass::GetFlag(void *a1)
 {
 
   return *((unsigned char *)this + 52); /*0x5d6353*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x775BC0
 namespace gamemd {

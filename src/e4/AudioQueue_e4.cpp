@@ -26,7 +26,7 @@
 #include "e4/classes/Voice_e4.hpp"
 
 // 0x402AF0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * AudioQueue::CreateNode()
 {
 
@@ -57,6 +57,7 @@ unsigned int * AudioQueue::CreateNode()
   return v2->__pad_0; /*0x402b44*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x4035F0
 namespace gamemd {

@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x6260D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * Block::Copy(const void * a2, void *a2_2)
 {
 
@@ -19,4 +19,5 @@ void * Block::Copy(const void * a2, void *a2_2)
   return result; /*0x6260e6*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

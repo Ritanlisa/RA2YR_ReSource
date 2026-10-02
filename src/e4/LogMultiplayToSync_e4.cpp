@@ -16,7 +16,7 @@
 #include "e4/classes/Time_e4.hpp"
 
 // 0x6516F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)
 {
   CellStruct * v3;
@@ -455,4 +455,5 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
         ((Debug *)this)->Log();
   }
 }
+}  // G42.18 ns repair
 }

@@ -41,7 +41,7 @@
 #include "e4/classes/LoadingScreen_e4.hpp"
 
 // 0x44F820
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Scenario::ReadTeams()
 {
 
@@ -353,6 +353,7 @@ int Scenario::ReadTeams()
   return (int)(result);
 
 }
+}  // G42.18 ns repair
 }
 // 0x4C6180
 namespace gamemd {

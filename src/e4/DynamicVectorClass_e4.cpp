@@ -30,7 +30,7 @@
 #include "e4/classes/EMPulseClass_e4.hpp"
 
 // 0x525110
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
 {
 
@@ -78,6 +78,7 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
   }
 
 }
+}  // G42.18 ns repair
 }
 // 0x589190
 namespace gamemd {

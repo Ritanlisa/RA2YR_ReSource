@@ -19,7 +19,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x697AD0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void BulkData::InitMissionHashing()
 {
 
@@ -49,4 +49,5 @@ void BulkData::InitMissionHashing()
   ((Debug *)this)->Log(); /*0x697b47*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

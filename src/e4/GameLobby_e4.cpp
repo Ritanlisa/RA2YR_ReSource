@@ -6,7 +6,7 @@
 #include "e4/e4_protos.h"
 
 // 0x5EA180
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void GameLobby_Setup(HWND hDlg, void * a2)
 {
   int i; // esi
@@ -91,4 +91,5 @@ void GameLobby_Setup(HWND hDlg, void * a2)
   EnableWindow(v7, 1); /*0x5ea28a*/
   return SetupSkirmishPlayerSlots(hDlg, a2, (HWND)1); /*0x5ea297*/
 }
+}  // G42.18 ns repair
 }

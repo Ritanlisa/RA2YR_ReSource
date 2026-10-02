@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x65CA00
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int RawFileClass::Dtor()
 {
     unsigned int v3 = 0;  /* G37 hoist */
@@ -51,6 +51,7 @@ int RawFileClass::Dtor()
   return result; /*0x65ca65*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x65CB30
 namespace gamemd {

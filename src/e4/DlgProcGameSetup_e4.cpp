@@ -14,7 +14,7 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x72B8E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char sub_72B8E0()
 {
   char result; // al
@@ -29,6 +29,7 @@ char sub_72B8E0()
   }
   return result; /*0x72b926*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x72B930

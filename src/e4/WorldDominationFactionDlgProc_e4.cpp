@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x7AF540
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int E4Recv_7AF540::sub_7AF540(HWND hWnd, int * a3)
 {
 
@@ -48,4 +48,5 @@ int E4Recv_7AF540::sub_7AF540(HWND hWnd, int * a3)
   return result; /*0x7af62f*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

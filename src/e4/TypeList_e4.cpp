@@ -24,7 +24,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x459F90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void TypeList_cptr_ParticleSystemTypeClass::GetClassIdentifier()
 {
 
@@ -41,6 +41,7 @@ void TypeList_cptr_ParticleSystemTypeClass::GetClassIdentifier()
   this->m_8 = 0; /*0x459fb4*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x459FC0

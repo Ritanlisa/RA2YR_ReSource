@@ -40,7 +40,7 @@
 #include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x6F0AB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
 {
   void *** v3;
@@ -383,6 +383,7 @@ v3 = (void ***)((int)((void ***)(0)));
   }
   return v40; /*0x6f0f66*/
 }
+}  // G42.18 ns repair
 }
 // 0x6F8960
 namespace gamemd {

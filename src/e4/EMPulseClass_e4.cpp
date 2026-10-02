@@ -9,13 +9,14 @@
 #include "e4/classes/Cell_e4.hpp"
 
 // 0x4C5AA0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int EMPulseClass::StubReturn52()
 {
 
   return 52; /*0x4c5aa5*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4C5AB0
 namespace gamemd {

@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4F3A70
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void GraphicMenuItem::Dtor(void *a1)
 {
 
@@ -23,4 +23,5 @@ void GraphicMenuItem::Dtor(void *a1)
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

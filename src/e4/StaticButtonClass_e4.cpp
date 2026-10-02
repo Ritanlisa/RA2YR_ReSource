@@ -12,7 +12,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x6C6880
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 StaticButtonClass * StaticButtonClass::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -29,4 +29,5 @@ StaticButtonClass * StaticButtonClass::QueryInterface(unsigned int * Block, char
   return Block->__pad_0; /*0x6c68ba*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

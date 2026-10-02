@@ -52,7 +52,7 @@
 #include "e4/classes/SidebarClass_e4.hpp"
 
 // 0x6DD8B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * TerrainClass_ProcessUpdate(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   char result; // al
@@ -1207,6 +1207,7 @@ LABEL_290:
   ((BuildingClass *)((BuildingTypeClass **)v117))->UnloadUnits(0, 0);
   return 1;
 }
+}  // G42.18 ns repair
 
 } // namespace gamemd
 

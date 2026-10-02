@@ -10,7 +10,7 @@
 #include "e4/classes/E4Recv_74F63A_e4.hpp"
 
 // 0x74F620
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void E4Recv_74F620::sub_74F620()
 {
 
@@ -21,6 +21,7 @@ void E4Recv_74F620::sub_74F620()
   __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0((Concurrency::details::_NonReentrantLock *)this); /*0x74f639*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x74F6F0

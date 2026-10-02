@@ -12,7 +12,7 @@
 #include "e4/classes/VoxelPalette_e4.hpp"
 
 // 0x7B7E40
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * Format)
 {
   size_t v5; // eax
@@ -33,4 +33,5 @@ wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * For
     wcscpy((wchar_t *)(*aP0), String); /*0x7b7eb5*/
   return (wchar_t **)(aP0); /*0x7b7ebf*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd

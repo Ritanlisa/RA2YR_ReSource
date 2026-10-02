@@ -31,7 +31,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x6691E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Rules::ReadMiscINI()
 {
 
@@ -88,6 +88,7 @@ int Rules::ReadMiscINI()
   int v52; // eax
   in... [74313 chars total]
 }
+}  // G42.18 ns repair
 
 } // namespace gamemd
 

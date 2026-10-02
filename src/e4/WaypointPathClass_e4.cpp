@@ -18,7 +18,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x763730
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int WaypointPathClass::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
     unsigned int v2 = 0;  /* G37 hoist */
@@ -56,6 +56,7 @@ int WaypointPathClass::Init(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   return (int)this; /*0x7637cd*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x763810
 namespace gamemd {

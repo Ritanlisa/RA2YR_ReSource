@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x68C8D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ColorScheme::Destructor(void *a1)
 {
 
@@ -40,4 +40,5 @@ int ColorScheme::Destructor(void *a1)
   return result; /*0x68c925*/
 
 }
+}  // G42.18 ns repair
 }

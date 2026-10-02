@@ -43,7 +43,7 @@
 #include "e4/classes/Init_e4.hpp"
 
 // 0x560BF0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
 {
   uint64_t v2; // rdi
@@ -261,6 +261,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x560dc2*/
   return 0; /*0x560dc7*/
 }
+}  // G42.18 ns repair
 }
 // 0x561400
 namespace gamemd {

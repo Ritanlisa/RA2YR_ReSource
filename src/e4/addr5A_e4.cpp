@@ -62,7 +62,7 @@
 #include "e4/classes/TerrainClass_e4.hpp"
 
 // 0x5A1350
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Terrain_SelectTileVariant(int a1)
 {
   int v1; // eax
@@ -242,6 +242,7 @@ void Terrain_SelectTileVariant(int a1)
       return g_TerrainBuildConfig + v1;
   }
 }
+}  // G42.18 ns repair
 }
 // 0x5A19E0
 namespace gamemd {
@@ -4469,7 +4470,7 @@ float * MultiplyMatrix3x4(ObjectClass * aP0, float *a1, float *a2)
   return result; /*0x5afb74*/
 }
 // 0x5A1190
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 double sub_5A1190(short * a1, short * a2, double a3)
 {
   int v3; // esi
@@ -4502,6 +4503,7 @@ double sub_5A1190(short * a1, short * a2, double a3)
     v9 = 6.283185307179586 - v5; /*0x5a1224*/
   return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 2.328306437080797e-10 * 2.0 + 1.5 * v9; /*0x5a125c*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x5A2ED0

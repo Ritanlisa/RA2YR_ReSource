@@ -14,7 +14,7 @@
 #include "e4/classes/Movie_e4.hpp"
 
 // 0x7BA8C0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
 {
 
@@ -209,6 +209,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
   return v13; /*0x7bab23*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x7BAB90
 namespace gamemd {

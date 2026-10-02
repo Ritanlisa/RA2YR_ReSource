@@ -9,7 +9,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x75A790
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void AnimSystem::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
@@ -29,4 +29,5 @@ void AnimSystem::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6
   return result; /*0x75a7bc*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

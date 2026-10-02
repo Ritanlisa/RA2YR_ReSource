@@ -37,7 +37,7 @@
 #include "e4/classes/WaveClass_e4.hpp"
 
 // 0x45DD90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int BuildingTypeClass::ConstructFull(char * Source, void *a2)
 {
 
@@ -400,6 +400,7 @@ LABEL_11:
   return this; /*0x45e508*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x45E520
 namespace gamemd {

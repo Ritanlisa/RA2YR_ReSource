@@ -17,7 +17,7 @@
 #include "e4/classes/PacketQueue_e4.hpp"
 
 // 0x48B750
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5, void *a5_2)
 {
 
@@ -78,6 +78,7 @@ LABEL_9:
   return 1; /*0x48b7a2*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x48BA10
 namespace gamemd {

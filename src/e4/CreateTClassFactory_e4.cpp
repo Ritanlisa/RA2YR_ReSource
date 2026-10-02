@@ -84,7 +84,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x6BF8D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int E4Recv_6BF8D0::CreateTClassFactory_CellClass(void * a1, void * a2, void * a3)
 {
 
@@ -101,6 +101,7 @@ int E4Recv_6BF8D0::CreateTClassFactory_CellClass(void * a1, void * a2, void * a3
   return 0; /*0x6bf8de*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x6BFA50

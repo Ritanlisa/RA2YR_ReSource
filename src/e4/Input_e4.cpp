@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4810A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Input::OffsetToDirection()
 {
 
@@ -50,4 +50,5 @@ int Input::OffsetToDirection()
   return result; /*0x4810f2*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

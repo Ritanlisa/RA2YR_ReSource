@@ -16,7 +16,7 @@
 #include "e4/classes/CursorPositionCommandClass_e4.hpp"
 
 // 0x7BF740
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int DSP_AudioMixBuffers(int a1, int a2)
 {
   DSurface *v11; // esi
@@ -726,6 +726,7 @@ LABEL_73:
   }
   return -2;
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x7C0C80

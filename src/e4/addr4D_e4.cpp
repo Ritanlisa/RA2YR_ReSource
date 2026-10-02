@@ -33,7 +33,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 
 // 0x4D1650
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
 {
   int v2; // eax
@@ -134,6 +134,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
 // 0x4101f0
   return AbstractClass::DTOR(aP0); /*0x4d187e*/
 }
+}  // G42.18 ns repair
 }
 // 0x4D2370
 namespace gamemd {

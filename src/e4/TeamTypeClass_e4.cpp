@@ -43,7 +43,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 
 // 0x4C98B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
@@ -113,6 +113,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   return (int)this; /*0x4c99fd*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x691C00
 namespace gamemd {

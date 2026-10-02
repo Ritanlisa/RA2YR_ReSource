@@ -10,7 +10,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x76F470
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3)
 {
   void * v5;
@@ -42,4 +42,5 @@ v5 = (void *)((int)(RA2_OPNEW(0x14u)));
   ((ComPtr *)(a1))->Set(v6); /*0x76f4ee*/
   return a1; /*0x76f4f5*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd

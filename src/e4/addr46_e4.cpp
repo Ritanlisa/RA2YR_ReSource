@@ -31,13 +31,14 @@
 #include "e4/classes/Settings_e4.hpp"
 
 // 0x46D350
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void E4Recv_46D350::sub_46D350()
 {
 
   this->m_0 = (int)&vt_CampaignScoreClass; /*0x46d350*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x46D650

@@ -11,7 +11,7 @@
 #include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x6915F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ScriptClass::ddtor(int a1, unsigned int * a2)
 {
 
@@ -24,6 +24,7 @@ int ScriptClass::ddtor(int a1, unsigned int * a2)
   return 0; /*0x6915fd*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x691630

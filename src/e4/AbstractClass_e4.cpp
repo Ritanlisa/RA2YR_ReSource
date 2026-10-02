@@ -36,7 +36,7 @@
 struct Type;  // fix_tu_missing_types
 
 // 0x438E70
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
 {
 
@@ -119,6 +119,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
   }
 
 }
+}  // G42.18 ns repair
 }
 // 0x44B760
 namespace gamemd {

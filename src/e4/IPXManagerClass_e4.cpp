@@ -10,7 +10,7 @@
 #include "e4/classes/IPXInterfaceClass_e4.hpp"
 
 // 0x540D80
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int IPXManagerClass::sendPacket(int a2, int a3, int a4)
 {
 
@@ -35,6 +35,7 @@ int IPXManagerClass::sendPacket(int a2, int a3, int a4)
   return result; /*0x540dba*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x541040
 namespace gamemd {

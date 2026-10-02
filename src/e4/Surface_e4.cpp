@@ -25,13 +25,14 @@
 #include "e4/classes/FileSystem_e4.hpp"
 
 // 0x411580
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Surface::IsLocked()
 {
 
   return this->LockCount != 0; /*0x41158a*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5D1FD0
 namespace gamemd {

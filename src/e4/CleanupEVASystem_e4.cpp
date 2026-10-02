@@ -10,7 +10,7 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x72DC20
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void sub_72DC20()
 {
   void *v0; // esi
@@ -63,4 +63,5 @@ void sub_72DC20()
   }
   dword_B0FA6C = 0; /*0x72dcda*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd

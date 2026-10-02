@@ -31,7 +31,7 @@
 #include "e4/classes/Init_e4.hpp"
 
 // 0x4A8BF0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Mouse::SetBounds(const void *aP1)
 {
 
@@ -82,6 +82,7 @@ int Mouse::SetBounds(const void *aP1)
   return result; /*0x4a8d17*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x5BDC80
 namespace gamemd {

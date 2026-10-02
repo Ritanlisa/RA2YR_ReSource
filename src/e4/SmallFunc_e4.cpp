@@ -44,7 +44,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x6F19B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
 {
   int result; // eax
@@ -87,6 +87,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   }
   return (gamemd::TeamTypeClass **)(result);
 }
+}  // G42.18 ns repair
 }
 // 0x40D1B0
 namespace gamemd {

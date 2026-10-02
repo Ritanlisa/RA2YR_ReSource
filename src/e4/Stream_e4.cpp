@@ -21,7 +21,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 
 // 0x439110
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Stream::FlushAndReset()
 {
 
@@ -44,6 +44,7 @@ int Stream::FlushAndReset()
   return ((int (*)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_0C, 0); /*0x439145*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x49FB70
 namespace gamemd {

@@ -22,13 +22,14 @@
 #include "e4/classes/Theme_e4.hpp"
 
 // 0x48ACF0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 double RulesClass::GetFiringDistance()
 {
 
   return (double)*((int *)dword_8871E0 + 1454) * 0.5; /*0x48ad01*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x538B30

@@ -29,7 +29,7 @@
 #include "e4/classes/LayerClass_e4.hpp"
 
 // 0x663D60
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Factory::GetLinkedIndex(int aP1)
 {
 
@@ -66,6 +66,7 @@ LABEL_9:
   return result; /*0x663d6c*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x718B70
 namespace gamemd {

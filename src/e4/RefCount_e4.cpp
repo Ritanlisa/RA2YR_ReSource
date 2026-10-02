@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x401F90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int32_t RefCount::Decrement(void *a1)
 {
 
@@ -20,6 +20,7 @@ int32_t RefCount::Decrement(void *a1)
   return result; /*0x401fa2*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x49FA00
 namespace gamemd {

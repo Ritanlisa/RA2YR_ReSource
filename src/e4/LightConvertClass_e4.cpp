@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x490E50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int LightConvertClass::SelectRLEBlitter(IUnknown * aP1)
 {
 
@@ -189,4 +189,5 @@ int LightConvertClass::SelectRLEBlitter(IUnknown * aP1)
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

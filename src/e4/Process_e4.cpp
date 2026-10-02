@@ -9,7 +9,7 @@
 #include "e4/e4_protos.h"
 
 // 0x664610
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 bool Process::WaitForExit(DWORD dwMilliseconds, char aP2)
 {
 
@@ -43,4 +43,5 @@ bool Process::WaitForExit(DWORD dwMilliseconds, char aP2)
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

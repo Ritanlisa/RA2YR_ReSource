@@ -14,7 +14,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 
 // 0x48E620
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Control::DispatchClick(int aP1)
 {
 
@@ -26,6 +26,7 @@ int Control::DispatchClick(int aP1)
   return GadgetClass::ClearState((ShpButtonClass *)this, aP1); /*0x48e63d*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x60B950
 namespace gamemd {

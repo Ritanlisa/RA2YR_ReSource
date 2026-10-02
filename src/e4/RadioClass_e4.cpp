@@ -16,7 +16,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x65A750
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 _DWORD * RadioClass::Release(void *a1)
 {
 
@@ -39,6 +39,7 @@ _DWORD * RadioClass::Release(void *a1)
   return this; /*0x65a7d8*/
 
 }
+}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x65AA80

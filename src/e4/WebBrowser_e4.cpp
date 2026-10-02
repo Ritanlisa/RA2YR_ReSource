@@ -24,7 +24,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x773600
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int WebBrowser::LoadURLFromRegistry(const char * a2)
 {
 
@@ -81,6 +81,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   return 1; /*0x77381e*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x773E90
 namespace gamemd {

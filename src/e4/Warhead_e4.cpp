@@ -45,7 +45,7 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x41D7E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Warhead::GetWarheadSound(int a2)
 {
 
@@ -58,6 +58,7 @@ int Warhead::GetWarheadSound(int a2)
   return !*((unsigned int *)this + 60) && v3 + *((unsigned int *)this + 16) <= (int)dword_A8ED84 || a2 != *((unsigned int *)this + 20); /*0x41d814*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x452820
 namespace gamemd {

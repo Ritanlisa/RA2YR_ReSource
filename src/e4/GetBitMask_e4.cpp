@@ -6,11 +6,12 @@
 #include "e4/e4_protos.h"
 
 // 0x4BBC50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int GetBitMask_Green()
 {
   return g_BitMask_Green; /*0x4bbc55*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x4BBC60

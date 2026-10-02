@@ -11,7 +11,7 @@
 #include "e4/classes/BlitTransXlatAlphaZRead_ushort_e4.hpp"
 
 // 0x493930
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 
@@ -47,6 +47,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
   return result; /*0x4939c9*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x493A60
 namespace gamemd {

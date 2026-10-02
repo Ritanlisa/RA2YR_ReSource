@@ -19,7 +19,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 
 // 0x4CC9A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int FlyLocomotionClass::LocomotionClass()
 {
 
@@ -52,6 +52,7 @@ int FlyLocomotionClass::LocomotionClass()
   return (int)this->LocomotionClass; /*0x4cca1e*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4CFE80
 namespace gamemd {

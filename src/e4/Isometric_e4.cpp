@@ -15,7 +15,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x47B3A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * Isometric::InitTables(IUnknown * aP1, void *a2)
 {
 
@@ -216,4 +216,5 @@ AbstractClass * Isometric::InitTables(IUnknown * aP1, void *a2)
   return (gamemd::AbstractClass *)(result);
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

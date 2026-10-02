@@ -19,7 +19,7 @@
 #include "e4/classes/RawFileClass_e4.hpp"
 
 // 0x473AE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 {
 
@@ -35,6 +35,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
   return FileClass::BufferedWriter(int a1,(char *) aP1, nNumberOfBytesToWrite); /*0x473b0c*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x473FC0
 namespace gamemd {

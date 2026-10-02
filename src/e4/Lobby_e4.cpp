@@ -20,7 +20,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x4E5D60
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Lobby::InvalidatePlayerSlots(HWND hDlg)
 {
 
@@ -75,6 +75,7 @@ int Lobby::InvalidatePlayerSlots(HWND hDlg)
   return result; /*0x4e5e0e*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5EB060
 namespace gamemd {

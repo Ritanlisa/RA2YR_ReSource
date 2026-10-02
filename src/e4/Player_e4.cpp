@@ -14,7 +14,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x5E8DC0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Player::BuildListString(wchar_t * Destination)
 {
 
@@ -58,6 +58,7 @@ void Player::BuildListString(wchar_t * Destination)
   while ( (int)v2 < (int)&dword_A8DAB0 ); /*0x5e8e89*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5E8BF0
 namespace gamemd {

@@ -14,7 +14,7 @@
 #include "e4/classes/MSEngine_e4.hpp"
 
 // 0x5D55A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 {
 
@@ -118,6 +118,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   return (gamemd::AbstractClass **)(1); /*0x5d5688*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x5D3450
 MSFont * MSFont::QueryInterface(void * Block, char a2)

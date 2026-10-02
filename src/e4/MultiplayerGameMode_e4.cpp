@@ -19,7 +19,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x5D89F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int a2, int a3, void *a3_2)
 {
 
@@ -41,6 +41,7 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
   return (unsigned int *)(this->__pad_0);
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5D7F20
 namespace gamemd {

@@ -10,7 +10,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x7A19E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void sub_7A19E0()
 {
   wchar_t *StringCSF; // eax
@@ -100,4 +100,5 @@ void sub_7A19E0()
   Dialog::ShowMessage(12648447, (size_t)v8); /*0x7a1b90*/
   DeleteAndZero(&v12); /*0x7a1b9c*/
 }
+}  // G42.18 ns repair
 }

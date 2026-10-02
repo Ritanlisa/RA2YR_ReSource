@@ -21,7 +21,7 @@
 #include "e4/classes/OverlayTypeClass_e4.hpp"
 
 // 0x4355B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned char * Palette::Palette_6BitTo16Bit(char a2, char a3, char a4)
 {
 
@@ -31,6 +31,7 @@ unsigned char * Palette::Palette_6BitTo16Bit(char a2, char a3, char a4)
   return this->m_Colors; /*0x4355c6*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x642130
 namespace gamemd {

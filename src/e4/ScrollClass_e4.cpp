@@ -17,7 +17,7 @@
 #include "e4/classes/ScriptTypeClass_e4.hpp"
 
 // 0x6922E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 {
 
@@ -25,6 +25,7 @@ int ScrollClass::Scroll(int * a1, MouseClass * aP2)
   return ((BlowStraw_29 *)((TabClass *)this))->Seek(a1,(unsigned int *)(aP2)); /*0x6922f9*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x6938F0
 namespace gamemd {

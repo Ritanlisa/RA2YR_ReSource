@@ -34,7 +34,7 @@
 #include "e4/classes/Theme_e4.hpp"
 
 // 0x4791F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4, void * a1, void * a2)
 {
 
@@ -228,6 +228,7 @@ LABEL_60:
   return Map_Load_751C30(); /*0x479390*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x556600
 namespace gamemd {

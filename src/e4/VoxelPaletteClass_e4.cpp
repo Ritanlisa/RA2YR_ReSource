@@ -17,7 +17,7 @@
 #include "e4/classes/VoxelPalette_e4.hpp"
 
 // 0x758A30
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int VoxelPaletteClass::ConvertFromFile(int a2)
 {
 
@@ -54,6 +54,7 @@ LABEL_5:
   return v3; /*0x758ab8*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x753B70
 namespace gamemd {

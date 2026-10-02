@@ -29,7 +29,7 @@
 #include "e4/classes/E4Recv_7ACB90_e4.hpp"
 
 // 0x48D080
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Event::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 {
 
@@ -88,6 +88,7 @@ LABEL_11:
   return result; /*0x48d1bf*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x5E2FA0
 namespace gamemd {

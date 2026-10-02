@@ -21,7 +21,7 @@
 #include "e4/classes/FootClass_e4.hpp"
 
 // 0x4AF540
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int LocomotionClass::Initialize()
 {
 
@@ -59,6 +59,7 @@ int LocomotionClass::Initialize()
   return (int)this->ILocomotion; /*0x4af5d8*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4C54A0
 namespace gamemd {

@@ -22,7 +22,7 @@
 #include "e4/classes/Flag_e4.hpp"
 
 // 0x7A3D90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ComStreamClass::Write(void * a1, void * a2, void * a3)
 {
     unsigned int v5 = 0;  /* G37 hoist */
@@ -145,6 +145,7 @@ LABEL_16:
   return 0; /*0x7a4054*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x7AC820
 namespace gamemd {

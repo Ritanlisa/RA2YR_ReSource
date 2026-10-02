@@ -35,7 +35,7 @@
 #include "e4/classes/SuperWeaponTypeClass_e4.hpp"
 
 // 0x41EC90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
 {
 
@@ -120,6 +120,7 @@ LABEL_12:
   return result; /*0x41ecdc*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x41EE90
 namespace gamemd {

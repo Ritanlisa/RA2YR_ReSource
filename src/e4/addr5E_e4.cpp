@@ -45,7 +45,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 
 // 0x5E2820
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int DrawDialogText(LPARAM aP0, wchar_t *a1, HWND hWnd)
 {
   wchar_t *v3; // esi
@@ -137,6 +137,7 @@ int DrawDialogText(LPARAM aP0, wchar_t *a1, HWND hWnd)
   }
   return ReleaseDC((HWND)(v4), hDC); /*0x5e2996*/
 }
+}  // G42.18 ns repair
 }
 // 0x5E2AC0
 namespace gamemd {

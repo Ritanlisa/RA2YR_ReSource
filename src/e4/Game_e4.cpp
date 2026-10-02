@@ -35,7 +35,7 @@
 #include "e4/classes/Stream_e4.hpp"
 
 // 0x430980
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Game::initScenario(void *a1_1)
 {
 
@@ -68,6 +68,7 @@ void Game::initScenario(void *a1_1)
   }
 
 }
+}  // G42.18 ns repair
 }
 // 0x46D4A0
 namespace gamemd {

@@ -61,7 +61,7 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x650A90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Trigger_AllocateLog(int a1)
 {
   int result; // eax
@@ -514,6 +514,7 @@ int Trigger_AllocateLog(int a1)
   }
   return result;
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x652630
@@ -1037,7 +1038,7 @@ int RAMFileClass::nullsub_0_2(int a2)
 
 }
 // 0x65C3A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * *  RAMFileClass::nullsub_0_3(void * a1, signed int Size)
 {
 
@@ -1072,6 +1073,7 @@ LABEL_7:
   return v4; /*0x65c40e*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x65C420
 namespace gamemd {
@@ -1126,7 +1128,7 @@ int RAMFileClass::nullsub_0_6(int a2)
 
 }
 // 0x65C5A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * RAMFileClass::nullsub_0_10(char a2)
 {
 
@@ -1147,6 +1149,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
   return this; /*0x65c5e4*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x65C630
 namespace gamemd {

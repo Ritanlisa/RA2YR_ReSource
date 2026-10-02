@@ -12,7 +12,7 @@
 #include "e4/e4_protos.h"
 
 // 0x512F20
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int InfantryTypeVector::Add(InfantryTypeClass * aP1, void *a2, void *a3)
 {
 
@@ -43,6 +43,7 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1, void *a2, void *a3)
   return 1; /*0x512f51*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5138F0
 namespace gamemd {

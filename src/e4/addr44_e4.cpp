@@ -12,7 +12,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x44F6E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
 {
 
@@ -48,6 +48,7 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
   return a2; /*0x44f78d*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x44FE60

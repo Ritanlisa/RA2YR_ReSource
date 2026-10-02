@@ -44,7 +44,7 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x5835D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
 {
     unsigned int v18 = 0;  /* G37 hoist */
@@ -164,6 +164,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
     return (gamemd::VectorClass_flat **)(a0);
   }
 }
+}  // G42.18 ns repair
 }
 // 0x583AD0
 namespace gamemd {

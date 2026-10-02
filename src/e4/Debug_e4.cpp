@@ -15,7 +15,7 @@
 #include "e4/classes/Coord_e4.hpp"
 
 // 0x5BD0D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Debug::ScrollText(const char *aP1)
 {
 
@@ -77,6 +77,7 @@ void Debug::ScrollText(const char *aP1)
   return result; /*0x5bd1e8*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x6E61F0
 namespace gamemd {

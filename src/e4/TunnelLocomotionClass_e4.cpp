@@ -19,7 +19,7 @@
 #include "e4/classes/SwizzleManager_e4.hpp"
 
 // 0x728C00
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
 {
 
@@ -168,6 +168,7 @@ LABEL_8:
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x72A110
 namespace gamemd {

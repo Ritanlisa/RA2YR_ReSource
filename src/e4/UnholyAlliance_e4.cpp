@@ -20,7 +20,7 @@
 #include "e4/classes/MPCooperative_e4.hpp"
 
 // 0x5CB440
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * UnholyAlliance_GetResult()
 {
   char v2; // bl
@@ -85,6 +85,7 @@ AbstractClass * * UnholyAlliance_GetResult()
   }
   return (gamemd::AbstractClass **)(v2 == 0);
 }
+}  // G42.18 ns repair
 }
 // 0x5CB540
 UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)

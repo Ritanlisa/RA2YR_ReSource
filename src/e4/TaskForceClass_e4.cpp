@@ -27,7 +27,7 @@
 #include "e4/classes/TypeClass_e4.hpp"
 
 // 0x4C4EF0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
 {
 
@@ -70,6 +70,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
   }
 
 }
+}  // G42.18 ns repair
 }
 // 0x6E7E80
 namespace gamemd {

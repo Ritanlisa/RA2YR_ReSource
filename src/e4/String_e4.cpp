@@ -19,7 +19,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x49B760
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int String::AssignWideToChar(char *aP1, char *aP2)
 {
 
@@ -50,6 +50,7 @@ int String::AssignWideToChar(char *aP1, char *aP2)
   return result; /*0x49b7c5*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x4CB5E0
 namespace gamemd {

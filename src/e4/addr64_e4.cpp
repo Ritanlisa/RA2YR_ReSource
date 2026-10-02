@@ -62,7 +62,7 @@
 #include "e4/classes/IPXManagerClass_e4.hpp"
 
 // 0x6406E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void ObjectClass::unknown_libname_27()
 {
 
@@ -70,6 +70,7 @@ void ObjectClass::unknown_libname_27()
   return this; /*0x6406e8*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x645B60
 namespace gamemd {

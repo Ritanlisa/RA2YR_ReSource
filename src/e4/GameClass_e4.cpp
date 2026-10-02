@@ -39,7 +39,7 @@
 #include "e4/classes/RawFileClass_e4.hpp"
 
 // 0x437FD0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void GameClass::initGameMode(int a2, int a3)
 {
 
@@ -48,6 +48,7 @@ void GameClass::initGameMode(int a2, int a3)
   return (*(int (**)(unsigned int, int, int))(**(unsigned int **)this->__pad_0 + 12))(*(unsigned int *)this->__pad_0, a3, a2); /*0x437ff4*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x4381D0
 namespace gamemd {

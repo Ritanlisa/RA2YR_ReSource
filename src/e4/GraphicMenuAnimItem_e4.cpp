@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4F3FD0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 VectorCursor * GraphicMenuAnimItem::Constructor(std::locale::facet *a1, char a2, void *a3, void *a4, void *a5) 
 {
 
@@ -17,4 +17,5 @@ VectorCursor * GraphicMenuAnimItem::Constructor(std::locale::facet *a1, char a2,
   return (gamemd::VectorCursor *)((std::locale::facet *)a1); /*0x4f3fec*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

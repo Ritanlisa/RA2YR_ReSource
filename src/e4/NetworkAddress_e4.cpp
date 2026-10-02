@@ -10,7 +10,7 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x53ECE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, int16_t a4)
 {
 
@@ -33,4 +33,5 @@ int NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, int16_t a4)
   return (int)(result); /*0x53ecf3*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

@@ -17,7 +17,7 @@
 #include "e4/classes/Flag_e4.hpp"
 
 // 0x5D4B20
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5)
 {
 
@@ -79,6 +79,7 @@ LABEL_18:
   return v9; /*0x5d4b2b*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x7B73F0
 namespace gamemd {

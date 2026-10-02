@@ -13,7 +13,7 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x5EE1B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Config::SaveObserverMode()
 {
 
@@ -25,4 +25,5 @@ void Config::SaveObserverMode()
   ((RawFileClass *)(v0))->Dtor(); /*0x5ee1f2*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

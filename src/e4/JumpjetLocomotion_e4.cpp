@@ -29,7 +29,7 @@
 #include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x4B0AD0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
 {
 
@@ -124,6 +124,7 @@ AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
   return (gamemd::AbstractClass *)(v5);
 
 }
+}  // G42.18 ns repair
 }
 // 0x4B0F20
 namespace gamemd {

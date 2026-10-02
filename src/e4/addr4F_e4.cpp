@@ -67,7 +67,7 @@
 #include "e4/classes/MSVQAnim_e4.hpp"
 
 // 0x4F10E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int InGameUI_Open()
 {
   uint16_t v0; // cx
@@ -115,6 +115,7 @@ int InGameUI_Open()
     ScenarioClass::ShowMissionBriefing(dword_A8B230); /*0x4f1191*/
   return ((MapClass *)(2))->MarkForRedraw(); /*0x4f11a2*/
 }
+}  // G42.18 ns repair
 }
 // 0x4F1840
 namespace gamemd {

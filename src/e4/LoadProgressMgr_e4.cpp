@@ -9,7 +9,7 @@
 #include "e4/e4_protos.h"
 
 // 0x72B460
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void sub_72B460()
 {
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[972] ) /*0x72b46a*/
@@ -49,6 +49,7 @@ void sub_72B460()
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[992] = 0; /*0x72b4e7*/
   }
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x72B870

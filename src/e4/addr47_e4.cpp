@@ -42,7 +42,7 @@
 #include "e4/classes/MixFileClass_e4.hpp"
 
 // 0x472A80
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void _DynamicVectorClass_PAUControlNode::CaptureManagerClass__vt_03_()
 {
 
@@ -59,6 +59,7 @@ void _DynamicVectorClass_PAUControlNode::CaptureManagerClass__vt_03_()
   this->m_8 = 0; /*0x472aa4*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x472AD0
 namespace gamemd {

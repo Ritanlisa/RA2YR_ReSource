@@ -11,7 +11,7 @@
 #include "e4/e4_protos.h"
 
 // 0x5023B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * Waypoint::FindByCell(IUnknown * aP1)
 {
 
@@ -60,6 +60,7 @@ LABEL_12:
   }
 
 }
+}  // G42.18 ns repair
 }
 // 0x53ECB0
 namespace gamemd {

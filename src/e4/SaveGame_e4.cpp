@@ -20,7 +20,7 @@
 #include "e4/classes/VocClass_e4.hpp"
 
 // 0x4391C0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int SaveGame::LoadArrayData(int * a2)
 {
 
@@ -76,6 +76,7 @@ LABEL_5:
   return result; /*0x43924e*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x54E750
 namespace gamemd {

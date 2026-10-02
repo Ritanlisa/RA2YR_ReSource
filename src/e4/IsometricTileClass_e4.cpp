@@ -11,6 +11,7 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 
 // 0x543780
+namespace gamemd {  // G42.18 ns repair
 IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileClass * aP2)
 {
 
@@ -41,4 +42,4 @@ IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileCl
   }
   return this; /*0x543876*/
 
-}
+}}  // G42.18 ns repair

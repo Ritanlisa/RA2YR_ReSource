@@ -14,7 +14,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x557AC0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Array::GetClamped(int aP1)
 {
 
@@ -34,6 +34,7 @@ int Array::GetClamped(int aP1)
   return result; /*0x557ac7*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x634290
 namespace gamemd {

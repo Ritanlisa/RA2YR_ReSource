@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x487F40
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 {
 
@@ -74,6 +74,7 @@ void Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x42E410
 namespace gamemd {

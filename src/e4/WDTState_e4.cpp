@@ -9,7 +9,7 @@
 #include "e4/e4_protos.h"
 
 // 0x76BA70
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
 {
 
@@ -103,6 +103,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   return (gamemd::AbstractClass **)(1); /*0x76bb79*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x76B710
 namespace gamemd {

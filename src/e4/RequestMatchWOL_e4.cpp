@@ -6,9 +6,10 @@
 #include "e4/e4_protos.h"
 
 // 0x7B0370
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int * sub_7B0370()
 {
   return (int *)(&stru_B77F68);
 }
+}  // G42.18 ns repair
 } // namespace gamemd

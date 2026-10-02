@@ -12,7 +12,7 @@
 #include "e4/classes/Object_e4.hpp"
 
 // 0x5361A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 _DWORD * CenterTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
 
@@ -21,6 +21,7 @@ _DWORD * CenterTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, vo
   return this->CommandClass; /*0x5361af*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5361C0
 namespace gamemd {

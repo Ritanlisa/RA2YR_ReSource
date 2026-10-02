@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x6CC260
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Super::GetDefaultTimer(void *a1_1)
 {
 
@@ -19,4 +19,5 @@ int Super::GetDefaultTimer(void *a1_1)
   return result; /*0x6cc271*/
 
 }
+}  // G42.18 ns repair
 }

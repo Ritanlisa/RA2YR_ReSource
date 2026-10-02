@@ -30,7 +30,7 @@
 #include "e4/classes/Transform_e4.hpp"
 
 // 0x73C5F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
   void * v13;
@@ -404,4 +404,5 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   }
   return result; /*0x73ce00*/
 }
+}  // G42.18 ns repair
 }

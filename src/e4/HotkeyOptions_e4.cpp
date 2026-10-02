@@ -24,7 +24,7 @@
 #include "e4/classes/ParticleSystemClass_32_e4.hpp"
 
 // 0x5FB320
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
 {
 
@@ -74,6 +74,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   LRESULT v47; // eax
  ... [22198 chars total]
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x5FC120

@@ -21,7 +21,7 @@
 #include "e4/classes/Function_e4.hpp"
 
 // 0x43B5E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
 {
 
@@ -48,6 +48,7 @@ void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
   return v9; /*0x43b66a*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x459840
 namespace gamemd {
@@ -854,7 +855,7 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
 }
 
 // 0x4F9A50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int HouseClass::IsAlliedWith()
 {
 
@@ -884,6 +885,7 @@ LABEL_8:
   return result; /*0x4f9a60*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x4FBE40
 namespace gamemd {
@@ -2142,7 +2144,7 @@ LABEL_56:
 }
 
 // 0x508C30
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int HouseClass::UpdatePower()
 {
 
@@ -2281,6 +2283,7 @@ LABEL_34:
   return result; /*0x508de7*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x508DF0
 namespace gamemd {

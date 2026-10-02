@@ -30,7 +30,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x7B0D90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
@@ -44,6 +44,7 @@ int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a
   return (int)(&this->Socket); /*0x7b0dce*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x7B0DD0
 namespace gamemd {

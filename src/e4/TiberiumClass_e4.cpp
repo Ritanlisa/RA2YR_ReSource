@@ -25,7 +25,7 @@
 #include "e4/classes/AnimTypeClass_e4.hpp"
 
 // 0x5A0160
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
 
@@ -154,6 +154,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   return 1; /*0x5a03d2*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x7216C0
 namespace gamemd {

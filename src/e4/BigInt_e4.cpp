@@ -6,7 +6,7 @@
 #include "e4/e4_protos.h"
 
 // 0x5C65B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_5C65B0(int * a1, int a2)
 {
   int result; // eax
@@ -21,4 +21,5 @@ int sub_5C65B0(int * a1, int a2)
   }
   return result; /*0x5c65c4*/
 }
+}  // G42.18 ns repair
 } // namespace gamemd

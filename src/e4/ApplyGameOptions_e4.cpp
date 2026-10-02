@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x6B8AF0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 bool E4Recv_6B8AF0::sub_6B8AF0(unsigned int * a2)
 {
 
@@ -17,4 +17,5 @@ bool E4Recv_6B8AF0::sub_6B8AF0(unsigned int * a2)
   return !(unsigned char)v2 && (v2 & 0x7FF00) == 0; /*0x6b8b07*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

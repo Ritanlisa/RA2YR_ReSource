@@ -9,7 +9,7 @@
 #include "e4/classes/ListClass_e4.hpp"
 
 // 0x557AE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ColorListClass::SetColor()
 {
 
@@ -22,6 +22,7 @@ int ColorListClass::SetColor()
     return 0; /*0x557aed*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x557F40
 namespace gamemd {

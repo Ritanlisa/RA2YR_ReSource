@@ -9,7 +9,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x4C9480
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int TimerClass::Active()
 {
 
@@ -29,6 +29,7 @@ int TimerClass::Active()
   return v2 != 0; /*0x4c94a9*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x54FE60
 namespace gamemd {

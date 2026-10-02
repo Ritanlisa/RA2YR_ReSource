@@ -12,9 +12,10 @@
 #include "e4/classes/IStream_e4.hpp"
 
 // 0x7C8A10
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ImageList_DragShowNolock()
 {
   return ImageList_DragShowNolock(fShow);
 }
+}  // G42.18 ns repair
 }

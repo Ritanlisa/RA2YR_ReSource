@@ -50,7 +50,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x52B6D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_52B6D0(int a1, int a2, int * a3)
 {
   int v3; // esi
@@ -79,6 +79,7 @@ int sub_52B6D0(int a1, int a2, int * a3)
   }
   return a1 + 8 * (v3 / 2); /*0x52b704*/
 }
+}  // G42.18 ns repair
 }
 // 0x53E720
 namespace gamemd {

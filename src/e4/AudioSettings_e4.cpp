@@ -27,7 +27,7 @@
 #include "e4/classes/RulesClass_e4.hpp"
 
 // 0x5FA440
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void AudioSettings::SetFlag70(char a2)
 {
 
@@ -36,6 +36,7 @@ void AudioSettings::SetFlag70(char a2)
   ((Debug *)this)->Log(); /*0x5fa463*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5FA470
 namespace gamemd {

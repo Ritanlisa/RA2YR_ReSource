@@ -26,7 +26,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x539EB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int LightningStorm::Start(int a1, int a2, int a3, void * a4)
 {
 
@@ -96,6 +96,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
   return result; /*0x539f76*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x53A100
 namespace gamemd {

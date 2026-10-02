@@ -38,7 +38,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x71A450
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int TemporalClass::Constructor(void *a1, void *a2, void *a3)
 {
 
@@ -67,6 +67,7 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3)
   return (int)this; /*0x71a4d8*/
 
 }
+}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x71A4E0

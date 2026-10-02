@@ -19,7 +19,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x52B620
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int SortedArray::BinarySearch(int *aP1)
 {
 
@@ -64,6 +64,7 @@ int SortedArray::BinarySearch(int *aP1)
   return result; /*0x52b62a*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5387D0
 namespace gamemd {

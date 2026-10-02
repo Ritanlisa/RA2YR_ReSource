@@ -9,7 +9,7 @@
 #include "e4/e4_protos.h"
 
 // 0x43A500
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int COM::GetClassID(int a1, unsigned int * a2)
 {
 
@@ -22,6 +22,7 @@ int COM::GetClassID(int a1, unsigned int * a2)
   return 0; /*0x43a50d*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x55A950
 namespace gamemd {

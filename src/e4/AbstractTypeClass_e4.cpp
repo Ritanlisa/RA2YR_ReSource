@@ -16,7 +16,7 @@
 #include "e4/classes/Init_e4.hpp"
 
 // 0x410800
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int AbstractTypeClass::Constructor(char *aP1)
 {
 
@@ -89,6 +89,7 @@ LABEL_9:
   return (int)this; /*0x410948*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4109C0
 namespace gamemd {

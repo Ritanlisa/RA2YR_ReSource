@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x7B7110
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 wchar_t MSPrintAnim::GetCharAt(size_t a2)
 {
 
@@ -22,4 +22,5 @@ wchar_t MSPrintAnim::GetCharAt(size_t a2)
   return result; /*0x7b7128*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

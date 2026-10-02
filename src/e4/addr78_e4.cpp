@@ -44,7 +44,7 @@
 #include "e4/classes/CChatEventSink_e4.hpp"
 
 // 0x780110
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void WOL_ResetSystem()
 {
     unsigned int v10 = 0;  /* G37 hoist */
@@ -322,6 +322,7 @@ void WOL_ResetSystem()
   CCINIClass_AIHash = result; /*0x7806b2*/
   return result; /*0x7806b7*/
 }
+}  // G42.18 ns repair
 }
 // 0x7806C0
 namespace gamemd {

@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x7AE830
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void E4Recv_7AE830::sub_7AE830()
 {
 
@@ -66,4 +66,5 @@ void E4Recv_7AE830::sub_7AE830()
   }
 
 }
+}  // G42.18 ns repair
 }

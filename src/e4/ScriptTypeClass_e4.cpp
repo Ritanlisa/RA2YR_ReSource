@@ -16,7 +16,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x691D50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ScriptTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
 
@@ -29,6 +29,7 @@ int ScriptTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0; /*0x691d5d*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x691D90

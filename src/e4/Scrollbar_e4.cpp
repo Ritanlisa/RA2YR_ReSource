@@ -10,7 +10,7 @@
 #include "e4/classes/ScrollClass_e4.hpp"
 
 // 0x6205D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a5, unsigned char a6, unsigned char a7, unsigned char a8)
 {
   int result; // eax
@@ -90,4 +90,5 @@ void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a
   }
   return result; /*0x620716*/
 }
+}  // G42.18 ns repair
 }

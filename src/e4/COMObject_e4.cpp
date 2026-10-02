@@ -12,7 +12,7 @@
 #include "e4/classes/IPersistStream_e4.hpp"
 
 // 0x4E1A00
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int COMObject::FindNextActive(unsigned char * a1)
 {
 
@@ -27,6 +27,7 @@ int COMObject::FindNextActive(unsigned char * a1)
   return 1; /*0x4e1a18*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4E30C0
 namespace gamemd {

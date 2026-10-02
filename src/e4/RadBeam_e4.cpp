@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x659110
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * RadBeam::Create()
 {
 
@@ -35,6 +35,7 @@ void * RadBeam::Create()
   return (void *)((int)inited);
 
 }
+}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x6593F0

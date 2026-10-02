@@ -13,7 +13,7 @@
 #include "e4/classes/BTree_e4.hpp"
 
 // 0x69E210
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void MixFileClass::CleanupCache()
 {
 
@@ -100,6 +100,7 @@ void MixFileClass::CleanupCache()
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x69E180
 namespace gamemd {

@@ -23,7 +23,7 @@
 #include "e4/classes/PushCommandClass_e4.hpp"
 
 // 0x6D1200
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int CommandClass::BuildBar()
 {
 
@@ -186,6 +186,7 @@ int CommandClass::BuildBar()
   return PushCommandClass::Execute((unsigned int *)(&stru_B0CCB0), (int)aTipThumbopen); /*0x6d14ec*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x724580
 namespace gamemd {

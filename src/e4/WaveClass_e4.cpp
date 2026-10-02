@@ -35,7 +35,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 
 // 0x75F650
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int WaveClass::LoadWaveData(int a2, int a3)
 {
 
@@ -116,6 +116,7 @@ LABEL_17:
   return Register; /*0x75f7ba*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x763200
 namespace gamemd {

@@ -22,7 +22,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 
 // 0x4D0980
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
 {
 
@@ -161,6 +161,7 @@ LABEL_27:
   return (int)this; /*0x4d0c2a*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4D0C40
 namespace gamemd {

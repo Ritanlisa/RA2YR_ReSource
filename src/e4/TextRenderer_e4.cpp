@@ -28,13 +28,14 @@
 #include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x4A60D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * TextRenderer::GetInstance(void *a1)
 {
 
   return (void *)(g_FogOfWarState); /*0x4a60d5*/
 
 }
+}  // G42.18 ns repair
 }
 // 0x4B96A0
 namespace gamemd {

@@ -16,7 +16,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x682780
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_682780(int a1, int a2, wchar_t * String)
 {
   unsigned int * v3;
@@ -76,6 +76,7 @@ int sub_682780(int a1, int a2, wchar_t * String)
   }
   return v6; /*0x6827d6*/
 }
+}  // G42.18 ns repair
 }
 // 0x6829A0
 namespace gamemd {

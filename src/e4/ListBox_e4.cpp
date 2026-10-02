@@ -14,7 +14,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x614190
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t * lParam)
 {
 
@@ -286,4 +286,5 @@ LABEL_70:
   }
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd

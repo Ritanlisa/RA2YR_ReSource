@@ -12,7 +12,7 @@
 #include "e4/classes/AbstractClassVector_e4.hpp"
 
 // 0x5D7030
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void AI_CreateMCV()
 {
   HouseClass *v3; // edi
@@ -51,4 +51,5 @@ void AI_CreateMCV()
   }
   return 0; /*0x5d703e*/
 }
+}  // G42.18 ns repair
 }

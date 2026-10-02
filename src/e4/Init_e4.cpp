@@ -7,11 +7,12 @@
 #include "e4/e4_protos.h"
 
 // 0x60D430
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Init::StubPlaceholder()
 {
 
   ; /*0x60d430*/
 
 }
+}  // G42.18 ns repair
 } // namespace gamemd
