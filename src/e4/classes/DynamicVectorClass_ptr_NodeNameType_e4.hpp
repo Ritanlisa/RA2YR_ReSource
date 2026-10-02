@@ -9,6 +9,7 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct DynamicVectorClass_ptr_NodeNameType {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
+    unsigned char m_1[4];  // 0x1
     void* Items;  // 0x4
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC

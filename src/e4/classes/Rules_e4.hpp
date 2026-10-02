@@ -11,6 +11,7 @@ struct Rules {
     unsigned char __pad_0[87];  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
+    unsigned char __tail_10;  // 0xA
     unsigned char u8_D;  // 0xD
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14

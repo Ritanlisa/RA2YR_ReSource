@@ -11,6 +11,7 @@ struct DynamicVector;  // fix_fwd_type_supply
 
 struct TypeList_flat {
 // --- flat members (BEGIN) ---
+    unsigned char m_1[4];  // 0x1
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC

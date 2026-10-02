@@ -12,6 +12,7 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct UDPInterfaceClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned char m_1[4];  // 0x1
     bool Initialized;  // 0x4
     unsigned char __pad_5[356];  // 0x5
     unsigned short BoundPort;  // 0x6

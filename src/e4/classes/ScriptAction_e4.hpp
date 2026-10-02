@@ -23,6 +23,7 @@ struct ScriptAction {
     void* q014;  // 0x14
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
+    unsigned char __pad_1C[2];  // 0x1C
     unsigned int q020;  // 0x20
     void* q024;  // 0x24
     unsigned int u32_28;  // 0x28

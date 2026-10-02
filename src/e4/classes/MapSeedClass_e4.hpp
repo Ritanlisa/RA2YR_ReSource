@@ -8,6 +8,7 @@ namespace gamemd {
 struct MapSeedClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned char m_1[4];  // 0x1
     int u32_4;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC

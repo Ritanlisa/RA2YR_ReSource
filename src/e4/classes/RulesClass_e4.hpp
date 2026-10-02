@@ -168,6 +168,7 @@ struct RulesClass {
     char MaximumCheerRate[4];  // 0x23C
     unsigned int q23D;  // 0x23D
     int q240;  // 0x240
+    unsigned char __pad_240[505];  // 0x240
     unsigned char q241;  // 0x241
     char q244[4];  // 0x244
     unsigned int q248;  // 0x248

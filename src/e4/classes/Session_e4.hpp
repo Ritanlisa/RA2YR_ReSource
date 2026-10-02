@@ -6,6 +6,7 @@
 namespace gamemd {
 struct Session {
 // --- flat members (BEGIN) ---
+    unsigned int field_18;  // 0x12
     unsigned int u32_16;  // 0x16
     unsigned int u32_18;  // 0x18
     unsigned int q024;  // 0x24

@@ -132,6 +132,7 @@ struct MapClass {
     unsigned int u32_12C;  // 0x12C
     void* q130;  // 0x130
     unsigned int q134;  // 0x134
+    unsigned char __pad_134[5];  // 0x134
     unsigned int MaxLevel;  // 0x138
     void* q13C;  // 0x13C
     MapClass* q140;  // 0x140

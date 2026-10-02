@@ -12,6 +12,7 @@ struct ObjectClass;  // fix_fwd_type_supply
 struct INIClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned char __tail_0[2];  // 0x0
     char headNode[12];  // 0x4
     void* q008;  // 0x8
     void* q00C;  // 0xC

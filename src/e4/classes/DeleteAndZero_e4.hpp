@@ -9,6 +9,7 @@ struct DeleteAndZero {
     int Alt();
     int Alt2();
     void ** OrFree(char a2);
+    unsigned int DeleteAndZero_field_0x04;  // 0x4
     unsigned int DeleteAndZero_field_0x08;  // 0x8
 };
 

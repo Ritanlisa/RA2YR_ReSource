@@ -13,6 +13,7 @@ struct EventClass {
 // --- flat members (BEGIN) ---
     AbstractClass* q000;  // 0x0
     unsigned char __pad_0[87];  // 0x0
+    unsigned char m_1[4];  // 0x1
     unsigned int u32_3;  // 0x3
     void* q004;  // 0x4
     void* q008;  // 0x8

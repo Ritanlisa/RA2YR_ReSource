@@ -5,6 +5,7 @@ namespace gamemd {
 
 struct MovieContext {
     int Cleanup(void *a1 = 0);
+    unsigned char __tail_0;  // 0x0
 };
 
 } // namespace gamemd

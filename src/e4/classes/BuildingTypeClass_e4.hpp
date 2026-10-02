@@ -1056,6 +1056,7 @@ struct BuildingTypeClass {
     unsigned int qE80;  // 0xE80
     unsigned int qE84;  // 0xE84
     UnitTypeClass* SecretUnit;  // 0xE88
+    unsigned char __pad_E88;  // 0xE88
     unsigned char qE8C;  // 0xE8C
     UnitTypeClass* qEA0;  // 0xEA0
     InfantryTypeClass* qEA4;  // 0xEA4

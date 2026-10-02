@@ -18,6 +18,7 @@ struct TypeList_flat;  // fix_fwd_type_supply
 struct WarheadTypeClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned char __pad_0;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC

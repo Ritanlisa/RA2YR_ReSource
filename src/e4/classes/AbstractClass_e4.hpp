@@ -94,6 +94,7 @@ struct AbstractClass {
     unsigned int q300;  // 0x300
     unsigned int q310;  // 0x310
     unsigned int qF50;  // 0xF50
+    unsigned char __pad_F70[1453];  // 0xF70
     unsigned char __pad_1714[126];  // 0x1714
     unsigned int q1EE0;  // 0x1EE0
     unsigned int q22F;  // 0x22F

@@ -16,6 +16,7 @@ struct TimerStruct;  // fix_fwd_type_supply
 struct House {
 // --- flat members (BEGIN) ---
     HouseClass* q000;  // 0x0
+    unsigned char House_field_0x2[3];  // 0x2
     void* q004;  // 0x4
     void* q008;  // 0x8
     unsigned int u32_C;  // 0xC

@@ -9,6 +9,7 @@ struct DynamicVectorClass_flat {
     void* q000;  // 0x0
     void* Items;  // 0x4
     int Capacity;  // 0x8
+    unsigned int m_8;  // 0x8
     bool IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD
     int Count;  // 0x10

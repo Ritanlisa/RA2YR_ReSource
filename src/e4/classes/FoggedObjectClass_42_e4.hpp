@@ -9,6 +9,7 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct FoggedObjectClass_42 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
+    unsigned char __pad_0;  // 0x0
     void* Items;  // 0x4
     int Capacity;  // 0x8
     bool IsInitialized;  // 0xC

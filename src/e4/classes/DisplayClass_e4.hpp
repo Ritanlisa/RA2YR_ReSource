@@ -28,6 +28,7 @@ struct DisplayClass {
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int Count;  // 0x10
+    unsigned char __pad_10[5];  // 0x10
     int CapacityIncrement;  // 0x14
     unsigned int q018;  // 0x18
     unsigned int q01A;  // 0x1A
