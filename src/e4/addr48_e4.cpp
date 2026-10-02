@@ -1741,7 +1741,7 @@ int E4Recv_486D90::sub_486D90(char a2)
     }
     else
     {
-      p_vtable0 = &this->AbstractClass; /*0x486dbe*/
+      p_vtable0 = this; /*0x486dbe*/
     }
     if ( (v3 & p_vtable0[55]) != 0 ) /*0x486e11*/
       v6 |= 1 << v5; /*0x486e1c*/

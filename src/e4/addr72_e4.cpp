@@ -1569,7 +1569,7 @@ unsigned int * E4Recv_720960::sub_720960()
   this->owningHouseIndex = 10; /*0x720993*/
   this->occupant = 0; /*0x72099a*/
   this->fallRate = 0; /*0x72099d*/
-  return &this->AbstractClass; /*0x7209a0*/
+  return this; /*0x7209a0*/
 
 }
 } // namespace gamemd
@@ -2708,7 +2708,7 @@ unsigned int * E4Recv_7266C0::sub_7266C0(char a2)
 {
 
   this->ambientSoundController[1] |= 1 << a2; /*0x7266cd*/
-  return &this->AbstractClass; /*0x7266d0*/
+  return this; /*0x7266d0*/
 
 }
 } // namespace gamemd

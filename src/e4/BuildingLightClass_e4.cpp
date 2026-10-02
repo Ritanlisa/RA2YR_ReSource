@@ -64,7 +64,7 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *aP1)
   *(unsigned int *)this->__pad_B4 = 0; /*0x436c06*/
   if ( aP1 == (unsigned int *)3 ) /*0x436c0c*/
   {
-    v5 = *(unsigned int *)(*((int (**)(BuildingLightClass *, Object **))this->ObjectClass + 110))( /*0x436c21*/
+    v5 = *(unsigned int *)(*((int (**)(BuildingLightClass *, Object **))this->vtable1 + 110))( /*0x436c21*/
                       this,
                       &nextArrayIndex);
     FollowingObject = v4->FollowingObject; /*0x436c23*/

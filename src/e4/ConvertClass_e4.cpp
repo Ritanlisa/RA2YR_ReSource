@@ -172,7 +172,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
     if ( v16 == 1 ) /*0x48ea16*/
     {
       LOBYTE(v15->AbstractClass) = 0; /*0x48ea18*/
-      v17 = (char *)&v15->AbstractClass + 1; /*0x48ea1a*/
+      v17 = (char *)v15 + 1; /*0x48ea1a*/
       for ( i = 1; i < 256; ++i ) /*0x48ea1b*/
         *v17++ = ((Palette *)((int)((char *)a3)))->FindClosestColor((gamemd::Palette *)(a2 + 2 * (i % 256) + i % 256)); /*0x48ea40*/
     }

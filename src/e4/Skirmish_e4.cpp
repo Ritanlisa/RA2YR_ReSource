@@ -558,7 +558,7 @@ int Skirmish::EnableSpawnButtons(HWND hDlg)
         }
       }
     }
-    while ( (int)&v3->AbstractClass + 1 < 8 );
+    while ( (int)v3 + 1 < 8 );
   }
   return result; /*0x6ace79*/
 
@@ -916,7 +916,7 @@ LABEL_44:
     v18 = v56; /*0x6aeaa6*/
     v55 += 3; /*0x6aeab8*/
   }
-  while ( (int)&v56->AbstractClass + 1 < 8 );
+  while ( (int)v56 + 1 < 8 );
   if ( dword_A8B3C4 <= 0 || (v26 = MultiplayerGameMode::ListGet(), v27 = dword_A8B3C4, dword_A8B3C4 > v26) ) /*0x6aeadb*/
   {
     v27 = *(unsigned int *)(MultiplayerGameMode::GetFirst() + 40); /*0x6aeae2*/
@@ -957,7 +957,7 @@ LABEL_44:
   }
   dword_A8B23C = (unsigned int)((ObjectClass *)v28); /*0x6aebdd*/
   PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x6aebee*/
-  if ( !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C) /*0x6aec07*/
+  if ( !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 1))(dword_A8B23C) /*0x6aec07*/
     || (vtable2 = (&dword_A8B230)[127].vtable2, (int)vtable2 > PlayerCountMap) )
   {
     vtable2 = (void *)PlayerCountMap; /*0x6aec09*/

@@ -67,7 +67,7 @@ void ObjectClass::unknown_libname_27()
 {
 
   this->AbstractClass = 0; /*0x6406e2*/
-  return &this->AbstractClass; /*0x6406e8*/
+  return this; /*0x6406e8*/
 
 }
 }
@@ -143,7 +143,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   v28 = *((unsigned int *)v4 + 3); /*0x645dc5*/
   *(float *)&v19 = -v8; /*0x645dcb*/
   *(float *)&v18 = -*(float *)&((unsigned int *)this)[0]; /*0x645dd4*/
-  *(float *)&v17 = -*(float *)&this->AbstractClass; /*0x645de0*/
+  *(float *)&v17 = -*(float *)this; /*0x645de0*/
   v9 = (float *)((Int4 *)(v30))->Set(v17, v18, v19, v20); /*0x645de3*/
   v29[0] = *v9; /*0x645dea*/
   v29[1] = v9[1]; /*0x645df1*/
@@ -158,7 +158,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   vtable3 = v12; /*0x645e3b*/
   if ( !(v14 | v15) ) /*0x645e97*/
   {
-    *(float *)&this->AbstractClass = -*(float *)&this->AbstractClass; /*0x645ea2*/
+    *(float *)this = -*(float *)this; /*0x645ea2*/
     *(float *)&((unsigned int *)this)[0] = -*(float *)&((unsigned int *)this)[0]; /*0x645ea9*/
     *(float *)&((unsigned int *)this)[0] = -*(float *)&((unsigned int *)this)[0]; /*0x645eb1*/
     *(float *)&((unsigned int *)this)[0] = -*(float *)&((unsigned int *)this)[0]; /*0x645eb9*/
@@ -3772,9 +3772,9 @@ unsigned int * E4Recv_6429E0::sub_6429E0()
   *(unsigned int *)&this->needsRedraw = -1; /*0x642a0f*/
   LOBYTE(this->estimatedHealth) = 0; /*0x642a1d*/
   this->visibilityFlags = 0; /*0x642a20*/
-  this->AbstractClass = &vt_ProgressScreenClass; /*0x642a23*/
+  this->vtable1 = &vt_ProgressScreenClass; /*0x642a23*/
   memset(&((unsigned int *)this)[0], 0, 0x40u); /*0x642a29*/
-  return &this->AbstractClass; /*0x642a2d*/
+  return this; /*0x642a2d*/
 
 }
 } // namespace gamemd
@@ -4338,7 +4338,7 @@ namespace gamemd {
 void E4Recv_645CD0::sub_645CD0(float a2)
 {
 
-  *(float *)&this->AbstractClass = a2 * *(float *)&this->AbstractClass; /*0x645cd6*/
+  *(float *)this = a2 * *(float *)this; /*0x645cd6*/
   *(float *)&((unsigned int *)this)[0] = a2 * *(float *)&((unsigned int *)this)[0]; /*0x645cdf*/
   *(float *)&((unsigned int *)this)[0] = a2 * *(float *)&((unsigned int *)this)[0]; /*0x645ce9*/
   *(float *)&((unsigned int *)this)[0] = a2 * *(float *)&((unsigned int *)this)[0]; /*0x645cf3*/
@@ -4728,7 +4728,7 @@ unsigned int * E4Recv_646D00::sub_646D00()
   ((unsigned int *)this)[0] = 0; /*0x646d10*/
   ((unsigned int *)this)[0] = 0; /*0x646d13*/
   ((unsigned int *)this)[0] = 0; /*0x646d16*/
-  return &this->AbstractClass; /*0x646d19*/
+  return this; /*0x646d19*/
 
 }
 } // namespace gamemd

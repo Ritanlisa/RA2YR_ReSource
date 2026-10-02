@@ -874,7 +874,7 @@ LABEL_54:
           v54 = *(BuildingClass **)(stru_A8EB00.ObjectTypeClass[17] + 4 * v53); /*0x6d944a*/
           if ( ((unsigned int *)v54)[0] && ((unsigned int *)v54)[0] ) /*0x6d9458*/
           {
-            v55 = (int *)(*((int (**)(BuildingClass *, unsigned char *))v54->TechnoClass + 43))(v54, v105); /*0x6d9472*/
+            v55 = (int *)(*((int (**)(BuildingClass *, unsigned char *))v54->vtable1 + 43))(v54, v105); /*0x6d9472*/
             v56 = g_TacticalClass_Instance; /*0x6d9478*/
             v57 = v55; /*0x6d947e*/
             v58 = IsoCoord::ToPixel(&v83, *v55, v55[1]); /*0x6d948b*/

@@ -81,8 +81,8 @@ AbstractClass * * ObjectClass::Destroy()
     ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f65fa*/
   if ( this && (((unsigned int *)this)[0] & 1) != 0 ) /*0x5f6607*/
     TechnoClass::CleanupAll((TechnoClass *)this, 0); /*0x5f660d*/
-  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x5f6616*/
-  (*((void (**)(ObjectClass *))this->AbstractClass + 53))(this); /*0x5f661f*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5f6616*/
+  (*((void (**)(ObjectClass *))this->vtable1 + 53))(this); /*0x5f661f*/
   this->isAliveFlag = 0; /*0x5f6625*/
   result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x5f662c*/
   if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x5f6666*/

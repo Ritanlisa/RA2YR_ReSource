@@ -363,7 +363,7 @@ LABEL_17:
                   {
                     result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f8d6*/
                                this,
-                               (char *)&((char *)&FootClass_Array)->ObjectClass + 4 * v6,
+                               (char *)&((char *)&FootClass_Array)->vtable1 + 4 * v6,
                                4,
                                0);
                     if ( result < 0 ) /*0x67f8db*/
@@ -625,7 +625,7 @@ int SaveGame::WriteObject(int a1, int a2)
   FrameSnapshot v5[3]; // [esp+Ch] [ebp-18h] BYREF
 
   v2 = StreamClass::ResetPosition((LocomotionClass *)a1, a2); /*0x513cc8*/
-  v3 = (*((int (**)(FootClass *))((unsigned int *)a1)[0]->TechnoClass + 33))(((unsigned int *)a1)[0]); /*0x513ccc*/
+  v3 = (*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 33))(((unsigned int *)a1)[0]); /*0x513ccc*/
   ((FrameSnapshot *)(v5))->InitMax(2 * *(unsigned int *)(v3 + 1820)); /*0x513cdf*/
   qmemcpy(&a1->HeadToCoord[2], v5, 0x18u); /*0x513cf2*/
   return v2; /*0x513cf4*/

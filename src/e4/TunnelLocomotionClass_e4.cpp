@@ -89,7 +89,7 @@ LABEL_11:
       }
       if ( (BYTE1(_EAX) & 0x41) == 0 ) /*0x728c84*/
       {
-        *(unsigned int *)v10 = *(unsigned int *)(*((int (**)(FootClass *, unsigned char *))((unsigned int *)a1)[0]->TechnoClass + 110))( /*0x728c9e*/
+        *(unsigned int *)v10 = *(unsigned int *)(*((int (**)(FootClass *, unsigned char *))((unsigned int *)a1)[0]->vtable1 + 110))( /*0x728c9e*/
                                       ((unsigned int *)a1)[0],
                                       v13);
         v11[0] = 0; /*0x728cc4*/
@@ -142,7 +142,7 @@ LABEL_11:
         }
         if ( __PAIR32__(this_2, v8) == *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[320] ) /*0x728d4f*/
         {
-          (*((void (**)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))((unsigned int *)a1)[0]->TechnoClass + 91))( /*0x728d7c*/
+          (*((void (**)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))((unsigned int *)a1)[0]->vtable1 + 91))( /*0x728d7c*/
             &((unsigned int *)a1)[0],
             0,
             *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008),

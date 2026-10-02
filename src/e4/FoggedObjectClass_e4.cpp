@@ -66,7 +66,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   *((unsigned int *)this + 28) = 10; /*0x4d09f2*/
   *((unsigned int *)this + 27) = 0; /*0x4d09f9*/
   *((unsigned char *)this + 116) = 1; /*0x4d0a02*/
-  this->AbstractClass = &vt_FoggedObjectClass; /*0x4d0a06*/
+  this->vtable1 = &vt_FoggedObjectClass; /*0x4d0a06*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0a0c*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0a13*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0a1a*/
@@ -202,7 +202,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4
   *((unsigned int *)this + 28) = 10; /*0x4d0c9e*/
   *((unsigned int *)this + 27) = 0; /*0x4d0ca5*/
   *((unsigned char *)this + 116) = 1; /*0x4d0cae*/
-  this->AbstractClass = &vt_FoggedObjectClass; /*0x4d0cb2*/
+  this->vtable1 = &vt_FoggedObjectClass; /*0x4d0cb2*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0cb8*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0cbf*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0cc6*/
@@ -577,7 +577,7 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   *((unsigned int *)this + 28) = 10; /*0x4d13fc*/
   *((unsigned int *)this + 27) = 0; /*0x4d1403*/
   *((unsigned char *)this + 116) = 1; /*0x4d140a*/
-  this->AbstractClass = &vt_FoggedObjectClass; /*0x4d140e*/
+  this->vtable1 = &vt_FoggedObjectClass; /*0x4d140e*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d1414*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d141b*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d1422*/
@@ -697,7 +697,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
     v3[1].Cell[0] = (int)&vt_DynamicVectorClass; /*0x4d254c*/
     v3[2] = 10; /*0x4d2552*/
     v3[2] = 0; /*0x4d2559*/
-    v3->AbstractClass = &vt_FoggedObjectClass; /*0x4d255c*/
+    v3->vtable1 = &vt_FoggedObjectClass; /*0x4d255c*/
     ((unsigned int *)v3)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d2562*/
     ((unsigned int *)v3)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d2569*/
     ((unsigned int *)v3)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d2570*/
@@ -713,7 +713,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   if ( (int)a1 <= 0 ) /*0x4d25ad*/
   {
 LABEL_14:
-    v17 = *(unsigned int *)(*((int (**)(FoggedObjectClass *, int *))v3->AbstractClass + 24))(v3, &v17); /*0x4d2665*/
+    v17 = *(unsigned int *)(*((int (**)(FoggedObjectClass *, int *))v3->vtable1 + 24))(v3, &v17); /*0x4d2665*/
     v12 = 74 * (SHIWORD(v17) - (((int16_t)v17 + SHIWORD(v17)) << 9) - (int16_t)v17) /*0x4d26a1*/
         - (unsigned int)v3[1].AbstractClass
         + 0x7FFFFFFF;

@@ -25,6 +25,8 @@ struct noinit_t
     constexpr noinit_t() = default;
 };
 
+#define GAMEMD_CORE_OWNS_PROGRESSTIMER 1  // G42.17c: e4 flat def yields
+
 struct ProgressTimer
 {
     int32 Value;

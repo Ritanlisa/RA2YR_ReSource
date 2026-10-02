@@ -39,7 +39,7 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x691646*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x69164f*/
-      aP0->AbstractClass = &vt_ScriptClass; /*0x691654*/
+      aP0->vtable1 = &vt_ScriptClass; /*0x691654*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptClass); /*0x69165a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptClass); /*0x691661*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptClass); /*0x691668*/

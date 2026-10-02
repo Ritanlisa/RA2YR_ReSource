@@ -369,13 +369,13 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
           RefreshLobbyPlayerSlots(0xFFFFFFFF); /*0x5decd5*/
           GameSetup::DisplayPlayers(v33); /*0x5decdc*/
           if ( dword_A8B23C /*0x5decef*/
-            && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 47))(dword_A8B23C) )
+            && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 47))(dword_A8B23C) )
           {
             g_MPCooperativeState = (int)((ObjectClass *)-1); /*0x5decfb*/
             g_MenuStateFlags = 0; /*0x5ded05*/
             Dialog::RefreshDialogsGame(0); /*0x5ded0b*/
             *(unsigned int *)((&dword_A8DA90)[0] + 107) = 0; /*0x5ded15*/
-            v21 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 10))(dword_A8B23C); /*0x5ded20*/
+            v21 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 10))(dword_A8B23C); /*0x5ded20*/
             ((SessionClass *)((int *)(&dword_A8DA90)[0]))->SetPlayerOption(v21); /*0x5ded2a*/
             ((SessionClass *)((int *)(&dword_A8DA90)[0]))->SetPlayerColor(-2); /*0x5ded37*/
             ((SessionClass *)((int *)(&dword_A8DA90)[0]))->SetOption(-2); /*0x5ded44*/
@@ -386,7 +386,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
           SetupMultiplayerLobbyScreen(hDlg, (void *)0xFFFFFFFF, *(int *)&stru_A8B250.__pad_0[4]); /*0x5ded73*/
           if ( !g_MPCooperativeState /*0x5ded8c*/
             && dword_A8B23C
-            && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 47))(dword_A8B23C) )
+            && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 47))(dword_A8B23C) )
           {
             ((SessionClass *)((int *)(&dword_A8DA90)[0]))->SetPlayerOption(-3); /*0x5ded9e*/
             *(unsigned int *)((&dword_A8DA90)[0] + 107) = -1; /*0x5deda8*/
@@ -397,7 +397,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
           Session::StartGame((HWND)((Session *)hDlg)); /*0x5dedcc*/
           PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dede2*/
           if ( !dword_A8B23C /*0x5dedfe*/
-            || !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C)
+            || !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 1))(dword_A8B23C)
             || (vtable2 = (&dword_A8B230)[127].vtable2, (int)vtable2 > PlayerCountMap) )
           {
             vtable2 = (void *)PlayerCountMap; /*0x5dee00*/
@@ -562,12 +562,12 @@ LABEL_48:
     v12 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5de90b*/
     if ( dword_A8B23C ) /*0x5de913*/
     {
-      if ( !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 16))(dword_A8B23C) ) /*0x5de917*/
+      if ( !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 16))(dword_A8B23C) ) /*0x5de917*/
       {
         v11 = dword_A8B23C; /*0x5de91e*/
         v35 = 0; /*0x5de924*/
 LABEL_58:
-        if ( !v11 || (v34 = 0, (*((uint8_t (**)(ObjectClass *))v11->AbstractClass + 47))(v11)) ) /*0x5de93b*/
+        if ( !v11 || (v34 = 0, (*((uint8_t (**)(ObjectClass *))v11->vtable1 + 47))(v11)) ) /*0x5de93b*/
           v34 = 1; /*0x5de94a*/
         Dialog::IdleProcess((Dialog *)v31, (ObjectClass *)hDlg); /*0x5de951*/
         ShowWindow(hDlg, 0); /*0x5de95f*/
@@ -594,7 +594,7 @@ LABEL_58:
         Session::StartGame((Session *)hDlg); /*0x5de9fd*/
         v13 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dea13*/
         if ( !dword_A8B23C /*0x5dea2f*/
-          || !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C)
+          || !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 1))(dword_A8B23C)
           || (v14 = dword_A8B230[127].vtable2, (int)v14 > v13) )
         {
           v14 = (void *)v13; /*0x5dea31*/
@@ -608,7 +608,7 @@ LABEL_58:
         v15 = dword_A8B23C; /*0x5dea5a*/
         if ( dword_A8B23C ) /*0x5dea62*/
         {
-          if ( !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 16))(dword_A8B23C) ) /*0x5dea66*/
+          if ( !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 16))(dword_A8B23C) ) /*0x5dea66*/
           {
             v15 = dword_A8B23C; /*0x5dea6d*/
             v16 = 0; /*0x5dea73*/
@@ -618,7 +618,7 @@ LABEL_58:
         }
         v16 = 1; /*0x5dea7d*/
 LABEL_75:
-        if ( !v15 || (v17 = (*((int (**)(ObjectClass *))v15->AbstractClass + 47))(v15)) != 0 ) /*0x5dea8d*/
+        if ( !v15 || (v17 = (*((int (**)(ObjectClass *))v15->vtable1 + 47))(v15)) != 0 ) /*0x5dea8d*/
           v17 = 1; /*0x5dea8f*/
         if ( v34 && !v17 ) /*0x5dea9b*/
           MultiplayerLobby::FillSlots((MultiplayerLobby *)hDlg); /*0x5dea9f*/

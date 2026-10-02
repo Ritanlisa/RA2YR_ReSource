@@ -230,7 +230,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
               v13 = 108 * LOBYTE(g_WOL_UserList.owningHouseIndex); /*0x7a50c6*/
               v14 = (unsigned int)(108 * g_WOL_UserList.owningHouseIndex) >> 2; /*0x7a50c8*/
               qmemcpy(v10, g_WOL_UserList.nextObject, 4 * v14); /*0x7a50cb*/
-              qmemcpy(&v10->AbstractClass + v14, &nextObject->AbstractClass + v14, v13 & 3); /*0x7a50d2*/
+              qmemcpy(v10 + v14, nextObject + v14, v13 & 3); /*0x7a50d2*/
               nextObject = g_WOL_UserList.nextObject; /*0x7a50d4*/
             }
             __3_YAXPAX_Z(nextObject); /*0x7a50db*/
@@ -1461,7 +1461,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void 
               v13 = 108 * LOBYTE(g_WOL_UserList.owningHouseIndex); /*0x7ab580*/
               v14 = (unsigned int)(108 * g_WOL_UserList.owningHouseIndex) >> 2; /*0x7ab582*/
               qmemcpy(v10, g_WOL_UserList.nextObject, 4 * v14); /*0x7ab585*/
-              qmemcpy(&v10->AbstractClass + v14, &nextObject->AbstractClass + v14, v13 & 3); /*0x7ab58c*/
+              qmemcpy(v10 + v14, nextObject + v14, v13 & 3); /*0x7ab58c*/
               nextObject = g_WOL_UserList.nextObject; /*0x7ab58e*/
             }
             __3_YAXPAX_Z(nextObject); /*0x7ab595*/

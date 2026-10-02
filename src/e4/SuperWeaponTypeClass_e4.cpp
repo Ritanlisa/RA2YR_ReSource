@@ -276,7 +276,7 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, voi
   *((unsigned int *)this + 97) = (unsigned int)(&vt_TypeList); /*0x51154c*/
   *((unsigned int *)this + 105) = 16777281; /*0x511552*/
   *((unsigned char *)this + 424) = 0; /*0x51156c*/
-  this->AbstractTypeClass = (unsigned int)(&vt_HouseTypeClass); /*0x511572*/
+  this->vtable1 = (unsigned int)(&vt_HouseTypeClass); /*0x511572*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511578*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x51157f*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_HouseTypeClass); /*0x511586*/
@@ -631,7 +631,7 @@ SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(unsigned int * Block, char a
   int v3; // eax
   SuperWeaponTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractTypeClass = &vt_SuperWeaponTypeClass; /*0x6cefed*/
+  Block->vtable1 = &vt_SuperWeaponTypeClass; /*0x6cefed*/
   ((unsigned int *)Block)[0] = &vt_SuperWeaponTypeClass; /*0x6ceff3*/
   ((unsigned int *)Block)[0] = &vt_SuperWeaponTypeClass; /*0x6ceffa*/
   ((unsigned int *)Block)[0] = &vt_SuperWeaponTypeClass; /*0x6cf001*/
@@ -649,7 +649,7 @@ SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(unsigned int * Block, char a
   ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x6cf04a*/
   if ( (a2 & 1) != 0 ) /*0x6cf054*/
     __3_YAXPAX_Z(Block); /*0x6cf057*/
-  return &Block->AbstractTypeClass; /*0x6cf061*/
+  return Block; /*0x6cf061*/
 
 }
 } // namespace gamemd
@@ -842,7 +842,7 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       AbstractTypeClass::Init((int)a1, (int)&v4); /*0x6ce82c*/
       a1->SidebarImage = 0; /*0x6ce831*/
-      a1->AbstractTypeClass = &vt_SuperWeaponTypeClass; /*0x6ce83b*/
+      a1->vtable1 = &vt_SuperWeaponTypeClass; /*0x6ce83b*/
       ((unsigned int *)a1)[0] = &vt_SuperWeaponTypeClass; /*0x6ce841*/
       ((unsigned int *)a1)[0] = &vt_SuperWeaponTypeClass; /*0x6ce848*/
       ((unsigned int *)a1)[0] = &vt_SuperWeaponTypeClass; /*0x6ce84f*/

@@ -1482,7 +1482,7 @@ int ScriptAction::ExecuteMissionCmd() {
     unsigned int *v19; // [esp+A4h] [ebp+Ch]
     unsigned int *v20; // [esp+A8h] [ebp+10h]
 
-    v2 = Render_Draw_731BF0() && (*((uint8_t (__thiscall **)(TechnoClass *))this->RadioClass + 304))(this); /*0x6ffc03*/
+    v2 = Render_Draw_731BF0() && (*((uint8_t (__thiscall **)(TechnoClass *))this->vtable1 + 304))(this); /*0x6ffc03*/
     v3 = v17; /*0x6ffc09*/
     if ( (v17 == 2 || v17 == 1) && v2 ) /*0x6ffc1c*/
       v3 = 29; /*0x6ffc1e*/
@@ -1545,29 +1545,29 @@ int ScriptAction::ExecuteMissionCmd() {
         switch ( v3 ) /*0x6ffcd4*/
         {
           case 10: /*0x6ffcd4*/
-            (*((void (__thiscall **)(TechnoClass *))this->RadioClass + 215))(this); /*0x6ffcda*/
+            (*((void (__thiscall **)(TechnoClass *))this->vtable1 + 215))(this); /*0x6ffcda*/
             break;
           case 1: /*0x6ffcd4*/
-            (*((void (__thiscall **)(TechnoClass *, unsigned int *))this->RadioClass + 220))(this, v18); /*0x6ffcef*/
+            (*((void (__thiscall **)(TechnoClass *, unsigned int *))this->vtable1 + 220))(this, v18); /*0x6ffcef*/
             break;
           case 2: /*0x6ffcd4*/
           case 29: /*0x6ffcd4*/
-            (*((void (__thiscall **)(TechnoClass *))this->RadioClass + 218))(this); /*0x6ffd9f*/
+            (*((void (__thiscall **)(TechnoClass *))this->vtable1 + 218))(this); /*0x6ffd9f*/
             break;
           case 7: /*0x6ffcd4*/
-            (*((void (__thiscall **)(TechnoClass *))this->RadioClass + 214))(this); /*0x6ffd15*/
+            (*((void (__thiscall **)(TechnoClass *))this->vtable1 + 214))(this); /*0x6ffd15*/
             break;
           case 8: /*0x6ffcd4*/
-            (*((void (__thiscall **)(TechnoClass *))this->RadioClass + 217))(this); /*0x6ffd29*/
+            (*((void (__thiscall **)(TechnoClass *))this->vtable1 + 217))(this); /*0x6ffd29*/
             break;
           case 16: /*0x6ffcd4*/
-            (*((void (__thiscall **)(TechnoClass *))this->RadioClass + 219))(this); /*0x6ffd3a*/
+            (*((void (__thiscall **)(TechnoClass *))this->vtable1 + 219))(this); /*0x6ffd3a*/
             break;
           default:
-            if ( *(int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 1200) > 0 ) /*0x6ffd59*/
+            if ( *(int *)((*((int (__thiscall **)(TechnoClass *))this->vtable1 + 33))(this) + 1200) > 0 ) /*0x6ffd59*/
             {
               v6 = Random::State(&Randomizer_Global); /*0x6ffd65*/
-              v7 = (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this); /*0x6ffd6b*/
+              v7 = (*((int (__thiscall **)(TechnoClass *))this->vtable1 + 33))(this); /*0x6ffd6b*/
               v11[0] = this->RadioClass; /*0x6ffd7b*/
               (*(void (__thiscall **)(TechnoClass *, unsigned int))(v11[0] + 852))( /*0x6ffd93*/
                 this,

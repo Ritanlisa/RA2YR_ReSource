@@ -72,7 +72,7 @@ int HouseClass::createStartingUnits(int a2) {
     {
       result = 3 * a2; /*0x431421*/
       v4 = 0; /*0x431424*/
-      v5 = &this->AbstractClass + 3 * a2; /*0x431426*/
+      v5 = this + 3 * a2; /*0x431426*/
       do /*0x43143f*/
       {
         if ( *v5 ) /*0x43142a*/

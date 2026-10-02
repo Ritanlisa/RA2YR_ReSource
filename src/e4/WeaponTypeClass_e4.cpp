@@ -170,7 +170,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   this->IsRadEruption = 0; /*0x771e65*/
   this->RadLevel = 0; /*0x771e6b*/
   this->IsMagBeam = (unsigned int)(0); /*0x771e71*/
-  this->AbstractTypeClass = (unsigned int)(&vt_WeaponTypeClass); /*0x771e77*/
+  this->vtable1 = (unsigned int)(&vt_WeaponTypeClass); /*0x771e77*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771e7d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771e83*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771e8a*/
@@ -186,7 +186,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
     v3 = g_WeaponTypePool++; /*0x771ed7*/
     *((unsigned int *)g_WeaponTypeConfig + v3) = (unsigned int)(this); /*0x771ee6*/
   }
-  return &this->AbstractTypeClass; /*0x771eeb*/
+  return this; /*0x771eeb*/
 
 }
 } // namespace gamemd
@@ -201,7 +201,7 @@ int WeaponTypeClass::Destructor(void *a1)
   void *v5; // eax
   WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  this->AbstractTypeClass = (unsigned int)(&vt_WeaponTypeClass); /*0x771f57*/
+  this->vtable1 = (unsigned int)(&vt_WeaponTypeClass); /*0x771f57*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771f5d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771f64*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771f6b*/
@@ -296,7 +296,7 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   Projectile = (gamemd::BulletTypeClass *)(this->Projectile); /*0x772b5e*/
   if ( Projectile ) /*0x772b66*/
   {
-    v10 = (*(int (**)(unsigned char *))(*(unsigned int *)&Projectile->ObjectTypeClass[4] + 16))(&Projectile->ObjectTypeClass[4]); /*0x772b6f*/
+    v10 = (*(int (**)(unsigned char *))(*(unsigned int *)Projectile[4] + 16))(Projectile[4]); /*0x772b6f*/
     Power::TimerProcess(v10); /*0x772b75*/
   }
   Power::TimerProcess(this->Damage); /*0x772b83*/
@@ -586,11 +586,11 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
   this->Report[0] = (int)&vt_TypeList; /*0x771f12*/
   this->DownReport[0] = (int)&vt_TypeList; /*0x771f18*/
   this->Anim[0] = (int)&vt_TypeList; /*0x771f1e*/
-  this->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771f28*/
+  this->vtable1 = &vt_WeaponTypeClass; /*0x771f28*/
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f2e*/
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f35*/
   ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f3c*/
-  return &this->AbstractTypeClass; /*0x771f45*/
+  return this; /*0x771f45*/
 
 }
 // 0x7729F0

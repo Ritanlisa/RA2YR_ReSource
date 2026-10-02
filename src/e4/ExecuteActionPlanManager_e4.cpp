@@ -18,7 +18,7 @@ unsigned int * E4Recv_633AC0::sub_633AC0()
   LOBYTE(this->AbstractClass) = 0; /*0x633ac2*/
   this->estimatedHealth = 0; /*0x633ac5*/
   *(unsigned int *)&this->isOnMap = -1; /*0x633acc*/
-  return &this->AbstractClass; /*0x633ad3*/
+  return this; /*0x633ad3*/
 
 }
 } // namespace gamemd

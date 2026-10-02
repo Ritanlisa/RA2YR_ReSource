@@ -1455,7 +1455,7 @@ void DlgProcScoreScreen()
     {
       do /*0x6c930e*/
       {
-        v24 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * v23]; /*0x6c92be*/
+        v24 = *(unsigned int *)dword_A8022C[4 * v23]; /*0x6c92be*/
         if ( *(unsigned char *)(v24 + 493) ) /*0x6c92c1*/
         {
           v25 = (char *)v22 + SumArray((int *)(v24 + 9032)); /*0x6c92dc*/
@@ -2030,7 +2030,7 @@ unsigned int * E4Recv_6C89B0::sub_6C89B0(size_t Size)
   v3 = (void *)__2_YAPAXI_Z(Size); /*0x6c89ba*/
   ((unsigned int *)this)[0] = v3; /*0x6c89c2*/
   ((unsigned int *)this)[0] = v3; /*0x6c89c5*/
-  return &this->AbstractClass; /*0x6c89ca*/
+  return this; /*0x6c89ca*/
 
 }
 } // namespace gamemd
@@ -2416,7 +2416,7 @@ unsigned int * E4Recv_6C96E0::sub_6C96E0(unsigned int * a2, int a3)
   v6 = (char *)((char *)&v9 - (char *)v3); /*0x6c9707*/
   do /*0x6c9716*/
   {
-    v7 = *(float *)((char *)&v3->AbstractClass + v5) + *(float *)&v3->AbstractClass; /*0x6c970c*/
+    v7 = *(float *)((char *)v3 + v5) + *(float *)v3; /*0x6c970c*/
     v3 = (ObjectClass *)((char *)v3 + 4); /*0x6c970e*/
     --v4; /*0x6c9711*/
     *(float *)((char *)v3 + (unsigned int)v6 - 4) = v7; /*0x6c9712*/
@@ -2555,7 +2555,7 @@ unsigned int * E4Recv_6C9AC0::sub_6C9AC0()
   ((unsigned int *)this)[0] = 0; /*0x6c9ad5*/
   ((unsigned int *)this)[0] = 0; /*0x6c9ad8*/
   ((unsigned int *)this)[0] = 0; /*0x6c9adb*/
-  return &this->AbstractClass; /*0x6c9ade*/
+  return this; /*0x6c9ade*/
 
 }
 } // namespace gamemd
@@ -3333,7 +3333,7 @@ namespace gamemd {
 int E4Recv_6CFE10::sub_6CFE10()
 {
 
-  return (int)&this->AbstractClass - dword_B0CC20 + 1; /*0x6cfe19*/
+  return (int)this - dword_B0CC20 + 1; /*0x6cfe19*/
 
 }
 } // namespace gamemd

@@ -2667,7 +2667,7 @@ SkirmishDialog * * E4Recv_5E7160::HandleMultiplayerMapSelection()
   PlayerCountMap = ReadPlayerCountMap(v27); /*0x5e7247*/
   if ( dword_A8B23C ) /*0x5e724b*/
   {
-    v11 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 38))(dword_A8B23C); /*0x5e724f*/
+    v11 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 38))(dword_A8B23C); /*0x5e724f*/
     if ( v11 != -1 && v11 < PlayerCountMap ) /*0x5e725c*/
       PlayerCountMap = v11; /*0x5e725e*/
   }
@@ -2716,7 +2716,7 @@ LABEL_32:
   if ( (ObjectClass *)v7 != v12 ) /*0x5e7351*/
   {
     if ( v12 ) /*0x5e7355*/
-      (*((void (**)(ObjectClass *))v12->AbstractClass + 39))(v12); /*0x5e7359*/
+      (*((void (**)(ObjectClass *))v12->vtable1 + 39))(v12); /*0x5e7359*/
     if ( v7 ) /*0x5e7361*/
     {
       dword_A8B23C = (ObjectClass *)v7; /*0x5e7367*/
@@ -3333,7 +3333,7 @@ void SetupSkirmishPlayerSlots(SkirmishDialog * hDlg, int a2, HWND hWnd)
       PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5ea030*/
       if ( dword_A8B23C ) /*0x5ea034*/
       {
-        v15 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 38))(dword_A8B23C); /*0x5ea038*/
+        v15 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 38))(dword_A8B23C); /*0x5ea038*/
         if ( v15 != -1 && v15 < PlayerCountMap ) /*0x5ea045*/
           PlayerCountMap = v15; /*0x5ea047*/
       }
@@ -4002,7 +4002,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
     PlayerCountMap = ReadPlayerCountMap(a3); /*0x5ec3cf*/
     if ( dword_A8B23C ) /*0x5ec3d3*/
     {
-      v6 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 38))(dword_A8B23C); /*0x5ec3d7*/
+      v6 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 38))(dword_A8B23C); /*0x5ec3d7*/
       if ( v6 != -1 && v6 < PlayerCountMap ) /*0x5ec3e4*/
         PlayerCountMap = v6; /*0x5ec3e6*/
     }
@@ -4020,7 +4020,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
   }
   v23 = PlayerCountMap; /*0x5ec413*/
   if ( dword_A8B23C /*0x5ec425*/
-    && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 16))(dword_A8B23C)
+    && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 16))(dword_A8B23C)
     || Network::IsMultiplayerActive() )
   {
     v7 = 0; /*0x5ec437*/
@@ -4194,7 +4194,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
   {
     if ( dword_A8B23C ) /*0x5ec6e7*/
     {
-      if ( (*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 47))(dword_A8B23C) ) /*0x5ec6ef*/
+      if ( (*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 47))(dword_A8B23C) ) /*0x5ec6ef*/
       {
         g_MPCooperativeState = (ObjectClass *)7; /*0x5ec6ff*/
         MultiplayerLobby::FillSlots(hDlg); /*0x5ec709*/
@@ -4952,8 +4952,8 @@ int SetupMultiplayerLobbyPlayers(HWND hDlg, int a2)
   }
   dword_A8B23C = (ObjectClass *)First; /*0x5ed6eb*/
   LoadScenarioClassByIndex(*(int *)&stru_A8B250.__pad_0[4]); /*0x5ed6f1*/
-  (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 8))(dword_A8B23C); /*0x5ed6fe*/
-  (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 9))(dword_A8B23C); /*0x5ed709*/
+  (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 8))(dword_A8B23C); /*0x5ed6fe*/
+  (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 9))(dword_A8B23C); /*0x5ed709*/
   (*(void (**)(char *))(*(unsigned int *)First + 24))(First); /*0x5ed710*/
   (*(void (**)(char *))(*(unsigned int *)First + 124))(First); /*0x5ed717*/
   v11 = 8; /*0x5ed720*/
@@ -5059,11 +5059,11 @@ int SetupMultiplayerLobbyPlayers(HWND hDlg, int a2)
     nIDDlgItema = (Dialog *)GetResourceID4CSF((ObjectClass *)i); /*0x5ed932*/
     if ( v44 == 2 || v44 == 3 ) /*0x5ed946*/
     {
-      v36 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 10))(dword_A8B23C); /*0x5edc12*/
+      v36 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 10))(dword_A8B23C); /*0x5edc12*/
       SetupLobbyCountryCombo(hDlg, (int)ResourceID2CSF, v36); /*0x5edc1a*/
       SetupSkirmishSpawnLocations(hDlg, (int)ResourceIDCSF, -2); /*0x5edc25*/
       SetupLobbyFactionSlots(hDlg, (int)ResourceID3CSF, -2); /*0x5edc30*/
-      v37 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 11))(dword_A8B23C); /*0x5edc3d*/
+      v37 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 11))(dword_A8B23C); /*0x5edc3d*/
       SetupLobbyPlayerSlots(hDlg, (int)nIDDlgItema, v37); /*0x5edc47*/
       DlgItem = GetDlgItem(hDlg, (int)ResourceID2CSF); /*0x5edc58*/
       v38 = GetDlgItem(hDlg, (int)ResourceIDCSF); /*0x5edc5e*/
@@ -5079,7 +5079,7 @@ int SetupMultiplayerLobbyPlayers(HWND hDlg, int a2)
       SetupLobbyCountryCombo(hDlg, (int)ResourceID2CSF, -3); /*0x5ed95b*/
       SetupSkirmishSpawnLocations(hDlg, (int)ResourceIDCSF, -2); /*0x5ed966*/
       SetupLobbyFactionSlots(hDlg, (int)ResourceID3CSF, -2); /*0x5ed971*/
-      v20 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 11))(dword_A8B23C); /*0x5ed97e*/
+      v20 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 11))(dword_A8B23C); /*0x5ed97e*/
       SetupLobbyPlayerSlots(hDlg, (int)nIDDlgItema, v20); /*0x5ed988*/
       hWnda = GetDlgItem(hDlg, (int)ResourceID2CSF); /*0x5ed999*/
       v21 = GetDlgItem(hDlg, (int)ResourceIDCSF); /*0x5ed99f*/
@@ -5207,7 +5207,7 @@ int SetupMultiplayerLobbyPlayers(HWND hDlg, int a2)
       {
         *(unsigned int *)&stru_A8B250.__pad_0[4 * v29 + 140] = v28; /*0x5edb99*/
       }
-      v33 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 12))(dword_A8B23C); /*0x5edba8*/
+      v33 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 12))(dword_A8B23C); /*0x5edba8*/
       SetupLobbyPlayerSlots(hDlg, (int)nIDDlgItema, v33); /*0x5edbb4*/
       ComboBoxSelectedRaw2 = GetComboBoxSelectedRaw2(hDlg, (int)nIDDlgItema, -1); /*0x5edbc6*/
       v35 = Dialog::OptionIDToIndex(nIDDlgItema); /*0x5edbc8*/

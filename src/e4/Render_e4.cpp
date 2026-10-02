@@ -1857,7 +1857,7 @@ int Render_Get(ScoreScreen * aP0)
   {
     do /*0x68ee21*/
     {
-      v4 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * v10]; /*0x68edad*/
+      v4 = *(unsigned int *)dword_A8022C[4 * v10]; /*0x68edad*/
       if ( (uint8_t)HouseClass::IsAlliedWith(aP0, (void *)v4) /*0x68edca*/
         && (uint8_t)HouseClass::IsAlliedWith((void *)v4, aP0)
         || aP0 == (void *)v4 )

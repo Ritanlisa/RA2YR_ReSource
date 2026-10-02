@@ -77,7 +77,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   this->TeamTypeClass_field_68 = -1; /*0x4c990d*/
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
-  this->AbstractClass = &vt_FactoryClass; /*0x4c991a*/
+  this->vtable1 = &vt_FactoryClass; /*0x4c991a*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4c9920*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4c9926*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4c992d*/
@@ -987,11 +987,11 @@ TeamTypeClass * TeamTypeClass::ddtor(void ** Block, char a2)
   int v4; // eax
   TeamTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_TeamTypeClass; /*0x6f20d6*/
+  Block->vtable1 = &vt_TeamTypeClass; /*0x6f20d6*/
   ((unsigned int *)Block)[0] = &vt_TeamTypeClass; /*0x6f20dc*/
   ((unsigned int *)Block)[0] = &vt_TeamTypeClass; /*0x6f20e3*/
   ((unsigned int *)Block)[0] = &vt_TeamTypeClass; /*0x6f20ea*/
-  AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6f20f1*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6f20f1*/
   v6 = Block; /*0x6f2106*/
   v3 = (*(int (**)(unsigned char *, TeamTypeClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 188) + 16))( /*0x6f210a*/
          &(unsigned int *)((char *)&stru_A8EB00 + 188),
@@ -1024,7 +1024,7 @@ TeamTypeClass * TeamTypeClass::ddtor(void ** Block, char a2)
   ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x6f218a*/
   if ( (a2 & 1) != 0 ) /*0x6f2194*/
     __3_YAXPAX_Z(Block); /*0x6f2197*/
-  return &Block->AbstractClass; /*0x6f21a1*/
+  return Block; /*0x6f21a1*/
 
 }
 } // namespace gamemd
@@ -1350,7 +1350,7 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6f1bc6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6f1bcf*/
-      aP0->AbstractClass = &vt_TeamTypeClass; /*0x6f1bd4*/
+      aP0->vtable1 = &vt_TeamTypeClass; /*0x6f1bd4*/
       ((unsigned int *)aP0)[0] = &vt_TeamTypeClass; /*0x6f1bda*/
       ((unsigned int *)aP0)[0] = &vt_TeamTypeClass; /*0x6f1be1*/
       ((unsigned int *)aP0)[0] = &vt_TeamTypeClass; /*0x6f1be8*/
@@ -1419,7 +1419,7 @@ int TeamTypeClass::FindFirstInstance()
   for ( i = ((char *)&FootClass_Array); ; i = (ParticleSystemClass *)((char *)i + 4) ) /*0x6f1f7e*/
   {
     result = (int)i->ObjectClass; /*0x6f1f84*/
-    if ( *((TeamTypeClass **)i->ObjectClass + 9) == this ) /*0x6f1f89*/
+    if ( *((TeamTypeClass **)i->vtable1 + 9) == this ) /*0x6f1f89*/
       break; /*0x6f1f89*/
     if ( ++v1 >= (int)((char *)&FootClass_Array) ) /*0x6f1f91*/
       return 0; /*0x6f1f91*/

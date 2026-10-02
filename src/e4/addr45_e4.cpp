@@ -107,7 +107,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     {
       damageParticles = (gamemd::ParticleSystemClass *)(((unsigned int *)a1)[0]); /*0x451491*/
       if ( damageParticles ) /*0x451499*/
-        (*((void (**)(ParticleSystemClass *))damageParticles->ObjectClass + 62))(damageParticles); /*0x45149d*/
+        (*((void (**)(ParticleSystemClass *))damageParticles->vtable1 + 62))(damageParticles); /*0x45149d*/
     }
     v11 = 3; /*0x4514a3*/
     v12 = 51; /*0x4514a8*/
@@ -1333,7 +1333,7 @@ int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
   v6 = (char *)this + 12 * a2; /*0x45e8c3*/
   *((unsigned int *)v6 + 961) = a3; /*0x45e8c6*/
   *((unsigned int *)v6 + 962) = a4; /*0x45e8d0*/
-  *((unsigned int *)&this->AbstractClass + result) = a5; /*0x45e8da*/
+  *((unsigned int *)this + result) = a5; /*0x45e8da*/
   return result; /*0x45e8dd*/
 
 }

@@ -2882,7 +2882,7 @@ int E4Recv_4E6070::sub_4E6070()
   Debug::Log(); /*0x4e608d*/
   memset(this, 0xFFu, 0x18u); /*0x4e609f*/
   LOWORD(((unsigned int *)this)[0]) = -1; /*0x4e60a9*/
-  *((unsigned int *)&this->AbstractClass + (*(unsigned int *)&this->bombVisible)++) = 2; /*0x4e60cc*/
+  *((unsigned int *)this + (*(unsigned int *)&this->bombVisible)++) = 2; /*0x4e60cc*/
   Debug::Log(); /*0x4e60d6*/
   return (int)this; /*0x4e612c*/
 

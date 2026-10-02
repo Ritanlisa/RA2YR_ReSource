@@ -5315,7 +5315,7 @@ int E4Recv_6B93E0::sub_6B93E0()
   int v5; // eax
   int result; // eax
 
-  v1 = (uint8_t *)&this->AbstractClass + 2; /*0x6b93e4*/
+  v1 = (uint8_t *)this + 2; /*0x6b93e4*/
   v2 = 256; /*0x6b93e7*/
   do /*0x6b943e*/
   {
@@ -5376,7 +5376,7 @@ unsigned int * E4Recv_6B9450::sub_6B9450()
   this->AbstractClass = v5; /*0x6b94bf*/
   memset(v5, 0, v6); /*0x6b94c4*/
   ((unsigned int *)this)[0] = (int)sub_6B94E0; /*0x6b94cd*/
-  return &this->AbstractClass; /*0x6b94d6*/
+  return this; /*0x6b94d6*/
 
 }
 } // namespace gamemd

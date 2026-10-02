@@ -42,7 +42,7 @@ RadSiteClass::RadSiteClass()
   this->IntensityDecrement = 0; /*0x65b21f*/
   this->RadDuration = 0; /*0x65b222*/
   this->RadTimeLeft = 0; /*0x65b225*/
-  this->AbstractClass = &vt_RadSiteClass; /*0x65b228*/
+  this->vtable1 = &vt_RadSiteClass; /*0x65b228*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b22e*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b235*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b23c*/
@@ -57,7 +57,7 @@ RadSiteClass::RadSiteClass()
     v3 = (unsigned int)(dword_B04BE0++);
     *((unsigned int *)dword_B04BD4 + v3) = (unsigned int)(this); /*0x65b293*/
   }
-  return &this->AbstractClass; /*0x65b298*/
+  return this; /*0x65b298*/
 
 }
 }
@@ -100,7 +100,7 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       aP0->RadLevelTimer[0] = v3; /*0x65b404*/
       aP0->RadLightTimer[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b40c*/
       aP0->RadLightTimer[2] = 0; /*0x65b40f*/
-      aP0->AbstractClass = &vt_RadSiteClass; /*0x65b416*/
+      aP0->vtable1 = &vt_RadSiteClass; /*0x65b416*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b41c*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b423*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b42a*/

@@ -5,6 +5,7 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_CORE_OWNS_PROGRESSTIMER  // G42.17c: core owns in mixed TUs
 struct ProgressTimer {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
@@ -22,5 +23,6 @@ struct ProgressTimer {
 // --- flat members (END) ---
     void* GetValue(unsigned int *aP1);
 };
+#endif  // GAMEMD_CORE_OWNS_PROGRESSTIMER
 
 } // namespace gamemd

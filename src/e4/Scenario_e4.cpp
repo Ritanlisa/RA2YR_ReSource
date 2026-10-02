@@ -1333,7 +1333,7 @@ void Scenario_EndGameFlow()
   LABEL_36:
     IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x6858ce*/
     if ( v12 ) /*0x6858d7*/
-      (*((void (**)(ObjectClass *, int))v12->AbstractClass + 41))(v12, 1); /*0x6858dd*/
+      (*((void (**)(ObjectClass *, int))v12->vtable1 + 41))(v12, 1); /*0x6858dd*/
     byte_A8E9A0 = 0; /*0x6858ea*/
     return ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x685900*/
   }
@@ -1350,7 +1350,7 @@ void Scenario_EndGameFlow()
     IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x685879*/
     goto LABEL_28; /*0x685879*/
   }
-  if ( v10 != 3 && v10 != 4 || !(*((uint8_t (**)(void))dword_A8B23C->AbstractClass + 2))() ) /*0x68585a*/
+  if ( v10 != 3 && v10 != 4 || !(*((uint8_t (**)(void))dword_A8B23C->vtable1 + 2))() ) /*0x68585a*/
   {
     IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x68586c*/
   LABEL_28:
@@ -1363,7 +1363,7 @@ void Scenario_EndGameFlow()
   v12 = dword_A8B23C; /*0x685890*/
   if ( dword_A8B23C ) /*0x685898*/
   {
-    v13 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 42))(dword_A8B23C); /*0x68589c*/
+    v13 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 42))(dword_A8B23C); /*0x68589c*/
     v12 = dword_A8B23C; /*0x6858a2*/
     v1 = v13; /*0x6858a8*/
   }
@@ -1371,7 +1371,7 @@ void Scenario_EndGameFlow()
     dword_A8D588 = 3; /*0x6858ba*/
   if ( !v1 ) /*0x6858c2*/
     goto LABEL_36; /*0x6858c2*/
-  (*((void (**)(ObjectClass *))v12->AbstractClass + 43))(v12); /*0x685903*/
+  (*((void (**)(ObjectClass *))v12->vtable1 + 43))(v12); /*0x685903*/
   ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x685910*/
   LABEL_40:
   Movie::PlayWrapper((int)dword_A8B230[143].NeedsSaveOrLink, -1, 3, 1, 1, 1); /*0x685915*/
@@ -1405,7 +1405,7 @@ void Scenario_EndGameFlow()
   }
   if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 || !dword_A8B23C ) /*0x685a25*/
     goto LABEL_58; /*0x685a25*/
-  if ( !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 2))(dword_A8B23C) ) /*0x685a2b*/
+  if ( !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 2))(dword_A8B23C) ) /*0x685a2b*/
   {
     v17 = dword_A8B230; /*0x685a32*/
   LABEL_58:
@@ -1430,7 +1430,7 @@ void Scenario_EndGameFlow()
   ++dword_A8B230[130].vtable3; /*0x685ab0*/
   if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x685ada*/
     && dword_A8B23C
-    && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 2))(dword_A8B23C) )
+    && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 2))(dword_A8B23C) )
   {
     if ( *(unsigned int *)&dword_A8B238 == 3 ) /*0x685aeb*/
     {
@@ -1487,7 +1487,7 @@ void Scenario_EndGameFlow()
     ; /*0x685c5d*/
   if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x685c9d*/
     && dword_A8B23C
-    && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 2))(dword_A8B23C) )
+    && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 2))(dword_A8B23C) )
   {
     SessionClass::CreateConnections((SessionClass *)&dword_A8B238); /*0x685cad*/
     if ( *(unsigned int *)&dword_A8B238 == 3 ) /*0x685cba*/
@@ -1618,7 +1618,7 @@ void Scenario_EndGame()
   LABEL_36:
     IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x68601a*/
     if ( v13 ) /*0x686023*/
-      (*((void (**)(ObjectClass *, unsigned int))v13->AbstractClass + 41))(v13, 0); /*0x686028*/
+      (*((void (**)(ObjectClass *, unsigned int))v13->vtable1 + 41))(v13, 0); /*0x686028*/
     byte_A8E9A0 = 0; /*0x686035*/
     IDA_LOBYTE(v15) = ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x68603c*/
     return v15; /*0x68604b*/
@@ -1635,7 +1635,7 @@ void Scenario_EndGame()
     IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x685fc3*/
     goto LABEL_28; /*0x685fc3*/
   }
-  if ( v10 != 3 && v10 != 4 || !(*((uint8_t (**)(void))dword_A8B23C->AbstractClass + 2))() ) /*0x685fa4*/
+  if ( v10 != 3 && v10 != 4 || !(*((uint8_t (**)(void))dword_A8B23C->vtable1 + 2))() ) /*0x685fa4*/
   {
     IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x685fb6*/
   LABEL_28:
@@ -1648,7 +1648,7 @@ void Scenario_EndGame()
   v13 = dword_A8B23C; /*0x685fda*/
   if ( dword_A8B23C ) /*0x685fe2*/
   {
-    v14 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 42))(dword_A8B23C); /*0x685fe6*/
+    v14 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 42))(dword_A8B23C); /*0x685fe6*/
     v13 = dword_A8B23C; /*0x685fec*/
     v11 = v14; /*0x685ff2*/
   }
@@ -1656,7 +1656,7 @@ void Scenario_EndGame()
     dword_A8D588 = 3; /*0x686004*/
   if ( !v11 ) /*0x686010*/
     goto LABEL_36; /*0x686010*/
-  (*((void (**)(ObjectClass *))v13->AbstractClass + 43))(v13); /*0x68604e*/
+  (*((void (**)(ObjectClass *))v13->vtable1 + 43))(v13); /*0x68604e*/
   ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x68605b*/
   LABEL_40:
   Movie::PlayWrapper((int)dword_A8B230[144].vtable0, -1, v8, 1, 1, 1); /*0x686060*/
@@ -1682,7 +1682,7 @@ void Scenario_EndGame()
   }
   if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 /*0x686141*/
     || !dword_A8B23C
-    || !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 2))(dword_A8B23C) )
+    || !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 2))(dword_A8B23C) )
   {
     goto LABEL_65; /*0x686146*/
   }
@@ -1723,7 +1723,7 @@ void Scenario_EndGame()
     ScenarioClass::LoadScenarioAndStart((char *)&dword_A8B230[130].abstractFlags, 0, v2, dword_A8B230[375].uniqueId); /*0x686282*/
     if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x6862be*/
       && dword_A8B23C
-      && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 2))(dword_A8B23C) )
+      && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 2))(dword_A8B23C) )
     {
       SessionClass::CreateConnections((SessionClass *)&dword_A8B238); /*0x6862ce*/
       if ( *(unsigned int *)&dword_A8B238 == 3 ) /*0x6862db*/

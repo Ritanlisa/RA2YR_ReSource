@@ -134,7 +134,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   do /*0x415bab*/
   {
     v6 = *(unsigned int *)(v5); /*0x415b34*/
-    v7 = (unsigned short *)(*((int (**)(AircraftClass *, char *))this->FootClass + 110))(this, v20); /*0x415b3e*/
+    v7 = (unsigned short *)(*((int (**)(AircraftClass *, char *))this->vtable1 + 110))(this, v20); /*0x415b3e*/
     v8 = v6 & 7; /*0x415b44*/
     v9 = 4 * v8 + 9041544; /*0x415b55*/
     v10 = *v7 + LOWORD(g_DDrawSurfaceManager.scenario[v8 + 82]); /*0x415b5c*/
@@ -164,8 +164,8 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   v15 = *a2; /*0x415c0b*/
   v16 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v18); /*0x415c19*/
   (*(void (**)(int *, void *, int))(v15 + 1152))(a2, v16, 1); /*0x415c21*/
-  if ( (*((int (**)(AircraftClass *, int, int *))this->FootClass + 158))(this, 2, a2) == 1 ) /*0x415c37*/
-    (*((void (**)(AircraftClass *, int))this->FootClass + 157))(this, 9); /*0x415c3f*/
+  if ( (*((int (**)(AircraftClass *, int, int *))this->vtable1 + 158))(this, 2, a2) == 1 ) /*0x415c37*/
+    (*((void (**)(AircraftClass *, int))this->vtable1 + 157))(this, 9); /*0x415c3f*/
   return 1; /*0x415c45*/
 
 }
@@ -284,7 +284,7 @@ LABEL_23:
     v7 = 0; /*0x417df4*/
     goto LABEL_24; /*0x417df4*/
   }
-  if ( v7 == 5 && !*(unsigned int *)(*((int (**)(AircraftClass *, unsigned int))this->FootClass + 254))(this, 0) ) /*0x417def*/
+  if ( v7 == 5 && !*(unsigned int *)(*((int (**)(AircraftClass *, unsigned int))this->vtable1 + 254))(this, 0) ) /*0x417def*/
     goto LABEL_23; /*0x417df2*/
 LABEL_24:
   if ( (uint8_t)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x417dfc*/
@@ -308,7 +308,7 @@ LABEL_24:
         }
         if ( !(uint8_t)((Array *)((Array *)v4))->ContainsValue((int)((IUnknown *)((int)this))) /*0x417e76*/
           || v4[70]
-          || (v7 = 3, (*((int (**)(AircraftClass *, int, int *))this->FootClass + 158))(this, 15, v4) != 1) )
+          || (v7 = 3, (*((int (**)(AircraftClass *, int, int *))this->vtable1 + 158))(this, 15, v4) != 1) )
         {
 LABEL_36:
           v7 = 31; /*0x417e78*/
@@ -400,23 +400,23 @@ int AircraftClass::EvaluateTargetingState()
   int v2; // edi
 
   v2 = (*(int (**)(AircraftTypeClass *))(*(unsigned int *)this->Type + 188))(this->Type); /*0x41a956*/
-  if ( (*((int (**)(AircraftClass *))this->FootClass + 114))(this) == v2 ) /*0x41a960*/
+  if ( (*((int (**)(AircraftClass *))this->vtable1 + 114))(this) == v2 ) /*0x41a960*/
   {
     if ( !((unsigned int *)this)[0] ) /*0x41a962*/
-      (*((void (**)(AircraftClass *, unsigned int, int))this->FootClass + 289))(this, 0, 1); /*0x41a974*/
+      (*((void (**)(AircraftClass *, unsigned int, int))this->vtable1 + 289))(this, 0, 1); /*0x41a974*/
     return 1; /*0x41a97b*/
   }
   else
   {
     if ( !((unsigned int *)this)[0] /*0x41a99c*/
-      && (*((uint8_t (**)(AircraftClass *))this->FootClass + 171))(this)
+      && (*((uint8_t (**)(AircraftClass *))this->vtable1 + 171))(this)
       && !(uint8_t)Team::AllMembersValid((Team *)this) )
     {
-      (*((void (**)(AircraftClass *, unsigned int, int))this->FootClass + 289))(this, 0, 1); /*0x41a9ad*/
+      (*((void (**)(AircraftClass *, unsigned int, int))this->vtable1 + 289))(this, 0, 1); /*0x41a9ad*/
     }
     if ( ((unsigned int *)this)[0] ) /*0x41a9b3*/
     {
-      (*((void (**)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 1, 0); /*0x41a9c5*/
+      (*((void (**)(AircraftClass *, int, unsigned int))this->vtable1 + 122))(this, 1, 0); /*0x41a9c5*/
       return 1; /*0x41a9cc*/
     }
     else
@@ -595,7 +595,7 @@ int AircraftClass::RevealSight(int a2, int a3)
   int v19; // [esp+14h] [ebp-4h]
 
   v4 = *(unsigned int *)&this->Type->TechnoTypeClass[1512]; /*0x41ae00*/
-  if ( !(*((int (**)(AircraftClass *))this->FootClass + 114))(this) ) /*0x41ae06*/
+  if ( !(*((int (**)(AircraftClass *))this->vtable1 + 114))(this) ) /*0x41ae06*/
   {
     v4 = 1; /*0x41ae10*/
 LABEL_4:
@@ -704,7 +704,7 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
     if ( v2 ) /*0x41b4d3*/
     {
       ((FootClass *)((FootClass *)v2))->PostLoadInit((int)&a0); /*0x41b4dc*/
-      v2->FootClass = &vt_AircraftClass; /*0x41b4e1*/
+      v2->vtable1 = &vt_AircraftClass; /*0x41b4e1*/
       *p_vtable1 = &vt_AircraftClass; /*0x41b4e7*/
       ((unsigned int *)v2)[0] = (unsigned int)(&vt_AircraftClass); /*0x41b4ed*/
       ((unsigned int *)v2)[0] = (unsigned int)(&vt_AircraftClass); /*0x41b4f4*/
@@ -824,14 +824,14 @@ char AircraftClass::ValidateMovement(int a2, int * a3, int a4)
   int v5; // eax
   char result; // al
 
-  v5 = ((int64_t (*)(AircraftClass *, int *, int))*((unsigned int *)this->FootClass + 29))(this, a3, a4); /*0x417be1*/
+  v5 = ((int64_t (*)(AircraftClass *, int *, int))*((unsigned int *)this->vtable1 + 29))(this, a3, a4); /*0x417be1*/
   switch ( v5 ) /*0x417bf4*/
   {
     case 2: /*0x417bf4*/
       result = 0; /*0x417c14*/
       break; /*0x417c17*/
     case 3: /*0x417bf4*/
-      result = (*((char (**)(AircraftClass *, int, unsigned int, int *, unsigned int))this->FootClass + 222))( /*0x417c25*/
+      result = (*((char (**)(AircraftClass *, int, unsigned int, int *, unsigned int))this->vtable1 + 222))( /*0x417c25*/
                  this,
                  7,
                  0,
@@ -839,7 +839,7 @@ char AircraftClass::ValidateMovement(int a2, int * a3, int a4)
                  0);
       break; /*0x417c2e*/
     case 4: /*0x417bf4*/
-      result = (*((char (**)(AircraftClass *, int, unsigned int, unsigned int, unsigned int))this->FootClass + 222))( /*0x417c3d*/
+      result = (*((char (**)(AircraftClass *, int, unsigned int, unsigned int, unsigned int))this->vtable1 + 222))( /*0x417c3d*/
                  this,
                  16,
                  0,
@@ -847,7 +847,7 @@ char AircraftClass::ValidateMovement(int a2, int * a3, int a4)
                  0);
       break; /*0x417c46*/
     case 17: /*0x417bf4*/
-      result = (*((char (**)(AircraftClass *, int, unsigned int, int *, unsigned int))this->FootClass + 222))( /*0x417c06*/
+      result = (*((char (**)(AircraftClass *, int, unsigned int, int *, unsigned int))this->vtable1 + 222))( /*0x417c06*/
                  this,
                  2,
                  0,
@@ -873,7 +873,7 @@ int AircraftClass::CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3)
   if ( !(uint8_t)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x417f89*/
     return 0; /*0x417f92*/
   v6 = FootClass::HandleCursorWithCheck((FootClass *)this, a1, aP2, aP3); /*0x417faf*/
-  if ( v6 == 5 && !*(unsigned int *)(*((int (**)(AircraftClass *, unsigned int))this->FootClass + 254))(this, 0) ) /*0x417fc2*/
+  if ( v6 == 5 && !*(unsigned int *)(*((int (**)(AircraftClass *, unsigned int))this->vtable1 + 254))(this, 0) ) /*0x417fc2*/
     return 0; /*0x417fc7*/
   return v6; /*0x417f94*/
 
@@ -889,7 +889,7 @@ char * AircraftClass::CheckLandingClearance(int a2, int a3, int a4)
 
   result = MissionClass::GetMissionControl((MissionClass *)this); /*0x41a593*/
   if ( result[9] ) /*0x41a598*/
-    return (*((char *(**)(AircraftClass *, unsigned int, int))this->FootClass + 289))(this, 0, 1); /*0x41a5a7*/
+    return (*((char *(**)(AircraftClass *, unsigned int, int))this->vtable1 + 289))(this, 0, 1); /*0x41a5a7*/
   return result; /*0x41a5ad*/
 
 }
@@ -1038,7 +1038,7 @@ AircraftClass * AircraftClass::CheckActionStatus(void ** Block, char a2)
   AircraftClass::Destruct(Block); /*0x41c213*/
   if ( (a2 & 1) != 0 ) /*0x41c21d*/
     __3_YAXPAX_Z(Block); /*0x41c220*/
-  return &Block->FootClass; /*0x41c22a*/
+  return Block; /*0x41c22a*/
 
 }
 } // namespace gamemd

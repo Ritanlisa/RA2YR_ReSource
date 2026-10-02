@@ -82,7 +82,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   v38 = v4; /*0x4b5b9a*/
   v39[1] = v37; /*0x4b5b9e*/
   v39[2] = v4; /*0x4b5ba2*/
-  thisa = (DropPodLocomotionClass *)((*((int (**)(FootClass *))Owner->TechnoClass + 114))(Owner) / 10 + 2); /*0x4b5bc9*/
+  thisa = (DropPodLocomotionClass *)((*((int (**)(FootClass *))Owner->vtable1 + 114))(Owner) / 10 + 2); /*0x4b5bc9*/
   if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1452) > (int)thisa ) /*0x4b5bd5*/
     thisa = *(DropPodLocomotionClass **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1452); /*0x4b5bd7*/
   v30 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1456); /*0x4b5bf3*/
@@ -99,11 +99,11 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   LOWORD(v8) = Math::RoundToInt(v7); /*0x4b5c6c*/
   v9 = (gamemd::FootClass *)(((unsigned int *)a1)[0]); /*0x4b5c71*/
   v38 = v8; /*0x4b5c74*/
-  v10 = (*((int (**)(FootClass *))v9->TechnoClass + 114))(v9); /*0x4b5c7a*/
+  v10 = (*((int (**)(FootClass *))v9->vtable1 + 114))(v9); /*0x4b5c7a*/
   v11 = (gamemd::FootClass *)(((unsigned int *)a1)[0]); /*0x4b5c80*/
   if ( v10 > 0 ) /*0x4b5c87*/
   {
-    (*((void (**)(FootClass *, int *))v11->TechnoClass + 109))(v11, &v36); /*0x4b5eaa*/
+    (*((void (**)(FootClass *, int *))v11->vtable1 + 109))(v11, &v36); /*0x4b5eaa*/
     v20 = *(unsigned int **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1444); /*0x4b5eb6*/
     if ( v20 ) /*0x4b5ebe*/
     {
@@ -145,11 +145,11 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   }
   else
   {
-    (*((void (**)(FootClass *, unsigned int))v11->TechnoClass + 115))(v11, 0); /*0x4b5c92*/
+    (*((void (**)(FootClass *, unsigned int))v11->vtable1 + 115))(v11, 0); /*0x4b5c92*/
     v36 = ((unsigned int *)v11)[0]; /*0x4b5ca4*/
     v37 = ((unsigned int *)v11)[1]; /*0x4b5cab*/
     v38 = ((unsigned int *)v11)[2]; /*0x4b5cb2*/
-    (*((void (**)(FootClass *))v11->TechnoClass + 53))(v11); /*0x4b5cba*/
+    (*((void (**)(FootClass *))v11->vtable1 + 53))(v11); /*0x4b5cba*/
     v12 = (char *)a1 - 4; /*0x4b5cc3*/
     (*(void (**)(char *))(*((unsigned int *)a1 - 1) + 4))((char *)a1 - 4); /*0x4b5cc7*/
     locomotor = ((unsigned int *)a1)[0]->locomotor; /*0x4b5ccd*/
@@ -157,7 +157,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       (*(void (**)(int))(*(unsigned int *)*locomotor + 8))(*locomotor); /*0x4b5cdd*/
     *locomotor = 0; /*0x4b5ce3*/
     (*(void ((int *)(**))(int *, int *))(((unsigned int *)a1)[0] + 16))(&((unsigned int *)a1)[0], locomotor); /*0x4b5cee*/
-    if ( (*((uint8_t (**)(FootClass *, int *, unsigned int))v11->TechnoClass + 54))(v11, &v36, 0) ) /*0x4b5cfc*/
+    if ( (*((uint8_t (**)(FootClass *, int *, unsigned int))v11->vtable1 + 54))(v11, &v36, 0) ) /*0x4b5cfc*/
     {
       v17 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5dae*/
       if ( v17 ) /*0x4b5db8*/
@@ -198,11 +198,11 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
             0,
             0);
       }
-      (*((void (**)(FootClass *, int))v11->TechnoClass + 73))(v11, 1); /*0x4b5e52*/
-      (*((void (**)(FootClass *, unsigned int))v11->TechnoClass + 115))(v11, 0); /*0x4b5e5e*/
-      (*((void (**)(FootClass *, unsigned int, int))v11->TechnoClass + 289))(v11, 0, 1); /*0x4b5e6c*/
-      (*((void (**)(FootClass *))v11->TechnoClass + 123))(v11); /*0x4b5e76*/
-      (*((void (**)(FootClass *, int *, unsigned int, unsigned int))v11->TechnoClass + 93))(v11, &dword_8A0820, 0, 0); /*0x4b5e89*/
+      (*((void (**)(FootClass *, int))v11->vtable1 + 73))(v11, 1); /*0x4b5e52*/
+      (*((void (**)(FootClass *, unsigned int))v11->vtable1 + 115))(v11, 0); /*0x4b5e5e*/
+      (*((void (**)(FootClass *, unsigned int, int))v11->vtable1 + 289))(v11, 0, 1); /*0x4b5e6c*/
+      (*((void (**)(FootClass *))v11->vtable1 + 123))(v11); /*0x4b5e76*/
+      (*((void (**)(FootClass *, int *, unsigned int, unsigned int))v11->vtable1 + 93))(v11, &dword_8A0820, 0, 0); /*0x4b5e89*/
     }
     else
     {

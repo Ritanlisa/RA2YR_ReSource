@@ -221,7 +221,7 @@ int AnimClass::UpdateProjectileTrajectory() {
       {
         do /*0x423a88*/
         {
-          v10 = (unsigned int *)(*((int (__thiscall **)(ObjectClass *, char *))firstObject->AbstractClass + 18))( /*0x423a08*/
+          v10 = (unsigned int *)(*((int (__thiscall **)(ObjectClass *, char *))firstObject->vtable1 + 18))( /*0x423a08*/
                             firstObject,
                             v27);
           v11 = (unsigned int *)Coord::GetCoords(v28, v21); /*0x423a11*/
@@ -419,7 +419,7 @@ int AnimClass::setLoopCount() {
     if ( !missionStatus ) /*0x449a60*/
     {
       BuildingClass::StartProduction(this, 0); /*0x449b36*/
-      (*((void (__thiscall **)(BuildingClass *, int))this->TechnoClass + 157))(this, 11); /*0x449b41*/
+      (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 11); /*0x449b41*/
       UnitExitSound = this->Type->UnitExitSound; /*0x449b4d*/
       if ( UnitExitSound != -1 /*0x449b67*/
         || (UnitExitSound = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1736), UnitExitSound != -1) )
@@ -442,11 +442,11 @@ int AnimClass::setLoopCount() {
     StartAudioController(v8, (int **)&this->WasOnline); /*0x449a9a*/
     if ( !this->BuildingClass_field_bool_6DD ) /*0x449a9f*/
       return 1; /*0x449ba9*/
-    (*((void (__thiscall **)(BuildingClass *, int))this->TechnoClass + 157))(this, 12); /*0x449ab3*/
-    (*((void (__thiscall **)(BuildingClass *, int))this->TechnoClass + 157))(this, 3); /*0x449abf*/
+    (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 12); /*0x449ab3*/
+    (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x449abf*/
     BuildingClass::StartProduction(this, 1); /*0x449ac9*/
-    (*((void (__thiscall **)(BuildingClass *, unsigned int))this->TechnoClass + 311))(this, 0); /*0x449ad4*/
-    (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->TechnoClass + 122))(this, 5, 0); /*0x449ae2*/
+    (*((void (__thiscall **)(BuildingClass *, unsigned int))this->vtable1 + 311))(this, 0); /*0x449ad4*/
+    (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x449ae2*/
     Type = this->Type; /*0x449ae8*/
     if ( !Type->LaserFence ) /*0x449aee*/
     {

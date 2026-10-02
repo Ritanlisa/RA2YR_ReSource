@@ -170,11 +170,11 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
   this->DeadBodies[0] = (int)&vt_TypeList; /*0x523992*/
   this->DeathAnims[0] = (int)&vt_TypeList; /*0x523998*/
   this->VoiceComment[0] = (int)&vt_TypeList; /*0x52399e*/
-  this->TechnoTypeClass = &vt_InfantryTypeClass; /*0x5239a8*/
+  this->vtable1 = &vt_InfantryTypeClass; /*0x5239a8*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_InfantryTypeClass); /*0x5239ae*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_InfantryTypeClass); /*0x5239b5*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_InfantryTypeClass); /*0x5239bc*/
-  return &this->TechnoTypeClass; /*0x5239c5*/
+  return this; /*0x5239c5*/
 
 }
 } // namespace gamemd
@@ -332,7 +332,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3616) = v9; /*0x52417f*/
   INIClassIntList = (DynamicVectorClass *)(&v44); /*0x524186*/
   ((DynamicVectorClass *)(&v44))->Copy((unsigned int *)(v4 + 3720)); /*0x52418a*/
-  *(unsigned int *)INIClassIntList->VectorClass = &vt_TypeList; /*0x524198*/
+  *(unsigned int *)INIClassIntList->vtable1 = &vt_TypeList; /*0x524198*/
   inited = (uint8_t *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36)); /*0x5241a0*/
   INIClassIntList = (DynamicVectorClass *)GetINIClassIntList( /*0x5241b4*/
                                             (int)&v48,
@@ -740,11 +740,11 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   void *v6; // eax
   InfantryTypeClass *v8; // [esp+4h] [ebp-4h] BYREF
 
-  Block->TechnoTypeClass = &vt_InfantryTypeClass; /*0x524d76*/
+  Block->vtable1 = &vt_InfantryTypeClass; /*0x524d76*/
   ((unsigned int *)Block)[0] = &vt_InfantryTypeClass; /*0x524d7c*/
   ((unsigned int *)Block)[0] = &vt_InfantryTypeClass; /*0x524d83*/
   ((unsigned int *)Block)[0] = &vt_InfantryTypeClass; /*0x524d8a*/
-  AbstractClass::AnnounceExpiredPointer(&Block->TechnoTypeClass, 1); /*0x524d91*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x524d91*/
   v8 = Block; /*0x524da6*/
   v3 = (*(int (**)(unsigned int *, InfantryTypeClass **))(dword_A8E348 + 16))(&dword_A8E348, &v8); /*0x524daa*/
   if ( v3 != -1 && v3 < dword_A8E358 && v3 < --dword_A8E358 ) /*0x524dc5*/
@@ -802,7 +802,7 @@ unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1)
 
   if ( this == (InfantryTypeClass *)aP1 ) /*0x524f2a*/
     goto LABEL_8; /*0x524f2a*/
-  (*((void (**)(InfantryTypeClass *))this->TechnoTypeClass + 3))(this); /*0x524f2e*/
+  (*((void (**)(InfantryTypeClass *))this->vtable1 + 3))(this); /*0x524f2e*/
   v3 = (void *)aP1[2]; /*0x524f31*/
   ((unsigned int *)this)[0] = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/
@@ -812,7 +812,7 @@ unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1)
 LABEL_8:
     ((unsigned int *)this)[0] = aP1[4]; /*0x524f91*/
     ((unsigned int *)this)[0] = aP1[5]; /*0x524f9a*/
-    return &this->TechnoTypeClass; /*0x524f9d*/
+    return this; /*0x524f9d*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x524f43*/
   ((unsigned int *)this)[0] = v4; /*0x524f4b*/
@@ -831,7 +831,7 @@ LABEL_8:
   while ( v6 < (int)((unsigned int *)this)[0] ); /*0x524f71*/
   ((unsigned int *)this)[0] = aP1[4]; /*0x524f76*/
   ((unsigned int *)this)[0] = aP1[5]; /*0x524f7c*/
-  return &this->TechnoTypeClass; /*0x524f81*/
+  return this; /*0x524f81*/
 
 }
 // 0x772FA0
@@ -898,7 +898,7 @@ unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
   a1->TechnoTypeClass = (void *)85; /*0x524777*/
   ((unsigned int *)a1)[0] = (void *)85; /*0x524779*/
   ((unsigned int *)a1)[0] = v1; /*0x52477c*/
-  return &a1->TechnoTypeClass; /*0x52477f*/
+  return a1; /*0x52477f*/
 
 }
 // 0x524790
@@ -935,7 +935,7 @@ unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a
   a1->TechnoTypeClass = v5; /*0x52481e*/
   ((unsigned int *)a1)[0] = v6; /*0x524824*/
   ((unsigned int *)a1)[0] = v3; /*0x524828*/
-  return &a1->TechnoTypeClass; /*0x52482b*/
+  return a1; /*0x52482b*/
 
 }
 // 0x524840

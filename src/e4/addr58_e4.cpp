@@ -1837,7 +1837,7 @@ unsigned int * E4Recv_58BE20::sub_58BE20()
   while ( !*v4 && !v4[1] ); /*0x58be88*/
   v5 = 80 * v3; /*0x58be8e*/
   this->AbstractClass = *(void **)(v5 + g_MissionQueueFrame.localVariables[163]); /*0x58be97*/
-  return &this->AbstractClass; /*0x58be8d*/
+  return this; /*0x58be8d*/
 
 }
 } // namespace gamemd
@@ -1881,13 +1881,13 @@ unsigned int * E4Recv_58BEA0::sub_58BEA0()
       v8[0] = 0; /*0x58bf42*/
       v8[1] = 0; /*0x58bf47*/
       this->AbstractClass = 0; /*0x58bf51*/
-      return &this->AbstractClass; /*0x58bf5c*/
+      return this; /*0x58bf5c*/
     }
     v6 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v8); /*0x58bf2d*/
   }
   while ( !(uint8_t)Cell::IsEmpty(v6) ); /*0x58bf34*/
   this->AbstractClass = *(void **)v8; /*0x58bf62*/
-  return &this->AbstractClass; /*0x58bf50*/
+  return this; /*0x58bf50*/
 
 }
 } // namespace gamemd

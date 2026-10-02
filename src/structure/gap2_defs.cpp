@@ -416,7 +416,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
     FollowingObject = this->FollowingObject; /*0x435bfa*/
     if ( FollowingObject )
     {
-      BehaviourMode = (*((int (**)(ObjectClass *))FollowingObject->AbstractClass + 11))(FollowingObject); /*0x435c0a*/
+      BehaviourMode = (*((int (**)(ObjectClass *))FollowingObject->vtable1 + 11))(FollowingObject); /*0x435c0a*/
       if ( BehaviourMode == 6 )
       {
         v8 = this->FollowingObject; /*0x435c16*/
@@ -425,7 +425,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
           IDA_LOBYTE(BehaviourMode) = v8->isAliveFlag; /*0x435c24*/
           if ( (unsigned char)BehaviourMode )
           {
-            IDA_LOBYTE(BehaviourMode) = (*((int (**)(ObjectClass *))v8->AbstractClass + 212))(this->FollowingObject); /*0x435c36*/
+            IDA_LOBYTE(BehaviourMode) = (*((int (**)(ObjectClass *))v8->vtable1 + 212))(this->FollowingObject); /*0x435c36*/
             if ( (unsigned char)BehaviourMode )
             {
               IDA_LOBYTE(BehaviourMode) = IDA_HIBYTE(v8[10].fallRate); /*0x435c44*/
@@ -448,10 +448,10 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
                                                     16);
                   else
                     Block = 0; /*0x435ccb*/
-                  v10 = (unsigned int *)(*((int (**)(ObjectClass *, int *))this->FollowingObject->AbstractClass + 18))( /*0x435ce5*/
+                  v10 = (unsigned int *)(*((int (**)(ObjectClass *, int *))this->FollowingObject->vtable1 + 18))( /*0x435ce5*/
                                     this->FollowingObject,
                                     &v78);
-                  v11 = (Vector3 *)(*((int (**)(BuildingLightClass *, int *))this->ObjectClass + 18))( /*0x435cee*/
+                  v11 = (Vector3 *)(*((int (**)(BuildingLightClass *, int *))this->vtable1 + 18))( /*0x435cee*/
                                      this,
                                      &v71);
                   _EAX = Vector3::Subtract(v11, &v75, v10); /*0x435cf9*/
@@ -479,10 +479,10 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
                   Math::Sqrt(v57); /*0x435d22*/
                   IDA_LOWORD(v13) = Math::RoundToInt(v3); /*0x435d2a*/
                   v14 = v13; /*0x435d35*/
-                  v15 = (unsigned int *)(*((int (**)(ObjectClass *, int *))this->FollowingObject->AbstractClass + 18))( /*0x435d43*/
+                  v15 = (unsigned int *)(*((int (**)(ObjectClass *, int *))this->FollowingObject->vtable1 + 18))( /*0x435d43*/
                                     this->FollowingObject,
                                     &v78);
-                  v16 = (Vector3 *)(*((int (**)(BuildingLightClass *, int *))this->ObjectClass + 18))( /*0x435d4c*/
+                  v16 = (Vector3 *)(*((int (**)(BuildingLightClass *, int *))this->vtable1 + 18))( /*0x435d4c*/
                                      this,
                                      &v71);
                   v17 = Vector3::Subtract(v16, &v75, v15); /*0x435d57*/
@@ -1097,10 +1097,10 @@ int BuildingLightClass::CalculateDistanceIntensity() {
   unsigned char v9[12]; // [esp+24h] [ebp-18h] BYREF
   unsigned char v10[12]; // [esp+30h] [ebp-Ch] BYREF
 
-  v3 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->FollowingObject->AbstractClass + 18))( /*0x436e9b*/
+  v3 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->FollowingObject->vtable1 + 18))( /*0x436e9b*/
                    this->FollowingObject,
                    v9);
-  v4 = (unsigned int *)(*((int (**)(BuildingLightClass *, unsigned char *))this->ObjectClass + 18))(this, v10); /*0x436ea2*/
+  v4 = (unsigned int *)(*((int (**)(BuildingLightClass *, unsigned char *))this->vtable1 + 18))(this, v10); /*0x436ea2*/
   v8 = v4[2] - v3[2]; /*0x436eca*/
   Math::Sqrt( /*0x436eef*/
     (double)(*v4 - *v3) * (double)(*v4 - *v3)
@@ -1200,7 +1200,7 @@ void* BuildingClass::ctor(int a1) {
   ((unsigned int *)this)[0] = &BuildingClass_Vtable2; /*0x43b725*/
   ((unsigned int *)this)[0] = &BuildingClass_Vtable3; /*0x43b72c*/
   ((unsigned int *)this)[0] = &BuildingClass_Vtable4; /*0x43b733*/
-  return &this->TechnoClass; /*0x43b73c*/
+  return this; /*0x43b73c*/
 }
 }
 // 0x443410
@@ -1237,7 +1237,7 @@ int BuildingClass::HandleFactoryCommand() {
       result = (int)v24; /*0x443424*/
       if ( v24 ) /*0x44342d*/
       {
-        result = (*((int (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->TechnoClass + 222))( /*0x44343c*/
+        result = (*((int (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->vtable1 + 222))( /*0x44343c*/
                    this,
                    1,
                    v24,
@@ -1253,7 +1253,7 @@ int BuildingClass::HandleFactoryCommand() {
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v19, this); /*0x443472*/
         v15 = *(unsigned int *)WaypointCoords; /*0x443483*/
         v17 = WaypointCoords[4]; /*0x443487*/
-        v4 = (*((int (**)(BuildingClass *))this->TechnoClass + 14))(this); /*0x44348c*/
+        v4 = (*((int (**)(BuildingClass *))this->vtable1 + 14))(this); /*0x44348c*/
         v5 = EventClass::Add(v22, v4, 0x11u, v15, v17); /*0x443494*/
         if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4434a3*/
         {
@@ -1264,7 +1264,7 @@ int BuildingClass::HandleFactoryCommand() {
         }
       }
       if ( this->((unsigned int *)Type)[0] ) /*0x4434ff*/
-        (*((void (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->TechnoClass + 222))( /*0x443514*/
+        (*((void (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->vtable1 + 222))( /*0x443514*/
           this,
           16,
           v24,
@@ -1272,16 +1272,16 @@ int BuildingClass::HandleFactoryCommand() {
           0);
       Type = this->Type; /*0x44351a*/
       if ( Type->UnitAbsorb || Type->InfantryAbsorb ) /*0x44352a*/
-        (*((void (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->TechnoClass + 222))( /*0x44353f*/
+        (*((void (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->vtable1 + 222))( /*0x44353f*/
           this,
           16,
           v24,
           0,
           0);
-      result = (*((int (**)(BuildingClass *))this->TechnoClass + 258))(this); /*0x443549*/
+      result = (*((int (**)(BuildingClass *))this->vtable1 + 258))(this); /*0x443549*/
       if ( result > 0 ) /*0x443551*/
       {
-        result = (*((int (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->TechnoClass + 222))( /*0x443562*/
+        result = (*((int (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->vtable1 + 222))( /*0x443562*/
                    this,
                    16,
                    v24,
@@ -1312,7 +1312,7 @@ int BuildingClass::HandleFactoryCommand() {
       v10 = ScriptAction::GetWaypointCoords((ScriptAction *)&v20, this); /*0x443661*/
       v13 = *(unsigned int *)v10; /*0x443672*/
       v14 = v10[4]; /*0x443676*/
-      v11 = (*((int (**)(BuildingClass *))this->TechnoClass + 14))(this); /*0x44367b*/
+      v11 = (*((int (**)(BuildingClass *))this->vtable1 + 14))(this); /*0x44367b*/
       result = (int)ScenarioClass::SetEvent(v22, v11, 30, v13, v14, v16, v18); /*0x443683*/
       break;
     default:
@@ -1425,7 +1425,7 @@ int BuildingClass::PushScriptAction() {
     result = House::IsHumanPlayer((House *)((unsigned int *)this)[0]); /*0x44d774*/
     if ( (unsigned char)result ) /*0x44d77b*/
     {
-      v3 = (unsigned int *)(*((int (**)(BuildingClass *, unsigned char *, unsigned int))this->TechnoClass + 19))(this, v5, 0); /*0x44d788*/
+      v3 = (unsigned int *)(*((int (**)(BuildingClass *, unsigned char *, unsigned int))this->vtable1 + 19))(this, v5, 0); /*0x44d788*/
       *(unsigned short *)v7.__tail_0 = *v3 / 256; /*0x44d79b*/
       *(unsigned short *)&v7.__tail_0[2] = v3[1] / 256; /*0x44d7b3*/
       v7 = v7; /*0x44d7bc*/
@@ -1584,7 +1584,7 @@ int BuildingClass::CheckAdjacentCells() {
     {
       v3 = this->q044; /*0x48549e*/
       v4 = dword_A83D84; /*0x4854a1*/
-      if ( v3 == -1 || (result = *(unsigned int *)&dword_A83D84->TechnoTypeClass[4 * v3], *(unsigned char *)(result + 686)) ) /*0x4854af*/
+      if ( v3 == -1 || (result = *(unsigned int *)dword_A83D84[4 * v3], *(unsigned char *)(result + 686)) ) /*0x4854af*/
       {
         v5 = 0; /*0x4854bd*/
         v6 = 1; /*0x4854bf*/
@@ -1607,7 +1607,7 @@ int BuildingClass::CheckAdjacentCells() {
           if ( result->q11C > 4u && !this->q11C ) /*0x48551f*/
           {
             v8 = result->q044; /*0x485529*/
-            if ( v8 == -1 || !*(unsigned char *)(*(unsigned int *)&v4->TechnoTypeClass[4 * v8] + 686) ) /*0x485534*/
+            if ( v8 == -1 || !*(unsigned char *)(*(unsigned int *)v4[4 * v8] + 686) ) /*0x485534*/
               break; /*0x485534*/
           }
           v9 = result->animation; /*0x48553d*/
@@ -1622,7 +1622,7 @@ int BuildingClass::CheckAdjacentCells() {
           result = result->q044; /*0x485557*/
           if ( result != -1 ) /*0x48555d*/
           {
-            result = *(unsigned int *)&v4->TechnoTypeClass[4 * result]; /*0x48555f*/
+            result = *(unsigned int *)v4[4 * result]; /*0x48555f*/
             if ( !*(unsigned char *)(result + 686) ) /*0x485562*/
               break; /*0x485562*/
           }
@@ -1645,14 +1645,14 @@ int BuildingClass::CheckAdjacentCells() {
 namespace gamemd { 
 void* BuildingClass::checkOccupant(int a2) {
   ((unsigned int *)this)[0] |= 1 << a2; /*0x48711d*/
-  return &this->TechnoClass; /*0x487120*/
+  return this; /*0x487120*/
 }
 }
 // 0x487130
 namespace gamemd { 
 void* BuildingClass::updateOccupiedState(int a2) {
   ((unsigned int *)this)[0] &= ~(1 << a2); /*0x487144*/
-  return &this->TechnoClass; /*0x487147*/
+  return this; /*0x487147*/
 }
 }
 // 0x487170
@@ -1700,7 +1700,7 @@ int InfantryClass::ProcessExitQueue() {
       vtable0 = movementDestination->vtable0; /*0x4da057*/
       if ( movementDestination->vtable0 ) /*0x4da057*/
       {
-        (*((void (**)(InfantryClass *, void *, int))this->FootClass + 288))(this, vtable0, 1); /*0x4da062*/
+        (*((void (**)(InfantryClass *, void *, int))this->vtable1 + 288))(this, vtable0, 1); /*0x4da062*/
         v4 = *(unsigned int *)&((unsigned int *)this)[12]; /*0x4da068*/
         if ( v4 > 0 ) /*0x4da076*/
         {
@@ -4093,19 +4093,19 @@ void* InfantryClass::updateOccupiedBuilding(void* aP1) {
     {
       v6 = a2; /*0x523410*/
       if ( this->FootClass ) /*0x52340d*/
-        (*(void (**)(void *))(*(aP1 *)this->FootClass + 8))(this->FootClass); /*0x52341b*/
+        (*(void (**)(void *))(*(aP1 *)this->vtable1 + 8))(this->FootClass); /*0x52341b*/
       this->FootClass = v6; /*0x52341e*/
     }
     else
     {
       if ( this->FootClass ) /*0x5233f9*/
-        (*(void (**)(void *))(*(aP1 *)this->FootClass + 8))(this->FootClass); /*0x523402*/
+        (*(void (**)(void *))(*(aP1 *)this->vtable1 + 8))(this->FootClass); /*0x523402*/
       this->FootClass = 0; /*0x523405*/
     }
     if ( v5 < 0 && v5 != -2147467262 ) /*0x52342b*/
       WinAPI::Wrapper(v5); /*0x52342e*/
   }
-  return &this->FootClass; /*0x523435*/
+  return this; /*0x523435*/
 }
 }
 // 0x539AE0
@@ -4722,7 +4722,7 @@ void SuperWeapon::DispatchTeam(int a1, int a2) {
     v15 = 0; /*0x6eff6a*/
     v16 = *(unsigned int *)(*(unsigned int *)(v23 + 540) + 22016); /*0x6eff89*/
     if ( v16 != -1 ) /*0x6eff92*/
-      v15 = *(void **)&dword_A8022C->AbstractClass[4 * v16]; /*0x6eff9a*/
+      v15 = *(void **)dword_A8022C[4 * v16]; /*0x6eff9a*/
     v17 = v24; /*0x6eff9d*/
     v18 = DamageMapClassArea( /*0x6effb4*/
             *((unsigned int *)dword_A83C6C + (uint16_t)*(unsigned int *)(a1 + 4)),

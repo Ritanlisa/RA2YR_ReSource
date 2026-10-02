@@ -726,7 +726,7 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
     if ( a1 ) /*0x74802f*/
     {
       TechnoTypeClass::Construct((int)a1, (int)&v3); /*0x748038*/
-      a1->TechnoTypeClass = &vt_UnitTypeClass; /*0x74803d*/
+      a1->vtable1 = &vt_UnitTypeClass; /*0x74803d*/
       ((unsigned int *)a1)[0] = &vt_UnitTypeClass; /*0x748043*/
       ((unsigned int *)a1)[0] = &vt_UnitTypeClass; /*0x74804a*/
       ((unsigned int *)a1)[0] = &vt_UnitTypeClass; /*0x748051*/

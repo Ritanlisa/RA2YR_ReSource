@@ -1713,7 +1713,7 @@ void* Tactical::DrawTacticalConnectorLines()
         v9 = v7[1]; /*0x6db324*/
         v40 -= v8; /*0x6db327*/
         v41 = v9 - *(unsigned int *)&this->__pad_AC[8]; /*0x6db33a*/
-        v10 = (unsigned int *)(*((int (**)(ObjectClass *, char *))firstObject->AbstractClass + 18))( /*0x6db345*/
+        v10 = (unsigned int *)(*((int (**)(ObjectClass *, char *))firstObject->vtable1 + 18))( /*0x6db345*/
                           firstObject,
                           v62);
         v53[0] = *v10; /*0x6db34a*/
@@ -1759,7 +1759,7 @@ void* Tactical::DrawTacticalConnectorLines()
         v21 = v18[1] - v20; /*0x6db452*/
         v42 -= v19; /*0x6db454*/
         v43 = v21 - 60; /*0x6db45f*/
-        v22 = (int *)(*((int (**)(ObjectClass *, unsigned char *))altObject->AbstractClass + 18))(altObject, v58); /*0x6db46d*/
+        v22 = (int *)(*((int (**)(ObjectClass *, unsigned char *))altObject->vtable1 + 18))(altObject, v58); /*0x6db46d*/
         v45 = *v22; /*0x6db472*/
         v46 = v22[1]; /*0x6db47e*/
         v47 = v22[2]; /*0x6db48f*/

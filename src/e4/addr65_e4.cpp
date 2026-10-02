@@ -739,7 +739,7 @@ namespace gamemd {
 int E4Recv_655890::sub_655890()
 {
 
-  return (int)this->AbstractClass + 251 * (int)((unsigned int *)this)[0]; /*0x6558a3*/
+  return (int)this->vtable1 + 251 * (int)((unsigned int *)this)[0]; /*0x6558a3*/
 
 }
 }
@@ -1461,25 +1461,25 @@ bool DeployScriptActionPlane(int a1, int edx0)
         v22 = v22; /*0x65da8d*/
         v22 = (unsigned int *)v22[12]; /*0x65da91*/
         *v24 = 0; /*0x65da93*/
-        v26 = (*((int (**)(ObjectClass *))v16->AbstractClass + 11))(v16); /*0x65da9b*/
+        v26 = (*((int (**)(ObjectClass *))v16->vtable1 + 11))(v16); /*0x65da9b*/
         if ( v26 <= 0 ) /*0x65daa0*/
           goto LABEL_39; /*0x65daa0*/
         if ( v26 <= 2 ) /*0x65daa5*/
         {
           ((CellClass *)((CellClass *)&v16[1].bombVisible))->AddObject(v22); /*0x65dadd*/
           (*(void (**)(unsigned int *))(*v22 + 284))(v22); /*0x65dae6*/
-          (*((void (**)(ObjectClass *, int, unsigned int))v16->AbstractClass + 122))(v16, 16, 0); /*0x65daf4*/
+          (*((void (**)(ObjectClass *, int, unsigned int))v16->vtable1 + 122))(v16, 16, 0); /*0x65daf4*/
           ++v23; /*0x65dafa*/
           goto LABEL_41; /*0x65dafb*/
         }
         if ( v26 == 6 ) /*0x65daaa*/
         {
-          if ( (*((int (**)(ObjectClass *, unsigned int *, ScriptActionQueue))v16->AbstractClass + 64))( /*0x65dabf*/
+          if ( (*((int (**)(ObjectClass *, unsigned int *, ScriptActionQueue))v16->vtable1 + 64))( /*0x65dabf*/
                  v16,
                  v22,
                  v47) == 2 )
           {
-            (*((void (**)(ObjectClass *, int))v16->AbstractClass + 157))(v16, 3); /*0x65dacd*/
+            (*((void (**)(ObjectClass *, int))v16->vtable1 + 157))(v16, 3); /*0x65dacd*/
             ++v23; /*0x65dad3*/
           }
           else if ( v22 ) /*0x65dac3*/
@@ -3369,7 +3369,7 @@ unsigned int * E4Recv_65C890::sub_65C890(int a2, int a3)
 
   this->AbstractClass = (void *)a2; /*0x65c89a*/
   ((unsigned int *)this)[0] = (void *)a3; /*0x65c89c*/
-  return &this->AbstractClass; /*0x65c89f*/
+  return this; /*0x65c89f*/
 
 }
 } // namespace gamemd

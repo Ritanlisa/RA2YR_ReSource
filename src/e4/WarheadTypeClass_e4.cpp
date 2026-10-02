@@ -650,7 +650,7 @@ void WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0)
     for ( k = 0; k < (int)WarheadTypeClass_field_0x114; ++k ) /*0x75e37c*/
       (*(void (**)(int *, char *, int, unsigned int))(*a2 + 16))( /*0x75e38f*/
         a2,
-        (char *)&aP0->WarheadTypeClass_field_0x1AC->AbstractClass + 4 * k,
+        (char *)&aP0->WarheadTypeClass_field_0x1AC->vtable1 + 4 * k,
         4,
         0);
     return 0; /*0x75e399*/

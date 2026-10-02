@@ -54,8 +54,8 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
 
   if ( this->nextObject ) /*0x431bc8*/
     return !a2 && !a3; /*0x431bdb*/
-  if ( (*((uint8_t (**)(ObjectClass *, unsigned int))this->AbstractClass + 5))(this, 0) ) /*0x431bef*/
-    this->ambientSoundController[3] = (*((int (**)(ObjectClass *))this->AbstractClass + 11))(this); /*0x431bfd*/
+  if ( (*((uint8_t (**)(ObjectClass *, unsigned int))this->vtable1 + 5))(this, 0) ) /*0x431bef*/
+    this->ambientSoundController[3] = (*((int (**)(ObjectClass *))this->vtable1 + 11))(this); /*0x431bfd*/
   else
     this->ambientSoundController[3] = 0; /*0x431c02*/
   v5 = a2; /*0x431c05*/
@@ -65,7 +65,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
     {
       v5 = 1024; /*0x431c1b*/
       if ( a3 ) /*0x431c20*/
-        (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 22, 0, 0); /*0x431c2a*/
+        (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->vtable1 + 16))(this, 22, 0, 0); /*0x431c2a*/
     }
     this->attachedTag = (TagClass *)v5; /*0x431c2f*/
     if ( v5 ) /*0x431c32*/
@@ -86,7 +86,7 @@ LABEL_14:
     this->nextObject = (ObjectClass *)__2_YAPAXI_Z((size_t)this->attachedTag); /*0x431c61*/
   if ( !this->nextObject ) /*0x431c67*/
   {
-    (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 12, 0, 0); /*0x431d7d*/
+    (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->vtable1 + 16))(this, 12, 0, 0); /*0x431d7d*/
     return 0; /*0x431d7d*/
   }
   v6 = this->ambientSoundController[3]; /*0x431c6d*/
@@ -105,7 +105,7 @@ LABEL_14:
     attachedTag = (TagClass *)v6; /*0x431c9f*/
     if ( v6 > (int)this->attachedTag ) /*0x431ca3*/
       attachedTag = this->attachedTag; /*0x431ca5*/
-    v8 = (*((uint8_t (**)(ObjectClass *))this->AbstractClass + 6))(this) == 0; /*0x431cb0*/
+    v8 = (*((uint8_t (**)(ObjectClass *))this->vtable1 + 6))(this) == 0; /*0x431cb0*/
     vtable0 = (int (**)(ObjectClass *, int))this->AbstractClass; /*0x431cb2*/
     if ( v8 ) /*0x431cb6*/
     {
@@ -130,24 +130,24 @@ LABEL_14:
       else
       {
         if ( v7 ) /*0x431ce5*/
-          (*((void (**)(ObjectClass *, unsigned int, unsigned int))this->AbstractClass + 10))(this, 0, 0); /*0x431ced*/
+          (*((void (**)(ObjectClass *, unsigned int, unsigned int))this->vtable1 + 10))(this, 0, 0); /*0x431ced*/
         this->attachedBomb = v7; /*0x431cf0*/
         this->ambientSoundController[4] = (int)v7; /*0x431cf3*/
       }
     }
-    if ( (TagClass *)(*((int (**)(ObjectClass *, ObjectClass *, TagClass *))this->AbstractClass + 9))( /*0x431d30*/
+    if ( (TagClass *)(*((int (**)(ObjectClass *, ObjectClass *, TagClass *))this->vtable1 + 9))( /*0x431d30*/
                        this,
                        this->nextObject,
                        attachedTag) != attachedTag )
-      (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 5, 0, 0); /*0x431d3a*/
+      (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->vtable1 + 16))(this, 5, 0, 0); /*0x431d3a*/
     if ( v11 ) /*0x431d41*/
     {
-      (*((void (**)(ObjectClass *))this->AbstractClass + 13))(this); /*0x431d47*/
+      (*((void (**)(ObjectClass *))this->vtable1 + 13))(this); /*0x431d47*/
       HIBYTE(this->occupant) = 1; /*0x431d4a*/
       BYTE1(this->owningHouseIndex) = 1; /*0x431d4e*/
       return 1; /*0x431d58*/
     }
-    (*((void (**)(ObjectClass *, BombClass *, unsigned int))this->AbstractClass + 10))(this, v7, 0); /*0x431d61*/
+    (*((void (**)(ObjectClass *, BombClass *, unsigned int))this->vtable1 + 10))(this, v7, 0); /*0x431d61*/
     HIBYTE(this->occupant) = 1; /*0x431d64*/
   }
   BYTE1(this->owningHouseIndex) = 1; /*0x431d68*/
@@ -791,7 +791,7 @@ LABEL_5:
     if ( v2 != -2147467262 ) /*0x437fb0*/
       WinAPI::Wrapper(v2); /*0x437fb3*/
   }
-  return &this->AbstractClass; /*0x437fba*/
+  return this; /*0x437fba*/
 
 }
 }
@@ -1622,7 +1622,7 @@ double E4Recv_436DA0::sub_436DA0()
   unsigned char v8[12]; // [esp+38h] [ebp-Ch] BYREF
 
   v3 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(**((unsigned int **)this + 57) + 72))(*((unsigned int *)this + 57), v7); /*0x436dbc*/
-  v4 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->AbstractClass + 18))(this, v8); /*0x436dc3*/
+  v4 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->vtable1 + 18))(this, v8); /*0x436dc3*/
   v5 = v4[1] - v3[1]; /*0x436de0*/
   v6 = v4[2] - v3[2]; /*0x436de4*/
   Math::Sqrt((double)(*v4 - *v3) * (double)(*v4 - *v3) + (double)v6 * (double)v6 + (double)v5 * (double)v5); /*0x436e10*/
@@ -2280,7 +2280,7 @@ unsigned int * E4Recv_43AF10::sub_43AF10()
   this->AbstractClass = 0; /*0x43af14*/
   ((unsigned int *)this)[0] = 0; /*0x43af16*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x43af19*/
-  return &this->AbstractClass; /*0x43af1c*/
+  return this; /*0x43af1c*/
 
 }
 } // namespace gamemd

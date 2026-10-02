@@ -32,7 +32,7 @@ int BombClass::AbstractClass()
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
-  this->AbstractClass = &vt_BombClass; /*0x4385e1*/
+  this->vtable1 = &vt_BombClass; /*0x4385e1*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4385e7*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4385ee*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4385f5*/
@@ -186,7 +186,7 @@ int BombClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x438b59*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x438b62*/
-      aP0->AbstractClass = &vt_BombClass; /*0x438b67*/
+      aP0->vtable1 = &vt_BombClass; /*0x438b67*/
       ((unsigned int *)aP0)[0] = &vt_BombClass; /*0x438b6d*/
       ((unsigned int *)aP0)[0] = &vt_BombClass; /*0x438b74*/
       ((unsigned int *)aP0)[0] = &vt_BombClass; /*0x438b7b*/
@@ -220,7 +220,7 @@ BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
   int v3; // eax
   BombClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_BombClass; /*0x4393f7*/
+  Block->vtable1 = &vt_BombClass; /*0x4393f7*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x4393fd*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x439404*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x43940b*/
@@ -239,7 +239,7 @@ BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x439462*/
   if ( (a2 & 1) != 0 ) /*0x43946c*/
     __3_YAXPAX_Z(Block); /*0x43946f*/
-  return &Block->AbstractClass; /*0x439479*/
+  return Block; /*0x439479*/
 
 }
 } // namespace gamemd

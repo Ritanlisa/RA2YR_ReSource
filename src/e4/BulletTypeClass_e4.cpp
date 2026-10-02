@@ -177,11 +177,11 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3
   *((unsigned char *)this + 757) = 0; /*0x46bcd4*/
   *((unsigned char *)this + 758) = 0; /*0x46bcda*/
   *((unsigned char *)this + 759) = 0; /*0x46bce0*/
-  *(unsigned int *)this->ObjectTypeClass = &vt_BulletTypeClass; /*0x46bce6*/
-  *(unsigned int *)&this->ObjectTypeClass[4] = &vt_BulletTypeClass; /*0x46bcec*/
-  *(unsigned int *)&this->ObjectTypeClass[8] = &vt_BulletTypeClass; /*0x46bcf2*/
-  *(unsigned int *)&this->ObjectTypeClass[12] = &vt_BulletTypeClass; /*0x46bcf9*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->ObjectTypeClass[4]); /*0x46bd00*/
+  *(unsigned int *)this->vtable1 = &vt_BulletTypeClass; /*0x46bce6*/
+  *(unsigned int *)this[4] = &vt_BulletTypeClass; /*0x46bcec*/
+  *(unsigned int *)this[8] = &vt_BulletTypeClass; /*0x46bcf2*/
+  *(unsigned int *)this[12] = &vt_BulletTypeClass; /*0x46bcf9*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)this[4]); /*0x46bd00*/
   *((unsigned char *)this + 564) = 1; /*0x46bd05*/
   *((unsigned char *)this + 559) = 1; /*0x46bd0c*/
   *((unsigned char *)this + 560) = 0; /*0x46bd13*/
@@ -616,10 +616,10 @@ BulletTypeClass * BulletTypeClass::ddtor(void ** Block, char a2)
   int v4; // eax
   BulletTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block->ObjectTypeClass = &vt_BulletTypeClass; /*0x46c896*/
-  *(unsigned int *)&Block->ObjectTypeClass[4] = &vt_BulletTypeClass; /*0x46c89c*/
-  *(unsigned int *)&Block->ObjectTypeClass[8] = &vt_BulletTypeClass; /*0x46c8a3*/
-  *(unsigned int *)&Block->ObjectTypeClass[12] = &vt_BulletTypeClass; /*0x46c8aa*/
+  *(unsigned int *)Block->vtable1 = &vt_BulletTypeClass; /*0x46c896*/
+  *(unsigned int *)Block[4] = &vt_BulletTypeClass; /*0x46c89c*/
+  *(unsigned int *)Block[8] = &vt_BulletTypeClass; /*0x46c8a3*/
+  *(unsigned int *)Block[12] = &vt_BulletTypeClass; /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x46c8b1*/
   v6 = Block; /*0x46c8c6*/
   v3 = (*(int (**)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/
@@ -686,7 +686,7 @@ int BulletTypeClass::ProcessImpact(int a1)
 
   v1 = a1; /*0x69fc16*/
   v2 = (char *)a1 - 4; /*0x69fc28*/
-  v3 = *(uint8_t *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->TechnoClass + 111))(((unsigned int *)a1)[0]) + 284); /*0x69fc31*/
+  v3 = *(uint8_t *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 111))(((unsigned int *)a1)[0]) + 284); /*0x69fc31*/
   v4 = *((unsigned int *)v2 + 7); /*0x69fc33*/
   if ( v3 != v4 ) /*0x69fc38*/
   {
@@ -705,7 +705,7 @@ int BulletTypeClass::ProcessImpact(int a1)
       && (*((int (**)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
       && (v6 = ((unsigned int *)v1)[0],
           v7 = v6->movementDestination + 1,
-          v8 = (unsigned short *)(*((int (**)(FootClass *, ShipLocomotionClass **))v6->TechnoClass + 110))(v6, &a1),
+          v8 = (unsigned short *)(*((int (**)(FootClass *, ShipLocomotionClass **))v6->vtable1 + 110))(v6, &a1),
           *v8 == LOWORD(v7->vtable0))
       && v8[1] == HIWORD(v7->vtable0) )
     {
@@ -731,14 +731,14 @@ int BulletTypeClass::ProcessImpact(int a1)
         if ( BYTE2(v1->TrackIndex) ) /*0x69ff5d*/
         {
           BYTE2(v1->TrackIndex) = 0; /*0x69ff62*/
-          (*((void (**)(FootClass *, unsigned int))((unsigned int *)v1)[0]->TechnoClass + 99))(((unsigned int *)v1)[0], 0); /*0x69ff6b*/
+          (*((void (**)(FootClass *, unsigned int))((unsigned int *)v1)[0]->vtable1 + 99))(((unsigned int *)v1)[0], 0); /*0x69ff6b*/
           v16 = ((unsigned int *)v1)[0]; /*0x69ff71*/
           if ( !((unsigned int *)v16)[0] || ((unsigned int *)v16)[0] || ((unsigned int *)v16)[0] ) /*0x69ff84*/
             return 0; /*0x69ff95*/
         }
-        if ( (*((int (**)(FootClass *))((unsigned int *)v1)[0]->TechnoClass + 97))(((unsigned int *)v1)[0]) == 5 /*0x69ffc4*/
+        if ( (*((int (**)(FootClass *))((unsigned int *)v1)[0]->vtable1 + 97))(((unsigned int *)v1)[0]) == 5 /*0x69ffc4*/
           && !(*(uint8_t (**)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
-          || (*((int (**)(FootClass *))((unsigned int *)v1)[0]->TechnoClass + 97))(((unsigned int *)v1)[0]) == 16 )
+          || (*((int (**)(FootClass *))((unsigned int *)v1)[0]->vtable1 + 97))(((unsigned int *)v1)[0]) == 16 )
         {
           goto LABEL_32; /*0x69ffc4*/
         }
@@ -780,9 +780,9 @@ int BulletTypeClass::ProcessImpact(int a1)
         }
         v20 = ((unsigned int *)v1)[0]; /*0x6a0074*/
         if ( ((unsigned int *)v20)[0] /*0x6a00ab*/
-          && (*((int (**)(FootClass *))v20->TechnoClass + 97))(v20) != 7
+          && (*((int (**)(FootClass *))v20->vtable1 + 97))(v20) != 7
           && (*(uint8_t (**)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
-          && !(*((uint8_t (**)(FootClass *, int *))((unsigned int *)v1)[0]->TechnoClass + 179))(
+          && !(*((uint8_t (**)(FootClass *, int *))((unsigned int *)v1)[0]->vtable1 + 179))(
                 ((unsigned int *)v1)[0],
                 &v1->SlopeTimer[3]) )
         {
@@ -823,7 +823,7 @@ int BulletTypeClass::ProcessImpact(int a1)
       if ( !*(unsigned int *)&v9->__pad_58C[12] ) /*0x69fde7*/
       {
 LABEL_20:
-        (*((void (**)(FootClass *, unsigned int, int))v9->TechnoClass + 288))(v9, 0, 1); /*0x69fd65*/
+        (*((void (**)(FootClass *, unsigned int, int))v9->vtable1 + 288))(v9, 0, 1); /*0x69fd65*/
         return 0; /*0x69fd79*/
       }
     }
@@ -836,7 +836,7 @@ LABEL_20:
   if ( v1->MovementSpeed[1] != -1 /*0x69fcd4*/
     || !(*(uint8_t (**)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
     && ((unsigned int *)v1)[0]->pathDirections[0] == -1
-    || (*((int (**)(FootClass *))((unsigned int *)v1)[0]->TechnoClass + 11))(((unsigned int *)v1)[0]) == 1 && BYTE1(((unsigned int *)v1)[1]) )
+    || (*((int (**)(FootClass *))((unsigned int *)v1)[0]->vtable1 + 11))(((unsigned int *)v1)[0]) == 1 && BYTE1(((unsigned int *)v1)[1]) )
   {
     goto LABEL_32; /*0x69fcda*/
   }
@@ -853,10 +853,10 @@ LABEL_32:
   if ( (*(uint8_t (**)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))(v1) ) /*0x69fe3c*/
   {
     if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 8) /*0x69fe6e*/
-      && !*(unsigned char *)((*((int (**)(FootClass *))((unsigned int *)v1)[0]->TechnoClass + 33))(((unsigned int *)v1)[0]) + 3433) )
+      && !*(unsigned char *)((*((int (**)(FootClass *))((unsigned int *)v1)[0]->vtable1 + 33))(((unsigned int *)v1)[0]) + 3433) )
     {
       v12 = ((unsigned int *)v1)[0]; /*0x69fe76*/
-      if ( !((unsigned int *)v12)[0] && *(unsigned int *)((*((int (**)(FootClass *))v12->TechnoClass + 111))(v12) + 236) == 2 ) /*0x69fe90*/
+      if ( !((unsigned int *)v12)[0] && *(unsigned int *)((*((int (**)(FootClass *))v12->vtable1 + 111))(v12) + 236) == 2 ) /*0x69fe90*/
       {
         if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 148) ) /*0x69fe97*/
         {
@@ -888,7 +888,7 @@ LABEL_32:
   {
     v15 = ((unsigned int *)v1)[0]; /*0x69ff25*/
     if ( v15->pathDirections[0] == -1 && *(double *)v15->currentSpeed_percentage > 0.0 ) /*0x69ff41*/
-      (*((void (**)(FootClass *, unsigned int, unsigned int))v15->TechnoClass + 337))(v15, 0, 0); /*0x69ff47*/
+      (*((void (**)(FootClass *, unsigned int, unsigned int))v15->vtable1 + 337))(v15, 0, 0); /*0x69ff47*/
   }
   return (*(char (**)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1); /*0x69fd72*/
 
@@ -913,8 +913,8 @@ unsigned int * BulletTypeClass::GetROF(unsigned int * a1, int * a2)
   if ( v7 <= GroundHeight ) /*0x46c520*/
     v3 = Cell::GetGroundHeight(&v5) + 1; /*0x46c533*/
   *(unsigned int *)a1->ObjectTypeClass = v5; /*0x46c53f*/
-  *(unsigned int *)&a1->ObjectTypeClass[4] = v6; /*0x46c545*/
-  *(unsigned int *)&a1->ObjectTypeClass[8] = v3; /*0x46c549*/
+  *(unsigned int *)a1[4] = v6; /*0x46c545*/
+  *(unsigned int *)a1[8] = v3; /*0x46c549*/
   return a1->ObjectTypeClass; /*0x46c54c*/
 
 }
@@ -932,10 +932,10 @@ int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x46c6b6*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x46c6bf*/
-      *(unsigned int *)aP0->ObjectTypeClass = &vt_BulletTypeClass; /*0x46c6c4*/
-      *(unsigned int *)&aP0->ObjectTypeClass[4] = &vt_BulletTypeClass; /*0x46c6ca*/
-      *(unsigned int *)&aP0->ObjectTypeClass[8] = &vt_BulletTypeClass; /*0x46c6d1*/
-      *(unsigned int *)&aP0->ObjectTypeClass[12] = &vt_BulletTypeClass; /*0x46c6d8*/
+      *(unsigned int *)aP0->vtable1 = &vt_BulletTypeClass; /*0x46c6c4*/
+      *(unsigned int *)aP0[4] = &vt_BulletTypeClass; /*0x46c6ca*/
+      *(unsigned int *)aP0[8] = &vt_BulletTypeClass; /*0x46c6d1*/
+      *(unsigned int *)aP0[12] = &vt_BulletTypeClass; /*0x46c6d8*/
     }
     VoxelAnimType::LoadAnim(aP0->ObjectTypeClass); /*0x46c6e1*/
     ObjectTypeClass::Load2DArt(aP0->ObjectTypeClass); /*0x46c6e8*/

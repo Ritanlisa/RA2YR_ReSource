@@ -119,10 +119,10 @@ void SaveInfantryToINI(void * a1, void * a2, void * a3)
     if ( !((unsigned int *)v6)[0] ) /*0x51ff28*/
     {
       sprintf(Buffer, "%d", result); /*0x51ff41*/
-      if ( (*((int (**)(BuildingClass *, int, int))v6->TechnoClass + 97))(v6, a2, a3) == -1 ) /*0x51ff71*/
+      if ( (*((int (**)(BuildingClass *, int, int))v6->vtable1 + 97))(v6, a2, a3) == -1 ) /*0x51ff71*/
         queuedMission = (char *)((unsigned int *)v6)[0]; /*0x51ff79*/
       else
-        queuedMission = (char *)(*((int (**)(BuildingClass *))v6->TechnoClass + 97))(v6); /*0x51ff89*/
+        queuedMission = (char *)(*((int (**)(BuildingClass *))v6->vtable1 + 97))(v6); /*0x51ff89*/
       v7 = (unsigned int)(*((ProgressTimer *)((ProgressTimer *)((unsigned int *)v6)[0]))->GetValue((unsigned int *)(&v27))); /*0x51ff9d*/
       owner = (gamemd::HouseClass *)(((unsigned int *)v6)[0]); /*0x51ffab*/
       v9 = *(unsigned int *)&v6->__pad_6B8[8] + 36; /*0x51ffb3*/
@@ -138,13 +138,13 @@ void SaveInfantryToINI(void * a1, void * a2, void * a3)
       Field = FootClass::GetField(((unsigned int *)v6)[0]); /*0x52000b*/
       v16 = FromNameIndex((int)queuedMission); /*0x52001b*/
       v12 = ((Input *)(&v24))->OffsetToDirection(); /*0x52001c*/
-      v13 = (*((int (**)(BuildingClass *, char *, int, char *, unsigned int))v6->TechnoClass + 110))( /*0x52002b*/
+      v13 = (*((int (**)(BuildingClass *, char *, int, char *, unsigned int))v6->vtable1 + 110))( /*0x52002b*/
               v6,
               Buffer,
               v12,
               v16,
               (uint8_t)(((v7 >> 7) + 1) >> 1));
-      v15 = *(int16_t *)(*((int (**)(BuildingClass *, char *, unsigned int))v6->TechnoClass + 110))( /*0x520048*/
+      v15 = *(int16_t *)(*((int (**)(BuildingClass *, char *, unsigned int))v6->vtable1 + 110))( /*0x520048*/
                           v6,
                           Buffer,
                           *(int16_t *)(v13 + 2));

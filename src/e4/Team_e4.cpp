@@ -100,12 +100,12 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
   dwNewLong = -1; /*0x561195*/
     ((Debug *)0)->Log();
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5611ad*/
-  (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5611ba*/
+  (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5611ba*/
   Frame::Present((void *)((int)g_DSurface_Hidden), a3,(void *)(yBottom), a4, 0,(void *)(v13),(void *)(v15), v17); /*0x5611c7*/
   result = ChangeVideoMode(v6, yBottom); /*0x5611d0*/
   if ( result ) /*0x5611d7*/
   {
-    (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5611ea*/
+    (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5611ea*/
     Frame::Present((void *)((int)g_DSurface_Hidden), a3,(void *)(yBottom), a4, 0,(void *)(v14),(void *)(v16), v18); /*0x5611f7*/
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x561204*/
     Screen::Capture(1, 0, a3, yBottom); /*0x56120b*/

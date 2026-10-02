@@ -116,7 +116,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
   int v13; // [esp+8h] [ebp-8h] BYREF
   int v14; // [esp+Ch] [ebp-4h]
 
-  v7 = (*((int (**)(SmudgeTypeClass *))this->ObjectTypeClass + 39))(this); /*0x6b55ff*/
+  v7 = (*((int (**)(SmudgeTypeClass *))this->vtable1 + 39))(this); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
     v8 = a2[1]; /*0x6b5614*/
@@ -189,7 +189,7 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
   SmudgeTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Image = ((unsigned int *)a3)[0]; /*0x6b6164*/
-  a3->ObjectTypeClass = &vt_SmudgeTypeClass; /*0x6b616a*/
+  a3->vtable1 = &vt_SmudgeTypeClass; /*0x6b616a*/
   ((unsigned int *)a3)[0] = &vt_SmudgeTypeClass; /*0x6b6172*/
   ((unsigned int *)a3)[0] = &vt_SmudgeTypeClass; /*0x6b6179*/
   ((unsigned int *)a3)[0] = &vt_SmudgeTypeClass; /*0x6b6180*/
@@ -198,7 +198,7 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
     __3_YAXPAX_Z(Image); /*0x6b618a*/
     ((unsigned int *)a3)[0] = 0; /*0x6b6192*/
   }
-  AbstractClass::AnnounceExpiredPointer(&a3->ObjectTypeClass, 1); /*0x6b61a0*/
+  AbstractClass::AnnounceExpiredPointer(a3, 1); /*0x6b61a0*/
   v6 = a3; /*0x6b61b5*/
   v4 = (*(int (**)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 52) + 16))( /*0x6b61b9*/
          &(unsigned int *)((char *)&stru_A8EB00 + 52),
@@ -216,7 +216,7 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
   ((ObjectTypeClass *)((int)a3))->Destruct(); /*0x6b61f0*/
   if ( (a3 & 1) != 0 ) /*0x6b61fa*/
     __3_YAXPAX_Z(a3); /*0x6b61fd*/
-  return &a3->ObjectTypeClass; /*0x6b6207*/
+  return a3; /*0x6b6207*/
 
 }
 // 0x6B5550
@@ -284,7 +284,7 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6b5866*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6b586f*/
-      aP0->ObjectTypeClass = &vt_SmudgeTypeClass; /*0x6b5874*/
+      aP0->vtable1 = &vt_SmudgeTypeClass; /*0x6b5874*/
       ((unsigned int *)aP0)[0] = &vt_SmudgeTypeClass; /*0x6b587a*/
       ((unsigned int *)aP0)[0] = &vt_SmudgeTypeClass; /*0x6b5881*/
       ((unsigned int *)aP0)[0] = &vt_SmudgeTypeClass; /*0x6b5888*/

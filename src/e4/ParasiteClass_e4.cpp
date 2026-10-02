@@ -43,7 +43,7 @@ int ParasiteClass::Constructor(void *a1, void *a2, void *a3)
   v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
-  this->AbstractClass = &vt_ParasiteClass; /*0x629231*/
+  this->vtable1 = &vt_ParasiteClass; /*0x629231*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_ParasiteClass); /*0x629237*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_ParasiteClass); /*0x62923e*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_ParasiteClass); /*0x629245*/
@@ -808,7 +808,7 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
   ParasiteClass *v7; // [esp+8h] [ebp-4h] BYREF
 
   v3 = *((unsigned int *)Block + 17); /*0x62af77*/
-  Block->AbstractClass = &vt_ParasiteClass; /*0x62af7a*/
+  Block->vtable1 = &vt_ParasiteClass; /*0x62af7a*/
   ((unsigned int *)Block)[0] = &vt_ParasiteClass; /*0x62af82*/
   ((unsigned int *)Block)[0] = &vt_ParasiteClass; /*0x62af89*/
   ((unsigned int *)Block)[0] = &vt_ParasiteClass; /*0x62af90*/
@@ -853,7 +853,7 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x62b049*/
   if ( (a2 & 1) != 0 ) /*0x62b053*/
     __3_YAXPAX_Z(Block); /*0x62b056*/
-  return &Block->AbstractClass; /*0x62b060*/
+  return Block; /*0x62b060*/
 
 }
 } // namespace ra2
@@ -1205,7 +1205,7 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
       *(unsigned int *)&a0->__pad_28[4] = v4; /*0x6295e8*/
       a0->ParasiteClass_field_38 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6295f0*/
       a0->ParasiteClass_field_40 = 0; /*0x6295f3*/
-      a0->AbstractClass = &vt_ParasiteClass; /*0x6295fa*/
+      a0->vtable1 = &vt_ParasiteClass; /*0x6295fa*/
       ((unsigned int *)a0)[0] = &vt_ParasiteClass; /*0x629600*/
       ((unsigned int *)a0)[0] = &vt_ParasiteClass; /*0x629607*/
       ((unsigned int *)a0)[0] = &vt_ParasiteClass; /*0x62960e*/

@@ -722,7 +722,7 @@ unsigned int SessionClass::initPlayers()
   PlayerCountMap = ReadPlayerCountMap((int)this); /*0x5e64d7*/
   if ( dword_A8B23C ) /*0x5e64db*/
   {
-    v3 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 38))(dword_A8B23C); /*0x5e64df*/
+    v3 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 38))(dword_A8B23C); /*0x5e64df*/
     if ( v3 != -1 && v3 < PlayerCountMap ) /*0x5e64ec*/
       PlayerCountMap = v3; /*0x5e64ee*/
   }
@@ -1449,7 +1449,7 @@ LABEL_9:
   for ( i = dword_A8022C; ; i = (HouseClass *)((char *)i + 4) ) /*0x697ed9*/
   {
     v7 = *(void **)i->AbstractClass; /*0x697edf*/
-    if ( *(unsigned char *)(*(unsigned int *)i->AbstractClass + 492) ) /*0x697ee1*/
+    if ( *(unsigned char *)(*(unsigned int *)i->vtable1 + 492) ) /*0x697ee1*/
     {
       if ( !*((unsigned char *)v7 + 501) ) /*0x697eeb*/
         break; /*0x697eeb*/

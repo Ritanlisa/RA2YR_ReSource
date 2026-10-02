@@ -82,7 +82,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   *((unsigned char *)this + 773) = 1; /*0x5448b5*/
   *((unsigned char *)this + 774) = 0; /*0x5448bc*/
   *((unsigned int *)this + 194) = 0; /*0x5448c2*/
-  this->ObjectTypeClass = &vt_IsometricTileTypeClass; /*0x5448c8*/
+  this->vtable1 = &vt_IsometricTileTypeClass; /*0x5448c8*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_IsometricTileTypeClass); /*0x5448cf*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_IsometricTileTypeClass); /*0x5448d6*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_IsometricTileTypeClass); /*0x5448dd*/
@@ -130,7 +130,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   ((unsigned int *)this)[0] = 1; /*0x5449de*/
   ((unsigned int *)this)[0] = 1; /*0x5449e5*/
   ((unsigned int *)this)[0] = 0; /*0x5449ec*/
-  return &this->ObjectTypeClass; /*0x5449c4*/
+  return this; /*0x5449c4*/
 
 }
 } // namespace gamemd
@@ -159,7 +159,7 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
   this->IsAnimated = 0; /*0x71dae5*/
   this->IsVeinhole = 0; /*0x71daeb*/
   this->FoundationData = 0; /*0x71daf1*/
-  this->ObjectTypeClass = &vt_TerrainTypeClass; /*0x71daf7*/
+  this->vtable1 = &vt_TerrainTypeClass; /*0x71daf7*/
   ((unsigned int *)this)[0] = &vt_TerrainTypeClass; /*0x71dafd*/
   ((unsigned int *)this)[0] = &vt_TerrainTypeClass; /*0x71db03*/
   ((unsigned int *)this)[0] = &vt_TerrainTypeClass; /*0x71db0a*/
@@ -204,7 +204,7 @@ LABEL_11:
   this->ArrayIndex = v5; /*0x71dba6*/
   ((unsigned int *)this)[0] = -1; /*0x71dbac*/
   ((unsigned int *)this)[0] = 6; /*0x71dbb6*/
-  return &this->ObjectTypeClass; /*0x71dbc2*/
+  return this; /*0x71dbc2*/
 
 }
 // 0x71DEA0
@@ -267,7 +267,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
       _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], Ext); /*0x71dfad*/
       ((unsigned int *)this)[0] = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x71dfc0*/
     }
-    v11 = (MixFileClass *)(*((int (**)(TerrainTypeClass *))this->ObjectTypeClass + 39))(this); /*0x71dfca*/
+    v11 = (MixFileClass *)(*((int (**)(TerrainTypeClass *))this->vtable1 + 39))(this); /*0x71dfca*/
     if ( v11 ) /*0x71dfd2*/
     {
       PixelData = MixFileClass::GetPixelData(v11, (int)&v23, 0); /*0x71dfdd*/
@@ -392,7 +392,7 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
   TerrainTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Image = ((unsigned int *)a3)[0]; /*0x71e364*/
-  a3->ObjectTypeClass = &vt_TerrainTypeClass; /*0x71e36a*/
+  a3->vtable1 = &vt_TerrainTypeClass; /*0x71e36a*/
   ((unsigned int *)a3)[0] = &vt_TerrainTypeClass; /*0x71e372*/
   ((unsigned int *)a3)[0] = &vt_TerrainTypeClass; /*0x71e379*/
   ((unsigned int *)a3)[0] = &vt_TerrainTypeClass; /*0x71e380*/
@@ -401,7 +401,7 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
     __3_YAXPAX_Z(Image); /*0x71e38a*/
     ((unsigned int *)a3)[0] = 0; /*0x71e392*/
   }
-  AbstractClass::AnnounceExpiredPointer(&a3->ObjectTypeClass, 1); /*0x71e3a0*/
+  AbstractClass::AnnounceExpiredPointer(a3, 1); /*0x71e3a0*/
   v6 = a3; /*0x71e3b5*/
   v4 = (*(int (**)(unsigned int *, TerrainTypeClass **))(dword_A8E318 + 16))(&dword_A8E318, &v6); /*0x71e3b9*/
   if ( v4 != -1 && v4 < dword_A8E328 && v4 < --dword_A8E328 ) /*0x71e3d4*/
@@ -416,7 +416,7 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
   ((ObjectTypeClass *)((int)a3))->Destruct(); /*0x71e3f0*/
   if ( (a3 & 1) != 0 ) /*0x71e3fa*/
     __3_YAXPAX_Z(a3); /*0x71e3fd*/
-  return &a3->ObjectTypeClass; /*0x71e407*/
+  return a3; /*0x71e407*/
 
 }
 // 0x53FFA0
@@ -493,7 +493,7 @@ unsigned int *  TerrainTypeClass::GetWidth(unsigned int * a1, int * a2)
   a1->ObjectTypeClass = v5; /*0x71e11e*/
   ((unsigned int *)a1)[0] = v6; /*0x71e124*/
   ((unsigned int *)a1)[0] = v3; /*0x71e128*/
-  return &a1->ObjectTypeClass; /*0x71e12b*/
+  return a1; /*0x71e12b*/
 
 }
 // 0x71E140
@@ -532,7 +532,7 @@ int  TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x71e1e6*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x71e1ef*/
-      aP0->ObjectTypeClass = &vt_TerrainTypeClass; /*0x71e1f4*/
+      aP0->vtable1 = &vt_TerrainTypeClass; /*0x71e1f4*/
       ((unsigned int *)aP0)[0] = &vt_TerrainTypeClass; /*0x71e1fa*/
       ((unsigned int *)aP0)[0] = &vt_TerrainTypeClass; /*0x71e201*/
       ((unsigned int *)aP0)[0] = &vt_TerrainTypeClass; /*0x71e208*/

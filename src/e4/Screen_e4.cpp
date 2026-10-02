@@ -247,7 +247,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
       break; /*0x68f307*/
     if ( v70 > 0 && v71 > 0 ) /*0x68f31b*/
     {
-      (*((void (**)(ObjectClass *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x68f33a*/
+      (*((void (**)(ObjectClass *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Hidden->vtable1 + 2))( /*0x68f33a*/
         g_DSurface_Hidden,
         &v68,
         DSurface_Alternate,
@@ -279,7 +279,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
       v56 = v53; /*0x68f361*/
       v55 = v6; /*0x68f36c*/
       v57 = 15; /*0x68f370*/
-      (*((void (**)(ObjectClass *, int *, int, int *, unsigned int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x68f37f*/
+      (*((void (**)(ObjectClass *, int *, int, int *, unsigned int, int))g_DSurface_Hidden->vtable1 + 2))( /*0x68f37f*/
         g_DSurface_Hidden,
         &v55,
         v21,
@@ -310,7 +310,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
       v71 = (int)v54; /*0x68f3fa*/
     }
     if ( v66 > 0 && v67 > 0 ) /*0x68f47f*/
-      (*((void (**)(ObjectClass *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x68f49d*/
+      (*((void (**)(ObjectClass *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Hidden->vtable1 + 2))( /*0x68f49d*/
         g_DSurface_Hidden,
         &v64,
         DSurface_Alternate,
@@ -347,7 +347,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
       v55 = v62; /*0x68f4c8*/
       v56 = v53; /*0x68f4d3*/
       v57 = 15; /*0x68f4d7*/
-      (*((void (**)(ObjectClass *, int *, int, int *, unsigned int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x68f4e6*/
+      (*((void (**)(ObjectClass *, int *, int, int *, unsigned int, int))g_DSurface_Hidden->vtable1 + 2))( /*0x68f4e6*/
         g_DSurface_Hidden,
         &v55,
         v33,
@@ -399,7 +399,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   }
   if ( v70 > 0 && v71 > 0 ) /*0x68f688*/
   {
-    (*((void (**)(ObjectClass *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x68f6a6*/
+    (*((void (**)(ObjectClass *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Hidden->vtable1 + 2))( /*0x68f6a6*/
       g_DSurface_Hidden,
       &v68,
       DSurface_Alternate,
@@ -440,7 +440,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     2);
   (*(void (**)(unsigned int, wchar_t *))(**((unsigned int **)this + 3) + 8))(*((unsigned int *)this + 3), v76); /*0x68f779*/
   if ( v66 > 0 && v67 > 0 ) /*0x68f78a*/
-    (*((void (**)(ObjectClass *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x68f7a9*/
+    (*((void (**)(ObjectClass *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Hidden->vtable1 + 2))( /*0x68f7a9*/
       g_DSurface_Hidden,
       &v64,
       DSurface_Alternate,
@@ -603,8 +603,8 @@ byte_B05584 = 0; /*0x69036b*/
   if ( g_LoadScreenFlag ) /*0x690372*/
   {
     g_LoadScreenFlag = 0; /*0x69037a*/
-    (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x690385*/
-    (*((void (**)(ObjectClass *, DSurface *, unsigned int, int))g_DSurface_Hidden->AbstractClass + 1))( /*0x69039a*/
+    (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x690385*/
+    (*((void (**)(ObjectClass *, DSurface *, unsigned int, int))g_DSurface_Hidden->vtable1 + 1))( /*0x69039a*/
       g_DSurface_Hidden,
       DSurface_Alternate,
       0,

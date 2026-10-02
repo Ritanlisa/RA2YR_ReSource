@@ -222,7 +222,7 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
   v8 = (gamemd::TagClass *)(this->ambientSoundController[1]);
   attachedTag = (gamemd::TagClass *)(this->attachedTag);
   this->ambientSoundController[1] = v8 + 1; /*0x5d263a*/
-  *((unsigned int *)&attachedTag->AbstractClass + v8) = v5; /*0x5d263d*/
+  *((unsigned int *)attachedTag + v8) = v5; /*0x5d263d*/
   return 1; /*0x5d2640*/
 
 }
@@ -1244,7 +1244,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
   char v25[112]; // [esp+BCh] [ebp-70h] BYREF
 
   v2 = a1; /*0x5da75d*/
-  v4 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * a1]; /*0x5da762*/
+  v4 = *(unsigned int *)dword_A8022C[4 * a1]; /*0x5da762*/
   a1 = a1; /*0x5da76c*/
   if ( byte_A8ED74 ) /*0x5da770*/
     Debug::Log(); /*0x5da77f*/
@@ -1297,8 +1297,8 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
           v7 = v7; /*0x5da977*/
           if ( v7 != -1 ) /*0x5da97c*/
           {
-            v9 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * v7]; /*0x5da987*/
-            v22 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * v7]; /*0x5da98c*/
+            v9 = *(unsigned int *)dword_A8022C[4 * v7]; /*0x5da987*/
+            v22 = *(unsigned int *)dword_A8022C[4 * v7]; /*0x5da98c*/
             if ( v9 ) /*0x5da990*/
             {
               if ( dword_A8DA84 > 2 ) /*0x5da99f*/
@@ -2177,7 +2177,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
         if ( (unsigned short)v6 == 10 ) /*0x5d30f5*/
           break; /*0x5d30f5*/
         ++v3; /*0x5d30fc*/
-        v6 = (*((int (**)(ObjectClass *, int))this->AbstractClass + 1))(this, v6); /*0x5d30ff*/
+        v6 = (*((int (**)(ObjectClass *, int))this->vtable1 + 1))(this, v6); /*0x5d30ff*/
         v4 += v6; /*0x5d3102*/
       }
       if ( v4 > v10 ) /*0x5d3110*/
@@ -2464,7 +2464,7 @@ int sub_5D5AA0()
 namespace gamemd {
 int sub_5D7550(int a1)
 {
-  return *(unsigned int *)(*(unsigned int *)&dword_A8022C->AbstractClass[4 * a1] + 90204); /*0x5d7563*/
+  return *(unsigned int *)(*(unsigned int *)dword_A8022C[4 * a1] + 90204); /*0x5d7563*/
 }
 } // namespace gamemd
 
@@ -2474,7 +2474,7 @@ unsigned int * E4Recv_5D7580::sub_5D7580()
 {
 
   this->AbstractClass = &MultiplayerGameMode::vt_InitializerBase; /*0x5d7582*/
-  return &this->AbstractClass; /*0x5d7588*/
+  return this; /*0x5d7588*/
 
 }
 } // namespace gamemd
@@ -2810,7 +2810,7 @@ unsigned int * E4Recv_5D8FB0::sub_5D8FB0()
   ((unsigned int *)this)[0] = 0; /*0x5d8fb6*/
   ((unsigned int *)this)[0] = 0; /*0x5d8fb9*/
   ((unsigned int *)this)[0] = 0; /*0x5d8fbc*/
-  return &this->AbstractClass; /*0x5d8fbf*/
+  return this; /*0x5d8fbf*/
 
 }
 } // namespace gamemd

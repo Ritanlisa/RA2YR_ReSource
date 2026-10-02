@@ -428,7 +428,7 @@ a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
         (*(void (**)(int))(*(unsigned int *)v11 + 248))(v11); /*0x472034*/
         *((unsigned int *)aP0 + 178) = 0; /*0x47203a*/
       }
-      if ( *(unsigned int *)((*((int (**)(CaptureManagerClass *, int, int))aP0->AbstractClass + 33))(aP0, a3, a2) /*0x472059*/
+      if ( *(unsigned int *)((*((int (**)(CaptureManagerClass *, int, int))aP0->vtable1 + 33))(aP0, a3, a2) /*0x472059*/
                      + 1456) == -1 )
       {
         if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 612) != -1 ) /*0x4720a3*/
@@ -450,7 +450,7 @@ a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
       }
       a2 = (IUnknown *)(1); /*0x4720d5*/
       a3 = *(unsigned int *)(v10 + 4); /*0x4720d7*/
-      (*((void (**)(CaptureManagerClass *))aP0->AbstractClass + 245))(aP0); /*0x4720da*/
+      (*((void (**)(CaptureManagerClass *))aP0->vtable1 + 245))(aP0); /*0x4720da*/
       ((CaptureManagerClass *)(v7))->DecideUnitFate((int)aP0); /*0x4720e3*/
       *((unsigned int *)aP0 + 176) = 0; /*0x4720e8*/
       controlNodeCount = v7->controlNodeCount; /*0x4720f2*/
@@ -839,7 +839,7 @@ TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
       v3->controlNodes[0] = (int)&vt_DynamicVectorClass; /*0x47275c*/
       *(unsigned int *)&v3->CaptureManagerClass_field_30 = 10; /*0x472762*/
       v3->originalOwner = 0; /*0x472769*/
-      v3->AbstractClass = &vt_CaptureManagerClass; /*0x47276c*/
+      v3->vtable1 = &vt_CaptureManagerClass; /*0x47276c*/
       ((unsigned int *)v3)[0] = &vt_CaptureManagerClass; /*0x472773*/
       ((unsigned int *)v3)[0] = &vt_CaptureManagerClass; /*0x47277a*/
       ((unsigned int *)v3)[0] = &vt_CaptureManagerClass; /*0x472781*/
@@ -910,7 +910,7 @@ LABEL_19:
           {
             originalOwner = v3->originalOwner; /*0x47286e*/
             controlNodeCount = v3->controlNodeCount; /*0x472871*/
-            v3->originalOwner = (HouseClass *)((char *)&originalOwner->AbstractClass + 1); /*0x472877*/
+            v3->originalOwner = (HouseClass *)((char *)originalOwner + 1); /*0x472877*/
             *(unsigned int *)(controlNodeCount + 4 * (unsigned int)originalOwner) = v5; /*0x47287a*/
           }
           v7 = a1; /*0x472881*/
@@ -1077,7 +1077,7 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   void *controlNodeCount; // eax
   CaptureManagerClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_CaptureManagerClass; /*0x4729cd*/
+  Block->vtable1 = &vt_CaptureManagerClass; /*0x4729cd*/
   ((unsigned int *)Block)[0] = &vt_CaptureManagerClass; /*0x4729d3*/
   ((unsigned int *)Block)[0] = &vt_CaptureManagerClass; /*0x4729da*/
   ((unsigned int *)Block)[0] = &vt_CaptureManagerClass; /*0x4729e1*/
@@ -1104,7 +1104,7 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x472a5a*/
   if ( (a2 & 1) != 0 ) /*0x472a64*/
     __3_YAXPAX_Z(Block); /*0x472a67*/
-  return &Block->AbstractClass; /*0x472a71*/
+  return Block; /*0x472a71*/
 
 }
 } // namespace gamemd
@@ -1362,18 +1362,18 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
   ((unsigned int *)this)[0] = (void *)a2; /*0x47314e*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x473151*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x473155*/
-  this->AbstractClass = &vt_VectorClass; /*0x473158*/
+  this->vtable1 = &vt_VectorClass; /*0x473158*/
   if ( a2 ) /*0x47315e*/
   {
     if ( a3 ) /*0x473166*/
     {
       ((unsigned int *)this)[0] = (void *)a3; /*0x473168*/
-      return &this->AbstractClass; /*0x47316e*/
+      return this; /*0x47316e*/
     }
     ((unsigned int *)this)[0] = (void *)__2_YAPAXI_Z(4 * a2); /*0x47317d*/
     BYTE1(((unsigned int *)this)[0]) = 1; /*0x473180*/
   }
-  return &this->AbstractClass; /*0x47316d*/
+  return this; /*0x47316d*/
 
 }
 } // namespace gamemd

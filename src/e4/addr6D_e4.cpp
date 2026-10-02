@@ -206,7 +206,7 @@ char E4Recv_6D1570::sub_6D1570()
   int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
   char v3; // [esp+1Ch] [ebp-4h]
 
-  result = (*((int ((gamemd::ObjectClass *)(**))(ObjectClass *, GadgetClass *))this->AbstractClass + 12))(this, &stru_B0CC40); /*0x6d157a*/
+  result = (*((int ((gamemd::ObjectClass *)(**))(ObjectClass *, GadgetClass *))this->vtable1 + 12))(this, &stru_B0CC40); /*0x6d157a*/
   if ( &stru_B0CC40 ) /*0x6d1584*/
   {
     v2[2] = stru_B0CC40.Height; /*0x6d1597*/

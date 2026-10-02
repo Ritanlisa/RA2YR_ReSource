@@ -122,7 +122,7 @@ void Lobby::UpdatePlayerLabels()
 
   HIDWORD(v38) = (unsigned int)(this); /*0x5eb063*/
   if ( dword_A8B23C /*0x5eb07a*/
-    && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 16))(dword_A8B23C)
+    && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 16))(dword_A8B23C)
     || (v33 = 1, ((Network *)this)->IsMultiplayerActive()) )
   {
     v33 = 0; /*0x5eb088*/
@@ -183,7 +183,7 @@ LABEL_26:
         PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5eb165*/
         if ( dword_A8B23C ) /*0x5eb169*/
         {
-          v4 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 38))(dword_A8B23C); /*0x5eb16d*/
+          v4 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 38))(dword_A8B23C); /*0x5eb16d*/
           if ( v4 != -1 && v4 < PlayerCountMap ) /*0x5eb17a*/
             PlayerCountMap = v4; /*0x5eb17c*/
         }
@@ -209,7 +209,7 @@ LABEL_26:
         }
       }
       if ( v36 == (gamemd::ObjectClass *)(g_MPCooperativeState) && dword_A8B23C ) /*0x5eb1e9*/
-        (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 47))(dword_A8B23C); /*0x5eb1ed*/
+        (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 47))(dword_A8B23C); /*0x5eb1ed*/
     }
     if ( v36 )
     {
@@ -326,7 +326,7 @@ LABEL_79:
             v17 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5eb46c*/
             if ( dword_A8B23C ) /*0x5eb470*/
             {
-              v18 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 38))(dword_A8B23C); /*0x5eb474*/
+              v18 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 38))(dword_A8B23C); /*0x5eb474*/
               if ( v18 != -1 && v18 < v17 ) /*0x5eb481*/
                 v17 = v18; /*0x5eb483*/
             }
@@ -383,9 +383,9 @@ LABEL_111: v19 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Open), 0,(const 
     if ( !v35 ) /*0x5eb629*/
       ShowWindow(DlgItem, 5); /*0x5eb62e*/
     DeleteAndZero::Alt((DeleteAndZero *)&v38); /*0x5eb638*/
-    v36 = (ObjectClass *)((char *)&v16->AbstractClass + 1); /*0x5eb641*/
+    v36 = (ObjectClass *)((char *)v16 + 1); /*0x5eb641*/
   }
-  while ( (int)&v16->AbstractClass + 1 < 8 );
+  while ( (int)v16 + 1 < 8 );
 
 }
 } // namespace gamemd

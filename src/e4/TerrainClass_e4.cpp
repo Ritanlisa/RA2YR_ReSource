@@ -1279,7 +1279,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
     if ( v2 ) /*0x71ce8a*/
     {
       ((ObjectClass *)(v2))->Init((int)&a1); /*0x71ce93*/
-      v2->AbstractClass = &vt_TerrainClass; /*0x71ce98*/
+      v2->vtable1 = &vt_TerrainClass; /*0x71ce98*/
       *p_vtable1 = &off_7F5200; /*0x71ce9f*/
       ((unsigned int *)v2)[0] = &vt_TerrainClass; /*0x71cea5*/
       ((unsigned int *)v2)[0] = &vt_TerrainClass; /*0x71ceac*/
@@ -1335,7 +1335,7 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
     v9 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a1); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
-  v10 = (unsigned int *)(*((int (**)(char *))this->ObjectClass + 43))(v14); /*0x71d0ab*/
+  v10 = (unsigned int *)(*((int (**)(char *))this->vtable1 + 43))(v14); /*0x71d0ab*/
   ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v10, &this->TerrainClass_field_rect_D0[2]); /*0x71d0b8*/
   v11 = *(unsigned int *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
   this->TerrainClass_field_rect_D0[2] += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/

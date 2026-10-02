@@ -311,11 +311,11 @@ BulletTypeClass * ObjectTypeClass::Construct(ObjectTypeClass * aP1, void *a2, vo
   this->VoxelCaches[17] = 0; /*0x5f73c7*/
   LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
-  this->AbstractTypeClass = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73d9*/
+  this->vtable1 = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73d9*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73df*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73e6*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_ObjectTypeClass); /*0x5f73ed*/
-  return &this->AbstractTypeClass; /*0x5f73f6*/
+  return this; /*0x5f73f6*/
 
 }
 } // namespace gamemd
@@ -815,7 +815,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
           aVoxel,
           this->Voxel);
   this->Voxel = v25; /*0x5f9634*/
-  if ( !v25 && (*((int (**)(ObjectTypeClass *))this->AbstractTypeClass + 11))(this) != 5 ) /*0x5f9649*/
+  if ( !v25 && (*((int (**)(ObjectTypeClass *))this->vtable1 + 11))(this) != 5 ) /*0x5f9649*/
     ObjectTypeClass::Load2DArt((char *)this); /*0x5f964d*/
   if ( this->AlphaImageFile[0] ) /*0x5f9652*/
   {
@@ -1160,32 +1160,32 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
   int v6; // eax
 
   if ( this == (ObjectTypeClass *)a2 ) /*0x717c0a*/
-    return &this->AbstractTypeClass; /*0x717c0a*/
-  (*((void (**)(ObjectTypeClass *))this->AbstractTypeClass + 3))(this); /*0x717c0e*/
+    return this; /*0x717c0a*/
+  (*((void (**)(ObjectTypeClass *))this->vtable1 + 3))(this); /*0x717c0e*/
   v3 = (void *)a2[2]; /*0x717c11*/
   ((unsigned int *)this)[0] = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/
   {
     ((unsigned int *)this)[0] = 0; /*0x717c5a*/
     BYTE1(((unsigned int *)this)[0]) = 0; /*0x717c61*/
-    return &this->AbstractTypeClass; /*0x717c65*/
+    return this; /*0x717c65*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x717c23*/
   ((unsigned int *)this)[0] = v4; /*0x717c2b*/
   if ( !v4 ) /*0x717c30*/
-    return &this->AbstractTypeClass; /*0x717c30*/
+    return this; /*0x717c30*/
   vtable2 = ((unsigned int *)this)[0]; /*0x717c32*/
   v6 = 0; /*0x717c35*/
   BYTE1(((unsigned int *)this)[0]) = 1; /*0x717c39*/
   if ( (int)vtable2 <= 0 ) /*0x717c3d*/
-    return &this->AbstractTypeClass; /*0x717c3d*/
+    return this; /*0x717c3d*/
   do /*0x717c51*/
   {
     *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x717c48*/
     ++v6; /*0x717c4e*/
   }
   while ( v6 < (int)((unsigned int *)this)[0] ); /*0x717c51*/
-  return &this->AbstractTypeClass; /*0x717c55*/
+  return this; /*0x717c55*/
 
 }
 } // namespace gamemd
@@ -1198,8 +1198,8 @@ unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
 
   v1 = 2 * dword_889F58; /*0x41cbfc*/
   *(unsigned int *)a1->TechnoTypeClass = 256; /*0x41cc07*/
-  *(unsigned int *)&a1->TechnoTypeClass[4] = 256; /*0x41cc09*/
-  *(unsigned int *)&a1->TechnoTypeClass[8] = v1; /*0x41cc0c*/
+  *(unsigned int *)a1[4] = 256; /*0x41cc09*/
+  *(unsigned int *)a1[8] = v1; /*0x41cc0c*/
   return a1->TechnoTypeClass; /*0x41cc0f*/
 
 }
@@ -1212,7 +1212,7 @@ unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
   a0->AbstractTypeClass = (void *)*aP1; /*0x41cf8d*/
   ((unsigned int *)a0)[0] = (void *)aP1[1]; /*0x41cf92*/
   ((unsigned int *)a0)[0] = (void *)aP1[2]; /*0x41cf99*/
-  return &a0->AbstractTypeClass; /*0x41cf95*/
+  return a0; /*0x41cf95*/
 
 }
 } // namespace gamemd
@@ -1515,7 +1515,7 @@ unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
   a1->AbstractTypeClass = (void *)10; /*0x5f75cd*/
   ((unsigned int *)a1)[0] = (void *)10; /*0x5f75d3*/
   ((unsigned int *)a1)[0] = (void *)10; /*0x5f75d6*/
-  return &a1->AbstractTypeClass; /*0x5f75d9*/
+  return a1; /*0x5f75d9*/
 
 }
 } // namespace gamemd
@@ -1740,8 +1740,8 @@ namespace gamemd {
 unsigned int * ObjectTypeClass::CheckFlag(ObjectTypeClass * aP1)
 {
 
-  this->AbstractTypeClass = &vt_DynamicVectorClass; /*0x717bf2*/
-  return &this->AbstractTypeClass; /*0x717bf8*/
+  this->vtable1 = &vt_DynamicVectorClass; /*0x717bf2*/
+  return this; /*0x717bf8*/
 
 }
 } // namespace gamemd

@@ -366,24 +366,24 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
   bool v10; // bl
   unsigned int *v11; // [esp+1Ch] [ebp+4h]
 
-  v2 = (HouseClass *)(*((int (**)(TechnoClass *))target->RadioClass + 33))(target); /*0x6f333b*/
+  v2 = (HouseClass *)(*((int (**)(TechnoClass *))target->vtable1 + 33))(target); /*0x6f333b*/
   if ( (uint8_t)HouseClass::HasPower(v2)
-    && !*(unsigned char *)((*((int (**)(TechnoClass *))target->RadioClass + 33))(target) + 3285) )
+    && !*(unsigned char *)((*((int (**)(TechnoClass *))target->vtable1 + 33))(target) + 3285) )
   {
     return target->currentWeaponSlot != -1 ? target->currentWeaponSlot : 0;
   }
-  if ( (*((uint8_t (**)(TechnoClass *))target->RadioClass + 256))(target) ) /*0x6f337d*/
+  if ( (*((uint8_t (**)(TechnoClass *))target->vtable1 + 256))(target) ) /*0x6f337d*/
     return 0; /*0x6f337d*/
-  v4 = *(unsigned int *)(*((int (**)(TechnoClass *, int))target->RadioClass + 254))(target, 1); /*0x6f3397*/
+  v4 = *(unsigned int *)(*((int (**)(TechnoClass *, int))target->vtable1 + 254))(target, 1); /*0x6f3397*/
   if ( !v4 ) /*0x6f339f*/
     return 0; /*0x6f339f*/
-  v5 = *(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))target->RadioClass + 254))(target, 0); /*0x6f33b1*/
+  v5 = *(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))target->vtable1 + 254))(target, 0); /*0x6f33b1*/
   if ( !v5 || *(unsigned char *)(v4 + 310) || !v11 ) /*0x6f33d3*/
     return 0; /*0x6f33d3*/
-  if ( ((unsigned int *)target)[0] && *(unsigned int *)((*((int (**)(TechnoClass *))target->RadioClass + 33))(target) + 3408) != -1 ) /*0x6f33f4*/
-    return *(unsigned int *)((*((int (**)(TechnoClass *))target->RadioClass + 33))(target) + 3408); /*0x6f340d*/
+  if ( ((unsigned int *)target)[0] && *(unsigned int *)((*((int (**)(TechnoClass *))target->vtable1 + 33))(target) + 3408) != -1 ) /*0x6f33f4*/
+    return *(unsigned int *)((*((int (**)(TechnoClass *))target->vtable1 + 33))(target) + 3408); /*0x6f340d*/
   v6 = (((unsigned int *)(v11))[5] & 1) != 0 ? (unsigned char *)v11 : 0;
-  if ( !*(unsigned char *)((*((int (**)(TechnoClass *))target->RadioClass + 33))(target) + 3285) )
+  if ( !*(unsigned char *)((*((int (**)(TechnoClass *))target->vtable1 + 33))(target) + 3285) )
   {
     if ( *(unsigned char *)(*(unsigned int *)(v4 + 172) + 364) )
     {
@@ -415,9 +415,9 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
       {
         return 1; /*0x6f35a5*/
       }
-      if ( *(unsigned char *)(v4 + 336) && (*((int (**)(TechnoClass *))target->RadioClass + 97))(target) == 16 ) /*0x6f35c3*/
+      if ( *(unsigned char *)(v4 + 336) && (*((int (**)(TechnoClass *))target->vtable1 + 97))(target) == 16 ) /*0x6f35c3*/
         return 1; /*0x6f35d1*/
-      if ( (*((int (**)(TechnoClass *))target->RadioClass + 11))(target) == 6 && *((unsigned char *)target + 1633) ) /*0x6f35e0*/
+      if ( (*((int (**)(TechnoClass *))target->vtable1 + 11))(target) == 6 && *((unsigned char *)target + 1633) ) /*0x6f35e0*/
         return 1; /*0x6f35f6*/
       if ( (*(int (**)(unsigned int *))(*(unsigned int *)(v11) + 44))(v11) == 6 /*0x6f362f*/
         && (uint8_t)Object::IsAlliedWithObjectSimpleHouse((Object *)target->owner, v11)
@@ -426,14 +426,14 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
       {
         return 1; /*0x6f3645*/
       }
-      if ( (*((int (**)(TechnoClass *))target->RadioClass + 11))(target) == 2 && *((unsigned char *)target + 1738) ) /*0x6f3658*/
+      if ( (*((int (**)(TechnoClass *))target->vtable1 + 11))(target) == 2 && *((unsigned char *)target + 1738) ) /*0x6f3658*/
         return 1; /*0x6f366e*/
       if ( (*(int (**)(unsigned int *))(*(unsigned int *)(v11) + 44))(v11) == 11 /*0x6f36ca*/
         && (((unsigned int *)(v11))[59] != 2 && (*(uint8_t (**)(unsigned int *))(*v11 + 80))(v11)
          || (((unsigned int *)(v11))[80] & 0x100) != 0
-         && *(unsigned char *)((*((int (**)(TechnoClass *))target->RadioClass + 33))(target) + 3278))
+         && *(unsigned char *)((*((int (**)(TechnoClass *))target->vtable1 + 33))(target) + 3278))
         && !(*(uint8_t (**)(unsigned int *))(*(unsigned int *)(v11) + 84))(v11)
-        && *(unsigned int *)((*((int (**)(TechnoClass *))target->RadioClass + 33))(target) + 1540) == 2 )
+        && *(unsigned int *)((*((int (**)(TechnoClass *))target->vtable1 + 33))(target) + 1540) == 2 )
       {
         return 1; /*0x6f36d8*/
       }
@@ -452,13 +452,13 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
           v10 = 0; /*0x6f378d*/
         if ( !v6[140] && v10 ) /*0x6f379b*/
         {
-          result = (*((int (**)(TechnoClass *, unsigned int *))target->RadioClass + 186))(target, v11); /*0x6f37a2*/
+          result = (*((int (**)(TechnoClass *, unsigned int *))target->vtable1 + 186))(target, v11); /*0x6f37a2*/
           if ( result != -1 ) /*0x6f37ab*/
             return result; /*0x6f37ab*/
           return 0; /*0x6f37ab*/
         }
         if ( !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) /*0x6f37d6*/
-          && *(unsigned int *)((*((int (**)(TechnoClass *))target->RadioClass + 33))(target) + 1540) == 2 )
+          && *(unsigned int *)((*((int (**)(TechnoClass *))target->vtable1 + 33))(target) + 1540) == 2 )
         {
           return 1; /*0x6f37e4*/
         }
@@ -3538,7 +3538,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   int v6; // esi
   bool v7; // zf
 
-  if ( !*(unsigned char *)((*((int (**)(TechnoClass *))this->RadioClass + 33))(this) + 3277) ) /*0x707d2b*/
+  if ( !*(unsigned char *)((*((int (**)(TechnoClass *))this->vtable1 + 33))(this) + 3277) ) /*0x707d2b*/
     return 0; /*0x707d38*/
   owner = this->owner; /*0x707d39*/
   sideIndex = owner->sideIndex; /*0x707d40*/
@@ -3566,7 +3566,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   }
   if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
-  if ( (*((uint8_t (**)(TechnoClass *))this->RadioClass + 171))(this) /*0x707db2*/
+  if ( (*((uint8_t (**)(TechnoClass *))this->vtable1 + 171))(this) /*0x707db2*/
 // 0x65c7e0
     && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
   {
@@ -4549,7 +4549,7 @@ int TechnoClass::CanTargetHouse() const { return false;
   v8 = *(unsigned char *)((*(int (**)(unsigned char *))(*(unsigned int *)v7 + 132))(v7) + 3479); /*0x6f3862*/
   v6 = *(unsigned int *)((*(int (**)(unsigned int *))(*v1 + 132))(v1) + 1660) == 3; /*0x6f3879*/
   v5 = *(unsigned char *)((*(int (**)(unsigned int *))(*v1 + 132))(v1) + 1684); /*0x6f388c*/
-  switch ( *(unsigned int *)((*((int (**)(TechnoClass *))this->RadioClass + 33))(this) + 1536) ) /*0x6f38a3*/
+  switch ( *(unsigned int *)((*((int (**)(TechnoClass *))this->vtable1 + 33))(this) + 1536) ) /*0x6f38a3*/
   {
     case 0: /*0x6f38a3*/
       if ( !v4 || !v1[136] ) /*0x6f38ae*/

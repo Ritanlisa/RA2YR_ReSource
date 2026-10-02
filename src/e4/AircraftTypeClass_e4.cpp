@@ -196,10 +196,10 @@ AircraftTypeClass * AircraftTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   AircraftTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block->TechnoTypeClass = &vt_AircraftTypeClass; /*0x41cfe6*/
-  *(unsigned int *)&Block->TechnoTypeClass[4] = &vt_AircraftTypeClass; /*0x41cfec*/
-  *(unsigned int *)&Block->TechnoTypeClass[8] = &vt_AircraftTypeClass; /*0x41cff3*/
-  *(unsigned int *)&Block->TechnoTypeClass[12] = &vt_AircraftTypeClass; /*0x41cffa*/
+  *(unsigned int *)Block->vtable1 = &vt_AircraftTypeClass; /*0x41cfe6*/
+  *(unsigned int *)Block[4] = &vt_AircraftTypeClass; /*0x41cfec*/
+  *(unsigned int *)Block[8] = &vt_AircraftTypeClass; /*0x41cff3*/
+  *(unsigned int *)Block[12] = &vt_AircraftTypeClass; /*0x41cffa*/
   AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x41d001*/
   v5 = (AircraftTypeClass *)(Block); /*0x41d016*/
   v3 = (*(int (**)(unsigned int *, AircraftTypeClass **))(dword_A8B218 + 16))(&dword_A8B218, &v5); /*0x41d01a*/
@@ -296,10 +296,10 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x41ce36*/
     {
       TechnoTypeClass::Construct((int)aP0, (int)&aP1); /*0x41ce3f*/
-      *(unsigned int *)aP0->TechnoTypeClass = &vt_AircraftTypeClass; /*0x41ce44*/
-      *(unsigned int *)&aP0->TechnoTypeClass[4] = &vt_AircraftTypeClass; /*0x41ce4a*/
-      *(unsigned int *)&aP0->TechnoTypeClass[8] = &vt_AircraftTypeClass; /*0x41ce51*/
-      *(unsigned int *)&aP0->TechnoTypeClass[12] = &vt_AircraftTypeClass; /*0x41ce58*/
+      *(unsigned int *)aP0->vtable1 = &vt_AircraftTypeClass; /*0x41ce44*/
+      *(unsigned int *)aP0[4] = &vt_AircraftTypeClass; /*0x41ce4a*/
+      *(unsigned int *)aP0[8] = &vt_AircraftTypeClass; /*0x41ce51*/
+      *(unsigned int *)aP0[12] = &vt_AircraftTypeClass; /*0x41ce58*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 896); /*0x41ce6b*/
     VoxelAnimType::LoadAnim(aP0->TechnoTypeClass); /*0x41ce72*/

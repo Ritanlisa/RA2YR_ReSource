@@ -2839,7 +2839,7 @@ unsigned int * E4Recv_4202F0::sub_4202F0(int a2)
     v4 = (ObjectClass *)((char *)v4 + 2); /*0x420340*/
   }
   while ( v2 <= 0xFFFF ); /*0x420349*/
-  return &this->AbstractClass; /*0x42034b*/
+  return this; /*0x42034b*/
 
 }
 } // namespace gamemd
@@ -3970,7 +3970,7 @@ char E4Recv_42D830::sub_42D830(unsigned int * a2)
       return 0; /*0x42d846*/
     abstractFlags = ((unsigned int *)this)[0]; /*0x42d848*/
     if ( abstractFlags <= 0 /*0x42d858*/
-      || !(*((uint8_t (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))(
+      || !(*((uint8_t (**)(ObjectClass *, int, unsigned int))this->vtable1 + 2))(
             this,
             (int)vtable2 + abstractFlags,
             0) )

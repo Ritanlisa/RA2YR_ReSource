@@ -173,12 +173,12 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   if ( *(unsigned char *)(a7 + 664) ) /*0x4cc405*/
   {
     v13 = v10[17]; /*0x4cc413*/
-    v14 = v13 != -1 && *(unsigned char *)(*(unsigned int *)&dword_A83D84->TechnoTypeClass[4 * v13] + 680); /*0x4cc432*/
+    v14 = v13 != -1 && *(unsigned char *)(*(unsigned int *)dword_A83D84[4 * v13] + 680); /*0x4cc432*/
     if ( v10 != (unsigned int *)v8 /*0x4cc47c*/
       && v14
       && a1[283] <= v8[283]
       && (!LOBYTE(dword_8871E0[1][3])
-       || (v15 = *(void **)&dword_A8022C->AbstractClass[4 * v10[20]]) == 0
+       || (v15 = *(void **)dword_A8022C[4 * v10[20]]) == 0
        || !(uint8_t)HouseClass::IsAlliedWith(v15, other)) )
     {
 LABEL_16:
@@ -229,12 +229,12 @@ LABEL_22:
           if ( *(unsigned char *)(a7 + 664) ) /*0x4cc5d2*/
           {
             v37 = v33[17]; /*0x4cc5e0*/
-            v38 = v37 != -1 && *(unsigned char *)(*(unsigned int *)&dword_A83D84->TechnoTypeClass[4 * v37] + 680); /*0x4cc5ff*/
+            v38 = v37 != -1 && *(unsigned char *)(*(unsigned int *)dword_A83D84[4 * v37] + 680); /*0x4cc5ff*/
             if ( v33 != (unsigned int *)a2 && v38 && v44[283] <= a2[283] ) /*0x4cc61f*/
             {
               if ( !LOBYTE(dword_8871E0[1][3]) ) /*0x4cc627*/
                 return v42; /*0x4cc627*/
-              v39 = *(void **)&dword_A8022C->AbstractClass[4 * v33[20]]; /*0x4cc639*/
+              v39 = *(void **)dword_A8022C[4 * v33[20]]; /*0x4cc639*/
               if ( !v39 || !(uint8_t)HouseClass::IsAlliedWith(v39, other) ) /*0x4cc645*/
                 return v42; /*0x4cc64c*/
             }

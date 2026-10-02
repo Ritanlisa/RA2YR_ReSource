@@ -478,7 +478,7 @@ LABEL_112:
         while ( 1 ) /*0x71eebe*/
         {
           vtable0 = auxParticles1->ObjectClass; /*0x71eebe*/
-          if ( *((unsigned int *)auxParticles1->ObjectClass + 9) == this->TEventClass_field_30 /*0x71eecc*/
+          if ( *((unsigned int *)auxParticles1->vtable1 + 9) == this->TEventClass_field_30 /*0x71eecc*/
             && !vtable0[21]
             && *((unsigned char *)vtable0 + 130) )
           {
@@ -715,11 +715,11 @@ void * TEventClass::Fire(void ** Block, char a2)
   int v5; // eax
   TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_TEventClass; /*0x71fa86*/
+  Block->vtable1 = &vt_TEventClass; /*0x71fa86*/
   ((unsigned int *)Block)[0] = &vt_TEventClass; /*0x71fa8c*/
   ((unsigned int *)Block)[0] = &vt_TEventClass; /*0x71fa93*/
   ((unsigned int *)Block)[0] = &vt_TEventClass; /*0x71fa9a*/
-  AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x71faa1*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x71faa1*/
   v7 = Block; /*0x71fab6*/
   v3 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 16))( /*0x71faba*/
          g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -767,7 +767,7 @@ void * TEventClass::Fire(void ** Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x71fb83*/
   if ( (a2 & 1) != 0 ) /*0x71fb8d*/
     __3_YAXPAX_Z(Block); /*0x71fb90*/
-  return &Block->AbstractClass; /*0x71fb9a*/
+  return Block; /*0x71fb9a*/
 
 }
 }
@@ -829,7 +829,7 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71f8d6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71f8df*/
-      aP0->AbstractClass = &vt_TEventClass; /*0x71f8e4*/
+      aP0->vtable1 = &vt_TEventClass; /*0x71f8e4*/
       ((unsigned int *)aP0)[0] = &vt_TEventClass; /*0x71f8ea*/
       ((unsigned int *)aP0)[0] = &vt_TEventClass; /*0x71f8f1*/
       ((unsigned int *)aP0)[0] = &vt_TEventClass; /*0x71f8f8*/

@@ -765,11 +765,11 @@ LABEL_34:
   if ( __PAIR32__(v34[1], (uint16_t)v27) != g_FootClass_Pool ) /*0x4de541*/
   {
     aP0->AbstractClass = v27; /*0x4de558*/
-    return &aP0->AbstractClass; /*0x4de55f*/
+    return aP0; /*0x4de55f*/
   }
 LABEL_36:
   aP0->AbstractClass = (void *)g_FootClass_Pool; /*0x4de562*/
-  return &aP0->AbstractClass; /*0x4de555*/
+  return aP0; /*0x4de555*/
 
 }
 } // namespace ra2
@@ -1422,8 +1422,8 @@ AbstractClass * * ObjectClass::Deploy()
     v23 = v7[1]; /*0x5f4f94*/
     v24 = v7[2]; /*0x5f4f9b*/
   }
-  (*((void (**)(ObjectClass *, int *))this->AbstractClass + 109))(this, &v22); /*0x5f4fa8*/
-  result = (*((int (**)(ObjectClass *, int))this->AbstractClass + 73))(this, 1); /*0x5f4fb4*/
+  (*((void (**)(ObjectClass *, int *))this->vtable1 + 109))(this, &v22); /*0x5f4fa8*/
+  result = (*((int (**)(ObjectClass *, int))this->vtable1 + 73))(this, 1); /*0x5f4fb4*/
   if ( !(unsigned char)result ) /*0x5f4fbc*/
   {
     this->inLimbo = 1; /*0x5f521c*/
@@ -1433,13 +1433,13 @@ LABEL_41:
   }
   if ( this->isAliveFlag )
   {
-    if ( (*((int (**)(ObjectClass *))this->AbstractClass + 30))(this) != -1 ) /*0x5f4fda*/
+    if ( (*((int (**)(ObjectClass *))this->vtable1 + 30))(this) != -1 ) /*0x5f4fda*/
       Targeting::Readd(this); /*0x5f4fe2*/
     if ( v6 ) /*0x5f4fe9*/
     {
       if ( *(unsigned char *)(v6 + 564) /*0x5f5036*/
-        && ((*((int (**)(ObjectClass *))this->AbstractClass + 11))(this) != 36
-         || (*((int (**)(ObjectClass *))this->AbstractClass + 11))(this) == 36 && *(unsigned char *)(v6 + 689))
+        && ((*((int (**)(ObjectClass *))this->vtable1 + 11))(this) != 36
+         || (*((int (**)(ObjectClass *))this->vtable1 + 11))(this) == 36 && *(unsigned char *)(v6 + 689))
         && (!*(unsigned int *)&dword_A8B238
          || *(unsigned int *)&dword_A8B238 == 5
          || (*((int (**)(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]) != -2) )
@@ -1448,7 +1448,7 @@ LABEL_41:
       }
       if ( *(unsigned int *)(v6 + 172) ) /*0x5f5045*/
       {
-        v8 = (unsigned int *)(*((int (**)(ObjectClass *, char *))this->AbstractClass + 18))(this, v26); /*0x5f505c*/
+        v8 = (unsigned int *)(*((int (**)(ObjectClass *, char *))this->vtable1 + 18))(this, v26); /*0x5f505c*/
         v25[0] = *v8; /*0x5f5061*/
         v25[1] = v8[1]; /*0x5f5073*/
         v25[2] = v8[2]; /*0x5f507f*/
@@ -1473,7 +1473,7 @@ LABEL_41:
             1);
       }
     }
-    result = (*((int (**)(ObjectClass *))this->AbstractClass + 34))(this); /*0x5f514f*/
+    result = (*((int (**)(ObjectClass *))this->vtable1 + 34))(this); /*0x5f514f*/
     if ( *(unsigned char *)(result + 570) )
     {
       v14 = (char *)__2_YAPAXI_Z(0x210u); /*0x5f5168*/
@@ -1491,13 +1491,13 @@ LABEL_41:
         }
         else
         {
-          v15 = (*((int (**)(ObjectClass *))this->AbstractClass + 34))(this); /*0x5f51be*/
+          v15 = (*((int (**)(ObjectClass *))this->vtable1 + 34))(this); /*0x5f51be*/
           lineTrailer = this->lineTrailer; /*0x5f51c4*/
           v17 = *(unsigned char *)(v15 + 573); /*0x5f51d4*/
           *(unsigned short *)lineTrailer = *(unsigned short *)(v15 + 571); /*0x5f51d7*/
           lineTrailer[2] = v17; /*0x5f51da*/
         }
-        v19 = (*((int (**)(ObjectClass *))this->AbstractClass + 34))(this); /*0x5f51ef*/
+        v19 = (*((int (**)(ObjectClass *))this->vtable1 + 34))(this); /*0x5f51ef*/
         result = ObjectClass::updateMissionState((ObjectClass *)this->lineTrailer, *(unsigned int *)(v19 + 576)); /*0x5f5202*/
         *((unsigned int *)this->lineTrailer + 1) = this; /*0x5f520d*/
       }
@@ -1527,19 +1527,19 @@ AbstractClass * * ObjectClass::Destroy2()
     TacticalClass::GetField(lineTrailer); /*0x5f528e*/
     this->lineTrailer = 0; /*0x5f5293*/
   }
-  v3 = (House *)(*((int (**)(ObjectClass *))this->AbstractClass + 15))(this); /*0x5f52a6*/
+  v3 = (House *)(*((int (**)(ObjectClass *))this->vtable1 + 15))(this); /*0x5f52a6*/
   v4 = 0; /*0x5f52ac*/
   if ( v7 ) /*0x5f52b0*/
     goto LABEL_10; /*0x5f52b0*/
   if ( this && (((unsigned int *)this)[0] & 1) != 0 ) /*0x5f52c0*/
-    v4 = (*((uint8_t (**)(ObjectClass *))this->AbstractClass + 202))(this) != 0; /*0x5f52d0*/
+    v4 = (*((uint8_t (**)(ObjectClass *))this->vtable1 + 202))(this) != 0; /*0x5f52d0*/
   if ( !v3 || !(uint8_t)House::IsHumanPlayer(v3) && !v4 ) /*0x5f52e3*/
 LABEL_10:
-    (*((void (**)(ObjectClass *))this->AbstractClass + 84))(this); /*0x5f52e9*/
+    (*((void (**)(ObjectClass *))this->vtable1 + 84))(this); /*0x5f52e9*/
   if ( (ObjectClass *)MapClass::GetScrollMode((MapClass *)&stru_87F5F0.__pad_58[416]) == this ) /*0x5f52fd*/
     ((MapClass *)((int)&stru_87F5F0.__pad_58[416]))->SetScrollMode(0); /*0x5f5306*/
   LOBYTE(v5) = v7; /*0x5f530b*/
-  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, v5); /*0x5f5311*/
+  AbstractClass::AnnounceExpiredPointer(this, v5); /*0x5f5311*/
   return result; /*0x5f5316*/
 
 }
@@ -1614,8 +1614,8 @@ int ObjectClass::GetBoundingSize()
   unsigned char v4[12]; // [esp+8h] [ebp-18h] BYREF
   unsigned char v5[12]; // [esp+14h] [ebp-Ch] BYREF
 
-  v2 = (*((int (**)(ObjectClass *, unsigned char *))this->AbstractClass + 43))(this, v4); /*0x5f6be8*/
-  return *(unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->AbstractClass + 43))(this, v5) /*0x5f6bfe*/
+  v2 = (*((int (**)(ObjectClass *, unsigned char *))this->vtable1 + 43))(this, v4); /*0x5f6be8*/
+  return *(unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->vtable1 + 43))(this, v5) /*0x5f6bfe*/
        + *(unsigned int *)(v2 + 4);
 
 }
@@ -1632,12 +1632,12 @@ int ObjectClass::resetObjectState(SidebarClass * aP1)
   if ( aP1 ) /*0x652e60*/
   {
     vtable0[12](&stru_B04978); /*0x652e62*/
-    return (*((int (**)(ObjectClass *, GadgetClass *))this->AbstractClass + 12))(this, &stru_B04910); /*0x652e6e*/
+    return (*((int (**)(ObjectClass *, GadgetClass *))this->vtable1 + 12))(this, &stru_B04910); /*0x652e6e*/
   }
   else
   {
     vtable0[13](&stru_B04978); /*0x652e75*/
-    return (*((int (**)(ObjectClass *, GadgetClass *))this->AbstractClass + 13))(this, &stru_B04910); /*0x652e81*/
+    return (*((int (**)(ObjectClass *, GadgetClass *))this->vtable1 + 13))(this, &stru_B04910); /*0x652e81*/
   }
 
 }
@@ -1996,14 +1996,14 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     v7 = *(unsigned int *)&((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&a2)->__pad_28[28]; /*0x7182ca*/
     for ( LOBYTE(a5) = 0; altObject; altObject = altObject->nextObject ) /*0x7182d6*/
     {
-      if ( !(*((uint8_t (**)(ObjectClass *))altObject->AbstractClass + 88))(altObject) /*0x718305*/
-        && (*((int (**)(ObjectClass *))altObject->AbstractClass + 11))(altObject) == 15
+      if ( !(*((uint8_t (**)(ObjectClass *))altObject->vtable1 + 88))(altObject) /*0x718305*/
+        && (*((int (**)(ObjectClass *))altObject->vtable1 + 11))(altObject) == 15
         && (*(int (**)(void *))(*(unsigned int *)((unsigned int *)this)[0] + 44))(((unsigned int *)this)[0]) == 15 )
       {
-        v8 = (unsigned int *)(*((int (**)(ObjectClass *, int *))altObject->AbstractClass + 18))(altObject, &v43); /*0x718310*/
+        v8 = (unsigned int *)(*((int (**)(ObjectClass *, int *))altObject->vtable1 + 18))(altObject, &v43); /*0x718310*/
         if ( a2 == *v8 && a3 == v8[1] && a4 == v8[2] ) /*0x718339*/
         {
-          v9 = (*((int (**)(ObjectClass *))altObject->AbstractClass + 33))(altObject); /*0x718343*/
+          v9 = (*((int (**)(ObjectClass *))altObject->vtable1 + 33))(altObject); /*0x718343*/
           vtable0 = altObject->AbstractClass; /*0x718354*/
           v37 = *(unsigned int *)(v9 + 160); /*0x718357*/
           (*((void (**)(ObjectClass *, int *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))vtable0 + 91))( /*0x71836e*/
@@ -2017,10 +2017,10 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
             0);
         }
       }
-      else if ( (*((uint8_t (**)(ObjectClass *))altObject->AbstractClass + 88))(altObject) /*0x718397*/
+      else if ( (*((uint8_t (**)(ObjectClass *))altObject->vtable1 + 88))(altObject) /*0x718397*/
              || (((unsigned int *)altObject)[0] & 4) == 0 )
       {
-        if ( (*((uint8_t (**)(ObjectClass *))altObject->AbstractClass + 88))(altObject) ) /*0x7183d4*/
+        if ( (*((uint8_t (**)(ObjectClass *))altObject->vtable1 + 88))(altObject) ) /*0x7183d4*/
         {
           *(unsigned int *)v39 = *(unsigned int *)((*(int (**)(void *))(*(unsigned int *)((unsigned int *)this)[0] + 132))(((unsigned int *)this)[0]) + 160); /*0x7183f5*/
           (*(void (**)(void *, int16_t *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)((unsigned int *)this)[0] /*0x71840f*/
@@ -2041,7 +2041,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
       }
       else
       {
-        v11 = (*((int (**)(ObjectClass *))altObject->AbstractClass + 33))(altObject); /*0x71839d*/
+        v11 = (*((int (**)(ObjectClass *))altObject->vtable1 + 33))(altObject); /*0x71839d*/
         v12 = altObject->AbstractClass; /*0x7183a9*/
         *(unsigned int *)v38 = *(unsigned int *)(v11 + 160); /*0x7183ab*/
         (*((void (**)(ObjectClass *, char *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))v12 + 91))( /*0x7183c8*/

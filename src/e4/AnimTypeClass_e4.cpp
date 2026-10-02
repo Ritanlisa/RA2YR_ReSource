@@ -55,7 +55,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
   ((unsigned int *)this)[9] = 0; /*0x41e3ef*/
   ((unsigned int *)this)[0] = 0; /*0x41e3f5*/
   ((unsigned int *)this)[1] = 0; /*0x41e3fb*/
-  this->ObjectTypeClass = &vt_AITriggerTypeClass; /*0x41e401*/
+  this->vtable1 = &vt_AITriggerTypeClass; /*0x41e401*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AITriggerTypeClass); /*0x41e407*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AITriggerTypeClass); /*0x41e40e*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AITriggerTypeClass); /*0x41e415*/
@@ -71,7 +71,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
     v3 = (unsigned int)(dword_A8B210++);
     *((unsigned int *)dword_A8B204 + v3) = (unsigned int)(this); /*0x41e46e*/
   }
-  return &this->ObjectTypeClass; /*0x41e473*/
+  return this; /*0x41e473*/
 
 }
 }
@@ -163,7 +163,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3
   this->Shadow = 0; /*0x42771e*/
   this->PsiWarning = 0; /*0x427724*/
   this->ShouldFogRemove = 1; /*0x42772a*/
-  this->ObjectTypeClass = &vt_AnimTypeClass; /*0x427731*/
+  this->vtable1 = &vt_AnimTypeClass; /*0x427731*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x427737*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x42773d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x427744*/
@@ -215,7 +215,7 @@ LABEL_17:
     }
   }
   this->MiddleFrameIndex = v5; /*0x427842*/
-  return &this->ObjectTypeClass; /*0x42784a*/
+  return this; /*0x42784a*/
 
 }
 }
@@ -354,7 +354,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x428823*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x42882c*/
-      a1->ObjectTypeClass = &vt_AnimTypeClass; /*0x428831*/
+      a1->vtable1 = &vt_AnimTypeClass; /*0x428831*/
       ((unsigned int *)a1)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428837*/
       ((unsigned int *)a1)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x42883e*/
       ((unsigned int *)a1)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428845*/
@@ -377,7 +377,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
         return 0; /*0x428932*/
       }
       if ( ((unsigned int *)a1)[0] ) /*0x428935*/
-        (*((void (**)(AnimTypeClass *, int))a1->ObjectTypeClass + 40))(a1, (&dword_A8B230)[130].uniqueId); /*0x42894f*/
+        (*((void (**)(AnimTypeClass *, int))a1->vtable1 + 40))(a1, (&dword_A8B230)[130].uniqueId); /*0x42894f*/
     }
     return 0; /*0x428955*/
   }
@@ -530,7 +530,7 @@ int AnimTypeClass::GetDamage()
       *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x428d7f*/
       ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x428d87*/
     }
-    (*((void (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
+    (*((void (**)(AnimTypeClass *, int))this->vtable1 + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
     Image = ((unsigned int *)this)[0]; /*0x428da2*/
     *(unsigned int *)v7.CDFileClass = &vt_CCFileClass; /*0x428dac*/
     v9 = 0; /*0x428db4*/
@@ -552,7 +552,7 @@ AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
   int v4; // eax
   AnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ObjectTypeClass = &vt_AnimTypeClass; /*0x428ead*/
+  Block->vtable1 = &vt_AnimTypeClass; /*0x428ead*/
   ((unsigned int *)Block)[0] = &vt_AnimTypeClass; /*0x428eb3*/
   ((unsigned int *)Block)[0] = &vt_AnimTypeClass; /*0x428eba*/
   ((unsigned int *)Block)[0] = &vt_AnimTypeClass; /*0x428ec1*/
@@ -586,7 +586,7 @@ AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
   ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x428f53*/
   if ( (a2 & 1) != 0 ) /*0x428f5d*/
     __3_YAXPAX_Z(Block); /*0x428f60*/
-  return &Block->ObjectTypeClass; /*0x428f6a*/
+  return Block; /*0x428f6a*/
 
 }
 } // namespace gamemd
@@ -629,7 +629,7 @@ char AnimTypeClass::GetLoopCount(int a2)
     {
       LOBYTE(v2) = ((unsigned int *)this)[0]; /*0x427b2b*/
       if ( (unsigned char)v2 ) /*0x427b33*/
-        LOBYTE(v2) = (*((char (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, a2); /*0x427b3a*/
+        LOBYTE(v2) = (*((char (**)(AnimTypeClass *, int))this->vtable1 + 40))(this, a2); /*0x427b3a*/
     }
     else
     {

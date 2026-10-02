@@ -98,7 +98,7 @@ int AbstractTypeClass::Dtor()
   int v2; // eax
   AbstractTypeClass *v4; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = &vt_AbstractTypeClass; /*0x4109cd*/
+  this->vtable1 = &vt_AbstractTypeClass; /*0x4109cd*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x4109d3*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x4109da*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x4109e1*/
@@ -202,7 +202,7 @@ AbstractTypeClass * AbstractTypeClass::ddtor(unsigned int * Block, char a2)
   int v3; // eax
   AbstractTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_AbstractTypeClass; /*0x410c3d*/
+  Block->vtable1 = &vt_AbstractTypeClass; /*0x410c3d*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c43*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c4a*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_AbstractTypeClass); /*0x410c51*/
@@ -220,7 +220,7 @@ AbstractTypeClass * AbstractTypeClass::ddtor(unsigned int * Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x410c9a*/
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
     __3_YAXPAX_Z(Block); /*0x410ca7*/
-  return &Block->AbstractClass; /*0x410cb1*/
+  return Block; /*0x410cb1*/
 
 }
 } // namespace gamemd

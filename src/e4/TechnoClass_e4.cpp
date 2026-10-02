@@ -306,7 +306,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->planningToken = 0; /*0x6f311e*/
   this->disguiseAsType = 0; /*0x6f3124*/
   this->disguisedAsHouse = 0; /*0x6f312a*/
-  this->RadioClass = &vt_TechnoClass; /*0x6f3130*/
+  this->vtable1 = &vt_TechnoClass; /*0x6f3130*/
   ((unsigned int *)this)[0] = &vt_TechnoClass; /*0x6f3136*/
   ((unsigned int *)this)[0] = &vt_TechnoClass; /*0x6f313d*/
   ((unsigned int *)this)[0] = &off_7F4934; /*0x6f314a*/
@@ -342,7 +342,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->initialOwner = (HouseClass *)aP1; /*0x6f3241*/
   memset(&this->fireParticles, 0, 0x20u); /*0x6f3247*/
   *(unsigned short *)this->unknown_short_3C8 = ((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State(); /*0x6f3259*/
-  return &this->RadioClass; /*0x6f3262*/
+  return this; /*0x6f3262*/
 
 }
 } // namespace ra2
@@ -395,15 +395,15 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
   {
     if ( !v3->planningToken ) /*0x6f3f77*/
       TechnoClass::CreatePlanningNode(v3); /*0x6f3f83*/
-    if ( *(unsigned int *)((*((int (**)(TechnoClass *, int))v3->RadioClass + 33))(v3, a2) + 3416) ) /*0x6f3f93*/
+    if ( *(unsigned int *)((*((int (**)(TechnoClass *, int))v3->vtable1 + 33))(v3, a2) + 3416) ) /*0x6f3f93*/
     {
       v6 = __2_YAPAXI_Z(0x74u); /*0x6f3fa4*/
       if ( v6 ) /*0x6f3fab*/
       {
-        v33 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3428); /*0x6f3fbf*/
-        v31 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3424); /*0x6f3fd0*/
-        v29 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3420); /*0x6f3fe1*/
-        v7 = (*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3); /*0x6f3fe4*/
+        v33 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3) + 3428); /*0x6f3fbf*/
+        v31 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3) + 3424); /*0x6f3fd0*/
+        v29 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3) + 3420); /*0x6f3fe1*/
+        v7 = (*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3); /*0x6f3fe4*/
         v8 = SpawnManagerClass::SpawnManagerClass(v6, (int)v3, *(unsigned int *)(v7 + 3416), v29, v31, v33); /*0x6f3ff4*/
       }
       else
@@ -412,15 +412,15 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
       }
       v3->spawnManager = (SpawnManagerClass *)v8; /*0x6f3ffd*/
     }
-    if ( *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3392) ) /*0x6f400d*/
+    if ( *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3) + 3392) ) /*0x6f400d*/
     {
       v9 = __2_YAPAXI_Z(0x64u); /*0x6f401e*/
       if ( v9 ) /*0x6f4025*/
       {
-        v34 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3404); /*0x6f4039*/
-        v32 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3400); /*0x6f404a*/
-        v30 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3396); /*0x6f405b*/
-        v10 = (*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3); /*0x6f405e*/
+        v34 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3) + 3404); /*0x6f4039*/
+        v32 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3) + 3400); /*0x6f404a*/
+        v30 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3) + 3396); /*0x6f405b*/
+        v10 = (*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3); /*0x6f405e*/
         v11 = SlaveManagerClass::ctor(v9, (int)v3, *(unsigned int *)(v10 + 3392), v30, v32, v34); /*0x6f406e*/
       }
       else
@@ -429,16 +429,16 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
       }
       v3->slaveManager = (SlaveManagerClass *)v11; /*0x6f4077*/
     }
-    if ( *(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->RadioClass + 254))(v3, 0) /*0x6f40a2*/
-      && *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->RadioClass + 254))(v3, 0)
+    if ( *(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->vtable1 + 254))(v3, 0) /*0x6f40a2*/
+      && *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->vtable1 + 254))(v3, 0)
                               + 172)
                   + 341) )
     {
       v12 = __2_YAPAXI_Z(0x50u); /*0x6f40b3*/
       if ( v12 ) /*0x6f40ba*/
       {
-        LOBYTE(v13) = *(unsigned char *)(*(unsigned int *)(*((int (**)(TechnoClass *))v3->RadioClass + 254))(v3) + 320); /*0x6f40cc*/
-        v14 = (*((int (**)(TechnoClass *, unsigned int, int))v3->RadioClass + 254))(v3, 0, v13); /*0x6f40d7*/
+        LOBYTE(v13) = *(unsigned char *)(*(unsigned int *)(*((int (**)(TechnoClass *))v3->vtable1 + 254))(v3) + 320); /*0x6f40cc*/
+        v14 = (*((int (**)(TechnoClass *, unsigned int, int))v3->vtable1 + 254))(v3, 0, v13); /*0x6f40d7*/
         v15 = CaptureManagerClass::CaptureManagerClass(v12, (int)v3, *(unsigned int *)(*(unsigned int *)v14 + 164), 0); /*0x6f40e9*/
       }
       else
@@ -447,9 +447,9 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
       }
       v3->captureManager = (CaptureManagerClass *)v15; /*0x6f40f2*/
     }
-    if ( (*((int (**)(TechnoClass *))v3->RadioClass + 11))(v3) != 6 /*0x6f412a*/
-      && *(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->RadioClass + 254))(v3, 0)
-      && *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->RadioClass + 254))(v3, 0)
+    if ( (*((int (**)(TechnoClass *))v3->vtable1 + 11))(v3) != 6 /*0x6f412a*/
+      && *(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->vtable1 + 254))(v3, 0)
+      && *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->vtable1 + 254))(v3, 0)
                               + 172)
                   + 345) )
     {
@@ -460,8 +460,8 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
         v17 = 0; /*0x6f414c*/
       v3[1].radarFlashTimer[2] = v17; /*0x6f414e*/
     }
-    if ( *(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->RadioClass + 254))(v3, 0) /*0x6f4179*/
-      && *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->RadioClass + 254))(v3, 0)
+    if ( *(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->vtable1 + 254))(v3, 0) /*0x6f4179*/
+      && *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->vtable1 + 254))(v3, 0)
                               + 172)
                   + 346) )
     {
@@ -474,7 +474,7 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
       v3->temporalUsing = v19; /*0x6f41a3*/
       v3->temporalUsing[1] = *(unsigned int *)(*(unsigned int *)vtable0[254](v3, 0) + 164); /*0x6f41bd*/
     }
-    if ( *(int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 1564) > 0 ) /*0x6f41d2*/
+    if ( *(int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3) + 1564) > 0 ) /*0x6f41d2*/
     {
       v21 = __2_YAPAXI_Z(0x60u); /*0x6f41d6*/
       if ( v21 ) /*0x6f41e0*/
@@ -483,8 +483,8 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
         v22 = 0; /*0x6f41ec*/
       v3->airstrike = (AirstrikeClass *)v22; /*0x6f41ee*/
     }
-    if ( *(unsigned char *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3375) /*0x6f4212*/
-      && *(unsigned char *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3376) )
+    if ( *(unsigned char *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3) + 3375) /*0x6f4212*/
+      && *(unsigned char *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3) + 3376) )
     {
       owner = v3->owner; /*0x6f421c*/
       v3->isDisguisedFlag = 1; /*0x6f4222*/
@@ -502,14 +502,14 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
         v3->disguiseAsType = *(ObjectTypeClass **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3416); /*0x6f4245*/
       }
     }
-    v25 = (unsigned int *)(*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3); /*0x6f427b*/
+    v25 = (unsigned int *)(*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3); /*0x6f427b*/
     v26 = v25[809]; /*0x6f4281*/
     v25 += 809; /*0x6f4287*/
     v3->turretRecoil[0] = v26; /*0x6f428c*/
     v3->turretRecoil[1] = v25[1]; /*0x6f4295*/
     v3->turretRecoil[2] = v25[2]; /*0x6f429e*/
     v3->turretRecoil[3] = v25[3]; /*0x6f42a7*/
-    v27 = (*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3); /*0x6f42b1*/
+    v27 = (*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3); /*0x6f42b1*/
     v28 = *(unsigned int *)(v27 + 3256); /*0x6f42b7*/
     result = (unsigned int *)(v27 + 3256); /*0x6f42bd*/
     v3->barrelRecoil[0] = v28; /*0x6f42c2*/
@@ -697,7 +697,7 @@ Coord * * TechnoClass::RegisterKill()
   int v28; // [esp+14h] [ebp+4h]
 
   v27 = 0; /*0x702d46*/
-  v2 = (*((int (**)(TechnoClass *))this->RadioClass + 33))(this); /*0x702d50*/
+  v2 = (*((int (**)(TechnoClass *))this->vtable1 + 33))(this); /*0x702d50*/
   v3 = (*(int (**)(int, HouseClass *))(*(unsigned int *)v2 + 132))(v2, this->owner); /*0x702d6b*/
   if ( ((unsigned int *)this)[0] ) /*0x702d6d*/
   {
@@ -713,7 +713,7 @@ Coord * * TechnoClass::RegisterKill()
     v5 = (TeamClass *)((unsigned int *)this)[0]; /*0x702da3*/
     if ( v5 && v28 ) /*0x702dac*/
       ((TeamClass *)(v5))->Update_0(4, (int)this, *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702dbb*/
-    if ( ((unsigned int *)this)[0] && (*((int (**)(TechnoClass *))this->RadioClass + 11))(this) != 1 && ((unsigned int *)this)[0] ) /*0x702dd6*/
+    if ( ((unsigned int *)this)[0] && (*((int (**)(TechnoClass *))this->vtable1 + 11))(this) != 1 && ((unsigned int *)this)[0] ) /*0x702dd6*/
     {
       v6 = (TeamClass *)((unsigned int *)this)[0]; /*0x702de0*/
       if ( v6 && v28 ) /*0x702de9*/
@@ -732,7 +732,7 @@ Coord * * TechnoClass::RegisterKill()
       }
     }
   }
-  result = (*((int (**)(TechnoClass *))this->RadioClass + 33))(this); /*0x702e48*/
+  result = (*((int (**)(TechnoClass *))this->vtable1 + 33))(this); /*0x702e48*/
   if ( !*(unsigned char *)(result + 3231) )
   {
     if ( v28 )
@@ -788,7 +788,7 @@ Coord * * TechnoClass::RegisterKill()
       this->owner->HouseClass_field_548C = (*(int (**)(int))(*(unsigned int *)v28 + 56))(v28); /*0x703003*/
       *(unsigned int *)(*(unsigned int *)(v28 + 540) + 21736) += v3; /*0x70300f*/
     }
-    result = (*((int (**)(TechnoClass *))this->RadioClass + 11))(this) - 1; /*0x70301c*/
+    result = (*((int (**)(TechnoClass *))this->vtable1 + 11))(this) - 1; /*0x70301c*/
     switch ( result ) /*0x70302e*/
     {
       case 0: /*0x70302e*/
@@ -796,7 +796,7 @@ Coord * * TechnoClass::RegisterKill()
       case 1: /*0x70302e*/
         if ( !v28 ) /*0x7030d5*/
           goto LABEL_63; /*0x7030d5*/
-        if ( !*(unsigned char *)((*((int (**)(TechnoClass *))this->RadioClass + 33))(this) + 3231) ) /*0x7030e5*/
+        if ( !*(unsigned char *)((*((int (**)(TechnoClass *))this->vtable1 + 33))(this) + 3231) ) /*0x7030e5*/
         {
           HouseClass::IncrementStat( /*0x703108*/
             (HouseClass *)(*(unsigned int *)(v28 + 540) + 9032),
@@ -806,7 +806,7 @@ Coord * * TechnoClass::RegisterKill()
 LABEL_55:
         if ( v28 ) /*0x703117*/
         {
-          if ( !v27 && !*(unsigned char *)((*((int (**)(TechnoClass *))this->RadioClass + 33))(this) + 3231) ) /*0x70312f*/
+          if ( !v27 && !*(unsigned char *)((*((int (**)(TechnoClass *))this->vtable1 + 33))(this) + 3231) ) /*0x70312f*/
           {
             HouseClass::IncrementStat( /*0x703152*/
               (HouseClass *)(*(unsigned int *)(v28 + 540) + 11088),
@@ -814,7 +814,7 @@ LABEL_55:
             v27 = 1; /*0x703157*/
           }
 LABEL_59:
-          if ( v28 && !v27 && !*(unsigned char *)((*((int (**)(TechnoClass *))this->RadioClass + 33))(this) + 3231) ) /*0x703175*/
+          if ( v28 && !v27 && !*(unsigned char *)((*((int (**)(TechnoClass *))this->vtable1 + 33))(this) + 3231) ) /*0x703175*/
             HouseClass::IncrementStat( /*0x703198*/
               (HouseClass *)(*(unsigned int *)(v28 + 540) + 13144),
               *(unsigned int *)(*((unsigned int *)this + 433) + 3576));
@@ -823,10 +823,10 @@ LABEL_63:
         ++this->owner->killedBuildingsOfHouses[0]; /*0x70319d*/
         if ( v28 ) /*0x7031b2*/
         {
-          if ( !*(unsigned char *)((*((int (**)(TechnoClass *))this->RadioClass + 33))(this) + 3231) ) /*0x7031be*/
+          if ( !*(unsigned char *)((*((int (**)(TechnoClass *))this->vtable1 + 33))(this) + 3231) ) /*0x7031be*/
           {
             v18 = (unsigned int *)(*(unsigned int *)(v28 + 540) /*0x7031d5*/
-                           + 4 * (*((int (**)(TechnoClass *))this->RadioClass + 14))(this)
+                           + 4 * (*((int (**)(TechnoClass *))this->vtable1 + 14))(this)
                            + 21476);
             ++*v18; /*0x7031dc*/
           }
@@ -837,18 +837,18 @@ LABEL_67:
           result = RadarClass::SetFlag((RadarClass *)&stru_87F5F0.__pad_58[416], 0); /*0x7031ec*/
         break; /*0x7031f3*/
       case 5: /*0x70302e*/
-        result = (*((int (**)(TechnoClass *))this->RadioClass + 33))(this); /*0x703039*/
+        result = (*((int (**)(TechnoClass *))this->vtable1 + 33))(this); /*0x703039*/
         if ( !*(unsigned char *)(result + 562) ) /*0x70303f*/
         {
           if ( *((unsigned int *)this + 335) != -1 ) /*0x703054*/
             ++*(unsigned int *)this->owner->__pad_5488; /*0x70305c*/
-          if ( v28 && !*(unsigned char *)((*((int (**)(TechnoClass *))this->RadioClass + 33))(this) + 3231) ) /*0x703070*/
+          if ( v28 && !*(unsigned char *)((*((int (**)(TechnoClass *))this->vtable1 + 33))(this) + 3231) ) /*0x703070*/
           {
             HouseClass::IncrementStat( /*0x703093*/
               (HouseClass *)(*(unsigned int *)(v28 + 540) + 15200),
               *(unsigned int *)(*((unsigned int *)this + 328) + 3576));
             v17 = (unsigned int *)(*(unsigned int *)(v28 + 540) /*0x7030a5*/
-                           + 4 * (*((int (**)(TechnoClass *))this->RadioClass + 14))(this)
+                           + 4 * (*((int (**)(TechnoClass *))this->vtable1 + 14))(this)
                            + 21560);
             ++*v17; /*0x7030ac*/
           }
@@ -2030,7 +2030,7 @@ char TechnoClass::ScanAdjacentCells()
   int16_t v15[2]; // [esp+1Ch] [ebp-8h] BYREF
   int16_t v16[2]; // [esp+20h] [ebp-4h] BYREF
 
-  *(unsigned int *)v12 = *(unsigned int *)(*((int (**)(TechnoClass *, int16_t *))this->RadioClass + 110))(this, v16); /*0x703ce4*/
+  *(unsigned int *)v12 = *(unsigned int *)(*((int (**)(TechnoClass *, int16_t *))this->vtable1 + 110))(this, v16); /*0x703ce4*/
   v2 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v12); /*0x703ced*/
   if ( !v2 || ((unsigned int *)this)[0] ) /*0x703cf7*/
     return 0; /*0x703cf7*/

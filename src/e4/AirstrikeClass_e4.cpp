@@ -251,7 +251,7 @@ void * AirstrikeClass::CopyTo(unsigned int * Block, char a2)
   int v3; // eax
   AirstrikeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_AirstrikeClass; /*0x41dd5d*/
+  Block->vtable1 = &vt_AirstrikeClass; /*0x41dd5d*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd63*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd6a*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd71*/
@@ -269,7 +269,7 @@ void * AirstrikeClass::CopyTo(unsigned int * Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x41ddba*/
   if ( (a2 & 1) != 0 ) /*0x41ddc4*/
     __3_YAXPAX_Z(Block); /*0x41ddc7*/
-  return &Block->AbstractClass; /*0x41ddd1*/
+  return Block; /*0x41ddd1*/
 
 }
 } // namespace ra2
@@ -421,7 +421,7 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x41d709*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x41d712*/
-      aP0->AbstractClass = &vt_AirstrikeClass; /*0x41d717*/
+      aP0->vtable1 = &vt_AirstrikeClass; /*0x41d717*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d71d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d724*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d72b*/

@@ -126,7 +126,7 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   void *v4; // eax
   WaveClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ObjectClass = (gamemd::WaveClass *)(&vt_WaveClass);
+  Block->vtable1 = (gamemd::WaveClass *)(&vt_WaveClass);
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaveClass); /*0x76320c*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaveClass); /*0x763213*/
   ((unsigned int *)Block)[0] = (unsigned int)(&off_7F6BC8); /*0x76321a*/
@@ -156,7 +156,7 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   ((ObjectClass *)((ObjectClass *)Block))->Dtor(); /*0x7632b2*/
   if ( (a2 & 1) != 0 ) /*0x7632be*/
     __3_YAXPAX_Z(Block); /*0x7632c1*/
-  return &Block->ObjectClass; /*0x7632cb*/
+  return Block; /*0x7632cb*/
 
 }
 } // namespace gamemd

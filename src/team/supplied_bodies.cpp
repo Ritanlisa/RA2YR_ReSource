@@ -205,12 +205,12 @@ unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
       if ( a3 ) /*0x49f0b6*/
       {
         this->? = (void *)a3; /*0x49f0b8*/
-        return &this->AbstractClass; /*0x49f0be*/
+        return this; /*0x49f0be*/
       }
       this->? = (void *)RA2_OPNEW(4 * a2); /*0x49f0cd*/
       IDA_BYTE1(this->?) = 1; /*0x49f0d0*/
     }
-    return &this->AbstractClass; /*0x49f0bd*/
+    return this; /*0x49f0bd*/
 }
 } // namespace gamemd
 
@@ -560,12 +560,12 @@ void TeamClass::MoveToCellAndAttack(int a2, char a3) {
       {
         do /*0x6ecdd4*/
         {
-          v10 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))firstUnit->TechnoClass + 33))(firstUnit) + 1532); /*0x6ecd80*/
+          v10 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))firstUnit->vtable1 + 33))(firstUnit) + 1532); /*0x6ecd80*/
           if ( firstUnit->? /*0x6ecdc6*/
             && firstUnit->?
             && (dword_A8E7AC || !firstUnit->?)
             && (firstUnit->isTeamLeader
-             || (*((int (__thiscall **)(FootClass *))firstUnit->TechnoClass + 11))(firstUnit) == 2)
+             || (*((int (__thiscall **)(FootClass *))firstUnit->vtable1 + 11))(firstUnit) == 2)
             && v10 > v8 )
           {
             v9 = firstUnit; /*0x6ecdc8*/
@@ -628,7 +628,7 @@ char TeamClass::Create(int a2, int a3) {
       IDA_LOBYTE(v4) = TeamClass::AddMember(v5, (int)i, 0); /*0x6ed002*/
     }
     if ( this ) /*0x6ed010*/
-      IDA_LOBYTE(v4) = (*((char (__thiscall **)(TeamClass *, int))this->AbstractClass + 8))(this, 1); /*0x6ed018*/
+      IDA_LOBYTE(v4) = (*((char (__thiscall **)(TeamClass *, int))this->vtable1 + 8))(this, 1); /*0x6ed018*/
     return v4; /*0x6ed01b*/
 }
 } // namespace gamemd
@@ -661,11 +661,11 @@ char TeamClass::AssignAttackTarget(int a2, int a3) {
             if ( dword_A8E7AC || (IDA_LOBYTE(health) = i->?, !(unsigned char)health) ) /*0x6edbb3*/
             {
               if ( i->isTeamLeader /*0x6edbcd*/
-                || (health = (unsigned int *)(*((int (__thiscall **)(FootClass *))i->TechnoClass + 11))(i), health == (unsigned int *)2) )
+                || (health = (unsigned int *)(*((int (__thiscall **)(FootClass *))i->vtable1 + 11))(i), health == (unsigned int *)2) )
               {
                 target = i->?; /*0x6edbd3*/
                 if ( target && target != (AbstractClass *)v6[173] ) /*0x6edbe3*/
-                  (*((void (__thiscall **)(FootClass *, unsigned int))i->TechnoClass + 242))(i, 0); /*0x6edbeb*/
+                  (*((void (__thiscall **)(FootClass *, unsigned int))i->vtable1 + 242))(i, 0); /*0x6edbeb*/
                 health = (unsigned int *)v6[173]; /*0x6edbf1*/
                 if ( health ) /*0x6edbf9*/
                 {
@@ -674,14 +674,14 @@ char TeamClass::AssignAttackTarget(int a2, int a3) {
                   IDA_LOBYTE(health) = (*(int (__stdcall **)(int))(*(unsigned int *)i->locomotor[0] + 16))(i->locomotor[0]); /*0x6edc18*/
                   if ( !(unsigned char)health ) /*0x6edc1d*/
                   {
-                    IDA_LOBYTE(health) = (*((int (__thiscall **)(FootClass *))i->TechnoClass + 171))(i); /*0x6edc23*/
+                    IDA_LOBYTE(health) = (*((int (__thiscall **)(FootClass *))i->vtable1 + 171))(i); /*0x6edc23*/
                     if ( (unsigned char)health ) /*0x6edc2b*/
                     {
-                      health = (unsigned int *)(*((int (__thiscall **)(FootClass *))i->TechnoClass + 97))(i); /*0x6edc31*/
+                      health = (unsigned int *)(*((int (__thiscall **)(FootClass *))i->vtable1 + 97))(i); /*0x6edc31*/
                       if ( health == (unsigned int *)5 ) /*0x6edc3a*/
                       {
-                        (*((void (__thiscall **)(FootClass *, int, unsigned int))i->TechnoClass + 122))(i, 1, 0); /*0x6edc44*/
-                        IDA_LOBYTE(health) = (*((int (__thiscall **)(FootClass *, unsigned int))i->TechnoClass + 242))(i, v6[173]); /*0x6edc55*/
+                        (*((void (__thiscall **)(FootClass *, int, unsigned int))i->vtable1 + 122))(i, 1, 0); /*0x6edc44*/
+                        IDA_LOBYTE(health) = (*((int (__thiscall **)(FootClass *, unsigned int))i->vtable1 + 242))(i, v6[173]); /*0x6edc55*/
                       }
                     }
                   }
@@ -702,7 +702,7 @@ void ** TeamClass::ProcessEvent(char a2) {
     TeamClass::Destructor(this); /*0x6f0453*/
     if ( (a2 & 1) != 0 ) /*0x6f045d*/
       RA2_OPDEL(this); /*0x6f0460*/
-    return &this->AbstractClass; /*0x6f046a*/
+    return this; /*0x6f046a*/
 }
 } // namespace gamemd
 
@@ -1145,7 +1145,7 @@ unsigned int * TriggerTypeClass::Construct(char *Source) {
       v5 = (*(unsigned int *)FootClass_Array.?)++; /*0x726ddd*/
       *(unsigned int *)(FootClass_Array.?[0] + 4 * v5) = this; /*0x726dec*/
     }
-    return &this->AbstractClass; /*0x726df1*/
+    return this; /*0x726df1*/
 }
 } // namespace gamemd
 
@@ -1248,12 +1248,12 @@ int TriggerTypeClass::GetAction(int a2, int a3) {
     if ( NextTrigger && NextTrigger == (TriggerTypeClass *)a2 ) /*0x7270a4*/
       this->NextTrigger = NextTrigger->NextTrigger; /*0x7270ac*/
     for ( i = this->FirstAction; i; i = (TActionClass *)i->TActionClass_field_28 ) /*0x7270bb*/
-      (*((void (__thiscall **)(TActionClass *, int, int))i->AbstractClass + 10))(i, a2, 1); /*0x7270c4*/
+      (*((void (__thiscall **)(TActionClass *, int, int))i->vtable1 + 10))(i, a2, 1); /*0x7270c4*/
     FirstAction = this->FirstAction; /*0x7270ce*/
     if ( FirstAction == (TActionClass *)a2 ) /*0x7270d6*/
       this->FirstAction = (TActionClass *)FirstAction->TActionClass_field_28; /*0x7270db*/
     for ( j = this->FirstEvent; j; j = (TEventClass *)j->TEventClass_field_28 ) /*0x7270e9*/
-      (*((void (__thiscall **)(TEventClass *, int, int))j->AbstractClass + 10))(j, a2, 1); /*0x7270f2*/
+      (*((void (__thiscall **)(TEventClass *, int, int))j->vtable1 + 10))(j, a2, 1); /*0x7270f2*/
     result = (int)this->FirstEvent; /*0x7270fc*/
     if ( result == a2 ) /*0x727105*/
     {
@@ -2013,7 +2013,7 @@ unsigned int * CampaignClass::Constructor(int a2, int a3) {
     this->AbstractClass = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49ed13*/
     this->? = 10; /*0x49ed19*/
     this->? = 0; /*0x49ed20*/
-    return &this->AbstractClass; /*0x49ed29*/
+    return this; /*0x49ed29*/
 }
 } // namespace gamemd
 
@@ -2102,7 +2102,7 @@ unsigned int * ScriptTypeClass::Constructor(char *Source) {
       }
     }
     this->scriptActions[26] = v5; /*0x691763*/
-    return &this->AbstractClass; /*0x69176b*/
+    return this; /*0x69176b*/
 }
 } // namespace gamemd
 
@@ -2178,7 +2178,7 @@ void ** ScriptClass::ProcessEvent(char a2) {
     this->? = &ScriptClass::`vftable'; /*0x691eec*/
     this->? = &ScriptClass::`vftable'; /*0x691ef3*/
     this->? = &ScriptClass::`vftable'; /*0x691efa*/
-    AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x691f01*/
+    AbstractClass::AnnounceExpiredPointer(this, 1); /*0x691f01*/
     v5 = this; /*0x691f16*/
     v3 = (*(int (__thiscall **)(int *, ScriptClass **))(dword_8872B0 + 16))(&dword_8872B0, &v5); /*0x691f1a*/
     if ( v3 != -1 && v3 < dword_8872C0 && v3 < --dword_8872C0 ) /*0x691f35*/
@@ -2193,7 +2193,7 @@ void ** ScriptClass::ProcessEvent(char a2) {
     AbstractClass::DTOR((AbstractClass *)this); /*0x691f51*/
     if ( (a2 & 1) != 0 ) /*0x691f5b*/
       RA2_OPDEL(this); /*0x691f5e*/
-    return &this->AbstractClass; /*0x691f68*/
+    return this; /*0x691f68*/
 }
 } // namespace gamemd
 
@@ -2298,7 +2298,7 @@ void ** TActionClass::Destructor(char a2) {
     this->? = &TActionClass::`vftable'; /*0x6e466c*/
     this->? = &TActionClass::`vftable'; /*0x6e4673*/
     this->? = &TActionClass::`vftable'; /*0x6e467a*/
-    AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6e4681*/
+    AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6e4681*/
     v7 = this; /*0x6e4696*/
     v3 = (*(int (__thiscall **)(int *, TActionClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e469a*/
            &g_BuildingLoadQueue_Array.LightVisibility,
@@ -2343,7 +2343,7 @@ void ** TActionClass::Destructor(char a2) {
     AbstractClass::DTOR((AbstractClass *)this); /*0x6e4767*/
     if ( (a2 & 1) != 0 ) /*0x6e4771*/
       RA2_OPDEL(this); /*0x6e4774*/
-    return &this->AbstractClass; /*0x6e477e*/
+    return this; /*0x6e477e*/
 }
 } // namespace gamemd
 
@@ -2671,7 +2671,7 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
                IDA_HIBYTE(this->buildingType[2].?));
         if ( v7 ) /*0x6ee466*/
         {
-          v8 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))firstUnit->TechnoClass + 33))(firstUnit) + 1460); /*0x6ee476*/
+          v8 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))firstUnit->vtable1 + 33))(firstUnit) + 1460); /*0x6ee476*/
           v9 = v7 + 39; /*0x6ee47c*/
           v10 = *v9; /*0x6ee482*/
           v11 = v9[1]; /*0x6ee484*/
@@ -2687,7 +2687,7 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
           IDA_LOBYTE(v13) = firstUnit->?; /*0x6ee516*/
           *(unsigned int *)v20 = v25; /*0x6ee520*/
           TileIndex = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], v20, v8, (char)v13); /*0x6ee538*/
-          v14 = (*((int (__thiscall **)(FootClass *))firstUnit->TechnoClass + 33))(firstUnit); /*0x6ee53b*/
+          v14 = (*((int (__thiscall **)(FootClass *))firstUnit->vtable1 + 33))(firstUnit); /*0x6ee53b*/
           *(unsigned int *)v19 = *LayerClass::Pathfinding_Find( /*0x6ee565*/
                               (Type *)&stru_87F5F0.__pad_58[416],
                               (int)&v22,
@@ -2764,12 +2764,12 @@ void TeamClass::SelectBestMember(int a2, int a3) {
         a2 = *((unsigned int *)dword_A83C6C + (uint16_t)*(unsigned int *)(a2 + 4)); /*0x6ee61b*/
         do /*0x6ee683*/
         {
-          v7 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))v5->TechnoClass + 33))(v5) + 1532); /*0x6ee62b*/
+          v7 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))v5->vtable1 + 33))(v5) + 1532); /*0x6ee62b*/
           if ( v5 /*0x6ee673*/
             && v5->?
             && v5->?
             && (dword_A8E7AC || !v5->?)
-            && (v5->isTeamLeader || (*((int (__thiscall **)(FootClass *))v5->TechnoClass + 11))(v5) == 2)
+            && (v5->isTeamLeader || (*((int (__thiscall **)(FootClass *))v5->vtable1 + 11))(v5) == 2)
             && v7 > a3 )
           {
             firstUnit = v5; /*0x6ee675*/
@@ -2782,7 +2782,7 @@ void TeamClass::SelectBestMember(int a2, int a3) {
         v8 = TeamClass::ScoreMember((TeamClass *)a2, firstUnit, v6, 0); /*0x6ee698*/
         if ( v8 ) /*0x6ee69c*/
         {
-          v9 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))firstUnit->TechnoClass + 33))(firstUnit) + 1460); /*0x6ee6ac*/
+          v9 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))firstUnit->vtable1 + 33))(firstUnit) + 1460); /*0x6ee6ac*/
           v10 = v8 + 39; /*0x6ee6b2*/
           v11 = *v10; /*0x6ee6bd*/
           v12 = v10[1]; /*0x6ee6bf*/
@@ -2798,7 +2798,7 @@ void TeamClass::SelectBestMember(int a2, int a3) {
           IDA_LOBYTE(v14) = firstUnit->?; /*0x6ee74c*/
           *(unsigned int *)v20 = a3; /*0x6ee756*/
           TileIndex = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], v20, v9, (char)v14); /*0x6ee76e*/
-          v15 = (*((int (__thiscall **)(FootClass *))firstUnit->TechnoClass + 33))(firstUnit); /*0x6ee771*/
+          v15 = (*((int (__thiscall **)(FootClass *))firstUnit->vtable1 + 33))(firstUnit); /*0x6ee771*/
           *(unsigned int *)v19 = *LayerClass::Pathfinding_Find( /*0x6ee79b*/
                               (Type *)&stru_87F5F0.__pad_58[416],
                               (int)&v22,
@@ -3050,9 +3050,9 @@ void TeamClass::SelectDeploymentTarget(int a2, char a3) {
       IDA_LODWORD(v25) = -1; /*0x6efa2e*/
       for ( i = (HouseClass **)firstUnit; firstUnit; firstUnit = firstUnit->nextTeamMember ) /*0x6efa3a*/
       {
-        v6 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))firstUnit->TechnoClass + 33))(firstUnit) + 1532); /*0x6efa46*/
+        v6 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))firstUnit->vtable1 + 33))(firstUnit) + 1532); /*0x6efa46*/
         if ( (uint8_t)TechnoClass::IsDeployed((TechnoClass *)firstUnit) /*0x6efa71*/
-          && (firstUnit->isTeamLeader || (*((int (__thiscall **)(FootClass *))firstUnit->TechnoClass + 11))(firstUnit) == 2)
+          && (firstUnit->isTeamLeader || (*((int (__thiscall **)(FootClass *))firstUnit->vtable1 + 11))(firstUnit) == 2)
           && v6 > IDA_SLODWORD(v25) )
         {
           i = (HouseClass **)firstUnit; /*0x6efa73*/
@@ -3444,7 +3444,7 @@ void ** TriggerClass::CheckCondition(char a2) {
     AbstractClass::DTOR((AbstractClass *)this); /*0x726a53*/
     if ( (a2 & 1) != 0 ) /*0x726a5d*/
       RA2_OPDEL(this); /*0x726a60*/
-    return &this->AbstractClass; /*0x726a6a*/
+    return this; /*0x726a6a*/
 }
 } // namespace gamemd
 

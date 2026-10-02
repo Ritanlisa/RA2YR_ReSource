@@ -1221,7 +1221,7 @@ unsigned int * E4Recv_405E80::sub_405E80()
   RefCount **v6; // edi
   Voice *v7; // [esp+0h] [ebp-10h]
 
-  result = &this->AbstractClass; /*0x405e81*/
+  result = this; /*0x405e81*/
   if ( g_AudioConfigState ) /*0x405e94*/
   {
     if ( ((unsigned int *)this)[0] == &dword_87E294 ) /*0x405ea1*/
@@ -1253,7 +1253,7 @@ LABEL_19:
               *(unsigned int *)(*((unsigned int *)vtable0 + 44) + 144) = 0; /*0x405f4b*/
               *(unsigned int *)(*((unsigned int *)vtable0 + 44) + 152) = 0; /*0x405f57*/
               *(unsigned int *)(*((unsigned int *)vtable0 + 44) + 156) = 0; /*0x405f63*/
-              result = &this->AbstractClass; /*0x405f69*/
+              result = this; /*0x405f69*/
               *((unsigned int *)vtable0 + 44) = 0; /*0x405f6d*/
             }
             v5 = 0; /*0x405f7a*/
@@ -1268,7 +1268,7 @@ LABEL_19:
                 ++v6; /*0x405f93*/
               }
               while ( v5 < *((unsigned int *)vtable0 + 42) ); /*0x405f98*/
-              result = &this->AbstractClass; /*0x405f9a*/
+              result = this; /*0x405f9a*/
             }
             *((unsigned int *)vtable0 + 42) = 0; /*0x405f9e*/
             *((unsigned int *)vtable0 + 7) = 4; /*0x405fa4*/
@@ -2148,7 +2148,7 @@ int E4Recv_409100::sub_409100()
   v3 = ((unsigned int *)this)[0] + 1; /*0x40910f*/
   if ( ((unsigned int *)this)[0] == 1 ) /*0x409113*/
     v3 = 0; /*0x409115*/
-  v4 = (char *)this->AbstractClass + 64 * v3 + 24; /*0x40911e*/
+  v4 = (char *)this->vtable1 + 64 * v3 + 24; /*0x40911e*/
   this->attachedBomb = (BombClass *)((char *)this->attachedBomb + fallRate); /*0x409127*/
   *((unsigned int *)v4 + 13) += fallRate; /*0x40912f*/
   owningHouseIndex = (unsigned int *)this->owningHouseIndex; /*0x409132*/
@@ -3503,7 +3503,7 @@ namespace gamemd {
 void ObjectClass::sub_4038E0( int64_t a2)
 {
 
-  return (uint64_t)(a2 - *(unsigned long long *)&this->owningHouseIndex) >= *(unsigned long long *)&this->AbstractClass; /*0x403903*/
+  return (uint64_t)(a2 - *(unsigned long long *)&this->owningHouseIndex) >= *(unsigned long long *)this; /*0x403903*/
 
 }
 }
@@ -5737,7 +5737,7 @@ void ** ObjectClass::sub_40B010(void ** Block, char a2)
     DeleteAndZero(Block); /*0x40b054*/
     if ( (a2 & 1) != 0 ) /*0x40b05c*/
       __3_YAXPAX_Z(Block); /*0x40b05f*/
-    return &Block->AbstractClass; /*0x40b067*/
+    return Block; /*0x40b067*/
   }
 
 }
@@ -7197,7 +7197,7 @@ ObjectClass *  ObjectClass::sub_40E4A0(void ** Block, char a2)
   ((HashTable *)((INIClass *)Block))->DestroyHashTableINIClass(); /*0x40e4a3*/
   if ( (a2 & 1) != 0 ) /*0x40e4ad*/
     __3_YAXPAX_Z(Block); /*0x40e4b0*/
-  return &Block->AbstractClass; /*0x40e4ba*/
+  return Block; /*0x40e4ba*/
 
 }
 } // namespace gamemd

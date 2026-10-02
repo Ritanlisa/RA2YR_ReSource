@@ -2352,7 +2352,7 @@ int AircraftClass::MissionDispatch()
       {
         case 8:
           if ( !this->Type[1].TechnoTypeClass[300] /*0x419519*/
-            || (*((int (**)(AircraftClass *))this->FootClass + 97))(this) != 2
+            || (*((int (**)(AircraftClass *))this->vtable1 + 97))(this) != 2
             || !((unsigned int *)this)[0]
             || (!((unsigned int *)this)[1] || (unsigned int *)CCINIClass::GetDB((CCINIClass *)((unsigned int *)this)[0]) != a2)
             && ((unsigned int *)this)[0] != (AbstractClass *)a2 )
@@ -2372,10 +2372,10 @@ int AircraftClass::MissionDispatch()
           if ( (*(uint8_t (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x4193e6*/
             return 1; /*0x4193e6*/
           RateScaler::Init((RateScaler *)((unsigned int *)this)[0], *(double *)&this->Type->TechnoTypeClass[968]); /*0x419407*/
-          if ( (*((int (**)(AircraftClass *, int, unsigned int *))this->FootClass + 158))(this, 19, a2) != 1 ) /*0x41941c*/
+          if ( (*((int (**)(AircraftClass *, int, unsigned int *))this->vtable1 + 158))(this, 19, a2) != 1 ) /*0x41941c*/
             return 1; /*0x41941c*/
           *a4 = this; /*0x41941e*/
-          if ( (*((int (**)(AircraftClass *, int, void **, unsigned int *))this->FootClass + 159))( /*0x419431*/
+          if ( (*((int (**)(AircraftClass *, int, void **, unsigned int *))this->vtable1 + 159))( /*0x419431*/
                  this,
                  18,
                  a4,
@@ -2387,7 +2387,7 @@ int AircraftClass::MissionDispatch()
           }
           else
           {
-            (*((void (**)(AircraftClass *, int, unsigned int *))this->FootClass + 158))(this, 3, a2); /*0x41943a*/
+            (*((void (**)(AircraftClass *, int, unsigned int *))this->vtable1 + 158))(this, 3, a2); /*0x41943a*/
             return 1; /*0x419443*/
           }
         case 15:
@@ -2409,14 +2409,14 @@ int AircraftClass::MissionDispatch()
             v10 = AbstractClass::IsTechnoType(v8); /*0x41921a*/
             if ( vtable0[158](this, 15, v10) != 1 ) /*0x41922d*/
               return 10; /*0x419238*/
-            (*((void (**)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 7, 0); /*0x419241*/
+            (*((void (**)(AircraftClass *, int, unsigned int))this->vtable1 + 122))(this, 7, 0); /*0x419241*/
           }
           else
           {
-            (*((void (**)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 2, 0); /*0x41924b*/
+            (*((void (**)(AircraftClass *, int, unsigned int))this->vtable1 + 122))(this, 2, 0); /*0x41924b*/
           }
-          (*((void (**)(AircraftClass *, AbstractClass *, int))this->FootClass + 288))(this, v8, 1); /*0x419258*/
-          (*((void (**)(AircraftClass *))this->FootClass + 123))(this); /*0x419262*/
+          (*((void (**)(AircraftClass *, AbstractClass *, int))this->vtable1 + 288))(this, v8, 1); /*0x419258*/
+          (*((void (**)(AircraftClass *))this->vtable1 + 123))(this); /*0x419262*/
           result = 1; /*0x41926b*/
           break; /*0x419271*/
         case 19:
@@ -2430,7 +2430,7 @@ int AircraftClass::MissionDispatch()
             return 1; /*0x4192b6*/
           if ( this->Type[1].TechnoTypeClass[317] /*0x4192ee*/
             && (*((int (**)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
-            && ((unsigned int *)this)[0] == (AbstractClass *)(*((int (**)(AircraftClass *))this->FootClass + 111))(this) )
+            && ((unsigned int *)this)[0] == (AbstractClass *)(*((int (**)(AircraftClass *))this->vtable1 + 111))(this) )
           {
             return 1; /*0x4192f7*/
           }
@@ -2440,8 +2440,8 @@ int AircraftClass::MissionDispatch()
           }
         case 21:
           Type = this->Type; /*0x419300*/
-          if ( ((unsigned int *)this)[0] == *(unsigned int *)&Type->TechnoTypeClass[1504] ) /*0x419312*/
-            Timer::StartDouble((Timer *)((unsigned int *)this)[0], *(double *)&Type->TechnoTypeClass[968]); /*0x419328*/
+          if ( ((unsigned int *)this)[0] == *(unsigned int *)Type[1504] ) /*0x419312*/
+            Timer::StartDouble((Timer *)((unsigned int *)this)[0], *(double *)Type[968]); /*0x419328*/
           if ( a2 )
           {
             v13 = (*(int (**)(unsigned int *))(*a2 + 44))(a2) == 15 ? a2 : 0;
@@ -2449,19 +2449,19 @@ int AircraftClass::MissionDispatch()
             {
               if ( *(unsigned char *)(v13[432] + 3777) && !*((unsigned char *)v13 + 1753) ) /*0x419359*/
               {
-                (*((void (**)(AircraftClass *, unsigned int))this->FootClass + 242))(this, 0); /*0x419369*/
-                (*((void (**)(AircraftClass *, unsigned int, int))this->FootClass + 288))(this, 0, 1); /*0x419377*/
-                (*((void (**)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 4, 0); /*0x419385*/
+                (*((void (**)(AircraftClass *, unsigned int))this->vtable1 + 242))(this, 0); /*0x419369*/
+                (*((void (**)(AircraftClass *, unsigned int, int))this->vtable1 + 288))(this, 0, 1); /*0x419377*/
+                (*((void (**)(AircraftClass *, int, unsigned int))this->vtable1 + 122))(this, 4, 0); /*0x419385*/
               }
             }
           }
           return 5; /*0x419394*/
         case 23:
-          (*((void (**)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 2, 0); /*0x4191b7*/
+          (*((void (**)(AircraftClass *, int, unsigned int))this->vtable1 + 122))(this, 2, 0); /*0x4191b7*/
           v6 = (void (**)(AircraftClass *, void *, int))this->FootClass; /*0x4191bd*/
           ClosestPlacementCell = TechnoClass::FindClosestPlacementCell((TechnoClass *)this); /*0x4191c3*/
           v6[288](this, ClosestPlacementCell, 1); /*0x4191cb*/
-          (*((void (**)(AircraftClass *, int))this->FootClass + 157))(this, 3); /*0x4191d7*/
+          (*((void (**)(AircraftClass *, int))this->vtable1 + 157))(this, 3); /*0x4191d7*/
 // 0x4d8fb0
           return FootClass::MissionDispatch((FootClass *)a2, a3, (unsigned int *)a3, (int)a4, v17); /*0x4191d7*/
         case 29:
@@ -2628,8 +2628,8 @@ int AircraftClass::ProcessReturnToBase()
 
   if ( ((unsigned int *)this)[0] ) /*0x415a56*/
   {
-    if ( ((unsigned int *)this)[0] == (AbstractClass *)(*((int (**)(AircraftClass *))this->FootClass + 111))(this) ) /*0x415aef*/
-      (*((void (**)(AircraftClass *, unsigned int, int))this->FootClass + 288))(this, 0, 1); /*0x415af9*/
+    if ( ((unsigned int *)this)[0] == (AbstractClass *)(*((int (**)(AircraftClass *))this->vtable1 + 111))(this) ) /*0x415aef*/
+      (*((void (**)(AircraftClass *, unsigned int, int))this->vtable1 + 288))(this, 0, 1); /*0x415af9*/
   }
   else
   {
@@ -2848,7 +2848,7 @@ int AircraftClass::GetMissionTimer()
   int v18; // [esp+10h] [ebp-4h]
 
   v2 = (*(int (**)(AircraftTypeClass *))(this->Type->ChargerTurrets)(this->Type); /*0x41a5d9*/
-  if ( (*((int (**)(AircraftClass *))this->FootClass + 114))(this) == v2 ) /*0x41a5e3*/
+  if ( (*((int (**)(AircraftClass *))this->vtable1 + 114))(this) == v2 ) /*0x41a5e3*/
   {
     if ( ((unsigned int *)this)[0] ) /*0x41a5e9*/
     {
@@ -2861,7 +2861,7 @@ int AircraftClass::GetMissionTimer()
       MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x41a614*/
       IDA_LOWORD(result) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x41a622*/
     }
-    else if ( *(unsigned int *)(*((int (**)(AircraftClass *, unsigned int))this->FootClass + 254))(this, 0) ) /*0x41a639*/
+    else if ( *(unsigned int *)(*((int (**)(AircraftClass *, unsigned int))this->vtable1 + 254))(this, 0) ) /*0x41a639*/
     {
       if ( !((unsigned int *)this)[0] ) /*0x41a68d*/
       {
@@ -2879,28 +2879,28 @@ int AircraftClass::GetMissionTimer()
       v18 = ((unsigned int *)this)[2]; /*0x41a662*/
       v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v16); /*0x41a666*/
       v6[288](this, v7, 1); /*0x41a66e*/
-      (*((void (**)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 2, 0); /*0x41a67c*/
+      (*((void (**)(AircraftClass *, int, unsigned int))this->vtable1 + 122))(this, 2, 0); /*0x41a67c*/
       return 1; /*0x41a683*/
     }
     return result; /*0x41a62c*/
   }
   if ( byte_889ECC ) /*0x41a6be*/
   {
-    if ( ((unsigned int *)this)[0] || !(*((uint8_t (**)(AircraftClass *))this->FootClass + 171))(this) ) /*0x41a6d2*/
+    if ( ((unsigned int *)this)[0] || !(*((uint8_t (**)(AircraftClass *))this->vtable1 + 171))(this) ) /*0x41a6d2*/
       goto LABEL_14; /*0x41a6da*/
   LABEL_26:
     if ( !(uint8_t)Team::AllMembersValid((Team *)this) ) /*0x41a7bf*/
     {
-      v11 = (*((int (**)(AircraftClass *, unsigned char *, unsigned int, unsigned int))this->FootClass + 330))( /*0x41a7e6*/
+      v11 = (*((int (**)(AircraftClass *, unsigned char *, unsigned int, unsigned int))this->vtable1 + 330))( /*0x41a7e6*/
               this,
               &this->Type->TechnoTypeClass[1000],
               0,
               0);
       if ( v11 ) /*0x41a7ea*/
       {
-        (*((void (**)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 7, 0); /*0x41a7f8*/
-        (*((void (**)(AircraftClass *, int, int))this->FootClass + 288))(this, v11, 1); /*0x41a805*/
-        (*((void (**)(AircraftClass *, unsigned int))this->FootClass + 242))(this, 0); /*0x41a811*/
+        (*((void (**)(AircraftClass *, int, unsigned int))this->vtable1 + 122))(this, 7, 0); /*0x41a7f8*/
+        (*((void (**)(AircraftClass *, int, int))this->vtable1 + 288))(this, v11, 1); /*0x41a805*/
+        (*((void (**)(AircraftClass *, unsigned int))this->vtable1 + 242))(this, 0); /*0x41a811*/
         return 1; /*0x41a821*/
       }
     }
@@ -2908,13 +2908,13 @@ int AircraftClass::GetMissionTimer()
   }
   if ( byte_889ECD ) /*0x41a75f*/
   {
-    if ( (*((uint8_t (**)(AircraftClass *))this->FootClass + 171))(this) /*0x41a78c*/
+    if ( (*((uint8_t (**)(AircraftClass *))this->vtable1 + 171))(this) /*0x41a78c*/
       && ((unsigned int *)this)[0] < *(unsigned int *)&this->Type->TechnoTypeClass[1668] / 2 )
     {
       goto LABEL_26; /*0x41a78c*/
     }
   }
-  else if ( (*((uint8_t (**)(AircraftClass *))this->FootClass + 171))(this) /*0x41a7b7*/
+  else if ( (*((uint8_t (**)(AircraftClass *))this->vtable1 + 171))(this) /*0x41a7b7*/
          && ((unsigned int *)this)[0] < *(unsigned int *)&this->Type->TechnoTypeClass[1668] )
   {
     goto LABEL_26; /*0x41a7b7*/
@@ -2935,12 +2935,12 @@ int AircraftClass::GetMissionTimer()
   }
   if ( ((unsigned int *)this)[0] ) /*0x41a822*/
   {
-    (*((void (**)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 1, 0); /*0x41a834*/
+    (*((void (**)(AircraftClass *, int, unsigned int))this->vtable1 + 122))(this, 1, 0); /*0x41a834*/
     return 1; /*0x41a83b*/
   }
-  else if ( (*((uint8_t (**)(AircraftClass *))this->FootClass + 171))(this) ) /*0x41a849*/
+  else if ( (*((uint8_t (**)(AircraftClass *))this->vtable1 + 171))(this) ) /*0x41a849*/
   {
-    if ( (*((int (**)(AircraftClass *))this->FootClass + 114))(this) /*0x41a86e*/
+    if ( (*((int (**)(AircraftClass *))this->vtable1 + 114))(this) /*0x41a86e*/
       || (uint8_t)Team::AllMembersValid((Team *)this) )
     {
       if ( !(uint8_t)House::IsCurrentPlayer((House *)((unsigned int *)this)[0]) ) /*0x41a888*/
@@ -2952,12 +2952,12 @@ int AircraftClass::GetMissionTimer()
         v13 = CellClass::ScanOccupiers(owner, &v16); /*0x41a8ba*/
         if ( v13 ) /*0x41a8c1*/
         {
-          (*((void (**)(AircraftClass *, unsigned int *))this->FootClass + 242))(this, v13); /*0x41a8c8*/
-          (*((void (**)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 1, 0); /*0x41a8d6*/
+          (*((void (**)(AircraftClass *, unsigned int *))this->vtable1 + 242))(this, v13); /*0x41a8c8*/
+          (*((void (**)(AircraftClass *, int, unsigned int))this->vtable1 + 122))(this, 1, 0); /*0x41a8d6*/
         }
       }
       if ( !(uint8_t)House::IsCurrentPlayer((House *)((unsigned int *)this)[0]) /*0x41a8ef*/
-        || (*((uint8_t (**)(AircraftClass *))this->FootClass + 21))(this) )
+        || (*((uint8_t (**)(AircraftClass *))this->vtable1 + 21))(this) )
       {
 // 0x4d5070
         return FootClass::FindMovePosition((FootClass *)this); /*0x41a92b*/
@@ -3076,7 +3076,7 @@ int AircraftClass::Destruct()
       this->Type = 0; /*0x414117*/
     }
   }
-  AbstractClass::AnnounceExpiredPointer(&this->FootClass, 1); /*0x414125*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x414125*/
   v16 = this; /*0x41413a*/
   v5 = (*(int (**)(unsigned int *, AircraftClass **))(dword_A8E390 + 16))(&dword_A8E390, &v16); /*0x41413e*/
   if ( v5 != -1 && v5 < dword_A8E3A0 && v5 < --dword_A8E3A0 ) /*0x414159*/

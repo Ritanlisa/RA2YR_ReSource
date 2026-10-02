@@ -1011,7 +1011,7 @@ int E4Recv_5BCE10::sub_5BCE10(int a2)
             v19 = v26; /*0x5bcf2e*/
             if ( v26 > v5 ) /*0x5bcf34*/
             {
-              v20 = &this->AbstractClass + (unsigned int)&v16[v17 + v26]; /*0x5bcf3a*/
+              v20 = this + (unsigned int)&v16[v17 + v26]; /*0x5bcf3a*/
               do /*0x5bcf50*/
               {
                 --v20; /*0x5bcf41*/
@@ -1196,7 +1196,7 @@ AbstractClass * * sub_5BF950()
   result = TestBitArray(15); /*0x5bf958*/
   if ( !result ) /*0x5bf95f*/
   {
-    (*((void (**)(ObjectClass *, int, unsigned int, int, unsigned int, int, int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x5bf983*/
+    (*((void (**)(ObjectClass *, int, unsigned int, int, unsigned int, int, int, int))g_DSurface_Hidden->vtable1 + 2))( /*0x5bf983*/
       g_DSurface_Hidden,
       g_MissionQueueFrame.localVariables[604] + 36,
       *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 8),
@@ -1216,13 +1216,13 @@ AbstractClass * * sub_5BF950()
         v11[1] = v6[1]; /*0x5bf9b8*/
         v12 = v6[2]; /*0x5bf9bf*/
         v13 = v6[3]; /*0x5bf9cc*/
-        v14[0] = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 31))(g_DSurface_Hidden) - v12) /*0x5bf9e6*/
+        v14[0] = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 31))(g_DSurface_Hidden) - v12) /*0x5bf9e6*/
                / 2;
-        v7 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 32))(g_DSurface_Hidden); /*0x5bf9ec*/
+        v7 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))(g_DSurface_Hidden); /*0x5bf9ec*/
         v14[2] = v12; /*0x5bf9fc*/
         v14[1] = v7 - v13; /*0x5bfa04*/
         v14[3] = v13; /*0x5bfa15*/
-        (*((void (**)(ObjectClass *, unsigned int *, int, unsigned int *, int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x5bfa21*/
+        (*((void (**)(ObjectClass *, unsigned int *, int, unsigned int *, int, int))g_DSurface_Hidden->vtable1 + 2))( /*0x5bfa21*/
           g_DSurface_Hidden,
           v14,
           v5,
@@ -3309,7 +3309,7 @@ unsigned int * E4Recv_5BD560::sub_5BD560()
   ((unsigned int *)this)[0] = 0; /*0x5bd566*/
   ((unsigned int *)this)[0] = 0; /*0x5bd569*/
   ((unsigned int *)this)[0] = 0; /*0x5bd56c*/
-  return &this->AbstractClass; /*0x5bd56f*/
+  return this; /*0x5bd56f*/
 
 }
 } // namespace gamemd
@@ -3651,7 +3651,7 @@ int E4Recv_5BECC0::sub_5BECC0()
       {
         v7 = *v6; /*0x5bece7*/
         v6 += 256; /*0x5bece9*/
-        *((unsigned char *)&v3->AbstractClass + v5++) = v7; /*0x5becee*/
+        *((unsigned char *)v3 + v5++) = v7; /*0x5becee*/
       }
       while ( v5 < 256 ); /*0x5becf8*/
       result = 256 - (unsigned int)this; /*0x5becfa*/

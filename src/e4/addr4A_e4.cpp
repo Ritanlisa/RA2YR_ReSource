@@ -1916,7 +1916,7 @@ void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
               if ( (unsigned char)g_abs_A8B264 /*0x4a900e*/
                 && (uint8_t)HouseClass::IsAlliedWith(
                                       (void *)v17,
-                                      *(void **)&dword_A8022C->AbstractClass[4 * a2]) )
+                                      *(void **)dword_A8022C[4 * a2]) )
               {
                 if ( *(unsigned char *)(v16[328] + 5456) ) /*0x4a901d*/
                   v25 = 1; /*0x4a9027*/
@@ -3288,7 +3288,7 @@ unsigned int * E4Recv_4A3630::sub_4A3630()
 {
 
   *((unsigned int *)this + 24576) = 0; /*0x4a3632*/
-  return &this->AbstractClass; /*0x4a363c*/
+  return this; /*0x4a363c*/
 
 }
 } // namespace gamemd

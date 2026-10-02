@@ -590,9 +590,9 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   v20 = (int)this; /*0x6efc7f*/
   for ( i = v3; v3; v3 = *(TechnoClass **)&v3[1] ) /*0x6efc85*/
   {
-    v6 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 1532); /*0x6efc91*/
+    v6 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))(v3) + 1532); /*0x6efc91*/
     if ( (uint8_t)TechnoClass::IsDeployed(v3) /*0x6efcba*/
-      && (BYTE1(v3[1].idleActionTimer[0]) || (*((int (**)(TechnoClass *))v3->RadioClass + 11))(v3) == 2)
+      && (BYTE1(v3[1].idleActionTimer[0]) || (*((int (**)(TechnoClass *))v3->vtable1 + 11))(v3) == 2)
       && v6 > v4 )
     {
       i = v3; /*0x6efcbc*/
@@ -1679,7 +1679,7 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
   int v5; // esi
   int v6; // edx
 
-  result = &this->AbstractClass; /*0x6e8004*/
+  result = this; /*0x6e8004*/
   ((unsigned int *)this)[0] = &vt_INoticeSink; /*0x6e8008*/
   ((unsigned int *)this)[0] = &vt_INoticeSource; /*0x6e800f*/
   ((unsigned int *)this)[0] = *(unsigned int *)(a2 + 16); /*0x6e801c*/
@@ -1687,7 +1687,7 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
   ((unsigned int *)this)[0] = *(unsigned int *)(a2 + 24); /*0x6e8028*/
   ((unsigned int *)this)[0] = *(unsigned int *)(a2 + 28); /*0x6e802e*/
   LOBYTE(((unsigned int *)this)[0]) = *(unsigned char *)(a2 + 32); /*0x6e8034*/
-  this->AbstractClass = &vt_AbstractClass; /*0x6e803f*/
+  this->vtable1 = &vt_AbstractClass; /*0x6e803f*/
   ((unsigned int *)this)[0] = &vt_AbstractClass; /*0x6e8045*/
   ((unsigned int *)this)[0] = &vt_AbstractClass; /*0x6e804c*/
   ((unsigned int *)this)[0] = &vt_AbstractClass; /*0x6e8053*/
@@ -1695,7 +1695,7 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
   qmemcpy((char *)this->ambientSoundController + 1, (const void *)(a2 + 61), 0x20u); /*0x6e8068*/
   this->customSound_controller[4] = *(unsigned int *)(a2 + 96); /*0x6e8070*/
   qmemcpy(&this->customSound, (const void *)(a2 + 100), 0x31u); /*0x6e807b*/
-  this->AbstractClass = &vt_TaskForceClass; /*0x6e807e*/
+  this->vtable1 = &vt_TaskForceClass; /*0x6e807e*/
   ((unsigned int *)this)[0] = &vt_TaskForceClass; /*0x6e8084*/
   ((unsigned int *)this)[0] = &vt_TaskForceClass; /*0x6e808b*/
   ((unsigned int *)this)[0] = &vt_TaskForceClass; /*0x6e8092*/

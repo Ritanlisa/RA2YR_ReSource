@@ -4820,7 +4820,7 @@ ControlClass * * strtoxl(unsigned char * a1, unsigned char ** a2, int a3, int a4
 
   v13 = 0; /*0x7c9ddb*/
   vtable0 = (uint8_t)a1->AbstractClass; /*0x7c9de4*/
-  for ( i = (uint8_t *)&a1->AbstractClass + 1;
+  for ( i = (uint8_t *)a1 + 1;
         (int)SrcSizeInBytes <= 1 ? *((unsigned char *)off_87C590 + 2 * vtable0) & 8 : _isctype(vtable0, 8);
         ++i )
   {
@@ -8463,7 +8463,7 @@ void _forcdecpt(char * a1)
   }
   result = (char)v1->AbstractClass; /*0x7ceb6e*/
   IDA_LOBYTE(v1->AbstractClass) = SrcCh[0]; /*0x7ceb70*/
-  v4 = (char *)&v1->AbstractClass + 1; /*0x7ceb72*/
+  v4 = (char *)v1 + 1; /*0x7ceb72*/
   do /*0x7ceb7e*/
   {
     v5 = *v4; /*0x7ceb73*/
@@ -8970,7 +8970,7 @@ unsigned int * __sbh_free_block(AbstractClass * aP0, INIClass * aP1)
       VirtualFree(v22[3], 0, 0x8000u); /*0x7cfa9a*/
       HeapFree(hHeap, 0, *((LPVOID *)dword_B78B90 + 4)); /*0x7cfaac*/
       memcpy(dword_B78B90, (char *)dword_B78B90 + 20, (size_t)lp + 20 * dword_B78B94 - (unsigned int)dword_B78B90 - 20); /*0x7cfad6*/
-      result = &aP0->AbstractClass; /*0x7cfadb*/
+      result = aP0; /*0x7cfadb*/
       --dword_B78B94; /*0x7cfae1*/
       if ( aP0 > dword_B78B90 ) /*0x7cfaed*/
         result = (unsigned int *)((char *)aP0 - 20); /*0x7cfaef*/
@@ -8979,7 +8979,7 @@ unsigned int * __sbh_free_block(AbstractClass * aP0, INIClass * aP1)
     else
     {
   LABEL_46:
-      result = &aP0->AbstractClass; /*0x7cfb00*/
+      result = aP0; /*0x7cfb00*/
     }
     dword_B78B90 = result; /*0x7cfb03*/
     dword_B78B88 = v4; /*0x7cfb08*/
@@ -12222,7 +12222,7 @@ unsigned int * E4Recv_7C8B2D::sub_7C8B2D(int a2)
 {
 
   this->AbstractClass = &off_7F9594; /*0x7c8b2f*/
-  return &this->AbstractClass; /*0x7c8b35*/
+  return this; /*0x7c8b35*/
 
 }
 } // namespace gamemd

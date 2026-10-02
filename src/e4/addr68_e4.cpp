@@ -1564,7 +1564,7 @@ void GenerateScenarioUnits()
   if ( dword_A80238 > 0 ) /*0x68881f*/
   {
   LABEL_16:
-    v12 = *(unsigned int **)&dword_A8022C->AbstractClass[4 * v11]; /*0x688825*/
+    v12 = *(unsigned int **)dword_A8022C[4 * v11]; /*0x688825*/
     ppv = v12; /*0x68882e*/
     v13 = v12[13]; /*0x688832*/
     if ( *(unsigned char *)(v13 + 422) ) /*0x688835*/
@@ -2849,7 +2849,7 @@ int E4Recv_68F8A0::sub_68F8A0()
   {
     vtable3 = ((unsigned int *)this)[0]; /*0x68f8f8*/
     v6 = (char *)((unsigned int *)this)[0] + 214; /*0x68f8fd*/
-    *(unsigned int *)(v4 + 4) = (char *)this->AbstractClass + 590 - 12 * (v3 - 1); /*0x68f902*/
+    *(unsigned int *)(v4 + 4) = (char *)this->vtable1 + 590 - 12 * (v3 - 1); /*0x68f902*/
     *(unsigned int *)(v4 + 8) = v6; /*0x68f908*/
     *(unsigned int *)(v4 + 12) = TimerGetTicks(); /*0x68f910*/
     *(unsigned int *)(v4 + 20) = 0; /*0x68f915*/

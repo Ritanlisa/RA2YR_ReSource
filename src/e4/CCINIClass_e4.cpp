@@ -319,7 +319,7 @@ IUnknown * CCINIClass::WriteHouses()
   result = dword_A80238; /*0x501174*/
   for ( i = 0; i < dword_A80238; ++i ) /*0x50117d*/
   {
-    strcpy(Source, (const char *)(*(unsigned int *)&dword_A8022C->AbstractClass[4 * i] + 90100)); /*0x5011ac*/
+    strcpy(Source, (const char *)(*(unsigned int *)dword_A8022C[4 * i] + 90100)); /*0x5011ac*/
     sprintf(Buffer,(const char *const )(g_Str_Trace), i); /*0x5011ba*/
     INIClass::SetString(this, (uint8_t *)g_INI_Key_Houses, Buffer, Source); /*0x5011d3*/
     result = dword_A80238; /*0x5011d8*/
@@ -329,7 +329,7 @@ IUnknown * CCINIClass::WriteHouses()
   {
     do /*0x501200*/
     {
-      HouseClass::SaveToINI(*(unsigned int *)&dword_A8022C->AbstractClass[4 * v4], this); /*0x5011f3*/
+      HouseClass::SaveToINI(*(unsigned int *)dword_A8022C[4 * v4], this); /*0x5011f3*/
       result = dword_A80238; /*0x5011f8*/
       ++v4; /*0x5011fd*/
     }

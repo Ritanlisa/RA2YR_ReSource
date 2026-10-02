@@ -28,7 +28,7 @@ _DWORD * RadioClass::Release(void *a1)
   this->radioLinks[0] = (int)&vt_VectorClass; /*0x65a77c*/
   this->radioLinks[1] = __2_YAPAXI_Z(4u); /*0x65a78b*/
   BYTE1(this->radioLinks[3]) = 1; /*0x65a791*/
-  this->MissionClass = (unsigned int)(&vt_RadioClass); /*0x65a798*/
+  this->vtable1 = (unsigned int)(&vt_RadioClass); /*0x65a798*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_RadioClass); /*0x65a79e*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_RadioClass); /*0x65a7a5*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_RadioClass); /*0x65a7ac*/
@@ -36,7 +36,7 @@ _DWORD * RadioClass::Release(void *a1)
   this->lastCommands[0] = 0; /*0x65a7c4*/
   this->lastCommands[1] = 0; /*0x65a7ca*/
   this->lastCommands[2] = 0; /*0x65a7d2*/
-  return &this->MissionClass; /*0x65a7d8*/
+  return this; /*0x65a7d8*/
 
 }
 } // namespace ra2
@@ -47,7 +47,7 @@ int RadioClass::ProcessCmd()
 {
 
   if ( !((unsigned int *)this)[0] ) /*0x65aa83*/
-    (*((void (**)(RadioClass *, int))this->MissionClass + 160))(this, 3); /*0x65aa91*/
+    (*((void (**)(RadioClass *, int))this->vtable1 + 160))(this, 3); /*0x65aa91*/
   return ((ObjectClass *)((ObjectClass *)this))->Undeploy(); /*0x65aa9e*/
 
 }

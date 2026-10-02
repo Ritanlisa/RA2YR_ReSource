@@ -649,7 +649,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         }
         MapSkirmishDialogPlayerToControl(hWnd, (int)dword_A8DA8C); /*0x46ec5a*/
         if ( dword_A8B23C ) /*0x46ec67*/
-          (*((void (__thiscall **)(ObjectClass *, HWND))dword_A8B23C->AbstractClass + 14))(dword_A8B23C, hWnd); /*0x46ec6c*/
+          (*((void (__thiscall **)(ObjectClass *, HWND))dword_A8B23C->vtable1 + 14))(dword_A8B23C, hWnd); /*0x46ec6c*/
         v72 = GetDlgItem(hWnd, 1842); /*0x46ec75*/
         v73 = v72; /*0x46ec77*/
         if ( v72 ) /*0x46ec7b*/

@@ -92,7 +92,7 @@ void unknown_libname_36()
   this->AbstractClass = 0; /*0x7636f4*/
   this->q004 = 0; /*0x7636f6*/
   this->q008 = 0; /*0x7636f9*/
-  return &this->AbstractClass; /*0x7636fc*/
+  return this; /*0x7636fc*/
 }
 }
 // 0x764B90
@@ -974,15 +974,15 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
 
   v2 = a2; /*0x76b7b1*/
   if ( this == (ObjectClass *)a2 ) /*0x76b7bc*/
-    return &this->AbstractClass; /*0x76b7bc*/
-  (*((void (**)(ObjectClass *))this->AbstractClass + 3))(this); /*0x76b7c4*/
+    return this; /*0x76b7bc*/
+  (*((void (**)(ObjectClass *))this->vtable1 + 3))(this); /*0x76b7c4*/
   v4 = a2[2]; /*0x76b7c7*/
   ((unsigned int *)this)[0] = (void *)v4; /*0x76b7cc*/
   if ( !v4 ) /*0x76b7cf*/
   {
     ((unsigned int *)this)[0] = 0; /*0x76b855*/
     BYTE1(((unsigned int *)this)[0]) = 0; /*0x76b85c*/
-    return &this->AbstractClass; /*0x76b860*/
+    return this; /*0x76b860*/
   }
   v5 = (int *)__2_YAPAXI_Z(8 * v4 + 4); /*0x76b7dd*/
   if ( v5 ) /*0x76b7e7*/
@@ -1010,19 +1010,19 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   }
   ((unsigned int *)this)[0] = v8; /*0x76b819*/
   if ( !v8 ) /*0x76b81c*/
-    return &this->AbstractClass; /*0x76b81c*/
+    return this; /*0x76b81c*/
   vtable2 = ((unsigned int *)this)[0]; /*0x76b81e*/
   v10 = 0; /*0x76b821*/
   BYTE1(((unsigned int *)this)[0]) = 1; /*0x76b825*/
   if ( (int)vtable2 <= 0 ) /*0x76b829*/
-    return &this->AbstractClass; /*0x76b829*/
+    return this; /*0x76b829*/
   do /*0x76b84a*/
   {
     ((ComPtr *)((ComPtr *)((char *)((unsigned int *)this)[0] + 8 * v10)))->Set(*(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
     ++v10; /*0x76b847*/
   }
   while ( v10 < (int)((unsigned int *)this)[0] ); /*0x76b84a*/
-  return &this->AbstractClass; /*0x76b84e*/
+  return this; /*0x76b84e*/
 
 }
 }
@@ -1325,7 +1325,7 @@ unsigned int * E4Recv_763700::sub_763700(unsigned int * a2)
   this->AbstractClass = (void *)*a2; /*0x76370b*/
   ((unsigned int *)this)[0] = (void *)a2[1]; /*0x763710*/
   ((unsigned int *)this)[0] = (void *)a2[2]; /*0x763717*/
-  return &this->AbstractClass; /*0x763713*/
+  return this; /*0x763713*/
 
 }
 } // namespace gamemd
@@ -1885,7 +1885,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   wchar_t *StringCSF; // [esp-8h] [ebp-10h]
   void *v14; // [esp+4h] [ebp-4h] BYREF
 
-  v5 = (*((int (**)(ObjectClass *, int))this->AbstractClass + 5))(this, a3); /*0x76732d*/
+  v5 = (*((int (**)(ObjectClass *, int))this->vtable1 + 5))(this, a3); /*0x76732d*/
   v6 = FromStringInt((char **)&v14, v5); /*0x767336*/
   ConcatStringAlloc((char **)&a3, (const char **)&((unsigned int *)this)[0], v6); /*0x767343*/
   DeleteAndZero((ObjectClass *)&v14); /*0x76734c*/
@@ -2269,7 +2269,7 @@ unsigned int * E4Recv_769490::sub_769490(unsigned int * a2)
   char *vtable1; // edx
   char *v4; // ecx
 
-  result = &this->AbstractClass; /*0x769490*/
+  result = this; /*0x769490*/
   vtable1 = (char *)((unsigned int *)this)[0]; /*0x76949d*/
   this->AbstractClass = (char *)this->AbstractClass + *a2; /*0x7694a0*/
   v4 = (char *)((unsigned int *)this)[0] + 1; /*0x7694aa*/

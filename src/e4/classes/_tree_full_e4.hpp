@@ -38,9 +38,6 @@ struct AudioChannel {
 
 struct CampaignScore {
     void* vfptr;
-    void* q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
 };
 
 struct DialogControl_OwnerDraw {
@@ -49,7 +46,6 @@ struct DialogControl_OwnerDraw {
 
 struct DynamicVectorClass {
     void* vfptr;
-    void* q000;  // 0x0
     void* Items;  // 0x4
     int Capacity;  // 0x8
     bool IsInitialized;  // 0xC
@@ -63,7 +59,6 @@ struct DynamicVectorClass {
 
 struct FractalNoise {
     void* vfptr;
-    unsigned char q000;  // 0x0
 };
 
 struct Gap2Recv_402F60 {
@@ -305,8 +300,6 @@ struct Gap2Recv_402F60 {
 
 struct HashTable {
     void* vfptr;
-    CampaignClass* q000;  // 0x0
-    unsigned char q004;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned int u32_10;  // 0x10
@@ -321,7 +314,6 @@ struct HashTable {
     unsigned char q034;  // 0x34
     unsigned int u32_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
-    unsigned char q040;  // 0x40
     unsigned char q044;  // 0x44
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
@@ -334,7 +326,6 @@ struct HashTable {
 
 struct KeywordType {
     void* vfptr;
-    unsigned char q000;  // 0x0
 };
 
 struct Locomotor {
@@ -345,22 +336,17 @@ struct Locomotor {
 struct MSAnim {
     void* vfptr;
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
     int GetField(unsigned int a2);  // 0x5cb840
     int SetField(unsigned int a2);  // 0x5cb860
 };
 
 struct MSShapeAnim {
     void* vfptr;
-    void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
     unsigned int u32_7;  // 0x7
 };
 
 struct ObjectClass {
     void* vfptr;
-    void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
@@ -395,16 +381,12 @@ struct ObjectClass {
     unsigned int q03B;  // 0x3B
     char ambientSoundController[20];  // 0x3C
     AudioController* q03D;  // 0x3D
-    IUnknown* q040;  // 0x40
     unsigned int u32_41;  // 0x41
-    void* q044;  // 0x44
     unsigned char u8_45;  // 0x45
     unsigned int u32_46;  // 0x46
     unsigned int u32_47;  // 0x47
-    AudioController* q048;  // 0x48
     unsigned int u32_49;  // 0x49
     bool q04A;  // 0x4A
-    AudioController* q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
     char customSound_controller[20];  // 0x50
     void* q054;  // 0x54
@@ -487,19 +469,14 @@ struct ObjectClass {
 
 struct ReferenceCounted {
     void* vfptr;
-    void* vtable1;  // 0x0
 };
 
 struct ShapeButtonClass {
     void* vfptr;
-    void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
 };
 
 struct State {
     void* vfptr;
-    unsigned char q000;  // 0x0
     int Players;  // 0x4
     int AIPlayers;  // 0x8
     int GameSpeed;  // 0xC
@@ -513,21 +490,13 @@ struct State {
     bool Crates;  // 0x1A
     bool MultiEngineer;  // 0x1B
     bool Bridies;  // 0x1C
-    unsigned char q01D;  // 0x1D
     int ScenIndex;  // 0x20
     int MapIndex;  // 0x24
     int LastSave;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned int q034;  // 0x34
 };
 
 struct VectorClass {
     void* vfptr;
-    void* vtable1;  // 0x0
-    void* Items;  // 0x4
-    void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
-    bool IsAllocated;  // 0xD
     unsigned int tail_E;  // 0xE
     int Shrink();  // 0x7ae730
     unsigned int * CopyBuilding(unsigned int *a2);  // 0x67b180
@@ -550,31 +519,20 @@ struct VectorClass {
 
 struct VectorCursor_uint_DynamicVectorClass_uint {
     void* vfptr;
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
 };
 
 struct WinAPI {
     void* vfptr;
-    unsigned char q000;  // 0x0
     static int Wrapper(int a2);  // consensus: 350+ uniform 1-arg sites
 };
 
 struct WorldDominationTour {
     void* vfptr;
-    unsigned char q000;  // 0x0
 };
 
 struct _ {
     void* vfptr;
-    void * Items;  // 0x4
-    int Capacity;  // 0x8
     unsigned int u32_C;  // 0xC
-    bool IsAllocated;  // 0xD
-    unsigned char q018;  // 0x18
-    unsigned char q024;  // 0x24
-    unsigned char q054;  // 0x54
     unsigned char q084;  // 0x84
     unsigned char q774;  // 0x774
     unsigned char q1908;  // 0x1908

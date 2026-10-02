@@ -3034,7 +3034,7 @@ LABEL_5:
   {
     if ( !(unsigned short)i ) /*0x5ce19d*/
       break; /*0x5ce19d*/
-    (*((void (**)(TagClass *, int, int, char *, int, int, unsigned int))this->attachedTag->AbstractClass + 4))( /*0x5ce1b5*/
+    (*((void (**)(TagClass *, int, int, char *, int, int, unsigned int))this->attachedTag->vtable1 + 4))( /*0x5ce1b5*/
       this->attachedTag,
       a2,
       i,
@@ -3042,7 +3042,7 @@ LABEL_5:
       this->customSound_controller[0],
       this->occupant,
       0);
-    vtable1 += (*((int (**)(TagClass *, int))this->attachedTag->AbstractClass + 1))(this->attachedTag, i); /*0x5ce1c1*/
+    vtable1 += (*((int (**)(TagClass *, int))this->attachedTag->vtable1 + 1))(this->attachedTag, i); /*0x5ce1c1*/
     v17 = (size_t)v10++; /*0x5ce1c5*/
   }
   v12 = this->ambientSoundController[1]; /*0x5ce1e0*/

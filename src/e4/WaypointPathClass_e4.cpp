@@ -38,7 +38,7 @@ int WaypointPathClass::Init(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   this->waypoints[0] = (int)&vt_DynamicVectorClass; /*0x76374e*/
   this->waypoints[5] = 10; /*0x763755*/
   this->waypoints[4] = 0; /*0x76375c*/
-  this->AbstractClass = (unsigned int)(&vt_WaypointPathClass); /*0x76375f*/
+  this->vtable1 = (unsigned int)(&vt_WaypointPathClass); /*0x76375f*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763765*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x76376c*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763773*/
@@ -136,7 +136,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       if ( p_vtable1 ) /*0x763cdd*/
       {
         ((WaypointPathClass *)(p_vtable1))->computePath(0, 0); /*0x763ce3*/
-        p_vtable1->AbstractClass = (unsigned int)(&vt_DynamicVectorClass); /*0x763ce8*/
+        p_vtable1->vtable1 = (unsigned int)(&vt_DynamicVectorClass); /*0x763ce8*/
         ((unsigned int *)p_vtable1)[0] = 10; /*0x763cee*/
         ((unsigned int *)p_vtable1)[0] = 0; /*0x763cf5*/
       }
@@ -160,7 +160,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
           if ( ((unsigned int *)p_vtable1)[0] < (int)vtable2 /*0x763d42*/
             || (BYTE1(((unsigned int *)p_vtable1)[0]) || !vtable2)
             && (abstractFlags = ((unsigned int *)p_vtable1)[0], abstractFlags > 0)
-            && (*((uint8_t (**)(WaypointPathClass *, int, unsigned int))p_vtable1->AbstractClass + 2))(
+            && (*((uint8_t (**)(WaypointPathClass *, int, unsigned int))p_vtable1->vtable1 + 2))(
                  p_vtable1,
                  (int)vtable2 + abstractFlags,
                  0) )
@@ -201,9 +201,9 @@ void WaypointPathClass::computePath(int a2, unsigned int *a3)
   ((unsigned int *)this)[0] = (unsigned int)((void *)a2); /*0x764770*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x764773*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x764777*/
-  this->AbstractClass = (unsigned int)(&vt_VectorClass); /*0x76477a*/
+  this->vtable1 = (unsigned int)(&vt_VectorClass); /*0x76477a*/
   if ( !a2 ) /*0x764780*/
-    return &this->AbstractClass; /*0x764780*/
+    return this; /*0x764780*/
   if ( !a3 ) /*0x764788*/
   {
     v7 = (int *)__2_YAPAXI_Z(12 * a2 + 4); /*0x7647bd*/
@@ -226,7 +226,7 @@ void WaypointPathClass::computePath(int a2, unsigned int *a3)
         while ( v10 ); /*0x7647e4*/
         ((unsigned int *)this)[0] = (unsigned int)(v8); /*0x7647e6*/
         BYTE1(((unsigned int *)this)[0]) = 1; /*0x7647e9*/
-        return &this->AbstractClass; /*0x7647f2*/
+        return this; /*0x7647f2*/
       }
     }
     else
@@ -235,7 +235,7 @@ void WaypointPathClass::computePath(int a2, unsigned int *a3)
     }
     ((unsigned int *)this)[0] = (unsigned int)(v8); /*0x7647f7*/
     BYTE1(((unsigned int *)this)[0]) = 1; /*0x7647fa*/
-    return &this->AbstractClass; /*0x7647fe*/
+    return this; /*0x7647fe*/
   }
   *a3 = a2; /*0x764790*/
   v4 = a3 + 1; /*0x764794*/
@@ -253,7 +253,7 @@ void WaypointPathClass::computePath(int a2, unsigned int *a3)
     while ( v5 ); /*0x7647a5*/
   }
   ((unsigned int *)this)[0] = (unsigned int)(a3 + 1); /*0x7647a7*/
-  return &this->AbstractClass; /*0x7647ac*/
+  return this; /*0x7647ac*/
 
 }
 }
@@ -355,7 +355,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(void ** Block, char a2)
   int v4; // eax
   WaypointPathClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_WaypointPathClass; /*0x763e26*/
+  Block->vtable1 = &vt_WaypointPathClass; /*0x763e26*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e2c*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e33*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e3a*/
@@ -383,7 +383,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(void ** Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x763ecc*/
   if ( (a2 & 1) != 0 ) /*0x763ed6*/
     __3_YAXPAX_Z(Block); /*0x763ed9*/
-  return &Block->AbstractClass; /*0x763ee3*/
+  return Block; /*0x763ee3*/
 
 }
 } // namespace gamemd

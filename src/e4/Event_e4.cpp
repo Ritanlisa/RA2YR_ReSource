@@ -110,7 +110,7 @@ void sub_5E2FA0()
   }
   else if ( dword_A8B23C ) /*0x5e2ff8*/
   {
-    return (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 37))(dword_A8B23C); /*0x5e2ffc*/
+    return (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 37))(dword_A8B23C); /*0x5e2ffc*/
   }
   return result; /*0x5e2fed*/
 }

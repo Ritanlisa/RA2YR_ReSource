@@ -52,7 +52,7 @@ AbstractClass * FootClass::Destruct()
   FootClass *v11; // [esp+8h] [ebp-4h] BYREF
 
   team = (int *)this->team; /*0x4d3597*/
-  this->TechnoClass = &vt_FootClass; /*0x4d359d*/
+  this->vtable1 = &vt_FootClass; /*0x4d359d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FootClass); /*0x4d35a5*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FootClass); /*0x4d35ac*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FootClass); /*0x4d35b3*/
@@ -71,7 +71,7 @@ AbstractClass * FootClass::Destruct()
   parasiteImUsing = (gamemd::ParasiteClass *)(this->parasiteImUsing); /*0x4d361b*/
   if ( parasiteImUsing ) /*0x4d3623*/
   {
-    (*((void (**)(ParasiteClass *, int))parasiteImUsing->AbstractClass + 8))(parasiteImUsing, 1); /*0x4d3629*/
+    (*((void (**)(ParasiteClass *, int))parasiteImUsing->vtable1 + 8))(parasiteImUsing, 1); /*0x4d3629*/
     this->parasiteImUsing = 0; /*0x4d362c*/
   }
   if ( this->currentJumpjetMapCoords[0] != g_FootClass_Pool ) /*0x4d3646*/
@@ -117,9 +117,9 @@ void FootClass::Destroyed(int a2)
   unsigned char v4[4]; // [esp+4h] [ebp-4h] BYREF
 
   if ( (uint8_t)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) /*0x4d98dd*/
-    && !*(unsigned char *)((*((int (**)(FootClass *))this->TechnoClass + 33))(this) + 3412) )
+    && !*(unsigned char *)((*((int (**)(FootClass *))this->vtable1 + 33))(this) + 3412) )
   {
-    v3 = ((int64_t (*)(FootClass *, unsigned char *))*((unsigned int *)this->TechnoClass + 110))(this, v4); /*0x4d98f0*/
+    v3 = ((int64_t (*)(FootClass *, unsigned char *))*((unsigned int *)this->vtable1 + 110))(this, v4); /*0x4d98f0*/
     if ( (uint8_t)CreateTriggerClassIfFarEnough(7, SHIDWORD(v3), *(unsigned int *)v3) ) /*0x4d98fe*/
       ((VoxClass *)((VoxClass *)&(unsigned int *)((char *)&stru_822420 + 8)))->FindAndPlay(-1); /*0x4d9911*/
   }

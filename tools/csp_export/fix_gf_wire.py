@@ -28,6 +28,9 @@ DECL = re.compile(r'^([\w:\s\*<&>]+?)\b([A-Za-z_]\w*)\s*\([^;()]*\)\s*;'
                   r'\s*(//\s*0x[0-9A-Fa-f]+.*)?\r?\n?$')
 
 decls = []
+# MSVC treats these CRT-intrinsic spellings specially -- an ellipsis
+# declaration C2059s and poisons every includer (g135 diagnosis)
+INTRINSIC_BAD = {"_toupper", "_tolower"}
 for ln in SRC.read_text(encoding="utf-8", errors="replace").split("\n"):
     s = ln.strip()
     if not s or s.startswith("//") or s.startswith("#"):
@@ -36,7 +39,7 @@ for ln in SRC.read_text(encoding="utf-8", errors="replace").split("\n"):
     if not m:
         continue
     ret, name, ann = m.group(1).strip(), m.group(2), (m.group(3) or "").strip()
-    if ret in ("#pragma",):
+    if ret in ("#pragma",) or name in INTRINSIC_BAD:
         continue
     decls.append((ret, name, ann))
 print("declarations parsed:", len(decls))
@@ -49,6 +52,9 @@ if APPLY:
         f.write("#pragma once\n\n")
         for ret, name, ann in decls:
             f.write("%s %s(...);  %s\n" % (ret or "int", name, ann))
+        # NB: _toupper/_tolower cannot be declared AT ALL on MSVC (intrinsic
+        # parsing rejects user declarations, ellipsis or typed alike) --
+        # their few corpus calls stay C3861 until a rename pass
     print("written:", DST)
 
     cur = WIRE.read_text(encoding="utf-8", errors="replace")

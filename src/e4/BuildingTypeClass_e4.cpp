@@ -413,11 +413,11 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
   this->__pad_1714[124] = (unsigned int)(1); /*0x45e541*/
   this->__pad_1714[125] = 0; /*0x45e548*/
   *(unsigned int *)&this->__pad_1714[112] = (unsigned int)(&vt_VectorClassTPoint3D); /*0x45e54e*/
-  this->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e558*/
+  this->vtable1 = &vt_BuildingTypeClass; /*0x45e558*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e55e*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e565*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e56c*/
-  return &this->TechnoTypeClass; /*0x45e575*/
+  return this; /*0x45e575*/
 
 }
 } // namespace gamemd
@@ -432,7 +432,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   BuildingTypeClass *v6; // [esp+8h] [ebp-4h] BYREF
 
   BuildupLoaded = a1->BuildupLoaded; /*0x45e587*/
-  a1->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e58d*/
+  a1->vtable1 = &vt_BuildingTypeClass; /*0x45e58d*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e595*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e59c*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e5a3*/
@@ -478,7 +478,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     *(unsigned int *)&a1->__pad_F70[1428] = 0; /*0x45e6a9*/
     a1->__pad_F70[1432] = 0; /*0x45e6af*/
   }
-  AbstractClass::AnnounceExpiredPointer(&a1->TechnoTypeClass, 1); /*0x45e6b9*/
+  AbstractClass::AnnounceExpiredPointer(a1, 1); /*0x45e6b9*/
   v6 = (gamemd::BuildingTypeClass *)(a1); /*0x45e6ce*/
   v3 = (*(int (**)(unsigned int *, BuildingTypeClass **))(dword_A83C68 + 16))(&dword_A83C68, &v6); /*0x45e6d2*/
   if ( v3 != -1 && v3 < dword_A83C78 && v3 < --dword_A83C78 ) /*0x45e6ed*/
@@ -1748,7 +1748,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   HIBYTE(((unsigned int *)this)[1]) = 0; /*0x644ce2*/
   ((unsigned int *)this)[0] = -1; /*0x644ce8*/
   ((unsigned int *)this)[0] = -1; /*0x644cee*/
-  this->TechnoTypeClass = &vt_ParticleTypeClass; /*0x644cf4*/
+  this->vtable1 = &vt_ParticleTypeClass; /*0x644cf4*/
   ((unsigned int *)this)[0] = &vt_ParticleTypeClass; /*0x644cfa*/
   ((unsigned int *)this)[0] = &vt_ParticleTypeClass; /*0x644d01*/
   ((unsigned int *)this)[0] = &vt_ParticleTypeClass; /*0x644d08*/
@@ -1775,7 +1775,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x644db2*/
   }
   ((unsigned int *)this)[0] = 0; /*0x644db5*/
-  return &this->TechnoTypeClass; /*0x644dbd*/
+  return this; /*0x644dbd*/
 
 }
 } // namespace gamemd
@@ -2065,14 +2065,14 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2)
     a2->TechnoTypeClass = v11; /*0x71795f*/
     ((unsigned int *)a2)[0] = v12; /*0x717961*/
     ((unsigned int *)a2)[0] = (void *)v14; /*0x717966*/
-    return &a2->TechnoTypeClass; /*0x717959*/
+    return a2; /*0x717959*/
   }
   else
   {
     a2->TechnoTypeClass = *(void **)(v4 + 1968); /*0x71797f*/
     ((unsigned int *)a2)[0] = *(void **)(v4 + 1972); /*0x717984*/
     ((unsigned int *)a2)[0] = *(void **)(v4 + 1976); /*0x71798b*/
-    return &a2->TechnoTypeClass; /*0x717971*/
+    return a2; /*0x717971*/
   }
 
 }
@@ -2086,7 +2086,7 @@ int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
   int v5; // eax
   int v6; // eax
 
-  if ( (*((int (__fastcall **)(BuildingTypeClass *))this->TechnoTypeClass + 114))(this) < 0 /*0x746030*/
+  if ( (*((int (__fastcall **)(BuildingTypeClass *))this->vtable1 + 114))(this) < 0 /*0x746030*/
     || !((MapSeed *)((MapSeed *)&stru_87F5F0.__pad_58[416]))->CheckTileMatch(aP1, aP2, 0, 0, 0, 0) )
   {
     return 1; /*0x746030*/
@@ -2463,9 +2463,9 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
   ((unsigned int *)this)[0] = (void *)a2; /*0x478860*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x478863*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x478867*/
-  this->TechnoTypeClass = &vt_VectorClass; /*0x47886a*/
+  this->vtable1 = &vt_VectorClass; /*0x47886a*/
   if ( !a2 ) /*0x478870*/
-    return &this->TechnoTypeClass; /*0x4788d0*/
+    return this; /*0x4788d0*/
   if ( !a3 ) /*0x478878*/
   {
     v8 = __2_YAPAXI_Z(3 * a2); /*0x4788a2*/
@@ -2489,7 +2489,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
     }
     ((unsigned int *)this)[0] = v4; /*0x4788c9*/
     BYTE1(((unsigned int *)this)[0]) = 1; /*0x4788cc*/
-    return &this->TechnoTypeClass; /*0x4788cc*/
+    return this; /*0x4788cc*/
   }
   if ( a2 - 1 >= 0 ) /*0x47887f*/
   {
@@ -2506,7 +2506,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
     while ( v6 ); /*0x478891*/
   }
   ((unsigned int *)this)[0] = (void *)a3; /*0x478893*/
-  return &this->TechnoTypeClass; /*0x478898*/
+  return this; /*0x478898*/
 
 }
 } // namespace gamemd

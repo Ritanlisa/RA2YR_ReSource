@@ -1613,12 +1613,12 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
   ((unsigned int *)this)[0] = 0; /*0x6638e7*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x6638ea*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x6638ee*/
-  this->AbstractClass = &vt_DynamicVectorClass; /*0x6638f1*/
+  this->vtable1 = &vt_DynamicVectorClass; /*0x6638f1*/
   ((unsigned int *)this)[0] = 10; /*0x6638f7*/
   ((unsigned int *)this)[0] = 0; /*0x6638fe*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x663901*/
   ((unsigned int *)this)[0] = 0; /*0x663904*/
-  return &this->AbstractClass; /*0x663907*/
+  return this; /*0x663907*/
 
 }
 } // namespace gamemd

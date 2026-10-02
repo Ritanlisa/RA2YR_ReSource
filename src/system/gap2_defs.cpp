@@ -187,7 +187,7 @@ int TacticalClass::FillScanlinesTransparent(int a2, int a3, int a4, int a5) {
 namespace gamemd { 
 int TacticalClass::ProcessFrame() {
 
-  return *(unsigned char *)((*((int (**)(TechnoClass *))this->RadioClass + 33))(this) + 3233); /*0x41bfae*/
+  return *(unsigned char *)((*((int (**)(TechnoClass *))this->vtable1 + 33))(this) + 3233); /*0x41bfae*/
 
 }
 }
@@ -1052,7 +1052,7 @@ int TacticalClass::initTacticalMap(int * a2, int * a3) {
     }
     else
     {
-      v4 = (*((int (**)(TacticalClass *))this->AbstractClass + 39))(this); /*0x45f1ef*/
+      v4 = (*((int (**)(TacticalClass *))this->vtable1 + 39))(this); /*0x45f1ef*/
       *a2 = v4; /*0x45f1f7*/
       if ( v4 ) /*0x45f1f9*/
       {
@@ -2808,13 +2808,13 @@ void* CellClass::FindInfantry(char a2) {
   v2 = a2 ? this->altObject : this->firstObject;
   if ( !v2 ) /*0x47c572*/
     return 0; /*0x47c587*/
-  while ( (*((int (**)(ObjectClass *))v2->AbstractClass + 11))(v2) != 36 ) /*0x47c57e*/
+  while ( (*((int (**)(ObjectClass *))v2->vtable1 + 11))(v2) != 36 ) /*0x47c57e*/
   {
     v2 = v2->nextObject; /*0x47c580*/
     if ( !v2 ) /*0x47c585*/
       return 0; /*0x47c585*/
   }
-  return &v2->AbstractClass; /*0x47c589*/
+  return v2; /*0x47c589*/
 
 }
 }
@@ -3503,7 +3503,7 @@ void CellClass::UpdateAnimations() {
       do /*0x47ddb8*/
       {
         nextObject = firstObject->nextObject; /*0x47dd96*/
-        (*((void (**)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))firstObject->AbstractClass + 91))( /*0x47ddae*/
+        (*((void (**)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))firstObject->vtable1 + 91))( /*0x47ddae*/
           &firstObject->health,
           0,
           *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
@@ -3521,7 +3521,7 @@ void CellClass::UpdateAnimations() {
       do /*0x47ddd3*/
       {
         v6 = altObject->nextObject; /*0x47ddc6*/
-        (*((void (**)(ObjectClass *))altObject->AbstractClass + 59))(altObject); /*0x47ddc9*/
+        (*((void (**)(ObjectClass *))altObject->vtable1 + 59))(altObject); /*0x47ddc9*/
         altObject = v6; /*0x47ddd1*/
       }
       while ( v6 ); /*0x47ddd3*/
@@ -3616,13 +3616,13 @@ void* CellClass::FindBuilding(char a2) {
   v2 = a2 ? this->altObject : this->firstObject;
   if ( !v2 ) /*0x47ebc2*/
     return 0; /*0x47ebd7*/
-  while ( (*((int (**)(ObjectClass *))v2->AbstractClass + 11))(v2) != 1 ) /*0x47ebce*/
+  while ( (*((int (**)(ObjectClass *))v2->vtable1 + 11))(v2) != 1 ) /*0x47ebce*/
   {
     v2 = v2->nextObject; /*0x47ebd0*/
     if ( !v2 ) /*0x47ebd5*/
       return 0; /*0x47ebd5*/
   }
-  return &v2->AbstractClass; /*0x47ebd9*/
+  return v2; /*0x47ebd9*/
 
 }
 }
@@ -3751,7 +3751,7 @@ int CellClass::DamageAllObjects() {
   int result; // eax
 
   for ( i = this->firstObject; i; i = i->nextObject ) /*0x483489*/
-    result = (*((int (**)(ObjectClass *))i->AbstractClass + 63))(i); /*0x48348f*/
+    result = (*((int (**)(ObjectClass *))i->vtable1 + 63))(i); /*0x48348f*/
   return result; /*0x48349c*/
 
 }
@@ -4525,11 +4525,11 @@ int CellClass::CreateFoggedObjects() {
             v1 = (*((int (**)(void **))((unsigned int *)v6)[0] + 3))(&((unsigned int *)v6)[0]); /*0x486b38*/
             if ( v1 == 6 ) /*0x486b3e*/
             {
-              (*((void (**)(ObjectClass *, unsigned char *))v6->AbstractClass + 110))(v6, v12); /*0x486b49*/
+              (*((void (**)(ObjectClass *, unsigned char *))v6->vtable1 + 110))(v6, v12); /*0x486b49*/
               LOBYTE(v1) = sub_457A10(v6); /*0x486b51*/
               if ( (unsigned char)v1 ) /*0x486b58*/
               {
-                if ( (*((uint8_t (**)(ObjectClass *))v6->AbstractClass + 32))(v6) /*0x486b75*/
+                if ( (*((uint8_t (**)(ObjectClass *))v6->vtable1 + 32))(v6) /*0x486b75*/
                   || (v7 = BYTE1(v6[10].attachedTag), v10[0] = 1, v7 == 15) )
                 {
                   v10[0] = 0; /*0x486b77*/
@@ -4539,7 +4539,7 @@ int CellClass::CreateFoggedObjects() {
             }
             else if ( v1 == 1 || v1 == 2 || v1 == 15 ) /*0x486b98*/
             {
-              LOBYTE(v1) = (*((int (**)(ObjectClass *))v6->AbstractClass + 84))(v6); /*0x486b9e*/
+              LOBYTE(v1) = (*((int (**)(ObjectClass *))v6->vtable1 + 84))(v6); /*0x486b9e*/
             }
           }
           if ( v5[4] <= 0 ) /*0x486bae*/
@@ -8365,7 +8365,7 @@ int TacticalClass::SetObserverMode(int a2) {
     result = *((unsigned int *)this + 1130); /*0x4ac84f*/
     if ( !result ) /*0x4ac857*/
     {
-      (*((void (**)(TacticalClass *, unsigned int, unsigned int))this->AbstractClass + 18))(this, 0, 0); /*0x4ac861*/
+      (*((void (**)(TacticalClass *, unsigned int, unsigned int))this->vtable1 + 18))(this, 0, 0); /*0x4ac861*/
       *((unsigned char *)this + 4528) = 0; /*0x4ac866*/
       *((unsigned char *)this + 4529) = 0; /*0x4ac86d*/
       *((unsigned char *)this + 4531) = 0; /*0x4ac874*/
@@ -8962,7 +8962,7 @@ int TacticalClass::Initialize() {
   {
     TacticalClass::SetView(v2, 0, 0x10000, 0, 1000, 1000, 1000); /*0x4ae494*/
   }
-  return (*((int (**)(TacticalClass *, int))this->AbstractClass + 14))(this, 1); /*0x4ae4b0*/
+  return (*((int (**)(TacticalClass *, int))this->vtable1 + 14))(this, 1); /*0x4ae4b0*/
 
 }
 }
@@ -24153,9 +24153,9 @@ void ScenarioClass::DestroyAndClearVector() {
 namespace gamemd { 
 void* TacticalClass::saveConfig(int a2) {
 
-  this->AbstractClass = &vt_PixelFXClass; /*0x631e38*/
+  this->vtable1 = &vt_PixelFXClass; /*0x631e38*/
   BuildingDebris::Init((BuildingDebris *)this, a2); /*0x631e3e*/
-  return &this->AbstractClass; /*0x631e45*/
+  return this; /*0x631e45*/
 
 }
 }
@@ -24544,7 +24544,7 @@ void* FactoryClass::RemoveFromArrays(int * Block, char a2) {
   BYTE1(Block->production[2]) = 0; /*0x63da88*/
   Block->production[1] = 0; /*0x63da8b*/
   vtable1 = ((unsigned int *)Block)[0]; /*0x63da8e*/
-  Block->AbstractClass = &vt_VectorClass; /*0x63da91*/
+  Block->vtable1 = &vt_VectorClass; /*0x63da91*/
   if ( vtable1 && BYTE1(((unsigned int *)Block)[0]) ) /*0x63da9b*/
   {
     __3_YAXPAX_Z(vtable1); /*0x63daa1*/
@@ -24566,7 +24566,7 @@ int FactoryClass::RemoveItemAt(VectorClass * aP1) {
   int uniqueId; // ecx
   int v5; // ecx
 
-  result = (*((int (**)(FactoryClass *, int))this->AbstractClass + 4))(this, aP1); /*0x63dfdc*/
+  result = (*((int (**)(FactoryClass *, int))this->vtable1 + 4))(this, aP1); /*0x63dfdc*/
   if ( result == -1 || (uniqueId = ((unsigned int *)this)[0], result >= uniqueId) ) /*0x63dfe9*/
   {
     LOBYTE(result) = 0; /*0x63e00b*/
@@ -26079,7 +26079,7 @@ int TacticalClass::UpdateObjects() {
     do /*0x65ad1c*/
     {
       if ( *(unsigned int *)(this->radioLinks[1] + 4 * v2) ) /*0x65acfb*/
-        (*((void (**)(RadioClass *, int, unsigned char *, unsigned int))this->MissionClass + 159))( /*0x65ad0d*/
+        (*((void (**)(RadioClass *, int, unsigned char *, unsigned int))this->vtable1 + 159))( /*0x65ad0d*/
           this,
           v4,
           &((unsigned int *)&stru_A8EB00)[76],
@@ -28425,9 +28425,9 @@ int CellClass::IsBuildable() {
   {
     if ( i->isAliveFlag ) /*0x6b25cf*/
     {
-      if ( (*((int (**)(ObjectClass *))i->AbstractClass + 11))(i) != 15 ) /*0x6b25e3*/
+      if ( (*((int (**)(ObjectClass *))i->vtable1 + 11))(i) != 15 ) /*0x6b25e3*/
       {
-        result = (*((int (**)(ObjectClass *))i->AbstractClass + 11))(i); /*0x6b25e9*/
+        result = (*((int (**)(ObjectClass *))i->vtable1 + 11))(i); /*0x6b25e9*/
         if ( result != 1 ) /*0x6b25ef*/
           goto LABEL_18; /*0x6b25ef*/
       }
@@ -29848,18 +29848,18 @@ void* TacticalClass::updateScroll(int a2, int a3) {
   ((unsigned int *)this)[0] = (void *)a2; /*0x7343ee*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x7343f1*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x7343f5*/
-  this->AbstractClass = &vt_VectorClass; /*0x7343f8*/
+  this->vtable1 = &vt_VectorClass; /*0x7343f8*/
   if ( a2 ) /*0x7343fe*/
   {
     if ( a3 ) /*0x734406*/
     {
       ((unsigned int *)this)[0] = (void *)a3; /*0x734408*/
-      return &this->AbstractClass; /*0x73440e*/
+      return this; /*0x73440e*/
     }
     ((unsigned int *)this)[0] = (void *)__2_YAPAXI_Z(4 * a2); /*0x73441d*/
     BYTE1(((unsigned int *)this)[0]) = 1; /*0x734420*/
   }
-  return &this->AbstractClass; /*0x73440d*/
+  return this; /*0x73440d*/
 
 }
 }
@@ -30604,7 +30604,7 @@ void* TacticalClass::CalcInverseAlpha(int a2, float a3) {
   LOWORD(v7) = Math::RoundToInt(v3); /*0x75f5f7*/
   this->AbstractClass = v6; /*0x75f5fc*/
   ((unsigned int *)this)[0] = v7; /*0x75f5fe*/
-  return &this->AbstractClass; /*0x75f609*/
+  return this; /*0x75f609*/
 
 }
 }

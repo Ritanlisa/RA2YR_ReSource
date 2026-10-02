@@ -5692,7 +5692,6 @@ int __onexit(...);  // 0x7c970c
 int _atexit(...);  // 0x7c978a
 int ___onexitinit(...);  // 0x7c979c
 int __toupper(...);  // 0x7c97cb
-int _toupper(...);  // 0x7c97d3
 int _toupper_0(...);  // 0x7c9842
 int _isalpha(...);  // 0x7c990e
 int _isupper(...);  // 0x7c993c
@@ -5743,7 +5742,6 @@ int ___RTtypeid(...);  // 0x7caa05
 int ___RTDynamicCast(...);  // 0x7caae4
 void* _strchr(...);  // 0x7caf30
 int __tolower(...);  // 0x7cafec
-int _tolower(...);  // 0x7caff4
 int _tolower_0(...);  // 0x7cb063
 int __putws(...);  // 0x7cb12e
 int _fflush(...);  // 0x7cb19c

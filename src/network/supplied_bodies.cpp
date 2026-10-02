@@ -2954,7 +2954,7 @@ char MultiplayerLobby::FillSlots() {
       PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5ec155*/
       if ( dword_A8B23C ) /*0x5ec159*/
       {
-        v10 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 38))(dword_A8B23C); /*0x5ec15d*/
+        v10 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->vtable1 + 38))(dword_A8B23C); /*0x5ec15d*/
         if ( v10 != -1 && v10 < PlayerCountMap ) /*0x5ec16a*/
           PlayerCountMap = v10; /*0x5ec16c*/
       }

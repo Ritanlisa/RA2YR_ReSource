@@ -1839,7 +1839,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
   int v29; // [esp+28h] [ebp+10h]
 
   memset(*a3, 0, a5 * a4); /*0x549859*/
-  v6 = (unsigned int *)(*((int (**)(ObjectClass *))this->AbstractClass + 39))(this); /*0x549866*/
+  v6 = (unsigned int *)(*((int (**)(ObjectClass *))this->vtable1 + 39))(this); /*0x549866*/
   v7 = v6; /*0x54986c*/
   if ( v6 ) /*0x549870*/
   {
@@ -1847,7 +1847,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
     v8 = v6[v27 + 4]; /*0x549887*/
     if ( !v8 ) /*0x54988d*/
       return 0; /*0x54988d*/
-    v9 = (unsigned int *)(*((int (**)(ObjectClass *))this->AbstractClass + 39))(this); /*0x549897*/
+    v9 = (unsigned int *)(*((int (**)(ObjectClass *))this->vtable1 + 39))(this); /*0x549897*/
     v10 = v9; /*0x54989d*/
     if ( v9 ) /*0x5498a1*/
     {
@@ -2852,7 +2852,7 @@ int E4Recv_54A990::sub_54A990()
   }
   for ( i = 0; i < 8; ++i ) /*0x54a9a6*/
   {
-    if ( ((uint8_t)(1 << (i % 8)) & *((unsigned char *)&v1->AbstractClass + i / 8)) != 0 ) /*0x54a9c9*/
+    if ( ((uint8_t)(1 << (i % 8)) & *((unsigned char *)v1 + i / 8)) != 0 ) /*0x54a9c9*/
       break; /*0x54a9c9*/
   }
   return i + 8 * v2; /*0x54a9d4*/
@@ -2884,7 +2884,7 @@ int E4Recv_54A9E0::sub_54A9E0()
   }
   for ( i = 0; i < 8; ++i ) /*0x54a9f6*/
   {
-    if ( ((uint8_t)(1 << (i % 8)) & *((unsigned char *)&v1->AbstractClass + i / 8)) == 0 ) /*0x54aa19*/
+    if ( ((uint8_t)(1 << (i % 8)) & *((unsigned char *)v1 + i / 8)) == 0 ) /*0x54aa19*/
       break; /*0x54aa19*/
   }
   return i + 8 * v2; /*0x54aa24*/
@@ -3212,7 +3212,7 @@ unsigned int * E4Recv_54E360::sub_54E360()
   this->AbstractClass = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e39e*/
   ((unsigned int *)this)[0] = v2; /*0x54e3a4*/
   ((unsigned int *)this)[0] = (void *)100; /*0x54e3a7*/
-  return &this->AbstractClass; /*0x54e3aa*/
+  return this; /*0x54e3aa*/
 
 }
 } // namespace gamemd

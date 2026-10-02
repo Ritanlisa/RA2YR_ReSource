@@ -56,7 +56,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->__tail_2B5[1] = 0; /*0x5fe2de*/
   this->__tail_2B5[2] = 0; /*0x5fe2e4*/
   *((unsigned char *)this + 696) = 0; /*0x5fe2ea*/
-  this->ObjectTypeClass = &vt_OverlayTypeClass; /*0x5fe2f1*/
+  this->vtable1 = &vt_OverlayTypeClass; /*0x5fe2f1*/
   ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fe2f7*/
   ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fe2fd*/
   ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fe304*/
@@ -85,7 +85,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   {
 LABEL_11:
     this->LandType[0] = -1; /*0x5fe397*/
-    return &this->ObjectTypeClass; /*0x5fe3a0*/
+    return this; /*0x5fe3a0*/
   }
   else
   {
@@ -98,7 +98,7 @@ LABEL_11:
         goto LABEL_11; /*0x5fe395*/
     }
     this->LandType[0] = v5; /*0x5fe3a7*/
-    return &this->ObjectTypeClass; /*0x5fe3ad*/
+    return this; /*0x5fe3ad*/
   }
 
 }
@@ -245,7 +245,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x5feb13*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x5feb1c*/
-      a1->ObjectTypeClass = &vt_OverlayTypeClass; /*0x5feb21*/
+      a1->vtable1 = &vt_OverlayTypeClass; /*0x5feb21*/
       ((unsigned int *)a1)[0] = &vt_OverlayTypeClass; /*0x5feb27*/
       ((unsigned int *)a1)[0] = &vt_OverlayTypeClass; /*0x5feb2e*/
       ((unsigned int *)a1)[0] = &vt_OverlayTypeClass; /*0x5feb35*/
@@ -352,7 +352,7 @@ unsigned int *  OverlayTypeClass::Construct(ObjectClass * aP1, void *a2, void *a
   *((unsigned char *)this + 778) = 0; /*0x644189*/
   *((unsigned char *)this + 779) = 0; /*0x644190*/
   *((unsigned char *)this + 780) = 0; /*0x644196*/
-  this->ObjectTypeClass = &vt_ParticleSystemTypeClass; /*0x64419c*/
+  this->vtable1 = &vt_ParticleSystemTypeClass; /*0x64419c*/
   ((unsigned int *)this)[0] = &vt_ParticleSystemTypeClass; /*0x6441a2*/
   ((unsigned int *)this)[0] = &vt_ParticleSystemTypeClass; /*0x6441a8*/
   ((unsigned int *)this)[0] = &vt_ParticleSystemTypeClass; /*0x6441af*/
@@ -369,7 +369,7 @@ unsigned int *  OverlayTypeClass::Construct(ObjectClass * aP1, void *a2, void *a
     *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * (unsigned int)v3) = this; /*0x64420b*/
   }
   ((unsigned int *)this)[0] = 1; /*0x64420e*/
-  return &this->ObjectTypeClass; /*0x644217*/
+  return this; /*0x644217*/
 
 }
 // 0x4754B0
@@ -457,7 +457,7 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
   v4 = (char *)DSurface_ViewBounds.field_4 + a2[1] + 15; /*0x5fe5c1*/
   v6[0] = DSurface_ViewBounds.field_0 + *a2 + 30; /*0x5fe5c4*/
   v6[1] = (int)v4; /*0x5fe5c8*/
-  v5 = (*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fe5f3*/
+  v5 = (*((int (**)(OverlayTypeClass *))this->vtable1 + 39))(this); /*0x5fe5f3*/
   DrawToSurfaceSHP( /*0x5fe606*/
     (int)g_DSurface_Hidden_2,
     *(int *)&stru_87F5F0.__pad_58[112],
@@ -484,7 +484,7 @@ unsigned int * OverlayTypeClass::vt_entry_6C(unsigned int * a0, OverlayTypeClass
   a0->ObjectTypeClass = (void *)*aP1; /*0x5fea3d*/
   ((unsigned int *)a0)[0] = (void *)aP1[1]; /*0x5fea42*/
   ((unsigned int *)a0)[0] = (void *)aP1[2]; /*0x5fea49*/
-  return &a0->ObjectTypeClass; /*0x5fea45*/
+  return a0; /*0x5fea45*/
 
 }
 // 0x5FEA50
@@ -551,7 +551,7 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
   int PixelData; // ecx
   int16_t v11; // [esp+4h] [ebp-4h]
 
-  v4 = (MixFileClass *)(*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fed06*/
+  v4 = (MixFileClass *)(*((int (**)(OverlayTypeClass *))this->vtable1 + 39))(this); /*0x5fed06*/
   if ( v4 /*0x5fed28*/
     || (DamageLevels = this->DamageLevels) != 0
     && (v4 = (MixFileClass *)(*(int (**)(int))(*(unsigned int *)DamageLevels + 156))(DamageLevels)) != 0 )
@@ -612,11 +612,11 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ObjectTypeClass = &vt_OverlayTypeClass; /*0x5fef36*/
+  Block->vtable1 = &vt_OverlayTypeClass; /*0x5fef36*/
   ((unsigned int *)Block)[0] = &vt_OverlayTypeClass; /*0x5fef3c*/
   ((unsigned int *)Block)[0] = &vt_OverlayTypeClass; /*0x5fef43*/
   ((unsigned int *)Block)[0] = &vt_OverlayTypeClass; /*0x5fef4a*/
-  AbstractClass::AnnounceExpiredPointer(&Block->ObjectTypeClass, 1); /*0x5fef51*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x5fef51*/
   v5 = Block; /*0x5fef66*/
   v3 = (*((int (**)(void **, OverlayTypeClass **))stru_A83D50.SuperClass_field_0x30 + 4))( /*0x5fef6a*/
          &stru_A83D50.SuperClass_field_0x30,
@@ -635,6 +635,6 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
   ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x5fefa1*/
   if ( (a2 & 1) != 0 ) /*0x5fefab*/
     __3_YAXPAX_Z(Block); /*0x5fefae*/
-  return &Block->ObjectTypeClass; /*0x5fefb8*/
+  return Block; /*0x5fefb8*/
 
 }

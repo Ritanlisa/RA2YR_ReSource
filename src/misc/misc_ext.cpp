@@ -7053,7 +7053,7 @@ void ScoreAnimClass::AdvanceFrame( int a2)
     this->u32_1C = 0; /*0x690c54*/
   v12 = *(unsigned int *)&this->m_1[3]; /*0x690c6d*/
   v13 = *(unsigned int *)&this->m_5[3]; /*0x690c7c*/
-  v9 = (int *)(*((int (**)(ObjectClass *, unsigned char *))g_DSurface_Hidden->AbstractClass + 30))( /*0x690c8c*/
+  v9 = (int *)(*((int (**)(ObjectClass *, unsigned char *))g_DSurface_Hidden->vtable1 + 30))( /*0x690c8c*/
                 g_DSurface_Hidden,
                 v14);
   DrawToSurfaceSHP( /*0x690ca6*/
@@ -7452,7 +7452,7 @@ void ScoreBoard::Render()
     v87 = (char *)&dword_A8DB54 - v1; /*0x54293a*/
     do
     {
-      v16 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * *(unsigned int *)(*v15 + 100)]; /*0x542949*/
+      v16 = *(unsigned int *)dword_A8022C[4 * *(unsigned int *)(*v15 + 100)]; /*0x542949*/
       if ( v16 &(void *)&v16 != dword_A83D4C )
       {
         v17 = *(unsigned int *)(v16 + 90196); /*0x542960*/
@@ -11803,7 +11803,7 @@ void C07F5C70::Seek(void ** Block, char a2)
   UnitClass::Destructor(this); /*0x746e83*/
   if ( (a2 & 1) != 0 ) /*0x746e8d*/
     RA2_OPDEL(this); /*0x746e90*/
-  return &this->FootClass; /*0x746e9a*/
+  return this; /*0x746e9a*/
 }
 // 0x478ba0
 void CCToolTip::CalculatePopupPosition( unsigned int * a2)
@@ -21029,9 +21029,9 @@ void MSVQAnim::ConstructMSVQAnimHidden(char **aP1, int *aP2, int aP3, char aP3a)
       v17[1] = v15; /*0x5ccd2e*/
       v17[2] = 640; /*0x5ccd31*/
       v17[3] = 400; /*0x5ccd34*/
-      v18 = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 32))(g_DSurface_Hidden) - 400) /*0x5ccd57*/
+      v18 = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))(g_DSurface_Hidden) - 400) /*0x5ccd57*/
           / 2;
-      v19 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 31))(g_DSurface_Hidden); /*0x5ccd59*/
+      v19 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 31))(g_DSurface_Hidden); /*0x5ccd59*/
       v20 = (int *)(this->MSVQAnim_field_0x1C + 52); /*0x5ccd6e*/
       *v20 = (v19 - 640) / 2; /*0x5ccd76*/
       v20[1] = v18; /*0x5ccd79*/

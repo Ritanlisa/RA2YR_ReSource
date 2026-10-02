@@ -686,7 +686,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
   v2 = 0; /*0x4d4fc9*/
   while ( 1 ) /*0x4d4fd4*/
   {
-    v3 = (unsigned short *)(*((int ((gamemd::ObjectClass *)(**))(ObjectClass *, char *))this->AbstractClass + 110))(this, v11); /*0x4d4fd4*/
+    v3 = (unsigned short *)(*((int ((gamemd::ObjectClass *)(**))(ObjectClass *, char *))this->vtable1 + 110))(this, v11); /*0x4d4fd4*/
     LOWORD(v9) = LOWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]) + *v3; /*0x4d4ff8*/
     HIWORD(v9) = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
     *(unsigned int *)v10 = v9; /*0x4d500c*/
@@ -698,7 +698,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
       if ( *(unsigned char *)(v5[328] + 5493) ) /*0x4d5028*/
       {
         v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x4d5039*/
-        if ( v7 == (*((int ((gamemd::ObjectClass *)(**))(ObjectClass *))this->AbstractClass + 15))(this) ) /*0x4d5044*/
+        if ( v7 == (*((int ((gamemd::ObjectClass *)(**))(ObjectClass *))this->vtable1 + 15))(this) ) /*0x4d5044*/
           break; /*0x4d5044*/
       }
     }

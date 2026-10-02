@@ -2787,13 +2787,13 @@ int SidebarClass::ResetProductionState() {
     *(unsigned int *)(v6 + 140) = -1; /*0x637bc0*/
     if ( !v2 ) /*0x637bca*/
       goto LABEL_32; /*0x637bca*/
-    v15 = (*((int (**)(BuildingClass *))v2->TechnoClass + 97))(v2); /*0x637bd6*/
+    v15 = (*((int (**)(BuildingClass *))v2->vtable1 + 97))(v2); /*0x637bd6*/
     if ( v15 == 5 ) /*0x637bdb*/
     {
       v16 = 1; /*0x637bdd*/
       goto LABEL_33; /*0x637bdf*/
     }
-    if ( ((WaypointCoords = ScriptAction::GetWaypointCoords(&v29, &((unsigned int *)v2)[0]->TechnoClass::vtable0), /*0x637c0f*/
+    if ( ((WaypointCoords = ScriptAction::GetWaypointCoords(&v29, &((unsigned int *)v2)[0]->TechnoClass::vtable1), /*0x637c0f*/
            v28 = *(unsigned int *)WaypointCoords,
            v18 = WaypointCoords[4],
            v15 == 1)
@@ -2821,7 +2821,7 @@ int SidebarClass::ResetProductionState() {
             v21 = *(unsigned int *)(v19 + 140); /*0x637c47*/
             if ( (v21 == -1 || v21 > 0) && !*(unsigned char *)(v19 + 28) ) /*0x637c56*/
             {
-              (*((void (**)(BuildingClass *, int, int))v2->TechnoClass + 122))(v2, 28, 1); /*0x637c65*/
+              (*((void (**)(BuildingClass *, int, int))v2->vtable1 + 122))(v2, 28, 1); /*0x637c65*/
               qmemcpy( /*0x637c87*/
                 v29.ScriptAction_field_0x8,
                 (const void *)FactoryClass::CompleteCurrentItem(v19, (int)v29.__pad_78),
@@ -3409,7 +3409,7 @@ int SidebarClass::Load(int a1) {
             v8 = *(unsigned int *)&this->__pad_1264[8]; /*0x656954*/
             RadarClass_field_0x1260 = this->RadarClass_field_0x1260; /*0x656957*/
             *(unsigned int *)&this->__pad_1264[8] = v8 + 1; /*0x65695d*/
-            *((unsigned int *)&RadarClass_field_0x1260->AbstractClass + 2 * v8) = v22[0]; /*0x656964*/
+            *((unsigned int *)RadarClass_field_0x1260 + 2 * v8) = v22[0]; /*0x656964*/
             *((unsigned int *)&((unsigned int *)RadarClass_field_0x1260)[0] + 2 * v8) = v22[1]; /*0x65696b*/
           }
           if ( ++v19 >= a1 ) /*0x65697e*/
@@ -3487,7 +3487,7 @@ int SidebarClass::Save(int a1) {
             {
               result = (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)v2 + 16))( /*0x656b63*/
                          v2,
-                         (char *)&this->RadarClass_field_0x1228->AbstractClass + 4 * v8,
+                         (char *)&this->RadarClass_field_0x1228->vtable1 + 4 * v8,
                          4,
                          0);
               if ( result < 0 ) /*0x656b68*/

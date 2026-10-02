@@ -25,7 +25,7 @@ int SlaveManagerClass::Check(void *a1, void *a2, void *a3)
   int result; // eax
 
   if ( *((unsigned int *)this + 43) != 10 ) /*0x522d07*/
-    return (*((int (**)(SlaveManagerClass *, int, unsigned int))this->AbstractClass + 122))(this, 10, 0); /*0x522d0f*/
+    return (*((int (**)(SlaveManagerClass *, int, unsigned int))this->vtable1 + 122))(this, 10, 0); /*0x522d0f*/
   return result; /*0x522d15*/
 
 }
@@ -36,7 +36,7 @@ namespace gamemd {
 int SlaveManagerClass::VtableDispatch()
 {
 
-  return (*((int (**)(SlaveManagerClass *, int, unsigned int))this->AbstractClass + 122))(this, 5, 0); /*0x522d2c*/
+  return (*((int (**)(SlaveManagerClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x522d2c*/
 
 }
 } // namespace ra2
@@ -46,7 +46,7 @@ namespace gamemd {
 int SlaveManagerClass::CheckIsOne()
 {
 
-  return ((double (*)(SlaveManagerClass *))*((unsigned int *)this->AbstractClass + 173))(this) == 1.0; /*0x522d47*/
+  return ((double (*)(SlaveManagerClass *))*((unsigned int *)this->vtable1 + 173))(this) == 1.0; /*0x522d47*/
 
 }
 } // namespace ra2
@@ -56,7 +56,7 @@ namespace gamemd {
 int SlaveManagerClass::IsMasterHarvester()
 {
 
-  return (*((int (**)(SlaveManagerClass *))this->AbstractClass + 97))(this) == 10; /*0x522fd2*/
+  return (*((int (**)(SlaveManagerClass *))this->vtable1 + 97))(this) == 10; /*0x522fd2*/
 
 }
 } // namespace ra2
@@ -179,7 +179,7 @@ int SlaveManagerClass::Constructor(void *a1, void *a2, void *a3)
   *(unsigned int *)this->__pad_48 = 0; /*0x6af38c*/
   *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
-  this->AbstractClass = &vt_SlaveManagerClass; /*0x6af39b*/
+  this->vtable1 = &vt_SlaveManagerClass; /*0x6af39b*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SlaveManagerClass); /*0x6af3a1*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SlaveManagerClass); /*0x6af3a8*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SlaveManagerClass); /*0x6af3af*/
@@ -763,11 +763,11 @@ int SlaveManagerClass::ShouldWakeUpNow()
     return 0; /*0x6b102f*/
   if ( !master->owner->currentPlayer ) /*0x6b1040*/
     return 1; /*0x6b104e*/
-  if ( *(unsigned int *)((*((int (**)(TechnoClass *))master->RadioClass + 111))(master) + 236) == 5 ) /*0x6b105e*/
+  if ( *(unsigned int *)((*((int (**)(TechnoClass *))master->vtable1 + 111))(master) + 236) == 5 ) /*0x6b105e*/
     return 1; /*0x6b1064*/
   if ( this->SlaveManagerClass_field_60 + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6032) >= *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x6b107d*/
     return 0; /*0x6b107d*/
-  v4 = *(unsigned int *)(*((int (**)(TechnoClass *, int *, int, unsigned int))this->master->RadioClass + 206))( /*0x6b10ad*/
+  v4 = *(unsigned int *)(*((int (**)(TechnoClass *, int *, int, unsigned int))this->master->vtable1 + 206))( /*0x6b10ad*/
                     this->master,
                     &v4,
                     *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6016) / 256,
@@ -828,7 +828,7 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       *(unsigned int *)&v3->__pad_48[4] = 10; /*0x6b11b6*/
       *(unsigned int *)v3->__pad_48 = 0; /*0x6b11bd*/
       ((Timer *)((Timer *)&v3->__pad_48[8]))->Start(0); /*0x6b11c0*/
-      v3->AbstractClass = &vt_SlaveManagerClass; /*0x6b11c5*/
+      v3->vtable1 = &vt_SlaveManagerClass; /*0x6b11c5*/
       ((unsigned int *)v3)[0] = &vt_SlaveManagerClass; /*0x6b11cb*/
       v2 = a2; /*0x6b11d2*/
       ((unsigned int *)v3)[0] = &vt_SlaveManagerClass; /*0x6b11d6*/
@@ -952,7 +952,7 @@ wchar_t * SlaveManagerClass::CreateSlave(wchar_t ** a2)
   wchar_t *v6; // [esp+Ch] [ebp-8h]
 
   vtable0 = (int (**)(HouseClass *, int))this->house->AbstractClass; /*0x6af65f*/
-  v4 = (*((int (**)(TechnoClass *))this->master->RadioClass + 15))(this->master); /*0x6af661*/
+  v4 = (*((int (**)(TechnoClass *))this->master->vtable1 + 15))(this->master); /*0x6af661*/
   result = (wchar_t *)vtable0[35](this->house, v4); /*0x6af668*/
   *a2 = result; /*0x6af674*/
   if ( result ) /*0x6af676*/

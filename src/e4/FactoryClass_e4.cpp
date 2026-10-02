@@ -324,7 +324,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       *(unsigned int *)&v3->onHold = (unsigned int)(&vt_DynamicVectorClass); /*0x4ca2b7*/
       *(unsigned int *)&v3->__pad_42[18] = 10; /*0x4ca2bd*/
       *(unsigned int *)&v3->__pad_42[14] = 0; /*0x4ca2c4*/
-      v3->AbstractClass = &vt_FactoryClass; /*0x4ca2c7*/
+      v3->vtable1 = &vt_FactoryClass; /*0x4ca2c7*/
       ((unsigned int *)v3)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca2cd*/
       ((unsigned int *)v3)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca2d4*/
       ((unsigned int *)v3)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca2db*/
@@ -559,11 +559,11 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   void *v5; // eax
   FactoryClass *v7; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_FactoryClass; /*0x4ca776*/
+  Block->vtable1 = &vt_FactoryClass; /*0x4ca776*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca77c*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca783*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca78a*/
-  AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x4ca791*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x4ca791*/
   v7 = (gamemd::FactoryClass *)(Block); /*0x4ca7a6*/
   v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))( /*0x4ca7aa*/
          &stru_A83D50.__pad_C8[24],
@@ -608,7 +608,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x4ca86a*/
   if ( (a2 & 1) != 0 ) /*0x4ca874*/
     __3_YAXPAX_Z(Block); /*0x4ca877*/
-  return &Block->AbstractClass; /*0x4ca881*/
+  return Block; /*0x4ca881*/
 
 }
 }

@@ -9823,7 +9823,7 @@ void output(char * a1, int a2)
 
   vtable0 = (char)a1->AbstractClass; /*0x7dd514*/
   v3 = 0; /*0x7dd516*/
-  thisa = (ObjectClass *)((char *)&a1->AbstractClass + 1); /*0x7dd518*/
+  thisa = (ObjectClass *)((char *)a1 + 1); /*0x7dd518*/
   v54 = 0; /*0x7dd51b*/
   v52 = 0; /*0x7dd520*/
   if ( vtable0 ) /*0x7dd523*/
@@ -11645,8 +11645,8 @@ unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 
   ((unsigned int *)this)[0] = 0; /*0x7d2e70*/
   ((unsigned int *)this)[0] = 0; /*0x7d2e74*/
-  this->AbstractClass = &vt_exception; /*0x7d2e78*/
-  return &this->AbstractClass; /*0x7d2e7e*/
+  this->vtable1 = &vt_exception; /*0x7d2e78*/
+  return this; /*0x7d2e7e*/
 
 }
 } // namespace gamemd
@@ -15167,7 +15167,7 @@ ObjectClass * E4Recv_7DCDF2::sub_7DCDF2(unsigned int * Block, char a2)
   sub_7DCE3B(Block); /*0x7dcdf5*/
   if ( (a2 & 1) != 0 ) /*0x7dcdff*/
     __3_YAXPAX_Z(Block); /*0x7dce02*/
-  return &Block->AbstractClass; /*0x7dce0a*/
+  return Block; /*0x7dce0a*/
 
 }
 } // namespace gamemd

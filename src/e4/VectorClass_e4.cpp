@@ -273,7 +273,7 @@ LABEL_9:
       }
     }
   }
-  (*((void (**)(RadioClass *, int, unsigned int))this->MissionClass + 158))( /*0x65aa1f*/
+  (*((void (**)(RadioClass *, int, unsigned int))this->vtable1 + 158))( /*0x65aa1f*/
     this,
     3,
     *(unsigned int *)this->radioLinks[1]);
@@ -1003,12 +1003,12 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
       if ( (HouseClass *)((char *)a1 - 36) == ((unsigned int *)v2)[0] && ((unsigned int *)v2)[0] && !((unsigned int *)v2)[0] ) /*0x50143d*/
       {
         if ( ((unsigned int *)v2)[0] /*0x50146d*/
-          && *(unsigned char *)((*((int (**)(unsigned int))v2->TechnoClass + 33))(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152)
+          && *(unsigned char *)((*((int (**)(unsigned int))v2->vtable1 + 33))(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152)
                                                                                          + 4 * v1))
                       + 562)
           && !a1->__pad_13C[140] )
         {
-          v3 = (*((int (**)(BuildingClass *))v2->TechnoClass + 33))(v2); /*0x50147b*/
+          v3 = (*((int (**)(BuildingClass *))v2->vtable1 + 33))(v2); /*0x50147b*/
           vtable0 = v2->TechnoClass; /*0x501487*/
           v7 = *(unsigned int *)(v3 + 160); /*0x501489*/
           (*((void (**)(BuildingClass *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))vtable0 + 91))( /*0x5014aa*/
@@ -1028,10 +1028,10 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
             v5 = (int *)v2->DamageFireAnims[3]; /*0x5014c5*/
             if ( v5 ) /*0x5014cd*/
               ((TeamClass *)(v5))->LiberateMember_Start((int)v2, 0xFFFFFFFF, 0); /*0x5014d4*/
-            (*((void (**)(BuildingClass *, int, unsigned int))v2->TechnoClass + 122))(v2, 15, 0); /*0x5014e1*/
+            (*((void (**)(BuildingClass *, int, unsigned int))v2->vtable1 + 122))(v2, 15, 0); /*0x5014e1*/
           }
-          else if ( (*((int (**)(BuildingClass *))v2->TechnoClass + 11))(v2) == 6 /*0x501501*/
-                 && (*((int (**)(BuildingClass *))v2->TechnoClass + 258))(v2) > 0 )
+          else if ( (*((int (**)(BuildingClass *))v2->vtable1 + 11))(v2) == 6 /*0x501501*/
+                 && (*((int (**)(BuildingClass *))v2->vtable1 + 258))(v2) > 0 )
           {
             ((BuildingClass *)(v2))->UnloadUnits(1, 0); /*0x501509*/
           }

@@ -873,7 +873,7 @@ void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
   int v8; // edx
 
   if ( dword_A8B23C
-    && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 16))(dword_A8B23C)
+    && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 16))(dword_A8B23C)
     && !Network::IsMultiplayerActive() )
   {
     if ( *(unsigned int *)&dword_A8B238 == 4 )

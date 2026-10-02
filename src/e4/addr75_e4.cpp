@@ -3447,7 +3447,7 @@ unsigned int * E4Recv_755CB0::sub_755CB0()
   ((unsigned int *)this)[0] = 0; /*0x755cbf*/
   ((unsigned int *)this)[0] = 0; /*0x755cc2*/
   ((unsigned int *)this)[0] = 0; /*0x755cc5*/
-  return &this->AbstractClass; /*0x755cc8*/
+  return this; /*0x755cc8*/
 
 }
 } // namespace gamemd

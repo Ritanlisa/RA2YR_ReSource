@@ -965,7 +965,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip()
       {
         v8 = *(BuildingClass **)(*(unsigned int *)(v5 + 4) + 4 * v6); /*0x73344a*/
         if ( BuildingClass::GetSellPriority(v8) == v18 ) /*0x733458*/
-          (*((void (**)(BuildingClass *))v8->TechnoClass + 83))(v8); /*0x73345e*/
+          (*((void (**)(BuildingClass *))v8->vtable1 + 83))(v8); /*0x73345e*/
         ++v6; /*0x733464*/
       }
       while ( v6 < v7 ); /*0x733467*/
@@ -2086,9 +2086,9 @@ namespace gamemd {
 BOOL E4Recv_7325C0::sub_7325C0()
 {
 
-  return (*((int (**)(ObjectClass *))this->AbstractClass + 11))(this) != 6 /*0x7325f4*/
-      && *(unsigned char *)((*((int (**)(ObjectClass *))this->AbstractClass + 33))(this) + 3516)
-      && (*((uint8_t (**)(ObjectClass *))this->AbstractClass + 79))(this);
+  return (*((int (**)(ObjectClass *))this->vtable1 + 11))(this) != 6 /*0x7325f4*/
+      && *(unsigned char *)((*((int (**)(ObjectClass *))this->vtable1 + 33))(this) + 3516)
+      && (*((uint8_t (**)(ObjectClass *))this->vtable1 + 79))(this);
 
 }
 } // namespace gamemd
@@ -2105,10 +2105,10 @@ char IDTechnoClassMatches(void * a1, int a2)
   if ( v3 <= 0 ) /*0x732c3f*/
     return 0; /*0x732c8a*/
   while ( !(uint8_t)((ObjectClass *)(a1))->StepCleanup(*(void **)(*(unsigned int *)(a2 + 4) + 4 * v4)) /*0x732c83*/
-       || !(*((uint8_t (**)(ObjectClass *))a1->AbstractClass + 79))(a1)
+       || !(*((uint8_t (**)(ObjectClass *))a1->vtable1 + 79))(a1)
        && (!a1
-        || (*((int (**)(ObjectClass *))a1->AbstractClass + 11))(a1) != 6
-        || !*(unsigned int *)((*((int (**)(ObjectClass *))a1->AbstractClass + 33))(a1) + 1032)) )
+        || (*((int (**)(ObjectClass *))a1->vtable1 + 11))(a1) != 6
+        || !*(unsigned int *)((*((int (**)(ObjectClass *))a1->vtable1 + 33))(a1) + 1032)) )
   {
     if ( ++v4 >= v3 ) /*0x732c88*/
       return 0; /*0x732c88*/

@@ -141,7 +141,7 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
   *((unsigned int *)this + 43) = 10; /*0x6a457c*/
   *((unsigned int *)this + 42) = 0; /*0x6a4586*/
   this->houseTypes = &vt_TypeList; /*0x6a458c*/
-  this->AbstractClass = (unsigned int)(&vt_SideClass); /*0x6a4597*/
+  this->vtable1 = (unsigned int)(&vt_SideClass); /*0x6a4597*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a459d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a45a3*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a45aa*/
@@ -157,7 +157,7 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
     v3 = (int)(*((unsigned int *)((char *)&FootClass_Array + 0))++);
     *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v3) = (unsigned int)(this); /*0x6a4606*/
   }
-  return (int)(&this->AbstractClass);
+  return (int)(this);
 
 }
 }
@@ -201,7 +201,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       v2[1] = (void *)10; /*0x6a47cb*/
       v2[1] = 0; /*0x6a47d1*/
       v2->houseTypes = &vt_TypeList; /*0x6a47d7*/
-      v2->AbstractClass = &vt_SideClass; /*0x6a47e1*/
+      v2->vtable1 = &vt_SideClass; /*0x6a47e1*/
       ((unsigned int *)v2)[0] = (unsigned int)(&vt_SideClass); /*0x6a47e7*/
       ((unsigned int *)v2)[0] = (unsigned int)(&vt_SideClass); /*0x6a47ee*/
       ((unsigned int *)v2)[0] = (unsigned int)(&vt_SideClass); /*0x6a47f5*/
@@ -256,11 +256,11 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   void *houseTypesCount; // eax
   SideClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_SideClass; /*0x6a4936*/
+  Block->vtable1 = &vt_SideClass; /*0x6a4936*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a493c*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a4943*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a494a*/
-  AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6a4951*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6a4951*/
   v6 = (gamemd::SideClass *)(Block); /*0x6a4966*/
   v3 = (*(int ((int *)(**))(int *, SideClass **))(((char *)&FootClass_Array) + 16))(&((char *)&FootClass_Array), &v6); /*0x6a496a*/
   if ( v3 != -1 && v3 < *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x6a497a*/
@@ -285,7 +285,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
     __3_YAXPAX_Z(Block); /*0x6a49f0*/
-  return &Block->AbstractClass; /*0x6a49fa*/
+  return Block; /*0x6a49fa*/
 
 }
 }

@@ -6569,7 +6569,7 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   int v6; // edi
   int v7; // edi
 
-  result = &this->AbstractClass; /*0x49da60*/
+  result = this; /*0x49da60*/
   p_uniqueId = &((unsigned int *)this)[0]; /*0x49da66*/
   p_referenceCount = &((unsigned int *)this)[0]; /*0x49da69*/
   result[1] = 0; /*0x49da6c*/

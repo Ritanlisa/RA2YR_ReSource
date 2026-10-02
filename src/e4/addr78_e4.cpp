@@ -4559,7 +4559,7 @@ void CreateGameWOL()
   }
   dword_A8B23C = (ObjectClass *)MultiplayerGameMode::GetFirst(); /*0x789e77*/
   *(unsigned int *)stru_A8B250.__pad_0 = dword_A8B23C->owningHouseIndex; /*0x789e7f*/
-  (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 8))(dword_A8B23C); /*0x789e89*/
+  (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 8))(dword_A8B23C); /*0x789e89*/
   LoadScenarioClassByIndex(0); /*0x789e8e*/
   PtrVector::Destroy(&stru_A8DA74); /*0x789e98*/
   Game::ResetFlags(); /*0x789e9d*/
@@ -4748,10 +4748,10 @@ void CreateGameWOL()
     Screen::Capture(1, 0, (uint8_t)v30, (int)v37); /*0x78a3ad*/
     LoadingScreen::Init(); /*0x78a3b2*/
     Dialog = (HWND)CreateDialog(0xC2u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WOLobby::SetupDlgProc, 0); /*0x78a3ce*/
-    (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 39))(dword_A8B23C); /*0x78a3d2*/
-    (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 8))(dword_A8B23C); /*0x78a3e0*/
-    (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 6))(dword_A8B23C); /*0x78a3eb*/
-    (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 31))(dword_A8B23C); /*0x78a3f6*/
+    (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 39))(dword_A8B23C); /*0x78a3d2*/
+    (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 8))(dword_A8B23C); /*0x78a3e0*/
+    (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 6))(dword_A8B23C); /*0x78a3eb*/
+    (*((void (**)(ObjectClass *))dword_A8B23C->vtable1 + 31))(dword_A8B23C); /*0x78a3f6*/
     ShowWindow(Dialog, 1); /*0x78a402*/
     if ( v41 ) /*0x78a406*/
       ShowWindow(v41, 0); /*0x78a40b*/

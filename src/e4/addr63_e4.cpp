@@ -3473,7 +3473,7 @@ int E4Recv_632D60::sub_632D60(int a2)
 
   if ( !a2 ) /*0x632d6a*/
   {
-    result = (*((int (**)(ObjectClass *))this->AbstractClass + 1))(this); /*0x632d6e*/
+    result = (*((int (**)(ObjectClass *))this->vtable1 + 1))(this); /*0x632d6e*/
     LOBYTE(((unsigned int *)this)[0]) = 0; /*0x632d71*/
   }
   this->attachedBomb = (BombClass *)a2; /*0x632d77*/
@@ -3877,7 +3877,7 @@ unsigned int * E4Recv_633A20::sub_633A20()
   ((unsigned int *)this)[0] = 0; /*0x633a26*/
   ((unsigned int *)this)[0] = (void *)-1; /*0x633a29*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x633a30*/
-  return &this->AbstractClass; /*0x633a33*/
+  return this; /*0x633a33*/
 
 }
 } // namespace gamemd

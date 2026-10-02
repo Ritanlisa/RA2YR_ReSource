@@ -108,7 +108,7 @@ char HandlePlayerDisconnection(int a1, int a2)
   if ( dword_A8B54C != 1 ) /*0x5f018f*/
   {
     result = (char)dword_A8022C; /*0x5f0195*/
-    v3 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * a1]; /*0x5f019a*/
+    v3 = *(unsigned int *)dword_A8022C[4 * a1]; /*0x5f019a*/
     if ( v3 ) /*0x5f019f*/
     {
       result = v3->currentPlayer; /*0x5f01a5*/
@@ -590,7 +590,7 @@ int BuildingTypeClass_LoadSHPs(int a1)
   {
     while ( 1 ) /*0x5fe642*/
     {
-      v4 = *((unsigned int *)&dword_A83D84->TechnoTypeClass + v2); /*0x5fe642*/
+      v4 = *((unsigned int *)dword_A83D84 + v2); /*0x5fe642*/
       v5 = *(unsigned char *)(v4 + 556); /*0x5fe64d*/
       if ( *(unsigned char *)(v4 + 687) ) /*0x5fe645*/
       {
@@ -1021,7 +1021,7 @@ unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
   LOWORD(this->ambientSoundController[4]) = a5; /*0x5f15e2*/
   this->fallRate = 60; /*0x5f15eb*/
   this->customSound_controller[3] = 60; /*0x5f15ee*/
-  this->AbstractClass = &vt_NullModemClass; /*0x5f15f1*/
+  this->vtable1 = &vt_NullModemClass; /*0x5f15f1*/
   this->ambientSoundController[1] = -1; /*0x5f15f7*/
   this->attachedBomb = 0; /*0x5f15fa*/
   this->customSound_controller[0] = 0; /*0x5f15fd*/
@@ -1041,7 +1041,7 @@ unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
   this->customSound_controller[4] = -1; /*0x5f1634*/
   this->customSound = 1200; /*0x5f1637*/
   this->attachedTag = 0; /*0x5f163e*/
-  return &this->AbstractClass; /*0x5f1641*/
+  return this; /*0x5f1641*/
 
 }
 } // namespace gamemd

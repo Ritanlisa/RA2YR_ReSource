@@ -4622,7 +4622,7 @@ ObjectClass * E4Recv_5A9920::sub_5A9920(unsigned int * a1, ObjectClass * aP2)
 
   this->AbstractClass = (void *)*a1; /*0x5a992c*/
   ((unsigned int *)this)[0] = (void *)aP2; /*0x5a992e*/
-  return &this->AbstractClass; /*0x5a9931*/
+  return this; /*0x5a9931*/
 
 }
 } // namespace gamemd
@@ -4634,7 +4634,7 @@ ObjectClass * E4Recv_5A9960::sub_5A9960(unsigned int * a1)
 
   this->AbstractClass = (void *)*a1; /*0x5a9968*/
   ((unsigned int *)this)[0] = (void *)a1[1]; /*0x5a996d*/
-  return &this->AbstractClass; /*0x5a9970*/
+  return this; /*0x5a9970*/
 
 }
 } // namespace gamemd
@@ -4664,7 +4664,7 @@ unsigned int * E4Recv_5A99F0::sub_5A99F0(unsigned int * a2)
   ((unsigned int *)this)[0] = (void *)a2[2]; /*0x5a9a03*/
   ((unsigned int *)this)[0] = (void *)a2[3]; /*0x5a9a09*/
   ((unsigned int *)this)[0] = a2[4]; /*0x5a9a0f*/
-  return &this->AbstractClass; /*0x5a9a12*/
+  return this; /*0x5a9a12*/
 
 }
 } // namespace gamemd
@@ -5073,7 +5073,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
   owningHouseIndex = _ESI->owningHouseIndex; /*0x5aedac*/
   vtable3 = ((unsigned int *)_ESI)[0]; /*0x5aedb0*/
   __asm { fstp dword ptr [esi] } /*0x5aedb4*/
-  *(float *)&_ESI->AbstractClass = _ET1; /*0x5aedb4*/
+  *(float *)_ESI = _ET1; /*0x5aedb4*/
   __asm /*0x5aedb6*/
   {
     fld [esp+38h+var_18]

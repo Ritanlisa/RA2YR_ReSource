@@ -1102,7 +1102,7 @@ LABEL_22:
   }
   if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 /*0x5675f1*/
     || !dword_A8B23C
-    || (v56 = 1, (*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C)) )
+    || (v56 = 1, (*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 1))(dword_A8B23C)) )
   {
     v56 = 0; /*0x5675fd*/
   }

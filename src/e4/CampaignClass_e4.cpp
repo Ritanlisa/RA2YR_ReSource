@@ -42,7 +42,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   int v3; // eax
 
   ((AbstractTypeClass *)((int *)this))->Constructor(aP1); /*0x46cb68*/
-  this->AbstractClass = &vt_CampaignClass; /*0x46cb70*/
+  this->vtable1 = &vt_CampaignClass; /*0x46cb70*/
   this->scenario[28] = -1; /*0x46cb76*/
   this->description[28] = -1; /*0x46cb7c*/
   ((unsigned int *)this)[0] = &vt_CampaignClass; /*0x46cb82*/
@@ -367,7 +367,7 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x46d016*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x46d01f*/
-      aP0->AbstractClass = (unsigned int)(&vt_CampaignClass); /*0x46d024*/
+      aP0->vtable1 = (unsigned int)(&vt_CampaignClass); /*0x46d024*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d02a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d031*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d038*/
@@ -422,11 +422,11 @@ CampaignClass * CampaignClass::DTOR(void ** Block, char a2)
   int v3; // eax
   CampaignClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_CampaignClass; /*0x46d096*/
+  Block->vtable1 = &vt_CampaignClass; /*0x46d096*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d09c*/
   ((unsigned int *)Block)[0] = &vt_CampaignClass; /*0x46d0a3*/
   ((unsigned int *)Block)[0] = &vt_CampaignClass; /*0x46d0aa*/
-  AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x46d0b1*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x46d0b1*/
   v5 = Block; /*0x46d0c6*/
   v3 = (*(int (**)(unsigned int *, CampaignClass **))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/
   if ( v3 != -1 && v3 < dword_A83D08 && v3 < --dword_A83D08 ) /*0x46d0e5*/
@@ -441,7 +441,7 @@ CampaignClass * CampaignClass::DTOR(void ** Block, char a2)
   ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x46d101*/
   if ( (a2 & 1) != 0 ) /*0x46d10b*/
     __3_YAXPAX_Z(Block); /*0x46d10e*/
-  return &Block->AbstractClass; /*0x46d118*/
+  return Block; /*0x46d118*/
 
 }
 } // namespace gamemd

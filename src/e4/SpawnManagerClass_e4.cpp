@@ -130,7 +130,7 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3)
   this->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
   this->SpawnManagerClass_field_5C = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b6ee0*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
-  this->AbstractClass = &vt_SpawnManagerClass; /*0x6b6ee6*/
+  this->vtable1 = &vt_SpawnManagerClass; /*0x6b6ee6*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SpawnManagerClass); /*0x6b6eec*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SpawnManagerClass); /*0x6b6ef3*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SpawnManagerClass); /*0x6b6efa*/
@@ -389,7 +389,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       *(unsigned int *)&v2->__pad_48[8] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b7f51*/
       v2->SpawnManagerClass_field_58 = 0; /*0x6b7f57*/
       ((Timer *)((Timer *)&v2->SpawnManagerClass_field_5C))->Start(0); /*0x6b7f5a*/
-      v2->AbstractClass = &vt_SpawnManagerClass; /*0x6b7f5f*/
+      v2->vtable1 = &vt_SpawnManagerClass; /*0x6b7f5f*/
       ((unsigned int *)v2)[0] = &vt_SpawnManagerClass; /*0x6b7f65*/
       ((unsigned int *)v2)[0] = &vt_SpawnManagerClass; /*0x6b7f6c*/
       ((unsigned int *)v2)[0] = &vt_SpawnManagerClass; /*0x6b7f73*/
@@ -633,7 +633,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, Dynami
   ((unsigned int *)this)[0] = (void *)aP1; /*0x6b83b0*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x6b83b3*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x6b83b7*/
-  this->AbstractClass = &vt_VectorClass; /*0x6b83bb*/
+  this->vtable1 = &vt_VectorClass; /*0x6b83bb*/
   if ( aP1 ) /*0x6b83c1*/
   {
     if ( aP2 ) /*0x6b83c9*/
@@ -646,10 +646,10 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, Dynami
       BYTE1(((unsigned int *)this)[0]) = 1; /*0x6b83df*/
     }
   }
-  this->AbstractClass = &vt_DynamicVectorClass; /*0x6b83e3*/
+  this->vtable1 = &vt_DynamicVectorClass; /*0x6b83e3*/
   ((unsigned int *)this)[0] = 10; /*0x6b83e9*/
   ((unsigned int *)this)[0] = 0; /*0x6b83f0*/
-  return &this->AbstractClass; /*0x6b83f9*/
+  return this; /*0x6b83f9*/
 
 }
 } // namespace gamemd

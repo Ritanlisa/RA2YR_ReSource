@@ -44,7 +44,7 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x691da6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x691daf*/
-      aP0->AbstractClass = &vt_ScriptTypeClass; /*0x691db4*/
+      aP0->vtable1 = &vt_ScriptTypeClass; /*0x691db4*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dba*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dc1*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dc8*/
@@ -99,11 +99,11 @@ ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   ScriptTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_ScriptTypeClass; /*0x691fa6*/
+  Block->vtable1 = &vt_ScriptTypeClass; /*0x691fa6*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fac*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fb3*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fba*/
-  AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x691fc1*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x691fc1*/
   v5 = (gamemd::ScriptTypeClass *)(Block); /*0x691fd6*/
   v3 = (*(int ((int *)(**))(int *, ScriptTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 16))(&(unsigned int *)((char *)&FootClass_Array + 4), &v5); /*0x691fda*/
   if ( v3 != -1 && v3 < *(int *)&((char *)&FootClass_Array) ) /*0x691fea*/
@@ -119,7 +119,7 @@ ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
   ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x692011*/
   if ( (a2 & 1) != 0 ) /*0x69201b*/
     __3_YAXPAX_Z(Block); /*0x69201e*/
-  return &Block->AbstractClass; /*0x692028*/
+  return Block; /*0x692028*/
 
 }
 } // namespace gamemd

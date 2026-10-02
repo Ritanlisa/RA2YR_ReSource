@@ -1578,7 +1578,7 @@ LABEL_15:
     *(unsigned int *)(v14 + 4) = i[1]; /*0x62380f*/
     wcscpy(*(wchar_t **)(v14 + 8), (const wchar_t *)i[2]); /*0x62381a*/
   }
-  return &this->AbstractClass; /*0x623828*/
+  return this; /*0x623828*/
 
 }
 }
@@ -2591,7 +2591,7 @@ unsigned int * E4Recv_624080::sub_624080()
 {
 
   this->AbstractClass = &OwnerDraw::vt_DialogControl; /*0x624082*/
-  return &this->AbstractClass; /*0x624088*/
+  return this; /*0x624088*/
 
 }
 } // namespace gamemd
@@ -2656,7 +2656,7 @@ void * E4Recv_626070::sub_626070(const void * a2)
   int v4; // edx
 
   result = this; /*0x626070*/
-  v3 = (char *)&this->AbstractClass + 2; /*0x626075*/
+  v3 = (char *)this + 2; /*0x626075*/
   v4 = 256; /*0x626078*/
   do /*0x62608b*/
   {
@@ -3312,7 +3312,7 @@ int E4Recv_62D510::sub_62D510()
       *((unsigned char *)this + 305) = 1; /*0x62d5c2*/
     }
   }
-  return (*((int (**)(ObjectClass *, int *))this->AbstractClass + 109))(this, &v12); /*0x62d5d7*/
+  return (*((int (**)(ObjectClass *, int *))this->vtable1 + 109))(this, &v12); /*0x62d5d7*/
 
 }
 } // namespace gamemd

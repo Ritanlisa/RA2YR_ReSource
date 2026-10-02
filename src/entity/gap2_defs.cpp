@@ -508,7 +508,7 @@ int AnimClass::initAnimation() {
   int v9; // [esp+48h] [ebp+4h]
 
   v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v9 + 72))(v9, v7); /*0x447e1a*/
-  v4 = (unsigned int *)(*((int (**)(BuildingClass *, unsigned char *, int))this->TechnoClass + 42))(this, v8, v9); /*0x447e24*/
+  v4 = (unsigned int *)(*((int (**)(BuildingClass *, unsigned char *, int))this->vtable1 + 42))(this, v8, v9); /*0x447e24*/
   v6 = v4[2] - v3[2]; /*0x447e48*/
   Math::Sqrt( /*0x447e74*/
     (double)(*v4 - *v3) * (double)(*v4 - *v3)
@@ -5070,9 +5070,9 @@ int MissionClass::QueueMission() {
     IDA_LOBYTE(result) = v6; /*0x5b3621*/
     if ( v6 ) /*0x5b3627*/
     {
-      result = (*((int (**)(MissionClass *))this->ObjectClass + 128))(this); /*0x5b362d*/
+      result = (*((int (**)(MissionClass *))this->vtable1 + 128))(this); /*0x5b362d*/
       if ( (unsigned char)result ) /*0x5b3635*/
-        return (*((int (**)(MissionClass *))this->ObjectClass + 123))(this); /*0x5b363b*/
+        return (*((int (**)(MissionClass *))this->vtable1 + 123))(this); /*0x5b363b*/
     }
   }
   return result; /*0x5b3641*/
@@ -5188,7 +5188,7 @@ void* OverlayClass::updateOverlayState(int a1, int a2) {
   ((unsigned int *)this)[0] = (void *)a2; /*0x5fe02d*/
   ((unsigned int *)this)[0] = 0; /*0x5fe030*/
   this->ObjectClass = &XSurface_Vtable; /*0x5fe037*/
-  return &this->ObjectClass; /*0x5fe03d*/
+  return this; /*0x5fe03d*/
 }
 }
 // 0x62B5E0
@@ -6677,12 +6677,12 @@ void* ParticleSystemClass::resetSystemState(int a1, int a2) {
     if ( a2 ) /*0x6302c6*/
     {
       ((unsigned int *)this)[0] = (void *)a2; /*0x6302c8*/
-      return &this->ObjectClass; /*0x6302ce*/
+      return this; /*0x6302ce*/
     }
     ((unsigned int *)this)[0] = (void *)RA2_OPNEW(4 * a1); /*0x6302dd*/
     IDA_BYTE1(((unsigned int *)this)[0]) = 1; /*0x6302e0*/
   }
-  return &this->ObjectClass; /*0x6302cd*/
+  return this; /*0x6302cd*/
 }
 }
 // 0x65B2F0
@@ -6701,11 +6701,11 @@ void RadSiteClass::Constructor() {
   v2 = (TerrainClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)this->BaseCell); /*0x65b318*/
   TerrainClass::SetFieldF8(v2, 0); /*0x65b321*/
   IDA_LOBYTE(v3) = 1; /*0x65b326*/
-  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, v3); /*0x65b32a*/
+  AbstractClass::AnnounceExpiredPointer(this, v3); /*0x65b32a*/
   LightSource = this->LightSource; /*0x65b32f*/
   if ( LightSource ) /*0x65b334*/
   {
-    (*((void (**)(LightSourceClass *, int))LightSource->AbstractClass + 8))(LightSource, 1); /*0x65b33a*/
+    (*((void (**)(LightSourceClass *, int))LightSource->vtable1 + 8))(LightSource, 1); /*0x65b33a*/
     this->LightSource = 0; /*0x65b33d*/
   }
   v6 = this; /*0x65b354*/
@@ -6795,7 +6795,7 @@ int RadSiteClass::Tick() {
   if ( result <= 0 ) /*0x65b8cd*/
   {
     if ( this ) /*0x65b8d1*/
-      return (*((int (**)(RadSiteClass *, int))this->AbstractClass + 8))(this, 1); /*0x65b8d9*/
+      return (*((int (**)(RadSiteClass *, int))this->vtable1 + 8))(this, 1); /*0x65b8d9*/
   }
   return result; /*0x65b8dc*/
 }
@@ -6806,7 +6806,7 @@ void* RadSiteClass::ProcessEvent(int a2) {
   RadSiteClass::Constructor(this); /*0x65bed3*/
   if ( (a2 & 1) != 0 ) /*0x65bedd*/
     RA2_OPDEL(this); /*0x65bee0*/
-  return &this->AbstractClass; /*0x65beea*/
+  return this; /*0x65beea*/
 }
 }
 // 0x6620F0
@@ -7117,7 +7117,7 @@ void* TerrainClass::Construct(void* a1, void* a2) {
   {
     vtable2 = (int)((char *)&g_BuildingLoadQueue_Array); /*0x71bd1f*/
     if ( (int)((char *)&g_BuildingLoadQueue_Array) < 0 ) /*0x71bd23*/
-      return &this->ObjectClass; /*0x71bd23*/
+      return this; /*0x71bd23*/
   }
   else
   {
@@ -7141,7 +7141,7 @@ void* TerrainClass::Construct(void* a1, void* a2) {
     IDA_LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 0; /*0x71bdca*/
     ++((char *)&g_BuildingLoadQueue_Array); /*0x71bdd0*/
   }
-  return &this->ObjectClass; /*0x71bdd7*/
+  return this; /*0x71bdd7*/
 }
 }
 // 0x71BFB0
@@ -7157,13 +7157,13 @@ int TerrainClass::CheckNearbyObjects(int a1) {
   v2 = a1; /*0x71bfb4*/
   if ( !(uint8_t)ObjectClass::UpdateProductionDisplay((ObjectClass *)this) ) /*0x71bfbc*/
     return 0; /*0x71c063*/
-  a1 = *(unsigned int *)(*((int (**)(TerrainClass *, unsigned char *))this->ObjectClass + 110))(this, v8); /*0x71bfdf*/
+  a1 = *(unsigned int *)(*((int (**)(TerrainClass *, unsigned char *))this->vtable1 + 110))(this, v8); /*0x71bfdf*/
   if ( v2 ) /*0x71bfe3*/
   {
     if ( v2 == 1 || v2 == 3 ) /*0x71bfeb*/
     {
       MapClass::FillRevealBuffer((MapClass *)&stru_87F5F0.__pad_58[416], &a1, this); /*0x71bff8*/
-      v4 = (unsigned int *)(*((int (**)(TerrainClass *, unsigned char *))this->ObjectClass + 43))(this, v9); /*0x71c00d*/
+      v4 = (unsigned int *)(*((int (**)(TerrainClass *, unsigned char *))this->vtable1 + 43))(this, v9); /*0x71c00d*/
       Coord::To_Screen((Coord *)g_TacticalClass_Instance, v4, &this->TerrainClass_field_rect_D0[2]); /*0x71c01a*/
       v5 = g_TacticalClass_Instance[45]; /*0x71c02d*/
       v6 = this->TerrainClass_field_rect_D0[3]; /*0x71c035*/
@@ -7248,7 +7248,7 @@ void TerrainClass::Draw(void* a1, void* a2) {
   int v19; // [esp+1Ch] [ebp-8h] BYREF
   int v20; // [esp+20h] [ebp-4h]
 
-  *(unsigned int *)v17 = *(unsigned int *)(*((int (**)(TerrainClass *, int **))this->ObjectClass + 110))(this, &v18); /*0x71c1d4*/
+  *(unsigned int *)v17 = *(unsigned int *)(*((int (**)(TerrainClass *, int **))this->vtable1 + 110))(this, &v18); /*0x71c1d4*/
   v4 = (int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v17); /*0x71c1d8*/
   vtable0 = (int (**)(TerrainClass *))this->ObjectClass; /*0x71c1dd*/
   v6 = v4; /*0x71c1df*/
@@ -7331,11 +7331,11 @@ void TerrainClass::ProcessDestructionAnim(void* a1, void* a2) {
   int v15; // [esp+18h] [ebp-8h] BYREF
   int v16; // [esp+1Ch] [ebp-4h]
 
-  *(unsigned int *)v14 = *(unsigned int *)(*((int (**)(TerrainClass *, unsigned int *))this->ObjectClass + 110))( /*0x71c384*/
+  *(unsigned int *)v14 = *(unsigned int *)(*((int (**)(TerrainClass *, unsigned int *))this->vtable1 + 110))( /*0x71c384*/
                                 this,
                                 &v13);
   v4 = (int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v14); /*0x71c391*/
-  v5 = (*((int (**)(TerrainClass *))this->ObjectClass + 27))(this); /*0x71c396*/
+  v5 = (*((int (**)(TerrainClass *))this->vtable1 + 27))(this); /*0x71c396*/
   if ( v5 ) /*0x71c39a*/
   {
     v6 = this->__pad_C0[13]; /*0x71c3a0*/
@@ -7398,7 +7398,7 @@ int TerrainClass::IsPlacementValid(int a1, int a2, int a3, int a4, int a5) {
   int16_t v17[2]; // [esp+14h] [ebp-4h] BYREF
   int v18; // [esp+1Ch] [ebp+4h]
 
-  v7 = (unsigned short *)(*((int (**)(TerrainClass *, unsigned int))this->ObjectClass + 66))(this, 0); /*0x71c4e8*/
+  v7 = (unsigned short *)(*((int (**)(TerrainClass *, unsigned int))this->vtable1 + 66))(this, 0); /*0x71c4e8*/
   v8 = *(unsigned int *)(a1 + 36); /*0x71c4ea*/
   while ( *v7 != 0x7FFF || v7[1] != 0x7FFF ) /*0x71c503*/
   {
@@ -7455,7 +7455,7 @@ int TerrainClass::PlayAmbientAnimation() {
   v4 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x71c611*/
   if ( v4 ) /*0x71c618*/
   {
-    v5 = (int *)(*((int (**)(TerrainClass *, char *))this->ObjectClass + 18))(this, v13); /*0x71c623*/
+    v5 = (int *)(*((int (**)(TerrainClass *, char *))this->vtable1 + 18))(this, v13); /*0x71c623*/
     v6 = *v5; /*0x71c626*/
     v7 = v5[1]; /*0x71c628*/
     v8 = v5[2]; /*0x71c62b*/
@@ -7500,8 +7500,8 @@ int TerrainClass::ProcessTick() {
       health = (TerrainTypeClass *)((unsigned int *)this)[0]; /*0x71c6d1*/
       if ( !health ) /*0x71c6d6*/
       {
-        (*((void (**)(TerrainClass *, int))this->ObjectClass + 55))(this, 1); /*0x71c6dc*/
-        (*((void (**)(TerrainClass *, int))this->ObjectClass + 73))(this, 2); /*0x71c6e8*/
+        (*((void (**)(TerrainClass *, int))this->vtable1 + 55))(this, 1); /*0x71c6dc*/
+        (*((void (**)(TerrainClass *, int))this->vtable1 + 73))(this, 2); /*0x71c6e8*/
         IDA_LOBYTE(health) = this->__pad_C0[13]; /*0x71c6ee*/
         if ( !(unsigned char)health ) /*0x71c6f6*/
         {
@@ -7579,7 +7579,7 @@ int TerrainClass::Update() {
                  - 1,
           v8 == result) )
     {
-      return (*((int (**)(TerrainClass *))this->ObjectClass + 62))(this); /*0x71c833*/
+      return (*((int (**)(TerrainClass *))this->vtable1 + 62))(this); /*0x71c833*/
     }
     else
     {
@@ -7628,7 +7628,7 @@ int TerrainClass::ApplyCellModifications() {
 
   if ( !((unsigned int *)this)[0] ) /*0x71c937*/
   {
-    v2 = *(unsigned int *)(*((int (**)(TerrainClass *, int16_t *))this->ObjectClass + 110))(this, v13); /*0x71c956*/
+    v2 = *(unsigned int *)(*((int (**)(TerrainClass *, int16_t *))this->vtable1 + 110))(this, v13); /*0x71c956*/
     v3 = 0; /*0x71c958*/
     v12 = v2; /*0x71c95a*/
     do /*0x71c9b8*/
@@ -7650,7 +7650,7 @@ int TerrainClass::ApplyCellModifications() {
     v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v14); /*0x71c9e2*/
     v7->occupationFlags &= ~0x40u; /*0x71c9f6*/
   }
-  *(unsigned int *)v11 = *(unsigned int *)(*((int (**)(TerrainClass *, int16_t *))this->ObjectClass + 110))(this, v13); /*0x71ca0a*/
+  *(unsigned int *)v11 = *(unsigned int *)(*((int (**)(TerrainClass *, int16_t *))this->vtable1 + 110))(this, v13); /*0x71ca0a*/
   v8 = ObjectClass::Undeploy((ObjectClass *)this); /*0x71ca21*/
   v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v11); /*0x71ca23*/
   House::AnnounceUpgrade((int)v9, -1); /*0x71ca2a*/
@@ -7692,7 +7692,7 @@ int TerrainClass::CheckSpawnConditions(void* a1, int a2, int a3) {
   a1[3] = v5[3]; /*0x71ccce*/
   v6 = DSurface_ViewBounds.field_0; /*0x71ccd3*/
   v7 = (char *)DSurface_ViewBounds.field_4; /*0x71ccd9*/
-  v8 = (unsigned int *)(*((int (**)(TerrainClass *, unsigned int *))this->ObjectClass + 75))(this, v20); /*0x71cce6*/
+  v8 = (unsigned int *)(*((int (**)(TerrainClass *, unsigned int *))this->vtable1 + 75))(this, v20); /*0x71cce6*/
   v9 = v8[1]; /*0x71ccee*/
   v10 = v6 + *v8; /*0x71ccf1*/
   v11 = v8[2]; /*0x71ccf3*/
@@ -7703,14 +7703,14 @@ int TerrainClass::CheckSpawnConditions(void* a1, int a2, int a3) {
   v14 = a1[1]; /*0x71cd07*/
   if ( v14 >= (int)&v13[v12] || *a1 + a1[2] <= v10 || v14 + a1[3] <= (int)v13 ) /*0x71cd20*/
     return 0; /*0x71cd90*/
-  v15 = (unsigned int *)(*((int (**)(TerrainClass *, unsigned int *))this->ObjectClass + 43))(this, v20); /*0x71cd30*/
+  v15 = (unsigned int *)(*((int (**)(TerrainClass *, unsigned int *))this->vtable1 + 43))(this, v20); /*0x71cd30*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v15, &v18); /*0x71cd3d*/
   if ( *a1 > DSurface_ViewBounds.field_0 ) /*0x71cd4b*/
     v18 += DSurface_ViewBounds.field_0 - *a1; /*0x71cd55*/
   v16 = a1[1]; /*0x71cd59*/
   if ( v16 > (int)DSurface_ViewBounds.field_4 ) /*0x71cd63*/
     v19 += (int)DSurface_ViewBounds.field_4 - v16; /*0x71cd6d*/
-  (*((void (**)(TerrainClass *, int *, int *))this->ObjectClass + 69))(this, &v18, a1); /*0x71cd7b*/
+  (*((void (**)(TerrainClass *, int *, int *))this->vtable1 + 69))(this, &v18, a1); /*0x71cd7b*/
   return 1; /*0x71cd81*/
 }
 }
@@ -8143,7 +8143,7 @@ void* TubeClass::ProcessEvent(int a1) {
   AbstractClass::DTOR((AbstractClass *)this); /*0x7287ca*/
   if ( (a1 & 1) != 0 ) /*0x7287d4*/
     RA2_OPDEL(this); /*0x7287d7*/
-  return &this->ObjectClass; /*0x7287e1*/
+  return this; /*0x7287e1*/
 }
 }
 // 0x729370
@@ -8306,12 +8306,12 @@ void* WaveClass::Constructor(void* a1, void* a2, void* a3, void* a4, void* a5) {
       this->WaveClass_field_160 = this->WaveClass_field_E8; /*0x75ebc2*/
     }
     Voxel::TransformMatrix((int)this); /*0x75ebc7*/
-    return &this->ObjectClass; /*0x75ebcc*/
+    return this; /*0x75ebcc*/
   }
   else
   {
     ObjectClass::Destroy((ObjectClass *)this); /*0x75ea95*/
-    return &this->ObjectClass; /*0x75ea9a*/
+    return this; /*0x75ea9a*/
   }
 }
 }
@@ -8394,11 +8394,11 @@ int WaveClass::DrawWave(void* a1, int a2) {
   ((unsigned int *)this)[0] = 0; /*0x75f912*/
   ((unsigned int *)this)[0] = 0; /*0x75f919*/
   v6[109](this, a1); /*0x75f920*/
-  if ( !(*((uint8_t (**)(WaveClass *, int))this->ObjectClass + 73))(this, 1) ) /*0x75f92c*/
+  if ( !(*((uint8_t (**)(WaveClass *, int))this->vtable1 + 73))(this, 1) ) /*0x75f92c*/
     return 0; /*0x75f96c*/
   if ( ((unsigned int *)this)[0] ) /*0x75f936*/
   {
-    if ( (*((int (**)(WaveClass *))this->ObjectClass + 30))(this) != -1 ) /*0x75f94a*/
+    if ( (*((int (**)(WaveClass *))this->vtable1 + 30))(this) != -1 ) /*0x75f94a*/
       Targeting::Readd(this); /*0x75f952*/
     ObjectClass::SetDeployState((LogicClass *)this, 0); /*0x75f95f*/
   }

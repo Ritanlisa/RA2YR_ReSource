@@ -3155,7 +3155,7 @@ int E4Recv_7B9DF0::sub_7B9DF0(LONG * a2, LONG * a3)
   y = Point.y; /*0x7b9e09*/
   *a2 = Point.x; /*0x7b9e0d*/
   *a3 = y; /*0x7b9e15*/
-  return (*((int (**)(ObjectClass *, LONG *, LONG *))this->AbstractClass + 17))(this, a2, a3); /*0x7b9e1e*/
+  return (*((int (**)(ObjectClass *, LONG *, LONG *))this->vtable1 + 17))(this, a2, a3); /*0x7b9e1e*/
 
 }
 } // namespace gamemd

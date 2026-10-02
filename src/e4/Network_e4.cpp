@@ -3071,7 +3071,7 @@ AbstractClass * * Network_ModemConnectionDialog()
   if ( !Dialog ) /*0x5ef50c*/
     return 0; /*0x5efed7*/
   SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x5ef51a*/
-  v3 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 32))(g_DSurface_Hidden); /*0x5ef528*/
+  v3 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))(g_DSurface_Hidden); /*0x5ef528*/
   UI_Connect(Dialog, -1, (v3 - 400) / 2 + 147); /*0x5ef542*/
   ((Dialog *)((Dialog *)Dialog))->Show(); /*0x5ef549*/
   if ( !dword_A8DAC0 || dword_A8DAC4 == -1 || dword_A8DAC8 == -1 || Modem::OpenPort((Modem *)&unk_A8EA70, &dword_A8DAC0) ) /*0x5ef571*/

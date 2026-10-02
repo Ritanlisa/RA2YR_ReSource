@@ -29,7 +29,7 @@ void LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7,
   this->DetailLevel = 2; /*0x55478f*/
   this->Location[0] = a2; /*0x554796*/
   this->Activated = 0; /*0x55479c*/
-  this->AbstractClass = &vt_LightSourceClass; /*0x5547a0*/
+  this->vtable1 = &vt_LightSourceClass; /*0x5547a0*/
   this->Location[1] = a3; /*0x5547a6*/
   this->LightVisibility = a5; /*0x5547ad*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5547b0*/
@@ -47,7 +47,7 @@ void LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7,
     v10 = g_MissionQueueFrame.random[133]++; /*0x55480a*/
     *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v10) = this; /*0x554819*/
   }
-  return &this->AbstractClass; /*0x55481e*/
+  return this; /*0x55481e*/
 
 }
 } // namespace gamemd
@@ -70,7 +70,7 @@ int LightSourceClass::Constructor(void *a1, void *a2, void *a3)
   this->LightVisibility = 0; /*0x554860*/
   this->Activated = 0; /*0x554863*/
   this->Location[2] = v2; /*0x554866*/
-  this->AbstractClass = &vt_LightSourceClass; /*0x554869*/
+  this->vtable1 = &vt_LightSourceClass; /*0x554869*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55486f*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x554876*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55487d*/
@@ -126,7 +126,7 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x5550d6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x5550df*/
-      aP0->AbstractClass = &vt_LightSourceClass; /*0x5550e4*/
+      aP0->vtable1 = &vt_LightSourceClass; /*0x5550e4*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5550ea*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5550f1*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5550f8*/
@@ -177,11 +177,11 @@ LightSourceClass * LightSourceClass::CopyTo(void ** Block, char a2)
   int v3; // eax
   LightSourceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &vt_LightSourceClass; /*0x555156*/
+  Block->vtable1 = &vt_LightSourceClass; /*0x555156*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55515c*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_LightSourceClass); /*0x555163*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55516a*/
-  AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x555171*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x555171*/
   v5 = (gamemd::LightSourceClass *)(Block); /*0x555186*/
   v3 = (*(int (**)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/
          &g_MissionQueueFrame.random[129],
@@ -205,7 +205,7 @@ LightSourceClass * LightSourceClass::CopyTo(void ** Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x5551d5*/
   if ( (a2 & 1) != 0 ) /*0x5551df*/
     __3_YAXPAX_Z(Block); /*0x5551e2*/
-  return &Block->AbstractClass; /*0x5551ec*/
+  return Block; /*0x5551ec*/
 
 }
 } // namespace gamemd

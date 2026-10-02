@@ -1160,7 +1160,7 @@ unsigned int * E4Recv_6107E0::sub_6107E0()
   *((unsigned int *)this + 69) = 0; /*0x6107f6*/
   *((unsigned int *)this + 70) = 0; /*0x6107fc*/
   *((unsigned int *)this + 71) = 0; /*0x610802*/
-  return &this->AbstractClass; /*0x610808*/
+  return this; /*0x610808*/
 
 }
 } // namespace gamemd

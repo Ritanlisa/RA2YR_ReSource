@@ -1085,7 +1085,7 @@ ObjectClass * * E4Recv_554400::sub_554400(int a2, int a3)
     return 0; /*0x554428*/
   v3 = this->customSound_controller[4]; /*0x55440c*/
   if ( v3 ) /*0x554417*/
-    (*((void (**)(ObjectClass *, int, unsigned int, int))g_DSurface_Hidden->AbstractClass + 1))( /*0x554420*/
+    (*((void (**)(ObjectClass *, int, unsigned int, int))g_DSurface_Hidden->vtable1 + 1))( /*0x554420*/
       g_DSurface_Hidden,
       v3,
       0,

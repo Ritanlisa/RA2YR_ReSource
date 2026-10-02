@@ -505,7 +505,7 @@ void* Object::HandleAction(int * a2, int * a3)
   int v34; // [esp+24h] [ebp-4h]
 
   location = (int *)(((unsigned int *)this)[0]); /*0x5fd987*/
-  v5 = (*((int (**)(OverlayTypeClass *))this->Type->ObjectTypeClass + 39))(this->Type); /*0x5fd98d*/
+  v5 = (*((int (**)(OverlayTypeClass *))this->Type->vtable1 + 39))(this->Type); /*0x5fd98d*/
   v32 = *location; /*0x5fd993*/
   v33 = ((unsigned int *)this)[1]; /*0x5fd99f*/
   v34 = ((unsigned int *)this)[2]; /*0x5fd9a6*/
@@ -683,11 +683,11 @@ void * Object::DrawObject(void ** Block, char a2)
   int v3; // eax
   OverlayClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ObjectClass = &vt_OverlayClass; /*0x5fdf76*/
+  Block->vtable1 = &vt_OverlayClass; /*0x5fdf76*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf7c*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf83*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf8a*/
-  AbstractClass::AnnounceExpiredPointer(&Block->ObjectClass, 1); /*0x5fdf91*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x5fdf91*/
   v5 = (gamemd::OverlayClass *)(Block); /*0x5fdfa6*/
   v3 = (*(int ((unsigned char *)(**))(unsigned char *, OverlayClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 108) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 108), &v5); /*0x5fdfaa*/
   if ( v3 != -1 && v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 124) ) /*0x5fdfba*/
@@ -706,7 +706,7 @@ void * Object::DrawObject(void ** Block, char a2)
   ((ObjectClass *)((ObjectClass *)Block))->Dtor(); /*0x5fdffb*/
   if ( (a2 & 1) != 0 ) /*0x5fe005*/
     __3_YAXPAX_Z(Block); /*0x5fe008*/
-  return &Block->ObjectClass; /*0x5fe012*/
+  return Block; /*0x5fe012*/
 
 }
 }

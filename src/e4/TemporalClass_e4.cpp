@@ -49,7 +49,7 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3)
   v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *(unsigned int *)&this->__pad_28[4] = v2; /*0x71a464*/
-  this->AbstractClass = &vt_TemporalClass; /*0x71a467*/
+  this->vtable1 = &vt_TemporalClass; /*0x71a467*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a46d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a474*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a47b*/
@@ -80,7 +80,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
   *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
-  this->AbstractClass = &vt_TemporalClass; /*0x71a501*/
+  this->vtable1 = &vt_TemporalClass; /*0x71a501*/
   ((unsigned int *)this)[0] = &vt_TemporalClass; /*0x71a507*/
   ((unsigned int *)this)[0] = &vt_TemporalClass; /*0x71a50e*/
   ((unsigned int *)this)[0] = &vt_TemporalClass; /*0x71a515*/
@@ -106,7 +106,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   *((unsigned int *)this + 19) = 0; /*0x71a58b*/
   *((unsigned int *)this + 14) = 0; /*0x71a58e*/
   *((unsigned int *)this + 15) = 0; /*0x71a591*/
-  return &this->AbstractClass; /*0x71a596*/
+  return this; /*0x71a596*/
 
 }
 } // namespace ra2
@@ -379,7 +379,7 @@ void * TemporalClass::ProcessEvent(unsigned int * Block, char a2)
   int v3; // eax
   TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = (unsigned int)(&vt_TemporalClass); /*0x71b1bd*/
+  Block->vtable1 = (unsigned int)(&vt_TemporalClass); /*0x71b1bd*/
   ((unsigned int *)Block)[0] = (unsigned int)((gamemd::TemporalClass *)(&vt_TemporalClass)); /*0x71b1c3*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_TemporalClass); /*0x71b1ca*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_TemporalClass); /*0x71b1d1*/
@@ -400,7 +400,7 @@ void * TemporalClass::ProcessEvent(unsigned int * Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x71b21a*/
   if ( (a2 & 1) != 0 ) /*0x71b224*/
     __3_YAXPAX_Z(Block); /*0x71b227*/
-  return &Block->AbstractClass; /*0x71b231*/
+  return Block; /*0x71b231*/
 
 }
 } // namespace ra2
@@ -428,7 +428,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71a679*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71a682*/
-      aP0->AbstractClass = (unsigned int)(&vt_TemporalClass); /*0x71a687*/
+      aP0->vtable1 = (unsigned int)(&vt_TemporalClass); /*0x71a687*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a68d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a694*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a69b*/

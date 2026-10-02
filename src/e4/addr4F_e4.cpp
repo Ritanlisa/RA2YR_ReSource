@@ -208,7 +208,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         v11 = dword_A80238; /*0x4f19a2*/
         do /*0x4f19bd*/
         {
-          if ( *(unsigned char *)(*(unsigned int *)v10->AbstractClass + 492) && !*(unsigned char *)(*(unsigned int *)v10->AbstractClass + 501) ) /*0x4f19af*/
+          if ( *(unsigned char *)(*(unsigned int *)v10->vtable1 + 492) && !*(unsigned char *)(*(unsigned int *)v10->vtable1 + 501) ) /*0x4f19af*/
             ++v8; /*0x4f19b8*/
           v10 = (unsigned int)((HouseClass *)((char *)v10 + 4)); /*0x4f19b9*/
           --v11; /*0x4f19bc*/
@@ -506,7 +506,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
   v3 = ((StringList *)((StringList *)&unk_A83D10))->Find(v2); /*0x4f2317*/
   ((ThemeClass *)((ThemeClass *)&unk_A83D10))->Play(v3); /*0x4f2322*/
   (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x4f2331*/
-  (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x4f233e*/
+  (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x4f233e*/
   (*((void (**)(DSurface *, ObjectClass *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 + 1))( /*0x4f2354*/
     g_DSurface_Primary,
     g_DSurface_Hidden,
@@ -1771,7 +1771,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
   ((unsigned int *)v3)[0] = (int)&vt_DynamicVectorClass; /*0x4f3c6b*/
   v3->occupant = 10; /*0x4f3c71*/
   ((unsigned int *)v3)[0] = 0; /*0x4f3c78*/
-  v3->AbstractClass = &vt_GraphicMenuShortcutItem; /*0x4f3c7b*/
+  v3->vtable1 = &vt_GraphicMenuShortcutItem; /*0x4f3c7b*/
   unknown_libname_73(&a2); /*0x4f3c82*/
   v5 = String::Tokenize((String *)a3, 0, Str, (void **)&a2); /*0x4f3c9f*/
   if ( String::Length((String *)&a2) ) /*0x4f3ca1*/
@@ -1801,7 +1801,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
     v3 = this; /*0x4f3d22*/
   }
   DeleteAndZero((ObjectClass *)&a2); /*0x4f3d2a*/
-  return &v3->AbstractClass; /*0x4f3d2f*/
+  return v3; /*0x4f3d2f*/
 
 }
 } // namespace gamemd
@@ -2151,7 +2151,7 @@ unsigned int * E4Recv_4F7850::sub_4F7850()
   ((unsigned int *)this)[0] = 0; /*0x4f785d*/
   ((unsigned int *)this)[0] = 0; /*0x4f7860*/
   ((unsigned int *)this)[0] = -1; /*0x4f7863*/
-  return &this->AbstractClass; /*0x4f786a*/
+  return this; /*0x4f786a*/
 
 }
 } // namespace gamemd

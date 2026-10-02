@@ -196,7 +196,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x721794*/
   this->GrowthTimer[2] = 0; /*0x72179a*/
   this->GrowthTimer[0] = v3; /*0x7217a0*/
-  this->ObjectClass = &vt_TiberiumClass; /*0x7217a6*/
+  this->vtable1 = &vt_TiberiumClass; /*0x7217a6*/
   ((unsigned int *)this)[0] = &vt_TiberiumClass; /*0x7217ac*/
   ((unsigned int *)this)[0] = &vt_TiberiumClass; /*0x7217b3*/
   ((unsigned int *)this)[0] = &vt_TiberiumClass; /*0x7217ba*/
@@ -224,7 +224,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
     v5 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x721864*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v5) = this; /*0x721873*/
   }
-  return &this->ObjectClass; /*0x721878*/
+  return this; /*0x721878*/
 
 }
 }
@@ -433,7 +433,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       v2->GrowthPercentage[1] = (int)&vt_TypeList; /*0x721fb0*/
       ((Timer *)((Timer *)v2->SpreadTimer))->Start(0); /*0x721fb6*/
       ((Timer *)((Timer *)v2->GrowthTimer))->Start(0); /*0x721fc2*/
-      v2->ObjectClass = &vt_TiberiumClass; /*0x721fc7*/
+      v2->vtable1 = &vt_TiberiumClass; /*0x721fc7*/
       ((unsigned int *)v2)[0] = &vt_TiberiumClass; /*0x721fcd*/
       ((unsigned int *)v2)[0] = &vt_TiberiumClass; /*0x721fd4*/
       ((unsigned int *)v2)[0] = &vt_TiberiumClass; /*0x721fdb*/

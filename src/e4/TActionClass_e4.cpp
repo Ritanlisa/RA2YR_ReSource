@@ -261,7 +261,7 @@ LABEL_7:
   ((Radar *)(0))->UpdateReveal(0); /*0x577d63*/
   dword_A83D4C->__pad_140[256] = 0; /*0x577d72*/
   ((FogOfWar *)((FogOfWar *)&stru_87F5F0.__pad_58[416]))->Render(); /*0x577d79*/
-  return (*((int (**)(TActionClass *, int))this->AbstractClass + 14))(this, 2); /*0x577d88*/
+  return (*((int (**)(TActionClass *, int))this->vtable1 + 14))(this, 2); /*0x577d88*/
 
 }
 }
@@ -846,7 +846,7 @@ TActionClass::TActionClass()
   this->TActionClass_field_30 = 0; /*0x71e6b8*/
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *(unsigned int *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
-  this->AbstractClass = &vt_TEventClass; /*0x71e6c1*/
+  this->vtable1 = &vt_TEventClass; /*0x71e6c1*/
   ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71e6c7*/
   ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71e6ce*/
   ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71e6d5*/
@@ -1704,7 +1704,7 @@ int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e3dc6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e3dcf*/
-      aP0->AbstractClass = &vt_TActionClass; /*0x6e3dd4*/
+      aP0->vtable1 = &vt_TActionClass; /*0x6e3dd4*/
       ((unsigned int *)aP0)[0] = &vt_TActionClass; /*0x6e3dda*/
       ((unsigned int *)aP0)[0] = &vt_TActionClass; /*0x6e3de1*/
       ((unsigned int *)aP0)[0] = &vt_TActionClass; /*0x6e3de8*/

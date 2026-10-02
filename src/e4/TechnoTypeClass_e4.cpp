@@ -168,7 +168,7 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1)
   *((unsigned char *)this + 245) = 1; /*0x6f07eb*/
   *((unsigned char *)this + 246) = 0; /*0x6f07f1*/
   *((unsigned char *)this + 247) = 0; /*0x6f07f7*/
-  this->AbstractClass = &vt_TeamTypeClass; /*0x6f07fd*/
+  this->vtable1 = &vt_TeamTypeClass; /*0x6f07fd*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TeamTypeClass); /*0x6f0803*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TeamTypeClass); /*0x6f080a*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TeamTypeClass); /*0x6f0811*/
@@ -216,7 +216,7 @@ LABEL_11:
     v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x6f08d2*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x6f08e1*/
   }
-  return &this->AbstractClass; /*0x6f08e6*/
+  return this; /*0x6f08e6*/
 
 }
 } // namespace gamemd
@@ -1383,7 +1383,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
     if ( !_strcmpi(Filename, &g_INI_Key_TRUCKA.__pad_1714[80]) ) /*0x716cab*/
       INIClass::GetString( /*0x716cd4*/
         (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-        (uint8_t *)&aP0->ObjectTypeClass[9],
+        (uint8_t *)aP0[9],
         (uint8_t *)&((char *)&g_INI_Key_TRUCKA),
         &g_INI_Key_TRUCKA.__pad_1714[80],
         Filename,

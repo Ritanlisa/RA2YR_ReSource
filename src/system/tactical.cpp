@@ -2529,8 +2529,8 @@ int TacticalClass::MouseInput(int x, int y, int buttons)
     if ( !*(unsigned int *)&dword_A8B238 /*0x653933*/
       || (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4)
       && dword_A8B23C
-      && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 2))(dword_A8B23C)
-      && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C) )
+      && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 2))(dword_A8B23C)
+      && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 1))(dword_A8B23C) )
     {
       *(unsigned int *)&((unsigned int *)&stru_A8EB00)[444] = 9; /*0x653946*/
     }

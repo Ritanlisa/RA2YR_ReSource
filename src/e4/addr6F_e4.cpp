@@ -107,7 +107,7 @@ v3 = (void ***)((int)((void ***)(0)));
   v56 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0ad4*/
   v54 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
-    v54 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * v5]; /*0x6f0aee*/
+    v54 = *(unsigned int *)dword_A8022C[4 * v5]; /*0x6f0aee*/
   if ( Random::Range((unsigned int *)dword_A8B230 + 134, 1, 100) <= *(unsigned int *)(a2 + 22108) && *(unsigned char *)(a2 + 498) ) /*0x6f0b12*/
   {
     v6 = 0; /*0x6f0b26*/
@@ -404,7 +404,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   v11 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(a6); /*0x6f898d*/
   if ( a10 != -1 ) /*0x6f8992*/
   {
-    v12 = (*((int (**)(TechnoClass *))a1->RadioClass + 33))(a1); /*0x6f899a*/
+    v12 = (*((int (**)(TechnoClass *))a1->vtable1 + 33))(a1); /*0x6f899a*/
     if ( ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex(a6, *(unsigned int *)(v12 + 1460), 1) != a10 ) /*0x6f89b4*/
       return 0; /*0x6f89bc*/
   }
@@ -417,7 +417,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   v25 = 0; /*0x6f89db*/
   if ( transporter ) /*0x6f89e0*/
   {
-    if ( *(unsigned char *)((*((int (**)(TechnoClass *))transporter->RadioClass + 33))(transporter) + 1508) ) /*0x6f89ea*/
+    if ( *(unsigned char *)((*((int (**)(TechnoClass *))transporter->vtable1 + 33))(transporter) + 1508) ) /*0x6f89ea*/
     {
       mindControlledBy = a1->transporter->mindControlledBy; /*0x6f89fa*/
       if ( mindControlledBy ) /*0x6f8a02*/
@@ -456,11 +456,11 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
       goto LABEL_34; /*0x6f8b43*/
   }
   if ( ((uint8_t)((Object *)((Object *)a1->owner))->IsAlliedWithObjectHouse(v14) || v25) /*0x6f8ac7*/
-    && !*(unsigned char *)((*((int (**)(TechnoClass *))a1->RadioClass + 33))(a1) + 1728)
+    && !*(unsigned char *)((*((int (**)(TechnoClass *))a1->vtable1 + 33))(a1) + 1728)
     && !a1->isBerserk
     && (!v25 || !owner || !(uint8_t)((Object *)(owner))->IsAlliedWithObjectHouse(v14)) )
   {
-    if ( (*((int (**)(TechnoClass *))a1->RadioClass + 11))(a1) != 15 ) /*0x6f8ada*/
+    if ( (*((int (**)(TechnoClass *))a1->vtable1 + 11))(a1) != 15 ) /*0x6f8ada*/
       goto LABEL_33; /*0x6f8ada*/
     if ( !IDA_LOBYTE(a1[1].airstrikeTintTimer[0]) ) /*0x6f8adc*/
     {
@@ -494,12 +494,12 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
     || ((TechnoClass *)(a1))->GetValue(-1) < 0
     || !(uint8_t)((House *)((House *)a1->owner))->IsCurrentPlayer()
     && a1
-    && (*((int (**)(TechnoClass *))a1->RadioClass + 11))(a1) == 15
-    && *(unsigned char *)(*((*((int (**)(TechnoClass *))a1->RadioClass + 11))(a1) == 15
+    && (*((int (**)(TechnoClass *))a1->vtable1 + 11))(a1) == 15
+    && *(unsigned char *)(*((*((int (**)(TechnoClass *))a1->vtable1 + 11))(a1) == 15
                   ? &a1[1].ironTintTimer[1]
                   : (int *)1728)
                 + 3779)
-    || *(unsigned char *)((*((int (**)(TechnoClass *))a1->RadioClass + 33))(a1) + 1728)
+    || *(unsigned char *)((*((int (**)(TechnoClass *))a1->vtable1 + 33))(a1) + 1728)
     || a1->isBerserk
     || v25 )
   {

@@ -53,11 +53,11 @@ TriggerClass * * TagClass::Destructor()
   int v20; // eax
   unsigned int v22[4]; // [esp+10h] [ebp-10h] BYREF
 
-  a1->AbstractClass = &vt_TagClass; /*0x6e4f69*/
+  a1->vtable1 = &vt_TagClass; /*0x6e4f69*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_TagClass); /*0x6e4f6f*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_TagClass); /*0x6e4f76*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_TagClass); /*0x6e4f7d*/
-  AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x6e4f84*/
+  AbstractClass::AnnounceExpiredPointer(a1, 1); /*0x6e4f84*/
   if ( byte_A8E9A0 ) /*0x6e4f90*/
   {
     if ( *((unsigned int *)((char *)&stru_A8EB00 + 376)) ) /*0x6e4f9d*/
@@ -223,7 +223,7 @@ LABEL_45:
     }
     while ( v20 < g_GameObjectCleanup ); /*0x6e520c*/
   }
-  AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x6e5212*/
+  AbstractClass::AnnounceExpiredPointer(a1, 1); /*0x6e5212*/
   return AbstractClass::DTOR((AbstractClass *)a1); /*0x6e521e*/
 
 }
@@ -280,7 +280,7 @@ int TagClass::Unlink(void *a1)
   *((unsigned int *)this + 15) = 0; /*0x71ae34*/
   *((unsigned int *)this + 14) = 0; /*0x71ae37*/
   if ( buildingType ) /*0x71ae3a*/
-    return (*((int (**)(TagTypeClass *, unsigned int, int))buildingType->AbstractClass + 289))(buildingType, 0, 1); /*0x71ae41*/
+    return (*((int (**)(TagTypeClass *, unsigned int, int))buildingType->vtable1 + 289))(buildingType, 0, 1); /*0x71ae41*/
   return result; /*0x71ae47*/
 
 }
@@ -374,7 +374,7 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e5746*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e574f*/
-      aP0->AbstractClass = &vt_TagClass; /*0x6e5754*/
+      aP0->vtable1 = &vt_TagClass; /*0x6e5754*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e575a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5761*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5768*/
@@ -431,7 +431,7 @@ TagClass * TagClass::ProcessTrigger(void ** Block, char a2)
   ((TagClass *)(Block))->Destructor(); /*0x6e58b3*/
   if ( (a2 & 1) != 0 ) /*0x6e58bd*/
     __3_YAXPAX_Z(Block); /*0x6e58c0*/
-  return &Block->AbstractClass; /*0x6e58ca*/
+  return Block; /*0x6e58ca*/
 
 }
 } // namespace gamemd

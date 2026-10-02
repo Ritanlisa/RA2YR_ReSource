@@ -71,7 +71,7 @@ unsigned int * RadBeam::InitState(int aP1)
   LOBYTE(this->data[37]) = 0; /*0x65944b*/
   BYTE1(this->data[37]) = 0; /*0x659451*/
   BYTE2(this->data[37]) = 0; /*0x659457*/
-  return &this->AbstractClass; /*0x65945d*/
+  return this; /*0x65945d*/
 
 }
 } // namespace ra2

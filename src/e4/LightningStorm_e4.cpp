@@ -71,9 +71,9 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
         if ( !LightningStorm_Owner /*0x539fc5*/
           || !(uint8_t)HouseClass::IsAlliedWith(
                                  LightningStorm_Owner,
-                                 *(void **)&dword_A8022C->AbstractClass[4 * v8]) )
+                                 *(void **)dword_A8022C[4 * v8]) )
         {
-          v9 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * v8]; /*0x539fd3*/
+          v9 = *(unsigned int *)dword_A8022C[4 * v8]; /*0x539fd3*/
           if ( !*(unsigned char *)(v9 + 501) && !dword_A8B538 ) /*0x539fe7*/
             HouseClass::CreateRadarOutage(v9, a1); /*0x539fea*/
         }

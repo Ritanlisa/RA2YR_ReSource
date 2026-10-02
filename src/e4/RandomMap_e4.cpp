@@ -2596,7 +2596,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                               v7);
   IntList = &v24; /*0x598300*/
   ((DynamicVectorClass *)(&v24))->Copy(&this->__pad_4C[316]); /*0x598304*/
-  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598316*/
+  *(unsigned int *)IntList->vtable1 = &vt_TypeList; /*0x598316*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x59832e*/
                                     v3,
                                     (int)&v27,
@@ -2618,7 +2618,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   ((VectorClass *)((int)&v27))->Destroy(); /*0x59835a*/
   IntList = &v24; /*0x598364*/
   ((DynamicVectorClass *)(&v24))->Copy((unsigned int *)this + 161); /*0x598369*/
-  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x59837b*/
+  *(unsigned int *)IntList->vtable1 = &vt_TypeList; /*0x59837b*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x598393*/
                                     v3,
                                     (int)&v27,
@@ -2640,7 +2640,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   ((VectorClass *)((int)&v27))->Destroy(); /*0x5983ba*/
   IntList = &v24; /*0x5983cb*/
   ((DynamicVectorClass *)(&v24))->Copy((unsigned int *)this + 168); /*0x5983cf*/
-  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x5983e1*/
+  *(unsigned int *)IntList->vtable1 = &vt_TypeList; /*0x5983e1*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x5983f9*/
                                     v3,
                                     (int)&v27,
@@ -2662,7 +2662,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   ((VectorClass *)((int)&v27))->Destroy(); /*0x598420*/
   IntList = &v24; /*0x598431*/
   ((DynamicVectorClass *)(&v24))->Copy(&this->__pad_4C[344]); /*0x598435*/
-  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598447*/
+  *(unsigned int *)IntList->vtable1 = &vt_TypeList; /*0x598447*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x59845f*/
                                     v3,
                                     (int)&v27,
@@ -2684,7 +2684,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   ((VectorClass *)((int)&v27))->Destroy(); /*0x598486*/
   IntList = &v24; /*0x598497*/
   ((DynamicVectorClass *)(&v24))->Copy(&this->__pad_4C[372]); /*0x59849b*/
-  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x5984ad*/
+  *(unsigned int *)IntList->vtable1 = &vt_TypeList; /*0x5984ad*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x5984c5*/
                                     v3,
                                     (int)&v27,
@@ -2706,7 +2706,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   ((VectorClass *)((int)&v27))->Destroy(); /*0x5984ec*/
   IntList = &v24; /*0x5984fd*/
   ((DynamicVectorClass *)(&v24))->Copy(&this->__pad_4C[400]); /*0x598501*/
-  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598513*/
+  *(unsigned int *)IntList->vtable1 = &vt_TypeList; /*0x598513*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x59852b*/
                                     v3,
                                     (int)&v27,
@@ -2728,7 +2728,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   ((VectorClass *)((int)&v27))->Destroy(); /*0x598552*/
   IntList = &v24; /*0x598563*/
   ((DynamicVectorClass *)(&v24))->Copy(&this->__pad_4C[428]); /*0x598567*/
-  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598579*/
+  *(unsigned int *)IntList->vtable1 = &vt_TypeList; /*0x598579*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x598591*/
                                     v3,
                                     (int)&v27,
@@ -2750,7 +2750,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   ((VectorClass *)((int)&v27))->Destroy(); /*0x5985b8*/
   IntList = &v24; /*0x5985c9*/
   ((DynamicVectorClass *)(&v24))->Copy((unsigned int *)this + 133); /*0x5985cd*/
-  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x5985df*/
+  *(unsigned int *)IntList->vtable1 = &vt_TypeList; /*0x5985df*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x5985f7*/
                                     v3,
                                     (int)&v27,
@@ -2772,7 +2772,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   ((VectorClass *)((int)&v27))->Destroy(); /*0x59861e*/
   IntList = &v24; /*0x59862f*/
   ((DynamicVectorClass *)(&v24))->Copy((unsigned int *)this + 140); /*0x598633*/
-  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598645*/
+  *(unsigned int *)IntList->vtable1 = &vt_TypeList; /*0x598645*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x59865d*/
                                     v3,
                                     (int)&v27,
@@ -2794,7 +2794,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   ((VectorClass *)((int)&v27))->Destroy(); /*0x598684*/
   IntList = &v24; /*0x598695*/
   ((DynamicVectorClass *)(&v24))->Copy((unsigned int *)this + 147); /*0x598699*/
-  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x5986ab*/
+  *(unsigned int *)IntList->vtable1 = &vt_TypeList; /*0x5986ab*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x5986c3*/
                                     v3,
                                     (int)&v27,
@@ -2817,7 +2817,7 @@ WeaponStruct * * RandomMap::LoadConfig()
     __3_YAXPAX_Z(*(void **)&v27.DynamicVector_field_0x1[3]); /*0x5986f7*/
   IntList = &v24; /*0x59870b*/
   ((DynamicVectorClass *)(&v24))->Copy((unsigned int *)this + 154); /*0x59870f*/
-  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598721*/
+  *(unsigned int *)IntList->vtable1 = &vt_TypeList; /*0x598721*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x598739*/
                                     v3,
                                     (int)&v27,

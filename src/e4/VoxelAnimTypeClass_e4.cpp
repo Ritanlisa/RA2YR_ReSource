@@ -75,7 +75,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
   this->Warhead = 0; /*0x74ae59*/
   this->AttachedSystem = 0; /*0x74ae5f*/
   this->IsTiberium = 0; /*0x74ae65*/
-  this->ObjectTypeClass = &vt_VoxelAnimTypeClass; /*0x74ae6b*/
+  this->vtable1 = &vt_VoxelAnimTypeClass; /*0x74ae6b*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ae71*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ae77*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ae7e*/
@@ -109,7 +109,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
     v4 = stru_A8EB00.ObjectTypeClass[14]++; /*0x74af4a*/
     *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * v4) = this; /*0x74af59*/
   }
-  return &this->ObjectTypeClass; /*0x74af5e*/
+  return this; /*0x74af5e*/
 
 }
 }
@@ -491,7 +491,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
   int v4; // eax
   VoxelAnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ObjectTypeClass = &vt_VoxelAnimTypeClass; /*0x74ba36*/
+  Block->vtable1 = &vt_VoxelAnimTypeClass; /*0x74ba36*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ba3c*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ba43*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ba4a*/
@@ -534,7 +534,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
   ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x74bb02*/
   if ( (a2 & 1) != 0 ) /*0x74bb0c*/
     __3_YAXPAX_Z(Block); /*0x74bb0f*/
-  return &Block->ObjectTypeClass; /*0x74bb19*/
+  return Block; /*0x74bb19*/
 
 }
 } // namespace gamemd
@@ -568,7 +568,7 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x74b82a*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x74b833*/
-      aP0->ObjectTypeClass = &vt_VoxelAnimTypeClass; /*0x74b838*/
+      aP0->vtable1 = &vt_VoxelAnimTypeClass; /*0x74b838*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74b83e*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74b845*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74b84c*/

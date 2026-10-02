@@ -2137,7 +2137,7 @@ LABEL_65:
       && !Game::Stub3((int)v31)
       && *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14) + 17) != -1 )
     {
-      if ( *(unsigned char *)(*(unsigned int *)&dword_A83D84->TechnoTypeClass[4 /*0x692abc*/
+      if ( *(unsigned char *)(*(unsigned int *)dword_A83D84[4 /*0x692abc*/
                                                               * *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14)
                                                                 + 17)]
                     + 680) )
@@ -2146,7 +2146,7 @@ LABEL_65:
         {
           v26 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(v14); /*0x692adc*/
           v30 = 12; /*0x692af4*/
-          if ( (uint8_t)House::IsHumanPlayer(*(void **)&dword_A8022C->AbstractClass[4 * v26[20]]) ) /*0x692aed*/
+          if ( (uint8_t)House::IsHumanPlayer(*(void **)dword_A8022C[4 * v26[20]]) ) /*0x692aed*/
             goto LABEL_81; /*0x692afc*/
         }
       }

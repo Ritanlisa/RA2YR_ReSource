@@ -155,7 +155,7 @@ void sub_46D8B0()
     v1 = 1; /*0x46d909*/
   if ( dword_A8B23C ) /*0x46d913*/
   {
-    if ( (*((uint8_t (**)(ObjectClass *, unsigned int))dword_A8B23C->AbstractClass + 7))( /*0x46d918*/
+    if ( (*((uint8_t (**)(ObjectClass *, unsigned int))dword_A8B23C->vtable1 + 7))( /*0x46d918*/
            dword_A8B23C,
            *(unsigned int *)&stru_A8D600.__pad_64[7]) )
     {
@@ -167,7 +167,7 @@ void sub_46D8B0()
       PlayerSide = ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->GetPlayerSide(); /*0x46d93a*/
       if ( !vtable0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
       {
-        v8 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 10))(dword_A8B23C); /*0x46d958*/
+        v8 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 10))(dword_A8B23C); /*0x46d958*/
         ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->SetPlayerOption(v8); /*0x46d960*/
       }
     }

@@ -1123,7 +1123,7 @@ int HouseClass::CanAlly(HouseClass * aP1)
     do /*0x50162c*/
     {
       v9 = *(unsigned int *)v7->AbstractClass; /*0x5015d9*/
-      if ( !*(unsigned char *)(*(unsigned int *)v7->AbstractClass + 501) && !*(unsigned char *)(*(unsigned int *)(v9 + 52) + 422) ) /*0x5015e8*/
+      if ( !*(unsigned char *)(*(unsigned int *)v7->vtable1 + 501) && !*(unsigned char *)(*(unsigned int *)(v9 + 52) + 422) ) /*0x5015e8*/
       {
         ++v5; /*0x5015f1*/
         if ( v9 ) /*0x5015f4*/
@@ -1161,7 +1161,7 @@ int HouseClass::CanDetect()
   result = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x501640*/
   v2 = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5301); /*0x50164d*/
   if ( dword_A8B23C /*0x501662*/
-    && (result = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C), (unsigned char)result)
+    && (result = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 1))(dword_A8B23C), (unsigned char)result)
     || v2 )
   {
     result = (int)dword_A8B230; /*0x501668*/
@@ -2730,7 +2730,7 @@ int HouseClass::GetCameoTypeIndex(int a2)
   unsigned int *v2; // eax
   int v3; // ecx
 
-  v2 = (unsigned int *)(*((int (**)(HouseClass *))this->AbstractClass + 39))(this); /*0x5471b2*/
+  v2 = (unsigned int *)(*((int (**)(HouseClass *))this->vtable1 + 39))(this); /*0x5471b2*/
   if ( v2 && (v3 = v2[a2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x5471d3*/
     return *(char *)(v3 + 42); /*0x5471d5*/
   else
@@ -3119,7 +3119,7 @@ int HouseClass::SetPrimaryFactory(int a2)
   if ( a2 == -1 || this->builtInfantryTypes[233] != -1 ) /*0x740e00*/
     return 0; /*0x740e17*/
   this->builtInfantryTypes[233] = a2; /*0x740e02*/
-  (*((void (**)(HouseClass *, int))this->AbstractClass + 73))(this, 2); /*0x740e0c*/
+  (*((void (**)(HouseClass *, int))this->vtable1 + 73))(this, 2); /*0x740e0c*/
   return 1; /*0x740e14*/
 
 }
@@ -3235,7 +3235,7 @@ namespace gamemd {
 std::locale::facet * HouseClass::initAngerStruct(char a2)
 {
 
-  this->AbstractClass = &vt_VersionClass; /*0x4e8279*/
+  this->vtable1 = &vt_VersionClass; /*0x4e8279*/
   if ( (a2 & 1) != 0 ) /*0x4e827f*/
     __3_YAXPAX_Z(this); /*0x4e8282*/
   return (std::locale::facet *)this; /*0x4e828c*/
@@ -3491,7 +3491,7 @@ int HouseClass::QueryInterface(CCINIClass * aP0, const void * a1, unsigned int *
     *a2 = aP0; /*0x4f68ed*/
   if ( !*a2 ) /*0x4f68ef*/
     return -2147467262; /*0x4f68f4*/
-  (*((void (**)(HouseClass *))aP0->AbstractClass + 1))(aP0); /*0x4f68ff*/
+  (*((void (**)(HouseClass *))aP0->vtable1 + 1))(aP0); /*0x4f68ff*/
   return 0; /*0x4f683d*/
 
 }
@@ -3627,7 +3627,7 @@ unsigned int * HouseClass::SDDTORAllAndTriggers()
     while ( v6 < dword_A8EAF8 ); /*0x4fb99b*/
   }
   if ( this ) /*0x4fb99f*/
-    return (*((unsigned int *(**)(HouseClass *, int))this->AbstractClass + 8))(this, 1); /*0x4fb9a7*/
+    return (*((unsigned int *(**)(HouseClass *, int))this->vtable1 + 8))(this, 1); /*0x4fb9a7*/
   return result; /*0x4fb9aa*/
 
 }
