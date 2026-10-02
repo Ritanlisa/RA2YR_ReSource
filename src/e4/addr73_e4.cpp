@@ -1485,7 +1485,7 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
   v11 = 0; /*0x733e8c*/
   if ( v9 ) /*0x733e93*/
   {
-    VectorClass::Construct(v9, 0, 0); /*0x733e99*/
+    ((VectorClass *)(v9))->Construct(0, 0); /*0x733e99*/
     v10[4] = 0; /*0x733e9e*/
     v11 = v10; /*0x733ea1*/
     *v10 = (void*)&DynamicVectorClass_int_vftable; /*0x733ea3*/

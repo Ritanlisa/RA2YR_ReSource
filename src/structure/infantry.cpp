@@ -1,4 +1,8 @@
 #include "structure/infantry.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/MapSeed_e4.hpp"
+#include "e4/classes/CellCoord_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 #include "type/infantry_type.hpp"  // InfantryTypeClass full definition (Type->Engineer access)
 
 #include <cstring>

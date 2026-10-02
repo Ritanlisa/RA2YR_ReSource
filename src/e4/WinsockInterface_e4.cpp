@@ -24,6 +24,7 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/WonlineStringDialogControl_28_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x770270
 namespace gamemd {
@@ -66,7 +67,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   *((unsigned int *)this + 237) = 0; /*0x7702fc*/
   *((unsigned char *)this + 952) = 1; /*0x770305*/
   *((unsigned int *)this + 239) = 0; /*0x77030c*/
-  VectorClass::WstringConstructor((unsigned int *)this + 240, 0, 0); /*0x770312*/
+  ((VectorClass *)((unsigned int *)this + 240))->WstringConstructor(0, 0); /*0x770312*/
   *((unsigned int *)this + 240) = (unsigned int)(&vt_DynamicVectorClass); /*0x770317*/
   *((unsigned int *)this + 245) = 10; /*0x77031d*/
   *((unsigned int *)this + 244) = 0; /*0x770324*/

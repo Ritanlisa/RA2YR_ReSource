@@ -164,7 +164,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
 
   if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2), &g_INI_DefaultBuffer, String, 128) ) /*0x52545c*/
   {
-    VectorClass::Construct(&v22, 0, 0); /*0x525471*/
+    ((VectorClass *)(&v22))->Construct(0, 0); /*0x525471*/
     v24 = 10; /*0x52547a*/
     v23 = 0; /*0x525488*/
     v22.vtable0 = (void*)&TypeList_int_vftable; /*0x52548c*/
@@ -283,7 +283,7 @@ LABEL_11:
                 v13 = (uint8_t **)v10->HashTable_field_0x10; /*0x5282bf*/
                 if ( v13 && *v13 == v8 ) /*0x5282c8*/
                   goto LABEL_16; /*0x5282c8*/
-                v14 = HashTable::BinarySearchAlt(v10, (int *)&a3); /*0x5282d1*/
+                v14 = ((HashTable *)(v10))->BinarySearchAlt((int *)&a3); /*0x5282d1*/
                 if ( v14 ) /*0x5282d8*/
                 {
                   v10->HashTable_field_0x10 = v14; /*0x5282de*/
@@ -303,7 +303,7 @@ LABEL_29:
               }
               return a4; /*0x5283a8*/
             }
-            v12 = HashTable::BinarySearchAlt(v10, (int *)&a3); /*0x5282a0*/
+            v12 = ((HashTable *)(v10))->BinarySearchAlt((int *)&a3); /*0x5282a0*/
             if ( v12 ) /*0x5282a7*/
             {
               v10->HashTable_field_0x10 = v12; /*0x5282ad*/
@@ -328,7 +328,7 @@ LABEL_29:
           this->attachedBomb = (unsigned int)(v18); /*0x52833a*/
         }
         a2 = v16; /*0x528341*/
-        if ( (uint8_t)HashTable::BinarySearch(&this->owningHouseIndex, (int *)&a2) ) /*0x528348*/
+        if ( (uint8_t)((HashTable *)(&this->owningHouseIndex))->BinarySearch((int *)&a2) ) /*0x528348*/
           p_vtable1 = &this->((unsigned int *)attachedBomb)[0]; /*0x528354*/
         else
           p_vtable1 = (void **)&unk_B7882C; /*0x528359*/
@@ -395,7 +395,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
     v18 = (gamemd::Checksummer *)((Checksummer *)KeyValuePair::Init(v26, 0)); /*0x529fb7*/
     v19 = Checksummer::Add_Buffer(v18, (uint8_t *)v7, v17 - 1); /*0x529fca*/
     v23 = v19; /*0x529fcf*/
-    if ( !(uint8_t)HashTable::BinarySearch(&this->owningHouseIndex, &v23) /*0x529ff0*/
+    if ( !(uint8_t)((HashTable *)(&this->owningHouseIndex))->BinarySearch(&v23) /*0x529ff0*/
       || (v24 = v19, (vtable2 = *(int **)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v24)) == 0) )
     {
       ((unsigned int *)this)[0] = 0; /*0x52a006*/
@@ -486,7 +486,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
     memset(&v21, 0, 12); /*0x52a256*/
     *(float *)&v16 = COERCE_FLOAT(Checksummer::Add_Buffer(&v21, a3, strlen((const char *)a3))); /*0x52a280*/
     a3 = v16; /*0x52a285*/
-    if ( !(uint8_t)HashTable::BinarySearch(&this->owningHouseIndex, (int *)&a3) /*0x52a2a6*/
+    if ( !(uint8_t)((HashTable *)(&this->owningHouseIndex))->BinarySearch((int *)&a3) /*0x52a2a6*/
       || (v20 = (int)v16, (vtable2 = *(int **)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v20)) == 0) )
     {
       ((unsigned int *)this)[0] = 0; /*0x52a2b9*/
@@ -589,7 +589,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
     v18 = (Checksummer *)KeyValuePair::Init(&v26, 0); /*0x52a44f*/
     v19 = Checksummer::Add_Buffer(v18, (uint8_t *)v7, v17 - 1); /*0x52a462*/
     v23 = v19; /*0x52a467*/
-    if ( !(uint8_t)HashTable::BinarySearch(&this->owningHouseIndex, &v23) /*0x52a488*/
+    if ( !(uint8_t)((HashTable *)(&this->owningHouseIndex))->BinarySearch(&v23) /*0x52a488*/
       || (v24 = v19, (vtable2 = *(int **)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v24)) == 0) )
     {
       ((unsigned int *)this)[0] = 0; /*0x52a49e*/

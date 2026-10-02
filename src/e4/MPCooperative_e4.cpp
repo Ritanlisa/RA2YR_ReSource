@@ -462,7 +462,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   v11 = 8; /*0x5c14d3*/
   do /*0x5c14f5*/
   {
-    VectorClass::Construct(MPCooperative_field_0x1A4, 0, 0); /*0x5c14dc*/
+    ((VectorClass *)(MPCooperative_field_0x1A4))->Construct(0, 0); /*0x5c14dc*/
     MPCooperative_field_0x1A4->vtable0 = &vt_DynamicVectorClass; /*0x5c14e1*/
     MPCooperative_field_0x1A4[1].Items = (void *)10; /*0x5c14e7*/
     MPCooperative_field_0x1A4[1].vtable0 = 0; /*0x5c14ee*/
@@ -474,7 +474,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   v13 = 8; /*0x5c14fd*/
   do /*0x5c151f*/
   {
-    VectorClass::Construct(p_MPCooperative_field_0x264, 0, 0); /*0x5c1506*/
+    ((VectorClass *)(p_MPCooperative_field_0x264))->Construct(0, 0); /*0x5c1506*/
     p_MPCooperative_field_0x264->vtable0 = &vt_DynamicVectorClass; /*0x5c150b*/
     p_MPCooperative_field_0x264[1].Items = (void *)10; /*0x5c1511*/
     p_MPCooperative_field_0x264[1].vtable0 = 0; /*0x5c1518*/

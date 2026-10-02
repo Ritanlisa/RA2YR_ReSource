@@ -54,6 +54,9 @@
 #include "e4/classes/Diplomacy_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/ScriptTypeClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x650A90
 namespace gamemd {

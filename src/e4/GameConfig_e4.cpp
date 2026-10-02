@@ -30,6 +30,7 @@
 #include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/GenericList_e4.hpp"
 #include "e4/classes/Hash_e4.hpp"
+#include "e4/classes/GenericNode_e4.hpp"
 
 // 0x5E84D0
 namespace gamemd {

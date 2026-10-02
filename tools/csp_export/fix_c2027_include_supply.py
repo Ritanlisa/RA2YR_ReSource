@@ -65,6 +65,12 @@ for t, tus in sorted(type_tus.items(), key=lambda kv: -mentions[kv[0]]):
         continue
     inc = 'e4/classes/%s' % fn
     for tu in tus:
+        # G42.5: e4-universe TUs only -- core/mixed TUs already carry core
+        # definitions; injecting an e4 flat class there is the load_options
+        # C2011 incident pattern
+        if '/e4/' not in tu.replace('\\', '/'):
+            stats['skip-non-e4-tu'] += 1
+            continue
         try:
             lines = open(tu, encoding='utf-8', errors='replace').read().split('\n')
         except OSError:

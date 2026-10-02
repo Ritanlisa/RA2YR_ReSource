@@ -73,7 +73,7 @@ void sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
       case 0x497u: /*0x792d68*/
         SendMessageA(hWnd, 0x4A9u, 0, 1); /*0x792d8d*/
         SetTimer(hWnd, 0x45u, uElapse, 0); /*0x792d9e*/
-        HashTable::LookupAndMark(hWnd); /*0x792da6*/
+        ((HashTable *)(hWnd))->LookupAndMark(); /*0x792da6*/
         DlgItem = GetDlgItem(hWnd, 1961); /*0x792dbf*/
         PostMessageA(DlgItem, 0x4D5u, 0, 0); /*0x792dc9*/
         PostMessageA(DlgItem, 0x4D3u, 0, 0); /*0x792dd5*/
@@ -145,7 +145,7 @@ void sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
       SendMessageA(v9, 0xF1u, 0, 0); /*0x7933ed*/
     }
     SendMessageA(hWnd, 0x4A9u, 0, 1); /*0x793403*/
-    HashTable::LookupAndMark(hWnd); /*0x793407*/
+    ((HashTable *)(hWnd))->LookupAndMark(); /*0x793407*/
     ShowWindow(hWnd, 5); /*0x79340f*/
     return 0; /*0x793418*/
   }
@@ -4633,7 +4633,7 @@ AbstractClass * * int WOL_RefreshChannelList()
           4 * (*(unsigned int *)&stru_B76900.needsRedraw + 0x3FFFFFFF * (v8 + 1)));
         --*(unsigned int *)&stru_B76900.needsRedraw; /*0x79d086*/
         if ( 3 * *(unsigned int *)&stru_B76900.needsRedraw <= *(int *)&stru_B76900.hasParachute ) /*0x79d095*/
-          VectorClass::Shrink((VectorClass *)&stru_B76900.needsRedraw); /*0x79d09c*/
+          ((VectorClass *)((VectorClass *)&stru_B76900.needsRedraw))->Shrink(); /*0x79d09c*/
       }
     }
     *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x79d0a8*/

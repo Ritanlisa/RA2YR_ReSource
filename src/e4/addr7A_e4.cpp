@@ -40,6 +40,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/Flag_e4.hpp"
 #include "e4/classes/Performance_e4.hpp"
+#include "e4/classes/StringVector_e4.hpp"
 
 // 0x7A0430
 namespace gamemd {
@@ -511,7 +512,7 @@ Coord * * WOL_ProcessPingRequests()
                 (const void *)(((char *)&stru_B76AC4) + 4 * (unsigned int)(v11 + 1)),
                 4 * ((int)((char *)&stru_B76AC4) + 0x3FFFFFFF * (unsigned int)(v11 + 1)));
               if ( 3 * (int)--((char *)&stru_B76AC4) <= ((char *)&stru_B76AC4) ) /*0x7a12ef*/
-                VectorClass::Shrink((VectorClass *)&((char *)&stru_B76AC4)); /*0x7a12f6*/
+                ((VectorClass *)((VectorClass *)&((char *)&stru_B76AC4)))->Shrink(); /*0x7a12f6*/
             }
           }
           goto LABEL_36; /*0x7a12f6*/
@@ -620,7 +621,7 @@ Coord * * UpdateWOLLobbyPings()
               4 * (stru_B76900.estimatedHealth + 0x3FFFFFFF * (v2 + 1)));
             --stru_B76900.estimatedHealth; /*0x7a140f*/
             if ( 3 * stru_B76900.estimatedHealth <= *(int *)&stru_B76900.isOnMap ) /*0x7a141e*/
-              VectorClass::Shrink((VectorClass *)&stru_B76900.estimatedHealth); /*0x7a1425*/
+              ((VectorClass *)((VectorClass *)&stru_B76900.estimatedHealth))->Shrink(); /*0x7a1425*/
           }
         }
         String::GetOrEmpty(&v19); /*0x7a142e*/

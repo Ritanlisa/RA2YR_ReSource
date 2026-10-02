@@ -23,6 +23,11 @@
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/BTree_e4.hpp"
+#include "e4/classes/VoxClass_e4.hpp"
+#include "e4/classes/Struct_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
 
 // 0x530460
 namespace gamemd {

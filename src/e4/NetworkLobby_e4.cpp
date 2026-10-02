@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/MessageListClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
@@ -42,6 +43,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/GameSetup_e4.hpp"
 #include "e4/classes/Lobby_e4.hpp"
+#include "e4/classes/LoadScreen_e4.hpp"
 
 // 0x5D4210
 namespace gamemd {

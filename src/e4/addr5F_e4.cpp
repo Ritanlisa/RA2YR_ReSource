@@ -43,6 +43,10 @@
 #include "e4/classes/Skirmish_e4.hpp"
 #include "e4/classes/MessageListClass_e4.hpp"
 #include "e4/classes/EventQueue_e4.hpp"
+#include "e4/classes/Draw_e4.hpp"
+#include "e4/classes/XSurface_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/Surface_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {

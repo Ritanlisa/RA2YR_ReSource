@@ -1862,10 +1862,10 @@ int Render_Get(ScoreScreen * aP0)
         && (uint8_t)HouseClass::IsAlliedWith((void *)v4, aP0)
         || aP0 == (void *)v4 )
       {
-        v5 = VectorClass::GetCount((unsigned int *)(v4 + 21840)) + v2; /*0x68eddd*/
-        v6 = VectorClass::GetCount((unsigned int *)(v4 + 21860)) + v5; /*0x68edea*/
-        v7 = VectorClass::GetCount((unsigned int *)(v4 + 21880)) + v6; /*0x68edf7*/
-        v2 = VectorClass::GetCount((unsigned int *)(v4 + 21900)) + v7; /*0x68ee0c*/
+        v5 = ((VectorClass *)((unsigned int *)(v4 + 21840)))->GetCount() + v2; /*0x68eddd*/
+        v6 = ((VectorClass *)((unsigned int *)(v4 + 21860)))->GetCount() + v5; /*0x68edea*/
+        v7 = ((VectorClass *)((unsigned int *)(v4 + 21880)))->GetCount() + v6; /*0x68edf7*/
+        v2 = ((VectorClass *)((unsigned int *)(v4 + 21900)))->GetCount() + v7; /*0x68ee0c*/
         v1 += v4->killedBuildingsOfHouses + v4->q5488; /*0x68ee0e*/
       }
       ++v10; /*0x68ee1d*/

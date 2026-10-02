@@ -32,6 +32,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/SuperWeapon_e4.hpp"
 
 // 0x453E20
 namespace gamemd {
@@ -662,7 +663,7 @@ int BuildingClass::FindInPointerArray(unsigned int * a2)
 }
 // 0x5F5E80
 namespace gamemd {
-int BuildingClass::SaveLoad_Register(void *a1)
+int BuildingClass::SaveLoad_Register()
 {
 
   int result; // eax

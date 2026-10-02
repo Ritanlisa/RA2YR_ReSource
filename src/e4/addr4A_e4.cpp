@@ -60,6 +60,7 @@
 #include "e4/classes/Text_e4.hpp"
 #include "e4/classes/Surface_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/BuildingAnim_e4.hpp"
 
 // 0x4A0190
 namespace gamemd {

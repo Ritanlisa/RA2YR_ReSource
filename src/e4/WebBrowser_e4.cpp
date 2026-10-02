@@ -21,6 +21,7 @@
 #include "e4/classes/Flag_e4.hpp"
 #include "e4/classes/Weapon_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x773600
 namespace gamemd {

@@ -32,6 +32,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/DiskLaserClass_e4.hpp"
 struct Type;  // fix_tu_missing_types
 
 // 0x438E70

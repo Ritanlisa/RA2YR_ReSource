@@ -39,6 +39,9 @@
 #include "e4/classes/Triple_e4.hpp"
 #include "e4/classes/Vector3_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/Transform_e4.hpp"
+#include "e4/classes/Turret_e4.hpp"
+#include "e4/classes/Matrix3x4_e4.hpp"
 
 // 0x439B00
 namespace gamemd {

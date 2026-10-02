@@ -38,6 +38,7 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/ListClass_e4.hpp"
 
 // 0x4B0500
 namespace gamemd {

@@ -57,6 +57,7 @@
 #include "e4/classes/TextGroup_e4.hpp"
 #include "e4/classes/Text_e4.hpp"
 #include "e4/classes/Font_e4.hpp"
+#include "e4/classes/DialogClass_e4.hpp"
 
 // 0x620050
 namespace gamemd {

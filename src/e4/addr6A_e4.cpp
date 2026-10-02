@@ -50,6 +50,7 @@
 #include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/RulesClass_e4.hpp"
 
 // 0x6A6AF0
 namespace gamemd {

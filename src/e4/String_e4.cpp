@@ -16,6 +16,7 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/Struct_e4.hpp"
 #include "e4/classes/E4Recv_7B6280_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x49B760
 namespace gamemd {

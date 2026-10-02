@@ -28,6 +28,7 @@
 #include "e4/classes/DriveLocomotionClass_e4.hpp"
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x4B5B70
 namespace gamemd {

@@ -41,6 +41,7 @@
 #include "e4/classes/GameSetup_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
 
 // 0x46F600
 namespace gamemd {

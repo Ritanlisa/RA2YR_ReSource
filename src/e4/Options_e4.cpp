@@ -38,6 +38,9 @@
 #include "e4/classes/Struct_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
 
 // 0x4F11B0
 namespace gamemd {

@@ -1,5 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/FileStraw_e4.hpp"
+#include "e4/classes/GenericList_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_763700_e4.hpp"
@@ -75,6 +78,10 @@
 #include "e4/classes/E4Recv_7AF3D0_e4.hpp"
 #include "e4/classes/Techno_e4.hpp"
 #include "e4/classes/AudioSource_e4.hpp"
+#include "e4/classes/GenericNode_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/Conflict_e4.hpp"
 #include "e4/classes/WDTClass_e4.hpp"
 

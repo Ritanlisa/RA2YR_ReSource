@@ -39,6 +39,8 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "app/cmdline.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x560BF0
 namespace gamemd {

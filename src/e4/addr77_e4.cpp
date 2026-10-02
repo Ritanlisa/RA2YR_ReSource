@@ -64,6 +64,9 @@
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/VocClass_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x770E70
 namespace gamemd {

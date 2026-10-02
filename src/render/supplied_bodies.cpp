@@ -1,6 +1,7 @@
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
 #include "core/stream_ext.hpp"
+#include "e4/classes/Cell_e4.hpp"
 #include "core/utility_ext.hpp"
 #include "core/vector.hpp"
 #include "misc/misc_ext.hpp"

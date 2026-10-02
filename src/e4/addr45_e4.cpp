@@ -42,6 +42,7 @@
 #include "e4/classes/E4Recv_431BC0_e4.hpp"
 #include "e4/classes/XSurface_e4.hpp"
 #include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/Matrix3x4_e4.hpp"
 
 // 0x451400
 namespace gamemd {

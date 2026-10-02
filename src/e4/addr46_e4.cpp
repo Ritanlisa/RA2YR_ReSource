@@ -272,11 +272,11 @@ void sub_46DA70()
       while ( v10 ); /*0x46db68*/
       ((unsigned int *)(dword_A8D23C))[v4] = v5; /*0x46db6a*/
       ((unsigned int *)(dword_A8D22C))[v4] = v2->u32_5488 + v2->u32_5434; /*0x46db84*/
-      Count = VectorClass::GetCount((unsigned int *)(v2 + 21840)); /*0x46db95*/
-      v13 = VectorClass::GetCount((unsigned int *)(v2 + 21860)) + Count; /*0x46dba2*/
-      v14 = VectorClass::GetCount((unsigned int *)(v2 + 21880)) + v13; /*0x46dbaf*/
+      Count = ((VectorClass *)((unsigned int *)(v2 + 21840)))->GetCount(); /*0x46db95*/
+      v13 = ((VectorClass *)((unsigned int *)(v2 + 21860)))->GetCount() + Count; /*0x46dba2*/
+      v14 = ((VectorClass *)((unsigned int *)(v2 + 21880)))->GetCount() + v13; /*0x46dbaf*/
       ((unsigned int *)(dword_A8D24C))[v4] = v2->u32_5488 /*0x46dbc8*/
-                       + VectorClass::GetCount((unsigned int *)(v2 + 21900))
+                       + ((VectorClass *)((unsigned int *)(v2 + 21900)))->GetCount()
                        + v14
                        + v2->u32_5434;
       v15 = v2->u32_54E8; /*0x46dbce*/

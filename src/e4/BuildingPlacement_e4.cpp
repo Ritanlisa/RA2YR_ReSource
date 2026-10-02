@@ -465,7 +465,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   v8 = v7; /*0x594fd1*/
   if ( v7 ) /*0x594fd8*/
   {
-    VectorClass::CellConstructor(v7, 0, 0); /*0x594fde*/
+    ((VectorClass *)(v7))->CellConstructor(0, 0); /*0x594fde*/
     v8->vtable0 = &vt_DynamicVectorClass; /*0x594fe3*/
     v8[1].Items = (void *)10; /*0x594fe9*/
     v8[1].vtable0 = 0; /*0x594ff0*/

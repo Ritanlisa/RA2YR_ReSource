@@ -32,6 +32,8 @@
 #include "e4/classes/AudioSample_e4.hpp"
 #include "e4/classes/DListNode_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/AudioMixer_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
 
 // 0x660840
 namespace gamemd {

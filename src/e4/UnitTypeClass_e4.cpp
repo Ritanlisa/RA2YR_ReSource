@@ -19,6 +19,8 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/OverlayTypeClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x6B4DD0
 namespace gamemd {

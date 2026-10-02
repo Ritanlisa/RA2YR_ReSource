@@ -1,5 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Pipe_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -37,6 +40,13 @@
 #include "e4/classes/Mixer_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Movement_e4.hpp"
+#include "e4/classes/TerrainClass_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x4112D0
 namespace gamemd {
@@ -397,7 +407,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
   return Pipe::Dtor(&v18); /*0x4ada1b*/
 
 }
-} // namespace gamemd
+int MapClass::SetScrollMode(int aP1)
 // 0x4AEB30
 namespace gamemd {
 int MapClass::SetScrollMode(int aP1)
@@ -1840,7 +1850,7 @@ BombClass * * MapClass::DecompressCellData(MouseClass * aP1, void *a2)
   return v13 + v12; /*0x56b58c*/
 
 }
-} // namespace gamemd
+int MapClass::GetTileIndex(int16_t *aP1, int aP2, char aP3)
 // 0x56D230
 namespace gamemd {
 int MapClass::GetTileIndex(int16_t *aP1, int aP2, char aP3)
@@ -2522,7 +2532,7 @@ LABEL_34:
     }
     v39 = (v11[80] & 0x800) != 0 ? 6 : 0;
     *(unsigned int *)v63 = v31; /*0x574f81*/
-    VectorClass::CellConstructor(&v69, 0, 0); /*0x574f85*/
+    ((VectorClass *)(&v69))->CellConstructor(0, 0); /*0x574f85*/
     v40 = *(int16_t **)v63; /*0x574f8a*/
     occupationFlags = v2->occupationFlags; /*0x574f8e*/
     v69.vtable0 = &vt_DynamicVectorClass; /*0x574f99*/
@@ -3940,7 +3950,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
         v12 = v11; /*0x5a050e*/
         if ( v11 ) /*0x5a0515*/
         {
-          VectorClass::CellConstructor(v11, 0, 0); /*0x5a051b*/
+          ((VectorClass *)(v11))->CellConstructor(0, 0); /*0x5a051b*/
           v12->vtable0 = &vt_DynamicVectorClass; /*0x5a0520*/
           v12[1].Items = (void *)10; /*0x5a0526*/
           v12[1].vtable0 = 0; /*0x5a052d*/
@@ -4502,7 +4512,7 @@ int MapClass::UpdateLightingPostProcess()
   for ( result = LayerClass::CellIteratorNext(&dword_87F7E8); result; result = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x4ae4d6*/
     TacticalMap::ComputeScreenTint(result); /*0x4ae4da*/
   return result; /*0x4ae4ed*/
-
+int MapClass::GetScrollMode()
 }
 // 0x4AEB10
 int MapClass::GetScrollMode()

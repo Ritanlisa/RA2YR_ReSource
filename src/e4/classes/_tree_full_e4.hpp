@@ -53,6 +53,8 @@ struct DynamicVectorClass {
     bool IsAllocated;  // 0xD
     int Count;  // 0x10
     int CapacityIncrement;  // 0x14
+    unsigned int * Construct(int a2, int a3);  // 0x477db0
+    unsigned int * AnimTypeConstructor(int a2, int a3);  // 0x525250
 };
 
 struct FractalNoise {
@@ -83,6 +85,9 @@ struct HashTable {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
+    int LookupAndMark();  // 0x608440
+    int BinarySearchAlt(int *a2);  // 0x52b4f0
+    int BinarySearch(int *a2);  // 0x52b390
 };
 
 struct KeywordType {
@@ -100,6 +105,7 @@ struct MSAnim {
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    int SetField(unsigned int a2);  // 0x5cb860
 };
 
 struct MSShapeAnim {
@@ -211,6 +217,19 @@ struct ObjectClass {
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
+    int updateStateFlags();  // 0x4e02c0
+    int processDeath();  // 0x74cd60
+    int SetAnim(int a2);  // 0x5f6060
+    int GetSizeMax();  // 0x4103e0
+    int processDamage();  // 0x6a5000
+    int DistanceTo(int a2);  // 0x5f6360
+    int * CalcTargetFacing(int *a2, int a3);  // 0x5f3db0
+    unsigned int * ctor();  // 0x5f3900
+    int StepCleanup(void *a2);  // 0x5f3e50
+    int FreeResources();  // 0x5f1960
+    int Dtor();  // 0x5f3b80
+    int Undeploy();  // 0x5f4d30
+    int PreDraw();  // 0x6d0f00
 };
 
 struct ReferenceCounted {
@@ -257,6 +276,17 @@ struct VectorClass {
     void* IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int tail_E;  // 0xE
+    int Shrink();  // 0x7ae730
+    unsigned int * CopyBuilding(unsigned int *a2);  // 0x67b180
+    unsigned int * BuildingTypeConstructor(int a2, int a3);  // 0x5105a0
+    unsigned int * WstringConstructor(int a2, unsigned int *a3);  // 0x69d7c0
+    int Cleanup2();  // 0x63e140
+    int Append(unsigned int *a2);  // 0x63e540
+    int RemoveAt(int a2);  // 0x6ce2d0
+    unsigned int * ConstructHSV(int a2, int a3);  // 0x628df0
+    int GetCount();  // 0x49fb60
+    unsigned int * Construct(int a2, int a3);  // 0x477be0
+    unsigned int * CellConstructor(int a2, int a3);  // 0x42fcb0
 };
 
 struct VectorCursor_uint_DynamicVectorClass_uint {

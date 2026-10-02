@@ -342,7 +342,7 @@ LABEL_9:
           if ( !LOBYTE(((unsigned int *)Block)[0]) ) /*0x63414b*/
           {
             LOBYTE(((unsigned int *)Block)[0]) = 1; /*0x63415a*/
-            VectorClass::Append((VectorClass *)&stru_AC4B30.__pad_EC[124], &aP1); /*0x63415e*/
+            ((VectorClass *)((VectorClass *)&stru_AC4B30.__pad_EC[124]))->Append(&aP1); /*0x63415e*/
           }
         }
       }
@@ -379,7 +379,7 @@ LABEL_9:
       if ( *(unsigned int **)&stru_AC4B30.__pad_70[80] == aP1 ) /*0x634240*/
         *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x634242*/
       ((unsigned int *)Block)[0] = (unsigned int)(&vt_VectorClass); /*0x63424b*/
-      VectorClass::Cleanup2((int)&((unsigned int *)Block)[0]); /*0x634251*/
+      ((VectorClass *)((int)&((unsigned int *)Block)[0]))->Cleanup2(); /*0x634251*/
       v16 = (void *)(((unsigned int *)Block)[0]); /*0x634256*/
       Block->AbstractClass = &vt_VectorClass; /*0x634259*/
       if ( v16 ) /*0x634261*/
@@ -659,7 +659,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
         ((FactoryClass *)((FactoryClass *)v4))->ClearObjects(); /*0x6361f7*/
         Team_Remove((ObjectClass *)v4); /*0x6361fe*/
         *(unsigned int *)(v4 + 32) = (unsigned int)(&vt_VectorClass); /*0x636206*/
-        VectorClass::Cleanup2(v4 + 32); /*0x63620c*/
+        ((VectorClass *)(v4 + 32))->Cleanup2(); /*0x63620c*/
         *(unsigned int *)v4 = (unsigned int)(&vt_VectorClass); /*0x636213*/
         VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v4); /*0x636219*/
         __3_YAXPAX_Z((void *)v4); /*0x63621f*/
@@ -1055,7 +1055,7 @@ LABEL_4:
       ((FactoryClass *)((FactoryClass *)v8))->ClearObjects(); /*0x636c75*/
       Team_Remove((ObjectClass *)v8); /*0x636c7c*/
       *(unsigned int *)(v8 + 32) = &vt_VectorClass; /*0x636c84*/
-      VectorClass::Cleanup2(v8 + 32); /*0x636c8a*/
+      ((VectorClass *)(v8 + 32))->Cleanup2(); /*0x636c8a*/
       *(unsigned int *)v8 = &vt_VectorClass; /*0x636c91*/
       VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v8); /*0x636c97*/
       __3_YAXPAX_Z((void *)v8); /*0x636c9d*/

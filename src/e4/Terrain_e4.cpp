@@ -28,6 +28,7 @@
 #include "e4/classes/TemporalClass_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x48B720
 namespace gamemd {
@@ -148,7 +149,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
     v64 = &g_MissionQueueFrame.briefing[130]; /*0x568e90*/
   }
   v63 = 0; /*0x568ea0*/
-  VectorClass::CellConstructor((VectorClass *)&v81, 0, 0); /*0x568ea5*/
+  ((VectorClass *)((VectorClass *)&v81))->CellConstructor(0, 0); /*0x568ea5*/
   v7 = g_TerrainSoundTable2; /*0x568eae*/
   v8 = g_TerrainSoundConfig; /*0x568eb4*/
   *(unsigned int *)v81.__pad_0 = &vt_DynamicVectorClass; /*0x568ebd*/
@@ -1535,7 +1536,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
     v31 = (v11[80] & 0x800) != 0 ? 6 : 0;
     *(unsigned int *)v81 = v23; /*0x570382*/
     LOBYTE(aP1) = 0; /*0x570386*/
-    VectorClass::CellConstructor(&v86, 0, 0); /*0x57038b*/
+    ((VectorClass *)(&v86))->CellConstructor(0, 0); /*0x57038b*/
     v32 = *(unsigned int *)v81; /*0x570390*/
     v86.vtable0 = &vt_DynamicVectorClass; /*0x570394*/
     v88 = 10; /*0x57039c*/
@@ -2020,7 +2021,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
     }
     v37 = (v11[80] & 0x800) != 0 ? 6 : 0;
     *(unsigned int *)v87 = v24; /*0x57386b*/
-    VectorClass::CellConstructor(&v92, 0, 0); /*0x57386f*/
+    ((VectorClass *)(&v92))->CellConstructor(0, 0); /*0x57386f*/
     v38 = *(unsigned int *)v87; /*0x573874*/
     v39 = *(unsigned int *)&this->__pad_122[2]; /*0x57387f*/
     v92.vtable0 = &vt_DynamicVectorClass; /*0x573885*/

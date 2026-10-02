@@ -68,7 +68,7 @@ void * Multiplayer::FindStartPositions(void *a1)
   v1 = 0; /*0x688387*/
   v2 = this; /*0x688389*/
   v21 = this; /*0x688391*/
-  VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
+  ((VectorClass *)(&v25))->CellConstructor(0, 0); /*0x688395*/
   v3 = (gamemd::AbstractClass *)(dword_A8B230); /*0x68839a*/
   v4 = 10; /*0x6883a0*/
   v25.vtable0 = &vt_DynamicVectorClass; /*0x6883a5*/

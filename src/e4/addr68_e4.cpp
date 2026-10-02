@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Progress_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_681070_e4.hpp"
 #include "e4/classes/E4Recv_681090_e4.hpp"
@@ -61,6 +62,13 @@
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/VeterancyStruct_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/EventQueue_e4.hpp"
+#include "e4/classes/AsyncIO_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Multiplayer_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x682640
 namespace gamemd {

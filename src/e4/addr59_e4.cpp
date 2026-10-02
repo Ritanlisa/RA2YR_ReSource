@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/e4_globals.hpp"
@@ -44,6 +45,8 @@
 #include "e4/classes/TileNode_e4.hpp"
 #include "e4/classes/MapSeed_e4.hpp"
 #include "e4/classes/GameConfig_e4.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/Surface_e4.hpp"
 
 // 0x5904B0
 namespace gamemd {
@@ -260,7 +263,7 @@ void FloodFillRandomMapTerrain(int a1, int a2, int a3)
   v6 = v5[2]; /*0x59444b*/
   v27 = v5; /*0x594456*/
   v29 = v6; /*0x59445a*/
-  VectorClass::CellConstructor(&v32, 0, 0); /*0x59445e*/
+  ((VectorClass *)(&v32))->CellConstructor(0, 0); /*0x59445e*/
   v7 = *(int16_t *)(a1 + 36) + g_MapCellWidth * *(int16_t *)(a1 + 38); /*0x594478*/
   v32 = (void*)&DynamicVectorClass_Cell_vftable; /*0x59447a*/
   v36 = 0; /*0x594482*/
@@ -977,11 +980,11 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
   v9 = 0; /*0x59a9dd*/
   v34 = aP2[1]; /*0x59a9df*/
   v33 = *aP2; /*0x59a9e9*/
-  VectorClass::Construct(&v43, 0, 0); /*0x59a9ed*/
+  ((VectorClass *)(&v43))->Construct(0, 0); /*0x59a9ed*/
   v43 = (void*)&DynamicVectorClass_int_vftable; /*0x59a9f8*/
   v48 = 10; /*0x59aa00*/
   v47 = 0; /*0x59aa0b*/
-  VectorClass::Construct(&v37, 0, 0); /*0x59aa12*/
+  ((VectorClass *)(&v37))->Construct(0, 0); /*0x59aa12*/
   v10 = 0; /*0x59aa1b*/
   v37 = (void*)&DynamicVectorClass_int_vftable; /*0x59aa1f*/
   v42 = 10; /*0x59aa27*/

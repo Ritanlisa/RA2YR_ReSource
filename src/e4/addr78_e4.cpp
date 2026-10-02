@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_785740_e4.hpp"
 #include "e4/classes/E4Recv_7864C0_e4.hpp"
@@ -40,6 +41,7 @@
 #include "e4/classes/VocClass_e4.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"
+#include "e4/classes/CChatEventSink_e4.hpp"
 
 // 0x780110
 namespace gamemd {

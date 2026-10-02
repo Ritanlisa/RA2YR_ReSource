@@ -21,6 +21,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x5A5B50
 namespace gamemd {

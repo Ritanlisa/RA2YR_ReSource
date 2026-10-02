@@ -11,6 +11,7 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x557AC0
 namespace gamemd {

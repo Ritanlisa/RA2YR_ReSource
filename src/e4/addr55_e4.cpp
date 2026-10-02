@@ -43,6 +43,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/PingPongBuffer_e4.hpp"
 #include "e4/classes/StructTable_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x550080
 namespace gamemd {

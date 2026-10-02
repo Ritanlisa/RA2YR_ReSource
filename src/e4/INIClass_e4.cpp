@@ -235,7 +235,7 @@ LABEL_29: v23 = (char *)(aP3);
   }
   this->unknown38 = (unsigned int)((char *)(v21));
 LABEL_24: aP1 = (gamemd::INIClass *)((char *)(v19));
-  if ( (uint8_t)HashTable::BinarySearch((int *)&this->__pad_20[8], (int *)&aP1) ) /*0x528b4f*/
+  if ( (uint8_t)((HashTable *)((int *)&this->__pad_20[8]))->BinarySearch((int *)&aP1) ) /*0x528b4f*/
     v22 = (int *)(this->unknown38 + 4); /*0x528b5b*/
   else
     v22 = (int *)&unk_B7882C; /*0x528b60*/
@@ -265,7 +265,7 @@ LABEL_13:
           v16 = (uint8_t **)v13->HashTable_field_0x10; /*0x528ac6*/
           if ( v16 && *v16 == v11 ) /*0x528acf*/
             goto LABEL_18; /*0x528acf*/
-          v17 = HashTable::BinarySearchAlt(v13, (int *)&a2); /*0x528ad8*/
+          v17 = ((HashTable *)(v13))->BinarySearchAlt((int *)&a2); /*0x528ad8*/
           if ( v17 ) /*0x528adf*/
           {
             v13->HashTable_field_0x10 = v17; /*0x528ae5*/
@@ -288,7 +288,7 @@ LABEL_31:
         v18 = (int *)&unk_B78830; /*0x528b92*/
         goto LABEL_31; /*0x528b92*/
       }
-      v15 = HashTable::BinarySearchAlt(v13, (int *)&a2); /*0x528aa7*/
+      v15 = ((HashTable *)(v13))->BinarySearchAlt((int *)&a2); /*0x528aa7*/
       if ( v15 ) /*0x528aae*/
       {
         v13->HashTable_field_0x10 = v15; /*0x528ab4*/

@@ -112,7 +112,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
 
   if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP2),(gamemd::INIClass *)(a3), &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
   {
-    VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
+    ((VectorClass *)(&v17))->BuildingTypeConstructor(0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
     v18 = 0; /*0x67b5a8*/
     v17.vtable0 = (void*)&TypeList_BuildingTypeClass_const___vftable; /*0x67b5ac*/
@@ -139,7 +139,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
     aP0->IsInitialized = (unsigned int)(1);
     aP0->IsAllocated = (unsigned int)(0);
     aP0->vtable0 = (unsigned int)((void*)&VectorClass_BuildingTypeClass_const___vftable);
-    VectorClass::CopyBuilding(aP0, &v17); /*0x67b640*/
+    ((VectorClass *)(aP0))->CopyBuilding(&v17); /*0x67b640*/
     aP0->vtable0 = (unsigned int)((void*)&TypeList_BuildingTypeClass_const___vftable); /*0x67b645*/
     v17.vtable0 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b64b*/
     v9 = (void *)v19; /*0x67b657*/

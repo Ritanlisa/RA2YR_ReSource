@@ -592,7 +592,7 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int * a1, int a2)
     v33 = (void*)&DynamicVectorClass_AbstractClass___vftable; /*0x7095f2*/
     v38 = 10; /*0x7095fa*/
     v37 = 0; /*0x7095fe*/
-    VectorClass::Construct(&v30, 0, 0); /*0x709602*/
+    ((VectorClass *)(&v30))->Construct(0, 0); /*0x709602*/
     v11 = v3[288]; /*0x709607*/
     v30.vtable0 = (int)&DynamicVectorClass_int_vftable; /*0x70960d*/
     v32 = 10; /*0x709617*/

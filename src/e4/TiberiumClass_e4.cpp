@@ -63,7 +63,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     v9 = v8; /*0x5a018e*/
     if ( v8 ) /*0x5a0195*/
     {
-      VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
+      ((VectorClass *)(v8))->CellConstructor(0, 0); /*0x5a019b*/
       *v9 = (unsigned int)(&vt_DynamicVectorClass); /*0x5a01a0*/
       v9[5] = 10; /*0x5a01a6*/
       v9[4] = 0; /*0x5a01ad*/
@@ -295,7 +295,7 @@ void TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
          (char *)&v25.DynamicVector_field_0x1C,
          128) )
   {
-    DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v25, 0, 0); /*0x721b6c*/
+    ((DynamicVectorClass *)((DynamicVectorClass *)&v25))->AnimTypeConstructor(0, 0); /*0x721b6c*/
     *(unsigned int *)v25.__pad_0 = (unsigned int)(&vt_TypeList); /*0x721b7b*/
     for ( i = strtok((char *)&v25.DynamicVector_field_0x1C, Str); i; i = strtok(0, Str) ) /*0x721b8d*/
     {
@@ -429,7 +429,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     if ( v2 ) /*0x721f92*/
     {
       AbstractTypeClass::Init((int)v2, (int)&a1); /*0x721f9b*/
-      DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v2->GrowthPercentage[1], 0, 0); /*0x721fa4*/
+      ((DynamicVectorClass *)((DynamicVectorClass *)&v2->GrowthPercentage[1]))->AnimTypeConstructor(0, 0); /*0x721fa4*/
       v2->GrowthPercentage[1] = (int)&vt_TypeList; /*0x721fb0*/
       ((Timer *)((Timer *)v2->SpreadTimer))->Start(0); /*0x721fb6*/
       ((Timer *)((Timer *)v2->GrowthTimer))->Start(0); /*0x721fc2*/

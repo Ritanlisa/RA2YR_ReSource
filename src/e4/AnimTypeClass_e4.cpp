@@ -651,7 +651,7 @@ char AnimTypeClass::GetLoopCount(int a2)
 
 // 0x427CB0
 namespace gamemd {
-int AnimTypeClass::FindIndex(void *a1)
+int AnimTypeClass::FindIndex()
 {
 
   int v2; // esi

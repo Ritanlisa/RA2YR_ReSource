@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/MapSeed_e4.hpp"
 #include "e4/classes/AbstractClassVector_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
@@ -31,6 +32,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/IStream_e4.hpp"
 #include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x483610
 namespace gamemd {
@@ -2164,7 +2166,7 @@ void ObjectClass::ObjectClass_GetTypeVt41_2()
 
 }
 }
-// 0x74CD60
+int ObjectClass::processDeath()
 int ObjectClass::processDeath()
 int ObjectClass::processDeath()
 {
@@ -2260,7 +2262,7 @@ int ObjectClass::GetMember09()
 }
 } // namespace gamemd
 
-// 0x4E02C0
+int ObjectClass::updateStateFlags()
 int ObjectClass::updateStateFlags()
 int ObjectClass::updateStateFlags()
 {
@@ -2452,7 +2454,7 @@ int ObjectClass::GetMember01()
 }
 } // namespace gamemd
 
-// 0x6A5000
+int ObjectClass::processDamage()
 int ObjectClass::processDamage()
 int ObjectClass::processDamage()
 {

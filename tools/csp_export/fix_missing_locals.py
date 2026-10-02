@@ -37,7 +37,9 @@ def find_def(lines, err_line):
     """(def_head_idx, brace_idx, addr) for the def containing err_line.
     Anchors on the corpus structure: a standalone `// 0xADDR` marker at
     column 0, optionally `namespace X {`, then the def head with `{`
-    within a few lines."""
+    within a few lines.  G42.5: also accepts the headless-body form
+    (marker then bare `{` directly) -- decl insertion only needs the
+    brace position and the address."""
     lo = max(0, err_line - 400)
     i = min(err_line, len(lines)) - 1
     while i >= lo:
@@ -52,6 +54,8 @@ def find_def(lines, err_line):
                 if not s or re.match(r'^namespace\s+\w+\s*\{', s):
                     j += 1
                     continue
+                if s == '{':
+                    return j, j, addr        # headless body: brace is the def
                 if '(' in s and not s.startswith('//') and \
                         not s.endswith(';') and '{' not in s:
                     b = j + 1
@@ -114,20 +118,25 @@ def main():
     edits = {}      # file -> [(line_idx, new_line_or_insert_at)]
     inserts = {}    # file -> {brace_idx: [decl lines]}
     n_ok = n_skip = 0
+    why = {}
+    def skip(reason):
+        nonlocal n_skip
+        n_skip += 1
+        why[reason] = why.get(reason, 0) + 1
     for f, l, name in sites:
         try:
             lines = Path(f).read_text(encoding='utf-8',
                                       errors='replace').split('\n')
         except OSError:
-            n_skip += 1
+            skip('file-read')
             continue
         di, bi, addr = find_def(lines, l)
         if di is None:
-            n_skip += 1
+            skip('no-def-found')
             continue
         decl = cache_decl(addr, name)
         if not decl:
-            n_skip += 1
+            skip('no-cache-decl')
             continue
         # already declared in the def span?
         end = bi + 1
@@ -140,11 +149,11 @@ def main():
         # not a use like `x = result;` that merely ends with `name;`
         if re.search(r'^\s*[\w:<>\*\s&]+\b%s\s*(\[[^\]]*\])?\s*(=\s*[^;]*)?;'
                      % re.escape(name), body, re.M):
-            n_skip += 1
+            skip('already-declared')
             continue
         # error site must be INSIDE this def (sanity)
         if not (di <= l - 1 < end):
-            n_skip += 1
+            skip('site-outside-def')
             continue
         indent = re.match(r'\s*', lines[bi + 1] if bi + 1 < len(lines)
                           else lines[di]).group(0)
@@ -152,7 +161,8 @@ def main():
             indent + decl)
         n_ok += 1
 
-    print('local decls restored:', n_ok, ' skipped:', n_skip)
+    print('local decls restored:', n_ok, ' skipped:', n_skip,
+          ' reasons:', sorted(why.items(), key=lambda kv: -kv[1]))
     if APPLY:
         for f, bybrace in inserts.items():
             p = Path(f)

@@ -33,6 +33,7 @@
 #include "e4/classes/SuperClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x48B390
 namespace gamemd {

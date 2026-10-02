@@ -22,6 +22,8 @@
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/DListNode_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/Voice_e4.hpp"
 
 // 0x402AF0
 namespace gamemd {

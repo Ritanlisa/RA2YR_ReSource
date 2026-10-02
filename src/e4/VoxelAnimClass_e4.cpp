@@ -29,6 +29,8 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/House_e4.hpp"
 
 // 0x4CAF20
 namespace gamemd {

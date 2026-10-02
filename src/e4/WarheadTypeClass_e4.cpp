@@ -563,7 +563,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     if ( v2 ) /*0x75e0ff*/
     {
       AbstractTypeClass::Init((int)v2, (int)&a1); /*0x75e108*/
-      DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v2->__pad_104, 0, 0); /*0x75e117*/
+      ((DynamicVectorClass *)((DynamicVectorClass *)v2->__pad_104))->AnimTypeConstructor(0, 0); /*0x75e117*/
       *(unsigned int *)v2->__pad_104 = (unsigned int)(&vt_TypeList); /*0x75e120*/
       WarheadTypeClass::checkImmunity((WarheadTypeClass *)DebrisTypes, (int)&a1); /*0x75e12d*/
       WarheadTypeClass::calculateDamage((WarheadTypeClass *)&v2->__pad_1A0[8], (int)&a1); /*0x75e139*/
@@ -574,7 +574,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     }
     if ( v2 != (WarheadTypeClass *)-260 ) /*0x75e161*/
     {
-      DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v2->__pad_104, 0, 0); /*0x75e169*/
+      ((DynamicVectorClass *)((DynamicVectorClass *)v2->__pad_104))->AnimTypeConstructor(0, 0); /*0x75e169*/
       *(unsigned int *)v2->__pad_104 = (unsigned int)(&vt_TypeList); /*0x75e16e*/
     }
     (*(void (**)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a1, 4, 0); /*0x75e180*/
@@ -960,7 +960,7 @@ void* WarheadTypeClass_ReadINI()
          String,
          128) )
   {
-    DynamicVectorClass::AnimTypeConstructor(&v65, 0, 0); /*0x77248e*/
+    ((DynamicVectorClass *)(&v65))->AnimTypeConstructor(0, 0); /*0x77248e*/
     v65 = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x77249d*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x7724af*/
     {

@@ -677,7 +677,7 @@ ObjectClass * * Sidebar::Render(char a2)
 }
 // 0x6A60A0
 namespace gamemd {
-int Sidebar::ActivateTab(IUnknown * aP1, void *a2_1)
+int Sidebar::ActivateTab(int aP1)
 {
 
   int v2; // esi

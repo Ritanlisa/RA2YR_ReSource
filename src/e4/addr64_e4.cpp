@@ -3000,7 +3000,7 @@ void Network_ProcessMapEvent(int a1, int a2)
             }
             v80 = 0; /*0x64d063*/
             v79 = 0; /*0x64d068*/
-            VectorClass::CellConstructor(&v100, 0, 0); /*0x64d06c*/
+            ((VectorClass *)(&v100))->CellConstructor(0, 0); /*0x64d06c*/
             v105 = 10; /*0x64d087*/
             v104 = 0; /*0x64d08e*/
             BoolVector::Construct(0, 0); /*0x64d095*/

@@ -30,6 +30,8 @@
 #include "e4/classes/AudioTimer_e4.hpp"
 #include "e4/classes/MovieContext_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/RulesClass_e4.hpp"
 
 // 0x49CAF0
 namespace gamemd {

@@ -1664,7 +1664,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
   v136[0] = v40; /*0x507296*/
   v107 = v41; /*0x50729d*/
   HouseClass::ComputePowerDistribution((float *)_EBP); /*0x5072a1*/
-  VectorClass::BuildingTypeConstructor(&v126, 0, 0); /*0x5072ae*/
+  ((VectorClass *)(&v126))->BuildingTypeConstructor(0, 0); /*0x5072ae*/
   v42 = *(unsigned int *)(_EBP + 120); /*0x5072b3*/
   v43 = 0; /*0x5072b6*/
   v126.vtable0 = &vt_DynamicVectorClass; /*0x5072ba*/
@@ -1921,7 +1921,7 @@ LABEL_87:
     v115 = 0; /*0x507822*/
     LOBYTE(v116) = 0; /*0x507826*/
     v117 = 0; /*0x50782b*/
-    VectorClass::CellConstructor(&v119, 0, 0); /*0x50782f*/
+    ((VectorClass *)(&v119))->CellConstructor(0, 0); /*0x50782f*/
     v119.vtable0 = &vt_DynamicVectorClass; /*0x507838*/
     v121 = 10; /*0x507842*/
     v120 = 0; /*0x50784a*/

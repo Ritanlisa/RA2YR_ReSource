@@ -16,6 +16,8 @@
 #include "e4/classes/FrameSnapshot_e4.hpp"
 #include "e4/classes/IPersistStream_e4.hpp"
 #include "e4/classes/IStream_e4.hpp"
+#include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/VocClass_e4.hpp"
 
 // 0x4391C0
 namespace gamemd {

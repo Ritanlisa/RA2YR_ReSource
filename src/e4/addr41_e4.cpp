@@ -40,6 +40,10 @@
 #include "e4/classes/IPersistStream_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/TypeClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AircraftClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
 
 // 0x4116A0
 namespace gamemd {

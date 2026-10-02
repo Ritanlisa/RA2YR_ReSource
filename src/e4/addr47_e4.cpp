@@ -39,6 +39,7 @@
 #include "app/cmdline.hpp"
 #include "e4/classes/Techno_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
 
 // 0x472A80
 namespace gamemd {
@@ -84,7 +85,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
 
   if ( INIClass::GetString((INIClass *)a2,(unsigned char *)(a3), a4, &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
   {
-    DynamicVectorClass::Construct((DynamicVectorClass *)&v21, 0, 0); /*0x477121*/
+    ((DynamicVectorClass *)((DynamicVectorClass *)&v21))->Construct(0, 0); /*0x477121*/
     *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&TypeList_int_vftable); /*0x47712a*/
     for ( i = strtok(v21.__pad_20, Str); i; i = strtok(0, Str) ) /*0x477144*/
     {

@@ -515,9 +515,9 @@ LABEL_122:
             LOBYTE(v18) = 0; /*0x71f10c*/
             return v18; /*0x71f112*/
           case 9: /*0x71f092*/
-            if ( VectorClass::GetCount((VectorClass *)(Owner + 21860)) > 0 ) /*0x71f13c*/
+            if ( ((VectorClass *)((VectorClass *)(Owner + 21860)))->GetCount() > 0 ) /*0x71f13c*/
               goto LABEL_139; /*0x71f13c*/
-            if ( VectorClass::GetCount((VectorClass *)(Owner + 21880)) <= 0 ) /*0x71f14b*/
+            if ( ((VectorClass *)((VectorClass *)(Owner + 21880)))->GetCount() <= 0 ) /*0x71f14b*/
               break; /*0x71f14b*/
             LOBYTE(v18) = 0; /*0x71f150*/
             return v18; /*0x71f156*/
@@ -528,8 +528,8 @@ LABEL_122:
             return v18; /*0x71f12c*/
           case 0xB: /*0x71f092*/
             if ( *(int *)(Owner + 752) <= 0 /*0x71f1af*/
-              && VectorClass::GetCount((VectorClass *)(Owner + 21860)) <= 0
-              && VectorClass::GetCount((VectorClass *)(Owner + 21880)) <= 0 )
+              && ((VectorClass *)((VectorClass *)(Owner + 21860)))->GetCount() <= 0
+              && ((VectorClass *)((VectorClass *)(Owner + 21880)))->GetCount() <= 0 )
             {
               break; /*0x71f1af*/
             }

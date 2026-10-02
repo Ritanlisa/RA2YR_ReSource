@@ -66,6 +66,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/NetworkEventQueueClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x539760
 namespace gamemd {
@@ -401,7 +402,7 @@ AbstractClass * * sub_68C050()
     WarRatio_high = IDA_HIDWORD(g_RulesClass_Instance->WarRatio); /*0x68c069*/
     if ( WarRatio_high > 0 && WarRatio_high >= dword_8B41F0 ) /*0x68c079*/
     {
-      VectorClass::Construct(&v13, 0, 0); /*0x68c086*/
+      ((VectorClass *)(&v13))->Construct(0, 0); /*0x68c086*/
       v2 = 10; /*0x68c091*/
       v18 = 10; /*0x68c09e*/
       v17 = 0; /*0x68c0a2*/
@@ -608,10 +609,10 @@ void sub_5C98A0()
       while ( v10 ); /*0x5c9995*/
       ((unsigned int *)(dword_A8D23C))[v4] = v5; /*0x5c9997*/
       ((unsigned int *)(dword_A8D22C))[v4] = *(unsigned int *)(v2 + 21556) + *(unsigned int *)(v2 + 21640); /*0x5c99b1*/
-      Count = VectorClass::GetCount((unsigned int *)(v2 + 21920)); /*0x5c99c2*/
-      v13 = VectorClass::GetCount((unsigned int *)(v2 + 21940)) + Count; /*0x5c99cf*/
-      v14 = VectorClass::GetCount((unsigned int *)(v2 + 21960)) + v13; /*0x5c99dc*/
-      ((unsigned int *)(dword_A8D24C))[v4] = v14 + VectorClass::GetCount((unsigned int *)(v2 + 21980)); /*0x5c99e5*/
+      Count = ((VectorClass *)((unsigned int *)(v2 + 21920)))->GetCount(); /*0x5c99c2*/
+      v13 = ((VectorClass *)((unsigned int *)(v2 + 21940)))->GetCount() + Count; /*0x5c99cf*/
+      v14 = ((VectorClass *)((unsigned int *)(v2 + 21960)))->GetCount() + v13; /*0x5c99dc*/
+      ((unsigned int *)(dword_A8D24C))[v4] = v14 + ((VectorClass *)((unsigned int *)(v2 + 21980)))->GetCount(); /*0x5c99e5*/
       v15 = *(unsigned int *)(v2 + 21736); /*0x5c99eb*/
       if ( v15 > 0 ) /*0x5c99f3*/
         ((unsigned int *)(dword_A8D25C))[v4] += v15; /*0x5c99f5*/

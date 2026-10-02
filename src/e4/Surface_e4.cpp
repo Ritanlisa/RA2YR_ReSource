@@ -294,7 +294,7 @@ void sub_626C60()
     v5 = v4; /*0x626ccd*/
     if ( v4 ) /*0x626cd4*/
     {
-      VectorClass::ConstructHSV(v4, 0, 0); /*0x626cdc*/
+      ((VectorClass *)(v4))->ConstructHSV(0, 0); /*0x626cdc*/
       *(void **)v5 = (void*)&DynamicVectorClass_HSVClass_vftable; /*0x626ce1*/
       v5[5] = 10; /*0x626ce7*/
       v5[4] = 0; /*0x626cea*/

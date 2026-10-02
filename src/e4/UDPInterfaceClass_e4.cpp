@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Random_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
@@ -25,6 +26,9 @@
 #include "e4/classes/TypeList_Particle_e4.hpp"
 #include "e4/classes/TypeList_cptr_ParticleSystemTypeClass_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/WinsockInterfaceClass_e4.hpp"
+#include "e4/classes/Compare_e4.hpp"
+#include "e4/classes/IPXInterfaceClass_e4.hpp"
 
 // 0x7B1B50
 namespace gamemd {

@@ -38,7 +38,7 @@ int MapSeed::ValidateName(int a2)
 } // namespace gamemd
 // 0x5AC230
 namespace gamemd {
-int MapSeed::IsCellInBounds(void *a1)
+int MapSeed::IsCellInBounds()
 {
 
   int v1; // edx

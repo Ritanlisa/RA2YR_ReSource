@@ -1255,7 +1255,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
 }
 // 0x6F0FC0
 namespace gamemd {
-int TeamTypeClass::FindByName(void *a1)
+int TeamTypeClass::FindByName()
 {
 
   int v2; // esi

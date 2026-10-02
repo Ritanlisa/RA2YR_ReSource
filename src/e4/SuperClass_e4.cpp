@@ -383,12 +383,12 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
         *(unsigned char *)(v15 + 405) = 0; /*0x6cb6bf*/
         *((unsigned int *)this + 26) = 0; /*0x6cb6cb*/
         aP1 = (IUnknown *)(this); /*0x6cb6ce*/
-        VectorClass::RemoveAt((VectorClass *)((char *)&g_BuildingLoadQueue_Array), (int)&aP1); /*0x6cb6d2*/
+        ((VectorClass *)((VectorClass *)((char *)&g_BuildingLoadQueue_Array)))->RemoveAt((int)&aP1); /*0x6cb6d2*/
       }
       if ( *((unsigned char *)this + 108) ) /*0x6cb6d7*/
       {
         aP1 = (IUnknown *)(this); /*0x6cb6e6*/
-        VectorClass::RemoveAt((VectorClass *)((char *)&g_BuildingLoadQueue_Array), (int)&aP1); /*0x6cb6ea*/
+        ((VectorClass *)((VectorClass *)((char *)&g_BuildingLoadQueue_Array)))->RemoveAt((int)&aP1); /*0x6cb6ea*/
         *((unsigned char *)this + 108) = 0; /*0x6cb6ef*/
       }
       if ( !*((unsigned char *)this + 109) /*0x6cb704*/
@@ -678,12 +678,12 @@ LABEL_11:
         *(unsigned char *)(v28 + 405) = 0; /*0x6cbc01*/
         *((unsigned int *)this + 26) = 0; /*0x6cbc0d*/
         a2 = this; /*0x6cbc10*/
-        VectorClass::RemoveAt(&stru_B0F5B8, (int)&a2); /*0x6cbc14*/
+        ((VectorClass *)(&stru_B0F5B8))->RemoveAt((int)&a2); /*0x6cbc14*/
       }
       if ( *((unsigned char *)this + 108) ) /*0x6cbc19*/
       {
         a2 = this; /*0x6cbc28*/
-        VectorClass::RemoveAt(&stru_B0F5B8, (int)&a2); /*0x6cbc2c*/
+        ((VectorClass *)(&stru_B0F5B8))->RemoveAt((int)&a2); /*0x6cbc2c*/
         *((unsigned char *)this + 108) = 0; /*0x6cbc31*/
       }
       if ( *((unsigned char *)this + 109) /*0x6cbc46*/

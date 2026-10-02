@@ -40,6 +40,7 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x540DC0
 namespace gamemd {
@@ -1825,7 +1826,7 @@ ObjectClass * *  SessionClass::ParseGameInfo(wchar_t * Destination, char * Sourc
   p_Side2[5] = 10; /*0x69a9ad*/
   p_Side2[4] = 0; /*0x69a9b0*/
   *p_Side2 = (int)&vt_TypeList; /*0x69a9b7*/
-  VectorClass::WstringConstructor((VectorClass *)&v8->SkirmishPreferences[6], 0, 0); /*0x69a9bd*/
+  ((VectorClass *)((VectorClass *)&v8->SkirmishPreferences[6]))->WstringConstructor(0, 0); /*0x69a9bd*/
   v11 = Source; /*0x69a9c2*/
   v8->SkirmishPreferences[6] = (int)&vt_DynamicVectorClass; /*0x69a9c6*/
   v8->SkirmishPreferences[11] = 10; /*0x69a9cf*/

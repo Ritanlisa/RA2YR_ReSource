@@ -41,6 +41,7 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_MapRegionClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x5835D0
 namespace gamemd {
@@ -187,7 +188,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   int v19; // [esp+20h] [ebp-8h]
   int v20; // [esp+24h] [ebp-4h]
 
-  VectorClass::Construct(&v18, 0, 0); /*0x583ae1*/
+  ((VectorClass *)(&v18))->Construct(0, 0); /*0x583ae1*/
   v18.vtable0 = &vt_DynamicVectorClass; /*0x583af1*/
   v20 = 10; /*0x583af9*/
   v19 = 0; /*0x583b05*/

@@ -1,4 +1,5 @@
 #include "network/connection.hpp"
+#include "e4/classes/PacketQueue_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/GUID_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"

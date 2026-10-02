@@ -42,6 +42,7 @@
 #include "e4/classes/E4Recv_5DBEC0_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/Text_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x5E2820
 namespace gamemd {

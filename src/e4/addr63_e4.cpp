@@ -78,6 +78,8 @@
 #include "e4/classes/E4Recv_637020_e4.hpp"
 #include "e4/classes/E4Recv_637030_e4.hpp"
 #include "e4/classes/E4Recv_6375B0_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/E4Recv_63A4A0_e4.hpp"
 #include "e4/classes/E4Recv_63AD30_e4.hpp"
 #include "e4/classes/E4Recv_63B080_e4.hpp"
@@ -1144,7 +1146,7 @@ void ExecutePlanningQueue()
       if ( v17 && !*(unsigned char *)(v17 + 28) ) /*0x6373ad*/
       {
         *(unsigned char *)(v17 + 28) = 1; /*0x6373b8*/
-        VectorClass::Append((DynamicVectorClass *)&dword_AC4C98, &v33); /*0x6373c2*/
+        ((VectorClass *)((DynamicVectorClass *)&dword_AC4C98))->Append(&v33); /*0x6373c2*/
       }
       TeamClass::Cleanup(v4, v5); /*0x6373ca*/
   LABEL_34:
@@ -1549,7 +1551,7 @@ void ExecuteActionPlanManager(IUnknown * a1, char * a2)
     {
       v35 = 0; /*0x63853d*/
     }
-    VectorClass::Append((VectorClass *)&stru_AC4B30, &v35); /*0x63854f*/
+    ((VectorClass *)((VectorClass *)&stru_AC4B30))->Append(&v35); /*0x63854f*/
     v2 = v37; /*0x638554*/
     v14 = v38; /*0x638558*/
   }

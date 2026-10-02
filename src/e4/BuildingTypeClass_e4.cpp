@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -30,6 +31,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/WaveClass_e4.hpp"
 
 // 0x45DD90
 namespace gamemd {

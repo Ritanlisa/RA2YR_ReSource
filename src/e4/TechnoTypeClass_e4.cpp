@@ -276,7 +276,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
   *((unsigned int *)this + 201) = 0; /*0x710bf8*/
   *((unsigned int *)this + 202) = 10; /*0x710bfb*/
   *((unsigned int *)this + 197) = (unsigned int)(&vt_TypeList); /*0x710bfe*/
-  VectorClass::Construct((unsigned int *)this + 204, 0, 0); /*0x710c0f*/
+  ((VectorClass *)((unsigned int *)this + 204))->Construct(0, 0); /*0x710c0f*/
   *((unsigned int *)this + 209) = 10; /*0x710c14*/
   *((unsigned int *)this + 208) = 0; /*0x710c17*/
   *((unsigned int *)this + 204) = (unsigned int)(&vt_TypeList); /*0x710c1a*/
@@ -316,7 +316,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
   *((unsigned int *)this + 247) = 70; /*0x710d28*/
   *((unsigned int *)this + 248) = 0; /*0x710d33*/
   *((unsigned int *)this + 249) = 0; /*0x710d40*/
-  VectorClass::BuildingTypeConstructor((unsigned int *)this + 250, 0, 0); /*0x710d46*/
+  ((VectorClass *)((unsigned int *)this + 250))->BuildingTypeConstructor(0, 0); /*0x710d46*/
   *((unsigned int *)this + 255) = 10; /*0x710d4b*/
   *((unsigned int *)this + 254) = 0; /*0x710d51*/
   *((unsigned int *)this + 250) = &vt_TypeList; /*0x710d57*/
@@ -324,43 +324,43 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
   *((unsigned int *)this + 258) = 0; /*0x710d67*/
   *((unsigned int *)this + 259) = 0; /*0x710d6e*/
   *((unsigned char *)this + 1040) = 0; /*0x710d7b*/
-  VectorClass::Construct((unsigned int *)this + 261, 0, 0); /*0x710d81*/
+  ((VectorClass *)((unsigned int *)this + 261))->Construct(0, 0); /*0x710d81*/
   *((unsigned int *)this + 266) = 10; /*0x710d8e*/
   *((unsigned int *)this + 265) = 0; /*0x710d94*/
   *((unsigned int *)this + 261) = &vt_TypeList; /*0x710d9a*/
-  VectorClass::Construct((unsigned int *)this + 268, 0, 0); /*0x710da4*/
+  ((VectorClass *)((unsigned int *)this + 268))->Construct(0, 0); /*0x710da4*/
   *((unsigned int *)this + 273) = 10; /*0x710db1*/
   *((unsigned int *)this + 272) = 0; /*0x710db7*/
   *((unsigned int *)this + 268) = &vt_TypeList; /*0x710dbd*/
-  VectorClass::Construct((unsigned int *)this + 275, 0, 0); /*0x710dc7*/
+  ((VectorClass *)((unsigned int *)this + 275))->Construct(0, 0); /*0x710dc7*/
   *((unsigned int *)this + 280) = 10; /*0x710dd4*/
   *((unsigned int *)this + 279) = 0; /*0x710dda*/
   *((unsigned int *)this + 275) = &vt_TypeList; /*0x710de0*/
-  VectorClass::Construct((unsigned int *)this + 282, 0, 0); /*0x710dea*/
+  ((VectorClass *)((unsigned int *)this + 282))->Construct(0, 0); /*0x710dea*/
   *((unsigned int *)this + 287) = 10; /*0x710df7*/
   *((unsigned int *)this + 286) = 0; /*0x710dfd*/
   *((unsigned int *)this + 282) = &vt_TypeList; /*0x710e03*/
-  VectorClass::Construct((unsigned int *)this + 289, 0, 0); /*0x710e0d*/
+  ((VectorClass *)((unsigned int *)this + 289))->Construct(0, 0); /*0x710e0d*/
   *((unsigned int *)this + 294) = 10; /*0x710e1a*/
   *((unsigned int *)this + 293) = 0; /*0x710e20*/
   *((unsigned int *)this + 289) = &vt_TypeList; /*0x710e26*/
-  VectorClass::Construct((unsigned int *)this + 296, 0, 0); /*0x710e30*/
+  ((VectorClass *)((unsigned int *)this + 296))->Construct(0, 0); /*0x710e30*/
   *((unsigned int *)this + 301) = 10; /*0x710e3d*/
   *((unsigned int *)this + 300) = 0; /*0x710e43*/
   *((unsigned int *)this + 296) = &vt_TypeList; /*0x710e49*/
-  VectorClass::Construct((unsigned int *)this + 303, 0, 0); /*0x710e53*/
+  ((VectorClass *)((unsigned int *)this + 303))->Construct(0, 0); /*0x710e53*/
   *((unsigned int *)this + 308) = 10; /*0x710e58*/
   *((unsigned int *)this + 307) = 0; /*0x710e5e*/
   *((unsigned int *)this + 303) = &vt_TypeList; /*0x710e6c*/
-  VectorClass::Construct((unsigned int *)this + 310, 0, 0); /*0x710e76*/
+  ((VectorClass *)((unsigned int *)this + 310))->Construct(0, 0); /*0x710e76*/
   *((unsigned int *)this + 315) = 10; /*0x710e83*/
   *((unsigned int *)this + 314) = 0; /*0x710e89*/
   *((unsigned int *)this + 310) = &vt_TypeList; /*0x710e8f*/
-  VectorClass::Construct((unsigned int *)this + 317, 0, 0); /*0x710e99*/
+  ((VectorClass *)((unsigned int *)this + 317))->Construct(0, 0); /*0x710e99*/
   *((unsigned int *)this + 322) = 10; /*0x710ea6*/
   *((unsigned int *)this + 321) = 0; /*0x710eac*/
   *((unsigned int *)this + 317) = &vt_TypeList; /*0x710eb2*/
-  VectorClass::Construct((unsigned int *)this + 324, 0, 0); /*0x710ebc*/
+  ((VectorClass *)((unsigned int *)this + 324))->Construct(0, 0); /*0x710ebc*/
   *((unsigned int *)this + 329) = 10; /*0x710ec1*/
   *((unsigned int *)this + 328) = 0; /*0x710ec7*/
   *((unsigned int *)this + 324) = &vt_TypeList; /*0x710ecd*/
@@ -431,11 +431,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
   *((unsigned int *)this + 395) = 0; /*0x71106e*/
   *((unsigned int *)this + 396) = 0; /*0x711075*/
   *((unsigned int *)this + 397) = 255; /*0x711082*/
-  VectorClass::Construct((unsigned int *)this + 398, 0, 0); /*0x71108c*/
+  ((VectorClass *)((unsigned int *)this + 398))->Construct(0, 0); /*0x71108c*/
   *((unsigned int *)this + 403) = 10; /*0x711099*/
   *((unsigned int *)this + 402) = 0; /*0x71109f*/
   *((unsigned int *)this + 398) = &vt_TypeList; /*0x7110a5*/
-  VectorClass::Construct((unsigned int *)this + 405, 0, 0); /*0x7110af*/
+  ((VectorClass *)((unsigned int *)this + 405))->Construct(0, 0); /*0x7110af*/
   *((unsigned int *)this + 410) = 10; /*0x7110b8*/
   *((unsigned int *)this + 409) = 0; /*0x7110be*/
   *((unsigned int *)this + 405) = &vt_TypeList; /*0x7110c4*/

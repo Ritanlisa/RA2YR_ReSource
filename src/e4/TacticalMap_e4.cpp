@@ -36,6 +36,8 @@
 #include "e4/classes/NukeFlash_e4.hpp"
 #include "e4/classes/DSurface_e4.hpp"
 #include "e4/classes/Rect_e4.hpp"
+#include "e4/classes/Coord2D_e4.hpp"
+#include "e4/classes/Matrix3x3_e4.hpp"
 
 // 0x484680
 namespace gamemd {

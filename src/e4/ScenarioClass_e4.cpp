@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
@@ -44,6 +45,9 @@
 #include "e4/classes/TypeList_flat_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/GameOption_e4.hpp"
+#include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x58BB30
 namespace gamemd {
@@ -357,11 +361,11 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
   this->dropshipUnitCounts = 0; /*0x683397*/
   this->dropshipCountsCount = (unsigned int)((gamemd::TechnoTypeClass *)(10)); /*0x68339a*/
   this->allowableUnits[0] = (gamemd::TechnoTypeClass *)((int)&vt_TypeList); /*0x68339d*/
-  VectorClass::Construct((VectorClass *)&this->ambientCurrent, 0, 0); /*0x6833ad*/
+  ((VectorClass *)((VectorClass *)&this->ambientCurrent))->Construct(0, 0); /*0x6833ad*/
   this->ground = 10; /*0x6833b2*/
   this->blue = 0; /*0x6833b5*/
   this->ambientCurrent = (int)&vt_TypeList; /*0x6833b8*/
-  VectorClass::Construct((VectorClass *)&this->ionAmbient, 0, 0); /*0x6833c8*/
+  ((VectorClass *)((VectorClass *)&this->ionAmbient))->Construct(0, 0); /*0x6833c8*/
   this->ionLevel = 10; /*0x6833cf*/
   this->ionGround = 0; /*0x6833d2*/
   this->ionAmbient = (int)&vt_TypeList; /*0x6833d5*/

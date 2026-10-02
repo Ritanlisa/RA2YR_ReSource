@@ -64,6 +64,7 @@
 #include "e4/classes/RandomMap_e4.hpp"
 #include "e4/classes/ListBox_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x5D0190
 namespace gamemd {

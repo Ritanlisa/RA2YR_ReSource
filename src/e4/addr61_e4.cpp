@@ -27,6 +27,8 @@
 #include "e4/classes/TriggerClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/DynamicArray_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x610570
 namespace gamemd {

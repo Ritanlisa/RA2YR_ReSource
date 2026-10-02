@@ -11,6 +11,7 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/WinsockInterface_e4.hpp"
 #include "e4/classes/OwnerDrawControl_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x7AC630
 namespace gamemd {

@@ -18,6 +18,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ParticleTypeClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x5A5360
 namespace gamemd {
@@ -209,7 +210,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   v24 = v23; /*0x5a5517*/
   if ( v23 ) /*0x5a551e*/
   {
-    VectorClass::CellConstructor(v23, 0, 0); /*0x5a5526*/
+    ((VectorClass *)(v23))->CellConstructor(0, 0); /*0x5a5526*/
     *v24 = (unsigned int)(&vt_DynamicVectorClass); /*0x5a552b*/
     v24[5] = 10; /*0x5a5531*/
     v24[4] = 0; /*0x5a5538*/

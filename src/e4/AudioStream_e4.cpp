@@ -24,6 +24,7 @@
 #include "e4/classes/DListNode_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/Socket_e4.hpp"
+#include "e4/classes/Voice_e4.hpp"
 
 // 0x401910
 namespace gamemd {

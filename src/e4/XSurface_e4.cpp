@@ -842,7 +842,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
 } // namespace gamemd
 // 0x7BBB90
 namespace gamemd {
-XSurface * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6, void *a6_2)
+XSurface * XSurface::BlitPart(void **a2, void **a3, void **arg8, void **a4, int a6)
 {
 
   void **v6; // edi

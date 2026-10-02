@@ -12,6 +12,9 @@
 #include "system/cell.hpp"
 #include "system/factory.hpp"
 #include "team/tag.hpp"
+#include "e4/classes/ArrayClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/ScriptAction_e4.hpp"
 
 // 0x637DB0
 namespace gamemd {

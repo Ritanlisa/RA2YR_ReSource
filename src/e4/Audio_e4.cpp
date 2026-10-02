@@ -1,5 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/E4Recv_5E9340_e4.hpp"
@@ -37,6 +40,11 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "app/cmdline.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Struct_e4.hpp"
+#include "e4/classes/Count_e4.hpp"
+#include "e4/classes/Voice_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x402720
 namespace gamemd {

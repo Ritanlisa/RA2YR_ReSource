@@ -31,6 +31,7 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x486790
 namespace gamemd {
@@ -161,7 +162,7 @@ int RandomMap::GenerateTerrain(void *a1_1)
 
   v50 = this; /*0x58c816*/
   *(unsigned int *)v47 = g_MissionQueueFrame.localVariables[164]; /*0x58c81a*/
-  VectorClass::CellConstructor((VectorClass *)&v54, 0, 0); /*0x58c81e*/
+  ((VectorClass *)((VectorClass *)&v54))->CellConstructor(0, 0); /*0x58c81e*/
   v2 = this->RandomMap_field_0x24[0]; /*0x58c823*/
   *(unsigned int *)v54.__pad_0 = &vt_DynamicVectorClass; /*0x58c826*/
   *(unsigned int *)v54.__tail_10 = 0; /*0x58c832*/
@@ -482,7 +483,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
         v12 = 0; /*0x58d260*/
         if ( v10 ) /*0x58d267*/
         {
-          VectorClass::CellConstructor(v10, 0, 0); /*0x58d26d*/
+          ((VectorClass *)(v10))->CellConstructor(0, 0); /*0x58d26d*/
           v11[1].vtable0 = 0; /*0x58d272*/
           v11->vtable0 = &vt_DynamicVectorClass; /*0x58d275*/
           v11[1].Items = (void *)10; /*0x58d27b*/
@@ -601,7 +602,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
   v2 = v1; /*0x58d421*/
   if ( v1 ) /*0x58d428*/
   {
-    VectorClass::CellConstructor(v1, 0, 0); /*0x58d430*/
+    ((VectorClass *)(v1))->CellConstructor(0, 0); /*0x58d430*/
     v2->vtable0 = &vt_DynamicVectorClass; /*0x58d435*/
     v2[1].Items = (void *)10; /*0x58d43b*/
     v2[1].vtable0 = 0; /*0x58d442*/
@@ -711,7 +712,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
     v3 = v2; /*0x58e76d*/
     if ( v2 ) /*0x58e774*/
     {
-      VectorClass::CellConstructor(v2, 0, 0); /*0x58e77a*/
+      ((VectorClass *)(v2))->CellConstructor(0, 0); /*0x58e77a*/
       v3->vtable0 = &vt_DynamicVectorClass; /*0x58e77f*/
       v3[1].Items = (void *)10; /*0x58e785*/
       v3[1].vtable0 = 0; /*0x58e78c*/
@@ -831,7 +832,7 @@ AbstractClass * * RandomMap::PlaceRandomMapTerrain(void *a1_1)
   int v21; // [esp+34h] [ebp-4h]
 
   v1 = RandomMap::TerrainAlloc(this); /*0x58e9c7*/
-  VectorClass::CellConstructor(&v19, 0, 0); /*0x58e9c9*/
+  ((VectorClass *)(&v19))->CellConstructor(0, 0); /*0x58e9c9*/
   v2 = 50000; /*0x58e9ce*/
   v19.vtable0 = &vt_DynamicVectorClass; /*0x58e9d3*/
   j = 0; /*0x58e9db*/
@@ -955,7 +956,7 @@ void* RandomMap::CollectBorderCells()
   v3 = v2; /*0x58f0d4*/
   if ( v2 ) /*0x58f0db*/
   {
-    VectorClass::Construct(v2, 0, 0); /*0x58f0e3*/
+    ((VectorClass *)(v2))->Construct(0, 0); /*0x58f0e3*/
     v3->vtable0 = &vt_DynamicVectorClass; /*0x58f0e8*/
     v3[1].Items = (void *)10; /*0x58f0ee*/
     v3[1].vtable0 = 0; /*0x58f0f5*/
@@ -4317,7 +4318,7 @@ unsigned int * RandomMap::CellListAlloc(int a2, void *a2_2)
   v4 = v3; /*0x5a070f*/
   if ( v3 ) /*0x5a0718*/
   {
-    VectorClass::CellConstructor(v3, 0, 0); /*0x5a071e*/
+    ((VectorClass *)(v3))->CellConstructor(0, 0); /*0x5a071e*/
     v4->vtable0 = &vt_DynamicVectorClass; /*0x5a0723*/
     v4[1].Items = (void *)10; /*0x5a0729*/
     v4[1].vtable0 = 0; /*0x5a0730*/

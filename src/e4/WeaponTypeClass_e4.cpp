@@ -101,11 +101,11 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   this->ROF = 0; /*0x771caf*/
   this->Range = 0; /*0x771cb6*/
   this->MinimumRange = 0; /*0x771cbf*/
-  VectorClass::Construct((VectorClass *)this->Report, 0, 0); /*0x771cc5*/
+  ((VectorClass *)((VectorClass *)this->Report))->Construct(0, 0); /*0x771cc5*/
   this->Report[5] = 10; /*0x771cca*/
   this->Report[4] = 0; /*0x771cd1*/
   this->Report[0] = (int)&vt_TypeList; /*0x771cd4*/
-  VectorClass::Construct((VectorClass *)this->DownReport, 0, 0); /*0x771ce4*/
+  ((VectorClass *)((VectorClass *)this->DownReport))->Construct(0, 0); /*0x771ce4*/
   this->DownReport[5] = 10; /*0x771ce9*/
   this->DownReport[4] = 0; /*0x771cf0*/
   this->DownReport[0] = (int)&vt_TypeList; /*0x771cf3*/
@@ -360,7 +360,7 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
       WeaponTypeClass::loadWeaponProperties(v5, (int)&aP0); /*0x772d15*/
     if ( v5 != (WeaponTypeClass *)-244 ) /*0x772d23*/
     {
-      DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v5->Anim, 0, 0); /*0x772d2b*/
+      ((DynamicVectorClass *)((DynamicVectorClass *)v5->Anim))->AnimTypeConstructor(0, 0); /*0x772d2b*/
       v5->Anim[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x772d30*/
     }
     (*(void (**)(int *, WeaponTypeClass **, int, unsigned int, int))(*v7 + 12))(v7, &aP0, 4, 0, v4); /*0x772d42*/
@@ -371,7 +371,7 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
     }
     if ( Report ) /*0x772d77*/
     {
-      DynamicVectorClass::Construct((DynamicVectorClass *)Report, 0, 0); /*0x772d7f*/
+      ((DynamicVectorClass *)((DynamicVectorClass *)Report))->Construct(0, 0); /*0x772d7f*/
       *Report = (int)&TypeList_int_vftable; /*0x772d84*/
     }
     (*(void (**)(int *, int **, int, unsigned int))(*v7 + 12))(v7, &a2, 4, 0); /*0x772d97*/

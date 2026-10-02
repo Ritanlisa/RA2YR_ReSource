@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/FileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/GameClass_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
@@ -35,6 +36,7 @@
 #include "e4/classes/BigInt_e4.hpp"
 #include "e4/classes/IsRandMap_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
 
 // 0x437FD0
 namespace gamemd {

@@ -25,6 +25,7 @@
 #include "e4/classes/E4Recv_4AF2A0_e4.hpp"
 #include "e4/classes/MSEngine_e4.hpp"
 #include "e4/classes/Text_e4.hpp"
+#include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x4A60D0
 namespace gamemd {
