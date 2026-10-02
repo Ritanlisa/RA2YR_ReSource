@@ -4,8 +4,6 @@
 namespace gamemd {
 
 struct NukeFlash {
-    unsigned int IsActive;
-    unsigned int ProcessEffect;
     void* vfptr;
     BOOL IsActive();
     BOOL ProcessEffect();

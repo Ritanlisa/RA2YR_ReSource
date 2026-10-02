@@ -52,8 +52,6 @@ struct DriveLocomotionClass {
     unsigned int LocomotionClass;
     unsigned int Piggybackee;
     unsigned int *__pad_18;
-    unsigned int BeginMove;
-    unsigned int LoadFromStream;
 // --- flat members (END) ---
     DriveLocomotionClass * ProcessMove(ILocomotion ** Block, char a2);
     HRESULT BeginMove(int * a1, int * pStm);

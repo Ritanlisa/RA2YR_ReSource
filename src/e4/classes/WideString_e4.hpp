@@ -21,7 +21,6 @@ struct WideString {
     unsigned int u32_45C;  // 0x45C
     unsigned int u32_468;  // 0x468
     unsigned int u32_478;  // 0x478
-    unsigned int GetChar;
 // --- flat members (END) ---
     int WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5);  // 0x5D4B20
     AbstractClass * * Replace(CampaignScore * aP1, wchar_t * String);  // 0x7B73F0

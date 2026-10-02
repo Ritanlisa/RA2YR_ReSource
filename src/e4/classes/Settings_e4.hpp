@@ -8,7 +8,6 @@ namespace gamemd {
 struct Settings {
 // --- flat members (BEGIN) ---
     char Settings_field_00[4];  // 0x0
-    void* CheckString;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     BOOL CheckString();
 };

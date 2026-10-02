@@ -16,7 +16,6 @@ struct Rect {
     unsigned int u32_18;
     unsigned int u32_1C;
     unsigned int SetRedraw;
-    void* Inflate;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     _DWORD * Construct(unsigned int *aP1, int aP2, int aP3);
     BOOL Inflate(LPRECT lprc, int dx, int dy);

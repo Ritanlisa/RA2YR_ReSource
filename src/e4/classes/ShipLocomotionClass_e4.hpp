@@ -52,8 +52,6 @@ struct ShipLocomotionClass {
     unsigned int LocomotionClass;
     unsigned int Piggybackee;
     unsigned int *__pad_18;
-    unsigned int BeginMove;
-    unsigned int LoadFromStream;
 // --- flat members (END) ---
     HRESULT BeginMove(int * a1, int * pStm);
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);
