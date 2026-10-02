@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct PhoneEditor {
-    void PhoneEditor:: PopulateList();
+    void PopulateList();
 };
 
 } // namespace gamemd

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AudioList {
-    int AudioList:: GetNextEntry();
+    int GetNextEntry();
 };
 
 } // namespace gamemd

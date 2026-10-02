@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct StringTable {
-    int StringTable:: Find(void * a2);
+    int Find(void * a2);
 };
 
 } // namespace gamemd

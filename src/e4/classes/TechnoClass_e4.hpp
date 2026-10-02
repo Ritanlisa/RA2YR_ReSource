@@ -560,7 +560,7 @@ struct TechnoClass {
     int checkAmmo(AircraftClass * aP0);
     int checkMovementRestrictions();
     int processPowerDrain();
-    TechnoClass(void * aP1);
+    TechnoClass(AbstractClass * aP1);
     unsigned int * Update(BuildingClass * aP0, FootClass * aP1, void * a1, void * a2);
     void GetField(void *a1, void *a2);
     void updateSightRange(IUnknown * aP1, int a3);

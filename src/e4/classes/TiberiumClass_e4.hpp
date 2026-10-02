@@ -145,7 +145,7 @@ struct TiberiumClass {
     int StubReturn296();
     int StubReturn46();
     int ddtor(int a1, unsigned int * a2);
-    TiberiumClass(void * aP1);
+    TiberiumClass(ObjectClass * aP1);
     int Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8);  // def-aligned
     static double Grow(...);  // C2597 interim stub
 };

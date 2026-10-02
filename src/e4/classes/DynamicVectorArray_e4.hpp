@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct DynamicVectorArray {
-    int *DynamicVectorArray:: Constructor(int a2, int a3, int a4);
+    int * Constructor(int a2, int a3, int a4);
 };
 
 } // namespace gamemd

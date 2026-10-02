@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct CountdownTimer {
-    char CountdownTimer:: UpdateDisplay(char a2);
+    char UpdateDisplay(char a2);
 };
 
 } // namespace gamemd

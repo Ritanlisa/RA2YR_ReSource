@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct TabCameoListClass {
-    int TabCameoListClass:: AddCameo_ReplaceItAll(int a2, int a3);
+    int AddCameo_ReplaceItAll(int a2, int a3);
 };
 
 } // namespace gamemd

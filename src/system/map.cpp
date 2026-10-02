@@ -778,7 +778,7 @@ CoordStruct* MapClass::RevealArea2(CoordStruct* out, const CoordStruct& start, c
     a3 = (void *)(8);
     v6 = 8; /*0x567de9*/
   LABEL_9:
-    v7 = ((unsigned int *, unsigned int a3, unsigned int a5)(dword_7ED3D0))[v5] - ((unsigned int *)(dword_7ED3CC))[v6]; /*0x567ded*/
+    v7 = ((unsigned int *)(dword_7ED3D0))[v5] - ((unsigned int *)(dword_7ED3CC))[v6]; /*0x567ded*/
     goto LABEL_10; /*0x567dfb*/
   }
   if ( a3 ) /*0x567efd*/

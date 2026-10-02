@@ -4,8 +4,8 @@
 namespace gamemd {
 
 struct WTFMode {
-    char WTFMode:: ResetUnitFlags();
-    int WTFMode:: Shutdown(void *a1 = 0);
+    char ResetUnitFlags();
+    int Shutdown(void *a1 = 0);
     void* q0E8;  // 0xE8
     void* q0E4;  // 0xE4
     AudioController* q05C;  // 0x5C

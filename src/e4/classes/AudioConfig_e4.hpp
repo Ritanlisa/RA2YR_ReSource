@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AudioConfig {
-    void *AudioConfig:: InitDefault();
+    void * InitDefault();
 };
 
 } // namespace gamemd

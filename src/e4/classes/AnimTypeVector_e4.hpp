@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AnimTypeVector {
-    unsigned int *AnimTypeVector:: Constructor(int a2, int a3, void *a1 = 0);
+    unsigned int * Constructor(int a2, int a3, void *a1 = 0);
 };
 
 } // namespace gamemd

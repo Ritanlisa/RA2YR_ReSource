@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct PreviewClass {
-    char PreviewClass:: ReadPreview(char * Source);
+    char ReadPreview(char * Source);
 };
 
 } // namespace gamemd

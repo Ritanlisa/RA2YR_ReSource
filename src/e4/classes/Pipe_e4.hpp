@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Pipe {
-    int Pipe:: Dtor(void *a1 = 0);
+    int Dtor(void *a1 = 0);
     int SetDelegate(int a2);  // 0x631cc0
 };
 

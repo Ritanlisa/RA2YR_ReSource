@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Checksum {
-    int Checksum:: AddString(uint8_t * a2);
+    int AddString(uint8_t * a2);
 };
 
 } // namespace gamemd

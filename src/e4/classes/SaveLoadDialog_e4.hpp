@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct SaveLoadDialog {
-    bool SaveLoadDialog:: DlgProc(void *a1 = 0);
+    bool DlgProc(void *a1 = 0);
 };
 
 } // namespace gamemd

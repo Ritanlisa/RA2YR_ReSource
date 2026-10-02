@@ -4,8 +4,8 @@
 namespace gamemd {
 
 struct AudioSample {
-    int AudioSample:: Destructor(void *a1 = 0);
-    int AudioSample:: IsBuffering();
+    int Destructor(void *a1 = 0);
+    int IsBuffering();
 };
 
 } // namespace gamemd

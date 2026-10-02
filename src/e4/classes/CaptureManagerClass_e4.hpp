@@ -55,7 +55,7 @@ struct CaptureManagerClass {
 // --- flat members (END) ---
     void DecideUnitFate(int aP1);
     void FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5);
-    CaptureManagerClass(void * aP1, int a3, char a4);
+    CaptureManagerClass(int a2, int a3, char a4);
     CaptureManagerClass * ddtor(char a2);
     DynamicVector * QueryInterface(char a2);
     ScenarioClass * * HandleOverload();

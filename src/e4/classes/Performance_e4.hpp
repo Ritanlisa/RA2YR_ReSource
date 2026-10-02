@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Performance {
-    int Performance:: Profile();
+    int Profile();
 };
 
 } // namespace gamemd

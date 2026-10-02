@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct GameResult {
-    unsigned short *GameResult:: CalcScore();
+    unsigned short * CalcScore();
 };
 
 } // namespace gamemd

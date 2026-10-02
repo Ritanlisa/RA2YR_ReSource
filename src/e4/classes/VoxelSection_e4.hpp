@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct VoxelSection {
-    int VoxelSection:: GetInfo(int a2, int a3);
+    int GetInfo(int a2, int a3);
 };
 
 } // namespace gamemd

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct BTree {
-    void BTree:: DeleteSubtree();
+    void DeleteSubtree();
 };
 
 } // namespace gamemd

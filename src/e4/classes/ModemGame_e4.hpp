@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct ModemGame {
-    int ModemGame:: AdvanceTauntCommand();
+    int AdvanceTauntCommand();
 };
 
 } // namespace gamemd

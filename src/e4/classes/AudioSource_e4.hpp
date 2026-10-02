@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AudioSource {
-    int *AudioSource:: Get(void *a1 = 0, void *a2 = 0);
+    int * Get(void *a1 = 0, void *a2 = 0);
 };
 
 } // namespace gamemd

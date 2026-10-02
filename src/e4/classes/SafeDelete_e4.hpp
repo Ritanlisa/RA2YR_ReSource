@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct SafeDelete {
-    int SafeDelete:: Ptr();
+    int Ptr();
 };
 
 } // namespace gamemd

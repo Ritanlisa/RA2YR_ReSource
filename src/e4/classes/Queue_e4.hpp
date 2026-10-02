@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Queue {
-    int Queue:: GetNext(void *a1 = 0);
+    int GetNext(void *a1 = 0);
 };
 
 } // namespace gamemd

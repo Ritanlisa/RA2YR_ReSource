@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Tooltip {
-    int Tooltip:: Enable(char a2);
+    int Enable(char a2);
 };
 
 } // namespace gamemd

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct WDTObject {
-    int WDTObject:: GetAndClearFlag();
+    int GetAndClearFlag();
 };
 
 } // namespace gamemd

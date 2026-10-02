@@ -63,7 +63,7 @@ struct SpawnManagerClass {
     unsigned int SpawnControl;
 // --- flat members (END) ---
     AbstractClass * * LoadFromStream(int aP1, AbstractClass * aP1_4);
-    SpawnManagerClass(void * aP1, int a3, int a4, int a5, int a6);
+    SpawnManagerClass(int a2, int a3, int a4, int a5, int a6);
     SpawnManagerClass * ProcessEvent(char a2);
     int CountAliveSpawns();
     int CountDockedSpawns();

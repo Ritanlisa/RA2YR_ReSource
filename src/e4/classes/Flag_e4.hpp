@@ -4,8 +4,8 @@
 namespace gamemd {
 
 struct Flag {
-    int Flag:: IsNot2();
-    int Flag:: IsZero();
+    int IsNot2();
+    int IsZero();
 };
 
 } // namespace gamemd

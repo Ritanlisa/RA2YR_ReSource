@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct StaticString {
-    char **StaticString:: Factory();
+    char ** Factory();
 };
 
 } // namespace gamemd

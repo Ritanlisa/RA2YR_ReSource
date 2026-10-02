@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct PtrVector {
-    int PtrVector:: Destroy(void *a1 = 0);
+    int Destroy(void *a1 = 0);
 };
 
 } // namespace gamemd

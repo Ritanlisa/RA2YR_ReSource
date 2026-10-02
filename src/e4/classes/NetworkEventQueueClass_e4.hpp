@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct NetworkEventQueueClass {
-    int NetworkEventQueueClass:: WaitForResponse();
+    int WaitForResponse();
 };
 
 } // namespace gamemd

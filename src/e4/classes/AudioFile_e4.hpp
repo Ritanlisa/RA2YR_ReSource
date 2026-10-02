@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AudioFile {
-    int AudioFile:: GetCallback();
+    int GetCallback();
 };
 
 } // namespace gamemd

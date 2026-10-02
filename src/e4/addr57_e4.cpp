@@ -502,7 +502,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       }
     }
   }
-  return (gamemd::MapClass **, unsigned int a1)(1);
+  return (gamemd::MapClass **)(1);
 }
 }
 // 0x57ACF0

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct OwnerDrawControl {
-    int OwnerDrawControl:: InitVtable();
+    int InitVtable();
 };
 
 } // namespace gamemd

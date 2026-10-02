@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct ResultNode {
-    void ResultNode:: CleanupList();
+    void CleanupList();
 };
 
 } // namespace gamemd

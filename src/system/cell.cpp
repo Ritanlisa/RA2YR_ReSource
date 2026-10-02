@@ -215,7 +215,7 @@ int CellClass::Draw(int a1, int a2, void * a3) const
       if ( ((unsigned int)(a2)& 0x40) != 0 && (this->vtable3 & 0x10) != 0 ) /*0x48e5c6*/
       {
         IDA_BYTE1(v5) |= 0x40u; /*0x48e5c8*/
-        *(unsigned int *, unsigned int a3)(a3) = v5; /*0x48e5cb*/
+        *(unsigned int *)(a3) = v5; /*0x48e5cb*/
       }
     }
     else
@@ -536,7 +536,7 @@ void CellClass::SetWallOwner(void * a1)
           if ( v6 < i ) /*0x47d282*/
           {
             i = v6; /*0x47d284*/
-            v2 = (*(int (__thiscall **, unsigned int a1)(int))(v5->q038)(v5); /*0x47d28d*/
+            v2 = (*(int (__thiscall **)(int))(v5->q038)(v5); /*0x47d28d*/
           }
         }
         result = g_BuildingProductionState; /*0x47d28f*/

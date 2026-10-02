@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AudioNode {
-    int AudioNode:: Release(void *a1 = 0);
+    int Release(void *a1 = 0);
 };
 
 } // namespace gamemd

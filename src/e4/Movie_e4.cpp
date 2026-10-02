@@ -121,7 +121,7 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
   }
   else
   {
-    *aP2 = (gamemd::CampaignClass **)(*((unsigned int *, unsigned int a4)this + 22) + 76 * aP1);
+    *aP2 = (gamemd::CampaignClass **)(*((unsigned int *)this + 22) + 76 * aP1);
     return (gamemd::CampaignClass **)(1);
   }
 

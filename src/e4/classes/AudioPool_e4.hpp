@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AudioPool {
-    int *AudioPool:: ProcessQueue();
+    int * ProcessQueue();
 };
 
 } // namespace gamemd

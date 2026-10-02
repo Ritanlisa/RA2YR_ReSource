@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct ChatEvent {
-    char ChatEvent:: ProcessStrings(char * a2, int a3, int a4, int a5);
+    char ProcessStrings(char * a2, int a3, int a4, int a5);
 };
 
 } // namespace gamemd

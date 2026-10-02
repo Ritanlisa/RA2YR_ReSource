@@ -64,7 +64,7 @@ struct ParasiteClass {
 // --- flat members (END) ---
     AbstractClass * * TryInfect(unsigned int * a2);
     Coord * * Update(void *a1, void *a2, void *a3, void *a4);
-    ParasiteClass(void * aP1);
+    ParasiteClass(TechnoClass * aP1);
     bool CanInfect(unsigned int * a2);
     int Attach(int * a2);
     int CanExistOnVictimCell();

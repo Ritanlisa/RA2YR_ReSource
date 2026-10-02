@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct SerialPort {
-    int SerialPort:: Close(void *a1 = 0, void *a2 = 0);
+    int Close(void *a1 = 0, void *a2 = 0);
 };
 
 } // namespace gamemd

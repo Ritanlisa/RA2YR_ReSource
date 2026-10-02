@@ -107,7 +107,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   if ( v17 >= 0 ) /*0x73c653*/
   {
     v18 = *((unsigned int *)a1 + 433); /*0x73c655*/
-    v16 = v17 / 2 + *(unsigned int *, unsigned int a1)(v18 + 3632) + v16 * *(char *)(v18 + 3677); /*0x73c672*/
+    v16 = v17 / 2 + *(unsigned int *)(v18 + 3632) + v16 * *(char *)(v18 + 3677); /*0x73c672*/
     goto LABEL_21; /*0x73c674*/
   }
   if ( !*((unsigned int *)a1 + 413) ) /*0x73c679*/
@@ -118,7 +118,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     v18 = *((unsigned int *)a1 + 433); /*0x73c702*/
     v22 = v16 * *(char *)(v18 + 3676) + *((unsigned int *)a1 + 334) % *(char *)(v18 + 3676); /*0x73c71b*/
   LABEL_20:
-    v16 = *(unsigned int *, unsigned int a1)(v18 + 3628) + v22; /*0x73c71d*/
+    v16 = *(unsigned int *)(v18 + 3628) + v22; /*0x73c71d*/
     goto LABEL_21; /*0x73c723*/
   }
   v19 = *((unsigned int *)a1 + 438); /*0x73c6ad*/
@@ -132,7 +132,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v16 = *(unsigned int *)(v18 + 3624) + v16 * v21; /*0x73c6fe*/
       goto LABEL_21; /*0x73c700*/
     }
-    v22 = v16 * *(char *, unsigned int a1, unsigned int a2, unsigned int a3, unsigned int a5)(v18 + 3676); /*0x73c6f0*/
+    v22 = v16 * *(char *)(v18 + 3676); /*0x73c6f0*/
     goto LABEL_20; /*0x73c6f3*/
   }
   v20 = v19 / *(unsigned int *)(v18 + 3620); /*0x73c6b8*/

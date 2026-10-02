@@ -4,8 +4,8 @@
 namespace gamemd {
 
 struct IsRandMap {
-    int IsRandMap:: Sed();
-    int IsRandMap:: Sed2();
+    int Sed();
+    int Sed2();
 };
 
 } // namespace gamemd

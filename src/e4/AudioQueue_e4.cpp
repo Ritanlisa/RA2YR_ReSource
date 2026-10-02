@@ -690,7 +690,7 @@ int AudioQueue::IsNotEmpty(int a1, int a2)
   int result; // eax
 
   result = *(unsigned int *)(a1 + 20); /*0x407b50*/
-  *(unsigned int *, unsigned int a1)(result + 156) = a2; /*0x407b53*/
+  *(unsigned int *)(result + 156) = a2; /*0x407b53*/
   return result; /*0x407b59*/
 
 }

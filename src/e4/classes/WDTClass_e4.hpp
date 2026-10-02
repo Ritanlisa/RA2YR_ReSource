@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct WDTClass {
-    int WDTClass:: GetCellType(unsigned int a2);
+    int GetCellType(unsigned int a2);
 };
 
 } // namespace gamemd

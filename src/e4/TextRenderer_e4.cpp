@@ -193,7 +193,7 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
   LOBYTE(result) = a6; /*0x642dd2*/
   *((char *)this + 20) = (char)(aP3); /*0x642dd6*/
   *((unsigned char *)this + 112) = (unsigned char)(aP4); /*0x642dd9*/
-  *((unsigned char *, unsigned int a4)this + 113) = a6; /*0x642ddc*/
+  *((unsigned char *)this + 113) = a6; /*0x642ddc*/
   return result; /*0x642ddf*/
 
 }

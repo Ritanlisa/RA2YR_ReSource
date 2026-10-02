@@ -6,9 +6,9 @@ namespace gamemd {
 struct DeleteAndZero {
     unsigned int NeedsSaveOrLink;
     unsigned int occupant;
-    int DeleteAndZero:: Alt();
-    int DeleteAndZero:: Alt2();
-    void **DeleteAndZero:: OrFree(char a2);
+    int Alt();
+    int Alt2();
+    void ** OrFree(char a2);
 };
 
 } // namespace gamemd

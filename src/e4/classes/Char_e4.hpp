@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Char {
-    int Char:: Swap(char a2);
+    int Swap(char a2);
 };
 
 } // namespace gamemd

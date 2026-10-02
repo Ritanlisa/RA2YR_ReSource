@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct FileTreeNode {
-    int FileTreeNode:: Destroy(void *a1 = 0);
+    int Destroy(void *a1 = 0);
 };
 
 } // namespace gamemd

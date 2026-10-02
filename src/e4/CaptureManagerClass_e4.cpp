@@ -300,7 +300,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
     if ( *(unsigned int *)((unsigned int)(a1)+ 60) == 1 ) /*0x471d85*/
     {
       for ( i = *(unsigned int *)((unsigned int)(a1)+ 52) - 1; i >= 0; --i ) /*0x471d8b*/
-        CaptureManagerClass::FreeUnit(**(CaptureManagerClass ***, unsigned int a1)(*(unsigned int *)(a1 + 40) + 4 * i), a1, a2, v29, v30, v31); /*0x471d98*/
+        CaptureManagerClass::FreeUnit(**(CaptureManagerClass ***)(*(unsigned int *)(a1 + 40) + 4 * i), a1, a2, v29, v30, v31); /*0x471d98*/
     }
     v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x471da4*/
     v8 = *v5; /*0x471daa*/

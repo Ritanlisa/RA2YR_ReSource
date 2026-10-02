@@ -449,7 +449,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
         v9 = a1[12]; /*0x6af711*/
         *(unsigned int *)(v7 + 8) = g_CurrentFrame; /*0x6af717*/
         *(unsigned int *)(v7 + 12) = v100[1]; /*0x6af721*/
-        *(unsigned int *, unsigned int a2, unsigned int a3, unsigned int a1)(v7 + 16) = v9; /*0x6af724*/
+        *(unsigned int *)(v7 + 16) = v9; /*0x6af724*/
       }
       switch ( *(unsigned int *)(v7 + 4) )
       {

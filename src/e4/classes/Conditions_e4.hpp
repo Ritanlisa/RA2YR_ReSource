@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Conditions {
-    bool Conditions:: CheckResult(int a2);
+    bool CheckResult(int a2);
 };
 
 } // namespace gamemd

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Viewport {
-    int Viewport:: Clear(void *a1 = 0);
+    int Clear(void *a1 = 0);
 };
 
 } // namespace gamemd

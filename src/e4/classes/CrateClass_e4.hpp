@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct CrateClass {
-    int CrateClass:: ProcessPickup(int a2);
+    int ProcessPickup(int a2);
 };
 
 } // namespace gamemd

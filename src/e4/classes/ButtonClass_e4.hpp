@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct ButtonClass {
-    char ButtonClass:: SetState(char a2);
+    char SetState(char a2);
 };
 
 } // namespace gamemd

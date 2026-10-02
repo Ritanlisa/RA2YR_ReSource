@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Matrix2D {
-    int Matrix2D:: Rotate(float a2);
+    int Rotate(float a2);
 };
 
 } // namespace gamemd

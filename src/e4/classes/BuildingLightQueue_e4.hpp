@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct BuildingLightQueue {
-    int BuildingLightQueue:: RemoveEntry(void *a1 = 0);
+    int RemoveEntry(void *a1 = 0);
 };
 
 } // namespace gamemd

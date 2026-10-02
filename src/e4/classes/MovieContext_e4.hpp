@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct MovieContext {
-    int MovieContext:: Cleanup(void *a1 = 0);
+    int Cleanup(void *a1 = 0);
 };
 
 } // namespace gamemd

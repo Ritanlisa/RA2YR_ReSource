@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct OptionQueue {
-    int OptionQueue:: PushEntry(void * a2);
+    int PushEntry(void * a2);
 };
 
 } // namespace gamemd

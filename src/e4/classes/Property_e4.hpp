@@ -4,8 +4,8 @@
 namespace gamemd {
 
 struct Property {
-    int Property:: GetField11();
-    int16_t Property:: Set(int16_t a2, void *a1 = 0, void *a3 = 0);
+    int GetField11();
+    int16_t Set(int16_t a2, void *a1 = 0, void *a3 = 0);
 };
 
 } // namespace gamemd

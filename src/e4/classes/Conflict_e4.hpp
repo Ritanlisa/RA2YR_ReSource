@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Conflict {
-    int Conflict:: GetOwnerHouse();
+    int GetOwnerHouse();
 };
 
 } // namespace gamemd

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct SyncDelayClass {
-    char SyncDelayClass:: ProcessNetworkSync();
+    char ProcessNetworkSync();
 };
 
 } // namespace gamemd

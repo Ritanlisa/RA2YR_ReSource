@@ -61,7 +61,7 @@ struct AirstrikeClass {
 // --- flat members (END) ---
     AbstractClass * * UpdateAll();
     char StartMission(int * a2);
-    AirstrikeClass(void * aP1);
+    AirstrikeClass(int a2);
     int ReassignTarget(int a2, void *a2_2);
     int RemoveAircraft(AudioController * aP1);
     int Seek(TechnoTypeClass * aP0, int * a1, int aP2);

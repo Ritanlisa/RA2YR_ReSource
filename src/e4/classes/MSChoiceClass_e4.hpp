@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct MSChoiceClass {
-    char **MSChoiceClass:: LoadFromINI(unsigned int * a2, void * a3);
+    char ** LoadFromINI(unsigned int * a2, void * a3);
 };
 
 } // namespace gamemd

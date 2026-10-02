@@ -4,8 +4,8 @@
 namespace gamemd {
 
 struct BufferIO {
-    int BufferIO:: Cleanup(int a2);
-    int BufferIO:: Flush();
+    int Cleanup(int a2);
+    int Flush();
 };
 
 } // namespace gamemd

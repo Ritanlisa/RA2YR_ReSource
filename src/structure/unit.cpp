@@ -313,7 +313,7 @@ int __thiscall UnitClass::GetExitCell(int a1,unsigned int *a2,unsigned int *a3)
     result = a1->referenceCount; /*0x54e4b8*/
     v14 = a1->uniqueId; /*0x54e4bb*/
     a1->referenceCount = result + 1; /*0x54e4c1*/
-    *(unsigned int *, unsigned int a1)(v14 + 4 * result) = v6; /*0x54e4c4*/
+    *(unsigned int *)(v14 + 4 * result) = v6; /*0x54e4c4*/
   }
   return result; /*0x54e3d8*/
 }

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Multiplay {
-    void Multiplay:: LogToSYNC_NOMPDEBUG();
+    void LogToSYNC_NOMPDEBUG();
 };
 
 } // namespace gamemd

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Int4 {
-    unsigned int *Int4:: Set(int a2, int a3, int a4, int a5);
+    unsigned int * Set(int a2, int a3, int a4, int a5);
     int Set2(int a2, int a3, int a4, int a5);  // 0x645c50
 };
 

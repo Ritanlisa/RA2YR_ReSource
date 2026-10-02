@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct TimerPool {
-    unsigned int *TimerPool:: AllocSlot();
+    unsigned int * AllocSlot();
 };
 
 } // namespace gamemd

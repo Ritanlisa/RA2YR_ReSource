@@ -106,7 +106,7 @@ LONG TClassFactory_MechLocomotionClass::AddRef(void *a1)
 
   int v2; // [esp+4h] [ebp+4h]
 
-  return InterlockedIncrement((volatile LONG *, unsigned int a3, unsigned int a4)(v2 + 4)); /*0x6c4d4e*/
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c4d4e*/
 
 }
 } // namespace gamemd

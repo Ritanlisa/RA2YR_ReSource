@@ -16,7 +16,7 @@ void AITriggerTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x41e506*/
     return -2147467261; /*0x41e508*/
-  *(unsigned int *, unsigned int a2)(a2) = -1173801692; /*0x41e516*/
+  *(unsigned int *)(a2) = -1173801692; /*0x41e516*/
   a2[1] = 298994932; /*0x41e51e*/
   a2[2] = 268445372; /*0x41e527*/
   a2[3] = unk_7E996C; /*0x41e530*/
@@ -178,7 +178,7 @@ void AnimFile::AddRef(void * a1, void * a2)
   if ( !(*(uint8_t (**)(AnimFile *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 24))(this) ) /*0x426763*/
   {
     (*(void (**)(unsigned int, int))(**(unsigned int **)(v4 + 132) + 28))(*(unsigned int *)(v4 + 132), 1); /*0x426774*/
-    *(unsigned char *, unsigned int a2)(v4 + 137) = 1; /*0x426777*/
+    *(unsigned char *)(v4 + 137) = 1; /*0x426777*/
   }
   return sub_4267F0(v6, a2); /*0x426785*/
 }

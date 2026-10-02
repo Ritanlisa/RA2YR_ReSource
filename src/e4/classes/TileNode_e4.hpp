@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct TileNode {
-    int TileNode:: Cleanup(void *a1 = 0);
+    int Cleanup(void *a1 = 0);
 };
 
 } // namespace gamemd
