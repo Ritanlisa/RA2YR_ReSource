@@ -7,8 +7,20 @@
 namespace gamemd
 {
 
-class FootClass;
-class TechnoClass;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class FootClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_FootClass
+#define GAMEMD_USING_FootClass
+using ::ra2::game::FootClass;
+#endif
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class TechnoClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_TechnoClass
+#define GAMEMD_USING_TechnoClass
+using ::ra2::game::TechnoClass;
+#endif
 
 // ============================================================================
 // MovementAI — Movement AI state machine (7 methods)

@@ -13,7 +13,13 @@ namespace gamemd
 
 class DSurface;
 class HouseClass;
-class ObjectClass;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class ObjectClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ::ra2::game::ObjectClass;
+#endif
 
 // ============================================================================
 // TacticalMap — tactical map rendering (10 methods)

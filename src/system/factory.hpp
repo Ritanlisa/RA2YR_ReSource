@@ -14,7 +14,13 @@ using ra2::game::AbstractType;
 #endif
 
 class HouseClass;
-class TechnoClass;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class TechnoClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_TechnoClass
+#define GAMEMD_USING_TechnoClass
+using ::ra2::game::TechnoClass;
+#endif
 class TechnoTypeClass;
 
 class FactoryClass : public AbstractClass

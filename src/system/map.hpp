@@ -62,7 +62,13 @@ class BulletTypeClass;
 class WeaponTypeClass;
 class WarheadTypeClass;
 class AnimTypeClass;
-class FootClass;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class FootClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_FootClass
+#define GAMEMD_USING_FootClass
+using ::ra2::game::FootClass;
+#endif
 
 enum class Layer : int;
 enum class LandType : int;

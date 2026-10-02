@@ -8,7 +8,13 @@
 namespace gamemd
 {
 
-class AudioController;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class AudioController; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_AudioController
+#define GAMEMD_USING_AudioController
+using ::ra2::game::AudioController;
+#endif
 
 // ============================================================================
 // AudioMixer — DirectSound mixer (9 methods)

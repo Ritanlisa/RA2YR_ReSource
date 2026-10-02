@@ -13,7 +13,13 @@ namespace gamemd
 {
 
 class CCINIClass;
-class AbstractClass;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class AbstractClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_AbstractClass
+#define GAMEMD_USING_AbstractClass
+using ::ra2::game::AbstractClass;
+#endif
 class AircraftTypeClass;
 class AnimTypeClass;
 class BuildingTypeClass;

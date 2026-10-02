@@ -37,7 +37,13 @@ class UnitClass;
 class InfantryClass;
 class AircraftClass;
 class TerrainClass;
-class FootClass;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class FootClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_FootClass
+#define GAMEMD_USING_FootClass
+using ::ra2::game::FootClass;
+#endif
 class HouseClass;
 class LightConvertClass;
 class RadSiteClass;

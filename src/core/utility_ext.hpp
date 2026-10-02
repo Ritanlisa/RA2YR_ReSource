@@ -13,7 +13,13 @@ namespace gamemd
 {
 
 class DSurface;
-class ObjectClass;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class ObjectClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ::ra2::game::ObjectClass;
+#endif
 class HouseClass;
 class UnitClass;
 

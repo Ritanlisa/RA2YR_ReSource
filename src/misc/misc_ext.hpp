@@ -10,10 +10,28 @@
 namespace gamemd
 {
 
-class ObjectClass;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class ObjectClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ::ra2::game::ObjectClass;
+#endif
 class HouseClass;
-class TechnoClass;
-class FootClass;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class TechnoClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_TechnoClass
+#define GAMEMD_USING_TechnoClass
+using ::ra2::game::TechnoClass;
+#endif
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class FootClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_FootClass
+#define GAMEMD_USING_FootClass
+using ::ra2::game::FootClass;
+#endif
 class DSurface;
 struct SHPStruct;
 

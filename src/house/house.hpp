@@ -49,7 +49,13 @@ class InfantryTypeClass;
 class UnitTypeClass;
 class SuperClass;
 class TagClass;
-class FootClass;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class FootClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_FootClass
+#define GAMEMD_USING_FootClass
+using ::ra2::game::FootClass;
+#endif
 struct ColorStruct;
 class AnimClass;
 class BulletClass;

@@ -26,7 +26,13 @@ using ra2::game::CellStruct;
 class TeamTypeClass;
 class ScriptClass;
 class HouseClass;
-class FootClass;
+} // namespace gamemd (bridge re-own, G42.29h)
+namespace ra2 { namespace game { class FootClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_FootClass
+#define GAMEMD_USING_FootClass
+using ::ra2::game::FootClass;
+#endif
 class TechnoTypeClass;
 class TagClass;
 class CellClass;
