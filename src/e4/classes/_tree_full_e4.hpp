@@ -340,7 +340,6 @@ struct HashTable {
     unsigned char q044;  // 0x44
     unsigned char q048;  // 0x48
     void* FindString;  // 0x0 (no offset truth)
-    void* vftable;  // 0x0 (no offset truth)
     void* Constructor;  // 0x0 (no offset truth)
     unsigned char q04C;  // 0x4C
     void* FindOrCreate2;  // 0x0 (no offset truth)
