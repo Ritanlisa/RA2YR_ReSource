@@ -18,7 +18,7 @@ void * MSFrameAnim::QueryInterface(unsigned int * Block, char a2)
 {
 
   *(unsigned int *)Block->__pad_0 = &vt_MSFrameAnim; /*0x769bd3*/
-  VtableStub::5CB6C0(Block); /*0x769bd9*/
+  VtableStub::sub_5CB6C0(Block); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
     __3_YAXPAX_Z(Block); /*0x769be6*/
   return Block->__pad_0; /*0x769bf0*/
@@ -333,7 +333,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->__pad_0 /*0x76a33e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 /*0x76a33e*/
                                                                                               + 12))(this);
   }
   v7 = this->m_8; /*0x76a341*/

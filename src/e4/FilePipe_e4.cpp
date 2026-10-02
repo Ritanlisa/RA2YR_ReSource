@@ -232,7 +232,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4781ce*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4781ce*/
   }
   v7 = this->m_8; /*0x4781d1*/
   if ( v7 < this->m_10 ) /*0x4781d9*/
@@ -482,7 +482,7 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUButtonFadeEffect *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4b9eae*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4b9eae*/
   }
   v7 = this->m_8; /*0x4b9eb1*/
   if ( v7 < this->m_10 ) /*0x4b9eb9*/
@@ -553,7 +553,7 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUCrossDissolveEffect *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4ba10e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4ba10e*/
   }
   v7 = this->m_8; /*0x4ba111*/
   if ( v7 < this->m_10 ) /*0x4ba119*/

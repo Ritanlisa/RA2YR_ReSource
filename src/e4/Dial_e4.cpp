@@ -126,7 +126,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7e62*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7e62*/
     return 1; /*0x4a7e68*/
   }
 
@@ -226,7 +226,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7f8e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7f8e*/
   }
   v7 = this->m_8; /*0x4a7f91*/
   if ( v7 < this->m_10 ) /*0x4a7f99*/

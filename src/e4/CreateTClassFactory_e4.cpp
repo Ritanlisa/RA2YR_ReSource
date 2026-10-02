@@ -97,7 +97,7 @@ int E4Recv_6BF8D0::CreateTClassFactory_CellClass(void * a1, void * a2, void * a3
     *v4 = a2; /*0x6bf916*/
   if ( !*v4 ) /*0x6bf918*/
     return -2147467262; /*0x6bf920*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6bf92c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6bf92c*/
   return 0; /*0x6bf8de*/
 
 }
@@ -117,7 +117,7 @@ int E4Recv_6BFA50::CreateTClassFactory_EMPulseClass(void * a1, void * a2, void *
     *v4 = a2; /*0x6bfa96*/
   if ( !*v4 ) /*0x6bfa98*/
     return -2147467262; /*0x6bfaa0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6bfaac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6bfaac*/
   return 0; /*0x6bfa5e*/
 
 }
@@ -137,7 +137,7 @@ int E4Recv_6BFBD0::CreateTClassFactory_LightSourceClass(void * a1, void * a2, vo
     *v4 = a2; /*0x6bfc16*/
   if ( !*v4 ) /*0x6bfc18*/
     return -2147467262; /*0x6bfc20*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6bfc2c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6bfc2c*/
   return 0; /*0x6bfbde*/
 
 }
@@ -157,7 +157,7 @@ int E4Recv_6BFD50::CreateTClassFactory_SideClass(void * a1, void * a2, void * a3
     *v4 = a2; /*0x6bfd96*/
   if ( !*v4 ) /*0x6bfd98*/
     return -2147467262; /*0x6bfda0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6bfdac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6bfdac*/
   return 0; /*0x6bfd5e*/
 
 }
@@ -177,7 +177,7 @@ int E4Recv_6BFED0::CreateTClassFactory_TiberiumClass(void * a1, void * a2, void 
     *v4 = a2; /*0x6bff16*/
   if ( !*v4 ) /*0x6bff18*/
     return -2147467262; /*0x6bff20*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6bff2c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6bff2c*/
   return 0; /*0x6bfede*/
 
 }
@@ -197,7 +197,7 @@ int E4Recv_6C01D0::CreateTClassFactory_CampaignClass(void * a1, void * a2, void 
     *v4 = a2; /*0x6c0216*/
   if ( !*v4 ) /*0x6c0218*/
     return -2147467262; /*0x6c0220*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c022c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c022c*/
   return 0; /*0x6c01de*/
 
 }
@@ -217,7 +217,7 @@ int E4Recv_6C0350::CreateTClassFactory_BuildingLightClass(void * a1, void * a2, 
     *v4 = a2; /*0x6c0396*/
   if ( !*v4 ) /*0x6c0398*/
     return -2147467262; /*0x6c03a0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c03ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c03ac*/
   return 0; /*0x6c035e*/
 
 }
@@ -237,7 +237,7 @@ int E4Recv_6C04D0::CreateTClassFactory_WaypointPathClass(void * a1, void * a2, v
     *v4 = a2; /*0x6c0516*/
   if ( !*v4 ) /*0x6c0518*/
     return -2147467262; /*0x6c0520*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c052c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c052c*/
   return 0; /*0x6c04de*/
 
 }
@@ -257,7 +257,7 @@ int E4Recv_6C0650::CreateTClassFactory_TemporalClass(void * a1, void * a2, void 
     *v4 = a2; /*0x6c0696*/
   if ( !*v4 ) /*0x6c0698*/
     return -2147467262; /*0x6c06a0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c06ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c06ac*/
   return 0; /*0x6c065e*/
 
 }
@@ -277,7 +277,7 @@ int E4Recv_6C07D0::CreateTClassFactory_AirstrikeClass(void * a1, void * a2, void
     *v4 = a2; /*0x6c0816*/
   if ( !*v4 ) /*0x6c0818*/
     return -2147467262; /*0x6c0820*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c082c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c082c*/
   return 0; /*0x6c07de*/
 
 }
@@ -297,7 +297,7 @@ int E4Recv_6C0950::CreateTClassFactory_SpawnManagerClass(void * a1, void * a2, v
     *v4 = a2; /*0x6c0996*/
   if ( !*v4 ) /*0x6c0998*/
     return -2147467262; /*0x6c09a0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c09ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c09ac*/
   return 0; /*0x6c095e*/
 
 }
@@ -317,7 +317,7 @@ int E4Recv_6C0AD0::CreateTClassFactory_SlaveManagerClass(void * a1, void * a2, v
     *v4 = a2; /*0x6c0b16*/
   if ( !*v4 ) /*0x6c0b18*/
     return -2147467262; /*0x6c0b20*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c0b2c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c0b2c*/
   return 0; /*0x6c0ade*/
 
 }
@@ -337,7 +337,7 @@ int E4Recv_6C0C50::CreateTClassFactory_CaptureManagerClass(void * a1, void * a2,
     *v4 = a2; /*0x6c0c96*/
   if ( !*v4 ) /*0x6c0c98*/
     return -2147467262; /*0x6c0ca0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c0cac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c0cac*/
   return 0; /*0x6c0c5e*/
 
 }
@@ -357,7 +357,7 @@ int E4Recv_6C0DD0::CreateTClassFactory_DiskLaserClass(void * a1, void * a2, void
     *v4 = a2; /*0x6c0e16*/
   if ( !*v4 ) /*0x6c0e18*/
     return -2147467262; /*0x6c0e20*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c0e2c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c0e2c*/
   return 0; /*0x6c0dde*/
 
 }
@@ -377,7 +377,7 @@ int E4Recv_6C0F50::CreateTClassFactory_ParasiteClass(void * a1, void * a2, void 
     *v4 = a2; /*0x6c0f96*/
   if ( !*v4 ) /*0x6c0f98*/
     return -2147467262; /*0x6c0fa0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c0fac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c0fac*/
   return 0; /*0x6c0f5e*/
 
 }
@@ -397,7 +397,7 @@ int E4Recv_6C10D0::CreateTClassFactory_BombClass(void * a1, void * a2, void * a3
     *v4 = a2; /*0x6c1116*/
   if ( !*v4 ) /*0x6c1118*/
     return -2147467262; /*0x6c1120*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c112c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c112c*/
   return 0; /*0x6c10de*/
 
 }
@@ -417,7 +417,7 @@ int E4Recv_6C1250::CreateTClassFactory_RadSiteClass(void * a1, void * a2, void *
     *v4 = a2; /*0x6c1296*/
   if ( !*v4 ) /*0x6c1298*/
     return -2147467262; /*0x6c12a0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c12ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c12ac*/
   return 0; /*0x6c125e*/
 
 }
@@ -437,7 +437,7 @@ int E4Recv_6C13D0::CreateTClassFactory_TEventClass(void * a1, void * a2, void * 
     *v4 = a2; /*0x6c1416*/
   if ( !*v4 ) /*0x6c1418*/
     return -2147467262; /*0x6c1420*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c142c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c142c*/
   return 0; /*0x6c13de*/
 
 }
@@ -457,7 +457,7 @@ int E4Recv_6C1550::CreateTClassFactory_VoxelAnimTypeClass(void * a1, void * a2, 
     *v4 = a2; /*0x6c1596*/
   if ( !*v4 ) /*0x6c1598*/
     return -2147467262; /*0x6c15a0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c15ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c15ac*/
   return 0; /*0x6c155e*/
 
 }
@@ -477,7 +477,7 @@ int E4Recv_6C16D0::CreateTClassFactory_VoxelAnimClass(void * a1, void * a2, void
     *v4 = a2; /*0x6c1716*/
   if ( !*v4 ) /*0x6c1718*/
     return -2147467262; /*0x6c1720*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c172c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c172c*/
   return 0; /*0x6c16de*/
 
 }
@@ -497,7 +497,7 @@ int E4Recv_6C1850::CreateTClassFactory_TActionClass(void * a1, void * a2, void *
     *v4 = a2; /*0x6c1896*/
   if ( !*v4 ) /*0x6c1898*/
     return -2147467262; /*0x6c18a0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c18ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c18ac*/
   return 0; /*0x6c185e*/
 
 }
@@ -517,7 +517,7 @@ int E4Recv_6C19D0::CreateTClassFactory_TriggerClass(void * a1, void * a2, void *
     *v4 = a2; /*0x6c1a16*/
   if ( !*v4 ) /*0x6c1a18*/
     return -2147467262; /*0x6c1a20*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c1a2c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c1a2c*/
   return 0; /*0x6c19de*/
 
 }
@@ -537,7 +537,7 @@ int E4Recv_6C1B50::CreateTClassFactory_TriggerTypeClass(void * a1, void * a2, vo
     *v4 = a2; /*0x6c1b96*/
   if ( !*v4 ) /*0x6c1b98*/
     return -2147467262; /*0x6c1ba0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c1bac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c1bac*/
   return 0; /*0x6c1b5e*/
 
 }
@@ -557,7 +557,7 @@ int E4Recv_6C1CD0::CreateTClassFactory_ScriptClass(void * a1, void * a2, void * 
     *v4 = a2; /*0x6c1d16*/
   if ( !*v4 ) /*0x6c1d18*/
     return -2147467262; /*0x6c1d20*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c1d2c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c1d2c*/
   return 0; /*0x6c1cde*/
 
 }
@@ -577,7 +577,7 @@ int E4Recv_6C1E50::CreateTClassFactory_ScriptTypeClass(void * a1, void * a2, voi
     *v4 = a2; /*0x6c1e96*/
   if ( !*v4 ) /*0x6c1e98*/
     return -2147467262; /*0x6c1ea0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c1eac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c1eac*/
   return 0; /*0x6c1e5e*/
 
 }
@@ -597,7 +597,7 @@ int E4Recv_6C1FD0::CreateTClassFactory_TagClass(void * a1, void * a2, void * a3)
     *v4 = a2; /*0x6c2016*/
   if ( !*v4 ) /*0x6c2018*/
     return -2147467262; /*0x6c2020*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c202c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c202c*/
   return 0; /*0x6c1fde*/
 
 }
@@ -617,7 +617,7 @@ int E4Recv_6C2150::CreateTClassFactory_TagTypeClass(void * a1, void * a2, void *
     *v4 = a2; /*0x6c2196*/
   if ( !*v4 ) /*0x6c2198*/
     return -2147467262; /*0x6c21a0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c21ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c21ac*/
   return 0; /*0x6c215e*/
 
 }
@@ -637,7 +637,7 @@ int E4Recv_6C22D0::CreateTClassFactory_TeamClass(void * a1, void * a2, void * a3
     *v4 = a2; /*0x6c2316*/
   if ( !*v4 ) /*0x6c2318*/
     return -2147467262; /*0x6c2320*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c232c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c232c*/
   return 0; /*0x6c22de*/
 
 }
@@ -657,7 +657,7 @@ int E4Recv_6C2450::CreateTClassFactory_TeamTypeClass(void * a1, void * a2, void 
     *v4 = a2; /*0x6c2496*/
   if ( !*v4 ) /*0x6c2498*/
     return -2147467262; /*0x6c24a0*/
-  (*(void (**, unsigned int a3)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c24ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c24ac*/
   return 0; /*0x6c245e*/
 
 }
@@ -677,7 +677,7 @@ int E4Recv_6C25D0::CreateTClassFactory_TaskForceClass(void * a1, void * a2, void
     *v4 = a2; /*0x6c2616*/
   if ( !*v4 ) /*0x6c2618*/
     return -2147467262; /*0x6c2620*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c262c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c262c*/
   return 0; /*0x6c25de*/
 
 }
@@ -697,7 +697,7 @@ int E4Recv_6C2750::CreateTClassFactory_UnitTypeClass(void * a1, void * a2, void 
     *v4 = a2; /*0x6c2796*/
   if ( !*v4 ) /*0x6c2798*/
     return -2147467262; /*0x6c27a0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c27ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c27ac*/
   return 0; /*0x6c275e*/
 
 }
@@ -717,7 +717,7 @@ int E4Recv_6C28D0::CreateTClassFactory_BuildingTypeClass(void * a1, void * a2, v
     *v4 = a2; /*0x6c2916*/
   if ( !*v4 ) /*0x6c2918*/
     return -2147467262; /*0x6c2920*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c292c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c292c*/
   return 0; /*0x6c28de*/
 
 }
@@ -737,7 +737,7 @@ int E4Recv_6C2A50::CreateTClassFactory_AircraftTypeClass(void * a1, void * a2, v
     *v4 = a2; /*0x6c2a96*/
   if ( !*v4 ) /*0x6c2a98*/
     return -2147467262; /*0x6c2aa0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2aac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2aac*/
   return 0; /*0x6c2a5e*/
 
 }
@@ -757,7 +757,7 @@ int E4Recv_6C2BD0::CreateTClassFactory_InfantryTypeClass(void * a1, void * a2, v
     *v4 = a2; /*0x6c2c16*/
   if ( !*v4 ) /*0x6c2c18*/
     return -2147467262; /*0x6c2c20*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2c2c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2c2c*/
   return 0; /*0x6c2bde*/
 
 }
@@ -777,7 +777,7 @@ int E4Recv_6C2D50::CreateTClassFactory_BulletTypeClass(void * a1, void * a2, voi
     *v4 = a2; /*0x6c2d96*/
   if ( !*v4 ) /*0x6c2d98*/
     return -2147467262; /*0x6c2da0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2dac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2dac*/
   return 0; /*0x6c2d5e*/
 
 }
@@ -797,7 +797,7 @@ int E4Recv_6C2ED0::CreateTClassFactory_IsometricTileTypeClass(void * a1, void * 
     *v4 = a2; /*0x6c2f16*/
   if ( !*v4 ) /*0x6c2f18*/
     return -2147467262; /*0x6c2f20*/
-  (*(void (**, unsigned int a3)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2f2c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2f2c*/
   return 0; /*0x6c2ede*/
 
 }
@@ -817,7 +817,7 @@ int E4Recv_6C3050::CreateTClassFactory_OverlayTypeClass(void * a1, void * a2, vo
     *v4 = a2; /*0x6c3096*/
   if ( !*v4 ) /*0x6c3098*/
     return -2147467262; /*0x6c30a0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c30ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c30ac*/
   return 0; /*0x6c305e*/
 
 }
@@ -837,7 +837,7 @@ int E4Recv_6C31D0::CreateTClassFactory_SmudgeTypeClass(void * a1, void * a2, voi
     *v4 = a2; /*0x6c3216*/
   if ( !*v4 ) /*0x6c3218*/
     return -2147467262; /*0x6c3220*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c322c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c322c*/
   return 0; /*0x6c31de*/
 
 }
@@ -857,7 +857,7 @@ int E4Recv_6C3350::CreateTClassFactory_UnitClass(void * a1, void * a2, void * a3
     *v4 = a2; /*0x6c3396*/
   if ( !*v4 ) /*0x6c3398*/
     return -2147467262; /*0x6c33a0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c33ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c33ac*/
   return 0; /*0x6c335e*/
 
 }
@@ -877,7 +877,7 @@ int E4Recv_6C34D0::CreateTClassFactory_BuildingClass(void * a1, void * a2, void 
     *v4 = a2; /*0x6c3516*/
   if ( !*v4 ) /*0x6c3518*/
     return -2147467262; /*0x6c3520*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c352c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c352c*/
   return 0; /*0x6c34de*/
 
 }
@@ -897,7 +897,7 @@ int E4Recv_6C3650::CreateTClassFactory_AircraftClass(void * a1, void * a2, void 
     *v4 = a2; /*0x6c3696*/
   if ( !*v4 ) /*0x6c3698*/
     return -2147467262; /*0x6c36a0*/
-  (*(void (**, unsigned int a3)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c36ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c36ac*/
   return 0; /*0x6c365e*/
 
 }
@@ -917,7 +917,7 @@ int E4Recv_6C37D0::CreateTClassFactory_InfantryClass(void * a1, void * a2, void 
     *v4 = a2; /*0x6c3816*/
   if ( !*v4 ) /*0x6c3818*/
     return -2147467262; /*0x6c3820*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c382c*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c382c*/
   return 0; /*0x6c37de*/
 
 }
@@ -937,7 +937,7 @@ int E4Recv_6C3950::CreateTClassFactory_AnimClass(void * a1, void * a2, void * a3
     *v4 = a2; /*0x6c3996*/
   if ( !*v4 ) /*0x6c3998*/
     return -2147467262; /*0x6c39a0*/
-  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c39ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c39ac*/
   return 0; /*0x6c395e*/
 
 }

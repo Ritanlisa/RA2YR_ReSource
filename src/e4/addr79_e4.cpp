@@ -678,7 +678,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   LABEL_69:
         ((Debug *)this)->Log(); /*0x7943a5*/
         ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)v98, 47, 0, (wchar_t *)dword_A8DA90[v3]); /*0x7943d3*/
-        v41 = Timer::GetTicks(); /*0x7943dc*/
+        v41 = TimerGetTicks(); /*0x7943dc*/
         v37 = 30; /*0x7943e5*/
         v75[1] = v41; /*0x7943ea*/
         v75[3] = 30; /*0x7943ee*/
@@ -732,7 +732,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
                   }
                 }
                 dword_A8E1A4[dword_A8E224] = v3; /*0x7945c4*/
-                v76 = Timer::GetTicks(); /*0x7945d6*/
+                v76 = TimerGetTicks(); /*0x7945d6*/
                 v57 = 1; /*0x7945df*/
                 v42 = 1; /*0x7945e7*/
                 v78 = 1200; /*0x7945eb*/
@@ -770,7 +770,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         ++v66; /*0x794671*/
         if ( v64 != -1 ) /*0x794675*/
         {
-          v53 = Timer::GetTicks() - v64; /*0x794680*/
+          v53 = TimerGetTicks() - v64; /*0x794680*/
           if ( v53 >= 360 ) /*0x794686*/
             goto LABEL_100; /*0x794686*/
           v52 = 360 - v53; /*0x794688*/
@@ -841,7 +841,7 @@ char NetworkLobby_WaitForPlayers()
   DWORD Ticks; // [esp+20h] [ebp-30h]
   int v31; // [esp+28h] [ebp-28h]
 
-  Timer::GetTicks(); /*0x7947bb*/
+  TimerGetTicks(); /*0x7947bb*/
   dword_A8E224 = 0; /*0x7947d2*/
   memset(dword_A8E184, 0, sizeof(dword_A8E184)); /*0x7947d8*/
   v29 = -1; /*0x7947e5*/
@@ -905,7 +905,7 @@ char NetworkLobby_WaitForPlayers()
     if ( v9 != -1 ) /*0x794956*/
       break; /*0x794956*/
     Debug::Log(); /*0x7949cb*/
-    Ticks = Timer::GetTicks(); /*0x7949e0*/
+    Ticks = TimerGetTicks(); /*0x7949e0*/
     v31 = 960; /*0x7949f5*/
     v19 = 0; /*0x7949f9*/
     while ( 1 ) /*0x7949fd*/
@@ -925,7 +925,7 @@ char NetworkLobby_WaitForPlayers()
       {
         Debug::Log(); /*0x794a43*/
         v19 = v22; /*0x794a4f*/
-        Ticks = Timer::GetTicks(); /*0x794a63*/
+        Ticks = TimerGetTicks(); /*0x794a63*/
         v23 = 840; /*0x794a67*/
         v31 = 840; /*0x794a71*/
       }
@@ -933,14 +933,14 @@ char NetworkLobby_WaitForPlayers()
       {
         Debug::Log(); /*0x794a92*/
         v19 = v21 - 1; /*0x794a9e*/
-        Ticks = Timer::GetTicks(); /*0x794aa9*/
+        Ticks = TimerGetTicks(); /*0x794aa9*/
         v23 = 840; /*0x794aba*/
         v31 = 840; /*0x794ac0*/
       }
       v24 = v23; /*0x794ac8*/
       if ( Ticks != -1 ) /*0x794acd*/
       {
-        v25 = Timer::GetTicks() - Ticks; /*0x794ad8*/
+        v25 = TimerGetTicks() - Ticks; /*0x794ad8*/
         if ( v25 >= v24 ) /*0x794ade*/
           goto LABEL_41; /*0x794ade*/
         v23 = v24 - v25; /*0x794ae2*/
@@ -1540,12 +1540,12 @@ int WOL_NegotiateScenario(char a1)
         }
       }
   LABEL_75:
-      Timer::GetTicks(); /*0x796236*/
-      Ticks = Timer::GetTicks(); /*0x79625f*/
+      TimerGetTicks(); /*0x796236*/
+      Ticks = TimerGetTicks(); /*0x79625f*/
       v47 = 1200; /*0x796267*/
       if ( v40 ) /*0x79626b*/
       {
-        Ticks = Timer::GetTicks(); /*0x796276*/
+        Ticks = TimerGetTicks(); /*0x796276*/
         v47 = 300; /*0x796287*/
       }
       while ( ((Network *)((int)unk_A8E9C0))->GetQueueCount() > 0 ) /*0x796297*/
@@ -1553,7 +1553,7 @@ int WOL_NegotiateScenario(char a1)
         v21 = v47; /*0x7962a1*/
         if ( Ticks != -1 ) /*0x7962a8*/
         {
-          v22 = Timer::GetTicks() - Ticks; /*0x7962b3*/
+          v22 = TimerGetTicks() - Ticks; /*0x7962b3*/
           if ( v22 >= v47 ) /*0x7962b9*/
             break; /*0x7962b9*/
           v21 = v47 - v22; /*0x7962bf*/
@@ -1595,14 +1595,14 @@ int WOL_NegotiateScenario(char a1)
         }
   LABEL_99:
         Debug::Log(); /*0x79638d*/
-        Timer::GetTicks(); /*0x79639e*/
-        v45 = Timer::GetTicks(); /*0x7963bd*/
+        TimerGetTicks(); /*0x79639e*/
+        v45 = TimerGetTicks(); /*0x7963bd*/
         while ( ((Network *)((int)unk_A8E9C0))->GetQueueCount() > 0 ) /*0x7963d9*/
         {
           v26 = 1200; /*0x7963e6*/
           if ( v45 != -1 ) /*0x7963ec*/
           {
-            v27 = Timer::GetTicks() - v45; /*0x7963f7*/
+            v27 = TimerGetTicks() - v45; /*0x7963f7*/
             if ( v27 >= 1200 ) /*0x7963fd*/
               break; /*0x7963fd*/
             v26 = 1200 - v27; /*0x7963ff*/
@@ -1629,12 +1629,12 @@ int WOL_NegotiateScenario(char a1)
   LABEL_113:
     strcpy((char *)dword_A8B230 + 4700, &byte_A8B8E0); /*0x796481*/
     Debug::Log(); /*0x7964b4*/
-    Timer::GetTicks(); /*0x7964c0*/
-    v49 = Timer::GetTicks(); /*0x7964de*/
+    TimerGetTicks(); /*0x7964c0*/
+    v49 = TimerGetTicks(); /*0x7964de*/
     v51 = 1200; /*0x7964f1*/
     if ( v40 ) /*0x7964f5*/
     {
-      v49 = Timer::GetTicks(); /*0x796500*/
+      v49 = TimerGetTicks(); /*0x796500*/
       v51 = 300; /*0x796511*/
     }
     while ( 1 ) /*0x79651a*/
@@ -1675,7 +1675,7 @@ int WOL_NegotiateScenario(char a1)
       v30 = v51; /*0x7965c0*/
       if ( v49 != -1 ) /*0x7965cb*/
       {
-        v31 = Timer::GetTicks() - v49; /*0x7965d6*/
+        v31 = TimerGetTicks() - v49; /*0x7965d6*/
         if ( v31 >= v51 ) /*0x7965dc*/
           goto LABEL_142; /*0x7965dc*/
         v30 = v51 - v31; /*0x7965e2*/
@@ -1703,7 +1703,7 @@ int WOL_NegotiateScenario(char a1)
     v34 = v51; /*0x796673*/
     if ( v49 != -1 ) /*0x79667e*/
     {
-      v35 = Timer::GetTicks() - v49; /*0x796689*/
+      v35 = TimerGetTicks() - v49; /*0x796689*/
       if ( v35 >= v51 ) /*0x79668f*/
       {
   LABEL_146:
@@ -1723,12 +1723,12 @@ int WOL_NegotiateScenario(char a1)
   v4 = 0; /*0x795d5b*/
   v5 = 0; /*0x795d5d*/
   Debug::Log(); /*0x795d5f*/
-  Timer::GetTicks(); /*0x795d6b*/
-  v48 = Timer::GetTicks(); /*0x795d81*/
+  TimerGetTicks(); /*0x795d6b*/
+  v48 = TimerGetTicks(); /*0x795d81*/
   v50 = 900; /*0x795d98*/
   if ( v40 ) /*0x795d9c*/
   {
-    v48 = Timer::GetTicks(); /*0x795db0*/
+    v48 = TimerGetTicks(); /*0x795db0*/
     v50 = 300; /*0x795db8*/
   }
   do /*0x795f56*/
@@ -1800,7 +1800,7 @@ int WOL_NegotiateScenario(char a1)
     v11 = v50; /*0x795f38*/
     if ( v48 != -1 ) /*0x795f3f*/
     {
-      v12 = Timer::GetTicks() - v48; /*0x795f4a*/
+      v12 = TimerGetTicks() - v48; /*0x795f4a*/
       if ( v12 >= v50 ) /*0x795f50*/
         break; /*0x795f50*/
       v11 = v50 - v12; /*0x795f52*/
@@ -1857,11 +1857,11 @@ int WOL_NegotiateScenario(char a1)
   CopyWideToChar(&v53[1], *(char **)dword_A8DA78, -1); /*0x7960b4*/
   for ( i = 1; i < dword_A8DA84; ++i ) /*0x7960c5*/
   {
-    v43 = Timer::GetTicks(); /*0x7960dc*/
+    v43 = TimerGetTicks(); /*0x7960dc*/
     v46 = 600; /*0x7960e6*/
     if ( v40 ) /*0x7960ea*/
     {
-      v52[0] = Timer::GetTicks(); /*0x7960f5*/
+      v52[0] = TimerGetTicks(); /*0x7960f5*/
       v43 = v52[0]; /*0x7960f9*/
       v52[2] = 300; /*0x796106*/
       v46 = 300; /*0x79610e*/
@@ -1874,7 +1874,7 @@ int WOL_NegotiateScenario(char a1)
       v16 = v46; /*0x79613c*/
       if ( v43 != -1 ) /*0x796142*/
       {
-        v17 = Timer::GetTicks() - v43; /*0x79614d*/
+        v17 = TimerGetTicks() - v43; /*0x79614d*/
         if ( v17 >= v46 ) /*0x796153*/
           break; /*0x796153*/
         v16 = v46 - v17; /*0x796155*/
@@ -6716,7 +6716,7 @@ int E4Recv_793CD0::sub_793CD0()
   int v4; // [esp+4h] [ebp-8h]
 
   dword_A8E1A4[dword_A8E224] = this; /*0x793cd8*/
-  Ticks = Timer::GetTicks(); /*0x793ce3*/
+  Ticks = TimerGetTicks(); /*0x793ce3*/
   v2 = (int *)(12 * dword_A8E224 + 11067844); /*0x793cf6*/
   *v2 = Ticks; /*0x793cfd*/
   v2[1] = v4; /*0x793d03*/

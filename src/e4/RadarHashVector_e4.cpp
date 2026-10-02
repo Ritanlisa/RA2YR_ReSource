@@ -114,7 +114,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x658bf5*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x658bf5*/
   }
   v15 = this->m_8; /*0x658bf8*/
   if ( v15 < this->m_10 ) /*0x658c00*/

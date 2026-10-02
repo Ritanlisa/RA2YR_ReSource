@@ -95,7 +95,7 @@ void E4Recv_771890::sub_771890()
 {
 
   *this = &WorldDominationTour::Voices::vt_Anim; /*0x771890*/
-  VtableStub::5CB6C0(this, unsigned int a2); /*0x771896*/
+  VtableStub::sub_5CB6C0(this, unsigned int a2); /*0x771896*/
 
 }
 }
@@ -3751,7 +3751,7 @@ DWORD E4Recv_7717A0::sub_7717A0()
     StopThemeClass(1); /*0x7717b2*/
     (*(void (**)(int *))(this->targetLaserTimer[1] + 12))(&this->targetLaserTimer[1]); /*0x7717c3*/
   }
-  result = Timer::GetTicks(); /*0x7717ca*/
+  result = TimerGetTicks(); /*0x7717ca*/
   v3 = &this->secondaryFacing[3]; /*0x7717d5*/
   *v3 = result; /*0x7717db*/
   v3[1] = v4; /*0x7717dd*/
@@ -3777,7 +3777,7 @@ unsigned int * E4Recv_771850::sub_771850(int a2)
   *((unsigned int *)this + 1) = 0; /*0x771859*/
   *((unsigned int *)this + 2) = 0; /*0x77185c*/
   *((unsigned char *)this + 12) = 0; /*0x77185f*/
-  *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x771867*/
+  *((unsigned int *)this + 4) = TimerGetTicks(); /*0x771867*/
   *((unsigned int *)this + 6) = 0; /*0x77186e*/
   *((unsigned int *)this + 7) = a2; /*0x771871*/
   *this = &WorldDominationTour::Voices::vt_Anim; /*0x771874*/
@@ -6492,7 +6492,7 @@ void sub_77D140()
 namespace gamemd {
 int sub_77D160()
 {
-  dword_B76478 = Timer::GetTicks(); /*0x77d16f*/
+  dword_B76478 = TimerGetTicks(); /*0x77d16f*/
   dword_B76480 = 0; /*0x77d174*/
   return atexit(nullsub_263); /*0x77d184*/
 }

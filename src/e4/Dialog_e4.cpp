@@ -218,7 +218,7 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
         if ( !byte_A8E9A0 ) /*0x5d3640*/
         {
           LOBYTE(v16) = (gamemd::Process)(0); /*0x5d3642*/
-          Process@<al>(v16, v18); /*0x5d3644*/
+          Process(v16, v18); /*0x5d3644*/
         }
       }
     }
@@ -341,7 +341,7 @@ LABEL_35:
       goto LABEL_36; /*0x5f2ca3*/
     }
     LOBYTE(v12) = (gamemd::Process)(0); /*0x5f2a88*/
-    Process@<al>(v12, v15); /*0x5f2a8a*/
+    Process(v12, v15); /*0x5f2a8a*/
     memset(Source, 0, sizeof(Source)); /*0x5f2a9c*/
     v11 = (*(int (**)(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( /*0x5f2ab1*/
             g_ClipboardBuffer,
@@ -837,7 +837,7 @@ LABEL_29:
     if ( (int)(GetTickCount() - TickCount) > 5000 || v11 ) /*0x608234*/
       goto LABEL_31; /*0x608234*/
   }
-  if ( VtableStub::55CBF0() || !(uint8_t)GameFrameLoop(v12) ) /*0x608206*/
+  if ( VtableStub::sub_55CBF0() || !(uint8_t)GameFrameLoop(v12) ) /*0x608206*/
     goto LABEL_29; /*0x60820d*/
 LABEL_31:
   EnumChildWindows(v3, Dialog::MapControlToAction, 0); /*0x608236*/
@@ -3389,7 +3389,7 @@ char Dialog::PumpMessages(void *a1_1)
   {
     result = Event::Dispatch(); /*0x62315a*/
   }
-  else if ( !VtableStub::55CBF0() ) /*0x623145*/
+  else if ( !VtableStub::sub_55CBF0() ) /*0x623145*/
   {
     result = GameFrameLoop(); /*0x62314e*/
     if ( (unsigned char)result ) /*0x623155*/

@@ -33,7 +33,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
     unsigned int v8 = 0;  /* G37 hoist */
 
   TemporalClass *temporalUsing; // eax
-  #375 **v8; // ebp
+  void **v8; // ebp
   unsigned int *v9; // eax
   CellClass *v10; // edi
   int v11; // eax
@@ -90,7 +90,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
         return 3; /*0x6fc174*/
     }
   }
-  v8 = (aP2[20] & 1) != 0 ? (#375 **)aP2 : 0;
+  v8 = (aP2[20] & 1) != 0 ? (void **)aP2 : 0;
   v9 = (unsigned int *)((gamemd::CellClass *)((unsigned int *)(*(int ((unsigned char *)(**))(unsigned char *, int *))(*(unsigned int *)aP2 + 72))(aP2, &v39)));
   v10 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v9));
   if ( a0 ) /*0x6fc1a0*/
@@ -101,25 +101,25 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   if ( v8 ) /*0x6fc1b8*/
   {
     if ( *((unsigned char *)v8 + 129) /*0x6fc23f*/
-      || a0->isBerserk && *(unsigned char *)((*((int (**)(#375 **))*v8 + 33))(v8) + 1680)
+      || a0->isBerserk && *(unsigned char *)((*((int (**)(void **))*v8 + 33))(v8) + 1680)
       || *(unsigned char *)((*((int (**)(TechnoClass *))a0->RadioClass + 33))(a0) + 1683)
-      && *(unsigned char *)((*((int (**)(#375 **))*v8 + 33))(v8) + 1684)
+      && *(unsigned char *)((*((int (**)(void **))*v8 + 33))(v8) + 1684)
       || *((unsigned char *)v8 + 636)
-      || !a0->owner->currentPlayer && (*((uint8_t (**)(#375 **))*v8 + 88))(v8) )
+      || !a0->owner->currentPlayer && (*((uint8_t (**)(void **))*v8 + 88))(v8) )
     {
       return 5; /*0x6fc247*/
     }
-    if ( (*((int (**)(#375 **, int, HouseClass *))*v8 + 26))(v8, 1, a0->owner) == 5 /*0x6fc296*/
+    if ( (*((int (**)(void **, int, HouseClass *))*v8 + 26))(v8, 1, a0->owner) == 5 /*0x6fc296*/
       && !(uint8_t)((Cell *)((Cell *)v10))->IsPassableOffset(a0->owner->relatedTagsCount)
       && (TechnoClass::GetValue(a0, -1) > 0 || !(uint8_t)HouseClass::IsAlliedWith(
                                                                      v8[135],
-                                                                     (#375 *)a0->owner)) )
+                                                                     (void *)a0->owner)) )
     {
       return 6; /*0x6fc29d*/
     }
     if ( *((unsigned char *)v8 + 1048) /*0x6fc2cc*/
-      && *(unsigned char *)((*((int (**)(#375 **))*v8 + 33))(v8) + 3434)
-      && !(*((uint8_t (**)(#375 **))*v8 + 21))(v8) )
+      && *(unsigned char *)((*((int (**)(void **))*v8 + 33))(v8) + 3434)
+      && !(*((uint8_t (**)(void **))*v8 + 21))(v8) )
     {
       return 5; /*0x6fc2cc*/
     }
@@ -144,10 +144,10 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
       return 5; /*0x6fc36c*/
     if ( !v8 ) /*0x6fc378*/
       goto LABEL_52; /*0x6fc378*/
-    if ( !*(unsigned char *)((*((int (**)(#375 **))*v8 + 33))(v8) + 1519) ) /*0x6fc385*/
+    if ( !*(unsigned char *)((*((int (**)(void **))*v8 + 33))(v8) + 1519) ) /*0x6fc385*/
       return 5; /*0x6fc876*/
   }
-  if ( v8 && v8[185] && (*((int (**)(#375 **))*v8 + 11))(v8) == 1 && (double)*(int *)(v12 + 180) < 384.0 ) /*0x6fc3bf*/
+  if ( v8 && v8[185] && (*((int (**)(void **))*v8 + 11))(v8) == 1 && (double)*(int *)(v12 + 180) < 384.0 ) /*0x6fc3bf*/
     return 5; /*0x6fc3bf*/
 LABEL_52:
   if ( a0 )
@@ -162,7 +162,7 @@ LABEL_52:
   v14 = *(unsigned int *)(v12 + 172); /*0x6fc3f4*/
   if ( v14 ) /*0x6fc3fc*/
   {
-    if ( *(unsigned char *)(v14 + 365) && v8 && *(unsigned char *)((*((int (**)(#375 **))*v8 + 33))(v8) + 3381) ) /*0x6fc417*/
+    if ( *(unsigned char *)(v14 + 365) && v8 && *(unsigned char *)((*((int (**)(void **))*v8 + 33))(v8) + 3381) ) /*0x6fc417*/
       return 5; /*0x6fc417*/
   }
   v15 = *(unsigned int *)(v12 + 172); /*0x6fc425*/
@@ -209,7 +209,7 @@ LABEL_52:
   v19 = *(unsigned int *)(v12 + 172); /*0x6fc54c*/
   if ( v19 ) /*0x6fc554*/
   {
-    if ( *(unsigned char *)(v19 + 347) && v8 && *(unsigned char *)((*((int (**)(#375 **))*v8 + 33))(v8) + 3479) ) /*0x6fc56f*/
+    if ( *(unsigned char *)(v19 + 347) && v8 && *(unsigned char *)((*((int (**)(void **))*v8 + 33))(v8) + 3479) ) /*0x6fc56f*/
       return 5; /*0x6fc56f*/
   }
   if ( ((unsigned int *)a0)[0] ) /*0x6fc57d*/
@@ -234,7 +234,7 @@ LABEL_52:
   }
   if ( v8 /*0x6fc5f8*/
     && *(unsigned int *)(v12 + 172)
-    && (*((uint8_t (**)(#375 **))*v8 + 117))(v8)
+    && (*((uint8_t (**)(void **))*v8 + 117))(v8)
     && !*(unsigned char *)(*(unsigned int *)(v12 + 172) + 346) )
   {
     return 5; /*0x6fc600*/
@@ -253,8 +253,8 @@ LABEL_52:
 LABEL_98:
   if ( *(unsigned char *)(*(unsigned int *)(v12 + 172) + 346) /*0x6fc67b*/
     && v8
-    && (*((int (**)(#375 **))*v8 + 11))(v8) == 2
-    && *(unsigned char *)((*((int (**)(#375 **))*v8 + 33))(v8) + 3412) )
+    && (*((int (**)(void **))*v8 + 11))(v8) == 2
+    && *(unsigned char *)((*((int (**)(void **))*v8 + 33))(v8) + 3412) )
   {
     return 5; /*0x6fc683*/
   }
@@ -280,9 +280,9 @@ LABEL_98:
   }
   if ( v8 )
   {
-    v23 = *(unsigned int *)((*((int (**)(#375 **))*v8 + 111))(v8) + 236) == 2 /*0x6fc796*/
-       || *(unsigned int *)((*((int (**)(#375 **))*v8 + 111))(v8) + 236) == 6;
-    if ( (*((uint8_t (**)(#375 **))*v8 + 21))(v8) ) /*0x6fc79d*/
+    v23 = *(unsigned int *)((*((int (**)(void **))*v8 + 111))(v8) + 236) == 2 /*0x6fc796*/
+       || *(unsigned int *)((*((int (**)(void **))*v8 + 111))(v8) + 236) == 6;
+    if ( (*((uint8_t (**)(void **))*v8 + 21))(v8) ) /*0x6fc79d*/
       v23 = 0; /*0x6fc7a4*/
     if ( *((unsigned char *)v8 + 140) ) /*0x6fc7a6*/
     {
@@ -390,12 +390,12 @@ LABEL_164:
     return 5; /*0x6fcaf7*/
   if ( !v8 ) /*0x6fcafc*/
     goto LABEL_231; /*0x6fcafc*/
-  if ( v32 && (*((uint8_t (**)(#375 **))*v8 + 88))(v8) ) /*0x6fcb0b*/
+  if ( v32 && (*((uint8_t (**)(void **))*v8 + 88))(v8) ) /*0x6fcb0b*/
     return 5; /*0x6fcb21*/
   if ( *(unsigned char *)(*(unsigned int *)(v38 + 172) + 341) && !((CaptureManagerClass *)((int)a0->captureManager))->CanCapture(v8) ) /*0x6fcb3b*/
     return 5; /*0x6fcb50*/
   v33 = *(unsigned int *)(v38 + 172); /*0x6fcb56*/
-  if ( *(double *)(v33 + 8 * *(unsigned int *)((*((int (**)(#375 **))*v8 + 33))(v8) + 156) + 160) == 0.0 ) /*0x6fcb7c*/
+  if ( *(double *)(v33 + 8 * *(unsigned int *)((*((int (**)(void **))*v8 + 33))(v8) + 156) + 160) == 0.0 ) /*0x6fcb7c*/
     return 5; /*0x6fcb8a*/
   if ( *(unsigned char *)(v33 + 366) && !v8[14] ) /*0x6fcb97*/
     return 5; /*0x6fcbaa*/
@@ -408,8 +408,8 @@ LABEL_164:
   if ( (*((int (**)(TechnoClass *))a0->RadioClass + 111))(a0) /*0x6fcc4c*/
     && (*(unsigned int *)((*((int (**)(TechnoClass *))a0->RadioClass + 111))(a0) + 320) & 0x100) != 0
     && !(*((uint8_t (**)(TechnoClass *))a0->RadioClass + 21))(a0)
-    && (*((int (**)(#375 **))*v8 + 111))(v8)
-    && (*(unsigned int *)((*((int (**)(#375 **))*v8 + 111))(v8) + 320) & 0x100) != 0 )
+    && (*((int (**)(void **))*v8 + 111))(v8)
+    && (*(unsigned int *)((*((int (**)(void **))*v8 + 111))(v8) + 320) & 0x100) != 0 )
   {
     return 5; /*0x6fcc5a*/
   }

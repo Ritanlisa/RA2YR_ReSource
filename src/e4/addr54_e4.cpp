@@ -820,7 +820,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
                                                      &DataGlobal_008292B4,
                                                      (INIClass *)0xFFFFFFFF);
   dword_ABC558 = 0;
-  Ticks = (INIClass *)Timer::GetTicks();
+  Ticks = (INIClass *)TimerGetTicks();
   int v23 = 4;
   v83 = v143;
   var978 = 4;
@@ -829,7 +829,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
     v69 = (MapClass *)v23;
     if ( Ticks == (INIClass *)-1 )
       goto LABEL_24;
-    signed int v24 = Timer::GetTicks() - (unsigned int)Ticks;
+    signed int v24 = TimerGetTicks() - (unsigned int)Ticks;
     if ( v24 < (int)v69 )
     {
       v23 = (int)v69 - v24;
@@ -838,7 +838,7 @@ LABEL_24:
         goto LABEL_26;
     }
     Event::Dispatch();
-    v140 = (AbstractClass *)Timer::GetTicks();
+    v140 = (AbstractClass *)TimerGetTicks();
     int v144 = 4;
     Ticks = (INIClass *)v140;
     v83 = v143;
@@ -1421,7 +1421,7 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
   DWORD Ticks; // [esp+18h] [ebp-18h]
   int v22; // [esp+20h] [ebp-10h]
 
-  Timer::GetTicks(); /*0x546db5*/
+  TimerGetTicks(); /*0x546db5*/
   if ( !a1 ) /*0x546dc8*/
   {
     ((LayerClass *)(&MapClass_Instance))->CellIteratorReset(); /*0x546dd3*/
@@ -1459,7 +1459,7 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
   }
   v12 = 0; /*0x546ec5*/
   v13 = 0; /*0x546ec7*/
-  Ticks = Timer::GetTicks(); /*0x546ed7*/
+  Ticks = TimerGetTicks(); /*0x546ed7*/
   v14 = 1; /*0x546ee0*/
   v15 = 0; /*0x546ee2*/
   v22 = 1; /*0x546eea*/
@@ -1470,12 +1470,12 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
     {
       if ( Ticks == -1 ) /*0x546f03*/
         goto LABEL_23; /*0x546f03*/
-      v16 = Timer::GetTicks() - Ticks; /*0x546f0e*/
+      v16 = TimerGetTicks() - Ticks; /*0x546f0e*/
       if ( v16 < v14 ) /*0x546f14*/
         break; /*0x546f14*/
   LABEL_24:
       Event::Dispatch(); /*0x546f1c*/
-      Ticks = Timer::GetTicks(); /*0x546f2e*/
+      Ticks = TimerGetTicks(); /*0x546f2e*/
       v22 = 4; /*0x546f43*/
   LABEL_25:
       v17 = *((unsigned int *)g_FrameCounter + v15); /*0x546f47*/

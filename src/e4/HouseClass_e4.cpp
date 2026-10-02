@@ -103,12 +103,12 @@ void HouseClass::ResetObjectOrders(char a1, int a2)
         if ( a1 ) /*0x4adf28*/
           goto LABEL_16; /*0x4adf28*/
       }
-      result = House::IsHumanPlayer(*(#375 **)(v5 + 540)); /*0x4adf34*/
+      result = House::IsHumanPlayer(*(void **)(v5 + 540)); /*0x4adf34*/
       if ( (unsigned char)result ) /*0x4adf3b*/
         break; /*0x4adf3b*/
       if ( (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6 /*0x4adfa5*/
         && HIBYTE(dword_8871E0[1][2])
-        && (uint8_t)HouseClass::IsAlliedWith(*(#375 **)(v5 + 540), dword_A83D4C) )
+        && (uint8_t)HouseClass::IsAlliedWith(*(void **)(v5 + 540), dword_A83D4C) )
       {
         result = (*(int (**)(int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)v5 + 1164))(v5, 0, a2, 0, 0); /*0x4adfb9*/
       }
@@ -144,12 +144,12 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
 
   int result; // eax
   int i; // ebp
-  #375 **v4; // esi
+  void **v4; // esi
 
   result = dword_8A03A0; /*0x4adff0*/
   for ( i = 0; i < dword_8A03A0; ++i ) /*0x4adffa*/
   {
-    v4 = *(#375 ***)(dword_8A0394 + 4 * i); /*0x4ae010*/
+    v4 = *(void ***)(dword_8A0394 + 4 * i); /*0x4ae010*/
     if ( v4 /*0x4ae02b*/
       && ((unsigned char)v4[5] & 1) != 0
       && ((*((int (**)(unsigned int))*v4 + 11))(*(unsigned int *)(dword_8A0394 + 4 * i)) != 6 || !a1) )
@@ -157,13 +157,13 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
       if ( (uint8_t)House::IsHumanPlayer(v4[135]) ) /*0x4ae033*/
       {
         if ( *((unsigned char *)v4 + 1051) ) /*0x4ae03c*/
-          (*((void (**)(#375 **, unsigned int, int))*v4 + 72))(v4, 0, a2); /*0x4ae04d*/
+          (*((void (**)(void **, unsigned int, int))*v4 + 72))(v4, 0, a2); /*0x4ae04d*/
       }
-      else if ( (*((int (**)(#375 **))*v4 + 11))(v4) == 6 /*0x4ae07d*/
+      else if ( (*((int (**)(void **))*v4 + 11))(v4) == 6 /*0x4ae07d*/
              && HIBYTE(dword_8871E0[1][2])
              && (uint8_t)HouseClass::IsAlliedWith(v4[135], dword_A83D4C) )
       {
-        (*((void (**)(#375 **, int, unsigned int))*v4 + 72))(v4, a2, 0); /*0x4ae08d*/
+        (*((void (**)(void **, int, unsigned int))*v4 + 72))(v4, a2, 0); /*0x4ae08d*/
       }
     }
     result = dword_8A03A0; /*0x4ae093*/
@@ -2705,7 +2705,7 @@ void HouseClass::LostPoweredCenter(int a2, void *a2_2)
         {
           if ( dword_A8B238[0] ) /*0x50e163*/
           {
-            if ( (#375 *)this != dword_A83D4C ) /*0x50e186*/
+            if ( (void *)this != dword_A83D4C ) /*0x50e186*/
               return; /*0x50e186*/
             goto LABEL_16; /*0x50e186*/
           }
@@ -3341,7 +3341,7 @@ char HouseClass_24::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVGraphicMenuItem *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4f29c2*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4f29c2*/
     return 1; /*0x4f29c8*/
   }
 

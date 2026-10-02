@@ -1428,7 +1428,7 @@ void CheckNetworkGameTimeout()
     {
       v4 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5db760*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5db769*/
-        v4 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db77b*/
+        v4 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db77b*/
       if ( (unsigned int)(v4 - *(unsigned int *)(*(unsigned int *)(dword_A8DA60 + 4 * i) + 53)) > 0x12C ) /*0x5db78f*/
       {
         Debug::Log(); /*0x5db797*/
@@ -1454,14 +1454,14 @@ void CheckNetworkGameTimeout()
       {
         v6 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5db824*/
         if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5db82d*/
-          v6 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db83f*/
+          v6 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db83f*/
         *(unsigned int *)(*(unsigned int *)(dword_A8DA48 + 4 * v2) + 52) = v6; /*0x5db849*/
       }
       v7 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db84c*/
       v8 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5db852*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5db85b*/
       {
-        Ticks = Timer::GetTicks(); /*0x5db862*/
+        Ticks = TimerGetTicks(); /*0x5db862*/
         v7 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db867*/
         v8 += Ticks - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db86f*/
       }
@@ -1469,7 +1469,7 @@ void CheckNetworkGameTimeout()
       {
         v11 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5db8e5*/
         if ( v7 != -1 ) /*0x5db8ee*/
-          v11 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db900*/
+          v11 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db900*/
         v12 = dword_A8DA48; /*0x5db902*/
         v13 = *(unsigned int *)(dword_A8DA48 + 4 * v2); /*0x5db908*/
         if ( (unsigned int)(v11 - *(unsigned int *)(v13 + 52)) > 0x12C && !*(unsigned char *)(v13 + 56) ) /*0x5db916*/
@@ -1899,7 +1899,7 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
       *(unsigned int *)((char *)&v12[19] + 3) = GameOptions::GetEntry(); /*0x5df7bf*/
       *(unsigned int *)((char *)&v12[21] + 3) = a2; /*0x5df7c3*/
       Network::SendMessage((int)unk_A8E9C0, (int)v12, 455, 1, *(unsigned int *)(dword_A8DA60 + 4 * v7) + 40, 0, 0); /*0x5df7e3*/
-      dword_AC0230 = Timer::GetTicks(); /*0x5df7fa*/
+      dword_AC0230 = TimerGetTicks(); /*0x5df7fa*/
       dword_AC0234 = v11; /*0x5df800*/
       dword_AC0238 = 600; /*0x5df806*/
       return 1; /*0x5df81a*/
@@ -1935,34 +1935,34 @@ void int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
   if ( (byte_AC01BC & 1) == 0 ) /*0x5df9fb*/
   {
     byte_AC01BC |= 1u; /*0x5dfa06*/
-    dword_AC0220 = Timer::GetTicks(); /*0x5dfa11*/
+    dword_AC0220 = TimerGetTicks(); /*0x5dfa11*/
     dword_AC0228 = 0; /*0x5dfa16*/
     atexit(nullsub_27); /*0x5dfa21*/
   }
   if ( (byte_AC01BC & 2) == 0 ) /*0x5dfa30*/
   {
     byte_AC01BC |= 2u; /*0x5dfa3c*/
-    dword_AC0200 = Timer::GetTicks(); /*0x5dfa47*/
+    dword_AC0200 = TimerGetTicks(); /*0x5dfa47*/
     dword_AC0208 = 0; /*0x5dfa4c*/
     atexit(nullsub_26); /*0x5dfa57*/
   }
   if ( (byte_AC01BC & 4) == 0 ) /*0x5dfa66*/
   {
     byte_AC01BC |= 4u; /*0x5dfa72*/
-    dword_ABFF70 = Timer::GetTicks(); /*0x5dfa7d*/
+    dword_ABFF70 = TimerGetTicks(); /*0x5dfa7d*/
     dword_ABFF78 = 0; /*0x5dfa82*/
     atexit(nullsub_25); /*0x5dfa8d*/
   }
   if ( a4 ) /*0x5dfa9c*/
   {
-    dword_AC0220 = Timer::GetTicks(); /*0x5dfaac*/
+    dword_AC0220 = TimerGetTicks(); /*0x5dfaac*/
     dword_AC0228 = 120; /*0x5dfab5*/
     dword_AC0224 = v13; /*0x5dfabf*/
-    Ticks = Timer::GetTicks(); /*0x5dfac4*/
+    Ticks = TimerGetTicks(); /*0x5dfac4*/
     dword_AC0208 = 35; /*0x5dfad2*/
     dword_AC0200 = Ticks; /*0x5dfadc*/
     dword_AC0204 = v13; /*0x5dfae1*/
-    dword_ABFF70 = Timer::GetTicks(); /*0x5dfaec*/
+    dword_ABFF70 = TimerGetTicks(); /*0x5dfaec*/
     dword_ABFF74 = v13; /*0x5dfafa*/
     dword_ABFF78 = 83; /*0x5dfaff*/
   }
@@ -1974,14 +1974,14 @@ void int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
       goto LABEL_18; /*0x5dfb31*/
     goto LABEL_14; /*0x5dfb31*/
   }
-  v7 = Timer::GetTicks() - dword_AC0220; /*0x5dfb1f*/
+  v7 = TimerGetTicks() - dword_AC0220; /*0x5dfb1f*/
   if ( v7 < v6 ) /*0x5dfb27*/
   {
     v6 -= v7; /*0x5dfb29*/
     goto LABEL_12; /*0x5dfb29*/
   }
   LABEL_14:
-  dword_AC0220 = Timer::GetTicks(); /*0x5dfb37*/
+  dword_AC0220 = TimerGetTicks(); /*0x5dfb37*/
   dword_AC0224 = v13; /*0x5dfb4e*/
   dword_AC0228 = 120; /*0x5dfb54*/
   if ( Dialog::GetCurrentType() != 188 || a1 ) /*0x5dfb68*/
@@ -2006,7 +2006,7 @@ void int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
   v8 = dword_AC0208; /*0x5dfbf6*/
   if ( dword_AC0200 != -1 ) /*0x5dfbff*/
   {
-    v9 = Timer::GetTicks() - dword_AC0200; /*0x5dfc0b*/
+    v9 = TimerGetTicks() - dword_AC0200; /*0x5dfc0b*/
     if ( v9 >= v8 ) /*0x5dfc13*/
       goto LABEL_25; /*0x5dfc13*/
     v8 -= v9; /*0x5dfc15*/
@@ -2014,7 +2014,7 @@ void int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
   if ( v8 ) /*0x5dfc19*/
     goto LABEL_24; /*0x5dfc19*/
   LABEL_25:
-  dword_AC0200 = Timer::GetTicks(); /*0x5dfc25*/
+  dword_AC0200 = TimerGetTicks(); /*0x5dfc25*/
   dword_AC0204 = v13; /*0x5dfc3c*/
   dword_AC0208 = 35; /*0x5dfc41*/
   memset(v15, 0, sizeof(v15)); /*0x5dfc52*/
@@ -2030,7 +2030,7 @@ void int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
   v11 = dword_ABFF78; /*0x5dfcd7*/
   if ( dword_ABFF70 != -1 ) /*0x5dfce0*/
   {
-    result = Timer::GetTicks() - dword_ABFF70; /*0x5dfcec*/
+    result = TimerGetTicks() - dword_ABFF70; /*0x5dfcec*/
     if ( result >= v11 ) /*0x5dfcf4*/
       goto LABEL_31; /*0x5dfcf4*/
     v11 -= result; /*0x5dfcf6*/
@@ -2044,7 +2044,7 @@ void int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
     if ( !a3 ) /*0x5dfd0c*/
       return result; /*0x5dfd0c*/
   }
-  dword_ABFF70 = Timer::GetTicks(); /*0x5dfd12*/
+  dword_ABFF70 = TimerGetTicks(); /*0x5dfd12*/
   dword_ABFF74 = v13; /*0x5dfd29*/
   dword_ABFF78 = 83; /*0x5dfd2e*/
   memset(v15, 0, sizeof(v15)); /*0x5dfd3f*/
@@ -3122,7 +3122,7 @@ int sub_5DAEC0()
 namespace gamemd {
 int sub_5DAEE0()
 {
-  dword_AC0230 = Timer::GetTicks(); /*0x5daeef*/
+  dword_AC0230 = TimerGetTicks(); /*0x5daeef*/
   dword_AC0238 = 0; /*0x5daef4*/
   return atexit(nullsub_194); /*0x5daf04*/
 }

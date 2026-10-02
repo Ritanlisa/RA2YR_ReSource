@@ -110,8 +110,8 @@ LABEL_5:
         if ( (*(unsigned char *)(v9 + 12) & 1) != 0 /*0x4312a6*/
           && (uint8_t)HouseClass::IsAllied((HouseClass *)dword_A83D4C, result)
           && (uint8_t)HouseClass::IsAlliedWith(
-                                *((#375 **)((char *)&stru_A80220) + *(unsigned int *)(v9 + 272)),
-                                (#375 *)dword_A83D4C)
+                                *((void **)((char *)&stru_A80220) + *(unsigned int *)(v9 + 272)),
+                                (void *)dword_A83D4C)
           && !*(unsigned char *)(*((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(v9 + 272)) + 501) )
         {
           v10 = (int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)&stru_87F5F0.__pad_E12[1538] + 120))( /*0x4312bf*/
@@ -295,7 +295,7 @@ LABEL_5:
           result = HouseClass::IsAllied((HouseClass *)dword_A83D4C, result); /*0x43166a*/
           if ( (unsigned char)result ) /*0x431671*/
           {
-            result = HouseClass::IsAlliedWith(*((#375 **)((char *)&stru_A80220) + *(unsigned int *)(v10 + 272)), (#375 *)dword_A83D4C); /*0x431688*/
+            result = HouseClass::IsAlliedWith(*((void **)((char *)&stru_A80220) + *(unsigned int *)(v10 + 272)), (void *)dword_A83D4C); /*0x431688*/
             if ( (unsigned char)result ) /*0x43168f*/
             {
               result = *((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(v10 + 272)); /*0x43169d*/
@@ -378,7 +378,7 @@ int Network::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1
   {
     v1 = dword_81D4E4; /*0x48d1fe*/
     byte_89E950 |= 1u; /*0x48d20d*/
-    dword_89E920 = Timer::GetTicks(); /*0x48d218*/
+    dword_89E920 = TimerGetTicks(); /*0x48d218*/
     dword_89E928 = v1; /*0x48d21d*/
     atexit(nullsub_8); /*0x48d228*/
   }
@@ -392,7 +392,7 @@ int Network::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1
     v3 = dword_89E928; /*0x48d263*/
     if ( dword_89E920 != -1 ) /*0x48d26c*/
     {
-      v4 = Timer::GetTicks() - dword_89E920; /*0x48d278*/
+      v4 = TimerGetTicks() - dword_89E920; /*0x48d278*/
       if ( v4 >= v3 ) /*0x48d280*/
         goto LABEL_10; /*0x48d280*/
       v3 -= v4; /*0x48d282*/
@@ -446,7 +446,7 @@ LABEL_10:
                 }
                 v12 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x48d3cc*/
                 if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x48d3d5*/
-                  v12 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x48d3e7*/
+                  v12 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x48d3e7*/
                 if ( v12 - dword_A8E284[v42] > 2400 ) /*0x48d3fa*/
                 {
                   ToWideStringChar((char *)dword_A8DA78[v6]); /*0x48d404*/
@@ -470,14 +470,14 @@ LABEL_25:
             }
             while ( v6 < dword_A8DA84 ); /*0x48d484*/
           }
-          Ticks = Timer::GetTicks(); /*0x48d49d*/
+          Ticks = TimerGetTicks(); /*0x48d49d*/
           v48 = 120; /*0x48d4a1*/
           while ( ((Network *)(&unk_A8E9C0))->GetQueueCount() > 0 ) /*0x48d4b0*/
           {
             v17 = v48; /*0x48d4b6*/
             if ( Ticks != -1 ) /*0x48d4bd*/
             {
-              v18 = Timer::GetTicks() - Ticks; /*0x48d4c8*/
+              v18 = TimerGetTicks() - Ticks; /*0x48d4c8*/
               if ( v18 >= v48 ) /*0x48d4ce*/
                 break; /*0x48d4ce*/
               v17 = v48 - v18; /*0x48d4d0*/
@@ -488,7 +488,7 @@ LABEL_25:
             ((Network *)(&unk_A8E9C0))->ReceiveLoop(); /*0x48d4e0*/
           }
           v19 = dword_81D4E4; /*0x48d4f3*/
-          dword_89E920 = Timer::GetTicks(); /*0x48d502*/
+          dword_89E920 = TimerGetTicks(); /*0x48d502*/
           dword_89E924 = v50; /*0x48d510*/
           dword_89E928 = v19; /*0x48d515*/
           byte_A8E2A4 = 0; /*0x48d51b*/
@@ -668,7 +668,7 @@ LABEL_25:
                     }
                     v29 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x48d6e0*/
                     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x48d6e9*/
-                      v29 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x48d6fb*/
+                      v29 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x48d6fb*/
                     dword_A8E284[v45] = v29; /*0x48d701*/
 LABEL_56:
                     v30 = *(unsigned short *)dword_A8D804; /*0x48d708*/
@@ -1550,7 +1550,7 @@ LABEL_33:
                             {
                               if ( SessionClass::IsValidHouse( /*0x541c36*/
                                      (int)&dword_A8B238,
-                                     *((#375 **)((char *)&stru_A80220) + *(unsigned int *)(v22 + 111))) )
+                                     *((void **)((char *)&stru_A80220) + *(unsigned int *)(v22 + 111))) )
                               {
                                 ((Network *)(v47))->FormatAddress(0); /*0x541c49*/
                                 ((Network *)((Network *)(*((unsigned int *)this + 20) + 76)))->FormatAddress(0); /*0x541c57*/
@@ -1737,7 +1737,7 @@ LABEL_75:
               if ( (uint8_t)NetworkID::Compare((bool *)(dword_A8DA78[i] + 40), *((unsigned int *)this + 20) + 76) /*0x54203e*/
                 && SessionClass::IsValidHouse(
                      (int)&dword_A8B238,
-                     *((#375 **)((char *)&stru_A80220) + *(unsigned int *)(dword_A8DA78[i] + 111))) )
+                     *((void **)((char *)&stru_A80220) + *(unsigned int *)(dword_A8DA78[i] + 111))) )
               {
                 ((Network *)(v47))->FormatAddress(0); /*0x542051*/
                 ((Network *)((Network *)(*((unsigned int *)this + 20) + 76)))->FormatAddress(0); /*0x54205f*/
@@ -2248,7 +2248,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
     --v4; /*0x5d944e*/
   }
   while ( v4 ); /*0x5d944f*/
-  Timer::GetTicks(); /*0x5d9455*/
+  TimerGetTicks(); /*0x5d9455*/
   if ( dword_A8E254 ) /*0x5d9469*/
   {
     v5 = 1; /*0x5d9471*/
@@ -2260,7 +2260,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
     }
     return v5; /*0x5d94a5*/
   }
-  Ticks = Timer::GetTicks(); /*0x5d94bf*/
+  Ticks = TimerGetTicks(); /*0x5d94bf*/
   Debug::Log(); /*0x5d94cb*/
   v7 = 0; /*0x5d94d3*/
   v86 = 0; /*0x5d94d5*/
@@ -2316,7 +2316,7 @@ LABEL_16:
       v13 = 300; /*0x5d9603*/
       if ( Ticks != -1 ) /*0x5d960a*/
       {
-        v14 = Timer::GetTicks() - Ticks; /*0x5d9615*/
+        v14 = TimerGetTicks() - Ticks; /*0x5d9615*/
         if ( v14 >= 300 ) /*0x5d961b*/
           break; /*0x5d961b*/
         v13 = 300 - v14; /*0x5d961d*/
@@ -2369,13 +2369,13 @@ LABEL_36:
   if ( !(*(uint8_t (**)(int, int))(*(unsigned int *)v21 + 104))(v21, v15) ) /*0x5d96da*/
     return 1; /*0x5d9d92*/
   (*(void (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 28))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x5d96ed*/
-  v69 = Timer::GetTicks(); /*0x5d96f9*/
+  v69 = TimerGetTicks(); /*0x5d96f9*/
   v23 = 360; /*0x5d9701*/
   for ( i = 0; ; i = Network::WaitForPacket(2130706432, 0) ) /*0x5d970e*/
   {
     if ( v69 != -1 ) /*0x5d9715*/
     {
-      v25 = Timer::GetTicks() - v69; /*0x5d9720*/
+      v25 = TimerGetTicks() - v69; /*0x5d9720*/
       if ( v25 >= 360 ) /*0x5d9726*/
         break; /*0x5d9726*/
       v23 = 360 - v25; /*0x5d9728*/
@@ -2404,12 +2404,12 @@ LABEL_46:
   if ( i == (unsigned short)v15 ) /*0x5d9769*/
     goto LABEL_159; /*0x5d9769*/
   v26 = 360; /*0x5d977c*/
-  v70 = Timer::GetTicks(); /*0x5d9781*/
+  v70 = TimerGetTicks(); /*0x5d9781*/
   for ( j = 0; ; j = Network::WaitForPacket(2130706433, 0) ) /*0x5d978d*/
   {
     if ( v70 != -1 ) /*0x5d9794*/
     {
-      v28 = Timer::GetTicks() - v70; /*0x5d979f*/
+      v28 = TimerGetTicks() - v70; /*0x5d979f*/
       if ( v28 >= 360 ) /*0x5d97a5*/
         break; /*0x5d97a5*/
       v26 = 360 - v28; /*0x5d97a7*/
@@ -2488,7 +2488,7 @@ LABEL_69:
     (*(void (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 28))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x5d98c5*/
     v36 = 0; /*0x5d98d3*/
     v77 += 10; /*0x5d98d5*/
-    v38 = Timer::GetTicks(); /*0x5d98d9*/
+    v38 = TimerGetTicks(); /*0x5d98d9*/
     HIWORD(v37) = 0; /*0x5d98de*/
     v81 = v38; /*0x5d98e3*/
     v71 = v38; /*0x5d98e7*/
@@ -2499,7 +2499,7 @@ LABEL_69:
     {
       if ( v71 != -1 ) /*0x5d9902*/
       {
-        v38 = Timer::GetTicks() - v71; /*0x5d990d*/
+        v38 = TimerGetTicks() - v71; /*0x5d990d*/
         if ( v38 >= 720 ) /*0x5d9913*/
           break; /*0x5d9913*/
         v39 = 720 - v38; /*0x5d9915*/
@@ -2630,7 +2630,7 @@ LABEL_130:
           if ( !(*(uint8_t (**)(int, int))(*(unsigned int *)v53 + 104))(v53, v47) ) /*0x5d9b53*/
             return v67; /*0x5d9b68*/
           (*(void (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 28))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x5d9b73*/
-          v72 = Timer::GetTicks(); /*0x5d9b7f*/
+          v72 = TimerGetTicks(); /*0x5d9b7f*/
           v55 = 0; /*0x5d9b8f*/
           v56 = 240; /*0x5d9b91*/
           v77 += 10; /*0x5d9b9d*/
@@ -2638,7 +2638,7 @@ LABEL_130:
           {
             if ( v72 != -1 ) /*0x5d9ba6*/
             {
-              v57 = Timer::GetTicks() - v72; /*0x5d9bb1*/
+              v57 = TimerGetTicks() - v72; /*0x5d9bb1*/
               if ( v57 >= 240 ) /*0x5d9bb7*/
                 break; /*0x5d9bb7*/
               v56 = 240 - v57; /*0x5d9bb9*/
@@ -2674,12 +2674,12 @@ LABEL_142:
           Network::QueryAddress(v78, k, v60, 0); /*0x5d9c6e*/
           v77 = v60 + 1; /*0x5d9c78*/
           v61 = 0; /*0x5d9c7c*/
-          v73 = Timer::GetTicks(); /*0x5d9c83*/
+          v73 = TimerGetTicks(); /*0x5d9c83*/
           for ( m = 240; ; m = 240 ) /*0x5d9c8b*/
           {
             if ( v73 != -1 ) /*0x5d9c9d*/
             {
-              v63 = Timer::GetTicks() - v73; /*0x5d9ca8*/
+              v63 = TimerGetTicks() - v73; /*0x5d9ca8*/
               if ( v63 >= 240 ) /*0x5d9cae*/
                 break; /*0x5d9cae*/
               m = 240 - v63; /*0x5d9cb0*/
@@ -2751,7 +2751,7 @@ unsigned short Network::ResolveNetworkAddress(uint16_t a2)
   int v21; // [esp+30h] [ebp-11Ch]
   Waypoint v22; // [esp+34h] [ebp-118h] BYREF
 
-  Timer::GetTicks(); /*0x5da0c0*/
+  TimerGetTicks(); /*0x5da0c0*/
   result = this->Network_field_0x0; /*0x5da0c9*/
   Network_field_0x0 = this->Network_field_0x0; /*0x5da0d6*/
   if ( !this->Network_field_0x0 ) /*0x5da0c9*/
@@ -2828,14 +2828,14 @@ LABEL_19:
   }
   v21 = (uint16_t)v6; /*0x5da308*/
   Debug::Log(); /*0x5da30c*/
-  Ticks = Timer::GetTicks(); /*0x5da31d*/
+  Ticks = TimerGetTicks(); /*0x5da31d*/
   v11 = 180; /*0x5da325*/
   v12 = 0; /*0x5da332*/
   while ( 1 ) /*0x5da334*/
   {
     if ( Ticks != -1 ) /*0x5da339*/
     {
-      v13 = Timer::GetTicks() - Ticks; /*0x5da344*/
+      v13 = TimerGetTicks() - Ticks; /*0x5da344*/
       if ( v13 >= 180 ) /*0x5da34a*/
         break; /*0x5da34a*/
       v11 = 180 - v13; /*0x5da34c*/
@@ -2958,8 +2958,8 @@ int Network::CountDisconnectedHouses()
             if ( !*(unsigned char *)(v6 + 501) /*0x5e2c7d*/
               && !*(unsigned char *)(*(unsigned int *)(v6 + 52) + 422)
               && (Network *)v6 != this
-              && (uint8_t)HouseClass::IsAlliedWith((#375 *)v3, *((#375 **)((char *)&stru_A80220) + v5))
-              && (uint8_t)HouseClass::IsAlliedWith((#375 *)v6, (#375 *)v3) )
+              && (uint8_t)HouseClass::IsAlliedWith((void *)v3, *((void **)((char *)&stru_A80220) + v5))
+              && (uint8_t)HouseClass::IsAlliedWith((void *)v6, (void *)v3) )
             {
               if ( v5 > v9 && !v4 ) /*0x5e2c8e*/
                 ++v8; /*0x5e2c90*/
@@ -3228,9 +3228,9 @@ AbstractClass * * Network_ModemConnectionDialog()
         Member23 = (void *)NullModemClass::GetMember23((NullModemClass *)g_ClipboardBuffer); /*0x5ef90b*/
         SetCommBreak(Member23); /*0x5ef911*/
         ((WinModemClass *)((int *)g_ClipboardBuffer))->WriteSerial(aAth, strlen(aAth)); /*0x5ef932*/
-        Ticks = Timer::GetTicks(); /*0x5ef944*/
+        Ticks = TimerGetTicks(); /*0x5ef944*/
         v59 = 0; /*0x5ef948*/
-        v64 = Timer::GetTicks(); /*0x5ef951*/
+        v64 = TimerGetTicks(); /*0x5ef951*/
         v25 = v64; /*0x5ef955*/
         v26 = 120; /*0x5ef95b*/
         v66 = 120; /*0x5ef960*/
@@ -3252,7 +3252,7 @@ AbstractClass * * Network_ModemConnectionDialog()
       }
       else
       {
-        v28 = Timer::GetTicks(); /*0x5ef97b*/
+        v28 = TimerGetTicks(); /*0x5ef97b*/
         v25 = Ticks; /*0x5ef980*/
         v29 = v28 - Ticks; /*0x5ef984*/
         if ( v29 >= v27 ) /*0x5ef988*/
@@ -3268,12 +3268,12 @@ AbstractClass * * Network_ModemConnectionDialog()
     EscapeCommFunction(v32, 6u); /*0x5ef9b8*/
     v33 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ef9c3*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5ef9cc*/
-      v33 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ef9de*/
+      v33 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ef9de*/
     while ( 1 ) /*0x5ef9e5*/
     {
       v34 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ef9e5*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5ef9ee*/
-        v34 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5efa00*/
+        v34 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5efa00*/
       if ( (unsigned int)(v34 - v33) >= 0x50 ) /*0x5efa07*/
         break; /*0x5efa07*/
       Stream::ReadPacket((int)&unk_A8EA70); /*0x5efa12*/
@@ -3281,12 +3281,12 @@ AbstractClass * * Network_ModemConnectionDialog()
       {
         v35 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5efa3b*/
         if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5efa44*/
-          v35 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5efa56*/
+          v35 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5efa56*/
         while ( 1 ) /*0x5efa5d*/
         {
           v36 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5efa5d*/
           if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5efa66*/
-            v36 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5efa78*/
+            v36 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5efa78*/
           if ( (unsigned int)(v36 - v35) >= 0x1E ) /*0x5efa7f*/
             break; /*0x5efa7f*/
           Stream::ReadPacket((int)&unk_A8EA70); /*0x5efa86*/
@@ -4192,13 +4192,13 @@ int Network::SendUnreachable(void *a1_1)
         }
       }
     }
-    Ticks = Timer::GetTicks(); /*0x6524d3*/
+    Ticks = TimerGetTicks(); /*0x6524d3*/
     while ( ((Network *)(&unk_A8E9C0))->GetQueueCount() > QueueCount ) /*0x6524e6*/
     {
       v8 = 300; /*0x6524ec*/
       if ( Ticks != -1 ) /*0x6524f3*/
       {
-        v9 = Timer::GetTicks() - Ticks; /*0x6524fe*/
+        v9 = TimerGetTicks() - Ticks; /*0x6524fe*/
         if ( v9 >= 300 ) /*0x652504*/
           break; /*0x652504*/
         v8 = 300 - v9; /*0x652506*/
@@ -4262,7 +4262,7 @@ int Network::SendMasterPlayerList()
 
   v1 = this; /*0x6639d8*/
   memset(v11, 0, 338); /*0x6639e6*/
-  Timer::GetTicks(); /*0x6639f6*/
+  TimerGetTicks(); /*0x6639f6*/
   v2 = 0; /*0x663a02*/
   if ( !this->__pad_14[4] ) /*0x6639ff*/
     return 0; /*0x663a0e*/
@@ -4293,13 +4293,13 @@ int Network::SendMasterPlayerList()
   }
   Network::SendPacket(&unk_A8E9C0.Socket, (int)v11, 338, 1u); /*0x663ab7*/
   Debug::Log(); /*0x663ac1*/
-  Ticks = Timer::GetTicks(); /*0x663ae4*/
+  Ticks = TimerGetTicks(); /*0x663ae4*/
   while ( HouseClass::GetUpgradeValue(&unk_A8E9C0) > 0 ) /*0x663af3*/
   {
     v7 = 900; /*0x663afc*/
     if ( Ticks != -1 ) /*0x663b02*/
     {
-      v8 = Timer::GetTicks() - Ticks; /*0x663b0d*/
+      v8 = TimerGetTicks() - Ticks; /*0x663b0d*/
       if ( v8 >= 900 ) /*0x663b13*/
         return 1; /*0x663b13*/
       v7 = 900 - v8; /*0x663b15*/
@@ -4657,7 +4657,7 @@ void sub_793BB0()
       v4 = v2[2]; /*0x793bdc*/
       if ( *v2 != -1 ) /*0x793be5*/
       {
-        v5 = Timer::GetTicks() - *v2; /*0x793bec*/
+        v5 = TimerGetTicks() - *v2; /*0x793bec*/
         if ( v5 >= v4 ) /*0x793bf1*/
           goto LABEL_7; /*0x793bf1*/
         v4 -= v5; /*0x793bf3*/
@@ -4673,7 +4673,7 @@ void sub_793BB0()
         ToWideStringChar((char *)dword_A8DA90[*v3]); /*0x793c4b*/
         Debug::Log(); /*0x793c56*/
         Network::SendToPlayer((int)&unk_A8E9C0, (int)v8, 47, 0, (wchar_t *)dword_A8DA90[*v3]); /*0x793c76*/
-        *v2 = Timer::GetTicks(); /*0x793c8f*/
+        *v2 = TimerGetTicks(); /*0x793c8f*/
         v2[1] = v7; /*0x793c99*/
         v2[2] = 1200; /*0x793c9c*/
       }
@@ -5165,13 +5165,13 @@ char Network::QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4)
   Debug::Log(); /*0x5d9169*/
   LOWORD(v5) = *aP0; /*0x5d9175*/
   Network::SendMessage((int)unk_A8E9C0, (int)&v10, 56, 0, (int)aP0, v5, a3); /*0x5d918c*/
-  Ticks = Timer::GetTicks(); /*0x5d919a*/
+  Ticks = TimerGetTicks(); /*0x5d919a*/
   while ( ((Network *)((int)unk_A8E9C0))->GetQueueCount() > QueueCount || dword_887628[12] ) /*0x5d91ab*/
   {
     v6 = 180; /*0x5d91c5*/
     if ( Ticks != -1 ) /*0x5d91cc*/
     {
-      v7 = Timer::GetTicks() - Ticks; /*0x5d91d7*/
+      v7 = TimerGetTicks() - Ticks; /*0x5d91d7*/
       if ( v7 >= 180 ) /*0x5d91dd*/
         break; /*0x5d91dd*/
       v6 = 180 - v7; /*0x5d91df*/
@@ -5212,11 +5212,11 @@ short Network::WaitForPacket(int a1, int a2)
   v2 = 0; /*0x5d922d*/
   Waypoint::InitInvalid(v14); /*0x5d922f*/
   v3 = 60; /*0x5d9244*/
-  Ticks = Timer::GetTicks(); /*0x5d924b*/
+  Ticks = TimerGetTicks(); /*0x5d924b*/
   v10 = 60; /*0x5d924f*/
   if ( a2 ) /*0x5d9253*/
   {
-    Ticks = Timer::GetTicks(); /*0x5d925e*/
+    Ticks = TimerGetTicks(); /*0x5d925e*/
     v3 = a2; /*0x5d9266*/
     v9 = v13; /*0x5d9268*/
     v10 = a2; /*0x5d926c*/
@@ -5225,7 +5225,7 @@ short Network::WaitForPacket(int a1, int a2)
   {
     if ( Ticks != -1 ) /*0x5d927c*/
     {
-      v4 = Timer::GetTicks() - Ticks; /*0x5d9287*/
+      v4 = TimerGetTicks() - Ticks; /*0x5d9287*/
       if ( v4 >= v3 ) /*0x5d928d*/
         return 0; /*0x5d928d*/
       v3 -= v4; /*0x5d9293*/

@@ -4888,7 +4888,7 @@ DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
 
   v3 = this; /*0x5ae538*/
   ((String *)((String *)this + 25))->Reassign(aP1); /*0x5ae541*/
-  result = Timer::GetTicks(); /*0x5ae54a*/
+  result = TimerGetTicks(); /*0x5ae54a*/
   v3 = (ObjectClass *)((char *)v3 + 204); /*0x5ae557*/
   v3->AbstractClass = (void *)result; /*0x5ae55d*/
   ((unsigned int *)v3)[0] = v5; /*0x5ae55f*/

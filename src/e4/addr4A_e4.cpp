@@ -729,7 +729,7 @@ void Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
       v12 = v22; /*0x4a3cea*/
       if ( v8 != -1 ) /*0x4a3cee*/
       {
-                v14 = Timer::GetTicks(v23) - Ticks;
+                v14 = TimerGetTicks() - Ticks;
         if ( v13 >= v22 ) /*0x4a3cff*/
           v12 = 0; /*0x4a3d05*/
         else
@@ -742,7 +742,7 @@ void Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
       v15 = v22; /*0x4a3d36*/
       if ( Ticks == -1 ) /*0x4a3d3f*/
         goto LABEL_18; /*0x4a3d3f*/
-      v16 = Timer::GetTicks() - Ticks; /*0x4a3d4a*/
+      v16 = TimerGetTicks() - Ticks; /*0x4a3d4a*/
       if ( v16 < v22 ) /*0x4a3d50*/
         break; /*0x4a3d50*/
       v17 = 0; /*0x4a3d8c*/
@@ -757,7 +757,7 @@ void Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
         v18 = v22; /*0x4a3d6c*/
         if ( v8 != -1 ) /*0x4a3d73*/
         {
-          v19 = Timer::GetTicks(); /*0x4a3d79*/
+          v19 = TimerGetTicks(); /*0x4a3d79*/
           v8 = Ticks; /*0x4a3d7e*/
           v20 = v19 - Ticks; /*0x4a3d82*/
           if ( v20 >= v22 ) /*0x4a3d86*/
@@ -1788,10 +1788,10 @@ int sub_4A80D6()
   CHAR v14[128]; // [esp-F0h] [ebp-100h] BYREF
   CHAR v15[128]; // [esp-70h] [ebp-80h] BYREF
 
-  Timer::GetTicks(); /*0x4a80e2*/
+  TimerGetTicks(); /*0x4a80e2*/
   v11 = a2; /*0x4a80fc*/
   v4 = a1 + 65; /*0x4a8100*/
-  Ticks = Timer::GetTicks(); /*0x4a8109*/
+  Ticks = TimerGetTicks(); /*0x4a8109*/
   wsprintfA(v14, "%c:\\", a1 + 65); /*0x4a8120*/
   if ( GetVolumeInformationA(v14, v15, 0x7Fu, 0, &v12, v13, 0, 0) ) /*0x4a814a*/
   {
@@ -1823,7 +1823,7 @@ int sub_4A80D6()
       v5 = v11; /*0x4a8154*/
       if ( Ticks != -1 ) /*0x4a815b*/
       {
-        v6 = Timer::GetTicks() - Ticks; /*0x4a8166*/
+        v6 = TimerGetTicks() - Ticks; /*0x4a8166*/
         if ( v6 >= v11 ) /*0x4a816c*/
           return -1; /*0x4a816c*/
         v5 = v11 - v6; /*0x4a8172*/
@@ -3799,7 +3799,7 @@ signed int sub_4A50A0(signed int a1)
   DWORD v5; // [esp+4h] [ebp-Ch]
   int v6; // [esp+Ch] [ebp-4h]
 
-  Ticks = Timer::GetTicks(); /*0x4a50af*/
+  Ticks = TimerGetTicks(); /*0x4a50af*/
   v6 = a1; /*0x4a50b1*/
   v5 = Ticks; /*0x4a50b5*/
   do /*0x4a50df*/
@@ -3810,7 +3810,7 @@ signed int sub_4A50A0(signed int a1)
     }
     else
     {
-      v3 = Timer::GetTicks(); /*0x4a50c2*/
+      v3 = TimerGetTicks(); /*0x4a50c2*/
       Ticks = v5; /*0x4a50c7*/
       result = v3 - v5; /*0x4a50cb*/
       if ( result >= a1 ) /*0x4a50cf*/

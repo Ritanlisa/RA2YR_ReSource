@@ -154,7 +154,7 @@ int ObjectClass::SpawnInfantry(int aP1, int16_t *aP2, int16_t *aP3, void **aP4)
       goto LABEL_38; /*0x4d8062*/
     case 2: /*0x4d7de0*/
 LABEL_38:
-      aP4 = (void **)*FindPlacementCell@<eax>((ObjectClass *)&v42, referenceCount, v7, 0, v38, v39); /*0x4d8065*/
+      aP4 = (void **)*FindPlacementCell((ObjectClass *)&v42, referenceCount, v7, 0, v38, v39); /*0x4d8065*/
       if ( aP4 == (gamemd::FootClass *)((void **))g_FootClass_Pool ) /*0x4d8081*/
         return 0; /*0x4d8081*/
       vtable0 = this->vtable0; /*0x4d8099*/
@@ -235,7 +235,7 @@ LABEL_52:
     case 51: /*0x4d7de0*/
       if ( !(*(uint8_t (**)(TechnoClass *))(this->vtable0 + 160))(this) ) /*0x4d7df3*/
         return 0; /*0x4d7df3*/
-      PlacementCell = (void ***)FindPlacementCell@<eax>((ObjectClass *)&v41, referenceCount, v7, 0, v38, v39); /*0x4d7dff*/
+      PlacementCell = (void ***)FindPlacementCell((ObjectClass *)&v41, referenceCount, v7, 0, v38, v39); /*0x4d7dff*/
       v10 = this->vtable0; /*0x4d7e06*/
       aP4 = (void **)((gamemd::FootClass *)(*PlacementCell)); /*0x4d7e0c*/
       v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP4); /*0x4d7e18*/

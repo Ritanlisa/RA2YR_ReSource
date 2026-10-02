@@ -2173,8 +2173,8 @@ int Gap2Recv_430AC0::RenderAlliedBuildingTags(int a2, int a3, int a4, int a5, in
           && (*(unsigned char *)(vtable0 + 12) & 1) != 0
           && (uint8_t)HouseClass::IsAllied((HouseClass *)dword_A83D4C, *(unsigned int *)(vtable0 + 272))
           && (uint8_t)HouseClass::IsAlliedWith(
-                                *((#375 **)((char *)&stru_A80220) + *(unsigned int *)(vtable0 + 272)),
-                                (#375 *)dword_A83D4C)
+                                *((void **)((char *)&stru_A80220) + *(unsigned int *)(vtable0 + 272)),
+                                (void *)dword_A83D4C)
           && !*(unsigned char *)(*((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(vtable0 + 272)) + 501) )
         {
           RenderBuildingTag(vtable0, a2, a3, a4, a5, a6); /*0x430b64*/
@@ -2316,7 +2316,7 @@ void Gap2Recv_430BA0::PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6) 
     {
       if ( (uint8_t)HouseClass::IsAllied((HouseClass *)dword_A83D4C, v11[68]) ) /*0x430e98*/
       {
-        if ( (uint8_t)HouseClass::IsAlliedWith(*((#375 **)((char *)&stru_A80220) + v11[68]), (#375 *)dword_A83D4C) ) /*0x430eb6*/
+        if ( (uint8_t)HouseClass::IsAlliedWith(*((void **)((char *)&stru_A80220) + v11[68]), (void *)dword_A83D4C) ) /*0x430eb6*/
         {
           if ( !*(unsigned char *)(*((unsigned int *)((char *)&stru_A80220) + v11[68]) + 501) ) /*0x430ece*/
           {
@@ -2903,7 +2903,7 @@ LABEL_28:
           *((unsigned int *)this + 329) = v23; /*0x450387*/
           if ( v23 ) /*0x45038d*/
           {
-            v24 = FactoryClass::DemandProduction(v23, v20, (#375 *)this->owner, 0); /*0x45039a*/
+            v24 = FactoryClass::DemandProduction(v23, v20, (void *)this->owner, 0); /*0x45039a*/
             v17 = (AbstractClass *)*((unsigned int *)this + 329); /*0x45039f*/
             if ( v24 ) /*0x4503a7*/
             {
@@ -4331,7 +4331,7 @@ char Gap2Recv_49B930::UpdateScoreScreenStatistics() {
   if ( dword_A8B230[43].vtable2 != -1 ) /*0x49bade*/
   {
     p_vtable2 = &dword_A8B230[43].vtable2; /*0x49bad5*/
-    uniqueId += Timer::GetTicks() - *p_vtable2; /*0x49baea*/
+    uniqueId += TimerGetTicks() - *p_vtable2; /*0x49baea*/
   }
   v29 = uniqueId / 60; /*0x49bb06*/
   if ( v38 != (unsigned char *)-496 ) /*0x49bb0a*/
@@ -4346,7 +4346,7 @@ char Gap2Recv_49B930::UpdateScoreScreenStatistics() {
   if ( dword_A8B230[43].vtable2 != -1 ) /*0x49bba3*/
   {
     v33 = &dword_A8B230[43].vtable2; /*0x49bb9a*/
-    v32 += Timer::GetTicks() - *v33; /*0x49bbaf*/
+    v32 += TimerGetTicks() - *v33; /*0x49bbaf*/
   }
   v34 = v32 + *(unsigned int *)this->bombVisible; /*0x49bbbb*/
   *(unsigned int *)this->bombVisible = v34; /*0x49bbbf*/
@@ -7201,7 +7201,7 @@ int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
     v18 = v4; /*0x53b7d6*/
     v5 = (*((int (**)(ObjectClass *, unsigned int, unsigned int))v2->AbstractClass + 23))(v2, 0, 0); /*0x53b7e3*/
     v16 = 255 * ChronoScreenEffect_Duration / dword_A9FAA8; /*0x53b7f3*/
-    v6 = DDraw::GetStatus() - 1; /*0x53b7fc*/
+    v6 = DDraw_GetStatus() - 1; /*0x53b7fc*/
     if ( v6 ) /*0x53b7fd*/
     {
       if ( v6 == 1 ) /*0x53b804*/
@@ -7675,7 +7675,7 @@ int Gap2Recv_54BD30::UpdateFootMoveToState() {
         && *(unsigned char *)(v6[433] + 3603)
         && !*(unsigned char *)(*(unsigned int *)(v3 + 12) + 1709) )
       {
-        if ( *(unsigned char *)((*(int (__usercall **)@<eax>(unsigned int *@<ecx>, double@<st0>))(*v6 + 132))(v6, result) + 1709) ) /*0x54bde8*/
+        if ( *(unsigned char *)((*(int (__usercall **)(unsigned int *, double))(*v6 + 132))(v6, result) + 1709) ) /*0x54bde8*/
         {
           if ( !*((unsigned char *)v6 + 308) ) /*0x54bdf2*/
           {
@@ -7699,7 +7699,7 @@ int Gap2Recv_54BD30::UpdateFootMoveToState() {
       }
       else
       {
-        if ( *(unsigned char *)((*(int (__usercall **)@<eax>(unsigned int@<ecx>, double@<st0>))(**(unsigned int **)(v3 + 12) + 132))( /*0x54be6d*/
+        if ( *(unsigned char *)((*(int (__usercall **)(unsigned int, double))(**(unsigned int **)(v3 + 12) + 132))( /*0x54be6d*/
                           *(unsigned int *)(v3 + 12),
                           result)
                       + 3434) )
@@ -14300,7 +14300,7 @@ namespace gamemd {
 void Gap2Recv_5B6EB0::UI_Setup(void* Format, unsigned int a3, int a4) {
 
   HWND DlgItem; // edi
-  int (__usercall *v5)@<eax>(char@<cf>, char@<zf>); // esi
+  int (__usercall *v5)(char, char); // esi
   wchar_t Buffer[256]; // [esp+8h] [ebp-200h] BYREF
 
   if ( a4 ) /*0x5b6ec1*/
@@ -14311,7 +14311,7 @@ void Gap2Recv_5B6EB0::UI_Setup(void* Format, unsigned int a3, int a4) {
       if ( a3 >= 8 ) /*0x5b6ee1*/
         v5 = Math::InitDegToRad; /*0x5b6ef1*/
       else
-        v5 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[a3]; /*0x5b6ee8*/
+        v5 = (int (__usercall *)(char, char))dword_8316A8[a3]; /*0x5b6ee8*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4); /*0x5b6f0a*/
       DrawDialogText((LPARAM)v5, Buffer, DlgItem); /*0x5b6f19*/
     }
@@ -14702,7 +14702,7 @@ void* Gap2Recv_5CE4A0::UI_Load(char* a2, int a3, char a4) {
   this->MSAnim_field_0x04 = 0; /*0x5ce4b1*/
   this->MSAnim_field_0x08 = 0; /*0x5ce4b4*/
   *((unsigned char *)this + 12) = 0; /*0x5ce4b7*/
-  *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x5ce4d4*/
+  *((unsigned int *)this + 4) = TimerGetTicks(); /*0x5ce4d4*/
   *((unsigned int *)this + 6) = 0; /*0x5ce4d7*/
   *(unsigned int *)this->__pad_0 = &vt_MSAnim; /*0x5ce4da*/
   v5 = (MSAnim *)((char *)this + 44); /*0x5ce4e5*/
@@ -14887,7 +14887,7 @@ int Gap2Recv_5D4430::SyncFrameCounter() {
         goto LABEL_13; /*0x5d4442*/
       v4 = dword_887340; /*0x5d444e*/
       if ( dword_887338 != -1 ) /*0x5d4457*/
-        v4 += Timer::GetTicks() - dword_887338; /*0x5d4469*/
+        v4 += TimerGetTicks() - dword_887338; /*0x5d4469*/
       if ( v4 > v3[9] ) /*0x5d446e*/
       {
         v5 = (*(int (**)(unsigned int *))(*v3 + 4))(v3); /*0x5d447b*/
@@ -15813,7 +15813,7 @@ int Gap2Recv_5FD2E0::ReadOverlayINI() {
   int i; // edi
   int j; // esi
   char v9; // bl
-  #374 *v10; // eax
+  void *v10; // eax
   int v11; // edi
   int v12; // esi
   int v13; // ebx
@@ -15887,7 +15887,7 @@ int Gap2Recv_5FD2E0::ReadOverlayINI() {
               && (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], &v22) )
             {
               v9 = *((unsigned char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], &v22) + 286); /*0x5fd4a4*/
-              v10 = (#374 *)__2_YAPAXI_Z(0xB0u); /*0x5fd4af*/
+              v10 = (void *)__2_YAPAXI_Z(0xB0u); /*0x5fd4af*/
               if ( v10 ) /*0x5fd4b9*/
                 Object::SpawnAtCell(v10, *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * *(unsigned int *)v21), &v22, -1); /*0x5fd4d2*/
               if ( *(unsigned int *)v21 == 24 || *(unsigned int *)v21 == 25 || *(unsigned int *)v21 == 237 || *(unsigned int *)v21 == 238 ) /*0x5fd4f1*/
@@ -23634,7 +23634,7 @@ LABEL_27:
                 v35 = *((unsigned int *)this + 3); /*0x68fed0*/
                 v24[1] = v4; /*0x68fed7*/
                 v24[2] = aP3; /*0x68feda*/
-                v24[3] = Timer::GetTicks(); /*0x68fee2*/
+                v24[3] = TimerGetTicks(); /*0x68fee2*/
                 v25[5] = 0; /*0x68fee7*/
                 v25[7] = 0; /*0x68feea*/
                 v25[8] = 0; /*0x68feed*/
@@ -23753,7 +23753,7 @@ int Gap2Recv_68FFE0::Render_Render_68FFE0(int a2, ScoreScreen * aP2) {
   if ( (byte_B054F0 & 1) == 0 ) /*0x68ffef*/
   {
     byte_B054F0 |= 1u; /*0x68fffb*/
-    dword_B05528 = Timer::GetTicks(); /*0x69000b*/
+    dword_B05528 = TimerGetTicks(); /*0x69000b*/
     dword_B05530 = 0; /*0x690010*/
     atexit(nullsub_227); /*0x69001a*/
   }
@@ -23809,7 +23809,7 @@ LABEL_11:
       return result; /*0x690108*/
     goto LABEL_12; /*0x690108*/
   }
-  result = Timer::GetTicks() - dword_B05528; /*0x6900fa*/
+  result = TimerGetTicks() - dword_B05528; /*0x6900fa*/
   if ( result < v5 ) /*0x690102*/
   {
     v5 -= result; /*0x690104*/
@@ -23817,7 +23817,7 @@ LABEL_11:
   }
 LABEL_12:
   dword_B05560 ^= 1u; /*0x69010a*/
-  result = Timer::GetTicks(); /*0x69011b*/
+  result = TimerGetTicks(); /*0x69011b*/
   dword_B05528 = result; /*0x690129*/
   dword_B0552C = v10; /*0x69012e*/
   dword_B05530 = 5; /*0x690134*/
@@ -24999,7 +24999,7 @@ int Gap2Recv_6A4F20::UI_Init(int a2) {
   Timer::Init((DWORD *)((char *)this + 5376), 0); /*0x6a4f6d*/
   *(unsigned int *)this = &vt_RadarClass; /*0x6a4f78*/
   AudioController::Init((unsigned int *)((char *)this + 5312)); /*0x6a4f7e*/
-  *((unsigned int *)this + 1352) = Timer::GetTicks(); /*0x6a4f8e*/
+  *((unsigned int *)this + 1352) = TimerGetTicks(); /*0x6a4f8e*/
   *((unsigned int *)this + 1354) = 0; /*0x6a4f94*/
   *(unsigned int *)this = &vt_PowerClass; /*0x6a4f9a*/
   v5 = (char *)this + 5444; /*0x6a4fa0*/
@@ -26364,7 +26364,7 @@ namespace gamemd {
 void* Gap2Recv_6D1E30::SmallFunc_6D1E30(AbstractClass * aP1) {
 
   AbstractClass::InitVtables((AbstractClass *)this, aP1); /*0x6d1e38*/
-  this->Tactical_field_0xDA4 = (AbstractClass *)Timer::GetTicks(); /*0x6d1e48*/
+  this->Tactical_field_0xDA4 = (AbstractClass *)TimerGetTicks(); /*0x6d1e48*/
   *(unsigned int *)&this->__pad_DA8[4] = 0; /*0x6d1e4e*/
   *(unsigned int *)this->__pad_0 = &vt_Tactical; /*0x6d1e58*/
   *(unsigned int *)&this->Tactical_field_0x2[2] = &vt_Tactical; /*0x6d1e5e*/
@@ -30487,7 +30487,7 @@ int Gap2Recv_729580::FindUnitPlacementTarget() {
     v28 = *((unsigned int *)vtable3 + 41); /*0x729612*/
     v9 = *(unsigned int *)vtable3; /*0x729616*/
     v10 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v27); /*0x72961d*/
-    if ( (*(int (__usercall **)@<eax>(void *@<ecx>, CellClass *, int, int, unsigned int, int, double@<st0>))(v9 + 428))( /*0x72965b*/
+    if ( (*(int (__usercall **)(void *, CellClass *, int, int, unsigned int, int, double))(v9 + 428))( /*0x72965b*/
            ((unsigned int *)this)[0],
            v10,
            -1,
@@ -30610,7 +30610,7 @@ char Gap2Recv_730990::SidebarHasAvailableUnit() {
     if ( v4 && !*(unsigned char *)(v4 + 129) )
     {
       v5 = *(unsigned int *)(v4 + 540); /*0x7309bd*/
-      v6 = dword_A8B238[0] ? House::IsHumanPlayer((#375 *)v5) : *(unsigned char *)(v5 + 493);
+      v6 = dword_A8B238[0] ? House::IsHumanPlayer((void *)v5) : *(unsigned char *)(v5 + 493);
       if ( v6 && !*(unsigned char *)(v4 + 131) && *(char **)(v4 + 532) == this - 1 ) /*0x7309ed*/
         break; /*0x7309ed*/
     }
@@ -30644,7 +30644,7 @@ int Gap2Recv_730A10::SidebarCountAvailableUnits() {
     {
       v5 = *(unsigned int *)(v4 + 540); /*0x730a42*/
       if ( dword_A8B238[0] ) /*0x730a4a*/
-        IsHumanPlayer = House::IsHumanPlayer((#375 *)v5); /*0x730a54*/
+        IsHumanPlayer = House::IsHumanPlayer((void *)v5); /*0x730a54*/
       else
         IsHumanPlayer = *(unsigned char *)(v5 + 493); /*0x730a4c*/
       if ( IsHumanPlayer ) /*0x730a5b*/
@@ -30678,7 +30678,7 @@ void Gap2Recv_7310D0::SidebarClearReferences() {
     {
       v5 = *(unsigned int *)(v4 + 540); /*0x7310f3*/
       if ( dword_A8B238[0] ) /*0x7310fb*/
-        IsHumanPlayer = House::IsHumanPlayer((#375 *)v5); /*0x731105*/
+        IsHumanPlayer = House::IsHumanPlayer((void *)v5); /*0x731105*/
       else
         IsHumanPlayer = *(unsigned char *)(v5 + 493); /*0x7310fd*/
       if ( IsHumanPlayer ) /*0x73110c*/
@@ -34156,10 +34156,10 @@ void Gap2Recv_76C6E0::SelectionInitializeWOL() {
         j_DeleteAndZero(*(ObjectClass **)(v6 + 4 * v14)); /*0x76c85c*/
         __3_YAXPAX_Z(v7); /*0x76c862*/
       }
-      (*(void (**)(_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *))(*(unsigned int *)v13.__pad_0 /*0x76c872*/
+      (*(void (**)(void *))(*(unsigned int *)v13.__pad_0 /*0x76c872*/
                                                                                                + 8))(&v13);
     }
-    while ( (*(uint8_t (**)(_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *))(*(unsigned int *)v13.__pad_0 + 4))(&v13) ); /*0x76c87d*/
+    while ( (*(uint8_t (**)(void *))(*(unsigned int *)v13.__pad_0 + 4))(&v13) ); /*0x76c87d*/
   }
   v8 = *(void (****)(unsigned int, int))((char *)this + 1132); /*0x76c884*/
   if ( v8 ) /*0x76c88c*/
@@ -35137,7 +35137,7 @@ void Gap2Recv_770430::System_Init_770430() {
     StopThemeClass(1); /*0x770444*/
     (*(void (**)(int *))(this->targetLaserTimer[1] + 12))(&this->targetLaserTimer[1]); /*0x770455*/
   }
-  this->secondaryFacing[3] = Timer::GetTicks(); /*0x770469*/
+  this->secondaryFacing[3] = TimerGetTicks(); /*0x770469*/
   this->secondaryFacing[4] = v11; /*0x77046f*/
   this->secondaryFacing[5] = 0; /*0x770472*/
   v2 = (AudioSample *)this->turretRecoil[0]; /*0x770475*/
@@ -35237,7 +35237,7 @@ void Gap2Recv_7714B0::TerritorySelectWDT_Delete(int a2, char a3, int a4) {
     {
       if ( !(uint8_t)Audio::IsPlaying() ) /*0x77157c*/
       {
-        this->secondaryFacing[3] = Timer::GetTicks(); /*0x771598*/
+        this->secondaryFacing[3] = TimerGetTicks(); /*0x771598*/
         this->secondaryFacing[4] = v17.DeleteAndZero_field_0x08; /*0x7715a2*/
         this->secondaryFacing[5] = a4; /*0x7715a5*/
       }
@@ -35276,7 +35276,7 @@ void* Gap2Recv_771800::ConstructWDTSelection_Create_771800() {
   *(unsigned int *)(v2 + 4) = 0; /*0x77181a*/
   *(unsigned int *)(v2 + 8) = 0; /*0x77181d*/
   *(unsigned char *)(v2 + 12) = 0; /*0x771820*/
-  *(unsigned int *)(v2 + 16) = Timer::GetTicks(); /*0x771828*/
+  *(unsigned int *)(v2 + 16) = TimerGetTicks(); /*0x771828*/
   v3[6] = 0; /*0x77182b*/
   v3[7] = this; /*0x77182e*/
   *v3 = &WorldDominationTour::Voices::vt_Anim; /*0x771831*/

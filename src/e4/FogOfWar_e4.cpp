@@ -101,7 +101,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
     v13 = *(v12 - 1); /*0x655dc4*/
     if ( *v12 != *aP1 || v12[1] != aP1[1] ) /*0x655dd7*/
       goto LABEL_25; /*0x655dd7*/
-    if ( (!v42 || (uint8_t)House::IsHumanPlayer(*(#375 **)(v13 + 540))) /*0x655e10*/
+    if ( (!v42 || (uint8_t)House::IsHumanPlayer(*(void **)(v13 + 540))) /*0x655e10*/
       && (!*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v13 + 132))(v13) + 559)
        || ((Object *)(dword_A83D4C))->IsAlliedWithObjectHouse(v13)) )
     {
@@ -165,7 +165,7 @@ LABEL_26:
   if ( v18 == -1 ) /*0x655ffa*/
   {
 LABEL_37:
-    if ( v19 <= 0 || (v19 - 1) / *((unsigned int *)dword_8871E0 + 34) % 2 != 1 || *(#375 **)(v13 + 540) != dword_A83D4C ) /*0x65603a*/
+    if ( v19 <= 0 || (v19 - 1) / *((unsigned int *)dword_8871E0 + 34) % 2 != 1 || *(void **)(v13 + 540) != dword_A83D4C ) /*0x65603a*/
       goto LABEL_41; /*0x65603a*/
     (*(void (**)(unsigned int, int *, int))(**(unsigned int **)((char *)this + 4636) + 36))(*((unsigned int *)this + 1159), aP1, ~v17); /*0x656048*/
   }

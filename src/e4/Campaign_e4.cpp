@@ -183,7 +183,7 @@ LONG Campaign::Screen(char a1)
       {
         Event::Dispatch(); /*0x60d412*/
       }
-      else if ( !VtableStub::55CBF0() && (uint8_t)GameFrameLoop(v5) ) /*0x60d407*/
+      else if ( !VtableStub::sub_55CBF0() && (uint8_t)GameFrameLoop(v5) ) /*0x60d407*/
       {
         break; /*0x60d40e*/
       }

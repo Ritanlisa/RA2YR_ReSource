@@ -591,7 +591,7 @@ void E4Recv_767EC0::sub_767EC0()
 {
 
   *(unsigned int *)this->__pad_0 = &vt_MSFrameAnim; /*0x767ec0*/
-  VtableStub::5CB6C0(this); /*0x767ec6*/
+  VtableStub::sub_5CB6C0(this); /*0x767ec6*/
 
 }
 }
@@ -2252,7 +2252,7 @@ unsigned int * E4Recv_767E90::sub_767E90()
   this->MSFrameAnim_field_0x4 = 0; /*0x767e99*/
   this->MSFrameAnim_field_0x8 = 0; /*0x767e9c*/
   LOBYTE(this->MSFrameAnim_field_0xC) = 0; /*0x767e9f*/
-  this->MSFrameAnim_field_0x10 = (void *)Timer::GetTicks(); /*0x767ea7*/
+  this->MSFrameAnim_field_0x10 = (void *)TimerGetTicks(); /*0x767ea7*/
   this->MSFrameAnim_field_0x18 = 0; /*0x767eaa*/
   *(unsigned int *)this->__pad_0 = &vt_MSFrameAnim; /*0x767ead*/
   return this->__pad_0; /*0x767eb5*/
@@ -2944,12 +2944,12 @@ unsigned int * E4Recv_76E090::sub_76E090()
       {
         if ( !(uint8_t)((String *)(&v4))->Compare(*(const char ***)(*(unsigned int *)(*(unsigned int *)&v5.m_1[3] + 4) + 4 * v6)) ) /*0x76e0f2*/
           break; /*0x76e0f9*/
-        (*(void (**)(_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *))(*(unsigned int *)v5.__pad_0 /*0x76e103*/
+        (*(void (**)(void *))(*(unsigned int *)v5.__pad_0 /*0x76e103*/
                                                                                                  + 8))(&v5);
       }
-      while ( (*(uint8_t (**)(_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *))(*(unsigned int *)v5.__pad_0 + 4))(&v5) ); /*0x76e10e*/
+      while ( (*(uint8_t (**)(void *))(*(unsigned int *)v5.__pad_0 + 4))(&v5) ); /*0x76e10e*/
     }
-    if ( (*(uint8_t (**)(_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *))(*(unsigned int *)v5.__pad_0 + 4))(&v5) ) /*0x76e11d*/
+    if ( (*(uint8_t (**)(void *))(*(unsigned int *)v5.__pad_0 + 4))(&v5) ) /*0x76e11d*/
       nullsub_24(v3); /*0x76e132*/
   }
   DeleteAndZero((ObjectClass *)&v4); /*0x76e13b*/

@@ -54,7 +54,7 @@ v2 = (LPVOID)(ppv);
   {
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/
     strcpy(&v7[36],(const char *)(a1)); /*0x5e3892*/
-    return (*(int (**, unsigned int a2, unsigned int a1)(LPVOID, char *, const char *))(*(unsigned int *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
+    return (*(int (**)(LPVOID, char *, const char *))(*(unsigned int *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
   }
   else
   {

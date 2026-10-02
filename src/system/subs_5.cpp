@@ -149,7 +149,7 @@ int InitZero767E70()
 //   *(this + 1) = 0;
 //   *(this + 2) = 0;
 //   *((unsigned char *)this + 12) = 0;
-//   *(this + 4) = Timer::GetTicks();
+//   *(this + 4) = TimerGetTicks();
 //   *(this + 6) = 0;
 //   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)(void*)&MSFrameAnim_vftable;
 //   return this;
@@ -397,7 +397,7 @@ int InitZero770250()
 //   *(this + 1) = 0;
 //   *(this + 2) = 0;
 //   *((unsigned char *)this + 12) = 0;
-//   *(this + 4) = Timer::GetTicks();
+//   *(this + 4) = TimerGetTicks();
 //   *(this + 6) = 0;
 //   *(this + 7) = a2;
 //   *this = &WorldDominationTour::Voices::Anim_vftable;

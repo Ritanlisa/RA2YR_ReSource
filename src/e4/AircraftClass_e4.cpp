@@ -370,7 +370,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
   v8 = a2[57]; /*0x4196e4*/
   if ( (!v8 /*0x41974d*/
      || (*(unsigned char *)(v8 + 20) & 1) == 0
-     || (uint8_t)HouseClass::IsAlliedWith(*(#375 **)(v8 + 540), (#375 *)((unsigned int *)this)[0])
+     || (uint8_t)HouseClass::IsAlliedWith(*(void **)(v8 + 540), (void *)((unsigned int *)this)[0])
      || *(unsigned int *)(v8 + 544) != 2
      && !dword_A8E7AC
      && ((*(int (**)(int))(*(unsigned int *)v8 + 44))(v8) != 6 || !*(unsigned char *)(*(unsigned int *)(v8 + 1312) + 3226)))

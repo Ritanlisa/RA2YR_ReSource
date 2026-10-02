@@ -836,7 +836,7 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVAlphaLightingRemapClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4204b2*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4204b2*/
     return 1; /*0x4204b8*/
   }
 
@@ -936,7 +936,7 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVAlphaLightingRemapClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4205de*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4205de*/
   }
   v7 = this->m_8; /*0x4205e1*/
   if ( v7 < this->m_10 ) /*0x4205e9*/

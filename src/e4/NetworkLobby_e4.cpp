@@ -459,7 +459,7 @@ LABEL_132:
       case 2u: /*0x5de57f*/
         if ( !(uint8_t)LoadScreen::IsActive((LoadScreen *)&stru_AC4B30.__pad_EC[828]) ) /*0x5de694*/
           return 0; /*0x5de694*/
-        VtableStub::643E70(&stru_AC4B30.__pad_EC[828]); /*0x5de69f*/
+        VtableStub::sub_643E70(&stru_AC4B30.__pad_EC[828]); /*0x5de69f*/
         result = 0; /*0x5de6a7*/
         break; /*0x5de6b0*/
       case 0xFu: /*0x5de57f*/
@@ -835,7 +835,7 @@ LABEL_16:
           *(unsigned char *)(v5 + 52) = HouseClass_Player[39195] & 1;
           int v13 = *(unsigned int *)&stru_87C374[45004];
           if ( *(unsigned int *)&stru_87C374[44996] != -1 )
-            v13 += Timer::GetTicks() - *(unsigned int *)&stru_87C374[44996];
+            v13 += TimerGetTicks() - *(unsigned int *)&stru_87C374[44996];
           *(unsigned int *)(v5 + 53) = v13;
           if ( *(int *)&HouseClass_Player[40224] < *(int *)&HouseClass_Player[40216]
             || (HouseClass_Player[40221] || !*(unsigned int *)&HouseClass_Player[40216])
@@ -899,7 +899,7 @@ LABEL_45:
           }
           int v6 = *(unsigned int *)&stru_87C374[45004];
           if ( *(unsigned int *)&stru_87C374[44996] != -1 )
-            v6 += Timer::GetTicks() - *(unsigned int *)&stru_87C374[44996];
+            v6 += TimerGetTicks() - *(unsigned int *)&stru_87C374[44996];
           *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40212] + 4 * v2) + 53) = v6;
           int v7 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40212] + 4 * v2);
           if ( *(unsigned char *)(v7 + 52) != (HouseClass_Player[39195] & 1) )
@@ -1362,7 +1362,7 @@ LABEL_230:
               *(unsigned int *)(v74 + 48) = *(unsigned int *)&HouseClass_Player[39616];
               int v79 = *(unsigned int *)&stru_87C374[45004];
               if ( *(unsigned int *)&stru_87C374[44996] != -1 )
-                v79 += Timer::GetTicks() - *(unsigned int *)&stru_87C374[44996];
+                v79 += TimerGetTicks() - *(unsigned int *)&stru_87C374[44996];
               *(unsigned int *)(v74 + 52) = v79;
               *(unsigned char *)(v74 + 56) = 0;
               *(unsigned int *)(v74 + 57) = *(unsigned int *)&HouseClass_Player[39199];
@@ -1393,7 +1393,7 @@ LABEL_230:
               wcscpy(*v75, (const wchar_t *)v76);
               int v77 = *(unsigned int *)&stru_87C374[45004];
               if ( *(unsigned int *)&stru_87C374[44996] != -1 )
-                v77 += Timer::GetTicks() - *(unsigned int *)&stru_87C374[44996];
+                v77 += TimerGetTicks() - *(unsigned int *)&stru_87C374[44996];
               *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v72) + 52) = v77;
               *(unsigned char *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v72) + 56) = 0;
               *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v72) + 57) = *(unsigned int *)&HouseClass_Player[39199];

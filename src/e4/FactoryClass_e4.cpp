@@ -167,7 +167,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
     *((unsigned int *)this + 12) = v17; /*0x4c9d8e*/
     *((unsigned int *)this + 13) = 0; /*0x4c9d92*/
     *((unsigned int *)this + 9) = 0; /*0x4c9d95*/
-    *((unsigned int *)this + 22) = (*(int (**)(int, #375 *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
+    *((unsigned int *)this + 22) = (*(int (**)(int, void *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
     if ( !(uint8_t)((House *)(a3))->IsCurrentPlayer() ) /*0x4c9da7*/
     {
       v12 = *((unsigned int *)this + 22); /*0x4c9db1*/

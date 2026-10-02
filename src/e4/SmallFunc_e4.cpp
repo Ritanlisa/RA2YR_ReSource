@@ -292,7 +292,7 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
   }
   if ( !Field11 ) /*0x6e315e*/
     return 0; /*0x6e315e*/
-  RespawnStartingBuildings@<eax>(v10, a2, a3, (int)v7); /*0x6e3168*/
+  RespawnStartingBuildings(v10, a2, a3, (int)v7); /*0x6e3168*/
   return 1; /*0x6e3162*/
 }
 } // namespace gamemd

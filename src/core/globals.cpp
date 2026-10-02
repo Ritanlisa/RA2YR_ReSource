@@ -621,7 +621,7 @@ void InitSkirmishSettings() {
 {
 
   int v1; // [esp+4h] [ebp-4h] BYREF
-  dword_A8ED54[127989] = Timer::GetTicks(&v1);
+  dword_A8ED54[127989] = TimerGetTicks();
   dword_A8ED54[127990] = v1;
   IDA_LOBYTE(dword_A8ED54[128024]) = 1;
   return v1;
@@ -751,14 +751,14 @@ void CleanupCampaignResources() {
     Stream::WriteBlock((int)&DataGlobal_87F7E8[539810], (int)v4, 111, 0);
     int v1 = DataGlobal_87F7E8[7894];
     if ( DataGlobal_87F7E8[7892] != -1 )
-      v1 += Timer::GetTicks(&DataGlobal_87F7E8[7893]) - DataGlobal_87F7E8[7892];
+      v1 += TimerGetTicks() - DataGlobal_87F7E8[7892];
     while ( 1 )
     {
       IDA_LOBYTE(v0) = DataGlobal_87F7E8[7892];
       int v2 = DataGlobal_87F7E8[7894];
       if ( DataGlobal_87F7E8[7892] != -1 )
       {
-        v0 = Timer::GetTicks(&DataGlobal_87F7E8[7893]) - DataGlobal_87F7E8[7892];
+        v0 = TimerGetTicks() - DataGlobal_87F7E8[7892];
         v2 += v0;
       }
       if ( (unsigned int)(v2 - v1) >= 0x1E )

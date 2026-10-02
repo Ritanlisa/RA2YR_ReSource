@@ -117,7 +117,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   int v12; // ebx
   int v13; // eax
   bool v14; // al
-  #375 *v15; // ecx
+  void *v15; // ecx
   unsigned int *v16; // eax
   int v17; // edi
   int v18; // ebx
@@ -140,7 +140,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   int v35; // ebx
   int v37; // eax
   bool v38; // al
-  #375 *v39; // ecx
+  void *v39; // ecx
   int v41; // [esp+20h] [ebp-24h]
   unsigned int *v42; // [esp+20h] [ebp-24h]
   int v43; // [esp+24h] [ebp-20h] BYREF
@@ -176,7 +176,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
       && v14
       && a1[283] <= v8[283]
       && (!LOBYTE(dword_8871E0[1][3])
-       || (v15 = *(#375 **)&dword_A8022C->AbstractClass[4 * v10[20]]) == 0
+       || (v15 = *(void **)&dword_A8022C->AbstractClass[4 * v10[20]]) == 0
        || !(uint8_t)HouseClass::IsAlliedWith(v15, other)) )
     {
 LABEL_16:
@@ -232,7 +232,7 @@ LABEL_22:
             {
               if ( !LOBYTE(dword_8871E0[1][3]) ) /*0x4cc627*/
                 return v42; /*0x4cc627*/
-              v39 = *(#375 **)&dword_A8022C->AbstractClass[4 * v33[20]]; /*0x4cc639*/
+              v39 = *(void **)&dword_A8022C->AbstractClass[4 * v33[20]]; /*0x4cc639*/
               if ( !v39 || !(uint8_t)HouseClass::IsAlliedWith(v39, other) ) /*0x4cc645*/
                 return v42; /*0x4cc64c*/
             }

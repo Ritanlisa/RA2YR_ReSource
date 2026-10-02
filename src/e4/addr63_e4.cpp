@@ -5145,7 +5145,7 @@ int E4Recv_63F810::sub_63F810()
 
   *((unsigned int *)this + 1351) = 10; /*0x63f81a*/
   v1 = (char *)this + 5392; /*0x63f829*/
-  *((unsigned int *)this + 1348) = Timer::GetTicks(); /*0x63f834*/
+  *((unsigned int *)this + 1348) = TimerGetTicks(); /*0x63f834*/
   *((unsigned int *)v1 + 1) = v3; /*0x63f83a*/
   *((unsigned int *)v1 + 2) = 3; /*0x63f83d*/
   return v3; /*0x63f840*/

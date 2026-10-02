@@ -1876,7 +1876,7 @@ void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
         {
           Event::Dispatch(); /*0x62427c*/
         }
-        else if ( !VtableStub::55CBF0() && (uint8_t)GameFrameLoop(v7) ) /*0x624271*/
+        else if ( !VtableStub::sub_55CBF0() && (uint8_t)GameFrameLoop(v7) ) /*0x624271*/
         {
           break; /*0x624278*/
         }

@@ -7361,7 +7361,7 @@ void sub_40E7B0()
 namespace gamemd {
 int sub_40EB50()
 {
-  dword_887348 = Timer::GetTicks(); /*0x40eb5f*/
+  dword_887348 = TimerGetTicks(); /*0x40eb5f*/
   dword_887350 = 0; /*0x40eb64*/
   return atexit(nullsub_59); /*0x40eb74*/
 }
@@ -7398,7 +7398,7 @@ int unknown_libname_10()
 namespace gamemd {
 int sub_40EBD0()
 {
-  dword_887338 = Timer::GetTicks(); /*0x40ebdf*/
+  dword_887338 = TimerGetTicks(); /*0x40ebdf*/
   dword_887340 = 0; /*0x40ebe4*/
   return atexit(nullsub_60); /*0x40ebf4*/
 }

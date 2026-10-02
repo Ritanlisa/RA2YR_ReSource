@@ -285,12 +285,12 @@ LABEL_35:
   *((float *)v5 + 1) = -*(float *)&((unsigned int *)(v72))[1]; /*0x439e7f*/
   *((float *)v5 + 2) = v30; /*0x439e82*/
   *(Triple *)v5 = v31; /*0x439e87*/
-  v69 = -*(float *)Function::645D00(v29, 0); /*0x439e92*/
-  *(float *)Function::645D00(v29, 0) = v69; /*0x439ea5*/
-  v70 = -*(float *)Function::645D00(v29, 1); /*0x439eb2*/
-  *(float *)Function::645D00(v29, 1) = v70; /*0x439ec5*/
-  v71 = -*(float *)Function::645D00(v29, 2); /*0x439ed2*/
-  *(float *)Function::645D00(v29, 2) = v71; /*0x439ee3*/
+  v69 = -*(float *)Function::sub_645D00(v29, 0); /*0x439e92*/
+  *(float *)Function::sub_645D00(v29, 0) = v69; /*0x439ea5*/
+  v70 = -*(float *)Function::sub_645D00(v29, 1); /*0x439eb2*/
+  *(float *)Function::sub_645D00(v29, 1) = v70; /*0x439ec5*/
+  v71 = -*(float *)Function::sub_645D00(v29, 2); /*0x439ed2*/
+  *(float *)Function::sub_645D00(v29, 2) = v71; /*0x439ee3*/
   LOWORD(v32) = Math::RoundToInt(*((float *)v28 + 8)); /*0x439ee8*/
   v59 = v32; /*0x439ef0*/
   LOWORD(v33) = Math::RoundToInt(*((float *)v28 + 7)); /*0x439ef1*/
@@ -5146,7 +5146,7 @@ char JumpjetLocomotionClass_26::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUKamikazeControl *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x54e9d2*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x54e9d2*/
     return 1; /*0x54e9d8*/
   }
 
@@ -5246,7 +5246,7 @@ char JumpjetLocomotionClass_26::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUKamikazeControl *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x54eafe*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x54eafe*/
   }
   v7 = this->m_8; /*0x54eb01*/
   if ( v7 < this->m_10 ) /*0x54eb09*/

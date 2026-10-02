@@ -474,10 +474,10 @@ void sub_683FB0()
   if ( ((unsigned int *)(dword_A8B230))[43].vtable2 == -1 ) /*0x683fd0*/
   {
     p_vtable2 = &((unsigned int *)(dword_A8B230))[43].vtable2; /*0x683fc1*/
-        *v0 = Timer::GetTicks();
+        *v0 = TimerGetTicks();
   }
   if ( ((unsigned int *)(dword_A8B230))[43].vtable2 != -1 ) /*0x683ff7*/
-        Timer::GetTicks();
+        TimerGetTicks();
     Debug::Log();
   if ( dword_887368 ) /*0x68401d*/
     Tooltip::Enable(dword_887368, byte_A8EB80); /*0x684026*/
@@ -521,7 +521,7 @@ void * * ScenarioClass_SetTimer(int a1)
       v5 = (unsigned int *)((char *)dword_A8B230 + 1556);
       if ( *((unsigned int *)dword_A8B230 + 389) != -1 ) /*0x6840f1*/
       {
-                v6 = Timer::GetTicks();
+                v6 = TimerGetTicks();
         v7 = v5[2]; /*0x6840fd*/
         v8 = v6 - *v5; /*0x684100*/
         *v5 = -1; /*0x684102*/
@@ -587,10 +587,10 @@ void WaitForMultiplayerLoadSync()
 
   if ( !((unsigned int *)(g_GameMode_Current))[0] || ((unsigned int *)(g_GameMode_Current))[0] == 5 ) /*0x68438d*/
     return 1; /*0x68460b*/
-    Timer::GetTicks();
-    TicksTimer = Timer::GetTicks();
+    TimerGetTicks();
+    TicksTimer = TimerGetTicks();
   v16 = 300; /*0x6843b9*/
-    v13 = Timer::GetTicks();
+    v13 = TimerGetTicks();
   v14 = 3600; /*0x6843d3*/
   AverageProgress = Progress::GetAverage((int)g_UIManager); /*0x6843e5*/
   while ( 1 )
@@ -608,7 +608,7 @@ void WaitForMultiplayerLoadSync()
     v1 = v14; /*0x684422*/
     if ( v13 != -1 ) /*0x68442b*/
     {
-            v2 = Timer::GetTicks() - v13;
+            v2 = TimerGetTicks() - v13;
       if ( v2 >= v14 ) /*0x68443c*/
         break; /*0x68443c*/
       v1 = v14 - v2; /*0x684442*/
@@ -623,14 +623,14 @@ void WaitForMultiplayerLoadSync()
     }
     if ( v3 != AverageProgress ) /*0x684474*/
     {
-            v13 = Timer::GetTicks();
+            v13 = TimerGetTicks();
       v14 = 7200; /*0x684498*/
       AverageProgress = v3; /*0x6844a4*/
     }
     v6 = v16; /*0x6844b0*/
     if ( TicksTimer != -1 ) /*0x6844b6*/
     {
-            v7 = Timer::GetTicks() - TicksTimer;
+            v7 = TimerGetTicks() - TicksTimer;
       if ( v7 >= v16 ) /*0x6844c7*/
         goto LABEL_18; /*0x6844c7*/
       v6 = v16 - v7; /*0x6844c9*/
@@ -638,7 +638,7 @@ void WaitForMultiplayerLoadSync()
     if ( v6 <= 0 )
     {
   LABEL_18:
-            TicksTimer = Timer::GetTicks();
+            TicksTimer = TimerGetTicks();
       v16 = 60; /*0x6844f1*/
       Multiplayer::ShowProgress(g_GameMode_Current, *((unsigned char *)g_ScenarioClass_Instance + 13501) != 0 ? 200 : 100);
     }
@@ -2422,7 +2422,7 @@ int sub_683260()
 namespace gamemd {
 int sub_683280()
 {
-  dword_B05478 = Timer::GetTicks(); /*0x68328f*/
+  dword_B05478 = TimerGetTicks(); /*0x68328f*/
   dword_B05480 = 0; /*0x683294*/
   return atexit(nullsub_226); /*0x6832a4*/
 }
@@ -2848,7 +2848,7 @@ int E4Recv_68F8A0::sub_68F8A0()
     v6 = (char *)((unsigned int *)this)[0] + 214; /*0x68f8fd*/
     *(unsigned int *)(v4 + 4) = (char *)this->AbstractClass + 590 - 12 * (v3 - 1); /*0x68f902*/
     *(unsigned int *)(v4 + 8) = v6; /*0x68f908*/
-    *(unsigned int *)(v4 + 12) = Timer::GetTicks(); /*0x68f910*/
+    *(unsigned int *)(v4 + 12) = TimerGetTicks(); /*0x68f910*/
     *(unsigned int *)(v4 + 20) = 0; /*0x68f915*/
     *(unsigned int *)(v4 + 40) = vtable3; /*0x68f91c*/
     *(unsigned int *)(v4 + 24) = Buffer; /*0x68f91f*/

@@ -53,7 +53,7 @@ signed int Territory_WorldDominationTour_8::Release()
   if ( result != -1 ) /*0x771909*/
   {
     v3 = this->field_18; /*0x77190c*/
-    result = Timer::GetTicks() - *(unsigned int *)&this->__pad_C[4]; /*0x77191c*/
+    result = TimerGetTicks() - *(unsigned int *)&this->__pad_C[4]; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {
       this->field_18 = 0; /*0x771934*/
@@ -114,7 +114,7 @@ unsigned int * Territory_WorldDominationTour_8::QueryInterface(unsigned int * Bl
 {
 
   *(unsigned int *)Block->__pad_0 = &WorldDominationTour::Voices::vt_Anim; /*0x771a33*/
-  VtableStub::5CB6C0(Block); /*0x771a39*/
+  VtableStub::sub_5CB6C0(Block); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     __3_YAXPAX_Z(Block); /*0x771a46*/
   return Block->__pad_0; /*0x771a50*/

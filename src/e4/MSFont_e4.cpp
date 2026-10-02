@@ -280,7 +280,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d5232*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d5232*/
     return 1; /*0x5d5238*/
   }
 
@@ -380,7 +380,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d535e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d535e*/
   }
   v7 = this->m_8; /*0x5d5361*/
   if ( v7 < this->m_10 ) /*0x5d5369*/

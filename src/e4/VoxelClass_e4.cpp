@@ -359,7 +359,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   }
   else if ( *(unsigned char *)(v18 + 3606) && TechnoClass::CheckTargetCell(a1) && !TechnoClass::ScanNeighborCells(a1) ) /*0x73ce24*/
   {
-    return (*(int (**, unsigned int a10, unsigned int a12)(unsigned char *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
+    return (*(int (**)(unsigned char *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
              a1,
              v15,
              v16,

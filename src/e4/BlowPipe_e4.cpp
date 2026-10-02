@@ -205,7 +205,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e3f2*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e3f2*/
     return 1; /*0x63e3f8*/
   }
 
@@ -305,7 +305,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e51e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e51e*/
   }
   v7 = this->m_8; /*0x63e521*/
   if ( v7 < this->m_10 ) /*0x63e529*/
@@ -412,7 +412,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e732*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e732*/
     return 1; /*0x63e738*/
   }
 
@@ -512,7 +512,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e85e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e85e*/
   }
   v7 = this->m_8; /*0x63e861*/
   if ( v7 < this->m_10 ) /*0x63e869*/
@@ -583,7 +583,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVPlanningTokenClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63eb5e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63eb5e*/
   }
   v7 = this->m_8; /*0x63eb61*/
   if ( v7 < this->m_10 ) /*0x63eb69*/

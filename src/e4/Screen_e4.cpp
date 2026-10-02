@@ -504,7 +504,7 @@ int Screen::TransitionLoop(int a2)
   struct tagRECT Rect; // [esp+4Ch] [ebp-20h] BYREF
   Rect v19; // [esp+5Ch] [ebp-10h] BYREF
 
-  Ticks = Timer::GetTicks(); /*0x690178*/
+  Ticks = TimerGetTicks(); /*0x690178*/
   v16 = 1; /*0x69017c*/
   do
   {
@@ -543,7 +543,7 @@ int Screen::TransitionLoop(int a2)
       if ( !((unsigned int *)&stru_A8EB00)[412] )
       {
         if ( Ticks == -1
-          || ((v5 = Timer::GetTicks() - Ticks, v5 >= v16) ? (v6 = 0) : (v6 = v16 - v5), v16 = v6,
+          || ((v5 = TimerGetTicks() - Ticks, v5 >= v16) ? (v6 = 0) : (v6 = v16 - v5), v16 = v6,
                                                                                         *((unsigned int *)((char *)&stru_A8EB00 + 412)) != 1) )
         {
           for ( i = 0; i < *((unsigned int *)this + 11); ++i ) /*0x690292*/
@@ -562,20 +562,20 @@ int Screen::TransitionLoop(int a2)
             (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x6902d6*/
           }
         }
-        Ticks = Timer::GetTicks(); /*0x6902f0*/
+        Ticks = TimerGetTicks(); /*0x6902f0*/
       }
       Sleep(0); /*0x6902f6*/
       v11 = v16; /*0x6902fc*/
       if ( Ticks != -1 ) /*0x690302*/
       {
-        v12 = Timer::GetTicks() - Ticks; /*0x69030d*/
+        v12 = TimerGetTicks() - Ticks; /*0x69030d*/
         if ( v12 >= v16 ) /*0x690313*/
           break; /*0x690313*/
         v11 = v16 - v12; /*0x690315*/
       }
     }
     while ( v11 > 0 );
-    Ticks = Timer::GetTicks(); /*0x69031f*/
+    Ticks = TimerGetTicks(); /*0x69031f*/
     result = a2 - 1; /*0x690341*/
     v14 = a2 - 1 <= 0; /*0x690346*/
     v16 = 1; /*0x690348*/

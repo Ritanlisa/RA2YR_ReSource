@@ -2015,7 +2015,7 @@ LABEL_40:
         ((Theme *)(&g_BuildingTypeClass_Count))->Stop((ObjectClass *)1);
         int v40 = *(unsigned int *)&stru_87C374[45004];
         if ( *(unsigned int *)&stru_87C374[44996] != -1 )
-          v40 += Timer::GetTicks() - *(unsigned int *)&stru_87C374[44996];
+          v40 += TimerGetTicks() - *(unsigned int *)&stru_87C374[44996];
         int v41 = v40 + 3000;
         while ( Theme::IsPlaying((int)&g_BuildingTypeClass_Count) )
         {
@@ -2023,7 +2023,7 @@ LABEL_40:
             break;
           int v42 = *(unsigned int *)&stru_87C374[45004];
           if ( *(unsigned int *)&stru_87C374[44996] != -1 )
-            v42 += Timer::GetTicks() - *(unsigned int *)&stru_87C374[44996];
+            v42 += TimerGetTicks() - *(unsigned int *)&stru_87C374[44996];
           if ( v41 <= v42 )
             break;
           Event::Dispatch();
@@ -2164,7 +2164,7 @@ LABEL_147:
             int v38 = *(unsigned int *)&stru_87C374[45004];
             if ( v37 != -1 )
             {
-              Ticks = Timer::GetTicks();
+              Ticks = TimerGetTicks();
               v37 = *(unsigned int *)&stru_87C374[44996];
               v38 += Ticks - *(unsigned int *)&stru_87C374[44996];
             }

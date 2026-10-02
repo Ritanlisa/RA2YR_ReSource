@@ -93,7 +93,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
       if ( *(unsigned int *)(v4 + 540) != *((unsigned int *)((char *)&stru_A80220) + ((unsigned int *)a1)[0]->enemyHouseIndex) ) /*0x4cff5e*/
         continue; /*0x4cff5e*/
     }
-    else if ( (uint8_t)HouseClass::IsAlliedWith((#375 *)((unsigned int *)a1)[0], *(#375 **)(v4 + 540)) ) /*0x4cff32*/
+    else if ( (uint8_t)HouseClass::IsAlliedWith((void *)((unsigned int *)a1)[0], *(void **)(v4 + 540)) ) /*0x4cff32*/
     {
       continue; /*0x4cff39*/
     }

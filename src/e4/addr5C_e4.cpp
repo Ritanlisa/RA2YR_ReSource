@@ -2988,7 +2988,7 @@ int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
   nextArrayIndex = ((unsigned int *)this)[0]; /*0x5ce0cb*/
   if ( ((unsigned int *)this)[0] != -1 ) /*0x5ce0d1*/
   {
-    v5 = Timer::GetTicks() - ((unsigned int *)this)[0]; /*0x5ce0db*/
+    v5 = TimerGetTicks() - ((unsigned int *)this)[0]; /*0x5ce0db*/
     if ( v5 >= nextArrayIndex ) /*0x5ce0e0*/
       goto LABEL_5; /*0x5ce0e0*/
     nextArrayIndex -= v5; /*0x5ce0e2*/
@@ -3006,7 +3006,7 @@ LABEL_5:
   if ( LOBYTE(((unsigned int *)this)[0]) != 1 ) /*0x5ce0f6*/
     goto LABEL_24; /*0x5ce0f6*/
   fallRate = this->fallRate; /*0x5ce0fc*/
-  ((unsigned int *)this)[0] = Timer::GetTicks(); /*0x5ce108*/
+  ((unsigned int *)this)[0] = TimerGetTicks(); /*0x5ce108*/
   ((unsigned int *)this)[0] = v18; /*0x5ce10f*/
   ((unsigned int *)this)[0] = fallRate; /*0x5ce112*/
   if ( ((unsigned int *)this)[0] >= WideString::Length((const wchar_t **)&((unsigned int *)this)[0]) ) /*0x5ce122*/
@@ -4661,7 +4661,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   this->MSAnim_field_0x04 = a3; /*0x5cd587*/
   *((unsigned char *)this + 12) = 1; /*0x5cd58a*/
   v11 = 0; /*0x5cd597*/
-  *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x5cd59c*/
+  *((unsigned int *)this + 4) = TimerGetTicks(); /*0x5cd59c*/
   *((unsigned int *)this + 6) = 0; /*0x5cd59f*/
   *(unsigned int *)this->__pad_0 = &vt_MSAnim; /*0x5cd5a5*/
   ((WideString *)((wchar_t **)this + 7))->AssignFromPtr(a2); /*0x5cd5ab*/
@@ -4675,7 +4675,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   *((unsigned char *)this + 73) = a10; /*0x5cd5dd*/
   *((unsigned int *)this + 19) = 0; /*0x5cd5e0*/
   *(unsigned int *)this->__pad_0 = &vt_MSPrintAnim; /*0x5cd5e3*/
-  *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x5cd5f6*/
+  *((unsigned int *)this + 4) = TimerGetTicks(); /*0x5cd5f6*/
   *((unsigned int *)this + 5) = v15; /*0x5cd5f9*/
   *((unsigned int *)this + 6) = a7; /*0x5cd5ff*/
   sub_5CD690((int)this, a6); /*0x5cd602*/

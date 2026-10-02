@@ -396,7 +396,7 @@ char Options::Screen_Dialog()
         if ( (uint8_t)((Dialog *)this)->PumpMessages() == 1 ) /*0x55fcec*/
           break; /*0x55fcec*/
         LOBYTE(v2) = 0; /*0x55fcee*/
-        Process@<al>(v2); /*0x55fcf0*/
+        Process(v2); /*0x55fcf0*/
       }
       ((Options *)(v1))->Screen_Save(); /*0x55fcff*/
       Dialog::Destroy(v1); /*0x55fd06*/
@@ -415,7 +415,7 @@ char Options::Screen_Dialog()
           if ( (uint8_t)((Dialog *)this)->PumpMessages() == 1 ) /*0x55fd71*/
             break; /*0x55fd71*/
           LOBYTE(v5) = 0; /*0x55fd73*/
-          Process@<al>(v5); /*0x55fd75*/
+          Process(v5); /*0x55fd75*/
         }
         Dialog::Destroy(v4); /*0x55fd84*/
       }

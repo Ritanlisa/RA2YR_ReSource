@@ -1762,7 +1762,7 @@ int ScrollingText::AddLine(wchar_t *String, int a3, wchar_t *Source, int a5) {
     {
       v17 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5d41a6*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5d41af*/
-        v17 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5d41c1*/
+        v17 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5d41c1*/
       *(unsigned int *)(*(unsigned int *)&v7 + 36) = a5 + v17; /*0x5d41c6*/
       return 1; /*0x5d41cb*/
     }

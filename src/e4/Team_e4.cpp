@@ -122,7 +122,7 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
             if ( ((Dialog *)0)->PumpMessages() == 1 )
         break; /*0x56126b*/
       IDA_LOBYTE(v9) = 0; /*0x56126d*/
-      Process@<al>(v9, v12); /*0x56126f*/
+      Process(v9, v12); /*0x56126f*/
       v10 = v23; /*0x561278*/
       if ( Ticks != -1 ) /*0x56127f*/
       {

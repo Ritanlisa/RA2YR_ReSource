@@ -19,7 +19,7 @@ void Function::Function_643E80(void * a2)
 }
 // 0x645D00
 namespace gamemd {
-int Function::645D00(int a2)
+int Function::sub_645D00(int a2)
 {
 
   return (unsigned char *)this + 4 * a2; /*0x645d07*/

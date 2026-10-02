@@ -2899,7 +2899,7 @@ int RenderChronosphereScreenEffect(char a1)
       flt_A9FAA4 = v7; /*0x53bc9a*/
     }
     v51 = 255 * v9 / dword_A9FAA8; /*0x53bcaa*/
-    v11 = DDraw::GetStatus() - 1; /*0x53bcb2*/
+    v11 = DDraw_GetStatus() - 1; /*0x53bcb2*/
     if ( v11 ) /*0x53bcb3*/
     {
       if ( v11 == 1 ) /*0x53bcba*/

@@ -985,7 +985,7 @@ int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, Mo
   int v16; // edx
   int v17; // esi
   int v18; // eax
-  #375 *v19; // edi
+  void *v19; // edi
   int v20; // eax
   int v21; // esi
   char *v22; // ecx
@@ -1069,7 +1069,7 @@ int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, Mo
     v39 = (char *)(4 * v18 + 11261072); /*0x567557*/
     v54 = (int *)(4 * v18 + 11259744); /*0x56755b*/
   }
-  v19 = (#375 *)aP3; /*0x567563*/
+  v19 = (void *)aP3; /*0x567563*/
   v55 = v54 - 1; /*0x56756c*/
   if ( !aP3 ) /*0x567570*/
     goto LABEL_21; /*0x567570*/
@@ -1080,23 +1080,23 @@ int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, Mo
   {
     if ( ((1 << *((unsigned int *)dword_A83D4C->Object_field_0x34 + 46)) & *((unsigned int *)aP3 + 5433)) != 0 ) /*0x567595*/
     {
-      v19 = (#375 *)dword_A83D4C; /*0x567597*/
+      v19 = (void *)dword_A83D4C; /*0x567597*/
       aP3 = dword_A83D4C; /*0x567599*/
     }
-    if ( v19 != (#375 *)dword_A83D4C ) /*0x56759f*/
+    if ( v19 != (void *)dword_A83D4C ) /*0x56759f*/
     {
-      if ( (uint8_t)HouseClass::IsAlliedWith(v19, (#375 *)dword_A83D4C) /*0x5675b2*/
+      if ( (uint8_t)HouseClass::IsAlliedWith(v19, (void *)dword_A83D4C) /*0x5675b2*/
         && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6119) )
       {
         result = (int)dword_A83D4C; /*0x5675bc*/
-        v19 = (#375 *)dword_A83D4C; /*0x5675c1*/
+        v19 = (void *)dword_A83D4C; /*0x5675c1*/
         aP3 = dword_A83D4C; /*0x5675c3*/
         goto LABEL_22; /*0x5675c7*/
       }
 LABEL_21:
       result = (int)dword_A83D4C; /*0x5675c9*/
 LABEL_22:
-      if ( v19 != (#375 *)result ) /*0x5675d0*/
+      if ( v19 != (void *)result ) /*0x5675d0*/
         return result; /*0x5675d0*/
     }
   }

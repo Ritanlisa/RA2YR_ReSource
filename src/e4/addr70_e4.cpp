@@ -917,7 +917,7 @@ unsigned long long TechnoClass_RevealRadarEvent(int a1, int a2)
     dword_B0EB3C = a2; /*0x70f134*/
     dword_B0EB38 = a1; /*0x70f13a*/
     v3 = *((unsigned int *)dword_8871E0 + 1536); /*0x70f140*/
-    Ticks = Timer::GetTicks(); /*0x70f14a*/
+    Ticks = TimerGetTicks(); /*0x70f14a*/
     dword_B0EA74 = (unsigned int)((void *)(v9)); /*0x70f161*/
     v7 = (void *)(dword_A83D4C); /*0x70f169*/
     dword_B0EA70 = Ticks; /*0x70f16e*/
@@ -930,7 +930,7 @@ unsigned long long TechnoClass_RevealRadarEvent(int a1, int a2)
   {
     dword_B0EB3C = 0; /*0x70f198*/
     dword_B0EB38 = 0; /*0x70f1a2*/
-    result = Timer::GetTicks(); /*0x70f1ac*/
+    result = TimerGetTicks(); /*0x70f1ac*/
     dword_B0EA70 = result; /*0x70f1b7*/
     dword_B0EA74 = v9; /*0x70f1bc*/
     dword_B0EA78 = 0; /*0x70f1c2*/

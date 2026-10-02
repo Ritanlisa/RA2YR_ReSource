@@ -404,7 +404,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x628cdb*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x628cdb*/
   }
   v13 = this->m_8; /*0x628cde*/
   if ( v13 < this->m_10 ) /*0x628ce6*/
@@ -1037,7 +1037,7 @@ char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49ec32*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49ec32*/
     return 1; /*0x49ec38*/
   }
 
@@ -1137,7 +1137,7 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49edbe*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49edbe*/
   }
   v7 = (int)(this->m_8); /*0x49edc1*/
   if ( v7 < this->m_10 ) /*0x49edc9*/
@@ -1583,7 +1583,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUNodeNameType *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5c559e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5c559e*/
   }
   v7 = this->m_8; /*0x5c55a1*/
   if ( v7 < this->m_10 ) /*0x5c55a9*/
@@ -1785,7 +1785,7 @@ char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity(int 
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVColorScheme *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x62801e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x62801e*/
   }
   v7 = this->m_8; /*0x628021*/
   if ( v7 < this->m_10 ) /*0x628029*/
@@ -1854,7 +1854,7 @@ int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ProcessAll(int a2
 {
 
   if ( this->m_10 > 0 ) /*0x6285ad*/
-    VtableStub::5175D0(); /*0x6285bc*/
+    VtableStub::sub_5175D0(); /*0x6285bc*/
   return -1; /*0x6285d0*/
 
 }

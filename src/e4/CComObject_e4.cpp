@@ -669,7 +669,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
   if ( (byte_B78600 & 1) == 0 ) /*0x7a7ead*/
   {
     byte_B78600 |= 1u; /*0x7a7eb9*/
-    dword_B78608 = Timer::GetTicks(); /*0x7a7ec9*/
+    dword_B78608 = TimerGetTicks(); /*0x7a7ec9*/
     atexit(nullsub_265); /*0x7a7ece*/
   }
   if ( a2 < 0 ) /*0x7a7ee3*/
@@ -717,11 +717,11 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     if ( v7 ) /*0x7a802d*/
     {
       v22 = 1; /*0x7a8033*/
-      dword_B78608 = Timer::GetTicks(); /*0x7a8046*/
+      dword_B78608 = TimerGetTicks(); /*0x7a8046*/
       dword_B7860C = v23.DeleteAndZero_field_0x04; /*0x7a804b*/
       Debug::Log(); /*0x7a8051*/
     }
-    if ( Timer::GetTicks() - dword_B78608 > 900 ) /*0x7a806e*/
+    if ( TimerGetTicks() - dword_B78608 > 900 ) /*0x7a806e*/
     {
       v15 = (gamemd::Skirmish *)(g_UIControlState); /*0x7a8070*/
       if ( (!g_UIControlState || !*(unsigned int *)g_UIControlState) && !byte_B77E2C ) /*0x7a8085*/
@@ -729,7 +729,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
         if ( !byte_A8B8E0[0] /*0x7a80a8*/
           || (LOBYTE(v15) = dword_A8BB08, FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04, &byte_A8BAE2, (int)v15, 0)) )
         {
-          dword_B78608 = Timer::GetTicks(); /*0x7a80d2*/
+          dword_B78608 = TimerGetTicks(); /*0x7a80d2*/
           dword_B7860C = v23.DeleteAndZero_field_0x04; /*0x7a80d7*/
         }
         else
@@ -1093,7 +1093,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
       MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x7a9395*/
       v13 = WideString::GetOrEmpty((wchar_t **)&v26); /*0x7a939e*/
       Dialog::ShowStatusText(0xFFFFFF, (size_t)g_Str_Trace___hs_, a3 + 36, v13); /*0x7a93b1*/
-      dword_B76478 = Timer::GetTicks(); /*0x7a93cb*/
+      dword_B76478 = TimerGetTicks(); /*0x7a93cb*/
       dword_B7647C = v27; /*0x7a93d0*/
       dword_B76480 = 300; /*0x7a93d6*/
     }

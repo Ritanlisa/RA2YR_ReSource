@@ -1714,7 +1714,7 @@ LABEL_81:
     v113 = *(unsigned char *)(v46 + v47 + 6260);
     v111 = *(unsigned char *)(v46 + v47 + 4174 + 2087);
     v108 = *(unsigned char *)(v46 + v47 + 6262);
-    int v48 = DDraw::GetStatus() - 1;
+    int v48 = DDraw_GetStatus() - 1;
     if ( v48 )
     {
       if ( --v48 )
@@ -1753,7 +1753,7 @@ LABEL_94:
   v114 = *(unsigned char *)(v55 + 6260);
   v112 = *(unsigned char *)(v55 + 6262);
   v109 = *(unsigned char *)(v54 + *(unsigned int *)&stru_87C374[44652] + 2 * v54 + 4174 + 2087);
-  v56 = DDraw::GetStatus() - 1;
+  v56 = DDraw_GetStatus() - 1;
   if ( v56 )
   {
     v59 = v56 - 1;

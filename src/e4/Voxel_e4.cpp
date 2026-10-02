@@ -1095,7 +1095,7 @@ int Voxel::ProcessColor(unsigned int *a2, float *a3)
     v13 |= 4u; /*0x75682e*/
   if ( !*(unsigned char *)(v4 + 163) ) /*0x756831*/
     v13 |= 8u; /*0x75683b*/
-  LOBYTE(result) = ((char (__usercall *)@<al>(int@<ebx>, int@<edi>, int))funcs_756843[v13])(v4, (int)v8, (int)v19); /*0x756843*/
+  LOBYTE(result) = ((char (__usercall *)(int, int, int))funcs_756843[v13])(v4, (int)v8, (int)v19); /*0x756843*/
   return result; /*0x75684d*/
 
 }

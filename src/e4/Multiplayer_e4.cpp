@@ -290,7 +290,7 @@ void Multiplayer::ShowProgress(int a2)
       result = Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, v15, NAN); /*0x69af0a*/
     if ( *((unsigned int *)this + 2579) != 1 ) /*0x69af16*/
     {
-      Ticks = Timer::GetTicks(); /*0x69af26*/
+      Ticks = TimerGetTicks(); /*0x69af26*/
       switch ( *(unsigned int *)this ) /*0x69af3e*/
       {
         case 1: /*0x69af3e*/
@@ -309,7 +309,7 @@ void Multiplayer::ShowProgress(int a2)
             v11 = 240; /*0x69b101*/
             if ( Ticks != -1 ) /*0x69b107*/
             {
-              v12 = Timer::GetTicks() - Ticks; /*0x69b112*/
+              v12 = TimerGetTicks() - Ticks; /*0x69b112*/
               if ( v12 >= 240 ) /*0x69b118*/
                 return Event::Dispatch(); /*0x69b118*/
               v11 = 240 - v12; /*0x69b11a*/
@@ -356,7 +356,7 @@ void Multiplayer::ShowProgress(int a2)
             v8 = 240; /*0x69b037*/
             if ( Ticks != -1 ) /*0x69b03d*/
             {
-              v9 = Timer::GetTicks() - Ticks; /*0x69b048*/
+              v9 = TimerGetTicks() - Ticks; /*0x69b048*/
               if ( v9 >= 240 ) /*0x69b04e*/
                 return Event::Dispatch(); /*0x69b04e*/
               v8 = 240 - v9; /*0x69b054*/

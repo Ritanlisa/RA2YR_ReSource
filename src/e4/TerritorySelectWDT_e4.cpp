@@ -176,7 +176,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
     {
       if ( !(uint8_t)Audio::IsPlaying() ) /*0x77157c*/
       {
-        this->secondaryFacing[3] = Timer::GetTicks(); /*0x771598*/
+        this->secondaryFacing[3] = TimerGetTicks(); /*0x771598*/
         this->secondaryFacing[4] = v17.DeleteAndZero_field_0x08; /*0x7715a2*/
         this->secondaryFacing[5] = a4; /*0x7715a5*/
       }

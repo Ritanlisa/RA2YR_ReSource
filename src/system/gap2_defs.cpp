@@ -4673,9 +4673,9 @@ namespace gamemd {
 int Crate::FindPlacement(IUnknown * aP1, int a3) {
 
   CellClass *v4; // edi
-  #374 *v5; // ebp
+  void *v5; // ebp
   int v6; // eax
-  #374 *v7; // ebp
+  void *v7; // ebp
   int v8; // eax
   unsigned int *v9; // eax
   int v10; // ecx
@@ -4737,7 +4737,7 @@ int Crate::FindPlacement(IUnknown * aP1, int a3) {
   {
     if ( *((unsigned char *)this + 284) ) /*0x4871d0*/
     {
-      v5 = (#374 *)__2_YAPAXI_Z(0xB0u); /*0x4871e4*/
+      v5 = (void *)__2_YAPAXI_Z(0xB0u); /*0x4871e4*/
       if ( v5 ) /*0x4871eb*/
       {
         v46 = *((unsigned int *)this + 9); /*0x4871fa*/
@@ -4754,7 +4754,7 @@ int Crate::FindPlacement(IUnknown * aP1, int a3) {
     }
     else
     {
-      v7 = (#374 *)__2_YAPAXI_Z(0xB0u); /*0x487246*/
+      v7 = (void *)__2_YAPAXI_Z(0xB0u); /*0x487246*/
       if ( v7 ) /*0x48724d*/
       {
         v46 = *((unsigned int *)this + 9); /*0x487258*/
@@ -13184,7 +13184,7 @@ int LightConvertClass::Constructor(ConvertClass * aP1, ObjectClass * aP2, int aP
   if ( !aP8 ) /*0x555e31*/
     *((unsigned int *)this + 100) = &unk_829C20; /*0x555e33*/
   if ( dword_829D20 == -1 ) /*0x555e44*/
-    dword_829D20 = DDraw::GetStatus(); /*0x555e4b*/
+    dword_829D20 = DDraw_GetStatus(); /*0x555e4b*/
   if ( (uint8_t)LightningStorm::IsActive() ) /*0x555e50*/
   {
     if ( aP4 == -1 ) /*0x555e60*/
@@ -22274,7 +22274,7 @@ int CellClass::LockSurface( char a2) {
   {
     v3 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b5f14*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b5f1c*/
-      v3 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b5f2e*/
+      v3 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b5f2e*/
     if ( (unsigned int)(v3 - *((unsigned int *)this + 3)) > 0x1E ) /*0x5b5f36*/
       goto LABEL_6; /*0x5b5f36*/
   }
@@ -22284,7 +22284,7 @@ LABEL_6:
     Surface_Lock((ObjectClass *)this); /*0x5b5f44*/
     v4 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b5f4e*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b5f56*/
-      v4 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b5f68*/
+      v4 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b5f68*/
     *((unsigned int *)this + 3) = v4; /*0x5b5f6a*/
     *((unsigned char *)this + 9) = 0; /*0x5b5f6d*/
   }
@@ -22292,7 +22292,7 @@ LABEL_6:
   v6 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b5f76*/
   if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b5f7e*/
   {
-    result = Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b5f8a*/
+    result = TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b5f8a*/
     v6 += result; /*0x5b5f90*/
   }
   if ( (unsigned int)(v6 - *((unsigned int *)this + 7)) > 0x28 ) /*0x5b5f98*/
@@ -22307,7 +22307,7 @@ LABEL_6:
     v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b5fe6*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b5fee*/
     {
-      result = Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b5ffa*/
+      result = TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b5ffa*/
       v7 += result; /*0x5b6000*/
     }
     *((unsigned int *)this + 7) = v7; /*0x5b6002*/
@@ -22332,7 +22332,7 @@ int CellClass::SetOccupancy( ModemHost * aP1) {
   {
     v3 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b9f54*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b9f5c*/
-      v3 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b9f6e*/
+      v3 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b9f6e*/
     if ( (unsigned int)(v3 - *((unsigned int *)this + 3)) > 0x1E ) /*0x5b9f76*/
       goto LABEL_6; /*0x5b9f76*/
   }
@@ -22342,7 +22342,7 @@ LABEL_6:
     Game::BuildGameSetupPacket((Game *)this); /*0x5b9f84*/
     v4 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b9f8e*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b9f96*/
-      v4 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b9fa8*/
+      v4 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b9fa8*/
     *((unsigned int *)this + 3) = v4; /*0x5b9faa*/
     *((unsigned char *)this + 9) = 0; /*0x5b9fad*/
   }
@@ -22350,7 +22350,7 @@ LABEL_6:
   v6 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b9fb6*/
   if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b9fbe*/
   {
-    result = Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b9fca*/
+    result = TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b9fca*/
     v6 += result; /*0x5b9fd0*/
   }
   if ( (unsigned int)(v6 - *((unsigned int *)this + 7)) > 0x28 ) /*0x5b9fd8*/
@@ -22365,7 +22365,7 @@ LABEL_6:
     v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ba026*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5ba02e*/
     {
-      result = Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba03a*/
+      result = TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba03a*/
       v7 += result; /*0x5ba040*/
     }
     *((unsigned int *)this + 7) = v7; /*0x5ba042*/
@@ -22555,7 +22555,7 @@ LABEL_40:
     v47[3] = 0; /*0x5cc0f9*/
     return 0; /*0x5cc0fc*/
   }
-  v5 = Timer::GetTicks() - *(unsigned int *)&this->__pad_0[16]; /*0x5cbdc6*/
+  v5 = TimerGetTicks() - *(unsigned int *)&this->__pad_0[16]; /*0x5cbdc6*/
   if ( v5 < v4 ) /*0x5cbdcb*/
   {
     v4 -= v5; /*0x5cbdcd*/
@@ -22563,7 +22563,7 @@ LABEL_40:
   }
 LABEL_6:
   v6 = *((unsigned int *)this + 9); /*0x5cbddd*/
-  *(unsigned int *)&this->__pad_0[16] = Timer::GetTicks(); /*0x5cbde9*/
+  *(unsigned int *)&this->__pad_0[16] = TimerGetTicks(); /*0x5cbde9*/
   *(unsigned int *)&this->__pad_0[20] = v49; /*0x5cbdf0*/
   v7 = *((unsigned int *)this + 16); /*0x5cbdf3*/
   *(unsigned int *)&this->__pad_0[24] = v6; /*0x5cbdf9*/
@@ -23428,7 +23428,7 @@ bool CD::CreateDialog(LPARAM lParam) {
             || *(unsigned int *)&dword_A8B238 == 5
             || BYTE2(stru_A8D600.Network_field_0xC)
             || dword_A8DAB4
-            || VtableStub::55CBF0()
+            || VtableStub::sub_55CBF0()
             || !(uint8_t)GameFrameLoop(v6))
            && dwNewLong < 0 );
     }
@@ -24487,7 +24487,7 @@ int FactoryClass::CompleteCurrentItem(int a2) {
     Block = *(void **)this; /*0x636722*/
     v19 = *((unsigned int *)Block + 135); /*0x636726*/
     v20 = *(unsigned int *)(v19 + 48); /*0x63672c*/
-    if ( (uint8_t)House::IsHumanPlayer((#375 *)v19) && dword_A83D4C ) /*0x63673f*/
+    if ( (uint8_t)House::IsHumanPlayer((void *)v19) && dword_A83D4C ) /*0x63673f*/
       v20 = *((unsigned int *)dword_A83D4C + 12); /*0x636741*/
     if ( v20 < 0x18 ) /*0x636746*/
       dword_AC4B84[v20] = (dword_AC4B84[v20] - 1) & ((dword_AC4B84[v20] - 1 < 0) - 1); /*0x636760*/
@@ -24615,10 +24615,10 @@ int RadarClass::Create() {
 
   RadarClass::Construct((unsigned int *)this); /*0x63f6b4*/
   *((unsigned char *)this + 5388) = 0; /*0x63f6c1*/
-  *((unsigned int *)this + 1348) = Timer::GetTicks(); /*0x63f6cc*/
+  *((unsigned int *)this + 1348) = TimerGetTicks(); /*0x63f6cc*/
   *((unsigned int *)this + 1350) = 0; /*0x63f6d2*/
   *((unsigned int *)this + 1351) = 0; /*0x63f6de*/
-  *((unsigned int *)this + 1352) = Timer::GetTicks(); /*0x63f6e9*/
+  *((unsigned int *)this + 1352) = TimerGetTicks(); /*0x63f6e9*/
   *((unsigned int *)this + 1354) = 0; /*0x63f6f2*/
   *((unsigned int *)this + 1359) = -1; /*0x63f6f8*/
   *((unsigned int *)this + 1360) = -1; /*0x63f6fe*/
@@ -24722,7 +24722,7 @@ void* RadarClass::Construct() {
   v7 = dword_B048BC; /*0x652b1d*/
   this->RadarClass_field_0x14FC = 0; /*0x652b29*/
   *(unsigned int *)&this->__pad_14DD[11] = v7; /*0x652b2f*/
-  *(unsigned int *)this->__pad_1500 = Timer::GetTicks(); /*0x652b37*/
+  *(unsigned int *)this->__pad_1500 = TimerGetTicks(); /*0x652b37*/
   this->RadarClass_field_0x1508 = 0; /*0x652b3d*/
   this->RadarClass_field_0x0 = &vt_RadarClass; /*0x652b45*/
   v8 = (MapClass *)__2_YAPAXI_Z(0x10u); /*0x652b4b*/
@@ -24975,7 +24975,7 @@ int RadarClass::Destru_vt16(char a2) {
     RadarClass_field_0x1508 = this->RadarClass_field_0x1508; /*0x6531f7*/
     if ( *(unsigned int *)this->__pad_1500 != -1 ) /*0x653200*/
     {
-      v12 = Timer::GetTicks() - *(unsigned int *)this->__pad_1500; /*0x65320d*/
+      v12 = TimerGetTicks() - *(unsigned int *)this->__pad_1500; /*0x65320d*/
       if ( v12 >= (int)RadarClass_field_0x1508 ) /*0x653215*/
         goto LABEL_19; /*0x653215*/
       RadarClass_field_0x1508 = (MapClass *)((char *)RadarClass_field_0x1508 - v12); /*0x653217*/
@@ -24983,7 +24983,7 @@ int RadarClass::Destru_vt16(char a2) {
     if ( RadarClass_field_0x1508 ) /*0x65321b*/
       goto LABEL_25; /*0x65321b*/
 LABEL_19:
-    Ticks = Timer::GetTicks(); /*0x653221*/
+    Ticks = TimerGetTicks(); /*0x653221*/
     v14 = v49; /*0x65322a*/
     *(unsigned int *)this->__pad_1500 = Ticks; /*0x65322e*/
     v15 = this->RadarClass_field_0x14AC; /*0x653234*/
@@ -25017,7 +25017,7 @@ LABEL_25:
       v18 = this->RadarClass_field_0x14FC; /*0x6532c7*/
       if ( (int)v18 >= 0 && (int)v18 < *(int16_t *)(dword_B04A38 + 6) ) /*0x6532e1*/
       {
-        v19 = VtableStub::72F510(); /*0x6532ec*/
+        v19 = VtableStub::sub_72F510(); /*0x6532ec*/
         v46 = *(unsigned int *)&this->__pad_6F8[2796]; /*0x653304*/
         RadarClass_field_0x11E8 = this->RadarClass_field_0x11EC; /*0x653316*/
         v20 = (int *)(*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x653321*/
@@ -25064,7 +25064,7 @@ LABEL_25:
           this->RadarClass_field_0x14D9[0] = 0; /*0x6533b0*/
           if ( v22 ) /*0x6533b9*/
           {
-            v23 = VtableStub::72F510(); /*0x6533c0*/
+            v23 = VtableStub::sub_72F510(); /*0x6533c0*/
             v46 = *(unsigned int *)&this->__pad_6F8[2796]; /*0x6533d8*/
             RadarClass_field_0x11E8 = this->RadarClass_field_0x11EC; /*0x6533ea*/
             v24 = (int *)(*((int (**)(DSurface *, char *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x6533f5*/
@@ -25105,7 +25105,7 @@ LABEL_25:
         if ( this->RadarClass_field_0x14D9[0] ) /*0x653450*/
         {
           this->RadarClass_field_0x14D9[0] = 0; /*0x65345e*/
-          v29 = VtableStub::72F510(); /*0x65346a*/
+          v29 = VtableStub::sub_72F510(); /*0x65346a*/
           v48 = *(unsigned int *)&this->__pad_6F8[2796]; /*0x653482*/
           v49 = this->RadarClass_field_0x11EC; /*0x653494*/
           v30 = (int *)(*((int (**)(DSurface *, char *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x65349f*/
@@ -26682,7 +26682,7 @@ namespace gamemd {
 int ScenarioClass::ReadINIEntry(ScenarioClass * aP1) {
 
   SeedInitRNG((unsigned int *)((char *)this + 536), 0); /*0x68356c*/
-  *((unsigned int *)this + 392) = Timer::GetTicks(); /*0x683588*/
+  *((unsigned int *)this + 392) = TimerGetTicks(); /*0x683588*/
   *((unsigned int *)this + 394) = 0; /*0x68358e*/
   TechnoTypeVector::Construct((unsigned int *)((char *)this + 13524), 0, 0); /*0x683598*/
   *((unsigned int *)this + 3381) = &vt_TypeList; /*0x68359d*/
@@ -26724,25 +26724,25 @@ void* ScenarioClass::InitTimer() {
   this->difficulty2 = 1; /*0x68363d*/
   this->elapsedTimer[0] = 1; /*0x683643*/
   v2 = &this->elapsedTimer[1]; /*0x683652*/
-  this->elapsedTimer[1] = Timer::GetTicks(); /*0x68365f*/
+  this->elapsedTimer[1] = TimerGetTicks(); /*0x68365f*/
   this->elapsedTimer[2] = v15; /*0x683661*/
   this->pauseTimer[0] = 0; /*0x683664*/
   if ( this->elapsedTimer[1] != -1 ) /*0x68366b*/
   {
-    Ticks = Timer::GetTicks(); /*0x683670*/
+    Ticks = TimerGetTicks(); /*0x683670*/
     v4 = this->pauseTimer[0]; /*0x683677*/
     v5 = Ticks - *v2; /*0x68367a*/
     *v2 = -1; /*0x68367c*/
     this->pauseTimer[0] = v5 + v4; /*0x683680*/
   }
   v6 = &this->pauseTimer[1]; /*0x683690*/
-  this->pauseTimer[1] = Timer::GetTicks(); /*0x683698*/
+  this->pauseTimer[1] = TimerGetTicks(); /*0x683698*/
   this->pauseTimer[2] = v15; /*0x68369a*/
   *(unsigned int *)this->__pad_628 = 0; /*0x68369d*/
   if ( this->pauseTimer[1] != -1 ) /*0x6836a4*/
   {
     v14 = *(unsigned int *)this->__pad_628; /*0x6836a9*/
-    v7 = Timer::GetTicks() - *v6; /*0x6836b7*/
+    v7 = TimerGetTicks() - *v6; /*0x6836b7*/
     if ( v7 >= v14 ) /*0x6836bf*/
       v8 = 0; /*0x6836c5*/
     else
@@ -27054,7 +27054,7 @@ int ScenarioClass::SaveLoad_Prefix(int * a2) {
   v16 = *v3 == -1; /*0x68934b*/
   if ( *v3 != -1 ) /*0x68934f*/
   {
-    Ticks = Timer::GetTicks(); /*0x68935b*/
+    Ticks = TimerGetTicks(); /*0x68935b*/
     v5 = this->pauseTimer[0]; /*0x689362*/
     v6 = Ticks - *v3; /*0x689365*/
     *v3 = -1; /*0x689367*/
@@ -27084,7 +27084,7 @@ int ScenarioClass::SaveLoad_Prefix(int * a2) {
   LOBYTE(v14) = v16; /*0x689444*/
   if ( !v16 && *v3 == -1 ) /*0x68944f*/
   {
-    v14 = Timer::GetTicks(); /*0x689454*/
+    v14 = TimerGetTicks(); /*0x689454*/
     *v3 = v14; /*0x689459*/
   }
   return v14; /*0x68945b*/
@@ -27114,7 +27114,7 @@ void ScenarioClass::SaveLoad_Prefix_0(int a1) {
   v15 = (DWORD *)((char *)this + 1556); /*0x689488*/
   if ( v3 != -1 ) /*0x68948c*/
   {
-    Ticks = Timer::GetTicks(); /*0x689491*/
+    Ticks = TimerGetTicks(); /*0x689491*/
     v6 = v4[2]; /*0x689498*/
     v7 = Ticks - *v4; /*0x68949b*/
     *v4 = -1; /*0x68949d*/
@@ -27165,7 +27165,7 @@ void ScenarioClass::SaveLoad_Prefix_0(int a1) {
     *((unsigned int *)this + 1149) = &g_TypeClass_DefaultString; /*0x689626*/
   v13 = v15; /*0x689630*/
   if ( *v15 == -1 ) /*0x689637*/
-    *v13 = Timer::GetTicks(); /*0x689641*/
+    *v13 = TimerGetTicks(); /*0x689641*/
   Debug::Log(); /*0x68965d*/
 
 }
@@ -27757,7 +27757,7 @@ int CellClass::CreateInstance( int a2) {
   v2 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68ec31*/
   v3 = 20; /*0x68ec3e*/
   if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x68ec43*/
-    v2 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x68ec55*/
+    v2 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x68ec55*/
   v4 = v2; /*0x68ec57*/
   while ( 1 ) /*0x68ec5f*/
   {
@@ -27769,7 +27769,7 @@ LABEL_6:
     {
       v5 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68ec94*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x68ec9c*/
-        v5 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x68ecae*/
+        v5 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x68ecae*/
       if ( (unsigned int)(v5 - v4) > 0x28 ) /*0x68ecb5*/
       {
         memset(v10, 0, sizeof(v10)); /*0x68ecc2*/
@@ -27780,7 +27780,7 @@ LABEL_6:
         Stream::WriteBlock((int *)&unk_A8EA70, (int)v10, 250, 0); /*0x68ecf9*/
         v6 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68ed03*/
         if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x68ed0b*/
-          v6 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x68ed1d*/
+          v6 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x68ed1d*/
         v4 = v6; /*0x68ed1f*/
       }
       ObjectTypeClass::CreateInstance(&unk_A8EA70, (int)v12, (int)&v9); /*0x68ed33*/

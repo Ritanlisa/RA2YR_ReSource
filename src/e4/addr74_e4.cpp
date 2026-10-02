@@ -1115,7 +1115,7 @@ AbstractClass * * _::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVVeinholeMonsterClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x74f4a2*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x74f4a2*/
     return 1; /*0x74f4a8*/
   }
 

@@ -1299,7 +1299,7 @@ int sub_6C87F0()
 {
   int v1; // [esp+4h] [ebp-4h]
 
-  dword_B0BD28 = Timer::GetTicks(); /*0x6c87fc*/
+  dword_B0BD28 = TimerGetTicks(); /*0x6c87fc*/
   dword_B0BD2C = v1; /*0x6c8805*/
   byte_B0BDB4 = 1; /*0x6c880a*/
   return v1; /*0x6c8811*/
@@ -1417,7 +1417,7 @@ void DlgProcScoreScreen()
     {
       v11 = (char *)dword_A8B230 + 1556; /*0x6c917a*/
       Formatb = (wchar_t *)*((unsigned int *)dword_A8B230 + 391); /*0x6c9180*/
-      v10 = (int)Formatb + Timer::GetTicks() - *v11; /*0x6c9199*/
+      v10 = (int)Formatb + TimerGetTicks() - *v11; /*0x6c9199*/
     }
     v12 = v10 / 60; /*0x6c91b7*/
     swprintf( /*0x6c9209*/
@@ -1929,7 +1929,7 @@ int sub_6C6AB0()
 namespace gamemd {
 int sub_6C6AD0()
 {
-  dword_B0BD28 = Timer::GetTicks(); /*0x6c6adf*/
+  dword_B0BD28 = TimerGetTicks(); /*0x6c6adf*/
   return atexit(nullsub_234); /*0x6c6aea*/
 }
 } // namespace gamemd

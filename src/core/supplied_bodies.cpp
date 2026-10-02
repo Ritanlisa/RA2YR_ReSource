@@ -1836,7 +1836,7 @@ char CountdownTimer::UpdateDisplay(char a2) {
       if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x4a2639*/
       {
         p_vtable2 = &dword_A8B230[43].vtable2; /*0x4a2630*/
-        uniqueId += Timer::GetTicks() - (unsigned int)*p_vtable2; /*0x4a2645*/
+        uniqueId += TimerGetTicks() - (unsigned int)*p_vtable2; /*0x4a2645*/
       }
       v5 = *((unsigned int *)this + 1); /*0x4a265b*/
       *this = (CountdownTimer)(uniqueId / 60); /*0x4a2660*/

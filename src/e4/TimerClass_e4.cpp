@@ -111,7 +111,7 @@ signed int TimerClass::GetRemaining()
   if ( result != -1 ) /*0x5cead9*/
   {
     v3 = *((unsigned int *)this + 6); /*0x5ceadc*/
-    result = Timer::GetTicks() - *((unsigned int *)this + 4); /*0x5ceaec*/
+    result = TimerGetTicks() - *((unsigned int *)this + 4); /*0x5ceaec*/
     if ( result >= v3 ) /*0x5ceaf1*/
     {
       *((unsigned int *)this + 6) = 0; /*0x5ceb04*/

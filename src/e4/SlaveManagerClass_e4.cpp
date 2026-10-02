@@ -1166,7 +1166,7 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUSlaveControl_SlaveManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6b167e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6b167e*/
   }
   v7 = this->m_8; /*0x6b1681*/
   if ( v7 < this->m_10 ) /*0x6b1689*/

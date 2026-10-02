@@ -596,7 +596,7 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass *))(*(unsigned int *)this->__pad_0 /*0x7b2aae*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 /*0x7b2aae*/
                                                                                              + 12))(this);
   }
   v7 = this->m_8; /*0x7b2ab1*/

@@ -546,7 +546,7 @@ void ShowSkirmishSetupScreen(void * a1, void * a2)
             if ( ((Dialog *)0)->PumpMessages() == 1 )
         break; /*0x6ae367*/
       IDA_LOBYTE(v7) = 0; /*0x6ae369*/
-      Process@<al>(v7, v10); /*0x6ae36b*/
+      Process(v7, v10); /*0x6ae36b*/
     }
     Dialog::Destroy((Dialog *)Dialog); /*0x6ae37d*/
     dword_B0B59C = 0; /*0x6ae382*/

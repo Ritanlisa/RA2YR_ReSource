@@ -119,9 +119,9 @@ ScenarioClass::ScenarioClass() noexcept
     // IDA 0x6832CF: SeedInitRNG(&random, 0) -- offset +536
     random.Random(); // placeholder: SeedInitRNG will replace
 
-    // IDA 0x6832E5: elapsedTimer = Timer::GetTicks() -- offset +1556
+    // IDA 0x6832E5: elapsedTimer = TimerGetTicks() -- offset +1556
     // IDA 0x6832EB: elapsedTimer.end = 0 -- offset +1564
-    // IDA 0x6832F6: pauseTimer = Timer::GetTicks() -- offset +1568
+    // IDA 0x6832F6: pauseTimer = TimerGetTicks() -- offset +1568
     // IDA 0x6832FC: pauseTimer.end = 0 -- offset +1576
 
     // IDA 0x683307: offset +4592 = 0

@@ -693,7 +693,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6b848e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6b848e*/
   }
   v7 = this->m_8; /*0x6b8491*/
   if ( v7 < this->m_10 ) /*0x6b8499*/

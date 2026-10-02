@@ -2104,12 +2104,12 @@ AbstractClass * * Game_Frame_Check()
         {
           NetworkEventQueueClass::WaitForResponse((NetworkEventQueueClass *)&unk_B052D0); /*0x55d2d4*/
           v5 = 480; /*0x55d2e2*/
-          Ticks = Timer::GetTicks(); /*0x55d2e7*/
+          Ticks = TimerGetTicks(); /*0x55d2e7*/
           while ( 1 ) /*0x55d2f5*/
           {
             if ( Ticks != -1 ) /*0x55d2fa*/
             {
-              v6 = Timer::GetTicks() - Ticks; /*0x55d305*/
+              v6 = TimerGetTicks() - Ticks; /*0x55d305*/
               if ( v6 >= 480 ) /*0x55d30b*/
                 break; /*0x55d30b*/
               v5 = 480 - v6; /*0x55d30d*/
@@ -2233,14 +2233,14 @@ void GameFrameLoop()
     if ( !byte_A8EDDC ) /*0x55d76e*/
     {
       dword_A8EB60 = (AudioOptionsClass)2; /*0x55d774*/
-      dword_887348 = Timer::GetTicks(); /*0x55d783*/
+      dword_887348 = TimerGetTicks(); /*0x55d783*/
       dword_88734C = *(unsigned int *)v50.__pad_0; /*0x55d791*/
       dword_887350 = 2; /*0x55d796*/
       goto LABEL_62; /*0x55d79c*/
     }
   LABEL_61:
     v17 = (DWORD)dword_A8EB60; /*0x55d79e*/
-    dword_887348 = Timer::GetTicks(); /*0x55d7b1*/
+    dword_887348 = TimerGetTicks(); /*0x55d7b1*/
     dword_88734C = *(unsigned int *)v50.__pad_0; /*0x55d7b6*/
     dword_887350 = v17; /*0x55d7bc*/
     goto LABEL_62; /*0x55d7bc*/
@@ -2249,7 +2249,7 @@ void GameFrameLoop()
     goto LABEL_61; /*0x55d45d*/
   if ( (dword_A8D5F8 & 2) != 0 ) /*0x55d46a*/
   {
-    dword_887348 = Timer::GetTicks(); /*0x55d47b*/
+    dword_887348 = TimerGetTicks(); /*0x55d47b*/
     dword_88734C = *(unsigned int *)v50.__pad_0; /*0x55d480*/
     dword_887350 = 0; /*0x55d486*/
   }
@@ -2258,7 +2258,7 @@ void GameFrameLoop()
     if ( dword_A8B558 ) /*0x55d499*/
     {
       v3 = 60 / (int)dword_A8B558; /*0x55d507*/
-      dword_887348 = Timer::GetTicks(); /*0x55d50e*/
+      dword_887348 = TimerGetTicks(); /*0x55d50e*/
       dword_88734C = *(unsigned int *)v50.__pad_0; /*0x55d517*/
       dword_887350 = v3; /*0x55d528*/
       v4 = 1000 / (int)dword_A8B558; /*0x55d532*/
@@ -2271,7 +2271,7 @@ void GameFrameLoop()
     }
     else
     {
-      dword_887348 = Timer::GetTicks(); /*0x55d4a9*/
+      dword_887348 = TimerGetTicks(); /*0x55d4a9*/
       dword_887350 = 2; /*0x55d4b2*/
       dword_88734C = *(unsigned int *)v50.__pad_0; /*0x55d4bc*/
       Time = timeGetTime(); /*0x55d4ca*/
@@ -2382,7 +2382,7 @@ void GameFrameLoop()
     if ( dword_A8B230[43].abstractFlags != -1 ) /*0x55d7f9*/
     {
       p_abstractFlags = &dword_A8B230[43].abstractFlags; /*0x55d7f0*/
-      v20 = Timer::GetTicks() - *p_abstractFlags; /*0x55d803*/
+      v20 = TimerGetTicks() - *p_abstractFlags; /*0x55d803*/
       if ( v20 >= referenceCount ) /*0x55d807*/
       {
   LABEL_69:

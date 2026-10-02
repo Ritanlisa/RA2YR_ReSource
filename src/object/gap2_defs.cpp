@@ -1082,7 +1082,7 @@ int FootClass::DrawPlacementPreview() {
     v15 = v14[v13 + 6261]; /*0x43dc49*/
     v100 = v14[v13 + 6260]; /*0x43dc56*/
     v96 = v14[v13 + 6262]; /*0x43dc60*/
-    v16 = DDraw::GetStatus() - 1; /*0x43dc69*/
+    v16 = DDraw_GetStatus() - 1; /*0x43dc69*/
     if ( v16 ) /*0x43dc6a*/
     {
       if ( --v16 ) /*0x43dc6d*/
@@ -1115,7 +1115,7 @@ int FootClass::DrawPlacementPreview() {
     v21 = v20[v19 + 6261]; /*0x43dd07*/
     v97 = v20[v19 + 6260]; /*0x43dd14*/
     v101 = v20[v19 + 6262]; /*0x43dd1e*/
-    v22 = DDraw::GetStatus() - 1; /*0x43dd27*/
+    v22 = DDraw_GetStatus() - 1; /*0x43dd27*/
     if ( v22 ) /*0x43dd28*/
     {
       if ( --v22 ) /*0x43dd2b*/
@@ -9310,7 +9310,7 @@ int TechnoClass::Draw(void* a1, void* a2) {
     v7 += 14; /*0x73cf16*/
     v41 = v7; /*0x73cf19*/
   }
-  v9 = (int *)(*((int (__usercall **)@<eax>(TechnoClass *@<ecx>, TechnoClass **, double@<st0>))v4->RadioClass + 110))( /*0x73cf26*/
+  v9 = (int *)(*((int (__usercall **)(TechnoClass *, TechnoClass **, double))v4->RadioClass + 110))( /*0x73cf26*/
                 v4,
                 &this,
                 a2);

@@ -1172,7 +1172,7 @@ SessionClass::SessionClass()
   v12 = 8; /*0x6973d9*/
   do /*0x6973ef*/
   {
-    *v11 = Timer::GetTicks(); /*0x6973e6*/
+    *v11 = TimerGetTicks(); /*0x6973e6*/
     v11[2] = 0; /*0x6973e8*/
     v11 += 3; /*0x6973eb*/
     --v12; /*0x6973ee*/
@@ -1386,7 +1386,7 @@ int SessionClass::CreateConnections()
     v10 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x697d4d*/
     if ( v8 != -1 ) /*0x697d56*/
     {
-      Ticks = Timer::GetTicks(); /*0x697d62*/
+      Ticks = TimerGetTicks(); /*0x697d62*/
       v8 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x697d64*/
       v10 += Ticks - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x697d6b*/
     }
@@ -1426,11 +1426,11 @@ LABEL_22:
 int  SessionClass::IsValidHouse(void * a2)
 {
 
-  #375 *v2; // edi
+  void *v2; // edi
   int v3; // eax
   int v5; // ecx
   HouseClass *i; // edx
-  #375 *v7; // eax
+  void *v7; // eax
 
   v2 = a2; /*0x697e73*/
   if ( !a2 ) /*0x697e79*/
@@ -1448,7 +1448,7 @@ LABEL_9:
     return 0; /*0x697efd*/
   for ( i = dword_A8022C; ; i = (HouseClass *)((char *)i + 4) ) /*0x697ed9*/
   {
-    v7 = *(#375 **)i->AbstractClass; /*0x697edf*/
+    v7 = *(void **)i->AbstractClass; /*0x697edf*/
     if ( *(unsigned char *)(*(unsigned int *)i->AbstractClass + 492) ) /*0x697ee1*/
     {
       if ( !*((unsigned char *)v7 + 501) ) /*0x697eeb*/

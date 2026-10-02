@@ -496,7 +496,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40b7e2*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40b7e2*/
     return 1; /*0x40b7e8*/
   }
 
@@ -542,7 +542,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40b90e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40b90e*/
   }
   v7 = this->m_8; /*0x40b911*/
   if ( v7 < this->m_10 ) /*0x40b919*/
@@ -596,7 +596,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40ba42*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40ba42*/
     return 1; /*0x40ba48*/
   }
 
@@ -642,7 +642,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40bb6e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40bb6e*/
   }
   v7 = this->m_8; /*0x40bb71*/
   if ( v7 < this->m_10 ) /*0x40bb79*/
@@ -792,7 +792,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVLightConvertClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40c49e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40c49e*/
   }
   v7 = this->m_8; /*0x40c4a1*/
   if ( v7 < this->m_10 ) /*0x40c4a9*/

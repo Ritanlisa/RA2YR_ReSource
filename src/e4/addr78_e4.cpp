@@ -4856,7 +4856,7 @@ Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
       v31 = dword_B76480; /*0x78d8a6*/
       if ( dword_B76478 != -1 ) /*0x78d8af*/
       {
-        v32 = Timer::GetTicks() - dword_B76478; /*0x78d8bb*/
+        v32 = TimerGetTicks() - dword_B76478; /*0x78d8bb*/
         if ( v32 >= v31 ) /*0x78d8c3*/
           return 0; /*0x78d8c3*/
         v31 -= v32; /*0x78d8c9*/
@@ -4867,7 +4867,7 @@ Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
         SendMessageA(v33, 0x4B4u, 0, (LPARAM)byte_B77E30); /*0x78d8e8*/
         v34 = GetDlgItem(hDlg, 1344); /*0x78d8f0*/
         SetFocus(v34); /*0x78d8f3*/
-        dword_B76478 = Timer::GetTicks(); /*0x78d902*/
+        dword_B76478 = TimerGetTicks(); /*0x78d902*/
         dword_B7647C = v43; /*0x78d90f*/
         dword_B76480 = 0; /*0x78d915*/
         return 0; /*0x78d924*/

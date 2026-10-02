@@ -2556,7 +2556,7 @@ int MPCooperative::UpdateMovieScore()
     if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x5c43d8*/
     {
       p_vtable2 = &dword_A8B230[43].vtable2; /*0x5c43cf*/
-      uniqueId += Timer::GetTicks() - (unsigned int)*p_vtable2; /*0x5c43e4*/
+      uniqueId += TimerGetTicks() - (unsigned int)*p_vtable2; /*0x5c43e4*/
     }
     v11 = *(unsigned int *)this->MPCooperative_field_0x50; /*0x5c43f0*/
     v23 = *(wchar_t **)(v25 + 4); /*0x5c43f2*/
@@ -2567,7 +2567,7 @@ int MPCooperative::UpdateMovieScore()
     if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x5c440f*/
     {
       v12 = &dword_A8B230[43].vtable2; /*0x5c4400*/
-      uniqueId += Timer::GetTicks() - (unsigned int)*v12; /*0x5c441b*/
+      uniqueId += TimerGetTicks() - (unsigned int)*v12; /*0x5c441b*/
     }
     MPCooperative_field_0x50 = this->MPCooperative_field_0x50; /*0x5c441d*/
     v23 = &g_TypeClass_DefaultString; /*0x5c4420*/

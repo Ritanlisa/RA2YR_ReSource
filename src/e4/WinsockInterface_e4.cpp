@@ -63,7 +63,7 @@ void * WinsockInterface::ProcessPacket(int a2)
     --v7; /*0x7702e1*/
   }
   while ( v7 ); /*0x7702e2*/
-  *((unsigned int *)this + 235) = Timer::GetTicks(); /*0x7702f6*/
+  *((unsigned int *)this + 235) = TimerGetTicks(); /*0x7702f6*/
   *((unsigned int *)this + 237) = 0; /*0x7702fc*/
   *((unsigned char *)this + 952) = 1; /*0x770305*/
   *((unsigned int *)this + 239) = 0; /*0x77030c*/

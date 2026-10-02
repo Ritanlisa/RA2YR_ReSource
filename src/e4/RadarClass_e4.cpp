@@ -350,8 +350,8 @@ LABEL_74:
     return 1; /*0x6a869b*/
   if ( v28 > v29 ) /*0x6a869e*/
     return 0; /*0x6a86a9*/
-  v30 = (*(int (**)(int, #375 *))(*(unsigned int *)v16 + 132))(v16, dword_A83D4C); /*0x6a86bf*/
-  v31 = (*(int (**)(unsigned int *, #375 *))(*v25 + 132))(v25, dword_A83D4C); /*0x6a86c9*/
+  v30 = (*(int (**)(int, void *))(*(unsigned int *)v16 + 132))(v16, dword_A83D4C); /*0x6a86bf*/
+  v31 = (*(int (**)(unsigned int *, void *))(*v25 + 132))(v25, dword_A83D4C); /*0x6a86c9*/
   if ( v30 < v31 ) /*0x6a86d1*/
     return 1; /*0x6a86dc*/
   if ( v30 > v31 ) /*0x6a86df*/

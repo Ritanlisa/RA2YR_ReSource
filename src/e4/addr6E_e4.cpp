@@ -924,7 +924,7 @@ char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
     *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6044),
     *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6036),
     v7,
-    (#375 *)a2);
+    (void *)a2);
   return 1; /*0x6e36c6*/
 
 }

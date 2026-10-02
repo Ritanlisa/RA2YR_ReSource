@@ -401,7 +401,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
   Power::TimerProcess(v21); /*0x68bb9f*/
   v22 = *((unsigned int *)this + 391); /*0x68bbaa*/
   if ( *((unsigned int *)this + 389) != -1 ) /*0x68bbb3*/
-    v22 += Timer::GetTicks() - *((unsigned int *)this + 389); /*0x68bbc6*/
+    v22 += TimerGetTicks() - *((unsigned int *)this + 389); /*0x68bbc6*/
   Power::TimerProcess(v22); /*0x68bbcb*/
   Power::TimerProcess(*((unsigned int *)this + 387)); /*0x68bbd9*/
   Power::TimerProcess(*((unsigned int *)this + 388)); /*0x68bbe7*/

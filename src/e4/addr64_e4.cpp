@@ -509,7 +509,7 @@ void RunNetworkGameLoop()
     v3 = (gamemd::IPXManagerClass *)(&unk_A8E9C0);
   }
   IDA_LOWORD(dword_AFA400) = (unsigned short)(BuildNetworkEventPacket((int)v3, (int)v2,(int)(v1), (int)dword_A8B550, dword_AFA400) + dword_AFA400); /*0x6483c1*/
-    TicksTimer = Timer::GetTicks();
+    TicksTimer = TimerGetTicks();
   v22 = 15; /*0x6483d9*/
     v22 = ((Timer *)0)->GetTicks();
   v25 = 600; /*0x6483ee*/
@@ -526,7 +526,7 @@ void RunNetworkGameLoop()
         goto LABEL_11; /*0x64843b*/
       goto LABEL_10; /*0x64843b*/
     }
-        v4 = Timer::GetTicks() - TicksTimer;
+        v4 = TimerGetTicks() - TicksTimer;
     if ( v5 < v4 ) /*0x648435*/
     {
       v4 -= v5; /*0x648437*/
@@ -751,32 +751,32 @@ AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, in
   v9 = 0;
   char v95 = 0;
   var6E4 = *(CCINIClass ***)&stru_87C374[44948];
-  Timer::GetTicks();
-  Timer::GetTicks();
-  Timer::GetTicks();
-  Timer::GetTicks();
-  Timer::GetTicks();
+  TimerGetTicks();
+  TimerGetTicks();
+  TimerGetTicks();
+  TimerGetTicks();
+  TimerGetTicks();
   v94 = 0;
   v10 = (ObjectClass *)arg4;
-  v162 = Timer::GetTicks();
+  v162 = TimerGetTicks();
   v163 = 2 * arg4;
-  v164 = Timer::GetTicks();
+  v164 = TimerGetTicks();
   v165 = arg4 / 2;
   v107 = 0;
-  Ticks = (ObjectClass *)Timer::GetTicks();
+  Ticks = (ObjectClass *)TimerGetTicks();
   v100 = (MSVQAnim *)arg0;
-  v106 = Timer::GetTicks();
+  v106 = TimerGetTicks();
   v105 = v116;
   v108 = (MSVQAnim *)arg4;
-  v101 = (MSVQAnim *)Timer::GetTicks();
+  v101 = (MSVQAnim *)TimerGetTicks();
   v102 = (ObjectClass *)v116;
   v103 = a4;
-  var6C0[0] = Timer::GetTicks();
+  var6C0[0] = TimerGetTicks();
   var6C0[1] = (unsigned int)(v129);
   v111 = (ObjectClass *)180;
-  v109 = (ObjectClass *)Timer::GetTicks();
+  v109 = (ObjectClass *)TimerGetTicks();
   v110 = v116;
-  v120 = Timer::GetTicks();
+  v120 = TimerGetTicks();
   int v122 = 300;
   int v118 = 0;
   Time = (ObjectClass *)timeGetTime();
@@ -803,14 +803,14 @@ LABEL_8:
       goto LABEL_17;
     goto LABEL_9;
   }
-  v15 = (ObjectClass *)(Timer::GetTicks() - (unsigned int)Ticks);
+  v15 = (ObjectClass *)(TimerGetTicks() - (unsigned int)Ticks);
   if ( (int)v15 < (int)v100 )
   {
     v14 = (ObjectClass *)((char *)v100 - (char *)v15);
     goto LABEL_8;
   }
 LABEL_9:
-  v151 = (ObjectClass *)Timer::GetTicks();
+  v151 = (ObjectClass *)TimerGetTicks();
   Ticks = v151;
   v152 = (ObjectClass *)arg0;
   v100 = (MSVQAnim *)arg0;
@@ -865,7 +865,7 @@ LABEL_17:
   int v122 = v122;
   if ( v120 != -1 )
   {
-    eax18 = Timer::GetTicks() - v120;
+    eax18 = TimerGetTicks() - v120;
     if ( eax18 >= v122 )
       goto LABEL_21;
     v122 -= eax18;
@@ -875,7 +875,7 @@ LABEL_17:
 LABEL_21:
     if ( !aP0 )
     {
-      v133 = (ObjectClass *)Timer::GetTicks();
+      v133 = (ObjectClass *)TimerGetTicks();
       var65C = 300;
       v120 = (DWORD)v133;
       var660 = var660;
@@ -890,7 +890,7 @@ LABEL_24:
   v23 = (MSVQAnim *)v111;
   if ( v109 == (ObjectClass *)-1 )
     goto LABEL_27;
-  eax25 = Timer::GetTicks() - (unsigned int)v109;
+  eax25 = TimerGetTicks() - (unsigned int)v109;
   if ( eax25 < (int)v23 )
   {
     v23 = (MSVQAnim *)((char *)v23 - eax25);
@@ -908,7 +908,7 @@ LABEL_27:
     Multiplayer::ShowProgress(
       &HouseClass_Player[29932],
       *(unsigned char *)(*(unsigned int *)&HouseClass_Player[29924] + 13501) != 0 ? 200 : 100);
-    v148 = (ObjectClass *)Timer::GetTicks();
+    v148 = (ObjectClass *)TimerGetTicks();
     var620 = 180;
     v109 = v148;
     v110 = (MSVQAnim *)v149;
@@ -919,7 +919,7 @@ LABEL_34:
   v25 = v108;
   if ( v106 != -1 )
   {
-    int v27 = Timer::GetTicks() - v106;
+    int v27 = TimerGetTicks() - v106;
     if ( v27 >= (int)v25 )
       goto LABEL_38;
     v25 = (MSVQAnim *)((char *)v25 - v27);
@@ -934,7 +934,7 @@ LABEL_38:
   var690 = aP0 == 0;
   int v30 = v8->vt_slot_16();
   int v30 = v30;
-  dword_AFA418 = Timer::GetTicks() - var6C0[0];
+  dword_AFA418 = TimerGetTicks() - var6C0[0];
   if ( v30 > 0 )
   {
     char * v31 = (char *)&unk_AFA278;
@@ -1176,7 +1176,7 @@ LABEL_93:
   v58 = v103;
   if ( v101 == (MSVQAnim *)-1 )
     goto LABEL_96;
-  signed int v59 = Timer::GetTicks() - (unsigned int)v101;
+  signed int v59 = TimerGetTicks() - (unsigned int)v101;
   if ( v59 < (int)v58 )
   {
     v58 = (ScenarioClass *)((char *)v58 - v59);
@@ -1199,17 +1199,17 @@ LABEL_100:
   int v124; // [esp+8Eh] [ebp-6A8h]
             case 4:
               (*(void (**)(int *))(*v8 + 4))(v8);
-              v158 = (ObjectClass *)Timer::GetTicks();
+              v158 = (ObjectClass *)TimerGetTicks();
               Ticks = v158;
               v13 = v13;
               v100 = (MSVQAnim *)v13;
-              v62 = (ObjectClass *)Timer::GetTicks();
+              v62 = (ObjectClass *)TimerGetTicks();
               v10 = v10;
               v108 = (MSVQAnim *)v10;
               v62 = v62;
               v106 = (DWORD)v62;
               v105 = var648;
-              v142 = (ScenarioClass *)Timer::GetTicks();
+              v142 = (ScenarioClass *)TimerGetTicks();
               v101 = (MSVQAnim *)v142;
               a4 = a4;
               v102 = var63C;
@@ -1409,17 +1409,17 @@ LABEL_148:
               }
               MapClass::MarkForRedraw(&stru_87C374[13428], 2);
               TacticalMap::Redraw(&stru_87C374[13428]);
-              v63 = (ObjectClass *)Timer::GetTicks();
+              v63 = (ObjectClass *)TimerGetTicks();
               v134[6] = (int)v13;
               v100 = (MSVQAnim *)v13;
               v134[4] = (int)v63;
               Ticks = v63;
-              v136 = (ObjectClass *)Timer::GetTicks();
+              v136 = (ObjectClass *)TimerGetTicks();
               v106 = (DWORD)v136;
               v10 = v10;
               v108 = (MSVQAnim *)v10;
               v105 = (MSVQAnim *)v137;
-              v113 = (ObjectClass *)Timer::GetTicks();
+              v113 = (ObjectClass *)TimerGetTicks();
               a4 = a4;
               v101 = (MSVQAnim *)v113;
               v102 = (ObjectClass *)v116;
@@ -1508,17 +1508,17 @@ LABEL_116:
     {
       MapClass::MarkForRedraw(&stru_87C374[13428], 2);
       TacticalMap::Redraw(&stru_87C374[13428]);
-      v60 = (ObjectClass *)Timer::GetTicks();
+      v60 = (ObjectClass *)TimerGetTicks();
       v134[3] = (int)v13;
       v100 = (MSVQAnim *)v13;
       v134[1] = (int)v60;
       Ticks = v60;
-      v155 = Timer::GetTicks();
+      v155 = TimerGetTicks();
       v106 = v155;
       v10 = v10;
       v108 = (MSVQAnim *)v10;
       v105 = v156;
-      v145 = (ObjectClass *)Timer::GetTicks();
+      v145 = (ObjectClass *)TimerGetTicks();
       a4 = a4;
       v101 = (MSVQAnim *)v145;
       v102 = var630;
@@ -1817,7 +1817,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
                 }
               }
               if ( (*(unsigned char *)(v13 + 12) & 1) == 0 ) /*0x64a231*/
-                v16[3] = Timer::GetTicks() - *a6; /*0x64a24f*/
+                v16[3] = TimerGetTicks() - *a6; /*0x64a24f*/
             }
           }
           else if ( *v12 == *((unsigned int *)dword_A83D4C + 12) ) /*0x64a263*/
@@ -1895,7 +1895,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     }
     if ( *(unsigned int *)(v6 + 7) != dword_A8E7A8 ) /*0x64a5e8*/
       return 2; /*0x64a5f9*/
-    v24[3] = Timer::GetTicks() - *a6; /*0x64a60d*/
+    v24[3] = TimerGetTicks() - *a6; /*0x64a60d*/
     return v41; /*0x64a60d*/
   }
   v26 = 0; /*0x64a417*/
@@ -4761,7 +4761,7 @@ unsigned int * sub_646D20()
 namespace gamemd {
 int sub_646D90()
 {
-  dword_AC6648 = Timer::GetTicks(); /*0x646d9f*/
+  dword_AC6648 = TimerGetTicks(); /*0x646d9f*/
   return atexit(nullsub_216); /*0x646daa*/
 }
 } // namespace gamemd

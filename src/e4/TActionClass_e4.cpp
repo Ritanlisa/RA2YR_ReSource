@@ -1355,7 +1355,7 @@ namespace gamemd {
 char TActionClass::executeLoadAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 
-  #374 *v6; // eax
+  void *v6; // eax
   int16_t v8[2]; // [esp+4h] [ebp-14h] BYREF
   int v9; // [esp+8h] [ebp-10h] BYREF
   int v10[2]; // [esp+Ch] [ebp-Ch] BYREF
@@ -1371,7 +1371,7 @@ char TActionClass::executeLoadAction(int a2, int a3, int a4, IUnknown * aP4)
   {
     GroundHeight += dword_B0E6D4; /*0x6e25ba*/
   }
-  v6 = (#374 *)__2_YAPAXI_Z(0x148u); /*0x6e25c3*/
+  v6 = (void *)__2_YAPAXI_Z(0x148u); /*0x6e25c3*/
   if ( v6 ) /*0x6e25cd*/
     DamageAnimClass::Constructor( /*0x6e25e8*/
       v6,

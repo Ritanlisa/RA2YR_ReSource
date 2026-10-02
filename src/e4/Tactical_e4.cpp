@@ -2243,7 +2243,7 @@ char Tactical_42::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTActionClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6e4932*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6e4932*/
     return 1; /*0x6e4938*/
   }
 

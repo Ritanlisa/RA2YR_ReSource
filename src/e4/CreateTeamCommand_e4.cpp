@@ -272,7 +272,7 @@ void CreateTeamCommand::performAction_246(void *a1_1)
     if ( v4 )
     {
       v5 = *(unsigned int *)(v4 + 540); /*0x731083*/
-      if ( dword_A8B238[0] ? House::IsHumanPlayer((#375 *)v5) : *(unsigned char *)(v5 + 493) )
+      if ( dword_A8B238[0] ? House::IsHumanPlayer((void *)v5) : *(unsigned char *)(v5 + 493) )
       {
         if ( *(char **)(v4 + 532) == this - 1 ) /*0x7310a9*/
           *(unsigned int *)(v4 + 532) = -1; /*0x7310ab*/

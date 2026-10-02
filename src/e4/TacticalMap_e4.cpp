@@ -299,7 +299,7 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   *(unsigned int *)&this->__pad_11F[3193] = 0; /*0x6d1d18*/
   *(unsigned int *)&this->__pad_11F[3197] = 0; /*0x6d1d1e*/
   *(unsigned int *)&this->__pad_11F[3201] = 0; /*0x6d1d2a*/
-  this->Tactical_field_0xDA4 = (AbstractClass *)Timer::GetTicks(); /*0x6d1d35*/
+  this->Tactical_field_0xDA4 = (AbstractClass *)TimerGetTicks(); /*0x6d1d35*/
   *(unsigned int *)&this->__pad_DA8[4] = 0; /*0x6d1d3b*/
   *(unsigned int *)&this->__pad_DA8[8] = 0; /*0x6d1d4e*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_Tactical); /*0x6d1d54*/

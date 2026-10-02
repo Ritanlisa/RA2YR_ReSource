@@ -426,7 +426,7 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVFileEntryClass *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 12))(this); /*0x55a292*/
+    (*(void (**)(void *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 12))(this); /*0x55a292*/
     return 1; /*0x55a298*/
   }
 }

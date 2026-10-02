@@ -97,7 +97,7 @@ int MouseClass::selectCursor(int a2, int * a3) {
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVMixFileClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40d7ae*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40d7ae*/
   }
   v7 = this->m_8; /*0x40d7b1*/
   if ( v7 < this->m_10 ) /*0x40d7b9*/
@@ -1014,7 +1014,7 @@ int CheckListClass::removeItem(int a2, void* a3) {
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVLineTrail *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x55711e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x55711e*/
   }
   v7 = this->m_8; /*0x557121*/
   if ( v7 < this->m_10 ) /*0x557129*/
@@ -2494,7 +2494,7 @@ int MessageListClass::AddMessage(void* a1, int a2, void* a3, int a4, int a5, int
   {
     v25 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5d3dda*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5d3de3*/
-      v25 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5d3df5*/
+      v25 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5d3df5*/
     v24->q024 = a6 + v25; /*0x5d3df9*/
   }
   v24->q028 = a2; /*0x5d3e03*/
@@ -2889,11 +2889,11 @@ void* PowerClass::updateDrain() {
   RadarClass::Destru_vt07((RadarClass *)this); /*0x63f737*/
   this->q153C = -1; /*0x63f743*/
   this->q1540 = -1; /*0x63f749*/
-  *(unsigned int *)this->__pad_1510 = Timer::GetTicks(); /*0x63f75e*/
+  *(unsigned int *)this->__pad_1510 = TimerGetTicks(); /*0x63f75e*/
   *(unsigned int *)&this->__pad_1510[12] = 0; /*0x63f764*/
   *(unsigned int *)&this->__pad_1510[4] = v4; /*0x63f76a*/
   *(unsigned int *)&this->__pad_1510[8] = 0; /*0x63f76d*/
-  Ticks = Timer::GetTicks(); /*0x63f774*/
+  Ticks = TimerGetTicks(); /*0x63f774*/
   *(unsigned int *)this->__pad_152C = 0; /*0x63f781*/
   this->field_1530 = 0; /*0x63f787*/
   this->field_1520 = Ticks; /*0x63f78d*/
@@ -2966,7 +2966,7 @@ void PowerClass::updatePowerBarAnimation() {
     v4 = *(unsigned int *)&this->__pad_1510[8]; /*0x63fed1*/
     if ( *(unsigned int *)this->__pad_1510 != -1 ) /*0x63feda*/
     {
-      v5 = Timer::GetTicks() - *(unsigned int *)this->__pad_1510; /*0x63fee7*/
+      v5 = TimerGetTicks() - *(unsigned int *)this->__pad_1510; /*0x63fee7*/
       if ( v5 >= v4 ) /*0x63feef*/
       {
   LABEL_8:
@@ -2975,7 +2975,7 @@ void PowerClass::updatePowerBarAnimation() {
         *(unsigned int *)&this->__pad_1510[12] = v6 - 1; /*0x63ff06*/
         byte_884B8E = 1; /*0x63ff11*/
         MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x63ff17*/
-        *(unsigned int *)this->__pad_1510 = Timer::GetTicks(); /*0x63ff25*/
+        *(unsigned int *)this->__pad_1510 = TimerGetTicks(); /*0x63ff25*/
         *(unsigned int *)&this->__pad_1510[4] = v45; /*0x63ff34*/
         *(unsigned int *)&this->__pad_1510[8] = 3; /*0x63ff3a*/
         goto LABEL_9; /*0x63ff3a*/
@@ -3000,7 +3000,7 @@ void PowerClass::updatePowerBarAnimation() {
   {
     IDA_LOBYTE(this->field_1538) = 1; /*0x63ffc8*/
     *(unsigned int *)&this->__pad_1510[12] = 10; /*0x63ffce*/
-    *(unsigned int *)this->__pad_1510 = Timer::GetTicks(); /*0x63ffe8*/
+    *(unsigned int *)this->__pad_1510 = TimerGetTicks(); /*0x63ffe8*/
     *(unsigned int *)&this->__pad_1510[4] = v45; /*0x63ffee*/
     *(unsigned int *)&this->__pad_1510[8] = 3; /*0x63fff1*/
   }
@@ -3010,7 +3010,7 @@ void PowerClass::updatePowerBarAnimation() {
   v7 = this->v36; /*0x64003a*/
   if ( this->field_1520 != -1 ) /*0x640043*/
   {
-    v8 = Timer::GetTicks() - this->field_1520; /*0x640050*/
+    v8 = TimerGetTicks() - this->field_1520; /*0x640050*/
     if ( v8 >= v7 ) /*0x640058*/
       goto LABEL_19; /*0x640058*/
     v7 -= v8; /*0x64005a*/
@@ -3175,7 +3175,7 @@ void PowerClass::updatePowerBarAnimation() {
     v39 = v34; /*0x640347*/
     if ( v34 > v33 ) /*0x64034b*/
       v39 = v33; /*0x64034d*/
-    Ticks = Timer::GetTicks(); /*0x64035e*/
+    Ticks = TimerGetTicks(); /*0x64035e*/
     IDA_LOWORD(v36) = Math::RoundToInt((double)v39 / (double)v33 * 5.0); /*0x64036a*/
     v45 = v45; /*0x64036f*/
     this->field_1520 = Ticks; /*0x640373*/

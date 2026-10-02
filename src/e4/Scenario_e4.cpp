@@ -1283,7 +1283,7 @@ void Scenario_EndGameFlow()
   byte_A8E378 = 0; /*0x6856ac*/
   if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x6856bb*/
   {
-    Ticks = Timer::GetTicks(); /*0x6856c0*/
+    Ticks = TimerGetTicks(); /*0x6856c0*/
     v6 = (char *)p_vtable2[2]; /*0x6856c7*/
     v7 = Ticks - (unsigned int)*p_vtable2; /*0x6856ca*/
     *p_vtable2 = (void *)-1; /*0x6856cc*/
@@ -1301,13 +1301,13 @@ void Scenario_EndGameFlow()
   Audio::WaitForCallback((Audio *)g_MixerState); /*0x685720*/
   v8 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68572a*/
   if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x685732*/
-    v8 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x685744*/
+    v8 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x685744*/
   v9 = v8 + 300; /*0x685746*/
   while ( (uint8_t)Audio::IsPlaying() ) /*0x68574c*/
   {
     v8 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68575a*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x685762*/
-      v8 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x685774*/
+      v8 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x685774*/
     if ( v9 <= v8 ) /*0x685778*/
       break; /*0x685778*/
     Event::Dispatch(); /*0x68577a*/
@@ -1568,7 +1568,7 @@ void Scenario_EndGame()
   byte_A8E378 = 0; /*0x685dfc*/
   if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x685e0b*/
   {
-    Ticks = Timer::GetTicks(); /*0x685e10*/
+    Ticks = TimerGetTicks(); /*0x685e10*/
     v5 = (char *)p_vtable2[2]; /*0x685e17*/
     v6 = Ticks - (unsigned int)*p_vtable2; /*0x685e1a*/
     *p_vtable2 = (void *)-1; /*0x685e1c*/
@@ -1592,13 +1592,13 @@ void Scenario_EndGame()
   Audio::WaitForCallback((Audio *)g_MixerState); /*0x685eac*/
   v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x685eb6*/
   if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x685ebe*/
-    v7 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x685ed0*/
+    v7 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x685ed0*/
   v8 = v7 + 300; /*0x685ed2*/
   while ( (uint8_t)Audio::IsPlaying() ) /*0x685ed8*/
   {
     v9 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x685ee6*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x685eee*/
-      v9 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x685f00*/
+      v9 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x685f00*/
     if ( v8 <= v9 ) /*0x685f04*/
       break; /*0x685f04*/
     Event::Dispatch(); /*0x685f06*/

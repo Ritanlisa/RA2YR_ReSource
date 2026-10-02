@@ -59,7 +59,7 @@ int TeamClass::CheckCohesion()
   unsigned char v13[12]; // [esp+30h] [ebp-Ch] BYREF
 
   v3 = v2; /*0x4d9e74*/
-  v4 = (*((int (__usercall **)@<eax>(ObjectClass *@<ecx>, double@<st0>))v2->AbstractClass + 11))(v2, a2); /*0x4d9e78*/
+  v4 = (*((int (__usercall **)(ObjectClass *, double))v2->AbstractClass + 11))(v2, a2); /*0x4d9e78*/
   if ( v4 > 0 /*0x4d9f52*/
     && v4 <= 2
     && (uint8_t)Team::AllMembersValid((Team *)v3)
@@ -1489,7 +1489,7 @@ int TeamClass::LiberateMember_Start(int aP1, unsigned int a3, char aP3)
 {
 
   int result; // eax
-  #375 *v6; // ecx
+  void *v6; // ecx
   int v7; // eax
   int v8; // eax
   int v9; // ebx
@@ -1511,7 +1511,7 @@ int TeamClass::LiberateMember_Start(int aP1, unsigned int a3, char aP3)
   {
     if ( *(unsigned int *)(aP1 + 52) == *((char *)this + 28) ) /*0x6ea89b*/
     {
-      v6 = *(#375 **)(aP1 + 540); /*0x6ea89d*/
+      v6 = *(void **)(aP1 + 540); /*0x6ea89d*/
       if ( v6 ) /*0x6ea8a7*/
       {
         if ( !(uint8_t)((House *)(v6))->IsCurrentPlayer() ) /*0x6ea8a9*/
@@ -1878,7 +1878,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
           v10 = (char *)*((unsigned int *)dword_8B410C + v9); /*0x6eaf3f*/
           if ( v10 && v10[144] && *((unsigned int *)v10 + 27) && (dword_A8E7AC || !v10[129]) ) /*0x6eaf6c*/
           {
-            if ( (uint8_t)HouseClass::IsAlliedWith(*((#375 **)v10 + 135), *(#375 **)((char *)this + 44)) ) /*0x6eaf88*/
+            if ( (uint8_t)HouseClass::IsAlliedWith(*((void **)v10 + 135), *(void **)((char *)this + 44)) ) /*0x6eaf88*/
             {
               if ( this != *((unsigned int *)v10 + 373) ) /*0x6eaf97*/
               {
@@ -1912,7 +1912,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
           v15 = (char *)*((unsigned int *)dword_A83DEC + v3); /*0x6eb03a*/
           if ( v15 && v15[144] && *((unsigned int *)v15 + 27) && (dword_A8E7AC || !v15[129]) ) /*0x6eb067*/
           {
-            if ( (uint8_t)HouseClass::IsAlliedWith(*((#375 **)v15 + 135), *(#375 **)((char *)this + 44)) ) /*0x6eb083*/
+            if ( (uint8_t)HouseClass::IsAlliedWith(*((void **)v15 + 135), *(void **)((char *)this + 44)) ) /*0x6eb083*/
             {
               if ( this != *((unsigned int *)v15 + 373) ) /*0x6eb096*/
               {

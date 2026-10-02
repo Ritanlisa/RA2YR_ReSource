@@ -132,7 +132,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v8[2] = v13; /*0x416047*/
         Value = (unsigned int *)(ProgressTimer::GetValue((unsigned short *)&this->q740, v53)); /*0x416051*/
         Vector2::NormalizeNonZero(v8); /*0x416053*/
-        Function::41C430(v8); /*0x41605a*/
+        Function::sub_41C430(v8); /*0x41605a*/
         v15 = *(int16_t *)Value; /*0x41605f*/
         v54 = v13; /*0x416062*/
         v52 = v15 - 0x3FFF; /*0x41606f*/
@@ -163,7 +163,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v24 = Math::RoundToInt(v23); /*0x416181*/
         v25 = v51 + 29; /*0x416188*/
         Vector2::NormalizeNonZero(v51 + 29); /*0x416190*/
-        Function::41C430(v51 + 29); /*0x416197*/
+        Function::sub_41C430(v51 + 29); /*0x416197*/
         v54 = v23; /*0x41619c*/
         v52 = v24 - 0x3FFF; /*0x4161a9*/
         *(double *)v53 = (double)v52 * -0.00009587672516830327; /*0x4161b7*/
@@ -1618,7 +1618,7 @@ int ParticleSystemClass::Release(int a1, void* a2) {
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVParticleClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e9fee*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e9fee*/
   }
   v7 = this->m_8; /*0x4e9ff1*/
   if ( v7 < this->m_10 ) /*0x4e9ff9*/
@@ -1682,7 +1682,7 @@ int ParticleSystemClass::ReallocateBuffer(int a1, void* a2) {
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVSmudgeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb46e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb46e*/
   }
   v7 = this->m_8; /*0x4eb471*/
   if ( v7 < this->m_10 ) /*0x4eb479*/

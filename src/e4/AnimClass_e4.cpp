@@ -556,7 +556,7 @@ LABEL_78:
     v98 = *(unsigned char *)(v45 + v46 + 6260); /*0x42345e*/
     v96 = *(unsigned char *)(v45 + v46 + 4174 + 2087); /*0x42346d*/
     v84 = *(unsigned char *)(v45 + v46 + 6262); /*0x423477*/
-    v47 = DDraw::GetStatus() - 1; /*0x423480*/
+    v47 = DDraw_GetStatus() - 1; /*0x423480*/
     if ( v47 ) /*0x423481*/
     {
       v50 = v47 - 1; /*0x423483*/
@@ -597,7 +597,7 @@ LABEL_89:
   v99 = *(unsigned char *)(v52 + v53 + 6260); /*0x42353b*/
   v85 = *(unsigned char *)(v52 + v53 + 4174 + 2087); /*0x42354a*/
   v97 = *(unsigned char *)(v52 + v53 + 6262); /*0x423554*/
-  v54 = DDraw::GetStatus() - 1; /*0x42355d*/
+  v54 = DDraw_GetStatus() - 1; /*0x42355d*/
   if ( v54 ) /*0x42355e*/
   {
     v57 = v54 - 1; /*0x423560*/
@@ -956,7 +956,7 @@ LABEL_78:
     v98 = *(unsigned char *)(v45 + v46 + 6260); /*0x42345e*/
     v96 = *(unsigned char *)(v45 + v46 + 4174 + 2087); /*0x42346d*/
     v84 = *(unsigned char *)(v45 + v46 + 6262); /*0x423477*/
-    v47 = DDraw::GetStatus() - 1; /*0x423480*/
+    v47 = DDraw_GetStatus() - 1; /*0x423480*/
     if ( v47 ) /*0x423481*/
     {
       v50 = v47 - 1; /*0x423483*/
@@ -997,7 +997,7 @@ LABEL_89:
   v99 = *(unsigned char *)(v52 + v53 + 6260); /*0x42353b*/
   v85 = *(unsigned char *)(v52 + v53 + 4174 + 2087); /*0x42354a*/
   v97 = *(unsigned char *)(v52 + v53 + 6262); /*0x423554*/
-  v54 = DDraw::GetStatus() - 1; /*0x42355d*/
+  v54 = DDraw_GetStatus() - 1; /*0x42355d*/
   if ( v54 ) /*0x42355e*/
   {
     v57 = v54 - 1; /*0x423560*/

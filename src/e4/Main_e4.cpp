@@ -45,7 +45,7 @@ void Main::CreateDialog()
       if ( !byte_A8E9A0 ) /*0x4e1d88*/
       {
         LOBYTE(v5) = 0; /*0x4e1d8a*/
-        Process@<al>(v5, v6); /*0x4e1d8c*/
+        Process(v5, v6); /*0x4e1d8c*/
       }
     }
     if ( i == 1 ) /*0x4e1d9d*/

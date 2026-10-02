@@ -213,7 +213,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6648f2*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6648f2*/
     return 1; /*0x6648f8*/
   }
 
@@ -313,7 +313,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x664a1e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x664a1e*/
   }
   v7 = this->m_8; /*0x664a21*/
   if ( v7 < this->m_10 ) /*0x664a29*/

@@ -215,7 +215,7 @@ LABEL_55:
       }
     }
   }
-  if ( FactoryClass::DemandProduction(v10, v9, (#375 *)this, a5) ) /*0x4fa5d1*/
+  if ( FactoryClass::DemandProduction(v10, v9, (void *)this, a5) ) /*0x4fa5d1*/
     goto LABEL_55; /*0x4fa5df*/
   Debug::Log(); /*0x4fa6c4*/
   if ( *(unsigned int *)(v10 + 80) || *(unsigned int *)(v10 + 88) ) /*0x4fa6d9*/

@@ -332,7 +332,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     LOWORD(v86) = v86 - *aP4; /*0x5b2546*/
   }
   ((Vector2 *)((int *)_ESI))->NormalizeNonZero(); /*0x5b2557*/
-  Function::41C430((double *)_ESI); /*0x5b255e*/
+  Function::sub_41C430((double *)_ESI); /*0x5b255e*/
   __asm { fstp qword ptr [esp+98h+var_88.field_8] } /*0x5b2568*/
   *(unsigned int *)v88.__pad_0 = (int16_t)v86 - 0x3FFF; /*0x5b2575*/
   __asm /*0x5b2579*/

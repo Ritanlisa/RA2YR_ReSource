@@ -784,7 +784,7 @@ void CoopCampaignVector::Release( int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVCoopCampaignClass *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 12))(this); /*0x5c56d2*/
+    (*(void (**)(void *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 12))(this); /*0x5c56d2*/
     return 1; /*0x5c56d8*/
   }
 }
@@ -4714,7 +4714,7 @@ void MapPreview::Upload()
   int v39[114]; // [esp+3C0h] [ebp-1C8h] BYREF
 
   v27 = (Palette *)this; /*0x5e7ec0*/
-  result = Timer::GetTicks(); /*0x5e7ec4*/
+  result = TimerGetTicks(); /*0x5e7ec4*/
   if ( this ) /*0x5e7ed7*/
   {
     result = dword_A8DA84; /*0x5e7edd*/
@@ -4788,7 +4788,7 @@ void MapPreview::Upload()
       v36[0] = 25; /*0x5e8119*/
       strcpy((char *)&v36[1], unk_A8B380); /*0x5e8127*/
       Network::SetConnectionParams(&unk_A8E9C0, 50, -1, 5000, 1); /*0x5e813e*/
-      Ticks = Timer::GetTicks(); /*0x5e8150*/
+      Ticks = TimerGetTicks(); /*0x5e8150*/
       for ( j = 1; j < dword_A8DA84; ++j ) /*0x5e8170*/
       {
         Network::SendToPlayer((int)&unk_A8E9C0, (int)v36, 455, 1, (wchar_t *)dword_A8DA78[j]); /*0x5e818b*/
@@ -4799,7 +4799,7 @@ void MapPreview::Upload()
         v12 = 1200; /*0x5e81b1*/
         if ( Ticks != -1 ) /*0x5e81b7*/
         {
-          v13 = Timer::GetTicks() - Ticks; /*0x5e81c2*/
+          v13 = TimerGetTicks() - Ticks; /*0x5e81c2*/
           if ( v13 >= 1200 ) /*0x5e81c8*/
             break; /*0x5e81c8*/
           v12 = 1200 - v13; /*0x5e81ca*/
@@ -4812,7 +4812,7 @@ void MapPreview::Upload()
       v14 = 1200; /*0x5e81e7*/
       if ( Ticks != -1 ) /*0x5e81ed*/
       {
-        result = Timer::GetTicks() - Ticks; /*0x5e81f8*/
+        result = TimerGetTicks() - Ticks; /*0x5e81f8*/
         if ( result >= 1200 ) /*0x5e81fe*/
           return result; /*0x5e81fe*/
         v14 = 1200 - result; /*0x5e8204*/
@@ -4823,7 +4823,7 @@ void MapPreview::Upload()
         v28[0] = 0; /*0x5e821d*/
         v15 = 0; /*0x5e8221*/
         v28[1] = 0; /*0x5e8223*/
-        v25 = Timer::GetTicks(); /*0x5e8230*/
+        v25 = TimerGetTicks(); /*0x5e8230*/
         Debug::Log(); /*0x5e824d*/
         if ( dword_A8DA84 - 1 > 0 ) /*0x5e825e*/
         {
@@ -4832,7 +4832,7 @@ void MapPreview::Upload()
             v16 = 1800; /*0x5e826d*/
             if ( v25 != -1 ) /*0x5e8274*/
             {
-              v17 = Timer::GetTicks() - v25; /*0x5e827f*/
+              v17 = TimerGetTicks() - v25; /*0x5e827f*/
               if ( v17 >= 1800 ) /*0x5e8285*/
                 break; /*0x5e8285*/
               v16 = 1800 - v17; /*0x5e828b*/
@@ -7008,7 +7008,7 @@ void RadarHashVector::Release( int a2, char * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass *))(*(unsigned int *)((unsigned char *)(this) + 0x0) /*0x658a61*/
+    (*(void (**)(void *))(*(unsigned int *)((unsigned char *)(this) + 0x0) /*0x658a61*/
                                                                                             + 12))(this);
     return 1; /*0x658a67*/
   }
@@ -7034,7 +7034,7 @@ void ScoreAnimClass::AdvanceFrame( int a2)
       return 0; /*0x690c25*/
     goto LABEL_5; /*0x690c25*/
   }
-  v4 = Timer::GetTicks() - *(unsigned int *)&this->m_9[3]; /*0x690c1a*/
+  v4 = TimerGetTicks() - *(unsigned int *)&this->m_9[3]; /*0x690c1a*/
   if ( v4 < v3 ) /*0x690c1f*/
   {
     v3 -= v4; /*0x690c21*/
@@ -7042,7 +7042,7 @@ void ScoreAnimClass::AdvanceFrame( int a2)
   }
   LABEL_5:
   v5 = this->q024; /*0x690c2b*/
-  Ticks = Timer::GetTicks(); /*0x690c32*/
+  Ticks = TimerGetTicks(); /*0x690c32*/
   v7 = this->u32_1C; /*0x690c37*/
   v8 = ((unsigned char *)(this) + 0x020); /*0x690c3a*/
   *(unsigned int *)&this->m_9[3] = Ticks; /*0x690c3d*/
@@ -7127,14 +7127,14 @@ void ScoreAnimClass::AnimateText()
       return 0; /*0x690d8c*/
     goto LABEL_5; /*0x690d8c*/
   }
-  v6 = Timer::GetTicks() - this->m_C; /*0x690d81*/
+  v6 = TimerGetTicks() - this->m_C; /*0x690d81*/
   if ( v6 < v5 ) /*0x690d86*/
   {
     v5 -= v6; /*0x690d88*/
     goto LABEL_4; /*0x690d88*/
   }
   LABEL_5:
-  this->m_C = Timer::GetTicks(); /*0x690d92*/
+  this->m_C = TimerGetTicks(); /*0x690d92*/
   this->m_10 = m_8; /*0x690da7*/
   *(unsigned int *)this->__pad_14 = 2; /*0x690daa*/
   if ( *(unsigned int *)&this->m_1A[2] > (unsigned int)wcslen(*(const wchar_t **)&this->__pad_14[4]) && this->m_20 > 2 ) /*0x690dc4*/
@@ -7216,7 +7216,7 @@ void ScoreAnimClass::AddRef()
   if ( result != -1 ) /*0x690f79*/
   {
     ScoreAnimClass_field_0x14 = this->ScoreAnimClass_field_0x14; /*0x690f7c*/
-    result = Timer::GetTicks() - this->ScoreAnimClass_field_0x0C; /*0x690f8c*/
+    result = TimerGetTicks() - this->ScoreAnimClass_field_0x0C; /*0x690f8c*/
     if ( result >= ScoreAnimClass_field_0x14 ) /*0x690f91*/
     {
       this->ScoreAnimClass_field_0x14 = 0; /*0x690fa4*/
@@ -7234,7 +7234,7 @@ void ScoreAnimClass::AddRef()
 void ScoreAnimClass::Release()
 {
   if ( this->ScoreAnimClass_field_0x0C == -1 ) /*0x690fc7*/
-    this->ScoreAnimClass_field_0x0C = Timer::GetTicks(); /*0x690fd1*/
+    this->ScoreAnimClass_field_0x0C = TimerGetTicks(); /*0x690fd1*/
 }
 // 0x690fe0
 void ScoreAnimClass::Constructor_ScoreAnimClass(unsigned int * Block, char a2)
@@ -7413,9 +7413,9 @@ void ScoreBoard::Render()
                    0,
                    25);
   TextRenderer::DrawText(&v89, (size_t)&Buffer, v2, v8, v35, v39, v48, v56); /*0x542781*/
-  if ( (int)(Timer::GetTicks() - dword_AC6648) / 60 ) /*0x5427ad*/
+  if ( (int)(TimerGetTicks() - dword_AC6648) / 60 ) /*0x5427ad*/
   {
-    v9 = Timer::GetTicks() - dword_AC6648; /*0x5427c6*/
+    v9 = TimerGetTicks() - dword_AC6648; /*0x5427c6*/
     swprintf(&Buffer, (const size_t)aFspsD, (const wchar_t *const)(dword_B0487C / (v9 / 60))); /*0x5427f3*/
     v87 = 0; /*0x542805*/
     v88 = 432; /*0x54280c*/
@@ -7424,7 +7424,7 @@ void ScoreBoard::Render()
     TextRenderer::DrawText(&v89, (size_t)&Buffer, v2, v10, (int)&v87, v40, 0, 25); /*0x54283d*/
     if ( ((uint8_t)dword_A8ED84 & 0x7F) == 0x7F ) /*0x54284f*/
     {
-      dword_AC6648 = Timer::GetTicks(); /*0x54285e*/
+      dword_AC6648 = TimerGetTicks(); /*0x54285e*/
       v90 = v90; /*0x542863*/
       dword_B0487C = 0; /*0x542869*/
     }
@@ -7822,7 +7822,7 @@ void ScoreScreen::DisplayTimeText( unsigned int a2)
     v7 = this->q004 + 322; /*0x68fa4e*/
     *(unsigned int *)(v5 + 4) = v4; /*0x68fa56*/
     *(unsigned int *)(v5 + 8) = v7; /*0x68fa59*/
-    *(unsigned int *)(v5 + 12) = Timer::GetTicks(); /*0x68fa61*/
+    *(unsigned int *)(v5 + 12) = TimerGetTicks(); /*0x68fa61*/
     *(unsigned int *)(v5 + 20) = 0; /*0x68fa66*/
     *(unsigned int *)(v5 + 40) = v6; /*0x68fa6d*/
     *(unsigned int *)(v5 + 24) = Buffer; /*0x68fa70*/
@@ -9001,7 +9001,7 @@ void AbstractClassVector::Release( int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVAbstractClass *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 12))(this); /*0x4e0402*/
+    (*(void (**)(void *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 12))(this); /*0x4e0402*/
     return 1; /*0x4e0408*/
   }
 }
@@ -9067,7 +9067,7 @@ void Actions::Reset( int * a1, MouseClass * aP2)
   v6 = g_MissionQueueFrame.localVariables[521]; /*0x5bddf2*/
   if ( g_MissionQueueFrame.localVariables[519] == -1 ) /*0x5bddfb*/
     goto LABEL_5; /*0x5bddfb*/
-  v7 = Timer::GetTicks() - g_MissionQueueFrame.localVariables[519]; /*0x5bde07*/
+  v7 = TimerGetTicks() - g_MissionQueueFrame.localVariables[519]; /*0x5bde07*/
   if ( v7 < v6 ) /*0x5bde0f*/
   {
     v6 -= v7; /*0x5bde11*/
@@ -9085,7 +9085,7 @@ void Actions::Reset( int * a1, MouseClass * aP2)
     v10 = v9 % v5[1]; /*0x5bde3a*/
   this->u32_5568 = v10; /*0x5bde3d*/
   v11 = v5[2]; /*0x5bde43*/
-  g_MissionQueueFrame.localVariables[519] = Timer::GetTicks(); /*0x5bde53*/
+  g_MissionQueueFrame.localVariables[519] = TimerGetTicks(); /*0x5bde53*/
   g_MissionQueueFrame.localVariables[520] = v14; /*0x5bde58*/
   g_MissionQueueFrame.localVariables[521] = v11; /*0x5bde5e*/
   if ( !this->u32_555C || *(unsigned int *)&stru_82BA00.__pad_1624[28 * this->u32_5560 + 16] == -1 ) /*0x5bde8a*/
@@ -9924,7 +9924,7 @@ void ArtConfig::loadConfig( ObjectClass * aP1, ObjectClass * aP2, ObjectClass * 
   this->ArtConfig_field_0x04 = *a5; /*0x5cc76f*/
   this->ArtConfig_field_0x08 = v7; /*0x5cc775*/
   IDA_LOBYTE(this->ArtConfig_field_0x0C) = 1; /*0x5cc778*/
-  this->ArtConfig_field_0x10 = Timer::GetTicks(); /*0x5cc785*/
+  this->ArtConfig_field_0x10 = TimerGetTicks(); /*0x5cc785*/
   this->u32_18 = 0; /*0x5cc78d*/
   this->u32_1C = 0; /*0x5cc790*/
   *(unsigned int *)((unsigned char *)(this) + 0x0) =(unsigned int)&MSAnim_vftable; /*0x5cc795*/
@@ -18921,7 +18921,7 @@ void MPScore::DlgProc()
   if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x5c9c66*/
   {
     p_vtable2 = &dword_A8B230[43].vtable2; /*0x5c9c58*/
-    uniqueId = (int)v51 + Timer::GetTicks() - (unsigned int)*p_vtable2; /*0x5c9c79*/
+    uniqueId = (int)v51 + TimerGetTicks() - (unsigned int)*p_vtable2; /*0x5c9c79*/
     v51 = (int *)uniqueId; /*0x5c9c7b*/
   }
   v13 = uniqueId / 60; /*0x5c9c92*/
@@ -19162,7 +19162,7 @@ void MSBitPrintAnim::Construct( const wchar_t ** a1, MSAnim * aP2, MPCooperative
   this->MSBitPrintAnim_field_0x04 = *a3; /*0x5cd33d*/
   this->MSBitPrintAnim_field_0x08 = v5; /*0x5cd343*/
   IDA_LOBYTE(this->MSBitPrintAnim_field_0x0C) = 1; /*0x5cd346*/
-  this->MSBitPrintAnim_field_0x10 = Timer::GetTicks(); /*0x5cd353*/
+  this->MSBitPrintAnim_field_0x10 = TimerGetTicks(); /*0x5cd353*/
   this->u32_18 = 0; /*0x5cd356*/
   *(unsigned int *)&((unsigned char *)(this) + 0x0) =(unsigned int)&MSAnim_vftable; /*0x5cd361*/
   WideString::AssignFromPtr((wchar_t **)this + 7, a2); /*0x5cd367*/
@@ -19625,7 +19625,7 @@ void MSEngine_Destru::CheckStringNotEmpty()
   {
     if ( this->m_CC != -1 ) /*0x5ae4db*/
 // 0x6c8c40
-      return Timer::GetTicks(); /*0x5ae4e3*/
+      return TimerGetTicks(); /*0x5ae4e3*/
   }
   return result; /*0x5ae4e8*/
 }
@@ -19934,7 +19934,7 @@ void MSOverlayAnim::Load( int a2, int * a3)
     a3[3] = 0; /*0x5cbb6d*/
     return 0; /*0x5cbb71*/
   }
-  v5 = Timer::GetTicks() - this->q010; /*0x5cb8a6*/
+  v5 = TimerGetTicks() - this->q010; /*0x5cb8a6*/
   if ( v5 < v4 ) /*0x5cb8ab*/
   {
     v4 -= v5; /*0x5cb8ad*/
@@ -19942,7 +19942,7 @@ void MSOverlayAnim::Load( int a2, int * a3)
   }
   LABEL_6:
   v6 = this->q024; /*0x5cb8b7*/
-  Ticks = Timer::GetTicks(); /*0x5cb8be*/
+  Ticks = TimerGetTicks(); /*0x5cb8be*/
   v8 = this->q028; /*0x5cb8c3*/
   this->q010 = Ticks; /*0x5cb8c6*/
   ((unsigned char *)(this) + 0x014) = v39; /*0x5cb8d5*/
@@ -20193,7 +20193,7 @@ void MSOverlayAnim::Init( ObjectClass * aP1, int a3, int a4, int a5, int a6, MSS
   this->MSOverlayAnim_field_0x08 = a4; /*0x5cc25c*/
   this->MSOverlayAnim_field_0x04 = a3; /*0x5cc262*/
   IDA_LOBYTE(this->MSOverlayAnim_field_0x0C) = 1; /*0x5cc265*/
-  this->MSOverlayAnim_field_0x10 = Timer::GetTicks(); /*0x5cc278*/
+  this->MSOverlayAnim_field_0x10 = TimerGetTicks(); /*0x5cc278*/
   this->MSOverlayAnim_field_0x18 = 0; /*0x5cc27f*/
   this->u32_20 = a5; /*0x5cc282*/
   this->u32_24 = a6; /*0x5cc288*/
@@ -20239,7 +20239,7 @@ void MSPCXAnim::Construct( ObjectClass * aP1, MSAnim * aP2, unsigned int * a3, c
   this->MSPCXAnim_field_0x04 = 0; /*0x5ce651*/
   this->MSPCXAnim_field_0x08 = 0; /*0x5ce654*/
   IDA_LOBYTE(this->MSPCXAnim_field_0x0C) = 0; /*0x5ce657*/
-  this->MSPCXAnim_field_0x10 = Timer::GetTicks(); /*0x5ce674*/
+  this->MSPCXAnim_field_0x10 = TimerGetTicks(); /*0x5ce674*/
   this->MSPCXAnim_field_0x18 = 0; /*0x5ce677*/
   *(unsigned int *)((unsigned char *)(this) + 0x0) =(unsigned int)&MSAnim_vftable; /*0x5ce67a*/
   v6 = (MSPCXAnim *)((char *)&this->q0044); /*0x5ce685*/
@@ -20545,7 +20545,7 @@ void MSPrintAnim::SetText( int a2, unsigned int * a3)
       return 0; /*0x5cdc88*/
     goto LABEL_5; /*0x5cdc88*/
   }
-  v6 = Timer::GetTicks() - this->q010; /*0x5cdc7d*/
+  v6 = TimerGetTicks() - this->q010; /*0x5cdc7d*/
   if ( v6 < v5 ) /*0x5cdc82*/
   {
     v5 -= v6; /*0x5cdc84*/
@@ -20555,7 +20555,7 @@ void MSPrintAnim::SetText( int a2, unsigned int * a3)
   if ( this->q00C != 1 ) /*0x5cdc92*/
     return 0; /*0x5cdc92*/
   v7 = ((unsigned char *)(this) + 0x02C); /*0x5cdc98*/
-  this->q010 = Timer::GetTicks(); /*0x5cdca4*/
+  this->q010 = TimerGetTicks(); /*0x5cdca4*/
   ((unsigned char *)(this) + 0x014) = v37; /*0x5cdcab*/
   this->q018 = v7; /*0x5cdcb1*/
   if ( this->u32_24 > (unsigned int)WideString::Length((const wchar_t **)(&this->q0088)) /*0x5cdcc2*/
@@ -20838,12 +20838,12 @@ void MSSfxClass::FindByName( ObjectClass * aP1)
                                  (String *)a2,
                                  *(const char ***)(*(unsigned int *)(*(unsigned int *)&v5.m_1[3] + 4) + 4 * v6)) )
           break; /*0x76ec38*/
-        (*(void (**)(_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *))(*(unsigned int *)v5.__pad_0 /*0x76ec42*/
+        (*(void (**)(void *))(*(unsigned int *)v5.__pad_0 /*0x76ec42*/
                                                                                                  + 8))(&v5);
       }
-      while ( (*(uint8_t (**)(_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *))(*(unsigned int *)v5.__pad_0 + 4))(&v5) ); /*0x76ec4d*/
+      while ( (*(uint8_t (**)(void *))(*(unsigned int *)v5.__pad_0 + 4))(&v5) ); /*0x76ec4d*/
     }
-    result = (*(int (**)(_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *))(*(unsigned int *)v5.__pad_0 + 4))(&v5); /*0x76ec5c*/
+    result = (*(int (**)(void *))(*(unsigned int *)v5.__pad_0 + 4))(&v5); /*0x76ec5c*/
     if ( (unsigned char)result ) /*0x76ec61*/
       return nullsub_24(v4); /*0x76ec71*/
   }
@@ -20857,7 +20857,7 @@ void MSShapeAnim::Constructor( MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, MSS
   this->q008 = a4; /*0x5cb6db*/
   this->q004 = a3; /*0x5cb6e1*/
   this->q00C = 1; /*0x5cb6e4*/
-  this->q010 = Timer::GetTicks(); /*0x5cb6f5*/
+  this->q010 = TimerGetTicks(); /*0x5cb6f5*/
   this->q018 = 0; /*0x5cb6fc*/
   ((unsigned char *)(this) + 0x020) = a5; /*0x5cb703*/
   this->q034 = a7; /*0x5cb70a*/
@@ -20919,7 +20919,7 @@ void MSVQAnim::Construct( char ** a2, int a3, int a4, unsigned int * a5, char a6
   this->MSVQAnim_field_0x04 = 0; /*0x5cca2e*/
   this->MSVQAnim_field_0x08 = 0; /*0x5cca31*/
   IDA_LOBYTE(this->MSVQAnim_field_0x0C) = 0; /*0x5cca34*/
-  Ticks = Timer::GetTicks(); /*0x5cca37*/
+  Ticks = TimerGetTicks(); /*0x5cca37*/
   a6 = a6; /*0x5cca3c*/
   v9 = (int *)a3; /*0x5cca43*/
   this->MSVQAnim_field_0x10 = Ticks; /*0x5cca4a*/
@@ -20998,7 +20998,7 @@ void MSVQAnim::ConstructMSVQAnimHidden( MSVQAnim * aP1, ObjectClass * aP2, MSVQA
   this->MSVQAnim_field_0x04 = 0; /*0x5ccc3e*/
   this->MSVQAnim_field_0x08 = 0; /*0x5ccc41*/
   IDA_LOBYTE(this->MSVQAnim_field_0x0C) = 0; /*0x5ccc44*/
-  Ticks = Timer::GetTicks(); /*0x5ccc47*/
+  Ticks = TimerGetTicks(); /*0x5ccc47*/
   a5 = a5; /*0x5ccc4c*/
   a3 = a3; /*0x5ccc53*/
   this->MSVQAnim_field_0x10 = Ticks; /*0x5ccc5a*/
@@ -22486,7 +22486,7 @@ void ObjectVector::Release( int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVObjectClass *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 12))(this); /*0x40cdb2*/
+    (*(void (**)(void *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 12))(this); /*0x40cdb2*/
     return 1; /*0x40cdb8*/
   }
 }
@@ -32341,7 +32341,7 @@ void Viewport::ProcessScroll( unsigned int * a2)
       goto LABEL_40; /*0x692e68*/
     goto LABEL_38; /*0x692e68*/
   }
-  v26 = Timer::GetTicks() - dword_B05638; /*0x692e5a*/
+  v26 = TimerGetTicks() - dword_B05638; /*0x692e5a*/
   if ( v26 < dword_B05640 ) /*0x692e62*/
   {
     dword_B05640 -= v26; /*0x692e64*/
@@ -32350,7 +32350,7 @@ void Viewport::ProcessScroll( unsigned int * a2)
   LABEL_38:
   if ( !v36 ) /*0x692e70*/
     goto LABEL_41; /*0x692e70*/
-  dword_B05638 = Timer::GetTicks(); /*0x692e84*/
+  dword_B05638 = TimerGetTicks(); /*0x692e84*/
   dword_B0563C = v35; /*0x692e89*/
   dword_B05640 = 1; /*0x692e8f*/
   ++this->u32_5548; /*0x692e9c*/
@@ -32361,7 +32361,7 @@ void Viewport::ProcessScroll( unsigned int * a2)
   dword_B05640 = dword_B05640; /*0x692eaa*/
   if ( dword_B05638 == -1 ) /*0x692eb8*/
     goto LABEL_44; /*0x692eb8*/
-  v28 = Timer::GetTicks() - dword_B05638; /*0x692ec4*/
+  v28 = TimerGetTicks() - dword_B05638; /*0x692ec4*/
   if ( v28 < dword_B05640 ) /*0x692ecc*/
   {
     dword_B05640 -= v28; /*0x692ece*/
@@ -32373,7 +32373,7 @@ void Viewport::ProcessScroll( unsigned int * a2)
   this->u32_5548 = v29; /*0x692edb*/
   if ( v29 < 0 ) /*0x692ee1*/
     this->u32_5548 = v29 + 1; /*0x692ee4*/
-  dword_B05638 = Timer::GetTicks(); /*0x692ef3*/
+  dword_B05638 = TimerGetTicks(); /*0x692ef3*/
   dword_B0563C = v35; /*0x692f01*/
   dword_B05640 = 1; /*0x692f06*/
 }

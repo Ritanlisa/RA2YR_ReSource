@@ -151,7 +151,7 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a144e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a144e*/
   }
   v7 = (int)(this->m_8); /*0x4a1451*/
   if (v7 < this->m_10, unsigned int a2) /*0x4a1459*/

@@ -190,7 +190,7 @@ int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
   *v10 = 0; /*0x7ac891*/
   if ( !*(unsigned (unsigned int)(int)*)(a3) && !a3[1] && a3[2] == (char *)192 && a3[3] == (char *)1174405120 ) /*0x7ac8b3*/
   {
-    (*(void (**, unsigned int a3)(unsigned int *))(*a2 + 4))(a2); /*0x7ac8c6*/
+    (*(void (**)(unsigned int *))(*a2 + 4))(a2); /*0x7ac8c6*/
     *v10 = (unsigned int)(a2); /*0x7ac8c9*/
     return 0; /*0x7ac8d1*/
   }

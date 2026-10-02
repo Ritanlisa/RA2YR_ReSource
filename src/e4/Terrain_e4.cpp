@@ -101,8 +101,8 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
   int v47; // edx
   int v48; // edi
   int v49; // eax
-  #374 *v50; // eax
-  #374 *v51; // eax
+  void *v50; // eax
+  void *v51; // eax
   int v52; // eax
   int v53; // eax
   int *v54; // eax
@@ -387,7 +387,7 @@ LABEL_44:
         {
           if ( a3 == 2 ) /*0x56957e*/
           {
-            v50 = (#374 *)__2_YAPAXI_Z(0xB0u); /*0x569580*/
+            v50 = (void *)__2_YAPAXI_Z(0xB0u); /*0x569580*/
             if ( v50 ) /*0x56958a*/
             {
               aP3 = (IUnknown *)((int *)v44[9]); /*0x569596*/
@@ -396,7 +396,7 @@ LABEL_44:
           }
           else
           {
-            v51 = (#374 *)__2_YAPAXI_Z(0xB0u); /*0x5695ab*/
+            v51 = (void *)__2_YAPAXI_Z(0xB0u); /*0x5695ab*/
             if ( v51 ) /*0x5695b5*/
             {
               *(unsigned int *)v71 = v44[9]; /*0x5695be*/

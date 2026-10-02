@@ -750,12 +750,12 @@ char ModemGuest::Dialog() {
     IDA_BYTE1(this->ModemGuest_field_0x08) = 1; /*0x5b4a05*/
     v3 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b4a0e*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b4a16*/
-      v3 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b4a28*/
+      v3 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b4a28*/
     this->ModemGuest_field_0x0C = v3; /*0x5b4a2a*/
     *((unsigned int *)this + 4) = 10000; /*0x5b4a2d*/
     v4 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b4a39*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b4a41*/
-      v4 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b4a53*/
+      v4 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b4a53*/
     *((unsigned int *)this + 5) = v4; /*0x5b4a55*/
     *((unsigned int *)this + 6) = 1200; /*0x5b4a58*/
     *((unsigned int *)this + 7) = 0; /*0x5b4a5f*/
@@ -1079,7 +1079,7 @@ int ModemGame::UpdatePlayerNameAndColor(wchar_t *Source, unsigned int a3, int a4
     LRESULT v7; // eax
     int result; // eax
     HWND v9; // esi
-    int (__usercall *v10)@<eax>(char@<cf>, char@<zf>); // ebx
+    int (__usercall *v10)(char, char); // ebx
     HWND v11; // [esp-8h] [ebp-B8h]
     wchar_t lParam[80]; // [esp+10h] [ebp-A0h] BYREF
 
@@ -1104,7 +1104,7 @@ int ModemGame::UpdatePlayerNameAndColor(wchar_t *Source, unsigned int a3, int a4
       if ( a3 >= 8 ) /*0x5b5b87*/
         v10 = Math::InitDegToRad; /*0x5b5b97*/
       else
-        v10 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[a3]; /*0x5b5b8e*/
+        v10 = (int (__usercall *)(char, char))dword_8316A8[a3]; /*0x5b5b8e*/
       return SendMessageA(v9, 0x498u, 0, (LPARAM)v10); /*0x5b5ba6*/
     }
     return result; /*0x5b5ba8*/
@@ -1134,7 +1134,7 @@ char ModemGame::ProcessPacket() {
     char *v19; // ebp
     int v20; // esi
     HWND DlgItem; // edi
-    int (__usercall *v22)@<eax>(char@<cf>, char@<zf>); // esi
+    int (__usercall *v22)(char, char); // esi
     int v23; // esi
     int v24; // esi
     int *v25; // [esp-14h] [ebp-434h]
@@ -1174,7 +1174,7 @@ char ModemGame::ProcessPacket() {
   LABEL_51:
       v17 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b65d6*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b65e3*/
-        v17 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b65f5*/
+        v17 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b65f5*/
       if ( (unsigned int)(v17 - *((unsigned int *)this + 5)) <= *((unsigned int *)this + 6) ) /*0x5b6601*/
       {
         return 0; /*0x5b67af*/
@@ -1193,7 +1193,7 @@ char ModemGame::ProcessPacket() {
     {
       v2 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b6057*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b6062*/
-        v2 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b6074*/
+        v2 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b6074*/
       v3 = v43; /*0x5b6076*/
       *((unsigned int *)this + 5) = v2; /*0x5b607a*/
       *((unsigned int *)this + 6) = 1200; /*0x5b6080*/
@@ -1248,12 +1248,12 @@ char ModemGame::ProcessPacket() {
           Debug::Log(); /*0x5b6126*/
           v6 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b6130*/
           if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b613b*/
-            v6 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b614d*/
+            v6 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b614d*/
           while ( 1 ) /*0x5b6154*/
           {
             v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b6154*/
             if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b615c*/
-              v7 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b616e*/
+              v7 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b616e*/
             if ( (unsigned int)(v7 - v6) >= 0x3C ) /*0x5b6175*/
               break; /*0x5b6175*/
             Event::Dispatch(); /*0x5b6177*/
@@ -1265,7 +1265,7 @@ char ModemGame::ProcessPacket() {
           Dialog::ShowMessageBox(v8, v30, 0, 0, 0, v36); /*0x5b61c8*/
           v9 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b61d2*/
           if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b61da*/
-            v9 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b61ec*/
+            v9 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b61ec*/
           *((unsigned int *)this + 5) = v9; /*0x5b61ee*/
           Network::CleanupOnDisconnect(); /*0x5b61f1*/
           return 1; /*0x5b6202*/
@@ -1311,7 +1311,7 @@ char ModemGame::ProcessPacket() {
               return 1; /*0x5b64e8*/
             v15 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b64ee*/
             if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b64f7*/
-              v15 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b6509*/
+              v15 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b6509*/
             *((unsigned int *)this + 5) = v15; /*0x5b650b*/
             goto LABEL_43; /*0x5b650b*/
           }
@@ -1328,7 +1328,7 @@ char ModemGame::ProcessPacket() {
   LABEL_35:
           v14 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b6495*/
           if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b64a2*/
-            v14 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b64b4*/
+            v14 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b64b4*/
           *((unsigned int *)this + 5) = v14; /*0x5b64b6*/
           result = 1; /*0x5b64bc*/
           break; /*0x5b64c5*/
@@ -1344,7 +1344,7 @@ char ModemGame::ProcessPacket() {
               if ( v20 >= 8 ) /*0x5b66b4*/
                 v22 = Math::InitDegToRad; /*0x5b66bf*/
               else
-                v22 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[v20]; /*0x5b66b6*/
+                v22 = (int (__usercall *)(char, char))dword_8316A8[v20]; /*0x5b66b6*/
               swprintf(Buffer, (const size_t)g_Str_Trace___s_, (const wchar_t *const)v19, &v45[1]); /*0x5b66d8*/
               DrawDialogText((LPARAM)v22, Buffer, DlgItem); /*0x5b66ea*/
             }
@@ -1356,7 +1356,7 @@ char ModemGame::ProcessPacket() {
           IDA_BYTE1(this->ModemGame_field_0x08) = 1; /*0x5b672d*/
           v23 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b6736*/
           if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b6741*/
-            v23 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b6753*/
+            v23 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b6753*/
           this->ModemGame_field_0x0C = v23; /*0x5b6755*/
           goto LABEL_51; /*0x5b6758*/
         case 'u': /*0x5b611a*/
@@ -1364,7 +1364,7 @@ char ModemGame::ProcessPacket() {
           ModemGame::ReceiveMapPreview(this); /*0x5b676c*/
           v24 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b6776*/
           if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b677e*/
-            v24 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b6790*/
+            v24 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b6790*/
           *((unsigned int *)this + 5) = v24; /*0x5b6792*/
           goto LABEL_51; /*0x5b6795*/
         default:
@@ -1397,20 +1397,20 @@ void ModemGame::ReceiveMapPreview() {
     int16_t v17; // [esp+188h] [ebp-104h]
     char v18[256]; // [esp+18Ch] [ebp-100h] BYREF
 
-    Timer::GetTicks(); /*0x5b7371*/
+    TimerGetTicks(); /*0x5b7371*/
     Debug::Log(); /*0x5b7385*/
     memset(v16, 0, sizeof(v16)); /*0x5b739d*/
     v17 = 0; /*0x5b739f*/
     v16[0] = 118; /*0x5b73a1*/
     Debug::Log(); /*0x5b73ac*/
     Stream::WriteBlock((int *)&unk_A8EA70, (int)v16, 250, 1); /*0x5b73c8*/
-    Ticks = Timer::GetTicks(); /*0x5b73e8*/
+    Ticks = TimerGetTicks(); /*0x5b73e8*/
     while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 0 ) /*0x5b73f7*/
     {
       v1 = 600; /*0x5b7400*/
       if ( Ticks != -1 ) /*0x5b7406*/
       {
-        v2 = Timer::GetTicks() - Ticks; /*0x5b7411*/
+        v2 = TimerGetTicks() - Ticks; /*0x5b7411*/
         if ( v2 >= 600 ) /*0x5b7417*/
           break; /*0x5b7417*/
         v1 = 600 - v2; /*0x5b7419*/
@@ -1495,12 +1495,12 @@ char ModemHost::Dialog() {
       IDA_BYTE1(this->ModemHost_field_0x08) = 1; /*0x5b7835*/
       v4 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b783e*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b7846*/
-        v4 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b7858*/
+        v4 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b7858*/
       *((unsigned int *)this + 3) = v4; /*0x5b785a*/
       *((unsigned int *)this + 4) = 10000; /*0x5b785d*/
       v5 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b7869*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b7871*/
-        v5 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b7883*/
+        v5 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b7883*/
       *((unsigned int *)this + 5) = v5; /*0x5b7885*/
       *((unsigned int *)this + 6) = 1200; /*0x5b7888*/
       *((unsigned int *)this + 7) = 0; /*0x5b788f*/
@@ -1948,7 +1948,7 @@ char ModemGuest::ProcessPacket(int this, char a2) {
     int v17; // esi
     const wchar_t *v18; // ebx
     HWND DlgItem; // edi
-    int (__usercall *v20)@<eax>(char@<cf>, char@<zf>); // esi
+    int (__usercall *v20)(char, char); // esi
     int v21; // esi
     int *v22; // eax
     char v23; // al
@@ -1984,7 +1984,7 @@ char ModemGuest::ProcessPacket(int this, char a2) {
   LABEL_48:
       v21 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ba4f6*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5ba503*/
-        v21 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba515*/
+        v21 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba515*/
       if ( (unsigned int)(v21 - *(unsigned int *)(this + 20)) <= *(unsigned int *)(this + 24) ) /*0x5ba521*/
       {
         return 0; /*0x5ba616*/
@@ -2006,7 +2006,7 @@ char ModemGuest::ProcessPacket(int this, char a2) {
     {
       v3 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ba08d*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5ba098*/
-        v3 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba0aa*/
+        v3 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba0aa*/
       v4 = v40; /*0x5ba0ac*/
       *(unsigned int *)(this + 20) = v3; /*0x5ba0b0*/
       *(unsigned int *)(this + 24) = 1200; /*0x5ba0b6*/
@@ -2060,19 +2060,19 @@ char ModemGuest::ProcessPacket(int this, char a2) {
             }
             v13 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ba3c1*/
             if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5ba3c9*/
-              v13 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba3db*/
+              v13 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba3db*/
             *(unsigned int *)(this + 20) = v13; /*0x5ba3dd*/
             break; /*0x5ba3dd*/
           case 'f': /*0x5ba16d*/
             Debug::Log(); /*0x5ba179*/
             v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ba183*/
             if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5ba18e*/
-              v7 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba1a0*/
+              v7 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba1a0*/
             while ( 1 ) /*0x5ba1a7*/
             {
               v8 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ba1a7*/
               if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5ba1af*/
-                v8 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba1c1*/
+                v8 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba1c1*/
               if ( (unsigned int)(v8 - v7) >= 0x3C ) /*0x5ba1c8*/
                 break; /*0x5ba1c8*/
               Event::Dispatch(); /*0x5ba1ca*/
@@ -2087,7 +2087,7 @@ char ModemGuest::ProcessPacket(int this, char a2) {
             }
             v10 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ba230*/
             if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5ba238*/
-              v10 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba24a*/
+              v10 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba24a*/
             *(unsigned int *)(this + 20) = v10; /*0x5ba24c*/
             Network::CleanupOnDisconnect(); /*0x5ba24f*/
             return 1; /*0x5ba260*/
@@ -2104,7 +2104,7 @@ char ModemGuest::ProcessPacket(int this, char a2) {
                 if ( v17 >= 8 ) /*0x5ba491*/
                   v20 = Math::InitDegToRad; /*0x5ba49c*/
                 else
-                  v20 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[v17]; /*0x5ba493*/
+                  v20 = (int (__usercall *)(char, char))dword_8316A8[v17]; /*0x5ba493*/
                 swprintf(Buffer, (const size_t)g_Str_Trace___s_, v18, &v42[1]); /*0x5ba4b5*/
                 DrawDialogText((LPARAM)v20, Buffer, DlgItem); /*0x5ba4c7*/
               }
@@ -2128,7 +2128,7 @@ char ModemGuest::ProcessPacket(int this, char a2) {
             GenerateRandomMapPreview(v34); /*0x5ba5d3*/
             v24 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ba5dd*/
             if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5ba5e5*/
-              v24 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba5f7*/
+              v24 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5ba5f7*/
             *(unsigned int *)(this + 20) = v24; /*0x5ba5f9*/
             goto LABEL_48; /*0x5ba5fc*/
           default:
@@ -2289,20 +2289,20 @@ char ModemHost::StartGame(int this, char a2) {
       Dialog::Show(MessageBox); /*0x5baf6e*/
     v17 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5baf78*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5baf81*/
-      v17 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5baf93*/
+      v17 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5baf93*/
     while ( 1 ) /*0x5baf9a*/
     {
       if ( !Count::GetCountQueue((Count *)&unk_A8EA70) ) /*0x5baf9a*/
         goto LABEL_38; /*0x5baf9a*/
       v18 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5bafa8*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5bafb1*/
-        v18 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5bafc3*/
+        v18 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5bafc3*/
       if ( (unsigned int)(v18 - v17) >= 0x708 ) /*0x5bafcd*/
       {
   LABEL_38:
         v19 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5bafd4*/
         if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5bafdd*/
-          v19 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5bafef*/
+          v19 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5bafef*/
         if ( (unsigned int)(v19 - v17) >= 0x3C ) /*0x5baff6*/
           break; /*0x5baff6*/
       }
@@ -2318,7 +2318,7 @@ char ModemHost::StartGame(int this, char a2) {
     Debug::Log(); /*0x5bb036*/
     v21 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5bb040*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5bb04c*/
-      v21 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5bb05e*/
+      v21 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5bb05e*/
     while ( 1 ) /*0x5bb060*/
     {
       Event::Dispatch(); /*0x5bb060*/
@@ -2363,7 +2363,7 @@ char ModemHost::StartGame(int this, char a2) {
   LABEL_48:
       v22 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5bb0b6*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5bb0c4*/
-        v22 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5bb0d6*/
+        v22 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5bb0d6*/
       if ( (unsigned int)(v22 - v21) >= 0x4B0 ) /*0x5bb0e0*/
         goto LABEL_57; /*0x5bb0e0*/
     }
@@ -2372,7 +2372,7 @@ char ModemHost::StartGame(int this, char a2) {
     Dialog::ShowMessageBox(v23, v28, 0, 0, 0, (int)v29); /*0x5bb13a*/
     v24 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5bb144*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5bb14d*/
-      v24 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5bb15f*/
+      v24 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5bb15f*/
     *(unsigned int *)(this + 20) = v24; /*0x5bb16a*/
     Debug::Log(); /*0x5bb16d*/
     return 0; /*0x5baca4*/
@@ -4327,7 +4327,7 @@ int NetworkEventQueueClass::WaitForResponse() {
     unsigned char v5[340]; // [esp+20h] [ebp-154h] BYREF
 
     memset(v5, 0, 338); /*0x664545*/
-    result = Timer::GetTicks(); /*0x664551*/
+    result = TimerGetTicks(); /*0x664551*/
     IDA_LOBYTE(result) = *((unsigned char *)this + 24); /*0x66455a*/
     if ( (unsigned char)result ) /*0x664567*/
     {
@@ -4336,14 +4336,14 @@ int NetworkEventQueueClass::WaitForResponse() {
       {
         v5[0] = 3; /*0x664589*/
         Network::SendPacket(&unk_A8E9C0.Socket, (int)v5, 338, 1u); /*0x66458e*/
-        Ticks = Timer::GetTicks(); /*0x6645ae*/
+        Ticks = TimerGetTicks(); /*0x6645ae*/
         for ( result = HouseClass::GetUpgradeValue(&unk_A8E9C0); result > 0; result = HouseClass::GetUpgradeValue(&unk_A8E9C0) ) /*0x6645bd*/
         {
           result = Ticks; /*0x6645c2*/
           v3 = 900; /*0x6645c6*/
           if ( Ticks != -1 ) /*0x6645cc*/
           {
-            result = Timer::GetTicks() - Ticks; /*0x6645d7*/
+            result = TimerGetTicks() - Ticks; /*0x6645d7*/
             if ( result >= 900 ) /*0x6645dd*/
               return result; /*0x6645dd*/
             v3 = 900 - result; /*0x6645df*/

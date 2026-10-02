@@ -191,7 +191,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAU_DDSURFACEDESC *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a4d3e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a4d3e*/
   }
   v7 = this->m_8; /*0x4a4d41*/
   if ( v7 < this->m_10 ) /*0x4a4d49*/

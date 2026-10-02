@@ -476,7 +476,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     StringCSF = GetStringCSF(aGuiMaptransfer, 0, aDRa2mdpostSend, 355); /*0x6942c2*/
     ((TextRenderer *)((int *)dword_AC4F58.__pad_0))->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
     Screen::Capture(1, 0, a2, (int)v6); /*0x6942d8*/
-    Render@<eax>((int)&dword_AC4F58, a2, (int)v6, NAN); /*0x6942ea*/
+    Render((int)&dword_AC4F58, a2, (int)v6, NAN); /*0x6942ea*/
     Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, 0.0, NAN); /*0x694302*/
   }
   v9 = a3; /*0x694307*/
@@ -569,13 +569,13 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   v26 = v16 + 1; /*0x694448*/
   if ( v9 == 3 || (v17 = 10800, v9 != 4) ) /*0x694454*/
     v17 = 3600; /*0x694456*/
-  v36 = Timer::GetTicks(); /*0x694471*/
+  v36 = TimerGetTicks(); /*0x694471*/
   v38 = v17 / 2; /*0x69447a*/
   Ticks = v36; /*0x69447e*/
   v34 = v37; /*0x694482*/
   v35 = v17 / 2; /*0x694486*/
   if ( v36 != -1 ) /*0x69448a*/
-    Timer::GetTicks(); /*0x694490*/
+    TimerGetTicks(); /*0x694490*/
   Debug::Log(); /*0x6944b5*/
   qmemcpy((char *)lpBuffer + 192 * *((uint16_t *)v6 + 12), v6 + 28, *((uint16_t *)v6 + 13)); /*0x6944e1*/
   if ( a4 ) /*0x6944ef*/
@@ -673,7 +673,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   int v65[114]; // [esp+568h] [ebp-1C8h] BYREF
 
   v51 = a2; /*0x694772*/
-  Timer::GetTicks(); /*0x694776*/
+  TimerGetTicks(); /*0x694776*/
   v47 = 0; /*0x69478b*/
   Debug::Log(); /*0x694790*/
   CCFileClass::Construct(&v54, Source); /*0x69479d*/
@@ -689,7 +689,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   }
   Size = CCFileClass::GetSize(&v54); /*0x6947f4*/
   v49 = Size; /*0x6947fa*/
-  Ticks = Timer::GetTicks(); /*0x694803*/
+  Ticks = TimerGetTicks(); /*0x694803*/
   Debug::Log(); /*0x69481d*/
   if ( a2 != 1 && a2 != 2 ) /*0x694831*/
   {
@@ -716,7 +716,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
           }
           else
           {
-            v10 = Timer::GetTicks() - Ticks; /*0x694901*/
+            v10 = TimerGetTicks() - Ticks; /*0x694901*/
             if ( v10 < 3600 ) /*0x694907*/
             {
               v9 = 3600 - v10; /*0x694909*/
@@ -739,7 +739,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
         v14 = 3600; /*0x6949c4*/
         if ( Ticks != -1 ) /*0x6949cb*/
         {
-          v15 = Timer::GetTicks() - Ticks; /*0x6949d6*/
+          v15 = TimerGetTicks() - Ticks; /*0x6949d6*/
           if ( v15 >= 3600 ) /*0x6949dc*/
             goto LABEL_34; /*0x6949dc*/
           v14 = 3600 - v15; /*0x6949e2*/
@@ -765,7 +765,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
       }
       else
       {
-        v13 = Timer::GetTicks() - Ticks; /*0x694996*/
+        v13 = TimerGetTicks() - Ticks; /*0x694996*/
         if ( v13 < 3600 ) /*0x69499c*/
         {
           v12 = 3600 - v13; /*0x69499e*/
@@ -786,7 +786,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     v16 = 3600; /*0x694a66*/
     if ( Ticks != -1 ) /*0x694a6d*/
     {
-      v17 = Timer::GetTicks() - Ticks; /*0x694a78*/
+      v17 = TimerGetTicks() - Ticks; /*0x694a78*/
       if ( v17 >= 3600 ) /*0x694a7e*/
         break; /*0x694a7e*/
       v16 = 3600 - v17; /*0x694a80*/
@@ -799,7 +799,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   v18 = 3600; /*0x694a99*/
   if ( Ticks != -1 ) /*0x694aa4*/
   {
-    v19 = Timer::GetTicks() - Ticks; /*0x694aaf*/
+    v19 = TimerGetTicks() - Ticks; /*0x694aaf*/
     if ( v19 >= 3600 ) /*0x694ab5*/
     {
   LABEL_38:
@@ -822,7 +822,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     v21 = dword_A8DA84 - 1; /*0x694b28*/
   else
     v21 = dword_A8BB18; /*0x694b2d*/
-  v44 = Timer::GetTicks(); /*0x694b3c*/
+  v44 = TimerGetTicks(); /*0x694b3c*/
   if ( a2 == 1 || a2 == 2 ) /*0x694b59*/
   {
     while ( 1 ) /*0x694bce*/
@@ -833,7 +833,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
       v24 = 3600; /*0x694bfb*/
       if ( v44 != -1 ) /*0x694c02*/
       {
-        v25 = Timer::GetTicks() - v44; /*0x694c0d*/
+        v25 = TimerGetTicks() - v44; /*0x694c0d*/
         if ( v25 >= 3600 ) /*0x694c13*/
           goto LABEL_62; /*0x694c13*/
         v24 = 3600 - v25; /*0x694c15*/
@@ -854,7 +854,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
       v22 = 3600; /*0x694ba3*/
       if ( v44 != -1 ) /*0x694baa*/
       {
-        v23 = Timer::GetTicks() - v44; /*0x694bb5*/
+        v23 = TimerGetTicks() - v44; /*0x694bb5*/
         if ( v23 >= 3600 ) /*0x694bbb*/
           break; /*0x694bbb*/
         v22 = 3600 - v23; /*0x694bbd*/
@@ -877,7 +877,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 0.0, NAN); /*0x694ce2*/
   }
   v29 = v51; /*0x694ce7*/
-  Timer::GetTicks(); /*0x694d03*/
+  TimerGetTicks(); /*0x694d03*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694d20*/
   {
     ((IPXManagerClass *)(&unk_A8E9C0))->createConnection(); /*0x694d27*/
@@ -885,7 +885,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   }
   if ( v29 == 3 || (v30 = 10800, v29 != 4) ) /*0x694d4f*/
     v30 = 3600; /*0x694d51*/
-  v45 = Timer::GetTicks(); /*0x694d63*/
+  v45 = TimerGetTicks(); /*0x694d63*/
   v46 = v30; /*0x694d6b*/
   v48 = 0; /*0x694d6f*/
   LABEL_70:
@@ -897,7 +897,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
       v32 = v46; /*0x694d7f*/
       if ( v45 != -1 ) /*0x694d86*/
       {
-        v33 = Timer::GetTicks() - v45; /*0x694d91*/
+        v33 = TimerGetTicks() - v45; /*0x694d91*/
         if ( v33 >= v46 ) /*0x694d97*/
           goto LABEL_115; /*0x694d97*/
         v32 = v46 - v33; /*0x694d9d*/
@@ -935,7 +935,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
         if ( v41 == *(uint16_t *)&v57.__pad_0[38] ) /*0x695040*/
         {
           if ( v45 != -1 ) /*0x69504f*/
-            Timer::GetTicks(); /*0x695055*/
+            TimerGetTicks(); /*0x695055*/
           Debug::Log(); /*0x695072*/
           ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)&v57.__pad_0[12], 220, 1); /*0x69508e*/
         }
@@ -966,7 +966,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
         if ( v36 == *(uint16_t *)&v57.__pad_0[38] ) /*0x694e74*/
         {
           if ( v45 != -1 ) /*0x694e85*/
-            Timer::GetTicks(); /*0x694e8b*/
+            TimerGetTicks(); /*0x694e8b*/
           Debug::Log(); /*0x694ea6*/
           if ( a3 ) /*0x694eb7*/
           {
@@ -1013,7 +1013,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   }
   while ( ((Network *)(&unk_A8E9C0))->GetQueueCount() ); /*0x694fb0*/
   if ( v45 != -1 ) /*0x6950f5*/
-    Timer::GetTicks(); /*0x6950fb*/
+    TimerGetTicks(); /*0x6950fb*/
   Debug::Log(); /*0x695114*/
   v42 = 1; /*0x695125*/
   if ( a4 ) /*0x695127*/
@@ -1996,7 +1996,7 @@ int sub_692220()
 namespace gamemd {
 int sub_692240()
 {
-  dword_B05638 = Timer::GetTicks(); /*0x69224f*/
+  dword_B05638 = TimerGetTicks(); /*0x69224f*/
   dword_B05640 = 0; /*0x692254*/
   return atexit(sub_692270); /*0x692264*/
 }

@@ -385,7 +385,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
   int v37; // esi
   int v38; // eax
   int v39; // esi
-  #374 *v40; // eax
+  void *v40; // eax
   int v41; // edi
   int v42; // edx
   uint8_t *v43; // esi
@@ -402,9 +402,9 @@ void VoxelAnimClass::VoxelAnimClass_Update()
   unsigned int *v54; // eax
   CellClass *v55; // esi
   CellClass *v56; // edi
-  #374 *v57; // ebp
+  void *v57; // ebp
   int v58; // eax
-  #374 *v59; // ebp
+  void *v59; // ebp
   int v60; // eax
   AnimClass *v61; // esi
   int v62; // eax
@@ -608,7 +608,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
               v39 = v38; /*0x74a2d3*/
               do /*0x74a301*/
               {
-                v40 = (#374 *)__2_YAPAXI_Z(0x148u); /*0x74a2da*/
+                v40 = (void *)__2_YAPAXI_Z(0x148u); /*0x74a2da*/
                 if ( v40 ) /*0x74a2e4*/
                   DamageAnimClass::Constructor(v40, *((unsigned int *)v1->VoxelAnimClass_field_0x104 + 181), &v97, 0); /*0x74a2fb*/
                 --v39; /*0x74a300*/
@@ -639,7 +639,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
                   v93 = *((unsigned int *)v43 + 9); /*0x74a3e8*/
                   v45 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x74a3ec*/
                   Object::SpawnAtCell( /*0x74a427*/
-                    (#374 *)v94,
+                    (void *)v94,
                     *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
                               + 4 * ((int)v44->altObject + (unsigned int)v44->((unsigned int *)jumpjet)[0] + 2 * v43[284] + v45)
                               - 8),
@@ -655,7 +655,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
                   v95 = *((unsigned int *)v43 + 9); /*0x74a44b*/
                   v46 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 11); /*0x74a44f*/
                   Object::SpawnAtCell( /*0x74a477*/
-                    (#374 *)v94,
+                    (void *)v94,
                     *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)v44->((unsigned int *)jumpjet)[0] + v46)),
                     (int16_t *)&v95,
                     -1);
@@ -731,7 +731,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
             v56 = *(CellClass **)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * FindBuildingByTiberiumType(127)); /*0x74a612*/
             if ( v55->slopeIndex ) /*0x74a618*/
             {
-              v57 = (#374 *)__2_YAPAXI_Z(0xB0u); /*0x74a627*/
+              v57 = (void *)__2_YAPAXI_Z(0xB0u); /*0x74a627*/
               if ( v57 ) /*0x74a62e*/
               {
                 smudgeTypeIndex = (VoxelAnimClass *)v55->smudgeTypeIndex; /*0x74a647*/
@@ -751,7 +751,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
             }
             else
             {
-              v59 = (#374 *)__2_YAPAXI_Z(0xB0u); /*0x74a689*/
+              v59 = (void *)__2_YAPAXI_Z(0xB0u); /*0x74a689*/
               if ( v59 ) /*0x74a690*/
               {
                 smudgeTypeIndex = (VoxelAnimClass *)v55->smudgeTypeIndex; /*0x74a6a4*/

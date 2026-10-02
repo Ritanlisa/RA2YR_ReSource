@@ -634,7 +634,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
   int16_t v21; // [esp+190h] [ebp-100h]
   int v22[63]; // [esp+194h] [ebp-FCh] BYREF
 
-  Ticks = Timer::GetTicks(); /*0x5bb2af*/
+  Ticks = TimerGetTicks(); /*0x5bb2af*/
   v13 = 0; /*0x5bb2b3*/
   if ( !_strcmpi(byte_A8B8E0, aRandmapSed) ) /*0x5bb2b7*/
   {
@@ -644,14 +644,14 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
     v20[0] = 117; /*0x5bb2fa*/
     ((Stream *)(&unk_A8EA70.vtable0))->WriteBlock((int)v20, 250, 1); /*0x5bb305*/
     v13 = 600; /*0x5bb31c*/
-    Ticks = Timer::GetTicks(); /*0x5bb325*/
+    Ticks = TimerGetTicks(); /*0x5bb325*/
     v12 = v14; /*0x5bb329*/
     while ( ((Count *)((Count *)&unk_A8EA70))->GetCountQueue() > 0 ) /*0x5bb337*/
     {
       v1 = v13; /*0x5bb33d*/
       if ( Ticks != -1 ) /*0x5bb343*/
       {
-        v2 = Timer::GetTicks() - Ticks; /*0x5bb34e*/
+        v2 = TimerGetTicks() - Ticks; /*0x5bb34e*/
         if ( v2 >= v13 ) /*0x5bb354*/
           break; /*0x5bb354*/
         v1 = v13 - v2; /*0x5bb356*/
@@ -660,7 +660,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
         break; /*0x5bb35a*/
       Event::Dispatch(); /*0x5bb35c*/
     }
-    Ticks = Timer::GetTicks(); /*0x5bb36f*/
+    Ticks = TimerGetTicks(); /*0x5bb36f*/
     v12 = v14; /*0x5bb385*/
     v13 = 1800; /*0x5bb389*/
     while ( 1 ) /*0x5bb392*/
@@ -671,7 +671,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
       v3 = v13; /*0x5bb3bf*/
       if ( Ticks != -1 ) /*0x5bb3c5*/
       {
-        v4 = Timer::GetTicks() - Ticks; /*0x5bb3d0*/
+        v4 = TimerGetTicks() - Ticks; /*0x5bb3d0*/
         if ( v4 >= v13 ) /*0x5bb3d6*/
           goto LABEL_15; /*0x5bb3d6*/
         v3 = v13 - v4; /*0x5bb3d8*/
@@ -1279,7 +1279,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   unsigned int v40; // [esp-Ch] [ebp-BCh]
   int v41; // [esp+10h] [ebp-A0h]
   int Width; // [esp+10h] [ebp-A0h]
-  char (__usercall *v43)@<al>(ObjectClass *, int@<edi>, int@<esi>); // [esp+14h] [ebp-9Ch]
+  char (__usercall *v43)(ObjectClass *, int, int); // [esp+14h] [ebp-9Ch]
   int v44; // [esp+14h] [ebp-9Ch]
   bool v45; // [esp+1Bh] [ebp-95h]
   int v46; // [esp+1Ch] [ebp-94h] BYREF
@@ -1436,7 +1436,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v15->q040 = v34; /*0x5bfe82*/
   if ( v35 == 1 || v35 == 4 ) /*0x5bfe8a*/
   {
-    Status = DDraw::GetStatus(); /*0x5bfe8c*/
+    Status = DDraw_GetStatus(); /*0x5bfe8c*/
     Render_Load_759F20(*(ObjectClass **)v15, Status); /*0x5bfe94*/
   }
   v15->vtable3 = a2; /*0x5bfe99*/
@@ -2289,7 +2289,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
   char *v4; // eax
   unsigned int v5; // edi
   HWND v6; // esi
-  int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
+  int (__usercall *v7)(char, char); // edi
   HWND vtable0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
@@ -2332,7 +2332,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
             if ( v5 >= 8 ) /*0x5b5904*/
               v7 = Math::InitDegToRad; /*0x5b5914*/
             else
-              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[v5]; /*0x5b590b*/
+              v7 = (int (__usercall *)(char, char))dword_8316A8[v5]; /*0x5b590b*/
             swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b5934*/
             return DrawDialogText((LPARAM)v7, Buffer, v6); /*0x5b5946*/
           }
@@ -2406,7 +2406,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
   char *v3; // eax
   unsigned int v4; // edi
   HWND DlgItem; // esi
-  int (__usercall *v6)@<eax>(char@<cf>, char@<zf>); // edi
+  int (__usercall *v6)(char, char); // edi
   wchar_t *Format; // [esp+10h] [ebp-300h]
   int v8[62]; // [esp+14h] [ebp-2FCh] BYREF
   int16_t v9; // [esp+10Ch] [ebp-204h]
@@ -2431,7 +2431,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
       if ( v4 >= 8 ) /*0x5b6e5b*/
         v6 = Math::InitDegToRad; /*0x5b6e6b*/
       else
-        v6 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[v4]; /*0x5b6e62*/
+        v6 = (int (__usercall *)(char, char))dword_8316A8[v4]; /*0x5b6e62*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source); /*0x5b6e84*/
       DrawDialogText((LPARAM)v6, Buffer, DlgItem); /*0x5b6e96*/
     }
@@ -2469,12 +2469,12 @@ HWND sub_5B6F30()
     ((Dialog *)(MessageBox))->Show(); /*0x5b6fa1*/
   v3 = dword_887340; /*0x5b6fab*/
   if ( dword_887338 != -1 ) /*0x5b6fb4*/
-    v3 += Timer::GetTicks() - dword_887338; /*0x5b6fc6*/
+    v3 += TimerGetTicks() - dword_887338; /*0x5b6fc6*/
   while ( ((Count *)(&unk_A8EA70))->GetCountQueue() ) /*0x5b6fcd*/
   {
     v4 = dword_887340; /*0x5b6fe0*/
     if ( dword_887338 != -1 ) /*0x5b6fe9*/
-      v4 += Timer::GetTicks() - dword_887338; /*0x5b6ffb*/
+      v4 += TimerGetTicks() - dword_887338; /*0x5b6ffb*/
     if ( (unsigned int)(v4 - v3) >= 0x12C /*0x5b7040*/
       || ((ObjectTypeClass *)((int)&unk_A8EA70))->CreateInstance((int)v9, (int)v6) > 0
       && v9[0] == 102
@@ -2641,7 +2641,7 @@ HWND E4Recv_5B9250::sub_5B9250()
   char *v4; // eax
   unsigned int v5; // edi
   HWND v6; // esi
-  int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
+  int (__usercall *v7)(char, char); // edi
   HWND vtable0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
@@ -2685,7 +2685,7 @@ HWND E4Recv_5B9250::sub_5B9250()
             if ( v5 >= 8 ) /*0x5b9394*/
               v7 = Math::InitDegToRad; /*0x5b93a4*/
             else
-              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[v5]; /*0x5b939b*/
+              v7 = (int (__usercall *)(char, char))dword_8316A8[v5]; /*0x5b939b*/
             swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b93c4*/
             return DrawDialogText((LPARAM)v7, Buffer, v6); /*0x5b93d6*/
           }
@@ -2790,7 +2790,7 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
 {
 
   HWND DlgItem; // edi
-  int (__usercall *v5)@<eax>(char@<cf>, char@<zf>); // esi
+  int (__usercall *v5)(char, char); // esi
   wchar_t Buffer[256]; // [esp+8h] [ebp-200h] BYREF
 
   if ( a4 ) /*0x5baa91*/
@@ -2801,7 +2801,7 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
       if ( a3 >= 8 ) /*0x5baab1*/
         v5 = Math::InitDegToRad; /*0x5baac1*/
       else
-        v5 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[a3]; /*0x5baab8*/
+        v5 = (int (__usercall *)(char, char))dword_8316A8[a3]; /*0x5baab8*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4); /*0x5baada*/
       DrawDialogText((LPARAM)v5, Buffer, DlgItem); /*0x5baae9*/
     }
@@ -2839,12 +2839,12 @@ HWND sub_5BAB00()
     ((Dialog *)(MessageBox))->Show(); /*0x5bab71*/
   v3 = dword_887340; /*0x5bab7b*/
   if ( dword_887338 != -1 ) /*0x5bab84*/
-    v3 += Timer::GetTicks() - dword_887338; /*0x5bab96*/
+    v3 += TimerGetTicks() - dword_887338; /*0x5bab96*/
   while ( ((Count *)(&unk_A8EA70))->GetCountQueue() ) /*0x5bab9d*/
   {
     v4 = dword_887340; /*0x5babb0*/
     if ( dword_887338 != -1 ) /*0x5babb9*/
-      v4 += Timer::GetTicks() - dword_887338; /*0x5babcb*/
+      v4 += TimerGetTicks() - dword_887338; /*0x5babcb*/
     if ( (unsigned int)(v4 - v3) >= 0x12C /*0x5bac10*/
       || ((ObjectTypeClass *)((int)&unk_A8EA70))->CreateInstance((int)v9, (int)v6) > 0
       && v9[0] == 102
@@ -3455,7 +3455,7 @@ int sub_5BD9D0()
 namespace gamemd {
 int sub_5BD9F0()
 {
-  dword_ABF2A0 = Timer::GetTicks(); /*0x5bd9ff*/
+  dword_ABF2A0 = TimerGetTicks(); /*0x5bd9ff*/
   dword_ABF2A8 = 0; /*0x5bda04*/
   return atexit(sub_5BDA20); /*0x5bda14*/
 }

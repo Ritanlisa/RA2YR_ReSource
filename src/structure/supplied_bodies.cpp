@@ -8580,7 +8580,7 @@ unsigned int * BuildingClass::CalcBarrelFlashPosition(unsigned int *a2, int a3, 
 
 // 0x453D60
 namespace gamemd::Math {
-int BuildingClass::MarkCellOccupied(#377 *this) {
+int BuildingClass::MarkCellOccupied(void *this) {
     unsigned int *v1; // ecx
     unsigned int *v2; // eax
     int v3; // ecx
@@ -8601,7 +8601,7 @@ int BuildingClass::MarkCellOccupied(#377 *this) {
 
 // 0x453DC0
 namespace gamemd::Math {
-int BuildingClass::ClearCellOccupied(#377 *this) {
+int BuildingClass::ClearCellOccupied(void *this) {
     unsigned int *v1; // ecx
     unsigned int *v2; // eax
     int v3; // ecx

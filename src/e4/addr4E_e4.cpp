@@ -2017,7 +2017,7 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVParticleClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e9ec2*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e9ec2*/
     return 1; /*0x4e9ec8*/
   }
 

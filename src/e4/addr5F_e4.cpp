@@ -233,7 +233,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
       goto LABEL_35; /*0x5f310a*/
     }
     IDA_LOBYTE(v10) = (gamemd::Process)(0); /*0x5f2db1*/
-    Process@<al>(v10, v18); /*0x5f2db3*/
+    Process(v10, v18); /*0x5f2db3*/
     memset(Source, 0, 0xF0u); /*0x5f2dc3*/
     v9 = (*(int (**)(HWND, int, unsigned char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))(
            g_ClipboardBuffer,
@@ -448,7 +448,7 @@ char sub_5FBEF0()
       if ( !byte_A8E9A0 ) /*0x5fbf46*/
       {
         IDA_LOBYTE(v1) = 0; /*0x5fbf48*/
-        Process@<al>(v1); /*0x5fbf4a*/
+        Process(v1); /*0x5fbf4a*/
       }
     }
     Dialog::Destroy(Dialog); /*0x5fbf59*/
@@ -835,7 +835,7 @@ AbstractClass * * GenerateRangeRingTextures()
     while ( v11 > 68 ); /*0x5ff721*/
     byte_AC1834 = 1; /*0x5ff727*/
   }
-  dword_833588 = DDraw::GetStatus(); /*0x5ff73d*/
+  dword_833588 = DDraw_GetStatus(); /*0x5ff73d*/
   v22 = 5; /*0x5ff742*/
   IDA_HIBYTE(v19) = 0; /*0x5ff74a*/
   result = GetVersionString(&v22, (unsigned char *)&v19 + 3, 0, 0); /*0x5ff74e*/

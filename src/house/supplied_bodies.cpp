@@ -120,7 +120,7 @@ int HouseClass::GetFactoryProducing(int a2) {
 
 // 0x4F8440
 namespace gamemd {
-void HouseClass::Update_TogglePower(double a2@<st0>) {
+void HouseClass::Update_TogglePower(double a2) {
     int v2; // ecx
     Object *v3; // esi
     int v4; // ecx
@@ -331,14 +331,14 @@ void HouseClass::Update_TogglePower(double a2@<st0>) {
   LABEL_38:
     if ( *(unsigned int *)&dword_A8B238 || *(int *)&v3->__pad_140[316] <= 0 ) /*0x4f8605*/
     {
-      Ticks = Timer::GetTicks(); /*0x4f8614*/
+      Ticks = TimerGetTicks(); /*0x4f8614*/
       v120 = 120; /*0x4f8618*/
       while ( (uint8_t)Audio::IsPlaying() ) /*0x4f861c*/
       {
         v18 = v120; /*0x4f8629*/
         if ( Ticks != -1 ) /*0x4f8630*/
         {
-          v19 = Timer::GetTicks() - Ticks; /*0x4f863b*/
+          v19 = TimerGetTicks() - Ticks; /*0x4f863b*/
           if ( v19 >= v18 ) /*0x4f8641*/
             break; /*0x4f8641*/
           v18 -= v19; /*0x4f8643*/
@@ -396,14 +396,14 @@ void HouseClass::Update_TogglePower(double a2@<st0>) {
     if ( v22 ) /*0x4f872c*/
       goto LABEL_83; /*0x4f872c*/
   LABEL_70:
-    Ticks = Timer::GetTicks(); /*0x4f8732*/
+    Ticks = TimerGetTicks(); /*0x4f8732*/
     v120 = 120; /*0x4f873f*/
     while ( (uint8_t)Audio::IsPlaying() ) /*0x4f8743*/
     {
       v23 = v120; /*0x4f8753*/
       if ( Ticks != -1 ) /*0x4f8759*/
       {
-        v24 = Timer::GetTicks() - Ticks; /*0x4f8764*/
+        v24 = TimerGetTicks() - Ticks; /*0x4f8764*/
         if ( v24 >= v23 ) /*0x4f876a*/
           break; /*0x4f876a*/
         v23 -= v24; /*0x4f876c*/

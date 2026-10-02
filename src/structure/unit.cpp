@@ -2551,7 +2551,7 @@ void UnitClass::CalcMoveTarget()
   int v13; // ecx
   int v14; // eax
   int GroundHeight; // ebx
-  void (__usercall **vtable0)(UnitClass *@<ecx>, int *, double@<st0>); // eax
+  void (__usercall **vtable0)(UnitClass *, int *, double); // eax
   char v17; // bl
   int v18; // ebx
   int *v19; // eax
@@ -2684,7 +2684,7 @@ void UnitClass::CalcMoveTarget()
       (*((void (__fastcall **)(UnitClass *, int, int *))this->FootClass + 109))(this, v47, &v75); /*0x735e28*/
       return; /*0x735e35*/
     }
-    vtable0 = (void (__usercall **)(UnitClass *@<ecx>, int *, double@<st0>))this->FootClass; /*0x735b3c*/
+    vtable0 = (void (__usercall **)(UnitClass *, int *, double))this->FootClass; /*0x735b3c*/
     v17 = ((unsigned int *)this)[0] + 1; /*0x735b3e*/
     ((unsigned int *)this)[0] = v17; /*0x735b44*/
     v18 = v5[v17 + 12]; /*0x735b4c*/

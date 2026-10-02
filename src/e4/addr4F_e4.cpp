@@ -549,11 +549,11 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
             v12 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v21.m_1[3] + 4) + 4 * v22); /*0x4f24d2*/
             if ( (*(uint8_t (**)(int, unsigned int *))(*(unsigned int *)v12 + 8))(v12, v18) ) /*0x4f24dc*/
               break; /*0x4f24e1*/
-            (*(void (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v21.__pad_0 + 8))(&v21); /*0x4f24eb*/
+            (*(void (**)(void *))(*(unsigned int *)v21.__pad_0 + 8))(&v21); /*0x4f24eb*/
           }
-          while ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v21.__pad_0 + 4))(&v21) ); /*0x4f24f6*/
+          while ( (*(uint8_t (**)(void *))(*(unsigned int *)v21.__pad_0 + 4))(&v21) ); /*0x4f24f6*/
         }
-        if ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v21.__pad_0 + 4))(&v21) ) /*0x4f2505*/
+        if ( (*(uint8_t (**)(void *))(*(unsigned int *)v21.__pad_0 + 4))(&v21) ) /*0x4f2505*/
           v11 = *(State **)(*(unsigned int *)(*(unsigned int *)&v21.m_1[3] + 4) + 4 * v22); /*0x4f2517*/
         *(unsigned int *)v21.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f251a*/
       }
@@ -569,11 +569,11 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
             v10 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v19.m_1[3] + 4) + 4 * v20); /*0x4f2448*/
             if ( (*(uint8_t (**)(int, int))(*(unsigned int *)v10 + 4))(v10, v9) ) /*0x4f244d*/
               break; /*0x4f2452*/
-            (*(void (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v19.__pad_0 + 8))(&v19); /*0x4f245c*/
+            (*(void (**)(void *))(*(unsigned int *)v19.__pad_0 + 8))(&v19); /*0x4f245c*/
           }
-          while ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v19.__pad_0 + 4))(&v19) ); /*0x4f2467*/
+          while ( (*(uint8_t (**)(void *))(*(unsigned int *)v19.__pad_0 + 4))(&v19) ); /*0x4f2467*/
         }
-        if ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v19.__pad_0 + 4))(&v19) ) /*0x4f2476*/
+        if ( (*(uint8_t (**)(void *))(*(unsigned int *)v19.__pad_0 + 4))(&v19) ) /*0x4f2476*/
           v11 = *(State **)(*(unsigned int *)(*(unsigned int *)&v19.m_1[3] + 4) + 4 * v20); /*0x4f2488*/
         else
           v11 = 0; /*0x4f2498*/
@@ -604,11 +604,11 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
           v14 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v23.m_1[3] + 4) + 4 * v24); /*0x4f257e*/
           if ( (*(uint8_t (**)(int, unsigned int *))(*(unsigned int *)v14 + 8))(v14, v18) ) /*0x4f2588*/
             break; /*0x4f258d*/
-          (*(void (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v23.__pad_0 + 8))(&v23); /*0x4f2597*/
+          (*(void (**)(void *))(*(unsigned int *)v23.__pad_0 + 8))(&v23); /*0x4f2597*/
         }
-        while ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v23.__pad_0 + 4))(&v23) ); /*0x4f25a2*/
+        while ( (*(uint8_t (**)(void *))(*(unsigned int *)v23.__pad_0 + 4))(&v23) ); /*0x4f25a2*/
       }
-      if ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v23.__pad_0 + 4))(&v23) ) /*0x4f25b1*/
+      if ( (*(uint8_t (**)(void *))(*(unsigned int *)v23.__pad_0 + 4))(&v23) ) /*0x4f25b1*/
         v13 = *(State **)(*(unsigned int *)(*(unsigned int *)&v23.m_1[3] + 4) + 4 * v24); /*0x4f25c3*/
       *(unsigned int *)v23.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f25c8*/
       if ( v13 != v4 ) /*0x4f25d0*/
@@ -1545,11 +1545,11 @@ int E4Recv_4F2280::sub_4F2280(int a2, int a3)
   *(unsigned int *)v4.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f2296*/
   for ( result = Map::CanScroll(&v4); /*0x4f22a6*/
         (unsigned char)result;
-        result = (*(int (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) )
+        result = (*(int (**)(void *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) )
   {
     if ( *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v4.m_1[3] + 4) + 4 * v5) + 4) == a2 ) /*0x4f22c3*/
       sub_4F3AB0(*(ObjectClass **)(*(unsigned int *)(*(unsigned int *)&v4.m_1[3] + 4) + 4 * v5), a3); /*0x4f22cc*/
-    (*(void (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 8))(&v4); /*0x4f22d9*/
+    (*(void (**)(void *))(*(unsigned int *)v4.__pad_0 + 8))(&v4); /*0x4f22d9*/
   }
   return result; /*0x4f22ed*/
 
@@ -1575,11 +1575,11 @@ int E4Recv_4F26E0::sub_4F26E0(int a2)
       v2 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v4.m_1[3] + 4) + 4 * v5); /*0x4f2719*/
       if ( (*(uint8_t (**)(int, int))(*(unsigned int *)v2 + 8))(v2, a2) ) /*0x4f271e*/
         break; /*0x4f2723*/
-      (*(void (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 8))(&v4); /*0x4f272d*/
+      (*(void (**)(void *))(*(unsigned int *)v4.__pad_0 + 8))(&v4); /*0x4f272d*/
     }
-    while ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) ); /*0x4f2738*/
+    while ( (*(uint8_t (**)(void *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) ); /*0x4f2738*/
   }
-  if ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) ) /*0x4f2747*/
+  if ( (*(uint8_t (**)(void *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) ) /*0x4f2747*/
     return *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v4.m_1[3] + 4) + 4 * v5); /*0x4f275a*/
   else
     return 0; /*0x4f2763*/
@@ -1606,11 +1606,11 @@ int E4Recv_4F2770::sub_4F2770(int a2)
       v2 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v4.m_1[3] + 4) + 4 * v5); /*0x4f27a9*/
       if ( (*(uint8_t (**)(int, int))(*(unsigned int *)v2 + 4))(v2, a2) ) /*0x4f27ae*/
         break; /*0x4f27b3*/
-      (*(void (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 8))(&v4); /*0x4f27bd*/
+      (*(void (**)(void *))(*(unsigned int *)v4.__pad_0 + 8))(&v4); /*0x4f27bd*/
     }
-    while ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) ); /*0x4f27c8*/
+    while ( (*(uint8_t (**)(void *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) ); /*0x4f27c8*/
   }
-  if ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) ) /*0x4f27d7*/
+  if ( (*(uint8_t (**)(void *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) ) /*0x4f27d7*/
     return *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v4.m_1[3] + 4) + 4 * v5); /*0x4f27ea*/
   else
     return 0; /*0x4f27f3*/

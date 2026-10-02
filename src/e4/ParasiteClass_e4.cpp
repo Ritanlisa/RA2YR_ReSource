@@ -589,7 +589,7 @@ LABEL_8:
   {
     v13 = *(unsigned int **)this->__pad_28; /*0x62a0b7*/
     v26[0] = v13[27]; /*0x62a0c3*/
-    (*(void (__userpurge **)(unsigned int *, unsigned int, int, int, int, int, unsigned int, double@<st0>, double@<st1>))(*v13 + 364))( /*0x62a0ce*/
+    (*(void (__userpurge **)(unsigned int *, unsigned int, int, int, int, int, unsigned int, double, double))(*v13 + 364))( /*0x62a0ce*/
       v26,
       0,
       v7,
@@ -645,7 +645,7 @@ LABEL_8:
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v24 + 984))(v24, &v34, 1069547520, 0); /*0x62a21c*/
     creationFrame = this->creationFrame; /*0x62a228*/
     v26[0] = v6[41]; /*0x62a22f*/
-    (*(void (__userpurge **)(unsigned int *, unsigned int, int, int, unsigned int, int, unsigned int, double@<st0>, double@<st1>))(**(unsigned int **)this->__pad_28 + 364))( /*0x62a247*/
+    (*(void (__userpurge **)(unsigned int *, unsigned int, int, int, unsigned int, int, unsigned int, double, double))(**(unsigned int **)this->__pad_28 + 364))( /*0x62a247*/
       v26,
       0,
       v28,

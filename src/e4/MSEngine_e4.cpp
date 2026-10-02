@@ -337,7 +337,7 @@ int MSEngine::ProcessEvents(char aP1, int a3)
   int result; // eax
   int v6; // ecx
 
-  Timer::GetTicks(); /*0x5d1dfc*/
+  TimerGetTicks(); /*0x5d1dfc*/
   v4 = a3; /*0x5d1e01*/
   while ( 1 ) /*0x5d1e19*/
   {

@@ -12039,7 +12039,7 @@ void BuildingClass::Draw(Point2D* a, RectangleStruct* b) const { (void)a; (void)
   int result; // eax
   int *Anims; // ecx
   int v7; // edx
-  int (__usercall **v8)@<eax>(BuildingClass *@<ecx>); // edx
+  int (__usercall **v8)(BuildingClass *); // edx
   int v9; // edi
   int v10; // edi
   int v11; // eax
@@ -12133,7 +12133,7 @@ void BuildingClass::Draw(Point2D* a, RectangleStruct* b) const { (void)a; (void)
     result = (int)this->Type; /*0x43d308*/
     if ( !result->InvisibleInGame ) /*0x43d30e*/
     {
-      v8 = (int (__usercall **)@<eax>(BuildingClass *@<ecx>))this->TechnoClass; /*0x43d322*/
+      v8 = (int (__usercall **)(BuildingClass *))this->TechnoClass; /*0x43d322*/
       v65 = result->NormalZAdjust; /*0x43d324*/
       v68 = 198; /*0x43d32a*/
       v69 = 446; /*0x43d332*/
@@ -12161,7 +12161,7 @@ void BuildingClass::Draw(Point2D* a, RectangleStruct* b) const { (void)a; (void)
         v19 = *(unsigned char *)(v17 + v18 + 4174 + 2087); /*0x43d468*/
         v61 = *(unsigned char *)(v17 + v18 + 6260); /*0x43d475*/
         v59 = *(unsigned char *)(v17 + v18 + 6262); /*0x43d47f*/
-        v20 = DDraw::GetStatus() - 1; /*0x43d488*/
+        v20 = DDraw_GetStatus() - 1; /*0x43d488*/
         if ( v20 ) /*0x43d489*/
         {
           if ( --v20 ) /*0x43d48c*/
@@ -12416,7 +12416,7 @@ void BuildingClass::Draw(Point2D* a, RectangleStruct* b) const { (void)a; (void)
       v13 = *(unsigned char *)(v11 + v12 + 4174 + 2087); /*0x43d3af*/
       v58 = *(unsigned char *)(v11 + v12 + 6260); /*0x43d3bc*/
       v60 = *(unsigned char *)(v11 + v12 + 6262); /*0x43d3c6*/
-      v14 = DDraw::GetStatus() - 1; /*0x43d3cf*/
+      v14 = DDraw_GetStatus() - 1; /*0x43d3cf*/
       if ( v14 ) /*0x43d3d0*/
       {
         if ( --v14 ) /*0x43d3d3*/

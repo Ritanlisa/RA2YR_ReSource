@@ -2223,12 +2223,12 @@ AbstractClass * * TacticalClass::ScrollViewport(int dx, int dy)
     v12 = this->q36B; /*0x6d2691*/
     if ( this->qDA4 != -1 ) /*0x6d269b*/
     {
-      v13 = Timer::GetTicks() - this->qDA4; /*0x6d26a8*/
+      v13 = TimerGetTicks() - this->qDA4; /*0x6d26a8*/
       if ( v13 >= v12 ) /*0x6d26b0*/
       {
   LABEL_20:
         WaypointAnimationSpeed = g_RulesClass_Instance->WaypointAnimationSpeed; /*0x6d26b8*/
-        Ticks = Timer::GetTicks(); /*0x6d26c5*/
+        Ticks = TimerGetTicks(); /*0x6d26c5*/
         v24 = v24; /*0x6d26ca*/
         this->qDA4 = Ticks; /*0x6d26ce*/
         v17 = this->qDA0; /*0x6d26d4*/

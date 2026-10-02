@@ -551,7 +551,7 @@ int SuperClass::ClickFire(int a2, short * a3)
   v4 = *((unsigned int *)this + 10); /*0x6cb92a*/
   if ( *(unsigned char *)(v4 + 229) ) /*0x6cb92d*/
   {
-    if ( (uint8_t)((House *)(*(#375 **)((char *)this + 44)))->IsCurrentPlayer() ) /*0x6cb93c*/
+    if ( (uint8_t)((House *)(*(void **)((char *)this + 44)))->IsCurrentPlayer() ) /*0x6cb93c*/
     {
       v5 = *((unsigned int *)this + 31); /*0x6cb949*/
       if ( v5 == 2 ) /*0x6cb94f*/

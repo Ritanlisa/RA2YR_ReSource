@@ -321,7 +321,7 @@ char DDraw::CheckCapabilities()
 } // namespace gamemd
 // 0x4BBC90
 namespace gamemd {
-int DDraw::GetStatus()
+int DDraw_GetStatus()
 {
 
   return dword_8205D0; /*0x4bbc95*/

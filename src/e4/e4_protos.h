@@ -870,3 +870,10 @@ extern int NetworkLobby_UpdatePlayerList();
 extern int __stdcall ObjectClass_FindOwner(_DWORD *a1, void *a2);
 extern int __stdcall Text_MeasureWidth(int a1, int a2);
 extern char __stdcall Cliff_ProcessTransitions(int a1, int a2);
+
+// G42.9 global-form supplies
+namespace gamemd {
+// G42.9: global-form supplies (cache truth 0x6C8C40 / 0x4BBC90: no this)
+extern int TimerGetTicks();  // 0x6C8C40
+extern int DDraw_GetStatus();  // 0x4BBC90
+}

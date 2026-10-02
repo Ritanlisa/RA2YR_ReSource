@@ -592,20 +592,20 @@ HashTable_flat * * Game::StartModemMultiplayer(char a2)
     ((Dialog *)(MessageBox))->Show(); /*0x5b7227*/
   v14 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b7231*/
   if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b7239*/
-    v14 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b724b*/
+    v14 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b724b*/
   while ( 1 ) /*0x5b7252*/
   {
     if ( !((Count *)((Count *)&unk_A8EA70))->GetCountQueue() ) /*0x5b7252*/
       goto LABEL_31; /*0x5b7252*/
     v15 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b7260*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b7268*/
-      v15 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b727a*/
+      v15 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b727a*/
     if ( (unsigned int)(v15 - v14) >= 0x708 ) /*0x5b7284*/
     {
 LABEL_31:
       v16 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b728b*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b7293*/
-        v16 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b72a5*/
+        v16 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b72a5*/
       if ( (unsigned int)(v16 - v14) >= 0x3C ) /*0x5b72ac*/
         break; /*0x5b72ac*/
     }
@@ -967,7 +967,7 @@ unsigned char Game::ManageGameSpeed()
   }
   if ( *((unsigned char *)this + 5338) == 1 && !*((unsigned char *)this + 5309) ) /*0x657a22*/
   {
-    v6 = VtableStub::72F510(); /*0x657a35*/
+    v6 = VtableStub::sub_72F510(); /*0x657a35*/
     v18[0] = *((unsigned int *)this + 1145); /*0x657a4d*/
     v18[1] = *((unsigned int *)this + 1147); /*0x657a5f*/
     v7 = (int *)(*((int (**)(DSurface *, unsigned char *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x657a6a*/

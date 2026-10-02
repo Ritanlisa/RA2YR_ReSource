@@ -51,7 +51,7 @@ namespace gamemd {
 DWORD * Timer::Init(DWORD a2)
 {
 
-  *(unsigned int *)this->__pad_0 = Timer::GetTicks(); /*0x4f1b0b*/
+  *(unsigned int *)this->__pad_0 = TimerGetTicks(); /*0x4f1b0b*/
   *(unsigned int *)&this->__pad_6[2] = a2; /*0x4f1b11*/
   return (DWORD *)this; /*0x4f1b16*/
 
@@ -68,7 +68,7 @@ int Timer::GetRemainingMs(void *a1_1)
   v1 = *(unsigned int *)&this->__pad_6[2]; /*0x4f1b26*/
   if ( *(unsigned int *)this->__pad_0 == -1 ) /*0x4f1b2c*/
     return *(unsigned int *)&this->__pad_6[2]; /*0x4f1b4c*/
-  v2 = Timer::GetTicks() - *(unsigned int *)this->__pad_0; /*0x4f1b3a*/
+  v2 = TimerGetTicks() - *(unsigned int *)this->__pad_0; /*0x4f1b3a*/
   if ( v2 >= v1 ) /*0x4f1b3e*/
     return 0; /*0x4f1b48*/
   else
@@ -130,7 +130,7 @@ int Timer::GetElapsed()
 
   v1 = *(unsigned int *)&this->__pad_6[2]; /*0x5f1396*/
   if ( *(unsigned int *)this->__pad_0 != -1 ) /*0x5f139c*/
-    v1 += Timer::GetTicks() - *(unsigned int *)this->__pad_0; /*0x5f13a8*/
+    v1 += TimerGetTicks() - *(unsigned int *)this->__pad_0; /*0x5f13a8*/
   return v1; /*0x5f13ac*/
 
 }
@@ -164,7 +164,7 @@ int Timer::UpdateDelta()
   DWORD Ticks; // eax
   int result; // eax
 
-  Ticks = Timer::GetTicks(); /*0x6c8825*/
+  Ticks = TimerGetTicks(); /*0x6c8825*/
   byte_B0BDB4 = 0; /*0x6c8830*/
   result = Ticks - dword_B0BD28; /*0x6c8837*/
   dword_B0BD48 = result; /*0x6c8839*/
@@ -175,7 +175,7 @@ int Timer::UpdateDelta()
 
 // 0x6C8C40
 namespace gamemd {
-DWORD Timer::GetTicks()
+DWORD TimerGetTicks()
 {
 
   return timeGetTime() >> 4; /*0x6c8c49*/

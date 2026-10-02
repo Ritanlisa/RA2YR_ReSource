@@ -585,7 +585,7 @@ void RenderScoreboardSidebar(void * a1, void * a2)
   v4 = v2; /*0x653faf*/
   if ( byte_884B8D )
   {
-    v5 = VtableStub::72F510(); /*0x653fbc*/
+    v5 = VtableStub::sub_72F510(); /*0x653fbc*/
     i = v4[1145]; /*0x653fd4*/
     v43 = v4[1147]; /*0x653fe6*/
     v6 = (int *)(*((int (**)(DSurface *, int *, unsigned int))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x653ff1*/

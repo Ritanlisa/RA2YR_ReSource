@@ -136,12 +136,12 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
         if ( a1 ) /*0x4add1b*/
           goto LABEL_20; /*0x4add1b*/
       }
-      result = House::IsHumanPlayer(*(#375 **)(v5 + 540)); /*0x4add27*/
+      result = House::IsHumanPlayer(*(void **)(v5 + 540)); /*0x4add27*/
       if ( (unsigned char)result ) /*0x4add2e*/
         break; /*0x4add2e*/
       if ( (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6 /*0x4addce*/
         && HIBYTE(dword_8871E0[1][2])
-        && (uint8_t)HouseClass::IsAlliedWith(*(#375 **)(v5 + 540), dword_A83D4C) )
+        && (uint8_t)HouseClass::IsAlliedWith(*(void **)(v5 + 540), dword_A83D4C) )
       {
         (*(void (**)(int, unsigned int, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v5 + 1160))(v5, 0, aP1, 0, 0, 0); /*0x4adde4*/
         v10[0] = *(unsigned int *)(v5 + 156); /*0x4addf4*/
@@ -152,9 +152,9 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
       }
       else if ( (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6 /*0x4ade4c*/
              && *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v5 + 132))(v5) + 1518)
-             && !(uint8_t)House::IsHumanPlayer(*(#375 **)(v5 + 540)) )
+             && !(uint8_t)House::IsHumanPlayer(*(void **)(v5 + 540)) )
       {
-        (*(void (**)(int, unsigned int, unsigned int, int, #375 *, unsigned int))(*(unsigned int *)v5 + 1160))( /*0x4ade68*/
+        (*(void (**)(int, unsigned int, unsigned int, int, void *, unsigned int))(*(unsigned int *)v5 + 1160))( /*0x4ade68*/
           v5,
           0,
           0,
@@ -1754,7 +1754,7 @@ MapClass * * Radar::RenderMinimap()
     {
       if ( *((unsigned char *)this + 5338) ) /*0x657584*/
       {
-        v53 = VtableStub::72F510(); /*0x657595*/
+        v53 = VtableStub::sub_72F510(); /*0x657595*/
         *v2 = *v9; /*0x65759b*/
         v2[1] = *((unsigned int *)this + 1320); /*0x6575a0*/
         v2[2] = *((unsigned int *)this + 1321); /*0x6575a6*/
@@ -1946,13 +1946,13 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
   unsigned int *v15; // eax
   unsigned short *v16; // eax
   char *v17; // eax
-  #375 *v18; // eax
-  #375 *v19; // eax
+  void *v18; // eax
+  void *v19; // eax
   int v20; // eax
   unsigned int *v21; // edi
   bool v22; // bl
-  #375 *v23; // ecx
-  #375 *v24; // eax
+  void *v23; // ecx
+  void *v24; // eax
   int v25; // edx
   unsigned int *v26; // eax
   int v27; // eax
@@ -2027,7 +2027,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
   {
     if ( !v8 /*0x6927fb*/
       || !(*(int (**)(unsigned char *))(*(unsigned int *)v8 + 60))(v8)
-      || (v18 = (#375 *)(*(int (**)(unsigned char *))(*(unsigned int *)v8 + 60))(v8),
+      || (v18 = (void *)(*(int (**)(unsigned char *))(*(unsigned int *)v8 + 60))(v8),
           !(uint8_t)House::IsHumanPlayer(v18))
       || (v30 = 10, !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)v8 + 148))(v8)) )
     {
@@ -2041,7 +2041,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
     {
       if ( (*(int (**)(unsigned char *))(*(unsigned int *)v8 + 60))(v8) ) /*0x69282e*/
       {
-        v19 = (#375 *)(*(int (**)(unsigned char *))(*(unsigned int *)v8 + 60))(v8); /*0x692839*/
+        v19 = (void *)(*(int (**)(unsigned char *))(*(unsigned int *)v8 + 60))(v8); /*0x692839*/
         if ( (uint8_t)House::IsHumanPlayer(v19) ) /*0x69283e*/
         {
           if ( (*(int (**)(unsigned char *))(*(unsigned int *)v8 + 44))(v8) == 6 ) /*0x692851*/
@@ -2082,7 +2082,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
       {
 LABEL_61:
         if ( *((unsigned int *)v23 + 131) == -1 /*0x692996*/
-          || !(uint8_t)((int (__fastcall *)(#375 *))Radar::IsRadarTargetEligible)(v23)
+          || !(uint8_t)((int (__fastcall *)(void *))Radar::IsRadarTargetEligible)(v23)
           || (v30 = 42, !((LayerClass *)(&dword_87F7E8))->IsWithinUsableArea(v14, 1)) )
         {
           v30 = 43; /*0x6929a7*/
@@ -2099,7 +2099,7 @@ LABEL_59:
         }
         goto LABEL_61; /*0x692970*/
       }
-      if ( (uint8_t)((int (__fastcall *)(#375 *))Radar::IsRadarTargetEligible)(dword_A83D4C) /*0x692955*/
+      if ( (uint8_t)((int (__fastcall *)(void *))Radar::IsRadarTargetEligible)(dword_A83D4C) /*0x692955*/
         && VectorClass::GetAtChecked(*((int **)dword_A83D4C + aP0 + 132), (int)v21) )
       {
         v30 = 47; /*0x69295e*/
@@ -2116,7 +2116,7 @@ LABEL_65:
     goto LABEL_81; /*0x6929c7*/
   if ( v8
     && (*(int (**)(unsigned char *))(*(unsigned int *)v8 + 60))(v8)
-    && (v24 = (#375 *)(*(int (**)(unsigned char *))(*(unsigned int *)v8 + 60))(v8),
+    && (v24 = (void *)(*(int (**)(unsigned char *))(*(unsigned int *)v8 + 60))(v8),
         (uint8_t)House::IsHumanPlayer(v24))
     && (*(uint8_t (**)(unsigned char *))(*(unsigned int *)v8 + 152))(v8) )
   {
@@ -2146,7 +2146,7 @@ LABEL_65:
         {
           v26 = CellCoord::To_CellObj(&dword_87F7E8, v14); /*0x692adc*/
           v30 = 12; /*0x692af4*/
-          if ( (uint8_t)House::IsHumanPlayer(*(#375 **)&dword_A8022C->AbstractClass[4 * v26[20]]) ) /*0x692aed*/
+          if ( (uint8_t)House::IsHumanPlayer(*(void **)&dword_A8022C->AbstractClass[4 * v26[20]]) ) /*0x692aed*/
             goto LABEL_81; /*0x692afc*/
         }
       }

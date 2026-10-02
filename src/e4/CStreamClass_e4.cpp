@@ -367,7 +367,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAU_DDSURFACEDESC *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a4c12*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a4c12*/
     return 1; /*0x4a4c18*/
   }
 

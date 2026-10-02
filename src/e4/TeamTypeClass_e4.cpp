@@ -1133,7 +1133,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6f23e5*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6f23e5*/
     return 1; /*0x6f23eb*/
   }
 
@@ -1244,7 +1244,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6f25ab*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6f25ab*/
   }
   v16 = this->m_8; /*0x6f25ae*/
   if ( v16 < this->m_10 ) /*0x6f25b6*/

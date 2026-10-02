@@ -3801,7 +3801,7 @@ int E4Recv_429500::sub_429500()
   if ( dword_A8B230[43].vtable2 != -1 ) /*0x42952e*/
   {
     p_vtable2 = &dword_A8B230[43].vtable2; /*0x42951f*/
-    uniqueId += Timer::GetTicks() - *p_vtable2; /*0x42953a*/
+    uniqueId += TimerGetTicks() - *p_vtable2; /*0x42953a*/
   }
   *v5 = uniqueId; /*0x42953c*/
   return 0; /*0x42950e*/

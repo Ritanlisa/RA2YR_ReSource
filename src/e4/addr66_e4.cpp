@@ -510,7 +510,7 @@ LABEL_63:
       {
     unsigned int v71 = 0;  /* G37 hoist */
         ebx90 = (unsigned int *)(a1 - 4);
-        if ( ComputeImpactTrajectory@<al>(a1 - 4, v4) )
+        if ( ComputeImpactTrajectory(a1 - 4, v4) )
           return 0;
         v61 = *(ObjectClass **)(a1 + 8);
         int v59 = *(unsigned int *)(a1 + 20);
@@ -693,7 +693,7 @@ LABEL_119:
       return (*(char (**)(int))(*(unsigned int *)a1 + 16))(a1);
     case 5:
       unsigned int * v86 = (unsigned int *)(a1 - 4);
-      if ( ComputeImpactTrajectory@<al>(a1 - 4, v4) )
+      if ( ComputeImpactTrajectory(a1 - 4, v4) )
         return 0;
       v88 = (BuildingTypeClass *)(v86[6] - *(unsigned int *)(v86[3] + 156));
       ecx102 = v86[7] - *(unsigned int *)(v86[3] + 160);
@@ -853,7 +853,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
   CHAR CommandLine[256]; // [esp+88h] [ebp-500h] BYREF
   char v25[1024]; // [esp+188h] [ebp-400h] BYREF
 
-  Ticks = Timer::GetTicks(); /*0x663dc6*/
+  Ticks = TimerGetTicks(); /*0x663dc6*/
   v19 = 0; /*0x663dca*/
   Waypoint::InitInvalid(&v23); /*0x663dd2*/
   Debug::Log(); /*0x663ddc*/
@@ -915,7 +915,7 @@ LABEL_11:
     Debug::Log(); /*0x66402c*/
     SetFocus(g_hWnd); /*0x66403b*/
     v9 = 1800; /*0x66404e*/
-    Ticks = Timer::GetTicks(); /*0x664053*/
+    Ticks = TimerGetTicks(); /*0x664053*/
     v18 = v16; /*0x664057*/
     v19 = 1800; /*0x66405b*/
     v10 = 0; /*0x66405f*/
@@ -923,7 +923,7 @@ LABEL_11:
     {
       if ( Ticks != -1 ) /*0x66406c*/
       {
-        v11 = Timer::GetTicks() - Ticks; /*0x664077*/
+        v11 = TimerGetTicks() - Ticks; /*0x664077*/
         if ( v11 >= v9 ) /*0x66407d*/
           return v10 != 0; /*0x66407d*/
         v9 -= v11; /*0x66407f*/

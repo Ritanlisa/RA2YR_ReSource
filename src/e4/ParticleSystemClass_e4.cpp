@@ -255,7 +255,7 @@ char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVBuildingClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e966e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e966e*/
   }
   v7 = this->m_8; /*0x4e9671*/
   if ( v7 < this->m_10 ) /*0x4e9679*/
@@ -362,7 +362,7 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVSmudgeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb342*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb342*/
     return 1; /*0x4eb348*/
   }
 
@@ -498,7 +498,7 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTerrainClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb5a2*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb5a2*/
     return 1; /*0x4eb5a8*/
   }
 
@@ -598,7 +598,7 @@ char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTerrainClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb6ce*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb6ce*/
   }
   v7 = this->m_8; /*0x4eb6d1*/
   if ( v7 < this->m_10 ) /*0x4eb6d9*/
@@ -669,7 +669,7 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVAircraftClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb92e*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb92e*/
   }
   v7 = this->m_8; /*0x4eb931*/
   if ( v7 < this->m_10 ) /*0x4eb939*/

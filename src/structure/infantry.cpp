@@ -737,7 +737,7 @@ AnimClass * InfantryClass::DeployAnimation()
         v14 = *((unsigned int *)v1 + 3); /*0x514468*/
         *((unsigned int *)v1 + 18) = 0; /*0x51446b*/
         *((unsigned int *)v1 + 19) = 1072693248; /*0x514472*/
-        (*(void (__usercall **)(int@<ecx>, unsigned int, int, double@<st0>))(*(unsigned int *)v14 + 1348))(v14, 0, 1072693248, v6); /*0x514482*/
+        (*(void (__usercall **)(int, unsigned int, int, double))(*(unsigned int *)v14 + 1348))(v14, 0, 1072693248, v6); /*0x514482*/
         MovementAI::StepFootClass((MovementAI *)((char *)this - 4), 0); /*0x51448c*/
         if ( v13 ) /*0x514493*/
           MovementAI::MainFootClass((MovementAI *)((char *)this - 4), 1); /*0x514499*/
@@ -2010,7 +2010,7 @@ int InfantryClass::CalcMoveTarget()
   int v12; // eax
   int GroundHeight; // ebx
   int v14; // ebx
-  void (__usercall **v15)(InfantryClass *@<ecx>, int *); // edx
+  void (__usercall **v15)(InfantryClass *, int *); // edx
   char v16; // al
   int v17; // ecx
   int *v18; // eax
@@ -2052,7 +2052,7 @@ int InfantryClass::CalcMoveTarget()
   int v54; // edx
   int *v55; // eax
   int v56; // eax
-  void (__usercall **v57)(InfantryClass *@<ecx>, int *); // edx
+  void (__usercall **v57)(InfantryClass *, int *); // edx
   int v58; // eax
   int v59; // eax
   int v60; // edx
@@ -2140,7 +2140,7 @@ int InfantryClass::CalcMoveTarget()
       v79 = v44; /*0x51b77d*/
       return vtable0[109](this, &v77); /*0x51b797*/
     }
-    v15 = (void (__usercall **)(InfantryClass *@<ecx>, int *))this->FootClass; /*0x51b497*/
+    v15 = (void (__usercall **)(InfantryClass *, int *))this->FootClass; /*0x51b497*/
     v16 = ((unsigned int *)this)[0] + 1; /*0x51b499*/
     ((unsigned int *)this)[0] = v16; /*0x51b49f*/
     v72 = v6[v16 + 12]; /*0x51b4ae*/
@@ -2279,7 +2279,7 @@ int InfantryClass::CalcMoveTarget()
     v75[1] = v55[1]; /*0x51b97a*/
     v76 = v55[2]; /*0x51b986*/
     v56 = Cell::GetGroundHeight(v75); /*0x51b98a*/
-    v57 = (void (__usercall **)(InfantryClass *@<ecx>, int *))this->FootClass; /*0x51b98f*/
+    v57 = (void (__usercall **)(InfantryClass *, int *))this->FootClass; /*0x51b98f*/
     v76 = v56; /*0x51b991*/
     v57[109](this, v75); /*0x51b99c*/
     v58 = ((unsigned int *)this)[0]; /*0x51b9a2*/
@@ -6372,7 +6372,7 @@ void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
     v24 = v23[FlashFrameTime + 6261]; /*0x518fed*/
     v66 = v23[FlashFrameTime + 6260]; /*0x518ffa*/
     v67 = v23[FlashFrameTime + 6262]; /*0x519004*/
-    v25 = DDraw::GetStatus() - 1; /*0x51900d*/
+    v25 = DDraw_GetStatus() - 1; /*0x51900d*/
     if ( v25 ) /*0x51900e*/
     {
       v28 = v25 - 1; /*0x519010*/

@@ -559,7 +559,7 @@ LABEL_21:
   if ( dword_A8B230[43].vtable2 == (void *)-1 ) /*0x683e35*/
   {
     p_vtable2 = &dword_A8B230[43].vtable2; /*0x683e26*/
-    *p_vtable2 = Timer::GetTicks(); /*0x683e3f*/
+    *p_vtable2 = TimerGetTicks(); /*0x683e3f*/
   }
   if ( dword_A8B230[202].vtable2 == (void *)-1 ) /*0x683e50*/
     ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x683e66*/
@@ -591,13 +591,13 @@ int ScenarioClass::CleanupTemporary()
   if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x683ee2*/
   {
     if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x683eff*/
-      Timer::GetTicks(); /*0x683f04*/
+      TimerGetTicks(); /*0x683f04*/
     Debug::Log(); /*0x683f13*/
     v1 = (AsyncIO *)dword_A8B230; /*0x683f18*/
     p_vtable2 = &dword_A8B230[43].vtable2; /*0x683f27*/
     if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x683f31*/
     {
-      Ticks = Timer::GetTicks(); /*0x683f36*/
+      Ticks = TimerGetTicks(); /*0x683f36*/
       v4 = (char *)p_vtable2[2]; /*0x683f3d*/
       v5 = Ticks - (unsigned int)*p_vtable2; /*0x683f40*/
       *p_vtable2 = (void *)-1; /*0x683f42*/
@@ -649,7 +649,7 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
         dword_B07784 = 0; /*0x68420d*/
       }
       if ( *((unsigned int *)result + 389) == -1 ) /*0x684227*/
-        *((unsigned int *)result + 389) = Timer::GetTicks(); /*0x684231*/
+        *((unsigned int *)result + 389) = TimerGetTicks(); /*0x684231*/
       return (unsigned char *)sub_406F40(); /*0x684233*/
     }
   }

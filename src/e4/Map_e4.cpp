@@ -1987,7 +1987,7 @@ const char * Map_Delete_5ADE20(ObjectClass * a1, const char * a2)
   ((MSEngine *)((MSEngine *)&((char *)&v9)))->Construct(); /*0x5ade3b*/
   Map_Delete_5CEDD0((DynamicVector *)&v9.customSound_controller[1]); /*0x5ade44*/
   unknown_libname_73(v10); /*0x5ade50*/
-  v10[1] = (void *)Timer::GetTicks(); /*0x5ade61*/
+  v10[1] = (void *)TimerGetTicks(); /*0x5ade61*/
   v10[3] = 0; /*0x5ade72*/
   ((unsigned int *)&v9)[0] = (void*)&MapSelect_vftable; /*0x5ade7d*/
   v4 = !((SessionClass *)((SessionClass *)&((char *)&v9)))->LoadGameSession(a1, (const char **)&v9); /*0x5ade93*/
@@ -2680,7 +2680,7 @@ char Map_WorldDominationTour_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76a212*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76a212*/
     return 1; /*0x76a218*/
   }
 
