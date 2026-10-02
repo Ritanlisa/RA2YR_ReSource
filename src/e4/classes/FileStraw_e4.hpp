@@ -4,8 +4,8 @@
 namespace gamemd {
 
 struct FileStraw {
-    int Destructor(void *a1 = 0);
-    int Open(int a2, char a3, void *a1 = 0);
+    int Destructor();
+    int Open(int a2, char a3);
 };
 
 } // namespace gamemd

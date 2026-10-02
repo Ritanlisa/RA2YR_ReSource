@@ -241,13 +241,13 @@ int AbstractTypeClass::Init(AbstractTypeClass * aP1, void *a2, void *a3, void *a
     *((unsigned int *)this + 24) = (unsigned int)(GetStringCSF((wchar_t *)((char *)this + 61), 0, aDRa2mdpostAbst, 127)); /*0x4109a0*/
   else
     *((unsigned int *)this + 24) = (unsigned int)(&g_TypeClass_DefaultString); /*0x4109a9*/
-  return this; /*0x4109a5*/
+  return (int)(this); /*0x4109a5*/
 
 }
 } // namespace gamemd
 // 0x410A40
 namespace gamemd {
-BOOL AbstractTypeClass::NameEquals(void * a2)
+BOOL AbstractTypeClass::NameEquals(void *a2)
 {
 
   return _st  return _strcmpi((const char *)(a2),(const char *)((const void *)((char *)this + 36))) == 0; 
@@ -276,9 +276,9 @@ int AbstractTypeClass::ProcessPower(int *aP1)
 {
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x410be9*/
-  Checksum::AddString((Checksum *)aP1, (uint8_t *)this->__pad_24); /*0x410bf4*/
-  Checksum::AddString((Checksum *)aP1, (uint8_t *)this->Name); /*0x410bff*/
-  return Checksum::AddString((Checksum *)aP1, (uint8_t *)this->UINameLabel); /*0x410c0f*/
+  ((Checksum *)((Checksum *)aP1))->AddString((uint8_t *)this->__pad_24); /*0x410bf4*/
+  ((Checksum *)((Checksum *)aP1))->AddString((uint8_t *)this->Name); /*0x410bff*/
+  return ((Checksum *)((Checksum *)aP1))->AddString((uint8_t *)this->UINameLabel); /*0x410c0f*/
 
 }
 } // namespace gamemd

@@ -215,7 +215,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
           if ( v7 > 0 ) /*0x583b61*/
           {
             v8 = (int)(v7); /*0x583b63*/
-            Capacity = v18.Capacity; /*0x583b65*/
+            Capacity = (int)(v18.Capacity); /*0x583b65*/
             while ( 1 ) /*0x583b6f*/
             {
               if ( v6 < Capacity ) /*0x583b71*/
@@ -236,7 +236,7 @@ LABEL_13:
               v10 = v19++; /*0x583b9b*/
               *((unsigned int *)v18.Items + v10) = 0; /*0x583baa*/
             }
-            Capacity = v18.Capacity; /*0x583bb1*/
+            Capacity = (int)(v18.Capacity); /*0x583bb1*/
             goto LABEL_15; /*0x583bb1*/
           }
         }
@@ -281,7 +281,7 @@ LABEL_16:
       if ( v18.IsAllocated ) /*0x583c18*/
         __3_YAXPAX_Z(Items); /*0x583c1b*/
     }
-    return v16; /*0x583c23*/
+    return (gamemd::AbstractClass **)(v16); /*0x583c23*/
   }
 
 }
@@ -589,7 +589,7 @@ void globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
           dword_ABDC74 = (unsigned int)((unsigned int *)(v20));
           v11 = (unsigned int *)(unk_ABDC50); /*0x58864d*/
         }
-        IDA_LOBYTE(v5) = ((CellClass *)((int)v11))->IsPassable(aP2->u32_67C,(int)(aP2), aP1); /*0x58865f*/
+        IDA_LOBYTE(v5) = ((CellClass *)((int)v11))->IsPassable(aP2->u32_67C,(int)(aP2),(int)(aP1)); /*0x58865f*/
         if ( (unsigned char)v5 ) /*0x588666*/
         {
           IDA_LOBYTE(v5) = ++v18; /*0x588674*/
@@ -653,7 +653,7 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
   int v22; // [esp+20h] [ebp-10h]
   unsigned int v23[3]; // [esp+24h] [ebp-Ch] BYREF
 
-  v3 = (int)((int *)((int)(aP2))); /*0x588754*/
+  v3 = (int *)((int)((int *)((int)(aP2)))); /*0x588754*/
   result = (int)(aP2[917]); /*0x588758*/
   v22 = result; /*0x588760*/
   if ( !result ) /*0x588764*/
@@ -812,7 +812,7 @@ int sub_58B800()
 namespace gamemd {
 int * sub_58B810()
 {
-  return dword_ABECD0; /*0x58b815*/
+  return (int *)(dword_ABECD0); /*0x58b815*/
 }
 }
 // 0x58B820
@@ -850,17 +850,17 @@ ScenarioClass * * ComputeMapCameraBounds()
   char v30[4]; // [esp+28h] [ebp-10h] BYREF
   char v31[12]; // [esp+2Ch] [ebp-Ch] BYREF
 
-  result = dword_A8B230; /*0x58b820*/
+  result = (void *)(dword_A8B230); /*0x58b820*/
   v2 = 0; /*0x58b82a*/
   g_MissionQueueFrame.localVariables[162] = 0; /*0x58b830*/
   if ( dword_A8B230 && g_TacticalClass_Instance ) /*0x58b842*/
   {
     for ( i = 0; i < 8; ++i ) /*0x58b848*/
     {
-      if ( !(uint8_t)ScenarioClass::Is_Waypoint_Valid((char *)dword_A8B230, i) ) /*0x58b851*/
+      if ( !(uint8_t)((ScenarioClass *)((char *)dword_A8B230))->Is_Waypoint_Valid(i) ) /*0x58b851*/
         break; /*0x58b858*/
       Waypoint_Location = (int16_t *)ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &k, i); /*0x58b86a*/
-      v5 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], Waypoint_Location); /*0x58b87e*/
+      v5 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(Waypoint_Location); /*0x58b87e*/
       v6 = (*(int (**)(void *))(*(unsigned int *)v5 + 72))(v5); /*0x58b88f*/
       v7 = (int *)(*(int (**)(void *, char *, unsigned int))(*(unsigned int *)v5 + 72))(v5, v30, *(unsigned int *)(v6 + 4)); /*0x58b89f*/
       IsoCoord::ToScreenOffset(*v7, (int)v29, &v25, &v26); /*0x58b8ab*/
@@ -1828,7 +1828,7 @@ unsigned int * E4Recv_58BE20::sub_58BE20()
   {
     do /*0x58be6f*/
     {
-      v7 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x58be52*/
+      v7 = (unsigned int)((Random *)((Random *)&g_MissionQueueFrame.globalVariables[1552]))->State(); /*0x58be52*/
       LOWORD(v3) = Math::RoundToInt((double)v7 * (double)(v2 + 1) * 2.328306437080797e-10); /*0x58be68*/
     }
     while ( v3 > v2 ); /*0x58be6f*/
@@ -1867,7 +1867,7 @@ unsigned int * E4Recv_58BEA0::sub_58BEA0()
       v11 = (double)v9; /*0x58bec7*/
       do /*0x58bef2*/
       {
-        v10 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x58bed5*/
+        v10 = (unsigned int)((Random *)((Random *)&g_MissionQueueFrame.globalVariables[1552]))->State(); /*0x58bed5*/
         LOWORD(v4) = Math::RoundToInt((double)v10 * v11 * 2.328306437080797e-10); /*0x58beeb*/
       }
       while ( v4 > v3 ); /*0x58bef2*/
@@ -1883,7 +1883,7 @@ unsigned int * E4Recv_58BEA0::sub_58BEA0()
       this->AbstractClass = 0; /*0x58bf51*/
       return &this->AbstractClass; /*0x58bf5c*/
     }
-    v6 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v8); /*0x58bf2d*/
+    v6 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v8); /*0x58bf2d*/
   }
   while ( !(uint8_t)Cell::IsEmpty(v6) ); /*0x58bf34*/
   this->AbstractClass = *(void **)v8; /*0x58bf62*/
@@ -1970,7 +1970,7 @@ unsigned int * E4Recv_58C320::sub_58C320(unsigned int * a2)
   {
     do /*0x58c372*/
     {
-      v8 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x58c355*/
+      v8 = (unsigned int)((Random *)((Random *)&g_MissionQueueFrame.globalVariables[1552]))->State(); /*0x58c355*/
       LOWORD(v4) = Math::RoundToInt((double)v8 * (double)(unsigned int)v2 * 2.328306437080797e-10); /*0x58c36b*/
     }
     while ( v4 > v2 - 1 ); /*0x58c372*/
@@ -2009,7 +2009,7 @@ unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * a2)
       v12 = (double)(unsigned int)v3; /*0x58c3db*/
       do /*0x58c406*/
       {
-        v11 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x58c3e9*/
+        v11 = (unsigned int)((Random *)((Random *)&g_MissionQueueFrame.globalVariables[1552]))->State(); /*0x58c3e9*/
         LOWORD(v4) = Math::RoundToInt((double)v11 * v12 * 2.328306437080797e-10); /*0x58c3ff*/
       }
       while ( v4 > v3 - 1 ); /*0x58c406*/
@@ -2022,7 +2022,7 @@ unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * a2)
       *a2 = 0; /*0x58c47a*/
       return a2; /*0x58c480*/
     }
-    v6 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v9); /*0x58c450*/
+    v6 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v9); /*0x58c450*/
   }
   while ( !(uint8_t)Cell::IsEmpty(v6) ); /*0x58c457*/
   *a2 = *(unsigned int *)v9; /*0x58c48e*/
@@ -2050,7 +2050,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
   {
     do /*0x58c508*/
     {
-      v9 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x58c4eb*/
+      v9 = (unsigned int)((Random *)((Random *)&g_MissionQueueFrame.globalVariables[1552]))->State(); /*0x58c4eb*/
       LOWORD(v4) = Math::RoundToInt((double)v9 * (double)(unsigned int)v7 * 2.328306437080797e-10); /*0x58c501*/
     }
     while ( v4 > v7 - 1 ); /*0x58c508*/
@@ -2065,7 +2065,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
     {
       if ( *((unsigned char *)v2 + 68) ) /*0x58c541*/
       {
-        v5 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v2); /*0x58c552*/
+        v5 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v2); /*0x58c552*/
         if ( (uint8_t)Cell::IsEmpty(v5) ) /*0x58c559*/
           break; /*0x58c559*/
       }
@@ -2097,7 +2097,7 @@ unsigned int * sub_58C5A0(unsigned int * a1, int a2, int a3)
   {
     do /*0x58c60a*/
     {
-      v13 = (unsigned int)Random::State(&unk_ABE890); /*0x58c5ed*/
+      v13 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x58c5ed*/
       v4 = Math::RoundToInt((double)v13 * (double)(unsigned int)v11 * 2.328306437080797e-10); /*0x58c603*/
     }
     while ( v4 > v11 - 1 ); /*0x58c60a*/
@@ -2109,7 +2109,7 @@ unsigned int * sub_58C5A0(unsigned int * a1, int a2, int a3)
       *a1 = 0; /*0x58c69a*/
       return a1; /*0x58c6a0*/
     }
-    v6 = CellCoord::To_CellObj(&dword_87F7E8, v3); /*0x58c637*/
+    v6 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(v3); /*0x58c637*/
     v7 = v6; /*0x58c63f*/
   }
   while ( !*v3 && !v3[1] /*0x58c67e*/
@@ -2166,7 +2166,7 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
         *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163] + 56) = a2; /*0x58d155*/
         *(unsigned char *)(v5 + g_MissionQueueFrame.localVariables[163] + 75) = 0; /*0x58d15e*/
         a3 = *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163]); /*0x58d176*/
-        v6 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a3); /*0x58d17a*/
+        v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a3); /*0x58d17a*/
         v6[14] = 0; /*0x58d182*/
         *((unsigned char *)v6 + 282) = 0; /*0x58d185*/
         if ( v4 != -1 ) /*0x58d18c*/

@@ -399,7 +399,7 @@ IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
 
   LOWORD(aP2) = *(unsigned short *)this->__pad_0 - *aP2; /*0x5b295a*/
   *aP1 = aP2; /*0x5b2967*/
-  return aP1; /*0x5b2969*/
+  return (IUnknown *)(aP1); /*0x5b2969*/
 
 }
 } // namespace gamemd

@@ -135,7 +135,7 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
 
   v9 = (gamemd::DynamicVector **)(0);
   if ( !a2 ) /*0x41ee9f*/
-    return v9; /*0x41efcb*/
+    return (gamemd::DynamicVector **)(v9); /*0x41efcb*/
   v4 = *((unsigned int *)this + 54); /*0x41eea6*/
   if ( v4 ) /*0x41eeae*/
   {
@@ -183,9 +183,9 @@ LABEL_8:
       result = v7 > *((unsigned int *)this + 57); /*0x41efb8*/
       break; /*0x41efbd*/
     case 5: /*0x41ef4b*/
-      return v7 != *((unsigned int *)this + 57); /*0x41efc6*/
+      return (gamemd::DynamicVector **)(v7 != *((unsigned int *)this + 57)); /*0x41efc6*/
     default:
-      return v9;
+      return (gamemd::DynamicVector **)(v9);
   }
   return (gamemd::DynamicVector **)(result);
 

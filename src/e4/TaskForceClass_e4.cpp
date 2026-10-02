@@ -109,7 +109,7 @@ int TaskForceClass::Construct(char *aP1)
     --v5; /*0x6e7f37*/
   }
   while ( v5 ); /*0x6e7f38*/
-  return this->__pad_0; /*0x6e7f3c*/
+  return (int)(this->__pad_0); /*0x6e7f3c*/
 
 }
 }
@@ -138,12 +138,12 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
     while ( 1 ) /*0x6e824d*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, v6); /*0x6e824d*/
-      result = INIClass::GetString((gamemd::INIClass *)(a1),(unsigned char *)(g_INI_Key_TaskForces),(gamemd::INIClass *)(StringByIndex), &g_INI_DefaultBuffer, Source, 24); /*0x6e8266*/
+      result = INIClass::GetString((gamemd::INIClass *)(a1),(unsigned char *)(g_INI_Key_TaskForces),(gamemd::INIClass *)(StringByIndex),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 24); /*0x6e8266*/
       if ( result > 0 ) /*0x6e826d*/
         break; /*0x6e826d*/
 LABEL_13:
       if ( ++v6 >= v5 ) /*0x6e832a*/
-        return result; /*0x6e832a*/
+        return (gamemd::AbstractClass **)(result); /*0x6e832a*/
     }
     if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6e8293*/
       goto LABEL_11; /*0x6e8293*/
@@ -172,7 +172,7 @@ LABEL_12:
     v5 = v12; /*0x6e8323*/
     goto LABEL_13; /*0x6e8323*/
   }
-  return result; /*0x6e8330*/
+  return (gamemd::AbstractClass **)(result); /*0x6e8330*/
 
 }
 }

@@ -34,7 +34,7 @@ unsigned int * CellStruct::Copy(void* aP1, void *a2_1)
   v4 = (unsigned int *)(this->field_4);
   *(unsigned int *)(aP1) = (unsigned int)(v3); /*0x437f39*/
   aP1[1] = v4; /*0x437f3b*/
-  return aP1; /*0x437f3e*/
+  return (unsigned int *)(aP1); /*0x437f3e*/
 
 }
 }
@@ -72,7 +72,7 @@ unsigned int * CellStruct::Set(int16_t a2, int16_t a3)
 
   LOWORD(this->field_0) = a2; /*0x42d47c*/
   HIWORD(this->field_0) = a3; /*0x42d47f*/
-  return this; /*0x42d483*/
+  return (unsigned int *)(this); /*0x42d483*/
 
 }
 } // namespace gamemd

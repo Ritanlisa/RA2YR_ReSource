@@ -457,7 +457,7 @@ bool  TerrainTypeClass::GetHeight(TerrainClass * aP2, int a3)
   TerrainClass *v4; // eax
 
   v4 = (TerrainClass *)__2_YAPAXI_Z(0xE0u); /*0x71ddd8*/
-  return v4 && TerrainClass::Construct(v4, this, aP2); /*0x71ddf7*/
+  return v4 && ((TerrainClass *)(v4))->Construct(this, aP2); /*0x71ddf7*/
 
 }
 // 0x71DE10
@@ -468,7 +468,7 @@ TerrainClass * TerrainTypeClass::GetTileIndex(int a2, void *a2_2, void *a3, void
 
   v3 = (TerrainClass *)__2_YAPAXI_Z(0xE0u); /*0x71de18*/
   if ( v3 ) /*0x71de22*/
-    return TerrainClass::Construct(v3, this, (int16_t *)&((char *)&g_BuildingLoadQueue_Array)); /*0x71de2c*/
+    return ((TerrainClass *)(v3))->Construct(this, (int16_t *)&((char *)&g_BuildingLoadQueue_Array)); /*0x71de2c*/
   else
     return 0; /*0x71de35*/
 
@@ -517,7 +517,7 @@ int TerrainTypeClass::PowerDrainUpdate(int * a2)
   LOBYTE(v6) = this->IsAnimated; /*0x71e194*/
   ((Power *)((Power *)a2))->FlagProcess(v6); /*0x71e19d*/
   Power::TimerProcess(this->AnimationRate); /*0x71e1ab*/
-  return Checksummer::Add_float((Checksummer *)a2, LODWORD(this->AnimationProbability)); /*0x71e1be*/
+  return ((Checksummer *)((Checksummer *)a2))->Add_float(LODWORD(this->AnimationProbability)); /*0x71e1be*/
 
 }
 // 0x71E1D0

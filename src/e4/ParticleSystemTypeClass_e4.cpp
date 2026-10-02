@@ -280,11 +280,11 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
   LOBYTE(v3) = this->__pad_298[0]; /*0x64471c*/
   ((Power *)((Power *)a2))->FlagProcess(v3); /*0x644725*/
   Power::TimerProcess((int)this->ParticleSystemTypeClass_field_0x29C); /*0x644733*/
-  Checksummer::Add_float((Checksummer *)a2, (int)this->ParticleSystemTypeClass_field_0x2A0); /*0x644741*/
+  ((Checksummer *)((Checksummer *)a2))->Add_float((int)this->ParticleSystemTypeClass_field_0x2A0); /*0x644741*/
   Power::TimerProcess(LODWORD(this->ParticleSystemTypeClass_field_0x2A4)); /*0x64474f*/
   Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2A8); /*0x64475d*/
-  Checksummer::Add_float((Checksummer *)a2, this->ParticleSystemTypeClass_field_0x2AC); /*0x64476b*/
-  Checksummer::Add_float((Checksummer *)a2, this->DamageDelay); /*0x644779*/
+  ((Checksummer *)((Checksummer *)a2))->Add_float(this->ParticleSystemTypeClass_field_0x2AC); /*0x64476b*/
+  ((Checksummer *)((Checksummer *)a2))->Add_float(this->DamageDelay); /*0x644779*/
   Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B4); /*0x644787*/
   return Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B8); /*0x64479a*/
 

@@ -598,7 +598,7 @@ int BulletTypeClass::ProcessPower(int * a2, void *a2_2)
   ((Power *)((Power *)a2))->FlagProcess(v16); /*0x46c62d*/
   LOBYTE(v17) = *((unsigned char *)this + 679); /*0x46c632*/
   ((Power *)((Power *)a2))->FlagProcess(v17); /*0x46c63b*/
-  Checksummer::Add_double((Checksummer *)a2, *((unsigned int *)this + 178), *((unsigned int *)this + 179)); /*0x46c650*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(*((unsigned int *)this + 178), *((unsigned int *)this + 179)); /*0x46c650*/
   Power::TimerProcess(*((unsigned int *)this + 180)); /*0x46c65e*/
   Power::TimerProcess(*((unsigned int *)this + 183)); /*0x46c66c*/
   Power::TimerProcess(*((unsigned int *)this + 188)); /*0x46c67a*/

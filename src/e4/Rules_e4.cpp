@@ -209,7 +209,7 @@ char * Rules::GetProductionTimeMult(int aP1)
     if ( aP1 >= 5 ) /*0x5fb2ed*/
       return (char *)(8 * aP1 / (v3 + 1)); /*0x5fb301*/
     else
-      return (&(&off_832CEC)[8 * aP1])[v3]; /*0x5fb2f2*/
+      return (char *)((&(&off_832CEC)[8 * aP1])[v3]); /*0x5fb2f2*/
   }
   return result; /*0x5fb2f9*/
 

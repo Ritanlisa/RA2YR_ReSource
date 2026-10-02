@@ -325,7 +325,7 @@ LABEL_162:
       v61->missionTimer_text_csf = &stru_87C374[46016];
       ScriptAction::CopyStringField(Destination,(char *)(&((unsigned int *)(stru_87C374))[56304]));
   char v137[32]; // [esp+60h] [ebp-1F0h] BYREF
-      ScriptAction::CopyStructField((void *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4600), v137, Destination);
+      ((ScriptAction *)((void *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4600)))->CopyStructField(v137, Destination);
       ((ObjectClass *)(&stru_87C374[13428]))->PreDraw();
       return 1;
     case 0x1C:
@@ -372,9 +372,9 @@ LABEL_162:
       if ( (AbstractClass *)HouseClass_Player.field_0 != aP1 )
         return 1;
 LABEL_157:
-      SidebarClass::AddCameo((int *)&stru_87C374[13428], 31, *(AnimClass **)(a1 + 144));
+      ((SidebarClass *)((int *)&stru_87C374[13428]))->AddCameo(31, *(AnimClass **)(a1 + 144));
       Status = (IUnknown *)((HouseClass *)((IUnknown *)0x1F))->GetStatus(0);
-      Sidebar::ActivateTab((int)&stru_87C374[13428], Status);
+      ((Sidebar *)((int)&stru_87C374[13428]))->ActivateTab(Status);
       return 1;
     case 0x23:
       if ( !aP1 )
@@ -388,16 +388,16 @@ LABEL_157:
       int v49 = (int)v48;
       if ( !v48 )
         return 0;
-      HouseClass::HandleAlliance((int)aP1, v48, 0);
-      HouseClass::HandleAlliance(v49, (HouseClass *)aP1, 0);
+      ((HouseClass *)((int)aP1))->HandleAlliance(v48, 0);
+      ((HouseClass *)(v49))->HandleAlliance((HouseClass *)aP1, 0);
       return 1;
     case 0x26:
       eax105 = (IUnknown *)ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
       int v51 = (int)eax105;
       if ( !eax105 )
         return 0;
-      HouseClass::SetAlliance((int)aP1, eax105, 0);
-      HouseClass::SetAlliance(v51, (IUnknown *)aP1, 0);
+      ((HouseClass *)((int)aP1))->SetAlliance(eax105, 0);
+      ((HouseClass *)(v51))->SetAlliance((IUnknown *)aP1, 0);
       return 1;
     case 0x27:
     case 0x5C:
@@ -453,8 +453,8 @@ LABEL_157:
       v128 = v82[1];
       GroundHeight = v82[2];
       GroundHeight = (CellStruct *)Cell::GetGroundHeight((IUnknown *)&v113);
-      if ( (*((unsigned int *)CellCoord::To_CellObj(&stru_87C374[13428], (int16_t *)&v112) + 80) & 0x100) != 0
-        || (*((unsigned int *)CellCoord::To_CellObj(&stru_87C374[13428], (int16_t *)&v112) + 80) & 0x400) != 0 )
+      if ( (*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x100) != 0
+        || (*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x400) != 0 )
       {
         GroundHeight = (CellStruct *)((char *)GroundHeight + *(unsigned int *)&stru_B05488[37452]);
       }
@@ -916,7 +916,7 @@ LABEL_60:
       unsigned int * v12 = (unsigned int *)operator new(0x14u);
       if ( !v12 )
         return 1;
-      ActionQueue::PushEntry(v12, (int)v113, (int)v128, (int)GroundHeight);
+      ((ActionQueue *)(v12))->PushEntry((int)v113, (int)v128, (int)GroundHeight);
       return 1;
     case 0x5F:
       return TActionClass::CreateNukeEffect((int *)a1, aP1, (int)v9, (int)a5, aP4);
@@ -933,7 +933,7 @@ LABEL_60:
       v67 = aP0;
       do
       {
-        if ( ScenarioClass::Is_Waypoint_Valid(*(char **)&HouseClass_Player[29924], v66) )
+        if ( ((ScenarioClass *)(*(char **)&HouseClass_Player[29924]))->Is_Waypoint_Valid(v66) )
         {
           ++v65;
           *(unsigned int *)v67->__pad_0 = *ScenarioClass::Get_Waypoint_Location(
@@ -980,7 +980,7 @@ LABEL_60:
       v128 = (CellStruct *)v132;
       GroundHeight = (CellStruct *)v133;
       GroundHeight = (CellStruct *)Cell::GetGroundHeight((IUnknown *)&v113);
-      if ( (*((unsigned int *)CellCoord::To_CellObj(&stru_87C374[13428], (int16_t *)&v112) + 80) & 0x100) != 0 )
+      if ( (*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x100) != 0 )
         GroundHeight = (CellStruct *)((char *)GroundHeight + *(unsigned int *)&stru_B05488[37452]);
       int v13 = *Coord::ToCell(&v113, (IUnknown *)&v130);
       if ( LightningStorm::IsActive() )
@@ -1012,7 +1012,7 @@ LABEL_60:
         *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4596) = &stru_87C374[46016];
         ScriptAction::CopyStringField(v137, &stru_87C374[56304]);
   char v139[32]; // [esp+A0h] [ebp-1B0h] BYREF
-        ScriptAction::CopyStructField((void *)(*(unsigned int *)&HouseClass_Player[29924] + 4600), v139, v137);
+        ((ScriptAction *)((void *)(*(unsigned int *)&HouseClass_Player[29924] + 4600)))->CopyStructField(v139, v137);
       }
       ((ObjectClass *)(&stru_87C374[13428]))->PreDraw();
       return 1;
@@ -1096,8 +1096,8 @@ LABEL_290:
       v128 = v119[1];
       GroundHeight = v119[2];
       GroundHeight = (CellStruct *)Cell::GetGroundHeight((IUnknown *)&v113);
-      if ( (*((unsigned int *)CellCoord::To_CellObj(&stru_87C374[13428], (int16_t *)&v112) + 80) & 0x100) != 0
-        || (*((unsigned int *)CellCoord::To_CellObj(&stru_87C374[13428], (int16_t *)&v112) + 80) & 0x400) != 0 )
+      if ( (*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x100) != 0
+        || (*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x400) != 0 )
       {
         GroundHeight = (CellStruct *)((char *)GroundHeight + *(unsigned int *)&stru_B05488[37452]);
       }
@@ -1332,7 +1332,7 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
     LOWORD(aP2) = v4 + LOWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d061*/
     HIWORD(aP2) = v5 + v8; /*0x71d06d*/
     a1 = aP2; /*0x71d076*/
-    v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a1); /*0x71d080*/
+    v9 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a1); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
   v10 = (unsigned int *)(*((int (**)(char *))this->ObjectClass + 43))(v14); /*0x71d0ab*/

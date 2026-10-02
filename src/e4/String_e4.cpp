@@ -20,7 +20,7 @@
 
 // 0x49B760
 namespace gamemd {
-int String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
+int String::AssignWideToChar(char *aP1, char *aP2)
 {
 
   char *v4; // edi
@@ -129,7 +129,7 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
     *((unsigned int *)this + 3) = v8; /*0x5d0453*/
   }
   DeleteAndZero((ObjectClass *)&v10); /*0x5d045a*/
-  return this; /*0x5d0461*/
+  return (gamemd::ObjectClass **)(this); /*0x5d0461*/
 
 }
 }
@@ -180,9 +180,9 @@ ControlClass * * String::To_Waypoint()
 
   v2 = (int)(-1); /*0x763694*/
   if ( isalpha(*this) && (v2 = toupper((int)(*this)) - 65, isalpha(*((unsigned char *)this + 1))) ) /*0x7636ba*/
-    return toupper(*((unsigned char *)this + 1)) + 26 * v2 - 39; /*0x7636db*/
+    return (gamemd::ControlClass **)(toupper(*((unsigned char *)this + 1)) + 26 * v2 - 39); /*0x7636db*/
   else
-    return v2; /*0x7636e0*/
+    return (gamemd::ControlClass **)(v2); /*0x7636e0*/
 
 }
 }
@@ -368,7 +368,7 @@ LABEL_35:
     strcpy(*(char **)this->__pad_0, v20); /*0x7b5a1d*/
   if ( v4 ) /*0x7b5a29*/
     __3_YAXPAX_Z(v4); /*0x7b5a2c*/
-  return 1; /*0x7b5a34*/
+  return (gamemd::AbstractClass **)(1); /*0x7b5a34*/
 
 }
 }
@@ -397,7 +397,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 
   v4 = (int)((gamemd::AbstractClass **)(a2));
   if ( a2 < 0 ) /*0x7b5f1c*/
-    return -1; /*0x7b5f21*/
+    return (gamemd::AbstractClass **)(-1); /*0x7b5f21*/
   while ( 1 )
   {
     v7 = *(unsigned int *)this->__pad_0 ? strlen(*(const char **)this->__pad_0) : 0;
@@ -410,7 +410,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   else
     v8 = 0; /*0x7b5f61*/
   if ( v4 >= v8 ) /*0x7b5f71*/
-    return -1; /*0x7b5f76*/
+    return (gamemd::AbstractClass **)(-1); /*0x7b5f76*/
   v21 = v4; /*0x7b5f7d*/
   while ( 1 )
   {
@@ -461,7 +461,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
     strcpy((char *)*aP3, v18); /*0x7b60b8*/
   if ( v17 ) /*0x7b60c3*/
     __3_YAXPAX_Z(v17); /*0x7b60c6*/
-  return (int)(Stra + 1); /*0x7b5f1e*/
+  return (gamemd::AbstractClass **)((int)(Stra + 1)); /*0x7b5f1e*/
 
 }
 }
@@ -491,7 +491,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
 
   v4 = a2; /*0x7b7a62*/
   if ( a2 < 0 ) /*0x7b7a6b*/
-    return -1; /*0x7b7a6f*/
+    return (gamemd::AbstractClass **)(-1); /*0x7b7a6f*/
   while ( 1 ) /*0x7b7a7a*/
   {
     v7 = *(unsigned int *)this->__pad_0; /*0x7b7a7a*/
@@ -505,7 +505,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
   if ( *(unsigned int *)this->__pad_0 ) /*0x7b7aa4*/
     v8 = wcslen(*(const wchar_t **)this->__pad_0); /*0x7b7aab*/
   if ( v4 >= v8 ) /*0x7b7ab5*/
-    return -1; /*0x7b7ab9*/
+    return (gamemd::AbstractClass **)(-1); /*0x7b7ab9*/
   v9 = v4; /*0x7b7ac1*/
   while ( 1 ) /*0x7b7ac3*/
   {
@@ -559,7 +559,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
     wcscpy((wchar_t *)*a4, v20); /*0x7b7bd6*/
   if ( v19 ) /*0x7b7be0*/
     __3_YAXPAX_Z(v19); /*0x7b7be3*/
-  return v23 + 1; /*0x7b7a6d*/
+  return (gamemd::AbstractClass **)(v23 + 1); /*0x7b7a6d*/
 
 }
 }
@@ -652,7 +652,7 @@ char * String::Copy(const char * a2, void *a2_2)
 {
 
   strcpy((char *)(this), a2); /*0x4f4c8c*/
-  return this; /*0x4f4c97*/
+  return (char *)(this); /*0x4f4c97*/
 
 }
 } // namespace gamemd
@@ -738,7 +738,7 @@ char * String::Trim(void *a1_1)
       *(this + i) = 0; /*0x727d4c*/
     }
   }
-  return this; /*0x727d55*/
+  return (char *)(this); /*0x727d55*/
 
 }
 } // namespace gamemd
@@ -749,7 +749,7 @@ ObjectClass * String::FormatDword(char * Buffer)
 {
 
   sprintf(Buffer, "%d", dword_822D1C); /*0x777b3f*/
-  return Buffer; /*0x777b49*/
+  return (gamemd::ObjectClass *)(Buffer); /*0x777b49*/
 
 }
 } // namespace gamemd
@@ -760,7 +760,7 @@ ObjectClass * String::CopyConstant(char * Destination)
 {
 
   strncpy(Destination,(const char *)(g_Str_gsmallwoo), 0x20u); /*0x777b6b*/
-  return Destination; /*0x777b75*/
+  return (gamemd::ObjectClass *)(Destination); /*0x777b75*/
 
 }
 } // namespace gamemd
@@ -1290,7 +1290,7 @@ char * String::GetOrEmpty()
 
   result = *(char **)this->__pad_0; /*0x7b5400*/
   if ( !*(unsigned int *)this->__pad_0 ) /*0x7b5400*/
-    return &g_INI_DefaultBuffer; /*0x7b5406*/
+    return (char *)(&g_INI_DefaultBuffer); /*0x7b5406*/
   return result; /*0x7b540b*/
 
 }
@@ -1305,7 +1305,7 @@ char * String::GetOrEmpty_Alt()
 
   result = *(char **)this->__pad_0; /*0x7b5440*/
   if ( !*(unsigned int *)this->__pad_0 ) /*0x7b5440*/
-    return &g_INI_DefaultBuffer; /*0x7b5446*/
+    return (char *)(&g_INI_DefaultBuffer); /*0x7b5446*/
   return result; /*0x7b544b*/
 
 }
@@ -1492,7 +1492,7 @@ namespace gamemd {
 int String::Wrapper5to4(CampaignScore * aP0, int a2, int a3, int a4)
 {
 
-  return String_Helper_7CCA34((uint8_t *)(aP0), a2, a3, a4, 0); /*0x7cca33*/
+  return String_Helper_7CCA34((uint8_t *)(aP0), a2,(uint8_t *)(a3), a4, 0); /*0x7cca33*/
 
 }
 } // namespace gamemd

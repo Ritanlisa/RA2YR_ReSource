@@ -74,7 +74,7 @@ int TabClass::DrawPower(void *a1)
     wcscpy(lParam, (const wchar_t *)other + 45077); /*0x658386*/
     if ( other == (void *)HouseClass_Observer ) /*0x658395*/
     {
-      BuildingAnimByName = (Color *)FindBuildingAnimByName(g_INI_Key_LightGrey, 1); /*0x6583a1*/
+      BuildingAnimByName = (Color *)FindBuildingAnimByName((gamemd::AbstractClass *)(g_INI_Key_LightGrey), 1); /*0x6583a1*/
     }
     else if ( *((unsigned char *)other + 501) ) /*0x6583a8*/
     {

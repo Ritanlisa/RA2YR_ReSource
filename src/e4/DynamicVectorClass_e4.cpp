@@ -64,7 +64,7 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x525197*/
       this->m_8 = a2; /*0x52519f*/
       BYTE1(this->m_C) = a3 == 0; /*0x5251a2*/
-      return 1; /*0x5251a8*/
+      return (gamemd::AbstractClass **)(1); /*0x5251a8*/
     }
     else
     {
@@ -74,7 +74,7 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
   else
   {
     (*(void (**)(_VectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5251b2*/
-    return 1; /*0x5251b8*/
+    return (gamemd::AbstractClass **)(1); /*0x5251b8*/
   }
 
 }
@@ -181,7 +181,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
   v15 = *(unsigned int *)&this->__pad_5[3]; /*0x58926b*/
   if ( v15 < *(unsigned int *)this->__tail_10 ) /*0x589273*/
     *(unsigned int *)this->__tail_10 = v15; /*0x589275*/
-  return 1; /*0x589278*/
+  return (gamemd::AbstractClass **)(1); /*0x589278*/
 
 }
 }
@@ -300,7 +300,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
   v15 = this->m_8; /*0x628579*/
   if ( v15 < this->m_10 ) /*0x628581*/
     this->m_10 = v15; /*0x628583*/
-  return 1; /*0x628586*/
+  return (gamemd::AbstractClass **)(1); /*0x628586*/
 
 }
 }
@@ -409,7 +409,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
   v13 = this->m_8; /*0x628cde*/
   if ( v13 < this->m_10 ) /*0x628ce6*/
     this->m_10 = v13; /*0x628ce8*/
-  return 1; /*0x628ceb*/
+  return (gamemd::AbstractClass **)(1); /*0x628ceb*/
 
 }
 }
@@ -712,7 +712,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   *(unsigned int *)this->VectorClass = &vt_VectorClass; /*0x4779fa*/
   if ( this != (DynamicVectorClass *)aP1 ) /*0x477a00*/
   {
-    VectorClass::Destroy((int)this); /*0x477a02*/
+    ((VectorClass *)((int)this))->Destroy(); /*0x477a02*/
     v3 = aP1[2]; /*0x477a08*/
     *(unsigned int *)&((unsigned int *)this)[3] = v3; /*0x477a0d*/
     if ( v3 ) /*0x477a10*/

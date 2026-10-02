@@ -100,7 +100,7 @@ LABEL_14:
     ((Vector *)((int)v11))->Clear(); /*0x533ecf*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x533ed8*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533ee0*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533ee9*/
+    ((HashTable *)((INIClass *)&v9))->DestroyHashTableINIClass(); /*0x533ee9*/
     return 1; /*0x533eee*/
   }
   else
@@ -111,7 +111,7 @@ LABEL_14:
     ((Vector *)((int)v11))->Clear(); /*0x533f1c*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x533f25*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533f2d*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533f36*/
+    ((HashTable *)((INIClass *)&v9))->DestroyHashTableINIClass(); /*0x533f36*/
     return 0; /*0x533f3b*/
   }
 
@@ -144,7 +144,7 @@ AbstractClass * KeyboardConfig::ReleaseBuffer(int a2, void *a2_2)
   *(unsigned int *)this = (unsigned int)(v3); /*0x538be8*/
   *((unsigned int *)this + 2) = (unsigned int)(v7); /*0x538bea*/
   *((unsigned int *)this + 4) = 0; /*0x538bed*/
-  return 1; /*0x538bf4*/
+  return (gamemd::AbstractClass *)(1); /*0x538bf4*/
 
 }
 } // namespace gamemd

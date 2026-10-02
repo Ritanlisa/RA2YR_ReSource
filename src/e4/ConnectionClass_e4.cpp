@@ -163,7 +163,7 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
     ++*((unsigned int *)this + 16); /*0x48c015*/
   else
     ++*((unsigned int *)this + 15); /*0x48c026*/
-  return 1; /*0x48bfc9*/
+  return (gamemd::AbstractClass **)(1); /*0x48bfc9*/
 
 }
 } // namespace gamemd

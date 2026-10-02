@@ -103,7 +103,7 @@ struct TeamClass {
     AbstractClass * * FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2);
     AbstractClass * * UpdateMembers();
     BOOL Check(void *a1, void *a2, void *a3);
-    CampaignClass * * Cleanup(BuildingClass * aP1);
+    CampaignClass * * Cleanup(int aP1);
     TeamClass * * ProcessScriptActions(unsigned int * a2, int a3);
     TeamTypeClass * * RecruitMember(int a2);
     TechnoClass * * RemoveAllMembers();

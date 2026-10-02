@@ -81,7 +81,7 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
     *aP1 = v5; /*0x6d23e5*/
     aP1[1] = v6; /*0x6d23e7*/
     aP1[2] = (unsigned int *)(0); /*0x6d23ec*/
-    return aP1; /*0x6d23ea*/
+    return (unsigned int *)(aP1); /*0x6d23ea*/
   }
 
 }

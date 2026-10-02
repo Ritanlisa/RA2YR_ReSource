@@ -270,13 +270,13 @@ LABEL_85:
       v12 = 192; /*0x60af10*/
 LABEL_87:
       v15[50] = v12; /*0x60af19*/
-      return 1; /*0x60af1d*/
+      return (gamemd::AbstractClass **)(1); /*0x60af1d*/
     }
 LABEL_86:
     v12 = 0; /*0x60af17*/
     goto LABEL_87; /*0x60af17*/
   }
-  return 1; /*0x60af23*/
+  return (gamemd::AbstractClass **)(1); /*0x60af23*/
 
 }
 }

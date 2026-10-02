@@ -100,7 +100,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   v12 = this->m_8; /*0x76bb6c*/
   if ( v12 < this->m_10 ) /*0x76bb74*/
     this->m_10 = v12; /*0x76bb76*/
-  return 1; /*0x76bb79*/
+  return (gamemd::AbstractClass **)(1); /*0x76bb79*/
 
 }
 }
@@ -191,7 +191,7 @@ int WDTState_4::Constructor()
 
   ((ComPtr *)((ComPtr *)this))->Constructor(); /*0x76bc63*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76bc68*/
-  return this->__pad_0; /*0x76bc70*/
+  return (int)(this->__pad_0); /*0x76bc70*/
 
 }
 } // namespace gamemd

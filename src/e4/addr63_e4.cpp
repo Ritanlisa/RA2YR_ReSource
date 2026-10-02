@@ -489,7 +489,7 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
   HWND v10; // esi
   HWND v11; // esi
 
-  result = (int)(BaseDialogProc(hWnd, a2, a3, a4));
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), a2, a3, a4));
   if ( !result ) /*0x630c30*/
   {
     WindowLongA = GetWindowLongA(hWnd, 8); /*0x630c46*/
@@ -567,7 +567,7 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
                     while ( v7 < (int)dword_A8DB44 ); /*0x630d4f*/
                   }
                   *(unsigned char *)(WindowLongA + 8) = 1; /*0x630d53*/
-                  PhoneEditor::PopulateList((HWND *)WindowLongA); /*0x630d57*/
+                  ((PhoneEditor *)((HWND *)WindowLongA))->PopulateList(); /*0x630d57*/
                   if ( dword_A8DABC == -1 ) /*0x630d63*/
                   {
                     v8 = GetDlgItem(*(HWND *)WindowLongA, 1509); /*0x630d71*/
@@ -653,7 +653,7 @@ AbstractClass * * E4Recv_631640::sub_631640()
         while ( v3 < (int)dword_A8DB44 ); /*0x6316a0*/
       }
       LOBYTE(((unsigned int *)this)[0]) = 1; /*0x6316a4*/
-      PhoneEditor::PopulateList((PhoneEditor *)this); /*0x6316a8*/
+      ((PhoneEditor *)((PhoneEditor *)this))->PopulateList(); /*0x6316a8*/
       if ( dword_A8DABC == -1 ) /*0x6316b4*/
       {
         v4 = GetDlgItem((HWND)this->AbstractClass, 1509); /*0x6316be*/
@@ -675,7 +675,7 @@ void NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4
   wchar_t lParam[64]; // [esp+14h] [ebp-3F4h] BYREF
   LONG dwNewLong[221]; // [esp+94h] [ebp-374h] BYREF
 
-  result = (int)(BaseDialogProc(hWnd, a2, a3, (unsigned int)a4));
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), a2, a3, (unsigned int)a4));
   if ( !result ) /*0x631793*/
   {
     WindowLongA = GetWindowLongA(hWnd, 8); /*0x6317a2*/
@@ -698,8 +698,8 @@ void NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4
           SendDlgItemMessageA(hWnd, 1635, 0xF1u, 0, 0); /*0x63193b*/
           UpdateWindow((HWND)(hWnd)); /*0x631948*/
           ShowWindow(hWnd, 0); /*0x631953*/
-          UpdateWindow(g_hWnd); /*0x63195c*/
-          ((Network *)((LONG)dwNewLong))->sendGameEvent(v6 + 12); /*0x63196d*/
+          UpdateWindow((HWND)(g_hWnd)); /*0x63195c*/
+          ((Network *)((LONG)dwNewLong))->sendGameEvent((unsigned int *)(v6 + 12)); /*0x63196d*/
           ShowWindow(hWnd, 5); /*0x631975*/
           return 0; /*0x631983*/
         }
@@ -845,12 +845,12 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   v4 = Viewport[3]; /*0x635586*/
   vtable1 = (void *)(((unsigned int *)this)[0]); /*0x635589*/
   v21[3] = v4; /*0x63558c*/
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v16, *(unsigned char **)(*(unsigned int *)vtable1 + 4)); /*0x635599*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords((unsigned int *)(v16), *(unsigned char **)(*(unsigned int *)vtable1 + 4)); /*0x635599*/
   v15[0] = *ScenarioClassActionCoords; /*0x6355a0*/
   v15[1] = ScenarioClassActionCoords[1]; /*0x6355a7*/
   v15[2] = ScenarioClassActionCoords[2]; /*0x6355b2*/
-  v7 = (int *)(ToCoordPixel(&v14, v15)); /*0x6355ba*/
-  v8 = ComputeBounds(v22, 8, *v7, v7[1]); /*0x6355cf*/
+  v7 = (int *)(ToCoordPixel((unsigned int *)(&v14), v15)); /*0x6355ba*/
+  v8 = ComputeBounds((gamemd::AbstractClass *)(v22), 8, *v7, v7[1]); /*0x6355cf*/
   v9 = 3; /*0x6355d6*/
   v10 = v8[1] - 4; /*0x6355e8*/
   v11 = v8[2] + 8; /*0x6355ee*/
@@ -884,7 +884,7 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
     --v9; /*0x63566c*/
   }
   while ( v9 ); /*0x63566d*/
-  return result; /*0x63566f*/
+  return (gamemd::AbstractClass **)(result); /*0x63566f*/
 
 }
 }
@@ -918,12 +918,12 @@ int E4Recv_635680::sub_635680(int a2)
   v20[1] = (unsigned int)((int *)(Viewport[1]));
   v20[2] = (unsigned int)((int *)(Viewport[2]));
   v20[3] = Viewport[3]; /*0x6356b0*/
-  Coords = ScriptAction::GetCoords((ScriptAction *)this, v11); /*0x6356b4*/
+  Coords = ((ScriptAction *)((ScriptAction *)this))->GetCoords((unsigned int *)(v11)); /*0x6356b4*/
   v10[0] = *Coords; /*0x6356bb*/
   v10[1] = Coords[1]; /*0x6356c6*/
   v10[2] = Coords[2]; /*0x6356d1*/
-  v5 = (int *)(ToCoordPixel(&v9, v10)); /*0x6356d5*/
-  v6 = (int *)(ComputeBounds(v21, 8, *v5, v5[1])); /*0x6356ea*/
+  v5 = (int *)(ToCoordPixel((unsigned int *)(&v9), v10)); /*0x6356d5*/
+  v6 = (int *)(ComputeBounds((gamemd::AbstractClass *)(v21), 8, *v5, v5[1])); /*0x6356ea*/
   v16 = *v6; /*0x6356f1*/
   v17 = v6[1]; /*0x6356f8*/
   v18 = v6[2]; /*0x6356ff*/
@@ -1148,7 +1148,7 @@ void ExecutePlanningQueue()
         *(unsigned char *)(v17 + 28) = 1; /*0x6373b8*/
         ((VectorClass *)((DynamicVectorClass *)&dword_AC4C98))->Append(&v33); /*0x6373c2*/
       }
-      TeamClass::Cleanup(v4, v5); /*0x6373ca*/
+      ((TeamClass *)(v4))->Cleanup(v5); /*0x6373ca*/
   LABEL_34:
       --v5; /*0x6373cf*/
     }
@@ -1170,7 +1170,7 @@ void ExecutePlanningQueue()
       ((FactoryClass *)((FactoryClass *)v21))->ClearObjects(); /*0x637405*/
       v22 = *(unsigned int *)(v21 + 16); /*0x63740a*/
       for ( i = 0; i < v22; ++i ) /*0x637411*/
-        ScriptAction::PlaceObject(v21, *(unsigned int **)(*(unsigned int *)(v21 + 4) + 4 * i)); /*0x63741c*/
+        ScriptAction::PlaceObject((void *)(v21), *(unsigned int **)(*(unsigned int *)(v21 + 4) + 4 * i)); /*0x63741c*/
       ScriptAction::FindSquadMember((ScriptAction *)v21); /*0x637428*/
       v24 = ++v20 < v34; /*0x637432*/
       *(unsigned char *)(v21 + 28) = 0; /*0x637434*/
@@ -1191,7 +1191,7 @@ void ExecutePlanningQueue()
         if ( !byte_AC4C08 ) /*0x6374cb*/
         {
           byte_AC4C08 = 1; /*0x6374de*/
-          StringCSF = GetStringCSF(g_Str_MSG_PostContinualCommand, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x6374e5*/
+          StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_PostContinualCommand), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x6374e5*/
           AddMessageListPlayerMessage(StringCSF, 480); /*0x6374f1*/
           result = PlayVocClass(dword_8871E0->ShellButtonSlideSound, 0x2000, 1.0, 0); /*0x63750e*/
         }
@@ -1207,7 +1207,7 @@ void ExecutePlanningQueue()
       if ( !byte_AC4C08 ) /*0x637473*/
       {
         byte_AC4C08 = 1; /*0x63748a*/
-        v27 = GetStringCSF(g_Str_MSG_PostTerminatingCommand, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x637491*/
+        v27 = GetStringCSF((wchar_t *)(g_Str_MSG_PostTerminatingCommand), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x637491*/
         AddMessageListPlayerMessage(v27, 480); /*0x63749d*/
         result = PlayVocClass(dword_8871E0->ShellButtonSlideSound, 0x2000, 1.0, 0); /*0x6374b8*/
       }
@@ -1286,7 +1286,7 @@ AbstractClass * * sub_637920()
       if ( v4 > 0 ) /*0x63794e*/
       {
         do /*0x637961*/
-          ScriptAction::PlaceObject(v3, *(unsigned int **)(*(unsigned int *)(v3 + 4) + 4 * v1++)); /*0x637959*/
+          ScriptAction::PlaceObject((void *)(v3), *(unsigned int **)(*(unsigned int *)(v3 + 4) + 4 * v1++)); /*0x637959*/
         while ( v1 < v4 ); /*0x637961*/
       }
       ScriptAction::FindSquadMember((ScriptAction *)v3); /*0x637965*/
@@ -1353,12 +1353,12 @@ void ExecuteActionPlanManager(IUnknown * a1, char * a2)
   unsigned int v42[3]; // [esp+30h] [ebp-Ch] BYREF
 
   v2 = a2; /*0x638127*/
-  v38 = a1; /*0x638129*/
+  v38 = (gamemd::BuildingClass *)(a1); /*0x638129*/
   v37 = a2; /*0x63812f*/
   if ( !a1 ) /*0x638133*/
     return 0; /*0x638133*/
   v34 = (void *)a2[2] == dword_A83D4C->Object_field_0x30; /*0x63814c*/
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v42, a2); /*0x638151*/
+  ScenarioClassActionCoords = (int *)(GetScenarioClassActionCoords(v42,(unsigned char *)(a2))); /*0x638151*/
   if ( *ScenarioClassActionCoords == -1 && ScenarioClassActionCoords[1] == -1 && ScenarioClassActionCoords[2] == -1 ) /*0x63816b*/
     return 0; /*0x63816b*/
   v4 = *ScenarioClassActionCoords; /*0x638174*/
@@ -1381,11 +1381,11 @@ void ExecuteActionPlanManager(IUnknown * a1, char * a2)
     while ( 1 ) /*0x6381a9*/
     {
       v10 = (ScriptAction *)*((unsigned int *)stru_AC4B30.Array_field_0x4 + v9); /*0x6381a9*/
-      if ( ScriptAction::GetActionCoordinates(v10, v39, v40, v41) /*0x6381d5*/
+      if ( ((ScriptAction *)(v10))->GetActionCoordinates(v39, v40, v41) /*0x6381d5*/
         && (*(unsigned int *)v36 == -1 || *(unsigned int *)v36 == v10->ScriptAction_field_0x18[0]) )
       {
-        v11 = (TeamClass *)Function::Method_6342D0(v10, 0); /*0x6381db*/
-        LeaderIndex = TeamClass::GetLeaderIndex(v11); /*0x6381e2*/
+        v11 = (TeamClass *)((Function *)(v10))->Method_6342D0(0); /*0x6381db*/
+        LeaderIndex = ((TeamClass *)(v11))->GetLeaderIndex(); /*0x6381e2*/
         if ( v8 == -1 || v8 == LeaderIndex ) /*0x6381ee*/
           break; /*0x6381ee*/
       }
@@ -1456,7 +1456,7 @@ void ExecuteActionPlanManager(IUnknown * a1, char * a2)
   {
     v21 = (ScriptAction *)RA2_OPNEW(0x9Cu); /*0x638337*/
     if ( v21 ) /*0x638341*/
-      *(unsigned int *)v36 = ScriptAction::Constructor(v21, (int)v38); /*0x63834b*/
+      *(unsigned int *)v36 = ((ScriptAction *)(v21))->Constructor((int)v38); /*0x63834b*/
     else
       *(unsigned int *)v36 = 0; /*0x638351*/
     ScriptActionVector::PushBack((ScriptActionVector *)&stru_AC4B30.__pad_EC[92], v36); /*0x638363*/
@@ -1592,7 +1592,7 @@ void ExecuteActionPlanManager(IUnknown * a1, char * a2)
   }
   else
   {
-    ScriptAction::CreatePlacementAction(v35, v14, v2); /*0x63858e*/
+    ((ScriptAction *)(v35))->CreatePlacementAction(v14, v2); /*0x63858e*/
   }
   if ( v22 ) /*0x638595*/
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 472), 0x2000, 1.0, 0); /*0x6385ae*/
@@ -1651,7 +1651,7 @@ void FactoryClass_ClearProduction(unsigned int * a1, int a2)
                 if ( !v9->Array_field_0x10 ) /*0x638797*/
                 {
                   if ( v9 ) /*0x6387a3*/
-                    FactoryClass::RemoveFromArrays((FactoryClass *)v9, 1); /*0x6387a9*/
+                    ((FactoryClass *)((FactoryClass *)v9))->RemoveFromArrays(1); /*0x6387a9*/
                 }
               }
             }
@@ -1666,7 +1666,7 @@ void FactoryClass_ClearProduction(unsigned int * a1, int a2)
                   Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x6387dd*/
               }
               DecFactoryClassCounter((unsigned int)Object_field_0x30); /*0x6387e2*/
-              VectorClass::EraseAt((VectorClass *)&stru_AC4B30.__pad_EC[36], (int)&Block); /*0x6387f1*/
+              ((VectorClass *)((VectorClass *)&stru_AC4B30.__pad_EC[36]))->EraseAt((int)&Block); /*0x6387f1*/
             }
             (*(void (**)(int))(*(unsigned int *)(v6 + 4) + 12))(v6 + 4); /*0x6387fc*/
             v5 = v15; /*0x6387ff*/
@@ -1919,7 +1919,7 @@ unsigned int ** sub_6392D0(int a1, int a2)
   while ( 1 ) /*0x6392f8*/
   {
     v3 = (unsigned int **)*((unsigned int *)dword_AC4B34 + v2); /*0x6392f8*/
-    Coords = ScriptAction::GetCoords(v3, v11); /*0x6392fd*/
+    Coords = ((ScriptAction *)(v3))->GetCoords(v11); /*0x6392fd*/
     v10[0] = *Coords; /*0x639304*/
     v10[1] = Coords[1]; /*0x63930b*/
     v10[2] = Coords[2]; /*0x639316*/
@@ -1957,7 +1957,7 @@ unsigned int ** sub_6393A0(int a1, int a2)
   while ( 1 ) /*0x6393c8*/
   {
     v3 = (unsigned int **)*((unsigned int *)dword_AC4C1C + v2); /*0x6393c8*/
-    Coords = ScriptAction::GetCoords(v3, v11); /*0x6393cd*/
+    Coords = ((ScriptAction *)(v3))->GetCoords(v11); /*0x6393cd*/
     v10[0] = *Coords; /*0x6393d4*/
     v10[1] = Coords[1]; /*0x6393db*/
     v10[2] = Coords[2]; /*0x6393e6*/
@@ -2087,7 +2087,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
             WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v38, v37); /*0x639926*/
             *(unsigned int *)&v39[7] = *(unsigned int *)WaypointCoords; /*0x63992d*/
             v39[11] = WaypointCoords[4]; /*0x63993e*/
-            ScriptAction::CreatePlacementAction(v32, v19, v39); /*0x639942*/
+            ((ScriptAction *)(v32))->CreatePlacementAction(v19, v39); /*0x639942*/
             v33 = (ScriptAction *)((char *)v33 + 1); /*0x63994e*/
           }
           while ( (int)v33 < v7 ); /*0x639952*/
@@ -2589,7 +2589,7 @@ AbstractClass * * sub_63B150()
       v23[1] = Viewport[1]; /*0x63b1e2*/
       v23[2] = Viewport[2]; /*0x63b1e9*/
       v23[3] = Viewport[3]; /*0x63b1f7*/
-      Coords = ScriptAction::GetCoords((ScriptAction *)v5, v18); /*0x63b1fb*/
+      Coords = ((ScriptAction *)((ScriptAction *)v5))->GetCoords(v18); /*0x63b1fb*/
       v17[0] = *Coords; /*0x63b202*/
       v17[1] = Coords[1]; /*0x63b20d*/
       v17[2] = Coords[2]; /*0x63b218*/
@@ -4678,7 +4678,7 @@ int sub_638F90(int a1, int a2)
 
   if ( !dword_AC4CCC ) /*0x638f9d*/
     return 0; /*0x638f9d*/
-  Coords = ScriptAction::GetCoords((unsigned int **)dword_AC4CCC, v8); /*0x638fa8*/
+  Coords = ((ScriptAction *)((unsigned int **)dword_AC4CCC))->GetCoords(v8); /*0x638fa8*/
   v7[0] = *Coords; /*0x638faf*/
   v7[1] = Coords[1]; /*0x638fba*/
   v7[2] = Coords[2]; /*0x638fc5*/

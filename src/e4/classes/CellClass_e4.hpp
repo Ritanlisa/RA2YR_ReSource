@@ -167,12 +167,12 @@ struct CellClass {
     int StubReturn328();
     static double DetermineTileType(...);  // C2597 interim stub
     static double GetCoords(...);  // C2597 interim stub
-    static double GetTerrainFlag(...);  // C2597 interim stub
+    int GetTerrainFlag(int a2);  // was C2597 interim stub, := truth 0x0x5471f0
      double IsBuildable(...);  // C2597 interim stub
     static double IsTerrainType(...);  // C2597 interim stub
     static double SetTerrainType(...);  // C2597 interim stub
     static double ClearCellContents(...);  // C2597 interim stub
-    static double GetScreenRect(...);  // C2597 interim stub
+    int * GetScreenRect(int *a2);  // was C2597 interim stub, := truth 0x0x47ff80
     static double UpdateAnimations(...);  // C2597 interim stub
     static double InBounds(...);  // C2597 interim stub
     static double InMapDataRange(...);  // C2597 interim stub
@@ -186,8 +186,15 @@ struct CellClass {
     void AddObject(unsigned int *a2);  // 0x4733a0
     unsigned int * FindBuilding(char a2);  // 0x47eba0
     int QuickPassable();  // 0x487950
-    int IsPassable(int a2, int a3, int a4);  // 0x47c620
+    int IsPassable(int aP1, int aP2, int aP3);  // 0x47c620
     unsigned int * UpdateZone();  // 0x486bf0
+    void ApplyCliffTileModifications(int a2);  // 0x57f200
+    void DTOR();  // 0x47bb60
+    unsigned char * RegisterForRedraw(int16_t *a2);  // 0x7235a0
+    char ApplyTileModification4(int16_t *a2);  // 0x57d530
+    char ApplyTileModification3(int16_t *a2);  // 0x57cf60
+    char ApplyTileModification2(int16_t *a2);  // 0x57c2b0
+    char ApplyTileModification(int16_t *a2);  // 0x57bcf0
 };
 
 } // namespace gamemd

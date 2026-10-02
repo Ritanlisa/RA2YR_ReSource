@@ -526,7 +526,7 @@ LABEL_11:
             while ( 1 )
             {
               v7 = (char *)**((unsigned int **)g_VocAudioConfig + v4); /*0x751692*/
-              v8 = v7 ? VocClass::GetSampleName(v7) : g_Str_Invalid_Voc;
+              v8 = (char *)(v7 ? VocClass::GetSampleName(v7) : g_Str_Invalid_Voc);
               if ( !_strcmpi(SampleName, v8) ) /*0x7516a6*/
                 break; /*0x7516a6*/
               if ( ++v4 >= g_VocPlayState ) /*0x7516ba*/
@@ -577,7 +577,7 @@ int SaveGame::SaveIteratedData(int a2)
   int result; // eax
   int v7; // ebx
 
-  v2 = (char *)(a2); /*0x413853*/
+  v2 = (int)((char *)(a2)); /*0x413853*/
   v3 = 0; /*0x413858*/
   for ( i = &this->__pad_0[4]; ; i += 24 ) /*0x41385a*/
   {
@@ -626,7 +626,7 @@ int SaveGame::WriteObject(int a1, int a2)
 
   v2 = StreamClass::ResetPosition((LocomotionClass *)a1, a2); /*0x513cc8*/
   v3 = (*((int (**)(FootClass *))((unsigned int *)a1)[0]->TechnoClass + 33))(((unsigned int *)a1)[0]); /*0x513ccc*/
-  FrameSnapshot::InitMax(v5, 2 * *(unsigned int *)(v3 + 1820)); /*0x513cdf*/
+  ((FrameSnapshot *)(v5))->InitMax(2 * *(unsigned int *)(v3 + 1820)); /*0x513cdf*/
   qmemcpy(&a1->HeadToCoord[2], v5, 0x18u); /*0x513cf2*/
   return v2; /*0x513cf4*/
 

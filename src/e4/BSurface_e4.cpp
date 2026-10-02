@@ -293,7 +293,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   Buffer = this->Buffer; /*0x7bca36*/
   *((unsigned int *)this + 7) = v18; /*0x7bca39*/
   (*(void (**)(void *))(*(unsigned int *)Buffer + 96))(Buffer); /*0x7bca3e*/
-  return this->XSurface; /*0x7bca43*/
+  return (unsigned int *)(this->XSurface); /*0x7bca43*/
 
 }
 }

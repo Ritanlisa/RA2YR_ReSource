@@ -36,7 +36,7 @@ int Particle::Init(int aP1, int aP2, int aP3, int aP4, int aP5, int a7, char aP7
   *((char *)this + 84) = 256; /*0x466546*/
   *((char *)this + 85) = 0; /*0x466550*/
   *((unsigned char *)this + 344) = 0; /*0x466556*/
-  return result; /*0x466545*/
+  return (int)(result); /*0x466545*/
 
 }
 }

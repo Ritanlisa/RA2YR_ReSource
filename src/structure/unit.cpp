@@ -282,11 +282,11 @@ int __thiscall UnitClass::GetExitCell(int a1,unsigned int *a2,unsigned int *a3)
   a2 = a2; /*0x54e3b6*/
   if ( !*(unsigned char *)(a2[433] + 3432) ) /*0x54e3c2*/
     return (*(int (**)(unsigned int *, unsigned int))(*a2 + 988))(a2, 0); /*0x54e3d2*/
-  v6 = RA2_OPNEW(8u); /*0x54e3e3*/
+  v6 = (unsigned int *)(RA2_OPNEW(8u)); /*0x54e3e3*/
   a3 = a3; /*0x54e3e8*/
   v6 = v6; /*0x54e3ec*/
   v9 = a3 == 0; /*0x54e3f1*/
-  *v6 = a2; /*0x54e3f3*/
+  *v6 = (unsigned int)(a2); /*0x54e3f3*/
   if ( v9 ) /*0x54e3f5*/
   {
     v10 = ((unsigned int)((*ProgressTimer::GetValue((unsigned short *)a2 + 452, &a2) >> 12) + 1) >> 1) & 7; /*0x54e414*/
@@ -543,7 +543,7 @@ int UnitClass::Deploy(void * a1)
   {
     if ( (*(uint8_t (**)(TeleportLocomotionClass *))(*(unsigned int *)a1->LocomotionClass + 16))(a1) ) /*0x71936a*/
     {
-      v7 = ((unsigned int *)v2)[0]; /*0x719375*/
+      v7 = (ra2::game::FootClass *)(((unsigned int *)v2)[0]); /*0x719375*/
       v8 = &v2->MovingDestination[2]; /*0x719378*/
       if ( ((unsigned int *)v7)[0] == v2->MovingDestination[2] && ((unsigned int *)v7)[1] == v2->LastCoords[0] && ((unsigned int *)v7)[2] == v2->LastCoords[1] /*0x7193c1*/
         || *v8 == ((char *)&g_BuildingLoadQueue_Array)
@@ -566,7 +566,7 @@ int UnitClass::Deploy(void * a1)
         v11 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x7193fb*/
         if ( v11 ) /*0x719405*/
         {
-          location = ((unsigned int *)v2)[0]; /*0x71940b*/
+          location = (int *)(((unsigned int *)v2)[0]); /*0x71940b*/
           v56 = *location; /*0x71941c*/
           v57 = location[1]; /*0x719423*/
           v58 = location[2]; /*0x71942f*/
@@ -624,9 +624,9 @@ int UnitClass::Deploy(void * a1)
         {
           v25 = &v2->State; /*0x719523*/
         }
-        *p_State = (gamemd::TeleportLocomotionClass *)(*v25);
+        *p_State = (int)((gamemd::TeleportLocomotionClass *)(*v25));
         v2->Timer[0] = v25[1]; /*0x719542*/
-        v26 = a1; /*0x719548*/
+        v26 = (gamemd::TeleportLocomotionClass *)(a1); /*0x719548*/
         v2->Timer[1] = v25[2]; /*0x71954c*/
         if ( (int)v26 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3072) ) /*0x71955b*/
         {
@@ -647,11 +647,11 @@ int UnitClass::Deploy(void * a1)
         if ( ((unsigned int *)v2)[0]->parasiteEatingMe ) /*0x7195bf*/
           BuildingClass::Deploy(v54, (int)v8, (int)p_State); /*0x7195cf*/
         (*((void (**)(FootClass *, unsigned int))((unsigned int *)v2)[0]->TechnoClass + 73))(((unsigned int *)v2)[0], 0); /*0x7195db*/
-        v29 = ((unsigned int *)v2)[0]; /*0x7195e1*/
+        v29 = (ra2::game::FootClass *)(((unsigned int *)v2)[0]); /*0x7195e1*/
         v30 = *(unsigned int *)((*((int (**)(FootClass *))v29->TechnoClass + 33))(v29) + 1400); /*0x7195ee*/
         if ( v30 != -1 || (v30 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 540), v30 != -1) ) /*0x719608*/
         {
-          v31 = ((unsigned int *)v29)[0]; /*0x71960a*/
+          v31 = (int *)(((unsigned int *)v29)[0]); /*0x71960a*/
           v56 = *v31; /*0x719614*/
           v57 = v31[1]; /*0x71961b*/
           v58 = v31[2]; /*0x719624*/
@@ -660,17 +660,17 @@ int UnitClass::Deploy(void * a1)
         (*((void (**)(FootClass *, int *))((unsigned int *)v2)[0]->TechnoClass + 109))(((unsigned int *)v2)[0], &v2->MovingDestination[2]); /*0x719637*/
         IDA_LOWORD(a1) = *v8 / 256; /*0x71964c*/
         IDA_HIWORD(a1) = v2->LastCoords[0] / 256; /*0x719664*/
-        *(unsigned int *)v55 = a1; /*0x71966d*/
+        *(unsigned int *)v55 = (unsigned int)(a1); /*0x71966d*/
         v32 = (CrateClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v55); /*0x71967f*/
         (*((void (**)(FootClass *, int *))((unsigned int *)v2)[0]->TechnoClass + 109))(((unsigned int *)v2)[0], &v2->MovingDestination[2]); /*0x719684*/
         ((unsigned int *)v2)[0] = (v32[26].CrateClass_field_0x08 & 0x100) != 0; /*0x719698*/
         (*((void (**)(FootClass *, unsigned int))((unsigned int *)v2)[0]->TechnoClass + 115))(((unsigned int *)v2)[0], 0); /*0x7196b2*/
         (*((void (**)(FootClass *, int))((unsigned int *)v2)[0]->TechnoClass + 73))(((unsigned int *)v2)[0], 1); /*0x7196bf*/
-        v33 = ((unsigned int *)v2)[0]; /*0x7196c5*/
+        v33 = (ra2::game::FootClass *)(((unsigned int *)v2)[0]); /*0x7196c5*/
         v34 = *(unsigned int *)((*((int (**)(FootClass *))v33->TechnoClass + 33))(v33) + 1396); /*0x7196d2*/
         if ( v34 != -1 || (v34 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 536), v34 != -1) ) /*0x7196ec*/
         {
-          v35 = ((unsigned int *)v33)[0]; /*0x7196ee*/
+          v35 = (int *)(((unsigned int *)v33)[0]); /*0x7196ee*/
           v56 = *v35; /*0x7196f8*/
           v57 = v35[1]; /*0x7196ff*/
           v58 = v35[2]; /*0x719708*/
@@ -680,7 +680,7 @@ int UnitClass::Deploy(void * a1)
         (*(void (**)(TeleportLocomotionClass *))(*(unsigned int *)v2->LocomotionClass + 72))(v2); /*0x719725*/
         CrateClass::ProcessPickup(v32, (int)((unsigned int *)v2)[0]); /*0x71972e*/
         (*((void (**)(FootClass *, unsigned int, int))((unsigned int *)v2)[0]->TechnoClass + 288))(((unsigned int *)v2)[0], 0, 1); /*0x71973c*/
-        v36 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x719747*/
+        v36 = (unsigned int)((AnimClass *)RA2_OPNEW(0x1C8u)); /*0x719747*/
         if ( v36 ) /*0x719751*/
         {
           v37 = ((unsigned int *)v2)[0]; /*0x719758*/

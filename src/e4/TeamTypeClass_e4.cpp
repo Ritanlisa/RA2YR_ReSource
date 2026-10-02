@@ -137,7 +137,7 @@ LABEL_6:
     v4 = v3; /*0x691c6c*/
     if ( v3 ) /*0x691c73*/
     {
-      ((AbstractTypeClass *)(v3))->Constructor(Source); /*0x691c7c*/
+      ((AbstractTypeClass *)(v3))->Constructor((char *)(Source)); /*0x691c7c*/
       v4[39] = 0; /*0x691c81*/
       v4[40] = 0; /*0x691c8b*/
       *v4 = (int)&vt_ScriptTypeClass; /*0x691c95*/
@@ -206,7 +206,7 @@ AbstractClass * * TeamTypeClass::FindOrCreateTaskForce(ObjectClass * Source)
 LABEL_6:
     v3 = (TaskForceClass *)__2_YAPAXI_Z(0xD4u); /*0x6e8646*/
     if ( v3 ) /*0x6e8655*/
-      return ((TaskForceClass *)(v3))->Construct(Source); /*0x6e8661*/
+      return ((TaskForceClass *)(v3))->Construct((char *)(Source)); /*0x6e8661*/
     return 0; /*0x6e8655*/
   }
   while ( _strcmpi((char *)(*((unsigned int *)dword_A8E8D4 + v2) + 36),(const char *)(Source)) ) /*0x6e863a*/
@@ -565,7 +565,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
          v38,
          v53,
          64) > 0 )
-    *((unsigned int *)this + 54) = ((String *)(v53))->To_Waypoint(); /*0x6f1473*/
+    *((unsigned int *)this + 54) = (unsigned int)(((String *)(v53))->To_Waypoint()); /*0x6f1473*/
   v39 = (int *)*((unsigned int *)this + 56); /*0x6f1479*/
   if ( INIClass::GetString( /*0x6f1496*/
          (INIClass *)aP1,
@@ -816,7 +816,7 @@ int TeamTypeClass::GetGroup()
 }
 // 0x6F18E0
 namespace gamemd {
-unsigned int * TeamTypeClass::GetTransportWaypoint(unsigned int * a2)
+unsigned int * TeamTypeClass::GetTransportWaypoint(unsigned int *a2)
 {
 
   int v2; // eax

@@ -31,6 +31,6 @@ wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * For
   *v6 = 0; /*0x7b7ea4*/
   if ( String ) /*0x7b7eab*/
     wcscpy((wchar_t *)(*aP0), String); /*0x7b7eb5*/
-  return aP0; /*0x7b7ebf*/
+  return (wchar_t **)(aP0); /*0x7b7ebf*/
 }
 } // namespace gamemd

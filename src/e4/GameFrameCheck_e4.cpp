@@ -55,7 +55,7 @@ int sub_6863E0()
   *((unsigned int *)((char *)&stru_A8EB00 + 376)) = 0; /*0x68642a*/
   byte_A8E378 = 0; /*0x686433*/
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x68643a*/
-    Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], 0); /*0x68643e*/
+    ((Tooltip *)(*(Tooltip **)&stru_88732C.__pad_1C[32]))->Enable(0); /*0x68643e*/
   p_vtable2 = &((unsigned int *)(dword_A8B230))[43].vtable2; /*0x686450*/
   if ( ((unsigned int *)(dword_A8B230))[43].vtable2 != (void *)-1 ) /*0x686459*/
   {
@@ -93,7 +93,7 @@ int sub_6863E0()
   }
   Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x686536*/
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x68654a*/
-    Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], stru_A8EB00.ObjectTypeClass[32]); /*0x686553*/
+    ((Tooltip *)(*(Tooltip **)&stru_88732C.__pad_1C[32]))->Enable(stru_A8EB00.ObjectTypeClass[32]); /*0x686553*/
 // 0x4f4480
   return TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x686562*/
 }

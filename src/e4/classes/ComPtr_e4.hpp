@@ -20,10 +20,10 @@ struct ComPtr {
     unsigned int ReleaseSimple;
 // --- flat members (END) ---
     int DestroyWrapper(int aP0, ObjectClass * aP1);
-     double Constructor(...);  // C2597 interim stub
+     unsigned int * Constructor();  // was C2597 interim stub, := truth 0x0x65d430
      double Dtor(...);  // C2597 interim stub
     static double Release_Alt(...);  // C2597 interim stub
-     double Set(...);  // C2597 interim stub
+     int Set(int a2);  // was C2597 interim stub, := truth 0x0x65d480
     unsigned int * Release();  // 0x65d460
 };
 

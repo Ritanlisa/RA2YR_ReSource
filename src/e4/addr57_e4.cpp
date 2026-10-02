@@ -211,7 +211,7 @@ Coord * * sub_575EE0(void * a1, int a2)
       if ( v28 ) /*0x57618e*/
         ((TeamClass *)(v28))->Update_0(31, 0, dword_ABD480, 0, 0); /*(void *)(0x57619e)*/
       v31 = *(void *)(CellStruct)::Add((unsigned short *)v27 + 18, &v36, &dword_89F6A0); /*0x5761c1*/
-      v4 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v31); /*0x5761c5*/
+      v4 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v31); /*0x5761c5*/
       v29 = (void **)*((unsigned int *)v4 + 15); /*0x5761ca*/
       if ( v29 ) /*0x5761cf*/
         IDA_LOBYTE(v4) = ((TeamClass *)(v29))->Update_0(31, 0, dword_ABD480, 0, 0); /*0x5761e0*/
@@ -493,7 +493,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
           && v42 <= dword_ABED08 )
         {
           v52[0] = v41; /*0x57a8b6*/
-          v43 = ((Tactical *)((int16_t *)v52))->GetCellData(); /*0x57a8ba*/
+          v43 = (char *)(((Tactical *)((int16_t *)v52))->GetCellData()); /*0x57a8ba*/
           a5 = a5; /*0x57a8bf*/
           *((unsigned int *)v43 + 16) = -1; /*0x57a8c7*/
           RecursiveCellClassNeighbourUpdate(NeighbourContent, aP1a, a5); /*0x57a8d5*/
@@ -553,7 +553,7 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
     TerrainMask = ((Cell *)(a1))->GetTerrainMask(&a3->Cell_field_0x0, 0); /*0x57ad26*/
   v11 = TerrainMask; /*0x57ad2b*/
   if ( !TerrainMask ) /*0x57ad2f*/
-    return 1; /*0x57ad2f*/
+    return (gamemd::MapClass **)(1); /*0x57ad2f*/
   if ( v8 != 2 ) /*0x57ad38*/
   {
     if ( (TerrainMask & 2) != 0 ) /*0x57ae12*/
@@ -660,7 +660,7 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
         else
         {
           if ( (v11 & 0x40) == 0 ) /*0x57b117*/
-            return 1; /*0x57b117*/
+            return (gamemd::MapClass **)(1); /*0x57b117*/
           v12 = (v9 & 1) + 37; /*0x57b120*/
         }
         goto LABEL_69; /*0x57b0f8*/
@@ -704,7 +704,7 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
       v13 = v12; /*0x57b123*/
   LABEL_70:
       if ( v13 <= 0 ) /*0x57b127*/
-        return 1; /*0x57b127*/
+        return (gamemd::MapClass **)(1); /*0x57b127*/
       goto LABEL_71; /*0x57b127*/
     }
     v13 = (TerrainMask & 1) != 0 ? 21 : 30;
@@ -730,7 +730,7 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
   else
   {
     if ( (TerrainMask & 0x28) != 0x28 ) /*0x57ade1*/
-      return 1; /*0x57ade1*/
+      return (gamemd::MapClass **)(1); /*0x57ade1*/
     if ( (TerrainMask & 0x44) == 0x44 ) /*0x57adee*/
     {
       v12 = (v9 & 1) + 31; /*0x57adf3*/
@@ -751,15 +751,15 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
   IDA_LOBYTE(a3) = 1; /*0x57b192*/
   if ( a4 == 1 ) /*0x57b19a*/
   {
-    GenerateTerrainMap(0, 0,(gamemd::MouseClass *)(v26->Cell_field_0x11B[0]),(gamemd::MouseClass *)(a5), &a3, a6); /*0x57b1b7*/
+    GenerateTerrainMap(0, 0,(gamemd::MouseClass *)(v26->Cell_field_0x11B[0]),(gamemd::MouseClass *)(a5),(gamemd::MouseClass *)(&a3), a6); /*0x57b1b7*/
   }
   else
   {
     if ( a4 != 2 ) /*0x57b1bc*/
-      return 1; /*0x57b1bc*/
-    GenerateTerrainMap((gamemd::MouseClass *)(dword_ABAD28),(gamemd::MouseClass *)(dword_ABAD28 + 41), v26->Cell_field_0x11B[0], a5, &a3, a6); /*0x57b1e3*/
+      return (gamemd::MapClass **)(1); /*0x57b1bc*/
+    GenerateTerrainMap((gamemd::MouseClass *)(dword_ABAD28),(gamemd::MouseClass *)(dword_ABAD28 + 41),(gamemd::MouseClass *)(v26->Cell_field_0x11B[0]), a5, &a3, a6); /*0x57b1e3*/
   }
-  return (unsigned char)a3 != 0; /*0x57b1ee*/
+  return (gamemd::MapClass **)((unsigned char)a3 != 0); /*0x57b1ee*/
 }
 }
 // 0x57B440
@@ -875,7 +875,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
       }
       return 1; /*0x57b703*/
     }
-    MapClass::SetObstruction(&v31, aP3); /*0x57b623*/
+    MapClass::SetObstruction((int16_t *)(&v31), aP3); /*0x57b623*/
     v16 = v35; /*0x57b628*/
     goto LABEL_32; /*0x57b628*/
   }
@@ -903,7 +903,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
       goto LABEL_58; /*0x57b6d9*/
     goto LABEL_36; /*0x57b6d9*/
   }
-  MapClass::SetObstruction(&v31, v18); /*0x57b6cc*/
+  MapClass::SetObstruction((int16_t *)(&v31), v18); /*0x57b6cc*/
   LABEL_32:
   if ( Cell::IsEmpty(v14) || (v25 = v14[14], v25 >= aP0) && v25 <= aP1 ) /*0x57b64a*/
   {
@@ -1267,7 +1267,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
   int v65[4]; // [esp+CCh] [ebp-10h] BYREF
 
   v1 = aP0; /*0x57dd5d*/
-  result = *((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, aP0) + 17); /*0x57dd6c*/
+  result = *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(aP0) + 17); /*0x57dd6c*/
   if ( result >= 74 && result <= 101 ) /*0x57dd7b*/
   {
     v3 = *aP0 + (aP0[1] << 9); /*0x57dd92*/
@@ -1547,7 +1547,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
   int v66[4]; // [esp+CCh] [ebp-10h] BYREF
 
   v1 = aP0; /*0x57e2ac*/
-  v2 = *((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, aP0) + 17); /*0x57e2bc*/
+  v2 = *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(aP0) + 17); /*0x57e2bc*/
   if ( v2 >= 74 && v2 <= 101 ) /*0x57e2cb*/
   {
     v3 = *aP0 + (aP0[1] << 9); /*0x57e2e6*/
@@ -1833,7 +1833,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
   int v65[4]; // [esp+CCh] [ebp-10h] BYREF
 
   v1 = aP0; /*0x57e7ad*/
-  result = *((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, aP0) + 17); /*0x57e7bc*/
+  result = *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(aP0) + 17); /*0x57e7bc*/
   if ( result >= 205 && result <= 232 ) /*0x57e7cf*/
   {
     v3 = *aP0 + (aP0[1] << 9); /*0x57e7e6*/
@@ -2114,7 +2114,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
   int v66[4]; // [esp+CCh] [ebp-10h] BYREF
 
   v1 = aP0; /*0x57ed0c*/
-  v2 = *((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, aP0) + 17); /*0x57ed1c*/
+  v2 = *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(aP0) + 17); /*0x57ed1c*/
   if ( v2 >= 205 && v2 <= 232 ) /*0x57ed2f*/
   {
     v3 = *aP0 + (aP0[1] << 9); /*0x57ed4a*/

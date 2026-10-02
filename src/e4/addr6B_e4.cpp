@@ -179,25 +179,25 @@ CellClass * * InitializeBuildabilityGrid(int a1)
           {
             if ( v13 <= dword_87F914 + dword_87F90C && v14 >= dword_87F910 && v14 <= dword_87F918 + dword_87F910 ) /*0x6b28cd*/
             {
-              v15 = *((uint8_t *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)v26) + 284); /*0x6b28ef*/
-              v11 = 15 * *((char *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)v26) + 283) /*0x6b291b*/
+              v15 = *((uint8_t *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v26) + 284); /*0x6b28ef*/
+              v11 = 15 * *((char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v26) + 283) /*0x6b291b*/
                   + *(unsigned int *)*(&off_83FF18 + v15);
-              v16 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)v26); /*0x6b291d*/
+              v16 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v26); /*0x6b291d*/
               if ( !((CellClass *)((int)v16))->IsBuildable() ) /*0x6b292a*/
                 goto LABEL_24; /*0x6b292a*/
               v24 = *(unsigned int *)v26 - 0x10000; /*0x6b2959*/
-              v17 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v24); /*0x6b295d*/
+              v17 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v24); /*0x6b295d*/
               if ( !((CellClass *)((int)v17))->IsBuildable() ) /*0x6b2966*/
                 goto LABEL_24; /*0x6b2966*/
               IDA_LOWORD(v21) = v26[0] - 1; /*0x6b2979*/
               IDA_HIWORD(v21) = v26[1] - 1; /*0x6b2982*/
               v24 = v21; /*0x6b2991*/
-              v18 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v24); /*0x6b2995*/
+              v18 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v24); /*0x6b2995*/
               if ( !((CellClass *)((int)v18))->IsBuildable() /*0x6b29d6*/
                 || (IDA_HIWORD(v22) = v26[1],
                     IDA_LOWORD(v22) = v26[0] - 1,
                     v24 = v22,
-                    v19 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v24),
+                    v19 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v24),
                     !((CellClass *)((int)v19))->IsBuildable()) )
               {
   LABEL_24:
@@ -357,8 +357,8 @@ AbstractClass * * SlaveManager_InitGrid()
         }
         else
         {
-          v15 = *((uint8_t *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v31) + 284); /*0x6b2c6c*/
-          v16 = 15 * *((char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v31) + 283) /*0x6b2c95*/
+          v15 = *((uint8_t *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v31) + 284); /*0x6b2c6c*/
+          v16 = 15 * *((char *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v31) + 283) /*0x6b2c95*/
               + *(unsigned int *)*(&off_83FF18 + v15);
           v17 = (int *)(g_MissionQueueFrame.localVariables[160]);
           v38 = v16; /*0x6b2c9c*/
@@ -371,7 +371,7 @@ AbstractClass * * SlaveManager_InitGrid()
           {
             v35 = v40.MapSeed_field_0x10 - 0x10000; /*0x6b2cdc*/
             *(unsigned int *)v32 = v40.MapSeed_field_0x10 - 0x10000; /*0x6b2ceb*/
-            v20 = (int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v32); /*0x6b2cf4*/
+            v20 = (int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v32); /*0x6b2cf4*/
             *(unsigned int *)v40.__pad_0 = v20[9]; /*0x6b2cfd*/
             if ( !(uint8_t)MapSeed::IsCellInBounds(&v40) /*0x6b2d4e*/
               || v20[17] != -1
@@ -395,7 +395,7 @@ AbstractClass * * SlaveManager_InitGrid()
             IDA_LOWORD(v36) = IDA_LOWORD(v40.MapSeed_field_0x10) - 1; /*0x6b2daa*/
             IDA_HIWORD(v36) = IDA_HIWORD(v40.MapSeed_field_0x10) - 1; /*0x6b2daf*/
             v40.MapSeed_field_0x04 = v36; /*0x6b2dbe*/
-            v24 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&v40.MapSeed_field_0x04); /*0x6b2dc7*/
+            v24 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v40.MapSeed_field_0x04); /*0x6b2dc7*/
             *(unsigned int *)v40.__pad_0 = v24[9]; /*0x6b2dd0*/
             if ( !(uint8_t)MapSeed::IsCellInBounds(&v40) /*0x6b2e21*/
               || v24[17] != -1
@@ -621,7 +621,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     {
       IDA_HIWORD(v96) = dword_8759AC + v8; /*0x6b3080*/
       IDA_LOWORD(v96) = dword_8759A8 + v11; /*0x6b308f*/
-      v12 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v96)); /*0x6b3099*/
+      v12 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v96)); /*0x6b3099*/
       if ( !((CellClass *)((int)v12))->IsBuildable() ) /*0x6b30a8*/
         goto LABEL_104; /*0x6b30a8*/
       v13 = v100 * dword_8759A4 + v83; /*0x6b30c5*/
@@ -694,7 +694,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     }
     for ( j = 0; j < v105; ++j ) /*0x6b31e1*/
       (*(void (**)(unsigned int, unsigned int))(**((unsigned int **)Block + j) + 292))(*((unsigned int *)Block + j), 0); /*0x6b31ee*/
-    ScreenRect = CellClass::GetScreenRect((int)v12, v114); /*0x6b3205*/
+    ScreenRect = ((CellClass *)((int)v12))->GetScreenRect(v114); /*0x6b3205*/
     v85 = *ScreenRect; /*0x6b320c*/
     v86 = ScreenRect[1]; /*0x6b3213*/
     v87 = ScreenRect[2]; /*0x6b321e*/
@@ -730,7 +730,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
             {
               IDA_LOWORD(v94) = v34 + v33; /*0x6b32e5*/
               v95 = v94; /*0x6b32ee*/
-              *((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v95) + 18) = -1; /*0x6b32fd*/
+              *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v95) + 18) = -1; /*0x6b32fd*/
               v31 = *(unsigned int *)(v30 + 664); /*0x6b3304*/
               ++v34; /*0x6b330a*/
             }
@@ -789,7 +789,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     ((House *)((int)v12))->AnnounceUpgrade(-1); /*0x6b3409*/
     v77 = v12[9]; /*0x6b341b*/
     BuildingClass::AddUpgrade((int)&dword_87F7E8, (int)&v77); /*0x6b341f*/
-    v48 = CellClass::GetScreenRect((int)v12, v113); /*0x6b342e*/
+    v48 = ((CellClass *)((int)v12))->GetScreenRect(v113); /*0x6b342e*/
     v49 = v87; /*0x6b3433*/
     if ( v87 <= 0 || v88 <= 0 ) /*0x6b3445*/
     {
@@ -919,15 +919,15 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
         {
           IDA_LOWORD(v98) = v77; /*0x6b36c7*/
           IDA_HIWORD(v98) = v82; /*0x6b36d2*/
-          v63 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v98); /*0x6b36dc*/
-          v64 = CellClass::GetScreenRect((int)v63, v113); /*0x6b36e8*/
+          v63 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v98); /*0x6b36dc*/
+          v64 = ((CellClass *)((int)v63))->GetScreenRect(v113); /*0x6b36e8*/
           v65 = *v64; /*0x6b36ed*/
           v110 = v64[1]; /*0x6b36f2*/
           v66 = v64[2]; /*0x6b36fb*/
           v67 = v64[3]; /*0x6b36fe*/
           if ( CellClass::DetermineTileType((int)v63) ) /*0x6b3701*/
           {
-            v68 = (int *)(CellClass::GetScreenRect((int)v63, v114));
+            v68 = (int *)(((CellClass *)((int)v63))->GetScreenRect(v114));
             if ( v66 <= 0 || v67 <= 0 ) /*0x6b3727*/
             {
               v71 = *v68; /*0x6b37ad*/
@@ -986,7 +986,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   v101 = (gamemd::AbstractClass **)((void*)&VectorClass_ObjectClass___vftable);
   if ( Block && v104 ) /*0x6b382d*/
     RA2_OPDEL(Block); /*0x6b3830*/
-  return 1; /*0x6b3838*/
+  return (gamemd::AbstractClass **)(1); /*0x6b3838*/
 }
 }
 // 0x6B3850
@@ -1419,7 +1419,7 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
         v17[2] = v15; /*0x6b3fb8*/
       }
       v7 = (int)((gamemd::AbstractClass **)(v30));
-      v10 = v29; /*0x6b3fbf*/
+      v10 = (unsigned int)(v29); /*0x6b3fbf*/
     }
     v4 = a1; /*0x6b3fc3*/
     v11[5] = 1; /*0x6b3fcf*/
@@ -1443,13 +1443,13 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
       }
       goto LABEL_36; /*0x6b4078*/
     }
-    v6 = (int)(v25);
-    v5 = v26; /*0x6b3ffe*/
+    v6 = (gamemd::AbstractClass **)((int)(v25));
+    v5 = (unsigned int)(v26); /*0x6b3ffe*/
   LABEL_25:
-    v9 = v6 + 2; /*0x6b4002*/
+    v9 = (int)(v6 + 2); /*0x6b4002*/
     ++v10; /*0x6b400b*/
     v24 *= 2; /*0x6b400c*/
-    v29 = v10; /*0x6b4012*/
+    v29 = (gamemd::AbstractClass **)(v10); /*0x6b4012*/
     if ( v10 >= (gamemd::AbstractClass **)(v6) + 2 ) /*0x6b4016*/
     {
       v8 = v28; /*0x6b401c*/
@@ -1507,12 +1507,12 @@ int FactoryClass_LoadTheaterSHP(int a1)
     {
       _makepath(Buffer, 0, 0, (const char *)(v4 + 36), (const char *)&off_7E1BC6 + 112 * a1); /*0x6b54dc*/
       CCFileClass::Construct(v5, Buffer); /*0x6b54ed*/
-      *(unsigned int *)(v4 + 164) = CCFileClass::ReadEntireFile(v5); /*0x6b54ff*/
+      *(unsigned int *)(v4 + 164) = ((CCFileClass *)(v5))->ReadEntireFile(); /*0x6b54ff*/
       v5[0] = (void*)&CCFileClass_vftable; /*0x6b5505*/
       v7 = 0; /*0x6b550d*/
       ((Vector *)((int)v6))->Clear(); /*0x6b5515*/
       v5[0] = (unsigned int)&off_7E1668; /*0x6b551e*/
-      BufferIOFileClass::Dtor(v5); /*0x6b5526*/
+      ((BufferIOFileClass *)(v5))->Dtor(); /*0x6b5526*/
     }
     result = dword_A8EC28; /*0x6b552b*/
   }
@@ -2380,7 +2380,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
     v57 = 0; /*0x6ba0ea*/
     ((Vector *)((int)v56))->Clear(); /*0x6ba0f1*/
     v55[0] = (unsigned int)&off_7E1668; /*0x6ba0fa*/
-    BufferIOFileClass::Dtor(v55); /*0x6ba102*/
+    ((BufferIOFileClass *)(v55))->Dtor(); /*0x6ba102*/
     return 1; /*0x6ba10a*/
   }
   else
@@ -2389,7 +2389,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
     v57 = 0; /*0x6b9d70*/
     ((Vector *)((int)v56))->Clear(); /*0x6b9d77*/
     v55[0] = (unsigned int)&off_7E1668; /*0x6b9d80*/
-    BufferIOFileClass::Dtor(v55); /*0x6b9d88*/
+    ((BufferIOFileClass *)(v55))->Dtor(); /*0x6b9d88*/
     return 0; /*0x6b9d90*/
   }
 }
@@ -3452,7 +3452,7 @@ LABEL_56:
     (MixFileClass *)strlen("[PublicKey]\n1=AihRvNoIbTn85FZRYNZRcT+i6KpU+maCsEqr3Q5q+LDB5tH7Tz2qQ38V\n\n"));
   INIClass::INIClass(v213);
   Debug::Log();
-  FileStraw::Open(v213, (int)&v212, 0);
+  ((FileStraw *)(v213))->Open((int)&v212, 0);
   Debug::Log();
   qmemcpy(&stru_87C374[42508], WinMain_Init(v213, v211, 1), 0x204u);
   HashTable_flat::DestroyHashTableINIClass(v213);
@@ -3748,7 +3748,7 @@ LABEL_345:
   ReadRegistryOptionsWOL(&aP2.location[1]);
   if ( !InfantryClass::SetField6(&aP2.location[1])
     && !WinMain_Helper(&aP2.location[1])
-    && !Flag::IsNot2(&aP2.location[1]) )
+    && !((Flag *)(&aP2.location[1]))->IsNot2() )
   {
     v192 = *(ObjectClass **)&HouseClass_Player[44052];
     IDA_LOBYTE(v192) = HouseClass_Player[44052] | 8;

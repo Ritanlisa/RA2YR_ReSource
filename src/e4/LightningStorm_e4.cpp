@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
@@ -122,10 +124,10 @@ void LightningStorm::Strike(IUnknown * aP0)
   int v8; // eax
   int v9[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v1 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&aP0); /*0x53a159*/
+  v1 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&aP0); /*0x53a159*/
   v2 = (*(int (**)(unsigned int))(**(unsigned int **)((unsigned int *)dword_8871E0)[0] + 156))(*(unsigned int *)((unsigned int *)dword_8871E0)[0]); /*0x53a165*/
   v3 = ((v1[80] & 0x100) != 0 ? dword_A9FA84 : 0)
-     + Coord::ScaleToScreenY((void *)(*(int16_t *)(v2 + 4) / 2))
+     + ((Coord *)((void *)(*(int16_t *)(v2 + 4) / 2)))->ScaleToScreenY()
      + dword_A9FA90 * *((char *)v1 + 283);
   result = ((int16_t)aP0 << 8) + 128; /*0x53a1bb*/
   v9[0] = result; /*0x53a1c8*/
@@ -133,7 +135,7 @@ void LightningStorm::Strike(IUnknown * aP0)
   v9[2] = v3; /*0x53a1d0*/
   if ( result != dword_A9FA30 || (SHIWORD(aP0) << 8) + 128 != qword_A9FA34 || v3 != MEMORY[0xA9FA38] ) /*0x53a1e4*/
   {
-    v5 = *(void **)(((unsigned int *)dword_8871E0)[0] + 4 * ((unsigned int)Random::State((unsigned int *)dword_A8B230 + 134) % ((unsigned int *)dword_8871E0)[0])); /*0x53a213*/
+    v5 = *(void **)(((unsigned int *)dword_8871E0)[0] + 4 * ((unsigned int)((Random *)((unsigned int *)dword_A8B230 + 134))->State() % ((unsigned int *)dword_8871E0)[0])); /*0x53a213*/
     v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a216*/
     if ( v6 ) /*0x53a220*/
       v7 = ((AnimClass *)(v6))->ctor(v5, v9, 0, 1, (void *)0x600, 0, 0); /*0x53a23c*/
@@ -212,7 +214,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v34[0] = *Coords; /*0x53a32e*/
   v34[1] = v5; /*0x53a337*/
   v34[2] = v6; /*0x53a33b*/
-  v7 = *(void **)(((unsigned int *)dword_8871E0)[0] + 4 * ((unsigned int)Random::State((unsigned int *)dword_A8B230 + 134) % ((unsigned int *)dword_8871E0)[0])); /*0x53a363*/
+  v7 = *(void **)(((unsigned int *)dword_8871E0)[0] + 4 * ((unsigned int)((Random *)((unsigned int *)dword_A8B230 + 134))->State() % ((unsigned int *)dword_8871E0)[0])); /*0x53a363*/
   v8 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a366*/
   if ( v8 ) /*0x53a370*/
     v9 = ((AnimClass *)(v8))->ctor(v7, v34, 0, 1, (void *)0x600, 0, 0); /*0x53a38c*/
@@ -240,9 +242,9 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     v12 = dword_8871E0; /*0x53a45f*/
     if ( ((unsigned int *)dword_8871E0)[0] > 0 ) /*0x53a46c*/
     {
-      v13 = Random::State((unsigned int *)dword_A8B230 + 134); /*0x53a47a*/
+      v13 = (gamemd::RulesClass *)(((Random *)((unsigned int *)dword_A8B230 + 134))->State()); /*0x53a47a*/
       StartAudioControllerAt(*(unsigned int *)(((unsigned int *)dword_8871E0)[1] + 4 * (v13 % ((unsigned int *)dword_8871E0)[0])), (int)&v31, 0); /*0x53a49e*/
-      v12 = dword_8871E0; /*0x53a4a3*/
+      v12 = (int)(dword_8871E0); /*0x53a4a3*/
     }
     Climb = v12[1]; /*0x53a4ae*/
     WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(Climb, HIDWORD(v12[1]), v3[59], &v31); /*0x53a4c7*/

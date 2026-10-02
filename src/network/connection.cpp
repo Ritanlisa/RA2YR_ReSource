@@ -370,7 +370,7 @@ IPXConnClass* IPXManagerClass::createConnection()
     result = (unsigned int *)result[12]; /*0x540d53*/
     this->u32_6C = result; /*0x540d56*/
   }
-  return result; /*0x540d59*/
+  return (gamemd::IPXConnClass *)(result); /*0x540d59*/
 }
 // 0x540d60
 void IPXManagerClass::destroyConnection(IPXConnClass* conn)
@@ -450,7 +450,7 @@ void IPXManagerClass::release()
   v9 = 0; /*0x54153a*/
   if ( v6 > 0 ) /*0x54153e*/
   {
-    v10 = &this->Active; /*0x541540*/
+    v10 = (gamemd::IPXManagerClass *)(&this->Active); /*0x541540*/
     while ( *(unsigned int *)(*(unsigned int *)(v10->Socket + 4) + 40) != *(unsigned int *)(*(unsigned int *)(v10->Socket + 4) + 4) ) /*0x541550*/
     {
       ++v9; /*0x541556*/

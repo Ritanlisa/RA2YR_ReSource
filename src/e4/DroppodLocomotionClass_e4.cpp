@@ -128,7 +128,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
           v34[0] = *v25; /*0x4b5f7a*/
           v34[1] = v25[1]; /*0x4b5f86*/
           v35 = (unsigned int)(v25[2]); /*0x4b5f8d*/
-          v27 = Random::State(&Randomizer_Global); /*0x4b5f91*/
+          v27 = ((Random *)(&Randomizer_Global))->State(); /*0x4b5f91*/
           StartAudioControllerAt(*(unsigned int *)(v20[48] + 4 * (v27 % v26)),(unsigned int *)(&v36), 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v34, 2 * v20[41], &((unsigned int *)a1)[0]->TechnoClass, v20[43], 1, 0); /*0x4b5fc7*/
           v28 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5fd6*/
@@ -316,7 +316,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
         }
         else
         {
-          Function::Method_4B4D60((int *)&pPStm); /*0x4b6325*/
+          ((Function *)((int *)&pPStm))->Method_4B4D60(); /*0x4b6325*/
           pPStm = 0; /*0x4b632a*/
         }
         if ( v8 < 0 && v8 != -2147467262 ) /*0x4b6356*/

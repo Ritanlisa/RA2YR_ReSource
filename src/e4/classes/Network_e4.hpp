@@ -131,7 +131,7 @@ struct Network {
     unsigned char *__pad_14;  // 0x14
 // --- flat members (END) ---
     int SendBeaconDelete(int a2, int a3);  // 0x4311C0
-    int SendBeacon(CellStruct * aP1, int a3, int a4, char a5);  // 0x431450
+    int SendBeacon(wchar_t *aP1, int a3, int a4, char a5);  // 0x431450
     int Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x48D1E0
     void * initConnection(int a2, unsigned int * a3, char a4);  // 0x4C6C50
     int SendOffer();  // 0x4FC980
@@ -145,7 +145,7 @@ struct Network {
     int GetSendCount(void *a1_1);  // 0x540F90
     int GetConnectionSpeed(int aP1);  // 0x540FA0
     int GetClass(int a2);  // 0x540FC0
-    int FindPlayerByID(DynamicVector * aP1);  // 0x541000
+    int FindPlayerByID(int aP1);  // 0x541000
     int SendMessage(int a2, int a3, int a4, int a5, int a6, int a7);  // 0x5410F0
     AbstractClass * * SendToPlayer(int a2, int a3, int a4, wchar_t * String2, void *a5_1);  // 0x541260
     int Send(int a2, int a3, int aP3, int a5);  // 0x541370

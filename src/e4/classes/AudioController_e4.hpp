@@ -22,6 +22,8 @@ struct AudioController {
     int CleanupStream();  // 0x4023f0
     int UpdatePlayback();  // 0x402330
     int AdvanceQueue();  // 0x4022c0
+    unsigned int * Stop();  // 0x405d40
+    int * Constructor();  // 0x402040
 };
 
 } // namespace gamemd

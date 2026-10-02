@@ -193,7 +193,7 @@ void TacticalClass::DrawCellTerrainOverlay(int * a2, int * a3)
     v5 = BYTE2(this->visibleCells[13]); /*0x4802b8*/
     v6 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * field38); /*0x4802be*/
     if ( *(int *)(v6 + 752) > 1 ) /*0x4802c8*/
-      CellClass::GetTerrainFlag((CellClass *)v6, BYTE2(this->visibleCells[13])); /*0x4802cd*/
+      ((CellClass *)((CellClass *)v6))->GetTerrainFlag(BYTE2(this->visibleCells[13])); /*0x4802cd*/
   }
   if ( *(unsigned char *)(v6 + 737) ) /*0x4802e4*/
     TacticalClass::DrawCellOverlay( /*0x480339*/
@@ -537,8 +537,8 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
           Tactical::SetCellTransform(v7.__pad_0, 0, 0, 0, 1008981770, 0, 0); /*0x4f46c7*/
           Tactical::SetCellTransform(v7.__pad_0, 1, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46eb*/
           Tactical::SetCellTransform(v7.__pad_0, 2, 1132396544, 0, 1008981770, 1065353216, 0); /*0x4f4709*/
-          StructTable::Append(dword_8A0E10, &v6); /*0x4f4719*/
-          StructTable::Append(dword_8A0E10, &v7); /*0x4f4729*/
+          ((StructTable *)(dword_8A0E10))->Append(&v6); /*0x4f4719*/
+          ((StructTable *)(dword_8A0E10))->Append(&v7); /*0x4f4729*/
         }
         RenderTactical3DScene((ObjectClass *)dword_8A0E10, (int)DSurface_Composite->AudioStream_field_0x1C); /*0x4f473e*/
       }
@@ -1072,7 +1072,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
         {
           if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CoordinatesLegal(v32) ) /*0x6d6ebc*/
           {
-            v18 = (House *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v32); /*0x6d6ed3*/
+            v18 = (House *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v32); /*0x6d6ed3*/
             v19 = (int)v18; /*0x6d6ed8*/
             if ( *(unsigned int *)&v18->__pad_2D[23] != -1 ) /*0x6d6ede*/
             {
@@ -1132,7 +1132,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
           {
             if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CoordinatesLegal(v32) ) /*0x6d709e*/
             {
-              v28 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v32); /*0x6d70b5*/
+              v28 = (BuildingClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v32); /*0x6d70b5*/
               v29 = (int)v28; /*0x6d70ba*/
               if ( ((unsigned int *)v28)[2] != -1 ) /*0x6d70c0*/
               {
@@ -1265,7 +1265,7 @@ LABEL_18:
     v20[0] = DSurface_ViewBounds.field_0 + *v2; /*0x6da4cb*/
     v20[1] = (int)DSurface_ViewBounds.field_4 + v13; /*0x6da4d9*/
     a2 = (unsigned int *)*((Tactical *)((Tactical *)this))->PixelToCell(&v21, v20); /*0x6da4ec*/
-    return (unsigned char *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a2) + 57); /*0x6da4fb*/
+    return (unsigned char *)*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a2) + 57); /*0x6da4fb*/
   }
   v4 = dword_B0CECC; /*0x6da3ca*/
   do /*0x6da4a5*/
@@ -1411,7 +1411,7 @@ void* TacticalClass::DrawPlacementCircles()
       if ( BuildingClass::GetPowerFrame(v4) > 0 ) /*0x6dbeac*/
       {
         *(float *)v52 = *(float *)&stru_87F5F0.__pad_E12[1370]; /*0x6dbec0*/
-        v5 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v52); /*0x6dbecb*/
+        v5 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v52); /*0x6dbecb*/
         Coords = CellClass::GetCoords(v5, v56); /*0x6dbed2*/
         v7 = *Coords; /*0x6dbed7*/
         v8 = Coords[1]; /*0x6dbed9*/
@@ -1518,7 +1518,7 @@ void* TacticalClass::DrawPlacementCircles()
     if ( v30 <= 0.0 ) /*0x6dc1db*/
       return; /*0x6dc1db*/
     *(unsigned int *)v53 = *(unsigned int *)&stru_87F5F0.__pad_E12[1370]; /*0x6dc1f6*/
-    v31 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v53); /*0x6dc1fa*/
+    v31 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v53); /*0x6dc1fa*/
     v32 = CellClass::GetCoords(v31, v56); /*0x6dc201*/
     v33 = v32[1]; /*0x6dc20d*/
     v54 = *v32 - 126; /*0x6dc210*/

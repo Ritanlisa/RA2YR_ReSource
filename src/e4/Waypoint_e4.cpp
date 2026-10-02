@@ -116,7 +116,7 @@ CHAR * Waypoint::To_String(CCINIClass * aP0)
   if ( aP0 == (gamemd::CCINIClass *)(-1) ) /*0x763613*/
   {
     byte_B72654 = 0; /*0x763615*/
-    return &byte_B72654; /*0x76361c*/
+    return (gamemd::CHAR *)(&byte_B72654); /*0x76361c*/
   }
   else
   {
@@ -124,7 +124,7 @@ CHAR * Waypoint::To_String(CCINIClass * aP0)
       wsprintfA((LPSTR)(&byte_B72654), "%c%c", (unsigned int)(aP0)/ 26 + 64, aP0 % 26 + 65); /*0x763671*/
     else
       wsprintfA((LPSTR)(&byte_B72654), "%c", aP0 + 65); /*0x763635*/
-    return &byte_B72654; /*0x76363e*/
+    return (gamemd::CHAR *)(&byte_B72654); /*0x76363e*/
   }
 
 }

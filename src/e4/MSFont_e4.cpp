@@ -115,7 +115,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   v15 = this->m_8; /*0x5d567b*/
   if ( v15 < this->m_10 ) /*0x5d5683*/
     this->m_10 = v15; /*0x5d5685*/
-  return 1; /*0x5d5688*/
+  return (gamemd::AbstractClass **)(1); /*0x5d5688*/
 
 }
 }

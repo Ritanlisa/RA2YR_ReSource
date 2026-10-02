@@ -112,7 +112,7 @@ void * ThemeClass::InitializeThemes(char * a2)
   v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v2), (uint8_t *)g_INI_Key_Themes, v5); /*0x7205d1*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v2),(gamemd::CCINIClass *)((uint8_t *)g_INI_Key_Themes), v5); /*0x7205d1*/
     if ( INIClass::GetString( /*0x7205de*/
            (uint8_t ***)v2,
            (uint8_t *)g_INI_Key_Themes,

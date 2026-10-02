@@ -132,7 +132,7 @@ int* AbstractClass::GetCoordsEx(int* outBuffer, AbstractClass* source) {
   *v4 = *v1; /*0x410508*/
   v4[1] = v1[1]; /*0x41050d*/
   v4[2] = v1[2]; /*0x410514*/
-  return (int)v4; /*0x410510*/
+  return (int *)((int)v4); /*0x410510*/
 }
 }
 }

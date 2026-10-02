@@ -89,7 +89,7 @@ int DrawDialogText(LPARAM aP0, wchar_t *a1, HWND hWnd)
       }
       v8 = (uint16_t *)(_wcsdup(v3));
       v8[v5] = 0; /*0x5e28c2*/
-      Text::Layout(g_FogOfWarState, v8, &v17, &v18, 0); /*0x5e28d0*/
+      ((Text *)(g_FogOfWarState))->Layout(v8, &v17, &v18, 0); /*0x5e28d0*/
       free(v8); /*0x5e28d6*/
       v9 = Rect.right - Rect.left - v13; /*0x5e28e9*/
       if ( v17 < v9 - 4 ) /*0x5e28f7*/
@@ -135,7 +135,7 @@ int DrawDialogText(LPARAM aP0, wchar_t *a1, HWND hWnd)
     while ( v5 ); /*0x5e2980*/
     v4 = (wint_t *)(hWnd); /*0x5e2986*/
   }
-  return ReleaseDC(v4, hDC); /*0x5e2996*/
+  return ReleaseDC((HWND)(v4), hDC); /*0x5e2996*/
 }
 }
 // 0x5E2AC0
@@ -167,7 +167,7 @@ void sub_5E2AC0()
       else
       {
         SendMessageA(DlgItem, 0x182u, v3 - 1, 0); /*0x5e2b53*/
-        ((WideString *)((gamemd::CampaignScore *)((wchar_t **)&v5)))->Append2(asc_831774); /*0x5e2b5e*/
+        ((WideString *)((gamemd::CampaignScore *)((wchar_t **)&v5)))->Append2((wchar_t *)(asc_831774)); /*0x5e2b5e*/
       }
       v4 = (wchar_t *)(WideString::GetOrEmpty((wchar_t **)&v5));
       DrawDialogText(-1, v4, DlgItem); /*0x5e2b82*/
@@ -279,7 +279,7 @@ void SetDialogPlayerName(HWND hDlg, int a2)
   {
     DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1772))));
     v4 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)(a2 + 32)));
-    SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)v4); /*0x5e2f17*/
+    SendMessageA((HWND)(DlgItem), 0x4B2u, 0, (LPARAM)v4); /*0x5e2f17*/
   }
 }
 }
@@ -374,7 +374,7 @@ AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
   SendDlgItemMessageA(hDlg, 1690, 0xF1u, *(&wParam + (uint8_t)g_abs_A8B263), 0); /*0x5e3261*/
   SendDlgItemMessageA(hDlg, 1693, 0xF1u, *(&wParam + (uint8_t)g_abs_A8B264), 0); /*0x5e327f*/
   SendDlgItemMessageA(hDlg, 1000, 0xF1u, *(&wParam + (uint8_t)dword_A8B320), 0); /*0x5e329f*/
-  return SendDlgItemMessageA(hDlg, 1357, 0xF1u, *(&wParam + (uint8_t)g_abs_A8B261), 0); /*0x5e32bd*/
+  return (gamemd::AbstractClass **)(SendDlgItemMessageA(hDlg, 1357, 0xF1u, *(&wParam + (uint8_t)g_abs_A8B261), 0)); /*0x5e32bd*/
 }
 }
 // 0x5E32D0
@@ -507,7 +507,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
         if ( a2 == (void *)(2) ) /*0x5e3a71*/
         {
           v11 = *(unsigned int *)(dword_A8DA78 + 4 * v6); /*0x5e3a88*/
-          String = GetStringCSF(aGuiHostmaptran, 0, g_Str_File_netshare_cpp, 1173); /*0x5e3a93*/
+          String = GetStringCSF((wchar_t *)(aGuiHostmaptran), 0, g_Str_File_netshare_cpp, 1173); /*0x5e3a93*/
 // 0x5e2700
           return Dialog::ShowMessage((gamemd::ObjectClass *)(-1),(gamemd::CampaignScore *)((size_t)String), v11, 11055906); /*0x5e3a9b*/
         }
@@ -785,8 +785,8 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
   int v3 = 0;
   v209 = 0;
   v198[22] = 0;
-  char * v5 = (unsigned int)(_strdup(Source));
-  *(unsigned int *)&v198[40] = v5;
+  char * v5 = (char *)((unsigned int)(_strdup((const char *)(Source))));
+  *(unsigned int *)&v198[40] = (unsigned int)(v5);
   char v6 = *v5;
   if ( *v5 == 90 )
   {
@@ -798,9 +798,9 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
       do
       {
         char * v14 = ToWideStringChar((IUnknown *)v12->GameMode[0]);
-        if ( !_strcmpi(a2, v14) )
+        if ( !_strcmpi((const char *)(a2), v14) )
         {
-          *(unsigned int *)&v198[44] = v200;
+          *(unsigned int *)&v198[44] = (unsigned int)(v200);
           strcpy((char *)v200, (const char *)(*(unsigned int *)&v198[40] + 3));
           UI_Setup_793930(a2, v200, *(char *)(*(unsigned int *)&v198[40] + 2) - 48);
         }
@@ -841,7 +841,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
   switch ( v6 )
   {
     case 'W':
-      *(unsigned int *)v198 = v5;
+      *(unsigned int *)v198 = (unsigned int)(v5);
       v197 = (ObjectClass *)&stru_830620[4960];
       Debug::Log();
       int v15 = 0;
@@ -1531,7 +1531,7 @@ LABEL_171:
         if ( !_strcmpi(&HouseClass_Player[31636], (const void *)(v138 + 88)) )
         {
           CCFileClass::Construct(v200, (char *)(v138 + 88));
-          if ( CCFileClass::Open(v200, 0)
+          if ( ((CCFileClass *)(v200))->Open(0)
 // 0x473c00
             && CCFileClass::GetSize() == *(unsigned int *)&HouseClass_Player[32184] )
 {
@@ -1556,7 +1556,7 @@ LABEL_171:
   char v201[8]; // [esp+168h] [ebp-28Ch] BYREF
           ((Vector *)((int)v201))->Clear();
           v200[0] = (int)&off_7E1668;
-          BufferIOFileClass::Dtor(v200);
+          ((BufferIOFileClass *)(v200))->Dtor();
         }
         ++*(unsigned int *)&v198[36];
       }
@@ -1927,7 +1927,7 @@ LABEL_463:
       *(unsigned int *)&v198[56] = *(unsigned int *)&v198[92];
       *(unsigned short *)&v198[60] = 0;
       *(unsigned int *)&v198[104] = 0;
-      NetworkID::Assign((unsigned int *)(12 * v170 + 11066316), (IPXManagerClass *)&v198[104], (int)&v198[56], 0);
+      ((NetworkID *)((unsigned int *)(12 * v170 + 11066316)))->Assign((IPXManagerClass *)&v198[104], (int)&v198[56], 0);
       char * v173 = strtok(0, (ObjectClass *)&stru_830620[4604]);
       if ( v173 )
       {
@@ -2479,14 +2479,14 @@ AbstractClass * * Map_ReadPlayerCount(int a1)
   v8 = 0; /*0x5e65d1*/
   v9 = 0; /*0x5e65d5*/
   v4[0] = (void*)&INIClass_vftable; /*0x5e65d9*/
-  if ( !FileStraw::Open(v4, (int)v10, 0) ) /*0x5e65e1*/
+  if ( !((FileStraw *)(v4))->Open((int)v10, 0) ) /*0x5e65e1*/
   {
-    HashTable::DestroyHashTableINIClass(v4); /*0x5e65ee*/
+    ((HashTable *)(v4))->DestroyHashTableINIClass(); /*0x5e65ee*/
     v10[0] = (void*)&CCFileClass_vftable; /*0x5e65fa*/
     v12 = 0; /*0x5e6602*/
     ((Vector *)((int)v11))->Clear(); /*0x5e6609*/
     v10[0] = (unsigned int)&off_7E1668; /*0x5e6612*/
-    BufferIOFileClass::Dtor(v10); /*0x5e661a*/
+    ((BufferIOFileClass *)(v10))->Dtor(); /*0x5e661a*/
     return 0; /*0x5e662a*/
   }
   Int_Overwrite = 0; /*0x5e662b*/
@@ -2502,12 +2502,12 @@ AbstractClass * * Map_ReadPlayerCount(int a1)
     if ( !Int_Overwrite ) /*0x5e6685*/
       Int_Overwrite = 8; /*0x5e6687*/
   }
-  HashTable::DestroyHashTableINIClass(v4); /*0x5e6690*/
+  ((HashTable *)(v4))->DestroyHashTableINIClass(); /*0x5e6690*/
   v10[0] = (void*)&CCFileClass_vftable; /*0x5e669c*/
   v12 = 0; /*0x5e66a4*/
   ((Vector *)((int)v11))->Clear(); /*0x5e66ab*/
   v10[0] = (unsigned int)&off_7E1668; /*0x5e66b4*/
-  BufferIOFileClass::Dtor(v10); /*0x5e66bc*/
+  ((BufferIOFileClass *)(v10))->Dtor(); /*0x5e66bc*/
   return Int_Overwrite; /*0x5e661f*/
 }
 }
@@ -2544,7 +2544,7 @@ char sub_5E66F0()
       if ( v2 != -1 && v2 != dword_AC0D30 ) /*0x5e6764*/
       {
         LoadScenarioClassByIndex(v2); /*0x5e676c*/
-        if ( IsRandMap::Sed(*(unsigned int *)(g_MultiplayerGameState + 4 * v2)) ) /*0x5e677a*/
+        if ( ((IsRandMap *)(*(unsigned int *)(g_MultiplayerGameState + 4 * v2)))->Sed() ) /*0x5e677a*/
         {
           v4 = g_UIControlState; /*0x5e6783*/
           if ( g_UIControlState ) /*0x5e678b*/
@@ -2825,7 +2825,7 @@ void ExchangeMultiplayerGameInfo()
     RawFileClass::Construct(v13, (int)v18); /*0x5e7a83*/
     FileSize = CCFileClass::GetFileSize(v13); /*0x5e7a91*/
     v4 = (char *)RA2_OPNEW(FileSize); /*0x5e7a9c*/
-    FileClass::Read(v13, v4, FileSize); /*0x5e7aa4*/
+    ((FileClass *)(v13))->Read(v4, FileSize); /*0x5e7aa4*/
     v5 = *(unsigned int *)v4; /*0x5e7aa9*/
     Debug::Log(); /*0x5e7ab0*/
     v11[1] = 0; /*0x5e7abf*/
@@ -2909,7 +2909,7 @@ char LoadScenarioClassByIndex(int a1)
   v19 = 0; /*0x5e7c5a*/
   ((Vector *)((int)v18))->Clear(); /*0x5e7c62*/
   v17[0] = (unsigned int)&off_7E1668; /*0x5e7c6b*/
-  BufferIOFileClass::Dtor(v17); /*0x5e7c73*/
+  ((BufferIOFileClass *)(v17))->Dtor(); /*0x5e7c73*/
   if ( !v5 ) /*0x5e7c7a*/
     goto LABEL_9; /*0x5e7c7a*/
   if ( dword_81C1D0 == -2 ) /*0x5e7c87*/
@@ -2956,14 +2956,14 @@ char LoadScenarioClassByIndex(int a1)
     v19 = 0; /*0x5e7e4e*/
     ((Vector *)((int)v18))->Clear(); /*0x5e7e52*/
     v17[0] = (unsigned int)&off_7E1668; /*0x5e7e60*/
-    BufferIOFileClass::Dtor(v17); /*0x5e7e64*/
+    ((BufferIOFileClass *)(v17))->Dtor(); /*0x5e7e64*/
     v14 = CCFileClass::Construct(v17, &byte_A8B8E0); /*0x5e7e72*/
     dword_A8BB04 = (*(int (**)(unsigned int *))(*v14 + 44))(v14); /*0x5e7e82*/
     v17[0] = (void*)&CCFileClass_vftable; /*0x5e7e87*/
     v19 = 0; /*0x5e7e8b*/
     ((Vector *)((int)v18))->Clear(); /*0x5e7e8f*/
     v17[0] = (unsigned int)&off_7E1668; /*0x5e7e98*/
-    BufferIOFileClass::Dtor(v17); /*0x5e7e9c*/
+    ((BufferIOFileClass *)(v17))->Dtor(); /*0x5e7e9c*/
     return 1; /*0x5e7ea1*/
   }
   return result; /*0x5e7bff*/
@@ -4929,7 +4929,7 @@ int SetupMultiplayerLobbyPlayers(HWND hDlg, int a2)
   *(unsigned int *)&stru_A8B250.__pad_0[4] = v8; /*0x5ed668*/
   v42 = 0; /*0x5ed66d*/
   v9 = *(unsigned int *)(dword_A8B8CC + 4 * v8); /*0x5ed672*/
-  if ( v9 && (uint8_t)IsRandMap::Sed(*(unsigned int *)(dword_A8B8CC + 4 * v8)) ) /*0x5ed67b*/
+  if ( v9 && (uint8_t)((IsRandMap *)(*(unsigned int *)(dword_A8B8CC + 4 * v8)))->Sed() ) /*0x5ed67b*/
   {
     if ( MapSeed::IsInitialized() ) /*0x5ed684*/
       ScenarioClass::CopyStartPositions(v41); /*0x5ed694*/

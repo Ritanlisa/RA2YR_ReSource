@@ -146,7 +146,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x4a1307*/
       this->m_8 = a2; /*0x4a130f*/
       BYTE1(this->m_C) = a3 == 0; /*0x4a1312*/
-      return 1; /*0x4a1318*/
+      return (gamemd::AbstractClass **)(1); /*0x4a1318*/
     }
     else
     {
@@ -156,7 +156,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
   else
   {
     (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a1322*/
-    return 1; /*0x4a1328*/
+    return (gamemd::AbstractClass **)(1); /*0x4a1328*/
   }
 
 }

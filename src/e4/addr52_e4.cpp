@@ -162,7 +162,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
   int v24; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer), String, 128) ) /*0x52545c*/
+  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(String), 128) ) /*0x52545c*/
   {
     ((VectorClass *)(&v22))->Construct(0, 0); /*0x525471*/
     v24 = 10; /*0x52547a*/
@@ -1109,9 +1109,9 @@ LABEL_3:
     *(unsigned int *)&stru_87C374[13140] = 0;
   *(unsigned int *)&stru_87C374[13128] = *(unsigned int *)&stru_87C374[13120];
   CCFileClass::Construct(v103, &g_Str_File_MOUSE_SHA[44]);
-  if ( CCFileClass::Open(v103, 0) )
+  if ( ((CCFileClass *)(v103))->Open(0) )
   {
-    *(unsigned int *)&HouseClass_Player[47684] = CCFileClass::ReadEntireFile(v103);
+    *(unsigned int *)&HouseClass_Player[47684] = ((CCFileClass *)(v103))->ReadEntireFile();
     CCFileClass::Reset(v103);
     for ( kk = 0; kk < 256; ++kk )
     {
@@ -1140,9 +1140,9 @@ LABEL_3:
       *(unsigned int *)&HouseClass_Player[47692] = 0;
   }
   CCFileClass::Construct(v102, &g_Str_File_MOUSE_SHA[32]);
-  if ( CCFileClass::Open(v102, 0) )
+  if ( ((CCFileClass *)(v102))->Open(0) )
   {
-    *(unsigned int *)&HouseClass_Player[47688] = CCFileClass::ReadEntireFile(v102);
+    *(unsigned int *)&HouseClass_Player[47688] = ((CCFileClass *)(v102))->ReadEntireFile();
     CCFileClass::Reset(v102);
   }
   LoadExpansionMixFiles();
@@ -1272,7 +1272,7 @@ LABEL_89:
   *(unsigned int *)&stru_87C374[44960] = *(unsigned int *)&stru_87C374[44952];
   Debug::Log();
   CCFileClass::Construct(&aP1, aSoundmdIni);
-  if ( !CCFileClass::Open(&aP1, 0) )
+  if ( !((CCFileClass *)(&aP1))->Open(0) )
   {
     Debug::Log();
 LABEL_93:
@@ -1297,7 +1297,7 @@ LABEL_94:
   Audio::InitFromINI((uint8_t ***)v97);
   Debug::Log();
   CCFileClass::Construct(&v94, aEvamdIni);
-  if ( !CCFileClass::Open(&v94, 0) )
+  if ( !((CCFileClass *)(&v94))->Open(0) )
   {
     Debug::Log();
     *(unsigned int *)v94[0] = &vt_CCFileClass;
@@ -1329,7 +1329,7 @@ LABEL_109:
   InitFromINIEVA(&v99);
   Debug::Log();
   CCFileClass::Construct(v101, aThememdIni);
-  if ( !CCFileClass::Open(v101, 0) )
+  if ( !((CCFileClass *)(v101))->Open(0) )
   {
     Debug::Log();
 LABEL_108:
@@ -1534,7 +1534,7 @@ void InitRules()
     v21 = 0; /*0x52cef3*/
     ((Vector *)((int)v20))->Clear(); /*0x52cefa*/
     *(unsigned int *)v19.INIClass = &off_7E1668; /*0x52cf03*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x52cf0b*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v19))->Dtor(); /*0x52cf0b*/
   }
   while ( FindNextFileA(FirstFileA, &FindFileData) ); /*0x52cf19*/
   FindClose(FirstFileA); /*0x52cf28*/
@@ -1579,7 +1579,7 @@ void InitRules()
     v21 = 0; /*0x52cfe5*/
     ((Vector *)((int)v20))->Clear(); /*0x52cfec*/
     *(unsigned int *)v19.INIClass = &off_7E1668; /*0x52cffa*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x52cffe*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v19))->Dtor(); /*0x52cffe*/
   }
   if ( *(int *)dwInitParam.__tail_10 <= 0 ) /*0x52d013*/
   {
@@ -1595,7 +1595,7 @@ void InitRules()
     v24 = 0; /*0x52d077*/
     ((Vector *)((int)v23))->Clear(); /*0x52d07e*/
     *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x52d08a*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d091*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v22))->Dtor(); /*0x52d091*/
     *(unsigned int *)dwInitParam.__pad_0 = (void*)&VectorClass_CCINIClass___vftable; /*0x52d09a*/
     VectorClass_ptr_CCINIClass::ddtor(&dwInitParam); /*0x52d0a2*/
     return 0; /*0x52d0b3*/
@@ -1636,24 +1636,24 @@ void InitRules()
   byte_A8B31F = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5303); /*0x52d219*/
   dword_A8B320 = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5304); /*0x52d22c*/
   CCFileClass::Construct(&v25, aLangruleIni); /*0x52d231*/
-  if ( (uint8_t)CCFileClass::Open(&v25, 0) == 1 ) /*0x52d245*/
+  if ( (uint8_t)((CCFileClass *)(&v25))->Open(0) == 1 ) /*0x52d245*/
   {
     INIClass::INIClass((INIClass *)&v19); /*0x52d24f*/
     v19.ownsFile = 0; /*0x52d25b*/
     *(unsigned int *)v19.INIClass = &CCINIClass_Vtable; /*0x52d267*/
     if ( ((CCINIClass *)(&v19))->Load((int)&v25, 1, 0) > 1 ) /*0x52d277*/
     {
-      HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x52d281*/
+      ((HashTable *)((INIClass *)&v19))->DestroyHashTableINIClass(); /*0x52d281*/
       *(unsigned int *)v25.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d28d*/
       v27 = 0; /*0x52d294*/
       ((Vector *)((int)v26))->Clear(); /*0x52d29b*/
       *(unsigned int *)v25.CDFileClass = &off_7E1668; /*0x52d2a7*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x52d2ae*/
+      ((BufferIOFileClass *)((BufferIOFileClass *)&v25))->Dtor(); /*0x52d2ae*/
       *(unsigned int *)v22.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d2ba*/
       v24 = 0; /*0x52d2c1*/
       ((Vector *)((int)v23))->Clear(); /*0x52d2c8*/
       *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x52d2d4*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d2db*/
+      ((BufferIOFileClass *)((BufferIOFileClass *)&v22))->Dtor(); /*0x52d2db*/
       *(unsigned int *)dwInitParam.__pad_0 = (void*)&VectorClass_CCINIClass___vftable; /*0x52d2e4*/
       if ( *(unsigned int *)&dwInitParam.m_1[3] ) /*0x52d2ee*/
       {
@@ -1663,7 +1663,7 @@ void InitRules()
       return 0; /*0x52d30b*/
     }
     RulesClass::Addition(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x52d317*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x52d320*/
+    ((HashTable *)((INIClass *)&v19))->DestroyHashTableINIClass(); /*0x52d320*/
   }
   v13 = 0; /*0x52d329*/
   if ( *(int *)dwInitParam.__tail_10 > 0 ) /*0x52d32d*/
@@ -1687,17 +1687,17 @@ void InitRules()
   v29[3] = 0; /*0x52d38b*/
   ((Vector *)((int)v29))->Clear(); /*0x52d392*/
   *(unsigned int *)v28.CDFileClass = &off_7E1668; /*0x52d39e*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v28); /*0x52d3a5*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v28))->Dtor(); /*0x52d3a5*/
   *(unsigned int *)v25.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d3b1*/
   v27 = 0; /*0x52d3b8*/
   ((Vector *)((int)v26))->Clear(); /*0x52d3bf*/
   *(unsigned int *)v25.CDFileClass = &off_7E1668; /*0x52d3cb*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x52d3d2*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v25))->Dtor(); /*0x52d3d2*/
   *(unsigned int *)v22.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d3de*/
   v24 = 0; /*0x52d3e5*/
   ((Vector *)((int)v23))->Clear(); /*0x52d3ec*/
   *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x52d3f8*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d3ff*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v22))->Dtor(); /*0x52d3ff*/
   *(unsigned int *)dwInitParam.__pad_0 = (void*)&VectorClass_CCINIClass___vftable; /*0x52d408*/
   if ( *(unsigned int *)&dwInitParam.m_1[3] && IDA_BYTE1(dwInitParam.m_C) ) /*0x52d418*/
     RA2_OPDEL(*(void **)&dwInitParam.m_1[3]); /*0x52d41b*/
@@ -1815,7 +1815,7 @@ void MenuSelect()
   LONG v63[24]; // [esp+C6h] [ebp-60h] BYREF
 
   v0 = (Movie *)((StringList *)(&g_BuildingTypeClass_Count))->Find(g_INI_Key_INTRO);
-  ThemeClass::Play((int *)&g_BuildingTypeClass_Count, v0);
+  ((ThemeClass *)((int *)&g_BuildingTypeClass_Count))->Play(v0);
 LABEL_2:
   int v1 = *(unsigned int *)&HouseClass_Player[29924] + 4584;
   HouseClass_Player[44116] = 1;
@@ -1869,14 +1869,14 @@ LABEL_2:
   }
   Mission::SetAndCall((int *)&stru_87C374[13428], 0, 0);
   if ( *(unsigned int *)&stru_87C374[45044] )
-    Tooltip::Enable(*(void **)&stru_87C374[45044], 0);
+    ((Tooltip *)(*(void **)&stru_87C374[45044]))->Enable(0);
   if ( *(unsigned int *)&HouseClass_Player[29932] )
     esi12 = (*(unsigned int *)&HouseClass_Player[29932] == 4) + 16;
   else
     esi12 = 18;
   if ( HouseClass_Player[45087] )
     goto LABEL_145;
-  if ( (HouseClass_Player[39084] & 2) != 0 && CCFileClass::Open(&HouseClass_Player[38976], 0) )
+  if ( (HouseClass_Player[39084] & 2) != 0 && ((CCFileClass *)(&HouseClass_Player[38976]))->Open(0) )
   {
     if ( !FileClass::Load((int *)&HouseClass_Player[38976], (CDFileClass *)1) )
     {
@@ -1927,7 +1927,7 @@ LABEL_20:
       if ( HouseClass_Player[40532] )
       {
         if ( *(unsigned int *)&HouseClass_Player[44224] )
-          NetworkEventQueueClass::WaitForResponse((int)&g_NetworkEventQueue);
+          ((NetworkEventQueueClass *)((int)&g_NetworkEventQueue))->WaitForResponse();
         v11 = *(void (****)(unsigned int, int))&stru_87C374[45748];
         HouseClass_Player[40532] = 0;
       }
@@ -1952,14 +1952,14 @@ LABEL_32:
       goto LABEL_35;
 LABEL_34:
     eax34 = (Movie *)((StringList *)(&g_BuildingTypeClass_Count))->Find(g_INI_Key_INTRO);
-    ThemeClass::Play((int *)&g_BuildingTypeClass_Count, eax34);
+    ((ThemeClass *)((int *)&g_BuildingTypeClass_Count))->Play(eax34);
 LABEL_35:
     Event::Dispatch();
     switch ( esi12 )
     {
       case -1:
         if ( (HouseClass_Player[39084] & 4) == 0
-          || !CCFileClass::Open(&HouseClass_Player[38976], 0) )
+          || !((CCFileClass *)(&HouseClass_Player[38976]))->Open(0) )
         {
           goto LABEL_40;
         }
@@ -2065,7 +2065,7 @@ LABEL_40:
                 IDA_LODWORD(v20) = Audio::Callback();
                 if ( *(unsigned long long *)&HouseClass_Player[47700] < v20 )
                 {
-                  AudioController::Stop(&HouseClass_Player[46516]);
+                  ((AudioController *)(&HouseClass_Player[46516]))->Stop();
                   PlayVocClass(*(int *)&stru_825BAC.isOnMap, 0x2000, 1.0, (int)&HouseClass_Player[46516]);
                   *(unsigned int *)&stru_825BAC.isOnMap = -1;
                 }
@@ -2083,7 +2083,7 @@ LABEL_40:
   int64_t v22; // rax
           IDA_LODWORD(v22) = Audio::Callback();
           *(unsigned long long *)&HouseClass_Player[47700] = v22 + 3000;
-          while ( AudioSource::Get((int **)&HouseClass_Player[46516]) )
+          while ( ((AudioSource *)((int **)&HouseClass_Player[46516]))->Get() )
           {
   uint64_t v23; // rax
             IDA_LODWORD(v23) = Audio::Callback();
@@ -2295,7 +2295,7 @@ LABEL_189:
           (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 16))(*(unsigned int *)&stru_87C374[45772]);
           *(unsigned int *)&stru_87C374[44960] = *(unsigned int *)&stru_87C374[44952];
           ((Mouse *)((int)&stru_87C374[13428]))->SetCursor((ObjectClass *)0x13, 0);
-          MouseClass::GetPosition(&stru_87C374[13428]);
+          ((MouseClass *)(&stru_87C374[13428]))->GetPosition();
           if ( !HouseClass_Player[45087] )
             TacticalClass::BuildCommandBar(&stru_87C374[13428], j, 1);
           MapClass::MarkForRedraw(&stru_87C374[13428], 0);
@@ -2503,7 +2503,7 @@ LABEL_116:
                 esi12 = 18;
                 *(unsigned int *)&HouseClass_Player[29932] = 0;
                 v31 = (Movie *)((StringList *)(&g_BuildingTypeClass_Count))->Find(g_INI_Key_INTRO);
-                ThemeClass::Play((int *)&g_BuildingTypeClass_Count, v31);
+                ((ThemeClass *)((int *)&g_BuildingTypeClass_Count))->Play(v31);
                 goto LABEL_116;
               case -1:
                 ((Theme *)(&g_BuildingTypeClass_Count))->Stop((ObjectClass *)1);

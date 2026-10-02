@@ -1150,6 +1150,8 @@ struct RulesClass {
     static double SaveLoad_Prefix_0(...);  // C2597 interim stub
     int ReadDataList();  // 0x672440
     int LoadCountries();  // 0x6722f0
+    int Reset();  // 0x74e6b0
+    int IsTypeBuildable(unsigned int a2);  // 0x721140
 };
 
 } // namespace gamemd

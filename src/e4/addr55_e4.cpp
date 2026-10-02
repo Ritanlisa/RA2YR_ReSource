@@ -539,9 +539,9 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
     *(float *)&v52 = (float)IDA_SHIDWORD(v62); /*0x551184*/
     *(float *)&v46 = (float)(int)v62; /*0x551193*/
     Tactical::SetCellTransform((char *)v78, 2, v46, v52, v39, 1065353216, 0); /*0x551198*/
-    StructTable::Append(dword_8A0E10, v77); /*0x5511ab*/
+    ((StructTable *)(dword_8A0E10))->Append((void *)(v77)); /*0x5511ab*/
 // 0x4a3840
-    return StructTable::Append(dword_8A0E10, v78); /*0x5511be*/
+    return ((StructTable *)(dword_8A0E10))->Append((void *)(v78)); /*0x5511be*/
   }
   else if ( v53 ) /*0x5511d4*/
   {
@@ -1090,7 +1090,7 @@ ObjectClass * * E4Recv_554400::sub_554400(int a2, int a3)
       v3,
       0,
       1);
-  return 1; /*0x554425*/
+  return (gamemd::ObjectClass **)(1); /*0x554425*/
 
 }
 }
@@ -1148,8 +1148,8 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         }
         else
         {
-          v6 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)(*((unsigned int *)dword_ABCA44 + v4) + 16)); /*0x554e27*/
-          Tactical::CreateTacticalLightSurface((int *)((int)v6), &v24,(gamemd::IUnknown *)(&v25), &v26, &v27, (int)&v28, (int)&v29); /*0x554e2e*/
+          v6 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)(*((unsigned int *)dword_ABCA44 + v4) + 16)); /*0x554e27*/
+          Tactical::CreateTacticalLightSurface((int *)((int)v6), &v24,(gamemd::IUnknown *)(&v25), &v26, &v27,(IUnknown *)((int)&v28), (int)&v29); /*0x554e2e*/
           **((unsigned int **)dword_ABCA44 + dword_ABCA7C) = v24; /*0x554e46*/
           *(unsigned int *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 4) = v25; /*0x554e5a*/
           *(unsigned short *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 8) = v26; /*0x554e70*/
@@ -1182,7 +1182,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         v19 = *((unsigned short *)v10 + 4); /*0x554f61*/
         v18 = *((unsigned int *)v10 + 1); /*0x554f62*/
         v17 = *(unsigned int *)v10; /*0x554f66*/
-        v11 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)v10 + 8); /*0x554f6d*/
+        v11 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v10 + 8); /*0x554f6d*/
         TacticalClass::SetView((int)v11, v17, v18, v19, v20, v21, v22); /*0x554f74*/
         RA2_OPDEL(v10); /*0x554f7a*/
       }
@@ -1228,11 +1228,11 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned int *)this + 15) = 0; /*0x5573aa*/
   *((unsigned char *)this + 64) = 1; /*0x5573ad*/
   *((unsigned char *)this + 65) = (unsigned int)(0); /*0x5573b1*/
-  *((unsigned int *)this + 13) = &vt_VectorClass; /*0x5573b4*/
+  *((unsigned int *)this + 13) = (unsigned int)(&vt_VectorClass); /*0x5573b4*/
   sub_4B5830((unsigned int *)((char *)this + 52), (unsigned int *)(a2 + 52)); /*0x5573ba*/
   *((unsigned int *)this + 17) = *(unsigned int *)(a2 + 68); /*0x5573c2*/
   *((unsigned int *)this + 18) = *(unsigned int *)(a2 + 72); /*0x5573c8*/
-  *((unsigned int *)this + 13) = &vt_DynamicVectorClass; /*0x5573cb*/
+  *((unsigned int *)this + 13) = (unsigned int)(&vt_DynamicVectorClass); /*0x5573cb*/
   *((unsigned int *)this + 19) = *(unsigned int *)(a2 + 76); /*0x5573d7*/
   *((unsigned int *)this + 20) = *(unsigned int *)(a2 + 80); /*0x5573dd*/
   *((unsigned char *)this + 84) = *(unsigned char *)(a2 + 84); /*0x5573e9*/
@@ -1240,7 +1240,7 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned char *)this + 132) = *(unsigned char *)(a2 + 132); /*0x5573fa*/
   *((unsigned char *)this + 133) = *(unsigned char *)(a2 + 133); /*0x557400*/
   *((unsigned int *)this + 34) = *(unsigned int *)(a2 + 136); /*0x557406*/
-  *((unsigned int *)this + 22) = &vt_ToggleClass; /*0x557409*/
+  *((unsigned int *)this + 22) = (unsigned int)(&vt_ToggleClass); /*0x557409*/
   *((unsigned char *)this + 140) = *(unsigned char *)(a2 + 140); /*0x557413*/
   *((unsigned int *)this + 36) = *(unsigned int *)(a2 + 144); /*0x557419*/
   *((unsigned int *)this + 37) = *(unsigned int *)(a2 + 148); /*0x55741f*/
@@ -1253,7 +1253,7 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned char *)this + 173) = *(unsigned char *)(a2 + 173); /*0x557449*/
   *((unsigned int *)this + 44) = *(unsigned int *)(a2 + 176); /*0x55744f*/
   *((unsigned char *)this + 180) = *(unsigned char *)(a2 + 180); /*0x55745b*/
-  *((unsigned int *)this + 22) = &vt_ShapeButtonClass; /*0x557460*/
+  *((unsigned int *)this + 22) = (unsigned int)(&vt_ShapeButtonClass); /*0x557460*/
   ((ControlClass *)((unsigned int *)((char *)this + 184)))->CtorFromData(a2 + 184); /*0x557466*/
   *((unsigned char *)this + 228) = *(unsigned char *)(a2 + 228); /*0x55746e*/
   *((unsigned char *)this + 229) = *(unsigned char *)(a2 + 229); /*0x557474*/
@@ -2011,7 +2011,7 @@ AbstractClass * * Game_Frame_Check()
     {
       if ( dword_887368 ) /*0x55d0a8*/
       {
-        v2 = Tooltip::Enable(dword_887368, 0); /*0x55d0ab*/
+        v2 = ((Tooltip *)(dword_887368))->Enable(0); /*0x55d0ab*/
         IDA_LOBYTE(v2) = byte_A83D49; /*0x55d0b0*/
       }
       if ( (unsigned char)v2 || byte_A8ECD0 ) /*0x55d0bf*/
@@ -2068,7 +2068,7 @@ AbstractClass * * Game_Frame_Check()
           if ( !dword_887368 ) /*0x55d1f5*/
             goto LABEL_52; /*0x55d1f5*/
   LABEL_26:
-          Tooltip::Enable(v4, byte_A8EB80); /*0x55d16d*/
+          ((Tooltip *)(v4))->Enable(byte_A8EB80); /*0x55d16d*/
   LABEL_52:
           --dword_A8DAB4; /*0x55d341*/
           return byte_A8E9A0 == 0; /*0x55d341*/
@@ -2102,7 +2102,7 @@ AbstractClass * * Game_Frame_Check()
       {
         if ( dword_A8EA0C ) /*0x55d2cd*/
         {
-          NetworkEventQueueClass::WaitForResponse((NetworkEventQueueClass *)&unk_B052D0); /*0x55d2d4*/
+          ((NetworkEventQueueClass *)((NetworkEventQueueClass *)&unk_B052D0))->WaitForResponse(); /*0x55d2d4*/
           v5 = 480; /*0x55d2e2*/
           Ticks = TimerGetTicks(); /*0x55d2e7*/
           while ( 1 ) /*0x55d2f5*/
@@ -4476,12 +4476,12 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
     sprintf(Buffer, "SAVE%04lX.%3s", v3, vtable2); /*0x559614*/
     ((FileClass *)(&v6))->SetFileName(Buffer); /*0x559621*/
   }
-  while ( (uint8_t)CCFileClass::Open(&v6, 0) == 1 ); /*0x559633*/
+  while ( (uint8_t)((CCFileClass *)(&v6))->Open(0) == 1 ); /*0x559633*/
   *(unsigned int *)v6.CDFileClass = &vt_CCFileClass; /*0x559639*/
   v8 = 0; /*0x559641*/
   ((Vector *)((int)v7))->Clear(); /*0x559649*/
   *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x559652*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x55965f*/
+  return ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x55965f*/
 
 }
 } // namespace gamemd

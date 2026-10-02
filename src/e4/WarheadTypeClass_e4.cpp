@@ -40,13 +40,13 @@ void * WarheadTypeClass::loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4)
 
   Int_Overwrite = (int)((void *)(((INIClass *)((bool *)this))->ReadInt_Overwrite(a2, a3, -1)));
   if ( Int_Overwrite == -1 ) /*0x474824*/
-    return a4; /*0x474826*/
+    return (void *)(a4); /*0x474826*/
   if ( Int_Overwrite >= 100 ) /*0x474830*/
     Int_Overwrite = 100; /*0x474832*/
   result = (int)((void *)(((Int_Overwrite <= 0 ? 0 : Int_Overwrite) << 8) / 100));
   if ( result >= 255 ) /*0x47485c*/
-    return 255; /*0x47485e*/
-  return result; /*0x47482a*/
+    return (void *)(255); /*0x47485e*/
+  return (void *)(result); /*0x47482a*/
 
 }
 } // namespace gamemd
@@ -94,7 +94,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
   v7 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(this->m_8)));
   if ( v7 < (gamemd::AbstractClass **)(this->m_10) ) /*0x525399*/
     this->m_10 = (unsigned int)(v7); /*0x52539b*/
-  return 1; /*0x52539e*/
+  return (gamemd::AbstractClass **)(1); /*0x52539e*/
 
 }
 } // namespace gamemd
@@ -346,7 +346,7 @@ void WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4
   int v3; // eax
   int v4; // eax
 
-  ((AbstractTypeClass *)(this))->Constructor(aP1); /*0x75cecb*/
+  ((AbstractTypeClass *)(this))->Constructor((char *)(aP1)); /*0x75cecb*/
   *((unsigned int *)this + 38) = 0; /*0x75ced8*/
   *((unsigned int *)this + 39) = 0; /*0x75cede*/
   *((unsigned int *)this + 62) = 0; /*0x75cee4*/
@@ -513,9 +513,9 @@ void* WarheadTypeClass::ProcessPower(int * a2, void *a2_2)
   ((Power *)((Power *)a2))->FlagProcess(v15); /*0x75df86*/
   LOBYTE(v16) = this->CLDisableRed[2]; /*0x75df8b*/
   ((Power *)((Power *)a2))->FlagProcess(v16); /*0x75df94*/
-  Checksummer::Add_double((Checksummer *)a2, *(unsigned int *)&this->__pad_44[84], *(unsigned int *)&this->__pad_44[88]); /*0x75dfa9*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(*(unsigned int *)&this->__pad_44[84], *(unsigned int *)&this->__pad_44[88]); /*0x75dfa9*/
   Power::TimerProcess(this->WarheadTypeClass_field_0x100); /*0x75dfb7*/
-  Checksummer::Add_double((Checksummer *)a2, (int)this->WarheadTypeClass_field_0xF8, *(unsigned int *)this->__pad_FC); /*0x75dfcc*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double((int)this->WarheadTypeClass_field_0xF8, *(unsigned int *)this->__pad_FC); /*0x75dfcc*/
   LOBYTE(v17) = HIBYTE(this->PsychicDamage); /*0x75dfd1*/
   ((Power *)((Power *)a2))->FlagProcess(v17); /*0x75dfda*/
   Power::TimerProcess(this->WarheadTypeClass_field_0x17C); /*0x75dfe8*/
@@ -527,7 +527,7 @@ void* WarheadTypeClass::ProcessPower(int * a2, void *a2_2)
   v20 = 11; /*0x75e02d*/
   do /*0x75e04f*/
   {
-    Checksummer::Add_double((Checksummer *)a2, *v18, v18[1]); /*0x75e03e*/
+    ((Checksummer *)((Checksummer *)a2))->Add_double(*v18, v18[1]); /*0x75e03e*/
     v18 += 2; /*0x75e047*/
     --v20; /*0x75e04b*/
   }
@@ -581,7 +581,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     for ( i = 0; i < (int)a1; ++i ) /*0x75e18b*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x75e199*/
-      ((DynamicVector *)((DynamicVector *)v2->__pad_104))->Add_Alt4(&a2); /*0x75e1a7*/
+      ((DynamicVector *)((DynamicVector *)v2->__pad_104))->Add_Alt4((unsigned int *)(&a2)); /*0x75e1a7*/
     }
     if ( DebrisTypes ) /*0x75e1b5*/
       TypeList::VoxelAnimConstructor((TypeList *)DebrisTypes); /*0x75e1b9*/
@@ -589,7 +589,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     for ( j = 0; j < (int)a1; ++j ) /*0x75e1d5*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x75e1e3*/
-      ((DynamicVector *)((DynamicVector *)DebrisTypes))->Add2(&a2); /*0x75e1ed*/
+      ((DynamicVector *)((DynamicVector *)DebrisTypes))->Add2((unsigned int *)(&a2)); /*0x75e1ed*/
     }
     if ( v2 != (WarheadTypeClass *)-424 ) /*0x75e201*/
       TypeList::Construct((TypeList *)&v2->__pad_1A0[8]); /*0x75e205*/
@@ -978,7 +978,7 @@ void* WarheadTypeClass_ReadINI()
   {
     TypeList::AnimTypeCopy(v68, (unsigned int *)(a1 + 244)); /*0x772512*/
   }
-  VectorClass::CopyDefault((unsigned int *)(a1 + 244), v68); /*0x772524*/
+  ((VectorClass *)((unsigned int *)(a1 + 244)))->CopyDefault(v68); /*0x772524*/
   v13 = v70; /*0x77252d*/
   v14 = v71; /*0x772531*/
   *(unsigned int *)(a1 + 268) = v72; /*0x772535*/

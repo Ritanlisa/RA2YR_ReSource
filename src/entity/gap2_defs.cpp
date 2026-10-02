@@ -5675,7 +5675,7 @@ void* ParticleClass::UpdateParticle(int a1) {
 }
 // 0x62DC50
 namespace gamemd { 
-int ParticleSystemClass::Constructor(int a1, void* a2, int a3, void* a4, void* a5, int a6) {
+int ParticleSystemClass::Constructor(int a1, int *a2, int a3, void *a4, unsigned int *a5, int a6) {
   int *v8; // ebp
   int v9; // edx
   int *v10; // eax

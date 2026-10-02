@@ -503,7 +503,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   v40 = (v10 - v9) / 2; /*0x4b9909*/
   *(unsigned int *)v44.__pad_0 = 450; /*0x4b9912*/
   v41 = v8; /*0x4b992b*/
-  v11 = Coord2D::Add(&v44, &v42, &v40); /*0x4b992f*/
+  v11 = ((Coord2D *)(&v44))->Add((unsigned int *)(&v42), &v40); /*0x4b992f*/
   v12 = Rect::Construct(&v47, v11, 190, 80); /*0x4b9939*/
   v46[0] = *v12; /*0x4b9942*/
   v46[1] = v12[1]; /*0x4b994b*/
@@ -584,7 +584,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
 // 0x4a61c0
     return TextRenderer::DrawText(&v42, (size_t)v48, (int)g_DSurface_Hidden, v22, v23, v25, v28, v31); /*0x4b9bb7*/
   }
-  return result; /*0x4b9bbf*/
+  return (gamemd::CampaignScore **)(result); /*0x4b9bbf*/
 }
 }
 // 0x4BE9D0
@@ -670,14 +670,14 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
   }
   if ( *aP1 != v2 || *(unsigned long long *)(aP1 + 1) != qword_8A0794 ) /*0x4b0e50*/
   {
-    *v4 = *aP1; /*0x4b0e65*/
+    *v4 = (int)(*aP1); /*0x4b0e65*/
     this->ambientSoundController[2] = (int)(aP1[1]); /*0x4b0e6a*/
-    v6 = aP1[2]; /*0x4b0e6d*/
+    v6 = (int)(aP1[2]); /*0x4b0e6d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x4b0e70*/
     this->ambientSoundController[3] = v6; /*0x4b0e74*/
     vtable3 = ((unsigned int *)this)[0]; /*0x4b0e7a*/
     v7 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x4b0e81*/
-    if ( (uint8_t)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x4b0e94*/
+    if ( (uint8_t)((CrateClass *)((CrateClass *)v7))->ProcessPickup((int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo((int)this, aP1, 1); /*0x4b0ea3*/
       return 1; /*0x4b0ead*/
@@ -726,7 +726,7 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b4e62*/
   this->DropListClass_field_0x4C = a9; /*0x4b4e66*/
   ShapeButtonClass::Constructor((ShapeButtonClass *)&this->DropListClass_field_0x50, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
-  ListClass::Construct((int)(unsigned int *)this + 176, 0, aP5, aP6 + *(int16_t *)(a11 + 4), aP7 + *(int16_t *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
+  ((ListClass *)((int)(unsigned int *)this + 176))->Construct(0, aP5, aP6 + *(int16_t *)(a11 + 4), aP7 + *(int16_t *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
   *(unsigned int *)this->__pad_0 = &vt_DropListClass; /*0x4b4eac*/
   Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
   v13 = *((unsigned int *)this + 44); /*0x4b4eba*/

@@ -207,7 +207,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
       v10);
   }
   RunWOLMainLoop_Read_Read(); /*0x798e9f*/
-  if ( (uint8_t)Flag::IsNot2(&v12) ) /*0x798ea8*/
+  if ( (uint8_t)((Flag *)(&v12))->IsNot2() ) /*0x798ea8*/
   {
     ((SimpleDialogControl *)((SimpleDialogControl *)&v12.Flag_field_0x08))->Constructor(); /*0x798eb5*/
     v12.Flag_field_0x08 = (int)&off_7F7624; /*0x798ece*/
@@ -218,7 +218,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
     RunWOLMainLoop_Read_Read_72C830(v11); /*0x798ed7*/
     v7 = dword_A8B244 != 0; /*0x798eed*/
     v12.Flag_field_0x08 = (int)&off_7F7624; /*0x798eef*/
-    OwnerDrawControl::InitVtable((OwnerDrawControl *)&v12.Flag_field_0x08); /*0x798ef3*/
+    ((OwnerDrawControl *)((OwnerDrawControl *)&v12.Flag_field_0x08))->InitVtable(); /*0x798ef3*/
   }
   else
   {
@@ -228,7 +228,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
     RunWOLMainLoop_Read_Read_72C830(v11); /*0x798f26*/
     v7 = dword_A8B244 != 0; /*0x798f3b*/
     v13 = (gamemd::OwnerDrawControl)((OwnerDrawControl)&off_7F7624); /*0x798f3d*/
-    OwnerDrawControl::InitVtable(&v13); /*0x798f41*/
+    ((OwnerDrawControl *)(&v13))->InitVtable(); /*0x798f41*/
   }
   return (gamemd::Coord **)(v7);
 }
@@ -374,7 +374,7 @@ int sub_799D30()
       System_Init_72CA10(v1); /*0x799e75*/
       v10 = dword_A8B244 != 0; /*0x799e8b*/
       v13.DeleteAndZero_field_0x04 = (int)&off_7F7624; /*0x799e8d*/
-      OwnerDrawControl::InitVtable((OwnerDrawControl *)&v13.DeleteAndZero_field_0x04); /*0x799e91*/
+      ((OwnerDrawControl *)((OwnerDrawControl *)&v13.DeleteAndZero_field_0x04))->InitVtable(); /*0x799e91*/
       return v10; /*0x799e96*/
     }
   }
@@ -397,7 +397,7 @@ void sub_7A2970()
       v0[0] = (unsigned int)&off_7F7624; /*0x7a29b2*/
       RunDialog(0x122u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))BuddyDlgProcWOL, (LPARAM)v0); /*0x7a29ba*/
       v0[0] = (unsigned int)&off_7F7624; /*0x7a29c3*/
-      OwnerDrawControl::InitVtable(v0); /*0x7a29cb*/
+      ((OwnerDrawControl *)(v0))->InitVtable(); /*0x7a29cb*/
     }
   }
 }

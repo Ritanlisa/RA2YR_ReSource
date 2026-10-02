@@ -258,7 +258,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   *(unsigned int *)a2->__pad_0 = *v36; /*0x5b23b8*/
   a2->Vector3_field_0x04 = v37; /*0x5b23be*/
   a2->Vector3_field_0x08 = v38; /*0x5b23c4*/
-  v39 = Vector3::Subtract(a2, (int *)&v90, aP3); /*0x5b23c7*/
+  v39 = ((Vector3 *)(a2))->Subtract((int *)&v90, aP3); /*0x5b23c7*/
   v40 = Coord::Length((Coord *)v39); /*0x5b23ce*/
   v41 = (void *)(*aP3); /*0x5b23d3*/
   v42 = (void *)(aP3[1]); /*0x5b23d5*/

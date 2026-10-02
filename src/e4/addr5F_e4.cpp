@@ -123,19 +123,19 @@ char HandlePlayerDisconnection(int a1, int a2)
         {
           if ( a2 == 1 ) /*0x5f01c6*/
           {
-            StringCSF = GetStringCSF(aTxtConnectionL, 0, g_Str_File_NullDlg_CPP, 6412); /*0x5f01e0*/
+            StringCSF = GetStringCSF((wchar_t *)(aTxtConnectionL), 0, g_Str_File_NullDlg_CPP, 6412); /*0x5f01e0*/
             swprintf(String, (const size_t)StringCSF, (const wchar_t *const)(v3 + 90154)); /*0x5f01eb*/
           }
         }
         else
         {
-          v5 = GetStringCSF(aTxtLeftGame, 0, g_Str_File_NullDlg_CPP, 6416); /*0x5f020d*/
+          v5 = GetStringCSF((wchar_t *)(aTxtLeftGame), 0, g_Str_File_NullDlg_CPP, 6416); /*0x5f020d*/
           swprintf(String, (const size_t)v5, (const wchar_t *const)(v3 + 90154)); /*0x5f0218*/
         }
         if ( wcslen(String) ) /*0x5f0231*/
         {
           v6 = Math::RoundToInt(*(double *)&((unsigned int *)(dword_8871E0))[1].__pad_A0 * 900.0); /*0x5f0250*/
-          MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(unsigned int *)(v3->relatedTagsCapacity + 192), 16454, v6, 0); /*0x5f0273*/
+          MessageListClass::AddMessage((void *)(unk_A8BC60), 0, 0, String, *(unsigned int *)(v3->relatedTagsCapacity + 192), 16454, v6, 0); /*0x5f0273*/
           MapClass::MarkForRedraw((int)(&dword_87F7E8), 0); /*0x5f027f*/
         }
         v7 = 0; /*0x5f028b*/
@@ -163,10 +163,10 @@ char HandlePlayerDisconnection(int a1, int a2)
         result = --dword_A8B54C; /*0x5f0324*/
         if ( dword_A8B54C == 1 ) /*0x5f032f*/
         {
-          v9 = GetStringCSF(aTxtJustYouAndM, 0, g_Str_File_NullDlg_CPP, 6453); /*0x5f0342*/
+          v9 = GetStringCSF((wchar_t *)(aTxtJustYouAndM), 0, g_Str_File_NullDlg_CPP, 6453); /*0x5f0342*/
           swprintf(String, (const size_t)&off_8240B4, v9); /*0x5f0352*/
           v10 = Math::RoundToInt(*(double *)&((unsigned int *)(dword_8871E0))[1].__pad_A0 * 900.0); /*0x5f036e*/
-          MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(unsigned int *)(v3->relatedTagsCapacity + 192), 16454, v10, 0); /*0x5f0391*/
+          MessageListClass::AddMessage((void *)(unk_A8BC60), 0, 0, String, *(unsigned int *)(v3->relatedTagsCapacity + 192), 16454, v10, 0); /*0x5f0391*/
           return MapClass::MarkForRedraw((int)(&dword_87F7E8), 0); /*0x5f039d*/
         }
       }
@@ -202,18 +202,18 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
 v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((wchar_t *)((unsigned int)((wchar_t *)((char)((wchar_t *)(IDA_HIBYTE(a1))))))))))))));
   v3 = (unsigned int)((gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(3))));
   if ( a3 == (void *)(1) ) /*0x5f2d00*/
-    StringCSF = GetStringCSF((wchar_t *)aTxtModemConner_0, 0, g_Str_File_NullMgr_CPP, 1580); /*0x5f2d13*/
+    StringCSF = GetStringCSF((wchar_t *)aTxtModemConner_0, 0,(const char *)(g_Str_File_NullMgr_CPP), 1580); /*0x5f2d13*/
   else
-    StringCSF = GetStringCSF(aTxtWaitingForC_0, 0, g_Str_File_NullMgr_CPP, 1582); /*0x5f2d26*/
+    StringCSF = GetStringCSF((wchar_t *)(aTxtWaitingForC_0), 0, g_Str_File_NullMgr_CPP, 1582); /*0x5f2d26*/
   v5 = (LPARAM)StringCSF; /*0x5f2d30*/
     ((Debug *)0)->Log();
   v6 = (gamemd::AbstractClass **)((int)((char)((gamemd::AbstractClass **)(1))));
   g_NetworkTestFlag = (int)((wchar_t *)(0));
-  v7 = (gamemd::AbstractClass **)((wchar_t *)((gamemd::AbstractClass **)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0,(const char *)(g_Str_File_NullMgr_CPP), 1589))));
+  v7 = (wchar_t *)((gamemd::AbstractClass **)((wchar_t *)((gamemd::AbstractClass **)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0,(const char *)(g_Str_File_NullMgr_CPP), 1589)))));
   MessageBox = (gamemd::AbstractClass **)(CreateMessageBox(v5, (LPARAM)v7, (LONG)&g_NetworkTestFlag));
   v21 = (gamemd::AbstractClass **)((HWND)((gamemd::AbstractClass **)(MessageBox)));
   if ( !MessageBox ) /*0x5f2d6d*/
-    return 3; /*0x5f3155*/
+    return (gamemd::AbstractClass **)(3); /*0x5f3155*/
   ((Dialog *)(MessageBox))->Show(); /*0x5f2d76*/
   (*(void (**)(HWND, int (*)(), int))(*(unsigned int *)g_ClipboardBuffer + 36))( /*0x5f2d88*/
     g_ClipboardBuffer,
@@ -258,10 +258,10 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
     _strupr((char *)(Source)); /*0x5f2e06*/
     if ( strlen((const char *)(Source)) ) /*0x5f2e0f*/
             ((Debug *)0)->Log();
-    if ( !strncmp(Source, aRing, 4u) ) /*0x5f2e3c*/
+    if ( !strncmp((const char *)(Source), aRing, 4u) ) /*0x5f2e3c*/
     {
             ((Debug *)0)->Log();
-      v11 = GetStringCSF(aTxtAnswering, 0, g_Str_File_NullMgr_CPP, 1647); /*0x5f2e66*/
+      v11 = GetStringCSF((wchar_t *)(aTxtAnswering), 0, g_Str_File_NullMgr_CPP, 1647); /*0x5f2e66*/
       Network_Start(hWnd, (LPARAM)v11); /*0x5f2e71*/
             ((Debug *)0)->Log();
       ((WinModemClass *)((int *)g_ClipboardBuffer))->WriteSerial(aAta, strlen(aAta)); /*0x5f2e9e*/
@@ -276,25 +276,25 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
       v3 = 0; /*0x5f2eed*/
             ((Debug *)0)->Log();
     }
-    else if ( !strncmp(Source, aBusy, 4u) ) /*0x5f2f0e*/
+    else if ( !strncmp((const char *)(Source), aBusy, 4u) ) /*0x5f2f0e*/
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)(2));
             ((Debug *)0)->Log();
     }
-    else if ( !strncmp(Source, aNoC, 4u) ) /*0x5f2f42*/
+    else if ( !strncmp((const char *)(Source), aNoC, 4u) ) /*0x5f2f42*/
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)(1));
             ((Debug *)0)->Log();
     }
     else
     {
-      if ( strncmp(Source, aErro, 4u) ) /*0x5f2f73*/
+      if ( strncmp((const char *)(Source), aErro, 4u) ) /*0x5f2f73*/
         goto LABEL_22; /*0x5f2f7d*/
       v3 = 3; /*0x5f2f83*/
             ((Debug *)0)->Log();
       v21 = (gamemd::AbstractClass **)((wchar_t *)((HWND)asc_82083C));
       v16 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)(g_Str_File_NullMgr_CPP), 1671));
-      v12 = (int *)GetStringCSF(aTxtErrorError, 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fcc*/
+      v12 = (int *)GetStringCSF((wchar_t *)(aTxtErrorError), 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fcc*/
       Dialog::ShowMessageBox(v12, v16, 0, 0, 0, v18); /*0x5f2fd6*/
     }
     v6 = 0; /*0x5f2fdb*/
@@ -324,7 +324,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
   }
   else
   {
-    sprintf(byte_AC1288, "%s", aConnected); /*0x5f301a*/
+    sprintf((char *const )(byte_AC1288), "%s", aConnected); /*0x5f301a*/
     v3 = 0; /*0x5f3024*/
         ((Debug *)0)->Log();
   }
@@ -332,7 +332,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
   (*(void (**)(HWND, unsigned int))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, 0); /*0x5f3129*/
   g_NetworkTestFlag = 0; /*0x5f313a*/
   Dialog::Destroy(v21); /*0x5f3141*/
-  return v3; /*0x5f3149*/
+  return (gamemd::AbstractClass **)(v3); /*0x5f3149*/
 }
 }
 // 0x5F33B0
@@ -561,8 +561,8 @@ AbstractClass * * sub_5FDDF0()
   for ( i = v12 - 1; i >= 0; --i ) /*0x5fdeb1*/
   {
     v6 = (BuildingClass *)*((unsigned int *)Block + i); /*0x5fdeb7*/
-    if ( (uint8_t)BuildingClass::CheckAdjacentCells((int)v6) ) /*0x5fdebc*/
-      BuildingClass::VisualizePlacement(v6); /*0x5fdec7*/
+    if ( (uint8_t)((BuildingClass *)((int)v6))->CheckAdjacentCells() ) /*0x5fdebc*/
+      ((BuildingClass *)(v6))->VisualizePlacement(); /*0x5fdec7*/
   }
   v7 = (void*)&VectorClass_CellClass___vftable; /*0x5fded3*/
   if ( Block ) /*0x5fdedd*/
@@ -616,7 +616,7 @@ int BuildingTypeClass_LoadSHPs(int a1)
     }
     if ( !*(unsigned char *)(v4 + 567) ) /*0x5fe6be*/
       goto LABEL_14; /*0x5fe6be*/
-    _makepath(Buffer, 0, 0, (const char *)(v4 + 504), Ext); /*0x5fe6dd*/
+    _makepath(Buffer, 0, 0, (const char *)(v4 + 504),(const char *)(Ext)); /*0x5fe6dd*/
     TheaterObjectTypeClassSpecificID(Buffer, a1); /*0x5fe6eb*/
     v7 = (int)(SearchMIXFile(Buffer, 1)); /*0x5fe6f6*/
     *(unsigned int *)(v4 + 164) = v7; /*0x5fe6fd*/
@@ -704,7 +704,7 @@ AbstractClass * * GenerateRangeRingTextures()
   v1 = 0; /*0x5ff429*/
   if ( !byte_AC1834 ) /*0x5ff430*/
   {
-    v2 = dword_AC1698; /*0x5ff43b*/
+    v2 = (int *)(dword_AC1698); /*0x5ff43b*/
     for ( i = 1; i < 129; i += 2 ) /*0x5ff440*/
     {
       if ( !*v2 ) /*0x5ff444*/
@@ -729,10 +729,10 @@ AbstractClass * * GenerateRangeRingTextures()
       (*(void (**)(int, unsigned int))(*(unsigned int *)*v2 + 24))(*v2, 0); /*0x5ff497*/
       Surface::Construct((Surface *)&v31, 256, 256); /*0x5ff4a8*/
       v31.LockCount = 0; /*0x5ff4b1*/
-      *(unsigned int *)v31.Surface = &XSurface_Vtable; /*0x5ff4bb*/
+      *(unsigned int *)v31.Surface = (unsigned int)(&XSurface_Vtable); /*0x5ff4bb*/
       v32 = 1; /*0x5ff4c3*/
       Buffer::Init((Buffer *)v33, 0, 0x10000); /*0x5ff4c7*/
-      *(unsigned int *)v31.Surface = &BSurface_Vtable; /*0x5ff4d0*/
+      *(unsigned int *)v31.Surface = (unsigned int)(&BSurface_Vtable); /*0x5ff4d0*/
       XSurface::Fill(&v31, 0); /*0x5ff4d9*/
       v5 = i; /*0x5ff4de*/
       if ( i > 0 ) /*0x5ff4e6*/
@@ -743,7 +743,7 @@ AbstractClass * * GenerateRangeRingTextures()
           v7 = v6; /*0x5ff4f3*/
           if ( v6 > 255 ) /*0x5ff4f5*/
             v7 = 255; /*0x5ff4f7*/
-          Draw::Ellipse((Draw *)&v31, 128, 128, v5, 0, 0, 255, 255, v7); /*0x5ff520*/
+          ((Draw *)((Draw *)&v31))->Ellipse(128, 128, v5, 0, 0, 255, 255, v7); /*0x5ff520*/
           v5 -= 2; /*0x5ff525*/
           v6 += 4; /*0x5ff528*/
         }
@@ -770,7 +770,7 @@ AbstractClass * * GenerateRangeRingTextures()
       }
       ((Vector *)((int)v33))->Clear(); /*0x5ff584*/
       ++v2; /*0x5ff58d*/
-      *(unsigned int *)v31.Surface = &Surface_Vtable; /*0x5ff593*/
+      *(unsigned int *)v31.Surface = (unsigned int)(&Surface_Vtable); /*0x5ff593*/
     }
     i = 0; /*0x5ff5aa*/
     v10 = (Surface **)&unk_AC1798; /*0x5ff5ae*/
@@ -799,14 +799,14 @@ AbstractClass * * GenerateRangeRingTextures()
       (*(void (**)(Surface *, unsigned int))(*(unsigned int *)(*v10)->__pad_0 + 24))(*v10, 0); /*0x5ff60c*/
       Surface::Construct((Surface *)&v31, 256, 256); /*0x5ff61d*/
       v31.LockCount = 0; /*0x5ff626*/
-      *(unsigned int *)v31.Surface = &XSurface_Vtable; /*0x5ff630*/
+      *(unsigned int *)v31.Surface = (unsigned int)(&XSurface_Vtable); /*0x5ff630*/
       v32 = 1; /*0x5ff638*/
       Buffer::Init((Buffer *)v33, 0, 0x10000); /*0x5ff640*/
-      *(unsigned int *)v31.Surface = &BSurface_Vtable; /*0x5ff649*/
+      *(unsigned int *)v31.Surface = (unsigned int)(&BSurface_Vtable); /*0x5ff649*/
       XSurface::Fill(&v31, 0); /*0x5ff652*/
       v21 = 60 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1960); /*0x5ff684*/
       IDA_LOWORD(v14) = Math::RoundToInt((double)v21 * -0.002790178571428571); /*0x5ff692*/
-      Draw::Ellipse((Draw *)&v31, 128, 128, i - v14, 0, 0, 255, 255, v11); /*0x5ff6a9*/
+      ((Draw *)((Draw *)&v31))->Ellipse(128, 128, i - v14, 0, 0, 255, 255, v11); /*0x5ff6a9*/
       for ( k = 0; k < 128; ++k ) /*0x5ff6ae*/
       {
         v30 = 1; /*0x5ff6ba*/
@@ -829,7 +829,7 @@ AbstractClass * * GenerateRangeRingTextures()
       ((Vector *)((int)v33))->Clear(); /*0x5ff702*/
       v11 -= 6; /*0x5ff70b*/
       ++v10; /*0x5ff70f*/
-      *(unsigned int *)v31.Surface = &Surface_Vtable; /*0x5ff715*/
+      *(unsigned int *)v31.Surface = (unsigned int)(&Surface_Vtable); /*0x5ff715*/
       ++i; /*0x5ff71d*/
     }
     while ( v11 > 68 ); /*0x5ff721*/
@@ -838,10 +838,10 @@ AbstractClass * * GenerateRangeRingTextures()
   dword_833588 = DDraw_GetStatus(); /*0x5ff73d*/
   v22 = 5; /*0x5ff742*/
   IDA_HIBYTE(v19) = 0; /*0x5ff74a*/
-  result = GetVersionString(&v22, (unsigned char *)&v19 + 3, 0, 0); /*0x5ff74e*/
+  result = GetVersionString((unsigned int *)(&v22), (unsigned char *)&v19 + 3, 0, 0); /*0x5ff74e*/
   if ( IDA_HIBYTE(v19) && !dword_AC1838 ) /*0x5ff763*/
   {
-    dword_AC1838 = (void *)RA2_OPNEW(0x40000u); /*0x5ff776*/
+    dword_AC1838 = (unsigned int)((void *)RA2_OPNEW(0x40000u)); /*0x5ff776*/
     do /*0x5ff7ed*/
     {
       IDA_BYTE1(v21) = (uint8_t)((uint16_t)v1 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ff7aa*/
@@ -853,7 +853,7 @@ AbstractClass * * GenerateRangeRingTextures()
     }
     while ( v1 < 0x10000 ); /*0x5ff7ed*/
   }
-  return result; /*0x5ff7ef*/
+  return (gamemd::AbstractClass **)(result); /*0x5ff7ef*/
 }
 }
 // 0x5F1350
@@ -1017,7 +1017,7 @@ unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
 
   this->ambientSoundController[2] = a2; /*0x5f15cc*/
   this->ambientSoundController[3] = a3; /*0x5f15d3*/
-  ((unsigned int *)this)[0] = (void *)a4; /*0x5f15da*/
+  ((unsigned int *)this)[0] = (unsigned int)((void *)a4); /*0x5f15da*/
   LOWORD(this->ambientSoundController[4]) = a5; /*0x5f15e2*/
   this->fallRate = 60; /*0x5f15eb*/
   this->customSound_controller[3] = 60; /*0x5f15ee*/

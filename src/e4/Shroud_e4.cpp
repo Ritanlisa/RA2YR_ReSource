@@ -35,7 +35,7 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
   RadarClass *RadarClass_field_0x149C; // edi
   int v16; // eax
 
-  ShroudClass::UpdateVisibility((MapClass *)this, aP1); /*0x65449d*/
+  ((ShroudClass *)((MapClass *)this))->UpdateVisibility(aP1); /*0x65449d*/
   v3 = *(unsigned int *)&this->__pad_C0[60]; /*0x6544a2*/
   v4 = *(unsigned int *)&this->__pad_C0[64]; /*0x6544a8*/
   *(unsigned int *)this->__pad_14A8 = 0; /*0x6544b3*/
@@ -62,7 +62,7 @@ LABEL_17:
       result = ((LayerClass *)((LayerClass *)this))->CellIteratorNext(); /*0x65462c*/
       v9 = result; /*0x654633*/
       if ( !result ) /*0x654637*/
-        return result; /*0x654637*/
+        return (gamemd::RadarClass **)(result); /*0x654637*/
     }
     if ( this->RadarClass_field_0x1498 == (unsigned int)((MapClass *))-1 ) /*0x65457f*/
       this->RadarClass_field_0x1498 = (MapClass *)(*(int16_t *)(v9 + 36) + *(int16_t *)(v9 + 38)); /*0x65458b*/

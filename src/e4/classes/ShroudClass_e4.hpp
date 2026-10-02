@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct ShroudClass {
-    int UpdateVisibility(int * a2);
+    int UpdateVisibility(int *aP1);
 };
 
 } // namespace gamemd

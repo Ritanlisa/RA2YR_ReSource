@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Coord3D {
-    unsigned int * Set(int a2, int a3, int a4);
+    unsigned int * Set(int aP1, int aP2, int a4);
 };
 
 } // namespace gamemd

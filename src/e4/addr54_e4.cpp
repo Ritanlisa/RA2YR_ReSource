@@ -117,7 +117,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
     ++this->location[1]; /*0x541232*/
     ((Debug *)this)->Log(); /*0x541240*/
   }
-  return v13; /*0x5411af*/
+  return (gamemd::AbstractClass **)(v13); /*0x5411af*/
 
 }
 }
@@ -194,7 +194,7 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
   if ( !g_DSurface_Primary ) /*0x544e86*/
     return 0; /*0x544e8b*/
   if ( a1 == 1000 && a2 == 1000 && a3 == 1000 && dword_87F6A8 ) /*0x544ead*/
-    return *(unsigned int *)dword_87F69C; /*0x544eb7*/
+    return (gamemd::AbstractClass **)(*(unsigned int *)dword_87F69C); /*0x544eb7*/
   QuantizeColorRGB(&a3); /*0x544ecd*/
   v4 = 1; /*0x544ee4*/
   if ( dword_87F6A8 <= 1 ) /*0x544eeb*/
@@ -469,7 +469,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   sprintf(v180, DataGlobal_008295F4, (const char *)&off_7E1BC6 + v9);
   unsigned int v161[22]; // [esp+3A8h] [ebp-668h] BYREF
   ((CCFileClass *)(v161))->Construct(v180);
-  if ( CCFileClass::Open((int)(v161), 0) )
+  if ( ((CCFileClass *)((int)(v161)))->Open(0) )
   {
     ((CCFileClass *)(v161))->Read(&stru_ABBED0, 768);
     v18 = (gamemd::CampaignScore *)(&stru_ABBED0);
@@ -747,11 +747,11 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   *(unsigned int *)&g_NetworkPlayerBuffer[80476] = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[80360] = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[80408] = -1;
-  dword_ABB108 = (CCINIClass *)-1;
+  dword_ABB108 = (unsigned int)((CCINIClass *)-1);
   *(unsigned int *)&g_NetworkPlayerBuffer[80504] = -1;
-  dword_ABAD2C = (CCINIClass *)-1;
+  dword_ABAD2C = (unsigned int)((CCINIClass *)-1);
   *(unsigned int *)&g_NetworkPlayerBuffer[78080] = -1;
-  dword_ABB110 = (CCINIClass *)-1;
+  dword_ABB110 = (unsigned int)((CCINIClass *)-1);
   *(unsigned int *)&g_NetworkPlayerBuffer[80484] = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[80404] = -1;
   dword_ABBEBC = (CCINIClass *)-1;
@@ -1150,7 +1150,7 @@ LABEL_26:
           {
   unsigned int v171[22]; // [esp+56Ch] [ebp-4A4h] BYREF
             CCFileClass::Construct(v171, v182);
-            v60 = CCFileClass::Open(v171, 0);
+            v60 = ((CCFileClass *)(v171))->Open(0);
             if ( v60 && !v65 )
               strncpy((char *)v3 + 757, v182, 0xEu);
             v171[0] = (unsigned int)&vt_CCFileClass;
@@ -1158,7 +1158,7 @@ LABEL_26:
   char v172[12]; // [esp+5C4h] [ebp-44Ch] BYREF
             ((Vector *)((int)v172))->Clear();
             v171[0] = (unsigned int)&off_7E1668;
-            BufferIOFileClass::Dtor(v171);
+            ((BufferIOFileClass *)(v171))->Dtor();
             if ( v60 )
               goto LABEL_190;
           }
@@ -1178,7 +1178,7 @@ LABEL_26:
           {
   unsigned int v174[22]; // [esp+5D8h] [ebp-438h] BYREF
             CCFileClass::Construct(v174, v182);
-            v60 = CCFileClass::Open(v174, 0);
+            v60 = ((CCFileClass *)(v174))->Open(0);
             if ( v60 && !v65 )
               strncpy((char *)v3 + 757, v182, 0xEu);
             v174[0] = (unsigned int)&vt_CCFileClass;
@@ -1186,7 +1186,7 @@ LABEL_26:
   char v175[12]; // [esp+630h] [ebp-3E0h] BYREF
             ((Vector *)((int)v175))->Clear();
             v174[0] = (unsigned int)&off_7E1668;
-            BufferIOFileClass::Dtor(v174);
+            ((BufferIOFileClass *)(v174))->Dtor();
             if ( v60 )
               goto LABEL_190;
           }
@@ -1201,7 +1201,7 @@ LABEL_26:
           {
   unsigned int v165[22]; // [esp+494h] [ebp-57Ch] BYREF
             CCFileClass::Construct(v165, v182);
-            v60 = CCFileClass::Open(v165, 0);
+            v60 = ((CCFileClass *)(v165))->Open(0);
             if ( v60 && !v65 )
               strncpy((char *)v3 + 757, v182, 0xEu);
             v165[0] = (unsigned int)&vt_CCFileClass;
@@ -1209,7 +1209,7 @@ LABEL_26:
   char v166[12]; // [esp+4ECh] [ebp-524h] BYREF
             ((Vector *)((int)v166))->Clear();
             v165[0] = (unsigned int)&off_7E1668;
-            BufferIOFileClass::Dtor(v165);
+            ((BufferIOFileClass *)(v165))->Dtor();
             if ( v60 )
               goto LABEL_190;
           }
@@ -1231,7 +1231,7 @@ LABEL_189:
           }
   unsigned int v177[22]; // [esp+644h] [ebp-3CCh] BYREF
           CCFileClass::Construct(v177, v182);
-          v60 = CCFileClass::Open(v177, 0);
+          v60 = ((CCFileClass *)(v177))->Open(0);
           if ( v60 && !v65 )
             strncpy((char *)v3 + 757, v182, 0xEu);
           v177[0] = (unsigned int)&vt_CCFileClass;
@@ -1239,7 +1239,7 @@ LABEL_189:
   char v178[12]; // [esp+69Ch] [ebp-374h] BYREF
           ((Vector *)((int)v178))->Clear();
           v177[0] = (unsigned int)&off_7E1668;
-          BufferIOFileClass::Dtor(v177);
+          ((BufferIOFileClass *)(v177))->Dtor();
 LABEL_190:
           if ( !v65 )
             goto LABEL_207;
@@ -1375,25 +1375,25 @@ LABEL_217:
   char v169[12]; // [esp+558h] [ebp-4B8h] BYREF
   ((Vector *)((int)v169))->Clear();
   *(unsigned int *)aP1[0] = &off_7E1668;
-  BufferIOFileClass::Dtor(&aP1);
+  ((BufferIOFileClass *)(&aP1))->Dtor();
   v161[0] = (unsigned int)&vt_CCFileClass;
   int v163 = 0;
   char v162[12]; // [esp+400h] [ebp-610h] BYREF
   ((Vector *)((int)v162))->Clear();
   v161[0] = (unsigned int)&off_7E1668;
-  BufferIOFileClass::Dtor(v161);
+  ((BufferIOFileClass *)(v161))->Dtor();
   v149[0] = (int)&vt_CCFileClass;
   int v151 = 0;
   char v150[12]; // [esp+26Ch] [ebp-7A4h] BYREF
   ((Vector *)((int)v150))->Clear();
   v149[0] = (int)&off_7E1668;
-  BufferIOFileClass::Dtor(v149);
+  ((BufferIOFileClass *)(v149))->Dtor();
   v158[0] = (int)&vt_CCFileClass;
   int v160 = 0;
   char v159[12]; // [esp+394h] [ebp-67Ch] BYREF
   ((Vector *)((int)v159))->Clear();
   v158[0] = (int)&off_7E1668;
-  BufferIOFileClass::Dtor(v158);
+  ((BufferIOFileClass *)(v158))->Dtor();
   return HashTable_flat::DestroyHashTableINIClass((void **)v77);
 }
 
@@ -2086,7 +2086,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
   else if ( (uint8_t)ObjectClass::HasLinkedObject(*(unsigned int *)(_ESI + 12)) ) /*0x54baea*/
   {
     v9 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54bb08*/
-    v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v31); /*0x54bb14*/
+    v10 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v31); /*0x54bb14*/
     v11 = **(unsigned int **)(_ESI + 12); /*0x54bb1f*/
     NeighbourContent = ((Cell *)(v10))->GetNeighbourContent(v9); /*0x54bb23*/
     (*(void (**)(unsigned int, void *, int))(v11 + 1152))(*(unsigned int *)(_ESI + 12), NeighbourContent, 1); /*0x54bb2c*/

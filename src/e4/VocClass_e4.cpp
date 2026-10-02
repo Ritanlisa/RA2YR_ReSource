@@ -70,12 +70,12 @@ char * VocClass::GetSampleNameByIndex(int a1)
   char *v1; // ecx
 
   if ( a1 < 0 || a1 >= g_VocPlayState ) /*0x75159a*/
-    return g_Str__none_; /*0x7515b5*/
+    return (char *)(g_Str__none_); /*0x7515b5*/
   v1 = (char *)**((unsigned int **)g_VocAudioConfig + a1); /*0x7515a4*/
   if ( v1 ) /*0x7515a8*/
     return VocClass::GetSampleName(v1); /*0x7515aa*/
   else
-    return g_Str_Invalid_Voc; /*0x7515af*/
+    return (char *)(g_Str_Invalid_Voc); /*0x7515af*/
 
 }
 } // namespace gamemd

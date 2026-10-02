@@ -519,7 +519,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
     v1 = (CCFileClass *)&loc_5BB260; /*0x5e85bc*/
   }
   if ( ((CCFileClass *)(v1))->Load() != 1 ) /*0x5e85c9*/
-    return -1; /*0x5e85cb*/
+    return (gamemd::AbstractClass **)(-1); /*0x5e85cb*/
   byte_8316D4 = 1; /*0x5e85db*/
   ((MapSeed *)(byte_ABDFD8))->ValidateName((int)aRandmapSed); /*0x5e85e2*/
   v3 = g_UIControlState; /*0x5e85e7*/
@@ -557,11 +557,11 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
       *(unsigned int *)(dword_A8B8CC + 4 * v10) = v9; /*0x5e86e1*/
     }
     RA2_OPDEL(v7); /*0x5e86e5*/
-    return v6; /*0x5e86ed*/
+    return (gamemd::AbstractClass **)(v6); /*0x5e86ed*/
   }
   else
   {
-    while ( !(uint8_t)IsRandMap::Sed(*(unsigned int *)(dword_A8B8CC + 4 * v6)) ) /*0x5e8645*/
+    while ( !(uint8_t)((IsRandMap *)(*(unsigned int *)(dword_A8B8CC + 4 * v6)))->Sed() ) /*0x5e8645*/
     {
       if ( ++v6 >= dword_A8B8D8 ) /*0x5e8653*/
         goto LABEL_18; /*0x5e8653*/
@@ -570,7 +570,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
     v11 = (char **)(dword_A8B8CC + 4 * v6); /*0x5e870b*/
     v12 = GameConfig::ComputeCRC(); /*0x5e870e*/
     ((GameOption *)(*v11))->SetDigest(v12); /*0x5e8716*/
-    return v6; /*0x5e871b*/
+    return (gamemd::AbstractClass **)(v6); /*0x5e871b*/
   }
 }
 }

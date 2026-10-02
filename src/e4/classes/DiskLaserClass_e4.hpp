@@ -31,6 +31,7 @@ struct DiskLaserClass {
     int  Write(AbstractClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
     void * CopyTo(char a2);
+    void PointerGotInvalid(int a2);  // 0x4a7900
 };
 
 } // namespace gamemd

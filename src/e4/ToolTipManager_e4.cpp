@@ -30,7 +30,7 @@ int ToolTipManager::ddtor(char a2)
   int result; // eax
 
   if ( a2 == 1 ) /*0x724b89*/
-    ToolTipClass::initString((ToolTipClass *)this); /*0x724b8b*/
+    ((ToolTipClass *)((ToolTipClass *)this))->initString(); /*0x724b8b*/
   result = this->Position[0]; /*0x724b90*/
   if ( result ) /*0x724b95*/
     return (*(int (**)(ToolTipManager *, int *))(*(unsigned int *)&this->IsVisible + 16))( /*0x724b9f*/

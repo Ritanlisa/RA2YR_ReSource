@@ -136,7 +136,7 @@ struct AbstractClass {
     int  COMStub_54(int a2, int a3);  // 0x543A10
     char COMStub_53();  // 0x543A40
     IsometricTileClass *  CreateInstance(void ** Block, char a2, void *a1 = 0);  // 0x543B10
-    void  processStateTransition(void * aP1);  // 0x54E590
+    void processStateTransition(int aP1);  // 0x54E590
     int  COMStub_125(int a2, int a3, void * aP3);  // 0x5B3650
     char COMStub_126();  // 0x5B36B0
     int  COMStub_13(void * aP1, void *a1 = 0);  // 0x5B3970
@@ -319,5 +319,6 @@ struct AbstractClass {
      double Constructor(...);  // C2597 interim stub
     static double InitVtables(...);  // C2597 interim stub
     static double IsTechnoType(...);  // C2597 interim stub
+    int processDetection(int a2);  // 0x439150
 };
 } // namespace gamemd

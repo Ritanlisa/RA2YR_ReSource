@@ -90,7 +90,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
   v6 = 0; /*0x750953*/
   if ( a4 ) /*0x750957*/
   {
-    v7 = AudioSource::Get(a4); /*0x75095b*/
+    v7 = (int)(((AudioSource *)(a4))->Get()); /*0x75095b*/
     v6 = v7; /*0x750960*/
     if ( v7 ) /*0x750964*/
     {
@@ -106,15 +106,15 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
     v8 = Math::RoundToInt(a3 * 16384.0); /*0x75098e*/
     if ( v8 >= 0x4000 ) /*0x750996*/
       v8 = (int)(0x4000); /*0x750998*/
-    if ( v6 || (v6 = AudioPool::ProcessQueue(v5)) != 0 ) /*0x7509ac*/
+    if ( v6 || (v6 = ((AudioPool *)(v5))->ProcessQueue()) != 0 ) /*0x7509ac*/
     {
-      AudioMixer::PlayBuffer(v6, v8); /*0x7509b2*/
+      AudioMixer::PlayBuffer((unsigned int *)(v6), v8); /*0x7509b2*/
       ((AudioMixer *)(v6))->RequestOrEndBuffer(a2); /*0x7509bd*/
     }
   }
   if ( a4 ) /*0x7509c5*/
     SetAudioSource(v5); /*0x7509cc*/
-  return v6; /*0x750931*/
+  return (gamemd::AbstractClass **)(v6); /*0x750931*/
 }
 }
 // 0x750AC0
@@ -161,10 +161,10 @@ void ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
   IDA_HIWORD(a3) = v9; /*0x750b5d*/
   if ( (unsigned short)v8 == *(unsigned short *)&stru_B1D290.needsRedraw && (unsigned short)v9 == *(unsigned short *)&stru_B1D290.inOpenToppedTransport ) /*0x750b73*/
     return 0.0; /*0x750b82*/
-  if ( (*((unsigned char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a3) + 300) & 0x18) == 0 ) /*0x750b9b*/
+  if ( (*((unsigned char *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a3) + 300) & 0x18) == 0 ) /*0x750b9b*/
     return 0.0; /*0x750b9d*/
   LABEL_7:
-  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(aP0, v26); /*0x750bb9*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(aP0), v26); /*0x750bb9*/
   v11 = (double)v26[0] - v23; /*0x750bc2*/
   v19 = v11; /*0x750bc6*/
   IDA_LOWORD(v12) = Math::RoundToInt(v11); /*0x750bca*/
@@ -226,7 +226,7 @@ VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2)
   result = (gamemd::VocClass *)((double)(0));
   if ( !a2 ) /*0x750d4d*/
     return result; /*0x750d4d*/
-  v5 = (VocClass *)AudioSource::Get(a2); /*0x750d5e*/
+  v5 = (VocClass *)((AudioSource *)(a2))->Get(); /*0x750d5e*/
   v6 = ((VocClass *)((VocClass *)a2))->Check(); /*0x750d60*/
   v7 = (AudioPool *)v6; /*0x750d65*/
   if ( !v6 ) /*0x750d69*/
@@ -245,7 +245,7 @@ VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2)
   {
     if ( ((AudioMixer *)((AudioMixer *)v7))->SetVolume() && VocClass_VoicesEnabled ) /*0x750da2*/
     {
-      v9 = AudioPool::ProcessQueue(v7); /*0x750da6*/
+      v9 = ((AudioPool *)(v7))->ProcessQueue(); /*0x750da6*/
       v5 = (VocClass *)v9; /*0x750dab*/
       if ( !v9 ) /*0x750daf*/
         goto LABEL_15; /*0x750daf*/
@@ -254,16 +254,16 @@ VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2)
     if ( v5 ) /*0x750dba*/
       goto LABEL_10; /*0x750dba*/
   LABEL_15:
-    SetAudioSource((int)a2, v5, (int)v7); /*0x750e0c*/
+    SetAudioSource((gamemd::AudioMixer *)((int)a2), v5, (int)v7); /*0x750e0c*/
     return v5; /*0x750e16*/
   }
   LABEL_10: v11 = (int *)(v8);
   IDA_LOWORD(v10) = Math::RoundToInt(v11 * 16384.0); /*0x750dc6*/
   if ( v10 >= 0x4000 ) /*0x750dd0*/
     v10 = 0x4000; /*0x750dd2*/
-  AudioMixer::PlayBuffer(v5, v10); /*0x750ddb*/
+  AudioMixer::PlayBuffer((unsigned int *)(v5), v10); /*0x750ddb*/
   ((AudioMixer *)((int)v5))->RequestOrEndBuffer(v12); /*0x750de6*/
-  SetAudioSource((int)a2, v5, (int)v7); /*0x750df0*/
+  SetAudioSource((gamemd::AudioMixer *)((int)a2), v5, (int)v7); /*0x750df0*/
   return v5; /*0x750df9*/
 }
 }
@@ -357,7 +357,7 @@ void ThemeManager_Update(int a1, int a2, int a3)
             ((ThemeClass *)this)->ClearQueues(); /*0x75254b*/
             qword_B1D4D0 = 0; /*0x752552*/
           }
-          v7 = ((AudioQueue *)(v5))->FindByData(); /*0x75255e*/
+          v7 = (int *)(((AudioQueue *)(v5))->FindByData()); /*0x75255e*/
           if ( !v7 || v7[6] != v4 ) /*0x75256a*/
             Audio_Load((int)v5, v4, a3); /*0x752575*/
           UpdateThemes(); /*0x75257a*/
@@ -470,7 +470,7 @@ void ThemeClass_Update()
         v8 = (const char *)(v7 + 62); /*0x7528f1*/
       }
       strcpy(v12, v8); /*0x75291d*/
-      strcat(v12, g_Str_File__WAV); /*0x752949*/
+      strcat(v12,(const char *)(g_Str_File__WAV)); /*0x752949*/
       if ( ThreadAudioMixerMain(g_InfantryDrawState, 1) ) /*0x75295c*/
       {
         qword_B1D4D0 = 500; /*0x75296d*/
@@ -617,16 +617,16 @@ int CCINIClass::InitFromINIEVA()
 
   v1 = (gamemd::ObjectClass *)(this);
   v13 = (int)this; /*0x753011*/
-  LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)this, g_INI_Key_DialogList) != 0; /*0x75301c*/
+  LOBYTE(KeyCount) = INIClass::BinarySearchSection((gamemd::INIClass *)((int)this), g_INI_Key_DialogList) != 0; /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
-    KeyCount = (int)(INIClass::GetKeyCount((char *)v1, g_INI_Key_DialogList));
+    KeyCount = (int)(INIClass::GetKeyCount((gamemd::INIClass *)((char *)v1), g_INI_Key_DialogList));
     v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = KeyCount; /*0x75303b*/
     for ( i = 0; v4 < v3; i = v4 ) /*0x753043*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex((char *)v1, g_INI_Key_DialogList, v4); /*0x753060*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)((char *)v1), g_INI_Key_DialogList, v4); /*0x753060*/
       KeyCount = INIClass::GetString( /*0x75306d*/
                    (INIClass *)v1,
                    g_INI_Key_DialogList,
@@ -765,7 +765,7 @@ int TransformVoxelVertex(VoxelSection *a1, VoxelSection *a2, VoxelSection *aP2, 
   int v19; // [esp+18h] [ebp-4h]
   float *v20; // [esp+20h] [ebp+4h]
 
-  Info = VoxelSection::GetInfo(a1, (int)a2, (int)aP2); /*0x754101*/
+  Info = ((VoxelSection *)(a1))->GetInfo((int)a2, (int)aP2); /*0x754101*/
   v18 = 1176256512; /*0x75411b*/
   v19 = 1176256512; /*0x754123*/
   v7 = (VoxelSection **)(136 * stru_B2D804.Buffer_field_1C + 11721048); /*0x75412b*/
@@ -885,12 +885,12 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
   v6 = dword_B2D820; /*0x754369*/
   if ( dword_B2D820 > 0 ) /*0x754371*/
   {
-    v7 = &unk_B2FE78; /*0x754373*/
+    v7 = (unsigned int *)(&unk_B2FE78); /*0x754373*/
     v8 = (char *)&unk_B2D958; /*0x754378*/
     v9 = dword_B2D820; /*0x75437d*/
     do /*0x75438a*/
     {
-      *v7 = v8; /*0x75437f*/
+      *v7 = (unsigned int)(v8); /*0x75437f*/
       v8 += 136; /*0x754381*/
       ++v7; /*0x754386*/
       --v9; /*0x754389*/
@@ -939,7 +939,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
       v17 = v10 + 1; /*0x7543f5*/
       do /*0x75440b*/
       {
-        ((Voxel *)(**v16))->ProcessColor(*v16, &v33); /*0x754402*/
+        ((Voxel *)(**v16))->ProcessColor((unsigned int *)(*v16), &v33); /*0x754402*/
         --v16; /*0x754407*/
         --v17; /*0x75440a*/
       }
@@ -954,7 +954,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
       v19 = (unsigned int ***)&unk_B2FE78; /*0x754415*/
       do /*0x754434*/
       {
-        ((Voxel *)(**v19))->ProcessColor(*v19, &v33); /*0x754424*/
+        ((Voxel *)(**v19))->ProcessColor((unsigned int *)(*v19), &v33); /*0x754424*/
         ++v18; /*0x75442e*/
         ++v19; /*0x75442f*/
       }
@@ -963,22 +963,22 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
   }
   aP0[2] = Math::RoundToInt(*(float *)&dword_B2D948 - *(float *)&dword_B2D5E0); /*0x754447*/
   v20 = (int)(Math::RoundToInt(*(float *)&dword_B2D94C - *(float *)&dword_B2D5E4)); /*0x754456*/
-  v21 = aP0[2]; /*0x75445b*/
+  v21 = (int)(aP0[2]); /*0x75445b*/
   aP0[3] = v20; /*0x75445e*/
   v22 = (int)(v33); /*0x754467*/
-  v23 = aP0[3]; /*0x754476*/
+  v23 = (int)(aP0[3]); /*0x754476*/
   *aP0 = 128 - v21 / 2; /*0x754478*/
   v24 = 128 - v23 / 2; /*0x754487*/
   aP0[3] = (int)(v23 + 8); /*0x754489*/
-  v25 = *aP0; /*0x75448c*/
+  v25 = (int)(*aP0); /*0x75448c*/
   aP0[1] = v24; /*0x75448e*/
   aP0[2] = v21 + 8; /*0x75449c*/
   *aP0 = v25 - 4; /*0x75449f*/
   aP0[1] = v24 - 4; /*0x7544a1*/
-  dword_B2FB60 = *aP0; /*0x7544a6*/
-  dword_B2FB64 = aP0[1]; /*0x7544af*/
-  dword_B2FB68 = aP0[2]; /*0x7544b8*/
-  dword_B2FB6C = aP0[3]; /*0x7544c1*/
+  dword_B2FB60 = (unsigned int)(*aP0); /*0x7544a6*/
+  dword_B2FB64 = (unsigned int)(aP0[1]); /*0x7544af*/
+  dword_B2FB68 = (unsigned int)(aP0[2]); /*0x7544b8*/
+  dword_B2FB6C = (unsigned int)(aP0[3]); /*0x7544c1*/
   v26 = aP0[2] / 2; /*0x7544cf*/
   v27 = Math::RoundToInt(v22); /*0x7544d1*/
   v28 = v34; /*0x7544dc*/
@@ -2405,7 +2405,7 @@ int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1)
   v7 = (int)a1; /*0x750a0f*/
   if ( a1 ) /*0x750a15*/
   {
-    v8 = AudioSource::Get(a1); /*0x750a19*/
+    v8 = ((AudioSource *)(a1))->Get(); /*0x750a19*/
     v5 = v8; /*0x750a1e*/
     if ( v8 ) /*0x750a22*/
     {
@@ -2433,7 +2433,7 @@ int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1)
       v11 = v10; /*0x750a60*/
       if ( v10 >= 0x4000 ) /*0x750a68*/
         v11 = 0x4000; /*0x750a6a*/
-      if ( v5 || (v5 = AudioPool::ProcessQueue(v6)) != 0 ) /*0x750a7e*/
+      if ( v5 || (v5 = ((AudioPool *)(v6))->ProcessQueue()) != 0 ) /*0x750a7e*/
       {
         AudioMixer::PlayBuffer(v5, v11); /*0x750a84*/
         AudioMixer::RequestOrEndBuffer((int)v5, (unsigned int)a1); /*0x750a8f*/
@@ -2462,7 +2462,7 @@ int PlayAudioAt2(IUnknown * aP0, unsigned int * a1, int a3)
   if ( result ) /*0x750e42*/
   {
     AudioController::Init(result + 3); /*0x750e50*/
-    DListNode::InitEmpty((unsigned int *)v6); /*0x750e57*/
+    ((DListNode *)((unsigned int *)v6))->InitEmpty(); /*0x750e57*/
     *(unsigned int *)(v6 + 48) = 0; /*0x750e5c*/
     *(unsigned int *)(v6 + 32) = *a1; /*0x750e6b*/
     *(unsigned int *)(v6 + 36) = a1[1]; /*0x750e70*/
@@ -2497,11 +2497,11 @@ int VocClass_Update()
       v2 = ((AudioQueue *)(v1))->GetNextAlt(); /*0x750eda*/
             if ( !*(unsigned int *)(v1 + 48) )
         StartAudioController(v1 + 32, v1 + 12); /*0x750ee9*/
-      result = AudioSource::Get(v1 + 12); /*0x750ef3*/
+      result = ((AudioSource *)(v1 + 12))->Get(); /*0x750ef3*/
       if ( !result ) /*0x750efa*/
       {
         v3 = VocClass::Check(v1 + 12); /*0x750efe*/
-        if ( !v3 || (result = AudioMixer::SetVolume(v3)) == 0 ) /*0x750f10*/
+        if ( !v3 || (result = ((AudioMixer *)(v3))->SetVolume()) == 0 ) /*0x750f10*/
         {
           LinkedList::Init(v1); /*0x750f14*/
           result = PushFrontLinkedListAlt(dword_B1D3A4, v1); /*0x750f21*/
@@ -2546,7 +2546,7 @@ int sub_751040()
   for ( i = result; result; i = result ) /*0x75104f*/
   {
     ++*(unsigned int *)(i + 48); /*0x751055*/
-    v2 = AudioSource::Get((int **)(i + 12)); /*0x75105b*/
+    v2 = ((AudioSource *)((int **)(i + 12)))->Get(); /*0x75105b*/
     if ( v2 ) /*0x751062*/
       sub_4053E0((int)v2); /*0x751066*/
     result = ((AudioQueue *)((int *)i))->GetNextAlt(); /*0x75106d*/
@@ -2573,7 +2573,7 @@ int sub_751080()
       *(unsigned int *)(i + 48) = v2; /*0x75109e*/
       if ( v2 < 0 ) /*0x7510a1*/
         *(unsigned int *)(i + 48) = 0; /*0x7510a3*/
-      v3 = AudioSource::Get((int **)(i + 12)); /*0x7510ad*/
+      v3 = ((AudioSource *)((int **)(i + 12)))->Get(); /*0x7510ad*/
       if ( v3 ) /*0x7510b4*/
         sub_405430((int)v3); /*0x7510b8*/
     }
@@ -3013,11 +3013,11 @@ char globalHelper_053C80(unsigned int * a1, SomeVoxelCache * edx0, SomeVoxelCach
   float v14[12]; // [esp+58h] [ebp-30h] BYREF
 
   qmemcpy(v13, InvertMatrix3x3Signs(v14, a4), sizeof(v13)); /*0x753cad*/
-  v7 = (float *)Matrix3x3::TransformPoint(v12, a2, v10); /*0x753cb9*/
+  v7 = (float *)((Matrix3x3 *)(v12))->TransformPoint(a2, v10); /*0x753cb9*/
   v11[0] = *v7; /*0x753cc0*/
   v11[1] = v7[1]; /*0x753cc7*/
   v11[2] = v7[2]; /*0x753cd9*/
-  Info = VoxelSection::GetInfo(a1, edx0, aP2); /*0x753cdd*/
+  Info = ((VoxelSection *)(a1))->GetInfo(edx0, aP2); /*0x753cdd*/
   return GlobalHelper_053C80_Helper(v11, *(uint8_t *)(Info + 163)); /*0x753cf3*/
 }
 } // namespace gamemd
@@ -3040,7 +3040,7 @@ char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache 
   float v23[3]; // [esp+1Ch] [ebp-18h] BYREF
   float v24[3]; // [esp+28h] [ebp-Ch] BYREF
 
-  Info = VoxelSection::GetInfo(a0, (int)aP1, (int)aP2); /*0x753fa1*/
+  Info = ((VoxelSection *)(a0))->GetInfo((int)aP1, (int)aP2); /*0x753fa1*/
   v12 = 4; /*0x753fac*/
   v13 = (VoxelSection **)(72 * dword_B2FB70 + 11796344); /*0x753fb8*/
   v13[15] = a7; /*0x753fbf*/
@@ -3279,7 +3279,7 @@ unsigned int * sub_754B40()
   v1 = 21; /*0x754b47*/
   do /*0x754b62*/
   {
-    result = Int4::Set(v0, 0, 0, 0, 1065353216); /*0x754b59*/
+    result = ((Int4 *)(v0))->Set(0, 0, 0, 1065353216); /*0x754b59*/
     v0 += 4; /*0x754b5e*/
     --v1; /*0x754b61*/
   }
@@ -3300,7 +3300,7 @@ unsigned int * sub_754B70()
   v1 = 21; /*0x754b77*/
   do /*0x754b92*/
   {
-    result = Int4::Set(v0, 0, 0, 0, 1065353216); /*0x754b89*/
+    result = ((Int4 *)(v0))->Set(0, 0, 0, 1065353216); /*0x754b89*/
     v0 += 4; /*0x754b8e*/
     --v1; /*0x754b91*/
   }

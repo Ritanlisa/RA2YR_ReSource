@@ -103,7 +103,7 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
   }
   v4[13] = 0; /*0x488f44*/
   *((unsigned int *)v4 + 2) = 0; /*0x488f47*/
-  ListClass::Destruct((ListClass *)Block); /*0x488f4a*/
+  ((ListClass *)((ListClass *)Block))->Destruct(); /*0x488f4a*/
   if ( (a2 & 1) != 0 ) /*0x488f54*/
     __3_YAXPAX_Z(Block); /*0x488f57*/
   return Block->__pad_0; /*0x488f61*/

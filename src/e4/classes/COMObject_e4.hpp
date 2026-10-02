@@ -48,7 +48,7 @@ struct COMObject {
     unsigned int * ReturnZeroPos(int a1, unsigned int * a2);
     bool IsPrimaryInstance(void);
     int ActivateGlobal(void);
-    int ActivateThunk(int, a1, a2);
+    int ActivateThunk(int a1, int a2, int a3);
     int Check(int, void *a2 = 0, void *a1 = 0);
     int DeactivateGlobal(void);
     int FindInList(int);

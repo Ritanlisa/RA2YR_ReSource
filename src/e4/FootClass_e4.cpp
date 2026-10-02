@@ -76,7 +76,7 @@ AbstractClass * FootClass::Destruct()
   }
   if ( this->currentJumpjetMapCoords[0] != g_FootClass_Pool ) /*0x4d3646*/
   {
-    v6 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)this->currentJumpjetMapCoords); /*0x4d365b*/
+    v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)this->currentJumpjetMapCoords); /*0x4d365b*/
     if ( (FootClass *)v6[56] == this ) /*0x4d3666*/
       v6[56] = 0; /*0x4d3668*/
   }
@@ -102,8 +102,8 @@ AbstractClass * FootClass::Destruct()
     *(unsigned int *)this->__pad_58C = (unsigned int)((gamemd::AbstractClass *)(0)); /*0x4d36ed*/
   }
   this->__pad_58C[9] = 0; /*0x4d36f5*/
-  *(unsigned int *)&this->__pad_58C[4] = (gamemd::AbstractClass *)(0); /*0x4d36fb*/
-  return ((TechnoClass *)((int)this))->DTOR(); /*0x4d3706*/
+  *(unsigned int *)&this->__pad_58C[4] = (unsigned int)((gamemd::AbstractClass *)(0)); /*0x4d36fb*/
+  return (gamemd::AbstractClass *)(((TechnoClass *)((int)this))->DTOR()); /*0x4d3706*/
 
 }
 } // namespace ra2
@@ -195,7 +195,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
     *(unsigned int *)v28.__pad_0 = 0; /*0x71006b*/
     if ( v9 ) /*0x710073*/
     {
-      v11 = ((StreamClass *)(&v28))->Set(v6 + 413); /*0x71007a*/
+      v11 = ((StreamClass *)(&v28))->Set((unsigned int *)(v6 + 413)); /*0x71007a*/
       if ( v11 < 0 && v11 != -2147467262 ) /*0x710088*/
         WinAPI::Wrapper(v11); /*0x71008b*/
     }
@@ -252,7 +252,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       v28.m_Data = 0; /*0x7101e2*/
       if ( !v12 ) /*0x7101e6*/
       {
-        v18 = ((StreamClass *)((StreamClass *)&v28.m_Data))->Set(v6 + 413); /*0x7101ed*/
+        v18 = ((StreamClass *)((StreamClass *)&v28.m_Data))->Set((unsigned int *)(v6 + 413)); /*0x7101ed*/
         if ( v18 < 0 && v18 != -2147467262 ) /*0x7101fb*/
           WinAPI::Wrapper(v18); /*0x7101fe*/
       }

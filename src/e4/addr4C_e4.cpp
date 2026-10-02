@@ -984,7 +984,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   v12 = a5; /*0x4cf072*/
   IDA_LOWORD(v56) = IDA_SLODWORD(a4) / 256; /*0x4cf08c*/
   IDA_HIWORD(v56) = a5 / 256; /*0x4cf09f*/
-  v13 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v56); /*0x4cf0ac*/
+  v13 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v56); /*0x4cf0ac*/
   v14 = ((Cell *)(v13))->IsBridge(); /*0x4cf0b8*/
   if ( v14 && !*(unsigned char *)((*(int (**)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf0cc*/
   {
@@ -2788,12 +2788,12 @@ char sub_4C9160()
   int v4; // [esp+68h] [ebp-8h]
 
   CCFileClass::Construct(v2, aExpandDat); /*0x4c916d*/
-  v0 = CCFileClass::Open(v2, 0); /*0x4c9181*/
+  v0 = ((CCFileClass *)(v2))->Open(0); /*0x4c9181*/
   v2[0] = (void*)&CCFileClass_vftable; /*0x4c9183*/
   v4 = 0; /*0x4c918b*/
   ((Vector *)((int)v3))->Clear(); /*0x4c9193*/
   v2[0] = (unsigned int)&off_7E1668; /*0x4c919c*/
-  BufferIOFileClass::Dtor(v2); /*0x4c91a4*/
+  ((BufferIOFileClass *)(v2))->Dtor(); /*0x4c91a4*/
   return v0; /*0x4c91ab*/
 }
 } // namespace gamemd

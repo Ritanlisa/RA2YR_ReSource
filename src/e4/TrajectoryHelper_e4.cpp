@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/BuildingPlacement_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
@@ -74,9 +76,9 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
     v31 = 0; /*0x4cc1da*/
     v32 = 0; /*0x4cc1de*/
   }
-  v12 = (unsigned char *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v25));
+  v12 = (unsigned char *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v25));
   v28 = (unsigned char *)(v12);
-  v27 = (unsigned char *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v26));
+  v27 = (unsigned char *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v26));
   v13 = v12; /*0x4cc22f*/
   v24 = 0; /*0x4cc231*/
   if ( v7 <= 0 ) /*0x4cc235*/
@@ -94,7 +96,7 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
     LOWORD(v23) = v14 / 256; /*0x4cc2a2*/
     HIWORD(v23) = v15 / 256; /*0x4cc2b5*/
     v29 = v23; /*0x4cc2be*/
-    v13 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v29); /*0x4cc2c2*/
+    v13 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v29); /*0x4cc2c2*/
     v19 += v30; /*0x4cc2dd*/
     v17 = ++v24 < v7; /*0x4cc2ee*/
     v20 += v31; /*0x4cc2f4*/
@@ -155,7 +157,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   HIWORD(v41) = a5 / 256; /*0x4cc3a0*/
   v44 = a1; /*0x4cc3a9*/
   v43 = v41; /*0x4cc3ad*/
-  v10 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v43)); /*0x4cc3b6*/
+  v10 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v43)); /*0x4cc3b6*/
   v42 = v10; /*0x4cc3bc*/
   if ( *(unsigned char *)(a7 + 662) ) /*0x4cc3c0*/
   {
@@ -213,7 +215,7 @@ LABEL_16:
         if ( v31 > v30 ) /*0x4cc562*/
         {
 LABEL_22:
-          v33 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v43); /*0x4cc574*/
+          v33 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v43); /*0x4cc574*/
           if ( *(unsigned char *)(a7 + 662) ) /*0x4cc589*/
           {
             v34 = ((Cell *)(a3))->GetSlopeIndex(); /*0x4cc59e*/

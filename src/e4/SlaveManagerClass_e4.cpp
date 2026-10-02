@@ -490,7 +490,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
             v19 = *v8; /*0x6af86a*/
             v85 = *v18; /*0x6af870*/
             a3 = 1; /*0x6af874*/
-            a2 = (int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v85); /*0x6af881*/
+            a2 = (int *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v85); /*0x6af881*/
             v8->vt_slot_1152(); /*0x6af884*/
             (*(void (**)(int *, int, unsigned int))(*v8 + 488))(v8, 2, 0); /*0x6af892*/
             *(unsigned int *)(v7 + 4) = 4; /*0x6af898*/
@@ -499,7 +499,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
           {
             v10 = *v8; /*0x6af78c*/
             a3 = 1; /*0x6af792*/
-            a2 = (int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v81); /*0x6af79f*/
+            a2 = (int *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v81); /*0x6af79f*/
             v8->vt_slot_1152(); /*0x6af7a2*/
             (*(void (**)(int *, int, unsigned int))(*v8 + 488))(v8, 2, 0); /*0x6af7b0*/
             *(unsigned int *)(v7 + 4) = 2; /*0x6af7b6*/
@@ -541,7 +541,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
             }
             v29 = *v8; /*0x6af987*/
             a3 = 1; /*0x6af98d*/
-            a2 = (int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v82); /*0x6af99a*/
+            a2 = (int *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v82); /*0x6af99a*/
             v8->vt_slot_1152(); /*0x6af99d*/
             (*(void (**)(int *, int, unsigned int))(*v8 + 488))(v8, 2, 0); /*0x6af9ab*/
             *(unsigned int *)(v7 + 4) = 4; /*0x6af9b1*/
@@ -664,7 +664,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
           v65 = *v8; /*0x6afc93*/
           v83 = *v64; /*0x6afc99*/
           a3 = 1; /*0x6afc9d*/
-          a2 = (int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v83); /*0x6afcaa*/
+          a2 = (int *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v83); /*0x6afcaa*/
           v8->vt_slot_1152(); /*0x6afcad*/
           (*(void (**)(int *, int, unsigned int))(*v8 + 488))(v8, 2, 0); /*0x6afcbb*/
   LABEL_62:

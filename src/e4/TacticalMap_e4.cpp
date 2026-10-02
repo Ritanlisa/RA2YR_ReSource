@@ -126,7 +126,7 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
   else
   {
     *((unsigned short *)this + 135) = v14; /*0x484893*/
-    return v14; /*0x484890*/
+    return (gamemd::ScenarioClass **)(v14); /*0x484890*/
   }
 
 }
@@ -299,7 +299,7 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   *(unsigned int *)&this->__pad_11F[3193] = 0; /*0x6d1d18*/
   *(unsigned int *)&this->__pad_11F[3197] = 0; /*0x6d1d1e*/
   *(unsigned int *)&this->__pad_11F[3201] = 0; /*0x6d1d2a*/
-  this->Tactical_field_0xDA4 = (AbstractClass *)TimerGetTicks(); /*0x6d1d35*/
+  this->Tactical_field_0xDA4 = (unsigned int)((AbstractClass *)TimerGetTicks()); /*0x6d1d35*/
   *(unsigned int *)&this->__pad_DA8[4] = 0; /*0x6d1d3b*/
   *(unsigned int *)&this->__pad_DA8[8] = 0; /*0x6d1d4e*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_Tactical); /*0x6d1d54*/
@@ -313,7 +313,7 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   v3 = dbl_B0CD88; /*0x6d1d95*/
   ((Matrix3x3 *)((int *)&this->Tactical_field_0xDB4))->RotateX(v3); /*0x6d1d98*/
   v4 = dbl_B0CE98; /*0x6d1da6*/
-  Matrix2D::Rotate((int *)&this->Tactical_field_0xDB4, v4); /*0x6d1da9*/
+  ((Matrix2D *)((int *)&this->Tactical_field_0xDB4))->Rotate(v4); /*0x6d1da9*/
   v5 = 60.0 / dbl_B0CD78; /*0x6d1dbb*/
   TacticalMap::MultiplyByScalar((float *)&this->Tactical_field_0xDB4, v5); /*0x6d1dc0*/
   *((unsigned int *)this + 889) = 1082689742; /*0x6d1dca*/
@@ -387,18 +387,18 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v33 = *(unsigned int *)((char *)g_CraterPool + v7 + 12); /*0x6d2bbd*/
           v30 += aP2; /*0x6d2bc7*/
           v31 += a4; /*0x6d2bd0*/
-          v26 = DSurface_ViewBounds.field_4; /*0x6d2bda*/
+          v26 = (void *)(DSurface_ViewBounds.field_4); /*0x6d2bda*/
           v28 = *(Coord2D *)&DSurface_ViewBounds.field_0; /*0x6d2bde*/
           v25 = DSurface_ViewBounds.field_0; /*0x6d2be7*/
           v23 = *(unsigned int *)&DSurface_ViewBounds.__pad_8[4]; /*0x6d2bf5*/
           v22 = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x6d2bfa*/
-          v8 = ((Coord2D *)(&v28))->Sub(v29, &v25); /*0x6d2c05*/
+          v8 = ((Coord2D *)(&v28))->Sub(v29,(unsigned int *)(&v25)); /*0x6d2c05*/
           v9 = Rect::Construct(&v35, v8, v22, v23); /*0x6d2c0f*/
           v34[0] = *v9; /*0x6d2c18*/
           v34[1] = v9[1]; /*0x6d2c21*/
           v34[2] = v9[2]; /*0x6d2c28*/
           v34[3] = v9[3]; /*0x6d2c37*/
-          v10 = (int *)(ClipRectIntersection((RectangleStruct *)(v36),(const RectangleStruct *)(v34), &v30, 0, 0)); /*0x6d2c40*/
+          v10 = (int *)(ClipRectIntersection((RectangleStruct *)(v36),(const RectangleStruct *)(v34),(const RectangleStruct *)(&v30), 0, 0)); /*0x6d2c40*/
           v30 = *v10; /*0x6d2c49*/
           v31 = v10[1]; /*0x6d2c50*/
           v32 = v10[2]; /*0x6d2c57*/
@@ -461,7 +461,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
     }
     while ( v17 < result ); /*0x6d2dc2*/
   }
-  return result; /*0x6d2dc8*/
+  return (void *)(result); /*0x6d2dc8*/
 
 }
 } // namespace gamemd

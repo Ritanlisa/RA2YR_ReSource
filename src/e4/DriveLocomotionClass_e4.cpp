@@ -94,7 +94,7 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     }
     else
     {
-      Function::Method_4B4D60((int *)&pPStm); /*0x4af868*/
+      ((Function *)((int *)&pPStm))->Method_4B4D60(); /*0x4af868*/
       pPStm = 0; /*0x4af86d*/
     }
     if ( v8 < 0 && v8 != -2147467262 ) /*0x4af897*/

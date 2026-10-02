@@ -119,7 +119,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   v15 = this->m_8; /*0x658bf8*/
   if ( v15 < this->m_10 ) /*0x658c00*/
     this->m_10 = v15; /*0x658c02*/
-  return 1; /*0x658c05*/
+  return (gamemd::AbstractClass **)(1); /*0x658c05*/
 
 }
 } // namespace gamemd

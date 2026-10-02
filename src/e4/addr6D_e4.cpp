@@ -51,7 +51,7 @@ int sub_6D1130()
   dword_B0CCD0 = 5; /*0x6d1164*/
   v0 = dword_B0FA90; /*0x6d116c*/
   Rect_Point::Set(stru_B0CCB0, *(unsigned int *)dword_B0FC60,(void *)(*((unsigned int *)dword_B0FC60 + 1))); /*0x6d118a*/
-  ShapeButton::SetShape((int)stru_B0CCB0, (int)v0, 0, 0); /*0x6d1197*/
+  ((ShapeButton *)((int)stru_B0CCB0))->SetShape((int)v0, 0, 0); /*0x6d1197*/
   dword_B0CC64 = 241; /*0x6d11a7*/
   dword_B0CC90 = dword_87F6CC; /*0x6d11b1*/
   byte_B0CC6D = 0; /*0x6d11b6*/
@@ -59,7 +59,7 @@ int sub_6D1130()
   dword_B0CC60 = 5; /*0x6d11c2*/
   Rect_Point::Set(stru_B0CC40, *(unsigned int *)dword_B0FC64,(void *)(*((unsigned int *)dword_B0FC64 + 1))); /*0x6d11e2*/
 // 0x69de00
-  return ShapeButton::SetShape((int)stru_B0CC40, (int)v0, 0, 0); /*0x6d11f4*/
+  return ((ShapeButton *)((int)stru_B0CC40))->SetShape((int)v0, 0, 0); /*0x6d11f4*/
 }
 }
 // 0x6D6BB0
@@ -88,7 +88,7 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
   v3 = 0; /*0x6d6bd3*/
   while ( 1 ) /*0x6d6bdf*/
   {
-    result = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a1));
+    result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1));
     v5 = result[80]; /*0x6d6be4*/
     if ( (v5 & 0x80u) != 0 && result[17] && (v5 & 0x800) != 0 ) /*0x6d6bf9*/
       break; /*0x6d6bf9*/
@@ -101,7 +101,7 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
       v7 = 0; /*0x6d6c25*/
       while ( 1 ) /*0x6d6c31*/
       {
-        result = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a1));
+        result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1));
         v8 = result[80]; /*0x6d6c36*/
         if ( (v8 & 0x80u) != 0 && result[17] && (v8 & 0x800) != 0 ) /*0x6d6c4b*/
           break; /*0x6d6c4b*/
@@ -114,7 +114,7 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
           v10 = 0; /*0x6d6c79*/
           while ( 1 ) /*0x6d6c85*/
           {
-            result = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a1));
+            result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1));
             v11 = result[80]; /*0x6d6c8a*/
             if ( (v11 & 0x80u) != 0 && result[17] && (v11 & 0x800) == 0 ) /*0x6d6c9f*/
               break; /*0x6d6c9f*/
@@ -127,7 +127,7 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
               v13 = 0; /*0x6d6cc7*/
               while ( 1 ) /*0x6d6cd3*/
               {
-                result = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a1));
+                result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1));
                 v14 = result[80]; /*0x6d6cd8*/
                 if ( (v14 & 0x80u) != 0 && result[17] && (v14 & 0x800) == 0 ) /*0x6d6ced*/
                   break; /*0x6d6ced*/

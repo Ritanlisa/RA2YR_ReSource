@@ -283,7 +283,7 @@ RLEBlitTransXlat * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitt
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_RLEBlitter); /*0x49a769*/
   if ( (a2 & 1) != 0 ) /*0x49a76f*/
     __3_YAXPAX_Z(this); /*0x49a772*/
-  return (std::locale::facet *)this; /*0x49a77c*/
+  return (gamemd::RLEBlitTransXlat *)((std::locale::facet *)this); /*0x49a77c*/
 
 }
 } // namespace gamemd

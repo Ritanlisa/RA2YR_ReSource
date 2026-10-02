@@ -48,7 +48,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
     {
       v8[0] = (int16_t)((unsigned int *)(i));
       v8[1] = (int16_t)((unsigned int *)(v1));
-      v3 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, v8));
+      v3 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj(v8));
       v4 = v3[18]; /*0x6b4e0d*/
       if ( v4 != -1 && !*((unsigned char *)v3 + 287) ) /*0x6b4e15*/
       {
@@ -62,7 +62,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
     ++v1; /*0x6b4e87*/
   }
   while ( v1 < (char *)(512) ); /*0x6b4e8e*/
-  return v4; /*0x6b4e94*/
+  return (gamemd::INIClass **)(v4); /*0x6b4e94*/
 
 }
 } // namespace gamemd
@@ -187,7 +187,7 @@ void UnitTypeClass::UnitTypeClass_CreateUnit(void * a2)
   if ( !v5 ) /*0x7474dc*/
     return 0; /*0x747554*/
   LOWORD(ppv) = 0; /*0x7474e4*/
-  v6 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x7474f1*/
+  v6 = ((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State(); /*0x7474f1*/
   v7 = (unsigned int)ppv; /*0x7474f6*/
   LOBYTE(v8) = 0; /*0x7474fa*/
   HIBYTE(v8) = v6; /*0x7474fc*/
@@ -501,7 +501,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
   }
   while ( v34 ); /*0x747b01*/
   v35 = 0; /*0x747b09*/
-  PrismTargetCoords = v4[1].PrismTargetCoords; /*0x747b0b*/
+  PrismTargetCoords = (int *)(v4[1].PrismTargetCoords); /*0x747b0b*/
   do /*0x747b47*/
   {
     sprintf((char *const)Buffer, "BurstDelay%d", v35++); /*0x747b1a*/
@@ -515,61 +515,61 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
   while ( v35 < 4 ); /*0x747b47*/
   strcpy(Source, (const char *)&v4[1].ProductionTimer + 2); /*0x747b6f*/
   INIClass::GetString(p_occupant, aAltimage, Source, (char *)&v4[1].ProductionTimer + 2, 25); /*0x747b88*/
-  _makepath(v86, 0, 0, (const char *)&v83[1].ProductionTimer + 2, Ext); /*0x747ba6*/
+  _makepath(v86, 0, 0, (const char *)&v83[1].ProductionTimer + 2,(const char *)(Ext)); /*0x747ba6*/
   v83[1].BunkerState = (int)SearchMIXFile(v86, 0); /*0x747bc4*/
-  if ( AbstractTypeClass::NameEquals((int)v83, ((char *)&g_INI_Key_TRUCKA)) ) /*0x747bca*/
+  if ( ((AbstractTypeClass *)((int)v83))->NameEquals(((char *)&g_INI_Key_TRUCKA)) ) /*0x747bca*/
   {
     v36 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aNormalturretin, 0); /*0x747bf0*/
     v37 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aNormalturretwe, -1); /*0x747bf2*/
-    BuildingClass::SetSlot(v83, v36, v37); /*0x747bfb*/
+    ((BuildingClass *)(v83))->SetSlot(v36, v37); /*0x747bfb*/
     v38 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aRepairturretin, 1); /*0x747c19*/
     v39 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aRepairturretwe, -1); /*0x747c1b*/
-    BuildingClass::SetSlot(v83, v38, v39); /*0x747c24*/
+    ((BuildingClass *)(v83))->SetSlot(v38, v39); /*0x747c24*/
     v40 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aMachinegunturr, 2); /*0x747c42*/
     v41 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aMachinegunturr_0, -1); /*0x747c44*/
-    BuildingClass::SetSlot(v83, v40, v41); /*0x747c4d*/
+    ((BuildingClass *)(v83))->SetSlot(v40, v41); /*0x747c4d*/
     v42 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aFlakturretinde, 3); /*0x747c6b*/
     v43 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aFlakturretweap, -1); /*0x747c6d*/
-    BuildingClass::SetSlot(v83, v42, v43); /*0x747c76*/
+    ((BuildingClass *)(v83))->SetSlot(v42, v43); /*0x747c76*/
     v44 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aPistolturretin, 0); /*0x747c94*/
     v45 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aPistolturretwe, -1); /*0x747c96*/
-    BuildingClass::SetSlot(v83, v44, v45); /*0x747c9f*/
+    ((BuildingClass *)(v83))->SetSlot(v44, v45); /*0x747c9f*/
     v46 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aSniperturretin, 0); /*0x747cb3*/
     v47 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aSniperturretwe, -1); /*0x747cbf*/
-    BuildingClass::SetSlot(v83, v46, v47); /*0x747cc8*/
+    ((BuildingClass *)(v83))->SetSlot(v46, v47); /*0x747cc8*/
     v48 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aShockturretind, 0); /*0x747ce6*/
     v49 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aShockturretwea, -1); /*0x747ce8*/
-    BuildingClass::SetSlot(v83, v48, v49); /*0x747cf1*/
+    ((BuildingClass *)(v83))->SetSlot(v48, v49); /*0x747cf1*/
     v50 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aExplodeturreti, 0); /*0x747d0f*/
     v51 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aExplodeturretw, -1); /*0x747d11*/
-    BuildingClass::SetSlot(v83, v50, v51); /*0x747d1a*/
+    ((BuildingClass *)(v83))->SetSlot(v50, v51); /*0x747d1a*/
     v52 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aBrainblastturr, 0); /*0x747d38*/
     v53 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aBrainblastturr_0, -1); /*0x747d3a*/
-    BuildingClass::SetSlot(v83, v52, v53); /*0x747d43*/
+    ((BuildingClass *)(v83))->SetSlot(v52, v53); /*0x747d43*/
     v54 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aRadcannonturre, 0); /*0x747d61*/
     v55 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aRadcannonturre_0, -1); /*0x747d63*/
-    BuildingClass::SetSlot(v83, v54, v55); /*0x747d6c*/
+    ((BuildingClass *)(v83))->SetSlot(v54, v55); /*0x747d6c*/
     v56 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aChronoturretin, 0); /*0x747d8a*/
     v57 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aChronoturretwe, -1); /*0x747d8c*/
-    BuildingClass::SetSlot(v83, v56, v57); /*0x747d95*/
+    ((BuildingClass *)(v83))->SetSlot(v56, v57); /*0x747d95*/
     v58 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aTerroristexplo, 0); /*0x747db3*/
     v59 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aTerroristexplo_0, -1); /*0x747db5*/
-    BuildingClass::SetSlot(v83, v58, v59); /*0x747dbe*/
+    ((BuildingClass *)(v83))->SetSlot(v58, v59); /*0x747dbe*/
     v60 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aCowturretindex, 0); /*0x747ddc*/
     v61 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aCowturretweapo, -1); /*0x747dde*/
-    BuildingClass::SetSlot(v83, v60, v61); /*0x747de7*/
+    ((BuildingClass *)(v83))->SetSlot(v60, v61); /*0x747de7*/
     v62 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aInitiateturret, 0); /*0x747e05*/
     v63 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aInitiateturret_0, -1); /*0x747e07*/
-    BuildingClass::SetSlot(v83, v62, v63); /*0x747e10*/
+    ((BuildingClass *)(v83))->SetSlot(v62, v63); /*0x747e10*/
     v64 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aVirusturretind, 0); /*0x747e2e*/
     v65 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aVirusturretwea, -1); /*0x747e30*/
-    BuildingClass::SetSlot(v83, v64, v65); /*0x747e39*/
+    ((BuildingClass *)(v83))->SetSlot(v64, v65); /*0x747e39*/
     v66 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aYuriprimeturre, 0); /*0x747e57*/
     v67 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aYuriprimeturre_0, -1); /*0x747e59*/
-    BuildingClass::SetSlot(v83, v66, v67); /*0x747e62*/
+    ((BuildingClass *)(v83))->SetSlot(v66, v67); /*0x747e62*/
     v68 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aGuardianturret, 0); /*0x747e80*/
     v69 = ((INIClass *)((bool *)this))->ReadInt_Overwrite(p_occupant, aGuardianturret_0, -1); /*0x747e82*/
-    BuildingClass::SetSlot(v83, v68, v69); /*0x747e8b*/
+    ((BuildingClass *)(v83))->SetSlot(v68, v69); /*0x747e8b*/
   }
   return 1; /*0x747e92*/
 }
@@ -589,7 +589,7 @@ VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate(ObjectClass * Source)
 LABEL_6:
     v3 = (VoxelAnimTypeClass *)__2_YAPAXI_Z(0x308u); /*0x74b9b6*/
     if ( v3 ) /*0x74b9c5*/
-      return VoxelAnimTypeClass::Constructor(v3, Source); /*0x74b9d1*/
+      return ((VoxelAnimTypeClass *)(v3))->Constructor(Source); /*0x74b9d1*/
     return 0; /*0x74b9c5*/
   }
   while ( _strcmpi((char *)(*(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * v2) + 36), Source) ) /*0x74b9aa*/

@@ -91,7 +91,7 @@ AbstractClass * File::LoadFont(char *Source)
       {
 LABEL_35:
         (*(void (**)(unsigned int *, int))*v6)(v6, 1); /*0x433bee*/
-        return v3; /*0x433bf4*/
+        return (gamemd::AbstractClass *)(v3); /*0x433bf4*/
       }
       memset(v3, 0, 0x24u); /*0x433a04*/
       v7 = (void *)__2_YAPAXI_Z(0x20000u); /*0x433a0b*/
@@ -197,7 +197,7 @@ LABEL_24:
       goto LABEL_35; /*0x433bec*/
     }
   }
-  return v3; /*0x433bf8*/
+  return (gamemd::AbstractClass *)(v3); /*0x433bf8*/
 
 }
 }
@@ -368,7 +368,7 @@ File * * File::LoadPaletteData(unsigned short *aP1)
   *(unsigned int *)&this->File_field_0x2[2] = 0; /*0x625b30*/
   v15 = v6 - 4; /*0x625b3c*/
   if ( v15 <= 0 ) /*0x625b40*/
-    return (u_short *)this; /*0x625bf4*/
+    return (gamemd::File **)((u_short *)this); /*0x625bf4*/
   while ( 1 ) /*0x625b50*/
   {
     v7 = (unsigned int)(__2_YAPAXI_Z(0x10u));
@@ -457,7 +457,7 @@ AbstractClass * * File::ParseCSFString(char * Source)
 
   ((CCFileClass *)(&v23))->Construct(Source); /*0x73499f*/
   v19 = 0; /*0x7349ab*/
-  if ( (uint8_t)CCFileClass::Open((int)(&v23), 0) /*0x7349e5*/
+  if ( (uint8_t)((CCFileClass *)((int)(&v23)))->Open(0) /*0x7349e5*/
     && ((FileClass *)(&v23))->Load((const CHAR *)1)
     && ((CCFileClass *)(&v23))->Read(Buffer, 24) == 24 )
   {
@@ -468,8 +468,8 @@ LABEL_42:
       v25 = 0; /*0x734cbc*/
       ((Vector *)((int)v24))->Clear(); /*0x734cc3*/
       *(unsigned int *)v23.CDFileClass = (unsigned int)(&off_7E1668); /*0x734ccc*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734cd4*/
-      return 1; /*0x734ce8*/
+      ((BufferIOFileClass *)((BufferIOFileClass *)&v23))->Dtor(); /*0x734cd4*/
+      return (gamemd::AbstractClass **)(1); /*0x734ce8*/
     }
     v1 = 0; /*0x734a04*/
     v21 = 0; /*0x734a06*/
@@ -598,7 +598,7 @@ LABEL_43:
   v25 = 0; /*0x734cf8*/
   ((Vector *)((int)v24))->Clear(); /*0x734cff*/
   *(unsigned int *)v23.CDFileClass = (unsigned int)(&off_7E1668); /*0x734d08*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734d10*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v23))->Dtor(); /*0x734d10*/
   return 0; /*0x734cde*/
 
 }
@@ -680,7 +680,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
     if ( PaletteData ) /*0x76ad32*/
     {
 LABEL_25:
-      ResultNode::CleanupList((ResultNode *)PaletteData); /*0x76afa4*/
+      ((ResultNode *)((ResultNode *)PaletteData))->CleanupList(); /*0x76afa4*/
       __3_YAXPAX_Z(PaletteData); /*0x76afac*/
     }
   }
@@ -725,7 +725,7 @@ LABEL_25:
     memset(*((void **)this + 3), 0, v16); /*0x76ae75*/
     memset(*((void **)this + 4), 0, v17); /*0x76ae8c*/
     memset(Block, 0, v14); /*0x76aea4*/
-    ((File *)((File *)PaletteData))->FindByPrefix(aCmid, (unsigned char *)this + 20); /*0x76aeb8*/
+    ((File *)((File *)PaletteData))->FindByPrefix((char *)(aCmid), (unsigned char *)this + 20); /*0x76aeb8*/
     HashTable::FindString((HashTable *)PaletteData, aCyid, (unsigned int *)this + 6); /*0x76aec8*/
     if ( *((unsigned char *)this + 72) ) /*0x76aecd*/
       *((unsigned int *)this + 10) = 0; /*0x76aed2*/
@@ -749,7 +749,7 @@ LABEL_25:
     if ( PaletteData ) /*0x76afa2*/
       goto LABEL_25; /*0x76afa2*/
   }
-  return this; /*0x76afb6*/
+  return (gamemd::AbstractClass **)(this); /*0x76afb6*/
 
 }
 }
@@ -796,7 +796,7 @@ LABEL_18:
         v16 = 0; /*0x76b163*/
       }
       if ( (unsigned int)++v9 >= *(unsigned int *)&this->__pad_6[30] ) /*0x76b16d*/
-        return 1; /*0x76b16d*/
+        return (gamemd::AbstractClass **)(1); /*0x76b16d*/
     }
     while ( 1 ) /*0x76b110*/
     {
@@ -833,7 +833,7 @@ LABEL_15:
     LOBYTE(v15) = *(unsigned char *)(v7 + aP1) >> 2; /*0x76b12b*/
     goto LABEL_14; /*0x76b12e*/
   }
-  return 1; /*0x76b0b9*/
+  return (gamemd::AbstractClass **)(1); /*0x76b0b9*/
 
 }
 }

@@ -82,9 +82,9 @@ AbstractClass * * sub_777420()
         Current = ((Dialog *)this)->GetCurrent();
     SetActiveWindow(Current); /*0x7775a9*/
         v4 = ((Dialog *)this)->GetCurrent();
-    return (int)SetFocus(v5); /*0x7775b5*/
+    return (gamemd::AbstractClass **)((int)SetFocus(v5)); /*0x7775b5*/
   }
-  return result; /*0x7775bb*/
+  return (gamemd::AbstractClass **)(result); /*0x7775bb*/
 }
 }
 // 0x5C09A0
@@ -141,7 +141,7 @@ char * E4Recv_724000::sub_724000(int a2)
   *((unsigned int *)this + 149) = 0; /*0x72408e*/
   *((unsigned char *)this + 600) = 0; /*0x724094*/
   *((unsigned int *)this + 151) = 0; /*0x72409a*/
-  return this; /*0x7240a2*/
+  return (char *)(this); /*0x7240a2*/
 
 }
 } // namespace gamemd

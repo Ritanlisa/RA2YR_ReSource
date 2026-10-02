@@ -153,7 +153,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   v15 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(this->m_8)));
   if ( v15 < (gamemd::AbstractClass **)(this->m_10) ) /*0x4785d1*/
     this->m_10 = (unsigned int)(v15); /*0x4785d3*/
-  return 1; /*0x4785d6*/
+  return (gamemd::AbstractClass **)(1); /*0x4785d6*/
 
 }
 }
@@ -609,8 +609,8 @@ int ParticleTypeClass::ProcessPower(int *a2)
   Power::TimerProcess(this->ParticleTypeClass_field_0x2F0[0]); /*0x64552f*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x2F4); /*0x64553d*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x2F8); /*0x64554b*/
-  Checksummer::Add_float((Checksummer *)a2, *(unsigned int *)this->__pad_2FC); /*0x645559*/
-  Checksummer::Add_float((Checksummer *)a2, this->ParticleTypeClass_field_0x300); /*0x645567*/
+  ((Checksummer *)((Checksummer *)a2))->Add_float(*(unsigned int *)this->__pad_2FC); /*0x645559*/
+  ((Checksummer *)((Checksummer *)a2))->Add_float(this->ParticleTypeClass_field_0x300); /*0x645567*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x304); /*0x645575*/
   LOBYTE(v3) = this->__pad_308[0]; /*0x64557a*/
   ((Power *)((Power *)a2))->FlagProcess(v3); /*0x645583*/

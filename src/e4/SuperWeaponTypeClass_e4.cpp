@@ -103,7 +103,7 @@ LABEL_5:
   if ( ((DynamicVector *)((DynamicVector *)((char *)this + 21860)))->GetOrGrow(*(unsigned int *)(v9 + 3576)) ) /*0x4f65cc*/
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
-    return 1; /*0x4f65f3*/
+    return (gamemd::AbstractClass **)(1); /*0x4f65f3*/
   v11 = (*(int ((int *)(**))(int *))(((unsigned int *)this)[0] + 24))(((unsigned int *)this)[0]); /*0x4f6603*/
   v38 = v11; /*0x4f6612*/
   BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4f6616*/
@@ -178,28 +178,28 @@ LABEL_28: v28 = (unsigned int *)(HouseClass::FirstBuildableFromArray((HouseClass
   if ( !v34 && v35 ) /*0x4f6738*/
   {
     if ( v33 ) /*0x4f6740*/
-      return 1; /*0x4f674b*/
+      return (gamemd::AbstractClass **)(1); /*0x4f674b*/
     if ( v37 && v11 >= v27 ) /*0x4f6756*/
-      return 1; /*0x4f6761*/
-    return v32 && v11 >= v27 + v29; /*0x4f6772*/
+      return (gamemd::AbstractClass **)(1); /*0x4f6761*/
+    return (gamemd::AbstractClass **)(v32 && v11 >= v27 + v29); /*0x4f6772*/
   }
   v30 = (unsigned int *)(HouseClass::FirstBuildableFromArray((HouseClass *)this, *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2276));
   v31 = (*(int (**)(unsigned int *, SuperWeaponTypeClass *))(*v30 + 132))(v30, this); /*0x4f6799*/
   if ( v34 && !v35 ) /*0x4f67ad*/
   {
     if ( v33 ) /*0x4f67b5*/
-      return 1; /*0x4f67c0*/
-    return v32 && v11 >= v31; /*0x4f67cb*/
+      return (gamemd::AbstractClass **)(1); /*0x4f67c0*/
+    return (gamemd::AbstractClass **)(v32 && v11 >= v31); /*0x4f67cb*/
   }
   if ( v36 ) /*0x4f67dd*/
   {
     if ( v37 && v11 >= v27 ) /*0x4f67e9*/
-      return 1; /*0x4f67e9*/
+      return (gamemd::AbstractClass **)(1); /*0x4f67e9*/
     if ( v32 ) /*0x4f67f1*/
     {
       if ( v11 < v27 + v29 ) /*0x4f67f7*/
-        return v11 >= v31; /*0x4f67fb*/
-      return 1; /*0x4f681c*/
+        return (gamemd::AbstractClass **)(v11 >= v31); /*0x4f67fb*/
+      return (gamemd::AbstractClass **)(1); /*0x4f681c*/
     }
   }
   else if ( v32 && v11 > v31 ) /*0x4f6811*/

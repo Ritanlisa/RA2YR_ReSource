@@ -331,7 +331,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   }
   *(unsigned int *)(v4 + 3616) = v9; /*0x52417f*/
   INIClassIntList = (DynamicVectorClass *)(&v44); /*0x524186*/
-  DynamicVectorClass::Copy(&v44, (unsigned int *)(v4 + 3720)); /*0x52418a*/
+  ((DynamicVectorClass *)(&v44))->Copy((unsigned int *)(v4 + 3720)); /*0x52418a*/
   *(unsigned int *)INIClassIntList->VectorClass = &vt_TypeList; /*0x524198*/
   inited = (uint8_t *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36)); /*0x5241a0*/
   INIClassIntList = (DynamicVectorClass *)GetINIClassIntList( /*0x5241b4*/
@@ -352,7 +352,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
   *(unsigned int *)(v4 + 3744) = *(unsigned int *)v11[1].VectorClass; /*0x5241d4*/
   *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5241d7*/
-  VectorClass::Destroy((HWND)((int)&v48)); /*0x5241df*/
+  ((VectorClass *)((HWND)((int)&v48)))->Destroy(); /*0x5241df*/
   if ( INIClass::GetString( /*0x5241fb*/
          (INIClass *)a2,
          (uint8_t *)(v4 + 36),
@@ -367,9 +367,9 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     {
       if ( !*i ) /*0x524233*/
         break; /*0x524236*/
-      INIClassIntList = (DynamicVectorClass *)AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)(i)); /*0x524241*/
+      INIClassIntList = (DynamicVectorClass *)AnimTypeClass::FindOrCreate((char *)((gamemd::AbstractClass *)(i))); /*0x524241*/
       if ( INIClassIntList ) /*0x524245*/
-        ((DynamicVector *)(&v48))->Add_Alt4(&INIClassIntList); /*0x524250*/
+        ((DynamicVector *)(&v48))->Add_Alt4((unsigned int *)(&INIClassIntList)); /*0x524250*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x524271*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x52427a*/
@@ -379,7 +379,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   {
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, (unsigned int *)(v4 + 3664)); /*0x524294*/
   }
-  VectorClass::CopyDefault((VectorClass *)(v4 + 3664), &v48.DynamicVector_field_0x1C); /*0x5242a6*/
+  ((VectorClass *)((VectorClass *)(v4 + 3664)))->CopyDefault(&v48.DynamicVector_field_0x1C); /*0x5242a6*/
   v13 = v50; /*0x5242af*/
   v14 = v51; /*0x5242b3*/
   *(unsigned int *)(v4 + 3680) = v49; /*0x5242b7*/
@@ -401,9 +401,9 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     {
       if ( !*j ) /*0x52431d*/
         break; /*0x524320*/
-      INIClassIntList = (DynamicVectorClass *)AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)(j)); /*0x52432b*/
+      INIClassIntList = (DynamicVectorClass *)AnimTypeClass::FindOrCreate((char *)((gamemd::AbstractClass *)(j))); /*0x52432b*/
       if ( INIClassIntList ) /*0x52432f*/
-        ((DynamicVector *)(&v48))->Add_Alt4(&INIClassIntList); /*0x52433a*/
+        ((DynamicVector *)(&v48))->Add_Alt4((unsigned int *)(&INIClassIntList)); /*0x52433a*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x52435b*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x524364*/
@@ -413,7 +413,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   {
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, (unsigned int *)(v4 + 3692)); /*0x52437a*/
   }
-  InfantryTypeClass::CopyDataArray((InfantryTypeClass *)(v4 + 3692), &v48.DynamicVector_field_0x1C); /*0x52438c*/
+  ((InfantryTypeClass *)((InfantryTypeClass *)(v4 + 3692)))->CopyDataArray(&v48.DynamicVector_field_0x1C); /*0x52438c*/
   *(unsigned int *)(v4 + 3716) = v51; /*0x524399*/
   v48.DynamicVector_field_0x1C = (AbstractClass *)&vt_VectorClass; /*0x52439c*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5243a4*/
@@ -792,7 +792,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
 
 }
 // 0x524F20
-unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
+unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1)
 {
 
   void *v3; // eax

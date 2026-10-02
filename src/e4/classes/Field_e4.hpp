@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Field {
-    int Int_Set(int a2);
+    int Int_Set(int aP1);
 };
 
 } // namespace gamemd

@@ -20,7 +20,7 @@ int Connection::GetSpeed()
 }
 // 0x543090
 namespace gamemd {
-int Connection::Close(void *a1_1, void *a2_1)
+int Connection::Close()
 {
 
   int result; // eax

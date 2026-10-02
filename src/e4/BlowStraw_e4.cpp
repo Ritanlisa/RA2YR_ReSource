@@ -192,7 +192,7 @@ LABEL_6:
       }
     }
   }
-  CountdownTimer::UpdateDisplay((CountdownTimer *)this + 5447, 0); /*0x6d099d*/
+  ((CountdownTimer *)((CountdownTimer *)this + 5447))->UpdateDisplay(0); /*0x6d099d*/
   return ((SidebarClass *)((SidebarClass *)this))->UpdateStrips(aP1, a2); /*0x6d09af*/
 
 }
@@ -234,7 +234,7 @@ CellStruct * * sub_731AF0()
   {
   LABEL_5:
     IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 1; /*0x731b43*/
-    return result; /*0x731b4d*/
+    return (gamemd::CellStruct **)(result); /*0x731b4d*/
   }
   while ( 1 ) /*0x731b56*/
   {
@@ -252,10 +252,10 @@ CellStruct * * sub_731AF0()
     if ( ++v5 >= v4 ) /*0x731b7d*/
     {
       IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 1; /*0x731b80*/
-      return result; /*0x731b89*/
+      return (gamemd::CellStruct **)(result); /*0x731b89*/
     }
   }
-  v7 = GetStringCSF((wchar_t *)(aMsgAttackmoveu), 0, g_Str_File_UICmnds_cpp, 862); /*0x731b9b*/
+  v7 = GetStringCSF((wchar_t *)(aMsgAttackmoveu), 0,(const char *)(g_Str_File_UICmnds_cpp), 862); /*0x731b9b*/
   v8 = 3; /*0x731ba6*/
   if ( dword_A83D4C ) /*0x731bad*/
     v8 = *(unsigned int *)&((unsigned int *)(dword_A83D4C))[134].__pad_90[4]; /*0x731baf*/
@@ -290,7 +290,7 @@ TabClass * BlowStraw_29::Read(char * Block, char a2)
   ((RadarClass *)((RadarClass *)Block))->Destruct(); /*0x5bea0a*/
   if ( (a2 & 1) != 0 ) /*0x5bea14*/
     __3_YAXPAX_Z(Block); /*0x5bea17*/
-  return (RadarClass *)Block; /*0x5bea1f*/
+  return (gamemd::TabClass *)((RadarClass *)Block); /*0x5bea1f*/
 
 }
 } // namespace gamemd

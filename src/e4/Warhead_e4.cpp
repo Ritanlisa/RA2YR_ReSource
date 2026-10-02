@@ -300,7 +300,7 @@ int Warhead::ProcessDamageArea()
   v18 = v16 / v29; /*0x65b73a*/
   *((unsigned int *)this + 25) = v18; /*0x65b741*/
   *((unsigned int *)this + 26) = v8 / v18; /*0x65b749*/
-  v19 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)this + 32); /*0x65b750*/
+  v19 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)this + 32); /*0x65b750*/
   v20 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v19 + 72))(v19, v35); /*0x65b75e*/
   v31 = *v20; /*0x65b763*/
   v33 = v20[1]; /*0x65b76a*/

@@ -82,7 +82,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
   int64_t v14; // [esp+8h] [ebp-208h] BYREF
   void *v15[128]; // [esp+10h] [ebp-200h] BYREF
 
-  DynamicArray::Resize(&dword_AC1B48, (int *)&hWnd, &v14); /*0x61058a*/
+  ((DynamicArray *)(&dword_AC1B48))->Resize((int *)&hWnd, &v14); /*0x61058a*/
   memset(v15, 0, sizeof(v15)); /*0x6105a0*/
   v15[26] = (void *)11; /*0x6105a4*/
   v15[25] = (void *)g_FogOfWarState; /*0x6105ac*/
@@ -177,7 +177,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
     RA2_OPDEL(WindowLongA); /*0x61075f*/
   SetWindowLongA(hWnd, -21, 0); /*0x610772*/
   Object::RemoveObjectArray(hWnd); /*0x61077f*/
-  return 1; /*0x610784*/
+  return (gamemd::AbstractClass **)(1); /*0x610784*/
 }
 }
 // 0x610810
@@ -221,7 +221,7 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
     goto LABEL_7; /*0x6108a7*/
   }
   LABEL_8: dword_AC48D8 = (unsigned int)(time(0));
-  StringCSF = (unsigned int)(GetStringCSF(aGuiTooltip, 0, g_Str_File_ownrdraw_cpp, 7457));
+  StringCSF = (wchar_t *)((unsigned int)(GetStringCSF((wchar_t *)(aGuiTooltip), 0, g_Str_File_ownrdraw_cpp, 7457)));
   swprintf(word_AC1CCC, (const size_t)StringCSF, v8); /*0x6108e5*/
   if ( a2 ) /*0x6108ef*/
     wcscpy((wchar_t *)(word_AC1CCC), a2); /*0x6108f7*/
@@ -301,7 +301,7 @@ AbstractClass * * sub_610BF0()
   *(unsigned int *)&g_DialogPool.__pad_208[512] = 0; /*0x610c84*/
   *(unsigned int *)&g_DialogPool.__pad_208[772] = (gamemd::AbstractClass **)(0); /*0x610c8a*/
   *(unsigned int *)&g_DialogPool.__pad_208[776] = 0; /*0x610c90*/
-  return 1; /*0x610c01*/
+  return (gamemd::AbstractClass **)(1); /*0x610c01*/
 }
 }
 // 0x612930
@@ -433,11 +433,11 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
     v9 = (gamemd::AbstractClass **)((HWND)((gamemd::AbstractClass **)(hWnd)));
   }
   if ( Msg != 307 ) /*0x612b22*/
-    return (HGDIOBJ)CallWindowProcA(v4, v9, Msg, (WPARAM)hdc, lParam); /*0x612b5b*/
+    return (gamemd::AbstractClass **)((HGDIOBJ)CallWindowProcA(v4,(HWND)(v9), Msg, (WPARAM)hdc, lParam)); /*0x612b5b*/
   v10 = hdc; /*0x612b2a*/
   SetTextColor(hdc, dword_AC18A4); /*0x612b30*/
   SetBkMode(v10, 1); /*0x612b39*/
-  return GetStockObject(5); /*0x612b47*/
+  return (gamemd::AbstractClass **)(GetStockObject(5)); /*0x612b47*/
 }
 }
 // 0x61D6D0
@@ -515,10 +515,10 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
           ++v11; /*0x61d808*/
           v9[3] = (unsigned int)(0); /*0x61d809*/
           v9[1] = v11; /*0x61d810*/
-          *v9 = &XSurface_Vtable; /*0x61d81e*/
+          *v9 = (unsigned int)(&XSurface_Vtable); /*0x61d81e*/
           v9[4] = (unsigned int)(2); /*0x61d824*/
           Buffer::Init(v9 + 5, 0, 2 * v10 * v11); /*0x61d82b*/
-          *v9 = &BSurface_Vtable; /*0x61d830*/
+          *v9 = (unsigned int)(&BSurface_Vtable); /*0x61d830*/
           v12 = v9; /*0x61d836*/
         }
         else

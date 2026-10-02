@@ -32,7 +32,7 @@ namespace gamemd {
 void * TextRenderer::GetInstance(void *a1)
 {
 
-  return g_FogOfWarState; /*0x4a60d5*/
+  return (void *)(g_FogOfWarState); /*0x4a60d5*/
 
 }
 }
@@ -145,7 +145,7 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
   if ( a2 == -1 && aP2 == (gamemd::ProgressScreenClass *)(-1) ) /*0x642c9a*/
   {
     v19 = *((char *)this + 97); /*0x642cb1*/
-    FoundationSize = Building::GetFoundationSize(v21, 0); /*0x642cb5*/
+    FoundationSize = Building::GetFoundationSize((unsigned int *)(v21), 0); /*0x642cb5*/
     v9 = 0; /*0x642cbc*/
     Default = 0; /*0x642cc2*/
     v20 = FoundationSize[2]; /*0x642cce*/
@@ -164,7 +164,7 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
     v23 = 15; /*0x642d18*/
     do /*0x642d3d*/
     {
-      *(unsigned short *)v11 = *(unsigned short *)CharToWideString(g_Str_W); /*0x642d2d*/
+      *(unsigned short *)v11 = *(unsigned short *)CharToWideString((unsigned char *)(g_Str_W)); /*0x642d2d*/
       v11 = (int *)((char *)v11 + 2); /*0x642d35*/
       --v23; /*0x642d39*/
     }
@@ -280,14 +280,14 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
     v9 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a6143*/
     *(unsigned int *)aP0 = *v9; /*0x4a614e*/
     aP0[1] = (unsigned int *)(v9[1]); /*0x4a6153*/
-    return aP0; /*0x4a6145*/
+    return (unsigned int *)(aP0); /*0x4a6145*/
   }
   else
   {
     v11 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a619a*/
     *(unsigned int *)aP0 = *v11; /*0x4a61a5*/
     aP0[1] = (unsigned int *)(v11[1]); /*0x4a61aa*/
-    return aP0; /*0x4a619c*/
+    return (unsigned int *)(aP0); /*0x4a619c*/
   }
 
 }
@@ -298,7 +298,7 @@ namespace gamemd {
 TriggerTypeClass * TextRenderer::Destructor(void * Block, char a2)
 {
 
-  TriggerClass::ProcessEvents((AbstractClass *)Block); /*0x727cd3*/
+  ((TriggerClass *)((AbstractClass *)Block))->ProcessEvents(); /*0x727cd3*/
   if ( (a2 & 1) != 0 ) /*0x727cdd*/
     __3_YAXPAX_Z(Block); /*0x727ce0*/
   return Block; /*0x727cea*/

@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/SerialPort_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_4E0A00_e4.hpp"
 #include "e4/classes/E4Recv_4E2A50_e4.hpp"
@@ -728,7 +729,7 @@ HWND * SetupLobbyCountryCombo(HWND aP0, int nIDDlgItem, int a3)
     else
       v12 = -2; /*0x4e4142*/
   }
-  Default = (HWND)BuildingType::FindDefault((void *)v12); /*0x4e4149*/
+  Default = (HWND *)((HWND)BuildingType::FindDefault((void *)v12)); /*0x4e4149*/
   return CacheDialogInvalidate(DlgItem, Default); /*0x4e4157*/
 }
 }
@@ -1885,7 +1886,7 @@ char * * sub_4E7EA0()
   while ( v1 ); /*0x4e7eb2*/
   dword_A802C8 = 0; /*0x4e7eb4*/
   dword_A802CC = 0; /*0x4e7eba*/
-  dword_A802D0 = 0; /*0x4e7ec0*/
+  dword_A802D0 = (char **)(0); /*0x4e7ec0*/
   return result; /*0x4e7ec6*/
 }
 }
@@ -1895,7 +1896,7 @@ void unknown_libname_18()
 {
   void *v0; // edi
 
-  v0 = (void *)unk_A8EAA4; /*0x5f1654*/
+  v0 = (unsigned char)((void *)unk_A8EAA4); /*0x5f1654*/
   unk_A8EA70 = (void*)&NullModemClass_vftable; /*0x5f1657*/
   if ( unk_A8EAA4 ) /*0x5f165f*/
   {

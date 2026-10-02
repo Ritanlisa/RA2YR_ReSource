@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct StringTable {
-    int Find(void * a2);
+    int Find(const char **a2);
 };
 
 } // namespace gamemd

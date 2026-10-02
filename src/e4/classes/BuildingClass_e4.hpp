@@ -741,7 +741,7 @@ struct BuildingClass {
     static double AimTurret(...);  // C2597 interim stub
     static double CalcDrawPos(...);  // C2597 interim stub
     static double ClearAnims(...);  // C2597 interim stub
-     double Construct(...);  // C2597 interim stub
+     int Construct(int a2, int a3);  // was C2597 interim stub, := truth 0x0x43b740
     static double DemolishBridge(...);  // C2597 interim stub
     static double DetermineVisualState(...);  // C2597 interim stub
     static double FindByCellHash(...);  // C2597 interim stub
@@ -779,6 +779,9 @@ struct BuildingClass {
     int TogglePower2(int a2);  // 0x4ac8c0
     int ProcessUpgradeEffects();  // 0x726400
     int TogglePower(int a2);  // 0x4ac660
+    void VisualizePlacement();  // 0x485af0
+    int CheckAdjacentCells();  // 0x485460
+    int SetSlot(int a2, int a3);  // 0x717890
 };
 
 } // namespace gamemd

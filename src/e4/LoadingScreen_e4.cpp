@@ -197,7 +197,7 @@ void * * LoadingScreen::LoadSHPs()
   dword_B0FAA8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D34),(gamemd::ConvertClass *)((bool *)&byte_B0FCAD))); /*0x72fba6*/
   result = LoadFileSHP((gamemd::ConvertClass *)(off_844D38),(gamemd::ConvertClass *)((bool *)&byte_B0FCAE)); /*0x72fbab*/
   dword_B0FABC = (unsigned int)(result); /*0x72fbb0*/
-  return result; /*0x72fbb5*/
+  return (void **)(result); /*0x72fbb5*/
 
 }
 } // namespace gamemd

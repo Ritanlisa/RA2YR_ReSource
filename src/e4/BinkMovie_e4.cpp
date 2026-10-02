@@ -262,7 +262,7 @@ LABEL_40:
     *((unsigned int *)this + 6) = v27; /*0x432a2f*/
     *((unsigned int *)this + 7) = bottom; /*0x432a32*/
     *((unsigned int *)this + 2) = (gamemd::AbstractClass **)(BinkDDSurfaceType(*(unsigned int *)(g_DSurface_Primary + 28))); /*0x432a44*/
-    return 1; /*0x432a4a*/
+    return (gamemd::AbstractClass **)(1); /*0x432a4a*/
   }
   else
   {
@@ -643,7 +643,7 @@ void BinkMovie::Cleanup(void *a1_1)
   v2 = *(DSurface **)this->__pad_0; /*0x5c01f4*/
   if ( v2 ) /*0x5c01f8*/
   {
-    LOBYTE(result) = DSurface::FlipIfNeeded(v2); /*0x5c01fa*/
+    LOBYTE(result) = ((DSurface *)(v2))->FlipIfNeeded(); /*0x5c01fa*/
     v4 = *(void **)this->__pad_0; /*0x5c01ff*/
     if ( *(unsigned int *)this->__pad_0 ) /*0x5c01ff*/
     {
@@ -864,14 +864,14 @@ int BinkMovie::InitKeyframeTracking(char * Source)
   if ( !Source || !strlen(Source) ) /*0x6c9b5f*/
     return 0; /*0x6c9b6a*/
   CCFileClass::Construct(&v8, aSubtitlemdTxt); /*0x6c9b79*/
-  if ( !(uint8_t)CCFileClass::Open(&v8, 0) ) /*0x6c9b8a*/
+  if ( !(uint8_t)((CCFileClass *)(&v8))->Open(0) ) /*0x6c9b8a*/
   {
 LABEL_6:
     *(unsigned int *)v8.CDFileClass = &vt_CCFileClass; /*0x6c9be2*/
     v10 = 0; /*0x6c9bee*/
     ((Vector *)((int)v9))->Clear(); /*0x6c9bf5*/
     *(unsigned int *)v8.CDFileClass = &off_7E1668; /*0x6c9bfe*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x6c9c06*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v8))->Dtor(); /*0x6c9c06*/
     return 0; /*0x6c9c16*/
   }
   v6[1] = 0; /*0x6c9b9c*/
@@ -885,16 +885,16 @@ LABEL_6:
   if ( !v3 ) /*0x6c9bd2*/
   {
     nullsub_40(v5); /*0x6c9bd4*/
-    FileStraw::Destructor((int)v6); /*0x6c9bdd*/
+    ((FileStraw *)((int)v6))->Destructor(); /*0x6c9bdd*/
     goto LABEL_6; /*0x6c9bdd*/
   }
   nullsub_40(v5); /*0x6c9c19*/
-  FileStraw::Destructor((int)v6); /*0x6c9c22*/
+  ((FileStraw *)((int)v6))->Destructor(); /*0x6c9c22*/
   *(unsigned int *)v8.CDFileClass = &vt_CCFileClass; /*0x6c9c2b*/
   v10 = 0; /*0x6c9c33*/
   ((Vector *)((int)v9))->Clear(); /*0x6c9c3a*/
   *(unsigned int *)v8.CDFileClass = &off_7E1668; /*0x6c9c43*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x6c9c4b*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v8))->Dtor(); /*0x6c9c4b*/
   return 1; /*0x6c9c0b*/
 
 }
@@ -1024,9 +1024,9 @@ AbstractClass * * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
     v20[0] = 0; /*0x6c9de4*/
     v20[1] = 0; /*0x6c9de8*/
     v20[2] = v6; /*0x6c9def*/
-    TextGroup::SetRect(v5, v20); /*0x6c9df3*/
+    ((TextGroup *)(v5))->SetRect(v20); /*0x6c9df3*/
     v17 = (unsigned short *)aP1[5]; /*0x6c9e0d*/
-    Text::Layout((Text *)v5, v17, &v15, &v19, v6); /*0x6c9e11*/
+    ((Text *)((Text *)v5))->Layout(v17, &v15, &v19, v6); /*0x6c9e11*/
     v14 = 0; /*0x6c9e1e*/
     v7 = aP1[4]; /*0x6c9e26*/
     v8 = *(unsigned int *)&v5[7] * (aP1[3] - 1); /*0x6c9e29*/

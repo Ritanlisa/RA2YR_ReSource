@@ -186,7 +186,7 @@ LABEL_9:
   v13[2 * v14] = 0; /*0x53895f*/
   v13[2 * v14 + 1] = 0; /*0x538962*/
   *((unsigned int *)this + 4) = 0; /*0x538966*/
-  return 1; /*0x538917*/
+  return (gamemd::ObjectClass **)(1); /*0x538917*/
 
 }
 } // namespace gamemd

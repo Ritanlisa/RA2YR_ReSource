@@ -57,7 +57,7 @@ CampaignClass * RadarClass::Destruct()
   }
   while ( v3 ); /*0x652c53*/
   RadarClass_field_0x1260 = (gamemd::CampaignClass *)(this->RadarClass_field_0x1260); /*0x652c55*/
-  this->RadarClass_field_0x125C = (VectorClass *)&vt_VectorClass; /*0x652c5b*/
+  this->RadarClass_field_0x125C = (unsigned int)((VectorClass *)&vt_VectorClass); /*0x652c5b*/
   if ( RadarClass_field_0x1260 && this->__pad_1264[5] ) /*0x652c69*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1260); /*0x652c72*/
@@ -66,7 +66,7 @@ CampaignClass * RadarClass::Destruct()
   this->__pad_1264[5] = (unsigned int)((gamemd::CampaignClass *)(0));
   *(unsigned int *)this->__pad_1264 = 0; /*0x652c86*/
   RadarClass_field_0x1228 = (gamemd::CampaignClass *)(this->RadarClass_field_0x1228); /*0x652c8c*/
-  this->RadarClass_field_0x1224 = (VectorClass *)&vt_VectorClass; /*0x652c92*/
+  this->RadarClass_field_0x1224 = (unsigned int)((VectorClass *)&vt_VectorClass); /*0x652c92*/
   if ( RadarClass_field_0x1228 && this->__pad_122C[5] ) /*0x652ca0*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1228); /*0x652ca9*/
@@ -75,7 +75,7 @@ CampaignClass * RadarClass::Destruct()
   this->__pad_122C[5] = (unsigned int)((gamemd::CampaignClass *)(0));
   *(unsigned int *)this->__pad_122C = 0; /*0x652cbf*/
   ((MapClass *)((char *)this))->Destruct(); /*0x652cc5*/
-  return result; /*0x652cca*/
+  return (gamemd::CampaignClass *)(result); /*0x652cca*/
 
 }
 }

@@ -135,15 +135,15 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
             Debug::Log();
       SetRect(&rc, 0, 0, v2, IDA_SHIDWORD(v2)); /*0x560f30*/
       WindowLongA = GetWindowLongA((HWND)(g_hWnd), -20); /*0x560f4c*/
-      v16 = GetMenu(g_hWnd) != 0; /*0x560f60*/
-      v7 = GetWindowLongA(g_hWnd, -16); /*0x560f64*/
+      v16 = GetMenu((HWND)(g_hWnd)) != 0; /*0x560f60*/
+      v7 = GetWindowLongA((HWND)(g_hWnd), -16); /*0x560f64*/
       AdjustWindowRectEx(&rc, v7, v16, WindowLongA); /*0x560f6c*/
-      MoveWindow(g_hWnd, 0, 0, rc.right - rc.left, rc.bottom - rc.top, 1); /*0x560f92*/
+      MoveWindow((HWND)(g_hWnd), 0, 0, rc.right - rc.left, rc.bottom - rc.top, 1); /*0x560f92*/
     }
     else
     {
             Debug::Log();
-      SetWindowPos(g_hWnd, 0, 0, 0, v2, IDA_SHIDWORD(v2), 2u); /*0x560efe*/
+      SetWindowPos((HWND)(g_hWnd), 0, 0, 0, v2, IDA_SHIDWORD(v2), 2u); /*0x560efe*/
             Debug::Log();
       g_DSurface_Primary = (int)((DSurface *)DSurface::CreatePrimary(0)); /*0x560f18*/
     }
@@ -168,10 +168,10 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     v30[3] = *(unsigned int *)&DSurface_ViewBounds.__pad_8[20]; /*0x560ff3*/
     v30[0] = 0; /*0x561006*/
     v30[1] = 0; /*0x56100a*/
-    AllocateSurfaceScreenSurfaces((int)&DSurface_ViewBounds.__pad_8[8], (int)v30, (int)v29, (int)&rc, 0); /*0x56100e*/
+    AllocateSurfaceScreenSurfaces((int)&DSurface_ViewBounds.__pad_8[8],(gamemd::ObjectClass *)((int)v30), (int)v29, (int)&rc, 0); /*0x56100e*/
     g_DSurface_Hidden_2 = (int)((AudioStream *)g_DSurface_Hidden); /*0x56101e*/
         Debug::Log();
-    sub_491100((gamemd::ObjectClass *)(BitShift_Red), BitShift_Green, 0,(gamemd::ObjectClass *)(BitMask_Blue), BitMask_Green, BitMask_Red, BitShift_Blue); /*0x561046*/
+    sub_491100((gamemd::ObjectClass *)(BitShift_Red), BitShift_Green, 0,(gamemd::ObjectClass *)(BitMask_Blue), BitMask_Green, BitMask_Red,(short)(BitShift_Blue)); /*0x561046*/
     if ( stru_887598.lineTrailer ) /*0x561053*/
     {
       MouseClass::CalcConfiningRect((MouseClass *)stru_887598.lineTrailer); /*0x5610dd*/
@@ -288,7 +288,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
   result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(aP0), a2, wParam, a4));
   if ( result ) /*0x561423*/
     return result; /*0x561423*/
-  WindowLongA = (unsigned int *)GetWindowLongA(aP0, 8); /*0x561439*/
+  WindowLongA = (unsigned int *)GetWindowLongA((HWND)(aP0), 8); /*0x561439*/
   if ( a2 == 273 ) /*0x56143b*/
   {
     if ( (uint16_t)wParam > 0x686u ) /*0x5615c1*/
@@ -309,7 +309,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
       {
         if ( (uint16_t)wParam == 1497 ) /*0x5615cd*/
         {
-          DlgItem = GetDlgItem(aP0, 1497); /*0x5615d9*/
+          DlgItem = GetDlgItem((HWND)(aP0), 1497); /*0x5615d9*/
           dword_82A284 = SendMessageA(DlgItem, 0x188u, 0, 0); /*0x5615f1*/
           return 0; /*0x5615fd*/
         }
@@ -318,8 +318,8 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
     }
     if ( dword_82A288 != dword_82A284 ) /*0x56164e*/
     {
-      SetDialogParent(aP0, g_hWnd); /*0x561658*/
-      v16 = GetDlgItem(aP0, 1497); /*0x561663*/
+      SetDialogParent((HWND)(aP0), g_hWnd); /*0x561658*/
+      v16 = GetDlgItem((HWND)(aP0), 1497); /*0x561663*/
       if ( v16 ) /*0x561667*/
       {
         v17 = SendMessageA(v16, 0x199u, dword_82A284, 0); /*0x561678*/
@@ -327,7 +327,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
         dword_ABCE98 = *((unsigned int *)dword_ABCF5C + 2 * v17 + 1); /*0x56168d*/
       }
     }
-    v18 = GetDlgItem(aP0, 1652); /*0x561698*/
+    v18 = GetDlgItem((HWND)(aP0), 1652); /*0x561698*/
     if ( v18 ) /*0x5616a1*/
       byte_A8EB94 = SendMessageA(v18, 0xF0u, 0, 0) == 1; /*0x5616b4*/
     RA2_OPDEL(dword_ABCF5C); /*0x5616c1*/
@@ -337,7 +337,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
   }
   if ( a2 != 1175 ) /*0x561447*/
     return 0; /*0x561447*/
-  v6 = GetDlgItem(aP0, 1497); /*0x561459*/
+  v6 = GetDlgItem((HWND)(aP0), 1497); /*0x561459*/
   if ( byte_A8EB95 ) /*0x561464*/
     v7 = (unsigned int *)sub_4A4900(4096, 4096, 16); /*0x561470*/
   else
@@ -371,7 +371,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
   byte_82A28C = 1; /*0x56154c*/
   dword_82A284 = wParama; /*0x561552*/
   dword_82A288 = wParama; /*0x561557*/
-  v13 = GetDlgItem(aP0, 1652); /*0x561567*/
+  v13 = GetDlgItem((HWND)(aP0), 1652); /*0x561567*/
   if ( !v13 ) /*0x56156b*/
     return 0; /*0x56156b*/
   v14 = byte_A8EB94 == 1 && g_DDraw_AllowStretchBlits == 1; /*0x561581*/
@@ -547,7 +547,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
   while ( v12 ); /*0x56b0c7*/
   (*(void (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))(&v17); /*0x56b0d1*/
   ((LCWPipe *)((LCWPipe *)&v17))->Dtor(); /*0x56b0d8*/
-  return v11; /*0x56b0df*/
+  return (gamemd::BombClass **)(v11); /*0x56b0df*/
 
 }
 }
@@ -610,7 +610,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
           }
         }
       }
-      v2 = this; /*0x56b387*/
+      v2 = (gamemd::ObjectClass *)(this); /*0x56b387*/
       v4 = v18 + 1; /*0x56b38f*/
       v18 = v4; /*0x56b396*/
     }
@@ -620,7 +620,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
   v11 = Compression::Read((int *)v17.__pad_0, (int)&v16, 4) + v3; /*0x56b3c6*/
   v12 = (gamemd::BombClass **)((*(int (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))(&v17)); /*0x56b3cf*/
   LZOPipe::Destructor((LZOPipe *)&v17); /*0x56b3d1*/
-  return v12 + v11; /*0x56b3d9*/
+  return (gamemd::BombClass **)(v12 + v11); /*0x56b3d9*/
 
 }
 }
@@ -633,7 +633,7 @@ int sub_561350(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
   wchar_t *StringCSF; // edi
   HWND DlgItem; // eax
 
-  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x561369*/
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), a2, a3, a4)); /*0x561369*/
   if ( !result ) /*0x561370*/
   {
     WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x561379*/
@@ -651,7 +651,7 @@ int sub_561350(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
     }
     else if ( a2 == 1175 ) /*0x56138d*/
     {
-      StringCSF = GetStringCSF(aGuiConfirmmode, 0, g_Str_File_MainOpt_cpp, 1501); /*0x5613ab*/
+      StringCSF = GetStringCSF((wchar_t *)(aGuiConfirmmode), 0, g_Str_File_MainOpt_cpp, 1501); /*0x5613ab*/
       DlgItem = GetDlgItem(hWnd, 1499); /*0x5613ad*/
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x5613bc*/
       return 0; /*0x5613c7*/
@@ -802,7 +802,7 @@ int sub_5618E0()
 namespace gamemd {
 int j_CoordinateTables_Init()
 {
-  return CoordinateTables::Init();
+  return (int)(CoordinateTables::Init());
 }
 } // namespace gamemd
 
@@ -810,7 +810,7 @@ int j_CoordinateTables_Init()
 namespace gamemd {
 int unknown_libname_22()
 {
-  CellClass::DTOR(&unk_ABDC50); /*0x565085*/
+  ((CellClass *)(&unk_ABDC50))->DTOR(); /*0x565085*/
 }
 } // namespace gamemd
 
@@ -862,7 +862,7 @@ unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
   v7 = *a3 + v4 - v3; /*0x565639*/
   LOWORD(v9) = (unsigned int)(v3 / 2 + (v6 >> 1)); /*0x565645*/
   HIWORD(v9) = v7; /*0x56564a*/
-  *a2 = v9; /*0x565655*/
+  *a2 = (unsigned int)(v9); /*0x565655*/
   return a2; /*0x565653*/
 
 }

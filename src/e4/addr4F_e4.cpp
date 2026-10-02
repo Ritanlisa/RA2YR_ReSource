@@ -326,13 +326,13 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   if ( v10 ) /*0x4f1dc2*/
   {
     ((String *)((String *)&v38.vtable2))->Concat2((char **)&v38, aVqa); /*0x4f1dd6*/
-    v12 = CCFileClass::Construct2((CCFileClass *)&v38.ambientSoundController[2], (char **)&v38); /*0x4f1de4*/
+    v12 = ((CCFileClass *)((CCFileClass *)&v38.ambientSoundController[2]))->Construct2((char **)&v38); /*0x4f1de4*/
     v13 = (*(int (**)(unsigned int *, unsigned int, int *))(*v12 + 20))(v12, 0, p_nextObject); /*0x4f1df8*/
     v38.ambientSoundController[3] = (int)&CCFileClass_vftable; /*0x4f1dfa*/
     v39 = 0; /*0x4f1e02*/
     ((Vector *)((int)&v38.location[1]))->Clear(); /*0x4f1e09*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1e12*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v38.ambientSoundController[3]); /*0x4f1e1a*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v38.ambientSoundController[3]))->Dtor(); /*0x4f1e1a*/
     if ( v13 ) /*0x4f1e21*/
     {
       v14 = (MSVQAnim *)RA2_OPNEW(0x30u); /*0x4f1e25*/
@@ -350,7 +350,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
           if ( v21 ) /*0x4f1f71*/
             UI_Load_5D1C90((ObjectClass *)((unsigned int)(v8)+ 4), v21, (int (***)(unsigned int, int))Config); /*0x4f1f77*/
           else
-            PriorityQueue::Add((int)((PriorityQueue *)(v8 + 4)), (int)Config); /*0x4f1f81*/
+            ((PriorityQueue *)((int)((PriorityQueue *)(v8 + 4))))->Add((int)Config); /*0x4f1f81*/
           *(unsigned int *)((unsigned int)(v8)+ 84) = (unsigned int)(Config); /*0x4f1f86*/
           p_nextObject = &v38.nextObject; /*0x4f1f91*/
           v22 = (int *)(*(int (**)(unsigned int *))(*Config + 24))(Config); /*0x4f1f92*/
@@ -368,13 +368,13 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
       }
     }
     ((String *)((String *)&v38.vtable3))->Concat2((char **)&v38.uniqueId, aBik_0); /*0x4f1e66*/
-    v15 = CCFileClass::Construct2((CCFileClass *)&v38.ambientSoundController[3], (char **)&v38.uniqueId); /*0x4f1e74*/
+    v15 = ((CCFileClass *)((CCFileClass *)&v38.ambientSoundController[3]))->Construct2((char **)&v38.uniqueId); /*0x4f1e74*/
     v16 = (*(int (**)(unsigned int *, unsigned int))(*v15 + 20))(v15, 0); /*0x4f1e89*/
     v38.ambientSoundController[3] = (int)&CCFileClass_vftable; /*0x4f1e8b*/
     v39 = 0; /*0x4f1e93*/
     ((Vector *)((int)&v38.location[1]))->Clear(); /*0x4f1e9e*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1ea7*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v38.ambientSoundController[3]); /*0x4f1eaf*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v38.ambientSoundController[3]))->Dtor(); /*0x4f1eaf*/
     if ( v16 ) /*0x4f1eb6*/
     {
       Config = 0; /*0x4f1ec3*/
@@ -504,7 +504,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
 
   v2 = ((String *)((String *)((char *)this + 80)))->GetOrEmpty(); /*0x4f230c*/
   v3 = ((StringList *)((StringList *)&unk_A83D10))->Find(v2); /*0x4f2317*/
-  ThemeClass::Play((ThemeClass *)&unk_A83D10, v3); /*0x4f2322*/
+  ((ThemeClass *)((ThemeClass *)&unk_A83D10))->Play(v3); /*0x4f2322*/
   (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x4f2331*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x4f233e*/
   (*((void (**)(DSurface *, ObjectClass *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 + 1))( /*0x4f2354*/
@@ -646,7 +646,7 @@ int E4Recv_4F2640::sub_4F2640(int (***a2)(unsigned int, int) a1)
   if ( v3 ) /*0x4f264e*/
     result = UI_Load_5D1C90((ObjectClass *)&((unsigned int *)this)[0], v3, a2); /*0x4f2654*/
   else
-    result = PriorityQueue::Add((PriorityQueue *)&((unsigned int *)this)[0], (int)a2); /*0x4f2664*/
+    result = ((PriorityQueue *)((PriorityQueue *)&((unsigned int *)this)[0]))->Add((int)a2); /*0x4f2664*/
   this->customSound_controller[1] = (int)a2; /*0x4f2659*/
   return result; /*0x4f265c*/
 
@@ -704,7 +704,7 @@ void ParseINIAnimGadgetDefinition()
       v22 = 0; /*0x4f2da9*/
       v23 = 0; /*0x4f2dad*/
       ((String *)(&v21))->Assign(aOrigin); /*0x4f2db1*/
-      CoordPair = INIClass::GetCoordPair(a2, &v20, (char *)Source, (char **)&v21, &v22); /*0x4f2dc8*/
+      CoordPair = ((INIClass *)(a2))->GetCoordPair(&v20, (char *)Source, (char **)&v21, &v22); /*0x4f2dc8*/
       v10 = *CoordPair; /*0x4f2dcd*/
       v11 = CoordPair[1]; /*0x4f2dcf*/
       v22 = v10; /*0x4f2dd2*/
@@ -801,7 +801,7 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * e
   v23 = 0; /*0x4f3192*/
   v24 = 0; /*0x4f3196*/
   ((String *)(&v22))->Assign(aOrigin); /*0x4f319a*/
-  CoordPair = INIClass::GetCoordPair(a2, v25, (char *)Source, (char **)&v22, &v23); /*0x4f31b1*/
+  CoordPair = ((INIClass *)(a2))->GetCoordPair(v25, (char *)Source, (char **)&v22, &v23); /*0x4f31b1*/
   v10 = *CoordPair; /*0x4f31b6*/
   v11 = CoordPair[1]; /*0x4f31b8*/
   v23 = v10; /*0x4f31bb*/
@@ -941,7 +941,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
     if ( v21 ) /*0x4f3553*/
     {
       (*(void (**)(unsigned int *, unsigned int))(*v21 + 4))(v21, 0); /*0x4f355b*/
-      PriorityQueue::Add(v12, *((unsigned int *)this + 10)); /*0x4f3564*/
+      ((PriorityQueue *)(v12))->Add(*((unsigned int *)this + 10)); /*0x4f3564*/
     }
   }
   v22 = a5; /*0x4f3569*/
@@ -951,7 +951,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
     v24 = v23 ? MSPCXAnim::Construct(v23, v22, (int)(v12 + 6), v19, 1) : 0;
     *((unsigned int *)this + 9) = v24; /*0x4f359b*/
     if ( v24 ) /*0x4f359e*/
-      PriorityQueue::Add(v12, (int)v24); /*0x4f35a3*/
+      ((PriorityQueue *)(v12))->Add((int)v24); /*0x4f35a3*/
   }
   v25 = a7; /*0x4f35a8*/
   if ( String::Length(a7) ) /*0x4f35ae*/
@@ -965,7 +965,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
     if ( v27 ) /*0x4f35dd*/
     {
       (*(void (**)(unsigned int *, unsigned int))(*v27 + 4))(v27, 0); /*0x4f35e5*/
-      PriorityQueue::Add(v12, *((unsigned int *)this + 11)); /*0x4f35ee*/
+      ((PriorityQueue *)(v12))->Add(*((unsigned int *)this + 11)); /*0x4f35ee*/
     }
   }
   return this; /*0x4f35f5*/
@@ -1492,8 +1492,8 @@ int sub_4F1B80()
   int v8[3]; // [esp+A0h] [ebp-14h] BYREF
   int v9; // [esp+ACh] [ebp-8h]
 
-  CCFileClass::Construct2(&v7, a1); /*0x4f1b8f*/
-  if ( (uint8_t)CCFileClass::Open(&v7, 0) ) /*0x4f1b9b*/
+  ((CCFileClass *)(&v7))->Construct2(a1); /*0x4f1b8f*/
+  if ( (uint8_t)((CCFileClass *)(&v7))->Open(0) ) /*0x4f1b9b*/
   {
     v6.headNode[0] = 0; /*0x4f1bdf*/
     v6.headNode[1] = 0; /*0x4f1be3*/
@@ -1507,16 +1507,16 @@ int sub_4F1B80()
     v6.unknown38 = 0; /*0x4f1c34*/
     v6.INIClass_field_3C = 0; /*0x4f1c38*/
     *(unsigned int *)v6.__pad_0 = (void*)&INIClass_vftable; /*0x4f1c3c*/
-    if ( FileStraw::Open((FileStraw *)&v6, (int)&v7, 0) <= 0 ) /*0x4f1c4b*/
+    if ( ((FileStraw *)((FileStraw *)&v6))->Open((int)&v7, 0) <= 0 ) /*0x4f1c4b*/
       v4 = 0; /*0x4f1c5c*/
     else
       v4 = LoadFromINIGraphicMenu(v5, &v6, a2); /*0x4f1c58*/
-    HashTable::DestroyHashTableINIClass(&v6); /*0x4f1c62*/
+    ((HashTable *)(&v6))->DestroyHashTableINIClass(); /*0x4f1c62*/
     *(unsigned int *)v7.CDFileClass = (void*)&CCFileClass_vftable; /*0x4f1c6e*/
     v9 = 0; /*0x4f1c76*/
     ((Vector *)((int)v8))->Clear(); /*0x4f1c7d*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x4f1c86*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x4f1c8e*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v7))->Dtor(); /*0x4f1c8e*/
     return v4; /*0x4f1c93*/
   }
   else
@@ -1525,7 +1525,7 @@ int sub_4F1B80()
     v9 = 0; /*0x4f1bb3*/
     ((Vector *)((int)v8))->Clear(); /*0x4f1bba*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x4f1bc3*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x4f1bcb*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v7))->Dtor(); /*0x4f1bcb*/
     return 0; /*0x4f1bd0*/
   }
 }
@@ -1677,11 +1677,11 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
   *((unsigned int *)this + 7) = v10; /*0x4f2f50*/
   *((unsigned int *)this + 9) = 0; /*0x4f2f5a*/
   *(unsigned int *)this->__pad_0 = &vt_GraphicMenuAnimItem; /*0x4f2f5d*/
-  CCFileClass::Construct2((CCFileClass *)&v15.estimatedHealth, aP5); /*0x4f2f63*/
-  CCFileClass::Construct2((CCFileClass *)&((char *)&v15), a6); /*0x4f2f74*/
-  if ( (uint8_t)CCFileClass::Open((CCFileClass *)&v15.estimatedHealth, 0) ) /*0x4f2f81*/
+  ((CCFileClass *)((CCFileClass *)&v15.estimatedHealth))->Construct2(aP5); /*0x4f2f63*/
+  ((CCFileClass *)((CCFileClass *)&((char *)&v15)))->Construct2(a6); /*0x4f2f74*/
+  if ( (uint8_t)((CCFileClass *)((CCFileClass *)&v15.estimatedHealth))->Open(0) ) /*0x4f2f81*/
   {
-    if ( (uint8_t)CCFileClass::Open((CCFileClass *)&((char *)&v15), 0) ) /*0x4f2f8f*/
+    if ( (uint8_t)((CCFileClass *)((CCFileClass *)&((char *)&v15)))->Open(0) ) /*0x4f2f8f*/
     {
       v11 = ((String *)((String *)a6))->GetOrEmpty_Alt(); /*0x4f2f9a*/
       ((String *)((String *)&v15))->Assign(v11); /*0x4f2fa4*/
@@ -1692,7 +1692,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
       {
         v13 = MSShapeAnim::Constructor(v12, aP5, *aP3, aP3[1], *((unsigned int *)this + 9), aP7, aP8, 0); /*0x4f2ff2*/
         if ( v13 ) /*0x4f2ff9*/
-          PriorityQueue::Add((PriorityQueue *)a2, (int)v13); /*0x4f3003*/
+          ((PriorityQueue *)((PriorityQueue *)a2))->Add((int)v13); /*0x4f3003*/
       }
     }
   }
@@ -1700,12 +1700,12 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
   *(unsigned int *)&v15.bombVisible = 0; /*0x4f3015*/
   ((Vector *)((int)&v15.customSound_controller[3]))->Clear(); /*0x4f3019*/
   ((unsigned int *)&v15)[0] = &off_7E1668; /*0x4f3027*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&((char *)&v15)); /*0x4f302b*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&((char *)&v15)))->Dtor(); /*0x4f302b*/
   v15.estimatedHealth = (int)&vt_CCFileClass; /*0x4f3037*/
   v17 = 0; /*0x4f303e*/
   ((Vector *)((int)v16))->Clear(); /*0x4f3045*/
   v15.estimatedHealth = (int)&off_7E1668; /*0x4f3051*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v15.estimatedHealth); /*0x4f3058*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v15.estimatedHealth))->Dtor(); /*0x4f3058*/
   return (int *)this->__pad_0; /*0x4f305f*/
 
 }

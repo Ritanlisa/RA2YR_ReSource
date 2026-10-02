@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct InputManager_ProcessEvents {
-    int Vtable(unsigned int * a2, unsigned int * a3, unsigned int * a4);
+    int Vtable(unsigned int *a2, unsigned int *a3, unsigned int *a4);
 };
 
 } // namespace gamemd

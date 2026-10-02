@@ -54,7 +54,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
         v9 = a2; /*0x76a051*/
         do /*0x76a065*/
         {
-          ComPtr::Constructor(v8); /*0x76a056*/
+          ((ComPtr *)(v8))->Constructor(); /*0x76a056*/
           *(unsigned int *)v8->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76a05b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76a061*/
           --v9; /*0x76a064*/
@@ -97,7 +97,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
       if ( a2 >= this->m_8 ) /*0x76a081*/
         m_8 = this->m_8; /*0x76a083*/
       for ( i = 0; i < m_8; ++i ) /*0x76a089*/
-        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x76a096*/
+        ((ComPtr *)((ComPtr *)((char *)v6 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x76a096*/
       if ( BYTE1(this->m_C) ) /*0x76a0a0*/
       {
         v11 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x76a0a7*/
@@ -118,7 +118,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   v12 = this->m_8; /*0x76a0dc*/
   if ( v12 < this->m_10 ) /*0x76a0e4*/
     this->m_10 = v12; /*0x76a0e6*/
-  return 1; /*0x76a0e9*/
+  return (gamemd::AbstractClass **)(1); /*0x76a0e9*/
 
 }
 }
@@ -417,7 +417,7 @@ namespace gamemd {
 unsigned int * MSFrameAnim::drawFrame(void *a1_1)
 {
 
-  ComPtr::Constructor((ComPtr *)this); /*0x76a7c3*/
+  ((ComPtr *)((ComPtr *)this))->Constructor(); /*0x76a7c3*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76a7c8*/
   return this->__pad_0; /*0x76a7d0*/
 

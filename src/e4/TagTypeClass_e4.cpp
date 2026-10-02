@@ -30,7 +30,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1, void *a2, void *a
   char Destination[48]; // [esp+8h] [ebp-34h] BYREF
   char v7; // [esp+38h] [ebp-4h]
 
-  ((AbstractTypeClass *)((int)this))->Constructor(aP1); /*0x6e5b6c*/
+  ((AbstractTypeClass *)((int)this))->Constructor((char *)(aP1)); /*0x6e5b6c*/
   *((unsigned int *)this + 38) = -1; /*0x6e5b78*/
   *((unsigned int *)this + 39) = 0; /*0x6e5b82*/
   *((unsigned int *)this + 40) = 0; /*0x6e5b88*/
@@ -158,7 +158,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
     while ( v8 < g_MultiplayerCleanup ); /*0x6e5dc0*/
   }
-  return ((AbstractTypeClass *)(int a1))->Dtor() ; /*0x6e5dc9*/
+  return (gamemd::AbstractClass **)(((AbstractTypeClass *)(int a1))->Dtor()); /*0x6e5dc9*/
 
 }
 }
@@ -218,7 +218,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   }
   v4 = (void *)(strtok(0, Str));
   *((unsigned int *)this + 40) = (unsigned int)(TagTypeClass::FindOrCreateTriggerType(v4)); /*0x6e613d*/
-  return 1; /*0x6e6143*/
+  return (void *)(1); /*0x6e6143*/
 
 }
 }
@@ -268,7 +268,7 @@ LABEL_6:
     if ( ++v2 >= g_MultiplayerCleanup ) /*0x6e6364*/
       goto LABEL_6; /*0x6e6364*/
   }
-  return (char *)*((unsigned int *)dword_B0E784 + v2); /*0x6e637f*/
+  return (gamemd::AbstractTypeClass *)((char *)*((unsigned int *)dword_B0E784 + v2)); /*0x6e637f*/
 
 }
 }
@@ -307,7 +307,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType(char *Source)
 LABEL_6:
     v3 = (TriggerTypeClass *)__2_YAPAXI_Z(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
-      return ((TriggerTypeClass *)(v3))->Construct(Source); /*0x727b11*/
+      return (gamemd::TriggerTypeClass **)(((TriggerTypeClass *)(v3))->Construct(Source)); /*0x727b11*/
     return 0; /*0x727b05*/
   }
   while ( _strcmpi((char *)(*(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v2) + 36), Source) ) /*0x727aea*/
@@ -315,7 +315,7 @@ LABEL_6:
     if ( ++v2 >= *(int *)((char *)&FootClass_Array) ) /*0x727af4*/
       goto LABEL_6; /*0x727af4*/
   }
-  return *(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v2); /*0x727b0f*/
+  return (gamemd::TriggerTypeClass **)(*(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v2)); /*0x727b0f*/
 
 }
 }

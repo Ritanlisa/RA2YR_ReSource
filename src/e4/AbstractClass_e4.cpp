@@ -377,8 +377,8 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
   if ( *(AbstractClass **)(v7 + 21448) == v6 ) /*0x4fbcdd*/
     *(unsigned int *)(v7 + 21448) = 0; /*0x4fbcdf*/
   if ( *(AbstractClass **)(v7 + 21452) == v6 ) /*0x4fbceb*/
-    *(unsigned int *)(v7 + 21452) = (gamemd::VectorClass_flat **)(0); /*0x4fbced*/
-  return result; /*0x4fbcf3*/
+    *(unsigned int *)(v7 + 21452) = (unsigned int)((gamemd::VectorClass_flat **)(0)); /*0x4fbced*/
+  return (gamemd::VectorClass_flat **)(result); /*0x4fbcf3*/
 }
 }
 // 0x5C03D0
@@ -400,7 +400,7 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
   if ( g_MissionQueueFrame.localVariables[604] ) /*0x5c03da*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x5c03ea*/
-    Frame::Present((void *)((int)DSurface_Alternate), v3, a2, a3, 0, v8, v9, v10); /*0x5c03f7*/
+    Frame::Present((void *)((int)DSurface_Alternate),(void *)(v3), a2, a3, 0, v8, v9, v10); /*0x5c03f7*/
     result = TestBitArray(15); /*0x5c0401*/
     if ( !result ) /*0x5c0408*/
     {
@@ -606,20 +606,20 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, Abs
       }
       while ( v5 < g_BuildingLoadQueue_Array.Foundation[0] ); /*0x72595f*/
     }
-    AbstractClass::processDetection((AbstractClass *)&stru_87F5D8, (int)aP0); /*0x725967*/
-    AbstractClass::processStateTransition((AbstractClass *)&g_MissionQueueFrame, (int)aP0); /*0x725972*/
+    ((AbstractClass *)((AbstractClass *)&stru_87F5D8))->processDetection((int)aP0); /*0x725967*/
+    ((AbstractClass *)((AbstractClass *)&g_MissionQueueFrame))->processStateTransition((int)aP0); /*0x725972*/
     for ( k = dword_8A0218 - 1; k >= 0; --k ) /*0x725981*/
-      DiskLaserClass::PointerGotInvalid(*((DiskLaserClass **)dword_8A020C + k), (int)aP0); /*0x72598d*/
+      ((DiskLaserClass *)(*((DiskLaserClass **)dword_8A020C + k)))->PointerGotInvalid((int)aP0); /*0x72598d*/
     if ( v4 == 15 || v4 == 1 || v4 == 2 ) /*0x7259a2*/
       nullsub_3((int)aP0); /*0x7259aa*/
-    AbstractClass::processRadarEvent(aP0); /*0x7259b1*/
+    ((AbstractClass *)(aP0))->processRadarEvent(); /*0x7259b1*/
     if ( g_TacticalClass_Instance ) /*0x7259be*/
       (*(void (**)(LPPERSISTSTREAM, AbstractClass *, int))(*(unsigned int *)g_TacticalClass_Instance + 40))( /*0x7259c5*/
         g_TacticalClass_Instance,
         aP0,
         1);
 LABEL_20:
-    Array::RemoveItemByValue((int)aP0, aP1); /*0x7259c8*/
+    Array::RemoveItemByValue((gamemd::AbstractClass *)((int)aP0), aP1); /*0x7259c8*/
     return; /*0x7259d9*/
   }
   if ( __RTDynamicCast( /*0x725a5a*/

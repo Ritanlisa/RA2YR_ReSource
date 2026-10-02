@@ -297,7 +297,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x5fee90*/
     }
     CCFileClass::Construct(&v4, Buffer); /*0x5fee9f*/
-    v3 = (SHPStruct *)CCFileClass::ReadEntireFile(&v4); /*0x5feead*/
+    v3 = (SHPStruct *)((CCFileClass *)(&v4))->ReadEntireFile(); /*0x5feead*/
     ((unsigned int *)this)[0] = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       ((unsigned int *)this)[0] = 1; /*0x5feeb9*/
@@ -305,7 +305,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     v6 = 0; /*0x5feecc*/
     ((Vector *)((int)v5))->Clear(); /*0x5feed4*/
     *(unsigned int *)v4.CDFileClass = &off_7E1668; /*0x5feedd*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v4); /*0x5feee5*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v4))->Dtor(); /*0x5feee5*/
     return v3; /*0x5feeea*/
   }
   return result; /*0x5feeed*/
@@ -430,7 +430,7 @@ bool OverlayTypeClass::GetType(IUnknown * aP2, int a3)
   Object *v4; // eax
 
   v4 = (Object *)__2_YAPAXI_Z(0xB0u); /*0x5fe538*/
-  return v4 && Object::SpawnAtCell(v4, (int)this, aP2, -1); /*0x5fe559*/
+  return v4 && ((Object *)(v4))->SpawnAtCell((int)this, aP2, -1); /*0x5fe559*/
 
 }
 // 0x5FE570
@@ -441,7 +441,7 @@ OverlayClass * OverlayTypeClass::GetDamage(int a2)
 
   v3 = (Object *)__2_YAPAXI_Z(0xB0u); /*0x5fe578*/
   if ( v3 ) /*0x5fe582*/
-    return Object::SpawnAtCell(v3, (int)this, &word_AC1608, -1); /*0x5fe58e*/
+    return ((Object *)(v3))->SpawnAtCell((int)this, &word_AC1608, -1); /*0x5fe58e*/
   else
     return 0; /*0x5fe597*/
 

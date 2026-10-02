@@ -116,7 +116,7 @@ unsigned int * Coord::ToCell(IUnknown * aP1)
   LOWORD(v3) = *(unsigned int *)this->__pad_0 / 256; /*0x413a3f*/
   HIWORD(v3) = *(unsigned int *)&this->Coord_field_0x2[2] / 256; /*0x413a53*/
   *aP1 = v3; /*0x413a60*/
-  return aP1; /*0x413a63*/
+  return (unsigned int *)(aP1); /*0x413a63*/
 
 }
 }
@@ -175,7 +175,7 @@ unsigned int * Coord::GetCoords(int * outCoords, void *a2_1)
   *outCoords = v5; /*0x4399c7*/
   *(outCoords + 1) = v7; /*0x4399cb*/
   *(outCoords + 2) = v8; /*0x4399cf*/
-  return (int)outCoords; /*0x4399c9*/
+  return (unsigned int *)((int)outCoords); /*0x4399c9*/
 
 }
 }
@@ -189,7 +189,7 @@ void * Coord::Scale(float aP1)
   *v2 = *(float *)&aP1 * *v2; /*0x43a0d8*/
   v2[1] = *(float *)&aP1 * v2[1]; /*0x43a0e1*/
   v2[2] = *(float *)&aP1 * v2[2]; /*0x43a0eb*/
-  return (int)v2; /*0x43a0ee*/
+  return (void *)((int)v2); /*0x43a0ee*/
 
 }
 }
@@ -291,7 +291,7 @@ AbstractClass * * Coord::To_Screen(unsigned int *a2, int *a3)
   if ( v7 > dword_B0CE30 + 360 ) /*0x6d2242*/
     return 0; /*0x6d2244*/
   if ( v8 >= -180 ) /*0x6d2251*/
-    return v8 <= dword_B0CE34 + 180; /*0x6d2269*/
+    return (gamemd::AbstractClass **)(v8 <= dword_B0CE34 + 180); /*0x6d2269*/
   return 0; /*0x6d2220*/
 
 }
@@ -338,7 +338,7 @@ int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
   v4 = (int)(v3 - Math::RoundToInt((double)(int)aP1[2] * dbl_B0CD48 + (double)(aP1[2] >= 728) + 0.5)); /*0x6d1fc4*/
   *aP0 = v2; /*0x6d1fca*/
   aP0[1] = v4; /*0x6d1fcc*/
-  return aP0; /*0x6d1fcf*/
+  return (int *)(aP0); /*0x6d1fcf*/
 
 }
 } // namespace gamemd

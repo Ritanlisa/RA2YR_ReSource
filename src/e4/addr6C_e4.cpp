@@ -197,7 +197,7 @@ int ProcessGameResults(char a1)
   v269 = 0;
   if ( *(&g_MatrixTransformState + 2274) && HouseClass_Player == (int)((IUnknown *))*(&g_MatrixTransformState + 2274) )
   {
-    ResultNode::CleanupList(v262);
+    ((ResultNode *)(v262))->CleanupList();
     return;
   }
   ((Debug *)0)->Log();
@@ -306,7 +306,7 @@ int ProcessGameResults(char a1)
   v19 = (ObjectClass *)(*(unsigned int *)&((unsigned int *)(g_OverlayTypeConfig))[17744] / 0x3Cu);
   eax31 = (char *)operator new(0x10u);
   if ( eax31 )
-    char * v20 = TerrainInitMap(eax31, (RandomStruct *)&((unsigned int *)(stru_830620))[72404], (IUnknown *)v19);
+    char * v20 = TerrainInitMap(eax31,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72404]), (IUnknown *)v19);
   else
     v20 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v20);
@@ -1289,7 +1289,7 @@ LABEL_343:
   RA2_OPDEL(vfptr);
   g_NetworkPlayerBuffer[8900] = 1;
   ((RawFileClass *)((int *)&v272))->Dtor();
-  ResultNode::CleanupList(v262);
+  ((ResultNode *)(v262))->CleanupList();
 }
 } // namespace gamemd
 
@@ -1357,7 +1357,7 @@ void DlgProcScoreScreen()
       }
       else if ( a2 == 1260 ) /*0x6c9388*/
       {
-        AudioController::Stop(stru_B0BF28); /*0x6c938f*/
+        ((AudioController *)(stru_B0BF28))->Stop(); /*0x6c938f*/
         v32 = (unsigned int *)PlayVocClass(dword_8871E0->BunkerWallsUpSound, 0x2000, 1.0, 0); /*0x6c93ad*/
         SetAudioSource((int)stru_B0BF28, v32, 0); /*0x6c93b9*/
         SendDlgItemMessageA(hWnd, 1835, 0x4D3u, 0, 0); /*0x6c93c7*/
@@ -1477,7 +1477,7 @@ void DlgProcScoreScreen()
     v30 = GetDlgItem(hWnd, 1782); /*0x6c9346*/
     v19(v30, 0x4B2u, 0, (LPARAM)lParam); /*0x6c9355*/
     v31 = ((StringList *)(&unk_A83D10))->Find(g_INI_Key_SCORE); /*0x6c9361*/
-    ThemeClass::Play(&unk_A83D10, v31); /*0x6c936c*/
+    ((ThemeClass *)(&unk_A83D10))->Play(v31); /*0x6c936c*/
     return 0; /*0x6c9374*/
   }
   return result; /*0x6c905c*/

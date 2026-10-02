@@ -43,8 +43,8 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   v5 = (char **)((char *)this + 32); /*0x76fc68*/
   v6 = aP3[1] + *((unsigned int *)this + 7); /*0x76fc6b*/
   v7 = *aP3 + *((unsigned int *)this + 6); /*0x76fc72*/
-  CCFileClass::Construct2(v11, (char **)((char *)this + 32)); /*0x76fc74*/
-  if ( CCFil  if ((int)(CCFileClass::Open(v11, 0))) 
+  ((CCFileClass *)(v11))->Construct2((char **)((char *)this + 32)); /*0x76fc74*/
+  if ( CCFil  if ((int)(((CCFileClass *)(v11))->Open(0))) 
   {
     v8 = (void *)((unsigned int)(__2_YAPAXI_Z(0x4Cu)));
     if ( v8 ) /*0x76fc94*/
@@ -53,13 +53,13 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
       v9 = 0; /*0x76fcbd*/
     *((unsigned int *)this + 10) = (unsigned int)(v9); /*0x76fcbf*/
     (*(void (**)(void *, unsigned int))(*(unsigned int *)v9 + 4))(v9, 0); /*0x76fcc8*/
-    PriorityQueue::Add((int)(aP1), *((unsigned int *)this + 10)); /*0x76fcd6*/
+    ((PriorityQueue *)((int)(aP1)))->Add(*((unsigned int *)this + 10)); /*0x76fcd6*/
   }
   v11[0] = (unsigned int)(&vt_CCFileClass);
   v13 = (unsigned int)(0);
   Vector::Cl  ((Vector *)((void *)((int)v12)))->Clear(); 
   v11[0] = (unsigned int)(&off_7E1668); /*0x76fcf8*/
-  return BufferIOFileClass::Dtor(v11); /*0x76fd05*/
+  return ((BufferIOFileClass *)(v11))->Dtor(); /*0x76fd05*/
 
 }
 } // namespace gamemd
@@ -75,9 +75,9 @@ rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, Reference
     v9 = WorldDominationTour::Territory::Constructor(v8, edx0, a2, Source, a4, aP5); /*0x76f940*/
   else
     v9 = 0; /*0x76f944*/
-  ComPtr::Constructor((ComPtr *)a1); /*0x76f948*/
+  ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x76f948*/
   *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f94f*/
-  ComPtr::Set((ComPtr *)a1, (int)v9); /*0x76f956*/
+  ((ComPtr *)((ComPtr *)a1))->Set((int)v9); /*0x76f956*/
   return a1; /*0x76f95d*/
 }
 } // namespace gamemd

@@ -641,6 +641,7 @@ struct RadarClass {
     void Destru_vt50();
     static double Destru_vt05(...);  // C2597 interim stub
     static double UpdateFoundationShapesCustom(...);  // C2597 interim stub
+    char Destru_vt16(char a2);  // 0x653100
 };
 
 } // namespace gamemd

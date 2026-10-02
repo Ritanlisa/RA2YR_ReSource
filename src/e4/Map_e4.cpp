@@ -114,8 +114,8 @@ AbstractClass * * sub_539760()
     (**(void (***)(int, int))g_ChronoEffectState)(g_ChronoEffectState, 1); /*0x53986d*/
   ChronoScreenEffect_Duration = 0; /*0x539875*/
   g_ChronoEffectState = 0; /*0x53987b*/
-  ChronoScreenEffect_Status = (gamemd::AbstractClass **)(0); /*0x539881*/
-  return UpdateSurfaceAnimations(-1, -1, -1, 0); /*0x53988c*/
+  ChronoScreenEffect_Status = (int)((gamemd::AbstractClass **)(0)); /*0x539881*/
+  return (gamemd::AbstractClass **)(UpdateSurfaceAnimations(-1, -1, -1, 0)); /*0x53988c*/
 }
 }
 // 0x5558E0
@@ -306,7 +306,7 @@ int E4Recv_5ADD10::Map_Delete()
   ((MSEngine *)(&v7))->Destruct(); /*0x5add86*/
   if ( v2 )
   {
-    StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((char *)&stru_82BA00), 134)); /*0x5addba*/
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (const char *)&((char *)&stru_82BA00), 134)); /*0x5addba*/
     v3 = (int *)GetStringCSF((wchar_t *)&(unsigned int *)((char *)&stru_82BA00 + 19), 0, (const char *)&((char *)&stru_82BA00), 134); /*0x5addc5*/
     Dialog::ShowMessageBox(v3, StringCSF, 0, 0, 0, v6); /*0x5addcf*/
     return 0; /*0x5addd4*/
@@ -508,7 +508,7 @@ void sub_55CF10()
       {
         if ( dword_A8EA0C ) /*0x55cf4c*/
         {
-          NetworkEventQueueClass::WaitForResponse((NetworkEventQueueClass *)&stru_B052C0.__pad_0[16]); /*0x55cf53*/
+          ((NetworkEventQueueClass *)((NetworkEventQueueClass *)&stru_B052C0.__pad_0[16]))->WaitForResponse(); /*0x55cf53*/
           v2 = 480; /*0x55cf61*/
                     Ticks = (gamemd::Network *)(((Timer *)0)->GetTicks());
           while ( 1 ) /*0x55cf74*/
@@ -713,7 +713,7 @@ SkirmishDialog * * Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
   {
     v10 = (gamemd::SkirmishDialog **)((char)((gamemd::SkirmishDialog **)(1)));
     if ( ((SessionClass *)((int)v9))->GetPlayerSide() != -3 ) /*0x5ec998*/
-      return 1; /*0x5ec998*/
+      return (gamemd::SkirmishDialog **)(1); /*0x5ec998*/
   }
   if ( !dword_A8B23C || a4 || !v10 || ((SessionClass *)((int)v9))->GetPlayerSide() != -3 ) /*0x5ec9b9*/
   {
@@ -897,7 +897,7 @@ AbstractClass * * sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
           break; /*0x5a7d53*/
   LABEL_17:
         if ( ++v7 >= v16[186] ) /*0x5a7e55*/
-          return 1; /*0x5a7e64*/
+          return (gamemd::AbstractClass **)(1); /*0x5a7e64*/
       }
       while ( 1 ) /*0x5a7d5f*/
       {
@@ -914,7 +914,7 @@ AbstractClass * * sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
         }
         else
         {
-          v13 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v17); /*0x5a7dba*/
+          v13 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v17); /*0x5a7dba*/
           v14 = *(unsigned int *)(v20 + 4 * (v9 + v7 * v16[185]) + 16); /*0x5a7dcf*/
           if ( v14 /*0x5a7e27*/
             && (!Cell::IsEmpty(v13) && !sub_4863A0(v13)
@@ -931,7 +931,7 @@ AbstractClass * * sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
       }
     }
   }
-  return 1; /*0x5a7e5b*/
+  return (gamemd::AbstractClass **)(1); /*0x5a7e5b*/
 }
 }
 // 0x6B4240
@@ -1006,7 +1006,7 @@ int sub_6B4240(int a1, int a2)
   v28[1] = v30; /*0x6b42f1*/
   v13 = 1000; /*0x6b42f5*/
   v14 = -1; /*0x6b42fa*/
-  v15 = v28; /*0x6b42fd*/
+  v15 = (int *)(v28); /*0x6b42fd*/
   v16 = 4; /*0x6b4301*/
   do /*0x6b4318*/
   {
@@ -1036,7 +1036,7 @@ int sub_6B4240(int a1, int a2)
   {
     v23 = 0; /*0x6b437d*/
     v24 = v29; /*0x6b437f*/
-    v25 = v28; /*0x6b4383*/
+    v25 = (int *)(v28); /*0x6b4383*/
     do /*0x6b43a3*/
     {
       if ( *v25 > v13 && !*v24 ) /*0x6b438b*/
@@ -1051,7 +1051,7 @@ int sub_6B4240(int a1, int a2)
   {
     v20 = 0; /*0x6b434d*/
     v21 = v29; /*0x6b434f*/
-    v22 = v28; /*0x6b4353*/
+    v22 = (int *)(v28); /*0x6b4353*/
     do /*0x6b4373*/
     {
       if ( *v22 < v14 && !*v21 ) /*0x6b435b*/
@@ -1128,7 +1128,7 @@ void sub_63AB60(int a1, int a2)
   v3 = dword_AC4C38; /*0x63ab8e*/
   if ( !dword_AC4CCC ) /*0x63ab98*/
     goto LABEL_11; /*0x63ab98*/
-  Coords = ScriptAction::GetCoords((unsigned int **)dword_AC4CCC, v10); /*0x63aba3*/
+  Coords = ((ScriptAction *)((unsigned int **)dword_AC4CCC))->GetCoords((unsigned int *)(v10)); /*0x63aba3*/
   v9[0] = *Coords; /*0x63abaa*/
   v9[1] = Coords[1]; /*0x63abb5*/
   v9[2] = Coords[2]; /*0x63abc0*/
@@ -1530,7 +1530,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
       v9 = a2; /*0x769ea3*/
       do /*0x769eb7*/
       {
-        ComPtr::Constructor(v6); /*0x769ea8*/
+        ((ComPtr *)(v6))->Constructor(); /*0x769ea8*/
         *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x769ead*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x769eb3*/
         --v9; /*0x769eb6*/
@@ -1555,7 +1555,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
       v7 = a2; /*0x769e73*/
       do /*0x769e87*/
       {
-        ComPtr::Constructor(v6); /*0x769e78*/
+        ((ComPtr *)(v6))->Constructor(); /*0x769e78*/
         *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x769e7d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x769e83*/
         --v7; /*0x769e86*/
@@ -1574,7 +1574,7 @@ LABEL_14:
     if ( a2 >= this->m_8 ) /*0x769edd*/
       m_8 = this->m_8; /*0x769edf*/
     for ( i = 0; i < m_8; ++i ) /*0x769ee5*/
-      ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x769ef2*/
+      ((ComPtr *)((ComPtr *)((char *)v8 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x769ef2*/
     if ( BYTE1(this->m_C) ) /*0x769efc*/
     {
       v12 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x769f03*/
@@ -1898,7 +1898,7 @@ int sub_58D010(char a1)
       result = (int)dword_ABED10 + v3; /*0x58d02a*/
       if ( *(unsigned int *)((char *)dword_ABED10 + v3 + 56) == -1 && (*(unsigned short *)result || result->u16_2) ) /*0x58d038*/
       {
-        v5 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)((char *)dword_ABED10 + v3)); /*0x58d045*/
+        v5 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)((char *)dword_ABED10 + v3)); /*0x58d045*/
         result = RandomMap::GenerateTerrain((int)v5); /*0x58d04c*/
         if ( result ) /*0x58d053*/
           result->u8_1A = a1; /*0x58d055*/
@@ -2452,9 +2452,9 @@ unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3, void 
   int v3; // edi
 
   v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x769cad*/
-  ComPtr::Constructor((ComPtr *)a2); /*0x769cb2*/
+  ((ComPtr *)((ComPtr *)a2))->Constructor(); /*0x769cb2*/
   *a2 = &vt_rc_ptr; /*0x769cb7*/
-  ComPtr::Set((ComPtr *)a2, *(unsigned int *)(v3 + 4)); /*0x769cc3*/
+  ((ComPtr *)((ComPtr *)a2))->Set(*(unsigned int *)(v3 + 4)); /*0x769cc3*/
   return a2; /*0x769cca*/
 
 }

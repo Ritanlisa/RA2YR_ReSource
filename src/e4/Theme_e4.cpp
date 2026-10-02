@@ -87,7 +87,7 @@ int Theme::Stop(char aP1)
         v4 = (AudioSample *)*((unsigned int *)this + 11); /*0x720edb*/
         if ( !v4 ) /*0x720ee0*/
           goto LABEL_14; /*0x720ee0*/
-        if ( *((unsigned char *)this + 17) && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
+        if ( *((unsigned char *)this + 17) && !((AudioSample *)(v4))->IsBuffering() ) /*0x720ee9*/
           ((Audio *)(*((Audio **)this + 11)))->Release(); /*0x720ef5*/
         if ( ((Audio *)(*((Audio **)this + 11)))->IsSoundPlaying() != 0 ) /*0x720f04*/
         {
@@ -126,7 +126,7 @@ void Theme::IsPlaying()
     return 0; /*0x721002*/
   if ( *((unsigned char *)this + 17) ) /*0x720fda*/
   {
-    if ( !AudioSample::IsBuffering(v2) ) /*0x720fe1*/
+    if ( !((AudioSample *)(v2))->IsBuffering() ) /*0x720fe1*/
       ((Audio *)(*((Audio **)this + 11)))->Release(); /*0x720fed*/
   }
   return ((Audio *)(*((Audio **)this + 11)))->IsSoundPlaying() != 0; /*0x720ffe*/

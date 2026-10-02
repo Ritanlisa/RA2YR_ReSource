@@ -201,7 +201,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
           - (double, void * a1)(int)((((unsigned int)((*((ProgressTimer *)((unsigned short *)a1 + 452))->GetValue(&v57) >> 10) + 1) >> 1) & 0x1F)
                         - 8)
           * -0.1963495408493621;
-      Matrix2D::Rotate(v70, v47); /*0x73c922*/
+      ((Matrix2D *)(v70))->Rotate(v47); /*0x73c922*/
       v68 = v70[3]; /*0x73c967*/
       qmemcpy(v71, v70, sizeof(v71)); /*0x73c96d*/
       *(float *)&v69[1] = v70[11]; /*0x73c973*/
@@ -211,7 +211,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v54 = v58; /*0x73c995*/
       v59 = -v70[11]; /*0x73c99b*/
       v55 = v59; /*0x73c9b3*/
-      Matrix3x3::Multiply(v71, (float *)&v54); /*0x73c9b7*/
+      ((Matrix3x3 *)(v71))->Multiply((float *)&v54); /*0x73c9b7*/
       if ( *((unsigned int *)a1 + 252) ) /*0x73c9bc*/
       {
         v48 = -*((float *)a1 + 251); /*0x73c9d6*/
@@ -228,7 +228,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v59 = -v53; /*0x73ca74*/
       v54 = (unsigned long long)(IDA_LODWORD(v58)); /*0x73ca7c*/
       v55 = v59; /*0x73ca84*/
-      Matrix3x3::Multiply(v71, (float *)&v54); /*0x73ca90*/
+      ((Matrix3x3 *)(v71))->Multiply((float *)&v54); /*0x73ca90*/
       v30 = *(unsigned int *)a1; /*0x73ca95*/
       qmemcpy(v72, (unsigned int)(a1)+ 880, sizeof(v72)); /*0x73caaa*/
       if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int ((unsigned char *)(**))(unsigned char *, unsigned int))(v30 + 1016))(a1, 0) + 160) + 670) ) /*0x73cabe*/
@@ -251,8 +251,8 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v56 = (unsigned int *)((((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(v72, &v57) >> 10) + 1) >> 1) & 0x1F) - 8); /*0x73cb81*/
       v50 = -((double)v56 * -0.1963495408493621); /*0x73cb91*/
       Matrix3D::RotateZ(v71, v50); /*0x73cb94*/
-      Matrix3x3::Multiply(v71, v67); /*0x73cba5*/
-      Matrix3x3::Multiply(v71, &v68); /*0x73cbb6*/
+      ((Matrix3x3 *)(v71))->Multiply(v67); /*0x73cba5*/
+      ((Matrix3x3 *)(v71))->Multiply(&v68); /*0x73cbb6*/
       if ( (((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue((unsigned (unsigned int)(short)*)a1 + 464, &v57) >> 13) + 1) >> 1) & 3) == 0 /*0x73cbf8*/
         || (v52 = 1, (((unsigned int, void * a1)((*((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue(&v56) >> 13) + 1) >> 1) & 3) == 3) )
       {
@@ -282,7 +282,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     if ( *(unsigned int *)(*((unsigned int *)a1 + 433) + 192) && *(unsigned int *)(*((unsigned int *)a1 + 433) + 196) && !v52 ) /*0x73cc59*/
     {
       v34 = (float *)((int)((float *)(*(unsigned int *)a1)));
-      inited = (float *)AudioConfig::InitDefault(v73); /*0x73cc75*/
+      inited = (float *)((AudioConfig *)(v73))->InitDefault(); /*0x73cc75*/
       v36 = MultiplyMatrix3x4(v70, inited, v71); /*0x73cc83*/
       (*(void (**)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v34 + 1296))( /*0x73cca8*/
         a1,
@@ -321,7 +321,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       if ( v52 ) /*0x73cd2b*/
       {
         v38 = (float *)((int)((float *)(*(unsigned int *)a1)));
-        v39 = (float *)AudioConfig::InitDefault(v73); /*0x73cd47*/
+        v39 = (float *)((AudioConfig *)(v73))->InitDefault(); /*0x73cd47*/
         v40 = MultiplyMatrix3x4(v70, v39, v71); /*0x73cd55*/
         (*(void (**)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v38 + 1296))( /*0x73cd7a*/
           a1,
@@ -357,7 +357,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     g_DSurface_Hidden_2 = v60; /*0x73cdf3*/
     a1[1747] = 0; /*0x73cdf9*/
   }
-  else if ( *(unsigned char *)(v18 + 3606) && TechnoClass::CheckTargetCell(a1) && !TechnoClass::ScanNeighborCells(a1) ) /*0x73ce24*/
+  else if ( *(unsigned char *)(v18 + 3606) && ((TechnoClass *)(a1))->CheckTargetCell() && !((TechnoClass *)(a1))->ScanNeighborCells() ) /*0x73ce24*/
   {
     return (*(int (**)(unsigned char *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
              a1,

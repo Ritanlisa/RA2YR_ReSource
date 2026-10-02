@@ -145,7 +145,7 @@ int LocomotionClass::ProcessData()
   *((unsigned int *)this + 9) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1436); /*0x513c51*/
   *((unsigned int *)this + 10) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1440); /*0x513c59*/
   *((unsigned int *)this + 11) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1444); /*0x513c64*/
-  FrameSnapshot::InitMax((FrameSnapshot *)this + 6, 0); /*0x513c67*/
+  ((FrameSnapshot *)((FrameSnapshot *)this + 6))->InitMax(0); /*0x513c67*/
   *((unsigned int *)this + 18) = 0; /*0x513c6c*/
   *((unsigned int *)this + 20) = 0; /*0x513c6f*/
   *((unsigned int *)this + 22) = 0; /*0x513c72*/

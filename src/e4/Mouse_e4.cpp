@@ -49,7 +49,7 @@ int Mouse::SetBounds(const void *aP1)
     v4 = *((unsigned short *)this + 2235) + *((unsigned short *)this + 2237); /*0x4a8c16*/
     v9[0] = *((unsigned short *)this + 2234) + *((unsigned short *)this + 2236); /*0x4a8c1f*/
     v9[1] = v4; /*0x4a8c24*/
-    result = MapClass::SetCellFlagsAlongPath((MapClass *)this, v9, 0); /*0x4a8c38*/
+    result = ((MapClass *)((MapClass *)this))->SetCellFlagsAlongPath((IUnknown *)(v9), 0); /*0x4a8c38*/
   }
   v5 = aP1; /*0x4a8c3d*/
   v6 = aP1 == 0; /*0x4a8c47*/
@@ -77,7 +77,7 @@ int Mouse::SetBounds(const void *aP1)
     LOWORD(v7) = *((unsigned short *)this + 2237) + *((unsigned short *)this + 2235); /*0x4a8cee*/
     LOWORD(aP1) = v8 + *((unsigned short *)this + 2234); /*0x4a8cf8*/
     HIWORD(aP1) = v7; /*0x4a8cfd*/
-    return MapClass::SetCellFlagsAlongPath((MapClass *)this, &aP1, (unsigned short *)1); /*0x4a8d11*/
+    return ((MapClass *)((MapClass *)this))->SetCellFlagsAlongPath((IUnknown *)(&aP1), (unsigned short *)1); /*0x4a8d11*/
   }
   return result; /*0x4a8d17*/
 
@@ -165,7 +165,7 @@ HWND Mouse::ReleaseCapture()
   result = (int)GetCapture(); /*0x6938cf*/
   if ( (HWND)result == (HWND)(g_hWnd) ) /*0x6938de*/
     return ReleaseCapture(); /*0x6938e0*/
-  return result; /*0x6938db*/
+  return (HWND)(result); /*0x6938db*/
 
 }
 }

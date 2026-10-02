@@ -42,7 +42,7 @@ void TechnoClass_CanFireAtTarget(void * a1, void * a2, void * a3, void * a4, voi
   int result; // eax
   int v7; // edi
 
-  result = (int)(TriggerTypeClass::ReadINI((unsigned int *)(a1),(gamemd::TechnoClass *)(a2),(gamemd::TechnoClass *)(a3), a4, a5));
+  result = (int)(TriggerTypeClass::ReadINI((unsigned int *)(a1),(gamemd::TechnoClass *)(a2),(gamemd::TechnoClass *)(a3),(int)(a4), a5));
   if ( !result ) /*0x41a9fd*/
   {
         if ( !*(unsigned char *)((unsigned int)(a1)+ 1737) || *(unsigned int *)((unsigned int)(a1)+ 280) )
@@ -216,7 +216,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->waveEffect = (WaveClass *)-1; /*0x6f2ec8*/
   Delegate::GetField((Delegate *)&this->tiltSidewaysAngle); /*0x6f2ece*/
   TechnoClass::checkCloakState((TechnoClass *)this->storedTiberium); /*0x6f2ed9*/
-  FrameSnapshot::InitMax((FrameSnapshot *)this->barrelFacing, 3); /*0x6f2ee6*/
+  ((FrameSnapshot *)((FrameSnapshot *)this->barrelFacing))->InitMax(3); /*0x6f2ee6*/
   FrameSnapshot::Init((FrameSnapshot *)this->primaryFacing); /*0x6f2ef1*/
   FrameSnapshot::Init((FrameSnapshot *)this->secondaryFacing); /*0x6f2efc*/
   this->currentBurstIndex = 0; /*0x6f2f01*/
@@ -341,7 +341,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   LOBYTE(((unsigned int *)this)[0]) |= 1u; /*0x6f3237*/
   this->initialOwner = (HouseClass *)aP1; /*0x6f3241*/
   memset(&this->fireParticles, 0, 0x20u); /*0x6f3247*/
-  *(unsigned short *)this->unknown_short_3C8 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x6f3259*/
+  *(unsigned short *)this->unknown_short_3C8 = ((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State(); /*0x6f3259*/
   return &this->RadioClass; /*0x6f3262*/
 
 }
@@ -1113,13 +1113,13 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
   LOWORD(v36) = *v13 / 256; /*0x73b165*/
   HIWORD(v36) = v13[1] / 256; /*0x73b17e*/
   *(unsigned int *)v38 = v36; /*0x73b18b*/
-  v14 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v38); /*0x73b190*/
+  v14 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v38); /*0x73b190*/
   if ( (uint8_t)((CellClass *)(v14))->QuickPassable() ) /*0x73b197*/
     aP8 = 0; /*0x73b1a0*/
   v15 = 0; /*0x73b1ae*/
   if ( *(unsigned char *)(v12[433] + 3606) ) /*0x73b1b0*/
   {
-    if ( TechnoClass::CheckTargetCell((TechnoClass *)v12) && !TechnoClass::ScanNeighborCells((TechnoClass *)v12) /*0x73b1fb*/
+    if ( ((TechnoClass *)((TechnoClass *)v12))->CheckTargetCell() && !((TechnoClass *)((TechnoClass *)v12))->ScanNeighborCells() /*0x73b1fb*/
       || (v16 = (unsigned int *)((Array *)((Array *)v12))->Get(0), v12[361])
       && v16
       && (*(int (**)(unsigned int *))(*v16 + 44))(v16) == 6
@@ -1370,7 +1370,7 @@ LABEL_10:
   {
     int v20 = *ecx0;
     v90 = started;
-    inited = (float *)AudioConfig::InitDefault(v144);
+    inited = (float *)((AudioConfig *)(v144))->InitDefault();
     float * v88 = MultiplyMatrix3x4((ObjectClass *)v145, inited, v142);
     (*(void (**)(unsigned int *, int, int, TechnoClass *, int, int *, int64_t *, float *, BuildingTypeClass *, int, unsigned int))(v20 + 1296))(
       ecx0,
@@ -1390,7 +1390,7 @@ LABEL_10:
     v89 = started;
     aP3 = (TechnoClass *)((unsigned int)aP3 | 0x10000);
     int v18 = *ecx0;
-    float * v19 = (float *)AudioConfig::InitDefault(v144);
+    float * v19 = (float *)((AudioConfig *)(v144))->InitDefault();
     float * v87 = MultiplyMatrix3x4((ObjectClass *)v145, v19, v142);
     (*(void (**)(unsigned int *, int, int, TechnoClass *, int, int *, int64_t *, float *, BuildingTypeClass *, int, unsigned int))(v18 + 1296))(
       ecx0,
@@ -1443,7 +1443,7 @@ LABEL_10:
       v104 = 0.0;
       aP1_4 = 0.0;
       aP1c = a9;
-      float * v26 = (float *)AudioConfig::InitDefault(&v144[8]);
+      float * v26 = (float *)((AudioConfig *)(&v144[8]))->InitDefault();
       float * v27 = MultiplyMatrix3x4((ObjectClass *)&v145[2], v26, &v142[2]);
       (*(void (**)(unsigned int *, int, int, unsigned int, int, int *, int *, float *, int))(v25 + 1296))(
         ecx0,
@@ -1551,16 +1551,16 @@ LABEL_56:
     v123 = v118;
     float v119 = -v142[11];
     float v124 = v119;
-    Matrix3x3::Multiply(v145, (float *)&v123);
+    ((Matrix3x3 *)(v145))->Multiply((float *)&v123);
     v116 = (ObjectClass *)((((unsigned int)((*((ProgressTimer *)((unsigned short *)ecx0 + 440))->GetValue((IUnknown *)&v118) >> 10) + 1) >> 1)
                           & 0x1F)
                          - 8);
     aP1f = -((double)(int)v116 * -0.1963495408493621);
     ((void (*)(float *, float))Matrix3D::RotateZ)(v145, aP1f);
-    Matrix3x3::Multiply(v145, &v136);
-    float * v34 = (float *)AudioConfig::InitDefault(v148);
+    ((Matrix3x3 *)(v145))->Multiply(&v136);
+    float * v34 = (float *)((AudioConfig *)(v148))->InitDefault();
     qmemcpy(v144, MultiplyMatrix3x4((ObjectClass *)v147, v34, v142), sizeof(v144));
-    float * v35 = (float *)AudioConfig::InitDefault(v147);
+    float * v35 = (float *)((AudioConfig *)(v147))->InitDefault();
     v33 = (ParticleSystemClass *)MultiplyMatrix3x4((ObjectClass *)v148, v35, v145);
   }
   qmemcpy(v146, v33, sizeof(v146));
@@ -1905,7 +1905,7 @@ LABEL_102:
                          &v133,
                          *(unsigned int *)(v82 + 4));
       int v92 = v117;
-      float * v83 = (float *)AudioConfig::InitDefault(v147);
+      float * v83 = (float *)((AudioConfig *)(v147))->InitDefault();
       float * v86 = MultiplyMatrix3x4((ObjectClass *)v148, v83, v142);
       TechnoClass::QueueDrawVoiceResponse(
         ecx0,
@@ -1935,7 +1935,7 @@ LABEL_102:
                          &v133,
                          *(unsigned int *)(v79 + 4) + 1);
       int v91 = v117;
-      float * v80 = (float *)AudioConfig::InitDefault(v147);
+      float * v80 = (float *)((AudioConfig *)(v147))->InitDefault();
       float * v85 = MultiplyMatrix3x4((ObjectClass *)v148, v80, v142);
       TechnoClass::QueueDrawVoiceResponse(
         ecx0,
@@ -2031,24 +2031,24 @@ char TechnoClass::ScanAdjacentCells()
   int16_t v16[2]; // [esp+20h] [ebp-4h] BYREF
 
   *(unsigned int *)v12 = *(unsigned int *)(*((int (**)(TechnoClass *, int16_t *))this->RadioClass + 110))(this, v16); /*0x703ce4*/
-  v2 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v12); /*0x703ced*/
+  v2 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v12); /*0x703ced*/
   if ( !v2 || ((unsigned int *)this)[0] ) /*0x703cf7*/
     return 0; /*0x703cf7*/
   v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[86]); /*0x703d1c*/
   v13[1] = v12[1] + HIWORD(g_DDrawSurfaceManager.scenario[86]); /*0x703d21*/
   *(unsigned int *)v14 = *(unsigned int *)v13; /*0x703d2e*/
-  v3 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v14); /*0x703d4f*/
+  v3 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v14); /*0x703d4f*/
   v13[1] = v12[1] + HIWORD(g_DDrawSurfaceManager.scenario[82]); /*0x703d57*/
   v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[82]); /*0x703d5c*/
   *(unsigned int *)v15 = *(unsigned int *)v13; /*0x703d69*/
-  v4 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v15); /*0x703d88*/
+  v4 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v15); /*0x703d88*/
   v13[1] = v12[1] + HIWORD(g_DDrawSurfaceManager.scenario[84]); /*0x703d91*/
   v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[84]); /*0x703d96*/
   *(unsigned int *)v16 = *(unsigned int *)v13; /*0x703da9*/
-  v5 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v16); /*0x703dbc*/
+  v5 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v16); /*0x703dbc*/
   v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[88]); /*0x703dcb*/
   v13[1] = v12[1] + HIWORD(g_DDrawSurfaceManager.scenario[88]); /*0x703dd4*/
-  v6 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v13); /*0x703de7*/
+  v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v13); /*0x703de7*/
   if ( (v2[80] & 0x400) != 0 ) /*0x703df5*/
     return 1; /*0x703df5*/
   if ( v3 ) /*0x703df9*/

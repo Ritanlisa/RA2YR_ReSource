@@ -136,7 +136,7 @@ int FactoryClass::HasProgressChanged()
 }
 // 0x4C9C70
 namespace gamemd {
-int FactoryClass::DemandProduction(int a2, void * a3, char a4)
+int FactoryClass::DemandProduction(int a2, #375 *a3, char a4)
 {
 
   int v5; // ecx
@@ -313,7 +313,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
 
   v2 = a2; /*0x4ca273*/
   v3 = (gamemd::FactoryClass *)(a1); /*0x4ca279*/
-  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a1), (int)a2); /*0x4ca27f*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a1),(gamemd::AbstractClass *)((int)a2)); /*0x4ca27f*/
   if ( result >= 0 ) /*0x4ca288*/
   {
     if ( v3 ) /*0x4ca290*/
@@ -487,7 +487,7 @@ int FactoryClass::StartProduction_2()
           v10 = v3[3278]; /*0x4ca5ff*/
           v9 = v2; /*0x4ca600*/
           v7 = (void *)(*(int (**)(unsigned char *))(*(unsigned int *)v3 + 44))(v3); /*0x4ca603*/
-          LOBYTE(v2) = ((Sidebar *)((int)this->owner))->StartSidebarProduction((gamemd::HouseClass *)(v7), v9, v10, 1); /*0x4ca60a*/
+          LOBYTE(v2) = (unsigned char)(((Sidebar *)((int)this->owner))->StartSidebarProduction((gamemd::HouseClass *)(v7), v9, v10, 1)); /*0x4ca60a*/
         }
       }
     }
@@ -564,7 +564,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca783*/
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x4ca791*/
-  v7 = Block; /*0x4ca7a6*/
+  v7 = (gamemd::FactoryClass *)(Block); /*0x4ca7a6*/
   v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))( /*0x4ca7aa*/
          &stru_A83D50.__pad_C8[24],
          &v7);
@@ -581,7 +581,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   }
   if ( byte_A8E9A0 ) /*0x4ca7e6*/
     BuildingClass::AbandonProduction((int)Block); /*0x4ca7ea*/
-  v7 = Block; /*0x4ca7ff*/
+  v7 = (gamemd::FactoryClass *)(Block); /*0x4ca7ff*/
   v4 = (*(int (**)(int *, FactoryClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4ca803*/
          &g_BuildingLoadQueue_Array.PowerBonus,
          &v7);
@@ -656,7 +656,7 @@ int FactoryClass::FinishProduction(int a2)
                 (unsigned char)result) )
           {
             result = dword_AC4CA8++; /*0x6350fc*/
-            *((unsigned int *)dword_AC4C9C + result) = this; /*0x63510b*/
+            *((unsigned int *)dword_AC4C9C + result) = (unsigned int)(this); /*0x63510b*/
           }
         }
       }
@@ -692,7 +692,7 @@ int FactoryClass::Seek(int * a1, int * a2, int a3)
   int v4; // edx
   int i; // ebx
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a1), a2, a3); /*0x4ca3d2*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a1),(gamemd::ObjectTypeClass *)(a2), a3); /*0x4ca3d2*/
   if ( result >= 0 ) /*0x4ca3d9*/
   {
     v4 = *a2; /*0x4ca3de*/
@@ -723,7 +723,7 @@ char FactoryClass::RemoveOneFromQueue(char a2)
   int v4; // ecx
   int v5; // ecx
 
-  p_onHold = &this->onHold; /*0x4ca624*/
+  p_onHold = (char *)(&this->onHold); /*0x4ca624*/
   v3 = (*(int ((char *)(**))(char *, char *))(*(unsigned int *)&this->onHold + 16))(&this->onHold, &a2); /*0x4ca62e*/
   if ( v3 == -1 ) /*0x4ca634*/
     return 0; /*0x4ca634*/

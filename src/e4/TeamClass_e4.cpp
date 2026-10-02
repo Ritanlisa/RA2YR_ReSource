@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/TriggerClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
@@ -636,7 +637,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
     if ( v6 ) /*0x63616a*/
     {
       if ( *(unsigned char *)(v6 + 12) ) /*0x636170*/
-        ScriptAction::DecrementRefCount((ScriptAction *)v4, v6); /*0x63617a*/
+        ((ScriptAction *)((ScriptAction *)v4))->DecrementRefCount(v6); /*0x63617a*/
       v7 = *(unsigned int *)(v6 + 8); /*0x63617f*/
       if ( v7 != -1 ) /*0x636185*/
       {
@@ -700,7 +701,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   this->countObjects[2] = -1; /*0x6362ec*/
   this->countObjects[3] = -1; /*0x6362f2*/
   LOBYTE(this->countObjects[4]) = 0; /*0x6362f8*/
-  BYTE1(this->countObjects[4]) = 0; /*0x6362ff*/
+  BYTE1(this->countObjects[4]) = (gamemd::TechnoClass **)(0); /*0x6362ff*/
   return result; /*0x636306*/
 
 }
@@ -972,7 +973,7 @@ LABEL_13:
 }
 // 0x636B50
 namespace gamemd {
-CampaignClass * * TeamClass::Cleanup(BuildingClass * aP1)
+CampaignClass * * TeamClass::Cleanup(int aP1)
 {
 
   int v3; // ebx
@@ -1031,7 +1032,7 @@ LABEL_4:
   if ( v5 ) /*0x636be4*/
   {
     if ( *(unsigned char *)(v5 + 12) ) /*0x636bea*/
-      ScriptAction::DecrementRefCount((ScriptAction *)v8, v5); /*0x636bf4*/
+      ((ScriptAction *)((ScriptAction *)v8))->DecrementRefCount(v5); /*0x636bf4*/
     v10 = *(unsigned int *)(v5 + 8); /*0x636bf9*/
     if ( v10 != -1 ) /*0x636bff*/
     {
@@ -1180,12 +1181,12 @@ LABEL_14:
     if ( v12 ) /*0x6e5499*/
     {
       if ( aP2 && *(TeamClass **)(aP2 + 52) == this ) /*0x6e54a2*/
-        ObjectClass::SetReference((ObjectClass *)aP2, 0); /*0x6e54a8*/
+        ((ObjectClass *)((ObjectClass *)aP2))->SetReference(0); /*0x6e54a8*/
       BYTE1(result) = BYTE1(aP3); /*0x6e54ad*/
       if ( aP3 != dword_B0E700 ) /*0x6e54b9*/
       {
-        v11 = (ObjectClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP3); /*0x6e54d5*/
-        result = ObjectClass::SetTriggerTarget(v11, 0); /*0x6e54dc*/
+        v11 = (ObjectClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP3); /*0x6e54d5*/
+        result = ((ObjectClass *)(v11))->SetTriggerTarget(0); /*0x6e54dc*/
       }
     }
     if ( v13 ) /*0x6e54e9*/
@@ -1515,7 +1516,7 @@ int TeamClass::LiberateMember_Start(int aP1, unsigned int a3, char aP3)
       if ( v6 ) /*0x6ea8a7*/
       {
         if ( !(uint8_t)((House *)(v6))->IsCurrentPlayer() ) /*0x6ea8a9*/
-          ObjectClass::SetReference((unsigned int *)aP1, 0); /*0x6ea8b5*/
+          ((ObjectClass *)((unsigned int *)aP1))->SetReference(0); /*0x6ea8b5*/
       }
     }
     if ( a3 == -1 ) /*0x6ea8c6*/
@@ -1678,9 +1679,9 @@ TeamTypeClass * * TeamClass::RecruitMember(int a2)
   v36 = v5[1]; /*0x6eaac4*/
   buildingType = (TechnoClass *)v2->buildingType; /*0x6eaacc*/
   v37 = v5[2]; /*0x6eaacf*/
-  if ( *TechnoClass::GetWaypointCoords(buildingType, &v34) != *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x6eaae2*/
+  if ( *((TechnoClass *)(buildingType))->GetWaypointCoords(&v34) != *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x6eaae2*/
   {
-    WaypointCoords = TechnoClass::GetWaypointCoords((TechnoClass *)v2->buildingType, &v34); /*0x6eaaf9*/
+    WaypointCoords = ((TechnoClass *)((TechnoClass *)v2->buildingType))->GetWaypointCoords(&v34); /*0x6eaaf9*/
     v8 = (*(int16_t *)WaypointCoords << 8) + 128; /*0x6eab0b*/
     v9 = (*((int16_t *)WaypointCoords + 1) << 8) + 128; /*0x6eab11*/
     v35 = v8; /*0x6eab18*/
@@ -1948,7 +1949,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
         else
         {
           v36 = *(unsigned int *)(*((unsigned int *)dword_8B413C + v21) + 40); /*0x6eb175*/
-          *aP1 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v36); /*0x6eb188*/
+          *aP1 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v36); /*0x6eb188*/
         }
         v3 = *(unsigned int *)(v4 + 84); /*0x6eb18a*/
         *aP2 = v3; /*0x6eb194*/
@@ -2637,7 +2638,7 @@ void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
       v3 = (TeamClass *)v16[0]; /*0x6ec855*/
     }
     aP2 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &aP1, *(unsigned int *)(aP1 + 4)); /*0x6ec87d*/
-    v8 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP2); /*0x6ec881*/
+    v8 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP2); /*0x6ec881*/
     TeamClass::SelectMember((int)v3, (int)v8); /*0x6ec889*/
     if ( !v3->TeamClass_field_7F /*0x6ec8d3*/
       || !(uint8_t)SessionClass::SetField((SessionClass *)v3->currentScript)
@@ -2649,7 +2650,7 @@ void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
                              1)) )
     {
       vtable0 = v6->TechnoClass; /*0x6ec8dc*/
-      v12 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP2); /*0x6ec8f0*/
+      v12 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP2); /*0x6ec8f0*/
       if ( (*((int (**)(FootClass *, void *, int, int, unsigned int, unsigned int))vtable0 + 107))(v6, v12, -1, -1, 0, 0) ) /*0x6ec8f8*/
       {
         v13 = (int (**)(FootClass *))v6->TechnoClass; /*0x6ec916*/
@@ -2681,7 +2682,7 @@ void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
     }
     else
     {
-      v15 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP2); /*0x6ec97d*/
+      v15 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP2); /*0x6ec97d*/
       TeamClass::SelectMember((int)v3, (int)v15); /*0x6ec97e*/
     }
   }
@@ -2926,7 +2927,7 @@ char TeamClass::AddMember(int aP1, char aP2)
       if ( *((char *)this + 28) /*0x6ea5a8*/
         && (!*(unsigned char *)(*((char *)this + 9) + 179) || *(int *)((*(int (**)(int))(*(unsigned int *)v3 + 132))(v3) + 1504) > 0) )
       {
-        ObjectClass::SetReference((ObjectClass *)v3, *((char *)this + 28)); /*0x6ea5b0*/
+        ((ObjectClass *)((ObjectClass *)v3))->SetReference(*((char *)this + 28)); /*0x6ea5b0*/
       }
       ++*((char *)this + 18); /*0x6ea5bb*/
       v8 = (*(int (**)(int))(*(unsigned int *)v3 + 704))(v3); /*0x6ea5c0*/

@@ -61,7 +61,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   for ( i = 0; i < v4; Base[58] = a2 ) /*0x6f19cc*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, (uint8_t *)((char *)&g_INI_Key_TRUCKA), i); /*0x6f19db*/
-    INIClass::GetString((gamemd::INIClass *)(a1), (uint8_t *)((char *)&g_INI_Key_TRUCKA),(gamemd::INIClass *)(StringByIndex),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x6f19f4*/
+    INIClass::GetString((gamemd::INIClass *)(a1), (uint8_t *)((char *)&g_INI_Key_TRUCKA),(gamemd::INIClass *)(StringByIndex),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Source), 32); /*0x6f19f4*/
     if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
     v7 = 0; /*0x6f1a2a*/
@@ -210,7 +210,7 @@ int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, 
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a1,(unsigned char *)(edx0),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Destination, 128) ) /*0x67b51e*/
+  if ( INIClass::GetString((INIClass *)a1,(unsigned char *)(edx0),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Destination), 128) ) /*0x67b51e*/
 // 0x75e3b0
     return WarheadTypeClass::FindOrCreate((gamemd::ObjectClass *)(Destination)); /*0x67b52b*/
   else
@@ -224,11 +224,11 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Destination, 128) ) /*0x67bcfe*/
+  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Destination), 128) ) /*0x67bcfe*/
 // 0x4653c0
     return (gamemd::BuildingTypeClass *)(((BuildingTypeClass *)(Destination))->FindOrCreate());
   else
-    return a4; /*0x67bd19*/
+    return (gamemd::BuildingTypeClass *)(a4); /*0x67bd19*/
 }
 } // namespace gamemd
 
@@ -238,11 +238,11 @@ TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsig
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a1,(unsigned char *)(edx0),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Destination, 128) ) /*0x67bd9e*/
+  if ( INIClass::GetString((INIClass *)a1,(unsigned char *)(edx0),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Destination), 128) ) /*0x67bd9e*/
 // 0x71e2a0
     return (gamemd::TerrainTypeClass *)(((TerrainTypeClass *)(Destination))->FindOrCreate());
   else
-    return a4; /*0x67bdb9*/
+    return (gamemd::TerrainTypeClass *)(a4); /*0x67bdb9*/
 }
 } // namespace gamemd
 
@@ -279,7 +279,7 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
     return 0; /*0x6e312d*/
   if ( v7 == (HouseClass *)8997 ) /*0x6e3135*/
   {
-    Field11 = Property::GetField11(a6); /*0x6e3137*/
+    Field11 = ((Property *)(a6))->GetField11(); /*0x6e3137*/
   }
   else
   {

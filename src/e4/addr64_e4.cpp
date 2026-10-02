@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Multiplayer_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_641B00_e4.hpp"
@@ -143,7 +144,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   *(float *)&v19 = -v8; /*0x645dcb*/
   *(float *)&v18 = -*(float *)&((unsigned int *)this)[0]; /*0x645dd4*/
   *(float *)&v17 = -*(float *)&this->AbstractClass; /*0x645de0*/
-  v9 = (float *)Int4::Set(v30, v17, v18, v19, v20); /*0x645de3*/
+  v9 = (float *)((Int4 *)(v30))->Set(v17, v18, v19, v20); /*0x645de3*/
   v29[0] = *v9; /*0x645dea*/
   v29[1] = v9[1]; /*0x645df1*/
   v29[2] = v9[2]; /*0x645df8*/
@@ -360,7 +361,7 @@ AbstractClass * * ProcessNetworkEvents()
       if ( byte_B04880 ) /*0x64734b*/
         LogMultiplayToSync_MPDEBUG(v1 % 256, 0); /*0x64735f*/
       else
-        Multiplay::LogToSYNC_NOMPDEBUG(0); /*0x647368*/
+        ((Multiplay *)(0))->LogToSYNC_NOMPDEBUG(); /*0x647368*/
       GameClass::Shutdown((GameClass *)v6); /*0x64736d*/
       ExitProgram(0); /*0x647374*/
     }
@@ -600,7 +601,7 @@ void RunNetworkGameLoop()
         ((Event *)0)->Dispatch();
     if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 444) ) /*0x6485a1*/
     {
-      InputManager_ProcessEvents::Vtable((GScreenClass *)&stru_87F5F0.__pad_58[416], &v16, &v18, &v17); /*0x6485b7*/
+      ((InputManager_ProcessEvents *)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Vtable(&v16, &v18, &v17); /*0x6485b7*/
       SyncDelayClass::ProcessNetworkSync(&v16); /*0x6485c0*/
       (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x6485cd*/
       TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x6485d5*/
@@ -992,7 +993,7 @@ LABEL_50:
       }
     }
     if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-      Connection::Close(&HouseClass_Player[44148]);
+      ((Connection *)(&HouseClass_Player[44148]))->Close();
     if ( byte_B04878 )
     {
       Network::SendUnreachable();
@@ -1058,7 +1059,7 @@ LABEL_54:
             || *(unsigned int *)&HouseClass_Player[29932] == 4 )
           {
             ConnectionSpeed = ((Network *)(&HouseClass_Player[44148]))->GetConnectionSpeed(v40);
-            Class = (MSVQAnim *)Network::GetClass((int *)&HouseClass_Player[44148], ConnectionSpeed);
+            Class = (MSVQAnim *)((Network *)((int *)&HouseClass_Player[44148]))->GetClass(ConnectionSpeed);
             _FFFFFFFEa = GetStringCSF((wchar_t *)&stru_830620[28896], 0, &stru_830620[28288], 3908);
             swprintf(lParam, (const size_t)_FFFFFFFEa, (const wchar_t *const)Class, (CampaignScore *)v92);
           }
@@ -1277,7 +1278,7 @@ LABEL_223:
                     0);
                 }
                 if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-                  Connection::Close(&HouseClass_Player[44148]);
+                  ((Connection *)(&HouseClass_Player[44148]))->Close();
                 return 0;
               }
               int v67 = -1;
@@ -1403,7 +1404,7 @@ LABEL_148:
                   }
                 }
                 if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-                  Connection::Close(&HouseClass_Player[44148]);
+                  ((Connection *)(&HouseClass_Player[44148]))->Close();
                 Network::SendUnreachable();
                 return 7;
               }
@@ -1453,7 +1454,7 @@ LABEL_148:
               }
             }
             if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-              Connection::Close(&HouseClass_Player[44148]);
+              ((Connection *)(&HouseClass_Player[44148]))->Close();
             return 2;
           case 3:
             if ( v94 )
@@ -1471,7 +1472,7 @@ LABEL_148:
               }
             }
             if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-              Connection::Close(&HouseClass_Player[44148]);
+              ((Connection *)(&HouseClass_Player[44148]))->Close();
             Network::SendUnreachable();
             return 3;
         }
@@ -1541,7 +1542,7 @@ LABEL_116:
     }
   }
   if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-    Connection::Close(&HouseClass_Player[44148]);
+    ((Connection *)(&HouseClass_Player[44148]))->Close();
   return 7;
 }
 } // namespace gamemd
@@ -1792,9 +1793,9 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
               v16 = (int *)(a5 + 24 * v14); /*0x64a182*/
               if ( *v16 >= v15 ) /*0x64a187*/
               {
-                if ( Network::GetClass(unk_A8E9C0, *(char *)(v13 + 11)) ) /*0x64a1fd*/
+                if ( ((Network *)(unk_A8E9C0))->GetClass(*(char *)(v13 + 11)) ) /*0x64a1fd*/
                 {
-                  Class = (char *)Network::GetClass(unk_A8E9C0, *(char *)(v13 + 11)); /*0x64a213*/
+                  Class = (char *)((Network *)(unk_A8E9C0))->GetClass(*(char *)(v13 + 11)); /*0x64a213*/
                   ToWideStringChar(Class); /*0x64a21a*/
                   Debug::Log(); /*0x64a225*/
                 }
@@ -1803,9 +1804,9 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
               {
                 *v16 = v15; /*0x64a189*/
                 Network_Process_652110(a5, v14); /*0x64a194*/
-                if ( Network::GetClass(unk_A8E9C0, *(char *)(v13 + 11)) ) /*0x64a1a3*/
+                if ( ((Network *)(unk_A8E9C0))->GetClass(*(char *)(v13 + 11)) ) /*0x64a1a3*/
                 {
-                  v17 = (char *)Network::GetClass(unk_A8E9C0, *(char *)(v13 + 11)); /*0x64a1b9*/
+                  v17 = (char *)((Network *)(unk_A8E9C0))->GetClass(*(char *)(v13 + 11)); /*0x64a1b9*/
                   ToWideStringChar(v17); /*0x64a1c0*/
                   Debug::Log(); /*0x64a1cb*/
                 }
@@ -1890,7 +1891,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
   {
     if ( dword_A8B238[0] == 4 || dword_A8B238[0] == 3 ) /*0x64a5b0*/
     {
-      Network::GetClass(unk_A8E9C0, a3); /*0x64a5ca*/
+      ((Network *)(unk_A8E9C0))->GetClass(a3); /*0x64a5ca*/
       Debug::Log(); /*0x64a5d5*/
     }
     if ( *(unsigned int *)(v6 + 7) != dword_A8E7A8 ) /*0x64a5e8*/
@@ -2928,7 +2929,7 @@ void Network_ProcessMapEvent(int a1, int a2)
           v2 = v2; /*0x64ce4d*/
           for ( i = v2 + a2; v2 < v5; ++v2 ) /*0x64ce53*/
           {
-            v7 = BuildingLoadQueue::Find((unsigned char *)&dword_A83EE3 + 111 * (uint8_t)(v2 + dword_A83ED4)); /*0x64ce72*/
+            v7 = ((BuildingLoadQueue *)((unsigned char *)&dword_A83EE3 + 111 * (uint8_t)(v2 + dword_A83ED4)))->Find(); /*0x64ce72*/
             v7 = v7; /*0x64ce77*/
             if ( v7 /*0x64cec3*/
               && (v7[20] & 4) != 0
@@ -3053,7 +3054,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                 v76 = v73; /*0x64d225*/
                 if ( !v28 ) /*0x64d229*/
                 {
-                  v30 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v73); /*0x64d235*/
+                  v30 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v73); /*0x64d235*/
                   v31 = v30[80]; /*0x64d23a*/
                   IDA_BYTE1(v31) |= 0x80u; /*0x64d245*/
                   v30[80] = v31; /*0x64d248*/
@@ -3077,7 +3078,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                       v62 = (unsigned short *)(*(int (**)(unsigned int *, char *))(*v29 + 440))(v29, v132); /*0x64d7b0*/
                       if ( *v62 == *v61 && v62[1] == v61[1] ) /*0x64d7ca*/
                       {
-                        v63 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v76); /*0x64d7da*/
+                        v63 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v76); /*0x64d7da*/
                         ScriptAction::GetWaypointCoords(&v125, v63); /*0x64d7e7*/
                         WaypointCoords = ScriptAction::GetWaypointCoords(v134, *((unsigned int **)Block + v28)); /*0x64d7fb*/
                         v128 = *(unsigned int *)WaypointCoords; /*0x64d802*/
@@ -3114,8 +3115,8 @@ void Network_ProcessMapEvent(int a1, int a2)
               v32 = (unsigned int *)(*(int (**)(unsigned int *, char *, unsigned int))(*v29 + 76))(v29, v135, 0); /*0x64d27a*/
               v33 = *v32 / 256; /*0x64d2a4*/
               v34 = v32[1] / 256; /*0x64d2a7*/
-              v35 = (*((unsigned int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v73) + 80) >> 8) & 1; /*0x64d2c2*/
-              v36 = *((char *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v73) + 283) + 4 * v35; /*0x64d2df*/
+              v35 = (*((unsigned int *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v73) + 80) >> 8) & 1; /*0x64d2c2*/
+              v36 = *((char *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v73) + 283) + 4 * v35; /*0x64d2df*/
               v112 = (double)(int16_t)v73 + 0.5; /*0x64d2fe*/
               v114 = 0.0; /*0x64d30b*/
               v74 = (int16_t)v33 - (int16_t)v120; /*0x64d316*/
@@ -3164,7 +3165,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                 IDA_LOWORD(v121) = Math::RoundToInt(v109); /*0x64d4ac*/
                 IDA_HIWORD(v121) = Math::RoundToInt(v110); /*0x64d4b9*/
                 v121 = v121; /*0x64d4d2*/
-                v42 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v121); /*0x64d4df*/
+                v42 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v121); /*0x64d4df*/
                 if ( !((LayerClass *)(&MapClass_Instance))->IsWithinUsableArea((int16_t *)&v121, 1) ) /*0x64d4f0*/
                   goto LABEL_75; /*0x64d4f0*/
                 v43 = MapClass::GetTileIndex( /*0x64d520*/
@@ -3213,10 +3214,10 @@ void Network_ProcessMapEvent(int a1, int a2)
                   if ( v49 > v50 ) /*0x64d5f7*/
                     v50 = v49; /*0x64d5f9*/
                   TileIndex = v50 + 3; /*0x64d600*/
-                  v51 = *((unsigned int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v73) + 80) >> 8; /*0x64d61d*/
+                  v51 = *((unsigned int *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v73) + 80) >> 8; /*0x64d61d*/
                   IDA_LOBYTE(v51) = v51 & 1; /*0x64d620*/
                   v51 = v51; /*0x64d623*/
-                  v52 = *((unsigned int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v121) + 80) >> 8; /*0x64d639*/
+                  v52 = *((unsigned int *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v121) + 80) >> 8; /*0x64d639*/
                   IDA_LOBYTE(v52) = v52 & 1; /*0x64d63c*/
                   Pathfinding::CalcDistance( /*0x64d64b*/
                     (int)g_AudioInitFlag,
@@ -3237,7 +3238,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                 v28 = v119; /*0x64d688*/
                 v76 = (unsigned int *)*v48; /*0x64d698*/
                 *((unsigned int *)v101 + v119) = v76; /*0x64d6a0*/
-                v53 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v76); /*0x64d6a9*/
+                v53 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v76); /*0x64d6a9*/
                 ScriptAction::GetWaypointCoords(&v123, v53); /*0x64d6b6*/
                 v54 = ScriptAction::GetWaypointCoords(v133, v29); /*0x64d6c3*/
                 v129 = *(unsigned int *)v54; /*0x64d6ca*/
@@ -3256,7 +3257,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                   v57[4] = v124; /*0x64d73d*/
                 }
   LABEL_83:
-                v58 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v76); /*0x64d740*/
+                v58 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v76); /*0x64d740*/
                 v59 = v58[80]; /*0x64d74f*/
                 v2 = a1; /*0x64d75a*/
                 IDA_BYTE1(v59) |= 0x80u; /*0x64d75e*/
@@ -3271,7 +3272,7 @@ void Network_ProcessMapEvent(int a1, int a2)
   LABEL_99:
             for ( k = 0; k < v104; v69[80] = v70 ) /*0x64d8af*/
             {
-              v69 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)v101 + 2 * k); /*0x64d8c1*/
+              v69 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)v101 + 2 * k); /*0x64d8c1*/
               v70 = v69[80]; /*0x64d8c6*/
               IDA_BYTE1(v70) &= ~0x80u; /*0x64d8d1*/
               ++k; /*0x64d8d4*/
@@ -3447,7 +3448,7 @@ void ComputeNetworkFrameCRC()
                               + 2 * *(unsigned int *)dword_AC51FC;
     }
   }
-  *(unsigned int *)dword_AC51FC = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) /*0x64de54*/
+  *(unsigned int *)dword_AC51FC = ((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State() /*0x64de54*/
                           + (*(unsigned int *)dword_AC51FC >> 31)
                           + 2 * *(unsigned int *)dword_AC51FC;
   return AllocateTriggerLog((int)dword_A8ED84 % 256); /*0x64de75*/

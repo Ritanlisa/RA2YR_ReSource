@@ -94,7 +94,7 @@ int CampaignProperties_WorldDominationTour_22::Release(void *a1_1)
 {
 
   ++*((unsigned int *)this + 2); /*0x76f1a2*/
-  return this->__pad_0; /*0x76f1a5*/
+  return (int)(this->__pad_0); /*0x76f1a5*/
 
 }
 } // namespace gamemd
@@ -105,7 +105,7 @@ int CampaignProperties_WorldDominationTour_22::ddtor()
 {
 
   --*((unsigned int *)this + 2); /*0x76f1b2*/
-  return this->__pad_0; /*0x76f1b5*/
+  return (int)(this->__pad_0); /*0x76f1b5*/
 
 }
 } // namespace gamemd

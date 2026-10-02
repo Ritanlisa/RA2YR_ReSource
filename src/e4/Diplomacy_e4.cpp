@@ -62,7 +62,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
 
   result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hDlg), a2, a3, (unsigned int)a4));
   if ( result ) /*0x657dc4*/
-    return result; /*0x657dc4*/
+    return (gamemd::CampaignScore **)(result); /*0x657dc4*/
   if ( a2 != 273 ) /*0x657dd1*/
   {
     if ( a2 == 275 ) /*0x657dda*/
@@ -210,12 +210,12 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
     }
     return 0; /*0x6581b7*/
   }
-  v22 = &dword_83923C; /*0x6581e1*/
+  v22 = (int *)(&dword_83923C); /*0x6581e1*/
   while ( *v22 != DlgCtrlID ) /*0x6581e8*/
   {
     if ( (int)++v22 >= (int)&dword_83925C ) /*0x6581f3*/
     {
-      v23 = &dword_83925C; /*0x6581f5*/
+      v23 = (int *)(&dword_83925C); /*0x6581f5*/
       while ( *v23 != DlgCtrlID ) /*0x6581fc*/
       {
         if ( (int)++v23 >= (int)g_Str_File_OPTBTN_SHP ) /*0x658207*/
@@ -239,7 +239,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
       }
       if ( HIWORD(a3) != 1 && HIWORD(a3) ) /*0x65828e*/
         return 0; /*0x65828e*/
-      v27 = &dword_83925C; /*0x658298*/
+      v27 = (int *)(&dword_83925C); /*0x658298*/
       v28 = 0; /*0x6582a0*/
       while ( *v27 != DlgCtrlID ) /*0x6582a4*/
       {
@@ -260,7 +260,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   if ( HIWORD(a3) > 1u ) /*0x658214*/
     return 0; /*0x658214*/
   v24 = 0; /*0x65821e*/
-  v25 = &dword_83923C; /*0x658220*/
+  v25 = (int *)(&dword_83923C); /*0x658220*/
   while ( *v25 != DlgCtrlID ) /*0x658227*/
   {
     ++v25; /*0x658229*/

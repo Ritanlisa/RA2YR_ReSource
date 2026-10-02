@@ -105,7 +105,7 @@ void Terrain_SelectTileVariant(int a1)
     case 4: /*0x5a1374*/
       do /*0x5a13a7*/
       {
-        v20 = (unsigned int)Random::State(&unk_ABE890); /*0x5a137d*/
+        v20 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a137d*/
         v2 = Math::RoundToInt((double)v20 * 4.656612874161595e-10 + 1.0); /*0x5a139f*/
       }
       while ( v2 > 2 ); /*0x5a13a7*/
@@ -113,7 +113,7 @@ void Terrain_SelectTileVariant(int a1)
     case 5: /*0x5a1374*/
       do /*0x5a13e1*/
       {
-        v21 = (unsigned int)Random::State(&unk_ABE890); /*0x5a13bd*/
+        v21 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a13bd*/
         v4 = Math::RoundToInt((double)v21 * 4.656612874161595e-10); /*0x5a13d9*/
       }
       while ( v4 > 1 ); /*0x5a13e1*/
@@ -121,7 +121,7 @@ void Terrain_SelectTileVariant(int a1)
     case 6: /*0x5a1374*/
       do /*0x5a141c*/
       {
-        v22 = (unsigned int)Random::State(&unk_ABE890); /*0x5a13f8*/
+        v22 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a13f8*/
         v5 = Math::RoundToInt((double)v22 * 4.656612874161595e-10); /*0x5a1414*/
       }
       while ( v5 > 1 ); /*0x5a141c*/
@@ -129,7 +129,7 @@ void Terrain_SelectTileVariant(int a1)
     case 8: /*0x5a1374*/
       do /*0x5a145c*/
       {
-        v23 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1432*/
+        v23 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a1432*/
         v6 = Math::RoundToInt((double)v23 * 4.656612874161595e-10 + 1.0); /*0x5a1454*/
       }
       while ( v6 > 2 ); /*0x5a145c*/
@@ -137,7 +137,7 @@ void Terrain_SelectTileVariant(int a1)
     case 9: /*0x5a1374*/
       do /*0x5a1496*/
       {
-        v24 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1472*/
+        v24 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a1472*/
         v7 = Math::RoundToInt((double)v24 * 4.656612874161595e-10); /*0x5a148e*/
       }
       while ( v7 > 1 ); /*0x5a1496*/
@@ -145,7 +145,7 @@ void Terrain_SelectTileVariant(int a1)
     case 10: /*0x5a1374*/
       do /*0x5a14d1*/
       {
-        v25 = (unsigned int)Random::State(&unk_ABE890); /*0x5a14ad*/
+        v25 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a14ad*/
         v8 = Math::RoundToInt((double)v25 * 4.656612874161595e-10); /*0x5a14c9*/
       }
       while ( v8 > 1 ); /*0x5a14d1*/
@@ -153,7 +153,7 @@ void Terrain_SelectTileVariant(int a1)
     case 11: /*0x5a1374*/
       do /*0x5a1511*/
       {
-        v26 = (unsigned int)Random::State(&unk_ABE890); /*0x5a14e7*/
+        v26 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a14e7*/
         v9 = Math::RoundToInt((double)v26 * 4.656612874161595e-10 + 1.0); /*0x5a1509*/
       }
       while ( v9 > 2 ); /*0x5a1511*/
@@ -161,7 +161,7 @@ void Terrain_SelectTileVariant(int a1)
     case 12: /*0x5a1374*/
       do /*0x5a154b*/
       {
-        v27 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1527*/
+        v27 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a1527*/
         v10 = Math::RoundToInt((double)v27 * 4.656612874161595e-10); /*0x5a1543*/
       }
       while ( v10 > 1 ); /*0x5a154b*/
@@ -169,7 +169,7 @@ void Terrain_SelectTileVariant(int a1)
     case 13: /*0x5a1374*/
       do /*0x5a1586*/
       {
-        v28 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1562*/
+        v28 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a1562*/
         v11 = Math::RoundToInt((double)v28 * 4.656612874161595e-10); /*0x5a157e*/
       }
       while ( v11 > 1 ); /*0x5a1586*/
@@ -177,7 +177,7 @@ void Terrain_SelectTileVariant(int a1)
     case 14: /*0x5a1374*/
       do /*0x5a15c6*/
       {
-        v29 = (unsigned int)Random::State(&unk_ABE890); /*0x5a159c*/
+        v29 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a159c*/
         v12 = Math::RoundToInt((double)v29 * 4.656612874161595e-10 + 1.0); /*0x5a15be*/
       }
       while ( v12 > 2 ); /*0x5a15c6*/
@@ -185,7 +185,7 @@ void Terrain_SelectTileVariant(int a1)
     case 15: /*0x5a1374*/
       do /*0x5a1600*/
       {
-        v30 = (unsigned int)Random::State(&unk_ABE890); /*0x5a15dc*/
+        v30 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a15dc*/
         v13 = Math::RoundToInt((double)v30 * 4.656612874161595e-10); /*0x5a15f8*/
       }
       while ( v13 > 1 ); /*0x5a1600*/
@@ -193,7 +193,7 @@ void Terrain_SelectTileVariant(int a1)
     case 16: /*0x5a1374*/
       do /*0x5a163b*/
       {
-        v31 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1617*/
+        v31 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a1617*/
         v14 = Math::RoundToInt((double)v31 * 4.656612874161595e-10); /*0x5a1633*/
       }
       while ( v14 > 1 ); /*0x5a163b*/
@@ -201,7 +201,7 @@ void Terrain_SelectTileVariant(int a1)
     case 22: /*0x5a1374*/
       do /*0x5a167b*/
       {
-        v32 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1651*/
+        v32 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a1651*/
         v15 = Math::RoundToInt((double)v32 * 4.656612874161595e-10 + 1.0); /*0x5a1673*/
       }
       while ( v15 > 2 ); /*0x5a167b*/
@@ -209,7 +209,7 @@ void Terrain_SelectTileVariant(int a1)
     case 23: /*0x5a1374*/
       do /*0x5a16b5*/
       {
-        v33 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1691*/
+        v33 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a1691*/
         v16 = Math::RoundToInt((double)v33 * 4.656612874161595e-10); /*0x5a16ad*/
       }
       while ( v16 > 1 ); /*0x5a16b5*/
@@ -217,7 +217,7 @@ void Terrain_SelectTileVariant(int a1)
     case 24: /*0x5a1374*/
       do /*0x5a16f0*/
       {
-        v34 = (unsigned int)Random::State(&unk_ABE890); /*0x5a16cc*/
+        v34 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a16cc*/
         v17 = Math::RoundToInt((double)v34 * 4.656612874161595e-10); /*0x5a16e8*/
       }
       while ( v17 > 1 ); /*0x5a16f0*/
@@ -281,7 +281,7 @@ int ProcessRandomMapCellAdjacency()
         goto LABEL_32; /*0x5a1a6e*/
       do /*0x5a1aa3*/
       {
-        v15 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1a85*/
+        v15 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a1a85*/
         v6 = Math::RoundToInt((double)v15 * 4.656612874161595e-10); /*0x5a1a9b*/
       }
       while ( v6 > 1 ); /*0x5a1aa3*/
@@ -303,7 +303,7 @@ int ProcessRandomMapCellAdjacency()
         goto LABEL_32; /*0x5a1b1f*/
       do /*0x5a1b54*/
       {
-        v16 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1b36*/
+        v16 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a1b36*/
         v11 = Math::RoundToInt((double)v16 * 4.656612874161595e-10); /*0x5a1b4c*/
       }
       while ( v11 > 1 ); /*0x5a1b54*/
@@ -401,7 +401,7 @@ int E4Recv_5A1C70::sub_5A1C70()
     do /*0x5a1d4f*/
     {
       *(unsigned int *)v16 = *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163]); /*0x5a1d08*/
-      v7 = (RandomMap *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v16); /*0x5a1d11*/
+      v7 = (RandomMap *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v16); /*0x5a1d11*/
       if ( *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163] + 56) == -1 /*0x5a1d3b*/
         && (*(unsigned short *)(v5 + g_MissionQueueFrame.localVariables[163])
          || *(unsigned short *)(v5 + g_MissionQueueFrame.localVariables[163] + 2))
@@ -498,7 +498,7 @@ void GenerateTerrainHeightMapInternal()
         v6 = IDA_SHIWORD(v17) + v5; /*0x5a3468*/
         if ( v6 > (unsigned int *)((int))(v2) && v5 - IDA_SHIWORD(v17) < v2 && IDA_SHIWORD(v17) - v5 < v2 && v6 <= dword_ABED08 ) /*0x5a3483*/
         {
-          v7 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v16));
+          v7 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16));
           if ( Cell::IsEmpty(v7) ) /*0x5a3496*/
           {
             v8 = 80 * ((int16_t)v16 + g_MapCellWidth * IDA_SHIWORD(v16)); /*0x5a34cb*/
@@ -528,7 +528,7 @@ void GenerateTerrainHeightMapInternal()
         v14 = v12 + (int16_t)v18; /*0x5a3563*/
         if ( v14 > v9 && (int16_t)v18 - v13 < v9 && v13 - (int16_t)v18 < v9 && v14 <= dword_ABED08 ) /*0x5a357e*/
         {
-          v15 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v16)); /*0x5a358a*/
+          v15 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16)); /*0x5a358a*/
           if ( Cell::IsEmpty(v15) ) /*0x5a3591*/
           {
             *((unsigned char *)dword_ABED10 + 80 * (int16_t)v16 + 80 * g_MapCellWidth * IDA_SHIWORD(v16) + 69) = 1; /*0x5a35ca*/
@@ -698,15 +698,15 @@ void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   {
     while ( v17 && v41 < v3 ) /*0x5a479f*/
     {
-      v20 = CellCoord::To_CellObj(&dword_87F7E8, v17); /*0x5a47ba*/
+      v20 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj(v17)); /*0x5a47ba*/
       if ( Cell::IsEmpty(v20) && !v20[57] && v20[17] == -1 && v20[59] != 3 ) /*0x5a47ec*/
       {
-        v50 = (unsigned int)Random::State(&unk_ABE890); /*0x5a47fc*/
+        v50 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a47fc*/
         if ( (double)v50 * 2.328306437080797e-10 < a3 ) /*0x5a4816*/
         {
           do /*0x5a4848*/
           {
-            v51 = (unsigned int)Random::State(&unk_ABE890); /*0x5a4826*/
+            v51 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a4826*/
             v21 = Math::RoundToInt((double)v51 * 0.000000005820766092701993 + 1.0); /*0x5a483e*/
           }
           while ( (unsigned int)v21 > 0x19 ); /*0x5a4848*/
@@ -716,7 +716,7 @@ void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
           {
             v48 = v20[9]; /*0x5a488e*/
             v23 = ((Terrain *)(Buffer))->LookupByName(); /*0x5a4892*/
-            TerrainClass::Construct(v22, *((void **)dword_A8E31C + v23), (int16_t *)&v48); /*0x5a48aa*/
+            ((TerrainClass *)(v22))->Construct(*((void **)dword_A8E31C + v23), (int16_t *)&v48); /*0x5a48aa*/
           }
           ++v42; /*0x5a48af*/
         }
@@ -743,7 +743,7 @@ void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
             v45 = Math::Sqrt((double)(((int16_t)*(unsigned int *)(aP0 + 36) - v27) * ((int16_t)*(unsigned int *)(aP0 + 36) - v27) /*0x5a49b1*/
                                     + ((int16_t)IDA_HIWORD(*(unsigned int *)(aP0 + 36)) - v26)
                                     * ((int16_t)IDA_HIWORD(*(unsigned int *)(aP0 + 36)) - v26)));
-            v52 = (unsigned int)Random::State(&unk_ABE890); /*0x5a49c2*/
+            v52 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a49c2*/
             ++v41; /*0x5a49dd*/
             v30[1] = (double)v52 * 5.0 * 2.328306437080797e-10 + v45; /*0x5a49eb*/
             v29[71] = 1; /*0x5a49ee*/
@@ -955,7 +955,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
   {
     while ( v20 ) /*0x5a4cfb*/
     {
-      v23 = CellCoord::To_CellObj(&dword_87F7E8, v20); /*0x5a4d07*/
+      v23 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj(v20)); /*0x5a4d07*/
       v24 = v42; /*0x5a4d0f*/
       v23[14] = a2; /*0x5a4d13*/
       v25 = 0; /*0x5a4d16*/
@@ -963,14 +963,14 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
       v26 = &v7[2 * v24]; /*0x5a4d1c*/
       do /*0x5a4f42*/
       {
-        v39 = *((CellStruct *)(v40))->Add(&v48, (unsigned short *)(4 * (v25 & 7) + 9041544)); /*0x5a4d44*/
+        v39 = *((CellStruct *)(v40))->Add((unsigned int *)(&v48), (unsigned short *)(4 * (v25 & 7) + 9041544)); /*0x5a4d44*/
         v43 = IDA_SHIWORD(v39) + (int16_t)v39; /*0x5a4d55*/
         if ( v43 > dword_ABED04 /*0x5a4d81*/
           && (int16_t)v39 - IDA_SHIWORD(v39) < dword_ABED04
           && IDA_SHIWORD(v39) - (int16_t)v39 < dword_ABED04
           && v43 <= dword_ABED08 )
         {
-          v27 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v39); /*0x5a4d96*/
+          v27 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v39); /*0x5a4d96*/
           v43 = (int)v27; /*0x5a4d9a*/
           if ( Cell::IsEmpty(v27) || a5 && (CellClass::InBounds(v27) || CellClass::InMapDataRange(v27)) ) /*0x5a4dbf*/
           {
@@ -986,7 +986,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
               IDA_LODWORD(v46) = ((int16_t)v43 - IDA_LODWORD(v46)) * ((int16_t)v43 - IDA_LODWORD(v46)) /*0x5a4e57*/
                            + (IDA_SHIWORD(v43) - v28) * (IDA_SHIWORD(v43) - v28);
               v46 = Math::Sqrt((double)IDA_SLODWORD(v46)); /*0x5a4e67*/
-              v49 = (unsigned int)Random::State(&unk_ABE890); /*0x5a4e78*/
+              v49 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a4e78*/
               v29 = IDA_SHIWORD(v39); /*0x5a4e88*/
               v30 = (int16_t)v39; /*0x5a4e93*/
               v26[1] = (double)v49 * 5.0 * 2.328306437080797e-10 + v46; /*0x5a4ea2*/
@@ -1103,7 +1103,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
   *(double *)&v37 = (double)*(int64_t *)&v35[0]; /*0x5a6565*/
   do /*0x5a6594*/
   {
-    *(unsigned long long *)&v35[0] = (unsigned int)Random::State(&unk_ABE890); /*0x5a6573*/
+    *(unsigned long long *)&v35[0] = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a6573*/
     v5 = Math::RoundToInt((double)*(int64_t *)&v35[0] * *(double *)&v38 * 2.328306437080797e-10 + *(double *)&v37); /*0x5a658d*/
   }
   while ( v5 > v2 ); /*0x5a6594*/
@@ -1147,14 +1147,14 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
       v35[0] = (double)(unsigned int)v44; /*0x5a6671*/
       do /*0x5a66a0*/
       {
-        v36 = (unsigned int)Random::State(&unk_ABE890); /*0x5a667f*/
+        v36 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a667f*/
         v13 = Math::RoundToInt((double)v36 * v35[0] * 2.328306437080797e-10); /*0x5a6695*/
         v32 = v13; /*0x5a669c*/
       }
       while ( v13 > v12 ); /*0x5a66a0*/
       IndexByName = ((BuildingTypeClass *)(*((void **)Block + v13)))->FindIndexByName(); /*0x5a66b5*/
       v15 = RA2_OPNEW(0x720u); /*0x5a66b7*/
-      v16 = v15 ? BuildingClass::Construct((int)v15, *((unsigned int *)dword_A83C6C + IndexByName), Owner) : 0;
+      v16 = v15 ? ((BuildingClass *)((int)v15))->Construct(*((unsigned int *)dword_A83C6C + IndexByName), Owner) : 0;
       v28 = 0; /*0x5a66db*/
       v27 = 0; /*0x5a66df*/
       while ( v28 < 60 ) /*0x5a6701*/
@@ -1164,7 +1164,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
         v35[0] = (double)v37; /*0x5a671a*/
         do /*0x5a6745*/
         {
-          v38 = (unsigned int)Random::State(&unk_ABE890); /*0x5a6728*/
+          v38 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a6728*/
           v18 = Math::RoundToInt((double)v38 * v35[0] * 2.328306437080797e-10); /*0x5a673e*/
         }
         while ( v18 > v17 ); /*0x5a6745*/
@@ -1178,7 +1178,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
           IDA_LOWORD(v31) = v19 + *v20; /*0x5a6781*/
           IDA_HIWORD(v31) = IDA_HIWORD(v19) + v20[1]; /*0x5a6790*/
           IDA_LODWORD(v35[0]) = v31; /*0x5a6799*/
-          v21 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)v35); /*0x5a67a7*/
+          v21 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v35); /*0x5a67a7*/
           if ( !CellClass::InBounds(v21) && !CellClass::InMapDataRange(v21) /*0x5a67da*/
             || v21[57]
             || v21[59] == 3
@@ -1278,7 +1278,7 @@ void PlaceRandomNeutralUnits(int a1)
   v22 = Owner; /*0x5a693c*/
   do /*0x5a696e*/
   {
-    v21 = (unsigned int)Random::State(&unk_ABE890); /*0x5a694a*/
+    v21 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a694a*/
     result = Math::RoundToInt((double)v21 * 0.000000001164153218540399 + 1.0); /*0x5a6962*/
     v20 = result; /*0x5a696a*/
   }
@@ -1294,7 +1294,7 @@ void PlaceRandomNeutralUnits(int a1)
         return result; /*0x5a6992*/
       do /*0x5a69be*/
       {
-        v23 = (unsigned int)Random::State(&unk_ABE890); /*0x5a69a2*/
+        v23 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a69a2*/
         v4 = Math::RoundToInt((double)v23 * 0.000000001629814505956558); /*0x5a69b4*/
         v5 = v4; /*0x5a69b9*/
       }
@@ -1329,17 +1329,17 @@ void PlaceRandomNeutralUnits(int a1)
         v27 = (double)v24; /*0x5a6a57*/
         do /*0x5a6a82*/
         {
-          v25 = (unsigned int)Random::State(&unk_ABE890); /*0x5a6a65*/
+          v25 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a6a65*/
           v13 = Math::RoundToInt((double)v25 * v27 * 2.328306437080797e-10); /*0x5a6a7b*/
         }
         while ( v13 > v12 ); /*0x5a6a82*/
         v18 = *(unsigned int *)(*(unsigned int *)(a1 + 4) + 4 * v13); /*0x5a6a9a*/
         if ( ((LayerClass *)(&dword_87F7E8))->IsWithinUsableArea((int16_t *)&v18, 1) /*0x5a6aba*/
-          && !*((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v18) + 57) )
+          && !*((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v18) + 57) )
         {
           do /*0x5a6aea*/
           {
-            v26 = (unsigned int)Random::State(&unk_ABE890); /*0x5a6ad0*/
+            v26 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a6ad0*/
             v14 = Math::RoundToInt((double)v26 * 0.000000001862645149664638); /*0x5a6ae2*/
           }
           while ( v14 > 7 ); /*0x5a6aea*/
@@ -1412,7 +1412,7 @@ LABEL_6:
   {
     v10[0] = v4; /*0x5a6bd2*/
     v10[1] = v7; /*0x5a6bd7*/
-    v8 = (CellLand *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v10); /*0x5a6bdc*/
+    v8 = (CellLand *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v10); /*0x5a6bdc*/
     if ( (uint8_t)CellLand::IsBuildable(v8) ) /*0x5a6be3*/
       return 0; /*0x5a6bfa*/
     if ( ++v7 >= v6 ) /*0x5a6bef*/
@@ -1476,7 +1476,7 @@ int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4)
             }
             else
             {
-              v12 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v16); /*0x5a6cc4*/
+              v12 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16); /*0x5a6cc4*/
               v6 = v17; /*0x5a6ccf*/
               v13 = i + v17 * v4[185]; /*0x5a6cda*/
               v14 = *(unsigned int *)(v20 + 4 * v13 + 16); /*0x5a6cdc*/
@@ -1564,7 +1564,7 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
       *a0 = 0; /*0x5a6e90*/
       return a0; /*0x5a6e96*/
     }
-    if ( *((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v20) + 14) == dword_ABC2B0 ) /*0x5a6e3f*/
+    if ( *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v20) + 14) == dword_ABC2B0 ) /*0x5a6e3f*/
       break; /*0x5a6e3f*/
     v9 = a4 & 7; /*0x5a6e45*/
     IDA_LOWORD(v29) = v20 + IDA_LOWORD(dword_89F688[v9]); /*0x5a6e65*/
@@ -1601,7 +1601,7 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
     v25 = (double)v24; /*0x5a6f91*/
     do /*0x5a6fc0*/
     {
-      v24 = (unsigned int)Random::State(&unk_ABE890); /*0x5a6f9f*/
+      v24 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a6f9f*/
       v15 = Math::RoundToInt((double)v24 * v25 * 2.328306437080797e-10); /*0x5a6fb9*/
     }
     while ( v15 > (unsigned int)v14 ); /*0x5a6fc0*/
@@ -1717,7 +1717,7 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, int16_t *a1, MapSeedClass
   {
     do /*0x5a720e*/
     {
-      v20 = (unsigned int)Random::State(&unk_ABE890); /*0x5a71f4*/
+      v20 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a71f4*/
       v12 = Math::RoundToInt((double)v20 * 9.31322574832319e-10); /*0x5a7206*/
     }
     while ( (unsigned int)v12 > 3 ); /*0x5a720e*/
@@ -1802,7 +1802,7 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
           {
             IDA_LOWORD(v14) = v11; /*0x5a73a3*/
             IDA_HIWORD(v14) = v10; /*0x5a73a8*/
-            v12 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v14); /*0x5a73b2*/
+            v12 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v14); /*0x5a73b2*/
             if ( sub_4866D0(v12) ) /*0x5a73b6*/
             {
               if ( !a2 ) /*0x5a73c5*/
@@ -1880,7 +1880,7 @@ void MapClass_IsAreaUniform(int * a1, char a2)
         {
           IDA_LOWORD(v14) = v3; /*0x5a756f*/
           IDA_HIWORD(v14) = v4; /*0x5a7574*/
-          v7 = (char *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v14); /*0x5a7579*/
+          v7 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v14); /*0x5a7579*/
           v8 = a1[1]; /*0x5a757e*/
           v9 = v8 + a1[3]; /*0x5a758b*/
           v16 = v7[283]; /*0x5a758d*/
@@ -1899,7 +1899,7 @@ void MapClass_IsAreaUniform(int * a1, char a2)
           {
             IDA_LOWORD(v14) = v10; /*0x5a75a8*/
             IDA_HIWORD(v14) = v8; /*0x5a75b3*/
-            v11 = (char *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v14); /*0x5a75bd*/
+            v11 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v14); /*0x5a75bd*/
             if ( v11[283] != v16 ) /*0x5a75cc*/
               break; /*0x5a75cc*/
             if ( (uint8_t)sub_4866D0(v11) || (uint8_t)sub_4866F0(v11) ) /*0x5a75db*/
@@ -2004,7 +2004,7 @@ void int PlaceMapSeedBuildingsStrategic(int a1)
       v22 = (double)v34; /*0x5a79cf*/
       do /*0x5a79fe*/
       {
-        v33 = (unsigned int)Random::State(&unk_ABE890); /*0x5a79dd*/
+        v33 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a79dd*/
         v7 = Math::RoundToInt((double)v33 * v22 * 2.328306437080797e-10); /*0x5a79f7*/
       }
       while ( v7 > v6 ); /*0x5a79fe*/
@@ -2033,7 +2033,7 @@ void int PlaceMapSeedBuildingsStrategic(int a1)
         {
           do /*0x5a7a99*/
           {
-            v32 = (unsigned int)Random::State(&unk_ABE890); /*0x5a7a7b*/
+            v32 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a7a7b*/
             v16 = Math::RoundToInt((double)v32 * 0.000000001396983862248478); /*0x5a7a91*/
           }
           while ( v16 > 5 ); /*0x5a7a99*/
@@ -2186,7 +2186,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
   v26 = OwnerHouseClass; /*0x5a873c*/
   do /*0x5a876e*/
   {
-    v25 = (unsigned int)Random::State(&unk_ABE890); /*0x5a874a*/
+    v25 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a874a*/
     result = Math::RoundToInt((double)v25 * 9.31322574832319e-10 + 1.0); /*0x5a8762*/
     v23 = result; /*0x5a876a*/
   }
@@ -2202,7 +2202,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
         return result; /*0x5a8792*/
       do /*0x5a87be*/
       {
-        v27 = (unsigned int)Random::State(&unk_ABE890); /*0x5a87a2*/
+        v27 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a87a2*/
         v4 = Math::RoundToInt((double)v27 * 0.000000001396983862248478); /*0x5a87b4*/
         v5 = v4; /*0x5a87b9*/
       }
@@ -2240,13 +2240,13 @@ void PlaceNeutralCreeps(unsigned short * a1)
       {
         do /*0x5a8866*/
         {
-          v28 = (unsigned int)Random::State(&unk_ABE890); /*0x5a884a*/
+          v28 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a884a*/
           v12 = Math::RoundToInt((double)v28 * 0.000000003958120943037356); /*0x5a8861*/
         }
         while ( v12 > 0x10 ); /*0x5a8866*/
         do /*0x5a888c*/
         {
-          v29 = (unsigned int)Random::State(&unk_ABE890); /*0x5a8872*/
+          v29 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a8872*/
           v13 = Math::RoundToInt((double)v29 * 0.000000003958120943037356); /*0x5a8884*/
         }
         while ( v13 > 0x10 ); /*0x5a888c*/
@@ -2257,11 +2257,11 @@ void PlaceNeutralCreeps(unsigned short * a1)
         IDA_WORD1(v25) = v16; /*0x5a88ac*/
         v21 = v25; /*0x5a88b9*/
         if ( ((LayerClass *)(&dword_87F7E8))->IsWithinUsableArea((int16_t *)&v21, 1) /*0x5a88df*/
-          && !*((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v21) + 57) )
+          && !*((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v21) + 57) )
         {
           do /*0x5a890f*/
           {
-            v30 = (unsigned int)Random::State(&unk_ABE890); /*0x5a88f5*/
+            v30 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a88f5*/
             v17 = Math::RoundToInt((double)v30 * 0.000000001862645149664638); /*0x5a8907*/
           }
           while ( v17 > 7 ); /*0x5a890f*/
@@ -2372,7 +2372,7 @@ void MapSeed_ScheduleBuildings(int * a1)
   v42 = 0; /*0x5a8a06*/
   do /*0x5a8a30*/
   {
-    v48 = (unsigned int)Random::State(&unk_ABE890); /*0x5a8a14*/
+    v48 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a8a14*/
     v4 = Math::RoundToInt((double)v48 * 0.000000002561137080788877); /*0x5a8a2b*/
   }
   while ( v4 > 0xA ); /*0x5a8a30*/
@@ -2663,11 +2663,11 @@ void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned in
     if ( v6 == 2 ) /*0x5a8fdb*/
     {
       v10 = 0; /*0x5a8fe7*/
-      if ( (double)(unsigned int)Random::State(&unk_ABE890) * 2.328306437080797e-10 < 0.7 ) /*0x5a9006*/
+      if ( (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 2.328306437080797e-10 < 0.7 ) /*0x5a9006*/
       {
         do /*0x5a904b*/
         {
-          v28 = (unsigned int)Random::State(&unk_ABE890); /*0x5a9028*/
+          v28 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a9028*/
           v11 = Math::RoundToInt((double)v28 * (double)(unsigned int)(v9 - 7) * 2.328306437080797e-10 + 7.0); /*0x5a9044*/
         }
         while ( v11 > v9 - 1 ); /*0x5a904b*/
@@ -2680,7 +2680,7 @@ void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned in
     }
     do /*0x5a908e*/
     {
-      v29 = (unsigned int)Random::State(&unk_ABE890); /*0x5a9071*/
+      v29 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a9071*/
       v11 = Math::RoundToInt((double)v29 * (double)(unsigned int)v9 * 2.328306437080797e-10); /*0x5a9087*/
     }
     while ( v11 > v9 - 1 ); /*0x5a908e*/
@@ -4399,7 +4399,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
     fstp dword ptr [esp+28h+var_28]; float
   }
   sub_5AF000((float *)_ESI, v20, v28); /*0x5af6f5*/
-  Matrix2D::Rotate((int *)_ESI, a4); /*0x5af701*/
+  ((Matrix2D *)((int *)_ESI))->Rotate(a4); /*0x5af701*/
 
 }
 }
@@ -4500,7 +4500,7 @@ double sub_5A1190(short * a1, short * a2, double a3)
   }
   if ( v5 > 3.141592653589793 ) /*0x5a121a*/
     v9 = 6.283185307179586 - v5; /*0x5a1224*/
-  return (double)(unsigned int)Random::State(&unk_ABE890) * 2.328306437080797e-10 * 2.0 + 1.5 * v9; /*0x5a125c*/
+  return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 2.328306437080797e-10 * 2.0 + 1.5 * v9; /*0x5a125c*/
 }
 } // namespace gamemd
 
@@ -4515,7 +4515,7 @@ double sub_5A2ED0(short * a1, short * a2)
   v2 = *a1 - *a2; /*0x5a2eec*/
   v3 = a1[1] - a2[1]; /*0x5a2eee*/
   v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3)); /*0x5a2f0d*/
-  return (double)(unsigned int)Random::State(&unk_ABE890) * 5.0 * 2.328306437080797e-10 + v5; /*0x5a2f3f*/
+  return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 5.0 * 2.328306437080797e-10 + v5; /*0x5a2f3f*/
 }
 } // namespace gamemd
 
@@ -4530,7 +4530,7 @@ double sub_5A4AE0(short * a1, short * a2)
   v2 = *a1 - *a2; /*0x5a4afc*/
   v3 = a1[1] - a2[1]; /*0x5a4afe*/
   v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3)); /*0x5a4b1d*/
-  return (double)(unsigned int)Random::State(&unk_ABE890) * 5.0 * 2.328306437080797e-10 + v5; /*0x5a4b4f*/
+  return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 5.0 * 2.328306437080797e-10 + v5; /*0x5a4b4f*/
 }
 } // namespace gamemd
 
@@ -4545,7 +4545,7 @@ double sub_5A4FA0(short * a1, short * a2)
   v2 = *a1 - *a2; /*0x5a4fbc*/
   v3 = a1[1] - a2[1]; /*0x5a4fbe*/
   v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3)); /*0x5a4fdd*/
-  return (double)(unsigned int)Random::State(&unk_ABE890) * 5.0 * 2.328306437080797e-10 + v5; /*0x5a500f*/
+  return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 5.0 * 2.328306437080797e-10 + v5; /*0x5a500f*/
 }
 } // namespace gamemd
 
@@ -4562,7 +4562,7 @@ double sub_5A5AE0(short * a1, short * a2)
   v5 = (IDA_HIDWORD(v3) ^ v3) - IDA_HIDWORD(v3); /*0x5a5b0f*/
   if ( v5 <= v2 ) /*0x5a5b13*/
     v5 = v2; /*0x5a5b15*/
-  return (double)(unsigned int)Random::State(&unk_ABE890) * 3.0 * 2.328306437080797e-10 + (double)v5; /*0x5a5b45*/
+  return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 3.0 * 2.328306437080797e-10 + (double)v5; /*0x5a5b45*/
 }
 } // namespace gamemd
 }

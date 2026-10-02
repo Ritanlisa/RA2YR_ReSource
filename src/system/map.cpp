@@ -729,7 +729,7 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
   return result; /*0x567d88*/
 }
 // 0x567da0
-CoordStruct* MapClass::RevealArea2(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr, void * a1, void * a2, void * a3, void * a4, void * a5)
+CoordStruct* MapClass::RevealArea2(int *a1, int a2, int a3, int a4)
 {
   int v5; // eax
   int v6; // ecx

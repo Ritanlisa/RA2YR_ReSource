@@ -105,7 +105,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
             v17 = (char *)dword_ABED10 + 80 * v14 + 80 * g_MapCellWidth * v15; /*0x5a02a4*/
             v18 = *((unsigned int *)v17 + 14); /*0x5a02a8*/
             v19 = a7 && v18 == a1 - 1; /*0x5a02b6*/
-            v20 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v30); /*0x5a02c6*/
+            v20 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v30); /*0x5a02c6*/
             v21 = v20; /*0x5a02cd*/
             if ( (!v18 || v19) && (Cell::IsEmpty(v20) || v19 && Cell::IsGroundTypeRange(v21)) ) /*0x5a02e6*/
             {
@@ -122,7 +122,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
               }
               *((unsigned int *)v17 + 14) = a1; /*0x5a0348*/
               if ( a7 && Cell::IsEmpty(v21) ) /*0x5a034f*/
-                *((unsigned char *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v30) + 283) = a8; /*0x5a036b*/
+                *((unsigned char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v30) + 283) = a8; /*0x5a036b*/
             }
             else if ( v18 != a1 ) /*0x5a02f3*/
             {
@@ -301,9 +301,9 @@ void TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
     {
       if ( !*i ) /*0x721b8f*/
         break; /*0x721b92*/
-      v23 = (unsigned int *)(AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)(i))); /*0x721b9d*/
+      v23 = (unsigned int *)(AnimTypeClass::FindOrCreate((char *)((gamemd::AbstractClass *)(i)))); /*0x721b9d*/
       if ( v23 ) /*0x721ba1*/
-        ((DynamicVector *)(&v25))->Add_Alt4(&v23); /*0x721bac*/
+        ((DynamicVector *)(&v25))->Add_Alt4((unsigned int *)(&v23)); /*0x721bac*/
     }
     TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
     *(unsigned int *)v25.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x721bd6*/
@@ -313,7 +313,7 @@ void TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   {
     TypeList::AnimTypeCopy(&v24, (unsigned int *)(v5 + 196)); /*0x721bf0*/
   }
-  VectorClass::CopyDefault((VectorClass *)(v5 + 196), &v24); /*0x721c03*/
+  ((VectorClass *)((VectorClass *)(v5 + 196)))->CopyDefault(&v24); /*0x721c03*/
   CapacityIncrement = ((char *)&v24); /*0x721c0c*/
   unknown_18 = v24.unknown_18; /*0x721c10*/
   *(unsigned int *)(v5 + 212) = ((char *)&v24); /*0x721c14*/
@@ -374,7 +374,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
   int result; // eax
   int v13; // edi
 
-  v2 = a1; /*0x721e83*/
+  v2 = (gamemd::TiberiumClass *)(a1); /*0x721e83*/
   v3 = 0; /*0x721e87*/
   TiberiumClass_field_F4 = (unsigned int *)a1->TiberiumClass_field_F4; /*0x721e8a*/
   if ( TiberiumClass_field_F4 ) /*0x721e92*/

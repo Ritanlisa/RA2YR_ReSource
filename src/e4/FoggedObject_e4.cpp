@@ -31,7 +31,7 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
   *((unsigned char *)this + 13) = 0; /*0x4d2dc7*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
-    return this->__pad_0; /*0x4d2e38*/
+    return (int)(this->__pad_0); /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
   {
     v8 = (int)(__2_YAPAXI_Z(16 * aP1)); /*0x4d2e07*/
@@ -56,7 +56,7 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
     }
     this->FoggedObject_field_0x4 = (unsigned char)(v4);
     *((unsigned char *)this + 13) = 1; /*0x4d2e34*/
-    return this->__pad_0; /*0x4d2e34*/
+    return (int)(this->__pad_0); /*0x4d2e34*/
   }
   if ( aP1 - 1 >= 0 ) /*0x4d2ddf*/
   {
@@ -74,7 +74,7 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
     while ( v6 ); /*0x4d2df4*/
   }
   this->FoggedObject_field_0x4 = (unsigned char)((AbstractClass *)aP2);
-  return this->__pad_0; /*0x4d2dfb*/
+  return (int)(this->__pad_0); /*0x4d2dfb*/
 
 }
 }

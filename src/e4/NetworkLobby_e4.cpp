@@ -199,15 +199,15 @@ int NetworkLobby_UpdatePlayerList()
     wParam = SendDlgItemMessageA(Current, 1353, 0x18Eu, 0, 0); /*0x5dba3d*/
     SendDlgItemMessageA(Current, 1353, 0x49Du, 0, 1); /*0x5dba41*/
     SendMessageA(DlgItem, 0x184u, 0, 0); /*0x5dba53*/
-    String = GetStringCSF(aTxtLobby, 0, g_Str_File_netdlg2_cpp, 508); /*0x5dba66*/
+    String = GetStringCSF((wchar_t *)(aTxtLobby), 0, g_Str_File_netdlg2_cpp, 508); /*0x5dba66*/
     SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)String); /*0x5dba74*/
     for ( i = 1; i < dword_A8DA6C; ++i ) /*0x5dba82*/
     {
       v7 = *(unsigned int *)(dword_A8DA60 + 4 * i); /*0x5dba8c*/
       if ( *(unsigned char *)(v7 + 52) ) /*0x5dba8d*/
-        v6 = GetStringCSF((wchar_t *)(aTxtThatguysGam), 0, g_Str_File_netdlg2_cpp, 514); /*0x5dbaae*/
+        v6 = GetStringCSF((wchar_t *)(aTxtThatguysGam), 0,(const char *)(g_Str_File_netdlg2_cpp), 514); /*0x5dbaae*/
       else
-        v6 = GetStringCSF(aTxtThatguysGam_0, 0, g_Str_File_netdlg2_cpp, 516); /*0x5dbacc*/
+        v6 = GetStringCSF((wchar_t *)(aTxtThatguysGam_0), 0, g_Str_File_netdlg2_cpp, 516); /*0x5dbacc*/
       swprintf(lParam, (const size_t)v6, (const wchar_t *const)v7); /*0x5dbab0*/
       SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)lParam); /*0x5dbae3*/
     }
@@ -350,7 +350,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
         }
         if ( a2 == 1175 ) /*0x5dec2b*/
         {
-          NetworkBuffer::GetField((NetworkBuffer *)&(unsigned int *)((char *)&stru_A8EB00 + 252)); /*0x5dec36*/
+          NetworkBuffer::GetField((HWND)((NetworkBuffer *)&(unsigned int *)((char *)&stru_A8EB00 + 252))); /*0x5dec36*/
           v20 = Random::Range(&Randomizer_Global, 1, 0x7FFF); /*0x5dec47*/
           srand(v20); /*0x5dec4d*/
           *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 432) = rand(); /*0x5dec5c*/
@@ -365,7 +365,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
           GDlg::LoadLetterStrings(); /*0x5deca9*/
           memset32(&stru_A8B250.__pad_0[172], -2, 8u); /*0x5decc2*/
           SetupMultiplayerLobbyPlayers(hDlg, (int)&unk_A8B440); /*0x5decc6*/
-          Lobby::InvalidatePlayerSlots((Lobby *)hDlg); /*0x5deccd*/
+          Lobby::InvalidatePlayerSlots((HWND)((Lobby *)hDlg)); /*0x5deccd*/
           RefreshLobbyPlayerSlots(0xFFFFFFFF); /*0x5decd5*/
           GameSetup::DisplayPlayers(v33); /*0x5decdc*/
           if ( dword_A8B23C /*0x5decef*/
@@ -394,7 +394,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
           ((NetworkLobby *)((NetworkLobby *)hDlg))->Dispatch(); /*0x5dedb1*/
           SetDialogPlayerName(hDlg, (int)dword_A8B23C); /*0x5dedbe*/
           Dialog::ShowPlayerName((Dialog *)hDlg); /*0x5dedc5*/
-          Session::StartGame((Session *)hDlg); /*0x5dedcc*/
+          Session::StartGame((HWND)((Session *)hDlg)); /*0x5dedcc*/
           PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dede2*/
           if ( !dword_A8B23C /*0x5dedfe*/
             || !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 1))(dword_A8B23C)
@@ -457,16 +457,16 @@ LABEL_132:
     switch ( a2 ) /*0x5de57f*/
     {
       case 2u: /*0x5de57f*/
-        if ( !(uint8_t)LoadScreen::IsActive((LoadScreen *)&stru_AC4B30.__pad_EC[828]) ) /*0x5de694*/
+        if ( !(uint8_t)((LoadScreen *)((LoadScreen *)&stru_AC4B30.__pad_EC[828]))->IsActive() ) /*0x5de694*/
           return 0; /*0x5de694*/
         VtableStub::sub_643E70(&stru_AC4B30.__pad_EC[828]); /*0x5de69f*/
         result = 0; /*0x5de6a7*/
         break; /*0x5de6b0*/
       case 0xFu: /*0x5de57f*/
-        Dialog::DrawBackground((Dialog *)hDlg); /*0x5de634*/
+        Dialog::DrawBackground((HWND)((Dialog *)hDlg)); /*0x5de634*/
         if ( g_UIControlState ) /*0x5de641*/
           ((Skirmish *)(g_UIControlState))->RenderPreview(hDlg); /*0x5de644*/
-        if ( (uint8_t)LoadScreen::IsActive((LoadScreen *)&stru_AC4B30.__pad_EC[828]) ) /*0x5de64e*/
+        if ( (uint8_t)((LoadScreen *)((LoadScreen *)&stru_AC4B30.__pad_EC[828]))->IsActive() ) /*0x5de64e*/
           LoadScreen::Render((int)&stru_AC4B30.__pad_EC[828], lParam, nIDDlgItem, NAN); /*0x5de664*/
         Dialog::StopBink((Dialog *)hDlg); /*0x5de66b*/
         ValidateRect(hDlg, 0); /*0x5de673*/
@@ -483,15 +483,15 @@ LABEL_132:
         if ( !hWnd ) /*0x5de598*/
           return 0; /*0x5de598*/
         GetWindowRect(hDlg, (LPRECT)&v37.DeleteAndZero_field_0x04); /*0x5de5af*/
-        StringCSF = &g_TypeClass_DefaultString; /*0x5de5c3*/
+        StringCSF = (wchar_t *)(&g_TypeClass_DefaultString); /*0x5de5c3*/
         v30.y = HIWORD(lParam) - v37.DeleteAndZero_field_0x08; /*0x5de5c8*/
         v30.x = (uint16_t)lParam - v37.DeleteAndZero_field_0x04; /*0x5de5c9*/
         v5 = ChildWindowFromPointEx(hDlg, v30, 1u); /*0x5de5cb*/
         if ( v5 ) /*0x5de5d3*/
         {
-          v6 = DlgSkirmishMenuProc(hDlg, v5); /*0x5de5d9*/
+          v6 = (char *)(DlgSkirmishMenuProc(hDlg, v5)); /*0x5de5d9*/
           if ( v6 ) /*0x5de5e0*/
-            StringCSF = GetStringCSF((wchar_t *)v6, 0, g_Str_File_netdlg2_cpp, 2857); /*0x5de5f5*/
+            StringCSF = GetStringCSF((wchar_t *)v6, 0,(const char *)(g_Str_File_netdlg2_cpp), 2857); /*0x5de5f5*/
         }
         SendMessageA(hWnd, 0x4B2u, 0, (LPARAM)StringCSF); /*0x5de604*/
         result = 0; /*0x5de60d*/

@@ -122,7 +122,7 @@ LABEL_19:
     {
       v11 = 65 * v9++; /*0x626e7d*/
       v12 = (Flag *)(*(unsigned int *)(v10 + 4) + 4 * v11); /*0x626e80*/
-      if ( !(uint8_t)Flag::IsZero(v12) ) /*0x626e85*/
+      if ( !(uint8_t)((Flag *)(v12))->IsZero() ) /*0x626e85*/
         break; /*0x626e85*/
       if ( v9 >= *(unsigned int *)(v10 + 16) ) /*0x626e91*/
         goto LABEL_19; /*0x626e91*/
@@ -171,7 +171,7 @@ LABEL_36:
             {
               v24 = 65 * v9++; /*0x626f8d*/
               v25 = (Flag *)(*(unsigned int *)(v23 + 4) + 4 * v24); /*0x626f90*/
-              if ( !(uint8_t)Flag::IsZero(v25) ) /*0x626f95*/
+              if ( !(uint8_t)((Flag *)(v25))->IsZero() ) /*0x626f95*/
                 break; /*0x626f95*/
               if ( v9 >= *(unsigned int *)(v23 + 16) ) /*0x626fa1*/
               {
@@ -204,7 +204,7 @@ void FileSystem::InitPipShapes()
   if ( !FileSystem_PIPBRD_SHP ) /*0x5f76ba*/
   {
     RawFileClass::Construct(v0, (int)aPipbrdShp); /*0x5f76c5*/
-    FileSystem_PIPBRD_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f76da*/
+    FileSystem_PIPBRD_SHP = (int)((CCFileClass *)(v0))->ReadEntireFile(); /*0x5f76da*/
     byte_AC1488 = FileSystem_PIPBRD_SHP != 0; /*0x5f76df*/
     if ( !FileSystem_PIPBRD_SHP ) /*0x5f76e5*/
       FileSystem_PIPBRD_SHP = (int)(SearchMIXFile((char *)(aPipbrdShp), 0)); /*0x5f76f3*/
@@ -213,7 +213,7 @@ void FileSystem::InitPipShapes()
   if ( !FileSystem_PIPS_SHP ) /*0x5f7708*/
   {
     RawFileClass::Construct(v0, (int)aPipsShp); /*0x5f7713*/
-    FileSystem_PIPS_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7728*/
+    FileSystem_PIPS_SHP = (int)((CCFileClass *)(v0))->ReadEntireFile(); /*0x5f7728*/
     byte_AC1489 = FileSystem_PIPS_SHP != 0; /*0x5f772d*/
     if ( !FileSystem_PIPS_SHP ) /*0x5f7733*/
       FileSystem_PIPS_SHP = (int)(SearchMIXFile((char *)(aPipsShp), 0)); /*0x5f7741*/
@@ -222,7 +222,7 @@ void FileSystem::InitPipShapes()
   if ( !FileSystem_PIPS2_SHP ) /*0x5f7756*/
   {
     RawFileClass::Construct(v0, (int)aPips2Shp); /*0x5f7761*/
-    FileSystem_PIPS2_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7776*/
+    FileSystem_PIPS2_SHP = (int)((CCFileClass *)(v0))->ReadEntireFile(); /*0x5f7776*/
     byte_AC148A = FileSystem_PIPS2_SHP != 0; /*0x5f777b*/
     if ( !FileSystem_PIPS2_SHP ) /*0x5f7781*/
       FileSystem_PIPS2_SHP = (int)(SearchMIXFile((char *)(aPips2Shp), 0)); /*0x5f778f*/
@@ -231,7 +231,7 @@ void FileSystem::InitPipShapes()
   if ( !FileSystem_TALKBUBL_SHP ) /*0x5f77a4*/
   {
     RawFileClass::Construct(v0, (int)aTalkbublShp); /*0x5f77af*/
-    FileSystem_TALKBUBL_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f77c4*/
+    FileSystem_TALKBUBL_SHP = (int)((CCFileClass *)(v0))->ReadEntireFile(); /*0x5f77c4*/
     byte_AC148B = FileSystem_TALKBUBL_SHP != 0; /*0x5f77c9*/
     if ( !FileSystem_TALKBUBL_SHP ) /*0x5f77cf*/
       FileSystem_TALKBUBL_SHP = (int)(SearchMIXFile((char *)(aTalkbublShp), 0)); /*0x5f77dd*/

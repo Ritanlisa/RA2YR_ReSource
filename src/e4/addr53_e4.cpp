@@ -79,7 +79,7 @@ MixFileClass * * sub_530000()
         v2 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x53003d*/
         if ( v2 ) /*0x530047*/
         {
-          v3 = (unsigned int *)(MixFileClass::FromFile(v2, FindFileData.cFileName, (int)dword_886980));
+          v3 = (unsigned int *)(((MixFileClass *)(v2))->FromFile(FindFileData.cFileName, (int)dword_886980));
           if ( v3 ) /*0x53005e*/
           {
             if ( g_MixFilePool_Count < g_MixFilePool_Capacity /*0x530097*/
@@ -111,7 +111,7 @@ MixFileClass * * sub_530000()
         v6 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5300f9*/
         if ( v6 ) /*0x530103*/
         {
-          v7 = (unsigned int *)(MixFileClass::FromFile(v6, FindFileData.cFileName, (int)dword_886980));
+          v7 = (unsigned int *)(((MixFileClass *)(v6))->FromFile(FindFileData.cFileName, (int)dword_886980));
           if ( v7 ) /*0x53011a*/
           {
             if ( g_MixFilePool_Count < g_MixFilePool_Capacity /*0x530153*/
@@ -182,7 +182,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
   v31 = 0; /*0x5312c7*/
   if ( (uint8_t)((CCFileClass *)(0))->Open() ) /*0x5312cb*/
   {
-    v4 = (char *)CCFileClass::ReadEntireFile(v39); /*0x5312e5*/
+    v4 = (char *)((CCFileClass *)(v39))->ReadEntireFile(); /*0x5312e5*/
     CCFileClass::Reset(v39); /*0x5312e7*/
     for ( i = 0; i < 256; ++i ) /*0x5312ec*/
     {
@@ -228,7 +228,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v9 = v3[2]; /*0x5313cf*/
     v32[0] = (Rect.right - Rect.left - v3[1]) / 2; /*0x5313d5*/
     v32[1] = (Rect.bottom - Rect.top - v9) / 2; /*0x5313e5*/
-    DrawToSurfaceSHP(g_DSurface_Hidden, (int)v31,(gamemd::ConvertClass *)((int)v3), 0,(gamemd::ConvertClass *)(v32),(gamemd::ConvertClass *)(v35), 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x53140e*/
+    DrawToSurfaceSHP(g_DSurface_Hidden, (int)v31,(gamemd::ConvertClass *)((int)v3), 0,(gamemd::ConvertClass *)(v32),(gamemd::ConvertClass *)(v35), 0, 0, 0, 0,(gamemd::ConvertClass *)(1000), 0, 0, 0, 0, 0); /*0x53140e*/
   }
   v10 = (int)(GetStringCSF((wchar_t *)(aTxtCopyright),(unsigned int *)((int)g_Str_File_Init_CPP),(const char *)(4930)));
   v11 = (int)(TextRenderer::GetInstance((void *)(22)));
@@ -239,7 +239,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v12 = (int)(Text_MeasureWidth(v10, 0, unsigned int a2));
     v29 = (int)(v36 - v12 - 10);
   }
-  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v10,(gamemd::ObjectClass *)(g_DSurface_Hidden),(gamemd::ConvertClass *)((int)v35), (int)&v29, 0xFFFF, 0, 22, a2); /*0x531485*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v10,(gamemd::ObjectClass *)(g_DSurface_Hidden),(gamemd::ConvertClass *)((int)v35), (int)&v29, 0xFFFF, 0, 22,(gamemd::CampaignScore *)(a2)); /*0x531485*/
   v13 = (int)(GetStringCSF((wchar_t *)(aGuiWwbrand),(unsigned int *)((int)g_Str_File_Init_CPP),(const char *)(4941))); /*0x53149e*/
   v13 = v13; /*0x5314a5*/
   if ( v11 ) /*0x5314a7*/
@@ -248,20 +248,20 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v29 = (size_t)(v36 - v15 - 10);
     v30 += v11->q01C + 3; /*0x5314ca*/
   }
-  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v13,(gamemd::ObjectClass *)(g_DSurface_Hidden),(gamemd::ConvertClass *)((int)v35), (int)&v29, 0xFFFF, 0, 22, v22); /*0x5314ee*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v13,(gamemd::ObjectClass *)(g_DSurface_Hidden),(gamemd::ConvertClass *)((int)v35), (int)&v29, 0xFFFF, 0, 22,(gamemd::CampaignScore *)(v22)); /*0x5314ee*/
   v16 = (size_t)(GetStringCSF((wchar_t *)(aGuiLoadingex),(unsigned int *)((int)g_Str_File_Init_CPP),(const char *)(4951))); /*0x531507*/
   v29 = 10; /*0x53152c*/
   v30 = 10; /*0x531530*/
-  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v16,(gamemd::ObjectClass *)(g_DSurface_Hidden),(gamemd::ConvertClass *)((int)v35), (int)&v29, 0xFFFF, 0, 22, v23); /*0x531534*/
-  v17 = (size_t)(GetStringCSF((wchar_t *)(aGuiTrademarkto), (int)g_Str_File_Init_CPP, 4958)); /*0x53154d*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v16,(gamemd::ObjectClass *)(g_DSurface_Hidden),(gamemd::ConvertClass *)((int)v35), (int)&v29, 0xFFFF, 0, 22,(gamemd::CampaignScore *)(v23)); /*0x531534*/
+  v17 = (size_t)(GetStringCSF((wchar_t *)(aGuiTrademarkto),(unsigned int *)((int)g_Str_File_Init_CPP), 4958)); /*0x53154d*/
   v29 = 10; /*0x531556*/
   v30 = v37 - 40; /*0x531565*/
-  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v17,(gamemd::ObjectClass *)(g_DSurface_Hidden),(gamemd::ConvertClass *)((int)v35), (int)&v29, 0xFFFF, 0, 22, v24); /*0x531581*/
-  v18 = (size_t)(GetStringCSF((wchar_t *)(aGuiTrademarkbo), (int)g_Str_File_Init_CPP, 4965)); /*0x53159a*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v17,(gamemd::ObjectClass *)(g_DSurface_Hidden),(gamemd::ConvertClass *)((int)v35), (int)&v29, 0xFFFF, 0, 22,(gamemd::CampaignScore *)(v24)); /*0x531581*/
+  v18 = (size_t)(GetStringCSF((wchar_t *)(aGuiTrademarkbo),(unsigned int *)((int)g_Str_File_Init_CPP), 4965)); /*0x53159a*/
   v29 = 10; /*0x53159f*/
   v30 += v11->q01C + 3; /*0x5315bb*/
-  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v18,(gamemd::ObjectClass *)(g_DSurface_Hidden),(gamemd::ConvertClass *)((int)v35), (int)&v29, 0xFFFF, 0, 22, v25); /*0x5315d2*/
-  Frame::Present((void *)(g_DSurface_Hidden),(void *)(10), (int)v4, v13, 0, v26, a3, a1); /*0x5315e4*/
+  TextRenderer::Printf((gamemd::ConvertClass *)((int)v32), v18,(gamemd::ObjectClass *)(g_DSurface_Hidden),(gamemd::ConvertClass *)((int)v35), (int)&v29, 0xFFFF, 0, 22,(gamemd::CampaignScore *)(v25)); /*0x5315d2*/
+  Frame::Present((void *)(g_DSurface_Hidden),(void *)(10),(void *)((int)v4), v13, 0, v26, a3, a1); /*0x5315e4*/
     *(unsigned long long *)&dword_A8ED54[653] = v20 + 5000;
   if ( v4 ) /*0x531603*/
     RA2_OPDEL(v4); /*0x531606*/
@@ -277,7 +277,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
   ((Vector *)(v40))->Clear(); /*0x531652*/
   v39[0] = (unsigned int)&off_7E1668; /*0x53165b*/
 // 0x431b80
-  return BufferIOFileClass::Dtor(v39); /*0x531668*/
+  return ((BufferIOFileClass *)(v39))->Dtor(); /*0x531668*/
 }
 }
 // 0x531680
@@ -342,7 +342,7 @@ char BulkData_Initialize()
     v9 = 0; /*0x5317a8*/
     ((Vector *)((int)v8))->Clear(); /*0x5317ac*/
     *(unsigned int *)v7.CDFileClass = (unsigned int)(&off_7E1668); /*0x5317b5*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x5317bd*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v7))->Dtor(); /*0x5317bd*/
     return 0; /*0x5317cb*/
   }
   ((CCFileClass *)(&v10))->Construct(aDpodHva); /*0x5317dd*/
@@ -361,19 +361,19 @@ char BulkData_Initialize()
     v12 = 0; /*0x531821*/
     ((Vector *)((int)v11))->Clear(); /*0x531828*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x531831*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531839*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x531839*/
     goto LABEL_12; /*0x53183e*/
   }
   *(unsigned int *)v10.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x531852*/
   v12 = (void **)((unsigned int)(0)); /*0x53185a*/
   ((Vector *)((int)v11))->Clear(); /*0x531861*/
   *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x53186a*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x531872*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x531872*/
   *(unsigned int *)v7.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x53187b*/
   v9 = (void **)((unsigned int)(0)); /*0x531883*/
   ((Vector *)((int)v8))->Clear(); /*0x531887*/
   *(unsigned int *)v7.CDFileClass = (unsigned int)(&off_7E1668); /*0x531890*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x531898*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v7))->Dtor(); /*0x531898*/
   return 1; /*0x5317c4*/
 }
 }
@@ -1896,7 +1896,7 @@ void TheaterClass_LoadMIX(int a1)
   wsprintfA(v35, "%sMD.MIX", v3); /*0x534a3a*/
   Debug::Log(); /*0x534a48*/
   *((unsigned int *)dword_A8B230 + 1174) = a1; /*0x534a5d*/
-  Multiplayer::ShowProgress(dword_A8B238, 8); /*0x534a63*/
+  ((Multiplayer *)(dword_A8B238))->ShowProgress(8); /*0x534a63*/
   if ( *((unsigned int *)dword_A8B230 + 1174) != dword_822CF8 ) /*0x534a7a*/
   {
     if ( dword_884E0C ) /*0x534a8a*/
@@ -1906,7 +1906,7 @@ void TheaterClass_LoadMIX(int a1)
     {
       v4 = RA2_OPNEW(0x28u); /*0x534aa8*/
       if ( v4 ) /*0x534ab2*/
-        v5 = MixFileClass::FromFile(v4, v35, (int)&dword_886980); /*0x534ac0*/
+        v5 = ((MixFileClass *)(v4))->FromFile(v35, (int)&dword_886980); /*0x534ac0*/
       else
         v5 = 0; /*0x534ac7*/
       dword_884E0C = (int)v5; /*0x534acc*/
@@ -1916,35 +1916,35 @@ void TheaterClass_LoadMIX(int a1)
       (**(void (***)(int, int))dword_884E08)(dword_884E08, 1); /*0x534ae4*/
     v6 = RA2_OPNEW(0x28u); /*0x534ae8*/
     if ( v6 ) /*0x534af2*/
-      dword_884E08 = (int)MixFileClass::FromFile(v6, Source, (int)&dword_886980); /*0x534b05*/
+      dword_884E08 = (int)((MixFileClass *)(v6))->FromFile(Source, (int)&dword_886980); /*0x534b05*/
     else
       dword_884E08 = 0; /*0x534b0c*/
     if ( dword_884E10 ) /*0x534b1a*/
       (**(void (***)(int, int))dword_884E10)(dword_884E10, 1); /*0x534b20*/
     v7 = RA2_OPNEW(0x28u); /*0x534b24*/
     if ( v7 ) /*0x534b2e*/
-      v8 = MixFileClass::FromFile(v7, v36, (int)&dword_886980); /*0x534b3c*/
+      v8 = ((MixFileClass *)(v7))->FromFile(v36, (int)&dword_886980); /*0x534b3c*/
     else
       v8 = 0; /*0x534b43*/
     dword_884E10 = (int)v8; /*0x534b48*/
     ReturnTrue(0); /*0x534b4d*/
     ReturnTrue(0); /*0x534b59*/
-    Multiplayer::ShowProgress(dword_A8B238, 6); /*0x534b65*/
+    ((Multiplayer *)(dword_A8B238))->ShowProgress(6); /*0x534b65*/
     if ( dword_884E20 ) /*0x534b72*/
       (**(void (***)(int, int))dword_884E20)(dword_884E20, 1); /*0x534b78*/
     v9 = RA2_OPNEW(0x28u); /*0x534b7c*/
     if ( v9 ) /*0x534b86*/
-      dword_884E20 = (int)MixFileClass::FromFile(v9, v37, (int)&dword_886980); /*0x534b99*/
+      dword_884E20 = (int)((MixFileClass *)(v9))->FromFile(v37, (int)&dword_886980); /*0x534b99*/
     else
       dword_884E20 = 0; /*0x534ba0*/
     if ( dword_884E1C ) /*0x534bae*/
       (**(void (***)(int, int))dword_884E1C)(dword_884E1C, 1); /*0x534bb4*/
     v10 = RA2_OPNEW(0x28u); /*0x534bb8*/
     if ( v10 ) /*0x534bc2*/
-      dword_884E1C = (int)MixFileClass::FromFile(v10, v38, (int)&dword_886980); /*0x534bd5*/
+      dword_884E1C = (int)((MixFileClass *)(v10))->FromFile(v38, (int)&dword_886980); /*0x534bd5*/
     else
       dword_884E1C = 0; /*0x534bdc*/
-    Multiplayer::ShowProgress(dword_A8B238, 12); /*0x534be9*/
+    ((Multiplayer *)(dword_A8B238))->ShowProgress(12); /*0x534be9*/
     wsprintfA(Source, "%s.PAL", v3); /*0x534bf9*/
     v11 = (unsigned char *)SearchMIXFile(Source, 0); /*0x534c04*/
     if ( v11 ) /*0x534c0b*/
@@ -2003,14 +2003,14 @@ void TheaterClass_LoadMIX(int a1)
         v28 = 25; /*0x534d8b*/
       if ( v28 != v26 ) /*0x534d92*/
       {
-        Multiplayer::ShowProgress(dword_A8B238, v28); /*0x534d9a*/
+        ((Multiplayer *)(dword_A8B238))->ShowProgress(v28); /*0x534d9a*/
         v26 = v28; /*0x534d9f*/
       }
       Event::Dispatch(); /*0x534da1*/
     }
     FileSystem::InitExtensionState(a1); /*0x534db4*/
     LoadTheaterClassMIX_Load_717840(); /*0x534db9*/
-    Multiplayer::ShowProgress(dword_A8B238, 25); /*0x534dc5*/
+    ((Multiplayer *)(dword_A8B238))->ShowProgress(25); /*0x534dc5*/
   }
 }
 }
@@ -2288,7 +2288,7 @@ char sub_538F20(int a1, int a2, char * Source)
     if ( Source ) /*0x538f50*/
     {
       CCFileClass::Construct(&v20, Source); /*0x538f57*/
-      if ( (uint8_t)CCFileClass::Open(&v20, 0) ) /*0x538f62*/
+      if ( (uint8_t)((CCFileClass *)(&v20))->Open(0) ) /*0x538f62*/
       {
         FileClass::Load(&v20, (const CHAR *)1); /*0x538f71*/
         CCFileClass::Read(&v20, &byte_A8F91C, 0x10000); /*0x538f84*/
@@ -2299,7 +2299,7 @@ char sub_538F20(int a1, int a2, char * Source)
       v22 = 0; /*0x538fa5*/
       ((Vector *)((int)v21))->Clear(); /*0x538fad*/
       v20.FileClass = (FileClass)&off_7E1668; /*0x538fb6*/
-      BufferIOFileClass::Dtor(&v20); /*0x538fba*/
+      ((BufferIOFileClass *)(&v20))->Dtor(); /*0x538fba*/
     }
     if ( byte_A9F91C ) /*0x538fc6*/
       sub_538D40(v16); /*0x538fc8*/
@@ -2307,7 +2307,7 @@ char sub_538F20(int a1, int a2, char * Source)
   if ( Source ) /*0x538fcf*/
   {
     CCFileClass::Construct(&v20, Source); /*0x538fd6*/
-    if ( !(uint8_t)CCFileClass::Open(&v20, 0) ) /*0x538fe1*/
+    if ( !(uint8_t)((CCFileClass *)(&v20))->Open(0) ) /*0x538fe1*/
     {
       FileClass::Load(&v20, (const CHAR *)2); /*0x538ff0*/
       FileClass::Write(&v20, &byte_A8F91C, 0x10000u); /*0x539003*/
@@ -2317,7 +2317,7 @@ char sub_538F20(int a1, int a2, char * Source)
     v22 = 0; /*0x53901d*/
     ((Vector *)((int)v21))->Clear(); /*0x539025*/
     v20.FileClass = (FileClass)&off_7E1668; /*0x53902e*/
-    BufferIOFileClass::Dtor(&v20); /*0x539032*/
+    ((BufferIOFileClass *)(&v20))->Dtor(); /*0x539032*/
   }
   DDraw::WaitForIdle((DDraw *)v16); /*0x539037*/
   v5 = (int *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a1 + 92))(a1, 0, 0); /*0x539049*/
@@ -3256,7 +3256,7 @@ int InitializeAudioStreaming(int a1, int a2)
   dword_AA0390 = 0; /*0x53de94*/
   qword_AA0388 = 100; /*0x53de9a*/
   dword_AA037C = 0; /*0x53deaa*/
-  AudioStream::Reset(stru_AA0398); /*0x53deb5*/
+  ((AudioStream *)(stru_AA0398))->Reset(); /*0x53deb5*/
   CoordBounds::Constructor(stru_AA0398, qword_AA0388, IDA_SHIDWORD(qword_AA0388)); /*0x53decc*/
   AudioStream::ResetChannel(4 * qword_AA0388, (uint64_t)qword_AA0388 >> 30); /*0x53deed*/
   AudioStream::ResetChannel2(4 * qword_AA0388, (uint64_t)qword_AA0388 >> 30); /*0x53df0f*/
@@ -3607,7 +3607,7 @@ int E4Recv_538C40::sub_538C40(char * Source)
   int v4; // [esp+64h] [ebp-8h]
 
   CCFileClass::Construct(&v2, (char *)Source); /*0x538c48*/
-  if ( (uint8_t)CCFileClass::Open(&v2, 0) ) /*0x538c53*/
+  if ( (uint8_t)((CCFileClass *)(&v2))->Open(0) ) /*0x538c53*/
   {
     FileClass::Load(&v2, (const CHAR *)1); /*0x538c62*/
     CCFileClass::Read(&v2, &byte_A8F91C, 0x10000); /*0x538c75*/
@@ -3618,7 +3618,7 @@ int E4Recv_538C40::sub_538C40(char * Source)
   v4 = 0; /*0x538c96*/
   ((Vector *)((int)v3))->Clear(); /*0x538c9e*/
   v2.FileClass = (FileClass)&off_7E1668; /*0x538ca7*/
-  return BufferIOFileClass::Dtor(&v2); /*0x538cb4*/
+  return ((BufferIOFileClass *)(&v2))->Dtor(); /*0x538cb4*/
 
 }
 } // namespace gamemd
@@ -3633,7 +3633,7 @@ int E4Recv_538CC0::sub_538CC0(char * Source)
   int v4; // [esp+64h] [ebp-8h]
 
   CCFileClass::Construct(&v2, (char *)Source); /*0x538cc8*/
-  if ( !(uint8_t)CCFileClass::Open(&v2, 0) ) /*0x538cd3*/
+  if ( !(uint8_t)((CCFileClass *)(&v2))->Open(0) ) /*0x538cd3*/
   {
     FileClass::Load(&v2, (const CHAR *)2); /*0x538ce2*/
     FileClass::Write(&v2, &byte_A8F91C, 0x10000u); /*0x538cf5*/
@@ -3643,7 +3643,7 @@ int E4Recv_538CC0::sub_538CC0(char * Source)
   v4 = 0; /*0x538d0f*/
   ((Vector *)((int)v3))->Clear(); /*0x538d17*/
   v2.FileClass = (FileClass)&off_7E1668; /*0x538d20*/
-  return BufferIOFileClass::Dtor(&v2); /*0x538d2d*/
+  return ((BufferIOFileClass *)(&v2))->Dtor(); /*0x538d2d*/
 
 }
 } // namespace gamemd

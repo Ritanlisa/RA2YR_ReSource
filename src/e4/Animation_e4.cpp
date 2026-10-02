@@ -294,7 +294,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     this = v22; /*0x770570*/
   }
   String::As  ((String *)((const char *)(&v23)))->Assign(aStartup); 
-  v7 = (char **)(StaticString::Factory(*(StaticString **)v22)); /*0x77061c*/
+  v7 = (char **)(((StaticString *)(*(StaticString **)v22))->Factory()); /*0x77061c*/
   ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v7, (char **)&v23); 
   unknown_libname_73(&a1); /*0x770630*/
   String::As  ((String *)((const char *)((String *)&aP2)))->Assign(&g_INI_DefaultBuffer); 
@@ -333,7 +333,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   DeleteAndZero((ObjectClass *)&((unsigned int *)(v23.m_3))[1]); /*0x770714*/
   DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
   String::As  ((String *)((const char *)(&v23)))->Assign(aTerritoryselec); 
-  v14 = (char **)(StaticString::Factory(*(StaticString **)v22)); /*0x77073b*/
+  v14 = (char **)(((StaticString *)(*(StaticString **)v22))->Factory()); /*0x77073b*/
   ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v14, (char **)&v23); 
   unknown_libname_73(&a1); /*0x77074f*/
   String::As  ((String *)((const char *)((String *)&aP2)))->Assign(&g_INI_DefaultBuffer); 

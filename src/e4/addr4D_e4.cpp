@@ -99,7 +99,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   }
   if ( aP0->q030 == 6 ) /*0x4d17d0*/
   {
-    v10 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v17); /*0x4d17dc*/
+    v10 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v17); /*0x4d17dc*/
     v11 = ((Cell *)(v10))->IsBridge(); /*0x4d17e3*/
     if ( v11 ) /*0x4d17ea*/
     {
@@ -174,7 +174,7 @@ int sub_4D2370()
         IDA_LOWORD(v9) = v5 + *v4; /*0x4d2408*/
         IDA_HIWORD(v9) = IDA_HIWORD(v5) + v4[1]; /*0x4d240d*/
         v11 = v9; /*0x4d241c*/
-        v6 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&v11); /*0x4d2420*/
+        v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v11); /*0x4d2420*/
         v4 += 2; /*0x4d2436*/
         v6[80] |= 0x400000u; /*0x4d2439*/
       }
@@ -262,7 +262,7 @@ int E4Recv_4DB8A0::sub_4DB8A0()
   v8 = 0; /*0x4db903*/
   if ( !ppv ) /*0x4db90d*/
     goto LABEL_13; /*0x4db90d*/
-  v4 = ((StreamClass *)((StreamClass *)&v8))->Set(&ppv); /*0x4db918*/
+  v4 = ((StreamClass *)((StreamClass *)&v8))->Set((unsigned int *)(&ppv)); /*0x4db918*/
   if ( v4 < 0 && v4 != -2147467262 ) /*0x4db926*/
     WinAPI::Wrapper(v4); /*0x4db929*/
   if ( !v8 ) /*0x4db934*/
@@ -690,7 +690,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
     LOWORD(v9) = LOWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]) + *v3; /*0x4d4ff8*/
     HIWORD(v9) = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
     *(unsigned int *)v10 = v9; /*0x4d500c*/
-    v4 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v10); /*0x4d5010*/
+    v4 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v10); /*0x4d5010*/
     v5 = ((Cell *)(v4))->IsBridge(); /*0x4d5017*/
     v6 = v5; /*0x4d501c*/
     if ( v5 ) /*0x4d5020*/
@@ -737,7 +737,7 @@ void E4Recv_4DF280::sub_4DF280()
     LOWORD(v4) = *v3 / 256; /*0x4df2aa*/
     HIWORD(v4) = v3[1] / 256; /*0x4df2c3*/
     *(unsigned int *)v5 = v4; /*0x4df2d1*/
-    *((unsigned int *)this + 370) = (unsigned int)(CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v5)); /*0x4df2da*/
+    *((unsigned int *)this + 370) = (unsigned int)(((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v5)); /*0x4df2da*/
   }
   else
   {

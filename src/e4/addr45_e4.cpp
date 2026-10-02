@@ -383,7 +383,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
   v49[0] = v40 - v12; /*0x456a4c*/
   v49[2] = 2 * v12; /*0x456a53*/
   v49[3] = v12; /*0x456a5a*/
-  v13 = (double *)ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(v49), &DSurface_ViewBounds, 0, 0); /*0x456a66*/
+  v13 = (double *)ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(v49),(const RectangleStruct *)(&DSurface_ViewBounds), 0, 0); /*0x456a66*/
   v48 = *v13; /*0x456a6a*/
   v14 = *((unsigned int *)v13 + 2); /*0x456a75*/
   if ( v14 > 0 && *((int *)v13 + 3) > 0 ) /*0x456a85*/
@@ -1152,7 +1152,7 @@ char E4Recv_457A10::sub_457A10()
     LOWORD(v5) = v2 + *i; /*0x457a59*/
     HIWORD(v5) = HIWORD(v2) + i[1]; /*0x457a66*/
     *(unsigned int *)v6 = v5; /*0x457a6f*/
-    if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v6) + 80) & 0x400000) == 0 ) /*0x457a87*/
+    if ( (*((unsigned int *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v6) + 80) & 0x400000) == 0 ) /*0x457a87*/
       return 0; /*0x457a96*/
   }
   return 1; /*0x457a8e*/

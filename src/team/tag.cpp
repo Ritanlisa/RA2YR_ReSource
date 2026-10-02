@@ -201,7 +201,7 @@ int TagClass::AddTrigger(TriggerClass* trigger)
 {
   trigger->nextTrigger = *(&this->vtable20); /*0x6e55c7*/
   *(&this->vtable20) = (int)(trigger); /*0x6e55ca*/
-  return trigger; /*0x6e55cd*/
+  return (int)(trigger); /*0x6e55cd*/
 }
 bool TagClass::RemoveTrigger(TriggerClass* trigger)
 {

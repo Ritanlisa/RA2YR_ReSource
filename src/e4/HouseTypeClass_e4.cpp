@@ -97,7 +97,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   }
   BYTE1(this->veteranUnitsCount) = 0; /*0x5117ad*/
   this->veteranUnits[0] = 0; /*0x5117b3*/
-  return ((AbstractTypeClass *)((AbstractTypeClass *)this))->Dtor(); /*0x5117be*/
+  return (gamemd::AbstractClass *)(((AbstractTypeClass *)((AbstractTypeClass *)this))->Dtor()); /*0x5117be*/
 
 }
 }
@@ -559,13 +559,13 @@ AbstractClass * * HouseTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::TimerProcess(this->arrayIndex2); /*0x512188*/
   Power::TimerProcess(this->sideIndex); /*0x512196*/
   Power::TimerProcess(this->colorSchemeIndex); /*0x5121a4*/
-  Checksummer::Add_double((Checksummer *)a2, this->firepowerMult[0], this->firepowerMult[1]); /*0x5121b9*/
-  Checksummer::Add_double((Checksummer *)a2, this->groundspeedMult[0], this->groundspeedMult[1]); /*0x5121ce*/
-  Checksummer::Add_double((Checksummer *)a2, this->airspeedMult[0], this->airspeedMult[1]); /*0x5121e3*/
-  Checksummer::Add_double((Checksummer *)a2, this->armorMult[0], this->armorMult[1]); /*0x5121f8*/
-  Checksummer::Add_double((Checksummer *)a2, this->rofMult[0], this->rofMult[1]); /*0x51220d*/
-  Checksummer::Add_double((Checksummer *)a2, this->costMult[0], this->costMult[1]); /*0x512222*/
-  Checksummer::Add_double((Checksummer *)a2, this->buildtimeMult[0], this->buildtimeMult[1]); /*0x512237*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->firepowerMult[0], this->firepowerMult[1]); /*0x5121b9*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->groundspeedMult[0], this->groundspeedMult[1]); /*0x5121ce*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->airspeedMult[0], this->airspeedMult[1]); /*0x5121e3*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->armorMult[0], this->armorMult[1]); /*0x5121f8*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->rofMult[0], this->rofMult[1]); /*0x51220d*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->costMult[0], this->costMult[1]); /*0x512222*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->buildtimeMult[0], this->buildtimeMult[1]); /*0x512237*/
   Checksummer::Add_Buffer((Checksummer *)a2, (uint8_t *)&this->__pad_16D[51], strlen(&this->__pad_16D[51])); /*0x512252*/
   LOBYTE(v3) = this->__pad_16D[55]; /*0x512257*/
   v4 = ((Power *)((Power *)a2))->FinalizeDrain(v3); /*0x512260*/

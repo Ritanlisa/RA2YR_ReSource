@@ -74,7 +74,7 @@ int InfantryClass::PerFrameUpdate() {
     *(unsigned int *)(v2 + 764) = v13; /*0x517d7a*/
     *(unsigned char *)(v2 + 978) = *((unsigned char *)result + 3280); /*0x517d86*/
   }
-  return result; /*0x517d8c*/
+  return (int)(result); /*0x517d8c*/
 }
 }
 // 0x413D20
@@ -145,7 +145,7 @@ int AircraftClass::Construct(int a1, void* a2) {
   {
     v9 = g_BuildingLoadQueue_Capacity; /*0x413eb1*/
     if ( g_BuildingLoadQueue_Capacity < 0 ) /*0x413eb5*/
-      return this; /*0x413eb5*/
+      return (int)(this); /*0x413eb5*/
   }
   else
   {
@@ -169,7 +169,7 @@ int AircraftClass::Construct(int a1, void* a2) {
     g_BuildingLoadQueue_Dirty = 0; /*0x413f5c*/
     ++g_BuildingLoadQueue_Count; /*0x413f63*/
   }
-  return this; /*0x413f6a*/
+  return (int)(this); /*0x413f6a*/
 }
 }
 // 0x435820

@@ -70,7 +70,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       *(unsigned long long *)a1->HeadToCoord = v8; /*0x6a03d0*/
       v11 = *((unsigned int *)v5 + 3); /*0x6a03dd*/
       v9 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v12)); /*0x6a03e4*/
-      if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(*((unsigned int *)v5 + 3) + 129) ) /*0x6a03f7*/
+      if ( !(uint8_t)((CrateClass *)((CrateClass *)v9))->ProcessPickup(v11) || *(unsigned char *)(*((unsigned int *)v5 + 3) + 129) ) /*0x6a03f7*/
       {
         LOBYTE(v4) = *(unsigned char *)(*((unsigned int *)v5 + 3) + 144); /*0x6a043d*/
         if ( (unsigned char)v4 ) /*0x6a0445*/
@@ -152,7 +152,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
             v14 = (int *)(*(unsigned int *)(v13 + 4));
             v20[0] = (int)((int *)(*(unsigned int *)v13));
             v20[1] = (int)((int *)(v14));
-            v15 = (int *)(((WalkLocomotion *)((gamemd::ObjectClass *)((WalkLocomotion *)&v4[-1].Piggybackee)))->TransformCoords(v21,(IUnknown *)(v20), (int *)&a1));
+            v15 = (int *)(((WalkLocomotion *)((gamemd::ObjectClass *)((WalkLocomotion *)&v4[-1].Piggybackee)))->TransformCoords(v21,(int *)((IUnknown *)(v20)), (int *)&a1));
             v16 = *v15; /*0x6a4016*/
             v17 = v15[1]; /*0x6a4018*/
             location = (int *)(((unsigned int *)v4)[0]); /*0x6a401e*/
@@ -269,7 +269,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     }
     else
     {
-      Function::Method_4B4D60((int *)&pPStm); /*0x75c768*/
+      ((Function *)((int *)&pPStm))->Method_4B4D60(); /*0x75c768*/
       pPStm = 0; /*0x75c76d*/
     }
     if ( v8 < 0 && v8 != -2147467262 ) /*0x75c797*/

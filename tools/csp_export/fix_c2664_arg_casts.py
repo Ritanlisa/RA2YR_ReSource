@@ -179,6 +179,9 @@ def main():
         src, dst = pm.group(2), pm.group(3)
         if BAD.search(src) or BAD.search(dst):
             continue
+        # G42.11: comma in dst/src = spliced-param corruption family
+        if ',' in dst or ',' in src:
+            continue
         if not dst_castable(dst):
             stat('skip-uncastable-dst') 
             continue

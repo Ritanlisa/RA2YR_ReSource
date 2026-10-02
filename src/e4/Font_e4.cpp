@@ -110,8 +110,8 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   v11 = (int)((uint16_t *)((int)((unsigned short *)(0))));
   if ( aP0 && (v12 = aP2) != 0 ) /*0x434ceb*/
   {
-    FontRenderer::InitContext((unsigned int *)aP0, (int *)aP1); /*0x434cf8*/
-    Field::Int_Set((unsigned int *)aP0, aP1a); /*0x434d04*/
+    ((FontRenderer *)((unsigned int *)aP0))->InitContext((int *)aP1); /*0x434cf8*/
+    ((Field *)((unsigned int *)aP0))->Int_Set(aP1a); /*0x434d04*/
     v13 = 0; /*0x434d0f*/
     v14 = 0; /*0x434d11*/
     v15 = *(uint16_t *)(aP0 + 36); /*0x434d13*/
@@ -296,7 +296,7 @@ LABEL_50:
           if ( aP6 && v51 >= (int)(aP6) ) /*0x435127*/
           {
 LABEL_57:
-            result = BufferIO::Cleanup(v24, aP1); /*0x43514d*/
+            result = ((BufferIO *)(v24))->Cleanup(aP1); /*0x43514d*/
             LOBYTE(result) = 1; /*0x43515a*/
             return result; /*0x435160*/
           }
@@ -374,7 +374,7 @@ LABEL_59:
       }
     }
 LABEL_73:
-    result = BufferIO::Cleanup((unsigned int *)aP0, aP1); /*0x4352ed*/
+    result = ((BufferIO *)((unsigned int *)aP0))->Cleanup(aP1); /*0x4352ed*/
     LOBYTE(result) = 1; /*0x4352fe*/
   }
   else

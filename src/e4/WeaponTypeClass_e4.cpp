@@ -91,7 +91,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
 
   int v3; // eax
 
-  ((AbstractTypeClass *)((int *)this))->Constructor(aP1); /*0x771c7a*/
+  ((AbstractTypeClass *)((int *)this))->Constructor((char *)(aP1)); /*0x771c7a*/
   this->AmbientDamage = 0; /*0x771c87*/
   this->Burst = 1; /*0x771c8d*/
   this->Projectile = 0; /*0x771c97*/
@@ -367,7 +367,7 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
     for ( i = 0; i < (int)a2; ++i ) /*0x772d4d*/
     {
       (*(void (**)(int *, int *, int, unsigned int))(*v7 + 12))(v7, &a3, 4, 0); /*0x772d5b*/
-      ((DynamicVector *)((DynamicVector *)v5->Anim))->Add_Alt4(&a3); /*0x772d69*/
+      ((DynamicVector *)((DynamicVector *)v5->Anim))->Add_Alt4((unsigned int *)(&a3)); /*0x772d69*/
     }
     if ( Report ) /*0x772d77*/
     {
@@ -414,7 +414,7 @@ void WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a
   int v11; // edx
   int k; // ebx
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a1), a2, (int)a3); /*0x772ec1*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a1),(gamemd::ObjectTypeClass *)(a2), (int)a3); /*0x772ec1*/
   if ( result >= 0 ) /*0x772ec8*/
   {
     v7 = (int)(*a2); /*0x772ed4*/

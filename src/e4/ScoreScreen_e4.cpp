@@ -52,7 +52,7 @@ _DWORD * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
   if ( !v3 ) /*0x690a57*/
   {
     CCFileClass::Construct(&v5,(void *)(g_Str_File_FULLFNT3_SHP)); /*0x690a62*/
-    this->ScoreScreen_field_0x0C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690a74*/
+    this->ScoreScreen_field_0x0C = (int)((CCFileClass *)(&v5))->ReadEntireFile(); /*0x690a74*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
     ((Debug *)this)->Log(); /*0x690a85*/
@@ -60,7 +60,7 @@ _DWORD * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
     v7 = 0; /*0x690a99*/
     ((Vector *)((int)v6))->Clear(); /*0x690a9d*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&off_7E1668); /*0x690aa6*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690aae*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v5))->Dtor(); /*0x690aae*/
   }
   this->ScoreScreen_field_0x04 = (unsigned int)(11);
   this->ScoreScreen_field_0x14 = (unsigned int)(aP1);
@@ -93,7 +93,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   if ( !v3 ) /*0x690b27*/
   {
     CCFileClass::Construct(&v5,(void *)(aBigfontShp)); /*0x690b32*/
-    this->ScoreScreen_field_0x0C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690b44*/
+    this->ScoreScreen_field_0x0C = (int)((CCFileClass *)(&v5))->ReadEntireFile(); /*0x690b44*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/
     ((Debug *)this)->Log(); /*0x690b55*/
@@ -101,7 +101,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     v7 = 0; /*0x690b69*/
     ((Vector *)((int)v6))->Clear(); /*0x690b6d*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&off_7E1668); /*0x690b76*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690b7e*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v5))->Dtor(); /*0x690b7e*/
   }
   this->ScoreScreen_field_0x04 = (unsigned int)((unsigned int *)(20));
   this->ScoreScreen_field_0x14 = (unsigned int)((unsigned int *)(a2));
@@ -226,7 +226,7 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
       }
     }
   }
-  return DeleteAndZero((ObjectClass *)&v25); /*0x7714a0*/
+  return (gamemd::DeleteAndZero)(DeleteAndZero((ObjectClass *)&v25)); /*0x7714a0*/
 
 }
 } // namespace gamemd
@@ -348,6 +348,6 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   ((Vector *)((int)v39))->Clear(); /*0x778474*/
   *(unsigned int *)v38.CDFileClass = (unsigned int)(&off_7E1668); /*0x77847d*/
 // 0x431b80
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v38); /*0x77848a*/
+  return ((BufferIOFileClass *)((BufferIOFileClass *)&v38))->Dtor(); /*0x77848a*/
 }
 }

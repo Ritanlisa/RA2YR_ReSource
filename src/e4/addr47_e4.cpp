@@ -83,7 +83,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   int v19; // eax
   DynamicVector v21; // [esp+2Ch] [ebp-A0h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a2,(unsigned char *)(a3), a4, &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
+  if ( INIClass::GetString((INIClass *)a2,(unsigned char *)(a3),(gamemd::INIClass *)(a4), &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v21))->Construct(0, 0); /*0x477121*/
     *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&TypeList_int_vftable); /*0x47712a*/
@@ -188,20 +188,20 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         *(unsigned int *)(*(unsigned int *)&v21.DynamicVector_field_0x1[3] + 4 * v19) = -6; /*0x477380*/
       }
     }
-    DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
+    ((DynamicVectorClass *)(a1))->Copy(&v21); /*0x4773cb*/
     a1->vtable0 = (int)&TypeList_int_vftable; /*0x4773d9*/
     *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&VectorClass_int_vftable); /*0x4773df*/
-    VectorClass::Destroy((int)&v21); /*0x4773e3*/
+    ((VectorClass *)((int)&v21))->Destroy(); /*0x4773e3*/
     a5 = (void*)&VectorClass_int_vftable; /*0x4773ef*/
-    VectorClass::Destroy((int, unsigned int a5)&a5); /*0x4773f6*/
-    return a1; /*0x4773fb*/
+    ((VectorClass *)((int, unsigned int a5)&a5))->Destroy(); /*0x4773f6*/
+    return (gamemd::VectorClass_flat **)(a1); /*0x4773fb*/
   }
   else
   {
-    VectorClass::Copy(a1, &a5); /*0x477413*/
+    ((VectorClass *)(a1))->Copy(&a5); /*0x477413*/
     a5 = (void*)&VectorClass_int_vftable; /*0x47741f*/
-    VectorClass::Destroy((int)&a5); /*0x47742a*/
-    return a1; /*0x47742f*/
+    ((VectorClass *)((int)&a5))->Destroy(); /*0x47742a*/
+    return (gamemd::VectorClass_flat **)(a1); /*0x47742f*/
   }
 }
 }
@@ -341,7 +341,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
   }
   LABEL_17:
   CloseHandle(FileA); /*0x479d49*/
-  return v7; /*0x479be9*/
+  return (gamemd::AbstractClass **)(v7); /*0x479be9*/
 }
 }
 // 0x479D60
@@ -403,7 +403,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
     Sleep(0x1F4u); /*0x479ec6*/
   }
   CloseHandle(FileA); /*0x479ecf*/
-  return 1; /*0x479da5*/
+  return (gamemd::AbstractClass **)(1); /*0x479da5*/
 }
 }
 // 0x479EF0
@@ -465,7 +465,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
     Sleep(0x1F4u); /*0x47a056*/
   }
   CloseHandle(FileA); /*0x47a05f*/
-  return 1; /*0x479f35*/
+  return (gamemd::AbstractClass **)(1); /*0x479f35*/
 }
 }
 // 0x47A080
@@ -480,7 +480,7 @@ AbstractClass * * ObjectClass::sub_47A080(DWORD a2)
 
   v2 = a2 + 1; /*0x47a098*/
   LOBYTE(a2) = a2 + 1; /*0x47a0a3*/
-  FileA = CreateFileA(g_Str_____vwin32, 0, 0, 0, 0, 0x4000000u, 0); /*0x47a0b3*/
+  FileA = CreateFileA((LPCSTR)(g_Str_____vwin32), 0, 0, 0, 0, 0x4000000u, 0); /*0x47a0b3*/
   if ( !(uint8_t)CDROM::LockVolume((int)this, FileA, a2, 0, 0) ) /*0x47a0ba*/
   {
     Debug::Log(); /*0x47a0cf*/
@@ -658,7 +658,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v41) = *p_smudgeTypeIndex + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e157*/
     IDA_HIWORD(v41) = IDA_HIWORD(*p_smudgeTypeIndex) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e166*/
     *(unsigned int *)v48 = v41; /*0x47e16f*/
-    v4 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v48); /*0x47e17d*/
+    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v48); /*0x47e17d*/
   }
   v13 = v4->flags[0]; /*0x47e18f*/
   IDA_BYTE1(v13) &= ~1u; /*0x47e195*/
@@ -691,7 +691,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v42) = v49[0] + v19; /*0x47e232*/
     IDA_HIWORD(v42) = v49[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e241*/
     *(unsigned int *)v49 = v42; /*0x47e24a*/
-    v4 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v49); /*0x47e258*/
+    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v49); /*0x47e258*/
     v18 = a3; /*0x47e25a*/
   }
   v20 = v4->flags[0]; /*0x47e262*/
@@ -721,7 +721,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v43) = v50[0] + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e2fc*/
     IDA_HIWORD(v43) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e305*/
     *(unsigned int *)v50 = v43; /*0x47e314*/
-    mapCoords = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v50); /*0x47e318*/
+    mapCoords = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v50); /*0x47e318*/
     v24 = a3; /*0x47e31d*/
   }
   else
@@ -739,7 +739,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v46) = v50[0] + v29; /*0x47e366*/
     IDA_HIWORD(v46) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v27 + 82]); /*0x47e375*/
     *(unsigned int *)v50 = v46; /*0x47e37e*/
-    v30 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v50); /*0x47e387*/
+    v30 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v50); /*0x47e387*/
     v24 = a3; /*0x47e38c*/
     v28 = (int)v30; /*0x47e390*/
   }
@@ -773,7 +773,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     a4 = *v35; /*0x47e40e*/
     IDA_LOWORD(a3) = IDA_LOWORD(g_DDrawSurfaceManager.scenario[84]) + a4; /*0x47e424*/
     IDA_HIWORD(a3) = IDA_HIWORD(g_DDrawSurfaceManager.scenario[84]) + IDA_HIWORD(a4); /*0x47e429*/
-    result = (int)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a3); /*0x47e43c*/
+    result = (int)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a3); /*0x47e43c*/
     v37 = *(unsigned int *)(result + 320); /*0x47e441*/
     *(unsigned int *)(result + 44) = v47; /*0x47e447*/
     *(unsigned int *)(result + 320) = v8 | v37 & 0xFFFEFFFF; /*0x47e452*/
@@ -870,7 +870,7 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v41) = *p_smudgeTypeIndex + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e587*/
     IDA_HIWORD(v41) = IDA_HIWORD(*p_smudgeTypeIndex) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e596*/
     *(unsigned int *)v48 = v41; /*0x47e59f*/
-    v4 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v48); /*0x47e5ad*/
+    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v48); /*0x47e5ad*/
   }
   v13 = v4->flags[0]; /*0x47e5bf*/
   IDA_BYTE1(v13) &= ~1u; /*0x47e5c5*/
@@ -903,7 +903,7 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v42) = v49[0] + v19; /*0x47e662*/
     IDA_HIWORD(v42) = v49[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e671*/
     *(unsigned int *)v49 = v42; /*0x47e67a*/
-    v4 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v49); /*0x47e688*/
+    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v49); /*0x47e688*/
     v18 = a3; /*0x47e68a*/
   }
   v20 = v4->flags[0]; /*0x47e692*/
@@ -933,7 +933,7 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v43) = v50[0] + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e72c*/
     IDA_HIWORD(v43) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e735*/
     *(unsigned int *)v50 = v43; /*0x47e744*/
-    mapCoords = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v50); /*0x47e748*/
+    mapCoords = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v50); /*0x47e748*/
     v24 = a3; /*0x47e74d*/
   }
   else
@@ -951,7 +951,7 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v46) = v50[0] + v29; /*0x47e796*/
     IDA_HIWORD(v46) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v27 + 82]); /*0x47e7a5*/
     *(unsigned int *)v50 = v46; /*0x47e7ae*/
-    v30 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v50); /*0x47e7b7*/
+    v30 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v50); /*0x47e7b7*/
     v24 = a3; /*0x47e7bc*/
     v28 = (int)v30; /*0x47e7c0*/
   }
@@ -985,7 +985,7 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     a4 = *v35; /*0x47e83e*/
     IDA_LOWORD(a3) = IDA_LOWORD(g_DDrawSurfaceManager.scenario[84]) + a4; /*0x47e854*/
     IDA_HIWORD(a3) = IDA_HIWORD(g_DDrawSurfaceManager.scenario[84]) + IDA_HIWORD(a4); /*0x47e859*/
-    result = (int)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a3); /*0x47e86c*/
+    result = (int)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a3); /*0x47e86c*/
     v37 = *(unsigned int *)(result + 320); /*0x47e871*/
     *(unsigned int *)(result + 44) = v47; /*0x47e877*/
     *(unsigned int *)(result + 320) = v8 | v37 & 0xFFFEFFFF; /*0x47e882*/
@@ -1251,8 +1251,8 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
           v28 = v32 + v14 - v9; /*0x47f362*/
           v30 = v14 + *((unsigned int *)dword_87E8A4 + 10) - v9; /*0x47f373*/
           SubFileMixFileClass = MixFileClass::GetSubFile((char **)dword_89E760, a3); /*0x47f38d*/
-          result = (unsigned int *)((unsigned short *)((StreamClass *)((int)dword_87E8A4))->ReadAndSeek(v14, v12 - dword_886FA4)); /*0x47f397*/
-          v16 = dword_87E8A4; /*0x47f3a5*/
+          result = (unsigned short *)((unsigned int *)((unsigned short *)((StreamClass *)((int)dword_87E8A4))->ReadAndSeek(v14, v12 - dword_886FA4))); /*0x47f397*/
+          v16 = (unsigned int *)(dword_87E8A4); /*0x47f3a5*/
           v41 = (uint8_t *)(v15 + v32 * v13 + SubFileMixFileClass); /*0x47f3b4*/
           if ( (unsigned int)&result[((unsigned int)v35 - v12) * *((unsigned int *)dword_87E8A4 + 10) + 2 + v39 + 0x7FFFFFFF * v14] < *((unsigned int *)dword_87E8A4 + 7) )
           {
@@ -1316,8 +1316,8 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
                       v21 = (uint16_t)*result + v19 - 127; /*0x47f42f*/
                       v20 = v21 <= 0 ? 0 : v21;
                     }
-                    *result = (unsigned int *)(v20); /*0x47f43d*/
-                    v16 = dword_87E8A4; /*0x47f440*/
+                    *result = (unsigned short)((unsigned int *)(v20)); /*0x47f43d*/
+                    v16 = (unsigned int *)(dword_87E8A4); /*0x47f440*/
                   }
                   if ( (unsigned int)++result >= v16[7] ) /*0x47f44e*/
                     result = (unsigned short *)((char *)result - v16[8]); /*0x47f450*/
@@ -1358,7 +1358,7 @@ LRESULT sub_470C40(CampaignScore * aP0, int nIDDlgItem, wchar_t * Format)
   wchar_t Buffer[32]; // [esp+8h] [ebp-40h] BYREF
 
   swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, Format); /*0x470c58*/
-  DlgItem = GetDlgItem(aP0, nIDDlgItem); /*0x470c62*/
+  DlgItem = GetDlgItem((HWND)(aP0), nIDDlgItem); /*0x470c62*/
   return SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x470c7b*/
 }
 } // namespace gamemd
@@ -1830,7 +1830,7 @@ unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
     *((unsigned int *)this + 6) = v3[27]; /*0x4737cd*/
     *((unsigned int *)this + 5) = *(CarryoverClass *)(*(int (**)(CarryoverClass *, unsigned int **))(*(unsigned int *)v3 + 440))(v3, &a2); /*0x4737df*/
   }
-  return this; /*0x4737e4*/
+  return (unsigned int *)(this); /*0x4737e4*/
 
 }
 } // namespace gamemd
@@ -1840,7 +1840,7 @@ namespace gamemd {
 char * sub_473960(unsigned int a1)
 {
   if ( a1 >= 0xB ) /*0x473963*/
-    return g_Str__none_; /*0x47396d*/
+    return (char *)(g_Str__none_); /*0x47396d*/
   else
     return off_81B7CC[2 * a1]; /*0x473965*/
 }

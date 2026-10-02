@@ -551,7 +551,7 @@ LABEL_7:
             v19 = *(unsigned int *)(v12 + 988) + v11; /*0x472245*/
             v16 = 0; /*0x472251*/
             v14 = (int *)(*(int (**)(unsigned int *))(*v13 + 176))(v13); /*0x472264*/
-            LOBYTE(v3) = (unsigned char)(DrawTacticalLaserLine(*v14,(void *)(v14[1]),(void *)(v14[2]),(void *)((int)va), -1 - v21 % 5, 0, 0)); /*0x472282*/
+            LOBYTE(v3) = (unsigned char)(DrawTacticalLaserLine(*v14,(void *)(v14[1]),(void *)(v14[2]),(void *)((int)va),(void *)(-1 - v21 % 5), 0, 0)); /*0x472282*/
           }
         }
       }

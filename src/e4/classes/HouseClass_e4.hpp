@@ -1913,7 +1913,7 @@ struct HouseClass {
     static double GetCurrentOption(...);  // C2597 interim stub
     static double GetMaxBuildLevel(...);  // C2597 interim stub
     static double GetStartCoords(...);  // C2597 interim stub
-    static double IsAllied(...);  // C2597 interim stub
+    int IsAllied(int a1);  // was C2597 interim stub, := truth 0x0x4f9a10
     static double ProcessPowerDrain(...);  // C2597 interim stub
     static double ShouldDisableCameo(...);  // C2597 interim stub
     static double UpdateProduction(...);  // C2597 interim stub
@@ -1921,7 +1921,7 @@ struct HouseClass {
     bool FindType24();  // 0x726fb0
     int HasType26Building();  // 0x726f50
     int HasType25Building();  // 0x726f80
-    int AddPower(int a2);  // 0x4f9950
+    int AddPower(int a1);  // 0x4f9950
     int HasPower();  // 0x717880
     char AIBuildBase();  // 0x50a5c0
     void SetPrimaryTechBuilding();  // 0x50c210
@@ -1931,6 +1931,9 @@ struct HouseClass {
     int CalculateCostMultipliers();  // 0x50bf60
     int FindOwner();  // 0x502d30
     int SetMapSeed(int a2);  // 0x50e000
+    char SetAlliance(HouseClass *a2, char a3);  // 0x4f9f90
+    int HandleAlliance(int a2, char a3);  // 0x4f9b70
+    unsigned int * ClearStatArray();  // 0x748fd0
 };
 
 } // namespace gamemd

@@ -58,7 +58,7 @@ int InfantryClass::ScanTarget(int * a1)
   {
     vtable0 = (void (**)(FootClass *, void *, int))a1->TechnoClass; /*0x4d4de8*/
     PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt((gamemd::IUnknown *)((char *)a1),(gamemd::IUnknown *)(&v17),(void *)((int)a1)); /*0x4d4df4*/
-    v4 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], PlacementCellsAlt); /*0x4d4dff*/
+    v4 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(PlacementCellsAlt); /*0x4d4dff*/
     vtable0[288](a1, v4, 1); /*0x4d4e07*/
   }
   if ( a1->FootClass_field_bool_68E ) /*0x4d4e0d*/
@@ -152,7 +152,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
         if ( slaveManager ) /*0x4d5545*/
           ((FactoryClass *)(slaveManager))->ResetProductionTimers(); /*0x4d5547*/
         vtable0 = (void (**)(FootClass *, void *, int))a1->TechnoClass; /*0x4d554c*/
-        v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v13); /*0x4d555a*/
+        v9 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v13); /*0x4d555a*/
         vtable0[288](a1, v9, 1); /*0x4d5562*/
         (*((void (**)(FootClass *, int, int))a1->TechnoClass + 122))(a1, 2, 1); /*0x4d5570*/
       }
@@ -196,7 +196,7 @@ LABEL_12:
 LABEL_25:
   MissionControl = MissionClass::GetMissionControl((MissionClass *)a1); /*0x4d5582*/
   LOWORD(v11) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d5592*/
-  return v11 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d55b0*/
+  return (gamemd::AbstractClass **)(v11 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2)); /*0x4d55b0*/
 
 }
 }

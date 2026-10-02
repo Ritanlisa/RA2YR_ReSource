@@ -125,7 +125,7 @@ int Scenario::ReadTeams()
   v1 = (gamemd::INIClass *)((int)(this));
   INIClass::ResetSection(this); /*0x44f82d*/
   memset(v73, 255, sizeof(v73)); /*0x44f83b*/
-  result = (gamemd::INIClass *)(INIClass::GetKeyCount(v1->__pad_0, (uint8_t *)aStructures)); /*0x44f84a*/
+  result = (gamemd::INIClass *)(INIClass::GetKeyCount((gamemd::INIClass *)(v1->__pad_0), (uint8_t *)aStructures)); /*0x44f84a*/
   v3 = 0; /*0x44f84f*/
   v71 = result; /*0x44f853*/
   v68 = 0; /*0x44f857*/
@@ -133,8 +133,8 @@ int Scenario::ReadTeams()
   {
     while ( 1 ) /*0x44f874*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v1->__pad_0, (uint8_t *)aStructures, v3); /*0x44f874*/
-      INIClass::GetString(v1, (uint8_t *)aStructures, StringByIndex, 0, String, 128); /*0x44f88f*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v1->__pad_0), (uint8_t *)aStructures, v3); /*0x44f874*/
+      INIClass::GetString(v1, (uint8_t *)aStructures,(gamemd::INIClass *)(StringByIndex), 0, String, 128); /*0x44f88f*/
       v5 = strtok(String, Str); /*0x44f89e*/
       v6 = ((HouseClass *)(v5))->FindByName(); /*0x44f8a8*/
       if ( v6 != -1 ) /*0x44f8b0*/
@@ -221,7 +221,7 @@ int Scenario::ReadTeams()
                   {
                     v31 = (void *)((int)(((TeamClass *)(v30))->FindOrCreate()));
                     if ( v31 ) /*0x44fb45*/
-                      ObjectClass::SetReference((ObjectClass *)v29, v31); /*0x44fb4a*/
+                      ((ObjectClass *)((ObjectClass *)v29))->SetReference(v31); /*0x44fb4a*/
                   }
                   *(unsigned char *)(v29 + 1756) = v58; /*0x44fb5b*/
                   *(unsigned char *)(v29 + 1738) = v57; /*0x44fb61*/
@@ -270,7 +270,7 @@ int Scenario::ReadTeams()
                         do /*0x44fcda*/
                         {
                           if ( *(unsigned char *)(v41 + *(unsigned int *)(v29 + 1312) + 3980) && *v42 ) /*0x44fcc2*/
-                            VtableStub::Method_425270(*v42); /*0x44fcc9*/
+                            ((VtableStub *)(*v42))->Method_425270(); /*0x44fcc9*/
                           v41 += 68; /*0x44fcce*/
                           ++v42; /*0x44fcd1*/
                         }
@@ -323,7 +323,7 @@ int Scenario::ReadTeams()
                       && (*(uint8_t (**)(int))(*(unsigned int *)v29 + 1020))(v29)
                       && *(unsigned int *)(v29 + 1408) )
                     {
-                      Value = (unsigned int *)(((ProgressTimer *)((ProgressTimer *)(v29 + 904)))->GetValue(&v76));
+                      Value = (unsigned int *)(((ProgressTimer *)((ProgressTimer *)(v29 + 904)))->GetValue((int)(&v76)));
                       v53 = *(unsigned int *)(v29 + 1408); /*0x44fdfd*/
                       v54 = ((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F; /*0x44fe09*/
                       if ( v53 ) /*0x44fe0e*/
@@ -492,9 +492,9 @@ Game * * Scenario::ComputeDisplayPosition()
     this->Scenario_field_0x28 = v4; /*0x552b8b*/
     this->Scenario_field_0x18 = (unsigned char)((void *)40); /*0x552b8f*/
     this->Scenario_field_0x30 = (void *)result; /*0x552b92*/
-    this->Scenario_field_0x38 = (gamemd::Game **)((void *)40); /*0x552b95*/
+    this->Scenario_field_0x38 = (unsigned char)((gamemd::Game **)((void *)40)); /*0x552b95*/
   }
-  return result; /*0x552b87*/
+  return (gamemd::Game **)(result); /*0x552b87*/
 
 }
 }
@@ -542,8 +542,8 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
       v5 = Scenario_field_0x2C + 84; /*0x552c06*/
     else
       v5 = Scenario_field_0x2C + 164; /*0x552c1f*/
-    *a2 = v5; /*0x552c0c*/
-    a2[1] = Scenario_field_0x30 + 7; /*0x552c0e*/
+    *a2 = (unsigned int)(v5); /*0x552c0c*/
+    a2[1] = (unsigned int)(Scenario_field_0x30 + 7); /*0x552c0e*/
   }
   return result; /*0x552c11*/
 
@@ -627,7 +627,7 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
   int v72; // [esp+34h] [ebp-4h]
 
   v1 = 0; /*0x55afc7*/
-  v2 = dword_A8B230; /*0x55afcd*/
+  v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55afcd*/
   ++*(unsigned int *)&g_MissionQueueFrame.waypoints[278]; /*0x55afd3*/
   dword_A83CDC = 0; /*0x55afdb*/
   if ( (int)((char *)&FootClass_Array) > 0 ) /*0x55afe0*/
@@ -1085,12 +1085,12 @@ int Scenario::LoadWithProgress()
     SessionClass::Load(v27); /*0x6847d5*/
     if ( *(unsigned int *)&dword_A8B238 ) /*0x6847e1*/
     {
-      SHPClass::Load((int)&dword_AC4F58, g_Str_File_PROGBARM_SHP, 0, 0); /*0x684800*/
+      ((SHPClass *)((int)&dword_AC4F58))->Load(g_Str_File_PROGBARM_SHP, 0, 0); /*0x684800*/
     }
     else
     {
       _72B380 = Map_Load_72B380(); /*0x6847e8*/
-      SHPClass::Load((int)&dword_AC4F58, aSpldbrShp, 0, _72B380); /*0x6847f0*/
+      ((SHPClass *)((int)&dword_AC4F58))->Load(aSpldbrShp, 0, _72B380); /*0x6847f0*/
     }
     v24 = *(unsigned int *)&dword_A8B238 != 0; /*0x684819*/
     v9 = Scenario::ComputeDialogPos(Instance, v30); /*0x68481e*/
@@ -1162,14 +1162,14 @@ int Scenario::LoadWithProgress()
     PostLoadInitScenario(v27); /*0x684ace*/
     if ( *(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4 ) /*0x684adf*/
     {
-      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 99); /*0x684ae8*/
+      ((Multiplayer *)((Multiplayer *)&dword_A8B238))->ShowProgress(99); /*0x684ae8*/
       if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x684af3*/
       {
         if ( byte_A8DBA0 ) /*0x684afc*/
           ((Process *)((Process *)&unk_B052D0))->WaitForExit(0x3A98u, 1); /*0x684b0a*/
       }
     }
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].vtable0) != 0 ? 200 : 100);
+    ((Multiplayer *)((Multiplayer *)&dword_A8B238))->ShowProgress(BYTE1(dword_A8B230[375].vtable0) != 0 ? 200 : 100);
     byte_A8B8C1 = 0; /*0x684b30*/
     byte_A8B8C2 = 0; /*0x684b37*/
     Sync = WaitForMultiplayerLoadSync(v28); /*0x684b43*/
@@ -1181,7 +1181,7 @@ int Scenario::LoadWithProgress()
       if ( Sync ) /*0x684b70*/
       {
         Event::Dispatch(); /*0x684b72*/
-        Progress::GetAverage((Progress *)&dword_AC4F58); /*0x684b7c*/
+        ((Progress *)((Progress *)&dword_AC4F58))->GetAverage(); /*0x684b7c*/
         __asm /*0x684b81*/
         {
           fcomp ds:dbl_7E1718
@@ -1193,7 +1193,7 @@ int Scenario::LoadWithProgress()
           {
             for ( i = 0; i < dword_A8DA84; ++i ) /*0x684b97*/
               Network::UpdateLatencyDisplay((int)&dword_AC4F58, i, 100.0, NAN); /*0x684bae*/
-            Progress::GetAverage((Progress *)&dword_AC4F58); /*0x684bc2*/
+            ((Progress *)((Progress *)&dword_AC4F58))->GetAverage(); /*0x684bc2*/
             __asm /*0x684bc7*/
             {
               fcomp ds:dbl_7E1718
@@ -1514,7 +1514,7 @@ void Scenario_EndGameFlow()
   }
   GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x685d7a*/
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x685d87*/
-    Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], stru_A8EB00.ObjectTypeClass[32]); /*0x685d90*/
+    ((Tooltip *)(*(Tooltip **)&stru_88732C.__pad_1C[32]))->Enable(stru_A8EB00.ObjectTypeClass[32]); /*0x685d90*/
   TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x685d9a*/
   return FadePalette(&FileSystem_TEMPERAT_PAL, 7, (void (*)(void))Event::Dispatch); /*0x6858fa*/
 }
@@ -1750,7 +1750,7 @@ void Scenario_EndGame()
     }
     GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x68639a*/
     if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x6863a7*/
-      Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], stru_A8EB00.ObjectTypeClass[32]); /*0x6863af*/
+      ((Tooltip *)(*(Tooltip **)&stru_88732C.__pad_1C[32]))->Enable(stru_A8EB00.ObjectTypeClass[32]); /*0x6863af*/
     IDA_LOBYTE(v15) = TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x6863b9*/
     goto LABEL_60; /*0x6863be*/
   }

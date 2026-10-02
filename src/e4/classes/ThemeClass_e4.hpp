@@ -38,6 +38,7 @@ struct ThemeClass {
     int GetValue();
     void * InitializeThemes(char * a2);
     void GetField(int a1, void *a2);
+    int Play(int a2);  // 0x720bb0
 };
 
 } // namespace gamemd

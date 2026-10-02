@@ -81,8 +81,8 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v7); /*0x5acde9*/
       this->m_8 = v3; /*0x5acdf1*/
-      BYTE1(this->m_C) = (gamemd::AbstractClass **)(v5 == 0); /*0x5acdf4*/
-      return 1; /*0x5acdfa*/
+      BYTE1(this->m_C) = (unsigned char)((gamemd::AbstractClass **)(v5 == 0)); /*0x5acdf4*/
+      return (gamemd::AbstractClass **)(1); /*0x5acdfa*/
     }
     else
     {
@@ -92,7 +92,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   else
   {
     (*(void (**)(_VectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5ace05*/
-    return 1; /*0x5ace0b*/
+    return (gamemd::AbstractClass **)(1); /*0x5ace0b*/
   }
 
 }
@@ -171,8 +171,8 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   }
   v12 = this->m_8; /*0x5acf9a*/
   if ( v12 < this->m_10 ) /*0x5acfa2*/
-    this->m_10 = (gamemd::AbstractClass **)(v12); /*0x5acfa4*/
-  return 1; /*0x5acfa7*/
+    this->m_10 = (unsigned int)((gamemd::AbstractClass **)(v12)); /*0x5acfa4*/
+  return (gamemd::AbstractClass **)(1); /*0x5acfa7*/
 
 }
 }
@@ -251,7 +251,7 @@ CampaignClass * MSEngine::Construct()
   v3[2](p_MSEngine_field_0x8, 20, 0); /*0x5d1b0a*/
   (*(void (**)(char *))(*((unsigned int *)this + 6) + 12))((char *)this + 24); /*0x5d1b11*/
   (*(void (**)(char *))(*((unsigned int *)this + 12) + 12))((char *)this + 48); /*0x5d1b18*/
-  return this->__pad_0; /*0x5d1b1b*/
+  return (gamemd::CampaignClass *)(this->__pad_0); /*0x5d1b1b*/
 
 }
 }
@@ -324,7 +324,7 @@ CampaignClass * MSEngine::Destruct()
   }
   *((unsigned char *)p_MSEngine_field_0x8 + 13) = 0; /*0x5d1c12*/
   p_MSEngine_field_0x8[2] = (gamemd::CampaignClass *)(0); /*0x5d1c15*/
-  return result; /*0x5d1c18*/
+  return (gamemd::CampaignClass *)(result); /*0x5d1c18*/
 
 }
 }
@@ -470,13 +470,13 @@ CampaignClass * MSEngine::Init(unsigned int * a2, void *a2_2, void *a3_1, void *
   m_8 = this->m_8; /*0x5ace64*/
   result = 0; /*0x5ace67*/
   if ( m_8 <= 0 ) /*0x5ace6b*/
-    return -1; /*0x5acea0*/
+    return (gamemd::CampaignClass *)(-1); /*0x5acea0*/
   for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5ace71*/
   {
     if ( ++result >= m_8 ) /*0x5ace9e*/
-      return -1; /*0x5ace9e*/
+      return (gamemd::CampaignClass *)(-1); /*0x5ace9e*/
   }
-  return result; /*0x5ace5b*/
+  return (gamemd::CampaignClass *)(result); /*0x5ace5b*/
 
 }
 } // namespace gamemd

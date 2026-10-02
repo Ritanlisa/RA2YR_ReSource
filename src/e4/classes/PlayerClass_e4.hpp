@@ -26,6 +26,7 @@ struct PlayerClass {
     bool IsValidIndex(int a1);
     char AssignPlayerIndex();
     int SetHouse(int a2);
+    int HasPlayers();  // 0x6abac0
 };
 
 } // namespace gamemd

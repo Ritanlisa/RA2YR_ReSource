@@ -1950,12 +1950,12 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   if ( !((CCINIClass *)(v24))->Load((int)v29, 0, 0) ) /*0x49c2d3*/
   {
 LABEL_44:
-    HashTable::DestroyHashTableINIClass(v24); /*0x49c553*/
+    ((HashTable *)(v24))->DestroyHashTableINIClass(); /*0x49c553*/
     v29[0] = &vt_CCFileClass; /*0x49c563*/
     v31 = 0; /*0x49c56e*/
     ((Vector *)((int)v30))->Clear(); /*0x49c575*/
     v29[0] = &off_7E1668; /*0x49c581*/
-    BufferIOFileClass::Dtor(v29); /*0x49c58c*/
+    ((BufferIOFileClass *)(v29))->Dtor(); /*0x49c58c*/
     return 0; /*0x49c594*/
   }
   *((unsigned int *)this + 14) = INIClass::ReadInt_Overwrite(v28, g_INI_Key_CurrentMap, 0); /*0x49c2fc*/
@@ -2007,12 +2007,12 @@ LABEL_44:
       260);
   }
   *((unsigned char *)this + 108) = 1; /*0x49c505*/
-  HashTable::DestroyHashTableINIClass(v24); /*0x49c509*/
+  ((HashTable *)(v24))->DestroyHashTableINIClass(); /*0x49c509*/
   v29[0] = &vt_CCFileClass; /*0x49c515*/
   v31 = 0; /*0x49c520*/
   ((Vector *)((int)v30))->Clear(); /*0x49c527*/
   v29[0] = &off_7E1668; /*0x49c533*/
-  BufferIOFileClass::Dtor(v29); /*0x49c53e*/
+  ((BufferIOFileClass *)(v29))->Dtor(); /*0x49c53e*/
   return 1; /*0x49c543*/
 
 }
@@ -2322,12 +2322,12 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   {
     CCFileClass::Reset(v17); /*0x49d418*/
 LABEL_5:
-    HashTable::DestroyHashTableINIClass(v20); /*0x49d41d*/
+    ((HashTable *)(v20))->DestroyHashTableINIClass(); /*0x49d41d*/
     v17[0] = &vt_CCFileClass; /*0x49d42a*/
     v19 = 0; /*0x49d432*/
     ((Vector *)((int)v18))->Clear(); /*0x49d436*/
     v17[0] = &off_7E1668; /*0x49d43f*/
-    BufferIOFileClass::Dtor(v17); /*0x49d447*/
+    ((BufferIOFileClass *)(v17))->Dtor(); /*0x49d447*/
     return 0; /*0x49d457*/
   }
   CCFileClass::Reset(v17); /*0x49d45f*/
@@ -2402,12 +2402,12 @@ LABEL_5:
     260);
   if ( strcmp(aP1, g_Str_undefined) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
-  HashTable::DestroyHashTableINIClass(v20); /*0x49d644*/
+  ((HashTable *)(v20))->DestroyHashTableINIClass(); /*0x49d644*/
   v17[0] = &vt_CCFileClass; /*0x49d64d*/
   v19 = 0; /*0x49d655*/
   ((Vector *)((int)v18))->Clear(); /*0x49d659*/
   v17[0] = &off_7E1668; /*0x49d662*/
-  BufferIOFileClass::Dtor(v17); /*0x49d66a*/
+  ((BufferIOFileClass *)(v17))->Dtor(); /*0x49d66a*/
   return 1; /*0x49d44c*/
 
 }
@@ -6818,7 +6818,7 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
 
   v18 = a1; /*0x49f42a*/
   IDA_LOWORD(v16) = 0; /*0x49f438*/
-  v6 = Random::State((unsigned int *)dword_A8B230 + 134); /*0x49f43f*/
+  v6 = ((Random *)((unsigned int *)dword_A8B230 + 134))->State(); /*0x49f43f*/
   IDA_LOBYTE(v7) = 0; /*0x49f448*/
   IDA_HIBYTE(v7) = v6; /*0x49f44a*/
   v8 = a2[2]; /*0x49f451*/

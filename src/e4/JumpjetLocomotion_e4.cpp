@@ -76,7 +76,7 @@ AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
               v10 = v9[1]; /*0x4b0b64*/
               v18[0] = *v9; /*0x4b0b67*/
               v18[1] = v10; /*0x4b0b6f*/
-              v5 = (int)((JumpjetLocomotion *)((JumpjetLocomotion *)this))->TransformCoords((IUnknown *)(&v19), v18, &aP3); /*0x4b0b80*/
+              v5 = (int)((JumpjetLocomotion *)((JumpjetLocomotion *)this))->TransformCoords((unsigned int *)((IUnknown *)(&v19)), v18, &aP3); /*0x4b0b80*/
               v11 = *(unsigned int *)v5; /*0x4b0b85*/
               v12 = *(unsigned int *)(v5 + 4); /*0x4b0b89*/
               if ( !v6 ) /*0x4b0b8c*/
@@ -269,8 +269,8 @@ unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, i
   *(unsigned int *)aP3 = v4; /*0x4b47df*/
   JumpjetLocomotion_field_0x40 = (char *)this->JumpjetLocomotion_field_0x40; /*0x4b47e2*/
   JumpjetLocomotion_field_0x44 = (char *)this->JumpjetLocomotion_field_0x44; /*0x4b47e5*/
-  *aP1 = &JumpjetLocomotion_field_0x40[v6]; /*0x4b47f2*/
-  aP1[1] = &JumpjetLocomotion_field_0x44[v7]; /*0x4b47f5*/
+  *aP1 = (unsigned int)(&JumpjetLocomotion_field_0x40[v6]); /*0x4b47f2*/
+  aP1[1] = (unsigned int)(&JumpjetLocomotion_field_0x44[v7]); /*0x4b47f5*/
   return aP1; /*0x4b47f0*/
 
 }
@@ -391,7 +391,7 @@ void* JumpjetLocomotion::Land()
   v49[0] = *v12 / 256; /*0x54cc66*/
   v49[1] = v12[1] / 256; /*0x54cc7f*/
   *(unsigned int *)v50 = *(unsigned int *)v49; /*0x54cc8d*/
-  v13 = (unsigned int *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v50) + 57); /*0x54cc96*/
+  v13 = (unsigned int *)*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v50) + 57); /*0x54cc96*/
   if ( v13 == *(unsigned int **)this->__pad_C ) /*0x54cca1*/
     v13 = (unsigned int *)v13[12]; /*0x54cca3*/
   if ( v13 ) /*0x54cca8*/
@@ -598,7 +598,7 @@ LABEL_74:
       *(unsigned int *)(v40 + 1068) = 0; /*0x54d0a7*/
     }
   }
-  return v40; /*0x54d0ad*/
+  return (void *)(v40); /*0x54d0ad*/
 
 }
 } // namespace gamemd
@@ -897,10 +897,10 @@ LABEL_50:
     }
   }
   if ( v55 ) /*0x54d69d*/
-    return (*(int (**)(unsigned int, int))(**(unsigned int **)this->__pad_C + 292))(*(unsigned int *)this->__pad_C, 1); /*0x54d6a6*/
+    return (void *)((*(int (**)(unsigned int, int))(**(unsigned int **)this->__pad_C + 292))(*(unsigned int *)this->__pad_C, 1)); /*0x54d6a6*/
   result = *(unsigned int *)this->__pad_C; /*0x54d6b4*/
   *(unsigned char *)(result + 116) = (unsigned char)((void *)(v58)); /*0x54d6bd*/
-  return result; /*0x54d6ac*/
+  return (void *)(result); /*0x54d6ac*/
 
 }
 }

@@ -189,7 +189,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     v16 = v2; /*0x75f34a*/
     LOWORD(aP1) = *aP1 / 256; /*0x75f359*/
     HIWORD(aP1) = v5[1] / 256; /*0x75f372*/
-    v6 = (char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP1); /*0x75f391*/
+    v6 = (char *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP1); /*0x75f391*/
     v7 = (*(int ((void *)(**))(void *, unsigned int))(*(unsigned int *)this->Owner + 1016))(this->Owner, 0); /*0x75f395*/
     v8 = *(unsigned int *)v7; /*0x75f39b*/
     v17 = *(unsigned int *)(*(unsigned int *)v7 + 172); /*0x75f3a9*/

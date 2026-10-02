@@ -41,7 +41,7 @@ int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a
   *((unsigned short *)this + 129410) = -1; /*0x7b0db8*/
   *(unsigned int *)((char *)this + 258822) = -1; /*0x7b0dc2*/
   *((unsigned short *)this + 129413) = -1; /*0x7b0dc8*/
-  return &this->Socket; /*0x7b0dce*/
+  return (int)(&this->Socket); /*0x7b0dce*/
 
 }
 } // namespace gamemd
@@ -60,7 +60,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   struct sockaddr name; // [esp+18h] [ebp-28h] BYREF
   char v12[24]; // [esp+28h] [ebp-18h] BYREF
 
-  v4 = socket((void *)(6), 2, 1000); /*0x7b0de6*/
+  v4 = socket((void *)(6),(void *)(2), 1000); /*0x7b0de6*/
   if ( v4 == -1 ) /*0x7b0deb*/
     return 0; /*0x7b0df5*/
   memset(name.sa_data, 0, 12); /*0x7b0dfe*/
@@ -76,7 +76,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   {
     ((Debug *)this)->Log(); /*0x7b0eae*/
   }
-  else if ( getsockopt((void *)(v4), 1000, 16397, optval, &optlen) ) /*0x7b0e7a*/
+  else if ( getsockopt((void *)(v4),(void *)(1000), 16397, optval, &optlen) ) /*0x7b0e7a*/
   {
     WSAGetLastError(); /*0x7b0e94*/
     ((Debug *)this)->Log(); /*0x7b0e9f*/
@@ -88,7 +88,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   memset(v12, 0, sizeof(v12)); /*0x7b0ec2*/
   *(unsigned int *)v12 = (unsigned int)(aP1); /*0x7b0ed9*/
   v10 = 24; /*0x7b0edd*/
-  if ( getsockopt((void *)(v4), 1000, 16391, v12, &v10) == -1 ) /*0x7b0eee*/
+  if ( getsockopt((void *)(v4),(void *)(1000), 16391, v12, &v10) == -1 ) /*0x7b0eee*/
   {
     WSAGetLastError(); /*0x7b0ef0*/
     ((Debug *)this)->Log(); /*0x7b0efc*/
@@ -140,7 +140,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   struct sockaddr to; // [esp+1Ch] [ebp-10h] BYREF
 
   if ( a3 != 1139 ) /*0x7b13e2*/
-    return 1; /*0x7b13f0*/
+    return (gamemd::AbstractClass **)(1); /*0x7b13f0*/
   if ( (uint16_t)fromlen != 1 ) /*0x7b13ff*/
   {
     if ( (uint16_t)fromlen == 2 ) /*0x7b1406*/
@@ -257,7 +257,7 @@ LABEL_6:
   qmemcpy(&v18[4], (char *)this + 258168, v26 - 4); /*0x7b1657*/
   if ( (*(uint8_t (**)(IPXInterfaceClass *, NetworkID *))(this->Socket + 88))(this, v18) ) /*0x7b1665*/
   {
-    NetworkID::Assign(v18, &a3, (int)&v27, 0); /*0x7b16d0*/
+    ((NetworkID *)(v18))->Assign(&a3, (int)&v27, 0); /*0x7b16d0*/
     v19 = *(unsigned int *)&this->LocalNode[4]; /*0x7b16d5*/
     v20 = *((unsigned int *)this + 6); /*0x7b16d8*/
     p_LocalNetwork = (int *)(&this->LocalNetwork); /*0x7b16db*/
@@ -399,10 +399,10 @@ AbstractClass * * IPXInterfaceClass::Receive()
   {
     v4 = *((unsigned int *)this + 64540); /*0x7b1bfc*/
     if ( v4 == -1 ) /*0x7b1c05*/
-      return 1; /*0x7b1c05*/
+      return (gamemd::AbstractClass **)(1); /*0x7b1c05*/
     v5 = (HWND)(*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, v4); /*0x7b1c0e*/
     if ( WSAAsyncSelect(*((AnimClass **)this + 64540), (SOCKET)g_hWnd, v5, 3u, v7) != (AnimClass *)-1 ) /*0x7b1c27*/
-      return 1; /*0x7b1c40*/
+      return (gamemd::AbstractClass **)(1); /*0x7b1c40*/
   }
   WSAGetLastError(); /*0x7b1be5*/
   Debug::Log(); /*0x7b1bf0*/
@@ -510,7 +510,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
   int v14; // edx
   UINT v15; // eax
 
-  v5 = ((AudioQueue *)((AudioQueue *)this))->AllocBuffer((gamemd::WinsockInterfaceClass *)(aP3)); /*0x7b24f4*/
+  v5 = ((AudioQueue *)((AudioQueue *)this))->AllocBuffer((char)((gamemd::WinsockInterfaceClass *)(aP3))); /*0x7b24f4*/
   qmemcpy(v5 + 32, a1, a3); /*0x7b2505*/
   *((unsigned int *)v5 + 4) = a3; /*0x7b250e*/
   (*(void (**)(WinsockInterfaceClass *, unsigned char *))(this->Socket + 84))(this, v5); /*0x7b2516*/
@@ -602,7 +602,7 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
   v7 = this->m_8; /*0x7b2ab1*/
   if ( v7 < this->m_10 ) /*0x7b2ab9*/
     this->m_10 = v7; /*0x7b2abb*/
-  return 1; /*0x7b2abe*/
+  return (gamemd::AbstractClass **)(1); /*0x7b2abe*/
 
 }
 } // namespace gamemd

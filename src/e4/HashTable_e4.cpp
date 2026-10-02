@@ -1467,7 +1467,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
         __3_YAXPAX_Z(v14); /*0x7ade32*/
       }
     }
-    return 1; /*0x7ade3d*/
+    return (gamemd::AbstractClass **)(1); /*0x7ade3d*/
   }
   else
   {
@@ -1534,7 +1534,7 @@ LABEL_24:
         __3_YAXPAX_Z(v27); /*0x7adf4b*/
       }
     }
-    return v38; /*0x7adf53*/
+    return (gamemd::AbstractClass **)(v38); /*0x7adf53*/
   }
 
 }
@@ -1639,7 +1639,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
         __3_YAXPAX_Z(v15); /*0x7ae337*/
       }
     }
-    return 1; /*0x7ae342*/
+    return (gamemd::AbstractClass **)(1); /*0x7ae342*/
   }
   else
   {
@@ -1704,7 +1704,7 @@ LABEL_23:
         __3_YAXPAX_Z(v24); /*0x7ae442*/
       }
     }
-    return v33; /*0x7ae44a*/
+    return (gamemd::AbstractClass **)(v33); /*0x7ae44a*/
   }
 
 }
@@ -1878,7 +1878,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
         __3_YAXPAX_Z(v14); /*0x7aeabb*/
       }
     }
-    return 1; /*0x7aeac6*/
+    return (gamemd::AbstractClass **)(1); /*0x7aeac6*/
   }
   else
   {
@@ -1945,7 +1945,7 @@ LABEL_24:
         __3_YAXPAX_Z(v27); /*0x7aebe6*/
       }
     }
-    return v38; /*0x7aebee*/
+    return (gamemd::AbstractClass **)(v38); /*0x7aebee*/
   }
 
 }

@@ -549,7 +549,7 @@ struct MapClass {
     int RemoveCellReference(int a2);
     int RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9, void *a9_2);
     int ScrollOnce(AbstractClass * aP1);
-    int SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2, void *a3);
+    int SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2);
     int SetCellOverlayFlag();
     int SetScrollMode(int aP1);
     int ToggleZoom(int a2);
@@ -583,7 +583,7 @@ struct MapClass {
     void* ApplyTerrainDamage(IUnknown *a1, IUnknown aP1);
     void* Destruct(void *a1, void *a2);
     void*  InitTileData(MouseClass * aP0, int aP3);
-    int RevealArea2(int *a2, int a3, int a4, int a5);  // 0x567da0
+    int RevealArea2(int *a1, int a2, int a3, int a4);  // 0x567da0
 };
 
 } // namespace gamemd

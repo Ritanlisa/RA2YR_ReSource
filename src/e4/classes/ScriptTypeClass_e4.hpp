@@ -157,6 +157,7 @@ struct ScriptTypeClass {
     int GetTypeIdentifier();
     int LoadTypeData(AbstractTypeClass * aP0, int aP1);
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
+    unsigned int * Constructor(char *Source);  // 0x6916b0
 };
 
 } // namespace gamemd

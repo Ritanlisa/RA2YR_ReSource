@@ -1443,14 +1443,14 @@ AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
   if ( v5 == 148 ) /*0x603a2c*/
   {
     if ( DlgCtrlID == 1770 ) /*0x603a33*/
-      return dword_B0FB48; /*0x603a3d*/
+      return (gamemd::AbstractClass **)(dword_B0FB48); /*0x603a3d*/
     if ( DlgCtrlID == 1772 ) /*0x603a45*/
-      return dword_B0FB10; /*0x603a4f*/
+      return (gamemd::AbstractClass **)(dword_B0FB10); /*0x603a4f*/
   }
   else if ( v5 == 259 || v5 == 3015 ) /*0x603a60*/
   {
     if ( DlgCtrlID == 1835 ) /*0x603a67*/
-      return dword_B0FB30; /*0x603a71*/
+      return (gamemd::AbstractClass **)(dword_B0FB30); /*0x603a71*/
   }
   else if ( v5 == 196 && DlgCtrlID == 1961 ) /*0x603a81*/
   {

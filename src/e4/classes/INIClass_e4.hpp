@@ -49,7 +49,7 @@ struct INIClass {
     ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);
     VoxelStruct * * GetKeyCount(INIClass * aP1, void *a2);
     char GetInt(char ** a2, char ** a3, unsigned int * a4);
-    int GetBool(INIClass * aP1, unsigned char * a2, int a4);
+    int GetBool(uint8_t *aP1, uint8_t *a2, int a4);
     int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3);
     int ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3);
     int WOLobby_Play();
@@ -79,9 +79,10 @@ struct INIClass {
     static double SaveToPipe(...);  // C2597 interim stub
     static double WriteToString(...);  // C2597 interim stub
     char ** GetStringByIndexEx(char **a2, char **a3, int a4);  // 0x526d90
-    int SetInt(uint8_t *Block, char *a3, int a4, int a5);  // 0x5275c0
-    int ReadString(char **a2, char **a3, char **a4, int a5);  // 0x528c00
-    int ReadInt_Overwrite(uint8_t *a2, uint8_t *a3, int a4);  // 0x5276d0
+    int SetInt(uint8_t *aP1, char *aP2, int aP3, int a5);  // 0x5275c0
+    int ReadString(char **aP1, char **aP2, char **aP3, int a5);  // 0x528c00
+    int ReadInt_Overwrite(uint8_t *a1, uint8_t *aP2, int aP3);  // 0x5276d0
+    unsigned int * GetCoordPair(unsigned int *a2, char *Source, char **a4, unsigned int *a5);  // 0x529a30
 };
 
 } // namespace gamemd

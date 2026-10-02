@@ -101,7 +101,7 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
     while ( v3 < v11 );
     v3 = (char *)((int)(a2));
   }
-  UpdateMultiplayerLobbySlots((HWND)(hDlg), v3, nIDDlgItem); /*0x5ec00d*/
+  UpdateMultiplayerLobbySlots((HWND)(hDlg),(gamemd::ObjectClass *)(v3), nIDDlgItem); /*0x5ec00d*/
   RetVtableStubZero_eax_27(); /*0x5ec012*/
   return CheckGameSettingsChanged(1, 0); /*0x5ec020*/
 }

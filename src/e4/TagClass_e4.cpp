@@ -230,7 +230,7 @@ LABEL_45:
 }
 // 0x6E6220
 namespace gamemd {
-char TagClass::HasValidHouse(void *a1)
+char TagClass::HasValidHouse()
 {
 
   HouseClass *v1; // esi

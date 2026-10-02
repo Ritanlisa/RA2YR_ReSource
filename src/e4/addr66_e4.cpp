@@ -872,7 +872,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
     v14 = v6; /*0x663f42*/
     v12 = v7; /*0x663f4a*/
     v15 = a2[3]; /*0x663f5e*/
-    NetworkID::Assign(&qword_A8DBB0, &v20, (int)&v12, 0); /*0x663f62*/
+    ((NetworkID *)(&qword_A8DBB0))->Assign(&v20, (int)&v12, 0); /*0x663f62*/
     ((Network *)((Network *)&qword_A8DBB0))->SetPort(*(unsigned short *)(*dword_A8DA78 + 40)); /*0x663f78*/
     dword_A8DBBC = *(unsigned short *)(*dword_A8DA78 + 40); /*0x663f88*/
     v8 = (NetworkID *)(*dword_A8DA78 + 40); /*0x663f91*/

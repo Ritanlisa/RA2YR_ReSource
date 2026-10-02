@@ -26,7 +26,7 @@ MSBitPrintAnim * MSBitPrintAnim::QueryInterface(void ** Block, char a2)
   *(unsigned int *)Block->__pad_0 = &vt_MSAnim; /*0x5ced25*/
   if ( (a2 & 1) != 0 ) /*0x5ced2d*/
     __3_YAXPAX_Z(Block); /*0x5ced30*/
-  return (void **)Block; /*0x5ced3a*/
+  return (gamemd::MSBitPrintAnim *)((void **)Block); /*0x5ced3a*/
 
 }
 } // namespace gamemd

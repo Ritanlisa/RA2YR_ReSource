@@ -98,7 +98,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   int v46; // [esp+24h] [ebp-CCh]
   wchar_t lParam[100]; // [esp+28h] [ebp-C8h] BYREF
 
-  result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd))));
+  result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogProc((gamemd::SkirmishDialog *)(hDlg), a2, a3, (unsigned int)hWnd))));
   if ( result ) /*0x6b6333*/
     return result; /*0x6b6333*/
   if ( a2 != 273 ) /*0x6b633f*/
@@ -194,7 +194,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
           {
             do /*0x6b65ed*/
             {
-              if ( RulesClass::IsTypeBuildable(&unk_A83D10, v21) ) /*0x6b6545*/
+              if ( ((RulesClass *)(&unk_A83D10))->IsTypeBuildable(v21) ) /*0x6b6545*/
               {
                 v22 = AudioSettings::ComputeTransform(v21); /*0x6b6563*/
                 v46 = AudioSettings::Check(v21); /*0x6b656f*/
@@ -258,7 +258,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
               if ( v31 != v30 ) /*0x6b6810*/
               {
                 ((Theme *)(&unk_A83D10))->Stop(1); /*0x6b681d*/
-                Theme::QueueSong((int)&unk_A83D10, v30); /*0x6b6828*/
+                Theme::QueueSong((IUnknown *)((int)&unk_A83D10), v30); /*0x6b6828*/
                 return 0; /*0x6b6839*/
               }
             }
@@ -283,7 +283,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     if ( !HIWORD(a3) ) /*0x6b69c8*/
     {
       ((Theme *)(&unk_A83D10))->Stop(1); /*0x6b69d4*/
-      Theme::QueueSong((int)&unk_A83D10, -3); /*0x6b69e0*/
+      Theme::QueueSong((IUnknown *)((int)&unk_A83D10), -3); /*0x6b69e0*/
       byte_A8EBA5 = 0; /*0x6b69e5*/
     }
     return 0; /*0x6b69e5*/
@@ -300,7 +300,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
       v34 = dword_A83D14; /*0x6b6918*/
       if ( dword_A83D14 == -1 ) /*0x6b6920*/
         v34 = dword_A83D18; /*0x6b6922*/
-      Theme::QueueSong((int)&unk_A83D10, v34); /*0x6b692d*/
+      Theme::QueueSong((IUnknown *)((int)&unk_A83D10), v34); /*0x6b692d*/
       ((Theme *)(&unk_A83D10))->Stop(0); /*0x6b6939*/
     }
   }

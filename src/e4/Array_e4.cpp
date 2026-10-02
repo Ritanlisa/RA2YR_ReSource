@@ -290,7 +290,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
   if ( v14 ) /*0x7ad90c*/
     qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
   ++*(unsigned int *)this->__pad_0; /*0x7ad91e*/
-  return 1; /*0x7ad91b*/
+  return (gamemd::AbstractClass **)(1); /*0x7ad91b*/
 
 }
 }

@@ -174,7 +174,7 @@ void* RulesClass::readAudioVisual()
   {
     LOBYTE(result) = 0; /*0x66d1e4*/
   }
-  return result; /*0x66d1dc*/
+  return (void *)(result); /*0x66d1dc*/
 
 }
 // 0x673E80

@@ -102,7 +102,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
     {
       do /*0x5a5de6*/
       {
-        v27 = *FindClearPlacementCell((unsigned int *)(v23),(gamemd::MapSeedClass *)(&v24), &v38, 2); /*0x5a5bd8*/
+        v27 = *FindClearPlacementCell((unsigned int *)(v23),(gamemd::MapSeedClass *)(&v24),(gamemd::MapSeedClass *)(&v38), 2); /*0x5a5bd8*/
         v7 = *globalHelper_0A7070((gamemd::MapSeedClass *)(v33), (int16_t *)&v27,(gamemd::MapSeedClass *)(&v38), 2); /*0x5a5bf0*/
         v28 = v7; /*0x5a5bf7*/
         if ( v7 && (v24 || v25) && (int16_t)v7 - v24 >= 6 ) /*0x5a5c28*/
@@ -115,7 +115,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
             goto LABEL_11; /*0x5a5c65*/
           do /*0x5a5c92*/
           {
-            v20 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x5a5c78*/
+            v20 = (unsigned int)((Random *)((Random *)&g_MissionQueueFrame.globalVariables[1552]))->State(); /*0x5a5c78*/
             LOWORD(v8) = Math::RoundToInt((double)v20 * 4.656612874161595e-10); /*0x5a5c8a*/
           }
           while ( v8 > 1 ); /*0x5a5c92*/
@@ -151,7 +151,7 @@ LABEL_11:
             goto LABEL_18; /*0x5a5d6a*/
           do /*0x5a5da0*/
           {
-            v49 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x5a5d7d*/
+            v49 = (unsigned int)((Random *)((Random *)&g_MissionQueueFrame.globalVariables[1552]))->State(); /*0x5a5d7d*/
             LOWORD(v12) = Math::RoundToInt((double)v49 * 4.656612874161595e-10); /*0x5a5d98*/
           }
           while ( v12 > 1 ); /*0x5a5da0*/
@@ -183,7 +183,7 @@ LABEL_18:
     v25 = v4; /*0x5a5e21*/
     while ( v13 > 3 ) /*0x5a5e26*/
     {
-      LODWORD(v20) = *FindClearPlacementCell((unsigned int *)(v57),(gamemd::MapSeedClass *)(&v24), &v38, 4); /*0x5a5e4d*/
+      LODWORD(v20) = *FindClearPlacementCell((unsigned int *)(v57),(gamemd::MapSeedClass *)(&v24),(gamemd::MapSeedClass *)(&v38), 4); /*0x5a5e4d*/
       v5 = *globalHelper_0A7070((gamemd::MapSeedClass *)(&v49), (int16_t *)&v20,(gamemd::MapSeedClass *)(&v38), 4); /*0x5a5e68*/
       v28 = v5; /*0x5a5e6a*/
       if ( v5 && ((LOWORD(v5) = v25, v24) || v25) && (LOWORD(v5) = v25, SHIWORD(v5) - v25 >= 6) ) /*0x5a5ea1*/
@@ -289,7 +289,7 @@ LABEL_18:
                   LOWORD(v32) = v20 + 1; /*0x5a636e*/
                   HIWORD(v32) = WORD1(v20) - 2; /*0x5a6377*/
                   *(unsigned int *)v23 = v32; /*0x5a6386*/
-                  NeighbourContent = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v23); /*0x5a638f*/
+                  NeighbourContent = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v23); /*0x5a638f*/
                   if ( Value::InRange((Value *)NeighbourContent) && Value::InRange((Value *)NeighbourContent) ) /*0x5a639e*/
                   {
                     do /*0x5a63c4*/
@@ -325,7 +325,7 @@ LABEL_18:
               goto LABEL_79; /*0x5a5f65*/
             do /*0x5a5f96*/
             {
-              *(unsigned long long *)v43 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x5a5f7c*/
+              *(unsigned long long *)v43 = (unsigned int)((Random *)((Random *)&g_MissionQueueFrame.globalVariables[1552]))->State(); /*0x5a5f7c*/
               LOWORD(v15) = Math::RoundToInt((double)*(int64_t *)v43 * 4.656612874161595e-10); /*0x5a5f8e*/
             }
             while ( v15 > 1 ); /*0x5a5f96*/
@@ -377,7 +377,7 @@ LABEL_38:
           goto LABEL_72; /*0x5a645f*/
         do /*0x5a648f*/
         {
-          *(unsigned long long *)v46 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x5a6472*/
+          *(unsigned long long *)v46 = (unsigned int)((Random *)((Random *)&g_MissionQueueFrame.globalVariables[1552]))->State(); /*0x5a6472*/
           LOWORD(v18) = Math::RoundToInt((double)*(int64_t *)v46 * 4.656612874161595e-10); /*0x5a6487*/
         }
         while ( v18 > 1 ); /*0x5a648f*/
@@ -399,7 +399,7 @@ LABEL_73:
       }
     }
   }
-  return v5; /*0x5a64f5*/
+  return (gamemd::MapSeedClass **)(v5); /*0x5a64f5*/
 
 }
 } // namespace gamemd
@@ -461,7 +461,7 @@ LABEL_24:
               v9 = this->MapSeedClass_field_0x04 + 3; /*0x5a786b*/
               v12[0] = v8; /*0x5a7874*/
               v12[1] = v9; /*0x5a7879*/
-              v10 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v12); /*0x5a7883*/
+              v10 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v12); /*0x5a7883*/
               if ( !(uint8_t)CellClass::InBounds(v10) /*0x5a789d*/
                 && !(uint8_t)Cell::IsEmpty((Cell *)v10)
                 && !(uint8_t)CellClass::InMapDataRange(v10) )
@@ -487,7 +487,7 @@ LABEL_23:
             {
               v12[0] = v5; /*0x5a7814*/
               v12[1] = MapSeedClass_field_0x04; /*0x5a781f*/
-              v6 = (Value *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v12); /*0x5a7824*/
+              v6 = (Value *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v12); /*0x5a7824*/
               Value_field_00 = (int)(v6[14].Value_field_00); /*0x5a7829*/
               if ( (Value_field_00 < g_CellTileTypeCache || Value_field_00 > g_CellTileTypeCache + 1) /*0x5a783d*/
                 && !Value::InRange(v6) )

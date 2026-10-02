@@ -164,7 +164,7 @@ IPXManagerClass * IPXManagerClass::QueryInterface(char * Block, char a2)
   IPXManagerClass::processPacket((char *)Block); /*0x5430e3*/
   if ( (a2 & 1) != 0 ) /*0x5430ed*/
     __3_YAXPAX_Z(Block); /*0x5430f0*/
-  return (char *)Block; /*0x5430fa*/
+  return (gamemd::IPXManagerClass *)((char *)Block); /*0x5430fa*/
 
 }
 } // namespace gamemd

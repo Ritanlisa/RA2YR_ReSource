@@ -419,7 +419,7 @@ AbstractClass * * Game::DestroyAllObjects()
   MapClass::FreeAllCells((MapClass *)&dword_87F7E8); /*0x534991*/
   ProcessExpiredPointers(v38); /*0x534996*/
   Game::initScenario((Game *)&g_VisibilitySystem); /*0x5349a0*/
-  return --dword_A8E7AC; /*0x5349ab*/
+  return (gamemd::AbstractClass **)(--dword_A8E7AC); /*0x5349ab*/
 
 }
 }
@@ -498,7 +498,7 @@ int Game::MakeScreenshot(int a1)
           v21 = 0; /*0x537d48*/
           ((Vector *)((int)v20))->Clear(); /*0x537d4f*/
           *(unsigned int *)v19.CDFileClass = (unsigned int)(&off_7E1668); /*0x537d5b*/
-          BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x537d66*/
+          ((BufferIOFileClass *)((BufferIOFileClass *)&v19))->Dtor(); /*0x537d66*/
         }
         while ( v8 ); /*0x537d6d*/
         CCFileClass::Construct(&v16, Buffer); /*0x537d7b*/
@@ -507,7 +507,7 @@ int Game::MakeScreenshot(int a1)
         v18 = 0; /*0x537da3*/
         ((Vector *)((int)v17))->Clear(); /*0x537daa*/
         *(unsigned int *)v16.CDFileClass = (unsigned int)(&off_7E1668); /*0x537db3*/
-        return BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x537dbb*/
+        return ((BufferIOFileClass *)((BufferIOFileClass *)&v16))->Dtor(); /*0x537dbb*/
       }
     }
   }
@@ -627,7 +627,7 @@ LABEL_31:
   dword_A8B24C = 2; /*0x5b7333*/
   dword_A8E960[0] = v18; /*0x5b733d*/
   nullsub_37(a2); /*0x5b7343*/
-  return 1; /*0x5b709d*/
+  return (gamemd::HashTable_flat **)(1); /*0x5b709d*/
 
 }
 }
@@ -679,7 +679,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
                                      | (2 * (stru_A8B250.__pad_0[20] & 1 | (2 * (stru_A8B250.__pad_0[28] & 1))))))));
   LOBYTE(v11[6]) = dword_A8DB30; /*0x5ba75d*/
   v8 = dword_A8B394; /*0x5ba776*/
-  strcpy((char *)&v11[1], unk_A8B380); /*0x5ba77f*/
+  strcpy((char *)&v11[1],(const char *)(unk_A8B380)); /*0x5ba77f*/
   BYTE1(v11[7]) = v8; /*0x5ba793*/
   *(int *)((char *)&v11[6] + 1) = dword_A8B3AC; /*0x5ba797*/
   *(int *)((char *)&v11[31] + 2) = *(unsigned int *)&stru_A8B250.__pad_0[12]; /*0x5ba79b*/
@@ -709,11 +709,11 @@ AbstractClass * * Game::BuildGameSetupPacket()
                                   * (*(unsigned char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 380)
                                    & 1));
   ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v11, 250, 1); /*0x5ba91d*/
-  *(unsigned int *)v13.CDFileClass = &vt_CCFileClass; /*0x5ba929*/
+  *(unsigned int *)v13.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5ba929*/
   v15 = 0; /*0x5ba934*/
   ((Vector *)((int)v14))->Clear(); /*0x5ba93f*/
-  *(unsigned int *)v13.CDFileClass = &off_7E1668; /*0x5ba94b*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v13); /*0x5ba95b*/
+  *(unsigned int *)v13.CDFileClass = (unsigned int)(&off_7E1668); /*0x5ba94b*/
+  return ((BufferIOFileClass *)((BufferIOFileClass *)&v13))->Dtor(); /*0x5ba95b*/
 
 }
 }
@@ -2086,7 +2086,7 @@ void Game_Setup(CCINIClass * aP0, CCINIClass * aP1, char * Buffera, char * a3)
           v13 = Buffera; /*0x7a22de*/
           v14 = 0; /*0x7a22e2*/
           v12 = 0; /*0x7a22fc*/
-          NetworkID::Assign((unsigned int *)(12 * v7 + 11066316), &v12, (int)&v13, 0); /*0x7a2300*/
+          ((NetworkID *)((unsigned int *)(12 * v7 + 11066316)))->Assign(&v12, (int)&v13, 0); /*0x7a2300*/
           v10 = v11; /*0x7a2309*/
           dword_A8DC2C[v7] = (int)a3; /*0x7a230d*/
           dword_A8E230[v7] = v10; /*0x7a2314*/
@@ -2162,7 +2162,7 @@ AbstractClass * * Game::SetupWOLTournament()
   v17 = 0; /*0x7a24ef*/
   if ( dword_A8B8D8 > 0 ) /*0x7a24f3*/
   {
-    while ( !IsRandMap::Sed(*(unsigned int *)(dword_A8B8CC + 4 * v17)) ) /*0x7a2504*/
+    while ( !((IsRandMap *)(*(unsigned int *)(dword_A8B8CC + 4 * v17)))->Sed() ) /*0x7a2504*/
     {
       if ( ++v17 >= dword_A8B8D8 ) /*0x7a250e*/
         goto LABEL_6; /*0x7a250e*/
@@ -2607,7 +2607,7 @@ int Game::CreateAIPlayer()
   v9 = 0; /*0x796e37*/
   v8 = 0; /*0x796e3b*/
   v7 = 1381040650; /*0x796e4e*/
-  NetworkID::Assign((NetworkID *)(v2 + 40), &v6, (int)&v7, 0); /*0x796e53*/
+  ((NetworkID *)((NetworkID *)(v2 + 40)))->Assign(&v6, (int)&v7, 0); /*0x796e53*/
   if ( dword_A8DA84 < dword_A8DA7C /*0x796e8c*/
     || (byte_A8DA81 || !dword_A8DA7C)
     && dword_A8DA88 > 0
@@ -2657,7 +2657,7 @@ int Game::CreateAIPlayer_Potato()
   v9 = 0; /*0x796f23*/
   v8 = 0; /*0x796f27*/
   v7 = 1628701194; /*0x796f3a*/
-  NetworkID::Assign((NetworkID *)(v2 + 40), &v6, (int)&v7, 0); /*0x796f3f*/
+  ((NetworkID *)((NetworkID *)(v2 + 40)))->Assign(&v6, (int)&v7, 0); /*0x796f3f*/
   if ( dword_A8DA84 < dword_A8DA7C /*0x796f78*/
     || (byte_A8DA81 || !dword_A8DA7C)
     && dword_A8DA88 > 0

@@ -122,7 +122,7 @@ struct Sidebar {
     TechnoClass * * CancelSidebarProductionQueue(int * Block);  // 0x636310
     void RemoveItem(int a2, void *a2_2);  // 0x63F040
     ObjectClass * * Render(char a2);  // 0x63FB20
-    int ActivateTab(IUnknown * aP1, void *a2_1);  // 0x6A60A0
+    int ActivateTab(int aP1);  // 0x6A60A0
     AbstractClass * * FlushSidebarTooltip(char a2);  // 0x6A70E0
     char FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, void *a4_2);  // 0x6A6140
     static double UpdateProductionDisplay(...);  // C2597 interim stub

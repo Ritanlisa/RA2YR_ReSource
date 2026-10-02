@@ -254,7 +254,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4
   {
     v16 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(dword_8B3CC8)));
     if ( dword_8B3CC8 < 0 ) /*0x4d0e2f*/
-      return (int)this; /*0x4d0e2f*/
+      return (gamemd::AbstractClass *)((int)this); /*0x4d0e2f*/
   }
   else
   {
@@ -631,7 +631,7 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   {
     v17 = dword_8B3CC8; /*0x4d1589*/
     if ( dword_8B3CC8 < 0 ) /*0x4d158d*/
-      return (int)this; /*0x4d158d*/
+      return (gamemd::AbstractClass **)((int)this); /*0x4d158d*/
   }
   else
   {
@@ -655,7 +655,7 @@ LABEL_21:
     byte_8B3CCC = 0; /*0x4d1633*/
     ++g_MissionState; /*0x4d163a*/
   }
-  return (int)this; /*0x4d1641*/
+  return (gamemd::AbstractClass **)((int)this); /*0x4d1641*/
 
 }
 } // namespace gamemd
@@ -939,7 +939,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
   v15 = *(unsigned int *)&this->__pad_5[3]; /*0x4d2cae*/
   if ( v15 < *(unsigned int *)this->__tail_10 ) /*0x4d2cb6*/
     *(unsigned int *)this->__tail_10 = v15; /*0x4d2cb8*/
-  return 1; /*0x4d2cbb*/
+  return (gamemd::AbstractClass **)(1); /*0x4d2cbb*/
 
 }
 } // namespace gamemd

@@ -217,7 +217,7 @@ LABEL_26:
   *(unsigned int *)v14 = (unsigned int)(&vt_VectorClass); /*0x5ca957*/
   if ( Block && v16 ) /*0x5ca969*/
     __3_YAXPAX_Z(Block); /*0x5ca96c*/
-  return 1; /*0x5ca974*/
+  return (gamemd::AbstractClass **)(1); /*0x5ca974*/
 
 }
 } // namespace gamemd
@@ -274,7 +274,7 @@ char MultiplayerSiege::CheckStatus(int a1)
   }
   v7 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa0e*/
   if ( v7 ) /*0x5caa18*/
-    v8 = MPCombatTeam::MPTeam(v7); /*0x5caa21*/
+    v8 = ((MPCombatTeam *)(v7))->MPTeam(); /*0x5caa21*/
   else
     v8 = 0; /*0x5caa25*/
   v9 = a1->MultiplayerSiege_field_08; /*0x5caa27*/
@@ -293,7 +293,7 @@ char MultiplayerSiege::CheckStatus(int a1)
   }
   v13 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa64*/
   if ( v13 ) /*0x5caa6e*/
-    v14 = MPCombatTeam::Constructor2(v13); /*0x5caa77*/
+    v14 = ((MPCombatTeam *)(v13))->Constructor2(); /*0x5caa77*/
   else
     v14 = 0; /*0x5caa7b*/
   v15 = a1->MultiplayerSiege_field_08; /*0x5caa7d*/
@@ -359,7 +359,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   v6 = (int)(__2_YAPAXI_Z(0x720u)); /*0x5cab50*/
   if ( !v6 ) /*0x5cab5a*/
     return 0; /*0x5cab5a*/
-  v7 = (int *)BuildingClass::Construct(v6, (int)BuildableFromArray, (int)ppv); /*0x5cab60*/
+  v7 = (int *)((BuildingClass *)(v6))->Construct((int)BuildableFromArray, (int)ppv); /*0x5cab60*/
   v8 = v7; /*0x5cab65*/
   if ( !v7 ) /*0x5cab69*/
     return 0; /*0x5cab69*/

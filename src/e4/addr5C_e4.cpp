@@ -74,7 +74,7 @@ ObjectClass * * sub_5C00E0(void * a1, void * a2, void * a3)
   if ( g_MissionQueueFrame.localVariables[604] ) /*0x5c00ea*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x5c00fa*/
-    Frame::Present((void *)((int)DSurface_Alternate),(void *)(v3), a2, a3, 0,(void *)(v8), v9, v10); /*0x5c0107*/
+    Frame::Present((void *)((int)DSurface_Alternate),(void *)(v3), a2, a3, 0,(void *)(v8),(void *)(v9), v10); /*0x5c0107*/
     result = TestBitArray(15); /*0x5c0111*/
     if ( !result ) /*0x5c0118*/
     {
@@ -1434,7 +1434,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
         {
           v19 = (char *)((unsigned int)((char *)(*(unsigned int *)v34 + *(unsigned int *)&v18[v35])));
           v36 = (char *)((unsigned int)(&v19[v39]));
-          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (char *)((unsigned char)((char *)((unsigned char)(v39) != 0 && !v36))))));
+          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (unsigned char)((char *)((unsigned char)((char *)((unsigned char)(v39) != 0 && !v36)))))));
           *(unsigned int *)v18 = (unsigned int)(v36); /*0x5c7723*/
           v34 += 4; /*0x5c7725*/
           v18 += 4; /*0x5c7728*/
@@ -2436,7 +2436,7 @@ void sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
     }
     while ( v36 ); /*0x5c8ebc*/
   }
-  v10 = &v41[4 * a5 - 4]; /*0x5c8ec2*/
+  v10 = (char *)(&v41[4 * a5 - 4]); /*0x5c8ec2*/
   v11 = a5; /*0x5c8ec8*/
   v37 = v10; /*0x5c8eca*/
   if ( *(unsigned int *)v10 ) /*0x5c8ebe*/
@@ -2515,7 +2515,7 @@ void sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
   }
   LABEL_20:
   v35 = 0; /*0x5c8fa8*/
-  v29 = aP0; /*0x5c8faf*/
+  v29 = (unsigned int *)(aP0); /*0x5c8faf*/
   if ( a5 ) /*0x5c8fb1*/
   {
     v30 = a3 - (unsigned int)aP0; /*0x5c8fba*/

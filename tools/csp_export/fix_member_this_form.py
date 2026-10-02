@@ -30,6 +30,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 ROOT = os.path.abspath(ROOT)
 E4_HPP = os.path.join(ROOT, 'src', 'e4', 'classes')
 E4_CPP = os.path.join(ROOT, 'src', 'e4')
+E4_CPP_ROOT = os.path.join(ROOT, 'src')
 CACHE = os.path.join(ROOT, '.omo', 'ida_cache')
 APPLY = '--apply' in sys.argv
 
@@ -197,10 +198,19 @@ def_idx = {}
 DEF_RE = re.compile(
     r'^\s*([\w:<>,\s\*&\(\)]+?)\s*((?:[A-Za-z_]\w*::)*~?[A-Za-z_]\w*)'
     r'\s*\(([^;{}]*)\)\s*(?:const)?\s*\{?\s*$')
-for fn in sorted(os.listdir(E4_CPP)):
-    if not fn.endswith('_e4.cpp'):
+# G42.11: def index over the WHOLE src tree (was src/e4/*_e4.cpp only) --
+# building.cpp / supplied_bodies.cpp / gap2_defs family carry // 0xADDR
+# anchored defs the old index never saw (BuildingClass::Construct 65-error
+# case was skip-def-none purely from this gap)
+def_iter = []
+for _root, _dirs, _files in os.walk(E4_CPP_ROOT):
+    if '_generated' in _root or 'raw_decomp' in _root:
         continue
-    path = os.path.join(E4_CPP, fn)
+    for _fn in sorted(_files):
+        if not _fn.endswith('.cpp'):
+            continue
+        def_iter.append(os.path.join(_root, _fn))
+for path in def_iter:
     lines = open(path, encoding='utf-8', errors='replace').read().split('\n')
     pend = None
     for i, ln in enumerate(lines):

@@ -164,8 +164,8 @@ int sub_5D2350(int a1, int * a2)
     result = a2[3]; /*0x5d2364*/
     if ( result > 0 ) /*0x5d2369*/
     {
-      GetClientRect(g_hWnd, &Rect); /*0x5d237b*/
-      ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5d238c*/
+      GetClientRect((HWND)(g_hWnd), &Rect); /*0x5d237b*/
+      ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5d238c*/
       if ( dword_887640 ) /*0x5d239e*/
         (*(void (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 60))(dword_887640, a1, 0); /*0x5d23a5*/
       v3 = *a2; /*0x5d23af*/
@@ -343,7 +343,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     }
   }
   if ( !*(unsigned char *)(aP0 + 25) ) /*0x5d45c7*/
-    return v4; /*0x5d4990*/
+    return (gamemd::CampaignScore **)(v4); /*0x5d4990*/
   if ( a4 ) /*0x5d45d0*/
   {
     v12 = a4; /*0x5d4646*/
@@ -383,7 +383,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     }
     *a2 = (int)((gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)(0))))));
     (*(void (**)(unsigned int))(**(unsigned int **)(aP0 + 36) + 80))(*(unsigned int *)(aP0 + 36)); /*0x5d498d*/
-    return v4; /*0x5d498d*/
+    return (gamemd::CampaignScore **)(v4); /*0x5d498d*/
   }
   if ( v12 != 13 ) /*0x5d4658*/
   {
@@ -413,7 +413,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         *(unsigned int *)(aP0 + 688) = v18; /*0x5d46e4*/
         *(unsigned short *)(aP0 + 2 * v18 + 40) = 0; /*0x5d46ea*/
         ((TextRenderer *)0)->GetInstance(); /*0x5d46f5*/
-        if ( Text::MeasureWidth(aP0 + 40, 0) >= *(unsigned int *)(aP0 + 708) - 10 ) /*0x5d4711*/
+        if ( Text::MeasureWidth((int)(aP0 + 40), 0) >= *(unsigned int *)(aP0 + 708) - 10 ) /*0x5d4711*/
         {
           v19 = *(unsigned int *)(aP0 + 688) - 1; /*0x5d4719*/
           *(unsigned int *)(aP0 + 688) = v19; /*0x5d471a*/
@@ -428,8 +428,8 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
             v21 = *(unsigned int *)(aP0 + 688) + 1; /*0x5d4779*/
             *(unsigned int *)(aP0 + 688) = v21; /*0x5d477a*/
             *(unsigned short *)(aP0 + 2 * v21 + 40) = (unsigned short)((gamemd::CampaignScore **)(0)); /*0x5d4780*/
-            *a2 = (gamemd::CampaignScore **)(0); /*0x5d4788*/
-            return 4; /*0x5d478d*/
+            *a2 = (int)((gamemd::CampaignScore **)(0)); /*0x5d4788*/
+            return (gamemd::CampaignScore **)(4); /*0x5d478d*/
           }
           v4 = 0; /*0x5d4790*/
         }
@@ -722,8 +722,8 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
   v2 = (char **)(a1);
   v19.customSound = edx0; /*0x5d759a*/
   v19.customSound_controller[3] = (int)a1; /*0x5d75aa*/
-  CCFileClass::Construct((CCFileClass *)&v19.lineTrailer, aMpmodesmdIni); /*0x5d75ae*/
-  if ( (uint8_t)CCFileClass::Open((int)((CCFileClass *)&v19.lineTrailer), 0) ) /*0x5d75bd*/
+  CCFileClass::Construct((CCFileClass *)&v19.lineTrailer,(void *)(aMpmodesmdIni)); /*0x5d75ae*/
+  if ( (uint8_t)((CCFileClass *)((int)((CCFileClass *)&v19.lineTrailer)))->Open(0) ) /*0x5d75bd*/
   {
     v19.health = 0; /*0x5d75ce*/
     v19.estimatedHealth = 0; /*0x5d75d2*/
@@ -733,7 +733,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
     v19.location[1] = 0; /*0x5d760f*/
     v19.location[2] = 0; /*0x5d7616*/
     *(void **)&v19.bombVisible = (void*)&INIClass_vftable; /*0x5d761d*/
-    if ( FileStraw::Open((FileStraw *)&v19.bombVisible, (int)&v19.lineTrailer, 0) > 0 ) /*0x5d762c*/
+    if ( ((FileStraw *)((FileStraw *)&v19.bombVisible))->Open((int)&v19.lineTrailer, 0) > 0 ) /*0x5d762c*/
     {
       v19.customSound_controller[4] = INIClass::FindKey(&v19.bombVisible, v2); /*0x5d763e*/
       v19.owningHouseIndex = 0; /*0x5d7642*/
@@ -955,14 +955,14 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
       }
     }
   LABEL_50:
-    HashTable::DestroyHashTableINIClass((INIClass *)&v19.bombVisible); /*0x5d7c82*/
+    ((HashTable *)((INIClass *)&v19.bombVisible))->DestroyHashTableINIClass(); /*0x5d7c82*/
   }
   v19.lineTrailer = (void*)&CCFileClass_vftable; /*0x5d7c92*/
   v21 = 0; /*0x5d7c9d*/
   ((Vector *)((int)v20))->Clear(); /*0x5d7ca4*/
   v19.lineTrailer = &off_7E1668; /*0x5d7cb0*/
 // 0x431b80
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v19.lineTrailer); /*0x5d7cc0*/
+  return ((BufferIOFileClass *)((BufferIOFileClass *)&v19.lineTrailer))->Dtor(); /*0x5d7cc0*/
 }
 }
 // 0x5D7CE0
@@ -1321,7 +1321,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
                   v2 = a1; /*0x5da9db*/
                 }
                 ((Network *)(v10))->CopyAddress(&a1, (int)v23); /*0x5da9e9*/
-                NetworkID::Assign(&qword_A8DBA4, &a1, (int)v23, 0); /*0x5da9ff*/
+                ((NetworkID *)(&qword_A8DBA4))->Assign(&a1, (int)v23, 0); /*0x5da9ff*/
                 ((Network *)((uint16_t *)&qword_A8DBA4))->FormatAddress(0); /*0x5daa0b*/
                 Debug::Log(); /*0x5daa16*/
                 Debug::Log(); /*0x5daa2d*/
@@ -1698,12 +1698,12 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
     goto LABEL_8; /*0x5dd97d*/
   }
   Debug::Log(); /*0x5dda12*/
-  if ( !dword_A8BB08 || (uint8_t)IsRandMap::Sed2((IsRandMap *)&dword_A8B238) ) /*0x5dda28*/
+  if ( !dword_A8BB08 || (uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() ) /*0x5dda28*/
   {
     SynchronizeMultiplayerGameStart_Start(); /*0x5dda31*/
     if ( RequestNetworkFile(byte_A8B8E0, 3, 1) ) /*0x5dda42*/
     {
-      if ( !(uint8_t)IsRandMap::Sed2((IsRandMap *)&dword_A8B238) || RequestNetworkFile(v10, 3, 1) ) /*0x5dda68*/
+      if ( !(uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() || RequestNetworkFile(v10, 3, 1) ) /*0x5dda68*/
       {
   LABEL_8:
         strcpy((char *)&dword_A8B230[130].abstractFlags, byte_A8B8E0); /*0x5dd97f*/
@@ -3169,7 +3169,7 @@ unsigned char sub_5DAF20()
       if ( v2 != -1 && v2 != dword_AC0D30 ) /*0x5e6764*/
       {
         LoadScenarioClassByIndex(v2); /*0x5e676c*/
-        if ( IsRandMap::Sed(*(unsigned int *)(g_MultiplayerGameState + 4 * v2)) ) /*0x5e677a*/
+        if ( ((IsRandMap *)(*(unsigned int *)(g_MultiplayerGameState + 4 * v2)))->Sed() ) /*0x5e677a*/
         {
           v4 = g_UIControlState; /*0x5e6783*/
           if ( g_UIControlState ) /*0x5e678b*/

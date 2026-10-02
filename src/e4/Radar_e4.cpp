@@ -1523,7 +1523,7 @@ MapClass * * Radar::RenderMinimap()
   v96 = DSurface_ViewBounds.field_0 + dword_886FA8 / 2; /*0x656f28*/
   v97 = dword_886FA4 + dword_886FAC / 2; /*0x656f3e*/
   v4 = (int16_t *)((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(&v101, &v96); /*0x656f4e*/
-  v5 = (int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v4); /*0x656f59*/
+  v5 = (int *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v4); /*0x656f59*/
   v6 = *((unsigned int *)this + 1316); /*0x656f61*/
   v96 = v5[9]; /*0x656f67*/
   v7 = SHIWORD(v96); /*0x656f71*/
@@ -2013,7 +2013,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
       {
         v30 = 7; /*0x692770*/
       }
-      v17 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v14); /*0x69277e*/
+      v17 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14); /*0x69277e*/
       if ( ((unsigned int (*)(int, int, int))Radar::FindNearestRadarTarget)( /*0x6927bc*/
              (*v14 << 8) + 128,
              (v14[1] << 8) + 128,
@@ -2135,16 +2135,16 @@ LABEL_65:
     GroundHeight = Cell::GetGroundHeight(v31); /*0x692a66*/
     if ( !Cell::IsPassable(v31) /*0x692aa3*/
       && !Game::Stub3((int)v31)
-      && *((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, v14) + 17) != -1 )
+      && *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14) + 17) != -1 )
     {
       if ( *(unsigned char *)(*(unsigned int *)&dword_A83D84->TechnoTypeClass[4 /*0x692abc*/
-                                                              * *((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, v14)
+                                                              * *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14)
                                                                 + 17)]
                     + 680) )
       {
-        if ( *((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, v14) + 20) != -1 ) /*0x692ad4*/
+        if ( *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14) + 20) != -1 ) /*0x692ad4*/
         {
-          v26 = CellCoord::To_CellObj(&dword_87F7E8, v14); /*0x692adc*/
+          v26 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(v14); /*0x692adc*/
           v30 = 12; /*0x692af4*/
           if ( (uint8_t)House::IsHumanPlayer(*(void **)&dword_A8022C->AbstractClass[4 * v26[20]]) ) /*0x692aed*/
             goto LABEL_81; /*0x692afc*/

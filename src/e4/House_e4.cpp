@@ -201,7 +201,7 @@ LABEL_19:
       if ( MapFileData ) /*0x47d5c6*/
       {
 LABEL_40:
-        *((unsigned char *)this + 284) = ((HouseClass *)((int)((HouseClass *)v19)))->GetCameoTypeIndex((void *)(*(uint8_t *)((char *)this + 282))); /*0x47d7fb*/
+        *((unsigned char *)this + 284) = ((HouseClass *)((int)((HouseClass *)v19)))->GetCameoTypeIndex((int)((void *)(*(uint8_t *)((char *)this + 282)))); /*0x47d7fb*/
         CellClass::DetermineTileType((CellClass *)this); /*0x47d813*/
         v27 = *((unsigned int *)this + 17); /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
@@ -294,7 +294,7 @@ LABEL_48:
               LOWORD(aP1) = *v4 + *inited; /*0x47dae6*/
               HIWORD(aP1) = inited[1] + *((unsigned short *)this + 19); /*0x47daf3*/
               *(unsigned int *)v55 = (unsigned int)(aP1); /*0x47dafc*/
-              v44 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v55); /*0x47db05*/
+              v44 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v55); /*0x47db05*/
               inited += 2; /*0x47db1b*/
               v44[80] |= 0x10000u; /*0x47db1e*/
             }
@@ -630,7 +630,7 @@ LABEL_5:
     *(unsigned int *)v38 = v6; /*0x4fd58b*/
     if ( !(uint8_t)CellStruct::Equals((unsigned short *)((CellStruct *)v38), &dword_A8EF98) )
     {
-      v7 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v38); /*0x4fd5a6*/
+      v7 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v38); /*0x4fd5a6*/
       v8 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v7 + 72))(v7, &v44); /*0x4fd5b4*/
       v41 = *v8; /*0x4fd5c3*/
       v9 = v8[1]; /*0x4fd5c7*/
@@ -663,7 +663,7 @@ LABEL_5:
                 }
                 else
                 {
-                  v17 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v39); /*0x4fd68a*/
+                  v17 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v39); /*0x4fd68a*/
                   v18 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v17 + 72))(v17, v47); /*0x4fd69b*/
                   v14 = *v18; /*0x4fd69d*/
                   v15 = v18[1]; /*0x4fd69f*/
@@ -1178,7 +1178,7 @@ void House::Constructor()
   if ( *(unsigned short *)this->__pad_0 == 0xFFFF && !this->__pad_C[4] ) /*0x69e09c*/
   {
     CCFileClass::Construct(&v3, (char *)this->House_field_0x8); /*0x69e0ab*/
-    v2 = CCFileClass::ReadEntireFile(&v3); /*0x69e0b4*/
+    v2 = ((CCFileClass *)(&v3))->ReadEntireFile(); /*0x69e0b4*/
     if ( v2 ) /*0x69e0bb*/
     {
       *(unsigned int *)this->__pad_C = v2; /*0x69e0bd*/
@@ -1188,7 +1188,7 @@ void House::Constructor()
     v5 = 0; /*0x69e0d0*/
     ((Vector *)((int)v4))->Clear(); /*0x69e0d8*/
     *(unsigned int *)v3.CDFileClass = &off_7E1668; /*0x69e0e1*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v3); /*0x69e0e9*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v3))->Dtor(); /*0x69e0e9*/
   }
 
 }
@@ -1234,8 +1234,8 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
 
   RadioClass::PowerDrainUpdate((RadioClass *)this, aP1); /*0x70c27b*/
   Power::TimerProcess(this->controlGroup); /*0x70c289*/
-  Checksummer::Add_double((Checksummer *)aP1, this->armorMultiplier[0], this->armorMultiplier[1]); /*0x70c29e*/
-  Checksummer::Add_double((Checksummer *)aP1, this->firepowerMultiplier[0], this->firepowerMultiplier[1]); /*0x70c2b3*/
+  ((Checksummer *)((Checksummer *)aP1))->Add_double(this->armorMultiplier[0], this->armorMultiplier[1]); /*0x70c29e*/
+  ((Checksummer *)((Checksummer *)aP1))->Add_double(this->firepowerMultiplier[0], this->firepowerMultiplier[1]); /*0x70c2b3*/
   v3 = this->idleActionTimer[0]; /*0x70c2b8*/
   v4 = this->idleActionTimer[2]; /*0x70c2be*/
   if ( v3 != -1 ) /*0x70c2c7*/
@@ -1258,11 +1258,11 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
       v6 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v5; /*0x70c31c*/
   }
   Power::TimerProcess(v6); /*0x70c325*/
-  Checksummer::Add_float((Checksummer *)aP1, LODWORD(this->warpFactor)); /*0x70c333*/
+  ((Checksummer *)((Checksummer *)aP1))->Add_float(LODWORD(this->warpFactor)); /*0x70c333*/
   LOBYTE(v7) = this->isChronosphereImmune; /*0x70c338*/
   ((Power *)((Power *)aP1))->FlagProcess(v7); /*0x70c341*/
   Power::TimerProcess(this->lastSightRange); /*0x70c34f*/
-  Checksummer::Add_float((Checksummer *)aP1, LODWORD(this->pitchAngle)); /*0x70c35d*/
+  ((Checksummer *)((Checksummer *)aP1))->Add_float(LODWORD(this->pitchAngle)); /*0x70c35d*/
   v8 = this->diskLaserTimer[0]; /*0x70c362*/
   v9 = this->diskLaserTimer[2]; /*0x70c368*/
   if ( v8 != -1 ) /*0x70c371*/
@@ -1285,10 +1285,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   }
   Power::TimerProcess(v11); /*0x70c3c1*/
   Power::TimerProcess(this->unitValue); /*0x70c3cf*/
-  Checksummer::Add_float((Checksummer *)aP1, (int)this->railgunParticles_2); /*0x70c3dd*/
-  Checksummer::Add_float((Checksummer *)aP1, (int)this->auxParticles1); /*0x70c3eb*/
-  Checksummer::Add_float((Checksummer *)aP1, (int)this->auxParticles2); /*0x70c3f9*/
-  Checksummer::Add_float((Checksummer *)aP1, (int)this->firingParticles); /*0x70c407*/
+  ((Checksummer *)((Checksummer *)aP1))->Add_float((int)this->railgunParticles_2); /*0x70c3dd*/
+  ((Checksummer *)((Checksummer *)aP1))->Add_float((int)this->auxParticles1); /*0x70c3eb*/
+  ((Checksummer *)((Checksummer *)aP1))->Add_float((int)this->auxParticles2); /*0x70c3f9*/
+  ((Checksummer *)((Checksummer *)aP1))->Add_float((int)this->firingParticles); /*0x70c407*/
   LOBYTE(v12) = this->isSinking; /*0x70c40c*/
   v13 = ((Power *)((Power *)aP1))->FlagProcess(v12); /*0x70c415*/
   LOBYTE(v13) = this->isReceivingDamageEffect; /*0x70c41a*/

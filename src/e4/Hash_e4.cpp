@@ -39,7 +39,7 @@ int sub_5E94D0()
     ++v1; /*0x5e94ff*/
   }
   while ( (int)v1 < (int)&dword_A8DAB0 ); /*0x5e9508*/
-  return result; /*0x5e950a*/
+  return (int)(result); /*0x5e950a*/
 }
 } // namespace gamemd
 

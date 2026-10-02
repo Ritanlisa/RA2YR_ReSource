@@ -302,7 +302,7 @@ LABEL_23:
       }
     }
   }
-  return v5; /*0x5fff77*/
+  return (gamemd::Coord **)(v5); /*0x5fff77*/
 
 }
 // 0x4CAD80

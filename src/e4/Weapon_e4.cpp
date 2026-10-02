@@ -246,7 +246,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
       LOWORD(v44) = v49 / 256; /*0x70c7f9*/
       HIWORD(v44) = v50 / 256; /*0x70c802*/
       *(unsigned int *)v48 = v44; /*0x70c811*/
-      v13 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v48); /*0x70c815*/
+      v13 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v48); /*0x70c815*/
       if ( (v13[80] & 0x100) != 0 && v51 >= *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
         v14 = v13[58]; /*0x70c83e*/
       else

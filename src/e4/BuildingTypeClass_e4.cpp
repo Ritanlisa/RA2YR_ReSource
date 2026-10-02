@@ -1,5 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Matrix_e4.hpp"
+#include "e4/classes/VoxelSection_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
@@ -391,7 +394,7 @@ LABEL_11:
   *((unsigned char *)this + 3382) = 1; /*0x45e4e3*/
   *((unsigned char *)this + 3387) = 0; /*0x45e4ea*/
   *((unsigned char *)this + 3384) = 0; /*0x45e4f0*/
-  *((unsigned char *)this + 3479) = 0; /*0x45e4f6*/
+  *((unsigned char *)this + 3479) = (int)(0); /*0x45e4f6*/
   *((unsigned char *)this + 3478) = (int)(0); /*0x45e4fc*/
   *((unsigned char *)this + 3374) = 0; /*0x45e502*/
   return this; /*0x45e508*/
@@ -890,7 +893,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     {
       __3_YAXPAX_Z(*(void **)((char *)this + 5400)); /*0x45f8ca*/
       *((unsigned int *)this + 1350) = 0; /*0x45f8d2*/
-      *v19 = 0; /*0x45f8d8*/
+      *v19 = (unsigned int)(0); /*0x45f8d8*/
     }
     v20 = LoadFileSHP(Source, (bool *)((char *)this + 5404)); /*0x45f8e0*/
     *((unsigned int *)this + 1350) = v20; /*0x45f8e7*/
@@ -900,7 +903,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       if ( *v19 && *((unsigned int *)this + 1350) ) /*0x45f8fc*/
       {
         __3_YAXPAX_Z(*(void **)((char *)this + 5400)); /*0x45f907*/
-        *((unsigned int *)this + 1350) = 0; /*0x45f90f*/
+        *((unsigned int *)this + 1350) = (unsigned int)(0); /*0x45f90f*/
         *v19 = (unsigned int)(0); /*0x45f915*/
       }
       *((unsigned int *)this + 1350) = SearchMIXFile(Source, 0); /*0x45f922*/
@@ -993,7 +996,7 @@ void BuildingTypeClass::LoadVoxel()
     if ( strstr(v2, v20) ) /*0x45fb17*/
     {
       CCFileClass::Construct(&v25, Buffer); /*0x45fb3b*/
-      if ( (uint8_t)CCFileClass::Open(&v25, 0) ) /*0x45fb48*/
+      if ( (uint8_t)((CCFileClass *)(&v25))->Open(0) ) /*0x45fb48*/
       {
         v3 = (void *)((unsigned int *)this)[0]; /*0x45fb55*/
         if ( v3 ) /*0x45fb5d*/
@@ -1023,14 +1026,14 @@ void BuildingTypeClass::LoadVoxel()
         ((unsigned int *)this)[0] = (int)FileHVA; /*0x45fbfe*/
         if ( FileHVA && !*(unsigned char *)FileHVA ) /*0x45fc06*/
         {
-          Info = VoxelSection::GetInfo((VoxelSection *)((unsigned int *)this)[0], 0, 0); /*0x45fc12*/
-          Matrix::Scale((Matrix *)((unsigned int *)this)[0], *(float *)(Info + 12)); /*0x45fc21*/
+          Info = (unsigned int)(((VoxelSection *)((VoxelSection *)((unsigned int *)this)[0]))->GetInfo(0, 0)); /*0x45fc12*/
+          ((Matrix *)((Matrix *)((unsigned int *)this)[0]))->Scale(*(float *)(Info + 12)); /*0x45fc21*/
         }
-        *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fc2a*/
+        *(unsigned int *)v22.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x45fc2a*/
         v24 = 0; /*0x45fc32*/
         ((Vector *)((int)v23))->Clear(); /*0x45fc36*/
         *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fc3f*/
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x45fc43*/
+        ((BufferIOFileClass *)((BufferIOFileClass *)&v22))->Dtor(); /*0x45fc43*/
       }
       v21 = _strupr(off_8194A8); /*0x45fc55*/
       v10 = _strupr(v32); /*0x45fc5e*/
@@ -1041,14 +1044,14 @@ void BuildingTypeClass::LoadVoxel()
         v12 = v11 + 1; /*0x45fc76*/
         *v12++ = 65; /*0x45fc77*/
         *v12++ = 82; /*0x45fc7b*/
-        *v12 = 76; /*0x45fc7f*/
+        *v12 = (unsigned int)(76); /*0x45fc7f*/
         v12[1] = 0; /*0x45fc82*/
       }
-      *(unsigned int *)v25.CDFileClass = &vt_CCFileClass; /*0x45fc8c*/
+      *(unsigned int *)v25.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x45fc8c*/
       v27 = 0; /*0x45fc94*/
       ((Vector *)((int)v26))->Clear(); /*0x45fc9b*/
       *(unsigned int *)v25.CDFileClass = &off_7E1668; /*0x45fca4*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x45fca8*/
+      ((BufferIOFileClass *)((BufferIOFileClass *)&v25))->Dtor(); /*0x45fca8*/
     }
     else if ( this->BarrelAnimIsVoxel ) /*0x45fcaf*/
     {
@@ -1056,7 +1059,7 @@ void BuildingTypeClass::LoadVoxel()
     }
     _makepath(Buffer, 0, 0, Destination, g_Str_File__VXL); /*0x45fcea*/
     CCFileClass::Construct(&v28, Buffer); /*0x45fd01*/
-    if ( (uint8_t)CCFileClass::Open(&v28, 0) ) /*0x45fd0e*/
+    if ( (uint8_t)((CCFileClass *)(&v28))->Open(0) ) /*0x45fd0e*/
     {
       v13 = (void *)((unsigned int *)this)[1]; /*0x45fd1b*/
       if ( v13 ) /*0x45fd23*/
@@ -1088,21 +1091,21 @@ void BuildingTypeClass::LoadVoxel()
       {
         if ( !*(unsigned char *)v18 ) /*0x45fdcf*/
         {
-          v19 = VoxelSection::GetInfo((VoxelSection *)((unsigned int *)this)[1], 0, 0); /*0x45fddb*/
-          Matrix::Scale((Matrix *)((unsigned int *)this)[2], *(float *)(v19 + 12)); /*0x45fdea*/
+          v19 = ((VoxelSection *)((VoxelSection *)((unsigned int *)this)[1]))->GetInfo(0, 0); /*0x45fddb*/
+          ((Matrix *)((Matrix *)((unsigned int *)this)[2]))->Scale(*(float *)(v19 + 12)); /*0x45fdea*/
         }
       }
       *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fdf3*/
       v24 = 0; /*0x45fdfb*/
       ((Vector *)((int)v23))->Clear(); /*0x45fdff*/
       *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fe08*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x45fe0c*/
+      ((BufferIOFileClass *)((BufferIOFileClass *)&v22))->Dtor(); /*0x45fe0c*/
     }
     *(unsigned int *)v28.CDFileClass = &vt_CCFileClass; /*0x45fe18*/
     v30 = 0; /*0x45fe23*/
     ((Vector *)((int)v29))->Clear(); /*0x45fe2a*/
     *(unsigned int *)v28.CDFileClass = &off_7E1668; /*0x45fe36*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v28); /*0x45fe3d*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v28))->Dtor(); /*0x45fe3d*/
   }
 
 }
@@ -1166,14 +1169,14 @@ int BuildingTypeClass::UpdatePower()
   Checksummer *v54; // [esp+Ch] [ebp+4h]
 
   BuildingTypeClass::ProcessPower((int)this, &v54->crcValue); /*0x464b39*/
-  Checksummer::Add_double(v54, this->GateCloseDelay[0], this->GateCloseDelay[1]); /*0x464b4e*/
+  ((Checksummer *)(v54))->Add_double(this->GateCloseDelay[0], this->GateCloseDelay[1]); /*0x464b4e*/
   Power::TimerProcess(this->LightVisibility); /*0x464b5c*/
   Power::TimerProcess(this->LightIntensity); /*0x464b6a*/
   Power::TimerProcess(this->LightRedTint); /*0x464b78*/
   Power::TimerProcess(this->LightGreenTint); /*0x464b86*/
   Power::TimerProcess(this->LightBlueTint); /*0x464b94*/
-  Checksum::AddString((Checksum *)v54, (uint8_t *)this->__pad_E5C); /*0x464ba2*/
-  Checksum::AddString((Checksum *)v54, (uint8_t *)this->__pad_E88); /*0x464bb0*/
+  ((Checksum *)((Checksum *)v54))->AddString((uint8_t *)this->__pad_E5C); /*0x464ba2*/
+  ((Checksum *)((Checksum *)v54))->AddString((uint8_t *)this->__pad_E88); /*0x464bb0*/
   Power::TimerProcess(this->Adjacent); /*0x464bbe*/
   Power::TimerProcess(this->Factory[0]); /*0x464bcc*/
   Power::TimerProcess(this->PowerBonus); /*0x464bda*/
@@ -1286,8 +1289,8 @@ int BuildingTypeClass::UpdatePower()
   ((Power *)((Power *)v54))->FlagProcess(v47); /*0x464f37*/
   LOBYTE(v48) = this->BarrelAnimIsVoxel; /*0x464f3c*/
   ((Power *)((Power *)v54))->FlagProcess(v48); /*0x464f45*/
-  Checksum::AddString((Checksum *)v54, (uint8_t *)this->__pad_1714); /*0x464f53*/
-  Checksummer::Add_double(v54, *(unsigned int *)&this->__pad_1714[20], *(unsigned int *)&this->__pad_1714[24]); /*0x464f68*/
+  ((Checksum *)((Checksum *)v54))->AddString((uint8_t *)this->__pad_1714); /*0x464f53*/
+  ((Checksummer *)(v54))->Add_double(*(unsigned int *)&this->__pad_1714[20], *(unsigned int *)&this->__pad_1714[24]); /*0x464f68*/
   Checksummer::Add_Buffer(v54, (uint8_t *)&this->__pad_1714[28], 12); /*0x464f78*/
   Checksummer::Add_Buffer(v54, (uint8_t *)&this->__pad_1714[40], 12); /*0x464f88*/
   Checksummer::Add_Buffer(v54, (uint8_t *)&this->__pad_1714[52], 12); /*0x464f98*/
@@ -1538,7 +1541,7 @@ LABEL_8:
     {
       LOWORD(a2) = v9; /*0x50b7eb*/
       HIWORD(a2) = v10; /*0x50b7f6*/
-      if ( (v7 & *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a2) + 55)) != 0 ) /*0x50b806*/
+      if ( (v7 & *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a2) + 55)) != 0 ) /*0x50b806*/
         return 1; /*0x50b806*/
       if ( ++v10 >= a3[1] + v6 + 1 ) /*0x50b81b*/
       {
@@ -1625,7 +1628,7 @@ LABEL_15:
                    : -1;
             if ( (void *)result != ((unsigned int *)this)[0] && result != v12 ) /*0x59413b*/
               break; /*0x59413b*/
-            v14 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP1); /*0x594147*/
+            v14 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP1); /*0x594147*/
             result = Cell::IsEmpty(v14); /*0x59414e*/
             if ( !(unsigned char)result ) /*0x594155*/
               break; /*0x594155*/
@@ -2102,9 +2105,9 @@ int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
   {
     return 1; /*0x7460f7*/
   }
-  v6 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], aP2) + 80) >> 8; /*0x7460cd*/
+  v6 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(aP2) + 80) >> 8; /*0x7460cd*/
   LOBYTE(v6) = v6 & 1; /*0x7460d0*/
-  return Pathfinding::CalcDistance((int)&stru_87E790.__pad_D8[80], aP1, aP2, (int)this, 0, v6, 0) > 15; /*0x746052*/
+  return ((Pathfinding *)((int)&stru_87E790.__pad_D8[80]))->CalcDistance(aP1, aP2, (int)this, 0, v6, 0) > 15; /*0x746052*/
 
 }
 } // namespace gamemd

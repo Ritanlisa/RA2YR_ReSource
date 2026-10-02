@@ -47,7 +47,7 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
   *(unsigned int *)Block->__pad_0 = &vt_Animate; /*0x427308*/
   if ( (a2 & 1) != 0 ) /*0x42730e*/
     __3_YAXPAX_Z(Block); /*0x427311*/
-  return Block; /*0x42731b*/
+  return (gamemd::AnimFile *)(Block); /*0x42731b*/
 
 }
 } // namespace gamemd

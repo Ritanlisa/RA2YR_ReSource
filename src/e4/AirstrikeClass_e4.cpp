@@ -68,7 +68,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
   HIWORD(v19) = v7[1] / 256; /*0x41d8f5*/
   v16 = v19; /*0x41d902*/
-  v8 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v16); /*0x41d907*/
+  v8 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16); /*0x41d907*/
   v15 = v17; /*0x41d916*/
   v14 = (int)v8; /*0x41d919*/
   v9 = (unsigned int *)(*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 76) + 60))(*((unsigned int *)this + 19)); /*0x41d91f*/
@@ -140,7 +140,7 @@ int AirstrikeClass::ReassignTarget(int a2, void *a2_2)
       if ( !v4 ) /*0x41da4d*/
         goto LABEL_6; /*0x41da4d*/
     }
-    LOBYTE(v8) = WTFMode::ResetUnitFlags((WTFMode *)this); /*0x41da5c*/
+    LOBYTE(v8) = ((WTFMode *)((WTFMode *)this))->ResetUnitFlags(); /*0x41da5c*/
   }
   else
   {

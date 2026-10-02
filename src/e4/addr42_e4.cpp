@@ -434,7 +434,7 @@ RectangleStruct* ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown *
     result[2] = v13; /*0x421c59*/
     result[3] = v14; /*0x421c5c*/
   }
-  return result; /*0x421c58*/
+  return (RectangleStruct *)(result); /*0x421c58*/
 }
 }
 // 0x424CE0
@@ -466,14 +466,14 @@ void* ObjectClass::ProductionCompletionCallback(543 B)
   (*(void (**)(TechnoClass *, int))(this->vtable0 + 292))(this, 2); /*0x424ceb*/
   if ( LOBYTE(this->ironCurtainTimer[2]) || *(unsigned int *)(this->missionTimer[0] + 760) == -1 ) /*0x424d08*/
   {
-    AudioController::Stop((AudioController *)&this->ironTintTimer[1]); /*0x424d38*/
+    ((AudioController *)((AudioController *)&this->ironTintTimer[1]))->Stop(); /*0x424d38*/
   }
   else
   {
     v2 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(this->vtable0 + 72))(this, &v18); /*0x424d1a*/
     StartAudioControllerAt(*(unsigned int *)(this->missionTimer[0] + 760), v2, (int **)&this->ironTintTimer[1]); /*0x424d2b*/
   }
-  AudioController::Stop((AudioController *)&this->airstrikeTimer[2]); /*0x424d43*/
+  ((AudioController *)((AudioController *)&this->airstrikeTimer[2]))->Stop(); /*0x424d43*/
   if ( !*(unsigned int *)(this->missionTimer[0] + 664) ) /*0x424d4e*/
     CreateUnitOnCompletion(this); /*0x424d5a*/
   LOBYTE(v3) = this->ironCurtainTimer[2]; /*0x424d5f*/
@@ -489,7 +489,7 @@ void* ObjectClass::ProductionCompletionCallback(543 B)
       {
         v6 = (unsigned int *)*(&dword_B0F4EC->vtable0 + v3); /*0x424db3*/
         CellClass::ReduceTiberium(&v5->mapCoords, (uint8_t)v5->powerup[0] + 1); /*0x424dc0*/
-        if ( (int)v6[53] > 0 && !((int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 3) ) /*0x424def*/
+        if ( (int)v6[53] > 0 && !((int)abs32(((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State()) % 3) ) /*0x424def*/
         {
           v7 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x424e04*/
           if ( v7 ) /*0x424e0b*/
@@ -564,7 +564,7 @@ AbstractClass * * ObjectClass::CreateUnitOnCompletion(583 B)
   LOWORD(v17) = *v2 / 256; /*0x424f25*/
   HIWORD(v17) = v2[1] / 256; /*0x424f3e*/
   *(unsigned int *)v19 = v17; /*0x424f4b*/
-  v3 = (int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v19); /*0x424f50*/
+  v3 = (int *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v19); /*0x424f50*/
   vtable0 = this->vtable0; /*0x424f55*/
   v5 = 30; /*0x424f57*/
   v21 = v3; /*0x424f5e*/
@@ -787,7 +787,7 @@ int E4Recv_425670::ConstructionPositionTracker()
       v51 = v25; /*0x42599d*/
       v52 = LODWORD(v48); /*0x4259a5*/
       v53 = v56; /*0x4259af*/
-      if ( v21 > (int)(Cell::GetGroundHeight(&v51) + 2 * Map_CellHeight) ) /*0x4259c3*/
+      if ( v21 > (int)(Cell::GetGroundHeight((unsigned int *)(&v51)) + 2 * Map_CellHeight) ) /*0x4259c3*/
         GroundHeight = Map_MaxHeight + Cell::GetGroundHeight(&v51); /*0x4259e5*/
       else
         GroundHeight = Cell::GetGroundHeight(&v51); /*0x4259cf*/
@@ -873,11 +873,11 @@ int E4Recv_425670::ConstructionPositionTracker()
           v36 = LOWORD(v48); /*0x425ac2*/
           LOWORD(v48) += dword_89F6A0; /*0x425ad9*/
           WORD1(v48) = HIWORD(dword_89F6A0) + v30; /*0x425ae2*/
-          if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&v48) + 80) & 0x100) == 0 ) /*0x425b03*/
+          if ( (*((unsigned int *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj((int16_t *)&v48) + 80) & 0x100) == 0 ) /*0x425b03*/
           {
             LOWORD(v48) = LOWORD(dword_89F688[0]) + v36; /*0x425b1b*/
             WORD1(v48) = HIWORD(dword_89F688[0]) + v30; /*0x425b20*/
-            if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&v48) + 80) & 0x100) == 0 ) /*0x425b41*/
+            if ( (*((unsigned int *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj((int16_t *)&v48) + 80) & 0x100) == 0 ) /*0x425b41*/
               this->isFallingDown[0] = 1; /*0x425b47*/
           }
         }
@@ -1323,7 +1323,7 @@ unsigned int * PathClass_WalkPath(unsigned int * a1, int * a2, int a3, int * a4)
       v8 = *a4; /*0x4297a1*/
       if ( *a4 == 8 ) /*0x4297a6*/
       {
-        v9 = *((int16_t *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v11) + 139); /*0x4297b7*/
+        v9 = *((int16_t *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v11) + 139); /*0x4297b7*/
         if ( v9 == -1 ) /*0x4297c1*/
           v4 = 0; /*0x4297db*/
         else
@@ -1560,7 +1560,7 @@ void sub_42B080(short * a1, int a2)
       IDA_LOWORD(v11) = v4 + *v2; /*0x42b0dc*/
       IDA_HIWORD(v11) = v10 + v2[1]; /*0x42b0e5*/
       a1 = v11; /*0x42b0f4*/
-      v5 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a1); /*0x42b0fd*/
+      v5 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x42b0fd*/
       if ( (v5[80] & 0x100) != 0 && (v6 = *((char *)v5 + 283) - a2, (int)((IDA_HIDWORD(v6) ^ v6) - IDA_HIDWORD(v6)) > 2) ) /*0x42b11d*/
         v7 = v5[58]; /*0x42b11f*/
       else
@@ -1710,7 +1710,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
     v13 = a4 - a5; /*0x42b49d*/
     while ( *v12 == 8 ) /*0x42b4a4*/
     {
-      v14 = *((int16_t *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v50) + 139); /*0x42b4b5*/
+      v14 = *((int16_t *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v50) + 139); /*0x42b4b5*/
       if ( v14 == -1 ) /*0x42b4bf*/
       {
         v15 = (int *)((CellStruct *)(&TileDataCellClass))->Set(0, 0); /*0x42b4d7*/
@@ -1755,7 +1755,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
     IDA_HIWORD(v54) = v23; /*0x42b564*/
     v50 = v54; /*0x42b579*/
     v24 = *(unsigned int *)(a3 + 4 * (v7 + a5 - v19)); /*0x42b581*/
-    v25 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v50); /*0x42b58f*/
+    v25 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v50); /*0x42b58f*/
     do /*0x42b655*/
     {
       if ( v52 <= 0 ) /*0x42b597*/
@@ -1777,7 +1777,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
         v41 = v37; /*0x42b732*/
         while ( *v40 == 8 ) /*0x42b739*/
         {
-          v42 = *((int16_t *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a6) + 139); /*0x42b74a*/
+          v42 = *((int16_t *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a6) + 139); /*0x42b74a*/
           if ( v42 == -1 ) /*0x42b754*/
           {
             v43 = (int **)((CellStruct *)(&a2))->Set(0, 0); /*0x42b76c*/
@@ -1810,7 +1810,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
       IDA_LOWORD(v55) = v27; /*0x42b612*/
       IDA_HIWORD(v55) = v28; /*0x42b61b*/
       v50 = v55; /*0x42b624*/
-      v25 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v50); /*0x42b633*/
+      v25 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v50); /*0x42b633*/
       v29 = *((char *)v25 + 283); /*0x42b635*/
       if ( v24 - v29 == 4 ) /*0x42b641*/
       {
@@ -2041,7 +2041,7 @@ LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short 
       IDA_LOWORD(v35) = (unsigned short)v19 + IDA_LOWORD(dword_89F688[v20]); /*0x42bf46*/
       IDA_HIWORD(v35) = IDA_HIWORD(a5) + IDA_HIWORD(dword_89F688[v20]); /*0x42bf55*/
       a5 = v35; /*0x42bf5e*/
-      v21 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a5); /*0x42bf6c*/
+      v21 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a5); /*0x42bf6c*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData((int16_t *)&a5, v37) * v39 >= 0.01 ) /*0x42bfa1*/
         ++v31; /*0x42bfa3*/
       v18 = (*(int (**)(unsigned int *, unsigned int *, int, int, unsigned int, int))(*v15 + 428))(v15, v21, v32, v17, 0, 1) /*0x42bfe5*/
@@ -2069,7 +2069,7 @@ LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short 
       IDA_LOWORD(v36) = IDA_LOWORD(dword_89F688[v23]) + (unsigned short)v19; /*0x42c053*/
       IDA_HIWORD(v36) = IDA_HIWORD(a5) + IDA_HIWORD(dword_89F688[v23]); /*0x42c058*/
       a5 = v36; /*0x42c067*/
-      v24 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a5); /*0x42c070*/
+      v24 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a5); /*0x42c070*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData((int16_t *)&a5, v37) * v39 >= 0.01 ) /*0x42c0a5*/
         ++v31; /*0x42c0a7*/
       v18 = (*(int (**)(unsigned int *, unsigned int *, int, int, unsigned int, int))(*v15 + 428))(v15, v24, v33, v17, 0, 1) /*0x42c0e9*/
@@ -2145,8 +2145,8 @@ void * E4Recv_42C900::FindPathWithRetry(FootClass * aP1, short * a2, int aP4, in
   }
   while ( v10 ); /*0x42c925*/
   *((unsigned int *)this + 15) = aP6; /*0x42c92f*/
-  v30 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], aP1); /*0x42c93d*/
-  v12 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x42c95b*/
+  v30 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(aP1); /*0x42c93d*/
+  v12 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(a2); /*0x42c95b*/
   if ( aP3 == -1 ) /*0x42c95d*/
     v13 = *(unsigned int *)((*(int (**)(char *))(*(unsigned int *)aP4 + 132))(aP4) + 1460); /*0x42c96d*/
   else
@@ -2156,7 +2156,7 @@ void * E4Recv_42C900::FindPathWithRetry(FootClass * aP1, short * a2, int aP4, in
     aP6 = *(unsigned int *)((*(int (**)(char *))(*(unsigned int *)aP4 + 132))(aP4) + 1460); /*0x42c9a9*/
   else
     aP6 = aP3; /*0x42c993*/
-  v14 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x42c9b7*/
+  v14 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(a2); /*0x42c9b7*/
   v15 = ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex(a2, aP6, BYTE1(v14[80]) & 1); /*0x42c9d7*/
   v33 = v15; /*0x42c9e0*/
   LOBYTE(v15) = aP4[140]; /*0x42c9e4*/
@@ -2287,7 +2287,7 @@ AbstractClass * * E4Recv_42CCD0::sub_42CCD0(int a2)
     v6 = (int16_t *)(v2 + 112); /*0x42cd5e*/
     v25 = 0; /*0x42cd68*/
     v24 = 0; /*0x42cd6d*/
-    v7 = CellCoord::To_CellObj(&dword_87F7E8, v6); /*0x42cd75*/
+    v7 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(v6); /*0x42cd75*/
     if ( CheckMapReachability(&dword_87F7E8, (int)v7, v3, (int)&v22, a2) ) /*0x42cd80*/
     {
       v8 = CellToTileIndexMap((int *)&dword_87F7E8, v6); /*0x42cd8f*/
@@ -2506,7 +2506,7 @@ unsigned int * Cell_GetNeighborCoord(unsigned int * a1, short * a2, int a3)
 
   if ( a3 == 8 ) /*0x42d49a*/
   {
-    v4 = *((int16_t *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2) + 139); /*0x42d4a7*/
+    v4 = *((int16_t *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(a2) + 139); /*0x42d4a7*/
     if ( v4 == -1 ) /*0x42d4b1*/
       *a1 = 0; /*0x42d4d7*/
     else

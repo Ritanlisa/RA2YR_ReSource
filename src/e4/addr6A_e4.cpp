@@ -176,7 +176,7 @@ int E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
 LABEL_7:
   if ( !dword_A8E7AC && a2 != 31 ) /*0x6a882b*/
     ((VoxClass *)(&stru_83FA64))->FindAndPlay(-1); /*0x6a8837*/
-  TabCameoListClass::AddCameo_ReplaceItAll((TabCameoListClass *)this, a2, a3); /*0x6a8840*/
+  ((TabCameoListClass *)((TabCameoListClass *)this))->AddCameo_ReplaceItAll(a2, a3); /*0x6a8840*/
   LOBYTE(this->ambientSoundController[0]) = 1; /*0x6a8848*/
   g_CameoRenderFlag = 1; /*0x6a884c*/
   return 1; /*0x6a8847*/
@@ -271,8 +271,8 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
     }
     while ( v3 < v6 ); /*0x6a9494*/
   }
-  g_CameoRenderFlag = (gamemd::BombClass **)(1); /*0x6a9498*/
-  return v5; /*0x6a9496*/
+  g_CameoRenderFlag = (int)((gamemd::BombClass **)(1)); /*0x6a9498*/
+  return (gamemd::BombClass **)(v5); /*0x6a9496*/
 
 }
 }
@@ -358,21 +358,21 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
     ResourceIDCSF = v19; /*0x6add19*/
   }
   v12 = SendDlgItemMessageA((HWND)(hDlg), nIDDlgItem, 0x147u, 0, 0); /*0x6add2e*/
-  if ( (unsigned int)SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v12, 0) <= 2 ) /*0x6add3e*/
+  if ( (unsigned int)SendDlgItemMessageA((HWND)(hDlg), nIDDlgItem, 0x150u, v12, 0) <= 2 ) /*0x6add3e*/
   {
     v20 = 1; /*0x6addde*/
   }
   else
   {
     v20 = 0; /*0x6add5c*/
-    SetupSkirmishSpawnLocations(hDlg, ResourceIDCSF, -2); /*0x6add61*/
-    SetupLobbyCountryCombo(hDlg, nIDDlgItema, -2); /*0x6add6e*/
-    SetupLobbyFactionSlots(hDlg, (int)hWnd, -2); /*0x6add7b*/
+    SetupSkirmishSpawnLocations((HWND)(hDlg), ResourceIDCSF, -2); /*0x6add61*/
+    SetupLobbyCountryCombo((HWND)(hDlg), nIDDlgItema, -2); /*0x6add6e*/
+    SetupLobbyFactionSlots((HWND)(hDlg), (int)hWnd, -2); /*0x6add7b*/
   }
   DlgItem = GetDlgItem((HWND)(hDlg), ResourceIDCSF); /*0x6add8a*/
   v14 = GetDlgItem((HWND)(hDlg), nIDDlgItema); /*0x6add94*/
   hWnda = GetDlgItem((HWND)(hDlg), (int)hWnd); /*0x6adda2*/
-  v22 = GetDlgItem(hDlg, (int)ResourceID4CSF); /*0x6addb4*/
+  v22 = GetDlgItem((HWND)(hDlg), (int)ResourceID4CSF); /*0x6addb4*/
   EnableWindow(DlgItem, v20); /*0x6addc0*/
   EnableWindow(v14, v20); /*0x6addc4*/
   EnableWindow(hWnda, v20); /*0x6addcc*/
@@ -651,7 +651,7 @@ int TechnoClass::ProcessDeployAction()
         else
         {
           v7 = *(unsigned int *)this->occupant; /*0x6afe87*/
-          v8 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v29); /*0x6afe8e*/
+          v8 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v29); /*0x6afe8e*/
           (*(void (**)(int, void *, int))(v7 + 1152))(this->occupant, v8, 1); /*0x6afe97*/
           LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))(this->occupant, 2, 0); /*0x6afea6*/
           this->customSound_controller[3] = 2; /*0x6afeac*/
@@ -760,8 +760,8 @@ int TechnoClass::ProcessDeployAction()
                                         &v31,
                                         *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256,
                                         1);
-          v30 = *((BuildingClass *)((BuildingClass *)this))->FindPlacementCells2(&v33, *(int *)v29); /*0x6b0100*/
-          v16 = ((CellStruct *)((CellStruct *)&v30))->Sub(&v34, v29); /*0x6b0104*/
+          v30 = *((BuildingClass *)((BuildingClass *)this))->FindPlacementCells2((unsigned int *)(&v33), *(int *)v29); /*0x6b0100*/
+          v16 = ((CellStruct *)((CellStruct *)&v30))->Sub((unsigned int *)(&v34), v29); /*0x6b0104*/
           v17 = *((int16_t *)v16 + 1); /*0x6b0109*/
           v18 = *(int16_t *)v16; /*0x6b010d*/
           v31 = v17; /*0x6b0110*/
@@ -872,7 +872,7 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
     this->ambientSoundController[3] = v6; /*0x6a0544*/
     vtable3 = ((unsigned int *)this)[0]; /*0x6a054a*/
     v7 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x6a0551*/
-    if ( (uint8_t)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x6a0564*/
+    if ( (uint8_t)((CrateClass *)((CrateClass *)v7))->ProcessPickup((int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x6a0564*/
     {
       ((WalkLocomotion *)((int)this))->MoveTo(aP1, 1); /*0x6a0573*/
       return 1; /*0x6a057d*/

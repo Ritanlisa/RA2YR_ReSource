@@ -261,7 +261,7 @@ LABEL_6:
           0,
           0,
           0);
-        InitializeAudioOcclusion((IUnknown *)(v39), &v31, &v30); /*0x749cfa*/
+        InitializeAudioOcclusion((IUnknown *)(v39),(unsigned int *)(&v31), &v30); /*0x749cfa*/
         v27 = v38[0] + v31; /*0x749d15*/
         v28 = v30 + v38[1]; /*0x749d26*/
         v23 = -4 - ZCoordToScreenY(v35); /*0x749d36*/
@@ -286,7 +286,7 @@ LABEL_6:
         Viewport::Clear(v26); /*0x749da8*/
         v9 = MultiplyMatrix3x4(v41, (float *)stru_887430.m_Data, v40); /*0x749dbe*/
         TransformVoxelVertex((gamemd::VoxelSection *)(v7),(gamemd::VoxelSection *)(*((unsigned int *)this->VoxelAnimClass_field_0x104 + 166)), 0, v9); /*0x749dd4*/
-        InitializeAudioOcclusion((IUnknown *)(v39), &v31, &v30); /*0x749de6*/
+        InitializeAudioOcclusion((IUnknown *)(v39),(unsigned int *)(&v31), &v30); /*0x749de6*/
         v10 = 10240; /*0x749df1*/
         if ( *((unsigned char *)this->VoxelAnimClass_field_0x104 + 661) ) /*0x749df6*/
           v10 = 10244; /*0x749e00*/
@@ -338,7 +338,7 @@ LABEL_6:
       }
     }
   }
-  return (char)VoxelAnimClass_field_0x104; /*0x749eea*/
+  return (gamemd::Coord **)((char)VoxelAnimClass_field_0x104); /*0x749eea*/
 
 }
 }
@@ -627,7 +627,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
             LOWORD(v89) = v97 / 256 + LOWORD(g_DDrawSurfaceManager.scenario[v42 + 82]); /*0x74a363*/
             HIWORD(v89) = v98 / 256 + HIWORD(g_DDrawSurfaceManager.scenario[v42 + 82]); /*0x74a372*/
             *(unsigned int *)v92 = v89; /*0x74a381*/
-            v43 = (uint8_t *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v92); /*0x74a38a*/
+            v43 = (uint8_t *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v92); /*0x74a38a*/
             if ( (uint8_t)IsCoordValidMap((int)v43, 0) ) /*0x74a390*/
             {
               v44 = *(CellClass **)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * FindBuildingByTiberiumType(127)); /*0x74a3b2*/
@@ -662,9 +662,9 @@ void VoxelAnimClass::VoxelAnimClass_Update()
                 }
               }
               v94 = (int)(v43 + 36); /*0x74a482*/
-              CellClass::RegisterForRedraw(v44, (int16_t *)v43 + 18); /*0x74a486*/
+              ((CellClass *)(v44))->RegisterForRedraw((int16_t *)v43 + 18); /*0x74a486*/
               v43[286] = 0; /*0x74a48f*/
-              StartCoords = ((House *)((House *)v43))->GetStartCoords(v100); /*0x74a49e*/
+              StartCoords = (int *)(((House *)((House *)v43))->GetStartCoords((unsigned int *)(v100))); /*0x74a49e*/
               v48 = *StartCoords; /*0x74a4a6*/
               v49 = StartCoords[1] - (unsigned int)DSurface_ViewBounds.field_4; /*0x74a4ab*/
               v50 = StartCoords[2]; /*0x74a4ad*/
@@ -763,9 +763,9 @@ void VoxelAnimClass::VoxelAnimClass_Update()
                   -1);
               }
             }
-            CellClass::RegisterForRedraw(v56, (int16_t *)&v55->smudgeTypeIndex); /*0x74a6d9*/
+            ((CellClass *)(v56))->RegisterForRedraw((int16_t *)&v55->smudgeTypeIndex); /*0x74a6d9*/
             v55->powerup = 0; /*0x74a6e2*/
-            ((House *)((House *)v55))->GetStartCoords(&v108); /*0x74a6ec*/
+            ((House *)((House *)v55))->GetStartCoords((unsigned int *)(&v108)); /*0x74a6ec*/
             BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)&v55->smudgeTypeIndex); /*0x74a6f7*/
           }
         }

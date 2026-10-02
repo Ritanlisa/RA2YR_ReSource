@@ -227,7 +227,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
   v15 = this->m_8; /*0x6cf7fb*/
   if ( v15 < this->m_10 ) /*0x6cf803*/
     this->m_10 = v15; /*0x6cf805*/
-  return 1; /*0x6cf808*/
+  return (gamemd::AbstractClass **)(1); /*0x6cf808*/
 
 }
 }

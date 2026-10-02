@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct FontRenderer {
-    int InitContext(int * a2);
+    int InitContext(int *a2);
 };
 
 } // namespace gamemd

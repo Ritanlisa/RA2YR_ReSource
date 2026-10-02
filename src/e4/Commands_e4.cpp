@@ -19,7 +19,7 @@ namespace gamemd {
 int32_t Commands::AddRef(void *a1)
 {
 
-  return aMultiplayerdeb; /*0x537a55*/
+  return (int32_t)(aMultiplayerdeb); /*0x537a55*/
 
 }
 } // namespace gamemd
@@ -37,7 +37,7 @@ namespace gamemd {
 int32_t Commands::Release(void *a1)
 {
 
-  return &off_8278C0; /*0x537a75*/
+  return (int32_t)(&off_8278C0); /*0x537a75*/
 
 }
 } // namespace gamemd

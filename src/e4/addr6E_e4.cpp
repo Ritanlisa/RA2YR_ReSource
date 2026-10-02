@@ -200,8 +200,8 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   v8[1] = (v6[1] << 8) + 128; /*0x6e27d0*/
   v8[0] = (v6[0] << 8) + 128; /*0x6e27da*/
   GroundHeight = Cell::GetGroundHeight((unsigned int *)(v8)); /*0x6e27e3*/
-  if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v6) + 80) & 0x100) != 0 /*0x6e2819*/
-    || (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v6) + 80) & 0x400) != 0 )
+  if ( (*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v6) + 80) & 0x100) != 0 /*0x6e2819*/
+    || (*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v6) + 80) & 0x400) != 0 )
   {
     GroundHeight += dword_B0E6D4; /*0x6e2827*/
   }
@@ -223,7 +223,7 @@ void CreateHouseClass(void * a1, void * a2, void * a3, void * a4, void * a5, voi
     return 0; /*0x6e30cd*/
   if ( v7 == (HouseClass *)8997 ) /*0x6e30d5*/
   {
-    Field11 = Property::GetField11(a6); /*0x6e30d7*/
+    Field11 = ((Property *)(a6))->GetField11(); /*0x6e30d7*/
   }
   else
   {
@@ -258,7 +258,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v8)); /*0x6e33d5*/
   v5 = (unsigned int *)(__2_YAPAXI_Z(0x14u)); /*0x6e33d9*/
   if ( v5 ) /*0x6e33e3*/
-    ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/
+    ((ActionQueue *)(v5))->PushEntry(v8, v9, GroundHeight); /*0x6e3400*/
   return 1; /*0x6e3407*/
 
 }
@@ -914,7 +914,7 @@ char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
   v9 = (v6[1] << 8) + 128; /*0x6e3630*/
   v8 = (v6[0] << 8) + 128; /*0x6e363a*/
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e3643*/
-  if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v6) + 80) & 0x100) != 0 ) /*0x6e365f*/
+  if ( (*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v6) + 80) & 0x100) != 0 ) /*0x6e365f*/
     GroundHeight += dword_B0E6D4; /*0x6e366d*/
   LOWORD(v7) = v8 / 256; /*0x6e3681*/
   HIWORD(v7) = v9 / 256; /*0x6e3696*/

@@ -169,7 +169,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       dwUser[5].DebugInfo = (PRTL_CRITICAL_SECTION_DEBUG)60; /*0x41184a*/
       break; /*0x411852*/
     case 2: /*0x411835*/
-      result = (int)(sub_411B20((DWORD_PTR)dwUser, a3, a4)); /*0x411862*/
+      result = (int)(sub_411B20((DWORD_PTR)dwUser,(gamemd::AnimClass *)(a3), a4)); /*0x411862*/
       break; /*0x41186e*/
     case 3: /*0x411835*/
             ((Debug *)0)->Log();
@@ -195,10 +195,10 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
           }
         }
                 ((Debug *)0)->Log();
-        timeKillEvent(*(unsigned int *)(v6 + 96)); /*0x41192a*/
+        timeKillEvent((void *)(*(unsigned int *)(v6 + 96))); /*0x41192a*/
         *(unsigned int *)(v6 + 96) = 0; /*0x411935*/
                 ((Debug *)0)->Log();
-        timeEndPeriod(0x10u); /*0x411942*/
+        timeEndPeriod((void *)(0x10u)); /*0x411942*/
         *(unsigned char *)v6 = 0; /*0x41194d*/
                 ((Debug *)0)->Log();
         DeleteCriticalSection((LPCRITICAL_SECTION)(v6 + 160)); /*0x41195f*/
@@ -210,7 +210,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       result = InitializeSoundBufferPlayback(dwUser); /*0x41197f*/
       break; /*0x41198b*/
     case 5: /*0x411835*/
-      result = SubmitDirectSoundBufferData(dwUser, a3, a4); /*0x41199b*/
+      result = SubmitDirectSoundBufferData((unsigned int)(dwUser), a3, a4); /*0x41199b*/
       break; /*0x4119a7*/
     case 6: /*0x411835*/
       v8 = dwUser[2].LockCount; /*0x4119ac*/
@@ -310,7 +310,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   }
   while ( (int)v4 < (int)byte_887834 ); /*0x411b75*/
   if ( v3 == 1 || a3 != 16 ) /*0x411b85*/
-    return -13; /*0x411b85*/
+    return (gamemd::AbstractClass **)(-13); /*0x411b85*/
   *(unsigned int *)(dwUser + 52) = v3; /*0x411b99*/
   v5 = (unsigned char *)(188 * v3 + 8943480); /*0x411b9c*/
   memset(v5, 0, 0xBCu); /*0x411bac*/
@@ -338,11 +338,11 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   v5[10] = *((unsigned char *)aP1 + 2); /*0x411c5a*/
   v5[11] = *((unsigned char *)aP1 + 3); /*0x411c60*/
   *((unsigned int *)v5 + 9) = *((unsigned int *)aP1 + 1); /*0x411c66*/
-  dword_88776C = (gamemd::AbstractClass **)((unsigned int)((int (*)(unsigned int))*((unsigned int *)aP1 + 2))); /*0x411c6c*/
+  dword_88776C = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((int (*)(unsigned int))*((unsigned int *)aP1 + 2)))); /*0x411c6c*/
   dword_887770 = (unsigned int)((int (*)(unsigned int, unsigned int))*((unsigned int *)aP1 + 3)); /*0x411c75*/
     ((Debug *)0)->Log();
-  if ( timeBeginPeriod(0x10u) == 97 ) /*0x411c90*/
-    return -13; /*0x411cd5*/
+  if ( timeBeginPeriod((void *)(0x10u)) == 97 ) /*0x411c90*/
+    return (gamemd::AbstractClass **)(-13); /*0x411cd5*/
     ((Debug *)0)->Log();
   *((unsigned int *)v5 + 24) = timeSetEvent(0x10u, 1u, fptc, dwUser, 1u); /*0x411cb6*/
     ((Debug *)0)->Log();
@@ -809,9 +809,9 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
             v24 = (TeamClass *)((ObjectTypeClass *)((ObjectTypeClass *)v23))->FindByName(); /*0x41b2dd*/
             if ( v24 ) /*0x41b2e4*/
             {
-              v25 = ((TeamClass *)(v24))->FindOrCreate(); /*0x41b2e8*/
+              v25 = (int)(((TeamClass *)(v24))->FindOrCreate()); /*0x41b2e8*/
               if ( v25 ) /*0x41b2ef*/
-                ObjectClass::SetReference((ObjectClass *)v12, v25); /*0x41b2f4*/
+                ((ObjectClass *)((ObjectClass *)v12))->SetReference(v25); /*0x41b2f4*/
             }
             v26 = strtok(0, Str); /*0x41b300*/
             if ( v26 ) /*0x41b30a*/
@@ -1357,12 +1357,12 @@ int sub_412870()
   unsigned int *v0; // esi
   int v1; // edi
 
-  v0 = g_CellClassManager; /*0x412873*/
+  v0 = (unsigned int *)(g_CellClassManager); /*0x412873*/
   v1 = (unsigned int)(400); /*0x412878*/
   do /*0x41289c*/
   {
     ((EventClass *)(v0))->resetEvent(0, 0); /*0x412883*/
-    *v0 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x412888*/
+    *v0 = (unsigned int)((void*)&DynamicVectorClass_TechnoClass___vftable); /*0x412888*/
     v0[5] = 10; /*0x41288e*/
     v0[4] = 0; /*0x412895*/
     v0 += 6; /*0x412898*/
@@ -1392,7 +1392,7 @@ void sub_4128F0()
   int v5; // edi
   void *v6; // eax
 
-  v0 = g_CellClassManager; /*0x4128f4*/
+  v0 = (unsigned int *)(g_CellClassManager); /*0x4128f4*/
   v1 = 400; /*0x4128f9*/
   do /*0x412917*/
   {
@@ -1414,7 +1414,7 @@ void sub_4128F0()
   }
   byte_889E15 = 0; /*0x412967*/
   dword_889E10 = 0; /*0x41296d*/
-  v4 = &dword_889E0C; /*0x412973*/
+  v4 = (void **)(&dword_889E0C); /*0x412973*/
   v5 = 400; /*0x412978*/
   do /*0x4129a1*/
   {

@@ -81,7 +81,7 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
     v5 += 3; /*0x699088*/
   }
   while ( v4 < 8 ); /*0x69908e*/
-  return result; /*0x699090*/
+  return (gamemd::AbstractClass **)(result); /*0x699090*/
 
 }
 } // namespace gamemd

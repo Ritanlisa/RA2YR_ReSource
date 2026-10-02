@@ -235,9 +235,9 @@ LABEL_39:
           {
             ((Timer *)(v24))->Init(0x384u); /*0x4f1590*/
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
-            dword_A8EE44 = (void (__cdecl *)(char *))(v24[1]); /*0x4f15b0*/
+            dword_A8EE44 = (unsigned int)((void (__cdecl *)(char *))(v24[1])); /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
-            v20 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v31), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0x24u), (int)v19)); /*0x4f15c6*/
+            v20 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v31), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0x24u),(void *)((int)v19))); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
             ((Debug *)this)->Log(); /*0x4f15dc*/
           }
@@ -253,9 +253,9 @@ LABEL_39:
           {
             ((Timer *)(v25))->Init(0x384u); /*0x4f163a*/
             dword_A8EE30 = v25[0]; /*0x4f164e*/
-            dword_A8EE34 = (void (__cdecl *)(char *))(v25[1]); /*0x4f1658*/
+            dword_A8EE34 = (unsigned int)((void (__cdecl *)(char *))(v25[1])); /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
-            v23 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v30), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0xDu), v22)); /*0x4f166f*/
+            v23 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v30), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0xDu),(void *)(v22))); /*0x4f166f*/
             ((void (*)(char *))OptionQueue::PushEntry)(v23); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
@@ -356,7 +356,7 @@ AbstractClass * * Options::Screen_Save()
     v15 = (gamemd::AbstractClass **)((double)SendMessageA((HWND)result, 0x400u, 0, 0) * 0.1); /*0x55fc6f*/
     return Audio::SetVoiceVolume(&stru_A8EB00.ObjectTypeClass[24], v15, 0); /*0x55fc72*/
   }
-  return result; /*0x55fc77*/
+  return (gamemd::AbstractClass **)(result); /*0x55fc77*/
 
 }
 }
@@ -606,7 +606,7 @@ LABEL_12:
   }
   if ( (a2 & 1) != 0 ) /*0x6255d9*/
     __3_YAXPAX_Z(Block); /*0x6255dc*/
-  return Block; /*0x6255e6*/
+  return (gamemd::AbstractClass **)(Block); /*0x6255e6*/
 
 }
 }
@@ -634,9 +634,9 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   int v20; // [esp+28h] [ebp-8h]
   int v21; // [esp+2Ch] [ebp-4h]
 
-  v2 = (unsigned int)((unsigned int *)((unsigned int)(aP1))); /*0x6255f5*/
+  v2 = (unsigned int *)((unsigned int)((unsigned int *)((unsigned int)(aP1)))); /*0x6255f5*/
   v3 = (int *)((void **)((int *)this)); /*0x6255fb*/
-  v4 = (void *)((int)((void *)(0))); /*0x625600*/
+  v4 = (int)((void *)((int)((void *)(0)))); /*0x625600*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(*aP1); /*0x625602*/
   v5 = (void **)(&this->field_8); /*0x625607*/
   this->field_4 = (void *)aP1[1]; /*0x62560a*/
@@ -734,9 +734,9 @@ int Options::SaveOptionValue()
   v6 = (void *)(this->field_8); /*0x625a6a*/
   if ( v6 ) /*0x625a6f*/
     qmemcpy(v5, v6, 20 * *(unsigned int *)this->__pad_0); /*0x625a80*/
-  __3_YAXPAX_Z(this->field_8); /*0x625a8d*/
-  this->field_4 = (void *)v4; /*0x625a99*/
-  this->field_8 = v7; /*0x625a9c*/
+  __3_YAXPAX_Z((void *)(this->field_8)); /*0x625a8d*/
+  this->field_4 = (unsigned int)((void *)v4); /*0x625a99*/
+  this->field_8 = (unsigned int)(v7); /*0x625a9c*/
   return 1; /*0x625a2f*/
 
 }
@@ -760,14 +760,14 @@ HWND Options::InitDialogControls(HWND hDlg)
   if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x4f1739*/
   {
     v7 = (LoadOptions *)LoadOptions::LoadOptions(&v10); /*0x4f17dd*/
-    v9 = LoadOptions::Check(v7); /*0x4f17ed*/
+    v9 = ((LoadOptions *)(v7))->Check(); /*0x4f17ed*/
     LoadOptions::Cleanup(&v10); /*0x4f17f1*/
     DlgItem = GetDlgItem((HWND)hDlg, 1310); /*0x4f1802*/
     if ( DlgItem ) /*0x4f1810*/
       EnableWindow(DlgItem, v9); /*0x4f181c*/
     result = (int)GetDlgItem((HWND)hDlg, 1312); /*0x4f1824*/
     if ( result ) /*0x4f1828*/
-      return EnableWindow((HWND)result, v9); /*0x4f1832*/
+      return (HWND)(EnableWindow((HWND)result, v9)); /*0x4f1832*/
   }
   else if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x4f1742*/
   {
@@ -791,7 +791,7 @@ HWND Options::InitDialogControls(HWND hDlg)
       }
     }
   }
-  return result; /*0x4f17d1*/
+  return (HWND)(result); /*0x4f17d1*/
 
 }
 } // namespace gamemd
@@ -811,7 +811,7 @@ void Options::SetScoreVolume(float volume, int pad, void *a3_1)
     v4 = volume; /*0x5fa4b4*/
   *((float *)this + 16) = v4; /*0x5fa4c0*/
   LOWORD(v5) = Math::RoundToInt(v4 * 16384.0); /*0x5fa4c9*/
-  EndBufferMixer((int *)g_MixerChannel_Theme, v5); /*0x5fa4d6*/
+  EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerChannel_Theme), v5); /*0x5fa4d6*/
   LOWORD(v6) = Math::RoundToInt(*((float *)this + 16) * 255.0); /*0x5fa4e4*/
   TechnoTypeClass::CheckFlag(&unk_A83D10, v6); /*0x5fa4ef*/
   return Debug::Log(); /*0x5fa50b*/
@@ -833,7 +833,7 @@ void Options::SetSoundVolume(float volume, int pad, void *a3_1)
     v3 = volume; /*0x5fa524*/
   *((float *)this + 14) = v3; /*0x5fa530*/
   LOWORD(v4) = Math::RoundToInt(v3 * 16384.0); /*0x5fa539*/
-  EndBufferMixer((int *)g_MixerChannel_Score, v4); /*0x5fa546*/
+  EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerChannel_Score), v4); /*0x5fa546*/
   if ( pad ) /*0x5fa551*/
     PlayVocClass(*(unsigned int *)&dword_8871E0->__pad_704[12], 0x2000, 1.0, 0); /*0x5fa56a*/
   return Debug::Log(); /*0x5fa586*/
@@ -858,7 +858,7 @@ void Options::SetVoiceVolume(float volume, int pad, void *a3_1)
   LOWORD(v5) = Math::RoundToInt(v4 * 255.0); /*0x5fa5b9*/
   ThemeClass::GetField(v5); /*0x5fa5c0*/
   LOWORD(v6) = Math::RoundToInt(*((float *)this + 15) * 16384.0); /*0x5fa5ce*/
-  EndBufferMixer((int *)g_MixerChannel_Voice, v6); /*0x5fa5db*/
+  EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerChannel_Voice), v6); /*0x5fa5db*/
   if ( pad ) /*0x5fa5e6*/
     PlayVocClass(*(unsigned int *)&dword_8871E0->__pad_704[12], 0x2000, *((float *)this + 15), 0); /*0x5fa5ff*/
   return Debug::Log(); /*0x5fa61b*/

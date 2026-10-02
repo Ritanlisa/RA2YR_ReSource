@@ -366,7 +366,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
   int v11; // [esp+7Ch] [ebp-8h]
 
   CCFileClass::Construct(&v9, Source); /*0x641dc0*/
-  if ( !(uint8_t)CCFileClass::Open(&v9, 0) ) /*0x641dcb*/
+  if ( !(uint8_t)((CCFileClass *)(&v9))->Open(0) ) /*0x641dcb*/
     goto LABEL_11; /*0x641dcb*/
   if ( *(unsigned int *)this->__pad_0 ) /*0x641dd8*/
   {
@@ -399,7 +399,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
     v11 = 0; /*0x641e82*/
     ((Vector *)((int)v10))->Clear(); /*0x641e8a*/
     *(unsigned int *)v9.CDFileClass = &off_7E1668; /*0x641e93*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v9); /*0x641e9b*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v9))->Dtor(); /*0x641e9b*/
     return 1; /*0x641ea2*/
   }
   else
@@ -409,7 +409,7 @@ LABEL_11:
     v11 = 0; /*0x641eb7*/
     ((Vector *)((int)v10))->Clear(); /*0x641ebf*/
     *(unsigned int *)v9.CDFileClass = &off_7E1668; /*0x641ec8*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v9); /*0x641ed0*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v9))->Dtor(); /*0x641ed0*/
     return 0; /*0x641ed6*/
   }
 
@@ -512,7 +512,7 @@ LABEL_7:
         v34 = 0; /*0x655368*/
         v31 = 0; /*0x65536d*/
         v32 = 0; /*0x655377*/
-        v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v35); /*0x65537c*/
+        v11 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v35); /*0x65537c*/
         v12 = v39 + v40 * *((unsigned int *)this + 1168); /*0x655390*/
         GetCellRadarColors((int)v11, (int)&v33, (int)&v31); /*0x65539e*/
         if ( v5 ) /*0x6553ab*/
@@ -2205,9 +2205,9 @@ int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned 
   v12 = *yTop; /*0x620fe2*/
   if ( !a3 ) /*0x620fe6*/
     v6 = (unsigned char *)g_FogOfWarState; /*0x620fe8*/
-  Char::Swap(v6, 1); /*0x620ff2*/
-  TextGroup::SetRect(v6, yTop); /*0x620ffa*/
-  Property::Set(v6, v16); /*0x621006*/
+  ((Char *)(v6))->Swap(1); /*0x620ff2*/
+  ((TextGroup *)(v6))->SetRect(yTop); /*0x620ffa*/
+  ((Property *)(v6))->Set(v16); /*0x621006*/
   Font::Print((int)v6, aP0, a1, v12, yTopa, v10, v9, 0, 0, 0); /*0x62102e*/
   return 0; /*0x621035*/
 }

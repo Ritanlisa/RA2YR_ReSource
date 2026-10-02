@@ -61,7 +61,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       v9 = a2; /*0x7658b3*/
       do /*0x7658c7*/
       {
-        ComPtr::Constructor(v6); /*0x7658b8*/
+        ((ComPtr *)(v6))->Constructor(); /*0x7658b8*/
         *(unsigned int *)v6->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x7658bd*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x7658c3*/
         --v9; /*0x7658c6*/
@@ -86,7 +86,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       v7 = a2; /*0x765883*/
       do /*0x765897*/
       {
-        ComPtr::Constructor(v6); /*0x765888*/
+        ((ComPtr *)(v6))->Constructor(); /*0x765888*/
         *(unsigned int *)v6->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76588d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x765893*/
         --v7; /*0x765896*/
@@ -105,7 +105,7 @@ LABEL_14:
     if ( a2 >= this->m_8 ) /*0x7658ed*/
       m_8 = (int)(this->m_8); /*0x7658ef*/
     for ( i = 0; i < m_8; ++i ) /*0x7658f5*/
-      ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x765902*/
+      ((ComPtr *)((ComPtr *)((char *)v8 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x765902*/
     if ( BYTE1(this->m_C) ) /*0x76590c*/
     {
       v12 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x765913*/
@@ -137,7 +137,7 @@ BOOL Campaign_WorldDominationTour_24::Release(void *a1_1)
 {
 
   ++*((unsigned int *)this + 2); /*0x765b42*/
-  return this->__pad_0; /*0x765b45*/
+  return (BOOL)(this->__pad_0); /*0x765b45*/
 
 }
 }
@@ -147,7 +147,7 @@ BOOL Campaign_WorldDominationTour_24::ddtor()
 {
 
   --*((unsigned int *)this + 2); /*0x765b52*/
-  return this->__pad_0; /*0x765b55*/
+  return (BOOL)(this->__pad_0); /*0x765b55*/
 
 }
 }
@@ -202,9 +202,9 @@ unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3, 
   int v3; // edi
 
   v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x7656dd*/
-  ComPtr::Constructor((ComPtr *)a2); /*0x7656e2*/
+  ((ComPtr *)((ComPtr *)a2))->Constructor(); /*0x7656e2*/
   *a2 = (unsigned int)(&vt_rc_ptr); /*0x7656e7*/
-  ComPtr::Set((ComPtr *)a2, *(unsigned int *)(v3 + 4)); /*0x7656f3*/
+  ((ComPtr *)((ComPtr *)a2))->Set(*(unsigned int *)(v3 + 4)); /*0x7656f3*/
   return a2; /*0x7656fa*/
 
 }

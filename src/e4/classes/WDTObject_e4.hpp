@@ -5,6 +5,7 @@ namespace gamemd {
 
 struct WDTObject {
     int GetAndClearFlag();
+    int GetSize();  // 0x76bfa0
 };
 
 } // namespace gamemd

@@ -21,7 +21,7 @@ void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(Dia
   Block->m_0 = (int)&vt_WonlineStringDialogControl; /*0x7ac636*/
   DeleteAndZero((ObjectClass *)&Block->__pad_9[3]); /*0x7ac63c*/
   Block->m_0 = (int)&off_7F7624; /*0x7ac643*/
-  OwnerDrawControl::InitVtable((OwnerDrawControl *)Block); /*0x7ac649*/
+  ((OwnerDrawControl *)((OwnerDrawControl *)Block))->InitVtable(); /*0x7ac649*/
   if ( (a2 & 1) != 0 ) /*0x7ac653*/
     __3_YAXPAX_Z(Block); /*0x7ac656*/
   return (void **)Block; /*0x7ac660*/
@@ -422,7 +422,7 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
   SendDlgItemMessageA(Current, 1478, 0x402u, 100 * a3 / a4, 0); /*0x7ad4bd*/
   if ( v12 <= 0 ) /*0x7ad4cc*/
   {
-    StringCSF = GetStringCSF(aTxtBytesWoTime, 0, g_Str_File_wonline_cpp, 5172); /*0x7ad50a*/
+    StringCSF = GetStringCSF((wchar_t *)(aTxtBytesWoTime), 0, g_Str_File_wonline_cpp, 5172); /*0x7ad50a*/
     swprintf(Buffer, (const size_t)StringCSF, (const wchar_t *const)a3, a4); /*0x7ad515*/
   }
   else

@@ -102,7 +102,7 @@ struct Object {
     int IsAlliedWithObjectHouse(int aP1);
     int IsAlliedWithObjectSimpleHouse(unsigned char * a2);  // 0x4F9AF0
     unsigned int * FindNearestObjectAtCell(unsigned int * a2);  // 0x56C210
-    int SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3);  // 0x5FC380
+    int SpawnAtCell(int aP1, int16_t *aP2, int aP3);  // 0x5FC380
     void* HandleAction(int * a2, int * a3);  // 0x5FD970
     int ProcessEvent();  // 0x5FDDE0
     void * DrawObject(void ** Block, char a2);  // 0x5FDF70

@@ -494,7 +494,7 @@ namespace gamemd {
 Iostream_init * E4Recv_465D80::__0Iostream_init_QAE_XZ_2()
 {
 
-  return this; /*0x465d82*/
+  return (gamemd::Iostream_init *)(this); /*0x465d82*/
 
 }
 } // namespace gamemd
@@ -690,8 +690,8 @@ LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP
   if ( CoCreateInstance((const IID &)(&rclsid), 0, 7u, &IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
     return 0; /*0x46b07d*/
   v10 = ppv; /*0x46b0a4*/
-  ((Particle *)((int *)ppv))->Init((int)(aP0),(int)(aP1),(int)(aP2), aP3, aP4, a6, aP7); /*0x46b0a6*/
-  return (int)v10; /*0x46b07c*/
+  ((Particle *)((int *)ppv))->Init((int)(aP0),(int)(aP1),(int)(aP2),(int)(aP3), aP4, a6, aP7); /*0x46b0a6*/
+  return (LPVOID)((int)v10); /*0x46b07c*/
 }
 } // namespace gamemd
 
@@ -1135,7 +1135,7 @@ int sub_46D810()
   {
     Network::SendToPlayer((int)&unk_A8E9C0, (int)&v2, 455,(wchar_t *)(1), (wchar_t *)dword_A8DA90); /*0x46d895*/
 // 0x541820
-    return ((Network *)(&unk_A8E9C0))->ReceiveLoop(); /*0x46d89f*/
+    return (int)(((Network *)(&unk_A8E9C0))->ReceiveLoop()); /*0x46d89f*/
   }
   return result; /*0x46d87d*/
 }

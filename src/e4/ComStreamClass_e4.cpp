@@ -60,7 +60,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3)
   v22[0].uniqueId = 0; /*0x7a3df6*/
   LOBYTE(v22[0].abstractFlags) = 0; /*0x7a3dfa*/
   ReadRegistryOptionsWOL((ObjectClass *)&v22[0].uniqueId); /*0x7a3dfe*/
-  if ( (uint8_t)Flag::IsNot2((Flag *)&v22[0].uniqueId) ) /*0x7a3e07*/
+  if ( (uint8_t)((Flag *)((Flag *)&v22[0].uniqueId))->IsNot2() ) /*0x7a3e07*/
   {
     v22[0].vtable0 = FindChannelWOL(lParama, (int)v23, 1u, *(unsigned int *)(v22[0].vtable2 + 16)); /*0x7a3e2d*/
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x7a3e31*/
@@ -355,10 +355,10 @@ unsigned int * ComStreamClass::seekToPosition()
   rc_ptr v5[4]; // [esp+4h] [ebp-10h] BYREF
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set((ComPtr *)&stru_B77EB0.lineTrailer, this->ComStreamClass_field_0x04); /*0x7b022f*/
+  ((ComPtr *)((ComPtr *)&stru_B77EB0.lineTrailer))->Set(this->ComStreamClass_field_0x04); /*0x7b022f*/
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b0249*/
-  ComPtr::Set(&stru_B77F68, v3[1]); /*0x7b0257*/
+  ((ComPtr *)(&stru_B77F68))->Set(v3[1]); /*0x7b0257*/
   *(unsigned int *)v5 = &vt_rc_ptr; /*0x7b0260*/
   ((ComPtr *)((ComPtr *)v5))->Release(); /*0x7b0268*/
   *(unsigned int *)v6 = &vt_rc_ptr; /*0x7b0271*/
@@ -376,10 +376,10 @@ unsigned int * ComStreamClass::getStreamSize()
   rc_ptr v5[4]; // [esp+4h] [ebp-10h] BYREF
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set((ComPtr *)&stru_B77F68.ComPtr_field_0x08, this->ComStreamClass_field_0x04); /*0x7b02af*/
+  ((ComPtr *)((ComPtr *)&stru_B77F68.ComPtr_field_0x08))->Set(this->ComStreamClass_field_0x04); /*0x7b02af*/
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b02c9*/
-  ComPtr::Set((ComPtr *)&stru_B77F68.ComPtr_field_0x10, v3[1]); /*0x7b02d7*/
+  ((ComPtr *)((ComPtr *)&stru_B77F68.ComPtr_field_0x10))->Set(v3[1]); /*0x7b02d7*/
   *(unsigned int *)v5 = &vt_rc_ptr; /*0x7b02e0*/
   ((ComPtr *)((ComPtr *)v5))->Release(); /*0x7b02e8*/
   *(unsigned int *)v6 = &vt_rc_ptr; /*0x7b02f1*/

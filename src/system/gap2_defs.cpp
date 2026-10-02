@@ -1139,7 +1139,7 @@ void* CCFileClass::Construct(char * Source) {
 }
 // 0x473A30
 namespace gamemd { 
-void* CCFileClass::Construct2(char ** a2) {
+void* CCFileClass::Construct2(char **a2) {
 
   char *v3; // eax
 
@@ -2820,7 +2820,7 @@ void* CellClass::FindInfantry(char a2) {
 }
 // 0x47C620
 namespace gamemd { 
-int CellClass::IsPassable(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3) {
+int CellClass::IsPassable(int aP1, int aP2, int aP3) {
 
   int result; // eax
   unsigned int *i; // esi
@@ -10469,7 +10469,7 @@ int INIClass::ReadIntList2(INIClass * aP1, char * Source) {
 }
 // 0x5275C0
 namespace gamemd { 
-int INIClass::SetInt(void* aP1, void* aP2, int aP3, int a5) {
+int INIClass::SetInt(uint8_t *aP1, char *aP2, int aP3, int a5) {
 
   int result; // eax
   const char *v7; // [esp-8h] [ebp-20Ch]
@@ -10521,7 +10521,7 @@ int INIClass::SetIntFormat(void* a1, void* aP2, int a4, int aP4) {
 }
 // 0x5276D0
 namespace gamemd { 
-int INIClass::ReadInt_Overwrite(uint8_t * a1, CCINIClass * aP2, INIClass * aP3) {
+int INIClass::ReadInt_Overwrite(uint8_t *a1, uint8_t *aP2, int aP3) {
 
   uint8_t *v4; // ebp
   uint8_t *v6; // edx
@@ -11465,7 +11465,7 @@ int INIClass::SetStringOrEmpty(char ** a1, char ** a2, ObjectClass * aP3) {
 }
 // 0x528C00
 namespace gamemd { 
-int INIClass::ReadString(ObjectClass * aP1, ObjectClass * aP2, ReferenceCounted * aP3, int a5) {
+int INIClass::ReadString(char **aP1, char **aP2, char **aP3, int a5) {
 
   uint8_t *v6; // edi
   uint8_t *v7; // ebx
@@ -13026,7 +13026,7 @@ int TacticalClass::UpdateScrollTarget(int a2, int a3, int a4, int a5, char a6) {
 }
 // 0x554AF0
 namespace gamemd { 
-int TacticalClass::ScrollView(AbstractClass * aP1) {
+int TacticalClass::ScrollView(char aP1) {
 
   int result; // eax
   double v3; // st7
@@ -22100,7 +22100,7 @@ int ScenarioClass::Load(ObjectClass * aP1) {
 }
 // 0x5B3C20
 namespace gamemd { 
-void* MixFileClass::FromFile(MixFileClass * aP1, int a3) {
+void* MixFileClass::FromFile(char *aP1, int a3) {
 
   void *v4; // edi
   bool v5; // zf
@@ -26150,7 +26150,7 @@ void* FileClass::SetName(char * Source) {
 }
 // 0x65CB50
 namespace gamemd { 
-bool FileClass::Open2( const CHAR * a2) {
+bool FileClass::Open2(const CHAR *a2) {
 
   const CHAR *v3; // eax
   HANDLE FileA; // eax

@@ -351,7 +351,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x42f78d*/
       this->m_8 = a2; /*0x42f795*/
       BYTE1(this->m_C) = (unsigned char)((gamemd::AbstractClass **)(a3 == 0)); /*0x42f798*/
-      return 1; /*0x42f79e*/
+      return (gamemd::AbstractClass **)(1); /*0x42f79e*/
     }
     else
     {
@@ -361,7 +361,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
   else
   {
     (*(void (**)(_VectorClass_VCell *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x42f7a8*/
-    return 1; /*0x42f7ae*/
+    return (gamemd::AbstractClass **)(1); /*0x42f7ae*/
   }
 
 }
@@ -461,7 +461,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x4e091a*/
       this->m_8 = a2; /*0x4e0922*/
       BYTE1(this->m_C) = (gamemd::AbstractClass **)(v4 == 0); /*0x4e0925*/
-      return 1; /*0x4e092b*/
+      return (gamemd::AbstractClass **)(1); /*0x4e092b*/
     }
     else
     {
@@ -471,7 +471,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   else
   {
     (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e0935*/
-    return 1; /*0x4e093b*/
+    return (gamemd::AbstractClass **)(1); /*0x4e093b*/
   }
 
 }
@@ -586,7 +586,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   v16 = (int)(this->m_8); /*0x4e0c0e*/
   if ( v16 < this->m_10 ) /*0x4e0c16*/
     this->m_10 = (gamemd::AbstractClass **)(v16); /*0x4e0c18*/
-  return 1; /*0x4e0c1b*/
+  return (gamemd::AbstractClass **)(1); /*0x4e0c1b*/
 
 }
 }
@@ -654,7 +654,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
   v7 = *(unsigned int *)&this->__pad_5[3]; /*0x5ad0a1*/
   if ( v7 < *(unsigned int *)this->__tail_10 ) /*0x5ad0a9*/
     *(unsigned int *)this->__tail_10 = (unsigned int)((gamemd::AbstractClass **)(v7)); /*0x5ad0ab*/
-  return 1; /*0x5ad0ae*/
+  return (gamemd::AbstractClass **)(1); /*0x5ad0ae*/
 
 }
 }
@@ -875,7 +875,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3(int
   }
   else
   {
-    v6 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v14); /*0x4f6c2f*/
+    v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v14); /*0x4f6c2f*/
     v7 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v6 + 72))(v6, v19); /*0x4f6c40*/
     v3 = *(unsigned short *)&(unsigned int *)((char *)&stru_A8EB00 + 950); /*0x4f6c42*/
     v5 = *v7; /*0x4f6c49*/
@@ -897,7 +897,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3(int
   }
   else
   {
-    v11 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v15); /*0x4f6cc4*/
+    v11 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v15); /*0x4f6cc4*/
     v12 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v11 + 72))(v11, v19); /*0x4f6cd5*/
     v16 = *v12; /*0x4f6cd9*/
     v10 = v12[1]; /*0x4f6cdd*/
@@ -945,7 +945,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4(int
   }
   else
   {
-    v5 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v13); /*0x4f6d7f*/
+    v5 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v13); /*0x4f6d7f*/
     v6 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v5 + 72))(v5, v18); /*0x4f6d90*/
     v4 = *v6; /*0x4f6d99*/
     v16 = v6[1]; /*0x4f6d9e*/
@@ -966,7 +966,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4(int
   }
   else
   {
-    v10 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v14); /*0x4f6e14*/
+    v10 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v14); /*0x4f6e14*/
     v11 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v10 + 72))(v10, v18); /*0x4f6e25*/
     v15 = *v11; /*0x4f6e29*/
     v9 = v11[1]; /*0x4f6e2d*/
@@ -1381,7 +1381,7 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
       v9 = a2; /*0x76b933*/
       do /*0x76b947*/
       {
-        ComPtr::Constructor(v6); /*0x76b938*/
+        ((ComPtr *)(v6))->Constructor(); /*0x76b938*/
         *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x76b93d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x76b943*/
         --v9; /*0x76b946*/
@@ -1406,7 +1406,7 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
       v7 = a2; /*0x76b903*/
       do /*0x76b917*/
       {
-        ComPtr::Constructor(v6); /*0x76b908*/
+        ((ComPtr *)(v6))->Constructor(); /*0x76b908*/
         *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x76b90d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x76b913*/
         --v7; /*0x76b916*/
@@ -1425,7 +1425,7 @@ LABEL_14:
     if ( a2 >= this->m_8 ) /*0x76b96d*/
       m_8 = this->m_8; /*0x76b96f*/
     for ( i = 0; i < m_8; ++i ) /*0x76b975*/
-      ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x76b982*/
+      ((ComPtr *)((ComPtr *)((char *)v8 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x76b982*/
     if ( BYTE1(this->m_C) ) /*0x76b98c*/
     {
       v12 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x76b993*/
@@ -7095,7 +7095,7 @@ unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1, void *a2)
   this->vtable0 = (int)&vt_VectorClass; /*0x4777ca*/
   if ( this != (DynamicVectorClass *)aP1 ) /*0x4777d0*/
   {
-    VectorClass::Destroy((int)this); /*0x4777d2*/
+    ((VectorClass *)((int)this))->Destroy(); /*0x4777d2*/
     v3 = aP1[2]; /*0x4777d8*/
     this->Capacity = v3; /*0x4777dd*/
     if ( v3 ) /*0x4777e0*/
@@ -40297,7 +40297,7 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(WDTState * aP1, int a
         v76 = *((unsigned int *)this + 15); /*0x76b673*/
         v78 = v80; /*0x76b67a*/
         *((unsigned int *)this + 15) = v76 + 1; /*0x76b67e*/
-        ComPtr::Set((unsigned int *)(*((unsigned int *)this + 12) + 8 * v76), v78); /*0x76b687*/
+        ((ComPtr *)((unsigned int *)(*((unsigned int *)this + 12) + 8 * v76)))->Set(v78); /*0x76b687*/
       }
       v77 = *((unsigned int *)this + 8); /*0x76b68c*/
       v79 = &vt_rc_ptr; /*0x76b68f*/
@@ -40321,9 +40321,9 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::Clear(unsigned int * a2, int a3)
   int v3; // edi
 
   v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x76b76d*/
-  ComPtr::Constructor((ComPtr *)a2); /*0x76b772*/
+  ((ComPtr *)((ComPtr *)a2))->Constructor(); /*0x76b772*/
   *a2 = &vt_rc_ptr; /*0x76b777*/
-  ComPtr::Set((ComPtr *)a2, *(unsigned int *)(v3 + 4)); /*0x76b783*/
+  ((ComPtr *)((ComPtr *)a2))->Set(*(unsigned int *)(v3 + 4)); /*0x76b783*/
   return a2; /*0x76b78a*/
 
 }

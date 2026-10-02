@@ -20,6 +20,7 @@ struct VtableStub {
     unsigned int VtableStub_643E70;
 // --- flat members (END) ---
     char RetZero_eax_35(int a1);
+    void Method_425270();  // 0x425270
 };
 
 } // namespace gamemd

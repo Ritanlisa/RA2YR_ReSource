@@ -138,7 +138,7 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
     (*(void (**)(unsigned int))(*(unsigned int *)v8 + 8))(*(unsigned int *)(v4 + 8)); /*0x4a31c9*/
   if ( ((uint8_t)a2 & 1) != 0 ) /*0x4a31d1*/
     __3_YAXPAX_Z((void *)v4); /*0x4a31d4*/
-  return (void *)v4; /*0x4a31de*/
+  return (gamemd::CStreamClass *)((void *)v4); /*0x4a31de*/
 
 }
 } // namespace gamemd

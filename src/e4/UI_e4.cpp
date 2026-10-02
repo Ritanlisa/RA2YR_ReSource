@@ -263,8 +263,8 @@ wchar_t * * sub_730EA0()
       if ( ++v2 >= (int)v1 ) /*0x730efa*/
       {
         if ( v3 ) /*0x730efe*/
-          return (wchar_t *)PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x730f17*/
-        return result; /*0x730f17*/
+          return (wchar_t **)((wchar_t *)PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0)); /*0x730f17*/
+        return (wchar_t **)(result); /*0x730f17*/
       }
     }
   }
@@ -769,7 +769,7 @@ void sub_6D0FD0()
   v0 = (int *)&stru_B0C1C0; /*0x6d0fd4*/
   do /*0x6d0fef*/
   {
-    ShapeButton::SetShape((int)v0, 0, 0, 0); /*0x6d0fe1*/
+    ((ShapeButton *)((int)v0))->SetShape(0, 0, 0); /*0x6d0fe1*/
     v0 += 24; /*0x6d0fe6*/
   }
   while ( (int)v0 < (int)&dword_B0CB20 ); /*0x6d0fef*/
@@ -1102,7 +1102,7 @@ LRESULT UI_Assign_623F60(HWND hWnd, WPARAM wParam, void ** a3)
 
   v5 = SendMessageA(hWnd, 0x18Au, wParam, 0); /*0x623f79*/
   if ( v5 <= 0 ) /*0x623f7d*/
-    SafeDelete::Ptr(a3); /*0x623f83*/
+    ((SafeDelete *)(a3))->Ptr(); /*0x623f83*/
   v6 = (wchar_t *)RA2_OPNEW(2 * v5 + 4); /*0x623f95*/
   v7 = SendMessageA(hWnd, 0x4B6u, wParam, (LPARAM)v6); /*0x623fa1*/
   ((WideString *)(a3))->Assign_Alt(v6); /*0x623fa8*/
@@ -1385,11 +1385,11 @@ void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4)
       v21[1] = v11; /*0x6ac547*/
       v21[3] = v11 + v12; /*0x6ac54b*/
       v21[2] = v21[0] + v10; /*0x6ac551*/
-      Char::Swap((unsigned char *)v6, 1); /*0x6ac555*/
-      TextGroup::SetRect((unsigned int *)v6, v21); /*0x6ac561*/
-      Property::Set((unsigned short *)v6, v9); /*0x6ac569*/
+      ((Char *)((unsigned char *)v6))->Swap(1); /*0x6ac555*/
+      ((TextGroup *)((unsigned int *)v6))->SetRect(v21); /*0x6ac561*/
+      ((Property *)((unsigned short *)v6))->Set(v9); /*0x6ac569*/
       v13 = (unsigned short *)v15; /*0x6ac57a*/
-      Text::Layout((unsigned int *)v6, (uint16_t *)v15, &v17, &v16, a4); /*0x6ac584*/
+      ((Text *)((unsigned int *)v6))->Layout((uint16_t *)v15, &v17, &v16, a4); /*0x6ac584*/
 // 0x434cd0
       return Font::Print(v6, DSurface_Sidebar, v13, v20, *(unsigned int *)(v6 + 28) - v16 + v5, a4, 0, 0, 0, 0); /*0x6ac5b2*/
     }

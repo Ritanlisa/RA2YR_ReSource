@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/AudioSample_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
@@ -102,7 +103,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
     *((unsigned int *)this + 16) = *(char *)(v5 + 8); /*0x49cc32*/
     *((unsigned int *)this + 14) = 0; /*0x49cc35*/
   }
-  *((unsigned int *)this + 17) = (unsigned int)(v3); /*0x49cc39*/
+  *((unsigned int *)this + 17) = (gamemd::AbstractClass **)((unsigned int)(v3)); /*0x49cc39*/
   return 1; /*0x49cc3d*/
 
 }
@@ -176,9 +177,9 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
               {
                 v15 = (double)*(int *)&DSurface_ViewBounds.__pad_8[16]; /*0x5befee*/
                 v13[15] = *(MovieContext *)&DSurface_ViewBounds.__pad_8[16]; /*0x5beff4*/
-                *(unsigned short *)v16.__tail_0 = Math::RoundToInt(v15 / (double)v9); /*0x5bf001*/
+                *(unsigned short *)v16.__tail_0 = (gamemd::MovieContext)(Math::RoundToInt(v15 / (double)v9)); /*0x5bf001*/
                 v13[13] = (gamemd::MovieContext)(0); /*0x5bf008*/
-                v13[16] = v16; /*0x5bf00b*/
+                v13[16] = (gamemd::MovieContext)(v16); /*0x5bf00b*/
                 v13[14] = (MovieContext)((*(unsigned int *)&DSurface_ViewBounds.__pad_8[20] - *(unsigned int *)&v16) / 2); /*0x5bf01d*/
                 ((Debug *)this)->Log(); /*0x5bf02b*/
               }
@@ -195,7 +196,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
             AudioFrame::CounterInc(); /*0x5bf069*/
             ((AudioQueue *)this)->IncrementPriority(); /*0x5bf06e*/
             ((AudioQueue *)this)->ReleaseBuffers(); /*0x5bf073*/
-            RequestBufferMixer((unsigned int *)g_MixerState, 0x2000); /*0x5bf083*/
+            RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerState), 0x2000); /*0x5bf083*/
             RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x2000); /*0x5bf093*/
             LOBYTE(g_MissionQueueFrame.localVariables[566], unsigned int a1) = 1; /*0x5bf098*/
           }
@@ -209,7 +210,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
             AudioTimer::DecrementAll(); /*0x5bf0d6*/
             ProcessAudioTimer(); /*0x5bf0db*/
             ((Mixer *)this)->RequestAllBuffers(); /*0x5bf0e0*/
-            RequestBufferMixer((unsigned int *)g_MixerState, 0x4000); /*0x5bf0f0*/
+            RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerState), 0x4000); /*0x5bf0f0*/
             RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000); /*0x5bf100*/
             ((AudioMixer *)this)->Pump(); /*0x5bf105*/
             LOBYTE(g_MissionQueueFrame.localVariables[566]) = 0; /*0x5bf10a*/
@@ -251,7 +252,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
         AudioFrame::CounterInc(); /*0x5bee08*/
         ((AudioQueue *)this)->IncrementPriority(); /*0x5bee0d*/
         ((AudioQueue *)this)->ReleaseBuffers(); /*0x5bee12*/
-        RequestBufferMixer((unsigned int *)g_MixerState, 0x2000); /*0x5bee22*/
+        RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerState), 0x2000); /*0x5bee22*/
         RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x2000); /*0x5bee32*/
         LOBYTE(g_MissionQueueFrame.localVariables[566]) = 1; /*0x5bee37*/
       }
@@ -265,7 +266,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
         AudioTimer::DecrementAll(); /*0x5bee6f*/
         ProcessAudioTimer(); /*0x5bee74*/
         ((Mixer *)this)->RequestAllBuffers(); /*0x5bee79*/
-        RequestBufferMixer((unsigned int *)g_MixerState, 0x4000); /*0x5bee89*/
+        RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerState), 0x4000); /*0x5bee89*/
         RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000); /*0x5bee99*/
         ((AudioMixer *)this)->Pump(); /*0x5bee9e*/
         LOBYTE(g_MissionQueueFrame.localVariables[566], unsigned int a3) = 0; /*0x5beea3*/
@@ -322,7 +323,7 @@ int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
           v3 = *(AudioSample **)&this->__pad_28[4]; /*0x720a01*/
           if ( !v3 ) /*0x720a06*/
             goto LABEL_10; /*0x720a06*/
-          if ( this->__pad_10[1] && !AudioSample::IsBuffering(v3) ) /*0x720a0f*/
+          if ( this->__pad_10[1] && !((AudioSample *)(v3))->IsBuffering() ) /*0x720a0f*/
             ((Audio *)(*(Audio **)&this->__pad_28[4]))->Release(); /*0x720a1b*/
           LOBYTE(IsSoundEnabled) = ((Audio *)(*(Audio **)&this->__pad_28[4]))->IsSoundPlaying() != 0; /*0x720a2a*/
           if ( !(unsigned char)IsSoundEnabled ) /*0x720a2f*/
@@ -336,7 +337,7 @@ LABEL_10:
                 this->Movie_field_0x8 = ((Movie *)((int)this))->SelectNextBuildableType((int)this->Movie_field_0x4); /*0x720a5e*/
                 Debug::Log(); /*0x720a61*/
               }
-              LOBYTE(IsSoundEnabled) = ThemeClass::Play((ThemeClass *)this, this->Movie_field_0x8); /*0x720a6f*/
+              LOBYTE(IsSoundEnabled) = ((ThemeClass *)((ThemeClass *)this))->Play(this->Movie_field_0x8); /*0x720a6f*/
               this->Movie_field_0x8 = -2; /*0x720a74*/
             }
           }
@@ -374,7 +375,7 @@ unsigned int Movie::SelectNextBuildableType(int aP1)
       v7 = v4 == 1000; /*0x720ac6*/
       if ( v4 >= 1000 ) /*0x720acc*/
         break; /*0x720acc*/
-      if ( v5 != aP1 && (uint8_t)RulesClass::IsTypeBuildable((RulesClass *)this, v5) ) /*0x720ad5*/
+      if ( v5 != aP1 && (uint8_t)((RulesClass *)((RulesClass *)this))->IsTypeBuildable(v5) ) /*0x720ad5*/
       {
         v7 = v4 == 1000; /*0x720ade*/
         break; /*0x720ade*/
@@ -393,7 +394,7 @@ unsigned int Movie::SelectNextBuildableType(int aP1)
         v2 = 0; /*0x720afd*/
       if ( !--v9 ) /*0x720b00*/
         break; /*0x720b00*/
-      if ( (uint8_t)RulesClass::IsTypeBuildable((RulesClass *)this, v2) ) /*0x720b05*/
+      if ( (uint8_t)((RulesClass *)((RulesClass *)this))->IsTypeBuildable(v2) ) /*0x720b05*/
         return v2; /*0x720b0c*/
     }
     return 0; /*0x720b12*/

@@ -122,14 +122,14 @@ int EventClass::AddEvent(int a2, uint8_t a3, void *a3_2)
     *((unsigned char *)this + 2) = -1; /*0x4c6701*/
     *(unsigned int *)this = 0; /*0x4c6705*/
     *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c670d*/
-    return this; /*0x4c6710*/
+    return (int)(this); /*0x4c6710*/
   }
   else
   {
     *((unsigned char *)this + 2) = a2; /*0x4c66ec*/
     *(unsigned int *)this = a3; /*0x4c66ef*/
     *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c66f9*/
-    return this; /*0x4c66f7*/
+    return (int)(this); /*0x4c66f7*/
   }
 
 }
@@ -145,7 +145,7 @@ int EventClass::Add2(AnimClass * aP1, uint8_t a3, IUnknown * aP3, void *a4_1)
     *((unsigned char *)this + 2) = -1; /*0x4c6767*/
     *(unsigned int *)this = 0; /*0x4c676b*/
     *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6776*/
-    return this; /*0x4c6774*/
+    return (int)(this); /*0x4c6774*/
   }
   else
   {
@@ -153,7 +153,7 @@ int EventClass::Add2(AnimClass * aP1, uint8_t a3, IUnknown * aP3, void *a4_1)
     *(unsigned int *)this = a3; /*0x4c6753*/
     *(unsigned int *)((unsigned char *)this + 7) = (unsigned int)(aP3); /*0x4c6755*/
     *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c675d*/
-    return this; /*0x4c6760*/
+    return (int)(this); /*0x4c6760*/
   }
 
 }
@@ -169,7 +169,7 @@ int EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3
     *((unsigned char *)this + 2) = -1; /*0x4c69c6*/
     *(unsigned int *)this = 0; /*0x4c69ca*/
     *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c69d2*/
-    return this; /*0x4c69d5*/
+    return (int)(this); /*0x4c69d5*/
   }
   else
   {
@@ -179,7 +179,7 @@ int EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3
     *(unsigned int *)((unsigned char *)this + 11) = (unsigned int)(aP4); /*0x4c69b0*/
     *(unsigned int *)((unsigned char *)this + 15) = (unsigned int)(aP5); /*0x4c69b3*/
     *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c69be*/
-    return this; /*0x4c69bc*/
+    return (int)(this); /*0x4c69bc*/
   }
 
 }
@@ -195,7 +195,7 @@ int EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigne
     *((unsigned char *)this + 2) = -1; /*0x4c6b49*/
     *(unsigned int *)this = 0; /*0x4c6b4d*/
     *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6b58*/
-    return this; /*0x4c6b56*/
+    return (int)(this); /*0x4c6b56*/
   }
   else
   {
@@ -207,7 +207,7 @@ int EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigne
     *(unsigned short *)((unsigned char *)this + 19) = *a6; /*0x4c6b2d*/
     *(unsigned short *)((unsigned char *)this + 21) = a6[1]; /*0x4c6b35*/
     *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6b3f*/
-    return this; /*0x4c6b42*/
+    return (int)(this); /*0x4c6b42*/
   }
 
 }
@@ -275,7 +275,7 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
   result = (*(int (**)(EventClass *, int))(this->EventClass_field_0x0 + 24))(this, a2); /*0x54228c*/
   if ( result != -1 && result < (int)this->EventClass_field_0x44 ) /*0x542297*/
   {
-    v5 = (int)((unsigned int *)(*((unsigned int *)&this->EventClass_field_0x28 + result) + 76));
+    v5 = (unsigned int *)((int)((unsigned int *)(*((unsigned int *)&this->EventClass_field_0x28 + result) + 76)));
     *v5 = (int)(*aP2);
     v5[1] = (int)(aP2[1]);
     result = (int)(aP2[2]);
@@ -306,11 +306,11 @@ int EventClass::Enqueue(unsigned short a2, char a3)
   Memory_Helper(a2, a3); /*0x54f237*/
   if ( (uint8_t)a2 != 1 && (uint8_t)a2 != 4 && (uint8_t)a2 != 2 && (uint8_t)a2 != 10 ) /*0x54f259*/
   {
-    if ( (((uint16_t)EventClass::GetKeyStateSafe((EventClass *)0x10) >> 8) & 0x80u) != 0 ) /*0x54f268*/
+    if ( (((uint16_t)EventClass::GetKeyStateSafe((unsigned char)((EventClass *)0x10)) >> 8) & 0x80u) != 0 ) /*0x54f268*/
       v5 = a2 | 0x100; /*0x54f26a*/
-    if ( (((uint16_t)EventClass::GetKeyStateSafe((EventClass *)0x11) >> 8) & 0x80u) != 0 ) /*0x54f27d*/
+    if ( (((uint16_t)EventClass::GetKeyStateSafe((unsigned char)((EventClass *)0x11)) >> 8) & 0x80u) != 0 ) /*0x54f27d*/
       v5 |= 0x200u; /*0x54f27f*/
-    result = EventClass::GetKeyStateSafe((EventClass *)0x12); /*0x54f28a*/
+    result = EventClass::GetKeyStateSafe((unsigned char)((EventClass *)0x12)); /*0x54f28a*/
     if ( (result & 0x8000) != 0 ) /*0x54f292*/
     {
       if ( v5 == 9 ) /*0x54f298*/
@@ -409,7 +409,7 @@ AbstractClass * * EventClass::validateEventType()
     || v1 != dword_A83D4C->Object_field_0x30
     || dword_A8DA84 <= 2 )
   {
-    return v1; /*0x664526*/
+    return (gamemd::AbstractClass **)(v1); /*0x664526*/
   }
   v9 = 0; /*0x6644d4*/
   v10 = 0; /*0x6644d6*/
@@ -426,9 +426,9 @@ AbstractClass * * EventClass::validateEventType()
     v9 = (Network *)(((unsigned int *)(dword_A8DA78))[v10] + 40); /*0x6644fd*/
   }
 LABEL_23:
-  ((Network *)(v9))->CopyAddress(&v13, (int)v14); /*0x664500*/
+  ((Network *)(v9))->CopyAddress((unsigned int *)(&v13), (int)v14); /*0x664500*/
   LaunchMultiplayerHost((bool *)this, v14); /*0x664516*/
-  return v1; /*0x66451c*/
+  return (gamemd::AbstractClass **)(v1); /*0x66451c*/
 
 }
 }
@@ -689,10 +689,10 @@ unsigned int * EventClass::resetEvent(int aP1, int aP2)
   {
     if ( aP2 ) /*0x40bd26*/
     {
-      this->EventClass_field_0x4 = (void *)aP2; /*0x40bd28*/
+      this->EventClass_field_0x4 = (unsigned int)((void *)aP2); /*0x40bd28*/
       return &this->EventClass_field_0x0; /*0x40bd2e*/
     }
-    this->EventClass_field_0x4 = (void *)__2_YAPAXI_Z(4 * aP1); /*0x40bd3d*/
+    this->EventClass_field_0x4 = (unsigned int)((void *)__2_YAPAXI_Z(4 * aP1)); /*0x40bd3d*/
     BYTE1(this->EventClass_field_0xC) = 1; /*0x40bd40*/
   }
   return &this->EventClass_field_0x0; /*0x40bd2d*/
@@ -708,7 +708,7 @@ void EventClass::finalizeEvent()
   dword_87F658 = (int)&vt_VectorClass; /*0x40be18*/
   if ( dword_87F65C && byte_87F665 ) /*0x40be2c*/
   {
-    __3_YAXPAX_Z(dword_87F65C); /*0x40be2f*/
+    __3_YAXPAX_Z((void *)(dword_87F65C)); /*0x40be2f*/
     dword_87F65C = 0; /*0x40be37*/
   }
   byte_87F665 = 0; /*0x40be3d*/

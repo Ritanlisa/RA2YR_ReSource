@@ -195,7 +195,7 @@ LABEL_24:
   v2[13] = 0; /*0x688657*/
   v2[12] = (gamemd::Multiplayer)((Multiplayer)1); /*0x68865f*/
   *(unsigned int *)v2 = (unsigned int)(&vt_VectorClass); /*0x688663*/
-  ((Multiplayer *)(v2))->CopyDataArray(&v25); /*0x688669*/
+  ((Multiplayer *)(v2))->CopyDataArray((unsigned int *)(&v25)); /*0x688669*/
   *(unsigned int *)v2 = (unsigned int)(&vt_DynamicVectorClass); /*0x68866e*/
   v25.vtable0 = &vt_VectorClass; /*0x688674*/
   Items = v25.Items; /*0x68867c*/
@@ -219,7 +219,7 @@ unsigned int * Multiplayer::CopyDataArray(unsigned int *aP1)
   int v6; // eax
 
   if ( this == (Multiplayer *)aP1 ) /*0x68c2bb*/
-    return this; /*0x68c2bb*/
+    return (unsigned int *)(this); /*0x68c2bb*/
   (*(void (**)(Multiplayer *))(*(unsigned int *)this + 12))(this); /*0x68c2bf*/
   v3 = (int)(aP1[2]); /*0x68c2c2*/
   *((unsigned int *)this + 2) = v3; /*0x68c2c7*/
@@ -227,26 +227,26 @@ unsigned int * Multiplayer::CopyDataArray(unsigned int *aP1)
   {
     *((unsigned int *)this + 1) = 0; /*0x68c319*/
     *((unsigned char *)this + 13) = 0; /*0x68c320*/
-    return this; /*0x68c324*/
+    return (unsigned int *)(this); /*0x68c324*/
   }
   v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x68c2d4*/
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
   *((unsigned int *)this + 1) = v4; /*0x68c2eb*/
   if ( !v4 ) /*0x68c2ee*/
-    return this; /*0x68c2ee*/
+    return (unsigned int *)(this); /*0x68c2ee*/
   v5 = *((unsigned int *)this + 2); /*0x68c2f0*/
   v6 = 0; /*0x68c2f3*/
   *((unsigned char *)this + 13) = 1; /*0x68c2f7*/
   if ( v5 <= 0 ) /*0x68c2fb*/
-    return this; /*0x68c2fb*/
+    return (unsigned int *)(this); /*0x68c2fb*/
   do /*0x68c30f*/
   {
     *(unsigned int *)(*((unsigned int *)this + 1) + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x68c306*/
     ++v6; /*0x68c30c*/
   }
   while ( v6 < *((unsigned int *)this + 2) ); /*0x68c30f*/
-  return this; /*0x68c313*/
+  return (unsigned int *)(this); /*0x68c313*/
 
 }
 } // namespace gamemd

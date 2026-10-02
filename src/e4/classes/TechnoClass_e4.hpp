@@ -587,6 +587,10 @@ struct TechnoClass {
     int32_t u32_608;  // 0x608
     ProgressTimer q0584;  // 0x584
     int FireWeapon();  // 0x6fdd50
+    unsigned int * GetWaypointCoords(unsigned int *a2);  // 0x6f18a0
+    int ScanNeighborCells();  // 0x703e70
+    int HasDeployFlags();  // 0x746db0
+    char CheckTargetCell();  // 0x703b10
 };
 
 } // namespace gamemd

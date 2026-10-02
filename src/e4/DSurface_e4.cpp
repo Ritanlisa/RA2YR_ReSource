@@ -143,7 +143,7 @@ AbstractClass * * DSurface::Destroy()
     result = (int)((gamemd::AbstractClass **)((*(int (**)(int))(*(unsigned int *)result + 8))(result))); /*0x4ba703*/
   this->DSurface_field_0x1C[0] = 0; /*0x4ba706*/
   this->DSurface_field_0x0 = (unsigned int)(&Surface_Vtable); /*0x4ba709*/
-  return result; /*0x4ba70f*/
+  return (gamemd::AbstractClass **)(result); /*0x4ba70f*/
 
 }
 } // namespace gamemd
@@ -355,7 +355,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
         {
           stru_820320.Rate = (gamemd::AbstractClass **)(2);
           ((Debug *)this)->Log(); /*0x4babdf*/
-          return v5; /*0x4babf0*/
+          return (gamemd::AbstractClass **)(v5); /*0x4babf0*/
         }
         goto LABEL_60; /*0x4babd2*/
       }
@@ -365,7 +365,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
         {
           stru_820320.Rate = (gamemd::AbstractClass **)(0);
           ((Debug *)this)->Log(); /*0x4bab87*/
-          return v5; /*0x4bab98*/
+          return (gamemd::AbstractClass **)(v5); /*0x4bab98*/
         }
         goto LABEL_60; /*0x4bab72*/
       }
@@ -373,7 +373,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
       {
 LABEL_60:
         ((Debug *)this)->Log(); /*0x4bac11*/
-        return v5; /*0x4bac27*/
+        return (gamemd::AbstractClass **)(v5); /*0x4bac27*/
       }
     }
     else if ( v25 != 2 || g_BitMask_Green != 6 || v22 != 3 || g_BitShift_Red != 11 || g_BitShift_Green_0 != 3 ) /*0x4babba*/
@@ -589,7 +589,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     }
   }
   if ( v42 == 1 ) /*0x4bb282*/
-    return ((XSurface *)((void **)((XSurface *)this)))->BlitPart((void **)a2,(gamemd::XSurface *)(v10), (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
+    return ((XSurface *)((void **)((XSurface *)this)))->BlitPart((void **)a2,(void **)((gamemd::XSurface *)(v10)), (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
   v17 = a2[1]; /*0x4bb2a7*/
   v18 = a2[2]; /*0x4bb2aa*/
   v49 = (int)(*a2); /*0x4bb2ad*/

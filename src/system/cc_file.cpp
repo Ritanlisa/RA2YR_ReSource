@@ -27,7 +27,7 @@ CCFileClass::CCFileClass(const char* pFileName) noexcept
 // Searches MIX pool first, then falls back to disk
 REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 // 0x473c50
-int CCFileClass::Open(const char* pFileName)
+int CCFileClass::Open(int pFileName)
 {
   int result; // eax
   const char *v4; // eax

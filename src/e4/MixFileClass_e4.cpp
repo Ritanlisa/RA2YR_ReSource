@@ -40,7 +40,7 @@ void MixFileClass::CleanupCache()
         {
           if ( *(unsigned short *)v1 == 0xFFFF ) /*0x69e235*/
           {
-            BTree::DeleteSubtree((unsigned int *)v0[3]); /*0x69e239*/
+            ((BTree *)((unsigned int *)v0[3]))->DeleteSubtree(); /*0x69e239*/
             v2 = *((unsigned int *)v1 + 6); /*0x69e23e*/
             if ( v2 ) /*0x69e243*/
               *(unsigned int *)(v2 + 28) = *((unsigned int *)v1 + 7); /*0x69e248*/

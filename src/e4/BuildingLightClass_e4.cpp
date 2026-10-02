@@ -82,7 +82,7 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *aP1)
       {
         HIWORD(v18) = v7 + HIWORD(v25); /*0x436c6c*/
         *(unsigned int *)v23 = v18; /*0x436c7b*/
-        v8 = (unsigned int *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v23) + 57); /*0x436c84*/
+        v8 = (unsigned int *)*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v23) + 57); /*0x436c84*/
         if ( v8 ) /*0x436c8c*/
         {
           while ( 1 ) /*0x436c98*/
@@ -146,7 +146,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(void * Block, char a2)
   Block->vtable2 = (int)&vt_BuildingLightClass; /*0x4370d1*/
   Block->vtable3 = (int)&vt_BuildingLightClass; /*0x4370d8*/
   if ( (uint8_t)((ObjectClass *)(Block))->Undeploy() ) /*0x4370df*/
-    VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)Block); /*0x4370ee*/
+    ((VectorClass *)((DynamicVectorClass *)&dword_87F778))->RemoveItem((int)Block); /*0x4370ee*/
   v5 = (gamemd::BuildingLightClass *)(Block); /*0x437103*/
   v3 = (*(int ((int *)(**))(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
   if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/

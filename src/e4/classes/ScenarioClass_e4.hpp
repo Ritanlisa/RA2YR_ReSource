@@ -557,6 +557,8 @@ struct ScenarioClass {
     int LoadNetworkConfig();  // 0x6980c0
     char SetGlobalToByID(unsigned int a2, char a3);  // 0x689670
     int SaveGameOptions();  // 0x5fad10
+    int Is_Waypoint_Valid(unsigned int a2);  // 0x68bd80
+    char Write_Waypoints(char *a2);  // 0x68be90
 };
 
 } // namespace gamemd

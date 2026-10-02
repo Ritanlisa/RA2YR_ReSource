@@ -65,7 +65,7 @@ int Mission::ExecuteTechnoMissionAction()
           v4 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x520bf9*/
           if ( !v4 ) /*0x520c00*/
             goto LABEL_20; /*0x520c00*/
-          v5 = (unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) /*0x520c2d*/
+          v5 = (unsigned int)((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State() /*0x520c2d*/
              % *(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3680);
           v6 = (char *)v19; /*0x520c37*/
           v7 = *(void **)(*(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3668) + 4 * v5); /*0x520c3b*/
@@ -79,7 +79,7 @@ int Mission::ExecuteTechnoMissionAction()
           {
             v7 = *(void **)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 292) /*0x520c91*/
                           + 4
-                          * ((unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)
+                          * ((unsigned int)((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State()
                            % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 304)));
             v8 = *(unsigned int *)this->__pad_0; /*0x520c94*/
             v6 = &v20; /*0x520c96*/
@@ -291,7 +291,7 @@ char Mission::ProcessUnitMissionAI()
             v9 = *(unsigned int *)this->__pad_0; /*0x5210b8*/
             v22 = v20; /*0x5210bb*/
             v19 = (*(int (**)(Mission *))(v9 + 800))(this); /*0x5210c9*/
-            v10 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], &v21) + 80) >> 8; /*0x5210de*/
+            v10 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(&v21) + 80) >> 8; /*0x5210de*/
             LOBYTE(v10) = v10 & 1; /*0x5210e1*/
             v11 = (*(int (**)(Mission *, unsigned int, int, int))(*(unsigned int *)this->__pad_0 + 188))( /*0x5210e9*/
                     this,
@@ -464,7 +464,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
     {
       if ( i[27] && (dword_A8E7AC || !*((unsigned char *)i + 129)) && !*((unsigned char *)i + 1673) ) /*0x6ed831*/
       {
-        v7 = *((SessionClass *)(*(unsigned int **)((char *)this + 40)))->GetEntry(&v19); /*0x6ed848*/
+        v7 = *((SessionClass *)(*(unsigned int **)((char *)this + 40)))->GetEntry((unsigned int *)(&v19)); /*0x6ed848*/
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
           v8 = ((unsigned int *)&dword_8871E0[1])[1]; /*0x6ed867*/
         else
@@ -494,7 +494,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
               if ( !v3 )
               {
                 if ( i[361]
-                  || ((v9 = *((SessionClass *)(*(unsigned int **)((char *)this + 40)))->GetEntry(&v20), v9 == 54) || v9 == 53
+                  || ((v9 = *((SessionClass *)(*(unsigned int **)((char *)this + 40)))->GetEntry((unsigned int *)(&v20)), v9 == 54) || v9 == 53
                     ? (v10 = ((unsigned int *)&dword_8871E0[1])[1])
                     : (v10 = ((unsigned int *)&dword_8871E0[1])[0]),
                       ((ObjectClass *)(i))->DistanceTo(*((unsigned int *)this + 13)) <= 2 * v10 || v4 == 11) )
@@ -533,7 +533,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                   v12 = (int *)globalHelper_0DA020((unsigned int *)(v18),(gamemd::AbstractClass *)(&v16)); /*0x6ed9e8*/
                   v13 = *i; /*0x6ed9ef*/
                   v17 = *v12; /*0x6ed9fd*/
-                  v14 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v17); /*0x6eda01*/
+                  v14 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v17); /*0x6eda01*/
                   LOBYTE(v3) = (*(int (**)(int *, void *, int))(v13 + 1152))(i, v14, 1); /*0x6eda09*/
                 }
               }

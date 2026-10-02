@@ -84,7 +84,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
   v10 = this->m_8; /*0x5d0a77*/
   if ( v10 < this->m_10 ) /*0x5d0a7f*/
     this->m_10 = v10; /*0x5d0a81*/
-  return 1; /*0x5d0a84*/
+  return (gamemd::AbstractClass **)(1); /*0x5d0a84*/
 
 }
 }

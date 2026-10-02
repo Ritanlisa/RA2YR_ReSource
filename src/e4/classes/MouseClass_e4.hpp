@@ -1159,6 +1159,7 @@ struct MouseClass {
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_10[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
+    int GetPosition();  // 0x5bdaa0
 };
 
 } // namespace gamemd

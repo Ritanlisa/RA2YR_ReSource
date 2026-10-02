@@ -119,6 +119,7 @@ struct TerrainClass {
     int MissionStubReturnZero3(int a1, unsigned int * a2);
     void* LoadFromStream(unsigned int * a1, int a2);
     int InitTheatre();  // 0x549e90
+    void ** Construct(void *a2, int16_t *a3);  // 0x71bb90
 };
 
 } // namespace gamemd

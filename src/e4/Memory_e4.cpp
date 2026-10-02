@@ -153,7 +153,7 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
   }
   if ( v4 > 3.141592653589793 ) /*0x58c7a0*/
     v11 = 6.283185307179586 - v4; /*0x58c7aa*/
-  return (double)(unsigned int)Random::State(&unk_ABE890) * 2.328306437080797e-10 * 2.5 + 1.5 * v11 + 0.15 * v9; /*0x58c7ee*/
+  return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 2.328306437080797e-10 * 2.5 + 1.5 * v11 + 0.15 * v9; /*0x58c7ee*/
 }
 } // namespace gamemd
 }

@@ -58,8 +58,8 @@ int Object::FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3)
 
   v12 = (unsigned char *)((int)((unsigned char *)(0)));
   v13 = (unsigned char *)((int)((unsigned char *)(0)));
-  v5 = (unsigned char *)(7 * *aP1);
-  v6 = (unsigned char *)(7 * aP1[1]);
+  v5 = (int)((unsigned char *)(7 * *aP1));
+  v6 = (int)((unsigned char *)(7 * aP1[1]));
   if ( aP2 ) /*0x47c405*/
     Object_field_0xE8 = (unsigned char *)(this->Object_field_0xE8); /*0x47c407*/
   else
@@ -86,7 +86,7 @@ int Object::FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3)
     v8 = (unsigned char *)*((unsigned int *)v8 + 12); /*0x47c4a7*/
   }
   while ( v8 ); /*0x47c4ac*/
-  return v12; /*0x47c4b6*/
+  return (int)(v12); /*0x47c4b6*/
 
 }
 }
@@ -113,7 +113,7 @@ int Object::FindObjectCell(TechnoClass * aP1, char aP2)
     }
   }
 LABEL_5:
-  result = ((Object *)(this))->FindClosestObjectCell(aP1, aP2, 0); /*0x47c5ca*/
+  result = ((Object *)(this))->FindClosestObjectCell((unsigned int *)(aP1), aP2, 0); /*0x47c5ca*/
   if ( !result ) /*0x47c5df*/
   {
     if ( byte_A8E9A0 ) /*0x47c5e8*/
@@ -313,7 +313,7 @@ LABEL_20:
           v25[0] = (v8 << 8) + 128; /*0x56c41b*/
           v25[1] = (v10 << 8) + 128; /*0x56c429*/
           v25[2] = 0; /*0x56c431*/
-          v15 = Vector3::Subtract((int *)((Vector3 *)a2), v27, v25); /*0x56c439*/
+          v15 = ((Vector3 *)((int *)((Vector3 *)a2)))->Subtract(v27,(unsigned int *)(v25)); /*0x56c439*/
           v16 = Coord::Length((Coord *)v15); /*0x56c440*/
           if ( v16 <= 181 ) /*0x56c44a*/
             goto LABEL_20; /*0x56c44a*/
@@ -361,7 +361,7 @@ void sub_5902C0(int a1)
   v2 = *(unsigned short *)a1; /*0x5902ce*/
   IDA_HIWORD(a1) = *(unsigned short *)(a1 + 4); /*0x5902d6*/
   IDA_LOWORD(a1) = v2; /*0x5902e1*/
-  v3 = (char *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a1); /*0x5902e6*/
+  v3 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x5902e6*/
   v4 = v1[1]; /*0x5902f2*/
   v16 = v3[283]; /*0x5902f5*/
   v5 = *v1; /*0x5902f9*/
@@ -407,7 +407,7 @@ void sub_5902C0(int a1)
           {
             IDA_LOWORD(a1) = v10; /*0x59043b*/
             IDA_HIWORD(a1) = v9; /*0x590440*/
-            v11 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a1); /*0x590445*/
+            v11 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x590445*/
             v12 = v11; /*0x59044a*/
             if ( v11[17] != -1 || *((char *)v11 + 283) != v16 || !Cell::IsEmpty(v11) && !Cell::IsGroundTypeRange(v12) ) /*0x59046c*/
               break; /*0x59046c*/
@@ -458,7 +458,7 @@ int Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
     v7 = (int)(aP2[1]);
     LOWORD(aP1) = ((*aP2 << 8) + 128) / 256; /*0x5fc469*/
     HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
-    v8 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP1); /*0x5fc497*/
+    v8 = (CellClass *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj((int16_t *)&aP1); /*0x5fc497*/
     if ( !((CellClass *)(v8))->FindInfantry(0) ) /*0x5fc4a0*/
       ObjectClass::Deploy((ObjectClass *)this); /*0x5fc4b1*/
     dword_8333BC = -1; /*0x5fc4b6*/
@@ -636,13 +636,13 @@ LABEL_20:
       if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CoordinatesLegal(v26) ) /*0x5fdc2c*/
       {
         v28 = (int16_t *)((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell((unsigned int *)(&a2), &v30); /*0x5fdc4a*/
-        v25 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v28); /*0x5fdc4b*/
+        v25 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v28); /*0x5fdc4b*/
       }
       else
       {
         LOWORD(a2) = 1; /*0x5fdc58*/
         HIWORD(a2) = *(unsigned short *)&stru_87F5F0.__pad_58[660]; /*0x5fdc5f*/
-        v25 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a2); /*0x5fdc6a*/
+        v25 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a2); /*0x5fdc6a*/
       }
     }
     DrawToSurfaceSHP( /*0x5fdcaa*/
@@ -1598,7 +1598,7 @@ void sub_5A7E90(int a1, unsigned short * a2)
             }
             else
             {
-              v8 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v12); /*0x5a7f33*/
+              v8 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v12); /*0x5a7f33*/
               v2 = v10; /*0x5a7f38*/
               if ( *(unsigned int *)(v13 + 4 * (i + v4 * v10[185]) + 16) ) /*0x5a7f4b*/
               {
@@ -1739,7 +1739,7 @@ char Object::CheckState(IUnknown * aP1, int a3)
   v3 = aP1; /*0x5fd271*/
   LOWORD(aP1) = *aP1 / 256; /*0x5fd290*/
   HIWORD(aP1) = v3[1] / 256; /*0x5fd2a4*/
-  v5 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP1); /*0x5fd2b1*/
+  v5 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP1); /*0x5fd2b1*/
   if ( ((CellClass *)(v5))->FindInfantry(0) ) /*0x5fd2ba*/
     return 0; /*0x5fd2c4*/
   else

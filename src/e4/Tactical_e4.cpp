@@ -259,7 +259,7 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
   {
     HIDWORD(v15) = (unsigned int)(&a4); /*0x4840b2*/
     LODWORD(v15) = (unsigned int)(&aP5); /*0x4840b7*/
-    Tactical::CalculateTacticalLighting((int *)(this), v7, v11, v8, v12, v9, &v16, v15); /*0x4840c4*/
+    Tactical::CalculateTacticalLighting((int *)(this),(IUnknown *)(v7), v11, v8, v12, v9, &v16, v15); /*0x4840c4*/
     if ( *(unsigned int *)this->__pad_34 /*0x484125*/
       && (a1 = (unsigned int *)v16,
           aP2 = (unsigned int *)aP5,
@@ -559,14 +559,14 @@ LABEL_11:
           v23 = *((unsigned short *)this + 2235) + *((unsigned short *)this + 2237); /*0x4a93c7*/
           LOWORD(aP2) = *((unsigned short *)this + 2234) + *((unsigned short *)this + 2236); /*0x4a93d0*/
           HIWORD(aP2) = v23; /*0x4a93d5*/
-          MapClass::SetCellFlagsAlongPath((MapClass *)this, &aP2, 0); /*0x4a93e9*/
+          ((MapClass *)((MapClass *)this))->SetCellFlagsAlongPath(&aP2, 0); /*0x4a93e9*/
         }
         if ( v3 != *(unsigned int **)&stru_8A0390.bombVisible ) /*0x4a93f5*/
         {
           v24 = *((unsigned short *)this + 2236) + (unsigned short)v3; /*0x4a940a*/
           HIWORD(aP2) = HIWORD(v3) + *((unsigned short *)this + 2237); /*0x4a9414*/
           LOWORD(aP2) = v24; /*0x4a941b*/
-          MapClass::SetCellFlagsAlongPath((MapClass *)this, &aP2, (unsigned short *)1); /*0x4a942f*/
+          ((MapClass *)((MapClass *)this))->SetCellFlagsAlongPath(&aP2, (unsigned short *)1); /*0x4a942f*/
         }
       }
       *((unsigned int *)this + 1117) = v3; /*0x4a9434*/
@@ -745,14 +745,14 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
     v17 = 0; /*0x640b62*/
     for ( j = 0; j < 8; ++j ) /*0x640b64*/
     {
-      if ( (uint8_t)ScenarioClass::Is_Waypoint_Valid((char *)dword_A8B230, j) ) /*0x640b71*/
+      if ( (uint8_t)((ScenarioClass *)((char *)dword_A8B230))->Is_Waypoint_Valid(j) ) /*0x640b71*/
         ++v17; /*0x640b7a*/
     }
     v19 = 0; /*0x640b81*/
     v59 = j; /*0x640b83*/
     for ( v17 = v17; v19 < v17; ++v19 ) /*0x640b8d*/
     {
-      if ( (!v19 || v19 <= j) && (uint8_t)ScenarioClass::Is_Waypoint_Valid((char *)dword_A8B230, v19) ) /*0x640ba6*/
+      if ( (!v19 || v19 <= j) && (uint8_t)((ScenarioClass *)((char *)dword_A8B230))->Is_Waypoint_Valid(v19) ) /*0x640ba6*/
       {
         v56 = (unsigned int *)*ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v65, v19); /*0x640bc8*/
         v20 = (IDA_SHIWORD(v56) << 8) + 128; /*0x640bde*/
@@ -835,7 +835,7 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
       {
         if ( v40 == 4480 || v38 <= v26 ) /*0x640e84*/
         {
-          if ( (uint8_t)ScenarioClass::Is_Waypoint_Valid(v39, v38) ) /*0x640e8b*/
+          if ( (uint8_t)((ScenarioClass *)(v39))->Is_Waypoint_Valid(v38) ) /*0x640e8b*/
           {
             v60 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &a5, v38); /*0x640eb0*/
             v41 = (IDA_SHIWORD(v60) << 8) + 128; /*0x640ec2*/
@@ -1313,16 +1313,16 @@ void Tactical::DisplayTacticalOverlayText(wchar_t * String)
           v9 = (255 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6d4f89*/
              | (255 >> g_BitMask_Blue << g_BitMask_Green)
              | (255 >> g_BitMask_Red << g_BitShift_Blue);
-          Text::Layout(g_FogOfWarState, String, &v12, v13, *(int *)DSurface_ViewBounds.__pad_8); /*0x6d4f90*/
+          ((Text *)(g_FogOfWarState))->Layout(String, &v12, v13, *(int *)DSurface_ViewBounds.__pad_8); /*0x6d4f90*/
           v18[0] = v14; /*0x6d4fbb*/
           v10 = v8 + (v6 - v12) / 2; /*0x6d4fc1*/
           v18[2] = v16 + v14; /*0x6d4fc9*/
           v18[1] = v15; /*0x6d4fd1*/
           v18[3] = &v15[v17]; /*0x6d4fd9*/
           v11 = (int)&v15[(v17 - v13[0]) / 2]; /*0x6d4fdf*/
-          Char::Swap(v7, 1); /*0x6d4fe1*/
-          TextGroup::SetRect((TextGroup *)v7, v18); /*0x6d4fed*/
-          Property::Set((Property *)v7, v9); /*0x6d4ff5*/
+          ((Char *)(v7))->Swap(1); /*0x6d4fe1*/
+          ((TextGroup *)((TextGroup *)v7))->SetRect(v18); /*0x6d4fed*/
+          ((Property *)((Property *)v7))->Set(v9); /*0x6d4ff5*/
           FontRenderer::DrawText(v7, (int *)DSurface_Composite->__pad_0, String, v10, v11, 0, 0); /*0x6d5013*/
         }
       }
@@ -1468,7 +1468,7 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
     LOWORD(v17) = Math::RoundToInt(v50); /*0x6d6715*/
     v40[0] = v16 / 256; /*0x6d672a*/
     v40[1] = v17 / 256; /*0x6d6747*/
-    v18 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v40); /*0x6d6751*/
+    v18 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v40); /*0x6d6751*/
     v35 = v12 - 15 * v18->Cell_field_0x11B[0]; /*0x6d6768*/
     if ( ((int)v18->Cell_field_0x140 & 0x100) != 0 )
     {

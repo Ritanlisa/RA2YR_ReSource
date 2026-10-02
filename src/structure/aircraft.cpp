@@ -401,9 +401,9 @@ LABEL_54:
         int v90 = (int)(((unsigned char *)(this) + 0x2B4));
         this->FireWeapon();
   unsigned int v108[5]; // [esp+80h] [ebp-8Ch] BYREF
-        v108[0] = ((unsigned char *)(this) + 0x027);
+        v108[0] = (unsigned int)(((unsigned char *)(this) + 0x027));
         v108[1] = this->owningHouseIndex;
-        v108[2] = ((unsigned char *)(this) + 0x029);
+        v108[2] = (unsigned int)(((unsigned char *)(this) + 0x029));
   unsigned int *v60; // eax
         v60 = (unsigned int *)*(unsigned int *)((unsigned char *)(this) + 0x2B4)->GetInvalidCoord(((unsigned char *)(this) + 0x2B4),
   unsigned char v118[24]; // [esp+C8h] [ebp-44h] BYREF

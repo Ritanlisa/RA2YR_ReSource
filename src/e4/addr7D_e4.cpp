@@ -299,7 +299,7 @@ int _filbuf(MouseClass * aP0)
   aP0->_cnt = (unsigned int)(v2 - 1);
   result = (char *)((unsigned int)((uint8_t)*ptr));
   aP0->_ptr = (unsigned int)(ptr + 1);
-  return result; /*0x7d07c7*/
+  return (int)(result); /*0x7d07c7*/
 }
 }
 // 0x7D0844
@@ -547,7 +547,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
         break; /*0x7d0d4e*/
       default:
         __asm { jmp dword ptr ds:loc_7D0C04+4[eax*4] } /*0x7d0bfd*/
-        return result; /*0x7d0bfd*/
+        return (gamemd::exception **)(result); /*0x7d0bfd*/
     }
   }
   else
@@ -1427,7 +1427,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
           goto LABEL_189; /*0x7d1e42*/
         }
         ++v76; /*0x7d1e47*/
-        v16 = fgetc_0(Stream); /*0x7d1e50*/
+        v16 = fgetc_0((FILE *)(Stream)); /*0x7d1e50*/
   LABEL_188:
         C = v16; /*0x7d1e52*/
   LABEL_189:
@@ -1482,7 +1482,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
                   break; /*0x7d1f26*/
               }
               ++v76; /*0x7d1f2b*/
-              v16 = fgetc_0(Stream); /*0x7d1f33*/
+              v16 = fgetc_0((FILE *)(Stream)); /*0x7d1f33*/
               C = v16; /*0x7d1f36*/
             }
           }

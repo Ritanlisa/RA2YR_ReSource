@@ -18,10 +18,10 @@ struct FileClass {
     unsigned int OpenWithCDSearch;
 // --- flat members (END) ---
     char Stub(int a1);
-    int Close(void *a1, void *a2);
+    int Close();
     int GetState(void *a1);
     int Open(int a2);
-    int Read(BufferIOFileClass * aP1, AbstractClass * aP2);
+    int Read(char *aP1, signed int aP2);
     int Seek(LONG lDistanceToMove, DWORD dwMoveMethod);
     const char* SetFileName(char *aP1);
     int SetState(void *a1);

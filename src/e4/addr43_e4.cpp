@@ -607,7 +607,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   v48 = v63 - a4[1]; /*0x437ae7*/
   v41 = CellStruct::Copy((CellStruct *)&v58, v53); /*0x437afd*/
   v21 = (Coord2D *)CellStruct::Copy(a1, &v55); /*0x437b02*/
-  v22 = Coord2D::Add(v21, v54, v41); /*0x437b09*/
+  v22 = ((Coord2D *)(v21))->Add(v54, v41); /*0x437b09*/
   v68 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP0 + 92))(aP0, *v22, v22[1]); /*0x437b28*/
   if ( !v68 ) /*0x437b2f*/
     return 0; /*0x437b3a*/
@@ -1381,10 +1381,10 @@ int sub_434B40(AbstractClass * aP0, int * a1, unsigned short aP1, int xLeft, int
 
   if ( !aP0 ) /*0x434b4c*/
     return xLeft; /*0x434b89*/
-  FontRenderer::InitContext(aP0, a1); /*0x434b56*/
-  Field::Int_Set(aP0, xLeft); /*0x434b5e*/
+  ((FontRenderer *)(aP0))->InitContext(a1); /*0x434b56*/
+  ((Field *)(aP0))->Int_Set(xLeft); /*0x434b5e*/
   v5 = FontClass::RenderGlyph((int)aP0, aP1, xLeft, yTop, -1); /*0x434b7a*/
-  BufferIO::Cleanup(aP0, (int)a1); /*0x434b7c*/
+  ((BufferIO *)(aP0))->Cleanup((int)a1); /*0x434b7c*/
   return v5; /*0x434b84*/
 }
 } // namespace gamemd
@@ -1402,22 +1402,22 @@ int sub_434BF0(int a1, int * a2, unsigned short * a3, int xLeft, int yTop, int a
     if ( *(unsigned char *)(a1 + 64) ) /*0x434c01*/
     {
       *(unsigned int *)(a1 + 44) = 2; /*0x434c14*/
-      FontRenderer::InitContext((unsigned int *)a1, a2); /*0x434c1b*/
-      Field::Int_Set((unsigned int *)a1, xLeft); /*0x434c27*/
+      ((FontRenderer *)((unsigned int *)a1))->InitContext(a2); /*0x434c1b*/
+      ((Field *)((unsigned int *)a1))->Int_Set(xLeft); /*0x434c27*/
       FontClass::RenderText(a1, a3, xLeft, yTop, a6, 0); /*0x434c40*/
-      BufferIO::Cleanup((unsigned int *)a1, (int)a2); /*0x434c48*/
-      FontRenderer::InitContext((unsigned int *)a1, a2); /*0x434c51*/
-      Field::Int_Set((unsigned int *)a1, xLeft + 1); /*0x434c59*/
+      ((BufferIO *)((unsigned int *)a1))->Cleanup((int)a2); /*0x434c48*/
+      ((FontRenderer *)((unsigned int *)a1))->InitContext(a2); /*0x434c51*/
+      ((Field *)((unsigned int *)a1))->Int_Set(xLeft + 1); /*0x434c59*/
       v7 = FontClass::RenderText(a1, a3, xLeft + 1, yTop, a6, 0); /*0x434c76*/
-      BufferIO::Cleanup((unsigned int *)a1, (int)a2); /*0x434c78*/
+      ((BufferIO *)((unsigned int *)a1))->Cleanup((int)a2); /*0x434c78*/
       *(unsigned int *)(a1 + 44) = 1; /*0x434c7e*/
     }
     else
     {
-      FontRenderer::InitContext((unsigned int *)a1, a2); /*0x434c94*/
-      Field::Int_Set((unsigned int *)a1, xLeft); /*0x434ca0*/
+      ((FontRenderer *)((unsigned int *)a1))->InitContext(a2); /*0x434c94*/
+      ((Field *)((unsigned int *)a1))->Int_Set(xLeft); /*0x434ca0*/
       v7 = FontClass::RenderText(a1, a3, xLeft, yTop, a6, 0); /*0x434cc1*/
-      BufferIO::Cleanup((unsigned int *)a1, (int)a2); /*0x434cc3*/
+      ((BufferIO *)((unsigned int *)a1))->Cleanup((int)a2); /*0x434cc3*/
     }
     return v7; /*0x434c86*/
   }
@@ -1433,10 +1433,10 @@ char sub_435340(int a1, int a2, unsigned short * a3, int a4, int yTop, int a6, i
 
   if ( !a1 ) /*0x43534a*/
     return 0; /*0x43534d*/
-  Field::Int_Set((unsigned int *)a1, a4); /*0x43535c*/
-  v11 = Property::Set((unsigned short *)a1, *(unsigned short *)(a1 + 38)); /*0x435375*/
+  ((Field *)((unsigned int *)a1))->Int_Set(a4); /*0x43535c*/
+  v11 = ((Property *)((unsigned short *)a1))->Set(*(unsigned short *)(a1 + 38)); /*0x435375*/
   Font::Print(a1, a2, a3, a4 + 1, yTop + 1, a6, a7, a8, a9, a10); /*0x43539f*/
-  Property::Set((unsigned short *)a1, v11); /*0x4353a7*/
+  ((Property *)((unsigned short *)a1))->Set(v11); /*0x4353a7*/
 // 0x434cd0
   return Font::Print(a1, a2, a3, a4, yTop, a6, a7, a8, a9, a10); /*0x43534c*/
 }
@@ -1450,7 +1450,7 @@ char sub_4353F0(int a1, int a2, unsigned short * a3, int a4, int yTop, int a6, i
 
   if ( !a1 ) /*0x4353fa*/
     return 0; /*0x4353fd*/
-  Field::Int_Set((unsigned int *)a1, a4); /*0x43540b*/
+  ((Field *)((unsigned int *)a1))->Int_Set(a4); /*0x43540b*/
   if ( !*(unsigned char *)(a1 + 64) ) /*0x435410*/
 // 0x434cd0
     return Font::Print(a1, a2, a3, a4, yTop, a6, a7, a8, a9, a10); /*0x4354b8*/

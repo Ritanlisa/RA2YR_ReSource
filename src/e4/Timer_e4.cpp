@@ -98,7 +98,7 @@ DWORD * Timer::PumpMessages(void *a1_1)
     result = (int)MessageLoop(); /*0x54f768*/
     *((unsigned int *)this + 197) = *((unsigned int *)this + 198); /*0x54f773*/
   }
-  return result; /*0x54f779*/
+  return (DWORD *)(result); /*0x54f779*/
 
 }
 }

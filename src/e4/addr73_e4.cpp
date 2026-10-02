@@ -81,7 +81,7 @@ AbstractClass * * ProcessSelectionExperience()
   IDA_LOBYTE(v1) = (unsigned char)((gamemd::AbstractClass **)((unsigned char)dword_A8ECC8)); /*0x730af3*/
   v14 = 0; /*0x730afe*/
   if ( (int)dword_A8ECC8 <= 0 ) /*0x730b03*/
-    return v1; /*0x730b03*/
+    return (gamemd::AbstractClass **)(v1); /*0x730b03*/
   IDA_LOBYTE(v1) = (unsigned char)dword_A8ECBC; /*0x730b09*/
   if ( !*(unsigned int *)dword_A8ECBC
     || (v2 = *(House ***)dword_A8ECBC,
@@ -316,7 +316,7 @@ AbstractClass * * sub_731AA0()
   v1 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228))));
   v2 = (gamemd::AbstractClass **)(0);
   if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) <= 0 ) /*0x731aad*/
-    return 1; /*0x731ad8*/
+    return (gamemd::AbstractClass **)(1); /*0x731ad8*/
   while ( 1 ) /*0x731ab4*/
   {
     v3 = *(unsigned char **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x731ab4*/
@@ -326,7 +326,7 @@ AbstractClass * * sub_731AA0()
         break; /*0x731ac9*/
     }
     if ( ++(int)(v2) >= (int)(v1) ) /*0x731ad6*/
-      return 1; /*0x731ad6*/
+      return (gamemd::AbstractClass **)(1); /*0x731ad6*/
   }
   return 0; /*0x731ad8*/
 }
@@ -606,14 +606,14 @@ void SelectAllOfType()
   if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x732b55*/
   {
     if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x732b7c*/
-      StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_SelAcrossMap), 0, g_Str_File_UICmnds_cpp, 1011); /*0x732b98*/
+      StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_SelAcrossMap), 0,(const char *)(g_Str_File_UICmnds_cpp), 1011); /*0x732b98*/
     else
-      StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_SelAcrossScreen), 0, g_Str_File_UICmnds_cpp, 1013); /*0x732bb2*/
+      StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_SelAcrossScreen), 0,(const char *)(g_Str_File_UICmnds_cpp), 1013); /*0x732bb2*/
     wcscpy(Destination, StringCSF); /*0x732b9a*/
   }
   else
   {
-    v21 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_NothingSelected), 0, g_Str_File_UICmnds_cpp, 1009));
+    v21 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_NothingSelected), 0,(const char *)(g_Str_File_UICmnds_cpp), 1009));
     wcscpy(Destination, v21); /*0x732b73*/
   }
   v20 = 3; /*0x732bc8*/

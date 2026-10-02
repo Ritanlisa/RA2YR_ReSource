@@ -185,7 +185,7 @@ LABEL_42: v12 = (gamemd::Skirmish *)(g_UIControlState);
           goto LABEL_44; /*0x5e783f*/
         }
       }
-      if ( (uint8_t)IsRandMap::Sed2((IsRandMap *)&dword_A8B238) ) /*0x5e76ef*/
+      if ( (uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() ) /*0x5e76ef*/
         return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e76ef*/
       v8 = g_UIControlState; /*0x5e76fc*/
       if ( !g_UIControlState ) /*0x5e7704*/
@@ -217,14 +217,14 @@ LABEL_44:
       }
       if ( g_UIControlState ) /*0x5e78b0*/
       {
-        if ( (uint8_t)IsRandMap::Sed2((IsRandMap *)&dword_A8B238) ) /*0x5e78b7*/
+        if ( (uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() ) /*0x5e78b7*/
         {
           ScenarioClass::CopyStartPositions(v16); /*0x5e78f5*/
           return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e78fa*/
         }
         else
         {
-          PreviewClass::ReadPreview((PreviewClass *)g_UIControlState, byte_A8B8E0); /*0x5e78cb*/
+          ((PreviewClass *)((PreviewClass *)g_UIControlState))->ReadPreview(byte_A8B8E0); /*0x5e78cb*/
           return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e78d3*/
         }
       }
@@ -293,7 +293,7 @@ int Session::StartGame(HWND hWnd)
   ObjectClass *v3; // eax
   Skirmish *v4; // eax
 
-  if ( !(uint8_t)IsRandMap::Sed(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4])) ) /*0x5ed381*/
+  if ( !(uint8_t)((IsRandMap *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4])))->Sed() ) /*0x5ed381*/
     return Session::PrepareGame(hWnd); /*0x5ed3f1*/
   v2 = g_UIControlState; /*0x5ed38b*/
   if ( g_UIControlState ) /*0x5ed393*/

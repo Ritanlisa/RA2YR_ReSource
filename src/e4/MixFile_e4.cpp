@@ -107,7 +107,7 @@ AbstractClass * * MixFile::LoadSide()
   int v23; // [esp+130h] [ebp-8h]
 
   v1 = (int)this; /*0x534faa*/
-  VoxClass::SetEVAIndex((VoxClass *)this); /*0x534fac*/
+  ((VoxClass *)((VoxClass *)this))->SetEVAIndex(); /*0x534fac*/
   if ( v1 == 2 ) /*0x534fb4*/
     v1 = 1; /*0x534fb6*/
   v2 = v1; /*0x534fbb*/
@@ -157,16 +157,16 @@ AbstractClass * * MixFile::LoadSide()
   ((Debug *)this)->Log(); /*0x5350f0*/
   v6 = ((CCFileClass *)(&v18))->Construct(Buffer); /*0x535101*/
   v7 = (*(int (**)(unsigned int *, unsigned int))(*v6 + 20))(v6, 0); /*0x535115*/
-  v18.FileClass = (FileClass)&vt_CCFileClass; /*0x535117*/
+  v18.FileClass = (unsigned int)((FileClass)&vt_CCFileClass); /*0x535117*/
   v20 = 0; /*0x53511f*/
   ((Vector *)((int)v19))->Clear(); /*0x535126*/
-  v18.FileClass = (FileClass)&off_7E1668; /*0x535134*/
+  v18.FileClass = (unsigned int)((FileClass)&off_7E1668); /*0x535134*/
   ((BufferIOFileClass *)(&v18))->Dtor(); /*0x535138*/
   if ( v7 ) /*0x53513f*/
   {
     v8 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x535143*/
     if ( v8 ) /*0x53514d*/
-      dword_884E70 = (int)MixFileClass::FromFile(v8, Buffer, (int)dword_886980); /*0x535160*/
+      dword_884E70 = (int)((MixFileClass *)(v8))->FromFile(Buffer, (int)dword_886980); /*0x535160*/
     else
       dword_884E70 = 0; /*0x535167*/
   }
@@ -175,10 +175,10 @@ AbstractClass * * MixFile::LoadSide()
   ((Debug *)this)->Log(); /*0x535193*/
   v9 = ((CCFileClass *)(&v18))->Construct(Buffer); /*0x5351a4*/
   v10 = (*(int (**)(unsigned int *, unsigned int))(*v9 + 20))(v9, 0); /*0x5351b8*/
-  v18.FileClass = (FileClass)&vt_CCFileClass; /*0x5351ba*/
+  v18.FileClass = (unsigned int)((FileClass)&vt_CCFileClass); /*0x5351ba*/
   v20 = 0; /*0x5351c2*/
   ((Vector *)((int)v19))->Clear(); /*0x5351c9*/
-  v18.FileClass = (FileClass)&off_7E1668; /*0x5351d2*/
+  v18.FileClass = (unsigned int)((FileClass)&off_7E1668); /*0x5351d2*/
   ((BufferIOFileClass *)(&v18))->Dtor(); /*0x5351d6*/
   if ( v10 ) /*0x5351dd*/
   {
@@ -189,7 +189,7 @@ AbstractClass * * MixFile::LoadSide()
       ((Debug *)this)->Log(); /*0x535210*/
       return 0; /*0x535224*/
     }
-    v12 = (unsigned int *)(MixFileClass::FromFile(v11, Buffer, (int)dword_886980));
+    v12 = (unsigned int *)(((MixFileClass *)(v11))->FromFile(Buffer, (int)dword_886980));
     dword_884E74 = (int)v12; /*0x5351fe*/
   }
   else
@@ -203,16 +203,16 @@ AbstractClass * * MixFile::LoadSide()
     ((Debug *)this)->Log(); /*0x53526a*/
     v13 = ((CCFileClass *)(&v18))->Construct(Buffer); /*0x53527b*/
     v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x535294*/
-    v18.FileClass = (FileClass)&vt_CCFileClass; /*0x535296*/
+    v18.FileClass = (unsigned int)((FileClass)&vt_CCFileClass); /*0x535296*/
     v20 = 0; /*0x53529a*/
     ((Vector *)((int)v19))->Clear(); /*0x5352a1*/
-    v18.FileClass = (FileClass)&off_7E1668; /*0x5352aa*/
+    v18.FileClass = (unsigned int)((FileClass)&off_7E1668); /*0x5352aa*/
     ((BufferIOFileClass *)(&v18))->Dtor(); /*0x5352ae*/
     if ( v14 ) /*0x5352b5*/
     {
       v15 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x5352b9*/
       if ( v15 ) /*0x5352c3*/
-        dword_884E78 = (int)MixFileClass::FromFile(v15, Buffer, (int)dword_886980); /*0x5352d6*/
+        dword_884E78 = (int)((MixFileClass *)(v15))->FromFile(Buffer, (int)dword_886980); /*0x5352d6*/
       else
         dword_884E78 = 0; /*0x5352dd*/
     }
@@ -221,22 +221,22 @@ AbstractClass * * MixFile::LoadSide()
     CCFileClass::Construct(&v21, aUimdIni); /*0x5352fd*/
     if ( ((CCINIClass *)(&dword_887208))->Load((int)&v21, 0, 0) ) /*0x535311*/
     {
-      SidebarClass::ReadButtonList((SidebarClass *)dword_8871E0); /*0x53533d*/
-      SidebarClass::LoadButtonSHPs((TabClass *)&dword_87F7E8); /*0x535347*/
+      ((SidebarClass *)((SidebarClass *)dword_8871E0))->ReadButtonList(); /*0x53533d*/
+      ((SidebarClass *)((TabClass *)&dword_87F7E8))->LoadButtonSHPs(); /*0x535347*/
       v21.FileClass = (gamemd::AbstractClass **)((FileClass)&vt_CCFileClass); /*0x535353*/
       v23 = 0; /*0x53535a*/
       ((Vector *)((int)v22))->Clear(); /*0x535361*/
-      v21.FileClass = (FileClass)&off_7E1668; /*0x53536d*/
+      v21.FileClass = (unsigned int)((FileClass)&off_7E1668); /*0x53536d*/
       ((BufferIOFileClass *)(&v21))->Dtor(); /*0x535374*/
-      return 1; /*0x535379*/
+      return (gamemd::AbstractClass **)(1); /*0x535379*/
     }
     else
     {
       ((Debug *)this)->Log(); /*0x53538b*/
-      v21.FileClass = (FileClass)&vt_CCFileClass; /*0x53539a*/
+      v21.FileClass = (unsigned int)((FileClass)&vt_CCFileClass); /*0x53539a*/
       v23 = 0; /*0x5353a1*/
       ((Vector *)((int)v22))->Clear(); /*0x5353a8*/
-      v21.FileClass = (FileClass)&off_7E1668; /*0x5353b4*/
+      v21.FileClass = (unsigned int)((FileClass)&off_7E1668); /*0x5353b4*/
       ((BufferIOFileClass *)(&v21))->Dtor(); /*0x5353bb*/
       return 0; /*0x5353c0*/
     }
@@ -297,7 +297,7 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
   v3 = *(unsigned int *)this->__pad_0; /*0x6275a0*/
   if ( *(unsigned int *)this->__pad_0 == -1 ) /*0x6275a6*/
     return 0; /*0x6275ab*/
-  strcpy(String, aP1); /*0x6275d6*/
+  strcpy(String,(const char *)(aP1)); /*0x6275d6*/
   strcat(String, (const char *)&off_7E1BC6 + 112 * v3); /*0x627611*/
   strcat(String, asc_826598); /*0x62763d*/
   strcat(String, (const char *)off_836464); /*0x62766a*/
@@ -306,7 +306,7 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
   v6 = 256; /*0x627687*/
   do /*0x627697*/
   {
-    Struct::Zero3(v5); /*0x62768e*/
+    ((Struct *)(v5))->Zero3(); /*0x62768e*/
     v5 = (Struct *)((char *)v5 + 3); /*0x627693*/
     --v6; /*0x627696*/
   }

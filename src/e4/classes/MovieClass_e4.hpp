@@ -20,7 +20,7 @@ struct MovieClass {
     unsigned int ComputeTime();
     static double GetHeight(...);  // C2597 interim stub
     static double GetWidth(...);  // C2597 interim stub
-    int ReadConfig(HWND hDlg, int nIDDlgItem);  // 0x5c23b0
+    int ReadConfig(HWND aP1, int nIDDlgItem);  // 0x5c23b0
 };
 
 } // namespace gamemd

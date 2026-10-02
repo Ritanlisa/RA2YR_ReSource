@@ -400,7 +400,7 @@ AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectCl
     v8 = (gamemd::AbstractClass **)(_strcmpi((const char *)(aP0),(const char *)(*(const void **)(v7[v6] + 772))) == 0);
     v7 = (unsigned int *)((gamemd::gamemd::AbstractClass **)(dword_B054D4));
     if ( v8 && *(unsigned int *)(*((unsigned int *)dword_B054D4 + v6) + 784) == a5 ) /*0x68ca08*/
-      return v6; /*0x68ca40*/
+      return (gamemd::AbstractClass **)(v6); /*0x68ca40*/
     if ( ++v6 >= dword_B054E0 ) /*0x68ca13*/
       goto LABEL_6; /*0x68ca13*/
   }
@@ -452,7 +452,7 @@ char sub_63A0D0()
   if ( !byte_AC4C08 ) /*0x63a0d7*/
   {
     byte_AC4C08 = 1; /*0x63a0ea*/
-    StringCSF = GetStringCSF((wchar_t *)(aMsgPlanningmod_12), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a0f1*/
+    StringCSF = GetStringCSF((wchar_t *)(aMsgPlanningmod_12), 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233); /*0x63a0f1*/
     AddMessageListPlayerMessage(StringCSF, 480); /*0x63a0fd*/
     return PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a119*/
   }
@@ -547,9 +547,9 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
   {
     inited = 0; /*0x7668ba*/
   }
-  ComPtr::Constructor((ComPtr *)a1); /*0x7668be*/
+  ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x7668be*/
   *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char_vftable; /*0x7668c5*/
-  ComPtr::Set((ComPtr *)a1, (int)inited); /*0x7668cc*/
+  ((ComPtr *)((ComPtr *)a1))->Set((int)inited); /*0x7668cc*/
   DeleteAndZero((ObjectClass *)&a4); /*0x7668d5*/
   return a1; /*0x7668dc*/
 }
@@ -574,9 +574,9 @@ rc_ptr * System_Init_7676F0(rc_ptr_base * a1, int a2)
   {
     v5 = 0; /*0x767718*/
   }
-  ComPtr::Constructor((ComPtr *)a1); /*0x76771c*/
+  ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x76771c*/
   *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_MapSizeGameOption_vftable; /*0x767723*/
-  ComPtr::Set((ComPtr *)a1, v5); /*0x76772a*/
+  ((ComPtr *)((ComPtr *)a1))->Set(v5); /*0x76772a*/
   return a1; /*0x767731*/
 }
 } // namespace gamemd

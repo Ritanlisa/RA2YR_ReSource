@@ -188,7 +188,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2)
               {
                 v25 = (int)(((TeamClass *)(v24))->FindOrCreate());
                 if ( v25 ) /*0x74347c*/
-                  ObjectClass::SetReference((ObjectClass *)v12, v25); /*0x743481*/
+                  ((ObjectClass *)((ObjectClass *)v12))->SetReference(v25); /*0x743481*/
               }
               v26 = strtok(0, Str); /*0x74348d*/
               if ( v26 ) /*0x743497*/
@@ -717,10 +717,10 @@ void * globalHelper_04BB20(ObjectClass * Source, int a2)
     v5 = (VoxelAnimTypeClass *)RA2_OPNEW(0x308u); /*0x74bb73*/
     if ( v5 ) /*0x74bb82*/
 // 0x74ad80
-      return VoxelAnimTypeClass::Constructor(v5, Source); /*0x74bb8f*/
+      return ((VoxelAnimTypeClass *)(v5))->Constructor(Source); /*0x74bb8f*/
     return 0; /*0x74bb82*/
   }
-  while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)(a2 + 4) + 4 * v4) + 36), Source) ) /*0x74bb69*/
+  while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)(a2 + 4) + 4 * v4) + 36),(const char *)(Source)) ) /*0x74bb69*/
   {
     if ( ++v4 >= *(unsigned int *)(a2 + 16) ) /*0x74bb71*/
       goto LABEL_6; /*0x74bb71*/
@@ -883,7 +883,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
       }
       while ( (unsigned int)vtable0 < a2 ); /*0x74be53*/
     }
-    return v12; /*0x74be56*/
+    return (int)(v12); /*0x74be56*/
   }
   else
   {
@@ -1020,7 +1020,7 @@ int InitializeVeinholeSystem(char a1)
   ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x74e019*/
   for ( k = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); k; k = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext() ) /*0x74e02f*/
     *(unsigned int *)(k + 320) &= ~0x8000u; /*0x74e03e*/
-  memset(dword_B1D2F0, 0, v2); /*0x74e05c*/
+  memset((void *)(dword_B1D2F0), 0, v2); /*0x74e05c*/
   for ( m = dword_B1D2A0 - 1; m >= 0; --m ) /*0x74e06f*/
   {
     v16 = *((unsigned int *)dword_B1D294 + m); /*0x74e077*/
@@ -1106,7 +1106,7 @@ AbstractClass * * _::Release(int a2, unsigned int * a3)
       *(unsigned int *)&this->m_1[3] = v4; /*0x74f487*/
       this->m_8 = a2; /*0x74f48f*/
       BYTE1(this->m_C) = a3 == 0; /*0x74f492*/
-      return 1; /*0x74f498*/
+      return (gamemd::AbstractClass **)(1); /*0x74f498*/
     }
     else
     {
@@ -1116,7 +1116,7 @@ AbstractClass * * _::Release(int a2, unsigned int * a3)
   else
   {
     (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x74f4a2*/
-    return 1; /*0x74f4a8*/
+    return (gamemd::AbstractClass **)(1); /*0x74f4a8*/
   }
 
 }
@@ -1191,7 +1191,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fafa*/
     if ( (uint8_t)((FileClass *)(&v9))->Open(0) ) /*0x74fb04*/
     {
-      FileClass::Read(&v9, (char *)&this->owningHouseIndex + 2, 16); /*0x74fb17*/
+      ((FileClass *)(&v9))->Read((gamemd::BufferIOFileClass *)((char *)&this->owningHouseIndex + 2), 16); /*0x74fb17*/
       for ( BYTE1(this->attachedBomb) = 0; /*0x74fb30*/
             *((unsigned char *)&this->owningHouseIndex + strlen((const char *)&this->owningHouseIndex + 2) + 1) == 13;
             *((unsigned char *)&this->owningHouseIndex + strlen((const char *)&this->owningHouseIndex + 2) + 1) = 0 )
@@ -1225,7 +1225,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fb9a*/
     if ( (uint8_t)((FileClass *)(&v9))->Open(0) ) /*0x74fba4*/
     {
-      FileClass::Read(&v9, &(unsigned int *)((char *)&stru_A8EB00 + 294), 16); /*0x74fbb8*/
+      ((FileClass *)(&v9))->Read(&(unsigned int *)((char *)&stru_A8EB00 + 294), 16); /*0x74fbb8*/
       for ( *((unsigned int *)((char *)&stru_A8EB00 + 309)) = 0; /*0x74fbd9*/
             ((unsigned int *)&stru_A8EB00)[strlen(&(unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] == 13;
             ((unsigned int *)&stru_A8EB00)[strlen(&(unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] = 0 )

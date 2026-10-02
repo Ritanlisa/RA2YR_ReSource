@@ -50,7 +50,7 @@ void AITriggerTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2, voi
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)((unsigned char *)(aP0) + 0x0)),(gamemd::ObjectTypeClass *)(a2), a3); /*0x41e5cf*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)((unsigned char *)(aP0) + 0x0)),(gamemd::ObjectTypeClass *)(a2),(gamemd::ObjectTypeClass *)(a3)); /*0x41e5cf*/
   if ( result >= 0 ) /*0x41e5d6*/
     return 0; /*0x41e5d8*/
   return result; /*0x41e5da*/
@@ -820,7 +820,7 @@ void CoopCampaignVector::Read( unsigned int * a2)
   return result; /*0x5c571a*/
 }
 // 0x437f10
-void Coord2D::Add( AbstractClass * aP1, AbstractClass * aP2)
+void Coord2D::Add(unsigned int *aP1, unsigned int *aP2)
 {
   int v3; // esi
 
@@ -830,7 +830,7 @@ void Coord2D::Add( AbstractClass * aP1, AbstractClass * aP2)
   return a2; /*0x437f2c*/
 }
 // 0x487f20
-void Coord2D::Sub( AbstractClass * aP1, IUnknown * aP2)
+void Coord2D::Sub(int *aP1, unsigned int *aP2)
 {
   int v3; // edx
   int v5; // ecx
@@ -842,7 +842,7 @@ void Coord2D::Sub( AbstractClass * aP1, IUnknown * aP2)
   return a2; /*0x487f37*/
 }
 // 0x437090
-void Coord3D::Set( IUnknown * aP1, MouseClass * aP2, int a4)
+void Coord3D::Set(int aP1, int aP2, int a4)
 {
   *(unsigned int *)((unsigned char *)(this) + 0x0) = a2; /*0x43709a*/
   this->Coord3D_field_0x04 = a3; /*0x4370a0*/
@@ -1901,7 +1901,7 @@ void FilePipe::Read( int a2, int a3)
            a3);
 }
 // 0x525a10
-void FileStraw::Open( int a2, char a3)
+void FileStraw::Open(int a2, char a3)
 {
   int File; // esi
   int v5[4]; // [esp+4h] [ebp-14h] BYREF
@@ -4958,7 +4958,7 @@ void MapResourceClass::Constructor()
   return this; /*0x5958d0*/
 }
 // 0x56d100
-void MapSeed::CheckTileMatch( IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6)
+void MapSeed::CheckTileMatch(int16_t *aP1, int16_t *aP2, int aP3, char aP4, char aP5, char aP6)
 {
   char IsWithinUsableArea; // al
   int v10; // ecx
@@ -6436,7 +6436,7 @@ void Matrix::Copy12Float( int a2)
   return result; /*0x5ae5fc*/
 }
 // 0x5bd730
-void Matrix::Scale( float a2)
+void Matrix::Scale(float a2)
 {
   int result; // eax
   unsigned int i; // esi
@@ -6467,7 +6467,7 @@ void Matrix::Scale( float a2)
   return result; /*0x5bd7af*/
 }
 // 0x5af1a0
-void Matrix2D::Rotate( AbstractClass * aP1)
+void Matrix2D::Rotate(float aP1)
 {
   int result; // eax
   double v10; // [esp+0h] [ebp-8h]
@@ -6545,7 +6545,7 @@ void Matrix2D::Rotate( AbstractClass * aP1)
   return result; /*0x5af236*/
 }
 // 0x5ae8f0
-void Matrix3x3::Multiply( float * a2)
+void Matrix3x3::Multiply(float *a2)
 {
   float *v2; // ecx
   int result; // eax
@@ -6601,7 +6601,7 @@ void Matrix3x3::ApplyCol1( AbstractClass * aP1)
   return result; /*0x5aea07*/
 }
 // 0x5aef60
-void Matrix3x3::RotateX( AbstractClass * aP1)
+void Matrix3x3::RotateX(float aP1)
 {
   int result; // eax
   double v10; // [esp+0h] [ebp-8h]
@@ -6679,7 +6679,7 @@ void Matrix3x3::RotateX( AbstractClass * aP1)
   return result; /*0x5aeff8*/
 }
 // 0x5af4d0
-void Matrix3x3::TransformPoint( IUnknown * aP1, float * a2)
+void Matrix3x3::TransformPoint(float *aP1, float *a2)
 {
   double v4; // st7
   float v5; // [esp+0h] [ebp-Ch]
@@ -8016,7 +8016,7 @@ void ScoreScreenClass::ProcessFrame(char * a1, int a2)
   return result; /*0x691b20*/
 }
 // 0x76ea20
-void ScoreText::ShowAlt( CampaignScore * aP1, int a3)
+void ScoreText::ShowAlt(const wchar_t **aP1, int a3)
 {
   const wchar_t **v4; // edi
   MSBitPrintAnim *v5; // eax
@@ -8101,7 +8101,7 @@ void ScoreText::Show( ObjectClass * aP1)
   }
 }
 // 0x567230
-void ShroudClass::UpdateVisibility( MouseClass * aP1)
+void ShroudClass::UpdateVisibility(int *aP1)
 {
   void **p_MapClass_field_0xFC; // esi
   void **v4; // eax
@@ -9017,7 +9017,7 @@ void AbstractClassVector::ddtor()
   this->Capacity = 0; /*0x4e0431*/
 }
 // 0x53cb10
-void ActionQueue::PushEntry( int a2, int a3, int a4)
+void ActionQueue::PushEntry(int a2, int a3, int a4)
 {
   int v5; // eax
 
@@ -9912,7 +9912,7 @@ void ArmorType::LookupByName()
   return v2; /*0x772a7c*/
 }
 // 0x5cc760
-void ArtConfig::loadConfig( ObjectClass * aP1, ObjectClass * aP2, ObjectClass * aP3, ObjectClass * aP4, ObjectClass * aP5)
+void ArtConfig::loadConfig(char **aP1, int aP2, int aP3, int *aP4, char aP5)
 {
   int v7; // eax
   int v8; // eax
@@ -13598,7 +13598,7 @@ void CellClassVector::Destruct(unsigned int * Block, char a2)
   return ((unsigned char *)(this) + 0x0); /*0x5ad5b5*/
 }
 // 0x5657a0
-void CellCoord::To_CellObj( int16_t * a2)
+void CellCoord::To_CellObj(int16_t *a2)
 {
   unsigned int v2; // eax
   void *result; // eax
@@ -13803,7 +13803,7 @@ void CellSystem::UpdateVisibility()
   return result; /*0x578284*/
 }
 // 0x433c90
-void Char::Swap( ObjectClass * aP1)
+void Char::Swap(char aP1)
 {
   int result; // eax
 
@@ -14023,7 +14023,7 @@ void ChatDialog::DlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND a4)
   return 0; /*0x79dba7*/
 }
 // 0x6b9740
-void ChatEvent::ProcessStrings( const char * a2, int a3, int a4, int a5)
+void ChatEvent::ProcessStrings(char *a2, int a3, int a4, int a5)
 {
   unsigned int *v6; // eax
   int v7; // ecx
@@ -14926,7 +14926,7 @@ void ConnectionPointVector::Construct( int a2, int a3)
   return this; /*0x51061d*/
 }
 // 0x481a00
-void CrateClass::ProcessPickup( AbstractClass * aP1)
+void CrateClass::ProcessPickup(int aP1)
 {
 }
 
@@ -15958,7 +15958,7 @@ void DynamicArray::AddFromList( int a2)
   return result; /*0x412a32*/
 }
 // 0x6249a0
-void DynamicArray::Resize( int * a1, CCINIClass * aP2)
+void DynamicArray::Resize(int *a1, unsigned int *aP2)
 {
   int DynamicArray_field_0x04; // eax
   int v6; // edi
@@ -16783,7 +16783,7 @@ void ExceptionHandler::GenerateReport()
   return result; /*0x4c8fd1*/
 }
 // 0x434110
-void Field::Int_Set( AbstractClass * aP1)
+void Field::Int_Set(int aP1)
 {
   this->u32_20 = a2; /*0x434114*/
   return a2; /*0x434117*/
@@ -16818,7 +16818,7 @@ void Function::Method_41C430()
   Math::Sqrt(*this * *this + this->u32_4 * this->u32_4); /*0x41c449*/
 }
 // 0x424ca0
-void Function::Method_424CA0( int a2)
+void Function::Method_424CA0(int a2)
 {
   this->u32_180 = a2; /*0x424ca4*/
   return a2; /*0x424caa*/
@@ -17735,7 +17735,7 @@ void ImageList::DragMove(int x, int y)
   return ImageList_DragMove(x, y);
 }
 // 0x645c30
-void Int4::Set( IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5)
+void Int4::Set(int aP1, int aP2, int aP3, int a5)
 {
   *(unsigned int *)((unsigned char *)(this) + 0x0) = a2; /*0x645c3a*/
   this->Int4_field_0x04 = a3; /*0x645c40*/
@@ -19272,7 +19272,7 @@ void MSBitPrintAnim::Draw( int a2, int * a3)
   }
 }
 // 0x5cf8e0
-void MSChoiceClass::LoadFromINI( ObjectClass * arg0, ObjectClass * aP2)
+void MSChoiceClass::LoadFromINI(unsigned int *arg0, const char **aP2)
 {
   int *p_MSChoiceClass_field_0x04; // ebx
   MSChoiceClass *v5; // esi
@@ -20979,7 +20979,7 @@ void MSVQAnim::Construct( char ** a2, int a3, int a4, unsigned int * a5, char a6
   return ((unsigned char *)(this) + 0x0); /*0x5ccc17*/
 }
 // 0x5ccc30
-void MSVQAnim::ConstructMSVQAnimHidden( MSVQAnim * aP1, ObjectClass * aP2, MSVQAnim * aP3, char aP3a)
+void MSVQAnim::ConstructMSVQAnimHidden(char **aP1, int *aP2, int aP3, char aP3a)
 {
   int Ticks; // eax
   int v11; // eax
@@ -21740,7 +21740,7 @@ void MiniMap::SavePreviewToINI( char * a2)
   return v14 > 0; /*0x641af0*/
 }
 // 0x5c23b0
-void MovieClass::ReadConfig( IUnknown * aP1, int nIDDlgItem)
+void MovieClass::ReadConfig(HWND aP1, int nIDDlgItem)
 {
   int result; // eax
   int v4; // ebp
@@ -22951,7 +22951,7 @@ void PacketQueue::ExtractEntry( void * a2, unsigned int * a3, int a4, void * a5,
   return 1; /*0x48b6fc*/
 }
 // 0x48b890
-void PacketQueue::ReleaseEntry( void * a1, unsigned int * a2, AnimClass * aP3, void * a4, unsigned int * a5)
+void PacketQueue::ReleaseEntry(void *a1, unsigned int *a2, int aP3, void *a4, unsigned int *a5)
 {
   int v7; // esi
   int v8; // esi
@@ -23610,7 +23610,7 @@ void PowerBar::ComputeFill(PowerClass * aP0, ObjectClass * aP1, ObjectClass * aP
   return v3; /*0x63fb17*/
 }
 // 0x641ee0
-void PreviewClass::ReadPreview( char * Source)
+void PreviewClass::ReadPreview(char *Source)
 {
   int v2; // ebp
   void *v3; // esi
@@ -23961,7 +23961,7 @@ void PriorityQueue::Pop()
   return v10; /*0x5ac96a*/
 }
 // 0x5d1c20
-void PriorityQueue::Add( MSAnim * aP1)
+void PriorityQueue::Add(int aP1)
 {
   int v2; // eax
   PriorityQueue *v3; // esi
@@ -24153,7 +24153,7 @@ void ProjectileTrail::ComputeRenderData()
   return result; /*0x659c94*/
 }
 // 0x433c70
-void Property::Set( AbstractClass * aP1)
+void Property::Set(int16_t aP1)
 {
   int16_t result; // ax
 
@@ -24304,7 +24304,7 @@ void ResultNode::CleanupList()
   }
 }
 // 0x642c20
-void SHPClass::Load( char * Source, ProgressScreenClass * aP2, ProgressScreenClass * aP3)
+void SHPClass::Load(char *Source, char *aP2, int aP3)
 {
   int result; // eax
 
@@ -24510,7 +24510,7 @@ void SerialPort::Close()
   return result; /*0x774977*/
 }
 // 0x69de00
-void ShapeButton::SetShape( int a2, int a3, int a4)
+void ShapeButton::SetShape(int a2, int a3, int a4)
 {
   int result; // eax
 
@@ -24541,7 +24541,7 @@ void ShapeButton::SetShape( int a2, int a3, int a4)
   return a4; /*0x69de5e*/
 }
 // 0x69deb0
-void ShapeButton::Draw( int a2)
+void ShapeButton::Draw(int a2)
 {
   unsigned int v3; // ebx
   char v4; // al
@@ -32472,7 +32472,7 @@ void VtableStub::Method_55CBF0()
   return byte_ABCD58; /*0x55cbf5*/
 }
 // 0x76f600
-void WDTClass::GetCellType( unsigned int a2)
+void WDTClass::GetCellType(unsigned int a2)
 {
   int v2; // eax
   int v3; // eax

@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/BuildingPlacement_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/CreateTeamCommand_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -275,7 +277,7 @@ void CreateTeamCommand::performAction_246(void *a1_1)
       if ( dword_A8B238[0] ? House::IsHumanPlayer((void *)v5) : *(unsigned char *)(v5 + 493) )
       {
         if ( *(char **)(v4 + 532) == this - 1 ) /*0x7310a9*/
-          *(unsigned int *)(v4 + 532) = -1; /*0x7310ab*/
+          *(unsigned int *)(v4 + 532) = (unsigned int)(-1); /*0x7310ab*/
         if ( *(unsigned char *)(v4 + 131) ) /*0x7310b5*/
           *(unsigned int *)(v4 + 532) = this - 1; /*0x7310bf*/
       }
@@ -454,7 +456,7 @@ char CreateTeamCommand::performAction_6()
   int v2; // eax
   unsigned int *v4; // [esp-4h] [ebp-4h]
 
-  LOBYTE(_7342A0) = PlayerClass::HasPlayers(&stru_880D2C); /*0x535d95*/
+  LOBYTE(_7342A0) = ((PlayerClass *)(&stru_880D2C))->HasPlayers(); /*0x535d95*/
   if ( (unsigned char)_7342A0 ) /*0x535d9c*/
   {
     SidebarClass::SwitchTab((int)&dword_87F7E8, 0); /*0x535da5*/
@@ -520,7 +522,7 @@ char CreateTeamCommand::performAction_11()
   int v2; // eax
   unsigned int *v4; // [esp-4h] [ebp-4h]
 
-  LOBYTE(_7342B0) = PlayerClass::HasPlayers(&stru_881CC0); /*0x535e55*/
+  LOBYTE(_7342B0) = ((PlayerClass *)(&stru_881CC0))->HasPlayers(); /*0x535e55*/
   if ( (unsigned char)_7342B0 ) /*0x535e5c*/
   {
     SidebarClass::SwitchTab((int)&dword_87F7E8, 1); /*0x535e65*/
@@ -584,7 +586,7 @@ int CreateTeamCommand::performAction_16()
 
   int result; // eax
 
-  result = PlayerClass::HasPlayers(&stru_882C54); /*0x535f15*/
+  result = ((PlayerClass *)(&stru_882C54))->HasPlayers(); /*0x535f15*/
   if ( (unsigned char)result ) /*0x535f1c*/
     return SidebarClass::SwitchTab((int)&dword_87F7E8, 2); /*0x535f25*/
   return result; /*0x535f2a*/
@@ -639,7 +641,7 @@ int CreateTeamCommand::performAction_21()
 
   int result; // eax
 
-  result = PlayerClass::HasPlayers(&stru_883BE8); /*0x535fa5*/
+  result = ((PlayerClass *)(&stru_883BE8))->HasPlayers(); /*0x535fa5*/
   if ( (unsigned char)result ) /*0x535fac*/
     return SidebarClass::SwitchTab((int)&dword_87F7E8, 3); /*0x535fb5*/
   return result; /*0x535fba*/

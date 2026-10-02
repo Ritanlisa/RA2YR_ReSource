@@ -101,7 +101,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   }
   v23[0] = a2 / 256; /*0x7188c1*/
   v23[1] = a3 / 256; /*0x7188da*/
-  if ( *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23) + 59) != 2 /*0x718962*/
+  if ( *((unsigned int *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v23) + 59) != 2 /*0x718962*/
     || v6
     || *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 3278)
     || (*(int (**)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15
@@ -112,13 +112,13 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     v23[0] = a2 / 256; /*0x718a14*/
     v23[1] = a3 / 256; /*0x718a2f*/
     v14 = *vtable3; /*0x718a3c*/
-    v15 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x718a46*/
+    v15 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v23); /*0x718a46*/
     if ( (*(int (**)(int, void *, int, int, unsigned int, int))(v14 + 428))(this->vtable3, v15, -1, -1, 0, 1) == 7 /*0x718a60*/
       || (LOBYTE(v12) = v22) != 0 )
     {
       v23[0] = a2 / 256; /*0x718a80*/
       v23[1] = a3 / 256; /*0x718a95*/
-      v16 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x718aa2*/
+      v16 = (Cell *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v23); /*0x718aa2*/
       if ( !(uint8_t)Cell::IsGroundTypeRange(v16) /*0x718abd*/
         || (*(int (**)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15 )
       {
@@ -179,7 +179,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
         LOBYTE(v12) = (*(char (**)(unsigned int *, unsigned int))(*v11 + 228))(v11, v11[267]); /*0x7189ee*/
     }
   }
-  return (char)v12; /*0x7189d4*/
+  return (gamemd::UnitTypeClass **)((char)v12); /*0x7189d4*/
 
 }
 }
@@ -295,12 +295,12 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
       *(unsigned int *)(v4 + 164) = 0; /*0x71dd18*/
       *(unsigned char *)(v4 + 168) = 0; /*0x71dd23*/
       CCFileClass::Construct(v5, Buffer); /*0x71dd29*/
-      *(unsigned int *)(v4 + 164) = CCFileClass::ReadEntireFile(v5); /*0x71dd3b*/
+      *(unsigned int *)(v4 + 164) = ((CCFileClass *)(v5))->ReadEntireFile(); /*0x71dd3b*/
       v5[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x71dd41*/
       v7 = 0; /*0x71dd49*/
       ((Vector *)((int)v6))->Clear(); /*0x71dd4d*/
       v5[0] = (unsigned int)&off_7E1668; /*0x71dd56*/
-      BufferIOFileClass::Dtor(v5); /*0x71dd5e*/
+      ((BufferIOFileClass *)(v5))->Dtor(); /*0x71dd5e*/
     }
     result = dword_A8E328; /*0x71dd63*/
   }

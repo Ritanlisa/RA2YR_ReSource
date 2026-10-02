@@ -87,7 +87,7 @@ int CampaignClass::LoadFromINIList()
                                          this->__pad_0,
                                          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2),
                                          v3);
-    INIClass::GetString((gamemd::INIClass *)(this), (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2),(gamemd::INIClass *)(StringByIndex), &g_INI_DefaultBuffer, Source, 32); /*0x46ce55*/
+    INIClass::GetString((gamemd::INIClass *)(this), (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2),(gamemd::INIClass *)(StringByIndex),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
     v5 = 0; /*0x46ce5f*/
     if ( dword_A83D08 <= 0 ) /*0x46ce63*/
       goto LABEL_7; /*0x46ce63*/
@@ -192,7 +192,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     return 0; /*0x49cae5*/
   v27 = g_DDrawSurfaceManager.scenario[12] + 76 * v3; /*0x49c60d*/
   if ( this->scenario[6] == this->scenario[4] ) /*0x49c616*/
-    return 1; /*0x49c61b*/
+    return (gamemd::AbstractClass **)(1); /*0x49c61b*/
   CCFileClass::Construct(&v33,(void *)(g_Str_File_coopsave_ini)); /*0x49c631*/
   *((unsigned int *)((char *)&v28 + 0)) = 0; /*0x49c63a*/
   *((unsigned int *)((char *)&v28 + 1)) = 0; /*0x49c63e*/
@@ -291,7 +291,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     PlayerSide = (void *)((SessionClass *)((int *)*dword_A8DA78))->GetPlayerSide(); /*0x49c8be*/
     INIClass::SetHouseName(v28.INIClass, (uint8_t *)Block, aHouse1, PlayerSide); /*0x49c8d2*/
     PlayerColor = ((SessionClass *)((SessionClass *)*dword_A8DA78))->GetPlayerColor(); /*0x49c8e1*/
-    ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aColor1, PlayerColor, 0); /*0x49c8f5*/
+    ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block,(char *)(aColor1), PlayerColor, 0); /*0x49c8f5*/
     v20 = dword_A8DA84; /*0x49c8fa*/
   }
   v23 = 1; /*0x49c900*/
@@ -308,7 +308,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     v25 = (void *)((SessionClass *)((int *)dword_A8DA78[v23]))->GetPlayerSide(); /*0x49c925*/
     INIClass::SetHouseName(v28.INIClass, (uint8_t *)Block, aHouse2, v25); /*0x49c939*/
     v26 = ((SessionClass *)((SessionClass *)dword_A8DA78[v23]))->GetPlayerColor(); /*0x49c949*/
-    ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aColor2, v26, 0); /*0x49c95d*/
+    ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block,(char *)(aColor2), v26, 0); /*0x49c95d*/
   }
 LABEL_47:
   ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, g_INI_Key_Time, this->scenario[16], 0); /*0x49c962*/
@@ -326,15 +326,15 @@ LABEL_47:
   v32 = 0; /*0x49ca77*/
   ((Vector *)((int)v31))->Clear(); /*0x49ca7e*/
   *(unsigned int *)v30.CDFileClass = (unsigned int)(&off_7E1668); /*0x49ca8f*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v30); /*0x49ca96*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v28); /*0x49ca9f*/
-  *(unsigned int *)v33.CDFileClass = &vt_CCFileClass; /*0x49caab*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v30))->Dtor(); /*0x49ca96*/
+  ((HashTable *)((INIClass *)&v28))->DestroyHashTableINIClass(); /*0x49ca9f*/
+  *(unsigned int *)v33.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x49caab*/
   v35 = 0; /*0x49cab2*/
   ((Vector *)((int)v34))->Clear(); /*0x49cab9*/
-  *(unsigned int *)v33.CDFileClass = &off_7E1668; /*0x49cac5*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v33); /*0x49cacc*/
+  *(unsigned int *)v33.CDFileClass = (unsigned int)(&off_7E1668); /*0x49cac5*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v33))->Dtor(); /*0x49cacc*/
   LOBYTE(this->scenario[17]) = (gamemd::AbstractClass **)(1); /*0x49cad2*/
-  return 1; /*0x49c618*/
+  return (gamemd::AbstractClass **)(1); /*0x49c618*/
 
 }
 }
@@ -361,16 +361,16 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x46d00b*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(aP0), aP1); /*0x46d00b*/
   if ( result >= 0 ) /*0x46d012*/
   {
     if ( aP0 ) /*0x46d016*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x46d01f*/
       aP0->AbstractClass = (unsigned int)(&vt_CampaignClass); /*0x46d024*/
-      ((unsigned int *)aP0)[0] = &vt_CampaignClass; /*0x46d02a*/
-      ((unsigned int *)aP0)[0] = &vt_CampaignClass; /*0x46d031*/
-      ((unsigned int *)aP0)[0] = &vt_CampaignClass; /*0x46d038*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d02a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d031*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d038*/
     }
     return 0; /*0x46d03f*/
   }
@@ -386,7 +386,7 @@ int CampaignClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x46d05f*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x46d05f*/
   if ( result >= 0 ) /*0x46d066*/
     return 0; /*0x46d068*/
   return result; /*0x46d06a*/
@@ -423,7 +423,7 @@ CampaignClass * CampaignClass::DTOR(void ** Block, char a2)
   CampaignClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_CampaignClass; /*0x46d096*/
-  ((unsigned int *)Block)[0] = &vt_CampaignClass; /*0x46d09c*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_CampaignClass); /*0x46d09c*/
   ((unsigned int *)Block)[0] = &vt_CampaignClass; /*0x46d0a3*/
   ((unsigned int *)Block)[0] = &vt_CampaignClass; /*0x46d0aa*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x46d0b1*/

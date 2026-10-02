@@ -285,7 +285,7 @@ struct VoxelAnimTypeClass {
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     int StubReturnFalse(int a1);
     long long GetData(ObjectTypeClass * aP1, int a3);
-    VoxelAnimTypeClass * Constructor(char * Source, void *a2, void *a3);
+    VoxelAnimTypeClass * Constructor(char *Source);
 };
 
 } // namespace gamemd

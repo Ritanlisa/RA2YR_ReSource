@@ -101,12 +101,12 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
     ((Debug *)0)->Log();
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5611ad*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5611ba*/
-  Frame::Present((void *)((int)g_DSurface_Hidden), a3,(void *)(yBottom), a4, 0,(void *)(v13), v15, v17); /*0x5611c7*/
+  Frame::Present((void *)((int)g_DSurface_Hidden), a3,(void *)(yBottom), a4, 0,(void *)(v13),(void *)(v15), v17); /*0x5611c7*/
   result = ChangeVideoMode(v6, yBottom); /*0x5611d0*/
   if ( result ) /*0x5611d7*/
   {
     (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5611ea*/
-    Frame::Present((void *)((int)g_DSurface_Hidden), a3,(void *)(yBottom), a4, 0,(void *)(v14), v16, v18); /*0x5611f7*/
+    Frame::Present((void *)((int)g_DSurface_Hidden), a3,(void *)(yBottom), a4, 0,(void *)(v14),(void *)(v16), v18); /*0x5611f7*/
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x561204*/
     Screen::Capture(1, 0, a3, yBottom); /*0x56120b*/
     Dialog = (Dialog *)CreateDialog(0xD9u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_561350, 0); /*0x561221*/
@@ -481,7 +481,7 @@ char sub_638B70(int * a1, int a2, char a3, char a4)
     v11 = v8; /*0x638bef*/
     return (unsigned short)v6 == (unsigned short)v8 && IDA_HIWORD(v6) == IDA_HIWORD(v11); /*0x638bef*/
   }
-  v10 = BuildingLoadQueue::Find(&a3); /*0x638bd5*/
+  v10 = ((BuildingLoadQueue *)(&a3))->Find(); /*0x638bd5*/
   if ( v10 ) /*0x638bdc*/
   {
     v8 = *(unsigned int *)(*(int (**)(void *, int *))(v10->u32_1B8)(v10, &v11); /*0x638bed*/
@@ -501,7 +501,7 @@ int Team::GetMember(int aP1)
 }
 // 0x65AE30
 namespace gamemd {
-int Team::AllMembersValid(void *a1_1)
+int Team::AllMembersValid()
 {
 
   void *v1; // edx
@@ -541,7 +541,7 @@ void sub_63A1B0(int a1)
   {
     if ( a1 == 3 ) /*0x63a1c0*/
     {
-      StringCSF = GetStringCSF((wchar_t *)(aMsgPlanningmod_7), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a1d3*/
+      StringCSF = GetStringCSF((wchar_t *)(aMsgPlanningmod_7), 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233); /*0x63a1d3*/
     }
     else
     {
@@ -551,7 +551,7 @@ void sub_63A1B0(int a1)
         ++((unsigned int *)(dword_AC4BF4))[a1]; /*0x63a1fc*/
         return; /*0x63a1fc*/
       }
-      StringCSF = GetStringCSF((wchar_t *)(aMsgPlanningmod_8), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a1eb*/
+      StringCSF = GetStringCSF((wchar_t *)(aMsgPlanningmod_8), 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233); /*0x63a1eb*/
     }
     AddMessageListPlayerMessage(StringCSF, 480, unsigned int a1, unsigned int a2); /*0x63a1f7*/
     goto LABEL_7; /*0x63a1f7*/
@@ -577,7 +577,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
     return 0; /*0x76ed20*/
   ConstructWDTSelection((int)v13, a1, a2); /*0x76ed31*/
   State = FileClass::GetState((unsigned int *)(v13[19] + 8)); /*0x76ed3f*/
-  ScoreText::ShowAlt(v13, (const wchar_t **)(State + 20), 0); /*0x76ed4c*/
+  ((ScoreText *)(v13))->ShowAlt((const wchar_t **)(State + 20), 0); /*0x76ed4c*/
   StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_WDT_TerritorySelectToolTip), 0,(const char *)(g_Str_File_WDTSel_cpp), 1230)); /*0x76ed62*/
   ((WideString *)((wchar_t **)&v9))->Assign(StringCSF); /*0x76ed6c*/
   ScoreText::Show(v13, (const wchar_t **)&v9); /*0x76ed7a*/
@@ -634,7 +634,7 @@ void Team_Start_7AFAD0(void * a1, void * a2)
   void *v7; // [esp+8h] [ebp-84h] BYREF
   char Buffer[128]; // [esp+Ch] [ebp-80h] BYREF
 
-  v2 = (char **)(StaticString::Factory(a1));
+  v2 = (char **)(((StaticString *)(a1))->Factory());
   sprintf(Buffer, "TheaterChoice%sMenu", *v2); /*0x7afae9*/
   ((String *)((char **)&v6))->Assign(Buffer); /*0x7afafa*/
   ((String *)((char **)&v7))->Assign((const char *)(aWdtchoicemdIni)); /*0x7afb08*/
@@ -662,9 +662,9 @@ namespace gamemd {
 ObjectClass * Team_Helper_752460(int a1)
 {
   if ( a1 < 0 || a1 >= g_InfantrySelectState ) /*0x75246f*/
-    return g_Str_none; /*0x75247a*/
+    return (gamemd::ObjectClass *)(g_Str_none); /*0x75247a*/
   else
-    return (char *)*((unsigned int *)g_InfantryRenderPool + a1); /*0x752476*/
+    return (gamemd::ObjectClass *)((char *)*((unsigned int *)g_InfantryRenderPool + a1)); /*0x752476*/
 }
 } // namespace gamemd
 
@@ -683,18 +683,18 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
     v6 = (unsigned int *)(v4 + 8); /*0x765f78*/
     *(unsigned int *)(v4 + 4) = 0; /*0x765f7d*/
     *(unsigned int *)v4 = (unsigned int)((void*)&ReferenceCounted_vftable); /*0x765f84*/
-    ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x765f8a*/
+    ((ComPtr *)((ComPtr *)(v4 + 8)))->Constructor(); /*0x765f8a*/
     *v6 = (unsigned int)((void*)&rc_ptr_WDTTerritory_vftable); /*0x765f8f*/
-    ComPtr::Set((ComPtr *)(v5 + 8), *(unsigned int *)(a2 + 4)); /*0x765f9b*/
+    ((ComPtr *)((ComPtr *)(v5 + 8)))->Set(*(unsigned int *)(a2 + 4)); /*0x765f9b*/
     *(unsigned int *)v5 = (unsigned int)((void*)&WorldDominationTour_Conflict_vftable); /*0x765fa0*/
   }
   else
   {
     v5 = 0; /*0x765fa9*/
   }
-  ComPtr::Constructor(a1); /*0x765fad*/
+  ((ComPtr *)(a1))->Constructor(); /*0x765fad*/
   *(unsigned int *)a1->__pad_0 = (unsigned int)((void*)&rc_ptr_WorldDominationTour_Conflict_vftable); /*0x765fb4*/
-  ComPtr::Set(a1, v5); /*0x765fbc*/
+  ((ComPtr *)(a1))->Set(v5); /*0x765fbc*/
   return a1; /*0x765fc3*/
 }
 } // namespace gamemd
@@ -714,18 +714,18 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
     v6 = (unsigned int *)(v4 + 8); /*0x767b18*/
     *(unsigned int *)(v4 + 4) = 0; /*0x767b1d*/
     *(unsigned int *)v4 = (unsigned int)((void*)&ReferenceCounted_vftable); /*0x767b24*/
-    ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x767b2a*/
+    ((ComPtr *)((ComPtr *)(v4 + 8)))->Constructor(); /*0x767b2a*/
     *v6 = (unsigned int)((void*)&rc_ptr_WDTState_vftable); /*0x767b2f*/
-    ComPtr::Set((ComPtr *)(v5 + 8), *(unsigned int *)(a2 + 4)); /*0x767b3b*/
+    ((ComPtr *)((ComPtr *)(v5 + 8)))->Set(*(unsigned int *)(a2 + 4)); /*0x767b3b*/
     *(unsigned int *)v5 = (unsigned int)((void*)&WorldDominationTour_History_vftable); /*0x767b40*/
   }
   else
   {
     v5 = 0; /*0x767b49*/
   }
-  ComPtr::Constructor(a1); /*0x767b4d*/
+  ((ComPtr *)(a1))->Constructor(); /*0x767b4d*/
   *(unsigned int *)a1->__pad_0 = (unsigned int)((void*)&rc_ptr_WorldDominationTour_History_vftable); /*0x767b54*/
-  ComPtr::Set(a1, v5); /*0x767b5c*/
+  ((ComPtr *)(a1))->Set(v5); /*0x767b5c*/
   return a1; /*0x767b63*/
 }
 } // namespace gamemd

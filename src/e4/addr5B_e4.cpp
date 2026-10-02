@@ -205,10 +205,10 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     goto LABEL_5; /*0x5b413e*/
   }
   if ( v4 ) /*0x5b419d*/
-    return (void *)((unsigned int *)(v4))[3]; /*0x5b41ac*/
+    return (gamemd::AbstractClass **)((void *)((unsigned int *)(v4))[3]); /*0x5b41ac*/
   LABEL_9:
   ((CCFileClass *)((CCFileClass *)&v14.buffer))->Construct(Source); /*0x5b414d*/
-  if ( (uint8_t)CCFileClass::Open((CCFileClass *)&v14.buffer, 0) ) /*0x5b415c*/
+  if ( (uint8_t)((CCFileClass *)((CCFileClass *)&v14.buffer))->Open(0) ) /*0x5b415c*/
   {
     v8 = (unsigned int *)((char *)((unsigned int *)RA2_OPNEW(0x10u)));
     v9 = (unsigned int *)((unsigned int)(v8));
@@ -236,14 +236,14 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     }
     else
     {
-      SHPFile = (unsigned int)((void *)(CCFileClass::ReadEntireFile((CCFileClass *)&v14.buffer)));
+      SHPFile = (unsigned int)((void *)(((CCFileClass *)((CCFileClass *)&v14.buffer))->ReadEntireFile()));
     }
     v9[3] = (unsigned int)((gamemd::AbstractClass **)(SHPFile));
     v14.buffer = (unsigned char)((gamemd::AbstractClass **)((int)&CCFileClass_vftable));
     v16 = 0; /*0x5b4239*/
     ((Vector *)((int)v15))->Clear(); /*0x5b4240*/
     v14.buffer = (int)&off_7E1668; /*0x5b4249*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v14.buffer); /*0x5b4251*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v14.buffer))->Dtor(); /*0x5b4251*/
     return SHPFile; /*0x5b4256*/
   }
   else
@@ -252,7 +252,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     v16 = 0; /*0x5b4171*/
     ((Vector *)((int)v15))->Clear(); /*0x5b4178*/
     v14.buffer = (int)&off_7E1668; /*0x5b4181*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v14.buffer); /*0x5b4189*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v14.buffer))->Dtor(); /*0x5b4189*/
     return 0; /*0x5b418e*/
   }
 }
@@ -430,7 +430,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
           }
           else if ( (uint16_t)a3 == 1029 && IDA_HIWORD(a3) == 1 ) /*0x5b4b9f*/
           {
-            ModemGame::AdvanceTauntCommand(WindowLongA); /*0x5b4ba7*/
+            ((ModemGame *)(WindowLongA))->AdvanceTauntCommand(); /*0x5b4ba7*/
             return 0; /*0x5b4bb8*/
           }
           return 0; /*0x5b4b9f*/
@@ -851,7 +851,7 @@ void AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
         goto LABEL_44; /*0x5bc9bc*/
       case 'L': /*0x5bc78d*/
       case 'l': /*0x5bc78d*/
-        if ( AudioSource::Get((int **)dword_ABF224) ) /*0x5bc862*/
+        if ( ((AudioSource *)((int **)dword_ABF224))->Get() ) /*0x5bc862*/
         {
           AudioFile::Stop((unsigned int *)dword_ABF224); /*0x5bc871*/
           return 0; /*0x5bc878*/
@@ -1323,7 +1323,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v55 = 0; /*0x5bfb37*/
   ((Vector *)((int)v54))->Clear(); /*0x5bfb3e*/
   *(unsigned int *)v53.CDFileClass = &off_7E1668; /*0x5bfb47*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v53); /*0x5bfb4f*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v53))->Dtor(); /*0x5bfb4f*/
   if ( v45 ) /*0x5bfb58*/
     return 0; /*0x5bfb58*/
   v41 = 0; /*0x5bfb5e*/

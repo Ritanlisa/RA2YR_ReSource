@@ -100,7 +100,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
           {
             v36[0] = v9; /*0x425dbb*/
             v36[1] = v13; /*0x425dc6*/
-            v14 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v36); /*0x425dcb*/
+            v14 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v36); /*0x425dcb*/
             v15 = v14; /*0x425dd0*/
             if ( *(unsigned int *)&v14->__pad_E8[4] == 2 /*0x425e18*/
               && ((int)v14->Cell_field_0x140 & 0x100) == 0

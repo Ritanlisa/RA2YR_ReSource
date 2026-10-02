@@ -376,7 +376,7 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
   {
     v52 = (uint16_t *)((gamemd::AbstractClass **)((uint16_t *)((gamemd::AbstractClass **)((uint16_t *)(*(int (**)(int *, unsigned int, int))(*a2 + 92))(a2, 0, v50)))));
     if ( !v52 ) /*0x7b080b*/
-      return 1; /*0x7b0960*/
+      return (gamemd::AbstractClass **)(1); /*0x7b0960*/
     v26 = *a2; /*0x7b0811*/
     v48 = 0; /*0x7b0815*/
     if ( (*(int (**)(int *))(v26 + 124))(a2) > 0 ) /*0x7b0822*/
@@ -596,7 +596,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   else
     v6 = (int)((gamemd::AbstractClass **)(0)); /*0x7b60f2*/
   if ( a2 >= v6 ) /*0x7b6102*/
-    return -1; /*0x7b6107*/
+    return (gamemd::AbstractClass **)(-1); /*0x7b6107*/
   while ( 1 )
   {
     v8 = this->AbstractClass ? strlen((const char *)this->AbstractClass) : 0;
@@ -648,7 +648,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
     strcpy((char *)*a3, v17); /*0x7b6253*/
   if ( v16 ) /*0x7b625e*/
     __3_YAXPAX_Z(v16); /*0x7b6261*/
-  return (unsigned int)(v20)+ 1; /*0x7b6104*/
+  return (gamemd::AbstractClass **)((unsigned int)(v20)+ 1); /*0x7b6104*/
 
 }
 }
@@ -690,7 +690,7 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
   }
   if ( v6 ) /*0x7b64c8*/
     RA2_OPDEL(v6); /*0x7b64cb*/
-  return aP0; /*0x7b64d3*/
+  return (char **)(aP0); /*0x7b64d3*/
 }
 }
 // 0x7B64E0
@@ -797,7 +797,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   if ( this->AbstractClass ) /*0x7b7c0b*/
     vtable0 = (gamemd::AbstractClass **)((void *)wcslen((const wchar_t *)this->AbstractClass)); /*0x7b7c12*/
   if ( a2 >= (int)vtable0 ) /*0x7b7c1c*/
-    return -1; /*0x7b7c20*/
+    return (gamemd::AbstractClass **)(-1); /*0x7b7c20*/
   while ( 1 ) /*0x7b7c27*/
   {
     v8 = (void *)(this->AbstractClass);
@@ -855,7 +855,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
     wcscpy((wchar_t *)*a3, v18); /*0x7b7d53*/
   if ( v17 ) /*0x7b7d5d*/
     __3_YAXPAX_Z(v17); /*0x7b7d60*/
-  return (unsigned int)(v21)+ 1; /*0x7b7c1e*/
+  return (gamemd::AbstractClass **)((unsigned int)(v21)+ 1); /*0x7b7c1e*/
 
 }
 }
@@ -935,7 +935,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
       1);
   }
   ((Mouse *)((Mouse *)this))->DrawCursor((int *)this->occupant, 0, 0); /*0x7b966a*/
-  return ReleaseMutex((HANDLE)(hMutex)); /*0x7b967c*/
+  return (gamemd::AbstractClass **)(ReleaseMutex((HANDLE)(hMutex))); /*0x7b967c*/
 
 }
 }
@@ -1035,7 +1035,7 @@ int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
     aP0[1] = v20[1]; /*0x7bbf83*/
     aP0[2] = v20[2]; /*0x7bbf89*/
     aP0[3] = v20[3]; /*0x7bbf93*/
-    v21 = (int *)(ClipRectIntersection((RectangleStruct *)(v23), aP2, (int *)a4, 0, 0)); /*0x7bbf9d*/
+    v21 = (int *)(ClipRectIntersection((RectangleStruct *)(v23),(const RectangleStruct *)(aP2), (int *)a4, 0, 0)); /*0x7bbf9d*/
     *aP2 = *v21; /*0x7bbfa6*/
     aP2[1] = v21[1]; /*0x7bbfab*/
     aP2[2] = v21[2]; /*0x7bbfb1*/
@@ -1109,14 +1109,14 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
   }
   v23 = CellStruct::Copy(aP2, v26); /*0x7bc14f*/
   v16 = (Coord2D *)CellStruct::Copy(v10, v27); /*0x7bc154*/
-  v17 = Coord2D::Add(v16, v25, v23); /*0x7bc15b*/
+  v17 = ((Coord2D *)(v16))->Add(v25, v23); /*0x7bc15b*/
   v18 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)v9 + 92))(v9, *v17, v17[1]); /*0x7bc173*/
   *a7 = v18; /*0x7bc17c*/
   if ( !v18 ) /*0x7bc17e*/
     return 0; /*0x7bc17e*/
   v24 = CellStruct::Copy(aP5, v27); /*0x7bc190*/
   v19 = (Coord2D *)CellStruct::Copy(a4, v25); /*0x7bc19b*/
-  v20 = Coord2D::Add(v19, v26, v24); /*0x7bc1a2*/
+  v20 = ((Coord2D *)(v19))->Add(v26, v24); /*0x7bc1a2*/
   v21 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)arg4 + 92))(arg4, *v20, v20[1]); /*0x7bc1bc*/
   *a8 = v21; /*0x7bc1c5*/
   if ( !v21 ) /*0x7bc1c7*/
@@ -1764,7 +1764,7 @@ void sub_7B00F0()
 namespace gamemd {
 int sub_7B0110()
 {
-  ComPtr::Constructor(&dword_B77F58); /*0x7b0115*/
+  ((ComPtr *)(&dword_B77F58))->Constructor(); /*0x7b0115*/
   dword_B77F58 = (int)&rc_ptr_WDTState_vftable; /*0x7b011f*/
   return atexit(sub_7B0130); /*0x7b012f*/
 }
@@ -1783,7 +1783,7 @@ void sub_7B0130()
 namespace gamemd {
 int sub_7B0150()
 {
-  ComPtr::Constructor(&dword_B77F70); /*0x7b0155*/
+  ((ComPtr *)(&dword_B77F70))->Constructor(); /*0x7b0155*/
   dword_B77F70 = (int)&rc_ptr_WDTState_vftable; /*0x7b015f*/
   return atexit(sub_7B0170); /*0x7b016f*/
 }
@@ -1802,7 +1802,7 @@ void sub_7B0170()
 namespace gamemd {
 int sub_7B0190()
 {
-  ComPtr::Constructor(&stru_B77F68); /*0x7b0195*/
+  ((ComPtr *)(&stru_B77F68))->Constructor(); /*0x7b0195*/
   stru_B77F68 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b019f*/
   return atexit(sub_7B01B0); /*0x7b01af*/
 }
@@ -1821,7 +1821,7 @@ void sub_7B01B0()
 namespace gamemd {
 int sub_7B01D0()
 {
-  ComPtr::Constructor(&dword_B77F78); /*0x7b01d5*/
+  ((ComPtr *)(&dword_B77F78))->Constructor(); /*0x7b01d5*/
   dword_B77F78 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b01df*/
   return atexit(sub_7B01F0); /*0x7b01ef*/
 }
@@ -1870,14 +1870,14 @@ rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
   }
   else
   {
-    ComPtr::Constructor((ComPtr *)v6); /*0x7b03d9*/
+    ((ComPtr *)((ComPtr *)v6))->Constructor(); /*0x7b03d9*/
     v6[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x7b03de*/
     v3 = 1; /*0x7b03e6*/
     v4 = v6; /*0x7b03eb*/
   }
-  ComPtr::Constructor((ComPtr *)a1); /*0x7b03f1*/
+  ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x7b03f1*/
   *(unsigned int *)a1 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x7b03f6*/
-  ComPtr::Set((ComPtr *)a1, v4[1]); /*0x7b0402*/
+  ((ComPtr *)((ComPtr *)a1))->Set(v4[1]); /*0x7b0402*/
   if ( (v3 & 1) != 0 ) /*0x7b040a*/
   {
     v6[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x7b0410*/

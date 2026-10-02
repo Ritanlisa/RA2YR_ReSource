@@ -21,7 +21,7 @@
 
 // 0x4325C0
 namespace gamemd {
-AudioController * * CCFileClass::Close(void *a1, void *a2)
+AudioController * * CCFileClass::Close()
 {
     unsigned int v3 = 0;  /* G37 hoist */
 
@@ -30,7 +30,7 @@ AudioController * * CCFileClass::Close(void *a1, void *a2)
 
   if ( !BYTE1(this->BufferSize) ) /*0x4325c3*/
     return ((FileClass *)(int a1))->CloseHandle() ; /*0x432607*/
-  BufferIO::Flush((BufferIO *)a1); /*0x4325ca*/
+  ((BufferIO *)((BufferIO *)a1))->Flush(); /*0x4325ca*/
   result = BYTE2(a1->BufferOffset); /*0x4325cf*/
   if ( result ) /*0x4325d4*/
   {
@@ -42,13 +42,13 @@ AudioController * * CCFileClass::Close(void *a1, void *a2)
       BYTE1(a1->BufferSize) = 1; /*0x4325e8*/
       BYTE2(a1->BufferOffset) = 0; /*0x4325ec*/
       BYTE1(a1->BufferOffset) = (gamemd::AudioController **)(0); /*0x4325f0*/
-      return result; /*0x4325f5*/
+      return (gamemd::AudioController **)(result); /*0x4325f5*/
     }
     result = ((FileClass *)(a1))->CloseHandle(); /*0x4325f8*/
     BYTE2(a1->BufferOffset) = 0; /*0x4325fd*/
   }
   BYTE1(this->BufferOffset) = (unsigned char)((gamemd::AudioController **)(0)); /*0x432601*/
-  return result; /*0x4325f4*/
+  return (gamemd::AudioController **)(result); /*0x4325f4*/
 
 }
 } // namespace gamemd
@@ -134,7 +134,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
         {
           if ( *(unsigned short *)v3 == 0xFFFF ) /*0x69e34d*/
           {
-            BTree::DeleteSubtree((unsigned int *)v1[3]); /*0x69e351*/
+            ((BTree *)((unsigned int *)v1[3]))->DeleteSubtree(); /*0x69e351*/
             v4 = *((unsigned int *)v3 + 6); /*0x69e356*/
             if ( v4 ) /*0x69e35b*/
               *(unsigned int *)(v4 + 28) = *((unsigned int *)v3 + 7); /*0x69e360*/

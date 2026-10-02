@@ -227,7 +227,7 @@ LABEL_2:
     {
       result = WinModemClass_field_0x2C(); /*0x774d6a*/
       if ( result ) /*0x774d6e*/
-        return result; /*0x774f2f*/
+        return (gamemd::WinModemClass **)(result); /*0x774f2f*/
     }
     if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x774d7b*/
       return 0; /*0x774d7b*/
@@ -302,10 +302,10 @@ LABEL_38:
         {
           v17 = ((Timer *)this)->GetTicks() - v19; /*0x774f25*/
           if ( v17 < a2 ) /*0x774f2b*/
-            return a2 - v17; /*0x774f38*/
+            return (gamemd::WinModemClass **)(a2 - v17); /*0x774f38*/
           return 0; /*0x774f3b*/
         }
-        return result; /*0x774f1a*/
+        return (gamemd::WinModemClass **)(result); /*0x774f1a*/
       }
     }
     v5 = this; /*0x774d5f*/
@@ -460,11 +460,11 @@ LABEL_21:
       80,
       a8);
     if ( !strcmp(Str, (const char *)&((char *)&stru_82BA00)) ) /*0x77531d*/
-      return 3; /*0x775437*/
+      return (gamemd::AbstractClass **)(3); /*0x775437*/
     if ( strstr(Str, g_INI_Key_OK) ) /*0x77532d*/
-      return 2; /*0x775337*/
+      return (gamemd::AbstractClass **)(2); /*0x775337*/
     if ( strstr(Str, aError) ) /*0x775347*/
-      return 1; /*0x775449*/
+      return (gamemd::AbstractClass **)(1); /*0x775449*/
     if ( strlen(Str) == 3 /*0x77538a*/
       && Str[0] >= 48
       && Str[0] <= 57
@@ -477,7 +477,7 @@ LABEL_21:
       if ( Count >= 80 ) /*0x775456*/
         v24 = 80; /*0x775458*/
       strncpy(Destination, Str, v24); /*0x77546b*/
-      return 2; /*0x775482*/
+      return (gamemd::AbstractClass **)(2); /*0x775482*/
     }
     v22 = Count; /*0x775390*/
     if ( Count >= 80 ) /*0x77539a*/

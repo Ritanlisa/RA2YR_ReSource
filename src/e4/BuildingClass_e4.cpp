@@ -182,8 +182,8 @@ LABEL_36:
               --v31; /*0x45416d*/
             }
             while ( v31 ); /*0x45416e*/
-            v1->LightSource = (void *)((gamemd::LightSourceClass *)((void *)(0))); /*0x454174*/
-            return v32; /*0x454170*/
+            v1->LightSource = (gamemd::LightSourceClass *)((void *)((gamemd::LightSourceClass *)((void *)(0)))); /*0x454174*/
+            return (void *)(v32); /*0x454170*/
           }
           else
           {
@@ -241,7 +241,7 @@ LABEL_36:
       }
     }
   }
-  return result; /*0x45417e*/
+  return (void *)(result); /*0x45417e*/
 
 }
 }
@@ -477,16 +477,16 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
   int v3; // edi
   int v4; // ebp
 
-  result = RadioClass::LoadState((gamemd::ObjectClass *)(aP0), aP2); /*0x70bf5c*/
+  result = RadioClass::LoadState((int)((gamemd::ObjectClass *)(aP0)), aP2); /*0x70bf5c*/
   if ( result >= 0 ) /*0x70bf65*/
   {
     *(unsigned int *)(aP0 + 1300) = 0; /*0x70bf79*/
-    ObjectPtr_RegisterForTracking((int)(&SwizzleManagerClass_Instance), aP0 + 540); /*0x70bf7f*/
+    ObjectPtr_RegisterForTracking((int)(&SwizzleManagerClass_Instance),(int *)(aP0 + 540)); /*0x70bf7f*/
     v3 = (int)(aP0 + 772); /*0x70bf84*/
     v4 = 8; /*0x70bf8a*/
     do /*0x70bf9e*/
     {
-      ObjectPtr_RegisterForTracking((int)(&SwizzleManagerClass_Instance), v3); /*0x70bf95*/
+      ObjectPtr_RegisterForTracking((int)(&SwizzleManagerClass_Instance),(int *)(v3)); /*0x70bf95*/
       v3 += 4; /*0x70bf9a*/
       --v4; /*0x70bf9d*/
     }
@@ -508,7 +508,7 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
     ObjectPtr_RegisterForTracking((int)(&SwizzleManagerClass_Instance),(int *)(aP0 + 724)); /*0x70c09a*/
     ObjectPtr_RegisterForTracking((int)(&SwizzleManagerClass_Instance),(int *)(aP0 + 1304)); /*0x70c0ab*/
     ObjectPtr_RegisterForTracking((int)(&SwizzleManagerClass_Instance),(int *)(aP0 + 1308)); /*0x70c0bc*/
-    ObjectPtr_RegisterForTracking((int)(&SwizzleManagerClass_Instance), aP0 + 628); /*0x70c0cd*/
+    ObjectPtr_RegisterForTracking((int)(&SwizzleManagerClass_Instance),(int *)(aP0 + 628)); /*0x70c0cd*/
     ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0 + 632); /*0x70c0de*/
     ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0 + 660); /*0x70c0ef*/
     ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0 + 460); /*0x70c100*/
@@ -596,7 +596,7 @@ void BuildingClass::ClearSuperWeaponAnim()
       this->SuperWeaponToken = -1; /*0x4516ee*/
       if ( v4 ) /*0x4516f8*/
       {
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((SuperWeapon *)((unsigned int *)this)[0]); /*0x451700*/
+        ((SuperWeapon *)((SuperWeapon *)((unsigned int *)this)[0]))->UpdateSuperWeaponsOwnedHouseClass(); /*0x451700*/
         return 1; /*0x451709*/
       }
     }
@@ -607,7 +607,7 @@ void BuildingClass::ClearSuperWeaponAnim()
       this->UpgradeLevel = v6; /*0x45171b*/
       this->Upgrades[v6] = 0; /*0x451726*/
       if ( v4 ) /*0x451731*/
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((SuperWeapon *)((unsigned int *)this)[0]); /*0x451739*/
+        ((SuperWeapon *)((SuperWeapon *)((unsigned int *)this)[0]))->UpdateSuperWeaponsOwnedHouseClass(); /*0x451739*/
     }
     return 1; /*0x45173f*/
   }
@@ -623,8 +623,8 @@ TechnoClass * BuildingClass::ClearLimpetCheck()
 
   unsigned int *v2; // [esp+4h] [ebp+4h]
 
-  *v2 = (gamemd::TechnoClass *)(g_TerrainTypeTable); /*0x459dba*/
-  return (int)v2; /*0x459dbc*/
+  *v2 = (unsigned int)((gamemd::TechnoClass *)(g_TerrainTypeTable)); /*0x459dba*/
+  return (gamemd::TechnoClass *)((int)v2); /*0x459dbc*/
 
 }
 } // namespace gamemd
@@ -670,7 +670,7 @@ int BuildingClass::SaveLoad_Register()
   int v2; // [esp+8h] [ebp+4h]
   int v3; // [esp+Ch] [ebp+8h]
 
-  result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)v2, v3); /*0x5f5e8b*/
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)((unsigned int *)v2), v3); /*0x5f5e8b*/
   if ( result >= 0 ) /*0x5f5e92*/
   {
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 48)); /*0x5f5e9d*/

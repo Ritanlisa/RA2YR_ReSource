@@ -4,9 +4,9 @@
 namespace gamemd {
 
 struct Matrix3x3 {
-    int Multiply(float * a2);
-    int TransformPoint(float * a2, float * a3);
-    int RotateX(float a2);  // 0x5aef60
+    int Multiply(float *a2);
+    int TransformPoint(float *aP1, float *a2);
+    int RotateX(float aP1);  // 0x5aef60
 };
 
 } // namespace gamemd

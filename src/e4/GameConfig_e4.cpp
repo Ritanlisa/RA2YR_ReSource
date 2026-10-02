@@ -127,14 +127,14 @@ int GameConfig::ComputeHash()
   v6[1] = 0; /*0x679de9*/
   v6[2] = 0; /*0x679ded*/
   GenericList::Constructor(v7); /*0x679df1*/
-  v7[0] = &vt_List; /*0x679dfa*/
+  v7[0] = (unsigned int)(&vt_List); /*0x679dfa*/
   memset(&v7[7], 0, 12); /*0x679e07*/
   v8 = 0; /*0x679e13*/
   v9 = 0; /*0x679e17*/
   v10 = 0; /*0x679e1b*/
   v11 = 0; /*0x679e1f*/
   v6[0] = &CCINIClass_Vtable; /*0x679e23*/
-  CCFileClass::Construct(v12, g_Str_File_CoopCampMD_ini); /*0x679e2b*/
+  CCFileClass::Construct(v12,(void *)(g_Str_File_CoopCampMD_ini)); /*0x679e2b*/
   if ( ((CCINIClass *)(v6))->Load((int)v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
@@ -143,7 +143,7 @@ int GameConfig::ComputeHash()
   ((Vector *)((int)v13))->Clear(); /*0x679e6f*/
   v12[0] = (unsigned int)(&off_7E1668); /*0x679e78*/
   ((BufferIOFileClass *)(v12))->Dtor(); /*0x679e80*/
-  HashTable::DestroyHashTableINIClass(v6); /*0x679e89*/
+  ((HashTable *)(v6))->DestroyHashTableINIClass(); /*0x679e89*/
   return dword_B053B4 + v0; /*0x679e97*/
 
 }
@@ -176,8 +176,8 @@ void GameConfig::Constructor()
       ((GenericNode *)((GenericNode *)(v2 + 28)))->Constructor(); /*0x5d67f2*/
       *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_GenericList); /*0x5d67fa*/
       LinkedList::Prepend((LinkedList *)(v3 + 16), v3 + 28); /*0x5d6801*/
-      v1 = (unsigned int)(this); /*0x5d6806*/
-      *(unsigned int *)(v3 + 12) = &vt_List; /*0x5d680a*/
+      v1 = (gamemd::GameConfig *)((unsigned int)(this)); /*0x5d6806*/
+      *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_List); /*0x5d680a*/
       *(unsigned int *)(v3 + 40) = 0; /*0x5d6811*/
       *(unsigned int *)(v3 + 44) = 0; /*0x5d6814*/
       *(unsigned int *)(v3 + 48) = 0; /*0x5d6817*/
@@ -192,8 +192,8 @@ void GameConfig::Constructor()
       v3 = 0; /*0x5d682f*/
     }
     *(unsigned int *)&v1->__pad_0[56] = v3; /*0x5d6839*/
-    CCFileClass::Construct2(&v6, (char **)&v1->__pad_0[44]); /*0x5d683c*/
-    if ( (uint8_t)CCFileClass::Open(&v6, 0) ) /*0x5d6846*/
+    ((CCFileClass *)(&v6))->Construct2((char **)&v1->__pad_0[44]); /*0x5d683c*/
+    if ( (uint8_t)((CCFileClass *)(&v6))->Open((int)(0)) ) /*0x5d6846*/
       ((CCINIClass *)(*(CCINIClass **)&v1->__pad_0[56]))->Load((int)&v6, 0, 0); /*0x5d685a*/
     *(unsigned int *)v6.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5d6863*/
     v8 = 0; /*0x5d686b*/

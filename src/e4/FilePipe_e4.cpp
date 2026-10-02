@@ -107,7 +107,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x47840d*/
       this->m_8 = v3; /*0x478413*/
       BYTE1(this->m_C) = a3 == 0; /*0x478416*/
-      return 1; /*0x47841c*/
+      return (gamemd::AbstractClass **)(1); /*0x47841c*/
     }
     else
     {
@@ -117,7 +117,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
   else
   {
     (*(void (**)(_VectorClass_VRGBClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x478426*/
-    return 1; /*0x47842c*/
+    return (gamemd::AbstractClass **)(1); /*0x47842c*/
   }
 
 }

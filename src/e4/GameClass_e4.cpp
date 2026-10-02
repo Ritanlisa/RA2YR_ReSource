@@ -125,9 +125,9 @@ int GameClass::loadScenarioFiles(int aP1)
   result = this->GameClass_field_0x4[0]; /*0x5d2267*/
   if ( result > 0 ) /*0x5d226c*/
   {
-    GetClientRect(g_hWnd, &Rect); /*0x5d227e*/
-    ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5d228f*/
-    v4 = aP1; /*0x5d229b*/
+    GetClientRect((HWND)(g_hWnd), &Rect); /*0x5d227e*/
+    ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5d228f*/
+    v4 = (gamemd::ObjectClass *)(aP1); /*0x5d229b*/
     if ( stru_887598.lineTrailer ) /*0x5d22a1*/
       (*(void (**)(void *, int, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x5d22a8*/
         stru_887598.lineTrailer,
@@ -146,7 +146,7 @@ int GameClass::loadScenarioFiles(int aP1)
         v9 = v6[1]; /*0x5d22d5*/
         v10 = v6[2]; /*0x5d22dc*/
         v11 = v6[3]; /*0x5d22e9*/
-        v4 = aP1; /*0x5d22f3*/
+        v4 = (gamemd::ObjectClass *)(aP1); /*0x5d22f3*/
         v8 += Rect.left; /*0x5d22f7*/
         v9 += Rect.top; /*0x5d2301*/
         (*((void (**)(DSurface *, int *, int, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 + 2))( /*0x5d2309*/
@@ -253,7 +253,7 @@ int GameClass::FindOpenSlot()
   while ( 1 ) /*0x5d6387*/
   {
     v4 = *(GameClass **)(dword_A8B8CC + 4 * v2); /*0x5d6387*/
-    if ( (uint8_t)IsRandMap::Sed((int)v4) ) /*0x5d638c*/
+    if ( (uint8_t)((IsRandMap *)((int)v4))->Sed() ) /*0x5d638c*/
     {
       inited = (*(int (**)(MultiplayerGameMode *))(*(unsigned int *)this->__pad_0 + 60))(this); /*0x5d6399*/
     }
@@ -312,7 +312,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
         v9 = (char *)((unsigned int)((char *)((int)((char *)(*((unsigned int *)this + 80))))));
         if ( v9 >= (unsigned int)((char *))(aP2) ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
-        memcpy(&this->__pad_24[*((unsigned int *)this + 79) - *((unsigned int *)this + 80) + 24], Src, v9); /*0x632e97*/
+        memcpy(&this->__pad_24[*((unsigned int *)this + 79) - *((unsigned int *)this + 80) + 24], Src,(size_t)(v9)); /*0x632e97*/
         v3 = &Src[v9]; /*0x632eb0*/
         v10 = *((unsigned int *)this + 80) == (unsigned int)(v9); /*0x632eb2*/
         aP2 -= v9; /*0x632eb4*/
@@ -467,7 +467,7 @@ ObjectClass * * GameClass::Shutdown(void *a1_1)
   Network *v7; // [esp+0h] [ebp-4h]
 
   *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 500) = 1; /*0x6bec72*/
-  PostMessageA(g_hWnd, 2u, 0, 0); /*0x6bec78*/
+  PostMessageA((HWND)(g_hWnd), 2u, 0, 0); /*0x6bec78*/
   if ( g_hWnd ) /*0x6bec85*/
   {
     do /*0x6bec9b*/
@@ -476,7 +476,7 @@ ObjectClass * * GameClass::Shutdown(void *a1_1)
   }
   if ( dwRegister != -1 ) /*0x6beca5*/
   {
-    RevokeActiveObject(dwRegister, 0); /*0x6becaa*/
+    RevokeActiveObject((void *)(dwRegister), 0); /*0x6becaa*/
     dwRegister = -1; /*0x6becb0*/
   }
   CoDisconnectObject(&punk, 0); /*0x6becc1*/
@@ -503,7 +503,7 @@ ObjectClass * * GameClass::Shutdown(void *a1_1)
         do /*0x6bed27*/
         {
           v5 -= 9; /*0x6bed1c*/
-          FileTreeNode::Destroy(v5); /*0x6bed21*/
+          FileTreeNode::Destroy((HWND)(v5)); /*0x6bed21*/
           --v6; /*0x6bed26*/
         }
         while ( v6 ); /*0x6bed27*/
@@ -532,7 +532,7 @@ int GameClass::ReadVersionFile()
     RawFileClass::Construct(&v5, (int)g_Str_File_VERSION_TXT); /*0x74f97c*/
     if ( (uint8_t)((FileClass *)(&v5))->Open(0) ) /*0x74f988*/
     {
-      FileClass::Read(&v5, this->GameClass_field_0x2A, 16); /*0x74f99b*/
+      ((FileClass *)(&v5))->Read((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A), 16); /*0x74f99b*/
       for ( this->GameClass_field_0x39[0] = 0; /*0x74f9b5*/
             this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] == 13;
             this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] = 0 )
@@ -573,7 +573,7 @@ int GameClass::ReadVersionFile2()
     RawFileClass::Construct(&v5, (int)g_Str_File_VERSION_TXT); /*0x74fa3c*/
     if ( (uint8_t)((FileClass *)(&v5))->Open(0) ) /*0x74fa48*/
     {
-      FileClass::Read(&v5, this->GameClass_field_0x2A, 16); /*0x74fa5b*/
+      ((FileClass *)(&v5))->Read((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A), 16); /*0x74fa5b*/
       for ( this->GameClass_field_0x39[0] = 0; /*0x74fa75*/
             this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] == 13;
             this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] = 0 )
@@ -610,7 +610,7 @@ void GameClass::ReadVersionString()
   RawFileClass::Construct(&v2, (int)g_Str_File_VERSION_TXT); /*0x74fc92*/
   if ( (uint8_t)((FileClass *)(&v2))->Open(0) ) /*0x74fc9e*/
   {
-    FileClass::Read(&v2, this->GameClass_field_0x2A, 16); /*0x74fcb1*/
+    ((FileClass *)(&v2))->Read((gamemd::BufferIOFileClass *)(this->GameClass_field_0x2A), 16); /*0x74fcb1*/
     for ( this->GameClass_field_0x39[0] = 0; /*0x74fccb*/
           this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] == 13;
           this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] = 0 )

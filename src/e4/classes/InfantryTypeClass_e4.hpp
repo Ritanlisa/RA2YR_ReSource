@@ -1109,7 +1109,7 @@ struct InfantryTypeClass {
     int j__do_always_noconv_codecvt_base_std__MBE_NXZ_19();
     unsigned int * ClampToGroundHeight(unsigned int * a1, int * a2);
     unsigned int * Constructor_523980(ObjectTypeClass * aP1);
-    unsigned int * CopyDataArray(DynamicVector * aP1);
+    unsigned int * CopyDataArray(unsigned int *aP1);
     unsigned int * GetDefaultDimensions(unsigned int * a1);
 };
 

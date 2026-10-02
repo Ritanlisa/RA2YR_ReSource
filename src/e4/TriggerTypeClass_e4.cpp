@@ -1,5 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/ParasiteClass_e4.hpp"
+#include "e4/classes/SpawnManagerClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -155,7 +158,7 @@ LABEL_52:
     if ( (*((int (**)(TechnoClass *))a0->RadioClass + 11))(a0) == 1 )
     {
       v13 = (*((int (**)(TechnoClass *))a0->RadioClass + 11))(a0); /*0x6fc3d9*/
-      if ( (uint8_t)TechnoClass::HasDeployFlags(v13 == 1 ? a0 : 0) )
+      if ( (uint8_t)((TechnoClass *)(v13 == 1 ? a0 : 0))->HasDeployFlags() )
         return 5; /*0x6fc3e7*/
     }
   }
@@ -175,7 +178,7 @@ LABEL_52:
       if ( (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1 )
       {
         v16 = (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2); /*0x6fc469*/
-        if ( (uint8_t)TechnoClass::HasDeployFlags(v16 == 1 ? (TechnoClass *)aP2 : 0) )
+        if ( (uint8_t)((TechnoClass *)(v16 == 1 ? (TechnoClass *)aP2 : 0))->HasDeployFlags() )
           return 5; /*0x6fc477*/
       }
     }
@@ -241,7 +244,7 @@ LABEL_52:
   }
   if ( *(unsigned char *)(v12 + 305) ) /*0x6fc606*/
   {
-    if ( !TechnoClass::CheckTargetCell(a0) /*0x6fc623*/
+    if ( !((TechnoClass *)(a0))->CheckTargetCell() /*0x6fc623*/
       && !(*((uint8_t (**)(TechnoClass *))a0->RadioClass + 224))(a0) )
     {
       if ( !SpawnManagerClass::CountAliveSpawns(a0->spawnManager) ) /*0x6fc637*/

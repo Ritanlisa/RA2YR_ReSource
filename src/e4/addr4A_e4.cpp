@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Char_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
@@ -611,7 +612,7 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
         v9[3] = (unsigned int)(0); /*0x4a3940*/
         ((Vector *)((int)v9))->Clear(); /*0x4a3948*/
         *(unsigned int *)v8.CDFileClass = (unsigned int)((gamemd::AbstractClass **)(&off_7E1668)); /*0x4a3951*/
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v8); /*0x4a3959*/
+        ((BufferIOFileClass *)((BufferIOFileClass *)&v8))->Dtor(); /*0x4a3959*/
         return (void *)v5; /*0x4a395e*/
       }
       (*(void (**)(CCFileClass *, int, size_t))(*(unsigned int *)v8.CDFileClass + 36))(&v8, v5, v6); /*0x4a392a*/
@@ -653,7 +654,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
         v9[3] = (unsigned int)((gamemd::AbstractClass **)(0));
         ((Vector *)((int)v9))->Clear(); /*0x4a39ef*/
         v8[0] = (unsigned int)((gamemd::AbstractClass **)((unsigned int)&off_7E1668)); /*0x4a39f8*/
-        BufferIOFileClass::Dtor(v8); /*0x4a3a00*/
+        ((BufferIOFileClass *)(v8))->Dtor(); /*0x4a3a00*/
         return (int)v5; /*0x4a3a05*/
       }
       (*(void (**)(unsigned int *, void *, size_t))(v8[0] + 36))(v8, v5, v6); /*0x4a39d1*/
@@ -1266,7 +1267,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass aP
   v10 = (Char *)g_FogOfWarState; /*0x4a5ec8*/
   v11 = a4[1] + *(unsigned int *)(a5 + 4); /*0x4a5ed3*/
   v12 = *(unsigned int *)a5 + *a4; /*0x4a5ed8*/
-  Text::Layout(g_FogOfWarState, a2, &a5, &a4, a4[2]); /*0x4a5eec*/
+  ((Text *)(g_FogOfWarState))->Layout(a2, &a5, &a4, a4[2]); /*0x4a5eec*/
   v13 = IDA_BYTE1(a8); /*0x4a5ef1*/
   if ( (a8 & 0x100) != 0 ) /*0x4a5efc*/
   {
@@ -1307,9 +1308,9 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass aP
   v26[1] = v16; /*0x4a5fa7*/
   v26[2] = v17; /*0x4a5fb1*/
   v26[3] = v16 + v18; /*0x4a5fb5*/
-  Char::Swap(v10, 1); /*0x4a5fb9*/
-  TextGroup::SetRect((TextGroup *)v10, v26); /*0x4a5fc5*/
-  Property::Set((Property *)v10, a6); /*0x4a5fd1*/
+  ((Char *)(v10))->Swap(1); /*0x4a5fb9*/
+  ((TextGroup *)((TextGroup *)v10))->SetRect(v26); /*0x4a5fc5*/
+  ((Property *)((Property *)v10))->Set(a6); /*0x4a5fd1*/
   FontRenderer::DrawText(v10, a3, a2, v12, v11, 0, 0); /*0x4a5fed*/
   *a1 = v12; /*0x4a5ff7*/
   a1[1] = v11; /*0x4a5ff9*/
@@ -1904,7 +1905,7 @@ void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
             || (int16_t)v13 < v23
             || (int16_t)v13 >= v23 + FoundationHeight )
           {
-            v14 = CellCoord::To_CellObj(&dword_87F7E8, v19); /*0x4a8fc5*/
+            v14 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(v19); /*0x4a8fc5*/
             v15 = ((Cell *)(v14))->IsBridge(); /*0x4a8fcc*/
             v16 = v15; /*0x4a8fd1*/
             if ( v15 ) /*0x4a8fd5*/
@@ -3895,7 +3896,7 @@ int E4Recv_4A5E50::sub_4A5E50(int a2, AbstractClass * aP2, AbstractClass * aP3)
   if ( !this || !g_FogOfWarState ) /*0x4a5e77*/
     return 0; /*0x4a5ea2*/
   PixelData = FontClass::GetPixelData((FontClass *)g_FogOfWarState, 0x57u); /*0x4a5e7d*/
-  Text::Layout(v5, (uint16_t *)this, aP2, aP3, a2 * PixelData); /*0x4a5e8d*/
+  ((Text *)(v5))->Layout((uint16_t *)this, aP2, aP3, a2 * PixelData); /*0x4a5e8d*/
   return *aP3 / v5[7].Text_field_00; /*0x4a5e98*/
 
 }

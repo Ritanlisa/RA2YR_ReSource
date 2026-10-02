@@ -103,7 +103,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v11 = **(uint16_t **)(dword_87F6C4 + 372); /*0x704a69*/
     v36 = (int *)(-2); /*0x704a77*/
     v35 = (unsigned int)((int *)(-2));
-    v12 = (int)(Coord2D::Add(&v35, v37, v34));
+    v12 = (int)(((Coord2D *)(&v35))->Add(v37, v34));
     v13 = (int)(Rect::Construct(v47, v12, 3, 3));
     v39 = (int *)(*v13);
     v40 = (int *)(v13[1]);
@@ -121,7 +121,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v15 = **(uint16_t **)(dword_87F6C4 + 372); /*0x704b1d*/
     v35 = -2; /*0x704b29*/
     v36 = (int *)(-2); /*0x704b2d*/
-    v16 = Coord2D::Add(&v35, v37, v33); /*0x704b41*/
+    v16 = ((Coord2D *)(&v35))->Add(v37, v33); /*0x704b41*/
     v17 = Rect::Construct(v48, v16, 3, 3); /*0x704b4e*/
     v43 = (int *)(*v17); /*0x704b57*/
     v44 = (int *)(v17[1]); /*0x704b60*/
@@ -154,7 +154,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v20 = (int *)((unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue) | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green)));
   v35 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2))))))))))))))))))))))))))));
   v36 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))))))))))));
-  v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
+  v21 = (int *)(((Coord2D *)(&v35))->Add(v37, &v31));
   v22 = (int *)(Rect::Construct(v48, v21, 3, 3));
   v43 = (int *)(*v22);
   v44 = (int *)(v22[1]);
@@ -168,7 +168,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v20); /*0x704d11*/
   v35 = -2; /*0x704d1d*/
   v36 = (int *)(-2); /*0x704d21*/
-  v24 = Coord2D::Add(&v35, v37, &v29); /*0x704d35*/
+  v24 = ((Coord2D *)(&v35))->Add(v37, &v29); /*0x704d35*/
   v25 = Rect::Construct(v48, v24, 3, 3); /*0x704d42*/
   v43 = (int *)(*v25); /*0x704d49*/
   v44 = (int *)(v25[1]); /*0x704d52*/
@@ -969,7 +969,7 @@ int E4Recv_7011A0::sub_7011A0()
   LOWORD(v10) = *v6 / 256; /*0x7011ff*/
   HIWORD(v10) = v6[1] / 256; /*0x701218*/
   *(unsigned int *)v11 = v10; /*0x701225*/
-  v7 = (char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v11); /*0x701234*/
+  v7 = (char *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v11); /*0x701234*/
   ((ScenarioClass *)((ScenarioClass *)&stru_87F5F0.__pad_58[416]))->CalcMinShroudLevel(); /*0x701236*/
   v8 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) * v7[283]; /*0x70127d*/
   LOWORD(v9) = Math::RoundToInt(v1); /*0x70127f*/

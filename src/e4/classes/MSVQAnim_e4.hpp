@@ -23,7 +23,7 @@ struct MSVQAnim {
     MSVQAnim * QueryInterface(char a2);
     int Stub();
     void * GetFrameRect(int * a2);
-    unsigned int * ConstructMSVQAnimHidden(char **a2, int *a3, int a4, char a5);  // 0x5ccc30
+    unsigned int * ConstructMSVQAnimHidden(char **aP1, int *aP2, int aP3, char aP3a);  // 0x5ccc30
 };
 
 } // namespace gamemd

@@ -4,8 +4,8 @@
 namespace gamemd {
 
 struct Vector3 {
-    int AddAssign(float * a2);
-    int * Subtract(int * a2, unsigned int * a3, void *a1 = 0, void *a4 = 0);
+    int AddAssign(float *a2);
+    int * Subtract(int *a2, unsigned int *a3);
     int Magnitude();  // 0x41c3c0
 };
 

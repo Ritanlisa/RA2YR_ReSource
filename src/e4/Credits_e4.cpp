@@ -82,7 +82,7 @@ char Credits::Screen()
       v13 = 0; /*0x52cc84*/
       ((Vector *)(v12))->Clear(); /*0x52cc88*/
       v11[0] = &off_7E1668; /*0x52cc91*/
-      BufferIOFileClass::Dtor(v11); /*0x52cc99*/
+      ((BufferIOFileClass *)(v11))->Dtor(); /*0x52cc99*/
       FirstFileA = v10; /*0x52cc9e*/
     }
   }
@@ -118,7 +118,7 @@ LABEL_15:
     v13 = 0; /*0x52cd45*/
     ((Vector *)(v12))->Clear(); /*0x52cd49*/
     v11[0] = &off_7E1668; /*0x52cd52*/
-    return BufferIOFileClass::Dtor(v11); /*0x52cd5a*/
+    return ((BufferIOFileClass *)(v11))->Dtor(); /*0x52cd5a*/
   }
   return result; /*0x52cd5f*/
 

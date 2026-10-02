@@ -64,21 +64,21 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
 
   result = (int)dword_A83D4C; /*0x655c50*/
   if ( !dword_A83D4C ) /*0x655c62*/
-    return result; /*0x655c62*/
+    return (gamemd::MapClass **)(result); /*0x655c62*/
   result = (*(int (**)(unsigned int, char *))(**(unsigned int **)((char *)this + 4636) + 120))(*((unsigned int *)this + 1159), v40); /*0x655c75*/
   v5 = (int)(*aP1); /*0x655c7e*/
   v41 = (int)(*aP1); /*0x655c82*/
   if ( v41 < *(unsigned int *)result ) /*0x655c86*/
-    return result; /*0x655c86*/
+    return (gamemd::MapClass **)(result); /*0x655c86*/
   if ( v5 >= *(unsigned int *)result + *(unsigned int *)(result + 8) ) /*0x655c93*/
-    return result; /*0x655c93*/
+    return (gamemd::MapClass **)(result); /*0x655c93*/
   v6 = (int)(aP1[1]); /*0x655c99*/
   v7 = *(unsigned int *)(result + 4); /*0x655c9c*/
   if ( v6 < v7 ) /*0x655ca5*/
-    return result; /*0x655ca5*/
+    return (gamemd::MapClass **)(result); /*0x655ca5*/
   result = v7 + *(unsigned int *)(result + 12); /*0x655cae*/
   if ( v6 >= result ) /*0x655cb2*/
-    return result; /*0x655cb2*/
+    return (gamemd::MapClass **)(result); /*0x655cb2*/
   v8 = (double)v41 / *(float *)((char *)this + 5256) - (double)*((int *)this + 1316); /*0x655cc2*/
   v37[0] = ((int16_t)Math::RoundToInt(v8) << 8) + 128; /*0x655d1b*/
   v37[1] = ((int16_t)Math::RoundToInt(v8) << 8) + 128; /*0x655d2b*/
@@ -159,7 +159,7 @@ LABEL_26:
         | (*(uint8_t *)(v43 + 22266) >> g_BitMask_Blue << g_BitMask_Green)
         | (*(uint8_t *)(v16 + 22267) >> g_BitMask_Red << g_BitShift_Blue);
   else
-    v17 = *(unsigned int *)(FindBuildingAnimByName(g_INI_Key_LightGrey, 1) + 816); /*0x655fe5*/
+    v17 = *(unsigned int *)(FindBuildingAnimByName((gamemd::AbstractClass *)(g_INI_Key_LightGrey), 1) + 816); /*0x655fe5*/
   v18 = *(unsigned int *)(v13 + 372); /*0x655feb*/
   v19 = *(unsigned int *)(v13 + 380); /*0x655ff1*/
   if ( v18 == -1 ) /*0x655ffa*/
@@ -224,7 +224,7 @@ LABEL_45:
   v24[1] = v29; /*0x65612f*/
   v24[2] = result; /*0x656132*/
   v24[3] = v33; /*0x656135*/
-  return result; /*0x656138*/
+  return (gamemd::MapClass **)(result); /*0x656138*/
 
 }
 } // namespace gamemd
@@ -297,7 +297,7 @@ int FogOfWar::RenderCell()
                                                              0)
                                                          + 90196));
             else
-              BuildingAnimByName = FindBuildingAnimByName(g_INI_Key_LightGrey, 1); /*0x65625c*/
+              BuildingAnimByName = FindBuildingAnimByName((gamemd::AbstractClass *)(g_INI_Key_LightGrey), 1); /*0x65625c*/
           }
           v18 = *(unsigned int *)(BuildingAnimByName + 816); /*0x65625e*/
           v19 = *(unsigned int *)(BuildingAnimByName + 780); /*0x656264*/
@@ -358,8 +358,8 @@ AbstractClass * FogOfWar::RevealCell(IUnknown * aP1)
         v8 = *((unsigned int *)this + 1179); /*0x65637d*/
         v9 = *((unsigned int *)this + 1176); /*0x656380*/
         *((unsigned int *)this + 1179) = v8 + 1; /*0x656386*/
-        *(unsigned int *)(v9 + 8 * v8) = *aP1; /*0x65638b*/
-        *(unsigned int *)(v9 + 8 * v8 + 4) = aP1[1]; /*0x656391*/
+        *(unsigned int *)(v9 + 8 * v8) = (unsigned int)(*aP1); /*0x65638b*/
+        *(unsigned int *)(v9 + 8 * v8 + 4) = (unsigned int)(aP1[1]); /*0x656391*/
       }
       *((unsigned char *)this + 5337) = 1; /*0x656395*/
     }
@@ -455,7 +455,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     }
     if ( (int)((unsigned int *)(v4))[79] <= 0 ) /*0x586536*/
       return 0; /*0x586536*/
-    NeighbourContent = ((Cell *)(v4))->GetNeighbourContent(3u); /*0x586540*/
+    NeighbourContent = (unsigned int *)(((Cell *)(v4))->GetNeighbourContent(3u)); /*0x586540*/
   }
   else
   {
@@ -465,7 +465,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     v6 = (int16_t)v12 + (IDA_SHIWORD(v12) << 9); /*0x586593*/
     if ( v6 >= 0x40000 || (NeighbourContent = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x5865a9*/
     {
-      dword_ABDC74 = (unsigned int *)(v12);
+      dword_ABDC74 = (unsigned int)((unsigned int *)(v12));
       NeighbourContent = (unsigned int *)(unk_ABDC50);
     }
   }

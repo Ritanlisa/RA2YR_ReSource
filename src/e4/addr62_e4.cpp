@@ -661,12 +661,12 @@ void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3
   v15 = (Char *)a4; /*0x6210c4*/
   if ( ((unsigned int)(a6)& 4) != 0 ) /*0x6210ca*/
   {
-    Text::Layout(a4, a2, (int *)&a4, &a3, v12); /*0x6210da*/
+    ((Text *)(a4))->Layout(a2, (int *)&a4, &a3, v12); /*0x6210da*/
     yTop += (v14 - (int, unsigned int a10)a3) / 2; /*0x6210f2*/
   }
-  Char::Swap(v15, 1); /*0x6210fa*/
-  TextGroup::SetRect((TextGroup *)v15, v10); /*0x621102*/
-  Property::Set((Property *)v15, v17); /*0x62110e*/
+  ((Char *)(v15))->Swap(1); /*0x6210fa*/
+  ((TextGroup *)((TextGroup *)v15))->SetRect((unsigned int *)(v10)); /*0x621102*/
+  ((Property *)((Property *)v15))->Set((int16_t)(v17)); /*0x62110e*/
   Font::Print((int)v15, a1, a2, v18, yTop, v12, v14, a6, a9, a10); /*0x62113f*/
   return 0; /*0x621146*/
 }
@@ -736,18 +736,18 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x6211e0*/
     return 0; /*0x6211e8*/
   if ( !a7 ) /*0x6211f1*/
-    a7 = (unsigned int *)((int *)((unsigned int *)((int *)DSurface_Alternate))); /*0x6211f9*/
-  v12 = (int)((unsigned int *)((int)((unsigned int *)(*aP2)))); /*0x621234*/
+    a7 = (int *)((unsigned int *)((int *)((unsigned int *)((int *)DSurface_Alternate)))); /*0x6211f9*/
+  v12 = (unsigned int *)((int)((unsigned int *)((int)((unsigned int *)(*aP2))))); /*0x621234*/
   v21 = (int)(aP2[3]); /*0x621255*/
   v13 = ((uint8_t)ecx0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x621259*/
       | (IDA_BYTE1(ecx0) >> g_BitMask_Blue << g_BitMask_Green)
       | (IDA_BYTE2(ecx0) >> g_BitMask_Red << g_BitShift_Blue);
-  yTopa = (unsigned int *)((int)((unsigned int *)((int)(aP2[1]))));
+  yTopa = (int)((unsigned int *)((int)((unsigned int *)((int)(aP2[1])))));
   v14 = (unsigned int *)(aP2[2]);
   v20 = (unsigned int *)(v14);
   if ( !a1 ) /*0x62126b*/
     v9 = g_FogOfWarState; /*0x62126d*/
-  Text::Layout(v9, a3, &v18, &v19, v14); /*0x621285*/
+  ((Text *)(v9))->Layout(a3, &v18, &v19, v14); /*0x621285*/
   switch ( a6 ) /*0x621291*/
   {
     case 1: /*0x621291*/
@@ -783,9 +783,9 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   v22[1] = (unsigned int)(v17);
   v22[2] = (unsigned int)(v20 + v16);
   v22[3] = v21 + v17; /*0x621346*/
-  Char::Swap((Char *)v9, 1); /*0x62134a*/
-  TextGroup::SetRect((TextGroup *)v9, v22); /*0x621356*/
-  Property::Set((Property *)v9, v13); /*0x62135e*/
+  ((Char *)((Char *)v9))->Swap(1); /*0x62134a*/
+  ((TextGroup *)((TextGroup *)v9))->SetRect((unsigned int *)(v22)); /*0x621356*/
+  ((Property *)((Property *)v9))->Set((int16_t)(v13)); /*0x62135e*/
 // 0x434b90
   return FontRenderer::DrawText(v9, a7, a3, v12, yTopa, a5, a9) - v12; /*0x6211e4*/
 }
@@ -1290,7 +1290,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
     }
     if ( a2 == 1175 ) /*0x622ea6*/
     {
-      SendMessageA(aP0, 0x4A9u, (WPARAM)aP0, 1); /*0x6230a6*/
+      SendMessageA((HWND)(aP0), 0x4A9u, (WPARAM)aP0, 1); /*0x6230a6*/
       return 0; /*0x6230b5*/
     }
     if ( a2 != 272 ) /*0x622eb2*/
@@ -2560,7 +2560,7 @@ LRESULT GetEditControlText(HWND hWnd, void ** a2)
   }
   else
   {
-    SafeDelete::Ptr((SafeDelete *)a2); /*0x623ebc*/
+    ((SafeDelete *)((SafeDelete *)a2))->Ptr(); /*0x623ebc*/
     return 0; /*0x623ec1*/
   }
 }

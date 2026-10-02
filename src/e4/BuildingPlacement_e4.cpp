@@ -41,7 +41,7 @@
 
 // 0x4FB840
 namespace gamemd {
-void* BuildingPlacement::Activate(int a2, unsigned int * a3)
+void* BuildingPlacement::Activate(int a2, unsigned int *a3)
 {
 
   int v4; // edi
@@ -77,7 +77,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   v8 = (unsigned int *)((void *)((unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v4 + 440))(v4, &a2))); /*0x4fb8ed*/
   ((Tactical *)((Tactical *)&stru_87F5F0.__pad_58[416]))->MouseMove(&a3, v8); /*0x4fb8fe*/
   (*(void (**)(int, int))(*(unsigned int *)v4 + 292))(v4, 2); /*0x4fb909*/
-  return 1; /*0x4fb90f*/
+  return (void *)(1); /*0x4fb90f*/
 
 }
 } // namespace gamemd
@@ -172,7 +172,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         *((unsigned int *)this + 20) = (unsigned int)((gamemd::VectorClass_flat **)(2)); /*0x54c64b*/
         *((unsigned int *)this + 32) = v16; /*0x54c652*/
       }
-      return (char)v12; /*0x54c61d*/
+      return (gamemd::VectorClass_flat **)((char)v12); /*0x54c61d*/
     }
     v47 = (*(int (**)(int, BuildingPlacement *, int, int, unsigned int, int))(*(unsigned int *)this->BuildingPlacement_field_0x0C /*0x54c675*/
                                                                                  + 428))(
@@ -201,7 +201,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         && (v47 > 2 || v47 == 2 && !*((unsigned char *)this + 144)) )
       {
         LOBYTE(v12) = (*(char ((int *)(**))(int *))(this->BuildingPlacement_field_0x04 + 72))(&this->BuildingPlacement_field_0x04); /*0x54ca43*/
-        return (char)v12; /*0x54ca4d*/
+        return (gamemd::VectorClass_flat **)((char)v12); /*0x54ca4d*/
       }
       if ( !*((unsigned char *)this + 144) ) /*0x54c71a*/
       {
@@ -339,7 +339,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
           *((unsigned int *)this + 20) = 0; /*0x54c9e4*/
           v44 = v38; /*0x54c9eb*/
           v39 = (CrateClass *)(*(int (**)(int))(*(unsigned int *)v38 + 444))(v38); /*0x54c9ee*/
-          CrateClass::ProcessPickup(v39, v44); /*0x54c9f6*/
+          ((CrateClass *)(v39))->ProcessPickup(v44); /*0x54c9f6*/
           v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c9fb*/
           v12[5].__pad_28[30] = 1; /*0x54c9fe*/
           *(unsigned char *)(this->BuildingPlacement_field_0x0C + 1063) = 0; /*0x54ca08*/
@@ -370,7 +370,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
       }
     }
   }
-  return (char)v12; /*0x54c60c*/
+  return (gamemd::VectorClass_flat **)((char)v12); /*0x54c60c*/
 
 }
 } // namespace gamemd

@@ -277,7 +277,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   *(unsigned int *)a3 = v38; /*0x6425c9*/
     ((Debug *)this)->Log();
   ((DSurface *)((DSurface *)&v61))->Destroy(); /*0x6425d7*/
-  return (int)v39; /*0x64213f*/
+  return (gamemd::AbstractClass **)((int)v39); /*0x64213f*/
 }
 }
 // 0x661350

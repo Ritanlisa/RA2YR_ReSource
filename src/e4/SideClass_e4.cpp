@@ -133,7 +133,7 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
 
   int v3; // eax
 
-  ((AbstractTypeClass *)((int *)this))->Constructor(aP1); /*0x6a4559*/
+  ((AbstractTypeClass *)((int *)this))->Constructor((char *)(aP1)); /*0x6a4559*/
   this->houseTypesCount = 0; /*0x6a4563*/
   *((unsigned int *)this + 40) = 0; /*0x6a4569*/
   *((unsigned char *)this + 164) = 1; /*0x6a456f*/

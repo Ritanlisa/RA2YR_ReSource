@@ -90,7 +90,7 @@ int AudioMixer::SetupChannels() {
       v3 = (AudioMixer *)this->AudioMixer_field_04; /*0x408a8f*/
       do /*0x408ab2*/
       {
-        p_AudioMixer_field_0C = &v3[1].AudioMixer_field_0C; /*0x408a91*/
+        p_AudioMixer_field_0C = (int *)(&v3[1].AudioMixer_field_0C); /*0x408a91*/
         v5 = 2; /*0x408a94*/
         do /*0x408aa8*/
         {
@@ -233,7 +233,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
       unsigned int * v19 = (unsigned int *)this->m_State;
       v110 = Coords[2];
       int v20 = v17 - v14;
-      int * v21 = v19 + 39;
+      int * v21 = (int *)(v19 + 39);
       v19 += 346;
       int * v22 = v21;
       v102 = *v21;
@@ -281,7 +281,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   if ( v104 >= v36 + 2 * DataGlobal_A8F1C0 + DataGlobal_A8F1C0 )
     this->q0B0 = DataGlobal_A8F1B4 + v36;
   int v93 = this->m_State;
-  unsigned int * v38 = Coord::To_Cell(&DataGlobal_87F7E8, this + 9);
+  unsigned int * v38 = (unsigned int *)(Coord::To_Cell(&DataGlobal_87F7E8, this + 9));
   if ( !CrateClass::ProcessPickup(v38, v93) )
   {
     int v39 = this->m_State;
@@ -316,7 +316,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   v102 = *v41;
   v103 = v41[1];
   v104 = v41[2];
-  unsigned int * v42 = Coord::To_Cell(&DataGlobal_87F7E8, &v102);
+  unsigned int * v42 = (unsigned int *)(Coord::To_Cell(&DataGlobal_87F7E8, &v102));
   int v43 = this->m_State;
   if ( *(unsigned char *)(v43 + 140) != ((v42[80] >> 8) & 1) )
     *(unsigned char *)(v43 + 1675) = 1;

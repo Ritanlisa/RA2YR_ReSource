@@ -34,7 +34,7 @@ unsigned int * AudioQueue::CreateNode()
 
   v2 = (DListNode *)__2_YAPAXI_Z(0x60u); /*0x402afc*/
   memset(v2, 0, 0x60u); /*0x402b07*/
-  DListNode::InitEmpty(v2); /*0x402b0e*/
+  ((DListNode *)(v2))->InitEmpty(); /*0x402b0e*/
   *(unsigned int *)v2[2].__pad_0 = 0; /*0x402b13*/
   v2[1].DListNode_field_0x04 = (int)this; /*0x402b1c*/
   if ( ((int (*)(DListNode *))this->AudioQueue_field_0x14[0])(v2) ) /*0x402b1f*/
@@ -213,7 +213,7 @@ LABEL_10:
             if ( !result ) /*0x7526f7*/
               return 0; /*0x7526f7*/
           }
-          return result; /*0x7526ec*/
+          return (int)(result); /*0x7526ec*/
         }
       }
       while ( (AudioQueue *)result[3] != this ) /*0x7526c3*/
@@ -224,7 +224,7 @@ LABEL_10:
       }
     }
   }
-  return result; /*0x7526fb*/
+  return (int)(result); /*0x7526fb*/
 
 }
 }
@@ -507,7 +507,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   int v18; // edx
   UINT v19; // eax
 
-  v9 = ((AudioQueue *)((AudioQueue *)this))->AllocBuffer(aP5); /*0x7b23c4*/
+  v9 = ((AudioQueue *)((AudioQueue *)this))->AllocBuffer((char)(aP5)); /*0x7b23c4*/
   qmemcpy(v9 + 32, aP1, arg4); /*0x7b23d5*/
   *((unsigned int *)v9 + 4) = arg4; /*0x7b23e6*/
   v9[20] = 0; /*0x7b23f4*/
@@ -552,7 +552,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
     v14 = *((unsigned int *)this + 64539); /*0x7b24a0*/
   }
   v19 = (*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, v14); /*0x7b24af*/
-  SendMessageA(g_hWnd, v19, 0, 2); /*0x7b24b9*/
+  SendMessageA((HWND)(g_hWnd), v19, 0, 2); /*0x7b24b9*/
   return ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x7b24ca*/
 
 }
@@ -571,7 +571,7 @@ int AudioQueue::PreallocateChannels(unsigned int * a1, int a2)
   {
     if ( a1[12].AudioController_field_00[0] >= (int)a1[12].AudioController_field_04 ) /*0x403547*/
       break; /*0x403547*/
-    v5 = AudioController::Constructor(a1); /*0x40354b*/
+    v5 = ((AudioController *)(a1))->Constructor(); /*0x40354b*/
     if ( !v5 ) /*0x403552*/
       break; /*0x403552*/
     v5[43] = (int)a1; /*0x403554*/
@@ -618,7 +618,7 @@ int AudioQueue::DeactivateAllMatching(int a1, int a2)
   for ( i = result; result; i = result ) /*0x403783*/
   {
     if ( (*(unsigned char *)(i + 164) & 1) != 0 && (a2 == -1 || *(unsigned int *)(i + 12) == a2) ) /*0x403796*/
-      result = AudioChannel::DeactivatePlay((AudioChannel *)i); /*0x40379a*/
+      result = ((AudioChannel *)((AudioChannel *)i))->DeactivatePlay(); /*0x40379a*/
     if ( !i ) /*0x4037a1*/
       break; /*0x4037a1*/
     result = ((AudioQueue *)((AudioQueue *)i))->GetNextAlt(); /*0x4037a5*/
@@ -771,7 +771,7 @@ int AudioQueue::ReleaseBuffers()
       if ( !*(unsigned int *)(i + 128) && *(unsigned int *)(i + 20) ) /*0x4082a2*/
       {
         EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x4082ae*/
-        AudioChannel::DeactivatePlay(*(AudioChannel **)(i + 20)); /*0x4082b3*/
+        ((AudioChannel *)(*(AudioChannel **)(i + 20)))->DeactivatePlay(); /*0x4082b3*/
         v2 = *(unsigned int *)(i + 12); /*0x4082b8*/
         if ( (v2 & 1) != 0 ) /*0x4082bd*/
         {
@@ -805,9 +805,9 @@ int AudioQueue::DrainAll()
     do /*0x750fe8*/
     {
       Next_Alt = (gamemd::Init)(((AudioQueue *)(v1))->GetNextAlt()); /*0x750fbc*/
-      AudioController::Stop(v1 + 3); /*0x750fbe*/
+      ((AudioController *)(v1 + 3))->Stop(); /*0x750fbe*/
       LinkedList::Init((unsigned int **)v1); /*0x750fc5*/
-      result = PushFrontLinkedListAlt(dword_B1D3A4, (int)v1); /*0x750fd2*/
+      result = PushFrontLinkedListAlt((unsigned int *)(dword_B1D3A4), (int)v1); /*0x750fd2*/
       v1 = (int *)Next_Alt; /*0x750fdd*/
       --dword_B1D3A8; /*0x750fe2*/
     }

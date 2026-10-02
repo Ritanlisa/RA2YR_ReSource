@@ -51,6 +51,10 @@ def main():
             continue
         if not src.strip() or not dst.strip():
             continue
+        # G42.11: a comma in dst means the message glued a param onto the
+        # type (spliced-cast corruption family) -- never castable
+        if ',' in dst or ',' in src:
+            continue
         key = (m.group(1).replace('/', '\\'), int(m.group(2)))
         sites.setdefault(key, (src, dst))
     print('castable sites:', len(sites))
@@ -83,14 +87,17 @@ def main():
             i = top_level_eq(pre_eq)
             if i is None:
                 # G42.7: return-context -- `return X;` whose fn decl says DST
-                rm = re.match(r'^return\s+(.+)$', pre_eq)
+                # (G42.11: pre_eq keeps its indentation; strip before match)
+                stripped = pre_eq.lstrip()
+                rm = re.match(r'^return\s+(.+)$', stripped)
                 if rm:
                     rhs = rm.group(1).strip()
                     if not rhs or rhs.startswith('(' + dst + ')') \
-                            or '(' in dst or ')' in dst:
+                            or '(' in dst or ')' in dst or ',' in dst:
                         miss += 1
                         continue
-                    ls[line - 1] = ('return (%s)(%s);' % (dst, rhs)
+                    indent = pre_eq[:len(pre_eq) - len(stripped)]
+                    ls[line - 1] = (indent + 'return (%s)(%s);' % (dst, rhs)
                                     ) + raw[len(body):]
                     n += 1
                     touched = True

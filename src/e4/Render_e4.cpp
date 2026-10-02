@@ -212,7 +212,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
         ProcessGameResults(0); /*0x652380*/
       }
             ((MouseClass *)0)->LoadCursors();
-      return ToggleDisplayMode(0); /*0x65238c*/
+      return (gamemd::AbstractClass **)(ToggleDisplayMode(0)); /*0x65238c*/
     }
   }
   else
@@ -224,7 +224,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
     v3 = v3; /*0x65227b*/
     qmemcpy(&byte_8B4204[111 * v3], (const void *)this, 0x6Fu); /*0x652290*/
     ((unsigned int *)(dword_A70204))[v3] = timeGetTime(); /*0x6522a3*/
-    return ++dword_8B41F8; /*0x6522af*/
+    return (gamemd::AbstractClass **)(++dword_8B41F8); /*0x6522af*/
   }
   return (gamemd::AbstractClass **)(result);
 }
@@ -303,7 +303,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   {
     v27 = -2; /*0x7053cb*/
     v28 = -2; /*0x7053dc*/
-    v11 = Coord2D::Add(&v27, v52, v43); /*0x7053e6*/
+    v11 = ((Coord2D *)(&v27))->Add(v52, v43); /*0x7053e6*/
     v12 = Rect::Construct(v53, v11, 3, 3); /*0x7053f3*/
     v39 = *v12; /*0x7053fc*/
     v40 = v12[1]; /*0x705405*/
@@ -317,7 +317,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v35, v8); /*0x705456*/
     v27 = -2; /*0x705462*/
     v28 = -2; /*0x705466*/
-    v14 = Coord2D::Add(&v27, v52, v44); /*0x70547d*/
+    v14 = ((Coord2D *)(&v27))->Add(v52, v44); /*0x70547d*/
     v15 = Rect::Construct(v54, v14, 3, 3); /*0x70548a*/
     v35 = *v15; /*0x705493*/
     v36 = v15[1]; /*0x70549c*/
@@ -452,7 +452,7 @@ wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
   }
   else
   {
-    StringCSF = GetStringCSF((wchar_t *)(aTxtRandomMapDe), 0, g_Str_File_wonline_cpp, 2970); /*0x780dc2*/
+    StringCSF = GetStringCSF((wchar_t *)(aTxtRandomMapDe), 0,(const char *)(g_Str_File_wonline_cpp), 2970); /*0x780dc2*/
     ((WideString *)((WideString *)a1))->Assign(StringCSF); /*0x780dca*/
     return a1; /*0x780dcf*/
   }
@@ -1321,7 +1321,7 @@ WinModemClass * * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
   LABEL_18:
     ((WideString *)(v2))->Trim(); /*0x6ca3fd*/
     if ( !wcslen(v2) ) /*0x6ca40f*/
-      return 1; /*0x6ca48f*/
+      return (gamemd::WinModemClass **)(1); /*0x6ca48f*/
   }
     ((Debug *)0)->Log();
   return 0; /*0x6ca440*/
@@ -1414,7 +1414,7 @@ CampaignScore * * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClas
 
   dy = 0; /*0x5541dd*/
   v13 = 0; /*0x5541e5*/
-  Text::Layout(g_FogOfWarState, a0, &dy, &v13, aP4); /*0x5541ed*/
+  ((Text *)(g_FogOfWarState))->Layout(a0, &dy, &v13, aP4); /*0x5541ed*/
   if ( a7 ) /*0x5541f8*/
   {
     v8 = (gamemd::AbstractClass *)((int)(aP4));
@@ -1751,7 +1751,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   v13 = 0; /*0x5c06f2*/
   ((Vector *)((int)v12))->Clear(); /*0x5c06fa*/
   v11[0] = (unsigned int)&off_7E1668; /*0x5c0703*/
-  BufferIOFileClass::Dtor(v11); /*0x5c070b*/
+  ((BufferIOFileClass *)(v11))->Dtor(); /*0x5c070b*/
   if ( !v6 ) /*0x5c0712*/
   {
     strcpy(v3, aVqa); /*0x5c0735*/
@@ -1761,7 +1761,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
     v13 = 0; /*0x5c075e*/
     ((Vector *)((int)v12))->Clear(); /*0x5c0766*/
     v11[0] = (unsigned int)&off_7E1668; /*0x5c076f*/
-    BufferIOFileClass::Dtor(v11); /*0x5c0777*/
+    ((BufferIOFileClass *)(v11))->Dtor(); /*0x5c0777*/
     if ( !v8 ) /*0x5c077e*/
       return 0; /*0x5c07be*/
   }

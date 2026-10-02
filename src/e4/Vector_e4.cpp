@@ -134,7 +134,7 @@ unsigned short * Vector::ToFacingMath(unsigned short *a2)
   __asm { fsub ds:dbl_7E2820 } /*0x41c31f*/
   __asm { fmul ds:dbl_7E2818 }
   *(unsigned short *)a2 = Math::RoundToInt(v3); /*0x41c338*/
-  return (int)a2; /*0x41c337*/
+  return (unsigned short *)((int)a2); /*0x41c337*/
 
 }
 } // namespace gamemd
@@ -167,7 +167,7 @@ int Vector::RemoveAt(int aP1)
   char *v4; // edx
 
   Vector_field_0x10 = (char *)((int)((char *)this->Vector_field_0x10));
-  result = aP1; /*0x45ae13*/
+  result = (gamemd::AbstractClass *)(aP1); /*0x45ae13*/
   if ( aP1 >= (gamemd::AbstractClass *)((int))Vector_field_0x10 ) /*0x45ae19*/
   {
     LOBYTE(result) = 0; /*0x45ae3c*/

@@ -373,7 +373,7 @@ int DropListClass::Open(int a1, void* a2, void* a3) {
     (*(void (**)(DropListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4b5178*/
     v12 = (int)(this->DropListClass_field_0x24); /*0x4b517b*/
     IDA_BYTE1(v12) |= 0x80u; /*0x4b517e*/
-    *a2 = v12; /*0x4b5181*/
+    *a2 = (void *)(v12); /*0x4b5181*/
   }
   return v12; /*0x4b5183*/
 }

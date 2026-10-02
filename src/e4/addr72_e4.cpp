@@ -225,7 +225,7 @@ void sub_728200()
   for ( i = -1; v1 < dword_8B4148; ++v1 ) /*0x728215*/
   {
     v2 = (int16_t *)*((unsigned int *)dword_8B413C + v1); /*0x72821e*/
-    v3 = CellCoord::To_CellObj(&dword_87F7E8, v2 + 18); /*0x72822f*/
+    v3 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(v2 + 18); /*0x72822f*/
     if ( InfantryClass::IsInBounds((int)v3) ) /*0x728233*/
     {
       v3[139] = ++i; /*0x72825f*/
@@ -301,7 +301,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
 
   v3 = a2; /*0x72ade5*/
   CCFileClass::Construct(&v17, Source); /*0x72adf0*/
-  v4 = (char *)CCFileClass::ReadEntireFile(&v17); /*0x72adfe*/
+  v4 = (char *)((CCFileClass *)(&v17))->ReadEntireFile(); /*0x72adfe*/
   if ( v4 ) /*0x72ae06*/
   {
     v5 = RA2_OPNEW(0x300u); /*0x72ae11*/
@@ -353,7 +353,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   ((Vector *)((int)v18))->Clear(); /*0x72aef1*/
   *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x72aefa*/
 // 0x431b80
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x72af07*/
+  return ((BufferIOFileClass *)((BufferIOFileClass *)&v17))->Dtor(); /*0x72af07*/
 }
 }
 // 0x72DAA0

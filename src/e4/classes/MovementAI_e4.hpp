@@ -22,7 +22,7 @@ struct MovementAI {
     int IsPathMovementAllowed();
     int IsProgressAtEnd();
     int MainFootClass(char a2);  // 0x514f70
-    int StepFootClass(int a2);  // 0x5164d0
+    int StepFootClass(int a1);  // 0x5164d0
 };
 
 } // namespace gamemd

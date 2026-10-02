@@ -295,9 +295,9 @@ int LoadGame::RestoreAudioState()
     do /*0x751763*/
     {
       NextAlt = ((AudioQueue *)((AudioQueue *)Next))->GetNextAlt(); /*0x751737*/
-      AudioController::Stop((AudioController *)(Next + 12)); /*0x751739*/
+      ((AudioController *)((AudioController *)(Next + 12)))->Stop(); /*0x751739*/
       LinkedList::Init((LinkedList *)Next); /*0x751740*/
-      PushFrontLinkedListAlt(dword_B1D3A4, Next); /*0x75174d*/
+      PushFrontLinkedListAlt((unsigned int *)(dword_B1D3A4), Next); /*0x75174d*/
       Next = NextAlt; /*0x751758*/
       --dword_B1D3A8; /*0x75175d*/
     }
@@ -321,7 +321,7 @@ int LoadGame::RestoreAudioState()
           v5 = (AudioMixer *)**((unsigned int **)g_VocAudioConfig + v18[0]); /*0x7517da*/
           if ( v5 ) /*0x7517de*/
           {
-            if ( AudioMixer::SetVolume(v5) ) /*0x7517e4*/
+            if ( ((AudioMixer *)(v5))->SetVolume() ) /*0x7517e4*/
             {
               v6 = v18[1]; /*0x7517f9*/
               v7 = v18[2]; /*0x7517fd*/
@@ -334,14 +334,14 @@ int LoadGame::RestoreAudioState()
                 if ( v8 ) /*0x75181c*/
                 {
                   ((AudioController *)((AudioController *)(v8 + 3)))->Init(); /*0x751823*/
-                  DListNode::InitEmpty((DListNode *)v9); /*0x75182a*/
+                  ((DListNode *)((DListNode *)v9))->InitEmpty(); /*0x75182a*/
                   v9[12] = 0; /*0x751831*/
                   v9[11] = 0; /*0x75183a*/
                   v9[8] = v6; /*0x75183d*/
                   v10 = v17; /*0x75183f*/
                   v9[9] = v7; /*0x751843*/
                   v9[10] = v10; /*0x751846*/
-                  StartAudioControllerAt(v15, v9 + 8, (int **)v9 + 3); /*0x75184d*/
+                  StartAudioControllerAt(v15,(unsigned int *)(v9 + 8), (int **)v9 + 3); /*0x75184d*/
                   InsertAfterDListNode((int)&stru_B1D290.isAliveFlag, v9); /*0x751859*/
                   v11 = ++dword_B1D3A8; /*0x751869*/
                   if ( dword_B1D3A8 > dword_B1D3AC ) /*0x751871*/
@@ -487,7 +487,7 @@ int sub_721040(int a1)
     {
       if ( byte_A8EBA5 ) /*0x721080*/
       {
-        ThemeClass::Play(&unk_A83D10, a1); /*0x721090*/
+        ((ThemeClass *)(&unk_A83D10))->Play(a1); /*0x721090*/
         v3 = v5; /*0x72109a*/
         if ( byte_A8EC74 ) /*0x7210a0*/
         {
@@ -501,7 +501,7 @@ int sub_721040(int a1)
                 ((Debug *)this)->Log(); /*0x7210da*/
                 if ( dword_A83D3C ) /*0x7210ea*/
                 {
-                  if ( byte_A83D21 && !AudioSample::IsBuffering(dword_A83D3C) ) /*0x7210f5*/
+                  if ( byte_A83D21 && !((AudioSample *)(dword_A83D3C))->IsBuffering() ) /*0x7210f5*/
                     ((Audio *)((unsigned int *)dword_A83D3C))->Release(); /*0x721104*/
                   if ( ((Audio *)((unsigned int *)dword_A83D3C))->IsSoundPlaying() != 0 ) /*0x721116*/
                   {

@@ -64,12 +64,12 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
     if ( v6 > 255.0 ) /*0x661169*/
       v6 = 255.0; /*0x66116d*/
     BYTE2(this->Color_field_00) = Math::RoundToInt(v6); /*0x661178*/
-    return this; /*0x66117b*/
+    return (unsigned char *)(this); /*0x66117b*/
   }
   else
   {
     BYTE2(this->Color_field_00) = Math::RoundToInt(0.0); /*0x661151*/
-    return this; /*0x661154*/
+    return (unsigned char *)(this); /*0x661154*/
   }
 
 }
@@ -111,12 +111,12 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
     if ( v6 > 255.0 ) /*0x661299*/
       v6 = 255.0; /*0x66129d*/
     BYTE2(this->Color_field_00) = Math::RoundToInt(v6); /*0x6612a8*/
-    return this; /*0x6612ab*/
+    return (unsigned char *)(this); /*0x6612ab*/
   }
   else
   {
     BYTE2(this->Color_field_00) = Math::RoundToInt(0.0); /*0x661282*/
-    return this; /*0x661285*/
+    return (unsigned char *)(this); /*0x661285*/
   }
 
 }
@@ -164,7 +164,7 @@ int Color::RGBFromFloat(IUnknown * aP1, float a3)
   this->Color_field_00 = v6; /*0x75f59e*/
   *((unsigned int *)this + 1) = v10; /*0x75f5a0*/
   *((unsigned int *)this + 2) = v8; /*0x75f5a3*/
-  return &this->Color_field_00; /*0x75f5ac*/
+  return (int)(&this->Color_field_00); /*0x75f5ac*/
 
 }
 } // namespace gamemd

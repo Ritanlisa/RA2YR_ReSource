@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct ScoreText {
     void Show(void * a2, void *a1 = 0);
-    void ShowAlt(void * a2, int a3);
+    void ShowAlt(const wchar_t **aP1, int a3);
 };
 
 } // namespace gamemd

@@ -115,7 +115,7 @@ LABEL_18:
       }
 LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass *)this));
       LOWORD(v4) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dad*/
-      return v4 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2);
+      return (gamemd::FootClass **)(v4 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2));
     case 1: /*0x416d64*/
       v11 = *((unsigned int *)this + 361); /*0x416f29*/
       if ( v11 ) /*0x416f31*/
@@ -129,12 +129,12 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass
           v12[1],
           v12[2]);
         *((unsigned int *)this + 47) = (unsigned int)((gamemd::FootClass **)(2)); /*0x416f8c*/
-        return 1; /*0x416f96*/
+        return (gamemd::FootClass **)(1); /*0x416f96*/
       }
       else
       {
         (*(void (**)(Carryall *, unsigned int, int))(this->Carryall_field_00 + 1156))(this, 0, 1); /*0x416f3a*/
-        return 1; /*0x416f40*/
+        return (gamemd::FootClass **)(1); /*0x416f40*/
       }
     case 2: /*0x416d64*/
       v13 = *((unsigned int *)this + 361); /*0x416fa3*/
@@ -144,7 +144,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass
       {
         ((Debug *)this)->Log(); /*0x416fce*/
         *((unsigned int *)this + 47) = (unsigned int)((gamemd::FootClass **)(0)); /*0x416fd6*/
-        return 1; /*0x416fe8*/
+        return (gamemd::FootClass **)(1); /*0x416fe8*/
       }
       v14 = *((unsigned int *)this + 361); /*0x416fe9*/
       if ( v14 /*0x417008*/
@@ -154,7 +154,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass
               *((unsigned int *)this + 361)) )
       {
         *((unsigned int *)this + 47) = (unsigned int)((gamemd::FootClass **)(0)); /*0x417012*/
-        return 1; /*0x417024*/
+        return (gamemd::FootClass **)(1); /*0x417024*/
       }
       if ( !*((unsigned int *)this + 413) ) /*0x417025*/
         WinAPI::Wrapper(-2147467261); /*0x417032*/
@@ -189,7 +189,7 @@ LABEL_44:
       {
         *((unsigned int *)this + 47) = 0; /*0x4170f0*/
         ((Debug *)this)->Log(); /*0x4170fa*/
-        return 1; /*0x417102*/
+        return (gamemd::FootClass **)(1); /*0x417102*/
       }
     case 3: /*0x416d64*/
       ((Debug *)this)->Log(); /*0x417163*/
@@ -242,7 +242,7 @@ LABEL_44:
         v25 = (int)(this->Carryall_field_00); /*0x4172c3*/
         *((unsigned char *)this + 1748) = 1; /*0x4172ca*/
         (*(void (**)(Carryall *, unsigned int, int))(v25 + 1156))(this, 0, 1); /*0x4172d1*/
-        return 1; /*0x4172da*/
+        return (gamemd::FootClass **)(1); /*0x4172da*/
       }
     default:
       goto LABEL_5;

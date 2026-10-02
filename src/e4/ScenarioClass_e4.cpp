@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Building_e4.hpp"
@@ -529,11 +530,11 @@ LABEL_21:
   v22 = 0; /*0x683cd1*/
   ((Vector *)((int)v21))->Clear(); /*0x683cd8*/
   *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x683ce1*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x683ce9*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x683cf2*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x683ce9*/
+  ((HashTable *)((INIClass *)&v19))->DestroyHashTableINIClass(); /*0x683cf2*/
   Debug::Log(); /*0x683cfd*/
   v11 = ((StringList *)((StringList *)&unk_A83D10))->Find(&((char *)&stru_82BA00)); /*0x683d0f*/
-  ThemeClass::Play((ThemeClass *)&unk_A83D10, v11); /*0x683d1a*/
+  ((ThemeClass *)((ThemeClass *)&unk_A83D10))->Play(v11); /*0x683d1a*/
   if ( !Scenario::LoadWithProgress(v4, a3) ) /*0x683d21*/
   {
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x683d32*/
@@ -608,7 +609,7 @@ int ScenarioClass::CleanupTemporary()
   LOBYTE(v1) = 1; /*0x683f4d*/
   ((AsyncIO *)(v1))->Read(); /*0x683f4f*/
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x683f5d*/
-    Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], 0); /*0x683f61*/
+    ((Tooltip *)(*(Tooltip **)&stru_88732C.__pad_1C[32]))->Enable(0); /*0x683f61*/
   ((Mouse *)((ScrollClass *)&stru_87F5F0.__pad_58[416]))->ReleaseCapture(); /*0x683f6b*/
   ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x683f79*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x683f86*/
@@ -690,8 +691,8 @@ void ScenarioClass_Construct()
       v8 = 0; /*0x68685b*/
       ((Vector *)((int)v7))->Clear(); /*0x686862*/
       *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x68686b*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x686873*/
-      HashTable::DestroyHashTableINIClass((INIClass *)&v5); /*0x68687c*/
+      ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x686873*/
+      ((HashTable *)((INIClass *)&v5))->DestroyHashTableINIClass(); /*0x68687c*/
       return Map; /*0x686881*/
     }
     else
@@ -701,8 +702,8 @@ void ScenarioClass_Construct()
       v8 = 0; /*0x6867e3*/
       ((Vector *)((int)v7))->Clear(); /*0x6867ea*/
       *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x6867f3*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x6867fb*/
-      HashTable::DestroyHashTableINIClass((INIClass *)&v5); /*0x686804*/
+      ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x6867fb*/
+      ((HashTable *)((INIClass *)&v5))->DestroyHashTableINIClass(); /*0x686804*/
       return 0; /*0x686809*/
     }
   }
@@ -801,7 +802,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
         _splitpath((const char *)g_ScenarioClass_Instance->fileName, 0, 0, Filename[0], 0);
         strcat(Filename[0], &stru_830620[54836]);
         ((FileClass *)(aP1))->SetFileName((IUnknown *)&Filename);
-        if ( CCFileClass::Open(aP1, 0) )
+        if ( ((CCFileClass *)(aP1))->Open(0) )
         {
           ((CCINIClass *)(var158))->Load(aP1, 0, 0);
           RulesClass::Addition(*(RulesClass **)&DataGlobal_87F8E4[30972]);
@@ -809,7 +810,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
         CCFileClass::Reset(aP1);
       }
       ((FileClass *)(aP1))->SetFileName((IUnknown *)&stru_830620[37124]);
-      if ( CCFileClass::Open(aP1, 0) )
+      if ( ((CCFileClass *)(aP1))->Open(0) )
       {
         ((CCINIClass *)(var158))->Load(aP1, 0, 0);
         *(unsigned short *)g_ScenarioClass_Instance->name = 0;
@@ -1088,7 +1089,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
     }
     Instance = LoadProgressMgr::GetInstance();
     LoadingScreen::Render(Instance);
-    Multiplayer::ShowProgress(&g_GameMode_Current, 3);
+    ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(3);
     if ( !v51 )
       break;
     v51 = 0;
@@ -1096,7 +1097,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
     v69 = 0;
     ((Vector *)((int)v65))->Clear();
     *(unsigned int *)aP1[0].__pad_0 = &off_7E1668;
-    BufferIOFileClass::Dtor(aP1);
+    ((BufferIOFileClass *)(aP1))->Dtor();
     HashTable_flat::DestroyHashTableINIClass((void **)var158);
   }
   SwizzleManager::ConvertWrapper((int)&g_OverlayTypeConfig[18712]);
@@ -1117,11 +1118,11 @@ ScenarioClass * * ScenarioClass_LoadMap()
                                 (uint8_t *)&unk_818658,
                                 0);
   LoadTheaterClassMIX(g_ScenarioClass_Instance->theater);
-  Multiplayer::ShowProgress(&g_GameMode_Current, 30);
-  SidebarClass::ReadButtonList(*(RulesClass **)&DataGlobal_87F8E4[30972]);
-  Multiplayer::ShowProgress(&g_GameMode_Current, 31);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(30);
+  ((SidebarClass *)(*(RulesClass **)&DataGlobal_87F8E4[30972]))->ReadButtonList();
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(31);
   ResetRules(*(RulesClass **)&DataGlobal_87F8E4[30972]);
-  Multiplayer::ShowProgress(&g_GameMode_Current, 35);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(35);
   Event::Dispatch();
   char * v33 = *(char **)&DataGlobal_87F8E4[30564];
   v56 = (CCINIClass *)g_ScenarioClass_Instance;
@@ -1142,7 +1143,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
   }
   Event::Dispatch();
   RulesClass::Addition(*(RulesClass **)&DataGlobal_87F8E4[30972]);
-  Multiplayer::ShowProgress(&g_GameMode_Current, 45);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(45);
   v38 = g_ScenarioClass_Instance;
   int v39 = 0;
   *(unsigned int *)&g_NetworkPlayerBuffer[4460] = 0;
@@ -1171,7 +1172,7 @@ LABEL_124:
       v69 = 0;
       ((Vector *)((int)v65))->Clear();
       *(unsigned int *)aP1[0].__pad_0 = &off_7E1668;
-      BufferIOFileClass::Dtor(aP1);
+      ((BufferIOFileClass *)(aP1))->Dtor();
       HashTable_flat::DestroyHashTableINIClass((void **)var158);
       return 0;
     }
@@ -1195,10 +1196,10 @@ LABEL_124:
     if ( !MixFile::LoadSide(v42) )
       goto LABEL_124;
   }
-  Multiplayer::ShowProgress(&g_GameMode_Current, 50);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(50);
   if ( !ScenarioClass::ReadMapINI((int)g_ScenarioClass_Instance, a3, (int)a2) )
     goto LABEL_124;
-  Multiplayer::ShowProgress(&g_GameMode_Current, 58);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(58);
   if ( g_GameMode_Current )
   {
     g_ScenarioClass_Instance->playerSideIndex = v42;
@@ -1242,13 +1243,13 @@ LABEL_124:
   CCINIClass::ReadTypeList(&DataGlobal_87F8E4[30788], (CCINIClass *)1);
   CCINIClass::ReadTypeList(a2->__pad_0, 0);
   Helper_6F2040();
-  Multiplayer::ShowProgress(&g_GameMode_Current, 60);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(60);
   ScenarioClass::LoadMapData((int *)&DataGlobal_87F7E8, a2);
   Event::Dispatch();
   ScenarioClass::LoadWaypoints(a2->__pad_0);
   BulletTypeClass::ReadTrailerAnim();
   MapClass::MarkForRedraw(&DataGlobal_87F7E8, 2);
-  Multiplayer::ShowProgress(&g_GameMode_Current, 70);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(70);
   Event::Dispatch();
   ReadOverlayINI(a2);
   Event::Dispatch();
@@ -1261,20 +1262,20 @@ LABEL_124:
   InitializeVeinholeSystem(1);
   BuildingClass::ClearOccupancyData();
   BuildingClass::ClearFactoryData();
-  Multiplayer::ShowProgress(&g_GameMode_Current, 72);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(72);
   RadarClass::RecreateSurface((int)&DataGlobal_87F7E8, v42);
   PlaceScenarioUnits(a2->__pad_0, (int)v38);
   Event::Dispatch();
-  Multiplayer::ShowProgress(&g_GameMode_Current, 74);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(74);
   PlaceAircraftFromINI(a2->__pad_0, (int)a2);
   Event::Dispatch();
   PlaceScenarioInfantry(a2->__pad_0);
   Event::Dispatch();
-  Multiplayer::ShowProgress(&g_GameMode_Current, 76);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(76);
   byte_829AE4 = 0;
   Scenario::ReadTeams(a2);
   Event::Dispatch();
-  Multiplayer::ShowProgress(&g_GameMode_Current, 78);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(78);
   byte_829AE4 = 1;
   Event::Dispatch();
   UnitClass::ReadINI(a2->__pad_0);
@@ -1285,20 +1286,20 @@ LABEL_124:
     {
       CCFileClass::Reset(aP1);
       ((FileClass *)(aP1))->SetFileName((IUnknown *)&stru_830620[54640]);
-      if ( CCFileClass::Open(aP1, 0) == 1 )
+      if ( ((CCFileClass *)(aP1))->Open(0) == 1 )
       {
         ((CCINIClass *)(var158))->Load(aP1, 0, 0);
         RulesClass::Addition(*(RulesClass **)&DataGlobal_87F8E4[30972]);
       }
     }
   }
-  Multiplayer::ShowProgress(&g_GameMode_Current, 82);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(82);
   Event::Dispatch();
   DataGlobal_87F8E4.field_38 = MapClass::PostProcessReveal(&DataGlobal_87F7E8, 0);
-  Multiplayer::ShowProgress(&g_GameMode_Current, 86);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(86);
   Event::Dispatch();
   CCFileClass::Create(dword_89C3B0);
-  Multiplayer::ShowProgress(&g_GameMode_Current, 90);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(90);
   Event::Dispatch();
   if ( g_GameMode_Current && !a1 )
   {
@@ -1312,7 +1313,7 @@ LABEL_124:
   }
   Event::Dispatch();
   SwizzleManager::ConvertWrapper((int)&g_OverlayTypeConfig[18712]);
-  Multiplayer::ShowProgress(&g_GameMode_Current, 96);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(96);
   Event::Dispatch();
   ProcessExpiredPointers();
   if ( g_GameMode_Current )
@@ -1322,7 +1323,7 @@ LABEL_124:
   int v50 = v49 - 1;
   ProcessDataBuildingClass();
   *(unsigned int *)&g_NetworkPlayerBuffer[4464] = v50;
-  Multiplayer::ShowProgress(&g_GameMode_Current, 98);
+  ((Multiplayer *)(&g_GameMode_Current))->ShowProgress(98);
   Event::Dispatch();
   (*(void (**)(char *))(*(unsigned int *)&DataGlobal_87F8E4[4392] + 12))(&DataGlobal_87F8E4[4392]);
   if ( (g_ScenarioClass_Instance->nextScenario[0] & 0x1000) != 0 )
@@ -1333,7 +1334,7 @@ LABEL_124:
   v69 = 0;
   ((Vector *)((int)v65))->Clear();
   *(unsigned int *)aP1[0].__pad_0 = &off_7E1668;
-  BufferIOFileClass::Dtor(aP1);
+  ((BufferIOFileClass *)(aP1))->Dtor();
   HashTable_flat::DestroyHashTableINIClass((void **)var158);
   return 1;
 }

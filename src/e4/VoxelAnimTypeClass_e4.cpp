@@ -38,7 +38,7 @@
 
 // 0x74AD80
 namespace gamemd {
-VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source, void *a2, void *a3)
+VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
 {
 
   int v3; // eax
@@ -310,7 +310,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v27 = (unsigned int *)(AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)((char *)&Destination))); /*0x74b349*/
+    v27 = (unsigned int *)(AnimTypeClass::FindOrCreate((char *)((gamemd::AbstractClass *)((char *)&Destination)))); /*0x74b349*/
   }
   else
   {
@@ -327,7 +327,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v29 = (unsigned int *)(AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)((char *)&Destination))); /*0x74b388*/
+    v29 = (unsigned int *)(AnimTypeClass::FindOrCreate((char *)((gamemd::AbstractClass *)((char *)&Destination)))); /*0x74b388*/
   }
   else
   {
@@ -343,7 +343,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v30 = (unsigned int *)(AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)((char *)&Destination))); /*0x74b3c7*/
+    v30 = (unsigned int *)(AnimTypeClass::FindOrCreate((char *)((gamemd::AbstractClass *)((char *)&Destination)))); /*0x74b3c7*/
   }
   else
   {
@@ -392,30 +392,30 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned char *)(v4 + 662) = v37; /*0x74b4ad*/
   if ( v37 ) /*0x74b4b3*/
   {
-    TechnoType = (unsigned int *)((INIEntry *)((INIEntry *)a2))->GetTechnoType((uint8_t *)(v4 + 36), aSharesource); /*0x74b4c1*/
+    TechnoType = (unsigned int *)((INIEntry *)((INIEntry *)a2))->GetTechnoType((uint8_t *)(v4 + 36),(uint8_t *)(aSharesource)); /*0x74b4c1*/
     if ( !TechnoType ) /*0x74b4ca*/
     {
       *(unsigned int *)(v4 + 176) = 0; /*0x74b555*/
       *(unsigned int *)(v4 + 180) = 0; /*0x74b55b*/
-      return 1; /*0x74b569*/
+      return (gamemd::VoxelAnimTypeClass *)(1); /*0x74b569*/
     }
     if ( v56 ) /*0x74b4d6*/
     {
       *(unsigned int *)(v4 + 176) = TechnoType[44]; /*0x74b4de*/
       *(unsigned int *)(v4 + 180) = TechnoType[45]; /*0x74b4ea*/
-      return 1; /*0x74b4f8*/
+      return (gamemd::VoxelAnimTypeClass *)(1); /*0x74b4f8*/
     }
     if ( v55 ) /*0x74b501*/
     {
       *(unsigned int *)(v4 + 176) = TechnoType[46]; /*0x74b509*/
       *(unsigned int *)(v4 + 180) = TechnoType[47]; /*0x74b515*/
-      return 1; /*0x74b523*/
+      return (gamemd::VoxelAnimTypeClass *)(1); /*0x74b523*/
     }
     if ( v54 ) /*0x74b52c*/
     {
       *(unsigned int *)(v4 + 176) = TechnoType[48]; /*0x74b538*/
       *(unsigned int *)(v4 + 180) = TechnoType[49]; /*0x74b544*/
-      return 1; /*0x74b552*/
+      return (gamemd::VoxelAnimTypeClass *)(1); /*0x74b552*/
     }
   }
   else
@@ -438,9 +438,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     Destination.MaxFDelta = 0; /*0x74b5e9*/
     ((Vector *)((int)&Destination.MinDelay))->Clear(); /*0x74b5f1*/
     Destination.Header[0] = (int)&off_7E1668; /*0x74b5fa*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&Destination); /*0x74b602*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&Destination))->Dtor(); /*0x74b602*/
   }
-  return 1; /*0x74b4f2*/
+  return (gamemd::VoxelAnimTypeClass *)(1); /*0x74b4f2*/
 
 }
 }
@@ -464,12 +464,12 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
   ((Power *)((Power *)a2))->FlagProcess(v5); /*0x74b6c3*/
   Power::TimerProcess(this->VoxelIndex); /*0x74b6d1*/
   Power::TimerProcess(this->Duration); /*0x74b6df*/
-  Checksummer::Add_double((Checksummer *)a2, this->Elasticity[0], this->Elasticity[1]); /*0x74b6f4*/
-  Checksummer::Add_double((Checksummer *)a2, this->MinAngularVelocity[0], this->MinAngularVelocity[1]); /*0x74b709*/
-  Checksummer::Add_double((Checksummer *)a2, this->MaxAngularVelocity[0], this->MaxAngularVelocity[1]); /*0x74b71e*/
-  Checksummer::Add_double((Checksummer *)a2, this->MinZVel[0], this->MinZVel[1]); /*0x74b733*/
-  Checksummer::Add_double((Checksummer *)a2, this->MaxZVel[0], this->MaxZVel[1]); /*0x74b748*/
-  Checksummer::Add_double((Checksummer *)a2, this->MaxXYVel[0], this->MaxXYVel[1]); /*0x74b75d*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->Elasticity[0], this->Elasticity[1]); /*0x74b6f4*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->MinAngularVelocity[0], this->MinAngularVelocity[1]); /*0x74b709*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->MaxAngularVelocity[0], this->MaxAngularVelocity[1]); /*0x74b71e*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->MinZVel[0], this->MinZVel[1]); /*0x74b733*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->MaxZVel[0], this->MaxZVel[1]); /*0x74b748*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->MaxXYVel[0], this->MaxXYVel[1]); /*0x74b75d*/
   LOBYTE(v6) = this->IsMeteor; /*0x74b762*/
   ((Power *)((Power *)a2))->FlagProcess(v6); /*0x74b76b*/
   Power::TimerProcess(this->SpawnCount); /*0x74b779*/
@@ -562,7 +562,7 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)aP0), aP1); /*0x74b81b*/
+  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)aP0),(gamemd::ObjectTypeClass *)(aP1)); /*0x74b81b*/
   if ( result >= 0 ) /*0x74b822*/
   {
     if ( aP0 ) /*0x74b82a*/

@@ -255,7 +255,7 @@ AbstractClass * Voxel::RenderFrame(void *a1_1)
   LODWORD(v25[2]) = v19; /*0x754707*/
   LODWORD(v25[3]) = v26; /*0x75470b*/
   qmemcpy(this, v25, 0x18u); /*0x75470f*/
-  return this; /*0x754711*/
+  return (gamemd::AbstractClass *)(this); /*0x754711*/
 
 }
 }
@@ -467,7 +467,7 @@ int Voxel::Projection_Setup()
   {
     Matrix3x4::Identity(&v76); /*0x755378*/
     v54 = (double)SLODWORD(v65) * 0.024542969; /*0x75538f*/
-    Matrix2D::Rotate(v76.m_Data, v54); /*0x755392*/
+    ((Matrix2D *)(v76.m_Data))->Rotate(v54); /*0x755392*/
     v62 = 1065353216; /*0x7553a7*/
     v63 = 0; /*0x7553af*/
     v64 = 0; /*0x7553b7*/
@@ -556,7 +556,7 @@ int Voxel::Projection_Setup()
   v55 = -dbl_B43F00; /*0x7558e6*/
   ((Matrix3x3 *)(stru_B44318.m_Data))->RotateX(v55); /*0x7558e9*/
   v56 = -dbl_B44498; /*0x7558f7*/
-  Matrix2D::Rotate(stru_B44318.m_Data, v56); /*0x7558ff*/
+  ((Matrix2D *)(stru_B44318.m_Data))->Rotate(v56); /*0x7558ff*/
   v52 = &stru_B450B8; /*0x755904*/
   do /*0x755919*/
     result = Matrix3x4::Identity(v52++); /*0x75590b*/
@@ -1249,7 +1249,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
     v31 = this->Voxel_field_0xC; /*0x75c55b*/
     *(unsigned int *)this->__pad_30 = v26[2]; /*0x75c562*/
     v27 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(this->Voxel_field_0x28); /*0x75c565*/
-    if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v27, v31) ) /*0x75c56c*/
+    if ( !(uint8_t)((CrateClass *)((CrateClass *)v27))->ProcessPickup(v31) ) /*0x75c56c*/
     {
       v28 = this->Voxel_field_0xC; /*0x75c575*/
       if ( !*(unsigned char *)(v28 + 129) ) /*0x75c578*/
@@ -1370,7 +1370,7 @@ CellStruct * * Voxel::renderSection(ObjectClass * aP1)
   int v7; // ecx
   int v8; // edx
 
-  v3 = (int16_t *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], aP1); /*0x75f4cd*/
+  v3 = (int16_t *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(aP1); /*0x75f4cd*/
   v4 = *(unsigned int *)&this->__pad_134[188]; /*0x75f4d2*/
   v5 = &this->__pad_134[188]; /*0x75f4d8*/
   aP1 = v3; /*0x75f4de*/
@@ -2109,7 +2109,7 @@ void* Voxel::FaceBlit()
         LOWORD(v7) = Math::RoundToInt(v5); /*0x7611b5*/
         v30 = v7; /*0x7611c0*/
         LOWORD(v8) = Math::RoundToInt(v5); /*0x7611cd*/
-        v9 = Coord3D::Set(&v49, v8, v30, v33); /*0x7611e0*/
+        v9 = ((Coord3D *)(&v49))->Set(v8, v30, v33); /*0x7611e0*/
         v10 = *v9; /*0x7611e2*/
         v11 = v9[1]; /*0x7611e4*/
         v50.Coord3D_field_0x08 = v9[2]; /*0x7611ea*/
@@ -2119,7 +2119,7 @@ void* Voxel::FaceBlit()
         if ( *(void **)v36 != v39 ) /*0x761222*/
         {
           *(unsigned int *)v36 = *(unsigned int *)((CellStruct *)((CellStruct *)&v40))->Set(v13, v12 / 256); /*0x761247*/
-          v14 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v36); /*0x76124b*/
+          v14 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v36); /*0x76124b*/
           v15 = *(unsigned int *)v2->__pad_0; /*0x761250*/
           *(unsigned int *)v38 = v14; /*0x761253*/
           if ( (*(int (**)(Voxel *, int16_t *))(v15 + 16))(v2, v38) == -1 ) /*0x761264*/
@@ -2162,7 +2162,7 @@ void* Voxel::FaceBlit()
         LOWORD(v21) = Math::RoundToInt(v19); /*0x7613e2*/
         v31 = v21; /*0x7613ed*/
         LOWORD(v22) = Math::RoundToInt(v19); /*0x7613fa*/
-        v49 = *(Coord3D *)Coord3D::Set(&v50, v22, v31, v34); /*0x761411*/
+        v49 = *(Coord3D *)((Coord3D *)(&v50))->Set(v22, v31, v34); /*0x761411*/
         v40 = *(float *)((CellStruct *)((CellStruct *)&v42))->Set(*(unsigned int *)v49.__pad_0 / 256, v49.Coord3D_field_0x04 / 256); /*0x76144f*/
         if ( *(unsigned int *)v36 != LODWORD(v40) ) /*0x761453*/
         {
@@ -2170,7 +2170,7 @@ void* Voxel::FaceBlit()
                                         (CellStruct *)&v43,
                                         *(unsigned int *)v49.__pad_0 / 256,
                                         v49.Coord3D_field_0x04 / 256);
-          v23 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v36); /*0x76149c*/
+          v23 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v36); /*0x76149c*/
           v24 = *(unsigned int *)v2->__pad_0; /*0x7614a1*/
           v39 = v23; /*0x7614a4*/
           if ( (*(int (**)(Voxel *, void **))(v24 + 16))(v2, &v39) == -1 ) /*0x7614b5*/
@@ -2184,7 +2184,7 @@ void* Voxel::FaceBlit()
       LOWORD(v27) = Math::RoundToInt(v25); /*0x7614fd*/
       v32 = v27; /*0x761508*/
       LOWORD(v28) = Math::RoundToInt(v25); /*0x761515*/
-      v49 = *(Coord3D *)Coord3D::Set(&v51, v28, v32, v35); /*0x76152c*/
+      v49 = *(Coord3D *)((Coord3D *)(&v51))->Set(v28, v32, v35); /*0x76152c*/
       v41 = *(unsigned int *)((CellStruct *)((CellStruct *)&v44))->Set(*(unsigned int *)v49.__pad_0 / 256, v49.Coord3D_field_0x04 / 256); /*0x76156e*/
       if ( (uint8_t)Coord::Compare2D((Coord *)v37, &v41) ) /*0x761572*/
       {
@@ -2642,7 +2642,7 @@ int Voxel::SectionProject(int * a2, int a3)
   Matrix3x4::Identity(&v89); /*0x761dd2*/
   __asm { fld [esp+0C8h+var_B4+4] } /*0x761dd7*/
   __asm { fstp [esp+0CCh+var_D0+4]; float }
-  Matrix2D::Rotate(v89.m_Data, v55); /*0x761de6*/
+  ((Matrix2D *)(v89.m_Data))->Rotate(v55); /*0x761de6*/
   v25 = TransformMatrix3x4Point(&v56, (float *)v89.m_Data, &v76); /*0x761dfb*/
   v76 = *v25; /*0x761e02*/
   v77 = v25[1]; /*0x761e09*/
@@ -3225,7 +3225,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   Matrix3x4::Identity(&v89); /*0x762853*/
   __asm { fld [esp+0C8h+var_B4+4] } /*0x762858*/
   __asm { fstp [esp+0CCh+var_D0+4]; float }
-  Matrix2D::Rotate(v89.m_Data, v55); /*0x762867*/
+  ((Matrix2D *)(v89.m_Data))->Rotate(v55); /*0x762867*/
   v24 = TransformMatrix3x4Point(&v56, (float *)v89.m_Data, &v74); /*0x76287c*/
   v74 = *v24; /*0x762883*/
   v75 = v24[1]; /*0x76288f*/

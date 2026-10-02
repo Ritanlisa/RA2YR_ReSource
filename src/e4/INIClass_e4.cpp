@@ -79,10 +79,10 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
 LABEL_9:
   v8 = *((unsigned int *)this + 11); /*0x5268a4*/
   if ( !v8 ) /*0x5268aa*/
-    return unk_B7882C; /*0x5268aa*/
+    return (gamemd::ObjectClass **)(unk_B7882C); /*0x5268aa*/
   v9 = *(unsigned int **)((char *)this + 56); /*0x5268ac*/
   if ( v9 && *v9 == v5 ) /*0x5268b5*/
-    return *(unsigned int *)(*((unsigned int *)this + 14) + 4); /*0x526933*/
+    return (gamemd::ObjectClass **)(*(unsigned int *)(*((unsigned int *)this + 14) + 4)); /*0x526933*/
   if ( !*((unsigned char *)this + 52) ) /*0x5268b7*/
   {
     qsort(*(void **)((char *)this + 40), v8, 8u, CompareFunc4Int); /*0x5268c8*/
@@ -92,7 +92,7 @@ LABEL_9:
   v10 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 11))));
   v11 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 10))));
   if ( v10 <= 0 ) /*0x5268df*/
-    return unk_B7882C; /*0x5268df*/
+    return (gamemd::ObjectClass **)(unk_B7882C); /*0x5268df*/
   while ( 1 ) /*0x5268ec*/
   {
     v12 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*(unsigned int *)(v11 + 8 * ((unsigned int)(v10)/ 2)))));
@@ -102,7 +102,7 @@ LABEL_9:
     (unsigned int)(v10)/= 2; /*0x5268f8*/
 LABEL_19:
     if ( v10 <= 0 ) /*0x52690a*/
-      return unk_B7882C; /*0x52690a*/
+      return (gamemd::ObjectClass **)(unk_B7882C); /*0x52690a*/
   }
   if ( v12 != (gamemd::ObjectClass **)(v16) ) /*0x5268fc*/
   {
@@ -113,7 +113,7 @@ LABEL_19:
   if ( v13 ) /*0x52691f*/
   {
     *((unsigned int *)this + 14) = v13; /*0x526921*/
-    return *(unsigned int *)(*((unsigned int *)this + 14) + 4); /*0x526921*/
+    return (gamemd::ObjectClass **)(*(unsigned int *)(*((unsigned int *)this + 14) + 4)); /*0x526921*/
   }
   return (gamemd::ObjectClass **)(unk_B7882C);
 
@@ -170,7 +170,7 @@ LABEL_12:
   v9 = (int *)((gamemd::VoxelStruct **)((int *)&unk_B7882C));
 LABEL_14: v10 = (int)((gamemd::VoxelStruct **)(*v9));
   if ( v10 ) /*0x526a0a*/
-    return *(unsigned int *)(v10 + 48); /*0x526a14*/
+    return (gamemd::VoxelStruct **)(*(unsigned int *)(v10 + 48)); /*0x526a14*/
   return 0; /*0x526a0f*/
 
 }
@@ -389,13 +389,13 @@ int INIClass::ReadCoord(double aP1, int a2, INIClass * aP2, int a4)
 
 // 0x4757D0
 namespace gamemd {
-int INIClass::GetBool(INIClass * aP1, unsigned char * a2, int a4)
+int INIClass::GetBool(uint8_t *aP1, uint8_t *a2, int a4)
 {
 
   int result; // eax
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( !INIClass::GetString(this,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Destination, 128) ) /*0x4757f2*/
+  if ( !INIClass::GetString(this,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Destination), 128) ) /*0x4757f2*/
     return a4; /*0x4757f2*/
   result = LookupNameIndex((ObjectClass *)Destination); /*0x4757ff*/
   if ( result == -1 ) /*0x475807*/

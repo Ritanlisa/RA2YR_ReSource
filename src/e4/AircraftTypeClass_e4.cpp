@@ -186,7 +186,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   v12 = (gamemd::AnimTypeClass **)((char)((gamemd::AnimTypeClass **)(*(unsigned char *)(v4 + 3596))));
   *(unsigned char *)(v4 + 3595) = v11; /*0x41cd6e*/
   *(unsigned char *)(v4 + 3596) = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)(v4 + 36), aFlyback, v12); /*0x41cd83*/
-  return 1; /*0x41cd8a*/
+  return (gamemd::AnimTypeClass **)(1); /*0x41cd8a*/
 }
 }
 // 0x41CFE0
@@ -215,7 +215,7 @@ AircraftTypeClass * AircraftTypeClass::ddtor(void ** Block, char a2)
   TechnoTypeClass::DTOR((int)Block); /*0x41d051*/
   if ( (a2 & 1) != 0 ) /*0x41d05b*/
     __3_YAXPAX_Z(Block); /*0x41d05e*/
-  return (void **)Block; /*0x41d068*/
+  return (AircraftTypeClass *)((void **)Block); /*0x41d068*/
 
 }
 // 0x41CB20

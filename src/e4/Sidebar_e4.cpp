@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
@@ -209,7 +211,7 @@ LABEL_55:
         else
         {
           Status = ((HouseClass *)(a1))->GetStatus(0); /*0x4fa602*/
-          Sidebar::ActivateTab((int *)&stru_87F5F0.__pad_58[416], Status); /*0x4fa60d*/
+          ((Sidebar *)((int *)&stru_87F5F0.__pad_58[416]))->ActivateTab(Status); /*0x4fa60d*/
           return 0; /*0x4fa615*/
         }
       }
@@ -261,7 +263,7 @@ LABEL_55:
       result = 3; /*0x4fa7c4*/
       break; /*0x4fa7cd*/
     default:
-      return 3;
+      return (gamemd::AbstractClass **)(3);
   }
   return result; /*0x4fa4a0*/
 
@@ -329,9 +331,9 @@ CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
               (const char *)(*(int (**)(unsigned int))(**((unsigned int **)dword_87F65C + v2) + 4))(*((unsigned int *)dword_87F65C + v2)),
               this) )
     {
-      result = dword_87F668; /*0x533fa1*/
+      result = (gamemd::CreateTeamCommand **)(dword_87F668); /*0x533fa1*/
       if ( ++v2 >= dword_87F668 ) /*0x533fa9*/
-        return result; /*0x533fa9*/
+        return (gamemd::CreateTeamCommand **)(result); /*0x533fa9*/
     }
     return (*(int (**)(unsigned int, unsigned int))(**((unsigned int **)dword_87F65C + v2) + 32))( /*0x533fbc*/
              *((unsigned int *)dword_87F65C + v2),
@@ -382,7 +384,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
         Vector4::EraseAt_Copy((Vector4 *)v4, v7); /*0x63637c*/
       __3_YAXPAX_Z(Block); /*0x636386*/
       if ( !v4->Array_field_0x10 && v4 ) /*0x636397*/
-        FactoryClass::RemoveFromArrays((FactoryClass *)v4, 1); /*0x63639d*/
+        ((FactoryClass *)((FactoryClass *)v4))->RemoveFromArrays(1); /*0x63639d*/
     }
   }
   if ( v2 ) /*0x6363ad*/
@@ -393,7 +395,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     if ( (uint8_t)House::IsHumanPlayer((House *)v8) && dword_A83D4C ) /*0x6363ce*/
       Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x6363d0*/
     DecFactoryClassCounter((unsigned int)Object_field_0x30); /*0x6363d5*/
-    VectorClass::EraseAt((VectorClass *)&stru_AC4B30.__pad_EC[36], (int)&Block); /*0x6363e4*/
+    ((VectorClass *)((VectorClass *)&stru_AC4B30.__pad_EC[36]))->EraseAt((int)&Block); /*0x6363e4*/
   }
   Sidebar_field_0x4 = Block->Sidebar_field_0x4; /*0x6363ec*/
   (*(void (**)(int *))(Block->Sidebar_field_0x4[0] + 12))(Block->Sidebar_field_0x4); /*0x6363f1*/
@@ -422,9 +424,9 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     if ( v12 ) /*0x63648a*/
     {
       v17 = *(unsigned int *)Block->__pad_0; /*0x63648e*/
-      LeaderIndex = TeamClass::GetLeaderIndex((TeamClass *)v17); /*0x636492*/
+      LeaderIndex = ((TeamClass *)((TeamClass *)v17))->GetLeaderIndex(); /*0x636492*/
       DecFactoryClassCounter(LeaderIndex); /*0x636499*/
-      VectorClass::EraseAt((VectorClass *)&stru_AC4B30.__pad_EC[36], (int)&v17); /*0x6364a8*/
+      ((VectorClass *)((VectorClass *)&stru_AC4B30.__pad_EC[36]))->EraseAt((int)&v17); /*0x6364a8*/
     }
     (*(void (**)(int *))(*Sidebar_field_0x4 + 12))(Block->Sidebar_field_0x4); /*0x6364b1*/
     Block->__pad_70[40] = 0; /*0x6364b7*/
@@ -461,7 +463,7 @@ void Sidebar::RemoveItem(int a2, void *a2_2)
   Sidebar_field_0x10 = (char *)this->Sidebar_field_0x10; /*0x63f040*/
   v3 = a2; /*0x63f043*/
   if ( a2 >= (int)Sidebar_field_0x10 ) /*0x63f049*/
-    return 0; /*0x63f06c*/
+    return (unsigned int)(0); /*0x63f06c*/
   v4 = Sidebar_field_0x10 - 1; /*0x63f04b*/
   this->Sidebar_field_0x10 = v4; /*0x63f04e*/
   if ( a2 < (int)v4 ) /*0x63f051*/
@@ -670,7 +672,7 @@ ObjectClass * * Sidebar::Render(char a2)
       while ( v11 < *(unsigned int *)this->__pad_1534 ); /*0x63fda0*/
     }
   }
-  LOBYTE(result) = RadarClass::Destru_vt16((RadarClass *)this, a2); /*0x63fdac*/
+  LOBYTE(result) = ((RadarClass *)((RadarClass *)this))->Destru_vt16(a2); /*0x63fdac*/
   return result; /*0x63fdb1*/
 
 }

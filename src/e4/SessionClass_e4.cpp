@@ -143,25 +143,25 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
   if ( *((unsigned int *)this + 2)
     || ((Debug::Log_0(aLoadmdMix), (v2 = __2_YAPAXI_Z(0x28u)) == 0)
       ? (result = 0)
-      : (result = MixFileClass::FromFile(v2, aLoadmdMix_0, (int)dword_886980)),
+      : (result = ((MixFileClass *)(v2))->FromFile(aLoadmdMix_0, (int)dword_886980)),
         (*((unsigned int *)this + 2) = result) != 0) )
   {
     if ( *((unsigned int *)this + 1)
       || ((v4 = __2_YAPAXI_Z(0x28u)) == 0
         ? (result = 0)
-        : (result = MixFileClass::FromFile(v4, aLoadMix, (int)dword_886980)),
+        : (result = ((MixFileClass *)(v4))->FromFile(aLoadMix, (int)dword_886980)),
           (*((unsigned int *)this + 1) = result) != 0) )
     {
       if ( ((unsigned int *)(g_GameMode_Current))[0] ) /*0x552d36*/
       {
         PlayerSide = (void *)((SessionClass *)(*(unsigned int *)Game_PlayerInfoArray))->GetPlayerSide(); /*0x552d51*/
-        return PaletteManager::Load(PlayerSide); /*0x552d58*/
+        return PaletteManager::Load((int)(PlayerSide)); /*0x552d58*/
       }
       else
       {
         v6 = *((unsigned int *)g_ScenarioClass_Instance + 3374); /*0x72b3e8*/
         if ( !dword_B0FB80 ) /*0x72b3ea*/
-          LoadPaletteSimple((char *)(off_844BAC), &dword_B0FB7C, &dword_B0FB80); /*0x72b3fc*/
+          LoadPaletteSimple((char *)(off_844BAC),(int *)(&dword_B0FB7C), &dword_B0FB80); /*0x72b3fc*/
         if ( !dword_B0FB88 ) /*0x72b408*/
         {
           if ( v6 ) /*0x72b40c*/
@@ -178,7 +178,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
         }
         result = (unsigned int *)dword_B0FB90; /*0x72b440*/
         if ( !dword_B0FB90 ) /*0x72b448*/
-          return (unsigned int *)LoadPaletteSimple((char *)(off_844BBC), &dword_B0FB8C, &dword_B0FB90); /*0x72b45a*/
+          return (gamemd::MixFileClass *)((unsigned int *)LoadPaletteSimple((char *)(off_844BBC),(int *)(&dword_B0FB8C), &dword_B0FB90)); /*0x72b45a*/
       }
     }
   }
@@ -233,7 +233,7 @@ LABEL_14:
     if ( ++v9 >= *(unsigned int *)(v8 + 100) ) /*0x5ae094*/
       goto LABEL_17; /*0x5ae094*/
   }
-  v11 = StringTable::Find((StringTable *)pad_50, *(const char ***)(v10 + 4 * v9)); /*0x5ae037*/
+  v11 = ((StringTable *)((StringTable *)pad_50))->Find(*(const char ***)(v10 + 4 * v9)); /*0x5ae037*/
   ((String *)((String *)&((unsigned int *)(v13.m_3))[1]))->AssignFromPtr((const char **)(v11 + 4)); /*0x5ae041*/
   ((String *)((String *)&((unsigned int *)(v13.m_3))[1]))->ToLower(); /*0x5ae04a*/
   ((String *)(&v13))->AssignFromPtr((const char **)(aP2)); /*0x5ae058*/
@@ -251,7 +251,7 @@ LABEL_14:
   DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5ae0c8*/
 LABEL_17:
   ((SessionClass *)((SessionClass *)pad_50))->Destruct(); /*0x5ae0cd*/
-  return strlen((const char *)(aP1 + 4700)) != 0; /*0x5adf6f*/
+  return (gamemd::MixFileClass *)(strlen((const char *)(aP1 + 4700)) != 0); /*0x5adf6f*/
 
 }
 } // namespace gamemd
@@ -323,7 +323,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     &v43.customSound_controller[2],
     aMapselmdIni);
   (*(void ((int *)(**))(int *, int))(v43.customSound_controller[2] + 28))(&v43.customSound_controller[2], 1); /*0x5cef78*/
-  if ( !FileStraw::Open((FileStraw *)&((char *)&v43), (int)&v43.customSound_controller[2], 0) ) /*0x5cef85*/
+  if ( !((FileStraw *)((FileStraw *)&((char *)&v43)))->Open((int)&v43.customSound_controller[2], 0) ) /*0x5cef85*/
     goto LABEL_17; /*0x5cef85*/
   v4 = 1; /*0x5cef98*/
   while ( 1 ) /*0x5cefa2*/
@@ -338,7 +338,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     v6 = (MSChoiceClass *)__2_YAPAXI_Z(0x6Cu); /*0x5cefef*/
     if ( !v6 ) /*0x5ceff9*/
       goto LABEL_17; /*0x5ceff9*/
-    v7 = MSChoiceClass::LoadFromINI(v6, &((char *)&v43), (const char **)&((char *)&v43)); /*0x5cf00c*/
+    v7 = ((MSChoiceClass *)(v6))->LoadFromINI(&((char *)&v43), (const char **)&((char *)&v43)); /*0x5cf00c*/
     if ( !v7 ) /*0x5cf010*/
       goto LABEL_17; /*0x5cf010*/
     v8 = uniqueId->unknown_08[0]; /*0x5cf012*/
@@ -372,7 +372,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     if ( v13 ) /*0x5cf12c*/
     {
       ((String *)((String *)&v43))->Assign(0); /*0x5cf137*/
-      ((String *)((String *)&((char *)&v43)))->Assign(aTextrect); /*0x5cf145*/
+      ((String *)((String *)&((char *)&v43)))->Assign((const char *)(aTextrect)); /*0x5cf145*/
       v14 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString((char **)&((char *)&v43), (char **)&((char *)&v43), (char **)&v43, (int)&((char *)&v43)) > 0; /*0x5cf16d*/
       DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf170*/
       DeleteAndZero(&v43); /*0x5cf179*/
@@ -519,12 +519,12 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     }
     DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf59a*/
     DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf5a3*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&((char *)&v43)); /*0x5cf5ac*/
+    ((HashTable *)((INIClass *)&((char *)&v43)))->DestroyHashTableINIClass(); /*0x5cf5ac*/
     v43.customSound_controller[2] = (int)&vt_CCFileClass; /*0x5cf5b8*/
     v45 = 0; /*0x5cf5c0*/
     ((Vector *)((int)v44))->Clear(); /*0x5cf5c7*/
     v43.customSound_controller[2] = (int)&off_7E1668; /*0x5cf5d0*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v43.customSound_controller[2]); /*0x5cf5d8*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v43.customSound_controller[2]))->Dtor(); /*0x5cf5d8*/
     return 1; /*0x5cf5e0*/
   }
   else
@@ -533,12 +533,12 @@ LABEL_17:
     Debug::Log(); /*0x5cf07d*/
     DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf089*/
     DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf092*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&((char *)&v43)); /*0x5cf09b*/
+    ((HashTable *)((INIClass *)&((char *)&v43)))->DestroyHashTableINIClass(); /*0x5cf09b*/
     v43.customSound_controller[2] = (int)&vt_CCFileClass; /*0x5cf0a7*/
     v45 = 0; /*0x5cf0af*/
     ((Vector *)((int)v44))->Clear(); /*0x5cf0b6*/
     v43.customSound_controller[2] = (int)&off_7E1668; /*0x5cf0bf*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v43.customSound_controller[2]); /*0x5cf0c7*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v43.customSound_controller[2]))->Dtor(); /*0x5cf0c7*/
     return 0; /*0x5cf0cf*/
   }
 
@@ -1358,7 +1358,7 @@ int SessionClass::CreateConnections()
       {
         this->unknown_2854[520] = *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v3) + 111); /*0x697c25*/
         ((Network *)((Network *)(dword_A8DA78[v3] + 40)))->CopyAddress(&v13, (int)v17); /*0x697c38*/
-        NetworkID::Assign(&qword_A8DBA4, &v13, (int)v17, 0); /*0x697c4d*/
+        ((NetworkID *)(&qword_A8DBA4))->Assign(&v13, (int)v17, 0); /*0x697c4d*/
         Network::SetPlayerCoords((Network *)&unk_A8E9C0, &qword_A8DBA4); /*0x697c5c*/
       }
       v4 = *(unsigned int *)(this->StartSpots[1] + 4 * v3); /*0x697c67*/
@@ -1401,7 +1401,7 @@ int SessionClass::CreateConnections()
   v14 = 0; /*0x697db0*/
   v15 = 0; /*0x697dc0*/
   v16 = 0; /*0x697dc4*/
-  NetworkID::Assign(&qword_A8DBB0, &v12, (int)&v14, 0); /*0x697dc8*/
+  ((NetworkID *)(&qword_A8DBB0))->Assign(&v12, (int)&v14, 0); /*0x697dc8*/
   LOBYTE(this->unknown_2854[69]) = 1; /*0x697dd2*/
   this->unknown_2854[526] = 0; /*0x697dd9*/
   this->unknown_2854[530] = 20; /*0x697ddf*/
@@ -1549,9 +1549,9 @@ AbstractClass * * SessionClass::LoadMissionList()
   *(unsigned int *)v60.__pad_0 = &vt_INIClass; /*0x6999ce*/
   (*(void (**)(int *))(v3 + 12))(v4); /*0x6999d6*/
   CCFileClass::Construct(&v63, aMissionsmdPkt); /*0x6999e2*/
-  if ( (uint8_t)CCFileClass::Open(&v63, 0) ) /*0x6999ec*/
+  if ( (uint8_t)((CCFileClass *)(&v63))->Open(0) ) /*0x6999ec*/
   {
-    FileStraw::Open((FileStraw *)&v60, (int)&v63, 0); /*0x699a03*/
+    ((FileStraw *)((FileStraw *)&v60))->Open((int)&v63, 0); /*0x699a03*/
     KeyCount = INIClass::GetKeyCount(v60.__pad_0, g_INI_Key_MultiMaps); /*0x699a16*/
     v6 = 0; /*0x699a18*/
     if ( KeyCount > 0 ) /*0x699a1c*/
@@ -1598,7 +1598,7 @@ AbstractClass * * SessionClass::LoadMissionList()
         if ( _strcmpi(cAlternateFileName, aMissionsmdPkt) )
         {
           ((FileClass *)(&v63))->SetFileName(cAlternateFileName); /*0x699b48*/
-          FileStraw::Open((FileStraw *)&v60, (int)&v63, 0); /*0x699b58*/
+          ((FileStraw *)((FileStraw *)&v60))->Open((int)&v63, 0); /*0x699b58*/
           v15 = INIClass::GetKeyCount(v60.__pad_0, g_INI_Key_MultiMaps); /*0x699b6b*/
           for ( i = 0; i < v15; ++i )
           {
@@ -1647,7 +1647,7 @@ AbstractClass * * SessionClass::LoadMissionList()
           v26 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x699cd0*/
           if ( v26 ) /*0x699cda*/
           {
-            v27 = MixFileClass::FromFile(v26, cFileName, (int)dword_886980); /*0x699ced*/
+            v27 = ((MixFileClass *)(v26))->FromFile(cFileName, (int)dword_886980); /*0x699ced*/
             if ( v27 ) /*0x699cf1*/
             {
               if ( dword_884DD0 < dword_884DC8 /*0x699d2d*/
@@ -1668,9 +1668,9 @@ AbstractClass * * SessionClass::LoadMissionList()
               strcat(Destination, (const char *)&off_83F4F0); /*0x699d9f*/
               Destination[v30] = 0; /*0x699da8*/
               ((FileClass *)(&v63))->SetFileName(Destination); /*0x699dbb*/
-              if ( (uint8_t)CCFileClass::Open(&v63, 0) ) /*0x699dc7*/
+              if ( (uint8_t)((CCFileClass *)(&v63))->Open(0) ) /*0x699dc7*/
               {
-                FileStraw::Open((FileStraw *)&v60, (int)&v63, 0); /*0x699dde*/
+                ((FileStraw *)((FileStraw *)&v60))->Open((int)&v63, 0); /*0x699dde*/
                 v31 = INIClass::GetKeyCount(v60.__pad_0, g_INI_Key_MultiMaps); /*0x699dec*/
                 v32 = 0; /*0x699df1*/
                 v62 = v31; /*0x699df5*/
@@ -1794,8 +1794,8 @@ AbstractClass * * SessionClass::LoadMissionList()
   v65 = 0; /*0x69a1ba*/
   ((Vector *)((int)v64))->Clear(); /*0x69a1c1*/
   *(unsigned int *)v63.CDFileClass = &off_7E1668; /*0x69a1ca*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v63); /*0x69a1d2*/
-  return HashTable::DestroyHashTableINIClass(&v60); /*0x69a1e0*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v63))->Dtor(); /*0x69a1d2*/
+  return ((HashTable *)(&v60))->DestroyHashTableINIClass(); /*0x69a1e0*/
 
 }
 // 0x69A980
@@ -2187,7 +2187,7 @@ LABEL_26:
         {
           if ( v17 != v15 /*0x69bff8*/
             && !*((unsigned char *)&v58 + v17)
-            && (uint8_t)NetworkID::Compare(v63, *((unsigned int *)Block + v17) + 40) )
+            && (uint8_t)((NetworkID *)(v63))->Compare(*((unsigned int *)Block + v17) + 40) )
           {
             v54 = ToWideStringChar(*((char **)Block + v17)); /*0x69c011*/
             v19 = 0; /*0x69c015*/
@@ -2313,7 +2313,7 @@ LABEL_58:
     v41 = 4; /*0x69c31d*/
     do /*0x69c430*/
     {
-      if ( (uint8_t)NetworkID::Compare(v60, *(unsigned int *)(v41 + this->StartSpots[1]) + 40) ) /*0x69c333*/
+      if ( (uint8_t)((NetworkID *)(v60))->Compare(*(unsigned int *)(v41 + this->StartSpots[1]) + 40) ) /*0x69c333*/
       {
         ToWideStringChar(*(char **)(v41 + this->StartSpots[1])); /*0x69c349*/
         Debug::Log(); /*0x69c354*/
@@ -2329,7 +2329,7 @@ LABEL_58:
           {
             Network::CopyAddress_Small(v42, (int)v53); /*0x69c3ac*/
             v45 = (NetworkID *)(*(unsigned int *)(v41 + this->StartSpots[1]) + 40); /*0x69c3be*/
-            NetworkID::Assign(v45, 0, (int)v53, *(unsigned short *)v45->__pad_0); /*0x69c3c8*/
+            ((NetworkID *)(v45))->Assign(0, (int)v53, *(unsigned short *)v45->__pad_0); /*0x69c3c8*/
             ToWideStringChar(*(char **)(v41 + this->StartSpots[1])); /*0x69c3d6*/
             ((Network *)((Network *)(*(unsigned int *)(v41 + this->StartSpots[1]) + 40)))->FormatAddress(0); /*0x69c3eb*/
             Debug::Log(); /*0x69c3f7*/

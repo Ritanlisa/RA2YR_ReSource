@@ -364,8 +364,8 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     Tactical::SetCellTransform(v111.__pad_0, 0, v19, v18, v104, 0, 0); /*0x422f5c*/
     Tactical::SetCellTransform(v111.__pad_0, 1, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f7f*/
     Tactical::SetCellTransform(v111.__pad_0, 2, v89, v18, v104, 1065353216, 0); /*0x422f97*/
-    StructTable::Append((void *)(dword_8A0E10), &v110); /*0x422fa7*/
-    StructTable::Append((void *)(dword_8A0E10), &v111); /*0x422fba*/
+    ((StructTable *)((void *)(dword_8A0E10)))->Append(&v110); /*0x422fa7*/
+    ((StructTable *)((void *)(dword_8A0E10)))->Append(&v111); /*0x422fba*/
     return; /*0x422fc9*/
   }
   if ( *(unsigned int *)&g_MissionQueueFrame.waypoints[282] < (unsigned int)PingPongBuffer::GetWriteOffset() /*0x422fe6*/
@@ -478,7 +478,7 @@ LABEL_47:
     LOWORD(v91) = *v30 / 256; /*0x423220*/
     HIWORD(v91) = v30[1] / 256; /*0x423238*/
     *(float *)v100 = v91; /*0x423241*/
-    v31 = (int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)v100); /*0x423250*/
+    v31 = (int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)v100); /*0x423250*/
     if ( !v31[13] ) /*0x423252*/
       TacticalClass::SetView(v31, 0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
     v32 = (gamemd::Coord *)(this->AnimClass_field_0xC8); /*0x42327b*/
@@ -503,7 +503,7 @@ LABEL_47:
       LOWORD(v92) = *v33 / 256; /*0x42331d*/
       HIWORD(v92) = v33[1] / 256; /*0x423336*/
       *(float *)v100 = v92; /*0x423343*/
-      v27 = *((int16_t *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)v100) + 133); /*0x42334d*/
+      v27 = *((int16_t *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)v100) + 133); /*0x42334d*/
 LABEL_77:
       v106 = v27; /*0x423354*/
     }
@@ -636,7 +636,7 @@ LABEL_99:
   LOWORD(v94) = *v60 / 256; /*0x4235ef*/
   HIWORD(v94) = v60[1] / 256; /*0x423608*/
   *(unsigned int *)v101 = v94; /*0x423615*/
-  v61 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v101); /*0x42361a*/
+  v61 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v101); /*0x42361a*/
   if ( (uint8_t)((CellClass *)(v61))->QuickPassable() ) /*0x423621*/
   {
     v41 = 0.0; /*0x42362a*/
@@ -878,7 +878,7 @@ LABEL_47:
     IDA_LOWORD(v91) = *v30 / 256; /*0x423220*/
     IDA_HIWORD(v91) = v30[1] / 256; /*0x423238*/
     aP2 = v91; /*0x423241*/
-    v31 = (int16_t *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP2); /*0x423250*/
+    v31 = (int16_t *)((CellCoord *)(&stru_87C374.__pad_14B0[8132]))->To_CellObj((int16_t *)&aP2); /*0x423250*/
     if ( !*((unsigned int *)v31 + 13) ) /*0x423252*/
       TacticalClass::SetView((int)v31, 0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
     v32 = (CoordStruct *)*((unsigned int *)this + 50); /*0x42327b*/
@@ -903,7 +903,7 @@ LABEL_47:
       IDA_LOWORD(v92) = *v33 / 256; /*0x42331d*/
       IDA_HIWORD(v92) = v33[1] / 256; /*0x423336*/
       aP2 = v92; /*0x423343*/
-      v27 = (ConvertClass *)*((int16_t *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP2) + 133); /*0x42334d*/
+      v27 = (ConvertClass *)*((int16_t *)((CellCoord *)(&stru_87C374.__pad_14B0[8132]))->To_CellObj((int16_t *)&aP2) + 133); /*0x42334d*/
 LABEL_77:
       aP10 = v27; /*0x423354*/
     }
@@ -1036,7 +1036,7 @@ LABEL_99:
   IDA_LOWORD(v94) = *v60 / 256; /*0x4235ef*/
   IDA_HIWORD(v94) = v60[1] / 256; /*0x423608*/
   aP0 = v94; /*0x423615*/
-  v61 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP0); /*0x42361a*/
+  v61 = ((CellCoord *)(&stru_87C374.__pad_14B0[8132]))->To_CellObj((int16_t *)&aP0); /*0x42361a*/
 //DUPDEF   if ( ((CellClass *)(v61))->QuickPassable() ) /*0x423621*/
 //DUPDEF   {
 //DUPDEF     *(float *)&v41 = 0.0; /*0x42362a*/

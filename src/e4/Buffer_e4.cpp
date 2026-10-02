@@ -529,7 +529,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
     v8 = (int *)(aP1);
   }
   (*(void (**)(int *))(*v8 + 96))(v8); /*0x6c8b01*/
-  return Buffer_field_08; /*0x6c8a08*/
+  return (int)(Buffer_field_08); /*0x6c8a08*/
 
 }
 } // namespace gamemd

@@ -1,5 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/TagClass_e4.hpp"
+#include "e4/classes/Tooltip_e4.hpp"
 #include "e4/classes/Progress_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_681070_e4.hpp"
@@ -470,7 +473,7 @@ void sub_683FB0()
   int *p_vtable2; // esi
   AsyncIO *v2; // ecx
 
-  MouseClass::GetPosition((MouseClass *)&dword_87F7E8); /*0x683fb7*/
+  ((MouseClass *)((MouseClass *)&dword_87F7E8))->GetPosition(); /*0x683fb7*/
   if ( ((unsigned int *)(dword_A8B230))[43].vtable2 == -1 ) /*0x683fd0*/
   {
     p_vtable2 = &((unsigned int *)(dword_A8B230))[43].vtable2; /*0x683fc1*/
@@ -480,7 +483,7 @@ void sub_683FB0()
         TimerGetTicks();
     Debug::Log();
   if ( dword_887368 ) /*0x68401d*/
-    Tooltip::Enable(dword_887368, byte_A8EB80); /*0x684026*/
+    ((Tooltip *)(dword_887368))->Enable(byte_A8EB80); /*0x684026*/
   EndBufferMixer(&g_MixerState->vtable0, dword_83D834); /*0x684037*/
   IDA_LOBYTE(v2) = 0; /*0x68403c*/
   dword_83D834 = 0x4000; /*0x68403e*/
@@ -507,7 +510,7 @@ void * * ScenarioClass_SetTimer(int a1)
     v3 = (char *)((void **)((char *)dword_A8B230 + 1568));
     *((unsigned int *)dword_A8B230 + 392) = Ticks; /*0x68408c*/
     *((unsigned int *)v3 + 1) = v9; /*0x684092*/
-    *((unsigned int *)v3 + 2) = 60 * a1; /*0x684099*/
+    *((unsigned int *)v3 + 2) = (void **)(60 * a1); /*0x684099*/
     result = dword_A8B230; /*0x68409c*/
     if ( *((unsigned char *)dword_A8B230 + 1584) ) /*0x6840a1*/
       return result; /*0x6840a9*/
@@ -559,7 +562,7 @@ ScenarioClass * * Mouse_Update()
     while ( (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) ); /*0x6842c0*/
   }
   IDA_BYTE2(dword_A8B230[381].vtable3) = 0; /*0x6842cc*/
-  *((unsigned int *)((char *)&stru_A8EB00 + 440)) = 0; /*0x6842d9*/
+  *((unsigned int *)((char *)&stru_A8EB00 + 440)) = (gamemd::ScenarioClass **)(0); /*0x6842d9*/
   result = (int)(Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296])); /*0x6842e0*/
   dword_B07784 = 0; /*0x6842e5*/
   return result; /*0x6842ef*/
@@ -592,7 +595,7 @@ void WaitForMultiplayerLoadSync()
   v16 = 300; /*0x6843b9*/
     v13 = TimerGetTicks();
   v14 = 3600; /*0x6843d3*/
-  AverageProgress = Progress::GetAverage((int)g_UIManager); /*0x6843e5*/
+  AverageProgress = ((Progress *)((int)g_UIManager))->GetAverage(); /*0x6843e5*/
   while ( 1 )
   {
     ((EventQueue *)(g_BinkMoviePlayer))->Process(); /*0x6843ef*/
@@ -615,10 +618,10 @@ void WaitForMultiplayerLoadSync()
     }
     if ( v1 <= 0 ) /*0x684446*/
       break; /*0x684446*/
-    v3 = Progress::GetAverage((int)g_UIManager); /*0x684451*/
+    v3 = ((Progress *)((int)g_UIManager))->GetAverage(); /*0x684451*/
     if ( !v5 )
     {
-      Multiplayer::ShowProgress(g_GameMode_Current, *((unsigned char *)g_ScenarioClass_Instance + 13501) != 0 ? 200 : 100);
+      ((Multiplayer *)(g_GameMode_Current))->ShowProgress(*((unsigned char *)g_ScenarioClass_Instance + 13501) != 0 ? 200 : 100);
       return 1; /*0x684605*/
     }
     if ( v3 != AverageProgress ) /*0x684474*/
@@ -640,7 +643,7 @@ void WaitForMultiplayerLoadSync()
   LABEL_18:
             TicksTimer = TimerGetTicks();
       v16 = 60; /*0x6844f1*/
-      Multiplayer::ShowProgress(g_GameMode_Current, *((unsigned char *)g_ScenarioClass_Instance + 13501) != 0 ? 200 : 100);
+      ((Multiplayer *)(g_GameMode_Current))->ShowProgress(*((unsigned char *)g_ScenarioClass_Instance + 13501) != 0 ? 200 : 100);
     }
   }
   for ( i = 1; i < Game_PlayerCount; ++i ) /*0x68453f*/
@@ -1135,7 +1138,7 @@ void SaveScenarioToINI()
     v12 = 0; /*0x687d54*/
     ((Vector *)((int)v11))->Clear(); /*0x687d5b*/
     v10.customSound_controller[3] = (int)&off_7E1668; /*0x687d64*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v10.customSound_controller[3]); /*0x687d6c*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v10.customSound_controller[3]))->Dtor(); /*0x687d6c*/
     if ( v8 ) /*0x687d75*/
     {
       CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d7c*/
@@ -1144,7 +1147,7 @@ void SaveScenarioToINI()
       v12 = 0; /*0x687da1*/
       ((Vector *)((int)v11))->Clear(); /*0x687da8*/
       v10.customSound_controller[3] = (int)&off_7E1668; /*0x687db1*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v10.customSound_controller[3]); /*0x687db9*/
+      ((BufferIOFileClass *)((BufferIOFileClass *)&v10.customSound_controller[3]))->Dtor(); /*0x687db9*/
     }
   }
   ScenarioClass::SaveToINI((int)dword_A8B230, (char *)&v10.vtable1, a2); /*0x687dce*/
@@ -1188,7 +1191,7 @@ void SaveScenarioToINI()
   INIClass::WriteDigest((CCINIClass *)&v10.vtable1, (int)&v13, 1); /*0x687ee5*/
   ((RawFileClass *)((BufferIOFileClass *)&v13))->Dtor(); /*0x687ef1*/
 // 0x5256f0
-  return HashTable::DestroyHashTableINIClass((INIClass *)&v10.vtable1); /*0x687eff*/
+  return ((HashTable *)((INIClass *)&v10.vtable1))->DestroyHashTableINIClass(); /*0x687eff*/
 }
 }
 // 0x687F10
@@ -1919,7 +1922,7 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
   {
     v39 = 0; /*0x688f07*/
     v40 = 0; /*0x688f0b*/
-    v5 = (Object *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v3); /*0x688f0f*/
+    v5 = (Object *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v3); /*0x688f0f*/
     ClosestObjectCell = ((Object *)(v5))->FindClosestObjectCell(&v39, 0, 0); /*0x688f16*/
     if ( !ClosestObjectCell /*0x688f39*/
       || (*(int (**)(int))(*(unsigned int *)ClosestObjectCell + 44))(ClosestObjectCell) == 15
@@ -2061,7 +2064,7 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
         {
           v42 = 0; /*0x6891e6*/
           v43 = 0; /*0x6891ea*/
-          v25 = (Object *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v28); /*0x6891ee*/
+          v25 = (Object *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v28); /*0x6891ee*/
           v26 = ((Object *)(v25))->FindClosestObjectCell(&v42, 0, 0); /*0x6891f5*/
           if ( !v26 /*0x689218*/
             || (*(int (**)(int))(*(unsigned int *)v26 + 44))(v26) == 15

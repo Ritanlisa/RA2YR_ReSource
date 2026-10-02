@@ -113,7 +113,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
       v10);
   }
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4881f5*/
-  return 1; /*0x4881fd*/
+  return (gamemd::ConvertClass **)(1); /*0x4881fd*/
 
 }
 }
@@ -245,7 +245,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   IDA_LOWORD(v108) = *(unsigned int *)aP0->__pad_0 / 256;
   IDA_HIWORD(v108) = *(unsigned int *)&aP0->__pad_0[4] / 256;
   int v115 = v108;
-  v9 = (VectorClass_flat *)CellCoord::To_CellObj(&((unsigned int *)(stru_87C374))[13428], (int16_t *)&v115);
+  v9 = (VectorClass_flat *)((CellCoord *)(&((unsigned int *)(stru_87C374))[13428]))->To_CellObj((int16_t *)&v115);
   double v10 = *(float *)&aP3[1].spawnStatus;
   aP1a = v9;
   varC2 = 0;
@@ -273,7 +273,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
               int v13 = *(unsigned int *)(v12 + 156);
               int v14 = *(unsigned int *)(v12 + 160);
               v140 = *(BuildingTypeClass **)(v12 + 164);
-              v15 = (IUnknown *)(((Coord *)(&v135))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13)),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140)));
+              v15 = (IUnknown *)(((Coord *)(&v135))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13)),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14)),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140))));
               v143 = *(unsigned long long *)&v15->field_0;
               v144 = *(float *)&v15->field_8;
               Coord::Length((int *)&v143);
@@ -289,7 +289,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
                 }
                 int * v109 = (int *)operator new(8u);
                 *v109 = v12;
-                v17 = (IUnknown *)(((Coord *)(&v130))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156))),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160))), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164))));
+                v17 = (IUnknown *)(((Coord *)(&v130))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156))),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160))),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164)))));
                 v132 = *(unsigned long long *)&v17->field_0;
                 v133 = *(float *)&v17->field_8;
                 Coord::Length((int *)&v132);
@@ -335,7 +335,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
       IDA_LOWORD(v138) = v115 + IDA_LOWORD(dword_ABD490[v110]);
       IDA_HIWORD(v138) = ax29;
       j = v138;
-      v22 = (TechnoClass *)CellCoord::To_CellObj(&((unsigned int *)(stru_87C374))[13428], (int16_t *)&j);
+      v22 = (TechnoClass *)((CellCoord *)(&((unsigned int *)(stru_87C374))[13428]))->To_CellObj((int16_t *)&j);
       aP1a = (VectorClass_flat *)v22;
       int v24 = v22->ambientSoundController[2];
       if ( v24 != -1 )
@@ -579,14 +579,14 @@ LABEL_82:
             {
               IDA_LOWORD(v134) = v59;
               IDA_HIWORD(v134) = (unsigned short)ebx112;
-              v61 = (ObjectClass *)*((unsigned int *)CellCoord::To_CellObj(&stru_87C374[13428], (int16_t *)&v134)
+              v61 = (ObjectClass *)*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v134)
                                    + 58);
             }
             else
             {
               IDA_LOWORD(v138) = v59;
               IDA_HIWORD(v138) = (unsigned short)ebx112;
-              v61 = (ObjectClass *)*((unsigned int *)CellCoord::To_CellObj(&stru_87C374[13428], (int16_t *)&v138)
+              v61 = (ObjectClass *)*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v138)
                                    + 57);
             }
             v60 = v61;
@@ -674,7 +674,7 @@ LABEL_82:
     }
   }
   bool v107 = v58 == *(ObjectClass **)(*(unsigned int *)&stru_87C374[44652] + 4080);
-  v71 = (IUnknown *)CellCoord::To_CellObj(&stru_87C374[13428], (int16_t *)&v115);
+  v71 = (IUnknown *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v115);
   if ( (IDA_BYTE1(**(unsigned int **)&HouseClass_Player[29924]) & 0x80u) != 0 && v58[1].isInLogic )
   {
     v72 = (ParticleSystemClass *)v71->field_140;
@@ -682,7 +682,7 @@ LABEL_82:
     unsigned int * v113 = 0;
     if ( (IDA_BYTE1(v72) & 1) != 0
       && ((char)v72 >= 0 ? (v122[0] = *(unsigned int *)(*(unsigned int *)&v71->__pad_28[4] + 36)) : (v122[0] = v71->field_24),
-          (eax137 = CellCoord::To_CellObj(&stru_87C374[13428], (int16_t *)v122), (v113 = eax137) != 0)
+          (eax137 = ((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)v122), (v113 = eax137) != 0)
        && ((eax138 = eax137[17], eax138 == 24) || eax138 == 25)) )
     {
       v76 = (AbstractClass *)g_TerrainSoundTable2;
@@ -1393,7 +1393,7 @@ void MainGame()
       byte_B0BD78 = 0; /*0x48ce46*/
     }
     if ( dword_887368 ) /*0x48ce54*/
-      Tooltip::Enable(dword_887368, byte_A8EB80); /*0x48ce5d*/
+      ((Tooltip *)(dword_887368))->Enable(byte_A8EB80); /*0x48ce5d*/
     v4 = IDA_BYTE2(dword_A8B230[381].vtable3); /*0x48ce67*/
     dword_A8EDA0 = 0; /*0x48ce6d*/
     v4 = v4; /*0x48ce73*/
@@ -1737,7 +1737,7 @@ int E4Recv_486D90::sub_486D90(char a2)
       LOWORD(v11) = LOWORD(g_DDrawSurfaceManager.scenario[v9 + 82]) + v10[0]; /*0x486dee*/
       HIWORD(v11) = v10[1] + HIWORD(g_DDrawSurfaceManager.scenario[v9 + 82]); /*0x486df3*/
       *(unsigned int *)v10 = v11; /*0x486e02*/
-      p_vtable0 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v10); /*0x486e06*/
+      p_vtable0 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v10); /*0x486e06*/
     }
     else
     {
@@ -1852,7 +1852,7 @@ namespace gamemd {
 CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
 {
 
-  ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x4882ad*/
+  ((ListClass *)((int)this))->Construct(aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x4882ad*/
   *((unsigned char *)this + 372) = 0; /*0x4882b2*/
   *(unsigned int *)this->__pad_0 = &vt_CheckListClass; /*0x4882b9*/
   return this->__pad_0; /*0x4882c1*/
@@ -1877,7 +1877,7 @@ namespace gamemd {
 ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
 {
 
-  ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x48878d*/
+  ((ListClass *)((int)this))->Construct(aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x48878d*/
   *((unsigned int *)this + 94) = 0; /*0x488799*/
   *((unsigned int *)this + 95) = 0; /*0x48879f*/
   *((unsigned char *)this + 384) = 1; /*0x4887a5*/
@@ -1916,7 +1916,7 @@ int E4Recv_4887F0::sub_4887F0()
   }
   v3[13] = 0; /*0x488834*/
   *((unsigned int *)v3 + 2) = 0; /*0x488837*/
-  return ListClass::Destruct((ListClass *)this); /*0x48883f*/
+  return ((ListClass *)((ListClass *)this))->Destruct(); /*0x48883f*/
 
 }
 } // namespace gamemd

@@ -157,7 +157,7 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3)
     v2 = dword_B0B890++; /*0x6b6f76*/
     *((unsigned int *)dword_B0B884 + v2) = (unsigned int)(this); /*0x6b6f85*/
   }
-  return (int)this; /*0x6b6f8a*/
+  return (void *)((int)this); /*0x6b6f8a*/
 
 }
 } // namespace ra2

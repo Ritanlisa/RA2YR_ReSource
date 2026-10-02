@@ -715,7 +715,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
   }
   else
   {
-    v5 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)(*((unsigned int *)this + 9) + 1372)); /*0x62aa11*/
+    v5 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)(*((unsigned int *)this + 9) + 1372)); /*0x62aa11*/
     v6 = **(unsigned int **)((char *)this + 36); /*0x62aa1f*/
     v7 = (*(int (**)(void *, int *, unsigned int))(*(unsigned int *)v5 + 72))(v5, &v15, 0); /*0x62aa25*/
     v8 = (*(int (**)(unsigned int, int))(v6 + 216))(*((unsigned int *)this + 9), v7); /*0x62aa2c*/
@@ -943,14 +943,14 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
   v59 = *((unsigned int *)this + 39); /*0x62bd75*/
   v60 = *((float *)this + 40); /*0x62bd88*/
   v61 = *((float *)this + 41); /*0x62bd8f*/
-  if ( (abs32(Random::State((unsigned int *)dword_A8B230 + 134)) & 7) == 0 ) /*0x62bd9f*/
+  if ( (abs32(((Random *)((unsigned int *)dword_A8B230 + 134))->State()) & 7) == 0 ) /*0x62bd9f*/
   {
     v2 = 0; /*0x62bdab*/
     v3 = 0; /*0x62bdad*/
-    if ( (abs32(Random::State((unsigned int *)dword_A8B230 + 134)) & 1) != 0 ) /*0x62bdc1*/
-      v3 = (int)abs32(Random::State((unsigned int *)dword_A8B230 + 134)) % 3 - 1; /*0x62be05*/
+    if ( (abs32(((Random *)((unsigned int *)dword_A8B230 + 134))->State()) & 1) != 0 ) /*0x62bdc1*/
+      v3 = (int)abs32(((Random *)((unsigned int *)dword_A8B230 + 134))->State()) % 3 - 1; /*0x62be05*/
     else
-      v2 = (int)abs32(Random::State((unsigned int *)dword_A8B230 + 134)) % 3 - 1; /*0x62bde2*/
+      v2 = (int)abs32(((Random *)((unsigned int *)dword_A8B230 + 134))->State()) % 3 - 1; /*0x62bde2*/
     v4 = v2 + *((unsigned int *)this + 48); /*0x62be11*/
     v5 = v3 + *((unsigned int *)this + 49); /*0x62be1b*/
     *((unsigned int *)this + 48) = v4; /*0x62be1f*/
@@ -994,14 +994,14 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
   LOWORD(v12) = Math::RoundToInt(v65); /*0x62bece*/
   v46 = v12; /*0x62bed7*/
   LOWORD(v13) = Math::RoundToInt(v64); /*0x62bed8*/
-  Coord3D::Set(v68, v13, v46, v49); /*0x62bee2*/
-  Vector3::AddAssign((int *)this + 51, v52); /*0x62beec*/
+  ((Coord3D *)(v68))->Set(v13, v46, v49); /*0x62bee2*/
+  ((Vector3 *)((int *)this + 51))->AddAssign(v52); /*0x62beec*/
   LOWORD(v14) = Math::RoundToInt(v66); /*0x62bef5*/
   v50 = v14; /*0x62befe*/
   LOWORD(v15) = Math::RoundToInt(v65); /*0x62beff*/
   v47 = v15; /*0x62bf08*/
   LOWORD(v16) = Math::RoundToInt(v64); /*0x62bf09*/
-  Coord3D::Set(v70, v16, v47, v50); /*0x62bf13*/
+  ((Coord3D *)(v70))->Set(v16, v47, v50); /*0x62bf13*/
   GroundHeight = Cell::GetGroundHeight(v70); /*0x62bf2d*/
   v67 = dword_AC4A0C + GroundHeight; /*0x62bf3d*/
   v17 = ((Coord *)(&dword_87F7E8))->To_Cell(v70); /*0x62bf46*/
@@ -1082,13 +1082,13 @@ LABEL_39:
   qmemcpy(v74, v21, sizeof(v74)); /*0x62c0ec*/
   *(float *)&v48 = -v22; /*0x62c0f9*/
   Triple::Set(&v59, v23, v48, *((unsigned int *)this + 53)); /*0x62c0fd*/
-  v24 = Matrix3x3::TransformPoint(v71, (float *)&v59, v53); /*0x62c113*/
+  v24 = ((Matrix3x3 *)(v71))->TransformPoint((float *)&v59, v53); /*0x62c113*/
   v59 = *(unsigned int *)v24; /*0x62c11f*/
   v60 = *(float *)(v24 + 4); /*0x62c126*/
   v61 = *(float *)(v24 + 8); /*0x62c131*/
   ((Coord *)((int *)0x3F800000))->Scale(v54); /*0x62c135*/
   v61 = -v61; /*0x62c14a*/
-  v25 = Matrix3x3::TransformPoint(v71, (float *)&v59, v55); /*0x62c152*/
+  v25 = ((Matrix3x3 *)(v71))->TransformPoint((float *)&v59, v55); /*0x62c152*/
   v59 = *(unsigned int *)v25; /*0x62c159*/
   v60 = *(float *)(v25 + 4); /*0x62c160*/
   v26 = *(float *)(v25 + 8); /*0x62c164*/
@@ -1260,7 +1260,7 @@ int ParasiteClass::ddtor(int a1, unsigned int * a2)
 
 // 0x62A8E0
 namespace gamemd {
-bool ParasiteClass::CanInfect(unsigned int * a2)
+bool ParasiteClass::CanInfect(unsigned int *a2)
 {
 
   int creationFrame; // ecx

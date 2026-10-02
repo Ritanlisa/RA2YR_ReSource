@@ -299,7 +299,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   if ( a4 == 1 ) /*0x5f2979*/
     StringCSF = GetStringCSF((wchar_t *)aTxtModemConner, 0,(const char *)(g_Str_File_NullMgr_CPP), 1409); /*0x5f298c*/
   else
-    StringCSF = GetStringCSF((wchar_t *)(aTxtDialing), 0, g_Str_File_NullMgr_CPP, 1411); /*0x5f299f*/
+    StringCSF = GetStringCSF((wchar_t *)(aTxtDialing), 0,(const char *)(g_Str_File_NullMgr_CPP), 1411); /*0x5f299f*/
   v8 = (LPARAM)StringCSF; /*0x5f29ba*/
   g_NetworkTestFlag = 0; /*0x5f29bc*/
   v9 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0,(const char *)(g_Str_File_NullMgr_CPP), 1415)); /*0x5f29c3*/
@@ -672,7 +672,7 @@ LABEL_199:
         {
           v10 = *(unsigned int *)(v10 + 516); /*0x607114*/
           if ( !v10 ) /*0x60711c*/
-            return 1; /*0x607128*/
+            return (gamemd::AbstractClass **)(1); /*0x607128*/
         }
         v12 = v10 + 4; /*0x607133*/
         if ( v12 ) /*0x607138*/
@@ -690,7 +690,7 @@ LABEL_208:
                 {
                   v13 = *(unsigned int *)(v13 + 516); /*0x60718b*/
                   if ( !v13 ) /*0x607193*/
-                    return 1; /*0x60719f*/
+                    return (gamemd::AbstractClass **)(1); /*0x60719f*/
                 }
                 v14 = v13 + 4; /*0x6071a6*/
                 if ( v14 ) /*0x6071ab*/
@@ -702,7 +702,7 @@ LABEL_208:
       }
     }
   }
-  return 1; /*0x60711e*/
+  return (gamemd::AbstractClass **)(1); /*0x60711e*/
 
 }
 }
@@ -842,7 +842,7 @@ LABEL_29:
 LABEL_31:
   EnumChildWindows(v3, Dialog::MapControlToAction, 0); /*0x608236*/
   EnableWindow(v3, (uint8_t)v15); /*0x608250*/
-  return 1; /*0x6080cb*/
+  return (gamemd::AbstractClass **)(1); /*0x6080cb*/
 
 }
 }
@@ -1005,7 +1005,7 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
   }
 LABEL_7:
   if ( !v4 ) /*0x60a610*/
-    return 1; /*0x60aa44*/
+    return (gamemd::AbstractClass **)(1); /*0x60aa44*/
   if ( !(uint8_t)IsValidActionDialog(Parent, v2) ) /*0x60a621*/
   {
     LOBYTE(hWnd) = 0; /*0x60a6e7*/
@@ -1131,10 +1131,10 @@ LABEL_78:
               if ( (unsigned char)hWnd ) /*0x60aa09*/
               {
                 *((unsigned char *)v4 + 168) = 1; /*0x60aa0b*/
-                return 1; /*0x60aa1e*/
+                return (gamemd::AbstractClass **)(1); /*0x60aa1e*/
               }
             }
-            return 1; /*0x60aa09*/
+            return (gamemd::AbstractClass **)(1); /*0x60aa09*/
           }
           break;
       }
@@ -1606,7 +1606,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
 
   EnumChildWindows((HWND)this, DestroyDialogChildWindow, 0); /*0x610374*/
   hWnd = (HWND)this; /*0x610389*/
-  DynamicArray::Resize((DynamicArray *)&g_DialogPool.__pad_208[128], (int *)&hWnd, &v14); /*0x61038d*/
+  ((DynamicArray *)((DynamicArray *)&g_DialogPool.__pad_208[128]))->Resize((int *)&hWnd, &v14); /*0x61038d*/
   memset(v15, 0, sizeof(v15)); /*0x6103a3*/
   *(unsigned int *)&v15[104] = 11; /*0x6103a7*/
   *(unsigned int *)&v15[100] = g_FogOfWarState; /*0x6103b2*/

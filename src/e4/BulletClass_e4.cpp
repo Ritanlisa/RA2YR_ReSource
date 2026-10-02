@@ -139,7 +139,7 @@ int * BulletClass::CalculateSpreadAngle(int a1)
     dword_89DDF4 = 2147450879; /*0x46668f*/
     atexit(nullsub_108); /*0x466694*/
   }
-  return &dword_89DDF4; /*0x4666a2*/
+  return (int *)(&dword_89DDF4); /*0x4666a2*/
 
 }
 } // namespace gamemd
@@ -149,7 +149,7 @@ namespace gamemd {
 int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x46afc4*/
+  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); /*0x46afc4*/
 
 }
 } // namespace gamemd

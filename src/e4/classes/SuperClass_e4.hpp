@@ -724,6 +724,7 @@ struct SuperClass {
     void ResetRechargeTime();
     wchar_t * NameReadiness();
     int SetFieldX();  // 0x6ce270
+    char RemoveFromPointerArray(int a2);  // 0x6ce320
 };
 
 } // namespace gamemd

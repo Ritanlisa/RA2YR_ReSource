@@ -58,7 +58,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
       result = 0; /*0x48dd0d*/
       break; /*0x48dd0d*/
   }
-  return result; /*0x48dcef*/
+  return (gamemd::AbstractClass **)(result); /*0x48dcef*/
 
 }
 } // namespace gamemd
@@ -327,11 +327,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
   ((VectorClass *)((unsigned int *)this + 261))->Construct(0, 0); /*0x710d81*/
   *((unsigned int *)this + 266) = 10; /*0x710d8e*/
   *((unsigned int *)this + 265) = 0; /*0x710d94*/
-  *((unsigned int *)this + 261) = &vt_TypeList; /*0x710d9a*/
+  *((unsigned int *)this + 261) = (unsigned int)(&vt_TypeList); /*0x710d9a*/
   ((VectorClass *)((unsigned int *)this + 268))->Construct(0, 0); /*0x710da4*/
   *((unsigned int *)this + 273) = 10; /*0x710db1*/
   *((unsigned int *)this + 272) = 0; /*0x710db7*/
-  *((unsigned int *)this + 268) = &vt_TypeList; /*0x710dbd*/
+  *((unsigned int *)this + 268) = (unsigned int)(&vt_TypeList); /*0x710dbd*/
   ((VectorClass *)((unsigned int *)this + 275))->Construct(0, 0); /*0x710dc7*/
   *((unsigned int *)this + 280) = 10; /*0x710dd4*/
   *((unsigned int *)this + 279) = 0; /*0x710dda*/
@@ -919,15 +919,15 @@ int TechnoTypeClass::DTOR(void *a1)
   *((unsigned int *)this + 459) = &vt_VectorClass; /*0x711bda*/
   DynamicVectorClass::Destroy_Alt((char *)this + 1836); /*0x711be0*/
   *((unsigned int *)this + 405) = &vt_VectorClass; /*0x711bf0*/
-  VectorClass::Destroy((char *)this + 1620); /*0x711bf2*/
+  ((VectorClass *)((char *)this + 1620))->Destroy(); /*0x711bf2*/
   *((unsigned int *)this + 398) = &vt_VectorClass; /*0x711bfd*/
-  VectorClass::Destroy((char *)this + 1592); /*0x711bff*/
+  ((VectorClass *)((char *)this + 1592))->Destroy(); /*0x711bff*/
   *((unsigned int *)this + 369) = &vt_VectorClass; /*0x711c0a*/
   DynamicVectorClass::Destroy_Alt((char *)this + 1476); /*0x711c10*/
   *((unsigned int *)this + 324) = &vt_VectorClass; /*0x711c1b*/
-  VectorClass::Destroy((char *)this + 1296); /*0x711c1d*/
+  ((VectorClass *)((char *)this + 1296))->Destroy(); /*0x711c1d*/
   *((unsigned int *)this + 317) = &vt_VectorClass; /*0x711c28*/
-  VectorClass::Destroy((char *)this + 1268); /*0x711c2a*/
+  ((VectorClass *)((char *)this + 1268))->Destroy(); /*0x711c2a*/
   v5 = *(void **)((char *)this + 1244); /*0x711c2f*/
   *((unsigned int *)this + 310) = &vt_VectorClass; /*0x711c35*/
   if ( v5 && *((unsigned char *)this + 1253) ) /*0x711c3f*/

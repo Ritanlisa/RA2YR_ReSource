@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct StructTable {
-    int Append(void * a2, void *a1 = 0);
+    int Append(const void *a2);
 };
 
 } // namespace gamemd

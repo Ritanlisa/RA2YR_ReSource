@@ -112,7 +112,7 @@ unsigned char * Struct::Zero3()
   LOBYTE(this->Struct_field_00) = 0; /*0x4b9bd4*/
   BYTE1(this->Struct_field_00) = 0; /*0x4b9bd6*/
   BYTE2(this->Struct_field_00) = 0; /*0x4b9bd9*/
-  return this; /*0x4b9bdc*/
+  return (unsigned char *)(this); /*0x4b9bdc*/
 
 }
 } // namespace gamemd

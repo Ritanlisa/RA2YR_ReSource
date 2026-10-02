@@ -30,7 +30,7 @@ struct MixFileClass {
     void CleanupCache();
     void DestroyCache();
     static double CacheNode_Dtor(...);  // C2597 interim stub
-    static double FromFile(...);  // C2597 interim stub
+    unsigned int * FromFile(char *aP1, int a3);  // was C2597 interim stub, := truth 0x0x5b3c20
     static double GetSubFile(...);  // C2597 interim stub
     static double LoadSubFile(...);  // C2597 interim stub
 };

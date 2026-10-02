@@ -64,7 +64,7 @@ void UDPInterfaceClass::CheckStatus(short a2)
 
   if ( a2 ) /*0x7b331c*/
   {
-    v3 = (gamemd::UDPInterfaceClass *)(*((unsigned int *)this + 64716)); /*0x7b3322*/
+    v3 = (int)((gamemd::UDPInterfaceClass *)(*((unsigned int *)this + 64716))); /*0x7b3322*/
     v4 = 0; /*0x7b3328*/
     if ( v3 > 0 ) /*0x7b332c*/
     {
@@ -163,7 +163,7 @@ AbstractClass * * UDPInterfaceClass::Flush()
     *((unsigned int *)this + 64716) = 0; /*0x7b3a70*/
     *((unsigned int *)this + 64717) = -1; /*0x7b3a7a*/
   }
-  return result; /*0x7b3a85*/
+  return (gamemd::AbstractClass **)(result); /*0x7b3a85*/
 
 }
 } // namespace gamemd
@@ -219,11 +219,11 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
     sa = v6; /*0x7b3ac5*/
     if ( a4 != v6 ) /*0x7b3ac9*/
     {
-      v7 = (gamemd::UDPInterfaceClass *)(*((unsigned int *)this + 64716)); /*0x7b3acb*/
+      v7 = (int)((gamemd::UDPInterfaceClass *)(*((unsigned int *)this + 64716))); /*0x7b3acb*/
       v8 = 0; /*0x7b3ad1*/
       if ( v7 > 0 ) /*0x7b3ad5*/
       {
-        v9 = (unsigned int *)this + 32352; /*0x7b3ad7*/
+        v9 = (gamemd::UDPInterfaceClass *)((unsigned int *)this + 32352); /*0x7b3ad7*/
         while ( v9->Socket != a4 ) /*0x7b3adf*/
         {
           ++v8; /*0x7b3ae1*/
@@ -239,7 +239,7 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
   else
   {
     if ( s != 1141 ) /*0x7b3afd*/
-      return 1; /*0x7b40dd*/
+      return (gamemd::AbstractClass **)(1); /*0x7b40dd*/
     v6 = *((unsigned int *)this + 64540); /*0x7b3b03*/
     v39 = 1; /*0x7b3b09*/
     sa = v6; /*0x7b3b0e*/
@@ -312,7 +312,7 @@ LABEL_60:
       *((unsigned int *)v13 + 1) = 0; /*0x7b4043*/
       *((unsigned int *)v13 + 2) = 0; /*0x7b4046*/
       *((unsigned int *)v13 + 3) = 0; /*0x7b4049*/
-      v32 = htonl(0x7F000001u); /*0x7b404c*/
+      v32 = htonl((void *)(0x7F000001u)); /*0x7b404c*/
       if ( *(unsigned int *)&netshort.sa_data[2] == v32 ) /*0x7b4055*/
       {
         *((unsigned short *)v13 + 13) = 0; /*0x7b4057*/
@@ -326,7 +326,7 @@ LABEL_60:
       }
       v33 = *((unsigned int *)this + 4); /*0x7b408f*/
       v34 = *((unsigned int *)this + 6); /*0x7b4092*/
-      v35 = (unsigned int *)this + 1; /*0x7b4095*/
+      v35 = (gamemd::UDPInterfaceClass *)((unsigned int *)this + 1); /*0x7b4095*/
       if ( v34 < v33 /*0x7b40b8*/
         || (v35[1].__pad_5[0] || !v33)
         && (v36 = *(unsigned int *)&v35[2].Initialized, v36 > 0)
@@ -347,7 +347,7 @@ LABEL_60:
     v11 = 0; /*0x7b3b42*/
     if ( *((int *)this + 64716) > 0 ) /*0x7b3b46*/
     {
-      v12 = (unsigned int *)this + 32352; /*0x7b3b48*/
+      v12 = (gamemd::UDPInterfaceClass *)((unsigned int *)this + 32352); /*0x7b3b48*/
       do /*0x7b3b76*/
       {
         if ( v12->Socket == *((unsigned int *)this + 64717) ) /*0x7b3b58*/
@@ -382,14 +382,14 @@ LABEL_25:
   }
   v45 = (unsigned int)v13; /*0x7b3bff*/
   *(unsigned int *)&netshort.sa_data[2] = *((unsigned int *)v13 + 1); /*0x7b3c03*/
-  *(unsigned short *)netshort.sa_data = htons(*((unsigned short *)v13 + 13)); /*0x7b3c11*/
+  *(unsigned short *)netshort.sa_data = htons((void *)(*((unsigned short *)v13 + 13))); /*0x7b3c11*/
   netshort.sa_family = 2; /*0x7b3c1c*/
   if ( v39 ) /*0x7b3c23*/
   {
-    if ( *(unsigned int *)&netshort.sa_data[2] != htonl(0x7F000001u) ) /*0x7b3c33*/
+    if ( *(unsigned int *)&netshort.sa_data[2] != htonl((void *)(0x7F000001u)) ) /*0x7b3c33*/
     {
-      *(unsigned short *)netshort.sa_data = htons(dword_841F34); /*0x7b3c4b*/
-      *(unsigned int *)&netshort.sa_data[2] = htonl(0x7F000001u); /*0x7b3c55*/
+      *(unsigned short *)netshort.sa_data = htons((void *)(dword_841F34)); /*0x7b3c4b*/
+      *(unsigned int *)&netshort.sa_data[2] = htonl((void *)(0x7F000001u)); /*0x7b3c55*/
     }
   }
   else
@@ -397,12 +397,12 @@ LABEL_25:
     v14 = *((unsigned short *)v13 + 13); /*0x7b3c5b*/
     if ( !v14 ) /*0x7b3c62*/
       v14 = hostshort; /*0x7b3c64*/
-    *(unsigned short *)netshort.sa_data = htons(v14); /*0x7b3c75*/
+    *(unsigned short *)netshort.sa_data = htons((void *)(v14)); /*0x7b3c75*/
     if ( *((unsigned int *)v13 + 1) == qword_A8DBB0.NetworkID_field_0x04 /*0x7b3c9a*/
       && (!dword_A8DA84 || (uint8_t)((GUID *)(qword_A8DBB0.__pad_0))->Compare(*dword_A8DA78 + 40)) )
     {
-      *(unsigned int *)&netshort.sa_data[2] = htonl(0x7F000001u); /*0x7b3cb4*/
-      *(unsigned short *)netshort.sa_data = htons(dword_841F3C); /*0x7b3cbe*/
+      *(unsigned int *)&netshort.sa_data[2] = htonl((void *)(0x7F000001u)); /*0x7b3cb4*/
+      *(unsigned short *)netshort.sa_data = htons((void *)(dword_841F3C)); /*0x7b3cbe*/
     }
   }
   v41 = *(unsigned int *)&netshort.sa_data[2]; /*0x7b3ccc*/
@@ -553,7 +553,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(void *** Block, char a2)
   }
   UDPInterfaceClass::connect(Block); /*0x7b4224*/
   v9 = (void *)*((unsigned int *)Block + 64853); /*0x7b4229*/
-  *((unsigned int *)Block + 64852) = &vt_VectorClass; /*0x7b422f*/
+  *((unsigned int *)Block + 64852) = (unsigned int)(&vt_VectorClass); /*0x7b422f*/
   if ( v9 && *((unsigned char *)Block + 259421) ) /*0x7b423d*/
   {
     __3_YAXPAX_Z(v9); /*0x7b4246*/
@@ -562,7 +562,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(void *** Block, char a2)
   *((unsigned char *)Block + 259421) = 0; /*0x7b4254*/
   *((unsigned int *)Block + 64854) = 0; /*0x7b425a*/
   v10 = (void *)*((unsigned int *)Block + 64719); /*0x7b4260*/
-  *((unsigned int *)Block + 64718) = &vt_VectorClass; /*0x7b4266*/
+  *((unsigned int *)Block + 64718) = (unsigned int)(&vt_VectorClass); /*0x7b4266*/
   if ( v10 && *((unsigned char *)Block + 258885) ) /*0x7b4274*/
   {
     __3_YAXPAX_Z(v10); /*0x7b427d*/

@@ -137,11 +137,11 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   *((unsigned int *)this + 1) = (unsigned int)(0); /*0x764baa*/
   *(unsigned int *)this = (unsigned int)(&vt_ReferenceCounted); /*0x764bad*/
   ((ComPtr *)((unsigned int *)this + 2))->Constructor(); /*0x764bb3*/
-  *v4 = &vt_rc_ptr; /*0x764bbf*/
+  *v4 = (unsigned int)(&vt_rc_ptr); /*0x764bbf*/
   ((ComPtr *)(v4))->Set(*(unsigned int *)(a3 + 4)); /*0x764bcb*/
   Team_Create_767B00((unsigned char *)this + 16, *(unsigned int *)(a3 + 4) + 8); /*0x764bdb*/
   Team_Create_765C90(4, 0); /*0x764be9*/
-  *((unsigned int *)this + 6) = &vt_DynamicVectorClassrc_ptr; /*0x764bf7*/
+  *((unsigned int *)this + 6) = (unsigned int)(&vt_DynamicVectorClassrc_ptr); /*0x764bf7*/
   *((unsigned int *)this + 11) = 10; /*0x764bfd*/
   *((unsigned int *)this + 10) = 0; /*0x764c04*/
   *((unsigned int *)this + 17) = 0; /*0x764c0b*/
@@ -154,7 +154,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   v5 = *(unsigned int **)(a3 + 4); /*0x764c29*/
   if ( v5[3] ) /*0x764c2c*/
   {
-    OwnerHouse = Conflict::GetOwnerHouse(v5); /*0x764c3a*/
+    OwnerHouse = ((Conflict *)(v5))->GetOwnerHouse(); /*0x764c3a*/
     ActivateScreenWDT((int)v28, OwnerHouse); /*0x764c47*/
     v7 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 32); /*0x764c58*/
     v8 = v7 - 1; /*0x764c5a*/
@@ -163,13 +163,13 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     {
       do /*0x764d8a*/
       {
-        if ( WDTClass::GetCellType((unsigned int *)v28[1], v8) == 1 ) /*0x764c74*/
+        if ( ((WDTClass *)((unsigned int *)v28[1]))->GetCellType(v8) == 1 ) /*0x764c74*/
         {
           if ( v8 >= *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 60) ) /*0x764c89*/
           {
             ((ComPtr *)(v26))->Constructor(); /*0x764c97*/
             v10 = v35; /*0x764c9c*/
-            v26[0] = &vt_rc_ptr; /*0x764ca3*/
+            v26[0] = (unsigned int)(&vt_rc_ptr); /*0x764ca3*/
             LOBYTE(v10) = v35 | 1; /*0x764cab*/
             v9 = v26; /*0x764cad*/
             v35 = v10; /*0x764cb1*/
@@ -185,7 +185,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
           {
             v11 = v35; /*0x764ce0*/
             LOBYTE(v11) = v35 & 0xFE; /*0x764ceb*/
-            v26[0] = &vt_rc_ptr; /*0x764ced*/
+            v26[0] = (unsigned int)(&vt_rc_ptr); /*0x764ced*/
             v35 = v11; /*0x764cf5*/
             ((ComPtr *)(v26))->Release(); /*0x764cfc*/
           }
@@ -206,7 +206,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
               *((unsigned int *)this + 10) = v14 + 1; /*0x764d4d*/
               ((ComPtr *)((unsigned int *)(*((unsigned int *)this + 7) + 8 * v14)))->Set(v22); /*0x764d56*/
             }
-            v27[0] = &vt_rc_ptr; /*0x764d5f*/
+            v27[0] = (unsigned int)(&vt_rc_ptr); /*0x764d5f*/
             ((ComPtr *)(v27))->Release(); /*0x764d67*/
           }
           v25[0] = &vt_rc_ptr; /*0x764d70*/
@@ -218,60 +218,60 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       }
       while ( v15 ); /*0x764d8a*/
     }
-    v28[0] = &vt_rc_ptr; /*0x764d94*/
+    v28[0] = (unsigned int)(&vt_rc_ptr); /*0x764d94*/
     ((ComPtr *)(v28))->Release(); /*0x764d9c*/
   }
-  ((BufferIOFile *)(v34))->Constructor(aWdthistIni_0); /*0x764daa*/
+  ((BufferIOFile *)(v34))->Constructor((char *)(aWdthistIni_0)); /*0x764daa*/
   v16 = 0; /*0x764daf*/
   if ( ((File *)(v34))->IsReady(0) )
   {
     v29[1] = 0; /*0x764dc7*/
     v29[2] = 0; /*0x764dcb*/
     GenericList::Constructor(v30); /*0x764dcf*/
-    v30[0] = &vt_List; /*0x764dde*/
+    v30[0] = (unsigned int)(&vt_List); /*0x764dde*/
     memset(&v30[7], 0, 12); /*0x764de6*/
     LOBYTE(v31) = 0; /*0x764df2*/
     v32 = 0; /*0x764df7*/
     v33 = 0; /*0x764dfb*/
     v29[0] = &vt_INIClass; /*0x764dff*/
-    FileStraw::Open(v29, (int)v34, 0); /*0x764e07*/
-    CCFileClass::Close(v34); /*0x764e10*/
-    ((String *)((char **)&v24))->Assign(g_INI_Key_CampaignID); /*0x764e1e*/
-    Int = INIClass::ReadInt((char **)this + 18, (char **)&v24, -1); /*0x764e3b*/
+    ((FileStraw *)(v29))->Open((int)v34, 0); /*0x764e07*/
+    ((CCFileClass *)(v34))->Close(); /*0x764e10*/
+    ((String *)((char **)&v24))->Assign((const char *)(g_INI_Key_CampaignID)); /*0x764e1e*/
+    Int = INIClass::ReadInt((gamemd::ObjectClass *)((char **)this + 18), (char **)&v24, -1); /*0x764e3b*/
     DeleteAndZero((void **)&v24); /*0x764e3d*/
     *((unsigned int *)this + 12) = Int < 0 ? 0 : Int;
-    if ( *((unsigned int *)this + 12) == WDTObject::GetSize(*(unsigned int **)(a3 + 4)) )
+    if ( *((unsigned int *)this + 12) == ((WDTObject *)(*(unsigned int **)(a3 + 4)))->GetSize() )
     {
       v18 = (unsigned int *)((unsigned char *)this + 52); /*0x764e60*/
       do
       {
         RegionString = GetRegionStringWOL((void *)v16); /*0x764e6a*/
-        v19 = ((String *)((char **)v25))->Assign(g_INI_Key_LastDay); /*0x764e79*/
+        v19 = ((String *)((char **)v25))->Assign((const char *)(g_INI_Key_LastDay)); /*0x764e79*/
         ((String *)((const char **)v19))->Concat((char **)&v24, RegionString); /*0x764e80*/
         DeleteAndZero(v25); /*0x764e89*/
-        v20 = INIClass::ReadInt((char **)this + 18, (char **)&v24, 0); /*0x764e9d*/
+        v20 = INIClass::ReadInt((gamemd::ObjectClass *)((char **)this + 18), (char **)&v24, 0); /*0x764e9d*/
         *v18 = v20 < 0 ? 0 : v20;
         DeleteAndZero((void **)&v24); /*0x764eb3*/
         ++v16; /*0x764eb8*/
         ++v18; /*0x764eb9*/
       }
       while ( v16 < 4 );
-      ((String *)((char **)&v24))->Assign(aPlayerfaction); /*0x764eca*/
-      *((unsigned int *)this + 17) = INIClass::ReadInt((char **)this + 18, (char **)&v24, *((unsigned int *)this + 17)); /*0x764ee9*/
+      ((String *)((char **)&v24))->Assign((const char *)(aPlayerfaction)); /*0x764eca*/
+      *((unsigned int *)this + 17) = INIClass::ReadInt((gamemd::ObjectClass *)((char **)this + 18), (char **)&v24, *((unsigned int *)this + 17)); /*0x764ee9*/
       DeleteAndZero((void **)&v24); /*0x764eec*/
     }
     else
     {
       *((unsigned int *)this + 13) = 0; /*0x764ef5*/
       *((unsigned int *)this + 14) = 0; /*0x764ef8*/
-      *((unsigned int *)this + 15) = (gamemd::HashTable_flat **)(0); /*0x764efb*/
+      *((unsigned int *)this + 15) = (unsigned int)((gamemd::HashTable_flat **)(0)); /*0x764efb*/
       *((unsigned int *)this + 16) = 0; /*0x764efe*/
     }
-    HashTable::DestroyHashTableINIClass(v29); /*0x764f05*/
+    ((HashTable *)(v29))->DestroyHashTableINIClass(); /*0x764f05*/
   }
   v34[0] = (unsigned int)(&off_7E1668); /*0x764f0e*/
-  BufferIOFileClass::Dtor(v34); /*0x764f16*/
-  return this; /*0x764f1d*/
+  ((BufferIOFileClass *)(v34))->Dtor(); /*0x764f16*/
+  return (gamemd::HashTable_flat **)(this); /*0x764f1d*/
 
 }
 }
@@ -293,8 +293,8 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   unsigned int v14[22]; // [esp+58h] [ebp-B0h] BYREF
   unsigned int v15[22]; // [esp+B0h] [ebp-58h] BYREF
 
-  *((unsigned int *)this + 12) = WDTObject::GetSize(*(unsigned int **)((char *)this + 12)); /*0x76501b*/
-  *(unsigned int *)((char *)this + 4 * (unsigned int)aP1 + 52) = Conflict::GetOwnerHouse(*(unsigned int **)((char *)this + 12)); /*0x76502c*/
+  *((unsigned int *)this + 12) = ((WDTObject *)(*(unsigned int **)((char *)this + 12)))->GetSize(); /*0x76501b*/
+  *(unsigned int *)((char *)this + 4 * (unsigned int)aP1 + 52) = ((Conflict *)(*(unsigned int **)((char *)this + 12)))->GetOwnerHouse(); /*0x76502c*/
   v8[1] = 0; /*0x765030*/
   v8[2] = 0; /*0x765034*/
   ((GenericNode *)(v9))->Constructor(); /*0x765038*/
@@ -307,32 +307,32 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   v13 = 0; /*0x76507c*/
   v8[0] = &vt_INIClass; /*0x765080*/
   ((BufferIOFile *)(v14))->Init(); /*0x765088*/
-  CCFileClass::Reopen(v14, g_Str_File_WDTHist_ini, 1); /*0x765098*/
+  ((CCFileClass *)(v14))->Reopen(g_Str_File_WDTHist_ini, 1); /*0x765098*/
   if ( !((File *)(v14))->IsReady(0) ) /*0x7650a2*/
   {
-    FileClass::Close(v14); /*0x7650af*/
-    CCFileClass::Close(v14); /*0x7650b8*/
-    CCFileClass::Reopen(v14, g_Str_File_WDTHist_ini, 1); /*0x7650c8*/
+    ((FileClass *)(v14))->Close(); /*0x7650af*/
+    ((CCFileClass *)(v14))->Close(); /*0x7650b8*/
+    ((CCFileClass *)(v14))->Reopen(g_Str_File_WDTHist_ini, 1); /*0x7650c8*/
   }
-  FileStraw::Open(v8, (int)v14, 0); /*0x7650d7*/
-  CCFileClass::Close(v14); /*0x7650e0*/
+  ((FileStraw *)(v8))->Open((int)v14, 0); /*0x7650d7*/
+  ((CCFileClass *)(v14))->Close(); /*0x7650e0*/
   v14[0] = (unsigned int)(&off_7E1668); /*0x7650e9*/
-  BufferIOFileClass::Dtor(v14); /*0x7650f1*/
+  ((BufferIOFileClass *)(v14))->Dtor(); /*0x7650f1*/
   RegionStringWOL = GetRegionStringWOL(aP1); /*0x765101*/
-  v3 = ((String *)((char **)&v6))->Assign(g_INI_Key_LastDay); /*0x76510c*/
+  v3 = ((String *)((char **)&v6))->Assign((const char *)(g_INI_Key_LastDay)); /*0x76510c*/
   ((String *)((const char **)v3))->Concat((char **)&v7, RegionStringWOL); /*0x765113*/
   DeleteAndZero(&v6); /*0x76511c*/
-  ((String *)((char **)&v6))->Assign(g_INI_Key_CampaignID); /*0x76512a*/
+  ((String *)((char **)&v6))->Assign((const char *)(g_INI_Key_CampaignID)); /*0x76512a*/
   INIClass::SetIntFormat((char *)v8, (char **)((char *)this + 72), (char **)&v6, *((unsigned int *)this + 12), 0); /*0x765141*/
   DeleteAndZero(&v6); /*0x76514a*/
   INIClass::SetIntFormat((char *)v8, (char **)((char *)this + 72), (char **)&v7, *(unsigned int *)((char *)this + 4 * (unsigned int)aP1 + 52), 0); /*0x76515f*/
   ((BufferIOFile *)(v15))->Init(); /*0x76516b*/
-  CCFileClass::Reopen(v15, g_Str_File_WDTHist_ini, 2); /*0x76517e*/
+  ((CCFileClass *)(v15))->Reopen(g_Str_File_WDTHist_ini, 2); /*0x76517e*/
   INIClass::SaveToPipe(v8, (int)v15); /*0x76518f*/
   v15[0] = (unsigned int)(&off_7E1668); /*0x76519b*/
-  BufferIOFileClass::Dtor(v15); /*0x7651a6*/
+  ((BufferIOFileClass *)(v15))->Dtor(); /*0x7651a6*/
   DeleteAndZero(&v7); /*0x7651af*/
-  return HashTable::DestroyHashTableINIClass(v8); /*0x7651bd*/
+  return ((HashTable *)(v8))->DestroyHashTableINIClass(); /*0x7651bd*/
 
 }
 }
@@ -356,38 +356,38 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   memset(&v7.nextObject, 0, 13); /*0x765219*/
   v7.ambientSoundController[1] = 0; /*0x765229*/
   v7.ambientSoundController[2] = 0; /*0x76522d*/
-  ((unsigned int *)&v7)[0] = &vt_INIClass; /*0x765231*/
+  ((unsigned int *)&v7)[0] = (unsigned int)(&vt_INIClass); /*0x765231*/
   ((BufferIOFile *)((BufferIOFile *)&v7.ambientSoundController[3]))->Init(); /*0x765239*/
-  CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765249*/
+  ((CCFileClass *)((CDFileClass *)&v7.ambientSoundController[3]))->Reopen(g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765249*/
   if ( !(uint8_t)((File *)((BufferIOFileClass *)&v7.ambientSoundController[3]))->IsReady(0) ) /*0x765253*/
   {
-    FileClass::Close((RawFileClass *)&v7.ambientSoundController[3]); /*0x765260*/
-    CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765269*/
-    CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765279*/
+    ((FileClass *)((RawFileClass *)&v7.ambientSoundController[3]))->Close(); /*0x765260*/
+    ((CCFileClass *)((BufferIOFileClass *)&v7.ambientSoundController[3]))->Close(); /*0x765269*/
+    ((CCFileClass *)((CDFileClass *)&v7.ambientSoundController[3]))->Reopen(g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765279*/
   }
-  FileStraw::Open((FileStraw *)&((char *)&v7), (int)&v7.ambientSoundController[3], 0); /*0x765288*/
-  CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765291*/
+  ((FileStraw *)((FileStraw *)&((char *)&v7)))->Open((int)&v7.ambientSoundController[3], 0); /*0x765288*/
+  ((CCFileClass *)((BufferIOFileClass *)&v7.ambientSoundController[3]))->Close(); /*0x765291*/
   v7.ambientSoundController[3] = (int)&off_7E1668; /*0x76529a*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x7652a2*/
-  ((String *)((String *)&v7))->Assign(g_INI_Key_CampaignID); /*0x7652b0*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v7.ambientSoundController[3]))->Dtor(); /*0x7652a2*/
+  ((String *)((String *)&v7))->Assign((const char *)(g_INI_Key_CampaignID)); /*0x7652b0*/
   v2 = (char **)&this->ambientSoundController[3]; /*0x7652ba*/
   INIClass::SetIntFormat((char *)&((char *)&v7), (char **)&this->ambientSoundController[3], (char **)&v7, 0, 0); /*0x7652c4*/
   DeleteAndZero(&v7); /*0x7652cd*/
   for ( i = 0; i < 4; ++i ) /*0x7652d2*/
   {
     RegionStringWOL = GetRegionStringWOL((ObjectClass *)i); /*0x7652db*/
-    v4 = ((String *)((String *)&((char *)&v7)))->Assign(g_INI_Key_LastDay); /*0x7652ea*/
+    v4 = ((String *)((String *)&((char *)&v7)))->Assign((const char *)(g_INI_Key_LastDay)); /*0x7652ea*/
     ((String *)((String *)v4))->Concat((char **)&v7, RegionStringWOL); /*0x7652f1*/
     DeleteAndZero((ObjectClass *)&((char *)&v7)); /*0x7652fa*/
     INIClass::SetIntFormat((char *)&((char *)&v7), v2, (char **)&v7, 0, 0); /*0x76530b*/
     DeleteAndZero(&v7); /*0x765314*/
   }
   ((BufferIOFile *)((BufferIOFile *)&v7.location[1]))->Init(); /*0x765326*/
-  CCFileClass::Reopen((CDFileClass *)&v7.location[1], g_Str_File_WDTHist_ini, (CHAR *)2); /*0x765339*/
+  ((CCFileClass *)((CDFileClass *)&v7.location[1]))->Reopen(g_Str_File_WDTHist_ini, (CHAR *)2); /*0x765339*/
   INIClass::SaveToPipe((INIClass *)&((char *)&v7), (int)&v7.location[1]); /*0x76534a*/
   v7.location[1] = (int)&off_7E1668; /*0x765356*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.location[1]); /*0x765361*/
-  return HashTable::DestroyHashTableINIClass((INIClass *)&((char *)&v7)); /*0x76536f*/
+  ((BufferIOFileClass *)((BufferIOFileClass *)&v7.location[1]))->Dtor(); /*0x765361*/
+  return ((HashTable *)((INIClass *)&((char *)&v7)))->DestroyHashTableINIClass(); /*0x76536f*/
 
 }
 }
@@ -431,9 +431,9 @@ int WDT_InitGameOptions()
   v25 = v0; /*0x76610b*/
   ((String *)(&v25))->Assign(aWdtTechlevel); /*0x766113*/
   v1 = System_Init_766880(sub_7667F0, (char)v25, v26); /*0x76612f*/
-  ComPtr::Constructor(&v27); /*0x766131*/
+  ((ComPtr *)(&v27))->Constructor(); /*0x766131*/
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76613f*/
-  ComPtr::Set(&v27, *(unsigned int *)(v1 + 4)); /*0x766147*/
+  ((ComPtr *)(&v27))->Set(*(unsigned int *)(v1 + 4)); /*0x766147*/
   if ( dword_B72770 < dword_B72768 /*0x766183*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
@@ -443,7 +443,7 @@ int WDT_InitGameOptions()
          0) )
   {
     v2 = dword_B72770++; /*0x766196*/
-    ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v2), v28); /*0x7661a7*/
+    ((ComPtr *)((unsigned int *)(dword_B72764 + 8 * v2)))->Set(v28); /*0x7661a7*/
   }
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7661b0*/
   ((ComPtr *)(&v27))->Release(); /*0x7661b4*/
@@ -456,9 +456,9 @@ int WDT_InitGameOptions()
   v23 = v4; /*0x7661db*/
   ((String *)(&v23))->Assign(aWdtNobases); /*0x7661e3*/
   v5 = ConstructorWDTFlagOption(v29, 16, v23, v24, v25, v26); /*0x7661fa*/
-  ComPtr::Constructor(&v27); /*0x7661fc*/
+  ((ComPtr *)(&v27))->Constructor(); /*0x7661fc*/
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766201*/
-  ComPtr::Set(&v27, v5[1]); /*0x76620d*/
+  ((ComPtr *)(&v27))->Set(v5[1]); /*0x76620d*/
   if ( dword_B72770 < dword_B72768 /*0x766249*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
@@ -468,7 +468,7 @@ int WDT_InitGameOptions()
          0) )
   {
     v6 = dword_B72770++; /*0x76625c*/
-    ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v6), v28); /*0x76626d*/
+    ((ComPtr *)((unsigned int *)(dword_B72764 + 8 * v6)))->Set(v28); /*0x76626d*/
   }
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766276*/
   ((ComPtr *)(&v27))->Release(); /*0x76627a*/
@@ -481,9 +481,9 @@ int WDT_InitGameOptions()
   v23 = v8; /*0x7662a1*/
   ((String *)(&v23))->Assign(aWdtNotshortgam); /*0x7662a9*/
   v9 = ConstructorWDTFlagOption(v29, 1024, v23, v24, v25, v26); /*0x7662c0*/
-  ComPtr::Constructor(&v27); /*0x7662c2*/
+  ((ComPtr *)(&v27))->Constructor(); /*0x7662c2*/
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7662c7*/
-  ComPtr::Set(&v27, v9[1]); /*0x7662d3*/
+  ((ComPtr *)(&v27))->Set(v9[1]); /*0x7662d3*/
   if ( dword_B72770 < dword_B72768 /*0x76630f*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
@@ -493,7 +493,7 @@ int WDT_InitGameOptions()
          0) )
   {
     v10 = dword_B72770++; /*0x766322*/
-    ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v10), v28); /*0x766333*/
+    ((ComPtr *)((unsigned int *)(dword_B72764 + 8 * v10)))->Set(v28); /*0x766333*/
   }
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76633c*/
   ((ComPtr *)(&v27))->Release(); /*0x766340*/
@@ -503,9 +503,9 @@ int WDT_InitGameOptions()
   v25 = v11; /*0x766358*/
   ((String *)(&v25))->Assign(aWdtUnitcount); /*0x766360*/
   v12 = System_Init_766880(sub_7667E0, (char)v25, v26); /*0x76637c*/
-  ComPtr::Constructor(&v27); /*0x76637e*/
+  ((ComPtr *)(&v27))->Constructor(); /*0x76637e*/
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766383*/
-  ComPtr::Set(&v27, *(unsigned int *)(v12 + 4)); /*0x76638f*/
+  ((ComPtr *)(&v27))->Set(*(unsigned int *)(v12 + 4)); /*0x76638f*/
   if ( dword_B72770 < dword_B72768 /*0x7663cb*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
@@ -515,7 +515,7 @@ int WDT_InitGameOptions()
          0) )
   {
     v13 = dword_B72770++; /*0x7663de*/
-    ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v13), v28); /*0x7663ef*/
+    ((ComPtr *)((unsigned int *)(dword_B72764 + 8 * v13)))->Set(v28); /*0x7663ef*/
   }
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7663f8*/
   ((ComPtr *)(&v27))->Release(); /*0x7663fc*/
@@ -528,9 +528,9 @@ int WDT_InitGameOptions()
   v23 = v15; /*0x766423*/
   ((String *)(&v23))->Assign(aWdtNoredeploym); /*0x76642b*/
   v16 = ConstructorWDTFlagOption(v29, 32, v23, v24, v25, v26); /*0x766442*/
-  ComPtr::Constructor(&v27); /*0x766444*/
+  ((ComPtr *)(&v27))->Constructor(); /*0x766444*/
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766449*/
-  ComPtr::Set(&v27, v16[1]); /*0x766455*/
+  ((ComPtr *)(&v27))->Set(v16[1]); /*0x766455*/
   if ( dword_B72770 < dword_B72768 /*0x766491*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
@@ -540,7 +540,7 @@ int WDT_InitGameOptions()
          0) )
   {
     v17 = dword_B72770++; /*0x7664a4*/
-    ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v17), v28); /*0x7664b5*/
+    ((ComPtr *)((unsigned int *)(dword_B72764 + 8 * v17)))->Set(v28); /*0x7664b5*/
   }
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7664be*/
   ((ComPtr *)(&v27))->Release(); /*0x7664c2*/
@@ -553,9 +553,9 @@ int WDT_InitGameOptions()
   v23 = v19; /*0x7664e9*/
   ((String *)(&v23))->Assign(aWdtNocrates); /*0x7664f1*/
   v20 = ConstructorWDTFlagOption(v29, 256, v23, v24, v25, v26); /*0x766508*/
-  ComPtr::Constructor(&v27); /*0x76650a*/
+  ((ComPtr *)(&v27))->Constructor(); /*0x76650a*/
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76650f*/
-  ComPtr::Set(&v27, v20[1]); /*0x76651b*/
+  ((ComPtr *)(&v27))->Set(v20[1]); /*0x76651b*/
   System_Init_766EE0(&v27); /*0x76652a*/
   v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766533*/
   ((ComPtr *)(&v27))->Release(); /*0x766537*/
@@ -665,7 +665,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
 
   v55.ambientSoundController[0] = (int)a1; /*0x769558*/
   ((BufferIOFile *)((BufferIOFile *)&v55.needsRedraw))->Init(); /*0x769567*/
-  CCFileClass::Reopen((CDFileClass *)&v55.needsRedraw, aWdtmapmdIni_0, (CHAR *)1); /*0x76957a*/
+  ((CCFileClass *)((CDFileClass *)&v55.needsRedraw))->Reopen(aWdtmapmdIni_0, (CHAR *)1); /*0x76957a*/
   v55.ambientSoundController[2] = 0; /*0x769588*/
   v55.ambientSoundController[3] = 0; /*0x76958c*/
   GenericList::Constructor((GenericList *)&v55.ambientSoundController[4]); /*0x769593*/
@@ -673,8 +673,8 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   Node::Init((Node *)&v55.bombVisible); /*0x7695aa*/
   v55.visibilityFlags = 0; /*0x7695bc*/
   v55.ambientSoundController[1] = (int)&INIClass_vftable; /*0x7695c3*/
-  FileStraw::Open((FileStraw *)&v55.ambientSoundController[1], (int)&v55.needsRedraw, 0); /*0x7695ce*/
-  CCFileClass::Close((BufferIOFileClass *)&v55.needsRedraw); /*0x7695da*/
+  ((FileStraw *)((FileStraw *)&v55.ambientSoundController[1]))->Open((int)&v55.needsRedraw, 0); /*0x7695ce*/
+  ((CCFileClass *)((BufferIOFileClass *)&v55.needsRedraw))->Close(); /*0x7695da*/
   sub_47AA00((CDFileClass *)&v56, a2); /*0x7695e7*/
   vtable0 = DecodeFrameSHP((int)&v56, 0, 0, 0); /*0x7695fc*/
   v55.AbstractClass = vtable0; /*0x769600*/
@@ -943,9 +943,9 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
     }
     while ( (*((uint8_t (**)(void **))((char *)&v55) + 1))(&((char *)&v55)) ); /*0x769b22*/
   }
-  CCFileClass::Reopen((CDFileClass *)&v55.needsRedraw, aWdtmapmdIni_0, (CHAR *)2); /*0x769b3b*/
+  ((CCFileClass *)((CDFileClass *)&v55.needsRedraw))->Reopen(aWdtmapmdIni_0, (CHAR *)2); /*0x769b3b*/
   INIClass::SaveToPipe((INIClass *)&v55.ambientSoundController[1], (int)&v55.needsRedraw); /*0x769b4c*/
-  CCFileClass::Reopen((CDFileClass *)&v55.needsRedraw, aCodeWdtmapmdIn, (CHAR *)2); /*0x769b5f*/
+  ((CCFileClass *)((CDFileClass *)&v55.needsRedraw))->Reopen(aCodeWdtmapmdIn, (CHAR *)2); /*0x769b5f*/
   INIClass::SaveToPipe((INIClass *)&v55.ambientSoundController[1], (int)&v55.needsRedraw); /*0x769b70*/
   ((unsigned int *)&v55)[0] = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x769b79*/
   *(unsigned int *)v51.__tail_10 = (void*)&VectorClass_WorldDominationTour_Centroid_vftable; /*0x769b81*/
@@ -953,7 +953,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   *(unsigned int *)v51.__pad_0 = (void*)&VectorClass_TRect_int_vftable; /*0x769b92*/
   MSEngine::ddtor(&v51); /*0x769b9a*/
   ((BufferIOFileClass *)(&v56))->Destruct(); /*0x769ba6*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v55.ambientSoundController[1]); /*0x769baf*/
+  ((HashTable *)((INIClass *)&v55.ambientSoundController[1]))->DestroyHashTableINIClass(); /*0x769baf*/
 // 0x535a60
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v55.needsRedraw))->Destruct(); /*0x769bc0*/
 }
@@ -994,7 +994,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
     {
       do /*0x76b80b*/
       {
-        ComPtr::Constructor(v7); /*0x76b7fc*/
+        ((ComPtr *)(v7))->Constructor(); /*0x76b7fc*/
         *(unsigned int *)v7->__pad_0 = &vt_rc_ptr; /*0x76b801*/
         v7 = (ComPtr *)((char *)v7 + 8); /*0x76b807*/
         --v4; /*0x76b80a*/
@@ -1018,7 +1018,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
     return &this->AbstractClass; /*0x76b829*/
   do /*0x76b84a*/
   {
-    ComPtr::Set((ComPtr *)((char *)((unsigned int *)this)[0] + 8 * v10), *(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
+    ((ComPtr *)((ComPtr *)((char *)((unsigned int *)this)[0] + 8 * v10)))->Set(*(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
     ++v10; /*0x76b847*/
   }
   while ( v10 < (int)((unsigned int *)this)[0] ); /*0x76b84a*/
@@ -1092,14 +1092,14 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   FromStringInt((char **)&aP1, g_DisplayWidth); /*0x76fa64*/
   v16 = ProcessStringAndCopy((char **)&a4, aTarget_0, (char **)&aP1); /*0x76fa78*/
   v17 = aP3; /*0x76fa7d*/
-  CoordPair = INIClass::GetCoordPair(a2, v35, aP3, v16, (unsigned int *)this + 4); /*0x76fa8c*/
+  CoordPair = ((INIClass *)(a2))->GetCoordPair(v35, aP3, v16, (unsigned int *)this + 4); /*0x76fa8c*/
   v19 = *CoordPair; /*0x76fa91*/
   v20 = CoordPair[1]; /*0x76fa93*/
   *((unsigned int *)this + 4) = v19; /*0x76fa96*/
   *((unsigned int *)this + 5) = v20; /*0x76fa9c*/
   DeleteAndZero((void **)&a4); /*0x76fa9f*/
   v21 = ProcessStringAndCopy((char **)&a4, aOrigin_0, (char **)&aP1); /*0x76fab3*/
-  v22 = INIClass::GetCoordPair(a2, v35, v17, v21, (unsigned int *)this + 6); /*0x76fac3*/
+  v22 = ((INIClass *)(a2))->GetCoordPair(v35, v17, v21, (unsigned int *)this + 6); /*0x76fac3*/
   v23 = *v22; /*0x76fac8*/
   v24 = v22[1]; /*0x76faca*/
   *((unsigned int *)this + 6) = v23; /*0x76facd*/
@@ -1110,7 +1110,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
     if ( !*v8 && !*((unsigned int *)this + 5) ) /*0x76faf0*/
     {
       ((String *)((char **)&a4))->Assign(aTarget800); /*0x76fb00*/
-      v25 = INIClass::GetCoordPair(a2, v35, v17, (char **)&a4, (unsigned int *)this + 4); /*0x76fb15*/
+      v25 = ((INIClass *)(a2))->GetCoordPair(v35, v17, (char **)&a4, (unsigned int *)this + 4); /*0x76fb15*/
       v26 = *v25; /*0x76fb1a*/
       v27 = v25[1]; /*0x76fb1c*/
       *v8 = v26; /*0x76fb1f*/
@@ -1120,7 +1120,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
     if ( !*v9 && !*((unsigned int *)this + 7) ) /*0x76fb32*/
     {
       ((String *)((char **)&a4))->Assign(aOrigin800); /*0x76fb42*/
-      v28 = INIClass::GetCoordPair(a2, v35, v17, (char **)&a4, (unsigned int *)this + 6); /*0x76fb57*/
+      v28 = ((INIClass *)(a2))->GetCoordPair(v35, v17, (char **)&a4, (unsigned int *)this + 6); /*0x76fb57*/
       v29 = *v28; /*0x76fb5c*/
       v30 = v28[1]; /*0x76fb5e*/
       *v9 = v29; /*0x76fb61*/
@@ -1513,20 +1513,20 @@ AbstractClass * * ObjectClass::sub_764A20()
     v14 = 0; /*0x764a9e*/
     v15 = 0; /*0x764aa2*/
     *(unsigned int *)&v4.m_3[1] = &vt_INIClass; /*0x764aa6*/
-    FileStraw::Open((FileStraw *)&v4.m_3[1], (int)&v16, 0); /*0x764aae*/
-    CCFileClass::Close((BufferIOFileClass *)&v16); /*0x764ab7*/
+    ((FileStraw *)((FileStraw *)&v4.m_3[1]))->Open((int)&v16, 0); /*0x764aae*/
+    ((CCFileClass *)((BufferIOFileClass *)&v16))->Close(); /*0x764ab7*/
     ((String *)(&v4))->Assign(g_INI_Key_CampaignID); /*0x764ac5*/
     Int = INIClass::ReadInt((bool *)&v4.m_3[1], (char **)this, (char **)&v4, -1); /*0x764adf*/
     DeleteAndZero((ObjectClass *)&v4); /*0x764ae1*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v4.m_3[1]); /*0x764aea*/
+    ((HashTable *)((INIClass *)&v4.m_3[1]))->DestroyHashTableINIClass(); /*0x764aea*/
     *(unsigned int *)v16.__pad_0 = &off_7E1668; /*0x764af3*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x764afb*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v16))->Dtor(); /*0x764afb*/
     return Int; /*0x764b00*/
   }
   else
   {
     *(unsigned int *)v16.__pad_0 = &off_7E1668; /*0x764b0f*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x764b17*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v16))->Dtor(); /*0x764b17*/
     return -1; /*0x764b1c*/
   }
 
@@ -1550,18 +1550,18 @@ int sub_765580(unsigned int * a1)
   unsigned int v2[22]; // [esp+0h] [ebp-58h] BYREF
 
   ((BufferIOFile *)(v2))->Init(); /*0x765587*/
-  CCFileClass::Reopen(v2, g_Str_File_WDTHist_ini, 1); /*0x765597*/
+  ((CCFileClass *)(v2))->Reopen(g_Str_File_WDTHist_ini, 1); /*0x765597*/
   if ( !((File *)(v2))->IsReady(0) ) /*0x7655a2*/
   {
-    FileClass::Close(v2); /*0x7655af*/
-    CCFileClass::Close(v2); /*0x7655b8*/
-    CCFileClass::Reopen(v2, g_Str_File_WDTHist_ini, 1); /*0x7655c8*/
+    ((FileClass *)(v2))->Close(); /*0x7655af*/
+    ((CCFileClass *)(v2))->Close(); /*0x7655b8*/
+    ((CCFileClass *)(v2))->Reopen(g_Str_File_WDTHist_ini, 1); /*0x7655c8*/
   }
-  FileStraw::Open(a1, (int)v2, 0); /*0x7655d8*/
-  CCFileClass::Close(v2); /*0x7655e1*/
+  ((FileStraw *)(a1))->Open((int)v2, 0); /*0x7655d8*/
+  ((CCFileClass *)(v2))->Close(); /*0x7655e1*/
   v2[0] = (unsigned int)&off_7E1668; /*0x7655ea*/
 // 0x431b80
-  return BufferIOFileClass::Dtor(v2); /*0x7655f7*/
+  return ((BufferIOFileClass *)(v2))->Dtor(); /*0x7655f7*/
 }
 } // namespace gamemd
 
@@ -1944,9 +1944,9 @@ rc_ptr * ConstructorWDTFlagOption(rc_ptr_base * a1, int a2, void * a3, int a4, v
   {
     v11 = 0; /*0x7674a7*/
   }
-  ComPtr::Constructor((ComPtr *)a1); /*0x7674ab*/
+  ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x7674ab*/
   *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_FlagGameOption_vftable; /*0x7674b2*/
-  ComPtr::Set((ComPtr *)a1, (int)v11); /*0x7674b9*/
+  ((ComPtr *)((ComPtr *)a1))->Set((int)v11); /*0x7674b9*/
   DeleteAndZero((ObjectClass *)&a3); /*0x7674c2*/
   DeleteAndZero((ObjectClass *)&a5); /*0x7674cb*/
   return a1; /*0x7674d2*/
@@ -2789,9 +2789,9 @@ bool E4Recv_76D3A0::sub_76D3A0(unsigned int * a2)
     ComPtr::Territory_Dtor((ComPtr *)v8); /*0x76d3ea*/
   }
   FindTerritoryWOL(v8, this->currentTargets[1] + 44, this->currentTargets[2]); /*0x76d403*/
-  ComPtr::Constructor((ComPtr *)v7); /*0x76d40c*/
+  ((ComPtr *)((ComPtr *)v7))->Constructor(); /*0x76d40c*/
   v7[0] = (int)&vt_rc_ptr; /*0x76d415*/
-  ComPtr::Set((ComPtr *)v7, v9); /*0x76d422*/
+  ((ComPtr *)((ComPtr *)v7))->Set(v9); /*0x76d422*/
   *(unsigned int *)v8 = &vt_rc_ptr; /*0x76d42b*/
   ((ComPtr *)((ComPtr *)v8))->Release(); /*0x76d433*/
   v5 = TerritorySelectWDT(this, (int)v7); /*0x76d448*/
@@ -2954,7 +2954,7 @@ unsigned int * E4Recv_76E090::sub_76E090()
   }
   DeleteAndZero((ObjectClass *)&v4); /*0x76e13b*/
   this->currentTargets[2] = -1; /*0x76e144*/
-  ComPtr::Constructor((ComPtr *)&v4.m_3[1]); /*0x76e14e*/
+  ((ComPtr *)((ComPtr *)&v4.m_3[1]))->Constructor(); /*0x76e14e*/
   *(unsigned int *)&v4.m_3[1] = &vt_rc_ptr; /*0x76e15a*/
   TerritorySelectWDT(this, (int)&v4.m_3[1]); /*0x76e162*/
   *(unsigned int *)&v4.m_3[1] = &vt_rc_ptr; /*0x76e16b*/
@@ -3269,14 +3269,14 @@ rc_ptr * FindTerritoryWOL(ObjectClass * aP0, int a2, int a3)
   }
   else
   {
-    ComPtr::Constructor((ComPtr *)v7); /*0x76ffc4*/
+    ((ComPtr *)((ComPtr *)v7))->Constructor(); /*0x76ffc4*/
     v7[0] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76ffc9*/
     v4 = 1; /*0x76ffd1*/
     v5 = v7; /*0x76ffd6*/
   }
-  ComPtr::Constructor((ComPtr *)aP0); /*0x76ffdc*/
+  ((ComPtr *)((ComPtr *)aP0))->Constructor(); /*0x76ffdc*/
   *(unsigned int *)aP0 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76ffe1*/
-  ComPtr::Set((ComPtr *)aP0, v5[1]); /*0x76ffed*/
+  ((ComPtr *)((ComPtr *)aP0))->Set(v5[1]); /*0x76ffed*/
   if ( (v4 & 1) != 0 ) /*0x76fff5*/
   {
     v7[0] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76fffb*/

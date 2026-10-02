@@ -637,7 +637,7 @@ TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2, void *a3_1
   *((unsigned int *)Block + 2) = 0; /*0x512a21*/
   if ( (a2 & 1) != 0 ) /*0x512a28*/
     __3_YAXPAX_Z(Block); /*0x512a2b*/
-  return Block; /*0x512a35*/
+  return (gamemd::TypeList_flat *)(Block); /*0x512a35*/
 
 }
 } // namespace gamemd
@@ -948,7 +948,7 @@ TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2, void *
   *((unsigned int *)Block + 2) = 0; /*0x5ac681*/
   if ( (a2 & 1) != 0 ) /*0x5ac688*/
     __3_YAXPAX_Z(Block); /*0x5ac68b*/
-  return Block; /*0x5ac695*/
+  return (gamemd::TypeList_flat *)(Block); /*0x5ac695*/
 
 }
 } // namespace gamemd

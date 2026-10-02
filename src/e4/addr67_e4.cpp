@@ -84,8 +84,8 @@ int sub_679CC0()
     v9 = 0; /*0x679d59*/
     ((Vector *)((int)v8))->Clear(); /*0x679d60*/
     v7[0] = (unsigned int)&off_7E1668; /*0x679d69*/
-    BufferIOFileClass::Dtor(v7); /*0x679d71*/
-    HashTable::DestroyHashTableINIClass(v1); /*0x679d7a*/
+    ((BufferIOFileClass *)(v7))->Dtor(); /*0x679d71*/
+    ((HashTable *)(v1))->DestroyHashTableINIClass(); /*0x679d7a*/
   }
   return dword_B053B4; /*0x679d84*/
 }
@@ -110,7 +110,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   int v19; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP2),(gamemd::INIClass *)(a3),(gamemd::INIClass *)(&g_INI_DefaultBuffer), String, 128) ) /*0x67b57c*/
+  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP2),(gamemd::INIClass *)(a3),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(String), 128) ) /*0x67b57c*/
   {
     ((VectorClass *)(&v17))->BuildingTypeConstructor(0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
@@ -249,7 +249,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     *(unsigned char *)(aP0 + 12) = 1; /*0x67bbf3*/
     *(unsigned char *)(aP0 + 13) = 0; /*0x67bbf7*/
     *(unsigned int *)aP0 = (unsigned int)((void*)&VectorClass_InfantryTypeClass_const___vftable); /*0x67bbfa*/
-    ((HouseTypeClass *)((HouseTypeClass *)aP0))->readStartInfantry(&v17); /*0x67bc00*/
+    ((HouseTypeClass *)((HouseTypeClass *)aP0))->readStartInfantry((unsigned int *)(&v17)); /*0x67bc00*/
     *(unsigned int *)aP0 = (unsigned int)((void*)&TypeList_InfantryTypeClass_const___vftable); /*0x67bc05*/
     *(unsigned int *)v17.__pad_0 = (unsigned int)((void*)&VectorClass_InfantryTypeClass_const___vftable); /*0x67bc0b*/
     InfantryTypeVector_field_0x14 = v17.InfantryTypeVector_field_0x14; /*0x67bc17*/
@@ -354,7 +354,7 @@ int ArtINI_Load()
   ((Vector *)((int)v2))->Clear(); /*0x679f26*/
   v1[0] = (unsigned int)&off_7E1668; /*0x679f2f*/
 // 0x431b80
-  return BufferIOFileClass::Dtor(v1); /*0x679f3c*/
+  return ((BufferIOFileClass *)(v1))->Dtor(); /*0x679f3c*/
 }
 } // namespace gamemd
 
@@ -364,11 +364,11 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Destination, 128) ) /*0x67bade*/
+  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Destination), 128) ) /*0x67bade*/
 // 0x524cb0
     return KeywordType::FindOrCreate2(Destination); /*0x67baeb*/
   else
-    return a4; /*0x67baf9*/
+    return (gamemd::InfantryTypeClass *)(a4); /*0x67baf9*/
 }
 } // namespace gamemd
 
@@ -378,11 +378,11 @@ AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, uns
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Destination, 128) ) /*0x67bd4e*/
+  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer),(int)(Destination), 128) ) /*0x67bd4e*/
 // 0x41cef0
     return KeywordClass::FindOrCreate(Destination); /*0x67bd5b*/
   else
-    return a4; /*0x67bd69*/
+    return (gamemd::AircraftTypeClass *)(a4); /*0x67bd69*/
 }
 } // namespace gamemd
 

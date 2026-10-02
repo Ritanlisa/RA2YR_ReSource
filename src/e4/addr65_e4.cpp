@@ -1,5 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/TypeClass_e4.hpp"
 #include "e4/classes/FileStraw_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_652CD0_e4.hpp"
@@ -81,7 +83,7 @@ int Trigger_AllocateLog(int a1)
     int v3 = 828 * a1 + 11298400;
     unsigned int * v83 = (unsigned int *)v3;
     *(unsigned int *)v3 = *(unsigned int *)Networking_CurrentFrameCRC;
-    DataGlobal_00AC6664[207 * a1] = Random::State((unsigned int *)g_ScenarioClass_Instance + 134);
+    DataGlobal_00AC6664[207 * a1] = ((Random *)((unsigned int *)g_ScenarioClass_Instance + 134))->State();
     DataGlobal_00AC6664[207 * a1 + 1] = g_CurrentFrame;
     int v4 = 0;
     int v5 = 828 * a1 + 11298412;
@@ -507,7 +509,7 @@ int Trigger_AllocateLog(int a1)
   }
   else
   {
-    result = (int)(Random::State((unsigned int *)g_ScenarioClass_Instance + 134));
+    result = (int)(((Random *)((unsigned int *)g_ScenarioClass_Instance + 134))->State());
     dword_AFA26C = result;
   }
   return result;
@@ -1290,7 +1292,7 @@ unsigned int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
     a2[v6] = 0; /*0x65d5a0*/
     v4 = strlen(a2); /*0x65d5ab*/
   }
-  FileStraw::Destructor((int)v10); /*0x65d5b1*/
+  ((FileStraw *)((int)v10))->Destructor(); /*0x65d5b1*/
   return v4; /*0x65d5b8*/
 }
 }
@@ -1393,7 +1395,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
     {
       v6 = (ScriptTypeClass *)RA2_OPNEW(0x234u); /*0x65d933*/
       if ( v6 ) /*0x65d93d*/
-        v7 = (unsigned int)(ScriptTypeClass::Constructor(v6, 0)); /*0x65d942*/
+        v7 = (unsigned int)(((ScriptTypeClass *)(v6))->Constructor(0)); /*0x65d942*/
       else
         v7 = 0; /*0x65d949*/
       *(unsigned int *)(v3 + 224) = v7; /*0x65d94b*/
@@ -1419,7 +1421,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
   if ( v12 ) /*0x65d9b5*/
     Waypoint_Location = ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v48, *(int *)v48); /*0x65d9c7*/
   else
-    Waypoint_Location = TechnoClass::GetWaypointCoords((TechnoClass *)v3, v48); /*0x65d9d5*/
+    Waypoint_Location = ((TechnoClass *)((TechnoClass *)v3))->GetWaypointCoords(v48); /*0x65d9d5*/
   v14 = *Waypoint_Location; /*0x65d9de*/
   v45 = (ScriptActionQueue)v14; /*0x65d9e2*/
   if ( !v43 && IDA___PAIR32__(*(uint16_t *)&v45.__tail_0[2], v14) != dword_B04C38 ) /*0x65d9f3*/
@@ -1434,7 +1436,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
     while ( v15 ); /*0x65da1e*/
     *(ScriptActionQueue *)v48 = v45; /*0x65da28*/
     v16 = 0; /*0x65da37*/
-    v17 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v48); /*0x65da39*/
+    v17 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v48); /*0x65da39*/
     v18 = -1; /*0x65da3b*/
     do /*0x65da72*/
     {
@@ -1554,7 +1556,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
   (*(void (**)(int, int, unsigned int))(v37 + 488))(v31, 26, 0); /*0x65dc59*/
   (*(void (**)(int, unsigned int, int))(*(unsigned int *)v31 + 1152))(v31, 0, 1); /*0x65dc67*/
   v38 = *(unsigned int *)v31; /*0x65dc6d*/
-  v39 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v48); /*0x65dc79*/
+  v39 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v48); /*0x65dc79*/
   (*(void (**)(int, void *))(v38 + 968))(v31, v39); /*0x65dc81*/
   ++dword_A8E7AC; /*0x65dc95*/
   ((Coord *)((Coord *)v49))->Subtract(((int16_t)v36 << 8) + 128, (IDA_SHIWORD(v46) << 8) + 128, 0); /*0x65dcb6*/
@@ -1740,7 +1742,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         v57[1] = (IDA_SHIWORD(v49) << 8) + 128; /*0x65e209*/
         v5->vt_slot_436(v57); /*0x65e210*/
         v19 = *v5; /*0x65e216*/
-        v20 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v49); /*0x65e225*/
+        v20 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v49); /*0x65e225*/
         v5->vt_slot_1152(v20, 1); /*0x65e22d*/
         if ( !v5[413] ) /*0x65e23d*/
           WinAPI::Wrapper(-2147467261); /*0x65e260*/
@@ -1797,7 +1799,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
       }
       if ( IDA_HIBYTE(v48) ) /*0x65e2d9*/
       {
-        v22 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v49); /*0x65e2ee*/
+        v22 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v49); /*0x65e2ee*/
         Coords = CellClass::GetCoords(v22, v61); /*0x65e2f5*/
         v24 = *Coords; /*0x65e2fa*/
         v25 = Coords[1]; /*0x65e2fc*/
@@ -1819,7 +1821,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         v60[2] = v5[41] + -256 - v28; /*0x65e373*/
         v5->vt_slot_436(v60); /*0x65e379*/
         v30 = *v5; /*0x65e37f*/
-        v31 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v49); /*0x65e38e*/
+        v31 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v49); /*0x65e38e*/
         v5->vt_slot_1152(v31, 1); /*0x65e396*/
         (*(void (**)(unsigned int *, unsigned int, int))(*v5 + 1348))(v5, 0, 1072693248); /*0x65e3a8*/
         if ( !v5[413] ) /*0x65e3b8*/
@@ -1835,7 +1837,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
       else
       {
         v33 = *v5; /*0x65e40a*/
-        v34 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v49); /*0x65e425*/
+        v34 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v49); /*0x65e425*/
         v35 = CellClass::GetCoords(v34, v62); /*0x65e42c*/
         v32 = (*(int (**)(unsigned int *, int *, unsigned int))(v33 + 216))( /*0x65e434*/
                 v5,
@@ -1856,7 +1858,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         if ( !((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&a2) ) /*0x65e550*/
         {
           v43 = *v5; /*0x65e559*/
-          v44 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a2); /*0x65e570*/
+          v44 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a2); /*0x65e570*/
           if ( !v5->vt_slot_428(v44, v40, -1, 0, 1) ) /*0x65e578*/
             break; /*0x65e578*/
         }
@@ -2213,7 +2215,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
     {
       v5 = new ScriptTypeClass; /*0x65ec82*/
       if ( v5 ) /*0x65ec8c*/
-        v6 = ScriptTypeClass::Constructor(v5, 0); /*0x65ec91*/
+        v6 = ((ScriptTypeClass *)(v5))->Constructor(0); /*0x65ec91*/
       else
         v6 = 0; /*0x65ec98*/
       ecx0[56] = v6; /*0x65ec9a*/
@@ -2231,7 +2233,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
   *((unsigned char *)v9[373] + 116) = 0; /*0x65ecd8*/
   if ( !v9 ) /*0x65ecdc*/
     return 0; /*0x65f304*/
-  v56 = *TechnoClass::GetWaypointCoords(ecx0, &v57); /*0x65ecf3*/
+  v56 = *((TechnoClass *)(ecx0))->GetWaypointCoords(&v57); /*0x65ecf3*/
   if ( a2 != -1 ) /*0x65ecf7*/
     v56 = *(unsigned int *)ScenarioClass::Get_Waypoint_Location(&v57, a2); /*0x65ed0c*/
   v10 = (LPVOID *)v9[12]; /*0x65ed10*/
@@ -2248,7 +2250,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
       v47 = 1; /*0x65ed49*/
       v11 = 1; /*0x65ed4e*/
     }
-    v12 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v56); /*0x65ed5c*/
+    v12 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v56); /*0x65ed5c*/
     v13 = (int *)(*(int (**)(void *, char *))(*(unsigned int *)v12 + 72))(v12, v73); /*0x65ed6d*/
     v52 = *v13; /*0x65ed72*/
     v53 = v13[1]; /*0x65ed79*/
@@ -2326,7 +2328,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
                  0,
                  0);
       }
-      v16 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v60); /*0x65ef74*/
+      v16 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v60); /*0x65ef74*/
       if ( v48 || v47 ) /*0x65ef84*/
       {
         v22 = (int *)(*(int (**)(unsigned int *, char *))(*v16 + 72))(v16, v76); /*0x65efb9*/

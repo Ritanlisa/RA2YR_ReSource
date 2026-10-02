@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct PriorityQueue {
-    int Add(int a2, void *a1 = 0, void *a3 = 0);
+    int Add(int aP1);
 };
 
 } // namespace gamemd

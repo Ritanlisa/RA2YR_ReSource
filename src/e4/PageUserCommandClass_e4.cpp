@@ -33,7 +33,7 @@ PageUserCommandClass::PageUserCommandClass()
 char * PageUserCommandClass::AddRef(void *a1)
 {
 
-  return aPageuser; /*0x537de5*/
+  return (char *)(aPageuser); /*0x537de5*/
 
 }
 // 0x537DF0

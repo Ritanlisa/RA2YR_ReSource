@@ -122,7 +122,7 @@ namespace gamemd {
 int AudioMixer::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
-  SetupSampleAudioMixer((int *)(&this->AudioMixer_field_00), 0x4000); /*0x40100a*/
+  SetupSampleAudioMixer((int *)(&this->AudioMixer_field_00),(gamemd::ObjectClass *)(0x4000)); /*0x40100a*/
   SetupSampleAudioMixer((int *)this + 10,(gamemd::ObjectClass *)(100)); /*0x401019*/
   SetupSampleAudioMixer((int *)this + 20,(gamemd::ObjectClass *)(0x2000)); /*0x401028*/
   SetRateMixerSample((unsigned int *)this + 10, 10, 0x3E8u, 0); /*0x40103b*/

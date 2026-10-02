@@ -444,7 +444,7 @@ AnimClass * InfantryClass::CheckDeployPath()
   result = (AnimClass *)this->Type; /*0x521eec*/
   if ( !((unsigned char *)(result) + 0xCD2)[194] ) /*0x521ef2*/
     goto LABEL_38; /*0x521ef2*/
-  locomotor = ((unsigned int *)this)[0]; /*0x521f00*/
+  locomotor = (int *)(((unsigned int *)this)[0]); /*0x521f00*/
   InfantryClass::updateOccupiedBuilding((InfantryClass *)&v13, (int (****)(unsigned int, void *, unsigned int *))((unsigned int *)this)[0]); /*0x521f0b*/
   if ( !*(unsigned int *)v13.__pad_0 ) /*0x521f16*/
     WinAPI::Wrapper(-2147467261); /*0x521f1d*/

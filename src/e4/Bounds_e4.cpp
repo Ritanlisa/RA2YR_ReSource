@@ -26,7 +26,7 @@ int Bounds::Subtract(IUnknown * aP1, unsigned int * a2, void *a3, void *a4)
   aP1[1] = v7; /*0x487f06*/
   aP1[2] = v5; /*0x487f09*/
   aP1[3] = v6; /*0x487f0d*/
-  return aP1; /*0x487f05*/
+  return (int)(aP1); /*0x487f05*/
 
 }
 } // namespace gamemd

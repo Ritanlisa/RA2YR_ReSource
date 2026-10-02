@@ -284,7 +284,7 @@ void* AnimTypeClass::GetWarhead(int a2)
     *(unsigned int *)this->__pad_2A0 = -1; /*0x427c7a*/
     LOBYTE(v3) = -1; /*0x427c71*/
   }
-  return (char)v3; /*0x427c80*/
+  return (void *)((char)v3); /*0x427c80*/
 
 }
 }
@@ -381,7 +381,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     }
     return 0; /*0x428955*/
   }
-  return result; /*0x42892b*/
+  return (gamemd::ScenarioClass **)(result); /*0x42892b*/
 
 }
 }
@@ -426,7 +426,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v12); 
   Power::TimerProcess((int)((void *)(this->MiddleFrameWidth))); 
-  Checksummer::Add_double((Checksummer *)a2, this->Damage[0], this->Damage[1]); /*0x428a96*/
+  ((Checksummer *)((Checksummer *)a2))->Add_double(this->Damage[0], this->Damage[1]); /*0x428a96*/
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
   Power::Fla  ((Power *)((int)((Power *)a2)))->FlagProcess(v13); 
   Power::TimerProcess((int)((void *)(this->Rate))); 
@@ -471,7 +471,7 @@ LABEL_6:
     if ( ++v2 >= *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x428bd4*/
       goto LABEL_6; /*0x428bd4*/
   }
-  return *(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * v2); /*0x428bef*/
+  return (gamemd::AnimTypeClass **)(*(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * v2)); /*0x428bef*/
 
 }
 }
@@ -497,10 +497,10 @@ int AnimTypeClass::GetDamage()
   if ( !result && this->DemandLoad ) /*0x428c47*/
   {
     Debug::Log(); /*0x428c5e*/
-    ImageFile = ((unsigned int *)this)[0]; /*0x428c69*/
+    ImageFile = (const char *)(((unsigned int *)this)[0]); /*0x428c69*/
     if ( !((unsigned int *)this)[0] ) /*0x428c63*/
       ImageFile = (const char *)((unsigned int *)this)[0]; /*0x428c76*/
-    _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x428c8b*/
+    _makepath(Buffer, 0, 0, ImageFile,(const char *)(Ext)); /*0x428c8b*/
     if ( ((unsigned int *)this)[0] ) /*0x428c90*/
     {
       _makepath(Buffer, 0, 0, (const char *)((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x428ccc*/
@@ -510,7 +510,7 @@ int AnimTypeClass::GetDamage()
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x428cf3*/
     }
     CCFileClass::Construct(&v7, Buffer); /*0x428d04*/
-    v4 = (SHPStruct *)CCFileClass::ReadEntireFile(&v7); /*0x428d0d*/
+    v4 = (SHPStruct *)((CCFileClass *)(&v7))->ReadEntireFile(); /*0x428d0d*/
     ((unsigned int *)this)[0] = v4; /*0x428d14*/
     if ( v4 ) /*0x428d1a*/
     {
@@ -520,7 +520,7 @@ int AnimTypeClass::GetDamage()
     {
       ((ObjectTypeClass *)((ObjectTypeClass *)Buffer))->SetRTTI71(); /*0x428d2c*/
       CCFileClass::Construct(&v10, Buffer); /*0x428d3d*/
-      v5 = (SHPStruct *)CCFileClass::ReadEntireFile(&v10); /*0x428d46*/
+      v5 = (SHPStruct *)((CCFileClass *)(&v10))->ReadEntireFile(); /*0x428d46*/
       ((unsigned int *)this)[0] = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         ((unsigned int *)this)[0] = 1; /*0x428d55*/
@@ -528,7 +528,7 @@ int AnimTypeClass::GetDamage()
       v12 = 0; /*0x428d6b*/
       ((Vector *)((int)v11))->Clear(); /*0x428d76*/
       *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x428d7f*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x428d87*/
+      ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x428d87*/
     }
     (*((void (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
     Image = ((unsigned int *)this)[0]; /*0x428da2*/
@@ -536,7 +536,7 @@ int AnimTypeClass::GetDamage()
     v9 = 0; /*0x428db4*/
     ((Vector *)((int)v8))->Clear(); /*0x428dbc*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x428dc5*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x428dcd*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v7))->Dtor(); /*0x428dcd*/
     return (int)Image; /*0x428dd2*/
   }
   return result; /*0x428dd4*/

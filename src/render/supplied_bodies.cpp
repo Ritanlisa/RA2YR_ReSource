@@ -133,7 +133,7 @@ int BuildingQueue::AllocSlot(int a2) {
     if ( FreeSlot == -1 ) /*0x42eb30*/
       return 0; /*0x42eb3e*/
     else
-      return this->BuildingQueue_field_0x08 + 16 * FreeSlot; /*0x42eb39*/
+      return (int)(this->BuildingQueue_field_0x08 + 16 * FreeSlot); /*0x42eb39*/
 }
 } // namespace gamemd
 

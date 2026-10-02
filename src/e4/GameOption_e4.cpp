@@ -33,9 +33,9 @@ int GameOption::SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1)
   else
   {
     StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_NoDescription), 0,(const char *)(g_Str_File_Session_CPP), 2845));
-    return wcscpy((wchar_t *)Destination, StringCSF); /*0x69ad09*/
+    return (int)(wcscpy((wchar_t *)Destination, StringCSF)); /*0x69ad09*/
   }
-  return result; /*0x69aced*/
+  return (int)(result); /*0x69aced*/
 
 }
 } // namespace gamemd

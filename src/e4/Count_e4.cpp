@@ -148,7 +148,7 @@ int32_t Count::Release(void *a1)
 {
 
   ++*((unsigned int *)this + 2); /*0x76f162*/
-  return this->__pad_0; /*0x76f165*/
+  return (int32_t)(this->__pad_0); /*0x76f165*/
 
 }
 } // namespace gamemd
@@ -158,7 +158,7 @@ int32_t Count::ddtor()
 {
 
   --*((unsigned int *)this + 2); /*0x76f172*/
-  return this->__pad_0; /*0x76f175*/
+  return (int32_t)(this->__pad_0); /*0x76f175*/
 
 }
 } // namespace gamemd

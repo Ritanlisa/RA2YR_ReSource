@@ -314,7 +314,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
   int v22; // ebx
   int v23; // edx
 
-  Checksum::AddString(a2, (uint8_t *)((char *)this + 5050)); /*0x68b952*/
+  ((Checksum *)(a2))->AddString((uint8_t *)((char *)this + 5050)); /*0x68b952*/
   Power::TimerProcess(*((unsigned int *)this + 1293)); /*0x68b960*/
   Power::TimerProcess(*((unsigned int *)this + 1294)); /*0x68b96e*/
   Power::TimerProcess(*((unsigned int *)this + 1295)); /*0x68b97c*/
@@ -418,7 +418,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
   Power::TimerProcess(*((unsigned int *)this + 3415)); /*0x68bc73*/
   Power::TimerProcess(*((unsigned int *)this + 3402)); /*0x68bc81*/
   Power::TimerProcess(*((unsigned int *)this + 3403)); /*0x68bc8f*/
-  return Power::TimerProcess(*((unsigned int *)this + 3404)); /*0x68bca2*/
+  return (void *)(Power::TimerProcess(*((unsigned int *)this + 3404))); /*0x68bca2*/
 
 }
 }
@@ -477,7 +477,7 @@ int Power::FlagProcess(int a2)
   unsigned int v6; // eax
   int v7; // edi
 
-  Power_field_0x4 = this->Power_field_0x4; /*0x4a1ca0*/
+  Power_field_0x4 = (void *)(this->Power_field_0x4); /*0x4a1ca0*/
   if ( !Power_field_0x4 ) /*0x4a1ca7*/
     this->a2 = 0; /*0x4a1ca9*/
   *((unsigned char *)&this->a2 + (unsigned int)Power_field_0x4) = (unsigned char)a2 != 0; /*0x4a1cb7*/

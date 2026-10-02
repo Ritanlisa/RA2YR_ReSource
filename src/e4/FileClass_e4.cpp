@@ -139,7 +139,7 @@ LABEL_12:
 } // namespace gamemd
 // 0x65CCE0
 namespace gamemd {
-int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
+int FileClass::Read(char *aP1, signed int aP2)
 {
 
   DWORD v4; // ebx
@@ -398,7 +398,7 @@ LABEL_27: v16 = (void *)(this->FileName);
 } // namespace gamemd
 // 0x65D150
 namespace gamemd {
-int FileClass::Close(void *a1, void *a2)
+int FileClass::Close()
 {
 
   (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d155*/
@@ -416,7 +416,7 @@ namespace gamemd {
 unsigned int * FileClass::loc_401950()
 {
 
-  return *(unsigned int *)&this->FileNameAllocated; /*0x401943*/
+  return (unsigned int *)(*(unsigned int *)&this->FileNameAllocated); /*0x401943*/
 
 }
 } // namespace gamemd

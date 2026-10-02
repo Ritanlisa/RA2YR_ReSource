@@ -265,7 +265,7 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
 
   if ( wParam == -1 ) /*0x78109d*/
   {
-    StringCSF = GetStringCSF((wchar_t *)(aSttLobbylistus), 0, g_Str_File_wonline_cpp, 3050); /*0x7810a4*/
+    StringCSF = GetStringCSF((wchar_t *)(aSttLobbylistus), 0,(const char *)(g_Str_File_wonline_cpp), 3050); /*0x7810a4*/
   }
   else
   {
@@ -274,11 +274,11 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
     {
       qmemcpy(v7, (char *)dword_B77908 + 108 * v5, sizeof(v7)); /*0x7810ee*/
       FormatWOLPlayerInfo(a1, v7); /*0x7810f2*/
-      return a1; /*0x7810ff*/
+      return (gamemd::CampaignScore *)(a1); /*0x7810ff*/
     }
-    StringCSF = GetStringCSF((wchar_t *)(aSttLobbylistus), 0, g_Str_File_wonline_cpp, 3055); /*0x781113*/
+    StringCSF = GetStringCSF((wchar_t *)(aSttLobbylistus), 0,(const char *)(g_Str_File_wonline_cpp), 3055); /*0x781113*/
   }
   ((WideString *)((WideString *)a1))->Assign(StringCSF); /*0x78111b*/
-  return a1; /*0x7810fb*/
+  return (gamemd::CampaignScore *)(a1); /*0x7810fb*/
 }
 } // namespace gamemd

@@ -130,7 +130,7 @@ struct AudioStream {
     void Stop();  // 0x4026B0
     void ReleaseChannel(void *a1_1);  // 0x4026F0
     void DestroyAll(void * Block);  // 0x4033C0
-    int Reset(void *a1_1, void *a2_1);  // 0x403820
+    int Reset();  // 0x403820
     int ResetChannel(int a2, int a3);  // 0x4038A0
     int ResetChannel2(int a2, int a3);  // 0x4038C0
     int SetupPlayback();  // 0x404700

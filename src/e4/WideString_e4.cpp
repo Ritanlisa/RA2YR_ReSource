@@ -197,7 +197,7 @@ LABEL_35:
     wcscpy((wchar_t *)*v3, v16); /*0x7b75d8*/
   if ( v5 ) /*0x7b75e2*/
     __3_YAXPAX_Z(v5); /*0x7b75e5*/
-  return 1; /*0x7b75ed*/
+  return (gamemd::AbstractClass **)(1); /*0x7b75ed*/
 
 }
 }
@@ -274,7 +274,7 @@ int WideString::Trim(wchar_t * Source)
       while ( v4 >= 0 ); /*0x727db8*/
     }
   }
-  return (wchar_t *)Source; /*0x727dbc*/
+  return (int)((wchar_t *)Source); /*0x727dbc*/
 
 }
 } // namespace gamemd
@@ -297,7 +297,7 @@ int WideString::Assign(wchar_t *aP1)
   *v4 = 0; /*0x7b6702*/
   if ( aP1 ) /*0x7b6707*/
     wcscpy(*(wchar_t **)this, aP1); /*0x7b670d*/
-  return (wchar_t **)this; /*0x7b6717*/
+  return (int)((wchar_t **)this); /*0x7b6717*/
 
 }
 } // namespace gamemd
@@ -630,8 +630,8 @@ int WideString::GetOrEmpty(void *a1_1)
 
   result = *(wchar_t **)this; /*0x7b7100*/
   if ( !*(unsigned int *)this ) /*0x7b7100*/
-    return &g_TypeClass_DefaultString; /*0x7b7106*/
-  return result; /*0x7b710b*/
+    return (int)(&g_TypeClass_DefaultString); /*0x7b7106*/
+  return (int)(result); /*0x7b710b*/
 
 }
 } // namespace gamemd
@@ -645,8 +645,8 @@ int WideString::GetOrEmpty_Alt(void *a1_1)
 
   result = *(wchar_t **)this; /*0x7b7140*/
   if ( !*(unsigned int *)this ) /*0x7b7140*/
-    return &g_TypeClass_DefaultString; /*0x7b7146*/
-  return result; /*0x7b714b*/
+    return (int)(&g_TypeClass_DefaultString); /*0x7b7146*/
+  return (int)(result); /*0x7b714b*/
 
 }
 } // namespace gamemd
@@ -676,8 +676,8 @@ int WideString::Length(void *a1_1)
 
   result = *(const wchar_t **)this; /*0x7b71b0*/
   if ( *(unsigned int *)this ) /*0x7b71b0*/
-    return (const wchar_t *)wcslen(*(const wchar_t **)this); /*0x7b71b8*/
-  return result; /*0x7b71b6*/
+    return (int)((const wchar_t *)wcslen(*(const wchar_t **)this)); /*0x7b71b8*/
+  return (int)(result); /*0x7b71b6*/
 
 }
 } // namespace gamemd
