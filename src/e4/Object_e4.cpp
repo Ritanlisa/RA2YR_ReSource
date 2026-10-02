@@ -691,7 +691,7 @@ void * Object::DrawObject(void ** Block, char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(Block), 1); /*0x5fdf91*/
   v5 = (gamemd::OverlayClass *)(Block); /*0x5fdfa6*/
-  v3 = (*(int ((unsigned char *)(**))(unsigned char *, OverlayClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 108) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 108), &v5); /*0x5fdfaa*/
+  v3 = (*(int (**)(unsigned char *, OverlayClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 108) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 108), &v5); /*0x5fdfaa*/
   if ( v3 != -1 && v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 124) ) /*0x5fdfba*/
   {
     --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 124); /*0x5fdfbf*/

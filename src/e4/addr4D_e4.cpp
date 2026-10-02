@@ -53,7 +53,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   int v17; // [esp+18h] [ebp-4h] BYREF
 
   *(unsigned int *)v16 = (unsigned int)(aP0); /*0x4d1684*/
-  v2 = (*(int ((int *)(**))(int *, int16_t *))(dword_8B3D10 + 16))(&dword_8B3D10, v16); /*0x4d1688*/
+  v2 = (*(int (**)(int *, int16_t *))(dword_8B3D10 + 16))(&dword_8B3D10, v16); /*0x4d1688*/
   if ( v2 != -1 && v2 < g_FootClassConfig && v2 < --g_FootClassConfig ) /*0x4d16a3*/
   {
     do /*0x4d16bb*/
@@ -686,7 +686,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
   v2 = 0; /*0x4d4fc9*/
   while ( 1 ) /*0x4d4fd4*/
   {
-    v3 = (unsigned short *)(*((int ((gamemd::ObjectClass *)(**))(ObjectClass *, char *))this->vtable1 + 110))(this, v11); /*0x4d4fd4*/
+    v3 = (unsigned short *)(*((int (**)(ObjectClass *, char *))this->vtable1 + 110))(this, v11); /*0x4d4fd4*/
     LOWORD(v9) = LOWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]) + *v3; /*0x4d4ff8*/
     HIWORD(v9) = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
     *(unsigned int *)v10 = v9; /*0x4d500c*/

@@ -378,7 +378,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
           v16 = (int)(content[40]);
           v17 = (int)(content[41]);
         }
-        IDA_LOBYTE(v3) = (*(int ((unsigned int *)(**))(unsigned int *, int *))(v11 + 240))(content, &v15); /*0x47ea43*/
+        IDA_LOBYTE(v3) = (*(int (**)(unsigned int *, int *))(v11 + 240))(content, &v15); /*0x47ea43*/
       }
     }
   }
@@ -446,7 +446,7 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
       v10 = (int)(content[40]);
       v11 = (int)(content[41]);
     }
-    (*(void ((unsigned int *)(**))(unsigned int *, int *))(v8 + 244))(content, &v9); /*0x47eb54*/
+    (*(void (**)(unsigned int *, int *))(v8 + 244))(content, &v9); /*0x47eb54*/
   }
 }
 ObjectClass* CellClass::GetSomeObject(const CoordStruct& coords, bool alt) const

@@ -216,14 +216,14 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     *(unsigned char *)(v2 + 405) = 0; /*0x6cb146*/
     *((unsigned int *)this + 26) = 0; /*0x6cb14d*/
     v9 = (int)(this); /*0x6cb164*/
-    v3 = (*(int ((int *)(**))(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb168*/
+    v3 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
       ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v3); /*0x6cb176*/
   }
   if ( *((unsigned char *)this + 108) ) /*0x6cb17b*/
   {
     v9 = (int)(this); /*0x6cb192*/
-    v4 = (*(int ((int *)(**))(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb196*/
+    v4 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
       ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v4); /*0x6cb1a4*/
     *((unsigned char *)this + 108) = 0; /*0x6cb1a9*/
@@ -483,14 +483,14 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
     *(unsigned char *)(v3 + 405) = 0; /*0x6cb840*/
     *((unsigned int *)this + 26) = 0; /*0x6cb846*/
     v8[0] = (unsigned int)(this); /*0x6cb859*/
-    v4 = (*(int ((int *)(**))(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
+    v4 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
     if ( v4 != -1 ) /*0x6cb863*/
       ((DynamicVector *)(&stru_B0F5B8))->RemoveItem(v4); /*0x6cb86b*/
   }
   if ( *((unsigned char *)this + 108) ) /*0x6cb870*/
   {
     v8[0] = (unsigned int)(this); /*0x6cb885*/
-    v5 = (*(int ((int *)(**))(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
+    v5 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
     if ( v5 != -1 ) /*0x6cb88f*/
       ((DynamicVector *)(&stru_B0F5B8))->RemoveItem(v5); /*0x6cb897*/
     *((unsigned char *)this + 108) = 0; /*0x6cb89c*/

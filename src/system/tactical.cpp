@@ -420,7 +420,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
       result = dword_A8EB78; /*0x6d786c*/
       if ( dword_A8EB78 ) /*0x6d7873*/
       {
-        result = (*(int ((int *)(**))(int *, unsigned int, unsigned int))(*(int *)(g_DSurface_Hidden_2) + 92))(g_DSurface_Hidden_2, 0, 0); /*0x6d7887*/
+        result = (*(int (**)(int *, unsigned int, unsigned int))(*(int *)(g_DSurface_Hidden_2) + 92))(g_DSurface_Hidden_2, 0, 0); /*0x6d7887*/
         result = result; /*0x6d788c*/
         if ( result ) /*0x6d7890*/
         {

@@ -620,8 +620,8 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
   *(unsigned int *)Block[4] = (unsigned int)(&vt_BulletTypeClass); /*0x46c89c*/
   *(unsigned int *)Block[8] = (unsigned int)(&vt_BulletTypeClass); /*0x46c8a3*/
   *(unsigned int *)Block[12] = (unsigned int)(&vt_BulletTypeClass); /*0x46c8aa*/
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)Block), 1); /*0x46c8b1*/
-  v6 = (gamemd::BulletTypeClass *)(Block); /*0x46c8c6*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)this), 1); /*0x46c8b1*/
+  v6 = (gamemd::BulletTypeClass *)(this); /*0x46c8c6*/
   v3 = (*(int (**)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v6);
@@ -636,7 +636,7 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
       ++v3; /*0x46c8ed*/
     }
   }
-  v6 = (gamemd::BulletTypeClass *)(Block); /*0x46c90f*/
+  v6 = (gamemd::BulletTypeClass *)(this); /*0x46c90f*/
   v4 = (*(int (**)(unsigned int *, BulletTypeClass **))(dword_A83C80 + 16))(&dword_A83C80, &v6); /*0x46c913*/
   if ( v4 != -1 && v4 < dword_A83C90 && v4 < --dword_A83C90 ) /*0x46c92e*/
   {
@@ -647,10 +647,10 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
     }
     while ( v4 < dword_A83C90 ); /*0x46c946*/
   }
-  ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x46c94a*/
+  ((ObjectTypeClass *)((int)this))->Destruct(); /*0x46c94a*/
   if ( (a2 & 1) != 0 ) /*0x46c954*/
-    __3_YAXPAX_Z(Block); /*0x46c957*/
-  return (void **)Block; /*0x46c961*/
+    __3_YAXPAX_Z(this); /*0x46c957*/
+  return (void **)this; /*0x46c961*/
 
 }
 } // namespace gamemd

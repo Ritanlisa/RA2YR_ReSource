@@ -131,7 +131,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   }
   else
   {
-    v4 = (int *)(*(int ((int *)(**))(int *, char *))(*(int *)(a2) + 120))(a2, v17); /*0x5c0819*/
+    v4 = (int *)(*(int (**)(int *, char *))(*(int *)(a2) + 120))(a2, v17); /*0x5c0819*/
     v5 = *v4; /*0x5c081c*/
     v14 = v4[1]; /*0x5c0821*/
     v6 = v4[2]; /*0x5c0825*/
@@ -539,7 +539,7 @@ int RotateBitBufferLeft(int *a0, int a2, int aP2)
       v11 = a2 % 32; /*0x5c6842*/
       v12 = (gamemd::Buffer *)(aP2); /*0x5c6843*/
       v13 = &a0[aP2 - 1]; /*0x5c684a*/
-      if ( result < (gamemd::Buffer *)((unsigned int))(aP2) - 1 ) /*0x5c6850*/
+      if ( result < (gamemd::Buffer *)(unsigned int)(aP2) - 1 ) /*0x5c6850*/
       {
         v21 = (gamemd::Buffer *)(aP2 - 1 - result);
         do /*0x5c6893*/
@@ -553,7 +553,7 @@ int RotateBitBufferLeft(int *a0, int a2, int aP2)
         while ( !v16 ); /*0x5c6893*/
         v12 = (gamemd::Buffer *)(aP2); /*0x5c6895*/
       }
-      if ( result < (gamemd::Buffer *)((unsigned int))(v12) ) /*0x5c689b*/
+      if ( result < (gamemd::Buffer *)(unsigned int)(v12) ) /*0x5c689b*/
       {
         v17 = v13[-result] << v11; /*0x5c68ac*/
         --v13; /*0x5c68ae*/
@@ -562,7 +562,7 @@ int RotateBitBufferLeft(int *a0, int a2, int aP2)
       for ( i = 0; ; ++i ) /*0x5c68b4*/
       {
         v19 = (gamemd::Buffer *)((int)(result));
-        if ( result >= (gamemd::Buffer *)((unsigned int))(v12) ) /*0x5c68ba*/
+        if ( result >= (gamemd::Buffer *)(unsigned int)(v12) ) /*0x5c68ba*/
           v19 = v12; /*0x5c68bc*/
         if ( i >= (int)(v19) ) /*0x5c68c0*/
           break; /*0x5c68c0*/

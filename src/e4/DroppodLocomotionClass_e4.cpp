@@ -156,7 +156,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
     if ( *locomotor ) /*0x4b5cd3*/
       (*(void (**)(int))(*(unsigned int *)*locomotor + 8))(*locomotor); /*0x4b5cdd*/
     *locomotor = 0; /*0x4b5ce3*/
-    (*(void ((int *)(**))(int *, int *))(((unsigned int *)a1)[0] + 16))(&((unsigned int *)a1)[0], locomotor); /*0x4b5cee*/
+    (*(void (**)(int *, int *))(((unsigned int *)a1)[0] + 16))(&((unsigned int *)a1)[0], locomotor); /*0x4b5cee*/
     if ( (*((uint8_t (**)(FootClass *, int *, unsigned int))v11->vtable1 + 54))(v11, &v36, 0) ) /*0x4b5cfc*/
     {
       v17 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5dae*/

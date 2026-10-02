@@ -302,7 +302,7 @@ LABEL_24:
     }
   }
   free(v3);
-  return v1 = = 0;
+  return v1 == 0;
 }
 
 /* ASM:

@@ -319,7 +319,7 @@ LABEL_36:
   if ( this->Type[1].TechnoTypeClass[300] && v7 == 17 ) /*0x417e90*/
   {
     a3 = (IUnknown *)(*(int **)(*(int (**)(int *, int **))(*v4 + 440))(v4, &aP1));
-    if ( a3 != (IUnknown *)((int *))g_AircraftStatusFlag ) /*0x417eae*/
+    if ( a3 != (IUnknown *)(int *)g_AircraftStatusFlag ) /*0x417eae*/
     {
       v15 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a3); /*0x417ecc*/
       v16 = ((Cell *)(v15))->IsBridge(); /*0x417ed3*/

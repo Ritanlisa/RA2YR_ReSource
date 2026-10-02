@@ -163,7 +163,7 @@ LABEL_4:
               goto LABEL_18; /*0x434dd3*/
             if ( v49 >= (int)(v19) ) /*0x434ddd*/
               goto LABEL_73; /*0x434ddd*/
-            if ( v20 < (gamemd::AbstractClass *)((int))(aP9) ) /*0x434de7*/
+            if ( v20 < (gamemd::AbstractClass *)(int)(aP9) ) /*0x434de7*/
             {
               v23 = Palette::SixBitTo16Bit( /*0x434e2e*/
                       v48,
@@ -263,7 +263,7 @@ LABEL_26:
         {
           if ( v34 >= (int)(v30) ) /*0x434fef*/
             break; /*0x434fef*/
-          if ( v32 < (gamemd::AbstractClass *)((int))(aP9) ) /*0x434ff9*/
+          if ( v32 < (gamemd::AbstractClass *)(int)(aP9) ) /*0x434ff9*/
           {
             LOBYTE(v47) = (uint8_t)((uint16_t)v15 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435028*/
             HIBYTE(v47) = (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435035*/
@@ -350,7 +350,7 @@ LABEL_59:
           {
             if ( v42 >= (int)(v39) ) /*0x4351cc*/
               break; /*0x4351cc*/
-            if ( v40 < (gamemd::AbstractClass *)((int))(aP9) ) /*0x4351d6*/
+            if ( v40 < (gamemd::AbstractClass *)(int)(aP9) ) /*0x4351d6*/
             {
               LOBYTE(v59) = (uint8_t)((uint16_t)v15 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435205*/
               HIBYTE(v59) = (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435212*/

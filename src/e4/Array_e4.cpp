@@ -196,7 +196,7 @@ namespace gamemd {
 int Array::GetElement(int aP1)
 {
 
-  if ( aP1 < 0 || aP1 >= (gamemd::CampaignScore *)((int))this->Array_field_0x38 ) /*0x76398b*/
+  if ( aP1 < 0 || aP1 >= (gamemd::CampaignScore *)(int)this->Array_field_0x38 ) /*0x76398b*/
     return 0; /*0x763999*/
   else
     return (int)this->Array_field_0x2C + 12 * aP1; /*0x763993*/
@@ -248,7 +248,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
     v4 = (gamemd::ObjectClass *)(v5);
   }
   Array_field_0x4 = (void *)(this->Array_field_0x4);
-  if ( v4 >= (gamemd::ObjectClass *)((int))Array_field_0x4 && v5 >= (int)Array_field_0x4 ) /*0x7ad7b4*/
+  if ( v4 >= (gamemd::ObjectClass *)(int)Array_field_0x4 && v5 >= (int)Array_field_0x4 ) /*0x7ad7b4*/
   {
     v7 = (unsigned int)(2 * v5);
     if ( 2 * v5 < 10 ) /*0x7ad7bc*/

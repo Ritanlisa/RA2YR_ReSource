@@ -198,18 +198,18 @@ DynamicVector * MoveFeedback::QueryInterface(char a2, int a1, int a3, int a4, in
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40bcb3*/
+  v3 = *(void **)&this->m_1[3]; /*0x40bcb3*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40bcb6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x40bcc0*/
+  if ( v3 && BYTE1(this->m_C) ) /*0x40bcc0*/
   {
     __3_YAXPAX_Z(v3); /*0x40bcc8*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x40bcd0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x40bcdb*/
-  Block->m_8 = 0; /*0x40bce1*/
+  BYTE1(this->m_C) = 0; /*0x40bcdb*/
+  this->m_8 = 0; /*0x40bce1*/
   if ( (a2 & 1) != 0 ) /*0x40bce8*/
-    __3_YAXPAX_Z(Block); /*0x40bceb*/
-  return Block->__pad_0; /*0x40bcf5*/
+    __3_YAXPAX_Z(this); /*0x40bceb*/
+  return this->__pad_0; /*0x40bcf5*/
 
 }
 } // namespace gamemd

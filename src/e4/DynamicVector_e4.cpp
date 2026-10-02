@@ -373,7 +373,7 @@ int DynamicVector::Read(TechnoTypeClass * aP1, void *a2_1)
 
   v3 = (void *)(*aP1); /*0x67a52c*/
   DynamicVector_field_0x10 = (void *)(this->DynamicVector_field_0x10); /*0x67a539*/
-  (*(void ((int *)(**))(int *, void **, int, unsigned int))(v3 + 16))(aP1, &DynamicVector_field_0x10, 4, 0); /*0x67a53d*/
+  (*(void (**)(int *, void **, int, unsigned int))(v3 + 16))(aP1, &DynamicVector_field_0x10, 4, 0); /*0x67a53d*/
   result = (int)DynamicVector_field_0x10; /*0x67a540*/
   for ( i = 0; i < (int)DynamicVector_field_0x10; ++i ) /*0x67a548*/
   {
@@ -401,7 +401,7 @@ int DynamicVector::Read_Alt(TechnoTypeClass * aP1)
 
   v3 = (void *)(*aP1); /*0x67a6ec*/
   DynamicVector_field_0x10 = (void *)(this->DynamicVector_field_0x10); /*0x67a6f9*/
-  (*(void ((int *)(**))(int *, void **, int, unsigned int))(v3 + 16))(aP1, &DynamicVector_field_0x10, 4, 0); /*0x67a6fd*/
+  (*(void (**)(int *, void **, int, unsigned int))(v3 + 16))(aP1, &DynamicVector_field_0x10, 4, 0); /*0x67a6fd*/
   result = (int)DynamicVector_field_0x10; /*0x67a700*/
   for ( i = 0; i < (int)DynamicVector_field_0x10; ++i ) /*0x67a708*/
   {

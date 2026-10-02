@@ -122,7 +122,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
       v11 = (unsigned int)((HWND *)v8[2]);
       if ( v11 ) /*0x610701*/
       {
-        while ( *(unsigned int)((unsigned int *))(v11) != hWnd ) /*0x610705*/
+        while ( *(unsigned int)(unsigned int *)(v11) != hWnd ) /*0x610705*/
         {
           v8 = (HWND *)((unsigned int)((HWND *)(v11)));
           v11 = (unsigned int)((HWND *)((unsigned int *)(v11))[2]);

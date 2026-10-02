@@ -115,7 +115,7 @@ int AircraftClass::Construct(int a1, void* a2) {
     v6 = (const IID *)((int)((const IID *)(v4 + 844))); /*0x413dc1*/
     v7 = (int)(this->locomotor); /*0x413dc7*/
     if ( v7 ) /*0x413dcb*/
-      (*(void ((unsigned int)(**))(unsigned int))(*(unsigned int *)v7 + 8))(this->locomotor); /*0x413dd0*/
+      (*(void (**)(unsigned int))(*(unsigned int *)v7 + 8))(this->locomotor); /*0x413dd0*/
     if ( CoCreateInstance((const IID &)(v6), 0, 7u,(const IID &)(&riid), (LPVOID *)&a2) >= 0 ) /*0x413dea*/
     {
       if ( OleRun(a2) >= 0 ) /*0x413df9*/

@@ -136,7 +136,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
         v2 = a1->TechnoClass,
         v15[1] = ((unsigned int *)a1)[1],
         v15[2] = ((unsigned int *)a1)[2],
-        !(*((uint8_t ((gamemd::FootClass *)(**))(FootClass *, unsigned int *, unsigned int))v2 + 231))(a1, v15, 0)) )
+        !(*((uint8_t (**)(FootClass *, unsigned int *, unsigned int))v2 + 231))(a1, v15, 0)) )
   {
     if ( (uint8_t)((House *)((House *)((unsigned int *)a1)[0]))->IsCurrentPlayer() || *(unsigned int *)&dword_A8B238 ) /*0x4d5504*/
     {

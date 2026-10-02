@@ -288,7 +288,7 @@ LABEL_11:
   else
   {
     v7 = (unsigned int *)(dword_A83C6C);
-    while ( *(unsigned int *)((unsigned int))(v7) != this ) /*0x45e350*/
+    while ( *(unsigned int *)(unsigned int)(v7) != this ) /*0x45e350*/
     {
       ++v6; /*0x45e352*/
       ++v7; /*0x45e353*/

@@ -47,7 +47,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1, void *a2, void *a
     strncpy(Destination,(const char *)((unsigned char *)this + 36), 0x30u); /*0x6e5bba*/
     v7 = 0; /*0x6e5bc2*/
   }
-  if ( Destination != (char [48])((unsigned char *))this + 100 ) /*0x6e5bd0*/
+  if ( Destination != (char [48])(unsigned char *)this + 100 ) /*0x6e5bd0*/
   {
     qmemcpy((unsigned char *)this + 100, Destination, 0x30u); /*0x6e5bdc*/
     *((unsigned char *)this + 148) = v7; /*0x6e5bde*/
@@ -148,7 +148,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
   }
   v10 = (gamemd::AbstractTypeClass *)(this);
-  v8 = (*(int ((int *)(**))(int *, AbstractTypeClass **))(dword_B0E780 + 16))(&dword_B0E780, &v10); /*0x6e5d8d*/
+  v8 = (*(int (**)(int *, AbstractTypeClass **))(dword_B0E780 + 16))(&dword_B0E780, &v10); /*0x6e5d8d*/
   if ( v8 != -1 && v8 < g_MultiplayerCleanup && v8 < --g_MultiplayerCleanup ) /*0x6e5da8*/
   {
     do /*0x6e5dc0*/

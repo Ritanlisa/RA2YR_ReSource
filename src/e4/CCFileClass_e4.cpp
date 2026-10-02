@@ -88,13 +88,13 @@ int CCFileClass::GetFileSize(void *a1, void *a2)
         v4 = *(unsigned int *)this->FileClass; /*0x65d0fd*/
         v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
-        (*(void ((gamemd::RawFileClass *)(**))(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
+        (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
         result = -1 - (unsigned int)this->Handle; /*0x65d113*/
         this->FileName = (void *)result; /*0x65d116*/
         return result; /*0x65d11b*/
       }
     }
-    else if ( (*(int ((gamemd::RawFileClass *)(**))(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 1) ) /*0x65d122*/
+    else if ( (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 1) ) /*0x65d122*/
     {
       FileSize = (*(int (**))(*(unsigned int *)this->FileClass + 44))(this); /*0x65d130*/
       (*(void (**))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d136*/

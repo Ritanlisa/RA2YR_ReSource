@@ -204,7 +204,7 @@ LABEL_17:
   v7 = v3[2]; /*0x7ac912*/
   if ( v7 != (char **)1 ) /*0x7ac918*/
   {
-    result = ((int ((unsigned int *)(*))(unsigned int *, char **, unsigned int *, char **))v7)(a2, a3, v10, v3[1]); /*0x7ac925*/
+    result = ((int (**)(unsigned int *, char **, unsigned int *, char **))v7)(a2, a3, v10, v3[1]); /*0x7ac925*/
     if (!result || !v6 && result < 0, unsigned int a2) /*0x7ac931*/
       return result; /*0x7ac931*/
     goto LABEL_17; /*0x7ac931*/
@@ -460,10 +460,10 @@ namespace gamemd {
 void ** ComStreamClass::writeData(char a2)
 {
 
-  DeleteAndZero((ObjectClass *)Block); /*0x7aed23*/
+  DeleteAndZero((ObjectClass *)this); /*0x7aed23*/
   if ( (a2 & 1) != 0 ) /*0x7aed2d*/
-    __3_YAXPAX_Z(Block); /*0x7aed30*/
-  return (void **)Block; /*0x7aed3a*/
+    __3_YAXPAX_Z(this); /*0x7aed30*/
+  return (void **)this; /*0x7aed3a*/
 
 }
 } // namespace gamemd

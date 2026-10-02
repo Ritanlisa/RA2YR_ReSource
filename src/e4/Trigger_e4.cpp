@@ -229,7 +229,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         if ( (int)((char *)&v28) < ((char *)&v28) /*0x76d821*/
           || (BYTE1(((char *)&v28)) || !((char *)&v28))
           && v28.occupant > 0
-          && (*(uint8_t ((int *)(**))(int *, int, unsigned int))(((char *)&v28) + 8))(&((char *)&v28), v28.occupant + ((char *)&v28), 0) )
+          && (*(uint8_t (**)(int *, int, unsigned int))(((char *)&v28) + 8))(&((char *)&v28), v28.occupant + ((char *)&v28), 0) )
         {
           v22 = ((char *)&v28)++; /*0x76d82c*/
           *(unsigned int *)(((char *)&v28) + 4 * (unsigned int)v22) = (unsigned int)(v21); /*0x76d837*/
@@ -292,9 +292,9 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         (*(void (**)(int *))(v25.VectorCursor_field_0x18 + 8))(&v25.VectorCursor_field_0x18); /*0x76da15*/
       }
       ((PriorityQueue *)((PriorityQueue *)this))->Add(*(unsigned int *)(*((unsigned int *)((char *)&v28) + 1) + 4 * (int)((char *)&v28))); /*0x76da29*/
-      (*((void ((void **)(**))(void **))((char *)&v28) + 2))(&((char *)&v28)); /*0x76da36*/
+      (*((void (**)(void **))((char *)&v28) + 2))(&((char *)&v28)); /*0x76da36*/
     }
-    while ( (*((uint8_t ((void **)(**))(void **))((char *)&v28) + 1))(&((char *)&v28)) ); /*0x76da41*/
+    while ( (*((uint8_t (**)(void **))((char *)&v28) + 1))(&((char *)&v28)) ); /*0x76da41*/
   }
   ((ComPtr *)((ComPtr *)(this + 1160)))->Set(*(unsigned int *)(a3 + 4)); /*0x76da5d*/
   ((unsigned int *)&v28)[0] = (unsigned int)(&vt_VectorCursorMSAnimDynamicVectorClass); /*0x76da66*/

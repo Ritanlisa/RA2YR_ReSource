@@ -193,7 +193,7 @@ LABEL_12: v9 = (int *)((unsigned int)((int *)((unsigned int *)(((Object *)((Obje
         {
           --dword_A8E7AC; /*0x62a462*/
           *(unsigned int *)(this->creationFrame + 108) = 0; /*0x62a46a*/
-          result = (*(int ((int)(**))(int))(*(unsigned int *)this->creationFrame + 248))(this->creationFrame); /*0x62a472*/
+          result = (*(int (**)(int))(*(unsigned int *)this->creationFrame + 248))(this->creationFrame); /*0x62a472*/
           *(unsigned int *)this->__pad_28 = 0; /*0x62a478*/
         }
         else
@@ -203,22 +203,22 @@ LABEL_12: v9 = (int *)((unsigned int)((int *)((unsigned int *)(((Object *)((Obje
           if ( *(unsigned char *)(v13 + 1074) && (uint8_t)((House*)*(House **)(v13 + 540))->IsHumanPlayer() ) /*0x62a390*/
           {
             *(unsigned char *)(this->creationFrame + 1074) = 0; /*0x62a39c*/
-            (*(void ((int)(**))(int))(*(unsigned int *)this->creationFrame + 332))(this->creationFrame); /*0x62a3a7*/
+            (*(void (**)(int))(*(unsigned int *)this->creationFrame + 332))(this->creationFrame); /*0x62a3a7*/
           }
           v14 = (int)(this->creationFrame);
           v15 = *(int **)(v14 + 1076); /*0x62a3b0*/
           if ( v15 ) /*0x62a3b8*/
             ((TeamClass *)(v15))->AddMember(v14, 0); /*0x62a3bc*/
-          if ( !(*(uint8_t ((int)(**))(int))(*(unsigned int *)this->creationFrame + 1196))(this->creationFrame) ) /*0x62a3c6*/
+          if ( !(*(uint8_t (**)(int))(*(unsigned int *)this->creationFrame + 1196))(this->creationFrame) ) /*0x62a3c6*/
           {
             TechnoClass::SetFocus((TechnoClass *)this->creationFrame, 0); /*0x62a3d4*/
-            (*(void ((int)(**))(int, unsigned int))(*(unsigned int *)this->creationFrame + 968))(this->creationFrame, 0); /*0x62a3df*/
+            (*(void (**)(int, unsigned int))(*(unsigned int *)this->creationFrame + 968))(this->creationFrame, 0); /*0x62a3df*/
             (*(void (**)(int, unsigned int, int))(*(unsigned int *)this->creationFrame + 1152))( /*0x62a3ed*/
               this->creationFrame,
               0,
               1);
           }
-          (*(void ((int)(**))(int, unsigned int, int))(*(unsigned int *)this->creationFrame + 1156))(this->creationFrame, 0, 1); /*0x62a3fb*/
+          (*(void (**)(int, unsigned int, int))(*(unsigned int *)this->creationFrame + 1156))(this->creationFrame, 0, 1); /*0x62a3fb*/
           (*(void (**)(int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)this->creationFrame + 1160))( /*0x62a40b*/
             this->creationFrame,
             0,
@@ -696,7 +696,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
       }
     }
   }
-  result = (*((int ((void **)(**))(void **))((unsigned int *)this)[0] + 3))(&((unsigned int *)this)[0]); /*0x6362e3*/
+  result = (*((int (**)(void **))((unsigned int *)this)[0] + 3))(&((unsigned int *)this)[0]); /*0x6362e3*/
   this->countObjects[1] = -1; /*0x6362e6*/
   this->countObjects[2] = -1; /*0x6362ec*/
   this->countObjects[3] = -1; /*0x6362f2*/

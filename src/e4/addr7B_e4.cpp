@@ -803,7 +803,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
     v8 = (void *)(this->AbstractClass);
     if ( this->AbstractClass ) /*0x7b7c27*/
       v8 = (void *)wcslen((const wchar_t *)this->AbstractClass); /*0x7b7c2e*/
-    if ( v5 >= (void *)((int))v8 || strchr(String2, *((uint16_t *)(unsigned int)(this-)>AbstractClass + v5)) ) /*0x7b7c48*/
+    if ( v5 >= (void *)(int)v8 || strchr(String2, *((uint16_t *)(unsigned int)(this-)>AbstractClass + v5)) ) /*0x7b7c48*/
       break; /*0x7b7c48*/
     ++v5; /*0x7b7c54*/
   }

@@ -69,10 +69,10 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
   AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)Block->__pad_0 = &vt_AlphaShapeClass; /*0x42173d*/
-  Block->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x421743*/
-  Block->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x42174a*/
-  Block->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x421751*/
-  v6 = (gamemd::AlphaShapeClass *)(Block); /*0x42175f*/
+  this->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x421743*/
+  this->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x42174a*/
+  this->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x421751*/
+  v6 = (gamemd::AlphaShapeClass *)(this); /*0x42175f*/
   v3 = ((int *)(*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16)))(&dword_88A0F0, &v6); 
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
   {
@@ -83,7 +83,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
     }
     while ( v3 < g_AlphaShapeLimit ); /*0x421796*/
   }
-  v6 = (gamemd::AlphaShapeClass *)(Block);
+  v6 = (gamemd::AlphaShapeClass *)(this);
   v4 = (*(int (**)(int *, AlphaShapeClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4217ac*/
          &g_BuildingLoadQueue_Array.PowerBonus,
          &v6);
@@ -98,10 +98,10 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
       ++v4; /*0x4217cf*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x4217e3*/
+  AbstractClass::DTOR((AbstractClass *)this); /*0x4217e3*/
   if ( (a2 & 1) != 0 ) /*0x4217ed*/
-    __3_YAXPAX_Z(Block); /*0x4217f0*/
-  return Block->__pad_0; /*0x4217fa*/
+    __3_YAXPAX_Z(this); /*0x4217f0*/
+  return this->__pad_0; /*0x4217fa*/
 
 }
 } // namespace gamemd

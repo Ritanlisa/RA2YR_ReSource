@@ -16793,11 +16793,11 @@ void FractalNoise::Release(CCINIClass * aP0)
 {
   int v1; // eax
 
-  if ( Block ) /*0x420276*/
+  if ( this ) /*0x420276*/
   {
-    if ( !--*((unsigned int *)Block + 32769) ) /*0x42028d*/
+    if ( !--*((unsigned int *)this + 32769) ) /*0x42028d*/
     {
-      v1 = (*(int (**)(int *, void **))(dword_88A080 + 16))(&dword_88A080, &Block); /*0x4202a7*/
+      v1 = (*(int (**)(int *, void **))(dword_88A080 + 16))(&dword_88A080, &this); /*0x4202a7*/
       if ( v1 != -1 && v1 < dword_88A090 && v1 < --dword_88A090 ) /*0x4202c2*/
       {
         do /*0x4202da*/
@@ -16807,8 +16807,8 @@ void FractalNoise::Release(CCINIClass * aP0)
         }
         while ( v1 < dword_88A090 ); /*0x4202da*/
       }
-      if ( Block ) /*0x4202e2*/
-        RA2_OPDEL(Block); /*0x4202e5*/
+      if ( this ) /*0x4202e2*/
+        RA2_OPDEL(this); /*0x4202e5*/
     }
   }
 }

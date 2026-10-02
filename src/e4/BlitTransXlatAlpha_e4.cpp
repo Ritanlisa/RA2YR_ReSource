@@ -67,7 +67,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
     v16 = (unsigned short *)a4; /*0x493a86*/
     do /*0x493aee*/
     {
-      if ( v12 < (gamemd::Stream *)((uint16_t))*a5 && *a2 ) /*0x493a97*/
+      if ( v12 < (gamemd::Stream *)(uint16_t)*a5 && *a2 ) /*0x493a97*/
       {
         v12 = (gamemd::Stream *)((int)((gamemd::Stream *)(argC)));
         *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 1)); /*0x493ac6*/

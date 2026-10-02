@@ -168,7 +168,7 @@ int Vector::RemoveAt(int aP1)
 
   Vector_field_0x10 = (char *)((int)((char *)this->Vector_field_0x10));
   result = (gamemd::AbstractClass *)(aP1); /*0x45ae13*/
-  if ( aP1 >= (gamemd::AbstractClass *)((int))Vector_field_0x10 ) /*0x45ae19*/
+  if ( aP1 >= (gamemd::AbstractClass *)(int)Vector_field_0x10 ) /*0x45ae19*/
   {
     LOBYTE(result) = 0; /*0x45ae3c*/
   }
@@ -176,14 +176,14 @@ int Vector::RemoveAt(int aP1)
   {
     v4 = (char *)((unsigned int)(Vector_field_0x10 - 1));
     this->Vector_field_0x10 = (unsigned int)(v4);
-    if ( aP1 < (gamemd::AbstractClass *)((int))v4 ) /*0x45ae21*/
+    if ( aP1 < (gamemd::AbstractClass *)(int)v4 ) /*0x45ae21*/
     {
       do /*0x45ae34*/
       {
         ++result; /*0x45ae27*/
         *((unsigned int *)(unsigned int)(this->Vector_field_0x4)+ result - 1) = *((unsigned int *)(unsigned int)(this-)>Vector_field_0x4 + result); /*0x45ae2b*/
       }
-      while ( result < (gamemd::AbstractClass *)((int))this->Vector_field_0x10 ); /*0x45ae34*/
+      while ( result < (gamemd::AbstractClass *)(int)this->Vector_field_0x10 ); /*0x45ae34*/
     }
     LOBYTE(result) = 1; /*0x45ae37*/
   }

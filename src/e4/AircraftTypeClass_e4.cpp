@@ -203,8 +203,8 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, 
   *(unsigned int *)Block[4] = (unsigned int)(&vt_AircraftTypeClass); /*0x41cfec*/
   *(unsigned int *)Block[8] = (unsigned int)(&vt_AircraftTypeClass); /*0x41cff3*/
   *(unsigned int *)Block[12] = (unsigned int)(&vt_AircraftTypeClass); /*0x41cffa*/
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)Block), 1); /*0x41d001*/
-  v5 = (AircraftTypeClass *)(Block); /*0x41d016*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)this), 1); /*0x41d001*/
+  v5 = (AircraftTypeClass *)(this); /*0x41d016*/
   v3 = (*(int (**)(unsigned int *, AircraftTypeClass **))(dword_A8B218 + 16))(&dword_A8B218, &v5); /*0x41d01a*/
   if ( v3 != -1 && v3 < dword_A8B228 && v3 < --dword_A8B228 ) /*0x41d035*/
   {
@@ -215,10 +215,10 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, 
     }
     while ( v3 < dword_A8B228 ); /*0x41d04d*/
   }
-  TechnoTypeClass::DTOR((void *)((int)Block)); /*0x41d051*/
+  TechnoTypeClass::DTOR((void *)((int)this)); /*0x41d051*/
   if ( (a2 & 1) != 0 ) /*0x41d05b*/
-    __3_YAXPAX_Z(Block); /*0x41d05e*/
-  return (AircraftTypeClass *)((void **)Block); /*0x41d068*/
+    __3_YAXPAX_Z(this); /*0x41d05e*/
+  return (AircraftTypeClass *)((void **)this); /*0x41d068*/
 
 }
 }  // G42.18c ns repair

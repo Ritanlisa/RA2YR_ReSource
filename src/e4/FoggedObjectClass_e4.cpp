@@ -417,7 +417,7 @@ LABEL_11:
   if ( *((unsigned int *)this + 27) < v16 /*0x4d113e*/
     || (*((unsigned char *)this + 105) || !v16)
     && (v17 = *((unsigned int *)this + 28), v17 > 0)
-    && (*(uint8_t ((int)(**))(int, int, unsigned int))(*(unsigned int *)v7 + 8))((char *)this + 92, v16 + v17, 0) )
+    && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))((char *)this + 92, v16 + v17, 0) )
   {
     v18 = *((unsigned int *)this + 27); /*0x4d1145*/
     *((unsigned int *)this + 27) = v18 + 1; /*0x4d114b*/
@@ -504,7 +504,7 @@ LABEL_41:
     if ( v35 < v37 /*0x4d12cb*/
       || (*((unsigned char *)this + 105) || !v37)
       && (v38 = *((unsigned int *)this + 28), v38 > 0)
-      && (*(uint8_t ((int)(**))(int, int, unsigned int))(*(unsigned int *)v7 + 8))((char *)this + 92, v37 + v38, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))((char *)this + 92, v37 + v38, 0) )
     {
       v39 = *((unsigned int *)this + 27); /*0x4d12d2*/
       *((unsigned int *)this + 27) = v39 + 1; /*0x4d12dc*/
@@ -1112,18 +1112,18 @@ DynamicVector * FoggedObjectClass::QueryInterface(char a2, int a3)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4d2d63*/
+  v3 = *(void **)&this->m_1[3]; /*0x4d2d63*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4d2d66*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4d2d70*/
+  if ( v3 && BYTE1(this->m_C) ) /*0x4d2d70*/
   {
     __3_YAXPAX_Z(v3); /*0x4d2d78*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x4d2d80*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4d2d8b*/
+  BYTE1(this->m_C) = 0; /*0x4d2d8b*/
   *(unsigned int *)&Block->__pad_5[3] = 0; /*0x4d2d91*/
   if ( (a2 & 1) != 0 ) /*0x4d2d98*/
-    __3_YAXPAX_Z(Block); /*0x4d2d9b*/
-  return Block->__pad_0; /*0x4d2da5*/
+    __3_YAXPAX_Z(this); /*0x4d2d9b*/
+  return this->__pad_0; /*0x4d2da5*/
 
 }
 }  // G42.18c ns repair

@@ -357,7 +357,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e3a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x763e41*/
   v6 = (gamemd::WaypointPathClass *)(Block); /*0x763e56*/
-  v3 = (*(int ((int *)(**))(int *, WaypointPathClass **))(dword_B72608 + 16))(&dword_B72608, &v6); /*0x763e5a*/
+  v3 = (*(int (**)(int *, WaypointPathClass **))(dword_B72608 + 16))(&dword_B72608, &v6); /*0x763e5a*/
   if ( v3 != -1 && v3 < dword_B72618 && v3 < --dword_B72618 ) /*0x763e75*/
   {
     do /*0x763e8d*/

@@ -207,7 +207,7 @@ unsigned int INIClass::GetString(unsigned __int8 *a2, unsigned __int8 *a3, char 
   v9 = a2; /*0x528a3d*/
   if ( !a2 ) /*0x528a43*/
     return 0; /*0x528a43*/
-  if ( aP1 == (gamemd::INIClass *)((uint8_t *))this->headNode[0] ) /*0x528a4f*/
+  if ( aP1 == (gamemd::INIClass *)(uint8_t *)this->headNode[0] ) /*0x528a4f*/
   {
     v10 = this->headNode[1]; /*0x528a55*/
     goto LABEL_7; /*0x528a55*/

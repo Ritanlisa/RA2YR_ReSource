@@ -107,7 +107,7 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
     v8 = v14[18] - v12; /*0x6a6ba3*/
 LABEL_18:
     v7[18] = v8; /*0x6a6c09*/
-    (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, unsigned int))this->vtable1 + 14))(this, 0); /*0x6a6c14*/
+    (*((void (**)(ObjectClass *, unsigned int))this->vtable1 + 14))(this, 0); /*0x6a6c14*/
     return 1; /*0x6a6c20*/
   }
   return 0; /*0x6a6c1d*/

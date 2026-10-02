@@ -52,7 +52,7 @@ int E4Recv_501750::sub_501750(int a2)
     v12 = result; /*0x5017a2*/
     if ( !dword_A8E7AC && v5 != result ) /*0x5017ae*/
     {
-      (*(void ((gamemd::ObjectClass *)(**))(ObjectClass *, void *, int *))this->AbstractClass)(this, &unk_7F7CD0, &v9); /*0x5017c1*/
+      (*(void (**)(ObjectClass *, void *, int *))this->AbstractClass)(this, &unk_7F7CD0, &v9); /*0x5017c1*/
       (*(void (**)(int, int *))(*(unsigned int *)v9 + 12))(v9, &v8); /*0x5017cf*/
       if ( (*(int (**)(int, int, int *, unsigned int))(*(unsigned int *)v8 + 12))(v8, 1, &v6, 0) >= 0 ) /*0x5017e7*/
       {

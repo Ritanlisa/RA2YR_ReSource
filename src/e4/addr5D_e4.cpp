@@ -311,7 +311,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         DisableIME(); /*0x5d455d*/
         if ( *(unsigned char *)(aP0 + 25) ) /*0x5d4562*/
         {
-          v8 = *(void ((unsigned int)(****))(unsigned int, int))(aP0 + 36); /*0x5d4569*/
+          v8 = *(void (**)(unsigned int, int))(aP0 + 36); /*0x5d4569*/
           *(unsigned char *)(aP0 + 25) = 0; /*0x5d456c*/
           if ( v8 ) /*0x5d4572*/
             (**v8)(v8, 1); /*0x5d4578*/
@@ -440,7 +440,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     DisableIME(); /*0x5d47a1*/
     if ( !*(unsigned char *)(aP0 + 25) ) /*0x5d47a6*/
       goto LABEL_77; /*0x5d47a6*/
-    v22 = *(void ((unsigned int)(****))(unsigned int, int))(aP0 + 36); /*0x5d47b1*/
+    v22 = *(void (**)(unsigned int, int))(aP0 + 36); /*0x5d47b1*/
     *(unsigned char *)(aP0 + 25) = 0; /*0x5d47b4*/
     if ( v22 ) /*0x5d47ba*/
       (**v22)(v22, 1); /*0x5d47c0*/
@@ -491,7 +491,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     DisableIME(); /*0x5d4857*/
     if ( !*(unsigned char *)(aP0 + 25) ) /*0x5d485c*/
       goto LABEL_77; /*0x5d485c*/
-    v30 = *(void ((unsigned int)(****))(unsigned int, int))(aP0 + 36); /*0x5d4863*/
+    v30 = *(void (**)(unsigned int, int))(aP0 + 36); /*0x5d4863*/
     *(unsigned char *)(aP0 + 25) = 0; /*0x5d4866*/
     if ( v30 ) /*0x5d486c*/
       (**v30)(v30, 1); /*0x5d4872*/
@@ -526,7 +526,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
   DisableIME(); /*0x5d48e9*/
   if ( *(unsigned char *)(aP0 + 25) ) /*0x5d48ee*/
   {
-    v35 = *(void ((unsigned int)(****))(unsigned int, int))(aP0 + 36); /*0x5d48f5*/
+    v35 = *(void (**)(unsigned int, int))(aP0 + 36); /*0x5d48f5*/
     *(unsigned char *)(aP0 + 25) = 0; /*0x5d48f8*/
     if ( v35 ) /*0x5d48fe*/
       (**v35)(v35, 1); /*0x5d4904*/

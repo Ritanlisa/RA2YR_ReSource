@@ -804,18 +804,18 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x7b2b53*/
+  v3 = *(void **)&this->m_1[3]; /*0x7b2b53*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x7b2b56*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x7b2b60*/
+  if ( v3 && BYTE1(this->m_C) ) /*0x7b2b60*/
   {
     __3_YAXPAX_Z(v3); /*0x7b2b68*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x7b2b70*/
   }
-  BYTE1(Block->m_C) = 0; /*0x7b2b7b*/
-  Block->m_8 = 0; /*0x7b2b81*/
+  BYTE1(this->m_C) = 0; /*0x7b2b7b*/
+  this->m_8 = 0; /*0x7b2b81*/
   if ( (a2 & 1) != 0 ) /*0x7b2b88*/
-    __3_YAXPAX_Z(Block); /*0x7b2b8b*/
-  return Block->__pad_0; /*0x7b2b95*/
+    __3_YAXPAX_Z(this); /*0x7b2b8b*/
+  return this->__pad_0; /*0x7b2b95*/
 
 }
 } // namespace gamemd

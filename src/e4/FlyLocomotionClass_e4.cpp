@@ -228,10 +228,10 @@ FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 
   *(unsigned int *)Block->LocomotionClass = &vt_FlyLocomotionClass; /*0x4d03a3*/
   *(unsigned int *)&Block->LocomotionClass[4] = &vt_FlyLocomotionClass; /*0x4d03a9*/
-  ((LocomotionClass*)(gamemd::LocomotionClass *)Block)->Construct(); /*0x4d03b0*/
+  ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
-    __3_YAXPAX_Z(Block); /*0x4d03bd*/
-  return Block->LocomotionClass; /*0x4d03c7*/
+    __3_YAXPAX_Z(this); /*0x4d03bd*/
+  return this->LocomotionClass; /*0x4d03c7*/
 
 }
 } // namespace gamemd

@@ -95,14 +95,14 @@ MSPCXAnim * MSPCXAnim::QueryInterface(char a2, int a3)
 
   void (***v3)(unsigned int, int); // ecx
 
-  v3 = (void (***)(unsigned int, int))*((unsigned int *)Block + 9); /*0x5ced73*/
+  v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 9); /*0x5ced73*/
   *(unsigned int *)Block->__pad_0 = &vt_MSPCXAnim; /*0x5ced76*/
   if ( v3 ) /*0x5ced7e*/
     (**v3)(v3, 1); /*0x5ced84*/
   *(unsigned int *)Block->__pad_0 = &vt_MSAnim; /*0x5ced8a*/
   if ( (a2 & 1) != 0 ) /*0x5ced92*/
-    __3_YAXPAX_Z(Block); /*0x5ced95*/
-  return Block->__pad_0; /*0x5ced9f*/
+    __3_YAXPAX_Z(this); /*0x5ced95*/
+  return this->__pad_0; /*0x5ced9f*/
 
 }
 }  // G42.18c ns repair

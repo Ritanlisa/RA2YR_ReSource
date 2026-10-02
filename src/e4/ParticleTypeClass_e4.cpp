@@ -741,12 +741,12 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   CampaignClass *ParticleTypeClass_field_0x2BC; // eax
   ParticleTypeClass *v7; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ArrayIndex = &vt_ParticleTypeClass; /*0x645956*/
-  Block->ParticleTypeClass_field_28C = &vt_ParticleTypeClass; /*0x64595c*/
-  Block->BehavesLike = &vt_ParticleTypeClass; /*0x645963*/
-  Block->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass; /*0x64596a*/
-  AbstractClass::AnnounceExpiredPointer(&Block->ArrayIndex, 1); /*0x645971*/
-  v7 = (gamemd::ParticleTypeClass *)(Block); /*0x645986*/
+  this->ArrayIndex = &vt_ParticleTypeClass; /*0x645956*/
+  this->ParticleTypeClass_field_28C = &vt_ParticleTypeClass; /*0x64595c*/
+  this->BehavesLike = &vt_ParticleTypeClass; /*0x645963*/
+  this->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass; /*0x64596a*/
+  AbstractClass::AnnounceExpiredPointer(&this->ArrayIndex, 1); /*0x645971*/
+  v7 = (gamemd::ParticleTypeClass *)(this); /*0x645986*/
   v3 = (*(int (**)(int *, ParticleTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x64598a*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v7);
@@ -761,7 +761,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
       ++v3; /*0x6459ad*/
     }
   }
-  v7 = (gamemd::ParticleTypeClass *)(Block); /*0x6459cf*/
+  v7 = (gamemd::ParticleTypeClass *)(this); /*0x6459cf*/
   v4 = (*(int (**)(char *, ParticleTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_3C[12] + 16))( /*0x6459d3*/
          &stru_A83D50.__pad_3C[12],
          &v7);
@@ -776,19 +776,19 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
       ++v4; /*0x6459f6*/
     }
   }
-  ParticleTypeClass_field_0x2BC = Block->ParticleTypeClass_field_0x2BC; /*0x645a08*/
-  Block->ParticleTypeClass_field_0x2B8 = (VectorClass *)&vt_VectorClass; /*0x645a0e*/
-  if ( ParticleTypeClass_field_0x2BC && Block->__pad_2C0[5] ) /*0x645a1c*/
+  ParticleTypeClass_field_0x2BC = this->ParticleTypeClass_field_0x2BC; /*0x645a08*/
+  this->ParticleTypeClass_field_0x2B8 = (VectorClass *)&vt_VectorClass; /*0x645a0e*/
+  if ( ParticleTypeClass_field_0x2BC && this->__pad_2C0[5] ) /*0x645a1c*/
   {
     __3_YAXPAX_Z(ParticleTypeClass_field_0x2BC); /*0x645a27*/
-    Block->ParticleTypeClass_field_0x2BC = 0; /*0x645a2f*/
+    this->ParticleTypeClass_field_0x2BC = 0; /*0x645a2f*/
   }
-  Block->__pad_2C0[5] = 0; /*0x645a3b*/
+  this->__pad_2C0[5] = 0; /*0x645a3b*/
   *(unsigned int *)Block->__pad_2C0 = 0; /*0x645a42*/
-  ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x645a4c*/
+  ((ObjectTypeClass *)((int)this))->Destruct(); /*0x645a4c*/
   if ( (a2 & 1) != 0 ) /*0x645a56*/
-    __3_YAXPAX_Z(Block); /*0x645a59*/
-  return &Block->ArrayIndex; /*0x645a63*/
+    __3_YAXPAX_Z(this); /*0x645a59*/
+  return &this->ArrayIndex; /*0x645a63*/
 
 }
 } // namespace gamemd

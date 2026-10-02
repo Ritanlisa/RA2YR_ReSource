@@ -409,21 +409,21 @@ char Game_CheckSettingsChanged(char a1, char a2)
     }
     if ( a1 ) /*0x5e3364*/
       v2 = 1; /*0x5e3366*/
-    if ( dword_8316D8 != (unsigned int)((unsigned int))((unsigned int))(g_abs_A8B268) ) /*0x5e3375*/
+    if ( dword_8316D8 != (unsigned int)(unsigned int)(unsigned int)(g_abs_A8B268) ) /*0x5e3375*/
       v2 = 1; /*0x5e3377*/
-    if ( dword_8316DC != (unsigned int)((unsigned int))((unsigned int))(g_abs_A8B25C) ) /*0x5e3386*/
+    if ( dword_8316DC != (unsigned int)(unsigned int)(unsigned int)(g_abs_A8B25C) ) /*0x5e3386*/
       v2 = 1; /*0x5e3388*/
-    if ( dword_8316E0 != (unsigned int)((unsigned int))((unsigned int))(g_abs_A8B270) ) /*0x5e3397*/
+    if ( dword_8316E0 != (unsigned int)(unsigned int)(unsigned int)(g_abs_A8B270) ) /*0x5e3397*/
       v2 = 1; /*0x5e3399*/
-    if ( byte_AC11BD != (int)((int))((int))(g_abs_A8B262) ) /*0x5e33a8*/
+    if ( byte_AC11BD != (int)(int)(int)(g_abs_A8B262) ) /*0x5e33a8*/
       v2 = 1; /*0x5e33aa*/
-    if ( byte_AC11BE != (int)((int))((int))(g_abs_A8B263) ) /*0x5e33b9*/
+    if ( byte_AC11BE != (int)(int)(int)(g_abs_A8B263) ) /*0x5e33b9*/
       v2 = 1; /*0x5e33bb*/
     if ( byte_AC11BF != (unsigned char)g_abs_A8B264 ) /*0x5e33ca*/
       v2 = 1; /*0x5e33cc*/
     if ( byte_AC11C0 != (unsigned char)dword_A8B320 ) /*0x5e33db*/
       v2 = 1; /*0x5e33dd*/
-    if ( byte_AC11C1 != (int)((int))((int))(g_abs_A8B261) ) /*0x5e33ec*/
+    if ( byte_AC11C1 != (int)(int)(int)(g_abs_A8B261) ) /*0x5e33ec*/
       v2 = 1; /*0x5e33ee*/
     word_AC1146 = 0; /*0x5e33fa*/
     if ( _wcsicmp((const wchar_t *)(&word_AC10F0), (const wchar_t *)&dword_A8B320 + 1) ) /*0x5e3403*/

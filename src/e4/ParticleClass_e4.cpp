@@ -240,7 +240,7 @@ int ParticleClass::AdjustHeight()
           *((unsigned char *)this + 305) = 1; /*0x62d6b1*/
         }
       }
-      return (*(int ((int *)(**))(int *, int *))(*(unsigned int *)this + 436))(this, &v10); /*0x62d6c0*/
+      return (*(int (**)(int *, int *))(*(unsigned int *)this + 436))(this, &v10); /*0x62d6c0*/
     }
   }
   else

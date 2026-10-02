@@ -364,7 +364,7 @@ Game * * E4Recv_634B20::sub_634B20()
       }
       ++v2; /*0x634bf4*/
     }
-    while ( v2 < (gamemd::ObjectClass *)((int))nextObject ); /*0x634bf7*/
+    while ( v2 < (gamemd::ObjectClass *)(int)nextObject ); /*0x634bf7*/
   }
   if ( (int)this->lineTrailer > 0 ) /*0x634c05*/
   {

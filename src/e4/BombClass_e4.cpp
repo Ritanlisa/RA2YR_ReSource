@@ -226,7 +226,7 @@ BombClass * BombClass::CopyTo(char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_BombClass); /*0x43940b*/
   AudioFileClass::Release((AudioFileClass *)&Block->audioController[3]); /*0x439412*/
   v5 = (gamemd::BombClass *)(Block); /*0x439427*/
-  v3 = (*(int ((int *)(**))(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
+  v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
   {
     do /*0x43945e*/

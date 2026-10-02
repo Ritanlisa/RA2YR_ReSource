@@ -518,62 +518,62 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2, int a3, int aP1, int a5
   void *v9; // eax
   void *v10; // eax
 
-  Block->Socket = (int)&vt_UDPInterfaceClass; /*0x7b4176*/
-  while ( *((unsigned int *)Block + 64722) ) /*0x7b417c*/
+  this->Socket = (int)&vt_UDPInterfaceClass; /*0x7b4176*/
+  while ( *((unsigned int *)this + 64722) ) /*0x7b417c*/
   {
-    __3_YAXPAX_Z(**((void ***)Block + 64719)); /*0x7b418f*/
-    v3 = *((unsigned int *)Block + 64722); /*0x7b4194*/
+    __3_YAXPAX_Z(**((void ***)this + 64719)); /*0x7b418f*/
+    v3 = *((unsigned int *)this + 64722); /*0x7b4194*/
     if ( v3 > 0 ) /*0x7b419f*/
     {
       v4 = v3 - 1; /*0x7b41a1*/
       v5 = 0; /*0x7b41a4*/
-      for ( *((unsigned int *)Block + 64722) = v4; /*0x7b41ae*/
-            v5 < *((unsigned int *)Block + 64722);
+      for ( *((unsigned int *)this + 64722) = v4; /*0x7b41ae*/
+            v5 < *((unsigned int *)this + 64722);
             *(unsigned int *)(*((unsigned int *)Block + 64719) + 4 * v5 - 4) = *(unsigned int *)(*((unsigned int *)Block + 64719) + 4 * v5) )
       {
         ++v5; /*0x7b41b6*/
       }
     }
   }
-  while ( *((unsigned int *)Block + 64856) ) /*0x7b41d0*/
+  while ( *((unsigned int *)this + 64856) ) /*0x7b41d0*/
   {
-    __3_YAXPAX_Z(**((void ***)Block + 64853)); /*0x7b41e1*/
-    v6 = *((unsigned int *)Block + 64856); /*0x7b41e6*/
+    __3_YAXPAX_Z(**((void ***)this + 64853)); /*0x7b41e1*/
+    v6 = *((unsigned int *)this + 64856); /*0x7b41e6*/
     if ( v6 > 0 ) /*0x7b41f1*/
     {
       v7 = v6 - 1; /*0x7b41f3*/
       v8 = 0; /*0x7b41f6*/
-      for ( *((unsigned int *)Block + 64856) = v7; /*0x7b4200*/
-            v8 < *((unsigned int *)Block + 64856);
+      for ( *((unsigned int *)this + 64856) = v7; /*0x7b4200*/
+            v8 < *((unsigned int *)this + 64856);
             *(unsigned int *)(*((unsigned int *)Block + 64853) + 4 * v8 - 4) = *(unsigned int *)(*((unsigned int *)Block + 64853) + 4 * v8) )
       {
         ++v8; /*0x7b4208*/
       }
     }
   }
-  UDPInterfaceClass::connect(Block); /*0x7b4224*/
-  v9 = (void *)*((unsigned int *)Block + 64853); /*0x7b4229*/
+  UDPInterfaceClass::connect(this); /*0x7b4224*/
+  v9 = (void *)*((unsigned int *)this + 64853); /*0x7b4229*/
   *((unsigned int *)Block + 64852) = (unsigned int)(&vt_VectorClass); /*0x7b422f*/
-  if ( v9 && *((unsigned char *)Block + 259421) ) /*0x7b423d*/
+  if ( v9 && *((unsigned char *)this + 259421) ) /*0x7b423d*/
   {
     __3_YAXPAX_Z(v9); /*0x7b4246*/
     *((unsigned int *)Block + 64853) = 0; /*0x7b424e*/
   }
   *((unsigned char *)Block + 259421) = 0; /*0x7b4254*/
   *((unsigned int *)Block + 64854) = 0; /*0x7b425a*/
-  v10 = (void *)*((unsigned int *)Block + 64719); /*0x7b4260*/
+  v10 = (void *)*((unsigned int *)this + 64719); /*0x7b4260*/
   *((unsigned int *)Block + 64718) = (unsigned int)(&vt_VectorClass); /*0x7b4266*/
-  if ( v10 && *((unsigned char *)Block + 258885) ) /*0x7b4274*/
+  if ( v10 && *((unsigned char *)this + 258885) ) /*0x7b4274*/
   {
     __3_YAXPAX_Z(v10); /*0x7b427d*/
     *((unsigned int *)Block + 64719) = 0; /*0x7b4285*/
   }
   *((unsigned char *)Block + 258885) = 0; /*0x7b428d*/
   *((unsigned int *)Block + 64720) = 0; /*0x7b4293*/
-  WinsockInterfaceClass::WinsockInterfaceClass((int)Block); /*0x7b4299*/
+  WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b4299*/
   if ( (a2 & 1) != 0 ) /*0x7b42a3*/
-    __3_YAXPAX_Z(Block); /*0x7b42a6*/
-  return (void ***)Block; /*0x7b42b0*/
+    __3_YAXPAX_Z(this); /*0x7b42a6*/
+  return (void ***)this; /*0x7b42b0*/
 
 }
 } // namespace gamemd

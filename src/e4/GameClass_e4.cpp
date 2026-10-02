@@ -306,7 +306,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
       if ( *(unsigned int *)&this->__pad_24[16] ) /*0x632e01*/
       {
         v9 = (char *)((unsigned int)((char *)((int)((char *)(*((unsigned int *)this + 80))))));
-        if ( v9 >= (unsigned int)((char *))(aP2) ) /*0x632e7e*/
+        if ( v9 >= (unsigned int)(char *)(aP2) ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
         memcpy(&this->__pad_24[*((unsigned int *)this + 79) - *((unsigned int *)this + 80) + 24], Src,(size_t)(v9)); /*0x632e97*/
         v3 = &Src[v9]; /*0x632eb0*/

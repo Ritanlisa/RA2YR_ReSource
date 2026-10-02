@@ -322,7 +322,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   (*(void (**)(int *, char *))(v43.customSound_controller[2] + 8))( /*0x5cef6b*/
     &v43.customSound_controller[2],
     aMapselmdIni);
-  (*(void ((int *)(**))(int *, int))(v43.customSound_controller[2] + 28))(&v43.customSound_controller[2], 1); /*0x5cef78*/
+  (*(void (**)(int *, int))(v43.customSound_controller[2] + 28))(&v43.customSound_controller[2], 1); /*0x5cef78*/
   if ( !((FileStraw *)((FileStraw *)&((char *)&v43)))->Open((int)&v43.customSound_controller[2], 0) ) /*0x5cef85*/
     goto LABEL_17; /*0x5cef85*/
   v4 = 1; /*0x5cef98*/

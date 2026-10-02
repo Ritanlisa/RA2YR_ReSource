@@ -61,7 +61,7 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
       {
         ++v9; /*0x5d4b6d*/
         ++v10; /*0x5d4b6e*/
-        if ( v9 > (gamemd::CampaignScore *)((int))(v8) ) /*0x5d4b73*/
+        if ( v9 > (gamemd::CampaignScore *)(int)(v8) ) /*0x5d4b73*/
           goto LABEL_17; /*0x5d4b73*/
       }
       goto LABEL_18; /*0x5d4b6b*/

@@ -269,7 +269,7 @@ int TechnoClass::SmokeUpdate() {
           v33 = v30; /*0x414ddf*/
           v31 = this->locationZ; /*0x414dea*/
           v34 = v31 - 5; /*0x414df4*/
-          (*(void ((char *)(**))(char *, int *))(v8 + 436))(this, &v32); /*0x414df8*/
+          (*(void (**)(char *, int *))(v8 + 436))(this, &v32); /*0x414df8*/
           if ( (*(int (**)(char *))(*(unsigned int *)&this->queuedMission6))(this) < -400 ) /*0x414e0d*/
           {
             (*(void (**)(char *, unsigned int))(*(unsigned int *)&this->q0584))(this, 0); /*0x414e15*/

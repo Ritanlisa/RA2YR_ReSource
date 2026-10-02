@@ -116,7 +116,7 @@ int __sbh_heap_check()
               else
               {
                 v11 = (int)((unsigned int *)((v9 >> 4) - 1));
-                if ( v11 > (unsigned int)((unsigned int *))(63) ) /*0x7d049f*/
+                if ( v11 > (unsigned int)(unsigned int *)(63) ) /*0x7d049f*/
                   v11 = 63; /*0x7d04a3*/
                 ++v21[v11]; /*0x7d04a4*/
               }
@@ -216,7 +216,7 @@ int __sbh_heap_check()
         ++v25; /*0x7d0640*/
         v22 = ++v5; /*0x7d064a*/
       }
-      while ( v25 < (int)((int *))(32) ); /*0x7d064d*/
+      while ( v25 < (int)(int *)(32) ); /*0x7d064d*/
       if ( v26 != *v2 || v31 != v2[1] ) /*0x7d0660*/
         return -17; /*0x7d06b9*/
       v2 += 5; /*0x7d0662*/

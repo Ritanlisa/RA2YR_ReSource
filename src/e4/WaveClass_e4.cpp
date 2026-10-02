@@ -132,7 +132,7 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   ((unsigned int *)Block)[0] = (unsigned int)(&off_7F6BC8); /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block,(int)((gamemd::AbstractClass *)(1))); /*0x763221*/
   v6 = (gamemd::WaveClass *)(Block); /*0x763236*/
-  v3 = (*(int ((unsigned char *)(**))(unsigned char *, WaveClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 84) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 84), &v6); /*0x76323a*/
+  v3 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 84) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 84), &v6); /*0x76323a*/
   if ( v3 != -1 && v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 100) ) /*0x76324a*/
   {
     --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 100); /*0x76324f*/
@@ -190,7 +190,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     LOWORD(aP1) = *aP1 / 256; /*0x75f359*/
     HIWORD(aP1) = v5[1] / 256; /*0x75f372*/
     v6 = (char *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP1); /*0x75f391*/
-    v7 = (*(int ((void *)(**))(void *, unsigned int))(*(unsigned int *)this->Owner + 1016))(this->Owner, 0); /*0x75f395*/
+    v7 = (*(int (**)(void *, unsigned int))(*(unsigned int *)this->Owner + 1016))(this->Owner, 0); /*0x75f395*/
     v8 = *(unsigned int *)v7; /*0x75f39b*/
     v17 = *(unsigned int *)(*(unsigned int *)v7 + 172); /*0x75f3a9*/
     v18 = *(unsigned int *)(*(unsigned int *)v7 + 152); /*0x75f3ad*/

@@ -66,7 +66,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
     v3 += Size; /*0x42de55*/
     this->field_10 = (unsigned int)(v8); /*0x42de59*/
     a3 -= Size; /*0x42de5c*/
-    if ( v8 == (unsigned char *)((int))(v5) ) /*0x42de60*/
+    if ( v8 == (unsigned char *)(int)(v5) ) /*0x42de60*/
     {
       if ( this->field_C ) /*0x42de62*/
         v9 = DecodeBitmapRGB((gamemd::Pipe *)(pad_14),(int)(v5), v6, Srca); /*0x42de88*/
@@ -262,24 +262,24 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   int v4; // eax
 
   *(unsigned int *)Block->__pad_0 = &vt_GenericNode; /*0x52ae27*/
-  if ( Block ) /*0x52ae2d*/
+  if ( this ) /*0x52ae2d*/
   {
-    Previous = Block->Previous; /*0x52ae2f*/
+    Previous = this->Previous; /*0x52ae2f*/
     if ( Previous ) /*0x52ae34*/
     {
-      v4 = *(unsigned int *)Block->Blowfish; /*0x52ae36*/
+      v4 = *(unsigned int *)this->Blowfish; /*0x52ae36*/
       if ( v4 ) /*0x52ae3b*/
       {
         *(unsigned int *)(v4 + 4) = Previous; /*0x52ae3d*/
         *(unsigned int *)(Block->Previous + 8) = *(unsigned int *)Block->Blowfish; /*0x52ae46*/
         *(unsigned int *)Block->Blowfish = 0; /*0x52ae49*/
-        Block->Previous = 0; /*0x52ae4c*/
+        this->Previous = 0; /*0x52ae4c*/
       }
     }
   }
   if ( (a2 & 1) != 0 ) /*0x52ae54*/
-    __3_YAXPAX_Z(Block); /*0x52ae57*/
-  return Block->__pad_0; /*0x52ae61*/
+    __3_YAXPAX_Z(this); /*0x52ae57*/
+  return this->__pad_0; /*0x52ae61*/
 
 }
 } // namespace gamemd

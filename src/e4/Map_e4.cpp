@@ -849,7 +849,7 @@ char Map_Helper_59BAB0(void * a1, void * a2, void * a3, void * a4, void * a5)
   {
     v10 = (void *)((int)(*(unsigned int *)a1)));
     v11 = (int)(a1[1]);
-    if ( v10 >= (void *)((int))(v5) && v10 < v5 + a2[2] ) /*0x59bb99*/
+    if ( v10 >= (void *)(int)(v5) && v10 < v5 + a2[2] ) /*0x59bb99*/
     {
       v12 = (int)(a2[1]);
       if ( v11 >= v12 && v11 < v12 + a2[3] ) /*0x59bba9*/

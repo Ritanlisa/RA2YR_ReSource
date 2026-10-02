@@ -265,7 +265,7 @@ BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
 
   BinkMovie *height; // edi
 
-  height = (BinkMovie *)Block->height; /*0x5c0a34*/
+  height = (BinkMovie *)this->height; /*0x5c0a34*/
   *(unsigned int *)Block->MovieHandle = &vt_BinkMovieHandle; /*0x5c0a37*/
   if ( height ) /*0x5c0a3f*/
   {
@@ -274,8 +274,8 @@ BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
   }
   *(unsigned int *)Block->MovieHandle = &vt_MovieHandle; /*0x5c0a55*/
   if ( (a2 & 1) != 0 ) /*0x5c0a5d*/
-    __3_YAXPAX_Z(Block); /*0x5c0a60*/
-  return Block->MovieHandle; /*0x5c0a6a*/
+    __3_YAXPAX_Z(this); /*0x5c0a60*/
+  return this->MovieHandle; /*0x5c0a6a*/
 
 }
 } // namespace gamemd

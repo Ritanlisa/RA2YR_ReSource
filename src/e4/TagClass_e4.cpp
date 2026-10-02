@@ -352,7 +352,7 @@ int TagClass::ProcessTag(int * a2)
   firstTrigger = this->firstTrigger; /*0x6e5702*/
   if ( firstTrigger ) /*0x6e5707*/
   {
-    v5 = (*((int ((void **)(**))(void **))((unsigned int *)firstTrigger)[0] + 4))(&((unsigned int *)firstTrigger)[0]); /*0x6e5710*/
+    v5 = (*((int (**)(void **))((unsigned int *)firstTrigger)[0] + 4))(&((unsigned int *)firstTrigger)[0]); /*0x6e5710*/
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
   LOBYTE(firstTrigger) = this->destroyed; /*0x6e571b*/

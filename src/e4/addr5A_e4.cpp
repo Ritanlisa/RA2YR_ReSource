@@ -496,7 +496,7 @@ int GenerateTerrainHeightMapInternal()
         IDA_HIWORD(v17) = (unsigned short)(IDA_HIWORD(v16) + v4); /*0x5a3455*/
         v16 = v17; /*0x5a345e*/
         v6 = IDA_SHIWORD(v17) + v5; /*0x5a3468*/
-        if ( v6 > (unsigned int *)((int))(v2) && v5 - IDA_SHIWORD(v17) < v2 && IDA_SHIWORD(v17) - v5 < v2 && v6 <= dword_ABED08 ) /*0x5a3483*/
+        if ( v6 > (unsigned int *)(int)(v2) && v5 - IDA_SHIWORD(v17) < v2 && IDA_SHIWORD(v17) - v5 < v2 && v6 <= dword_ABED08 ) /*0x5a3483*/
         {
           v7 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16));
           if ( ((Cell*)v7)->IsEmpty() ) /*0x5a3496*/

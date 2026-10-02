@@ -234,14 +234,14 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
 
   void *m_8; // eax
 
-  m_8 = (void *)Block->m_8; /*0x49a348*/
+  m_8 = (void *)this->m_8; /*0x49a348*/
   *(unsigned int *)Block->__pad_0 = &vt_BlitTransLucent25Alpha; /*0x49a34b*/
   FractalNoise::Dtor(m_8); /*0x49a352*/
-  Block->m_8 = 0; /*0x49a35b*/
+  this->m_8 = 0; /*0x49a35b*/
   *(unsigned int *)Block->__pad_0 = &vt_Blitter; /*0x49a364*/
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
-    __3_YAXPAX_Z(Block); /*0x49a36d*/
-  return Block->__pad_0; /*0x49a377*/
+    __3_YAXPAX_Z(this); /*0x49a36d*/
+  return this->__pad_0; /*0x49a377*/
 
 }
 } // namespace gamemd

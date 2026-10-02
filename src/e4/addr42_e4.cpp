@@ -254,11 +254,11 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v66 = (int *)(FoundationSize[1]);
           v21 = (int *)(FoundationSize[2]);
           v67 = (int *)(FoundationSize[3]);
-          if ( v13 <= (int)((int))(v58) + v66 ) /*0x4210dd*/
+          if ( v13 <= (int)(int)(v58) + v66 ) /*0x4210dd*/
             v41 = v58 + v66; /*0x4210df*/
           v60 = (int *)(v41 - v58 - v66); /*0x4210fd*/
           v37 = (int *)(v57 + v13); /*0x421118*/
-          if ( v57 + v13 >= (int)((int))(v66) + v67 + v58 ) /*0x42111c*/
+          if ( v57 + v13 >= (int)(int)(v66) + v67 + v58 ) /*0x42111c*/
             v37 = (unsigned int)(v66)+ v67 + v58; /*0x42111e*/
           v40 = (int *)(v55); /*0x42112b*/
           if ( v55 <= (int)((unsigned int)(v17)+ v20) ) /*0x42112f*/
@@ -290,7 +290,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
               v39 = v37 - v41; /*0x4212c5*/
               do /*0x421324*/
               {
-                if ( v40 < (int *)((unsigned int))(v42) ) /*0x4212cf*/
+                if ( v40 < (int *)(unsigned int)(v42) ) /*0x4212cf*/
                 {
                   v34 = (int *)(v42 - v40);
                   do /*0x421306*/
@@ -320,7 +320,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
             v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))))))))))))))))))));
             do /*0x4212ad*/
             {
-              if ( v29 < (int *)((int))(v42) ) /*0x421239*/
+              if ( v29 < (int *)(int)(v42) ) /*0x421239*/
               {
                 v30 = (int *)((int)(v42 - v29));
                 do /*0x421281*/

@@ -217,10 +217,10 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       p_houseTypes[4] = 0; /*0x6a4816*/
       *p_houseTypes = &vt_TypeList; /*0x6a4819*/
     }
-    (*(void ((int)(**))(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &aP1, 4, 0); /*0x6a482a*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &aP1, 4, 0); /*0x6a482a*/
     for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
     {
-      (*(void ((int)(**))(int, SideClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a0, 4, 0); /*0x6a4840*/
+      (*(void (**)(int, SideClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a0, 4, 0); /*0x6a4840*/
       v7 = p_houseTypes[2]; /*0x6a4843*/
       if ( (int)p_houseTypes[4] >= (int)v7 ) /*0x6a484b*/
       {
@@ -262,7 +262,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(Block), 1); /*0x6a4951*/
   v6 = (gamemd::SideClass *)(Block); /*0x6a4966*/
-  v3 = (*(int ((int *)(**))(int *, SideClass **))(((char *)&FootClass_Array) + 16))(&((char *)&FootClass_Array), &v6); /*0x6a496a*/
+  v3 = (*(int (**)(int *, SideClass **))(((char *)&FootClass_Array) + 16))(&((char *)&FootClass_Array), &v6); /*0x6a496a*/
   if ( v3 != -1 && v3 < *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x6a497a*/
   {
     --((unsigned int *)&FootClass_Array)[0]; /*0x6a497f*/

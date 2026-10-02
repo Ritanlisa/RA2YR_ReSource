@@ -336,7 +336,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   *((unsigned int *)this + 2) = (unsigned int)(&vt_ObjectTypeClass); /*0x5f7418*/
   *((unsigned int *)this + 3) = (int)(&vt_ObjectTypeClass); /*0x5f741f*/
   v8 = (int)(this); /*0x5f7431*/
-  v2 = (*(int ((int *)(**))(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &v8); /*0x5f7435*/
+  v2 = (*(int (**)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &v8); /*0x5f7435*/
   if ( v2 != -1 && v2 < dword_AC1428 && v2 < --dword_AC1428 ) /*0x5f7450*/
   {
     do /*0x5f7468*/

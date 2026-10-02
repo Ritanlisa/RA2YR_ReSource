@@ -255,7 +255,7 @@ CellStruct * * sub_730D60()
       result = (gamemd::CellStruct **)((char)v8);
       ++v1; /*0x730e66*/
     }
-    while ( v1 < (gamemd::CellStruct **)((int))v8 );
+    while ( v1 < (gamemd::CellStruct **)(int)v8 );
     if ( v2 ) /*0x730e71*/
       return PlayVocClass(g_RulesClass_Instance->Scorches4[0], 0x2000, 1.0, 0); /*0x730e8a*/
   }

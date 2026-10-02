@@ -226,7 +226,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   if ( v18 ) /*0x5cc47a*/
   {
     a3 = (void *)(v5);
-    a3 = (void *)((*(int ((int)(**))(int, int *))(*(unsigned int *)v18 + 16))(v18, &a3));
+    a3 = (void *)((*(int (**)(int, int *))(*(unsigned int *)v18 + 16))(v18, &a3));
     v19 = *(unsigned int *)(v5 + 68); /*0x5cc48e*/
     for ( i = 0; i < *(unsigned int *)(v19 + 16); ++i ) /*0x5cc498*/
     {
@@ -247,7 +247,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
     IDA_BYTE1(v23) |= 4u; /*0x5cc4e3*/
     v28 = v23; /*0x5cc4e7*/
     v30 = *(unsigned int *)(v5 + 8); /*0x5cc4e8*/
-    v24 = (int *)(*(int ((gamemd::MSOverlayAnim *)(**))(MSOverlayAnim *, int *))(*(unsigned int *)aP0->__pad_0 + 120))(aP0, &v32); /*0x5cc4f5*/
+    v24 = (int *)(*(int (**)(MSOverlayAnim *, int *))(*(unsigned int *)aP0->__pad_0 + 120))(aP0, &v32); /*0x5cc4f5*/
     DrawToSurfaceSHP( /*0x5cc50f*/
       (int)DSurface_Alternate,
       *(unsigned int *)(v5 + 32),

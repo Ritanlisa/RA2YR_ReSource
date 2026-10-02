@@ -251,7 +251,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   int v9; // [esp+8h] [ebp-8h]
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v7 = (unsigned int *)(*(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v7, *((char *)this + 17))); /*0x6e339b*/
+  v7 = (unsigned int *)(*(unsigned int *)ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v7, *((char *)this + 17))); /*0x6e339b*/
   GroundHeight = 0; /*0x6e339f*/
   v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
   v8 = ((int16_t)v7 << 8) + 128; /*0x6e33ca*/
@@ -712,7 +712,7 @@ char E4Recv_6E0080::sub_6E0080(int a2, int a3, int a4, int a5)
   unsigned short *v9; // eax
   int v11; // [esp+8h] [ebp-4h] BYREF
 
-  v5 = (unsigned int *)(*(unsigned int *)(ScenarioClass)::Get_Waypoint_Location((char *)dword_A8B230, &v11, this->ambientSoundController[2])); /*0x6e0097*/
+  v5 = (unsigned int *)(*(unsigned int *)ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v11, this->ambientSoundController[2])); /*0x6e0097*/
   v6 = 0; /*0x6e009e*/
   v11 = v5; /*0x6e00a0*/
   if ( g_GameCleanupState <= 0 ) /*0x6e00a6*/
