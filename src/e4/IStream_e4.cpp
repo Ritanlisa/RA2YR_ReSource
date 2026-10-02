@@ -11,7 +11,7 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x4A3020
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int IStream::Read(IStream * pstm, void * pv, ULONG cb)
 {
 
@@ -49,5 +49,4 @@ int IStream::Read(IStream * pstm, void * pv, ULONG cb)
   return result; /*0x4a3088*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

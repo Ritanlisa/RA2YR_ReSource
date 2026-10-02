@@ -21,7 +21,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x5A5360
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
 {
 
@@ -450,5 +450,4 @@ LABEL_98:
   }
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

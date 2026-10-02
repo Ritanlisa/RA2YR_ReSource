@@ -15,7 +15,7 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x4AF780
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
 {
 
@@ -46,7 +46,6 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
   return OleLoadFromStream((LPSTREAM)v2, &IID_ILocomotion, p_Piggybackee); /*0x4af7f1*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4AF800
 namespace gamemd {

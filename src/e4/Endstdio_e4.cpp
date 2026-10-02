@@ -6,10 +6,9 @@
 #include "e4/e4_protos.h"
 
 // 0x7CB255
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int sub_7CB255()
 {
   return flsall((gamemd::MouseClass *)(1)); /*0x7cb25d*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

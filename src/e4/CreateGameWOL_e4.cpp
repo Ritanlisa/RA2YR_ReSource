@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x792EC0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 HWND sub_792EC0(int a1)
 {
   HWND v2; // eax
@@ -28,5 +28,4 @@ HWND sub_792EC0(int a1)
     return SetFocus(result); /*0x792f03*/
   return result; /*0x792eff*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

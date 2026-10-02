@@ -10,7 +10,7 @@
 #include "e4/classes/GameSetup_e4.hpp"
 
 // 0x4134A0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int GadgetGrid::InsertItem(int a2)
 {
 
@@ -64,7 +64,6 @@ int GadgetGrid::InsertItem(int a2)
   return result; /*0x413585*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4135D0
 namespace gamemd {

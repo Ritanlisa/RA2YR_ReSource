@@ -9,12 +9,11 @@
 #include "e4/classes/IStream_e4.hpp"
 
 // 0x536210
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 wchar_t * CSF::GetTeamString()
 {
 
   return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0,(const char *)(g_Str_File_Init_CPP), 6363); /*0x536226*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

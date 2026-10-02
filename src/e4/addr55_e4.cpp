@@ -46,7 +46,7 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x550080
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void ObjectClass::sub_550080(ObjectClass ** Block)
 {
 
@@ -111,7 +111,6 @@ LABEL_8:
   }
 
 }
-}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x550150
@@ -1320,7 +1319,7 @@ ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int
 
 }
 // 0x558810
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1, void *a2_1)
 {
 
@@ -1334,7 +1333,6 @@ int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1, void *a2_1)
   return SaveLoadDialog::DlgProc((SaveLoadDialog *)this); /*0x558831*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x55B720
 namespace gamemd {

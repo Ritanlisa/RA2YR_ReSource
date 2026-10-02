@@ -9,7 +9,7 @@
 #include "e4/e4_protos.h"
 
 // 0x53EE70
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 bool __fastcall GUID::Compare(int a2)
 {
 
@@ -81,5 +81,4 @@ LABEL_23:
   return result; /*0x53ee9f*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

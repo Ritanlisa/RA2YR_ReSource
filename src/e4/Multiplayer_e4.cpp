@@ -34,7 +34,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x688380
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void * Multiplayer::FindStartPositions()
 {
 
@@ -207,7 +207,6 @@ LABEL_24:
   return v2; /*0x6886a5*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x68C2B0
 namespace gamemd {

@@ -15,7 +15,7 @@
 #include "e4/classes/NukeFlash_e4.hpp"
 
 // 0x5F03B0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char NullModem_TestConnection(void * a1)
 {
   wchar_t * v1;
@@ -131,5 +131,4 @@ char NullModem_TestConnection(void * a1)
   Dialog::Destroy(hWnd); /*0x5f0666*/
   return (char)(v1); /*0x5f0673*/
 }
-}  // G42.18 ns repair
 }

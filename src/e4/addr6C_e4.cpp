@@ -59,7 +59,7 @@
 #include "e4/classes/Stream_e4.hpp"
 
 // 0x6C6F50
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int ProcessGameResults(char a1)
 {
     unsigned int v7 = 0;  /* G37 hoist */
@@ -1291,7 +1291,6 @@ LABEL_343:
   ((RawFileClass *)((int *)&v272))->Dtor();
   ((ResultNode *)(v262))->CleanupList();
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x6C87F0

@@ -100,7 +100,7 @@
 #include "e4/classes/Text_e4.hpp"
 
 // 0x5BC180
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
     unsigned int v4 = 0;  /* G37 hoist */
@@ -224,7 +224,6 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   }
   return result; /*0x5bc2b9*/
 }
-}  // G42.18 ns repair
 }
 // 0x69A1F0
 int WinMain::Constructor_VectorClass_Wstring_()

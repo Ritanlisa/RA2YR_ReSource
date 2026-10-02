@@ -33,7 +33,7 @@
 #include "e4/classes/GenericNode_e4.hpp"
 
 // 0x5E84D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char * GameConfig::ComputeCRC()
 {
 
@@ -89,7 +89,6 @@ char * GameConfig::ComputeCRC()
   return v8; /*0x5e8574*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x679D90

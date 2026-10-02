@@ -44,7 +44,7 @@
 #include "e4/classes/Matrix3x4_e4.hpp"
 
 // 0x439B00
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
 {
 
@@ -345,7 +345,6 @@ LABEL_43:
   return result; /*0x43a0a1*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x43A130
 namespace gamemd {
@@ -3030,7 +3029,6 @@ int JumpjetLocomotionClass_26::FindItem(unsigned int * a2)
 
 }
 // 0x439A10
-namespace gamemd {  // G42.18 ns repair
 double JumpjetLocomotionClass::ComputeVectorLengthMetric()
 {
 
@@ -3068,7 +3066,6 @@ double JumpjetLocomotionClass::ComputeVectorLengthMetric()
   return (double)v10; /*0x439af2*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x4AF610
 int   JumpjetLocomotionClass::LoadLocomotionFromStream(unsigned int * a1, unsigned int * a2)

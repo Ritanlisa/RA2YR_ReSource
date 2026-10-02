@@ -21,7 +21,7 @@
 #include "e4/classes/Straw_e4.hpp"
 
 // 0x42DDB0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Delegate::ProcessBitmapStream(char * Src, int a3)
 {
 
@@ -93,7 +93,6 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   return v13; /*0x42df15*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x631D10
 namespace gamemd {

@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x67C0B0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 VectorClass_flat * SmudgeTypeVector::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -27,5 +27,4 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(unsigned int * Block, char a
   return Block->__pad_0; /*0x67c0f5*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

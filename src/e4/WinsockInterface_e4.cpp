@@ -27,7 +27,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x770270
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void * WinsockInterface::ProcessPacket(int a2)
 {
 
@@ -94,7 +94,6 @@ void * WinsockInterface::ProcessPacket(int a2)
   return this; /*0x77041b*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x7B1DE0
 namespace gamemd {

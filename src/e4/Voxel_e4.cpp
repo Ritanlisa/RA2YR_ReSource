@@ -24,7 +24,7 @@
 #include "e4/classes/Float4_e4.hpp"
 
 // 0x748220
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Voxel::BuildIndexTable()
 {
 
@@ -113,7 +113,6 @@ LABEL_17:
   return result; /*0x748340*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x754510
 namespace gamemd {

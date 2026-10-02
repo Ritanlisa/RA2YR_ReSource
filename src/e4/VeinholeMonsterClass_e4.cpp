@@ -18,7 +18,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 
 // 0x5862C0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
 {
   int v3; // edi
@@ -63,7 +63,6 @@ char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
       goto LABEL_9; /*0x586332*/
   }
 }
-}  // G42.18 ns repair
 }
 // 0x74EEE0
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2, void *a4)

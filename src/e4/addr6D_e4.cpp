@@ -39,7 +39,7 @@
 #include "e4/classes/ShapeButton_e4.hpp"
 
 // 0x6D1130
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int sub_6D1130()
 {
   unsigned int v0;
@@ -61,7 +61,6 @@ int sub_6D1130()
 // 0x69de00
   return ((ShapeButton *)((int)stru_B0CC40))->SetShape((int)v0, 0, 0); /*0x6d11f4*/
 }
-}  // G42.18 ns repair
 }
 // 0x6D6BB0
 namespace gamemd {

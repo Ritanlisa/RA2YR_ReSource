@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x5C8DD0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char sub_5C8DD0(unsigned int * a1, int a2, int a3, int a4)
 {
   int v5; // ebp
@@ -23,5 +23,4 @@ char sub_5C8DD0(unsigned int * a1, int a2, int a3, int a4)
   *((unsigned char *)a1 + v5 / 8) = result; /*0x5c8e2c*/
   return result; /*0x5c8e27*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

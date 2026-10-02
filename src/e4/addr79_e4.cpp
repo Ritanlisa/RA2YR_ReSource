@@ -40,7 +40,7 @@
 #include "e4/classes/NetworkID_e4.hpp"
 
 // 0x792CF0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 {
   INT_PTR result; // eax
@@ -105,7 +105,6 @@ void sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
   }
   return result; /*0x792d2c*/
 }
-}  // G42.18 ns repair
 }
 // 0x793280
 namespace gamemd {

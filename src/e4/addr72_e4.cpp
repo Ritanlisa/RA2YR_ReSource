@@ -44,7 +44,7 @@
 #include "e4/classes/Coord_e4.hpp"
 
 // 0x7221B0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void * sub_7221B0()
 {
   void * result;
@@ -86,7 +86,6 @@ void * sub_7221B0()
   }
   return result; /*0x722236*/
 }
-}  // G42.18 ns repair
 }
 // 0x722C40
 namespace gamemd {

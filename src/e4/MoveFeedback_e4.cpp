@@ -20,7 +20,7 @@
 #include "e4/classes/Movie_e4.hpp"
 
 // 0x7327D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int MoveFeedback::ProcessCommand()
 {
 
@@ -138,7 +138,6 @@ int MoveFeedback::ProcessCommand()
   return result; /*0x732935*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x40B960
 namespace gamemd {

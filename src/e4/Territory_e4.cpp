@@ -12,7 +12,7 @@
 #include "e4/classes/TextRenderer_e4.hpp"
 
 // 0x7718A0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Territory_WorldDominationTour_8::AddRef(char a2)
 {
 
@@ -40,7 +40,6 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
   return Ticks; /*0x7718f0*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x771900
 namespace gamemd {

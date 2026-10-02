@@ -8,14 +8,13 @@
 #include "e4/classes/ColorStruct_e4.hpp"
 
 // 0x427290
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char * AnimFile::Stub()
 {
 
   return (char *)this + 1292; /*0x427296*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4272A0
 namespace gamemd {

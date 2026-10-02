@@ -56,7 +56,7 @@
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 
 // 0x5C00E0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 ObjectClass * * sub_5C00E0(void * a1, void * a2, void * a3)
 {
   int v3; // ebx
@@ -99,7 +99,6 @@ ObjectClass * * sub_5C00E0(void * a1, void * a2, void * a3)
   }
   return (gamemd::ObjectClass **)(result);
 }
-}  // G42.18 ns repair
 }
 // 0x5C07D0
 namespace gamemd {

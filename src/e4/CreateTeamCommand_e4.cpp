@@ -39,16 +39,15 @@
 #include "e4/classes/E4Recv_6C2450_e4.hpp"
 
 // 0x535CF0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int CreateTeamCommand::vt02()
 {
 
   return (*(int ((gamemd::CommandClass *)(**))(CommandClass *))(*(unsigned int *)this + 16))(this);
 
 }
-}  // G42.18 ns repair
 // 0x537350
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_148()
 {
 
@@ -70,7 +69,6 @@ unsigned int * CreateTeamCommand::performAction_148()
   return result; /*0x5373c8*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x537440
 namespace gamemd {

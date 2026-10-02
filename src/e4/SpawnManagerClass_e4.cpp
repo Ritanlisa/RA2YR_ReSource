@@ -13,7 +13,7 @@
 #include "e4/classes/SpawnControlVector_e4.hpp"
 
 // 0x6B6C90
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
 {
 
@@ -111,7 +111,6 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
   return this; /*0x6b6e8a*/
 
 }
-}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x6B6EA0

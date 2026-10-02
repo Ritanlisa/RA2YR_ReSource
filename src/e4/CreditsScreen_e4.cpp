@@ -23,7 +23,7 @@
 #include "e4/classes/Time_e4.hpp"
 
 // 0x531A00
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 
@@ -88,7 +88,6 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   return 0; /*0x531bfe*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4A3C00
 namespace gamemd {

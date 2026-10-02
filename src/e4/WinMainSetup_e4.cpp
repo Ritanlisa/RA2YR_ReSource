@@ -21,7 +21,7 @@
 #include "e4/classes/DDraw_e4.hpp"
 
 // 0x6BB8E0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
 {
   uint8_t result; // al
@@ -67,7 +67,6 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
   }
   return (gamemd::AbstractClass **)(result);
 }
-}  // G42.18 ns repair
 }
 // 0x72B130
 namespace gamemd {

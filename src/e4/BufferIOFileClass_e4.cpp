@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x535A60
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void BufferIOFileClass::Destruct()
 {
 
@@ -16,7 +16,6 @@ void BufferIOFileClass::Destruct()
   return ((BufferIOFileClass *)(int a1))->Dtor() ;
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x65CA70
 namespace gamemd {

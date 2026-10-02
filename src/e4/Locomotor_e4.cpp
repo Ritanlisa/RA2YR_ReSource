@@ -6,7 +6,7 @@
 #include "e4/e4_protos.h"
 
 // 0x755C60
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char * sub_755C60(char * a1, int a2)
 {
   char *result; // eax
@@ -17,5 +17,4 @@ char * sub_755C60(char * a1, int a2)
   qmemcpy(a1, (char *)&stru_B450B8 + 48 * a2, 0x30u); /*0x755c7f*/
   return result; /*0x755c83*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

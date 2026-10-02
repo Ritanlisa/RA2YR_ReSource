@@ -6,10 +6,9 @@
 #include "e4/e4_protos.h"
 
 // 0x7D1512
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int GetCurrentThreadId_0()
 {
   return (int)(GetCurrentThreadId());
 }
-}  // G42.18 ns repair
 }

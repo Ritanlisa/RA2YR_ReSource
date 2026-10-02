@@ -29,7 +29,7 @@
 #include "e4/classes/WarheadTypeClass_e4.hpp"
 
 // 0x512680
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void * WeaponTypeClass::Create(AbstractClass * Source)
 {
 
@@ -55,7 +55,6 @@ LABEL_6:
   return (unsigned char *)*((unsigned int *)dword_A83C9C + v2); /*0x5126ef*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x6CEEF0
 namespace gamemd {

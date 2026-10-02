@@ -25,7 +25,7 @@
 #include "e4/classes/VoxelAnimTypeClass_e4.hpp"
 
 // 0x41E350
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * AnimTypeClass::Construct2(char *Source)
 {
 
@@ -74,7 +74,6 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
   return this; /*0x41e473*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x427530
 namespace gamemd {

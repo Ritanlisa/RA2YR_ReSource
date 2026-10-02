@@ -43,7 +43,7 @@
 #include "e4/classes/ThemeClass_e4.hpp"
 
 // 0x4F11B0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
 
@@ -270,7 +270,6 @@ LABEL_39:
   return result; /*0x4f120d*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x558840
 namespace gamemd {

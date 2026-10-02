@@ -34,7 +34,7 @@
 #include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x4CD600
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int DamageArea::ApplyScatter()
 {
 
@@ -86,7 +86,6 @@ int DamageArea::ApplyScatter()
   int v47; // eax
   bool v48; //... [31505 chars total]
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x4D0180

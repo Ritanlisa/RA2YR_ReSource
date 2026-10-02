@@ -16,7 +16,7 @@
 #include "e4/classes/ShroudClass_e4.hpp"
 
 // 0x654490
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
 {
 
@@ -106,5 +106,4 @@ LABEL_9: RadarClass_field_0x149C = (gamemd::RadarClass *)(this->RadarClass_field
   return (gamemd::RadarClass **)(result);
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

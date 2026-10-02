@@ -12,14 +12,13 @@
 #include "e4/classes/WDTState_4_e4.hpp"
 
 // 0x643E70
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void VtableStub::VtableStub_643E70()
 {
 
   *((unsigned int *)this + 25) = 0; /*0x643e70*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x65D690
 char VtableStub::RetZero_eax_35(int a1)

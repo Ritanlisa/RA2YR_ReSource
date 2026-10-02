@@ -9,7 +9,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x7AD2F0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void ** SessionClass::ResetSystemWOL_Reset(char a2)
 {
 
@@ -19,5 +19,4 @@ void ** SessionClass::ResetSystemWOL_Reset(char a2)
   return this; /*0x7ad30a*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

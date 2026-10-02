@@ -11,7 +11,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x7281A0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int TubeClass::LoadState(AbstractClass * aP0, int aP1)
 {
 
@@ -33,7 +33,6 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
   return result; /*0x7281dc*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x7281E0

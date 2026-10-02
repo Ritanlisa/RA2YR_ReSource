@@ -21,7 +21,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x6C0260
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int TClassFactory_CampaignClass::GetClassName()
 {
 
@@ -34,7 +34,6 @@ int TClassFactory_CampaignClass::GetClassName()
   return v1; /*0x6c0281*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x6C4D60
 namespace gamemd {

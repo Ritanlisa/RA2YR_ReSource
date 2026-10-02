@@ -31,7 +31,7 @@
 #include "e4/classes/LayerClass_e4.hpp"
 
 // 0x48B720
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Terrain::GetTileIndex(int a2)
 {
 
@@ -40,7 +40,6 @@ int Terrain::GetTileIndex(int a2)
        : 0;
 
 }
-}  // G42.18 ns repair
 }
 // 0x48B9E0
 namespace gamemd {

@@ -9,7 +9,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4A7D20
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void Dial8Class_48::ClearBuffer(void *a1_1)
 {
 
@@ -26,7 +26,6 @@ void Dial8Class_48::ClearBuffer(void *a1_1)
   this->m_8 = 0; /*0x4a7d44*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x4A7D50

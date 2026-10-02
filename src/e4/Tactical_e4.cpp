@@ -41,7 +41,7 @@
 #include "e4/classes/VectorClassUInt_e4.hpp"
 
 // 0x42A6D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void * Tactical::ConstructTacticalSurface()
 {
 
@@ -223,7 +223,6 @@ void * Tactical::ConstructTacticalSurface()
   return this; /*0x42a8f2*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x484050
 namespace gamemd {
@@ -1190,7 +1189,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
 
 }
 // 0x6A6610
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Tactical::UpdateUIVisibility(void *a1_1)
 {
 
@@ -1245,7 +1244,6 @@ int Tactical::UpdateUIVisibility(void *a1_1)
   return result; /*0x6a679b*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x6D4E20
 namespace gamemd {

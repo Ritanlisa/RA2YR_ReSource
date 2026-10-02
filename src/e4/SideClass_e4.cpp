@@ -18,7 +18,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x679A10
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int SideClass::LoadAllFromINI(CCINIClass * aP0)
 {
 
@@ -125,7 +125,6 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
   return 1; /*0x679caf*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x6A4550
 namespace gamemd {

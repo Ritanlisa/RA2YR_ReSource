@@ -30,7 +30,7 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x487630
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int DisplayClass::UpdateDisplayTimer()
 {
 
@@ -64,7 +64,6 @@ int DisplayClass::UpdateDisplayTimer()
   return (char)DisplayClass_field_0x12C; /*0x48766c*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x487690
 int DisplayClass::AdvanceFrameCounter()

@@ -9,7 +9,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4105F0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int INoticeSource::Dispatch(int a1, void *a2, void *a3, void *a4, void *a5)
 {
 
@@ -18,5 +18,4 @@ int INoticeSource::Dispatch(int a1, void *a2, void *a3, void *a4, void *a5)
   return AbstractClass::COMStub_AddRef(v1);
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

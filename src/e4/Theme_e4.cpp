@@ -21,7 +21,7 @@
 #include "e4/classes/AudioSample_e4.hpp"
 
 // 0x720B20
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Theme::QueueSong(IUnknown * aP1, void *a2)
 {
 
@@ -60,7 +60,6 @@ int Theme::QueueSong(IUnknown * aP1, void *a2)
   return IsSoundEnabled; /*0x720ba2*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x720EA0
 namespace gamemd {

@@ -31,7 +31,7 @@
 #include "e4/classes/IPXInterfaceClass_e4.hpp"
 
 // 0x7B1B50
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int UDPInterfaceClass::connect(void *a1)
 {
 
@@ -48,7 +48,6 @@ int UDPInterfaceClass::connect(void *a1)
   return result; /*0x7b1b75*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x7B3310
 namespace gamemd {

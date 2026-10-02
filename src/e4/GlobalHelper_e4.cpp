@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x758670
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char sub_758670(float * a1, int a2)
 {
   int v2; // ebp
@@ -37,5 +37,4 @@ char sub_758670(float * a1, int a2)
   byte_B45A8D = 16; /*0x7586e1*/
   return 16; /*0x7586d5*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

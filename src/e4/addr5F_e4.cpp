@@ -49,7 +49,7 @@
 #include "e4/classes/Surface_e4.hpp"
 
 // 0x5F0070
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char sub_5F0070()
 {
   DWORD v0; // eax
@@ -88,7 +88,6 @@ char sub_5F0070()
   }
   return v0; /*0x5f0119*/
 }
-}  // G42.18 ns repair
 }
 // 0x5F0180
 namespace gamemd {

@@ -60,7 +60,7 @@
 #include "e4/classes/DialogClass_e4.hpp"
 
 // 0x620050
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5)
 {
     unsigned int v15 = 0;  /* G37 hoist */
@@ -359,7 +359,6 @@ void Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a
   }
   return result; /*0x6200e3*/
 }
-}  // G42.18 ns repair
 }
 // 0x6208F0
 namespace gamemd {
@@ -672,7 +671,7 @@ void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3
   return 0; /*0x621146*/
 }
 // 0x621150
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 double sub_621150(int a1)
 {
   double result; // st7
@@ -713,7 +712,6 @@ double sub_621150(int a1)
   while ( v3 ); /*0x6211c6*/
   return result; /*0x6211c8*/
 }
-}  // G42.18 ns repair
 }
 }
 // 0x6211D0

@@ -45,7 +45,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 
 // 0x5D6130
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void SkirmishSetup_Setup(HWND hWnd, int a2)
 {
   int v3; // esi
@@ -100,7 +100,6 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
   }
   return result; /*0x5d62b4*/
 }
-}  // G42.18 ns repair
 }
 // 0x5E6920
 int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5)

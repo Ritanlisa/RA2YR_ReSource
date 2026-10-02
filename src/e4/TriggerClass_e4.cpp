@@ -30,7 +30,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x610950
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char TriggerClass::FindByEventType(char a1)
 {
     unsigned int v8 = 0;  /* G37 hoist */
@@ -104,7 +104,6 @@ char TriggerClass::FindByEventType(char a1)
   return 1; /*0x610961*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x71FA30
 namespace gamemd {

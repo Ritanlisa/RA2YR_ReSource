@@ -11,7 +11,7 @@
 #include "e4/classes/FileExtension_e4.hpp"
 
 // 0x717840
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int sub_717840()
 {
   int result; // eax
@@ -28,5 +28,4 @@ int sub_717840()
   }
   return result; /*0x71787b*/
 }
-}  // G42.18 ns repair
 }

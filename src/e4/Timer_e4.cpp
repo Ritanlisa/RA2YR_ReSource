@@ -11,7 +11,7 @@
 #include "e4/classes/TimerClass_e4.hpp"
 
 // 0x46B640
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void * Timer::Start(int aP1)
 {
 
@@ -20,7 +20,6 @@ void * Timer::Start(int aP1)
   return this->__pad_0; /*0x46b651*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x4A5240
 namespace gamemd {

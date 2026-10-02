@@ -28,7 +28,7 @@
 #include "e4/classes/TriggerClass_e4.hpp"
 
 // 0x6E4F60
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 TriggerClass * * TagClass::Destructor()
 {
 
@@ -227,7 +227,6 @@ LABEL_45:
   return AbstractClass::DTOR((AbstractClass *)a1); /*0x6e521e*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x6E6220
 namespace gamemd {

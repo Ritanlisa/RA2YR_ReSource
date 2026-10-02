@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4664C0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Particle::Init(int aP1, int aP2, int aP3, int aP4, int aP5, int a7, char aP7)
 {
 
@@ -39,5 +39,4 @@ int Particle::Init(int aP1, int aP2, int aP3, int aP4, int aP5, int a7, char aP7
   return (int)(result); /*0x466545*/
 
 }
-}  // G42.18 ns repair
 }

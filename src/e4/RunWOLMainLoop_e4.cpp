@@ -32,7 +32,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x77E110
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 Coord * * sub_77E110()
 {
   int v1; // eax
@@ -65,7 +65,6 @@ Coord * * sub_77E110()
   }
   return (gamemd::Coord **)(v1);
 }
-}  // G42.18 ns repair
 }
 // 0x785EA0
 namespace gamemd {

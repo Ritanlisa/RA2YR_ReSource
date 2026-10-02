@@ -37,7 +37,7 @@
 #include "e4/classes/COMObject_e4.hpp"
 
 // 0x4D3590
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * FootClass::Destruct()
 {
 
@@ -106,7 +106,6 @@ AbstractClass * FootClass::Destruct()
   return (gamemd::AbstractClass *)(((TechnoClass *)((int)this))->DTOR()); /*0x4d3706*/
 
 }
-}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x4D98C0

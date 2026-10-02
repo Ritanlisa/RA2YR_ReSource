@@ -25,7 +25,7 @@
 #include "e4/classes/DSurface_e4.hpp"
 
 // 0x652C00
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 CampaignClass * RadarClass::Destruct()
 {
 
@@ -78,7 +78,6 @@ CampaignClass * RadarClass::Destruct()
   return (gamemd::CampaignClass *)(result); /*0x652cca*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x654650
 namespace gamemd {

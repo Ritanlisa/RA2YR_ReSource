@@ -10,7 +10,7 @@
 #include "e4/e4_protos.h"
 
 // 0x5DAF30
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void sub_5DAF30()
 {
   int v1; // edi
@@ -32,5 +32,4 @@ void sub_5DAF30()
         ((Event *)this)->Dispatch();
   }
 }
-}  // G42.18 ns repair
 } // namespace gamemd

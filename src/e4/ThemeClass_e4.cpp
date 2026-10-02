@@ -24,14 +24,13 @@
 #include "e4/classes/TextBuffer_e4.hpp"
 
 // 0x4080C0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int ThemeClass::RequestBuffer()
 {
 
   return RequestBufferMixer((unsigned int *)(this->m_Name[3] + 16), 0);
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x408140
 namespace gamemd {

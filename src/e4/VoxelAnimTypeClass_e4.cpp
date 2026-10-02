@@ -37,7 +37,7 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x74AD80
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
 {
 
@@ -112,7 +112,6 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
   return this; /*0x74af5e*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x74B050
 namespace gamemd {

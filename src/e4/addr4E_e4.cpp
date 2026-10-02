@@ -38,7 +38,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 
 // 0x4E0A00
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
 {
 
@@ -109,7 +109,6 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
   return &this->vtable0; /*0x4e0aa0*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x4E1FE0
 namespace gamemd {

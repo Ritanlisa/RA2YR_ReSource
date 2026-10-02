@@ -16,7 +16,7 @@
 #include "e4/classes/Checksummer_e4.hpp"
 
 // 0x43A5D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Power::Update(int * a2, void *a2_2, void *a3_1, void *a4_1)
 {
 
@@ -24,7 +24,6 @@ int Power::Update(int * a2, void *a2_2, void *a3_1, void *a4_1)
   return Power::TimerProcess(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - *((unsigned int *)this + 12)); /*0x43a5f0*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x67C6E0
 namespace gamemd {

@@ -25,7 +25,7 @@
 #include "e4/classes/Matrix_e4.hpp"
 
 // 0x431F10
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char File::IsReady(int a2)
 {
 
@@ -37,7 +37,6 @@ char File::IsReady(int a2)
   return result; /*0x431f19*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x433990
 namespace gamemd {

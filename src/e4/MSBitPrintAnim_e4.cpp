@@ -17,7 +17,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x5CED10
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 MSBitPrintAnim * MSBitPrintAnim::QueryInterface(void ** Block, char a2)
 {
 
@@ -29,5 +29,4 @@ MSBitPrintAnim * MSBitPrintAnim::QueryInterface(void ** Block, char a2)
   return (gamemd::MSBitPrintAnim *)((void **)Block); /*0x5ced3a*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

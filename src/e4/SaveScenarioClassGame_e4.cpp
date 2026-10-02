@@ -26,7 +26,7 @@
 #include "e4/classes/GameState_e4.hpp"
 
 // 0x67CEF0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * Source, int a3)
 {
   int v6; // eax
@@ -151,5 +151,4 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67d2ee*/
   return v7; /*0x67cf57*/
 }
-}  // G42.18 ns repair
 }

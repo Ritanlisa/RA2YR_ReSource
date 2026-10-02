@@ -6,10 +6,9 @@
 #include "e4/e4_protos.h"
 
 // 0x465D30
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char ReturnFalse_465D30()
 {
   return 0; /*0x465d32*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

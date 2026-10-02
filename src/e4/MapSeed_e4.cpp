@@ -23,7 +23,6 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x597730
-namespace gamemd {  // G42.18 ns repair
 int MapSeed::ValidateName(int a2)
 int MapSeed::ValidateName(int a2)
 {
@@ -36,7 +35,6 @@ int MapSeed::ValidateName(int a2)
   return result; /*0x597744*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5AC230
 namespace gamemd {

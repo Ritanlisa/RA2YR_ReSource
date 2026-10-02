@@ -10,7 +10,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 
 // 0x517440
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Color::ConvertToRGB(int a2)
 {
 
@@ -46,7 +46,6 @@ int Color::ConvertToRGB(int a2)
   return a2; /*0x517530*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x661020
 namespace gamemd {

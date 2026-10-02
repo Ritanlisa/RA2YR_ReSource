@@ -8,7 +8,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x7ACB90
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char E4Recv_7ACB90::StartGameWOL_Start_7ACB90(void* aP1, int a3)
 {
 
@@ -18,5 +18,4 @@ char E4Recv_7ACB90::StartGameWOL_Start_7ACB90(void* aP1, int a3)
   return 1; /*0x7acbb8*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

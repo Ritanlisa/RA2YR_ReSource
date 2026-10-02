@@ -13,7 +13,7 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x433880
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int BitTextClass::ParseFontData(char * Source, void *a2)
 {
 
@@ -62,7 +62,6 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
   return (int)(this);
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x434AD0
 namespace gamemd {

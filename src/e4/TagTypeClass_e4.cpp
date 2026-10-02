@@ -21,7 +21,7 @@
 #include "e4/classes/TriggerTypeClass_e4.hpp"
 
 // 0x6E5B60
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
@@ -78,7 +78,6 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1, void *a2, void *a
   return (gamemd::AbstractTypeClass *)(this);
 
 }
-}  // G42.18 ns repair
 }
 // 0x6E5CA0
 namespace gamemd {

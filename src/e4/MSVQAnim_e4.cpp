@@ -16,7 +16,7 @@
 #include "e4/classes/WideString_e4.hpp"
 
 // 0x5CD290
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void * MSVQAnim::GetFrameRect(int * a2)
 {
 
@@ -43,7 +43,6 @@ void * MSVQAnim::GetFrameRect(int * a2)
   return a2; /*0x5cd2e8*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5CD320
 namespace gamemd {

@@ -34,7 +34,7 @@
 #include "e4/classes/Tooltip_e4.hpp"
 
 // 0x6863E0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int sub_6863E0()
 {
   void **p_vtable2; // esi
@@ -97,7 +97,6 @@ int sub_6863E0()
 // 0x4f4480
   return TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x686562*/
 }
-}  // G42.18 ns repair
 }
 // 0x686570
 namespace gamemd {

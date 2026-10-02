@@ -16,7 +16,6 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x718000
-namespace gamemd {  // G42.18 ns repair
 TeleportLocomotionClass::TeleportLocomotionClass()
 {
 
@@ -42,4 +41,4 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   *(unsigned int *)this->__pad_18 = &vt_TeleportLocomotionClass; /*0x71806b*/
   return (int)this->LocomotionClass; /*0x718074*/
 
-}}  // G42.18 ns repair
+}

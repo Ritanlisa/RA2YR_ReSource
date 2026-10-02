@@ -25,7 +25,6 @@
 #include "e4/classes/ParasiteClass_e4.hpp"
 
 // 0x5FE250
-namespace gamemd {  // G42.18 ns repair
 OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
 {
 
@@ -103,9 +102,7 @@ LABEL_11:
   }
 
 }
-}  // G42.18 ns repair
 // 0x5FE770
-namespace gamemd {  // G42.18 ns repair
 AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
 {
 
@@ -235,9 +232,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   return 1; /*0x5fea11*/
 
 }
-}  // G42.18 ns repair
 // 0x5FEAF0
-namespace gamemd {  // G42.18 ns repair
 ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 
@@ -277,9 +272,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
   return result; /*0x5febf9*/
 
 }
-}  // G42.18 ns repair
 // 0x5FEDE0
-namespace gamemd {  // G42.18 ns repair
 AnimTypeClass * * OverlayTypeClass::GetCategory()
 {
 
@@ -318,9 +311,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
   return result; /*0x5feeed*/
 
 }
-}  // G42.18 ns repair
 // 0x6440A0
-namespace gamemd {  // G42.18 ns repair
 unsigned int *  OverlayTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
@@ -381,9 +372,7 @@ unsigned int *  OverlayTypeClass::Construct(ObjectClass * aP1, void *a2, void *a
   return this; /*0x644217*/
 
 }
-}  // G42.18 ns repair
 // 0x4754B0
-namespace gamemd {  // G42.18 ns repair
 int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4)
 {
 
@@ -397,9 +386,7 @@ int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4)
     return a4; /*0x475502*/
 
 }
-}  // G42.18 ns repair
 // 0x48DF80
-namespace gamemd {  // G42.18 ns repair
 int OverlayTypeClass::LookupByName()
 {
 
@@ -420,9 +407,7 @@ int OverlayTypeClass::LookupByName()
   return v2; /*0x48dfbe*/
 
 }
-}  // G42.18 ns repair
 // 0x5FE4C0
-namespace gamemd {  // G42.18 ns repair
 int * OverlayTypeClass::GetTile(int a1)
 {
 dword_AC1644 = 2147450879; /*0x5fe504*/
@@ -438,9 +423,7 @@ dword_AC1644 = 2147450879; /*0x5fe504*/
   return &dword_AC1640; /*0x5fe518*/
 
 }
-}  // G42.18 ns repair
 // 0x5FE530
-namespace gamemd {  // G42.18 ns repair
 bool OverlayTypeClass::GetType(IUnknown * aP2, int a3)
 {
 
@@ -450,9 +433,7 @@ bool OverlayTypeClass::GetType(IUnknown * aP2, int a3)
   return v4 && ((Object *)(v4))->SpawnAtCell((int)this, aP2, -1); /*0x5fe559*/
 
 }
-}  // G42.18 ns repair
 // 0x5FE570
-namespace gamemd {  // G42.18 ns repair
 OverlayClass * OverlayTypeClass::GetDamage(int a2)
 {
 
@@ -465,9 +446,7 @@ OverlayClass * OverlayTypeClass::GetDamage(int a2)
     return 0; /*0x5fe597*/
 
 }
-}  // G42.18 ns repair
 // 0x5FE5A0
-namespace gamemd {  // G42.18 ns repair
 void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
 {
 
@@ -498,9 +477,7 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
     0);
 
 }
-}  // G42.18 ns repair
 // 0x5FEA30
-namespace gamemd {  // G42.18 ns repair
 unsigned int * OverlayTypeClass::vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1)
 {
 
@@ -510,9 +487,7 @@ unsigned int * OverlayTypeClass::vt_entry_6C(unsigned int * a0, OverlayTypeClass
   return a0; /*0x5fea45*/
 
 }
-}  // G42.18 ns repair
 // 0x5FEA50
-namespace gamemd {  // G42.18 ns repair
 int OverlayTypeClass::PowerDrainUpdate(int * a2)
 {
 
@@ -539,9 +514,7 @@ int OverlayTypeClass::PowerDrainUpdate(int * a2)
   return ((Power *)((Power *)a2))->FlagProcess(v7); /*0x5feadc*/
 
 }
-}  // G42.18 ns repair
 // 0x5FEC10
-namespace gamemd {  // G42.18 ns repair
 int   OverlayTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
 
@@ -553,9 +526,7 @@ int   OverlayTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass
   return result; /*0x5fec2a*/
 
 }
-}  // G42.18 ns repair
 // 0x5FEC30
-namespace gamemd {  // G42.18 ns repair
 int OverlayTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
 
@@ -568,9 +539,7 @@ int OverlayTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   return 0; /*0x5fec3d*/
 
 }
-}  // G42.18 ns repair
 // 0x5FED00
-namespace gamemd {  // G42.18 ns repair
 int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
 {
 
@@ -615,36 +584,28 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
   }
 
 }
-}  // G42.18 ns repair
 // 0x5FEF00
-namespace gamemd {  // G42.18 ns repair
 int OverlayTypeClass::GetTypeIdentifier()
 {
 
   return 21; /*0x5fef05*/
 
 }
-}  // G42.18 ns repair
 // 0x5FEF10
-namespace gamemd {  // G42.18 ns repair
 int OverlayTypeClass::GetObjectSize()
 {
 
   return 700; /*0x5fef15*/
 
 }
-}  // G42.18 ns repair
 // 0x5FEF20
-namespace gamemd {  // G42.18 ns repair
 int OverlayTypeClass::GetAuxField()
 {
 
   return this->LandType[0]; /*0x5fef26*/
 
 }
-}  // G42.18 ns repair
 // 0x5FEF30
-namespace gamemd {  // G42.18 ns repair
 OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
 {
 
@@ -676,4 +637,4 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
     __3_YAXPAX_Z(Block); /*0x5fefae*/
   return Block; /*0x5fefb8*/
 
-}}  // G42.18 ns repair
+}

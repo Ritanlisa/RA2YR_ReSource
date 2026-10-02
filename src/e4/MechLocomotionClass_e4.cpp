@@ -10,7 +10,7 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x5B1960
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
 
@@ -21,7 +21,6 @@ int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
   return 0; /*0x5b196d*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5B19A0
 namespace gamemd {

@@ -23,7 +23,7 @@
 #include "e4/classes/Network_e4.hpp"
 
 // 0x7C8FD2
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
   int v4; // eax
@@ -135,7 +135,6 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
     return -0.0; /*0x7c915e*/
   return result; /*0x7c9068*/
 }
-}  // G42.18 ns repair
 }
 // 0x7C91A5
 namespace gamemd {

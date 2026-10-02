@@ -9,7 +9,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x642740
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * CoordStruct::Set2(void* aP1, AbstractClass * aP2)
 {
 
@@ -22,5 +22,4 @@ unsigned int * CoordStruct::Set2(void* aP1, AbstractClass * aP2)
   return &this->vfptr; /*0x64276b*/
 
 }
-}  // G42.18 ns repair
 }

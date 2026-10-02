@@ -27,7 +27,7 @@
 #include "e4/classes/Color_e4.hpp"
 
 // 0x71E940
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 DynamicVector * TEventClass::Execute(int a2, int a3, int a4, int *a5, int a6, int a7)
 {
 
@@ -576,7 +576,6 @@ LABEL_138:
   }
 
 }
-}  // G42.18 ns repair
 }
 // 0x71F390
 namespace gamemd {

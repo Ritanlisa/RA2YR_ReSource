@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x513940
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
 {
 
@@ -30,7 +30,6 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
   return (unsigned int *)(this->__pad_0);
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5D8950
 namespace gamemd {

@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x7BB920
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
@@ -97,5 +97,4 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
   return result; /*0x7bba9f*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

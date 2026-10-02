@@ -27,7 +27,7 @@
 #include "e4/classes/Rect_e4.hpp"
 
 // 0x432690
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * BinkMovie::Close(char *FullPath)
 {
 
@@ -42,7 +42,6 @@ unsigned int * BinkMovie::Close(char *FullPath)
   return this->__pad_0; /*0x4326ba*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x4326C0
 namespace gamemd {

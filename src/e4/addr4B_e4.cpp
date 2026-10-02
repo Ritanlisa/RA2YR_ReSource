@@ -41,7 +41,7 @@
 #include "e4/classes/ListClass_e4.hpp"
 
 // 0x4B0500
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void JumpjetLocomotionClass_Process(int a1)
 {
   unsigned int v1;
@@ -310,7 +310,6 @@ void JumpjetLocomotionClass_Process(int a1)
   }
   return (*(char (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1); /*0x4b06cb*/
 }
-}  // G42.18 ns repair
 }
 // 0x4B69E0
 namespace gamemd {

@@ -18,7 +18,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x7AA870
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
 {
     unsigned int v25 = 0;  /* G37 hoist */
@@ -400,7 +400,6 @@ LABEL_104:
   return 0; /*0x7aaf9a*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x7AD930
 namespace gamemd {

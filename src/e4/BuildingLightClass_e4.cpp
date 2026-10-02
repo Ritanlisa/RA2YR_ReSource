@@ -24,7 +24,7 @@
 #include "e4/classes/StreamClass_e4.hpp"
 
 // 0x436BE0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * BuildingLightClass::FindTarget(unsigned int *aP1)
 {
 
@@ -132,7 +132,6 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *aP1)
   return result; /*0x436d88*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x4370C0
 namespace gamemd {

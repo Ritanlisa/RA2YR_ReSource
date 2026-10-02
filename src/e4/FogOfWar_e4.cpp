@@ -17,7 +17,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x655C50
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
 {
 
@@ -227,7 +227,6 @@ LABEL_45:
   return (gamemd::MapClass **)(result); /*0x656138*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x656150
 namespace gamemd {

@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x49FCE0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 CounterClass * CounterClass::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -28,5 +28,4 @@ CounterClass * CounterClass::QueryInterface(unsigned int * Block, char a2)
   return &Block->items; /*0x49fd25*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

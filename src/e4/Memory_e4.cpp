@@ -16,7 +16,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x53EC40
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int sub_53EC40(unsigned char a1, char a2)
 {
   int result; // eax
@@ -26,7 +26,6 @@ int sub_53EC40(unsigned char a1, char a2)
     ((unsigned int *)(word_AA0168))[a1] = a2 != 0 ? 0 : 0x8000;
   return result; /*0x53ec67*/
 }
-}  // G42.18 ns repair
 }
 // 0x6149B0
 namespace gamemd {
@@ -119,7 +118,7 @@ void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   return wcslen(v17); /*0x614b18*/
 }
 // 0x58C6F0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
 {
   double v3; // st7
@@ -156,7 +155,6 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
     v11 = 6.283185307179586 - v4; /*0x58c7aa*/
   return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 2.328306437080797e-10 * 2.5 + 1.5 * v11 + 0.15 * v9; /*0x58c7ee*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 }
 

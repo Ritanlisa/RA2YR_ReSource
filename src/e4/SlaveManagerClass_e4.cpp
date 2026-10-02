@@ -18,7 +18,7 @@
 #include "e4/classes/SlaveControlVector_e4.hpp"
 
 // 0x522D00
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int SlaveManagerClass::Check(void *a1, void *a2, void *a3)
 {
 
@@ -29,7 +29,6 @@ int SlaveManagerClass::Check(void *a1, void *a2, void *a3)
   return result; /*0x522d15*/
 
 }
-}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x522D20

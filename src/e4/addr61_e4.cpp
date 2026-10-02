@@ -31,7 +31,7 @@
 #include "e4/classes/Init_e4.hpp"
 
 // 0x610570
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
 {
     unsigned int v11 = 0;  /* G37 hoist */
@@ -179,7 +179,6 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
   Object::RemoveObjectArray(hWnd); /*0x61077f*/
   return (gamemd::AbstractClass **)(1); /*0x610784*/
 }
-}  // G42.18 ns repair
 }
 // 0x610810
 namespace gamemd {

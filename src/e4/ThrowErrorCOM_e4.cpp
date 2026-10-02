@@ -11,7 +11,7 @@
 #include "e4/classes/TiberiumClass_e4.hpp"
 
 // 0x7DCDC0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * _com_error::ThrowErrorCOM_Helper(int a2, int a3, char a4)
 {
 
@@ -24,5 +24,4 @@ unsigned int * _com_error::ThrowErrorCOM_Helper(int a2, int a3, char a4)
   return (unsigned int *)(&this->vfptr); /*0x7dcdee*/
 
 }
-}  // G42.18 ns repair
 }

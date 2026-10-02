@@ -42,7 +42,7 @@
 #include "e4/classes/InfantryTypeVector_e4.hpp"
 
 // 0x679CC0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int sub_679CC0()
 {
     unsigned int v2 = 0;  /* G37 hoist */
@@ -89,7 +89,6 @@ int sub_679CC0()
   }
   return dword_B053B4; /*0x679d84*/
 }
-}  // G42.18 ns repair
 }
 // 0x67B550
 namespace gamemd {

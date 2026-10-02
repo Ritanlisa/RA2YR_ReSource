@@ -17,7 +17,7 @@
 #include "e4/classes/Rect_e4.hpp"
 
 // 0x7B9040
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * WWMouseClass::initSurface()
 {
 
@@ -66,7 +66,6 @@ unsigned int * WWMouseClass::initSurface()
   return result; /*0x7b90b1*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x7B9930
 namespace gamemd {

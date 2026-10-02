@@ -15,7 +15,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4A0760
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 {
 
@@ -86,7 +86,6 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   return (**(int (***)(int, void *, int))v3)(v3, &unk_7F7CB0, a2); /*0x4a076c*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4A0870
 namespace gamemd {

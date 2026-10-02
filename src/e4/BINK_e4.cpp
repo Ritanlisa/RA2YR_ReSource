@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x52B9B0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 HWND BINK::Background_Setup(HWND hDlg)
 {
 
@@ -38,5 +38,4 @@ HWND BINK::Background_Setup(HWND hDlg)
   return result; /*0x52ba3c*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

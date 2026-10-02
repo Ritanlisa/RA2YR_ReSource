@@ -9,7 +9,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x5360B0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 _DWORD * AddTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
 
@@ -18,7 +18,6 @@ _DWORD * AddTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void 
   return this->CommandClass; /*0x5360bf*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5360D0
 namespace gamemd {

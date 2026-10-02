@@ -25,7 +25,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x6ACEE0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void DialogSkirmishFunc_UpdateMultiEngineer(Session *hWnd, int nIDDlgItem, int a3, int a4)
 {
   HWND DlgItem; // eax
@@ -636,5 +636,4 @@ LABEL_153:
     }
   }
 }
-}  // G42.18 ns repair
 } // namespace gamemd

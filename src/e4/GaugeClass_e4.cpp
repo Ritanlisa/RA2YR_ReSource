@@ -11,14 +11,13 @@
 #include "e4/classes/GameSetup_e4.hpp"
 
 // 0x4E30A0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int GaugeClass::Stub()
 {
 
   return *((unsigned int *)this + 13); /*0x4e30a3*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4E30B0
 namespace gamemd {

@@ -35,14 +35,13 @@
 #include "e4/classes/HouseClass_e4.hpp"
 
 // 0x483610
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int ObjectClass::processPointerInvalid()
 {
 
   return (*((unsigned int *)this + 80) >> 8) & 1; /*0x48361c*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x4D7D50

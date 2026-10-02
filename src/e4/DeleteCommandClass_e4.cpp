@@ -16,12 +16,11 @@
 #include "e4/classes/DialogClass_e4.hpp"
 
 // 0x537F90
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void DeleteCommandClass_Undo()
 {
   return UI_Delete(); /*0x537f95*/
 }
-}  // G42.18 ns repair
 }
 // 0x537F10
 unsigned int * DeleteCommandClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5)

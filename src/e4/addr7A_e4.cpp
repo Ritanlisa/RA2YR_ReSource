@@ -43,7 +43,7 @@
 #include "e4/classes/StringVector_e4.hpp"
 
 // 0x7A0430
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 Coord * * int CollectWOLConnectionTokens()
 {
   signed int result; // eax
@@ -158,7 +158,6 @@ Coord * * int CollectWOLConnectionTokens()
   }
   return result; /*0x7a067b*/
 }
-}  // G42.18 ns repair
 }
 // 0x7A0690
 namespace gamemd {

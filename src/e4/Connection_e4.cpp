@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x5422F0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Connection::GetSpeed()
 {
 
@@ -17,7 +17,6 @@ int Connection::GetSpeed()
     return 0; /*0x542308*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x543090
 namespace gamemd {

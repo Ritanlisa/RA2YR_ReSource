@@ -31,7 +31,7 @@
 #include "e4/classes/ScriptAction_e4.hpp"
 
 // 0x6A01A0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
 {
 
@@ -126,7 +126,6 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
   return (gamemd::AbstractClass **)(v5);
 
 }
-}  // G42.18 ns repair
 }
 // 0x6A05F0
 namespace gamemd {

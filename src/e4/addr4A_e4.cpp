@@ -64,7 +64,7 @@
 #include "e4/classes/BuildingAnim_e4.hpp"
 
 // 0x4A0190
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
 
@@ -142,7 +142,6 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
   return 0; /*0x4a019c*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4A02B0
 namespace gamemd {

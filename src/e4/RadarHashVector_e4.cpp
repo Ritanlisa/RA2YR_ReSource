@@ -12,7 +12,7 @@
 #include "e4/e4_protos.h"
 
 // 0x658B10
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
 {
 
@@ -122,7 +122,6 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   return (gamemd::AbstractClass **)(1); /*0x658c05*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x658DE0
 namespace gamemd {

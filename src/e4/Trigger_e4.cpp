@@ -40,7 +40,7 @@
 #include "e4/classes/ComPtr_e4.hpp"
 
 // 0x554A60
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Trigger::EnableOnce(char aP1)
 {
 
@@ -55,7 +55,6 @@ int Trigger::EnableOnce(char aP1)
   return result; /*0x554a75*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x5CBD20
 namespace gamemd {

@@ -27,14 +27,13 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x5D5DE0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int GameMode::IsValid(unsigned int a2)
 {
 
   return (!*((unsigned char *)this + 63) || a2 != -2) && a2 < 4; /*0x5d5df2*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x6B8CA0
 namespace gamemd {

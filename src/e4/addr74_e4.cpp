@@ -57,7 +57,7 @@
 #include "e4/classes/RawFileClass_e4.hpp"
 
 // 0x743270
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 Coord * * PlaceScenarioUnits(void * a1, void * a2)
 {
   INIClass *v2; // esi
@@ -286,7 +286,6 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2)
       RA2_OPDEL(Block); /*0x7436c8*/
   }
 }
-}  // G42.18 ns repair
 }
 // 0x746EC0
 namespace gamemd {

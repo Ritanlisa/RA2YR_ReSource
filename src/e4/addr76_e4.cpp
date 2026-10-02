@@ -86,7 +86,7 @@
 #include "e4/classes/WDTClass_e4.hpp"
 
 // 0x7636F0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void unknown_libname_36()
 {
   this->AbstractClass = 0; /*0x7636f4*/
@@ -94,7 +94,6 @@ void unknown_libname_36()
   this->q008 = 0; /*0x7636f9*/
   return this; /*0x7636fc*/
 }
-}  // G42.18 ns repair
 }
 // 0x764B90
 namespace gamemd {

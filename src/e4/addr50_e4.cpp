@@ -26,7 +26,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 
 // 0x501750
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int E4Recv_501750::sub_501750(int a2)
 {
 
@@ -84,7 +84,6 @@ LABEL_14:
   return result; /*0x5018ae*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x504790
 namespace gamemd {

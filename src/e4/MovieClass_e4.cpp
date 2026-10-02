@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x7C3990
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int MovieClass::ComputeTime()
 {
 
@@ -17,5 +17,4 @@ unsigned int MovieClass::ComputeTime()
   return 60 * (*((int (**)(MovieClass *))(unsigned int *)this + 20))(this) / v1 + *((unsigned int *)this + 82); /*0x7c39ab*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

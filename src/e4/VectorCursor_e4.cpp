@@ -12,7 +12,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x76F180
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * VectorCursor::Release(void *a1)
 {
 
@@ -20,7 +20,6 @@ unsigned int * VectorCursor::Release(void *a1)
   return this->__pad_0; /*0x76f185*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x76F190
 namespace gamemd {

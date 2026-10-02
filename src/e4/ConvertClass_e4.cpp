@@ -16,7 +16,7 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 
 // 0x48E740
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
 {
 
@@ -233,7 +233,6 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
   return this->__pad_0; /*0x48ebd8*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x491430
 namespace gamemd {

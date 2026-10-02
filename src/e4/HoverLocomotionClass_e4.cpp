@@ -23,7 +23,7 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x517070
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int HoverLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
 
@@ -36,7 +36,6 @@ int HoverLocomotionClass::ddtor(int a1, unsigned int * a2)
   return 0; /*0x51707d*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5170B0
 namespace gamemd {

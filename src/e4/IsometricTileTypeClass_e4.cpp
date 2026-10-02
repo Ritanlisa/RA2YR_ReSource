@@ -21,7 +21,7 @@
 #include "e4/classes/TerrainClass_e4.hpp"
 
 // 0x549B70
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
 {
 
@@ -57,7 +57,6 @@ void IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
   return Power::TimerProcess(*((unsigned int *)this + 188)); /*0x549c7a*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x549C80
 namespace gamemd {

@@ -32,7 +32,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x4FA350
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char aP3, char a5)
 {
 
@@ -268,7 +268,6 @@ LABEL_55:
   return result; /*0x4fa4a0*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x5007A0
 namespace gamemd {

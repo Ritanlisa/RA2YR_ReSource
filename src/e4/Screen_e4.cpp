@@ -20,7 +20,7 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x52FEC0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void Screen_Capture(void * a1, void * a2, void * a3, void * a4)
 {
   unsigned int v4;
@@ -59,7 +59,6 @@ v4 = (int)((unsigned int *)(a2));
   if ( a1 ) /*0x52ff77*/
     return ((Frame *)(0))->Present(); /*0x52ff7f*/
 }
-}  // G42.18 ns repair
 }
 // 0x68F060
 int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)

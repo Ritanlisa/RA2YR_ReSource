@@ -20,7 +20,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 
 // 0x60D320
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int GameSetup::LookupDialogHash()
 {
 
@@ -50,7 +50,6 @@ int GameSetup::LookupDialogHash()
     return 0; /*0x60d366*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x698F90
 namespace gamemd {

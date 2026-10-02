@@ -16,12 +16,11 @@
 #include "e4/classes/Power_e4.hpp"
 
 // 0x63F7B0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void PowerClass_Stub()
 {
   RadarClass::Destru_vt05(); /*0x63f7b0*/
 }
-}  // G42.18 ns repair
 }
 // 0x63F7E0
 void PowerClass::checkLowPower()

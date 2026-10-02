@@ -13,7 +13,7 @@
 #include "e4/classes/CCINIClass_e4.hpp"
 
 // 0x72CBA0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char sub_72CBA0()
 {
   char result; // al
@@ -27,5 +27,4 @@ char sub_72CBA0()
   }
   return result; /*0x72cbd8*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

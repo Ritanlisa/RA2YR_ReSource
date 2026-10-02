@@ -19,7 +19,7 @@
 #include "e4/classes/Movie_e4.hpp"
 
 // 0x657DA0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
 
@@ -283,7 +283,6 @@ LABEL_60:
   return 0; /*0x658178*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x603DB0
 namespace gamemd {

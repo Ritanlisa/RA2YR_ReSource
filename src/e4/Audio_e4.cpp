@@ -49,7 +49,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x402720
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Audio::GetChannelStatus(void *a1_1)
 {
 
@@ -74,7 +74,6 @@ int Audio::GetChannelStatus(void *a1_1)
   return v3; /*0x402731*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x404D80
 namespace gamemd {

@@ -8,7 +8,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x5E8760
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 BOOL Settings::CheckString()
 {
 
@@ -18,5 +18,4 @@ BOOL Settings::CheckString()
   return wcscmp((const wchar_t *)v0,(const wchar_t *)(word_A8D610)) == 0; /*0x5e877d*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

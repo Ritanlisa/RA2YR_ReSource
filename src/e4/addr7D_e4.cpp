@@ -27,7 +27,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x7D038F
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void __sbh_heap_check()
 {
   unsigned int *v2; // ebx
@@ -230,7 +230,6 @@ void __sbh_heap_check()
   }
   return -2; /*0x7d067c*/
 }
-}  // G42.18 ns repair
 }
 // 0x7D06BE
 namespace gamemd {
@@ -1732,7 +1731,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
 }
 }
 // 0x7D2132
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void int _hextodec(int C)
 {
   int v1; // esi
@@ -1747,7 +1746,6 @@ void int _hextodec(int C)
     return (C & 0xFFFFFFDF) - 7; /*0x7d2162*/
   return v1; /*0x7d2167*/
 }
-}  // G42.18 ns repair
 }
 // 0x7D21BE
 namespace gamemd {
@@ -3762,7 +3760,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
 }
 }
 // 0x7D453C
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void _hextodec_0(wint_t C)
 {
   wint_t result; // ax
@@ -3783,7 +3781,6 @@ void _hextodec_0(wint_t C)
     return C - 7; /*0x7d4591*/
   return result; /*0x7d457e*/
 }
-}  // G42.18 ns repair
 }
 // 0x7D482C
 namespace gamemd {
@@ -6731,7 +6728,7 @@ void _frnd(double a1)
   return result; /*0x7d8ef3*/
 }
 // 0x7D9038
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 double _nextafter(double X, double Y)
 {
   int16_t v2; // cx
@@ -6832,7 +6829,6 @@ double _nextafter(double X, double Y)
   }
   return result; /*0x7d92c8*/
 }
-}  // G42.18 ns repair
 }
 }
 // 0x7D93A1

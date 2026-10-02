@@ -85,7 +85,7 @@
 #include "e4/classes/IPXManagerClass_e4.hpp"
 
 // 0x690400
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * E4Recv_690400::sub_690400()
 {
 
@@ -129,7 +129,6 @@ AbstractClass * * E4Recv_690400::sub_690400()
   return (gamemd::AbstractClass **)(result); /*0x6904b7*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x693B70
 namespace gamemd {

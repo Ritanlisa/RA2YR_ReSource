@@ -27,7 +27,7 @@
 #include "e4/classes/SortedArray_e4.hpp"
 
 // 0x511650
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 {
 
@@ -42,7 +42,6 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
   return this; /*0x511698*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x5116A0
 namespace gamemd {

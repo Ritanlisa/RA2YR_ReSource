@@ -45,7 +45,7 @@
 #include "e4/classes/Matrix3x4_e4.hpp"
 
 // 0x451400
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
 {
   int Strength; // eax
@@ -210,7 +210,6 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     }
   }
 }
-}  // G42.18 ns repair
 }
 // 0x452000
 namespace gamemd {

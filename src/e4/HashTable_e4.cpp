@@ -30,7 +30,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x624760
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int HashTable_flat::Get(IUnknown * aP1, IUnknown * aP2)
 {
 
@@ -70,7 +70,6 @@ int HashTable_flat::Get(IUnknown * aP1, IUnknown * aP2)
   return result; /*0x62476b*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x624FC0
 namespace gamemd {

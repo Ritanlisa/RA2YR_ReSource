@@ -38,7 +38,6 @@ struct Power;  // fix_tu_missing_types
 #include "e4/classes/Random_e4.hpp"
 
 // 0x41C8B0
-namespace gamemd {  // G42.18 ns repair
 AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
 {
 
@@ -109,9 +108,8 @@ LABEL_11:
   return this; /*0x41c9e3*/
 
 }
-}  // G42.18 ns repair
 // 0x41CC20
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3)
 {
   int v3; // ecx
@@ -190,7 +188,6 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   *(unsigned char *)(v4 + 3596) = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)(v4 + 36), aFlyback, v12); /*0x41cd83*/
   return (gamemd::AnimTypeClass **)(1); /*0x41cd8a*/
 }
-}  // G42.18 ns repair
 }
 // 0x41CFE0
 AircraftTypeClass * AircraftTypeClass::ddtor(void ** Block, char a2)

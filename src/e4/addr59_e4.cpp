@@ -49,7 +49,7 @@
 #include "e4/classes/Surface_e4.hpp"
 
 // 0x5904B0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void PlaceCabhutMap(FootClass * aP0)
 {
   int v2; // ebx
@@ -104,7 +104,6 @@ void PlaceCabhutMap(FootClass * aP0)
   v11->COMStub_54(v14, 0); /*0x5905b2*/
   return 1; /*0x59052b*/
 }
-}  // G42.18 ns repair
 }
 // 0x594190
 namespace gamemd {
@@ -1256,12 +1255,11 @@ int j_Options::j_Options_GetValue(const char ** dwNewLong)
 
 }
 // 0x598000
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 double sub_598000()
 {
   return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 2.328306437080797e-10; /*0x598023*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 }
 

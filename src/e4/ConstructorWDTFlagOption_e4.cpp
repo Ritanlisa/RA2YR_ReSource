@@ -10,7 +10,7 @@
 #include "e4/classes/GameOption_e4.hpp"
 
 // 0x767820
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5)
 {
 
@@ -32,5 +32,4 @@ void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0,
   return this; /*0x767879*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

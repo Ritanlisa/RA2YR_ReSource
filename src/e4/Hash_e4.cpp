@@ -6,12 +6,11 @@
 #include "e4/e4_protos.h"
 
 // 0x5C61D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void * sub_5C61D0()
 {
   return &unk_82E174; /*0x5c61d5*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x5C61E0

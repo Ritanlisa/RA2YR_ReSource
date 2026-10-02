@@ -9,7 +9,7 @@
 #include "e4/e4_protos.h"
 
 // 0x58B600
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 long long Camera::UpdateTilt()
 {
 
@@ -22,7 +22,6 @@ long long Camera::UpdateTilt()
   return result; /*0x58b630*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x58B7B0
 namespace gamemd {

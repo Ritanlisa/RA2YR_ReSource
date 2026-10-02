@@ -8,14 +8,13 @@
 #include "e4/e4_protos.h"
 
 // 0x71D150
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int IRTTITypeInfo::GetOffset()
 {
 
   return *(unsigned int *)&this->__pad_C0[8]; /*0x71d156*/
 
 }
-}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x4105E0

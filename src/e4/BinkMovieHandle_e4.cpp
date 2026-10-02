@@ -17,7 +17,7 @@
 #include "e4/classes/File_e4.hpp"
 
 // 0x432AB0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int BinkMovieHandle::RenderFrameClipped(int a2, int a3, void *a3_2)
 {
 
@@ -95,7 +95,6 @@ LABEL_18:
   return result; /*0x432bbd*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x433060
 namespace gamemd {

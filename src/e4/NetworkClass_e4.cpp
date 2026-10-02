@@ -25,7 +25,7 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x639FD0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void NetworkClass::ExecutePlanningModeCmd()
 {
     unsigned int v3 = 0;  /* G37 hoist */
@@ -69,7 +69,6 @@ LABEL_10:
   return PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a0c0*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x6FFE00
 namespace gamemd {

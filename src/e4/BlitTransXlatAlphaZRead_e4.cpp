@@ -10,7 +10,7 @@
 #include "e4/classes/BlitTransLucent25AlphaZReadWrite_ushort_e4.hpp"
 
 // 0x494920
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
 
@@ -43,7 +43,6 @@ unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned sh
   return result; /*0x4949a0*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x494A40
 namespace gamemd {

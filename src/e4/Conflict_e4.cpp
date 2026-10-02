@@ -11,7 +11,7 @@
 #include "e4/classes/GameOption_e4.hpp"
 
 // 0x766C10
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
 {
 
@@ -101,7 +101,6 @@ LABEL_14:
   return 1; /*0x766ca7*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x766DC0
 namespace gamemd {

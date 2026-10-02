@@ -21,14 +21,13 @@
 #include "e4/classes/FileFind_e4.hpp"
 
 // 0x5F1950
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int NullModemClass::COMStub()
 {
 
   return *((unsigned int *)this + 15); /*0x5f1953*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5F1F00
 namespace gamemd {

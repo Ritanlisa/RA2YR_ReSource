@@ -69,7 +69,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x6E0250
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 {
 
@@ -77,7 +77,6 @@ int E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
   return 1; /*0x6e0264*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x6E0270
 namespace gamemd {

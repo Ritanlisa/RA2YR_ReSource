@@ -31,7 +31,7 @@
 #include "e4/classes/Main_e4.hpp"
 
 // 0x5C0DD0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * aP2, const char ** a3, MultiplayerBattle * aP4, char aP5, MultiplayerBattle * aP6)
 {
 
@@ -40,7 +40,6 @@ unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * 
   return (unsigned int *)(this->MPGameModeClass); /*0x5c0e00*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5C5CE0
 namespace gamemd {

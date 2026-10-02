@@ -69,7 +69,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x539760
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * sub_539760()
 {
   *(unsigned int *)&PsyDom_Coords = dword_A9F9F8; /*0x539766*/
@@ -117,7 +117,6 @@ AbstractClass * * sub_539760()
   ChronoScreenEffect_Status = (int)((gamemd::AbstractClass **)(0)); /*0x539881*/
   return (gamemd::AbstractClass **)(UpdateSurfaceAnimations(-1, -1, -1, 0)); /*0x53988c*/
 }
-}  // G42.18 ns repair
 }
 // 0x5558E0
 namespace gamemd {

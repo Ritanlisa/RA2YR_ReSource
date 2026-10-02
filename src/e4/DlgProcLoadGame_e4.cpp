@@ -11,7 +11,7 @@
 #include "e4/e4_protos.h"
 
 // 0x696AE0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 HWND E4Recv_696AE0::sub_696AE0()
 {
 
@@ -69,7 +69,6 @@ HWND E4Recv_696AE0::sub_696AE0()
   return (HWND)(result);
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x696C40

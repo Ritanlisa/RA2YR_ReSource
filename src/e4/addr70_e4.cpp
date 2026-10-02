@@ -38,7 +38,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 
 // 0x7049C0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a5, int a6, int a7, char a8, char a9)
 {
     unsigned int v30 = 0;  /* G37 hoist */
@@ -206,7 +206,6 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   }
   return result; /*0x704dfb*/
 }
-}  // G42.18 ns repair
 }
 // 0x704E40
 namespace gamemd {

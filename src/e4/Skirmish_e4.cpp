@@ -44,7 +44,7 @@
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 
 // 0x46F600
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Skirmish::FillPlayerNames()
 {
 
@@ -89,7 +89,6 @@ LABEL_9:
   return result; /*0x46f6c5*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x46F8F0
 namespace gamemd {

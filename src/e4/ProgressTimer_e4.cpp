@@ -8,7 +8,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x4C93D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void* ProgressTimer::GetValue(unsigned int *aP1)
 {
 
@@ -67,5 +67,4 @@ LABEL_14:
   return aP1; /*0x4c944d*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

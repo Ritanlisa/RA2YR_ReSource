@@ -18,7 +18,7 @@
 #include "e4/classes/WideString_e4.hpp"
 
 // 0x4E1480
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int LinkClass::Destroy(void *a1)
 {
 
@@ -26,7 +26,6 @@ int LinkClass::Destroy(void *a1)
   return LinkedList::RemoveNode((LinkClass *)this); /*0x4e148f*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5565A0
 namespace gamemd {

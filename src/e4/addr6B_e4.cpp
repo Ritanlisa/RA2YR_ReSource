@@ -49,7 +49,7 @@
 #include "e4/classes/MapSeed_e4.hpp"
 
 // 0x6B2430
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * sub_6B2430(int * a1, int a2)
 {
   unsigned int *result; // eax
@@ -77,7 +77,6 @@ unsigned int * sub_6B2430(int * a1, int a2)
   }
   return result; /*0x6b249b*/
 }
-}  // G42.18 ns repair
 }
 // 0x6B2700
 namespace gamemd {

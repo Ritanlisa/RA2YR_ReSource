@@ -8,12 +8,11 @@
 #include "e4/e4_protos.h"
 
 // 0x48ACE0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Return::HRESULT_Fail(BulletClass * aP0, int a2, int a3)
 {
 
   return -15; /*0x48ace5*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

@@ -21,7 +21,7 @@
 #include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x420DA0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int AlphaShapeClass::SD_vt13(int a2)
 {
 
@@ -32,7 +32,6 @@ int AlphaShapeClass::SD_vt13(int a2)
   return Pow  return Power::TimerProcess((int)((void *)(*((unsigned int *)this + 13)))); 
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x420E40
 namespace gamemd {

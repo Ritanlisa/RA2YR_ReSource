@@ -163,7 +163,7 @@
 #include "e4/classes/VectorCursor_e4.hpp"
 
 // 0x4137A0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int VectorClass_flat::RemoveObjectById()
 {
 
@@ -194,7 +194,6 @@ int VectorClass_flat::RemoveObjectById()
   return (int)v7; /*0x4137ae*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x65A970
 namespace gamemd {

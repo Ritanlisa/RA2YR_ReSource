@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x42D510
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void* CellStruct::Add(unsigned int *aP1, unsigned short *aP2)
 {
 
@@ -21,7 +21,6 @@ void* CellStruct::Add(unsigned int *aP1, unsigned short *aP2)
   return aP1; /*0x42d536*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x437F30
 namespace gamemd {

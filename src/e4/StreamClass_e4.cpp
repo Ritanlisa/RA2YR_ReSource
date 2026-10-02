@@ -11,14 +11,13 @@
 #include "e4/classes/TagClass_e4.hpp"
 
 // 0x411310
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 {
 
   return (*(int (**)(unsigned int, char *, unsigned int))(**((unsigned int **)this + 5) + 20))(*((unsigned int *)this + 5), &a3, a2); /*0x411328*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4114B0
 namespace gamemd {

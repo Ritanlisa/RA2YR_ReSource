@@ -28,7 +28,7 @@
 #include "e4/classes/MessageListClass_e4.hpp"
 
 // 0x53AE00
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int sub_53AE00()
 {
   wchar_t *StringCSF; // eax
@@ -41,7 +41,6 @@ int sub_53AE00()
 // 0x5d3ba0
   return MessageListClass::AddMessage(unk_A8BC60, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53ae47*/
 }
-}  // G42.18 ns repair
 }
 // 0x659CA0
 namespace gamemd {

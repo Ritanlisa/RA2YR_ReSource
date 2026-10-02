@@ -11,7 +11,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x49F5C0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 bool CopyProtection::CheckLauncher()
 {
 
@@ -27,7 +27,6 @@ bool CopyProtection::CheckLauncher()
   return v1; /*0x49f617*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x49F620
 namespace gamemd {

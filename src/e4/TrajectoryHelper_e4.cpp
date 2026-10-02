@@ -14,7 +14,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x4CC100
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int arg0, void * a3)
 {
 
@@ -107,7 +107,6 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   return result; /*0x4cc304*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x4CC360
 namespace gamemd {

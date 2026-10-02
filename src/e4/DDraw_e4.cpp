@@ -17,7 +17,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 
 // 0x4A3370
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int DDraw::ReleaseSurfaces()
 {
 
@@ -39,7 +39,6 @@ int DDraw::ReleaseSurfaces()
   return result; /*0x4a339b*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4A3640
 namespace gamemd {

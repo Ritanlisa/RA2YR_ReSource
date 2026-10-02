@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x600630
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * Gadget::InitProperties()
 {
 
@@ -20,5 +20,4 @@ unsigned int * Gadget::InitProperties()
   return this->__pad_0; /*0x60065b*/
 
 }
-}  // G42.18 ns repair
 }

@@ -35,7 +35,7 @@
 #include "e4/classes/Surface_e4.hpp"
 
 // 0x5D1D80
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Session::RemoveTeam(int (__thiscall ***aP1)(unsigned int, int))
 {
 
@@ -69,7 +69,6 @@ int Session::RemoveTeam(int (__thiscall ***aP1)(unsigned int, int))
   return result; /*0x5d1dde*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x5E74E0
 namespace gamemd {

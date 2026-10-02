@@ -10,7 +10,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x4E0440
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int AbstractClassVector::Read(unsigned int * a2, void *a2_2)
 {
 
@@ -32,7 +32,6 @@ int AbstractClassVector::Read(unsigned int * a2, void *a2_2)
   return result; /*0x4e044a*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4E0480
 namespace gamemd {

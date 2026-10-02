@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x6E5820
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int TriggerActionQueue::ProcessAll(void *a1)
 {
 
@@ -24,5 +24,4 @@ int TriggerActionQueue::ProcessAll(void *a1)
   return result; /*0x6e584a*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

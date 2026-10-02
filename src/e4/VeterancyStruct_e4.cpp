@@ -7,14 +7,13 @@
 #include "e4/e4_protos.h"
 
 // 0x74FF90
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 BOOL VeterancyStruct::IsVeteran()
 {
 
   return *(float *)this >= 1.0 && *(float *)this < 2.0; /*0x74ffb3*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x750010

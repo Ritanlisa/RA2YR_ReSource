@@ -12,7 +12,7 @@
 #include "e4/classes/TabClass_e4.hpp"
 
 // 0x63DC20
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void BlowPipe_31::ddtor()
 {
 
@@ -29,7 +29,6 @@ void BlowPipe_31::ddtor()
   this->m_8 = 0; /*0x63dc44*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x63DC50

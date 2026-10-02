@@ -53,7 +53,7 @@
 #include "e4/classes/RulesClass_e4.hpp"
 
 // 0x6A6AF0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
 {
 
@@ -113,7 +113,6 @@ LABEL_18:
   return 0; /*0x6a6c1d*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x6A74A0
 namespace gamemd {

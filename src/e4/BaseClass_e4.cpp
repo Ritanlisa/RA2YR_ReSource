@@ -14,7 +14,7 @@
 #include "e4/classes/Campaign_e4.hpp"
 
 // 0x42EE30
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
 {
 
@@ -153,7 +153,6 @@ LABEL_34:
   return 0; /*0x42f056*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x42F070
 namespace gamemd {

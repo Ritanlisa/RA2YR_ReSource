@@ -30,7 +30,7 @@
 #include "e4/classes/FactoryClass_e4.hpp"
 
 // 0x4717D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
 {
 
@@ -68,7 +68,6 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
   return this; /*0x471889*/
 
 }
-}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x471A50

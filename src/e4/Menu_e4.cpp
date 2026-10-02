@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4C6140
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Menu::Reset(void *a1, void *a2)
 {
 
@@ -20,5 +20,4 @@ int Menu::Reset(void *a1, void *a2)
   return (int)this; /*0x4c6163*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

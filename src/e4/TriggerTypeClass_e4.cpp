@@ -30,7 +30,7 @@
 #include "e4/classes/TemporalClass_e4.hpp"
 
 // 0x6FC0B0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass * aP2, int a4, TechnoClass * aP4)
 {
     unsigned int v8 = 0;  /* G37 hoist */
@@ -439,7 +439,6 @@ LABEL_231:
   return 8; /*0x6fc0df*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x727BB0
 namespace gamemd {

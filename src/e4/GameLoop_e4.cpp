@@ -9,12 +9,11 @@
 #include "e4/classes/GameClass_e4.hpp"
 
 // 0x77D710
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int GameLoop::Thunk()
 {
 
   return ((Game *)this)->ProcessIdle();
 
 }
-}  // G42.18 ns repair
 }

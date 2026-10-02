@@ -13,7 +13,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x4D2DB0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
 {
 
@@ -77,7 +77,6 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
   return (int)(this->__pad_0); /*0x4d2dfb*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x4D2D10
 VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block, char a2)

@@ -30,7 +30,7 @@
 #include "e4/classes/FileClass_e4.hpp"
 
 // 0x530460
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 MixFileClass * * MixFile::LoadAll()
 {
 
@@ -77,7 +77,6 @@ MixFileClass * * MixFile::LoadAll()
   char v42; // bl
   MixFil... [19161 chars total]
 }
-}  // G42.18 ns repair
 }
 // 0x534FA0
 namespace gamemd {

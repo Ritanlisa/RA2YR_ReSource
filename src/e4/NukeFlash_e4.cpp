@@ -7,14 +7,13 @@
 #include "e4/e4_protos.h"
 
 // 0x53A110
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 BOOL NukeFlash::IsActive()
 {
 
   return NukeFlash_Status == 1; /*0x53a11e*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x53A120

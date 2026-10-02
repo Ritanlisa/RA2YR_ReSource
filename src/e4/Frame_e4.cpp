@@ -19,7 +19,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4F4780
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8)
 {
 
@@ -267,7 +267,6 @@ LABEL_51:
   return (gamemd::TechnoTypeClass *)(result);
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x724C00
 namespace gamemd {

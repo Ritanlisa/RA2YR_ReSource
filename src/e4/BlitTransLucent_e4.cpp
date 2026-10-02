@@ -10,7 +10,7 @@
 #include "e4/classes/BinkMovie_e4.hpp"
 
 // 0x496130
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
@@ -28,7 +28,6 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, i
            a11);
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x496250
 namespace gamemd {

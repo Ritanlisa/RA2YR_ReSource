@@ -20,7 +20,7 @@
 #include "e4/classes/AudioTimer_e4.hpp"
 
 // 0x5BF450
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char AsyncIO::Shutdown(void *a1)
 {
 
@@ -61,7 +61,6 @@ char AsyncIO::Shutdown(void *a1)
   return result; /*0x5bf4f5*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x774BC0
 namespace gamemd {

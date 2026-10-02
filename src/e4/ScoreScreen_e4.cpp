@@ -29,7 +29,7 @@
 #include "e4/classes/Init_e4.hpp"
 
 // 0x690A10
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 _DWORD * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
 {
 
@@ -68,7 +68,6 @@ _DWORD * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
   return this->__pad_0; /*0x690aca*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x690AE0
 namespace gamemd {

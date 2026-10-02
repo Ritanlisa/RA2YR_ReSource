@@ -11,7 +11,7 @@
 #include "e4/e4_protos.h"
 
 // 0x633AC0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * E4Recv_633AC0::sub_633AC0()
 {
 
@@ -21,7 +21,6 @@ unsigned int * E4Recv_633AC0::sub_633AC0()
   return this; /*0x633ad3*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x636EB0

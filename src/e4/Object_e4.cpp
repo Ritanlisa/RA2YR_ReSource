@@ -38,7 +38,7 @@
 #include "e4/classes/Particle_e4.hpp"
 
 // 0x47C3D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Object::FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3)
 {
 
@@ -89,7 +89,6 @@ int Object::FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3)
   return (int)(v12); /*0x47c4b6*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x47C5A0
 namespace gamemd {

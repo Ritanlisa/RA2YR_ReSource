@@ -28,7 +28,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4D4DC0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int InfantryClass::ScanTarget(int * a1)
 {
 
@@ -111,7 +111,6 @@ int InfantryClass::ScanTarget(int * a1)
   return result; /*0x4d4fa0*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x4D5350
 namespace gamemd {
@@ -317,10 +316,9 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 
 }
 // 0x7447A0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int InfantryClass_ScanTarget_0(void * a1)
 {
   return InfantryClass::ScanTarget((int *)(a1));
 }
-}  // G42.18 ns repair
 } // namespace gamemd

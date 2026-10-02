@@ -31,7 +31,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x53AE50
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void * SuperClass::LaunchPsychicDominator(int a2)
 {
 
@@ -71,7 +71,6 @@ void * SuperClass::LaunchPsychicDominator(int a2)
   return result; /*0x53af2d*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x6CAEC0
 namespace gamemd {

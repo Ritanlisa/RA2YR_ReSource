@@ -45,7 +45,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x730A90
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int AddMessageListPlayerMessage(wchar_t *a1, int a2)
 {
   int v2; // eax
@@ -58,7 +58,6 @@ int AddMessageListPlayerMessage(wchar_t *a1, int a2)
 // 0x5d3ba0
   return MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, a1, v2, 16454, a2, 1); /*0x730ac9*/
 }
-}  // G42.18 ns repair
 }
 // 0x730AF0
 namespace gamemd {

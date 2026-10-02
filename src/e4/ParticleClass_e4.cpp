@@ -29,7 +29,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x62CEC0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void ParticleClass::DrawParticle(int * a2, int * a3)
 {
 
@@ -187,7 +187,6 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
   }
 
 }
-}  // G42.18 ns repair
 }
 // 0x62D5E0
 namespace gamemd {
@@ -252,7 +251,7 @@ int ParticleClass::AdjustHeight()
 
 }
 // 0x62D710
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int * ParticleClass::CheckDrawFlags(int a1)
 {
 
@@ -265,7 +264,6 @@ int * ParticleClass::CheckDrawFlags(int a1)
   return &dword_AC49D0; /*0x62d752*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x62D770

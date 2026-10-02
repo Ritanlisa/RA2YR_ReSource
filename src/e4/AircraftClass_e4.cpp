@@ -35,7 +35,7 @@ struct Type;  // fix_tu_missing_types
 #include "e4/classes/InfantryClass_e4.hpp"
 
 // 0x413F80
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *a4)
 {
 
@@ -104,7 +104,6 @@ LABEL_9:
   return (gamemd::AircraftTypeClass *)(result); /*0x41406d*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x415B10
 namespace gamemd {
@@ -574,7 +573,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
   return (void *)(v6); /*0x41aaab*/
 }
 // 0x41ADF0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int AircraftClass::RevealSight(int a2, int a3)
 {
 
@@ -655,7 +654,6 @@ LABEL_4:
   return result; /*0x41ae9b*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x41B430
 namespace gamemd {

@@ -17,7 +17,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x5ACD30
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * MSEngine::Release(int a2, char * a3)
 {
 
@@ -96,7 +96,6 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   }
 
 }
-}  // G42.18 ns repair
 }
 // 0x5ACED0
 namespace gamemd {

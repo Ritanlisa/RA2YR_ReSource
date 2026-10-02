@@ -19,7 +19,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x531CC0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 long MainMenu_Screen(void * a1, void * a2)
 {
   HWND v2; // esi
@@ -128,7 +128,6 @@ long MainMenu_Screen(void * a1, void * a2)
   SetFocus((HWND)(g_hWnd)); /*0x531f50*/
   return dwNewLong; /*0x531f5a*/
 }
-}  // G42.18 ns repair
 }
 // 0x531F60
 int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)

@@ -6,10 +6,9 @@
 #include "e4/e4_protos.h"
 
 // 0x58BC20
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void sub_58BC20()
 {
   dword_ABED0C = 0; /*0x58bc20*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

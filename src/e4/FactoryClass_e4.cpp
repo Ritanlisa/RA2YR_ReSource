@@ -30,7 +30,7 @@
 #include "e4/classes/E4Recv_426620_e4.hpp"
 
 // 0x4C9B20
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int FactoryClass::UpdateProduction()
 {
 
@@ -120,7 +120,6 @@ int FactoryClass::UpdateProduction()
   return Speed; /*0x4c9bbe*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x4C9C60
 namespace gamemd {

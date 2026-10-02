@@ -67,7 +67,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x5D0190
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int E4Recv_5D0190::sub_5D0190(const char * a2)
 {
 
@@ -103,7 +103,6 @@ LABEL_5:
   return v5; /*0x5d020b*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x5D0240
 namespace gamemd {

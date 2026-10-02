@@ -40,7 +40,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x4FB840
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void* BuildingPlacement::Activate(int a2, unsigned int *a3)
 {
 
@@ -80,7 +80,6 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
   return (void *)(1); /*0x4fb90f*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x54C550
 namespace gamemd {

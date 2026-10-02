@@ -31,7 +31,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x4B5B70
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int DroppodLocomotionClass::ILoco_Process(int a1)
 {
 
@@ -232,7 +232,6 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   }
 
 }
-}  // G42.18 ns repair
 }
 // 0x4B6200
 int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)

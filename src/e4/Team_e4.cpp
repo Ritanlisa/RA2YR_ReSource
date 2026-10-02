@@ -69,7 +69,7 @@
 #include "e4/classes/ScoreText_e4.hpp"
 
 // 0x561180
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void Team_Start(void * a1, void * a2, void * a3, void * a4)
 {
   unsigned int v4; // ecx
@@ -161,7 +161,6 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
   }
   return result; /*0x5611d9*/
 }
-}  // G42.18 ns repair
 }
 // 0x5D26C0
 namespace gamemd {

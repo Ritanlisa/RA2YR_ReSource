@@ -15,7 +15,7 @@
 #include "app/cmdline.hpp"
 
 // 0x777420
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * sub_777420()
 {
   int v1; // ecx
@@ -86,7 +86,6 @@ AbstractClass * * sub_777420()
   }
   return (gamemd::AbstractClass **)(result); /*0x7775bb*/
 }
-}  // G42.18 ns repair
 }
 // 0x5C09A0
 namespace gamemd {

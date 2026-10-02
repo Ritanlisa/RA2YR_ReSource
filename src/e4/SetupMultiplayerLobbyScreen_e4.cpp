@@ -15,7 +15,7 @@
 #include "e4/classes/Session_e4.hpp"
 
 // 0x5EBEC0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nIDDlgItem)
 {
   char * v3;
@@ -105,5 +105,4 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
   RetVtableStubZero_eax_27(); /*0x5ec012*/
   return CheckGameSettingsChanged(1, 0); /*0x5ec020*/
 }
-}  // G42.18 ns repair
 }

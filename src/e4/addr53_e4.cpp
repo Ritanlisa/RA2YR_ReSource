@@ -56,7 +56,7 @@
 #include "e4/classes/FileSystem_e4.hpp"
 
 // 0x530000
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 MixFileClass * * sub_530000()
 {
   HANDLE FirstFileA; // edi
@@ -134,7 +134,6 @@ MixFileClass * * sub_530000()
   }
   return (gamemd::MixFileClass **)(1);
 }
-}  // G42.18 ns repair
 }
 // 0x5312A0
 namespace gamemd {

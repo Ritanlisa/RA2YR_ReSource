@@ -26,7 +26,7 @@
 #include "e4/classes/BINK_e4.hpp"
 
 // 0x765840
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
 {
     unsigned int v5 = 0;  /* G37 hoist */
@@ -121,7 +121,6 @@ LABEL_14:
   return 1; /*0x7658d7*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x765700
 namespace gamemd {

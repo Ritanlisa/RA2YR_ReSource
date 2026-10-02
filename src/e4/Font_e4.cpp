@@ -31,7 +31,7 @@
 #include "e4/classes/Palette_e4.hpp"
 
 // 0x4346C0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Font::GetGlyphDataForChar(uint16_t aP1)
 {
 
@@ -50,7 +50,6 @@ int Font::GetGlyphDataForChar(uint16_t aP1)
   return result; /*0x4346ee*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x434CD0
 namespace gamemd {

@@ -46,7 +46,7 @@
 #include "e4/classes/LoadScreen_e4.hpp"
 
 // 0x5D4210
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int a6)
 {
 
@@ -168,7 +168,6 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
   }
 
 }
-}  // G42.18 ns repair
 }
 // 0x5DB9B0
 namespace gamemd {

@@ -29,7 +29,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x7665D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
 {
 
@@ -123,7 +123,6 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   return a2; /*0x76678e*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x7714B0
 namespace gamemd {

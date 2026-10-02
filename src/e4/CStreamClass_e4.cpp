@@ -15,7 +15,7 @@
 #include "e4/classes/CheckListClass_e4.hpp"
 
 // 0x4A2CD0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4)
 {
 
@@ -90,7 +90,6 @@ LABEL_23:
   }
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4A3110
 namespace gamemd {

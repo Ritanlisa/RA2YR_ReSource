@@ -18,7 +18,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 
 // 0x470D30
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void CampaignScreen_Init(void * a1, void * a2, void * a3, void * a4)
 {
   const wchar_t *v5; // ebp
@@ -256,5 +256,4 @@ void CampaignScreen_Init(void * a1, void * a2, void * a3, void * a4)
   }
   return result; /*0x470da5*/
 }
-}  // G42.18 ns repair
 }

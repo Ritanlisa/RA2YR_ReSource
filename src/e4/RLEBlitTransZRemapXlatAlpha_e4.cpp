@@ -11,7 +11,7 @@
 #include "e4/classes/House_e4.hpp"
 
 // 0x497A10
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlatAlpha_ushort * aP4, int a6, int _2C, unsigned short * a7, int a9, int a10, int a11)
 {
 
@@ -80,7 +80,6 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
   return result; /*0x497b2a*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x497B40
 namespace gamemd {

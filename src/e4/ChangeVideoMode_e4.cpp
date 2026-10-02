@@ -8,7 +8,7 @@
 #include "e4/classes/CenterTeamCommand_e4.hpp"
 
 // 0x72E1B0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int * sub_72E1B0(int a1, int a2)
 {
   RA2_OPDEL(dword_B0FC10); /*0x72e1bd*/
@@ -29,5 +29,4 @@ int * sub_72E1B0(int a1, int a2)
   dword_B0FC2C = 0; /*0x72e245*/
   return SetupMouseClassResources(a1, a2); /*0x72e24d*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

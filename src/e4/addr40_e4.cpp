@@ -81,7 +81,7 @@
 #include "e4/classes/Queue_e4.hpp"
 
 // 0x4011C0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
 {
   char *v3; // ebp
@@ -208,7 +208,6 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   ((BufferIOFileClass *)(v19))->Dtor(); /*0x4014cc*/
   return (gamemd::AbstractClass **)(v3); /*0x4014d3*/
 }
-}  // G42.18 ns repair
 }
 // 0x401C00
 namespace gamemd {

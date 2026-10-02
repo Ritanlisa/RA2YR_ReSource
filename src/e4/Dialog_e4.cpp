@@ -30,7 +30,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 
 // 0x49F740
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void Dialog::MapDialogResource(void *a1_1)
 {
 
@@ -42,7 +42,6 @@ void Dialog::MapDialogResource(void *a1_1)
   }
 
 }
-}  // G42.18 ns repair
 }
 // 0x5B5BC0
 namespace gamemd {

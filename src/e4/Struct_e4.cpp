@@ -13,7 +13,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x48B2A0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void Struct::ClearAllMemberFlags()
 {
 
@@ -83,7 +83,6 @@ void Struct::ClearAllMemberFlags()
   return result; /*0x48b37f*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x48BF10
 namespace gamemd {

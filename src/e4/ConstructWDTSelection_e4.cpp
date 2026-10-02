@@ -19,7 +19,7 @@
 #include "e4/e4_protos.h"
 
 // 0x767FB0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, ReferenceCounted * aP3)
 {
   ReferenceCounted *v6; // eax
@@ -35,7 +35,6 @@ rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, R
   ((ComPtr *)((ComPtr *)a1))->Set((int)v7); /*0x767fef*/
   return a1; /*0x767ff6*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x76BFB0

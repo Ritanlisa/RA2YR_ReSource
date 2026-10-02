@@ -9,7 +9,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x598030
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 long long Range_RandomInt(MouseClass * aP0, MapClass * aP1)
 {
   double v3; // st7
@@ -30,5 +30,4 @@ long long Range_RandomInt(MouseClass * aP0, MapClass * aP1)
   while ( (unsigned int)result > (unsigned int)(aP1) ); /*0x598089*/
   return result; /*0x59808b*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

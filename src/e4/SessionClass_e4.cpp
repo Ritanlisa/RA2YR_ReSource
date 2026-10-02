@@ -43,7 +43,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x540DC0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int SessionClass::initLAN(int a2, wchar_t * Source, unsigned int * a4)
 {
 
@@ -80,7 +80,6 @@ int SessionClass::initLAN(int a2, wchar_t * Source, unsigned int * a4)
   return 1; /*0x540dcc*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x540E70
 namespace gamemd {

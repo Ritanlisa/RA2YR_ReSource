@@ -20,7 +20,7 @@
 #include "e4/classes/ActionQueue_e4.hpp"
 
 // 0x53B080
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void PsyDom::Fire()
 {
 
@@ -186,7 +186,6 @@ void PsyDom::Fire()
   }
 
 }
-}  // G42.18 ns repair
 }
 // 0x53B400
 namespace gamemd {

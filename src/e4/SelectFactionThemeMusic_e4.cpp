@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x732210
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int sub_732210(int a1, const char * a2)
 {
   int v2; // eax
@@ -26,5 +26,4 @@ int sub_732210(int a1, const char * a2)
   }
   return v3; /*0x732261*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

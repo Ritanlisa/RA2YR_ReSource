@@ -9,7 +9,7 @@
 #include "e4/classes/Movie_e4.hpp"
 
 // 0x5D4E70
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int DialogQueue::PushEntry(void *a1)
 {
 
@@ -31,7 +31,6 @@ int DialogQueue::PushEntry(void *a1)
   return result; /*0x5d4ec6*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5D4ED0
 namespace gamemd {

@@ -53,7 +53,7 @@
 #include "e4/classes/Session_e4.hpp"
 
 // 0x52FF90
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void Render_Load(void * a1, void * a2, void * a3)
 {
   int result; // eax
@@ -70,7 +70,6 @@ void Render_Load(void * a1, void * a2, void * a3)
   }
   return result; /*0x52ffb7*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x53C0A0

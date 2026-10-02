@@ -28,7 +28,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x5236A0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
 {
 
@@ -160,7 +160,6 @@ LABEL_11:
   return this; /*0x523972*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x523980
 namespace gamemd {

@@ -55,7 +55,7 @@
 #include "e4/classes/TimerPool_e4.hpp"
 
 // 0x4C1440
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int sub_4C1440()
 {
   int result; // eax
@@ -94,7 +94,6 @@ int sub_4C1440()
   }
   return result; /*0x4c1470*/
 }
-}  // G42.18 ns repair
 }
 // 0x4C14D0
 namespace gamemd {

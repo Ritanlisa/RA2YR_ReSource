@@ -32,7 +32,7 @@
 #include "e4/classes/InfantryTypeClass_e4.hpp"
 
 // 0x4F6540
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * SuperWeaponTypeClass::IsAvailable()
 {
 
@@ -209,7 +209,6 @@ LABEL_28: v28 = (unsigned int *)(HouseClass::FirstBuildableFromArray((HouseClass
   return 0; /*0x4f65ea*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x5113F0
 namespace gamemd {

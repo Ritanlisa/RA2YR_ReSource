@@ -11,7 +11,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 
 // 0x4138C0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Coord::ToGridIndex(int aP1, int aP2, int aP3)
 {
 
@@ -105,7 +105,6 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
   return result; /*0x413a24*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x413A30
 namespace gamemd {

@@ -27,7 +27,7 @@
 #include "e4/classes/Init_e4.hpp"
 
 // 0x76FC50
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3)
 {
 
@@ -62,7 +62,6 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   return ((BufferIOFileClass *)(v11))->Dtor(); /*0x76fd05*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x76F910
 namespace gamemd {

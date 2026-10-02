@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x5D8CB0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int PlayerClass::SetHouse(int a2)
 {
 
@@ -23,7 +23,6 @@ int PlayerClass::SetHouse(int a2)
   return result; /*0x5d8cc2*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5D62C0
 namespace gamemd {

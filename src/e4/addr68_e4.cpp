@@ -74,7 +74,7 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x682640
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
 {
   int v3; // ecx
@@ -136,7 +136,6 @@ void COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
   }
   return v6; /*0x6826bf*/
 }
-}  // G42.18 ns repair
 }
 // 0x682880
 namespace gamemd {

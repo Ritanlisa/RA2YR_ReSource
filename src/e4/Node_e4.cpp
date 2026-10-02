@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x49EA10
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * Node_flat::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
@@ -19,5 +19,4 @@ unsigned int * Node_flat::Init(void *a1, void *a2, void *a3, void *a4, void *a5,
   return this->__pad_0; /*0x49ea22*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

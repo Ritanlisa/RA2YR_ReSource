@@ -16,7 +16,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x623FC0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 LRESULT OptionsDlgProcWOL_Assign(ObjectClass * aP0, WPARAM wParam, void ** a2)
 {
   LRESULT v5; // esi
@@ -32,5 +32,4 @@ LRESULT OptionsDlgProcWOL_Assign(ObjectClass * aP0, WPARAM wParam, void ** a2)
   RA2_OPDEL(v6); /*0x62400d*/
   return v7; /*0x624017*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

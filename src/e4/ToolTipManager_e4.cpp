@@ -14,14 +14,13 @@
 #include "e4/classes/ToolTipClass_e4.hpp"
 
 // 0x724AA0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 char ToolTipManager::addRef(int a1)
 {
 
   return 1; /*0x724aa2*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x724B80
 namespace gamemd {

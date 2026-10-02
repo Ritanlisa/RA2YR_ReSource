@@ -40,7 +40,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 
 // 0x4228E0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void AnimClass::Destruct(void * a2, void *a2_2)
 {
 
@@ -157,7 +157,6 @@ void AnimClass::Destruct(void * a2, void *a2_2)
   return ((ObjectClass *)((ObjectClass *)a2))->Dtor(); /*0x422abd*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x422CA0
 namespace gamemd {

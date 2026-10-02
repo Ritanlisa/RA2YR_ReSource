@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x46DC90
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Compare::Field96(const void * a1, const void * a2)
 {
 
@@ -22,5 +22,4 @@ int Compare::Field96(const void * a1, const void * a2)
     return v2 <= v3 ? 1 : -1;
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

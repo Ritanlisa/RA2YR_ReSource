@@ -14,7 +14,7 @@
 #include "e4/classes/Power_e4.hpp"
 
 // 0x502160
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
 {
 
@@ -94,5 +94,4 @@ LABEL_13:
   }
 
 }
-}  // G42.18 ns repair
 }

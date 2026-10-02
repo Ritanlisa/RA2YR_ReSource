@@ -39,7 +39,7 @@
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 
 // 0x49B660
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int MPCooperative::processTurn(char * a2, char * a3)
 {
 
@@ -72,7 +72,6 @@ int MPCooperative::processTurn(char * a2, char * a3)
   return (int)(this); /*0x49b6d2*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x49BCE0
 namespace gamemd {

@@ -9,7 +9,7 @@
 #include "e4/classes/Pipe_e4.hpp"
 
 // 0x552060
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int LCWPipe::Dtor()
 {
 
@@ -26,5 +26,4 @@ int LCWPipe::Dtor()
   return Pipe::Dtor((Pipe *)this); /*0x552093*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

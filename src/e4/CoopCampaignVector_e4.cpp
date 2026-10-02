@@ -10,7 +10,7 @@
 #include "e4/e4_protos.h"
 
 // 0x5C5750
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int CoopCampaignVector::Write(int a2)
 {
 
@@ -20,7 +20,6 @@ unsigned int CoopCampaignVector::Write(int a2)
     return 0; /*0x5c5757*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5C5940
 namespace gamemd {

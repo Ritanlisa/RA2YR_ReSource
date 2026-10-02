@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x7AECD0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
 {
 
@@ -29,5 +29,4 @@ unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
   return &this->vtable0; /*0x7aecfd*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

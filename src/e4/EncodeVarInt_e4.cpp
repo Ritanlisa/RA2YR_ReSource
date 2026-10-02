@@ -6,7 +6,7 @@
 #include "e4/e4_protos.h"
 
 // 0x5C6490
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int sub_5C6490(unsigned char * a1, char * a2, int a3)
 {
   char *v4; // esi
@@ -35,5 +35,4 @@ int sub_5C6490(unsigned char * a1, char * a2, int a3)
   }
   return j; /*0x5c64f4*/
 }
-}  // G42.18 ns repair
 } // namespace gamemd

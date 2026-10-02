@@ -23,7 +23,7 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x425D10
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AnimClass * * Building::ComputePosition(int *aP1)
 {
 
@@ -234,7 +234,6 @@ LABEL_41:
   return aP1; /*0x425faa*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x485020
 namespace gamemd {

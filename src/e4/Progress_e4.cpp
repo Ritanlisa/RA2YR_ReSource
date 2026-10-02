@@ -8,7 +8,7 @@
 #include "e4/classes/PsyDom_e4.hpp"
 
 // 0x6433D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Progress::GetAverage()
 {
 
@@ -32,7 +32,6 @@ int Progress::GetAverage()
   return result; /*0x6433f6*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x643E90
 namespace gamemd {

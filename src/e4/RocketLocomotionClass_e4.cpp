@@ -14,7 +14,6 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x661EC0
-namespace gamemd {  // G42.18 ns repair
 RocketLocomotionClass::RocketLocomotionClass()
 {
 
@@ -42,9 +41,7 @@ RocketLocomotionClass::RocketLocomotionClass()
   return (int)this->LocomotionClass; /*0x661f28*/
 
 }
-}  // G42.18 ns repair
 // 0x6633D0
-namespace gamemd {  // G42.18 ns repair
 int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
 
@@ -55,9 +52,7 @@ int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
   return 0; /*0x6633dd*/
 
 }
-}  // G42.18 ns repair
 // 0x663410
-namespace gamemd {  // G42.18 ns repair
 int RocketLocomotionClass::BeginMove(int * a1, int * a2)
 {
 
@@ -81,18 +76,14 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
   return result; /*0x663452*/
 
 }
-}  // G42.18 ns repair
 // 0x6635B0
-namespace gamemd {  // G42.18 ns repair
 int RocketLocomotionClass::StubReturn96()
 {
 
   return 96; /*0x6635b5*/
 
 }
-}  // G42.18 ns repair
 // 0x6635C0
-namespace gamemd {  // G42.18 ns repair
 RocketLocomotionClass * RocketLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
@@ -104,9 +95,8 @@ RocketLocomotionClass * RocketLocomotionClass::ProcessMove(unsigned int * Block,
   return Block->LocomotionClass; /*0x6635e7*/
 
 }
-}  // G42.18 ns repair
 // 0x6647B0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void RocketLocomotionClass_17::ddtor()
 {
 
@@ -123,7 +113,6 @@ void RocketLocomotionClass_17::ddtor()
   this->m_8 = 0; /*0x6647d4*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x6647E0

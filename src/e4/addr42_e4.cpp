@@ -53,7 +53,7 @@
 #include "e4/classes/Event_e4.hpp"
 
 // 0x420140
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 unsigned int * CreateFractalNoise(CCINIClass * aP0)
 {
   int v1; // eax
@@ -123,7 +123,6 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
     return (unsigned int *)*((unsigned int *)dword_88A084 + v1); /*0x4201f1*/
   }
 }
-}  // G42.18 ns repair
 }
 // 0x420F40
 namespace gamemd {
@@ -915,7 +914,7 @@ LABEL_47:
 
 }
 // 0x4261D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 void sub_4261D0()
 {
   int result; // eax
@@ -948,7 +947,6 @@ void sub_4261D0()
   }
   return result; /*0x42626b*/
 }
-}  // G42.18 ns repair
 }
 // 0x4267F0
 namespace gamemd {

@@ -12,7 +12,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 
 // 0x5C61A0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 MultiplayerManBattle * MultiplayerManBattle::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -23,5 +23,4 @@ MultiplayerManBattle * MultiplayerManBattle::QueryInterface(unsigned int * Block
   return &Block->MultiplayerManBattle_field_00; /*0x5c61c0*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

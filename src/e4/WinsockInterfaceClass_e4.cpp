@@ -18,7 +18,6 @@
 #include "e4/classes/Audio_e4.hpp"
 
 // 0x7B1AB0
-namespace gamemd {  // G42.18 ns repair
 WinsockInterfaceClass::WinsockInterfaceClass()
 {
 
@@ -65,45 +64,35 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   *((unsigned int *)this + 4) = 0; /*0x7b1b4a*/
 
 }
-}  // G42.18 ns repair
 // 0x7B2740
-namespace gamemd {  // G42.18 ns repair
 int WinsockInterfaceClass::Destru_vt13()
 {
 
   return 0; /*0x7b2742*/
 
 }
-}  // G42.18 ns repair
 // 0x7B2750
-namespace gamemd {  // G42.18 ns repair
 int WinsockInterfaceClass::Destru_vt14(int a1)
 {
 
   return 0; /*0x7b2752*/
 
 }
-}  // G42.18 ns repair
 // 0x7B2760
-namespace gamemd {  // G42.18 ns repair
 char WinsockInterfaceClass::Destru_vt15(int a1)
 {
 
   return 0; /*0x7b2762*/
 
 }
-}  // G42.18 ns repair
 // 0x7B2770
-namespace gamemd {  // G42.18 ns repair
 int WinsockInterfaceClass::Destru_vt16(int a1, int a2, int a3, int a4)
 {
 
   return 1; /*0x7b2775*/
 
 }
-}  // G42.18 ns repair
 // 0x7B2780
-namespace gamemd {  // G42.18 ns repair
 SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
 {
 
@@ -152,4 +141,4 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
     __3_YAXPAX_Z(Block); /*0x7b2826*/
   return (SOCKET *)Block; /*0x7b2830*/
 
-}}  // G42.18 ns repair
+}

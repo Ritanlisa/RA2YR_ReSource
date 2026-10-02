@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x758EA0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
 {
 
@@ -54,7 +54,6 @@ LABEL_13:
   return v6; /*0x758f5b*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x759FB0
 namespace gamemd {

@@ -20,7 +20,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x40FFFF
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Math_InitDegToRad(void * a1, void * a2)
 {
   int result; // eax
@@ -30,7 +30,6 @@ int Math_InitDegToRad(void * a1, void * a2)
   dbl_887648 = 0.0174532925199433 * 90.0; /*0x41001c*/
   return result; /*0x410022*/
 }
-}  // G42.18 ns repair
 }
 // 0x41C350
 namespace gamemd {

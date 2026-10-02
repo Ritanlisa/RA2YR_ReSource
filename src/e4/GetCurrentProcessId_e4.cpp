@@ -6,10 +6,9 @@
 #include "e4/e4_protos.h"
 
 // 0x7DCF22
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int GetCurrentProcessId_0()
 {
   return (int)(GetCurrentProcessId());
 }
-}  // G42.18 ns repair
 }

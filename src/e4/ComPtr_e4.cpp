@@ -15,7 +15,7 @@
 #include "e4/classes/CommandClass_e4.hpp"
 
 // 0x76F000
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int ComPtr::DestroyWrapper(int aP0, ObjectClass * aP1)
 {
 
@@ -23,5 +23,4 @@ int ComPtr::DestroyWrapper(int aP0, ObjectClass * aP1)
   return aP0; /*0x76f016*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

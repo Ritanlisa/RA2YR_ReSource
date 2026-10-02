@@ -10,7 +10,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x5AE860
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Matrix3x4::Identity(void *a1)
 {
 
@@ -29,7 +29,6 @@ int Matrix3x4::Identity(void *a1)
   return 0; /*0x5ae88a*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5AE980
 namespace gamemd {

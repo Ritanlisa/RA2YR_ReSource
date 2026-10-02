@@ -36,7 +36,7 @@
 #include "e4/classes/GadgetClass_e4.hpp"
 
 // 0x6D0680
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
 {
 
@@ -196,7 +196,6 @@ LABEL_6:
   return ((SidebarClass *)((SidebarClass *)this))->UpdateStrips(aP1, a2); /*0x6d09af*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x731AF0
 namespace gamemd {

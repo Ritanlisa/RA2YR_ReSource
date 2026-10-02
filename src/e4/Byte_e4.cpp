@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4F4C20
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 _BYTE * Byte::Zero(void *a1)
 {
 
@@ -15,5 +15,4 @@ _BYTE * Byte::Zero(void *a1)
   return this; /*0x4f4c25*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd

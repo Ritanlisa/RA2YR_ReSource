@@ -49,7 +49,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x4112D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int MapClass::isLocationShrouded(uint16_t a2)
 {
 
@@ -69,7 +69,6 @@ int MapClass::isLocationShrouded(uint16_t a2)
            a2);
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x42C1C0
 namespace gamemd {
@@ -410,7 +409,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
 }
 int MapClass::SetScrollMode(int aP1)
 // 0x4AEB30
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int MapClass::SetScrollMode(int aP1)
 {
 
@@ -423,7 +422,6 @@ int MapClass::SetScrollMode(int aP1)
   return result; /*0x4aeb45*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x506D50
 namespace gamemd {
@@ -1854,7 +1852,7 @@ BombClass * * MapClass::DecompressCellData(MouseClass * aP1, void *a2)
 }
 int MapClass::GetTileIndex(int16_t *aP1, int aP2, char aP3)
 // 0x56D230
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int MapClass::GetTileIndex(int16_t *aP1, int aP2, char aP3)
 {
 
@@ -1938,7 +1936,6 @@ int MapClass::GetTileIndex(int16_t *aP1, int aP2, char aP3)
                              + 2 * *(uint16_t *)(*(unsigned int *)&v5->__pad_5C[12] + 4 * v14 + 2));
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x56D6E0
 namespace gamemd {

@@ -24,7 +24,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x4385D0
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int BombClass::AbstractClass()
 {
 
@@ -55,7 +55,6 @@ int BombClass::AbstractClass()
   return (int)this; /*0x43866b*/
 
 }
-}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x438A00

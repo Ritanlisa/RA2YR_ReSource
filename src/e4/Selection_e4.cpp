@@ -11,7 +11,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x731D00
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int Selection::SetCurrent()
 {
 
@@ -22,7 +22,6 @@ int Selection::SetCurrent()
   return result; /*0x731d0d*/
 
 }
-}  // G42.18 ns repair
 } // namespace gamemd
 // 0x732D00
 namespace gamemd {

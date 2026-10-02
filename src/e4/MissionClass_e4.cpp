@@ -14,7 +14,7 @@
 #include "e4/classes/ScriptClass_e4.hpp"
 
 // 0x5B3760
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
 {
 
@@ -124,7 +124,6 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
   return (gamemd::AbstractClass **)(1);
 
 }
-}  // G42.18 ns repair
 } // namespace ra2
 
 // 0x41BF30

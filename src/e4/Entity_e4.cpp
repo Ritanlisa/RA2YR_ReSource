@@ -13,7 +13,7 @@
 #include "e4/classes/VQAClass_e4.hpp"
 
 // 0x53AB70
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int sub_53AB70()
 {
   char *v0; // edx
@@ -34,7 +34,6 @@ int sub_53AB70()
     1);
   return MapClass::MarkForRedraw((int)(&dword_87F7E8),(void *)(1)); /*0x53ac4a*/
 }
-}  // G42.18 ns repair
 }
 // 0x5C0080
 namespace gamemd {

@@ -12,14 +12,13 @@
 #include "e4/e4_protos.h"
 
 // 0x62FE60
-namespace gamemd {  // G42.18 ns repair
+namespace gamemd {
 int ParticleSystemClass::Draw()
 {
 
   return this->__pad_E5[19] && !this->Owner; /*0x62fe79*/
 
 }
-}  // G42.18 ns repair
 }
 // 0x630230
 namespace gamemd {
