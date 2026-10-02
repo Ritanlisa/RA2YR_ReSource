@@ -469,7 +469,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
                   *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14),
                   v8,
                   0);
-                Animation::UpdateBuildingAnimations((Animation *)v15); /*0x6e0c7a*/
+                ((Animation*)(Animation *)v15)->UpdateBuildingAnimations(); /*0x6e0c7a*/
                 v6 = 1; /*0x6e0c7f*/
               }
             }

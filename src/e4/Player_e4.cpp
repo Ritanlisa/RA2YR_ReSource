@@ -42,7 +42,7 @@ void Player::BuildListString(wchar_t * Destination)
       GetPlayerTypeString((gamemd::String *)((char **)&v6.DeleteAndZero_field_0x04), v3); /*0x5e8e2b*/
       v4 = CharStringToWide((gamemd::ObjectClass *)((wchar_t **)&v6.DeleteAndZero_field_0x08), (const char **)&v6.DeleteAndZero_field_0x04); /*0x5e8e38*/
       ((WideString *)((void **)&v6))->Reassign_Alt((const wchar_t **)v4); /*0x5e8e42*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v6.DeleteAndZero_field_0x08); /*0x5e8e4b*/
+      ((DeleteAndZero*)(DeleteAndZero *)&v6.DeleteAndZero_field_0x08)->Alt(); /*0x5e8e4b*/
       DeleteAndZero((ObjectClass *)&v6.DeleteAndZero_field_0x04); /*0x5e8e54*/
     }
     else
@@ -52,7 +52,7 @@ void Player::BuildListString(wchar_t * Destination)
     v5 = (wchar_t *)(((WideString*)(wchar_t **)&v6)->GetOrEmpty());
     wcscat((wchar_t *)Destination, v5); /*0x5e8e64*/
     wcscat((wchar_t *)Destination,(const wchar_t *)(asc_8304FC)); /*0x5e8e6f*/
-    DeleteAndZero::Alt(&v6); /*0x5e8e7b*/
+    ((DeleteAndZero*)&v6)->Alt(); /*0x5e8e7b*/
     ++v2; /*0x5e8e80*/
   }
   while ( (int)v2 < (int)&dword_A8DAB0 ); /*0x5e8e89*/

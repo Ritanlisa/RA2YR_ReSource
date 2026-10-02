@@ -404,7 +404,7 @@ LABEL_20:
   if ( byte_84A1B8 ) /*0x7a555f*/
     ((String *)((String *)&g_WindowManager.Array_field_0x38))->Assign_Alt(a3); /*0x7a556b*/
   else
-    DeleteAndZero::Alt2((DeleteAndZero *)&g_WindowManager.Array_field_0x38); /*0x7a5577*/
+    ((DeleteAndZero*)(DeleteAndZero *)&g_WindowManager.Array_field_0x38)->Alt2(); /*0x7a5577*/
   memset(&stru_B76AC4.ambientSoundController[4], 0, 0x10Cu); /*0x7a558e*/
   memset(&g_WindowManager.__pad_EC[84], 0, 0x10Cu); /*0x7a559a*/
   BYTE2(stru_B77D80.HashTable_field_0x40) = 0; /*0x7a559d*/
@@ -708,7 +708,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     {
       (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, g_INI_Key_A1); /*0x7a7ffc*/
     }
-    DeleteAndZero::Alt(&v23); /*0x7a8003*/
+    ((DeleteAndZero*)&v23)->Alt(); /*0x7a8003*/
     return 0; /*0x7a8014*/
   }
   Current = (HWND)Dialog::GetCurrent(); /*0x7a801c*/
@@ -858,7 +858,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
           v11 = ((WideString*)(wchar_t **)&a2)->GetOrEmpty(); /*0x7a8ea4*/
           Dialog::ShowMessage((gamemd::ObjectClass *)(v9), (size_t)aHsS_1, v10, v11); /*0x7a8eb1*/
         }
-        DeleteAndZero::Alt((DeleteAndZero *)&a2); /*0x7a8ebd*/
+        ((DeleteAndZero*)(DeleteAndZero *)&a2)->Alt(); /*0x7a8ebd*/
       }
     }
   }
@@ -888,7 +888,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a
   {
     if ( (*a4 & 1) != 0 || ((Dialog*)(gamemd::Dialog *)0xC2)->FindByHandle() || Dialog::FindByHandle((Dialog *)0xC9) ) /*0x7a8f1c*/
       goto LABEL_21; /*0x7a8f1c*/
-    v7 = (uint8_t)WideString::IsASCII((const wchar_t **)&a2) == 0; /*0x7a8f2e*/
+    v7 = (uint8_t)((WideString*)(const wchar_t **)&a2)->IsASCII() == 0; /*0x7a8f2e*/
     DynamicVector_field_0x10 = g_WOL_BuddyList.DynamicVector_field_0x10; /*0x7a8f30*/
     if ( v7 ) /*0x7a8f35*/
       DynamicVector_field_0x10 = (void *)dword_B779DC; /*0x7a8f37*/
@@ -909,7 +909,7 @@ LABEL_21:
       }
     }
   }
-  DeleteAndZero::Alt((DeleteAndZero *)&a2); /*0x7a8fb3*/
+  ((DeleteAndZero*)(DeleteAndZero *)&a2)->Alt(); /*0x7a8fb3*/
   return 0; /*0x7a8edc*/
 
 }

@@ -304,7 +304,7 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
   Piggybackee = Block->Piggybackee; /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x75cc01*/
-  LocomotionClass::Construct((gamemd::LocomotionClass *)Block); /*0x75cc06*/
+  ((LocomotionClass*)(gamemd::LocomotionClass *)Block)->Construct(); /*0x75cc06*/
   if ( (a2 & 1) != 0 ) /*0x75cc10*/
     __3_YAXPAX_Z(Block); /*0x75cc13*/
   return Block->LocomotionClass; /*0x75cc1d*/

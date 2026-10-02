@@ -418,7 +418,7 @@ int BuildingClass::Dtor()
   }
   IDA_LOBYTE(v3) = 1; /*0x43bd63*/
   AbstractClass::AnnounceExpiredPointer(this, v3); /*0x43bd67*/
-  BuildingClass::Sell(this); /*0x43bd6e*/
+  ((BuildingClass*)this)->Sell(); /*0x43bd6e*/
   Vtable3 = (int)this; /*0x43bd83*/
   v6 = (*(int (**)(int *, int *))(stru_A8EB00.ObjectTypeClass[16] + 16))( /*0x43bd87*/
          &stru_A8EB00.ObjectTypeClass[16],
@@ -430,7 +430,7 @@ int BuildingClass::Dtor()
   if ( v7 != -1 ) /*0x43bdb4*/
     Vector::RemoveAt((Vector *)&((char *)&FootClass_Array), v7); /*0x43bdbc*/
   BuildingClass::ClearAnims(this, -2); /*0x43bdc5*/
-  BuildingTypeClass::IsPowered(this->Type); /*0x43bdd0*/
+  ((BuildingTypeClass*)this->Type)->IsPowered(); /*0x43bdd0*/
   DamageFireAnims = this->DamageFireAnims; /*0x43bdd5*/
   v9 = 8; /*0x43bddb*/
   do /*0x43bdf4*/
@@ -457,7 +457,7 @@ int BuildingClass::Dtor()
           this->CloakRadius = Type->CloakRadiusInCells; /*0x43be2a*/
         ((unsigned int *)this)[0] = 1; /*0x43be34*/
         this->CloakRadius = 1; /*0x43be3b*/
-        BuildingClass::CleanupOccupation(this); /*0x43be42*/
+        ((BuildingClass*)this)->CleanupOccupation(); /*0x43be42*/
       }
     }
   }
@@ -482,7 +482,7 @@ int BuildingClass::Dtor()
       owner = ((unsigned int *)this)[0]; /*0x43bf29*/
       if ( owner ) /*0x43bf31*/
         HouseClass::DecrementUnitCount(owner, this); /*0x43bf34*/
-      BuildingClass::Sell(this); /*0x43bf3b*/
+      ((BuildingClass*)this)->Sell(); /*0x43bf3b*/
     }
   }
   Factory = this->Factory; /*0x43bf40*/

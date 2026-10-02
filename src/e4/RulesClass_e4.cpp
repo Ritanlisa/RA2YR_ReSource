@@ -746,7 +746,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)a1 = (unsigned int)(&vt_VectorClass); /*0x67bf26*/
     if ( (unsigned int *)a1 != a5 ) /*0x67bf2c*/
     {
-      TypeList_cptr_TerrainTypeClass::TryFreeAndClear((_VectorClass_PBVTerrainTypeClass *)a1); /*0x67bf30*/
+      ((TypeList_cptr_TerrainTypeClass*)(_VectorClass_PBVTerrainTypeClass *)a1)->TryFreeAndClear(); /*0x67bf30*/
       v13 = a5[2]; /*0x67bf36*/
       *(unsigned int *)(a1 + 8) = v13; /*0x67bf3b*/
       if ( v13 ) /*0x67bf3e*/

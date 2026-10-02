@@ -284,7 +284,7 @@ AnimClass * * InfantryClass::ProcessIdleDeploy()
       v4 = this->SequenceAnim[0]; /*0x520165*/
       if ( v4 != 27 && v4 != 28 && v4 != 29 && v4 != 30 ) /*0x52017d*/
       {
-        if ( !(uint8_t)House::IsCurrentPlayer((House *)((unsigned int *)this)[0]) ) /*0x520185*/
+        if ( !(uint8_t)((House*)(House *)((unsigned int *)this)[0])->IsCurrentPlayer() ) /*0x520185*/
           goto LABEL_42; /*0x520185*/
         if ( !((unsigned int *)this)[0] ) /*0x52018e*/
         {
@@ -372,12 +372,12 @@ AnimClass * InfantryClass::CanDeployAtCell(__int16 *a2, __int16 *a3, int a1, int
     return 0; /*0x5221f3*/
   if ( (*((int (**)(InfantryClass *))a1->vtable1 + 114))(a1) > 0 ) /*0x522202*/
     return 1; /*0x522202*/
-  if ( (uint8_t)House::IsCurrentPlayer((House *)((unsigned int *)a1)[0]) ) /*0x52220e*/
+  if ( (uint8_t)((House*)(House *)((unsigned int *)a1)[0])->IsCurrentPlayer() ) /*0x52220e*/
   {
     v5 = (InfantryClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x522221*/
     if ( v5 ) /*0x522228*/
     {
-      if ( InfantryClass::ValidateAttackPosition(v5) ) /*0x52222c*/
+      if ( ((InfantryClass*)v5)->ValidateAttackPosition() ) /*0x52222c*/
         return 0; /*0x52223b*/
     }
   }

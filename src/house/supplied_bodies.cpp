@@ -107,8 +107,8 @@ int HouseClass::GetFactoryProducing(int a2) {
       if ( ++v2 >= *(int *)&stru_A83D50.__pad_C8[40] ) /*0x4f8417*/
         return 0; /*0x4f8417*/
     }
-    if ( !AbstractClass::GetType((AbstractClass *)v5) /*0x4f8407*/
-      || (Type = AbstractClass::GetType(*(AbstractClass **)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * v2)),
+    if ( !((AbstractClass*)(AbstractClass *)v5)->GetType() /*0x4f8407*/
+      || (Type = ((AbstractClass*)*(AbstractClass **)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * v2))->GetType(),
           (*(int (__thiscall **)(int))(*(unsigned int *)Type + 132))(Type) != a2) )
     {
       v4 = *(unsigned int *)&stru_A83D50.__pad_C8[28]; /*0x4f8409*/

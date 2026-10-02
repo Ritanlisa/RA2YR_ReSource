@@ -132,7 +132,7 @@ int AudioSample::ResetState() {
       *((unsigned int *)this + 37) = v3; /*0x402522*/
       *((unsigned int *)this + 38) = 0; /*0x40252b*/
       *((unsigned int *)this + 39) = 0; /*0x402531*/
-      result = AudioMixer::Init((AudioMixer *)&this->AudioSample_field_0x10); /*0x402537*/
+      result = ((AudioMixer*)(AudioMixer *)&this->AudioSample_field_0x10)->Init(); /*0x402537*/
       *((unsigned int *)this + 90) = 0; /*0x40253c*/
     }
     return result; /*0x402543*/

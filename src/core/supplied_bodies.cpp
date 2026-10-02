@@ -53,7 +53,7 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int *a2, int a3, int a4) {
     v9 = 0; /*0x4f37d6*/
     Vector::Clear((int)v8); /*0x4f37de*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x4f37e7*/
-    result = (unsigned int *)BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x4f37ef*/
+    result = (unsigned int *)((BufferIOFileClass*)(BufferIOFileClass *)&v7)->Dtor(); /*0x4f37ef*/
     if ( v5 ) /*0x4f37f6*/
     {
       result = (unsigned int *)RA2_OPNEW(0x30u); /*0x4f37fa*/
@@ -100,7 +100,7 @@ void ReferenceCounted::Constructor() {
 // 0x765C70
 namespace gamemd {
 unsigned int * COMClass::releaseInterface() {
-    ComPtr::Constructor((ComPtr *)this); /*0x765c73*/
+    ((ComPtr*)(ComPtr *)this)->Constructor(); /*0x765c73*/
     *(unsigned int *)this->__pad_0 = 0; /*0x765c78*/
     return this->__pad_0; /*0x765c80*/
 }

@@ -90,14 +90,14 @@ int AudioQueue::StopAllVoices() {
     Voice *v7; // [esp+0h] [ebp-Ch]
 
     v3 = v1; /*0x403733*/
-    result = AudioQueue::GetNext((AudioQueue *)(v2 + 248)); /*0x40373b*/
+    result = ((AudioQueue*)(AudioQueue *)(v2 + 248))->GetNext(); /*0x40373b*/
     v5 = (AudioQueue *)result; /*0x403740*/
     v6 = result; /*0x403744*/
     if ( result ) /*0x403746*/
     {
       do /*0x403766*/
       {
-        result = AudioQueue::GetNextAlt(v5); /*0x40374a*/
+        result = ((AudioQueue*)v5)->GetNextAlt(); /*0x40374a*/
         v5 = (AudioQueue *)result; /*0x403752*/
         if ( v3 == -1 || *(unsigned int *)(v6 + 12) == v3 ) /*0x403759*/
           result = Voice::Stop(v7); /*0x40375d*/

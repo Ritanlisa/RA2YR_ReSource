@@ -194,7 +194,7 @@ char WOL_RequestMatch(void * a1)
   ObjectClass *v30; // [esp+0h] [ebp-124h]
   unsigned char v31[276]; // [esp+10h] [ebp-114h] BYREF
 
-  DeleteAndZero::Alt2((DeleteAndZero *)&stru_B76AC4); /*0x7a069f*/
+  ((DeleteAndZero*)(DeleteAndZero *)&stru_B76AC4)->Alt2(); /*0x7a069f*/
   v1 = (HWND)((Dialog*)(Dialog *)0x11F)->FindByHandle(); /*0x7a06a9*/
   if ( v1 ) /*0x7a06b2*/
     CloseDialog(v1, 0); /*0x7a06b8*/

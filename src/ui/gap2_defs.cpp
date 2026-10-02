@@ -283,7 +283,7 @@ void* CheckListClass::QueryInterface(int a2) {
     ListClass::RemoveItem((ListClass *)this, 0); /*0x488700*/
     RA2_OPDEL(Clamped); /*0x488706*/
   }
-  ListClass::Destruct((ListClass *)this); /*0x488718*/
+  ((ListClass*)(ListClass *)this)->Destruct(); /*0x488718*/
   if ( (a2 & 1) != 0 ) /*0x488722*/
     RA2_OPDEL(this); /*0x488725*/
   return (unsigned int *)this; /*0x48872f*/

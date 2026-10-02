@@ -25,7 +25,7 @@ LRESULT OptionsDlgProcWOL_Assign(ObjectClass * aP0, WPARAM wParam, void ** a2)
 
   v5 = SendMessageA((HWND)(aP0), 0x149u, wParam, 0); /*0x623fd9*/
   if ( v5 <= 0 ) /*0x623fdd*/
-    DeleteAndZero::Alt2(a2); /*0x623fe3*/
+    ((DeleteAndZero*)a2)->Alt2(); /*0x623fe3*/
   v6 = (char *)RA2_OPNEW(v5 + 2); /*0x623ff4*/
   v7 = SendMessageA((HWND)(aP0), 0x4BDu, wParam, (LPARAM)v6); /*0x624000*/
   ((String *)(a2))->Assign_Alt(v6); /*0x624007*/

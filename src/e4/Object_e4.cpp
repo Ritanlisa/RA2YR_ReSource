@@ -758,7 +758,7 @@ LABEL_39:
     v5[2] = dword_AC4950; /*0x62af3c*/
     return (void **)(result); /*0x62af3c*/
   }
-  if ( !ParasiteClass::CanExistOnVictimCell((ParasiteClass *)this) ) /*0x62ac5a*/
+  if ( !((ParasiteClass*)(ParasiteClass *)this)->CanExistOnVictimCell() ) /*0x62ac5a*/
   {
     v12 = ((unsigned int)((*((ProgressTimer *)((ProgressTimer *)(*(unsigned int *)&this->__pad_C[28] + 904)))->GetValue(&v26) >> 12) /*0x62ad3a*/
                         + 1) >> 1)

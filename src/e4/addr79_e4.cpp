@@ -58,7 +58,7 @@ void sub_792CF0(HWND hWnd, UINT, WPARAM, char * a4)
         }
         else if ( (uint16_t)a3 == 1422 ) /*0x792e12*/
         {
-          WebBrowser::ShowDialog(aNetstatus); /*0x792e19*/
+          ((WebBrowser*)aNetstatus)->ShowDialog(); /*0x792e19*/
           return 0; /*0x792e21*/
         }
         break;
@@ -96,7 +96,7 @@ void sub_792CF0(HWND hWnd, UINT, WPARAM, char * a4)
     case 0x14u: /*0x792d16*/
       goto LABEL_6;
     case 0x2Bu: /*0x792d16*/
-      Dialog::Resize(a4); /*0x792d34*/
+      ((Dialog*)a4)->Resize(); /*0x792d34*/
   LABEL_6:
       result = 1; /*0x792d39*/
       break; /*0x792d3f*/
@@ -162,7 +162,7 @@ int sub_793280(HWND hWnd, UINT, WPARAM, char * a4)
         case 0x14u: /*0x793297*/
           return 1; /*0x7932b8*/
         case 0x2Bu: /*0x793297*/
-          Dialog::Resize(a4); /*0x7932ab*/
+          ((Dialog*)a4)->Resize(); /*0x7932ab*/
           return 1; /*0x7932ab*/
       }
       return 0; /*0x7932a1*/

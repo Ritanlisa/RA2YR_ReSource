@@ -846,9 +846,9 @@ void PostLoadInitScenario()
   {
     ((House *)(m))->AnnounceUpgrade(-1); /*0x684faf*/
   }
-  MapClass::ProcessRegion((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x684fc7*/
+  ((MapClass*)(MapClass *)&stru_87F5F0.__pad_58[416])->ProcessRegion(); /*0x684fc7*/
   Terrain::ConnectivityGraph((Terrain *)&stru_87F5F0.__pad_58[416]); /*0x684fd1*/
-  MapClass::BuildSubzones((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x684fdb*/
+  ((MapClass*)(MapClass *)&stru_87F5F0.__pad_58[416])->BuildSubzones(); /*0x684fdb*/
   MarkCliffEdgePassability((int)&stru_87F5F0.__pad_58[416]); /*0x684fe5*/
   if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 404) ) /*0x684ff0*/
   {
@@ -1061,7 +1061,7 @@ void ScenarioClass_Reset()
   CleanupVeinholeSystem(); /*0x685510*/
   BuildingClass::FreeUpgradeQueue(); /*0x685515*/
   BuildingClass::FreeUpgradeQueue2(); /*0x68551a*/
-  Stream::FlushAndReset(&dword_87F5D8); /*0x685524*/
+  ((Stream*)&dword_87F5D8)->FlushAndReset(); /*0x685524*/
   LoadGame::CleanupArray(&g_MissionQueueFrame); /*0x68552e*/
   LoadGame::ClearAllSlots(g_CellClassManager); /*0x685538*/
   PlanningNodeClass::CleanupAll(); /*0x68553d*/

@@ -44,7 +44,7 @@ int ListBox::Clear() {
 // 0x6AC780
 namespace gamemd {
 unsigned int * SidebarClass::queryInterface(char a2, int a5, int a6, int a4) {
-    GadgetClass::Dtor((GadgetClass *)this); /*0x6ac783*/
+    ((GadgetClass*)(GadgetClass *)this)->Dtor(); /*0x6ac783*/
     if ( (a2 & 1) != 0 ) /*0x6ac78d*/
       RA2_OPDEL(this); /*0x6ac790*/
     return &this->field_0; /*0x6ac79a*/

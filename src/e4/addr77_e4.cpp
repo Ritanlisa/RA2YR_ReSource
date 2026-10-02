@@ -882,7 +882,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
       v20 = (const char *)(aSidebardown); /*0x77799e*/
       if ( (wParam & 0x80000000) == 0 ) /*0x7779a3*/
         v20 = (const char *)(aSidebarup); /*0x7779a5*/
-      Sidebar::ScrollSidebarSkipGame(v20); /*0x7779aa*/
+      ((Sidebar*)v20)->ScrollSidebarSkipGame(); /*0x7779aa*/
       byte_B73561 = 0; /*0x7779af*/
   LABEL_69:
       v14 = Msg; /*0x7779b5*/

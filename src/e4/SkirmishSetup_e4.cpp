@@ -168,7 +168,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
         case 0x14u: /*0x5e694c*/
           goto LABEL_5;
         case 0x2Bu: /*0x5e694c*/
-          Dialog::Resize((char *)_3C); /*0x5e6957*/
+          ((Dialog*)(char *)_3C)->Resize(); /*0x5e6957*/
 LABEL_5:
           result = 1; /*0x5e695c*/
           break; /*0x5e6968*/
@@ -236,7 +236,7 @@ LABEL_5:
           if ( !(unsigned char)v10 ) /*0x5e6b41*/
           {
 LABEL_28:
-            SkirmishSetup::PlayButtonClickAnim((SkirmishSetup *)v9); /*0x5e6b49*/
+            ((SkirmishSetup*)(SkirmishSetup *)v9)->PlayButtonClickAnim(); /*0x5e6b49*/
             ShowWindow((HWND)v9, 5); /*0x5e6b51*/
             return 0; /*0x5e6b60*/
           }

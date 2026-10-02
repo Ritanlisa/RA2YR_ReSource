@@ -247,7 +247,7 @@ LABEL_52:
     if ( !((TechnoClass *)(a0))->CheckTargetCell() /*0x6fc623*/
       && !(*((uint8_t (**)(TechnoClass *))a0->vtable1 + 224))(a0) )
     {
-      if ( !SpawnManagerClass::CountAliveSpawns(a0->spawnManager) ) /*0x6fc637*/
+      if ( !((SpawnManagerClass*)a0->spawnManager)->CountAliveSpawns() ) /*0x6fc637*/
         return (gamemd::TechnoClass **)(3); /*0x6fc64c*/
       goto LABEL_98; /*0x6fc63e*/
     }

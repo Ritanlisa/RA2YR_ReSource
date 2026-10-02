@@ -147,7 +147,7 @@ LABEL_40:
     v11 = (TeamTypeClass *)__2_YAPAXI_Z(0x74u); /*0x4fa4e7*/
     if ( !v11 ) /*0x4fa4f1*/
       goto LABEL_40; /*0x4fa4f1*/
-    v10 = TeamTypeClass::Construct(v11); /*0x4fa4fa*/
+    v10 = ((TeamTypeClass*)v11)->Construct(); /*0x4fa4fa*/
     if ( !v10 ) /*0x4fa4fe*/
       goto LABEL_40; /*0x4fa4fe*/
   }

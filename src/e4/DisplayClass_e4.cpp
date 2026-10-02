@@ -133,7 +133,7 @@ int DisplayClass::SetSize()
   LayerClass *v2; // esi
   int result; // eax
 
-  MapClass::Destru_vt07((gamemd::MapClass *)this); /*0x4a88c3*/
+  ((MapClass*)(gamemd::MapClass *)this)->Destru_vt07(); /*0x4a88c3*/
   *(unsigned int *)&this->__pad_1198[12] = 0; /*0x4a88cd*/
   this->DisplayClass_field_0x11A8 = 0; /*0x4a88d3*/
   *(unsigned int *)this->__pad_11AC = -1; /*0x4a88d9*/
@@ -1114,7 +1114,7 @@ namespace gamemd {
 DisplayClass * DisplayClass::Read(char * Block, char a2)
 {
 
-  MapClass::Destruct((char *)Block); /*0x4aebf3*/
+  ((MapClass*)(char *)Block)->Destruct(); /*0x4aebf3*/
   if ( (a2 & 1) != 0 ) /*0x4aebfd*/
     __3_YAXPAX_Z(Block); /*0x4aec00*/
   return (char *)Block; /*0x4aec0a*/

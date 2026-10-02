@@ -85,7 +85,7 @@ AbstractClass * * NetworkClass::RecordEvent()
   result = FactoryClass::GetFlag(); /*0x6ffe39*/
   if ( (unsigned char)result ) /*0x6ffe40*/
   {
-    result = (int)(NetworkClass::ExecutePlanningModeCmd(v5));
+    result = (int)(((NetworkClass*)v5)->ExecutePlanningModeCmd());
     LOBYTE(result) = 0; /*0x6ffe4b*/
   }
   else

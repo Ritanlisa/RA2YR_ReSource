@@ -722,12 +722,12 @@ int Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
         v11 = v10 - Ticks; /*0x4a3cc1*/
         if ( v11 >= v22 ) /*0x4a3cc5*/
 // 0x4a4780
-          return Surface::CreateSurfacePalette(v26); /*0x4a3cc5*/
+          return ((Surface*)v26)->CreateSurfacePalette(); /*0x4a3cc5*/
         v9 = v22 - v11; /*0x4a3ccb*/
       }
       if ( !v9 ) /*0x4a3ccf*/
 // 0x4a4780
-        return Surface::CreateSurfacePalette(v26); /*0x4a3daf*/
+        return ((Surface*)v26)->CreateSurfacePalette(); /*0x4a3daf*/
       qmemcpy(Src, v24, sizeof(Src)); /*0x4a3ce8*/
       v12 = v22; /*0x4a3cea*/
       if ( v8 != -1 ) /*0x4a3cee*/
@@ -750,7 +750,7 @@ int Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
         break; /*0x4a3d50*/
       v17 = 0; /*0x4a3d8c*/
   LABEL_19:
-      Surface::CreateSurfacePalette(Src); /*0x4a3d56*/
+      ((Surface*)Src)->CreateSurfacePalette(); /*0x4a3d56*/
       if ( a3 ) /*0x4a3d64*/
   LABEL_20:
         a3(); /*0x4a3d66*/

@@ -1235,7 +1235,7 @@ AbstractClass * * sub_58EF10()
     {
       do /*0x58f059*/
       {
-        RandomMap::CollectBorderCells(*(RandomMap **)(g_MissionQueueFrame.briefing[339] + 4 * v11)); /*0x58f04b*/
+        ((RandomMap*)*(RandomMap **)(g_MissionQueueFrame.briefing[339] + 4 * v11))->CollectBorderCells(); /*0x58f04b*/
         v4 = g_MissionQueueFrame.briefing[342]; /*0x58f050*/
         ++v11; /*0x58f056*/
       }
@@ -1246,7 +1246,7 @@ AbstractClass * * sub_58EF10()
     {
       do /*0x58f077*/
       {
-        RandomMap::AllocateArea(*(RandomMap **)(g_MissionQueueFrame.briefing[339] + 4 * v12)); /*0x58f069*/
+        ((RandomMap*)*(RandomMap **)(g_MissionQueueFrame.briefing[339] + 4 * v12))->AllocateArea(); /*0x58f069*/
         v4 = g_MissionQueueFrame.briefing[342]; /*0x58f06e*/
         ++v12; /*0x58f074*/
       }
@@ -1752,7 +1752,7 @@ int sub_58B740()
 namespace gamemd {
 int unknown_libname_23()
 {
-  RandomMap::CleanupRandomMapData((int)byte_ABDFD8); /*0x58b765*/
+  ((RandomMap*)(int)byte_ABDFD8)->CleanupRandomMapData(); /*0x58b765*/
 }
 } // namespace gamemd
 

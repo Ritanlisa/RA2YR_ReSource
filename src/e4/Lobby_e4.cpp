@@ -382,7 +382,7 @@ LABEL_111: v19 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Open), 0,(const 
     SendMessageA(DlgItem, 0x4C0u, 0xFFFFFFFF, (LPARAM)v32); /*0x5eb621*/
     if ( !v35 ) /*0x5eb629*/
       ShowWindow(DlgItem, 5); /*0x5eb62e*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v38); /*0x5eb638*/
+    ((DeleteAndZero*)(DeleteAndZero *)&v38)->Alt(); /*0x5eb638*/
     v36 = (ObjectClass *)((char *)v16 + 1); /*0x5eb641*/
   }
   while ( (int)v16 + 1 < 8 );
@@ -539,7 +539,7 @@ int Lobby::BuildPlayerList()
       v3 = ToWideStringCharAlt((char **)&((char *)&v7), (const wchar_t **)&((char *)&v7)); /*0x77dbeb*/
       ((String *)((String *)&v7))->Reassign((const char **)v3); /*0x77dbf5*/
       DeleteAndZero((ObjectClass *)&((char *)&v7)); /*0x77dbfe*/
-      DeleteAndZero::Alt((DeleteAndZero *)&((char *)&v7)); /*0x77dc07*/
+      ((DeleteAndZero*)(DeleteAndZero *)&((char *)&v7))->Alt(); /*0x77dc07*/
     }
     else
     {

@@ -366,7 +366,7 @@ LABEL_151:
                 Dialog::ShowMessageBox((int)v26, v71, 0, 0, 0, (int)v72);
                 v27 = GetDlgItem((HWND)hWnd, 1559);
                 EnableWindow(v27, 1);
-                DeleteAndZero::Alt((void **)&v82);
+                ((DeleteAndZero*)(void **)&v82)->Alt();
                 return;
               }
               MultiplayerGameMode_GetFirst();
@@ -589,7 +589,7 @@ LABEL_151:
               *(&g_MatrixTransformState + 2257) = 0;
             }
             *WindowLongA = var244;
-            DeleteAndZero::Alt((void **)&v82);
+            ((DeleteAndZero*)(void **)&v82)->Alt();
           }
           break;
       }

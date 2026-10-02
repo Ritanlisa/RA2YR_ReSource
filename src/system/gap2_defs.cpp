@@ -48,7 +48,7 @@ void* CCFileClass::Destru_vt00(char a2, int a3, int a4, int a5) {
   *((unsigned int *)Block + 25) = 0; /*0x4019ac*/
   Vector::Clear((int)Block + 88); /*0x4019b3*/
   *(unsigned int *)Block->CDFileClass = &off_7E1668; /*0x4019ba*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)Block); /*0x4019c0*/
+  ((BufferIOFileClass*)(BufferIOFileClass *)Block)->Dtor(); /*0x4019c0*/
   if ( (a2 & 1) != 0 ) /*0x4019ca*/
     __3_YAXPAX_Z(Block); /*0x4019cd*/
   return Block->CDFileClass; /*0x4019d7*/
@@ -368,7 +368,7 @@ void CCFileClass::Create() {
   RawFileClass v6; // [esp+28h] [ebp-24h] BYREF
 
   RawFileClass::Construct(&v6, (int)aPbeaconShp); /*0x4309df*/
-  EntireFile = (int16_t *)CCFileClass::ReadEntireFile((CCFileClass *)&v6); /*0x4309e8*/
+  EntireFile = (int16_t *)((CCFileClass*)(CCFileClass *)&v6)->ReadEntireFile(); /*0x4309e8*/
   dword_89C474 = (int)EntireFile; /*0x4309ef*/
   if ( EntireFile || (EntireFile = (int16_t *)SearchMIXFile(aPbeaconShp, 0), (dword_89C474 = (int)EntireFile) != 0) ) /*0x430a09*/
   {
@@ -381,7 +381,7 @@ void CCFileClass::Create() {
     Debug::Log(); /*0x430a32*/
   }
   RawFileClass::Construct(&v5, (int)aRdrbeacnShp); /*0x430a43*/
-  v3 = (int16_t *)CCFileClass::ReadEntireFile((CCFileClass *)&v5); /*0x430a4c*/
+  v3 = (int16_t *)((CCFileClass*)(CCFileClass *)&v5)->ReadEntireFile(); /*0x430a4c*/
   dword_89C478 = (int)v3; /*0x430a53*/
   if ( v3 || (v3 = (int16_t *)SearchMIXFile(aRdrbeacnShp, 0), (dword_89C478 = (int)v3) != 0) ) /*0x430a6d*/
   {
@@ -467,7 +467,7 @@ int CCFileClass::SetName(char *Source, int aP1, int a2, int a3, int a1) {
             aP1,
             (const char *)(*(int (**)(BufferIOFileClass *))(*(unsigned int *)&this->FileClass + 4))(this)) )
       return (*(int (**)(BufferIOFileClass *))(*(unsigned int *)&this->FileClass + 4))(this); /*0x431ee1*/
-    BufferIO::Flush((BufferIO *)this); /*0x431ee6*/
+    ((BufferIO*)(BufferIO *)this)->Flush(); /*0x431ee6*/
     HIBYTE(this->BufferOffset) = 0; /*0x431eeb*/
   }
   FileClass::SetName(this, aP1); /*0x431ef2*/

@@ -83,7 +83,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
     v11 = g_INI_Key_No; /*0x531bba*/
   sprintf(Buffer, "MMX %s, Vendor: %s", v11, Source);
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531be4*/
-  CreditsScreen::Init(Buffer); /*0x531bea*/
+  ((CreditsScreen*)Buffer)->Init(); /*0x531bea*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531bfc*/
   return 0; /*0x531bfe*/
 

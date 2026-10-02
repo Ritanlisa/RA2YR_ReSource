@@ -260,7 +260,7 @@ int COMObject::SetField(int a1) {
 // 0x4E30F0
 namespace gamemd { 
 void* COMObject::ScalarDtor(int a2) {
-  GadgetClass::Dtor((GadgetClass *)this); /*0x4e30f3*/
+  ((GadgetClass*)(GadgetClass *)this)->Dtor(); /*0x4e30f3*/
   if ( (a2 & 1) != 0 ) /*0x4e30fd*/
     RA2_OPDEL(this); /*0x4e3100*/
   return this->__pad_0; /*0x4e310a*/
@@ -403,7 +403,7 @@ int unknown::Release(int a1, void* a2) {
         {
           do /*0x589599*/
           {
-            unknown::Init(v6); /*0x589590*/
+            ((unknown*)v6)->Init(); /*0x589590*/
             v6 += 8; /*0x589595*/
             --v3; /*0x589598*/
           }

@@ -172,7 +172,7 @@ void sub_5E2AC0()
       v4 = (wchar_t *)(((WideString*)(wchar_t **)&v5)->GetOrEmpty());
       DrawDialogText(-1, v4, DlgItem); /*0x5e2b82*/
       InvalidateRect(DlgItem, 0, 0); /*0x5e2b8c*/
-      DeleteAndZero::Alt((void **)&v5); /*0x5e2b96*/
+      ((DeleteAndZero*)(void **)&v5)->Alt(); /*0x5e2b96*/
     }
     else
     {

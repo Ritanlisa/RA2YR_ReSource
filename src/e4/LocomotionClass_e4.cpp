@@ -28,7 +28,7 @@ int LocomotionClass::Initialize()
   int v2; // ecx
   int v3; // ecx
 
-  LocomotionClass::Init(this); /*0x4af543*/
+  ((LocomotionClass*)this)->Init(); /*0x4af543*/
   *((unsigned int *)this + 7) = 0; /*0x4af54d*/
   *((unsigned int *)this + 8) = 0; /*0x4af550*/
   v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4af553*/
@@ -138,7 +138,7 @@ namespace gamemd {
 int LocomotionClass::ProcessData()
 {
 
-  LocomotionClass::Init(this); /*0x513c24*/
+  ((LocomotionClass*)this)->Init(); /*0x513c24*/
   *((unsigned int *)this + 6) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1436); /*0x513c34*/
   *((unsigned int *)this + 7) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1440); /*0x513c3d*/
   *((unsigned int *)this + 8) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1444); /*0x513c49*/
@@ -171,7 +171,7 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   int v2; // ecx
   int v4; // [esp+Ch] [ebp-4h] BYREF
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x54ac46*/
+  ((LocomotionClass*)(LocomotionClass *)this)->Init(); /*0x54ac46*/
   (&this->DestinationCoords)[0] = dword_ABC5A8; /*0x54ac59*/
   (&this->DestinationCoords)[1] = dword_ABC5AC; /*0x54ac61*/
   v2 = dword_ABC5B0; /*0x54ac64*/

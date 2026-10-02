@@ -1310,7 +1310,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       Dialog::InitializeControls((HWND)(aP0), 0); /*0x622f36*/
       EnumChildWindows((HWND)(aP0), Dialog::InitWindow, 0); /*0x622f42*/
       Dialog::InitWindow((int)(aP0), 0); /*0x622f46*/
-      Dialog::GetField(aP0); /*0x622f4d*/
+      ((Dialog*)aP0)->GetField(); /*0x622f4d*/
       UI_Helper_60D2C0(aP0, v22); /*0x622f56*/
       if ( !(uint8_t)((SessionClass *)(&g_GameMode_Current))->GetGameSpeed() ) /*0x622f60*/
         Control::CreateControlDialog(aP0); /*0x622f6b*/

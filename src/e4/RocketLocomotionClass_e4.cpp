@@ -20,7 +20,7 @@ RocketLocomotionClass::RocketLocomotionClass()
 
   int v2; // ecx
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x661ec3*/
+  ((LocomotionClass*)(LocomotionClass *)this)->Init(); /*0x661ec3*/
   this->MovingDestination[0] = dword_B04E38; /*0x661ed1*/
   this->MovingDestination[1] = dword_B04E3C; /*0x661eda*/
   this->MovingDestination[2] = dword_B04E40; /*0x661ee3*/
@@ -98,7 +98,7 @@ RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2, int a3)
 
   *(unsigned int *)Block->LocomotionClass = &vt_RocketLocomotionClass; /*0x6635c3*/
   *(unsigned int *)&Block->LocomotionClass[4] = &vt_RocketLocomotionClass; /*0x6635c9*/
-  LocomotionClass::Construct((LocomotionClass *)Block); /*0x6635d0*/
+  ((LocomotionClass*)(LocomotionClass *)Block)->Construct(); /*0x6635d0*/
   if ( (a2 & 1) != 0 ) /*0x6635da*/
     __3_YAXPAX_Z(Block); /*0x6635dd*/
   return Block->LocomotionClass; /*0x6635e7*/

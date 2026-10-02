@@ -95,7 +95,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
   else
   {
     v5 = a1; /*0x415f0b*/
-    v6 = TechnoClass::FireWeapon(this); /*0x415f12*/
+    v6 = ((TechnoClass*)this)->FireWeapon(); /*0x415f12*/
     v7 = (double *)v6; /*0x415f17*/
     v51 = (double *)v6; /*0x415f1b*/
     if ( v6 ) /*0x415f1f*/
@@ -107,8 +107,8 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v52 = (*(int (**)(unsigned int))(**((unsigned int **)&this->q0A43) + 132))(this->q674); /*0x415f5c*/
         v8 = v7 + 29; /*0x415f60*/
         v54 = (double)v52; /*0x415f6c*/
-        BulletClass::NormalizeZeroVector(v8); /*0x415f70*/
-        Vector3::Magnitude(v8); /*0x415f77*/
+        ((BulletClass*)v8)->NormalizeZeroVector(); /*0x415f70*/
+        ((Vector3*)v8)->Magnitude(); /*0x415f77*/
         v9 = v54 / v54; /*0x415f7c*/
         *v8 = v54 / v54 * *v8; /*0x415f8b*/
         v8[1] = v9 * v8[1]; /*0x415f92*/
@@ -116,7 +116,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v52 = (int16_t)*Vector::ToFacingMath(v8, &v52) - 0x3FFF; /*0x415fa9*/
         v10 = (double)v52 * -0.00009587672516830327; /*0x415fb3*/
         *(double *)v53 = v10; /*0x415fb9*/
-        Vector3::Magnitude(v8); /*0x415fbd*/
+        ((Vector3*)v8)->Magnitude(); /*0x415fbd*/
         v54 = v10; /*0x415fc2*/
         if ( *(double *)v53 != 0.0 ) /*0x415fd5*/
         {
@@ -177,7 +177,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v52 = (int16_t)*Vector::ToFacingMath(v51 + 29, v53) - 0x3FFF; /*0x416231*/
         v30 = (double)v52 * -0.00009587672516830327; /*0x41623b*/
         *(double *)v53 = v30; /*0x416241*/
-        Vector3::Magnitude(v51 + 29); /*0x416245*/
+        ((Vector3*)v51 + 29)->Magnitude(); /*0x416245*/
         v54 = v30; /*0x41624a*/
         if ( *(double *)v53 != 0.0 ) /*0x41625d*/
         {
@@ -198,7 +198,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v51[31] = Math::SinCos(v47) * v54; /*0x4162de*/
         v35 = (double)*(int *)(*(unsigned int *)(*(int (**)(void *, unsigned int))(*(unsigned int *)&this->q1946))(this, 0) + 168); /*0x4162ed*/
         v54 = v35; /*0x4162f3*/
-        BulletClass::NormalizeZeroVector(v25); /*0x4162f7*/
+        ((BulletClass*)v25)->NormalizeZeroVector(); /*0x4162f7*/
         Vector3::Magnitude(v25); /*0x4162fe*/
         v36 = v54 / v35; /*0x416303*/
         *v25 = v36 * *v25; /*0x41630b*/

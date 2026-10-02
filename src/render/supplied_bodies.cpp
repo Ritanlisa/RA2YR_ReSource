@@ -114,7 +114,7 @@ int BuildingQueue::IsCellSuitable(int a2) {
       IDA_LOBYTE(result) = 1; /*0x42e7dc*/
       return result; /*0x42e7df*/
     }
-    result = (int)Cell::IsBridge((Cell *)result); /*0x42e7e4*/
+    result = (int)((Cell*)(Cell *)result)->IsBridge(); /*0x42e7e4*/
     if ( result ) /*0x42e7eb*/
       IDA_LOBYTE(result) = 1; /*0x42e7ee*/
     else

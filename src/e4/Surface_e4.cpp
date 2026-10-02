@@ -1392,7 +1392,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
       {
         v64 = &v8[v7 - 1]; /*0x7603ac*/
       }
-      Voxel::loadSectionData((Voxel *)this); /*0x7603ba*/
+      ((Voxel*)(Voxel *)this)->loadSectionData(); /*0x7603ba*/
       v10 = *((unsigned int *)this + 115); /*0x7603bf*/
       if ( v10 <= 1 || v10 >= 6 ) /*0x7603d1*/
       {

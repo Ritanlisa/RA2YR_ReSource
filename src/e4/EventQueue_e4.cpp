@@ -54,7 +54,7 @@ short EventQueue::Read()
     if ( !(uint8_t)EventQueue::CheckPosition(this) ) /*0x54f093*/
       MessageLoop(); /*0x54f09c*/
   }
-  while ( *((unsigned int *)this + 197) == *((unsigned int *)this + 198) || !EventQueue::Check(this) ); /*0x54f0b3*/
+  while ( *((unsigned int *)this + 197) == *((unsigned int *)this + 198) || !((EventQueue*)this)->Check() ); /*0x54f0b3*/
   v3 = *((unsigned int *)this + 197); /*0x54f0bd*/
   v4 = *((unsigned int *)this + 198); /*0x54f0c3*/
   result = 0; /*0x54f0c9*/

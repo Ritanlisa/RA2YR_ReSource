@@ -1398,7 +1398,7 @@ LABEL_15:
         v10->vtable1 = v3; /*0x55b806*/
         v10->vtable1 = v15; /*0x55b808*/
         v10->vtable2 = v11; /*0x55b810*/
-        MapClass::ProcessFogTransition((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x55b813*/
+        ((MapClass*)(MapClass *)&stru_87F5F0.__pad_58[416])->ProcessFogTransition(); /*0x55b813*/
         goto LABEL_16; /*0x55b813*/
       }
       vtable2 -= (unsigned char *)v3 - vtable0; /*0x55b7eb*/

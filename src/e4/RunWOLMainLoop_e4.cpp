@@ -128,7 +128,7 @@ int sub_785EA0()
       StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtWolLoggingO), 0,(const char *)(g_Str_File_wonline_cpp), 9527));
       ((WideString *)((wchar_t **)&v15))->Assign(StringCSF); /*0x785fa4*/
       ShowUIMessage(32, (wchar_t **)&v15, 0); /*0x785fb4*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v15); /*0x785fbd*/
+      ((DeleteAndZero*)(DeleteAndZero *)&v15)->Alt(); /*0x785fbd*/
       for ( j = 0; j < 5; ++j ) /*0x785fc8*/
       {
         for ( k = WaitForMultipleObjects(0x12u,(const HANDLE *)(&Handles), 0, 0x64u); /*0x785fdf*/
@@ -326,7 +326,7 @@ int sub_799D30()
     StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_FETCHING_SERVLIST), 0,(const char *)(g_Str_File_wonline_cpp), 24300));
     ((WideString *)((wchar_t **)&v13))->Assign(StringCSF); /*0x799d5c*/
     ShowUIMessage(16, (wchar_t **)&v13, 0); /*0x799d6c*/
-    DeleteAndZero::Alt(&v13); /*0x799d75*/
+    ((DeleteAndZero*)&v13)->Alt(); /*0x799d75*/
     v4 = 8960; /*0x799d7f*/
     if ( dword_A8B244 != 3 ) /*0x799d87*/
       v4 = 10496; /*0x799d89*/

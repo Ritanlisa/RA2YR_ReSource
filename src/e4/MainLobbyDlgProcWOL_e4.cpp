@@ -81,6 +81,6 @@ void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
   v14 = GetDlgItem(hDlg, 1781); /*0x77a9c6*/
   v15 = (wchar_t *)(((WideString*)(wchar_t **)&v16)->GetOrEmpty_Alt()); /*0x77a9c8*/
   SendMessageA(v14, 0x4B2u, 0, (LPARAM)v15); /*0x77a9d6*/
-  DeleteAndZero::Alt(&v16); /*0x77a9dc*/
+  ((DeleteAndZero*)&v16)->Alt(); /*0x77a9dc*/
 }
 } // namespace gamemd

@@ -78,7 +78,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
                                  v5,
                                  &v11);
         ((WideString *)(&v11))->Reassign_Alt(v6); /*0x766680*/
-        DeleteAndZero::Alt(&v13); /*0x766689*/
+        ((DeleteAndZero*)&v13)->Alt(); /*0x766689*/
         --v3; /*0x766692*/
         (unsigned int)(v2)|= v15[2]; /*0x766693*/
       }
@@ -108,7 +108,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
                                  v8,
                                  &v11);
         ((WideString *)(&v11))->Reassign_Alt(v9); /*0x766735*/
-        DeleteAndZero::Alt(&v13); /*0x76673e*/
+        ((DeleteAndZero*)&v13)->Alt(); /*0x76673e*/
         --v3; /*0x766747*/
         (unsigned int)(v2)|= v15[2]; /*0x766748*/
       }
@@ -119,7 +119,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   }
   ((WideString *)(a2))->AssignFromPtr((const wchar_t **)&v11); /*0x766776*/
   v16 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x76677f*/
-  DeleteAndZero::Alt(&v11); /*0x766787*/
+  ((DeleteAndZero*)&v11)->Alt(); /*0x766787*/
   return a2; /*0x76678e*/
 
 }
@@ -167,7 +167,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
     LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
   unknown_libname_73(&v17); /*0x771522*/
   vtable0 = (int)(this->vtable1); /*0x77152b*/
-  DeleteAndZero::Alt2(&v17); /*0x77153b*/
+  ((DeleteAndZero*)&v17)->Alt2(); /*0x77153b*/
   v12 = (&this->primaryFacing)[6 * a2 + 1]; /*0x771540*/
   if ( v12 > 0 )
   {

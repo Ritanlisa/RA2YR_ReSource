@@ -73,7 +73,7 @@ HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, c
 
   *(unsigned int *)Block->LocomotionClass = &vt_HoverLocomotionClass; /*0x5172c3*/
   *(unsigned int *)&Block->LocomotionClass[4] = &vt_HoverLocomotionClass; /*0x5172c9*/
-  LocomotionClass::Construct((gamemd::LocomotionClass *)Block); /*0x5172d0*/
+  ((LocomotionClass*)(gamemd::LocomotionClass *)Block)->Construct(); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
     __3_YAXPAX_Z(Block); /*0x5172dd*/
   return Block->LocomotionClass; /*0x5172e7*/

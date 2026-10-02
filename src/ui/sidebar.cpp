@@ -129,8 +129,8 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   }
   LABEL_39:
   v13 = v24; /*0x6a6467*/
-  if ( !(uint8_t)DialogControl::IsHidden((DialogControl *)&stru_B07C48 + 6 * v24) ) /*0x6a647a*/
-    DialogControl::Hide((GadgetClass *)(&stru_B07C48 + 8 * v24)); /*0x6a6485*/
+  if ( !(uint8_t)((DialogControl*)(DialogControl *)&stru_B07C48 + 6 * v24)->IsHidden() ) /*0x6a647a*/
+    ((DialogControl*)(GadgetClass *)(&stru_B07C48 + 8 * v24))->Hide(); /*0x6a6485*/
   if ( v24 == this->u32_539C ) /*0x6a6490*/
     ((Tactical*)(Tactical *)this)->UpdateUIVisibility(); /*0x6a6494*/
   (*((void (**)(SidebarClass *, int))((unsigned char *)(this) + 0x0) + 54))(this, 1); /*0x6a649f*/
@@ -163,7 +163,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
       }
       while ( v16 < 60 ); /*0x6a652f*/
       this->u32_539C = v10; /*0x6a6534*/
-      GadgetClass::Show((GadgetClass *)(&stru_B07C48 + 8 * v10)); /*0x6a6543*/
+      ((GadgetClass*)(GadgetClass *)(&stru_B07C48 + 8 * v10))->Show(); /*0x6a6543*/
       v18 = (char *)(&((unsigned char *)(this) + 0xCD2)[3988 * this->u32_539C + 2162]); /*0x6a6560*/
       *((unsigned char *)&this->u32_F94 * this->u32_539C + 5472) = 1; /*0x6a6567*/
       v19 = UI_Add_6AC430(v22); /*0x6a6570*/

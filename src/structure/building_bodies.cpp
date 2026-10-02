@@ -81,7 +81,7 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
                 --v8; /*0x50b029*/
               }
               while ( v8 ); /*0x50b02a*/
-              if ( BuildingClass::SWAvailable(v6) == i || BuildingClass::SW2Available(v6) == i ) /*0x50b044*/
+              if ( ((BuildingClass*)v6)->SWAvailable() == i || ((BuildingClass*)v6)->SW2Available() == i ) /*0x50b044*/
               {
                 v16 = 1; /*0x50b048*/
                 if ( v4 ) /*0x50b04d*/
@@ -106,7 +106,7 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
       Status = HouseClass::GetStatus((void *)0x39, 0); /*0x50b0ea*/
       if ( !v16 || ownerHouse->defeated ) /*0x50b0f4*/
       {
-        if ( !(uint8_t)SuperClass::Lose(*(unsigned int *)(ownerHouse->supersCount + 4 * i)) || !HouseClass_Player ) /*0x50b179*/
+        if ( !(uint8_t)((SuperClass*)*(unsigned int *)(ownerHouse->supersCount + 4 * i))->Lose() || !HouseClass_Player ) /*0x50b179*/
           goto LABEL_55; /*0x50b179*/
         if ( !v17 ) /*0x50b181*/
           goto LABEL_54; /*0x50b181*/

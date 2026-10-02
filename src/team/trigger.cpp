@@ -28,9 +28,9 @@ bool TriggerClass::HasCrossesHorizontalLineEvent() const
   buildingType = (HouseClass *)this->buildingType; /*0x726256*/
   if ( !nextTrigger ) /*0x72625b*/
 // 0x726f80
-    return HouseClass::HasType25Building(buildingType); /*0x72627d*/
-  return (uint8_t)HouseClass::HasType25Building(buildingType) /*0x726274*/
-      || TriggerClass::HasCrossesHorizontalLineEvent(this->nextTrigger);
+    return ((HouseClass*)buildingType)->HasType25Building(); /*0x72627d*/
+  return (uint8_t)((HouseClass*)buildingType)->HasType25Building() /*0x726274*/
+      || ((TriggerClass*)this->nextTrigger)->HasCrossesHorizontalLineEvent();
 }
 // 0x726290
 bool TriggerClass::HasCrossesVerticalLineEvent() const
@@ -42,9 +42,9 @@ bool TriggerClass::HasCrossesVerticalLineEvent() const
   buildingType = (HouseClass *)this->buildingType; /*0x726296*/
   if ( !nextTrigger ) /*0x72629b*/
 // 0x726f50
-    return HouseClass::HasType26Building(buildingType); /*0x7262bd*/
-  return (uint8_t)HouseClass::HasType26Building(buildingType) /*0x7262b4*/
-      || TriggerClass::HasCrossesVerticalLineEvent(this->nextTrigger);
+    return ((HouseClass*)buildingType)->HasType26Building(); /*0x7262bd*/
+  return (uint8_t)((HouseClass*)buildingType)->HasType26Building() /*0x7262b4*/
+      || ((TriggerClass*)this->nextTrigger)->HasCrossesVerticalLineEvent();
 }
 bool TriggerClass::HasZoneEntryByEvent() const
 {
@@ -84,7 +84,7 @@ void TriggerClass::NotifyGlobalChanged(int idx_global)
   for ( i = this; i; i = i->nextTrigger ) /*0x7263a5*/
   {
     if ( HouseClass::FindType2728((HouseClass *)i->buildingType, idx_global) ) /*0x7263b0*/
-      BuildingClass::ProcessUpgradeEffects((BuildingClass *)i); /*0x7263bb*/
+      ((BuildingClass*)(BuildingClass *)i)->ProcessUpgradeEffects(); /*0x7263bb*/
   }
 }
 // 0x7263d0
@@ -95,7 +95,7 @@ void TriggerClass::NotifyLocalChanged(int idx_local)
   for ( i = this; i; i = i->nextTrigger ) /*0x7263d5*/
   {
     if ( TriggerTypeClass::HasLocalSetOrClearedEvent(i->buildingType, idx_local) ) /*0x7263e0*/
-      BuildingClass::ProcessUpgradeEffects((BuildingClass *)i); /*0x7263eb*/
+      ((BuildingClass*)(BuildingClass *)i)->ProcessUpgradeEffects(); /*0x7263eb*/
   }
 }
 void TriggerClass::ResetTimers()

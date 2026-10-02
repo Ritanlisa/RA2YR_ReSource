@@ -366,7 +366,7 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
   unsigned int *v11; // [esp+1Ch] [ebp+4h]
 
   v2 = (HouseClass *)(*((int (**)(TechnoClass *))target->vtable1 + 33))(target); /*0x6f333b*/
-  if ( (uint8_t)HouseClass::HasPower(v2)
+  if ( (uint8_t)((HouseClass*)v2)->HasPower()
     && !*(unsigned char *)((*((int (**)(TechnoClass *))target->vtable1 + 33))(target) + 3285) )
   {
     return target->currentWeaponSlot != -1 ? target->currentWeaponSlot : 0;

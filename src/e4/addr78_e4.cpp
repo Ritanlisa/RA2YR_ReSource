@@ -268,7 +268,7 @@ void WOL_ResetSystem()
   byte_B77DEC = 0; /*0x7804eb*/
   IDA_LOBYTE(stru_B77D80.HashTable_field_0x40) = 0; /*0x7804f1*/
   byte_84A1B8 = 1; /*0x7804f7*/
-  DeleteAndZero::Alt2((DeleteAndZero *)&g_WindowManager.Array_field_0x38); /*0x7804fe*/
+  ((DeleteAndZero*)(DeleteAndZero *)&g_WindowManager.Array_field_0x38)->Alt2(); /*0x7804fe*/
   memset(&Handles, 0, 0x48u); /*0x780514*/
   *(unsigned short *)((char *)&stru_B77D80.HashTable_field_0x40 + 1) = 0; /*0x780522*/
   dword_84A1BC = -1; /*0x78052e*/
@@ -395,7 +395,7 @@ AbstractClass * * PopulateWOLLobbyListBox()
             }
             v13 = SendMessageA(DlgItem, 0x4C7u, v10, (LPARAM)&v18[96]); /*0x7808fd*/
             SendMessageA(DlgItem, 0x19Au, v13, v17); /*0x78090b*/
-            Gadget::InitProperties((Gadget *)&v18[20]); /*0x780911*/
+            ((Gadget*)(Gadget *)&v18[20])->InitProperties(); /*0x780911*/
             *(unsigned int *)&v18[20] = 1; /*0x780922*/
             WideString::Reassign((wchar_t *)((void **)&v18[24]), Buffer); /*0x78092a*/
             WideString::Reassign((wchar_t *)((void **)&v18[28]), &g_TypeClass_DefaultString); /*0x780938*/
@@ -406,8 +406,8 @@ AbstractClass * * PopulateWOLLobbyListBox()
               (LPARAM)&v18[20]);
             if ( v16 ) /*0x78096a*/
               SendMessageA(DlgItem, 0x186u, v13, 0); /*0x780975*/
-            DeleteAndZero::Alt((DeleteAndZero *)&v18[28]); /*0x78097b*/
-            DeleteAndZero::Alt((DeleteAndZero *)&v18[24]); /*0x780984*/
+            ((DeleteAndZero*)(DeleteAndZero *)&v18[28])->Alt(); /*0x78097b*/
+            ((DeleteAndZero*)(DeleteAndZero *)&v18[24])->Alt(); /*0x780984*/
             v5 = v17; /*0x780989*/
           }
           ++v5; /*0x780995*/

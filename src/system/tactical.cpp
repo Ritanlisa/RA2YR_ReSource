@@ -475,9 +475,9 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
                 if ( (uint8_t)LayerClass::CoordinatesLegal(&dword_87F7E8, v45) ) /*0x6d7a28*/
                 {
                   v22 = CellCoord::To_CellObj(&dword_87F7E8, v45); /*0x6d7a44*/
-                  NthOfType = Building::GetNthOfType((int)v22); /*0x6d7a4d*/
+                  NthOfType = ((Building*)(int)v22)->GetNthOfType(); /*0x6d7a4d*/
                   if ( (v22[75] & 0x10) != 0 /*0x6d7a94*/
-                    && !(uint8_t)CellClass::QuickPassable(v22)
+                    && !(uint8_t)((CellClass*)v22)->QuickPassable()
                     && (v22[59] == 2 || NthOfType)
                     && !v22[57]
                     && (v22[80] & 0x1000) == 0 )

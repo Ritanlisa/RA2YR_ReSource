@@ -227,7 +227,7 @@ LABEL_33:
         DeleteAndZero((ObjectClass *)&v11); /*0x79c8b7*/
         return; /*0x79c8bb*/
       }
-      DeleteAndZero::Alt2((DeleteAndZero *)&g_WindowManager.__pad_14[16]); /*0x79c830*/
+      ((DeleteAndZero*)(DeleteAndZero *)&g_WindowManager.__pad_14[16])->Alt2(); /*0x79c830*/
     }
     if ( *(unsigned int *)&stru_B76900.needsRedraw ) /*0x79c83c*/
     {

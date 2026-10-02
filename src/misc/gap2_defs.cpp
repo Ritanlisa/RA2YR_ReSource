@@ -58,7 +58,7 @@ void AudioMixer::ProcessAudioFrame() {
         IDA_LOBYTE(AudioMixer_field_0C) = AudioMixer_field_0C & 0xFC | 1; /*0x40804d*/
         this->AudioMixer_field_0C = AudioMixer_field_0C; /*0x40804f*/
       }
-      AudioChannel::ActivatePlay((AudioChannel *)this->AudioMixer_field_14); /*0x408055*/
+      ((AudioChannel*)(AudioChannel *)this->AudioMixer_field_14)->ActivatePlay(); /*0x408055*/
       LeaveCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x40805f*/
     }
   }
@@ -356,7 +356,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
     case 1:
     case 7:
       void * v47 = Coord::To_Cell(&DataGlobal_87F7E8, this + 9);
-      CellClass::DamageAllObjects(v47);
+      ((CellClass*)v47)->DamageAllObjects();
       if ( a2 )
       {
         int v48 = this->m_State;

@@ -213,7 +213,7 @@ bool IPXInterfaceClass::Bind(uint32_t network, const uint8_t node[6], uint16_t s
   }
   else
   {
-    result = WinsockInterface::Init((WinsockInterface *)network); /*0x7b10d0*/
+    result = ((WinsockInterface*)(WinsockInterface *)network)->Init(); /*0x7b10d0*/
     if ( !result ) /*0x7b10d7*/
       return result; /*0x7b10d7*/
   }

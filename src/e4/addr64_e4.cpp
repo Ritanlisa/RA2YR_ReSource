@@ -602,7 +602,7 @@ void RunNetworkGameLoop()
     if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 444) ) /*0x6485a1*/
     {
       ((InputManager_ProcessEvents *)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Vtable(&v16, &v18, &v17); /*0x6485b7*/
-      SyncDelayClass::ProcessNetworkSync(&v16); /*0x6485c0*/
+      ((SyncDelayClass*)&v16)->ProcessNetworkSync(); /*0x6485c0*/
       (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x6485cd*/
       TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x6485d5*/
     }
