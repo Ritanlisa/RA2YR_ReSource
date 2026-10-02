@@ -22,7 +22,8 @@ PROTOS = os.path.join(ROOT, 'src', 'e4', 'e4_protos.h')
 SDK_NAMES = {'IUnknown', 'IDispatch', 'IStream', 'IMalloc', 'HWND', 'HDC',
              'MSG', 'FILE', 'IDirectDrawSurface', 'IDirectDraw'}
 
-d = json.load(open(os.path.join(ROOT, '.omo', 'tu_errors.json')))
+CENSUS = os.environ.get('CENSUS_SRC') or '.omo/tu_errors.json'
+d = json.load(open(os.path.join(ROOT, CENSUS)))
 t2027 = collections.Counter()
 for tu, el in d.items():
     for e in el:
@@ -37,11 +38,11 @@ has_body = set()
 for fn in os.listdir(os.path.join(ROOT, 'src', 'e4', 'classes')):
     if not fn.endswith('.hpp'):
         continue
-    for ln in open(os.path.join(ROOT, 'src', 'e4', 'classes', fn),
-                   encoding='utf-8', errors='replace'):
-        m = re.match(r'\s*(?:class|struct)\s+([A-Za-z_]\w*)[^;]*\{', ln)
-        if m:
-            has_body.add(m.group(1))
+    src = open(os.path.join(ROOT, 'src', 'e4', 'classes', fn),
+               encoding='utf-8', errors='replace').read()
+    for m in re.finditer(
+            r'(?:class|struct)\s+([A-Za-z_]\w*)\s*(?::[^{;]*)?\{', src):
+        has_body.add(m.group(1))
 
 ml = json.load(open(os.path.join(ROOT, 'tools', 'member_lookup.json'),
                     encoding='utf-8'))
