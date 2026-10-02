@@ -83,14 +83,14 @@ struct Dialog {
 // --- flat members (END) ---
     void MapDialogResource(void *a1_1);  // 0x49F740
     int InitializeGameSettings();  // 0x5B5BC0
-    int ShowMessageBox(unsigned short *lParam, unsigned short *a3, unsigned short *a4, unsigned short *a5, int a6);
+    int ShowMessageBox(unsigned short *lParam, unsigned short *a3, unsigned short *a4, unsigned short *a5, int a6, int a2, int aP2, int aP3, int aP4, int a1);
     int GetModeNeg2();  // 0x5D5DC0
     int GetMode3();  // 0x5D5DD0
     void RefreshDialogsGame(void *a1_1);  // 0x5EE350
     int RunModemDialing(int a2, int a3, char a4);  // 0x5F2950
     AbstractClass * * MapControlToAction(HWND hWnd, LPARAM);  // 0x606800
     int StopBink(void *a1_1);  // 0x607FD0
-    AbstractClass * * IdleProcess(void *a1_1, void *a2_1);  // 0x608070
+    AbstractClass * * IdleProcess(ObjectClass *a2@<esi> a2);
     int HandleTabKey(HWND hWnd, LPARAM);  // 0x60A330
     AbstractClass * * DispatchEvent(HWND hWnd, LPARAM);  // 0x60A5B0
     AbstractClass * * InitWindow(int a1, int a2);  // 0x60F760

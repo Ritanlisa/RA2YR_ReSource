@@ -113,7 +113,7 @@ int AnimClass::SetAnimSpeed() {
 
 // 0x422BE0
 namespace gamemd {
-int * AnimClass::UpdateZAdjust(int *a2) {
+int * AnimClass::UpdateZAdjust(int *a2, int a3, int a4, int a5, int a6, int a7, int a8) {
     unsigned int *Coords; // esi
     unsigned int *v4; // eax
     int v5; // ecx

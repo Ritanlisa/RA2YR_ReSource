@@ -46,7 +46,7 @@ struct INIClass {
     unsigned int Event;
     unsigned int SetString;
 // --- flat members (END) ---
-    int ReadCoord(double aP1, int a2, INIClass * aP2, int a4);
+    int ReadCoord(double *a1@<ecx>, double a2@<st0>, unsigned __int8 *a3, unsigned __int8 *a4, int a5, int a1, int a2, int aP2, int aP1, int aP3);
     ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);
     VoxelStruct * * GetKeyCount(INIClass * aP1, void *a2);
     char GetInt(char ** a2, char ** a3, unsigned int * a4);

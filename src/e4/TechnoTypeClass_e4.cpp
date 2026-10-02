@@ -765,7 +765,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
 } // namespace gamemd
 // 0x711840
 namespace gamemd {
-void TechnoTypeClass::Construct(ObjectTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+void TechnoTypeClass::Construct(int a2, int aP1, int a3, int a4, int a5, int a6, int a1, int aP0)
 {
 
   int v3; // eax

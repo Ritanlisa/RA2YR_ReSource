@@ -81,7 +81,7 @@ unsigned int * IPXConnClass::QueryInterface(char a2, int a3, int a4, int a5) {
 
 // 0x53FCB0
 namespace gamemd {
-int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4, int a5) {
+int IPXGlobalConnClass::GetQueueSize(unsigned short *a2 a2, signed int a3 a3, int *a4 a4, int a5 a5) {
     int IPXGlobalConnClass_field_0x04; // ecx
     int v8; // edi
     unsigned int *TileIndex; // eax
@@ -213,7 +213,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
 
 // 0x540030
 namespace gamemd {
-unsigned int * IPXGlobalConnClass::Disconnect(int a2) {
+unsigned int * IPXGlobalConnClass::Disconnect(int a2, int a3) {
     Terrain *IPXGlobalConnClass_field_0x04; // ecx
     unsigned int *result; // eax
 

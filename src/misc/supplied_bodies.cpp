@@ -79,7 +79,7 @@ int AudioChannel::IsActive() {
 
 // 0x401640
 namespace gamemd {
-unsigned int * AudioIndex::GetSampleInformation(unsigned int *a1, int a2, unsigned int *a3) {
+unsigned int * AudioIndex::GetSampleInformation(unsigned int *a1 a1, int a2 a2, unsigned int *a3 a3) {
     unsigned int *v3; // ecx
     unsigned int *result; // eax
 

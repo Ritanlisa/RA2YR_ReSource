@@ -55,7 +55,7 @@ int WaypointPathClass::Init(void *a1, void *a2, void *a3, void *a4, void *a5, vo
 }
 // 0x763810
 namespace gamemd {
-int WaypointPathClass::Construct(WaypointClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+int WaypointPathClass::Construct(unsigned int a2, int aP1, int a3, int a4, int a5, int a6, int a1, int aP0, int aP2)
 {
 
   int v3; // eax

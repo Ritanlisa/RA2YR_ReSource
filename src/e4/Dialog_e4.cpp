@@ -130,7 +130,7 @@ int Dialog::InitializeGameSettings()
 }
 // 0x5D3490
 namespace gamemd {
-int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknown * aP3, IUnknown * aP4, int a6, void * a1, void * a3, void * a4, void * a5)
+int Dialog::ShowMessageBox(unsigned short *lParam, unsigned short *a3, unsigned short *a4, unsigned short *a5, int a6, int a2, int aP2, int aP3, int aP4, int a1)
 {
 
   int v6; // ebp
@@ -753,7 +753,7 @@ int Dialog::StopBink(void *a1_1)
 }
 // 0x608070
 namespace gamemd {
-AbstractClass * * Dialog::IdleProcess(ObjectClass *a2)
+AbstractClass * * Dialog::IdleProcess(ObjectClass *a2@<esi> a2)
 {
 
   HWND v2; // ecx

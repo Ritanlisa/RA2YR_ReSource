@@ -741,7 +741,7 @@ struct BuildingClass {
     static double AimTurret(...);  // C2597 interim stub
     static double CalcDrawPos(...);  // C2597 interim stub
     static double ClearAnims(...);  // C2597 interim stub
-     int Construct(int a2, int a3);
+     int Construct(int a2 a2, int a3 a3);
     static double DemolishBridge(...);  // C2597 interim stub
     static double DetermineVisualState(...);  // C2597 interim stub
     static double FindByCellHash(...);  // C2597 interim stub

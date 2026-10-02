@@ -174,7 +174,7 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
 }
 // 0x4F54A0
 namespace gamemd {
-int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
+int HouseClass::Construct(int a2, int a3, int a4, int a5, int a6)
 {
 
   int v3; // edx

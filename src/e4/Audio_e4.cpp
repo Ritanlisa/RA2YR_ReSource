@@ -677,7 +677,7 @@ int Audio::LoadWAVFiles(void *a1_1)
 }
 // 0x7510D0
 namespace gamemd {
-int Audio::InitFromINI(double a2, double a3)
+int Audio::InitFromINI(double a2@<st1>, double a3@<st0>, int a2, int a3, int a1, int aP1, int aP2)
 {
 
   double *v3; // ecx

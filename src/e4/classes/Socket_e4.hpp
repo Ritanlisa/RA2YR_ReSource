@@ -13,7 +13,7 @@ struct Socket {
     unsigned int u32_3F06C;
     unsigned int Debug;
 // --- flat members (END) ---
-    int ConfigureBuffers(SOCKET);
+    int ConfigureBuffers(SOCKET aP1);
 };
 
 } // namespace gamemd

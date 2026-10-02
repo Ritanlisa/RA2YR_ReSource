@@ -169,7 +169,7 @@ AbstractClass * * UDPInterfaceClass::Flush()
 } // namespace gamemd
 // 0x7B3AA0
 namespace gamemd {
-AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
+AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5, int a3, int aP1, int aP5, int a7, int a8)
 {
 
   SOCKET v6; // ebx

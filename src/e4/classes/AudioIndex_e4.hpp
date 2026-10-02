@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct AudioIndex {
-    unsigned int *__fastcall GetSampleInformation(unsigned int *a1, int a2, unsigned int *a3);
+    unsigned int *__fastcall GetSampleInformation(unsigned int *a1 a1, int a2 a2, unsigned int *a3 a3);
 };
 
 } // namespace gamemd

@@ -340,7 +340,7 @@ int FontRenderer::InitContext(int *a2, int a4) {
 
 // 0x4349B0
 namespace gamemd {
-int FontClass::GetPixelData(unsigned __int16, int a4) {
+int FontClass::GetPixelData(unsigned __int16 a2, int a4) {
     unsigned int *FontClass_field_0x04; // ecx
     int v3; // eax
     uint8_t *v4; // eax

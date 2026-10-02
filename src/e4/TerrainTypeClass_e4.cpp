@@ -211,7 +211,7 @@ LABEL_11:
 }  // G42.18c ns repair
 // 0x71DEA0
 namespace gamemd {  // G42.18c ns repair
-int TerrainTypeClass::LoadFromINI(unsigned __int8 ***aP1)
+int TerrainTypeClass::LoadFromINI(unsigned __int8 ***a2, int aP1, int aP3, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0)
 {
 
   double v2; // st7

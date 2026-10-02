@@ -45,7 +45,7 @@ struct WaypointPathClass {
     unsigned int u32_35;
 // --- flat members (END) ---
     WaypointPathClass * ProcessEvent(char a2);
-    _DWORD * Construct(unsigned int a2);
+    _DWORD * Construct(unsigned int a2, int aP1, int a3, int a4, int a5, int a6, int a1, int aP0, int aP2);
     char Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     int LoadState(unsigned int * a1, int a2);
     int PowerDrainUpdate(int a2);

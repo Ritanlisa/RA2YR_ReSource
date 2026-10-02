@@ -54,7 +54,7 @@ struct CaptureManagerClass {
     unsigned int *__pad_3C;
 // --- flat members (END) ---
     void DecideUnitFate(int aP1);
-    char FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5);
+    char FreeUnit(int a2@<ebx> a2, int a3@<ebp> a3, unsigned int *a1, int aP1, unsigned int *aP0);
     CaptureManagerClass(int a2, int a3, char a4);
     CaptureManagerClass * ddtor(char a2);
     DynamicVector * QueryInterface(char a2);
@@ -82,7 +82,7 @@ struct CaptureManagerClass {
     unsigned int LoadTypeData(int a2);
     unsigned int PointerToIndex(int a2);
     int Destroy(void *a1);
-    void* CaptureUnit(int a1, int a2, int a3, int a1_2, int a2_2, int aP1, int aP0);
+    void* CaptureUnit(int a1@<ecx>, int a2@<ebp>, int a3, int a1, int a2, int aP1, int aP0);
 };
 
 } // namespace gamemd

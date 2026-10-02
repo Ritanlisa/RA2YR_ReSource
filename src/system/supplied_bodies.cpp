@@ -192,7 +192,7 @@ char TacticalClass::CompareVector(int a2) {
 
 // 0x5C0FE0
 namespace gamemd {
-unsigned int * ScenarioClass::initAI(char a2) {
+unsigned int * ScenarioClass::initAI(char a2, int a4, int a5, int a3, int a6, int a7, int a8) {
     this->m_0 = (int)0; /*0x5c0fe3*/
     MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c0fe9*/
     if ( (a2 & 1) != 0 ) /*0x5c0ff3*/
@@ -203,14 +203,14 @@ unsigned int * ScenarioClass::initAI(char a2) {
 
 // 0x653F50
 namespace gamemd {
-void CellClass::DrawWrapper(unsigned int *a2, int jj, char a4, char a5) {
+void CellClass::DrawWrapper(unsigned int *a2, int jj, char a4, char a5, int a3, int a6, int a7, int a8) {
     CellClass::UpdateTerrainAndWaypoints((MapClass *)this, a2, jj, a4, a5); /*0x653f64*/
 }
 } // namespace gamemd
 
 // 0x68BCC0
 namespace gamemd {
-unsigned int * ScenarioClass::Get_Waypoint_Location(unsigned int *a2, int a3) {
+unsigned int * ScenarioClass::Get_Waypoint_Location(unsigned int *a2, int a3, int a4, int a5, int a6, int a7, int a8) {
     *a2 = *(unsigned int *)(this + 4 * a3 + 1586); /*0x68bccf*/
     return a2; /*0x68bcd1*/
 }
@@ -242,7 +242,7 @@ int CellClass::ClearCrateStateForAll() {
 
 // 0x432610
 namespace gamemd {
-unsigned int * BufferIOFileClass::QueryInterface(char a2) {
+unsigned int * BufferIOFileClass::QueryInterface(char a2, int a3, int a4, int a5, int a6, int a7, int a8) {
     void *FileBaseOffset; // eax
 
     FileBaseOffset = (void *)this->FileBaseOffset; /*0x432616*/

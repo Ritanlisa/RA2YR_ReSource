@@ -226,7 +226,7 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
 } // namespace gamemd
 // 0x410960
 namespace gamemd {
-int AbstractTypeClass::Init(AbstractTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
+int AbstractTypeClass::Init(int a2, int aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a1)
 {
 
   char v3; // al

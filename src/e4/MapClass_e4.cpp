@@ -973,7 +973,7 @@ unsigned int * MapClass::InitAllCells()
 } // namespace gamemd
 // 0x5673A0
 namespace gamemd {
-int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9, void *a9_2)
+int MapClass::RevealArea0(int *a2, int a3, void *a4, char a5, char a6, char a7, char a8, char a9, int aP1, int aP2, int aP3, int aP4, int aP5, int a1)
 {
 
   double v9; // st7

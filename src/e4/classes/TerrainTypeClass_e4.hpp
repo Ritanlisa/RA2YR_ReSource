@@ -278,7 +278,7 @@ struct TerrainTypeClass {
     int GetObjectSize();
     int GetTileData(int a2, void * a3, signed int * a4, unsigned int * a5, unsigned short * a6, unsigned int * a7);
     int GetTypeIdentifier();
-    int LoadFromINI(unsigned char *** aP1, void *a2);
+    int LoadFromINI(unsigned __int8 ***a2, int aP1, int aP3, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0);
     int PowerDrainUpdate(int * a2);
     int  SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);

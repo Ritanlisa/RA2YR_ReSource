@@ -545,7 +545,7 @@ struct ScenarioClass {
     void sub_5D80B0();
     static double GetGlobalStateByID(...);  // C2597 interim stub
     static double GetLocalStateByID(...);  // C2597 interim stub
-    static double Get_Waypoint_Location(...);  // C2597 interim stub
+    static double Get_Waypoint_Location(unsigned int *a2, int a3, int a4, int a5, int a6, int a7, int a8);
      double Load(...);  // C2597 interim stub
      double SaveLoad_Prefix(...);  // C2597 interim stub
     static double SaveLoad_Prefix_0(...);  // C2597 interim stub

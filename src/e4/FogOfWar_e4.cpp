@@ -18,7 +18,7 @@
 
 // 0x655C50
 namespace gamemd {
-MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
+MapClass * * FogOfWar::RevealArea(int *a2, int aP1, int a1)
 {
 
   int result; // eax

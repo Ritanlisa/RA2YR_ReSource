@@ -156,7 +156,7 @@ int Buffer::UpdateVolumeSettings() {
 
 // 0x40B670
 namespace gamemd {
-unsigned int MoveFeedback::PointerToIndex(int a2) {
+unsigned int MoveFeedback::PointerToIndex(int a2, int a3, int a4) {
     if ( IDA_LOBYTE(this->m_C) ) /*0x40b670*/
       return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x40b685*/
     else
@@ -166,14 +166,14 @@ unsigned int MoveFeedback::PointerToIndex(int a2) {
 
 // 0x40B6F0
 namespace gamemd {
-int MoveFeedback::Show(int a2) {
+int MoveFeedback::Show(int a2, int a3, int a4) {
     return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x40b6fa*/
 }
 } // namespace gamemd
 
 // 0x40B930
 namespace gamemd {
-int MoveFeedback::FindItem(unsigned int *a2) {
+int MoveFeedback::FindItem(unsigned int *a2, int a3, int a4) {
     int m_10; // edx
     int result; // eax
     unsigned int *i; // ecx

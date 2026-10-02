@@ -245,7 +245,7 @@ int ThemeClass::ClearQueues()
 } // namespace gamemd
 // 0x752AB0
 namespace gamemd {
-void ThemeClass::GetField(int a1, void *a2)
+void ThemeClass::GetField(int a1, int a2)
 {
 
   dword_846614 = a1; /*0x752ab6*/

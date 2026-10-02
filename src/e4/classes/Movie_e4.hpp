@@ -75,9 +75,9 @@ struct Movie {
     unsigned int Debug;
     unsigned int PlayWrapper;
 // --- flat members (END) ---
-    AbstractClass * * SetupScreen(int a2);
+    AbstractClass * * SetupScreen(int a2, int aP1, int aP2, int a1, int a3, int a4, int a5, int a6, int a7, int a8);
     CampaignClass * * GetSection(CCINIClass * aP1, CCINIClass * aP2);  // 0x49E3B0
-    int Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a7, char a8, int a1_2, int a2_2, int a3_2, int a4_2, int aP1);
+    int Play(int a1@<edx>, int a2@<ebp>, int a3@<edi>, const char *a4@<ecx>, char a5, char a6, char a7, char a8, int a1, int a2, int a3, int a4, int aP1);
     int Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1);  // 0x7209D0
     unsigned int SelectNextBuildableType(int aP1);  // 0x720A80
     char GetSectionID(unsigned int *a2);  // 0x49BC80

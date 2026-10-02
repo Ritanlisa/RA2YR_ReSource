@@ -34,7 +34,7 @@ ConnectionClass::ConnectionClass() noexcept
 
 // IDA 0x48B410 — queueSendPacket: store outgoing packet for sequential delivery
 // 0x48b410
-int ConnectionClass::queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16, int a7, int a8, int a9, int a1)
+int ConnectionClass::queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6, int a7, int a8, int a9, int a1)
 {
   int PlayerIndex; // eax
   int v8; // esi
@@ -119,7 +119,7 @@ int ConnectionClass::connect()
   return 1; /*0x48c5e9*/
 }
 // 0x48be60
-bool IPXConnClass::initConnection(int a2, int a3, int a4, __int16, int a6, int a7, int a8, int a9, int a1)
+bool IPXConnClass::initConnection(int a2, int a3, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a1)
 {
     unsigned int v10 = 0;  /* G37 hoist */
   CommBufferClass *v10; // eax
@@ -278,7 +278,7 @@ IPXManagerClass::IPXManagerClass() noexcept
 }
 
 // 0x542fe0
-void IPXManagerClass::Init(int a2, int a3, int a4, int a5, int a6, int a7)
+void IPXManagerClass::Init(int a2 a2, int a3 a3, int a4 a4, int a5 a5, int a6 a6, int a7 a7)
 {
   int result; // eax
 
