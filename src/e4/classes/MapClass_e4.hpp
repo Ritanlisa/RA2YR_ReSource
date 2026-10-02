@@ -532,7 +532,7 @@ struct MapClass {
     int  FindSubzoneConnectionIndex(unsigned short * a2);
     int FreeAllCells(void *a1);
     int GetScrollMode();
-    int GetTileDataField14(MapResourceClass * aP0);
+    static int GetTileDataField14(short *a1);
     int GetTileIndex(int16_t *aP1, int aP2, char aP3);
     int  InitCellVe_vt04(unsigned int * a2);
     int InitCellVe_vt06(int a2);

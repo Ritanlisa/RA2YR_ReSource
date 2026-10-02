@@ -692,7 +692,7 @@ struct SessionClass {
     unsigned int * GetEntry(unsigned int *aP1);
     MixFileClass * Load(void *a1, void *a2, void *a3, void *a4);
     unsigned int * saveSettings();
-    unsigned int GetPlayerColorScheme(ObjectClass * aP0);
+    static int GetPlayerColorScheme(unsigned int a1);
     unsigned int Write(int a2);
     unsigned int initPlayers();
     unsigned int updatePlayer(int a2);

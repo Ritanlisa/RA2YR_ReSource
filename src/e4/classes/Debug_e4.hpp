@@ -21,6 +21,6 @@ struct Debug {
     int AccumFlags(void *a1_1);  // 0x6E61F0
     char Printf();  // 0x5BD1F0
     int Log();  // 0x4068E0
-    void Log_0(void *a1_1, void *a2_1);  // 0x4A4AC0
+    static void Log_0();  // 0x4A4AC0
 };
 } // namespace gamemd

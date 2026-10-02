@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct BitArray {
-    BOOL __fastcall TestBit(int a1, int a2);
+    static int TestBit(int a1, int a2);
 };
 
 } // namespace gamemd

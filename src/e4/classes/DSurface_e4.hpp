@@ -294,7 +294,7 @@ struct DSurface {
     int DrawDashedLineStipple(int * a2, int * a3, int16_t a4, int a5, int a6, char a7);
     int DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9);
     int DrawMarker(AbstractClass * aP1, ObjectClass * aP2);
-    int  FillRectWithColor(int * a0, ObjectClass * aP1, int16_t a3, uint8_t a4);
+    static int FillRectWithColor(int *a1, int a2, short a3, unsigned char a4);
     int Flip();
     int Flip2();
     int GetBytesPerPixel();

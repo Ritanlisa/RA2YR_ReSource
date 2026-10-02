@@ -304,7 +304,7 @@ struct TacticalClass {
     int StubReturnFalse8();
     int StubReturnFalse9();
     signed int RenderIsometricOverlay(IUnknown * aP1, IUnknown * aP2, char a4);
-    unsigned int * CollectSelectedIDs();
+    static unsigned int * CollectSelectedIDs();
     unsigned int * SetDisplayMode(unsigned int * a2, char a3);
     unsigned int RenderCellFogOfWar(IUnknown * aP1, Tactical * aP2);
     void * IsOccupiedByTechno(unsigned int * a2);

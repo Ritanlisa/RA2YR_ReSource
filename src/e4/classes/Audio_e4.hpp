@@ -100,7 +100,7 @@ struct Audio {
     int InitChannels(void *a1_1);  // 0x401080
     int FlushChannel(unsigned int ** Block);  // 0x404DD0
     void Shutdown(void *a1_1);  // 0x406D40
-    BOOL IsSoundEnabled();  // 0x407000
+    static int IsSoundEnabled();  // 0x407000
     void * GetEnabled();  // 0x407010
     int GetFlag(void *a1_1);  // 0x407070
     int Callback();  // 0x4093B0

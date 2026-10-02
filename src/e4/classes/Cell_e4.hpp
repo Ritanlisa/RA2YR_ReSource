@@ -175,7 +175,7 @@ struct Cell {
     int PosToLinearIndex(IUnknown * aP0);  // 0x56BC50
     int DecodeFlags();  // 0x56CB80
     int GetGroundHeight(unsigned int * a1);  // 0x578080
-    bool IsPassable(IUnknown * aP0);  // 0x586360
+    static int IsPassable(unsigned int *a1);  // 0x586360
     unsigned int * IsBridge();  // 0x47c520
 };
 } // namespace gamemd

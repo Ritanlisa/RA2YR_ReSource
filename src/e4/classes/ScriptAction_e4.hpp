@@ -93,7 +93,7 @@ struct ScriptAction {
     int ExecuteMissionCmd();  // 0x6FFBE0
     ObjectClass *  GetArgumentString(int a2);  // 0x721270
     bool SetField10();  // 0x637DB0
-    int  ClassifyAction(int * a1, char * a2);  // 0x638CE0
+    static int ClassifyAction(int *a1, char *a2);  // 0x638CE0
     void * CopyStructField(void *a2, const void *a3);  // 0x6E47C0
 };
 } // namespace gamemd

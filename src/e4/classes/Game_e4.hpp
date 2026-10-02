@@ -143,6 +143,6 @@ struct Game {
     int ResetReadyStates();  // 0x5E9850
     int readIniSettings(void *a1_1);  // 0x67FDE0
     char InitializeToolTipColor(void *a1_1);  // 0x72F440
-    char Stub3(IUnknown * aP0);  // 0x5865E0
+    static int Stub3(int a1);  // 0x5865E0
 };
 } // namespace gamemd

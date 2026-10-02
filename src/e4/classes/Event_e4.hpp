@@ -7,7 +7,7 @@ namespace gamemd {
 struct Event {
     unsigned int Network;
     void* vfptr;  // minimal E2 declaration
-    int Dispatch();  // 0x48D080
+    static int Dispatch();  // 0x48D080
     bool IsValidActionType();  // 0x601360
 };
 } // namespace gamemd

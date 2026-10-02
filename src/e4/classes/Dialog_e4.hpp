@@ -105,7 +105,7 @@ struct Dialog {
     AbstractClass * * BindGadgetData(int *a2, char *Block);  // 0x624CA0
     INIClass * * ReadMultiplayerDialogSettings();  // 0x671EA0
     int FindByHandle(void *a1_1);  // 0x775940
-    int GetCurrent();  // 0x775B10
+    static int GetCurrent();  // 0x775B10
     int GetCurrentType();  // 0x775B20
     BOOL GetField(void *a1_1, void *a2_1);  // 0x775BA0
     int SideIDToIndex();  // 0x4E4EC0

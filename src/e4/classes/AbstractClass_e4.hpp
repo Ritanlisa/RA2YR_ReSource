@@ -115,7 +115,7 @@ struct AbstractClass {
     unsigned int * checkShroudState(char a2);  // 0x5D8070
     unsigned int * updateShroudMap(char a2);  // 0x5D8090
     void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
-    AbstractClass * * AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
+    static void AnnounceExpiredPointer(AbstractClass *a1, int a2);  // 0x7258D0
     int getMapCoords();  // 0x426A80
     void DTOR(void *a1_1);  // 0x4101F0
     MissionClass * getWeaponRange(unsigned int * Block, char a2);  // 0x5B3A60

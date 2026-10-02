@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Targeting {
-    int Readd(unsigned int * a1);
+    static int Readd(unsigned int *a1);
 };
 
 } // namespace gamemd

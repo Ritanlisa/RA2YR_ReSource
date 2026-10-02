@@ -10,7 +10,7 @@ struct Time {
     char Time_field_00[4];  // 0x0
 // --- flat members (END) ---
     int FormatDate(char * Buffer);
-    unsigned int GetElapsedMS();
+    static int GetElapsedMS();
 };
 
 } // namespace gamemd
