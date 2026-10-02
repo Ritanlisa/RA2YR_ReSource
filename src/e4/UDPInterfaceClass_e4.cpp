@@ -703,9 +703,9 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
   char name[128]; // [esp+28h] [ebp-80h] BYREF
 
   if ( *((unsigned char *)this + 258152) /*0x7b346b*/
-    || (result = (*(int (**)(UDPInterfaceClass *))(this->Socket + 100))(this)) != 0 )
+    || (result = (*(int (**)(UDPInterfaceClass *))(this->Socket + 100))((UDPInterfaceClass *)this)) != 0 )
   {
-    (*(void (**)(UDPInterfaceClass *, u_short))(this->Socket + 92))(this, hostshort); /*0x7b3483*/
+    (*(void (**)(UDPInterfaceClass *, u_short))(this->Socket + 92))((UDPInterfaceClass *)this, hostshort); /*0x7b3483*/
     Debug::Log(); /*0x7b348b*/
     if ( gethostname(name, 128) ) /*0x7b349d*/
       Debug::Log(); /*0x7b34b0*/
@@ -775,7 +775,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
       Debug::Log(); /*0x7b363d*/
       if ( bind(*((unsigned int *)this + 64540), &v19, 16) == -1 ) /*0x7b365b*/
       {
-        (*(void (**)(UDPInterfaceClass *))(this->Socket + 4))(this); /*0x7b3661*/
+        (*(void (**)(UDPInterfaceClass *))(this->Socket + 4))((UDPInterfaceClass *)this); /*0x7b3661*/
         return 0; /*0x7b3665*/
       }
       else
@@ -800,10 +800,10 @@ short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int 
 
   if ( a3 && ((Network *)((Network *)a3))->IsBroadcastAddr() ) /*0x7b36ce*/
     return (*(int16_t (**)(UDPInterfaceClass *, const void *, unsigned int, int))(this->Socket + 16))( /*0x7b36ea*/
-             this,
+             (UDPInterfaceClass *)this,
              aP1,
              arg4,
-             aP5);
+             (int)aP5);
   else
     return AudioQueue::WriteBuffer((WinsockInterfaceClass *)this, aP1, arg4, a3, a5, aP5, a7, a8); /*0x7b3713*/
 
@@ -912,7 +912,7 @@ int UDPInterfaceClass_Destru::Receive()
     v3 = (AnimClass **)((unsigned int *)this + 32352); /*0x7b38aa*/
     while ( 1 ) /*0x7b38b8*/
     {
-      v4 = (HWND)(*(int (**)(UDPInterfaceClass *, int))(this->Socket + 56))(this, -1); /*0x7b38b8*/
+      v4 = (HWND)(*(int (**)(UDPInterfaceClass *, int))(this->Socket + 56))((UDPInterfaceClass *)this, -1); /*0x7b38b8*/
       if ( WSAAsyncSelect(*v3, (SOCKET)g_hWnd, v4, 3u, v6) == (AnimClass *)-1 ) /*0x7b38ce*/
         break; /*0x7b38ce*/
       ++v2; /*0x7b38d6*/
@@ -939,7 +939,7 @@ int UDPInterfaceClass_Destru::CheckStatus()
 {
 
   ((NetworkClass*)((WinsockInterfaceClass *)this))->UnregisterAsync(); /*0x7b3903*/
-  return (*(int (**)(UDPInterfaceClass *))(this->Socket + 112))(this); /*0x7b390f*/
+  return (*(int (**)(UDPInterfaceClass *))(this->Socket + 112))((UDPInterfaceClass *)this); /*0x7b390f*/
 
 }
 }  // G42.18c ns repair

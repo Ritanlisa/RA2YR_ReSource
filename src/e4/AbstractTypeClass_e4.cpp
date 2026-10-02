@@ -253,9 +253,9 @@ char AbstractTypeClass::WriteINI(char *aP1)
 
   pad_24 = (uint8_t *)this->__pad_24; /*0x410b9b*/
   INIClass::ClearSection((int *)aP1, (int)this->__pad_24, 0); /*0x410ba1*/
-  ((INIClass *)aP1)->SetString(pad_24, g_INI_Key_Name, this->Name); /*0x410bb2*/
+  ((INIClass *)aP1)->SetString(pad_24, (char *)g_INI_Key_Name, this->Name); /*0x410bb2*/
   if ( (&this->UINameLabel)[0] ) /*0x410bb7*/
-    ((INIClass *)aP1)->SetString(pad_24, g_INI_Key_UIName, this->UINameLabel); /*0x410bca*/
+    ((INIClass *)aP1)->SetString(pad_24, (char *)g_INI_Key_UIName, this->UINameLabel); /*0x410bca*/
   return 1; /*0x410bcf*/
 
 }

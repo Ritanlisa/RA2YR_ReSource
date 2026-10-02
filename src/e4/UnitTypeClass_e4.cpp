@@ -734,7 +734,7 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
   char v3; // [esp+7h] [ebp-105h] BYREF
   char Buffer[260]; // [esp+8h] [ebp-104h] BYREF
 
-  result =(int)TechnoTypeClass::SaveLoad_Prefix((TechnoTypeClass *)a1, a2); /*0x748024*/
+  result =((gamemd::ObjectTypeClass *)int)TechnoTypeClass::SaveLoad_Prefix((TechnoTypeClass *)a1, a2); /*0x748024*/
   if ( result >= 0 ) /*0x74802b*/
   {
     if ( a1 ) /*0x74802f*/
@@ -765,7 +765,7 @@ int UnitTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 
   int result; // eax
 
-  result = TechnoTypeClass::SaveLoad_Prefix_0(aP1, a0, aP1, (TechnoTypeClass *)a3); /*0x7480bf*/
+  result = TechnoTypeClass::SaveLoad_Prefix_0((unsigned int *)aP1, a0, aP1, (TechnoTypeClass *)a3); /*0x7480bf*/
   if ( result >= 0 ) /*0x7480c6*/
     return 0; /*0x7480c8*/
   return result; /*0x7480ca*/
@@ -796,7 +796,7 @@ namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::GetAuxField()
 {
 
-  return this->ArrayIndex; /*0x748186*/
+return (int)this->ArrayIndex; /*0x748186*/
 
 }
 }  // G42.18c ns repair

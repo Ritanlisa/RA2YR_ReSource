@@ -892,7 +892,7 @@ LABEL_41:
       || this->animation[5] != Map_InvalidCoord_Y
       || this->animation[6] != Map_InvalidCoord_Z )
     {
-      v43 = (int *)(*(int (**)(TechnoClass *, int *))(this->vtable1 + 72))(this, &v54); /*0x425c40*/
+      v43 = (int *)(*(int (**)(TechnoClass *, int *))(this->vtable1 + 72))((TechnoClass *)this, &v54); /*0x425c40*/
       v44 = *v43; /*0x425c45*/
       LODWORD(v48) = *v4; /*0x425c47*/
       LODWORD(v49) = v44; /*0x425c4b*/
@@ -903,13 +903,13 @@ LABEL_41:
     }
     v45 = this->missionTimer[0]; /*0x425cb7*/
     v19 = (int)dword_A8ED84 / 3 / *(unsigned int *)(v45 + 848); /*0x425cc5*/
-    this->currentMission = v42 + (int)dword_A8ED84 / 3 % *(unsigned int *)(v45 + 848); /*0x425cce*/
+    this->currentMission =(void *)v42 + (int)dword_A8ED84 / 3 % *(unsigned int *)(v45 + 848); /*0x425cce*/
     return v19; /*0x425cda*/
   }
 LABEL_47:
-  v19 = *(int16_t *)((*(int (**)(TechnoClass *))(this->vtable1 + 108))(this) + 6) / 2 - 1; /*0x425cdb*/
+  v19 = *(int16_t *)((*(int (**)(TechnoClass *))(this->vtable1 + 108))((TechnoClass *)this) + 6) / 2 - 1; /*0x425cdb*/
   if ( this->currentMission >= v19 ) /*0x425cf4*/
-    LOBYTE(v19) = (*(bool (**)(TechnoClass *))(this->vtable1 + 248))(this); /*0x425cfa*/
+    LOBYTE(v19) = (*(bool (**)(TechnoClass *))(this->vtable1 + 248))((TechnoClass *)this); /*0x425cfa*/
   return v19; /*0x4258bb*/
 
 }

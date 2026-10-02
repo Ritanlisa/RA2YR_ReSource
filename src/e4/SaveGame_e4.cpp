@@ -581,7 +581,7 @@ int SaveGame::SaveIteratedData(int a2)
   v3 = 0; /*0x413858*/
   for ( i = &this->__pad_0[4]; ; i += 24 ) /*0x41385a*/
   {
-    v5 =(char *)*(unsigned int *)v2; /*0x413860*/
+    v5 =(int)(char *)*(unsigned int *)v2; /*0x413860*/
     a2 = *((unsigned int *)i + 3); /*0x41386c*/
     result = (*(int (**)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x413870*/
     if ( result < 0 ) /*0x413875*/
@@ -1718,7 +1718,7 @@ HRESULT SaveGame_Start_6808F0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680921*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680939*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x68093d*/
           break; /*0x68093d*/
@@ -1766,7 +1766,7 @@ HRESULT SaveGame_Start_680970(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x6809a1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6809b9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x6809bd*/
           break; /*0x6809bd*/
@@ -1814,7 +1814,7 @@ HRESULT SaveGame_Start_6809F0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680a21*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680a39*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x680a3d*/
           break; /*0x680a3d*/
@@ -1862,7 +1862,7 @@ HRESULT SaveGame_Start_680A70(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680aa1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680ab9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x680abd*/
           break; /*0x680abd*/
@@ -1910,7 +1910,7 @@ HRESULT SaveGame_Start_680AF0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680b21*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680b39*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x680b3d*/
           break; /*0x680b3d*/
@@ -1958,7 +1958,7 @@ HRESULT SaveGame_Start_680B70(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680ba1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680bb9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x680bbd*/
           break; /*0x680bbd*/
@@ -2006,7 +2006,7 @@ HRESULT SaveGame_Start_680BF0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680c21*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680c39*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x680c3d*/
           break; /*0x680c3d*/
@@ -2054,7 +2054,7 @@ HRESULT SaveGame_Start_680C70(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680ca1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680cb9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x680cbd*/
           break; /*0x680cbd*/
@@ -2102,7 +2102,7 @@ HRESULT SaveGame_Start_680CF0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680d21*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680d39*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x680d3d*/
           break; /*0x680d3d*/
@@ -2150,7 +2150,7 @@ HRESULT SaveGame_Start_680D70(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680da1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680db9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x680dbd*/
           break; /*0x680dbd*/
@@ -2198,7 +2198,7 @@ HRESULT SaveGame_Start_680DF0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680e21*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680e39*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x680e3d*/
           break; /*0x680e3d*/
@@ -2246,7 +2246,7 @@ HRESULT SaveGame_Start_680E70(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680ea1*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680eb9*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x680ebd*/
           break; /*0x680ebd*/
@@ -2294,7 +2294,7 @@ HRESULT SaveGame_Start_680EF0(LPSTREAM pStm, int a2)
         pPStm = 0; /*0x680f21*/
         result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680f39*/
                    *(unsigned int *)(v7 + 4 * v6),
-                   &IID_IPersistStream,
+                   (void *)&IID_IPersistStream,
                    &pPStm);
         if ( result < 0 ) /*0x680f3d*/
           break; /*0x680f3d*/
@@ -2348,9 +2348,9 @@ int SaveGame::VtableDispatch(int a2)
 
   int result; // eax
 
-  result = (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->__pad_0[4], 4, 0); /*0x721023*/
+  result = (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, (char *)&this->__pad_0[4], 4, 0); /*0x721023*/
   if ( result >= 0 ) /*0x721028*/
-    return (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->__pad_0[8], 4, 0); /*0x721035*/
+    return (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, (char *)&this->__pad_0[8], 4, 0); /*0x721035*/
   return result; /*0x721038*/
 
 }

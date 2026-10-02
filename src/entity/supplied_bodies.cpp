@@ -321,7 +321,7 @@ int AnimClass::ProcessPower(int *a2) {
     int v10; // ecx
 
     HouseClass::ProcessPower((ObjectClass *)this); /*0x425419*/
-    AnimClass_field_0xCC = this->AnimClass_field_0xCC; /*0x42541e*/
+    AnimClass_field_0xCC =(unsigned int *)this->AnimClass_field_0xCC; /*0x42541e*/
     if ( AnimClass_field_0xCC ) /*0x425426*/
     {
       v4 = (*(int (__stdcall **)(unsigned int *))(AnimClass_field_0xCC[1] + 16))(AnimClass_field_0xCC + 1); /*0x42542f*/

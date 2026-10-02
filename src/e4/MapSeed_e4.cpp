@@ -30,7 +30,7 @@ int MapSeed::ValidateName(int a2)
   int result; // eax
 
   if ( a2 ) /*0x597736*/
-    return (*(int (**)(int, char *))(*(unsigned int *)this + 8))(a2, (unsigned char *)this + 120); /*0x597740*/
+    return (*(int (**)(int, char *))(*(unsigned int *)this + 8))(a2, (char *)(unsigned char *)this + 120); /*0x597740*/
   LOBYTE(result) = ShowSaveLoadDialog((void *)((int)this), (unsigned char *)this + 120); /*0x597752*/
   return result; /*0x597744*/
 
@@ -237,7 +237,7 @@ LABEL_33:
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x79c864*/
       memset(v12, 0, sizeof(v12)); /*0x79c874*/
       strcpy(&v12[36], ((String *)((String *)&g_WindowManager.__pad_14[16]))->GetOrEmpty()); /*0x79c8a1*/
-      (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v12); /*0x79c8b3*/
+      (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))((LPVOID)ppv, v12); /*0x79c8b3*/
     }
     goto LABEL_33; /*0x79c8b3*/
   }

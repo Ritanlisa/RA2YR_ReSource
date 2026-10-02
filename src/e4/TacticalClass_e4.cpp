@@ -263,7 +263,7 @@ void* TacticalClass::ProcessScroll(int * a2)
     if ( *a2 < 0 ) /*0x4ac3db*/
       v4 = 0; /*0x4ac3dd*/
     if ( v4 >= *(int *)DSurface_ViewBounds.__pad_8 ) /*0x4ac3e1*/
-      v4 = *(unsigned int *)DSurface_ViewBounds.__pad_8 - 1; /*0x4ac3e3*/
+      v4 =(void *)*(unsigned int *)DSurface_ViewBounds.__pad_8 - 1; /*0x4ac3e3*/
     if ( (int)v5 < 0 ) /*0x4ac3e8*/
       v5 = 0; /*0x4ac3ea*/
     if ( (int)v5 >= *(int *)&DSurface_ViewBounds.__pad_8[4] ) /*0x4ac3ee*/

@@ -1914,11 +1914,11 @@ LABEL_23:
         int v37 = v64 - *((unsigned int *)Block + v70);
         if ( v37 < 0 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), a2 != 0 ? 6 : 0, (gamemd::ConvertClass *)v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), a2 != 0 ? 6 : 0, (gamemd::ConvertClass *)v102, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         else if ( v37 >= 6 && !a2 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), 6u, (gamemd::ConvertClass *)v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), 6u, (gamemd::ConvertClass *)v102, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
       }
       if ( v61 )
@@ -1983,7 +1983,7 @@ LABEL_68:
             v32,
             (gamemd::ConvertClass *)(int)v73,
             v89 + v68 * v43,
-            v103,
+            (gamemd::ConvertClass *)v103,
             v72,
             1024,
             0,
@@ -2000,7 +2000,7 @@ LABEL_68:
         if ( v43 < 6 )
           goto LABEL_68;
         if ( a2 )
-          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)((int)v73), 0, (gamemd::ConvertClass *)v103, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)((int)v73), 0, (gamemd::ConvertClass *)v103, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
       }
 LABEL_69:
       if ( v74 > 0 )
@@ -2016,15 +2016,15 @@ LABEL_69:
           v90[1] = v45;
           if ( v46 < 0 )
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, (gamemd::ConvertClass *)v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, (gamemd::ConvertClass *)v90, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           else if ( v46 >= 6 )
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, (gamemd::ConvertClass *)v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, (gamemd::ConvertClass *)v90, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           else
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v46, (gamemd::ConvertClass *)v90, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v46, (gamemd::ConvertClass *)v90, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           ++v44;
           v45 += v84;
@@ -2052,7 +2052,7 @@ LABEL_69:
             if ( v50 != -1 )
               break;
           }
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0xA : 0, (gamemd::ConvertClass *)v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0xA : 0, (gamemd::ConvertClass *)v92, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
 LABEL_89:
           v47 += v84;
           --v48;
@@ -2062,11 +2062,11 @@ LABEL_89:
         }
         if ( v50 != -2 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v87 + v68 * v50, (gamemd::ConvertClass *)v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v87 + v68 * v50, (gamemd::ConvertClass *)v92, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           goto LABEL_89;
         }
 LABEL_87:
-        DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0 : 10, (gamemd::ConvertClass *)v92, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0 : 10, (gamemd::ConvertClass *)v92, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         goto LABEL_89;
       }
 LABEL_90:
@@ -2085,14 +2085,14 @@ LABEL_90:
         if ( v53 == -1 )
         {
 LABEL_94:
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, (gamemd::ConvertClass *)v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, (gamemd::ConvertClass *)v91, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           goto LABEL_98;
         }
         if ( v53 == -2 )
 LABEL_96:
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, (gamemd::ConvertClass *)v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, (gamemd::ConvertClass *)v91, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         else
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v53, (gamemd::ConvertClass *)v91, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v53, (gamemd::ConvertClass *)v91, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
       }
 LABEL_98:
       char v54 = v63;
@@ -2130,7 +2130,7 @@ LABEL_98:
           v57 = DataGlobal_B0FB34;
         }
 LABEL_106:
-        DrawToSurfaceSHP(DSurface_Alternate, (int)v62,(gamemd::ConvertClass *)((int)v57), 0, (gamemd::ConvertClass *)v69, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        DrawToSurfaceSHP(DSurface_Alternate, (int)v62,(gamemd::ConvertClass *)((int)v57), 0, (gamemd::ConvertClass *)v69, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         goto LABEL_116;
       }
       if ( g_DDraw_Active >= 800 )
@@ -2140,7 +2140,7 @@ LABEL_106:
         (int)v62,
         (gamemd::ConvertClass *)(int)v80,
         v88 + v68 * v56,
-        v69,
+        (gamemd::ConvertClass *)v69,
         v72,
         1024,
         0,
@@ -2252,7 +2252,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         if ( v8 ) /*0x608765*/
           goto LABEL_31; /*0x608765*/
   LABEL_39:
-        v6 = RA2_OPNEW(0x10u); /*0x608767*/
+        v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608767*/
         if ( !v6 ) /*0x608773*/
           return 0; /*0x608773*/
         *v6 = 104; /*0x608779*/
@@ -2265,14 +2265,14 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
       if ( !v8 ) /*0x60879b*/
       {
   LABEL_43:
-        v6 = RA2_OPNEW(0x10u); /*0x60879d*/
+        v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x60879d*/
         if ( !v6 ) /*0x6087a9*/
           return 0; /*0x6087a9*/
         *v6 = 24; /*0x6087af*/
         goto LABEL_41; /*0x6087b5*/
       }
   LABEL_45:
-      v6 = RA2_OPNEW(0x10u); /*0x6087b7*/
+      v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x6087b7*/
       if ( !v6 ) /*0x6087c6*/
         return 0; /*0x6087c6*/
       *v6 = 23; /*0x6087cc*/
@@ -2308,7 +2308,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
               case 1842: /*0x608975*/
                 if ( g_DisplayWidth == 640 ) /*0x608984*/
                 {
-                  v6 = RA2_OPNEW(0x10u); /*0x608988*/
+                  v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608988*/
                   if ( !v6 ) /*0x608992*/
                     return 0; /*0x608992*/
                   *v6 = 110; /*0x608998*/
@@ -2320,7 +2320,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 }
                 if ( g_DisplayWidth != 800 && g_DisplayWidth != 1024 ) /*0x6089b1*/
                   return 0; /*0x6089b1*/
-                v6 = RA2_OPNEW(0x10u); /*0x6089b9*/
+                v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x6089b9*/
                 if ( !v6 ) /*0x6089c3*/
                   return 0; /*0x6089c3*/
                 *v6 = 180; /*0x6089c9*/
@@ -2344,7 +2344,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
               goto LABEL_96; /*0x608a0e*/
             }
   LABEL_135:
-            v6 = RA2_OPNEW(0x10u); /*0x608c42*/
+            v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608c42*/
             if ( !v6 ) /*0x608c4e*/
               return 0; /*0x608c4e*/
             *v6 = 346; /*0x608c50*/
@@ -2380,7 +2380,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                   goto LABEL_123; /*0x608b9c*/
                 }
   LABEL_119:
-                v6 = RA2_OPNEW(0x10u); /*0x608b79*/
+                v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608b79*/
                 if ( !v6 ) /*0x608b85*/
                   return 0; /*0x608b85*/
                 *v6 = 80; /*0x608b8b*/
@@ -2394,7 +2394,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                   goto LABEL_131; /*0x608c00*/
                 }
   LABEL_127:
-                v6 = RA2_OPNEW(0x10u); /*0x608bdd*/
+                v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608bdd*/
                 if ( !v6 ) /*0x608be9*/
                   return 0; /*0x608be9*/
                 *v6 = 228; /*0x608bef*/
@@ -2406,7 +2406,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
             {
               if ( g_DisplayWidth != 800 && g_DisplayWidth != 1024 ) /*0x608c66*/
                 return 0; /*0x608c66*/
-              v6 = RA2_OPNEW(0x10u); /*0x608c6a*/
+              v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608c6a*/
               if ( !v6 ) /*0x608c74*/
                 return 0; /*0x608c74*/
   LABEL_140:
@@ -2426,7 +2426,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
             goto LABEL_105; /*0x608a91*/
           }
         }
-        v6 = RA2_OPNEW(0x10u); /*0x608a5b*/
+        v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608a5b*/
         if ( v6 ) /*0x608a65*/
         {
           *v6 = 52; /*0x608a6b*/
@@ -2444,7 +2444,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
           if ( g_DisplayWidth == 640 ) /*0x608910*/
           {
   LABEL_51:
-            v6 = RA2_OPNEW(0x10u); /*0x608812*/
+            v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608812*/
             if ( v6 ) /*0x60881e*/
             {
               *v6 = 52; /*0x608824*/
@@ -2463,7 +2463,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
               return 0; /*0x608a99*/
           }
   LABEL_105:
-          v6 = RA2_OPNEW(0x10u); /*0x608a9f*/
+          v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608a9f*/
           if ( v6 ) /*0x608aab*/
           {
             *v6 = 60; /*0x608ab1*/
@@ -2485,7 +2485,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 return 0; /*0x608b2b*/
             }
   LABEL_114:
-            v6 = RA2_OPNEW(0x10u); /*0x608b31*/
+            v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608b31*/
             if ( !v6 ) /*0x608b3d*/
               return 0; /*0x608b3d*/
             *v6 = 180; /*0x608b43*/

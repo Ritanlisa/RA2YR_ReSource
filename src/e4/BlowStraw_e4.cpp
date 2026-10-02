@@ -283,7 +283,7 @@ TabClass * BlowStraw_29::Read(char * Block, char a2)
   do /*0x5bea06*/
   {
     v3 -= 997; /*0x5be9f5*/
-    Array::ForEachReverse(v3, 52, 75, (int (*)(int))nullsub_56); /*0x5bea00*/
+    Array::ForEachReverse((gamemd::ObjectClass *)v3, 52, 75, (int (*)(int))nullsub_56); /*0x5bea00*/
     --v4; /*0x5bea05*/
   }
   while ( v4 ); /*0x5bea06*/

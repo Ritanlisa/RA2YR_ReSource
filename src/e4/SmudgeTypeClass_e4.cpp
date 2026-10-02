@@ -261,7 +261,7 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
 
   v3 = (UnitClass *)__2_YAPAXI_Z(0xB0u); /*0x6b55c8*/
   if ( v3 ) /*0x6b55d2*/
-    return ((UnitClass *)v3)->Create(this, &dword_B0B7A8, -1); /*0x6b55de*/
+return (gamemd::SmudgeClass *)((UnitClass *)v3)->Create(this, &dword_B0B7A8, -1); /*0x6b55de*/
   else
     return 0; /*0x6b55e7*/
 

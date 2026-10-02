@@ -476,7 +476,7 @@ void* StreamWrapper::QueryInterface(int a2) {
   void (__thiscall ***v5)(unsigned int, int); // ecx
 
   v3 =(void (__thiscall ***)(unsigned int,int))(void (***)(unsigned int, int))*((unsigned int *)this + 4); /*0x7b0443*/
-  *(unsigned int *)this->__pad_0 = (void *)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7b0446*/
+  *(unsigned int *)this->__pad_0 =(unsigned int)(void *)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7b0446*/
   if ( v3 ) /*0x7b044e*/
     (**v3)((unsigned int)v3, 1); /*0x7b0454*/
   v4 =(void (__thiscall ***)(unsigned int,int))(void (***)(unsigned int, int))*((unsigned int *)this + 5); /*0x7b0456*/
@@ -497,7 +497,7 @@ int Stream::GetField() {
   int (__thiscall ***v1)(unsigned int, int); // ecx
   int result; // eax
 
-  v1 = (int (***)(unsigned int, int))this->u32_14; /*0x7bcae0*/
+  v1 =(int (__thiscall ***)(unsigned int,int))(int (***)(unsigned int, int))this->u32_14; /*0x7bcae0*/
   if ( v1 ) /*0x7bcae5*/
     return (**v1)((unsigned int)v1, 1); /*0x7bcaeb*/
   return result; /*0x7bcaed*/

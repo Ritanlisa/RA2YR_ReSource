@@ -244,7 +244,7 @@ void GameSettings::Read(void *a1, void *a2, void * aAllowhiresmode, void * aAllo
 //L-fix     fmul ds:flt_7EF38C
   }
   LOWORD(v17) = Math::RoundToInt(v1); /*0x5faa60*/
-  EndBufferMixer((int *)g_MixerChannel_Voice, v17); /*0x5faa6d*/
+  EndBufferMixer((gamemd::VolumeStruct *)(int *)g_MixerChannel_Voice, v17); /*0x5faa6d*/
   /* asm-debt:__asm { fld dword ptr [esi+3Ch] } */
   /* asm-debt:__asm { fstp [esp+1A8h+var_1A8] } */
   Debug::Log(); /*0x5faa80*/
@@ -272,7 +272,7 @@ void GameSettings::Read(void *a1, void *a2, void * aAllowhiresmode, void * aAllo
   *(float *)&_ESI[64] = _ET1; /*0x5faab7*/
   /* asm-debt:__asm { fmul ds:flt_7EF38C } */
   LOWORD(v20) = Math::RoundToInt(v1); /*0x5faac0*/
-  EndBufferMixer((int *)g_MixerChannel_Theme, v20); /*0x5faacd*/
+  EndBufferMixer((gamemd::VolumeStruct *)(int *)g_MixerChannel_Theme, v20); /*0x5faacd*/
   /* asm-debt:__asm */
   {
 //L-fix     fld dword ptr [esi+40h]

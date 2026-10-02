@@ -254,7 +254,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     v41);
   /* asm-debt:__asm { fstp qword ptr [esi+2F8h] } */
   *(double *)&((ParticleSystemTypeClass *)&_ESI)->__pad_2EC[12] = _RT1; /*0x64460f*/
-  return 1; /*0x644617*/
+return (void *)1; /*0x644617*/
 
 }
 }
@@ -276,7 +276,7 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
   ((Checksummer *)((Checksummer *)a2))->Add_float(this->ParticleSystemTypeClass_field_0x2AC); /*0x64476b*/
   ((Checksummer *)((Checksummer *)a2))->Add_float(this->DamageDelay); /*0x644779*/
   Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B4); /*0x644787*/
-  return Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B8); /*0x64479a*/
+return (void *)Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B8); /*0x64479a*/
 
 }
 }
@@ -293,7 +293,7 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
   Block->ParticleSystemTypeClass_field_0x8 = &vt_ParticleSystemTypeClass; /*0x644973*/
   Block->SpawnCount = &vt_ParticleSystemTypeClass; /*0x64497a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ParticleSystemTypeClass_field_0x0, 1); /*0x644981*/
-  v5 = Block; /*0x644996*/
+  v5 =(gamemd::ParticleSystemTypeClass *)Block; /*0x644996*/
   v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/
          &stru_A83D50.__pad_14[4],
          &v5);
@@ -380,10 +380,10 @@ int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
   if ( ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1) >= 0 && aP0 ) /*0x6447f6*/
   {
     ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6447ff*/
-    aP0->ParticleSystemTypeClass_field_0x0 = &vt_ParticleSystemTypeClass; /*0x644804*/
-    aP0->ParticleSystemTypeClass_field_0x4 = &vt_ParticleSystemTypeClass; /*0x64480a*/
-    aP0->ParticleSystemTypeClass_field_0x8 = &vt_ParticleSystemTypeClass; /*0x644811*/
-    aP0->SpawnCount = &vt_ParticleSystemTypeClass; /*0x644818*/
+    aP0->ParticleSystemTypeClass_field_0x0 =(unsigned int)(&vt_ParticleSystemTypeClass); /*0x644804*/
+    aP0->ParticleSystemTypeClass_field_0x4 =(unsigned int)(&vt_ParticleSystemTypeClass); /*0x64480a*/
+    aP0->ParticleSystemTypeClass_field_0x8 =(unsigned int)(&vt_ParticleSystemTypeClass); /*0x644811*/
+    aP0->SpawnCount =(unsigned int)(&vt_ParticleSystemTypeClass); /*0x644818*/
   }
   return 0; /*0x644821*/
 
@@ -395,7 +395,7 @@ namespace gamemd {
 int ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
 
-  AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x64483f*/
+  AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)(AbstractClass *)aP0, aP1, aP2); /*0x64483f*/
   return 0; /*0x644846*/
 
 }

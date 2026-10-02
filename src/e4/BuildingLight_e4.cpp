@@ -270,25 +270,25 @@ LABEL_23:
             {
               case 0: /*0x5ff9f1*/
                 if ( dword_AC1838 ) /*0x5ffa00*/
-                  Object_Calc_7DF3C2(a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffa15*/
+                  Object_Calc_7DF3C2((gamemd::MouseClass *)a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffa15*/
                 else
                   Object_Calc_7DF191((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffa34*/
                 break; /*0x5ffa1d*/
               case 1: /*0x5ff9f1*/
                 if ( dword_AC1838 ) /*0x5ffa49*/
-                  Object_Calc_7DF500(a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffa5e*/
+                  Object_Calc_7DF500((gamemd::MouseClass *)a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffa5e*/
                 else
                   Object_Calc_7DF0B4((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffa7d*/
                 break; /*0x5ffa66*/
               case 2: /*0x5ff9f1*/
                 if ( dword_AC1838 ) /*0x5ffa92*/
-                  Object_Calc_7DF280(a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffaa7*/
+                  Object_Calc_7DF280((gamemd::MouseClass *)a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffaa7*/
                 else
                   Object_Calc((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffac6*/
                 break; /*0x5ffaaf*/
               case 3: /*0x5ff9f1*/
                 if ( dword_AC1838 ) /*0x5ffadb*/
-                  Object_Calc_7DF640(a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffaf0*/
+                  Object_Calc_7DF640((gamemd::MouseClass *)a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffaf0*/
                 else
                   Object_Calc_7DEFD7((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffb0f*/
                 break; /*0x5ffaf8*/

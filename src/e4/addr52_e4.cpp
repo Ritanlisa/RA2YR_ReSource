@@ -203,7 +203,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     }
     v19 = (void **)(a6);
     v22.IsAllocated = (void **)(0);
-    v22.Capacity = (void **)(0);
+    v22.Capacity =(int)(void **)(0);
     a5 = (void **)((void*)&VectorClass_int_vftable); /*0x525562*/
     if ( a6 && IDA_HIBYTE(a8) ) /*0x525572*/
       goto LABEL_20; /*0x525572*/
@@ -328,7 +328,7 @@ LABEL_29:
         }
         a2 = v16; /*0x528341*/
         if ( (uint8_t)((HashTable *)(&this->owningHouseIndex))->BinarySearch((int *)&a2) ) /*0x528348*/
-          p_vtable1 = &((unsigned int *)this->attachedBomb)[0]; /*0x528354*/
+          p_vtable1 =(void **)&((unsigned int *)this->attachedBomb)[0]; /*0x528354*/
         else
           p_vtable1 = (void **)&unk_B7882C; /*0x528359*/
         vtable2 = (unsigned int *)(*p_vtable1); /*0x52835e*/

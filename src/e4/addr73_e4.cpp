@@ -975,11 +975,11 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
     {
       if ( v18 == 1 ) /*0x733490*/
       {
-        StringCSF = GetStringCSF((wchar_t *)aMsgHeavilydama, 0, g_Str_File_UICmnds_cpp, 1606); /*0x7334a8*/
+        StringCSF = GetStringCSF((wchar_t *)aMsgHeavilydama, 0, (const char *)g_Str_File_UICmnds_cpp, 1606); /*0x7334a8*/
       }
       else if ( v18 == 2 ) /*0x7334af*/
       {
-        StringCSF = GetStringCSF((wchar_t *)aMsgHealthy, 0, g_Str_File_UICmnds_cpp, 1608); /*0x7334c7*/
+        StringCSF = GetStringCSF((wchar_t *)aMsgHealthy, 0, (const char *)g_Str_File_UICmnds_cpp, 1608); /*0x7334c7*/
       }
       else
       {
@@ -988,7 +988,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
     }
     else
     {
-      StringCSF = GetStringCSF((wchar_t *)aMsgCritical, 0, g_Str_File_UICmnds_cpp, 1604); /*0x733489*/
+      StringCSF = GetStringCSF((wchar_t *)aMsgCritical, 0, (const char *)g_Str_File_UICmnds_cpp, 1604); /*0x733489*/
     }
     v10 = (DynamicVector *)__2_YAPAXI_Z(0x18u); /*0x7334d2*/
     if ( v10 ) /*0x7334dc*/
@@ -1019,7 +1019,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
         if ( ++v15 >= DynamicVector_field_0x10 ) /*0x733541*/
           goto LABEL_42; /*0x733541*/
       }
-      StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_Mixed, 0, g_Str_File_UICmnds_cpp, 1583); /*0x73355b*/
+      StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_Mixed, 0, (const char *)g_Str_File_UICmnds_cpp, 1583); /*0x73355b*/
     }
 LABEL_42:
     if ( v11 ) /*0x73355f*/
@@ -1175,7 +1175,7 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
         if ( ++v15 >= DynamicVector_field_0x10 ) /*0x73388b*/
           goto LABEL_42; /*0x73388b*/
       }
-      StringCSF = GetStringCSF(g_Str_MSG_Mixed, 0, g_Str_File_UICmnds_cpp, 1658); /*0x7338a5*/
+      StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_Mixed, 0, g_Str_File_UICmnds_cpp, 1658); /*0x7338a5*/
     }
 LABEL_42:
     if ( v11 ) /*0x7338a9*/

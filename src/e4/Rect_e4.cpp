@@ -84,7 +84,7 @@ _DWORD * Rect::Set(int aP1, int aP2, int aP3, int aP4)
   this->Y = aP2; /*0x42e420*/
   this->Width = aP3; /*0x42e427*/
   this->Height = aP4; /*0x42e42a*/
-  return &this->X; /*0x42e42d*/
+return (unsigned int *)&this->X; /*0x42e42d*/
 
 }
 } // namespace gamemd

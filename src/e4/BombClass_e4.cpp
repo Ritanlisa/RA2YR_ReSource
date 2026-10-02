@@ -181,7 +181,7 @@ int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
 
   int Prefix_0; // edi
 
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)aP0, aP1); /*0x438b51*/
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)aP0, (gamemd::AbstractClass *)aP1); /*0x438b51*/
   if ( Prefix_0 >= 0 ) /*0x438b55*/
   {
     if ( aP0 ) /*0x438b59*/

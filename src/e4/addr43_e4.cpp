@@ -608,7 +608,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   v41 = CellStruct::Copy((CellStruct *)&v58, v53); /*0x437afd*/
   v21 = (Coord2D *)CellStruct::Copy(a1, &v55); /*0x437b02*/
   v22 = ((Coord2D *)(v21))->Add(v54, v41); /*0x437b09*/
-  v68 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP0 + 92))(aP0, *v22, v22[1]); /*0x437b28*/
+  v68 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP0 + 92))((int)aP0, *v22, v22[1]); /*0x437b28*/
   if ( !v68 ) /*0x437b2f*/
     return 0; /*0x437b3a*/
   if ( g_ZBufferDescriptor ) /*0x437b45*/
@@ -673,7 +673,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     v51 = *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 40); /*0x437d1c*/
     v19 = (2 * (v32 & 1)) | ((uint8_t)v31 ^ (uint8_t)v32) & 1; /*0x437d20*/
   }
-  v33 = (uint16_t *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP3 + 92))(aP3, 0, 0); /*0x437d36*/
+  v33 = (uint16_t *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP3 + 92))((int)aP3, 0, 0); /*0x437d36*/
   if ( v33 ) /*0x437d3a*/
   {
     v34 = v48; /*0x437d51*/
@@ -688,7 +688,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
       while ( v34 ); /*0x437d64*/
     }
     v35 = (IUnknown *)((int)(aP0));
-    v70 = (*(int (**)(int))(*(unsigned int *)aP0 + 116))(aP0); /*0x437d76*/
+    v70 = (*(int (**)(int))(*(unsigned int *)aP0 + 116))((int)aP0); /*0x437d76*/
     v36 = v65; /*0x437d7d*/
     if ( v65 >= v61 ) /*0x437d83*/
       v36 = v61; /*0x437d85*/
@@ -700,7 +700,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
         v37 = *aP6; /*0x437da4*/
         if ( (unsigned short)a15 ) /*0x437daa*/
           (*(void (**)(int *, int, uint16_t *, int, int, int, int, int, int, int, char *, int))(v37 + 8))( /*0x437de4*/
-            aP6,
+            (int *)aP6,
             v68,
             v33 + 1,
             v64,
@@ -708,13 +708,13 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
             v17,
             SamplePosition,
             v44,
-            aP9,
+            (int)aP9,
             v19,
             v42,
             a15);
         else
           (*(void (**)(int *, int, uint16_t *, int, int, int, int, int, int, int, char *))(v37 + 4))( /*0x437e20*/
-            aP6,
+            (int *)aP6,
             v68,
             v33 + 1,
             v64,
@@ -722,7 +722,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
             v17,
             SamplePosition,
             v44,
-            aP9,
+            (int)aP9,
             v19,
             v42);
         v68 += v70; /*0x437e38*/
@@ -758,8 +758,8 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
       while ( v67 ); /*0x437eda*/
       v35 = aP0; /*0x437ee0*/
     }
-    (*(void (**)(int))(*(unsigned int *)v35 + 96))(v35); /*0x437ee9*/
-    (*(void (**)(int))(*(unsigned int *)aP3 + 96))(aP3); /*0x437ef5*/
+    (*(void (**)(int))(*(unsigned int *)v35 + 96))((int)v35); /*0x437ee9*/
+    (*(void (**)(int))(*(unsigned int *)aP3 + 96))((int)aP3); /*0x437ef5*/
     return 1; /*0x437ef8*/
   }
   else

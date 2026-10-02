@@ -52,8 +52,8 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
   void *v10; // eax
 
   this->Items = 0; /*0x4e0a0a*/
-  this->Capacity = a2; /*0x4e0a11*/
-  this->IsInitialized = 1; /*0x4e0a14*/
+  this->Capacity =(void *)a2; /*0x4e0a11*/
+  this->IsInitialized =(void *)1; /*0x4e0a14*/
   this->IsAllocated = 0; /*0x4e0a18*/
   this->vtable1 = &vt_VectorClassDiscreteDistributionClassDistributionObject; /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
@@ -101,7 +101,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
         v10 = 0; /*0x4e0a81*/
       }
       this->Items = v10; /*0x4e0a83*/
-      this->IsAllocated = 1; /*0x4e0a86*/
+      this->IsAllocated =(void *)1; /*0x4e0a86*/
     }
   }
   this->vtable1 = &vt_DynamicVectorClassDiscreteDistributionClassDistributionObject; /*0x4e0a8a*/
@@ -2562,7 +2562,7 @@ bool FillComboBoxRandomOnly(HWND hDlg, int nIDDlgItem)
   v11 = !ShowWindow(DlgItem, 0); /*0x4e3a2b*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e3a30*/
   SendMessageA(DlgItem, 0x4DEu, 0, 7); /*0x4e3a3c*/
-  StringCSF = GetStringCSF((wchar_t *)aGuiRandomex, 0, g_Str_File_GDlgSupp_cpp, 276); /*0x4e3a4f*/
+  StringCSF = GetStringCSF((wchar_t *)aGuiRandomex, 0, (const char *)g_Str_File_GDlgSupp_cpp, 276); /*0x4e3a4f*/
   v4 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e3a5d*/
   SendMessageA(DlgItem, 0x151u, v4, -2); /*0x4e3a68*/
   v5 = dword_A83CA8; /*0x4e3a6a*/
@@ -2607,7 +2607,7 @@ LRESULT SetupComboBoxObserver(HWND hDlg, int nIDDlgItem)
   v3 = !ShowWindow(DlgItem, 0); /*0x4e3b2b*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e3b2e*/
   SendMessageA(DlgItem, 0x4DEu, 0, 7); /*0x4e3b3a*/
-  StringCSF = GetStringCSF((wchar_t *)aGuiObserver, 0, g_Str_File_GDlgSupp_cpp, 309); /*0x4e3b4d*/
+  StringCSF = GetStringCSF((wchar_t *)aGuiObserver, 0, (const char *)g_Str_File_GDlgSupp_cpp, 309); /*0x4e3b4d*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e3b5b*/
   SendMessageA(DlgItem, 0x151u, v5, -3); /*0x4e3b66*/
   SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e3b72*/
@@ -2648,17 +2648,17 @@ LPARAM * InitGameDropdownColors()
   LPARAM *result; // eax
   int v3; // edx
 
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TemporalClass *)GetStringCSF(aGuiGoldabbrev, 0, g_Str_File_GDlgSupp_cpp, 475); /*0x4e43e7*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TemporalClass *)GetStringCSF((wchar_t *)aGuiGoldabbrev, 0, g_Str_File_GDlgSupp_cpp, 475); /*0x4e43e7*/
   ((unsigned int *)&FootClass_Array)[0] = ((wchar_t *)int)GetStringCSF(aGuiRedabbrev, 0, g_Str_File_GDlgSupp_cpp, 476); /*0x4e4402*/
   *((unsigned int *)((char *)&FootClass_Array + 2)) = ((wchar_t *)int)GetStringCSF(aGuiBlueabbrev, 0, g_Str_File_GDlgSupp_cpp, 477); /*0x4e441d*/
-  ((unsigned int *)&FootClass_Array)[0] = (int)GetStringCSF(aGuiGreenabbrev, 0, g_Str_File_GDlgSupp_cpp, 478); /*0x4e4438*/
-  ((unsigned int *)&FootClass_Array)[0] = (FootClass *)GetStringCSF(aGuiOrangeabbre, 0, g_Str_File_GDlgSupp_cpp, 479); /*0x4e4453*/
-  ((unsigned int *)&FootClass_Array)[0] = (AbstractClass *)GetStringCSF(aGuiSkyblueabbr, 0, g_Str_File_GDlgSupp_cpp, 480); /*0x4e446e*/
-  ((unsigned int *)&FootClass_Array)[0] = (TechnoClass *)GetStringCSF(aGuiPurpleabbre, 0, g_Str_File_GDlgSupp_cpp, 481); /*0x4e4489*/
-  ((unsigned int *)&FootClass_Array)[0] = (HouseClass *)GetStringCSF(aGuiPinkabbrev, 0, g_Str_File_GDlgSupp_cpp, 482); /*0x4e44a4*/
-  ((unsigned int *)&FootClass_Array)[0] = (SlaveManagerClass *)GetStringCSF(aGuiGrayabbrev, 0, g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
-  p_owningHouseIndex0 = &((char *)&FootClass_Array); /*0x4e44b3*/
-  result = dword_8316A8; /*0x4e44b8*/
+  ((unsigned int *)&FootClass_Array)[0] = ((wchar_t *)int)GetStringCSF(aGuiGreenabbrev, 0, g_Str_File_GDlgSupp_cpp, 478); /*0x4e4438*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(FootClass *)GetStringCSF(aGuiOrangeabbre, 0, g_Str_File_GDlgSupp_cpp, 479); /*0x4e4453*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(AbstractClass *)GetStringCSF(aGuiSkyblueabbr, 0, g_Str_File_GDlgSupp_cpp, 480); /*0x4e446e*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TechnoClass *)GetStringCSF(aGuiPurpleabbre, 0, g_Str_File_GDlgSupp_cpp, 481); /*0x4e4489*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(HouseClass *)GetStringCSF(aGuiPinkabbrev, 0, g_Str_File_GDlgSupp_cpp, 482); /*0x4e44a4*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(SlaveManagerClass *)GetStringCSF(aGuiGrayabbrev, 0, g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
+  p_owningHouseIndex0 =(int *)&((char *)&FootClass_Array); /*0x4e44b3*/
+  result =(LPARAM *)dword_8316A8; /*0x4e44b8*/
   do /*0x4e44d3*/
   {
     v3 = *result++; /*0x4e44bd*/
@@ -2694,7 +2694,7 @@ LRESULT FillListBox(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e479c*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e47a8*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e47b4*/
-  StringCSF = GetStringCSF(g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 567); /*0x4e47c7*/
+  StringCSF = GetStringCSF((wchar_t *)g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 567); /*0x4e47c7*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e47d7*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e47e2*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e47ed*/
@@ -2723,7 +2723,7 @@ int GetComboBoxSelectedRaw(HWND aP0, int nIDDlgItem, LRESULT wParam)
 namespace gamemd {
 wchar_t * sub_4E4F30()
 {
-  return GetStringCSF(aSttHostcombost, 0, g_Str_File_GDlgSupp_cpp, 747); /*0x4e4f46*/
+  return GetStringCSF((wchar_t *)aSttHostcombost, 0, g_Str_File_GDlgSupp_cpp, 747); /*0x4e4f46*/
 }
 } // namespace gamemd
 
@@ -2742,7 +2742,7 @@ int * _cfltcvt_init()
   dword_8B3F78 = (int)a7; /*0x4e4f8c*/
   dword_8B3F84 = (int)a8; /*0x4e4f96*/
   dword_8B3F90 = (int)a0_0; /*0x4e4fa0*/
-  result = dword_8B3F38; /*0x4e4faa*/
+  result =(int *)dword_8B3F38; /*0x4e4faa*/
   do /*0x4e4fbd*/
   {
     *result = -1; /*0x4e4faf*/
@@ -2762,7 +2762,7 @@ void Lobby_ResetFactionTable(int a1)
 
   if ( a1 > 0 ) /*0x4e4fc2*/
   {
-    v1 = dword_8B3F38; /*0x4e4fc4*/
+    v1 =(int *)dword_8B3F38; /*0x4e4fc4*/
     v2 = a1; /*0x4e4fc9*/
     do /*0x4e4fd5*/
     {
@@ -2808,7 +2808,7 @@ int SetupComboBoxRandomAlliance(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e528c*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5298*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e52a4*/
-  StringCSF = GetStringCSF(g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 876); /*0x4e52b7*/
+  StringCSF = GetStringCSF((wchar_t *)g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 876); /*0x4e52b7*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e52c7*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e52d2*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e52dd*/
@@ -2848,7 +2848,7 @@ LRESULT InitComboBoxNone(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e5cdc*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5ce8*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5cf4*/
-  StringCSF = GetStringCSF(aGuiNoneassymbo, 0, g_Str_File_GDlgSupp_cpp, 1165); /*0x4e5d07*/
+  StringCSF = GetStringCSF((wchar_t *)aGuiNoneassymbo, 0, g_Str_File_GDlgSupp_cpp, 1165); /*0x4e5d07*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5d17*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5d22*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e5d2d*/
@@ -2909,7 +2909,7 @@ char * Version_GetString(unsigned int * a1, unsigned char * a2, char * Destinati
   *a1 = byte_84E863; /*0x4e6169*/
   result = Destination; /*0x4e616b*/
   if ( Destination ) /*0x4e6173*/
-    return strncpy(Destination, Source, Count); /*0x4e6180*/
+    return strncpy(Destination, (const char *)Source, Count); /*0x4e6180*/
   return result; /*0x4e616f*/
 }
 } // namespace gamemd
@@ -2927,7 +2927,7 @@ int sub_4E6190()
   Event_Process_7C5FFF(); /*0x4e6199*/
   v0 = byte_84E863; /*0x4e619e*/
   if ( &v2 != (int *)-4 ) /*0x4e61ab*/
-    strncpy(Destination, Source, 0x40u); /*0x4e61b9*/
+    strncpy(Destination, (const char *)Source, 0x40u); /*0x4e61b9*/
   if ( !v0 || !byte_84E864 ) /*0x4e61d0*/
     return -1; /*0x4e627c*/
   if ( !_strcmpi(Destination, aAuthenticamd) ) /*0x4e61e0*/

@@ -173,7 +173,7 @@ int BlitTransXlatAlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6
 {
 
   return (*(int (**)(_BlitTransXlatAlphaZRead_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494d4a*/
-           this,
+           (_BlitTransXlatAlphaZRead_G *)this,
            a2,
            a3,
            a4,
@@ -191,7 +191,7 @@ int BlitTransXlatAlphaZRead_ushort::GetSize(int a2, int a3, int a4, int a5, int 
 {
 
   return (*(int (**)(_BlitTransXlatAlphaZRead_G *, int, int, int, int, int, int, int, unsigned int, int))(*(unsigned int *)this->__pad_0 + 8))( /*0x494d7f*/
-           this,
+           (_BlitTransXlatAlphaZRead_G *)this,
            a2,
            a3,
            a4,
@@ -210,7 +210,7 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, 
 {
 
   return (*(int (**)(_BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x4948ba*/
-           this,
+           (_BlitTranslucentWriteAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -228,7 +228,7 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_3(int a2, int a3, int a4, int a5, 
 {
 
   return (*(int (**)(_BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x4948ea*/
-           this,
+           (_BlitTranslucentWriteAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -246,7 +246,7 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_4(int a2, int a3, int a4, int a5, 
 {
 
   return (*(int (**)(_BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x49491a*/
-           this,
+           (_BlitTranslucentWriteAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -264,7 +264,7 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_5(int a2, int a3, int a4, int a5, 
 {
 
   return (*(int (**)(_BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x4949da*/
-           this,
+           (_BlitTranslucent50NonzeroAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -282,7 +282,7 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_6(int a2, int a3, int a4, int a5, 
 {
 
   return (*(int (**)(_BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494a0a*/
-           this,
+           (_BlitTranslucent50NonzeroAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -300,7 +300,7 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, 
 {
 
   return (*(int (**)(_BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494a3a*/
-           this,
+           (_BlitTranslucent50NonzeroAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -318,7 +318,7 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_8(int a2, int a3, int a4, int a5, 
 {
 
   return (*(int (**)(_BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494afa*/
-           this,
+           (_BlitTranslucent50ZeroAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -336,7 +336,7 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_9(int a2, int a3, int a4, int a5, 
 {
 
   return (*(int (**)(_BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494b2a*/
-           this,
+           (_BlitTranslucent50ZeroAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -354,7 +354,7 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_10(int a2, int a3, int a4, int a5,
 {
 
   return (*(int (**)(_BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494b5a*/
-           this,
+           (_BlitTranslucent50ZeroAlpha_G *)this,
            a2,
            a3,
            a4,

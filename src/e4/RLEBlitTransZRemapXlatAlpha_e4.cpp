@@ -87,7 +87,7 @@ int RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, 
 {
 
   return (*(int (**)(_RLEBlitTransZRemapXlatAlpha_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->__pad_0 + 4))( /*0x497b77*/
-           this,
+           (_RLEBlitTransZRemapXlatAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -107,7 +107,7 @@ int RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int 
 {
 
   return (*(int (**)(_RLEBlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->__pad_0 + 4))( /*0x4978b7*/
-           this,
+           (_RLEBlitTransLucent25ZReadWrite_G *)this,
            a2,
            a3,
            a4,

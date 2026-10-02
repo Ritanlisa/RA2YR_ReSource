@@ -490,7 +490,7 @@ void ObjectClass::sub_47A080(DWORD a2)
   if ( !CDROM::DeviceIoControl(FileA, a2) ) /*0x47a0e5*/
   {
     Debug::Log(); /*0x47a0fa*/
-    DriveControlCD((int)this, FileA, a2); /*0x47a105*/
+    DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, a2); /*0x47a105*/
     return; /*0x47a111*/
   }
   memset(&InBuffer[1], 0, 0x18u); /*0x47a123*/
@@ -508,7 +508,7 @@ LABEL_8:
   if ( (InBuffer[6] & 1) != 0 ) /*0x47a17b*/
     goto LABEL_8; /*0x47a17b*/
 LABEL_9:
-  DriveControlCD((int)this, FileA, a2); /*0x47a18e*/
+  DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, a2); /*0x47a18e*/
   CloseHandle(FileA); /*0x47a19b*/
 
 }
@@ -2366,7 +2366,7 @@ char ObjectClass::sub_47A1B0(DWORD BytesReturned)
       Debug::Log(); /*0x47a26f*/
       v5 = 0; /*0x47a277*/
     }
-    DriveControlCD((int)this, FileA, BytesReturned); /*0x47a28f*/
+    DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, BytesReturned); /*0x47a28f*/
     CloseHandle(FileA); /*0x47a295*/
     Debug::Log(); /*0x47a2af*/
     return v5; /*0x47a2b7*/
@@ -2407,7 +2407,7 @@ char ObjectClass::sub_47A2D0(DWORD BytesReturned)
       Debug::Log(); /*0x47a38f*/
       v5 = 0; /*0x47a397*/
     }
-    DriveControlCD((int)this, FileA, BytesReturned); /*0x47a3af*/
+    DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, BytesReturned); /*0x47a3af*/
     CloseHandle(FileA); /*0x47a3b5*/
     Debug::Log(); /*0x47a3cf*/
     return v5; /*0x47a3d7*/
@@ -2477,10 +2477,10 @@ CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
 
   BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47aa03*/
   *((unsigned char *)this + 84) = 0; /*0x47aa0c*/
-  *(unsigned int *)this->BufferIOFileClass = &off_7E1668; /*0x47aa10*/
+  *(unsigned int *)this->BufferIOFileClass =(unsigned int)(&off_7E1668); /*0x47aa10*/
   v3 = ((String *)((String *)a2))->GetOrEmpty_Alt(); /*0x47aa16*/
   FileClass::OpenWithCDSearch(this, v3); /*0x47aa1e*/
-  return this->BufferIOFileClass; /*0x47aa25*/
+return (gamemd::CDFileClass *)this->BufferIOFileClass; /*0x47aa25*/
 
 }
 } // namespace gamemd

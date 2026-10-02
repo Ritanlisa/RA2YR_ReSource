@@ -31,7 +31,7 @@ namespace gamemd {
 unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 {
 
-  ((AbstractTypeClass*)((int)this))->Init(aP1); /*0x511658*/
+  ((AbstractTypeClass*)((int)this))->Init((int)aP1); /*0x511658*/
   this->veteranInfantry[0] = (gamemd::InfantryTypeClass *)((int)&vt_TypeList); /*0x51165d*/
   *(unsigned int *)&this->prefix = (unsigned int)(&vt_TypeList); /*0x511667*/
   *(unsigned int *)&this->__pad_16D[23] = (unsigned int)(&vt_TypeList); /*0x511671*/

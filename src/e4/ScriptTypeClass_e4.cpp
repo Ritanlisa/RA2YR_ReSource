@@ -143,7 +143,7 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
   for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, i); /*0x6e8367*/
-    ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), Buffer, 32); /*0x6e8380*/
+    ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), Buffer, 32); /*0x6e8380*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Buffer, 0); /*0x6e838e*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)g_INI_Key_TaskForces, 0); /*0x6e83a1*/

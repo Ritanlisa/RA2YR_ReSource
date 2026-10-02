@@ -546,7 +546,7 @@ LABEL_25:
   *(unsigned int *)(_EBP + 184) = v32; /*0x6cee26*/
   if ( !v32 ) /*0x6cee2f*/
     *(unsigned int *)(_EBP + 184) = SearchMIXFile(&(unsigned int *)((char *)&stru_820320 + 143), 0); /*0x6cee3d*/
-  return 1; /*0x6cee43*/
+return (void *)1; /*0x6cee43*/
 
 }
 }
@@ -602,10 +602,10 @@ SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(unsigned int * Block, char a
   SuperWeaponTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->vtable1 = &vt_SuperWeaponTypeClass; /*0x6cefed*/
-  ((unsigned int *)Block)[0] = &vt_SuperWeaponTypeClass; /*0x6ceff3*/
-  ((unsigned int *)Block)[0] = &vt_SuperWeaponTypeClass; /*0x6ceffa*/
-  ((unsigned int *)Block)[0] = &vt_SuperWeaponTypeClass; /*0x6cf001*/
-  v5 = Block; /*0x6cf00f*/
+  ((unsigned int *)Block)[0] =(unsigned int)(&vt_SuperWeaponTypeClass); /*0x6ceff3*/
+  ((unsigned int *)Block)[0] =(unsigned int)(&vt_SuperWeaponTypeClass); /*0x6ceffa*/
+  ((unsigned int *)Block)[0] =(unsigned int)(&vt_SuperWeaponTypeClass); /*0x6cf001*/
+  v5 =(gamemd::SuperWeaponTypeClass *)Block; /*0x6cf00f*/
   v3 = (*(int (**)(unsigned int *, SuperWeaponTypeClass **))(dword_A8E330 + 16))(&dword_A8E330, &v5); /*0x6cf013*/
   if ( v3 != -1 && v3 < dword_A8E340 && v3 < --dword_A8E340 ) /*0x6cf02e*/
   {
@@ -671,7 +671,7 @@ int SuperWeaponTypeClass::FindOrCreate(INIClass * aP1, unsigned char * a2, CCINI
   {
     v6 = (SuperWeaponTypeClass *)__2_YAPAXI_Z(0x1B0u); /*0x4755a5*/
     if ( v6 ) /*0x4755af*/
-      v7 = SuperWeaponTypeClass::Construct(v6, Destination); /*0x4755b8*/
+      v7 =(unsigned char *)SuperWeaponTypeClass::Construct(v6, Destination); /*0x4755b8*/
     else
       v7 = 0; /*0x4755bf*/
     v8 = 0; /*0x4755c7*/

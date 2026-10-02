@@ -615,7 +615,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
   ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x58d458*/
   v4 = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x58d467*/
   if ( !v4 ) /*0x58d46b*/
-    return &v3->vtable1; /*0x58d592*/
+return (unsigned int *)&v3->vtable1; /*0x58d592*/
   do
   {
     v5 = *(unsigned int *)(v4 + 36); /*0x58d478*/
@@ -666,7 +666,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
     v4 = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x58d57d*/
   }
   while ( v4 );
-  return &v3->vtable1; /*0x58d588*/
+return (unsigned int *)&v3->vtable1; /*0x58d588*/
 
 }
 }
@@ -797,7 +797,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
     }
     if ( v5 ) /*0x58e94b*/
       (*(void (**)(unsigned int *, int))*v5)(v5, 1); /*0x58e951*/
-    p_vtable0 = &v4->vtable1; /*0x58e95c*/
+    p_vtable0 =(unsigned int *)&v4->vtable1; /*0x58e95c*/
   }
   if ( p_vtable0 ) /*0x58e972*/
     (*(void (**)(unsigned int *, int))*p_vtable0)(p_vtable0, 1); /*0x58e978*/
@@ -1529,7 +1529,7 @@ LABEL_89:
           }
           while ( v20 > 1 ); /*0x590c05*/
           LOWORD(a1) = v20 + (unsigned short)a1; /*0x590c07*/
-          v9 = ((RandomMap*)this)->CheckPlacementArea((int16_t *)&v39[1], (int16_t *)&a1, v5); /*0x590c1e*/
+          v9 = ((RandomMap*)this)->CheckPlacementArea((int16_t *)&v39[1], (int16_t *)&a1, (gamemd::ObjectClass *)v5); /*0x590c1e*/
           if ( !v9 ) /*0x590c22*/
           {
 LABEL_90:
@@ -1717,7 +1717,7 @@ int RandomMap::CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector
   v16 = v6; /*0x591000*/
   v7 = a1[1] - 2; /*0x591010*/
   v8 = (unsigned short *)(int16_t)(*a1 - 2); /*0x591014*/
-  RandomMap_field_0x8 = this->RandomMap_field_0x8; /*0x59101a*/
+  RandomMap_field_0x8 =(void *)this->RandomMap_field_0x8; /*0x59101a*/
   v15 = v7; /*0x59101d*/
   v18 = v7; /*0x591021*/
   v19 = 5; /*0x59102a*/
@@ -1736,8 +1736,8 @@ int RandomMap::CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector
       {
         if ( v11 != 1 || v12 != 1 ) /*0x591076*/
         {
-          v17 = v13; /*0x59107c*/
-          v14 = this->RandomMap_field_0x8; /*0x591088*/
+          v17 =(unsigned short *)v13; /*0x59107c*/
+          v14 =(void *)this->RandomMap_field_0x8; /*0x591088*/
           v19 = 5; /*0x591094*/
           v20 = 5; /*0x591098*/
           v18 = v11 + v15 + 4 * v11 - 5; /*0x5910a0*/
@@ -1854,7 +1854,7 @@ ObjectClass * * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClas
   v73 = v8 - 4; /*0x592483*/
   v75 = a3[1] - v8 + 9; /*0x59249f*/
   v74 = v6 - v7 + 11; /*0x5924a9*/
-  result = BuildingTypeClass::CheckPlacementArea((BuildingTypeClass *)this, &v72, (int)aP2); /*0x5924ad*/
+  result = BuildingTypeClass::CheckPlacementArea((short *)(BuildingTypeClass *)this, &v72, (int)aP2); /*0x5924ad*/
   if ( result ) /*0x5924b4*/
   {
     v10 = *a2; /*0x5924c0*/
@@ -2005,12 +2005,12 @@ ObjectClass * * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClas
       v35 = *a2 - 3; /*0x592788*/
       HIWORD(v66.MapSeed_field_0x08) = a2[1]; /*0x59278c*/
       LOWORD(v66.MapSeed_field_0x08) = v35; /*0x592796*/
-      RandomMap_field_0x10 = this->RandomMap_field_0x10; /*0x59279f*/
+      RandomMap_field_0x10 =(void *)this->RandomMap_field_0x10; /*0x59279f*/
       v66.MapSeed_field_0x10 = v66.MapSeed_field_0x08; /*0x5927a2*/
       PlaceMapSeedClassBuildings(g_TerrainTypeTable2 + 7, &v66.MapSeed_field_0x10, (int)aP2, (int)RandomMap_field_0x10); /*0x5927af*/
       v37 = a3[1] - 2; /*0x5927c0*/
       LOWORD(v66.MapSeed_field_0x08) = *a3 - 3; /*0x5927c4*/
-      v38 = this->RandomMap_field_0x10; /*0x5927c9*/
+      v38 =(void *)this->RandomMap_field_0x10; /*0x5927c9*/
       HIWORD(v66.MapSeed_field_0x08) = v37; /*0x5927cc*/
       v66.MapSeed_field_0x10 = v66.MapSeed_field_0x08; /*0x5927d5*/
       PlaceMapSeedClassBuildings(g_TerrainTypeTable2 + 8, &v66.MapSeed_field_0x10, (int)aP2, (int)v38); /*0x5927e7*/

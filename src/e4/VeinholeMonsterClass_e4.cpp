@@ -69,7 +69,7 @@ namespace gamemd {  // G42.18c ns repair
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2, void *a4)
 {
 
-  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0), (gamemd::ObjectTypeClass *)a1, aP2); /*0x74eef4*/
+  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0), (gamemd::ObjectTypeClass *)a1, (gamemd::ObjectTypeClass *)aP2); /*0x74eef4*/
 
 }
 }  // G42.18c ns repair

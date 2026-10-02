@@ -197,7 +197,7 @@ unsigned int * ScriptAction::GetCoords(unsigned int *a2) {
     int v5; // esi
     unsigned int v7[3]; // [esp+8h] [ebp-Ch] BYREF
 
-    ScenarioClassActionCoords = GetScenarioClassActionCoords( /*0x6343d1*/
+    ScenarioClassActionCoords =(int *)GetScenarioClassActionCoords( /*0x6343d1*/
                                   v7,
                                   *(unsigned char **)(*(unsigned int *)this->ScriptAction_field_0x4[0] + 4));
     v3 = *ScenarioClassActionCoords; /*0x6343d6*/
@@ -218,7 +218,7 @@ unsigned int * ScriptAction::GetScreenPos(unsigned int *a2) {
     int v5[3]; // [esp+0h] [ebp-18h] BYREF
     unsigned int v6[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-    ScenarioClassActionCoords = GetScenarioClassActionCoords( /*0x63440f*/
+    ScenarioClassActionCoords =(unsigned int *)GetScenarioClassActionCoords( /*0x63440f*/
                                   v5,
                                   *(unsigned char **)(*(unsigned int *)this->ScriptAction_field_0x4[0] + 4));
     v6[0] = *ScenarioClassActionCoords; /*0x634416*/
@@ -238,7 +238,7 @@ BOOL ScriptAction::GetActionCoordinates(int a2, int a3, int a4) {
     unsigned int *ScenarioClassActionCoords; // eax
     unsigned int v6[3]; // [esp+4h] [ebp-Ch] BYREF
 
-    ScenarioClassActionCoords = GetScenarioClassActionCoords( /*0x634560*/
+    ScenarioClassActionCoords =(unsigned int *)GetScenarioClassActionCoords( /*0x634560*/
                                   v6,
                                   *(unsigned char **)(*(unsigned int *)this->ScriptAction_field_0x4[0] + 4));
     return *ScenarioClassActionCoords == a2 && ScenarioClassActionCoords[1] == a3 && ScenarioClassActionCoords[2] == a4; /*0x63456f*/
@@ -347,7 +347,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2) {
       v15 = (int)ScriptAction_field_0x30; /*0x634d5e*/
       if ( ScriptAction_field_0x30 ) /*0x634d67*/
       {
-        ScenarioClassActionCoords = GetScenarioClassActionCoords(v27, v28); /*0x634d75*/
+        ScenarioClassActionCoords =(int *)GetScenarioClassActionCoords(v27, v28); /*0x634d75*/
         v17 = *ScenarioClassActionCoords; /*0x634d7a*/
         v18 = 0; /*0x634d7c*/
         v25 = ScenarioClassActionCoords[1]; /*0x634d83*/
@@ -360,7 +360,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2) {
             v20 = v19 + 27; /*0x634dad*/
             v32 = *(unsigned short *)v20; /*0x634daf*/
             v33 = *((unsigned char *)v20 + 2); /*0x634dbc*/
-            v21 = GetScenarioClassActionCoords(v27, v31); /*0x634dbd*/
+            v21 =(unsigned int *)GetScenarioClassActionCoords(v27, v31); /*0x634dbd*/
             if ( v17 == *v21 && v25 == v21[1] && i == v21[2] ) /*0x634dda*/
               return v18; /*0x634df3*/
             v15 = (int)ScriptAction_field_0x30; /*0x634ddc*/
@@ -547,7 +547,7 @@ bool ScriptAction::HitTest(int a1, int a2) {
     v13 = *(unsigned int *)&stru_AC4B30.__pad_EC[28]; /*0x63a910*/
     if ( !*(unsigned int *)&stru_AC4B30.__pad_EC[176] /*0x63aa32*/
       || (v9 = ((ScriptAction*)*(ScriptAction **)&stru_AC4B30.__pad_EC[176])->GetScreenPos(&v12),
-          v10 = ComputeBounds(&v18, 8, *v9, v9[1]),
+          v10 =(int *)ComputeBounds(&v18, 8, *v9, v9[1]),
           v14 = *v10,
           v15 = v10[1],
           v16 = v10[2],
@@ -566,8 +566,8 @@ bool ScriptAction::HitTest(int a1, int a2) {
         while ( 1 ) /*0x63a936*/
         {
           v6 = (ScriptAction *)*((unsigned int *)stru_AC4B30.Array_field_0x4 + v4); /*0x63a936*/
-          ScreenPos = ((ScriptAction*)v6)->GetScreenPos(&v14); /*0x63a93b*/
-          v8 = ComputeBounds(v22, 8, *ScreenPos, ScreenPos[1]); /*0x63a950*/
+          ScreenPos =(int *)((ScriptAction*)v6)->GetScreenPos(&v14); /*0x63a93b*/
+          v8 =(int *)ComputeBounds(v22, 8, *ScreenPos, ScreenPos[1]); /*0x63a950*/
           v18 = *v8; /*0x63a957*/
           v19 = v8[1]; /*0x63a95e*/
           v20 = v8[2]; /*0x63a965*/
@@ -739,7 +739,7 @@ char ScriptAction::ProcessIdleAction() {
       Viewport = (Coord3D *)Display::GetViewport(&v72.X); /*0x63b745*/
       v55 = *Viewport; /*0x63b74c*/
       v56 = *(unsigned int *)Viewport[1].__pad_0; /*0x63b76f*/
-      v16 = ComputeBounds(&v72, 6, v61, v62); /*0x63b778*/
+      v16 =(int *)ComputeBounds(&v72, 6, v61, v62); /*0x63b778*/
       v63 = *v16; /*0x63b77f*/
       v64 = v16[1]; /*0x63b787*/
       v65 = v16[2]; /*0x63b78e*/
@@ -766,7 +766,7 @@ char ScriptAction::ProcessIdleAction() {
           v24 = (Coord3D *)Display::GetViewport(&v72.X); /*0x63b8ac*/
           v55 = *v24; /*0x63b8b7*/
           v56 = *(unsigned int *)v24[1].__pad_0; /*0x63b8d5*/
-          v25 = ComputeBounds(&v72, 6, (int)v14, (int)v13); /*0x63b8de*/
+          v25 =(int *)ComputeBounds(&v72, 6, (int)v14, (int)v13); /*0x63b8de*/
           v63 = *v25; /*0x63b8e5*/
           v64 = v25[1]; /*0x63b8ed*/
           v65 = v25[2]; /*0x63b8f4*/

@@ -15,7 +15,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, i
 {
 
   return (*(int (**)(_RLEBlitTransXlat_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->__pad_0 + 4))( /*0x496167*/
-           this,
+           (_RLEBlitTransXlat_G *)this,
            a2,
            a3,
            a4,
@@ -85,7 +85,7 @@ int BlitTransLucent25Alpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int
 {
 
   return (*(int (**)(_BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x49452a*/
-           this,
+           (_BlitTransXlatWriteAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -103,7 +103,7 @@ int BlitTransLucent25Alpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, i
 {
 
   return (*(int (**)(_BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x49455a*/
-           this,
+           (_BlitTransXlatWriteAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -121,7 +121,7 @@ int BlitTransLucent25Alpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, i
 {
 
   return (*(int (**)(_BlitTransXlatWriteAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x49458a*/
-           this,
+           (_BlitTransXlatWriteAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -193,7 +193,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2, int a3, int a4,
 {
 
   return (*(int (**)(_RLEBlitTransZRemapXlat_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->__pad_0 + 4))( /*0x496247*/
-           this,
+           (_RLEBlitTransZRemapXlat_G *)this,
            a2,
            a3,
            a4,
@@ -213,7 +213,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4,
 {
 
   return (*(int (**)(_RLEBlitTransDarken_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->__pad_0 + 4))( /*0x496307*/
-           this,
+           (_RLEBlitTransDarken_G *)this,
            a2,
            a3,
            a4,

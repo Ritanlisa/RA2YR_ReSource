@@ -28,7 +28,7 @@ char * CenterTeamCommand::AddRef()
 {
 
   sprintf((char *const )((unsigned int *)((char *)&stru_A8EB00 + 2512)), "TeamCenter_%d", *(unsigned int *)&this->m_1[3]); /*0x5361ce*/
-  return (unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x5361db*/
+return (char *)(unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x5361db*/
 
 }
 } // namespace gamemd

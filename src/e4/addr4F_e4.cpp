@@ -716,7 +716,7 @@ void ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void
       v26 = 0; /*0x4f2e11*/
       v27 = 0; /*0x4f2e15*/
       ((String *)((String *)&a4))->Assign((const char *)aActiverect); /*0x4f2e19*/
-      Rect = ((INIClass *)a2)->GetRect(&v20, Source, (char **)&a4, &v24); /*0x4f2e30*/
+      Rect =(int *)((INIClass *)a2)->GetRect(&v20, Source, (char **)&a4, &v24); /*0x4f2e30*/
       v24 = *Rect; /*0x4f2e37*/
       v25 = Rect[1]; /*0x4f2e3e*/
       v26 = Rect[2]; /*0x4f2e45*/
@@ -726,7 +726,7 @@ void ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void
       v25 += vtable0[1]; /*0x4f2e77*/
       v16 = (uint8_t *)((String *)((String *)Source))->GetOrEmpty_Alt(); /*0x4f2e7b*/
       v21.__pad_0[0] = INIClass::ReadBool_Overwrite((int *)a2->__pad_0, v16, aLoop, 1); /*0x4f2e91*/
-      ((String *)((String *)&a4))->Assign(g_INI_Key_Rate); /*0x4f2e95*/
+      ((String *)((String *)&a4))->Assign((const char *)g_INI_Key_Rate); /*0x4f2e95*/
       v17 = ((INIClass*)((bool *)a2->__pad_0))->ReadInt(Source, (char **)&a4, 5); /*0x4f2ead*/
       DeleteAndZero(&a4); /*0x4f2eaf*/
       v18 = (GraphicMenuAnimItem *)RA2_OPNEW(0x28u); /*0x4f2eb6*/
@@ -897,9 +897,9 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
 
   v10 = 0; /*0x4f3469*/
   GraphicMenuItem::Constructor((unsigned int *)this, aP1); /*0x4f3472*/
-  v12 = aP2; /*0x4f3477*/
-  v13 = aP4; /*0x4f347b*/
-  *((unsigned int *)this + 4) = aP2; /*0x4f347f*/
+  v12 =(unsigned int *)aP2; /*0x4f3477*/
+  v13 =(unsigned int *)aP4; /*0x4f347b*/
+  *((unsigned int *)this + 4) =(unsigned int)aP2; /*0x4f347f*/
   *((unsigned int *)this + 5) = *v13; /*0x4f3487*/
   *((unsigned int *)this + 6) = v13[1]; /*0x4f348c*/
   *((unsigned int *)this + 7) = v13[2]; /*0x4f3492*/
@@ -910,11 +910,11 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
   *((unsigned int *)this + 11) = 0; /*0x4f34a4*/
   *((unsigned int *)this + 12) = 0; /*0x4f34a7*/
   unknown_libname_73((char *)this + 52); /*0x4f34aa*/
-  v15 = aP8; /*0x4f34af*/
-  *(unsigned int *)this = &vt_GraphicMenuImageItem; /*0x4f34b3*/
+  v15 =(const char **)aP8; /*0x4f34af*/
+  *(unsigned int *)this =(unsigned int)(&vt_GraphicMenuImageItem); /*0x4f34b3*/
   if ( ((String*)v15)->Length() && (aP2 = __2_YAPAXI_Z(0x10u)) != 0 ) /*0x4f34d4*/
   {
-    ((String *)((char **)&aP1))->Assign(aHighlightsound); /*0x4f34df*/
+    ((String *)((char **)&aP1))->Assign((const char *)aHighlightsound); /*0x4f34df*/
     v10 = 1; /*0x4f34ee*/
     v16 = Audio::ParseVolume((int)aP2, (const char **)&aP1, v15); /*0x4f34f3*/
   }

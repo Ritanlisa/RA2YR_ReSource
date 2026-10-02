@@ -143,7 +143,7 @@ int E4Recv_542F30::sub_542F30()
   {
     for ( i = &this->owningHouseIndex; ; ++i ) /*0x542f4d*/
     {
-      v5 =(int *)0; /*0x542f52*/
+      v5 =(int)(int *)0; /*0x542f52*/
       v6 = *(unsigned int *)(*i + 4); /*0x542f54*/
       if ( *(int *)(v6 + 40) <= 0 ) /*0x542f5c*/
         goto LABEL_12; /*0x542f5c*/
@@ -389,7 +389,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80380] = 0;
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80384] = 0;
   int v158[22]; // [esp+33Ch] [ebp-6D4h] BYREF
-  ((CCFileClass*)v158)->Construct(DataGlobal_0082960C);
+  ((CCFileClass*)v158)->Construct((char *)DataGlobal_0082960C);
   if ( lpBuffer )
   {
     RA2_OPDEL(lpBuffer);
@@ -980,8 +980,8 @@ LABEL_26:
       v31 = v75;
     }
     v72 = v31;
-    ((INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_82927C, &unk_829284, &aP4, 64);
-    ((INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_829268, &unk_829274, &v183, 64);
+    ((unsigned char *)(INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_82927C, &unk_829284, &aP4, 64);
+    ((unsigned char *)(INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_829268, &unk_829274, &v183, 64);
     v75 = (CCINIClass *)INIClass::ReadInt_Overwrite(
                           (int)v77,
                           (uint8_t *)&aP2.q02C,
@@ -1165,7 +1165,7 @@ LABEL_26:
           if ( !v86 )
             goto LABEL_190;
           if ( v91 == (AbstractClass *)-1 )
-            _makepath(v182, 0, 0, Filename, aMmt);
+            _makepath(v182, 0, 0, Filename, (const char *)aMmt);
           else
             _makepath(v182, 0, 0, Filename, (const char *)&off_7E1BCA + v43);
           if ( a2 )
@@ -1190,7 +1190,7 @@ LABEL_26:
             if ( v44 )
               goto LABEL_189;
           }
-          _makepath(v182, 0, 0, Filename, aTem);
+          _makepath(v182, 0, 0, Filename, (const char *)aTem);
           if ( a2 )
           {
   unsigned int v165[22]; // [esp+494h] [ebp-57Ch] BYREF
@@ -1213,7 +1213,7 @@ LABEL_26:
             if ( v44 )
               goto LABEL_189;
           }
-          _makepath(v182, 0, 0, Filename, aUrb);
+          _makepath(v182, 0, 0, Filename, (const char *)aUrb);
           if ( !a2 )
           {
             v44 = (uint8_t *)SearchMIXFile(v182, 0);
@@ -1259,8 +1259,8 @@ LABEL_190:
             *((unsigned char *)v3 + 148) = v156;
           }
           v46 = v75;
-          v3[167] = v86;
-          v3[166] = v46;
+          v3[167] =(unsigned int)v86;
+          v3[166] =(unsigned int)v46;
           *((unsigned char *)v3 + 773) = v66;
           *((unsigned char *)v3 + 736) = Bool_Overwrite;
           *((unsigned char *)v3 + 738) = v64;
@@ -1275,7 +1275,7 @@ LABEL_190:
             *((unsigned char *)v3 + 737) = v63;
           v45 = var974;
           v3[168] = *(unsigned int *)&g_NetworkPlayerBuffer[22428][4 * dword_ABC558 + 58212];
-          *(unsigned int *)&v45->__pad_298[36] = v3;
+          *(unsigned int *)&v45->__pad_298[36] =(unsigned int)v3;
           (*(void (**)(unsigned int *))(v3[169] + 12))(v3 + 169);
           var974 = (MapClass *)v3;
           if ( !v44 )
@@ -1289,7 +1289,7 @@ LABEL_215:
             goto LABEL_217;
           }
 LABEL_207:
-          v3[41] = v44;
+          v3[41] =(unsigned int)v44;
           if ( !v44 )
             goto LABEL_215;
           int v48 = 0;

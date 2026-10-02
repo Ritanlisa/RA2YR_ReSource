@@ -205,7 +205,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
   InfantryTypeVector v17; // [esp+Ch] [ebp-9Ch] BYREF
 
   if ( /*0x67bb3c*/
-         ((INIClass*)((INIClass *)edx0))->GetString(/*0x67bb3c*/ aP1, a3, &g_INI_DefaultBuffer, (char *)&v17.q01C, 128) )
+         (unsigned char *)((INIClass*)((INIClass *)edx0))->GetString(/*0x67bb3c*/ aP1, a3, &g_INI_DefaultBuffer, (char *)&v17.q01C, 128) )
   {
     ((InfantryTypeVector *)(&v17))->Construct2(0, 0); /*0x67bb51*/
     v17.InfantryTypeVector_field_0x14 = 10; /*0x67bb5a*/

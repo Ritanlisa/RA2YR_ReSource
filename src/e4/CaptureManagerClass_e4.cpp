@@ -431,11 +431,11 @@ a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
         vtable0 = (int (**)(CaptureManagerClass *))aP0->AbstractClass; /*0x47206d*/
         v20[1] = *((unsigned int *)aP0 + 40); /*0x472072*/
         v20[2] = *((unsigned int *)aP0 + 41); /*0x472079*/
-        v13 = vtable0[33](aP0); /*0x47207f*/
+        v13 = vtable0[33]((gamemd::CaptureManagerClass *)aP0); /*0x47207f*/
         StartAudioControllerAt(*(unsigned int *)(v13 + 1456), v20, 0); /*0x47208d*/
         v10 = _34; /*0x472092*/
       }
-      a2 = (IUnknown *)(1); /*0x4720d5*/
+      a2 =(int)(IUnknown *)(1); /*0x4720d5*/
       a3 = *(unsigned int *)(v10 + 4); /*0x4720d7*/
       (*((void (**)(CaptureManagerClass *))aP0->vtable1 + 245))(aP0); /*0x4720da*/
       ((CaptureManagerClass *)(v7))->DecideUnitFate((int)aP0); /*0x4720e3*/

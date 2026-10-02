@@ -340,7 +340,7 @@ AbstractClass * * Options::Screen_Save()
       v10 = dword_A83D14; /*0x55fbe5*/
       if ( dword_A83D14 == -1 ) /*0x55fbed*/
         v10 = dword_A83D18; /*0x55fbef*/
-      ((Theme*)((gamemd::IUnknown *)((int)&unk_A83D10)))->QueueSong((void *)(v10)); /*0x55fbfa*/
+      ((Theme*)((gamemd::IUnknown *)((int)&unk_A83D10)))->QueueSong((int)(void *)(v10)); /*0x55fbfa*/
       ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x55fc06*/
     }
   }

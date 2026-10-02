@@ -243,7 +243,7 @@ LABEL_51:
                 if ( dword_887640 ) /*0x4f4b8c*/
                 {
                   Sleep(0x32u); /*0x4f4b90*/
-                  return (*(int (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 64))(dword_887640, (int)a1, 0); /*0x4f4ba1*/
+return (gamemd::TechnoTypeClass *)(*(int (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 64))(dword_887640, (int)a1, 0); /*0x4f4ba1*/
                 }
               }
               return (gamemd::TechnoTypeClass *)(result);

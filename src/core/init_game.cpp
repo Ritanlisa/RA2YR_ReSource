@@ -344,7 +344,7 @@ void BlockCopy(const void* src) {
 void* CCFileClassConstruct(void* /*stack_buf*/, const char* filename) {
     auto* f = new CCFileClass(filename);
     if (!filename || !filename[0]) return f;
-    f->Open(filename);
+    f->Open((int)filename);
     return f;
 }
 // IDA 0x473C50 -- CCFileClass::Open

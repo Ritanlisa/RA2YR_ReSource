@@ -289,19 +289,19 @@ int CampaignClass::ReleaseSubobjectsAndDestruct() {
     v2 = (void (__thiscall ***)(unsigned int, int))this->scenario[35]; /*0x5ae463*/
     if ( v2 ) /*0x5ae46b*/
     {
-      (**v2)(v2, 1); /*0x5ae471*/
+      (**v2)((unsigned int)v2, 1); /*0x5ae471*/
       this->scenario[35] = 0; /*0x5ae473*/
     }
     v3 = (void (__thiscall ***)(unsigned int, int))this->scenario[34]; /*0x5ae47d*/
     if ( v3 ) /*0x5ae485*/
     {
-      (**v3)(v3, 1); /*0x5ae48b*/
+      (**v3)((unsigned int)v3, 1); /*0x5ae48b*/
       this->scenario[34] = 0; /*0x5ae48d*/
     }
     v4 = (void (__thiscall ***)(unsigned int, int))this->scenario[33]; /*0x5ae497*/
     if ( v4 ) /*0x5ae49f*/
     {
-      (**v4)(v4, 1); /*0x5ae4a5*/
+      (**v4)((unsigned int)v4, 1); /*0x5ae4a5*/
       this->scenario[33] = 0; /*0x5ae4a7*/
     }
     return SessionClass::Destruct((SessionClass *)&this->scenario[10]); /*0x5ae4b9*/

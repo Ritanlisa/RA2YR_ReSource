@@ -534,7 +534,7 @@ bool BufferIOFileClass::Open(const CHAR *a2, int aP1, int a1) {
     FileClass::CloseHandle(this); /*0x431faf*/
   }
 LABEL_8:
-  v4 = aP1; /*0x431fb4*/
+  v4 =(const CHAR *)aP1; /*0x431fb4*/
   if ( BYTE1(this->BufferSize) ) /*0x431fb4*/
   {
     this->BufferPosition = (int)aP1; /*0x431fc6*/

@@ -13,7 +13,7 @@ _DWORD * ScreenCaptureCommandClass::Constructor()
 {
 
   *(unsigned int *)this->CommandClass = (unsigned int)(&vt_ScreenCaptureCommandClass); /*0x537b42*/
-  return this->CommandClass; /*0x537b48*/
+return (unsigned int *)this->CommandClass; /*0x537b48*/
 
 }
 } // namespace gamemd

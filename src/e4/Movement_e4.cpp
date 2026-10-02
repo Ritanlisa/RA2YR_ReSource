@@ -271,7 +271,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   v47 = (unsigned int)aP3[2]; /*0x5b240b*/
   Vector3_field_0x08 = a2->Vector3_field_0x08; /*0x5b240e*/
   v49 = (unsigned int)aP3[1]; /*0x5b2411*/
-  v88.field_4 = v50; /*0x5b2414*/
+  v88.field_4 =(unsigned int)v50; /*0x5b2414*/
   v51 = (double *)/*0x5b242c*/
                     ((Coord*)((Coord *)&v90))->Subtract(/*0x5b242c*/ (int)*aP3 - *(unsigned int *)a2->__pad_0, v49 - a2->Vector3_field_0x04, v47 - Vector3_field_0x08);
   v92 = *v51; /*0x5b2433*/
@@ -369,9 +369,9 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     if ( !a9 ) /*0x5b28a1*/
     {
       LOWORD(v89) = 256; /*0x5b28b6*/
-      v68 = (Movement *)Movement::Check((Movement *)aP4, &v88, &v89); /*0x5b28bd*/
+      v68 = (Movement *)Movement::Check((unsigned int *)(Movement *)aP4, &v88, &v89); /*0x5b28bd*/
       v69 = ((Movement*)v68)->DivideAndStoreScaled((int *)&v88.field_4, 2); /*0x5b28c4*/
-      v70 = (int16_t *)((Vector *)((int *)v87))->ToFacingMath(v69); /*0x5b28d6*/
+      v70 = (int16_t *)((Vector *)((int *)v87))->ToFacingMath((unsigned short *)v69); /*0x5b28d6*/
       Movement::CompareAbsCoords(&v85, v70, v83); /*0x5b28e0*/
     }
     goto LABEL_49; /*0x5b28e0*/
@@ -388,7 +388,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   LOWORD(v59) = Math::RoundToInt(v46); /*0x5b266d*/
   HIDWORD(v90) = v59; /*0x5b2672*/
   LOWORD(v60) = Math::RoundToInt(v46); /*0x5b2676*/
-  v61 = ((Coord *)((Coord *)&v88.field_4))->Subtract(6 * v58, 6 * HIDWORD(v90), 6 * v60); /*0x5b2695*/
+  v61 =(unsigned int *)((Coord *)((Coord *)&v88.field_4))->Subtract(6 * v58, 6 * HIDWORD(v90), 6 * v60); /*0x5b2695*/
   v62 = (double *)/*0x5b26b9*/
                     ((Coord*)((Coord *)v87))->Subtract(/*0x5b26b9*/ *(unsigned int *)a2->__pad_0 + *v61, a2->Vector3_field_0x04 + v61[1], a2->Vector3_field_0x08 + v61[2]);
   v90 = *v62; /*0x5b26c0*/
@@ -483,7 +483,7 @@ unsigned int * Movement::Check(unsigned int * a2, unsigned short * a3, void *a3_
 {
 
   LOWORD(a3) = LOWORD(this->Movement_field_00) + *a3; /*0x5b293e*/
-  *a2 = a3; /*0x5b2947*/
+  *a2 =(unsigned int)a3; /*0x5b2947*/
   return a2; /*0x5b2949*/
 
 }

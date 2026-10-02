@@ -87,7 +87,7 @@ int CampaignClass::LoadFromINIList()
                                          this->__pad_0,
                                          (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2),
                                          v3);
-    ((INIClass*)(gamemd::INIClass *)(this))->GetString((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
+    ((INIClass*)(gamemd::INIClass *)(this))->GetString((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
     v5 = 0; /*0x46ce5f*/
     if ( dword_A83D08 <= 0 ) /*0x46ce63*/
       goto LABEL_7; /*0x46ce63*/
@@ -441,7 +441,7 @@ void ** CampaignClass::DTOR(char a2)
   ((AbstractTypeClass *)((AbstractTypeClass *)this))->Dtor(); /*0x46d101*/
   if ( (a2 & 1) != 0 ) /*0x46d10b*/
     __3_YAXPAX_Z(this); /*0x46d10e*/
-  return this; /*0x46d118*/
+return (void **)this; /*0x46d118*/
 
 }
 } // namespace gamemd

@@ -2575,14 +2575,14 @@ void _ioinit()
       v4 = 2048; /*0x7d31f2*/
     if ( (int)uNumber < v4 ) /*0x7d31fa*/
     {
-      v6 = &unk_B78A84; /*0x7d31fc*/
+      v6 =(unsigned int *)&unk_B78A84; /*0x7d31fc*/
       while ( 1 ) /*0x7d3206*/
       {
         v7 = (char *)malloc(0x480u); /*0x7d3206*/
         if ( !v7 ) /*0x7d320e*/
           break; /*0x7d320e*/
         uNumber += 32; /*0x7d3210*/
-        *v6 = v7; /*0x7d3217*/
+        *v6 =(unsigned int)v7; /*0x7d3217*/
         for ( j = (unsigned int)(v7 + 1152); (unsigned int)v7 < j; j = *v6 + 1152 ) /*0x7d3219*/
         {
           v7[4] = 0; /*0x7d3223*/

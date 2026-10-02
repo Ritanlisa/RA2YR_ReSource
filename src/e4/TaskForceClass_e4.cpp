@@ -138,7 +138,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
     while ( 1 ) /*0x6e824d*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, v6); /*0x6e824d*/
-      result = ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 24); /*0x6e8266*/
+      result = ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 24); /*0x6e8266*/
       if ( result > 0 ) /*0x6e826d*/
         break; /*0x6e826d*/
 LABEL_13:

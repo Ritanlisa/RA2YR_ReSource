@@ -302,7 +302,7 @@ unsigned int * AudioFileClass::Release() {
     RefCount **v5; // edi
     Voice *v6; // [esp+0h] [ebp-Ch]
 
-    result = this; /*0x405c01*/
+    result =(unsigned int *)this; /*0x405c01*/
     if ( g_AudioConfigState ) /*0x405c13*/
     {
       if ( *((int **)this + 3) == &dword_87E294 ) /*0x405c20*/
@@ -327,7 +327,7 @@ unsigned int * AudioFileClass::Release() {
               *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 144) = 0; /*0x405cb7*/
               *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 152) = 0; /*0x405cc3*/
               *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 156) = 0; /*0x405ccf*/
-              result = this; /*0x405cd5*/
+              result =(unsigned int *)this; /*0x405cd5*/
               *(unsigned int *)(*(unsigned int *)&v2 + 176) = 0; /*0x405cd9*/
             }
             v4 = 0; /*0x405ce6*/
@@ -342,7 +342,7 @@ unsigned int * AudioFileClass::Release() {
                 ++v5; /*0x405d00*/
               }
               while ( v4 < *(unsigned int *)(*(unsigned int *)&v2 + 168) ); /*0x405d05*/
-              result = this; /*0x405d07*/
+              result =(unsigned int *)this; /*0x405d07*/
             }
             *(unsigned int *)(*(unsigned int *)&v2 + 168) = 0; /*0x405d0c*/
             *(unsigned int *)(*(unsigned int *)&v2 + 28) = 4; /*0x405d12*/
@@ -404,7 +404,7 @@ int AudioSample::Destructor() {
     if ( !*((unsigned int *)this + 34) && *((unsigned int *)this + 5) ) /*0x407ac5*/
     {
       EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407ad1*/
-      Voice::Stop(v8); /*0x407ad6*/
+      Voice::Stop((int32_t)v8); /*0x407ad6*/
       LeaveCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407ae0*/
     }
     v2 = (Count *)*((unsigned int *)this + 13); /*0x407ae2*/
@@ -427,7 +427,7 @@ int AudioSample::Destructor() {
       AudioSample::ResetState(v5); /*0x407b1b*/
     v6 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 31); /*0x407b20*/
     if ( v6 ) /*0x407b25*/
-      (**v6)(v6, 1); /*0x407b2b*/
+      (**v6)((unsigned int)v6, 1); /*0x407b2b*/
     RA2_OPDEL(this); /*0x407b2e*/
     return result; /*0x407b36*/
 }

@@ -172,7 +172,7 @@ int BlitTransXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int
 {
 
   return (*(int (**)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493eca*/
-           this,
+           (_BlitTransXlatAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -191,7 +191,7 @@ int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, 
 {
 
   return (*(int (**)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493efa*/
-           this,
+           (_BlitTransXlatAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -209,7 +209,7 @@ int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, i
 {
 
   return (*(int (**)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493f2a*/
-           this,
+           (_BlitTransXlatAlpha_G *)this,
            a2,
            a3,
            a4,
@@ -227,7 +227,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6,
 {
 
   return (*(int (**)(_BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x4939fa*/
-           this,
+           (_BlitTransLucent75ZReadWrite_G *)this,
            a2,
            a3,
            a4,
@@ -246,7 +246,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a
 {
 
   return (*(int (**)(_BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493a2a*/
-           this,
+           (_BlitTransLucent75ZReadWrite_G *)this,
            a2,
            a3,
            a4,
@@ -265,7 +265,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a
 {
 
   return (*(int (**)(_BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493a5a*/
-           this,
+           (_BlitTransLucent75ZReadWrite_G *)this,
            a2,
            a3,
            a4,
@@ -284,7 +284,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, int a
 {
 
   return (*(int (**)(_BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493b2a*/
-           this,
+           (_BlitTransLucent50ZReadWrite_G *)this,
            a2,
            a3,
            a4,
@@ -303,7 +303,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_3(int a2, int a3, int a4, int a5, int a
 {
 
   return (*(int (**)(_BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493b5a*/
-           this,
+           (_BlitTransLucent50ZReadWrite_G *)this,
            a2,
            a3,
            a4,
@@ -322,7 +322,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_4(int a2, int a3, int a4, int a5, int a
 {
 
   return (*(int (**)(_BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493b8a*/
-           this,
+           (_BlitTransLucent50ZReadWrite_G *)this,
            a2,
            a3,
            a4,
@@ -341,7 +341,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_5(int a2, int a3, int a4, int a5, int a
 {
 
   return (*(int (**)(_BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493c5a*/
-           this,
+           (_BlitTransLucent25ZReadWrite_G *)this,
            a2,
            a3,
            a4,
@@ -360,7 +360,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_6(int a2, int a3, int a4, int a5, int a
 {
 
   return (*(int (**)(_BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493c8a*/
-           this,
+           (_BlitTransLucent25ZReadWrite_G *)this,
            a2,
            a3,
            a4,
@@ -379,7 +379,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, int a
 {
 
   return (*(int (**)(_BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x493cba*/
-           this,
+           (_BlitTransLucent25ZReadWrite_G *)this,
            a2,
            a3,
            a4,

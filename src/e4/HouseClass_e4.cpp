@@ -470,18 +470,18 @@ int HouseClass::Construct(int a2)
   *((unsigned short *)this + 10876) = 0; /*0x4f5a9d*/
   *((unsigned short *)this + 10877) = 0; /*0x4f5aa4*/
   *((char *)this + 5439) = -100; /*0x4f5ab1*/
-  CounterClass::Construct((CounterClass *)this + 2720); /*0x4f5abb*/
-  CounterClass::Construct((CounterClass *)((char *)this + 5445)); /*0x4f5ac6*/
-  CounterClass::Construct((CounterClass *)this + 2725); /*0x4f5ad1*/
-  CounterClass::Construct((CounterClass *)((char *)this + 5455)); /*0x4f5adc*/
-  CounterClass::Construct((CounterClass *)this + 2730); /*0x4f5ae7*/
-  CounterClass::Construct((CounterClass *)((char *)this + 5465)); /*0x4f5af2*/
-  CounterClass::Construct((CounterClass *)this + 2735); /*0x4f5afd*/
-  CounterClass::Construct((CounterClass *)((char *)this + 5475)); /*0x4f5b08*/
-  CounterClass::Construct((CounterClass *)this + 2740); /*0x4f5b13*/
-  CounterClass::Construct((CounterClass *)((char *)this + 5485)); /*0x4f5b1e*/
-  CounterClass::Construct((CounterClass *)this + 2745); /*0x4f5b29*/
-  CounterClass::Construct((CounterClass *)((char *)this + 5495)); /*0x4f5b34*/
+  CounterClass::Construct((int)(CounterClass *)this + 2720); /*0x4f5abb*/
+  CounterClass::Construct((int)(CounterClass *)((char *)this + 5445)); /*0x4f5ac6*/
+  CounterClass::Construct((int)(CounterClass *)this + 2725); /*0x4f5ad1*/
+  CounterClass::Construct((int)(CounterClass *)((char *)this + 5455)); /*0x4f5adc*/
+  CounterClass::Construct((int)(CounterClass *)this + 2730); /*0x4f5ae7*/
+  CounterClass::Construct((int)(CounterClass *)((char *)this + 5465)); /*0x4f5af2*/
+  CounterClass::Construct((int)(CounterClass *)this + 2735); /*0x4f5afd*/
+  CounterClass::Construct((int)(CounterClass *)((char *)this + 5475)); /*0x4f5b08*/
+  CounterClass::Construct((int)(CounterClass *)this + 2740); /*0x4f5b13*/
+  CounterClass::Construct((int)(CounterClass *)((char *)this + 5485)); /*0x4f5b1e*/
+  CounterClass::Construct((int)(CounterClass *)this + 2745); /*0x4f5b29*/
+  CounterClass::Construct((int)(CounterClass *)((char *)this + 5495)); /*0x4f5b34*/
   *((char *)this + 5500) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5b40*/
   *((char *)this + 5502) = 0; /*0x4f5b46*/
   *((char *)this + 5503) = 0; /*0x4f5b4c*/
@@ -625,7 +625,7 @@ int HouseClass::Construct(int a2)
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 6))) || !((unsigned int *)&g_BuildingLoadQueue_Array)[5])
     && (int)((char *)&g_BuildingLoadQueue_Array) > 0
     && (*(uint8_t (**)(int *, char *, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3)) + 8))(
-         &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
+         (int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
          (char *)((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 5)),
          0) )
   {

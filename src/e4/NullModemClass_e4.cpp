@@ -172,7 +172,7 @@ LABEL_10:
   *(unsigned int *)Block->ConnectionClass = &vt_ConnManClass; /*0x5f36cf*/
   if ( (a2 & 1) != 0 ) /*0x5f36db*/
     __3_YAXPAX_Z(this); /*0x5f36de*/
-  return this->ConnectionClass; /*0x5f36e8*/
+return (void *)this->ConnectionClass; /*0x5f36e8*/
 
 }
 } // namespace gamemd

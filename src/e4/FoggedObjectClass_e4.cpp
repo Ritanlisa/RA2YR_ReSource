@@ -765,7 +765,7 @@ LABEL_22:
     a2 = result; /*0x4d25d4*/
     if ( result < 0 ) /*0x4d25d8*/
       return result; /*0x4d2779*/
-    vtable1 = ((int *)v3)[2]; /*0x4d25de*/
+    vtable1 =(void *)((int *)v3)[2]; /*0x4d25de*/
     if ( (int)v3[2] < (int)vtable1 /*0x4d2605*/
       || (BYTE1(v3[2]) || !vtable1)
       && (uniqueId = v3[2], uniqueId > 0)
@@ -997,7 +997,7 @@ int   FoggedObjectClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
   int v5; // ebp
   int v6; // edi
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), (gamemd::ObjectTypeClass *)a1, aP2); /*0x4d24b3*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), (gamemd::ObjectTypeClass *)a1, (gamemd::ObjectTypeClass *)aP2); /*0x4d24b3*/
   if ( result >= 0 ) /*0x4d24ba*/
   {
     v4 = *a1; /*0x4d24bf*/

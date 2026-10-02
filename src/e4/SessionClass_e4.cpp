@@ -154,7 +154,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
     {
       if ( ((unsigned int *)(g_GameMode_Current))[0] ) /*0x552d36*/
       {
-        PlayerSide =(unsigned int *)(void *)((SessionClass *)(*(unsigned int *)Game_PlayerInfoArray))->GetPlayerSide(); /*0x552d51*/
+        PlayerSide =(unsigned int)(unsigned int *)(void *)((SessionClass *)(*(unsigned int *)Game_PlayerInfoArray))->GetPlayerSide(); /*0x552d51*/
         return PaletteManager::Load((int)(PlayerSide)); /*0x552d58*/
       }
       else
@@ -422,10 +422,10 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
         DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf2f7*/
         if ( v25 ) /*0x5cf2fe*/
           break; /*0x5cf2fe*/
-        v26 = __2_YAPAXI_Z(0x10u); /*0x5cf306*/
+        v26 =(int)__2_YAPAXI_Z(0x10u); /*0x5cf306*/
         if ( !v26 ) /*0x5cf310*/
           goto LABEL_17; /*0x5cf310*/
-        v27 = ((String*)v26)->SplitComma((const char **)&((char *)&v43)); /*0x5cf31e*/
+        v27 =(int)((String*)v26)->SplitComma((const char **)&((char *)&v43)); /*0x5cf31e*/
         if ( !v27 ) /*0x5cf322*/
           goto LABEL_17; /*0x5cf322*/
         v28 = *(unsigned int *)(((char *)&v43) + 52); /*0x5cf328*/
@@ -435,7 +435,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
           if ( !*(unsigned char *)(((char *)&v43) + 57) && v28 ) /*0x5cf33e*/
             continue; /*0x5cf33e*/
           v30 = *(unsigned int *)(((char *)&v43) + 64); /*0x5cf340*/
-          if ( v30 <= 0 || !(*(uint8_t (**)(int, int, unsigned int))(*v29 + 8))(((char *)&v43) + 44, v28 + v30, 0) ) /*0x5cf350*/
+          if ( v30 <= 0 || !(*(uint8_t (**)(int, int, unsigned int))(*v29 + 8))((int)((char *)&v43) + 44, v28 + v30, 0) ) /*0x5cf350*/
             continue; /*0x5cf350*/
         }
         v31 = v29[4]; /*0x5cf357*/
@@ -452,7 +452,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     {
       unknown_libname_73(&v43); /*0x5cf3f4*/
       ((String *)((String *)&((char *)&v43)))->Assign(0); /*0x5cf3fe*/
-      ((String *)((String *)&((char *)&v43)))->Assign(aSounds); /*0x5cf40c*/
+      ((String *)((String *)&((char *)&v43)))->Assign((const char *)aSounds); /*0x5cf40c*/
       v33 = ((INIClass *)((INIClass *)&((char *)&v43)))->ReadString(a1, (char **)&((char *)&v43), (char **)&((char *)&v43), (int)&((char *)&v43)) > 0; /*0x5cf437*/
       DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf43a*/
       DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf443*/

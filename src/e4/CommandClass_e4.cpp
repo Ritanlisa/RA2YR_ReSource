@@ -268,7 +268,7 @@ LABEL_19:
       v12 = result; /*0x72469a*/
       if ( result ) /*0x7246a1*/
       {
-        Array::ForEach((int *)result, 8, v11, (int (*)(int))__0Iostream_init_QAE_XZ_6); /*0x7246ac*/
+        Array::ForEach((int)(int *)result, 8, v11, (int (*)(int))__0Iostream_init_QAE_XZ_6); /*0x7246ac*/
         for ( i = 0; i < v4[1]; *(unsigned int *)(v12 + 8 * i - 4) = *(unsigned int *)&v14[8 * i - 4] ) /*0x7246b8*/
         {
           v14 = (char *)*v4; /*0x7246ba*/

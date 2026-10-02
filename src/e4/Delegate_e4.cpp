@@ -118,7 +118,7 @@ _DWORD * Delegate::GetField()
   this->m_count = 0; /*0x6c95e8*/
   this->Delegate_field_08 = 0; /*0x6c95eb*/
   *(unsigned int *)&this->m_allocated = 0; /*0x6c95ee*/
-  return &this->m_items; /*0x6c95f1*/
+return (unsigned int *)&this->m_items; /*0x6c95f1*/
 
 }
 } // namespace gamemd

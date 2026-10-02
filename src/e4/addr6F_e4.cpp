@@ -271,7 +271,7 @@ v3 = (void ***)((int)((void ***)(0)));
   LABEL_71:
     for ( i = 0; i < v60; v31 = Block ) /*0x6f0e4b*/
     {
-      v39 =(unsigned int *)v31[i++]; /*0x6f0e4d*/
+      v39 =(int)(unsigned int *)v31[i++]; /*0x6f0e4d*/
       *(unsigned char *)(v39 + 169) = 1; /*0x6f0e51*/
     }
     v40 = (unsigned int)((int)v55);

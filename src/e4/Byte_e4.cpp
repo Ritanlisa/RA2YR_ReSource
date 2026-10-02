@@ -12,7 +12,7 @@ _BYTE * Byte::Zero()
 {
 
   LOBYTE(this->Byte_field_00) = 0; /*0x4f4c22*/
-  return this; /*0x4f4c25*/
+return (unsigned char *)this; /*0x4f4c25*/
 
 }
 } // namespace gamemd

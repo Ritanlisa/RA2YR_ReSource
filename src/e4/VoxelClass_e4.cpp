@@ -198,7 +198,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
                         - 8)
           * -0.1963495408493621;
       v47 = v54 /*0x73c91f*/
-          - (double)(int)((((unsigned int)((*((ProgressTimer *)((unsigned short *)a1 + 452))->GetValue(&v57) >> 10) + 1) >> 1) & 0x1F)
+          - ((unsigned int *)double)(int)((((unsigned int)((*((ProgressTimer *)((unsigned short *)a1 + 452))->GetValue(&v57) >> 10) + 1) >> 1) & 0x1F)
                         - 8)
           * -0.1963495408493621;
       ((Matrix2D *)(v70))->Rotate(v47); /*0x73c922*/
@@ -233,7 +233,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       qmemcpy(v72, (const void *)(unsigned int)(a1)+ 880, sizeof(v72)); /*0x73caaa*/
       if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (**)(unsigned char *, unsigned int))(v30 + 1016))((unsigned char *)a1, 0) + 160) + 670) ) /*0x73cabe*/
       {
-        v31 =(int)(unsigned int *)((uint8_t)((unsigned int)((*(unsigned int *)((ProgressTimer*)v72)->GetValue(&v57) >> 7) + 1) >> 1)); /*0x73cae1*/
+        v31 =((unsigned int *)int)(unsigned int *)((uint8_t)((unsigned int)((*(unsigned int *)((ProgressTimer*)v72)->GetValue(&v57) >> 7) + 1) >> 1)); /*0x73cae1*/
         if ( v31 <= 64 || v31 > 128 ) /*0x73caf0*/
           v31 = (64 - v31) / 3 + 64; /*0x73cb1a*/
         else
@@ -248,7 +248,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         v49 = -*((float *)a1 + 259); /*0x73cb52*/
         Matrix3x4::Translate(v71, v49, unsigned int a1); /*0x73cb55*/
       }
-      v56 =(int)(unsigned int *)((((unsigned int)((*(unsigned int *)((ProgressTimer*)v72)->GetValue(&v57) >> 10) + 1) >> 1) & 0x1F) - 8); /*0x73cb81*/
+      v56 =((unsigned int *)int)(unsigned int *)((((unsigned int)((*(unsigned int *)((ProgressTimer*)v72)->GetValue(&v57) >> 10) + 1) >> 1) & 0x1F) - 8); /*0x73cb81*/
       v50 = -((double)v56 * -0.1963495408493621); /*0x73cb91*/
       Matrix3D::RotateZ(v71, v50); /*0x73cb94*/
       ((Matrix3x3 *)(v71))->Multiply(v67); /*0x73cba5*/
@@ -359,7 +359,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   }
   else if ( *(unsigned char *)(v18 + 3606) && ((TechnoClass *)(a1))->CheckTargetCell() && !((TechnoClass *)(a1))->ScanNeighborCells() ) /*0x73ce24*/
   {
-    return (*(int (**)(unsigned char *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
+return (void *)(*(int (**)(unsigned char *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
              (unsigned char *)a1,
              (int)v15,
              v16,
@@ -402,6 +402,6 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
              0,
              v45);
   }
-  return result; /*0x73ce00*/
+return (void *)result; /*0x73ce00*/
 }
 }

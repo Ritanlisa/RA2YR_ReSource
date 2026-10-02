@@ -134,7 +134,7 @@ char Debug::Printf()
   {
     vsprintf(Buffer,(const char *const )(Format), va); /*0x5bd214*/
     Buffer[255] = 0; /*0x5bd227*/
-    return Debug::ScrollText((int)(Buffer)); /*0x5bd230*/
+    return Debug::ScrollText((const char *)(int)(Buffer)); /*0x5bd230*/
   }
   return result; /*0x5bd235*/
 

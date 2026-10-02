@@ -496,7 +496,7 @@ int LinkedList_flat::Prepend(int a2)
     }
   }
   v5 = this->Tail[0]; /*0x40e371*/
-  *(unsigned int *)(a2 + 8) = this; /*0x40e374*/
+  *(unsigned int *)(a2 + 8) =(unsigned int)this; /*0x40e374*/
   *(unsigned int *)(a2 + 4) = v5; /*0x40e377*/
   v6 = this->Tail[0]; /*0x40e37a*/
   if ( v6 ) /*0x40e380*/

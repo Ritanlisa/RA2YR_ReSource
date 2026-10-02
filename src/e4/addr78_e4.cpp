@@ -463,7 +463,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     StringCSF = GetStringCSF((wchar_t *)g_Str_TXT_RANK, 0, g_Str_File_wonline_cpp, 2937); /*0x780c59*/
     v13 =(wchar_t **)((WideString *)(&v28))->Assign(StringCSF); /*0x780c63*/
     v14 = ((WideString*)(WideString *)v13)->ConcatAlloc(&v27, (gamemd::ObjectClass *)(const wchar_t **)v21); /*0x780c6a*/
-    v15 = ((WideString*)((WideString *)v14))->ConcatAlloc(&v26, (const wchar_t **)v22); /*0x780c71*/
+    v15 = ((WideString*)((WideString *)v14))->ConcatAlloc(&v26, (gamemd::ObjectClass *)(const wchar_t **)v22); /*0x780c71*/
     WideString::Append((gamemd::CampaignScore *)(WideString *)&v23.q4, (const wchar_t **)v15); /*0x780c7b*/
     ((DeleteAndZero*)((DeleteAndZero *)&v26))->Alt(); /*0x780c84*/
     ((DeleteAndZero*)((DeleteAndZero *)&v27))->Alt(); /*0x780c8d*/
@@ -483,7 +483,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
   if ( ((String*)&v24)->Length() ) /*0x780b7c*/
   {
     v8 = CharStringToWide(&v25, (const char **)&v24); /*0x780b8d*/
-    v9 = FormatWideStringPrefix((gamemd::CampaignScore *)(wchar_t **)&v24.q4, asc_84A69C, v8); /*0x780b9c*/
+    v9 = FormatWideStringPrefix((gamemd::CampaignScore *)(wchar_t **)&v24.q4, (const wchar_t *)asc_84A69C, v8); /*0x780b9c*/
     WideString::Append((gamemd::CampaignScore *)(WideString *)&v23.q4, (const wchar_t **)v9); /*0x780ba6*/
     ((DeleteAndZero*)((DeleteAndZero *)&v24.q4))->Alt(); /*0x780baf*/
     ((DeleteAndZero*)((DeleteAndZero *)&v25))->Alt(); /*0x780bb8*/
@@ -602,7 +602,7 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
   ParseStringCommaInts(String_v, &v14, &v15, (int *)&v13.q4, &v17, &v16, (void **)&v12.DeleteAndZero_field_0x08); /*0x780fd2*/
   if ( ((String*)((String *)&v12.DeleteAndZero_field_0x08))->Length() ) /*0x780fdb*/
   {
-    Render_Format((wchar_t **)&v12.DeleteAndZero_field_0x04, (String *)&v12.DeleteAndZero_field_0x08); /*0x780fec*/
+    Render_Format((wchar_t **)&v12.DeleteAndZero_field_0x04, (char **)(String *)&v12.DeleteAndZero_field_0x08); /*0x780fec*/
     if ( ((WideString*)((WideString *)&v12.DeleteAndZero_field_0x04))->Length() ) /*0x780ff5*/
     {
       ((WideString *)((WideString *)&v12))->Append2((wchar_t *)L", "); /*0x781007*/
@@ -910,7 +910,7 @@ AbstractClass * * __usercall GameListRenderWOL(CampaignScore * a1)
   SendMessageA(DlgItem, 0x49Du, 0, 1); /*0x781517*/
   byte_B77E74 = 1; /*0x781519*/
   SendMessageA(DlgItem, 0x184u, 0, 0); /*0x781528*/
-  referenceCount = ((char *)&stru_B76AC4); /*0x781538*/
+  referenceCount =(int)((char *)&stru_B76AC4); /*0x781538*/
   *(unsigned int *)&v52.q4 = 1; /*0x78153c*/
   if ( g_WOL_GameListRender == 2 /*0x78157b*/
     || g_WOL_GameListRender == 3

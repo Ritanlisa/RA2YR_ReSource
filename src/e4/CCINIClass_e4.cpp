@@ -329,7 +329,7 @@ IUnknown * CCINIClass::WriteHouses()
   {
     do /*0x501200*/
     {
-      ((HouseClass *)*(unsigned int *)(&dword_A8022C)[4 * v4])->SaveToINI(this); /*0x5011f3*/
+      ((HouseClass *)*(unsigned int *)(&dword_A8022C)[4 * v4])->SaveToINI((char *)this); /*0x5011f3*/
       result = dword_A80238; /*0x5011f8*/
       ++v4; /*0x5011fd*/
     }

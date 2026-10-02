@@ -76,7 +76,7 @@ unsigned char * Waypoint::InitInvalid()
   this->__pad_0[7] = -1; /*0x53ecc8*/
   this->__pad_0[8] = -1; /*0x53eccb*/
   this->__pad_0[9] = -1; /*0x53ecce*/
-  return this->__pad_0; /*0x53ecd1*/
+return (unsigned char *)this->__pad_0; /*0x53ecd1*/
 
 }
 }

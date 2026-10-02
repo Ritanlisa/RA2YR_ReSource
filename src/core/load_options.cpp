@@ -507,7 +507,7 @@ int LoadOptions::VT04_FindByKey(const uint32_t* key) {
 
 // IDA 0x55A330: vt02 — resize (same as CopyItems with capacity update)
 bool LoadOptions::VT02_Resize(uint32_t newSize, FileEntryClass** out_buffer) {
-    bool result = CopyItems(newSize, out_buffer);
+    bool result = CopyItems(newSize, (unsigned int *)out_buffer);
     if (result && capacity < count)
         capacity = count;
     return result;
