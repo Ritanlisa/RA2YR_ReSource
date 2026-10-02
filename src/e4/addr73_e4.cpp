@@ -1175,7 +1175,7 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
         if ( ++v15 >= DynamicVector_field_0x10 ) /*0x73388b*/
           goto LABEL_42; /*0x73388b*/
       }
-      StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_Mixed, 0, g_Str_File_UICmnds_cpp, 1658); /*0x7338a5*/
+      StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_Mixed, 0, (const char *)g_Str_File_UICmnds_cpp, 1658); /*0x7338a5*/
     }
 LABEL_42:
     if ( v11 ) /*0x7338a9*/

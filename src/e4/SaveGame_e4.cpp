@@ -581,7 +581,7 @@ int SaveGame::SaveIteratedData(int a2)
   v3 = 0; /*0x413858*/
   for ( i = &this->__pad_0[4]; ; i += 24 ) /*0x41385a*/
   {
-    v5 =(int)(char *)*(unsigned int *)v2; /*0x413860*/
+    v5 =(char *)(int)(char *)*(unsigned int *)v2; /*0x413860*/
     a2 = *((unsigned int *)i + 3); /*0x41386c*/
     result = (*(int (**)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x413870*/
     if ( result < 0 ) /*0x413875*/

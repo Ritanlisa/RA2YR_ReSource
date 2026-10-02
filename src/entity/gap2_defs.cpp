@@ -442,19 +442,19 @@ void* AnimClass::InitRotation(void* a1, int a2, int a3, int a4, int a5, int a6, 
   v32 = (int *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -65535, 0xFFFF); /*0x43989c*/
   __asm /*0x4398a3*/
   {
-    fild [esp+68h+arg_0]
-    fmul ds:flt_7E3560
-    fstp [esp+68h+var_5C]
-    fild [esp+68h+arg_1C]
-    fmul ds:flt_7E3560
-    fstp [esp+68h+var_58]
-    fild [esp+68h+arg_4]
-    fmul ds:flt_7E3560
-    fstp [esp+68h+var_54]
-    fld [esp+68h+var_58]
-    fmul [esp+68h+var_58]
-    fld [esp+68h+var_54]
-    fmul [esp+68h+var_54]
+//L-fix     fild [esp+68h+arg_0]
+//L-fix     fmul ds:flt_7E3560
+//L-fix     fstp [esp+68h+var_5C]
+//L-fix     fild [esp+68h+arg_1C]
+//L-fix     fmul ds:flt_7E3560
+//L-fix     fstp [esp+68h+var_58]
+//L-fix     fild [esp+68h+arg_4]
+//L-fix     fmul ds:flt_7E3560
+//L-fix     fstp [esp+68h+var_54]
+//L-fix     fld [esp+68h+var_58]
+//L-fix     fmul [esp+68h+var_58]
+//L-fix     fld [esp+68h+var_54]
+//L-fix     fmul [esp+68h+var_54]
     faddp st(1), st
     fld [esp+68h+var_5C]
     fmul [esp+68h+var_5C]
@@ -475,11 +475,11 @@ void* AnimClass::InitRotation(void* a1, int a2, int a3, int a4, int a5, int a6, 
   {
     __asm /*0x439904*/
     {
-      fld [esp+60h+var_5C]
-      fdiv st, st(1)
-      fstp [esp+60h+var_50]
-      fld [esp+60h+var_58]
-      fdiv st, st(1)
+//L-fix       fld [esp+60h+var_5C]
+//L-fix       fdiv st, st(1)
+//L-fix       fstp [esp+60h+var_50]
+//L-fix       fld [esp+60h+var_58]
+//L-fix       fdiv st, st(1)
     }
     v16 = v27; /*0x439914*/
     __asm { fstp [esp+60h+var_4C] } /*0x439918*/
@@ -1471,12 +1471,12 @@ int BulletClass::InitDetonationTimer(void* a1, void* a2, int a3, int a4) {
   v14 = a1[2] - a2[2]; /*0x4e11af*/
   __asm /*0x4e11b3*/
   {
-    fild [esp+1Ch+var_4]
-    fild [esp+1Ch+var_C]
-    fld st
-    fmul st, st(1)
-    fld st(2)
-    fmul st, st(3)
+//L-fix     fild [esp+1Ch+var_4]
+//L-fix     fild [esp+1Ch+var_C]
+//L-fix     fld st
+//L-fix     fmul st, st(1)
+//L-fix     fld st(2)
+//L-fix     fmul st, st(3)
     faddp st(1), st
     fld st(3)
     fmul st, st(4)
@@ -1527,13 +1527,13 @@ int BulletClass::CheckProximityDetonation(void* a1) {
   v12 = a1[2] - *(unsigned int *)&this->__pad_1C[4]; /*0x4e123d*/
   __asm /*0x4e1241*/
   {
-    fild [esp+18h+var_4]
-    fild [esp+18h+var_8]
-    fild [esp+18h+var_C]
-    fld st
-    fmul st, st(1)
-    fld st(2)
-    fmul st, st(3)
+//L-fix     fild [esp+18h+var_4]
+//L-fix     fild [esp+18h+var_8]
+//L-fix     fild [esp+18h+var_C]
+//L-fix     fld st
+//L-fix     fmul st, st(1)
+//L-fix     fld st(2)
+//L-fix     fmul st, st(3)
     faddp st(1), st
     fld st(3)
     fmul st, st(4)
@@ -4485,11 +4485,11 @@ int TiberiumClass::Grow(void* a1) {
   {
     __asm /*0x59c942*/
     {
-      fild dword ptr [ebx+184h]
-      fimul dword ptr [ebx+180h]
-      fimul dword ptr [esp+70h+var_20]
-      fmul ds:dbl_7ED9F8
-      fadd ds:dbl_7E2AC0
+//L-fix       fild dword ptr [ebx+184h]
+//L-fix       fimul dword ptr [ebx+180h]
+//L-fix       fimul dword ptr [esp+70h+var_20]
+//L-fix       fmul ds:dbl_7ED9F8
+//L-fix       fadd ds:dbl_7E2AC0
     }
     IDA_LOWORD(v4) = Math::RoundToInt(v2); /*0x59c95e*/
   }
@@ -4695,11 +4695,11 @@ int TiberiumClass::Grow(void* a1) {
   IDA_LODWORD(v94) = v33 / 3; /*0x59ccf2*/
   __asm /*0x59ccf6*/
   {
-    fild dword ptr [esp+70h+var_20]
-    fst qword ptr [esp+58h]
-    fsub [esp+70h+var_10]
-    fcomp [esp+70h+var_28]
-    fnstsw ax
+//L-fix     fild dword ptr [esp+70h+var_20]
+//L-fix     fst qword ptr [esp+58h]
+//L-fix     fsub [esp+70h+var_10]
+//L-fix     fcomp [esp+70h+var_28]
+//L-fix     fnstsw ax
   }
   if ( (_AX & 0x4100) == 0 ) /*0x59cd0b*/
     goto LABEL_54; /*0x59cd0b*/
@@ -4715,12 +4715,12 @@ int TiberiumClass::Grow(void* a1) {
   LABEL_54:
     __asm /*0x59cd22*/
     {
-      fld [esp+70h+var_28]
-      fsub ds:dbl_7ED9F0
-      fmul ds:dbl_7E1738
-      fst [esp+70h+var_10]
-      fadd ds:dbl_7ED9F0
-      fstp qword ptr [esp+58h]
+//L-fix       fld [esp+70h+var_28]
+//L-fix       fsub ds:dbl_7ED9F0
+//L-fix       fmul ds:dbl_7E1738
+//L-fix       fst [esp+70h+var_10]
+//L-fix       fadd ds:dbl_7ED9F0
+//L-fix       fstp qword ptr [esp+58h]
     }
   }
   do /*0x59cd70*/
@@ -4730,11 +4730,11 @@ int TiberiumClass::Grow(void* a1) {
       Random::Gaussian(&g_MissionQueueFrame.briefing[348]); /*0x59cd45*/
       __asm /*0x59cd4a*/
       {
-        fmul [esp+70h+var_10]
-        fadd qword ptr [esp+58h]
-        fst [esp+70h+var_20]
-        fcomp ds:dbl_7ED9F0
-        fnstsw ax
+//L-fix         fmul [esp+70h+var_10]
+//L-fix         fadd qword ptr [esp+58h]
+//L-fix         fst [esp+70h+var_20]
+//L-fix         fcomp ds:dbl_7ED9F0
+//L-fix         fnstsw ax
       }
     }
     while ( (_AX & 0x100) != 0 ); /*0x59cd61*/

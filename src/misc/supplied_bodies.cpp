@@ -469,7 +469,7 @@ void AudioSample::InitLinkedList() {
     int *v13; // esi
 
     v1 = this; /*0x408843*/
-    AudioSample_field_0x04 = this->AudioSample_field_0x04; /*0x40884b*/
+    AudioSample_field_0x04 =(int)this->AudioSample_field_0x04; /*0x40884b*/
     p_AudioSample_field_0x04 = &this->AudioSample_field_0x04; /*0x40884e*/
     if ( (int *)AudioSample_field_0x04 != &this->AudioSample_field_0x04 ) /*0x408853*/
     {

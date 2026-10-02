@@ -2603,7 +2603,7 @@ void _ioinit()
       if ( *v19 != (HANDLE)-1 && (*v5 & 1) != 0 && ((*v5 & 8) != 0 || GetFileType(*v19)) ) /*0x7d326d*/
       {
         v10 = dword_B78A80[k >> 5] + 36 * (k & 0x1F); /*0x7d328b*/
-        *(unsigned int *)v10 = *v19; /*0x7d3293*/
+        *(unsigned int *)v10 =(unsigned int)*v19; /*0x7d3293*/
         *(unsigned char *)(v10 + 4) = *v5; /*0x7d3297*/
       }
       ++v19; /*0x7d329a*/

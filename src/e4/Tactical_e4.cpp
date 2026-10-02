@@ -270,7 +270,7 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
       && *(unsigned int **)(v13 + 412) == (unsigned int *)(aP2)
       && (result = *(unsigned int *)(v13 + 416), (int *)result == a3) )
     {
-      *a2 =(int)(int *)v13; /*0x48412c*/
+      *a2 =(int *)(int)(int *)v13; /*0x48412c*/
     }
     else
     {

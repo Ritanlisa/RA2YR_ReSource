@@ -189,7 +189,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
           if ( a7 ) /*0x5bf045*/
           {
             (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5bf050*/
-            Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)v10, (void *)v9, 0, (int)v17, v20, v21); /*0x5bf05c*/
+            Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)v10, (void *)v9, 0, (void *)(int)v17, v20, v21); /*0x5bf05c*/
           }
           if ( !LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bf067*/
           {
@@ -221,7 +221,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
           if ( a5 == 1 ) /*0x5bf130*/
           {
             (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5bf13b*/
-            Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)v10, (void *)v9, 0, v19, v20, v21); /*0x5bf147*/
+            Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)v10, (void *)v9, 0, (void *)v19, v20, v21); /*0x5bf147*/
           }
           (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5bf154*/
           MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x5bf15e*/
@@ -242,7 +242,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       if ( a7 ) /*0x5bedc7*/
       {
         (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5bedd2*/
-        Frame::Present((void *)(int)g_DSurface_Hidden, 0, a2, a3, 0, (int)v17, v20, v21); /*0x5bedde*/
+        Frame::Present((void *)(int)g_DSurface_Hidden, 0, (void *)a2, a3, 0, (int)v17, v20, v21); /*0x5bedde*/
       }
       ((BinkMovie *)(&v23))->Close(Str); /*0x5bedec*/
       if ( a8 == (void *)(1) ) /*0x5bedf9*/
@@ -274,7 +274,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       if ( a5 == 1 ) /*0x5beeb1*/
       {
         (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5beebc*/
-        Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)a2, (void *)a3, 0, v18, v20, v21); /*0x5beec8*/
+        Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)a2, (void *)a3, 0, (void *)v18, v20, v21); /*0x5beec8*/
       }
       ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x5beed3*/
       (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5beee0*/

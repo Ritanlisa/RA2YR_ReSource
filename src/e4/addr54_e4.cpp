@@ -143,7 +143,7 @@ int E4Recv_542F30::sub_542F30()
   {
     for ( i = &this->owningHouseIndex; ; ++i ) /*0x542f4d*/
     {
-      v5 =(int)(int *)0; /*0x542f52*/
+      v5 =(int *)(int)(int *)0; /*0x542f52*/
       v6 = *(unsigned int *)(*i + 4); /*0x542f54*/
       if ( *(int *)(v6 + 40) <= 0 ) /*0x542f5c*/
         goto LABEL_12; /*0x542f5c*/

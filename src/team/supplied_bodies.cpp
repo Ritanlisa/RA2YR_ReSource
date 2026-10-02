@@ -716,7 +716,7 @@ void ** TeamClass::ProcessEvent(char a2) {
 
 // 0x6F09C0
 namespace gamemd {
-int TeamClass::CreateOneOf(int this, TeamClass *a2) {
+int TeamClass::CreateOneOf(TeamClass *a2) {
     TeamClass *OwnerHouse; // edi
     int v4; // eax
     int v6; // eax
@@ -1395,7 +1395,7 @@ int TriggerTypeClass::GetAuxField() {
 
 // 0x41E720
 namespace gamemd {
-char TriggerClass::EvaluateCondition(int this, TriggerClass *a2, unsigned int *a3, char a4) {
+char TriggerClass::EvaluateCondition(TriggerClass *a2, unsigned int *a3, char a4) {
     int v5; // ecx
     int v6; // eax
     bool v7; // dl
@@ -2499,7 +2499,7 @@ char TeamClass::AssignMemberToCoordinator(int a2, char a3) {
 
 // 0x6ED090
 namespace gamemd {
-char TeamClass::CoordinateSuperWeaponAttack(int this, int a2, int a3) {
+char TeamClass::CoordinateSuperWeaponAttack(int a2, int a3) {
     TeamClass *v3; // ebp
     int *v4; // esi
     int v5; // ebx
@@ -2941,12 +2941,12 @@ unsigned int * TeamClass::ScoreMember(unsigned int *a2, int a3, int a4) {
               v37 = v18 - v42; /*0x6ef00f*/
               __asm /*0x6ef013*/
               {
-                fild [esp+88h+var_40]
-                fild [esp+88h+var_48]
-                fld st
-                fmul st, st(1)
-                fld st(2)
-                fmul st, st(3)
+//L-fix                 fild [esp+88h+var_40]
+//L-fix                 fild [esp+88h+var_48]
+//L-fix                 fld st
+//L-fix                 fmul st, st(1)
+//L-fix                 fld st(2)
+//L-fix                 fmul st, st(3)
                 faddp st(1), st
                 fld st(3)
                 fmul st, st(4)
@@ -2972,12 +2972,12 @@ unsigned int * TeamClass::ScoreMember(unsigned int *a2, int a3, int a4) {
               v40 = v22 - v44; /*0x6ef08d*/
               __asm /*0x6ef091*/
               {
-                fild [esp+88h+var_34]
-                fild [esp+88h+var_3C]
-                fld st
-                fmul st, st(1)
-                fld st(2)
-                fmul st, st(3)
+//L-fix                 fild [esp+88h+var_34]
+//L-fix                 fild [esp+88h+var_3C]
+//L-fix                 fld st
+//L-fix                 fmul st, st(1)
+//L-fix                 fld st(2)
+//L-fix                 fmul st, st(3)
                 faddp st(1), st
                 fld st(3)
                 fmul st, st(4)
@@ -3168,7 +3168,7 @@ void TeamClass::SelectDeploymentTarget(int a2, char a3) {
 
 // 0x6F0130
 namespace gamemd {
-void TeamClass::CheckMemberSuperWeapon(int this, int a2, int a3) {
+void TeamClass::CheckMemberSuperWeapon(int a2, int a3) {
     int *v3; // esi
     int v4; // ebx
     int *v5; // ebp
@@ -3296,7 +3296,7 @@ void TeamClass::CheckMemberSuperWeapon(int this, int a2, int a3) {
 
 // 0x725FA0
 namespace gamemd {
-int TriggerClass::Construct(int this, int a2) {
+int TriggerClass::Construct(int a2) {
     int v3; // ecx
     int v4; // eax
     int v5; // eax

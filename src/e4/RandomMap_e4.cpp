@@ -2016,7 +2016,7 @@ ObjectClass * * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClas
       PlaceMapSeedClassBuildings(g_TerrainTypeTable2 + 8, &v66.MapSeed_field_0x10, (int)aP2, (int)v38); /*0x5927e7*/
       v39 = a3[1] - 1; /*0x5927f6*/
       LOWORD(v66.MapSeed_field_0x08) = *a3 - 1; /*0x5927f8*/
-      v40 = this->RandomMap_field_0x10; /*0x5927fd*/
+      v40 =(void *)this->RandomMap_field_0x10; /*0x5927fd*/
       HIWORD(v66.MapSeed_field_0x08) = v39; /*0x592800*/
       v66.MapSeed_field_0x10 = v66.MapSeed_field_0x08; /*0x592809*/
       PlaceMapSeedClassBuildings(g_TerrainTypeTable2 + 9, &v66.MapSeed_field_0x10, (int)aP2, (int)v40); /*0x59281b*/
@@ -2050,7 +2050,7 @@ ObjectClass * * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClas
           while ( 1 ) /*0x5928c4*/
           {
             v45 = 0; /*0x5928c4*/
-            v46 = &(unsigned int *)((char *)&stru_82ADA8 + 1); /*0x5928c6*/
+            v46 =(int *)&(unsigned int *)((char *)&stru_82ADA8 + 1); /*0x5928c6*/
             v47 = 20 * v44 + 8564740; /*0x5928cb*/
             while ( 1 ) /*0x5928d8*/
             {

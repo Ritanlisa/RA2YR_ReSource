@@ -765,7 +765,7 @@ int UnitTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 
   int result; // eax
 
-  result = TechnoTypeClass::SaveLoad_Prefix_0((unsigned int *)aP1, a0, aP1, (TechnoTypeClass *)a3); /*0x7480bf*/
+  result = TechnoTypeClass::SaveLoad_Prefix_0((unsigned int *)aP1, (int *)a0, aP1, (TechnoTypeClass *)a3); /*0x7480bf*/
   if ( result >= 0 ) /*0x7480c6*/
     return 0; /*0x7480c8*/
   return result; /*0x7480ca*/

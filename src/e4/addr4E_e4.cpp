@@ -2648,15 +2648,15 @@ LPARAM * InitGameDropdownColors()
   LPARAM *result; // eax
   int v3; // edx
 
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TemporalClass *)GetStringCSF((wchar_t *)aGuiGoldabbrev, 0, g_Str_File_GDlgSupp_cpp, 475); /*0x4e43e7*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TemporalClass *)GetStringCSF((wchar_t *)aGuiGoldabbrev, 0, (const char *)g_Str_File_GDlgSupp_cpp, 475); /*0x4e43e7*/
   ((unsigned int *)&FootClass_Array)[0] = ((wchar_t *)int)GetStringCSF(aGuiRedabbrev, 0, g_Str_File_GDlgSupp_cpp, 476); /*0x4e4402*/
   *((unsigned int *)((char *)&FootClass_Array + 2)) = ((wchar_t *)int)GetStringCSF(aGuiBlueabbrev, 0, g_Str_File_GDlgSupp_cpp, 477); /*0x4e441d*/
   ((unsigned int *)&FootClass_Array)[0] = ((wchar_t *)int)GetStringCSF(aGuiGreenabbrev, 0, g_Str_File_GDlgSupp_cpp, 478); /*0x4e4438*/
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(FootClass *)GetStringCSF(aGuiOrangeabbre, 0, g_Str_File_GDlgSupp_cpp, 479); /*0x4e4453*/
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(AbstractClass *)GetStringCSF(aGuiSkyblueabbr, 0, g_Str_File_GDlgSupp_cpp, 480); /*0x4e446e*/
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TechnoClass *)GetStringCSF(aGuiPurpleabbre, 0, g_Str_File_GDlgSupp_cpp, 481); /*0x4e4489*/
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(HouseClass *)GetStringCSF(aGuiPinkabbrev, 0, g_Str_File_GDlgSupp_cpp, 482); /*0x4e44a4*/
-  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(SlaveManagerClass *)GetStringCSF(aGuiGrayabbrev, 0, g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(FootClass *)GetStringCSF((wchar_t *)aGuiOrangeabbre, 0, g_Str_File_GDlgSupp_cpp, 479); /*0x4e4453*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(AbstractClass *)GetStringCSF((wchar_t *)aGuiSkyblueabbr, 0, g_Str_File_GDlgSupp_cpp, 480); /*0x4e446e*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TechnoClass *)GetStringCSF((wchar_t *)aGuiPurpleabbre, 0, g_Str_File_GDlgSupp_cpp, 481); /*0x4e4489*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(HouseClass *)GetStringCSF((wchar_t *)aGuiPinkabbrev, 0, g_Str_File_GDlgSupp_cpp, 482); /*0x4e44a4*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(SlaveManagerClass *)GetStringCSF((wchar_t *)aGuiGrayabbrev, 0, g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
   p_owningHouseIndex0 =(int *)&((char *)&FootClass_Array); /*0x4e44b3*/
   result =(LPARAM *)dword_8316A8; /*0x4e44b8*/
   do /*0x4e44d3*/
@@ -2694,7 +2694,7 @@ LRESULT FillListBox(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e479c*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e47a8*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e47b4*/
-  StringCSF = GetStringCSF((wchar_t *)g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 567); /*0x4e47c7*/
+  StringCSF = GetStringCSF((wchar_t *)g_Str_GUI_RandomAsSymbols, 0, (const char *)g_Str_File_GDlgSupp_cpp, 567); /*0x4e47c7*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e47d7*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e47e2*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e47ed*/
@@ -2723,7 +2723,7 @@ int GetComboBoxSelectedRaw(HWND aP0, int nIDDlgItem, LRESULT wParam)
 namespace gamemd {
 wchar_t * sub_4E4F30()
 {
-  return GetStringCSF((wchar_t *)aSttHostcombost, 0, g_Str_File_GDlgSupp_cpp, 747); /*0x4e4f46*/
+  return GetStringCSF((wchar_t *)aSttHostcombost, 0, (const char *)g_Str_File_GDlgSupp_cpp, 747); /*0x4e4f46*/
 }
 } // namespace gamemd
 
@@ -2808,7 +2808,7 @@ int SetupComboBoxRandomAlliance(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e528c*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5298*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e52a4*/
-  StringCSF = GetStringCSF((wchar_t *)g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 876); /*0x4e52b7*/
+  StringCSF = GetStringCSF((wchar_t *)g_Str_GUI_RandomAsSymbols, 0, (const char *)g_Str_File_GDlgSupp_cpp, 876); /*0x4e52b7*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e52c7*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e52d2*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e52dd*/
@@ -2848,7 +2848,7 @@ LRESULT InitComboBoxNone(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e5cdc*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5ce8*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5cf4*/
-  StringCSF = GetStringCSF((wchar_t *)aGuiNoneassymbo, 0, g_Str_File_GDlgSupp_cpp, 1165); /*0x4e5d07*/
+  StringCSF = GetStringCSF((wchar_t *)aGuiNoneassymbo, 0, (const char *)g_Str_File_GDlgSupp_cpp, 1165); /*0x4e5d07*/
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5d17*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5d22*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e5d2d*/
@@ -3110,7 +3110,7 @@ int sub_4E64E0()
   dword_A8B200 = (int)&DynamicVectorClass_AITriggerTypeClass___vftable; /*0x4e64fd*/
   dword_A8B214 = 10; /*0x4e6507*/
   dword_A8B210 = 0; /*0x4e6511*/
-  return atexit(sub_4E6520); /*0x4e651c*/
+  return atexit((void (__cdecl *)(void))sub_4E6520); /*0x4e651c*/
 }
 } // namespace gamemd
 
@@ -3140,7 +3140,7 @@ int sub_4E6560()
   dword_8B4178 = (int)&DynamicVectorClass_TriggerTypeClass___vftable; /*0x4e657d*/
   dword_8B418C = 10; /*0x4e6587*/
   dword_8B4188 = 0; /*0x4e6591*/
-  return atexit(sub_4E65A0); /*0x4e659c*/
+  return atexit((void (__cdecl *)(void))sub_4E65A0); /*0x4e659c*/
 }
 } // namespace gamemd
 
@@ -3170,7 +3170,7 @@ int sub_4E65E0()
   dword_A8EAE8 = (int)&DynamicVectorClass_TriggerClass___vftable; /*0x4e65fd*/
   dword_A8EAFC = 10; /*0x4e6607*/
   dword_A8EAF8 = 0; /*0x4e6611*/
-  return atexit(sub_4E6620); /*0x4e661c*/
+  return atexit((void (__cdecl *)(void))sub_4E6620); /*0x4e661c*/
 }
 } // namespace gamemd
 
@@ -3200,7 +3200,7 @@ int sub_4E6660()
   dword_8B4190 = (int)&DynamicVectorClass_BuildingLightClass___vftable; /*0x4e667d*/
   dword_8B41A4 = 10; /*0x4e6687*/
   dword_8B41A0 = 0; /*0x4e6691*/
-  return atexit(sub_4E66A0); /*0x4e669c*/
+  return atexit((void (__cdecl *)(void))sub_4E66A0); /*0x4e669c*/
 }
 } // namespace gamemd
 
@@ -3230,7 +3230,7 @@ int sub_4E66E0()
   dword_A80208 = (int)&DynamicVectorClass_ParticleSystemClass___vftable; /*0x4e66fd*/
   dword_A8021C = 10; /*0x4e6707*/
   g_GameCleanupState = 0; /*0x4e6711*/
-  return atexit(sub_4E6720); /*0x4e671c*/
+  return atexit((void (__cdecl *)(void))sub_4E6720); /*0x4e671c*/
 }
 } // namespace gamemd
 

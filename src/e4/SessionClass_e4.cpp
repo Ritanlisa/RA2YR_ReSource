@@ -154,7 +154,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
     {
       if ( ((unsigned int *)(g_GameMode_Current))[0] ) /*0x552d36*/
       {
-        PlayerSide =(unsigned int)(unsigned int *)(void *)((SessionClass *)(*(unsigned int *)Game_PlayerInfoArray))->GetPlayerSide(); /*0x552d51*/
+        PlayerSide =(unsigned int *)(unsigned int)(unsigned int *)(void *)((SessionClass *)(*(unsigned int *)Game_PlayerInfoArray))->GetPlayerSide(); /*0x552d51*/
         return PaletteManager::Load((int)(PlayerSide)); /*0x552d58*/
       }
       else
@@ -425,7 +425,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
         v26 =(int)__2_YAPAXI_Z(0x10u); /*0x5cf306*/
         if ( !v26 ) /*0x5cf310*/
           goto LABEL_17; /*0x5cf310*/
-        v27 =(int)((String*)v26)->SplitComma((const char **)&((char *)&v43)); /*0x5cf31e*/
+        v27 =((gamemd::ObjectClass *)int)((String*)v26)->SplitComma((const char **)&((char *)&v43)); /*0x5cf31e*/
         if ( !v27 ) /*0x5cf322*/
           goto LABEL_17; /*0x5cf322*/
         v28 = *(unsigned int *)(((char *)&v43) + 52); /*0x5cf328*/

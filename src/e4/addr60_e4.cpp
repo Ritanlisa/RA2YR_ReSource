@@ -1984,7 +1984,7 @@ LABEL_68:
             (gamemd::ConvertClass *)(int)v73,
             v89 + v68 * v43,
             (gamemd::ConvertClass *)v103,
-            v72,
+            (gamemd::ConvertClass *)v72,
             1024,
             0,
             0,
@@ -2141,7 +2141,7 @@ LABEL_106:
         (gamemd::ConvertClass *)(int)v80,
         v88 + v68 * v56,
         (gamemd::ConvertClass *)v69,
-        v72,
+        (gamemd::ConvertClass *)v72,
         1024,
         0,
         0,
@@ -2492,7 +2492,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
             goto LABEL_116; /*0x608b43*/
           }
   LABEL_109:
-          v6 = RA2_OPNEW(0x10u); /*0x608aeb*/
+          v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608aeb*/
           if ( !v6 ) /*0x608af7*/
             return 0; /*0x608af7*/
           *v6 = 110; /*0x608afd*/
@@ -2509,7 +2509,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 return 0; /*0x608ba4*/
             }
   LABEL_123:
-            v6 = RA2_OPNEW(0x10u); /*0x608baa*/
+            v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608baa*/
             if ( !v6 ) /*0x608bb6*/
               return 0; /*0x608bb6*/
             *v6 = 170; /*0x608bbc*/
@@ -2528,7 +2528,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 return 0; /*0x608c08*/
             }
   LABEL_131:
-            v6 = RA2_OPNEW(0x10u); /*0x608c0e*/
+            v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608c0e*/
             if ( !v6 ) /*0x608c1a*/
               return 0; /*0x608c1a*/
             *v6 = 295; /*0x608c20*/
@@ -2549,7 +2549,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
           return 0; /*0x608a16*/
       }
   LABEL_96:
-      v6 = RA2_OPNEW(0x10u); /*0x608a1c*/
+      v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608a1c*/
       if ( !v6 ) /*0x608a28*/
         return 0; /*0x608a28*/
       goto LABEL_140; /*0x608a28*/
@@ -2560,7 +2560,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     return 0; /*0x608557*/
   if ( DlgCtrlID == 1770 ) /*0x608562*/
   {
-    v6 = RA2_OPNEW(0x10u); /*0x608566*/
+    v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608566*/
     if ( v6 ) /*0x608570*/
     {
       *v6 = 141; /*0x608576*/
@@ -2573,7 +2573,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
       a3[2] = v6[2]; /*0x608ca9*/
       a3[3] = v6[3]; /*0x608caf*/
       RA2_OPDEL(v6); /*0x608cb2*/
-      return 1; /*0x608cc1*/
+return (gamemd::AbstractClass **)1; /*0x608cc1*/
     }
     return 0; /*0x608570*/
   }
@@ -2582,7 +2582,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     switch ( DlgCtrlID ) /*0x6085d4*/
     {
       case 1295: /*0x6085d4*/
-        v6 = RA2_OPNEW(0x10u); /*0x6085d8*/
+        v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x6085d8*/
         if ( v6 ) /*0x6085e2*/
         {
           *v6 = 177; /*0x6085e8*/
@@ -2593,7 +2593,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         }
         return 0; /*0x6085e2*/
       case 1822: /*0x6085d4*/
-        v6 = RA2_OPNEW(0x10u); /*0x608611*/
+        v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608611*/
         if ( !v6 ) /*0x60861b*/
           return 0; /*0x60861b*/
         *v6 = 177; /*0x608621*/
@@ -2601,7 +2601,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         v6[2] = 141; /*0x60862e*/
         break;
       case 1648: /*0x6085d4*/
-        v6 = RA2_OPNEW(0x10u); /*0x608643*/
+        v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608643*/
         if ( !v6 ) /*0x60864d*/
           return 0; /*0x60864d*/
         *v6 = 309; /*0x608653*/
@@ -2609,7 +2609,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         v6[2] = 141; /*0x608660*/
         break;
       case 1959: /*0x6085d4*/
-        v6 = RA2_OPNEW(0x10u); /*0x608675*/
+        v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x608675*/
         if ( !v6 ) /*0x60867f*/
           return 0; /*0x60867f*/
         *v6 = 10; /*0x608685*/
@@ -2617,7 +2617,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         v6[2] = 610; /*0x608692*/
         break;
       case 1960: /*0x6085d4*/
-        v6 = RA2_OPNEW(0x10u); /*0x6086ab*/
+        v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x6086ab*/
         if ( !v6 ) /*0x6086b5*/
           return 0; /*0x6086b5*/
         *v6 = 10; /*0x6086bb*/
@@ -2631,7 +2631,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     v6[3] = 20; /*0x608c8a*/
     goto LABEL_143; /*0x608c8a*/
   }
-  v6 = RA2_OPNEW(0x10u); /*0x60859f*/
+  v6 =(unsigned int *)RA2_OPNEW(0x10u); /*0x60859f*/
   if ( v6 ) /*0x6085a9*/
   {
     *v6 = 141; /*0x6085af*/

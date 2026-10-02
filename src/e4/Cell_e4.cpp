@@ -509,7 +509,7 @@ int Cell::IsBuildableAdvanced()
     goto LABEL_20; /*0x487048*/
   for ( i = this->Cell_field_0xE4; i; i = (unsigned int *)i[12] ) /*0x487052*/
   {
-    result =(int)(unsigned int *)(*(int (**)(unsigned int *))(*i + 44))(i); /*0x487058*/
+    result =(unsigned int *)(int)(unsigned int *)(*(int (**)(unsigned int *))(*i + 44))(i); /*0x487058*/
     if ( result == 6 ) /*0x48705e*/
       goto LABEL_21; /*0x48705e*/
   }
@@ -1050,7 +1050,7 @@ ObjectClass * * Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2
         v19 = (unsigned int *)(&unk_ABDC50); /*0x56ecf5*/
       }
       if ( v19[14] == v12 ) /*0x56ecfd*/
-        Cell::SetTileType((IUnknown *)(&aP0), (IUnknown *)v10, v12, aP3, 1); /*0x56ed11*/
+        Cell::SetTileType((IUnknown *)(&aP0), (IUnknown *)v10, (IUnknown *)v12, aP3, 1); /*0x56ed11*/
       v13 = (v13 + 1) & 7; /*0x56ed1b*/
       result = (char)(--aP1); /*0x56ed1e*/
     }

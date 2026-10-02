@@ -636,7 +636,7 @@ int HouseClass::Construct(int a2)
     || (*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 29)) || !*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 24))
     && *(int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 36) > 0
     && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16) + 8))(
-         &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16),
+         (char *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16),
          *(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 36) + *(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 24),
          0) )
   {

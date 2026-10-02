@@ -760,11 +760,11 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     }
     (*(void (**)(int))(*(unsigned int *)v35 + 96))((int)v35); /*0x437ee9*/
     (*(void (**)(int))(*(unsigned int *)aP3 + 96))((int)aP3); /*0x437ef5*/
-    return 1; /*0x437ef8*/
+return (gamemd::MouseClass **)1; /*0x437ef8*/
   }
   else
   {
-    (*(void (**)(int))(*(unsigned int *)aP0 + 96))(aP0); /*0x437d42*/
+    (*(void (**)(int))(*(unsigned int *)aP0 + 96))((int)aP0); /*0x437d42*/
     return 0; /*0x437d45*/
   }
 }
@@ -783,7 +783,7 @@ unsigned int * E4Recv_437F50::sub_437F50()
     goto LABEL_5; /*0x437f78*/
   v2 = OleRun((LPUNKNOWN)ppv); /*0x437f85*/
   if ( v2 >= 0 ) /*0x437f89*/
-    v2 = (**(int (***)(LPVOID, void *, ObjectClass *))ppv)(ppv, &unk_818C08, this); /*0x437f9a*/
+    v2 = (**(int (***)(LPVOID, void *, ObjectClass *))ppv)(ppv, &unk_818C08, (gamemd::ObjectClass *)this); /*0x437f9a*/
   (*(void (**)(LPVOID))(*(unsigned int *)ppv + 8))(ppv); /*0x437fa3*/
   if ( v2 < 0 ) /*0x437fa8*/
   {
@@ -791,7 +791,7 @@ LABEL_5:
     if ( v2 != -2147467262 ) /*0x437fb0*/
       WinAPI::Wrapper(v2); /*0x437fb3*/
   }
-  return this; /*0x437fba*/
+return (unsigned int *)this; /*0x437fba*/
 
 }
 }
@@ -820,7 +820,7 @@ void BrainClass::sub_43A600()
     }
     while ( v2 < v3 ); /*0x43a632*/
   }
-  (*(void (**)(BrainClass *))(*((unsigned int *)this + 1) + 12))((unsigned int *)this + 1); /*0x43a63c*/
+  (*(void (**)(BrainClass *))(*((unsigned int *)this + 1) + 12))((BrainClass *)(unsigned int *)this + 1); /*0x43a63c*/
   v5 = (void *)*((unsigned int *)this + 2); /*0x43a63f*/
   *((unsigned int *)this + 1) = &vt_VectorClass; /*0x43a642*/
   if ( v5 && *((unsigned char *)this + 17) ) /*0x43a64c*/

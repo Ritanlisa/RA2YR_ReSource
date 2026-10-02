@@ -2135,14 +2135,14 @@ unsigned int * TypeList_flat::ParticleConstructor(int a2, int a3)
     }
     else
     {
-      ((unsigned int *)this)[0] = (void *)__2_YAPAXI_Z(4 * a2); /*0x717cac*/
+      ((unsigned int *)this)[0] =(unsigned int)(void *)__2_YAPAXI_Z(4 * a2); /*0x717cac*/
       ((unsigned int *)this)[0] = 1; /*0x717caf*/
     }
   }
   this->DynamicVectorClass = &vt_DynamicVectorClass; /*0x717cb3*/
   ((unsigned int *)this)[0] = 10; /*0x717cb9*/
   ((unsigned int *)this)[0] = 0; /*0x717cc0*/
-  return &this->DynamicVectorClass; /*0x717cc9*/
+return (unsigned int *)&this->DynamicVectorClass; /*0x717cc9*/
 
 }
 }  // G42.18c ns repair

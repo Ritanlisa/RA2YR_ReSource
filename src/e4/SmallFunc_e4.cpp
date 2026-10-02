@@ -61,7 +61,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   for ( i = 0; i < v4; Base[58] = a2 ) /*0x6f19cc*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, (uint8_t *)((char *)&g_INI_Key_TRUCKA), i); /*0x6f19db*/
-    ((INIClass*)(gamemd::INIClass *)(a1))->GetString((uint8_t *)((char *)&g_INI_Key_TRUCKA), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Source), 32); /*0x6f19f4*/
+    ((INIClass*)(gamemd::INIClass *)(a1))->GetString((uint8_t *)((char *)&g_INI_Key_TRUCKA), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), (char *)(int)(Source), 32); /*0x6f19f4*/
     if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
     v7 = 0; /*0x6f1a2a*/

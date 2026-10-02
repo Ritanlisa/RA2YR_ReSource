@@ -878,15 +878,15 @@ char Dialog_InitCountryIcons(int a1, int a2)
   int v82; // edx
   LoadPaletteFromFile((int)g_DialogHashTable, v82, (char *)g_Str_File_wolclan_pcx, 2, 0);
   int v83; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v83, g_Str_File_wolob_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v83, (char *)g_Str_File_wolob_pcx, 2, 0);
   int v84; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v84, DataGlobal_831DD0, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v84, (char *)DataGlobal_831DD0, 2, 0);
   int v85; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v85, g_Str_File_wolrslkob_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v85, (char *)g_Str_File_wolrslkob_pcx, 2, 0);
   int v86; // edx
   LoadPaletteFromFile((int)g_DialogHashTable, v86, DataGlobal_0083607C, 2, 0);
   int v87; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v87, g_Str_File_gt18_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v87, (char *)g_Str_File_gt18_pcx, 2, 0);
   int v88; // edx
   LoadPaletteFromFile((int)g_DialogHashTable, v88, DataGlobal_00836064, 2, 0);
   int v89; // edx
@@ -906,13 +906,13 @@ char Dialog_InitCountryIcons(int a1, int a2)
   int v96; // edx
   LoadPaletteFromFile((int)g_DialogHashTable, v96, DataGlobal_00835FF4, 2, 0);
   int v97; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v97, g_Str_File_comchief_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v97, (char *)g_Str_File_comchief_pcx, 2, 0);
   int v98; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v98, g_Str_File_cooperat_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v98, (char *)g_Str_File_cooperat_pcx, 2, 0);
   int v99; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v99, g_Str_File_number0_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v99, (char *)g_Str_File_number0_pcx, 2, 0);
   int v100; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v100, g_Str_File_number1_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v100, (char *)g_Str_File_number1_pcx, 2, 0);
   int v101; // edx
   LoadPaletteFromFile((int)g_DialogHashTable, v101, DataGlobal_00835FB0, 2, 0);
   int v102; // edx
@@ -1016,7 +1016,7 @@ char Dialog_InitCountryIcons(int a1, int a2)
   int v151; // edx
   LoadPaletteFromFile((int)g_DialogHashTable, v151, DataGlobal_00835D24, 2, 0);
   int v152; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v152, g_Str_File_wolreslk_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v152, (char *)g_Str_File_wolreslk_pcx, 2, 0);
   int v153; // edx
   LoadPaletteFromFile((int)g_DialogHashTable, v153, DataGlobal_00835D04, 2, 0);
   int v154; // edx
@@ -1030,11 +1030,11 @@ char Dialog_InitCountryIcons(int a1, int a2)
   int v158; // edx
   LoadPaletteFromFile((int)g_DialogHashTable, v158, DataGlobal_00835CB4, 2, 0);
   int v159; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v159, g_Str_File_pingg_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v159, (char *)g_Str_File_pingg_pcx, 2, 0);
   int v160; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v160, g_Str_File_pingy_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v160, (char *)g_Str_File_pingy_pcx, 2, 0);
   int v161; // edx
-  LoadPaletteFromFile((int)g_DialogHashTable, v161, g_Str_File_pingr_pcx, 2, 0);
+  LoadPaletteFromFile((int)g_DialogHashTable, v161, (char *)g_Str_File_pingr_pcx, 2, 0);
   int v162; // edx
   LoadPaletteFromFile((int)g_DialogHashTable, v162, DataGlobal_00835C7C, 2, 0);
   int v163; // edx

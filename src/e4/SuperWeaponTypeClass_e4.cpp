@@ -662,7 +662,7 @@ int SuperWeaponTypeClass::FindOrCreate(INIClass * aP1, unsigned char * a2, CCINI
   char Destination[128]; // [esp+4h] [ebp-80h] BYREF
 
   if ( !((INIClass*)((INIClass *)this))->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475563*/
-    return aP3; /*0x4755f8*/
+return (int)aP3; /*0x4755f8*/
   v4 = (void *)PlayerSlot::NameToDialogID(Destination); /*0x475579*/
   if ( (uint8_t)BuildingType::IsSpecialType(v4) ) /*0x47557d*/
     return (int)v4; /*0x475586*/

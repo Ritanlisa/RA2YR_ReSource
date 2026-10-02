@@ -1466,7 +1466,7 @@ return (gamemd::AbstractClass **)result; /*0x57dff0*/
         v50[0] =(int)*((CellStruct *)(v1))->Add(v52, &right); /*0x57e21a*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57e21e*/
         v39 =(unsigned short *)((CellStruct *)(v52))->Set(0, 1); /*0x57e22a*/
-        v50[0] =(int)*((CellStruct *)(v1))->Sub(&right, v39); /*0x57e248*/
+        v50[0] =((unsigned int *)int)*((CellStruct *)(v1))->Sub(&right, v39); /*0x57e248*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57e24c*/
       }
       ((House *)(v24))->AnnounceUpgrade(-1); /*0x57e255*/
@@ -1680,7 +1680,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       v50->q044 = v23; /*0x57e52b*/
       v61[1] = dword_886FA4; /*0x57e539*/
       v61[0] = DSurface_ViewBounds; /*0x57e547*/
-      v26 = (struct tagRECT *)((House *)((int)v5))->GetStartCoords(v66); /*0x57e55a*/
+      v26 = (struct tagRECT *)((House *)((int)v5))->GetStartCoords((unsigned int *)v66); /*0x57e55a*/
       v27 = (struct tagRECT *)BuildingClass::GetPlacementRect((int)v5, v65); /*0x57e55c*/
       if ( v26->right <= 0 || v26->bottom <= 0 ) /*0x57e571*/
       {

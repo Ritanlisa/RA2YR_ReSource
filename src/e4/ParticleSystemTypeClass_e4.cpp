@@ -395,7 +395,7 @@ namespace gamemd {
 int ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
 
-  AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)(AbstractClass *)aP0, aP1, aP2); /*0x64483f*/
+  AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)(AbstractClass *)aP0, aP1, (gamemd::TechnoTypeClass *)aP2); /*0x64483f*/
   return 0; /*0x644846*/
 
 }
