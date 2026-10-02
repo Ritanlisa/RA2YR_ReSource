@@ -691,7 +691,7 @@ int MPCooperative::Read(void *a1_1, void *a2_1)
     &this->MPCooperative_field_0x324,
     v5,
     0);
-  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue(&v15); /*0x5c18fa*/
+  ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue((unsigned int *)(&v15)); /*0x5c18fa*/
   for ( j = 0; j < v15; ++j ) /*0x5c1907*/
   {
     v8 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c190b*/
@@ -718,7 +718,7 @@ int MPCooperative::Read(void *a1_1, void *a2_1)
     v12 = p_MPCooperative_field_0x324[4]; /*0x5c1958*/
     v13 = p_MPCooperative_field_0x324[1]; /*0x5c195b*/
     p_MPCooperative_field_0x324[4] = v12 + 1; /*0x5c1961*/
-    *(unsigned int *)(v13 + 4 * v12) = v9; /*0x5c1964*/
+    *(unsigned int *)(v13 + 4 * v12) = (unsigned int)(v9); /*0x5c1964*/
   }
   return 1; /*0x5c1970*/
 
@@ -745,9 +745,9 @@ CampaignClass * * MPCooperative::CopyTo()
   BOOL v15; // [esp+14h] [ebp-8h]
   int v16; // [esp+18h] [ebp-4h] BYREF
 
-  g_MPCooperativeState = (ObjectClass *)-1; /*0x5c1a13*/
+  g_MPCooperativeState = (int)((ObjectClass *)-1); /*0x5c1a13*/
   Debug::Log(); /*0x5c1a28*/
-  Network::SendOptionsGame(aO8); /*0x5c1a35*/
+  Network::SendOptionsGame((char *)(aO8)); /*0x5c1a35*/
   if ( Dialog::FindByHandle((Dialog *)0xC2) || Dialog::FindByHandle((Dialog *)0xBC) ) /*0x5c1a4d*/
   {
     MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c1a56*/

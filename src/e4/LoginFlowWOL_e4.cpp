@@ -53,9 +53,9 @@ void sub_786EF0()
           break; /*0x786fb9*/
         case -2147221386: /*0x786f78*/
           v3 = dword_B77E50; /*0x786fbb*/
-          v2 = aHttpApiregiste_4; /*0x786fbc*/
+          v2 = (const unsigned int)(aHttpApiregiste_4); /*0x786fbc*/
   LABEL_16:
-          sprintf(Buffer, v2, v3); /*0x786fc1*/
+          sprintf(Buffer,(const char *const )(v2), v3); /*0x786fc1*/
           break; /*0x786fc6*/
         case -2147221385: /*0x786f78*/
           sprintf(Buffer, "http://apiregister.westwood.com/support/serialunknown_%d.html", dword_B77E50); /*0x786f8a*/
@@ -88,7 +88,7 @@ char sub_72BCA0()
   {
     if ( g_DisplayWidth == 800 ) /*0x72bcb3*/
       dword_B0FA98 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844DB4),(gamemd::ConvertClass *)((bool *)&byte_B0FD44))); /*0x72bcc5*/
-    result = LoadPaletteSimple((char *)(off_844DB8), &dword_B0FD48, &dword_B0FD4C); /*0x72bcda*/
+    result = LoadPaletteSimple((char *)(off_844DB8),(int *)(&dword_B0FD48), &dword_B0FD4C); /*0x72bcda*/
     byte_B0FD45 = 1; /*0x72bcdf*/
   }
   return result; /*0x72bce6*/
@@ -142,7 +142,7 @@ char sub_72C600()
   {
     if ( g_DisplayWidth == 800 ) /*0x72c613*/
       dword_B0FB0C = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D8C),(gamemd::ConvertClass *)((bool *)&byte_B0FD08))); /*0x72c625*/
-    result = LoadPaletteSimple((char *)(off_844D90), &dword_B0FD0C, &dword_B0FD10); /*0x72c63a*/
+    result = LoadPaletteSimple((char *)(off_844D90),(int *)(&dword_B0FD0C), &dword_B0FD10); /*0x72c63a*/
     byte_B0FD09 = 1; /*0x72c63f*/
   }
   return result; /*0x72c646*/
@@ -211,7 +211,7 @@ int sub_786390(void * a1)
       if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) ) /*0x786420*/
       {
         cbData = 4; /*0x786445*/
-        RegQueryValueExA(phkResult, off_84A940, 0, &Type, Data, &cbData); /*0x78644d*/
+        RegQueryValueExA(phkResult,(LPCSTR)(off_84A940), 0, &Type, Data, &cbData); /*0x78644d*/
         RegCloseKey(phkResult); /*0x786458*/
       }
     }

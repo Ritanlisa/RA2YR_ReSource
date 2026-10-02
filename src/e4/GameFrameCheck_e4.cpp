@@ -153,7 +153,7 @@ AbstractClass * * sub_686570()
   ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ(); /*0x686693*/
     ((AudioMixer *)0)->Shutdown();
     ((AudioQueue *)0)->DrainAll();
-  EndBufferMixer((int *)g_MixerState, 0x4000); /*0x6866ad*/
+  EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerState), 0x4000); /*0x6866ad*/
   result = DSurface_ViewBounds.__pad_8[16]; /*0x6866b2*/
   if ( *(unsigned int *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.ObjectTypeClass[35] ) /*0x6866c0*/
   {

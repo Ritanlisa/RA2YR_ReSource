@@ -379,10 +379,10 @@ LABEL_54:
         return 1;
       }
     case 7:
-      int v56 = ((unsigned char *)(this) + 0x2B4);
+      int v56 = (int)(((unsigned char *)(this) + 0x2B4));
       if ( v56 )
       {
-        int v57 = *this;
+        int v57 = (int)(*this);
         int v58 = this->SelectWeapon(v56, 1);
         switch ( this->ReadINI_3(((unsigned char *)(this) + 0x2B4), v58) )
         {
@@ -396,9 +396,9 @@ LABEL_54:
           default:
             goto LABEL_91;
         }
-        int v59 = *this;
+        int v59 = (int)(*this);
         int v95 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4));
-        int v90 = ((unsigned char *)(this) + 0x2B4);
+        int v90 = (int)(((unsigned char *)(this) + 0x2B4));
         this->FireWeapon();
   unsigned int v108[5]; // [esp+80h] [ebp-8Ch] BYREF
         v108[0] = ((unsigned char *)(this) + 0x027);

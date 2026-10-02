@@ -81,7 +81,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   int i; // [esp+1Ch] [ebp+4h]
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6af1a8*/
-  SlaveControlVector::Constructor((unsigned int *)((char *)this + 56), 0, 0); /*0x6af1b6*/
+  SlaveControlVector::Constructor((int)((unsigned int *)((char *)this + 56)), 0, 0); /*0x6af1b6*/
   *((unsigned int *)this + 14) = (unsigned int)(&vt_DynamicVectorClass); /*0x6af1c3*/
   *((unsigned int *)this + 19) = 10; /*0x6af1c9*/
   *((unsigned int *)this + 18) = 0; /*0x6af1d0*/

@@ -534,7 +534,7 @@ void * * ScenarioClass_SetTimer(int a1)
       ((Mouse *)(&dword_87F7E8))->ReleaseCapture(); /*0x684127*/
       if ( !(*(int (**)(int))(*(unsigned int *)dword_887640 + 40))(dword_887640) ) /*0x684134*/
         (*(void (**)(int))(*(unsigned int *)dword_887640 + 12))(dword_887640); /*0x684143*/
-      *((unsigned char *)dword_A8B230 + 13730) = 1; /*0x68414c*/
+      *((unsigned char *)dword_A8B230 + 13730) = (void **)(1); /*0x68414c*/
       byte_A8ED9C = 1; /*0x684159*/
       Timer::PumpMessages((HWND *)dword_87F770); /*0x684160*/
       dword_B07784 = 0; /*0x684165*/

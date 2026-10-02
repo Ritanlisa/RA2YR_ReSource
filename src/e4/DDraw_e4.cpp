@@ -260,7 +260,7 @@ void DDraw::LogError(void * a1, void * a2)
   }
   else if ( a2 ) /*0x4a3dd9*/
   {
-    return MessageBoxA(g_hWnd, ::Text, Caption, 0); /*0x4a3dec*/
+    return MessageBoxA((HWND)(g_hWnd), ::Text, Caption, 0); /*0x4a3dec*/
   }
   return result; /*0x4a3df2*/
 
@@ -290,7 +290,7 @@ char DDraw::CheckCapabilities()
       else
       {
         sprintf(Text, "DDRAW.DLL Error code = %08X", v1); /*0x4a4683*/
-        MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u); /*0x4a469e*/
+        MessageBoxA((HWND)(g_hWnd), Text, g_Str_Direct_X, 0x30u); /*0x4a469e*/
       }
       LOBYTE(v0) = 0; /*0x4a466f*/
     }

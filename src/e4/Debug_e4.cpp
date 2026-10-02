@@ -132,7 +132,7 @@ char Debug::Printf()
   result = byte_ABF23A; /*0x5bd1f0*/
   if ( byte_ABF23A ) /*0x5bd1fd*/
   {
-    vsprintf(Buffer, Format, va); /*0x5bd214*/
+    vsprintf(Buffer,(const char *const )(Format), va); /*0x5bd214*/
     Buffer[255] = 0; /*0x5bd227*/
     return Debug::ScrollText((int)(Buffer)); /*0x5bd230*/
   }

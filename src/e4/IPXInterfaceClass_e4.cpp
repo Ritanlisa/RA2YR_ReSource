@@ -60,14 +60,14 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   struct sockaddr name; // [esp+18h] [ebp-28h] BYREF
   char v12[24]; // [esp+28h] [ebp-18h] BYREF
 
-  v4 = socket(6, 2, 1000); /*0x7b0de6*/
+  v4 = socket((void *)(6), 2, 1000); /*0x7b0de6*/
   if ( v4 == -1 ) /*0x7b0deb*/
     return 0; /*0x7b0df5*/
   memset(name.sa_data, 0, 12); /*0x7b0dfe*/
   name.sa_family = 6; /*0x7b0e13*/
   if ( bind(v4, &name, 14) == -1 ) /*0x7b0e22*/
   {
-    closesocket(v4); /*0x7b0e25*/
+    closesocket((void *)(v4)); /*0x7b0e25*/
     return 0; /*0x7b0e32*/
   }
   *(unsigned int *)optval = 1; /*0x7b0e44*/
@@ -76,7 +76,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   {
     ((Debug *)this)->Log(); /*0x7b0eae*/
   }
-  else if ( getsockopt(v4, 1000, 16397, optval, &optlen) ) /*0x7b0e7a*/
+  else if ( getsockopt((void *)(v4), 1000, 16397, optval, &optlen) ) /*0x7b0e7a*/
   {
     WSAGetLastError(); /*0x7b0e94*/
     ((Debug *)this)->Log(); /*0x7b0e9f*/
@@ -88,11 +88,11 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   memset(v12, 0, sizeof(v12)); /*0x7b0ec2*/
   *(unsigned int *)v12 = (unsigned int)(aP1); /*0x7b0ed9*/
   v10 = 24; /*0x7b0edd*/
-  if ( getsockopt(v4, 1000, 16391, v12, &v10) == -1 ) /*0x7b0eee*/
+  if ( getsockopt((void *)(v4), 1000, 16391, v12, &v10) == -1 ) /*0x7b0eee*/
   {
     WSAGetLastError(); /*0x7b0ef0*/
     ((Debug *)this)->Log(); /*0x7b0efc*/
-    closesocket(v4); /*0x7b0f05*/
+    closesocket((void *)(v4)); /*0x7b0f05*/
     return 0; /*0x7b0f0c*/
   }
   else
@@ -103,7 +103,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
     *((unsigned int *)(unsigned int)(this)+ 64703) = v6; /*0x7b0f26*/
     *(unsigned int *)((unsigned int)(aP2)+ 6) = *(unsigned int *)&v12[8]; /*0x7b0f33*/
     *(unsigned short *)(aP2 + 10) = v7; /*0x7b0f35*/
-    closesocket(v4); /*0x7b0f39*/
+    closesocket((void *)(v4)); /*0x7b0f39*/
     return 1; /*0x7b0f40*/
   }
 
@@ -158,7 +158,7 @@ LABEL_6:
           v25 = *((unsigned short *)this + 129414); /*0x7b1446*/
           v7 = (Network *)**((unsigned int **)this + 9); /*0x7b1447*/
           to.sa_family = 6; /*0x7b1449*/
-          *(unsigned short *)&to.sa_data[10] = htons(v25); /*0x7b1453*/
+          *(unsigned short *)&to.sa_data[10] = htons((void *)(v25)); /*0x7b1453*/
           if ( v7->__pad_14[0] ) /*0x7b1458*/
           {
             *(unsigned int *)to.sa_data = *((unsigned int *)this + 64703); /*0x7b146b*/
@@ -167,7 +167,7 @@ LABEL_6:
           }
           else
           {
-            ((Network *)(v7))->CopyAddress(&a3, (int)&v27); /*0x7b148c*/
+            ((Network *)(v7))->CopyAddress((unsigned int *)(&a3), (int)&v27); /*0x7b148c*/
             *(unsigned int *)to.sa_data = a3; /*0x7b149e*/
             *(unsigned int *)&to.sa_data[4] = v27; /*0x7b14a2*/
             *(unsigned short *)&to.sa_data[8] = v28; /*0x7b14a6*/
@@ -370,13 +370,13 @@ int IPXInterfaceClass::AddRef(void *a1)
 
   if ( *((unsigned int *)this + 64539) != -1 ) /*0x7b1b8c*/
   {
-    closesocket(*((unsigned int *)this + 64539)); /*0x7b1b8f*/
+    closesocket((void *)(*((unsigned int *)this + 64539))); /*0x7b1b8f*/
     *((unsigned int *)this + 64539) = -1; /*0x7b1b94*/
   }
   result = *((unsigned int *)this + 64540); /*0x7b1b9e*/
   if ( result != -1 ) /*0x7b1ba7*/
   {
-    result = closesocket(*((unsigned int *)this + 64540)); /*0x7b1baa*/
+    result = closesocket((void *)(*((unsigned int *)this + 64540))); /*0x7b1baa*/
     *((unsigned int *)this + 64540) = -1; /*0x7b1baf*/
   }
   return result; /*0x7b1bb9*/
@@ -480,7 +480,7 @@ unsigned char * IPXInterfaceClass::processPacket(void *a1)
       if ( ++v2 >= 128 ) /*0x7b22a4*/
         return result; /*0x7b22a4*/
     }
-    result = (char *)this + 672 * v3 + 80; /*0x7b22b9*/
+    result = (unsigned char *)((char *)this + 672 * v3 + 80); /*0x7b22b9*/
     *((unsigned char *)this + 672 * v3 + 101) = 1; /*0x7b22bd*/
     ++*((unsigned int *)this + 64535); /*0x7b22c8*/
   }
@@ -510,7 +510,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
   int v14; // edx
   UINT v15; // eax
 
-  v5 = ((AudioQueue *)((AudioQueue *)this))->AllocBuffer(aP3); /*0x7b24f4*/
+  v5 = ((AudioQueue *)((AudioQueue *)this))->AllocBuffer((gamemd::WinsockInterfaceClass *)(aP3)); /*0x7b24f4*/
   qmemcpy(v5 + 32, a1, a3); /*0x7b2505*/
   *((unsigned int *)v5 + 4) = a3; /*0x7b250e*/
   (*(void (**)(WinsockInterfaceClass *, unsigned char *))(this->Socket + 84))(this, v5); /*0x7b2516*/
@@ -529,7 +529,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
       v8 = *((unsigned int *)this + 18); /*0x7b2554*/
       v9 = *((unsigned int *)this + 15); /*0x7b2557*/
       *((unsigned int *)this + 18) = v8 + 1; /*0x7b255d*/
-      *(unsigned int *)(v9 + 4 * v8) = v5; /*0x7b2560*/
+      *(unsigned int *)(v9 + 4 * v8) = (unsigned int)(v5); /*0x7b2560*/
     }
     v10 = *((unsigned int *)this + 64540); /*0x7b2563*/
   }
@@ -547,12 +547,12 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
       v13 = *((unsigned int *)this + 12); /*0x7b259a*/
       v14 = *((unsigned int *)this + 9); /*0x7b259d*/
       *((unsigned int *)this + 12) = v13 + 1; /*0x7b25a3*/
-      *(unsigned int *)(v14 + 4 * v13) = v5; /*0x7b25a6*/
+      *(unsigned int *)(v14 + 4 * v13) = (unsigned int)(v5); /*0x7b25a6*/
     }
     v10 = *((unsigned int *)this + 64539); /*0x7b25a9*/
   }
   v15 = (*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, v10); /*0x7b25b9*/
-  SendMessageA(g_hWnd, v15, 0, 2); /*0x7b25c3*/
+  SendMessageA((HWND)(g_hWnd), v15, 0, 2); /*0x7b25c3*/
   return ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x7b25d4*/
 
 }
@@ -696,7 +696,7 @@ int IPXInterfaceClass::SetAddress(unsigned int * a1)
     do /*0x7b2012*/
     {
       v6 = *v4++; /*0x7b1ff7*/
-      ComputeHash(v2, v6); /*0x7b1ffe*/
+      ComputeHash((unsigned int *)(v2), v6); /*0x7b1ffe*/
       ++v1; /*0x7b2006*/
       result = *((unsigned int *)a1 + 4) / 4; /*0x7b200d*/
     }
@@ -704,7 +704,7 @@ int IPXInterfaceClass::SetAddress(unsigned int * a1)
   }
   v7 = *((unsigned int *)a1 + 4) & 3; /*0x7b2017*/
   if ( v7 ) /*0x7b201a*/
-    return ComputeHash(v2, *v4 & (0xFFFFFFFF >> (32 - 8 * v7))); /*0x7b2035*/
+    return ComputeHash((unsigned int *)(v2), *v4 & (0xFFFFFFFF >> (32 - 8 * v7))); /*0x7b2035*/
   return result; /*0x7b203a*/
 
 }

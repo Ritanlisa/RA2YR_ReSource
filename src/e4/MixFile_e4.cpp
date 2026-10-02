@@ -223,7 +223,7 @@ AbstractClass * * MixFile::LoadSide()
     {
       SidebarClass::ReadButtonList((SidebarClass *)dword_8871E0); /*0x53533d*/
       SidebarClass::LoadButtonSHPs((TabClass *)&dword_87F7E8); /*0x535347*/
-      v21.FileClass = (FileClass)&vt_CCFileClass; /*0x535353*/
+      v21.FileClass = (gamemd::AbstractClass **)((FileClass)&vt_CCFileClass); /*0x535353*/
       v23 = 0; /*0x53535a*/
       ((Vector *)((int)v22))->Clear(); /*0x535361*/
       v21.FileClass = (FileClass)&off_7E1668; /*0x53536d*/

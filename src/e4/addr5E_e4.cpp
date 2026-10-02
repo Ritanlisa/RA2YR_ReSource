@@ -785,7 +785,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
   int v3 = 0;
   v209 = 0;
   v198[22] = 0;
-  char * v5 = _strdup(Source);
+  char * v5 = (unsigned int)(_strdup(Source));
   *(unsigned int *)&v198[40] = v5;
   char v6 = *v5;
   if ( *v5 == 90 )

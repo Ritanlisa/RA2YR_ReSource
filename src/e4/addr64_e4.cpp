@@ -772,7 +772,7 @@ AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, in
   v102 = (ObjectClass *)v116;
   v103 = a4;
   var6C0[0] = Timer::GetTicks();
-  var6C0[1] = v129;
+  var6C0[1] = (unsigned int)(v129);
   v111 = (ObjectClass *)180;
   v109 = (ObjectClass *)Timer::GetTicks();
   v110 = v116;
@@ -821,7 +821,7 @@ LABEL_9:
     Debug::Log();
     int v168 = 39;
     char * v16 = ToWideStringChar(**(IUnknown ***)&HouseClass_Player[40236]);
-    strncpy(Destination, v16, (IUnknown *)0x14);
+    strncpy(Destination, v16,(size_t)((IUnknown *)0x14));
     IDA_HIWORD(v17) = *(unsigned short *)&HouseClass_Player[40538];
     int v170 = *(unsigned int *)(HouseClass_Player.field_0 + 48);
     var69C = *(unsigned int *)&HouseClass_Player[40536];

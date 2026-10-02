@@ -235,7 +235,7 @@ LABEL_39:
           {
             ((Timer *)(v24))->Init(0x384u); /*0x4f1590*/
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
-            dword_A8EE44 = v24[1]; /*0x4f15b0*/
+            dword_A8EE44 = (void (__cdecl *)(char *))(v24[1]); /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
             v20 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v31), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0x24u), (int)v19)); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
@@ -253,7 +253,7 @@ LABEL_39:
           {
             ((Timer *)(v25))->Init(0x384u); /*0x4f163a*/
             dword_A8EE30 = v25[0]; /*0x4f164e*/
-            dword_A8EE34 = v25[1]; /*0x4f1658*/
+            dword_A8EE34 = (void (__cdecl *)(char *))(v25[1]); /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
             v23 = (char *)(EventClass::Add2((gamemd::AnimClass *)(v30), *((unsigned int *)dword_A83D4C + 12),(IUnknown *)(0xDu), v22)); /*0x4f166f*/
             ((void (*)(char *))OptionQueue::PushEntry)(v23); /*0x4f167a*/
@@ -634,9 +634,9 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   int v20; // [esp+28h] [ebp-8h]
   int v21; // [esp+2Ch] [ebp-4h]
 
-  v2 = (unsigned int *)((unsigned int)(aP1)); /*0x6255f5*/
+  v2 = (unsigned int)((unsigned int *)((unsigned int)(aP1))); /*0x6255f5*/
   v3 = (int *)((void **)((int *)this)); /*0x6255fb*/
-  v4 = (int)((void *)(0)); /*0x625600*/
+  v4 = (void *)((int)((void *)(0))); /*0x625600*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(*aP1); /*0x625602*/
   v5 = (void **)(&this->field_8); /*0x625607*/
   this->field_4 = (void *)aP1[1]; /*0x62560a*/

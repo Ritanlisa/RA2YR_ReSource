@@ -348,7 +348,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
   int result; // eax
   char v3[513]; // [esp+7h] [ebp-201h] BYREF
 
-  result = O  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)a1), a2); 
+  result = O  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)a1),(gamemd::ObjectTypeClass *)(a2)); 
   if ( result >= 0 ) /*0x42881b*/
   {
     if ( a1 ) /*0x428823*/
@@ -434,14 +434,14 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess((int)((void *)(this->LoopStart))); 
   Power::TimerProcess((int)((void *)(this->LoopEnd))); 
   Power::TimerProcess((int)((void *)(this->End))); 
-  Power::TimerProcess((void *)(this->Report)); 
-  Power::TimerProcess((void *)(this->StopSound)); 
-  Power::TimerProcess((void *)(this->NumParticles)); 
-  Power::TimerProcess((void *)(this->DetailLevel)); 
-  Power::TimerProcess((void *)(this->TranslucencyDetailLevel)); 
-  Power::TimerProcess((void *)(this->RandomLoopDelay[0])); 
-  Power::TimerProcess((void *)(this->RandomLoopDelay[1])); 
-  Power::TimerProcess((void *)(this->Translucency)); 
+  Power::TimerProcess((int)((void *)(this->Report))); 
+  Power::TimerProcess((int)((void *)(this->StopSound))); 
+  Power::TimerProcess((int)((void *)(this->NumParticles))); 
+  Power::TimerProcess((int)((void *)(this->DetailLevel))); 
+  Power::TimerProcess((int)((void *)(this->TranslucencyDetailLevel))); 
+  Power::TimerProcess((int)((void *)(this->RandomLoopDelay[0]))); 
+  Power::TimerProcess((int)((void *)(this->RandomLoopDelay[1]))); 
+  Power::TimerProcess((int)((void *)(this->Translucency))); 
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
   return Pow  return ((Power *)((int)((Power *)a2)))->FlagProcess(v14); 
 
@@ -466,7 +466,7 @@ LABEL_6:
       return AnimTypeClass::Construct(v3, Source); /*0x428bf1*/
     return 0; /*0x428be5*/
   }
-  while ( _strcmpi((char *)(*(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * v2) + 36), Source) ) /*0x428bca*/
+  while ( _strcmpi((char *)(*(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * v2) + 36),(const char *)(Source)) ) /*0x428bca*/
   {
     if ( ++v2 >= *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x428bd4*/
       goto LABEL_6; /*0x428bd4*/

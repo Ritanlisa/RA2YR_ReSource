@@ -100,7 +100,7 @@ LABEL_6:
         v16 = this->TabClass_field_0x0; /*0x6d08b8*/
         *((unsigned char *)this + 21828) = 0; /*0x6d08c1*/
         (*(void ((gamemd::TabClass *)(**))(TabClass *, GadgetClass *))(v16 + 48))(this, &stru_B0CC40); /*0x6d08c8*/
-        PushCommandClass::Execute(&stru_B0CC40, (int)g_Str_Tip_ThumbClosed); /*0x6d08d5*/
+        PushCommandClass::Execute((unsigned int *)(&stru_B0CC40), (int)g_Str_Tip_ThumbClosed); /*0x6d08d5*/
         v17 = this->TabClass_field_0x0; /*0x6d08da*/
         *((unsigned char *)this + 21829) = 1; /*0x6d08e0*/
         (*(void ((gamemd::TabClass *)(**))(TabClass *, unsigned int))(v17 + 56))(this, 0); /*0x6d08e6*/
@@ -255,7 +255,7 @@ CellStruct * * sub_731AF0()
       return result; /*0x731b89*/
     }
   }
-  v7 = GetStringCSF(aMsgAttackmoveu, 0, g_Str_File_UICmnds_cpp, 862); /*0x731b9b*/
+  v7 = GetStringCSF((wchar_t *)(aMsgAttackmoveu), 0, g_Str_File_UICmnds_cpp, 862); /*0x731b9b*/
   v8 = 3; /*0x731ba6*/
   if ( dword_A83D4C ) /*0x731bad*/
     v8 = *(unsigned int *)&((unsigned int *)(dword_A83D4C))[134].__pad_90[4]; /*0x731baf*/

@@ -749,14 +749,14 @@ void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
   WPARAM wParam; // [esp+1Ch] [ebp-4h]
 
   DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem))));
-  v10 = (wchar_t *)(!ShowWindow(DlgItem, 0));
-  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e45d3*/
-  SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e45df*/
-  SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e45eb*/
+  v10 = (wchar_t *)(!ShowWindow((HWND)(DlgItem), 0));
+  SendMessageA((HWND)(DlgItem), 0x14Bu, 0, 0); /*0x4e45d3*/
+  SendMessageA((HWND)(DlgItem), 0x4DDu, 0, 1); /*0x4e45df*/
+  SendMessageA((HWND)(DlgItem), 0x4DEu, 0, 9); /*0x4e45eb*/
   StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 522)); /*0x4e45fe*/
-  v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e460e*/
-  SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e4619*/
-  SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e4624*/
+  v5 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e460e*/
+  SendMessageA((HWND)(DlgItem), 0x151u, v5, -2); /*0x4e4619*/
+  SendMessageA((HWND)(DlgItem), 0x498u, v5, -1); /*0x4e4624*/
   switch ( nIDDlgItem )
   {
     case 1698:
@@ -792,9 +792,9 @@ void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
     v9 = *(unsigned int *)(v6) == v11; /*0x4e46d7*/
     if ( *(unsigned int *)(v6) == v11 || *(unsigned int *)(v6) == -1 ) /*0x4e46e0*/
     {
-      v7 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)aAb); /*0x4e46f1*/
-      SendMessageA(DlgItem, 0x498u, v7, *(unsigned int *)((v6 - 1))); /*0x4e46fe*/
-      SendMessageA(DlgItem, 0x151u, v7, lParam); /*0x4e470c*/
+      v7 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, (LPARAM)aAb); /*0x4e46f1*/
+      SendMessageA((HWND)(DlgItem), 0x498u, v7, *(unsigned int *)((v6 - 1))); /*0x4e46fe*/
+      SendMessageA((HWND)(DlgItem), 0x151u, v7, lParam); /*0x4e470c*/
       if ( v9 ) /*0x4e4714*/
         wParam = v7; /*0x4e4716*/
     }
@@ -802,11 +802,11 @@ void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
     ++lParam; /*0x4e4728*/
   }
   while ( (int)v6 < (int)&dbl_8B40A0 ); /*0x4e472c*/
-  SendMessageA(DlgItem, 0x14Eu, wParam, 0); /*0x4e473b*/
-  result = SendMessageA(DlgItem, 0x4F1u, 0, 0); /*0x4e4747*/
+  SendMessageA((HWND)(DlgItem), 0x14Eu, wParam, 0); /*0x4e473b*/
+  result = SendMessageA((HWND)(DlgItem), 0x4F1u, 0, 0); /*0x4e4747*/
   IDA_LOBYTE(result) = v10; /*0x4e4749*/
   if ( !v10 ) /*0x4e474f*/
-    return ShowWindow(DlgItem, 5); /*0x4e4754*/
+    return ShowWindow((HWND)(DlgItem), 5); /*0x4e4754*/
   return result; /*0x4e475a*/
 }
 }
@@ -1172,13 +1172,13 @@ void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   WPARAM wParam; // [esp+1Ch] [ebp-4h]
 
   DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem))));
-  v10 = (wchar_t *)(!ShowWindow(DlgItem, 0));
-  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e50f2*/
-  SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e50fd*/
-  SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5108*/
+  v10 = (wchar_t *)(!ShowWindow((HWND)(DlgItem), 0));
+  SendMessageA((HWND)(DlgItem), 0x14Bu, 0, 0); /*0x4e50f2*/
+  SendMessageA((HWND)(DlgItem), 0x4DDu, 0, 1); /*0x4e50fd*/
+  SendMessageA((HWND)(DlgItem), 0x4DEu, 0, 9); /*0x4e5108*/
   StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 833)); /*0x4e511b*/
-  v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5128*/
-  SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5133*/
+  v5 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5128*/
+  SendMessageA((HWND)(DlgItem), 0x151u, v5, -2); /*0x4e5133*/
   switch ( nIDDlgItem )
   {
     case 1699:
@@ -1214,8 +1214,8 @@ void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
     v9 = *(unsigned int *)(v6) == v11; /*0x4e51e1*/
     if ( *(unsigned int *)(v6) == v11 || *(unsigned int *)(v6) == -1 ) /*0x4e51ea*/
     {
-      v7 = SendMessageA(DlgItem, 0x4C2u, 0, *(unsigned int *)((v6 - 2))); /*0x4e51fa*/
-      SendMessageA(DlgItem, 0x151u, v7, lParam); /*0x4e5208*/
+      v7 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, *(unsigned int *)((v6 - 2))); /*0x4e51fa*/
+      SendMessageA((HWND)(DlgItem), 0x151u, v7, lParam); /*0x4e5208*/
       if ( v9 ) /*0x4e5210*/
         wParam = v7; /*0x4e5212*/
     }
@@ -1223,11 +1223,11 @@ void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
     ++lParam; /*0x4e5224*/
   }
   while ( (int)v6 < (int)&dword_8B3F98 ); /*0x4e5228*/
-  SendMessageA(DlgItem, 0x14Eu, wParam, 0); /*0x4e5237*/
-  result = SendMessageA(DlgItem, 0x4F1u, 0, 0); /*0x4e5243*/
+  SendMessageA((HWND)(DlgItem), 0x14Eu, wParam, 0); /*0x4e5237*/
+  result = SendMessageA((HWND)(DlgItem), 0x4F1u, 0, 0); /*0x4e5243*/
   IDA_LOBYTE(result) = v10; /*0x4e5245*/
   if ( !v10 ) /*0x4e524b*/
-    return ShowWindow(DlgItem, 5); /*0x4e5250*/
+    return ShowWindow((HWND)(DlgItem), 5); /*0x4e5250*/
   return result; /*0x4e5256*/
 }
 }
@@ -1345,12 +1345,12 @@ int SetupLobbyFactionSlots(HWND aP0, int nIDDlgItem, int a3)
     dword_8B3F38[3 * v7] = -1; /*0x4e5542*/
   LABEL_22:
   v9 = 0; /*0x4e554d*/
-  v18 = SendDlgItemMessageA(v4, nIDDlgItem, 0x146u, 0, 0); /*0x4e5564*/
+  v18 = SendDlgItemMessageA((HWND)(v4), nIDDlgItem, 0x146u, 0, 0); /*0x4e5564*/
   if ( v18 > 0 )
   {
     while ( 1 ) /*0x4e557a*/
     {
-      v10 = SendDlgItemMessageA(v4, nIDDlgItem, 0x150u, v9, 0); /*0x4e557a*/
+      v10 = SendDlgItemMessageA((HWND)(v4), nIDDlgItem, 0x150u, v9, 0); /*0x4e557a*/
       if ( v10 == a3 ) /*0x4e5580*/
         break; /*0x4e5580*/
       v4 = (gamemd::SessionClass *)(aP0); /*0x4e5586*/
@@ -1430,11 +1430,11 @@ int SetupLobbyFactionSlots(HWND aP0, int nIDDlgItem, int a3)
     if ( (((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4) /*0x4e56d7*/
       && ((v14 = *(&dword_A8DA90 + i), v14 == g_Lobby_MaxPlayers) || *(unsigned int *)(v14 + 107) == -1) )
     {
-      result = SetupComboBoxRandomAlliance(v4, v13); /*0x4e56e4*/
+      result = SetupComboBoxRandomAlliance((HWND)(v4), v13); /*0x4e56e4*/
     }
     else
     {
-      result = (int)(FillComboBoxAllianceSlots(v4, v13));
+      result = (int)(FillComboBoxAllianceSlots((HWND)(v4), v13));
     }
   }
   return result; /*0x4e56f3*/
@@ -1598,7 +1598,7 @@ void FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
   {
     if ( dword_A8B23C && (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 44))(dword_A8B23C) < 0 ) /*0x4e5be8*/
     {
-      StringCSF = GetStringCSF((wchar_t *)(aGuiNoneassymbo), 0, g_Str_File_GDlgSupp_cpp, 1110); /*0x4e5bfb*/
+      StringCSF = GetStringCSF((wchar_t *)(aGuiNoneassymbo), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 1110); /*0x4e5bfb*/
       goto LABEL_9; /*0x4e5bfb*/
     }
   }
@@ -1607,14 +1607,14 @@ void FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
     v3 = Skirmish_Setup(); /*0x4e5bbc*/
     if ( v3 && (*(int (**)(int))(*(unsigned int *)v3 + 44))(v3) < 0 ) /*0x4e5bce*/
     {
-      StringCSF = GetStringCSF(aGuiNoneassymbo, 0, g_Str_File_GDlgSupp_cpp, 1119); /*0x4e5bd5*/
+      StringCSF = GetStringCSF((wchar_t *)(aGuiNoneassymbo), 0, g_Str_File_GDlgSupp_cpp, 1119); /*0x4e5bd5*/
   LABEL_9:
       v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5c00*/
       SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5c14*/
     }
   }
   v6 = 0; /*0x4e5c16*/
-  v7 = &dword_8B3FC0; /*0x4e5c1a*/
+  v7 = (LPARAM *)(&dword_8B3FC0); /*0x4e5c1a*/
   do /*0x4e5c41*/
   {
     v8 = SendMessageA(DlgItem, 0x4C2u, 0, *v7); /*0x4e5c2b*/
@@ -1687,7 +1687,7 @@ void Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
     if ( v4 == g_Lobby_MaxPlayers && *(unsigned int *)(v4 + 107) == -1 ) /*0x4e5eaf*/
       v2 = 4; /*0x4e5eb1*/
   }
-  return SetupLobbyPlayerSlots(a1, v3, v2); /*0x4e5ebe*/
+  return SetupLobbyPlayerSlots((gamemd::SessionClass *)(a1), v3, v2); /*0x4e5ebe*/
 }
 }
 // 0x4E5ED0

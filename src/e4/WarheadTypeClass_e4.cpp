@@ -38,7 +38,7 @@ void * WarheadTypeClass::loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4)
   int Int_Overwrite; // eax
   int result; // eax
 
-  Int_Overwrite = (void *)(((INIClass *)((bool *)this))->ReadInt_Overwrite(a2, a3, -1));
+  Int_Overwrite = (int)((void *)(((INIClass *)((bool *)this))->ReadInt_Overwrite(a2, a3, -1)));
   if ( Int_Overwrite == -1 ) /*0x474824*/
     return a4; /*0x474826*/
   if ( Int_Overwrite >= 100 ) /*0x474830*/
@@ -352,7 +352,7 @@ void WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4
   *((unsigned int *)this + 62) = 0; /*0x75cee4*/
   *((unsigned int *)this + 63) = 1072693248; /*0x75ceeb*/
   *((unsigned int *)this + 64) = 0; /*0x75cef8*/
-  AnimTypeVector::Constructor((unsigned int *)((char *)this + 260), 0, 0); /*0x75cefe*/
+  AnimTypeVector::Constructor((int)((unsigned int *)((char *)this + 260)), 0, 0); /*0x75cefe*/
   *((unsigned int *)this + 69) = (unsigned int)(0); /*0x75cf08*/
   *((unsigned int *)this + 70) = 10; /*0x75cf0b*/
   *((unsigned int *)this + 65) = (unsigned int)(&vt_TypeList); /*0x75cf0e*/
@@ -522,7 +522,7 @@ void* WarheadTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::TimerProcess(this->WarheadTypeClass_field_0x180); /*0x75dff6*/
   Power::TimerProcess(this->WarheadTypeClass_field_0x184); /*0x75e004*/
   Power::TimerProcess(this->WarheadTypeClass_field_0x188); /*0x75e012*/
-  Checksummer::Add_Buffer((Checksummer *)a2, (uint8_t *)&this->Parasite[3], 16); /*0x75e022*/
+  Checksummer::Add_Buffer((uint8_t *)((Checksummer *)a2), (uint8_t *)&this->Parasite[3], 16); /*0x75e022*/
   v18 = (int *)&this->__pad_44[92]; /*0x75e027*/
   v20 = 11; /*0x75e02d*/
   do /*0x75e04f*/

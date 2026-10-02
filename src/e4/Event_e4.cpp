@@ -322,7 +322,7 @@ void sub_786270()
       if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) ) /*0x7862d5*/
       {
         cbData = 4; /*0x7862fb*/
-        RegQueryValueExA(phkResult, off_84A940, 0, &Type, Data, &cbData); /*0x786303*/
+        RegQueryValueExA(phkResult,(LPCSTR)(off_84A940), 0, &Type, Data, &cbData); /*0x786303*/
         RegCloseKey(phkResult); /*0x78630e*/
       }
     }

@@ -550,7 +550,7 @@ unsigned int * BinkMovie::BlitToTarget(int aP1)
   {
     if ( *result ) /*0x433282*/
     {
-      v4 = result + 5; /*0x43328e*/
+      v4 = (int *)(result + 5); /*0x43328e*/
       if ( (int)result[7] > 0 && (int)result[8] > 0 ) /*0x43329e*/
       {
         v5 = result[4]; /*0x4332a6*/

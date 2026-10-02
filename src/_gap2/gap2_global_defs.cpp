@@ -227,7 +227,7 @@ int ObjectClass::DumpAudioDeviceDebug(unsigned int * a1, void (* a2) {
       Next = AudioQueue::GetNextAlt((AudioQueue *)Next); /*0x403cbc*/
     }
     while ( Next );
-    v4 = a2; /*0x403cc6*/
+    v4 = (void (__cdecl *)(char *))(a2); /*0x403cc6*/
   }
   return ((int (*)(char *))v4)(asc_815ECC); /*0x403cd2*/
 

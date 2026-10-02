@@ -526,8 +526,8 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
           && stru_A8B250.__pad_0[19] == ((v3 & 0x20) != 0)
           && stru_A8B250.__pad_0[20] == ((v3 & 0x40) != 0)
           && stru_A8B250.__pad_0[28] == ((v3 & 0x80) != 0)
-          && !_strcmpi(byte_A8B8E0, (char *)(aP0 + 163))
-          && !strcmp(&byte_A8BAE2, (const char *)(aP0 + 176))
+          && !_strcmpi((const char *)(byte_A8B8E0), (char *)(aP0 + 163))
+          && !strcmp((const char *)(&byte_A8BAE2), (const char *)(aP0 + 176))
           && dword_A8BB04 == *(unsigned int *)(aP0 + 158) )
         {
           return 0; /*0x5b69de*/

@@ -404,7 +404,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
   *((unsigned int *)v7 + 12) = 2012; /*0x7c264a*/
   qmemcpy(v7 + 32, a1, 0x88u); /*0x7c2654*/
   if ( !*((unsigned int *)v7 + 17) ) /*0x7c2656*/
-    *((unsigned int *)v7 + 17) = AllocCallback::Dispatch; /*0x7c265d*/
+    *((unsigned int *)v7 + 17) = (unsigned int)(AllocCallback::Dispatch); /*0x7c265d*/
   if ( !*v9 ) /*0x7c2664*/
     *v9 = sub_7BF240; /*0x7c266a*/
   if ( ((int (*)(unsigned short *, int, const char *, unsigned int))*v9)(v7, 3, v25, 0) ) /*0x7c267b*/
@@ -594,7 +594,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
   {
     if ( ((int (*)(unsigned short *, int, const char **, unsigned int))*v9)(v7, 9, &v25, 0) ) /*0x7c2abe*/
       v25 = 0; /*0x7c2ac8*/
-    *((unsigned int *)v7 + 446) = Audio_Render_7C3860((int)(v7), v25); /*0x7c2adf*/
+    *((unsigned int *)v7 + 446) = Audio_Render_7C3860((int)(v7),(int)(v25)); /*0x7c2adf*/
     (*((void (**)(unsigned short *, int, int *, unsigned int))v7 + 17))(v7, 6, &v26, 0); /*0x7c2aeb*/
     v21 = (const char *)v26; /*0x7c2aee*/
     if ( v26 < 0 )
@@ -3895,7 +3895,7 @@ void qsort(AbstractClass * aP0, IUnknown * aP1, size_t SizeOfElements, _CoreCrtN
     {
       while ( 1 ) /*0x7c8b92*/
       {
-        v7 = (v6 - (unsigned char *)aP0) / SizeOfElements + 1; /*0x7c8b92*/
+        v7 = (char *)((v6 - (unsigned char *)aP0) / SizeOfElements + 1); /*0x7c8b92*/
         if ( v7 <= 8 ) /*0x7c8b96*/
         {
           result = shortsort(aP0, v6, SizeOfElements, CompareFunction); /*0x7c8b9e*/

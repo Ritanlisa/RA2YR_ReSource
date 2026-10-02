@@ -214,7 +214,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
           v7 = TileIndex - v19 + 1; /*0x583b5e*/
           if ( v7 > 0 ) /*0x583b61*/
           {
-            v8 = v7; /*0x583b63*/
+            v8 = (int)(v7); /*0x583b63*/
             Capacity = v18.Capacity; /*0x583b65*/
             while ( 1 ) /*0x583b6f*/
             {
@@ -653,7 +653,7 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
   int v22; // [esp+20h] [ebp-10h]
   unsigned int v23[3]; // [esp+24h] [ebp-Ch] BYREF
 
-  v3 = (int *)((int)(aP2)); /*0x588754*/
+  v3 = (int)((int *)((int)(aP2))); /*0x588754*/
   result = (int)(aP2[917]); /*0x588758*/
   v22 = result; /*0x588760*/
   if ( !result ) /*0x588764*/

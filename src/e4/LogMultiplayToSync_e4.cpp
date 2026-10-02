@@ -89,16 +89,16 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
   v5 = v5; /*0x65175a*/
   if ( v5 )
   {
-    fprintf(v5, "RA2 Sync\n"); /*0x651788*/
+    fprintf((FILE *const )(v5), "RA2 Sync\n"); /*0x651788*/
     ModuleVersion = GetModuleVersion(); /*0x651790*/
-    fprintf(v5, "\nVersion %s\n", ModuleVersion); /*0x65179c*/
+    fprintf((FILE *const )(v5), "\nVersion %s\n", ModuleVersion); /*0x65179c*/
     ModuleInternalVersion = (char *)(GetModuleInternalVersion((void *)((int)&g_CoordScatterManager))); /*0x6517a9*/
-    fprintf(v5, "Internal Version %s\n", ModuleInternalVersion); /*0x6517b5*/
+    fprintf((FILE *const )(v5), "Internal Version %s\n", ModuleInternalVersion); /*0x6517b5*/
     v62[0] = 0; /*0x6517c6*/
     Time::FormatDate(v62); /*0x6517cb*/
     v52 = (char *)(((String *)(Destination))->CopyConstant()); /*0x6517f2*/
     v9 = (char *)(((String *)(v64))->FormatDword()); /*0x6517f3*/
-    fprintf(v5, "Release Build: %s by %s - %s\r\n", v9, v52, v62);
+    fprintf((FILE *const )(v5), "Release Build: %s by %s - %s\r\n", v9, v52, v62);
     v60 = (char *)((int)((char *)(5)));
     IDA_HIBYTE(v57) = 0; /*0x65181b*/
     GetVersionString((unsigned int *)(&v60), (unsigned char *)&v57 + 3, 0, 0); /*0x651820*/
@@ -107,19 +107,19 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
       v10 = g_INI_Key_No; /*0x651832*/
     v10 = v10; /*0x65183c*/
     Name = PlayerType::GetName(); /*0x65183d*/
-    fprintf(v5, "CPU %s, MMX %s, Vendor: %s\r\n", Name, v10, Source);
-    fprintf(v5, "Frames: %d\n", g_CurrentFrame);
+    fprintf((FILE *const )(v5), "CPU %s, MMX %s, Vendor: %s\r\n", Name, v10, Source);
+    fprintf((FILE *const )(v5), "Frames: %d\n", g_CurrentFrame);
     if ( g_FrameCounter_Samples ) /*0x65186b*/
       v12 = g_FrameCounter_Total / (unsigned int)g_FrameCounter_Samples; /*0x651874*/
     else
       v12 = 0; /*0x651878*/
-    fprintf(v5, "Average FPS: %d\n", v12);
-    fprintf(v5, "Max MaxAhead: %d\n", dword_A8B568);
-    fprintf(v5, "Latency setting: %d\n", g_NetworkHostState);
-    fprintf(v5, "Game speed setting: %d\n", *(unsigned int *)g_GameModeOptions);
-    fprintf(v5, "FrameSendRate: %d\n", g_ScenarioLoadState);
-    fprintf(v5, "\nFrame: %d\n", dword_AC6664[207 * a1 + 1]);
-    fprintf(v5, "Slot: %d\n", a1);
+    fprintf((FILE *const )(v5), "Average FPS: %d\n", v12);
+    fprintf((FILE *const )(v5), "Max MaxAhead: %d\n", dword_A8B568);
+    fprintf((FILE *const )(v5), "Latency setting: %d\n", g_NetworkHostState);
+    fprintf((FILE *const )(v5), "Game speed setting: %d\n", *(unsigned int *)g_GameModeOptions);
+    fprintf((FILE *const )(v5), "FrameSendRate: %d\n", g_ScenarioLoadState);
+    fprintf((FILE *const )(v5), "\nFrame: %d\n", dword_AC6664[207 * a1 + 1]);
+    fprintf((FILE *const )(v5), "Slot: %d\n", a1);
     if ( g_NetworkInterface )
     {
       for ( i = 0; i < (*(int (**)(int))(*(unsigned int *)g_NetworkInterface + 72))(g_NetworkInterface); ++i )
@@ -146,15 +146,15 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
       if ( *(v15 - 80) )
       {
         ((Network *)((unsigned int *)v15 + 3))->CopyAddress((unsigned int *)(&v54), (int)&v58); /*0x651970*/
-        fprintf(v5, "\nName: %s\n", v15 - 80);
-        fprintf(v5, "Address: %d.%d.%d.%d\n", (uint8_t)v58, IDA_BYTE1(v58), IDA_BYTE2(v58), IDA_HIBYTE(v58));
-        fprintf(v5, "Max avg round trip: %d\n", *(unsigned int *)v15);
-        fprintf(v5, "Max round trip: %d\n", *((unsigned int *)v15 - 4));
-        fprintf(v5, "Resends: %d\n", *((unsigned int *)v15 - 3));
-        fprintf(v5, "Frame sync stalls: %d\n", *((unsigned int *)v15 + 1));
-        fprintf(v5, "Command cound stalls: %d\n", *((unsigned int *)v15 + 2));
-        fprintf(v5, "Lost: %d\n", *((unsigned int *)v15 - 2));
-        fprintf(v5, "Percent lost: %d\n", *((unsigned int *)v15 - 1));
+        fprintf((FILE *const )(v5), "\nName: %s\n", v15 - 80);
+        fprintf((FILE *const )(v5), "Address: %d.%d.%d.%d\n", (uint8_t)v58, IDA_BYTE1(v58), IDA_BYTE2(v58), IDA_HIBYTE(v58));
+        fprintf((FILE *const )(v5), "Max avg round trip: %d\n", *(unsigned int *)v15);
+        fprintf((FILE *const )(v5), "Max round trip: %d\n", *((unsigned int *)v15 - 4));
+        fprintf((FILE *const )(v5), "Resends: %d\n", *((unsigned int *)v15 - 3));
+        fprintf((FILE *const )(v5), "Frame sync stalls: %d\n", *((unsigned int *)v15 + 1));
+        fprintf((FILE *const )(v5), "Command cound stalls: %d\n", *((unsigned int *)v15 + 2));
+        fprintf((FILE *const )(v5), "Lost: %d\n", *((unsigned int *)v15 - 2));
+        fprintf((FILE *const )(v5), "Percent lost: %d\n", *((unsigned int *)v15 - 1));
       }
       v15 += 104; /*0x651a25*/
     }
@@ -164,9 +164,9 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     do /*0x651a68*/
     {
       if ( v16 == (int)(v56) ) /*0x651a3f*/
-        fprintf(v5, "CRC[%d]=%x  *****\n", v16, *(unsigned int *)(dword_B04474)); /*0x651a4a*/
+        fprintf((FILE *const )(v5), "CRC[%d]=%x  *****\n", v16, *(unsigned int *)(dword_B04474)); /*0x651a4a*/
       else
-        fprintf(v5, "CRC[%d]=%x\n", v16, *(unsigned int *)(dword_B04474)); /*0x651a56*/
+        fprintf((FILE *const )(v5), "CRC[%d]=%x\n", v16, *(unsigned int *)(dword_B04474)); /*0x651a56*/
       ++dword_B04474; /*0x651a5e*/
       ++v16; /*0x651a61*/
     }
@@ -202,7 +202,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
       {
         if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651ad9*/
         {
-          fprintf(v5, "-------------------- %s Infantry -------------------\n", v54); /*0x651ae4*/
+          fprintf((FILE *const )(v5), "-------------------- %s Infantry -------------------\n", v54); /*0x651ae4*/
           v21 = 0; /*0x651af2*/
           if ( v4->qBC0 > 0 ) /*0x651af6*/
           {
@@ -244,7 +244,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
       {
         if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651bab*/
         {
-          fprintf(v5, "-------------------- %s Units -------------------\n", v54); /*0x651bba*/
+          fprintf((FILE *const )(v5), "-------------------- %s Units -------------------\n", v54); /*0x651bba*/
           v25 = 0; /*0x651bc8*/
           if ( v4->q0BD > 0 ) /*0x651bcc*/
           {
@@ -290,7 +290,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
       {
         if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651c90*/
         {
-          fprintf(v5, "-------------------- %s Aircraft -------------------\n", v54); /*0x651c9b*/
+          fprintf((FILE *const )(v5), "-------------------- %s Aircraft -------------------\n", v54); /*0x651c9b*/
           v28 = 0; /*0x651ca9*/
           if ( *(int *)(v4 + 760) > 0 ) /*0x651cad*/
           {
@@ -331,7 +331,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
       {
         if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651d5d*/
         {
-          fprintf(v5, "-------------------- %s Buildings -------------------\n", v54); /*0x651d68*/
+          fprintf((FILE *const )(v5), "-------------------- %s Buildings -------------------\n", v54); /*0x651d68*/
           v31 = 0; /*0x651d76*/
           if ( v4->qBF0 > 0 ) /*0x651d7a*/
           {
@@ -365,7 +365,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     v34 = (int *)(v59 + 193);
     do
     {
-      fprintf(v5, ">>>> MAP LAYER %d <<<<\n", v33); /*0x651dff*/
+      fprintf((FILE *const )(v5), ">>>> MAP LAYER %d <<<<\n", v33); /*0x651dff*/
       v35 = 0; /*0x651e06*/
       if ( *v34 > 0 )
       {
@@ -373,24 +373,24 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
         do
         {
           v36 = &v54[v34[5]]; /*0x651e1e*/
-          fprintf(v5, "Object %d: %x ", v35, *(unsigned int *)v36);
+          fprintf((FILE *const )(v5), "Object %d: %x ", v35, *(unsigned int *)v36);
           v37 = *((unsigned short *)v36 + 18); /*0x651e2f*/
           if ( v37 == 43 || v37 == 19 ) /*0x651e40*/
           {
             v39 = AbstractType::FindName((void *)v37); /*0x651e68*/
-            fprintf(v5, "%s\t(Type:%d) ", v39, 0); /*0x651e74*/
+            fprintf((FILE *const )(v5), "%s\t(Type:%d) ", v39, 0); /*0x651e74*/
           }
           else
           {
             v50 = *((unsigned int *)v36 + 1); /*0x651e49*/
             v38 = AbstractType::FindName((void *)v37); /*0x651e4d*/
-            fprintf(v5, "%s\t(Type:%d(%s)) ", v38, v50, v36 + 8); /*0x651e59*/
+            fprintf((FILE *const )(v5), "%s\t(Type:%d(%s)) ", v38, v50, v36 + 8); /*0x651e59*/
           }
           v40 = v36[32]; /*0x651e7c*/
           if ( v40 == -1 )
-            fprintf(v5, "Owner: None\n");
+            fprintf((FILE *const )(v5), "Owner: None\n");
           else
-            fprintf(v5, "Owner: %s\n", (const char *)&v59[23 * v40 + 3]);
+            fprintf((FILE *const )(v5), "Owner: %s\n", (const char *)&v59[23 * v40 + 3]);
           v23 = ++v35 < *v34; /*0x651ebf*/
           v54 += 40; /*0x651ec1*/
         }
@@ -402,7 +402,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
       v56 = (unsigned int)(v33); /*0x651ed6*/
     }
     while ( v33 < (int *)(5) );
-    fprintf(v5, ">>>> LOGIC LAYER <<<<\n"); /*0x651ee6*/
+    fprintf((FILE *const )(v5), ">>>> LOGIC LAYER <<<<\n"); /*0x651ee6*/
     v41 = 0; /*0x651eef*/
     if ( (int)v59[203] > 0 )
     {
@@ -411,41 +411,41 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
       {
         v59 = v59; /*0x651f04*/
         v43 = &v54[v59[204]]; /*0x651f0c*/
-        fprintf(v5, "Object %d: %x ", v41, *(unsigned int *)v43);
+        fprintf((FILE *const )(v5), "Object %d: %x ", v41, *(unsigned int *)v43);
         v44 = *((unsigned short *)v43 + 18); /*0x651f21*/
         if ( v44 == 43 || v44 == 19 ) /*0x651f32*/
         {
           v46 = AbstractType::FindName((void *)v44); /*0x651f5a*/
-          fprintf(v5, "%s\t(Type:%d) ", v46, 0); /*0x651f66*/
+          fprintf((FILE *const )(v5), "%s\t(Type:%d) ", v46, 0); /*0x651f66*/
         }
         else
         {
           v51 = *((unsigned int *)v43 + 1); /*0x651f3b*/
           v45 = AbstractType::FindName((void *)v44); /*0x651f3f*/
-          fprintf(v5, "%s\t(Type:%d(%s)) ", v45, v51, v43 + 8); /*0x651f4b*/
+          fprintf((FILE *const )(v5), "%s\t(Type:%d(%s)) ", v45, v51, v43 + 8); /*0x651f4b*/
         }
         v47 = v43[32]; /*0x651f6e*/
         if ( v47 == -1 )
-          fprintf(v5, "Owner: None\n");
+          fprintf((FILE *const )(v5), "Owner: None\n");
         else
-          fprintf(v5, "Owner: %s\n", (const char *)&v59[23 * v47 + 3]);
+          fprintf((FILE *const )(v5), "Owner: %s\n", (const char *)&v59[23 * v47 + 3]);
         v48 = v59[203]; /*0x651fa7*/
         ++v41; /*0x651fad*/
         v54 += 40; /*0x651fb3*/
       }
       while ( v41 < v48 );
     }
-    fprintf(v5, "\nRandom Number:%d\n", v59[1]); /*0x651fcb*/
+    fprintf((FILE *const )(v5), "\nRandom Number:%d\n", v59[1]); /*0x651fcb*/
     v49 = a2; /*0x651fd0*/
     if ( a2 )
     {
-      fprintf(v5, "Offending event:\n"); /*0x651fe2*/
-      fprintf(v5, "Type:         %d\n", *v49);
-      fprintf(v5, "Frame:        %d\n", *(unsigned int *)(v49 + 3));
-      fprintf(v5, "ID:           %x\n", (char)v49[2]);
-      fprintf(v5, "CRC:          %x\n", *(unsigned int *)(v49 + 7));
-      fprintf(v5, "CommandCount: %d\n", *(uint16_t *)(v49 + 11));
-      fprintf(v5, "Delay:        %d\n", v49[13]);
+      fprintf((FILE *const )(v5), "Offending event:\n"); /*0x651fe2*/
+      fprintf((FILE *const )(v5), "Type:         %d\n", *v49);
+      fprintf((FILE *const )(v5), "Frame:        %d\n", *(unsigned int *)(v49 + 3));
+      fprintf((FILE *const )(v5), "ID:           %x\n", (char)v49[2]);
+      fprintf((FILE *const )(v5), "CRC:          %x\n", *(unsigned int *)(v49 + 7));
+      fprintf((FILE *const )(v5), "CommandCount: %d\n", *(uint16_t *)(v49 + 11));
+      fprintf((FILE *const )(v5), "Delay:        %d\n", v49[13]);
     }
     fclose((FILE *)(v5)); /*0x65204f*/
   }

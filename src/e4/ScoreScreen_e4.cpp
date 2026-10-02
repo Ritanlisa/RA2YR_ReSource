@@ -88,11 +88,11 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   ++dword_B0558C; /*0x690b0c*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ScoreBigFontClass); /*0x690b14*/
   LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690b1a*/
-  v3 = SearchMIXFile(aBigfontShp, 0); /*0x690b1d*/
+  v3 = SearchMIXFile((char *)(aBigfontShp), 0); /*0x690b1d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
   {
-    CCFileClass::Construct(&v5, aBigfontShp); /*0x690b32*/
+    CCFileClass::Construct(&v5,(void *)(aBigfontShp)); /*0x690b32*/
     this->ScoreScreen_field_0x0C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690b44*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/
@@ -314,7 +314,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
     {
       v14 = (gamemd::ConvertClass *)((int)((ConvertClass *)RA2_OPNEW(0x188u)));
       if ( v14 ) /*0x778370*/
-        ((ConvertClass *)(v14))->Construct((int)(a7), a7, (int)a2, 1, 0); /*0x778382*/
+        ((ConvertClass *)(v14))->Construct((int)(a7),(int)(a7), (int)a2, 1, 0); /*0x778382*/
       v15 = (void *)(*(unsigned int *)a2)); /*0x778395*/
       v30[0] = v11; /*0x7783af*/
       v30[1] = v12; /*0x7783b3*/

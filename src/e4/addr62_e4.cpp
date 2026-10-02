@@ -736,13 +736,13 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x6211e0*/
     return 0; /*0x6211e8*/
   if ( !a7 ) /*0x6211f1*/
-    a7 = (int *)((unsigned int *)((int *)DSurface_Alternate)); /*0x6211f9*/
-  v12 = (unsigned int *)((int)((unsigned int *)(*aP2))); /*0x621234*/
+    a7 = (unsigned int *)((int *)((unsigned int *)((int *)DSurface_Alternate))); /*0x6211f9*/
+  v12 = (int)((unsigned int *)((int)((unsigned int *)(*aP2)))); /*0x621234*/
   v21 = (int)(aP2[3]); /*0x621255*/
   v13 = ((uint8_t)ecx0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x621259*/
       | (IDA_BYTE1(ecx0) >> g_BitMask_Blue << g_BitMask_Green)
       | (IDA_BYTE2(ecx0) >> g_BitMask_Red << g_BitShift_Blue);
-  yTopa = (int)((unsigned int *)((int)(aP2[1])));
+  yTopa = (unsigned int *)((int)((unsigned int *)((int)(aP2[1]))));
   v14 = (unsigned int *)(aP2[2]);
   v20 = (unsigned int *)(v14);
   if ( !a1 ) /*0x62126b*/

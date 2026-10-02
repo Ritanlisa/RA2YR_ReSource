@@ -274,7 +274,7 @@ LABEL_26:
     }
     else if ( v9 == (wchar_t *)(g_Lobby_PlayerReady) ) /*0x5eb329*/
     {
-      StringCSF = GetStringCSF(aGuiWaiting, 0, g_Str_File_netshare_cpp, 5446); /*0x5eb33c*/
+      StringCSF = GetStringCSF((wchar_t *)(aGuiWaiting), 0, g_Str_File_netshare_cpp, 5446); /*0x5eb33c*/
     }
     else
     {

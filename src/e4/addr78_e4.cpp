@@ -287,9 +287,9 @@ void WOL_ResetSystem()
   stru_B77D80.HashTable_field_0x4C = 0; /*0x780534*/
   stru_B77D80.HashTable_field_0x38 = -1; /*0x78053a*/
   stru_B77D80.HashTable_field_0x3C = -1; /*0x780540*/
-  *(unsigned int *)&g_WindowManager.__pad_EC[648] = GetStringCSF(aTxtLob1, 0, g_Str_File_wonline_cpp, 2752); /*0x78055c*/
-  *(unsigned int *)&g_WindowManager.__pad_EC[652] = GetStringCSF(aTxtLob2, 0, g_Str_File_wonline_cpp, 2753); /*0x780577*/
-  *(unsigned int *)&g_WindowManager.__pad_EC[656] = GetStringCSF(aTxtLob3, 0, g_Str_File_wonline_cpp, 2754); /*0x780592*/
+  *(unsigned int *)&g_WindowManager.__pad_EC[648] = GetStringCSF((wchar_t *)(aTxtLob1), 0, g_Str_File_wonline_cpp, 2752); /*0x78055c*/
+  *(unsigned int *)&g_WindowManager.__pad_EC[652] = GetStringCSF((wchar_t *)(aTxtLob2), 0, g_Str_File_wonline_cpp, 2753); /*0x780577*/
+  *(unsigned int *)&g_WindowManager.__pad_EC[656] = GetStringCSF((wchar_t *)(aTxtLob3), 0, g_Str_File_wonline_cpp, 2754); /*0x780592*/
   *(unsigned int *)&g_WindowManager.__pad_EC[660] = GetStringCSF(aTxtLob4, 0, g_Str_File_wonline_cpp, 2755); /*0x7805ad*/
   *(unsigned int *)&g_WindowManager.__pad_EC[664] = GetStringCSF(aTxtLob5, 0, g_Str_File_wonline_cpp, 2756); /*0x7805c8*/
   *(unsigned int *)&g_WindowManager.__pad_EC[668] = GetStringCSF(aTxtLob6, 0, g_Str_File_wonline_cpp, 2757); /*0x7805d2*/

@@ -671,7 +671,7 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
   if ( *aP1 != v2 || *(unsigned long long *)(aP1 + 1) != qword_8A0794 ) /*0x4b0e50*/
   {
     *v4 = *aP1; /*0x4b0e65*/
-    this->ambientSoundController[2] = aP1[1]; /*0x4b0e6a*/
+    this->ambientSoundController[2] = (int)(aP1[1]); /*0x4b0e6a*/
     v6 = aP1[2]; /*0x4b0e6d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x4b0e70*/
     this->ambientSoundController[3] = v6; /*0x4b0e74*/

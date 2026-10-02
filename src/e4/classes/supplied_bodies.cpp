@@ -155,9 +155,9 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3) {
            v7 + ScriptAction_field_0x14,
            0) )
     {
-      v9 = this->ScriptAction_field_0x10[0]; /*0x63402b*/
+      v9 = (unsigned int)(this->ScriptAction_field_0x10[0]); /*0x63402b*/
       v10 = this->ScriptAction_field_0x4[0]; /*0x63402e*/
-      this->ScriptAction_field_0x10[0] = v9 + 1; /*0x634034*/
+      this->ScriptAction_field_0x10[0] = (int)(v9 + 1); /*0x634034*/
       *(unsigned int *)(v10 + 4 * v9) = v5; /*0x634037*/
     }
     Type = BuildingClass::GetType((BuildingClass *)a2); /*0x634043*/
@@ -315,7 +315,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2) {
         v8 = v5 - 1; /*0x634d07*/
         if ( v8 < 0 ) /*0x634d08*/
           v8 = v7 - 1; /*0x634d0a*/
-        v6 = (ScriptAction *)ArrayClass::GetAt_Wrap((ArrayClass *)Type, v8); /*0x634d15*/
+        v6 = (int)((ScriptAction *)ArrayClass::GetAt_Wrap((ArrayClass *)Type, v8)); /*0x634d15*/
       }
     }
     v9 = BuildingClass::GetType((BuildingClass *)a2); /*0x634d19*/

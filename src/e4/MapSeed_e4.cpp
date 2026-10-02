@@ -81,7 +81,7 @@ int MapSeed::CheckName(void *a1)
         v3)
     || (uint8_t)ValidateStringContains((const char **)this, v4,(char *)(asc_84BA18)) )
   {
-    result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c5b7*/
+    result = (gamemd::DeleteAndZero)((int)(DeleteAndZero((ObjectClass *)&v8))); /*0x79c5b7*/
     LOBYTE(result) = 0; /*0x79c5bc*/
   }
   else
@@ -90,7 +90,7 @@ int MapSeed::CheckName(void *a1)
     if ( *(int *)g_WindowManager.__pad_0 <= 0 ) /*0x79c5cc*/
     {
 LABEL_12:
-      result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c624*/
+      result = (gamemd::DeleteAndZero)((int)(DeleteAndZero((ObjectClass *)&v8))); /*0x79c624*/
       LOBYTE(result) = 1; /*0x79c62d*/
     }
     else
@@ -108,7 +108,7 @@ LABEL_12:
           goto LABEL_12; /*0x79c622*/
       }
       DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c634*/
-      result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c63d*/
+      result = (gamemd::DeleteAndZero)((int)(DeleteAndZero((ObjectClass *)&v8))); /*0x79c63d*/
       LOBYTE(result) = 0; /*0x79c642*/
     }
   }

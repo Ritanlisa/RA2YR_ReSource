@@ -403,7 +403,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   v30 = (char)((gamemd::CampaignClass **)(ReceiveNetworkFile((int)(a1), v36, a2, a3))); /*0x694173*/
   v31 = g_Str_true; /*0x694175*/
   if ( !v30 ) /*0x69417c*/
-    v31 = g_Str_false; /*0x69417e*/
+    v31 = (gamemd::CampaignClass **)(g_Str_false); /*0x69417e*/
   Debug::Log("Receive_Remote_File returned %s\n", v31); /*0x694189*/
   return v30; /*0x693d6c*/
 }

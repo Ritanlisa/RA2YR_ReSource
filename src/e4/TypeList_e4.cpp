@@ -938,7 +938,7 @@ TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2, void *
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x5ac653*/
-  *(unsigned int *)Block = &vt_VectorClass; /*0x5ac656*/
+  *(unsigned int *)Block = (unsigned int)(&vt_VectorClass); /*0x5ac656*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ac660*/
   {
     __3_YAXPAX_Z(v3); /*0x5ac668*/

@@ -191,7 +191,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
     {
       DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1737))));
       StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aGuiLeave), 0,(const char *)(g_Str_File_GOptions_CPP), 547));
-      SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x4f1924*/
+      SendMessageA((HWND)(DlgItem), 0x4B2u, 0, (LPARAM)StringCSF); /*0x4f1924*/
       dword_A8EE7C = 2; /*0x4f192c*/
       v7 = GetDlgItem(hDlg, 1810); /*0x4f1938*/
       v8 = 0; /*0x4f193f*/
@@ -350,7 +350,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
           if ( v21 ) /*0x4f1f71*/
             UI_Load_5D1C90((ObjectClass *)((unsigned int)(v8)+ 4), v21, (int (***)(unsigned int, int))Config); /*0x4f1f77*/
           else
-            PriorityQueue::Add((PriorityQueue *)(v8 + 4), (int)Config); /*0x4f1f81*/
+            PriorityQueue::Add((int)((PriorityQueue *)(v8 + 4)), (int)Config); /*0x4f1f81*/
           *(unsigned int *)((unsigned int)(v8)+ 84) = (unsigned int)(Config); /*0x4f1f86*/
           p_nextObject = &v38.nextObject; /*0x4f1f91*/
           v22 = (int *)(*(int (**)(unsigned int *))(*Config + 24))(Config); /*0x4f1f92*/
@@ -428,7 +428,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   if ( v27 ) /*0x4f1fff*/
     ((String *)((String *)v38.referenceCount))->Reassign((const char **)&v38.vtable2); /*0x4f200a*/
   ((String *)((String *)&v38.vtable1))->Assign(aItemmax); /*0x4f2018*/
-  Int = INIClass::ReadInt((gamemd::ObjectClass *)(uniqueId),(gamemd::ReferenceCounted *)(abstractFlags), (char **)&v38.vtable1, 100); /*0x4f202c*/
+  Int = INIClass::ReadInt((gamemd::ObjectClass *)(uniqueId),(gamemd::ReferenceCounted *)(abstractFlags),(gamemd::INIClass *)((char **)&v38.vtable1), 100); /*0x4f202c*/
   v38.referenceCount = Int; /*0x4f2032*/
   DeleteAndZero((ObjectClass *)&v38.vtable1); /*0x4f2036*/
   v29 = 0; /*0x4f203b*/
@@ -678,23 +678,23 @@ void ParseINIAnimGadgetDefinition()
   int v26; // [esp+3Ch] [ebp-8h]
   int v27; // [esp+40h] [ebp-4h]
 
-  ((String *)(&v20))->Assign(ValueName); /*0x4f2c83*/
+  ((String *)(&v20))->Assign((const char *)(ValueName)); /*0x4f2c83*/
   Int = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&v20, -1); /*0x4f2c97*/
   *(unsigned int *)&v21.q4 = Int; /*0x4f2c9d*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2ca1*/
   if ( Int == -1 ) /*0x4f2ca9*/
     return 0; /*0x4f2cad*/
   unknown_libname_73(&v19); /*0x4f2cba*/
-  ((String *)(&v21))->Assign(&g_INI_DefaultBuffer); /*0x4f2cc8*/
-  ((String *)(&v20))->Assign(g_INI_Key_Image); /*0x4f2cd6*/
+  ((String *)(&v21))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f2cc8*/
+  ((String *)(&v20))->Assign((const char *)(g_INI_Key_Image)); /*0x4f2cd6*/
   ((INIClass *)(a2))->ReadString(Source, (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2cf6*/
   DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
   if ( String::Length(&v19) ) /*0x4f2d08*/
   {
     unknown_libname_73(&v19.q4); /*0x4f2d29*/
-    ((String *)(&v20))->Assign(&g_INI_DefaultBuffer); /*0x4f2d37*/
-    ((String *)(&v21))->Assign(g_INI_Key_Palette); /*0x4f2d45*/
+    ((String *)(&v20))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f2d37*/
+    ((String *)(&v21))->Assign((const char *)(g_INI_Key_Palette)); /*0x4f2d45*/
     ((INIClass *)(a2))->ReadString(Source, (char **)&v21, (char **)&v20, (int)&v19.q4); /*0x4f2d5c*/
     DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
     DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/

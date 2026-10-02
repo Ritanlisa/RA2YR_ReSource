@@ -76,7 +76,7 @@ AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
               v10 = v9[1]; /*0x4b0b64*/
               v18[0] = *v9; /*0x4b0b67*/
               v18[1] = v10; /*0x4b0b6f*/
-              v5 = (int)((JumpjetLocomotion *)((JumpjetLocomotion *)this))->TransformCoords(&v19, v18, &aP3); /*0x4b0b80*/
+              v5 = (int)((JumpjetLocomotion *)((JumpjetLocomotion *)this))->TransformCoords((IUnknown *)(&v19), v18, &aP3); /*0x4b0b80*/
               v11 = *(unsigned int *)v5; /*0x4b0b85*/
               v12 = *(unsigned int *)(v5 + 4); /*0x4b0b89*/
               if ( !v6 ) /*0x4b0b8c*/
@@ -361,7 +361,7 @@ void* JumpjetLocomotion::Land()
     LOWORD(v9) = Math::RoundToInt((double)v53 - *(float *)&this->__pad_C[28]); /*0x54cb05*/
     v53 = v9; /*0x54cb0a*/
     v49[0] = *(unsigned short *)((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue((unsigned int *)(v50)) + 11520; /*0x54cb2a*/
-    FacingClass::Update(&this->__pad_48[12], v49); /*0x54cb39*/
+    FacingClass::Update((unsigned short *)(&this->__pad_48[12]), v49); /*0x54cb39*/
   }
   v10 = dword_ABC5DC + Cell::GetGroundHeight((unsigned int *)(&v51)); /*0x54cb5e*/
   if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v51)->flags[0] & 0x100) == 0 /*0x54cb7f*/

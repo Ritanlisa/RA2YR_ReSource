@@ -61,11 +61,11 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   int result; // eax
   char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
 
-  ((INIClass *)(aP1))->SetInt(Block, g_INI_Key_GameMode, *(unsigned int *)this, 0); /*0x698fae*/
-  ((INIClass *)(aP1))->SetInt(Block, aScenindex, *((unsigned int *)this + 1), 0); /*0x698fc1*/
-  ((INIClass *)(aP1))->SetInt(Block, g_INI_Key_GameSpeed, *((unsigned int *)this + 2), 0); /*0x698fd4*/
-  ((INIClass *)(aP1))->SetInt(Block, g_INI_Key_Credits, *((unsigned int *)this + 3), 0); /*0x698fe7*/
-  ((INIClass *)(aP1))->SetInt(Block, g_INI_Key_UnitCount, *((unsigned int *)this + 4), 0); /*0x698ffa*/
+  ((INIClass *)(aP1))->SetInt(Block,(char *)(g_INI_Key_GameMode), *(unsigned int *)this, 0); /*0x698fae*/
+  ((INIClass *)(aP1))->SetInt(Block,(char *)(aScenindex), *((unsigned int *)this + 1), 0); /*0x698fc1*/
+  ((INIClass *)(aP1))->SetInt(Block,(char *)(g_INI_Key_GameSpeed), *((unsigned int *)this + 2), 0); /*0x698fd4*/
+  ((INIClass *)(aP1))->SetInt(Block,(char *)(g_INI_Key_Credits), *((unsigned int *)this + 3), 0); /*0x698fe7*/
+  ((INIClass *)(aP1))->SetInt(Block,(char *)(g_INI_Key_UnitCount), *((unsigned int *)this + 4), 0); /*0x698ffa*/
   INIClass::SetBool(aP1, Block, g_INI_Key_ShortGame, *((unsigned char *)this + 20)); /*0x69900b*/
   INIClass::SetBool(aP1, Block, g_INI_Key_SuperWeaponsAllowed, *((unsigned char *)this + 21)); /*0x69901c*/
   INIClass::SetBool(aP1, Block, g_INI_Key_BuildOffAlly, *((unsigned char *)this + 22)); /*0x69902d*/

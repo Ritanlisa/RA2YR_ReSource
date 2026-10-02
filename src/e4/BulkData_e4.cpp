@@ -33,7 +33,7 @@ void BulkData::InitMissionHashing()
   Time = timeGetTime(); /*0x697ae2*/
   v2 = DiskSpace::CheckAvailable(); /*0x697ae6*/
   ComputeHash((unsigned int *)(&Time), v2); /*0x697af1*/
-  inited = Object_Init_7CBC11(aPath); /*0x697afb*/
+  inited = Object_Init_7CBC11((char *)(aPath)); /*0x697afb*/
   v4 = inited; /*0x697b00*/
   if ( inited ) /*0x697b07*/
   {

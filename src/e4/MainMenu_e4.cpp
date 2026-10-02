@@ -41,9 +41,9 @@ long MainMenu_Screen(void * a1, void * a2)
   if ( v2 ) /*0x531ced*/
   {
     SetWindowLongA(v2, 8, (LONG)&dwNewLong); /*0x531cfe*/
-    SetDialogParent(v2, g_hWnd); /*0x531d0c*/
+    SetDialogParent(v2,(HWND)(g_hWnd)); /*0x531d0c*/
     ((Dialog *)(v2))->Show(); /*0x531d13*/
-    SetFocus(g_hWnd); /*0x531d1f*/
+    SetFocus((HWND)(g_hWnd)); /*0x531d1f*/
     DlgItem = GetDlgItem(v2, 1818); /*0x531d31*/
     if ( DlgItem ) /*0x531d35*/
     {
@@ -125,7 +125,7 @@ long MainMenu_Screen(void * a1, void * a2)
   {
     dwNewLong = 7; /*0x531f42*/
   }
-  SetFocus(g_hWnd); /*0x531f50*/
+  SetFocus((HWND)(g_hWnd)); /*0x531f50*/
   return dwNewLong; /*0x531f5a*/
 }
 }

@@ -589,7 +589,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     }
   }
   if ( v42 == 1 ) /*0x4bb282*/
-    return ((XSurface *)((void **)((XSurface *)this)))->BlitPart((void **)a2, v10, (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
+    return ((XSurface *)((void **)((XSurface *)this)))->BlitPart((void **)a2,(gamemd::XSurface *)(v10), (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
   v17 = a2[1]; /*0x4bb2a7*/
   v18 = a2[2]; /*0x4bb2aa*/
   v49 = (int)(*a2); /*0x4bb2ad*/
@@ -792,7 +792,7 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
         }
 LABEL_15:
         v8 = (int *)(*((int (**)(DSurface *, char *))this->DSurface_field_0x0 + 30))(this, v32); /*0x4bb6f2*/
-        v9 = (int *)(ClipRectIntersection((RectangleStruct *)(v31),(const RectangleStruct *)((int *)a2), v8, 0, 0)); /*0x4bb710*/
+        v9 = (int *)(ClipRectIntersection((RectangleStruct *)(v31),(const RectangleStruct *)((int *)a2),(const RectangleStruct *)(v8), 0, 0)); /*0x4bb710*/
         v30[0] = *v9; /*0x4bb719*/
         v30[1] = v9[1]; /*0x4bb722*/
         v30[2] = v9[2]; /*0x4bb729*/
@@ -809,7 +809,7 @@ LABEL_15:
         v26 = (int)((int *)(v15)); /*0x4bb751*/
         v27 = v16; /*0x4bb755*/
         v28 = v17; /*0x4bb762*/
-        v18 = (int *)(ClipRectIntersection((RectangleStruct *)(v31),(const RectangleStruct *)(&v25), v30, 0, 0)); /*0x4bb76b*/
+        v18 = (int *)(ClipRectIntersection((RectangleStruct *)(v31),(const RectangleStruct *)(&v25),(const RectangleStruct *)(v30), 0, 0)); /*0x4bb76b*/
         v19 = *v18; /*0x4bb76d*/
         v25 = *v18; /*0x4bb76f*/
         v20 = v18[1]; /*0x4bb773*/
@@ -895,7 +895,7 @@ void DSurface_FillRectWithFlags(DSurface *aP0)
   if ( (int)aP0->DSurface_field_0x8 <= 0 || (int)aP0->DSurface_field_0xC <= 0 ) /*0x4bb863*/
     return 0; /*0x4bb865*/
   v8 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v6 + 120))(v6, v38); /*0x4bb87a*/
-  v9 = (unsigned int *)(ClipRectIntersection((RectangleStruct *)(v42),(const RectangleStruct *)(v8), (int *)aP0, 0, 0)); /*0x4bb888*/
+  v9 = (unsigned int *)(ClipRectIntersection((RectangleStruct *)(v42),(const RectangleStruct *)(v8),(const RectangleStruct *)((int *)aP0), 0, 0)); /*0x4bb888*/
   v39[0] = *v9; /*0x4bb891*/
   v39[1] = v9[1]; /*0x4bb898*/
   v40 = v9[2]; /*0x4bb89f*/

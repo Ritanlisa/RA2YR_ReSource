@@ -884,7 +884,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
   int v20; // [esp+20h] [ebp-14h]
   unsigned int v21[4]; // [esp+24h] [ebp-10h] BYREF
 
-  if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b954c*/
+  if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b954c*/
     ((Debug *)this)->Log(); /*0x7b955d*/
   if ( (uint8_t)((BSurface *)((int)this))->CreateTripleBuffer() && this->occupant ) /*0x7b9574*/
   {
@@ -894,7 +894,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
     v5 = 0; /*0x7b958b*/
     if ( ((unsigned int *)this)[0] ) /*0x7b957f*/
     {
-      if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b95a8*/
+      if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b95a8*/
         ((Debug *)this)->Log(); /*0x7b95b9*/
       FoundationSize = Building::GetFoundationSize(v21, (unsigned int)((unsigned int *)this)[0]); /*0x7b95cd*/
       v7 = *FoundationSize; /*0x7b95d2*/
@@ -906,7 +906,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
       v20 = v10; /*0x7b95e3*/
       v2 = abstractFlags - this->ambientSoundController[0] + v7; /*0x7b95f2*/
       v3 = nextArrayIndex - this->ambientSoundController[1] + v9; /*0x7b95fa*/
-      ReleaseMutex(hMutex); /*0x7b95fc*/
+      ReleaseMutex((HANDLE)(hMutex)); /*0x7b95fc*/
       v5 = v20; /*0x7b9602*/
     }
     v12 = (int)((gamemd::ObjectClass *)(v2 + this->fallRate));
@@ -935,7 +935,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
       1);
   }
   ((Mouse *)((Mouse *)this))->DrawCursor((int *)this->occupant, 0, 0); /*0x7b966a*/
-  return ReleaseMutex(hMutex); /*0x7b967c*/
+  return ReleaseMutex((HANDLE)(hMutex)); /*0x7b967c*/
 
 }
 }
@@ -1030,12 +1030,12 @@ int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
   }
   else
   {
-    v20 = (int *)(ClipRectIntersection((RectangleStruct *)(v23),(const RectangleStruct *)(aP0), (int *)a2, 0, 0)); /*0x7bbf71*/
+    v20 = (int *)(ClipRectIntersection((RectangleStruct *)(v23),(const RectangleStruct *)(aP0),(const RectangleStruct *)((int *)a2), 0, 0)); /*0x7bbf71*/
     *aP0 = *v20; /*0x7bbf7e*/
     aP0[1] = v20[1]; /*0x7bbf83*/
     aP0[2] = v20[2]; /*0x7bbf89*/
     aP0[3] = v20[3]; /*0x7bbf93*/
-    v21 = ClipRectIntersection(v23, aP2, (int *)a4, 0, 0); /*0x7bbf9d*/
+    v21 = (int *)(ClipRectIntersection((RectangleStruct *)(v23), aP2, (int *)a4, 0, 0)); /*0x7bbf9d*/
     *aP2 = *v21; /*0x7bbfa6*/
     aP2[1] = v21[1]; /*0x7bbfab*/
     aP2[2] = v21[2]; /*0x7bbfb1*/

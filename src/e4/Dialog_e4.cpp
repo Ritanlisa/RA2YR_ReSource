@@ -37,7 +37,7 @@ void Dialog::MapDialogResource(void *a1_1)
   if ( *(unsigned int *)&this->__pad_0[4] == 48879 ) /*0x49f74a*/
   {
     ((Debug *)this)->Log(); /*0x49f751*/
-    g_DDrawSurfaceManager.description[6] = (int)MapViewOfFileEx(this->Dialog_field_0xC, 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
+    g_DDrawSurfaceManager.description[6] = (int)MapViewOfFileEx((HANDLE)(this->Dialog_field_0xC), 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
     ((Debug *)this)->Log(); /*0x49f77e*/
   }
 
@@ -120,7 +120,7 @@ int Dialog::InitializeGameSettings()
   if ( v18 ) /*0x5b5e27*/
     SendMessageA(v18, 0x4B2u, 0, (LPARAM)&MEMORY[0xA8B322]); /*0x5b5e36*/
   if ( !g_UIControlState || !*(unsigned int *)g_UIControlState ) /*0x5b5e41*/
-    Session::PrepareGame(*(Session **)this->__pad_0); /*0x5b5e48*/
+    Session::PrepareGame((HWND)(*(Session **)this->__pad_0)); /*0x5b5e48*/
   v19 = GetDlgItem(*(HWND *)this->__pad_0, 1); /*0x5b5e51*/
   if ( v19 ) /*0x5b5e55*/
     EnableWindow(v19, 1); /*0x5b5e59*/
@@ -297,9 +297,9 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   v6 = (int)((HWND)(3));
   ((Debug *)this)->Log(); /*0x5f2968*/
   if ( a4 == 1 ) /*0x5f2979*/
-    StringCSF = GetStringCSF((wchar_t *)aTxtModemConner, 0, g_Str_File_NullMgr_CPP, 1409); /*0x5f298c*/
+    StringCSF = GetStringCSF((wchar_t *)aTxtModemConner, 0,(const char *)(g_Str_File_NullMgr_CPP), 1409); /*0x5f298c*/
   else
-    StringCSF = GetStringCSF(aTxtDialing, 0, g_Str_File_NullMgr_CPP, 1411); /*0x5f299f*/
+    StringCSF = GetStringCSF((wchar_t *)(aTxtDialing), 0, g_Str_File_NullMgr_CPP, 1411); /*0x5f299f*/
   v8 = (LPARAM)StringCSF; /*0x5f29ba*/
   g_NetworkTestFlag = 0; /*0x5f29bc*/
   v9 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0,(const char *)(g_Str_File_NullMgr_CPP), 1415)); /*0x5f29c3*/
@@ -334,7 +334,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
 LABEL_34:
         v17 = 0; /*0x5f2c81*/
         Buffer = word_8327A0; /*0x5f2c8d*/
-        ((WinModemClass *)((int *)v13))->WriteSerial(&Buffer, 2u); /*0x5f2c99*/
+        ((WinModemClass *)((int *)v13))->WriteSerial(&Buffer,(gamemd::WinModemClass *)(2u)); /*0x5f2c99*/
       }
 LABEL_35:
       ((Debug *)this)->Log(); /*0x5f2c9e*/
@@ -403,7 +403,7 @@ LABEL_23:
   {
     Buffer = word_8327A0; /*0x5f2c5c*/
     v17 = 0; /*0x5f2c61*/
-    ((WinModemClass *)((int *)g_ClipboardBuffer))->WriteSerial(&Buffer, 2u); /*0x5f2c66*/
+    ((WinModemClass *)((int *)g_ClipboardBuffer))->WriteSerial(&Buffer,(gamemd::WinModemClass *)(2u)); /*0x5f2c66*/
   }
   v6 = 5; /*0x5f2c6b*/
 LABEL_36:
@@ -898,7 +898,7 @@ LABEL_7:
             if ( !v5 ) /*0x60a406*/
               goto LABEL_18; /*0x60a406*/
           }
-          v6 = v5 + 1; /*0x60a40e*/
+          v6 = (unsigned int *)(v5 + 1); /*0x60a40e*/
           if ( v6 ) /*0x60a413*/
           {
             if ( !v6[26] && IsDialogControlVisible((int)Parent, hWnd) ) /*0x60a420*/
@@ -936,7 +936,7 @@ LABEL_22:
     v10 = hWnd; /*0x60a4f8*/
     if ( !dword_AC1B04 ) /*0x60a4fe*/
       goto LABEL_33; /*0x60a4fe*/
-    v8 = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((int)&dword_AC1B00, (int)&v10)); /*0x60a515*/
+    v8 = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((unsigned int *)((int)&dword_AC1B00), (int)&v10)); /*0x60a515*/
     if ( !v8 ) /*0x60a51a*/
       goto LABEL_33; /*0x60a51a*/
     while ( *v8 != v10 ) /*0x60a522*/
@@ -945,7 +945,7 @@ LABEL_22:
       if ( !v8 ) /*0x60a52c*/
         goto LABEL_33; /*0x60a52c*/
     }
-    v9 = v8 + 1; /*0x60a55b*/
+    v9 = (unsigned int *)(v8 + 1); /*0x60a55b*/
     if ( !v9 || v9[26] || !GetDialogDefaultButton((int)Parent, hWnd) ) /*0x60a56d*/
     {
 LABEL_33:
@@ -991,7 +991,7 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
   v19 = v2; /*0x60a5d1*/
   if ( dword_AC1B04 ) /*0x60a5d5*/
   {
-    v5 = (unsigned int *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((int)&dword_AC1B00, (int)&v19)); /*0x60a5ec*/
+    v5 = (unsigned int *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((unsigned int *)((int)&dword_AC1B00), (int)&v19)); /*0x60a5ec*/
     if ( v5 ) /*0x60a5f1*/
     {
       while ( (HWND)*v5 != v19 ) /*0x60a5f9*/
@@ -1018,7 +1018,7 @@ LABEL_7:
         v20 = Parent; /*0x60a70c*/
         if ( dword_AC1B04 ) /*0x60a712*/
         {
-          for ( i = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((int)&dword_AC1B00, (int)&v20)); /*0x60a72e*/
+          for ( i = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((unsigned int *)((int)&dword_AC1B00), (int)&v20)); /*0x60a72e*/
                 i;
                 i = (HWND *)i[129] )
           {

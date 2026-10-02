@@ -80,7 +80,7 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass a
   v5 = (unsigned int)(aP3); /*0x770e85*/
   INIClass::ReadTokenizedPair((INIClass *)this, aP1, aP2, aP3, 0, &v6); /*0x770e9d*/
   DeleteAndZero((ObjectClass *)&v6); /*0x770ea6*/
-  ((String *)((String *)&aP3))->Assign(g_INI_Key_Lose); /*0x770eb4*/
+  ((String *)((String *)&aP3))->Assign((const char *)(g_INI_Key_Lose)); /*0x770eb4*/
   INIClass::ReadTokenizedPair((INIClass *)this, aP1, aP2, v5, 1, (char **)&aP3); /*0x770ec5*/
   DeleteAndZero((ObjectClass *)&aP3); /*0x770ece*/
   ((String *)((String *)&aP3))->Assign(aDraw); /*0x770edc*/
@@ -633,7 +633,7 @@ struct tagPOINT * Dialog_HitTest(unsigned int a1, int a2, struct tagPOINT * a3)
   v4 = (uint16_t)a1; /*0x7764a9*/
   v9.y = IDA_HIWORD(a1); /*0x7764af*/
   v9.x = (uint16_t)a1; /*0x7764b0*/
-  WindowLongA = (HWND)GetWindowLongA(qword_B730A0, -8); /*0x7764b4*/
+  WindowLongA = (HWND)GetWindowLongA((HWND)(qword_B730A0), -8); /*0x7764b4*/
   v6 = ChildWindowFromPoint(WindowLongA, v9); /*0x7764bd*/
   v7 = (HWND)GetWindowLongA(v6, -8); /*0x7764ca*/
   if ( v6 == (HWND)GetWindowLongA(qword_B730A0, -8) ) /*0x7764d7*/
@@ -691,7 +691,7 @@ void E4Recv_776570::sub_776570()
       if ( v1 <= 0 ) /*0x77661d*/
         v6 = SendMessageA(qword_B730A0, 0x110Au, 6u, v9); /*0x77663c*/
       else
-        v6 = SendMessageA(qword_B730A0, 0x110Au, 7u, v9); /*0x77662d*/
+        v6 = SendMessageA((HWND)(qword_B730A0), 0x110Au, 7u, v9); /*0x77662d*/
       v7 = v6; /*0x776644*/
       ImageList_DragShowNolock(0); /*0x776648*/
       SendMessageA(qword_B730A0, 0x110Bu, 5u, v7); /*0x776659*/

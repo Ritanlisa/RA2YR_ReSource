@@ -879,7 +879,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
           }
         }
         ++vtable0; /*0x74be4c*/
-        LOBYTE(((unsigned int *)this)[0]) = 0; /*0x74be4d*/
+        LOBYTE(((unsigned int *)this)[0]) = (int)(0); /*0x74be4d*/
       }
       while ( (unsigned int)vtable0 < a2 ); /*0x74be53*/
     }

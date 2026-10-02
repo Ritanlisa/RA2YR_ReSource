@@ -1374,11 +1374,11 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
   v28 = v7 + 2; /*0x6b3ef5*/
   if ( __OFSUB__(v7, v7 + 2) ) /*0x6b3ef9*/
     return 1; /*0x6b4036*/
-  v9 = v6 + 2; /*0x6b3eff*/
+  v9 = (int)(v6 + 2); /*0x6b3eff*/
   while ( 1 ) /*0x6b3f02*/
   {
-    v10 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(v6)));
-    v29 = (int)((gamemd::AbstractClass **)(v6));
+    v10 = (unsigned int)((gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(v6))));
+    v29 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(v6)));
     if ( v6 < v9 ) /*0x6b3f0a*/
       break; /*0x6b3f0a*/
   LABEL_27:
@@ -1418,7 +1418,7 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
         v17[1] = v7; /*0x6b3fb5*/
         v17[2] = v15; /*0x6b3fb8*/
       }
-      v7 = (gamemd::AbstractClass **)(v30);
+      v7 = (int)((gamemd::AbstractClass **)(v30));
       v10 = v29; /*0x6b3fbf*/
     }
     v4 = a1; /*0x6b3fc3*/

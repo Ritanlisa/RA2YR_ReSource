@@ -42,7 +42,7 @@ void TechnoClass_CanFireAtTarget(void * a1, void * a2, void * a3, void * a4, voi
   int result; // eax
   int v7; // edi
 
-  result = (int)(TriggerTypeClass::ReadINI((unsigned int *)(a1),(gamemd::TechnoClass *)(a2), a3, a4, a5));
+  result = (int)(TriggerTypeClass::ReadINI((unsigned int *)(a1),(gamemd::TechnoClass *)(a2),(gamemd::TechnoClass *)(a3), a4, a5));
   if ( !result ) /*0x41a9fd*/
   {
         if ( !*(unsigned char *)((unsigned int)(a1)+ 1737) || *(unsigned int *)((unsigned int)(a1)+ 280) )

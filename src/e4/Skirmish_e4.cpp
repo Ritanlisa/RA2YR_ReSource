@@ -325,10 +325,10 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(int aP1)
     v4 = 0; /*0x59733e*/
   }
   if ( v3 > v4 ) /*0x59734e*/
-    v3 = v4; /*0x597350*/
+    v3 = (unsigned int)(v4); /*0x597350*/
   *((unsigned int *)this + 23) = (gamemd::TechnoTypeClass **)(Random::Range(&Randomizer_Global, v3, v4)); /*0x59736a*/
   result = Random::Range(&Randomizer_Global, 0, 0xFFFF); /*0x59736d*/
-  *((unsigned int *)this + 29) = result; /*0x597372*/
+  *((unsigned int *)this + 29) = (gamemd::TechnoTypeClass **)(result); /*0x597372*/
   return result; /*0x597375*/
 
 }
@@ -872,7 +872,7 @@ AbstractClass * * Skirmish::SetupGame(int hWnd)
         break;
       default:
         v21 = -(v20 != 6); /*0x6ae966*/
-        LOBYTE(v21) = v21 & 0xFD; /*0x6ae968*/
+        LOBYTE(v21) = (gamemd::SkirmishDialog *)(v21 & 0xFD); /*0x6ae968*/
         hWnd = v21 + 2; /*0x6ae96d*/
         break;
     }

@@ -77,7 +77,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&byte_A8F420); /*0x531b7c*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&byte_A8F520); /*0x531b8b*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&byte_A8F394); /*0x531b9a*/
-  GetVersionString((unsigned int *)(&v14), &v13, 0, 0); /*0x531ba8*/
+  GetVersionString((unsigned int *)(&v14),(unsigned char *)(&v13), 0, 0); /*0x531ba8*/
   v11 = (const unsigned int)((const char *)&off_821F08); /*0x531bb3*/
   if ( !v13 ) /*0x531bb8*/
     v11 = g_INI_Key_No; /*0x531bba*/

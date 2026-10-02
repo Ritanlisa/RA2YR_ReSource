@@ -162,7 +162,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
   int v24; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2), &g_INI_DefaultBuffer, String, 128) ) /*0x52545c*/
+  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer), String, 128) ) /*0x52545c*/
   {
     ((VectorClass *)(&v22))->Construct(0, 0); /*0x525471*/
     v24 = 10; /*0x52547a*/
@@ -597,8 +597,8 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
       goto LABEL_11; /*0x52a4a4*/
     }
     v6 = a4; /*0x52a48a*/
-    ((unsigned int *)this)[0] = vtable2; /*0x52a491*/
-    ((unsigned int *)this)[0] = v7; /*0x52a494*/
+    ((unsigned int *)this)[0] = (unsigned int)(vtable2); /*0x52a491*/
+    ((unsigned int *)this)[0] = (unsigned int)(v7); /*0x52a494*/
   }
   if ( vtable2 ) /*0x52a347*/
   {

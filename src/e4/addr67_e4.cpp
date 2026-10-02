@@ -110,7 +110,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   int v19; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP2),(gamemd::INIClass *)(a3), &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
+  if ( INIClass::GetString((INIClass *)edx0,(unsigned char *)(aP2),(gamemd::INIClass *)(a3),(gamemd::INIClass *)(&g_INI_DefaultBuffer), String, 128) ) /*0x67b57c*/
   {
     ((VectorClass *)(&v17))->BuildingTypeConstructor(0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
@@ -364,7 +364,7 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2), &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
+  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Destination, 128) ) /*0x67bade*/
 // 0x524cb0
     return KeywordType::FindOrCreate2(Destination); /*0x67baeb*/
   else
@@ -378,7 +378,7 @@ AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, uns
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2), &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
+  if ( INIClass::GetString((INIClass *)a0,(unsigned char *)(aP1),(gamemd::INIClass *)(a2),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Destination, 128) ) /*0x67bd4e*/
 // 0x41cef0
     return KeywordClass::FindOrCreate(Destination); /*0x67bd5b*/
   else

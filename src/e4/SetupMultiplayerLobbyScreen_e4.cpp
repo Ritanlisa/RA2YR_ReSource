@@ -75,8 +75,8 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
       {
         v6 = 1041; /*0x5ebf24*/
       }
-      v7 = SendDlgItemMessageA(hDlg, v6, 0x147u, 0, 0); /*0x5ebf93*/
-      v8 = (wchar_t *)SendDlgItemMessageA(hDlg, v6, 0x150u, v7, 0); /*0x5ebf9f*/
+      v7 = SendDlgItemMessageA((HWND)(hDlg), v6, 0x147u, 0, 0); /*0x5ebf93*/
+      v8 = (wchar_t *)SendDlgItemMessageA((HWND)(hDlg), v6, 0x150u, v7, 0); /*0x5ebf9f*/
       if ( v8 == (wchar_t *)-1 /*0x5ebfcc*/
         || !v8
         || v8 == (wchar_t *)g_HouseClass_ObserverFlags
@@ -87,21 +87,21 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
         if ( v3 != (char *)(g_MPCooperativeState) ) /*0x5ebfd9*/
         {
           if ( v3 >= (char *)(v10) ) /*0x5ebfe3*/
-            PlayerSkirmishSlotHandler(hDlg, v6, g_Lobby_PlayerCount, 0); /*0x5ebfed*/
+            PlayerSkirmishSlotHandler((HWND)(hDlg), v6, g_Lobby_PlayerCount, 0); /*0x5ebfed*/
           else
-            PlayerSkirmishSlotHandler(hDlg, v6, g_HouseClass_ObserverFlags, 0); /*0x5ebfe6*/
+            PlayerSkirmishSlotHandler((HWND)(hDlg), v6, g_HouseClass_ObserverFlags, 0); /*0x5ebfe6*/
         }
       }
       else
       {
-        PlayerSkirmishSlotHandler(hDlg, v6, (LPARAM)v8, 0); /*0x5ebfd1*/
+        PlayerSkirmishSlotHandler((HWND)(hDlg), v6, (LPARAM)v8, 0); /*0x5ebfd1*/
       }
       ++v3; /*0x5ebff6*/
     }
     while ( v3 < v11 );
     v3 = (char *)((int)(a2));
   }
-  UpdateMultiplayerLobbySlots(hDlg, v3, nIDDlgItem); /*0x5ec00d*/
+  UpdateMultiplayerLobbySlots((HWND)(hDlg), v3, nIDDlgItem); /*0x5ec00d*/
   RetVtableStubZero_eax_27(); /*0x5ec012*/
   return CheckGameSettingsChanged(1, 0); /*0x5ec020*/
 }

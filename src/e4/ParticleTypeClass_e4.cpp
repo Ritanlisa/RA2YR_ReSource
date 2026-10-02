@@ -654,7 +654,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
 
   v2 = (int *)((gamemd::ParticleTypeClass *)((int *)a2));
   v3 = a1; /*0x645669*/
-  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)a1), a2); /*0x64566f*/
+  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)a1),(gamemd::ObjectTypeClass *)(a2)); /*0x64566f*/
   if ( result >= 0 ) /*0x645678*/
   {
     if ( v3 ) /*0x645680*/
@@ -933,7 +933,7 @@ int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2
   int v5; // ebp
   int v6; // edi
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0),(gamemd::ObjectTypeClass *)(aP1), aP2); /*0x6457b3*/
+  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0),(gamemd::ObjectTypeClass *)(aP1),(gamemd::TechnoTypeClass *)(aP2)); /*0x6457b3*/
   if ( result >= 0 ) /*0x6457ba*/
   {
     v4 = *(unsigned int *)aP1; /*0x6457c2*/

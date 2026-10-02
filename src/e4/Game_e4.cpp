@@ -451,16 +451,16 @@ int Game::MakeScreenshot(int a1)
   int v21; // [esp+114h] [ebp-88h]
   char Buffer[128]; // [esp+11Ch] [ebp-80h] BYREF
 
-  result = GetClientRect(g_hWnd, &Rect); /*0x537bd3*/
+  result = GetClientRect((HWND)(g_hWnd), &Rect); /*0x537bd3*/
   if ( result ) /*0x537bdb*/
   {
     Point.x = Rect.left; /*0x537bef*/
     Point.y = Rect.top; /*0x537bff*/
-    result = ClientToScreen(g_hWnd, &Point); /*0x537c03*/
+    result = ClientToScreen((HWND)(g_hWnd), &Point); /*0x537c03*/
     if ( result ) /*0x537c07*/
     {
       v14 = *(struct tagPOINT *)&Rect.right; /*0x537c15*/
-      result = ClientToScreen(g_hWnd, &v14); /*0x537c28*/
+      result = ClientToScreen((HWND)(g_hWnd), &v14); /*0x537c28*/
       if ( result ) /*0x537c2c*/
       {
         v10 = Point; /*0x537c3e*/

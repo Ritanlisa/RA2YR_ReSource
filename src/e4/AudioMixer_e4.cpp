@@ -122,13 +122,13 @@ namespace gamemd {
 int AudioMixer::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
-  SetupSampleAudioMixer(&this->AudioMixer_field_00, 0x4000); /*0x40100a*/
-  SetupSampleAudioMixer((int *)this + 10, 100); /*0x401019*/
-  SetupSampleAudioMixer((int *)this + 20, 0x2000); /*0x401028*/
+  SetupSampleAudioMixer((int *)(&this->AudioMixer_field_00), 0x4000); /*0x40100a*/
+  SetupSampleAudioMixer((int *)this + 10,(gamemd::ObjectClass *)(100)); /*0x401019*/
+  SetupSampleAudioMixer((int *)this + 20,(gamemd::ObjectClass *)(0x2000)); /*0x401028*/
   SetRateMixerSample((unsigned int *)this + 10, 10, 0x3E8u, 0); /*0x40103b*/
-  SetRateMixerSample(this, 0x4000, 0x3E8u, 0); /*0x40104e*/
+  SetRateMixerSample((unsigned int *)(this), 0x4000, 0x3E8u, 0); /*0x40104e*/
   SetRateMixerSample((unsigned int *)this + 20, 0x4000, 0x3E8u, 0); /*0x401061*/
-  return EndBufferMixer(&this->AudioMixer_field_00, 0x4000); /*0x40106d*/
+  return EndBufferMixer((gamemd::VolumeStruct *)(&this->AudioMixer_field_00), 0x4000); /*0x40106d*/
 
 }
 } // namespace gamemd
@@ -145,14 +145,14 @@ int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
   {
     if ( a2 > 0x4000 ) /*0x4061e0*/
       v2 = 0x4000; /*0x4061e2*/
-    return RequestBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406204*/
+    return RequestBufferMixer((gamemd::VolumeStruct *)(a1 + 46), (unsigned int)(v2 * HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406204*/
   }
   else
   {
     if ( a2 > 0x4000 ) /*0x40620f*/
       v2 = 0x4000; /*0x406211*/
     v4 = a1 + 46; /*0x40621f*/
-    EndBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406236*/
+    EndBufferMixer((gamemd::VolumeStruct *)(a1 + 46), (unsigned int)(v2 * HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406236*/
     return AudioMixer::PlaySample(v4); /*0x40623e*/
   }
 
@@ -167,13 +167,13 @@ int AudioMixer::RequestOrEndBuffer(int a1, unsigned int a2)
   {
     if ( a2 > 0x4000 ) /*0x40627e*/
       a2 = 0x4000; /*0x406280*/
-    return RequestBufferMixer((unsigned int *)(a1 + 264), a2); /*0x406293*/
+    return RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)(a1 + 264)), a2); /*0x406293*/
   }
   else
   {
     if ( a2 > 0x4000 ) /*0x40629e*/
       a2 = 0x4000; /*0x4062a0*/
-    return EndBufferMixer((int *)(a1 + 264), a2); /*0x4062b3*/
+    return EndBufferMixer((gamemd::VolumeStruct *)((int *)(a1 + 264)), a2); /*0x4062b3*/
   }
 
 }

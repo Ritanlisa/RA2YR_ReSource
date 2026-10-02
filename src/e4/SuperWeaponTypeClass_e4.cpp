@@ -270,7 +270,7 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, voi
   *((unsigned int *)this + 95) = 10; /*0x511520*/
   *((unsigned int *)this + 94) = (unsigned int)(0); /*0x511527*/
   *((unsigned int *)this + 90) = (unsigned int)(&vt_TypeList); /*0x51152a*/
-  AircraftTypeVector::Constructor((AircraftTypeVector *)this + 97, 0, 0); /*0x51153a*/
+  AircraftTypeVector::Constructor((int)((AircraftTypeVector *)this + 97), 0, 0); /*0x51153a*/
   *((unsigned int *)this + 102) = 10; /*0x511542*/
   *((unsigned int *)this + 101) = (unsigned int)(0); /*0x511549*/
   *((unsigned int *)this + 97) = (unsigned int)(&vt_TypeList); /*0x51154c*/

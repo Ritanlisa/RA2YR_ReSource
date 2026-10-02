@@ -178,7 +178,7 @@ ControlClass * * String::To_Waypoint()
 
   int v2; // esi
 
-  v2 = -1; /*0x763694*/
+  v2 = (int)(-1); /*0x763694*/
   if ( isalpha(*this) && (v2 = toupper((int)(*this)) - 65, isalpha(*((unsigned char *)this + 1))) ) /*0x7636ba*/
     return toupper(*((unsigned char *)this + 1)) + 26 * v2 - 39; /*0x7636db*/
   else

@@ -74,12 +74,12 @@ ObjectClass * * sub_5C00E0(void * a1, void * a2, void * a3)
   if ( g_MissionQueueFrame.localVariables[604] ) /*0x5c00ea*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x5c00fa*/
-    Frame::Present((void *)((int)DSurface_Alternate),(void *)(v3), a2, a3, 0, v8, v9, v10); /*0x5c0107*/
+    Frame::Present((void *)((int)DSurface_Alternate),(void *)(v3), a2, a3, 0,(void *)(v8), v9, v10); /*0x5c0107*/
     result = TestBitArray(15); /*0x5c0111*/
     if ( !result ) /*0x5c0118*/
     {
-      GetClientRect(g_hWnd, &Rect); /*0x5c0129*/
-      ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5c013b*/
+      GetClientRect((HWND)(g_hWnd), &Rect); /*0x5c0129*/
+      ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5c013b*/
       v5 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 64); /*0x5c0156*/
       v6 = Rect.top + *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 56); /*0x5c0159*/
       v7 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 52); /*0x5c015b*/
@@ -1343,7 +1343,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
     v38 = !v38; /*0x5c7611*/
   }
   v18 = v40; /*0x5c7615*/
-  SubtractBigInteger((unsigned int *)(v40),(unsigned int *)(a2), (int)v42, (char *)v41, a5); /*0x5c762b*/
+  SubtractBigInteger((unsigned int *)(v40),(unsigned int *)(a2), (int)v42, (char *)v41,(gamemd::Buffer *)(a5)); /*0x5c762b*/
   IDA_LOBYTE(v19) = v38; /*0x5c7630*/
   if ( v38 ) /*0x5c7636*/
   {
@@ -1434,7 +1434,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
         {
           v19 = (char *)((unsigned int)((char *)(*(unsigned int *)v34 + *(unsigned int *)&v18[v35])));
           v36 = (char *)((unsigned int)(&v19[v39]));
-          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (unsigned char)((char *)((unsigned char)(v39) != 0 && !v36)))));
+          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (char *)((unsigned char)((char *)((unsigned char)(v39) != 0 && !v36))))));
           *(unsigned int *)v18 = (unsigned int)(v36); /*0x5c7723*/
           v34 += 4; /*0x5c7725*/
           v18 += 4; /*0x5c7728*/
@@ -2153,7 +2153,7 @@ char sub_5C8980(char * a1, unsigned int edx0, int a3)
   {
     memset(v19, 0, v4 * 4); /*0x5c8a0a*/
     v19[0] = *i; /*0x5c8a25*/
-    ModBigIntExp(v20, v19, v18, v3, a3); /*0x5c8a38*/
+    ModBigIntExp(v20,(gamemd::AbstractClass *)(v19), v18, v3, a3); /*0x5c8a38*/
     if ( v20[0] != 1 ) /*0x5c8a45*/
       break; /*0x5c8a45*/
     v9 = &v19[v4 + 63]; /*0x5c8a4e*/
@@ -2273,7 +2273,7 @@ char ValidateRSAKey(int a1, char * a2, int a3, int a4)
       v12 = 2 * a4; /*0x5c8bf7*/
       do /*0x5c8c25*/
       {
-        v13 = *(uint16_t *)&v11[(char *)v42 - v45] - *(uint16_t *)&v11[v44 - v45]; /*0x5c8c06*/
+        v13 = (char *)(*(uint16_t *)&v11[(char *)v42 - v45] - *(uint16_t *)&v11[v44 - v45]); /*0x5c8c06*/
         v11 += 2; /*0x5c8c12*/
         v14 = v13 - v37; /*0x5c8c15*/
         *((unsigned short *)v11 - 1) = v14; /*0x5c8c17*/
@@ -2288,7 +2288,7 @@ char ValidateRSAKey(int a1, char * a2, int a3, int a4)
       ValidateRSAKey_Helper(HighestBitBitArray, a4); /*0x5c8c48*/
     while ( (int)CompareBigIntLE(a4) > 0 ); /*0x5c8c63*/
     Crypto_Helper(v44, 0, a4); /*0x5c8c7e*/
-    ModBigIntExp(v41, v43, v46, v39, a4); /*0x5c8c9c*/
+    ModBigIntExp(v41,(gamemd::AbstractClass *)(v43), v46, v39, a4); /*0x5c8c9c*/
     if ( v41[0] == 1 ) /*0x5c8ca6*/
     {
       v16 = &v41[a4 - 1]; /*0x5c8cac*/
@@ -2337,7 +2337,7 @@ char ValidateRSAKey(int a1, char * a2, int a3, int a4)
   v25 = &v46[4 * a4 + 252]; /*0x5c8d0a*/
   while ( 1 ) /*0x5c8d2a*/
   {
-    ModBigIntExp(v47, v41, v44, v39, a4); /*0x5c8d2a*/
+    ModBigIntExp(v47,(gamemd::AbstractClass *)(v41), v44, v39, a4); /*0x5c8d2a*/
     v26 = &v41[a4 + 63]; /*0x5c8d31*/
     v27 = a4; /*0x5c8d33*/
     if ( *(unsigned int *)v25 >= *v19 ) /*0x5c8d39*/

@@ -92,13 +92,13 @@ void TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, w
   v29 = v11; /*0x4b9788*/
   v34[1] = v14; /*0x4b9790*/
   v31 = v14; /*0x4b9794*/
-  v34[0] = v13; /*0x4b9798*/
+  v34[0] = (int)(v13); /*0x4b9798*/
   v15 = (int)(*aP2); /*0x4b979c*/
   v30 = v13; /*0x4b979e*/
   v34[2] = 15; /*0x4b97a4*/
   v32 = 15; /*0x4b97a8*/
   v16 = (*(int (**)(int *))(v15 + 124))(aP2); /*0x4b97b5*/
-  v17 = (*(int (**)(int))(*(unsigned int *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x4b97b9*/
+  v17 = (int)((*(int (**)(int))(*(unsigned int *)g_DSurface_Hidden + 124))(g_DSurface_Hidden)); /*0x4b97b9*/
   v18 = (int)(*aP2); /*0x4b97c5*/
   v30 += (v17 - v16) / -2; /*0x4b97cd*/
   v19 = (*(int (**)(int *))(v18 + 128))(aP2); /*0x4b97df*/
@@ -279,14 +279,14 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
     vswprintf(Buffer, BufferCount, &aP8, v12); /*0x4a60fc*/
     v9 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a6143*/
     *(unsigned int *)aP0 = *v9; /*0x4a614e*/
-    aP0[1] = v9[1]; /*0x4a6153*/
+    aP0[1] = (unsigned int *)(v9[1]); /*0x4a6153*/
     return aP0; /*0x4a6145*/
   }
   else
   {
     v11 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a619a*/
     *(unsigned int *)aP0 = *v11; /*0x4a61a5*/
-    aP0[1] = v11[1]; /*0x4a61aa*/
+    aP0[1] = (unsigned int *)(v11[1]); /*0x4a61aa*/
     return aP0; /*0x4a619c*/
   }
 

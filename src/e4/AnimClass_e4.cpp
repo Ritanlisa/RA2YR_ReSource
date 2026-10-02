@@ -364,8 +364,8 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     Tactical::SetCellTransform(v111.__pad_0, 0, v19, v18, v104, 0, 0); /*0x422f5c*/
     Tactical::SetCellTransform(v111.__pad_0, 1, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f7f*/
     Tactical::SetCellTransform(v111.__pad_0, 2, v89, v18, v104, 1065353216, 0); /*0x422f97*/
-    StructTable::Append(dword_8A0E10, &v110); /*0x422fa7*/
-    StructTable::Append(dword_8A0E10, &v111); /*0x422fba*/
+    StructTable::Append((void *)(dword_8A0E10), &v110); /*0x422fa7*/
+    StructTable::Append((void *)(dword_8A0E10), &v111); /*0x422fba*/
     return; /*0x422fc9*/
   }
   if ( *(unsigned int *)&g_MissionQueueFrame.waypoints[282] < (unsigned int)PingPongBuffer::GetWriteOffset() /*0x422fe6*/

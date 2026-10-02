@@ -333,7 +333,7 @@ LABEL_47:
   ((Vector *)((int)v34))->Clear(); /*0x49cab9*/
   *(unsigned int *)v33.CDFileClass = &off_7E1668; /*0x49cac5*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v33); /*0x49cacc*/
-  LOBYTE(this->scenario[17]) = 1; /*0x49cad2*/
+  LOBYTE(this->scenario[17]) = (gamemd::AbstractClass **)(1); /*0x49cad2*/
   return 1; /*0x49c618*/
 
 }
@@ -367,7 +367,7 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x46d016*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x46d01f*/
-      aP0->AbstractClass = &vt_CampaignClass; /*0x46d024*/
+      aP0->AbstractClass = (unsigned int)(&vt_CampaignClass); /*0x46d024*/
       ((unsigned int *)aP0)[0] = &vt_CampaignClass; /*0x46d02a*/
       ((unsigned int *)aP0)[0] = &vt_CampaignClass; /*0x46d031*/
       ((unsigned int *)aP0)[0] = &vt_CampaignClass; /*0x46d038*/

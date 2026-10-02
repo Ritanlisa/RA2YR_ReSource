@@ -148,7 +148,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
     {
       if ( (uint8_t)ObjectClass::HasLinkedObject(this->BuildingPlacement_field_0x0C) ) /*0x54c5b5*/
       {
-        v7 = (void *)(Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7)); /*0x54c5d6*/
+        v7 = (unsigned int)((void *)(Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7))); /*0x54c5d6*/
         v8 = (Cell *)(*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c5da*/
         v9 = *(unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c5e6*/
         NeighbourContent = (void *)(((Cell *)(v8))->GetNeighbourContent(v7)); /*0x54c5ea*/
@@ -229,7 +229,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
             LOBYTE(v24) = 0; /*0x54c78d*/
             HIBYTE(v24) = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 72); /*0x54c793*/
             LOWORD(v47) = v24; /*0x54c799*/
-            FacingClass::Update((char *)this + 84, &v47); /*0x54c79e*/
+            FacingClass::Update((unsigned short *)((char *)this + 84), &v47); /*0x54c79e*/
           }
         }
       }

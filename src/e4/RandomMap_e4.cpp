@@ -526,7 +526,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
                            Capacity + v21,
                            0) )
                     {
-                      vtable0 = v12[1].vtable0; /*0x58d362*/
+                      vtable0 = (unsigned int *)(v12[1].vtable0); /*0x58d362*/
                       Items = v12->Items; /*0x58d365*/
                       v12[1].vtable0 = (char *)vtable0 + 1; /*0x58d36b*/
                       Items[(unsigned int)vtable0] = v28; /*0x58d372*/
@@ -657,7 +657,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
           && (v12 = (int)v3[1].Items, v12 > 0)
           && (*((uint8_t (**)(VectorClass *, int, unsigned int))v3->vtable0 + 2))(v3, Capacity + v12, 0) )
         {
-          vtable0 = v3[1].vtable0; /*0x58d564*/
+          vtable0 = (unsigned int *)(v3[1].vtable0); /*0x58d564*/
           Items = v3->Items; /*0x58d567*/
           v3[1].vtable0 = (char *)vtable0 + 1; /*0x58d56d*/
           Items[(unsigned int)vtable0] = v11; /*0x58d570*/
@@ -765,7 +765,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
                        Capacity + v18,
                        0) )
                 {
-                  vtable0 = v4[1].vtable0; /*0x58e8df*/
+                  vtable0 = (unsigned int *)(v4[1].vtable0); /*0x58e8df*/
                   Items = v4->Items; /*0x58e8e2*/
                   v4[1].vtable0 = (char *)vtable0 + 1; /*0x58e8e8*/
                   Items[(unsigned int)vtable0] = *(unsigned int *)v24; /*0x58e8ef*/

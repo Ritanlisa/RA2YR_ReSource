@@ -122,7 +122,7 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3)
   int v4; // [esp+10h] [ebp-8h]
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6b6ea8*/
-  SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
+  SpawnControlVector::Constructor((int)((SpawnControlVector *)this->spawns), 0, 0); /*0x6b6eb6*/
   this->spawns[0] = (int)&vt_DynamicVectorClass; /*0x6b6ebb*/
   *(unsigned int *)&this->__pad_48[4] = 10; /*0x6b6ec1*/
   *(unsigned int *)this->__pad_48 = 0; /*0x6b6ec8*/

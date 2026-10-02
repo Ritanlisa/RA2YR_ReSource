@@ -16,7 +16,7 @@ void * E4Recv_779690::LoadAccountInfoWOL_Load(void* aP1, ObjectClass * aP2, void
 
   *((unsigned int *)this + 1) = 0; /*0x779695*/
   *((unsigned char *)this + 8) = 0; /*0x779698*/
-  *(unsigned int *)this = (ReferenceCounted)&vt_ReferenceCounted; /*0x7796a3*/
+  *(unsigned int *)this = (unsigned int)((ReferenceCounted)&vt_ReferenceCounted); /*0x7796a3*/
   ((String *)((String *)((unsigned int *)this + 3)))->AssignFromPtr((const char **)(aP1)); /*0x7796a9*/
   *((unsigned int *)this + 4) = (unsigned int)(aP2); /*0x7796ba*/
   *((unsigned int *)this + 6) = (unsigned int)(aP4); /*0x7796c1*/
@@ -31,7 +31,7 @@ void * E4Recv_779690::LoadAccountInfoWOL_Load(void* aP1, ObjectClass * aP2, void
   *((unsigned char *)this + 56) = (unsigned char)(aP12); /*0x779700*/
   ((WideString *)((wchar_t **)this + 15))->AssignFromPtr((const wchar_t **)(aP14)); /*0x779703*/
   ((WideString *)((wchar_t **)this + 16))->AssignFromPtr((const wchar_t **)(aP13)); /*0x779710*/
-  *(unsigned int *)this = (ReferenceCounted)&vt_PlayerProfile; /*0x779715*/
+  *(unsigned int *)this = (unsigned int)((ReferenceCounted)&vt_PlayerProfile); /*0x779715*/
   return this; /*0x77971d*/
 
 }

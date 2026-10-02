@@ -212,7 +212,7 @@ char sub_72BAC0()
   {
     if ( g_DisplayWidth == 800 ) /*0x72bad3*/
       dword_B0FB2C = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844DBC),(gamemd::ConvertClass *)((bool *)&byte_B0FD50))); /*0x72bae5*/
-    result = LoadPaletteSimple((char *)(off_844DC0), &dword_B0FD54, &dword_B0FD58); /*0x72bafa*/
+    result = LoadPaletteSimple((char *)(off_844DC0),(int *)(&dword_B0FD54), &dword_B0FD58); /*0x72bafa*/
     byte_B0FD51 = 1; /*0x72baff*/
   }
   return result; /*0x72bb06*/
@@ -265,7 +265,7 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
 
   if ( wParam == -1 ) /*0x78109d*/
   {
-    StringCSF = GetStringCSF(aSttLobbylistus, 0, g_Str_File_wonline_cpp, 3050); /*0x7810a4*/
+    StringCSF = GetStringCSF((wchar_t *)(aSttLobbylistus), 0, g_Str_File_wonline_cpp, 3050); /*0x7810a4*/
   }
   else
   {
@@ -276,7 +276,7 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
       FormatWOLPlayerInfo(a1, v7); /*0x7810f2*/
       return a1; /*0x7810ff*/
     }
-    StringCSF = GetStringCSF(aSttLobbylistus, 0, g_Str_File_wonline_cpp, 3055); /*0x781113*/
+    StringCSF = GetStringCSF((wchar_t *)(aSttLobbylistus), 0, g_Str_File_wonline_cpp, 3055); /*0x781113*/
   }
   ((WideString *)((WideString *)a1))->Assign(StringCSF); /*0x78111b*/
   return a1; /*0x7810fb*/

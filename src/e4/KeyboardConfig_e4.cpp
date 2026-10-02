@@ -47,7 +47,7 @@ int KeyboardConfig::LoadINI()
   INIClass::INIClass((INIClass *)&v9); /*0x533d2b*/
   v9.ownsFile = 0; /*0x533d3b*/
   *(unsigned int *)v9.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x533d3f*/
-  CCFileClass::Construct(&v10, aKeyboardmdIni); /*0x533d47*/
+  CCFileClass::Construct(&v10,(void *)(aKeyboardmdIni)); /*0x533d47*/
   if ( ((CCINIClass *)((int)(&v9)))->Load((int)&v10, 0, 0) ) /*0x533d57*/
   {
     __3_YAXPAX_Z(*(void **)&stru_87F5F0.__pad_58[56]); /*0x533d6c*/
@@ -59,9 +59,9 @@ int KeyboardConfig::LoadINI()
     *(unsigned int *)&stru_87F5F0.__pad_58[72] = 0; /*0x533d97*/
     for ( i = 0; i < (int)(INIClass)::GetKeyCount(v9.INIClass, g_INI_Key_Hotkey); v1 = i ) /*0x533da8*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v9.INIClass),(gamemd::CCINIClass *)(g_INI_Key_Hotkey), v1); /*0x533dbf*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v9.INIClass),(gamemd::CCINIClass *)(g_INI_Key_Hotkey),(void *)(v1)); /*0x533dbf*/
       v3 = 0; /*0x533dd1*/
-      Int_Overwrite = ((INIClass *)((bool *)v9.INIClass))->ReadInt_Overwrite(g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
+      Int_Overwrite = ((INIClass *)((bool *)v9.INIClass))->ReadInt_Overwrite((uint8_t *)(g_INI_Key_Hotkey), StringByIndex, 0); /*0x533dd3*/
       if ( *(int *)&stru_87F5F0.__pad_58[32] > 0 ) /*0x533dde*/
       {
         while ( strcmp( /*0x533e1f*/

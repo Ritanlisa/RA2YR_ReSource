@@ -220,7 +220,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v6 = (int *)(v51 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[45].__tail_0);
         v50 = (int *)(DSurface_ViewBounds + v50 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[44].__tail_0);
         v51 = (int *)(dword_886FA4 + v6);
-        v7 = (int *)(ClipRectIntersection((RectangleStruct *)(v70),(const RectangleStruct *)((int *)&v50), v54, 0, 0));
+        v7 = (int *)(ClipRectIntersection((RectangleStruct *)(v70),(const RectangleStruct *)((int *)&v50),(const RectangleStruct *)(v54), 0, 0));
         v68[0] = (int)((int *)(*v7));
         v68[1] = (int)((int *)(v7[1]));
         v68[2] = (int)((int *)(v7[2]));
@@ -232,7 +232,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v62 = (int *)(v10);
         v64 = (int *)(60);
         v65 = (int *)((unsigned int)((int *)(30)));
-        v11 = (int *)(ClipRectIntersection((RectangleStruct *)(v71),(const RectangleStruct *)(v68), &v62, 0, 0));
+        v11 = (int *)(ClipRectIntersection((RectangleStruct *)(v71),(const RectangleStruct *)(v68),(const RectangleStruct *)(&v62), 0, 0));
         v12 = *v11; /*0x42104f*/
         v55 = *v11; /*0x421051*/
         v13 = v11[1]; /*0x421055*/
@@ -772,7 +772,7 @@ int E4Recv_425670::ConstructionPositionTracker()
       v55 = this->location[1]; /*0x4258fc*/
       v21 = this->location[2]; /*0x425904*/
       v22 = (int *)(*(int (**)(TechnoClass *, int *))(vtable0 + 72))(this, &v54); /*0x42590a*/
-      v23 = *(unsigned int *)((Cell *)((Cell *)&v49))->GetHeight(v22, &this->animation[4]); /*0x425917*/
+      v23 = *(unsigned int *)((Cell *)((Cell *)&v49))->GetHeight((gamemd::BuildingTypeClass *)(v22), &this->animation[4]); /*0x425917*/
       v54 = *location; /*0x42591d*/
       v55 = this->location[1]; /*0x425924*/
       v56 = this->location[2]; /*0x425938*/

@@ -872,7 +872,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(16 * a2); /*0x4d2be5*/
+      v6 = (int)(__2_YAPAXI_Z(16 * a2)); /*0x4d2be5*/
       if ( v6 ) /*0x4d2bef*/
       {
         if ( a2 - 1 >= 0 ) /*0x4d2bf6*/

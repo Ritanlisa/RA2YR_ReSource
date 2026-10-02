@@ -901,7 +901,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       {
         __3_YAXPAX_Z(*(void **)((char *)this + 5400)); /*0x45f907*/
         *((unsigned int *)this + 1350) = 0; /*0x45f90f*/
-        *v19 = 0; /*0x45f915*/
+        *v19 = (unsigned int)(0); /*0x45f915*/
       }
       *((unsigned int *)this + 1350) = SearchMIXFile(Source, 0); /*0x45f922*/
     }

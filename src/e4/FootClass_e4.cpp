@@ -102,7 +102,7 @@ AbstractClass * FootClass::Destruct()
     *(unsigned int *)this->__pad_58C = (unsigned int)((gamemd::AbstractClass *)(0)); /*0x4d36ed*/
   }
   this->__pad_58C[9] = 0; /*0x4d36f5*/
-  *(unsigned int *)&this->__pad_58C[4] = 0; /*0x4d36fb*/
+  *(unsigned int *)&this->__pad_58C[4] = (gamemd::AbstractClass *)(0); /*0x4d36fb*/
   return ((TechnoClass *)((int)this))->DTOR(); /*0x4d3706*/
 
 }

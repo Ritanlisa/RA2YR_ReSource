@@ -123,7 +123,7 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
       aP0->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x420e14*/
       aP0->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x420e1b*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AlphaShapeClass_field_0x24); /*0x420e2b*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AlphaShapeClass_field_0x24)); /*0x420e2b*/
     *((unsigned int *)aP0 + 14) = 0; /*0x420e30*/
   }
   return Prefix_0; /*0x420e39*/

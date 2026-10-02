@@ -368,7 +368,7 @@ int TagTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x6e647f*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); /*0x6e647f*/
   if ( result >= 0 ) /*0x6e6486*/
     return 0; /*0x6e6488*/
   return result; /*0x6e648a*/

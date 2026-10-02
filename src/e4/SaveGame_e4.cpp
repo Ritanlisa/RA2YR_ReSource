@@ -577,7 +577,7 @@ int SaveGame::SaveIteratedData(int a2)
   int result; // eax
   int v7; // ebx
 
-  v2 = a2; /*0x413853*/
+  v2 = (char *)(a2); /*0x413853*/
   v3 = 0; /*0x413858*/
   for ( i = &this->__pad_0[4]; ; i += 24 ) /*0x41385a*/
   {

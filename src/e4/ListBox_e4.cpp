@@ -86,23 +86,23 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
 LABEL_8:
   v40 = hWnd; /*0x6141fb*/
   if ( !dword_AC1B04 ) /*0x61420d*/
-    return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x61420d*/
+    return CallWindowProcA((WNDPROC)(v4), hWnd, Msg, wParam, (LPARAM)lParam); /*0x61420d*/
   v7 = (HWND *)*((unsigned int *)dword_AC1B00 + (dword_AC1B18(&v40) & ((1 << dword_AC1B0C) - 1))); /*0x61422e*/
   if ( !v7 ) /*0x614233*/
-    return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614233*/
+    return CallWindowProcA((WNDPROC)(v4), hWnd, Msg, wParam, (LPARAM)lParam); /*0x614233*/
   while ( *v7 != v40 ) /*0x61423b*/
   {
     v7 = (HWND *)v7[129]; /*0x61423d*/
     if ( !v7 ) /*0x614245*/
-      return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614245*/
+      return CallWindowProcA((WNDPROC)(v4), hWnd, Msg, wParam, (LPARAM)lParam); /*0x614245*/
   }
   v8 = (unsigned int *)(v7 + 1);
   if ( v7 == (HWND *)-4 ) /*0x614252*/
-    return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614285*/
+    return CallWindowProcA((WNDPROC)(v4), hWnd, Msg, wParam, (LPARAM)lParam); /*0x614285*/
   if ( GetFocus() == hWnd && !v8[61] ) /*0x614297*/
   {
     v8[60] = 1; /*0x6142a1*/
-    SetFocus(g_hWnd); /*0x6142b2*/
+    SetFocus((HWND)(g_hWnd)); /*0x6142b2*/
   }
   WindowLongA = GetWindowLongA(hWnd, -16); /*0x6142c2*/
   v11 = WindowLongA; /*0x6142c8*/
@@ -120,7 +120,7 @@ LABEL_8:
     if ( GetFocus() == hWnd ) /*0x614380*/
     {
       v8[60] = 1; /*0x614382*/
-      SetFocus(g_hWnd); /*0x614392*/
+      SetFocus((HWND)(g_hWnd)); /*0x614392*/
     }
     if ( (v11 & 0x10000) == 0 ) /*0x61439e*/
       return 0; /*0x61439e*/
@@ -145,7 +145,7 @@ LABEL_70:
     }
     InvalidateRect(hWnd, 0, 0); /*0x614869*/
     v13 = wParam; /*0x61486b*/
-    return CallWindowProcA(lpPrevWndFunc, hWnd, v12, v13, (LPARAM)lParam); /*0x61486b*/
+    return CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, v12, v13, (LPARAM)lParam); /*0x61486b*/
   }
   if ( Msg == 1205 || Msg == 1203 || Msg == 14 ) /*0x61441a*/
   {
@@ -177,7 +177,7 @@ LABEL_70:
     v31 = (const WCHAR *)v8[10]; /*0x6148a1*/
     if ( v31 ) /*0x6148a6*/
       WideCharToMultiByte(0, 0, v31, -1, MultiByteStr, 2048, 0, 0); /*0x6148c0*/
-    return CallWindowProcA(lpPrevWndFunc, hWnd, 0xCu, 0, (LPARAM)MultiByteStr); /*0x6148dc*/
+    return CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, 0xCu, 0, (LPARAM)MultiByteStr); /*0x6148dc*/
   }
   else
   {
@@ -252,18 +252,18 @@ LABEL_70:
       if ( v12 == 512 ) /*0x614799*/
         return 1; /*0x6147aa*/
       if ( v12 != 256 && v12 != 257 && v12 != 260 && v12 != 261 && v12 != 262 && v12 != 263 && v12 != 8 && v12 != 513 ) /*0x6147e8*/
-        return CallWindowProcA(lpPrevWndFunc, hWnd, v12, v13, (LPARAM)lParam); /*0x6147e8*/
+        return CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, v12, v13, (LPARAM)lParam); /*0x6147e8*/
       goto LABEL_70; /*0x6147e8*/
     }
     if ( wParam == 13 ) /*0x614447*/
     {
       if ( (WindowLongA & 4) != 0 ) /*0x614450*/
       {
-        v16 = CallWindowProcA(lpPrevWndFunc, hWnd, 0xEu, 0, 0) + 3; /*0x614473*/
+        v16 = CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, 0xEu, 0, 0) + 3; /*0x614473*/
         v17 = (char *)__2_YAPAXI_Z(v16); /*0x614486*/
-        CallWindowProcA(lpPrevWndFunc, hWnd, 0xDu, v16, (LPARAM)v17); /*0x61448e*/
+        CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, 0xDu, v16, (LPARAM)v17); /*0x61448e*/
         strcat(v17,(const char *)(String2)); /*0x6144b3*/
-        CallWindowProcA(lpPrevWndFunc, hWnd, 0xCu, 0, (LPARAM)v17); /*0x6144cb*/
+        CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, 0xCu, 0, (LPARAM)v17); /*0x6144cb*/
         __3_YAXPAX_Z(v17); /*0x6144ce*/
         v18 = GetWindowLongA(hWnd, -12); /*0x6144e0*/
         v36 = hWnd; /*0x6144f7*/
@@ -272,10 +272,10 @@ LABEL_70:
         SendMessageA(v19, 0x111u, v35, (LPARAM)v36); /*0x614506*/
         return 0; /*0x614518*/
       }
-      return CallWindowProcA(lpPrevWndFunc, hWnd, v12, v13, (LPARAM)lParam); /*0x614450*/
+      return CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, v12, v13, (LPARAM)lParam); /*0x614450*/
     }
     if ( wParam != 9 ) /*0x61451e*/
-      return CallWindowProcA(lpPrevWndFunc, hWnd, v12, v13, (LPARAM)lParam); /*0x614899*/
+      return CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, v12, v13, (LPARAM)lParam); /*0x614899*/
     v20 = hWnd; /*0x614524*/
     v21 = GetParent(hWnd); /*0x61452c*/
     NextDlgTabItem = GetNextDlgTabItem(v21, v20, 0); /*0x614536*/

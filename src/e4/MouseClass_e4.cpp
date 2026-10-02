@@ -88,9 +88,9 @@ char MouseClass::LoadCursors()
     dword_B0FA38 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CF0),(gamemd::ConvertClass *)((bool *)&byte_B0FC9C))); /*0x72de70*/
     dword_B0FAE8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CF4),(gamemd::ConvertClass *)((bool *)&byte_B0FC9D))); /*0x72de85*/
     dword_B0FA54 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CF8),(gamemd::ConvertClass *)((bool *)&byte_B0FC9E))); /*0x72de9f*/
-    LoadPaletteSimple((char *)(off_844BE4), &dword_B0FBC8, &dword_B0FBCC); /*0x72dea4*/
-    LoadPaletteSimple((char *)(off_844BE8), &dword_B0FBD0, &dword_B0FBD4); /*0x72deb9*/
-    LoadPaletteSimple((char *)(off_844BEC), &dword_B0FBD8, &dword_B0FBDC); /*0x72dece*/
+    LoadPaletteSimple((char *)(off_844BE4),(int *)(&dword_B0FBC8), &dword_B0FBCC); /*0x72dea4*/
+    LoadPaletteSimple((char *)(off_844BE8),(int *)(&dword_B0FBD0), &dword_B0FBD4); /*0x72deb9*/
+    LoadPaletteSimple((char *)(off_844BEC),(int *)(&dword_B0FBD8), &dword_B0FBDC); /*0x72dece*/
     result = (char)(SetupMouseClassResources(g_DisplayWidth, MEMORY[0x8A00A8])); /*0x72dedf*/
     byte_B0FBE0 = 1; /*0x72dee4*/
   }

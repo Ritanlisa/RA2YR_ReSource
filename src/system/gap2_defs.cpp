@@ -424,7 +424,7 @@ void* BufferIOFileClass::Constructor() {
   this->BufferCursor = -1; /*0x431b69*/
   this->TotalBytesRead = -1; /*0x431b6c*/
   this->TotalBytesWritten = 0; /*0x431b6f*/
-  this->FileID = 0; /*0x431b72*/
+  this->FileID = (gamemd::FileClass)(0); /*0x431b72*/
   this->MixFileIndex = (gamemd::FileClass)(0); /*0x431b75*/
   this->FileClass = (gamemd::FileClass)((FileClass)&vt_BufferIOFileClass); /*0x431b78*/
   return &this->FileClass; /*0x431b7e*/

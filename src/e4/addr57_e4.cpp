@@ -751,13 +751,13 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
   IDA_LOBYTE(a3) = 1; /*0x57b192*/
   if ( a4 == 1 ) /*0x57b19a*/
   {
-    GenerateTerrainMap(0, 0,(gamemd::MouseClass *)(v26->Cell_field_0x11B[0]), a5, &a3, a6); /*0x57b1b7*/
+    GenerateTerrainMap(0, 0,(gamemd::MouseClass *)(v26->Cell_field_0x11B[0]),(gamemd::MouseClass *)(a5), &a3, a6); /*0x57b1b7*/
   }
   else
   {
     if ( a4 != 2 ) /*0x57b1bc*/
       return 1; /*0x57b1bc*/
-    GenerateTerrainMap((gamemd::MouseClass *)(dword_ABAD28), dword_ABAD28 + 41, v26->Cell_field_0x11B[0], a5, &a3, a6); /*0x57b1e3*/
+    GenerateTerrainMap((gamemd::MouseClass *)(dword_ABAD28),(gamemd::MouseClass *)(dword_ABAD28 + 41), v26->Cell_field_0x11B[0], a5, &a3, a6); /*0x57b1e3*/
   }
   return (unsigned char)a3 != 0; /*0x57b1ee*/
 }
@@ -834,7 +834,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
     if ( v13 >= 0x40000 || (v14 = *(unsigned int **)(dword_87F924 + 4 * v13)) == 0 ) /*0x57b535*/
     {
       dword_ABDC74 = v33; /*0x57b537*/
-      v14 = &unk_ABDC50; /*0x57b53d*/
+      v14 = (unsigned int *)(&unk_ABDC50); /*0x57b53d*/
     }
     v15 = v32 + v30 * *(unsigned int *)(v6 + 740); /*0x57b555*/
     v35 = *(unsigned int *)(v34 + 4 * v15 + 16); /*0x57b55d*/
@@ -849,17 +849,17 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
     if ( v32 >= v26 ) /*0x57b68d*/
       goto LABEL_39; /*0x57b68d*/
   }
-  v17 = MapClass::GetTileDataField14(&v31); /*0x57b571*/
+  v17 = MapClass::GetTileDataField14((gamemd::MapResourceClass *)(&v31)); /*0x57b571*/
   if ( aP5 ) /*0x57b57c*/
   {
     v17 = 0; /*0x57b57e*/
   LABEL_18:
-    v18 = aP3; /*0x57b580*/
+    v18 = (int)(aP3); /*0x57b580*/
     goto LABEL_19; /*0x57b580*/
   }
   if ( v17 <= 0 ) /*0x57b5e0*/
     goto LABEL_18; /*0x57b5e0*/
-  v18 = aP3; /*0x57b5e2*/
+  v18 = (int)(aP3); /*0x57b5e2*/
   if ( v17 == aP3 ) /*0x57b5e8*/
     goto LABEL_20; /*0x57b5e8*/
   if ( aP3 != -1 ) /*0x57b5ed*/

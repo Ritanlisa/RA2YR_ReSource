@@ -294,8 +294,8 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
       aP1[2] = &vt_ParticleClass; /*0x62d7d1*/
       aP1[3] = &vt_ParticleClass; /*0x62d7d8*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 43); /*0x62d7eb*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 73); /*0x62d7fc*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(aP1 + 43)); /*0x62d7eb*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(aP1 + 73)); /*0x62d7fc*/
     return 0; /*0x62d801*/
   }
   return result; /*0x62d803*/
@@ -310,7 +310,7 @@ int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0), a1, aP2); /*0x62d820*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x62d820*/
   aP0->__pad_128[8] = 1; /*0x62d825*/
   return result; /*0x62d82c*/
 

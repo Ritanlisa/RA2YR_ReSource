@@ -75,11 +75,11 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
     v41 = v9[2]; /*0x4f47b6*/
     LODWORD(v42) = v9[3]; /*0x4f47bd*/
   }
-  result = GetClientRect(g_hWnd, &Rect); /*0x4f47cc*/
+  result = GetClientRect((HWND)(g_hWnd), &Rect); /*0x4f47cc*/
   if ( result ) /*0x4f47d4*/
   {
     *(double *)&v38[4] = *(double *)&Rect.left; /*0x4f47e2*/
-    result = ClientToScreen(g_hWnd, (LPPOINT)&v38[4]); /*0x4f47f6*/
+    result = ClientToScreen((HWND)(g_hWnd), (LPPOINT)&v38[4]); /*0x4f47f6*/
     if ( result ) /*0x4f47fe*/
     {
       v11 = (*(int ((int)(**))(int, int, int, int))(*(unsigned int *)a1 + 128))(a1, a4, a3, a2); /*0x4f4811*/

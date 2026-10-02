@@ -264,7 +264,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
               v38 = v36[1] - v33; /*0x5a56a1*/
               *(float *)&v80 = COERCE_FLOAT(abs32(v37)); /*0x5a56b1*/
               if ( v80 <= (int)((HIDWORD(v38) ^ v38) - HIDWORD(v38)) ) /*0x5a56b5*/
-                v80 = (HIDWORD(v38) ^ v38) - HIDWORD(v38); /*0x5a56b7*/
+                v80 = (unsigned int)((HIDWORD(v38) ^ v38) - HIDWORD(v38)); /*0x5a56b7*/
               v83 = (unsigned int)Random::State(&unk_ABE890); /*0x5a56c5*/
               v39 = SHIWORD(v73); /*0x5a56d5*/
               v40 = (int16_t)v73; /*0x5a56e0*/

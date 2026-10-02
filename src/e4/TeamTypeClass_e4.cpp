@@ -548,7 +548,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
           v34);
   v36 = *((unsigned int *)this + 53); /*0x6f140d*/
   *((unsigned char *)this + 245) = v35; /*0x6f141a*/
-  v37 = Waypoint::To_String(v36); /*0x6f1420*/
+  v37 = (char *)(Waypoint::To_String((gamemd::CCINIClass *)(v36))); /*0x6f1420*/
   if ( INIClass::GetString( /*0x6f1435*/
          (INIClass *)aP1,
          (uint8_t *)&this->TeamTypeClass_field_24,
@@ -556,8 +556,8 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
          v37,
          v53,
          64) > 0 )
-    *((unsigned int *)this + 53) = ((String *)(v53))->To_Waypoint(); /*0x6f1440*/
-  v38 = Waypoint::To_String(*((unsigned int *)this + 54)); /*0x6f1453*/
+    *((unsigned int *)this + 53) = (unsigned int)(((String *)(v53))->To_Waypoint()); /*0x6f1440*/
+  v38 = (char *)(Waypoint::To_String((gamemd::CCINIClass *)(*((unsigned int *)this + 54)))); /*0x6f1453*/
   if ( INIClass::GetString( /*0x6f1468*/
          (INIClass *)aP1,
          (uint8_t *)&this->TeamTypeClass_field_24,

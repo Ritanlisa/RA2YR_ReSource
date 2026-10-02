@@ -434,12 +434,12 @@ int Power::FinalizeDrain(int a2)
   unsigned int v6; // eax
   int v7; // edi
 
-  Power_field_0x4 = this->Power_field_0x4; /*0x4a1c10*/
+  Power_field_0x4 = (void *)(this->Power_field_0x4); /*0x4a1c10*/
   if ( !Power_field_0x4 ) /*0x4a1c15*/
     this->a2 = 0; /*0x4a1c17*/
   *((unsigned char *)&this->a2 + (unsigned int)Power_field_0x4) = a2; /*0x4a1c1f*/
   result = (int)this->Power_field_0x4 + 1; /*0x4a1c27*/
-  this->Power_field_0x4 = (void *)result; /*0x4a1c29*/
+  this->Power_field_0x4 = (unsigned int)((void *)result); /*0x4a1c29*/
   if ( result == 4 ) /*0x4a1c2f*/
   {
     LOBYTE(this->Power_field_0xC) = this->Power_field_0x4; /*0x4a1c34*/

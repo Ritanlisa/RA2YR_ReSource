@@ -127,7 +127,7 @@ void PsyDom::Fire()
           && !(*(uint8_t (**)(int))(*(unsigned int *)i + 84))(i) )
         {
           if ( *(unsigned int *)(i + 704) ) /*0x53b276*/
-            CaptureManagerClass::FreeUnit((IUnknown *)((CaptureManagerClass *)i), 0, (int)v11, v26, v27, v28); /*0x53b287*/
+            CaptureManagerClass::FreeUnit((IUnknown *)((CaptureManagerClass *)i), 0,(IUnknown *)((int)v11), v26, v27, v28); /*0x53b287*/
           (*(void (**)(int, House *, int))(*(unsigned int *)i + 980))(i, PsyDom_Owner, 1); /*0x53b298*/
           v15 = *(unsigned int *)i; /*0x53b29e*/
           *(unsigned char *)(i + 708) = 1; /*0x53b2a2*/

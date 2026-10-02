@@ -299,7 +299,7 @@ AbstractClass * * sub_610BF0()
       (***(void (****)(unsigned int, int))&g_DialogPool.__pad_208[512])(*(unsigned int *)&g_DialogPool.__pad_208[512], 1); /*0x610c82*/
   }
   *(unsigned int *)&g_DialogPool.__pad_208[512] = 0; /*0x610c84*/
-  *(unsigned int *)&g_DialogPool.__pad_208[772] = 0; /*0x610c8a*/
+  *(unsigned int *)&g_DialogPool.__pad_208[772] = (gamemd::AbstractClass **)(0); /*0x610c8a*/
   *(unsigned int *)&g_DialogPool.__pad_208[776] = 0; /*0x610c90*/
   return 1; /*0x610c01*/
 }
@@ -513,10 +513,10 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
           v11 = (unsigned int)(Rect.right - Rect.left);
           v9[2] = (unsigned int)(v10);
           ++v11; /*0x61d808*/
-          v9[3] = 0; /*0x61d809*/
+          v9[3] = (unsigned int)(0); /*0x61d809*/
           v9[1] = v11; /*0x61d810*/
           *v9 = &XSurface_Vtable; /*0x61d81e*/
-          v9[4] = 2; /*0x61d824*/
+          v9[4] = (unsigned int)(2); /*0x61d824*/
           Buffer::Init(v9 + 5, 0, 2 * v10 * v11); /*0x61d82b*/
           *v9 = &BSurface_Vtable; /*0x61d830*/
           v12 = v9; /*0x61d836*/

@@ -151,7 +151,7 @@ void SaveInfantryToINI(void * a1, void * a2, void * a3)
       BuildingClass::GetHealthRatio(v6); /*0x52004b*/
       v4 = v4 * 256.0; /*0x520050*/
       IDA_LOWORD(v14) = Math::RoundToInt(v4); /*0x520056*/
-      sprintf(Source, (const char *const)stru_825538.Type, &owner->plainName[4], v9, v14, v15); /*0x520068*/
+      sprintf(Source,(const char *const )((const char *const)stru_825538.Type), &owner->plainName[4], v9, v14, v15); /*0x520068*/
       INIClass::SetString(queuedMission, (uint8_t *)&g_INI_Key_Special.SidebarImage, Buffer, Source); /*0x520085*/
       result = i; /*0x52008a*/
     }
@@ -326,13 +326,13 @@ unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
       v4 = g_Str__Player___D_; /*0x510e5c*/
       break;
     case 4479: /*0x510e2d*/
-      v4 = aPlayerE; /*0x510e6b*/
+      v4 = (const unsigned int)(aPlayerE); /*0x510e6b*/
       break;
     case 4480: /*0x510e2d*/
-      v4 = aPlayerF; /*0x510e7a*/
+      v4 = (const unsigned int)(aPlayerF); /*0x510e7a*/
       break;
     case 4481: /*0x510e2d*/
-      v4 = aPlayerG; /*0x510e89*/
+      v4 = (const unsigned int)(aPlayerG); /*0x510e89*/
       break;
     default:
       v4 = unk_825000; /*0x510e96*/
@@ -701,7 +701,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   {
     return 0; /*0x517757*/
   }
-  if ( !RegSetValueExA(phkResult, g_INI_Key_Options, 0, 4u, &Data, 4u) ) /*0x51777b*/
+  if ( !RegSetValueExA(phkResult,(LPCSTR)(g_INI_Key_Options), 0, 4u, &Data, 4u) ) /*0x51777b*/
     v5 = 1; /*0x517785*/
   RegCloseKey(phkResult); /*0x51778f*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x51779f*/
@@ -710,7 +710,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
   {
     *(unsigned int *)v7 = 0; /*0x5177e9*/
-    if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
+    if ( !RegQueryValueExA(hKey,(LPCSTR)(g_INI_Key_Options), 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
     {
       v4 = (void *)((unsigned int)(*(void **)v7));
       LOBYTE(((unsigned int *)this)[0]) = 1; /*0x51781d*/

@@ -82,7 +82,7 @@ void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   v9 = lpWideCharStr; /*0x614a5c*/
   v19 = (gamemd::WCHAR *)(lpWideCharStr); /*0x614a61*/
   *lpWideCharStr = 0; /*0x614a6d*/
-  MultiByteToWideChar(0, 0, lParam, -1, v19, cchWideChar); /*0x614a72*/
+  MultiByteToWideChar(0, 0, lParam, -1,(LPWSTR)(v19), cchWideChar); /*0x614a72*/
   if ( a4 ) /*0x614a7a*/
     *a4 = _mbsnccnt((const uint8_t *)lParam, v8); /*0x614a8a*/
   if ( cchWideChar > 0 ) /*0x614a8e*/

@@ -271,7 +271,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
     }
     while ( v3 < v6 ); /*0x6a9494*/
   }
-  g_CameoRenderFlag = 1; /*0x6a9498*/
+  g_CameoRenderFlag = (gamemd::BombClass **)(1); /*0x6a9498*/
   return v5; /*0x6a9496*/
 
 }
@@ -357,7 +357,7 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
     }
     ResourceIDCSF = v19; /*0x6add19*/
   }
-  v12 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147u, 0, 0); /*0x6add2e*/
+  v12 = SendDlgItemMessageA((HWND)(hDlg), nIDDlgItem, 0x147u, 0, 0); /*0x6add2e*/
   if ( (unsigned int)SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v12, 0) <= 2 ) /*0x6add3e*/
   {
     v20 = 1; /*0x6addde*/
@@ -369,9 +369,9 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
     SetupLobbyCountryCombo(hDlg, nIDDlgItema, -2); /*0x6add6e*/
     SetupLobbyFactionSlots(hDlg, (int)hWnd, -2); /*0x6add7b*/
   }
-  DlgItem = GetDlgItem(hDlg, ResourceIDCSF); /*0x6add8a*/
-  v14 = GetDlgItem(hDlg, nIDDlgItema); /*0x6add94*/
-  hWnda = GetDlgItem(hDlg, (int)hWnd); /*0x6adda2*/
+  DlgItem = GetDlgItem((HWND)(hDlg), ResourceIDCSF); /*0x6add8a*/
+  v14 = GetDlgItem((HWND)(hDlg), nIDDlgItema); /*0x6add94*/
+  hWnda = GetDlgItem((HWND)(hDlg), (int)hWnd); /*0x6adda2*/
   v22 = GetDlgItem(hDlg, (int)ResourceID4CSF); /*0x6addb4*/
   EnableWindow(DlgItem, v20); /*0x6addc0*/
   EnableWindow(v14, v20); /*0x6addc4*/

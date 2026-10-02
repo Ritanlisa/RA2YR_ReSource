@@ -127,7 +127,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
           v26 = v20[51]; /*0x4b5f74*/
           v34[0] = *v25; /*0x4b5f7a*/
           v34[1] = v25[1]; /*0x4b5f86*/
-          v35 = v25[2]; /*0x4b5f8d*/
+          v35 = (unsigned int)(v25[2]); /*0x4b5f8d*/
           v27 = Random::State(&Randomizer_Global); /*0x4b5f91*/
           StartAudioControllerAt(*(unsigned int *)(v20[48] + 4 * (v27 % v26)),(unsigned int *)(&v36), 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v34, 2 * v20[41], &((unsigned int *)a1)[0]->TechnoClass, v20[43], 1, 0); /*0x4b5fc7*/

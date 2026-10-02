@@ -319,7 +319,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
   ((VectorClass *)((unsigned int *)this + 250))->BuildingTypeConstructor(0, 0); /*0x710d46*/
   *((unsigned int *)this + 255) = 10; /*0x710d4b*/
   *((unsigned int *)this + 254) = 0; /*0x710d51*/
-  *((unsigned int *)this + 250) = &vt_TypeList; /*0x710d57*/
+  *((unsigned int *)this + 250) = (unsigned int)(&vt_TypeList); /*0x710d57*/
   *((unsigned int *)this + 257) = 0; /*0x710d61*/
   *((unsigned int *)this + 258) = 0; /*0x710d67*/
   *((unsigned int *)this + 259) = 0; /*0x710d6e*/

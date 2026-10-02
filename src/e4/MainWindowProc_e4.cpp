@@ -72,7 +72,7 @@ AbstractClass * * sub_777420()
     }
   }
   MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x77757c*/
-  InvalidateRect(g_hWnd, 0, 0); /*0x77758c*/
+  InvalidateRect((HWND)(g_hWnd), 0, 0); /*0x77758c*/
   IDA_LOBYTE(v2) = 0; /*0x777592*/
   ((AsyncIO *)(v2))->Read(); /*0x777594*/
     result = ((Dialog *)this)->GetCurrent();

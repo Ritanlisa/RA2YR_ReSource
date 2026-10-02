@@ -505,7 +505,7 @@ Coord * * WOL_ProcessPingRequests()
             if ( ((char *)&stru_B76AC4) ) /*0x7a129a*/
             {
               if ( (int)((char *)&stru_B76AC4) <= 0 ) /*0x7a129c*/
-                v11 = (char *)((char *)&stru_B76AC4) - 1; /*0x7a129e*/
+                v11 = (gamemd::DeleteAndZero)((char *)((char *)&stru_B76AC4) - 1); /*0x7a129e*/
               DeleteAndZero((ObjectClass *)(((char *)&stru_B76AC4) + 4 * (unsigned int)v11)); /*0x7a12a9*/
               memcpy( /*0x7a12d2*/
                 (void *)(((char *)&stru_B76AC4) + 4 * (unsigned int)v11),
@@ -526,7 +526,7 @@ Coord * * WOL_ProcessPingRequests()
           break; /*0x7a119c*/
         ((String *)(&v13))->GetOrEmpty(); /*0x7a11a6*/
         Debug::Log(); /*0x7a11b1*/
-        v9 = *(unsigned int *)g_UIPointerTable; /*0x7a11c3*/
+        v9 = (char *)(*(unsigned int *)g_UIPointerTable); /*0x7a11c3*/
         v10 = ntoainet((struct in_addr)S_addr); /*0x7a11cc*/
         if ( !(*(int (**)(LPVOID, char *, int, int *))(v9 + 24))(g_UIPointerTable, v10, 1000, &v14) /*0x7a11e5*/
           && v14 >= 0 )

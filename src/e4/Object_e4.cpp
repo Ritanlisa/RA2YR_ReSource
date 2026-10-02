@@ -313,7 +313,7 @@ LABEL_20:
           v25[0] = (v8 << 8) + 128; /*0x56c41b*/
           v25[1] = (v10 << 8) + 128; /*0x56c429*/
           v25[2] = 0; /*0x56c431*/
-          v15 = Vector3::Subtract((Vector3 *)a2, v27, v25); /*0x56c439*/
+          v15 = Vector3::Subtract((int *)((Vector3 *)a2), v27, v25); /*0x56c439*/
           v16 = Coord::Length((Coord *)v15); /*0x56c440*/
           if ( v16 <= 181 ) /*0x56c44a*/
             goto LABEL_20; /*0x56c44a*/

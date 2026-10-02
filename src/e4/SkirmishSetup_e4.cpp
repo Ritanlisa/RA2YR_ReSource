@@ -566,7 +566,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
       if ( ++v6 >= dword_A8B8D8 ) /*0x5e8653*/
         goto LABEL_18; /*0x5e8653*/
     }
-    GameOption::SetDescriptionWStr((wchar_t *)(*(GameOption **)(dword_A8B8CC + 4 * v6)), &unk_ABE050); /*0x5e8701*/
+    GameOption::SetDescriptionWStr((wchar_t *)(*(GameOption **)(dword_A8B8CC + 4 * v6)),(gamemd::CampaignScore *)(&unk_ABE050)); /*0x5e8701*/
     v11 = (char **)(dword_A8B8CC + 4 * v6); /*0x5e870b*/
     v12 = GameConfig::ComputeCRC(); /*0x5e870e*/
     ((GameOption *)(*v11))->SetDigest(v12); /*0x5e8716*/

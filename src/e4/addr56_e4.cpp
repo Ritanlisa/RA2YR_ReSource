@@ -134,7 +134,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     {
             Debug::Log();
       SetRect(&rc, 0, 0, v2, IDA_SHIDWORD(v2)); /*0x560f30*/
-      WindowLongA = GetWindowLongA(g_hWnd, -20); /*0x560f4c*/
+      WindowLongA = GetWindowLongA((HWND)(g_hWnd), -20); /*0x560f4c*/
       v16 = GetMenu(g_hWnd) != 0; /*0x560f60*/
       v7 = GetWindowLongA(g_hWnd, -16); /*0x560f64*/
       AdjustWindowRectEx(&rc, v7, v16, WindowLongA); /*0x560f6c*/
@@ -618,7 +618,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
   }
   v16 = *(unsigned int *)&g_MissionQueueFrame.waypoints[2134]; /*0x56b3b5*/
   v11 = Compression::Read((int *)v17.__pad_0, (int)&v16, 4) + v3; /*0x56b3c6*/
-  v12 = (*(int (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))(&v17); /*0x56b3cf*/
+  v12 = (gamemd::BombClass **)((*(int (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))(&v17)); /*0x56b3cf*/
   LZOPipe::Destructor((LZOPipe *)&v17); /*0x56b3d1*/
   return v12 + v11; /*0x56b3d9*/
 
@@ -860,7 +860,7 @@ unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
   else
     v6 = v5 - v4; /*0x565630*/
   v7 = *a3 + v4 - v3; /*0x565639*/
-  LOWORD(v9) = v3 / 2 + (v6 >> 1); /*0x565645*/
+  LOWORD(v9) = (unsigned int)(v3 / 2 + (v6 >> 1)); /*0x565645*/
   HIWORD(v9) = v7; /*0x56564a*/
   *a2 = v9; /*0x565655*/
   return a2; /*0x565653*/

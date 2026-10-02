@@ -58,13 +58,13 @@ int InfantryClass::PerFrameUpdate() {
           if ( v8 >= v10 ) /*0x517d0f*/
             goto LABEL_11; /*0x517d0f*/
         }
-        Power::ChangedHouse((char)((Power *)(v2 + 336)), 1); /*0x517d1b*/
+        Power::ChangedHouse((char)((Power *)(v2 + 336)),(void *)(1)); /*0x517d1b*/
       }
     }
   LABEL_11:
     v12 = *(unsigned int *)(v2 + 540); /*0x517d20*/
     if ( v12 && v12->barracksInfiltrated && *(unsigned char *)(*(unsigned int *)(v2 + 1728) + 3214) ) /*0x517d3a*/
-      Power::ChangedHouse((char)((Power *)(v2 + 336)), 1); /*0x517d4c*/
+      Power::ChangedHouse((char)((Power *)(v2 + 336)),(void *)(1)); /*0x517d4c*/
     result = *(unsigned int **)(v2 + 1728); /*0x517d51*/
     *(unsigned int *)(v2 + 108) = result[40]; /*0x517d5d*/
     *(unsigned int *)(v2 + 112) = result[40]; /*0x517d66*/

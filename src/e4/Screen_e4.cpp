@@ -509,8 +509,8 @@ int Screen::TransitionLoop(int a2)
   do
   {
     Screen::CleanupTransitionObjects(this); /*0x690189*/
-    GetClientRect(g_hWnd, &Rect); /*0x69019a*/
-    ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x6901ab*/
+    GetClientRect((HWND)(g_hWnd), &Rect); /*0x69019a*/
+    ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x6901ab*/
     v3 = *(unsigned int *)this; /*0x6901b1*/
     v4 = *((unsigned int *)this + 1); /*0x6901c4*/
     v17[0] = *(unsigned int *)this + Rect.left; /*0x6901c7*/

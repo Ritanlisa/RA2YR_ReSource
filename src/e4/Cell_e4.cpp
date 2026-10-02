@@ -951,11 +951,11 @@ AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
       LOWORD(a3) = v14; /*0x56eb0d*/
       v16 = SHIWORD(a3) << 9; /*0x56eb1c*/
       v17 = (int16_t)v14 + v16 < 0; /*0x56eb1f*/
-      v18 = (int16_t)v14 + v16; /*0x56eb1f*/
+      v18 = (IUnknown *)((int16_t)v14 + v16); /*0x56eb1f*/
       aP1 = a3; /*0x56eb21*/
       if ( v17 || v18 >= 0x40000 || (v7 = *(unsigned int **)(dword_87F924 + 4 * v18)) == 0 ) /*0x56eb39*/
       {
-        dword_ABDC74 = a3; /*0x56eb3b*/
+        dword_ABDC74 = (unsigned int *)(a3); /*0x56eb3b*/
         v7 = &unk_ABDC50; /*0x56eb41*/
       }
       if ( v7[14] == v23 ) /*0x56eb4f*/
@@ -1005,7 +1005,7 @@ ObjectClass * * Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2
     v8 = &unk_ABDC50; /*0x56ebb7*/
     dword_ABDC74 = *(unsigned int *)aP0; /*0x56ebbc*/
   }
-  result = a5; /*0x56ebc1*/
+  result = (int)(a5); /*0x56ebc1*/
   v10 = aP1; /*0x56ebc5*/
   if ( (unsigned char)a5 ) /*0x56ebcb*/
   {

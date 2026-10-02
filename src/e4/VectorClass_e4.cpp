@@ -794,7 +794,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1(int a1, int a2
   do /*0x4f6b39*/
   {
     v4 = *(HouseClass ***)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v3); /*0x4f6afe*/
-    v5 = (unsigned int *)((int (*)(HouseClass **))(*v4)->occupiablesCount)(v4); /*0x4f6b05*/
+    v5 = (int (__cdecl *)(gamemd::HouseClass **))((unsigned int *)((int (*)(HouseClass **))(*v4)->occupiablesCount)(v4)); /*0x4f6b05*/
     if ( v4[135] == (HouseClass *)((char *)a1 - 36) && v5[239] == a2 ) /*0x4f6b1f*/
       v2 += v5[412] + v5[413]; /*0x4f6b2f*/
     ++v3; /*0x4f6b36*/

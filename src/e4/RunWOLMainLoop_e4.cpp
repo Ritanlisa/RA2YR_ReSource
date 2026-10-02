@@ -56,12 +56,12 @@ Coord * * sub_77E110()
     {
   LABEL_5:
       ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x77e16a*/
-      IDA_LOBYTE(v1) = Theme::QueueSong((IUnknown *)((int)&unk_A83D10), -2); /*0x77e176*/
+      IDA_LOBYTE(v1) = Theme::QueueSong((IUnknown *)((int)&unk_A83D10),(void *)(-2)); /*0x77e176*/
     }
   }
   else
   {
-    IDA_LOBYTE(v1) = Theme::QueueSong((IUnknown *)((int)&unk_A83D10), -3); /*0x77e1c2*/
+    IDA_LOBYTE(v1) = Theme::QueueSong((IUnknown *)((int)&unk_A83D10),(void *)(-3)); /*0x77e1c2*/
   }
   return (gamemd::Coord **)(v1);
 }
@@ -137,7 +137,7 @@ void sub_785EA0()
         {
           Game::ProcessIdle(v10); /*0x785fe1*/
         }
-        ResetEvent(*(&Handles + k)); /*0x786005*/
+        ResetEvent((HANDLE)(*(&Handles + k))); /*0x786005*/
         if ( !k ) /*0x786009*/
           break; /*0x786009*/
         if ( k == 9 ) /*0x78600e*/
@@ -155,7 +155,7 @@ void sub_785EA0()
         CloseDialog(v13, 0); /*0x786051*/
     }
     Current = (HANDLE *)((HWND)((HANDLE *)((HWND)((Dialog *)0)->GetCurrent())));
-    result = (HANDLE *)((int)GetDlgItem(Current, 1344));
+    result = (HANDLE *)((int)GetDlgItem((HWND)(Current), 1344));
     if ( result ) /*0x786069*/
       return (int, unsigned int a2)SetFocus((HWND)result); /*0x78606c*/
   }
@@ -223,11 +223,11 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
   else
   {
     ((SimpleDialogControl *)((SimpleDialogControl *)&v13))->Constructor(); /*0x798f04*/
-    v13 = (OwnerDrawControl)&off_7F7624; /*0x798f1d*/
+    v13 = (gamemd::OwnerDrawControl)((OwnerDrawControl)&off_7F7624); /*0x798f1d*/
     RunDialog(0x11Cu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))Setup2DlgProcMultiplayer, (LPARAM)&v13); /*0x798f21*/
     RunWOLMainLoop_Read_Read_72C830(v11); /*0x798f26*/
     v7 = dword_A8B244 != 0; /*0x798f3b*/
-    v13 = (OwnerDrawControl)&off_7F7624; /*0x798f3d*/
+    v13 = (gamemd::OwnerDrawControl)((OwnerDrawControl)&off_7F7624); /*0x798f3d*/
     OwnerDrawControl::InitVtable(&v13); /*0x798f41*/
   }
   return (gamemd::Coord **)(v7);
@@ -244,7 +244,7 @@ char sub_72C7E0()
   {
     if ( g_DisplayWidth == 800 ) /*0x72c7f3*/
       dword_B0F9E8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D84),(gamemd::ConvertClass *)((bool *)&byte_B0FCFC))); /*0x72c805*/
-    result = LoadPaletteSimple((char *)(off_844D88), &dword_B0FD00, &dword_B0FD04); /*0x72c81a*/
+    result = LoadPaletteSimple((char *)(off_844D88),(int *)(&dword_B0FD00), &dword_B0FD04); /*0x72c81a*/
     byte_B0FCFD = 1; /*0x72c81f*/
   }
   return result; /*0x72c826*/

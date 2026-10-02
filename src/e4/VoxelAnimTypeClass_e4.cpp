@@ -272,7 +272,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v56 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aSharebodydata, 0); /*0x74b25d*/
   v55 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aShareturretdat, 0); /*0x74b270*/
   v54 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aSharebarreldat, 0); /*0x74b27f*/
-  v23 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36), aVoxelindex, *(unsigned int *)(v4 + 664)); /*0x74b28c*/
+  v23 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36),(uint8_t *)(aVoxelindex), *(unsigned int *)(v4 + 664)); /*0x74b28c*/
   v24 = *(unsigned int *)(v4 + 732); /*0x74b291*/
   *(unsigned int *)(v4 + 664) = v23; /*0x74b297*/
   v47 = v24; /*0x74b2b4*/
@@ -350,10 +350,10 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     v30 = v51; /*0x74b3ce*/
   }
   *(unsigned int *)(v4 + 748) = (unsigned int)(v30); /*0x74b3d2*/
-  v31 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36), g_INI_Key_Damage, *(unsigned int *)(v4 + 752)); /*0x74b3e7*/
+  v31 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36),(uint8_t *)(g_INI_Key_Damage), *(unsigned int *)(v4 + 752)); /*0x74b3e7*/
   v32 = *(unsigned int *)(v4 + 756); /*0x74b3ec*/
   *(unsigned int *)(v4 + 752) = v31; /*0x74b3f2*/
-  v33 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36), aDamageradius, v32); /*0x74b401*/
+  v33 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36),(uint8_t *)(aDamageradius), v32); /*0x74b401*/
   v34 = *(unsigned int *)(v4 + 760); /*0x74b406*/
   *(unsigned int *)(v4 + 756) = v33; /*0x74b40c*/
   v52 = v34; /*0x74b429*/
@@ -474,7 +474,7 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
   ((Power *)((Power *)a2))->FlagProcess(v6); /*0x74b76b*/
   Power::TimerProcess(this->SpawnCount); /*0x74b779*/
   Power::TimerProcess(this->StartSound); /*0x74b787*/
-  Power::TimerProcess(this->StopSound); /*0x74b795*/
+  Power::TimerProcess((int)(this->StopSound)); /*0x74b795*/
   Power::TimerProcess(this->Damage); /*0x74b7a3*/
   Power::TimerProcess(this->DamageRadius); /*0x74b7b1*/
   LOBYTE(v7) = this->IsTiberium; /*0x74b7b6*/
@@ -492,11 +492,11 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
   VoxelAnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Block->ObjectTypeClass = &vt_VoxelAnimTypeClass; /*0x74ba36*/
-  ((unsigned int *)Block)[0] = &vt_VoxelAnimTypeClass; /*0x74ba3c*/
-  ((unsigned int *)Block)[0] = &vt_VoxelAnimTypeClass; /*0x74ba43*/
-  ((unsigned int *)Block)[0] = &vt_VoxelAnimTypeClass; /*0x74ba4a*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x74ba51*/
-  v6 = Block; /*0x74ba66*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ba3c*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ba43*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ba4a*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block,(gamemd::AbstractClass *)(1)); /*0x74ba51*/
+  v6 = (gamemd::VoxelAnimTypeClass *)(Block); /*0x74ba66*/
   v3 = (*(int (**)(int *, VoxelAnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x74ba6a*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v6);
@@ -511,7 +511,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
       ++v3; /*0x74ba8d*/
     }
   }
-  v6 = Block; /*0x74baaf*/
+  v6 = (gamemd::VoxelAnimTypeClass *)(Block); /*0x74baaf*/
   v4 = (*(int (**)(int *, VoxelAnimTypeClass **))(stru_A8EB00.ObjectTypeClass[10] + 16))( /*0x74bab3*/
          &stru_A8EB00.ObjectTypeClass[10],
          &v6);
@@ -562,16 +562,16 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1); /*0x74b81b*/
+  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)aP0), aP1); /*0x74b81b*/
   if ( result >= 0 ) /*0x74b822*/
   {
     if ( aP0 ) /*0x74b82a*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x74b833*/
       aP0->ObjectTypeClass = &vt_VoxelAnimTypeClass; /*0x74b838*/
-      ((unsigned int *)aP0)[0] = &vt_VoxelAnimTypeClass; /*0x74b83e*/
-      ((unsigned int *)aP0)[0] = &vt_VoxelAnimTypeClass; /*0x74b845*/
-      ((unsigned int *)aP0)[0] = &vt_VoxelAnimTypeClass; /*0x74b84c*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74b83e*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74b845*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74b84c*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->Warhead); /*0x74b85f*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->BounceAnim); /*0x74b870*/

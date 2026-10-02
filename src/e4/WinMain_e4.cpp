@@ -218,8 +218,8 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
       if ( !dword_ABF240 ) /*0x5bc2d1*/
         CreateDebugOutput(); /*0x5bc2d3*/
       byte_ABF23A = 1; /*0x5bc2e0*/
-      ShowWindow(dword_ABF240, 1); /*0x5bc2e7*/
-      return (uint8_t)SetFocus(dword_ABF234); /*0x5bc2f4*/
+      ShowWindow((HWND)(dword_ABF240), 1); /*0x5bc2e7*/
+      return (uint8_t)SetFocus((HWND)(dword_ABF234)); /*0x5bc2f4*/
     }
   }
   return result; /*0x5bc2b9*/
@@ -415,8 +415,8 @@ void* sub_7B84F0()
                     ((Debug *)this)->Log();
           while ( !dword_B78140 ) /*0x7b85c4*/
             Sleep(0); /*0x7b85ce*/
-          WaitForSingleObject(dword_B78154, 0x1388u); /*0x7b85e6*/
-          result = (HANDLE)CloseHandle(dword_B78154); /*0x7b85f2*/
+          WaitForSingleObject((HANDLE)(dword_B78154), 0x1388u); /*0x7b85e6*/
+          result = (HANDLE)CloseHandle((HANDLE)(dword_B78154)); /*0x7b85f2*/
           dword_B7816C = 0; /*0x7b85f8*/
         }
       }
@@ -439,10 +439,10 @@ LSTATUS WinMain::CleanupResource()
     UnmapViewOfFile((LPCVOID)g_DDrawSurfaceManager.description[6]); /*0x49f8c8*/
     g_DDrawSurfaceManager.description[6] = 0; /*0x49f8ce*/
   }
-  result = RegOpenKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0xF003Fu, &phkResult); /*0x49f8ee*/
+  result = RegOpenKeyExA(HKEY_CLASSES_ROOT,(LPCSTR)(SubKey), 0, 0xF003Fu, &phkResult); /*0x49f8ee*/
   if ( !result ) /*0x49f8f6*/
   {
-    RegDeleteValueA(phkResult, ValueName); /*0x49f902*/
+    RegDeleteValueA(phkResult,(LPCSTR)(ValueName)); /*0x49f902*/
     return RegCloseKey(phkResult); /*0x49f90d*/
   }
   return result; /*0x49f914*/

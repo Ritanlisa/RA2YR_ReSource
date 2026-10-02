@@ -365,7 +365,7 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const cha
       return 0; /*0x7a53fa*/
     }
     if ( a2 == -2147221386 ) /*0x7a5393*/
-      StringCSF = GetStringCSF((wchar_t *)aTxtSerialdup, 0, g_Str_File_wonline_cpp, 5763); /*0x7a53c0*/
+      StringCSF = GetStringCSF((wchar_t *)aTxtSerialdup, 0,(const char *)(g_Str_File_wonline_cpp), 5763); /*0x7a53c0*/
     else
       StringCSF = GetStringCSF((wchar_t *)aTxtSerialunkno, 0, g_Str_File_wonline_cpp, 5768); /*0x7a53ad*/
     goto LABEL_20; /*0x7a53ad*/
@@ -568,7 +568,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
       DeleteAndZero((ObjectClass *)&v19); /*0x7a7c61*/
       if ( v8 >= owningHouseIndex ) /*0x7a7c68*/
         break; /*0x7a7c68*/
-      v20 = *(unsigned int *)(v20 + 32); /*0x7a7c75*/
+      v20 = (gamemd::DeleteAndZero)(*(unsigned int *)(v20 + 32)); /*0x7a7c75*/
       v10 = v20; /*0x7a7c72*/
       DeleteAndZero((ObjectClass *)&((unsigned int *)(v19.m_3))[1]); /*0x7a7c79*/
       if ( !v10 ) /*0x7a7c80*/

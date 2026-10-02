@@ -403,7 +403,7 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x55a235*/
       {
-        m_8 = this->m_8; /*0x55a23c*/
+        m_8 = (int)(this->m_8); /*0x55a23c*/
         if ( new_size < m_8 ) /*0x55a241*/
           m_8 = new_size; /*0x55a243*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x55a249*/
@@ -414,8 +414,8 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
           *(unsigned int *)&this->m_1[3] = 0; /*0x55a26e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x55a277*/
-      this->m_8 = new_size; /*0x55a27f*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x55a277*/
+      this->m_8 = (unsigned int *)(new_size); /*0x55a27f*/
       IDA_BYTE1(this->m_C) = out_buffer == 0; /*0x55a282*/
       return 1; /*0x55a288*/
     }
@@ -448,7 +448,7 @@ int LoadOptions::FindItem(FileEntryClass* const* key) {
 
   if ( !IDA_LOBYTE(this->m_C) ) /*0x55a2d0*/
     return 0; /*0x55a2d8*/
-  m_8 = this->m_8; /*0x55a2de*/
+  m_8 = (int)(this->m_8); /*0x55a2de*/
   result = 0; /*0x55a2e1*/
   if ( m_8 <= 0 ) /*0x55a2e5*/
     return -1; /*0x55a2fc*/

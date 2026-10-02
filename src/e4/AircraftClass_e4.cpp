@@ -241,7 +241,7 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown 
 
   v3 = (int *)((int)(a3));
   v4 = (int *)((int)(aP1));
-  result = (int)(InfantryClass::GetCursorOverObject((FootClass *)this, (int)aP1, (char)a3));
+  result = (int)(InfantryClass::GetCursorOverObject((IUnknown *)((FootClass *)this), (int)aP1, (char)a3));
   v7 = result; /*0x417cd8*/
   if ( result == 8 ) /*0x417cdd*/
     return result; /*0x417cdd*/
@@ -306,7 +306,7 @@ LABEL_24:
           if ( v12 >= v13 ) /*0x417e47*/
             goto LABEL_36; /*0x417e47*/
         }
-        if ( !(uint8_t)((Array *)((Array *)v4))->ContainsValue((int)this) /*0x417e76*/
+        if ( !(uint8_t)((Array *)((Array *)v4))->ContainsValue((IUnknown *)((int)this)) /*0x417e76*/
           || v4[70]
           || (v7 = 3, (*((int (**)(AircraftClass *, int, int *))this->FootClass + 158))(this, 15, v4) != 1) )
         {

@@ -1251,7 +1251,7 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
           v28 = v32 + v14 - v9; /*0x47f362*/
           v30 = v14 + *((unsigned int *)dword_87E8A4 + 10) - v9; /*0x47f373*/
           SubFileMixFileClass = MixFileClass::GetSubFile((char **)dword_89E760, a3); /*0x47f38d*/
-          result = (unsigned short *)((StreamClass *)((int)dword_87E8A4))->ReadAndSeek(v14, v12 - dword_886FA4); /*0x47f397*/
+          result = (unsigned int *)((unsigned short *)((StreamClass *)((int)dword_87E8A4))->ReadAndSeek(v14, v12 - dword_886FA4)); /*0x47f397*/
           v16 = dword_87E8A4; /*0x47f3a5*/
           v41 = (uint8_t *)(v15 + v32 * v13 + SubFileMixFileClass); /*0x47f3b4*/
           if ( (unsigned int)&result[((unsigned int)v35 - v12) * *((unsigned int *)dword_87E8A4 + 10) + 2 + v39 + 0x7FFFFFFF * v14] < *((unsigned int *)dword_87E8A4 + 7) )
@@ -1316,7 +1316,7 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
                       v21 = (uint16_t)*result + v19 - 127; /*0x47f42f*/
                       v20 = v21 <= 0 ? 0 : v21;
                     }
-                    *result = v20; /*0x47f43d*/
+                    *result = (unsigned int *)(v20); /*0x47f43d*/
                     v16 = dword_87E8A4; /*0x47f440*/
                   }
                   if ( (unsigned int)++result >= v16[7] ) /*0x47f44e*/

@@ -265,7 +265,7 @@ LABEL_35:
   v24 = *((float *)v5 + 1); /*0x439dd2*/
   v25 = *(float *)v5; /*0x439de3*/
   qmemcpy(v87, v23, sizeof(v87)); /*0x439de5*/
-  *(float *)&v53 = -v24; /*0x439df2*/
+  *(float *)&v53 = (unsigned int)(-v24); /*0x439df2*/
   Triple::Set(v72, SLODWORD(v25), v53, *((unsigned int *)v5 + 2)); /*0x439df6*/
   v26 = Matrix3x3::TransformPoint(v86, (float *)v72, (float *)v62); /*0x439e0c*/
   ((unsigned int *)(v72))[0] = *(Triple *)v26; /*0x439e17*/
@@ -273,9 +273,9 @@ LABEL_35:
   *(float *)&v58 = *(double *)v85; /*0x439e2a*/
   v73 = *(float *)(v26 + 8); /*0x439e2d*/
   ((Coord *)(v58))->Scale(v63); /*0x439e31*/
-  v73 = -v73; /*0x439e46*/
+  v73 = (unsigned int)(-v73); /*0x439e46*/
   v27 = (Triple *)Matrix3x3::TransformPoint(v85, (float *)v72, v64); /*0x439e51*/
-  v28 = v74; /*0x439e58*/
+  v28 = (unsigned int)(v74); /*0x439e58*/
   ((unsigned int *)(v72))[0] = *v27; /*0x439e5c*/
   v29 = (char *)(v74 + 8); /*0x439e65*/
   ((unsigned int *)(v72))[1] = v27[1]; /*0x439e68*/
@@ -459,7 +459,7 @@ AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
       if ( !v3 ) /*0x4850c9*/
         goto LABEL_5; /*0x4850c9*/
     }
-    v5 = (int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)(v3 + 1312) + 124))(*(unsigned int *)(v3 + 1312), v8); /*0x48510c*/
+    v5 = (gamemd::AbstractClass **)((int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)(v3 + 1312) + 124))(*(unsigned int *)(v3 + 1312), v8)); /*0x48510c*/
     v6 = *v5; /*0x485112*/
     v7 = v5[1]; /*0x48511a*/
     return v5[2] + inited; /*0x485121*/
@@ -468,7 +468,7 @@ AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
   {
 LABEL_5:
     v6 = 0; /*0x4850cb*/
-    v7 = 0; /*0x4850de*/
+    v7 = (gamemd::AbstractClass **)(0); /*0x4850de*/
     if ( ((Object *)((Object *)this))->FindClosestObjectCell(&v6, 0, 0) ) /*0x4850e6*/
       inited += 85; /*0x4850ef*/
     return inited; /*0x4850f3*/

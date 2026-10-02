@@ -1863,7 +1863,7 @@ LABEL_23:
   DataGlobal_AC1CAC = 0;
   EnumChildWindows(hWnd, EnumFunc, 0);
   int v24 = v70;
-  int v74 = DataGlobal_AC1CAC;
+  int v74 = (int)(DataGlobal_AC1CAC);
   int v75 = v70 - 1;
   int v81 = v83;
   if ( v60 )

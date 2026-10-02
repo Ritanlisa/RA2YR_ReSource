@@ -593,7 +593,7 @@ void SelectAllOfType()
     {
       v23 = *(TechnoClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * j); /*0x732b01*/
       if ( (uint8_t)((TechnoClass *)(v23))->IsOwnedByHuman() ) /*0x732b05*/
-        ((DynamicVector *)(v6))->AddItem(&v23); /*0x732b15*/
+        ((DynamicVector *)(v6))->AddItem((unsigned int *)(&v23)); /*0x732b15*/
     }
   }
   LABEL_36: DynamicVector_field_0x10 = (void *)(v6->DynamicVector_field_0x10);
@@ -606,14 +606,14 @@ void SelectAllOfType()
   if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x732b55*/
   {
     if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x732b7c*/
-      StringCSF = GetStringCSF(g_Str_MSG_SelAcrossMap, 0, g_Str_File_UICmnds_cpp, 1011); /*0x732b98*/
+      StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_SelAcrossMap), 0, g_Str_File_UICmnds_cpp, 1011); /*0x732b98*/
     else
-      StringCSF = GetStringCSF(g_Str_MSG_SelAcrossScreen, 0, g_Str_File_UICmnds_cpp, 1013); /*0x732bb2*/
+      StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_SelAcrossScreen), 0, g_Str_File_UICmnds_cpp, 1013); /*0x732bb2*/
     wcscpy(Destination, StringCSF); /*0x732b9a*/
   }
   else
   {
-    v21 = (wchar_t *)(GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 1009));
+    v21 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_NothingSelected), 0, g_Str_File_UICmnds_cpp, 1009));
     wcscpy(Destination, v21); /*0x732b73*/
   }
   v20 = 3; /*0x732bc8*/

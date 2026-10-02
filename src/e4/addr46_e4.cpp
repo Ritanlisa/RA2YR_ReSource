@@ -315,7 +315,7 @@ BOOL sub_46DCC0(HWND hDlg, bool a2)
       else
         v5 = 1041; /*0x46dcef*/
       DlgItem = (int)(GetDlgItem(hDlg, v5)); /*0x46dd09*/
-      EnableWindow(DlgItem, a2); /*0x46dd17*/
+      EnableWindow((HWND)(DlgItem), a2); /*0x46dd17*/
       ResourceID2CSF = GetResourceID2CSF((int)((void *)i)); /*0x46dd1f*/
       v8 = GetDlgItem(hDlg, ResourceID2CSF); /*0x46dd26*/
       EnableWindow(v8, a2); /*0x46dd2a*/
@@ -350,13 +350,13 @@ void EnableGameModeControls(HWND hDlg, bool a2)
   else
     v4 = 1041; /*0x46dd81*/
   DlgItem = (int)(GetDlgItem(hDlg, v4)); /*0x46dd9f*/
-  EnableWindow(DlgItem, a2); /*0x46ddaf*/
+  EnableWindow((HWND)(DlgItem), a2); /*0x46ddaf*/
   ResourceID2 = GetResourceID2CSF((int)((void *)dword_A8DA8C)); /*0x46ddb7*/
   v7 = (int)(GetDlgItem(hDlg, ResourceID2)); /*0x46ddbe*/
-  EnableWindow(v7, a2); /*0x46ddc2*/
+  EnableWindow((HWND)(v7), a2); /*0x46ddc2*/
   ResourceID = GetResourceIDCSF((int)((void *)dword_A8DA8C)); /*0x46ddca*/
   v9 = (int)(GetDlgItem(hDlg, ResourceID)); /*0x46ddd1*/
-  EnableWindow(v9, a2); /*0x46ddd5*/
+  EnableWindow((HWND)(v9), a2); /*0x46ddd5*/
   ResourceID3 = GetResourceID3CSF((int)((void *)dword_A8DA8C)); /*0x46dddd*/
   v11 = GetDlgItem(hDlg, ResourceID3); /*0x46dde4*/
   EnableWindow(v11, a2); /*0x46dde8*/
@@ -690,7 +690,7 @@ LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP
   if ( CoCreateInstance((const IID &)(&rclsid), 0, 7u, &IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
     return 0; /*0x46b07d*/
   v10 = ppv; /*0x46b0a4*/
-  ((Particle *)((int *)ppv))->Init((int)(aP0),(int)(aP1), aP2, aP3, aP4, a6, aP7); /*0x46b0a6*/
+  ((Particle *)((int *)ppv))->Init((int)(aP0),(int)(aP1),(int)(aP2), aP3, aP4, a6, aP7); /*0x46b0a6*/
   return (int)v10; /*0x46b07c*/
 }
 } // namespace gamemd
@@ -1149,7 +1149,7 @@ LRESULT sub_46DA20(CampaignScore * aP0, int nIDDlgItem, wchar_t * Format)
   wchar_t Buffer[32]; // [esp+8h] [ebp-40h] BYREF
 
   swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, Format); /*0x46da38*/
-  DlgItem = GetDlgItem(aP0, nIDDlgItem); /*0x46da42*/
+  DlgItem = GetDlgItem((HWND)(aP0), nIDDlgItem); /*0x46da42*/
   return SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x46da5b*/
 }
 } // namespace gamemd

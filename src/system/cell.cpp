@@ -366,7 +366,7 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
         if ( (*(int (**)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47ea0e*/
         {
           v9 = *(int16_t *)(&this->vtable46); /*0x47ea10*/
-          v10 = *(int16_t *)(&this->vtable48); /*0x47ea14*/
+          v10 = (int)(*(int16_t *)(&this->vtable48)); /*0x47ea14*/
           v11 = (int)(*content); /*0x47ea18*/
           v17 = (int)(0); /*0x47ea1b*/
           v15 = (int)((v9 << 8) + 128); /*0x47ea2e*/
@@ -434,7 +434,7 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     if ( (*(int (**)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47eb1f*/
     {
       v6 = *(int16_t *)(this + 36); /*0x47eb21*/
-      v7 = *(int16_t *)(this + 38); /*0x47eb25*/
+      v7 = (int)(*(int16_t *)(this + 38)); /*0x47eb25*/
       v8 = (int)(*content); /*0x47eb29*/
       v11 = (int)(0); /*0x47eb2b*/
       v9 = (int)((v6 << 8) + 128); /*0x47eb3c*/

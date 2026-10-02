@@ -114,7 +114,7 @@ Coord * * BuildingLight::CalculateShading()
         v31 = 0; /*0x5ff9a7*/
         v50 = 127; /*0x5ff9ac*/
         v51[3] = 127; /*0x5ff9b0*/
-        LOBYTE(v5) = (unsigned char)(CalcSurfaceBlitRects((int)v39, v53,(gamemd::IUnknown *)(v52), v40, v51,(gamemd::IUnknown *)(v48), &v31, (int *)&v41, (int *)&v42)); /*0x5ff9b7*/
+        LOBYTE(v5) = (unsigned char)(CalcSurfaceBlitRects((int)v39, v53,(gamemd::IUnknown *)(v52), v40, v51,(gamemd::IUnknown *)(v48),(unsigned char *)(&v31), (int *)&v41, (int *)&v42)); /*0x5ff9b7*/
         if ( (unsigned char)v5 ) /*0x5ff9be*/
         {
           v10 = v41; /*0x5ff9c4*/

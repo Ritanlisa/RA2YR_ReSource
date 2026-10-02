@@ -1332,7 +1332,7 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
   v14 = a7; /*0x496d20*/
   if ( a5 <= 0 ) /*0x496d35*/
   {
-    v18 = aP3; /*0x496d68*/
+    v18 = (int)(aP3); /*0x496d68*/
   }
   else
   {
@@ -1345,7 +1345,7 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
     }
     while ( result > 0 ); /*0x496d4c*/
     v17 = -result; /*0x496d52*/
-    v18 = aP3 - v17; /*0x496d54*/
+    v18 = (int)(aP3 - v17); /*0x496d54*/
     v12 = arg0 + 2 * v17; /*0x496d56*/
     result = a7 + 2 * v17; /*0x496d59*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496d5f*/

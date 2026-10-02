@@ -377,7 +377,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
   if ( *(AbstractClass **)(v7 + 21448) == v6 ) /*0x4fbcdd*/
     *(unsigned int *)(v7 + 21448) = 0; /*0x4fbcdf*/
   if ( *(AbstractClass **)(v7 + 21452) == v6 ) /*0x4fbceb*/
-    *(unsigned int *)(v7 + 21452) = 0; /*0x4fbced*/
+    *(unsigned int *)(v7 + 21452) = (gamemd::VectorClass_flat **)(0); /*0x4fbced*/
   return result; /*0x4fbcf3*/
 }
 }

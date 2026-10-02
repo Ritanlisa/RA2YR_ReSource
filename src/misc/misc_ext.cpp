@@ -50,7 +50,7 @@ void AITriggerTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2, voi
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)((unsigned char *)(aP0) + 0x0)), a2, a3); /*0x41e5cf*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)((unsigned char *)(aP0) + 0x0)),(gamemd::ObjectTypeClass *)(a2), a3); /*0x41e5cf*/
   if ( result >= 0 ) /*0x41e5d6*/
     return 0; /*0x41e5d8*/
   return result; /*0x41e5da*/

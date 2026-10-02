@@ -53,7 +53,7 @@ int ThemeClass::ReadThemeEntry(uint8_t ***a2)
   char v8; // [esp-Ch] [ebp-14h]
 
   INIClass::ResetSection((INIClass *)a2); /*0x72048a*/
-  if ( !INIClass::BinarySearchSection((int)a2, (uint8_t *)this) ) /*0x720492*/
+  if ( !INIClass::BinarySearchSection((gamemd::INIClass *)((int)a2), (uint8_t *)this) ) /*0x720492*/
     return 0; /*0x720584*/
   v3 = (const char *)((char *)this + 256); /*0x7204a6*/
   INIClass::GetString((INIClass *)a2, (uint8_t *)this, aSound, &g_INI_DefaultBuffer, (char *)((char *)this + 256), 256); /*0x7204bf*/
@@ -107,12 +107,12 @@ void * ThemeClass::InitializeThemes(char * a2)
   char Destination[32]; // [esp+18h] [ebp-20h] BYREF
 
   v2 = (char *)((int)(a2));
-  KeyCount = (int)(INIClass::GetKeyCount(a2, (uint8_t *)g_INI_Key_Themes));
+  KeyCount = (int)(INIClass::GetKeyCount((gamemd::INIClass *)(a2), (uint8_t *)g_INI_Key_Themes));
   v5 = 0; /*0x7205ab*/
   v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v2, (uint8_t *)g_INI_Key_Themes, v5); /*0x7205d1*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v2), (uint8_t *)g_INI_Key_Themes, v5); /*0x7205d1*/
     if ( INIClass::GetString( /*0x7205de*/
            (uint8_t ***)v2,
            (uint8_t *)g_INI_Key_Themes,
@@ -128,7 +128,7 @@ void * ThemeClass::InitializeThemes(char * a2)
       v7 = 0; /*0x720606*/
       if ( *((int *)this + 9) <= 0 ) /*0x72060a*/
         goto LABEL_10; /*0x72060a*/
-      while ( _strcmpi(*(const void **)(*((unsigned int *)this + 6) + 4 * v7), Destination) ) /*0x720622*/
+      while ( _strcmpi((const char *)(*(const void **)(*((unsigned int *)this + 6) + 4 * v7)), Destination) ) /*0x720622*/
       {
         if ( ++v7 >= *((unsigned int *)this + 9) ) /*0x72062a*/
           goto LABEL_10; /*0x72062a*/
@@ -209,7 +209,7 @@ int ThemeClass::ClearQueues()
     if ( dword_B1D4B8 ) /*0x75238c*/
     {
       *(unsigned int *)(*((unsigned int *)dword_B1D4B8 + 3) + 80) = 2; /*0x752391*/
-      __3_YAXPAX_Z(dword_B1D4B8); /*0x75239b*/
+      __3_YAXPAX_Z((void *)(dword_B1D4B8)); /*0x75239b*/
       dword_B1D4B8 = 0; /*0x7523a3*/
     }
     for ( i = ((AudioQueue *)(&stru_B1D3F0))->GetNext(); i; i = ((AudioQueue *)(&stru_B1D3F0))->GetNext() ) /*0x7523bb*/

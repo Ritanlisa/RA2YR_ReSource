@@ -50,14 +50,14 @@ int sub_6D1130()
   dword_B0CCE0 = 0; /*0x6d115e*/
   dword_B0CCD0 = 5; /*0x6d1164*/
   v0 = dword_B0FA90; /*0x6d116c*/
-  Rect_Point::Set(stru_B0CCB0, *(unsigned int *)dword_B0FC60, *((unsigned int *)dword_B0FC60 + 1)); /*0x6d118a*/
+  Rect_Point::Set(stru_B0CCB0, *(unsigned int *)dword_B0FC60,(void *)(*((unsigned int *)dword_B0FC60 + 1))); /*0x6d118a*/
   ShapeButton::SetShape((int)stru_B0CCB0, (int)v0, 0, 0); /*0x6d1197*/
   dword_B0CC64 = 241; /*0x6d11a7*/
   dword_B0CC90 = dword_87F6CC; /*0x6d11b1*/
   byte_B0CC6D = 0; /*0x6d11b6*/
   dword_B0CC70 = 0; /*0x6d11bc*/
   dword_B0CC60 = 5; /*0x6d11c2*/
-  Rect_Point::Set(stru_B0CC40, *(unsigned int *)dword_B0FC64, *((unsigned int *)dword_B0FC64 + 1)); /*0x6d11e2*/
+  Rect_Point::Set(stru_B0CC40, *(unsigned int *)dword_B0FC64,(void *)(*((unsigned int *)dword_B0FC64 + 1))); /*0x6d11e2*/
 // 0x69de00
   return ShapeButton::SetShape((int)stru_B0CC40, (int)v0, 0, 0); /*0x6d11f4*/
 }

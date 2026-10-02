@@ -177,7 +177,7 @@ void sub_6269A0()
       v5 = v4; /*0x6269d0*/
       if ( v4 ) /*0x6269d7*/
       {
-        StringVector::Construct(v4, 0, 0); /*0x6269df*/
+        StringVector::Construct((int)(v4), 0, 0); /*0x6269df*/
         *(unsigned int *)v5->__pad_0 = (void*)&DynamicVectorClass_char___vftable; /*0x6269e4*/
         v5->StringVector_field_0x14 = 10; /*0x6269ea*/
         v5->StringVector_field_0x10 = 0; /*0x6269f1*/
@@ -266,7 +266,7 @@ void sub_626AB0(const char * a1, int a2)
       v5 = v4; /*0x626aed*/
       if ( v4 ) /*0x626af9*/
       {
-        StringVector::Construct(v4, 0, 0); /*0x626b01*/
+        StringVector::Construct((int)(v4), 0, 0); /*0x626b01*/
         *(void **)v5 = (void*)&DynamicVectorClass_char___vftable; /*0x626b06*/
         v5[5] = 10; /*0x626b0c*/
         v5[4] = 0; /*0x626b0f*/
@@ -452,7 +452,7 @@ char sub_63A0D0()
   if ( !byte_AC4C08 ) /*0x63a0d7*/
   {
     byte_AC4C08 = 1; /*0x63a0ea*/
-    StringCSF = GetStringCSF(aMsgPlanningmod_12, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a0f1*/
+    StringCSF = GetStringCSF((wchar_t *)(aMsgPlanningmod_12), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a0f1*/
     AddMessageListPlayerMessage(StringCSF, 480); /*0x63a0fd*/
     return PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a119*/
   }
@@ -471,7 +471,7 @@ char sub_72C9C0()
   {
     if ( g_DisplayWidth == 800 ) /*0x72c9d3*/
       dword_B0FA60 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D7C),(gamemd::ConvertClass *)((bool *)&byte_B0FCF0))); /*0x72c9e5*/
-    result = LoadPaletteSimple((char *)(off_844D80), &dword_B0FCF4, &dword_B0FCF8); /*0x72c9fa*/
+    result = LoadPaletteSimple((char *)(off_844D80),(int *)(&dword_B0FCF4), &dword_B0FCF8); /*0x72c9fa*/
     byte_B0FCF1 = 1; /*0x72c9ff*/
   }
   return result; /*0x72ca06*/
@@ -590,9 +590,9 @@ int System_Init_7A2F30(int a1, int a2, ObjectClass * aP2)
   if ( !a1 ) /*0x7a2f3a*/
     return -2147024809; /*0x7a2f3d*/
   *(unsigned int *)(a1 + 16) = a2; /*0x7a2f4d*/
-  *(unsigned int *)(a1 + 8) = aP2; /*0x7a2f5c*/
-  *(unsigned int *)(a1 + 12) = aP2; /*0x7a2f5f*/
-  *(unsigned int *)(a1 + 4) = aP2; /*0x7a2f62*/
+  *(unsigned int *)(a1 + 8) = (unsigned int)(aP2); /*0x7a2f5c*/
+  *(unsigned int *)(a1 + 12) = (unsigned int)(aP2); /*0x7a2f5f*/
+  *(unsigned int *)(a1 + 4) = (unsigned int)(aP2); /*0x7a2f62*/
   *(unsigned int *)(a1 + 20) = 0; /*0x7a2f65*/
   *(unsigned int *)(a1 + 24) = 0; /*0x7a2f68*/
   InitializeCriticalSection((LPCRITICAL_SECTION)(a1 + 28)); /*0x7a2f6b*/

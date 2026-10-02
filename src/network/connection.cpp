@@ -381,7 +381,7 @@ void IPXManagerClass::destroyConnection(IPXConnClass* conn)
   if ( result ) /*0x540d65*/
   {
     result->q028 = *(conn + 25); /*0x540d6a*/
-    *(unsigned int *)(*(conn + 18) + 44) = *(conn + 26); /*0x540d73*/
+    *(unsigned int *)(*(conn + 18) + 44) = (int)(*(conn + 26)); /*0x540d73*/
     result = (int)(*(conn + 18)); /*0x540d76*/
     result->q030 = *(conn + 27); /*0x540d7c*/
   }

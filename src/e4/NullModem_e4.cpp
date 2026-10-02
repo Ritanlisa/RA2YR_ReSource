@@ -47,7 +47,7 @@ char NullModem_TestConnection(void * a1)
   v19 = (wchar_t *)((char)((wchar_t *)(1)));
   g_NetworkTestFlag = (int)((wchar_t *)(0));
   StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0,(const char *)(g_Str_File_NullDlg_CPP), 6489));
-  v3 = (HWND)(GetStringCSF(aTxtNullConnerr, 0, g_Str_File_NullDlg_CPP, 6489));
+  v3 = (wchar_t *)((HWND)(GetStringCSF((wchar_t *)(aTxtNullConnerr), 0, g_Str_File_NullDlg_CPP, 6489)));
   MessageBox = (HWND)(CreateMessageBox((LPARAM)v3, (LPARAM)StringCSF, (LONG)&g_NetworkTestFlag));
   hWnd = (HWND)(MessageBox);
   if ( !MessageBox ) /*0x5f0407*/
@@ -92,7 +92,7 @@ char NullModem_TestConnection(void * a1)
         if ( (uint8_t)v26 == dword_A8B394 ) /*0x5f054d*/
         {
           v17 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)(g_Str_File_NullDlg_CPP), 6530));
-          v15 = (int *)GetStringCSF(aTxtSystemNotRe, 0, g_Str_File_NullDlg_CPP, 6530); /*0x5f0655*/
+          v15 = (int *)GetStringCSF((wchar_t *)(aTxtSystemNotRe), 0, g_Str_File_NullDlg_CPP, 6530); /*0x5f0655*/
           Dialog::ShowMessageBox(v15, v17, 0, 0, 0, a1); /*0x5f065f*/
           break; /*0x5f065f*/
         }

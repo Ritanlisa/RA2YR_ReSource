@@ -134,7 +134,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
 
   v4 = (unsigned int *)((unsigned char *)this + 8); /*0x764b9e*/
   v35 = 0; /*0x764ba1*/
-  *((unsigned int *)this + 1) = 0; /*0x764baa*/
+  *((unsigned int *)this + 1) = (unsigned int)(0); /*0x764baa*/
   *(unsigned int *)this = (unsigned int)(&vt_ReferenceCounted); /*0x764bad*/
   ((ComPtr *)((unsigned int *)this + 2))->Constructor(); /*0x764bb3*/
   *v4 = &vt_rc_ptr; /*0x764bbf*/
@@ -211,7 +211,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
           }
           v25[0] = &vt_rc_ptr; /*0x764d70*/
           ((ComPtr *)(v25))->Release(); /*0x764d78*/
-          v8 = v24; /*0x764d7d*/
+          v8 = (unsigned int)(v24); /*0x764d7d*/
         }
         v15 = v8--; /*0x764d81*/
         v24 = v8; /*0x764d86*/
@@ -264,7 +264,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     {
       *((unsigned int *)this + 13) = 0; /*0x764ef5*/
       *((unsigned int *)this + 14) = 0; /*0x764ef8*/
-      *((unsigned int *)this + 15) = 0; /*0x764efb*/
+      *((unsigned int *)this + 15) = (gamemd::HashTable_flat **)(0); /*0x764efb*/
       *((unsigned int *)this + 16) = 0; /*0x764efe*/
     }
     HashTable::DestroyHashTableINIClass(v29); /*0x764f05*/

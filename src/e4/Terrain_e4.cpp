@@ -848,7 +848,7 @@ LABEL_48:
   v83 = v1->__pad_18; /*0x56c9a6*/
   do /*0x56cb01*/
   {
-    v78 = 2; /*0x56c9ad*/
+    v78 = (int)(2); /*0x56c9ad*/
     v62 = __2_YAPAXI_Z(2 * *(unsigned int *)&v1->__pad_44[8]); /*0x56c9b8*/
     v82 = (int16_t *)v62; /*0x56c9c4*/
     *v83 = v62; /*0x56c9c8*/
@@ -1409,7 +1409,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
     {
       v6 = v2[1] + v5; /*0x570075*/
       LOWORD(aP1) = *v2 + v4; /*0x570079*/
-      HIWORD(aP1) = v6; /*0x57007e*/
+      HIWORD(aP1) = (unsigned int)(v6); /*0x57007e*/
       *(unsigned int *)v76 = aP1; /*0x570091*/
       v7 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v76) + 17); /*0x57009a*/
       if ( v7 >= 74 && v7 <= 101 ) /*0x5700a5*/

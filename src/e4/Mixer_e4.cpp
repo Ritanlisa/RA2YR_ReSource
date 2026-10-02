@@ -73,7 +73,7 @@ int Mixer::RequestAllBuffers()
     result = ((AudioQueue *)(unk_87E810))->GetNext(); /*0x4083df*/
     for ( i = (int *)result; result; i = (int *)result ) /*0x4083e8*/
     {
-      RequestBufferMixer((unsigned int *)(i[5] + 16), 0x4000); /*0x4083f5*/
+      RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)(i[5] + 16)), 0x4000); /*0x4083f5*/
       result = ((AudioQueue *)(i))->GetNextAlt(); /*0x4083fc*/
     }
   }

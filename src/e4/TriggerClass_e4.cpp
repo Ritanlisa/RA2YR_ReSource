@@ -95,7 +95,7 @@ char TriggerClass::FindByEventType(char a1)
   (*(void (**)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
   Team_Find((int *)&v8, g_DSurface_Primary, 8, 4); /*0x610aca*/
   v7 = wcslen((const wchar_t *)(word_AC1CCC)); /*0x610ae0*/
-  DrawTextRendererTextAligned(dword_AC18A4, 0,(gamemd::ObjectClass *)((int *)&v8),(unsigned short *)(word_AC1CCC), v7, 1, 1, g_DSurface_Primary, 0); /*0x610afb*/
+  DrawTextRendererTextAligned(dword_AC18A4, 0,(gamemd::ObjectClass *)((int *)&v8),(unsigned short *)(word_AC1CCC), v7, 1, 1,(int *)(g_DSurface_Primary), 0); /*0x610afb*/
   HIDWORD(v8) -= 2; /*0x610b1e*/
   LODWORD(v8) = v8 + 1; /*0x610b2a*/
   ++DWORD1(v8); /*0x610b2e*/
@@ -215,7 +215,7 @@ int TriggerClass::SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1), aP2); /*0x7268df*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); /*0x7268df*/
   if ( result >= 0 ) /*0x7268e6*/
     return 0; /*0x7268e8*/
   return result; /*0x7268ea*/

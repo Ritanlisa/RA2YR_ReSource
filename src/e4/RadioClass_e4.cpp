@@ -264,7 +264,7 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
   int v4; // edx
   int v5; // ebx
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a0),(gamemd::ObjectTypeClass *)(aP1), aP2); /*0x65ac52*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a0),(gamemd::ObjectTypeClass *)(aP1),(gamemd::ObjectTypeClass *)(aP2)); /*0x65ac52*/
   if ( result >= 0 ) /*0x65ac59*/
   {
     v4 = (int)(*aP1);

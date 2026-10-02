@@ -414,10 +414,10 @@ void WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a
   int v11; // edx
   int k; // ebx
 
-  result = AbstractClass::SaveLoad_Prefix((int *)a1, a2, (int)a3); /*0x772ec1*/
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a1), a2, (int)a3); /*0x772ec1*/
   if ( result >= 0 ) /*0x772ec8*/
   {
-    v7 = *a2; /*0x772ed4*/
+    v7 = (int)(*a2); /*0x772ed4*/
     a3 = (int *)a1->Anim[4]; /*0x772ee1*/
     (*(void (**)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &a3, 4, 0, v5); /*0x772ee5*/
     for ( i = 0; i < a4; ++i ) /*0x772ef0*/

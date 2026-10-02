@@ -138,7 +138,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
     {
       v20 = v18; /*0x5404a0*/
       v21 = v19; /*0x5404b6*/
-      ((Network *)((Network *)&v20))->CopyAddress(&v15, (int)v17); /*0x5404ba*/
+      ((Network *)((Network *)&v20))->CopyAddress((unsigned int *)(&v15), (int)v17); /*0x5404ba*/
       NetworkID::Assign(&v20, &v15, (int)v17, aP3); /*0x5404d2*/
       v9 = -1; /*0x5404dc*/
       v10 = 0; /*0x5404df*/
@@ -291,7 +291,7 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
     v8 = TileIndex; /*0x540364*/
     if ( (*(unsigned char *)TileIndex & 2) == 0 /*0x540392*/
       && *(unsigned int *)(TileIndex + 24)
-      && (uint8_t)NetworkID::Compare(*(bool **)(TileIndex + 28), a2)
+      && (uint8_t)NetworkID::Compare((int)(*(bool **)(TileIndex + 28)), a2)
       && *(unsigned short *)(v8 + 32) == a3 )
     {
       Waypoint::InitInvalid(&v13); /*0x540398*/
@@ -313,7 +313,7 @@ namespace gamemd {
 int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
 {
 
-  return ConnectionClass::sendAck((gamemd::AnimClass *)((int)this),(gamemd::AnimClass *)(a1), aP2, aP3, aP4); /*0x540629*/
+  return ConnectionClass::sendAck((gamemd::AnimClass *)((int)this),(gamemd::AnimClass *)(a1), aP2,(gamemd::AnimClass *)(aP3), aP4); /*0x540629*/
 
 }
 } // namespace gamemd

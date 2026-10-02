@@ -1227,7 +1227,7 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned int *)this + 14) = 0; /*0x5573a7*/
   *((unsigned int *)this + 15) = 0; /*0x5573aa*/
   *((unsigned char *)this + 64) = 1; /*0x5573ad*/
-  *((unsigned char *)this + 65) = 0; /*0x5573b1*/
+  *((unsigned char *)this + 65) = (unsigned int)(0); /*0x5573b1*/
   *((unsigned int *)this + 13) = &vt_VectorClass; /*0x5573b4*/
   sub_4B5830((unsigned int *)((char *)this + 52), (unsigned int *)(a2 + 52)); /*0x5573ba*/
   *((unsigned int *)this + 17) = *(unsigned int *)(a2 + 68); /*0x5573c2*/

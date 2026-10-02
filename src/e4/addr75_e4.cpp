@@ -105,7 +105,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
   {
     v8 = Math::RoundToInt(a3 * 16384.0); /*0x75098e*/
     if ( v8 >= 0x4000 ) /*0x750996*/
-      v8 = 0x4000; /*0x750998*/
+      v8 = (int)(0x4000); /*0x750998*/
     if ( v6 || (v6 = AudioPool::ProcessQueue(v5)) != 0 ) /*0x7509ac*/
     {
       AudioMixer::PlayBuffer(v6, v8); /*0x7509b2*/
@@ -962,14 +962,14 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
     }
   }
   aP0[2] = Math::RoundToInt(*(float *)&dword_B2D948 - *(float *)&dword_B2D5E0); /*0x754447*/
-  v20 = Math::RoundToInt(*(float *)&dword_B2D94C - *(float *)&dword_B2D5E4); /*0x754456*/
+  v20 = (int)(Math::RoundToInt(*(float *)&dword_B2D94C - *(float *)&dword_B2D5E4)); /*0x754456*/
   v21 = aP0[2]; /*0x75445b*/
   aP0[3] = v20; /*0x75445e*/
-  v22 = v33; /*0x754467*/
+  v22 = (int)(v33); /*0x754467*/
   v23 = aP0[3]; /*0x754476*/
   *aP0 = 128 - v21 / 2; /*0x754478*/
   v24 = 128 - v23 / 2; /*0x754487*/
-  aP0[3] = v23 + 8; /*0x754489*/
+  aP0[3] = (int)(v23 + 8); /*0x754489*/
   v25 = *aP0; /*0x75448c*/
   aP0[1] = v24; /*0x75448e*/
   aP0[2] = v21 + 8; /*0x75449c*/

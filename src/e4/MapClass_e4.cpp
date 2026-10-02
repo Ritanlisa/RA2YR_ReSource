@@ -639,7 +639,7 @@ void* MapClass::Destruct(void *a1, void *a2)
     --v12; /*0x56535d*/
   }
   while ( v12 ); /*0x565361*/
-  v5 = (void *)*((unsigned int *)this + 1112); /*0x565363*/
+  v5 = (unsigned int)((void *)*((unsigned int *)this + 1112)); /*0x565363*/
   *((unsigned int *)this + 1111) = &vt_VectorClass; /*0x565370*/
   if ( v5 && *((unsigned char *)this + 4457) ) /*0x565378*/
   {
@@ -648,7 +648,7 @@ void* MapClass::Destruct(void *a1, void *a2)
   }
   *((unsigned char *)this + 4457) = 0; /*0x56538f*/
   *((unsigned int *)this + 1113) = 0; /*0x565395*/
-  v6 = (void *)*((unsigned int *)this + 79); /*0x56539b*/
+  v6 = (unsigned int)((void *)*((unsigned int *)this + 79)); /*0x56539b*/
   *((unsigned int *)this + 78) = &vt_VectorClass; /*0x5653a1*/
   if ( v6 && *((unsigned char *)this + 325) ) /*0x5653af*/
   {
@@ -656,13 +656,13 @@ void* MapClass::Destruct(void *a1, void *a2)
     *((unsigned int *)this + 79) = 0; /*0x5653c0*/
   }
   *((unsigned char *)this + 325) = 0; /*0x5653c6*/
-  *((unsigned int *)this + 80) = 0; /*0x5653cc*/
+  *((unsigned int *)this + 80) = (char *)(0); /*0x5653cc*/
   v7 = (void *)*((unsigned int *)this + 54); /*0x5653d2*/
   *((unsigned int *)this + 53) = &vt_VectorClass; /*0x5653d8*/
   if ( v7 && *((unsigned char *)this + 225) ) /*0x5653e2*/
   {
     __3_YAXPAX_Z(v7); /*0x5653eb*/
-    *((unsigned int *)this + 54) = 0; /*0x5653f3*/
+    *((unsigned int *)this + 54) = (unsigned int)(0); /*0x5653f3*/
   }
   *((unsigned char *)this + 225) = 0; /*0x5653f9*/
   *((unsigned int *)this + 55) = 0; /*0x5653ff*/
@@ -732,7 +732,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
   v1 = this; /*0x565806*/
   VectorCursor_uint_DynamicVectorClass_uint____13::Add(v25); /*0x56580d*/
   *(unsigned int *)&v1->__pad_144[8] = 512; /*0x565819*/
-  *(unsigned int *)&v1->__pad_144[12] = 512; /*0x56581f*/
+  *(unsigned int *)&v1->__pad_144[12] = (gamemd::HashVector_UInt *)(512); /*0x56581f*/
   MapClass_field_0x0 = v1->MapClass_field_0x0; /*0x565825*/
   *(unsigned int *)&v1->__pad_144[16] = 0x40000; /*0x565828*/
   (*(void (**)(MapClass *))(MapClass_field_0x0 + 88))(v1); /*0x565832*/
@@ -782,7 +782,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
         v12 += 6; /*0x5658d6*/
       }
       while ( v11 < (int)v4[2] ); /*0x5658db*/
-      v1->MapClass_field_0x14 = (int)v4; /*0x5658dd*/
+      v1->MapClass_field_0x14 = (char *)((int)v4); /*0x5658dd*/
       goto LABEL_14; /*0x5658e0*/
     }
   }
@@ -793,7 +793,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
   v1->MapClass_field_0x14 = (int)v4; /*0x5658e9*/
 LABEL_14:
   v13 = &v1->__pad_5C[48]; /*0x5658f3*/
-  v27 = &v1->__pad_5C[36]; /*0x5658ff*/
+  v27 = (gamemd::SubzoneHashVector *)(&v1->__pad_5C[36]); /*0x5658ff*/
   v28 = &v1->__pad_5C[48]; /*0x565903*/
   v29 = 3; /*0x565907*/
   do /*0x5659d3*/

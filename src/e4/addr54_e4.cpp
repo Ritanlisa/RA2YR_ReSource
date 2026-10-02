@@ -484,7 +484,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   }
   TheatreClass::InitView();
   char v157[20]; // [esp+328h] [ebp-6E8h] BYREF
-  sprintf(v157, stru_8295E8, &aTemperat[v9]);
+  sprintf(v157,(const char *const )(stru_8295E8), &aTemperat[v9]);
   ((CCFileClass *)(&aP1))->Construct(v157);
   ((CCINIClass *)(v77))->Load(&aP1, 0, 0);
   v20 = 0;
@@ -722,28 +722,28 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
                            (uint8_t *)&g_INI_Key_General,
                            &unk_829364,
                            (INIClass *)0xFFFFFFFF);
-  g_CellTileLookup = (CCINIClass *)-1;
+  g_CellTileLookup = (int)((CCINIClass *)-1);
   *(unsigned int *)&g_NetworkPlayerBuffer[80412] = -1;
   v107 = v22;
   *(unsigned int *)&g_NetworkPlayerBuffer[80480] = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[80500] = -1;
   dword_ABC2B8 = -1;
-  dword_ABB104 = (CCINIClass *)-1;
+  dword_ABB104 = (unsigned int)((CCINIClass *)-1);
   *(unsigned int *)&g_NetworkPlayerBuffer[79836] = -1;
-  dword_ABC2B0 = (CCINIClass *)-1;
+  dword_ABC2B0 = (unsigned int)((CCINIClass *)-1);
   *(unsigned int *)&g_NetworkPlayerBuffer[80488] = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[80632] = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[79848] = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[78092] = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[80492] = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[78088] = -1;
-  dword_ABC2CC = (CCINIClass *)-1;
+  dword_ABC2CC = (unsigned int)((CCINIClass *)-1);
   *(unsigned int *)&g_NetworkPlayerBuffer[79852] = -1;
   g_TerrainBridgeIndex = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[80356] = -1;
   dword_ABAD28 = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[78076] = -1;
-  g_TerrainTypeTable2 = (CCINIClass *)-1;
+  g_TerrainTypeTable2 = (int)((CCINIClass *)-1);
   *(unsigned int *)&g_NetworkPlayerBuffer[80476] = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[80360] = -1;
   *(unsigned int *)&g_NetworkPlayerBuffer[80408] = -1;

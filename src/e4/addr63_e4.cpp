@@ -696,7 +696,7 @@ void NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4
         {
           SendMessageA(a4, 0xF1u, 1u, 0); /*0x631926*/
           SendDlgItemMessageA(hWnd, 1635, 0xF1u, 0, 0); /*0x63193b*/
-          UpdateWindow(hWnd); /*0x631948*/
+          UpdateWindow((HWND)(hWnd)); /*0x631948*/
           ShowWindow(hWnd, 0); /*0x631953*/
           UpdateWindow(g_hWnd); /*0x63195c*/
           ((Network *)((LONG)dwNewLong))->sendGameEvent(v6 + 12); /*0x63196d*/

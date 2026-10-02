@@ -65,7 +65,7 @@ void __sbh_heap_check()
   int v35; // [esp+140h] [ebp-8h]
   unsigned int *v36; // [esp+144h] [ebp-4h]
 
-  if ( IsBadWritePtr(::lp, 20 * dword_B78B94) ) /*0x7d03ad*/
+  if ( IsBadWritePtr((LPVOID)(::lp), 20 * dword_B78B94) ) /*0x7d03ad*/
     return -1; /*0x7d03ba*/
   v2 = (unsigned int *)(::lp); /*0x7d03bf*/
   v23 = (unsigned int *)(::lp); /*0x7d03cd*/
@@ -762,7 +762,7 @@ void * realloc(CCINIClass * aP0, size_t Size)
       if ( !v3 ) /*0x7d1038*/
         v3 = 1; /*0x7d103c*/
       v3 = (v3 + 15) & 0xFFFFFFF0; /*0x7d1040*/
-      v4 = HeapReAlloc(hHeap, 0, aP0, v3); /*0x7d1053*/
+      v4 = HeapReAlloc((HANDLE)(hHeap), 0, aP0, v3); /*0x7d1053*/
   LABEL_26:
       if ( v4 ) /*0x7d1057*/
         return v4; /*0x7d1057*/
@@ -795,7 +795,7 @@ void * realloc(CCINIClass * aP0, size_t Size)
     if ( !v3 ) /*0x7d0fe6*/
       v3 = 1; /*0x7d0fea*/
     v3 = (v3 + 15) & 0xFFFFFFF0; /*0x7d0fee*/
-    v4 = HeapAlloc(hHeap, 0, v3); /*0x7d1000*/
+    v4 = HeapAlloc((HANDLE)(hHeap), 0, v3); /*0x7d1000*/
     if ( v4 ) /*0x7d1004*/
     {
       v7 = *((unsigned int *)aP0 - 1) - 1; /*0x7d1009*/
@@ -838,7 +838,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
     }
     else
     {
-      if ( !LCMapStringA(0, 0x100u, byte_7F98E4, 1, 0, 0) ) /*0x7d1128*/
+      if ( !LCMapStringA(0, 0x100u,(LPCSTR)(byte_7F98E4), 1, 0, 0) ) /*0x7d1128*/
         return 0; /*0x7d1263*/
       dword_B782CC = 2; /*0x7d112e*/
     }
@@ -1340,7 +1340,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
                     break; /*0x7d1d40*/
                 }
                 ++v76; /*0x7d1d46*/
-                v39 = fgetc_0(Stream); /*0x7d1d4a*/
+                v39 = fgetc_0((FILE *)(Stream)); /*0x7d1d4a*/
                 C = v39; /*0x7d1d53*/
                 if ( v39 == -1 || ((1 << (v39 & 7)) & (v66 ^ (char)v54[v39 >> 3])) == 0 ) /*0x7d1d74*/
                 {
@@ -1360,7 +1360,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
                     if ( *((char *)off_87C590 + 2 * (uint8_t)v39 + 1) < 0 ) /*0x7d1d93*/
                     {
                       ++v76; /*0x7d1d95*/
-                      SrcCh[1] = fgetc_0(Stream); /*0x7d1d9f*/
+                      SrcCh[1] = fgetc_0((FILE *)(Stream)); /*0x7d1d9f*/
                     }
                     mbtowc(&DstCh, SrcCh, SrcSizeInBytes); /*0x7d1db0*/
                     *v37++ = DstCh; /*0x7d1dbc*/

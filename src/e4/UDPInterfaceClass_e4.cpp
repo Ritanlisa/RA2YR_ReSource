@@ -64,7 +64,7 @@ void UDPInterfaceClass::CheckStatus(short a2)
 
   if ( a2 ) /*0x7b331c*/
   {
-    v3 = *((unsigned int *)this + 64716); /*0x7b3322*/
+    v3 = (gamemd::UDPInterfaceClass *)(*((unsigned int *)this + 64716)); /*0x7b3322*/
     v4 = 0; /*0x7b3328*/
     if ( v3 > 0 ) /*0x7b332c*/
     {
@@ -219,7 +219,7 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
     sa = v6; /*0x7b3ac5*/
     if ( a4 != v6 ) /*0x7b3ac9*/
     {
-      v7 = *((unsigned int *)this + 64716); /*0x7b3acb*/
+      v7 = (gamemd::UDPInterfaceClass *)(*((unsigned int *)this + 64716)); /*0x7b3acb*/
       v8 = 0; /*0x7b3ad1*/
       if ( v7 > 0 ) /*0x7b3ad5*/
       {
@@ -322,7 +322,7 @@ LABEL_60:
       else
       {
         *((unsigned short *)v13 + 13) = ntohs(*(u_short *)netshort.sa_data); /*0x7b4084*/
-        *((unsigned int *)v13 + 1) = *(unsigned int *)&netshort.sa_data[2]; /*0x7b408c*/
+        *((unsigned int *)v13 + 1) = (gamemd::UDPInterfaceClass *)(*(unsigned int *)&netshort.sa_data[2]); /*0x7b408c*/
       }
       v33 = *((unsigned int *)this + 4); /*0x7b408f*/
       v34 = *((unsigned int *)this + 6); /*0x7b4092*/

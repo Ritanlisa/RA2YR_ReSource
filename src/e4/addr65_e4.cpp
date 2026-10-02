@@ -1393,7 +1393,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
     {
       v6 = (ScriptTypeClass *)RA2_OPNEW(0x234u); /*0x65d933*/
       if ( v6 ) /*0x65d93d*/
-        v7 = ScriptTypeClass::Constructor(v6, 0); /*0x65d942*/
+        v7 = (unsigned int)(ScriptTypeClass::Constructor(v6, 0)); /*0x65d942*/
       else
         v7 = 0; /*0x65d949*/
       *(unsigned int *)(v3 + 224) = v7; /*0x65d94b*/

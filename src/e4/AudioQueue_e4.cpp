@@ -804,7 +804,7 @@ int AudioQueue::DrainAll()
   {
     do /*0x750fe8*/
     {
-      Next_Alt = ((AudioQueue *)(v1))->GetNextAlt(); /*0x750fbc*/
+      Next_Alt = (gamemd::Init)(((AudioQueue *)(v1))->GetNextAlt()); /*0x750fbc*/
       AudioController::Stop(v1 + 3); /*0x750fbe*/
       LinkedList::Init((unsigned int **)v1); /*0x750fc5*/
       result = PushFrontLinkedListAlt(dword_B1D3A4, (int)v1); /*0x750fd2*/

@@ -121,14 +121,14 @@ int EventClass::AddEvent(int a2, uint8_t a3, void *a3_2)
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6701*/
     *(unsigned int *)this = 0; /*0x4c6705*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c670d*/
+    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c670d*/
     return this; /*0x4c6710*/
   }
   else
   {
     *((unsigned char *)this + 2) = a2; /*0x4c66ec*/
     *(unsigned int *)this = a3; /*0x4c66ef*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c66f9*/
+    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c66f9*/
     return this; /*0x4c66f7*/
   }
 
@@ -144,7 +144,7 @@ int EventClass::Add2(AnimClass * aP1, uint8_t a3, IUnknown * aP3, void *a4_1)
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6767*/
     *(unsigned int *)this = 0; /*0x4c676b*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c6776*/
+    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6776*/
     return this; /*0x4c6774*/
   }
   else
@@ -152,7 +152,7 @@ int EventClass::Add2(AnimClass * aP1, uint8_t a3, IUnknown * aP3, void *a4_1)
     *((unsigned char *)this + 2) = (unsigned char)(aP1); /*0x4c6750*/
     *(unsigned int *)this = a3; /*0x4c6753*/
     *(unsigned int *)((unsigned char *)this + 7) = (unsigned int)(aP3); /*0x4c6755*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c675d*/
+    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c675d*/
     return this; /*0x4c6760*/
   }
 
@@ -168,7 +168,7 @@ int EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3
   {
     *((unsigned char *)this + 2) = -1; /*0x4c69c6*/
     *(unsigned int *)this = 0; /*0x4c69ca*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c69d2*/
+    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c69d2*/
     return this; /*0x4c69d5*/
   }
   else
@@ -178,7 +178,7 @@ int EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3
     *(unsigned int *)((unsigned char *)this + 7) = (unsigned int)(aP3); /*0x4c69ad*/
     *(unsigned int *)((unsigned char *)this + 11) = (unsigned int)(aP4); /*0x4c69b0*/
     *(unsigned int *)((unsigned char *)this + 15) = (unsigned int)(aP5); /*0x4c69b3*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c69be*/
+    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c69be*/
     return this; /*0x4c69bc*/
   }
 
@@ -194,7 +194,7 @@ int EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigne
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6b49*/
     *(unsigned int *)this = 0; /*0x4c6b4d*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c6b58*/
+    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6b58*/
     return this; /*0x4c6b56*/
   }
   else
@@ -206,7 +206,7 @@ int EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigne
     *(unsigned int *)((unsigned char *)this + 15) = arg10; /*0x4c6b27*/
     *(unsigned short *)((unsigned char *)this + 19) = *a6; /*0x4c6b2d*/
     *(unsigned short *)((unsigned char *)this + 21) = a6[1]; /*0x4c6b35*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c6b3f*/
+    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6b3f*/
     return this; /*0x4c6b42*/
   }
 

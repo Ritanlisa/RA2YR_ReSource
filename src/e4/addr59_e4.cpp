@@ -576,7 +576,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   NumOfElements = 0; /*0x594f0c*/
   v41 = 0; /*0x594f10*/
   v42 = 0; /*0x594f14*/
-  v43 = 0; /*0x594f18*/
+  v43 = (gamemd::ObjectClass **)(0); /*0x594f18*/
   if ( *(unsigned int *)&v45.m_1[3] && IDA_BYTE1(v45.m_C) ) /*0x594f25*/
     RA2_OPDEL(*(void **)&v45.m_1[3]); /*0x594f28*/
   return 1; /*0x594f03*/

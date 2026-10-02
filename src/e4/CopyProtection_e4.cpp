@@ -45,7 +45,7 @@ char CopyProtection::NotifyLauncher()
   {
     while ( 1 ) /*0x49f678*/
     {
-      v1 = OpenEventA(2u, 1, aD6e7fc9764f94d); /*0x49f678*/
+      v1 = OpenEventA(2u, 1,(LPCSTR)(aD6e7fc9764f94d)); /*0x49f678*/
       if ( v1 ) /*0x49f67c*/
         break; /*0x49f67c*/
       Sleep(0); /*0x49f67f*/

@@ -271,7 +271,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           ((String *)((String *)&v28))->Assign((const char *)(aTargetzoom)); /*0x76d944*/
           if ( (uint8_t)((String *)((const char *)((String *)&v28)))->NotEquals(0) ) /*0x76d94e*/
           {
-            ((Trigger *)((int)((Trigger *)&v25)))->processTrigger(this + 1172, 0); /*0x76d963*/
+            ((Trigger *)((int)((Trigger *)&v25)))->processTrigger(this + 1172,(int)(0)); /*0x76d963*/
             while ( (*(uint8_t (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))(&v25) ) /*0x76d970*/
             {
               if ( !(uint8_t)String::Compare( /*0x76d98a*/
@@ -322,9 +322,9 @@ namespace gamemd {
 unsigned int * Trigger::processTrigger(int a2, int a3)
 {
 
-  this->Trigger_field_0x4 = (MSAnim *)a2; /*0x76f09a*/
+  this->Trigger_field_0x4 = (unsigned int)((MSAnim *)a2); /*0x76f09a*/
   *(unsigned int *)this->__pad_8 = a3; /*0x76f09d*/
-  *(unsigned int *)this->__pad_0 = &vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76f0a0*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorCursorMSSfxEntryDynamicVectorClass); /*0x76f0a0*/
   return this->__pad_0; /*0x76f0a6*/
 
 }
@@ -338,7 +338,7 @@ unsigned int * Trigger::checkCondition(int aP1, int aP2)
   *(unsigned int *)this->__pad_8 = (unsigned int)(aP1); /*0x76f1ce*/
   this->__pad_8[4] = 1; /*0x76f1d1*/
   this->__pad_8[5] = 0; /*0x76f1d5*/
-  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x76f1d8*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x76f1d8*/
   if ( aP1 ) /*0x76f1de*/
   {
     if ( aP2 ) /*0x76f1e6*/
@@ -346,7 +346,7 @@ unsigned int * Trigger::checkCondition(int aP1, int aP2)
       this->Trigger_field_0x4 = (unsigned int)((MSAnim *)aP2); /*0x76f1e8*/
       return this->__pad_0; /*0x76f1ee*/
     }
-    this->Trigger_field_0x4 = (MSAnim *)__2_YAPAXI_Z(4 * aP1); /*0x76f1fd*/
+    this->Trigger_field_0x4 = (unsigned int)((MSAnim *)__2_YAPAXI_Z(4 * aP1)); /*0x76f1fd*/
     this->__pad_8[5] = 1; /*0x76f200*/
   }
   return this->__pad_0; /*0x76f1ed*/
@@ -358,7 +358,7 @@ namespace gamemd {
 int Trigger::executeActions(int a2, void *a2_2)
 {
 
-  this->Trigger_field_0x2C = (void *)a2; /*0x76ff24*/
+  this->Trigger_field_0x2C = (unsigned int)((void *)a2); /*0x76ff24*/
   return a2; /*0x76ff27*/
 
 }

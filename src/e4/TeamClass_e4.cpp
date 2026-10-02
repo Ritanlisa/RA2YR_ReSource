@@ -781,7 +781,7 @@ LABEL_13:
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v29, aP1); /*0x63684f*/
         *(unsigned int *)&v30[7] = *(unsigned int *)WaypointCoords; /*0x636858*/
         v30[11] = WaypointCoords[4]; /*0x63685f*/
-        v15 = __2_YAPAXI_Z(0x10u); /*0x636863*/
+        v15 = (int)(__2_YAPAXI_Z(0x10u)); /*0x636863*/
         v16 = 0; /*0x636868*/
         if ( v15 ) /*0x63686f*/
         {
@@ -791,7 +791,7 @@ LABEL_13:
           *(unsigned int *)(v15 + 8) = -1; /*0x636879*/
           v16 = (unsigned int *)v15; /*0x636880*/
         }
-        *v16 = aP1; /*0x63688b*/
+        *v16 = (unsigned int)(aP1); /*0x63688b*/
         v17 = (unsigned char *)__2_YAPAXI_Z(0x6Fu); /*0x63688d*/
         if ( v17 ) /*0x636897*/
           *v17 = 0; /*0x636899*/
@@ -800,7 +800,7 @@ LABEL_13:
         qmemcpy(v17, v30, 0x6Cu); /*0x6368ab*/
         *((unsigned short *)v17 + 54) = v31; /*0x6368ad*/
         v17[110] = v32; /*0x6368af*/
-        v16[1] = v17; /*0x6368b0*/
+        v16[1] = (unsigned int)(v17); /*0x6368b0*/
         v18 = *(unsigned int *)(v8 + 8); /*0x6368b3*/
         if ( *(unsigned int *)(v8 + 16) < v18 /*0x6368d7*/
           || (*(unsigned char *)(v8 + 13) || !v18)
@@ -810,7 +810,7 @@ LABEL_13:
           v20 = *(unsigned int *)(v8 + 16); /*0x6368de*/
           v21 = *(unsigned int *)(v8 + 4); /*0x6368e1*/
           *(unsigned int *)(v8 + 16) = v20 + 1; /*0x6368e7*/
-          *(unsigned int *)(v21 + 4 * v20) = v16; /*0x6368ea*/
+          *(unsigned int *)(v21 + 4 * v20) = (unsigned int)(v16); /*0x6368ea*/
         }
         Type = BuildingClass::GetType((BuildingClass *)aP1); /*0x6368f9*/
         v23 = *(unsigned int *)(Type + 12); /*0x6368fb*/
@@ -826,7 +826,7 @@ LABEL_13:
         }
         if ( *(unsigned int *)(Type + 140) == -1 ) /*0x636940*/
           *(unsigned int *)(Type + 140) = *(unsigned int *)(Type + 20) - 1; /*0x636946*/
-        ScriptAction::PlaceObject(v8, v16); /*0x63694f*/
+        ScriptAction::PlaceObject((void *)(v8), v16); /*0x63694f*/
         result = ++v27; /*0x63695c*/
         if ( v27 >= aP2 + aP3 ) /*0x636963*/
           break; /*0x636963*/
@@ -913,7 +913,7 @@ LABEL_13:
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v28, a2); /*0x636a1d*/
         *(unsigned int *)&v29[7] = *(unsigned int *)WaypointCoords; /*0x636a26*/
         v29[11] = WaypointCoords[4]; /*0x636a2d*/
-        v13 = __2_YAPAXI_Z(0x10u); /*0x636a31*/
+        v13 = (int)(__2_YAPAXI_Z(0x10u)); /*0x636a31*/
         v14 = 0; /*0x636a36*/
         if ( v13 ) /*0x636a3d*/
         {
@@ -923,7 +923,7 @@ LABEL_13:
           *(unsigned int *)(v13 + 8) = -1; /*0x636a47*/
           v14 = (unsigned int *)v13; /*0x636a4e*/
         }
-        *v14 = a2; /*0x636a59*/
+        *v14 = (unsigned int)(a2); /*0x636a59*/
         v15 = (unsigned char *)__2_YAPAXI_Z(0x6Fu); /*0x636a5b*/
         if ( v15 ) /*0x636a65*/
           *v15 = 0; /*0x636a67*/
@@ -932,7 +932,7 @@ LABEL_13:
         qmemcpy(v15, v29, 0x6Cu); /*0x636a79*/
         *((unsigned short *)v15 + 54) = v30; /*0x636a7b*/
         v15[110] = v31; /*0x636a7d*/
-        v14[1] = v15; /*0x636a7e*/
+        v14[1] = (unsigned int)(v15); /*0x636a7e*/
         v16 = *(unsigned int *)(v6 + 8); /*0x636a81*/
         if ( *(unsigned int *)(v6 + 16) < v16 /*0x636aa5*/
           || (*(unsigned char *)(v6 + 13) || !v16)
@@ -942,7 +942,7 @@ LABEL_13:
           v18 = *(unsigned int *)(v6 + 16); /*0x636aac*/
           v19 = *(unsigned int *)(v6 + 4); /*0x636aaf*/
           *(unsigned int *)(v6 + 16) = v18 + 1; /*0x636ab5*/
-          *(unsigned int *)(v19 + 4 * v18) = v14; /*0x636ab8*/
+          *(unsigned int *)(v19 + 4 * v18) = (unsigned int)(v14); /*0x636ab8*/
         }
         Type = BuildingClass::GetType((BuildingClass *)a2); /*0x636ac7*/
         v21 = *(unsigned int *)(Type + 12); /*0x636ac9*/
@@ -958,7 +958,7 @@ LABEL_13:
         }
         if ( *(unsigned int *)(Type + 140) == -1 ) /*0x636b0e*/
           *(unsigned int *)(Type + 140) = *(unsigned int *)(Type + 20) - 1; /*0x636b14*/
-        ScriptAction::PlaceObject(v6, v14); /*0x636b1d*/
+        ScriptAction::PlaceObject((void *)(v6), v14); /*0x636b1d*/
         result = ++v25; /*0x636b2a*/
         if ( v25 >= v27 ) /*0x636b31*/
           break; /*0x636b31*/
@@ -994,13 +994,13 @@ CampaignClass * * TeamClass::Cleanup(BuildingClass * aP1)
   {
     this->countObjects[1] = -1; /*0x636b5b*/
 LABEL_3:
-    v3 = aP1; /*0x636b65*/
+    v3 = (int)(aP1); /*0x636b65*/
     goto LABEL_4; /*0x636b65*/
   }
   v6 = this->countObjects[1]; /*0x636b84*/
   if ( v6 <= 0 ) /*0x636b8c*/
     goto LABEL_3; /*0x636b8c*/
-  v3 = aP1; /*0x636b8e*/
+  v3 = (int)(aP1); /*0x636b8e*/
   if ( aP1 < v6 ) /*0x636b94*/
     this->countObjects[1] = v6 - 1; /*0x636b97*/
 LABEL_4:

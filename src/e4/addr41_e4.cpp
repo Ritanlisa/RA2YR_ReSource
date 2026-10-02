@@ -338,7 +338,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   v5[10] = *((unsigned char *)aP1 + 2); /*0x411c5a*/
   v5[11] = *((unsigned char *)aP1 + 3); /*0x411c60*/
   *((unsigned int *)v5 + 9) = *((unsigned int *)aP1 + 1); /*0x411c66*/
-  dword_88776C = (unsigned int)((int (*)(unsigned int))*((unsigned int *)aP1 + 2)); /*0x411c6c*/
+  dword_88776C = (gamemd::AbstractClass **)((unsigned int)((int (*)(unsigned int))*((unsigned int *)aP1 + 2))); /*0x411c6c*/
   dword_887770 = (unsigned int)((int (*)(unsigned int, unsigned int))*((unsigned int *)aP1 + 3)); /*0x411c75*/
     ((Debug *)0)->Log();
   if ( timeBeginPeriod(0x10u) == 97 ) /*0x411c90*/
@@ -1358,7 +1358,7 @@ int sub_412870()
   int v1; // edi
 
   v0 = g_CellClassManager; /*0x412873*/
-  v1 = 400; /*0x412878*/
+  v1 = (unsigned int)(400); /*0x412878*/
   do /*0x41289c*/
   {
     ((EventClass *)(v0))->resetEvent(0, 0); /*0x412883*/

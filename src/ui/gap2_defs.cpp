@@ -367,11 +367,11 @@ int DropListClass::Open(int a1, void* a2, void* a3) {
   IDA_LOWORD(v12) = (unsigned short)a3; /*0x4b514d*/
   if ( a3 == (char *)&this->q0446 ) /*0x4b5159*/
   {
-    DropListClass_field_0x38 = this->DropListClass_field_0x38; /*0x4b5160*/
+    DropListClass_field_0x38 = (size_t)(this->DropListClass_field_0x38); /*0x4b5160*/
     v13 = (const wchar_t *)(*(int (**)(char *))(this->q02C + 156))((char *)&this->q0446); /*0x4b5161*/
     wcsncpy((wchar_t *)this->DropListClass_field_0x34, v13, DropListClass_field_0x38); /*0x4b516c*/
     (*(void (**)(DropListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4b5178*/
-    v12 = this->DropListClass_field_0x24; /*0x4b517b*/
+    v12 = (int)(this->DropListClass_field_0x24); /*0x4b517b*/
     IDA_BYTE1(v12) |= 0x80u; /*0x4b517e*/
     *a2 = v12; /*0x4b5181*/
   }

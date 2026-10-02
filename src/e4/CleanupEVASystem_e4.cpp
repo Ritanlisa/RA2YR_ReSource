@@ -23,7 +23,7 @@ void sub_72DC20()
     v0 = (void *)(dword_B0FB48);
     if ( dword_B0FB48 ) /*0x72dc35*/
     {
-      FileTreeNode::Destroy(dword_B0FB48); /*0x72dc39*/
+      FileTreeNode::Destroy((void *)(dword_B0FB48)); /*0x72dc39*/
       RA2_OPDEL(v0); /*0x72dc3f*/
     }
     byte_B0FCC8 = 0; /*0x72dc47*/
@@ -34,7 +34,7 @@ void sub_72DC20()
     v1 = (void *)(dword_B0FB10);
     if ( dword_B0FB10 ) /*0x72dc64*/
     {
-      FileTreeNode::Destroy(dword_B0FB10); /*0x72dc68*/
+      FileTreeNode::Destroy((void *)(dword_B0FB10)); /*0x72dc68*/
       RA2_OPDEL(v1); /*0x72dc6e*/
     }
     byte_B0FCCA = 0; /*0x72dc76*/
@@ -45,7 +45,7 @@ void sub_72DC20()
     v2 = (void *)(dword_B0F9F8);
     if ( dword_B0F9F8 ) /*0x72dc93*/
     {
-      FileTreeNode::Destroy(dword_B0F9F8); /*0x72dc97*/
+      FileTreeNode::Destroy((void *)(dword_B0F9F8)); /*0x72dc97*/
       RA2_OPDEL(v2); /*0x72dc9d*/
     }
     byte_B0FCCB = 0; /*0x72dca5*/
@@ -56,7 +56,7 @@ void sub_72DC20()
     v3 = (void *)(dword_B0FA6C);
     if ( dword_B0FA6C ) /*0x72dcc2*/
     {
-      FileTreeNode::Destroy(dword_B0FA6C); /*0x72dcc6*/
+      FileTreeNode::Destroy((void *)(dword_B0FA6C)); /*0x72dcc6*/
       RA2_OPDEL(v3); /*0x72dccc*/
     }
     byte_B0FCCC = 0; /*0x72dcd4*/

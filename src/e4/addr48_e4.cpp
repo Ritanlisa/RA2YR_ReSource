@@ -273,7 +273,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
               int v13 = *(unsigned int *)(v12 + 156);
               int v14 = *(unsigned int *)(v12 + 160);
               v140 = *(BuildingTypeClass **)(v12 + 164);
-              v15 = (IUnknown *)(((Coord *)(&v135))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140)));
+              v15 = (IUnknown *)(((Coord *)(&v135))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13)),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140)));
               v143 = *(unsigned long long *)&v15->field_0;
               v144 = *(float *)&v15->field_8;
               Coord::Length((int *)&v143);
@@ -289,7 +289,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
                 }
                 int * v109 = (int *)operator new(8u);
                 *v109 = v12;
-                v17 = (IUnknown *)(((Coord *)(&v130))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156))), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164))));
+                v17 = (IUnknown *)(((Coord *)(&v130))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156))),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160))), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164))));
                 v132 = *(unsigned long long *)&v17->field_0;
                 v133 = *(float *)&v17->field_8;
                 Coord::Length((int *)&v132);
@@ -499,7 +499,7 @@ LABEL_67:
     goto LABEL_66;
   }
 LABEL_82:
-  v49 = v121;
+  v49 = (IUnknown *)(v121);
   for ( i = 0; i < (int)v121; ++i )
   {
     eax83 = (BuildingTypeClass **)*((unsigned int *)Block + i);

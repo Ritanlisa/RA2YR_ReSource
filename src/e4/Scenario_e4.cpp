@@ -490,9 +490,9 @@ Game * * Scenario::ComputeDisplayPosition()
     this->Scenario_field_0x2C = (void *)v7; /*0x552b84*/
     result = (int)v4 + v6; /*0x552b88*/
     this->Scenario_field_0x28 = v4; /*0x552b8b*/
-    this->Scenario_field_0x18 = (void *)40; /*0x552b8f*/
+    this->Scenario_field_0x18 = (unsigned char)((void *)40); /*0x552b8f*/
     this->Scenario_field_0x30 = (void *)result; /*0x552b92*/
-    this->Scenario_field_0x38 = (void *)40; /*0x552b95*/
+    this->Scenario_field_0x38 = (gamemd::Game **)((void *)40); /*0x552b95*/
   }
   return result; /*0x552b87*/
 

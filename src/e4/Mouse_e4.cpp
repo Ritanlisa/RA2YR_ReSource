@@ -274,7 +274,7 @@ HWND Mouse::HideWindow()
   if ( dword_ABF240 ) /*0x5bc40f*/
   {
     byte_ABF23A = 0; /*0x5bc413*/
-    return (HWND)ShowWindow(dword_ABF240, 0); /*0x5bc419*/
+    return (HWND)ShowWindow((HWND)(dword_ABF240), 0); /*0x5bc419*/
   }
   return result; /*0x5bc41f*/
 

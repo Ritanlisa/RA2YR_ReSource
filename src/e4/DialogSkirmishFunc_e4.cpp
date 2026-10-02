@@ -386,7 +386,7 @@ LABEL_151:
             v28 = GetDlgItem((HWND)hWnd, 1696);
             SendMessageA(v28, 0x4B3u, 0x14u, (LPARAM)lParam);
             CopyWideToChar((unsigned char *)(&((unsigned int *)(HouseClass_Player))[30260]), lParam, -1);
-            ComboBoxSelected = GetComboBoxSelected((ReferenceCounted *)hWnd, 1697, 0xFFFFFFFF);
+            ComboBoxSelected = GetComboBoxSelected((HWND)((ReferenceCounted *)hWnd), 1697, 0xFFFFFFFF);
             ((SessionClass *)(&HouseClass_Player[29932]))->AssignSide(ComboBoxSelected, (MPCooperative *)1);
             int v30 = 0;
             do
@@ -496,8 +496,8 @@ LABEL_151:
               nIDDlgItema = (VectorClass_flat *)GetResourceIDCSF((int)(v36));
               v39 = SendDlgItemMessageA((HWND)hWnd, v37, 0x147u, 0, 0);
               v40 = SendDlgItemMessageA((HWND)hWnd, v37, 0x150u, v39, 0);
-              v41 = GetComboBoxSelected((ReferenceCounted *)hWnd, v38, 0xFFFFFFFF);
-              ComboBoxSelectedRaw = GetComboBoxSelectedRaw((ReferenceCounted *)hWnd, (int)nIDDlgItema, 0xFFFFFFFF);
+              v41 = GetComboBoxSelected((HWND)((ReferenceCounted *)hWnd), v38, 0xFFFFFFFF);
+              ComboBoxSelectedRaw = GetComboBoxSelectedRaw((HWND)((ReferenceCounted *)hWnd), (int)nIDDlgItema, 0xFFFFFFFF);
               if ( v40 == -1 )
               {
                 v43 = 1;
@@ -519,7 +519,7 @@ LABEL_151:
               Formatb = (VectorClass_flat *)((char *)Formatb + 12);
             }
             while ( (int)(v36 + 1) < 8 );
-            v44 = GetComboBoxSelectedRaw((ReferenceCounted *)hWnd, 1698, 0xFFFFFFFF);
+            v44 = GetComboBoxSelectedRaw((HWND)((ReferenceCounted *)hWnd), 1698, 0xFFFFFFFF);
             v45 = SetComboBoxSelection((HWND)hWnd, 1699, 0xFFFFFFFF);
             v46 = GetComboBoxSelectedRaw2((HWND)hWnd, 1901, 0xFFFFFFFF);
             ((SessionClass *)(&((unsigned int *)(HouseClass_Player))[29932]))->AssignColor(v44, (MPCooperative *)1);

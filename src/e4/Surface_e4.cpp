@@ -280,7 +280,7 @@ void sub_626C60()
     v3 = v2; /*0x626c91*/
     if ( v2 ) /*0x626c98*/
     {
-      StringVector::Construct(v2, 0, 0); /*0x626ca0*/
+      StringVector::Construct((int)(v2), 0, 0); /*0x626ca0*/
       *(void **)v3 = (void*)&DynamicVectorClass_char___vftable; /*0x626caa*/
       v3[5] = 10; /*0x626cb0*/
       v3[4] = 0; /*0x626cb3*/

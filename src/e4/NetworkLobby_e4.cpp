@@ -205,7 +205,7 @@ int NetworkLobby_UpdatePlayerList()
     {
       v7 = *(unsigned int *)(dword_A8DA60 + 4 * i); /*0x5dba8c*/
       if ( *(unsigned char *)(v7 + 52) ) /*0x5dba8d*/
-        v6 = GetStringCSF(aTxtThatguysGam, 0, g_Str_File_netdlg2_cpp, 514); /*0x5dbaae*/
+        v6 = GetStringCSF((wchar_t *)(aTxtThatguysGam), 0, g_Str_File_netdlg2_cpp, 514); /*0x5dbaae*/
       else
         v6 = GetStringCSF(aTxtThatguysGam_0, 0, g_Str_File_netdlg2_cpp, 516); /*0x5dbacc*/
       swprintf(lParam, (const size_t)v6, (const wchar_t *const)v7); /*0x5dbab0*/

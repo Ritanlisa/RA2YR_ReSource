@@ -291,7 +291,7 @@ AbstractClass * * HandleWOLForwardingError()
           case 3: /*0x79354a*/
             v6 = 1; /*0x793683*/
                         ((Debug *)0)->Log();
-            v14 = GetStringCSF(aTxtTalkHostAbo, 0, g_Str_File_wonline_cpp, 18875); /*0x7936a3*/
+            v14 = GetStringCSF((wchar_t *)(aTxtTalkHostAbo), 0, g_Str_File_wonline_cpp, 18875); /*0x7936a3*/
             Dialog::ShowMessage(-1, (size_t)v14); /*0x7936aa*/
             break; /*0x7936aa*/
           default:
@@ -304,7 +304,7 @@ AbstractClass * * HandleWOLForwardingError()
       if ( !v6 ) /*0x7936c2*/
       {
   LABEL_26:
-        v10 = GetStringCSF(aTxtFailedToTal, 0, g_Str_File_wonline_cpp, 18888); /*0x7936d5*/
+        v10 = GetStringCSF((wchar_t *)(aTxtFailedToTal), 0, g_Str_File_wonline_cpp, 18888); /*0x7936d5*/
 // 0x5e2700
         return Dialog::ShowMessage(-1, (size_t)v10); /*0x7936e2*/
       }
@@ -514,7 +514,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         v19 = dword_A8DA90[v3] + 40; /*0x793f7e*/
         v85 = v18[1]; /*0x793f81*/
         v86 = v18[2]; /*0x793f8c*/
-        if ( (uint8_t)NetworkID::Compare(v84, v19) ) /*0x793f9a*/
+        if ( (uint8_t)NetworkID::Compare((int)(v84), v19) ) /*0x793f9a*/
         {
           v14 = ((unsigned int *)(dword_A8E184))[v17]; /*0x793fa3*/
                     ((Debug *)0)->Log();
@@ -708,7 +708,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
             Debug::Log(); /*0x794481*/
             if ( (uint8_t)NetworkID::Compare((bool *)(dword_A8DA78[v62] + 40), (int)&v91) ) /*0x7944a1*/
             {
-              v45 = ToWideStringChar((char *)dword_A8DA90[v3]); /*0x7944bd*/
+              v45 = (char *)(ToWideStringChar((char *)dword_A8DA90[v3])); /*0x7944bd*/
               if ( !_strcmpi(v45, v97) ) /*0x7944c3*/
               {
                 Debug::Log(); /*0x7944e0*/

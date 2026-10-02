@@ -305,7 +305,7 @@ LABEL_14:
         }
         while ( (*(int (**)(int, unsigned char *, int))(*(unsigned int *)v3 + 36))(v3, v15, 48) == 48 ) /*0x5bd69d*/
         {
-          v9 = (const void *)Matrix::Copy12Float(v15); /*0x5bd6a8*/
+          v9 = (const void *)Matrix::Copy12Float((int)(v15)); /*0x5bd6a8*/
           v10 = (void *)(*((unsigned int *)this + 3) + 48 * (v8 + v11 * *((unsigned int *)this + 1))); /*0x5bd6c7*/
           ++v8; /*0x5bd6c9*/
           qmemcpy(v10, v9, 0x30u); /*0x5bd6ca*/

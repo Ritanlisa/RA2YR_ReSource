@@ -81,13 +81,13 @@ int WWMouseClass::hideCursor()
   unsigned int v9[4]; // [esp+8h] [ebp-20h] BYREF
   unsigned int v10[4]; // [esp+18h] [ebp-10h] BYREF
 
-  if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b994f*/
+  if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b994f*/
     ((Debug *)this)->Log(); /*0x7b9960*/
   if ( !this->WWMouseClass_field_0xC ) /*0x7b9968*/
   {
     if ( (*(uint8_t (**)(WWMouseClass *))(*(unsigned int *)this->__pad_0 + 28))(this) ) /*0x7b9977*/
     {
-      if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9994*/
+      if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9994*/
         ((Debug *)this)->Log(); /*0x7b99a5*/
       if ( *(int *)&this->__pad_48[8] > 0 && *(int *)&this->__pad_48[12] > 0 ) /*0x7b99ba*/
       {
@@ -119,7 +119,7 @@ int WWMouseClass::hideCursor()
           }
         }
       }
-      ReleaseMutex(hMutex); /*0x7b9a1c*/
+      ReleaseMutex((HANDLE)(hMutex)); /*0x7b9a1c*/
     }
     else
     {
@@ -128,7 +128,7 @@ int WWMouseClass::hideCursor()
     }
   }
   --this->WWMouseClass_field_0xC; /*0x7b9a3f*/
-  return ReleaseMutex(hMutex); /*0x7b9a4f*/
+  return ReleaseMutex((HANDLE)(hMutex)); /*0x7b9a4f*/
 
 }
 } // namespace gamemd
@@ -158,13 +158,13 @@ void* WWMouseClass::captureMouse()
   if ( this && !(*(uint8_t (**)(WWMouseClass *))(*(unsigned int *)this->__pad_0 + 28))(this) ) /*0x7b9a70*/
   {
     ((Debug *)this)->Log(); /*0x7b9a82*/
-    if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9aa3*/
+    if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9aa3*/
       ((Debug *)this)->Log(); /*0x7b9ab4*/
     v2 = *(unsigned int *)this->__pad_0; /*0x7b9abc*/
     LOBYTE(this->WWMouseClass_field_0x10) = 1; /*0x7b9ac0*/
     if ( !(*(uint8_t (**)(WWMouseClass *))(v2 + 8))(this) ) /*0x7b9ac4*/
     {
-      if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9ae7*/
+      if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9ae7*/
         ((Debug *)this)->Log(); /*0x7b9af8*/
       if ( (uint8_t)((BSurface *)((int)this))->CreateTripleBuffer() && this->WWMouseClass_field_0x24 ) /*0x7b9b0f*/
       {
@@ -182,7 +182,7 @@ void* WWMouseClass::captureMouse()
           v6 = *(unsigned int *)&this->__pad_3C[4]; /*0x7b9b6d*/
           v16.X += v5; /*0x7b9b72*/
           v16.Y += *(unsigned int *)&this->__pad_14[4] - v6; /*0x7b9b7d*/
-          ReleaseMutex(hMutex); /*0x7b9b88*/
+          ReleaseMutex((HANDLE)(hMutex)); /*0x7b9b88*/
         }
         X = (unsigned int)(v16.X);
         Y = (unsigned int)(v16.Y);
@@ -211,10 +211,10 @@ void* WWMouseClass::captureMouse()
           1);
       }
       ((Mouse *)((Mouse *)this))->DrawCursor((int *)this->WWMouseClass_field_0x24, 0, 0); /*0x7b9bfd*/
-      ReleaseMutex(hMutex); /*0x7b9c09*/
+      ReleaseMutex((HANDLE)(hMutex)); /*0x7b9c09*/
     }
     ShowCursor(0); /*0x7b9c0d*/
-    ReleaseMutex(hMutex); /*0x7b9c19*/
+    ReleaseMutex((HANDLE)(hMutex)); /*0x7b9c19*/
   }
 
 }
@@ -237,13 +237,13 @@ void WWMouseClass::releaseMouse()
   if ( this && (*(uint8_t (**)(WWMouseClass *))(*(unsigned int *)this->__pad_0 + 28))(this) ) /*0x7b9c40*/
   {
     ((Debug *)this)->Log(); /*0x7b9c51*/
-    if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9c72*/
+    if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9c72*/
       ((Debug *)this)->Log(); /*0x7b9c83*/
     v2 = *(unsigned int *)this->__pad_0; /*0x7b9c8b*/
     LOBYTE(this->WWMouseClass_field_0x10) = 0; /*0x7b9c8f*/
     if ( !(*(uint8_t (**)(WWMouseClass *))(v2 + 8))(this) ) /*0x7b9c93*/
     {
-      if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9cb0*/
+      if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9cb0*/
         ((Debug *)this)->Log(); /*0x7b9cc1*/
       if ( *(int *)&this->__pad_48[8] > 0 && *(int *)&this->__pad_48[12] > 0 ) /*0x7b9cd6*/
       {
@@ -275,11 +275,11 @@ void WWMouseClass::releaseMouse()
           }
         }
       }
-      ReleaseMutex(hMutex); /*0x7b9d38*/
+      ReleaseMutex((HANDLE)(hMutex)); /*0x7b9d38*/
       while ( ShowCursor(1) < 0 ) /*0x7b9d4b*/
         ; /*0x7b9d4d*/
     }
-    ReleaseMutex(hMutex); /*0x7b9d5c*/
+    ReleaseMutex((HANDLE)(hMutex)); /*0x7b9d5c*/
   }
 
 }

@@ -292,14 +292,14 @@ int ProcessGameResults(char a1)
   IDA_LOBYTE(v264.vfptr) = DataGlobal_00A8B8C2 == 1;
   char * v14 = (char *)operator new(0x10u);
   if ( v14 )
-    char * v15 = ((String *)(v14))->AllocAndCopy((RandomStruct *)&((unsigned int *)(stru_830620))[72420], (IUnknown *)v264.vfptr);
+    char * v15 = (char *)(((String *)(v14))->AllocAndCopy((RandomStruct *)&((unsigned int *)(stru_830620))[72420], (IUnknown *)v264.vfptr));
   else
     v15 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v15);
   IDA_LOBYTE(v264.vfptr) = DataGlobal_A8B8C1 == (unsigned char [58523])(1);
   char * v16 = (char *)operator new(0x10u);
   if ( v16 )
-    char * v17 = ((String *)(v16))->AllocAndCopy((RandomStruct *)&((unsigned int *)(stru_830620))[72412], (IUnknown *)v264.vfptr);
+    char * v17 = (char *)(((String *)(v16))->AllocAndCopy((RandomStruct *)&((unsigned int *)(stru_830620))[72412], (IUnknown *)v264.vfptr));
   else
     v17 = 0;
   LinkedList_flat::PushFront(v262, (IUnknown *)v17);

@@ -592,7 +592,7 @@ LABEL_63:
       IDA_LOWORD(desiredFacing_4) = Math::RoundToInt((v84 - 1.570796326794897) * -10430.06004058427);
       int v85 = *(unsigned int *)(a1 + 8);
       desiredFacing = (ObjectClass *)IDA_LODWORD(desiredFacing_4);
-      FacingClass::Update((FacingClass *)(v85 + 904), (DirStruct *)&desiredFacing);
+      FacingClass::Update((unsigned short *)((FacingClass *)(v85 + 904)), (DirStruct *)&desiredFacing);
 LABEL_111:
       if ( !(*(uint8_t (**)(int))(*(unsigned int *)a1 + 128))(a1) )
         goto LABEL_119;

@@ -109,7 +109,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v40 = (int *)(v13[1]);
     v41 = (int *)(v13[2]);
     v42 = (int *)(v13[3]);
-    v14 = (int *)(ClipRectIntersection((RectangleStruct *)(v48),(const RectangleStruct *)(&DSurface_ViewBounds), &v39, 0, 0));
+    v14 = (int *)(ClipRectIntersection((RectangleStruct *)(v48),(const RectangleStruct *)(&DSurface_ViewBounds),(const RectangleStruct *)(&v39), 0, 0));
     v43 = (int *)(*v14);
     v44 = (int *)(v14[1]);
     v45 = (int *)(v14[2]);
@@ -127,7 +127,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v44 = (int *)(v17[1]); /*0x704b60*/
     v45 = (int *)(v17[2]); /*0x704b6c*/
     v46 = (int *)(v17[3]); /*0x704b7c*/
-    v18 = (int *)(ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(&DSurface_ViewBounds), &v43, 0, 0)); /*0x704b80*/
+    v18 = (int *)(ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(&DSurface_ViewBounds),(const RectangleStruct *)(&v43), 0, 0)); /*0x704b80*/
     v39 = (int *)(*v18); /*0x704b88*/
     v40 = (int *)(v18[1]); /*0x704b8f*/
     v41 = (int *)(v18[2]); /*0x704b9c*/
@@ -136,7 +136,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v9 = dword_886FA4; /*0x704bb1*/
   }
   v38[1] = v9; /*0x704bc2*/
-  v38[0] = DSurface_ViewBounds; /*0x704bce*/
+  v38[0] = (int)(DSurface_ViewBounds); /*0x704bce*/
   v38[2] = dword_886FA8; /*0x704bd2*/
   v38[3] = dword_886FAC; /*0x704bd6*/
   if ( v10 && ClipLine(v34, v33, v38) ) /*0x704be9*/
@@ -160,7 +160,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v44 = (int *)(v22[1]);
   v45 = (int *)(v22[2]);
   v46 = (int *)(v22[3]);
-  v23 = (int *)(ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(&DSurface_ViewBounds), &v43, 0, 0));
+  v23 = (int *)(ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(&DSurface_ViewBounds),(const RectangleStruct *)(&v43), 0, 0));
   v39 = (int *)(*v23);
   v40 = (int *)(v23[1]);
   v41 = (int *)(v23[2]);
@@ -174,7 +174,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v44 = (int *)(v25[1]); /*0x704d52*/
   v45 = (int *)(v25[2]); /*0x704d5f*/
   v46 = (int *)(v25[3]); /*0x704d70*/
-  v26 = (int *)(ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(&DSurface_ViewBounds), &v43, 0, 0)); /*0x704d74*/
+  v26 = (int *)(ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(&DSurface_ViewBounds),(const RectangleStruct *)(&v43), 0, 0)); /*0x704d74*/
   v39 = (int *)(*v26); /*0x704d7c*/
   v40 = (int *)(v26[1]); /*0x704d83*/
   v41 = (int *)(v26[2]); /*0x704d90*/
@@ -270,7 +270,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v35 = (int)(v8[1]);
   v36 = (int *)(v8[2]);
   v37 = (int *)(v8[3]);
-  v9 = (int *)(ClipRectIntersection((RectangleStruct *)(v46),(const RectangleStruct *)(&DSurface_ViewBounds), &v34, 0, 0));
+  v9 = (int *)(ClipRectIntersection((RectangleStruct *)(v46),(const RectangleStruct *)(&DSurface_ViewBounds),(const RectangleStruct *)(&v34), 0, 0));
   v30 = *v9; /*0x704f61*/
   v31 = v9[1]; /*0x704f68*/
   v32 = (void *)(v9[2]);
@@ -283,13 +283,13 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v31 = (int)(v10[1]);
   v32 = (void *)((unsigned int)(v10[2]));
   v33 = (void *)((unsigned int)(v10[3]));
-  v11 = (int *)((unsigned int)(ClipRectIntersection((RectangleStruct *)(v45),(const RectangleStruct *)(&DSurface_ViewBounds), &v30, 0, 0)));
+  v11 = (int *)((unsigned int)(ClipRectIntersection((RectangleStruct *)(v45),(const RectangleStruct *)(&DSurface_ViewBounds),(const RectangleStruct *)(&v30), 0, 0)));
   v34 = (unsigned int)(*v11);
   v35 = (unsigned int)(v11[1]);
   v36 = (int *)((unsigned int)(v11[2]));
   v37 = (int *)((unsigned int)(v11[3]));
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v34, v7); /*0x705014*/
-  v44[0] = DSurface_ViewBounds; /*0x705028*/
+  v44[0] = (int)(DSurface_ViewBounds); /*0x705028*/
   v44[1] = dword_886FA4; /*0x705031*/
   v44[2] = dword_886FA8; /*0x705035*/
   v44[3] = dword_886FAC; /*0x705039*/
@@ -465,7 +465,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
       v39 = (int *)(0);
       v42 = (int *)(v21 - *(unsigned int *)&v22);
       v40 = (int *)(0);
-      v41 = (int *)(*(unsigned int *)DSurface_ViewBounds.__pad_8);
+      v41 = (int)((int *)(*(unsigned int *)DSurface_ViewBounds.__pad_8));
       v23 = (int *)(ClipRectIntersection(v49, &v43, &v39, 0, 0));
       v43 = *v23; /*0x707125*/
       v44 = v23[1]; /*0x70712c*/
@@ -1010,7 +1010,7 @@ int E4Recv_70F740::sub_70F740(int a2)
   v2 = (ObjectClass *)((char *)this + 384); /*0x70f74c*/
   v2->AbstractClass = (unsigned int)(*(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x70f752*/
   ((unsigned int *)v2)[0] = (unsigned int)((void *)v4); /*0x70f758*/
-  ((unsigned int *)v2)[0] = (void *)a2; /*0x70f75b*/
+  ((unsigned int *)v2)[0] = (unsigned int)((void *)a2); /*0x70f75b*/
   return v4; /*0x70f75e*/
 
 }

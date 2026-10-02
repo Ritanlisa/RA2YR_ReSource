@@ -34,13 +34,13 @@ int DialogClass::Reposition(int hWnd, int a2)
   struct tagRECT v10; // [esp+20h] [ebp-90h] BYREF
   CHAR ClassName[128]; // [esp+30h] [ebp-80h] BYREF
 
-  GetWindowRect(hWnd, &Rect); /*0x775bdd*/
-  GetClassNameA(hWnd, ClassName, 128); /*0x775bea*/
+  GetWindowRect((HWND)(hWnd), &Rect); /*0x775bdd*/
+  GetClassNameA((HWND)(hWnd), ClassName, 128); /*0x775bea*/
   if ( !strcmp(ClassName,(const char *)(g_INI_Key_ComboBox)) ) /*0x775c01*/
-    SendMessageA(hWnd, 0x152u, 0, (LPARAM)&Rect); /*0x775c37*/
+    SendMessageA((HWND)(hWnd), 0x152u, 0, (LPARAM)&Rect); /*0x775c37*/
   if ( a2 ) /*0x775c46*/
   {
-    WindowLongA = (HWND)GetWindowLongA(hWnd, -8); /*0x775c4b*/
+    WindowLongA = (HWND)GetWindowLongA((HWND)(hWnd), -8); /*0x775c4b*/
     GetWindowRect(WindowLongA, &v10); /*0x775c57*/
     Rect.left -= v10.left; /*0x775c79*/
     Rect.right -= v10.left; /*0x775c7d*/
@@ -68,7 +68,7 @@ int DialogClass::Reposition(int hWnd, int a2)
   Rect.right = v7 + Rect.left - 1; /*0x775d32*/
   Rect.top = Rect.top * dword_849DE4 / bottom; /*0x775d36*/
   Rect.bottom = v8 + Rect.top - 1; /*0x775d48*/
-  MoveWindow(hWnd, Rect.left, Rect.top, v7, v8, 1); /*0x775d4c*/
+  MoveWindow((HWND)(hWnd), Rect.left, Rect.top, v7, v8, 1); /*0x775d4c*/
   return 1; /*0x775d52*/
 
 }

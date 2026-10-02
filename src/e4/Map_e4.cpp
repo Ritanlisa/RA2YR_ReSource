@@ -114,7 +114,7 @@ AbstractClass * * sub_539760()
     (**(void (***)(int, int))g_ChronoEffectState)(g_ChronoEffectState, 1); /*0x53986d*/
   ChronoScreenEffect_Duration = 0; /*0x539875*/
   g_ChronoEffectState = 0; /*0x53987b*/
-  ChronoScreenEffect_Status = 0; /*0x539881*/
+  ChronoScreenEffect_Status = (gamemd::AbstractClass **)(0); /*0x539881*/
   return UpdateSurfaceAnimations(-1, -1, -1, 0); /*0x53988c*/
 }
 }
@@ -805,7 +805,7 @@ void Map_Helper_584030(IUnknown * aP0)
   {
     IDA_HIWORD(v11) = v4 + aP0[1]; /*0x58405e*/
     IDA_LOWORD(v11) = v5 + *aP0; /*0x584063*/
-    v6 = (int16_t)v11 + (IDA_SHIWORD(v11) << 9); /*0x584071*/
+    v6 = (unsigned int)((int16_t)v11 + (IDA_SHIWORD(v11) << 9)); /*0x584071*/
     if ( v6 >= 0x40000 || (v7 = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x584081*/
     {
       dword_ABDC74 = (unsigned int)((unsigned int *)(v11));

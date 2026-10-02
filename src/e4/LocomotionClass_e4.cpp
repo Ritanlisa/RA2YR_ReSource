@@ -195,7 +195,7 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   this->LocomotionClass[1] = (int)&vt_JumpjetLocomotionClass; /*0x54acc9*/
   this->TurnRate = (int)&vt_JumpjetLocomotionClass; /*0x54acd0*/
   LOWORD(v4) = 0x4000; /*0x54acd7*/
-  FacingClass::Update(&this->__pad_50[4], &v4); /*0x54acdc*/
+  FacingClass::Update((unsigned short *)(&this->__pad_50[4]), &v4); /*0x54acdc*/
   LOWORD(v4) = 0x4000; /*0x54ace8*/
   FacingClass::Set_SyncLog(&this->__pad_50[4], &v4); /*0x54aced*/
   return (int)this->LocomotionClass; /*0x54acf4*/
