@@ -41,14 +41,14 @@ void MouseClass::initCursor() {
   void *v2; // eax
 
   v2 = *(void **)&this->m_1[3]; /*0x40d546*/
-  this->m_10 = 0; /*0x40d549*/
+  this->q010 = 0; /*0x40d549*/
   if ( v2 && IDA_BYTE1(this->m_C) ) /*0x40d550*/
   {
     RA2_OPDEL(v2); /*0x40d556*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x40d55e*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x40d561*/
-  this->m_8 = 0; /*0x40d564*/
+  this->u32_8 = 0; /*0x40d564*/
 }
 }
 // 0x40D570
@@ -137,7 +137,7 @@ void* MouseClass::applyCursorSettings(int a2) {
     *(unsigned int *)&this->m_1[3] = 0; /*0x40d870*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x40d87b*/
-  this->m_8 = 0; /*0x40d881*/
+  this->u32_8 = 0; /*0x40d881*/
   if ( (a2 & 1) != 0 ) /*0x40d888*/
     RA2_OPDEL(this); /*0x40d88b*/
   return this->__pad_0; /*0x40d895*/

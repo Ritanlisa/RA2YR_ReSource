@@ -1294,8 +1294,8 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
       v12 += 2; /*0x496c77*/
       --v18; /*0x496c9a*/
       if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x496c67*/
-        *(unsigned short *)(v12 - 2) = (this->m_8 & (*(unsigned short *)(v12 - 2) >> 2)) /*0x496c9b*/
-                            + 3 * (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v19) >> 2));
+        *(unsigned short *)(v12 - 2) = (this->u16_8 & (*(unsigned short *)(v12 - 2) >> 2)) /*0x496c9b*/
+                            + 3 * (this->u16_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 2));
     }
     else
     {
@@ -1362,8 +1362,8 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
       v12 += 2; /*0x496dc7*/
       --v18; /*0x496def*/
       if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x496db7*/
-        *(unsigned short *)(v12 - 2) = 3 * (this->m_8 & (*(unsigned short *)(v12 + 2 * arg20 - 2) >> 2)) /*0x496df0*/
-                            + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v19) >> 2));
+        *(unsigned short *)(v12 - 2) = 3 * (this->u16_8 & (*(unsigned short *)(v12 + 2 * arg20 - 2) >> 2)) /*0x496df0*/
+                            + (this->u16_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 2));
     }
     else
     {
@@ -1429,7 +1429,7 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v21 = a6 - *a10++; /*0x496ef8*/
       --v18; /*0x496f36*/
       if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x496f07*/
-        *v12 = (this->m_8 & (v12[arg20] >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v19) >> 1)); /*0x496f37*/
+        *v12 = (this->u16_8 & (v12[arg20] >> 1)) + (this->u16_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 1)); /*0x496f37*/
       ++v12; /*0x496f3e*/
     }
     else
@@ -1497,8 +1497,8 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
       v12 += 2; /*0x497067*/
       --v18; /*0x49708f*/
       if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x497057*/
-        *(unsigned short *)(v12 - 2) = (this->m_8 & (*(unsigned short *)(v12 + 2 * arg20 - 2) >> 2)) /*0x497090*/
-                            + 3 * (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v19) >> 2));
+        *(unsigned short *)(v12 - 2) = (this->u16_8 & (*(unsigned short *)(v12 + 2 * arg20 - 2) >> 2)) /*0x497090*/
+                            + 3 * (this->u16_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 2));
     }
     else
     {
@@ -1603,7 +1603,7 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
   uint8_t v27; // [esp+20h] [ebp+Ch]
 
   result = a6; /*0x497240*/
-  v26 = *(uint8_t **)this->m_4; /*0x497244*/
+  v26 = *(uint8_t **)this->u32_4; /*0x497244*/
   v13 = a5; /*0x497248*/
   v14 = arg0; /*0x49724d*/
   if ( a5 <= 0 ) /*0x497258*/
@@ -1645,7 +1645,7 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
       {
         v14 += 2; /*0x4972ed*/
         ++result; /*0x4972f0*/
-        *(unsigned short *)(v14 - 2) = *(unsigned short *)(this->m_8 + 2 * v26[v27]); /*0x497305*/
+        *(unsigned short *)(v14 - 2) = *(unsigned short *)(this->M8 + 2 * v26[v27]); /*0x497305*/
         v24 = *v23; /*0x49730d*/
         a10 = v23 + 1; /*0x497313*/
         *(result - 1) = arg10 - v24; /*0x497314*/

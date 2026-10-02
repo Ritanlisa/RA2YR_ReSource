@@ -377,7 +377,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   v16 = 0; /*0x633169*/
   if ( LOBYTE(this->m_C) ) /*0x633166*/
   {
-    if ( this->m_34 == 1 ) /*0x63317d*/
+    if ( this->u32_34 == 1 ) /*0x63317d*/
     {
       v7 = Delegate::Invoke( /*0x6331a6*/
              (Straw *)this,
@@ -405,7 +405,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
         v13 = 0; /*0x633221*/
       v14 = BigInt::DecryptBlock(v12, Src, v13, (char *)&this->m_3C); /*0x63324d*/
       this->m_140 = v14; /*0x633258*/
-      this->m_13C = v14; /*0x63325e*/
+      this->u32_13C = v14; /*0x63325e*/
       GameClass::updateUI((GameClass *)&this->m_14, (int)Src, 56); /*0x633268*/
     }
     v4 = Size; /*0x63326d*/
@@ -416,7 +416,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   {
     if ( v4 >= m_140 ) /*0x633284*/
       v4 = this->m_140; /*0x633286*/
-    memcpy(a2, (char *)&this->m_3C + this->m_13C - m_140, v4); /*0x633297*/
+    memcpy(a2, (char *)&this->m_3C + this->u32_13C - m_140, v4); /*0x633297*/
     v3 = &a2[v4]; /*0x6332ac*/
     v16 = v4; /*0x6332b2*/
     this->m_140 -= v4; /*0x6332b6*/

@@ -1008,12 +1008,12 @@ char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x49eb9c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x49eba6*/
+    LOBYTE(this->IsInitialized) = 0; /*0x49eba6*/
     if ( a3 ) /*0x49ebac*/
       v4 = a3; /*0x49ebc2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x49ebbe*/
-    LOBYTE(this->m_C) = 1; /*0x49ebc6*/
+    LOBYTE(this->IsInitialized) = 1; /*0x49ebc6*/
     if ( v4 ) /*0x49ebca*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x49ebd5*/
@@ -1023,7 +1023,7 @@ char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x49ebe3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x49ebe9*/
           ++i; /*0x49ebee*/
-        if ( BYTE1(this->m_C) ) /*0x49ebfb*/
+        if ( BYTE1(this->IsInitialized) ) /*0x49ebfb*/
         {
           __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x49ec06*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x49ec0e*/
@@ -1031,7 +1031,7 @@ char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x49ec17*/
       this->m_8 = a2; /*0x49ec1f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x49ec22*/
+      BYTE1(this->IsInitialized) = a3 == 0; /*0x49ec22*/
       return 1; /*0x49ec28*/
     }
     else
@@ -1053,12 +1053,12 @@ namespace gamemd {
 void DynamicVectorClass_PAD_16::Remove(void *a1_1)
 {
 
-  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x49ec4d*/
+  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->IsInitialized) ) /*0x49ec4d*/
   {
     __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x49ec53*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x49ec5b*/
   }
-  BYTE1(this->m_C) = 0; /*0x49ec5e*/
+  BYTE1(this->IsInitialized) = 0; /*0x49ec5e*/
   this->m_8 = 0; /*0x49ec61*/
 
 }
@@ -1073,7 +1073,7 @@ int DynamicVectorClass_PAD_16::GetSize(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x49ec70*/
+  if ( !LOBYTE(this->IsInitialized) ) /*0x49ec70*/
     return 0; /*0x49ec78*/
   m_8 = (int)(this->m_8); /*0x49ec7e*/
   result = 0; /*0x49ec81*/
@@ -1094,7 +1094,7 @@ namespace gamemd {
 unsigned int DynamicVectorClass_PAD_16::GetCapacity(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x49ecb0*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x49ecb0*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x49ecc5*/
   else
     return 0; /*0x49ecb7*/

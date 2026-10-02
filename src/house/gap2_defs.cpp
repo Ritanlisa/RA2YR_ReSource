@@ -145,19 +145,19 @@ void BaseClass::ddtor() {
 
   v2 = *(void **)&this->m_1[3]; /*0x42f3a6*/
   this->m_10 = 0; /*0x42f3a9*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x42f3b0*/
+  if ( v2 && IDA_BYTE1(this->percentBuilt) ) /*0x42f3b0*/
   {
     RA2_OPDEL(v2); /*0x42f3b6*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x42f3be*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x42f3c1*/
-  this->m_8 = 0; /*0x42f3c4*/
+  IDA_BYTE1(this->percentBuilt) = 0; /*0x42f3c1*/
+  this->baseNodeCapacity = 0; /*0x42f3c4*/
 }
 }
 // 0x42F3D0
 namespace gamemd { 
 int BaseClass::Write(int a1) {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x42f3d0*/
+  if ( IDA_LOBYTE(this->percentBuilt) ) /*0x42f3d0*/
     return (unsigned int)(a1 - *(unsigned int *)&this->m_1[3]) >> 4; /*0x42f3e5*/
   else
     return 0; /*0x42f3d7*/
@@ -180,7 +180,7 @@ int BaseClass::Release(int a1, void* a2) {
   if ( a1 ) /*0x42f4fd*/
   {
     v5 = (char *)(a2); /*0x42f503*/
-    IDA_LOBYTE(this->m_C) = 0; /*0x42f507*/
+    IDA_LOBYTE(this->percentBuilt) = 0; /*0x42f507*/
     if ( a2 ) /*0x42f50d*/
     {
       v7 = (char *)(a2); /*0x42f533*/
@@ -193,12 +193,12 @@ int BaseClass::Release(int a1, void* a2) {
       else
         v7 = 0; /*0x42f52c*/
     }
-    IDA_LOBYTE(this->m_C) = 1; /*0x42f53b*/
+    IDA_LOBYTE(this->percentBuilt) = 1; /*0x42f53b*/
     if ( !v7 ) /*0x42f53f*/
       return 0; /*0x42f5d4*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x42f545*/
     {
-      m_8 = this->m_8; /*0x42f54c*/
+      m_8 = this->baseNodeCapacity; /*0x42f54c*/
       if ( a1 < m_8 ) /*0x42f551*/
         m_8 = a1; /*0x42f553*/
       if ( m_8 > 0 ) /*0x42f557*/
@@ -219,21 +219,21 @@ int BaseClass::Release(int a1, void* a2) {
         v3 = a1; /*0x42f57f*/
         v5 = (char *)(a2); /*0x42f583*/
       }
-      if ( IDA_BYTE1(this->m_C) ) /*0x42f587*/
+      if ( IDA_BYTE1(this->percentBuilt) ) /*0x42f587*/
       {
         RA2_OPDEL(*(void **)&this->m_1[3]); /*0x42f592*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x42f59a*/
       }
     }
     *(unsigned int *)&this->m_1[3] = v7; /*0x42f5a3*/
-    this->m_8 = v3; /*0x42f5ab*/
-    IDA_BYTE1(this->m_C) = v5 == 0; /*0x42f5ae*/
+    this->baseNodeCapacity = v3; /*0x42f5ab*/
+    IDA_BYTE1(this->percentBuilt) = v5 == 0; /*0x42f5ae*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_VBaseNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x42f5b7*/
   }
-  v12 = this->m_8; /*0x42f5ba*/
+  v12 = this->baseNodeCapacity; /*0x42f5ba*/
   if ( v12 < this->m_10 ) /*0x42f5c2*/
     this->m_10 = v12; /*0x42f5c4*/
   return 1; /*0x42f5c7*/
@@ -269,13 +269,13 @@ void* BaseClass::QueryInterface(int a1) {
 
   v3 = *(void **)&this->m_1[3]; /*0x42f973*/
   *(unsigned int *)this->__pad_0 = (void *)&VectorClass_BaseNodeClass_vftable; /*0x42f976*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x42f980*/
+  if ( v3 && IDA_BYTE1(this->percentBuilt) ) /*0x42f980*/
   {
     RA2_OPDEL(v3); /*0x42f988*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x42f990*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x42f99b*/
-  this->m_8 = 0; /*0x42f9a1*/
+  IDA_BYTE1(this->percentBuilt) = 0; /*0x42f99b*/
+  this->baseNodeCapacity = 0; /*0x42f9a1*/
   if ( (a1 & 1) != 0 ) /*0x42f9a8*/
     RA2_OPDEL(this); /*0x42f9ab*/
   return this->__pad_0; /*0x42f9b5*/

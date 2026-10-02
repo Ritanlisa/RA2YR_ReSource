@@ -307,7 +307,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
     return v4; /*0x48035f*/
   if ( !this->ptr_34 ) /*0x480365*/
     TacticalClass::SetView(this, 0, 0x10000, 0, 1000, 1000, 1000); /*0x480384*/
-  v6 = this->u32_38; /*0x480389*/
+  v6 = this->field38; /*0x480389*/
   v17 = 0; /*0x48038c*/
   if ( v6 == 0xFFFF ) /*0x480395*/
   {
@@ -325,7 +325,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
     if ( CellClass::GetTerrainFlag(v7, *(uint8_t *)(&((unsigned char *)(this) + 0x0702))) ) /*0x4803ba*/
       inited = (((unsigned char *)(this) + 0x140) >> 13) & 1; /*0x4803cc*/
     else
-      inited = CellClass::InitRandomOffsets((int)(this), this->u32_38, v7[188]); /*0x4803dc*/
+      inited = CellClass::InitRandomOffsets((int)(this), this->field38, v7[188]); /*0x4803dc*/
     goto LABEL_10; /*0x4803cf*/
   }
   LABEL_11:

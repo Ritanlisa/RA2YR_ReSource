@@ -336,7 +336,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
       content[12] = v5; /*0x47e91c*/
       this->u32_E4 = content; /*0x47e91f*/
     }
-    v18 = this->u32_24; /*0x47e929*/
+    v18 = this->smudgeTypeIndex; /*0x47e929*/
     v13 = 128; /*0x47e94b*/
     v14 = 128; /*0x47e94f*/
     inited = (int)(Isometric::InitTables((IUnknown *)(this), &v13)); /*0x47e953*/
@@ -344,7 +344,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v16 = (IDA_SHIWORD(v18) << 8) + 128; /*0x47e966*/
     v17 = inited; /*0x47e96a*/
     if ( !Cell::IsPassable((unsigned int *)((IUnknown *)(&v15))) /*0x47e9cf*/
-      && (v19 = this->u32_24,
+      && (v19 = this->smudgeTypeIndex,
           v13 = 128,
           v14 = 128,
           v8 = Isometric::InitTables((IUnknown *)(this), &v13),
@@ -771,13 +771,13 @@ void CellClass::ReduceTiberium(int amount)
   if ( v23 <= 0 || BuildingByTiberiumType == -1 ) /*0x480b82*/
     return 0; /*0x480ca3*/
   v17 = *(CellClass **)(((unsigned int *)&g_BuildingLoadQueue_Array)[2] + 4 * BuildingByTiberiumType); /*0x480b8e*/
-  if ( this->u32_11E == 11 ) /*0x480b99*/
+  if ( this->powerup == 11 ) /*0x480b99*/
     CellClass::RegisterForRedraw(v17, (int16_t *)&this->vtable28); /*0x480ba1*/
   if ( *((uint8_t *)&this->estimatedHealth6) + 1 <= v16 ) /*0x480bb9*/
   {
     v16 = *((uint8_t *)&this->estimatedHealth6); /*0x480bc8*/
     *(&this->vtable27) = -1; /*0x480bce*/
-    this->u32_11E = 0; /*0x480bd5*/
+    this->powerup = 0; /*0x480bd5*/
     House::AnnounceUpgrade((int)this, -1); /*0x480bdc*/
     v18 = &this->objectTypeFlags; /*0x480be1*/
     BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)v18); /*0x480bea*/

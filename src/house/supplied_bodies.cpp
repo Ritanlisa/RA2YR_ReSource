@@ -23,7 +23,7 @@ char BaseClass::AddRef(int a2) {
     unsigned short *v6; // ecx
     int v7; // edx
 
-    m_8 = this->m_8; /*0x42f49b*/
+    m_8 = this->baseNodeCapacity; /*0x42f49b*/
     if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x42f4a0*/
     {
       v3 = 0; /*0x42f4a2*/

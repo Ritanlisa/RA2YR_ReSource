@@ -372,7 +372,7 @@ int unknown::Release(int a1, void* a2) {
   v3 = a1; /*0x589551*/
   if ( a1 ) /*0x58955c*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x589566*/
+    IDA_LOBYTE(this->unknown_field_0C) = 0; /*0x589566*/
     if ( a2 ) /*0x58956c*/
     {
       if ( a1 - 1 >= 0 ) /*0x5895aa*/
@@ -416,12 +416,12 @@ int unknown::Release(int a1, void* a2) {
         v5 = 0; /*0x5895a1*/
       }
     }
-    IDA_LOBYTE(this->m_C) = 1; /*0x5895dc*/
+    IDA_LOBYTE(this->unknown_field_0C) = 1; /*0x5895dc*/
     if ( !v5 ) /*0x5895e0*/
       return 0; /*0x589674*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x5895e6*/
     {
-      m_8 = this->m_8; /*0x5895ed*/
+      m_8 = this->m_Size; /*0x5895ed*/
       if ( v3 < m_8 ) /*0x5895f2*/
         m_8 = v3; /*0x5895f4*/
       if ( m_8 > 0 ) /*0x5895f8*/
@@ -441,21 +441,21 @@ int unknown::Release(int a1, void* a2) {
         while ( m_8 ); /*0x58961e*/
         v3 = a1; /*0x589620*/
       }
-      if ( IDA_BYTE1(this->m_C) ) /*0x589624*/
+      if ( IDA_BYTE1(this->unknown_field_0C) ) /*0x589624*/
       {
         RA2_OPDEL(*(void **)&this->m_1[3]); /*0x58962f*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x589637*/
       }
     }
     *(unsigned int *)&this->m_1[3] = v5; /*0x589649*/
-    this->m_8 = v3; /*0x58964c*/
-    IDA_BYTE1(this->m_C) = a2 == 0; /*0x58964f*/
+    this->m_Size = v3; /*0x58964c*/
+    IDA_BYTE1(this->unknown_field_0C) = a2 == 0; /*0x58964f*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_UZoneConnectionClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x589658*/
   }
-  v13 = this->m_8; /*0x58965b*/
+  v13 = this->m_Size; /*0x58965b*/
   if ( v13 < this->m_10 ) /*0x589663*/
     this->m_10 = v13; /*0x589665*/
   return 1; /*0x589668*/

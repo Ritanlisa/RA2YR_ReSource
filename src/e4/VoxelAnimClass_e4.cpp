@@ -899,7 +899,7 @@ AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
   int v8; // eax
 
   HouseClass::ProcessPower((ObjectClass *)this); /*0x74aa39*/
-  Power::TimerProcess(this->VoxelAnimClass_field_0x100); /*0x74aa47*/
+  Power::TimerProcess(this->q100); /*0x74aa47*/
   v3 = (*(int (**)(char *))(*((unsigned int *)this->VoxelAnimClass_field_0x104 + 1) + 16))((char *)this->VoxelAnimClass_field_0x104 + 4); /*0x74aa58*/
   Power::TimerProcess(v3); /*0x74aa5e*/
   VoxelAnimClass_field_0x108 = this->VoxelAnimClass_field_0x108; /*0x74aa63*/

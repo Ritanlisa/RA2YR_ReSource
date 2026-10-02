@@ -458,7 +458,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     --v9; /*0x5c14ca*/
   }
   while ( v9 ); /*0x5c14cb*/
-  MPCooperative_field_0x1A4 = (VectorClass *)this->MPCooperative_field_0x1A4; /*0x5c14cd*/
+  MPCooperative_field_0x1A4 = (VectorClass *)this->u32_1A4; /*0x5c14cd*/
   v11 = 8; /*0x5c14d3*/
   do /*0x5c14f5*/
   {

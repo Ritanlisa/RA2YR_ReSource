@@ -440,7 +440,7 @@ void EventClass::initEvent()
   void *v2; // eax
 
   v2 = *(void **)&this->m_1[3]; /*0x40b6a6*/
-  this->m_10 = 0; /*0x40b6a9*/
+  this->Count = 0; /*0x40b6a9*/
   if ( v2 && BYTE1(this->m_C) ) /*0x40b6b0*/
   {
     __3_YAXPAX_Z(v2); /*0x40b6b6*/
@@ -545,8 +545,8 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
     (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40b90e*/
   }
   v7 = this->m_8; /*0x40b911*/
-  if ( v7 < this->m_10 ) /*0x40b919*/
-    this->m_10 = v7; /*0x40b91b*/
+  if ( v7 < this->Count ) /*0x40b919*/
+    this->Count = v7; /*0x40b91b*/
   return 1; /*0x40b91e*/
 
 }
@@ -645,8 +645,8 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
     (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40bb6e*/
   }
   v7 = this->m_8; /*0x40bb71*/
-  if ( v7 < this->m_10 ) /*0x40bb79*/
-    this->m_10 = v7; /*0x40bb7b*/
+  if ( v7 < this->Count ) /*0x40bb79*/
+    this->Count = v7; /*0x40bb7b*/
   return 1; /*0x40bb7e*/
 
 }
@@ -795,8 +795,8 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
     (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40c49e*/
   }
   v7 = this->m_8; /*0x40c4a1*/
-  if ( v7 < this->m_10 ) /*0x40c4a9*/
-    this->m_10 = v7; /*0x40c4ab*/
+  if ( v7 < this->Count ) /*0x40c4a9*/
+    this->Count = v7; /*0x40c4ab*/
   return 1; /*0x40c4ae*/
 
 }

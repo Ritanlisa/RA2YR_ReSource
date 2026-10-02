@@ -696,9 +696,9 @@ int MapSeedClass::GenerateSeed(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x5acb80*/
+  if ( !LOBYTE(this->q00C) ) /*0x5acb80*/
     return 0; /*0x5acb88*/
-  m_8 = this->m_8; /*0x5acb8e*/
+  m_8 = this->q008; /*0x5acb8e*/
   result = 0; /*0x5acb91*/
   if ( m_8 <= 0 ) /*0x5acb95*/
     return -1; /*0x5acbac*/

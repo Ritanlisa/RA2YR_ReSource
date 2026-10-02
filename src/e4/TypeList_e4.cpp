@@ -288,14 +288,14 @@ void TypeList_flat::ddtor()
   void *v2; // eax
 
   v2 = *(void **)&this->m_1[3]; /*0x477846*/
-  this->m_10 = 0; /*0x477849*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x477850*/
+  this->u32_10 = 0; /*0x477849*/
+  if ( v2 && BYTE1(this->u32_C) ) /*0x477850*/
   {
     __3_YAXPAX_Z(v2); /*0x477856*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x47785e*/
   }
-  BYTE1(this->m_C) = 0; /*0x477861*/
-  this->m_8 = 0; /*0x477864*/
+  BYTE1(this->u32_C) = 0; /*0x477861*/
+  this->u32_8 = 0; /*0x477864*/
 
 }
 }  // G42.18c ns repair
@@ -304,7 +304,7 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int TypeList_flat::GetCapacity(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x477870*/
+  if ( LOBYTE(this->u32_C) ) /*0x477870*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x477885*/
   else
     return 0; /*0x477877*/
@@ -352,7 +352,7 @@ int TypeList_flat::GetSize(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x477f10*/
+  m_10 = this->u32_10; /*0x477f10*/
   result = 0; /*0x477f13*/
   if ( m_10 <= 0 ) /*0x477f18*/
     return -1; /*0x477f2f*/
