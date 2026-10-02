@@ -48,6 +48,7 @@ struct UDPInterfaceClass {
     void CheckStatus(short a2);
     void GetStatistics(unsigned short a2);
     void disconnect();
+    unsigned int m_10;  // 0x10
 };
 
 } // namespace gamemd

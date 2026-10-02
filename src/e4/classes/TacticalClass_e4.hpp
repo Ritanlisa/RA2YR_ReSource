@@ -333,6 +333,7 @@ struct TacticalClass {
     int Initialize();  // 0x4ae450
     int ResetScrollBounds();  // 0x6da160
     int ScrollView(char aP1);  // 0x554af0
+    unsigned int u32_58C6;  // 0x58C6
 };
 
 } // namespace gamemd

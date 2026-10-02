@@ -85,6 +85,7 @@ struct AbstractClass {
     unsigned int spawns;
     unsigned int *__pad_48;
     unsigned int spawnVectorCount;
+    unsigned int DiskLaserClass_field_0x28;  // 0x28
     unsigned int q3D4;  // 0x3D4
     unsigned int q090;  // 0x90
     unsigned int q0C0;  // 0xC0

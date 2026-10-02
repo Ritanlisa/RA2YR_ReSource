@@ -101,6 +101,7 @@ struct FactoryClass {
     wchar_t * ResetProductionTimers();  // 0x6b0c80
     unsigned int * CompleteItem();  // 0x71abc0
     int * RemoveFromArrays(char a2);  // 0x63d9c0
+    unsigned int u32_288;  // 0x288
 };
 
 } // namespace gamemd

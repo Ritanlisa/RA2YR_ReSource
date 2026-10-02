@@ -6,6 +6,7 @@ namespace gamemd {
 struct DListNode {
     int Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     int InitEmpty();
+    unsigned int DListNode_field_0x04;  // 0x4
 };
 
 } // namespace gamemd

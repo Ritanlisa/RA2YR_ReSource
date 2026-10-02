@@ -87,6 +87,7 @@ struct AITriggerTypeClass {
     int IronCurtainCharged(int a1, int a2);
     int RegisterFailure();
     int RegisterSuccess();
+    unsigned char u8_D1;  // 0xD1
     unsigned char q0148;  // 0x148
     unsigned int q0147;  // 0x147
     unsigned char q0144;  // 0x144

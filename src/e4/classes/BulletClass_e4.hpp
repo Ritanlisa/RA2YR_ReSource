@@ -416,6 +416,7 @@ struct BulletClass {
     int PowerDrainProcess(int a1, unsigned int * a2);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     int16_t LoseTarget();  // 0x468430
+    unsigned int q740;  // 0x740
     unsigned int q0A43;  // 0xA43
 };
 

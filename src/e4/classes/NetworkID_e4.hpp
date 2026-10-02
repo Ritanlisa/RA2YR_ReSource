@@ -6,6 +6,7 @@ namespace gamemd {
 struct NetworkID {
     int16_t Assign(unsigned int *a2, int a3, int16_t a4);
     int Compare(int a2);
+    unsigned int NetworkID_field_0x04;  // 0x4
 };
 
 } // namespace gamemd

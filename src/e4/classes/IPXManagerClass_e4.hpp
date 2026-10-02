@@ -40,6 +40,7 @@ struct IPXManagerClass {
     unsigned int q050;  // 0x50
     unsigned int q04C;  // 0x4C
     unsigned int q028;  // 0x28
+    unsigned int u32_A0;  // 0xA0
 };
 
 } // namespace gamemd

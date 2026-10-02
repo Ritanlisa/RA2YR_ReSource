@@ -28,6 +28,7 @@ struct AudioMixer {
     int RequestOrEndBuffer(int a1, unsigned int a2);
     int SetVolume();
     int Shutdown(void *a1);
+    unsigned int u32_80;  // 0x80
 };
 
 } // namespace gamemd

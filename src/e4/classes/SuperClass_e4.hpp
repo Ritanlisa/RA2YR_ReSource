@@ -74,6 +74,7 @@ struct SuperClass {
     void* q070;  // 0x70
     unsigned int q74;  // 0x74
     void* p78;  // regen name
+    unsigned int SuperClass_field_0x78;  // 0x78
     unsigned int q7C;  // 0x7C
     int q080;  // 0x80
     char q084[4];  // 0x84

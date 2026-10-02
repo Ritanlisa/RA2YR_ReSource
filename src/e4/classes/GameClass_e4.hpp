@@ -25,6 +25,7 @@ struct GameClass {
     unsigned int u32_18;  // 0x18
     CampaignClass * ptr_20;  // 0x20
     unsigned int q024;  // 0x24
+    unsigned int GameClass_field_0x2A;  // 0x2A
     unsigned char q02E;  // 0x2E
     unsigned int u32_34;  // 0x34
     unsigned int u32_38;  // 0x38
