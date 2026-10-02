@@ -664,7 +664,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
               v94 = (int)(v43 + 36); /*0x74a482*/
               CellClass::RegisterForRedraw(v44, (int16_t *)v43 + 18); /*0x74a486*/
               v43[286] = 0; /*0x74a48f*/
-              StartCoords = House::GetStartCoords((House *)v43, v100); /*0x74a49e*/
+              StartCoords = ((House *)((House *)v43))->GetStartCoords(v100); /*0x74a49e*/
               v48 = *StartCoords; /*0x74a4a6*/
               v49 = StartCoords[1] - (unsigned int)DSurface_ViewBounds.field_4; /*0x74a4ab*/
               v50 = StartCoords[2]; /*0x74a4ad*/
@@ -765,7 +765,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
             }
             CellClass::RegisterForRedraw(v56, (int16_t *)&v55->smudgeTypeIndex); /*0x74a6d9*/
             v55->powerup = 0; /*0x74a6e2*/
-            House::GetStartCoords((House *)v55, &v108); /*0x74a6ec*/
+            ((House *)((House *)v55))->GetStartCoords(&v108); /*0x74a6ec*/
             BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)&v55->smudgeTypeIndex); /*0x74a6f7*/
           }
         }
@@ -865,7 +865,7 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
 
   int Register; // edi
 
-  Register = BuildingClass::SaveLoad_Register((ObjectClass *)this); /*0x74a981*/
+  Register = ((BuildingClass *)((ObjectClass *)this))->SaveLoad_Register(); /*0x74a981*/
   if ( Register >= 0 ) /*0x74a985*/
   {
     if ( aP1 ) /*0x74a989*/

@@ -2477,7 +2477,7 @@ CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
   BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47aa03*/
   *((unsigned char *)this + 84) = 0; /*0x47aa0c*/
   *(unsigned int *)this->BufferIOFileClass = &off_7E1668; /*0x47aa10*/
-  v3 = String::GetOrEmpty_Alt((String *)a2); /*0x47aa16*/
+  v3 = ((String *)((String *)a2))->GetOrEmpty_Alt(); /*0x47aa16*/
   FileClass::OpenWithCDSearch(this, v3); /*0x47aa1e*/
   return this->BufferIOFileClass; /*0x47aa25*/
 

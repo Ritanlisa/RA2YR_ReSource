@@ -1018,7 +1018,7 @@ int InitializeVeinholeSystem(char a1)
   if ( !v4 ) /*0x74e004*/
     dword_B1D2F0 = (unsigned int)(RA2_OPNEW(v2)); /*0x74e00f*/
   ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x74e019*/
-  for ( k = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); k; k = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x74e02f*/
+  for ( k = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); k; k = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext() ) /*0x74e02f*/
     *(unsigned int *)(k + 320) &= ~0x8000u; /*0x74e03e*/
   memset(dword_B1D2F0, 0, v2); /*0x74e05c*/
   for ( m = dword_B1D2A0 - 1; m >= 0; --m ) /*0x74e06f*/
@@ -1189,7 +1189,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   if ( (this->ambientSoundController[2] & 8) == 0 ) /*0x74faef*/
   {
     RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fafa*/
-    if ( (uint8_t)FileClass::Open(&v9, 0) ) /*0x74fb04*/
+    if ( (uint8_t)((FileClass *)(&v9))->Open(0) ) /*0x74fb04*/
     {
       FileClass::Read(&v9, (char *)&this->owningHouseIndex + 2, 16); /*0x74fb17*/
       for ( BYTE1(this->attachedBomb) = 0; /*0x74fb30*/
@@ -1203,7 +1203,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     {
       BYTE2(this->owningHouseIndex) = 0; /*0x74fb55*/
     }
-    RawFileClass::Dtor(&v9); /*0x74fb5c*/
+    ((RawFileClass *)(&v9))->Dtor(); /*0x74fb5c*/
     v2 = this->ambientSoundController[2]; /*0x74fb61*/
     LOBYTE(v2) = v2 | 8; /*0x74fb64*/
     this->ambientSoundController[2] = v2; /*0x74fb66*/
@@ -1223,7 +1223,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   if ( (*((unsigned int *)((char *)&stru_A8EB00 + 320)) & 8) == 0 ) /*0x74fb8b*/
   {
     RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fb9a*/
-    if ( (uint8_t)FileClass::Open(&v9, 0) ) /*0x74fba4*/
+    if ( (uint8_t)((FileClass *)(&v9))->Open(0) ) /*0x74fba4*/
     {
       FileClass::Read(&v9, &(unsigned int *)((char *)&stru_A8EB00 + 294), 16); /*0x74fbb8*/
       for ( *((unsigned int *)((char *)&stru_A8EB00 + 309)) = 0; /*0x74fbd9*/
@@ -1237,7 +1237,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     {
       *((unsigned int *)((char *)&stru_A8EB00 + 294)) = 0; /*0x74fc07*/
     }
-    RawFileClass::Dtor(&v9); /*0x74fc11*/
+    ((RawFileClass *)(&v9))->Dtor(); /*0x74fc11*/
     v5 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 320); /*0x74fc16*/
     LOBYTE(v5) = *((unsigned int *)((char *)&stru_A8EB00 + 320)) | 8; /*0x74fc1b*/
     *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 320) = v5; /*0x74fc1d*/

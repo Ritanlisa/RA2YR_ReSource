@@ -101,7 +101,7 @@ int RadioClass::LoadState(int aP1, int aP2)
 
   v3 = (gamemd::ObjectClass *)((int)(aP1));
   v4 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(aP2))));
-  result = BuildingClass::SaveLoad_Register((ObjectClass *)this); /*0x65ab8d*/
+  result = ((BuildingClass *)((ObjectClass *)this))->SaveLoad_Register(); /*0x65ab8d*/
   if ( result >= 0 ) /*0x65ab94*/
   {
     v6 = (gamemd::ObjectClass *)((int)(v3 + 224));

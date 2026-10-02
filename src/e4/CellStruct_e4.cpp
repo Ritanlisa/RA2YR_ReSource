@@ -8,7 +8,7 @@
 
 // 0x42D510
 namespace gamemd {
-void* CellStruct::Add(void* aP1, void* aP2, void *a3_1)
+void* CellStruct::Add(unsigned int *aP1, unsigned short *aP2)
 {
 
   void * v3;
@@ -49,7 +49,7 @@ BOOL CellStruct::Equals(unsigned short * a2, void *a2_2)
 }
 // 0x588C60
 namespace gamemd {
-void* CellStruct::Sub(void* aP1, void* aP2)
+void* CellStruct::Sub(unsigned int *aP1, unsigned short *aP2)
 {
 
   int16_t v3; // dx

@@ -148,7 +148,7 @@ int SaveGame::SaveTriggerEvents()
 }
 // 0x67D300
 namespace gamemd {
-void SaveGame::Start(LPSTREAM pStm, void *a2_1)
+void SaveGame::Start()
 {
 
   int v2; // ecx
@@ -505,7 +505,7 @@ int SaveGame::SaveAudioQueueItems()
   v2 = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(this, &v11, 4, 0); /*0x751647*/
   if ( v2 >= 0 )
   {
-    for ( i = AudioQueue::GetNext((AudioQueue *)&stru_B1D290.isAliveFlag); i; i = AudioQueue::GetNextAlt((AudioQueue *)i) )
+    for ( i = ((AudioQueue *)((AudioQueue *)&stru_B1D290.isAliveFlag))->GetNext(); i; i = ((AudioQueue *)((AudioQueue *)i))->GetNextAlt() )
     {
       v4 = -1; /*0x751665*/
       v12[0] = -1; /*0x751668*/

@@ -39,7 +39,7 @@
 
 // 0x47C3D0
 namespace gamemd {
-int Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, void *a4_1)
+int Object::FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3)
 {
 
   double v4; // st7
@@ -113,7 +113,7 @@ int Object::FindObjectCell(TechnoClass * aP1, char aP2)
     }
   }
 LABEL_5:
-  result = Object::FindClosestObjectCell(this, aP1, aP2, 0); /*0x47c5ca*/
+  result = ((Object *)(this))->FindClosestObjectCell(aP1, aP2, 0); /*0x47c5ca*/
   if ( !result ) /*0x47c5df*/
   {
     if ( byte_A8E9A0 ) /*0x47c5e8*/
@@ -1695,7 +1695,7 @@ void ** Object::RemoveObjectArray(void *a1_1)
 
 // 0x5F5230
 namespace gamemd {
-int Object::Unlink(void *a1_1)
+int Object::Unlink()
 {
 
   int result; // eax
@@ -1755,7 +1755,7 @@ int Object::LoadObject(ObjectClass * aP1, int aP1a)
 
   int Register; // edi
 
-  Register = BuildingClass::SaveLoad_Register((ObjectClass *)this); /*0x5fd901*/
+  Register = ((BuildingClass *)((ObjectClass *)this))->SaveLoad_Register(); /*0x5fd901*/
   if ( Register >= 0 ) /*0x5fd905*/
   {
     if ( aP1 ) /*0x5fd909*/

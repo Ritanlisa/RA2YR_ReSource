@@ -18,8 +18,8 @@ struct Count {
 // --- flat members (END) ---
     AbstractClass * * DecrementRefCountsAudio();
     int32_t ddtor();
-    int32_t Get(void *a1, void *a2);
-    int32_t GetCountQueue(void *a1);
+    int32_t Get();
+    int32_t GetCountQueue();
     int SetupAllCountriesLobby();
     int32_t Release(void *a1);
 };

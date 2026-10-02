@@ -125,9 +125,9 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
         if ( !v9 ) /*0x5e77ae*/
           return result; /*0x5e7812*/
         v10 = ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)Str, 250, 1); /*0x5e77cf*/
-        for ( result = (void **)(Count::GetCountQueue((Count *)&unk_A8EA70)); /*0x5e77d8*/
+        for ( result = (void **)(((Count *)((Count *)&unk_A8EA70))->GetCountQueue()); /*0x5e77d8*/
               result > 0;
-              result = Count::GetCountQueue((Count *)&unk_A8EA70) )
+              result = ((Count *)((Count *)&unk_A8EA70))->GetCountQueue() )
         {
           result = (void **)(v17);
           v11 = 1800; /*0x5e77de*/
@@ -170,9 +170,9 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
         if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
         ((RawFileClass *)(&v18))->Construct((int)byte_A8B8E0); /*0x5e76c1*/
-        if ( (uint8_t)FileClass::Open(&v18, 0) ) /*0x5e76cc*/
+        if ( (uint8_t)((FileClass *)(&v18))->Open(0) ) /*0x5e76cc*/
           v7 = 1; /*0x5e76d5*/
-        RawFileClass::Dtor(&v18); /*0x5e76db*/
+        ((RawFileClass *)(&v18))->Dtor(); /*0x5e76db*/
         if ( !v7 ) /*0x5e76e2*/
         {
 LABEL_42: v12 = (gamemd::Skirmish *)(g_UIControlState);

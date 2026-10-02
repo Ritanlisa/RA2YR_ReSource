@@ -346,7 +346,7 @@ void WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4
   int v3; // eax
   int v4; // eax
 
-  AbstractTypeClass::Constructor(this, aP1); /*0x75cecb*/
+  ((AbstractTypeClass *)(this))->Constructor(aP1); /*0x75cecb*/
   *((unsigned int *)this + 38) = 0; /*0x75ced8*/
   *((unsigned int *)this + 39) = 0; /*0x75cede*/
   *((unsigned int *)this + 62) = 0; /*0x75cee4*/
@@ -565,8 +565,8 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
       AbstractTypeClass::Init((int)v2, (int)&a1); /*0x75e108*/
       ((DynamicVectorClass *)((DynamicVectorClass *)v2->__pad_104))->AnimTypeConstructor(0, 0); /*0x75e117*/
       *(unsigned int *)v2->__pad_104 = (unsigned int)(&vt_TypeList); /*0x75e120*/
-      WarheadTypeClass::checkImmunity((WarheadTypeClass *)DebrisTypes, (int)&a1); /*0x75e12d*/
-      WarheadTypeClass::calculateDamage((WarheadTypeClass *)&v2->__pad_1A0[8], (int)&a1); /*0x75e139*/
+      ((WarheadTypeClass *)((WarheadTypeClass *)DebrisTypes))->checkImmunity((int)&a1); /*0x75e12d*/
+      ((WarheadTypeClass *)((WarheadTypeClass *)&v2->__pad_1A0[8]))->calculateDamage((int)&a1); /*0x75e139*/
       v2->Deform = (unsigned int)(&vt_WarheadTypeClass); /*0x75e13e*/
       v2->WarheadTypeClass_field_0x4 = (unsigned int)(&vt_WarheadTypeClass); /*0x75e144*/
       v2->WarheadTypeClass_field_0x8 = (unsigned int)(&vt_WarheadTypeClass); /*0x75e14b*/
@@ -581,7 +581,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     for ( i = 0; i < (int)a1; ++i ) /*0x75e18b*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x75e199*/
-      DynamicVector::Add_Alt4((DynamicVector *)v2->__pad_104, &a2); /*0x75e1a7*/
+      ((DynamicVector *)((DynamicVector *)v2->__pad_104))->Add_Alt4(&a2); /*0x75e1a7*/
     }
     if ( DebrisTypes ) /*0x75e1b5*/
       TypeList::VoxelAnimConstructor((TypeList *)DebrisTypes); /*0x75e1b9*/
@@ -589,7 +589,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     for ( j = 0; j < (int)a1; ++j ) /*0x75e1d5*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x75e1e3*/
-      DynamicVector::Add2((DynamicVector *)DebrisTypes, &a2); /*0x75e1ed*/
+      ((DynamicVector *)((DynamicVector *)DebrisTypes))->Add2(&a2); /*0x75e1ed*/
     }
     if ( v2 != (WarheadTypeClass *)-424 ) /*0x75e201*/
       TypeList::Construct((TypeList *)&v2->__pad_1A0[8]); /*0x75e205*/
@@ -786,7 +786,7 @@ CampaignClass * * WarheadTypeClass::Destructor(void ** Block, char a2)
   }
   Block->__pad_10C[5] = 0; /*0x75e666*/
   *(unsigned int *)Block->__pad_10C = 0; /*0x75e66c*/
-  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x75e672*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x75e672*/
   if ( (a2 & 1) != 0 ) /*0x75e67e*/
     __3_YAXPAX_Z(Block); /*0x75e681*/
   return &Block->Deform; /*0x75e68b*/
@@ -968,7 +968,7 @@ void* WarheadTypeClass_ReadINI()
         break; /*0x7724b4*/
       IntList = (void ***)AnimTypeClass::FindOrCreate(i); /*0x7724bf*/
       if ( IntList ) /*0x7724c3*/
-        DynamicVector::Add_Alt4(&v65, &IntList); /*0x7724ce*/
+        ((DynamicVector *)(&v65))->Add_Alt4(&IntList); /*0x7724ce*/
     }
     TypeList::AnimTypeCopy(v68, &v65); /*0x7724ef*/
     v65 = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x7724f8*/
@@ -1370,7 +1370,7 @@ int WarheadTypeClass::GetTypeIdentifier()
 
 }
 // 0x75E690
-CCINIClass * WarheadTypeClass::checkImmunity(TypeList_flat * aP1)
+CCINIClass * WarheadTypeClass::checkImmunity(int aP1)
 {
 
   this->Deform = &vt_TypeList; /*0x75e692*/
@@ -1378,7 +1378,7 @@ CCINIClass * WarheadTypeClass::checkImmunity(TypeList_flat * aP1)
 
 }
 // 0x75E6A0
-DynamicVector * WarheadTypeClass::calculateDamage(AbstractClass * aP1)
+DynamicVector * WarheadTypeClass::calculateDamage(int aP1)
 {
 
   this->Deform = &vt_TypeList; /*0x75e6a2*/

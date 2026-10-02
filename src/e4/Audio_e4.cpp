@@ -143,12 +143,12 @@ int Audio::UpdatePlaybackPosition()
     v8 = *(unsigned int *)this->__pad_18; /*0x405554*/
     LOBYTE(v8) = v8 & 0xFD; /*0x405557*/
     *(unsigned int *)this->__pad_18 = v8; /*0x405559*/
-    AudioStream::Stop(*(AudioStream **)&this->__pad_3C[116]); /*0x405562*/
+    ((AudioStream *)(*(AudioStream **)&this->__pad_3C[116]))->Stop(); /*0x405562*/
     return 0; /*0x405567*/
   }
   else
   {
-    AudioStream::Stop(*(AudioStream **)&this->__pad_3C[116]); /*0x405572*/
+    ((AudioStream *)(*(AudioStream **)&this->__pad_3C[116]))->Stop(); /*0x405572*/
     return 1; /*0x405577*/
   }
 
@@ -164,12 +164,12 @@ void * Audio::ProcessMixerOutput(char * Source)
 
   if ( !g_AudioConfigState ) /*0x4063bb*/
     return 0; /*0x4063be*/
-  Next = (int *)AudioQueue::GetNext(stru_87E250); /*0x4063cc*/
+  Next = (int *)((AudioQueue *)(stru_87E250))->GetNext(); /*0x4063cc*/
   if ( Next ) /*0x4063d0*/
   {
     while ( _strcmpi(Source, Next + 27) ) /*0x4063e1*/
     {
-      Next = (int *)AudioQueue::GetNextAlt(Next); /*0x4063ee*/
+      Next = (int *)((AudioQueue *)(Next))->GetNextAlt(); /*0x4063ee*/
       if ( !Next ) /*0x4063f2*/
         goto LABEL_6; /*0x4063f2*/
     }
@@ -287,7 +287,7 @@ void Audio::Release()
     if ( result ) /*0x407f52*/
     {
       EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407f59*/
-      Voice::Stop(v2); /*0x407f62*/
+      ((Voice *)(v2))->Stop(); /*0x407f62*/
       LeaveCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407f6c*/
     }
   }
@@ -297,7 +297,7 @@ void Audio::Release()
 }
 // 0x408070
 namespace gamemd {
-int Audio::IsSoundPlaying(void *a1_1)
+int Audio::IsSoundPlaying()
 {
 
   return this->Audio_field_0xC[0] & 1; /*0x408076*/
@@ -414,13 +414,13 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
   *((unsigned char *)this + 4) = 0; /*0x5d0483*/
   *((unsigned int *)this + 2) = 0; /*0x5d0487*/
   *((unsigned int *)this + 3) = 255; /*0x5d048e*/
-  if ( (uint8_t)String::NotEquals((String *)a1, 0) && Audio::IsSoundEnabled() ) /*0x5d04a2*/
+  if ( (uint8_t)((String *)((String *)a1))->NotEquals(0) && Audio::IsSoundEnabled() ) /*0x5d04a2*/
   {
     unknown_libname_73(&v7.m_3[1]); /*0x5d04b5*/
     v4 = String::Tokenize(aP2, 0, Str, (void **)&v7.m_3[1]); /*0x5d04d5*/
     unknown_libname_73(&v7); /*0x5d04d7*/
     String::Tokenize(aP2, v4, Str, (void **)&v7); /*0x5d04e9*/
-    if ( (uint8_t)String::NotEquals(&v7, 0) ) /*0x5d04f4*/
+    if ( (uint8_t)((String *)(&v7))->NotEquals(0) ) /*0x5d04f4*/
     {
       __1_Timevec_std__QAE_XZ((const char **)&v7); /*0x5d0503*/
       *((unsigned int *)this + 3) = v5; /*0x5d050b*/
@@ -435,7 +435,7 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
       }
       *((unsigned int *)this + 3) = 255 * *((unsigned int *)this + 3) / 100; /*0x5d053f*/
     }
-    if ( *((int *)this + 3) > 0 && (uint8_t)String::NotEquals((String *)&v7.m_3[1], 0) ) /*0x5d054f*/
+    if ( *((int *)this + 3) > 0 && (uint8_t)((String *)((String *)&v7.m_3[1]))->NotEquals(0) ) /*0x5d054f*/
       ((String *)((String *)this))->Reassign(a1); /*0x5d055f*/
     DeleteAndZero((ObjectClass *)&v7); /*0x5d0568*/
     DeleteAndZero((ObjectClass *)&v7.m_3[1]); /*0x5d0571*/
@@ -854,12 +854,12 @@ void * Audio::LoadSoundINI()
   result = dword_B1D3A4; /*0x751461*/
   if ( dword_B1D3A4 ) /*0x751468*/
   {
-    Next = AudioQueue::GetNext((AudioQueue *)&stru_B1D290.isAliveFlag); /*0x751474*/
+    Next = ((AudioQueue *)((AudioQueue *)&stru_B1D290.isAliveFlag))->GetNext(); /*0x751474*/
     if ( Next ) /*0x751478*/
     {
       do /*0x7514b1*/
       {
-        NextAlt = AudioQueue::GetNextAlt((AudioQueue *)Next); /*0x751485*/
+        NextAlt = ((AudioQueue *)((AudioQueue *)Next))->GetNextAlt(); /*0x751485*/
         AudioController::Stop((AudioController *)(Next + 12)); /*0x751487*/
         LinkedList::Init((LinkedList *)Next); /*0x75148e*/
         PushFrontLinkedListAlt(dword_B1D3A4, Next); /*0x75149b*/
@@ -2629,7 +2629,7 @@ int sub_752290()
   dword_B1D4BC = 1; /*0x7522e1*/
   if ( g_InfantryDrawState /*0x752307*/
     || (Enabled = Audio::GetEnabled(),
-        result = (int)AudioStream::Constructor(Enabled, 0xBB8u),
+        result = (int)((AudioStream *)(Enabled))->Constructor(0xBB8u),
         (g_InfantryDrawState = (void *)result) != 0) )
   {
     SetAudioFileName(result, aEvaStream); /*0x752311*/
@@ -2665,7 +2665,7 @@ int Audio::IsPlaying()
   UpdateThemes(); /*0x7529e0*/
   if ( !g_InfantryDrawState ) /*0x7529ed*/
     return 0; /*0x752a2d*/
-  if ( !Audio::IsSoundPlaying(g_InfantryDrawState) /*0x752a17*/
+  if ( !((Audio *)(g_InfantryDrawState))->IsSoundPlaying() /*0x752a17*/
     &(void *)&dword_B1D3CC == &stru_B1D3C8
     &(void *)&dword_B1D3F4 == &stru_B1D3F0
     && !dword_B1D4B8 )
@@ -2693,7 +2693,7 @@ int sub_752AD0()
   result = (int)dword_B1D4D8; /*0x752ad0*/
   if ( dword_B1D4D8 /*0x752af2*/
     || (Enabled = Audio::GetEnabled(),
-        result = (int)AudioStream::Constructor(Enabled, 0xBB8u),
+        result = (int)((AudioStream *)(Enabled))->Constructor(0xBB8u),
         (dword_B1D4D8 = (void *)result) != 0) )
   {
     SetAudioFileName(result, aTauntStream); /*0x752afc*/

@@ -189,12 +189,12 @@ LABEL_51:
                   v18 = abstractFlags; /*0x7aab9c*/
                 if ( v18 >= ((char *)&g_WebBrowserConfig) ) /*0x7aaba4*/
                 {
-                  DynamicVector::EnsureCapacity((DynamicVector *)&((char *)&g_WebBrowserConfig)); /*0x7aabab*/
+                  ((DynamicVector *)((DynamicVector *)&((char *)&g_WebBrowserConfig)))->EnsureCapacity(); /*0x7aabab*/
                   abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aabb0*/
                 }
                 if ( abstractFlags >= ((char *)&g_WebBrowserConfig) ) /*0x7aabbb*/
                 {
-                  DynamicVector::EnsureCapacity((DynamicVector *)&((char *)&g_WebBrowserConfig)); /*0x7aabc2*/
+                  ((DynamicVector *)((DynamicVector *)&((char *)&g_WebBrowserConfig)))->EnsureCapacity(); /*0x7aabc2*/
                   abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aabc7*/
                 }
                 if ( v18 < abstractFlags ) /*0x7aabce*/
@@ -253,12 +253,12 @@ LABEL_72:
                   v23 = (int)vtable3; /*0x7aacb9*/
                 if ( v23 >= ((char *)&stru_B765EC) ) /*0x7aacc1*/
                 {
-                  DynamicVector::EnsureCapacity((DynamicVector *)&((char *)&stru_B765EC)); /*0x7aacc8*/
+                  ((DynamicVector *)((DynamicVector *)&((char *)&stru_B765EC)))->EnsureCapacity(); /*0x7aacc8*/
                   vtable3 = (char *)((char *)&stru_B765EC); /*0x7aaccd*/
                 }
                 if ( (int)vtable3 >= ((char *)&stru_B765EC) ) /*0x7aacd8*/
                 {
-                  DynamicVector::EnsureCapacity((DynamicVector *)&((char *)&stru_B765EC)); /*0x7aacdf*/
+                  ((DynamicVector *)((DynamicVector *)&((char *)&stru_B765EC)))->EnsureCapacity(); /*0x7aacdf*/
                   vtable3 = (char *)((char *)&stru_B765EC); /*0x7aace4*/
                 }
                 if ( v23 < (int)vtable3 ) /*0x7aaceb*/

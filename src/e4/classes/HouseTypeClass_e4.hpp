@@ -194,7 +194,7 @@ struct HouseTypeClass {
     unsigned int * readBaseDefense(VectorClass_flat * aP1);
     unsigned int * readDefaultAlly(int a2, int a3);
     unsigned int * readParaDropTypes(VectorClass_flat * aP1);
-    unsigned int * readStartInfantry(InfantryTypeClass * aP1);
+    unsigned int * readStartInfantry(unsigned int *aP1);
     unsigned int * readStartUnit();
     unsigned int loadBuildLimits();
     void * ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5);

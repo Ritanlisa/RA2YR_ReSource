@@ -81,7 +81,7 @@ struct IPXInterfaceClass {
     AbstractClass * * Receive();
     AbstractClass * * SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen);
     AbstractClass * * getSocketState(int a2, unsigned int * a3);
-    int initSocket(IUnknown * aP1, Color * aP2, void *a3);
+    int initSocket(int aP1, int aP2);
     int AddRef(void *a1);
     AnimClass * * Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3);
     DynamicVector * closeSession(char a2);

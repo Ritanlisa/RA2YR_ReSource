@@ -41,7 +41,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
 
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x46cb68*/
+  ((AbstractTypeClass *)((int *)this))->Constructor(aP1); /*0x46cb68*/
   this->AbstractClass = &vt_CampaignClass; /*0x46cb70*/
   this->scenario[28] = -1; /*0x46cb76*/
   this->description[28] = -1; /*0x46cb7c*/
@@ -102,7 +102,7 @@ LABEL_7:
       v6 = (int)(__2_YAPAXI_Z(0x3A0u)); /*0x46ce97*/
       if ( v6 ) /*0x46cea8*/
       {
-        AbstractTypeClass::Constructor((int *)v6, Source); /*0x46ceb5*/
+        ((AbstractTypeClass *)((int *)v6))->Constructor(Source); /*0x46ceb5*/
         *(unsigned int *)(v6 + 152) = -1; /*0x46ceba*/
         *(unsigned int *)(v6 + 668) = -1; /*0x46cec0*/
         *(unsigned int *)v6 = (unsigned int)(&vt_CampaignClass); /*0x46cec6*/
@@ -201,7 +201,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   ((unsigned int *)&v28)[0] = 0; /*0x49c65e*/
   v28.ownsFile = 0; /*0x49c662*/
   *(unsigned int *)v28.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x49c667*/
-  CCINIClass::Load((int)(&v28), (int)&v33, 0, 0); /*0x49c66f*/
+  ((CCINIClass *)((int)(&v28)))->Load((int)&v33, 0, 0); /*0x49c66f*/
   CCFileClass::Reset(&v33); /*0x49c67b*/
   v5 = 0; /*0x49c683*/
   v6 = (char *)this; /*0x49c687*/
@@ -438,7 +438,7 @@ CampaignClass * CampaignClass::DTOR(void ** Block, char a2)
     }
     while ( v3 < dword_A83D08 ); /*0x46d0fd*/
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x46d101*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x46d101*/
   if ( (a2 & 1) != 0 ) /*0x46d10b*/
     __3_YAXPAX_Z(Block); /*0x46d10e*/
   return &Block->AbstractClass; /*0x46d118*/

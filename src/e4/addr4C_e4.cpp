@@ -630,7 +630,7 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
         IDA_LOWORD(v16) = *(unsigned short *)v12; /*0x4c39ba*/
         IDA_BYTE2(v16) = *(unsigned char *)(v12 + 2); /*0x4c39c7*/
         ((Color *)((uint8_t *)&v16))->Lerp(v18, (uint8_t *)&v14); /*0x4c39cb*/
-        v7[v10++] = Palette::FindClosestColor(a1, (int)&v16); /*0x4c39dc*/
+        v7[v10++] = ((Palette *)(a1))->FindClosestColor((int)&v16); /*0x4c39dc*/
       }
       while ( v10 < 256 ); /*0x4c39e6*/
       v7 += 256; /*0x4c39f0*/
@@ -1036,7 +1036,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     v61 = a5; /*0x4cf1b9*/
     v62 = a6; /*0x4cf1bd*/
     v27 = (int *)(*(int (**)(int *, int *))(*v26 + 72))(v26, v63); /*0x4cf1c8*/
-    v28 = *(unsigned int *)Cell::GetHeight(&v58, v27, (int *)&a4); /*0x4cf1d5*/
+    v28 = *(unsigned int *)((Cell *)(&v58))->GetHeight(v27, (int *)&a4); /*0x4cf1d5*/
     if ( !v55 ) /*0x4cf1dd*/
       goto LABEL_32; /*0x4cf1dd*/
     if ( !(*(int (**)(int))(v55->q018)(v55) ) /*0x4cf1e2*/
@@ -1058,7 +1058,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
       v63[0] = v24; /*0x4cf260*/
       v63[1] = a5; /*0x4cf264*/
       v34 = (int *)(*(int (**)(int *, unsigned int *))(*v33 + 72))(v33, v64); /*0x4cf26f*/
-      Height = (float *)Cell::GetHeight(&a4, v34, v63); /*0x4cf277*/
+      Height = (float *)((Cell *)(&a4))->GetHeight(v34, v63); /*0x4cf277*/
       v36 = (char *)(*v6 + 226); /*0x4cf285*/
       v58 = *Height; /*0x4cf28b*/
       FacingClass::Update(v36, &v58); /*0x4cf28f*/
@@ -1733,7 +1733,7 @@ int sub_4C3AD0(char * a1, int a2, int a3, unsigned char a4)
     IDA_LOWORD(a3) = *(unsigned short *)v8; /*0x4c3b0f*/
     IDA_BYTE2(a3) = *(unsigned char *)(v8 + 2); /*0x4c3b20*/
     ((Color *)((uint8_t *)&a3))->Lerp(a4, v7); /*0x4c3b24*/
-    *(unsigned char *)(v6 + a2) = Palette::FindClosestColor(a1, (int)&a3); /*0x4c3b35*/
+    *(unsigned char *)(v6 + a2) = ((Palette *)(a1))->FindClosestColor((int)&a3); /*0x4c3b35*/
     ++v6; /*0x4c3b38*/
   }
   while ( v6 < 256 ); /*0x4c3b3f*/
@@ -1763,7 +1763,7 @@ unsigned char * sub_4C3B60(char * a1, unsigned char * a2, int a3, int a4)
     IDA_LOWORD(a4) = *(unsigned short *)v9; /*0x4c3bbc*/
     IDA_BYTE2(a4) = *(unsigned char *)(v9 + 2); /*0x4c3bc4*/
     ((Color *)((uint8_t *)&a4))->Lerp(v6, (uint8_t *)&a3); /*0x4c3bc8*/
-    a2[v8++] = Palette::FindClosestColor(a1, (int)&a4); /*0x4c3bd9*/
+    a2[v8++] = ((Palette *)(a1))->FindClosestColor((int)&a4); /*0x4c3bd9*/
   }
   while ( v8 < 256 ); /*0x4c3be3*/
   return a2; /*0x4c3be5*/
@@ -3342,12 +3342,12 @@ bool sub_4CC680(int a1, int a2, int a3)
   int v5; // esi
   BOOL result; // eax
 
-  SlopeIndex = Cell::GetSlopeIndex(a2); /*0x4cc690*/
+  SlopeIndex = ((Cell *)(a2))->GetSlopeIndex(); /*0x4cc690*/
   result = 0; /*0x4cc6c3*/
-  if ( Cell::GetSlopeIndex(a3) - SlopeIndex >= 4 ) /*0x4cc69e*/
+  if ( ((Cell *)(a3))->GetSlopeIndex() - SlopeIndex >= 4 ) /*0x4cc69e*/
   {
-    v5 = Cell::GetSlopeIndex(a1); /*0x4cc6a9*/
-    if ( Cell::GetSlopeIndex(a3) - v5 > 0 ) /*0x4cc6b4*/
+    v5 = ((Cell *)(a1))->GetSlopeIndex(); /*0x4cc6a9*/
+    if ( ((Cell *)(a3))->GetSlopeIndex() - v5 > 0 ) /*0x4cc6b4*/
       return 1; /*0x4cc69e*/
   }
   return result; /*0x4cc6b6*/

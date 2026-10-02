@@ -22,7 +22,7 @@ struct StreamClass {
     char GetDirty(int a1);
     int ClearDirty(unsigned char * a1);
     int ResetPosition(LocomotionClass * aP0, int a2);
-    int Set(IUnknown * aP1, void *a2, void *a3);
+    int Set(unsigned int *aP1);
     int Set2(unsigned int * a2);
     int SetDirty(unsigned char * a1);
     int Vt32Thunk(int a1);

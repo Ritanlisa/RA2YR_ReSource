@@ -28,7 +28,7 @@ struct IPXManagerClass {
 // --- flat members (END) ---
     IPXManagerClass * QueryInterface(char * Block, char a2);
     int ddtor(int a2, int a3, unsigned int * a4);
-    int receivePacket(int a2, void *a2_2, void *a3);
+    int receivePacket(int a2);
     int send(int a2);
     int sendPacket(int a2, int a3, int a4);
     void StubReturnFalse(int a1, int a2);

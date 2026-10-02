@@ -91,7 +91,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
 
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x771c7a*/
+  ((AbstractTypeClass *)((int *)this))->Constructor(aP1); /*0x771c7a*/
   this->AmbientDamage = 0; /*0x771c87*/
   this->Burst = 1; /*0x771c8d*/
   this->Projectile = 0; /*0x771c97*/
@@ -248,7 +248,7 @@ int WeaponTypeClass::Destructor(void *a1)
   }
   BYTE1(this->Report[3]) = 0; /*0x772069*/
   this->Report[2] = 0; /*0x77206f*/
-  return AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x77207a*/
+  return ((AbstractTypeClass *)((AbstractTypeClass *)this))->Dtor(); /*0x77207a*/
 
 }
 } // namespace gamemd
@@ -357,7 +357,7 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
   if ( result >= 0 ) /*0x772d04*/
   {
     if ( v5 ) /*0x772d0c*/
-      WeaponTypeClass::loadWeaponProperties(v5, (int)&aP0); /*0x772d15*/
+      ((WeaponTypeClass *)(v5))->loadWeaponProperties((int)&aP0); /*0x772d15*/
     if ( v5 != (WeaponTypeClass *)-244 ) /*0x772d23*/
     {
       ((DynamicVectorClass *)((DynamicVectorClass *)v5->Anim))->AnimTypeConstructor(0, 0); /*0x772d2b*/
@@ -367,7 +367,7 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
     for ( i = 0; i < (int)a2; ++i ) /*0x772d4d*/
     {
       (*(void (**)(int *, int *, int, unsigned int))(*v7 + 12))(v7, &a3, 4, 0); /*0x772d5b*/
-      DynamicVector::Add_Alt4((DynamicVector *)v5->Anim, &a3); /*0x772d69*/
+      ((DynamicVector *)((DynamicVector *)v5->Anim))->Add_Alt4(&a3); /*0x772d69*/
     }
     if ( Report ) /*0x772d77*/
     {
@@ -495,7 +495,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   }
   BYTE1(v3[5].abstractFlags) = 0; /*0x773209*/
   v3[5].uniqueId = 0; /*0x77320f*/
-  AbstractTypeClass::Dtor((AbstractTypeClass *)v3); /*0x773215*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)v3))->Dtor(); /*0x773215*/
   if ( ((uint8_t)Block & 1) != 0 ) /*0x77321f*/
     __3_YAXPAX_Z(v3); /*0x773222*/
   return (WeaponTypeClass *)v3; /*0x77322c*/
@@ -579,7 +579,7 @@ char  WeaponTypeClass::ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Bl
 
 }
 // 0x771F00
-unsigned int *  WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
+unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
 {
 
   AbstractTypeClass::Init((int)this, aP1); /*0x771f08*/
@@ -594,7 +594,7 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
 
 }
 // 0x7729F0
-int WeaponTypeClass::CalculateSpeed(void *a1)
+int WeaponTypeClass::CalculateSpeed()
 {
 
   int result; // eax

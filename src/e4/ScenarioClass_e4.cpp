@@ -479,10 +479,10 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
   if ( *(unsigned int *)&stru_A8B250.__pad_0[4] != -1 ) /*0x683b9f*/
   {
     v7 = *(GameOption **)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]); /*0x683ba7*/
-    v8 = Game::CheckForGameCD((Game *)0x3C); /*0x683baf*/
+    v8 = ((Game *)((Game *)0x3C))->CheckForGameCD(); /*0x683baf*/
     if ( !(uint8_t)ScenarioClass::CheckExists((ScenarioClass *)v7, v8) ) /*0x683bb7*/
     {
-      Field = GameOption::GetField(v7); /*0x683bc7*/
+      Field = ((GameOption *)(v7))->GetField(); /*0x683bc7*/
 LABEL_13:
       SetSoundWarning(Field); /*0x683bc9*/
     }
@@ -506,7 +506,7 @@ LABEL_21:
   memset(&((char *)&v19), 0, 9); /*0x683c42*/
   *(unsigned int *)v19.INIClass = &CCINIClass_Vtable; /*0x683c4e*/
   CCFileClass::Construct(&v20, v4); /*0x683c56*/
-  if ( CCINIClass::Load(&v19, (int)&v20, 1, 0) ) /*0x683c67*/
+  if ( ((CCINIClass *)(&v19))->Load((int)&v20, 1, 0) ) /*0x683c67*/
   {
     Bool = INIClass::GetBool( /*0x683c85*/
              (INIClass *)&v19,
@@ -606,10 +606,10 @@ int ScenarioClass::CleanupTemporary()
     }
   }
   LOBYTE(v1) = 1; /*0x683f4d*/
-  AsyncIO::Read(v1); /*0x683f4f*/
+  ((AsyncIO *)(v1))->Read(); /*0x683f4f*/
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x683f5d*/
     Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], 0); /*0x683f61*/
-  Mouse::ReleaseCapture((ScrollClass *)&stru_87F5F0.__pad_58[416]); /*0x683f6b*/
+  ((Mouse *)((ScrollClass *)&stru_87F5F0.__pad_58[416]))->ReleaseCapture(); /*0x683f6b*/
   ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x683f79*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x683f86*/
   MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x683f90*/
@@ -682,7 +682,7 @@ void ScenarioClass_Construct()
     *(unsigned int *)v5.INIClass = &CCINIClass_Vtable; /*0x686797*/
     CCFileClass::Construct(&v6, Source); /*0x68679f*/
     Debug::Log(); /*0x6867aa*/
-    if ( CCINIClass::Load(&v5, (int)&v6, 1, 0) ) /*0x6867be*/
+    if ( ((CCINIClass *)(&v5))->Load((int)&v6, 1, 0) ) /*0x6867be*/
     {
       strcpy((char *)&dword_A8B230[130].abstractFlags, Source); /*0x686836*/
       Map = ScenarioClass::LoadMap(0, (bool *)v5.INIClass, a2); /*0x686851*/
@@ -803,7 +803,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
         ((FileClass *)(aP1))->SetFileName((IUnknown *)&Filename);
         if ( CCFileClass::Open(aP1, 0) )
         {
-          CCINIClass::Load(var158, aP1, 0, 0);
+          ((CCINIClass *)(var158))->Load(aP1, 0, 0);
           RulesClass::Addition(*(RulesClass **)&DataGlobal_87F8E4[30972]);
         }
         CCFileClass::Reset(aP1);
@@ -811,7 +811,7 @@ ScenarioClass * * ScenarioClass_LoadMap()
       ((FileClass *)(aP1))->SetFileName((IUnknown *)&stru_830620[37124]);
       if ( CCFileClass::Open(aP1, 0) )
       {
-        CCINIClass::Load(var158, aP1, 0, 0);
+        ((CCINIClass *)(var158))->Load(aP1, 0, 0);
         *(unsigned short *)g_ScenarioClass_Instance->name = 0;
         if ( &g_INI_Key_UIName == (INIClass *)-8 )
           Section = INIClass::BinarySearchSection((int)var158, (INIClass *)g_ScenarioClass_Instance->fileName);
@@ -1252,8 +1252,8 @@ LABEL_124:
   Event::Dispatch();
   ReadOverlayINI(a2);
   Event::Dispatch();
-  LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
-  for ( m = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); m; m = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
+  ((LayerClass *)(&DataGlobal_87F7E8))->CellIteratorReset();
+  for ( m = ((LayerClass *)(&DataGlobal_87F7E8))->CellIteratorNext(); m; m = ((LayerClass *)(&DataGlobal_87F7E8))->CellIteratorNext() )
     ((House *)(m))->AnnounceUpgrade((IUnknown *)0xFFFFFFFF);
   ResetBuildingState();
   CCINIClass::LoadTypeFromINI(a2->__pad_0);
@@ -1287,7 +1287,7 @@ LABEL_124:
       ((FileClass *)(aP1))->SetFileName((IUnknown *)&stru_830620[54640]);
       if ( CCFileClass::Open(aP1, 0) == 1 )
       {
-        CCINIClass::Load(var158, aP1, 0, 0);
+        ((CCINIClass *)(var158))->Load(aP1, 0, 0);
         RulesClass::Addition(*(RulesClass **)&DataGlobal_87F8E4[30972]);
       }
     }

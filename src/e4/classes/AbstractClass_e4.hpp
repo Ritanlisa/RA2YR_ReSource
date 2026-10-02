@@ -210,7 +210,7 @@ struct AbstractClass {
     FileClass * processAITrigger(unsigned int * Block, char a2);  // 0x65C610
     int SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1);  // 0x410380
     unsigned int updateLayer();  // 0x425520
-    int GetType(void *a1_1, void *a2_1);  // 0x4CA160
+    int GetType();  // 0x4CA160
     int checkPassability();  // 0x50E370
     void resetTeamState();  // 0x65C540
     unsigned int * Copy8Bytes();  // 0x72A9C0

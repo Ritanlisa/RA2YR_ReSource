@@ -240,9 +240,9 @@ struct WarheadTypeClass {
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, unsigned int * a3);
     AbstractClass * * parseVerses();
-    CCINIClass * checkImmunity(TypeList_flat * aP1);
+    CCINIClass * checkImmunity(int aP1);
     CampaignClass * * Destructor(char a2);
-    DynamicVector * calculateDamage(AbstractClass * aP1);
+    DynamicVector * calculateDamage(int aP1);
     ParticleSystemTypeClass * * applyDamage();
     TypeList_flat * QueryInterface(char a2);
     WarheadTypeClass * parseAnimations(char a2);

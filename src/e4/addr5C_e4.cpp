@@ -201,7 +201,7 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c17e7*/
   if ( MPCooperative_field_0x40 ) /*0x5c17ec*/
   {
-    if ( (uint8_t)Movie::GetState(MPCooperative_field_0x40, &v11) ) /*0x5c17f3*/
+    if ( (uint8_t)((Movie *)(MPCooperative_field_0x40))->GetState(&v11) ) /*0x5c17f3*/
     {
       v7 = v11; /*0x5c180c*/
     }
@@ -2732,7 +2732,7 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
     *v4 += *((unsigned int *)this + 1); /*0x5cd710*/
     *((unsigned int *)this + 2) = v7; /*0x5cd71a*/
     *((unsigned int *)this + 15) = v7 + v8; /*0x5cd71d*/
-    Rect::Set(v26, 0, 0, 0, 0); /*0x5cd720*/
+    ((Rect *)(v26))->Set(0, 0, 0, 0); /*0x5cd720*/
     v9 = *v4; /*0x5cd727*/
     v10 = *((unsigned int *)this + 15); /*0x5cd729*/
     v11 = *((unsigned int *)this + 16); /*0x5cd72c*/
@@ -4846,9 +4846,9 @@ const char ** E4Recv_5CF840::sub_5CF840(MapSelect * aP1)
   {
     v5 = *(const char ***)(this->ambientSoundController[3] + 4 * v3); /*0x5cf864*/
     ((String *)((String *)&v7))->AssignFromPtr(v5); /*0x5cf868*/
-    String::ToLower((String *)&v7); /*0x5cf871*/
+    ((String *)((String *)&v7))->ToLower(); /*0x5cf871*/
     ((String *)((String *)&aP1))->AssignFromPtr(v4); /*0x5cf87b*/
-    String::ToLower((String *)&aP1); /*0x5cf884*/
+    ((String *)((String *)&aP1))->ToLower(); /*0x5cf884*/
     if ( (uint8_t)((String *)((String *)&v7))->Compare((const char **)&aP1) ) /*0x5cf892*/
       break; /*0x5cf892*/
     DeleteAndZero((ObjectClass *)&aP1); /*0x5cf89f*/

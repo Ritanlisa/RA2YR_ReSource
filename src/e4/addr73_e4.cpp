@@ -585,7 +585,7 @@ void SelectAllOfType()
       (*(void (**)(EventClass *, int))v8->EventClass_field_0x0)(v8, 1); /*0x732aca*/
     v14 = (DynamicVector *)RA2_OPNEW(0x18u); /*0x732ace*/
     if ( v14 ) /*0x732ad8*/
-      v6 = (DynamicVector *)DynamicVector::Constructor_Techno(v14, 0, 0); /*0x732ae5*/
+      v6 = (DynamicVector *)((DynamicVector *)(v14))->Constructor_Techno(0, 0); /*0x732ae5*/
     else
       v6 = 0; /*0x732ae9*/
     v15 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x732aeb*/
@@ -992,7 +992,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip()
     }
     v10 = (DynamicVector *)__2_YAPAXI_Z(0x18u); /*0x7334d2*/
     if ( v10 ) /*0x7334dc*/
-      v11 = (DynamicVector *)DynamicVector::Constructor_Techno(v10, 0, 0); /*0x7334e7*/
+      v11 = (DynamicVector *)((DynamicVector *)(v10))->Constructor_Techno(0, 0); /*0x7334e7*/
     else
       v11 = 0; /*0x7334eb*/
     v12 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x7334ed*/
@@ -1148,7 +1148,7 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
     }
     v10 = (DynamicVector *)__2_YAPAXI_Z(0x18u); /*0x733816*/
     if ( v10 ) /*0x733820*/
-      v11 = (DynamicVector *)DynamicVector::Constructor_Techno(v10, 0, 0); /*0x73382b*/
+      v11 = (DynamicVector *)((DynamicVector *)(v10))->Constructor_Techno(0, 0); /*0x73382b*/
     else
       v11 = 0; /*0x73382f*/
     v12 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x733831*/
@@ -1275,7 +1275,7 @@ int SelectUnitsByTheme(char a1)
     StringCSF = 0; /*0x733af1*/
     v9 = (DynamicVector *)RA2_OPNEW(0x18u); /*0x733af3*/
     if ( v9 ) /*0x733afd*/
-      v10 = (DynamicVector *)DynamicVector::Constructor_Techno(v9, 0, 0); /*0x733b08*/
+      v10 = (DynamicVector *)((DynamicVector *)(v9))->Constructor_Techno(0, 0); /*0x733b08*/
     else
       v10 = 0; /*0x733b0c*/
     v11 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x733b0e*/

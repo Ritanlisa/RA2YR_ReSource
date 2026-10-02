@@ -247,9 +247,9 @@ LABEL_7:
   *((unsigned int *)this + 68) = v4; /*0x577cf0*/
   *((unsigned int *)this + 69) = v4 - 1; /*0x577cf9*/
   *((unsigned int *)this + 70) = (v4 << 11) + *((unsigned int *)this + 79) + 4; /*0x577d0e*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)this); i; i = LayerClass::CellIteratorNext((LayerClass *)this) ) /*0x577d1d*/
+  for ( i = ((LayerClass *)((LayerClass *)this))->CellIteratorNext(); i; i = ((LayerClass *)((LayerClass *)this))->CellIteratorNext() ) /*0x577d1d*/
   {
-    DisplayClass::AdvanceFrameCounter((DisplayClass *)i); /*0x577d21*/
+    ((DisplayClass *)((DisplayClass *)i))->AdvanceFrameCounter(); /*0x577d21*/
     if ( *(int *)(i + 304) >= 0 ) /*0x577d2e*/
     {
       v6 = *(unsigned int *)(i + 320); /*0x577d36*/
@@ -1331,10 +1331,10 @@ char TActionClass::executeFollowAction(int a2, int a3, int a4, IUnknown * aP4)
   *(unsigned int *)&stru_87F5F0.__pad_58[676] = p_TActionClass_field_34[2]; /*0x6e21f6*/
   *(unsigned int *)&stru_87F5F0.__pad_58[680] = p_TActionClass_field_34[3]; /*0x6e21fe*/
   RadarClass::Process((RadarClass *)&stru_87F5F0.__pad_58[416]); /*0x6e2209*/
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x6e2213*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x6e2224*/
+  ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x6e2213*/
+  for ( i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x6e2224*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
+        i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
   {
     ((House *)(i))->AnnounceUpgrade(-1); /*0x6e222a*/
   }

@@ -70,7 +70,7 @@ void GameClass::processFrame(int a2, int a3)
   }
   v6 = *(GameClass **)&this->__pad_8[4]; /*0x4381f6*/
   if ( v6 ) /*0x4381fc*/
-    return (unsigned int *)GameClass::initGameMode(v6, a2, a3); /*0x438208*/
+    return (unsigned int *)((GameClass *)(v6))->initGameMode(a2, a3); /*0x438208*/
   return result; /*0x4381f9*/
 
 }
@@ -96,14 +96,14 @@ unsigned int * GameClass::updateUI(int a2, int a3, void *a3_2)
   }
   v6 = *(GameClass **)&this->__pad_8[4]; /*0x438326*/
   if ( v6 ) /*0x43832c*/
-    return (unsigned int *)GameClass::initGameMode(v6, a2, a3); /*0x438338*/
+    return (unsigned int *)((GameClass *)(v6))->initGameMode(a2, a3); /*0x438338*/
   return result; /*0x438329*/
 
 }
 }
 // 0x5D2260
 namespace gamemd {
-int GameClass::loadScenarioFiles(ObjectClass * aP1, void *a2_1)
+int GameClass::loadScenarioFiles(int aP1)
 {
     unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
@@ -197,8 +197,8 @@ int GameClass::FrameLoop(int a2)
       Event::Dispatch(); /*0x5d2437*/
       (*(void (**)(GameClass *))(*(unsigned int *)this->__pad_0 + 8))(this); /*0x5d2440*/
       DDraw::WaitForIdle(v9); /*0x5d2443*/
-      DSurface::RenderToSurface((DSurface *)this, (int *)g_DSurface_Hidden); /*0x5d2451*/
-      GameClass::loadScenarioFiles(this, (int)g_DSurface_Hidden); /*0x5d245f*/
+      ((DSurface *)((DSurface *)this))->RenderToSurface((int *)g_DSurface_Hidden); /*0x5d2451*/
+      ((GameClass *)(this))->loadScenarioFiles((int)g_DSurface_Hidden); /*0x5d245f*/
       MessageLoop(); /*0x5d2464*/
       if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x5d2470*/
       {
@@ -261,7 +261,7 @@ int GameClass::FindOpenSlot()
     {
       if ( !v4->__pad_3D[319] && Network::IsMultiplayerActive() ) /*0x5d63a8*/
         goto LABEL_8; /*0x5d63af*/
-      inited = GameClass::initPlayerData(v4, (const char **)this + 12); /*0x5d63b7*/
+      inited = ((GameClass *)(v4))->initPlayerData((const char **)this + 12); /*0x5d63b7*/
     }
     if ( inited ) /*0x5d63be*/
       return v2; /*0x5d63c5*/
@@ -324,7 +324,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
           (char *)&this->field_3C,
           *((unsigned int *)this + 79),
           (char *)v12);
-        GameClass::processFrame((GameClass *)&this->field_14, (int)v12, 56); /*0x632ee5*/
+        ((GameClass *)((GameClass *)&this->field_14))->processFrame((int)v12, 56); /*0x632ee5*/
       }
       else
       {
@@ -340,7 +340,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
           v7 = 0; /*0x632e2b*/
         v8 = BigInt::DecryptBlock(v6, (char *)v12, v7, (char *)&this->field_3C); /*0x632e57*/
         v5 = Delegate::Dispatch((Pipe *)this, (int)&this->field_3C, v8); /*0x632e65*/
-        GameClass::processFrame((GameClass *)&this->field_14, (int)v12, 56); /*0x632e6d*/
+        ((GameClass *)((GameClass *)&this->field_14))->processFrame((int)v12, 56); /*0x632e6d*/
       }
       this->__pad_0[12] = 0; /*0x632eea*/
     }
@@ -432,7 +432,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
 }
 // 0x69AE10
 namespace gamemd {
-int GameClass::initPlayerData(const char ** a2, void *a2_2)
+int GameClass::initPlayerData(const char **a2)
 {
 
   int v3; // eax
@@ -440,7 +440,7 @@ int GameClass::initPlayerData(const char ** a2, void *a2_2)
 
   v3 = *(unsigned int *)&this->__pad_3D[375]; /*0x69ae15*/
   if ( !v3 ) /*0x69ae1d*/
-    return String::Equals_Alt((String *)a2, aStandard_0); /*0x69ae28*/
+    return ((String *)((String *)a2))->Equals_Alt(aStandard_0); /*0x69ae28*/
   v5 = 0; /*0x69ae33*/
   if ( v3 <= 0 ) /*0x69ae37*/
     return 0; /*0x69ae5d*/
@@ -530,7 +530,7 @@ int GameClass::ReadVersionFile()
   if ( (this->__pad_3D[7] & 8) == 0 ) /*0x74f96a*/
   {
     RawFileClass::Construct(&v5, (int)g_Str_File_VERSION_TXT); /*0x74f97c*/
-    if ( (uint8_t)FileClass::Open(&v5, 0) ) /*0x74f988*/
+    if ( (uint8_t)((FileClass *)(&v5))->Open(0) ) /*0x74f988*/
     {
       FileClass::Read(&v5, this->GameClass_field_0x2A, 16); /*0x74f99b*/
       for ( this->GameClass_field_0x39[0] = 0; /*0x74f9b5*/
@@ -544,7 +544,7 @@ int GameClass::ReadVersionFile()
     {
       this->GameClass_field_0x2A[0] = 0; /*0x74f9d9*/
     }
-    RawFileClass::Dtor(&v5); /*0x74f9e0*/
+    ((RawFileClass *)(&v5))->Dtor(); /*0x74f9e0*/
     v2 = *(unsigned int *)&this->__pad_3D[7]; /*0x74f9e5*/
     LOBYTE(v2) = v2 | 8; /*0x74f9e9*/
     *(unsigned int *)&this->__pad_3D[7] = v2; /*0x74f9ec*/
@@ -571,7 +571,7 @@ int GameClass::ReadVersionFile2()
   if ( (this->__pad_3D[7] & 8) == 0 ) /*0x74fa2a*/
   {
     RawFileClass::Construct(&v5, (int)g_Str_File_VERSION_TXT); /*0x74fa3c*/
-    if ( (uint8_t)FileClass::Open(&v5, 0) ) /*0x74fa48*/
+    if ( (uint8_t)((FileClass *)(&v5))->Open(0) ) /*0x74fa48*/
     {
       FileClass::Read(&v5, this->GameClass_field_0x2A, 16); /*0x74fa5b*/
       for ( this->GameClass_field_0x39[0] = 0; /*0x74fa75*/
@@ -585,7 +585,7 @@ int GameClass::ReadVersionFile2()
     {
       this->GameClass_field_0x2A[0] = 0; /*0x74fa99*/
     }
-    RawFileClass::Dtor(&v5); /*0x74faa0*/
+    ((RawFileClass *)(&v5))->Dtor(); /*0x74faa0*/
     v2 = *(unsigned int *)&this->__pad_3D[7]; /*0x74faa5*/
     LOBYTE(v2) = v2 | 8; /*0x74faa9*/
     *(unsigned int *)&this->__pad_3D[7] = v2; /*0x74faac*/
@@ -608,7 +608,7 @@ void GameClass::ReadVersionString()
   RawFileClass v2; // [esp+10h] [ebp-24h] BYREF
 
   RawFileClass::Construct(&v2, (int)g_Str_File_VERSION_TXT); /*0x74fc92*/
-  if ( (uint8_t)FileClass::Open(&v2, 0) ) /*0x74fc9e*/
+  if ( (uint8_t)((FileClass *)(&v2))->Open(0) ) /*0x74fc9e*/
   {
     FileClass::Read(&v2, this->GameClass_field_0x2A, 16); /*0x74fcb1*/
     for ( this->GameClass_field_0x39[0] = 0; /*0x74fccb*/
@@ -622,7 +622,7 @@ void GameClass::ReadVersionString()
   {
     this->GameClass_field_0x2A[0] = 0; /*0x74fcfe*/
   }
-  RawFileClass::Dtor(&v2); /*0x74fd05*/
+  ((RawFileClass *)(&v2))->Dtor(); /*0x74fd05*/
 
 }
 }

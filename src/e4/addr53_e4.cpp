@@ -312,7 +312,7 @@ char BulkData_Initialize()
     Event::Dispatch();
   ((MouseClass *)((MouseClass *)&stru_87F5F0.__pad_58[416]))->LoadTypeData(); /*0x531708*/
   nullsub_29(v3); /*0x531712*/
-  BulkData::InitMissionHashing((BulkData *)&dword_A8B238); /*0x53171c*/
+  ((BulkData *)((BulkData *)&dword_A8B238))->InitMissionHashing(); /*0x53171c*/
   FileSystem::InitPipShapes(); /*0x531721*/
   nullsub_6(); /*0x531726*/
   FileSystem::InitPipShapes(); /*0x53172b*/
@@ -2247,7 +2247,7 @@ AbstractClass * * E4Recv_538E70::sub_538E70(double a2)
     if ( v7 >= 255 ) /*0x538ed1*/
       v7 = 255; /*0x538ed3*/
     BYTE2(v12.Color_field_00) = v7 <= 0 ? 0 : v7;
-    v8 = Color::ConvertToRGB(&v12, (int)&v11); /*0x538ef2*/
+    v8 = ((Color *)(&v12))->ConvertToRGB((int)&v11); /*0x538ef2*/
     ++v3; /*0x538ef4*/
     result = *(unsigned short *)v8; /*0x538efb*/
     LOBYTE(v8) = *(unsigned char *)(v8 + 2); /*0x538efe*/

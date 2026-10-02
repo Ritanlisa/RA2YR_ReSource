@@ -121,7 +121,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   int v31; // [esp+144h] [ebp-8h]
 
   inited = 0; /*0x76d4da*/
-  v7 = Count::Get((Count *)(this + 1112)); /*0x76d4e3*/
+  v7 = ((Count *)((Count *)(this + 1112)))->Get(); /*0x76d4e3*/
   ((VectorCursor *)(&v25))->Construct(v7 + 44, 0); /*0x76d4f0*/
   while ( (*(uint8_t (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))(&v25) ) /*0x76d4fd*/
   {
@@ -153,7 +153,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       DDraw::HandleSuspend((DDraw *)this); /*0x76d5df*/
       while ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process() ) /*0x76d5ea*/
       {
-        if ( EventQueue::Read(*(EventQueue **)&stru_87F5F0.__pad_58[296]) == 27 ) /*0x76d603*/
+        if ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Read() == 27 ) /*0x76d603*/
           *(unsigned char *)(this + 1092) = 1; /*0x76d605*/
       }
       v14 = !*(unsigned char *)(this + 1092) || a5; /*0x76d635*/
@@ -238,7 +238,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       *(unsigned int *)v29.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x76d841*/
       v31 = 0; /*0x76d84c*/
       ((Vector *)((int)v30))->Clear(); /*0x76d853*/
-      BufferIOFileClass::Destruct((BufferIOFileClass *)&v29); /*0x76d85f*/
+      ((BufferIOFileClass *)((BufferIOFileClass *)&v29))->Destruct(); /*0x76d85f*/
     }
     (*(void (**)(int *))(v25.VectorCursor_field_0x0C + 8))(&v25.VectorCursor_field_0x0C); /*0x76d86c*/
   }
@@ -255,7 +255,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       DDraw::HandleSuspend((DDraw *)this); /*0x76d8c0*/
       while ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process() ) /*0x76d8cb*/
       {
-        if ( EventQueue::Read(*(EventQueue **)&stru_87F5F0.__pad_58[296]) == 27 ) /*0x76d8e4*/
+        if ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Read() == 27 ) /*0x76d8e4*/
           *(unsigned char *)(this + 1092) = 1; /*0x76d8e6*/
       }
       if ( (*(uint8_t (**)(int *))(v25.VectorCursor_field_0x18 + 4))(&v25.VectorCursor_field_0x18) ) /*0x76d905*/
@@ -269,9 +269,9 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         else
         {
           ((String *)((String *)&v28))->Assign((const char *)(aTargetzoom)); /*0x76d944*/
-          if ( (uint8_t)String::NotEquals((const char *)((String *)&v28), 0) ) /*0x76d94e*/
+          if ( (uint8_t)((String *)((const char *)((String *)&v28)))->NotEquals(0) ) /*0x76d94e*/
           {
-            Trigger::processTrigger((int)((Trigger *)&v25), this + 1172, 0); /*0x76d963*/
+            ((Trigger *)((int)((Trigger *)&v25)))->processTrigger(this + 1172, 0); /*0x76d963*/
             while ( (*(uint8_t (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))(&v25) ) /*0x76d970*/
             {
               if ( !(uint8_t)String::Compare( /*0x76d98a*/
@@ -319,7 +319,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
 }
 // 0x76F090
 namespace gamemd {
-unsigned int * Trigger::processTrigger(int a2, int a3, void *a3_2)
+unsigned int * Trigger::processTrigger(int a2, int a3)
 {
 
   this->Trigger_field_0x4 = (MSAnim *)a2; /*0x76f09a*/

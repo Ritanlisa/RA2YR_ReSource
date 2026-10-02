@@ -551,14 +551,14 @@ struct MapClass {
     int ScrollOnce(AbstractClass * aP1);
     int SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2, void *a3);
     int SetCellOverlayFlag();
-    int SetScrollMode(MouseClass * aP1);
+    int SetScrollMode(int aP1);
     int ToggleZoom(int a2);
     int TransitionCliff(MouseClass * aP0);
     int  TriggerEVA(IUnknown * aP0);
     int UnselectAll_ClearLimboLaunchers(void *a1);
     int UpdateLightingPostProcess();
-    int isCellShrouded(unsigned short a2);
-    int isLocationShrouded(unsigned short a2);
+    int isCellShrouded(uint16_t a2);
+    int isLocationShrouded(uint16_t a2);
     int updatePathfindingGrid(unsigned int * a2);
     unsigned int * AllocArrays();
     unsigned int * BuildSubzones();

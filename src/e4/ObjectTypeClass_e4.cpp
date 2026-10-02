@@ -142,7 +142,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
 
-  AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
+  ((AbstractTypeClass *)(this))->Constructor(aP1); /*0x5f709c*/
   v3 = (int *)((char *)this + 50); /*0x5f70a3*/
   *((unsigned char *)this + 152) = 0; /*0x5f70a9*/
   *((unsigned char *)this + 153) = 0; /*0x5f70af*/
@@ -321,7 +321,7 @@ BulletTypeClass * ObjectTypeClass::Construct(ObjectTypeClass * aP1, void *a2, vo
 } // namespace gamemd
 // 0x5F7400
 namespace gamemd {
-SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1, void *a2)
+SomeVoxelCache * * ObjectTypeClass::Destruct()
 {
 
   int v2; // eax
@@ -398,7 +398,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1, void *a2)
   ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)((char *)this + 192)); /*0x5f757d*/
   ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)((char *)this + 184)); /*0x5f7588*/
   ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)((char *)this + 176)); /*0x5f7593*/
-  return AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x5f759f*/
+  return ((AbstractTypeClass *)((AbstractTypeClass *)this))->Dtor(); /*0x5f759f*/
 
 }
 } // namespace gamemd
@@ -828,7 +828,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
 } // namespace gamemd
 // 0x5F9710
 namespace gamemd {
-void ObjectTypeClass::SetRTTI71(void *a1)
+void ObjectTypeClass::SetRTTI71()
 {
 
   int result; // eax
@@ -860,9 +860,9 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   aP0->VoxelCaches[2] = 0; /*0x5f9753*/
   LOBYTE(aP0->VoxelCaches[3]) = 0; /*0x5f9756*/
   aP0->VoxelCaches[4] = 0; /*0x5f9759*/
-  ObjectTypeClass::FreeLoaderBuffer((ObjectTypeClass *)&aP0->VoxelCaches[5]); /*0x5f975c*/
-  ObjectTypeClass::FreeLoaderBuffer((ObjectTypeClass *)&aP0->VoxelCaches[10]); /*0x5f9767*/
-  ObjectTypeClass::FreeLoaderBuffer((ObjectTypeClass *)&aP0->VoxelCaches[15]); /*0x5f9772*/
+  ((ObjectTypeClass *)((ObjectTypeClass *)&aP0->VoxelCaches[5]))->FreeLoaderBuffer(); /*0x5f975c*/
+  ((ObjectTypeClass *)((ObjectTypeClass *)&aP0->VoxelCaches[10]))->FreeLoaderBuffer(); /*0x5f9767*/
+  ((ObjectTypeClass *)((ObjectTypeClass *)&aP0->VoxelCaches[15]))->FreeLoaderBuffer(); /*0x5f9772*/
   v2 = (void *)aP0->MainVoxel[0]; /*0x5f9777*/
   if ( v2 ) /*0x5f977f*/
   {
@@ -1575,7 +1575,7 @@ namespace gamemd {
 ObjectTypeClass * ObjectTypeClass::Destru_vt08(void * Block, char a2)
 {
 
-  ObjectTypeClass::Destruct((int)Block); /*0x5f9ae3*/
+  ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x5f9ae3*/
   if ( (a2 & 1) != 0 ) /*0x5f9aed*/
     __3_YAXPAX_Z(Block); /*0x5f9af0*/
   return Block; /*0x5f9afa*/
@@ -1599,7 +1599,7 @@ int ObjectTypeClass::FreeLoaderBuffer()
 } // namespace gamemd
 // 0x6E5E70
 namespace gamemd {
-int ObjectTypeClass::FindByName(void *a1)
+int ObjectTypeClass::FindByName()
 {
 
   int v2; // ebx

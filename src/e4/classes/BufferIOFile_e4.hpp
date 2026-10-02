@@ -19,7 +19,7 @@ struct BufferIOFile {
     unsigned int m_54;
     unsigned int BufferIOFileClass;
 // --- flat members (END) ---
-    int Constructor(char * Source, void *a2_1, void *a3_1);  // 0x47A9D0
-    int Init(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);  // 0x47AA30
+    int Constructor(char *Source);  // 0x47A9D0
+    int Init();  // 0x47AA30
 };
 } // namespace gamemd

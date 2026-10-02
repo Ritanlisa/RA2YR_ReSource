@@ -164,7 +164,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   int v4; // eax
   int v5; // eax
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x7216ca*/
+  ((AbstractTypeClass *)((int *)this))->Constructor(aP1); /*0x7216ca*/
   ((unsigned int *)this)[1] = -1717986918; /*0x7216dc*/
   this->Spread = -1717986918; /*0x7216e7*/
   *(unsigned int *)&((unsigned int *)this)[0] = -1; /*0x7216f1*/
@@ -303,7 +303,7 @@ void TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
         break; /*0x721b92*/
       v23 = (unsigned int *)(AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)(i))); /*0x721b9d*/
       if ( v23 ) /*0x721ba1*/
-        DynamicVector::Add_Alt4(&v25, &v23); /*0x721bac*/
+        ((DynamicVector *)(&v25))->Add_Alt4(&v23); /*0x721bac*/
     }
     TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
     *(unsigned int *)v25.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x721bd6*/
@@ -448,7 +448,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       do /*0x722037*/
       {
         (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v11 + 12))(v11, &a2, 4, 0); /*0x722023*/
-        DynamicVector::Add_Alt4((DynamicVector *)&v2->GrowthPercentage[1], &a2); /*0x72202d*/
+        ((DynamicVector *)((DynamicVector *)&v2->GrowthPercentage[1]))->Add_Alt4(&a2); /*0x72202d*/
         ++v3; /*0x722032*/
       }
       while ( v3 < (int)a1 ); /*0x722037*/

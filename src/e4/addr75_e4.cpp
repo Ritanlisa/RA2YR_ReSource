@@ -96,7 +96,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
     {
       if ( sub_406310(v7) != v5 ) /*0x75096f*/
       {
-        VocClass::Release(v6); /*0x750973*/
+        ((VocClass *)(v6))->Release(); /*0x750973*/
         v6 = 0; /*0x750978*/
       }
     }
@@ -341,7 +341,7 @@ void ThemeManager_Update(int a1, int a2, int a3)
             a3 = v5[18]; /*0x7524d9*/
           if ( dword_B1D4C4 && v4 == 2 ) /*0x7524e4*/
           {
-            for ( i = AudioQueue::GetNext(&stru_B1D3C8); i; i = AudioQueue::GetNext(&stru_B1D3C8) ) /*0x7524f5*/
+            for ( i = ((AudioQueue *)(&stru_B1D3C8))->GetNext(); i; i = ((AudioQueue *)(&stru_B1D3C8))->GetNext() ) /*0x7524f5*/
             {
               LinkedList::Init((unsigned int **)i); /*0x7524f9*/
               *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x752502*/
@@ -357,7 +357,7 @@ void ThemeManager_Update(int a1, int a2, int a3)
             ((ThemeClass *)this)->ClearQueues(); /*0x75254b*/
             qword_B1D4D0 = 0; /*0x752552*/
           }
-          v7 = AudioQueue::FindByData(v5); /*0x75255e*/
+          v7 = ((AudioQueue *)(v5))->FindByData(); /*0x75255e*/
           if ( !v7 || v7[6] != v4 ) /*0x75256a*/
             Audio_Load((int)v5, v4, a3); /*0x752575*/
           UpdateThemes(); /*0x75257a*/
@@ -394,7 +394,7 @@ void ThemeClass_Update()
     return; /*0x75278e*/
     if ( ((Audio *)0)->IsSoundPlaying() )
     return; /*0x752794*/
-  v0 = qword_B1D4D0 + ThemeClass::GetValue(g_InfantryDrawState); /*0x7527b4*/
+  v0 = qword_B1D4D0 + ((ThemeClass *)(g_InfantryDrawState))->GetValue(); /*0x7527b4*/
     IDA_LODWORD(v1) = ((Audio *)0)->Callback();
   if ( v1 <= v0 || dword_B1D428 ) /*0x7527dc*/
     return; /*0x7527dc*/
@@ -405,7 +405,7 @@ void ThemeClass_Update()
   }
   v11 = (unsigned int)(0);
   v10 = (unsigned int)(0);
-  v2 = AudioQueue::GetNext(&stru_B1D3C8); /*0x752805*/
+  v2 = ((AudioQueue *)(&stru_B1D3C8))->GetNext(); /*0x752805*/
   v3 = (unsigned int *)v2; /*0x75280a*/
   if ( v2 ) /*0x75280e*/
   {
@@ -414,7 +414,7 @@ void ThemeClass_Update()
       goto LABEL_22; /*0x75281e*/
     goto LABEL_11; /*0x75281e*/
   }
-  v4 = (unsigned int)(AudioQueue::GetNext(&stru_B1D3F0));
+  v4 = (unsigned int)(((AudioQueue *)(&stru_B1D3F0))->GetNext());
   v3 = (unsigned int *)v4; /*0x75283f*/
   if ( !v4 ) /*0x752843*/
   {
@@ -428,7 +428,7 @@ void ThemeClass_Update()
       v5 = (char *)&stru_B1D474; /*0x752878*/
       while ( 1 ) /*0x75287f*/
       {
-        v6 = (unsigned int)(AudioQueue::GetNext(v5));
+        v6 = (unsigned int)(((AudioQueue *)(v5))->GetNext());
         v3 = (unsigned int *)v6; /*0x752884*/
         if ( v6 ) /*0x752888*/
           break; /*0x752888*/
@@ -491,9 +491,9 @@ void ThemeQueue_ClearPlaylist(int a1)
 
   if ( a1 >= 0 && a1 < g_InfantrySelectState ) /*0x752a4e*/
   {
-    for ( i = (int)(AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1))); /*0x752a61*/
+    for ( i = (int)(((AudioQueue *)(*((unsigned int *)g_InfantryRenderPool + a1)))->FindByData()); /*0x752a61*/
           i;
-          i = (int)(AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1)) ) { if ( *(unsigned int *)(i + 4) != i ) /*0x752a66*/ LinkedList::Init((unsigned int **)i));
+          i = (int)(((AudioQueue *)(*((unsigned int *)g_InfantryRenderPool + a1)))->FindByData() ) { if ( *(unsigned int *)(i + 4) != i ) /*0x752a66*/ LinkedList::Init((unsigned int **)i));
       if ( (void *)i == dword_B1D4B8 ) /*0x752a75*/
         dword_B1D4B8 = 0; /*0x752a77*/
       *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x752a85*/
@@ -2411,7 +2411,7 @@ int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1)
     {
       if ( (unsigned int *)sub_406310(v8) != v6 ) /*0x750a2d*/
       {
-        VocClass::Release((int)v5); /*0x750a31*/
+        ((VocClass *)((int)v5))->Release(); /*0x750a31*/
         v5 = 0; /*0x750a36*/
       }
     }
@@ -2423,7 +2423,7 @@ int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1)
     {
       if ( v5 ) /*0x750a9a*/
       {
-        VocClass::Release((int)v5); /*0x750a9e*/
+        ((VocClass *)((int)v5))->Release(); /*0x750a9e*/
         v5 = 0; /*0x750aa3*/
       }
     }
@@ -2488,13 +2488,13 @@ int VocClass_Update()
   int v2; // ebx
   int v3; // eax
 
-  result = AudioQueue::GetNext(&dword_B1D320); /*0x750ec6*/
+  result = ((AudioQueue *)(&dword_B1D320))->GetNext(); /*0x750ec6*/
   v1 = result; /*0x750ecb*/
   if ( result ) /*0x750ecf*/
   {
     do /*0x750f30*/
     {
-      v2 = AudioQueue::GetNextAlt(v1); /*0x750eda*/
+      v2 = ((AudioQueue *)(v1))->GetNextAlt(); /*0x750eda*/
             if ( !*(unsigned int *)(v1 + 48) )
         StartAudioController(v1 + 32, v1 + 12); /*0x750ee9*/
       result = AudioSource::Get(v1 + 12); /*0x750ef3*/
@@ -2523,12 +2523,12 @@ int sub_750F40(unsigned int * a1, int a2)
   int result; // eax
   int *i; // esi
 
-  result = AudioQueue::GetNext(unk_B1D320); /*0x750f4c*/
+  result = ((AudioQueue *)(unk_B1D320))->GetNext(); /*0x750f4c*/
   for ( i = (int *)result; result; i = (int *)result ) /*0x750f55*/
   {
     if ( (a2 & i[11]) != 0 && i[8] == *a1 && i[9] == a1[1] && i[10] == a1[2] ) /*0x750f77*/
       AudioFile::Stop(i + 3); /*0x750f7c*/
-    result = AudioQueue::GetNextAlt(i); /*0x750f83*/
+    result = ((AudioQueue *)(i))->GetNextAlt(); /*0x750f83*/
   }
   return result; /*0x750f8e*/
 }
@@ -2542,14 +2542,14 @@ int sub_751040()
   int i; // esi
   int *v2; // eax
 
-  result = AudioQueue::GetNext(unk_B1D320); /*0x751046*/
+  result = ((AudioQueue *)(unk_B1D320))->GetNext(); /*0x751046*/
   for ( i = result; result; i = result ) /*0x75104f*/
   {
     ++*(unsigned int *)(i + 48); /*0x751055*/
     v2 = AudioSource::Get((int **)(i + 12)); /*0x75105b*/
     if ( v2 ) /*0x751062*/
       sub_4053E0((int)v2); /*0x751066*/
-    result = AudioQueue::GetNextAlt((int *)i); /*0x75106d*/
+    result = ((AudioQueue *)((int *)i))->GetNextAlt(); /*0x75106d*/
   }
   return result; /*0x751078*/
 }
@@ -2564,7 +2564,7 @@ int sub_751080()
   int v2; // eax
   int *v3; // eax
 
-  result = AudioQueue::GetNext(unk_B1D320); /*0x751086*/
+  result = ((AudioQueue *)(unk_B1D320))->GetNext(); /*0x751086*/
   for ( i = result; result; i = result ) /*0x75108f*/
   {
     if ( *(unsigned int *)(i + 48) ) /*0x751091*/
@@ -2577,7 +2577,7 @@ int sub_751080()
       if ( v3 ) /*0x7510b4*/
         sub_405430((int)v3); /*0x7510b8*/
     }
-    result = AudioQueue::GetNextAlt((int *)i); /*0x7510bf*/
+    result = ((AudioQueue *)((int *)i))->GetNextAlt(); /*0x7510bf*/
   }
   return result; /*0x7510ca*/
 }

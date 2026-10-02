@@ -65,7 +65,7 @@ int LoadGame::LoadTriggerEvents()
         v12 = *(unsigned int *)(LoadGame_field_0x04 + 4 * v2); /*0x660875*/
         v6 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v12); /*0x660879*/
         if ( v6 != -1 ) /*0x66087f*/
-          LoadGame::RemoveItem(&stru_B04DA8, v6); /*0x660887*/
+          ((LoadGame *)(&stru_B04DA8))->RemoveItem(v6); /*0x660887*/
         __3_YAXPAX_Z(v5); /*0x66088d*/
         LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x660892*/
         LoadGame_field_0x10 = stru_B04DA8.LoadGame_field_0x10; /*0x660898*/
@@ -153,7 +153,7 @@ int LoadGame::LoadTriggerEvents()
 } // namespace gamemd
 // 0x660F10
 namespace gamemd {
-void LoadGame::RemoveItem(int a2, void *a2_2)
+void LoadGame::RemoveItem(int a2)
 {
 
   int LoadGame_field_0x10; // edx
@@ -289,12 +289,12 @@ int LoadGame::RestoreAudioState()
   unsigned int v18[4]; // [esp+40h] [ebp-10h] BYREF
 
   v1 = this; /*0x751717*/
-  Next = AudioQueue::GetNext((AudioQueue *)&stru_B1D290.isAliveFlag); /*0x751727*/
+  Next = ((AudioQueue *)((AudioQueue *)&stru_B1D290.isAliveFlag))->GetNext(); /*0x751727*/
   if ( Next ) /*0x75172b*/
   {
     do /*0x751763*/
     {
-      NextAlt = AudioQueue::GetNextAlt((AudioQueue *)Next); /*0x751737*/
+      NextAlt = ((AudioQueue *)((AudioQueue *)Next))->GetNextAlt(); /*0x751737*/
       AudioController::Stop((AudioController *)(Next + 12)); /*0x751739*/
       LinkedList::Init((LinkedList *)Next); /*0x751740*/
       PushFrontLinkedListAlt(dword_B1D3A4, Next); /*0x75174d*/
@@ -503,10 +503,10 @@ int sub_721040(int a1)
                 {
                   if ( byte_A83D21 && !AudioSample::IsBuffering(dword_A83D3C) ) /*0x7210f5*/
                     ((Audio *)((unsigned int *)dword_A83D3C))->Release(); /*0x721104*/
-                  if ( Audio::IsSoundPlaying((unsigned int *)dword_A83D3C) != 0 ) /*0x721116*/
+                  if ( ((Audio *)((unsigned int *)dword_A83D3C))->IsSoundPlaying() != 0 ) /*0x721116*/
                   {
                     if ( dword_A83D3C ) /*0x721125*/
-                      ThemeClass::RequestBuffer((unsigned int *)dword_A83D3C); /*0x721127*/
+                      ((ThemeClass *)((unsigned int *)dword_A83D3C))->RequestBuffer(); /*0x721127*/
                     byte_A83D21 = 1; /*0x72112c*/
                   }
                 }

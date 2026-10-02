@@ -40,9 +40,9 @@ struct GameOption {
     unsigned int u32_949;
 // --- flat members (END) ---
     char CheckDuplicate();
-    int GetField(void *a1, void *a2);
+    int GetField();
     int SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1);
-    void * SetDigest(CCINIClass * aP1);
+    void * SetDigest(char *aP1);
 };
 
 } // namespace gamemd

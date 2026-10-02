@@ -213,7 +213,7 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
       ++v4; /*0x6b61dc*/
     }
   }
-  ObjectTypeClass::Destruct((int)a3); /*0x6b61f0*/
+  ((ObjectTypeClass *)((int)a3))->Destruct(); /*0x6b61f0*/
   if ( (a3 & 1) != 0 ) /*0x6b61fa*/
     __3_YAXPAX_Z(a3); /*0x6b61fd*/
   return &a3->ObjectTypeClass; /*0x6b6207*/

@@ -100,7 +100,7 @@ int Struct::ZeroInitAndSetup(void *a1)
   this->PhoneNumber[0] = 0; /*0x48bf2a*/
   this->PhoneNumber[11] = -1; /*0x48bf30*/
   this->PhoneNumber[12] = -1; /*0x48bf33*/
-  return Struct::ClearAllMemberFlags((Struct *)this->PlayerIndex);
+  return ((Struct *)((Struct *)this->PlayerIndex))->ClearAllMemberFlags();
 
 }
 } // namespace gamemd

@@ -221,9 +221,9 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     v28[0] = &vt_rc_ptr; /*0x764d94*/
     ((ComPtr *)(v28))->Release(); /*0x764d9c*/
   }
-  BufferIOFile::Constructor(v34, aWdthistIni_0); /*0x764daa*/
+  ((BufferIOFile *)(v34))->Constructor(aWdthistIni_0); /*0x764daa*/
   v16 = 0; /*0x764daf*/
-  if ( File::IsReady(v34, 0) )
+  if ( ((File *)(v34))->IsReady(0) )
   {
     v29[1] = 0; /*0x764dc7*/
     v29[2] = 0; /*0x764dcb*/
@@ -247,7 +247,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       {
         RegionString = GetRegionStringWOL((void *)v16); /*0x764e6a*/
         v19 = ((String *)((char **)v25))->Assign(g_INI_Key_LastDay); /*0x764e79*/
-        String::Concat((const char **)v19, (char **)&v24, RegionString); /*0x764e80*/
+        ((String *)((const char **)v19))->Concat((char **)&v24, RegionString); /*0x764e80*/
         DeleteAndZero(v25); /*0x764e89*/
         v20 = INIClass::ReadInt((char **)this + 18, (char **)&v24, 0); /*0x764e9d*/
         *v18 = v20 < 0 ? 0 : v20;
@@ -306,9 +306,9 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   v12 = 0; /*0x765078*/
   v13 = 0; /*0x76507c*/
   v8[0] = &vt_INIClass; /*0x765080*/
-  BufferIOFile::Init(v14); /*0x765088*/
+  ((BufferIOFile *)(v14))->Init(); /*0x765088*/
   CCFileClass::Reopen(v14, g_Str_File_WDTHist_ini, 1); /*0x765098*/
-  if ( !File::IsReady(v14, 0) ) /*0x7650a2*/
+  if ( !((File *)(v14))->IsReady(0) ) /*0x7650a2*/
   {
     FileClass::Close(v14); /*0x7650af*/
     CCFileClass::Close(v14); /*0x7650b8*/
@@ -320,13 +320,13 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   BufferIOFileClass::Dtor(v14); /*0x7650f1*/
   RegionStringWOL = GetRegionStringWOL(aP1); /*0x765101*/
   v3 = ((String *)((char **)&v6))->Assign(g_INI_Key_LastDay); /*0x76510c*/
-  String::Concat((const char **)v3, (char **)&v7, RegionStringWOL); /*0x765113*/
+  ((String *)((const char **)v3))->Concat((char **)&v7, RegionStringWOL); /*0x765113*/
   DeleteAndZero(&v6); /*0x76511c*/
   ((String *)((char **)&v6))->Assign(g_INI_Key_CampaignID); /*0x76512a*/
   INIClass::SetIntFormat((char *)v8, (char **)((char *)this + 72), (char **)&v6, *((unsigned int *)this + 12), 0); /*0x765141*/
   DeleteAndZero(&v6); /*0x76514a*/
   INIClass::SetIntFormat((char *)v8, (char **)((char *)this + 72), (char **)&v7, *(unsigned int *)((char *)this + 4 * (unsigned int)aP1 + 52), 0); /*0x76515f*/
-  BufferIOFile::Init(v15); /*0x76516b*/
+  ((BufferIOFile *)(v15))->Init(); /*0x76516b*/
   CCFileClass::Reopen(v15, g_Str_File_WDTHist_ini, 2); /*0x76517e*/
   INIClass::SaveToPipe(v8, (int)v15); /*0x76518f*/
   v15[0] = (unsigned int)(&off_7E1668); /*0x76519b*/
@@ -357,9 +357,9 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   v7.ambientSoundController[1] = 0; /*0x765229*/
   v7.ambientSoundController[2] = 0; /*0x76522d*/
   ((unsigned int *)&v7)[0] = &vt_INIClass; /*0x765231*/
-  BufferIOFile::Init((BufferIOFile *)&v7.ambientSoundController[3]); /*0x765239*/
+  ((BufferIOFile *)((BufferIOFile *)&v7.ambientSoundController[3]))->Init(); /*0x765239*/
   CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765249*/
-  if ( !(uint8_t)File::IsReady((BufferIOFileClass *)&v7.ambientSoundController[3], 0) ) /*0x765253*/
+  if ( !(uint8_t)((File *)((BufferIOFileClass *)&v7.ambientSoundController[3]))->IsReady(0) ) /*0x765253*/
   {
     FileClass::Close((RawFileClass *)&v7.ambientSoundController[3]); /*0x765260*/
     CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765269*/
@@ -377,12 +377,12 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   {
     RegionStringWOL = GetRegionStringWOL((ObjectClass *)i); /*0x7652db*/
     v4 = ((String *)((String *)&((char *)&v7)))->Assign(g_INI_Key_LastDay); /*0x7652ea*/
-    String::Concat((String *)v4, (char **)&v7, RegionStringWOL); /*0x7652f1*/
+    ((String *)((String *)v4))->Concat((char **)&v7, RegionStringWOL); /*0x7652f1*/
     DeleteAndZero((ObjectClass *)&((char *)&v7)); /*0x7652fa*/
     INIClass::SetIntFormat((char *)&((char *)&v7), v2, (char **)&v7, 0, 0); /*0x76530b*/
     DeleteAndZero(&v7); /*0x765314*/
   }
-  BufferIOFile::Init((BufferIOFile *)&v7.location[1]); /*0x765326*/
+  ((BufferIOFile *)((BufferIOFile *)&v7.location[1]))->Init(); /*0x765326*/
   CCFileClass::Reopen((CDFileClass *)&v7.location[1], g_Str_File_WDTHist_ini, (CHAR *)2); /*0x765339*/
   INIClass::SaveToPipe((INIClass *)&((char *)&v7), (int)&v7.location[1]); /*0x76534a*/
   v7.location[1] = (int)&off_7E1668; /*0x765356*/
@@ -664,7 +664,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   BufferIOFileClass v56; // [esp+110h] [ebp-58h] BYREF
 
   v55.ambientSoundController[0] = (int)a1; /*0x769558*/
-  BufferIOFile::Init((BufferIOFile *)&v55.needsRedraw); /*0x769567*/
+  ((BufferIOFile *)((BufferIOFile *)&v55.needsRedraw))->Init(); /*0x769567*/
   CCFileClass::Reopen((CDFileClass *)&v55.needsRedraw, aWdtmapmdIni_0, (CHAR *)1); /*0x76957a*/
   v55.ambientSoundController[2] = 0; /*0x769588*/
   v55.ambientSoundController[3] = 0; /*0x76958c*/
@@ -931,7 +931,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
       v55.fallRate = *_7694C0; /*0x769aac*/
       v55.v45 = v45; /*0x769ab0*/
       v46 = ((String *)((String *)&((char *)&v55)))->Assign(aTarget_0); /*0x769acc*/
-      v47 = String::Concat((String *)v46, (char **)&((char *)&v55), (char **)&((char *)&v55)); /*0x769ad3*/
+      v47 = ((String *)((String *)v46))->Concat((char **)&((char *)&v55), (char **)&((char *)&v55)); /*0x769ad3*/
       INIClass::GetInt((char *)&v55.ambientSoundController[1], (char **)&v55, v47, &v55.fallRate); /*0x769ae2*/
       DeleteAndZero((ObjectClass *)&((char *)&v55)); /*0x769aeb*/
       DeleteAndZero((ObjectClass *)&((char *)&v55)); /*0x769af4*/
@@ -952,10 +952,10 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   Map_WorldDominationTour_43::ddtor((int)v51.__tail_10); /*0x769b89*/
   *(unsigned int *)v51.__pad_0 = (void*)&VectorClass_TRect_int_vftable; /*0x769b92*/
   MSEngine::ddtor(&v51); /*0x769b9a*/
-  BufferIOFileClass::Destruct(&v56); /*0x769ba6*/
+  ((BufferIOFileClass *)(&v56))->Destruct(); /*0x769ba6*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v55.ambientSoundController[1]); /*0x769baf*/
 // 0x535a60
-  return BufferIOFileClass::Destruct((BufferIOFileClass *)&v55.needsRedraw); /*0x769bc0*/
+  return ((BufferIOFileClass *)((BufferIOFileClass *)&v55.needsRedraw))->Destruct(); /*0x769bc0*/
 }
 }
 // 0x76B7B0
@@ -1078,7 +1078,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   *(unsigned int *)this = &WorldDominationTour::vt_Territory; /*0x76f9d0*/
   v10 = FormatStringInt((char **)v35, v6, 2); /*0x76f9d6*/
   v11 = ConcatStringAlloc((char **)&v34, a4, v10); /*0x76f9e4*/
-  v12 = String::Concat2((const char **)v11, (char **)&v33, aShp_0); /*0x76f9eb*/
+  v12 = ((String *)((const char **)v11))->Concat2((char **)&v33, aShp_0); /*0x76f9eb*/
   ((String *)((char **)this + 8))->Reassign((const char **)v12); /*0x76f9f4*/
   DeleteAndZero(&v33); /*0x76f9fd*/
   DeleteAndZero(&v34); /*0x76fa06*/
@@ -1086,7 +1086,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   v13 = FormatStringInt((char **)&a4, v6, 2); /*0x76fa1c*/
   ConcatStringAlloc((char **)&v32, aP5, v13); /*0x76fa2a*/
   DeleteAndZero((void **)&a4); /*0x76fa33*/
-  v14 = String::GetOrEmpty((char **)&v32); /*0x76fa43*/
+  v14 = ((String *)((char **)&v32))->GetOrEmpty(); /*0x76fa43*/
   StringCSF = GetStringCSF((wchar_t *)v14, 0, aDRa2mdpostWdtt, 39); /*0x76fa4c*/
   ((WideString *)((void **)this + 3))->Assign_Alt(StringCSF); /*0x76fa55*/
   FromStringInt((char **)&aP1, g_DisplayWidth); /*0x76fa64*/
@@ -1497,8 +1497,8 @@ AbstractClass * * ObjectClass::sub_764A20()
   int v15; // [esp+48h] [ebp-5Ch]
   BufferIOFile v16; // [esp+4Ch] [ebp-58h] BYREF
 
-  BufferIOFile::Constructor(&v16, aWdthistIni_0); /*0x764a33*/
-  if ( (uint8_t)File::IsReady((BufferIOFileClass *)&v16, 0) ) /*0x764a3f*/
+  ((BufferIOFile *)(&v16))->Constructor(aWdthistIni_0); /*0x764a33*/
+  if ( (uint8_t)((File *)((BufferIOFileClass *)&v16))->IsReady(0) ) /*0x764a3f*/
   {
     v5 = 0; /*0x764a50*/
     v6 = 0; /*0x764a54*/
@@ -1549,9 +1549,9 @@ int sub_765580(unsigned int * a1)
 {
   unsigned int v2[22]; // [esp+0h] [ebp-58h] BYREF
 
-  BufferIOFile::Init(v2); /*0x765587*/
+  ((BufferIOFile *)(v2))->Init(); /*0x765587*/
   CCFileClass::Reopen(v2, g_Str_File_WDTHist_ini, 1); /*0x765597*/
-  if ( !File::IsReady(v2, 0) ) /*0x7655a2*/
+  if ( !((File *)(v2))->IsReady(0) ) /*0x7655a2*/
   {
     FileClass::Close(v2); /*0x7655af*/
     CCFileClass::Close(v2); /*0x7655b8*/
@@ -1893,7 +1893,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   if ( WideString::Length(a4) ) /*0x767357*/
   {
     ((WideString *)((wchar_t **)&a4))->Assign((wchar_t *)L", "); /*0x76736a*/
-    v8 = String::GetOrEmpty((String *)&a3); /*0x76737a*/
+    v8 = ((String *)((String *)&a3))->GetOrEmpty(); /*0x76737a*/
     StringCSF = GetStringCSF((wchar_t *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22); /*0x76738c*/
     v9 = ConcatWString((wchar_t **)&v14, v7, (const wchar_t **)&a4); /*0x767399*/
     WideString::AssignConcat((const wchar_t **)v9, a2, StringCSF); /*0x7673a0*/
@@ -1902,7 +1902,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   }
   else
   {
-    v11 = String::GetOrEmpty((String *)&a3); /*0x7673d3*/
+    v11 = ((String *)((String *)&a3))->GetOrEmpty(); /*0x7673d3*/
     v12 = GetStringCSF((wchar_t *)v11, 0, g_Str_File_WDTGameOptions_cpp, 25); /*0x7673dc*/
     ((WideString *)(a2))->Assign(v12); /*0x7673e8*/
   }
@@ -2899,7 +2899,7 @@ void E4Recv_76DFD0::sub_76DFD0()
   int v5; // [esp+10h] [ebp-4h]
 
   ((String *)(&v3))->Assign(aMapenter); /*0x76dfdf*/
-  if ( (uint8_t)String::NotEquals(&v3, 0) ) /*0x76dfea*/
+  if ( (uint8_t)((String *)(&v3))->NotEquals(0) ) /*0x76dfea*/
   {
     v4 = (char *)this + 1172; /*0x76e001*/
     v5 = 0; /*0x76e005*/
@@ -2933,7 +2933,7 @@ unsigned int * E4Recv_76E090::sub_76E090()
   int v6; // [esp+18h] [ebp-4h]
 
   ((String *)(&v4))->Assign(aMapleave); /*0x76e09f*/
-  if ( (uint8_t)String::NotEquals(&v4, 0) ) /*0x76e0aa*/
+  if ( (uint8_t)((String *)(&v4))->NotEquals(0) ) /*0x76e0aa*/
   {
     *(unsigned int *)&v5.m_1[3] = &this->turretRotateSoundController[3]; /*0x76e0c1*/
     v6 = 0; /*0x76e0c5*/

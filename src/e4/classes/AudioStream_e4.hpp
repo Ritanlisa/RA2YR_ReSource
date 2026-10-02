@@ -126,15 +126,15 @@ struct AudioStream {
     unsigned int *__pad_5C;
     unsigned int Audio;
 // --- flat members (END) ---
-    void ReleaseSubsystem(void *a1_1);  // 0x401910
-    void Stop(void *a1_1, void *a2_1);  // 0x4026B0
+    void ReleaseSubsystem();  // 0x401910
+    void Stop();  // 0x4026B0
     void ReleaseChannel(void *a1_1);  // 0x4026F0
     void DestroyAll(void * Block);  // 0x4033C0
     int Reset(void *a1_1, void *a2_1);  // 0x403820
     int ResetChannel(int a2, int a3);  // 0x4038A0
     int ResetChannel2(int a2, int a3);  // 0x4038C0
     int SetupPlayback();  // 0x404700
-    int SelectRandom(void *a1_1);  // 0x4047B0
+    int SelectRandom();  // 0x4047B0
     void CleanupChannels();  // 0x404E70
     int ReadStreamAndSyncPosition();  // 0x4079C0
     int SetPlaybackCallback();  // 0x407A30
@@ -153,6 +153,6 @@ struct AudioStream {
     int InitListAndCounters(void *a1_1);  // 0x4028B0
     int UpdateTimers();  // 0x404FD0
     int UpdateCountdowners();  // 0x405040
-    char * Constructor(unsigned long long a2, void *a2_2, void *a3_1);  // 0x407860
+    char * Constructor(uint64_t a2);  // 0x407860
 };
 } // namespace gamemd

@@ -196,7 +196,7 @@ LABEL_8:
 }
 // 0x5FB2E0
 namespace gamemd {
-char * Rules::GetProductionTimeMult(CellStruct * aP1)
+char * Rules::GetProductionTimeMult(int aP1)
 {
 
   char *result; // eax

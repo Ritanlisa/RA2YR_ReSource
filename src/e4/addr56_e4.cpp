@@ -546,7 +546,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
   }
   while ( v12 ); /*0x56b0c7*/
   (*(void (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))(&v17); /*0x56b0d1*/
-  LCWPipe::Dtor((LCWPipe *)&v17); /*0x56b0d8*/
+  ((LCWPipe *)((LCWPipe *)&v17))->Dtor(); /*0x56b0d8*/
   return v11; /*0x56b0df*/
 
 }
@@ -915,7 +915,7 @@ int E4Recv_56AE40::sub_56AE40(int a2)
       v12 = LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[200] + 3, 1); /*0x56af0d*/
     v3 += (int)v12; /*0x56af12*/
   }
-  LCWPipe::Dtor((LCWPipe *)v14); /*0x56af23*/
+  ((LCWPipe *)((LCWPipe *)v14))->Dtor(); /*0x56af23*/
   return v3; /*0x56af2a*/
 
 }

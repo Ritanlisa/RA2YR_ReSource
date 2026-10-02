@@ -197,7 +197,7 @@ void sub_796960()
       goto LABEL_10; /*0x7969b8*/
   }
   if ( &g_WebBrowserConfig == (int *)((ObjectClass *))-36 /*0x7969df*/
-    || (v4 = String::GetOrEmpty_Alt((String *)&g_WindowManager.__pad_EC[684]),
+    || (v4 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty_Alt(),
         (owningHouseIndex = _strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v4)) != 0) )
   {
     owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7969e5*/
@@ -209,7 +209,7 @@ void sub_796960()
       *(unsigned int *)&v9[((unsigned int *)(0].__pad_0))[44] = 0; /*0x796a21*/
       ((Network *)(v1))->SyncPlayerList(); /*0x796a29*/
       ((Event *)0)->Dispatch(); /*0x796a2e*/
-      Network::SetConnectionParams(&unk_A8E9C0, 50, -1, 5000, 1); /*0x796a42*/
+      ((Network *)(&unk_A8E9C0))->SetConnectionParams(50, -1, 5000, 1); /*0x796a42*/
       ((Network *)(&stru_A8BB1C))->FormatAddress(0); /*0x796a4e*/
             ((Debug *)0)->Log();
       memset(v10, 0, sizeof(v10)); /*0x796a6f*/
@@ -429,7 +429,7 @@ char Event_Dispatch::Return0()
 }
 // 0x601360
 namespace gamemd {
-bool Event::IsValidActionType(void *a1_1)
+bool Event::IsValidActionType()
 {
 
   int result; // eax

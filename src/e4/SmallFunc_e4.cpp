@@ -108,7 +108,7 @@ void sub_40D1B0()
     --v1; /*0x40d1ef*/
   }
   while ( v1 ); /*0x40d1f0*/
-  RadarClass::Destruct((RadarClass *)&stru_87F5F0.__pad_58[416]); /*0x40d1f7*/
+  ((RadarClass *)((RadarClass *)&stru_87F5F0.__pad_58[416]))->Destruct(); /*0x40d1f7*/
 }
 } // namespace gamemd
 
@@ -169,7 +169,7 @@ char sub_5A1F60()
   int i; // eax
 
   v0 = 1; /*0x5a1f68*/
-  Mouse::SetBounds((int)&dword_87F7E8, 0); /*0x5a1f6a*/
+  ((Mouse *)((int)&dword_87F7E8))->SetBounds(0); /*0x5a1f6a*/
   ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x5a1f74*/
   for ( i = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); i; i = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext() ) /*0x5a1f85*/
   {
@@ -255,7 +255,7 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
   *(unsigned int *)&stru_87F5F0.__pad_E12[1418] = 0; /*0x6e2669*/
   *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = 0; /*0x6e266f*/
   *(unsigned int *)&stru_87F5F0.__pad_E12[1426] = -1; /*0x6e2675*/
-  Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], 0); /*0x6e267f*/
+  ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetBounds(0); /*0x6e267f*/
   ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower2(0); /*0x6e268a*/
   ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower(0); /*0x6e2695*/
   stru_87F5F0.__pad_E12[1432] = 0; /*0x6e269a*/

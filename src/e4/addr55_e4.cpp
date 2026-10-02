@@ -1373,7 +1373,7 @@ LABEL_7:
       *p_nextArrayIndex = (int)v3; /*0x55b78e*/
       p_nextArrayIndex[1] = (int)v15; /*0x55b790*/
       p_nextArrayIndex[2] = v7; /*0x55b798*/
-      MapClass::ProcessVisibilityFlags((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x55b79b*/
+      ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->ProcessVisibilityFlags(); /*0x55b79b*/
       v1 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x55b7a0*/
 LABEL_8:
       v3 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b7a6*/
@@ -2117,7 +2117,7 @@ AbstractClass * * Game_Frame_Check()
             if ( !v5 ) /*0x55d311*/
               break; /*0x55d311*/
             Event::Dispatch(); /*0x55d313*/
-            if ( Process::WaitForExit((Process *)&unk_B052D0, 0xAu, 0) ) /*0x55d320*/
+            if ( ((Process *)((Process *)&unk_B052D0))->WaitForExit(0xAu, 0) ) /*0x55d320*/
               break; /*0x55d320*/
             v5 = 480; /*0x55d2f1*/
           }

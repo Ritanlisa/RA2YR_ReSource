@@ -392,7 +392,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned char *)(v4 + 662) = v37; /*0x74b4ad*/
   if ( v37 ) /*0x74b4b3*/
   {
-    TechnoType = (unsigned int *)INIEntry::GetTechnoType((INIEntry *)a2, (uint8_t *)(v4 + 36), aSharesource); /*0x74b4c1*/
+    TechnoType = (unsigned int *)((INIEntry *)((INIEntry *)a2))->GetTechnoType((uint8_t *)(v4 + 36), aSharesource); /*0x74b4c1*/
     if ( !TechnoType ) /*0x74b4ca*/
     {
       *(unsigned int *)(v4 + 176) = 0; /*0x74b555*/
@@ -531,7 +531,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
     ((unsigned int *)Block)[0] = 0; /*0x74baf4*/
     ((unsigned int *)Block)[0] = 0; /*0x74bafa*/
   }
-  ObjectTypeClass::Destruct((int)Block); /*0x74bb02*/
+  ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x74bb02*/
   if ( (a2 & 1) != 0 ) /*0x74bb0c*/
     __3_YAXPAX_Z(Block); /*0x74bb0f*/
   return &Block->ObjectTypeClass; /*0x74bb19*/

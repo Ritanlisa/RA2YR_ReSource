@@ -133,7 +133,7 @@ struct RadioClass {
     int ExecuteAction(TimerStruct * aP1, IUnknown * aP2);
     int FindLinkIndex(int a2);
     int HasFreeLink();
-    int LoadState(ObjectClass * aP1, ObjectClass * aP2);
+    int LoadState(int aP1, int aP2);
     int PowerDrainUpdate(AbstractClass * aP1);
     int ProcessCmd();
     int SaveState(int * a0, RadioClass * aP1, int aP2);

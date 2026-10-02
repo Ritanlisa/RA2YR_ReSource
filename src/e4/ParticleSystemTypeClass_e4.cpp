@@ -318,7 +318,7 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
       ++v3; /*0x6449bd*/
     }
   }
-  ObjectTypeClass::Destruct((int)Block); /*0x6449d1*/
+  ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x6449d1*/
   if ( (a2 & 1) != 0 ) /*0x6449db*/
     __3_YAXPAX_Z(Block); /*0x6449de*/
   return &Block->ParticleSystemTypeClass_field_0x0; /*0x6449e8*/

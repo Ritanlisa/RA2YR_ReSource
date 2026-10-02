@@ -81,14 +81,14 @@ struct TaskForceClass {
     unsigned int *__pad_A0;
 // --- flat members (END) ---
     unsigned int * ParseUnitCountAndType(char *Buffer);  // 0x4C4EF0
-    int Construct(ObjectClass * aP1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1);  // 0x6E7E80
+    int Construct(char *aP1);  // 0x6E7E80
     AbstractClass * * LoadFromINI(char * a1, int a2);  // 0x6E8220
     void * ExecuteAction(void ** Block, char a2);  // 0x6E87F0
     int LoadTaskForce(AbstractTypeClass * aP0, int aP1);  // 0x6E86A0
     char GetUnitCount(unsigned char *** aP1);  // 0x6E8420
     char GetUnitType(char * a2);  // 0x6E8510
     int LoadTask(int * a2);  // 0x6E8750
-    int Check(void *a1_1, void *a2_1, void *a3_1);  // 0x4C4F90
+    int Check();  // 0x4C4F90
     int SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x6E8680
     int ddtor(int a1, unsigned int * a2);  // 0x6E8710
     int StubReturn33();  // 0x6E87D0

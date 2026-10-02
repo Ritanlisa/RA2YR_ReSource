@@ -79,8 +79,8 @@ struct Movie {
     CampaignClass * * GetSection(CCINIClass * aP1, CCINIClass * aP2);  // 0x49E3B0
     int Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char a5, char a6, char a7);  // 0x5BED40
     int Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1);  // 0x7209D0
-    unsigned int SelectNextBuildableType(AnimClass * aP1);  // 0x720A80
-    char GetSectionID(unsigned int * a2);  // 0x49BC80
-    char GetState(CCINIClass * aP1);  // 0x49BCC0
+    unsigned int SelectNextBuildableType(int aP1);  // 0x720A80
+    char GetSectionID(unsigned int *a2);  // 0x49BC80
+    char GetState(unsigned int *aP1);  // 0x49BCC0
 };
 } // namespace gamemd

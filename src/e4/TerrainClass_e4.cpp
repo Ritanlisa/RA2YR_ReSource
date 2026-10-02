@@ -357,23 +357,23 @@ LABEL_162:
       }
       return 1;
     case 0x1F:
-      MapClass::ProcessVisibilityFlags(&stru_87C374[13428]);
+      ((MapClass *)(&stru_87C374[13428]))->ProcessVisibilityFlags();
       return 1;
     case 0x20:
       return globalHelper_0E2050((int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x21:
-      SuperClass::StartTimer(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)(a1 + 144)), (IUnknown *)1, 0, 0);
+      ((SuperClass *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)(a1 + 144))))->StartTimer((IUnknown *)1, 0, 0);
       if ( (AbstractClass *)HouseClass_Player.field_0 == aP1 )
         goto LABEL_157;
       return 1;
     case 0x22:
-      SuperClass::StartTimer(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)(a1 + 144)), 0, 0, 0);
+      ((SuperClass *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)(a1 + 144))))->StartTimer(0, 0, 0);
       *(unsigned char *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)(a1 + 144)) + 96) = 0;
       if ( (AbstractClass *)HouseClass_Player.field_0 != aP1 )
         return 1;
 LABEL_157:
       SidebarClass::AddCameo((int *)&stru_87C374[13428], 31, *(AnimClass **)(a1 + 144));
-      Status = (IUnknown *)HouseClass::GetStatus((IUnknown *)0x1F, 0);
+      Status = (IUnknown *)((HouseClass *)((IUnknown *)0x1F))->GetStatus(0);
       Sidebar::ActivateTab((int)&stru_87C374[13428], Status);
       return 1;
     case 0x23:
@@ -432,7 +432,7 @@ LABEL_157:
       *(unsigned int *)&stru_87C374[17944] = 0;
       *(unsigned int *)&stru_87C374[17948] = 0;
       *(unsigned int *)&stru_87C374[17952] = -1;
-      Mouse::SetBounds((int)&stru_87C374[13428], 0);
+      ((Mouse *)((int)&stru_87C374[13428]))->SetBounds(0);
       ((BuildingClass *)(&stru_87C374[13428]))->TogglePower2(0);
       ((BuildingClass *)(&stru_87C374[13428]))->TogglePower(0);
       stru_87C374[17958] = 0;
@@ -471,7 +471,7 @@ LABEL_157:
       HouseClass_Player[45136] = 1;
       Timer::PumpMessages(*(HWND **)&stru_87C374[13308]);
       (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 12))(*(unsigned int *)&stru_87C374[45772]);
-      Mouse::ReleaseCapture(&stru_87C374[13428]);
+      ((Mouse *)(&stru_87C374[13428]))->ReleaseCapture();
       MapClass::MarkForRedraw(&stru_87C374[13428], 0);
       TacticalMap::Redraw(&stru_87C374[13428]);
       Sleep(0x3E8u);
@@ -512,7 +512,7 @@ LABEL_157:
                       {
                         if ( LinkedList_flat::Contains(ecx213, a5) )
                         {
-                          BuildingLightClass::FindTarget(*(unsigned int **)(v85 + 1536), *(CCINIClass **)(a1 + 144));
+                          ((BuildingLightClass *)(*(unsigned int **)(v85 + 1536)))->FindTarget(*(CCINIClass **)(a1 + 144));
                           v84 = 1;
                         }
                       }
@@ -1273,7 +1273,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
       }
     }
   }
-  Register = BuildingClass::SaveLoad_Register(vtable0); /*0x71ce7e*/
+  Register = ((BuildingClass *)(vtable0))->SaveLoad_Register(); /*0x71ce7e*/
   if ( Register >= 0 ) /*0x71ce82*/
   {
     if ( v2 ) /*0x71ce8a*/

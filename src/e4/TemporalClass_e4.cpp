@@ -277,7 +277,7 @@ LABEL_10:
             v30 = *((unsigned int *)this + 15); /*0x71a9de*/
             if ( v30 ) /*0x71a9e3*/
             {
-              SuperClass::SetOnHold((gamemd::CoordStruct *)(v30), 0); /*0x71a9e6*/
+              ((SuperClass *)((gamemd::CoordStruct *)(v30)))->SetOnHold(0); /*0x71a9e6*/
               *((unsigned int *)this + 15) = 0; /*0x71a9eb*/
             }
             v31 = *(unsigned int **)this->__pad_28; /*0x71a9ee*/

@@ -188,7 +188,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
 } // namespace gamemd
 // 0x5ADF20
 namespace gamemd {
-MixFileClass * SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2)
+MixFileClass * SessionClass::LoadGameSession(int aP1, const char **aP2)
 {
 
   int v4; // esi
@@ -201,7 +201,7 @@ MixFileClass * SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2
   char *v12; // eax
   String v13; // [esp+10h] [ebp-8h] BYREF
 
-  if ( !aP1 || (uint8_t)String::Equals_Alt((String *)aP2, 0) ) /*0x5adf37*/
+  if ( !aP1 || (uint8_t)((String *)((String *)aP2))->Equals_Alt(0) ) /*0x5adf37*/
     return 0; /*0x5adf3e*/
   v4 = *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * *(unsigned int *)(*((unsigned int *)dword_A83C9C + *(unsigned int *)(aP1 + 7284)) + 188)); /*0x5adf5b*/
   if ( !v4 ) /*0x5adf60*/
@@ -216,7 +216,7 @@ MixFileClass * SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2
   DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5adfae*/
   if ( v7 || (v8 = ((CampaignClass *)((CampaignClass *)pad_50))->Check(*(unsigned short *)(aP1 + 13728))) == 0 ) /*0x5adfea*/
   {
-    SessionClass::Destruct((SessionClass *)pad_50); /*0x5adfb9*/
+    ((SessionClass *)((SessionClass *)pad_50))->Destruct(); /*0x5adfb9*/
     ((Debug *)this)->Log(); /*0x5adfc3*/
     return 0; /*0x5adfd4*/
   }
@@ -250,7 +250,7 @@ LABEL_14:
   DeleteAndZero((ObjectClass *)&v13); /*0x5ae0bf*/
   DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5ae0c8*/
 LABEL_17:
-  SessionClass::Destruct((SessionClass *)pad_50); /*0x5ae0cd*/
+  ((SessionClass *)((SessionClass *)pad_50))->Destruct(); /*0x5ae0cd*/
   return strlen((const char *)(aP1 + 4700)) != 0; /*0x5adf6f*/
 
 }
@@ -318,7 +318,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   ((unsigned int *)&v43)[0] = (int)&vt_INIClass; /*0x5cef41*/
   unknown_libname_73(&((char *)&v43)); /*0x5cef49*/
   unknown_libname_73(&((char *)&v43)); /*0x5cef52*/
-  SessionClass::Destruct(uniqueId); /*0x5cef59*/
+  ((SessionClass *)(uniqueId))->Destruct(); /*0x5cef59*/
   (*(void (**)(int *, char *))(v43.customSound_controller[2] + 8))( /*0x5cef6b*/
     &v43.customSound_controller[2],
     aMapselmdIni);
@@ -466,7 +466,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
             StringByIndex = ((INIClass *)((INIClass *)&((char *)&v43)))->GetStringByIndexEx((char **)&((char *)&v43), (char **)&((char *)&v43), (int)v3); /*0x5cf479*/
             ((String *)((String *)&v43))->Reassign((const char **)StringByIndex); /*0x5cf483*/
             DeleteAndZero((ObjectClass *)&((char *)&v43)); /*0x5cf48c*/
-            if ( (uint8_t)String::NotEquals((String *)&v43, 0) ) /*0x5cf497*/
+            if ( (uint8_t)((String *)((String *)&v43))->NotEquals(0) ) /*0x5cf497*/
             {
               ((String *)((String *)&((char *)&v43)))->Assign(0); /*0x5cf4aa*/
               v35 = INIClass::ReadString( /*0x5cf4d2*/
@@ -483,7 +483,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
                   v37 = (ObjectClass *)Audio::ParseVolume(v36, (const char **)&v43, (const char **)&((char *)&v43)); /*0x5cf501*/
                 else
                   v37 = 0; /*0x5cf505*/
-                if ( (uint8_t)String::Equals_Alt((String *)v37, 0) ) /*0x5cf50b*/
+                if ( (uint8_t)((String *)((String *)v37))->Equals_Alt(0) ) /*0x5cf50b*/
                 {
                   if ( v37 ) /*0x5cf516*/
                   {
@@ -2111,7 +2111,7 @@ void SessionClass::SetupNetwork()
       if ( v53[0] >= 8u ) /*0x69be40*/
         goto LABEL_10; /*0x69be40*/
 LABEL_9:
-      Network::SetPort((Network *)(*(unsigned int *)(this->StartSpots[1] + 4 * v1) + 40), this->unknown_2854[v6 + 489]); /*0x69be47*/
+      ((Network *)((Network *)(*(unsigned int *)(this->StartSpots[1] + 4 * v1) + 40)))->SetPort(this->unknown_2854[v6 + 489]); /*0x69be47*/
       ToWideStringChar(*(char **)(this->StartSpots[1] + 4 * v1)); /*0x69be6a*/
       ((Network *)((Network *)(*(unsigned int *)(this->StartSpots[1] + 4 * v1) + 40)))->FormatAddress(0); /*0x69be7f*/
       Debug::Log(); /*0x69be8b*/
@@ -2226,14 +2226,14 @@ LABEL_39:
             if ( this->unknown_2854[(unsigned int)v54 + 489] == this->unknown_2854[v22 + 489] ) /*0x69c0a3*/
             {
               v48 = v55++ + LOWORD(this->unknown_2854[(unsigned int)v54 + 489]); /*0x69c0b9*/
-              Network::SetPort((Network *)(*((unsigned int *)Block + v17) + 40), v48); /*0x69c0c8*/
+              ((Network *)((Network *)(*((unsigned int *)Block + v17) + 40)))->SetPort(v48); /*0x69c0c8*/
               v25 = (char **)Block; /*0x69c0cd*/
               *((unsigned char *)&v58 + v17) = 1; /*0x69c0d1*/
               ToWideStringChar(v25[v17]); /*0x69c0d9*/
             }
             Debug::Log(); /*0x69c0ec*/
             v26 = ToWideStringChar(*((char **)Block + v50)); /*0x69c121*/
-            v27 = String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684]); /*0x69c123*/
+            v27 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty(); /*0x69c123*/
             if ( !_strcmpi(v26, v27) ) /*0x69c12a*/
             {
               v56 = (void *)v53[0]; /*0x69c142*/
@@ -2243,7 +2243,7 @@ LABEL_39:
               strcpy((char *)v56, ToWideStringChar(v28)); /*0x69c172*/
             }
             v29 = ToWideStringChar(*((char **)Block + v17)); /*0x69c18c*/
-            v30 = String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684]); /*0x69c18e*/
+            v30 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty(); /*0x69c18e*/
             if ( !_strcmpi(v29, v30) ) /*0x69c195*/
             {
               v56 = (void *)v53[0]; /*0x69c1b1*/
@@ -2265,7 +2265,7 @@ LABEL_39:
   if ( this->unknown_2854[498] ) /*0x69c208*/
   {
     Debug::Log(); /*0x69c21c*/
-    Network::SetPort((Network *)(*(unsigned int *)this->StartSpots[1] + 40), this->unknown_2854[498]); /*0x69c237*/
+    ((Network *)((Network *)(*(unsigned int *)this->StartSpots[1] + 40)))->SetPort(this->unknown_2854[498]); /*0x69c237*/
     v54 = 0; /*0x69c23c*/
     v32 = (char **)dword_A8DA90; /*0x69c244*/
     while ( 1 ) /*0x69c24e*/
@@ -2285,7 +2285,7 @@ LABEL_39:
     }
     v36 = v54; /*0x69c48c*/
 LABEL_58:
-    Network::SetPort((Network *)(this->unknown_2854[(unsigned int)v36 + 1] + 40), this->unknown_2854[498]); /*0x69c288*/
+    ((Network *)((Network *)(this->unknown_2854[(unsigned int)v36 + 1] + 40)))->SetPort(this->unknown_2854[498]); /*0x69c288*/
   }
   v37 = 0; /*0x69c2a5*/
   if ( this->StartSpots[4] > 0 ) /*0x69c2a9*/
@@ -2417,7 +2417,7 @@ Coord * * SessionClass::BuildLaunchString()
     {
       ++v3; /*0x78f05d*/
     }
-    else if ( (uint8_t)Player::IsObserver((Player *)v6) ) /*0x78f062*/
+    else if ( (uint8_t)((Player *)((Player *)v6))->IsObserver() ) /*0x78f062*/
     {
       ++v20; /*0x78f06b*/
     }
@@ -2452,10 +2452,10 @@ LABEL_15:
     v16 = ((String *)(&v24))->Assign(asc_84BA48); /*0x78f100*/
     v15 = ((String *)((String *)&v23.m_3[1]))->Assign(&stru_B76AC4.needsRedraw); /*0x78f118*/
     v9 = ((String *)(&v23))->Assign(aMode_0); /*0x78f11f*/
-    v10 = String::Concat((String *)v9, &v22, v15); /*0x78f126*/
-    v11 = String::Concat((String *)v10, (char **)&v21.m_3[1], v16); /*0x78f12d*/
-    v12 = String::Concat((String *)v11, &v19, v17); /*0x78f134*/
-    String::Concat((String *)v12, (char **)&v21, v18); /*0x78f13b*/
+    v10 = ((String *)((String *)v9))->Concat(&v22, v15); /*0x78f126*/
+    v11 = ((String *)((String *)v10))->Concat((char **)&v21.m_3[1], v16); /*0x78f12d*/
+    v12 = ((String *)((String *)v11))->Concat(&v19, v17); /*0x78f134*/
+    ((String *)((String *)v12))->Concat((char **)&v21, v18); /*0x78f13b*/
     DeleteAndZero((ObjectClass *)&v19); /*0x78f144*/
     DeleteAndZero((ObjectClass *)&v21.m_3[1]); /*0x78f14d*/
     DeleteAndZero((ObjectClass *)&v22); /*0x78f156*/
@@ -2465,7 +2465,7 @@ LABEL_15:
     DeleteAndZero((ObjectClass *)&v24.m_3[1]); /*0x78f17a*/
     DeleteAndZero((ObjectClass *)&v25); /*0x78f183*/
     v13 = *(unsigned int *)ppv; /*0x78f191*/
-    v14 = String::GetOrEmpty(&v21); /*0x78f193*/
+    v14 = ((String *)(&v21))->GetOrEmpty(); /*0x78f193*/
     (*(void (**)(LPVOID, char *))(v13 + 156))(ppv, v14); /*0x78f1a0*/
     memset(v26, 0, sizeof(v26)); /*0x78f1b1*/
     GameConfig::BuildChecksum(v26); /*0x78f1b7*/

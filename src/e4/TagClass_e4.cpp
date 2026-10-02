@@ -29,7 +29,7 @@
 
 // 0x6E4F60
 namespace gamemd {
-TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
+TriggerClass * * TagClass::Destructor()
 {
 
   TagTypeClass *buildingType; // ecx
@@ -428,7 +428,7 @@ namespace gamemd {
 TagClass * TagClass::ProcessTrigger(void ** Block, char a2)
 {
 
-  TagClass::Destructor(Block); /*0x6e58b3*/
+  ((TagClass *)(Block))->Destructor(); /*0x6e58b3*/
   if ( (a2 & 1) != 0 ) /*0x6e58bd*/
     __3_YAXPAX_Z(Block); /*0x6e58c0*/
   return &Block->AbstractClass; /*0x6e58ca*/

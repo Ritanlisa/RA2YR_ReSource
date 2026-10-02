@@ -72,7 +72,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0a1a*/
   v5 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(a2)); /*0x4d0a2a*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v5, v25); /*0x4d0a3b*/
-  StartCoords = House::GetStartCoords((House *)v5, v26); /*0x4d0a3d*/
+  StartCoords = ((House *)((House *)v5))->GetStartCoords(v26); /*0x4d0a3d*/
   if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x4d0a4e*/
   {
     v8 = *PlacementRect; /*0x4d0adf*/

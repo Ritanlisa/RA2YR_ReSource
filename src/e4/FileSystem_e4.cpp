@@ -208,7 +208,7 @@ void FileSystem::InitPipShapes()
     byte_AC1488 = FileSystem_PIPBRD_SHP != 0; /*0x5f76df*/
     if ( !FileSystem_PIPBRD_SHP ) /*0x5f76e5*/
       FileSystem_PIPBRD_SHP = SearchMIXFile(aPipbrdShp, 0); /*0x5f76f3*/
-    RawFileClass::Dtor(v0); /*0x5f76fc*/
+    ((RawFileClass *)(v0))->Dtor(); /*0x5f76fc*/
   }
   if ( !FileSystem_PIPS_SHP ) /*0x5f7708*/
   {
@@ -217,7 +217,7 @@ void FileSystem::InitPipShapes()
     byte_AC1489 = FileSystem_PIPS_SHP != 0; /*0x5f772d*/
     if ( !FileSystem_PIPS_SHP ) /*0x5f7733*/
       FileSystem_PIPS_SHP = SearchMIXFile(aPipsShp, 0); /*0x5f7741*/
-    RawFileClass::Dtor(v0); /*0x5f774a*/
+    ((RawFileClass *)(v0))->Dtor(); /*0x5f774a*/
   }
   if ( !FileSystem_PIPS2_SHP ) /*0x5f7756*/
   {
@@ -226,7 +226,7 @@ void FileSystem::InitPipShapes()
     byte_AC148A = FileSystem_PIPS2_SHP != 0; /*0x5f777b*/
     if ( !FileSystem_PIPS2_SHP ) /*0x5f7781*/
       FileSystem_PIPS2_SHP = SearchMIXFile(aPips2Shp, 0); /*0x5f778f*/
-    RawFileClass::Dtor(v0); /*0x5f7798*/
+    ((RawFileClass *)(v0))->Dtor(); /*0x5f7798*/
   }
   if ( !FileSystem_TALKBUBL_SHP ) /*0x5f77a4*/
   {
@@ -235,7 +235,7 @@ void FileSystem::InitPipShapes()
     byte_AC148B = FileSystem_TALKBUBL_SHP != 0; /*0x5f77c9*/
     if ( !FileSystem_TALKBUBL_SHP ) /*0x5f77cf*/
       FileSystem_TALKBUBL_SHP = SearchMIXFile(aTalkbublShp, 0); /*0x5f77dd*/
-    RawFileClass::Dtor(v0); /*0x5f77e6*/
+    ((RawFileClass *)(v0))->Dtor(); /*0x5f77e6*/
   }
 
 }

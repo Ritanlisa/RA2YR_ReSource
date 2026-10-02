@@ -97,7 +97,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   }
   BYTE1(this->veteranUnitsCount) = 0; /*0x5117ad*/
   this->veteranUnits[0] = 0; /*0x5117b3*/
-  return AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x5117be*/
+  return ((AbstractTypeClass *)((AbstractTypeClass *)this))->Dtor(); /*0x5117be*/
 
 }
 }
@@ -396,7 +396,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     HouseTypeClass::readAllowedUnits((HouseTypeClass *)&Destination, (unsigned int *)(_EBX + 332)); /*0x511dcb*/
     *(unsigned int *)Destination.__pad_0 = &vt_TypeList; /*0x511dd0*/
   }
-  HouseTypeClass::readStartInfantry((HouseTypeClass *)(_EBX + 332), &Destination); /*0x511de5*/
+  ((HouseTypeClass *)((HouseTypeClass *)(_EBX + 332)))->readStartInfantry(&Destination); /*0x511de5*/
   UnitTypeVector_field_0x10 = Destination.UnitTypeVector_field_0x10; /*0x511dee*/
   UnitTypeVector_field_0x18 = Destination.UnitTypeVector_field_0x18; /*0x511df2*/
   *(unsigned int *)(_EBX + 352) = Destination.UnitTypeVector_field_0x14; /*0x511df6*/
@@ -1049,7 +1049,7 @@ HouseTypeClass * HouseTypeClass::Destructor(void ** Block, char a2)
   }
   BYTE1(Block->veteranUnitsCount) = 0; /*0x51286d*/
   Block->veteranUnits[0] = 0; /*0x512873*/
-  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x512879*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x512879*/
   if ( (a2 & 1) != 0 ) /*0x512885*/
     __3_YAXPAX_Z(Block); /*0x512888*/
   return &Block->AbstractClass; /*0x512892*/

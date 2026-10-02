@@ -379,9 +379,9 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   KeyValuePair v27[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  v6 = (char **)String::GetOrEmpty_Alt((String *)a4); /*0x529e85*/
+  v6 = (char **)((String *)((String *)a4))->GetOrEmpty_Alt(); /*0x529e85*/
   a4 = v6; /*0x529e87*/
-  v7 = String::GetOrEmpty_Alt((String *)Source); /*0x529e90*/
+  v7 = ((String *)((String *)Source))->GetOrEmpty_Alt(); /*0x529e90*/
   Source = (char *)(&g_INI_DefaultBuffer); /*0x529e98*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x529eb0*/
     goto LABEL_18; /*0x529eb0*/
@@ -573,9 +573,9 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
   KeyValuePair v29[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  v6 = (char **)String::GetOrEmpty_Alt((String *)a4); /*0x52a305*/
+  v6 = (char **)((String *)((String *)a4))->GetOrEmpty_Alt(); /*0x52a305*/
   a4 = v6; /*0x52a307*/
-  v7 = String::GetOrEmpty_Alt((String *)LODWORD(Source)); /*0x52a310*/
+  v7 = ((String *)((String *)LODWORD(Source)))->GetOrEmpty_Alt(); /*0x52a310*/
   Source = COERCE_FLOAT(&g_INI_DefaultBuffer); /*0x52a318*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x52a330*/
     goto LABEL_18; /*0x52a330*/
@@ -1281,13 +1281,13 @@ LABEL_94:
     int v93 = 0;
   unsigned char v92[12]; // [esp+ACh] [ebp-2E94h] BYREF
     ((Vector *)((int)v92))->Clear();
-    BufferIOFileClass::Destruct(&aP1);
+    ((BufferIOFileClass *)(&aP1))->Destruct();
     return -1;
   }
   INIClass::INIClass(v97);
   v98 = 0;
   v97[0] = (unsigned int)&CCINIClass_Vtable;
-  if ( !CCINIClass::Load(v97, &aP1, 0, 0) )
+  if ( !((CCINIClass *)(v97))->Load(&aP1, 0, 0) )
   {
     Debug::Log();
     HashTable_flat::DestroyHashTableINIClass(v97);
@@ -1303,7 +1303,7 @@ LABEL_94:
     *(unsigned int *)v94[0] = &vt_CCFileClass;
     v96 = 0;
     ((Vector *)((int)v95))->Clear();
-    BufferIOFileClass::Destruct(&v94);
+    ((BufferIOFileClass *)(&v94))->Destruct();
     HashTable_flat::DestroyHashTableINIClass(v97);
     *(unsigned int *)aP1[0] = &vt_CCFileClass;
     goto LABEL_94;
@@ -1311,14 +1311,14 @@ LABEL_94:
   INIClass::INIClass(&v99);
   v99.ownsFile = 0;
   *(unsigned int *)v99[0] = &CCINIClass_Vtable;
-  if ( !CCINIClass::Load(&v99, &v94, 0, 0) )
+  if ( !((CCINIClass *)(&v99))->Load(&v94, 0, 0) )
   {
     Debug::Log();
     HashTable_flat::DestroyHashTableINIClass((void **)&v99);
     *(unsigned int *)v94[0] = &vt_CCFileClass;
     v96 = 0;
     ((Vector *)((int)v95))->Clear();
-    BufferIOFileClass::Destruct(&v94);
+    ((BufferIOFileClass *)(&v94))->Destruct();
 LABEL_109:
     HashTable_flat::DestroyHashTableINIClass(v97);
     CCFileClass::Destruct(&aP1);
@@ -1339,7 +1339,7 @@ LABEL_108:
     goto LABEL_109;
   }
   CCINIClass::CCINIClass(v100);
-  if ( !CCINIClass::Load(v100, v101, 0, 0) )
+  if ( !((CCINIClass *)(v100))->Load(v101, 0, 0) )
     goto LABEL_106;
   ThemeManager::Cleanup((int)&g_BuildingTypeClass_Count);
   ThemeClass::InitializeThemes((int)&g_BuildingTypeClass_Count, (char *)v100);
@@ -1493,7 +1493,7 @@ void InitRules()
     {
       v4 = 0; /*0x52ce13*/
     }
-    CCINIClass::Load(v4, (int)&v19, 0, 0); /*0x52ce1e*/
+    ((CCINIClass *)(v4))->Load((int)&v19, 0, 0); /*0x52ce1e*/
     if ( _strcmpi(cAlternateFileName, aRulesmdIni) ) /*0x52ce29*/
     {
       if ( *(int *)dwInitParam.__tail_10 < dwInitParam.m_8 /*0x52cecb*/
@@ -1554,7 +1554,7 @@ void InitRules()
     {
       v8 = 0; /*0x52cf68*/
     }
-    CCINIClass::Load(v8, (int)&v19, 0, 0); /*0x52cf73*/
+    ((CCINIClass *)(v8))->Load((int)&v19, 0, 0); /*0x52cf73*/
     v9 = *(unsigned int *)dwInitParam.__tail_10; /*0x52cf78*/
     if ( *(int *)dwInitParam.__tail_10 < dwInitParam.m_8 ) /*0x52cf82*/
     {
@@ -1588,7 +1588,7 @@ void InitRules()
     return 0; /*0x52d032*/
   }
   CCFileClass::Construct(&v22, aArtmdIni); /*0x52d03f*/
-  if ( !CCINIClass::Load((CCINIClass *)&DSurface_ViewBounds.__pad_FC[228], (int)&v22, 0, 0) ) /*0x52d053*/
+  if ( !((CCINIClass *)((CCINIClass *)&DSurface_ViewBounds.__pad_FC[228]))->Load((int)&v22, 0, 0) ) /*0x52d053*/
   {
     Debug::Log(); /*0x52d061*/
     *(unsigned int *)v22.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d070*/
@@ -1641,7 +1641,7 @@ void InitRules()
     INIClass::INIClass((INIClass *)&v19); /*0x52d24f*/
     v19.ownsFile = 0; /*0x52d25b*/
     *(unsigned int *)v19.INIClass = &CCINIClass_Vtable; /*0x52d267*/
-    if ( CCINIClass::Load(&v19, (int)&v25, 1, 0) > 1 ) /*0x52d277*/
+    if ( ((CCINIClass *)(&v19))->Load((int)&v25, 1, 0) > 1 ) /*0x52d277*/
     {
       HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x52d281*/
       *(unsigned int *)v25.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d28d*/
@@ -1682,7 +1682,7 @@ void InitRules()
     while ( v13 < *(int *)dwInitParam.__tail_10 ); /*0x52d355*/
   }
   CCFileClass::Construct(&v28, aAimdIni); /*0x52d363*/
-  CCINIClass::Load((CCINIClass *)&DSurface_ViewBounds.__pad_FC[140], (int)&v28, 1, 0); /*0x52d378*/
+  ((CCINIClass *)((CCINIClass *)&DSurface_ViewBounds.__pad_FC[140]))->Load((int)&v28, 1, 0); /*0x52d378*/
   *(unsigned int *)v28.CDFileClass = (void*)&CCFileClass_vftable; /*0x52d384*/
   v29[3] = 0; /*0x52d38b*/
   ((Vector *)((int)v29))->Clear(); /*0x52d392*/
@@ -1853,7 +1853,7 @@ LABEL_2:
   unk_8B41C0 = 0;
   byte_A83D48 = 0;
   *(unsigned int *)&HouseClass_Player[30700] = 0;
-  Mouse::SetBounds((int)&stru_87C374[13428], 0);
+  ((Mouse *)((int)&stru_87C374[13428]))->SetBounds(0);
   *(unsigned int *)&stru_87C374[17944] = 0;
   *(unsigned int *)&stru_87C374[17948] = 0;
   *(unsigned int *)&stru_87C374[17952] = -1;
@@ -2054,7 +2054,7 @@ LABEL_40:
           {
             SetWindowLongA(Dialog, 8, (LONG)&dwNewLong);
             SetDialogParent((HWND)j, g_hWnd);
-            Dialog::Show((HWND)j);
+            ((Dialog *)((HWND)j))->Show();
             while ( !(unsigned char)v57 )
             {
               if ( Dialog::PumpMessages() == 1 )
@@ -2400,7 +2400,7 @@ LABEL_81:
               *(unsigned int *)&HouseClass_Player[29932] = 0;
               goto LABEL_134;
             }
-            EventClass::CheckFlag(&HouseClass_Player[44324]);
+            ((EventClass *)(&HouseClass_Player[44324]))->CheckFlag();
             if ( *(unsigned int *)&HouseClass_Player[29932] == 2 )
             {
               if ( *(unsigned int *)&HouseClass_Player[40420] )
@@ -2458,7 +2458,7 @@ LABEL_116:
                   v36 = (IPXInterfaceClass *)IPXInterfaceClass::Construct(v33);
                 IPXInterfaceClass *v36 = 0;
                 *(unsigned int *)&stru_87C374[45748] = v36;
-                WinsockInterface::Init(v36);
+                ((WinsockInterface *)(v36))->Init();
                 Screen::Capture(1, 0, 0, -1);
                 if ( InitNetworkGameState() && NetworkLobby::CreateGame() )
                   goto LABEL_145;

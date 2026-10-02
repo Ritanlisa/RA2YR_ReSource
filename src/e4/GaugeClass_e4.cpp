@@ -34,7 +34,7 @@ namespace gamemd {
 GaugeClass * GaugeClass::QueryInterface(unsigned int * Block, char a2)
 {
 
-  GadgetClass::Dtor((GadgetClass *)Block); /*0x4e30d3*/
+  ((GadgetClass *)((GadgetClass *)Block))->Dtor(); /*0x4e30d3*/
   if ( (a2 & 1) != 0 ) /*0x4e30dd*/
     __3_YAXPAX_Z(Block); /*0x4e30e0*/
   return Block->__pad_0; /*0x4e30ea*/

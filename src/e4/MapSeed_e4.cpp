@@ -71,7 +71,7 @@ int MapSeed::CheckName(void *a1)
   char *v9; // [esp+Ch] [ebp-4h] BYREF
 
   ((String *)(&v8))->AssignFromPtr((const char **)this); /*0x79c52b*/
-  String::ToLower(&v8); /*0x79c534*/
+  ((String *)(&v8))->ToLower(); /*0x79c534*/
   if ( !String::Length((String *)this) /*0x79c5aa*/
     || (v7 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->ToLowerCopy(&v9),
         v2 = ((String *)(&v8))->ToLowerCopy((char **)&v8.m_3[1]),
@@ -100,7 +100,7 @@ LABEL_12:
         unknown_libname_73(&v8.m_3[1]); /*0x79c5d2*/
         if ( v6 >= 0 && v6 < *(int *)g_WindowManager.__pad_0 ) /*0x79c5e1*/
           ((String *)((String *)&v8.m_3[1]))->Reassign((const char **)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v6)); /*0x79c5f1*/
-        String::ToLower((String *)&v8.m_3[1]); /*0x79c5fa*/
+        ((String *)((String *)&v8.m_3[1]))->ToLower(); /*0x79c5fa*/
         if ( (uint8_t)((String *)((String *)&v8.m_3[1]))->Compare((const char **)&v8) ) /*0x79c608*/
           break; /*0x79c608*/
         DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c615*/
@@ -140,12 +140,12 @@ AbstractClass * * MapSeed::InsertName()
     v3 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c672*/
     if ( *(int *)g_WindowManager.__pad_0 >= (int)g_WindowManager.Array_field_0x4 ) /*0x79c67e*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&g_WindowManager); /*0x79c685*/
+      ((DynamicVector *)((DynamicVector *)&g_WindowManager))->EnsureCapacity(); /*0x79c685*/
       v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c68a*/
     }
     if ( v2 >= (int)g_WindowManager.Array_field_0x4 ) /*0x79c695*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&g_WindowManager); /*0x79c69c*/
+      ((DynamicVector *)((DynamicVector *)&g_WindowManager))->EnsureCapacity(); /*0x79c69c*/
       v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c6a1*/
     }
     if ( v3 < v2 ) /*0x79c6a8*/
@@ -167,12 +167,12 @@ AbstractClass * * MapSeed::InsertName()
     v6 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c6f9*/
     if ( *(int *)&stru_B76900.needsRedraw >= *(int *)&stru_B76900.hasParachute ) /*0x79c705*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76900.needsRedraw); /*0x79c70c*/
+      ((DynamicVector *)((DynamicVector *)&stru_B76900.needsRedraw))->EnsureCapacity(); /*0x79c70c*/
       v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c711*/
     }
     if ( v5 >= *(int *)&stru_B76900.hasParachute ) /*0x79c71c*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76900.needsRedraw); /*0x79c723*/
+      ((DynamicVector *)((DynamicVector *)&stru_B76900.needsRedraw))->EnsureCapacity(); /*0x79c723*/
       v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c728*/
     }
     if ( v6 < v5 ) /*0x79c72f*/
@@ -194,12 +194,12 @@ AbstractClass * * MapSeed::InsertName()
     v9 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c780*/
     if ( *(int *)g_WOL_BuddyList.__pad_0 >= *(int *)&g_WOL_BuddyList.DynamicVector_field_0x1[3] ) /*0x79c78c*/
     {
-      DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x79c793*/
+      ((DynamicVector *)(&g_WOL_BuddyList))->EnsureCapacity(); /*0x79c793*/
       v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c798*/
     }
     if ( v8 >= *(int *)&g_WOL_BuddyList.DynamicVector_field_0x1[3] ) /*0x79c7a3*/
     {
-      DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x79c7aa*/
+      ((DynamicVector *)(&g_WOL_BuddyList))->EnsureCapacity(); /*0x79c7aa*/
       v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7af*/
     }
     if ( v9 < v8 ) /*0x79c7b6*/
@@ -236,7 +236,7 @@ LABEL_33:
       }
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x79c864*/
       memset(v12, 0, sizeof(v12)); /*0x79c874*/
-      strcpy(&v12[36], String::GetOrEmpty((String *)&g_WindowManager.__pad_14[16])); /*0x79c8a1*/
+      strcpy(&v12[36], ((String *)((String *)&g_WindowManager.__pad_14[16]))->GetOrEmpty()); /*0x79c8a1*/
       (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v12); /*0x79c8b3*/
     }
     goto LABEL_33; /*0x79c8b3*/

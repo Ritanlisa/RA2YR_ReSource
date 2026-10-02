@@ -369,7 +369,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
         break; /*0x524236*/
       INIClassIntList = (DynamicVectorClass *)AnimTypeClass::FindOrCreate((gamemd::AbstractClass *)(i)); /*0x524241*/
       if ( INIClassIntList ) /*0x524245*/
-        DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x524250*/
+        ((DynamicVector *)(&v48))->Add_Alt4(&INIClassIntList); /*0x524250*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x524271*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x52427a*/
@@ -403,7 +403,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
         break; /*0x524320*/
       INIClassIntList = (DynamicVectorClass *)AnimTypeClass::FindOrCreate(j); /*0x52432b*/
       if ( INIClassIntList ) /*0x52432f*/
-        DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x52433a*/
+        ((DynamicVector *)(&v48))->Add_Alt4(&INIClassIntList); /*0x52433a*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x52435b*/
     *(unsigned int *)v48.__pad_0 = &vt_VectorClass; /*0x524364*/
@@ -662,7 +662,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
     for ( i = 0; i < a2; ++i ) /*0x524a3e*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a3, 4, 0); /*0x524a4c*/
-      DynamicVector::Add_Alt4((DynamicVector *)v5->DeadBodies, &a3); /*0x524a56*/
+      ((DynamicVector *)((DynamicVector *)v5->DeadBodies))->Add_Alt4(&a3); /*0x524a56*/
     }
     for ( j = 0; j < v5->DeadBodies[4]; ++j ) /*0x524a6c*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v5->DeadBodies[1] + 4 * j)); /*0x524a7d*/
@@ -675,7 +675,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
     for ( k = 0; k < (int)aP0; ++k ) /*0x524ac0*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a2, 4, 0); /*0x524ace*/
-      DynamicVector::Add_Alt4((DynamicVector *)v5->DeathAnims, &a2); /*0x524ad8*/
+      ((DynamicVector *)((DynamicVector *)v5->DeathAnims))->Add_Alt4(&a2); /*0x524ad8*/
     }
     for ( m = 0; m < v5->DeathAnims[4]; ++m ) /*0x524aef*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v5->DeathAnims[1] + 4 * m)); /*0x524b00*/

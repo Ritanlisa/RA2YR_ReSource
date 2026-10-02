@@ -202,7 +202,7 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
       SendMessageA(v15, 0x4B2u, 0, (LPARAM)aP3); /*0x5d35ec*/
       v7 = 3; /*0x5d35ee*/
     }
-    Dialog::Show(v11); /*0x5d35f5*/
+    ((Dialog *)(v11))->Show(); /*0x5d35f5*/
     if ( v7 <= 0 ) /*0x5d35fd*/
     {
       dwNewLong = 0; /*0x5d3653*/
@@ -307,7 +307,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   hWnd = MessageBox; /*0x5f29d3*/
   if ( !MessageBox ) /*0x5f29d7*/
     return v6; /*0x5f29d7*/
-  Dialog::Show((Dialog *)MessageBox); /*0x5f29df*/
+  ((Dialog *)((Dialog *)MessageBox))->Show(); /*0x5f29df*/
   ((Debug *)this)->Log(); /*0x5f29e9*/
   (*(void (**)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 8))(g_ClipboardBuffer, a3); /*0x5f2a01*/
   ((Debug *)this)->Log(); /*0x5f2a09*/
@@ -334,7 +334,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
 LABEL_34:
         v17 = 0; /*0x5f2c81*/
         Buffer = word_8327A0; /*0x5f2c8d*/
-        WinModemClass::WriteSerial((int *)v13, &Buffer, 2u); /*0x5f2c99*/
+        ((WinModemClass *)((int *)v13))->WriteSerial(&Buffer, 2u); /*0x5f2c99*/
       }
 LABEL_35:
       ((Debug *)this)->Log(); /*0x5f2c9e*/
@@ -403,7 +403,7 @@ LABEL_23:
   {
     Buffer = word_8327A0; /*0x5f2c5c*/
     v17 = 0; /*0x5f2c61*/
-    WinModemClass::WriteSerial((int *)g_ClipboardBuffer, &Buffer, 2u); /*0x5f2c66*/
+    ((WinModemClass *)((int *)g_ClipboardBuffer))->WriteSerial(&Buffer, 2u); /*0x5f2c66*/
   }
   v6 = 5; /*0x5f2c6b*/
 LABEL_36:
@@ -3367,7 +3367,7 @@ BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM a2)
 
 // 0x622800
 namespace gamemd {
-HWND Dialog::Show(void *a1_1, void *a2_1)
+HWND Dialog::Show()
 {
 
   ShowWindow((HWND)this, 1); /*0x622806*/

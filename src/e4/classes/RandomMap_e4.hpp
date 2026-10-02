@@ -171,7 +171,7 @@ struct RandomMap {
     void PlaceShoreObjects();  // 0x59B740
     int PlaceTerrain(int a2, MapResourceClass * aP2, MapResourceClass * aP3, int a5, MapResourceClass * aP5, double a7, char a8);  // 0x59BBC0
     int GrowTiberium();  // 0x59C580
-    unsigned int * CellListAlloc(int a2, void *a2_2);  // 0x5A0700
+    unsigned int * CellListAlloc(int a2);  // 0x5A0700
     int SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, short * a4, char a6);  // 0x5A08D0
     int PlaceRandomMapTiberium();  // 0x5A23A0
     VectorClass_flat * * PlaceResources();  // 0x5A3AE0

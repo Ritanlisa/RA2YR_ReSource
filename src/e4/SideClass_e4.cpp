@@ -133,7 +133,7 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
 
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x6a4559*/
+  ((AbstractTypeClass *)((int *)this))->Constructor(aP1); /*0x6a4559*/
   this->houseTypesCount = 0; /*0x6a4563*/
   *((unsigned int *)this + 40) = 0; /*0x6a4569*/
   *((unsigned char *)this + 164) = 1; /*0x6a456f*/
@@ -282,7 +282,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   }
   *((unsigned char *)Block + 165) = 0; /*0x6a49d2*/
   *((unsigned int *)Block + 40) = 0; /*0x6a49d9*/
-  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x6a49e3*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
     __3_YAXPAX_Z(Block); /*0x6a49f0*/
   return &Block->AbstractClass; /*0x6a49fa*/

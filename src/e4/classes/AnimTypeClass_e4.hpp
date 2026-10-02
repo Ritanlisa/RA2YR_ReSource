@@ -331,12 +331,12 @@ struct AnimTypeClass {
     unsigned int Image;
     unsigned int q2A0;
 // --- flat members (END) ---
-    AnimTypeClass * * FindOrCreate(AbstractClass * Source);
+    AnimTypeClass * * FindOrCreate(char *Source);
     AnimTypeClass * ddtor(char a2);
     ScenarioClass * * SaveLoad_Prefix(int a1, int a2);
     char GetLoopCount(int a2);
     char Stub(int a1, int a2);
-    int FindIndex(void *a1);
+    int FindIndex();
     int GetAnimData(int a2, int a3);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
@@ -351,7 +351,7 @@ struct AnimTypeClass {
     int Thunk_AnimTypeClass_sub_428E40();
     int Thunk_AnimTypeClass_sub_428E50();
     AnimTypeClass * Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
-    unsigned int * Construct2(char * Source, void *a2, void *a3);
+    unsigned int * Construct2(char *Source);
     void* GetWarhead(int a2);
 };
 

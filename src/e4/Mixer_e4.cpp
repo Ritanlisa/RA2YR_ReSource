@@ -42,7 +42,7 @@ int Mixer::ReleaseChannel(void *a1)
       {
         AudioFile::GetCallback(*(AudioFile **)(Mixer_field_00 + 176)); /*0x4060bb*/
         *(unsigned int *)(Mixer_field_00 + 24) |= 0x60u; /*0x4060c6*/
-        result = AudioStream::Stop(*(AudioStream **)(Mixer_field_00 + 176)); /*0x4060cf*/
+        result = ((AudioStream *)(*(AudioStream **)(Mixer_field_00 + 176)))->Stop(); /*0x4060cf*/
         this->Mixer_field_00 = 0; /*0x4060d4*/
         *((unsigned int *)this + 2) = 0; /*0x4060d6*/
         return result; /*0x4060dc*/
@@ -70,11 +70,11 @@ int Mixer::RequestAllBuffers()
   result = dword_87E81C; /*0x4083d0*/
   if ( dword_87E81C ) /*0x4083d8*/
   {
-    result = AudioQueue::GetNext(unk_87E810); /*0x4083df*/
+    result = ((AudioQueue *)(unk_87E810))->GetNext(); /*0x4083df*/
     for ( i = (int *)result; result; i = (int *)result ) /*0x4083e8*/
     {
       RequestBufferMixer((unsigned int *)(i[5] + 16), 0x4000); /*0x4083f5*/
-      result = AudioQueue::GetNextAlt(i); /*0x4083fc*/
+      result = ((AudioQueue *)(i))->GetNextAlt(); /*0x4083fc*/
     }
   }
   return result; /*0x408407*/

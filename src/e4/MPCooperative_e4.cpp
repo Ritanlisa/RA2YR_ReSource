@@ -189,7 +189,7 @@ int MPCooperative::WriteCoopSaveINI()
   ((unsigned int *)&v15)[0] = 0; /*0x49be9d*/
   v15.ownsFile = 0; /*0x49bea1*/
   *(unsigned int *)v15.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x49bea5*/
-  CCINIClass::Load((int)(&v15), (int)&v19, 0, 0); /*0x49bead*/
+  ((CCINIClass *)((int)(&v15)))->Load((int)&v19, 0, 0); /*0x49bead*/
   CCFileClass::Reset(&v19); /*0x49beb9*/
   v3 = 0; /*0x49bec0*/
   if ( *v1 )
@@ -338,7 +338,7 @@ int MPCooperative::ReadCoopSaveINI()
   v21[5] = 0; /*0x49d183*/
   v22 = 0; /*0x49d18a*/
   v19[0] = &CCINIClass_Vtable; /*0x49d192*/
-  if ( !CCINIClass::Load((int)(v19), (int)v16, 0, 0) ) /*0x49d19d*/
+  if ( !((CCINIClass *)((int)(v19)))->Load((int)v16, 0, 0) ) /*0x49d19d*/
   {
     CCFileClass::Reset(v16); /*0x49d1aa*/
     HashTable::DestroyHashTableINIClass(v19); /*0x49d1b3*/
@@ -753,7 +753,7 @@ CampaignClass * * MPCooperative::CopyTo()
     MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c1a56*/
     if ( MPCooperative_field_0x40 ) /*0x5c1a5b*/
     {
-      if ( (Movie::GetSectionID(MPCooperative_field_0x40, &String2), v3 = (char *)MPCooperative_Copy(v13), v3 != String2) /*0x5c1a86*/
+      if ( (((Movie *)(MPCooperative_field_0x40))->GetSectionID(&String2), v3 = (char *)MPCooperative_Copy(v13), v3 != String2) /*0x5c1a86*/
         && Dialog::GetCurrentType() == 107
         || Dialog::GetCurrentType() != 107 )
       {
@@ -971,7 +971,7 @@ LABEL_16:
     if ( v18 ) /*0x5c1ecf*/
     {
       v7 = (int *)this->MPCooperative_field_0x40; /*0x5c1eda*/
-      if ( v7 && (uint8_t)Movie::GetState(v7, &v17) ) /*0x5c1ee6*/
+      if ( v7 && (uint8_t)((Movie *)(v7))->GetState(&v17) ) /*0x5c1ee6*/
       {
         v8 = v17; /*0x5c1ef7*/
       }
@@ -1043,7 +1043,7 @@ int MPCooperative::Revert()
   if ( !v8 ) /*0x5c1fca*/
     return -2; /*0x5c1fcc*/
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c1fd6*/
-  if ( MPCooperative_field_0x40 && (uint8_t)Movie::GetState(MPCooperative_field_0x40, &v7) ) /*0x5c1fe2*/
+  if ( MPCooperative_field_0x40 && (uint8_t)((Movie *)(MPCooperative_field_0x40))->GetState(&v7) ) /*0x5c1fe2*/
   {
     v4 = v7; /*0x5c1ff3*/
   }
@@ -1084,7 +1084,7 @@ int MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6,
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c2058*/
   if ( MPCooperative_field_0x40 ) /*0x5c205d*/
   {
-    Movie::GetSectionID(MPCooperative_field_0x40, &v17); /*0x5c208d*/
+    ((Movie *)(MPCooperative_field_0x40))->GetSectionID(&v17); /*0x5c208d*/
     if ( v17 != a2 ) /*0x5c209c*/
       LOBYTE(this->MPCooperative_field_0x340) = 1; /*0x5c209e*/
     v16 = a10; /*0x5c20ad*/
@@ -1136,7 +1136,7 @@ int MPCooperative::EndGame(int a2, int a3, int a4)
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c2107*/
   if ( !MPCooperative_field_0x40 ) /*0x5c210c*/
     return 0; /*0x5c210e*/
-  Movie::GetState(MPCooperative_field_0x40, &v11); /*0x5c211d*/
+  ((Movie *)(MPCooperative_field_0x40))->GetState(&v11); /*0x5c211d*/
   qmemcpy(v10, (const void *)(a4 + 112), sizeof(v10)); /*0x5c2136*/
   qmemcpy(v9, (const void *)a4, sizeof(v9)); /*0x5c2141*/
   v7 = MPCooperative::validateMove( /*0x5c215b*/
@@ -1223,7 +1223,7 @@ int MPCooperative::ProcessTurn()
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c2683*/
   if ( !MPCooperative_field_0x40 ) /*0x5c2688*/
     return 0; /*0x5c268a*/
-  Movie::GetSectionID(MPCooperative_field_0x40, &this->MPCooperative_field_0x33C); /*0x5c2695*/
+  ((Movie *)(MPCooperative_field_0x40))->GetSectionID(&this->MPCooperative_field_0x33C); /*0x5c2695*/
   GameUI = (HWND)Dialog::FindGameUI(); /*0x5c269a*/
   if ( GameUI ) /*0x5c26a1*/
   {
@@ -1729,7 +1729,7 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
   char v19; // [esp+21h] [ebp-Bh]
   HouseClass *thisa; // [esp+30h] [ebp+4h]
 
-  Multiplayer::FindStartPositions(v17); /*0x5c2eff*/
+  ((Multiplayer *)(v17))->FindStartPositions(); /*0x5c2eff*/
   v1 = 0; /*0x5c2f0a*/
   p_uniqueId = &dword_A8B230[124].uniqueId; /*0x5c2f0c*/
   do /*0x5c2f2a*/
@@ -1791,7 +1791,7 @@ LABEL_17:
         else
         {
           ((SessionClass *)((int *)dword_A8DA78[v10]))->SetOption(v9); /*0x5c2ffa*/
-          SessionClass::SetOption2((int *)dword_A8DA78[v10], 0); /*0x5c300a*/
+          ((SessionClass *)((int *)dword_A8DA78[v10]))->SetOption2(0); /*0x5c300a*/
           v14 = (SessionClass **)&dword_A8DA78[v10]; /*0x5c3018*/
           ((SessionClass *)(*v14))->GetOption2(); /*0x5c301b*/
           ((SessionClass *)((*v14)->GameMode))->GetOption(); /*0x5c3023*/
@@ -1837,7 +1837,7 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
   if ( !*(unsigned int *)(v11 + 56) ) /*0x5c3135*/
     return 0; /*0x5c313d*/
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c3144*/
-  if ( !MPCooperative_field_0x40 || !(uint8_t)Movie::GetState(MPCooperative_field_0x40, &v9) ) /*0x5c3150*/
+  if ( !MPCooperative_field_0x40 || !(uint8_t)((Movie *)(MPCooperative_field_0x40))->GetState(&v9) ) /*0x5c3150*/
     v9 = 0; /*0x5c3159*/
   if ( v9 >= *(unsigned int *)(v11 + 56) ) /*0x5c3168*/
     return 0; /*0x5c316d*/
@@ -2012,13 +2012,13 @@ int MPCooperative::ReceiveMessage()
   v3 = dword_A83CA8; /*0x5c3500*/
   v4 = 0; /*0x5c3509*/
   v13 = 0; /*0x5c350b*/
-  Movie::GetSectionID(MPCooperative_field_0x40, &v13); /*0x5c350f*/
+  ((Movie *)(MPCooperative_field_0x40))->GetSectionID(&v13); /*0x5c350f*/
   v11 = 0; /*0x5c3523*/
   Movie::GetSection((int)&g_DDrawSurfaceManager, v13, &v12); /*0x5c3527*/
   if ( !v12 ) /*0x5c3530*/
     return 0; /*0x5c3535*/
   v6 = (int *)this->MPCooperative_field_0x40; /*0x5c353c*/
-  if ( !v6 || !(uint8_t)Movie::GetState(v6, &v11) ) /*0x5c3548*/
+  if ( !v6 || !(uint8_t)((Movie *)(v6))->GetState(&v11) ) /*0x5c3548*/
     v11 = 0; /*0x5c3551*/
   if ( v11 >= *(unsigned int *)(v12 + 32) ) /*0x5c3560*/
     return 0; /*0x5c3565*/
@@ -2068,13 +2068,13 @@ int MPCooperative::HandleEvent()
   v3 = dword_A83CA8; /*0x5c3600*/
   v4 = 0; /*0x5c3609*/
   v13 = 0; /*0x5c360b*/
-  Movie::GetSectionID(MPCooperative_field_0x40, &v13); /*0x5c360f*/
+  ((Movie *)(MPCooperative_field_0x40))->GetSectionID(&v13); /*0x5c360f*/
   v11 = 0; /*0x5c3623*/
   Movie::GetSection((int)&g_DDrawSurfaceManager, v13, &v12); /*0x5c3627*/
   if ( !v12 ) /*0x5c3630*/
     return 0; /*0x5c3635*/
   v6 = (int *)this->MPCooperative_field_0x40; /*0x5c363c*/
-  if ( !v6 || !(uint8_t)Movie::GetState(v6, &v11) ) /*0x5c3648*/
+  if ( !v6 || !(uint8_t)((Movie *)(v6))->GetState(&v11) ) /*0x5c3648*/
     v11 = 0; /*0x5c3651*/
   if ( v11 >= *(unsigned int *)(v12 + 56) ) /*0x5c3660*/
     return 0; /*0x5c3665*/
@@ -2525,7 +2525,7 @@ int MPCooperative::UpdateMovieScore()
   MPCooperative::BuildScoreEntries((int)MPCooperative_field_0x40, (int)&v29, &v28); /*0x5c4337*/
   v6 = (int *)this->MPCooperative_field_0x40; /*0x5c433c*/
   v25 = 0; /*0x5c4344*/
-  if ( (uint8_t)Movie::GetSectionID(v6, &v24) ) /*0x5c4348*/
+  if ( (uint8_t)((Movie *)(v6))->GetSectionID(&v24) ) /*0x5c4348*/
   {
     Movie::GetSection((int)&g_DDrawSurfaceManager, v24, &v25); /*0x5c4369*/
     v7 = v24; /*0x5c436e*/
@@ -2549,7 +2549,7 @@ int MPCooperative::UpdateMovieScore()
     v8 = 2; /*0x5c438d*/
   }
   MPCooperative::GetMovieScore((int *)this->MPCooperative_field_0x40, &v27); /*0x5c43a5*/
-  Movie::GetState((int *)this->MPCooperative_field_0x40, &v26); /*0x5c43b2*/
+  ((Movie *)((int *)this->MPCooperative_field_0x40))->GetState(&v26); /*0x5c43b2*/
   if ( v25 ) /*0x5c43bb*/
   {
     uniqueId = dword_A8B230[43].uniqueId; /*0x5c43c9*/
@@ -2666,7 +2666,7 @@ void MPCooperative::ShowScoreScreen(int a2)
   if ( MPCooperative_field_0x40 ) /*0x5c44ec*/
   {
     MPCooperative::GetMovieScore(MPCooperative_field_0x40, &v19); /*0x5c44f7*/
-    Movie::GetState((int *)this->MPCooperative_field_0x40, &v18); /*0x5c4504*/
+    ((Movie *)((int *)this->MPCooperative_field_0x40))->GetState(&v18); /*0x5c4504*/
     if ( (unsigned char)a2 ) /*0x5c450f*/
     {
       if ( v18 >= v19 ) /*0x5c451f*/
@@ -2687,7 +2687,7 @@ void MPCooperative::ShowScoreScreen(int a2)
             MPCooperative::BuildScoreEntries((int)v6, (int)&v21, &v20); /*0x5c457a*/
             v7 = (int *)this->MPCooperative_field_0x40; /*0x5c457f*/
             v17 = 0; /*0x5c4587*/
-            if ( (uint8_t)Movie::GetSectionID(v7, &a2) ) /*0x5c458f*/
+            if ( (uint8_t)((Movie *)(v7))->GetSectionID(&a2) ) /*0x5c458f*/
               Movie::GetSection((int)&g_DDrawSurfaceManager, a2, &v17); /*0x5c45b1*/
             else
               a2 = -1; /*0x5c4598*/
@@ -3150,10 +3150,10 @@ int MPCooperative::checkVictory()
   if ( !MPCooperative_field_0x40 ) /*0x5c467e*/
     return 0; /*0x5c4681*/
   MPCooperative::GetMovieScore(MPCooperative_field_0x40, &v5); /*0x5c468d*/
-  Movie::GetState((int *)this->MPCooperative_field_0x40, &v6); /*0x5c469a*/
+  ((Movie *)((int *)this->MPCooperative_field_0x40))->GetState(&v6); /*0x5c469a*/
   if ( v5 == v6 ) /*0x5c46a9*/
   {
-    Movie::GetSectionID((int *)this->MPCooperative_field_0x40, &v7); /*0x5c46b3*/
+    ((Movie *)((int *)this->MPCooperative_field_0x40))->GetSectionID(&v7); /*0x5c46b3*/
     v2 = 1 << v7; /*0x5c46c1*/
     Debug::Log(); /*0x5c46ca*/
   }

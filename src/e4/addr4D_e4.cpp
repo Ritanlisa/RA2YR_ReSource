@@ -262,7 +262,7 @@ int E4Recv_4DB8A0::sub_4DB8A0()
   v8 = 0; /*0x4db903*/
   if ( !ppv ) /*0x4db90d*/
     goto LABEL_13; /*0x4db90d*/
-  v4 = StreamClass::Set((StreamClass *)&v8, &ppv); /*0x4db918*/
+  v4 = ((StreamClass *)((StreamClass *)&v8))->Set(&ppv); /*0x4db918*/
   if ( v4 < 0 && v4 != -2147467262 ) /*0x4db926*/
     WinAPI::Wrapper(v4); /*0x4db929*/
   if ( !v8 ) /*0x4db934*/

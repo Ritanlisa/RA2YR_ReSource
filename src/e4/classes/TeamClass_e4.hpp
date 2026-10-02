@@ -135,7 +135,7 @@ struct TeamClass {
     int ddtor(int a1, unsigned int * a2);
     unsigned int * FindScriptAction(unsigned int * a2);
     unsigned int * GetNextScriptAction(unsigned int * a2);
-    void * FindOrCreate(void *a1);
+    void * FindOrCreate();
     void Destructor(void * a2);
     void MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2);
     void Update(TechnoClass * aP0, unsigned int * a1, int j, void *a4);

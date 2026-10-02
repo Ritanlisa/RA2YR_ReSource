@@ -247,7 +247,7 @@ int Scenario::ReadTeams()
                   {
                     v37 = *(BuildingLightClass **)(v29 + 1536); /*0x44fc07*/
                     if ( v37 ) /*0x44fc0f*/
-                      BuildingLightClass::FindTarget(v37, (unsigned int *)v70); /*0x44fc16*/
+                      ((BuildingLightClass *)(v37))->FindTarget((unsigned int *)v70); /*0x44fc16*/
                     if ( v55 ) /*0x44fc21*/
                     {
                       if ( !*(unsigned char *)(v29 + 1632) && !*(unsigned int *)(v29 + 1284) ) /*0x44fc35*/
@@ -738,7 +738,7 @@ LABEL_38:
   *p_nextArrayIndex = v15; /*0x55b26e*/
   p_nextArrayIndex[1] = v20; /*0x55b270*/
   p_nextArrayIndex[2] = v19; /*0x55b278*/
-  MapClass::ProcessVisibilityFlags((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x55b27b*/
+  ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->ProcessVisibilityFlags(); /*0x55b27b*/
   v14 = dword_A8B230; /*0x55b280*/
   v13 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x55b286*/
 LABEL_41:
@@ -986,7 +986,7 @@ int Scenario::ClearScreen(void *a1_1)
 
   int result; // eax
 
-  Mouse::ReleaseCapture((ScrollClass *)&stru_87F5F0.__pad_58[416]); /*0x684245*/
+  ((Mouse *)((ScrollClass *)&stru_87F5F0.__pad_58[416]))->ReleaseCapture(); /*0x684245*/
   if ( !(*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) ) /*0x684252*/
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x684261*/
   BYTE2(dword_A8B230[381].vtable3) = 1; /*0x68426c*/
@@ -1094,7 +1094,7 @@ int Scenario::LoadWithProgress()
     }
     v24 = *(unsigned int *)&dword_A8B238 != 0; /*0x684819*/
     v9 = Scenario::ComputeDialogPos(Instance, v30); /*0x68481e*/
-    TextRenderer::MeasureBuilding((int *)dword_AC4F58.__pad_0, *v9, v9[1], (int)v3, v24, v24); /*0x68482f*/
+    ((TextRenderer *)((int *)dword_AC4F58.__pad_0))->MeasureBuilding(*v9, v9[1], (int)v3, v24, v24); /*0x68482f*/
     v10 = Map_Load(); /*0x684836*/
     Scenario::SetDword30((Scenario *)&dword_AC4F58, v10); /*0x684841*/
     if ( dword_887628 ) /*0x68484d*/
@@ -1166,7 +1166,7 @@ int Scenario::LoadWithProgress()
       if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x684af3*/
       {
         if ( byte_A8DBA0 ) /*0x684afc*/
-          Process::WaitForExit((Process *)&unk_B052D0, 0x3A98u, 1); /*0x684b0a*/
+          ((Process *)((Process *)&unk_B052D0))->WaitForExit(0x3A98u, 1); /*0x684b0a*/
       }
     }
     Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].vtable0) != 0 ? 200 : 100);
@@ -1444,7 +1444,7 @@ void Scenario_EndGameFlow()
       else
         *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x685b4a*/
     }
-    WinsockInterface::Init(*(WinsockInterface **)&stru_887598.isAliveFlag); /*0x685b56*/
+    ((WinsockInterface *)(*(WinsockInterface **)&stru_887598.isAliveFlag))->Init(); /*0x685b56*/
     v20 = *(unsigned int *)&stru_A8B250.__pad_0[36]; /*0x685b69*/
     qmemcpy(v33, dword_A8DA90, sizeof(v33)); /*0x685b6f*/
     qmemcpy(v31, &stru_A8B250.__pad_0[108], sizeof(v31)); /*0x685b7f*/
@@ -1496,7 +1496,7 @@ void Scenario_EndGameFlow()
         v25 = Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2; /*0x685cdf*/
       else
         v25 = 15; /*0x685cce*/
-      Network::SetConnectionParams(&unk_A8E9C0, v25, -1, 600, 1); /*0x685cf0*/
+      ((Network *)(&unk_A8E9C0))->SetConnectionParams(v25, -1, 600, 1); /*0x685cf0*/
       if ( (unsigned int)(Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2) >= 0x3C ) /*0x685d05*/
         v26 = Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2; /*0x685d18*/
       else
@@ -1509,7 +1509,7 @@ void Scenario_EndGameFlow()
         v27 = Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2; /*0x685d5f*/
       else
         v27 = 60; /*0x685d4e*/
-      Network::SetConnectionParams(&unk_A8E9C0, v27, -1, 600, 1); /*0x685d70*/
+      ((Network *)(&unk_A8E9C0))->SetConnectionParams(v27, -1, 600, 1); /*0x685d70*/
     }
   }
   GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x685d7a*/
@@ -1698,7 +1698,7 @@ void Scenario_EndGame()
     else
       *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x686195*/
   }
-  WinsockInterface::Init(*(WinsockInterface **)&stru_887598.isAliveFlag); /*0x6861a1*/
+  ((WinsockInterface *)(*(WinsockInterface **)&stru_887598.isAliveFlag))->Init(); /*0x6861a1*/
   v19 = *(unsigned int *)&stru_A8B250.__pad_0[36]; /*0x6861b4*/
   qmemcpy(v35, dword_A8DA90, sizeof(v35)); /*0x6861ba*/
   qmemcpy(v33, &stru_A8B250.__pad_0[108], sizeof(v33)); /*0x6861ca*/
@@ -1732,7 +1732,7 @@ void Scenario_EndGame()
           v24 = Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2; /*0x686300*/
         else
           v24 = 15; /*0x6862ef*/
-        Network::SetConnectionParams(&unk_A8E9C0, v24, -1, 600, 1); /*0x686311*/
+        ((Network *)(&unk_A8E9C0))->SetConnectionParams(v24, -1, 600, 1); /*0x686311*/
         if ( (unsigned int)(Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2) >= 0x3C ) /*0x686326*/
           v25 = Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2; /*0x686339*/
         else
@@ -1745,7 +1745,7 @@ void Scenario_EndGame()
           v26 = Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2; /*0x68637f*/
         else
           v26 = 60; /*0x68636e*/
-        Network::SetConnectionParams(&unk_A8E9C0, v26, -1, 600, 1); /*0x686390*/
+        ((Network *)(&unk_A8E9C0))->SetConnectionParams(v26, -1, 600, 1); /*0x686390*/
       }
     }
     GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x68639a*/

@@ -118,7 +118,7 @@ void PsyDom::Fire()
       v32[0] = 0; /*0x53b1fb*/
       v32[1] = 0; /*0x53b1ff*/
       v13 = (Object *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v31); /*0x53b203*/
-      for ( i = Object::FindClosestObjectCell(v13, v32, 0, 0); i; i = (*(unsigned char *)(v24 + 20) & 1) != 0 ? v24 : 0 )
+      for ( i = ((Object *)(v13))->FindClosestObjectCell(v32, 0, 0); i; i = (*(unsigned char *)(v24 + 20) & 1) != 0 ? v24 : 0 )
       {
         if ( (*(int (**)(int))(*(unsigned int *)i + 44))(i) != 6 /*0x53b26b*/
           && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)i + 132))(i) + 3381)

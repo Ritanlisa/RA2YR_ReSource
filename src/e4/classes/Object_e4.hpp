@@ -97,7 +97,7 @@ struct Object {
     unsigned char Object_field_0xAC;  // 0xAC
     unsigned char Object_field_0xE8;  // 0xE8
 // --- flat members (END) ---
-    int FindClosestObjectCell(_DWORD *a2, char a3, int a4);
+    int FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3);
     int FindObjectCell(TechnoClass * aP1, char aP2);  // 0x47C5A0
     int IsAlliedWithObjectHouse(int aP1);
     int IsAlliedWithObjectSimpleHouse(unsigned char * a2);  // 0x4F9AF0
@@ -111,7 +111,7 @@ struct Object {
     SessionClass * DtorWithDelete(void ** Block, char a2);  // 0x7AD330
     int ComputeAllocationSize();  // 0x42B1F0
     void ** RemoveObjectArray(void *a1_1);  // 0x53E420
-    int Unlink(void *a1_1);  // 0x5F5230
+    int Unlink();  // 0x5F5230
     char CheckState(IUnknown * aP1, int a3);  // 0x5FD270
     int SaveObject(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x5FD950
     int ddtor(int a1, unsigned int * a2);  // 0x5FDF10

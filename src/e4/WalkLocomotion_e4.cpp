@@ -78,7 +78,7 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
               v10 = v9[1]; /*0x6a0234*/
               v18[0] = *v9; /*0x6a0237*/
               v18[1] = v10; /*0x6a023f*/
-              v5 = (int)WalkLocomotion::TransformCoords((gamemd::ObjectClass *)((WalkLocomotion *)this),(IUnknown *)(&v19), v18, &aP3); /*0x6a0250*/
+              v5 = (int)((WalkLocomotion *)((gamemd::ObjectClass *)((WalkLocomotion *)this)))->TransformCoords((IUnknown *)(&v19), v18, &aP3); /*0x6a0250*/
               v11 = *(unsigned int *)v5; /*0x6a0255*/
               v12 = *(unsigned int *)(v5 + 4); /*0x6a0259*/
               if ( !v6 ) /*0x6a025c*/
@@ -238,7 +238,7 @@ int WalkLocomotion::Update(unsigned char * a2, int a3, int a4, void *a4_2)
 
 // 0x6A3DB0
 namespace gamemd {
-unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * aP3, void *a4_1)
+unsigned int * WalkLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int *aP3)
 {
 
   int v4; // eax

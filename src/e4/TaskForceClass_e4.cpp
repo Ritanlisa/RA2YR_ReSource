@@ -73,14 +73,14 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
 }
 // 0x6E7E80
 namespace gamemd {
-int TaskForceClass::Construct(ObjectClass * aP1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1)
+int TaskForceClass::Construct(char *aP1)
 {
 
   int v3; // eax
   ObjectTypeClass **p_TaskForceClass_field_0xA4; // eax
   int v5; // ecx
 
-  AbstractTypeClass::Constructor((int *)this->__pad_0, aP1); /*0x6e7e8a*/
+  ((AbstractTypeClass *)((int *)this->__pad_0))->Constructor(aP1); /*0x6e7e8a*/
   this->TaskForceClass_field_0x98 = (unsigned int)((AbstractClass *)-1); /*0x6e7e8f*/
   this->TaskForceClass_field_0x9C[0] = 0; /*0x6e7e99*/
   *(unsigned int *)this->__pad_A0 = 0; /*0x6e7ea3*/
@@ -160,7 +160,7 @@ LABEL_13:
     }
 LABEL_8: v9 = (gamemd::TaskForceClass *)((unsigned int *)((TaskForceClass *)__2_YAPAXI_Z(0xD4u)));
     if ( v9 ) /*0x6e82e1*/
-      v10 = (unsigned int *)(TaskForceClass::Construct(v9, Source)); /*0x6e82ef*/
+      v10 = (unsigned int *)(((TaskForceClass *)(v9))->Construct(Source)); /*0x6e82ef*/
     else
 LABEL_11:
       v10 = 0; /*0x6e82fe*/
@@ -200,7 +200,7 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
     }
     while ( v3 < dword_A8E8E0 ); /*0x6e885d*/
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x6e8861*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x6e8861*/
   if ( (a2 & 1) != 0 ) /*0x6e886b*/
     __3_YAXPAX_Z(Block); /*0x6e886e*/
   return (void **)Block; /*0x6e8878*/
@@ -209,7 +209,7 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
 }
 // 0x4C4F90
 namespace gamemd {
-int TaskForceClass::Check(void *a1_1, void *a2_1, void *a3_1)
+int TaskForceClass::Check()
 {
 
   sprintf(byte_8A37A0, "%d,%s", *(unsigned int *)this->__pad_0, (const char *)(this->TaskForceClass_field_0x4 + 36)); /*0x4c4fa4*/
@@ -289,7 +289,7 @@ char TaskForceClass::GetUnitType(char * a2)
     }
     else
     {
-      v5 = (char *)(TaskForceClass::Check((TaskForceClass *)p_TaskForceClass_field_0xA4)); /*0x6e854e*/
+      v5 = (char *)(((TaskForceClass *)((TaskForceClass *)p_TaskForceClass_field_0xA4))->Check()); /*0x6e854e*/
       INIClass::SetString(a2, (uint8_t *)&this->TaskForceClass_field_0x24, Buffer, v5); /*0x6e855f*/
     }
     ++v3; /*0x6e8576*/

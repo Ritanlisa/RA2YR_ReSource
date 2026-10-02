@@ -117,30 +117,49 @@ for addr, v in sig['symbols'].items():
     addr2sym[addr] = v
 
 census = json.load(open(os.path.join(ROOT, '.omo', 'tu_errors.json')))
-err_names = collections.Counter()
+err_names = collections.Counter()      # thiscall-confirmed entries
+err_names_cls = collections.Counter()  # class-ownership-fallback entries (C2671/C2511)
 for tu, el in census.items():
     for e in el:
-        if 'error C2664' not in e:
+        code = None
+        for c in ('error C2664', 'error C2671', 'error C2660', 'error C2511'):
+            if c in e:
+                code = c.split()[-1]
+                break
+        if not code:
             continue
-        m = re.search(r'“(.+?)”: 无法将参数', e)
-        if not m:
-            continue
-        head = m.group(1)
-        i = head.rfind('(')
-        head = head[:i].strip() if i >= 0 else head
-        parts = head.split()
-        qname = re.sub(r'^[\*\&]+', '', parts[-1]) if parts else ''
-        if qname.startswith('gamemd::'):
-            qname = qname[len('gamemd::'):]
-        if '::' not in qname:
+        qname = ''
+        # C2671/C2511/C2660 quote (gamemd::)Cls::Name directly
+        m = re.search(r'“(?:gamemd::)?([A-Za-z_]\w*(?:::[A-Za-z_]\w*)+)”', e)
+        if m:
+            qname = m.group(1)
+        elif code in ('C2664', 'C2511'):
+            # these quote the full display signature: strip return+params
+            m2 = re.search(r'“(.+?)”\s*:', e)
+            if m2:
+                head = m2.group(1)
+                i = head.rfind('(')
+                head = head[:i].strip() if i >= 0 else head.strip()
+                parts = head.split()
+                cand = re.sub(r'^[\*\&]+', '', parts[-1]) if parts else ''
+                cand = re.sub(r'^gamemd::', '', cand)
+                if '::' in cand:
+                    qname = cand
+        if not qname or '::' not in qname:
             continue
         cc = set(addr2sym[a].get('call_convention')
                  for a in name2addrs.get(qname, []))
         if cc == {'thiscall'}:
             err_names[qname] += 1
+        elif code in ('C2671', 'C2511'):
+            # def-site evidence of membership (binding failure cascade);
+            # truth gate below falls back to class ownership
+            err_names_cls[qname] += 1
 
 print('thiscall error callees from census:', len(err_names),
-      ' errors:', sum(err_names.values()))
+      ' errors:', sum(err_names.values()),
+      '| class-fallback entries:', len(err_names_cls),
+      sum(err_names_cls.values()))
 
 # ---------------------------------------------------------------- decl index
 # (cls, name) -> [(file, line_idx, param_str, addr, full_line)]
@@ -148,7 +167,7 @@ decl_idx = collections.defaultdict(list)
 DECL_RE = re.compile(
     r'^\s*(?:virtual\s+|static\s+|inline\s+|explicit\s+)*'
     r'([\w:<>,\s\*&\(\)]+?)\s*~?([A-Za-z_]\w*)\s*\(([^;()]*(?:\([^;()]*\)[^;()]*)*)\)\s*'
-    r'(?:const)?\s*;\s*(?://\s*(0x[0-9A-Fa-f]+).*)?$')
+    r'(?:const)?\s*;\s*(?://\s*(0x[0-9A-Fa-f]+)?.*)?$')
 for fn in os.listdir(E4_HPP):
     if not fn.endswith('.hpp'):
         continue
@@ -273,23 +292,37 @@ def get_lines(path):
 E4_CPP_FILES = [os.path.join(E4_CPP, fn) for fn in os.listdir(E4_CPP)
                 if fn.endswith('_e4.cpp')]
 
-for qname, ecount in sorted(err_names.items(), key=lambda kv: -kv[1]):
+for qname, ecount in sorted(list(err_names.items()) + list(err_names_cls.items()),
+                             key=lambda kv: -kv[1]):
     cls, name = qname.rsplit('::', 1)
     if name == cls or name.startswith('~') or name.startswith('operator'):
         stats['skip-ctor-dtor-op'] += 1
         continue
     addrs = [a for a in name2addrs[qname]
              if addr2sym[a].get('call_convention') == 'thiscall']
+    if not addrs and qname in err_names_cls and len(name2addrs[qname]) == 1:
+        # single-address fallback for class-owned entries whose signals CC
+        # was never recorded as thiscall (def-site evidence wins)
+        addrs = name2addrs[qname]
     if len(addrs) != 1:
         stats['skip-addr-ambig'] += 1
         continue
     addr = addrs[0]
     tline = cache_line(addr)
-    if not tline or not truth_has_this(tline):
+    if not tline:
         stats['skip-no-truth'] += 1
         continue
     t = parse_truth(tline)
-    if not t or t['cls'] != cls:
+    # G42.6: class-ownership fallback — C2671/C2511 def-site evidence means
+    # the function IS a member even when the cache truth line renders no
+    # explicit this (e.g. `int Debug::Log()` 0-param member)
+    member_ok = truth_has_this(tline) or (
+        qname in err_names_cls and t and t['cls'] == cls
+        and not t['raw_this'])
+    if not t or not member_ok:
+        stats['skip-no-truth'] += 1
+        continue
+    if t['cls'] != cls:
         stats['skip-truth-cls-mismatch'] += 1
         continue
     K = len(t['real'])
@@ -300,7 +333,11 @@ for qname, ecount in sorted(err_names.items(), key=lambda kv: -kv[1]):
         continue
     dpath, di, dparams, daddr, dline = cands[0]
     dpl = split_args(dparams)
-    if len(dpl) < K or len(dpl) > K + 2:
+    # G42.6: identity anchors that override the arity gate —
+    #   (a) the decl's 0x annotation equals the truth address
+    #   (b) the decl is a C2597 interim stub (wrong by definition)
+    identity = (daddr and daddr.lower() == addr.lower()) or ('C2597' in dline)
+    if not identity and (len(dpl) < K or len(dpl) > K + 2):
         stats['skip-decl-arity'] += 1
         continue
     # ---- def
@@ -354,10 +391,18 @@ for qname, ecount in sorted(err_names.items(), key=lambda kv: -kv[1]):
     # rebuild decl line preserving annotation
     dm = DECL_RE.match(dline)
     ret_txt = dm.group(1)
-    ann = ''
-    am = re.search(r'//.*$', dline)
-    if am:
-        ann = '  ' + am.group(0)
+    # G42.6: C2597 interim stubs and static-qualified decls are wrong by
+    # definition for a thiscall member — return type := truth, static goes
+    if 'C2597' in dline:
+        ret_txt = norm_type(t['ret'])
+        ann = '  // was C2597 interim stub, := truth 0x%s' % addr
+    else:
+        ret_txt = re.sub(r'^(?:static|virtual|inline|explicit)\s+', '',
+                         ret_txt.strip())
+        ann = ''
+        am = re.search(r'//.*$', dline)
+        if am:
+            ann = '  ' + am.group(0)
     lead = dline[:len(dline) - len(dline.lstrip())]
     new_dline = ('%s%s%s(%s);%s' % (lead, ret_txt + ' ' if ret_txt else '',
                                     name, ', '.join(new_dpl), ann))

@@ -220,7 +220,7 @@ void ParasiteClass::DeploySquad()
     {
       case 0u: /*0x6298bc*/
         *(unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 808) = 0; /*0x6298c6*/
-        Index = AnimTypeClass::FindIndex(&stru_83665C); /*0x6298d1*/
+        Index = ((AnimTypeClass *)(&stru_83665C))->FindIndex(); /*0x6298d1*/
         if ( Index != -1 ) /*0x6298d9*/
         {
           v13 = *(void **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * Index); /*0x6298e5*/
@@ -251,16 +251,16 @@ void ParasiteClass::DeploySquad()
         _ESI[1] = (void *)1; /*0x629974*/
         _ESI[1] = (gamemd::BuildingClass *)(0); /*0x62997b*/
         _ESI[1] = 0; /*0x62997e*/
-        BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629981*/
+        ((BuildingClass *)((BuildingClass *)_ESI))->AnimController(); /*0x629981*/
         goto LABEL_47; /*0x629986*/
       case 1u: /*0x6298bc*/
-        if ( BuildingClass::AnimController((BuildingClass *)_ESI) ) /*0x62998d*/
+        if ( ((BuildingClass *)((BuildingClass *)_ESI))->AnimController() ) /*0x62998d*/
         {
           v17 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x6299a9*/
           _ESI[1] = 0; /*0x6299b7*/
           _ESI[1] = (gamemd::BuildingClass *)((void *)(3 - (v17 != 0))); /*0x6299ba*/
           _ESI[1] = 0; /*0x6299bd*/
-          BuildingClass::AnimController((BuildingClass *)_ESI); /*0x6299c0*/
+          ((BuildingClass *)((BuildingClass *)_ESI))->AnimController(); /*0x6299c0*/
           ((FootClass *)(*(FootClass **)_ESI->__pad_28))->CreateWakes(v55, v56, v57); /*0x6299e1*/
         }
         goto LABEL_47; /*0x6299e6*/
@@ -269,12 +269,12 @@ void ParasiteClass::DeploySquad()
         goto LABEL_20; /*0x6299eb*/
       case 3u: /*0x6298bc*/
 LABEL_20:
-        if ( BuildingClass::AnimController((BuildingClass *)_ESI) ) /*0x6299fd*/
+        if ( ((BuildingClass *)((BuildingClass *)_ESI))->AnimController() ) /*0x6299fd*/
         {
           _ESI[1] = (void *)4; /*0x629a08*/
           _ESI[1] = 0; /*0x629a0f*/
           _ESI[1] = 0; /*0x629a12*/
-          BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629a15*/
+          ((BuildingClass *)((BuildingClass *)_ESI))->AnimController(); /*0x629a15*/
         }
         __asm /*0x629a1a*/
         {
@@ -430,7 +430,7 @@ LABEL_20:
             _ESI[1] = 0; /*0x629d66*/
             _ESI[1] = (void *)(3 - (v36 != 0)); /*0x629d69*/
             _ESI[1] = 0; /*0x629d6c*/
-            BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629d6f*/
+            ((BuildingClass *)((BuildingClass *)_ESI))->AnimController(); /*0x629d6f*/
             ((FootClass *)(*(FootClass **)_ESI->__pad_28))->CreateWakes(v55, v56, v57); /*0x629d90*/
           }
           else

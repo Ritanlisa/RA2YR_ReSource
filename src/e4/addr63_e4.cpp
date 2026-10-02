@@ -699,7 +699,7 @@ void NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4
           UpdateWindow(hWnd); /*0x631948*/
           ShowWindow(hWnd, 0); /*0x631953*/
           UpdateWindow(g_hWnd); /*0x63195c*/
-          Network::sendGameEvent((LONG)dwNewLong, v6 + 12); /*0x63196d*/
+          ((Network *)((LONG)dwNewLong))->sendGameEvent(v6 + 12); /*0x63196d*/
           ShowWindow(hWnd, 5); /*0x631975*/
           return 0; /*0x631983*/
         }
@@ -1075,7 +1075,7 @@ void ExecutePlanningQueue()
     do /*0x6373d0*/
     {
       v6 = *(Array **)(v4->vtable2 + 4 * v5); /*0x6372cb*/
-      Value = Array::FindValue(v6, v4->vtable0); /*0x6372d4*/
+      Value = ((Array *)(v6))->FindValue(v4->vtable0); /*0x6372d4*/
       if ( Value == -1 ) /*0x6372dc*/
         v8 = 0; /*0x6372de*/
       else
@@ -1139,7 +1139,7 @@ void ExecutePlanningQueue()
           v19 = v16 + 1; /*0x637396*/
           if ( v19 >= v18 ) /*0x637399*/
             v19 = 0; /*0x63739b*/
-          v17 = ArrayClass::GetAt_Wrap((ArrayClass *)Type, v19); /*0x6373a0*/
+          v17 = ((ArrayClass *)((ArrayClass *)Type))->GetAt_Wrap(v19); /*0x6373a0*/
         }
       }
       v33 = v17; /*0x6373a7*/
@@ -1400,7 +1400,7 @@ void ExecuteActionPlanManager(IUnknown * a1, char * a2)
   }
   v14 = v38; /*0x6381fb*/
   v35 = v13; /*0x6381ff*/
-  if ( v13 && Array::FindValue((Array *)v13, (int)v38) != -1 ) /*0x638210*/
+  if ( v13 && ((Array *)((Array *)v13))->FindValue((int)v38) != -1 ) /*0x638210*/
     return 1; /*0x638210*/
   v15 = ScriptAction::ClassifyAction((int *)v38, v2); /*0x63821a*/
   if ( v15 != -1 ) /*0x638222*/
@@ -1636,7 +1636,7 @@ void FactoryClass_ClearProduction(unsigned int * a1, int a2)
             for ( i = 0; i < v7; ++i ) /*0x638740*/
             {
               v9 = *(Array **)(*(unsigned int *)(v6 + 8) + 4 * i); /*0x638745*/
-              Value = Array::FindValue(v9, *(unsigned int *)v6); /*0x63874d*/
+              Value = ((Array *)(v9))->FindValue(*(unsigned int *)v6); /*0x63874d*/
               if ( Value == -1 ) /*0x638755*/
                 v11 = 0; /*0x638757*/
               else
@@ -1924,7 +1924,7 @@ unsigned int ** sub_6392D0(int a1, int a2)
     v10[1] = Coords[1]; /*0x63930b*/
     v10[2] = Coords[2]; /*0x639316*/
     v5 = ToCoordPixel(&v9, v10); /*0x63931e*/
-    Rect::Set(v12, *v5 - 4, v5[1] - 4, 8, 8); /*0x63933a*/
+    ((Rect *)(v12))->Set(*v5 - 4, v5[1] - 4, 8, 8); /*0x63933a*/
     v12[4] = v12[0]; /*0x63934f*/
     v6 = v12[1] - 4; /*0x639356*/
     if ( a1 >= v12[0] - 4 && a1 < v12[2] + 8 + v12[0] - 4 && a2 >= v6 && a2 < v12[3] + 8 + v6 ) /*0x639377*/
@@ -1962,7 +1962,7 @@ unsigned int ** sub_6393A0(int a1, int a2)
     v10[1] = Coords[1]; /*0x6393db*/
     v10[2] = Coords[2]; /*0x6393e6*/
     v5 = ToCoordPixel(&v9, v10); /*0x6393ee*/
-    Rect::Set(v12, *v5 - 4, v5[1] - 4, 8, 8); /*0x63940a*/
+    ((Rect *)(v12))->Set(*v5 - 4, v5[1] - 4, 8, 8); /*0x63940a*/
     v12[4] = v12[0]; /*0x63941f*/
     v6 = v12[1] - 4; /*0x639426*/
     if ( a1 >= v12[0] - 4 && a1 < v12[2] + 8 + v12[0] - 4 && a2 >= v6 && a2 < v12[3] + 8 + v6 ) /*0x639447*/
@@ -4683,7 +4683,7 @@ int sub_638F90(int a1, int a2)
   v7[1] = Coords[1]; /*0x638fba*/
   v7[2] = Coords[2]; /*0x638fc5*/
   v3 = ToCoordPixel(&v6, v7); /*0x638fc9*/
-  Rect::Set(v9, *v3 - 4, v3[1] - 4, 8, 8); /*0x638fe5*/
+  ((Rect *)(v9))->Set(*v3 - 4, v3[1] - 4, 8, 8); /*0x638fe5*/
   v8[0] = v9[0]; /*0x638ffe*/
   v4 = v9[1] - 4; /*0x639005*/
   if ( a1 < v9[0] - 4 ) /*0x639010*/

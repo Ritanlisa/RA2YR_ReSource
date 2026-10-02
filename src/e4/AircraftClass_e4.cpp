@@ -78,12 +78,12 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
           if ( v7 >= v9 ) /*0x413fc1*/
             goto LABEL_9; /*0x413fc1*/
         }
-        Power::ChangedHouse((char)((Power *)v3 + 21), 1); 
+        ((Power *)((char)((Power *)v3 + 21)))->ChangedHouse(1); 
       }
     }
 LABEL_9:
-    BuildingTypeClass::GetPowerOutput((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 226)), *(unsigned int *)(v3[433] + 1820)); 
-    BuildingTypeClass::GetPowerOutput((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 232)), *(unsigned int *)(v3[433] + 1820)); 
+    ((BuildingTypeClass *)((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 226))))->GetPowerOutput(*(unsigned int *)(v3[433] + 1820)); 
+    ((BuildingTypeClass *)((gamemd::ObjectClass *)((BuildingTypeClass *)(v3 + 232))))->GetPowerOutput(*(unsigned int *)(v3[433] + 1820)); 
     Value = ((ProgressTimer *)((ProgressTimer *)(v3 + 226)))->GetValue(&v18); /*0x41400d*/
     FacingClass::Set_SyncLog((char *)v3 + 928, Value); /*0x414015*/
     v12 = *v3; /*0x414020*/
@@ -306,7 +306,7 @@ LABEL_24:
           if ( v12 >= v13 ) /*0x417e47*/
             goto LABEL_36; /*0x417e47*/
         }
-        if ( !(uint8_t)Array::ContainsValue((Array *)v4, (int)this) /*0x417e76*/
+        if ( !(uint8_t)((Array *)((Array *)v4))->ContainsValue((int)this) /*0x417e76*/
           || v4[70]
           || (v7 = 3, (*((int (**)(AircraftClass *, int, int *))this->FootClass + 158))(this, 15, v4) != 1) )
         {
@@ -463,7 +463,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
       v11 = v10; /*0x41ac53*/
       if ( !v10 ) /*0x41ac57*/
         goto LABEL_35; /*0x41ac57*/
-      if ( (uint8_t)Array::ContainsValue(v10, (int)a1) ) /*0x41ac5c*/
+      if ( (uint8_t)((Array *)(v10))->ContainsValue((int)a1) ) /*0x41ac5c*/
       {
         if ( (uint8_t)((Array *)(v11))->Contains((int)a1) ) /*0x41ac72*/
           goto LABEL_35; /*0x41ac72*/
@@ -480,7 +480,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
     }
     else
     {
-      if ( !(uint8_t)Array::ContainsValue((Array *)a3, (int)a1) ) /*0x41aaf8*/
+      if ( !(uint8_t)((Array *)((Array *)a3))->ContainsValue((int)a1) ) /*0x41aaf8*/
       {
         TechnoClass::SetFocus((TechnoClass *)a1, (int)a3); /*0x41ab09*/
         if ( *(unsigned char *)(a3[36].uniqueId + 5835) ) /*0x41ab1a*/

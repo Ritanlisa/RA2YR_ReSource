@@ -208,7 +208,7 @@ LABEL_55:
         }
         else
         {
-          Status = HouseClass::GetStatus(a1, 0); /*0x4fa602*/
+          Status = ((HouseClass *)(a1))->GetStatus(0); /*0x4fa602*/
           Sidebar::ActivateTab((int *)&stru_87F5F0.__pad_58[416], Status); /*0x4fa60d*/
           return 0; /*0x4fa615*/
         }
@@ -367,7 +367,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
   for ( i = 0; i < v2; ++i ) /*0x636327*/
   {
     v4 = (Array *)*((unsigned int *)Block->Sidebar_field_0x8 + i); /*0x63632c*/
-    Value = Array::FindValue(v4, *(unsigned int *)Block->__pad_0); /*0x636334*/
+    Value = ((Array *)(v4))->FindValue(*(unsigned int *)Block->__pad_0); /*0x636334*/
     if ( Value == -1 ) /*0x63633c*/
       v6 = 0; /*0x63633e*/
     else

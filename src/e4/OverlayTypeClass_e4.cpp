@@ -632,7 +632,7 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
       ++v3; /*0x5fef8d*/
     }
   }
-  ObjectTypeClass::Destruct((int)Block); /*0x5fefa1*/
+  ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x5fefa1*/
   if ( (a2 & 1) != 0 ) /*0x5fefab*/
     __3_YAXPAX_Z(Block); /*0x5fefae*/
   return &Block->ObjectTypeClass; /*0x5fefb8*/

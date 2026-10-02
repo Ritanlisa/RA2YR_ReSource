@@ -185,7 +185,7 @@ CampaignClass * MSEngine::Destructor(void *a1_1)
   void *v3; // eax
   void *MSEngine_field_0x4; // eax
 
-  SessionClass::Destruct((SessionClass *)this); /*0x5cee64*/
+  ((SessionClass *)((SessionClass *)this))->Destruct(); /*0x5cee64*/
   v2 = (void *)*((unsigned int *)this + 18); /*0x5cee69*/
   *((unsigned int *)this + 17) = (unsigned int)(&vt_VectorClass); /*0x5cee70*/
   if ( v2 && *((unsigned char *)this + 81) ) /*0x5cee79*/
@@ -219,7 +219,7 @@ CampaignClass * MSEngine::Destructor(void *a1_1)
 }
 // 0x5D1AA0
 namespace gamemd {
-CampaignClass * MSEngine::Construct(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1)
+CampaignClass * MSEngine::Construct()
 {
 
   void **p_MSEngine_field_0x8; // ecx
@@ -257,7 +257,7 @@ CampaignClass * MSEngine::Construct(void *a1_1, void *a2_1, void *a3_1, void *a4
 }
 // 0x5D1B30
 namespace gamemd {
-CampaignClass * MSEngine::Destruct(void *a1_1, void *a2_1)
+CampaignClass * MSEngine::Destruct()
 {
 
   int v2; // ebp

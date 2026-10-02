@@ -275,7 +275,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
       v5 = LinkedList::Next((int **)v2[2]); /*0x401cf4*/
       if ( !v5 ) /*0x401cf8*/
       {
-        AudioStream::ReleaseSubsystem(*v2); /*0x401cfc*/
+        ((AudioStream *)(*v2))->ReleaseSubsystem(); /*0x401cfc*/
         return 0; /*0x401d0a*/
       }
     }
@@ -294,7 +294,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
       AudioIndex::GetSampleInformation(v5 + 16); /*0x401e4f*/
       InsertBeforeLinkedList(v2 + 3, v5); /*0x401e62*/
       v5[6] = 1; /*0x401e67*/
-      AudioStream::ReleaseSubsystem(*v2); /*0x401e70*/
+      ((AudioStream *)(*v2))->ReleaseSubsystem(); /*0x401e70*/
       return v5; /*0x401e7e*/
     }
     while ( 1 ) /*0x401d57*/
@@ -391,10 +391,10 @@ ObjectClass * * sub_402990()
   if ( dword_87DE2C ) /*0x40299d*/
   {
     ++*(unsigned int *)off_815E98[3].__pad_0; /*0x4029af*/
-    Next = (AudioQueue *)AudioQueue::GetNext((AudioQueue *)&off_815E98[1].DListNode_field_0x04); /*0x4029c0*/
+    Next = (AudioQueue *)((AudioQueue *)((AudioQueue *)&off_815E98[1].DListNode_field_0x04))->GetNext(); /*0x4029c0*/
     for ( i = Next; Next; i = Next ) /*0x4029ca*/
     {
-      NextAlt = AudioQueue::GetNextAlt(Next); /*0x4029d7*/
+      NextAlt = ((AudioQueue *)(Next))->GetNextAlt(); /*0x4029d7*/
       Next = (AudioQueue *)NextAlt; /*0x4029db*/
       ++*(unsigned int *)off_815E98[3].__pad_0; /*0x4029e6*/
       LinkedList::Init((LinkedList *)i); /*0x4029eb*/
@@ -402,13 +402,13 @@ ObjectClass * * sub_402990()
       *(unsigned int *)off_815E98[3].__pad_0 = v3; /*0x4029fc*/
       if ( v3 < 0 ) /*0x4029ff*/
         *(unsigned int *)off_815E98[3].__pad_0 = 0; /*0x402a07*/
-      v12 = AudioQueue::GetNext((AudioQueue *)((char *)i + 248)); /*0x402a17*/
+      v12 = ((AudioQueue *)((AudioQueue *)((char *)i + 248)))->GetNext(); /*0x402a17*/
       v4 = (AudioStream *)v12; /*0x402a1b*/
       if ( v12 ) /*0x402a1d*/
       {
         do /*0x402a35*/
         {
-          v5 = AudioQueue::IteratorNext((AudioQueue *)&v12); /*0x402a2a*/
+          v5 = ((AudioQueue *)((AudioQueue *)&v12))->IteratorNext(); /*0x402a2a*/
           AudioStream::Destructor(v4); /*0x402a2c*/
           v4 = (AudioStream *)v5; /*0x402a33*/
         }
@@ -428,10 +428,10 @@ ObjectClass * * sub_402990()
     *(unsigned int *)off_815E98[3].__pad_0 = v8; /*0x402a83*/
     if ( v8 < 0 ) /*0x402a86*/
       *(unsigned int *)off_815E98[3].__pad_0 = 0; /*0x402a8d*/
-    v9 = (AudioQueue *)AudioQueue::GetNext((AudioQueue *)off_815E98); /*0x402a9b*/
+    v9 = (AudioQueue *)((AudioQueue *)((AudioQueue *)off_815E98))->GetNext(); /*0x402a9b*/
     for ( j = (LinkedList *)v9; v9; j = (LinkedList *)v9 ) /*0x402aa1*/
     {
-      v9 = (AudioQueue *)AudioQueue::GetNextAlt(v9); /*0x402ab1*/
+      v9 = (AudioQueue *)((AudioQueue *)(v9))->GetNextAlt(); /*0x402ab1*/
       LinkedList::Init(j); /*0x402ab5*/
       (*(void (**)(LinkedList *))(*(unsigned int *)j[1].__pad_0 + 24))(j); /*0x402abf*/
       *(unsigned int *)(*(unsigned int *)j[1].__pad_0 + 12) &= ~1u; /*0x402ac6*/
@@ -464,7 +464,7 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
     a1 = 0; /*0x402c8a*/
   }
   v2 = a1; /*0x402c8c*/
-  NextAudioQueue = (int *)AudioQueue::GetNext((int *)off_815E98); /*0x402c98*/
+  NextAudioQueue = (int *)((AudioQueue *)((int *)off_815E98))->GetNext(); /*0x402c98*/
   v4 = NextAudioQueue; /*0x402c9f*/
   if ( !NextAudioQueue ) /*0x402ca1*/
     return 0; /*0x402ca1*/
@@ -474,7 +474,7 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
     if ( v2 < v5 ) /*0x402cac*/
       break; /*0x402cac*/
     v2 -= v5; /*0x402cae*/
-    NextAudioQueue = (int *)AudioQueue::GetNextAlt(NextAudioQueue); /*0x402cb6*/
+    NextAudioQueue = (int *)((AudioQueue *)(NextAudioQueue))->GetNextAlt(); /*0x402cb6*/
     v4 = NextAudioQueue; /*0x402cbd*/
     if ( !NextAudioQueue ) /*0x402cbf*/
       return 0; /*0x402cce*/
@@ -573,23 +573,23 @@ ObjectClass * * sub_403210()
   int NextAlt; // [esp+8h] [ebp-8h]
 
   ++*(unsigned int *)off_815E98[3].__pad_0; /*0x40321e*/
-  Next = (AudioQueue *)AudioQueue::GetNext((AudioQueue *)&off_815E98[1].DListNode_field_0x04); /*0x40322a*/
+  Next = (AudioQueue *)((AudioQueue *)((AudioQueue *)&off_815E98[1].DListNode_field_0x04))->GetNext(); /*0x40322a*/
   v2 = Next; /*0x403237*/
   if ( Next ) /*0x403239*/
   {
     while ( 1 ) /*0x403252*/
     {
-      NextAlt = AudioQueue::GetNextAlt(Next); /*0x403252*/
+      NextAlt = ((AudioQueue *)(Next))->GetNextAlt(); /*0x403252*/
       ++*(unsigned int *)off_815E98[3].__pad_0; /*0x40325f*/
       LinkedList::Init((LinkedList *)v2); /*0x403264*/
       v3 = *(unsigned int *)off_815E98[3].__pad_0 - 1; /*0x403272*/
       *(unsigned int *)off_815E98[3].__pad_0 = v3; /*0x403275*/
       if ( v3 < 0 ) /*0x403278*/
         *(unsigned int *)off_815E98[3].__pad_0 = 0; /*0x403280*/
-      v4 = (AudioQueue *)AudioQueue::GetNext((AudioQueue *)((char *)v2 + 248)); /*0x40328e*/
+      v4 = (AudioQueue *)((AudioQueue *)((AudioQueue *)((char *)v2 + 248)))->GetNext(); /*0x40328e*/
       for ( i = (AudioStream *)v4; v4; i = (AudioStream *)v4 ) /*0x403294*/
       {
-        v4 = (AudioQueue *)AudioQueue::GetNextAlt(v4); /*0x40329f*/
+        v4 = (AudioQueue *)((AudioQueue *)(v4))->GetNextAlt(); /*0x40329f*/
         AudioStream::Destructor(i); /*0x4032a1*/
       }
       (*(void (**)(AudioQueue *))(*(unsigned int *)(*(unsigned int *)v2[1].__pad_0 + 12) + 32))(v2); /*0x4032b4*/
@@ -696,9 +696,9 @@ void sub_403FA0()
       while ( v6 != &g_AudioStreamObject ); /*0x4040c3*/
     }
   }
-  for ( i = (LinkedList *)AudioQueue::GetNext((AudioQueue *)&stru_87E250); /*0x4040d5*/
+  for ( i = (LinkedList *)((AudioQueue *)((AudioQueue *)&stru_87E250))->GetNext(); /*0x4040d5*/
         i;
-        i = (LinkedList *)AudioQueue::GetNext((AudioQueue *)&stru_87E250) )
+        i = (LinkedList *)((AudioQueue *)((AudioQueue *)&stru_87E250))->GetNext() )
   {
     LinkedList::Init(i); /*0x4040d9*/
     RA2_OPDEL(i); /*0x4040df*/
@@ -1005,7 +1005,7 @@ void Audio_Process()
                 v37 = (DListNode *)v36->Header[0]; /*0x404621*/
                 if ( v36->Volume[3] == v35 ) /*0x404625*/
                 {
-                  VocClass::Release(v36); /*0x404629*/
+                  ((VocClass *)(v36))->Release(); /*0x404629*/
                   Audio::FlushChannel((Audio *)v36); /*0x404630*/
                   v43 = 1; /*0x404635*/
                 }
@@ -1187,7 +1187,7 @@ int E4Recv_405AC0::sub_405AC0()
   unsigned int v6; // eax
 
   v2 = (unsigned int *)*((unsigned int *)this + 48); /*0x405ac5*/
-  v3 = (unsigned int *)AudioStream::SelectRandom((int)v2); /*0x405ad2*/
+  v3 = (unsigned int *)((AudioStream *)((int)v2))->SelectRandom(); /*0x405ad2*/
   if ( *(unsigned int *)(v2[9] + 92) < 0x21u ) /*0x405adb*/
     goto LABEL_2; /*0x405adb*/
   BindChannelAudioStream(this, 0); /*0x405af0*/
@@ -1244,7 +1244,7 @@ LABEL_19:
             if ( v4 && vtable0 == *(char **)(v4 + 192) ) /*0x405efd*/
             {
               if ( (vtable0[24] & 2) != 0 ) /*0x405f03*/
-                Voice::Stop(v7); /*0x405f05*/
+                ((Voice *)(v7))->Stop(); /*0x405f05*/
               AudioStream::ReleaseChannel(*((AudioStream **)vtable0 + 44)); /*0x405f10*/
               *(unsigned int *)(*((unsigned int *)vtable0 + 44) + 192) = 0; /*0x405f1b*/
               *(unsigned int *)(*((unsigned int *)vtable0 + 44) + 188) = 0; /*0x405f27*/
@@ -1426,14 +1426,14 @@ int sub_406EC0()
   result = AudioStream::UpdateCountdowners(); /*0x406ec5*/
   if ( g_Audio_Enabled ) /*0x406ed2*/
   {
-    result = AudioQueue::GetNext((AudioQueue *)&g_Audio_Enabled->__pad_D8[32]); /*0x4037ca*/
+    result = ((AudioQueue *)((AudioQueue *)&g_Audio_Enabled->__pad_D8[32]))->GetNext(); /*0x4037ca*/
     for ( i = result; result; i = result ) /*0x4037d3*/
     {
       if ( (*(unsigned char *)(i + 164) & 4) != 0 && *(unsigned int *)(i + 12) == 1 ) /*0x4037e6*/
         result = AudioChannel::ActivatePlay((AudioChannel *)i); /*0x4037ea*/
       if ( !i ) /*0x4037f1*/
         break; /*0x4037f1*/
-      result = AudioQueue::GetNextAlt((AudioQueue *)i); /*0x4037f5*/
+      result = ((AudioQueue *)((AudioQueue *)i))->GetNextAlt(); /*0x4037f5*/
     }
   }
   return result; /*0x406ede*/
@@ -1452,14 +1452,14 @@ int sub_406F40()
   result = AudioStream::UpdateCountdowners(); /*0x406f4f*/
   if ( g_Audio_Enabled ) /*0x406f5c*/
   {
-    result = AudioQueue::GetNext((int *)g_Audio_Enabled + 62); /*0x4037ca*/
+    result = ((AudioQueue *)((int *)g_Audio_Enabled + 62))->GetNext(); /*0x4037ca*/
     for ( i = result; result; i = result ) /*0x4037d3*/
     {
       if ( (*(unsigned char *)(i + 164) & 4) != 0 && *(unsigned int *)(i + 12) == 1 ) /*0x4037e6*/
         result = AudioChannel::ActivatePlay((unsigned int *)i); /*0x4037ea*/
       if ( !i ) /*0x4037f1*/
         break; /*0x4037f1*/
-      result = AudioQueue::GetNextAlt((int *)i); /*0x4037f5*/
+      result = ((AudioQueue *)((int *)i))->GetNextAlt(); /*0x4037f5*/
     }
   }
   return result; /*0x406f68*/
@@ -1578,7 +1578,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   if ( a1[5] ) /*0x407b78*/
   {
     EnterCriticalSection(&unk_87E7F8); /*0x407b82*/
-    Voice::Stop(v44); /*0x407b8b*/
+    ((Voice *)(v44))->Stop(); /*0x407b8b*/
     LeaveCriticalSection(&unk_87E7F8); /*0x407b95*/
   }
   v5 = (void (***)(unsigned int, int))a1[31]; /*0x407b9b*/
@@ -2361,7 +2361,7 @@ void AudioStreamThreadProc(unsigned int * lpThreadParameter)
         v4 = IDA_HIDWORD(v3); /*0x409600*/
         v3 = v3; /*0x409602*/
         AudioThread::UpdateStats(v2 + 368, v3); /*0x40960c*/
-        for ( i = sub_4035B0(v2, v23); i; i = AudioQueue::IteratorNext(v23) ) /*0x409620*/
+        for ( i = sub_4035B0(v2, v23); i; i = ((AudioQueue *)(v23))->IteratorNext() ) /*0x409620*/
         {
           if ( (*(unsigned char *)(i + 164) & 1) != 0 ) /*0x40962d*/
           {
@@ -3383,10 +3383,10 @@ void E4Recv_402EF0::sub_402EF0(int * Block)
   int nextArrayIndex; // eax
   int v5; // ecx
 
-  Next = (AudioQueue *)AudioQueue::GetNext((AudioQueue *)((char *)Block + 248)); /*0x402f00*/
+  Next = (AudioQueue *)((AudioQueue *)((AudioQueue *)((char *)Block + 248)))->GetNext(); /*0x402f00*/
   for ( i = (AudioStream *)Next; Next; i = (AudioStream *)Next ) /*0x402f06*/
   {
-    Next = (AudioQueue *)AudioQueue::GetNextAlt(Next); /*0x402f11*/
+    Next = (AudioQueue *)((AudioQueue *)(Next))->GetNextAlt(); /*0x402f11*/
     AudioStream::Destructor(i); /*0x402f13*/
   }
   (*(void (**)(ObjectClass *))(*(unsigned int *)(((unsigned int *)Block)[0] + 12) + 32))(Block); /*0x402f26*/
@@ -3451,7 +3451,7 @@ int sub_4035B0(int a1, int * a2)
 {
   int result; // eax
 
-  result = AudioQueue::GetNext((int *)(a1 + 248)); /*0x4035b9*/
+  result = ((AudioQueue *)((int *)(a1 + 248)))->GetNext(); /*0x4035b9*/
   *a2 = result; /*0x4035be*/
   return result; /*0x4035c0*/
 }
@@ -3478,10 +3478,10 @@ int sub_4036F0(int a1, int a2)
   int *Next; // esi
   int *i; // edi
 
-  Next = (int *)AudioQueue::GetNext((int *)(a1 + 248)); /*0x403700*/
+  Next = (int *)((AudioQueue *)((int *)(a1 + 248)))->GetNext(); /*0x403700*/
   for ( i = Next; Next; i = Next ) /*0x403706*/
   {
-    Next = (int *)AudioQueue::GetNextAlt(Next); /*0x403712*/
+    Next = (int *)((AudioQueue *)(Next))->GetNextAlt(); /*0x403712*/
     if ( a2 == -1 || i[3] == a2 ) /*0x403719*/
       AudioStream::Destructor(i); /*0x40371d*/
   }
@@ -3720,7 +3720,7 @@ int sub_404E20(int a1)
       v4 = v2; /*0x404e36*/
       do /*0x404e4a*/
       {
-        Next = AudioQueue::GetNext(v4); /*0x404e3a*/
+        Next = ((AudioQueue *)(v4))->GetNext(); /*0x404e3a*/
         if ( Next ) /*0x404e41*/
           return Next - 164; /*0x404e63*/
         ++v3; /*0x404e43*/
@@ -3935,7 +3935,7 @@ unsigned int * sub_405B50(int a1, char a2)
     {
       if ( (*(unsigned char *)(BestChannel + 164) & 0x15) != 0 && *(unsigned int *)(BestChannel + 160) > a1 ) /*0x405b82*/
         return 0; /*0x405b89*/
-      Voice::Stop(v7); /*0x405b8c*/
+      ((Voice *)(v7))->Stop(); /*0x405b8c*/
       v3[37] = g_MixerChannel_Score; /*0x405b96*/
       v3[39] = g_MixerState; /*0x405ba5*/
       v3[40] = a1; /*0x405bab*/
@@ -4176,7 +4176,7 @@ int * sub_406670(void * a1, int a2)
   result = (int *)g_AudioConfigState; /*0x406670*/
   if ( g_AudioConfigState ) /*0x40667e*/
   {
-    result = (int *)AudioQueue::GetNext(stru_87E250); /*0x406689*/
+    result = (int *)((AudioQueue *)(stru_87E250))->GetNext(); /*0x406689*/
     v5 = result; /*0x40668e*/
     if ( result ) /*0x406692*/
     {
@@ -4185,7 +4185,7 @@ int * sub_406670(void * a1, int a2)
         result = (int *)_strcmpi(a1, v5 + 27); /*0x40669d*/
         if ( !result ) /*0x4066a7*/
           break; /*0x4066a7*/
-        result = (int *)AudioQueue::GetNextAlt(v5); /*0x4066ab*/
+        result = (int *)((AudioQueue *)(v5))->GetNextAlt(); /*0x4066ab*/
         v5 = result; /*0x4066b0*/
         if ( !result ) /*0x4066b4*/
           return result; /*0x4066b4*/
@@ -4768,7 +4768,7 @@ DWORD StartAddress(unsigned int * lpThreadParameter)
       IDA_LODWORD(v2) = Audio::Callback(); /*0x4076a5*/
       AudioThread::UpdateStats((int)(v1 + 8), v2); /*0x4076af*/
       EnterCriticalSection(&unk_87E7F8); /*0x4076b9*/
-      for ( i = AudioQueue::GetNext(unk_87E810); i; i = AudioQueue::GetNextAlt((int *)i) ) /*0x4076c9*/
+      for ( i = ((AudioQueue *)(unk_87E810))->GetNext(); i; i = ((AudioQueue *)((int *)i))->GetNextAlt() ) /*0x4076c9*/
       {
         if ( (*(unsigned char *)(i + 12) & 4) != 0 ) /*0x4076cf*/
         {
@@ -4817,7 +4817,7 @@ void sub_407780()
       CloseHandle(*(HANDLE *)&stru_87E790.__pad_5C[4]); /*0x4077d5*/
       stru_87E790.AudioStream_field_0x90 = 0; /*0x4077db*/
     }
-    Next = (AudioSample *)AudioQueue::GetNext((AudioQueue *)&stru_87E790.__pad_5C[36]); /*0x4077ef*/
+    Next = (AudioSample *)((AudioQueue *)((AudioQueue *)&stru_87E790.__pad_5C[36]))->GetNext(); /*0x4077ef*/
     if ( Next ) /*0x4077f3*/
     {
       v2 = a1; /*0x4077fc*/
@@ -4828,12 +4828,12 @@ void sub_407780()
           if ( *(unsigned int *)Next[1].__pad_0 ) /*0x40780d*/
           {
             EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407819*/
-            Voice::Stop(v2); /*0x40781e*/
+            ((Voice *)(v2))->Stop(); /*0x40781e*/
             LeaveCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407828*/
           }
         }
         AudioSample::Destructor(Next); /*0x40782c*/
-        Next = (AudioSample *)AudioQueue::GetNext((AudioQueue *)&stru_87E790.__pad_5C[36]); /*0x40783b*/
+        Next = (AudioSample *)((AudioQueue *)((AudioQueue *)&stru_87E790.__pad_5C[36]))->GetNext(); /*0x40783b*/
       }
       while ( Next ); /*0x40783f*/
     }
@@ -4901,7 +4901,7 @@ int AudioTimer_Process()
   result = *(unsigned int *)&stru_87E790.__pad_5C[48]; /*0x4082f0*/
   if ( *(unsigned int *)&stru_87E790.__pad_5C[48] ) /*0x4082f8*/
   {
-    result = AudioQueue::GetNext((AudioQueue *)&stru_87E790.__pad_5C[36]); /*0x408303*/
+    result = ((AudioQueue *)((AudioQueue *)&stru_87E790.__pad_5C[36]))->GetNext(); /*0x408303*/
     for ( i = result; result; i = result ) /*0x40830c*/
     {
       if ( *(unsigned int *)(i + 128) ) /*0x40831c*/
@@ -4923,7 +4923,7 @@ int AudioTimer_Process()
           LeaveCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x408374*/
         }
       }
-      result = AudioQueue::GetNextAlt((AudioQueue *)i); /*0x408378*/
+      result = ((AudioQueue *)((AudioQueue *)i))->GetNextAlt(); /*0x408378*/
     }
   }
   return result; /*0x408385*/
@@ -4940,11 +4940,11 @@ int sub_408390()
   result = dword_87E81C; /*0x408390*/
   if ( dword_87E81C ) /*0x408398*/
   {
-    result = AudioQueue::GetNext(unk_87E810); /*0x40839f*/
+    result = ((AudioQueue *)(unk_87E810))->GetNext(); /*0x40839f*/
     for ( i = (int *)result; result; i = (int *)result ) /*0x4083a8*/
     {
       RequestBufferMixer((unsigned int *)(i[5] + 16), 0); /*0x4083b2*/
-      result = AudioQueue::GetNextAlt(i); /*0x4083b9*/
+      result = ((AudioQueue *)(i))->GetNextAlt(); /*0x4083b9*/
     }
   }
   return result; /*0x4083c4*/
@@ -4959,13 +4959,13 @@ int sub_408410()
 
   if ( !*(unsigned int *)&stru_87E790.__pad_5C[48] ) /*0x408418*/
     return 1; /*0x408418*/
-  Next = (AudioQueue *)AudioQueue::GetNext((AudioQueue *)&stru_87E790.__pad_5C[36]); /*0x40841f*/
+  Next = (AudioQueue *)((AudioQueue *)((AudioQueue *)&stru_87E790.__pad_5C[36]))->GetNext(); /*0x40841f*/
   if ( !Next ) /*0x408426*/
     return 1; /*0x40844c*/
   while ( (Next->__pad_0[12] & 1) == 0 /*0x408439*/
        || *(unsigned int *)(Next->AudioQueue_field_0x14[0] + 20) == *(unsigned int *)(Next->AudioQueue_field_0x14[0] + 24) )
   {
-    Next = (AudioQueue *)AudioQueue::GetNextAlt(Next); /*0x40843d*/
+    Next = (AudioQueue *)((AudioQueue *)(Next))->GetNextAlt(); /*0x40843d*/
     if ( !Next ) /*0x408444*/
       return 1; /*0x408444*/
   }

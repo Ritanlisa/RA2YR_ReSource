@@ -303,7 +303,7 @@ struct ObjectTypeClass {
     BulletTypeClass * FindOrCreate(ObjectClass * Source);
     ObjectTypeClass * Destru_vt08(char a2);
     SHPStruct * * SelectArtOrAlt();
-    SomeVoxelCache * * Destruct(void *a1, void *a2);
+    SomeVoxelCache * * Destruct();
     char ReadBool(INIClass * Block, INIClass * aP2, int a4);
     char ReadBool2(INIClass * Block, INIClass * aP2, short * a4);
     char ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4);
@@ -311,7 +311,7 @@ struct ObjectTypeClass {
     int ConstructFull(char *aP1);
     int CreateInstance(int aP1, int aP2);
     int DeserializeArrays();
-    int FindByName(void *a1);
+    int FindByName();
     int FreeLoaderBuffer();
     int LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1);
     int LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2);
@@ -346,7 +346,7 @@ struct ObjectTypeClass {
     unsigned int * vt_entry_7C(unsigned int * a1);
     void CleanupWeapons(void *a1);
     void ReleaseWaveAndString(void *a1);
-    void SetRTTI71(void *a1);
+    void SetRTTI71();
     void UnloadPipsSHP();
     void* LoadFromINI(uint8_t ***aP1);
 };

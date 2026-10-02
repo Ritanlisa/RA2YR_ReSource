@@ -256,7 +256,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     v18 = ((Cell *)(v3))->IsBridge(); /*0x53a51f*/
     v29 = 0; /*0x53a524*/
     v30 = 0; /*0x53a528*/
-    ClosestObjectCell = Object::FindClosestObjectCell(v3, &v29, 0, 0); /*0x53a538*/
+    ClosestObjectCell = ((Object *)(v3))->FindClosestObjectCell(&v29, 0, 0); /*0x53a538*/
     v20 = ClosestObjectCell; /*0x53a53d*/
     if ( !ClosestObjectCell /*0x53a552*/
       || (v26 = 1, (*(int (**)(int))(*(unsigned int *)ClosestObjectCell + 44))(ClosestObjectCell) != 15) )
@@ -280,7 +280,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     CreateSmokeEffectAt(Climb, HIDWORD(dword_8871E0[1]), v31, v32, (int)v33, 0, 0); /*0x53a581*/
     PlaySoundEffectAt(&v31, Climb, 0, HIDWORD(dword_8871E0[1]), 1, (int)LightningStorm_Owner); /*0x53a5d0*/
     if ( v18 == ((Cell *)(v3))->IsBridge() /*0x53a607*/
-      && (v29 = 0, v30 = 0, v20 == Object::FindClosestObjectCell(v3, &v29, 0, 0))
+      && (v29 = 0, v30 = 0, v20 == ((Object *)(v3))->FindClosestObjectCell(&v29, 0, 0))
       && *((char *)v3 + 283) == v28 )
     {
       LOBYTE(v11) = v25; /*0x53a60d*/

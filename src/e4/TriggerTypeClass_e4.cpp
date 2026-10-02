@@ -110,7 +110,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
       return 5; /*0x6fc247*/
     }
     if ( (*((int (**)(#375 **, int, HouseClass *))*v8 + 26))(v8, 1, a0->owner) == 5 /*0x6fc296*/
-      && !(uint8_t)Cell::IsPassableOffset((Cell *)v10, a0->owner->relatedTagsCount)
+      && !(uint8_t)((Cell *)((Cell *)v10))->IsPassableOffset(a0->owner->relatedTagsCount)
       && (TechnoClass::GetValue(a0, -1) > 0 || !(uint8_t)HouseClass::IsAlliedWith(
                                                                      v8[135],
                                                                      (#375 *)a0->owner)) )

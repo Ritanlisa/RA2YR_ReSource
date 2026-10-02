@@ -70,7 +70,7 @@ void ThemeManager::Cleanup(void *a1)
   v5 = (ThemeClass *)*((unsigned int *)this + 11); /*0x7207b4*/
   if ( v5 ) /*0x7207b9*/
   {
-    ThemeClass::RequestBuffer(v5); /*0x7207bb*/
+    ((ThemeClass *)(v5))->RequestBuffer(); /*0x7207bb*/
     ThemeManager::ProcessCallback(*((ThemeManager **)this + 11)); /*0x7207c3*/
     ((Audio *)(*((Audio **)this + 11)))->Release(); /*0x7207cb*/
     AudioSample::Destructor(*((AudioSample **)this + 11)); /*0x7207d3*/

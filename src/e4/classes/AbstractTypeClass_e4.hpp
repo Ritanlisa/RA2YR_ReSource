@@ -78,8 +78,8 @@ struct AbstractTypeClass {
     BOOL NameEquals(void * a2);
     char WriteINI(char *aP1);
     int AddSampleVocClass();
-    int Constructor(AbstractClass * aP1, void *a2, void *a3);
-    int Dtor(void *a1);
+    int Constructor(char *aP1);
+    int Dtor();
     int GetData(void *a1);
     int GetType(int a1);
     int Init(AbstractTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);

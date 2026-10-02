@@ -60,7 +60,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
           v14 = a2; /*0x76bab2*/
           do /*0x76bac9*/
           {
-            WDTState_4::Constructor((unsigned int)(v7)++); /*0x76bab8*/
+            ((WDTState_4 *)((unsigned int)(v7)++))->Constructor(); /*0x76bab8*/
             --v14; /*0x76bac5*/
           }
           while ( v14 ); /*0x76bac9*/
@@ -186,7 +186,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
 
 // 0x76BC60
 namespace gamemd {
-int WDTState_4::Constructor(void *a1_1, void *a2_1, void *a3_1)
+int WDTState_4::Constructor()
 {
 
   ((ComPtr *)((ComPtr *)this))->Constructor(); /*0x76bc63*/

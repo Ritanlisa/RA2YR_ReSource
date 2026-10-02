@@ -294,7 +294,7 @@ int E4Recv_5ADD10::Map_Delete()
   DynamicVector v8[2]; // [esp+5Ch] [ebp-8Ch] BYREF
   void *v9[5]; // [esp+D4h] [ebp-14h] BYREF
 
-  MSEngine::Construct(&v7); /*0x5add1e*/
+  ((MSEngine *)(&v7))->Construct(); /*0x5add1e*/
   Map_Delete_5CEDD0(v8); /*0x5add27*/
   unknown_libname_73(v9); /*0x5add33*/
   v9[1] = (void *)((Timer *)this)->GetTicks(); /*0x5add48*/
@@ -303,7 +303,7 @@ int E4Recv_5ADD10::Map_Delete()
   v2 = ((ScenarioClass *)((ScenarioClass *)&v7))->Load((int)this) == 0; /*0x5add71*/
   DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
   MSEngine::Destructor((MSEngine *)v8); /*0x5add7d*/
-  MSEngine::Destruct(&v7); /*0x5add86*/
+  ((MSEngine *)(&v7))->Destruct(); /*0x5add86*/
   if ( v2 )
   {
     StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((char *)&stru_82BA00), 134)); /*0x5addba*/
@@ -523,7 +523,7 @@ void sub_55CF10()
             if ( !v2 ) /*0x55cf90*/
               break; /*0x55cf90*/
                         ((Event *)0)->Dispatch();
-            if ( Process::WaitForExit((Process *)&stru_B052C0.__pad_0[16], 0xAu, 0) ) /*0x55cfa0*/
+            if ( ((Process *)((Process *)&stru_B052C0.__pad_0[16]))->WaitForExit(0xAu, 0) ) /*0x55cfa0*/
               break; /*0x55cfa0*/
             v2 = 480; /*0x55cf70*/
           }
@@ -1133,7 +1133,7 @@ void sub_63AB60(int a1, int a2)
   v9[1] = Coords[1]; /*0x63abb5*/
   v9[2] = Coords[2]; /*0x63abc0*/
   v5 = ToCoordPixel(&v8, v9); /*0x63abc4*/
-  Rect::Set(v11, *v5 - 4, v5[1] - 4, 8, 8); /*0x63abe0*/
+  ((Rect *)(v11))->Set(*v5 - 4, v5[1] - 4, 8, 8); /*0x63abe0*/
   v10[0] = v11[0]; /*0x63abf9*/
   v6 = v11[1] - 4; /*0x63ac00*/
   if ( a1 < v11[0] - 4 ) /*0x63ac0b*/
@@ -1984,16 +1984,16 @@ const char * Map_Delete_5ADE20(ObjectClass * a1, const char * a2)
   void *v10[5]; // [esp+D8h] [ebp-14h] BYREF
 
   ((String *)((String *)&v9))->Assign(a2); /*0x5ade32*/
-  MSEngine::Construct((MSEngine *)&((char *)&v9)); /*0x5ade3b*/
+  ((MSEngine *)((MSEngine *)&((char *)&v9)))->Construct(); /*0x5ade3b*/
   Map_Delete_5CEDD0((DynamicVector *)&v9.customSound_controller[1]); /*0x5ade44*/
   unknown_libname_73(v10); /*0x5ade50*/
   v10[1] = (void *)Timer::GetTicks(); /*0x5ade61*/
   v10[3] = 0; /*0x5ade72*/
   ((unsigned int *)&v9)[0] = (void*)&MapSelect_vftable; /*0x5ade7d*/
-  v4 = !SessionClass::LoadGameSession((SessionClass *)&((char *)&v9), a1, (const char **)&v9); /*0x5ade93*/
+  v4 = !((SessionClass *)((SessionClass *)&((char *)&v9)))->LoadGameSession(a1, (const char **)&v9); /*0x5ade93*/
   DeleteAndZero((ObjectClass *)v10); /*0x5ade96*/
   MSEngine::Destructor((MSEngine *)&v9.customSound_controller[1]); /*0x5ade9f*/
-  MSEngine::Destruct((MSEngine *)&((char *)&v9)); /*0x5adea8*/
+  ((MSEngine *)((MSEngine *)&((char *)&v9)))->Destruct(); /*0x5adea8*/
   DeleteAndZero(&v9); /*0x5adeb1*/
   if ( !v4 ) /*0x5adeb8*/
     return a2; /*0x5adf0b*/

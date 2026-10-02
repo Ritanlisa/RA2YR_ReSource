@@ -158,10 +158,10 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
       LOBYTE(v11) = *(unsigned char *)(v11 + 2); /*0x48e993*/
       LOWORD(v29.Color_field_00) = v12; /*0x48e996*/
       BYTE2(v29.Color_field_00) = (uint8_t)v11 >> 1; /*0x48e9a5*/
-      v13 = Color::ConvertToRGB((int)(&v29), (int)&v28); /*0x48e9ae*/
+      v13 = ((Color *)((int)(&v29)))->ConvertToRGB((int)&v28); /*0x48e9ae*/
       LOWORD(a4) = *(unsigned short *)v13; /*0x48e9b6*/
       BYTE2(a4) = *(unsigned char *)(v13 + 2); /*0x48e9c5*/
-      *((unsigned char *)this->ConvertClass_field_0x178 + v8++) = Palette::FindClosestColor((int)((char *)a2), (int)&a4); /*0x48e9db*/
+      *((unsigned char *)this->ConvertClass_field_0x178 + v8++) = ((Palette *)((int)((char *)a2)))->FindClosestColor((int)&a4); /*0x48e9db*/
     }
     while ( v8 < 256 ); /*0x48e9df*/
     v14 = (CampaignClass *)__2_YAPAXI_Z(*(unsigned int *)&this->__pad_6[358] << 8); /*0x48e9eb*/
@@ -174,7 +174,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
       LOBYTE(v15->AbstractClass) = 0; /*0x48ea18*/
       v17 = (char *)&v15->AbstractClass + 1; /*0x48ea1a*/
       for ( i = 1; i < 256; ++i ) /*0x48ea1b*/
-        *v17++ = Palette::FindClosestColor((int)((char *)a3), a2 + 2 * (i % 256) + i % 256); /*0x48ea40*/
+        *v17++ = ((Palette *)((int)((char *)a3)))->FindClosestColor(a2 + 2 * (i % 256) + i % 256); /*0x48ea40*/
     }
     else
     {
@@ -193,10 +193,10 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
             LOBYTE(v31) = v21; /*0x48ea97*/
             BYTE2(v29.Color_field_00) = v21; /*0x48eaa4*/
             BYTE2(v29.Color_field_00) = 2 * v30 * v21 / (*(unsigned int *)&this->__pad_6[358] - 1); /*0x48eac2*/
-            v22 = Color::ConvertToRGB((int)(&v29), (int)&v28); /*0x48eac6*/
+            v22 = ((Color *)((int)(&v29)))->ConvertToRGB((int)&v28); /*0x48eac6*/
             LOWORD(a4) = *(unsigned short *)v22; /*0x48eace*/
             BYTE2(a4) = *(unsigned char *)(v22 + 2); /*0x48eadf*/
-            LOBYTE(v15->AbstractClass) = Palette::FindClosestColor((int)((char *)a3), (int)&a4); /*0x48eae8*/
+            LOBYTE(v15->AbstractClass) = ((Palette *)((int)((char *)a3)))->FindClosestColor((int)&a4); /*0x48eae8*/
             v15 = (CampaignClass *)((char *)v15 + 1); /*0x48eaea*/
           }
           v23 = *(unsigned int *)&this->__pad_6[358] - 1; /*0x48eb03*/

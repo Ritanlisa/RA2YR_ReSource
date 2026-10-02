@@ -1947,7 +1947,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   v26[5] = 0; /*0x49c2bc*/
   v27 = 0; /*0x49c2c0*/
   v24[0] = &CCINIClass_Vtable; /*0x49c2c4*/
-  if ( !CCINIClass::Load(v24, (int)v29, 0, 0) ) /*0x49c2d3*/
+  if ( !((CCINIClass *)(v24))->Load((int)v29, 0, 0) ) /*0x49c2d3*/
   {
 LABEL_44:
     HashTable::DestroyHashTableINIClass(v24); /*0x49c553*/
@@ -2318,7 +2318,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   v22[5] = 0; /*0x49d3f2*/
   v23 = 0; /*0x49d3f9*/
   v20[0] = &CCINIClass_Vtable; /*0x49d400*/
-  if ( !CCINIClass::Load(v20, (int)v17, 0, 0) ) /*0x49d40b*/
+  if ( !((CCINIClass *)(v20))->Load((int)v17, 0, 0) ) /*0x49d40b*/
   {
     CCFileClass::Reset(v17); /*0x49d418*/
 LABEL_5:

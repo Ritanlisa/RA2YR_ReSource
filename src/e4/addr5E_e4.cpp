@@ -167,7 +167,7 @@ void sub_5E2AC0()
       else
       {
         SendMessageA(DlgItem, 0x182u, v3 - 1, 0); /*0x5e2b53*/
-        WideString::Append2((gamemd::CampaignScore *)((wchar_t **)&v5), asc_831774); /*0x5e2b5e*/
+        ((WideString *)((gamemd::CampaignScore *)((wchar_t **)&v5)))->Append2(asc_831774); /*0x5e2b5e*/
       }
       v4 = (wchar_t *)(WideString::GetOrEmpty((wchar_t **)&v5));
       DrawDialogText(-1, v4, DlgItem); /*0x5e2b82*/
@@ -1542,7 +1542,7 @@ LABEL_171:
 
   if ( *((unsigned int *)this + 22) ) /*0x473c04*/
     return *((unsigned int *)this + 23); /*0x473c0b*/
-  if ( (uint8_t)File::IsReady((BufferIOFileClass *)this, 0) ) /*0x473c15*/
+  if ( (uint8_t)((File *)((BufferIOFileClass *)this))->IsReady(0) ) /*0x473c15*/
     return BufferIOFileClass::SetSize((BufferIOFileClass *)this); /*0x473c48*/
   v3 = *(unsigned int *)this->CDFileClass; /*0x473c1e*/
   v5 = 0; /*0x473c2b*/
@@ -2787,7 +2787,7 @@ void ExchangeMultiplayerGameInfo()
   char v17; // [esp+236h] [ebp-102h]
   char v18[256]; // [esp+238h] [ebp-100h] BYREF
 
-  Network::SetConnectionParams(unk_A8E9C0, 50, -1, 5000, 1); /*0x5e7938*/
+  ((Network *)(unk_A8E9C0))->SetConnectionParams(50, -1, 5000, 1); /*0x5e7938*/
   Debug::Log(); /*0x5e7942*/
   memset(v15, 0, sizeof(v15)); /*0x5e7957*/
   v16 = 0; /*0x5e7959*/
@@ -2856,16 +2856,16 @@ void ExchangeMultiplayerGameInfo()
     Debug::Log(); /*0x5e7b8d*/
     RA2_OPDEL(v6); /*0x5e7b93*/
     RA2_OPDEL(v4); /*0x5e7b99*/
-    Network::SetConnectionParams(unk_A8E9C0, 30, -1, 600, 1); /*0x5e7bb1*/
+    ((Network *)(unk_A8E9C0))->SetConnectionParams(30, -1, 600, 1); /*0x5e7bb1*/
     LZOStraw::Destructor(v14); /*0x5e7bba*/
     ((Vector *)((int)v12))->Clear(); /*0x5e7bc3*/
     Straw::Dtor(v11); /*0x5e7bcc*/
-    RawFileClass::Dtor(v13); /*0x5e7bd5*/
+    ((RawFileClass *)(v13))->Dtor(); /*0x5e7bd5*/
   }
   else
   {
     Debug::Log(); /*0x5e7a43*/
-    Network::SetConnectionParams(unk_A8E9C0, 30, -1, 600, 1); /*0x5e7a5b*/
+    ((Network *)(unk_A8E9C0))->SetConnectionParams(30, -1, 600, 1); /*0x5e7a5b*/
   }
 }
 }
@@ -2920,9 +2920,9 @@ char LoadScenarioClassByIndex(int a1)
     return 0; /*0x5e7d20*/
   }
   v6 = (int **)(dword_A8B8CC + 4 * a1); /*0x5e7c93*/
-  v7 = Game::CheckForGameCD((void *)0x3C); /*0x5e7c96*/
+  v7 = ((Game *)((void *)0x3C))->CheckForGameCD(); /*0x5e7c96*/
   if ( (uint8_t)ScenarioClass::CheckExists(*v6, v7) /*0x5e7cca*/
-    || (Field = GameOption::GetField(*(unsigned int ***)(dword_A8B8CC + 4 * a1)), (result = (void*)&CD_vftable(Field)) != 0) )
+    || (Field = ((GameOption *)(*(unsigned int ***)(dword_A8B8CC + 4 * a1)))->GetField(), (result = (void*)&CD_vftable(Field)) != 0) )
   {
   LABEL_9:
     wcscpy((wchar_t *)&dword_A8B320 + 1, *(const wchar_t **)(dword_A8B8CC + 4 * a1)); /*0x5e7d31*/
@@ -3152,7 +3152,7 @@ void Player_AssignColor(HWND hDlg, void * nIDDlgItem)
       ComboBoxSelectedRaw = -2; /*0x5e9c9d*/
     }
   LABEL_19:
-    SessionClass::AssignColor((SessionClass *)&dword_A8B238, ComboBoxSelectedRaw, 0); /*0x5e9ca2*/
+    ((SessionClass *)((SessionClass *)&dword_A8B238))->AssignColor(ComboBoxSelectedRaw, 0); /*0x5e9ca2*/
     result = dword_A8DA84; /*0x5e9caf*/
     if ( dword_A8DA84 ) /*0x5e9cb6*/
 // 0x696fc0
@@ -3250,7 +3250,7 @@ void ProcessNetworkLobbyOption(SessionClass * hDlg, void * nIDDlgItem)
     result = dword_A8DA84; /*0x5e9dd9*/
     if ( dword_A8DA84 ) /*0x5e9de0*/
 // 0x697020
-      return SessionClass::SetOption2((int *)*dword_A8DA78, ComboBoxSelectedRaw2); /*0x5e9dea*/
+      return ((SessionClass *)((int *)*dword_A8DA78))->SetOption2(ComboBoxSelectedRaw2); /*0x5e9dea*/
   }
   else
   {
@@ -5143,7 +5143,7 @@ int SetupMultiplayerLobbyPlayers(HWND hDlg, int a2)
           ComboBoxSelectedRaw = -2; /*0x5edaa5*/
         }
   LABEL_100:
-        SessionClass::AssignColor((SessionClass *)&dword_A8B238, ComboBoxSelectedRaw, 0); /*0x5edaaa*/
+        ((SessionClass *)((SessionClass *)&dword_A8B238))->AssignColor(ComboBoxSelectedRaw, 0); /*0x5edaaa*/
         if ( dword_A8DA84 ) /*0x5edabe*/
           ((SessionClass *)((int *)*dword_A8DA78))->SetPlayerColor(ComboBoxSelectedRaw); /*0x5edac9*/
       }
@@ -5215,7 +5215,7 @@ int SetupMultiplayerLobbyPlayers(HWND hDlg, int a2)
       {
         SetupLobbyPlayerSlots(hDlg, (int)nIDDlgItema, ComboBoxSelectedRaw2); /*0x5edbda*/
         if ( dword_A8DA84 ) /*0x5edbe6*/
-          SessionClass::SetOption2((int *)*dword_A8DA78, ComboBoxSelectedRaw2); /*0x5edbf4*/
+          ((SessionClass *)((int *)*dword_A8DA78))->SetOption2(ComboBoxSelectedRaw2); /*0x5edbf4*/
       }
       else
       {
@@ -5372,7 +5372,7 @@ int Lobby_RefreshPlayerSlots(unsigned int a1)
           v10 = (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 44))(dword_A8B23C); /*0x5ee63a*/
           SetupLobbyPlayerSlots(v2, v7, v10); /*0x5ee642*/
           v11 = (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 44))(dword_A8B23C); /*0x5ee64f*/
-          SessionClass::SetOption2(v5, v11); /*0x5ee655*/
+          ((SessionClass *)(v5))->SetOption2(v11); /*0x5ee655*/
   LABEL_24:
           result = (int)(v12 + 1); /*0x5ee67e*/
           if ( (int)++v12 >= v13 ) /*0x5ee690*/
@@ -5825,7 +5825,7 @@ int Lobby_SelectCountry(HWND a1, void * a2)
   result = CountryCombo::IDToIndex(a2); /*0x5e9b6f*/
   if ( (ObjectClass *)result == dword_A8DA8C ) /*0x5e9b7a*/
   {
-    SessionClass::AssignSide((SessionClass *)&dword_A8B238, ComboBoxSelected, 0); /*0x5e9b84*/
+    ((SessionClass *)((SessionClass *)&dword_A8B238))->AssignSide(ComboBoxSelected, 0); /*0x5e9b84*/
     result = dword_A8DA84; /*0x5e9b89*/
     if ( dword_A8DA84 ) /*0x5e9b90*/
 // 0x696f90

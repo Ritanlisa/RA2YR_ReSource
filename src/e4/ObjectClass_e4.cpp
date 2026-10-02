@@ -1537,7 +1537,7 @@ AbstractClass * * ObjectClass::Destroy2()
 LABEL_10:
     (*((void (**)(ObjectClass *))this->AbstractClass + 84))(this); /*0x5f52e9*/
   if ( (ObjectClass *)MapClass::GetScrollMode((MapClass *)&stru_87F5F0.__pad_58[416]) == this ) /*0x5f52fd*/
-    MapClass::SetScrollMode((int)&stru_87F5F0.__pad_58[416], 0); /*0x5f5306*/
+    ((MapClass *)((int)&stru_87F5F0.__pad_58[416]))->SetScrollMode(0); /*0x5f5306*/
   LOBYTE(v5) = v7; /*0x5f530b*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, v5); /*0x5f5311*/
   return result; /*0x5f5316*/
@@ -1875,12 +1875,12 @@ unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP
   {
     *(v13 - 4) = 0; /*0x6a7eb2*/
     if ( *v13 > 0 ) /*0x6a7ebd*/
-      DialogControl::Hide(v12); /*0x6a7ec1*/
+      ((DialogControl *)(v12))->Hide(); /*0x6a7ec1*/
     v12 = (GadgetClass *)((char *)v12 + 96); /*0x6a7ec6*/
     v13 += 997; /*0x6a7ec9*/
   }
   while ( (int)v12 < (int)&dword_B07DC8 ); /*0x6a7ed5*/
-  GadgetClass::Show((GadgetClass *)(&stru_B07C48 + 8 * *(unsigned int *)(v7 + 21404))); /*0x6a7ee9*/
+  ((GadgetClass *)((GadgetClass *)(&stru_B07C48 + 8 * *(unsigned int *)(v7 + 21404))))->Show(); /*0x6a7ee9*/
   v14 = v7 + 3988 * *(unsigned int *)(v7 + 21404) + 5444; /*0x6a7f01*/
   *(unsigned char *)(v7 + 3988 * *(unsigned int *)(v7 + 21404) + 5472) = 1; /*0x6a7f08*/
   v15 = 26; /*0x6a7f1a*/
@@ -2493,7 +2493,7 @@ namespace gamemd {
 unsigned int * ObjectClass::updateAnimation(char a2)
 {
 
-  GadgetClass::Dtor(Block); /*0x6ac7a3*/
+  ((GadgetClass *)(Block))->Dtor(); /*0x6ac7a3*/
   if ( (a2 & 1) != 0 ) /*0x6ac7ad*/
     __3_YAXPAX_Z(Block); /*0x6ac7b0*/
   return Block; /*0x6ac7ba*/
@@ -2535,7 +2535,7 @@ namespace gamemd {
 unsigned int * ObjectClass::clearTarget(char a2)
 {
 
-  GadgetClass::Dtor((GadgetClass *)this); /*0x72a673*/
+  ((GadgetClass *)((GadgetClass *)this))->Dtor(); /*0x72a673*/
   if ( (a2 & 1) != 0 ) /*0x72a67d*/
     __3_YAXPAX_Z(this); /*0x72a680*/
   return this->__pad_0; /*0x72a68a*/
@@ -2604,7 +2604,7 @@ unsigned int * ObjectClass::loc_7A2E70(HWND hWnd, unsigned int a2, int a3, unsig
     {
       if ( a2 == 1175 ) /*0x7a2ab6*/
       {
-        v20 = String::GetOrEmpty((String *)&stru_B76AC4); /*0x7a2ac6*/
+        v20 = ((String *)((String *)&stru_B76AC4))->GetOrEmpty(); /*0x7a2ac6*/
         StringCSF = GetStringCSF(aWolAddbuddyque, 0, g_Str_File_wonline_cpp, 29291); /*0x7a2ad8*/
         swprintf(lParam, (const size_t)StringCSF, (const wchar_t *const)v20); /*0x7a2ae6*/
         DlgItem = GetDlgItem(hWnd, 1819); /*0x7a2af4*/
@@ -2633,7 +2633,7 @@ LABEL_53:
       return 0; /*0x7a2e60*/
     }
     memset(&v22[8], 0, 0x6Cu); /*0x7a2ba1*/
-    v9 = String::GetOrEmpty_Alt((String *)&stru_B76AC4); /*0x7a2ba8*/
+    v9 = ((String *)((String *)&stru_B76AC4))->GetOrEmpty_Alt(); /*0x7a2ba8*/
     strncpy(&v22[44], v9, 9u); /*0x7a2bb3*/
     (*(void (**)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 224))(ppv, &v22[8]); /*0x7a2bc8*/
     if ( !(uint8_t)MapSeed::CheckName((MapSeed *)&stru_B76AC4) ) /*0x7a2bda*/
@@ -2647,12 +2647,12 @@ LABEL_52:
     v11 = *(unsigned int *)g_WindowManager.__pad_0; /*0x7a2bf3*/
     if ( *(int *)g_WindowManager.__pad_0 >= (int)g_WindowManager.Array_field_0x4 ) /*0x7a2bff*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&g_WindowManager); /*0x7a2c06*/
+      ((DynamicVector *)((DynamicVector *)&g_WindowManager))->EnsureCapacity(); /*0x7a2c06*/
       v10 = *(unsigned int *)g_WindowManager.__pad_0; /*0x7a2c0b*/
     }
     if ( v10 >= (int)g_WindowManager.Array_field_0x4 ) /*0x7a2c16*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&g_WindowManager); /*0x7a2c1d*/
+      ((DynamicVector *)((DynamicVector *)&g_WindowManager))->EnsureCapacity(); /*0x7a2c1d*/
       v10 = *(unsigned int *)g_WindowManager.__pad_0; /*0x7a2c22*/
     }
     if ( v11 < v10 ) /*0x7a2c29*/
@@ -2674,12 +2674,12 @@ LABEL_52:
     v14 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x7a2c7a*/
     if ( *(int *)&stru_B76900.needsRedraw >= *(int *)&stru_B76900.hasParachute ) /*0x7a2c86*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76900.needsRedraw); /*0x7a2c8d*/
+      ((DynamicVector *)((DynamicVector *)&stru_B76900.needsRedraw))->EnsureCapacity(); /*0x7a2c8d*/
       v13 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x7a2c92*/
     }
     if ( v13 >= *(int *)&stru_B76900.hasParachute ) /*0x7a2c9d*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76900.needsRedraw); /*0x7a2ca4*/
+      ((DynamicVector *)((DynamicVector *)&stru_B76900.needsRedraw))->EnsureCapacity(); /*0x7a2ca4*/
       v13 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x7a2ca9*/
     }
     if ( v14 < v13 ) /*0x7a2cb0*/
@@ -2701,12 +2701,12 @@ LABEL_52:
     v17 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x7a2d01*/
     if ( *(int *)g_WOL_BuddyList.__pad_0 >= *(int *)&g_WOL_BuddyList.DynamicVector_field_0x1[3] ) /*0x7a2d0d*/
     {
-      DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x7a2d14*/
+      ((DynamicVector *)(&g_WOL_BuddyList))->EnsureCapacity(); /*0x7a2d14*/
       v16 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x7a2d19*/
     }
     if ( v16 >= *(int *)&g_WOL_BuddyList.DynamicVector_field_0x1[3] ) /*0x7a2d24*/
     {
-      DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x7a2d2b*/
+      ((DynamicVector *)(&g_WOL_BuddyList))->EnsureCapacity(); /*0x7a2d2b*/
       v16 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x7a2d30*/
     }
     if ( v17 < v16 ) /*0x7a2d37*/
@@ -2743,7 +2743,7 @@ LABEL_51:
         ((DynamicArray *)((DynamicArray *)&stru_B76900.needsRedraw))->Remove(0); /*0x7a2ddf*/
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x7a2deb*/
       memset(&v22[116], 0, 0x6Cu); /*0x7a2dfe*/
-      strcpy(&v22[152], String::GetOrEmpty((String *)&g_WindowManager.__pad_14[16])); /*0x7a2e31*/
+      strcpy(&v22[152], ((String *)((String *)&g_WindowManager.__pad_14[16]))->GetOrEmpty()); /*0x7a2e31*/
       (*(void (**)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 96))(ppv, &v22[116]); /*0x7a2e43*/
     }
     goto LABEL_51; /*0x7a2e43*/

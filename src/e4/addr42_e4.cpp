@@ -525,7 +525,7 @@ void* ObjectClass::ProductionCompletionCallback(543 B)
           0);
         ((House *)((int)v5))->AnnounceUpgrade(-1); /*0x424eda*/
         p_smudgeTypeIndex = (int16_t *)&v5->smudgeTypeIndex; /*0x424edf*/
-        Cell::SetRadar((Cell *)&dword_87F7E8, p_smudgeTypeIndex); /*0x424ee8*/
+        ((Cell *)((Cell *)&dword_87F7E8))->SetRadar(p_smudgeTypeIndex); /*0x424ee8*/
         Radar::Update((Radar *)&dword_87F7E8, p_smudgeTypeIndex); /*0x424ef3*/
       }
     }
@@ -772,7 +772,7 @@ int E4Recv_425670::ConstructionPositionTracker()
       v55 = this->location[1]; /*0x4258fc*/
       v21 = this->location[2]; /*0x425904*/
       v22 = (int *)(*(int (**)(TechnoClass *, int *))(vtable0 + 72))(this, &v54); /*0x42590a*/
-      v23 = *(unsigned int *)Cell::GetHeight((Cell *)&v49, v22, &this->animation[4]); /*0x425917*/
+      v23 = *(unsigned int *)((Cell *)((Cell *)&v49))->GetHeight(v22, &this->animation[4]); /*0x425917*/
       v54 = *location; /*0x42591d*/
       v55 = this->location[1]; /*0x425924*/
       v56 = this->location[2]; /*0x425938*/
@@ -1731,7 +1731,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
         goto LABEL_20; /*0x42b504*/
       }
     }
-    v15 = CellStruct::Add(&v50, &v57, (unsigned short *)(4 * *v12 + 9041544)); /*0x42b4ef*/
+    v15 = ((CellStruct *)(&v50))->Add(&v57, (unsigned short *)(4 * *v12 + 9041544)); /*0x42b4ef*/
     goto LABEL_16; /*0x42b4ef*/
   }
   LABEL_20:
@@ -1793,7 +1793,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
           if ( !v41 ) /*0x42b793*/
             goto LABEL_53; /*0x42b793*/
         }
-        v43 = (int **)CellStruct::Add(&a6, &a4, (unsigned short *)(4 * *v40 + 9041544)); /*0x42b784*/
+        v43 = (int **)((CellStruct *)(&a6))->Add(&a4, (unsigned short *)(4 * *v40 + 9041544)); /*0x42b784*/
         goto LABEL_51; /*0x42b784*/
       }
       v26 = 1; /*0x42b5f5*/

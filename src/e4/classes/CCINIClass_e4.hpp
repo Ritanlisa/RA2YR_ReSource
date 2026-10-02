@@ -49,7 +49,7 @@ struct CCINIClass {
     int InitFromINIEVA();
     int ReadTypeList(char * a1, CCINIClass * a2);
 CCINIClass();
-     MultiplayerGameMode * * Load(int a2, char a3, char a4, void *a4_2);  // load INI from file
+     MultiplayerGameMode * * Load(int a2, char a3, char a4);  // load INI from file
     int IterateNodes(int a2);  // 0x710550
 };
 

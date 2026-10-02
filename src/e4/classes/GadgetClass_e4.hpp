@@ -30,9 +30,9 @@ struct GadgetClass {
 // --- flat members (END) ---
     AbstractClass * * FindByWindow(HWND hWnd, LPARAM a2);
     AbstractClass * * SetTooltip(void * String);
-    ControlClass Dtor(void *a1);
+    ControlClass Dtor();
     ControlClass DrawBuildingPlacement(ControlClass * aP1);
-    ControlClass Show(void *a1, void *a2);
+    ControlClass Show();
     ControlClass Construct(int a2, int a3, int a4, int a5, int a6, char a7);
     static double Hide(...);  // C2597 interim stub
 };

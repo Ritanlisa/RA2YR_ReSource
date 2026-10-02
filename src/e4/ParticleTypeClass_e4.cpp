@@ -308,7 +308,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   this->ParticleTypeClass_field_0x2CC = *(VectorClass **)(RGBColorList + 20); /*0x644fc6*/
   *(unsigned int *)this->__pad_2D0 = *(unsigned int *)(RGBColorList + 24); /*0x644fd3*/
   v52[0] = (int)&vt_VectorClass; /*0x644fd9*/
-  FilePipe_38::ddtor((int)v52); /*0x644fe1*/
+  ((FilePipe_38 *)((int)v52))->ddtor(); /*0x644fe1*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644ff5*/
                     (bool *)aP1,
                     (uint8_t *)&this->ParticleTypeClass_field_0x24,
@@ -786,7 +786,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
   }
   Block->__pad_2C0[5] = 0; /*0x645a3b*/
   *(unsigned int *)Block->__pad_2C0 = 0; /*0x645a42*/
-  ObjectTypeClass::Destruct((int)Block); /*0x645a4c*/
+  ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x645a4c*/
   if ( (a2 & 1) != 0 ) /*0x645a56*/
     __3_YAXPAX_Z(Block); /*0x645a59*/
   return &Block->ArrayIndex; /*0x645a63*/

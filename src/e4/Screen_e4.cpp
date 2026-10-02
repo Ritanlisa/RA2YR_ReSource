@@ -517,7 +517,7 @@ int Screen::TransitionLoop(int a2)
     v17[1] = v4 + Rect.top; /*0x6901d7*/
     v17[2] = 640; /*0x6901db*/
     v17[3] = 400; /*0x6901e3*/
-    Rect::Set(&v19, v3, v4, 640, 400); /*0x6901eb*/
+    ((Rect *)(&v19))->Set(v3, v4, 640, 400); /*0x6901eb*/
     if ( stru_887598.lineTrailer ) /*0x6901f8*/
       (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x690205*/
         stru_887598.lineTrailer,

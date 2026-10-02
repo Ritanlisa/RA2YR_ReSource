@@ -1222,7 +1222,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
         v35 = 0; /*0x75c44f*/
         v36 = 0; /*0x75c453*/
         v20 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x75c463*/
-        if ( Object::FindClosestObjectCell((Object *)v20, &v35, 0, 0) == v19[183] )
+        if ( ((Object *)((Object *)v20))->FindClosestObjectCell(&v35, 0, 0) == v19[183] )
         {
           v21 = v19 ? ((*(int (**)(unsigned int *))(*v19 + 44))(v19) == 15 ? (unsigned int)v19 : 0) : 0;
           v22 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x75c49a*/

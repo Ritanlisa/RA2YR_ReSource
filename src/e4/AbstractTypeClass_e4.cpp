@@ -17,7 +17,7 @@
 
 // 0x410800
 namespace gamemd {
-int AbstractTypeClass::Constructor(AbstractClass * aP1, void *a2, void *a3)
+int AbstractTypeClass::Constructor(char *aP1)
 {
 
   char *v3; // ebx
@@ -92,7 +92,7 @@ LABEL_9:
 } // namespace gamemd
 // 0x4109C0
 namespace gamemd {
-int AbstractTypeClass::Dtor(void *a1)
+int AbstractTypeClass::Dtor()
 {
 
   int v2; // eax

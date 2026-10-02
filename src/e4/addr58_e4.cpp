@@ -873,13 +873,13 @@ ScenarioClass * * ComputeMapCameraBounds()
       *(unsigned int *)&g_MissionQueueFrame.globalVariables[8 * v9 + 172] = ((unsigned int)v11 >> 31) + (v11 >> 4); /*0x58b907*/
       g_MissionQueueFrame.localVariables[162] = v9 + 1; /*0x58b910*/
     }
-    LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58b924*/
+    ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x58b924*/
     v12 = 10000; /*0x58b929*/
     v25 = 10000; /*0x58b933*/
     v13 = 0; /*0x58b937*/
-    for ( j = (int16_t *)LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58b942*/
+    for ( j = (int16_t *)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x58b942*/
           j;
-          j = (int16_t *)LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
+          j = (int16_t *)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
     {
       if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea(j + 18, 1) ) /*0x58b953*/
       {
@@ -1162,11 +1162,11 @@ AbstractClass * * sub_58EF10()
   unsigned short v17[2]; // [esp+10h] [ebp-4h] BYREF
 
   v16 = 1; /*0x58ef1e*/
-  Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], 0); /*0x58ef23*/
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58ef2d*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58ef41*/
+  ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetBounds(0); /*0x58ef23*/
+  ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x58ef2d*/
+  for ( i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x58ef41*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
+        i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
   {
     if ( !v16 ) /*0x58ef47*/
       break; /*0x58ef47*/

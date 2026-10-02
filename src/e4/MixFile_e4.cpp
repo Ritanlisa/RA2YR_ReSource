@@ -219,7 +219,7 @@ AbstractClass * * MixFile::LoadSide()
     House_Load(); /*0x5352e3*/
     Game::InitializeToolTipColor(v16); /*0x5352ec*/
     CCFileClass::Construct(&v21, aUimdIni); /*0x5352fd*/
-    if ( CCINIClass::Load(&dword_887208, (int)&v21, 0, 0) ) /*0x535311*/
+    if ( ((CCINIClass *)(&dword_887208))->Load((int)&v21, 0, 0) ) /*0x535311*/
     {
       SidebarClass::ReadButtonList((SidebarClass *)dword_8871E0); /*0x53533d*/
       SidebarClass::LoadButtonSHPs((TabClass *)&dword_87F7E8); /*0x535347*/

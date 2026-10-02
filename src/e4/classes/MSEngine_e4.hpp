@@ -54,8 +54,8 @@ struct MSEngine {
     AbstractClass * * Release(int a2, char * a3);  // 0x5ACD30
     AbstractClass * * SetCapacity(int a2, char * a3);  // 0x5ACED0
     CampaignClass * Destructor(void *a1_1);  // 0x5CEE60
-    CampaignClass * Construct(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1);  // 0x5D1AA0
-    CampaignClass * Destruct(void *a1_1, void *a2_1);  // 0x5D1B30
+    CampaignClass * Construct();  // 0x5D1AA0
+    CampaignClass * Destruct();  // 0x5D1B30
     int ProcessEvents(char aP1, int a3);  // 0x5D1DF0
     CampaignClass * ClearBuffer(void *a1_1);  // 0x5AC520
     unsigned int * Shutdown(unsigned int * a2, int a3);  // 0x5AC570

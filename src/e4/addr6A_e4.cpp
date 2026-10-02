@@ -125,7 +125,7 @@ int E4Recv_6A74A0::sub_6A74A0(int a2)
   int v6; // ebp
 
   *((unsigned int *)this + 5351) = a2; /*0x6a74b6*/
-  GadgetClass::Show((GadgetClass *)(&stru_B07C48 + 8 * a2)); /*0x6a74bc*/
+  ((GadgetClass *)((GadgetClass *)(&stru_B07C48 + 8 * a2)))->Show(); /*0x6a74bc*/
   v3 = (unsigned int *)((char *)this + 3988 * *((unsigned int *)this + 5351) + 5444); /*0x6a74d4*/
   *((unsigned char *)this + 3988 * *((unsigned int *)this + 5351) + 5472) = 1; /*0x6a74db*/
   v4 = 26; /*0x6a74ed*/
@@ -538,7 +538,7 @@ void ShowSkirmishSetupScreen(void * a1, void * a2)
   {
     dword_B0B59C = (unsigned int)(Dialog);
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x6ae341*/
-    Dialog::Show((Dialog *)Dialog); /*0x6ae349*/
+    ((Dialog *)((Dialog *)Dialog))->Show(); /*0x6ae349*/
     for ( j = dwNewLong; dwNewLong != 1559; j = dwNewLong ) /*0x6ae357*/
     {
       if ( j == 1472 ) /*0x6ae35e*/
@@ -761,7 +761,7 @@ int TechnoClass::ProcessDeployAction()
                                         *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256,
                                         1);
           v30 = *((BuildingClass *)((BuildingClass *)this))->FindPlacementCells2(&v33, *(int *)v29); /*0x6b0100*/
-          v16 = CellStruct::Sub((CellStruct *)&v30, &v34, v29); /*0x6b0104*/
+          v16 = ((CellStruct *)((CellStruct *)&v30))->Sub(&v34, v29); /*0x6b0104*/
           v17 = *((int16_t *)v16 + 1); /*0x6b0109*/
           v18 = *(int16_t *)v16; /*0x6b010d*/
           v31 = v17; /*0x6b0110*/
@@ -784,7 +784,7 @@ int TechnoClass::ProcessDeployAction()
           v20 = (CellStruct *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->occupant + 440))( /*0x6b014d*/
                                 this->occupant,
                                 v35);
-          v21 = CellStruct::Sub(v20, &v34, v29); /*0x6b015f*/
+          v21 = ((CellStruct *)(v20))->Sub(&v34, v29); /*0x6b015f*/
           v22 = *(int16_t *)v21; /*0x6b0168*/
           v31 = *((int16_t *)v21 + 1); /*0x6b016b*/
           __asm { fild [esp+38h+var_20] } /*0x6b0172*/
@@ -1176,7 +1176,7 @@ void sub_6A4C40()
   if ( (byte_B07BB0 & 1) == 0 ) /*0x6a4c4a*/
   {
     byte_B07BB0 |= 1u; /*0x6a4c4e*/
-    GadgetClass::Dtor(&stru_B07E58); /*0x6a4c59*/
+    ((GadgetClass *)(&stru_B07E58))->Dtor(); /*0x6a4c59*/
   }
 }
 } // namespace gamemd
@@ -1346,7 +1346,7 @@ void sub_6A4E10()
     do /*0x6a4e3b*/
     {
       v0 -= 14; /*0x6a4e30*/
-      GadgetClass::Dtor(v0); /*0x6a4e35*/
+      ((GadgetClass *)(v0))->Dtor(); /*0x6a4e35*/
       --v1; /*0x6a4e3a*/
     }
     while ( v1 ); /*0x6a4e3b*/

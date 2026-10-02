@@ -266,12 +266,12 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   v6 = g_MapCellWidth * g_MapCellWidth; /*0x578ed1*/
   for ( i = 0; i < v6; Entry[74] = 1 ) /*0x578ed8*/
     Entry = GetTileDataEntry(i++); /*0x578edc*/
-  Mouse::SetBounds((int)&dword_87F7E8, 0); /*0x578ef0*/
+  ((Mouse *)((int)&dword_87F7E8))->SetBounds(0); /*0x578ef0*/
   dword_87F8F8 = dword_87F8DC; /*0x578f00*/
   dword_87F8F4 = 1; /*0x578f0d*/
   dword_87F8FC = dword_87F8DC - 1; /*0x578f16*/
   dword_87F900 = (dword_87F8DC << 11) + dword_87F924 + 4; /*0x578f25*/
-  for ( j = LayerClass::CellIteratorNext(&dword_87F7E8); j; j = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x578f35*/
+  for ( j = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); j; j = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext() ) /*0x578f35*/
   {
     if ( !v2 ) /*0x578f39*/
       break; /*0x578f39*/
@@ -281,7 +281,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   dword_87F8F4 = 1; /*0x578f66*/
   dword_87F8FC = dword_87F8DC - 1; /*0x578f72*/
   dword_87F900 = (dword_87F8DC << 11) + dword_87F924 + 4; /*0x578f81*/
-  for ( k = LayerClass::CellIteratorNext(&dword_87F7E8); k; k = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x578f8f*/
+  for ( k = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); k; k = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext() ) /*0x578f8f*/
   {
     if ( !v2 ) /*0x578f93*/
       break; /*0x578f93*/
@@ -353,7 +353,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   v52[2] = (unsigned int)((IUnknown *)((unsigned int)((IUnknown *)(aP0))));
   v45 = (unsigned int)((IUnknown *)(0));
   aP2 = (IUnknown *)(v7);
-  CellData = (char *)((IUnknown *)(Tactical::GetCellData((int16_t *)&aP2)));
+  CellData = (char *)((IUnknown *)(((Tactical *)((int16_t *)&aP2))->GetCellData()));
   *((unsigned int *)CellData + 16) = ((Cell *)(aP0))->GetTerrainMask((int *)aP2, 2); /*0x57a467*/
   TerrainMask = ((Cell *)(aP0))->GetTerrainMask((int *)aP2, 0); /*0x57a46a*/
   v10 = TerrainMask; /*0x57a46f*/
@@ -493,7 +493,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
           && v42 <= dword_ABED08 )
         {
           v52[0] = v41; /*0x57a8b6*/
-          v43 = Tactical::GetCellData((int16_t *)v52); /*0x57a8ba*/
+          v43 = ((Tactical *)((int16_t *)v52))->GetCellData(); /*0x57a8ba*/
           a5 = a5; /*0x57a8bf*/
           *((unsigned int *)v43 + 16) = -1; /*0x57a8c7*/
           RecursiveCellClassNeighbourUpdate(NeighbourContent, aP1a, a5); /*0x57a8d5*/
@@ -1306,7 +1306,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
     }
     IDA_LOBYTE(v54) = 0; /*0x57de54*/
     PlacementRect = BuildingClass::GetPlacementRect((int)v5, v55); /*0x57de62*/
-    StartCoords = House::GetStartCoords((int)v5, &rcDst); /*0x57de67*/
+    StartCoords = ((House *)((int)v5))->GetStartCoords(&rcDst); /*0x57de67*/
     if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57de7c*/
     {
       v19 = *PlacementRect; /*0x57df02*/
@@ -1400,7 +1400,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       *(unsigned int *)&v47->__pad_28[28] = v23; /*0x57e01b*/
       v62[1] = dword_886FA4; /*0x57e029*/
       v62[0] = DSurface_ViewBounds; /*0x57e034*/
-      v26 = (struct tagRECT *)House::GetStartCoords(v24, v65); /*0x57e04a*/
+      v26 = (struct tagRECT *)((House *)(v24))->GetStartCoords(v65); /*0x57e04a*/
       v27 = (struct tagRECT *)BuildingClass::GetPlacementRect(v24, v64); /*0x57e04c*/
       if ( v26->right <= 0 || v26->bottom <= 0 ) /*0x57e061*/
       {
@@ -1462,10 +1462,10 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
         IDA_LOBYTE(v54) = 1; /*0x57e1e8*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v1); /*0x57e1ec*/
         right = 0x10000; /*0x57e1fd*/
-        v50[0] = *CellStruct::Add(v1, v52, &right); /*0x57e21a*/
+        v50[0] = *((CellStruct *)(v1))->Add(v52, &right); /*0x57e21a*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57e21e*/
         v39 = ((CellStruct *)(v52))->Set(0, 1); /*0x57e22a*/
-        v50[0] = *CellStruct::Sub(v1, &right, v39); /*0x57e248*/
+        v50[0] = *((CellStruct *)(v1))->Sub(&right, v39); /*0x57e248*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57e24c*/
       }
       ((House *)(v24))->AnnounceUpgrade(-1); /*0x57e255*/
@@ -1590,7 +1590,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
     }
     IDA_LOBYTE(v55) = 0; /*0x57e393*/
     PlacementRect = BuildingClass::GetPlacementRect((int)v5, v62); /*0x57e3a1*/
-    StartCoords = House::GetStartCoords((int)v5, &rcDst); /*0x57e3a6*/
+    StartCoords = ((House *)((int)v5))->GetStartCoords(&rcDst); /*0x57e3a6*/
     if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57e3bb*/
     {
       v21 = *PlacementRect; /*0x57e448*/
@@ -1679,7 +1679,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       v50->q044 = v23; /*0x57e52b*/
       v61[1] = dword_886FA4; /*0x57e539*/
       v61[0] = DSurface_ViewBounds; /*0x57e547*/
-      v26 = (struct tagRECT *)House::GetStartCoords((int)v5, v66); /*0x57e55a*/
+      v26 = (struct tagRECT *)((House *)((int)v5))->GetStartCoords(v66); /*0x57e55a*/
       v27 = (struct tagRECT *)BuildingClass::GetPlacementRect((int)v5, v65); /*0x57e55c*/
       if ( v26->right <= 0 || v26->bottom <= 0 ) /*0x57e571*/
       {
@@ -1748,7 +1748,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
         v51[0] = right; /*0x57e708*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57e712*/
         right = 1; /*0x57e723*/
-        v51[0] = *CellStruct::Sub(aP0, v56, &right); /*0x57e73a*/
+        v51[0] = *((CellStruct *)(aP0))->Sub(v56, &right); /*0x57e73a*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57e744*/
       }
       ((House *)((int)v5))->AnnounceUpgrade(-1); /*0x57e74c*/
@@ -1872,7 +1872,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
     }
     IDA_LOBYTE(v54) = 0; /*0x57e8a8*/
     PlacementRect = BuildingClass::GetPlacementRect((int)v5, v55); /*0x57e8b6*/
-    StartCoords = House::GetStartCoords((int)v5, &rcDst); /*0x57e8bb*/
+    StartCoords = ((House *)((int)v5))->GetStartCoords(&rcDst); /*0x57e8bb*/
     if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57e8d0*/
     {
       v19 = *PlacementRect; /*0x57e956*/
@@ -1966,7 +1966,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       *(unsigned int *)&v47->__pad_28[28] = v23; /*0x57ea75*/
       v62[1] = dword_886FA4; /*0x57ea83*/
       v62[0] = DSurface_ViewBounds; /*0x57ea8e*/
-      v26 = (struct tagRECT *)House::GetStartCoords(v24, v65); /*0x57eaa4*/
+      v26 = (struct tagRECT *)((House *)(v24))->GetStartCoords(v65); /*0x57eaa4*/
       v27 = (struct tagRECT *)BuildingClass::GetPlacementRect(v24, v64); /*0x57eaa6*/
       if ( v26->right <= 0 || v26->bottom <= 0 ) /*0x57eabb*/
       {
@@ -2028,10 +2028,10 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
         IDA_LOBYTE(v54) = 1; /*0x57ec45*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v1); /*0x57ec49*/
         right = 0x10000; /*0x57ec5a*/
-        v50[0] = *CellStruct::Add(v1, v52, &right); /*0x57ec77*/
+        v50[0] = *((CellStruct *)(v1))->Add(v52, &right); /*0x57ec77*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57ec7b*/
         v39 = ((CellStruct *)(v52))->Set(0, 1); /*0x57ec87*/
-        v50[0] = *CellStruct::Sub(v1, &right, v39); /*0x57eca5*/
+        v50[0] = *((CellStruct *)(v1))->Sub(&right, v39); /*0x57eca5*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v50); /*0x57eca9*/
       }
       ((House *)(v24))->AnnounceUpgrade(-1); /*0x57ecb2*/
@@ -2157,7 +2157,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
     }
     IDA_LOBYTE(v55) = 0; /*0x57edf7*/
     PlacementRect = BuildingClass::GetPlacementRect((int)v5, v62); /*0x57ee05*/
-    StartCoords = House::GetStartCoords((int)v5, &rcDst); /*0x57ee0a*/
+    StartCoords = ((House *)((int)v5))->GetStartCoords(&rcDst); /*0x57ee0a*/
     if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57ee1f*/
     {
       v21 = *PlacementRect; /*0x57eeac*/
@@ -2246,7 +2246,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       v50->q044 = v23; /*0x57ef95*/
       v61[1] = dword_886FA4; /*0x57efa3*/
       v61[0] = DSurface_ViewBounds; /*0x57efb1*/
-      v26 = (struct tagRECT *)House::GetStartCoords((int)v5, v66); /*0x57efc4*/
+      v26 = (struct tagRECT *)((House *)((int)v5))->GetStartCoords(v66); /*0x57efc4*/
       v27 = (struct tagRECT *)BuildingClass::GetPlacementRect((int)v5, v65); /*0x57efc6*/
       if ( v26->right <= 0 || v26->bottom <= 0 ) /*0x57efdb*/
       {
@@ -2315,7 +2315,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
         v51[0] = right; /*0x57f175*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57f17f*/
         right = 1; /*0x57f190*/
-        v51[0] = *CellStruct::Sub(aP0, v56, &right); /*0x57f1a7*/
+        v51[0] = *((CellStruct *)(aP0))->Sub(v56, &right); /*0x57f1a7*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57f1b1*/
       }
       ((House *)((int)v5))->AnnounceUpgrade(-1); /*0x57f1b9*/

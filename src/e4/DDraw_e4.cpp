@@ -117,7 +117,7 @@ LABEL_7:
   {
     Debug::Log_0(aOk_1); /*0x4a3fac*/
   }
-  return DSurface::Destroy(v7); /*0x4a3fa1*/
+  return ((DSurface *)(v7))->Destroy(); /*0x4a3fa1*/
 
 }
 } // namespace gamemd

@@ -32,9 +32,9 @@ struct Vector {
     void Destructor(void *a1_1);  // 0x513100
     int MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890
     int Cleanup2();  // 0x67ABE0
-    unsigned short * ToFacingMath(unsigned short * a2);  // 0x41C2E0
+    unsigned short * ToFacingMath(unsigned short *a2);  // 0x41C2E0
     void Clear();  // 0x43AE50
-    int RemoveAt(AbstractClass * aP1, void *a2_1);  // 0x45AE10
+    int RemoveAt(int aP1);  // 0x45AE10
     void ReallocDynamic(int a2, int a2_2);
     int Find(unsigned int * a2);  // 0x4E0550
     BOOL HasCapacity();  // 0x76F0B0

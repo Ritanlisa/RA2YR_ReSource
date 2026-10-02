@@ -116,7 +116,7 @@ ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
       ++v3; /*0x691ffd*/
     }
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x692011*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x692011*/
   if ( (a2 & 1) != 0 ) /*0x69201b*/
     __3_YAXPAX_Z(Block); /*0x69201e*/
   return &Block->AbstractClass; /*0x692028*/

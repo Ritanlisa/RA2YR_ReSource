@@ -481,7 +481,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
               v16 = a1[9]; /*0x6af81f*/
               v76 = ((CellStruct *)(v100))->Set(v79 - 1, FoundationHeight / 2); /*0x6af839*/
               v17 = (unsigned short *)(*(int (**)(int, char *))(v16->airstrikeTintTimer)(v16, v89); /*0x6af849*/
-              v18 = CellStruct::Add(v17, &v99, v76); /*0x6af851*/
+              v18 = ((CellStruct *)(v17))->Add(&v99, v76); /*0x6af851*/
             }
             else
             {
@@ -533,7 +533,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
               v27 = a1[9]; /*0x6af93f*/
               v84[1] = v26 / 2; /*0x6af946*/
               v28 = (unsigned short *)(*(int (**)(int, unsigned short *))(v27->airstrikeTintTimer)(v27, v87); /*0x6af95c*/
-              v82 = *CellStruct::Add(v28, &v91, v84); /*0x6af96b*/
+              v82 = *((CellStruct *)(v28))->Add(&v91, v84); /*0x6af96b*/
             }
             else
             {
@@ -577,7 +577,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
               v37 = a1[9]; /*0x6afa4c*/
               v72 = ((CellStruct *)(v97))->Set(v77 - 1, v36 / 2); /*0x6afa67*/
               v38 = (unsigned short *)(*(int (**)(int, int *, unsigned char *))(v37->airstrikeTintTimer)(v37, &v99, v93); /*0x6afa75*/
-              v39 = CellStruct::Add(v38, v72, a2); /*0x6afa7d*/
+              v39 = ((CellStruct *)(v38))->Add(v72, a2); /*0x6afa7d*/
             }
             else
             {
@@ -606,7 +606,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
             v48 = a1[9]; /*0x6afb5a*/
             v73 = ((CellStruct *)(v87))->Set(v77 - 1, v47 / 2); /*0x6afb71*/
             v49 = (unsigned short *)(*(int (**)(int, char *, char *))(v48->airstrikeTintTimer)(v48, v90, v88); /*0x6afb7e*/
-            v50 = CellStruct::Add(v49, v73, a2); /*0x6afb86*/
+            v50 = ((CellStruct *)(v49))->Add(v73, a2); /*0x6afb86*/
           }
           else
           {
@@ -655,7 +655,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
                              v96,
                              v95,
                              v80);
-            v64 = CellStruct::Add(v63, &v94, (unsigned short *)a3); /*0x6afc7a*/
+            v64 = ((CellStruct *)(v63))->Add(&v94, (unsigned short *)a3); /*0x6afc7a*/
           }
           else
           {

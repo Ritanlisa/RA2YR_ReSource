@@ -64,7 +64,7 @@ char AsyncIO::Shutdown(void *a1)
 } // namespace gamemd
 // 0x774BC0
 namespace gamemd {
-int AsyncIO::WaitCompletion(void *a1)
+int AsyncIO::WaitCompletion()
 {
 
   char v2; // al
@@ -109,7 +109,7 @@ int AsyncIO::WaitCompletion(void *a1)
 } // namespace gamemd
 // 0x5BF500
 namespace gamemd {
-int AsyncIO::Read(void *a1, void *a2)
+int AsyncIO::Read()
 {
 
   int result; // eax

@@ -214,7 +214,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
   v21 = (gamemd::AbstractClass **)((HWND)((gamemd::AbstractClass **)(MessageBox)));
   if ( !MessageBox ) /*0x5f2d6d*/
     return 3; /*0x5f3155*/
-  Dialog::Show(MessageBox); /*0x5f2d76*/
+  ((Dialog *)(MessageBox))->Show(); /*0x5f2d76*/
   (*(void (**)(HWND, int (*)(), int))(*(unsigned int *)g_ClipboardBuffer + 36))( /*0x5f2d88*/
     g_ClipboardBuffer,
     PumpEventLoop,
@@ -252,7 +252,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
   LABEL_35:
       IDA_BYTE2(Buffer) = 0; /*0x5f310c*/
       IDA_LOWORD(Buffer) = word_8327A0; /*0x5f3118*/
-      WinModemClass::WriteSerial((int *)v14, &Buffer, 2u); /*0x5f3124*/
+      ((WinModemClass *)((int *)v14))->WriteSerial(&Buffer, 2u); /*0x5f3124*/
       goto LABEL_36; /*0x5f3124*/
     }
     _strupr((char *)(Source)); /*0x5f2e06*/
@@ -264,7 +264,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
       v11 = GetStringCSF(aTxtAnswering, 0, g_Str_File_NullMgr_CPP, 1647); /*0x5f2e66*/
       Network_Start(hWnd, (LPARAM)v11); /*0x5f2e71*/
             ((Debug *)0)->Log();
-      WinModemClass::WriteSerial((int *)g_ClipboardBuffer, aAta, strlen(aAta)); /*0x5f2e9e*/
+      ((WinModemClass *)((int *)g_ClipboardBuffer))->WriteSerial(aAta, strlen(aAta)); /*0x5f2e9e*/
       v19 = 1; /*0x5f2ea7*/
       v9 = *(unsigned int *)(Buffer + 36); /*0x5f2eac*/
       goto LABEL_22; /*0x5f2eaf*/
@@ -440,7 +440,7 @@ char sub_5FBEF0()
   if ( Dialog ) /*0x5fbf0f*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x5fbf19*/
-    Dialog::Show(Dialog); /*0x5fbf21*/
+    ((Dialog *)(Dialog))->Show(); /*0x5fbf21*/
     while ( dwNewLong < 0 ) /*0x5fbf2c*/
     {
       if ( ((Dialog *)0)->PumpMessages() == 1 ) /*0x5fbf35*/
@@ -524,8 +524,8 @@ AbstractClass * * sub_5FDDF0()
   int v12; // [esp+1Ch] [ebp-8h]
   int v13; // [esp+20h] [ebp-4h]
 
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x5fddfb*/
-  v1 = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x5fde0a*/
+  ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x5fddfb*/
+  v1 = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x5fde0a*/
   v2 = 0; /*0x5fde0e*/
   v3 = 1000; /*0x5fde10*/
   Block = 0; /*0x5fde17*/
@@ -551,7 +551,7 @@ AbstractClass * * sub_5FDDF0()
         *(unsigned int *)(v1 + 68) = -1; /*0x5fde8f*/
         *(unsigned char *)(v1 + 286) = 0; /*0x5fde92*/
       }
-      v1 = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x5fdea2*/
+      v1 = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x5fdea2*/
       if ( !v1 ) /*0x5fdea6*/
         break; /*0x5fdea6*/
       v2 = v9; /*0x5fde3f*/
@@ -1061,7 +1061,7 @@ int E4Recv_5F1F20::sub_5F1F20()
     return 0; /*0x5f1f5b*/
   while ( 1 ) /*0x5f1f37*/
   {
-    TileIndex = Terrain::GetTileIndex((Terrain *)vtable1, v2); /*0x5f1f37*/
+    TileIndex = ((Terrain *)((Terrain *)vtable1))->GetTileIndex(v2); /*0x5f1f37*/
     if ( TileIndex ) /*0x5f1f3e*/
     {
       if ( !*(unsigned char *)(*(unsigned int *)(TileIndex + 20) + 2) && (*(unsigned char *)TileIndex & 2) == 0 ) /*0x5f1f4d*/

@@ -129,7 +129,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     {
       LOWORD(v85.Movement_field_00) -= *aP4; /*0x5b21ba*/
     }
-    *(unsigned int *)v88.__pad_0 = *(int16_t *)Vector::ToFacingMath((int *)&v89, v84) - 0x3FFF; /*0x5b21de*/
+    *(unsigned int *)v88.__pad_0 = *(int16_t *)((Vector *)((int *)&v89))->ToFacingMath(v84) - 0x3FFF; /*0x5b21de*/
     __asm /*0x5b21e4*/
     {
       fild dword ptr [esp+98h+var_64.__pad_0]
@@ -377,7 +377,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
       LOWORD(v89) = 256; /*0x5b28b6*/
       v68 = (Movement *)Movement::Check((Movement *)aP4, &v88, &v89); /*0x5b28bd*/
       v69 = Movement::DivideAndStoreScaled(v68, (int *)&v88.field_4, 2); /*0x5b28c4*/
-      v70 = (int16_t *)Vector::ToFacingMath((int *)v87, v69); /*0x5b28d6*/
+      v70 = (int16_t *)((Vector *)((int *)v87))->ToFacingMath(v69); /*0x5b28d6*/
       Movement::CompareAbsCoords(&v85, v70, v83); /*0x5b28e0*/
     }
     goto LABEL_49; /*0x5b28e0*/

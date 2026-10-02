@@ -761,11 +761,11 @@ void ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
       && ((uint8_t)House::IsHumanPlayer(*((House **)&dword_A8022C->vtable0 + v2))
        || !*(unsigned char *)(*(unsigned int *)(v4 + 52) + 422)) )
     {
-      TabClass::DrawPower(v3, hDlg); /*0x658692*/
+      ((TabClass *)(v3))->DrawPower(hDlg); /*0x658692*/
     }
   }
-  TabClass::DrawPower(v3, hDlg); /*0x6586b4*/
-  return TabClass::DrawPower(v3, hDlg); /*0x6586c3*/
+  ((TabClass *)(v3))->DrawPower(hDlg); /*0x6586b4*/
+  return ((TabClass *)(v3))->DrawPower(hDlg); /*0x6586c3*/
 
 }
 }
@@ -782,7 +782,7 @@ void sub_6586D0()
   if ( Dialog ) /*0x6586f9*/
   {
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x658703*/
-    Dialog::Show(Dialog); /*0x65870b*/
+    ((Dialog *)(Dialog))->Show(); /*0x65870b*/
     dwNewLong = 0; /*0x658710*/
         while ( !this->this->((Dialog *)0)->PumpMessages() )
     {
@@ -2722,7 +2722,7 @@ void sub_6528A0()
   if ( (byte_B048A8 & 1) == 0 ) /*0x6528aa*/
   {
     byte_B048A8 |= 1u; /*0x6528ae*/
-    GadgetClass::Dtor(stru_B04A10); /*0x6528b9*/
+    ((GadgetClass *)(stru_B04A10))->Dtor(); /*0x6528b9*/
   }
 }
 } // namespace gamemd

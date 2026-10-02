@@ -77,7 +77,7 @@ int sub_679CC0()
     v6 = 0; /*0x679d10*/
     v1[0] = (void *)((unsigned int)&CCINIClass_Vtable); /*0x679d14*/
     CCFileClass::Construct(v7,(void *)(g_Str_File_CoopCampMD_ini)); /*0x679d1c*/
-    if ( CCINIClass::Load((int)(v1), (int)v7, 0, 0) ) /*0x679d2c*/
+    if ( ((CCINIClass *)((int)(v1)))->Load((int)v7, 0, 0) ) /*0x679d2c*/
       dword_B053B4 = Hash::ComputeHashSHA1((int)v1); /*0x679d3e*/
     byte_B053B8 = 1; /*0x679d4a*/
     v7[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x679d51*/
@@ -249,7 +249,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     *(unsigned char *)(aP0 + 12) = 1; /*0x67bbf3*/
     *(unsigned char *)(aP0 + 13) = 0; /*0x67bbf7*/
     *(unsigned int *)aP0 = (unsigned int)((void*)&VectorClass_InfantryTypeClass_const___vftable); /*0x67bbfa*/
-    HouseTypeClass::readStartInfantry((HouseTypeClass *)aP0, &v17); /*0x67bc00*/
+    ((HouseTypeClass *)((HouseTypeClass *)aP0))->readStartInfantry(&v17); /*0x67bc00*/
     *(unsigned int *)aP0 = (unsigned int)((void*)&TypeList_InfantryTypeClass_const___vftable); /*0x67bc05*/
     *(unsigned int *)v17.__pad_0 = (unsigned int)((void*)&VectorClass_InfantryTypeClass_const___vftable); /*0x67bc0b*/
     InfantryTypeVector_field_0x14 = v17.InfantryTypeVector_field_0x14; /*0x67bc17*/
@@ -348,7 +348,7 @@ int ArtINI_Load()
 
   INIClass::ClearSection((int)&dword_887180, 0, 0); /*0x679eec*/
   ((CCFileClass *)(v1))->Construct(aArtmdIni); /*0x679efa*/
-  CCINIClass::Load((int)(&dword_887180), (int)v1, 0, 0); /*0x679f0d*/
+  ((CCINIClass *)((int)(&dword_887180)))->Load((int)v1, 0, 0); /*0x679f0d*/
   v1[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x679f16*/
   v3 = 0; /*0x679f1e*/
   ((Vector *)((int)v2))->Clear(); /*0x679f26*/

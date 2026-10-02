@@ -190,12 +190,12 @@ struct JumpjetLocomotionClass {
     char UpdateFacingDirection_2(int a1, int a2);
     char UpdateFacingDirection_3(int a1, int a2);
     char UpdateFacingDirection_4(int a1, int a2);
-    double ComputeVectorLengthMetric(void *a1);
+    double ComputeVectorLengthMetric();
     float * ComputeAudio3DRotation(unsigned int * a1, float * a2, unsigned int * a3);
     float * ComputeAudio3DRotation_0(int a1, float * a2, unsigned int * a3);
     float * ComputeAudio3DRotation_1(unsigned int * a1, float * a2, unsigned int * a3);
     float * ComputeVoxelMatrix(int a1, float * a2, unsigned int * a3);
-    void* AdjustClimbFacing(unsigned int * a2, void *a2_2);
+    void* AdjustClimbFacing(unsigned int *a2);
     int CheckAttachStatus();
     int CheckState(TunnelLocomotionClass * aP0);
     int CheckState2(int a1, int a2);

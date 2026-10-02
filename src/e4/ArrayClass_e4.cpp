@@ -8,7 +8,7 @@
 
 // 0x636E60
 namespace gamemd {
-int ArrayClass::GetAt_Wrap(int a2, void *a2_2)
+int ArrayClass::GetAt_Wrap(int a2)
 {
 
   void *v2; // edi

@@ -647,7 +647,7 @@ BulletTypeClass * BulletTypeClass::ddtor(void ** Block, char a2)
     }
     while ( v4 < dword_A83C90 ); /*0x46c946*/
   }
-  ObjectTypeClass::Destruct((int)Block); /*0x46c94a*/
+  ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x46c94a*/
   if ( (a2 & 1) != 0 ) /*0x46c954*/
     __3_YAXPAX_Z(Block); /*0x46c957*/
   return (void **)Block; /*0x46c961*/
@@ -723,7 +723,7 @@ int BulletTypeClass::ProcessImpact(int a1)
         || ((unsigned int *)Owner)[1] != v1->Dest[0]
         || ((unsigned int *)Owner)[2] != v1->Dest[1] )
       {
-        if ( (uint8_t)TimerClass::Active((int)((unsigned int *)Owner)[0]) ) /*0x69fe28*/
+        if ( (uint8_t)((TimerClass *)((int)((unsigned int *)Owner)[0]))->Active() ) /*0x69fe28*/
         {
           BYTE2(v1->TrackIndex) = 1; /*0x69fe35*/
           goto LABEL_32; /*0x69fe35*/

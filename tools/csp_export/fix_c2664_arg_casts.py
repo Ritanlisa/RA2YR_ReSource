@@ -33,6 +33,19 @@ SCALARS = set('''int unsigned int long unsigned long short unsigned short char
 unsigned char signed char int8_t uint8_t int16_t uint16_t int32_t uint32_t
 int64_t uint64_t bool float double wchar_t size_t'''.split())
 
+# G42.7: Win32 handle typedefs are scalar-or-pointer opaque types -- casting
+# an int/pixel value to HWND is legal and what the corpus means.
+WIN_HANDLES = {'HWND', 'HANDLE', 'LPVOID', 'LPCSTR', 'LPSTR', 'LPCTSTR',
+               'LPCWSTR', 'LPWSTR', 'WNDPROC', 'LPPERSISTSTREAM', 'HDC',
+               'HINSTANCE', 'HHOOK', 'HMENU', 'HBRUSH', 'HFONT', 'HPEN',
+               'HRGN', 'HBITMAP', 'HICON', 'HCURSOR', 'HKEY', 'HMODULE',
+               'HGLOBAL', 'HFILE', 'SOCKET'}
+# G42.7: callee tokens that are really type words -- `\bvoid\s*\(` matches
+# inside `(void (**)(LPVOID,int*))` fn-ptr types; anchoring on them would
+# inject casts into type text (CComObject_e4.cpp:381 evidence).
+TYPE_WORDS = SCALARS | {'void', 'unsigned', 'signed', 'const', '_QWORD',
+                        '_DWORD', '_WORD', '_BYTE', '__int64'}
+
 STATS = {}
 
 
@@ -56,12 +69,16 @@ def callee_of(ln):
 
 
 def dst_castable(dst):
-    if '(' in dst or ')' in dst:
+    d = dst.strip()
+    if d.endswith('const'):        # trailing cv-qualifier: `FILE *const`
+        d = d[:-len('const')].strip()
+    if '(' in d or ')' in d:
         return False
-    if dst.rstrip().endswith('*') or dst.rstrip().endswith('&'):
+    if d.rstrip().endswith('*') or d.rstrip().endswith('&'):
         return True
-    base = re.search(r'([A-Za-z_]\w*)\s*$', dst.rstrip())
-    return bool(base) and base.group(1) in SCALARS
+    base = re.search(r'([A-Za-z_]\w*)\s*$', d)
+    return bool(base) and (base.group(1) in SCALARS
+                           or base.group(1) in WIN_HANDLES)
 
 
 
@@ -92,6 +109,9 @@ def wrap_arg(line, argno, dst, callee=None):
     body = line.split('/*')[0]
     occ = []
     if callee:
+        if callee in TYPE_WORDS:
+            stat('skip-callee-is-type-word')
+            return None
         for cm in re.finditer(r'\b%s\s*\(' % re.escape(callee), body):
             i = cm.end() - 1
             depth = 0

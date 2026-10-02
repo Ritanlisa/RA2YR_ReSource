@@ -66,7 +66,7 @@ struct SlaveManagerClass {
     int CheckIsOne();
     void Constructor(void *a1, void *a2, void *a3);
     int IsMasterHarvester();
-    int LostSlave(ObjectClass * aP1);
+    int LostSlave(int aP1);
     int SaveManager(TechnoTypeClass * aP0, int * a1, int aP2);
     int SetOwner(TechnoClass * aP1);
     int ShouldWakeUpNow();

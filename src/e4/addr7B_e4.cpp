@@ -886,7 +886,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
 
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b954c*/
     ((Debug *)this)->Log(); /*0x7b955d*/
-  if ( (uint8_t)BSurface::CreateTripleBuffer((int)this) && this->occupant ) /*0x7b9574*/
+  if ( (uint8_t)((BSurface *)((int)this))->CreateTripleBuffer() && this->occupant ) /*0x7b9574*/
   {
     v2 = 0; /*0x7b9585*/
     v3 = 0; /*0x7b9587*/
@@ -934,7 +934,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
       0,
       1);
   }
-  Mouse::DrawCursor((Mouse *)this, (int *)this->occupant, 0, 0); /*0x7b966a*/
+  ((Mouse *)((Mouse *)this))->DrawCursor((int *)this->occupant, 0, 0); /*0x7b966a*/
   return ReleaseMutex(hMutex); /*0x7b967c*/
 
 }

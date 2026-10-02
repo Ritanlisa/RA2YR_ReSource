@@ -50,8 +50,8 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   *v3 = 0; /*0x7228e0*/
   for ( i = ((Object *)this)->ComputeAllocationSize() - 1; i >= 0; *(unsigned char *)(*((unsigned int *)this + 62) + i + 1) = 0 ) /*0x7228ec*/
     --i; /*0x7228f4*/
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x722901*/
-  result = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x72290b*/
+  ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x722901*/
+  result = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x72290b*/
   for ( j = (BuildingClass *)result; result; j = (BuildingClass *)result ) /*0x722914*/
   {
     if ( BuildingClass::FindByCellHash(j) == *((unsigned int *)this + 38) && BuildingClass::IsTiberiumSiloEligible(j) ) /*0x722931*/
@@ -96,7 +96,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
       }
       *(unsigned char *)(Cell::PosToIndex(p_occupant) + *((unsigned int *)this + 62)) = 1; /*0x7229f7*/
     }
-    result = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x722a00*/
+    result = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x722a00*/
   }
   return result; /*0x722a11*/
 

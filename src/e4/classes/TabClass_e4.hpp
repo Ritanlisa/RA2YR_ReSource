@@ -53,7 +53,7 @@ struct TabClass {
     unsigned int TabClass_field_0xC;
     unsigned int field_0;
 // --- flat members (END) ---
-    int DrawPower(HWND hDlg, void * a1, AbstractClass * aP2);
+    int DrawPower(void *a1);
     unsigned int * initStripClass();
 };
 

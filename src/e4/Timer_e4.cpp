@@ -48,7 +48,7 @@ int Timer::StartDouble(double a2)
 }
 // 0x4F1B00
 namespace gamemd {
-DWORD * Timer::Init(DWORD a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
+DWORD * Timer::Init(DWORD a2)
 {
 
   *(unsigned int *)this->__pad_0 = Timer::GetTicks(); /*0x4f1b0b*/

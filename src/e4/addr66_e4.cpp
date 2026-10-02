@@ -371,7 +371,7 @@ LABEL_17:
         if ( v9 )
         {
           aP2 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
-          v11 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620[37772]);
+          v11 = (AnimClass *)((AnimTypeClass *)(*(void **)&stru_830620[37772]))->FindIndex();
           AnimClass::ctor(
             (void **)v9,
             *(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v11),
@@ -449,12 +449,12 @@ LABEL_63:
                            *(unsigned int *)(a1 + 8),
                            v128);
         if ( *eax63 == word_B04E18 && eax63[1] == word_B04E1A )
-          GadgetGrid::InsertItem(&stru_87C374[46356], *(ObjectClass **)(a1 + 8));
+          ((GadgetGrid *)(&stru_87C374[46356]))->InsertItem(*(ObjectClass **)(a1 + 8));
         v43 = (AnimClass *)new AnimClass;
         if ( v43 )
         {
           v129 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
-          v45 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620[37772]);
+          v45 = (AnimClass *)((AnimTypeClass *)(*(void **)&stru_830620[37772]))->FindIndex();
           AnimClass::ctor(
             (void **)v43,
             *(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v45),
@@ -611,7 +611,7 @@ LABEL_116:
         if ( v96 )
         {
           v124 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
-          v98 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620[37776]);
+          v98 = (AnimClass *)((AnimTypeClass *)(*(void **)&stru_830620[37776]))->FindIndex();
           AnimClass::ctor(
             (void **)v96,
             *(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v98),
@@ -748,7 +748,7 @@ LABEL_38:
         if ( v25 )
         {
           v131 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
-          v27 = (AnimClass *)AnimTypeClass::FindIndex(*(void **)&stru_830620[37772]);
+          v27 = (AnimClass *)((AnimTypeClass *)(*(void **)&stru_830620[37772]))->FindIndex();
           AnimClass::ctor(
             (void **)v25,
             *(CoordStruct **)(*(unsigned int *)&stru_89E138[90140] + 4 * (unsigned int)v27),
@@ -810,7 +810,7 @@ LABEL_47:
           v130[2] = v35->location[2];
           int v34 = (*(int (**)(ObjectClass *))(*(unsigned int *)v35->__pad_0 + 132))(v35);
           StartAudioControllerAt(*(AudioController **)(v34 + 1324), (int)v130, 0);
-          GadgetGrid::InsertItem(&stru_87C374[46356], *(ObjectClass **)(a1 + 8));
+          ((GadgetGrid *)(&stru_87C374[46356]))->InsertItem(*(ObjectClass **)(a1 + 8));
         }
         edx50 = v126;
         v21->field_0 = *(unsigned int *)&HouseClass_Player[45112];
@@ -873,7 +873,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
     v12 = v7; /*0x663f4a*/
     v15 = a2[3]; /*0x663f5e*/
     NetworkID::Assign(&qword_A8DBB0, &v20, (int)&v12, 0); /*0x663f62*/
-    Network::SetPort((Network *)&qword_A8DBB0, *(unsigned short *)(*dword_A8DA78 + 40)); /*0x663f78*/
+    ((Network *)((Network *)&qword_A8DBB0))->SetPort(*(unsigned short *)(*dword_A8DA78 + 40)); /*0x663f78*/
     dword_A8DBBC = *(unsigned short *)(*dword_A8DA78 + 40); /*0x663f88*/
     v8 = (NetworkID *)(*dword_A8DA78 + 40); /*0x663f91*/
     qword_A8DBA4 = *v8; /*0x663f96*/
@@ -1674,7 +1674,7 @@ char E4Recv_663CD0::sub_663CD0(unsigned char * a2)
   v2 = (Network *)a2; /*0x663cd5*/
   if ( !a2 ) /*0x663cdd*/
     return -1; /*0x663ce0*/
-  if ( Network::IsBroadcastAddr((Network *)a2) ) /*0x663ceb*/
+  if ( ((Network *)((Network *)a2))->IsBroadcastAddr() ) /*0x663ceb*/
     return -1; /*0x663cf5*/
   v5 = 0; /*0x663d0c*/
   ((Network *)(v2))->CopyAddress(&a2, (int)&v10); /*0x663d0e*/

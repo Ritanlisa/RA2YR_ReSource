@@ -589,13 +589,13 @@ HashTable_flat * * Game::StartModemMultiplayer(char a2)
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x5b721a*/
   v13 = MessageBox; /*0x5b721f*/
   if ( MessageBox ) /*0x5b7223*/
-    Dialog::Show(MessageBox); /*0x5b7227*/
+    ((Dialog *)(MessageBox))->Show(); /*0x5b7227*/
   v14 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b7231*/
   if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b7239*/
     v14 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5b724b*/
   while ( 1 ) /*0x5b7252*/
   {
-    if ( !Count::GetCountQueue((Count *)&unk_A8EA70) ) /*0x5b7252*/
+    if ( !((Count *)((Count *)&unk_A8EA70))->GetCountQueue() ) /*0x5b7252*/
       goto LABEL_31; /*0x5b7252*/
     v15 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b7260*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b7268*/
@@ -615,7 +615,7 @@ LABEL_31:
   }
   if ( v13 ) /*0x5b72c6*/
     Dialog::Destroy(v13); /*0x5b72ca*/
-  EventClass::CheckFlag((EventClass *)&unk_A8EA70); /*0x5b72d4*/
+  ((EventClass *)((EventClass *)&unk_A8EA70))->CheckFlag(); /*0x5b72d4*/
   BYTE2(stru_A8D600.Network_field_0xC) = 0; /*0x5b72e4*/
   dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5b72eb*/
   dword_A8B54C = dword_A8DA84; /*0x5b730b*/
@@ -859,7 +859,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
   v16 = dword_A8BB04; /*0x5dbc0a*/
   v14 = (uint8_t)dword_A8BB08; /*0x5dbc0b*/
   v12 = dword_A8BB0C; /*0x5dbc0c*/
-  v4 = String::GetOrEmpty((char **)&v18); /*0x5dbc11*/
+  v4 = ((String *)((char **)&v18))->GetOrEmpty(); /*0x5dbc11*/
   sprintf( /*0x5dbc7e*/
     v1,
     "%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%d,%d,%d,%s,%s:",
@@ -1652,7 +1652,7 @@ void Game::EncodeGameSetupState(char * Buffer)
   v21 = dword_A8BB04; /*0x77e4da*/
   v19 = (uint8_t)dword_A8BB08; /*0x77e4db*/
   v17 = dword_A8BB0C; /*0x77e4dc*/
-  v4 = String::GetOrEmpty((char **)&v25); /*0x77e4e1*/
+  v4 = ((String *)((char **)&v25))->GetOrEmpty(); /*0x77e4e1*/
   sprintf( /*0x77e54e*/
     v1,
     "%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%d,%d,%d,%s,%s:",
@@ -1719,7 +1719,7 @@ LABEL_16:
       v18 = Option; /*0x77e672*/
       v16 = PlayerColor; /*0x77e673*/
       v15 = PlayerSide; /*0x77e674*/
-      v14 = String::GetOrEmpty((char **)&v24); /*0x77e686*/
+      v14 = ((String *)((char **)&v24))->GetOrEmpty(); /*0x77e686*/
       sprintf(&byte_B76C24[strlen(byte_B76C24)], "%s,%d,%d,%d,%d,%x,%x,%x,", v14, v15, v16, v18, v20, v7, v11, v12); /*0x77e69a*/
       DeleteAndZero(&v24); /*0x77e6a6*/
       ++v5; /*0x77e6af*/
@@ -1855,7 +1855,7 @@ Coord * * Game::ProcessIdle(void *a1_1)
         ((String *)(&v31))->Reassign((const char **)dword_B777A8 + v7); /*0x77fb67*/
         ((DynamicArray *)((DynamicArray *)&dword_B777A0))->Remove(v7); /*0x77fb72*/
       }
-      v8 = String::GetOrEmpty(&v31); /*0x77fb80*/
+      v8 = ((String *)(&v31))->GetOrEmpty(); /*0x77fb80*/
       if ( strlen(v8) > 9 ) /*0x77fb91*/
         v8[9] = 0; /*0x77fb93*/
       strcpy(v6 + 36, v8); /*0x77fbb1*/
@@ -1942,7 +1942,7 @@ Coord * * Game::ProcessIdle(void *a1_1)
           }
         }
       }
-      v18 = String::GetOrEmpty(&v31); /*0x77fdf0*/
+      v18 = ((String *)(&v31))->GetOrEmpty(); /*0x77fdf0*/
       if ( strlen(v18) > 9 ) /*0x77fe01*/
         v18[9] = 0; /*0x77fe03*/
       strcpy(v12 + 36, v18); /*0x77fe23*/

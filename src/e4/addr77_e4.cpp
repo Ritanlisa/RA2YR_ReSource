@@ -907,7 +907,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
           {
             Debug::Log(); /*0x7778da*/
             IDA_LOBYTE(v19) = 1; /*0x7778e2*/
-            AsyncIO::Read(v19); /*0x7778e4*/
+            ((AsyncIO *)(v19))->Read(); /*0x7778e4*/
             sub_407020(); /*0x7778e9*/
             if ( stru_887598.lineTrailer ) /*0x7778f6*/
             {
@@ -1110,14 +1110,14 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
   ObjectClass v17; // [esp+Ch] [ebp-D0h] BYREF
 
   *(unsigned int *)&v17.bombVisible = a1; /*0x778a39*/
-  BufferIOFile::Constructor((BufferIOFile *)&v17.spawnStatus, g_Str_File_wolinfoMD_ini); /*0x778a3d*/
-  if ( !(uint8_t)File::IsReady((BufferIOFileClass *)&v17.spawnStatus, 0) ) /*0x778a4c*/
+  ((BufferIOFile *)((BufferIOFile *)&v17.spawnStatus))->Constructor(g_Str_File_wolinfoMD_ini); /*0x778a3d*/
+  if ( !(uint8_t)((File *)((BufferIOFileClass *)&v17.spawnStatus))->IsReady(0) ) /*0x778a4c*/
   {
     FileClass::Close((RawFileClass *)&v17.spawnStatus); /*0x778a5c*/
     CCFileClass::Close((BufferIOFileClass *)&v17.spawnStatus); /*0x778a68*/
     CCFileClass::Reopen((CDFileClass *)&v17.spawnStatus, g_Str_File_wolinfoMD_ini, (CHAR *)1); /*0x778a7b*/
   }
-  if ( (uint8_t)File::IsReady((BufferIOFileClass *)&v17.spawnStatus, 0) )
+  if ( (uint8_t)((File *)((BufferIOFileClass *)&v17.spawnStatus))->IsReady(0) )
   {
     ((unsigned int *)&v17)[0] = 0; /*0x778abf*/
     ((unsigned int *)&v17)[0] = 0; /*0x778ac3*/
@@ -1134,8 +1134,8 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     FileStraw::Open((FileStraw *)&((char *)&v17), (int)&v17.spawnStatus, 0); /*0x778b28*/
     CCFileClass::Close((BufferIOFileClass *)&v17.spawnStatus); /*0x778b34*/
     ((String *)((String *)&((char *)&v17)))->AssignFromPtr(a2); /*0x778b3e*/
-    String::ToLower((String *)&((char *)&v17)); /*0x778b47*/
-    v5 = (uint8_t *)String::GetOrEmpty_Alt((String *)&((char *)&v17)); /*0x778b50*/
+    ((String *)((String *)&((char *)&v17)))->ToLower(); /*0x778b47*/
+    v5 = (uint8_t *)((String *)((String *)&((char *)&v17)))->GetOrEmpty_Alt(); /*0x778b50*/
     if ( INIClass::BinarySearchSection((int)&((char *)&v17), v5) )
     {
       unknown_libname_73(&((char *)&v17)); /*0x778ba4*/
@@ -1145,7 +1145,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       ((String *)((String *)&v17))->Assign(g_INI_Key_Locale); /*0x778be6*/
       Int = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, 0); /*0x778c03*/
       DeleteAndZero(&v17); /*0x778c05*/
-      v7 = (uint8_t *)String::GetOrEmpty((String *)&((char *)&v17)); /*0x778c14*/
+      v7 = (uint8_t *)((String *)((String *)&((char *)&v17)))->GetOrEmpty(); /*0x778c14*/
       Bool_Overwrite = INIClass::ReadBool_Overwrite(&((char *)&v17), v7, (uint8_t *)aLocaleverified, 0); /*0x778c23*/
       IDA_LOBYTE(v17.customSound_controller[4]) = Bool_Overwrite; /*0x778c2e*/
       ((String *)((String *)&v17))->Assign(g_INI_Key_Country); /*0x778c32*/
@@ -1169,7 +1169,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       ((String *)((String *)&v17))->Assign(aDisconnects); /*0x778d51*/
       v17.customSound_controller[2] = INIClass::ReadInt((bool *)&((char *)&v17), (char **)&((char *)&v17), (char **)&v17, -1); /*0x778d6f*/
       DeleteAndZero(&v17); /*0x778d73*/
-      v11 = (uint8_t *)String::GetOrEmpty((String *)&((char *)&v17)); /*0x778d83*/
+      v11 = (uint8_t *)((String *)((String *)&((char *)&v17)))->GetOrEmpty(); /*0x778d83*/
       IDA_LOBYTE(v17.estimatedHealth) = INIClass::ReadBool_Overwrite(&((char *)&v17), v11, (uint8_t *)aMatchbyres, 1); /*0x778d96*/
       unknown_libname_73(&((char *)&v17)); /*0x778d9d*/
       unknown_libname_74(&((char *)&v17)); /*0x778da6*/
@@ -1182,7 +1182,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       ((String *)((String *)&v17))->Assign(g_INI_Key_UpdateDate); /*0x778e07*/
       ((INIClass *)((INIClass *)&((char *)&v17)))->ReadString((char **)&((char *)&v17), (char **)&v17, (char **)&((char *)&v17), (int)&((char *)&v17)); /*0x778e24*/
       DeleteAndZero(&v17); /*0x778e2d*/
-      v12 = String::GetOrEmpty_Alt((String *)&((char *)&v17)); /*0x778e36*/
+      v12 = ((String *)((String *)&((char *)&v17)))->GetOrEmpty_Alt(); /*0x778e36*/
       v13 = CharToWideString(v12); /*0x778e3d*/
       WideString::Reassign((void **)&((char *)&v17), (wchar_t *)v13); /*0x778e47*/
       v14 = (ReferenceCounted *)RA2_OPNEW(0x44u); /*0x778e4e*/
@@ -1270,7 +1270,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
   wchar_t *v28; // eax
   wchar_t *v29; // eax
 
-  v3 = String::GetOrEmpty_Alt(a1); /*0x778f33*/
+  v3 = ((String *)(a1))->GetOrEmpty_Alt(); /*0x778f33*/
   v4 = CharToWideString(v3); /*0x778f3a*/
   WideString::Reassign(a2, (wchar_t *)v4); /*0x778f42*/
   v5 = WideString::GetOrEmpty(a2); /*0x778f4e*/
@@ -2360,7 +2360,7 @@ LABEL_9:
   {
     if ( v3 >= 0 && v3 < *(int *)g_WindowManager.__pad_0 ) /*0x77d41d*/
       ((String *)((String *)&v6))->Reassign((const char **)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v3)); /*0x77d42c*/
-    if ( !strcmp(String::GetOrEmpty((String *)&v6), (const char *)p_occupant) ) /*0x77d442*/
+    if ( !strcmp(((String *)((String *)&v6))->GetOrEmpty(), (const char *)p_occupant) ) /*0x77d442*/
       break; /*0x77d442*/
     if ( ++v3 >= v2 ) /*0x77d46c*/
       goto LABEL_9; /*0x77d46c*/
@@ -2522,7 +2522,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
     {
       if ( v10 >= 0 && v9 < owningHouseIndex ) /*0x77e966*/
         v8 = (char *)g_WOL_UserList.nextObject + v10; /*0x77e96d*/
-      v11 = String::GetOrEmpty_Alt((String *)&v23.q4); /*0x77e978*/
+      v11 = ((String *)((String *)&v23.q4))->GetOrEmpty_Alt(); /*0x77e978*/
       if ( !_strcmpi(v11, v8 + 36) ) /*0x77e97e*/
         break; /*0x77e97e*/
       owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x77e98a*/
@@ -2686,7 +2686,7 @@ void SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, 
     if ( ((SessionClass *)(*(&dword_A8DA90 + v5)))->GetOption2() != aP1a ) /*0x77ee01*/
     {
       v26 = 1; /*0x77ee06*/
-      SessionClass::SetOption2(v12, aP1a); /*0x77ee0a*/
+      ((SessionClass *)(v12))->SetOption2(aP1a); /*0x77ee0a*/
     }
     PlayerSide = ((SessionClass *)(*(&dword_A8DA90 + v5)))->GetPlayerSide(); /*0x77ee16*/
     if ( PlayerSide != v29 ) /*0x77ee21*/
@@ -5045,8 +5045,8 @@ char sub_779730()
   int v7; // [esp+40h] [ebp-5Ch]
   unsigned int v8[22]; // [esp+44h] [ebp-58h] BYREF
 
-  BufferIOFile::Constructor(v8, g_Str_File_wolinfoMD_ini); /*0x779740*/
-  if ( File::IsReady(v8, 0) ) /*0x77974c*/
+  ((BufferIOFile *)(v8))->Constructor(g_Str_File_wolinfoMD_ini); /*0x779740*/
+  if ( ((File *)(v8))->IsReady(0) ) /*0x77974c*/
   {
     v3[0] = (void*)&GenericNode_vftable; /*0x779779*/
     v4[0] = (void*)&GenericNode_vftable; /*0x77977d*/
@@ -5096,8 +5096,8 @@ int ReadWOLGameOption(INIClass * a1)
   int v8; // [esp+44h] [ebp-5Ch]
   unsigned int v9[22]; // [esp+48h] [ebp-58h] BYREF
 
-  BufferIOFile::Constructor(v9, g_Str_File_wolinfoMD_ini); /*0x779843*/
-  if ( !File::IsReady(v9, 0) ) /*0x77984f*/
+  ((BufferIOFile *)(v9))->Constructor(g_Str_File_wolinfoMD_ini); /*0x779843*/
+  if ( !((File *)(v9))->IsReady(0) ) /*0x77984f*/
   {
     FileClass::Close(v9); /*0x77985c*/
     CCFileClass::Close(v9); /*0x779865*/
@@ -5118,7 +5118,7 @@ int ReadWOLGameOption(INIClass * a1)
   v7 = 0; /*0x7798d2*/
   v8 = 0; /*0x7798d6*/
   v3[0] = (void*)&INIClass_vftable; /*0x7798da*/
-  if ( File::IsReady(v9, 0) ) /*0x7798e2*/
+  if ( ((File *)(v9))->IsReady(0) ) /*0x7798e2*/
   {
     FileStraw::Open(v3, (int)v9, 0); /*0x7798f5*/
     INIClass::SetBool((char *)v3, (uint8_t *)&off_84A11C, g_INI_Key_AutoLogin, a1); /*0x779909*/
@@ -5144,8 +5144,8 @@ char sub_779940()
   int v7; // [esp+40h] [ebp-5Ch]
   unsigned int v8[22]; // [esp+44h] [ebp-58h] BYREF
 
-  BufferIOFile::Constructor(v8, g_Str_File_wolinfoMD_ini); /*0x779950*/
-  if ( File::IsReady(v8, 0) ) /*0x77995c*/
+  ((BufferIOFile *)(v8))->Constructor(g_Str_File_wolinfoMD_ini); /*0x779950*/
+  if ( ((File *)(v8))->IsReady(0) ) /*0x77995c*/
   {
     v3[0] = (void*)&GenericNode_vftable; /*0x779989*/
     v4[0] = (void*)&GenericNode_vftable; /*0x77998d*/
@@ -5195,8 +5195,8 @@ int ReadWOLLobbyOption(INIClass * a1)
   int v8; // [esp+44h] [ebp-5Ch]
   unsigned int v9[22]; // [esp+48h] [ebp-58h] BYREF
 
-  BufferIOFile::Constructor(v9, g_Str_File_wolinfoMD_ini); /*0x779a53*/
-  if ( !File::IsReady(v9, 0) ) /*0x779a5f*/
+  ((BufferIOFile *)(v9))->Constructor(g_Str_File_wolinfoMD_ini); /*0x779a53*/
+  if ( !((File *)(v9))->IsReady(0) ) /*0x779a5f*/
   {
     FileClass::Close(v9); /*0x779a6c*/
     CCFileClass::Close(v9); /*0x779a75*/
@@ -5217,7 +5217,7 @@ int ReadWOLLobbyOption(INIClass * a1)
   v7 = 0; /*0x779ae2*/
   v8 = 0; /*0x779ae6*/
   v3[0] = (void*)&INIClass_vftable; /*0x779aea*/
-  if ( File::IsReady(v9, 0) ) /*0x779af2*/
+  if ( ((File *)(v9))->IsReady(0) ) /*0x779af2*/
   {
     FileStraw::Open(v3, (int)v9, 0); /*0x779b05*/
     INIClass::SetBool((char *)v3, (uint8_t *)&off_84A11C, aAddmatchbuddie, a1); /*0x779b19*/
@@ -6543,7 +6543,7 @@ int E4Recv_77D240::sub_77D240()
   {
     if ( i >= 0 && v3 < owningHouseIndex ) /*0x77d25b*/
       v2 = (char *)g_WOL_UserList.nextObject + i; /*0x77d262*/
-    v6 = String::GetOrEmpty_Alt((String *)this); /*0x77d26b*/
+    v6 = ((String *)((String *)this))->GetOrEmpty_Alt(); /*0x77d26b*/
     if ( !_strcmpi(v6, v2 + 36) ) /*0x77d271*/
       break; /*0x77d271*/
     owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x77d27d*/
@@ -6776,7 +6776,7 @@ void sub_77DFD0()
   INIClass::SetBool((char *)&dword_8870C0, (uint8_t *)g_INI_Key_WOnline, aDisplayclan, byte_B73AD0); /*0x77e0da*/
   INIClass::WriteDigest(&dword_8870C0, (int)v0, 0); /*0x77e0eb*/
   Config::SaveObserverMode(); /*0x77e0f0*/
-  RawFileClass::Dtor(v0); /*0x77e0f9*/
+  ((RawFileClass *)(v0))->Dtor(); /*0x77e0f9*/
 }
 } // namespace gamemd
 

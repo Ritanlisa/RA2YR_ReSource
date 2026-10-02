@@ -16,7 +16,7 @@ struct GadgetGrid {
     unsigned char GadgetGrid_field_0x04;  // 0x4
 // --- flat members (END) ---
     int InsertItem(int a2);
-    int RemoveItem(int a2, void *a2_2);
+    int RemoveItem(int a2);
 };
 
 } // namespace gamemd

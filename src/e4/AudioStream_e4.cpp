@@ -28,7 +28,7 @@
 
 // 0x401910
 namespace gamemd {
-void AudioStream::ReleaseSubsystem(void *a1_1)
+void AudioStream::ReleaseSubsystem()
 {
 
   int (***v2)(unsigned int, int); // ecx
@@ -47,7 +47,7 @@ void AudioStream::ReleaseSubsystem(void *a1_1)
 }
 // 0x4026B0
 namespace gamemd {
-void AudioStream::Stop(void *a1_1, void *a2_1)
+void AudioStream::Stop()
 {
 
   return (*(int (**)(void))(this->AudioStream_field_0xD4[0] + 44))();
@@ -81,10 +81,10 @@ void AudioStream::DestroyAll(void * Block)
   *(unsigned int *)off_815E98[3].__pad_0 = v2; /*0x4033e2*/
   if ( v2 < 0 ) /*0x4033e5*/
     *(unsigned int *)off_815E98[3].__pad_0 = 0; /*0x4033ed*/
-  Next = (AudioQueue *)AudioQueue::GetNext((AudioQueue *)&Block->__pad_D8[32]); /*0x403401*/
+  Next = (AudioQueue *)((AudioQueue *)((AudioQueue *)&Block->__pad_D8[32]))->GetNext(); /*0x403401*/
   for ( i = (AudioStream *)Next; Next; i = (AudioStream *)Next ) /*0x403407*/
   {
-    Next = (AudioQueue *)AudioQueue::GetNextAlt(Next); /*0x403412*/
+    Next = (AudioQueue *)((AudioQueue *)(Next))->GetNextAlt(); /*0x403412*/
     AudioStream::Destructor(i); /*0x403414*/
   }
   (*(void (**)(AudioStream *))(*(unsigned int *)(Block->AudioStream_field_0x18[0] + 12) + 32))(Block); /*0x403427*/
@@ -198,13 +198,13 @@ int AudioStream::SetupPlayback()
   if ( (this->AudioStream_field_0x18[0] & 8) == 0 && (*(unsigned char *)(this->AudioStream_field_0x24 + 16) & 0x20) != 0 ) /*0x40478f*/
     return (int)this->AudioStream_field_0x28 + 28; /*0x402030*/
   else
-    return AudioStream::SelectRandom((int)this); /*0x404793*/
+    return ((AudioStream *)((int)this))->SelectRandom(); /*0x404793*/
 
 }
 }
 // 0x4047B0
 namespace gamemd {
-int AudioStream::SelectRandom(void *a1_1)
+int AudioStream::SelectRandom()
 {
 
   unsigned int *v2; // ecx
@@ -303,7 +303,7 @@ void AudioStream::CleanupChannels()
           if ( v4 && v2 == *(unsigned int *)(v4 + 192) ) /*0x404eb7*/
           {
             if ( (*(unsigned char *)(v2 + 24) & 2) != 0 ) /*0x404ebd*/
-              Voice::Stop(v7); /*0x404ebf*/
+              ((Voice *)(v7))->Stop(); /*0x404ebf*/
             AudioStream::ReleaseChannel(*(AudioStream **)(v2 + 176)); /*0x404eca*/
             *(unsigned int *)(*(unsigned int *)(v2 + 176) + 192) = 0; /*0x404ed5*/
             *(unsigned int *)(*(unsigned int *)(v2 + 176) + 188) = 0; /*0x404ee1*/
@@ -1530,7 +1530,7 @@ int AudioStream::UpdateCountdowners()
 
 // 0x407860
 namespace gamemd {
-char * AudioStream::Constructor(unsigned long long a2, void *a2_2, void *a3_1)
+char * AudioStream::Constructor(uint64_t a2)
 {
 
   int v3; // esi

@@ -138,12 +138,12 @@ struct Network {
     AbstractClass * * Init(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);  // 0x52F3F0
     int GetAddress(unsigned int *a1, int aP2, unsigned short *a3);  // 0x53ED60
     void * CopyAddress(unsigned int *a2, int a3);  // 0x53EDA0
-    int IsBroadcastAddr(void *a1_1);  // 0x53EE00
+    int IsBroadcastAddr();  // 0x53EE00
     int processPacket(TechnoTypeClass * aP1);  // 0x53EF60
-    AbstractClass * * SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4, void *a5_1);  // 0x540C60
+    AbstractClass * * SetConnectionParams(int aP1, int a3, int a4, char aP4);  // 0x540C60
     int sendData(AnimClass * aP1);  // 0x540F00
     int GetSendCount(void *a1_1);  // 0x540F90
-    int GetConnectionSpeed(CellStruct * aP1);  // 0x540FA0
+    int GetConnectionSpeed(int aP1);  // 0x540FA0
     int GetClass(int a2);  // 0x540FC0
     int FindPlayerByID(DynamicVector * aP1);  // 0x541000
     int SendMessage(int a2, int a3, int a4, int a5, int a6, int a7);  // 0x5410F0
@@ -183,11 +183,11 @@ struct Network {
     char * FormatAddress(uint16_t *aP1);  // 0x53F0E0
     int CleanupOnDisconnect();  // 0x5F0040
     int GetMaxPacketSize();  // 0x74FD20
-    short SetPort(IPXManagerClass * aP1, void *a2_1);  // 0x53F200
+    short SetPort(int16_t aP1);  // 0x53F200
     int SendSettingsRequest();  // 0x5B5E90
     char QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4);  // 0x5D90E0
     short WaitForPacket(int a1, int a2);  // 0x5D9220
-    bool sendGameEvent(Modem * aP0, int _10, unsigned int * a2);  // 0x6956D0
+    bool sendGameEvent(unsigned int *aP0);  // 0x6956D0
     int CopyAddress_Small(IPXManagerClass * aP1);  // 0x53EDC0
     int SendOptionsGame(char * Source);  // 0x5E3720
     int InitPlayerSlots();  // 0x5E8B60

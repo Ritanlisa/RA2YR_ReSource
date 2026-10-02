@@ -287,7 +287,7 @@ TabClass * BlowStraw_29::Read(char * Block, char a2)
     --v4; /*0x5bea05*/
   }
   while ( v4 ); /*0x5bea06*/
-  RadarClass::Destruct((RadarClass *)Block); /*0x5bea0a*/
+  ((RadarClass *)((RadarClass *)Block))->Destruct(); /*0x5bea0a*/
   if ( (a2 & 1) != 0 ) /*0x5bea14*/
     __3_YAXPAX_Z(Block); /*0x5bea17*/
   return (RadarClass *)Block; /*0x5bea1f*/

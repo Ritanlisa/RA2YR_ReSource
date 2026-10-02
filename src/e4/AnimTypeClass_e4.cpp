@@ -26,12 +26,12 @@
 
 // 0x41E350
 namespace gamemd {
-unsigned int * AnimTypeClass::Construct2(char * Source, void *a2, void *a3)
+unsigned int * AnimTypeClass::Construct2(char *Source)
 {
 
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int *)this, Source); /*0x41e359*/
+  ((AbstractTypeClass *)((int *)this))->Constructor(Source); /*0x41e359*/
   *(unsigned int *)((unsigned int *)this)[0] = -1; /*0x41e363*/
   *(unsigned int *)&((unsigned int *)this)[0] = -1; /*0x41e369*/
   ((unsigned int *)this)[0] = 0; /*0x41e374*/
@@ -258,7 +258,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x427bf0*/
       if ( !v3 ) /*0x427bf6*/
       {
-        ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x427bfc*/
+        ((ObjectTypeClass *)((ObjectTypeClass *)Buffer))->SetRTTI71(); /*0x427bfc*/
         v3 =        v3 = (SHPStruct *)SearchMIXFile(Buffer,(char)((IUnknown *)(1))); 
         ((unsigned int *)this)[0] = (unsigned int)(v3); /*0x427c0c*/
       }
@@ -449,7 +449,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
 }
 // 0x428B80
 namespace gamemd {
-AnimTypeClass * * AnimTypeClass::FindOrCreate(AbstractClass * Source)
+AnimTypeClass * * AnimTypeClass::FindOrCreate(char *Source)
 {
 
   int v2; // esi
@@ -518,7 +518,7 @@ int AnimTypeClass::GetDamage()
     }
     else
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x428d2c*/
+      ((ObjectTypeClass *)((ObjectTypeClass *)Buffer))->SetRTTI71(); /*0x428d2c*/
       CCFileClass::Construct(&v10, Buffer); /*0x428d3d*/
       v5 = (SHPStruct *)CCFileClass::ReadEntireFile(&v10); /*0x428d46*/
       ((unsigned int *)this)[0] = v5; /*0x428d4d*/
@@ -583,7 +583,7 @@ AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
       ++v4; /*0x428f3f*/
     }
   }
-  ObjectTypeClass::Destruct((int)Block); /*0x428f53*/
+  ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x428f53*/
   if ( (a2 & 1) != 0 ) /*0x428f5d*/
     __3_YAXPAX_Z(Block); /*0x428f60*/
   return &Block->ObjectTypeClass; /*0x428f6a*/

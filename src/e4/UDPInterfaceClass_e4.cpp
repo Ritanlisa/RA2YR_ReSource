@@ -399,7 +399,7 @@ LABEL_25:
       v14 = hostshort; /*0x7b3c64*/
     *(unsigned short *)netshort.sa_data = htons(v14); /*0x7b3c75*/
     if ( *((unsigned int *)v13 + 1) == qword_A8DBB0.NetworkID_field_0x04 /*0x7b3c9a*/
-      && (!dword_A8DA84 || (uint8_t)GUID::Compare(qword_A8DBB0.__pad_0, *dword_A8DA78 + 40)) )
+      && (!dword_A8DA84 || (uint8_t)((GUID *)(qword_A8DBB0.__pad_0))->Compare(*dword_A8DA78 + 40)) )
     {
       *(unsigned int *)&netshort.sa_data[2] = htonl(0x7F000001u); /*0x7b3cb4*/
       *(unsigned short *)netshort.sa_data = htons(dword_841F3C); /*0x7b3cbe*/
@@ -783,7 +783,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
         v15 = *((unsigned int *)this + 64540); /*0x7b3688*/
         memset(optval, 0, sizeof(optval)); /*0x7b3689*/
         setsockopt(v15, 0xFFFF, 128, optval, 4); /*0x7b3693*/
-        Socket::ConfigureBuffers((WinsockInterfaceClass *)this, *((unsigned int *)this + 64540)); /*0x7b36a1*/
+        ((Socket *)((WinsockInterfaceClass *)this))->ConfigureBuffers(*((unsigned int *)this + 64540)); /*0x7b36a1*/
         Debug::Log(); /*0x7b36ab*/
         return 1; /*0x7b36b3*/
       }
@@ -798,7 +798,7 @@ namespace gamemd {
 short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
 
-  if ( a3 && Network::IsBroadcastAddr((Network *)a3) ) /*0x7b36ce*/
+  if ( a3 && ((Network *)((Network *)a3))->IsBroadcastAddr() ) /*0x7b36ce*/
     return (*(int16_t (**)(UDPInterfaceClass *, const void *, unsigned int, int))(this->Socket + 16))( /*0x7b36ea*/
              this,
              aP1,
@@ -840,7 +840,7 @@ void UDPInterfaceClass_Destru_Connect()
     v23 = (unsigned short *)(v6 + 258896); /*0x7b3745*/
     do /*0x7b3875*/
     {
-      v9 = AudioQueue::AllocBuffer((AudioQueue *)v7, a4); /*0x7b3759*/
+      v9 = ((AudioQueue *)((AudioQueue *)v7))->AllocBuffer(a4); /*0x7b3759*/
       qmemcpy(v9 + 32, this, (unsigned int)a3); /*0x7b376a*/
       *((unsigned int *)v9 + 4) = a3; /*0x7b3773*/
       v9[20] = 1; /*0x7b377a*/

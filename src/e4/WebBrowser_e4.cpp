@@ -115,7 +115,7 @@ int WebBrowser::ShowDialog()
     SetWindowLongA(result, 8, (LONG)&dwNewLong); /*0x773eef*/
     LOBYTE(v4) = 1; /*0x773ef5*/
     SetDialogActiveFlag((int)(v3), v4); /*0x773ef9*/
-    Dialog::Show(v3); /*0x773f00*/
+    ((Dialog *)(v3))->Show(); /*0x773f00*/
     GetClientRect(v3, &Rect); /*0x773f0b*/
     v11 = Rect.left + (Rect.right - Rect.left - 800) / 2; /*0x773f30*/
     v13 = v11 + 800; /*0x773f39*/

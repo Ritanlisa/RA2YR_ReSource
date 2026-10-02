@@ -193,7 +193,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     v42 = 0; /*0x693ce5*/
     v41[0] = 110; /*0x693ce7*/
     ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v41, 250, 1); /*0x693cef*/
-    while ( Count::GetCountQueue(&unk_A8EA70) > 0 ) /*0x693d00*/
+    while ( ((Count *)(&unk_A8EA70))->GetCountQueue() > 0 ) /*0x693d00*/
     {
       v8 = 3600; /*0x693d06*/
       if ( Ticks != -1 ) /*0x693d0d*/
@@ -336,7 +336,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     v42 = 0; /*0x6940ba*/
     v41[0] = 113; /*0x6940cb*/
     ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v41, 250, 1); /*0x6940d3*/
-    while ( Count::GetCountQueue(&unk_A8EA70) > 0 ) /*0x6940e4*/
+    while ( ((Count *)(&unk_A8EA70))->GetCountQueue() > 0 ) /*0x6940e4*/
     {
       v26 = 3600; /*0x6940ea*/
       if ( v34 != -1 ) /*0x6940f1*/
@@ -458,7 +458,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   v6 = (char *)RA2_OPNEW(0x1E7u); /*0x6941e1*/
     ((Debug *)0)->Log();
   ((RawFileClass *)((BufferIOFileClass *)v43))->Construct(a1); /*0x6941f0*/
-  if ( (uint8_t)FileClass::Open((RawFileClass *)v43, 0) ) /*0x6941fb*/
+  if ( (uint8_t)((FileClass *)((RawFileClass *)v43))->Open(0) ) /*0x6941fb*/
     ((FileClass *)((RawFileClass *)v43))->Delete(); /*0x694208*/
   ((FileClass *)((RawFileClass *)v43))->Open2((const CHAR *)2); /*0x694213*/
   v7 = a2 / 0xC0; /*0x69422c*/
@@ -474,7 +474,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     ProgressAnim::Init((int)&dword_AC4F58, 0, 1079574528, 1, 0); /*0x69428f*/
     SHPClass::Load((int)&dword_AC4F58, g_Str_File_PROGBARM_SHP, 0, 0); /*0x6942a2*/
     StringCSF = GetStringCSF(aGuiMaptransfer, 0, aDRa2mdpostSend, 355); /*0x6942c2*/
-    TextRenderer::MeasureBuilding((int *)dword_AC4F58.__pad_0, -1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
+    ((TextRenderer *)((int *)dword_AC4F58.__pad_0))->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
     Screen::Capture(1, 0, a2, (int)v6); /*0x6942d8*/
     Render@<eax>((int)&dword_AC4F58, a2, (int)v6, NAN); /*0x6942ea*/
     Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, 0.0, NAN); /*0x694302*/
@@ -597,13 +597,13 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   Debug::Log(); /*0x6946fa*/
   ((FileClass *)((RawFileClass *)v43))->CloseHandle(); /*0x694706*/
   Debug::Log(); /*0x694710*/
-  if ( !v21 && (uint8_t)FileClass::Open((RawFileClass *)v43, 0) ) /*0x694722*/
+  if ( !v21 && (uint8_t)((FileClass *)((RawFileClass *)v43))->Open(0) ) /*0x694722*/
   {
     ((FileClass *)((RawFileClass *)v43))->Delete(); /*0x69472f*/
     Debug::Log(); /*0x694739*/
   }
   RA2_OPDEL(v6); /*0x694742*/
-  RawFileClass::Dtor((BufferIOFileClass *)v43); /*0x69474e*/
+  ((RawFileClass *)((BufferIOFileClass *)v43))->Dtor(); /*0x69474e*/
   return v21; /*0x694755*/
 }
 }
@@ -781,7 +781,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   strcpy(v59, Source); /*0x694a2b*/
   *(unsigned int *)&v58[158] = Size; /*0x694a42*/
   ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v58, 250, 1); /*0x694a4f*/
-  while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 0 ) /*0x694a60*/
+  while ( ((Count *)((Count *)&unk_A8EA70))->GetCountQueue() > 0 ) /*0x694a60*/
   {
     v16 = 3600; /*0x694a66*/
     if ( Ticks != -1 ) /*0x694a6d*/
@@ -871,7 +871,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     ProgressAnim::Init((int)&stru_AC4B30.__pad_EC[828], 0, 1079574528, 1, 0); /*0x694c75*/
     SHPClass::Load((int)&stru_AC4B30.__pad_EC[828], g_Str_File_PROGBARM_SHP, 0, 0); /*0x694c86*/
     StringCSF = GetStringCSF(aGuiMaptransfer, 0, aDRa2mdpostSend, 658); /*0x694ca5*/
-    TextRenderer::MeasureBuilding((int *)&stru_AC4B30.__pad_EC[828], -1, -1, (int)StringCSF, 0, 1); /*0x694cb2*/
+    ((TextRenderer *)((int *)&stru_AC4B30.__pad_EC[828]))->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x694cb2*/
     Screen::Capture(1, 0, v26, 0); /*0x694cbb*/
     LoadScreen::Render((int)&stru_AC4B30.__pad_EC[828], v26, 0, NAN); /*0x694ccd*/
     Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 0.0, NAN); /*0x694ce2*/
@@ -910,7 +910,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
       Event::Dispatch(); /*0x694fc0*/
       if ( v27 >= v26 ) /*0x694fcc*/
       {
-        if ( !Count::GetCountQueue((Count *)&unk_A8EA70) ) /*0x6950e3*/
+        if ( !((Count *)((Count *)&unk_A8EA70))->GetCountQueue() ) /*0x6950e3*/
         {
           v47 = 1; /*0x69514d*/
           if ( a4 ) /*0x695154*/
@@ -922,7 +922,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
       }
       else
       {
-        if ( Count::GetCountQueue((Count *)&unk_A8EA70) >= 2 ) /*0x694fda*/
+        if ( ((Count *)((Count *)&unk_A8EA70))->GetCountQueue() >= 2 ) /*0x694fda*/
           goto LABEL_70; /*0x694fda*/
         *(unsigned int *)&v57.__pad_0[12] = 112; /*0x694fe6*/
         *(unsigned short *)&v57.__pad_0[36] = v27; /*0x694ff1*/
@@ -1066,10 +1066,10 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
   if ( !CCFileClass::Open(v18, 0) && a5 == 1 ) /*0x69527b*/
   {
     v7 = *(unsigned int *)(dword_A8B8CC + 4 * v6); /*0x695283*/
-    v8 = Game::CheckForGameCD(60); /*0x69528b*/
+    v8 = ((Game *)(60))->CheckForGameCD(); /*0x69528b*/
     if ( !(uint8_t)ScenarioClass::CheckExists(v8) ) /*0x695293*/
     {
-      v9 = GameOption::GetField(v7); /*0x69529e*/
+      v9 = ((GameOption *)(v7))->GetField(); /*0x69529e*/
       SetSoundWarning(v9); /*0x6952a5*/
     }
     ++dword_A8DAB4; /*0x6952bb*/

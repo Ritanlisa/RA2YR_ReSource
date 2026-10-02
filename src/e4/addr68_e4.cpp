@@ -484,7 +484,7 @@ void sub_683FB0()
   EndBufferMixer(&g_MixerState->vtable0, dword_83D834); /*0x684037*/
   IDA_LOBYTE(v2) = 0; /*0x68403c*/
   dword_83D834 = 0x4000; /*0x68403e*/
-  AsyncIO::Read(v2); /*0x684048*/
+  ((AsyncIO *)(v2))->Read(); /*0x684048*/
   return sub_406F40();
 }
 }
@@ -531,7 +531,7 @@ void * * ScenarioClass_SetTimer(int a1)
     byte_B054CC = *((unsigned char *)dword_A8B230 + 13730); /*0x68411b*/
     if ( !byte_B054CC ) /*0x684120*/
     {
-      Mouse::ReleaseCapture(&dword_87F7E8); /*0x684127*/
+      ((Mouse *)(&dword_87F7E8))->ReleaseCapture(); /*0x684127*/
       if ( !(*(int (**)(int))(*(unsigned int *)dword_887640 + 40))(dword_887640) ) /*0x684134*/
         (*(void (**)(int))(*(unsigned int *)dword_887640 + 12))(dword_887640); /*0x684143*/
       *((unsigned char *)dword_A8B230 + 13730) = 1; /*0x68414c*/
@@ -645,7 +645,7 @@ void WaitForMultiplayerLoadSync()
   }
   for ( i = 1; i < Game_PlayerCount; ++i ) /*0x68453f*/
   {
-    if ( Progress::GetWeighted((int)g_UIManager, v0) < 0.999 ) /*0x68455b*/
+    if ( ((Progress *)((int)g_UIManager))->GetWeighted(v0) < 0.999 ) /*0x68455b*/
     {
       v10 = *(char **)(Game_PlayerInfoArray + 4 * i); /*0x684562*/
       ToWideStringChar(v10); /*0x684567*/
@@ -740,7 +740,7 @@ void PostLoadInitScenario()
     v7 = (TeamClass *)*((unsigned int *)dword_B0E784 + j); /*0x684d5c*/
     if ( (Debug::AccumFlags((Debug *)v7) & 4) != 0 ) /*0x684d68*/
     {
-      v8 = TeamClass::FindOrCreate(v7); /*0x684d77*/
+      v8 = ((TeamClass *)(v7))->FindOrCreate(); /*0x684d77*/
       if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 6)) /*0x684da9*/
         || (IDA_BYTE1(*((unsigned int *)((char *)&FootClass_Array + 7))) || !((unsigned int *)&FootClass_Array)[6])
         && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
@@ -755,7 +755,7 @@ void PostLoadInitScenario()
     }
     if ( (Debug::AccumFlags((Debug *)v7) & 0x10) != 0 ) /*0x684dd1*/
     {
-      v10 = TeamClass::FindOrCreate(v7); /*0x684de0*/
+      v10 = ((TeamClass *)(v7))->FindOrCreate(); /*0x684de0*/
       if ( (int)((char *)&FootClass_Array) < (int)((char *)&FootClass_Array) /*0x684e13*/
         || (IDA_BYTE1(((char *)&FootClass_Array)) || !((char *)&FootClass_Array))
         && *((unsigned int *)((char *)&FootClass_Array + 0)) > 0
@@ -770,7 +770,7 @@ void PostLoadInitScenario()
     }
     if ( (Debug::AccumFlags((Debug *)v7) & 8) != 0 ) /*0x684e3b*/
     {
-      v12 = TeamClass::FindOrCreate(v7); /*0x684e44*/
+      v12 = ((TeamClass *)(v7))->FindOrCreate(); /*0x684e44*/
       Owner = ((HouseClass *)(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v12 + 36) + 160) + 164) + 184)))->FindOwner(); /*0x684e5b*/
       if ( Owner ) /*0x684e62*/
       {
@@ -836,10 +836,10 @@ void PostLoadInitScenario()
   }
   Radar::UpdateReveal(1, 0); /*0x684f89*/
   Voxel::InitDistanceTable(v34); /*0x684f8e*/
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x684f98*/
-  for ( m = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x684fa9*/
+  ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x684f98*/
+  for ( m = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x684fa9*/
         m;
-        m = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
+        m = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
   {
     ((House *)(m))->AnnounceUpgrade(-1); /*0x684faf*/
   }
@@ -872,12 +872,12 @@ void PostLoadInitScenario()
   }
   if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6256) ) /*0x685052*/
   {
-    LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x685063*/
-    for ( n = (Building *)LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x685076*/
+    ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x685063*/
+    for ( n = (Building *)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x685076*/
           n;
-          n = (Building *)LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
+          n = (Building *)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
     {
-      if ( Building::GetNthOfType(n) ) /*0x68507a*/
+      if ( ((Building *)(n))->GetNthOfType() ) /*0x68507a*/
       {
         if ( !Random::Range( /*0x68509e*/
                 (Random *)&dword_A8B230[14].NeedsSaveOrLink,
@@ -1139,7 +1139,7 @@ void SaveScenarioToINI()
     if ( v8 ) /*0x687d75*/
     {
       CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d7c*/
-      CCINIClass::Load((CCINIClass *)&v10.vtable1, (int)&v10.customSound_controller[3], 1, 0); /*0x687d8d*/
+      ((CCINIClass *)((CCINIClass *)&v10.vtable1))->Load((int)&v10.customSound_controller[3], 1, 0); /*0x687d8d*/
       v10.customSound_controller[3] = (int)&CCFileClass_vftable; /*0x687d99*/
       v12 = 0; /*0x687da1*/
       ((Vector *)((int)v11))->Clear(); /*0x687da8*/
@@ -1186,7 +1186,7 @@ void SaveScenarioToINI()
   SaveTriggerTagsToINI((INIClass *)&v10.vtable1); /*0x687ec5*/
   RawFileClass::Construct((BufferIOFileClass *)&v13, (int)Source); /*0x687ed2*/
   INIClass::WriteDigest((CCINIClass *)&v10.vtable1, (int)&v13, 1); /*0x687ee5*/
-  RawFileClass::Dtor((BufferIOFileClass *)&v13); /*0x687ef1*/
+  ((RawFileClass *)((BufferIOFileClass *)&v13))->Dtor(); /*0x687ef1*/
 // 0x5256f0
   return HashTable::DestroyHashTableINIClass((INIClass *)&v10.vtable1); /*0x687eff*/
 }
@@ -1273,7 +1273,7 @@ AbstractClass * * SessionClass_AssignHouses()
         ((WideString *)((wchar_t **)&v29))->Assign((wchar_t *)v7); /*0x687fdc*/
         ToWideStringCharAlt((char **)&v29.DeleteAndZero_field_0x04, (const wchar_t **)&v29); /*0x687fe9*/
         DeleteAndZero::Alt(&v29); /*0x687ff2*/
-        v10 = String::GetOrEmpty((String *)&v29.DeleteAndZero_field_0x04); /*0x687ffb*/
+        v10 = ((String *)((String *)&v29.DeleteAndZero_field_0x04))->GetOrEmpty(); /*0x687ffb*/
         if ( v10 ) /*0x688002*/
         {
           strncpy(Destination, v10, 0x14u); /*0x688012*/
@@ -1392,7 +1392,7 @@ AbstractClass * * SessionClass_AssignHouses()
   v21 = (int *)RA2_OPNEW(0x160B8u); /*0x6882de*/
   if ( v21 ) /*0x6882e4*/
   {
-    v22 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)&((char *)&stru_82BA00)); /*0x6882eb*/
+    v22 = ((SuperWeaponTypeClass *)((SuperWeaponTypeClass *)&((char *)&stru_82BA00)))->FindByName(); /*0x6882eb*/
     v23 = HouseClass::Construct(v21, *((unsigned int *)dword_A83C9C + v22)); /*0x688303*/
   }
   else
@@ -1404,7 +1404,7 @@ AbstractClass * * SessionClass_AssignHouses()
   v24 = (int *)RA2_OPNEW(0x160B8u); /*0x68832f*/
   if ( v24 ) /*0x688336*/
   {
-    v25 = SuperWeaponTypeClass::FindByName(&g_INI_Key_Special); /*0x68833d*/
+    v25 = ((SuperWeaponTypeClass *)(&g_INI_Key_Special))->FindByName(); /*0x68833d*/
     v26 = HouseClass::Construct(v24, *((unsigned int *)dword_A83C9C + v25)); /*0x688356*/
   }
   else
@@ -1552,7 +1552,7 @@ void GenerateScenarioUnits()
     }
   }
   v66 = (unsigned int)ppv * (v1 / v2); /*0x6887e5*/
-  Multiplayer::FindStartPositions(&v80); /*0x6887e9*/
+  ((Multiplayer *)(&v80))->FindStartPositions(); /*0x6887e9*/
   v10 = 0; /*0x6887f0*/
   memset(v85, 0, sizeof(v85)); /*0x6887f2*/
   v11 = 0; /*0x6887f9*/
@@ -1920,7 +1920,7 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
     v39 = 0; /*0x688f07*/
     v40 = 0; /*0x688f0b*/
     v5 = (Object *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v3); /*0x688f0f*/
-    ClosestObjectCell = Object::FindClosestObjectCell(v5, &v39, 0, 0); /*0x688f16*/
+    ClosestObjectCell = ((Object *)(v5))->FindClosestObjectCell(&v39, 0, 0); /*0x688f16*/
     if ( !ClosestObjectCell /*0x688f39*/
       || (*(int (**)(int))(*(unsigned int *)ClosestObjectCell + 44))(ClosestObjectCell) == 15
       && (*(int (**)(int *))(*a1 + 44))(a1) == 15 )
@@ -2062,7 +2062,7 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
           v42 = 0; /*0x6891e6*/
           v43 = 0; /*0x6891ea*/
           v25 = (Object *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v28); /*0x6891ee*/
-          v26 = Object::FindClosestObjectCell(v25, &v42, 0, 0); /*0x6891f5*/
+          v26 = ((Object *)(v25))->FindClosestObjectCell(&v42, 0, 0); /*0x6891f5*/
           if ( !v26 /*0x689218*/
             || (*(int (**)(int))(*(unsigned int *)v26 + 44))(v26) == 15
             && (*(int (**)(int *))(*v24 + 44))(v24) == 15 )

@@ -76,7 +76,7 @@ AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
               v10 = v9[1]; /*0x4b0b64*/
               v18[0] = *v9; /*0x4b0b67*/
               v18[1] = v10; /*0x4b0b6f*/
-              v5 = (int)JumpjetLocomotion::TransformCoords((JumpjetLocomotion *)this, &v19, v18, &aP3); /*0x4b0b80*/
+              v5 = (int)((JumpjetLocomotion *)((JumpjetLocomotion *)this))->TransformCoords(&v19, v18, &aP3); /*0x4b0b80*/
               v11 = *(unsigned int *)v5; /*0x4b0b85*/
               v12 = *(unsigned int *)(v5 + 4); /*0x4b0b89*/
               if ( !v6 ) /*0x4b0b8c*/
@@ -236,7 +236,7 @@ int JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4, void *a4_2)
 
 // 0x4B4780
 namespace gamemd {
-unsigned int * JumpjetLocomotion::TransformCoords(IUnknown * aP1, IUnknown * aP2, ObjectClass * aP3, void *a4_1)
+unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int *aP3)
 {
 
   int v4; // eax
@@ -584,7 +584,7 @@ LABEL_74:
       v42 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v41 + 444))(v41); /*0x54d05f*/
       CellClass::AttachObject(v42, 0); /*0x54d067*/
     }
-    GadgetGrid::RemoveItem((int)((GadgetGrid *)&g_CellClassManager), *(unsigned int *)this->__pad_C); /*0x54d075*/
+    ((GadgetGrid *)((int)((GadgetGrid *)&g_CellClassManager)))->RemoveItem(*(unsigned int *)this->__pad_C); /*0x54d075*/
     v43 = *(unsigned int *)this->__pad_C; /*0x54d07a*/
     *(unsigned int *)this->__pad_78 = 0; /*0x54d07d*/
     *(unsigned int *)&this->__pad_48[8] = 6; /*0x54d083*/

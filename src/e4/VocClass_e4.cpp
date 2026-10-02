@@ -11,7 +11,7 @@
 
 // 0x4052F0
 namespace gamemd {
-int VocClass::Release(void *a1)
+int VocClass::Release()
 {
 
   Voice *v1; // ebp

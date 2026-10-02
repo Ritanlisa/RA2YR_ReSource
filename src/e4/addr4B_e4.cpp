@@ -117,7 +117,7 @@ void JumpjetLocomotionClass_Process(int a1)
         || ((unsigned int *)Owner)[1] != v1->Dest[0]
         || ((unsigned int *)Owner)[2] != v1->Dest[1] )
       {
-        if ( (uint8_t)TimerClass::Active((int)((unsigned int *)Owner)[0]) ) /*0x4b077b*/
+        if ( (uint8_t)((TimerClass *)((int)((unsigned int *)Owner)[0]))->Active() ) /*0x4b077b*/
         {
           IDA_BYTE2(v1->TrackIndex) = 1; /*0x4b0788*/
           goto LABEL_39; /*0x4b0788*/

@@ -1872,10 +1872,10 @@ struct HouseClass {
     int DestroyAllNonBuildingsNaval();
     int DestroyAllNonBuildingsNonNaval();
     int FailedToPlaceNode(int a1);
-    int GetCameoTypeIndex(int a2, void *a2_2);
+    int GetCameoTypeIndex(int a2);
     int GetInfSelfHealStep();
     int GetRepairStepAmount();
-    int GetStatus(IUnknown * aP1);
+    int GetStatus(int aP1);
     int GetUnitSelfHealStep();
     int InitAlliances();
     int IsAlliedWith();

@@ -1416,7 +1416,7 @@ char AnimClass::ProcessAreaEffect(unsigned int * a1)
   CellClass *v2; // esi
   char result; // al
 
-  v1 = Input::OffsetToDirection((Input *)a1); /*0x426314*/
+  v1 = ((Input *)((Input *)a1))->OffsetToDirection(); /*0x426314*/
   v2 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(a1); /*0x426321*/
   if ( Cell::GetGroundHeight(a1) + Map_MaxHeight > (int)a1->AnimClass_field_0x8 ) /*0x426335*/
   {

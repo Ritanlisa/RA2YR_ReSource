@@ -387,7 +387,7 @@ LABEL_151:
             SendMessageA(v28, 0x4B3u, 0x14u, (LPARAM)lParam);
             CopyWideToChar((unsigned char *)(&((unsigned int *)(HouseClass_Player))[30260]), lParam, -1);
             ComboBoxSelected = GetComboBoxSelected((ReferenceCounted *)hWnd, 1697, 0xFFFFFFFF);
-            SessionClass::AssignSide(&HouseClass_Player[29932], ComboBoxSelected, (MPCooperative *)1);
+            ((SessionClass *)(&HouseClass_Player[29932]))->AssignSide(ComboBoxSelected, (MPCooperative *)1);
             int v30 = 0;
             do
             {
@@ -522,7 +522,7 @@ LABEL_151:
             v44 = GetComboBoxSelectedRaw((ReferenceCounted *)hWnd, 1698, 0xFFFFFFFF);
             v45 = SetComboBoxSelection((HWND)hWnd, 1699, 0xFFFFFFFF);
             v46 = GetComboBoxSelectedRaw2((HWND)hWnd, 1901, 0xFFFFFFFF);
-            SessionClass::AssignColor(&((unsigned int *)(HouseClass_Player))[29932], v44, (MPCooperative *)1);
+            ((SessionClass *)(&((unsigned int *)(HouseClass_Player))[29932]))->AssignColor(v44, (MPCooperative *)1);
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30288] = v45;
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30296] = v46;
             int v47 = (int)(operator new(0x85u));

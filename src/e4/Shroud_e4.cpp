@@ -48,7 +48,7 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
   this->RadarClass_field_0x1498 = (unsigned int)((MapClass *)-1); /*0x6544f4*/
   this->RadarClass_field_0x1494 = (unsigned int)((MapClass *)((int16_t)(v7 - 1 + v5) - (int16_t)(1 - v7 + v6))); /*0x654533*/
   this->RadarClass_field_0x1490 = (unsigned int)((MapClass *)(v6 - v5)); /*0x65453e*/
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x654544*/
+  ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x654544*/
   result = ((LayerClass *)((LayerClass *)this))->CellIteratorNext(); /*0x65454b*/
   v9 = result; /*0x654550*/
   if ( result ) /*0x654554*/

@@ -680,7 +680,7 @@ void * DisplayClass::Draw(int a2)
         Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x4ae635*/
         v10 = (unsigned int *)(*(int (**)(unsigned char *))(*(unsigned int *)v15 + 72))(v18); /*0x4ae63b*/
         v11 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v10); /*0x4ae644*/
-        if ( !(uint8_t)Cell::IsPassableOffset((Cell *)v11, (int)Object_field_0x30) ) /*0x4ae64b*/
+        if ( !(uint8_t)((Cell *)((Cell *)v11))->IsPassableOffset((int)Object_field_0x30) ) /*0x4ae64b*/
           return 0; /*0x4ae64b*/
       }
       if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v9 + 132))(v9) + 3226) ) /*0x4ae65e*/
@@ -729,7 +729,7 @@ int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
   int v8; // edx
 
   if ( a3 ) /*0x5519b9*/
-    return DisplayClass::InsertPriorityText((unsigned int *)this, aP1) != 0; /*0x5519ca*/
+    return ((DisplayClass *)((unsigned int *)this))->InsertPriorityText(aP1) != 0; /*0x5519ca*/
   v5 = *((unsigned int *)this + 2); /*0x5519cf*/
   if ( *((unsigned int *)this + 4) >= v5 ) /*0x5519d7*/
   {
@@ -774,7 +774,7 @@ int DisplayClass::InsertPriorityText(int a2)
   }
   for ( i = 0; i < *(unsigned int *)this->__pad_10; ++i ) /*0x551ad2*/
   {
-    if ( DisplayClass::checkScreenBounds(*((DisplayClass **)&this->DisplayClass_field_0x4->vtable0 + i), a2) ) /*0x551adb*/
+    if ( ((DisplayClass *)(*((DisplayClass **)&this->DisplayClass_field_0x4->vtable0 + i)))->checkScreenBounds(a2) ) /*0x551adb*/
       break; /*0x551ae2*/
   }
   for ( j = *(unsigned int *)this->__pad_10 - 1; /*0x551af2*/
@@ -1100,7 +1100,7 @@ namespace gamemd {
 unsigned int * DisplayClass::updateRenderState(char a2)
 {
 
-  GadgetClass::Dtor((GadgetClass *)this); /*0x4aebb3*/
+  ((GadgetClass *)((GadgetClass *)this))->Dtor(); /*0x4aebb3*/
   if ( (a2 & 1) != 0 ) /*0x4aebbd*/
     __3_YAXPAX_Z(this); /*0x4aebc0*/
   return this; /*0x4aebca*/

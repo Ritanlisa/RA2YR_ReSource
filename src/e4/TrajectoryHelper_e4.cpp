@@ -159,11 +159,11 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   v42 = v10; /*0x4cc3bc*/
   if ( *(unsigned char *)(a7 + 662) ) /*0x4cc3c0*/
   {
-    SlopeIndex = Cell::GetSlopeIndex((int)v10); /*0x4cc3d5*/
-    if ( SlopeIndex - Cell::GetSlopeIndex(a3) >= 4 ) /*0x4cc3e1*/
+    SlopeIndex = ((Cell *)((int)v10))->GetSlopeIndex(); /*0x4cc3d5*/
+    if ( SlopeIndex - ((Cell *)(a3))->GetSlopeIndex() >= 4 ) /*0x4cc3e1*/
     {
-      v12 = Cell::GetSlopeIndex((int)v10); /*0x4cc3ec*/
-      if ( v12 - Cell::GetSlopeIndex((int)a1) > 0 ) /*0x4cc3f7*/
+      v12 = ((Cell *)((int)v10))->GetSlopeIndex(); /*0x4cc3ec*/
+      if ( v12 - ((Cell *)((int)a1))->GetSlopeIndex() > 0 ) /*0x4cc3f7*/
         goto LABEL_16; /*0x4cc3f7*/
     }
     v8 = a2; /*0x4cc3fd*/
@@ -216,11 +216,11 @@ LABEL_22:
           v33 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v43); /*0x4cc574*/
           if ( *(unsigned char *)(a7 + 662) ) /*0x4cc589*/
           {
-            v34 = Cell::GetSlopeIndex(a3); /*0x4cc59e*/
-            if ( Cell::GetSlopeIndex((int)v33) - v34 >= 4 ) /*0x4cc5aa*/
+            v34 = ((Cell *)(a3))->GetSlopeIndex(); /*0x4cc59e*/
+            if ( ((Cell *)((int)v33))->GetSlopeIndex() - v34 >= 4 ) /*0x4cc5aa*/
             {
-              v35 = Cell::GetSlopeIndex((int)v44); /*0x4cc5b7*/
-              if ( Cell::GetSlopeIndex((int)v33) - v35 > 0 ) /*0x4cc5c2*/
+              v35 = ((Cell *)((int)v44))->GetSlopeIndex(); /*0x4cc5b7*/
+              if ( ((Cell *)((int)v33))->GetSlopeIndex() - v35 > 0 ) /*0x4cc5c2*/
                 return v42; /*0x4cc5cf*/
             }
           }

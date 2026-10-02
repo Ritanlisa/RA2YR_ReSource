@@ -319,7 +319,7 @@ LABEL_35:
     *((unsigned int *)v5 + 1) = v42; /*0x439fdc*/
     *((float *)v5 + 2) = v43; /*0x439fe4*/
     v44 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v83)); /*0x439ff1*/
-    v45 = (int)(JumpjetLocomotionClass::AdjustClimbFacing((JumpjetLocomotionClass *)v44, &v84)); /*0x439ff8*/
+    v45 = (int)(((JumpjetLocomotionClass *)((JumpjetLocomotionClass *)v44))->AdjustClimbFacing(&v84)); /*0x439ff8*/
     if ( v45 != -1 ) /*0x43a000*/
     {
       qmemcpy(v87, Locomotor_Update((char *)v89, v45), sizeof(v87)); /*0x43a01f*/
@@ -357,7 +357,7 @@ void* JumpjetLocomotionClass::ComputeVectorLengthMetric_0(void *a1)
 } // namespace gamemd
 // 0x4848B0
 namespace gamemd {
-void* JumpjetLocomotionClass::AdjustClimbFacing(unsigned int * a2, void *a2_2)
+void* JumpjetLocomotionClass::AdjustClimbFacing(unsigned int *a2)
 {
 
   unsigned int *v2; // ebx
@@ -469,7 +469,7 @@ AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
 LABEL_5:
     v6 = 0; /*0x4850cb*/
     v7 = 0; /*0x4850de*/
-    if ( Object::FindClosestObjectCell((Object *)this, &v6, 0, 0) ) /*0x4850e6*/
+    if ( ((Object *)((Object *)this))->FindClosestObjectCell(&v6, 0, 0) ) /*0x4850e6*/
       inited += 85; /*0x4850ef*/
     return inited; /*0x4850f3*/
   }
@@ -841,7 +841,7 @@ int JumpjetLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
             v14 = *(unsigned int *)(v13 + 4); /*0x4b49c3*/
             v20[0] = *(unsigned int *)v13; /*0x4b49c6*/
             v20[1] = v14; /*0x4b49cf*/
-            v15 = JumpjetLocomotion::TransformCoords((JumpjetLocomotion *)&v4[-1].Piggybackee, v21, v20, (int *)&a1); /*0x4b49e1*/
+            v15 = ((JumpjetLocomotion *)((JumpjetLocomotion *)&v4[-1].Piggybackee))->TransformCoords(v21, v20, (int *)&a1); /*0x4b49e1*/
             v16 = *v15; /*0x4b49e6*/
             v17 = v15[1]; /*0x4b49e8*/
             location = ((unsigned int *)v4)[0]; /*0x4b49ee*/
@@ -3029,7 +3029,7 @@ int JumpjetLocomotionClass_26::FindItem(unsigned int * a2)
 
 }
 // 0x439A10
-double JumpjetLocomotionClass::ComputeVectorLengthMetric(void *a1)
+double JumpjetLocomotionClass::ComputeVectorLengthMetric()
 {
 
   int v2; // eax
@@ -3199,7 +3199,7 @@ bool JumpjetLocomotionClass::StubReturnTrue(int a1)
 bool JumpjetLocomotionClass::StubReturnTrue_0(InfantryClass * aP0)
 {
 
-  if ( (uint8_t)TimerClass::Active((int)((unsigned int *)aP0)[0]) ) /*0x4afc2e*/
+  if ( (uint8_t)((TimerClass *)((int)((unsigned int *)aP0)[0]))->Active() ) /*0x4afc2e*/
     return 1; /*0x4afc37*/
   return (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)aP0->LocomotionClass + 16))(aP0) /*0x4afc79*/
       && (aP0->Dest[2] != g_DDraw_ClipRect || *(unsigned long long *)aP0->HeadToCoord != qword_8A0794)
@@ -5623,7 +5623,7 @@ int JumpjetLocomotionClass::SmallStub_5B19D0(int a1)
 bool JumpjetLocomotionClass::StubReturnTrue_4(InfantryClass * aP0)
 {
 
-  if ( (uint8_t)TimerClass::Active((int)((unsigned int *)aP0)[0]) ) /*0x5b19ee*/
+  if ( (uint8_t)((TimerClass *)((int)((unsigned int *)aP0)[0]))->Active() ) /*0x5b19ee*/
     return 1; /*0x5b19f7*/
   return (*(uint8_t (**)(MechLocomotionClass *))(*(unsigned int *)aP0->LocomotionClass + 16))(aP0) /*0x5b1a39*/
       && (aP0->MovingDestination[2] != g_MissionQueueFrame.localVariables[227]
@@ -5898,7 +5898,7 @@ bool JumpjetLocomotionClass::StubReturnTrue_5(int a1)
 bool JumpjetLocomotionClass::StubReturnTrue_6(InfantryClass * aP0)
 {
 
-  if ( (uint8_t)TimerClass::Active((int)((unsigned int *)aP0)[0]) ) /*0x69f33e*/
+  if ( (uint8_t)((TimerClass *)((int)((unsigned int *)aP0)[0]))->Active() ) /*0x69f33e*/
     return 1; /*0x69f347*/
   return (*(uint8_t (**)(ShipLocomotionClass *))(*(unsigned int *)aP0->LocomotionClass + 16))(aP0) /*0x69f389*/
       && (aP0->Dest[2] != g_OverlayTypeConfig || *(unsigned long long *)aP0->HeadToCoord != qword_B077FC)
@@ -6301,7 +6301,7 @@ namespace gamemd {
       if ( Owner->uniqueId && (*((int (**)(FootClass *))Owner->TechnoClass + 11))(Owner) == 15 ) /*0x718181*/
       {
         v9 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v11); /*0x71818d*/
-        Cell::ApplyDamage((Cell *)v9, (int)&((char *)&g_BuildingLoadQueue_Array), 1, 1, 0); /*0x71819f*/
+        ((Cell *)((Cell *)v9))->ApplyDamage((int)&((char *)&g_BuildingLoadQueue_Array), 1, 1, 0); /*0x71819f*/
       }
       Factory::CalculateExitCell((Factory *)&v11, v6, a2, v10, v11, v12[0]); /*0x7181ac*/
           result = (unsigned int *)(a3 + 36);
@@ -6331,7 +6331,7 @@ namespace gamemd {
     if ( v7[504] && (*(int (**)(unsigned char *))(*(unsigned int *)v7 + 44))(v7) == 15 ) /*0x718181*/
     {
       unsigned int * v8 = ((Coord *)(&DataGlobal_87F7E8))->To_Cell(v10); /*0x71818d*/
-      Cell::ApplyDamage(v8, (int)&DataGlobal_B0EBF8, 1, 1, 0); /*0x71819f*/
+      ((Cell *)(v8))->ApplyDamage((int)&DataGlobal_B0EBF8, 1, 1, 0); /*0x71819f*/
     }
   int v9; // [esp+0h] [ebp-10h]
     Factory::CalculateExitCell((unsigned int *)(a3 - 4), a1, a2, v10, v9, v10[0]); /*0x7181ac*/

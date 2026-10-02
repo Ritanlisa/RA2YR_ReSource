@@ -77,6 +77,6 @@ struct Power {
     int FinalizeDrain(int a2);  // 0x4A1C10
     int FlagProcess(int a2);  // 0x4A1CA0
     int TimerProcess(int a1_1);
-    char ChangedHouse(char a2, void *a2_2);  // 0x750090
+    char ChangedHouse(char a2);  // 0x750090
 };
 } // namespace gamemd

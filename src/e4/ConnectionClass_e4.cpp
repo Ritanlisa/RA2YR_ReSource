@@ -324,7 +324,7 @@ LABEL_40:
   {
     while ( 1 ) /*0x48c08e*/
     {
-      TileIndex = (unsigned int *)Terrain::GetTileIndex((Terrain *)v6, v7); /*0x48c08e*/
+      TileIndex = (unsigned int *)((Terrain *)((Terrain *)v6))->GetTileIndex(v7); /*0x48c08e*/
       if ( TileIndex ) /*0x48c095*/
       {
         v9 = TileIndex[5]; /*0x48c097*/
@@ -419,7 +419,7 @@ int ConnectionClass::serviceSendQueue()
   {
     do /*0x48c45f*/
     {
-      TileIndex = Terrain::GetTileIndex((Terrain *)PlayerIndex, v2); /*0x48c3fe*/
+      TileIndex = ((Terrain *)((Terrain *)PlayerIndex))->GetTileIndex(v2); /*0x48c3fe*/
       v5 = TileIndex; /*0x48c403*/
       if ( (*(unsigned char *)TileIndex & 2) != 0 ) /*0x48c408*/
       {
@@ -443,7 +443,7 @@ int ConnectionClass::serviceSendQueue()
     return 1; /*0x48c46f*/
   do /*0x48c552*/
   {
-    v8 = Terrain::GetTileIndex((Terrain *)this->PlayerIndex, v7); /*0x48c47e*/
+    v8 = ((Terrain *)((Terrain *)this->PlayerIndex))->GetTileIndex(v7); /*0x48c47e*/
     if ( (*(unsigned char *)v8 & 2) == 0 ) /*0x48c483*/
     {
       v9 = dword_887340; /*0x48c48e*/

@@ -384,7 +384,7 @@ int WideString::Reassign_Alt(const wchar_t **a2)
 
 // 0x7B6AE0
 namespace gamemd {
-wchar_t ** WideString::Append2(CampaignScore * aP1, void *a2_1)
+wchar_t ** WideString::Append2(wchar_t *aP1)
 {
 
   wchar_t *v3; // esi

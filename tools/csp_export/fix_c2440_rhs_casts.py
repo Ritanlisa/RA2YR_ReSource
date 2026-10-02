@@ -82,6 +82,19 @@ def main():
             pre_eq = body[:-1]
             i = top_level_eq(pre_eq)
             if i is None:
+                # G42.7: return-context -- `return X;` whose fn decl says DST
+                rm = re.match(r'^return\s+(.+)$', pre_eq)
+                if rm:
+                    rhs = rm.group(1).strip()
+                    if not rhs or rhs.startswith('(' + dst + ')') \
+                            or '(' in dst or ')' in dst:
+                        miss += 1
+                        continue
+                    ls[line - 1] = ('return (%s)(%s);' % (dst, rhs)
+                                    ) + raw[len(body):]
+                    n += 1
+                    touched = True
+                    continue
                 miss += 1
                 continue
             lhs, rhs = pre_eq[:i].strip(), pre_eq[i + 1:].strip()

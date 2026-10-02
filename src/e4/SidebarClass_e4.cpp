@@ -593,7 +593,7 @@ int SidebarClass::SwitchTab(int a2)
     }
     while ( v4 < 60 ); /*0x6a7600*/
     *((unsigned int *)this + 5351) = a2; /*0x6a7605*/
-    GadgetClass::Show((GadgetClass *)(&stru_B07C48 + 8 * a2)); /*0x6a7614*/
+    ((GadgetClass *)((GadgetClass *)(&stru_B07C48 + 8 * a2)))->Show(); /*0x6a7614*/
     v6 = (int)((char *)this + 3988 * *((unsigned int *)this + 5351) + 5444); /*0x6a762c*/
     *(unsigned char *)((char *)this + 3988 * *((unsigned int *)this + 5351) + 5472) = 1; /*0x6a7633*/
     v7 = 26; /*0x6a7645*/

@@ -10,7 +10,7 @@
 
 // 0x4C9480
 namespace gamemd {
-int TimerClass::Active(void *a1_1)
+int TimerClass::Active()
 {
 
   int v1; // edx

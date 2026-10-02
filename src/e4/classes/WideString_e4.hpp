@@ -31,7 +31,7 @@ struct WideString {
     int AssignFromPtr(const wchar_t **a2);  // 0x7B6720
     void ** Assign_Alt(wchar_t *String);  // 0x7B6880
     int Reassign_Alt(const wchar_t **a2);  // 0x7B68E0
-    wchar_t ** Append2(CampaignScore * aP1, void *a2_1);  // 0x7B6AE0
+    wchar_t ** Append2(wchar_t *aP1);  // 0x7B6AE0
     wchar_t ** Append(CampaignScore * aP1, void *a2_1);  // 0x7B6B60
     wchar_t ** AssignConcat(wchar_t ** a2, wchar_t * String);  // 0x7B6BE0
     wchar_t ** ConcatAlloc(wchar_t ** a1, ObjectClass * aP2);  // 0x7B6CB0

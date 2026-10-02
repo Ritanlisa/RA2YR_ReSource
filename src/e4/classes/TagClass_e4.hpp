@@ -43,7 +43,7 @@ struct TagClass {
 // --- flat members (END) ---
     void Unlink(void *a1);
     TagClass * ProcessTrigger(char a2);
-    TriggerClass * * Destructor(void ** a1, AbstractClass * a2);
+    TriggerClass * * Destructor();
     int CheckEvent(int a2, TagTypeClass * aP2);
     void HasValidHouse(void *a1);
     int LoadTag(AbstractClass * aP0, int aP1);

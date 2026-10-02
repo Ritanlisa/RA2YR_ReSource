@@ -52,7 +52,7 @@ char NullModem_TestConnection(void * a1)
   hWnd = (HWND)(MessageBox);
   if ( !MessageBox ) /*0x5f0407*/
     return 0; /*0x5f067c*/
-  Dialog::Show(MessageBox); /*0x5f040f*/
+  ((Dialog *)(MessageBox))->Show(); /*0x5f040f*/
   v5 = dword_887340; /*0x5f0419*/
   if ( dword_887338 != -1 ) /*0x5f0422*/
         v5 += ((Timer *)this)->GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];

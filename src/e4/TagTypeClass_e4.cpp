@@ -30,7 +30,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1, void *a2, void *a
   char Destination[48]; // [esp+8h] [ebp-34h] BYREF
   char v7; // [esp+38h] [ebp-4h]
 
-  AbstractTypeClass::Constructor((int)this, aP1); /*0x6e5b6c*/
+  ((AbstractTypeClass *)((int)this))->Constructor(aP1); /*0x6e5b6c*/
   *((unsigned int *)this + 38) = -1; /*0x6e5b78*/
   *((unsigned int *)this + 39) = 0; /*0x6e5b82*/
   *((unsigned int *)this + 40) = 0; /*0x6e5b88*/
@@ -158,7 +158,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
     while ( v8 < g_MultiplayerCleanup ); /*0x6e5dc0*/
   }
-  return AbstractTypeClass::Dtor(int a1) ; /*0x6e5dc9*/
+  return ((AbstractTypeClass *)(int a1))->Dtor() ; /*0x6e5dc9*/
 
 }
 }

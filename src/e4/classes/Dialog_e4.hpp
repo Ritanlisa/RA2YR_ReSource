@@ -119,7 +119,7 @@ struct Dialog {
     BOOL IsSpecialTemplate(void *a1_1);  // 0x602AE0
     BOOL EnumAndCleanup();  // 0x60AAA0
     BOOL SubclassEditControl(HWND hWnd, LPARAM a2);  // 0x60F320
-    HWND Show(void *a1_1, void *a2_1);  // 0x622800
+    HWND Show();  // 0x622800
     char PumpMessages(void *a1_1);  // 0x623120
     int FindByPtr(void *a1_1);  // 0x7759B0
     HWND RestoreParent(void *a1_1);  // 0x777060

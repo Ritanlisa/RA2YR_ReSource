@@ -36,7 +36,7 @@ struct ConnectionClass {
     int receivePacket(int a2, int a3);
     int serviceSendQueue();
     int initQueue(unsigned int a2);
-    void dtor(void *a1);
+    void dtor();
      double queueSendPacket(...);  // C2597 interim stub
 };
 

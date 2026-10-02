@@ -84,7 +84,7 @@ LABEL_6:
     DeleteAndZero((ObjectClass *)&v6); /*0x5d0202*/
     return 0; /*0x5d0210*/
   }
-  while ( !(uint8_t)String::NotEquals(*(String **)(this->customSound_controller[2] + 4 * v3), 0) ) /*0x5d01c4*/
+  while ( !(uint8_t)((String *)(*(String **)(this->customSound_controller[2] + 4 * v3)))->NotEquals(0) ) /*0x5d01c4*/
   {
 LABEL_5:
     if ( ++v3 >= this->customSound ) /*0x5d0200*/
@@ -774,7 +774,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
         ((String *)((String *)&v19.fallRate))->Assign(asc_830A14); /*0x5d771f*/
         String::TrimRight((String *)&((char *)&v19), (const char **)&v19.fallRate); /*0x5d772d*/
         DeleteAndZero((ObjectClass *)&v19.fallRate); /*0x5d7736*/
-        v7 = String::GetOrEmpty((String *)&((char *)&v19)); /*0x5d7749*/
+        v7 = ((String *)((String *)&((char *)&v19)))->GetOrEmpty(); /*0x5d7749*/
         StringCSF = GetStringCSF((wchar_t *)v7, 0, aDRa2mdpostMult, 1030); /*0x5d7752*/
         ((WideString *)((wchar_t **)&((char *)&v19)))->Assign(StringCSF); /*0x5d775c*/
         unknown_libname_73(&((char *)&v19)); /*0x5d7765*/
@@ -792,7 +792,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
         ((String *)((String *)&v19.ambientSoundController[1]))->Assign(asc_830A14); /*0x5d77bf*/
         String::TrimRight((String *)&((char *)&v19), (const char **)&v19.ambientSoundController[1]); /*0x5d77cd*/
         DeleteAndZero((ObjectClass *)&v19.ambientSoundController[1]); /*0x5d77d6*/
-        v10 = String::GetOrEmpty((String *)&((char *)&v19)); /*0x5d77e9*/
+        v10 = ((String *)((String *)&((char *)&v19)))->GetOrEmpty(); /*0x5d77e9*/
         v11 = GetStringCSF((wchar_t *)v10, 0, aDRa2mdpostMult, 1041); /*0x5d77f2*/
         ((WideString *)((wchar_t **)&((char *)&v19)))->Assign(v11); /*0x5d77fc*/
         unknown_libname_73(&((char *)&v19)); /*0x5d7805*/
@@ -829,7 +829,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
         IDA_LOBYTE(v19.ambientSoundController[2]) = 1; /*0x5d794f*/
         if ( String::Length((String *)&((char *)&v19)) ) /*0x5d7954*/
         {
-          v14 = String::GetOrEmpty((String *)&((char *)&v19)); /*0x5d7966*/
+          v14 = ((String *)((String *)&((char *)&v19)))->GetOrEmpty(); /*0x5d7966*/
           IDA_LOBYTE(v19.ambientSoundController[2]) = _strcmpi(v14, g_Str_false) != 0; /*0x5d7979*/
         }
         if ( WideString::Length((const wchar_t **)&((char *)&v19)) /*0x5d79a3*/
@@ -1615,7 +1615,7 @@ void UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINICla
   if ( ((SessionClass *)((SessionClass *)dword_A8DA90[v5]))->GetOption2() != a5 ) /*0x5dc021*/
   {
     v26 = 1; /*0x5dc026*/
-    SessionClass::SetOption2(v12, a5); /*0x5dc02e*/
+    ((SessionClass *)(v12))->SetOption2(a5); /*0x5dc02e*/
   }
   ResourceID2CSF = GetResourceID2CSF((ObjectClass *)v5); /*0x5dc03a*/
   v14 = GetComboBoxSelected(v11, ResourceID2CSF, -1) == -3; /*0x5dc04a*/
@@ -1679,7 +1679,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
     v2 = 30; /*0x5dd8c7*/
   else
     v2 = Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2; /*0x5dd8c2*/
-  v3 = Network::SetConnectionParams(&unk_A8E9C0, v2, -1, 1000, 1); /*0x5dd8dd*/
+  v3 = ((Network *)(&unk_A8E9C0))->SetConnectionParams(v2, -1, 1000, 1); /*0x5dd8dd*/
   IDA_LOBYTE(v3) = dword_A8BB08; /*0x5dd8e2*/
   if ( FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, v3, 1) == 1 ) /*0x5dd906*/
   {
@@ -1716,7 +1716,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
         v5 = 8 * LobbyStatus; /*0x5dd9ce*/
         if ( 8 * LobbyStatus < 120 ) /*0x5dd9d8*/
           v5 = 120; /*0x5dd9da*/
-        Network::SetConnectionParams(&unk_A8E9C0, LobbyStatus, -1, v5, 1); /*0x5dd9ea*/
+        ((Network *)(&unk_A8E9C0))->SetConnectionParams(LobbyStatus, -1, v5, 1); /*0x5dd9ea*/
         ((TacticalClass *)(&unk_A8E9C0))->SetCameraPosition(60, -1, 600); /*0x5dd9fd*/
         return 1; /*0x5dda0c*/
       }
@@ -3340,7 +3340,7 @@ int Network_BroadcastMessage(int a1)
     Event::Dispatch(); /*0x5df93e*/
   }
   if ( (g_NetworkSettingsState == 1 || g_NetworkSettingsState == 2) /*0x5df968*/
-    && !Network::IsBroadcastAddr((unsigned char *)(*(unsigned int *)(dword_A8DA60 + 4 * a1) + 40)) )
+    && !((Network *)((unsigned char *)(*(unsigned int *)(dword_A8DA60 + 4 * a1) + 40)))->IsBroadcastAddr() )
   {
     Network::SendMessage((int)unk_A8E9C0, (int)v4, 455, 1, *(unsigned int *)(dword_A8DA60 + 4 * a1) + 40, 0, 0); /*0x5df991*/
   }

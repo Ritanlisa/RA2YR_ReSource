@@ -35,7 +35,7 @@
 
 // 0x688380
 namespace gamemd {
-void * Multiplayer::FindStartPositions(void *a1)
+void * Multiplayer::FindStartPositions()
 {
 
   int v1; // esi
@@ -195,7 +195,7 @@ LABEL_24:
   v2[13] = 0; /*0x688657*/
   v2[12] = (gamemd::Multiplayer)((Multiplayer)1); /*0x68865f*/
   *(unsigned int *)v2 = (unsigned int)(&vt_VectorClass); /*0x688663*/
-  Multiplayer::CopyDataArray(v2, &v25); /*0x688669*/
+  ((Multiplayer *)(v2))->CopyDataArray(&v25); /*0x688669*/
   *(unsigned int *)v2 = (unsigned int)(&vt_DynamicVectorClass); /*0x68866e*/
   v25.vtable0 = &vt_VectorClass; /*0x688674*/
   Items = v25.Items; /*0x68867c*/
@@ -210,7 +210,7 @@ LABEL_24:
 } // namespace gamemd
 // 0x68C2B0
 namespace gamemd {
-unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
+unsigned int * Multiplayer::CopyDataArray(unsigned int *aP1)
 {
 
   int v3; // edi
@@ -279,7 +279,7 @@ void Multiplayer::ShowProgress(int a2)
       v14 = a2 / 2; /*0x69aec7*/
     __asm { fild dword ptr [esp+1E4h+var_1D0] } /*0x69aecb*/
     __asm { fstp [esp+1E8h+var_1D0] }
-    result = Progress::GetWeighted((int)&stru_AC4B30.__pad_EC[828], 0); /*0x69aeda*/
+    result = ((Progress *)((int)&stru_AC4B30.__pad_EC[828]))->GetWeighted(0); /*0x69aeda*/
     __asm { fmul ds:dbl_7E2AC0 } /*0x69aedf*/
     __asm
     {
@@ -297,14 +297,14 @@ void Multiplayer::ShowProgress(int a2)
         case 2: /*0x69af3e*/
           memset(v16, 0, 250); /*0x69b099*/
           v16[0] = 108; /*0x69b0a2*/
-          Progress::GetWeighted((int)&stru_AC4B30.__pad_EC[828], 0); /*0x69b0aa*/
+          ((Progress *)((int)&stru_AC4B30.__pad_EC[828]))->GetWeighted(0); /*0x69b0aa*/
           __asm { fmul ds:dbl_7E2AC0 } /*0x69b0af*/
           LOWORD(v10) = Math::RoundToInt(v3); /*0x69b0b5*/
           *(int *)((char *)&v16[6] + 1) = v10; /*0x69b0c0*/
           LOBYTE(v16[6]) = dword_A8DB30; /*0x69b0d5*/
           ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v16, 250, 0); /*0x69b0d9*/
           Stream::ReadPacket((int)&unk_A8EA70); /*0x69b0e3*/
-          while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 5 ) /*0x69b0f5*/
+          while ( ((Count *)((Count *)&unk_A8EA70))->GetCountQueue() > 5 ) /*0x69b0f5*/
           {
             v11 = 240; /*0x69b101*/
             if ( Ticks != -1 ) /*0x69b107*/
@@ -327,7 +327,7 @@ void Multiplayer::ShowProgress(int a2)
           v17 = 0; /*0x69af54*/
           v18 = 0; /*0x69af56*/
           v16[0] = 15; /*0x69af5c*/
-          Progress::GetWeighted((int)&stru_AC4B30.__pad_EC[828], 0); /*0x69af64*/
+          ((Progress *)((int)&stru_AC4B30.__pad_EC[828]))->GetWeighted(0); /*0x69af64*/
           __asm { fmul ds:dbl_7E2AC0 } /*0x69af69*/
           LOWORD(v5) = Math::RoundToInt(v3); /*0x69af6f*/
           *(int *)((char *)&v16[11] + 3) = v5; /*0x69af7a*/

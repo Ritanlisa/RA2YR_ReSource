@@ -60,13 +60,13 @@ struct NetworkLobby {
     unsigned int Timer;
     unsigned int Event;
 // --- flat members (END) ---
-    int MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, int a6);  // 0x5D4210
+    int MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int a6);  // 0x5D4210
     int CreateGame();  // 0x5DC350
          INT_PTRDlgProc(HWND hDlg, UINT a2, int nIDDlgItem, unsigned int lParam);  // 0x5DE520
     void SetupPlayers(wchar_t * Source);  // 0x5E8EA0
     int AssignPlayerSlot();  // 0x5E9240
     int InitLobbyDropdowns(SessionClass * hDlg);  // 0x5E9E00
-    void * Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x5EA2A0
+    void * Dispatch();  // 0x5EA2A0
     int SetupPlayerSlotControls(HWND hDlg);  // 0x5EB660
     char FillOptionCombo();  // 0x5EE3A0
     char CheckLobbyConditions();  // 0x5E9290

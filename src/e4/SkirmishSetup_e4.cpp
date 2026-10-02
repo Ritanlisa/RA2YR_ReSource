@@ -412,7 +412,7 @@ LABEL_28:
     if ( hWnd == (HWND)1260 ) /*0x5e6e20*/
     {
       Screen::Capture(1, 0, v6, a2); /*0x5e6e2a*/
-      Dialog::EnumAndCleanup((Dialog *)aP0); /*0x5e6e33*/
+      ((Dialog *)((Dialog *)aP0))->EnumAndCleanup(); /*0x5e6e33*/
       return 0; /*0x5e6e41*/
     }
     return 0; /*0x5e6e20*/
@@ -521,7 +521,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
   if ( ((CCFileClass *)(v1))->Load() != 1 ) /*0x5e85c9*/
     return -1; /*0x5e85cb*/
   byte_8316D4 = 1; /*0x5e85db*/
-  MapSeed::ValidateName(byte_ABDFD8, (int)aRandmapSed); /*0x5e85e2*/
+  ((MapSeed *)(byte_ABDFD8))->ValidateName((int)aRandmapSed); /*0x5e85e2*/
   v3 = g_UIControlState; /*0x5e85e7*/
   if ( g_UIControlState ) /*0x5e85ef*/
   {
@@ -569,7 +569,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
     GameOption::SetDescriptionWStr((wchar_t *)(*(GameOption **)(dword_A8B8CC + 4 * v6)), &unk_ABE050); /*0x5e8701*/
     v11 = (char **)(dword_A8B8CC + 4 * v6); /*0x5e870b*/
     v12 = GameConfig::ComputeCRC(); /*0x5e870e*/
-    GameOption::SetDigest(*v11, v12); /*0x5e8716*/
+    ((GameOption *)(*v11))->SetDigest(v12); /*0x5e8716*/
     return v6; /*0x5e871b*/
   }
 }

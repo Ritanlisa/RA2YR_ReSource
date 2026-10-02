@@ -141,7 +141,7 @@ struct Cell {
     TechnoClass * * IsOccupied(short * a2, char a3);  // 0x419B00
     int PosToIndex(void *a1_1);  // 0x42B1C0
     int CanPlaceBuilding(unsigned int * a2);  // 0x43B4C0
-    void ApplyDamage(int a2, int a3, int a4, char a5);
+    void ApplyDamage(int aP1, int a3, int a4, char aP4);
     int GetNeighbourContent(unsigned int a2);  // 0x481810
     int IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char aP7);  // 0x4834A0
     int IsValidHeight(void *a1_1);  // 0x485060
@@ -151,15 +151,15 @@ struct Cell {
     int IsInRange2(void *a1_1);  // 0x486770
     void IsShore(void *a1_1);  // 0x4867B0
     int IsBuildableAdvanced(void *a1_1);  // 0x486FF0
-    int HasOccupierBit(char a2);
+    int HasOccupierBit(char aP1);
     int SearchEnemies(IUnknown * aP1);  // 0x487A10
     long long GetTraversability();  // 0x487CB0
-    int GetSlopeIndex(int a2);  // 0x487D50
+    int GetSlopeIndex();  // 0x487D50
     int IsBridge2();  // 0x487DF0
     Coord * * IsValidDestination(short * a2);  // 0x4DCE80
     int Exists(MouseClass * aP1);  // 0x5657E0
-    int CoordToIndex(__int16 *a2);
-    int SetRadar(__int16 *a2);
+    int CoordToIndex(int16_t *aP1);
+    int SetRadar(int16_t *aP1);
     AbstractClass * * UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3);  // 0x56E990
     ObjectClass * * SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5);  // 0x56EB80
     int IsPassableAllied(IUnknown * aP0, IUnknown * aP1);  // 0x578AD0
@@ -169,9 +169,9 @@ struct Cell {
     int IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80
     void* CreateCrater(IUnknown aP2, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x6D2790
     CellStruct * * GetAdjacentPassableMask(IUnknown * aP0, int a2);  // 0x6D8700
-    unsigned short * GetHeight(BuildingTypeClass * aP1, int * a2);  // 0x4265B0
+    unsigned short * GetHeight(int *aP1, int *a2);  // 0x4265B0
     unsigned int * GetWorldCoords(unsigned int *a2, int a3);  // 0x68BD00
-    BOOL IsPassableOffset(IUnknown * aP1);  // 0x4870D0
+    BOOL IsPassableOffset(int aP1);  // 0x4870D0
     int PosToLinearIndex(IUnknown * aP0);  // 0x56BC50
     int DecodeFlags();  // 0x56CB80
     int GetGroundHeight(unsigned int * a1);  // 0x578080

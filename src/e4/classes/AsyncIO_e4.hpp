@@ -29,8 +29,8 @@ struct AsyncIO {
     unsigned int Timer;
 // --- flat members (END) ---
     void Shutdown(void *a1);
-    void Read(void *a1, void *a2);
-    int WaitCompletion(int a1);
+    void Read();
+    int WaitCompletion();
 };
 
 } // namespace gamemd

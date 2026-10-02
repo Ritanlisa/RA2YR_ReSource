@@ -180,6 +180,6 @@ struct WalkLocomotion {
     AbstractClass * * MoveTo(unsigned int *aP1, int aP3);  // 0x6A01A0
     void ProcessCollision(char a2, void *a2_2);  // 0x6A05F0
     int Update(unsigned char * a2, int a3, int a4, void *a4_2);  // 0x6A1C80
-    unsigned int * TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * aP3, void *a4_1);  // 0x6A3DB0
+    unsigned int * TransformCoords(unsigned int *aP1, int *aP2, int *aP3);  // 0x6A3DB0
 };
 } // namespace gamemd

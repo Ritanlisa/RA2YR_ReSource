@@ -1076,7 +1076,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
             v19 = (int)v18; /*0x6d6ed8*/
             if ( *(unsigned int *)&v18->__pad_2D[23] != -1 ) /*0x6d6ede*/
             {
-              StartCoords = House::GetStartCoords(v18, v59); /*0x6d6eee*/
+              StartCoords = ((House *)(v18))->GetStartCoords(v59); /*0x6d6eee*/
               v47 = *StartCoords; /*0x6d6ef7*/
               v48 = StartCoords[1]; /*0x6d6f00*/
               v49 = StartCoords[2]; /*0x6d6f07*/
@@ -1305,7 +1305,7 @@ LABEL_12:
           || (Object_field_0x30 = dword_A83D4C->Object_field_0x30,
               v8 = (unsigned int *)(*(int (**)(unsigned char *, char *))(*(unsigned int *)v6 + 72))(v6, v22),
               v9 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v8),
-              (uint8_t)Cell::IsPassableOffset((Cell *)v9, (int)Object_field_0x30)) )
+              (uint8_t)((Cell *)((Cell *)v9))->IsPassableOffset((int)Object_field_0x30)) )
         {
           v7 = 1; /*0x6da43e*/
         }

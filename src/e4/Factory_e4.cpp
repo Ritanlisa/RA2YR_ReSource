@@ -30,7 +30,7 @@
 
 // 0x663D60
 namespace gamemd {
-int Factory::GetLinkedIndex(DynamicVector * aP1, void *a2_1)
+int Factory::GetLinkedIndex(int aP1)
 {
 
   int result; // eax

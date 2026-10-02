@@ -847,7 +847,7 @@ LABEL_203:
     ((BuildingClass *)((char *)v71))->CreatePlacementCrater();
     v71->field_44 = -1;
     ((House *)((int)v71))->AnnounceUpgrade((IUnknown *)0xFFFFFFFF);
-    Cell::SetRadar((int *)&stru_87C374[13428], (IUnknown *)&v71->field_24);
+    ((Cell *)((int *)&stru_87C374[13428]))->SetRadar((IUnknown *)&v71->field_24);
     Radar::Update((IUnknown *)&stru_87C374[13428], (IUnknown *)&v71->field_24);
     AbstractClass::ClearTargetToMeClearManagerTarget((int)v71);
     v95 = (void *)operator new(0x1C8u);
@@ -1079,7 +1079,7 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
     }
     while ( v8 < this->CommBufferClass_field_0x8 ); /*0x48b1db*/
   }
-  Struct::ClearAllMemberFlags((Struct *)this); /*0x48b1df*/
+  ((Struct *)((Struct *)this))->ClearAllMemberFlags(); /*0x48b1df*/
   return this->__pad_0; /*0x48b1e6*/
 
 }
@@ -1828,7 +1828,7 @@ int E4Recv_488210::sub_488210(unsigned int a2, unsigned int * a3, int a4)
       GadgetClass::Hide((GadgetClass *)this); /*0x488224*/
       return GadgetClass::ProcessMouseOver((ToggleClass *)this, a2, a3, 0); /*0x48823a*/
     }
-    GadgetClass::Show((GadgetClass *)this); /*0x48823d*/
+    ((GadgetClass *)((GadgetClass *)this))->Show(); /*0x48823d*/
   }
   return GadgetClass::ProcessMouseOver((ToggleClass *)this, a2, a3, 0); /*0x488238*/
 

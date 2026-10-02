@@ -806,10 +806,10 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
             v21 = strtok(0, Str); /*0x41b2bb*/
             v22 = LookupWaypointName((ObjectClass *)v21); /*0x41b2ca*/
             v23 = strtok(0, Str); /*0x41b2d3*/
-            v24 = (TeamClass *)ObjectTypeClass::FindByName((ObjectTypeClass *)v23); /*0x41b2dd*/
+            v24 = (TeamClass *)((ObjectTypeClass *)((ObjectTypeClass *)v23))->FindByName(); /*0x41b2dd*/
             if ( v24 ) /*0x41b2e4*/
             {
-              v25 = TeamClass::FindOrCreate(v24); /*0x41b2e8*/
+              v25 = ((TeamClass *)(v24))->FindOrCreate(); /*0x41b2e8*/
               if ( v25 ) /*0x41b2ef*/
                 ObjectClass::SetReference((ObjectClass *)v12, v25); /*0x41b2f4*/
             }

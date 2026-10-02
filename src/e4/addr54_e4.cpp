@@ -149,7 +149,7 @@ int E4Recv_542F30::sub_542F30()
         goto LABEL_12; /*0x542f5c*/
       while ( 1 ) /*0x542f5f*/
       {
-        TileIndex = Terrain::GetTileIndex((Terrain *)v6, v5); /*0x542f5f*/
+        TileIndex = ((Terrain *)((Terrain *)v6))->GetTileIndex(v5); /*0x542f5f*/
         if ( TileIndex ) /*0x542f66*/
           break; /*0x542f66*/
 LABEL_8:
@@ -486,7 +486,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   char v157[20]; // [esp+328h] [ebp-6E8h] BYREF
   sprintf(v157, stru_8295E8, &aTemperat[v9]);
   ((CCFileClass *)(&aP1))->Construct(v157);
-  CCINIClass::Load(v77, &aP1, 0, 0);
+  ((CCINIClass *)(v77))->Load(&aP1, 0, 0);
   v20 = 0;
   v21 = 0;
   v90 = 0;
@@ -1424,8 +1424,8 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
   Timer::GetTicks(); /*0x546db5*/
   if ( !a1 ) /*0x546dc8*/
   {
-    LayerClass::CellIteratorReset(&MapClass_Instance); /*0x546dd3*/
-    for ( i = LayerClass::CellIteratorNext(&MapClass_Instance); i; i = LayerClass::CellIteratorNext(&MapClass_Instance) ) /*0x546de6*/
+    ((LayerClass *)(&MapClass_Instance))->CellIteratorReset(); /*0x546dd3*/
+    for ( i = ((LayerClass *)(&MapClass_Instance))->CellIteratorNext(); i; i = ((LayerClass *)(&MapClass_Instance))->CellIteratorNext() ) /*0x546de6*/
     {
       v4 = *(unsigned int *)(i + 56); /*0x546dec*/
       inited = 0; /*0x546def*/
@@ -2268,7 +2268,7 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   else
     v9 = 0; /*0x54092d*/
   dword_887628 = (int)v9; /*0x540931*/
-  if ( WinsockInterface::Init(v9) ) /*0x540936*/
+  if ( ((WinsockInterface *)(v9))->Init() ) /*0x540936*/
     *((unsigned char *)this + 4) = 1; /*0x54093f*/
   else
     *((unsigned char *)this + 4) = 0; /*0x540945*/

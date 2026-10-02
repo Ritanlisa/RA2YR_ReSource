@@ -244,7 +244,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       {
         slaveManager = (gamemd::SlaveManagerClass *)(slaveOwner->slaveManager); /*0x517e15*/
         if ( slaveManager ) /*0x517e1d*/
-          SlaveManagerClass::LostSlave(slaveManager, (int)a1); /*0x517e22*/
+          ((SlaveManagerClass *)(slaveManager))->LostSlave((int)a1); /*0x517e22*/
       }
       ((HouseClass *)(((unsigned int *)a1)[0]))->DecrementUnitCount((unsigned char *)(a1)); /*0x517e2e*/
       if ( !((unsigned int *)a1)[0] ) /*0x517e33*/
@@ -312,7 +312,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     }
   }
   ((unsigned int *)a1)[0] = 0; /*0x517f83*/
-  return FootClass::Destruct((FootClass *)a1); /*0x517f8e*/
+  return ((FootClass *)((FootClass *)a1))->Destruct(); /*0x517f8e*/
 
 }
 // 0x7447A0

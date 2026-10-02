@@ -402,7 +402,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   {
     if ( _strcmpi((char *)v46, (char *)off_818114) ) /*0x41f6e2*/
     {
-      v7 = SuperWeaponTypeClass::FindByName(v46); /*0x41f6f2*/
+      v7 = ((SuperWeaponTypeClass *)(v46))->FindByName(); /*0x41f6f2*/
       *((unsigned int *)this + 42) = v7; /*0x41f6fa*/
       if ( v7 != -1 ) /*0x41f700*/
         *((unsigned int *)this + 40) = 1; /*0x41f702*/
@@ -693,7 +693,7 @@ AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
     }
     while ( v3 < dword_A8B210 ); /*0x420056*/
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x42005a*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x42005a*/
   if ( (a2 & 1) != 0 ) /*0x420064*/
     __3_YAXPAX_Z(Block); /*0x420067*/
   return Block->__pad_0; /*0x420071*/

@@ -2724,7 +2724,7 @@ LABEL_16:
 }
 // 0x5471B0
 namespace gamemd {
-int HouseClass::GetCameoTypeIndex(int a2, void *a2_2)
+int HouseClass::GetCameoTypeIndex(int a2)
 {
 
   unsigned int *v2; // eax
@@ -3040,7 +3040,7 @@ AbstractClass * * HouseClass::FindStartPositions(void *a1)
   void *Block; // [esp+20h] [ebp-14h]
   char v20; // [esp+29h] [ebp-Bh]
 
-  Multiplayer::FindStartPositions(v18); /*0x5ee9d9*/
+  ((Multiplayer *)(v18))->FindStartPositions(); /*0x5ee9d9*/
   v1 = 0; /*0x5ee9e4*/
   p_uniqueId = &dword_A8B230[124].uniqueId; /*0x5ee9e6*/
   do /*0x5eea04*/
@@ -3795,7 +3795,7 @@ char HouseClass::Set(void *a1, void *a2, void *a3)
     {
       v2 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)((unsigned int *)this)[0] + 756))(((unsigned int *)this)[0], &v6); /*0x54b9f8*/
       if ( *v2 == dword_ABC588 ) /*0x54ba08*/
-        LOBYTE(v2) = GadgetGrid::InsertItem((GadgetGrid *)&g_CellClassManager, (int)((unsigned int *)this)[0]); /*0x54ba20*/
+        LOBYTE(v2) = ((GadgetGrid *)((GadgetGrid *)&g_CellClassManager))->InsertItem((int)((unsigned int *)this)[0]); /*0x54ba20*/
       this->unitRepairStations[0] = 1; /*0x54ba25*/
     }
   }

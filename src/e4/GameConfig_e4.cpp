@@ -118,7 +118,7 @@ int GameConfig::ComputeHash()
     v3 = (int)(((MultiplayerGameMode *)((void *)i))->Find());
     if ( v3 ) /*0x679dc2*/
     {
-      v4 = (int)(GameConfig::Constructor(v3));
+      v4 = (int)(((GameConfig *)(v3))->Constructor());
       v0 += Hash::ComputeHashSHA1(v4); /*0x679dd2*/
     }
   }
@@ -135,7 +135,7 @@ int GameConfig::ComputeHash()
   v11 = 0; /*0x679e1f*/
   v6[0] = &CCINIClass_Vtable; /*0x679e23*/
   CCFileClass::Construct(v12, g_Str_File_CoopCampMD_ini); /*0x679e2b*/
-  if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/
+  if ( ((CCINIClass *)(v6))->Load((int)v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
   v12[0] = (unsigned int)(&vt_CCFileClass); /*0x679e60*/
@@ -151,7 +151,7 @@ int GameConfig::ComputeHash()
 
 // 0x5D67B0
 namespace gamemd {
-void GameConfig::Constructor(void *a1_1, void *a2_1, void *a3_1)
+void GameConfig::Constructor()
 {
 
   GameConfig *v1; // edi
@@ -194,7 +194,7 @@ void GameConfig::Constructor(void *a1_1, void *a2_1, void *a3_1)
     *(unsigned int *)&v1->__pad_0[56] = v3; /*0x5d6839*/
     CCFileClass::Construct2(&v6, (char **)&v1->__pad_0[44]); /*0x5d683c*/
     if ( (uint8_t)CCFileClass::Open(&v6, 0) ) /*0x5d6846*/
-      CCINIClass::Load(*(CCINIClass **)&v1->__pad_0[56], (int)&v6, 0, 0); /*0x5d685a*/
+      ((CCINIClass *)(*(CCINIClass **)&v1->__pad_0[56]))->Load((int)&v6, 0, 0); /*0x5d685a*/
     *(unsigned int *)v6.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
     ((Vector *)((int)v7))->Clear(); /*0x5d686f*/

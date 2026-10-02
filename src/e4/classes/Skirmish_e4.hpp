@@ -61,7 +61,7 @@ struct Skirmish {
     unsigned int q03C;
     void* ptr_74;
 // --- flat members (END) ---
-    AbstractClass * * SetupGame(int a2);
+    AbstractClass * * SetupGame(int hWnd);
     CampaignClass * * SetupAllSpawnLocations();
     ReferenceCounted * * Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4);
     TechnoTypeClass * * RandomizeSettings(int aP1);

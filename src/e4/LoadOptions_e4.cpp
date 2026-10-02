@@ -36,7 +36,7 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
   (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559d9b*/
   if ( MessageBox ) /*0x559da0*/
-    Dialog::Show(MessageBox); /*0x559da4*/
+    ((Dialog *)(MessageBox))->Show(); /*0x559da4*/
   byte_A8ED5C = 0; /*0x559dae*/
   byte_A8E378 = 0; /*0x559db5*/
   WTFMode::Shutdown(&dword_A8B238); /*0x559dbc*/
@@ -65,7 +65,7 @@ StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtSavingGame), 0,(const char 
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559e69*/
   (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559e6d*/
   if ( MessageBox ) /*0x559e72*/
-    Dialog::Show(MessageBox); /*0x559e76*/
+    ((Dialog *)(MessageBox))->Show(); /*0x559e76*/
   v4 = SaveScenarioClassGame_AdjustMPSaveFileName((LPCCH)Source, Sourcea, 0); /*0x559e90*/
   (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 16))(dword_887640); /*0x559e94*/
   if ( MessageBox ) /*0x559e99*/

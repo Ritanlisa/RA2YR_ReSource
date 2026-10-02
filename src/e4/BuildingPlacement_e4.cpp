@@ -73,7 +73,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = v6; /*0x4fb8bf*/
   *(unsigned int *)&stru_87F5F0.__pad_E12[1426] = this->Object_field_0x30; /*0x4fb8c7*/
   v7 = (const void *)(*(int (**)(unsigned int *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
-  Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], v7); /*0x4fb8df*/
+  ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetBounds(v7); /*0x4fb8df*/
   v8 = (unsigned int *)((void *)((unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v4 + 440))(v4, &a2))); /*0x4fb8ed*/
   ((Tactical *)((Tactical *)&stru_87F5F0.__pad_58[416]))->MouseMove(&a3, v8); /*0x4fb8fe*/
   (*(void (**)(int, int))(*(unsigned int *)v4 + 292))(v4, 2); /*0x4fb909*/
@@ -182,7 +182,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
             -1,
             0,
             1);
-    v17 = Input::OffsetToDirection((Input *)this + 16); /*0x54c684*/
+    v17 = ((Input *)((Input *)this + 16))->OffsetToDirection(); /*0x54c684*/
     if ( BuildingPlacement::IsPlacementFlagSet(v5, v17, BYTE1(v5[8].BuildingPlacement_field_0x20) & 1) /*0x54c699*/
       || (v46 = 0, *((unsigned char *)this + 144)) )
     {
@@ -334,7 +334,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
             v37 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v36 + 444))(v36); /*0x54c9c6*/
             CellClass::AttachObject(v37, 0); /*0x54c9ce*/
           }
-          GadgetGrid::RemoveItem((int)((GadgetGrid *)&g_CellClassManager), this->BuildingPlacement_field_0x0C); /*0x54c9dc*/
+          ((GadgetGrid *)((int)((GadgetGrid *)&g_CellClassManager)))->RemoveItem(this->BuildingPlacement_field_0x0C); /*0x54c9dc*/
           v38 = this->BuildingPlacement_field_0x0C; /*0x54c9e1*/
           *((unsigned int *)this + 20) = 0; /*0x54c9e4*/
           v44 = v38; /*0x54c9eb*/

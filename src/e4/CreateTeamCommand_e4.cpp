@@ -2433,9 +2433,9 @@ bool CreateTeamCommand::performAction_187()
 {
 
   if ( !dword_A8ECC8 || MapClass::GetScrollMode((MapClass *)&dword_87F7E8) ) /*0x537a1e*/
-    return MapClass::SetScrollMode((int)&dword_87F7E8, 0); /*0x537a43*/
+    return ((MapClass *)((int)&dword_87F7E8))->SetScrollMode(0); /*0x537a43*/
   else
-    return MapClass::SetScrollMode((int)&dword_87F7E8, *(unsigned int *)dword_A8ECBC); /*0x537a34*/
+    return ((MapClass *)((int)&dword_87F7E8))->SetScrollMode(*(unsigned int *)dword_A8ECBC); /*0x537a34*/
 
 }
 } // namespace gamemd

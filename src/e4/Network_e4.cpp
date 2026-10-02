@@ -522,9 +522,9 @@ LABEL_25:
           case 0xA: /*0x48d583*/
             for ( j = 0; j < Network::GetSendCount(&unk_A8E9C0); ++j ) /*0x48d828*/
             {
-              ConnectionSpeed = Network::GetConnectionSpeed(&unk_A8E9C0, j); /*0x48d839*/
+              ConnectionSpeed = ((Network *)(&unk_A8E9C0))->GetConnectionSpeed(j); /*0x48d839*/
               PlayerByID = Network::FindPlayerByID((Network *)&unk_A8E9C0, ConnectionSpeed); /*0x48d841*/
-              if ( (uint8_t)GUID::Compare(dword_A8D804, PlayerByID) ) /*0x48d84c*/
+              if ( (uint8_t)((GUID *)(dword_A8D804))->Compare(PlayerByID) ) /*0x48d84c*/
                 HandleNetworkPlayerDisconnect(ConnectionSpeed, 0); /*0x48d859*/
             }
             break; /*0x48d86b*/
@@ -608,7 +608,7 @@ LABEL_25:
               stru_A8D600.__pad_73[0]);
             break; /*0x48d7d0*/
           case 0x21: /*0x48d583*/
-            Network::SendBeaconDelete((Network *)&g_VisibilitySystem, stru_A8D600.__pad_73[1], stru_A8D600.__pad_73[0]); /*0x48d7ea*/
+            ((Network *)((Network *)&g_VisibilitySystem))->SendBeaconDelete(stru_A8D600.__pad_73[1], stru_A8D600.__pad_73[0]); /*0x48d7ea*/
             break; /*0x48d7ef*/
           case 0x22: /*0x48d583*/
             Network::SendBeacon( /*0x48d810*/
@@ -626,7 +626,7 @@ LABEL_25:
                 v21 = 0; /*0x48d5bc*/
                 if ( Network::GetSendCount(&unk_A8E9C0) > 0 ) /*0x48d5c5*/
                 {
-                  while ( Network::GetConnectionSpeed(&unk_A8E9C0, v21) != *(unsigned int *)&stru_A8D600.__pad_64[3] ) /*0x48d5de*/
+                  while ( ((Network *)(&unk_A8E9C0))->GetConnectionSpeed(v21) != *(unsigned int *)&stru_A8D600.__pad_64[3] ) /*0x48d5de*/
                   {
                     if ( ++v21 >= Network::GetSendCount(&unk_A8E9C0) ) /*0x48d5ed*/
                       goto LABEL_95; /*0x48d5ed*/
@@ -678,7 +678,7 @@ LABEL_56:
                       if ( !v30 ) /*0x48d73f*/
                         v30 = 1234; /*0x48d741*/
                       *v43 = v30; /*0x48d746*/
-                      Network::SetPort((Network *)(dword_A8DA78[v23] + 40), v30); /*0x48d756*/
+                      ((Network *)((Network *)(dword_A8DA78[v23] + 40)))->SetPort(v30); /*0x48d756*/
                       Debug::Log(); /*0x48d76d*/
                     }
                   }
@@ -860,7 +860,7 @@ AbstractClass * * Network::Init(void *a1_1, void *a2_1, void *a3_1, void *a4_1, 
   INIClass::WriteDigest(v5, 0); /*0x52f5e3*/
   Network::validatePacket(&unk_B052D0); /*0x52f5ed*/
   byte_A8D60E = 1; /*0x52f5f6*/
-  RawFileClass::Dtor(v5); /*0x52f5fd*/
+  ((RawFileClass *)(v5))->Dtor(); /*0x52f5fd*/
   return v4; /*0x52f606*/
 
 }
@@ -906,7 +906,7 @@ void * Network::CopyAddress(unsigned int *a2, int a3)
 }
 // 0x53EE00
 namespace gamemd {
-int Network::IsBroadcastAddr(void *a1_1)
+int Network::IsBroadcastAddr()
 {
 
   if ( dword_828140 == 1 ) /*0x53ee0a*/
@@ -1007,7 +1007,7 @@ int sub_53F830(int a1, int a2)
 }
 // 0x540C60
 namespace gamemd {
-AbstractClass * * Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4, void *a5_1)
+AbstractClass * * Network::SetConnectionParams(int aP1, int a3, int a4, char aP4)
 {
 
   int v6; // ecx
@@ -1180,7 +1180,7 @@ int Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
   if ( !*((unsigned char *)this + 4) || !*((unsigned char *)this + 5) ) /*0x5410fa*/
     return 0; /*0x541169*/
   v8 = a4; /*0x541107*/
-  if ( a4 && (!a5 || Network::IsBroadcastAddr((unsigned char *)a5)) ) /*0x541115*/
+  if ( a4 && (!a5 || ((Network *)((unsigned char *)a5))->IsBroadcastAddr()) ) /*0x541115*/
     v8 = 0; /*0x54111e*/
   v9 = (*(int (**)(unsigned int, int, int, int, int, int, int))(*(unsigned int *)*((char *)this + 18) + 44))( /*0x54113e*/
          *((char *)this + 18),
@@ -1233,7 +1233,7 @@ AbstractClass * * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String
   v14[2] = v9[2]; /*0x5412f1*/
   if ( !v10 || !*((unsigned char *)this + 5) ) /*0x5412f7*/
     return 0; /*0x5412b9*/
-  if ( a4 && (&v13 == (int *)-12 || Network::IsBroadcastAddr(v14)) ) /*0x54130e*/
+  if ( a4 && (&v13 == (int *)-12 || ((Network *)(v14))->IsBroadcastAddr()) ) /*0x54130e*/
     v8 = 0; /*0x541317*/
   v11 = (*(int (**)(unsigned int, int, int, unsigned int *, int, int, unsigned int))(**(unsigned int **)((char *)this + 72) + 44))( /*0x541334*/
           *((unsigned int *)this + 18),
@@ -1505,7 +1505,7 @@ LABEL_14:
                         *v15 = v47[0].Network_field_0x0; /*0x541ae8*/
                         v15[1] = (int)v47[0].Network_field_0x4; /*0x541aee*/
                         v15[2] = (int)v47[0].Network_field_0x8; /*0x541af5*/
-                        Network::SetPort((Network *)(dword_A8DA78[v10] + 40), v46[0]); /*0x541b09*/
+                        ((Network *)((Network *)(dword_A8DA78[v10] + 40)))->SetPort(v46[0]); /*0x541b09*/
                         NetworkManager::SetPlayerAddress( /*0x541b24*/
                           (NetworkManager *)&stru_B052C0.__pad_0[16],
                           *(unsigned int *)(dword_A8DA78[v10] + 111),
@@ -1516,7 +1516,7 @@ LABEL_14:
                         v16[2] = (int)v47[0].Network_field_0x8; /*0x541b4f*/
                         v43 = v46[0]; /*0x541b56*/
                         PlayerName = GameClass::FindPlayerName(v10); /*0x541b5d*/
-                        Network::SetPort((Network *)(dword_A8DA90[PlayerName] + 40), v43); /*0x541b6c*/
+                        ((Network *)((Network *)(dword_A8DA90[PlayerName] + 40)))->SetPort(v43); /*0x541b6c*/
                         v18 = 0; /*0x541b74*/
                         if ( *((int *)this + 17) > 0 ) /*0x541b78*/
                         {
@@ -1535,7 +1535,7 @@ LABEL_14:
                           *v21 = v47[0].Network_field_0x0; /*0x541bb1*/
                           v21[1] = (int)v47[0].Network_field_0x4; /*0x541bb7*/
                           v21[2] = (int)v47[0].Network_field_0x8; /*0x541bbe*/
-                          Network::SetPort((Network *)(*((unsigned int *)this + v18 + 10) + 76), v46[0]); /*0x541bcd*/
+                          ((Network *)((Network *)(*((unsigned int *)this + v18 + 10) + 76)))->SetPort(v46[0]); /*0x541bcd*/
                           ((Network *)((Network *)(*((unsigned int *)this + v18 + 10) + 76)))->FormatAddress(0); /*0x541bdb*/
                           Debug::Log(); /*0x541be7*/
 LABEL_33:
@@ -1559,14 +1559,14 @@ LABEL_33:
                                 *v23 = v47[0].Network_field_0x0; /*0x541c7b*/
                                 v23[1] = (int)v47[0].Network_field_0x4; /*0x541c81*/
                                 v23[2] = (int)v47[0].Network_field_0x8; /*0x541c88*/
-                                Network::SetPort((Network *)(*((unsigned int *)this + 20) + 76), v46[0]); /*0x541c96*/
+                                ((Network *)((Network *)(*((unsigned int *)this + 20) + 76)))->SetPort(v46[0]); /*0x541c96*/
                                 stru_A8BB1C.Network_field_0x0 = v47[0].Network_field_0x0; /*0x541ca7*/
                                 stru_A8BB1C.Network_field_0x8 = v47[0].Network_field_0x8; /*0x541cb1*/
                                 stru_A8BB1C.Network_field_0x4 = v47[0].Network_field_0x4; /*0x541cbd*/
-                                Network::SetPort(&stru_A8BB1C, v46[0]); /*0x541cc2*/
+                                ((Network *)(&stru_A8BB1C))->SetPort(v46[0]); /*0x541cc2*/
                                 qword_A8DBA4 = *(NetworkID *)&v47[0].Network_field_0x0; /*0x541cd3*/
                                 dword_A8DBAC = v47[0].Network_field_0x8; /*0x541ce8*/
-                                Network::SetPort((Network *)&qword_A8DBA4, v46[0]); /*0x541cee*/
+                                ((Network *)((Network *)&qword_A8DBA4))->SetPort(v46[0]); /*0x541cee*/
                                 dword_A8DBBC = v46[0]; /*0x541cf8*/
                               }
                             }
@@ -1700,7 +1700,7 @@ LABEL_86:
       v27 = (unsigned int *)this + 5; /*0x541e9f*/
       while ( byte_A8DBA0 ) /*0x541ea9*/
       {
-        LinkedIndex = Factory::GetLinkedIndex((Factory *)&stru_B052C0.__pad_0[16], *(unsigned int *)(v27->Socket + 100)); /*0x541eb6*/
+        LinkedIndex = ((Factory *)((Factory *)&stru_B052C0.__pad_0[16]))->GetLinkedIndex(*(unsigned int *)(v27->Socket + 100)); /*0x541eb6*/
         v25 = v47[0].__pad_87[47]; /*0x541ebb*/
         if ( LinkedIndex == v47[0].__pad_87[48] ) /*0x541ec4*/
           goto LABEL_72; /*0x541ec4*/
@@ -1712,7 +1712,7 @@ LABEL_59:
         if ( v26 >= *((unsigned int *)this + 17) ) /*0x541efa*/
           goto LABEL_60; /*0x541efa*/
       }
-      if ( !(uint8_t)GUID::Compare((char *)(v27->Socket + 76), (int)v47) ) /*0x541edd*/
+      if ( !(uint8_t)((GUID *)((char *)(v27->Socket + 76)))->Compare((int)v47) ) /*0x541edd*/
         break; /*0x541edd*/
 LABEL_72:
       if ( !(*(int (**)(unsigned int, char *, void *))(**((unsigned int **)this + v26 + 10) + 12))( /*0x541f9b*/
@@ -1944,7 +1944,7 @@ AbstractClass * * Network::SetupRematch()
   *(unsigned int *)dword_B77D6C = g_NetworkRematchState; /*0x5c46fb*/
   *(unsigned int *)dword_B779C4 = 0; /*0x5c4700*/
   byte_A8F900 = 0; /*0x5c4706*/
-  v2 = String::GetOrEmpty((String *)&dword_B73E40); /*0x5c4711*/
+  v2 = ((String *)((String *)&dword_B73E40))->GetOrEmpty(); /*0x5c4711*/
   v3 = dword_A8DA78; /*0x5c471e*/
   strcpy(byte_B77830, v2); /*0x5c472f*/
   v4 = (int *)(v3[this->MPCooperative_field_0x54] + 40); /*0x5c473e*/
@@ -2111,7 +2111,7 @@ LABEL_35:
       Debug::Log(); /*0x5c4bf4*/
       while ( Network::GetSendCount(&unk_A8E9C0) ) /*0x5c4c01*/
       {
-        ConnectionSpeed = Network::GetConnectionSpeed(&unk_A8E9C0, 0); /*0x5c4c10*/
+        ConnectionSpeed = ((Network *)(&unk_A8E9C0))->GetConnectionSpeed(0); /*0x5c4c10*/
         Network::sendData((int)&unk_A8E9C0, ConnectionSpeed); /*0x5c4c1b*/
       }
       if ( byte_A8DBA0 ) /*0x5c4c34*/
@@ -2335,7 +2335,7 @@ LABEL_16:
   {
     *(unsigned int *)v78 = *v17; /*0x5d965d*/
     Struct::Copy6Bytes(v16->__pad_0, (int)v78); /*0x5d9661*/
-    Network::SetPort((Network *)v16, v75[0]); /*0x5d966d*/
+    ((Network *)((Network *)v16))->SetPort(v75[0]); /*0x5d966d*/
     ++v17; /*0x5d9672*/
     v16 = (Waypoint *)((char *)v16 + 12); /*0x5d9675*/
     --v15; /*0x5d9678*/
@@ -2667,7 +2667,7 @@ LABEL_142:
           *(unsigned int *)v78 = *(unsigned int *)v89.__pad_0; /*0x5d9c1c*/
           v79 = *(unsigned int *)&v89.__pad_0[4]; /*0x5d9c2d*/
           v80 = *(unsigned int *)&v89.__pad_0[8]; /*0x5d9c36*/
-          Network::SetPort((Network *)v78, *(unsigned short *)v89.__pad_0 + 1); /*0x5d9c3a*/
+          ((Network *)((Network *)v78))->SetPort(*(unsigned short *)v89.__pad_0 + 1); /*0x5d9c3a*/
           v60 = v77; /*0x5d9c3f*/
           Network::QueryAddress(v78, k, v77, 0); /*0x5d9c4e*/
           Network::QueryAddress(v78, k, v60, 0); /*0x5d9c5e*/
@@ -2785,7 +2785,7 @@ unsigned short Network::ResolveNetworkAddress(uint16_t a2)
   Debug::Log(); /*0x5da20d*/
   Waypoint::InitInvalid(&v22); /*0x5da219*/
   Struct::Copy6Bytes(v22.__pad_0, (int)&v19); /*0x5da227*/
-  Network::SetPort((Network *)&v22, v4); /*0x5da231*/
+  ((Network *)((Network *)&v22))->SetPort(v4); /*0x5da231*/
   ((Network *)((Network *)&v22))->FormatAddress(0); /*0x5da23c*/
   Debug::Log(); /*0x5da247*/
   v6 = 0; /*0x5da250*/
@@ -3073,7 +3073,7 @@ AbstractClass * * Network_ModemConnectionDialog()
   SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x5ef51a*/
   v3 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 32))(g_DSurface_Hidden); /*0x5ef528*/
   UI_Connect(Dialog, -1, (v3 - 400) / 2 + 147); /*0x5ef542*/
-  Dialog::Show((Dialog *)Dialog); /*0x5ef549*/
+  ((Dialog *)((Dialog *)Dialog))->Show(); /*0x5ef549*/
   if ( !dword_A8DAC0 || dword_A8DAC4 == -1 || dword_A8DAC8 == -1 || Modem::OpenPort((Modem *)&unk_A8EA70, &dword_A8DAC0) ) /*0x5ef571*/
   {
     v4 = 1618; /*0x5ef57a*/
@@ -3107,7 +3107,7 @@ AbstractClass * * Network_ModemConnectionDialog()
       case 1618: /*0x5ef5dd*/
         v6(Dialog, 0); /*0x5efe70*/
         v5(g_hWnd); /*0x5efe79*/
-        if ( Network::sendGameEvent((LONG)v78, &dword_A8DAC0) ) /*0x5efe87*/
+        if ( ((Network *)((LONG)v78))->sendGameEvent(&dword_A8DAC0) ) /*0x5efe87*/
           SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x5efe95*/
         Network::handleTimeout((Network *)Dialog); /*0x5efe9c*/
         v6(Dialog, 5); /*0x5efea4*/
@@ -3227,7 +3227,7 @@ AbstractClass * * Network_ModemConnectionDialog()
         v23 = 1; /*0x5ef909*/
         Member23 = (void *)NullModemClass::GetMember23((NullModemClass *)g_ClipboardBuffer); /*0x5ef90b*/
         SetCommBreak(Member23); /*0x5ef911*/
-        WinModemClass::WriteSerial((int *)g_ClipboardBuffer, aAth, strlen(aAth)); /*0x5ef932*/
+        ((WinModemClass *)((int *)g_ClipboardBuffer))->WriteSerial(aAth, strlen(aAth)); /*0x5ef932*/
         Ticks = Timer::GetTicks(); /*0x5ef944*/
         v59 = 0; /*0x5ef948*/
         v64 = Timer::GetTicks(); /*0x5ef951*/
@@ -3345,14 +3345,14 @@ AbstractClass * * Network_ModemConnectionDialog()
     v41 = MessageBox; /*0x5efb90*/
     if ( !MessageBox ) /*0x5efb94*/
       goto LABEL_106; /*0x5efb94*/
-    Dialog::Show(MessageBox); /*0x5efb9c*/
+    ((Dialog *)(MessageBox))->Show(); /*0x5efb9c*/
     v42 = Timer::GetElapsed((Timer *)&stru_88732C.__pad_6[6]); /*0x5efbab*/
     while ( (uint8_t)Dialog::PumpMessages() != 1 && !g_NetworkTestFlag ) /*0x5efbc1*/
     {
       IDA_LOBYTE(v43) = 0; /*0x5efbc7*/
       ScreenSaver::Process(v43, v52); /*0x5efbc9*/
       Stream::ReadPacket((int)&unk_A8EA70); /*0x5efbd3*/
-      if ( Count::GetCountQueue((Count *)&unk_A8EA70) ) /*0x5efbdd*/
+      if ( ((Count *)((Count *)&unk_A8EA70))->GetCountQueue() ) /*0x5efbdd*/
         goto LABEL_101; /*0x5efbe4*/
       if ( ((ObjectTypeClass *)(&unk_A8EA70))->CreateInstance((int)v67, (int)&v56) <= 0 ) /*0x5efc00*/
       {
@@ -3471,7 +3471,7 @@ void Network::Network_resetConnectionState()
     this->Network_field_0x4 = (void *)-1; /*0x630bb2*/
     SetWindowLongA(Dialog, 8, (LONG)this); /*0x630bb9*/
     PhoneEditor::PopulateList((PhoneEditor *)this); /*0x630bc1*/
-    Dialog::Show((Dialog *)this->Network_field_0x0); /*0x630bc8*/
+    ((Dialog *)((Dialog *)this->Network_field_0x0))->Show(); /*0x630bc8*/
     while ( (int)this->Network_field_0x4 < 0 ) /*0x630bd2*/
     {
       if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x630bdb*/
@@ -3578,7 +3578,7 @@ int sub_646D70()
 
   if ( dword_A8B238[0] == 4 ) /*0x646d77*/
 // 0x543080
-    return Network::Disconnect(unk_A8E9C0); /*0x646d7e*/
+    return ((Network *)(unk_A8E9C0))->Disconnect(); /*0x646d7e*/
   return result; /*0x646d83*/
 }
 }
@@ -4167,7 +4167,7 @@ int Network::SendUnreachable(void *a1_1)
   result = *(unsigned int *)&dword_A8B238; /*0x6523b0*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6523bb*/
   {
-    Network::Disconnect((Network *)&unk_A8E9C0); /*0x6523c9*/
+    ((Network *)((Network *)&unk_A8E9C0))->Disconnect(); /*0x6523c9*/
     QueueCount = ((Network *)(&unk_A8E9C0))->GetQueueCount(); /*0x6523d8*/
     for ( i = 0; i < *(int *)&stru_B052C0.__pad_0[32]; ++i ) /*0x6523e7*/
     {
@@ -4388,7 +4388,7 @@ void * Network::processAcknowledgment(IUnknown * aP1)
   v5 = 0; /*0x6642db*/
   v6 = 0; /*0x6642e5*/
   Struct::Copy6Bytes(stru_B052C0.__pad_0, (int)&v5); /*0x6642ea*/
-  Network::SetPort((Network *)&stru_B052C0, 0); /*0x6642f6*/
+  ((Network *)((Network *)&stru_B052C0))->SetPort(0); /*0x6642f6*/
   v3 = 0; /*0x6642fe*/
   if ( (int)this->Network_field_0x10 > 0 ) /*0x664302*/
   {
@@ -4399,7 +4399,7 @@ void * Network::processAcknowledgment(IUnknown * aP1)
     }
     v7 = *(unsigned int *)(*((unsigned int *)this->Network_field_0x4 + v3) + 33); /*0x664346*/
     Struct::Copy6Bytes(stru_B052C0.__pad_0, (int)&v7); /*0x66434a*/
-    Network::SetPort((Network *)&stru_B052C0, *(unsigned short *)(*((unsigned int *)this->Network_field_0x4 + v3) + 37)); /*0x66435f*/
+    ((Network *)((Network *)&stru_B052C0))->SetPort(*(unsigned short *)(*((unsigned int *)this->Network_field_0x4 + v3) + 37)); /*0x66435f*/
   }
   return (char *)&stru_B052C0; /*0x664325*/
 
@@ -4491,7 +4491,7 @@ AbstractClass * * Network::SyncPlayerList(void *a1_1)
       v6 = v5; /*0x792f5d*/
       if ( v5 && (uint8_t)IsKnownPointer((ObjectClass *)v5) ) /*0x792f65*/
         *(unsigned int *)((char *)v6 + 123) = v16[5]; /*0x792f72*/
-      v7 = String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684]); /*0x792f7a*/
+      v7 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty(); /*0x792f7a*/
       if ( _strcmpi((char *)&v16[9], v7) ) /*0x792f85*/
       {
         if ( (v16[0] & 1) != 0 ) /*0x792f96*/
@@ -4596,7 +4596,7 @@ AbstractClass * * int sub_79C3A0()
     }
     *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x79c4c3*/
     memset(v7, 0, sizeof(v7)); /*0x79c4d3*/
-    strcpy(&v7[36], String::GetOrEmpty((String *)&g_WindowManager.__pad_14[16])); /*0x79c500*/
+    strcpy(&v7[36], ((String *)((String *)&g_WindowManager.__pad_14[16]))->GetOrEmpty()); /*0x79c500*/
     return (*(int (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v7); /*0x79c512*/
   }
   return result; /*0x79c518*/
@@ -4669,7 +4669,7 @@ void sub_793BB0()
         v9 = 0; /*0x793c0a*/
         v10 = 0; /*0x793c0c*/
         v8[0] = 13; /*0x793c12*/
-        strcpy((char *)&v8[1], String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684])); /*0x793c39*/
+        strcpy((char *)&v8[1], ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty()); /*0x793c39*/
         ToWideStringChar((char *)dword_A8DA90[*v3]); /*0x793c4b*/
         Debug::Log(); /*0x793c56*/
         Network::SendToPlayer((int)&unk_A8E9C0, (int)v8, 47, 0, (wchar_t *)dword_A8DA90[*v3]); /*0x793c76*/
@@ -4939,7 +4939,7 @@ char * Network::FormatAddress(uint16_t *aP1)
 
 // 0x53F200
 namespace gamemd {
-short Network::SetPort(IPXManagerClass * aP1, void *a2_1)
+short Network::SetPort(int16_t aP1)
 {
 
   int16_t result; // ax
@@ -5021,7 +5021,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
   Waypoint::InitInvalid(v11); /*0x5417a5*/
   v10 = *v7; /*0x5417b5*/
   Struct::Copy6Bytes((char *)v11, (int)&v10); /*0x5417b9*/
-  Network::SetPort(v11, v8); /*0x5417c3*/
+  ((Network *)(v11))->SetPort(v8); /*0x5417c3*/
   *(unsigned short *)(aP0 + 12) = 0; /*0x5417c8*/
   *v7 = 0; /*0x5417d4*/
   ((Network *)(v11))->FormatAddress(0); /*0x5417da*/
@@ -5234,7 +5234,7 @@ short Network::WaitForPacket(int a1, int a2)
       break; /*0x5d9297*/
     ((Network *)(unk_A8E9C0))->ReceiveLoop(); /*0x5d92a2*/
     Event::Dispatch(); /*0x5d92a7*/
-    if ( v2 >= Connection::GetSpeed(unk_A8E9C0) ) /*0x5d92b8*/
+    if ( v2 >= ((Connection *)(unk_A8E9C0))->GetSpeed() ) /*0x5d92b8*/
       v2 = 0; /*0x5d92ba*/
     if ( Network::SendPacketThunk(v2, v15, v12, v14, &v7, &v11) && v7 == -22012 && v15[0] == 44 && a1 == v11 ) /*0x5d9304*/
     {
@@ -5763,7 +5763,7 @@ int Network_Assign(void * a1, int a2)
 
 // 0x6956D0
 namespace gamemd {
-bool Network::sendGameEvent(Modem * aP0, int _10, unsigned int * a2)
+bool Network::sendGameEvent(unsigned int *aP0)
 {
 
   HWND Dialog; // eax
@@ -5778,7 +5778,7 @@ bool Network::sendGameEvent(Modem * aP0, int _10, unsigned int * a2)
     return *((unsigned int *)aP0 + 1) == 1; /*0x6956f1*/
   SetWindowLongA(Dialog, 8, (LONG)aP0); /*0x6956f7*/
   NetworkDialog::InitModemSettings((NetworkDialog *)aP0, _10); /*0x695704*/
-  Dialog::Show(*(Dialog **)aP0); /*0x69570c*/
+  ((Dialog *)(*(Dialog **)aP0))->Show(); /*0x69570c*/
   while ( *((int *)aP0 + 1) < 0 ) /*0x695716*/
   {
     if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x69571f*/

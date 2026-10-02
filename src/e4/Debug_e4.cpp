@@ -16,7 +16,7 @@
 
 // 0x5BD0D0
 namespace gamemd {
-void Debug::ScrollText(CellStruct * aP1)
+void Debug::ScrollText(const char *aP1)
 {
 
   char result; // al

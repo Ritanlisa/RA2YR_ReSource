@@ -646,7 +646,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
     v13 = 600; /*0x5bb31c*/
     Ticks = Timer::GetTicks(); /*0x5bb325*/
     v12 = v14; /*0x5bb329*/
-    while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 0 ) /*0x5bb337*/
+    while ( ((Count *)((Count *)&unk_A8EA70))->GetCountQueue() > 0 ) /*0x5bb337*/
     {
       v1 = v13; /*0x5bb33d*/
       if ( Ticks != -1 ) /*0x5bb343*/
@@ -699,7 +699,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
     v8 = (*(int (**)(Pipe *))(*(unsigned int *)v19.__pad_0 + 4))(&v19) + v7; /*0x5bb49e*/
     Debug::Log(); /*0x5bb4a6*/
     RawFileClass::Construct((RawFileClass *)v18, (int)aPreviewBin); /*0x5bb4b7*/
-    if ( (uint8_t)FileClass::Open((RawFileClass *)v18, 0) ) /*0x5bb4c1*/
+    if ( (uint8_t)((FileClass *)((RawFileClass *)v18))->Open(0) ) /*0x5bb4c1*/
       ((FileClass *)((RawFileClass *)v18))->Delete(); /*0x5bb4ce*/
     ((FileClass *)((RawFileClass *)v18))->Open2((const CHAR *)2); /*0x5bb4d9*/
     ((FileClass *)((RawFileClass *)v18))->Write2(&Buffer, 4u); /*0x5bb4e9*/
@@ -708,7 +708,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
     RA2_OPDEL(v6); /*0x5bb503*/
     Debug::Log(); /*0x5bb50d*/
     SendNetworkFile(aPreviewBin, 1, 0, 0); /*0x5bb521*/
-    RawFileClass::Dtor((RawFileClass *)v18); /*0x5bb52a*/
+    ((RawFileClass *)((RawFileClass *)v18))->Dtor(); /*0x5bb52a*/
     LZOPipe::Destructor((LZOPipe *)&v19); /*0x5bb533*/
     ((Vector *)((int)&v15.Pipe_field_0x0C))->Clear(); /*0x5bb53c*/
     Pipe::Dtor(&v15); /*0x5bb545*/
@@ -923,7 +923,7 @@ void AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
         if ( dword_ABF228 >= 5 ) /*0x5bc8bd*/
           return 0; /*0x5bc8bd*/
         Enabled = Audio::GetEnabled(); /*0x5bc8c6*/
-        v12 = AudioStream::Constructor(Enabled, 0x1388u); /*0x5bc8cd*/
+        v12 = ((AudioStream *)(Enabled))->Constructor(0x1388u); /*0x5bc8cd*/
         *(&dword_ABF114 + dword_ABF228) = v12; /*0x5bc8da*/
         if ( !v12 ) /*0x5bc8e1*/
           return 0; /*0x5bc8e1*/
@@ -1312,7 +1312,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   *(unsigned int *)(v14 + 40) = 0; /*0x5bfaf8*/
   *(unsigned int *)(v14 + 44) = 0; /*0x5bfafb*/
   *(unsigned int *)(v14 + 48) = 0; /*0x5bfafe*/
-  Rect::Set((Rect *)(v14 + 52), 0, 0, 0, 0); /*0x5bfb01*/
+  ((Rect *)((Rect *)(v14 + 52)))->Set(0, 0, 0, 0); /*0x5bfb01*/
   v15->q044 = 0; /*0x5bfb0a*/
   v15->u8_45 = 0; /*0x5bfb0e*/
   v15->q048 = 0; /*0x5bfb11*/
@@ -2466,11 +2466,11 @@ HWND sub_5B6F30()
   MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x5b6f94*/
   v2 = MessageBox; /*0x5b6f99*/
   if ( MessageBox ) /*0x5b6f9d*/
-    Dialog::Show(MessageBox); /*0x5b6fa1*/
+    ((Dialog *)(MessageBox))->Show(); /*0x5b6fa1*/
   v3 = dword_887340; /*0x5b6fab*/
   if ( dword_887338 != -1 ) /*0x5b6fb4*/
     v3 += Timer::GetTicks() - dword_887338; /*0x5b6fc6*/
-  while ( Count::GetCountQueue(&unk_A8EA70) ) /*0x5b6fcd*/
+  while ( ((Count *)(&unk_A8EA70))->GetCountQueue() ) /*0x5b6fcd*/
   {
     v4 = dword_887340; /*0x5b6fe0*/
     if ( dword_887338 != -1 ) /*0x5b6fe9*/
@@ -2836,11 +2836,11 @@ HWND sub_5BAB00()
   MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x5bab64*/
   v2 = MessageBox; /*0x5bab69*/
   if ( MessageBox ) /*0x5bab6d*/
-    Dialog::Show(MessageBox); /*0x5bab71*/
+    ((Dialog *)(MessageBox))->Show(); /*0x5bab71*/
   v3 = dword_887340; /*0x5bab7b*/
   if ( dword_887338 != -1 ) /*0x5bab84*/
     v3 += Timer::GetTicks() - dword_887338; /*0x5bab96*/
-  while ( Count::GetCountQueue(&unk_A8EA70) ) /*0x5bab9d*/
+  while ( ((Count *)(&unk_A8EA70))->GetCountQueue() ) /*0x5bab9d*/
   {
     v4 = dword_887340; /*0x5babb0*/
     if ( dword_887338 != -1 ) /*0x5babb9*/
@@ -3271,7 +3271,7 @@ char sub_5BD240(int a1, size_t BufferCount, wchar_t Format)
     vswprintf(Buffer, BufferCount, &Format, *(va_list *)v4); /*0x5bd267*/
     sprintf(v4, "%S", Buffer); /*0x5bd27e*/
 // 0x5bd0d0
-    return Debug::ScrollText(a1, v4); /*0x5bd292*/
+    return ((Debug *)(a1))->ScrollText(v4); /*0x5bd292*/
   }
   return result; /*0x5bd297*/
 }
@@ -3293,7 +3293,7 @@ char E4Recv_5BD2E0::sub_5BD2E0(ObjectClass * aP1, int a3, int a4, int a5)
     if ( BYTE2(g_MissionQueueFrame.localVariables[493]) ) /*0x5bd313*/
       *((unsigned int *)this + 2500) = a5; /*0x5bd31c*/
     sprintf(Buffer, (const char *const)&stru_82BA00.NumberImpassableRows, aP1); /*0x5bd334*/
-    return Debug::ScrollText((int)this, Buffer); /*0x5bd343*/
+    return ((Debug *)((int)this))->ScrollText(Buffer); /*0x5bd343*/
   }
   return result; /*0x5bd348*/
 

@@ -115,7 +115,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
     ResourceIDCSF = GetResourceIDCSF(dword_A8DA8C); /*0x46f90e*/
     v4 = (SessionClass *)dword_A8DA90[(unsigned int)v1]; /*0x46f913*/
     v5 = ResourceIDCSF; /*0x46f91a*/
-    if ( (uint8_t)Player::IsObserver((Player *)v4) ) /*0x46f91e*/
+    if ( (uint8_t)((Player *)((Player *)v4))->IsObserver() ) /*0x46f91e*/
     {
       PlayerColor = *(unsigned int *)&stru_A8B250.__pad_0[4 * (unsigned int)v1 + 108]; /*0x46f927*/
     }
@@ -150,7 +150,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
       v9 = GetResourceIDCSF((int)(v7)); /*0x46f98a*/
       v10 = (SessionClass *)v8[2549]; /*0x46f98f*/
       v11 = v9; /*0x46f995*/
-      if ( (uint8_t)Player::IsObserver((Player *)v10) ) /*0x46f999*/
+      if ( (uint8_t)((Player *)((Player *)v10))->IsObserver() ) /*0x46f999*/
       {
         v12 = *v8; /*0x46f9a2*/
       }
@@ -653,7 +653,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
           v12 = GetComboBoxSelected(hDlg, v7, *(unsigned int *)(a4 + 4)); /*0x6ae5b1*/
           if ( v12 != -1 ) /*0x6ae5b9*/
           {
-            v13 = (wchar_t *)SideClass::GetName(v12); /*0x6ae5c1*/
+            v13 = (wchar_t *)((SideClass *)(v12))->GetName(); /*0x6ae5c1*/
             WideString::Assign_Alt(v13); /*0x6ae5c9*/
             return 1; /*0x6ae5d7*/
           }
@@ -664,7 +664,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
     else
     {
       if ( a2 == 1175 ) /*0x6ae423*/
-        return Skirmish::SetupGame(hDlg, a4); /*0x6ae4a0*/
+        return ((Skirmish *)(hDlg))->SetupGame(a4); /*0x6ae4a0*/
       if ( a2 != 15 ) /*0x6ae428*/
       {
         if ( a2 == 273 ) /*0x6ae430*/
@@ -690,7 +690,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
 } // namespace gamemd
 // 0x6AE6E0
 namespace gamemd {
-AbstractClass * * Skirmish::SetupGame(SkirmishDialog * hWnd, int a2)
+AbstractClass * * Skirmish::SetupGame(int hWnd)
 {
 
   ObjectClass *v2; // edi

@@ -228,7 +228,7 @@ int DynamicVector::GetOrGrow(int aP1)
 
 // 0x5253B0
 namespace gamemd {
-char DynamicVector::Add_Alt4(VectorClass_flat * aP1)
+char DynamicVector::Add_Alt4(unsigned int *aP1)
 {
 
   int DynamicVector_field_0x8; // ecx
@@ -449,7 +449,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
 
 // 0x67AD80
 namespace gamemd {
-char DynamicVector::Add2(VectorClass_flat * aP1, void *a2_1, void *a3_1, void *a4_1)
+char DynamicVector::Add2(unsigned int *aP1)
 {
 
   int DynamicVector_field_0x8; // ecx
@@ -608,7 +608,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
 
 // 0x7AF000
 namespace gamemd {
-char DynamicVector::EnsureCapacity(void *a1_1, void *a2_1)
+char DynamicVector::EnsureCapacity()
 {
 
   int result; // eax

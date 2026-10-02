@@ -1214,7 +1214,7 @@ LABEL_72:
       {
         v116[0] = v29; /*0x584880*/
         v116[1] = v28; /*0x584885*/
-        v30 = Cell::CoordToIndex((Cell *)v2, v116); /*0x58488a*/
+        v30 = ((Cell *)((Cell *)v2))->CoordToIndex(v116); /*0x58488a*/
         if ( v30 >= 0 ) /*0x584891*/
         {
           v31 = *(unsigned int *)&v2->__pad_64[8]; /*0x584897*/
@@ -1229,7 +1229,7 @@ LABEL_72:
         v119[0] = v29; /*0x5848a7*/
         v119[1] = v28; /*0x5848ac*/
         v91 = v32 + 10 * v30; /*0x5848bb*/
-        v33 = Cell::CoordToIndex((Cell *)v2, v119); /*0x5848bf*/
+        v33 = ((Cell *)((Cell *)v2))->CoordToIndex(v119); /*0x5848bf*/
         if ( v33 >= 0 ) /*0x5848c6*/
         {
           v34 = *(unsigned int *)&v2->__pad_64[8]; /*0x5848cc*/
@@ -1988,7 +1988,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
       && (v28 = *((unsigned int *)dword_A83D4C + 12),
           v12 = (unsigned int *)(*(int (**)(unsigned char *, unsigned int *))(*(unsigned int *)v10 + 72))(v10, v31),
           v13 = ((Coord *)(&dword_87F7E8))->To_Cell(v12),
-          !Cell::IsPassableOffset(v13, v28))
+          !((Cell *)(v13))->IsPassableOffset(v28))
       || *(unsigned char *)((*(int (**)(unsigned char *))(*(unsigned int *)v11 + 132))(v11) + 3226) )
     {
       v9 = 0; /*0x6926d9*/
@@ -2002,7 +2002,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
     || (v29 = *((unsigned int *)dword_A83D4C + 12),
         v15 = (unsigned int *)(*(int (**)(unsigned char *, unsigned int *))(*(unsigned int *)v11 + 72))(v11, v31),
         v16 = ((Coord *)(&dword_87F7E8))->To_Cell(v15),
-        Cell::IsPassableOffset(v16, v29)) )
+        ((Cell *)(v16))->IsPassableOffset(v29)) )
   {
     if ( v9 ) /*0x692734*/
     {

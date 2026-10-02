@@ -336,7 +336,7 @@ AbstractClass * * ProcessNetworkEvents()
     v8[0] = 0; /*0x64727a*/
     if ( ((EventQueue *)((EventQueue *)dword_87F770))->Process() ) /*0x64727f*/
     {
-      if ( EventQueue::Read((EventQueue *)dword_87F770) == 27 || (dword_A8D5F8 & 4) != 0 ) /*0x6472a5*/
+      if ( ((EventQueue *)((EventQueue *)dword_87F770))->Read() == 27 || (dword_A8D5F8 & 4) != 0 ) /*0x6472a5*/
       {
         byte_A8E9A0 = 0; /*0x6472aa*/
         return; /*0x6472b5*/
@@ -817,7 +817,7 @@ LABEL_9:
   SendNetworkFrameSync(v8, arg10);
   if ( *(unsigned int *)&HouseClass_Player[29932] == 4 && HouseClass_Player[40532] )
   {
-    Network::Disconnect(&HouseClass_Player[44148]);
+    ((Network *)(&HouseClass_Player[44148]))->Disconnect();
     Debug::Log();
     int v168 = 39;
     char * v16 = ToWideStringChar(**(IUnknown ***)&HouseClass_Player[40236]);
@@ -828,7 +828,7 @@ LABEL_9:
     IDA_LOWORD(v17) = *(unsigned short *)&HouseClass_Player[40560];
     v127 = *(ObjectClass **)&HouseClass_Player[40544];
     v126 = *(MouseClass **)&HouseClass_Player[40540];
-    Network::SetPort(&var69C, v17);
+    ((Network *)(&var69C))->SetPort(v17);
     int v18 = 1;
     int var69C = var69C;
     v126 = v126;
@@ -904,7 +904,7 @@ LABEL_27:
   {
     Debug::Log();
     if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-      Network::Disconnect(&HouseClass_Player[44148]);
+      ((Network *)(&HouseClass_Player[44148]))->Disconnect();
     Multiplayer::ShowProgress(
       &HouseClass_Player[29932],
       *(unsigned char *)(*(unsigned int *)&HouseClass_Player[29924] + 13501) != 0 ? 200 : 100);
@@ -928,7 +928,7 @@ LABEL_34:
     goto LABEL_93;
 LABEL_38:
   if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-    Network::Disconnect(&HouseClass_Player[44148]);
+    ((Network *)(&HouseClass_Player[44148]))->Disconnect();
   int v28 = *v8;
   BOOL v29 = v94 == 0;
   var690 = aP0 == 0;
@@ -1057,7 +1057,7 @@ LABEL_54:
           if ( *(unsigned int *)&HouseClass_Player[29932] == 3
             || *(unsigned int *)&HouseClass_Player[29932] == 4 )
           {
-            ConnectionSpeed = Network::GetConnectionSpeed(&HouseClass_Player[44148], v40);
+            ConnectionSpeed = ((Network *)(&HouseClass_Player[44148]))->GetConnectionSpeed(v40);
             Class = (MSVQAnim *)Network::GetClass((int *)&HouseClass_Player[44148], ConnectionSpeed);
             _FFFFFFFEa = GetStringCSF((wchar_t *)&stru_830620[28896], 0, &stru_830620[28288], 3908);
             swprintf(lParam, (const size_t)_FFFFFFFEa, (const wchar_t *const)Class, (CampaignScore *)v92);

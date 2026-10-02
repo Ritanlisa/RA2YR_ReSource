@@ -243,7 +243,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
         (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5bedd2*/
         Frame::Present((int, unsigned int a8)g_DSurface_Hidden, 0, a2, a3, 0, (int)v17, v20, v21); /*0x5bedde*/
       }
-      BinkMovie::Close(&v23, Str); /*0x5bedec*/
+      ((BinkMovie *)(&v23))->Close(Str); /*0x5bedec*/
       if ( a8 == (void *)(1) ) /*0x5bedf9*/
         ((unsigned int *)(v23.__pad_0))[0] = 1; /*0x5bedfb*/
       if ( !LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bee06*/
@@ -278,7 +278,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
       Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x5beed3*/
       (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5beee0*/
       MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x5beeea*/
-      BinkMovie::Stop(&v23); /*0x5beef3*/
+      ((BinkMovie *)(&v23))->Stop(); /*0x5beef3*/
     }
   }
 
@@ -324,7 +324,7 @@ int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
             goto LABEL_10; /*0x720a06*/
           if ( this->__pad_10[1] && !AudioSample::IsBuffering(v3) ) /*0x720a0f*/
             ((Audio *)(*(Audio **)&this->__pad_28[4]))->Release(); /*0x720a1b*/
-          LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(Audio **)&this->__pad_28[4]) != 0; /*0x720a2a*/
+          LOBYTE(IsSoundEnabled) = ((Audio *)(*(Audio **)&this->__pad_28[4]))->IsSoundPlaying() != 0; /*0x720a2a*/
           if ( !(unsigned char)IsSoundEnabled ) /*0x720a2f*/
           {
 LABEL_10:
@@ -333,7 +333,7 @@ LABEL_10:
             {
               if ( IsSoundEnabled == (void *)-2 ) /*0x720a4b*/
               {
-                this->Movie_field_0x8 = Movie::SelectNextBuildableType((int)this, (int)this->Movie_field_0x4); /*0x720a5e*/
+                this->Movie_field_0x8 = ((Movie *)((int)this))->SelectNextBuildableType((int)this->Movie_field_0x4); /*0x720a5e*/
                 Debug::Log(); /*0x720a61*/
               }
               LOBYTE(IsSoundEnabled) = ThemeClass::Play((ThemeClass *)this, this->Movie_field_0x8); /*0x720a6f*/
@@ -350,7 +350,7 @@ LABEL_10:
 }
 // 0x720A80
 namespace gamemd {
-unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
+unsigned int Movie::SelectNextBuildableType(int aP1)
 {
 
   unsigned int v2; // ebp
@@ -403,7 +403,7 @@ unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
 }
 // 0x49BC80
 namespace gamemd {
-char Movie::GetSectionID(unsigned int * a2)
+char Movie::GetSectionID(unsigned int *a2)
 {
 
   int result; // eax

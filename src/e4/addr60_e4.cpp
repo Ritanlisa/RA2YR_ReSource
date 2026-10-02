@@ -1128,7 +1128,7 @@ void IsValidActionDialog(int a1, HWND a2)
     return 1; /*0x602aa0*/
   }
 // 0x601360
-  return Event::IsValidActionType(v4) && DlgCtrlID == 1685 && !((SessionClass *)(dword_A8B238))->GetGameSpeed(); /*0x60262e*/
+  return ((Event *)(v4))->IsValidActionType() && DlgCtrlID == 1685 && !((SessionClass *)(dword_A8B238))->GetGameSpeed(); /*0x60262e*/
 }
 }
 // 0x602DD0
@@ -3137,7 +3137,7 @@ bool sub_609B30(int a1, HWND a2)
     v4 = 0; /*0x609b7a*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x609b85*/
 // 0x601360
-  return Event::IsValidActionType(v4) && DlgCtrlID == 1685; /*0x609b98*/
+  return ((Event *)(v4))->IsValidActionType() && DlgCtrlID == 1685; /*0x609b98*/
 }
 }
 // 0x609BC0
@@ -3684,7 +3684,7 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
   LABEL_26:
           v8 = 0; /*0x60c2a7*/
         DlgCtrlID = GetDlgCtrlID(v2); /*0x60c2b4*/
-        if ( Event::IsValidActionType(v8) && DlgCtrlID == 1685 ) /*0x60c2c5*/
+        if ( ((Event *)(v8))->IsValidActionType() && DlgCtrlID == 1685 ) /*0x60c2c5*/
         {
           UI_Get_60B550(v2); /*0x60c2c9*/
           Control::RepositionControlsDialog(v2); /*0x60c2d0*/

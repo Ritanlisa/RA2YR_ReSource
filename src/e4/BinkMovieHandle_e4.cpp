@@ -122,7 +122,7 @@ _DWORD * BinkMovieHandle::CopyFrameToSurface(void *a1)
     v3 = Rect.left + this->height; /*0x4330a7*/
     v4 = Rect.top + this->currentFrame; /*0x4330ae*/
     width = (DSurface *)this->width; /*0x4330b0*/
-    BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)((BinkMovie *)this), (int)width); 
+    ((BinkMovie *)((gamemd::DSurface *)((BinkMovie *)this)))->AdjustSurfaceFormat((int)width); 
     v12 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x4330c8*/
     if ( v12 ) /*0x4330cc*/
     {
@@ -137,7 +137,7 @@ LABEL_6:
   {
     currentFrame = this->currentFrame; /*0x433103*/
     height = this->height; /*0x433109*/
-    BinkMovie::AdjustSurfaceFormat((gamemd::DSurface *)((BinkMovie *)this), this->width); 
+    ((BinkMovie *)((gamemd::DSurface *)((BinkMovie *)this)))->AdjustSurfaceFormat(this->width); 
     v7 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x43311f*/
     if ( v7 ) /*0x433123*/
     {
@@ -269,7 +269,7 @@ BinkMovieHandle * BinkMovieHandle::QueryInterface(BinkMovie ** Block, char a2)
   *(unsigned int *)Block->MovieHandle = &vt_BinkMovieHandle; /*0x5c0a37*/
   if ( height ) /*0x5c0a3f*/
   {
-    BinkMovie::Stop(height); /*0x5c0a43*/
+    ((BinkMovie *)(height))->Stop(); /*0x5c0a43*/
     __3_YAXPAX_Z(height); /*0x5c0a49*/
   }
   *(unsigned int *)Block->MovieHandle = &vt_MovieHandle; /*0x5c0a55*/

@@ -69,7 +69,7 @@ LABEL_9:
         v9 = (unsigned int *)__2_YAPAXI_Z(0x110u); /*0x41f378*/
         if ( v9 ) /*0x41f387*/
         {
-          v7 = AnimTypeClass::Construct2(v9, StringByIndex); /*0x41f391*/
+          v7 = ((AnimTypeClass *)(v9))->Construct2(StringByIndex); /*0x41f391*/
 LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
@@ -134,7 +134,7 @@ int CCINIClass::GetDB()
 }
 // 0x4741F0
 namespace gamemd {
-MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4, void *a4_2)
+MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
 {
 
   int File; // ebp

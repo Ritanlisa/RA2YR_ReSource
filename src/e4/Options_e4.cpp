@@ -129,7 +129,7 @@ LABEL_11:
     if ( (byte_A8EDF8 & 2) == 0 ) /*0x4f12f8*/
     {
       byte_A8EDF8 |= 2u; /*0x4f1303*/
-      Timer::Init((DWORD *)&dword_A8EE40, 0); /*0x4f1308*/
+      ((Timer *)((DWORD *)&dword_A8EE40))->Init(0); /*0x4f1308*/
       atexit(nullsub_13); /*0x4f1312*/
     }
     if ( (uint16_t)a3 <= 0x521u ) /*0x4f1326*/
@@ -233,7 +233,7 @@ LABEL_39:
           }
           else
           {
-            Timer::Init(v24, 0x384u); /*0x4f1590*/
+            ((Timer *)(v24))->Init(0x384u); /*0x4f1590*/
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
             dword_A8EE44 = v24[1]; /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
@@ -251,7 +251,7 @@ LABEL_39:
         {
           if ( !Timer::GetRemainingMs(&dword_A8EE30) ) /*0x4f1628*/
           {
-            Timer::Init(v25, 0x384u); /*0x4f163a*/
+            ((Timer *)(v25))->Init(0x384u); /*0x4f163a*/
             dword_A8EE30 = v25[0]; /*0x4f164e*/
             dword_A8EE34 = v25[1]; /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
@@ -390,7 +390,7 @@ char Options::Screen_Dialog()
       }
       while ( !v0 ); /*0x55fcca*/
       SetWindowLongA(v0, 8, (LONG)&dwNewLong); /*0x55fcd4*/
-      Dialog::Show(v1); /*0x55fcd8*/
+      ((Dialog *)(v1))->Show(); /*0x55fcd8*/
       while ( dwNewLong < 0 ) /*0x55fce3*/
       {
         if ( (uint8_t)((Dialog *)this)->PumpMessages() == 1 ) /*0x55fcec*/
@@ -398,7 +398,7 @@ char Options::Screen_Dialog()
         LOBYTE(v2) = 0; /*0x55fcee*/
         Process@<al>(v2); /*0x55fcf0*/
       }
-      Options::Screen_Save(v1); /*0x55fcff*/
+      ((Options *)(v1))->Screen_Save(); /*0x55fcff*/
       Dialog::Destroy(v1); /*0x55fd06*/
       if ( dwNewLong != 1485 ) /*0x55fd14*/
         break; /*0x55fd14*/
@@ -409,7 +409,7 @@ char Options::Screen_Dialog()
       if ( v3 ) /*0x55fd4b*/
       {
         SetWindowLongA(v3, 8, (LONG)&v9); /*0x55fd59*/
-        Dialog::Show(v4); /*0x55fd5d*/
+        ((Dialog *)(v4))->Show(); /*0x55fd5d*/
         while ( v9 < 0 ) /*0x55fd68*/
         {
           if ( (uint8_t)((Dialog *)this)->PumpMessages() == 1 ) /*0x55fd71*/
@@ -686,9 +686,9 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
       }
       v13 = (int)*v5; /*0x6256d0*/
       if ( (int)*v5 >= (int)v5[1] ) /*0x6256d7*/
-        DynamicVector::GrowCapacity((DynamicVector *)v5); /*0x6256db*/
+        ((DynamicVector *)((DynamicVector *)v5))->GrowCapacity(); /*0x6256db*/
       if ( (int)*v5 >= (int)v5[1] ) /*0x6256e7*/
-        DynamicVector::GrowCapacity((DynamicVector *)v5); /*0x6256eb*/
+        ((DynamicVector *)((DynamicVector *)v5))->GrowCapacity(); /*0x6256eb*/
       if ( v13 < (int)*v5 ) /*0x6256f4*/
         memcpy((char *)v5[2] + 24 * v13 + 24, (char *)v5[2] + 24 * v13, 24 * (unsigned int)*v5 - 24 * v13); /*0x625713*/
       v14 = (Struct *)((char *)v5[2] + 24 * v13); /*0x625721*/

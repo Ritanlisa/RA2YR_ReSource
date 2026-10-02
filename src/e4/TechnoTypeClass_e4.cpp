@@ -137,7 +137,7 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1)
   TeamTypeClass **v6; // edx
   int v7; // eax
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x6f06ea*/
+  ((AbstractTypeClass *)((int *)this))->Constructor(aP1); /*0x6f06ea*/
   *((unsigned int *)this + 38) = -1; /*0x6f06f7*/
   *((unsigned int *)this + 39) = -1; /*0x6f06ff*/
   *((unsigned int *)this + 40) = 1; /*0x6f0705*/
@@ -1027,7 +1027,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 801) = 0; /*0x711e5f*/
   *((unsigned int *)this + 199) = 0; /*0x711e65*/
-  return ObjectTypeClass::Destruct(int a1) ; /*0x711e70*/
+  return ((ObjectTypeClass *)(int a1))->Destruct() ; /*0x711e70*/
 
 }
 } // namespace gamemd
@@ -1193,7 +1193,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
     for ( j = 0; j < v36; ++j ) /*0x71656d*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x71657b*/
-      DynamicVector::Add2((DynamicVector *)&((unsigned int *)aP0)[560], &v37); /*0x716585*/
+      ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[560]))->Add2(&v37); /*0x716585*/
     }
     if ( aP0 != (TechnoTypeClass *)-1476 ) /*0x716599*/
       AnimTypeList::Constructor((AnimTypeList *)&((unsigned int *)aP0)[1248]); /*0x71659d*/
@@ -1201,7 +1201,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
     for ( k = 0; k < v36; ++k ) /*0x7165b9*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x7165c7*/
-      DynamicVector::Add_Alt4((DynamicVector *)&((unsigned int *)aP0)[1248], &v37); /*0x7165d1*/
+      ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[1248]))->Add_Alt4(&v37); /*0x7165d1*/
     }
     if ( aP0 != (TechnoTypeClass *)-1044 ) /*0x7165e5*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[816]); /*0x7165e9*/
@@ -1289,7 +1289,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
     for ( i4 = 0; i4 < v36; ++i4 ) /*0x7168fd*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x71690b*/
-      DynamicVector::Add_Alt4((DynamicVector *)&((unsigned int *)aP0)[1608], &v37); /*0x716915*/
+      ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[1608]))->Add_Alt4(&v37); /*0x716915*/
     }
     if ( aP0 != (TechnoTypeClass *)-1864 ) /*0x716929*/
       AnimTypeList::Constructor((AnimTypeList *)&((unsigned int *)aP0)[1636]); /*0x71692d*/
@@ -1297,7 +1297,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
     for ( i5 = 0; i5 < v36; ++i5 ) /*0x716949*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &v37, 4, 0); /*0x716957*/
-      DynamicVector::Add_Alt4((DynamicVector *)&((unsigned int *)aP0)[1636], &v37); /*0x716961*/
+      ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[1636]))->Add_Alt4(&v37); /*0x716961*/
     }
     if ( aP0 != (TechnoTypeClass *)-816 ) /*0x716975*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[588]); /*0x716979*/

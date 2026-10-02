@@ -539,7 +539,7 @@ void GenerateTerrainHeightMapInternal()
       }
     }
   LABEL_24:
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x5a35cf*/
+    result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x5a35cf*/
   }
   return result; /*0x5a35e6*/
 }
@@ -715,7 +715,7 @@ void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
           if ( v22 ) /*0x5a4885*/
           {
             v48 = v20[9]; /*0x5a488e*/
-            v23 = Terrain::LookupByName(Buffer); /*0x5a4892*/
+            v23 = ((Terrain *)(Buffer))->LookupByName(); /*0x5a4892*/
             TerrainClass::Construct(v22, *((void **)dword_A8E31C + v23), (int16_t *)&v48); /*0x5a48aa*/
           }
           ++v42; /*0x5a48af*/
@@ -963,7 +963,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
       v26 = &v7[2 * v24]; /*0x5a4d1c*/
       do /*0x5a4f42*/
       {
-        v39 = *CellStruct::Add(v40, &v48, (unsigned short *)(4 * (v25 & 7) + 9041544)); /*0x5a4d44*/
+        v39 = *((CellStruct *)(v40))->Add(&v48, (unsigned short *)(4 * (v25 & 7) + 9041544)); /*0x5a4d44*/
         v43 = IDA_SHIWORD(v39) + (int16_t)v39; /*0x5a4d55*/
         if ( v43 > dword_ABED04 /*0x5a4d81*/
           && (int16_t)v39 - IDA_SHIWORD(v39) < dword_ABED04
@@ -1136,7 +1136,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
       break; /*0x5a661f*/
     v8 = v45; /*0x5a65d1*/
   }
-  v11 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x5a6626*/
+  v11 = (void *)((SuperWeaponTypeClass *)(aNeutral))->FindByName(); /*0x5a6626*/
   Owner = ((HouseClass *)(v11))->FindOwner(); /*0x5a6634*/
   if ( v6 > 0 )
   {
@@ -1273,7 +1273,7 @@ void PlaceRandomNeutralUnits(int a1)
   double v27; // [esp+4Ch] [ebp-14h]
   unsigned int v28[3]; // [esp+54h] [ebp-Ch] BYREF
 
-  v1 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x5a692c*/
+  v1 = (void *)((SuperWeaponTypeClass *)(aNeutral))->FindByName(); /*0x5a692c*/
   Owner = (IUnknown *)((HouseClass *)(v1))->FindOwner(); /*0x5a6938*/
   v22 = Owner; /*0x5a693c*/
   do /*0x5a696e*/
@@ -1308,7 +1308,7 @@ void PlaceRandomNeutralUnits(int a1)
           v8 = 0; /*0x5a6a2f*/
           goto LABEL_14; /*0x5a6a2f*/
         }
-        Index = BuildingTypeClass::FindIndex(*(&off_82B180 + v5)); /*0x5a6a14*/
+        Index = ((BuildingTypeClass *)(*(&off_82B180 + v5)))->FindIndex(); /*0x5a6a14*/
         v8 = (unsigned int *)UnitClass::Construct((int)v9, *((unsigned int *)dword_A83CE4 + Index), Owner); /*0x5a6a2b*/
       }
       else
@@ -2181,7 +2181,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
   int64_t v30; // [esp+48h] [ebp-14h]
   unsigned int v31[3]; // [esp+50h] [ebp-Ch] BYREF
 
-  v1 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x5a872c*/
+  v1 = (void *)((SuperWeaponTypeClass *)(aNeutral))->FindByName(); /*0x5a872c*/
   OwnerHouseClass = (IUnknown *)((HouseClass *)(v1))->FindOwner(); /*0x5a8738*/
   v26 = OwnerHouseClass; /*0x5a873c*/
   do /*0x5a876e*/
@@ -2216,7 +2216,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
           v8 = 0; /*0x5a882f*/
           goto LABEL_14; /*0x5a882f*/
         }
-        IndexBuildingTypeClass = BuildingTypeClass::FindIndex(*(&off_82B240 + v5)); /*0x5a8814*/
+        IndexBuildingTypeClass = ((BuildingTypeClass *)(*(&off_82B240 + v5)))->FindIndex(); /*0x5a8814*/
         v8 = (unsigned int *)UnitClass::Construct( /*0x5a882b*/
                          (int)v9,
                          *((unsigned int *)dword_A83CE4 + IndexBuildingTypeClass),
@@ -4865,7 +4865,7 @@ char E4Recv_5AE500::sub_5AE500(const char ** a2)
   const char **result; // eax
   ObjectClass *v4; // [esp+0h] [ebp-8h]
 
-  result = (const char **)String::NotEquals((String *)a2, 0); /*0x5ae50c*/
+  result = (const char **)((String *)((String *)a2))->NotEquals(0); /*0x5ae50c*/
   if ( (unsigned char)result ) /*0x5ae513*/
   {
     result = sub_5CF840((ObjectClass *)this->customSound_controller, (const char **)a2); /*0x5ae519*/

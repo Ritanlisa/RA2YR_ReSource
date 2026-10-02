@@ -37,7 +37,7 @@ void Main::CreateDialog()
   if ( Dialog ) /*0x4e1d50*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x4e1d5a*/
-    Dialog::Show((Dialog *)this->Main_field_00); /*0x4e1d62*/
+    ((Dialog *)((Dialog *)this->Main_field_00))->Show(); /*0x4e1d62*/
     for ( i = dwNewLong; dwNewLong == -1; i = dwNewLong ) /*0x4e1d6e*/
     {
       if ( (uint8_t)((Dialog *)this)->PumpMessages() == 1 ) /*0x4e1d77*/

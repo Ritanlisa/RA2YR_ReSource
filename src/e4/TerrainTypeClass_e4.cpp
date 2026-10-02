@@ -358,7 +358,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
 
 }
 // 0x71E2A0
-TerrainTypeClass * * TerrainTypeClass::FindOrCreate(ObjectClass * Source)
+TerrainTypeClass * * TerrainTypeClass::FindOrCreate(char *Source)
 {
 
   int v2; // esi
@@ -413,7 +413,7 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
     }
     while ( v4 < dword_A8E328 ); /*0x71e3ec*/
   }
-  ObjectTypeClass::Destruct((int)a3); /*0x71e3f0*/
+  ((ObjectTypeClass *)((int)a3))->Destruct(); /*0x71e3f0*/
   if ( (a3 & 1) != 0 ) /*0x71e3fa*/
     __3_YAXPAX_Z(a3); /*0x71e3fd*/
   return &a3->ObjectTypeClass; /*0x71e407*/

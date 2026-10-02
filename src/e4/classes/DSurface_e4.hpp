@@ -285,12 +285,12 @@ struct DSurface {
     Coord * * DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9);
     DSurface * * Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * aP5, int a7, char a8);
     MouseClass * * DrawStippledRect(unsigned int * a2, unsigned int * a3, int16_t a4, char a5);
-    ObjectClass * *  RenderToSurface(ObjectClass * aP1, void *a2);
+    ObjectClass * * RenderToSurface(int *aP1);
     char FlipIfNeeded();
     char IsDSurface();
     int BlitPart(int a2, int a3, int a4, int a5, int a6);
     int CommitBuffers();
-    AbstractClass * * Destroy(void *a1);
+    AbstractClass * * Destroy();
     int DrawDashedLineStipple(int * a2, int * a3, int16_t a4, int a5, int a6, char a7);
     int DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9);
     int DrawMarker(AbstractClass * aP1, ObjectClass * aP2);

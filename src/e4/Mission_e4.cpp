@@ -464,7 +464,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
     {
       if ( i[27] && (dword_A8E7AC || !*((unsigned char *)i + 129)) && !*((unsigned char *)i + 1673) ) /*0x6ed831*/
       {
-        v7 = *SessionClass::GetEntry(*(unsigned int **)((char *)this + 40), &v19); /*0x6ed848*/
+        v7 = *((SessionClass *)(*(unsigned int **)((char *)this + 40)))->GetEntry(&v19); /*0x6ed848*/
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
           v8 = ((unsigned int *)&dword_8871E0[1])[1]; /*0x6ed867*/
         else
@@ -494,7 +494,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
               if ( !v3 )
               {
                 if ( i[361]
-                  || ((v9 = *SessionClass::GetEntry(*(unsigned int **)((char *)this + 40), &v20), v9 == 54) || v9 == 53
+                  || ((v9 = *((SessionClass *)(*(unsigned int **)((char *)this + 40)))->GetEntry(&v20), v9 == 54) || v9 == 53
                     ? (v10 = ((unsigned int *)&dword_8871E0[1])[1])
                     : (v10 = ((unsigned int *)&dword_8871E0[1])[0]),
                       ((ObjectClass *)(i))->DistanceTo(*((unsigned int *)this + 13)) <= 2 * v10 || v4 == 11) )

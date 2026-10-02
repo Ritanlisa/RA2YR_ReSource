@@ -308,7 +308,7 @@ AbstractClass * * GadgetClass::SetTooltip(void * String)
 }
 // 0x723EA0
 namespace gamemd {
-ControlClass GadgetClass::Show(void *a1, void *a2)
+ControlClass GadgetClass::Show()
 {
 
   int v1; // eax

@@ -47,7 +47,7 @@ int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a
 } // namespace gamemd
 // 0x7B0DD0
 namespace gamemd {
-int IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2, void *a3)
+int IPXInterfaceClass::initSocket(int aP1, int aP2)
 {
     unsigned int v4 = 0;  /* G37 hoist */
 
@@ -510,7 +510,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
   int v14; // edx
   UINT v15; // eax
 
-  v5 = AudioQueue::AllocBuffer((AudioQueue *)this, aP3); /*0x7b24f4*/
+  v5 = ((AudioQueue *)((AudioQueue *)this))->AllocBuffer(aP3); /*0x7b24f4*/
   qmemcpy(v5 + 32, a1, a3); /*0x7b2505*/
   *((unsigned int *)v5 + 4) = a3; /*0x7b250e*/
   (*(void (**)(WinsockInterfaceClass *, unsigned char *))(this->Socket + 84))(this, v5); /*0x7b2516*/

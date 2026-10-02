@@ -151,7 +151,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
 }
 // 0x5F7DB0
 namespace gamemd {
-AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
+AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
 {
 
   File *v5; // eax
@@ -575,7 +575,7 @@ LABEL_93:
       v34 = 0; /*0x5f8881*/
       if ( v33 > 0 ) /*0x5f8885*/
       {
-        while ( VoxelAnimType::LoadBarrel((VoxelAnimType *)this, (unsigned char *)this + 504, v34) ) /*0x5f889c*/
+        while ( ((VoxelAnimType *)((VoxelAnimType *)this))->LoadBarrel((unsigned char *)this + 504, v34) ) /*0x5f889c*/
         {
           if ( ++v34 >= v33 ) /*0x5f88a5*/
             goto LABEL_122; /*0x5f88a5*/

@@ -625,7 +625,7 @@ int Tactical::IsCellVisible(IUnknown * aP1)
 }
 // 0x58C2A0
 namespace gamemd {
-void * Tactical::GetCellData(void *a1_1)
+void * Tactical::GetCellData()
 {
 
   return (char *)(g_MissionQueueFrame.localVariables[163] /*0x58c2be*/
@@ -706,15 +706,15 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
   v8 = v8; /*0x640a4b*/
   if ( *v8 ) /*0x640a46*/
   {
-    LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x640a5d*/
+    ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x640a5d*/
     v10 = 10000; /*0x640a62*/
     v64 = 10000; /*0x640a6c*/
     v58 = 10000; /*0x640a70*/
     v52 = 0; /*0x640a74*/
     v11 = 0; /*0x640a7c*/
-    for ( i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x640a85*/
+    for ( i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x640a85*/
           i;
-          i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
+          i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
     {
       v13 = (unsigned int *)(i + 36); /*0x640a8b*/
       if ( (uint8_t)LayerClass::IsWithinUsableArea( /*0x640a96*/
@@ -1016,7 +1016,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
           && (v32 = *((unsigned int *)dword_A83D4C + 12),
               v27 = (unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)result + 72))(result, v37),
               v28 = ((Coord *)(&dword_87F7E8))->To_Cell(v27),
-              result = Cell::IsPassableOffset(v28, v32),
+              result = ((Cell *)(v28))->IsPassableOffset(v32),
               !(unsigned char)result)
           || (result = (*(int (**)(int))(*(unsigned int *)v26 + 132))(v26), *(unsigned char *)(result + 3226)) )
         {
@@ -1035,7 +1035,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
               && (v33 = *((unsigned int *)dword_A83D4C + 12),
                   v30 = (unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v26 + 72))(v26, v37),
                   v31 = ((Coord *)(&dword_87F7E8))->To_Cell(v30),
-                  result = Cell::IsPassableOffset(v31, v33),
+                  result = ((Cell *)(v31))->IsPassableOffset(v33),
                   !(unsigned char)result)
               || *(unsigned char *)(*(unsigned int *)(v29 + 1312) + 5889) )
             {
@@ -1204,16 +1204,16 @@ int Tactical::UpdateUIVisibility(void *a1_1)
       v3 = 18; /*0x6a66ff*/
     if ( 4 * dword_884CF8 > 2 * ((g_DSurface_ViewBounds - g_SidebarBounds - v3 + g_DSurface_SidebarBounds - 7) / 50) ) /*0x6a6743*/
     {
-      if ( !(uint8_t)DialogControl::IsHidden((DialogControl *)&stru_B0B328) ) /*0x6a6745*/
-        DialogControl::Hide((GadgetClass *)&stru_B0B328); /*0x6a6753*/
-      result = DialogControl::IsHidden((DialogControl *)&g_SidebarFlag); /*0x6a675d*/
+      if ( !(uint8_t)((DialogControl *)((DialogControl *)&stru_B0B328))->IsHidden() ) /*0x6a6745*/
+        ((DialogControl *)((GadgetClass *)&stru_B0B328))->Hide(); /*0x6a6753*/
+      result = ((DialogControl *)((DialogControl *)&g_SidebarFlag))->IsHidden(); /*0x6a675d*/
       if ( !(unsigned char)result ) /*0x6a6764*/
-        return DialogControl::Hide((GadgetClass *)&g_SidebarFlag); /*0x6a6764*/
+        return ((DialogControl *)((GadgetClass *)&g_SidebarFlag))->Hide(); /*0x6a6764*/
       return result; /*0x6a6764*/
     }
-    if ( (uint8_t)DialogControl::IsHidden((DialogControl *)&stru_B0B328) ) /*0x6a6770*/
+    if ( (uint8_t)((DialogControl *)((DialogControl *)&stru_B0B328))->IsHidden() ) /*0x6a6770*/
       DialogControl::Show((GadgetClass *)&stru_B0B328); /*0x6a677e*/
-    result = DialogControl::IsHidden((DialogControl *)&g_SidebarFlag); /*0x6a6788*/
+    result = ((DialogControl *)((DialogControl *)&g_SidebarFlag))->IsHidden(); /*0x6a6788*/
     if ( !(unsigned char)result ) /*0x6a678f*/
       return result; /*0x6a678f*/
     return DialogControl::Show((GadgetClass *)&g_SidebarFlag); /*0x6a6796*/
@@ -1229,18 +1229,18 @@ int Tactical::UpdateUIVisibility(void *a1_1)
                                                                     - 7)
                                                                    / 50) )
   {
-    if ( (uint8_t)DialogControl::IsHidden((DialogControl *)&stru_B0B328) ) /*0x6a66bb*/
+    if ( (uint8_t)((DialogControl *)((DialogControl *)&stru_B0B328))->IsHidden() ) /*0x6a66bb*/
       DialogControl::Show((GadgetClass *)&stru_B0B328); /*0x6a66c9*/
-    result = DialogControl::IsHidden((DialogControl *)&g_SidebarFlag); /*0x6a66d3*/
+    result = ((DialogControl *)((DialogControl *)&g_SidebarFlag))->IsHidden(); /*0x6a66d3*/
     if ( !(unsigned char)result ) /*0x6a66da*/
       return result; /*0x6a66da*/
     return DialogControl::Show((GadgetClass *)&g_SidebarFlag); /*0x6a66da*/
   }
-  if ( !(uint8_t)DialogControl::IsHidden((DialogControl *)&stru_B0B328) ) /*0x6a668c*/
-    DialogControl::Hide((GadgetClass *)&stru_B0B328); /*0x6a669a*/
-  result = DialogControl::IsHidden((DialogControl *)&g_SidebarFlag); /*0x6a66a4*/
+  if ( !(uint8_t)((DialogControl *)((DialogControl *)&stru_B0B328))->IsHidden() ) /*0x6a668c*/
+    ((DialogControl *)((GadgetClass *)&stru_B0B328))->Hide(); /*0x6a669a*/
+  result = ((DialogControl *)((DialogControl *)&g_SidebarFlag))->IsHidden(); /*0x6a66a4*/
   if ( !(unsigned char)result ) /*0x6a66ab*/
-    return DialogControl::Hide((GadgetClass *)&g_SidebarFlag); /*0x6a66b1*/
+    return ((DialogControl *)((GadgetClass *)&g_SidebarFlag))->Hide(); /*0x6a66b1*/
   return result; /*0x6a679b*/
 
 }
@@ -1690,8 +1690,8 @@ void* Tactical::DrawTacticalConnectorLines()
   char v62[12]; // [esp+FCh] [ebp-18h] BYREF
   int v63[3]; // [esp+108h] [ebp-Ch] BYREF
 
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x6db221*/
-  v2 = (CellClass *)LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x6db236*/
+  ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x6db221*/
+  v2 = (CellClass *)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x6db236*/
   result = 255 >> g_BitMask_Blue << g_BitMask_Green; /*0x6db251*/
   v4 = result | (255 >> g_BitShift_Green_0 << g_BitShift_Red); /*0x6db283*/
   v51 = (255 >> g_BitShift_Green_0 << g_BitShift_Red) | (255 >> g_BitMask_Red << g_BitShift_Blue); /*0x6db2b5*/
@@ -1789,7 +1789,7 @@ void* Tactical::DrawTacticalConnectorLines()
           &v37,
           v5);
       }
-      result = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x6db51c*/
+      result = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x6db51c*/
       v2 = (CellClass *)result; /*0x6db521*/
     }
     while ( result ); /*0x6db525*/

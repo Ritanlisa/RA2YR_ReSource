@@ -1668,7 +1668,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
       v8 = aP1; /*0x6dc8bc*/
       do /*0x6dc8d6*/
       {
-        Rect::Set((Rect *)v5, 0, 0, 0, 0); /*0x6dc8c9*/
+        ((Rect *)((Rect *)v5))->Set(0, 0, 0, 0); /*0x6dc8c9*/
         v5[16] = 0; /*0x6dc8ce*/
         v5 += 20; /*0x6dc8d2*/
         --v8; /*0x6dc8d5*/
@@ -1687,7 +1687,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
       v6 = aP1; /*0x6dc88f*/
       do /*0x6dc8a9*/
       {
-        Rect::Set((Rect *)v5, 0, 0, 0, 0); /*0x6dc89c*/
+        ((Rect *)((Rect *)v5))->Set(0, 0, 0, 0); /*0x6dc89c*/
         v5[16] = 0; /*0x6dc8a1*/
         v5 += 20; /*0x6dc8a5*/
         --v6; /*0x6dc8a8*/
@@ -30072,7 +30072,7 @@ int VectorClass_cptr_MultiMission::j_vt09(unsigned char * a1, signed int a3, int
   }
   *v10 = v11; /*0x5ef20a*/
   *(unsigned char *)(a3 + 10 + this->field_50) = 13; /*0x5ef212*/
-  WinModemClass::WriteSerial((int *)g_ClipboardBuffer, (LPCVOID)this->field_50, a3 + 11); /*0x5ef222*/
+  ((WinModemClass *)((int *)g_ClipboardBuffer))->WriteSerial((LPCVOID)this->field_50, a3 + 11); /*0x5ef222*/
   return 1; /*0x5ef19b*/
 
 }
@@ -30088,7 +30088,7 @@ unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
   v3 = (void *)this->field_50; /*0x5ef293*/
   *(unsigned int *)this->__pad_0 = &vt_NullModemConnClass; /*0x5ef296*/
   __3_YAXPAX_Z(v3); /*0x5ef29d*/
-  ConnectionClass::dtor((ConnectionClass *)this); /*0x5ef2a7*/
+  ((ConnectionClass *)((ConnectionClass *)this))->dtor(); /*0x5ef2a7*/
   if ( (a2 & 1) != 0 ) /*0x5ef2b1*/
     __3_YAXPAX_Z(this); /*0x5ef2b4*/
   return this->__pad_0; /*0x5ef2be*/

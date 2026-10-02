@@ -301,7 +301,7 @@ int Palette::CalcColorDistance(unsigned char * a2, void *a2_2)
 
 }
 // 0x626200
-int Palette::FindClosestColor(int a2, void *a2_2)
+int Palette::FindClosestColor(Palette *a2)
 {
 
   int v2; // ebx

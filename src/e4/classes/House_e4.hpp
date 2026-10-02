@@ -179,14 +179,14 @@ struct House {
     unsigned int *__pad_3D7;
 // --- flat members (END) ---
     int AnnounceUpgrade(int aP1);  // 0x47D2B0
-    unsigned int * GetStartCoords(IUnknown * aP1);  // 0x47FB90
+    unsigned int * GetStartCoords(unsigned int *aP1);  // 0x47FB90
     int UpdateHouseAI();  // 0x4FD500
     int IsHumanPlayer(void *a1_1);  // 0x50B6F0
     int IsCurrentPlayer();  // 0x50B730
     AbstractClass * * ChooseHouseEnemy(BuildingClass * aP1);  // 0x50DB00
     int LookupObject(int a2, void *a2_2);  // 0x544BE0
     int LoadMapFileData(int a2, char a3);  // 0x544C20
-    void Constructor(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x69E090
+    void Constructor();  // 0x69E090
     int PowerBeginUpdate(AbstractClass * aP1);  // 0x70C270
 };
 } // namespace gamemd

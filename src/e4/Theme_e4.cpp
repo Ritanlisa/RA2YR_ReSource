@@ -45,7 +45,7 @@ int Theme::QueueSong(IUnknown * aP1, void *a2)
           {
             if ( *((unsigned char *)this + 17) && !AudioSample::IsBuffering() ) /*0x720b70*/
               ((Audio *)(*((unsigned int *)this + 11)))->Release(); /*0x720b7c*/
-            LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*((unsigned int *)this + 11)) != 0; /*0x720b8b*/
+            LOBYTE(IsSoundEnabled) = ((Audio *)(*((unsigned int *)this + 11)))->IsSoundPlaying() != 0; /*0x720b8b*/
             if ( (unsigned char)IsSoundEnabled == 1 ) /*0x720b90*/
             {
               if ( *((unsigned int *)this + 11) ) /*0x720b92*/
@@ -89,12 +89,12 @@ int Theme::Stop(char aP1)
           goto LABEL_14; /*0x720ee0*/
         if ( *((unsigned char *)this + 17) && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
           ((Audio *)(*((Audio **)this + 11)))->Release(); /*0x720ef5*/
-        if ( Audio::IsSoundPlaying(*((Audio **)this + 11)) != 0 ) /*0x720f04*/
+        if ( ((Audio *)(*((Audio **)this + 11)))->IsSoundPlaying() != 0 ) /*0x720f04*/
         {
           result = ((Debug *)this)->Log(); /*0x720f14*/
           v5 = (ThemeClass *)*((unsigned int *)this + 11); /*0x720f19*/
           if ( v5 ) /*0x720f21*/
-            result = ThemeClass::RequestBuffer(v5); /*0x720f23*/
+            result = ((ThemeClass *)(v5))->RequestBuffer(); /*0x720f23*/
           *((unsigned char *)this + 17) = 1; /*0x720f28*/
         }
         else
@@ -129,7 +129,7 @@ void Theme::IsPlaying()
     if ( !AudioSample::IsBuffering(v2) ) /*0x720fe1*/
       ((Audio *)(*((Audio **)this + 11)))->Release(); /*0x720fed*/
   }
-  return Audio::IsSoundPlaying(*((Audio **)this + 11)) != 0; /*0x720ffe*/
+  return ((Audio *)(*((Audio **)this + 11)))->IsSoundPlaying() != 0; /*0x720ffe*/
 
 }
 } // namespace gamemd

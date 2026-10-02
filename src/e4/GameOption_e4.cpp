@@ -10,7 +10,7 @@
 
 // 0x69ACC0
 namespace gamemd {
-int GameOption::GetField(void *a1, void *a2)
+int GameOption::GetField()
 {
 
   return *(unsigned int *)this->field_18C; /*0x69acc8*/

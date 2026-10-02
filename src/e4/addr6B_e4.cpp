@@ -1020,8 +1020,8 @@ void ProcessSlaveManagerTerrain()
   int v26; // [esp+10h] [ebp-8h]
   int v27; // [esp+14h] [ebp-4h]
 
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x6b3858*/
-  v1 = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x6b3862*/
+  ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x6b3858*/
+  v1 = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x6b3862*/
   for ( i = v1; v1; i = v1 ) /*0x6b386d*/
   {
     v2 = *(unsigned int *)(v1 + 36); /*0x6b3877*/
@@ -1107,7 +1107,7 @@ void ProcessSlaveManagerTerrain()
       }
     }
   LABEL_36:
-    v1 = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x6b3a47*/
+    v1 = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x6b3a47*/
   }
   RA2_OPDEL(g_SlaveManagerPool); /*0x6b3a68*/
   g_SlaveManagerPool = 0; /*0x6b3a6d*/
@@ -1849,7 +1849,7 @@ void sub_6B6230()
   if ( Dialog ) /*0x6b6285*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x6b628f*/
-    Dialog::Show(Dialog); /*0x6b6297*/
+    ((Dialog *)(Dialog))->Show(); /*0x6b6297*/
     while ( dwNewLong == -1 ) /*0x6b62a0*/
     {
       if ( Dialog::PumpMessages() == 1 ) /*0x6b62a9*/
@@ -2319,7 +2319,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
     }
     v60[0] = v10; /*0x6b9f80*/
     ((String *)((char **)&v48))->Assign(Source); /*0x6b9f87*/
-    String::ToLower(&v48); /*0x6b9f90*/
+    ((String *)(&v48))->ToLower(); /*0x6b9f90*/
     v37 = *(unsigned int *)(v5 + 4); /*0x6b9f95*/
     v38 = 0; /*0x6b9f98*/
     v58[0] = 0; /*0x6b9f9c*/
@@ -2849,7 +2849,7 @@ LABEL_2:
     v12 = (CCINIClass *)RawFileClass::Construct(v11, (RawFileClass *)&stru_826420[36]);
   CCINIClass *v12 = 0;
   aP1 = v12;
-  CCINIClass::Load(&stru_87C374[44364], (MultiplayerGameMode *)v12, 0, 0);
+  ((CCINIClass *)(&stru_87C374[44364]))->Load((MultiplayerGameMode *)v12, 0, 0);
   stru_830620[66636] = INIClass::ReadBool_Overwrite(
                                     (int)&stru_87C374[44364],
                                     (uint8_t *)&stru_830620[11072],
@@ -5393,7 +5393,7 @@ unsigned int E4Recv_6B94E0::sub_6B94E0()
   v2 = String::Length((String *)this); /*0x6b94ec*/
   for ( i = 0; i < String::Length((String *)this); ++i ) /*0x6b94f0*/
   {
-    v4 = String::GetOrEmpty((String *)this); /*0x6b94fb*/
+    v4 = ((String *)((String *)this))->GetOrEmpty(); /*0x6b94fb*/
     v2 = ((i + v4[i] + v2) >> 24) ^ ((i + v4[i] + v2) << 8); /*0x6b9510*/
   }
   return v2; /*0x6b9520*/

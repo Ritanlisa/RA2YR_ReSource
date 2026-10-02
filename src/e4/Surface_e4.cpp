@@ -35,7 +35,7 @@ int Surface::IsLocked()
 } // namespace gamemd
 // 0x5D1FD0
 namespace gamemd {
-unsigned int * Surface::CopyRect(ObjectClass * aP1, void *a2)
+unsigned int * Surface::CopyRect(int *aP1)
 {
 
   unsigned int *result; // eax
@@ -247,7 +247,7 @@ LABEL_16:
     }
     while ( v17 < this->Width ); /*0x5d214f*/
   }
-  return Surface::CopyRect(int a1,&v44) ; /*0x5d208c*/
+  return ((Surface *)(int a1))->CopyRect(&v44) ; /*0x5d208c*/
 
 }
 } // namespace gamemd

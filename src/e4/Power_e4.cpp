@@ -520,7 +520,7 @@ int Power::TimerProcess(void *a1_1)
 
 // 0x750090
 namespace gamemd {
-char Power::ChangedHouse(char a2, void *a2_2)
+char Power::ChangedHouse(char a2)
 {
 
   int result; // eax

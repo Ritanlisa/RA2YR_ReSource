@@ -732,7 +732,7 @@ struct BuildingClass {
     int FindClosestForRepair2(int a1);
     int FindInPointerArray(unsigned int * a2);
     int Mission_Guard();
-    int SaveLoad_Register(void *a1);
+    int SaveLoad_Register();
     int processCapture();
     void ClearSuperWeaponAnim();
     void* LoadFromStream();

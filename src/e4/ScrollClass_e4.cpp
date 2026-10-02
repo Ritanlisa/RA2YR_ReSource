@@ -43,7 +43,7 @@ char * ScrollClass::Read(char * Block, char a2)
     --v4; /*0x693915*/
   }
   while ( v4 ); /*0x693916*/
-  RadarClass::Destruct((RadarClass *)Block); /*0x69391a*/
+  ((RadarClass *)((RadarClass *)Block))->Destruct(); /*0x69391a*/
   if ( (a2 & 1) != 0 ) /*0x693924*/
     __3_YAXPAX_Z(Block); /*0x693927*/
   return (char *)Block; /*0x69392f*/

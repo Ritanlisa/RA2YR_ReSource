@@ -112,7 +112,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
         v21 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5edf*/
         if ( v21 ) /*0x4b5ee6*/
         {
-          Index = AnimTypeClass::FindIndex(&stru_820320); /*0x4b5eed*/
+          Index = ((AnimTypeClass *)(&stru_820320))->FindIndex(); /*0x4b5eed*/
           ((AnimClass *)(v21))->ctor(*(void **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * Index), v39, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
         }
       }
@@ -120,7 +120,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       {
         v33 = 0.0; /*0x4b5f39*/
         v23 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&a1->IsOutOfMap); /*0x4b5f41*/
-        ClosestObjectCell = Object::FindClosestObjectCell((Object *)v23, &v33, 0, 0); /*0x4b5f48*/
+        ClosestObjectCell = ((Object *)((Object *)v23))->FindClosestObjectCell(&v33, 0, 0); /*0x4b5f48*/
         if ( !(uint8_t)((Object *)((Object *)((unsigned int *)a1)[0]))->IsAlliedWithObjectHouse(ClosestObjectCell) ) /*0x4b5f57*/
         {
           v25 = RandomCoordScatter((int *)&v33, (int *)&a1->IsOutOfMap, v7, 85, 0); /*0x4b5f6d*/

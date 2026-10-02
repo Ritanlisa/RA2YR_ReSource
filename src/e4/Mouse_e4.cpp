@@ -32,7 +32,7 @@
 
 // 0x4A8BF0
 namespace gamemd {
-int Mouse::SetBounds(void* aP1, void *a2_1)
+int Mouse::SetBounds(const void *aP1)
 {
 
   int result; // eax
@@ -155,7 +155,7 @@ int Mouse::SetCursor(int aP1, char aP2)
 }
 // 0x6938C0
 namespace gamemd {
-HWND Mouse::ReleaseCapture(void *a1_1)
+HWND Mouse::ReleaseCapture()
 {
 
   int result; // eax
@@ -171,7 +171,7 @@ HWND Mouse::ReleaseCapture(void *a1_1)
 }
 // 0x7B93F0
 namespace gamemd {
-AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4, void *a4_2)
+AbstractClass * * Mouse::DrawCursor(int *aP1, int aP2, int a4)
 {
 
   MixFileClass *v5; // ecx

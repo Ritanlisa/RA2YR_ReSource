@@ -88,7 +88,7 @@ void PlaceCabhutMap(FootClass * aP0)
     if ( ++v3 >= aP0[2] + *aP0 + 1 ) /*0x59051a*/
       goto LABEL_7; /*0x59051a*/
   }
-  v7 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x59053c*/
+  v7 = (void *)((SuperWeaponTypeClass *)(aNeutral))->FindByName(); /*0x59053c*/
   Owner = ((HouseClass *)(v7))->FindOwner(); /*0x59054d*/
   IndexByName = ((BuildingTypeClass *)(stru_82BA00))->FindIndexByName(); /*0x590559*/
   v10 = RA2_OPNEW(0x720u); /*0x59055b*/
@@ -430,10 +430,10 @@ ObjectClass * * RandomMap_DistributeTerrain()
   v4 = v44[g_MissionQueueFrame.briefing[371]]; /*0x594bb6*/
   IDA_LOWORD(v5) = *(unsigned short *)(*(unsigned int *)&stru_87F5F0.__pad_58[4 * v4 + 440] + 2 * v3); /*0x594bc1*/
   Map_Helper_58CE90(v34); /*0x594bc5*/
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x594bcf*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x594be2*/
+  ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x594bcf*/
+  for ( i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x594be2*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
+        i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
   {
     if ( (uint8_t)MapSeed::IsCellInBounds((MapSeed *)(i + 36)) /*0x594c2b*/
       && *(unsigned int *)(80 * (*(int16_t *)(i + 36) + g_MapCellWidth * *(int16_t *)(i + 38))
@@ -816,7 +816,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
         RA2_OPDEL(v8); /*0x596113*/
       }
       g_MissionQueueFrame.briefing[451] = 0; /*0x59611f*/
-      RawFileClass::Dtor((RawFileClass *)&v17.ComPtr_field_0x10); /*0x596125*/
+      ((RawFileClass *)((RawFileClass *)&v17.ComPtr_field_0x10))->Dtor(); /*0x596125*/
       goto LABEL_39; /*0x59612a*/
     }
     v9 = (void *)g_MissionQueueFrame.briefing[451]; /*0x59612f*/
@@ -858,7 +858,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
         CreateDirectoryA((LPCSTR)&(unsigned int *)((char *)&stru_82BA00 + 6), 0); /*0x59625a*/
       CopyFileA(ExistingFileName, Destination, 0); /*0x59626e*/
       CleanupRandomMapCache(v16); /*0x596274*/
-      RawFileClass::Dtor((RawFileClass *)&v17.ComPtr_field_0x10); /*0x59627d*/
+      ((RawFileClass *)((RawFileClass *)&v17.ComPtr_field_0x10))->Dtor(); /*0x59627d*/
       v13 = (ComPtr *)g_MissionQueueFrame.briefing[451]; /*0x596282*/
     }
     if ( v13 ) /*0x59628a*/
@@ -1124,8 +1124,8 @@ int sub_59C630()
   int64_t v11; // [esp+10h] [ebp-10h]
   int64_t v12; // [esp+18h] [ebp-8h]
 
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x59c63a*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x59c644*/
+  ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x59c63a*/
+  result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x59c644*/
   for ( i = result; result; i = result ) /*0x59c64f*/
   {
     if ( *(unsigned int *)(i + 56) == g_CellPassabilityLUT && !*(unsigned char *)(i + 282) ) /*0x59c668*/
@@ -1178,7 +1178,7 @@ int sub_59C630()
         PlaceMapSeedClassBuildings(v7 + g_CellPassabilityLUT, (unsigned short *)(i + 36), v8, -1); /*0x59c795*/
       }
     }
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x59c7e2*/
+    result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x59c7e2*/
   }
   return result; /*0x59c7f3*/
 }

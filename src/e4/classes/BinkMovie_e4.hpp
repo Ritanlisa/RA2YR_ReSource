@@ -46,25 +46,25 @@ struct BinkMovie {
     unsigned int Audio;
     unsigned int Debug;
 // --- flat members (END) ---
-    unsigned int * Close(char * FullPath, void *a2_1);  // 0x432690
+    unsigned int * Close(char *FullPath);  // 0x432690
     void Open(char *FullPath, int a3);  // 0x4326C0
-    void Stop(void *a1_1, void *a2_1);  // 0x432700
+    void Stop();  // 0x432700
     AbstractClass * * InitFromFile(LPCSTR * FullPath, void *a2_1);  // 0x432750
     int Pause(unsigned char a2);  // 0x432C30
     // dup-decl removed: BOOL IsAtEnd();  // 0x432C50
     void Play(void *a1_1);  // 0x432C70
     int RenderLoop(int aP1, int a3, int a4);  // 0x432E40
     int RenderFrameToSurface(void *a1_1);  // 0x433040
-    unsigned int * RenderSingleFrame(DSurface * aP1, int a3, int a4, char a5);  // 0x4331F0
+    unsigned int * RenderSingleFrame(int aP1, int a3, int a4, char a5);  // 0x4331F0
     unsigned int * BlitToTarget(int aP1);  // 0x433270
-    int AdjustSurfaceFormat(DSurface * aP1, void *a2_1);  // 0x433330
+    int AdjustSurfaceFormat(int aP1);  // 0x433330
     void Cleanup(void *a1_1);  // 0x5C01F0
     int HandleKeyboard(int a1, HWND a2);  // 0x6033F0
     AbstractClass * * WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam);  // 0x6153E0
     void Destroy(void *a1_1);  // 0x6C9930
     int FreeSurfaceTracker(void *a1_1);  // 0x6C9AE0
     int InitKeyframeTracking(char * Source);  // 0x6C9B40
-    int CheckKeyframeTransition(CellStruct * aP1);  // 0x6C9C60
+    int CheckKeyframeTransition(unsigned int aP1);  // 0x6C9C60
     AbstractClass * * ProcessKeyframe(ObjectClass * aP1);  // 0x6C9D40
     unsigned int * VtableDispatch(int a2);  // 0x6C9EC0
     int * CreateSurfaceTracker(char * FullPath);  // 0x6C99D0

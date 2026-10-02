@@ -144,7 +144,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
       v10 = 0; /*0x5404df*/
       if ( dword_A8DA84 > 0 ) /*0x5404e3*/
       {
-        while ( !(uint8_t)GUID::Compare((char *)(dword_A8DA78[v10] + 40), (int)&v20) ) /*0x5404fd*/
+        while ( !(uint8_t)((GUID *)((char *)(dword_A8DA78[v10] + 40)))->Compare((int)&v20) ) /*0x5404fd*/
         {
           if ( ++v10 >= dword_A8DA84 ) /*0x540507*/
             goto LABEL_13; /*0x540507*/
@@ -152,7 +152,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
         v9 = *(unsigned int *)(((unsigned int *)(dword_A8DA78))[v10] + 111); /*0x540514*/
       }
 LABEL_13:
-      LinkedIndex = Factory::GetLinkedIndex((Factory *)&stru_B052C0.__pad_0[16], v9); /*0x540517*/
+      LinkedIndex = ((Factory *)((Factory *)&stru_B052C0.__pad_0[16]))->GetLinkedIndex(v9); /*0x540517*/
       if ( !LinkedIndex ) /*0x540524*/
         LinkedIndex = 1; /*0x540526*/
       v7 = v16; /*0x540528*/
@@ -161,7 +161,7 @@ LABEL_13:
     v18 = qword_A8DBA4; /*0x540540*/
     v12 = *(unsigned int *)&dword_841F3C; /*0x54054a*/
     v19 = dword_A8DBAC; /*0x540554*/
-    if ( (uint8_t)GUID::Compare(qword_A8DBB0.__pad_0, *dword_A8DA78 + 40) /*0x54057b*/
+    if ( (uint8_t)((GUID *)(qword_A8DBB0.__pad_0))->Compare(*dword_A8DA78 + 40) /*0x54057b*/
       && (uint8_t)NetworkID::Compare((bool *)v18.__pad_0, *dword_A8DA78 + 40) )
     {
       v13 = a2 + 8; /*0x540584*/
@@ -247,7 +247,7 @@ int IPXGlobalConnClass::Send(void *a1, void *a2, void *a3, void *a4, void *a5)
   {
     do /*0x540332*/
     {
-      v5 = *(unsigned int *)Terrain::GetTileIndex((Terrain *)IPXGlobalConnClass_field_0x04, v3); /*0x5402ef*/
+      v5 = *(unsigned int *)((Terrain *)((Terrain *)IPXGlobalConnClass_field_0x04))->GetTileIndex(v3); /*0x5402ef*/
       if ( (v5 & 4) != 0 && (v5 & 2) == 0 ) /*0x5402f7*/
       {
         Waypoint::InitInvalid(&v10); /*0x5402fd*/
@@ -287,7 +287,7 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
     return 0; /*0x5403de*/
   do /*0x5403cd*/
   {
-    TileIndex = Terrain::GetTileIndex((Terrain *)IPXGlobalConnClass_field_0x04, v6); /*0x54035f*/
+    TileIndex = ((Terrain *)((Terrain *)IPXGlobalConnClass_field_0x04))->GetTileIndex(v6); /*0x54035f*/
     v8 = TileIndex; /*0x540364*/
     if ( (*(unsigned char *)TileIndex & 2) == 0 /*0x540392*/
       && *(unsigned int *)(TileIndex + 24)
@@ -355,7 +355,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(unsigned int * Block, ch
     *((unsigned int *)Block + 51) = 0; /*0x5406a9*/
   }
   *(unsigned int *)Block->__pad_0 = &vt_IPXConnClass; /*0x5406b5*/
-  ConnectionClass::dtor((ConnectionClass *)Block); /*0x5406bb*/
+  ((ConnectionClass *)((ConnectionClass *)Block))->dtor(); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
     __3_YAXPAX_Z(Block); /*0x5406c8*/
   return Block->__pad_0; /*0x5406d2*/

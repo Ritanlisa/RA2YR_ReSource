@@ -217,7 +217,7 @@ int String::TrimLeft(ObjectClass * aP1)
       break; /*0x7b5212*/
   }
   if ( i > 0 ) /*0x7b5219*/
-    return String::Erase(int a1,0,i) ; /*0x7b5220*/
+    return ((String *)(int a1))->Erase(0, i) ; /*0x7b5220*/
   return result; /*0x7b5225*/
 
 }
@@ -696,7 +696,7 @@ unsigned int String::ComputeHash(void *a1_1)
   v2 = String::Length(this); /*0x5e262c*/
   for ( i = 0; i < String::Length(this); ++i ) /*0x5e2630*/
   {
-    v4 = String::GetOrEmpty(this); /*0x5e263b*/
+    v4 = ((String *)(this))->GetOrEmpty(); /*0x5e263b*/
     v2 = ((i + v4[i] + v2) >> 24) ^ ((i + v4[i] + v2) << 8); /*0x5e2650*/
   }
   return v2; /*0x5e2660*/
@@ -809,7 +809,7 @@ char ** String::AssignFromPtr(const char **a2)
 
 // 0x7B4710
 namespace gamemd {
-bool String::Equals_Alt(const char * a2)
+bool String::Equals_Alt(const char *a2)
 {
 
   int result; // eax
@@ -873,7 +873,7 @@ bool String::Compare(const char **a2)
 
 // 0x7B47F0
 namespace gamemd {
-bool String::NotEquals(const char * a2, void *a2_2)
+bool String::NotEquals(const char *a2)
 {
 
   int result; // eax
@@ -1052,7 +1052,7 @@ const char ** String::Append2(char **aP1)
 
 // 0x7B4DA0
 namespace gamemd {
-char ** String::Concat2(char ** a2, const char * a3, void *a3_2)
+char ** String::Concat2(char **a2, const char *a3)
 {
 
   char *v4; // ebx
@@ -1107,7 +1107,7 @@ char ** String::Concat2(char ** a2, const char * a3, void *a3_2)
 
 // 0x7B4ED0
 namespace gamemd {
-char ** String::Concat(char ** a1, IUnknown * aP2, void *a3_1)
+char ** String::Concat(char **a1, char **aP2)
 {
 
   char *v4; // ebx
@@ -1174,7 +1174,7 @@ char ** String::Concat(char ** a1, IUnknown * aP2, void *a3_1)
 
 // 0x7B5020
 namespace gamemd {
-char String::Erase(MPCooperative * aP1, int a3, void *a3_2)
+char String::Erase(int aP1, int a3)
 {
 
   int v4; // ebp
@@ -1283,7 +1283,7 @@ void String::TrimRight(ObjectClass * aP1)
 
 // 0x7B5400
 namespace gamemd {
-char * String::GetOrEmpty(void *a1_1)
+char * String::GetOrEmpty()
 {
 
   char *result; // eax
@@ -1298,7 +1298,7 @@ char * String::GetOrEmpty(void *a1_1)
 
 // 0x7B5440
 namespace gamemd {
-char * String::GetOrEmpty_Alt(void *a1_1)
+char * String::GetOrEmpty_Alt()
 {
 
   char *result; // eax
@@ -1342,7 +1342,7 @@ char String::Assign_Bool(const char *a2)
 
 // 0x7B5B30
 namespace gamemd {
-int String::ToLower(void *a1_1)
+int String::ToLower()
 {
 
   unsigned int i; // esi

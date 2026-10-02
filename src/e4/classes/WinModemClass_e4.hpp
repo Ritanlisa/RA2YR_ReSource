@@ -59,7 +59,7 @@ struct WinModemClass {
     int ReadBytes(void (*a1)(), WinModemClass * aP1, WinModemClass * aP2);
     int ReadSerial();
     int SaveToINI(const char * NumberOfBytesWritten);
-    int WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2, void *a3);
+    int WriteSerial(LPCVOID lpBuffer, DWORD aP2);
     int ddtor(int a2);
 };
 

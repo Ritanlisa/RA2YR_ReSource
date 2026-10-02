@@ -1288,7 +1288,7 @@ LABEL_343:
   }
   RA2_OPDEL(vfptr);
   g_NetworkPlayerBuffer[8900] = 1;
-  RawFileClass::Dtor((int *)&v272);
+  ((RawFileClass *)((int *)&v272))->Dtor();
   ResultNode::CleanupList(v262);
 }
 } // namespace gamemd

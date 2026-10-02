@@ -159,7 +159,7 @@ int Vector::Clear()
 
 // 0x45AE10
 namespace gamemd {
-int Vector::RemoveAt(AbstractClass * aP1, void *a2_1)
+int Vector::RemoveAt(int aP1)
 {
 
   char *Vector_field_0x10; // edx

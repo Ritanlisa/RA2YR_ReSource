@@ -13,10 +13,10 @@ struct CellStruct {
     unsigned int vfptr;
     unsigned char q004;  // 0x4
 // --- flat members (END) ---
-    void* Add(void* aP1, void* aP2, void *a3_1);  // 0x42D510
+    void* Add(unsigned int *aP1, unsigned short *aP2);  // 0x42D510
     unsigned int * Copy(void* aP1, void *a2_1);  // 0x437F30
     BOOL Equals(unsigned short * a2, void *a2_2);  // 0x50E470
-    void* Sub(void* aP1, void* aP2);  // 0x588C60
+    void* Sub(unsigned int *aP1, unsigned short *aP2);  // 0x588C60
     unsigned int * Set(int16_t a2, int16_t a3);  // 0x42D470
     unsigned int field_4;  // 0x4
 };

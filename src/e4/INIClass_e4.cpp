@@ -466,8 +466,8 @@ int INIClass::ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3)
   uint8_t *v5; // eax
   uint8_t *v7; // [esp-8h] [ebp-Ch]
 
-  v7 = (uint8_t *)String::GetOrEmpty_Alt(aP2); /*0x527905*/
-  v5 = (uint8_t *)String::GetOrEmpty_Alt(aP1); /*0x527906*/
+  v7 = (uint8_t *)((String *)(aP2))->GetOrEmpty_Alt(); /*0x527905*/
+  v5 = (uint8_t *)((String *)(aP1))->GetOrEmpty_Alt(); /*0x527906*/
   return ((INIClass *)(int a1))->ReadInt_Overwrite(v5, v7, aP3) ; /*0x527913*/
 
 }
@@ -482,8 +482,8 @@ char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
   uint8_t *v6; // ebx
   char Buffer[56]; // [esp+Ch] [ebp-38h] BYREF
 
-  v5 = String::GetOrEmpty_Alt(a3); /*0x529835*/
-  v6 = (uint8_t *)String::GetOrEmpty_Alt(a2); /*0x52983c*/
+  v5 = ((String *)(a3))->GetOrEmpty_Alt(); /*0x529835*/
+  v6 = (uint8_t *)((String *)(a2))->GetOrEmpty_Alt(); /*0x52983c*/
   sprintf(Buffer, "%d,%d", *a4, a4[1]); /*0x529853*/
   return INIClass::SetString(int a1,v6,v5,Buffer) ; /*0x529869*/
 

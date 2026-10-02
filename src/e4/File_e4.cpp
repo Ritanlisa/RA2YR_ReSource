@@ -26,13 +26,13 @@
 
 // 0x431F10
 namespace gamemd {
-char File::IsReady(int a2, void *a2_2)
+char File::IsReady(int a2)
 {
 
   int result; // eax
 
   if ( !BYTE1(this->BufferSize) ) /*0x431f10*/
-    return FileClass::Open((RawFileClass *)this, 0); /*0x431f1e*/
+    return ((FileClass *)((RawFileClass *)this))->Open(0); /*0x431f1e*/
   LOBYTE(result) = 1; /*0x431f17*/
   return result; /*0x431f19*/
 
@@ -40,7 +40,7 @@ char File::IsReady(int a2, void *a2_2)
 }
 // 0x433990
 namespace gamemd {
-AbstractClass * File::LoadFont(char * Source)
+AbstractClass * File::LoadFont(char *Source)
 {
 
   unsigned int v2; // ebp
@@ -203,7 +203,7 @@ LABEL_24:
 }
 // 0x4CB920
 namespace gamemd {
-char File::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
+char File::Dispatch()
 {
 
   int16_t v2; // ax
@@ -384,7 +384,7 @@ File * * File::LoadPaletteData(unsigned short *aP1)
     v13 = -(ntohs((void *)(*(unsigned short *)(v9 + 6))) & 3) & 3; /*0x625baf*/
     v17 = (u_short *)((char *)v10 + v13 + v11); /*0x625bbd*/
     v15 += -8 - v13 - v11; /*0x625bcc*/
-    File::Dispatch((File *)v9); /*0x625bd0*/
+    ((File *)((File *)v9))->Dispatch(); /*0x625bd0*/
     result = (u_short *)this; /*0x625bd5*/
     *(unsigned int *)(v9 + 12) = *(unsigned int *)&this->File_field_0x2[2]; /*0x625bde*/
     *(unsigned int *)&this->File_field_0x2[2] = v9; /*0x625be1*/
@@ -398,7 +398,7 @@ File * * File::LoadPaletteData(unsigned short *aP1)
 }
 // 0x625DB0
 namespace gamemd {
-int File::FindByPrefix(char * Str1, unsigned char * a3)
+int File::FindByPrefix(char *Str1, unsigned char *a3)
 {
 
   int v3; // esi
@@ -725,7 +725,7 @@ LABEL_25:
     memset(*((void **)this + 3), 0, v16); /*0x76ae75*/
     memset(*((void **)this + 4), 0, v17); /*0x76ae8c*/
     memset(Block, 0, v14); /*0x76aea4*/
-    File::FindByPrefix((File *)PaletteData, aCmid, (unsigned char *)this + 20); /*0x76aeb8*/
+    ((File *)((File *)PaletteData))->FindByPrefix(aCmid, (unsigned char *)this + 20); /*0x76aeb8*/
     HashTable::FindString((HashTable *)PaletteData, aCyid, (unsigned int *)this + 6); /*0x76aec8*/
     if ( *((unsigned char *)this + 72) ) /*0x76aecd*/
       *((unsigned int *)this + 10) = 0; /*0x76aed2*/
@@ -742,7 +742,7 @@ LABEL_25:
       *((unsigned int *)this + 8) = 30; /*0x76af6f*/
     else
       ParseWDTTerritories((int)this, (int)v20, v13); /*0x76af68*/
-    File::LoadWDTDecompress((File *)this, (int)v11, v14); /*0x76af7e*/
+    ((File *)((File *)this))->LoadWDTDecompress((int)v11, v14); /*0x76af7e*/
     __3_YAXPAX_Z(v11); /*0x76af84*/
     if ( !*((unsigned char *)this + 72) ) /*0x76af89*/
       __3_YAXPAX_Z(v20); /*0x76af98*/
@@ -755,7 +755,7 @@ LABEL_25:
 }
 // 0x76B0A0
 namespace gamemd {
-AbstractClass * * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
+AbstractClass * * File::LoadWDTDecompress(int aP1, int a3)
 {
 
   int v4; // eax

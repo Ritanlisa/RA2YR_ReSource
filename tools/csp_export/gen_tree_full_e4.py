@@ -116,6 +116,12 @@ EXCLUDE = tree_special | MATHNAMES | {'CellCoord'}  # CellCoord owned by
 # include-isolated from core headers (0 non-e4 TUs see _tree_full), so flat
 # defs cannot C2011-clash.  Pointer members still degrade via tree_special.
 FLAT_OK = {'VectorClass', 'HashTable', 'DynamicVectorClass'}
+# G42.9: static-method decls injected into generated flat structs. WinAPI::
+# Wrapper is the COM error trampoline -- 350+ corpus sites, all uniform
+# 1-arg (`WinAPI::Wrapper(-2147467261)` = 0x80004005), no ida_cache entry.
+STATIC_DECLS = {
+    'WinAPI': ['static int Wrapper(int a2);  // consensus: 350+ uniform 1-arg sites'],
+}
 def cpptype(t, size, own):
     t = (t or '').strip()
     if not t:
@@ -194,6 +200,10 @@ for cls in targets:
         n_mem += 1
     lines.append('struct %s {' % cls)
     lines += body
+    # G42.9: corpus-consensus static-method decls (call-site-uniform anchors;
+    # no ida_cache for these -- flagged with // consensus)
+    for extra in STATIC_DECLS.get(cls, ()):
+        lines.append('    ' + extra)
     lines.append('};')
     lines.append('')
     n_cls += 1

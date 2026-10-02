@@ -87,7 +87,7 @@ void BSurface::Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a6_1)
 }
 // 0x7B8C60
 namespace gamemd {
-void BSurface::CreateTripleBuffer(void *a1_1)
+void BSurface::CreateTripleBuffer()
 {
 
   int v2; // ecx

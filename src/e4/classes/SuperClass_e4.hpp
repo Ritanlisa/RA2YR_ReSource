@@ -696,13 +696,13 @@ struct SuperClass {
     unsigned int ChronoMapCoords;
 // --- flat members (END) ---
     AbstractClass * * Reset(void *a1, void *a2);
-    AbstractClass * * StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);
+    AbstractClass * * StartTimer(int aP1, char aP2, char aP3);
     AbstractClass * * StopPreclickAnim(IUnknown * aP1);
     SuperClass * * CleanupMembers(void *a1);
     bool ShouldDrawProgress();
     bool ShouldFlashTab();
     char CanFire();
-    char SetOnHold(CoordStruct * aP1, void *a2);
+    char SetOnHold(char aP1);
     char SetReadiness(char a2);
     int AnnounceReady(DynamicVector * aP1, void *a2);
     int ClickFire(int a2, short * a3);

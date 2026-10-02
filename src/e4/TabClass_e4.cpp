@@ -33,7 +33,7 @@ unsigned int * TabClass::initStripClass()
 } // namespace gamemd
 // 0x658330
 namespace gamemd {
-int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
+int TabClass::DrawPower(void *a1)
 {
 
   int v2; // ebp
@@ -84,7 +84,7 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
     {
       BuildingAnimByName = (Color *)*((unsigned int *)dword_B054D4 + *((unsigned int *)other + 22549)); /*0x6583cf*/
     }
-    v5 = Color::ConvertToRGB(BuildingAnimByName + 194, (int)&hWnd); /*0x6583dd*/
+    v5 = ((Color *)(BuildingAnimByName + 194))->ConvertToRGB((int)&hWnd); /*0x6583dd*/
     v25 = *(unsigned short *)v5; /*0x6583e6*/
     v26 = *(unsigned char *)(v5 + 2); /*0x6583ee*/
     v6 = (uint8_t)v25 | ((HIBYTE(v25) | (v26 << 8)) << 8); /*0x65841f*/

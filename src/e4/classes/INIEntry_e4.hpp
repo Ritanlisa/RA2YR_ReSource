@@ -11,7 +11,7 @@ struct INIEntry {
     unsigned int Value;  // 0x4
     INIEntry* Next;  // 0x8
 // --- flat members (END) ---
-    int GetTechnoType(CCINIClass * aP1, unsigned char * a2);
+    int GetTechnoType(uint8_t *aP1, uint8_t *a2);
 };
 
 } // namespace gamemd

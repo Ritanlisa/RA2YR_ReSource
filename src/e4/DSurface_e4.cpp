@@ -114,7 +114,7 @@ AbstractClass * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass 
 } // namespace gamemd
 // 0x4BA6B0
 namespace gamemd {
-AbstractClass * * DSurface::Destroy(void *a1)
+AbstractClass * * DSurface::Destroy()
 {
 
   char DSurface_field_0x18; // al
@@ -589,7 +589,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     }
   }
   if ( v42 == 1 ) /*0x4bb282*/
-    return XSurface::BlitPart((void **)((XSurface *)this), (void **)a2, v10, (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
+    return ((XSurface *)((void **)((XSurface *)this)))->BlitPart((void **)a2, v10, (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
   v17 = a2[1]; /*0x4bb2a7*/
   v18 = a2[2]; /*0x4bb2aa*/
   v49 = (int)(*a2); /*0x4bb2ad*/
@@ -660,7 +660,7 @@ LABEL_53:
   v33 = (int (**)(DSurface *, int *))v48->DSurface_field_0x0; /*0x4bb41c*/
   v63 = v28; /*0x4bb426*/
   v34 = (int *)v33[30](v48, v68); /*0x4bb439*/
-  Rect::Set(&v43, 0, 0, 0, 0); /*0x4bb43b*/
+  ((Rect *)(&v43))->Set(0, 0, 0, 0); /*0x4bb43b*/
   v35 = *v34; /*0x4bb449*/
   v36 = a1[2]; /*0x4bb44b*/
   v37 = v34[1]; /*0x4bb450*/
@@ -770,7 +770,7 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
            this->DSurface_field_0x1C[0],
            1) )
     {
-      return XSurface::FillRectEx((unsigned int *)((XSurface *)this), (unsigned int *)a2, (int *)a3, a4); /*0x4bb81d*/
+      return ((XSurface *)((unsigned int *)((XSurface *)this)))->FillRectEx((unsigned int *)a2, (int *)a3, a4); /*0x4bb81d*/
     }
     if ( g_DDraw_Initialized || *((unsigned int *)((char *)&stru_A8EB00 + 412)) ) /*0x4bb690*/
     {
@@ -3911,7 +3911,7 @@ void * DSurface::loc_4C1AC0(std::codecvt_base *a1)
 }
 
 // 0x5D1E70
-ObjectClass * *  DSurface::RenderToSurface(ObjectClass * aP1, void *a2)
+ObjectClass * *  DSurface::RenderToSurface(int *aP1)
 {
 
   int *v3; // eax
@@ -3971,7 +3971,7 @@ ObjectClass * *  DSurface::RenderToSurface(ObjectClass * aP1, void *a2)
     }
     this->DSurface_field_0x4 = 0; /*0x5d1f38*/
     v13 = (int *)(*(int (**)(int *, unsigned char *))(*aP1 + 120))(aP1, v25); /*0x5d1f44*/
-    Surface::CopyRect((XSurface *)this, v13); /*0x5d1f4a*/
+    ((Surface *)((XSurface *)this))->CopyRect(v13); /*0x5d1f4a*/
     (*(void (**)(DSurface *, int *))(this->DSurface_field_0x0 + 4))(this, aP1); /*0x5d1f54*/
   }
   result = this->DSurface_field_0x28; /*0x5d1f57*/
@@ -3996,7 +3996,7 @@ ObjectClass * *  DSurface::RenderToSurface(ObjectClass * aP1, void *a2)
         }
       }
     }
-    Surface::CopyRect((XSurface *)this, &v21); /*0x5d1fb1*/
+    ((Surface *)((XSurface *)this))->CopyRect(&v21); /*0x5d1fb1*/
     result = this->DSurface_field_0x28; /*0x5d1fb6*/
   }
   return result; /*0x5d1fbe*/

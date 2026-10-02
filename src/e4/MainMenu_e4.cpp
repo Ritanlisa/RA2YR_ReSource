@@ -42,7 +42,7 @@ long MainMenu_Screen(void * a1, void * a2)
   {
     SetWindowLongA(v2, 8, (LONG)&dwNewLong); /*0x531cfe*/
     SetDialogParent(v2, g_hWnd); /*0x531d0c*/
-    Dialog::Show(v2); /*0x531d13*/
+    ((Dialog *)(v2))->Show(); /*0x531d13*/
     SetFocus(g_hWnd); /*0x531d1f*/
     DlgItem = GetDlgItem(v2, 1818); /*0x531d31*/
     if ( DlgItem ) /*0x531d35*/
@@ -74,7 +74,7 @@ long MainMenu_Screen(void * a1, void * a2)
       }
       if ( (uint16_t)((EventQueue *)(dword_87F770))->Process() ) /*0x531df1*/
       {
-        v6 = (void *)((uint16_t)((void *)(EventQueue::Read(dword_87F770))));
+        v6 = (void *)((uint16_t)((void *)(((EventQueue *)(dword_87F770))->Read())));
         a1 = (void *)(v6);
         if ( ((unsigned int)(v6)& 0x800) == 0 ) /*0x531e16*/
         {

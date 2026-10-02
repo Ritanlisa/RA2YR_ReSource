@@ -129,7 +129,7 @@ struct BuildingLightClass {
     int SD_vt30();
     int SD_vt34();
     signed int UpdateOscillation();
-    unsigned int * FindTarget(CCINIClass * aP1, void *a2);
+    unsigned int * FindTarget(unsigned int *aP1);
 };
 
 } // namespace gamemd

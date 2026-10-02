@@ -634,7 +634,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
   unsigned int v8[22]; // [esp+Ch] [ebp-6Ch] BYREF
   unsigned int v9[5]; // [esp+64h] [ebp-14h] BYREF
 
-  v3 = (char *)((int)(String::GetOrEmpty_Alt(a1)));
+  v3 = (char *)((int)(((String *)(a1))->GetOrEmpty_Alt()));
   *a2 = (int)(0);
   result = SearchMIXFile(v3, 0); /*0x4a3985*/
   if ( !result ) /*0x4a398c*/
@@ -1324,7 +1324,7 @@ void globalHelper_0A6010()
   int *v12; // eax
   int v14; // [esp+8h] [ebp-8h] BYREF
 
-  v11 = Color::ConvertToRGB((uint8_t *)(a6 + 776), (int)&a6); /*0x4a6028*/
+  v11 = ((Color *)((uint8_t *)(a6 + 776)))->ConvertToRGB((int)&a6); /*0x4a6028*/
   IDA_LOWORD(v14) = *(unsigned short *)v11; /*0x4a6036*/
   IDA_BYTE2(v14) = *(unsigned char *)(v11 + 2); /*0x4a603e*/
   v12 = RenderTextLabel( /*0x4a60b2*/
@@ -1461,7 +1461,7 @@ int * * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6
   }
   else
   {
-    v14 = Color::ConvertToRGB((uint8_t *)(*((unsigned int *)dword_B054D4 + a9) + 776), (int)&a9); /*0x4a6628*/
+    v14 = ((Color *)((uint8_t *)(*((unsigned int *)dword_B054D4 + a9) + 776)))->ConvertToRGB((int)&a9); /*0x4a6628*/
     IDA_LOWORD(v15[0]) = *(unsigned short *)v14; /*0x4a6630*/
     IDA_BYTE2(v15[0]) = *(unsigned char *)(v14 + 2); /*0x4a663e*/
     v12 = RenderTextLabel( /*0x4a66b2*/
@@ -1496,7 +1496,7 @@ void globalHelper_0A66D0()
   }
   else
   {
-    v14 = Color::ConvertToRGB((uint8_t *)(*((unsigned int *)dword_B054D4 + a9) + 776), (int)&a9); /*0x4a6738*/
+    v14 = ((Color *)((uint8_t *)(*((unsigned int *)dword_B054D4 + a9) + 776)))->ConvertToRGB((int)&a9); /*0x4a6738*/
     IDA_LOWORD(v15[0]) = *(unsigned short *)v14; /*0x4a6740*/
     IDA_BYTE2(v15[0]) = *(unsigned char *)(v14 + 2); /*0x4a674e*/
     v12 = RenderTextLabel( /*0x4a67c2*/
@@ -2496,7 +2496,7 @@ void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Con
     {
       IDA_LOBYTE(result) = *(unsigned char *)(aP2 + 16); /*0x4aed9a*/
       if ( !(unsigned char)result ) /*0x4aed9f*/
-        House::Constructor((char **)aP2); /*0x4aeda3*/
+        ((House *)((char **)aP2))->Constructor(); /*0x4aeda3*/
       v17 = *(unsigned int *)(aP2 + 12); /*0x4aeda8*/
     }
     if ( v17 ) /*0x4aedad*/
@@ -3910,7 +3910,7 @@ unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int
   int16_t v16; // [esp+8h] [ebp-8h] BYREF
   uint8_t v17; // [esp+Ah] [ebp-6h]
 
-  v12 = Color::ConvertToRGB((uint8_t *)(a6 + 776), (int)&a6); /*0x4a6518*/
+  v12 = ((Color *)((uint8_t *)(a6 + 776)))->ConvertToRGB((int)&a6); /*0x4a6518*/
   v16 = *(unsigned short *)v12; /*0x4a6526*/
   v17 = *(unsigned char *)(v12 + 2); /*0x4a652e*/
   v13 = (unsigned int *)RenderTextLabelWordWrap( /*0x4a65a7*/
@@ -4355,7 +4355,7 @@ void sub_4A8710()
   if ( (byte_8A03E0 & 1) == 0 ) /*0x4a871a*/
   {
     byte_8A03E0 |= 1u; /*0x4a871e*/
-    GadgetClass::Dtor(stru_8A06F8); /*0x4a8729*/
+    ((GadgetClass *)(stru_8A06F8))->Dtor(); /*0x4a8729*/
   }
 }
 } // namespace gamemd

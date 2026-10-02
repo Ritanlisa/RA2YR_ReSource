@@ -25,7 +25,7 @@
 
 // 0x4080C0
 namespace gamemd {
-int ThemeClass::RequestBuffer(void *a1)
+int ThemeClass::RequestBuffer()
 {
 
   return RequestBufferMixer((unsigned int *)(this->m_Name[3] + 16), 0);
@@ -34,7 +34,7 @@ int ThemeClass::RequestBuffer(void *a1)
 } // namespace gamemd
 // 0x408140
 namespace gamemd {
-int ThemeClass::GetValue(void *a1, void *a2)
+int ThemeClass::GetValue()
 {
 
   return *(unsigned long long *)&this->m_Name[6]; /*0x408146*/
@@ -43,7 +43,7 @@ int ThemeClass::GetValue(void *a1, void *a2)
 } // namespace gamemd
 // 0x720480
 namespace gamemd {
-int ThemeClass::ReadThemeEntry(uint8_t *** a2, void *a2_2)
+int ThemeClass::ReadThemeEntry(uint8_t ***a2)
 {
 
   const char *v3; // edi
@@ -168,7 +168,7 @@ LABEL_10:
       {
         v9 = *(char **)(*((unsigned int *)this + 6) + 4 * v7); /*0x7206ec*/
       }
-      ThemeClass::ReadThemeEntry((int)v9, (uint8_t ***)a2); /*0x7206f6*/
+      ((ThemeClass *)((int)v9))->ReadThemeEntry((uint8_t ***)a2); /*0x7206f6*/
       v5 = i; /*0x7206fb*/
       KeyCount = v18; /*0x7206ff*/
       v2 = a2; /*0x720703*/
@@ -179,7 +179,7 @@ LABEL_10:
   if ( result ) /*0x72071b*/
   {
     Enabled = (unsigned int)(((Audio *)this)->GetEnabled());
-    result = (void *)((unsigned int)(AudioStream::Constructor(Enabled, 0x4E20u)));
+    result = (void *)((unsigned int)(((AudioStream *)(Enabled))->Constructor(0x4E20u)));
     *((unsigned int *)this + 11) = (unsigned int)(result); /*0x720732*/
     if ( result ) /*0x720735*/
     {
@@ -212,13 +212,13 @@ int ThemeClass::ClearQueues()
       __3_YAXPAX_Z(dword_B1D4B8); /*0x75239b*/
       dword_B1D4B8 = 0; /*0x7523a3*/
     }
-    for ( i = AudioQueue::GetNext(&stru_B1D3F0); i; i = AudioQueue::GetNext(&stru_B1D3F0) ) /*0x7523bb*/
+    for ( i = ((AudioQueue *)(&stru_B1D3F0))->GetNext(); i; i = ((AudioQueue *)(&stru_B1D3F0))->GetNext() ) /*0x7523bb*/
     {
       LinkedList::Init((unsigned int **)i); /*0x7523bf*/
       *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x7523c8*/
       __3_YAXPAX_Z((void *)i); /*0x7523cb*/
     }
-    for ( j = AudioQueue::GetNext(&stru_B1D3C8); j; j = AudioQueue::GetNext(&stru_B1D3C8) ) /*0x7523f1*/
+    for ( j = ((AudioQueue *)(&stru_B1D3C8))->GetNext(); j; j = ((AudioQueue *)(&stru_B1D3C8))->GetNext() ) /*0x7523f1*/
     {
       LinkedList::Init((unsigned int **)j); /*0x7523f5*/
       *(unsigned int *)(*(unsigned int *)(j + 12) + 80) = 2; /*0x7523fe*/
@@ -227,13 +227,13 @@ int ThemeClass::ClearQueues()
     v3 = (int *)stru_B1D450; /*0x752419*/
     do /*0x752457*/
     {
-      result = AudioQueue::GetNext(v3); /*0x752420*/
+      result = ((AudioQueue *)(v3))->GetNext(); /*0x752420*/
       for ( k = result; result; k = result ) /*0x752429*/
       {
         LinkedList::Init((unsigned int **)k); /*0x75242d*/
         *(unsigned int *)(*(unsigned int *)(k + 12) + 80) = 2; /*0x752436*/
         __3_YAXPAX_Z((void *)k); /*0x752439*/
-        result = AudioQueue::GetNext(v3); /*0x752443*/
+        result = ((AudioQueue *)(v3))->GetNext(); /*0x752443*/
       }
       v3 += 3; /*0x75244e*/
     }

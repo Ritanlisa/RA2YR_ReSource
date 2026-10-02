@@ -98,7 +98,7 @@ int InGameUI_Open()
   if ( v1 ) /*0x4f113e*/
   {
     SetWindowLongA(v1, 8, (LONG)&dwNewLong); /*0x4f1148*/
-    Dialog::Show(v2); /*0x4f1150*/
+    ((Dialog *)(v2))->Show(); /*0x4f1150*/
     if ( !dwNewLong ) /*0x4f115b*/
     {
             while ( ((Dialog *)0)->PumpMessages() != 1 )
@@ -128,7 +128,7 @@ long sub_4F1840()
   if ( Dialog ) /*0x4f185f*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x4f1869*/
-    Dialog::Show(Dialog); /*0x4f1871*/
+    ((Dialog *)(Dialog))->Show(); /*0x4f1871*/
     if ( !dwNewLong ) /*0x4f187c*/
     {
             while ( ((Dialog *)0)->PumpMessages() != 1 )
@@ -318,14 +318,14 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
           (int)&v38.vtable2) > 0;
   DeleteAndZero(&v38); /*0x4f1d89*/
   DeleteAndZero((ObjectClass *)&v38.vtable3); /*0x4f1d92*/
-  String::Concat2((String *)&v38.vtable2, (char **)&v38.nextArrayIndex, g_Str_File__PCX); /*0x4f1da5*/
+  ((String *)((String *)&v38.vtable2))->Concat2((char **)&v38.nextArrayIndex, g_Str_File__PCX); /*0x4f1da5*/
   ((String *)((String *)((unsigned int)(v8)+ 76)))->Reassign((const char **)&v38.nextArrayIndex); /*0x4f1db1*/
   Config = 0; /*0x4f1db6*/
   v38.occupant = 0; /*0x4f1dba*/
   v38.owningHouseIndex = 0; /*0x4f1dbe*/
   if ( v10 ) /*0x4f1dc2*/
   {
-    String::Concat2((String *)&v38.vtable2, (char **)&v38, aVqa); /*0x4f1dd6*/
+    ((String *)((String *)&v38.vtable2))->Concat2((char **)&v38, aVqa); /*0x4f1dd6*/
     v12 = CCFileClass::Construct2((CCFileClass *)&v38.ambientSoundController[2], (char **)&v38); /*0x4f1de4*/
     v13 = (*(int (**)(unsigned int *, unsigned int, int *))(*v12 + 20))(v12, 0, p_nextObject); /*0x4f1df8*/
     v38.ambientSoundController[3] = (int)&CCFileClass_vftable; /*0x4f1dfa*/
@@ -367,7 +367,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
         Config = 0; /*0x4f1f4d*/
       }
     }
-    String::Concat2((String *)&v38.vtable3, (char **)&v38.uniqueId, aBik_0); /*0x4f1e66*/
+    ((String *)((String *)&v38.vtable3))->Concat2((char **)&v38.uniqueId, aBik_0); /*0x4f1e66*/
     v15 = CCFileClass::Construct2((CCFileClass *)&v38.ambientSoundController[3], (char **)&v38.uniqueId); /*0x4f1e74*/
     v16 = (*(int (**)(unsigned int *, unsigned int))(*v15 + 20))(v15, 0); /*0x4f1e89*/
     v38.ambientSoundController[3] = (int)&CCFileClass_vftable; /*0x4f1e8b*/
@@ -397,7 +397,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
       v18 = (MSAnim *)RA2_OPNEW(0x3Cu); /*0x4f1f17*/
       if ( v18 ) /*0x4f1f1e*/
       {
-        v19 = String::GetOrEmpty((String *)&v38.referenceCount); /*0x4f1f24*/
+        v19 = ((String *)((String *)&v38.referenceCount))->GetOrEmpty(); /*0x4f1f24*/
         ((String *)((String *)&v38.vtable2))->Assign(v19); /*0x4f1f2e*/
         v20 = 1; /*0x4f1f33*/
         Config = UI_Load(v18, (const char **)&v38.vtable2, (unsigned int)(v8)+ 28, 1); /*0x4f1f49*/
@@ -502,7 +502,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
   _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem v23; // [esp+3Eh] [ebp-10h] BYREF
   int v24; // [esp+46h] [ebp-8h]
 
-  v2 = String::GetOrEmpty((String *)((char *)this + 80)); /*0x4f230c*/
+  v2 = ((String *)((String *)((char *)this + 80)))->GetOrEmpty(); /*0x4f230c*/
   v3 = ((StringList *)((StringList *)&unk_A83D10))->Find(v2); /*0x4f2317*/
   ThemeClass::Play((ThemeClass *)&unk_A83D10, v3); /*0x4f2322*/
   (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x4f2331*/
@@ -534,7 +534,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
     v18[1] = v7; /*0x4f23df*/
     if ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process() ) /*0x4f23e3*/
     {
-      v8 = EventQueue::Read(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x4f23f7*/
+      v8 = ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Read(); /*0x4f23f7*/
       v9 = v8; /*0x4f23ff*/
       if ( v8 == 1 || v8 == 13 ) /*0x4f2411*/
       {
@@ -728,7 +728,7 @@ void ParseINIAnimGadgetDefinition()
       DeleteAndZero(&a4); /*0x4f2e54*/
       v24 += *vtable0; /*0x4f2e65*/
       v25 += vtable0[1]; /*0x4f2e77*/
-      v16 = (uint8_t *)String::GetOrEmpty_Alt((String *)Source); /*0x4f2e7b*/
+      v16 = (uint8_t *)((String *)((String *)Source))->GetOrEmpty_Alt(); /*0x4f2e7b*/
       v21.__pad_0[0] = INIClass::ReadBool_Overwrite((int *)a2->__pad_0, v16, aLoop, 1); /*0x4f2e91*/
       ((String *)((String *)&a4))->Assign(g_INI_Key_Rate); /*0x4f2e95*/
       v17 = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&a4, 5); /*0x4f2ead*/
@@ -995,17 +995,17 @@ void sub_4F38B0()
   DeleteAndZero((void **)&v14); /*0x4f3902*/
   DeleteAndZero((void **)&v15); /*0x4f390b*/
   v6 = 0; /*0x4f3914*/
-  if ( (uint8_t)String::Equals_Alt((const char **)&v13, g_INI_Key_Image) ) /*0x4f391b*/
+  if ( (uint8_t)((String *)((const char **)&v13))->Equals_Alt(g_INI_Key_Image) ) /*0x4f391b*/
   {
     v7 = (unsigned int *)ParseINIGadgetDefinition(Source, a2, a3, a4); /*0x4f3932*/
   }
-  else if ( (uint8_t)String::Equals_Alt((const char **)&v13, aShortcut) ) /*0x4f3942*/
+  else if ( (uint8_t)((String *)((const char **)&v13))->Equals_Alt(aShortcut) ) /*0x4f3942*/
   {
     v7 = sub_4F3B80(Source, a2); /*0x4f394f*/
   }
   else
   {
-    if ( !(uint8_t)String::Equals_Alt((const char **)&v13, aAnim_0) ) /*0x4f3966*/
+    if ( !(uint8_t)((String *)((const char **)&v13))->Equals_Alt(aAnim_0) ) /*0x4f3966*/
       goto LABEL_15; /*0x4f3966*/
     v7 = ParseINIAnimGadgetDefinition(Source, a2, a3, a4); /*0x4f397a*/
   }
@@ -1108,27 +1108,27 @@ int E4Recv_4F3D40::sub_4F3D40()
 
   v1 = 0; /*0x4f3d4b*/
   ((String *)(&v8))->AssignFromPtr((const char **)this); /*0x4f3d4d*/
-  String::ToLower(&v8); /*0x4f3d56*/
+  ((String *)(&v8))->ToLower(); /*0x4f3d56*/
   ((String *)((String *)&v8.m_3[1]))->AssignFromPtr((const char **)&v8); /*0x4f3d64*/
   String::CopyTruncated((String *)&v8.m_3[1], 5u); /*0x4f3d6f*/
-  if ( (uint8_t)String::Equals_Alt((String *)&v8.m_3[1], aCtrl) ) /*0x4f3d7d*/
+  if ( (uint8_t)((String *)((String *)&v8.m_3[1]))->Equals_Alt(aCtrl) ) /*0x4f3d7d*/
   {
     v1 = 512; /*0x4f3d8e*/
-    String::Erase(&v8, 0, 5); /*0x4f3d93*/
+    ((String *)(&v8))->Erase(0, 5); /*0x4f3d93*/
   }
   ((String *)((String *)&v8.m_3[1]))->Reassign((const char **)&v8); /*0x4f3da1*/
   String::CopyTruncated((String *)&v8.m_3[1], 4u); /*0x4f3dac*/
-  if ( (uint8_t)String::Equals_Alt((String *)&v8.m_3[1], aAlt) ) /*0x4f3dba*/
+  if ( (uint8_t)((String *)((String *)&v8.m_3[1]))->Equals_Alt(aAlt) ) /*0x4f3dba*/
   {
     BYTE1(v1) |= 4u; /*0x4f3dcb*/
-    String::Erase(&v8, 0, 4); /*0x4f3dce*/
+    ((String *)(&v8))->Erase(0, 4); /*0x4f3dce*/
   }
   ((String *)((String *)&v8.m_3[1]))->Reassign((const char **)&v8); /*0x4f3ddc*/
   String::CopyTruncated((String *)&v8.m_3[1], 6u); /*0x4f3de7*/
-  if ( (uint8_t)String::Equals_Alt((String *)&v8.m_3[1], aShift) ) /*0x4f3df5*/
+  if ( (uint8_t)((String *)((String *)&v8.m_3[1]))->Equals_Alt(aShift) ) /*0x4f3df5*/
   {
     BYTE1(v1) |= 1u; /*0x4f3e06*/
-    String::Erase(&v8, 0, 6); /*0x4f3e09*/
+    ((String *)(&v8))->Erase(0, 6); /*0x4f3e09*/
   }
   v2 = String::Length(&v8); /*0x4f3e12*/
   if ( v2 ) /*0x4f3e1a*/
@@ -1141,7 +1141,7 @@ int E4Recv_4F3D40::sub_4F3D40()
     {
       v3 = 1; /*0x4f3e1f*/
       v4 = (const char **)&off_824328; /*0x4f3e24*/
-      while ( (uint8_t)String::NotEquals(&v8, *v4) ) /*0x4f3e37*/
+      while ( (uint8_t)((String *)(&v8))->NotEquals(*v4) ) /*0x4f3e37*/
       {
         v4 -= 2; /*0x4f3e39*/
         --v3; /*0x4f3e3c*/
@@ -1683,7 +1683,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
   {
     if ( (uint8_t)CCFileClass::Open((CCFileClass *)&((char *)&v15), 0) ) /*0x4f2f8f*/
     {
-      v11 = String::GetOrEmpty_Alt((String *)a6); /*0x4f2f9a*/
+      v11 = ((String *)((String *)a6))->GetOrEmpty_Alt(); /*0x4f2f9a*/
       ((String *)((String *)&v15))->Assign(v11); /*0x4f2fa4*/
       *((unsigned int *)this + 9) = PaletteClass::Load((PaletteClass *)&v15); /*0x4f2fb6*/
       DeleteAndZero(&v15); /*0x4f2fb9*/

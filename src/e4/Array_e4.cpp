@@ -106,7 +106,7 @@ int Array::Get(int a2)
 }
 // 0x65ADF0
 namespace gamemd {
-int Array::ContainsValue(IUnknown * aP1, void *a2_1)
+int Array::ContainsValue(int aP1)
 {
 
   int result; // eax

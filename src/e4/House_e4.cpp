@@ -201,7 +201,7 @@ LABEL_19:
       if ( MapFileData ) /*0x47d5c6*/
       {
 LABEL_40:
-        *((unsigned char *)this + 284) = HouseClass::GetCameoTypeIndex((int)((HouseClass *)v19),(void *)(*(uint8_t *)((char *)this + 282))); /*0x47d7fb*/
+        *((unsigned char *)this + 284) = ((HouseClass *)((int)((HouseClass *)v19)))->GetCameoTypeIndex((void *)(*(uint8_t *)((char *)this + 282))); /*0x47d7fb*/
         CellClass::DetermineTileType((CellClass *)this); /*0x47d813*/
         v27 = *((unsigned int *)this + 17); /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
@@ -447,7 +447,7 @@ LABEL_89:
 }
 // 0x47FB90
 namespace gamemd {
-unsigned int * House::GetStartCoords(IUnknown * aP1)
+unsigned int * House::GetStartCoords(unsigned int *aP1)
 {
 
   int v3; // ecx
@@ -537,7 +537,7 @@ LABEL_13:
     aP1[3] = 0; /*0x47fd59*/
     return aP1; /*0x47fd63*/
   }
-  House::Constructor(v23); /*0x47fd66*/
+  ((House *)(v23))->Constructor(); /*0x47fd66*/
   if ( v4[682] ) /*0x47fd6b*/
     v24 = 0; /*0x47fd75*/
   v16 = v25 - *(int16_t *)v23->House_field_0x2 / 2; /*0x47fd93*/
@@ -1167,7 +1167,7 @@ int House::LoadMapFileData(int a2, char a3)
 }
 // 0x69E090
 namespace gamemd {
-void House::Constructor(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
+void House::Constructor()
 {
 
   void *v2; // eax
