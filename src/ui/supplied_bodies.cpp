@@ -22,6 +22,7 @@
 #include "ui/tool_tip.hpp"
 #include "ui/ui_ext.hpp"
 #include "wdt/wdt.hpp"
+struct Base64Straw;  // G42.32 S R4: local fwd (ptr-form uses only; e4_protos full-header C2990-risky here)
 
 // 0x623840
 namespace gamemd {

@@ -1,5 +1,12 @@
 // G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
 #define GAMEMD_TREE_UNIVERSE 1
+// G42.32 S: guard-order tree-bridge -- ra2::game full defs precede e4 leaf headers
+#include "misc/audio.hpp"
+#ifdef GAMEMD_TREE_UNIVERSE
+namespace gamemd {
+using ra2::game::AudioController;
+}
+#endif
 #include "team/trigger.hpp"
 #include "team/tevent.hpp"
 #include "team/taction.hpp"

@@ -15302,3 +15302,15 @@ extern unsigned int DataGlobal_008363C4;  // data: 0x008363C4
 extern unsigned int DataGlobal_0089DC50;  // data: 0x0089DC50
 extern unsigned int DataGlobal_0089DC54;  // data: 0x0089DC54
 extern unsigned int DataGlobal_00A8B8C2;  // data: 0x00A8B8C2
+
+// G42.32 S R6: DataGlobal bare-form supply (form-checked, idempotent per-name)
+extern unsigned int DataGlobal_00829160;  // data: 0x00829160
+extern unsigned int DataGlobal_008358E4;  // data: 0x008358E4
+extern unsigned int DataGlobal_008358F0;  // data: 0x008358F0
+extern unsigned int DataGlobal_00835914;  // data: 0x00835914
+extern unsigned int DataGlobal_0083592C;  // data: 0x0083592C
+extern unsigned int DataGlobal_00835938;  // data: 0x00835938
+extern unsigned int DataGlobal_008360B4;  // data: 0x008360B4
+extern unsigned int DataGlobal_008360C4;  // data: 0x008360C4
+extern unsigned int DataGlobal_008360DC;  // data: 0x008360DC
+extern unsigned int DataGlobal_008360EC;  // data: 0x008360EC

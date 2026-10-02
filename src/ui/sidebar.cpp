@@ -1,5 +1,14 @@
 // G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
 #define GAMEMD_TREE_UNIVERSE 1
+// G42.32 S: guard-order tree-bridge -- ra2::game full defs precede e4 leaf headers
+#include "object/abstract.hpp"
+#include "object/techno.hpp"
+#ifdef GAMEMD_TREE_UNIVERSE
+namespace gamemd {
+using ra2::game::AbstractClass;
+using ra2::game::TechnoClass;
+}
+#endif
 #include "ui/sidebar.hpp"
 #include "e4/classes/TabCameoListClass_e4.hpp"
 #include "e4/classes/VoxClass_e4.hpp"

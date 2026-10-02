@@ -1,5 +1,12 @@
 // G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
 #define GAMEMD_TREE_UNIVERSE 1
+// G42.32 S: guard-order tree-bridge -- ra2::game full defs precede e4 leaf headers
+#include "object/abstract.hpp"
+#ifdef GAMEMD_TREE_UNIVERSE
+namespace gamemd {
+using ra2::game::AbstractClass;
+}
+#endif
 // 自动生成 by tools/move_hpp_bodies.py — 函数体自 src/structure/building.hpp 迁出
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "building.hpp"

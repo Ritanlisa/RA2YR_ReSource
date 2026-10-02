@@ -1,5 +1,7 @@
 // G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
 #define GAMEMD_TREE_UNIVERSE 1
+// G42.32 S: guard-order tree-bridge -- ra2::game full defs precede e4 leaf headers
+#include "core/math.hpp"
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
 #include "core/stream_ext.hpp"

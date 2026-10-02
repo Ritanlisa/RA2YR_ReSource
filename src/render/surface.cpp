@@ -330,7 +330,7 @@ AbstractClass * * DSurface::BlitWhole(void* aP1, int * a2, void * a1, void * a3,
   return ((XSurface *)(v3))->BlitWhole((int *)this, a2, a3); /*0x4c1aa4*/
 }
 // 0x4bb080
-bool DSurface::BlitPart(
+bool DSurface::BlitPart(const RectangleStruct& a2, Surface* a3, const RectangleStruct& a4, bool a5, bool a6)
 {
   int (__thiscall **DSurface_field_0x0)(DSurface *, int); // ebx
   int v8; // eax

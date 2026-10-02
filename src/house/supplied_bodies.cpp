@@ -14,6 +14,7 @@
 #include "team/team.hpp"
 #include "ui/message_list.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "core/init_stubs.hpp"  // G42.32 S R3: TimerGetTicks (init_stubs carrier)
 
 // 0x42F490
 namespace gamemd {
