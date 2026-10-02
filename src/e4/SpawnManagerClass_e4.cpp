@@ -560,12 +560,12 @@ void SpawnManagerClass_25::ddtor(void *a1_1, void *a2_1)
 
   v2 = *(void **)&this->m_1[3]; /*0x6b8166*/
   this->m_10 = 0; /*0x6b8169*/
-  if ( v2 && BYTE1(this->q00C) ) /*0x6b8170*/
+  if ( v2 && BYTE1(this->m_C) ) /*0x6b8170*/
   {
     __3_YAXPAX_Z(v2); /*0x6b8176*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x6b817e*/
   }
-  BYTE1(this->q00C) = 0; /*0x6b8181*/
+  BYTE1(this->m_C) = 0; /*0x6b8181*/
   this->m_8 = 0; /*0x6b8184*/
 
 }
@@ -576,7 +576,7 @@ namespace gamemd {
 unsigned int SpawnManagerClass_25::LoadState(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x6b8190*/
+  if ( LOBYTE(this->m_C) ) /*0x6b8190*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x6b81a5*/
   else
     return 0; /*0x6b8197*/
@@ -667,12 +667,12 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x6b840c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x6b8412*/
+    LOBYTE(this->m_C) = 0; /*0x6b8412*/
     if ( a3 ) /*0x6b8418*/
       v4 = a3; /*0x6b842e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x6b842a*/
-    LOBYTE(this->q00C) = 1; /*0x6b8432*/
+    LOBYTE(this->m_C) = 1; /*0x6b8432*/
     if ( !v4 ) /*0x6b8436*/
       return 0; /*0x6b84aa*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x6b8438*/
@@ -682,7 +682,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
         m_8 = a2; /*0x6b8446*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x6b844c*/
         ++i; /*0x6b8451*/
-      if ( BYTE1(this->q00C) ) /*0x6b845e*/
+      if ( BYTE1(this->m_C) ) /*0x6b845e*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x6b8469*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x6b8471*/
@@ -690,7 +690,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
     }
     *(unsigned int *)&this->m_1[3] = v4; /*0x6b847a*/
     this->m_8 = a2; /*0x6b8482*/
-    BYTE1(this->q00C) = a3 == 0; /*0x6b8485*/
+    BYTE1(this->m_C) = a3 == 0; /*0x6b8485*/
   }
   else
   {
@@ -735,12 +735,12 @@ DynamicVector * SpawnManagerClass_25::QueryInterface(unsigned int * Block, char 
 
   v3 = *(void **)&Block->m_1[3]; /*0x6b8793*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6b8796*/
-  if ( v3 && BYTE1(Block->q00C) ) /*0x6b87a0*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x6b87a0*/
   {
     __3_YAXPAX_Z(v3); /*0x6b87a8*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x6b87b0*/
   }
-  BYTE1(Block->q00C) = 0; /*0x6b87bb*/
+  BYTE1(Block->m_C) = 0; /*0x6b87bb*/
   Block->m_8 = 0; /*0x6b87c1*/
   if ( (a2 & 1) != 0 ) /*0x6b87c8*/
     __3_YAXPAX_Z(Block); /*0x6b87cb*/

@@ -1552,7 +1552,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
         goto LABEL_139; /*0x5703e8*/
       }
       v34 = (int16_t)v32 + (v81[1] << 9); /*0x5703f1*/
-      if ( !*((unsigned int *)this->q13C + v34) ) /*0x570401*/
+      if ( !*((unsigned int *)this->Terrain_field_0x13C + v34) ) /*0x570401*/
         goto LABEL_74; /*0x570401*/
       if ( v34 < 0x40000 && (v35 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v34)) != 0 ) /*0x57041d*/
       {
@@ -2038,7 +2038,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
       if ( v87[1] < (int)Terrain_field_0x128 || v87[1] > (int)Terrain_field_0x128 + *(unsigned int *)this->__pad_130 ) /*0x5738e6*/
         goto LABEL_141; /*0x5738e6*/
       v41 = (int16_t)v38 + (v87[1] << 9); /*0x5738ef*/
-      if ( *((unsigned int *)this->q13C + v41) ) /*0x5738fb*/
+      if ( *((unsigned int *)this->Terrain_field_0x13C + v41) ) /*0x5738fb*/
       {
         if ( v41 < 0x40000 && (v42 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v41)) != 0 ) /*0x57391b*/
         {
@@ -2421,7 +2421,7 @@ int Terrain::CreateCrater(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1, vo
       return v10; /*0x576990*/
     }
     v24 = (int16_t)v21 + (SHIWORD(aP1) << 9); /*0x57699d*/
-    if ( !*((unsigned int *)this->q13C + v24) ) /*0x5769a9*/
+    if ( !*((unsigned int *)this->Terrain_field_0x13C + v24) ) /*0x5769a9*/
       goto LABEL_49; /*0x5769a9*/
     if ( v24 < 0x40000 && (v25 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v24)) != 0 ) /*0x5769c5*/
     {

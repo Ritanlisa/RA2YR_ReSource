@@ -650,7 +650,7 @@ void WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0)
     for ( k = 0; k < (int)WarheadTypeClass_field_0x114; ++k ) /*0x75e37c*/
       (*(void (**)(int *, char *, int, unsigned int))(*a2 + 16))( /*0x75e38f*/
         a2,
-        (char *)&aP0->q1AC->vtable1 + 4 * k,
+        (char *)&aP0->WarheadTypeClass_field_0x1AC->vtable1 + 4 * k,
         4,
         0);
     return 0; /*0x75e399*/
@@ -764,12 +764,12 @@ CampaignClass * * WarheadTypeClass::Destructor(void ** Block, char a2)
       ++v4; /*0x75e5b6*/
     }
   }
-  WarheadTypeClass_field_0x1AC = Block->q1AC; /*0x75e5c8*/
+  WarheadTypeClass_field_0x1AC = Block->WarheadTypeClass_field_0x1AC; /*0x75e5c8*/
   *(unsigned int *)&Block->__pad_1A0[8] = &vt_VectorClass; /*0x75e5d1*/
   if ( WarheadTypeClass_field_0x1AC && Block->__pad_1B0[5] ) /*0x75e5df*/
   {
     __3_YAXPAX_Z(WarheadTypeClass_field_0x1AC); /*0x75e5e8*/
-    Block->q1AC = 0; /*0x75e5f0*/
+    Block->WarheadTypeClass_field_0x1AC = 0; /*0x75e5f0*/
   }
   Block->__pad_1B0[5] = 0; /*0x75e5f6*/
   *(unsigned int *)Block->__pad_1B0 = 0; /*0x75e5fc*/

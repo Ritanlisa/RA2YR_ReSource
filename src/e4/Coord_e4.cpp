@@ -207,7 +207,7 @@ void * Coord::To_Cell(unsigned int *aP1)
   v3 = *aP1 / 256 + (v2 << 9); /*0x56575a*/
   if ( v3 >= 0 && v3 < *((unsigned int *)this + 80) ) /*0x565764*/
   {
-    v4 = (CellClass *)*((unsigned int *)this->q13C + v3); /*0x56576c*/
+    v4 = (CellClass *)*((unsigned int *)this->Coord_field_0x13C + v3); /*0x56576c*/
     if ( v4 ) /*0x565771*/
       return v4; /*0x565774*/
   }

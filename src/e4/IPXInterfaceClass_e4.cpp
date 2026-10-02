@@ -569,12 +569,12 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x7b2a2c*/
   {
-    LOBYTE(this->LocalNode) = 0; /*0x7b2a32*/
+    LOBYTE(this->m_C) = 0; /*0x7b2a32*/
     if ( a3 ) /*0x7b2a38*/
       v4 = a3; /*0x7b2a4e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x7b2a4a*/
-    LOBYTE(this->LocalNode) = 1; /*0x7b2a52*/
+    LOBYTE(this->m_C) = 1; /*0x7b2a52*/
     if ( !v4 ) /*0x7b2a56*/
       return 0; /*0x7b2aca*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x7b2a58*/
@@ -584,7 +584,7 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
         m_8 = a2; /*0x7b2a66*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x7b2a6c*/
         ++i; /*0x7b2a71*/
-      if ( BYTE1(this->LocalNode) ) /*0x7b2a7e*/
+      if ( BYTE1(this->m_C) ) /*0x7b2a7e*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x7b2a89*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x7b2a91*/
@@ -592,7 +592,7 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
     }
     *(unsigned int *)&this->m_1[3] = v4; /*0x7b2a9a*/
     this->m_8 = a2; /*0x7b2aa2*/
-    BYTE1(this->LocalNode) = a3 == 0; /*0x7b2aa5*/
+    BYTE1(this->m_C) = a3 == 0; /*0x7b2aa5*/
   }
   else
   {
@@ -753,12 +753,12 @@ void IPXInterfaceClass::getSocketCount()
 
   v2 = *(void **)&this->m_1[3]; /*0x7b2846*/
   this->m_10 = 0; /*0x7b2849*/
-  if ( v2 && BYTE1(this->LocalNode) ) /*0x7b2850*/
+  if ( v2 && BYTE1(this->m_C) ) /*0x7b2850*/
   {
     __3_YAXPAX_Z(v2); /*0x7b2856*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x7b285e*/
   }
-  BYTE1(this->LocalNode) = 0; /*0x7b2861*/
+  BYTE1(this->m_C) = 0; /*0x7b2861*/
   this->m_8 = 0; /*0x7b2864*/
 
 }
@@ -768,7 +768,7 @@ namespace gamemd {
 unsigned int IPXInterfaceClass::resetSocket(int a2)
 {
 
-  if ( LOBYTE(this->LocalNode) ) /*0x7b2870*/
+  if ( LOBYTE(this->m_C) ) /*0x7b2870*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x7b2885*/
   else
     return 0; /*0x7b2877*/
@@ -806,12 +806,12 @@ DynamicVector * IPXInterfaceClass::closeSession(unsigned int * Block, char a2)
 
   v3 = *(void **)&Block->m_1[3]; /*0x7b2b53*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x7b2b56*/
-  if ( v3 && BYTE1(Block->LocalNode) ) /*0x7b2b60*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x7b2b60*/
   {
     __3_YAXPAX_Z(v3); /*0x7b2b68*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x7b2b70*/
   }
-  BYTE1(Block->LocalNode) = 0; /*0x7b2b7b*/
+  BYTE1(Block->m_C) = 0; /*0x7b2b7b*/
   Block->m_8 = 0; /*0x7b2b81*/
   if ( (a2 & 1) != 0 ) /*0x7b2b88*/
     __3_YAXPAX_Z(Block); /*0x7b2b8b*/

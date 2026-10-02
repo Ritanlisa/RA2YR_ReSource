@@ -762,7 +762,7 @@ int DisplayClass::InsertPriorityText(int a2)
   v3 = *(unsigned int *)this->__pad_8; /*0x551a93*/
   if ( *(unsigned int *)this->__pad_10 >= v3 ) /*0x551a9b*/
   {
-    if ( !BYTE1(this->q00C[0]) && v3 ) /*0x551aa6*/
+    if ( !BYTE1(this->DisplayClass_field_0xC[0]) && v3 ) /*0x551aa6*/
       return 0; /*0x551aa6*/
     v4 = *(unsigned int *)&this->__pad_10[4]; /*0x551aa8*/
     if ( v4 <= 0 /*0x551ab8*/

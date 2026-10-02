@@ -381,7 +381,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   v16 = 0; /*0x633169*/
   if ( LOBYTE(this->m_C) ) /*0x633166*/
   {
-    if ( this->u32_34 == 1 ) /*0x63317d*/
+    if ( this->m_34 == 1 ) /*0x63317d*/
     {
       v7 = Delegate::Invoke( /*0x6331a6*/
              (Straw *)this,

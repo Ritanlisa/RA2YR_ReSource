@@ -147,9 +147,9 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
     if ( this->__pad_C[14] ) /*0x5d4343*/
     {
       if ( this->__pad_C[13] ) /*0x5d434a*/
-        v21 = this->u32_8[0] + *(unsigned int *)&this->__pad_C[8]; /*0x5d4357*/
+        v21 = this->NetworkLobby_field_0x8[0] + *(unsigned int *)&this->__pad_C[8]; /*0x5d4357*/
       else
-        v21 = this->u32_8[0]; /*0x5d435b*/
+        v21 = this->NetworkLobby_field_0x8[0]; /*0x5d435b*/
       v22 = *(int **)this->__pad_0; /*0x5d435e*/
       if ( *(unsigned int *)this->__pad_0 ) /*0x5d435e*/
       {

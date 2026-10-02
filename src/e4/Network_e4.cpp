@@ -874,7 +874,7 @@ int Network::GetAddress(unsigned int *a1, int aP2, unsigned short *a3)
   int16_t result; // ax
 
   *(unsigned int *)aP2 = this->Network_field_0x4; /*0x53ed6a*/
-  *(unsigned short *)(aP2 + 4) = this->q008; /*0x53ed71*/
+  *(unsigned short *)(aP2 + 4) = this->Network_field_0x8; /*0x53ed71*/
   result = dword_828140; /*0x53ed75*/
   if ( dword_828140 == 1 ) /*0x53ed7d*/
   {
@@ -898,7 +898,7 @@ void * Network::CopyAddress(unsigned int *a2, int a3)
 
   result = (char *)&this->Network_field_0x4; /*0x53eda4*/
   *(unsigned int *)a3 = this->Network_field_0x4; /*0x53edaa*/
-  LOWORD(result) = this->q008; /*0x53edad*/
+  LOWORD(result) = this->Network_field_0x8; /*0x53edad*/
   *(unsigned short *)(a3 + 4) = (unsigned short)result; /*0x53edb1*/
   *a2 = this->Network_field_0x0; /*0x53edbb*/
   return result; /*0x53edac*/
@@ -920,8 +920,8 @@ int Network::IsBroadcastAddr()
       && BYTE1(this->Network_field_0x4) == 0xFF
       && BYTE2(this->Network_field_0x4) == 0xFF
       && HIBYTE(this->Network_field_0x4) == 0xFF
-      && LOBYTE(this->q008) == 0xFF
-      && BYTE1(this->q008) == 0xFF )
+      && LOBYTE(this->Network_field_0x8) == 0xFF
+      && BYTE1(this->Network_field_0x8) == 0xFF )
     {
       return 1; /*0x53ee42*/
     }
@@ -930,8 +930,8 @@ int Network::IsBroadcastAddr()
          && BYTE1(this->Network_field_0x4) == 0xFF
          && BYTE2(this->Network_field_0x4) == 0xFF
          && HIBYTE(this->Network_field_0x4) == 0xFF
-         && LOBYTE(this->q008) == 0xFF
-         && BYTE1(this->q008) == 0xFF )
+         && LOBYTE(this->Network_field_0x8) == 0xFF
+         && BYTE1(this->Network_field_0x8) == 0xFF )
   {
     return 1; /*0x53ee66*/
   }
@@ -2396,7 +2396,7 @@ LABEL_159:
       v15);
     if ( i == (unsigned short)v15 ) /*0x5d9d7c*/
     {
-      this->q008 = 0; /*0x5d9d85*/
+      this->Network_field_0x8 = 0; /*0x5d9d85*/
       *a2 = 1; /*0x5d9d8c*/
     }
     return 1; /*0x5d9d8c*/
@@ -2541,7 +2541,7 @@ LABEL_69:
     {
       Network_field_0xC = this->Network_field_0xC; /*0x5d9a18*/
       if ( Network_field_0xC && (int)this->Network_field_0x4 > 1 ) /*0x5d9a23*/
-        this->q008 = Network_field_0xC; /*0x5d9a25*/
+        this->Network_field_0x8 = Network_field_0xC; /*0x5d9a25*/
       return v67; /*0x5d9a28*/
     }
     else
@@ -2557,7 +2557,7 @@ LABEL_69:
       if ( v41 ) /*0x5d99b8*/
       {
         v46 = -(HIBYTE(v76) != 0); /*0x5d9a43*/
-        this->q008 = v41; /*0x5d9a45*/
+        this->Network_field_0x8 = v41; /*0x5d9a45*/
         v43 = ((v46 & 0x10) + 16) | v67; /*0x5d9a52*/
         v67 = v43; /*0x5d9a56*/
         if ( HIBYTE(v74) ) /*0x5d9a5a*/
@@ -2567,7 +2567,7 @@ LABEL_69:
       {
         v42 = this->Network_field_0xC; /*0x5d99ba*/
         if ( v42 && (int)this->Network_field_0x4 > 1 ) /*0x5d99c5*/
-          this->q008 = v42; /*0x5d99c7*/
+          this->Network_field_0x8 = v42; /*0x5d99c7*/
         ++*(unsigned int *)v78; /*0x5d99d2*/
         if ( *(int *)v78 < 3 ) /*0x5d99d6*/
           continue; /*0x5d99d6*/
@@ -2696,7 +2696,7 @@ LABEL_142:
           if ( !v61 ) /*0x5d9ce8*/
             goto LABEL_152; /*0x5d9ce8*/
 LABEL_150:
-          if ( (void *)v61 == (char *)this->q008 + v55 ) /*0x5d9cfd*/
+          if ( (void *)v61 == (char *)this->Network_field_0x8 + v55 ) /*0x5d9cfd*/
           {
             Debug::Log(); /*0x5d9d5e*/
           }
@@ -2859,11 +2859,11 @@ LABEL_19:
     {
       if ( (Network_field_0x0 & 0x10) != 0 ) /*0x5da415*/
       {
-        v14 = (int)this->q008 + v12; /*0x5da420*/
+        v14 = (int)this->Network_field_0x8 + v12; /*0x5da420*/
       }
       else
       {
-        Network_field_0x8 = (int)this->q008; /*0x5da424*/
+        Network_field_0x8 = (int)this->Network_field_0x8; /*0x5da424*/
         if ( Network_field_0x8 == 100 ) /*0x5da42a*/
           v14 = v12 - v21 + a2 + 100; /*0x5da445*/
         else
@@ -3468,7 +3468,7 @@ void Network::Network_resetConnectionState()
   this->Network_field_0x0 = (int)Dialog; /*0x630ba6*/
   if ( Dialog ) /*0x630ba8*/
   {
-    LOBYTE(this->q008) = 0; /*0x630bae*/
+    LOBYTE(this->Network_field_0x8) = 0; /*0x630bae*/
     this->Network_field_0x4 = (void *)-1; /*0x630bb2*/
     SetWindowLongA(Dialog, 8, (LONG)this); /*0x630bb9*/
     ((PhoneEditor *)((PhoneEditor *)this))->PopulateList(); /*0x630bc1*/
@@ -3481,7 +3481,7 @@ void Network::Network_resetConnectionState()
       ScreenSaver::Process(v3, v5); /*0x630bdf*/
     }
     Dialog::Destroy((Dialog *)this->Network_field_0x0); /*0x630bed*/
-    if ( LOBYTE(this->q008) == 1 ) /*0x630bf6*/
+    if ( LOBYTE(this->Network_field_0x8) == 1 ) /*0x630bf6*/
       SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x630bfd*/
   }
   return this->Network_field_0x4 == (void *)1; /*0x630c05*/

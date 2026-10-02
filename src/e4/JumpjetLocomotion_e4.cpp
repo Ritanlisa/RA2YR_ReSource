@@ -720,7 +720,7 @@ void* JumpjetLocomotion::UpdateFacing()
   else
   {
     *(unsigned int *)&this->__pad_85[3] = 0; /*0x54d22e*/
-    this->q08C = 0; /*0x54d234*/
+    this->JumpjetLocomotion_field_0x8C = 0; /*0x54d234*/
   }
   Math::SinCos(*(double *)&this->__pad_85[3]); /*0x54d248*/
   v14 = *(double *)&v9 * (double)*(int *)&this->__pad_C[44] + (double)*(int *)&this->__pad_78[8]; /*0x54d253*/

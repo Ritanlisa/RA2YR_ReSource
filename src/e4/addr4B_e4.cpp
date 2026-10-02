@@ -725,15 +725,15 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   sub_4C2FC0((EditClass *)this, aP1, String, a4, aP4, aP5, aP6, aP7, 18, 7); /*0x4b4e3f*/
   LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b4e62*/
   this->DropListClass_field_0x4C = a9; /*0x4b4e66*/
-  ShapeButtonClass::Constructor((ShapeButtonClass *)&this->q050, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
+  ShapeButtonClass::Constructor((ShapeButtonClass *)&this->DropListClass_field_0x50, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
   ((ListClass *)((int)(unsigned int *)this + 176))->Construct(0, aP5, aP6 + *(int16_t *)(a11 + 4), aP7 + *(int16_t *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
   *(unsigned int *)this->__pad_0 = &vt_DropListClass; /*0x4b4eac*/
   Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
   v13 = *((unsigned int *)this + 44); /*0x4b4eba*/
   this->DropListClass_field_0x18 = *(unsigned int *)(Instance + 28) + 1; /*0x4b4ebf*/
   (*(void (**)(char *, DropListClass *))(v13 + 132))((char *)this + 176, this); /*0x4b4ec4*/
-  (*(void (**)(int *, DropListClass *))(this->q050 + 132))( /*0x4b4ecf*/
-    &this->q050,
+  (*(void (**)(int *, DropListClass *))(this->DropListClass_field_0x50 + 132))( /*0x4b4ecf*/
+    &this->DropListClass_field_0x50,
     this);
   return (int)this->__pad_0; /*0x4b4ed7*/
 

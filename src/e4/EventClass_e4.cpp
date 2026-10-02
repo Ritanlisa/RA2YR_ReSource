@@ -441,12 +441,12 @@ void EventClass::initEvent()
 
   v2 = *(void **)&this->m_1[3]; /*0x40b6a6*/
   this->m_10 = 0; /*0x40b6a9*/
-  if ( v2 && BYTE1(this->q00C) ) /*0x40b6b0*/
+  if ( v2 && BYTE1(this->m_C) ) /*0x40b6b0*/
   {
     __3_YAXPAX_Z(v2); /*0x40b6b6*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x40b6be*/
   }
-  BYTE1(this->q00C) = 0; /*0x40b6c1*/
+  BYTE1(this->m_C) = 0; /*0x40b6c1*/
   this->m_8 = 0; /*0x40b6c4*/
 
 }
@@ -463,12 +463,12 @@ char EventClass::processEvent(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40b74c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x40b756*/
+    LOBYTE(this->m_C) = 0; /*0x40b756*/
     if ( a3 ) /*0x40b75c*/
       v4 = a3; /*0x40b772*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40b76e*/
-    LOBYTE(this->q00C) = 1; /*0x40b776*/
+    LOBYTE(this->m_C) = 1; /*0x40b776*/
     if ( v4 ) /*0x40b77a*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x40b785*/
@@ -478,7 +478,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
           m_8 = a2; /*0x40b793*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x40b799*/
           ++i; /*0x40b79e*/
-        if ( BYTE1(this->q00C) ) /*0x40b7ab*/
+        if ( BYTE1(this->m_C) ) /*0x40b7ab*/
         {
           __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x40b7b6*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x40b7be*/
@@ -486,7 +486,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
       }
       *(unsigned int *)&this->m_1[3] = v4; /*0x40b7c7*/
       this->m_8 = a2; /*0x40b7cf*/
-      BYTE1(this->q00C) = a3 == 0; /*0x40b7d2*/
+      BYTE1(this->m_C) = a3 == 0; /*0x40b7d2*/
       return 1; /*0x40b7d8*/
     }
     else
@@ -515,12 +515,12 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40b88c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x40b892*/
+    LOBYTE(this->m_C) = 0; /*0x40b892*/
     if ( a3 ) /*0x40b898*/
       v4 = a3; /*0x40b8ae*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40b8aa*/
-    LOBYTE(this->q00C) = 1; /*0x40b8b2*/
+    LOBYTE(this->m_C) = 1; /*0x40b8b2*/
     if ( !v4 ) /*0x40b8b6*/
       return 0; /*0x40b92a*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x40b8b8*/
@@ -530,7 +530,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
         m_8 = a2; /*0x40b8c6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x40b8cc*/
         ++i; /*0x40b8d1*/
-      if ( BYTE1(this->q00C) ) /*0x40b8de*/
+      if ( BYTE1(this->m_C) ) /*0x40b8de*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x40b8e9*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x40b8f1*/
@@ -538,7 +538,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
     }
     *(unsigned int *)&this->m_1[3] = v4; /*0x40b8fa*/
     this->m_8 = a2; /*0x40b902*/
-    BYTE1(this->q00C) = a3 == 0; /*0x40b905*/
+    BYTE1(this->m_C) = a3 == 0; /*0x40b905*/
   }
   else
   {
@@ -563,12 +563,12 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40b9ac*/
   {
-    LOBYTE(this->q00C) = 0; /*0x40b9b6*/
+    LOBYTE(this->m_C) = 0; /*0x40b9b6*/
     if ( a3 ) /*0x40b9bc*/
       v4 = a3; /*0x40b9d2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40b9ce*/
-    LOBYTE(this->q00C) = 1; /*0x40b9d6*/
+    LOBYTE(this->m_C) = 1; /*0x40b9d6*/
     if ( v4 ) /*0x40b9da*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x40b9e5*/
@@ -578,7 +578,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
           m_8 = a2; /*0x40b9f3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x40b9f9*/
           ++i; /*0x40b9fe*/
-        if ( BYTE1(this->q00C) ) /*0x40ba0b*/
+        if ( BYTE1(this->m_C) ) /*0x40ba0b*/
         {
           __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x40ba16*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x40ba1e*/
@@ -586,7 +586,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
       }
       *(unsigned int *)&this->m_1[3] = v4; /*0x40ba27*/
       this->m_8 = a2; /*0x40ba2f*/
-      BYTE1(this->q00C) = a3 == 0; /*0x40ba32*/
+      BYTE1(this->m_C) = a3 == 0; /*0x40ba32*/
       return 1; /*0x40ba38*/
     }
     else
@@ -615,12 +615,12 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
 
   if ( a2 ) /*0x40baec*/
   {
-    LOBYTE(this->q00C) = 0; /*0x40baf2*/
+    LOBYTE(this->m_C) = 0; /*0x40baf2*/
     if ( a3 ) /*0x40baf8*/
       v4 = a3; /*0x40bb0e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40bb0a*/
-    LOBYTE(this->q00C) = 1; /*0x40bb12*/
+    LOBYTE(this->m_C) = 1; /*0x40bb12*/
     if ( !v4 ) /*0x40bb16*/
       return 0; /*0x40bb8a*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x40bb18*/
@@ -630,7 +630,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
         m_8 = a2; /*0x40bb26*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x40bb2c*/
         ++i; /*0x40bb31*/
-      if ( BYTE1(this->q00C) ) /*0x40bb3e*/
+      if ( BYTE1(this->m_C) ) /*0x40bb3e*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x40bb49*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x40bb51*/
@@ -638,7 +638,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
     }
     *(unsigned int *)&this->m_1[3] = v4; /*0x40bb5a*/
     this->m_8 = a2; /*0x40bb62*/
-    BYTE1(this->q00C) = a3 == 0; /*0x40bb65*/
+    BYTE1(this->m_C) = a3 == 0; /*0x40bb65*/
   }
   else
   {
@@ -661,12 +661,12 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
 
   v3 = *(void **)&Block->m_1[3]; /*0x40bc13*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40bc16*/
-  if ( v3 && BYTE1(Block->q00C) ) /*0x40bc20*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x40bc20*/
   {
     __3_YAXPAX_Z(v3); /*0x40bc28*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x40bc30*/
   }
-  BYTE1(Block->q00C) = 0; /*0x40bc3b*/
+  BYTE1(Block->m_C) = 0; /*0x40bc3b*/
   Block->m_8 = 0; /*0x40bc41*/
   if ( (a2 & 1) != 0 ) /*0x40bc48*/
     __3_YAXPAX_Z(Block); /*0x40bc4b*/
@@ -726,12 +726,12 @@ VectorClass_flat * EventClass::queueEvent(unsigned int * Block, char a2)
 
   v3 = *(void **)&Block->m_1[3]; /*0x40c113*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40c116*/
-  if ( v3 && BYTE1(Block->q00C) ) /*0x40c120*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x40c120*/
   {
     __3_YAXPAX_Z(v3); /*0x40c128*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x40c130*/
   }
-  BYTE1(Block->q00C) = 0; /*0x40c13b*/
+  BYTE1(Block->m_C) = 0; /*0x40c13b*/
   Block->m_8 = 0; /*0x40c141*/
   if ( (a2 & 1) != 0 ) /*0x40c148*/
     __3_YAXPAX_Z(Block); /*0x40c14b*/
@@ -745,7 +745,7 @@ namespace gamemd {
 unsigned int EventClass::dequeueEvent(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x40c260*/
+  if ( LOBYTE(this->m_C) ) /*0x40c260*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x40c275*/
   else
     return 0; /*0x40c267*/
@@ -765,12 +765,12 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40c41c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x40c422*/
+    LOBYTE(this->m_C) = 0; /*0x40c422*/
     if ( a3 ) /*0x40c428*/
       v4 = a3; /*0x40c43e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40c43a*/
-    LOBYTE(this->q00C) = 1; /*0x40c442*/
+    LOBYTE(this->m_C) = 1; /*0x40c442*/
     if ( !v4 ) /*0x40c446*/
       return 0; /*0x40c4ba*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x40c448*/
@@ -780,7 +780,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
         m_8 = a2; /*0x40c456*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x40c45c*/
         ++i; /*0x40c461*/
-      if ( BYTE1(this->q00C) ) /*0x40c46e*/
+      if ( BYTE1(this->m_C) ) /*0x40c46e*/
       {
         __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x40c479*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x40c481*/
@@ -788,7 +788,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
     }
     *(unsigned int *)&this->m_1[3] = v4; /*0x40c48a*/
     this->m_8 = a2; /*0x40c492*/
-    BYTE1(this->q00C) = a3 == 0; /*0x40c495*/
+    BYTE1(this->m_C) = a3 == 0; /*0x40c495*/
   }
   else
   {

@@ -371,7 +371,7 @@ int ScriptAction::DecrementRefCount(int a2) {
     result = (int)this->ScriptAction_field_0xA8 - 1; /*0x6351ee*/
     this->ScriptAction_field_0xA8 = (void *)result; /*0x6351ef*/
     if ( !result ) /*0x6351f5*/
-      this->q0B0 = (void *)-1; /*0x6351f7*/
+      this->ScriptAction_field_0xB0 = (void *)-1; /*0x6351f7*/
     return result; /*0x635201*/
 }
 } // namespace gamemd

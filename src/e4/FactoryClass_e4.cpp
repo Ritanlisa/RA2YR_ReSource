@@ -815,12 +815,12 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4ca93c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x4ca946*/
+    LOBYTE(this->m_C) = 0; /*0x4ca946*/
     if ( a3 ) /*0x4ca94c*/
       v4 = a3; /*0x4ca962*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4ca95e*/
-    LOBYTE(this->q00C) = 1; /*0x4ca966*/
+    LOBYTE(this->m_C) = 1; /*0x4ca966*/
     if ( v4 ) /*0x4ca96a*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x4ca975*/
@@ -830,7 +830,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x4ca983*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4ca989*/
           ++i; /*0x4ca98e*/
-        if ( BYTE1(this->q00C) ) /*0x4ca99b*/
+        if ( BYTE1(this->m_C) ) /*0x4ca99b*/
         {
           __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4ca9a6*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x4ca9ae*/
@@ -838,7 +838,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
       }
       *(unsigned int *)&this->m_1[3] = v4; /*0x4ca9b7*/
       this->m_8 = a2; /*0x4ca9bf*/
-      BYTE1(this->q00C) = a3 == 0; /*0x4ca9c2*/
+      BYTE1(this->m_C) = a3 == 0; /*0x4ca9c2*/
       return 1; /*0x4ca9c8*/
     }
     else
@@ -860,12 +860,12 @@ namespace gamemd {
 void FactoryClass_33::ddtor()
 {
 
-  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->q00C) ) /*0x4ca9ed*/
+  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ca9ed*/
   {
     __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4ca9f3*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x4ca9fb*/
   }
-  BYTE1(this->q00C) = 0; /*0x4ca9fe*/
+  BYTE1(this->m_C) = 0; /*0x4ca9fe*/
   this->m_8 = 0; /*0x4caa01*/
 
 }
@@ -880,7 +880,7 @@ int FactoryClass_33::Read(unsigned int * a2, void *a2_2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->q00C) ) /*0x4caa10*/
+  if ( !LOBYTE(this->m_C) ) /*0x4caa10*/
     return 0; /*0x4caa18*/
   m_8 = this->m_8; /*0x4caa1e*/
   result = 0; /*0x4caa21*/
@@ -901,7 +901,7 @@ namespace gamemd {
 unsigned int FactoryClass_33::Write(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x4caa50*/
+  if ( LOBYTE(this->m_C) ) /*0x4caa50*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4caa65*/
   else
     return 0; /*0x4caa57*/
@@ -918,12 +918,12 @@ VectorClass_flat * FactoryClass_33::QueryInterface(unsigned int * Block, char a2
 
   v3 = *(void **)&Block->m_1[3]; /*0x4cab53*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4cab56*/
-  if ( v3 && BYTE1(Block->q00C) ) /*0x4cab60*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x4cab60*/
   {
     __3_YAXPAX_Z(v3); /*0x4cab68*/
     *(unsigned int *)&Block->m_1[3] = 0; /*0x4cab70*/
   }
-  BYTE1(Block->q00C) = 0; /*0x4cab7b*/
+  BYTE1(Block->m_C) = 0; /*0x4cab7b*/
   Block->m_8 = 0; /*0x4cab81*/
   if ( (a2 & 1) != 0 ) /*0x4cab88*/
     __3_YAXPAX_Z(Block); /*0x4cab8b*/

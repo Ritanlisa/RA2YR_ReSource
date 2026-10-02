@@ -484,7 +484,7 @@ Game * * Scenario::ComputeDisplayPosition()
     v6 += 40; /*0x552b74*/
     v7 = (int)&v1->__pad_0[-v2] / 2; /*0x552b76*/
     this->Scenario_field_0x34 = (unsigned char)((void *)v2); /*0x552b78*/
-    this->q00C = (void *)v7; /*0x552b7b*/
+    this->Scenario_field_0xC = (void *)v7; /*0x552b7b*/
     this->Scenario_field_0x1C = (void *)v7; /*0x552b7e*/
     this->Scenario_field_0x20 = (void *)v6; /*0x552b81*/
     this->Scenario_field_0x2C = (void *)v7; /*0x552b84*/

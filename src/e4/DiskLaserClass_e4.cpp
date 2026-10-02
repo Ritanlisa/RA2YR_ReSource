@@ -43,7 +43,7 @@ DiskLaserClass::DiskLaserClass()
   this->DiskLaserClass_field_0x08 = (int)&vt_DiskLaserClass; /*0x4a7a47*/
   this->DiskLaserClass_field_0x0C = (int)&vt_DiskLaserClass; /*0x4a7a4e*/
   this->DiskLaserClass_field_0x24 = 0; /*0x4a7a55*/
-  this->q028 = 0; /*0x4a7a58*/
+  this->DiskLaserClass_field_0x28 = 0; /*0x4a7a58*/
   *((unsigned int *)this + 11) = 0; /*0x4a7a5b*/
   *((unsigned int *)this + 12) = 0; /*0x4a7a5e*/
   *((unsigned int *)this + 13) = 0; /*0x4a7a61*/
@@ -113,7 +113,7 @@ int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
       aP0->DiskLaserClass_field_0x0C = (int)&vt_DiskLaserClass; /*0x4a7bcb*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->DiskLaserClass_field_0x24); /*0x4a7bdb*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q028); /*0x4a7be9*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->DiskLaserClass_field_0x28); /*0x4a7be9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 11); /*0x4a7bf7*/
   }
   return Prefix_0; /*0x4a7bfe*/

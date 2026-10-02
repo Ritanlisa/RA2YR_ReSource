@@ -788,7 +788,7 @@ namespace gamemd {
 int Cell::CoordToIndex(int16_t *aP1)
 {
 
-  return *aP1 + aP1[1] * ((int)this->q0F8 + (unsigned int)this->Cell_field_0xF4 + 1); /*0x56d450*/
+  return *aP1 + aP1[1] * ((int)this->Cell_field_0xF8 + (unsigned int)this->Cell_field_0xF4 + 1); /*0x56d450*/
 
 }
 }
@@ -815,7 +815,7 @@ int Cell::SetRadar(int16_t *aP1)
   unsigned int v17[8]; // [esp+14h] [ebp-20h] BYREF
   int v18; // [esp+38h] [ebp+4h]
 
-  v2 = *aP1 + aP1[1] * ((int)this->q0F8 + (unsigned int)this->Cell_field_0xF4 + 1); /*0x56d484*/
+  v2 = *aP1 + aP1[1] * ((int)this->Cell_field_0xF8 + (unsigned int)this->Cell_field_0xF4 + 1); /*0x56d484*/
   if ( v2 >= 0 ) /*0x56d486*/
   {
     Cell_field_0x6C = this->Cell_field_0x6C; /*0x56d48c*/
