@@ -12,7 +12,7 @@ struct Player {
 // --- flat members (END) ---
     int IsObserver();
     void BuildListString(wchar_t * Destination);
-    void FindByName(wchar_t * String2);
+wchar_t * FindByName(wchar_t * String2);
     void RandomAssign();  // 0x69b8c0
 };
 

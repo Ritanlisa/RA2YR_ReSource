@@ -129,7 +129,7 @@ struct AbstractClass {
     void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
     static void AnnounceExpiredPointer(AbstractClass *a1, int a2);
     int getMapCoords();  // 0x426A80
-    void DTOR();  // 0x4101F0
+int DTOR(); // 0x4101F0
     MissionClass * getWeaponRange(unsigned int * Block, char a2);  // 0x5B3A60
     DynamicVector *  resetScriptState(unsigned int * Block, char a2);  // 0x4CABA0
     void getMissionState();  // 0x4D2930

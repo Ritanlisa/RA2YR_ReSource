@@ -56,7 +56,7 @@ struct BinkMovie {
     AbstractClass * * InitFromFile(LPCSTR * FullPath, void *a2_1);  // 0x432750
     int Pause(unsigned char a2);  // 0x432C30
     // dup-decl removed: BOOL IsAtEnd();  // 0x432C50
-    void Play();  // 0x432C70
+int Play(); // 0x432C70
     int RenderLoop(int aP1, int a3, int a4);  // 0x432E40
     int RenderFrameToSurface();  // 0x433040
     unsigned int * RenderSingleFrame(int aP1, int a3, int a4, char a5);  // 0x4331F0
@@ -72,6 +72,6 @@ struct BinkMovie {
     AbstractClass * * ProcessKeyframe(ObjectClass * aP1);  // 0x6C9D40
     unsigned int * VtableDispatch(int a2);  // 0x6C9EC0
     int * CreateSurfaceTracker(char * FullPath);  // 0x6C99D0
-    void IsAtEnd();  // def-aligned
+int IsAtEnd(); // def-aligned
 };
 } // namespace gamemd
