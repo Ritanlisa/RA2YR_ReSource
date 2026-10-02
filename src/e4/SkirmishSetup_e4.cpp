@@ -44,6 +44,8 @@
 #include "e4/classes/Surface_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "src/e4/classes/MultiplayerConfig_e4.hpp"
+#include "src/e4/classes/Screen_e4.hpp"
 
 // 0x5D6130
 namespace gamemd {

@@ -47,6 +47,10 @@
 #include "e4/classes/GameConfig_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/Surface_e4.hpp"
+#include "src/e4/classes/MapSeedClass_e4.hpp"
+#include "src/e4/classes/Process_e4.hpp"
+#include "src/e4/classes/Render_e4.hpp"
+#include "src/e4/classes/ScenarioClass_e4.hpp"
 
 // 0x5904B0
 namespace gamemd {

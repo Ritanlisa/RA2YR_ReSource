@@ -30,6 +30,7 @@
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/classes/MapSeed_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "src/e4/classes/FileTreeNode_e4.hpp"
 
 // 0x77E110
 namespace gamemd {

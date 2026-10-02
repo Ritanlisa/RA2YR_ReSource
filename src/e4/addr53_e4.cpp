@@ -54,6 +54,7 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/FileSystem_e4.hpp"
+#include "src/e4/classes/FileTreeNode_e4.hpp"
 
 // 0x530000
 namespace gamemd {

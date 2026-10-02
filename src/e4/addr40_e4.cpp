@@ -81,6 +81,7 @@
 #include "e4/classes/RefCount_e4.hpp"
 #include "e4/classes/Voice_e4.hpp"
 #include "e4/classes/Queue_e4.hpp"
+#include "src/e4/classes/AudioMixer_e4.hpp"
 
 // 0x4011C0
 namespace gamemd {

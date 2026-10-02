@@ -16,6 +16,8 @@
 #include "core/utility_ext.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/IPXManagerClass_e4.hpp"
+#include "src/misc/misc_ext.hpp"
+#include "src/network/network_ext.hpp"
 struct GadgetClass;  // fix_tu_missing_types
 struct ShpButtonClass;  // fix_tu_missing_types
 

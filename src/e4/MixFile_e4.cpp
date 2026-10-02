@@ -28,6 +28,7 @@
 #include "e4/classes/SidebarClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
+#include "src/e4/classes/FontClass_e4.hpp"
 
 // 0x530460
 namespace gamemd {

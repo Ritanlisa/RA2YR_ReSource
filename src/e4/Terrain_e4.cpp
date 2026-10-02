@@ -29,6 +29,7 @@
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "src/e4/classes/CellClass_e4.hpp"
 
 // 0x48B720
 namespace gamemd {

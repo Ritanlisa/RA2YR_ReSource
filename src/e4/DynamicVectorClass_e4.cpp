@@ -28,6 +28,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/EMPulseClass_e4.hpp"
+#include "src/e4/classes/VtableStub_e4.hpp"
 
 // 0x525110
 namespace gamemd {

@@ -84,6 +84,9 @@
 #include "e4/classes/Render_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/IPXManagerClass_e4.hpp"
+#include "src/e4/classes/FileStraw_e4.hpp"
+#include "src/e4/classes/GameOption_e4.hpp"
+#include "src/e4/classes/ListBox_e4.hpp"
 
 // 0x690400
 namespace gamemd {

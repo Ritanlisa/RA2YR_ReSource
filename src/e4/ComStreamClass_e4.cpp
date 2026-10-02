@@ -20,6 +20,7 @@
 #include "e4/classes/E4Recv_77A9F0_e4.hpp"
 #include "e4/classes/PushCommandClass_e4.hpp"
 #include "e4/classes/Flag_e4.hpp"
+#include "src/e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x7A3D90
 namespace gamemd {

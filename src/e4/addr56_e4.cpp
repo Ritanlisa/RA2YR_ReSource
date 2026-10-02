@@ -41,6 +41,7 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "src/e4/classes/Pipe_e4.hpp"
 
 // 0x560BF0
 namespace gamemd {

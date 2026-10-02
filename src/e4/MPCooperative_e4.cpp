@@ -38,6 +38,7 @@
 #include "e4/classes/MissionClass_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 #include "e4/classes/SideClass_e4.hpp"
+#include "src/e4/classes/Campaign_e4.hpp"
 
 // 0x49B660
 namespace gamemd {

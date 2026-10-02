@@ -5,6 +5,11 @@
 #include <cstring>
 #include <cmath>
 #include "e4/e4_globals_decls.hpp"
+#include "src/entity/anim.hpp"
+#include "src/entity/bullet.hpp"
+#include "src/misc/locomotion.hpp"
+#include "src/misc/misc_ext.hpp"
+#include "src/structure/building.hpp"
 
 namespace gamemd {
 

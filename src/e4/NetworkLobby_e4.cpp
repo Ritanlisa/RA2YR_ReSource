@@ -47,6 +47,10 @@
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
+#include "src/e4/classes/Render_e4.hpp"
+#include "src/e4/classes/Settings_e4.hpp"
+#include "src/e4/classes/Skirmish_e4.hpp"
+#include "src/e4/classes/VtableStub_e4.hpp"
 
 // 0x5D4210
 namespace gamemd {

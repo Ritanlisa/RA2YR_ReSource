@@ -21,6 +21,9 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/TerrainTypeClass_e4.hpp"
+#include "src/e4/classes/INIEntry_e4.hpp"
+#include "src/e4/classes/TechnoTypeClass_e4.hpp"
+#include "src/e4/classes/WeaponTypeClass_e4.hpp"
 
 // 0x48ACF0
 namespace gamemd {

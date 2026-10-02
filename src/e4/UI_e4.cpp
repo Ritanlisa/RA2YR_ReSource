@@ -53,6 +53,13 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
 #include "e4/classes/Text_e4.hpp"
+#include "src/e4/classes/Char_e4.hpp"
+#include "src/e4/classes/Color_e4.hpp"
+#include "src/e4/classes/Font_e4.hpp"
+#include "src/e4/classes/MouseClass_e4.hpp"
+#include "src/e4/classes/Property_e4.hpp"
+#include "src/e4/classes/SafeDelete_e4.hpp"
+#include "src/e4/classes/TextGroup_e4.hpp"
 
 // 0x52B6D0
 namespace gamemd {

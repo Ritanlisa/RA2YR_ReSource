@@ -15,6 +15,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "src/e4/classes/Color_e4.hpp"
 
 // 0x4A2350
 namespace gamemd {

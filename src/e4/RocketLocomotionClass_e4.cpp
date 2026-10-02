@@ -12,6 +12,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/LocomotionClass_e4.hpp"
+#include "src/e4/classes/SwizzleManager_e4.hpp"
 
 // 0x661EC0
 namespace gamemd {  // G42.18c ns repair

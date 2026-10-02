@@ -13,6 +13,9 @@
 #include "house/base.hpp"
 #include "house/house.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "src/core/checksummer.hpp"
+#include "src/render/render_ext.hpp"
+#include "src/structure/building.hpp"
 
 // 0x42E6F0
 namespace gamemd { 

@@ -68,6 +68,8 @@
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/DSurface_e4.hpp"
+#include "src/e4/classes/ComPtr_e4.hpp"
+#include "src/e4/classes/Rect_e4.hpp"
 
 // 0x539760
 namespace gamemd {

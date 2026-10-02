@@ -63,6 +63,12 @@
 #include "e4/classes/InfantryClass_e4.hpp"
 #include "e4/classes/StringVector_e4.hpp"
 #include "e4/classes/UnitClass_e4.hpp"
+#include "src/e4/classes/BuildingClass_e4.hpp"
+#include "src/e4/classes/BuildingTypeClass_e4.hpp"
+#include "src/e4/classes/MapClass_e4.hpp"
+#include "src/e4/classes/PriorityQueue_e4.hpp"
+#include "src/e4/classes/SuperWeaponTypeClass_e4.hpp"
+#include "src/e4/classes/Type_e4.hpp"
 
 // 0x5A1350
 namespace gamemd {

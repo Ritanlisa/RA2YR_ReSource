@@ -30,6 +30,7 @@
 #include "e4/classes/CoordStruct_e4.hpp"
 #include "e4/classes/BulletTypeClass_e4.hpp"
 #include "e4/classes/WaveClass_e4.hpp"
+#include "src/e4/classes/FileTreeNode_e4.hpp"
 
 // 0x46C790
 namespace gamemd {

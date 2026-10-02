@@ -37,6 +37,10 @@
 #include "e4/classes/FogOfWar_e4.hpp"
 #include "e4/classes/Render_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "src/e4/classes/MapClass_e4.hpp"
+#include "src/e4/classes/Random_e4.hpp"
+#include "src/e4/classes/Return_e4.hpp"
+#include "src/e4/classes/SuperClass_e4.hpp"
 
 // 0x4FCDC0
 namespace gamemd {

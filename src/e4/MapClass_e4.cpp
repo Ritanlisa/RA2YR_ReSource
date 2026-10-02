@@ -48,6 +48,7 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "src/e4/classes/CellClass_e4.hpp"
 
 // 0x4112D0
 namespace gamemd {

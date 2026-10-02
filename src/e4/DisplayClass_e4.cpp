@@ -29,6 +29,8 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/Straw_e4.hpp"
+#include "src/e4/classes/COMObject_e4.hpp"
+#include "src/e4/classes/MouseClass_e4.hpp"
 
 // 0x487630
 namespace gamemd {

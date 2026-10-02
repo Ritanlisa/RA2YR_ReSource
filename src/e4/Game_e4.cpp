@@ -34,6 +34,7 @@
 #include "e4/classes/BuildingLightQueue_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "src/e4/classes/GameOptions_e4.hpp"
 
 // 0x430980
 namespace gamemd {

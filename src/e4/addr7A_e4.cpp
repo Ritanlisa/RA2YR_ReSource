@@ -41,6 +41,8 @@
 #include "e4/classes/Flag_e4.hpp"
 #include "e4/classes/Performance_e4.hpp"
 #include "e4/classes/StringVector_e4.hpp"
+#include "src/e4/classes/DynamicArray_e4.hpp"
+#include "src/e4/classes/GameLoop_e4.hpp"
 
 // 0x7A0430
 namespace gamemd {

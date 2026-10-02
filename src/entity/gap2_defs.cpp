@@ -26,6 +26,7 @@
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Vector3_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "src/misc/misc_ext.hpp"
 
 // 0x415EE0
 namespace gamemd { 

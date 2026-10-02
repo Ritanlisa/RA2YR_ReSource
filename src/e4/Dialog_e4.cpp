@@ -31,6 +31,8 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/DialogControl_e4.hpp"
 #include "e4/classes/TimerPool_e4.hpp"
+#include "src/e4/classes/DialogClass_e4.hpp"
+#include "src/e4/classes/VtableStub_e4.hpp"
 
 // 0x49F740
 namespace gamemd {

@@ -62,6 +62,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/WinsockInterfaceClass_e4.hpp"
 #include "e4/classes/XSurface_e4.hpp"
+#include "src/e4/classes/Coord2D_e4.hpp"
 
 // 0x7B0310
 namespace gamemd {

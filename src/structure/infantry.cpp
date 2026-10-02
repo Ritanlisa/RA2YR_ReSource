@@ -7,6 +7,9 @@
 #include <cstring>
 #include <cmath>
 #include "e4/e4_globals_decls.hpp"
+#include "src/core/stream_ext.hpp"
+#include "src/misc/movement_ext.hpp"
+#include "src/system/layer.hpp"
 
 namespace gamemd {
 

@@ -22,6 +22,8 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "src/entity/rad_site.hpp"
+#include "src/system/layer.hpp"
 
 namespace gamemd
 {

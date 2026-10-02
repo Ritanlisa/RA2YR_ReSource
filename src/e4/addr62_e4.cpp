@@ -59,6 +59,8 @@
 #include "e4/classes/Font_e4.hpp"
 #include "e4/classes/DialogClass_e4.hpp"
 #include "e4/classes/Control_e4.hpp"
+#include "src/e4/classes/GadgetClass_e4.hpp"
+#include "src/e4/classes/SessionClass_e4.hpp"
 
 // 0x620050
 namespace gamemd {

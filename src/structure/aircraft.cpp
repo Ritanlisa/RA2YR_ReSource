@@ -6,6 +6,7 @@
 #include <cmath>
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "src/misc/misc_ext.hpp"
 
 namespace gamemd {
 

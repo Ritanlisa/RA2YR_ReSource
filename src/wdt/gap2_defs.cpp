@@ -15,6 +15,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/MovieClass_e4.hpp"
+#include "src/ui/ui_ext.hpp"
 
 // 0x4104C0
 namespace gamemd { namespace wdt { 

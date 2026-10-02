@@ -23,6 +23,10 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/InfantryTypeClass_e4.hpp"
+#include "src/e4/classes/AbstractTypeClass_e4.hpp"
+#include "src/e4/classes/Checksummer_e4.hpp"
+#include "src/e4/classes/FootClass_e4.hpp"
+#include "src/e4/classes/ShipLocomotionClass_e4.hpp"
 
 // 0x465450
 namespace gamemd {

@@ -45,6 +45,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Lobby_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
+#include "src/e4/classes/CCINIClass_e4.hpp"
 
 // 0x5E2820
 namespace gamemd {

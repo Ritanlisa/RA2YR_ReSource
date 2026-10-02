@@ -9,6 +9,7 @@
 #include "e4/classes/LightningStorm_e4.hpp"
 #include "e4/classes/LoadScreen_e4.hpp"
 #include "e4/classes/PsyDom_e4.hpp"
+#include "src/misc/audio_ext.hpp"
 
 // forward declarations for data-global pointer types
 namespace gamemd { class HouseTypeClass; }

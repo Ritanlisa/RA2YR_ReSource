@@ -55,6 +55,7 @@
 #include "e4/classes/VoxelAnimTypeClass_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
+#include "src/e4/classes/Buffer_e4.hpp"
 
 // 0x743270
 namespace gamemd {
