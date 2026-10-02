@@ -16,7 +16,7 @@ struct Map_WorldDominationTour_28 {
 // --- flat members (END) ---
     char AddRef(int a2);  // 0x76A130
     char Release(int a2, unsigned int * a3);  // 0x76A170
-    void ddtor(void *a1_1);  // 0x76A220
+    wchar_t * ddtor(void *a1_1);  // 0x76A220
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x76A6D0
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x769D20
     int Read(unsigned int * a2, void *a2_2);  // 0x76A250

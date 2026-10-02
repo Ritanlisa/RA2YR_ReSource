@@ -189,7 +189,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
 }
 // 0x452000
 namespace gamemd {
-void sub_452000(unsigned int * a1)
+int sub_452000(unsigned int * a1)
 {
   int v2; // eax
   int v3; // edi
@@ -270,7 +270,7 @@ void sub_452000(unsigned int * a1)
 }
 // 0x452D40
 namespace gamemd {
-void sub_452D40()
+int sub_452D40()
 {
   int result; // eax
   int i; // edi

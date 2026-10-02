@@ -66,7 +66,7 @@ struct LocomotionClass {
     int Update(void *a1, void *a2, void *a3, void *a4);
     int Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     void * UpdateAll();
-    void Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    _DWORD * Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6);
 };
 
 } // namespace gamemd

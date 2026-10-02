@@ -19,7 +19,7 @@ struct VectorClass_ptr_VoxelAnimTypeClass {
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_VoxelAnimTypeClass___(unsigned int * Block, char a2);  // 0x4F0B60
     DynamicVector * Constructor_VectorClass_IsometricTileTypeClass___(unsigned int * Block, char a2);  // 0x4F0C00
-    void Destroy(void *a1_1);  // 0x4E8FC0
+    int Destroy(void *a1_1);  // 0x4E8FC0
     unsigned int GetItemIndex(int a2);  // 0x4E8FF0
     int Get(int a2, void *a2_2);  // 0x4E9010
     void Destroy_0();  // 0x4E9020

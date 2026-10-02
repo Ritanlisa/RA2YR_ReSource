@@ -40,7 +40,7 @@ struct MoveFeedback {
     int FindMoveItem(unsigned int * a2);
     int ProcessCommand();
     unsigned int GetIndex2(int a2);
-    void Destroy(void *a1);
+    int Destroy(void *a1);
 };
 
 } // namespace gamemd

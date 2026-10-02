@@ -70,7 +70,7 @@
 
 // 0x561180
 namespace gamemd {
-void Team_Start(void * a1, void * a2, void * a3, void * a4)
+char Team_Start(void * a1, void * a2, void * a3, void * a4)
 {
   unsigned int v4; // ecx
   unsigned int v6; // esi
@@ -190,7 +190,7 @@ int Team::ReleaseAll(ObjectClass * aP1)
 }
 // 0x6219D0
 namespace gamemd {
-void sub_6219D0(int * a1, int a2, int a3, int a4)
+int sub_6219D0(int * a1, int a2, int a3, int a4)
 {
   int v5; // edi
   int result; // eax
@@ -625,7 +625,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
 }
 // 0x7AFAD0
 namespace gamemd {
-void Team_Start_7AFAD0(void * a1, void * a2)
+int Team_Start_7AFAD0(void * a1, void * a2)
 {
   char **v2; // eax
   char **v3; // esi

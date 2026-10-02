@@ -11,7 +11,7 @@
 
 // 0x4B5030
 namespace gamemd {
-void DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
+wchar_t DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
 {
   int v3; // ecx
   wchar_t **v4; // edi

@@ -1061,7 +1061,7 @@ LABEL_92:
 } // namespace gamemd
 // 0x6ADF00
 namespace gamemd {
-void Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
+int Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
 {
   int result; // eax
   char *v5; // esi

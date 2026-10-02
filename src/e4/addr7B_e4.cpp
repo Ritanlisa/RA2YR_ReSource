@@ -415,7 +415,7 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
 }
 // 0x7B0B00
 namespace gamemd {
-void Screenshot_EncodeRLE(int a1, char * a2, int a3)
+int Screenshot_EncodeRLE(int a1, char * a2, int a3)
 {
   int result; // eax
   char v5; // dl

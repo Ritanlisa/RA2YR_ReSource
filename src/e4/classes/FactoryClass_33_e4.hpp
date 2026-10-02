@@ -17,7 +17,7 @@ struct FactoryClass_33 {
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x4CA8E0
     char AddRef(int a2);  // 0x4CA8F0
     char Release(int a2, unsigned int * a3);  // 0x4CA930
-    void ddtor();  // 0x4CA9E0
+    wchar_t * ddtor();  // 0x4CA9E0
     int Read(unsigned int * a2, void *a2_2);  // 0x4CAA10
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4CAB50
     unsigned int Write(int a2);  // 0x4CAA50

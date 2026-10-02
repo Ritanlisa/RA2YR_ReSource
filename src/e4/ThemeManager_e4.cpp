@@ -17,7 +17,7 @@
 
 // 0x4080F0
 namespace gamemd {
-void ThemeManager::ProcessCallback(void *a1)
+char ThemeManager::ProcessCallback(void *a1)
 {
 
   int v2; // ebp

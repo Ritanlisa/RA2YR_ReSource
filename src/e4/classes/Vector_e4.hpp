@@ -28,7 +28,7 @@ struct Vector {
     // dup-member: unsigned int HasCapacity;
     unsigned int Math_Vector2D_Magnitude;
 // --- flat members (END) ---
-    void Cleanup(void *a1_1);  // 0x512D30
+    int Cleanup(void *a1_1);  // 0x512D30
     void Destructor(void *a1_1);  // 0x513100
     int MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890
     int Cleanup2();  // 0x67ABE0

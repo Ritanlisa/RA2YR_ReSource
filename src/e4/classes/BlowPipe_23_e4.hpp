@@ -30,7 +30,7 @@ struct BlowPipe_23 {
     int FindItemIndex(unsigned int * a2);  // 0x63E430
     char AddRef(int a2);  // 0x63E650
     char Release(int a2, unsigned int * a3);  // 0x63E690
-    void ddtor();  // 0x63E740
+    wchar_t * ddtor();  // 0x63E740
     int Read(unsigned int * a2, void *a2_2);  // 0x63E770
     char SetCapacity_0(int a2, unsigned int * a3);  // 0x63E7D0
     int FindItemIndex_0(unsigned int * a2);  // 0x63E8D0

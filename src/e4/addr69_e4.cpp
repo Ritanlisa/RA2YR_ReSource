@@ -609,7 +609,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
 }
 // 0x694760
 namespace gamemd {
-void Network_SendFile(char * Source, int a2, char a3, char a4)
+int Network_SendFile(char * Source, int a2, char a3, char a4)
 {
   int result; // eax
   int Size; // ebx

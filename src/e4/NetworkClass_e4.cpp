@@ -26,7 +26,7 @@
 
 // 0x639FD0
 namespace gamemd {
-void NetworkClass::ExecutePlanningModeCmd()
+int NetworkClass::ExecutePlanningModeCmd()
 {
     unsigned int v3 = 0;  /* G37 hoist */
 

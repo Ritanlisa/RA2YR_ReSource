@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct FileFind {
     attributes: thunk
-void Close(void *a1 = 0, void *a2 = 0);
+wchar_t * Close(void *a1 = 0, void *a2 = 0);
 };
 
 } // namespace gamemd

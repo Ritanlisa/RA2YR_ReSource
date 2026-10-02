@@ -451,7 +451,7 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
 }
 // 0x4A2B60
 namespace gamemd {
-void CStreamClass___vt03(int a1, char * a2, signed int Size, signed int * a4)
+int CStreamClass___vt03(int a1, char * a2, signed int Size, signed int * a4)
 {
   int v4; // ebp
   int result; // eax
@@ -669,7 +669,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
 }
 // 0x4A3C30
 namespace gamemd {
-void Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
+int Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
 {
   int result; // eax
   unsigned char *v6; // eax
@@ -975,7 +975,7 @@ unsigned int * GetTextBoundingRect(unsigned int * a1, CampaignScore * a2, int a3
 }
 // 0x4A5A50
 namespace gamemd {
-void SHP_DrawBuildingTiles(int * a1, int a2, char a3)
+int SHP_DrawBuildingTiles(int * a1, int a2, char a3)
 {
   unsigned int *v5; // edi
   int v6; // ecx

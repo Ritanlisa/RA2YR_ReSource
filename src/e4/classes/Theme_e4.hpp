@@ -19,7 +19,7 @@ struct Theme {
     unsigned int Audio;
     unsigned int ThemeClass;
 // --- flat members (END) ---
-    void IsPlaying();
+    bool IsPlaying();
     int QueueSong(IUnknown * aP1, void *a2);
     int Stop(char aP1);
 };

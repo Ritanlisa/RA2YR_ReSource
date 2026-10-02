@@ -126,9 +126,9 @@ struct AudioStream {
     unsigned int *__pad_5C;
     unsigned int Audio;
 // --- flat members (END) ---
-    void ReleaseSubsystem();  // 0x401910
-    void Stop();  // 0x4026B0
-    void ReleaseChannel(void *a1_1);  // 0x4026F0
+    int ReleaseSubsystem();  // 0x401910
+    int Stop();  // 0x4026B0
+    int ReleaseChannel(void *a1_1);  // 0x4026F0
     void DestroyAll(void * Block);  // 0x4033C0
     int Reset();  // 0x403820
     int ResetChannel(int a2, int a3);  // 0x4038A0

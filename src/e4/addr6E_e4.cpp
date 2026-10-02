@@ -100,7 +100,7 @@ int E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 }
 // 0x6E2050
 namespace gamemd {
-void globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
+char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
 {
   void * v4;
   char v5; // bl
@@ -212,7 +212,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
 }
 // 0x6E30C0
 namespace gamemd {
-void CreateHouseClass(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
+char CreateHouseClass(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   HouseClass *v7; // esi
   int Field11; // eax

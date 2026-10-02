@@ -667,7 +667,7 @@ AbstractClass * * E4Recv_631640::sub_631640()
 }
 // 0x631760
 namespace gamemd {
-void NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
+int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
   LONG WindowLongA; // ecx
@@ -1015,7 +1015,7 @@ LABEL_9:
 }
 // 0x637270
 namespace gamemd {
-void ExecutePlanningQueue()
+char ExecutePlanningQueue()
 {
   SuperWeaponClass *v1; // edi
   int v2; // eax
@@ -1309,7 +1309,7 @@ AbstractClass * * sub_637920()
 }
 // 0x638120
 namespace gamemd {
-void ExecuteActionPlanManager(IUnknown * a1, char * a2)
+char ExecuteActionPlanManager(IUnknown * a1, char * a2)
 {
   char *v2; // edi
   int *ScenarioClassActionCoords; // eax

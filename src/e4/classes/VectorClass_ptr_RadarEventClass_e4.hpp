@@ -16,7 +16,7 @@ struct VectorClass_ptr_RadarEventClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy(void *a1_1);  // 0x660C80
+    int Destroy(void *a1_1);  // 0x660C80
     unsigned int GetItemIndex(int a2);  // 0x660CB0
     int Get(int a2, void *a2_2);  // 0x660CD0
     char Add(int a2, void *a2_2, void *a3_1);  // 0x660CE0

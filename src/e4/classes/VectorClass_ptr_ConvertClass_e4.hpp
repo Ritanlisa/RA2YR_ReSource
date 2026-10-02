@@ -24,7 +24,7 @@ struct VectorClass_ptr_ConvertClass {
 // --- flat members (END) ---
     void * Constructor_ConvertClass(void ** Block, char a2);  // 0x491210
     void MarkDirty(void *a1_1);  // 0x4E1960
-    void Destroy(void *a1_1);  // 0x491390
+    int Destroy(void *a1_1);  // 0x491390
     unsigned int GetItemIndex(int a2);  // 0x4913C0
     int Get(int a2, void *a2_2);  // 0x4913E0
     char Add(int a2, void *a2_2, void *a3_1);  // 0x49AE80

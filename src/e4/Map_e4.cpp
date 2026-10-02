@@ -120,7 +120,7 @@ AbstractClass * * sub_539760()
 }
 // 0x5558E0
 namespace gamemd {
-void sub_5558E0(int * a1, int * a2, int * a3, int * a4, int * a5)
+int sub_5558E0(int * a1, int * a2, int * a3, int * a4, int * a5)
 {
   int v8; // eax
   int v9; // eax
@@ -219,7 +219,7 @@ void sub_5558E0(int * a1, int * a2, int * a3, int * a4, int * a5)
 }
 // 0x5A1E50
 namespace gamemd {
-void sub_5A1E50(short * a1, int a2, int a3, int a4)
+char sub_5A1E50(short * a1, int a2, int a3, int a4)
 {
   int v4; // edx
   int v5; // eax
@@ -321,7 +321,7 @@ int E4Recv_5ADD10::Map_Delete()
 }
 // 0x682150
 namespace gamemd {
-void sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
+int sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
 {
   unsigned int * v3;
   unsigned int *v4; // eax
@@ -489,7 +489,7 @@ AbstractClass * * sub_68C050()
 }
 // 0x55CF10
 namespace gamemd {
-void sub_55CF10()
+char sub_55CF10()
 {
   char result; // al
   int v2; // esi
@@ -543,7 +543,7 @@ void sub_55CF10()
 }
 // 0x5C98A0
 namespace gamemd {
-void sub_5C98A0()
+int sub_5C98A0()
 {
   int v0; // ecx
   int result; // eax
@@ -774,7 +774,7 @@ char sub_6ACCA0(int a1)
 }
 // 0x584030
 namespace gamemd {
-void Map_Helper_584030(IUnknown * aP0)
+char Map_Helper_584030(IUnknown * aP0)
 {
   int v2; // eax
   int v3; // ebp
@@ -824,7 +824,7 @@ void Map_Helper_584030(IUnknown * aP0)
 }
 // 0x59BAB0
 namespace gamemd {
-void Map_Helper_59BAB0(void * a1, void * a2, void * a3, void * a4, void * a5)
+char Map_Helper_59BAB0(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   void * v5;
   int v7; // edx
@@ -1109,7 +1109,7 @@ char sub_751C30()
 }
 // 0x63AB60
 namespace gamemd {
-void sub_63AB60(int a1, int a2)
+char sub_63AB60(int a1, int a2)
 {
   int v3; // ebx
   unsigned int *Coords; // eax
@@ -1269,7 +1269,7 @@ void Map_Process_76FD40(int a1, ObjectClass * aP1, int a3, int _54, int * a4, in
 }
 // 0x682240
 namespace gamemd {
-void sub_682240(int a1, int a2, unsigned short * a3)
+int sub_682240(int a1, int a2, unsigned short * a3)
 {
   unsigned short *v3; // edi
   int v4; // ecx

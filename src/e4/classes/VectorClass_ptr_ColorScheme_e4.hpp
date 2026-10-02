@@ -24,7 +24,7 @@ struct VectorClass_ptr_ColorScheme {
     int GetSize(unsigned int * a2);  // 0x627F30
     unsigned int GetCapacity(int a2);  // 0x627F70
     char SetCapacity(int a2, char * a3);  // 0x6282E0
-    void Destroy(void *a1_1);  // 0x6283E0
+    int Destroy(void *a1_1);  // 0x6283E0
     int ScalarDeletingDestructor(int a2);  // 0x628410
     unsigned int GetItemIndex(int a2);  // 0x628470
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x6285F0

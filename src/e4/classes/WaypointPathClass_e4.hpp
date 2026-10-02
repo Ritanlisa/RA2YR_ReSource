@@ -45,15 +45,15 @@ struct WaypointPathClass {
     unsigned int u32_35;
 // --- flat members (END) ---
     WaypointPathClass * ProcessEvent(char a2);
-    void Construct(WaypointClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
-    void Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
+    _DWORD * Construct(WaypointClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    char Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     int LoadState(unsigned int * a1, int a2);
     int PowerDrainUpdate(int a2);
     int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn51();
     int StubReturn64();
     int ddtor(int a1, unsigned int * a2);
-    void computePath(int a2, unsigned int *a3);
+    _DWORD * computePath(int a2, unsigned int *a3);
 };
 
 } // namespace gamemd

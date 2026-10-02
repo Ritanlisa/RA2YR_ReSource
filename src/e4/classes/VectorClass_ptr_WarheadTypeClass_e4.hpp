@@ -18,7 +18,7 @@ struct VectorClass_ptr_WarheadTypeClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_WarheadTypeClass___(unsigned int * Block, char a2);  // 0x40F8F0
-    void Destroy(void *a1_1);  // 0x40F5E0
+    int Destroy(void *a1_1);  // 0x40F5E0
     unsigned int GetItemIndex(int a2);  // 0x40F610
     int Get(int a2, void *a2_2);  // 0x40F630
     char Add(int a2, void *a2_2, void *a3_1);  // 0x40F640

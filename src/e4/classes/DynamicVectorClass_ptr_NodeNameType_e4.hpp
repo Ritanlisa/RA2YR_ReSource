@@ -17,7 +17,7 @@ struct DynamicVectorClass_ptr_NodeNameType {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void ddtor(void *a1_1);  // 0x5C5070
+    wchar_t * ddtor(void *a1_1);  // 0x5C5070
     int Clear(int a2);  // 0x5C50C0
     char AddRef(int a2);  // 0x5C5390
     char Remove(int a2, unsigned int * a3);  // 0x5C5510

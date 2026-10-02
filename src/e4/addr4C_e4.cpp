@@ -97,7 +97,7 @@ int sub_4C1440()
 }
 // 0x4C14D0
 namespace gamemd {
-void sub_4C14D0()
+int sub_4C14D0()
 {
   int result; // eax
   unsigned int v2[63]; // [esp+8h] [ebp-1F8h] BYREF

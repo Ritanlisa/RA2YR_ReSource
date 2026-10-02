@@ -29,7 +29,7 @@ int sub_53EC40(unsigned char a1, char a2)
 }
 // 0x6149B0
 namespace gamemd {
-void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
+size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // ebx
   int v5; // eax

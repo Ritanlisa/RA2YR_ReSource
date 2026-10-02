@@ -340,7 +340,7 @@ LABEL_6:
 } // namespace gamemd
 // 0x75CEC0
 namespace gamemd {
-void WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v3; // eax
@@ -616,7 +616,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
 } // namespace gamemd
 // 0x75E2C0
 namespace gamemd {
-void WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0)
+int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0)
 {
   int v5; // ebx
   int result; // eax

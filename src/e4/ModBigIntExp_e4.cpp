@@ -12,7 +12,7 @@
 
 // 0x5C7EC0
 namespace gamemd {
-void sub_5C7EC0(const void * a1, int a2)
+int sub_5C7EC0(const void * a1, int a2)
 {
   int * v2;
   int * v3;

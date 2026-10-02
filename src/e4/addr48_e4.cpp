@@ -119,7 +119,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
 }
 // 0x489180
 namespace gamemd {
-void Network_SendTimestamp(int a1, int a2, int a3, int a4)
+int Network_SendTimestamp(int a1, int a2, int a3, int a4)
 {
   int v4; // esi
   int result; // eax

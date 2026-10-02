@@ -188,7 +188,7 @@ void sub_550150()
 }
 // 0x5509F0
 namespace gamemd {
-void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
+int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
 {
   BuildingTypeClass * v1;
   int v2; // eax
@@ -741,7 +741,7 @@ void int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
 }
 // 0x551E50
 namespace gamemd {
-void DecompressCoreLCW(Pipe * aP0, unsigned char * a1, int a3)
+int DecompressCoreLCW(Pipe * aP0, unsigned char * a1, int a3)
 {
   char *v3; // esi
   unsigned char *v4; // edi

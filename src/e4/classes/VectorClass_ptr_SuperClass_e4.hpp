@@ -18,7 +18,7 @@ struct VectorClass_ptr_SuperClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_AbstractTypeClass___(unsigned int * Block, char a2);  // 0x4F0E80
-    void Destroy(void *a1_1);  // 0x4E8350
+    int Destroy(void *a1_1);  // 0x4E8350
     unsigned int GetItemIndex(int a2);  // 0x4E8380
     int Get(int a2, void *a2_2);  // 0x4E83A0
     void Destroy_0();  // 0x4E91A0

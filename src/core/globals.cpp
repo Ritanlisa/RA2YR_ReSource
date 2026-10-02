@@ -617,7 +617,7 @@ void NetworkGetField(int port) {
 }
 
 // 0x6C87F0: InitSkirmishSettings
-void InitSkirmishSettings() {
+int InitSkirmishSettings() {
 {
 
   int v1; // [esp+4h] [ebp-4h] BYREF
@@ -644,7 +644,7 @@ retn
 }
 
 // 0x48E0B0: DumpNetworkStats
-void DumpNetworkStats() {
+FILE * DumpNetworkStats() {
 // 0x69bab0
 {
   char result; // al
@@ -734,7 +734,7 @@ retn
 }
 
 // 0x5F0070: CleanupCampaignResources
-void CleanupCampaignResources() {
+char CleanupCampaignResources() {
 {
   int16_t v5; // [esp+74h] [ebp-4h]
   int v0; // eax

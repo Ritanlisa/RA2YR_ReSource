@@ -18,7 +18,7 @@
 
 // 0x55E160
 namespace gamemd {
-void SyncDelay::Start(void *a1, void *a2)
+signed int SyncDelay::Start(void *a1, void *a2)
 {
     unsigned int v1 = 0;  /* G37 hoist */
 

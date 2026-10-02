@@ -20,7 +20,7 @@ struct VectorClass_ptr_SmudgeTypeClass {
     DynamicVector * Constructor_VectorClass_SmudgeTypeClass___(unsigned int * Block, char a2);  // 0x4F0660
     DynamicVector * Constructor_VectorClass_TerrainTypeClass___(unsigned int * Block, char a2);  // 0x4F0700
     DynamicVector * Constructor_VectorClass_BuildingTypeClass___(unsigned int * Block, char a2);  // 0x4F07A0
-    void Destroy(void *a1_1);  // 0x4E8CC0
+    int Destroy(void *a1_1);  // 0x4E8CC0
     unsigned int GetItemIndex(int a2);  // 0x4E8CF0
     int Get(int a2, void *a2_2);  // 0x4E8D10
     void Destroy_0();  // 0x4E8D20

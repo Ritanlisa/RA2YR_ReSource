@@ -121,7 +121,7 @@ unsigned char * sub_52A9E0(unsigned char * a1, unsigned int * a2, unsigned int *
 }
 // 0x52B750
 namespace gamemd {
-void System_Search(ObjectClass * aP0, int edx0, int * a2)
+int System_Search(ObjectClass * aP0, int edx0, int * a2)
 {
   int v3; // esi
   int v4; // ebx
@@ -152,7 +152,7 @@ void System_Search(ObjectClass * aP0, int edx0, int * a2)
 }
 // 0x6269A0
 namespace gamemd {
-void sub_6269A0()
+int sub_6269A0()
 {
   FileSystem * v1;
   FileSystem *v2; // eax
@@ -232,7 +232,7 @@ void sub_6269A0()
 }
 // 0x626AB0
 namespace gamemd {
-void sub_626AB0(const char * a1, int a2)
+char sub_626AB0(const char * a1, int a2)
 {
   unsigned int *v2; // eax
   unsigned int *v3; // ebp

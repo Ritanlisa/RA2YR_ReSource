@@ -38,7 +38,7 @@ void * TextRenderer::GetInstance(void *a1)
 }
 // 0x4B96A0
 namespace gamemd {
-void TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8)
+int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8)
 {
 
   int v11; // esi

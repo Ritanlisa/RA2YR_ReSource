@@ -23,7 +23,7 @@ struct FoggedObjectClass_42 {
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x4E0240
     char AddRef(int a2);  // 0x4E0580
     char Release(int a2, unsigned int * a3);  // 0x4E05C0
-    void ddtor(void *a1_1, void *a2_1);  // 0x4E0670
+    wchar_t * ddtor(void *a1_1, void *a2_1);  // 0x4E0670
     int Read(unsigned int * a2, void *a2_2);  // 0x4E06A0
     char SetCapacity(int a2, unsigned int * a3);  // 0x4E0700
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4E0CE0

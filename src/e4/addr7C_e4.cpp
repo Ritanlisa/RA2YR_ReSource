@@ -346,7 +346,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
 }
 // 0x7C2590
 namespace gamemd {
-void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2)
+int RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2)
 {
   int (__cdecl *v5)(unsigned int, int, unsigned int, int); // eax
   unsigned int *v6; // eax
@@ -651,7 +651,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
 }
 // 0x7C2D00
 namespace gamemd {
-void AudioStream_Process(int a1, int a2, char a3)
+int AudioStream_Process(int a1, int a2, char a3)
 {
   int v5; // edi
   int v6; // eax
@@ -3312,7 +3312,7 @@ int TileRenderer_DrawBlock2Sub(int a1, unsigned short * a2, unsigned char * a3, 
 }
 // 0x7C6620
 namespace gamemd {
-void sub_7C6620(int a1, int a2, int a3, int a4)
+int sub_7C6620(int a1, int a2, int a3, int a4)
 {
   int v4; // edi
   int v5; // ecx
@@ -3860,14 +3860,14 @@ int PostMessageA()
 
 // 0x7C8992
 namespace gamemd {
-void closesocket()
+int closesocket()
 {
   return __imp_closesocket(s);
 }
 }
 // 0x7C8B48
 namespace gamemd {
-void qsort(AbstractClass * aP0, IUnknown * aP1, size_t SizeOfElements, _CoreCrtNonSecureSearchSortCompareFunction CompareFunction)
+int qsort(AbstractClass * aP0, IUnknown * aP1, size_t SizeOfElements, _CoreCrtNonSecureSearchSortCompareFunction CompareFunction)
 {
   int result; // eax
   char *v6; // esi

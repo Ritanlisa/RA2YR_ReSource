@@ -528,7 +528,7 @@ int sub_652630(unsigned int * a1, unsigned int * a2)
 }
 // 0x653FA0
 namespace gamemd {
-void RenderScoreboardSidebar(void * a1, void * a2)
+char RenderScoreboardSidebar(void * a1, void * a2)
 {
   unsigned int *v2; // ecx
   int v3; // eax
@@ -745,7 +745,7 @@ int E4Recv_655890::sub_655890()
 }
 // 0x658640
 namespace gamemd {
-void ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
+int ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
 {
 
   TabClass *v1; // ecx

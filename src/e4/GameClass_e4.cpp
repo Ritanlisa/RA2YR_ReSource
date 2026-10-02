@@ -40,7 +40,7 @@
 
 // 0x437FD0
 namespace gamemd {
-void GameClass::initGameMode(int a2, int a3)
+int GameClass::initGameMode(int a2, int a3)
 {
 
   if ( !*(unsigned int *)this->__pad_0 ) /*0x437fd3*/
@@ -51,7 +51,7 @@ void GameClass::initGameMode(int a2, int a3)
 }
 // 0x4381D0
 namespace gamemd {
-void GameClass::processFrame(int a2, int a3)
+_DWORD * GameClass::processFrame(int a2, int a3)
 {
 
   unsigned int *result; // eax
@@ -270,7 +270,7 @@ LABEL_8:
 }
 // 0x631D30
 namespace gamemd {
-void GameClass::GetRelatedObject(void *a1_1)
+int GameClass::GetRelatedObject(void *a1_1)
 {
 
   int Pipe_field_0x04; // ecx

@@ -19,7 +19,7 @@
 
 // 0x470D30
 namespace gamemd {
-void CampaignScreen_Init(void * a1, void * a2, void * a3, void * a4)
+int CampaignScreen_Init(void * a1, void * a2, void * a3, void * a4)
 {
   const wchar_t *v5; // ebp
   int result; // eax

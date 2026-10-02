@@ -28,7 +28,7 @@ char ScreenCaptureCommandClass::AddRef(void *a1)
 } // namespace gamemd
 // 0x537B60
 namespace gamemd {
-void ScreenCaptureCommandClass::ddtor()
+wchar_t * ScreenCaptureCommandClass::ddtor()
 {
 
   return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0,(const char *)(g_Str_File_Init_CPP), 8071); /*0x537b76*/
@@ -37,7 +37,7 @@ void ScreenCaptureCommandClass::ddtor()
 } // namespace gamemd
 // 0x537B80
 namespace gamemd {
-void ScreenCaptureCommandClass::Release(void *a1)
+wchar_t * ScreenCaptureCommandClass::Release(void *a1)
 {
 
   return GetStringCSF((wchar_t *)(aTxtScrncap), 0,(const char *)(g_Str_File_Init_CPP), 8072); /*0x537b96*/
@@ -46,7 +46,7 @@ void ScreenCaptureCommandClass::Release(void *a1)
 } // namespace gamemd
 // 0x537BA0
 namespace gamemd {
-void ScreenCaptureCommandClass::Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7)
+wchar_t * ScreenCaptureCommandClass::Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7)
 {
 
   return GetStringCSF((wchar_t *)(aTxtScrncapDesc), 0,(const char *)(g_Str_File_Init_CPP), 8073); /*0x537bb6*/

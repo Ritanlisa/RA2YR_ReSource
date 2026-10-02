@@ -83,7 +83,7 @@ int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
 }
 // 0x51FEF0
 namespace gamemd {
-void SaveInfantryToINI(void * a1, void * a2, void * a3)
+int SaveInfantryToINI(void * a1, void * a2, void * a3)
 {
   int *v3; // ecx
   double v4; // st7

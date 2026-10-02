@@ -81,7 +81,7 @@ struct IsometricTileTypeClass {
     int GetObjectSize();
     void GetTileIndex(int a2, int a3, void *a3_2, void *a4);
     int GetTypeIdentifier();
-    void ProcessPower(int * a2, void *a2_2);
+    int ProcessPower(int * a2, void *a2_2);
     int SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     unsigned int * Constructor_0(int a2, int a3);
     unsigned int PointerToIndex(int a2);

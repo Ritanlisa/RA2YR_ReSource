@@ -22,7 +22,7 @@ struct Tactical_42 {
     int UpdateView(int a2);  // 0x6E4840
     char AddRef(int a2);  // 0x6E4850
     char Release(int a2, unsigned int * a3);  // 0x6E4890
-    void ddtor(void *a1_1, void *a2_1);  // 0x6E4940
+    wchar_t * ddtor(void *a1_1, void *a2_1);  // 0x6E4940
     char SetCapacity(int a2, unsigned int * a3);  // 0x6E49D0
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x6E4AB0
     unsigned int PointerToIndex(int a2);  // 0x6E4820

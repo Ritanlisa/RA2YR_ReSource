@@ -16,7 +16,7 @@ struct NetworkClass {
     unsigned int u32_64D49;
     unsigned int u32_64D80;
 // --- flat members (END) ---
-    void ExecutePlanningModeCmd();  // 0x639FD0
+    int ExecutePlanningModeCmd();  // 0x639FD0
     AbstractClass * * RecordEvent();  // 0x6FFE00
     AnimClass * * UnregisterAsync();  // 0x7B1C50
 };

@@ -118,7 +118,7 @@ int TActionClass::executeDeployAction(int a2)
 }
 // 0x567F70
 namespace gamemd {
-void sub_567F70(int * a1, int a2)
+int sub_567F70(int * a1, int a2)
 {
   int v2; // esi
   int v3; // edi

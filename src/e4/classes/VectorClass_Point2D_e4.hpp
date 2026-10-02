@@ -23,7 +23,7 @@ struct VectorClass_Point2D {
     int GetSize(unsigned int * a2);  // 0x5D0950
     unsigned int GetCapacity(int a2);  // 0x5D09A0
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5D16C0
-    void Destroy(void *a1_1);  // 0x5D2780
+    int Destroy(void *a1_1);  // 0x5D2780
     unsigned int GetItemIndex(int a2);  // 0x5D27B0
     char SetCapacity(int a2, unsigned int * a3);  // 0x5D2BC0
     int FindItemIndex(unsigned int * a2);  // 0x5D2C70

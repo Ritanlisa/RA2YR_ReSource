@@ -17,7 +17,7 @@ struct VectorClass_W4PassabilityType {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy(void *a1_1);  // 0x588F00
+    int Destroy(void *a1_1);  // 0x588F00
     unsigned int GetItemIndex(int a2);  // 0x588F30
     int Clear(int a2);  // 0x588F50
     void Destroy_0();  // 0x588F60
@@ -26,7 +26,7 @@ struct VectorClass_W4PassabilityType {
     unsigned int GetItemIndex_1(int a2);  // 0x589000
     char AddRef(int a2);  // 0x589EB0
     char Release(int a2, unsigned int * a3);  // 0x589EF0
-    void ddtor(void *a1_1);  // 0x589FA0
+    wchar_t * ddtor(void *a1_1);  // 0x589FA0
     int GetSize(unsigned int * a2);  // 0x589FD0
     unsigned int GetCapacity(int a2);  // 0x58A010
     char SetCapacity(int a2, unsigned int * a3);  // 0x58A030

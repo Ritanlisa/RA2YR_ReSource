@@ -13,7 +13,7 @@
 
 // 0x5D7030
 namespace gamemd {
-void AI_CreateMCV()
+char AI_CreateMCV()
 {
   HouseClass *v3; // edi
   int v4; // esi

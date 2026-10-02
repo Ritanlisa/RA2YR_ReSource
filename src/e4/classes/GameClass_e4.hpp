@@ -81,13 +81,13 @@ struct GameClass {
     unsigned int Network;
     unsigned char Pipe_field_0x04;  // 0x4
 // --- flat members (END) ---
-    void initGameMode(int a2, int a3);  // 0x437FD0
-    void processFrame(int a2, int a3);  // 0x4381D0
+    int initGameMode(int a2, int a3);  // 0x437FD0
+    _DWORD * processFrame(int a2, int a3);  // 0x4381D0
     unsigned int * updateUI(int a2, int a3, void *a3_2);  // 0x438300
     int loadScenarioFiles(int aP1);  // 0x5D2260
     int FrameLoop(int a2);  // 0x5D2410
     int FindOpenSlot();  // 0x5D6370
-    void GetRelatedObject(void *a1_1);  // 0x631D30
+    int GetRelatedObject(void *a1_1);  // 0x631D30
     void * WriteEncryptedStream(BombClass * Src, signed int aP2);  // 0x632DC0
     int ReadEncryptedStream(char * a2, signed int Size);  // 0x633130
     int initPlayerData(const char **a2);  // 0x69AE10

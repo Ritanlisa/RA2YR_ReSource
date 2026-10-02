@@ -19,10 +19,10 @@ struct AITriggerTypeClass_40 {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     void ClearBuffer(void *a1_1);  // 0x420370
-    void Seek(int a2, void *a2_2, void *a3_1);  // 0x4203C0
+    wchar_t * Seek(int a2, void *a2_2, void *a3_1);  // 0x4203C0
     char AddRef(int a2);  // 0x4203D0
     char Release(int a2, unsigned int * a3);  // 0x420410
-    void ddtor();  // 0x4204C0
+    wchar_t * ddtor();  // 0x4204C0
     int Read(unsigned int * a2, void *a2_2);  // 0x4204F0
     char SetCapacity(int a2, unsigned int * a3);  // 0x420550
     int FindItem(unsigned int * a2);  // 0x420600

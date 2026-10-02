@@ -114,7 +114,7 @@ LABEL_11:
 }
 // 0x523440
 namespace gamemd {
-void BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
+int BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
 {
   int v3; // esi
   int v4; // ebx

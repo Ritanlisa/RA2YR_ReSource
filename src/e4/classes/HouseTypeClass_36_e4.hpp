@@ -17,7 +17,7 @@ struct HouseTypeClass_36 {
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
-    void ddtor(void *a1_1);  // 0x512900
+    wchar_t * ddtor(void *a1_1);  // 0x512900
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x512950
     TypeList_flat * QueryInterface(unsigned int * Block, char a2);  // 0x512A40
     VectorClass_flat * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x512B80

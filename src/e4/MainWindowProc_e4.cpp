@@ -89,7 +89,7 @@ AbstractClass * * sub_777420()
 }
 // 0x5C09A0
 namespace gamemd {
-void sub_5C09A0()
+int sub_5C09A0()
 {
   int result; // eax
 

@@ -20,7 +20,7 @@ struct Lobby {
 // --- flat members (END) ---
     int BuildPlayerList();
     int InvalidatePlayerSlots(HWND hDlg);
-    void SetupPlayerWidgets(HWND hDlg);
+    int SetupPlayerWidgets(HWND hDlg);
     void UpdatePlayerLabels();
     static double InvalidateFactionCombos(...);  // C2597 interim stub
     int FillPlayerFactions();  // 0x4e4820

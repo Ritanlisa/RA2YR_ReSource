@@ -351,7 +351,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
 }
 // 0x411DF0
 namespace gamemd {
-void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
+int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
 {
   LONG LockCount; // eax
   int v3; // esi
@@ -467,7 +467,7 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
 }
 // 0x412000
 namespace gamemd {
-void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
+int SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
 {
   unsigned int v3; // edi
   char *v4; // ebx

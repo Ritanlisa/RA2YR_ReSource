@@ -28,7 +28,7 @@
 
 // 0x7D038F
 namespace gamemd {
-void __sbh_heap_check()
+int __sbh_heap_check()
 {
   unsigned int *v2; // ebx
   unsigned int *v3; // esi
@@ -640,7 +640,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
 }
 // 0x7D0DBA
 namespace gamemd {
-void _write_lk(int FileHandle, unsigned char * lpBuffer, DWORD nNumberOfBytesToWrite)
+int _write_lk(int FileHandle, unsigned char * lpBuffer, DWORD nNumberOfBytesToWrite)
 {
   unsigned int *v4; // ebx
   int v5; // esi

@@ -40,7 +40,7 @@ struct MapSeedClass {
     MapSeedClass * * PlaceBuildingClusters(MapSeedClass * aP1);
     MapSeedClass * QueryInterface(char a2);
     int GenerateSeed(unsigned int * a2);
-    void ValidateRectBounds(void *a1);
+    char ValidateRectBounds(void *a1);
     wchar_t * GetCell();
     wchar_t * SetCell();
     wchar_t * Validate();

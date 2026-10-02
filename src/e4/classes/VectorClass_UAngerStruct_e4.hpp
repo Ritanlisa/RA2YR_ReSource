@@ -17,7 +17,7 @@ struct VectorClass_UAngerStruct {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy(void *a1_1);  // 0x50E500
+    int Destroy(void *a1_1);  // 0x50E500
     unsigned int GetItemIndex(int a2);  // 0x50E530
     void Destroy_0();  // 0x50E560
     unsigned int GetItemIndex_0(int a2);  // 0x50E590
@@ -26,7 +26,7 @@ struct VectorClass_UAngerStruct {
     int FindItemIndex(unsigned int * a2);  // 0x50EE50
     char AddRef(int a2);  // 0x50EE80
     char Release(int a2, unsigned int * a3);  // 0x50EEE0
-    void ddtor(void *a1_1);  // 0x50EFD0
+    wchar_t * ddtor(void *a1_1);  // 0x50EFD0
     int GetSize(unsigned int * a2);  // 0x50F000
     unsigned int GetCapacity(int a2);  // 0x50F050
     char SetCapacity_0(int a2, unsigned int * a3);  // 0x50F070

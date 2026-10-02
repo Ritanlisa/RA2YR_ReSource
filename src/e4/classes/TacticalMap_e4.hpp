@@ -55,7 +55,7 @@ struct TacticalMap {
     unsigned int u32_E00;
 // --- flat members (END) ---
     ScenarioClass * * ComputeScreenTint();
-    void Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    _DWORD * Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6);
     void DrawCursor(void *a1, void *a2, void *a3, void *a4);
     int DrawOccupiedRegion();
     void Redraw(void *a1);

@@ -18,7 +18,7 @@ struct TypeList_VoxelAnim {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void ddtor(void *a1_1);  // 0x67A410
+    wchar_t * ddtor(void *a1_1);  // 0x67A410
     unsigned int GetIndex(int a2);  // 0x67A440
     int Clear(int a2);  // 0x67A460
     void TypeList_vt03();  // 0x67A680

@@ -82,7 +82,7 @@ unsigned int * WstringConstructor(int a2, unsigned int * a3);
 unsigned int GetCapacity(int a2);
 unsigned int GetIndex(int a2);
 unsigned int vt05(int a2);
-void Cleanup(void *a1);
+int Cleanup(void *a1);
 void Cleanup3();
 void Cleanup4();
 void Cleanup5();
@@ -92,7 +92,7 @@ void ClearAndFree();
 void ClearAndFree2();
 void ClearAndFree3();
 void ClearAndFree4();
-void Destroy(void *a1);
+int Destroy(void *a1);
 // fused-garbage: void Desvoidvoid Destroy();
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

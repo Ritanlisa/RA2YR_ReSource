@@ -347,7 +347,7 @@ struct ObjectTypeClass {
     unsigned int * vt_entry_7C(unsigned int * a1);
     void CleanupWeapons(void *a1);
     void ReleaseWaveAndString(void *a1);
-    void SetRTTI71();
+    int SetRTTI71();
     void UnloadPipsSHP();
     void* LoadFromINI(uint8_t ***aP1);
 };

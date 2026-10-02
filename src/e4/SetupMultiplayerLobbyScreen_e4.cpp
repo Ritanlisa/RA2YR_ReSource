@@ -16,7 +16,7 @@
 
 // 0x5EBEC0
 namespace gamemd {
-void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nIDDlgItem)
+char SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nIDDlgItem)
 {
   char * v3;
   char * v4;

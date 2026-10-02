@@ -18,7 +18,7 @@ struct VectorClass_ptr_SlaveManagerClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_SlaveManagerClass___(unsigned int * Block, char a2);  // 0x6B1A20
-    void Destroy(void *a1_1);  // 0x6B1410
+    int Destroy(void *a1_1);  // 0x6B1410
     unsigned int GetItemIndex(int a2);  // 0x6B1440
     int Get(int a2, void *a2_2);  // 0x6B1460
     char Add(int a2, void *a2_2, void *a3_1);  // 0x6B16D0

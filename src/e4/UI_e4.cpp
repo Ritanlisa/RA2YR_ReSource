@@ -89,7 +89,7 @@ int sub_53E720()
 }
 // 0x60AF50
 namespace gamemd {
-void UI_Get(HWND hWnd, unsigned int * a2)
+int UI_Get(HWND hWnd, unsigned int * a2)
 {
   HWND Parent; // ebp
   char GameSpeed; // bl
@@ -112,7 +112,7 @@ void UI_Get(HWND hWnd, unsigned int * a2)
 }
 // 0x622610
 namespace gamemd {
-void sub_622610()
+int sub_622610()
 {
   int result; // eax
   bool v2; // zf
@@ -136,7 +136,7 @@ void sub_622610()
 }
 // 0x647040
 namespace gamemd {
-void sub_647040()
+char sub_647040()
 {
   char *v1; // eax
   char v3[112]; // [esp+0h] [ebp-70h] BYREF
@@ -159,7 +159,7 @@ void sub_647040()
 }
 // 0x6470F0
 namespace gamemd {
-void sub_6470F0()
+char sub_6470F0()
 {
   char *v1; // eax
   char v3[112]; // [esp+0h] [ebp-70h] BYREF
@@ -213,7 +213,7 @@ int sub_725070(int a1, int a2, unsigned int * a3)
 }
 // 0x6AC430
 namespace gamemd {
-void sub_6AC430()
+int sub_6AC430()
 {
   int v1; // eax
   unsigned int v2; // eax
@@ -426,7 +426,7 @@ void sub_6D0E60()
 }
 // 0x60B1D0
 namespace gamemd {
-void UI_Get_60B1D0(HWND hWnd, HWND a2)
+int UI_Get_60B1D0(HWND hWnd, HWND a2)
 {
   HWND Parent; // esi
   char GameSpeed; // bl
@@ -493,7 +493,7 @@ void UI_Get_60B1D0(HWND hWnd, HWND a2)
 }
 // 0x602B90
 namespace gamemd {
-void UI_Helper_602B90(int a1, HWND a2)
+bool UI_Helper_602B90(int a1, HWND a2)
 {
   unsigned int *v3; // eax
   int v4; // esi
@@ -552,7 +552,7 @@ void UI_Helper_602B90(int a1, HWND a2)
 }
 // 0x603240
 namespace gamemd {
-void UI_Helper_603240(int a1, HWND a2)
+int UI_Helper_603240(int a1, HWND a2)
 {
   unsigned int *v3; // eax
   int v4; // esi
@@ -749,7 +749,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
 }
 // 0x6D0FD0
 namespace gamemd {
-void sub_6D0FD0()
+int sub_6D0FD0()
 {
   int *v0; // esi
   int v1; // edi

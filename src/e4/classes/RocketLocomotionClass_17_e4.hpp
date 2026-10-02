@@ -22,11 +22,11 @@ struct RocketLocomotionClass_17 {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    void ddtor();  // 0x6647B0
+    wchar_t * ddtor();  // 0x6647B0
     int UpdateMovement(int a2);  // 0x664800
     char AddRef(int a2);  // 0x664810
     char SetCapacity(int a2, unsigned int * a3);  // 0x664850
-    void Destroy(void *a1_1);  // 0x664900
+    int Destroy(void *a1_1);  // 0x664900
     int IndexOf(unsigned int * a2);  // 0x664930
     char Release(int a2, unsigned int * a3);  // 0x664990
     int Launch(unsigned int * a2);  // 0x664A40

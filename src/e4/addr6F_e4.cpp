@@ -41,7 +41,7 @@
 
 // 0x6F0AB0
 namespace gamemd {
-void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
+int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
 {
   void *** v3;
   int v5; // eax

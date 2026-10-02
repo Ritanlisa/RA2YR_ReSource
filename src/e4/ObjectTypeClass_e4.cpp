@@ -828,7 +828,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
 } // namespace gamemd
 // 0x5F9710
 namespace gamemd {
-void ObjectTypeClass::SetRTTI71()
+int ObjectTypeClass::SetRTTI71()
 {
 
   int result; // eax

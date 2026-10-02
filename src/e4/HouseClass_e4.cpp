@@ -75,7 +75,7 @@ int HouseClass::GetRepairStepAmount()
 }
 // 0x4ADEE0
 namespace gamemd {
-void HouseClass::ResetObjectOrders(char a1, int a2)
+int HouseClass::ResetObjectOrders(char a1, int a2)
 {
 
   int v2; // ebx

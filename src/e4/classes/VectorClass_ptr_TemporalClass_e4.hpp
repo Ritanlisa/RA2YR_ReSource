@@ -18,7 +18,7 @@ struct VectorClass_ptr_TemporalClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_TemporalClass___(unsigned int * Block, char a2);  // 0x71B550
-    void Destroy(void *a1_1);  // 0x71B240
+    int Destroy(void *a1_1);  // 0x71B240
     unsigned int GetItemIndex(int a2);  // 0x71B270
     int Get(int a2, void *a2_2);  // 0x71B290
     char Add(int a2, void *a2_2, void *a3_1);  // 0x71B2A0

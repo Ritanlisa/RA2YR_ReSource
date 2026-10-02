@@ -172,7 +172,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
 }
 // 0x4165C0
 namespace gamemd {
-void AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
+int AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
   int v11; // ebp
   AnimClass *v13; // ebx

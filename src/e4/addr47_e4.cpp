@@ -207,7 +207,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
 }
 // 0x4790B0
 namespace gamemd {
-void SoundWarning_Set(int a1)
+int SoundWarning_Set(int a1)
 {
   int result; // eax
 
@@ -571,7 +571,7 @@ int sub_47AA50(char a1)
 }
 // 0x47E040
 namespace gamemd {
-void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
+int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
 {
   CellClass *v4; // esi
   char v5; // bl
@@ -783,7 +783,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
 }
 // 0x47E470
 namespace gamemd {
-void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
+int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
 {
   CellClass *v4; // esi
   char v5; // bl

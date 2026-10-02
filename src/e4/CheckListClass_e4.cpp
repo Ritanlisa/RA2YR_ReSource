@@ -13,7 +13,7 @@
 
 // 0x488520
 namespace gamemd {
-void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
+size_t CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
   ListClass *v7; // ecx
   ListClass *v8; // esi

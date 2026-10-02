@@ -394,7 +394,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
 
 // 0x471FF0
 namespace gamemd {
-void CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
+char CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
 {
 a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
 a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/

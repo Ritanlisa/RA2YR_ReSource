@@ -19,7 +19,7 @@ struct unknown {
     int  Read(unsigned short * a2, void *a2_2);
     int Seek(int a2, int a3, void *a3_2);
     unsigned int Write(int a2);
-    void ddtor(void *a1);
+    wchar_t * ddtor(void *a1);
     unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 

@@ -13,10 +13,10 @@ struct TauntCommandClass {
     unsigned int CommandClass;
     unsigned int TauntCommandClass_field_00;
 // --- flat members (END) ---
-    void Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6);
-    void AddRef(void *a1);
-    void Release(void *a1);
-    void ddtor();
+    _DWORD * Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6);
+    char AddRef(void *a1);
+    int Release(void *a1);
+    wchar_t * ddtor();
 };
 
 } // namespace gamemd

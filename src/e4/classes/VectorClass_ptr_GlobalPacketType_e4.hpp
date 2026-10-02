@@ -19,7 +19,7 @@ struct VectorClass_ptr_GlobalPacketType {
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_MultiMission___(unsigned int * Block, char a2);  // 0x69D5E0
     DynamicVector * Constructor_VectorClass_GlobalPacketType___(unsigned int * Block, char a2);  // 0x69D680
-    void Destroy(void *a1_1);  // 0x69C5A0
+    int Destroy(void *a1_1);  // 0x69C5A0
     unsigned int GetItemIndex(int a2);  // 0x69C5D0
     void Destroy_0();  // 0x69C600
     unsigned int GetItemIndex_0(int a2);  // 0x69C630

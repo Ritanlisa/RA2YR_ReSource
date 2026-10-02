@@ -126,7 +126,7 @@ bool sub_46D650()
 }
 // 0x46D8B0
 namespace gamemd {
-void sub_46D8B0()
+char sub_46D8B0()
 {
   char v1; // bl
   int v2; // edi
@@ -332,7 +332,7 @@ BOOL sub_46DCC0(HWND hDlg, bool a2)
 }
 // 0x46DD70
 namespace gamemd {
-void EnableGameModeControls(HWND hDlg, bool a2)
+void * EnableGameModeControls(HWND hDlg, bool a2)
 {
   int v4; // eax
   int DlgItem;
@@ -376,7 +376,7 @@ void EnableGameModeControls(HWND hDlg, bool a2)
 }
 // 0x46DE20
 namespace gamemd {
-void sub_46DE20(HWND hDlg, int nCmdShow)
+void * sub_46DE20(HWND hDlg, int nCmdShow)
 {
   HWND DlgItem; // eax
   HWND v5; // eax
@@ -1096,7 +1096,7 @@ int sub_46D310()
 
 // 0x46D480
 namespace gamemd {
-void sub_46D480(void * a1, void * a2)
+__int64 sub_46D480(void * a1, void * a2)
 {
   int64_t result; // rax
 

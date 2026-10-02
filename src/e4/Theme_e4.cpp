@@ -116,7 +116,7 @@ LABEL_14: result = (int)(((Debug *)this)->Log());
 } // namespace gamemd
 // 0x720FD0
 namespace gamemd {
-void Theme::IsPlaying()
+bool Theme::IsPlaying()
 {
 
   AudioSample *v2; // ecx

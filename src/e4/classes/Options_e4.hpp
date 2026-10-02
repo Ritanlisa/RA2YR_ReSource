@@ -82,7 +82,7 @@ struct Options {
     AbstractClass * * Screen_Save();  // 0x55FAA0
     char Screen_Dialog();  // 0x55FC80
     int DeleteAndZero();  // 0x6244E0
-    void EnsureCapacity(void *a1_1, void *a2_1);  // 0x6248A0
+    _DWORD * EnsureCapacity(void *a1_1, void *a2_1);  // 0x6248A0
     int GrowBuffer();  // 0x6253B0
     int ReadOptionValue();  // 0x6254D0
     AbstractClass * * DestroyComposite(void * Block, char a2);  // 0x625560

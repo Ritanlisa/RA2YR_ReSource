@@ -280,7 +280,7 @@ LABEL_16:
 }
 // 0x585F40
 namespace gamemd {
-void InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
+int InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
 {
   int v4; // ecx
   int v5; // edx
@@ -518,7 +518,7 @@ int MarkCliffEdgePassability(int a1)
 }
 // 0x588570
 namespace gamemd {
-void globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * aP2)
+char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * aP2)
 {
   char v3; // cl
   MouseClass * v4;
@@ -621,7 +621,7 @@ void globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
 }
 // 0x588750
 namespace gamemd {
-void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * aP2)
+int ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * aP2)
 {
   int *v3; // edi
   int result; // eax

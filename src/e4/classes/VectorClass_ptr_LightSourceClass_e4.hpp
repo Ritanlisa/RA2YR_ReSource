@@ -18,7 +18,7 @@ struct VectorClass_ptr_LightSourceClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_LightSourceClass___(unsigned int * Block, char a2);  // 0x5557D0
-    void Destroy(void *a1_1);  // 0x555200
+    int Destroy(void *a1_1);  // 0x555200
     unsigned int GetItemIndex(int a2);  // 0x555230
     int Get(int a2, void *a2_2);  // 0x555250
     void Destroy_0();  // 0x555260

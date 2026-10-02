@@ -45,7 +45,7 @@ wchar_t * SelectTeamCommand::Release(void *a1)
 } // namespace gamemd
 // 0x536030
 namespace gamemd {
-void SelectTeamCommand::ddtor()
+wchar_t * SelectTeamCommand::ddtor()
 {
 
   return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0,(const char *)(g_Str_File_Init_CPP), 6294); /*0x536046*/

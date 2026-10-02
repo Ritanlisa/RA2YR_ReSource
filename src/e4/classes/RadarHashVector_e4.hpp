@@ -43,7 +43,7 @@ struct RadarHashVector {
     int Read(unsigned int * a2, void *a2_2);
     unsigned int * Construct(MapClass * aP1, MapClass * aP2, void *a3, void *a4, void *a5, void *a6);
     unsigned int Write(int a2);
-    void ddtor();
+    wchar_t * ddtor();
 };
 
 } // namespace gamemd

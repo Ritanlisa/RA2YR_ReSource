@@ -27,7 +27,7 @@ int Radar_PixelIndex(int cell_x, int cell_y, int radar_width)
     return cell_y * radar_width + cell_x;
 }
 
-void RenderScoreboardSidebar(void*, int, int, int, int) {}
+char RenderScoreboardSidebar(void*, int, int, int, int) {}
 void RenderRadarToSurface(void*, const uint8_t*, int, int, int, int) {}
 void LoadToSurfaceSHP(void*, const void*, int, int, int) {}
 

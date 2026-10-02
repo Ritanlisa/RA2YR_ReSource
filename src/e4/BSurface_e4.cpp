@@ -17,7 +17,7 @@ struct BSurface;  // fix_tu_missing_types
 
 // 0x410CE0
 namespace gamemd {
-void BSurface::Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a6_1)
+_DWORD * BSurface::Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a6_1)
 {
 
   int v6; // edi
@@ -87,7 +87,7 @@ void BSurface::Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a6_1)
 }
 // 0x7B8C60
 namespace gamemd {
-void BSurface::CreateTripleBuffer()
+bool BSurface::CreateTripleBuffer()
 {
 
   int v2; // ecx

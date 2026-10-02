@@ -46,7 +46,7 @@
 
 // 0x5D6130
 namespace gamemd {
-void SkirmishSetup_Setup(HWND hWnd, int a2)
+char SkirmishSetup_Setup(HWND hWnd, int a2)
 {
   int v3; // esi
   char result; // al

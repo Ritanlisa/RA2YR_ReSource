@@ -990,7 +990,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
 }
 // 0x6B3850
 namespace gamemd {
-void ProcessSlaveManagerTerrain()
+char ProcessSlaveManagerTerrain()
 {
   int v1; // eax
   int v2; // ebx
@@ -1115,7 +1115,7 @@ void ProcessSlaveManagerTerrain()
 }
 // 0x6B3A80
 namespace gamemd {
-void Terrain_FlowCompute(int a1, char a2, int a3, int a4)
+int Terrain_FlowCompute(int a1, char a2, int a3, int a4)
 {
   int result; // eax
   int v5; // ebp

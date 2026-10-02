@@ -1097,7 +1097,7 @@ struct TechnoTypeClass {
     unsigned int u32_1E42;
     unsigned int vtable0;
 // --- flat members (END) ---
-    void Construct(ObjectTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    _DWORD * Construct(ObjectTypeClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);
     DynamicVectorClass_flat * * SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     TechnoTypeClass * ddtor(char a2);

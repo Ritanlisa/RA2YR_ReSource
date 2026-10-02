@@ -112,7 +112,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
 }
 // 0x4E1FE0
 namespace gamemd {
-void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
+int GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -735,7 +735,7 @@ HWND * SetupLobbyCountryCombo(HWND aP0, int nIDDlgItem, int a3)
 }
 // 0x4E45A0
 namespace gamemd {
-void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
+bool FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
 {
   wchar_t * DlgItem;
   wchar_t *StringCSF; // eax
@@ -1024,7 +1024,7 @@ int SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
 }
 // 0x4E4C20
 namespace gamemd {
-void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
+char FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
 {
   int v4; // eax
   int v5; // eax
@@ -1158,7 +1158,7 @@ void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
 }
 // 0x4E50C0
 namespace gamemd {
-void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
+bool FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
 {
   wchar_t * DlgItem;
   wchar_t *StringCSF; // eax
@@ -1443,7 +1443,7 @@ int SetupLobbyFactionSlots(HWND aP0, int nIDDlgItem, int a3)
 }
 // 0x4E5700
 namespace gamemd {
-void FillComboBoxSides(HWND hDlg, int nIDDlgItem)
+char FillComboBoxSides(HWND hDlg, int nIDDlgItem)
 {
   int v4; // eax
   int v5; // eax
@@ -1577,7 +1577,7 @@ void FillComboBoxSides(HWND hDlg, int nIDDlgItem)
 }
 // 0x4E5B60
 namespace gamemd {
-void FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
+bool FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
 {
   HWND DlgItem; // esi
   int v3; // eax
@@ -1693,7 +1693,7 @@ void Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 }
 // 0x4E5ED0
 namespace gamemd {
-void SetupLobbyPlayerSlots(SessionClass * aP0, int nIDDlgItem, int a3)
+bool SetupLobbyPlayerSlots(SessionClass * aP0, int nIDDlgItem, int a3)
 {
   int result; // eax
   WPARAM v6; // ebp

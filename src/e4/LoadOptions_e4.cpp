@@ -176,7 +176,7 @@ wchar_t * LoadOptions::Write()
 
 // 0x55A070
 namespace gamemd {
-void LoadOptions::Seek(void *a1, void *a2, void *a3)
+wchar_t * LoadOptions::Seek(void *a1, void *a2, void *a3)
 {
 
   return GetStringCSF((wchar_t *)(aGuiSavemission), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1222); /*0x55a086*/
@@ -186,7 +186,7 @@ void LoadOptions::Seek(void *a1, void *a2, void *a3)
 
 // 0x55A090
 namespace gamemd {
-void LoadOptions::Open(void *a1, void *a2, void *a3)
+wchar_t * LoadOptions::Open(void *a1, void *a2, void *a3)
 {
 
   return GetStringCSF((wchar_t *)(aGuiDeletemissi), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1228); /*0x55a0a6*/
@@ -196,7 +196,7 @@ void LoadOptions::Open(void *a1, void *a2, void *a3)
 
 // 0x55A0B0
 namespace gamemd {
-void LoadOptions::Close(void *a1, void *a2)
+wchar_t * LoadOptions::Close(void *a1, void *a2)
 {
 
   return GetStringCSF((wchar_t *)(aTxtGameWasSave), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1234); /*0x55a0c6*/
@@ -405,7 +405,7 @@ DynamicVector * LoadOptions::vt00(unsigned int * Block, char a2)
 
 // 0x681100
 namespace gamemd {
-void LoadOptions::GetData(void *a1)
+char * LoadOptions::GetData(void *a1)
 {
 
   return (unsigned char *)this + 264; /*0x681106*/

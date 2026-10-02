@@ -18,7 +18,7 @@ struct VectorClass_ptr_FoggedObjectClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_FoggedObjectClass___(unsigned int * Block, char a2);  // 0x45AB00
-    void Destroy(void *a1_1);  // 0x45A070
+    int Destroy(void *a1_1);  // 0x45A070
     unsigned int GetItemIndex(int a2);  // 0x45A0A0
     int Get(int a2, void *a2_2);  // 0x45A0C0
     char Add(int a2, void *a2_2, void *a3_1);  // 0x45A640

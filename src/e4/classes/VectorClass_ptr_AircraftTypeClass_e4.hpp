@@ -19,7 +19,7 @@ struct VectorClass_ptr_AircraftTypeClass {
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_AircraftTypeClass___(unsigned int * Block, char a2);  // 0x4F0840
     DynamicVector * Constructor_VectorClass_UnitTypeClass___(unsigned int * Block, char a2);  // 0x4F08E0
-    void Destroy(void *a1_1);  // 0x4E8DE0
+    int Destroy(void *a1_1);  // 0x4E8DE0
     unsigned int GetItemIndex(int a2);  // 0x4E8E10
     int Get(int a2, void *a2_2);  // 0x4E8E30
     void Destroy_0();  // 0x4E8E40

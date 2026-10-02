@@ -18,7 +18,7 @@ struct VectorClass_ptr_SpawnManagerClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_SpawnManagerClass___(unsigned int * Block, char a2);  // 0x6B8830
-    void Destroy(void *a1_1);  // 0x6B81C0
+    int Destroy(void *a1_1);  // 0x6B81C0
     unsigned int GetItemIndex(int a2);  // 0x6B81F0
     int Get(int a2, void *a2_2);  // 0x6B8210
     char Add(int a2, void *a2_2, void *a3_1);  // 0x6B84E0

@@ -27,9 +27,9 @@ struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_
     DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x4E0E20
     unsigned int * Clear(unsigned int * a2, int a3);  // 0x4E0250
     unsigned int GetCapacity(int a2);  // 0x4E09E0
-    void Destroy(void *a1_1);  // 0x4E0AB0
+    int Destroy(void *a1_1);  // 0x4E0AB0
     unsigned int GetItemIndex(int a2);  // 0x4E0AF0
-    void ddtor(void *a1_1);  // 0x4E0950
+    wchar_t * ddtor(void *a1_1);  // 0x4E0950
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_10[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)

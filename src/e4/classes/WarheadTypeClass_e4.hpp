@@ -249,7 +249,7 @@ struct WarheadTypeClass {
     TypeList_flat * QueryInterface(char a2);
     WarheadTypeClass * parseAnimations(char a2);
     char AddRef(int a2);
-    void Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    _DWORD * Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
     int FindOrCreate(ObjectClass * Source);
     int GetDamage(int a2, int a3);
     int GetObjectSize();

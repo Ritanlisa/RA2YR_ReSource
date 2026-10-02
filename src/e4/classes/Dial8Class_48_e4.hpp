@@ -26,7 +26,7 @@ struct Dial8Class_48 {
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x4A7D70
     char AddRef(int a2);  // 0x4A7D80
     char Release(int a2, unsigned int * a3);  // 0x4A7DC0
-    void ddtor();  // 0x4A7E70
+    wchar_t * ddtor();  // 0x4A7E70
     int Read(unsigned int * a2, void *a2_2);  // 0x4A7EA0
     char SetCapacity(int a2, unsigned int * a3);  // 0x4A7F00
     int FindItem(unsigned int * a2);  // 0x4A7FB0

@@ -165,7 +165,7 @@ void AITriggerTypeClass::EnemyHouseOwns( int a2, unsigned int * a3)
   return result; /*0x41ebb8*/
 }
 // 0x426750
-void AnimFile::AddRef(void * a1, void * a2)
+char AnimFile::AddRef(void * a1, void * a2)
 {
   int v3; // ecx
   int v4; // esi
@@ -207,7 +207,7 @@ void AnimFile::Release()
   this->u32_88 = 0; /*0x4267e4*/
 }
 // 0x426a50
-void AnimFile::Load()
+int AnimFile::Load()
 {
   int result; // eax
 
@@ -717,7 +717,7 @@ void CoopCampaignVector::Seek( int a2)
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5c512a*/
 }
 // 0x5c55f0
-void CoopCampaignVector::AddRef( int a2)
+char CoopCampaignVector::AddRef( int a2)
 {
   int m_8; // esi
   int v3; // edx
@@ -6169,7 +6169,7 @@ void MapSeedClass::Release( char * a2, wchar_t * Source)
   return 1; /*0x5979e9*/
 }
 // 0x597a30
-void MapSeedClass::AddRef( char * Source)
+char MapSeedClass::AddRef( char * Source)
 {
   wchar_t *StringCSF; // eax
   int Int_Overwrite; // eax
@@ -6872,7 +6872,7 @@ void RadarHashVector::Seek( unsigned int * a2, int a3)
   return a2; /*0x658906*/
 }
 // 0x658910
-void RadarHashVector::AddRef( int a2)
+char RadarHashVector::AddRef( int a2)
 {
   int m_8; // edi
   int v3; // esi
@@ -7207,7 +7207,7 @@ void ScoreAnimClass::AnimateText()
   return 0; /*0x690dc6*/
 }
 // 0x690f70
-void ScoreAnimClass::AddRef()
+char ScoreAnimClass::AddRef()
 {
   signed int result; // eax
   int ScoreAnimClass_field_0x14; // edi
@@ -7639,7 +7639,7 @@ void ScoreFontClass::Release( int16_t * a2)
   return v3; /*0x6907cc*/
 }
 // 0x6907e0
-void ScoreFontClass::AddRef(int16_t szSrc)
+char ScoreFontClass::AddRef(int16_t szSrc)
 {
   int v2; // eax
   CHAR szDst; // [esp+7h] [ebp-11h] BYREF
@@ -8560,7 +8560,7 @@ void SuperWeaponClass::FindByName()
   return v1; /*0x773062*/
 }
 // 0x6c39c0
-void TClassFactory_AnimClass::AddRef()
+char TClassFactory_AnimClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -8619,7 +8619,7 @@ void TClassFactory_AnimClass::GetSize()
   return 0; /*0x6c3aa5*/
 }
 // 0x6c5040
-void TClassFactory_BulletClass::AddRef()
+char TClassFactory_BulletClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -8737,14 +8737,14 @@ void TClassFactory_CampaignClass::AdjustRefCOM()
   return 0; /*0x6c01a5*/
 }
 // 0x6c0240
-void TClassFactory_CampaignClass::AddRef()
+char TClassFactory_CampaignClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
   return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c024e*/
 }
 // 0x6bf940
-void TClassFactory_CellClass::AddRef()
+char TClassFactory_CellClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -8803,7 +8803,7 @@ void TClassFactory_CellClass::GetSize()
   return 0; /*0x6bfa25*/
 }
 // 0x6bfac0
-void TClassFactory_EMPulseClass::AddRef()
+char TClassFactory_EMPulseClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -8934,7 +8934,7 @@ void AbstractClassVector::QueryInterface(unsigned int * Block, char a2)
   return ((unsigned char *)(this) + 0x0); /*0x4e0315*/
 }
 // 0x4e0320
-void AbstractClassVector::AddRef( int a2)
+char AbstractClassVector::AddRef( int a2)
 {
   int m_8; // esi
   int v3; // edx
@@ -11355,7 +11355,7 @@ void BlowPipe::DrawAlt( int a2, int a3, int a4)
   return a3; /*0x43805b*/
 }
 // 0x438060
-void BlowPipe::AddRef()
+char BlowPipe::AddRef()
 {
   int v2; // edi
   int v3; // eax
@@ -14849,7 +14849,7 @@ void ConnectionPointClass::QueryInterface(int a1, const void * a2, unsigned int 
   return 0; /*0x4a04be*/
 }
 // 0x4a0520
-void ConnectionPointClass::AddRef(int a1)
+char ConnectionPointClass::AddRef(int a1)
 {
   ++*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x4a052f*/
   return InterlockedIncrement(&this->ConnectionPointClass_field_0x14); /*0x4a053b*/
@@ -18203,7 +18203,7 @@ void LCWPipe::Destructor()
 }
 
 // 0x5522d0
-void LCWPipe_Destru::AddRef()
+char LCWPipe_Destru::AddRef()
 {
   int v2; // edi
   int v3; // eax
@@ -18345,7 +18345,7 @@ void LZOPipe::Destructor()
   return Pipe::Dtor((Pipe *)this); /*0x55c343*/
 }
 // 0x55c5e0
-void LZOPipe_Destru::AddRef()
+char LZOPipe_Destru::AddRef()
 {
   int v2; // edi
   unsigned short *v3; // ebx
@@ -19086,7 +19086,7 @@ void MSBinkAnim::Stop()
   return !v1 || (uint8_t)BinkMovie::IsAtEnd(v1); /*0x5cc892*/
 }
 // 0x5cc8a0
-void MSBinkAnim::Load( int a2, unsigned int * a3)
+int MSBinkAnim::Load( int a2, unsigned int * a3)
 {
   int v3; // ebp
   BinkMovieHandle *v6; // ecx
@@ -19720,7 +19720,7 @@ void MSFont::Release( int16_t * a2)
   return v3; /*0x5d31bb*/
 }
 // 0x5d31d0
-void MSFont::AddRef(uint8_t szSrc)
+char MSFont::AddRef(uint8_t szSrc)
 {
   int v2; // eax
   unsigned int v3[4]; // [esp+4h] [ebp-10h] BYREF
@@ -19876,7 +19876,7 @@ short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
   return v8; /*0x5d3441*/
 }
 // 0x5cb880
-void MSOverlayAnim::Load( int a2, int * a3)
+int MSOverlayAnim::Load( int a2, int * a3)
 {
   signed int v4; // edi
   signed int v5; // eax
@@ -20217,7 +20217,7 @@ void MSOverlayAnim::Init( ObjectClass * aP1, int a3, int a4, int a5, int a6, MSS
   return this; /*0x5cc2de*/
 }
 // 0x5ceac0
-void MSOverlayAnim::AddRef( char a2)
+char MSOverlayAnim::AddRef( char a2)
 {
   this->u32_C = a2; /*0x5ceac4*/
   return a2; /*0x5ceac7*/
@@ -20288,7 +20288,7 @@ void MSPCXAnim::Construct( ObjectClass * aP1, MSAnim * aP2, unsigned int * a3, c
   return ((unsigned char *)(this) + 0x0); /*0x5ce798*/
 }
 // 0x5ce7d0
-void MSPCXAnim::Load( unsigned int * a2, unsigned int * a3)
+int MSPCXAnim::Load( unsigned int * a2, unsigned int * a3)
 {
   int v4; // ecx
   int v5; // ebx
@@ -21055,7 +21055,7 @@ void MSVQAnim::ConstructMSVQAnimHidden(char **aP1, int *aP2, int aP3, char aP3a)
   return ((unsigned char *)(this) + 0x0); /*0x5cce2c*/
 }
 // 0x5cce90
-void MSVQAnim::Load( int a2, unsigned int * a3)
+int MSVQAnim::Load( int a2, unsigned int * a3)
 {
   char **MSVQAnim_field_0x1C; // ecx
   char v5; // al
@@ -24304,7 +24304,7 @@ void ResultNode::CleanupList()
   }
 }
 // 0x642c20
-void SHPClass::Load(char *Source, char *aP2, int aP3)
+int SHPClass::Load(char *Source, char *aP2, int aP3)
 {
   int result; // eax
 
@@ -26696,7 +26696,7 @@ void TAction::CenterOnStartCoords()
   return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 1); /*0x731837*/
 }
 // 0x6c5c40
-void TClassFactory_AITriggerTypeClass::AddRef()
+char TClassFactory_AITriggerTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -26755,7 +26755,7 @@ void TClassFactory_AITriggerTypeClass::GetSize()
   return 0; /*0x6c5d25*/
 }
 // 0x6c36c0
-void TClassFactory_AircraftClass::AddRef()
+char TClassFactory_AircraftClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -26814,7 +26814,7 @@ void TClassFactory_AircraftClass::GetSize()
   return 0; /*0x6c37a5*/
 }
 // 0x6c2ac0
-void TClassFactory_AircraftTypeClass::AddRef()
+char TClassFactory_AircraftTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -26873,7 +26873,7 @@ void TClassFactory_AircraftTypeClass::GetSize()
   return 0; /*0x6c2ba5*/
 }
 // 0x6c0840
-void TClassFactory_AirstrikeClass::AddRef()
+char TClassFactory_AirstrikeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -26932,7 +26932,7 @@ void TClassFactory_AirstrikeClass::GetSize()
   return 0; /*0x6c0925*/
 }
 // 0x6c60c0
-void TClassFactory_AlphaShapeClass::AddRef()
+char TClassFactory_AlphaShapeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -26991,7 +26991,7 @@ void TClassFactory_AlphaShapeClass::GetSize()
   return 0; /*0x6c61a5*/
 }
 // 0x6c3b40
-void TClassFactory_AnimTypeClass::AddRef()
+char TClassFactory_AnimTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27050,7 +27050,7 @@ void TClassFactory_AnimTypeClass::GetSize()
   return 0; /*0x6c3c25*/
 }
 // 0x6c1140
-void TClassFactory_BombClass::AddRef()
+char TClassFactory_BombClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27109,7 +27109,7 @@ void TClassFactory_BombClass::GetSize()
   return 0; /*0x6c1225*/
 }
 // 0x6c3540
-void TClassFactory_BuildingClass::AddRef()
+char TClassFactory_BuildingClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27168,7 +27168,7 @@ void TClassFactory_BuildingClass::GetSize()
   return 0; /*0x6c3625*/
 }
 // 0x6c03c0
-void TClassFactory_BuildingLightClass::AddRef()
+char TClassFactory_BuildingLightClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27226,7 +27226,7 @@ void TClassFactory_BuildingLightClass::GetSize()
   return 0; /*0x6c04a5*/
 }
 // 0x6c2940
-void TClassFactory_BuildingTypeClass::AddRef()
+char TClassFactory_BuildingTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27285,7 +27285,7 @@ void TClassFactory_BuildingTypeClass::GetSize()
   return 0; /*0x6c2a25*/
 }
 // 0x6c2dc0
-void TClassFactory_BulletTypeClass::AddRef()
+char TClassFactory_BulletTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27344,7 +27344,7 @@ void TClassFactory_BulletTypeClass::GetSize()
   return 0; /*0x6c2ea5*/
 }
 // 0x6c0cc0
-void TClassFactory_CaptureManagerClass::AddRef()
+char TClassFactory_CaptureManagerClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27403,7 +27403,7 @@ void TClassFactory_CaptureManagerClass::GetSize()
   return 0; /*0x6c0da5*/
 }
 // 0x6c0e40
-void TClassFactory_DiskLaserClass::AddRef()
+char TClassFactory_DiskLaserClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27462,7 +27462,7 @@ void TClassFactory_DiskLaserClass::GetSize()
   return 0; /*0x6c0f25*/
 }
 // 0x6c3fc0
-void TClassFactory_DriveLocomotionClass::AddRef()
+char TClassFactory_DriveLocomotionClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27521,7 +27521,7 @@ void TClassFactory_DriveLocomotionClass::GetSize()
   return 0; /*0x6c40a5*/
 }
 // 0x6c48c0
-void TClassFactory_DropPodLocomotionClass::AddRef()
+char TClassFactory_DropPodLocomotionClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27580,7 +27580,7 @@ void TClassFactory_DropPodLocomotionClass::GetSize()
   return 0; /*0x6c49a5*/
 }
 // 0x6c51c0
-void TClassFactory_FactoryClass::AddRef()
+char TClassFactory_FactoryClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27639,7 +27639,7 @@ void TClassFactory_FactoryClass::GetSize()
   return 0; /*0x6c52a5*/
 }
 // 0x6c4a40
-void TClassFactory_FlyLocomotionClass::AddRef()
+char TClassFactory_FlyLocomotionClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27698,7 +27698,7 @@ void TClassFactory_FlyLocomotionClass::GetSize()
   return 0; /*0x6c4b25*/
 }
 // 0x6c5f40
-void TClassFactory_FoggedObjectClass::AddRef()
+char TClassFactory_FoggedObjectClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27757,7 +27757,7 @@ void TClassFactory_FoggedObjectClass::GetSize()
   return 0; /*0x6c6025*/
 }
 // 0x6c3e40
-void TClassFactory_HouseClass::AddRef()
+char TClassFactory_HouseClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27816,7 +27816,7 @@ void TClassFactory_HouseClass::GetSize()
   return 0; /*0x6c3f25*/
 }
 // 0x6c3cc0
-void TClassFactory_HouseTypeClass::AddRef()
+char TClassFactory_HouseTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27875,7 +27875,7 @@ void TClassFactory_HouseTypeClass::GetSize()
   return 0; /*0x6c3da5*/
 }
 // 0x6c42c0
-void TClassFactory_HoverLocomotionClass::AddRef()
+char TClassFactory_HoverLocomotionClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27934,7 +27934,7 @@ void TClassFactory_HoverLocomotionClass::GetSize()
   return 0; /*0x6c43a5*/
 }
 // 0x6c3840
-void TClassFactory_InfantryClass::AddRef()
+char TClassFactory_InfantryClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -27993,7 +27993,7 @@ void TClassFactory_InfantryClass::GetSize()
   return 0; /*0x6c3925*/
 }
 // 0x6c2c40
-void TClassFactory_InfantryTypeClass::AddRef()
+char TClassFactory_InfantryTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28052,7 +28052,7 @@ void TClassFactory_InfantryTypeClass::GetSize()
   return 0; /*0x6c2d25*/
 }
 // 0x6c2f40
-void TClassFactory_IsometricTileTypeClass::AddRef()
+char TClassFactory_IsometricTileTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28111,7 +28111,7 @@ void TClassFactory_IsometricTileTypeClass::GetSize()
   return 0; /*0x6c3025*/
 }
 // 0x6c4140
-void TClassFactory_JumpjetLocomotionClass::AddRef()
+char TClassFactory_JumpjetLocomotionClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28170,7 +28170,7 @@ void TClassFactory_JumpjetLocomotionClass::GetSize()
   return 0; /*0x6c4225*/
 }
 // 0x6bfc40
-void TClassFactory_LightSourceClass::AddRef()
+char TClassFactory_LightSourceClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28229,7 +28229,7 @@ void TClassFactory_LightSourceClass::GetSize()
   return 0; /*0x6bfd25*/
 }
 // 0x6c5dc0
-void TClassFactory_NeuronClass::AddRef()
+char TClassFactory_NeuronClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28288,7 +28288,7 @@ void TClassFactory_NeuronClass::GetSize()
   return 0; /*0x6c5ea5*/
 }
 // 0x6c30c0
-void TClassFactory_OverlayTypeClass::AddRef()
+char TClassFactory_OverlayTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28347,7 +28347,7 @@ void TClassFactory_OverlayTypeClass::GetSize()
   return 0; /*0x6c31a5*/
 }
 // 0x6c0fc0
-void TClassFactory_ParasiteClass::AddRef()
+char TClassFactory_ParasiteClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28458,7 +28458,7 @@ void TClassFactory_ParticleClass::GetSize()
   return 0; /*0x6c5725*/
 }
 // 0x6c5940
-void TClassFactory_ParticleSystemClass::AddRef()
+char TClassFactory_ParticleSystemClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28517,7 +28517,7 @@ void TClassFactory_ParticleSystemClass::GetSize()
   return 0; /*0x6c5a25*/
 }
 // 0x6c5ac0
-void TClassFactory_ParticleSystemTypeClass::AddRef()
+char TClassFactory_ParticleSystemTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28576,7 +28576,7 @@ void TClassFactory_ParticleSystemTypeClass::GetSize()
   return 0; /*0x6c5ba5*/
 }
 // 0x6c57c0
-void TClassFactory_ParticleTypeClass::AddRef()
+char TClassFactory_ParticleTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28635,7 +28635,7 @@ void TClassFactory_ParticleTypeClass::GetSize()
   return 0; /*0x6c58a5*/
 }
 // 0x6c12c0
-void TClassFactory_RadSiteClass::AddRef()
+char TClassFactory_RadSiteClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28694,7 +28694,7 @@ void TClassFactory_RadSiteClass::GetSize()
   return 0; /*0x6c13a5*/
 }
 // 0x6c4440
-void TClassFactory_RocketLocomotionClass::AddRef()
+char TClassFactory_RocketLocomotionClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28753,7 +28753,7 @@ void TClassFactory_RocketLocomotionClass::GetSize()
   return 0; /*0x6c4525*/
 }
 // 0x6c1d40
-void TClassFactory_ScriptClass::AddRef()
+char TClassFactory_ScriptClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28812,7 +28812,7 @@ void TClassFactory_ScriptClass::GetSize()
   return 0; /*0x6c1e25*/
 }
 // 0x6c1ec0
-void TClassFactory_ScriptTypeClass::AddRef()
+char TClassFactory_ScriptTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28871,7 +28871,7 @@ void TClassFactory_ScriptTypeClass::GetSize()
   return 0; /*0x6c1fa5*/
 }
 // 0x6c4ec0
-void TClassFactory_ShipLocomotionClass::AddRef()
+char TClassFactory_ShipLocomotionClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28930,7 +28930,7 @@ void TClassFactory_ShipLocomotionClass::GetSize()
   return 0; /*0x6c4fa5*/
 }
 // 0x6bfdc0
-void TClassFactory_SideClass::AddRef()
+char TClassFactory_SideClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -28989,7 +28989,7 @@ void TClassFactory_SideClass::GetSize()
   return 0; /*0x6bfea5*/
 }
 // 0x6c0b40
-void TClassFactory_SlaveManagerClass::AddRef()
+char TClassFactory_SlaveManagerClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29048,7 +29048,7 @@ void TClassFactory_SlaveManagerClass::GetSize()
   return 0; /*0x6c0c25*/
 }
 // 0x6c3240
-void TClassFactory_SmudgeTypeClass::AddRef()
+char TClassFactory_SmudgeTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29107,7 +29107,7 @@ void TClassFactory_SmudgeTypeClass::GetSize()
   return 0; /*0x6c3325*/
 }
 // 0x6c09c0
-void TClassFactory_SpawnManagerClass::AddRef()
+char TClassFactory_SpawnManagerClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29166,7 +29166,7 @@ void TClassFactory_SpawnManagerClass::GetSize()
   return 0; /*0x6c0aa5*/
 }
 // 0x6c18c0
-void TClassFactory_TActionClass::AddRef()
+char TClassFactory_TActionClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29225,7 +29225,7 @@ void TClassFactory_TActionClass::GetSize()
   return 0; /*0x6c19a5*/
 }
 // 0x6c1440
-void TClassFactory_TEventClass::AddRef()
+char TClassFactory_TEventClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29284,7 +29284,7 @@ void TClassFactory_TEventClass::GetSize()
   return 0; /*0x6c1525*/
 }
 // 0x6c2040
-void TClassFactory_TagClass::AddRef()
+char TClassFactory_TagClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29343,7 +29343,7 @@ void TClassFactory_TagClass::GetSize()
   return 0; /*0x6c2125*/
 }
 // 0x6c21c0
-void TClassFactory_TagTypeClass::AddRef()
+char TClassFactory_TagTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29402,7 +29402,7 @@ void TClassFactory_TagTypeClass::GetSize()
   return 0; /*0x6c22a5*/
 }
 // 0x6c2640
-void TClassFactory_TaskForceClass::AddRef()
+char TClassFactory_TaskForceClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29461,7 +29461,7 @@ void TClassFactory_TaskForceClass::GetSize()
   return 0; /*0x6c2725*/
 }
 // 0x6c2340
-void TClassFactory_TeamClass::AddRef()
+char TClassFactory_TeamClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29520,7 +29520,7 @@ void TClassFactory_TeamClass::GetSize()
   return 0; /*0x6c2425*/
 }
 // 0x6c24c0
-void TClassFactory_TeamTypeClass::AddRef()
+char TClassFactory_TeamTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29579,7 +29579,7 @@ void TClassFactory_TeamTypeClass::GetSize()
   return 0; /*0x6c25a5*/
 }
 // 0x6c4bc0
-void TClassFactory_TeleportLocomotionClass::AddRef()
+char TClassFactory_TeleportLocomotionClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29638,7 +29638,7 @@ void TClassFactory_TeleportLocomotionClass::GetSize()
   return 0; /*0x6c4ca5*/
 }
 // 0x6c06c0
-void TClassFactory_TemporalClass::AddRef()
+char TClassFactory_TemporalClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29697,7 +29697,7 @@ void TClassFactory_TemporalClass::GetSize()
   return 0; /*0x6c07a5*/
 }
 // 0x6bff40
-void TClassFactory_TiberiumClass::AddRef()
+char TClassFactory_TiberiumClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29761,7 +29761,7 @@ void TClassFactory_TiberiumClass::GetSize()
   return result; /*0x6c002e*/
 }
 // 0x6c1a40
-void TClassFactory_TriggerClass::AddRef()
+char TClassFactory_TriggerClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29820,7 +29820,7 @@ void TClassFactory_TriggerClass::GetSize()
   return 0; /*0x6c1b25*/
 }
 // 0x6c1bc0
-void TClassFactory_TriggerTypeClass::AddRef()
+char TClassFactory_TriggerTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29879,7 +29879,7 @@ void TClassFactory_TriggerTypeClass::GetSize()
   return 0; /*0x6c1ca5*/
 }
 // 0x6c45c0
-void TClassFactory_TunnelLocomotionClass::AddRef()
+char TClassFactory_TunnelLocomotionClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29938,7 +29938,7 @@ void TClassFactory_TunnelLocomotionClass::GetSize()
   return 0; /*0x6c46a5*/
 }
 // 0x6c33c0
-void TClassFactory_UnitClass::AddRef()
+char TClassFactory_UnitClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -29999,7 +29999,7 @@ void TClassFactory_UnitClass::GetSize()
   return 0; /*0x6c34a5*/
 }
 // 0x6c27c0
-void TClassFactory_UnitTypeClass::AddRef()
+char TClassFactory_UnitTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -30058,7 +30058,7 @@ void TClassFactory_UnitTypeClass::GetSize()
   return 0; /*0x6c28a5*/
 }
 // 0x6c1740
-void TClassFactory_VoxelAnimClass::AddRef()
+char TClassFactory_VoxelAnimClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -30117,7 +30117,7 @@ void TClassFactory_VoxelAnimClass::GetSize()
   return 0; /*0x6c1825*/
 }
 // 0x6c15c0
-void TClassFactory_VoxelAnimTypeClass::AddRef()
+char TClassFactory_VoxelAnimTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -30176,7 +30176,7 @@ void TClassFactory_VoxelAnimTypeClass::GetSize()
   return 0; /*0x6c16a5*/
 }
 // 0x6c4740
-void TClassFactory_WalkLocomotionClass::AddRef()
+char TClassFactory_WalkLocomotionClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -30235,7 +30235,7 @@ void TClassFactory_WalkLocomotionClass::GetSize()
   return 0; /*0x6c4825*/
 }
 // 0x6c5340
-void TClassFactory_WarheadTypeClass::AddRef()
+char TClassFactory_WarheadTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -30294,7 +30294,7 @@ void TClassFactory_WarheadTypeClass::GetSize()
   return 0; /*0x6c5425*/
 }
 // 0x6c0540
-void TClassFactory_WaypointPathClass::AddRef()
+char TClassFactory_WaypointPathClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -30353,7 +30353,7 @@ void TClassFactory_WaypointPathClass::GetSize()
   return 0; /*0x6c0625*/
 }
 // 0x6c54c0
-void TClassFactory_WeaponTypeClass::AddRef()
+char TClassFactory_WeaponTypeClass::AddRef()
 {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -33009,7 +33009,7 @@ void WinModemClass::Construct()
   return ((unsigned char *)(this) + 0x0); /*0x774168*/
 }
 // 0x774410
-void WinModemClass::AddRef( const char * a2, DWORD a3, BYTE a4, BYTE a5, char a6)
+char WinModemClass::AddRef( const char * a2, DWORD a3, BYTE a4, BYTE a5, char a6)
 {
   HANDLE FileA; // ebp
   DWORD v9; // edx

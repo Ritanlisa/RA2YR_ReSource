@@ -18,7 +18,7 @@ struct VectorClass_ptr_LaserDrawClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_LaserDrawClass___(unsigned int * Block, char a2);  // 0x5515E0
-    void Destroy(void *a1_1);  // 0x5512D0
+    int Destroy(void *a1_1);  // 0x5512D0
     unsigned int GetItemIndex(int a2);  // 0x551300
     int Get(int a2, void *a2_2);  // 0x551320
     char Add(int a2, void *a2_2, void *a3_1);  // 0x551330

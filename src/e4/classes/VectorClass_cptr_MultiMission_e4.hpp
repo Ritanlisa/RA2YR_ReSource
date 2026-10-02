@@ -18,7 +18,7 @@ struct VectorClass_cptr_MultiMission {
 // --- flat members (END) ---
     int j_vt09(unsigned char * a1, signed int a3, int a4, int a5, int a6, int a7);  // 0x5EF190
     unsigned int * j_vt00(char a2);  // 0x5EF290
-    void Destroy(void *a1_1);  // 0x5EEBB0
+    int Destroy(void *a1_1);  // 0x5EEBB0
     char SetAt(int a2, unsigned int * a3);  // 0x5EEC50
     char SetCapacity(int a2, unsigned int * a3);  // 0x5EED90
     int FindItemIndex(unsigned int * a2);  // 0x5EEE90

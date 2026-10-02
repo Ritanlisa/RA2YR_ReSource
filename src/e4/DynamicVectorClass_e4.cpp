@@ -1245,7 +1245,7 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
 
 // 0x50EA00
 namespace gamemd {  // G42.18c ns repair
-void DynamicVectorClass_flat::Destroy(void *a1)
+int DynamicVectorClass_flat::Destroy(void *a1)
 {
 
   int result; // eax
@@ -1287,7 +1287,7 @@ VectorClass_flat * DynamicVectorClass_AnimType::Add(unsigned int * Block, char a
 
 // 0x5251C0
 namespace gamemd {  // G42.18c ns repair
-void DynamicVectorClass_flat::Destroy_Alt()
+int DynamicVectorClass_flat::Destroy_Alt()
 {
 
   int result; // eax

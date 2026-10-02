@@ -699,7 +699,7 @@ struct SessionClass {
     void ** ResetSystemWOL_Reset(char a2);
     void SetInstance();
     void SetupNetwork();
-    void ddtor(void *a1);
+    wchar_t * ddtor(void *a1);
     void removePlayer();
 };
 

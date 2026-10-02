@@ -391,7 +391,7 @@ LABEL_111: v19 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_Open), 0,(const 
 } // namespace gamemd
 // 0x5EBA00
 namespace gamemd {
-void Lobby::SetupPlayerWidgets(HWND hDlg)
+int Lobby::SetupPlayerWidgets(HWND hDlg)
 {
 
   ObjectClass *v1; // esi

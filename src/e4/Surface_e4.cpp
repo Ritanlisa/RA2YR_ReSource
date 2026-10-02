@@ -253,7 +253,7 @@ LABEL_16:
 } // namespace gamemd
 // 0x626C60
 namespace gamemd {
-void sub_626C60()
+int sub_626C60()
 {
   unsigned int *v0; // eax
   unsigned int *v1; // ebx

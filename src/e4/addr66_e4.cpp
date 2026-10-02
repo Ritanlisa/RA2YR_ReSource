@@ -61,7 +61,7 @@
 
 // 0x6613A0
 namespace gamemd {
-void Color_ComputeSaturation(unsigned int a1, int a2, int a3)
+int Color_ComputeSaturation(unsigned int a1, int a2, int a3)
 {
   int v3; // edi
   int v4; // eax
@@ -224,7 +224,7 @@ unsigned char * sub_661640(unsigned short * a1, unsigned char * a2)
 }
 // 0x6622C0
 namespace gamemd {
-void UpdateBullets(int a1)
+char UpdateBullets(int a1)
 {
   ObjectClass *v1; // ecx
   ObjectClass *v3; // eax

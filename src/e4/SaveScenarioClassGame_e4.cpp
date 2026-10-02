@@ -27,7 +27,7 @@
 
 // 0x67CEF0
 namespace gamemd {
-void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * Source, int a3)
+char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * Source, int a3)
 {
   int v6; // eax
   char v7; // bl

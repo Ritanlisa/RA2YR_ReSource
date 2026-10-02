@@ -20,7 +20,7 @@ struct VectorClass_ptr_AITriggerTypeClass {
     DynamicVector * Constructor_VectorClass_AITriggerTypeClass___(unsigned int * Block, char a2);  // 0x4EF710
     DynamicVector * Constructor_VectorClass_TriggerClass___(unsigned int * Block, char a2);  // 0x4EF9E0
     DynamicVector * Constructor_VectorClass_TriggerTypeClass___(unsigned int * Block, char a2);  // 0x4EFA80
-    void Destroy(void *a1_1);  // 0x4E83B0
+    int Destroy(void *a1_1);  // 0x4E83B0
     unsigned int GetItemIndex(int a2);  // 0x4E83E0
     int Get(int a2, void *a2_2);  // 0x4E8400
     void Destroy_0();  // 0x4E8540

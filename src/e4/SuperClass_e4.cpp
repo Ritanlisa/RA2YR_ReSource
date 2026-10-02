@@ -120,7 +120,7 @@ int SuperClass::Constructor(void *a1, void *a2, void *a3)
 }
 // 0x6CAF90
 namespace gamemd {
-void SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5, void *a6)
+int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v4; // edx

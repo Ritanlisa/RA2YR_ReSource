@@ -405,7 +405,7 @@ LABEL_73:
 } // namespace gamemd
 // 0x5A76E0
 namespace gamemd {
-void MapSeedClass::ValidateRectBounds(void *a1)
+char MapSeedClass::ValidateRectBounds(void *a1)
 {
 
   int v2; // ecx

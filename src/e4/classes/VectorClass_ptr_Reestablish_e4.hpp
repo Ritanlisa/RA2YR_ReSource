@@ -17,12 +17,12 @@ struct VectorClass_ptr_Reestablish {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy(void *a1_1);  // 0x45A0D0
+    int Destroy(void *a1_1);  // 0x45A0D0
     unsigned int GetItemIndex(int a2);  // 0x45A100
     int Clear(int a2);  // 0x45A120
     char AddRef(int a2);  // 0x45A760
     char Remove(int a2, unsigned int * a3);  // 0x45A7A0
-    void ddtor(void *a1_1);  // 0x45A850
+    wchar_t * ddtor(void *a1_1);  // 0x45A850
     int GetSize(unsigned int * a2);  // 0x45A880
     unsigned int Get(int a2, void *a2_2);  // 0x45A8C0
     char SetCapacity(int a2, unsigned int * a3);  // 0x45A8E0

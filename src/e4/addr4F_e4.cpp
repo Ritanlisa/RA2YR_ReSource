@@ -146,7 +146,7 @@ long sub_4F1840()
 }
 // 0x4F18B0
 namespace gamemd {
-void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
+int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax
   wchar_t * DlgItem;

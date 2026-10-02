@@ -258,7 +258,7 @@ struct MPCooperative {
     void processPlayerInput();  // 0x5C50D0
     char AddRef(int a2);  // 0x5C5130
     char Release(int a2, unsigned int * a3);  // 0x5C5170
-    void ddtor();  // 0x5C5220
+    wchar_t * ddtor();  // 0x5C5220
     int checkTimeout(unsigned int * a2);  // 0x5C5250
     char migrateHost(int a2, unsigned int * a3);  // 0x5C52B0
     int validatePlayerAction(unsigned int * a2);  // 0x5C5360

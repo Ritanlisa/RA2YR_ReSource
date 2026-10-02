@@ -15,7 +15,7 @@ struct ShpFrameRaw {
 };
 #pragma pack(pop)
 
-void SHPStruct::Load()
+int SHPStruct::Load()
 {
     Unload();
 }

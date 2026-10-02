@@ -26,7 +26,7 @@ struct EventQueue {
 // --- flat members (END) ---
     void Check(void *a1, void *a2, void *a3);
     void Process();
-    void Read();
+    short Read();
 };
 
 } // namespace gamemd

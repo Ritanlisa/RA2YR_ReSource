@@ -31,12 +31,12 @@ struct BinkMovieHandle {
 // --- flat members (END) ---
     BOOL COMStub();
     BinkMovieHandle * QueryInterface(char a2);
-    void AddRef(void *a1);
+    char AddRef(void *a1);
     int AdjustSurfaceFormat(int a2, void *a2_2);
     void Check(int a2, void *a2_2, void *a3);
     int InitFromFile(void *a1, void *a2);
     int Pause(int a2, int a3);
-    void Release(void *a1);
+    int Release(void *a1);
     int RenderFrameClipped(int a2, int a3, void *a3_2);
     int RenderLoop(int a2, void *a2_2, void *a3, void *a4);
     int _vt03(unsigned char a2);

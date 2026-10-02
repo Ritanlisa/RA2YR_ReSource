@@ -9,7 +9,7 @@
 
 // 0x487F40
 namespace gamemd {
-void Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
+int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 {
 
   LONG *v3; // edx

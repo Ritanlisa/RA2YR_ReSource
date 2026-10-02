@@ -7,7 +7,7 @@
 
 // 0x5EA180
 namespace gamemd {
-void GameLobby_Setup(HWND hDlg, void * a2)
+char GameLobby_Setup(HWND hDlg, void * a2)
 {
   int i; // esi
   int v4; // eax

@@ -17,7 +17,7 @@ struct VectorClass_ptr_ScriptClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy(void *a1_1);  // 0x40E7F0
+    int Destroy(void *a1_1);  // 0x40E7F0
     unsigned int GetItemIndex(int a2);  // 0x40E820
     int Get(int a2, void *a2_2);  // 0x40E840
     char Add(int a2, void *a2_2, void *a3_1);  // 0x40E850

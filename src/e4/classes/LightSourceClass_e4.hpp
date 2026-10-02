@@ -50,7 +50,7 @@ struct LightSourceClass {
     int StubReturn76();
     int Write(AbstractClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
-    void Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
+    _DWORD * Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
 };
 
 } // namespace gamemd

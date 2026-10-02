@@ -339,7 +339,7 @@ ObjectClass * * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigne
 }
 // 0x5B4B10
 namespace gamemd {
-void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
+int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax
   LONG WindowLongA; // ebp

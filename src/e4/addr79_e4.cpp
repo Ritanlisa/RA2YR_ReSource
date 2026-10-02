@@ -108,7 +108,7 @@ void sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 }
 // 0x793280
 namespace gamemd {
-void sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
+int sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 {
   int result; // eax
   int v5; // edi
@@ -332,7 +332,7 @@ int sub_793B30(char a1, const char * a2)
 }
 // 0x793D20
 namespace gamemd {
-void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
+char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
 {
   IUnknown * v3;
   int v4; // esi

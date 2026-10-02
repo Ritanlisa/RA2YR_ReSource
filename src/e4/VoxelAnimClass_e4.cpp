@@ -344,7 +344,7 @@ LABEL_6:
 }
 // 0x749F30
 namespace gamemd {
-void VoxelAnimClass::VoxelAnimClass_Update()
+int VoxelAnimClass::VoxelAnimClass_Update()
 {
 
   VoxelAnimClass *v1; // ebx

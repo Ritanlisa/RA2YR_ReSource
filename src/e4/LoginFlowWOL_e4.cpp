@@ -24,7 +24,7 @@
 
 // 0x786EF0
 namespace gamemd {
-void sub_786EF0()
+char sub_786EF0()
 {
   const unsigned int v2;
   int v3; // [esp-4h] [ebp-10Ch]

@@ -42,7 +42,7 @@
 
 // 0x4B0500
 namespace gamemd {
-void JumpjetLocomotionClass_Process(int a1)
+char JumpjetLocomotionClass_Process(int a1)
 {
   unsigned int v1;
   char *v2; // edi

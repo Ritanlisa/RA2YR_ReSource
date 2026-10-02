@@ -68,7 +68,7 @@ Coord * * sub_77E110()
 }
 // 0x785EA0
 namespace gamemd {
-void sub_785EA0()
+int sub_785EA0()
 {
   unsigned int v1; // eax
   unsigned int i; // ebx

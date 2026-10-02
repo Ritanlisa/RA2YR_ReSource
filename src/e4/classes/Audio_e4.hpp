@@ -87,7 +87,7 @@ struct Audio {
     void * ProcessMixerOutput(char * Source);  // 0x4063B0
     int ApplyFormatFlags(int * a1, char * a2);  // 0x406870
     int WaitForCallback(void *a1_1);  // 0x4070B0
-    void Release();  // 0x407F40
+    int Release();  // 0x407F40
     int IsSoundPlaying();  // 0x408070
     int CalcRate(int a2, int a3);  // 0x408540
     int GetSampleSize(void *a1_1);  // 0x409320

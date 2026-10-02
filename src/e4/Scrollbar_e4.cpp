@@ -11,7 +11,7 @@
 
 // 0x6205D0
 namespace gamemd {
-void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a5, unsigned char a6, unsigned char a7, unsigned char a8)
+char Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a5, unsigned char a6, unsigned char a7, unsigned char a8)
 {
   int result; // eax
   int v9; // esi

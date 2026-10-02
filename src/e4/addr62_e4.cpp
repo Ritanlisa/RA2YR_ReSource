@@ -61,7 +61,7 @@
 
 // 0x620050
 namespace gamemd {
-void Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5)
+int Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5)
 {
     unsigned int v15 = 0;  /* G37 hoist */
   int v5; // ebp
@@ -359,7 +359,7 @@ void Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a
 }
 // 0x6208F0
 namespace gamemd {
-void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
+int Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
 {
   int v4; // ebp
   int v7; // edx
@@ -634,7 +634,7 @@ int ComputeHashModPrime(int * a1, int * a2, int a3)
 }
 // 0x621040
 namespace gamemd {
-void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
+int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
   int *v10; // esi
   void * v11;
@@ -713,7 +713,7 @@ double sub_621150(int a1)
 }
 // 0x6211D0
 namespace gamemd {
-void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9)
+int DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9)
 {
   unsigned int v9;
   unsigned int * v12;
@@ -1003,7 +1003,7 @@ unsigned int * E4Recv_6223C0::DestroyDialog(void *a1_1)
 }
 // 0x622470
 namespace gamemd {
-void AddDynamicVector(HWND a1, int * a2)
+int AddDynamicVector(HWND a1, int * a2)
 {
   int v3; // ebp
   int v4; // eax

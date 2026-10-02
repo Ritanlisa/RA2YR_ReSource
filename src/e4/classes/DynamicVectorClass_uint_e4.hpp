@@ -53,7 +53,7 @@ struct DynamicVectorClass_uint {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    void ddtor(void *a1_1);  // 0x42D540
+    wchar_t * ddtor(void *a1_1);  // 0x42D540
     int Clear(int a2);  // 0x42D590
     char AddRef(int a2);  // 0x42D600
     char SetCapacity(int a2, unsigned int * a3);  // 0x42D640

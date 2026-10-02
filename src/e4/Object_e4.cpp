@@ -339,7 +339,7 @@ LABEL_20:
 }
 // 0x5902C0
 namespace gamemd {
-void sub_5902C0(int a1)
+char sub_5902C0(int a1)
 {
   int *v1; // ebx
   int16_t v2; // ax
@@ -877,7 +877,7 @@ LABEL_34:
 }
 // 0x639E30
 namespace gamemd {
-void sub_639E30(int * a1, unsigned int * a2)
+char sub_639E30(int * a1, unsigned int * a2)
 {
   int v4; // eax
   int v5; // edx
@@ -1271,7 +1271,7 @@ char Object_Calc_7DF191(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
 }
 // 0x7DF280
 namespace gamemd {
-void Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
+char Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
 {
   unsigned char *v8; // esi
   unsigned short *v9; // edi

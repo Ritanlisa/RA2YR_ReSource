@@ -63,7 +63,7 @@
 
 // 0x5A1350
 namespace gamemd {
-void Terrain_SelectTileVariant(int a1)
+int Terrain_SelectTileVariant(int a1)
 {
   int v1; // eax
   unsigned int v2; // eax
@@ -456,7 +456,7 @@ int E4Recv_5A1C70::sub_5A1C70()
 }
 // 0x5A33F0
 namespace gamemd {
-void GenerateTerrainHeightMapInternal()
+int GenerateTerrainHeightMapInternal()
 {
   int result; // eax
   int *i; // edi
@@ -546,7 +546,7 @@ void GenerateTerrainHeightMapInternal()
 }
 // 0x5A45E0
 namespace gamemd {
-void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
+int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
 {
   int v3; // edi
   float *v4; // eax
@@ -1242,7 +1242,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
 }
 // 0x5A6920
 namespace gamemd {
-void PlaceRandomNeutralUnits(int a1)
+int PlaceRandomNeutralUnits(int a1)
 {
   void *v1; // eax
   IUnknown *Owner; // ebp

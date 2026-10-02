@@ -447,7 +447,7 @@ unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, in
 }
 // 0x732770
 namespace gamemd {
-void TechnoClass_StepCleanupIfHuman(int a1, void * a2)
+int TechnoClass_StepCleanupIfHuman(int a1, void * a2)
 {
   char v4; // al
   BOOL result; // eax
@@ -466,7 +466,7 @@ void TechnoClass_StepCleanupIfHuman(int a1, void * a2)
 }
 // 0x732950
 namespace gamemd {
-void SelectAllOfType()
+int SelectAllOfType()
 {
   int result; // eax
   int v2; // edi

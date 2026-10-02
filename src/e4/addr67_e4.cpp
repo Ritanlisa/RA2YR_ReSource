@@ -84,7 +84,7 @@ int sub_679CC0()
 }
 // 0x67B550
 namespace gamemd {
-void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorClass_flat * aP2, unsigned char * a3, unsigned int * a4)
+int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorClass_flat * aP2, unsigned char * a3, unsigned int * a4)
 {
     unsigned int v17 = 0;  /* G37 hoist */
   char *i; // eax

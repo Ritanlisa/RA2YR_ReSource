@@ -34,7 +34,7 @@ struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
     DynamicVector * Destructor_1(unsigned int * Block, char a2);  // 0x628640
     char * Add(unsigned int * Block, char a2, void *a3_1);  // 0x628690
     DynamicVector * Destructor_2(unsigned int * Block, char a2);  // 0x6287B0
-    void ddtor(void *a1_1);  // 0x628800
+    wchar_t * ddtor(void *a1_1);  // 0x628800
     unsigned int GetCount(int a2);  // 0x627D50
     unsigned int GetItemIndex(int a2);  // 0x627DB0
     int GetItem(int a2, int a3);  // 0x627DE0

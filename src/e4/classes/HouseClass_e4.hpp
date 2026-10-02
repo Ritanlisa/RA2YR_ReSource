@@ -1904,7 +1904,7 @@ struct HouseClass {
     void AcquiredThreatNode();
     int Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6);
     void LostPoweredCenter(int a2, void *a2_2);
-    void ResetObjectOrders(char a1, int a2);
+    int ResetObjectOrders(char a1, int a2);
     void vt_03_();
     static double CalcProductionSpeed(...);  // C2597 interim stub
      double FindByName(...);  // C2597 interim stub

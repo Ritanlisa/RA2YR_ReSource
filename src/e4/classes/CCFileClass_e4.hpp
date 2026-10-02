@@ -43,7 +43,7 @@ struct CCFileClass {
     unsigned int u32_68;
 // --- flat members (END) ---
     AudioController * * Close();
-    void Destruct(void *a1, void *a2);
+    int Destruct(void *a1, void *a2);
     int GetFileSize(void *a1, void *a2);
     void ProcessStream(unsigned int a1);
     static double Construct3(...);  // C2597 interim stub
@@ -53,7 +53,7 @@ struct CCFileClass {
     static double Reset(...);  // C2597 interim stub
     static double GetSize(...);  // C2597 interim stub
     void Construct2(char **a2);  // init file object with name
-     void Construct(void * self, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a1 = 0);
+     _DWORD * Construct(void * self, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a1 = 0);
     LONG Load();  // 0x595bc0
     int Reopen(char *Source, CHAR *a3);  // 0x47af10
 };

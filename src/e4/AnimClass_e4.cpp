@@ -41,7 +41,7 @@
 
 // 0x4228E0
 namespace gamemd {
-void AnimClass::Destruct(void * a2, void *a2_2)
+int AnimClass::Destruct(void * a2, void *a2_2)
 {
 
   unsigned char *AnimClass_field_0xCC; // ebp

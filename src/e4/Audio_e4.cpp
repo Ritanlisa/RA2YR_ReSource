@@ -276,7 +276,7 @@ int Audio::WaitForCallback(void *a1_1)
 }
 // 0x407F40
 namespace gamemd {
-void Audio::Release()
+int Audio::Release()
 {
 
   int result; // eax
@@ -462,7 +462,7 @@ char ** Audio::SetSoundFileName(char *Source, int a3)
 }
 // 0x63F2E0
 namespace gamemd {
-void sub_63F2E0(int a1, int a2, int a3, int a4, int a5, int a6, unsigned int ** a7)
+int sub_63F2E0(int a1, int a2, int a3, int a4, int a5, int a6, unsigned int ** a7)
 {
   unsigned int *v7; // ebx
   int v8; // edi

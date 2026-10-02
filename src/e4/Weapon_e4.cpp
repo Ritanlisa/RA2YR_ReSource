@@ -44,7 +44,7 @@ int sub_53AE00()
 }
 // 0x659CA0
 namespace gamemd {
-void Weapon_Update(void * a1, void * a2)
+bool Weapon_Update(void * a1, void * a2)
 {
   int v2; // ecx
   int v3; // edi

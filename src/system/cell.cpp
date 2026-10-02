@@ -291,7 +291,7 @@ int CellClass::RegisterForRedraw(int a1, int a2)
   return result; /*0x7236c2*/
 }
 // 0x47e8a0
-void CellClass::AddContent(ObjectClass* content, bool on_bridge)
+char CellClass::AddContent(ObjectClass* content, bool on_bridge)
 {
   int v3; // eax
   int v5; // esi

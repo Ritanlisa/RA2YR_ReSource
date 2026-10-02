@@ -172,7 +172,7 @@ LABEL_6:
 }
 // 0x775690
 namespace gamemd {
-void ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
+int ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
 {
   int result; // eax
   int v4; // edi
@@ -250,7 +250,7 @@ const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndPa
 }
 // 0x7757E0
 namespace gamemd {
-void Dialog_Close(HWND a1, int a2)
+int Dialog_Close(HWND a1, int a2)
 {
   ObjectClass * result;
   Dialog *v3; // ebx

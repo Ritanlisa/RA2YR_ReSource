@@ -75,7 +75,7 @@
 
 // 0x682640
 namespace gamemd {
-void COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
+int COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
 {
   int v3; // ecx
   unsigned int *v4; // eax
@@ -139,7 +139,7 @@ void COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
 }
 // 0x682880
 namespace gamemd {
-void COM_ReadString(int * a1, int a2, LPCCH lpMultiByteStr)
+int COM_ReadString(int * a1, int a2, LPCCH lpMultiByteStr)
 {
   int v3; // edx
   int v4; // edx
@@ -191,7 +191,7 @@ void COM_ReadString(int * a1, int a2, LPCCH lpMultiByteStr)
 }
 // 0x682A90
 namespace gamemd {
-void COM_Property_ReadBool(int a1, int a2, char a3)
+int COM_Property_ReadBool(int a1, int a2, char a3)
 {
   unsigned int * v3;
   unsigned int *v4; // eax
@@ -250,7 +250,7 @@ v8 = (int)((unsigned int *)(0));
 }
 // 0x682B80
 namespace gamemd {
-void COM_PropertyBag_Read(int * a1, int a2, int a3)
+int COM_PropertyBag_Read(int * a1, int a2, int a3)
 {
   int v3; // eax
   int v4; // esi
@@ -298,7 +298,7 @@ void COM_PropertyBag_Read(int * a1, int a2, int a3)
 }
 // 0x682C70
 namespace gamemd {
-void sub_682C70(int a1, int a2, unsigned int * a3)
+int sub_682C70(int a1, int a2, unsigned int * a3)
 {
   unsigned int *v3; // edi
   unsigned int * v4;
@@ -357,7 +357,7 @@ void sub_682C70(int a1, int a2, unsigned int * a3)
 }
 // 0x682E10
 namespace gamemd {
-void COM_WriteInt(int a1, int a2, int a3)
+int COM_WriteInt(int a1, int a2, int a3)
 {
   unsigned int * v3;
   unsigned int *v4; // eax
@@ -416,7 +416,7 @@ v8 = (int)((unsigned int *)(0));
 }
 // 0x682F00
 namespace gamemd {
-void COM_SetBufferParams(int * a1, int a2, int * a3)
+int COM_SetBufferParams(int * a1, int a2, int * a3)
 {
   int v3; // eax
   int v4; // esi
@@ -468,7 +468,7 @@ void COM_SetBufferParams(int * a1, int a2, int * a3)
 }
 // 0x683FB0
 namespace gamemd {
-void sub_683FB0()
+int sub_683FB0()
 {
   int *p_vtable2; // esi
   AsyncIO *v2; // ecx
@@ -570,7 +570,7 @@ ScenarioClass * * Mouse_Update()
 }
 // 0x684370
 namespace gamemd {
-void WaitForMultiplayerLoadSync()
+char WaitForMultiplayerLoadSync()
 {
   int v0; // ebx
   int v1; // esi

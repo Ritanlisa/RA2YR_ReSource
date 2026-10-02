@@ -54,7 +54,7 @@
 
 // 0x52FF90
 namespace gamemd {
-void Render_Load(void * a1, void * a2, void * a3)
+int Render_Load(void * a1, void * a2, void * a3)
 {
   int result; // eax
   Frame *v6; // ecx
@@ -74,7 +74,7 @@ void Render_Load(void * a1, void * a2, void * a3)
 
 // 0x53C0A0
 namespace gamemd {
-void sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, int a6, int a7)
+int sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, int a6, int a7)
 {
   int v7; // ebx
   int result; // eax
@@ -1194,7 +1194,7 @@ int sub_777E00()
 }
 // 0x778030
 namespace gamemd {
-void Render_Draw_778030(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
+int Render_Draw_778030(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
   UINT v5; // edx
   UINT v6; // edx
@@ -1373,7 +1373,7 @@ char sub_6CA940(int a1, unsigned short * a2, int a3)
 }
 // 0x53D850
 namespace gamemd {
-void sub_53D850()
+char sub_53D850()
 {
   int v1; // ebx
   int v2; // edi
@@ -1531,7 +1531,7 @@ int sub_642BB0(unsigned int a1)
 }
 // 0x660000
 namespace gamemd {
-void sub_660000()
+int sub_660000()
 {
   int result; // eax
   int i; // edi
@@ -1624,7 +1624,7 @@ void sub_6603B0()
 }
 // 0x7760B0
 namespace gamemd {
-void Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
+void * Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
 {
   HFONT v7; // eax
   HFONT v8; // esi

@@ -15,7 +15,7 @@ struct ScrollClass {
     unsigned int m_ScrollX;
     unsigned int u32_14FB0;
 // --- flat members (END) ---
-    void Read(char * Block, char a2);
+    short Read(char * Block, char a2);
     int Scroll(int * a1, MouseClass * aP2);
 };
 

@@ -55,7 +55,7 @@ int WaypointPathClass::Init(void *a1, void *a2, void *a3, void *a4, void *a5, vo
 }
 // 0x763810
 namespace gamemd {
-void WaypointPathClass::Construct(WaypointClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+int WaypointPathClass::Construct(WaypointClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v3; // eax
@@ -183,7 +183,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 }
 // 0x764760
 namespace gamemd {
-void WaypointPathClass::computePath(int a2, unsigned int *a3)
+_DWORD * WaypointPathClass::computePath(int a2, unsigned int *a3)
 {
 
   unsigned int *v4; // eax

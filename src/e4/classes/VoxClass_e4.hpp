@@ -19,7 +19,7 @@ struct VoxClass {
     char Type[4];  // 0x4C
     char voiceIndex[4];  // 0x50
 // --- flat members (END) ---
-    void FindAndPlay(int a3);
+    int FindAndPlay(int a3);
     int SetEVAIndex();  // 0x7534e0
 };
 

@@ -22,7 +22,7 @@ struct MSPCXAnim_26 {
     unsigned int m_C;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    void ddtor();  // 0x5D06D0
+    wchar_t * ddtor();  // 0x5D06D0
     unsigned int Draw(int a2);  // 0x5D0700
     int GetFrame(int a2);  // 0x5D0720
     void FreeData();  // 0x5D0730

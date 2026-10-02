@@ -119,7 +119,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
 }
 // 0x750AC0
 namespace gamemd {
-void ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
+double ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
 {
   ObjectClass *v4; // edi
   int16_t v6; // ax
@@ -314,7 +314,7 @@ char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
 }
 // 0x752480
 namespace gamemd {
-void ThemeManager_Update(int a1, int a2, int a3)
+int ThemeManager_Update(int a1, int a2, int a3)
 {
   int result; // eax
   int v4; // ebp
@@ -738,7 +738,7 @@ int E4Recv_7531A0::EVA_LoadINI()
 }
 // 0x7532A0
 namespace gamemd {
-void sub_7532A0(std::codecvt_base * a1)
+bool sub_7532A0(std::codecvt_base * a1)
 {
   if ( (int)a1 < 0 || (int)a1 >= g_InfantrySelectState ) /*0x7532aa*/
     return _do_always_noconv_codecvt_base_std__MBE_NXZ_21(a1); /*0x7532a2*/

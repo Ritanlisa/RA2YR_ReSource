@@ -264,7 +264,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
 }
 // 0x561400
 namespace gamemd {
-void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, unsigned int a4)
+int VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, unsigned int a4)
 {
   int result; // eax
   unsigned int *WindowLongA; // esi
@@ -382,7 +382,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
 }
 // 0x568140
 namespace gamemd {
-void sub_568140(int * a1, int a2)
+int sub_568140(int * a1, int a2)
 {
   int v2; // esi
   int v3; // edi

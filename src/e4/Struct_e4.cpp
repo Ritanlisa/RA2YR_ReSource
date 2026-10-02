@@ -14,7 +14,7 @@
 
 // 0x48B2A0
 namespace gamemd {
-void Struct::ClearAllMemberFlags()
+int Struct::ClearAllMemberFlags()
 {
 
   int v1; // eax

@@ -338,7 +338,7 @@ dword_B1CF74 = 0; /*0x734df7*/
 }  // G42.18c ns repair
 // 0x5D7E50
 namespace gamemd {
-void sub_5D7E50()
+char sub_5D7E50()
 {
   int i; // ebp
   char result; // al

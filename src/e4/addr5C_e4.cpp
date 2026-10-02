@@ -262,7 +262,7 @@ BOOL E4Recv_5C60D0::ShowConfirmDialog(unsigned short * lParam)
 }
 // 0x5C6370
 namespace gamemd {
-void LCW_DecodeLength(int a1, unsigned char * a2, int a3)
+char LCW_DecodeLength(int a1, unsigned char * a2, int a3)
 {
   int v3; // eax
   unsigned char *v4; // edx
@@ -337,7 +337,7 @@ void LCW_DecodeLength(int a1, unsigned char * a2, int a3)
 }
 // 0x5C63F0
 namespace gamemd {
-void sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
+unsigned int sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   unsigned int v5; // edx
   unsigned char *v6; // edi
@@ -382,7 +382,7 @@ void sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
 }
 // 0x5C6660
 namespace gamemd {
-void BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
+int BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
 {
   int result; // eax
   int v5; // ecx
@@ -627,7 +627,7 @@ int BitArray_FindHighestBit(int a1, int a2)
 }
 // 0x5C6BC0
 namespace gamemd {
-void Array_FillPattern(unsigned int * a1, char * a2, unsigned int * a3, int a4)
+int Array_FillPattern(unsigned int * a1, char * a2, unsigned int * a3, int a4)
 {
   int v4; // ebp
   int v6; // edx
@@ -983,7 +983,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
 }
 // 0x5C71E0
 namespace gamemd {
-void BigInt_ShiftAndScan(unsigned int * a1, int a2, int a3, int a4)
+short BigInt_ShiftAndScan(unsigned int * a1, int a2, int a3, int a4)
 {
   unsigned int *v6; // eax
   int v7; // ecx
@@ -1076,7 +1076,7 @@ void BigInt_ShiftAndScan(unsigned int * a1, int a2, int a3, int a4)
 }
 // 0x5C7310
 namespace gamemd {
-void SubtractBigInteger(unsigned int * a1, unsigned int * a2, int a3, char * a4, Buffer * aP2)
+int SubtractBigInteger(unsigned int * a1, unsigned int * a2, int a3, char * a4, Buffer * aP2)
 {
   char *v7; // eax
   Buffer * v8;
@@ -1449,7 +1449,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
 }
 // 0x5C7740
 namespace gamemd {
-void ModInverseBigInteger(char * a1, const void * a2, const void * a3, int a4)
+int ModInverseBigInteger(char * a1, const void * a2, const void * a3, int a4)
 {
   int v4; // ebp
   int v5; // esi
@@ -1568,7 +1568,7 @@ void ModInverseBigInteger(char * a1, const void * a2, const void * a3, int a4)
 }
 // 0x5C7990
 namespace gamemd {
-void DivideBigInteger(unsigned int * a1, char * a2, int a3)
+int DivideBigInteger(unsigned int * a1, char * a2, int a3)
 {
   char *v4; // eax
   int v5; // ecx
@@ -1863,7 +1863,7 @@ char sub_5C7BA0(const char * a1, unsigned short * a2, int a3)
 }
 // 0x5C8500
 namespace gamemd {
-void ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, int a5)
+int ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, int a5)
 {
   int v5; // ebp
   int v6; // edx
@@ -2382,7 +2382,7 @@ char ValidateRSAKey(int a1, char * a2, int a3, int a4)
 }
 // 0x5C8E40
 namespace gamemd {
-void sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
+char sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
 {
   int v5; // edi
   unsigned char *v7; // ecx

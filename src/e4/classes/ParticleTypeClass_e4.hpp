@@ -333,7 +333,7 @@ struct ParticleTypeClass {
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2);
     int StubReturnFalse(int a1);
     unsigned int * Constructor(int a2, int a3, void *a3_2);
-    void EnsureCapacity(unsigned int * a2, void *a2_2);
+    _DWORD * EnsureCapacity(unsigned int * a2, void *a2_2);
     unsigned int LoadTypeData(int a2);
     void GetClassIdentifier();
 };

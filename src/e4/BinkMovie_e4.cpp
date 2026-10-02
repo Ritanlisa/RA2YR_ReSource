@@ -632,7 +632,7 @@ int BinkMovie::AdjustSurfaceFormat(int aP1)
 }
 // 0x5C01F0
 namespace gamemd {
-void BinkMovie::Cleanup(void *a1_1)
+int BinkMovie::Cleanup(void *a1_1)
 {
 
   DSurface *v2; // ecx

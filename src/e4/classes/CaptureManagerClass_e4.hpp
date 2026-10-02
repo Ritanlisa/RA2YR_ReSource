@@ -54,7 +54,7 @@ struct CaptureManagerClass {
     unsigned int *__pad_3C;
 // --- flat members (END) ---
     void DecideUnitFate(int aP1);
-    void FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5);
+    char FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5);
     CaptureManagerClass(int a2, int a3, char a4);
     CaptureManagerClass * ddtor(char a2);
     DynamicVector * QueryInterface(char a2);
@@ -81,7 +81,7 @@ struct CaptureManagerClass {
     unsigned int * Constructor_473140(int a2, int a3);
     unsigned int LoadTypeData(int a2);
     unsigned int PointerToIndex(int a2);
-    void Destroy(void *a1);
+    int Destroy(void *a1);
     void* CaptureUnit(int a2);
 };
 

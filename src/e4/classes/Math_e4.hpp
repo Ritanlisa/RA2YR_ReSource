@@ -78,7 +78,7 @@ struct Math {
 // --- flat members (END) ---
     int Hypotenuse2D();  // 0x41C350
     static int Sin(...);  // 0x4CAD50
-    void BuildRotationMatrix(float * a2, float a3, void *a3_2);  // 0x5AE750
+    float * BuildRotationMatrix(float * a2, float a3, void *a3_2);  // 0x5AE750
     int DistSq2D(TechnoClass * aP1);  // 0x5F6560
     unsigned int * QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4);  // 0x646590
     static double ArcTan(...);  // 0x4CADE0

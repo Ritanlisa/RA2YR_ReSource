@@ -50,7 +50,7 @@
 
 // 0x5904B0
 namespace gamemd {
-void PlaceCabhutMap(FootClass * aP0)
+char PlaceCabhutMap(FootClass * aP0)
 {
   int v2; // ebx
   int v3; // edi

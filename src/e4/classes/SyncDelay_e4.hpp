@@ -14,7 +14,7 @@ struct SyncDelay {
     unsigned int Event;
 // --- flat members (END) ---
     void Check(unsigned int * a2, void *a2_2, void *a3);
-    void Start(void *a1, void *a2);
+    signed int Start(void *a1, void *a2);
 };
 
 } // namespace gamemd

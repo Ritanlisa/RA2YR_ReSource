@@ -453,7 +453,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
 }
 // 0x63F040
 namespace gamemd {
-void Sidebar::RemoveItem(int a2, void *a2_2)
+char Sidebar::RemoveItem(int a2, void *a2_2)
 {
 
   char *Sidebar_field_0x10; // edx

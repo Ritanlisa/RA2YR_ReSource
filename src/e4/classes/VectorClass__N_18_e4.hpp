@@ -29,11 +29,11 @@ struct VectorClass__N_18 {
     int FindItemIndex(unsigned int * a2);  // 0x50FFB0
     VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x510400
     DynamicVector * Constructor_0(unsigned int * Block, char a2, void *a3_1);  // 0x5104A0
-    void Destroy(void *a1_1);  // 0x50E760
+    int Destroy(void *a1_1);  // 0x50E760
     unsigned int GetItemIndex(int a2);  // 0x50E7A0
     unsigned int * Clear(unsigned int * a2, int a3);  // 0x50E7C0
     char AddRef(int a2);  // 0x50FC00
-    void ddtor(void *a1_1);  // 0x50FD70
+    wchar_t * ddtor(void *a1_1);  // 0x50FD70
     int GetSize(unsigned int * a2);  // 0x50FDB0
     unsigned int Get(int a2, void *a2_2);  // 0x50FE00
 };

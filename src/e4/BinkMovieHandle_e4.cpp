@@ -189,7 +189,7 @@ BOOL BinkMovieHandle::COMStub()
 } // namespace gamemd
 // 0x5C0580
 namespace gamemd {
-void BinkMovieHandle::AddRef(void *a1)
+char BinkMovieHandle::AddRef(void *a1)
 {
 
   return BinkMovie::RenderFrameToSurface((BinkMovieHandle *)this->height);

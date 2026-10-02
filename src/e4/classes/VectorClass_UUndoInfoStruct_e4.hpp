@@ -20,11 +20,11 @@ struct VectorClass_UUndoInfoStruct {
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, unsigned int * a3);  // 0x6B44A0
     AbstractClass * * SetCapacity(int a2, unsigned int * a3);  // 0x6B4650
-    void Destroy(void *a1_1);  // 0x6B43B0
+    int Destroy(void *a1_1);  // 0x6B43B0
     unsigned int GetItemIndex(int a2);  // 0x6B43E0
     unsigned int * Clear(unsigned int * a2, int a3);  // 0x6B4410
     char AddRef(int a2);  // 0x6B4440
-    void ddtor(void *a1_1);  // 0x6B45A0
+    wchar_t * ddtor(void *a1_1);  // 0x6B45A0
     int GetSize(unsigned int * a2);  // 0x6B45D0
     unsigned int GetCapacity(int a2);  // 0x6B4620
     int FindItemIndex(unsigned int * a2);  // 0x6B4760

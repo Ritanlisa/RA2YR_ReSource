@@ -903,7 +903,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
 }
 // 0x74D760
 namespace gamemd {
-void CleanupVeinholeSystem()
+int CleanupVeinholeSystem()
 {
   int i; // esi
   int v1; // ecx

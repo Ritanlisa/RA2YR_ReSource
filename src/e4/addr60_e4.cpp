@@ -302,7 +302,7 @@ int NavigateDialogTab(HWND hCtl, bool a2)
 }
 // 0x600CA0
 namespace gamemd {
-void ValidateDialogEvent(int a1, HWND a2)
+int ValidateDialogEvent(int a1, HWND a2)
 {
   unsigned int *v3; // eax
   void *v4; // edi
@@ -511,7 +511,7 @@ void ValidateDialogEvent(int a1, HWND a2)
 }
 // 0x6015E0
 namespace gamemd {
-void CtlDialogColorHandler(int a1, HWND a2)
+int CtlDialogColorHandler(int a1, HWND a2)
 {
   unsigned int *v3; // eax
   void *v4; // edi
@@ -714,7 +714,7 @@ void CtlDialogColorHandler(int a1, HWND a2)
 }
 // 0x601D20
 namespace gamemd {
-void ValidateDialogControl(int a1, HWND a2)
+int ValidateDialogControl(int a1, HWND a2)
 {
   unsigned int *v3; // eax
   void *v4; // edi
@@ -953,7 +953,7 @@ int sub_6023F0(int a1, HWND a2)
 }
 // 0x602490
 namespace gamemd {
-void IsValidActionDialog(int a1, HWND a2)
+bool IsValidActionDialog(int a1, HWND a2)
 {
   unsigned int *v3; // eax
   void *v4; // edi

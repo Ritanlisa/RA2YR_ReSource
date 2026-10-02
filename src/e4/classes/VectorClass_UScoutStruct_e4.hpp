@@ -18,7 +18,7 @@ struct VectorClass_UScoutStruct {
     int Clear(int a2, int a3);  // 0x50E620
     char AddRef(int a2);  // 0x50F1B0
     char Release(int a2, char * a3);  // 0x50F210
-    void ddtor(void *a1_1);  // 0x50F300
+    wchar_t * ddtor(void *a1_1);  // 0x50F300
     int GetSize(int a2);  // 0x50F330
     unsigned int GetCapacity(int a2);  // 0x50F380
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5101D0

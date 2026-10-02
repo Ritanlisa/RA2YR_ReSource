@@ -81,7 +81,7 @@ CampaignClass * RadarClass::Destruct()
 }
 // 0x654650
 namespace gamemd {
-void RadarClass_RecreateSurface(void * a1, void * a2)
+int RadarClass_RecreateSurface(void * a1, void * a2)
 {
   unsigned int *v2; // ecx
   float *v3; // esi

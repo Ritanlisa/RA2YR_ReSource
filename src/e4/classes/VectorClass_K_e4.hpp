@@ -17,9 +17,9 @@ struct VectorClass_K {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy(void *a1_1);  // 0x6BED50
+    int Destroy(void *a1_1);  // 0x6BED50
     char Release(int a2, unsigned int * a3);  // 0x6C6210
-    void ddtor(void *a1_1);  // 0x6C62C0
+    wchar_t * ddtor(void *a1_1);  // 0x6C62C0
     int GetSize(unsigned int * a2);  // 0x6C62F0
     unsigned int GetCapacity(int a2);  // 0x6C6330
     char SetCapacity(int a2, unsigned int * a3);  // 0x6C6350

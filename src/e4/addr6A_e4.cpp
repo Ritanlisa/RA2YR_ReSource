@@ -285,7 +285,7 @@ void* __inc_tmpoff()
 }
 // 0x6ADC20
 namespace gamemd {
-void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
+int SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
 {
   int v4; // eax
   int v5; // eax
@@ -512,7 +512,7 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
 }
 // 0x6AE2C0
 namespace gamemd {
-void ShowSkirmishSetupScreen(void * a1, void * a2)
+bool ShowSkirmishSetupScreen(void * a1, void * a2)
 {
   int v2; // ebx
   ObjectClass *v3; // esi

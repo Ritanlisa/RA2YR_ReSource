@@ -26,7 +26,7 @@ struct DeleteCommandClass_28 {
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x53C510
     char AddRef(int a2);  // 0x53C520
     char Release(int a2, unsigned int * a3);  // 0x53C560
-    void ddtor();  // 0x53C610
+    wchar_t * ddtor();  // 0x53C610
     int Read(unsigned int * a2, void *a2_2);  // 0x53C640
     char SetCapacity(int a2, unsigned int * a3);  // 0x53C6A0
     int FindItem(unsigned int * a2);  // 0x53C750

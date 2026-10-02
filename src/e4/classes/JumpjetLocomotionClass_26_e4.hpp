@@ -21,7 +21,7 @@ struct JumpjetLocomotionClass_26 {
     void ClearBuffer(void *a1_1);  // 0x54E890
     char AddRef(int a2);  // 0x54E8F0
     char Release(int a2, unsigned int * a3);  // 0x54E930
-    void ddtor();  // 0x54E9E0
+    wchar_t * ddtor();  // 0x54E9E0
     char SetCapacity(int a2, unsigned int * a3);  // 0x54EA70
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x54EB50
     DynamicVector * Constructor_VectorClass_KamikazeControl___(unsigned int * Block, char a2);  // 0x54EBA0
