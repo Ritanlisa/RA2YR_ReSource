@@ -1225,7 +1225,7 @@ int E4Recv_6C4E50::CreateTClassFactory_ShipLocomotionClass()
 
 // 0x6C4FD0
 namespace gamemd {
-int E4Recv_6C4FD0::CreateTClassFactory_BulletClass(const void *a2, unsigned int *a3)
+int E4Recv_6C4FD0::CreateTClassFactory_BulletClass(const void *a3, unsigned int *a2)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]

@@ -35,7 +35,7 @@ int Surface::IsLocked()
 } // namespace gamemd
 // 0x5D1FD0
 namespace gamemd {
-unsigned int * Surface::CopyRect(int *a2)
+unsigned int * Surface::CopyRect(int *aP1)
 {
 
   unsigned int *result; // eax

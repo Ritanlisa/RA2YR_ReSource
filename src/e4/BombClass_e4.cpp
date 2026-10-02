@@ -175,7 +175,7 @@ int BombClass::ddtor(int a1, unsigned int * a2)
 
 // 0x438B40
 namespace gamemd {
-int BombClass::Write(int a2)
+int BombClass::Write(int aP0)
 {
 
   int Prefix_0; // edi

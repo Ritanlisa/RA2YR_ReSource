@@ -460,7 +460,7 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
 
 // 0x5278F0
 namespace gamemd {
-int INIClass::ReadInt(String *a2, String *a3, int a4)
+int INIClass::ReadInt(String *aP2, String *aP1, int a1)
 {
 
   uint8_t *v5; // eax

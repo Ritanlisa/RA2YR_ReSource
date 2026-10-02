@@ -130,7 +130,24 @@ for f, lines_set in sites.items():
             stats['no-cache'] += 1
             continue
         params = [norm_ida(x) for x in params]
-        want = ', '.join(params)
+        # G42.28 same-position fallback (agent-3 cases 8/9): body vocabulary
+        # wins on NAMES, cache keeps TYPES -- handles a1<->aP1 splits where
+        # verbatim cache names would strand the body's identifiers
+        body_names = []
+        seen = set()
+        for bl in lines[hj + 1:min(hj + 300, len(lines))]:
+            for bm in re.finditer(r'\b(a\d+|aP\d+)\b', bl):
+                if bm.group(1) not in seen:
+                    seen.add(bm.group(1))
+                    body_names.append(bm.group(1))
+        final = []
+        for i, pp in enumerate(params):
+            if i < len(body_names):
+                nm = re.search(r'([A-Za-z_]\w*)\s*(\[[^\]]*\])?\s*$', pp)
+                if nm:
+                    pp = pp[:nm.start()] + body_names[i] + (nm.group(2) or '')
+            final.append(pp)
+        want = ', '.join(final)
         if hm.group(2).strip() == want:
             stats['already'] = stats.get('already', 0) + 1
             continue

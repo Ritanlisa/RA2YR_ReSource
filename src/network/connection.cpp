@@ -408,7 +408,7 @@ bool IPXManagerClass::IsIPXAvailable() const
 }
 
 // 0x5414c0
-void IPXManagerClass::release(int a2, int a3, int a4, int a5)
+void IPXManagerClass::release(int a5, int a2, int a3, int a4)
 {
   int v6; // ecx
   unsigned int *v7; // ecx

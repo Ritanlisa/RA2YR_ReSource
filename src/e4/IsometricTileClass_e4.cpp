@@ -11,7 +11,7 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 
 // 0x543780
-IsometricTileClass::IsometricTileClass(int a2, unsigned short *a3)
+IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
 {
 
   int v4; // eax

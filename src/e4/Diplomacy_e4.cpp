@@ -293,7 +293,7 @@ LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 } // namespace gamemd
 
 // 0x656580
-char * Diplomacy::GetField(int a2)
+char * Diplomacy::GetField(int aP1)
 {
 
   return (unsigned char *)this + 24 * *(unsigned int *)(aP1 + 3824) + 4728; /*0x656595*/

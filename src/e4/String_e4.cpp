@@ -188,7 +188,7 @@ ControlClass * * String::To_Waypoint()
 }
 // 0x7B51D0
 namespace gamemd {
-int String::TrimLeft(const char **a2)
+int String::TrimLeft(const char **aP1)
 {
 
   int result; // eax
