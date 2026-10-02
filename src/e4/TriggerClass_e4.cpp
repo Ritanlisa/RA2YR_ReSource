@@ -116,7 +116,7 @@ int TriggerClass::GetValue(void *a1, void *a2)
 }
 // 0x7264C0
 namespace gamemd {
-int TriggerClass::RegisterEvent(int aP1, int aP2, char a4, char a5, int a6)
+int TriggerClass::RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP1, int aP2, int a1, int aP0)
 {
 
   char v7; // bl

@@ -58,7 +58,7 @@ struct LocomotionClass {
     unsigned int RefCount;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    LocomotionClass * ProcessMove(char a2);
+    LocomotionClass * ProcessMove(char a2 a2);
     int CheckBridgeBlock();
     int GetSpeedMultiplier();
     int Initialize();

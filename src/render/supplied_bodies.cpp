@@ -530,7 +530,7 @@ int ColorListClass::SetIndex(int a2, int a3) {
 
 // 0x488980
 namespace gamemd {
-unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int a6) {
+unsigned int * ColorListClass::DrawColorRect(int a2 a2, int a3 a3, int a4 a4, int a5 a5, int a6 a6) {
     int v7; // edi
     int v8; // eax
     unsigned int *result; // eax

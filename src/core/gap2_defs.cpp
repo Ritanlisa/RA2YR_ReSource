@@ -201,7 +201,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
 }
 // 0x4A4D60
 namespace gamemd { 
-int CStreamClass::FindItem(int * a2) {
+int CStreamClass::FindItem(unsigned int *a2, int a1, int a3) {
   int m_10; // edx
   int result; // eax
   unsigned int *i; // ecx

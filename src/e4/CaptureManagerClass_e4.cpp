@@ -255,7 +255,7 @@ bool CaptureManagerClass::CanCapture(unsigned int *a2)
 
 // 0x471D40
 namespace gamemd {
-void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
+void CaptureManagerClass::CaptureUnit(int a1@<ecx>, int a2@<ebp>, int a3, int a1, int a2, int aP1, int aP0)
 {
 
   char result; // al

@@ -14,7 +14,7 @@ struct IRTTITypeInfo {
     unsigned int q00D;
 // --- flat members (END) ---
     int QueryInterface(int a1, const void * a2, unsigned int * a3);
-    unsigned int * loc_74F6A0(char a2);
+    unsigned int * loc_74F6A0(unsigned int *Block, char a2);
     unsigned int GetOffset();
 };
 

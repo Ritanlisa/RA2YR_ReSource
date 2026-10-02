@@ -329,7 +329,7 @@ int WWMouseClass::checkVisible()
 } // namespace gamemd
 // 0x7BA300
 namespace gamemd {
-MouseClass * WWMouseClass::updateHotspot(unsigned int * Block, char a2)
+MouseClass * WWMouseClass::updateHotspot(char a2 a2)
 {
 
   *(unsigned int *)Block->__pad_0 = &vt_Mouse; /*0x7ba309*/

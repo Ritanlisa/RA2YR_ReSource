@@ -245,7 +245,7 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
 
 // 0x41DD50
 namespace gamemd {
-void * AirstrikeClass::CopyTo(unsigned int * Block, char a2)
+void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
 {
 
   int v3; // eax

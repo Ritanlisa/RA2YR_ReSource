@@ -609,7 +609,7 @@ int BulletTypeClass::ProcessPower(int * a2, void *a2_2)
 } // namespace gamemd
 // 0x46C890
 namespace gamemd {
-BulletTypeClass * BulletTypeClass::ddtor(void ** Block, char a2)
+BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int aP2, int a3)
 {
 
   int v3; // eax

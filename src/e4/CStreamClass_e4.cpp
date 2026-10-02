@@ -16,7 +16,7 @@
 
 // 0x4A2CD0
 namespace gamemd {
-int CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4)
+int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, int a1, int a2, int a3, int a5, int a6)
 {
 
   IStream *v4; // ebp

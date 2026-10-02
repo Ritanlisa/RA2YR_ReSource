@@ -226,7 +226,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
 } // namespace gamemd
 // 0x52AFC0
 namespace gamemd {
-void * WarheadTypeClass::ReadParticleSystems(unsigned int * Block, char a2)
+void * WarheadTypeClass::ReadParticleSystems(char a2, int aP1, int a3, int a4, int a5, int a6, int a1, int aP0)
 {
 
   unsigned int *WarheadTypeClass_field_0x8; // eax
@@ -297,7 +297,7 @@ void * WarheadTypeClass::ReadParticleSystems(unsigned int * Block, char a2)
 } // namespace gamemd
 // 0x644630
 namespace gamemd {
-ParticleSystemTypeClass * * WarheadTypeClass::applyDamage(ObjectClass * Source)
+ParticleSystemTypeClass * * WarheadTypeClass::applyDamage(char *Source, int aP1, int a2, int a3, int a4, int a5, int a6, int a1, int aP0)
 {
 
   int v2; // esi
@@ -721,7 +721,7 @@ int WarheadTypeClass::GetDamage(int a2, int a3)
 }  // G42.18c ns repair
 // 0x75E510
 namespace gamemd {  // G42.18c ns repair
-CampaignClass * * WarheadTypeClass::Destructor(void ** Block, char a2)
+CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
 {
 
   int v3; // eax

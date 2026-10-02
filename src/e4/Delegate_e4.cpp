@@ -255,7 +255,7 @@ int Delegate::StreamToBuffer(char * a1, int a3)
 } // namespace gamemd
 // 0x52AE20
 namespace gamemd {
-GenericNode * Delegate::Constructor_GenericNode(GenericNode ** Block, char a2)
+GenericNode * Delegate::Constructor_GenericNode(char a2 a2)
 {
 
   int Previous; // ecx

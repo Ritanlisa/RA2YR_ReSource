@@ -51,7 +51,7 @@ struct RocketLocomotionClass {
     unsigned int RocketLocomotionClass_field_5C;  // 0x5C
 // --- flat members (END) ---
     RocketLocomotionClass();
-    RocketLocomotionClass * ProcessMove(char a2);
+    RocketLocomotionClass * ProcessMove(char a2, int a3);
     int BeginMove(int * a1, int * a2);
     int StubReturn96();
     int ddtor(int a1, unsigned int * a2);

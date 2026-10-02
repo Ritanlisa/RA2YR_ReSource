@@ -275,7 +275,7 @@ int TeamClass::GetLeaderIndex()
 }
 // 0x6340B0
 namespace gamemd {
-AbstractClass * * TeamClass::DestroyAllMembers(unsigned int * Block, TechnoClass * aP1)
+AbstractClass * * TeamClass::DestroyAllMembers(unsigned int *p_vtable0, int aP1, int a2, int a1)
 {
 
   int v3; // eax

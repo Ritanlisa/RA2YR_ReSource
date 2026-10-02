@@ -50,9 +50,9 @@ struct LoadOptions {
     unsigned int q028;
     unsigned int u32_2D;
 // --- flat members (END) ---
-    DynamicVector * vt00(char a2);
-    LoadOptions * QueryInterface(char a2);
-    VectorClass_flat * Constructor_VectorClass_FileEntryClass___(char a2);
+    DynamicVector * vt00(char a2, int a1);
+    LoadOptions * QueryInterface(char a2, int a3, int a1);
+    VectorClass_flat * Constructor_VectorClass_FileEntryClass___(char a2, int a1);
     bool ddtor(LPCSTR lpFileName);
     char * GetData(void *a1);
     char AddRef(LPCCH lpMultiByteStr);

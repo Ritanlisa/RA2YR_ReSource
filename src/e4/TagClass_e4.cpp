@@ -425,7 +425,7 @@ int TagClass::StubReturn44()
 
 // 0x6E58B0
 namespace gamemd {
-TagClass * TagClass::ProcessTrigger(void ** Block, char a2)
+TagClass * TagClass::ProcessTrigger(char a2 a2)
 {
 
   ((TagClass *)(Block))->Destructor(); /*0x6e58b3*/

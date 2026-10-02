@@ -116,7 +116,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
 }
 // 0x691C00
 namespace gamemd {
-void * TeamTypeClass::CreateScriptType(AbstractClass * Source)
+void * TeamTypeClass::CreateScriptType(char *Source, int a2, int a3, int aP1)
 {
 
   int v2; // esi
@@ -192,7 +192,7 @@ LABEL_17:
 }
 // 0x6E85F0
 namespace gamemd {
-AbstractClass * * TeamTypeClass::FindOrCreateTaskForce(ObjectClass * Source)
+AbstractClass * * TeamTypeClass::FindOrCreateTaskForce(char *Source, int a2, int a3, int aP1)
 {
 
   int v2; // esi

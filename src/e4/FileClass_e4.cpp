@@ -118,7 +118,7 @@ LABEL_14:
     goto LABEL_12; /*0x65cc7e*/
   }
   FileClass::Open2(1); /*0x65cc1d*/
-  int FileClass::Open(RawFileClass *a1, int a2, void *a3) 
+  int FileClass::Open(int a2, int a1, int aP1, int aP2)
   {
     if ( CloseHandle((HANDLE)*((char *)a1 + 5)) ) /*0x65cc31*/
     {

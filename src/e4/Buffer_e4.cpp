@@ -420,7 +420,7 @@ LABEL_16:
 } // namespace gamemd
 // 0x43AD00
 namespace gamemd {
-_DWORD * Buffer::Init(int a2, int aP2)
+_DWORD * Buffer::Init(int a2, int Size, int aP2, int a3, int aP1)
 {
 
   this->Buffer_field_00 = (unsigned int)(a2);
@@ -437,7 +437,7 @@ _DWORD * Buffer::Init(int a2, int aP2)
 } // namespace gamemd
 // 0x488030
 namespace gamemd {
-DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(unsigned int * Block, char a2)
+DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2, int a3, int aP1)
 {
 
   void *v3; // eax

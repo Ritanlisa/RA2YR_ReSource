@@ -553,7 +553,7 @@ struct MapClass {
     int ScrollOnce(AbstractClass * aP1);
     int SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2);
     int SetCellOverlayFlag();
-    static int SetScrollMode(...);
+    static int SetScrollMode(int a2, int aP1, int a1, int aP2, int a3);
     int ToggleZoom(int a2);
     int TransitionCliff(MouseClass * aP0);
     int  TriggerEVA(IUnknown * aP0);

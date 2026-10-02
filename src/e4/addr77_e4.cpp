@@ -101,7 +101,7 @@ void E4Recv_771890::sub_771890()
 }
 // 0x7741C0
 namespace gamemd {
-HKEY E4Recv_7741C0::FindRegistrySubKey(void * a1, void * a2, void * a3)
+HKEY E4Recv_7741C0::FindRegistrySubKey(HKEY hKey, void *a2, char a3, int a5, int aP0, int a1, int a4)
 {
 
   DWORD v4; // ebx

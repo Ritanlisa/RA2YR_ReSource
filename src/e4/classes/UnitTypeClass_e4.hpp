@@ -1040,7 +1040,7 @@ struct UnitTypeClass {
     unsigned int UnitTypeClass_CreateUnit;
 // --- flat members (END) ---
     INIClass * * ReadINIEntry();
-    UnitTypeClass(void * aP1);
+    UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3);
     UnitTypeClass * ddtor(char a2);
     VoxelAnimTypeClass * * FindOrCreate(ObjectClass * Source);
     int *  GetDimensions(int * a2);

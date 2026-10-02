@@ -239,7 +239,7 @@ struct SmudgeTypeClass {
     bool q2A1;  // 0x2A1
     unsigned short tail_2A2;  // 0x2A2
 // --- flat members (END) ---
-    SmudgeTypeClass(void * aP1);
+    SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, int a6, int aP1, int aP0, int aP2, int a1);
     SmudgeClass * GetFlag(int a2);
     SmudgeTypeClass *  ddtor(void * a2, char a3);
     bool GetType(short * a2, int a3);

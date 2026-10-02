@@ -292,7 +292,7 @@ void* COMObject::SwapReference(int a2) {
 }
 // 0x53EDE0
 namespace gamemd { 
-int Struct::Copy6Bytes(IPXManagerClass * aP1) {
+int Struct::Copy6Bytes(int a2, int aP1, int a3, int a4, int a5, int a1) {
   char *v2; // ecx
   int16_t result; // ax
 

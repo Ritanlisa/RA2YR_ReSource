@@ -38,7 +38,7 @@ struct MapSeedClass {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     MapSeedClass * * PlaceBuildingClusters(MapSeedClass * aP1);
-    MapSeedClass * QueryInterface(char a2);
+    MapSeedClass * QueryInterface(char a2, int a3);
     int GenerateSeed(unsigned int * a2);
     char ValidateRectBounds(void *a1);
     wchar_t * GetCell();

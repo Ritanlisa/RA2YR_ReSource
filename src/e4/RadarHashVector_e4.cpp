@@ -269,7 +269,7 @@ int RadarHashVector::FindItemIndex(unsigned int * a2)
 } // namespace gamemd
 // 0x658C60
 namespace gamemd {
-char * RadarHashVector::Destructor(unsigned int * Block, char a2)
+char * RadarHashVector::Destructor(char a2 a2)
 {
 
   int v3; // eax

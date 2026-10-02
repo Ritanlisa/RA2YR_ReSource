@@ -373,7 +373,7 @@ int TemporalClass::GetWarpPerStep(int a2)
 
 // 0x71B1B0
 namespace gamemd {
-void * TemporalClass::ProcessEvent(unsigned int * Block, char a2)
+void * TemporalClass::ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2)
 {
 
   int v3; // eax

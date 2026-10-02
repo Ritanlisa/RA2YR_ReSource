@@ -37,7 +37,7 @@ struct XSurface {
     int entry_4C_(int a1, int a2, int a3, int a4, int a5, int a6);
     int vt_entry_40(int a1);
     int vt_entry_68();
-    void* WalkLine();
+    void* WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5, int a6, int a7, int a8, int a9, int a10);
     static double Fill(...);  // C2597 interim stub
     static double GetPixel(...);  // C2597 interim stub
     static double SetPixel(...);  // C2597 interim stub

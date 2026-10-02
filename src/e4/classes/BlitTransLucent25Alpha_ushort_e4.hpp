@@ -22,7 +22,7 @@ struct BlitTransLucent25Alpha_ushort {
     unsigned int *__pad_0;
     unsigned int m_8;
 // --- flat members (END) ---
-    BlitTransLucent25Alpha_ushort * Blit(char a2);
+    BlitTransLucent25Alpha_ushort * Blit(char a2 a2);
     int CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8);
     int CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);
     int CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);

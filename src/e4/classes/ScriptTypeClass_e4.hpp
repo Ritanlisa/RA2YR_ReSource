@@ -150,7 +150,7 @@ struct ScriptTypeClass {
     unsigned int q1B1;  // 0x1B1
     unsigned int q1B5;  // 0x1B5
 // --- flat members (END) ---
-    ScriptTypeClass * ddtor(char a2);
+    ScriptTypeClass * ddtor(char a2, int a1, int a3);
     TaskForceClass * ReadINI(char * a1, int a2, void *a3);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();

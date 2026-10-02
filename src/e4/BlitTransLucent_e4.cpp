@@ -189,7 +189,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
 } // namespace gamemd
 // 0x496210
 namespace gamemd {
-int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
+int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2 a2, int a3 a3, int a4 a4, int a5 a5, int a6 a6, int a7 a7, int a8 a8, int a9 a9, int a10 a10, int a11 a11, int a12 a12)
 {
 
   return (*(int (**)(_RLEBlitTransZRemapXlat_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->__pad_0 + 4))( /*0x496247*/
@@ -209,7 +209,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2, int a3, int a4,
 } // namespace gamemd
 // 0x4962D0
 namespace gamemd {
-int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
+int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2 a2, int a3 a3, int a4 a4, int a5 a5, int a6 a6, int a7 a7, int a8 a8, int a9 a9, int a10 a10, int a11 a11, int a12 a12)
 {
 
   return (*(int (**)(_RLEBlitTransDarken_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->__pad_0 + 4))( /*0x496307*/
@@ -229,7 +229,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4,
 } // namespace gamemd
 // 0x49A340
 namespace gamemd {
-BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(unsigned int * Block, char a2)
+BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2 a2)
 {
 
   void *m_8; // eax

@@ -119,7 +119,7 @@ LABEL_17:
 }
 // 0x763200
 namespace gamemd {
-WaveClass * WaveClass::ddtor(void ** Block, char a2)
+WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
 {
 
   int v3; // eax

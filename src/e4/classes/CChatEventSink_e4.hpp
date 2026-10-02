@@ -36,7 +36,7 @@ struct CChatEventSink {
     unsigned int Debug;
 // --- flat members (END) ---
     Coord * * HandleChatChannelList(int a1, int a2, const char * a3);
-    ObjectClass * DeleteAndZero(char a2);
+    ObjectClass * DeleteAndZero(char a2 a2);
     char EncodeString(char a2);
     _DWORD * EnsureCapacity(int a2, void *a2_2);
     void Check(unsigned int * a2, int a3, void *a3_2);

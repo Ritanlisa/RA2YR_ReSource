@@ -486,7 +486,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct& s
   return out; /*0x5882e6*/
 }
 // 0x5678e0
-void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, CellStruct arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8)
+void MapClass::RevealArea1(int *a2, int a3, void *a4, char a5, int a6, char a7, char a8, char a9, int a1)
 {
   double v9; // st7
   int v10; // edi

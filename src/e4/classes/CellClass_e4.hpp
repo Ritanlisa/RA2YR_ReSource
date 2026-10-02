@@ -190,7 +190,7 @@ struct CellClass {
     unsigned int * UpdateZone();  // 0x486bf0
     void ApplyCliffTileModifications(int a2);  // 0x57f200
     void DTOR();  // 0x47bb60
-    unsigned char * RegisterForRedraw(int16_t *a2);  // 0x7235a0
+    unsigned char * RegisterForRedraw(__int16 *a2, int a1, int a5, int a6);
     char ApplyTileModification4(int16_t *a2);  // 0x57d530
     char ApplyTileModification3(int16_t *a2);  // 0x57cf60
     char ApplyTileModification2(int16_t *a2);  // 0x57c2b0

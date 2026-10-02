@@ -42,7 +42,7 @@ struct COMObject {
     int GetSpecialValue(int a1);
     int GetStringValue(int a1, unsigned int * a2);
     int QueryInterface(int a1, const void * a2, unsigned int * a3);
-    int QueryInterface2();
+    int QueryInterface2(const void *a2 a2, unsigned int *a3 a3);
     int Thunk_COMObject_sub_4E30C0();
     unsigned int * GetCoord3D(int a1, unsigned int * a2);
     unsigned int * ReturnZeroPos(int a1, unsigned int * a2);

@@ -1032,7 +1032,7 @@ int AircraftClass::CheckMissionFail()
 
 // 0x41C210
 namespace gamemd {
-AircraftClass * AircraftClass::CheckActionStatus(void ** Block, char a2)
+AircraftClass * AircraftClass::CheckActionStatus(char a2 a2)
 {
 
   AircraftClass::Destruct(Block); /*0x41c213*/

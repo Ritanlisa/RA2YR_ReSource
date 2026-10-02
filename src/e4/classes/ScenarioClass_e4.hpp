@@ -522,7 +522,7 @@ struct ScenarioClass {
     char saveGame();
     int AssignStartPositions(char a1);
     int CleanupTemporary();
-    int LoadScenarioAndStart(AnimClass * Source, char a2, int a3);
+    int LoadScenarioAndStart(char *Source@<ecx> a2, char a2@<dl> a3, double a3@<st0> a4, int aP1);
     int MissionStubReturnZero();
     int MissionStubReturnZero3();
     int ReadMapINI(CCINIClass * aP1);

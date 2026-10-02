@@ -223,7 +223,7 @@ int FlyLocomotionClass::StubReturn96()
 } // namespace gamemd
 // 0x4D03A0
 namespace gamemd {
-FlyLocomotionClass * FlyLocomotionClass::ProcessMove(unsigned int * Block, char a2)
+FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2 a2)
 {
 
   *(unsigned int *)Block->LocomotionClass = &vt_FlyLocomotionClass; /*0x4d03a3*/

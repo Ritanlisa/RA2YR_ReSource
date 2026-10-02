@@ -20,7 +20,7 @@ struct MSVQAnim {
     unsigned int u32_28;
     unsigned int u32_2D;
 // --- flat members (END) ---
-    MSVQAnim * QueryInterface(char a2);
+    MSVQAnim * QueryInterface(char a2 a2);
     int Stub();
     void * GetFrameRect(int * a2);
     unsigned int * ConstructMSVQAnimHidden(char **aP1, int *aP2, int aP3, char aP3a);  // 0x5ccc30

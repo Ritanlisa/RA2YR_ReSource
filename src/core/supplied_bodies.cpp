@@ -36,7 +36,7 @@ void StringVector::ddtor() {
 
 // 0x4F37A0
 namespace gamemd {
-unsigned int * GraphicMenuImageItem::ddtor(unsigned int *a2) {
+unsigned int * GraphicMenuImageItem::ddtor(unsigned int *a2, int a3, int a4) {
     char **v3; // esi
     unsigned int *v4; // eax
     char v5; // bl
@@ -108,7 +108,7 @@ unsigned int * COMClass::releaseInterface() {
 
 // 0x767C50
 namespace gamemd {
-unsigned int * COMClass::marshalInterface(char a2) {
+unsigned int * COMClass::marshalInterface(char a2, int a3, int a4) {
     *(unsigned int *)this->__pad_0 = &rc_ptr<WDTState>::`vftable'; /*0x767c53*/
     ComPtr::Release((ComPtr *)this); /*0x767c59*/
     if ( (a2 & 1) != 0 ) /*0x767c63*/

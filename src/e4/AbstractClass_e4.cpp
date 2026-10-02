@@ -541,7 +541,7 @@ void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
 }
 // 0x7258D0
 namespace gamemd {
-AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1)
+AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a2, int aP0, int aP1, int aP2)
 {
 
   int v4; // ebx

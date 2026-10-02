@@ -121,7 +121,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 }
 // 0x5D3450
 namespace gamemd {  // G42.18c ns repair
-MSFont * MSFont::QueryInterface(void * Block, char a2)
+MSFont * MSFont::QueryInterface(char a2, int a3)
 {
 
   MSFont::Constructor_MSFont(Block); /*0x5d3453*/

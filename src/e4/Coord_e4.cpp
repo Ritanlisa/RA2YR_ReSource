@@ -324,7 +324,7 @@ void * Coord::Divide(int * a2, int a3)
 }
 // 0x6D1F10
 namespace gamemd {
-int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
+int * Coord::To_ScreenRaw(int *aP0, unsigned int *aP1)
 {
 
   int v2; // edi

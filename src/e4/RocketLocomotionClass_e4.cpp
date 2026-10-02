@@ -93,7 +93,7 @@ int RocketLocomotionClass::StubReturn96()
 }  // G42.18c ns repair
 // 0x6635C0
 namespace gamemd {  // G42.18c ns repair
-RocketLocomotionClass * RocketLocomotionClass::ProcessMove(unsigned int * Block, char a2)
+RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2, int a3)
 {
 
   *(unsigned int *)Block->LocomotionClass = &vt_RocketLocomotionClass; /*0x6635c3*/

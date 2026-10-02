@@ -236,7 +236,7 @@ UnitClass::UnitClass() noexcept
 }
 // IDA: 0x6B6080 (CreateUnloadPlacementCraters, 167B)
 // 0x6b6080
-int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
+int UnitClass::CreateUnloadPlacementCraters(unsigned short *a2, int a3, int a1)
 {
   int result; // eax
   int i; // ebx
@@ -267,7 +267,7 @@ int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
   return result; /*0x6b6120*/
 }
 // 0x54e3b0
-int __thiscall UnitClass::GetExitCell(int a1,unsigned int *a2,unsigned int *a3) 
+int __thiscall UnitClass::GetExitCell(unsigned int *a2, unsigned int *a3, int a1)
 {
   int result; // eax
   unsigned int *v6; // eax

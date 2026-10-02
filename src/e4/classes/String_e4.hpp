@@ -48,7 +48,7 @@ struct String {
     ObjectClass * * SplitComma(ObjectClass * aP1);  // 0x5D0380
     int NormalizeNewlines();  // 0x5F3350
     ControlClass * * To_Waypoint();  // 0x763690
-    int TrimLeft(ObjectClass * aP1);  // 0x7B51D0
+    int TrimLeft(const char **a2, int aP1, int a1, int a3, int aP2, int aP3, int a4, int a5);
     unsigned int Length(void *a1_1);  // 0x7B54B0
     AbstractClass * * Replace(char * SubStr, const char * a3);  // 0x7B57A0
     AbstractClass * * Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3);  // 0x7B5F10
@@ -57,7 +57,7 @@ struct String {
     ObjectClass * CopyConstant(char * Destination);  // 0x777B60
     char * CopyUpper(char * String, ObjectClass * aP1);  // 0x4F4C30
     char * Copy(const char * a2, void *a2_2);  // 0x4F4C70
-    char * CopyChecked(const char * a2, const char * a2_2);
+    char * CopyChecked(const char *a2, int aP1, int a3);
     bool Equals(ObjectClass * aP1, void *a2_1);  // 0x4F4CE0
     unsigned int ComputeHash(void *a1_1);  // 0x5E2620
     char * Trim(void *a1_1);  // 0x727CF0

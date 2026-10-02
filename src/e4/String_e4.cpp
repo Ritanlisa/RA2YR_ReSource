@@ -188,7 +188,7 @@ ControlClass * * String::To_Waypoint()
 }
 // 0x7B51D0
 namespace gamemd {
-int String::TrimLeft(const char **aP1)
+int String::TrimLeft(const char **a2, int aP1, int a1, int a3, int aP2, int aP3, int a4, int a5)
 {
 
   int result; // eax
@@ -659,7 +659,7 @@ char * String::Copy(const char * a2, void *a2_2)
 
 // 0x4F4CB0
 namespace gamemd {
-char * String::CopyChecked(const char * a2, void *a2_2)
+char * String::CopyChecked(const char *a2, int aP1, int a3)
 {
 
   strcpy(this, a2); /*0x4f4ccc*/

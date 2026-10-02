@@ -919,9 +919,9 @@ struct AircraftTypeClass {
     bool qE0E;  // 0xE0E
     unsigned char qE0F;  // 0xE0F
 // --- flat members (END) ---
-    AircraftTypeClass(void * aP1);
+    AircraftTypeClass(char *Source, int aP1, int a1, int a2, int a3, int aP0, int a0);
     AircraftClass * ConstructAircraft(AbstractClass * ppv);
-    AircraftTypeClass * ddtor(char a2);
+    AircraftTypeClass * ddtor(char a2, int a1, int aP0, int aP1, int a0, int a3);
     char GetDimensions(int a1, int a2);
     char StubReturnFalse();
     int * CreateAircraft(int a1);

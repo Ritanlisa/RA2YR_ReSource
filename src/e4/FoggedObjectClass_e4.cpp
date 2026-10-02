@@ -1060,7 +1060,7 @@ int FoggedObjectClass::GetClassIdentifier(int a1, unsigned int * a2)
 }  // G42.18c ns repair
 // 0x4D2910
 namespace gamemd {  // G42.18c ns repair
-FoggedObjectClass * FoggedObjectClass::ddtor(void * Block, char a2)
+FoggedObjectClass * FoggedObjectClass::ddtor(char a2, int a3)
 {
 
   DestructFoggedObjectClass((int)Block); /*0x4d2913*/
@@ -1107,7 +1107,7 @@ char FoggedObjectClass::AddRef(int a2)
 }  // G42.18c ns repair
 // 0x4D2D60
 namespace gamemd {  // G42.18c ns repair
-DynamicVector * FoggedObjectClass::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * FoggedObjectClass::QueryInterface(char a2, int a3)
 {
 
   void *v3; // eax

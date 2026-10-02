@@ -18,7 +18,7 @@
 
 // 0x48B750
 namespace gamemd {
-int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5, void *a5_2)
+int ConnectionClass::allocPacketSlot(const void *a2, signed int a3, const void *a4, signed int a5, int aP1, int aP2, int aP3, int aP4)
 {
 
   int v6; // edx

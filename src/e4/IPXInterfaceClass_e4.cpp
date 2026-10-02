@@ -662,7 +662,7 @@ int IPXInterfaceClass::COMStub_Ret1139(int a1)
 } // namespace gamemd
 // 0x7B1790
 namespace gamemd {
-IPXInterfaceClass * IPXInterfaceClass::QueryInterface(void * Block, char a2)
+IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2, int a1, int a3, int a4, int aP1)
 {
 
   WinsockInterfaceClass::WinsockInterfaceClass((int)Block); /*0x7b1793*/
@@ -799,7 +799,7 @@ int IPXInterfaceClass::initSession(unsigned int * a2)
 } // namespace gamemd
 // 0x7B2B50
 namespace gamemd {
-DynamicVector * IPXInterfaceClass::closeSession(unsigned int * Block, char a2)
+DynamicVector * IPXInterfaceClass::closeSession(char a2 a2)
 {
 
   void *v3; // eax

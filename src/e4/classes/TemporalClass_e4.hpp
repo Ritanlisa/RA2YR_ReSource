@@ -44,7 +44,7 @@ struct TemporalClass {
     int SetTarget(AbstractClass * aP1);
     int ddtor(int a1, unsigned int * a2);
     TemporalClass(TechnoClass * aP1);
-    void * ProcessEvent(char a2);
+    void * ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2);
     void ** ProcessTimeWarp();
 };
 

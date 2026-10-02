@@ -398,7 +398,7 @@ int TagTypeClass::GetObjectSize()
 
 // 0x6E64C0
 namespace gamemd {
-TagTypeClass * TagTypeClass::ddtor(void * Block, char a2)
+TagTypeClass * TagTypeClass::ddtor(char a2 a2)
 {
 
   TagTypeClass::CleanupMembers((AbstractTypeClass *)Block); /*0x6e64c3*/

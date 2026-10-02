@@ -19,9 +19,9 @@ struct ScoreAnimClass {
     unsigned int field_C;
     unsigned int m_0;
 // --- flat members (END) ---
-    unsigned int * Constructor_ScoreAnimClass_0(char a2);
-    unsigned int * Constructor_ScoreAnimClass_1(char a2);
-    unsigned int * Constructor_ScoreFontClass(char a2);
+    unsigned int * Constructor_ScoreAnimClass_0(char a2 a2);
+    unsigned int * Constructor_ScoreAnimClass_1(char a2 a2);
+    unsigned int * Constructor_ScoreFontClass(char a2 a2);
 };
 
 } // namespace gamemd

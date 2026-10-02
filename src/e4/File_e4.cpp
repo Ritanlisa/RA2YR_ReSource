@@ -253,7 +253,7 @@ unsigned int * File::LoadFileHVA(int a2)
 }
 // 0x5BD5C0
 namespace gamemd {
-AbstractClass * * File::ParseFileHVA(int a2, void *a2_2)
+AbstractClass * * File::ParseFileHVA(int a2, int aP1, int a3)
 {
 
   int v3; // esi

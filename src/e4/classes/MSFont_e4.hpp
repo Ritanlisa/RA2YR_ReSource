@@ -16,7 +16,7 @@ struct MSFont {
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
 // --- flat members (END) ---
-    MSFont * QueryInterface(char a2);
+    MSFont * QueryInterface(char a2, int a3);
 };
 
 } // namespace gamemd

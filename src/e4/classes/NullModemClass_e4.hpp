@@ -43,7 +43,7 @@ struct NullModemClass {
     int ddtor(int a2, int a3, int a4);
     int receiveData();
     int sendData();
-    void * QueryInterface(char a2);
+    void * QueryInterface(char a2, int a1, int a3, int a4, int a5);
 };
 
 } // namespace gamemd

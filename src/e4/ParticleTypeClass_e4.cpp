@@ -733,7 +733,7 @@ int ParticleTypeClass::GetType(int a2, int a3)
 }
 // 0x645950
 namespace gamemd {
-ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
+ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, int a6, int a7, int a8, int aP0, int aP1, int aP2, int a1)
 {
 
   int v3; // eax
@@ -879,7 +879,7 @@ unsigned int ParticleTypeClass::LoadTypeData(int a2)
 
 // 0x477AC0
 namespace gamemd {
-TypeList_flat * ParticleTypeClass::QueryInterface(unsigned int * Block, char a2)
+TypeList_flat * ParticleTypeClass::QueryInterface(char a2, int a3, int a4, int a5, int a6, int a7, int a8, int aP0, int aP1, int aP2, int a1)
 {
 
   void *v3; // eax

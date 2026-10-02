@@ -410,7 +410,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
 int MapClass::SetScrollMode(int aP1)
 // 0x4AEB30
 namespace gamemd {
-int MapClass::SetScrollMode(int aP1)
+int MapClass::SetScrollMode(int a2, int aP1, int a1, int aP2, int a3)
 {
 
   int result; // eax

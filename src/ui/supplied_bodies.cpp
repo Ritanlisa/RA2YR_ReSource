@@ -43,7 +43,7 @@ int ListBox::Clear() {
 
 // 0x6AC780
 namespace gamemd {
-unsigned int * SidebarClass::queryInterface(char a2) {
+unsigned int * SidebarClass::queryInterface(char a2, int a5, int a6, int a4) {
     GadgetClass::Dtor((GadgetClass *)this); /*0x6ac783*/
     if ( (a2 & 1) != 0 ) /*0x6ac78d*/
       RA2_OPDEL(this); /*0x6ac790*/
@@ -143,7 +143,7 @@ int CommandClass::BinarySearchAction(unsigned int *a2) {
 
 // 0x42DF90
 namespace gamemd {
-size_t BitmapClass::ProcessFrame(char *a2, signed int Size) {
+size_t BitmapClass::ProcessFrame(char *a2, signed int Size, int a5, int a6, int a4) {
     size_t result; // eax
     Base64Straw *v5; // edi
     Base64Straw *v6; // ebx
@@ -219,7 +219,7 @@ size_t BitmapClass::ProcessFrame(char *a2, signed int Size) {
 
 // 0x434500
 namespace gamemd {
-int FontClass::RenderText(uint16_t *a2, int xLeft, int yTop, int a5, int a6) {
+int FontClass::RenderText(unsigned __int16 *a2, int xLeft, int yTop, int a5, int a6) {
     uint16_t v6; // si
     uint16_t *v8; // edx
     bool v9; // zf
@@ -297,7 +297,7 @@ int FontClass::RenderText(uint16_t *a2, int xLeft, int yTop, int a5, int a6) {
 
 // 0x4348F0
 namespace gamemd {
-int FontRenderer::InitContext(int *a2) {
+int FontRenderer::InitContext(int *a2, int a4) {
     int v3; // edx
     int v4; // eax
     int v5; // edx
@@ -340,7 +340,7 @@ int FontRenderer::InitContext(int *a2) {
 
 // 0x4349B0
 namespace gamemd {
-int FontClass::GetPixelData(uint16_t a2) {
+int FontClass::GetPixelData(unsigned __int16 a2, int a4) {
     unsigned int *FontClass_field_0x04; // ecx
     int v3; // eax
     uint8_t *v4; // eax

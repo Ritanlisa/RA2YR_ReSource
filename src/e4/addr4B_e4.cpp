@@ -646,7 +646,7 @@ int Color_BlendPack(unsigned char * a1, int a2, int a3, int a4)
 }
 // 0x4B0DF0
 namespace gamemd {
-char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
+char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int aP5, int aP6, int aP7, int a9, int a10, int a11)
 {
 
   int v2; // eax

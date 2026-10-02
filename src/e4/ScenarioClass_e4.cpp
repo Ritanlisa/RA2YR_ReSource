@@ -433,7 +433,7 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
 }
 // 0x683AB0
 namespace gamemd {
-int ScenarioClass::LoadScenarioAndStart(char *Source@<ecx>, char a2@<dl>, double a3@<st0>, int a4)
+int ScenarioClass::LoadScenarioAndStart(char *Source@<ecx> a2, char a2@<dl> a3, double a3@<st0> a4, int aP1)
 {
 
   char *v4; // ebp

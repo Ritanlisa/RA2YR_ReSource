@@ -136,7 +136,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
 } // namespace gamemd
 // 0x71DA80
 namespace gamemd {  // G42.18c ns repair
-TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
+TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0)
 {
 
   int v3; // eax

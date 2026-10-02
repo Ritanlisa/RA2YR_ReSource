@@ -976,7 +976,7 @@ int E4Recv_4964D0::sub_4964D0(int a5, int a2, unsigned __int8 *a4, int a3, int a
 }
 // 0x4965B0
 namespace gamemd {
-int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
+int E4Recv_4965B0::sub_4965B0(unsigned short *a2, unsigned __int8 *a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int a10, char *a11, int a1, int aP2, int aP3)
 {
 
   int result; // eax

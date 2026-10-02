@@ -293,7 +293,7 @@ int WalkLocomotionClass::StubReturn60()
 } // namespace gamemd
 // 0x75CBE0
 namespace gamemd {
-WalkLocomotionClass * WalkLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
+WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2 a2)
 {
 
   ILocomotion *Piggybackee; // eax

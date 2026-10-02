@@ -130,7 +130,7 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 }
 // 0x5BED40
 namespace gamemd {
-int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char a5, char a6, char a7, void * a1, void * a3, void * a4, void * a8)
+int Movie::Play(int a1@<edx>, int a2@<ebp>, int a3@<edi>, const char *a4@<ecx>, char a5, char a6, char a7, char a8, int a1, int a2, int a3, int a4, int aP1)
 {
 
   char *v8; // eax

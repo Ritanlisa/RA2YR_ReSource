@@ -231,7 +231,7 @@ void LocomotionClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5
 } // namespace gamemd
 // 0x5172F0
 namespace gamemd {
-LocomotionClass * LocomotionClass::ProcessMove(unsigned int * Block, char a2)
+LocomotionClass * LocomotionClass::ProcessMove(char a2 a2)
 {
 
   LocomotionClass::Construct(Block); /*0x5172f3*/

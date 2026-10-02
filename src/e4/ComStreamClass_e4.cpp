@@ -23,7 +23,7 @@
 
 // 0x7A3D90
 namespace gamemd {
-int ComStreamClass::Write(void * a1, void * a2, void * a3)
+int ComStreamClass::Write(int a2, unsigned __int8 *a3, const char *lParam, const char *lParama, int a1, int a4, int a5)
 {
     unsigned int v5 = 0;  /* G37 hoist */
 
@@ -166,7 +166,7 @@ int ComStreamClass::Release(void *a1)
 } // namespace gamemd
 // 0x7AC870
 namespace gamemd {
-int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
+int ComStreamClass::QueryInterface(unsigned int *a2, char **a3, int a4, int a1, int a5)
 {
     unsigned int v6 = 0;  /* G37 hoist */
 
@@ -384,7 +384,7 @@ unsigned int * ComStreamClass::getStreamSize()
 } // namespace gamemd
 // 0x7A4070
 namespace gamemd {
-int ComStreamClass::Seek(int a3, int a4, int a1)
+int ComStreamClass::Seek(int a2, int a3, int a4, int a1, int a5)
 {
 
   HWND v4; // eax
@@ -416,7 +416,7 @@ int ComStreamClass::Seek(int a3, int a4, int a1)
 } // namespace gamemd
 // 0x7A40F0
 namespace gamemd {
-int ComStreamClass::ddtor(int a2, int a3, unsigned int a1, int a4, int a5)
+int ComStreamClass::ddtor(int a2, int a3, unsigned int a1, int a4 a4, int a5 a5)
 {
 
   if ( g_NetworkLobby_Init && *(unsigned int *)dword_B77780 ) /*0x7a4100*/
@@ -457,7 +457,7 @@ LONG ComStreamClass::AddRef(void *a1)
 } // namespace gamemd
 // 0x7AED20
 namespace gamemd {
-void ** ComStreamClass::writeData(void ** Block, char a2)
+void ** ComStreamClass::writeData(char a2 a2)
 {
 
   DeleteAndZero((ObjectClass *)Block); /*0x7aed23*/

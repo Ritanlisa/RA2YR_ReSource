@@ -221,7 +221,7 @@ struct WaveClass {
     unsigned int uniqueId7;
     unsigned int WaveClass_field_128;
 // --- flat members (END) ---
-    WaveClass * ddtor(char a2);
+    WaveClass * ddtor(char a2, int aP1, int a1, int a3);
     char DamageArea(ObjectClass * aP1);
     int CheckStateFlag();
     int GetClassIdentifier(int a1, unsigned int * a2);

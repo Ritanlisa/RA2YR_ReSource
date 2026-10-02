@@ -337,7 +337,7 @@ int IPXGlobalConnClass::Connect(void * a2, signed int * a3)
 } // namespace gamemd
 // 0x540670
 namespace gamemd {
-IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(unsigned int * Block, char a2)
+IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2 a2)
 {
 
   void *v3; // eax

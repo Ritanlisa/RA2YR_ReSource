@@ -38,7 +38,7 @@
 
 // 0x5E3850
 namespace gamemd {
-int INIClass::WOLobby_Play(void * a1, void * a2)
+int INIClass::WOLobby_Play(const char *a1, const char *a2, int a3)
 {
 
   LPVOID v2; // ebx

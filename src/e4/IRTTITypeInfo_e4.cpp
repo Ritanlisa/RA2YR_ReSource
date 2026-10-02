@@ -31,7 +31,7 @@ int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
 
 // 0x74F6A0
 namespace gamemd {
-unsigned int * IRTTITypeInfo::loc_74F6A0(unsigned int * Block, char a2)
+unsigned int * IRTTITypeInfo::loc_74F6A0(unsigned int *Block, char a2)
 {
 
   void *v3; // eax

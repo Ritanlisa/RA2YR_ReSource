@@ -62,7 +62,7 @@ int MouseClass::updateCursorState(int a2) {
 }
 // 0x40D720
 namespace gamemd { 
-int MouseClass::selectCursor(int a2, int * a3) {
+int MouseClass::selectCursor(int a2, unsigned int *a3, int a1, int a4) {
   unsigned int *v4; // edi
   int m_8; // ecx
   int i; // eax
@@ -107,7 +107,7 @@ int MouseClass::selectCursor(int a2, int * a3) {
 }
 // 0x40D7D0
 namespace gamemd { 
-int MouseClass::getCursorFrame(int * a2) {
+int MouseClass::getCursorFrame(unsigned int *a2, int a1, int a3, int a4) {
   int m_10; // edx
   int result; // eax
   unsigned int *i; // ecx

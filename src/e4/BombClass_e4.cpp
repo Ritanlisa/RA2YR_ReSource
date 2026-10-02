@@ -175,7 +175,7 @@ int BombClass::ddtor(int a1, unsigned int * a2)
 
 // 0x438B40
 namespace gamemd {
-int BombClass::Write(int aP0)
+int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
 {
 
   int Prefix_0; // edi
@@ -214,7 +214,7 @@ int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 
 // 0x4393F0
 namespace gamemd {
-BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
+BombClass * BombClass::CopyTo(char a2 a2)
 {
 
   int v3; // eax

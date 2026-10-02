@@ -61,7 +61,7 @@ int AlphaShapeClass::SD_vt10(int a2, int a3)
 } // namespace gamemd
 // 0x421730
 namespace gamemd {
-AlphaShapeClass * AlphaShapeClass::SDDTOR(unsigned int * Block, char a2)
+AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
 {
 
   int v3; // eax

@@ -173,7 +173,7 @@ LABEL_14: v10 = (int)((gamemd::VoxelStruct **)(*v9));
 }
 // 0x528A10
 namespace gamemd {
-unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * aP3, INIClass * aP4, int Count, void *a6)
+unsigned int INIClass::GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2)
 {
 
   char *v6; // edi
@@ -456,7 +456,7 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
 
 // 0x5278F0
 namespace gamemd {
-int INIClass::ReadInt(String *aP2, String *aP1, int a1)
+int INIClass::ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, int aP3)
 {
 
   uint8_t *v5; // eax

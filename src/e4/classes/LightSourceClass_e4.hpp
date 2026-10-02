@@ -42,7 +42,7 @@ struct LightSourceClass {
     bool tail_49;  // 0x49
     bool q04A;  // 0x4A
 // --- flat members (END) ---
-    LightSourceClass * CopyTo(char a2);
+    LightSourceClass * CopyTo(char a2 a2);
     void Constructor(void *a1, void *a2, void *a3);
     int Seek(TechnoTypeClass * aP0, int * a1, int aP2);
     int Stat(AbstractClass * aP1);

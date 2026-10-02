@@ -321,8 +321,8 @@ struct ParticleTypeClass {
     unsigned char ParticleTypeClass_field_0x314;  // 0x314
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, char * a3);
-    ParticleTypeClass * ddtor(char a2);
-    TypeList_flat * QueryInterface(char a2);
+    ParticleTypeClass * ddtor(char a2, int a3, int a4, int a5, int a6, int a7, int a8, int aP0, int aP1, int aP2, int a1);
+    TypeList_flat * QueryInterface(char a2, int a3, int a4, int a5, int a6, int a7, int a8, int aP0, int aP1, int aP2, int a1);
     char Stub(int a1, int a2);
     int GetObjectSize();
     int GetType(int a2, int a3);

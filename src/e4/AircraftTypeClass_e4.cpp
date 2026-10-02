@@ -39,7 +39,7 @@ struct Power;  // fix_tu_missing_types
 
 // 0x41C8B0
 namespace gamemd {  // G42.18c ns repair
-AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
+AircraftTypeClass::AircraftTypeClass(char *Source, int aP1, int a1, int a2, int a3, int aP0, int a0)
 {
 
   int v3; // eax
@@ -193,7 +193,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
 }
 // 0x41CFE0
 namespace gamemd {  // G42.18c ns repair
-AircraftTypeClass * AircraftTypeClass::ddtor(void ** Block, char a2)
+AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int a0, int a3)
 {
 
   int v3; // eax

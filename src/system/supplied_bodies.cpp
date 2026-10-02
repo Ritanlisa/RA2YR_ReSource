@@ -15,7 +15,7 @@
 
 // 0x41C150
 namespace gamemd {
-unsigned int * TacticalClass::ProcessTick2(unsigned int *a2) {
+unsigned int * TacticalClass::ProcessTick2(unsigned int *a2, int a4, int a5, int a3) {
     *a2 = this->lastJumpjetMapCoords[0]; /*0x41c15a*/
     return a2; /*0x41c15c*/
 }
@@ -23,7 +23,7 @@ unsigned int * TacticalClass::ProcessTick2(unsigned int *a2) {
 
 // 0x478220
 namespace gamemd {
-unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
+unsigned int * INIClass::parseKeyValue(unsigned int *a2, int a4, int a5, int a3) {
     int v3; // edi
     int v4; // eax
     unsigned char *v5; // ecx

@@ -43,7 +43,7 @@
 
 // 0x6B5260
 namespace gamemd {  // G42.18c ns repair
-SmudgeTypeClass::SmudgeTypeClass(char * Source)
+SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, int a6, int aP1, int aP0, int aP2, int a1)
 {
 
   int v3; // eax

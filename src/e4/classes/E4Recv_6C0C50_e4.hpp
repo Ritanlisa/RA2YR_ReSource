@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_6C0C50 {
     void* vfptr;  // minimal E2 declaration
-    int CreateTClassFactory_CaptureManagerClass();  // 0x6C0C50
+    int CreateTClassFactory_CaptureManagerClass(const void *a2 a2, unsigned int *a3 a3);
 };
 } // namespace gamemd

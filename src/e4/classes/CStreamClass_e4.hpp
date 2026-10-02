@@ -48,7 +48,7 @@ struct CStreamClass {
     CStreamClass * ddtor(int a2, char a3);
     LONG IStreamAddRef(int a1);
     LONG IStreamRelease(int a1);
-    int CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4);
+    int CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, int a1, int a2, int a3, int a5, int a6);
     int Commit(int a1);
     int IStreamQueryInterface(int a1, const void * a2, unsigned int * a3);
     int LockRegion(int a1, int a2, int a3, int a4, int a5, int a6);

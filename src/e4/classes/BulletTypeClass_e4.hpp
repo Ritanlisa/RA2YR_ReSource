@@ -292,7 +292,7 @@ struct BulletTypeClass {
 // --- flat members (END) ---
     BuildingTypeClass * * ReadArmor();
     BuildingTypeClass * * ReadTrailerAnim();
-    BulletTypeClass * ddtor(char a2);
+    BulletTypeClass * ddtor(char a2, int a1, int aP0, int aP1, int aP2, int a3);
     WeaponTypeClass * * LoadFromINI(unsigned char *** a2, void *a2_2);
     char ReadTrajectoryFlags(unsigned char * Block, char * a3, int a4);
     char Stub(int a1, int a2);

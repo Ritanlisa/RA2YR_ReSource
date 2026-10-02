@@ -110,7 +110,7 @@ int Waypoint::FindCell(unsigned int * a2)
 }
 // 0x763610
 namespace gamemd {
-CHAR * Waypoint::To_String(CCINIClass * aP0)
+CHAR * Waypoint::To_String(int aP0)
 {
 
   if ( aP0 == (gamemd::CCINIClass *)(-1) ) /*0x763613*/

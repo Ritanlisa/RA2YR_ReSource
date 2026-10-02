@@ -344,7 +344,7 @@ int WaypointPathClass::StubReturn51()
 
 // 0x763E20
 namespace gamemd {
-WaypointPathClass * WaypointPathClass::ProcessEvent(void ** Block, char a2)
+WaypointPathClass * WaypointPathClass::ProcessEvent(char a2 a2)
 {
 
   int v3; // eax

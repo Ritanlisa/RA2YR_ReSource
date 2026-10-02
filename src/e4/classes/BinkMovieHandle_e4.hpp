@@ -30,7 +30,7 @@ struct BinkMovieHandle {
     unsigned int tempPath2;
 // --- flat members (END) ---
     BOOL COMStub();
-    BinkMovieHandle * QueryInterface(char a2);
+    BinkMovieHandle * QueryInterface(char a2 a2);
     char AddRef(void *a1);
     int AdjustSurfaceFormat(int a2, void *a2_2);
     void Check(int a2, void *a2_2, void *a3);

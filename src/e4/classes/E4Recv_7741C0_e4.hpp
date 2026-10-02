@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_7741C0 {
     void* vfptr;  // minimal E2 declaration
-    HKEY FindRegistrySubKey();  // 0x7741C0
+    HKEY FindRegistrySubKey(HKEY hKey, void *a2, char a3, int a5, int aP0, int a1, int a4);
 };
 } // namespace gamemd

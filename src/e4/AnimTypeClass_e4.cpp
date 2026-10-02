@@ -449,7 +449,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
 }
 // 0x428B80
 namespace gamemd {
-AnimTypeClass * * AnimTypeClass::FindOrCreate(char *Source)
+AnimTypeClass * * AnimTypeClass::FindOrCreate(char *Source, int a2, int aP0, int aP1, int aP2, int a1, int a3)
 {
 
   int v2; // esi
@@ -545,7 +545,7 @@ int AnimTypeClass::GetDamage()
 }
 // 0x428EA0
 namespace gamemd {
-AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
+AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1, int a3)
 {
 
   int v3; // eax

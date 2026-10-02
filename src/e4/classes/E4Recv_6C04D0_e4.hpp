@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_6C04D0 {
     void* vfptr;  // minimal E2 declaration
-    int CreateTClassFactory_WaypointPathClass();  // 0x6C04D0
+    int CreateTClassFactory_WaypointPathClass(const void *a2 a2, unsigned int *a3 a3);
 };
 } // namespace gamemd

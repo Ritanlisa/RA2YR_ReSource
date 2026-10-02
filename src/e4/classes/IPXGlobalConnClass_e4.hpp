@@ -35,7 +35,7 @@ struct IPXGlobalConnClass {
     unsigned char IPXGlobalConnClass_field_0x20;  // 0x20
 // --- flat members (END) ---
     HashTable_flat * * SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3);
-    IPXGlobalConnClass * QueryInterface(char a2);
+    IPXGlobalConnClass * QueryInterface(char a2 a2);
     int CheckStatus();
     int Connect(void * a2, signed int * a3);
     int Release(const void * a1, AnimClass * aP2, int aP3, char aP4);

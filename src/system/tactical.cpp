@@ -543,7 +543,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
   return result; /*0x6d7bf2*/
 }
 // 0x6d7c00
-int TacticalClass::DrawTerrain(int *a2, unsigned int *a3)
+int TacticalClass::DrawTerrain(int *a2, unsigned int *a3, int a4)
 {
   int *v3; // edi
   int v5; // eax

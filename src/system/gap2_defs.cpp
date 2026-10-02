@@ -42,7 +42,7 @@ int CCFileClass::Destru_vt08(int a2, int a3) {
 }
 // 0x4019A0
 namespace gamemd { 
-void* CCFileClass::Destru_vt00(unsigned int * Block, char a2) {
+void* CCFileClass::Destru_vt00(char a2, int a3, int a4, int a5) {
 
   *(unsigned int *)Block->CDFileClass = &vt_CCFileClass; /*0x4019a6*/
   *((unsigned int *)Block + 25) = 0; /*0x4019ac*/
@@ -213,7 +213,7 @@ bool TacticalClass::ProcessTick()
 }
 // 0x41C150
 namespace gamemd {
-void *TacticalClass::ProcessTick2(unsigned int * a2)
+void *TacticalClass::ProcessTick2(unsigned int *a2, int a1, int aP1, int a3)
 {
 
   *a2 = this->lastJumpjetMapCoords[0]; /*0x41c15a*/
@@ -459,7 +459,7 @@ int BufferIOFileClass::Dtor() {
 }
 // 0x431E80
 namespace gamemd { 
-int CCFileClass::SetName(IUnknown * aP1) {
+int CCFileClass::SetName(char *Source, int aP1, int a2, int a3, int a1) {
 
   if ( (*(int (**)(BufferIOFileClass *))(*(unsigned int *)&this->FileClass + 4))(this) && BYTE1(this->BufferSize) ) /*0x431e91*/
   {
@@ -491,7 +491,7 @@ bool BufferIOFileClass::Read() {
 }
 // 0x431F50
 namespace gamemd { 
-bool BufferIOFileClass::Write( int a2, CDFileClass * aP1) {
+bool BufferIOFileClass::Write(int a2, const CHAR *a3, int aP1, int a1) {
 
   (*(void (**)(BufferIOFileClass *, int))(*(unsigned int *)&this->FileClass + 8))(this, a2); /*0x431f5c*/
   return BufferIOFileClass::Open((CCFileClass *)this, aP1); /*0x431f6b*/
@@ -500,7 +500,7 @@ bool BufferIOFileClass::Write( int a2, CDFileClass * aP1) {
 }
 // 0x431F70
 namespace gamemd { 
-bool BufferIOFileClass::Open( CDFileClass * aP1) {
+bool BufferIOFileClass::Open(const CHAR *a2, int aP1, int a1) {
 
   FileClass v3; // eax
   const CHAR *v4; // eax

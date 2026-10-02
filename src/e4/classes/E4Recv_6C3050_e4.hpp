@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_6C3050 {
     void* vfptr;  // minimal E2 declaration
-    int CreateTClassFactory_OverlayTypeClass();  // 0x6C3050
+    int CreateTClassFactory_OverlayTypeClass(const void *a2 a2, unsigned int *a3 a3);
 };
 } // namespace gamemd

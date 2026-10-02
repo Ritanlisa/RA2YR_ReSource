@@ -206,7 +206,7 @@ wchar_t * LoadOptions::Close(void *a1, void *a2)
 
 // 0x55A0D0
 namespace gamemd {
-LoadOptions * LoadOptions::QueryInterface(char * Block, char a2)
+LoadOptions * LoadOptions::QueryInterface(char a2, int a3, int a1)
 {
 
   int v3; // esi
@@ -359,7 +359,7 @@ int LoadOptions::vt04(unsigned int * a2)
 }
 // 0x55A410
 namespace gamemd {
-VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(unsigned int * Block, char a2)
+VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a2, int a1)
 {
 
   void *v3; // eax
@@ -382,7 +382,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(unsign
 
 // 0x55A460
 namespace gamemd {
-DynamicVector * LoadOptions::vt00(unsigned int * Block, char a2)
+DynamicVector * LoadOptions::vt00(char a2, int a1)
 {
 
   void *v3; // eax

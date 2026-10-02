@@ -243,9 +243,9 @@ struct WarheadTypeClass {
     AbstractClass * * Release(int a2, unsigned int * a3);
     AbstractClass * * parseVerses();
     CCINIClass * checkImmunity(int aP1);
-    CampaignClass * * Destructor(char a2);
+    CampaignClass * * Destructor(char a2, int a3, int a1);
     DynamicVector * calculateDamage(int aP1);
-    ParticleSystemTypeClass * * applyDamage();
+    ParticleSystemTypeClass * * applyDamage(char *Source, int aP1, int a2, int a3, int a4, int a5, int a6, int a1, int aP0);
     TypeList_flat * QueryInterface(char a2);
     WarheadTypeClass * parseAnimations(char a2);
     char AddRef(int a2);
@@ -259,7 +259,7 @@ struct WarheadTypeClass {
     int SaveLoad_Prefix(unsigned int * a1, int a2);
     int SaveToINI(int a2);
     unsigned int LoadTypeData(int a2);
-    void * ReadParticleSystems(char a2);
+    void * ReadParticleSystems(char a2, int aP1, int a3, int a4, int a5, int a6, int a1, int aP0);
     void * loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4);
     void * parseModifiers(char a2);
     void GetClassIdentifier();

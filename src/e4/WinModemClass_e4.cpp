@@ -127,7 +127,7 @@ int WinModemClass::ReadSerial()
 } // namespace gamemd
 // 0x774B30
 namespace gamemd {
-int WinModemClass::ReadBytes(unsigned char *a3, int a2)
+int WinModemClass::ReadBytes(unsigned char *a2, int a3, int aP2, int a4, int aP4, int a6, int a7, int a8, int aP1, int a5)
 {
 
   int v4; // ebx
@@ -587,7 +587,7 @@ int WinModemClass::LogCommErrors(int aP1, char a3, int a4, int a5)
 } // namespace gamemd
 // 0x775610
 namespace gamemd {
-WinModemClass * WinModemClass::QueryInterface(void * Block, char a2)
+WinModemClass * WinModemClass::QueryInterface(char a2 a2)
 {
 
   int v3; // eax

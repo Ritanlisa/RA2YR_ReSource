@@ -29,7 +29,7 @@
 
 // 0x41FB10
 namespace gamemd {
-char TriggerTypeClass::SaveToINI(char *a2) {
+char TriggerTypeClass::SaveToINI(char *a2, int a3) {
     void *v3; // ebp
     int v4; // eax
     int v5; // eax

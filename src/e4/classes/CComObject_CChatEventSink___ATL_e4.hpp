@@ -19,7 +19,7 @@ struct CComObject_CChatEventSink___ATL {
 // --- flat members (END) ---
     int DispatchConnectionPairs(void *a1_1);  // 0x7937B0
     Coord * * DispatchStub_32(int a1, int a2, int a3, int a4);  // 0x7A4EC0
-    Coord * * GetTypeInfo(int a1, int a2, const char * a3);  // 0x7A5290
+    Coord * * GetTypeInfo(int a2, const char *a3, int a1018, int a1, int a4, int a5);
     AbstractClass * * FireEvent(int a1, int a2, unsigned char * a3);  // 0x7A5690
     Coord * * DispatchStub_23(int a1, int a2, int a3, int a4, wchar_t * a5);  // 0x7A7B60
     Coord * * DispatchStub_22(int a1, int a2, int a3, int a4, char * Source);  // 0x7A7EA0

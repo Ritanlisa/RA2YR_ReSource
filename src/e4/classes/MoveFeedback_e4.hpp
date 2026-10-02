@@ -33,7 +33,7 @@ struct MoveFeedback {
     unsigned int m_C;
 // --- flat members (END) ---
     void Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5);
-    DynamicVector * QueryInterface(char a2);
+    DynamicVector * QueryInterface(char a2, int a1, int a3, int a4, int a5);
     char AddRef(int a2);
     char SetCapacity(int a2, unsigned int * a3);
     int Draw(unsigned int * a2);

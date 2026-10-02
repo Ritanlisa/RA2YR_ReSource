@@ -174,7 +174,7 @@ int IsometricTileTypeClass::GetObjectSize()
 } // namespace gamemd
 // 0x54A170
 namespace gamemd {
-IsometricTileTypeClass * IsometricTileTypeClass::ddtor(void * Block, char a2)
+IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2, int a1, int a3, int a4, int a5)
 {
 
   IsometricTileTypeClass::CleanupMembers((int)Block); /*0x54a173*/

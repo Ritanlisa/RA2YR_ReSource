@@ -139,7 +139,7 @@ int NullModemClass::SetAddress(int a2)
 } // namespace gamemd
 // 0x5F3650
 namespace gamemd {
-void * NullModemClass::QueryInterface(void *** Block, char a2)
+void * NullModemClass::QueryInterface(char a2, int a1, int a3, int a4, int a5)
 {
 
   void **v3; // edi

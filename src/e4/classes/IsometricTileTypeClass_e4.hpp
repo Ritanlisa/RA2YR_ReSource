@@ -73,7 +73,7 @@ struct IsometricTileTypeClass {
 // --- flat members (END) ---
     AbstractClass * * LoadTypeData(int * a1, int a2);
     DynamicVector * Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5);
-    IsometricTileTypeClass * ddtor(char a2);
+    IsometricTileTypeClass * ddtor(char a2, int a1, int a3, int a4, int a5);
     char SetCapacity(int a2, unsigned int * a3);
     int FindItem(unsigned int * a2);
     int GetAuxField();

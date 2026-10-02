@@ -31,7 +31,7 @@ struct AlphaShapeClass {
     unsigned int u32_34;
     unsigned int u32_3C;
 // --- flat members (END) ---
-    AlphaShapeClass * SDDTOR(char a2);
+    AlphaShapeClass * SDDTOR(char a2, int aP0, int aP1);
     int SD_vt05(AbstractClass * aP0, int aP1);
     int SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2);
     int SD_vt10(int a2, int a3);

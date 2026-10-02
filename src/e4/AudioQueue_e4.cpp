@@ -698,7 +698,7 @@ int AudioQueue::IsNotEmpty(int a1, int a2)
 
 // 0x4081A0
 namespace gamemd {
-int AudioQueue::HaltVoices(void * a1)
+int AudioQueue::HaltVoices(Voice *a1@<edi> a1)
 {
 
   int result; // eax

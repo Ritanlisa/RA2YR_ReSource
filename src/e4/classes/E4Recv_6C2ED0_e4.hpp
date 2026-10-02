@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_6C2ED0 {
     void* vfptr;  // minimal E2 declaration
-    int CreateTClassFactory_IsometricTileTypeClass();  // 0x6C2ED0
+    int CreateTClassFactory_IsometricTileTypeClass(const void *a2 a2, unsigned int *a3 a3);
 };
 } // namespace gamemd

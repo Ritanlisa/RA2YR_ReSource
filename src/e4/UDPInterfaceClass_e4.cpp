@@ -506,7 +506,7 @@ int UDPInterfaceClass::Receive()
 } // namespace gamemd
 // 0x7B4170
 namespace gamemd {
-CampaignClass * * UDPInterfaceClass::Destructor(void *** Block, char a2)
+CampaignClass * * UDPInterfaceClass::Destructor(char a2, int a3, int aP1, int a5, int aP5, int a7, int a8, int a4)
 {
 
   int v3; // eax

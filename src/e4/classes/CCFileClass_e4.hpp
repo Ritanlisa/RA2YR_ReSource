@@ -47,7 +47,7 @@ struct CCFileClass {
     int GetFileSize(void *a1, void *a2);
     void ProcessStream(unsigned int a1);
     static double Construct3(...);  // C2597 interim stub
-    bool Open(int pFileName);  // open file with mode
+    bool Open(int a2 a2);
      double Read(...);  // C2597 interim stub
     void * ReadEntireFile();  // was C2597 interim stub, := truth 0x0x4a3890
     static double Reset(...);  // C2597 interim stub

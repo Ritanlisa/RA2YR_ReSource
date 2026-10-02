@@ -70,7 +70,7 @@ struct Coord {
     void * WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4);  // 0x6557F0
     AbstractClass * * To_Screen(unsigned int *a2, int *a3);  // 0x6D2140
     void * Divide(int * a2, int a3);  // 0x710700
-    static int * To_ScreenRaw(...);  // 0x6D1F10
+    static int * To_ScreenRaw(int *aP0, unsigned int *aP1);
     long long ScaleToScreenY();  // 0x6D2120
 };
 } // namespace gamemd

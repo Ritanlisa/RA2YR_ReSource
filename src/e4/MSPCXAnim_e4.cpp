@@ -90,7 +90,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
 }
 // 0x5CED70
 namespace gamemd {  // G42.18c ns repair
-MSPCXAnim * MSPCXAnim::QueryInterface(unsigned int * Block, char a2)
+MSPCXAnim * MSPCXAnim::QueryInterface(char a2, int a3)
 {
 
   void (***v3)(unsigned int, int); // ecx

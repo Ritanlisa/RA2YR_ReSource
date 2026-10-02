@@ -68,7 +68,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
 } // namespace gamemd
 // 0x7470D0
 namespace gamemd {  // G42.18c ns repair
-UnitTypeClass::UnitTypeClass(INIClass * aP1)
+UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
 {
 
   int v3; // eax

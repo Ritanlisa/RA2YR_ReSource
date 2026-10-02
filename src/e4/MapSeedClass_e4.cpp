@@ -536,7 +536,7 @@ wchar_t * MapSeedClass::Validate()
 } // namespace gamemd
 // 0x5AC270
 namespace gamemd {
-MapSeedClass * MapSeedClass::QueryInterface(unsigned int * Block, char a2)
+MapSeedClass * MapSeedClass::QueryInterface(char a2, int a3)
 {
 
   LoadOptions::Cleanup((LoadOptions *)Block); /*0x5ac273*/

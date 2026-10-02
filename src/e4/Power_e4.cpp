@@ -467,7 +467,7 @@ int Power::FinalizeDrain(int a2)
 
 // 0x4A1CA0
 namespace gamemd {
-int Power::FlagProcess(int a2)
+int Power::FlagProcess(int Power_field_0x8, int a2, int a1)
 {
 
   void *Power_field_0x4; // eax
@@ -510,7 +510,7 @@ int Power::FlagProcess(int a2)
 
 // 0x4A1D50
 namespace gamemd {
-int Power::TimerProcess(int a1)
+int Power::TimerProcess(int a1, int a2)
 {
 
   return Checksummer::Add_Buffer(&a1, 4); /*0x4a1d64*/

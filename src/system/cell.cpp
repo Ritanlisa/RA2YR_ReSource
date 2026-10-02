@@ -230,7 +230,7 @@ int CellClass::Draw(int a1, int a2, void * a3) const
   return COMObject::ActivateThunk((GadgetClass *)this, a2, (int)a3, 0); /*0x48e5ef*/
 }
 // 0x7235a0
-int CellClass::RegisterForRedraw(int a1, int a2)
+int CellClass::RegisterForRedraw(__int16 *a2, int a1, int a5, int a6)
 {
   unsigned char *result; // eax
   int v4; // eax
@@ -508,7 +508,7 @@ void CellClass::ReplaceTag(TagClass* tag)
 }
 
 // 0x47d210
-void CellClass::SetWallOwner(void * a1)
+void CellClass::SetWallOwner(int a1, int a5, int a6)
 {
   int result; // eax
   int v2; // ebp

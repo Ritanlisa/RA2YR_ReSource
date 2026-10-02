@@ -356,7 +356,7 @@ AnimClass * InfantryClass::CanInitiateDeploy()
   return v3 == -1 || (&byte_7EAF7C)[4 * v3]; /*0x521c0b*/
 }
 // 0x5221d0
-AnimClass * InfantryClass::CanDeployAtCell(void * a1, void * a2, void * a3)
+AnimClass * InfantryClass::CanDeployAtCell(__int16 *a2, __int16 *a3, int a1, int a4)
 {
   InfantryClass *v5; // eax
   unsigned int *v6; // eax

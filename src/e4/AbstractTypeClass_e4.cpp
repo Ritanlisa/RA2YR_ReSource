@@ -196,7 +196,7 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1, void *a2)
 } // namespace gamemd
 // 0x410C30
 namespace gamemd {
-AbstractTypeClass * AbstractTypeClass::ddtor(unsigned int * Block, char a2)
+AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a1)
 {
 
   int v3; // eax

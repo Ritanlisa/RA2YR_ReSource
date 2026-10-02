@@ -99,7 +99,7 @@ struct TeamClass {
     unsigned int Debug;
     unsigned char *__pad_28;  // 0x28
 // --- flat members (END) ---
-    AbstractClass * * DestroyAllMembers(void * aP1);
+    AbstractClass * * DestroyAllMembers(unsigned int *p_vtable0, int aP1, int a2, int a1);
     AbstractClass * * FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2);
     AbstractClass * * UpdateMembers();
     BOOL Check(void *a1, void *a2, void *a3);

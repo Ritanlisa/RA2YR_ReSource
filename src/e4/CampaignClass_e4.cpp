@@ -416,7 +416,7 @@ int CampaignClass::StubReturn10()
 
 // 0x46D090
 namespace gamemd {
-CampaignClass * CampaignClass::DTOR(void ** Block, char a2)
+CampaignClass * CampaignClass::DTOR(char a2 a2)
 {
 
   int v3; // eax

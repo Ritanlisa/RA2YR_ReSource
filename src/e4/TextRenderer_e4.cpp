@@ -200,7 +200,7 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
 }
 // 0x642EF0
 namespace gamemd {
-void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4)
+void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4, int aP0, int aP2, int aP3, int a6, int a7, int a8, int aP8)
 {
 
   unsigned int *FoundationSize; // eax
@@ -295,7 +295,7 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
 
 // 0x727CD0
 namespace gamemd {
-TriggerTypeClass * TextRenderer::Destructor(void * Block, char a2)
+TriggerTypeClass * TextRenderer::Destructor(char a2 a2)
 {
 
   ((TriggerClass *)((AbstractClass *)Block))->ProcessEvents(); /*0x727cd3*/

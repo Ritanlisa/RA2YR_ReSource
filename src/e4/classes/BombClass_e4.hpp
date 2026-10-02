@@ -50,13 +50,13 @@ struct BombClass {
     unsigned int vtable23;
     unsigned int DTOR;
 // --- flat members (END) ---
-    BombClass * CopyTo(char a2);
+    BombClass * CopyTo(char a2 a2);
     int InitPool();
     int IsDeathBomb();
     int Seek(TechnoTypeClass * aP0, int * a1, int aP2);
     int Stat(int * a2);
     int TimeToExplode();
-    int Write(AbstractClass * aP0, int aP1);
+    int Write(int a2, int aP0, int aP1, int a1, int aP2);
     int ddtor(int a1, unsigned int * a2);
     void * GetCurrentFrame();
     int AbstractClass();  // 0x4385d0

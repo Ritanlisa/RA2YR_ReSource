@@ -59,8 +59,8 @@ struct FoggedObjectClass {
     AbstractClass * * InitDrawRecord(unsigned int * a2);
     AbstractClass * InitTerrainFog(IUnknown * aP1, int a3, int a4);
     AbstractClass * * ResizeArray(int a2, char * a3);
-    DynamicVector * QueryInterface(char a2);
-    FoggedObjectClass * ddtor(char a2);
+    DynamicVector * QueryInterface(char a2, int a3);
+    FoggedObjectClass * ddtor(char a2, int a3);
     HouseClass * * PowerDrainUpdate(int a2);
     char AddRef(int a2);
     AbstractClass * Constructor(BuildingClass * aP1, FoggedObjectClass * aP2, void *a3);

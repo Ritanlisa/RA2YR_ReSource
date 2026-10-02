@@ -25,7 +25,7 @@
 
 // 0x436BE0
 namespace gamemd {
-unsigned int * BuildingLightClass::FindTarget(unsigned int *aP1)
+unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1, int aP0, int aP2)
 {
 
   double v2; // st7
@@ -135,7 +135,7 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *aP1)
 }
 // 0x4370C0
 namespace gamemd {
-BuildingLightClass * BuildingLightClass::SDDTOR(void * Block, char a2)
+BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP2)
 {
 
   int v3; // eax

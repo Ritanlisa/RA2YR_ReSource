@@ -193,7 +193,7 @@ int MoveFeedback::Draw(unsigned int * a2)
 } // namespace gamemd
 // 0x40BCB0
 namespace gamemd {
-DynamicVector * MoveFeedback::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * MoveFeedback::QueryInterface(char a2, int a1, int a3, int a4, int a5)
 {
 
   void *v3; // eax

@@ -74,7 +74,7 @@ struct AbstractTypeClass {
     unsigned int *__pad_8;
     unsigned int UIName;
 // --- flat members (END) ---
-    AbstractTypeClass * ddtor(char a2);
+    AbstractTypeClass * ddtor(char a2, int aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a1);
     BOOL NameEquals(void *a2);
     char WriteINI(char *aP1);
     int AddSampleVocClass();

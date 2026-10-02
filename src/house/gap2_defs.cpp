@@ -91,7 +91,7 @@ int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
 }
 // 0x42F180
 namespace gamemd { 
-int BaseClass::ProcessPowerTimer(AbstractClass * aP1) {
+int BaseClass::ProcessPowerTimer(unsigned int *a2, int aP1, int a1, int a3, int a4, int a5, int a6) {
   int result; // eax
   int v4; // ebp
   int v5; // edi

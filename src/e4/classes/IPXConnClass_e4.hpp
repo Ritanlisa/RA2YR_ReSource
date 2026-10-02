@@ -29,7 +29,7 @@ struct IPXConnClass {
     unsigned int u32_64;
 // --- flat members (END) ---
     void * constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8, void *a9);
-    static double initConnection(...);  // C2597 interim stub
+    static double initConnection(int a2, int a3, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a1);
 };
 
 } // namespace gamemd
