@@ -226,7 +226,7 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
       }
     }
   }
-  return (gamemd::DeleteAndZero)(DeleteAndZero((ObjectClass *)&v25)); /*0x7714a0*/
+  return (gamemd::DeleteAndZero)(j_DeleteAndZero((ObjectClass *)&v25)); /*0x7714a0*/
 
 }
 } // namespace gamemd

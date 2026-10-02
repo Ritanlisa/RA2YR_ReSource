@@ -71,7 +71,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
         || (byte_89C675 || !dword_89C670)
         && dword_89C67C > 0
         && (*(uint8_t (**)(int *, int, unsigned int))(dword_89C668 + 8))(
-             &dword_89C668,
+             (int *)&dword_89C668,
              dword_89C670 + dword_89C67C,
              0) )
       {
@@ -823,7 +823,7 @@ int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
   v2 = (int *)aP1; /*0x410381*/
   if ( !aP1 ) /*0x410387*/
     return -2147467261; /*0x410389*/
-  result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, &aP1, 4, 0); /*0x41039e*/
+  result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, (int *)&aP1, 4, 0); /*0x41039e*/
   if ( result >= 0 ) /*0x4103a3*/
   {
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, aP1, (int)aP0); /*0x4103b7*/
@@ -968,7 +968,7 @@ namespace gamemd {
 Surface * AbstractClass::getObjectValue(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &Surface_Vtable; /*0x4115d9*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&Surface_Vtable); /*0x4115d9*/
   if ( (a2 & 1) != 0 ) /*0x4115df*/
     __3_YAXPAX_Z(this); /*0x4115e2*/
   return (std::locale::facet *)this; /*0x4115ec*/
@@ -1387,7 +1387,7 @@ namespace gamemd {
 BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 {
 
-  *(unsigned int *)this = &vt_Blitter; /*0x499ce9*/
+  *(unsigned int *)this = (unsigned int)(&vt_Blitter); /*0x499ce9*/
   if ( (a2 & 1) != 0 ) /*0x499cef*/
     __3_YAXPAX_Z(this); /*0x499cf2*/
   return this; /*0x499cfc*/
@@ -1400,7 +1400,7 @@ namespace gamemd {
 BlitTransXlat * AbstractClass::getOverlayType(char a2)
 {
 
-  *(unsigned int *)this = &vt_Blitter; /*0x499d09*/
+  *(unsigned int *)this = (unsigned int)(&vt_Blitter); /*0x499d09*/
   if ( (a2 & 1) != 0 ) /*0x499d0f*/
     __3_YAXPAX_Z(this); /*0x499d12*/
   return this; /*0x499d1c*/
@@ -1413,7 +1413,7 @@ namespace gamemd {
 std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 {
 
-  *(unsigned int *)this = &vt_Blitter; /*0x499d29*/
+  *(unsigned int *)this = (unsigned int)(&vt_Blitter); /*0x499d29*/
   if ( (a2 & 1) != 0 ) /*0x499d2f*/
     __3_YAXPAX_Z(this); /*0x499d32*/
   return this; /*0x499d3c*/

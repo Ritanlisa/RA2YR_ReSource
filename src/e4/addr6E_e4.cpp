@@ -144,7 +144,7 @@ char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
                   a3 = (void *)(v7[27]);
                   (*(void (**)(int *, int *, unsigned int, int, unsigned int, int, unsigned int, unsigned int))((unsigned int)(v9)+ 364))( /*0x6e20d2*/
                     v7,
-                    &a3,
+                    (int *)&a3,
                     0,
                     ((unsigned int *)dword_8871E0)[5],
                     0,

@@ -79,7 +79,7 @@ LABEL_9:
     || (byte_A8E975 || !dword_A8E970)
     && dword_A8E97C > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_A8E968 + 8))(
-         &dword_A8E968,
+         (int *)&dword_A8E968,
          dword_A8E970 + dword_A8E97C,
          0) )
   {

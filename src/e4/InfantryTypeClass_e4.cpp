@@ -94,7 +94,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
     || (byte_A8E355 || !dword_A8E350)
     && dword_A8E35C > 0
     && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A8E348 + 8))(
-               &dword_A8E348,
+               (int *)&dword_A8E348,
                dword_A8E350 + dword_A8E35C,
                0) == 0,
         v3 = dword_A8E358,

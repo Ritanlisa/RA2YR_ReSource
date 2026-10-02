@@ -2207,7 +2207,7 @@ unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, v
 
   this->Width = aP1; /*0x4aec6a*/
   this->Height = aP2; /*0x4aec6d*/
-  *(unsigned int *)this->__pad_0 = &Surface_Vtable; /*0x4aec70*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&Surface_Vtable); /*0x4aec70*/
   return this->__pad_0; /*0x4aec76*/
 
 }

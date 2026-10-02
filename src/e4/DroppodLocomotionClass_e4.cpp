@@ -202,7 +202,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       (*((void (**)(FootClass *, unsigned int))v11->vtable1 + 115))(v11, 0); /*0x4b5e5e*/
       (*((void (**)(FootClass *, unsigned int, int))v11->vtable1 + 289))(v11, 0, 1); /*0x4b5e6c*/
       (*((void (**)(FootClass *))v11->vtable1 + 123))(v11); /*0x4b5e76*/
-      (*((void (**)(FootClass *, int *, unsigned int, unsigned int))v11->vtable1 + 93))(v11, &dword_8A0820, 0, 0); /*0x4b5e89*/
+      (*((void (**)(FootClass *, int *, unsigned int, unsigned int))v11->vtable1 + 93))(v11, (int *)&dword_8A0820, 0, 0); /*0x4b5e89*/
     }
     else
     {

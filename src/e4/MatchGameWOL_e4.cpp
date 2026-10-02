@@ -68,7 +68,7 @@ void sub_7A19E0()
         goto LABEL_12; /*0x7a1abe*/
     }
   }
-  DeleteAndZero((void **)&v13); /*0x7a1ac7*/
+  j_DeleteAndZero((void **)&v13); /*0x7a1ac7*/
   if ( v5 == -1 ) /*0x7a1ad0*/
   {
     v8 = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchoppone_0), 0,(const char *)(g_Str_File_wonline_cpp), 28787));

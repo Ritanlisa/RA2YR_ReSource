@@ -149,7 +149,7 @@ LABEL_6:
         || (byte_8B41D5 || !dword_8B41D0)
         && dword_8B41DC > 0
         && (v6 = (*(int (**)(int *, int, unsigned int))(dword_8B41C8 + 8))(
-                   &dword_8B41C8,
+                   (int *)&dword_8B41C8,
                    dword_8B41D0 + dword_8B41DC,
                    0),
             v5 = dword_8B41D8,

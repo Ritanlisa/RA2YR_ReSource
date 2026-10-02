@@ -150,7 +150,7 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
     || (BYTE1(*((unsigned int *)((char *)&FootClass_Array + 2))) || !((unsigned int *)&FootClass_Array)[1])
     && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(((char *)&FootClass_Array) + 8))(
-         ((char *)&FootClass_Array),
+         ((char *)(int *)&FootClass_Array),
          *((unsigned int *)((char *)&FootClass_Array + 1)) + *((unsigned int *)((char *)&FootClass_Array + 1)),
          0) )
   {

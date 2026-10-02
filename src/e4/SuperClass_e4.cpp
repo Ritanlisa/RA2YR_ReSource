@@ -159,7 +159,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
     || (byte_A83CC5 || !dword_A83CC0)
     && dword_A83CCC > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_A83CB8 + 8))(
-         &dword_A83CB8,
+         (int *)&dword_A83CB8,
          dword_A83CC0 + dword_A83CCC,
          0) )
   {
@@ -170,7 +170,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
     || (byte_B0F67D || !dword_B0F678)
     && dword_B0F684 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670 + 8))(
-         &dword_B0F670,
+         (int *)&dword_B0F670,
          dword_B0F678 + dword_B0F684,
          0) )
   {
@@ -181,7 +181,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
     || (byte_B0F6D5 || !dword_B0F6D0)
     && dword_B0F6DC > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F6C8 + 8))(
-         &dword_B0F6C8,
+         (int *)&dword_B0F6C8,
          dword_B0F6D0 + dword_B0F6DC,
          0) )
   {
@@ -907,7 +907,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
     this->SuperClass_field_0x68 = 0; /*0x6ce0c4*/
     v12[0] = (unsigned int)(this); /*0x6ce0db*/
     v3 = (*(int (**)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce0df*/
-           ((char *)&g_BuildingLoadQueue_Array),
+           ((char *)(int *)&g_BuildingLoadQueue_Array),
            v12);
     if ( v3 != -1 ) /*0x6ce0e5*/
       ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v3); /*0x6ce0ed*/
@@ -916,7 +916,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
   {
     v12[0] = (unsigned int)(this); /*0x6ce109*/
     v4 = (*(int (**)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce10d*/
-           ((char *)&g_BuildingLoadQueue_Array),
+           ((char *)(int *)&g_BuildingLoadQueue_Array),
            v12);
     if ( v4 != -1 ) /*0x6ce113*/
       ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v4); /*0x6ce11b*/
@@ -975,7 +975,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     this->SuperClass_field_0x68 = 0; /*0x6cb3b4*/
     v9 = this; /*0x6cb3cb*/
     v6 = (*(int (**)(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3cf*/
-           ((char *)&g_BuildingLoadQueue_Array),
+           ((char *)(int *)&g_BuildingLoadQueue_Array),
            &v9);
     if ( v6 != -1 ) /*0x6cb3d5*/
       ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v6); /*0x6cb3dd*/
@@ -984,7 +984,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
   {
     v9 = this; /*0x6cb3f9*/
     v7 = (*(int (**)(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3fd*/
-           ((char *)&g_BuildingLoadQueue_Array),
+           ((char *)(int *)&g_BuildingLoadQueue_Array),
            &v9);
     if ( v7 != -1 ) /*0x6cb403*/
       ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v7); /*0x6cb40b*/
@@ -1013,7 +1013,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
         || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
         && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
         && (result = (void **)(*(int (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))(
-                                ((char *)&g_BuildingLoadQueue_Array),
+                                ((char *)(int *)&g_BuildingLoadQueue_Array),
                                 ((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)),
                                 0),
             (unsigned char)result) )
@@ -1218,7 +1218,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
        || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
        && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
        && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))(
-            ((char *)&g_BuildingLoadQueue_Array),
+            ((char *)(int *)&g_BuildingLoadQueue_Array),
             ((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)),
             0)) )
     {

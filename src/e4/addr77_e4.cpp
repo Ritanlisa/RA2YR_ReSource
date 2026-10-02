@@ -79,7 +79,7 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass)
   ((String *)((String *)&v6))->Assign((const char *)(off_83E188)); /*0x770e80*/
   v5 = (unsigned int)(aP3); /*0x770e85*/
   INIClass::ReadTokenizedPair((INIClass *)this, aP1, aP2, aP3, 0, &v6); /*0x770e9d*/
-  DeleteAndZero((ObjectClass *)&v6); /*0x770ea6*/
+  j_DeleteAndZero((ObjectClass *)&v6); /*0x770ea6*/
   ((String *)((String *)&aP3))->Assign((const char *)(g_INI_Key_Lose)); /*0x770eb4*/
   INIClass::ReadTokenizedPair((INIClass *)this, aP1, aP2, v5, 1, (char **)&aP3); /*0x770ec5*/
   DeleteAndZero((ObjectClass *)&aP3); /*0x770ece*/

@@ -218,7 +218,7 @@ long long sub_510BD0()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = ((Math *)(dbl_A8F048 - dbl_A8F070))->Sin(); /*0x510be2*/
+  v0 = Math::Sin((dbl_A8F048 - dbl_A8F070)); /*0x510be2*/
   result = Math::RoundToInt(v0 * dbl_A8F068 * 0.5); /*0x510bf6*/
   dword_A8F0C0 = result; /*0x510bfb*/
   return result; /*0x510c00*/
@@ -229,7 +229,7 @@ long long sub_510BD0()
 namespace gamemd {
 void sub_510C10()
 {
-  dbl_A8F078 = ((Math *)((double)dword_A8F0C0 * 0.00390625))->ArcTan(); /*0x510c27*/
+  dbl_A8F078 = Math::ArcTan(((double)dword_A8F0C0 * 0.00390625)); /*0x510c27*/
 }
 } // namespace gamemd
 
@@ -237,7 +237,7 @@ void sub_510C10()
 namespace gamemd {
 void sub_510C40()
 {
-  dbl_A8F090 = ((Math *)((double)(2 * dword_A8F0C0) / dbl_A8F068))->ArcTan(); /*0x510c62*/
+  dbl_A8F090 = Math::ArcTan(((double)(2 * dword_A8F0C0) / dbl_A8F068)); /*0x510c62*/
 }
 } // namespace gamemd
 
@@ -416,7 +416,7 @@ long long sub_5112D0()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = ((Math *)(dbl_A8F0C8 - dbl_A8F0F0))->Sin(); /*0x5112e2*/
+  v0 = Math::Sin((dbl_A8F0C8 - dbl_A8F0F0)); /*0x5112e2*/
   result = Math::RoundToInt(v0 * dbl_A8F0E8 * 0.5); /*0x5112f6*/
   dword_A8F140 = result; /*0x5112fb*/
   return result; /*0x511300*/
@@ -427,7 +427,7 @@ long long sub_5112D0()
 namespace gamemd {
 void sub_511310()
 {
-  dbl_A8F0F8 = ((Math *)((double)dword_A8F140 * 0.00390625))->ArcTan(); /*0x511327*/
+  dbl_A8F0F8 = Math::ArcTan(((double)dword_A8F140 * 0.00390625)); /*0x511327*/
 }
 } // namespace gamemd
 
@@ -435,7 +435,7 @@ void sub_511310()
 namespace gamemd {
 void sub_511340()
 {
-  dbl_A8F110 = ((Math *)((double)(2 * dword_A8F140) / dbl_A8F0E8))->ArcTan(); /*0x511362*/
+  dbl_A8F110 = Math::ArcTan(((double)(2 * dword_A8F140) / dbl_A8F0E8)); /*0x511362*/
 }
 } // namespace gamemd
 
@@ -541,7 +541,7 @@ long long sub_513AE0()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = ((Math *)(dbl_A8F148 - dbl_A8F170))->Sin(); /*0x513af2*/
+  v0 = Math::Sin((dbl_A8F148 - dbl_A8F170)); /*0x513af2*/
   result = Math::RoundToInt(v0 * dbl_A8F168 * 0.5); /*0x513b06*/
   dword_A8F1C0 = result; /*0x513b0b*/
   return result; /*0x513b10*/
@@ -552,7 +552,7 @@ long long sub_513AE0()
 namespace gamemd {
 void sub_513B20()
 {
-  dbl_A8F178 = ((Math *)((double)dword_A8F1C0 * 0.00390625))->ArcTan(); /*0x513b37*/
+  dbl_A8F178 = Math::ArcTan(((double)dword_A8F1C0 * 0.00390625)); /*0x513b37*/
 }
 } // namespace gamemd
 
@@ -560,7 +560,7 @@ void sub_513B20()
 namespace gamemd {
 void sub_513B50()
 {
-  dbl_A8F190 = ((Math *)((double)(2 * dword_A8F1C0) / dbl_A8F168))->ArcTan(); /*0x513b72*/
+  dbl_A8F190 = Math::ArcTan(((double)(2 * dword_A8F1C0) / dbl_A8F168)); /*0x513b72*/
 }
 } // namespace gamemd
 
@@ -625,7 +625,7 @@ void E4Recv_513D00::sub_513D00()
 {
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_HoverLocomotionClass); /*0x513d00*/
-  *(unsigned int *)&(&this->LocomotionClass)[4] = &vt_HoverLocomotionClass; /*0x513d06*/
+  *(unsigned int *)&(&this->LocomotionClass)[4] = (unsigned int)(&vt_HoverLocomotionClass); /*0x513d06*/
   ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x513d0d*/
 
 }
@@ -781,7 +781,7 @@ long long sub_517910()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = ((Math *)(dbl_A8F1C8 - dbl_A8F1F0))->Sin(); /*0x517922*/
+  v0 = Math::Sin((dbl_A8F1C8 - dbl_A8F1F0)); /*0x517922*/
   result = Math::RoundToInt(v0 * dbl_A8F1E8 * 0.5); /*0x517936*/
   dword_A8F240 = result; /*0x51793b*/
   return result; /*0x517940*/
@@ -792,7 +792,7 @@ long long sub_517910()
 namespace gamemd {
 void sub_517950()
 {
-  dbl_A8F1F8 = ((Math *)((double)dword_A8F240 * 0.00390625))->ArcTan(); /*0x517967*/
+  dbl_A8F1F8 = Math::ArcTan(((double)dword_A8F240 * 0.00390625)); /*0x517967*/
 }
 } // namespace gamemd
 
@@ -800,7 +800,7 @@ void sub_517950()
 namespace gamemd {
 void sub_517980()
 {
-  dbl_A8F210 = ((Math *)((double)(2 * dword_A8F240) / dbl_A8F1E8))->ArcTan(); /*0x5179a2*/
+  dbl_A8F210 = Math::ArcTan(((double)(2 * dword_A8F240) / dbl_A8F1E8)); /*0x5179a2*/
 }
 } // namespace gamemd
 

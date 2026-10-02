@@ -584,7 +584,7 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
     || (byte_B1D4AD || !dword_B1D4A8)
     && dword_B1D4B4 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_B1D4A0 + 8))(
-         &dword_B1D4A0,
+         (int *)&dword_B1D4A0,
          dword_B1D4A8 + dword_B1D4B4,
          0) )
   {
@@ -664,7 +664,7 @@ LABEL_10:
               || (byte_B1D4AD || !dword_B1D4A8)
               && dword_B1D4B4 > 0
               && (*(uint8_t (**)(int *, int, unsigned int))(dword_B1D4A0 + 8))(
-                   &dword_B1D4A0,
+                   (int *)&dword_B1D4A0,
                    dword_B1D4A8 + dword_B1D4B4,
                    0) )
             {

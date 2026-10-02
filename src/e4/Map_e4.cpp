@@ -301,7 +301,7 @@ int E4Recv_5ADD10::Map_Delete()
   v9[3] = 0; /*0x5add50*/
   *(unsigned int *)v7.__pad_0 = (unsigned int)(&vt_MapSelect); /*0x5add5b*/
   v2 = ((ScenarioClass *)((ScenarioClass *)&v7))->Load((int)this) == 0; /*0x5add71*/
-  DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
+  j_DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
   ((MSEngine*)(MSEngine *)v8)->Destructor(); /*0x5add7d*/
   ((MSEngine *)(&v7))->Destruct(); /*0x5add86*/
   if ( v2 )

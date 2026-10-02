@@ -213,7 +213,7 @@ MixFileClass * SessionClass::LoadGameSession(int aP1, const char **aP2)
   ((String *)((String *)&((unsigned int *)(v13.m_3))[1]))->Assign((const char *)(v4 + 36)); /*0x5adf91*/
   pad_50 = (char *)(this->__pad_50); /*0x5adf96*/
   v7 = ((SessionClass *)((SessionClass *)pad_50))->LoadMapSelection((char **)&((unsigned int *)(v13.m_3))[1]) == 0; /*0x5adfab*/
-  DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5adfae*/
+  j_DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5adfae*/
   if ( v7 || (v8 = ((CampaignClass *)((CampaignClass *)pad_50))->Check(*(unsigned short *)(aP1 + 13728))) == 0 ) /*0x5adfea*/
   {
     ((SessionClass *)((SessionClass *)pad_50))->Destruct(); /*0x5adfb9*/
@@ -240,15 +240,15 @@ LABEL_14:
   ((String *)(&v13))->ToLower(); /*0x5ae061*/
   if ( !v11 || !(uint8_t)((String *)((String *)&((unsigned int *)(v13.m_3))[1]))->Compare((const char **)&v13) ) /*0x5ae073*/
   {
-    DeleteAndZero((ObjectClass *)&v13); /*0x5ae080*/
-    DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5ae089*/
+    j_DeleteAndZero((ObjectClass *)&v13); /*0x5ae080*/
+    j_DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5ae089*/
     goto LABEL_14; /*0x5ae089*/
   }
   v12 = (char *)((gamemd::MixFileClass *)(((String *)((String *)(v11 + 4)))->GetOrEmpty_Alt()));
   ScenarioClass::SetFileName((char *)aP1, v12); /*0x5ae0a7*/
   *(unsigned short *)(aP1 + 13728) = Network_Load((ObjectClass *)pad_50, v11); /*0x5ae0b8*/
-  DeleteAndZero((ObjectClass *)&v13); /*0x5ae0bf*/
-  DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5ae0c8*/
+  j_DeleteAndZero((ObjectClass *)&v13); /*0x5ae0bf*/
+  j_DeleteAndZero((ObjectClass *)&((unsigned int *)(v13.m_3))[1]); /*0x5ae0c8*/
 LABEL_17:
   ((SessionClass *)((SessionClass *)pad_50))->Destruct(); /*0x5ae0cd*/
   return (gamemd::MixFileClass *)(strlen((const char *)(aP1 + 4700)) != 0); /*0x5adf6f*/
@@ -331,7 +331,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     ((String *)((String *)&v43))->Assign(0); /*0x5cefa2*/
     v42 = FromStringInt((IUnknown *)((char **)((char *)&v43)), v4); /*0x5cefbc*/
     v5 = ((INIClass *)((INIClass *)((char *)&v43)))->ReadString(a1, v42, (char **)&v43, (int)((char *)&v43)) == 0; /*0x5cefd4*/
-    DeleteAndZero((ObjectClass *)((char *)&v43)); /*0x5cefd7*/
+    j_DeleteAndZero((ObjectClass *)((char *)&v43)); /*0x5cefd7*/
     DeleteAndZero(&v43); /*0x5cefe0*/
     if ( v5 ) /*0x5cefe7*/
       break; /*0x5cefe7*/
@@ -368,13 +368,13 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     ((String *)((String *)&v43))->Assign((const char *)(aAnims)); /*0x5cf0ee*/
     v13 = ((INIClass *)((INIClass *)((char *)&v43)))->ReadString(a1, (char **)&v43, (char **)((char *)&v43), (int)((char *)&v43)) > 0; /*0x5cf119*/
     DeleteAndZero(&v43); /*0x5cf11c*/
-    DeleteAndZero((ObjectClass *)((char *)&v43)); /*0x5cf125*/
+    j_DeleteAndZero((ObjectClass *)((char *)&v43)); /*0x5cf125*/
     if ( v13 ) /*0x5cf12c*/
     {
       ((String *)((String *)&v43))->Assign(0); /*0x5cf137*/
       ((String *)((String *)((char *)&v43)))->Assign((const char *)(aTextrect)); /*0x5cf145*/
       v14 = ((INIClass *)((INIClass *)((char *)&v43)))->ReadString((char **)((char *)&v43), (char **)((char *)&v43), (char **)&v43, (int)((char *)&v43)) > 0; /*0x5cf16d*/
-      DeleteAndZero((ObjectClass *)((char *)&v43)); /*0x5cf170*/
+      j_DeleteAndZero((ObjectClass *)((char *)&v43)); /*0x5cf170*/
       DeleteAndZero(&v43); /*0x5cf179*/
       if ( v14 ) /*0x5cf180*/
       {

@@ -472,7 +472,7 @@ int WebBrowser::GoBack()
   ((String *)((String *)&g_WebBrowserConfig))->Assign_Alt(v5); /*0x773dfd*/
   *(unsigned int *)&v2.m_3[1] = (unsigned int)(&vt_rc_ptr); /*0x773e06*/
   ((ComPtr *)((ComPtr *)&v2.m_3[1]))->Release(); /*0x773e0e*/
-  DeleteAndZero((ObjectClass *)&v2); /*0x773e17*/
+  j_DeleteAndZero((ObjectClass *)&v2); /*0x773e17*/
   return 0; /*0x773e1e*/
 
 }

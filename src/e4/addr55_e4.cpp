@@ -425,7 +425,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
           (*(void (**)(int, int *, int *, int64_t *, int16_t *, float, int, int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x550e61*/
                                                                                            + 64))(
             g_DSurface_Hidden_2,
-            &DSurface_ViewBounds,
+            (int *)&DSurface_ViewBounds,
             &v68,
             &v62,
             &v54,
@@ -435,7 +435,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
           (*(void (**)(int, int *, int *, int64_t *, int16_t *, float, int, int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x550e87*/
                                                                                            + 64))(
             g_DSurface_Hidden_2,
-            &DSurface_ViewBounds,
+            (int *)&DSurface_ViewBounds,
             &v63,
             &v67,
             &v54,
@@ -454,7 +454,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
           (*(void (**)(int, int *, int *, int64_t *, int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x550f21*/
                                                                                       + 52))(
             g_DSurface_Hidden_2,
-            &DSurface_ViewBounds,
+            (int *)&DSurface_ViewBounds,
             &v68,
             &v62,
             v30,
@@ -464,7 +464,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
           (*(void (**)(int, int *, int *, int64_t *, int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x550f44*/
                                                                                       + 52))(
             g_DSurface_Hidden_2,
-            &DSurface_ViewBounds,
+            (int *)&DSurface_ViewBounds,
             &v63,
             &v67,
             v30,
@@ -548,7 +548,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
     return (*(int (**)(int, int *, int *, int64_t *, int16_t *, float, int, int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x5511ff*/
                                                                                            + 64))(
              g_DSurface_Hidden_2,
-             &DSurface_ViewBounds,
+             (int *)&DSurface_ViewBounds,
              &v75,
              &v74,
              &v60,
@@ -564,7 +564,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
     return (*(int (**)(int, int *, int *, int64_t *, int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x5512a7*/
                                                                                       + 52))(
              g_DSurface_Hidden_2,
-             &DSurface_ViewBounds,
+             (int *)&DSurface_ViewBounds,
              &v75,
              &v74,
              ((uint8_t)v56 >> g_BitShift_Green_0 << g_BitShift_Red)

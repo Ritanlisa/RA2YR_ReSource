@@ -1420,7 +1420,7 @@ static void MainGameFrame() {
 // ============================================================================
 // (REVERSE marker moved to menu_globals_gen.cpp)
 char MenuSelect() {
-    g_MenuState = (gamemd::MenuState)((void *)(MenuState::MenuIdle));
+    g_MenuState = (gamemd::MenuState)(MenuState::MenuIdle);
     g_GameMode = 0;
 
     while (true) {
@@ -1429,37 +1429,37 @@ char MenuSelect() {
         // IDA case -1 (Reset): go to MainMenu
         case MenuState::Reset:
         case MenuState::MainMenu:
-            g_MenuState = (gamemd::MenuState)((void *)(MenuState::MenuIdle));
+            g_MenuState = (gamemd::MenuState)(MenuState::MenuIdle);
             break;
 
         // IDA case 1: Campaign::Screen(1)
         case MenuState::Campaign:
-            g_MenuState = (gamemd::MenuState)((void *)(Campaign_Screen(1)));
+            g_MenuState = (gamemd::MenuState)(Campaign_Screen(1));
             break;
 
         // IDA case 2: Skirmish
         case MenuState::Skirmish:
             g_GameMode = (int)((void *)(GMODE_SKIRMISH));
-            g_MenuState = (gamemd::MenuState)((void *)(MenuState::NetworkGameFlow));
+            g_MenuState = (gamemd::MenuState)(MenuState::NetworkGameFlow);
             MultiplayerScreen(2);
             break;
 
         // IDA case 3: Internet/Multiplayer
         case MenuState::Multiplayer:
             g_GameMode = (int)((void *)(GMODE_INTERNET));
-            g_MenuState = (gamemd::MenuState)((void *)(MenuState::NetworkGameFlow));
+            g_MenuState = (gamemd::MenuState)(MenuState::NetworkGameFlow);
             MultiplayerScreen(1);
             break;
 
         // IDA case 4: Campaign second path
         case MenuState::CampaignSub:
-            g_MenuState = (gamemd::MenuState)((void *)(Campaign_Screen(1)));
+            g_MenuState = (gamemd::MenuState)(Campaign_Screen(1));
             break;
 
         // IDA case 5: Options
         case MenuState::Options:
             Options_Screen_Dialog();
-            g_MenuState = (gamemd::MenuState)((void *)(MenuState::MenuIdle));
+            g_MenuState = (gamemd::MenuState)(MenuState::MenuIdle);
             break;
 
         // IDA case 6: Exit confirm
@@ -1477,7 +1477,7 @@ char MenuSelect() {
         // IDA case 8: New game start → return 1
         case MenuState::WOLInternet:
             Event_Dispatch();
-            g_MenuState = (gamemd::MenuState)((void *)(MenuState::MenuIdle));
+            g_MenuState = (gamemd::MenuState)(MenuState::MenuIdle);
             Event_Dispatch();
             Event_Dispatch();
             return 1;
@@ -1485,12 +1485,12 @@ char MenuSelect() {
         // IDA case 9: Load savegame
         case MenuState::SaveLoadGame:
             ShowSaveLoadDialog();
-            g_MenuState = (gamemd::MenuState)((void *)(MenuState::Campaign));
+            g_MenuState = (gamemd::MenuState)(MenuState::Campaign);
             break;
 
         // IDA case 10: Back to campaign
         case MenuState::QuickMatch:
-            g_MenuState = (gamemd::MenuState)((void *)(MenuState::Campaign));
+            g_MenuState = (gamemd::MenuState)(MenuState::Campaign);
             break;
 
         // IDA case 11: Skirmish Mode 5
@@ -1500,18 +1500,18 @@ char MenuSelect() {
 
         // IDA case 13: Play movie
         case MenuState::CampaignInit:
-            g_MenuState = (gamemd::MenuState)((void *)(MenuState::CampaignSub));
+            g_MenuState = (gamemd::MenuState)(MenuState::CampaignSub);
             break;
 
         // IDA case 14: Campaign + CD check
         case MenuState::CampaignLoadCD:
-            g_MenuState = (gamemd::MenuState)((void *)(MenuState::CampaignSub));
+            g_MenuState = (gamemd::MenuState)(MenuState::CampaignSub);
             break;
 
         // IDA case 15: Credits
         case MenuState::CampaignIntro:
             Event_Dispatch();
-            g_MenuState = (gamemd::MenuState)((void *)(MenuState::CampaignSub));
+            g_MenuState = (gamemd::MenuState)(MenuState::CampaignSub);
             break;
 
         // IDA case 16/17: Network game flow
@@ -1521,7 +1521,7 @@ char MenuSelect() {
 
         // IDA case 18: MainMenu
         case MenuState::MenuIdle:
-            g_MenuState = (gamemd::MenuState)((void *)(MainMenu_Screen()));
+            g_MenuState = (gamemd::MenuState)(MainMenu_Screen());
             break;
         }
         continue;
@@ -1529,7 +1529,7 @@ char MenuSelect() {
     L81:
         switch (g_GameMode) {
         case GMODE_MENU:
-            g_MenuState = (gamemd::MenuState)((void *)(MenuState::MenuIdle));
+            g_MenuState = (gamemd::MenuState)(MenuState::MenuIdle);
             break;
         case GMODE_CAMPAIGN:
         case GMODE_CAMPAIGN_SUB:
@@ -1537,10 +1537,10 @@ char MenuSelect() {
         case GMODE_INTERNET:
             return 1;
         case GMODE_SKIRMISH:
-            g_MenuState = (gamemd::MenuState)((void *)(SkirmishSetupScreen()));
+            g_MenuState = (gamemd::MenuState)(SkirmishSetupScreen());
             break;
         case GMODE_SKIRMISH_SETUP:
-            g_MenuState = (gamemd::MenuState)((void *)(SkirmishSetupScreen()));
+            g_MenuState = (gamemd::MenuState)(SkirmishSetupScreen());
             break;
         }
     }

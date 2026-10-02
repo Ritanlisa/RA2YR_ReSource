@@ -88,7 +88,7 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
     || (byte_ABC885 || !dword_ABC880)
     && dword_ABC88C > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_ABC878 + 8))(
-         &dword_ABC878,
+         (int *)&dword_ABC878,
          dword_ABC880 + dword_ABC88C,
          0) )
   {

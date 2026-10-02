@@ -1420,7 +1420,7 @@ int sub_7473E0()
       *(unsigned int *)(v1 + 4) = 256; /*0x747409*/
       *(unsigned int *)(v1 + 8) = 256; /*0x74740c*/
       *(unsigned int *)(v1 + 12) = 0; /*0x74740f*/
-      *(unsigned int *)v1 = &XSurface_Vtable; /*0x747416*/
+      *(unsigned int *)v1 = (unsigned int)(&XSurface_Vtable); /*0x747416*/
       *(unsigned int *)(v1 + 16) = 1; /*0x74741c*/
       Buffer::Init((Buffer *)(v1 + 20), 0, 0x10000); /*0x747423*/
       *(unsigned int *)v1 = &BSurface_Vtable; /*0x747428*/

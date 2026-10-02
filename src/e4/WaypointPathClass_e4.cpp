@@ -42,7 +42,7 @@ int WaypointPathClass::Init(void *a1, void *a2, void *a3, void *a4, void *a5, vo
     || (byte_B72615 || !dword_B72610)
     && dword_B7261C > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_B72608 + 8))(
-         &dword_B72608,
+         (int *)&dword_B72608,
          dword_B72610 + dword_B7261C,
          0) )
   {
@@ -78,7 +78,7 @@ int WaypointPathClass::Construct(unsigned int a2, int aP1, int a3, int a4, int a
      || (byte_B72615 || !dword_B72610)
      && dword_B7261C > 0
      && (*(uint8_t (**)(int *, int, unsigned int))(dword_B72608 + 8))(
-          &dword_B72608,
+          (int *)&dword_B72608,
           dword_B72610 + dword_B7261C,
           0)) )
   {

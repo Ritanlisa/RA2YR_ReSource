@@ -43,7 +43,7 @@ void Player::BuildListString(wchar_t * Destination)
       v4 = CharStringToWide((gamemd::ObjectClass *)((wchar_t **)&v6.DeleteAndZero_field_0x08), (const char **)&v6.DeleteAndZero_field_0x04); /*0x5e8e38*/
       ((WideString *)((void **)&v6))->Reassign_Alt((const wchar_t **)v4); /*0x5e8e42*/
       ((DeleteAndZero*)(DeleteAndZero *)&v6.DeleteAndZero_field_0x08)->Alt(); /*0x5e8e4b*/
-      DeleteAndZero((ObjectClass *)&v6.DeleteAndZero_field_0x04); /*0x5e8e54*/
+      j_DeleteAndZero((ObjectClass *)&v6.DeleteAndZero_field_0x04); /*0x5e8e54*/
     }
     else
     {

@@ -57,10 +57,10 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
   *((unsigned int *)this + 167) = 1; /*0x6b5287*/
   *((unsigned char *)this + 672) = 0; /*0x6b528d*/
   *((unsigned char *)this + 673) = 0; /*0x6b5294*/
-  *(unsigned int *)this = &vt_SmudgeTypeClass; /*0x6b529b*/
-  *((unsigned int *)this + 1) = &vt_SmudgeTypeClass; /*0x6b52a1*/
-  *((unsigned int *)this + 2) = &vt_SmudgeTypeClass; /*0x6b52a7*/
-  *((unsigned int *)this + 3) = &vt_SmudgeTypeClass; /*0x6b52ae*/
+  *(unsigned int *)this = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b529b*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52a1*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52a7*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x6b52b5*/
   *(unsigned short *)((unsigned char *)this + 559) = 1; /*0x6b52ba*/
   *((unsigned char *)this + 561) = 0; /*0x6b52c7*/
@@ -72,7 +72,7 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
     || (byte_A8EC25 || !dword_A8EC20)
     && dword_A8EC2C > 0
     && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A8EC18 + 8))(
-               &dword_A8EC18,
+               (int *)&dword_A8EC18,
                dword_A8EC20 + dword_A8EC2C,
                0) == 0,
         v3 = dword_A8EC28,

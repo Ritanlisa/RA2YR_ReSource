@@ -223,7 +223,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
     || (byte_89ED05 || !dword_89ED00)
     && dword_89ED0C > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_89ECF8 + 8))(
-         &dword_89ECF8,
+         (int *)&dword_89ECF8,
          dword_89ED0C + dword_89ED00,
          0) )
   {

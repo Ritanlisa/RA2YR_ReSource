@@ -282,7 +282,7 @@ long long sub_6D1900()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = ((Math *)(dbl_B0CD50 - dbl_B0CD88))->Sin(); /*0x6d1912*/
+  v0 = Math::Sin((dbl_B0CD50 - dbl_B0CD88)); /*0x6d1912*/
   result = Math::RoundToInt(v0 * dbl_B0CD78 * 0.5); /*0x6d1926*/
   dword_B0CEC0 = result; /*0x6d192b*/
   return result; /*0x6d1930*/
@@ -293,7 +293,7 @@ long long sub_6D1900()
 namespace gamemd {
 void sub_6D1940()
 {
-  dbl_B0CD90 = ((Math *)((double)dword_B0CEC0 * 0.00390625))->ArcTan(); /*0x6d1957*/
+  dbl_B0CD90 = Math::ArcTan(((double)dword_B0CEC0 * 0.00390625)); /*0x6d1957*/
 }
 } // namespace gamemd
 
@@ -301,7 +301,7 @@ void sub_6D1940()
 namespace gamemd {
 void sub_6D1970()
 {
-  dbl_B0CE20 = ((Math *)((double)(2 * dword_B0CEC0) / dbl_B0CD78))->ArcTan(); /*0x6d1992*/
+  dbl_B0CE20 = Math::ArcTan(((double)(2 * dword_B0CEC0) / dbl_B0CD78)); /*0x6d1992*/
 }
 } // namespace gamemd
 
@@ -766,7 +766,7 @@ long long sub_6DCE40()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = ((Math *)(dbl_B0E650 - dbl_B0E690))->Sin(); /*0x6dce52*/
+  v0 = Math::Sin((dbl_B0E650 - dbl_B0E690)); /*0x6dce52*/
   result = Math::RoundToInt(v0 * dbl_B0E688 * 0.5); /*0x6dce66*/
   dword_B0E6E0 = result; /*0x6dce6b*/
   return result; /*0x6dce70*/
@@ -777,7 +777,7 @@ long long sub_6DCE40()
 namespace gamemd {
 void sub_6DCE80()
 {
-  dbl_B0E698 = ((Math *)((double)dword_B0E6E0 * 0.00390625))->ArcTan(); /*0x6dce97*/
+  dbl_B0E698 = Math::ArcTan(((double)dword_B0E6E0 * 0.00390625)); /*0x6dce97*/
 }
 } // namespace gamemd
 
@@ -785,7 +785,7 @@ void sub_6DCE80()
 namespace gamemd {
 void sub_6DCEB0()
 {
-  dbl_B0E6B0 = ((Math *)((double)(2 * dword_B0E6E0) / dbl_B0E688))->ArcTan(); /*0x6dced2*/
+  dbl_B0E6B0 = Math::ArcTan(((double)(2 * dword_B0E6E0) / dbl_B0E688)); /*0x6dced2*/
 }
 } // namespace gamemd
 

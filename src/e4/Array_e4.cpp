@@ -213,7 +213,7 @@ int Array::CleanupArrayWOL(void *a1_1)
 
   for ( i = 0; i < *(unsigned int *)this->__pad_0; ++i ) /*0x7acd39*/
   {
-    DeleteAndZero((ObjectClass *)(*(unsigned int *)this->__pad_8 + 4 * i)); /*0x7acd41*/
+    j_DeleteAndZero((ObjectClass *)(*(unsigned int *)this->__pad_8 + 4 * i)); /*0x7acd41*/
     result = *(unsigned int *)this->__pad_0; /*0x7acd46*/
   }
   *(unsigned int *)this->__pad_0 = 0; /*0x7acd4d*/

@@ -439,8 +439,8 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
     }
     if ( *((int *)this + 3) > 0 && (uint8_t)((String *)((String *)&v7.m_3[1]))->NotEquals(0) ) /*0x5d054f*/
       ((String *)((String *)this))->Reassign(a1); /*0x5d055f*/
-    DeleteAndZero((ObjectClass *)&v7); /*0x5d0568*/
-    DeleteAndZero((ObjectClass *)&v7.m_3[1]); /*0x5d0571*/
+    j_DeleteAndZero((ObjectClass *)&v7); /*0x5d0568*/
+    j_DeleteAndZero((ObjectClass *)&v7.m_3[1]); /*0x5d0571*/
   }
   return (gamemd::ObjectClass **)(this); /*0x5d0578*/
 
@@ -795,7 +795,7 @@ LABEL_21:
               || (byte_B1D385 || !dword_B1D380)
               && dword_B1D38C > 0
               && (*(uint8_t (**)(int *, int, unsigned int))(dword_B1D378 + 8))(
-                   &dword_B1D378,
+                   (int *)&dword_B1D378,
                    dword_B1D380 + dword_B1D38C,
                    0) )
             {

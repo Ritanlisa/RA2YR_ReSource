@@ -364,7 +364,7 @@ AirstrikeClass::AirstrikeClass(int a2)
     || (byte_889FC5 || !dword_889FC0)
     && dword_889FCC > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_889FB8 + 8))(
-         &dword_889FB8,
+         (int *)&dword_889FB8,
          dword_889FC0 + dword_889FCC,
          0) )
   {

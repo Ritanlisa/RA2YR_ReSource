@@ -111,10 +111,10 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
   *((unsigned char *)this + 3676) = 12; /*0x7471ab*/
   *((unsigned char *)this + 3677) = 0; /*0x7471b2*/
   *((unsigned char *)this + 3678) = 0; /*0x7471b8*/
-  *(unsigned int *)this = &vt_UnitTypeClass; /*0x7471bf*/
-  *((unsigned int *)this + 1) = &vt_UnitTypeClass; /*0x7471c5*/
-  *((unsigned int *)this + 2) = &vt_UnitTypeClass; /*0x7471cb*/
-  *((unsigned int *)this + 3) = &vt_UnitTypeClass; /*0x7471d2*/
+  *(unsigned int *)this = (unsigned int)(&vt_UnitTypeClass); /*0x7471bf*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_UnitTypeClass); /*0x7471c5*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_UnitTypeClass); /*0x7471cb*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_UnitTypeClass); /*0x7471d2*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x7471d9*/
   *((unsigned int *)this + 454) = 32; /*0x7471de*/
   v3 = dword_A83CF0; /*0x7471e8*/
@@ -122,7 +122,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
     || (byte_A83CED || !dword_A83CE8)
     && dword_A83CF4 > 0
     && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A83CE0 + 8))(
-               &dword_A83CE0,
+               (int *)&dword_A83CE0,
                dword_A83CE8 + dword_A83CF4,
                0) == 0,
         v3 = dword_A83CF0,

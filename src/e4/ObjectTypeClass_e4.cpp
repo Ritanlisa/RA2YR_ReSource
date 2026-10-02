@@ -248,7 +248,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
     || (byte_AC1425 || !dword_AC1420)
     && dword_AC142C > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_AC1418 + 8))(
-         &dword_AC1418,
+         (int *)&dword_AC1418,
          dword_AC142C + dword_AC1420,
          0) )
   {

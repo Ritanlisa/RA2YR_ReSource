@@ -470,9 +470,9 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x727c0f*/
       aP0->vtable1 = &vt_TriggerTypeClass; /*0x727c14*/
-      ((unsigned int *)aP0)[0] = &vt_TriggerTypeClass; /*0x727c1a*/
-      ((unsigned int *)aP0)[0] = &vt_TriggerTypeClass; /*0x727c21*/
-      ((unsigned int *)aP0)[0] = &vt_TriggerTypeClass; /*0x727c28*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerTypeClass); /*0x727c1a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerTypeClass); /*0x727c21*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerTypeClass); /*0x727c28*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->NextTrigger); /*0x727c3b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->FirstEvent); /*0x727c4c*/

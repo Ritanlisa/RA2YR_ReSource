@@ -238,7 +238,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     ((CCFileClass *)(v34))->Close(); /*0x764e10*/
     ((String *)((char **)&v24))->Assign((const char *)(g_INI_Key_CampaignID)); /*0x764e1e*/
     Int = INIClass::ReadInt((gamemd::ObjectClass *)((char **)this + 18),(gamemd::ReferenceCounted *)((char **)&v24), -1); /*0x764e3b*/
-    DeleteAndZero((void **)&v24); /*0x764e3d*/
+    j_DeleteAndZero((void **)&v24); /*0x764e3d*/
     *((unsigned int *)this + 12) = Int < 0 ? 0 : Int;
     if ( *((unsigned int *)this + 12) == ((WDTObject *)(*(unsigned int **)(a3 + 4)))->GetSize() )
     {
@@ -251,14 +251,14 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
         DeleteAndZero(v25); /*0x764e89*/
         v20 = INIClass::ReadInt((gamemd::ObjectClass *)((char **)this + 18),(gamemd::ReferenceCounted *)((char **)&v24), 0); /*0x764e9d*/
         *v18 = v20 < 0 ? 0 : v20;
-        DeleteAndZero((void **)&v24); /*0x764eb3*/
+        j_DeleteAndZero((void **)&v24); /*0x764eb3*/
         ++v16; /*0x764eb8*/
         ++v18; /*0x764eb9*/
       }
       while ( v16 < 4 );
       ((String *)((char **)&v24))->Assign((const char *)(aPlayerfaction)); /*0x764eca*/
       *((unsigned int *)this + 17) = INIClass::ReadInt((gamemd::ObjectClass *)((char **)this + 18),(gamemd::ReferenceCounted *)((char **)&v24), *((unsigned int *)this + 17)); /*0x764ee9*/
-      DeleteAndZero((void **)&v24); /*0x764eec*/
+      j_DeleteAndZero((void **)&v24); /*0x764eec*/
     }
     else
     {
@@ -378,7 +378,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
     RegionStringWOL = GetRegionStringWOL((ObjectClass *)i); /*0x7652db*/
     v4 = ((String *)((String *)((char *)&v7)))->Assign((const char *)(g_INI_Key_LastDay)); /*0x7652ea*/
     ((String *)((String *)v4))->Concat((char **)&v7, RegionStringWOL); /*0x7652f1*/
-    DeleteAndZero((ObjectClass *)((char *)&v7)); /*0x7652fa*/
+    j_DeleteAndZero((ObjectClass *)((char *)&v7)); /*0x7652fa*/
     INIClass::SetIntFormat((char *)((char *)&v7), v2, (char **)&v7, 0, 0); /*0x76530b*/
     DeleteAndZero(&v7); /*0x765314*/
   }
@@ -438,7 +438,7 @@ int WDT_InitGameOptions()
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(stru_B72760 + 8))(
-         &stru_B72760,
+         (int *)&stru_B72760,
          dword_B72768 + dword_B72774,
          0) )
   {
@@ -463,7 +463,7 @@ int WDT_InitGameOptions()
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(stru_B72760 + 8))(
-         &stru_B72760,
+         (int *)&stru_B72760,
          dword_B72774 + dword_B72768,
          0) )
   {
@@ -488,7 +488,7 @@ int WDT_InitGameOptions()
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(stru_B72760 + 8))(
-         &stru_B72760,
+         (int *)&stru_B72760,
          dword_B72774 + dword_B72768,
          0) )
   {
@@ -510,7 +510,7 @@ int WDT_InitGameOptions()
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(stru_B72760 + 8))(
-         &stru_B72760,
+         (int *)&stru_B72760,
          dword_B72774 + dword_B72768,
          0) )
   {
@@ -535,7 +535,7 @@ int WDT_InitGameOptions()
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(stru_B72760 + 8))(
-         &stru_B72760,
+         (int *)&stru_B72760,
          dword_B72774 + dword_B72768,
          0) )
   {

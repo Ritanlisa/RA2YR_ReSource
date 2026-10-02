@@ -75,22 +75,22 @@ void * WinsockInterface::ProcessPacket(int a2)
   Audio::GetEnabled(); /*0x77032d*/
   ((String *)((char **)&a2))->Assign(aOldcycle); /*0x77033b*/
   ((String *)((char **)this + 1))->Reassign((const char **)&a2); /*0x770348*/
-  DeleteAndZero((void **)&a2); /*0x770351*/
+  j_DeleteAndZero((void **)&a2); /*0x770351*/
   ((String *)((char **)&a2))->Assign(aHistory); /*0x77035f*/
   ((String *)((char **)this + 38))->Reassign((const char **)&a2); /*0x77036f*/
-  DeleteAndZero((void **)&a2); /*0x770378*/
+  j_DeleteAndZero((void **)&a2); /*0x770378*/
   ((String *)((char **)&a2))->Assign(aStatus); /*0x770386*/
   ((String *)((char **)this + 75))->Reassign((const char **)&a2); /*0x770396*/
-  DeleteAndZero((void **)&a2); /*0x77039f*/
+  j_DeleteAndZero((void **)&a2); /*0x77039f*/
   ((String *)((char **)&a2))->Assign(aTerritory); /*0x7703ad*/
   ((String *)((char **)this + 112))->Reassign((const char **)&a2); /*0x7703bd*/
-  DeleteAndZero((void **)&a2); /*0x7703c6*/
+  j_DeleteAndZero((void **)&a2); /*0x7703c6*/
   ((String *)((char **)&a2))->Assign(aGame); /*0x7703d4*/
   ((String *)((char **)this + 149))->Reassign((const char **)&a2); /*0x7703e4*/
-  DeleteAndZero((void **)&a2); /*0x7703ed*/
+  j_DeleteAndZero((void **)&a2); /*0x7703ed*/
   ((String *)((char **)&a2))->Assign(aEvacuate); /*0x7703fb*/
   ((String *)((char **)this + 186))->Reassign((const char **)&a2); /*0x77040b*/
-  DeleteAndZero((void **)&a2); /*0x770414*/
+  j_DeleteAndZero((void **)&a2); /*0x770414*/
   return this; /*0x77041b*/
 
 }

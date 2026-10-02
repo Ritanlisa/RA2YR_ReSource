@@ -57,7 +57,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1, void *a2, void *a
     || (byte_B0E78D || !dword_B0E788)
     && dword_B0E794 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_B0E780 + 8))(
-         &dword_B0E780,
+         (int *)&dword_B0E780,
          dword_B0E788 + dword_B0E794,
          0) )
   {
@@ -68,7 +68,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1, void *a2, void *a
     || (byte_B0F67D || !dword_B0F678)
     && dword_B0F684 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670 + 8))(
-         &dword_B0F670,
+         (int *)&dword_B0F670,
          dword_B0F678 + dword_B0F684,
          0) )
   {

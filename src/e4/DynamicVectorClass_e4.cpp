@@ -1923,7 +1923,7 @@ char * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Add(unsigned i
       {
         v9 = (void *)*((unsigned int *)v7 - 5); /*0x6286b2*/
         v7 -= 24; /*0x6286b5*/
-        *(unsigned int *)v7 = &vt_VectorClassHashObject; /*0x6286ba*/
+        *(unsigned int *)v7 = (unsigned int)(&vt_VectorClassHashObject); /*0x6286ba*/
         if ( v9 && v7[13] ) /*0x6286c2*/
         {
           __3_YAXPAX_Z(v9); /*0x6286c8*/

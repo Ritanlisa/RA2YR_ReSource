@@ -57,17 +57,17 @@ AircraftTypeClass::AircraftTypeClass(char *Source, int aP1, int a1, int a2, int 
   *((unsigned char *)this + 3596) = 0; /*0x41c8ee*/
   *((unsigned char *)this + 3597) = 0; /*0x41c8f4*/
   *((unsigned char *)this + 3598) = 0; /*0x41c8fa*/
-  *(unsigned int *)this = &vt_AircraftTypeClass; /*0x41c900*/
-  *((unsigned int *)this + 1) = &vt_AircraftTypeClass; /*0x41c906*/
-  *((unsigned int *)this + 2) = &vt_AircraftTypeClass; /*0x41c90c*/
-  *((unsigned int *)this + 3) = &vt_AircraftTypeClass; /*0x41c913*/
+  *(unsigned int *)this = (unsigned int)(&vt_AircraftTypeClass); /*0x41c900*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c906*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c90c*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c913*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x41c91a*/
   v3 = dword_A8B228; /*0x41c91f*/
   if ( dword_A8B228 < dword_A8B220 /*0x41c95d*/
     || (byte_A8B225 || !dword_A8B220)
     && dword_A8B22C > 0
     && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A8B218 + 8))(
-               &dword_A8B218,
+               (int *)&dword_A8B218,
                dword_A8B220 + dword_A8B22C,
                0) == 0,
         v3 = dword_A8B228,

@@ -58,7 +58,7 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
     || (byte_89E0FD || !dword_89E0F8)
     && dword_89E104 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_89E0F0 + 8))(
-         &dword_89E0F0,
+         (int *)&dword_89E0F0,
          dword_89E0F8 + dword_89E104,
          0) )
   {

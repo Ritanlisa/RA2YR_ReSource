@@ -303,7 +303,7 @@ LABEL_42:
   }
   if ( !dword_B77DDC ) /*0x7a51fa*/
     DisplayRankingsWOL(0); /*0x7a5200*/
-  DeleteAndZero((ObjectClass *)v20); /*0x7a5209*/
+  j_DeleteAndZero((ObjectClass *)v20); /*0x7a5209*/
   return 0; /*0x7a520e*/
 
 }
@@ -559,24 +559,24 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
         ((String *)(&v19))->ToLower(); /*0x7a7c37*/
         if ( (uint8_t)((String *)((String *)&((unsigned int *)(v19.m_3))[1]))->Compare((const char **)&v19) ) /*0x7a7c45*/
           break; /*0x7a7c45*/
-        DeleteAndZero((ObjectClass *)&v19); /*0x7a7c52*/
+        j_DeleteAndZero((ObjectClass *)&v19); /*0x7a7c52*/
         ++v8; /*0x7a7c57*/
         v9 += 108; /*0x7a7c58*/
         if ( v8 >= owningHouseIndex ) /*0x7a7c5d*/
           goto LABEL_15; /*0x7a7c5d*/
       }
-      DeleteAndZero((ObjectClass *)&v19); /*0x7a7c61*/
+      j_DeleteAndZero((ObjectClass *)&v19); /*0x7a7c61*/
       if ( v8 >= owningHouseIndex ) /*0x7a7c68*/
         break; /*0x7a7c68*/
       v20 = (int)((gamemd::DeleteAndZero)(*(unsigned int *)(v20 + 32))); /*0x7a7c75*/
       v10 = v20; /*0x7a7c72*/
-      DeleteAndZero((ObjectClass *)&((unsigned int *)(v19.m_3))[1]); /*0x7a7c79*/
+      j_DeleteAndZero((ObjectClass *)&((unsigned int *)(v19.m_3))[1]); /*0x7a7c79*/
       if ( !v10 ) /*0x7a7c80*/
         goto LABEL_16; /*0x7a7c80*/
     }
 LABEL_15:
     v18 = 0; /*0x7a7c87*/
-    DeleteAndZero((ObjectClass *)&((unsigned int *)(v19.m_3))[1]); /*0x7a7c90*/
+    j_DeleteAndZero((ObjectClass *)&((unsigned int *)(v19.m_3))[1]); /*0x7a7c90*/
   }
 LABEL_16:
   if ( v21 == owningHouseIndex && v18 ) /*0x7a7ca1*/
@@ -843,12 +843,12 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
       {
         v8 = 0; /*0x7a8e05*/
       }
-      DeleteAndZero((ObjectClass *)&String1); /*0x7a8e44*/
+      j_DeleteAndZero((ObjectClass *)&String1); /*0x7a8e44*/
       if ( v8 && IsBuddyOrIgnoreWOL(v7) ) /*0x7a8e50*/
       {
         ((String *)((String *)&String1))->Assign(v6); /*0x7a8e5e*/
         CharStringToWide((gamemd::ObjectClass *)((wchar_t **)&a2), (const char **)&String1); /*0x7a8e6b*/
-        DeleteAndZero((ObjectClass *)&String1); /*0x7a8e74*/
+        j_DeleteAndZero((ObjectClass *)&String1); /*0x7a8e74*/
         v9 = 61680; /*0x7a8e7b*/
         if ( (*v7 & 1) != 0 ) /*0x7a8e83*/
           v9 = 16776960; /*0x7a8e85*/

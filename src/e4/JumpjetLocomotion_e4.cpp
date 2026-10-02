@@ -387,7 +387,7 @@ void* JumpjetLocomotion::Land()
   if ( !v11[1063] ) /*0x54cc39*/
     goto LABEL_74; /*0x54cc41*/
   v47 = 0; /*0x54cc4e*/
-  v12 = (unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)v11 + 72))(v11, &v54); /*0x54cc53*/
+  v12 = (unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)v11 + 72))(v11, (int *)&v54); /*0x54cc53*/
   v49[0] = *v12 / 256; /*0x54cc66*/
   v49[1] = v12[1] / 256; /*0x54cc7f*/
   *(unsigned int *)v50 = *(unsigned int *)v49; /*0x54cc8d*/

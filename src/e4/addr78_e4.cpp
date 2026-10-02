@@ -105,7 +105,7 @@ void WOL_ResetSystem()
   *(unsigned int *)&g_WindowManager.__pad_EC[636] = 0; /*0x78014a*/
   ((unsigned int *)&stru_B76AC4)[0] = 0; /*0x780150*/
   for ( g_WOL_UserList.owningHouseIndex = 0; v2 < ((char *)&g_WebBrowserConfig); ++v2 ) /*0x78015c*/
-    DeleteAndZero((ObjectClass *)(((char *)&g_WebBrowserConfig) + 4 * v2)); /*0x780167*/
+    j_DeleteAndZero((ObjectClass *)(((char *)&g_WebBrowserConfig) + 4 * v2)); /*0x780167*/
   v3 = stru_B765EC.location[0]; /*0x780176*/
   v4 = 0; /*0x78017b*/
   for ( ((unsigned int *)&g_WebBrowserConfig)[0] = 0; v4 < stru_B765EC.location[0]; v3 = stru_B765EC.location[0] ) /*0x780185*/
@@ -133,7 +133,7 @@ void WOL_ResetSystem()
     while ( stru_B765EC.location[0] > (unsigned int)dword_B766B0 ); /*0x7801f3*/
   }
   for ( i = 0; i < (int)((char *)&stru_B765EC); ++i ) /*0x7801fe*/
-    DeleteAndZero((ObjectClass *)(((char *)&stru_B765EC) + 4 * i)); /*0x780209*/
+    j_DeleteAndZero((ObjectClass *)(((char *)&stru_B765EC) + 4 * i)); /*0x780209*/
   HashMap_field_0x08 = g_WOL_ConnectionPool.HashMap_field_0x08; /*0x780218*/
   v9 = 0; /*0x78021d*/
   for ( ((unsigned int *)&stru_B765EC)[0] = 0; /*0x780227*/
@@ -424,7 +424,7 @@ AbstractClass * * PopulateWOLLobbyListBox()
         v3(DlgItem, 0x197u, v15, 0); /*0x7809d5*/
       v3(DlgItem, 0x49Du, 0, 0); /*0x7809e1*/
       InvalidateRect(DlgItem, 0, 0); /*0x7809e8*/
-      DeleteAndZero((ObjectClass *)v18); /*0x7809f2*/
+      j_DeleteAndZero((ObjectClass *)v18); /*0x7809f2*/
     }
   }
 }

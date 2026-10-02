@@ -161,9 +161,9 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
   this->IsVeinhole = 0; /*0x71daeb*/
   this->FoundationData = 0; /*0x71daf1*/
   this->vtable1 = &vt_TerrainTypeClass; /*0x71daf7*/
-  ((unsigned int *)this)[0] = &vt_TerrainTypeClass; /*0x71dafd*/
-  ((unsigned int *)this)[0] = &vt_TerrainTypeClass; /*0x71db03*/
-  ((unsigned int *)this)[0] = &vt_TerrainTypeClass; /*0x71db0a*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TerrainTypeClass); /*0x71dafd*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TerrainTypeClass); /*0x71db03*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_TerrainTypeClass); /*0x71db0a*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x71db11*/
   ((unsigned int *)this)[0] = 0; /*0x71db18*/
   ((unsigned int *)this)[0] = 1; /*0x71db1e*/

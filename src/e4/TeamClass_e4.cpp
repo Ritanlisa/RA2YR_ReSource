@@ -1235,7 +1235,7 @@ void TeamClass::Destructor(void * a2)
   a2->vtable1 = &vt_TeamClass; /*0x6e8de7*/
   ((unsigned int *)a2)[0] = (unsigned int)(&vt_TeamClass); /*0x6e8ded*/
   ((unsigned int *)a2)[0] = (unsigned int)(&vt_TeamClass); /*0x6e8df4*/
-  for ( ((unsigned int *)a2)[0] = &vt_TeamClass; v2 < dword_A8B210; ++v2 ) /*0x6e8e09*/
+  for ( ((unsigned int *)a2)[0] = (unsigned int)(&vt_TeamClass); v2 < dword_A8B210; ++v2 ) /*0x6e8e09*/
   {
     v3 = *((unsigned int *)dword_A8B204 + v2); /*0x6e8e10*/
     if ( *(TeamTypeClass **)(v3 + 220) == a2->buildingType ) /*0x6e8e1e*/

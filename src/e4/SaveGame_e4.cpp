@@ -330,7 +330,7 @@ LABEL_17:
                               {
                                 v9 = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f9ab*/
                                        this,
-                                       &dword_B07784,
+                                       (int *)&dword_B07784,
                                        4,
                                        0);
                                 return v9 >= 0 ? 0 : v9;

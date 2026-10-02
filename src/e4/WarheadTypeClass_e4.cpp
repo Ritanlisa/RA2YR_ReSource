@@ -447,7 +447,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
     || (byte_B0F67D || !dword_B0F678)
     && dword_B0F684 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670 + 8))(
-         &dword_B0F670,
+         (int *)&dword_B0F670,
          dword_B0F678 + dword_B0F684,
          0) )
   {

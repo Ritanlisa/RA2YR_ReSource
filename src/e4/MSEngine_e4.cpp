@@ -204,7 +204,7 @@ CampaignClass * MSEngine::Destructor(void *a1_1)
   }
   *((unsigned char *)this + 57) = 0; /*0x5ceeb2*/
   *((unsigned int *)this + 13) = 0; /*0x5ceeb5*/
-  DeleteAndZero((ObjectClass *)((unsigned int *)this + 2)); /*0x5ceeb8*/
+  j_DeleteAndZero((ObjectClass *)((unsigned int *)this + 2)); /*0x5ceeb8*/
   MSEngine_field_0x4 = (void *)(this->MSEngine_field_0x4); /*0x5ceebd*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5ceec0*/
   if ( MSEngine_field_0x4 && BYTE1(this->MSEngine_field_0xC[0]) ) /*0x5ceeca*/
@@ -274,7 +274,7 @@ CampaignClass * MSEngine::Destruct()
   int result; // eax
 
   v2 = (unsigned int)(0); /*0x5d1b37*/
-  for ( *(unsigned int *)this->__pad_0 = &vt_MSEngine; v2 < *((unsigned int *)this + 16); ++v2 ) /*0x5d1b45*/
+  for ( *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_MSEngine); v2 < *((unsigned int *)this + 16); ++v2 ) /*0x5d1b45*/
   {
     v3 = *((unsigned int *)this + 13); /*0x5d1b47*/
     v4 = *(void **)(v3 + 4 * v2); /*0x5d1b4a*/

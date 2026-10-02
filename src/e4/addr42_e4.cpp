@@ -99,7 +99,7 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
       || (byte_88A08D || !dword_88A088)
       && dword_88A094 > 0
       && (*(uint8_t (**)(int *, int, unsigned int))(dword_88A080 + 8))(
-           &dword_88A080,
+           (int *)&dword_88A080,
            dword_88A088 + dword_88A094,
            0) )
     {

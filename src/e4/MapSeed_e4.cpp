@@ -78,12 +78,12 @@ int MapSeed::CheckName(void *a1)
     || (v7 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->ToLowerCopy(&v9),
         v2 = ((String *)(&v8))->ToLowerCopy((char **)&v8.m_3[1]),
         v3 = ((String *)((String *)v2))->Compare((const char **)v7),
-        DeleteAndZero((ObjectClass *)&v8.m_3[1]),
-        DeleteAndZero((ObjectClass *)&v9),
+        j_DeleteAndZero((ObjectClass *)&v8.m_3[1]),
+        j_DeleteAndZero((ObjectClass *)&v9),
         v3)
     || (uint8_t)ValidateStringContains((const char **)this, v4,(char *)(asc_84BA18)) )
   {
-    result = (gamemd::DeleteAndZero)((int)(DeleteAndZero((ObjectClass *)&v8))); /*0x79c5b7*/
+    result = (gamemd::DeleteAndZero)((int)(j_DeleteAndZero((ObjectClass *)&v8))); /*0x79c5b7*/
     LOBYTE(result) = 0; /*0x79c5bc*/
   }
   else
@@ -92,7 +92,7 @@ int MapSeed::CheckName(void *a1)
     if ( *(int *)g_WindowManager.__pad_0 <= 0 ) /*0x79c5cc*/
     {
 LABEL_12:
-      result = (gamemd::DeleteAndZero)((int)(DeleteAndZero((ObjectClass *)&v8))); /*0x79c624*/
+      result = (gamemd::DeleteAndZero)((int)(j_DeleteAndZero((ObjectClass *)&v8))); /*0x79c624*/
       LOBYTE(result) = 1; /*0x79c62d*/
     }
     else
@@ -105,12 +105,12 @@ LABEL_12:
         ((String *)((String *)&v8.m_3[1]))->ToLower(); /*0x79c5fa*/
         if ( (uint8_t)((String *)((String *)&v8.m_3[1]))->Compare((const char **)&v8) ) /*0x79c608*/
           break; /*0x79c608*/
-        DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c615*/
+        j_DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c615*/
         if ( ++v6 >= *(int *)g_WindowManager.__pad_0 ) /*0x79c622*/
           goto LABEL_12; /*0x79c622*/
       }
-      DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c634*/
-      result = (gamemd::DeleteAndZero)((int)(DeleteAndZero((ObjectClass *)&v8))); /*0x79c63d*/
+      j_DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c634*/
+      result = (gamemd::DeleteAndZero)((int)(j_DeleteAndZero((ObjectClass *)&v8))); /*0x79c63d*/
       LOBYTE(result) = 0; /*0x79c642*/
     }
   }
@@ -224,7 +224,7 @@ AbstractClass * * MapSeed::InsertName()
       if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_BuddyList.__pad_20) < 5 ) /*0x79c825*/
       {
 LABEL_33:
-        DeleteAndZero((ObjectClass *)&v11); /*0x79c8b7*/
+        j_DeleteAndZero((ObjectClass *)&v11); /*0x79c8b7*/
         return; /*0x79c8bb*/
       }
       ((DeleteAndZero*)(DeleteAndZero *)&g_WindowManager.__pad_14[16])->Alt2(); /*0x79c830*/

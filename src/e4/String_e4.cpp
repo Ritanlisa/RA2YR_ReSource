@@ -128,7 +128,7 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d044e*/
     *((unsigned int *)this + 3) = v8; /*0x5d0453*/
   }
-  DeleteAndZero((ObjectClass *)&v10); /*0x5d045a*/
+  j_DeleteAndZero((ObjectClass *)&v10); /*0x5d045a*/
   return (gamemd::ObjectClass **)(this); /*0x5d0461*/
 
 }

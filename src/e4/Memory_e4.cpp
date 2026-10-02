@@ -134,7 +134,7 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
   v9 = Math::Sqrt((double)(v8 * v8 + v10 * v10)); /*0x58c735*/
   if ( v8 ) /*0x58c73e*/
   {
-    v3 = ((Math *)(-((double)v10 / (double)v8)))->ArcTan(); /*0x58c754*/
+    v3 = Math::ArcTan((-((double)v10 / (double)v8))); /*0x58c754*/
     if ( v8 < 0 ) /*0x58c75e*/
       v3 = v3 + 3.141592653589793; /*0x58c760*/
   }

@@ -81,7 +81,7 @@ int E4Recv_5D0190::sub_5D0190(const char * a2)
   if ( this->customSound <= 0 ) /*0x5d01b3*/
   {
 LABEL_6:
-    DeleteAndZero((ObjectClass *)&v6); /*0x5d0202*/
+    j_DeleteAndZero((ObjectClass *)&v6); /*0x5d0202*/
     return 0; /*0x5d0210*/
   }
   while ( !(uint8_t)((String *)(*(String **)((&this->customSound_controller)[2] + 4 * v3)))->NotEquals(0) ) /*0x5d01c4*/
@@ -94,12 +94,12 @@ LABEL_5:
   ((String *)((String *)&a2))->ToLower(); /*0x5d01da*/
   if ( !(uint8_t)((String *)((String *)&v6))->Compare(&a2) ) /*0x5d01e8*/
   {
-    DeleteAndZero((ObjectClass *)&a2); /*0x5d01f5*/
+    j_DeleteAndZero((ObjectClass *)&a2); /*0x5d01f5*/
     goto LABEL_5; /*0x5d01f5*/
   }
   v5 = *(unsigned int *)((&this->customSound_controller)[2] + 4 * v3); /*0x5d021a*/
-  DeleteAndZero((ObjectClass *)&a2); /*0x5d021d*/
-  DeleteAndZero((ObjectClass *)&v6); /*0x5d0226*/
+  j_DeleteAndZero((ObjectClass *)&a2); /*0x5d021d*/
+  j_DeleteAndZero((ObjectClass *)&v6); /*0x5d0226*/
   return v5; /*0x5d020b*/
 
 }
@@ -752,7 +752,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
                      (char **)((char *)&v19),
                      (char **)&v19.attachedBomb,
                      (int)&v19);
-          DeleteAndZero((ObjectClass *)&v19.attachedBomb); /*0x5d76b4*/
+          j_DeleteAndZero((ObjectClass *)&v19.attachedBomb); /*0x5d76b4*/
           if ( String <= 0 ) /*0x5d76bb*/
             goto LABEL_49; /*0x5d76bb*/
           unknown_libname_73(((char *)&v19)); /*0x5d76c5*/
@@ -760,20 +760,20 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
           if ( String::Length((String *)&((char *)&v19)) ) /*0x5d76e4*/
             break; /*0x5d76e4*/
   LABEL_48:
-          DeleteAndZero((ObjectClass *)((char *)&v19)); /*0x5d7c50*/
+          j_DeleteAndZero((ObjectClass *)((char *)&v19)); /*0x5d7c50*/
   LABEL_49:
           DeleteAndZero(&v19); /*0x5d7c59*/
-          DeleteAndZero((ObjectClass *)((char *)&v19)); /*0x5d7c66*/
+          j_DeleteAndZero((ObjectClass *)((char *)&v19)); /*0x5d7c66*/
           if ( ++v19.owningHouseIndex >= v19.customSound_controller[4] ) /*0x5d7c7a*/
             goto LABEL_50; /*0x5d7c7a*/
           v2 = (char **)v19.customSound_controller[3]; /*0x5d7655*/
         }
         ((String *)((String *)&v19.customSound_controller[1]))->Assign(asc_830A14); /*0x5d76fa*/
         String::TrimLeft((String *)&((char *)&v19), (const char **)&v19.customSound_controller[1]); /*0x5d7708*/
-        DeleteAndZero((ObjectClass *)&v19.customSound_controller[1]); /*0x5d7711*/
+        j_DeleteAndZero((ObjectClass *)&v19.customSound_controller[1]); /*0x5d7711*/
         ((String *)((String *)&v19.fallRate))->Assign(asc_830A14); /*0x5d771f*/
         String::TrimRight((String *)&((char *)&v19), (const char **)&v19.fallRate); /*0x5d772d*/
-        DeleteAndZero((ObjectClass *)&v19.fallRate); /*0x5d7736*/
+        j_DeleteAndZero((ObjectClass *)&v19.fallRate); /*0x5d7736*/
         v7 = ((String *)((String *)&((char *)&v19)))->GetOrEmpty(); /*0x5d7749*/
         StringCSF = GetStringCSF((wchar_t *)v7, 0, aDRa2mdpostMult, 1030); /*0x5d7752*/
         ((WideString *)((wchar_t **)((char *)&v19)))->Assign(StringCSF); /*0x5d775c*/
@@ -782,16 +782,16 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
         if ( !String::Length((String *)&((char *)&v19)) ) /*0x5d778b*/
         {
   LABEL_47:
-          DeleteAndZero((ObjectClass *)((char *)&v19)); /*0x5d7c3e*/
+          j_DeleteAndZero((ObjectClass *)((char *)&v19)); /*0x5d7c3e*/
           DeleteAndZero::Alt((DeleteAndZero *)((char *)&v19)); /*0x5d7c4b*/
           goto LABEL_48; /*0x5d7c4b*/
         }
         ((String *)((String *)&v19.ambientSoundController[4]))->Assign(asc_830A14); /*0x5d779a*/
         String::TrimLeft((String *)&((char *)&v19), (const char **)&v19.ambientSoundController[4]); /*0x5d77a8*/
-        DeleteAndZero((ObjectClass *)&v19.ambientSoundController[4]); /*0x5d77b1*/
+        j_DeleteAndZero((ObjectClass *)&v19.ambientSoundController[4]); /*0x5d77b1*/
         ((String *)((String *)&v19.ambientSoundController[1]))->Assign(asc_830A14); /*0x5d77bf*/
         String::TrimRight((String *)&((char *)&v19), (const char **)&v19.ambientSoundController[1]); /*0x5d77cd*/
-        DeleteAndZero((ObjectClass *)&v19.ambientSoundController[1]); /*0x5d77d6*/
+        j_DeleteAndZero((ObjectClass *)&v19.ambientSoundController[1]); /*0x5d77d6*/
         v10 = ((String *)((String *)&((char *)&v19)))->GetOrEmpty(); /*0x5d77e9*/
         v11 = GetStringCSF((wchar_t *)v10, 0, aDRa2mdpostMult, 1041); /*0x5d77f2*/
         ((WideString *)((wchar_t **)((char *)&v19)))->Assign(v11); /*0x5d77fc*/
@@ -800,7 +800,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
         if ( !String::Length((String *)&((char *)&v19)) ) /*0x5d782b*/
         {
   LABEL_46:
-          DeleteAndZero((ObjectClass *)((char *)&v19)); /*0x5d7c2c*/
+          j_DeleteAndZero((ObjectClass *)((char *)&v19)); /*0x5d7c2c*/
           DeleteAndZero::Alt((DeleteAndZero *)((char *)&v19)); /*0x5d7c39*/
           goto LABEL_47; /*0x5d7c39*/
         }

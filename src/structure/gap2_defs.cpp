@@ -236,7 +236,7 @@ void* BuildingLightClass::CTOR(int a1) {
     || (byte_8B419D || !dword_8B4198)
     && dword_8B41A4 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_8B4190 + 8))(
-         &dword_8B4190,
+         (int *)&dword_8B4190,
          dword_8B4198 + dword_8B41A4,
          0) )
   {

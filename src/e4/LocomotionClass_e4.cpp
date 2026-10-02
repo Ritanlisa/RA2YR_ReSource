@@ -54,7 +54,7 @@ int LocomotionClass::Initialize()
   *((unsigned char *)this + 101) = 1; /*0x4af5bb*/
   *((unsigned int *)this + 26) = 0; /*0x4af5bf*/
   *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_DriveLocomotionClass); /*0x4af5c2*/
-  *(unsigned int *)&(&this->ILocomotion)[4] = &vt_DriveLocomotionClass; /*0x4af5c8*/
+  *(unsigned int *)&(&this->ILocomotion)[4] = (unsigned int)(&vt_DriveLocomotionClass); /*0x4af5c8*/
   *((unsigned int *)this + 6) = (unsigned int)(&off_7E7E8C); /*0x4af5cf*/
   return (int)this->ILocomotion; /*0x4af5d8*/
 
@@ -158,7 +158,7 @@ int LocomotionClass::ProcessData()
   *((unsigned int *)this + 27) = 0; /*0x513c8b*/
   *((unsigned char *)this + 112) = 0; /*0x513c8e*/
   *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_HoverLocomotionClass); /*0x513c91*/
-  *(unsigned int *)&(&this->ILocomotion)[4] = &vt_HoverLocomotionClass; /*0x513c97*/
+  *(unsigned int *)&(&this->ILocomotion)[4] = (unsigned int)(&vt_HoverLocomotionClass); /*0x513c97*/
   return (int)this->ILocomotion; /*0x513ca0*/
 
 }
@@ -224,7 +224,7 @@ void LocomotionClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5
 {
 
   *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_LocomotionClass); /*0x55a6f0*/
-  *(unsigned int *)&(&this->ILocomotion)[4] = &vt_LocomotionClass; /*0x55a6f6*/
+  *(unsigned int *)&(&this->ILocomotion)[4] = (unsigned int)(&vt_LocomotionClass); /*0x55a6f6*/
   this->LinkedTo = 0; /*0x55a6fd*/
 
 }

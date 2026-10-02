@@ -413,7 +413,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
         {
           if ( fabs(v37 - 4.71238898038469) >= 0.001 ) /*0x456ca1*/
           {
-            v24 = ((Math *)(v37))->Sin(); /*0x456cb3*/
+            v24 = Math::Sin((v37)); /*0x456cb3*/
             v45 = (unsigned int)(v42)* v42; /*0x456cc0*/
             v44 = v43 * v43; /*0x456ccc*/
             v46 = Math::Sqrt(1.0 / (v24 * v24 / v45 + 1.0 / v44)); /*0x456cf4*/
@@ -449,7 +449,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
         v47[1] = v22 - dword_886FA4; /*0x456dc9*/
         IDA_LOBYTE(v14) = (*(int (**)(int, int *, double *, unsigned int *, int *, int, int, unsigned int, int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 + 60))( /*0x456dd8*/
                         g_DSurface_Hidden_2,
-                        &DSurface_ViewBounds,
+                        (int *)&DSurface_ViewBounds,
                         &v48,
                         v47,
                         &a6,

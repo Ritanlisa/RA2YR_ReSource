@@ -538,14 +538,14 @@ int Lobby::BuildPlayerList()
       ((WideString *)((wchar_t **)((char *)&v7)))->Assign(v2); /*0x77dbde*/
       v3 = ToWideStringCharAlt((char **)((char *)&v7), (const wchar_t **)((char *)&v7)); /*0x77dbeb*/
       ((String *)((String *)&v7))->Reassign((const char **)v3); /*0x77dbf5*/
-      DeleteAndZero((ObjectClass *)((char *)&v7)); /*0x77dbfe*/
+      j_DeleteAndZero((ObjectClass *)((char *)&v7)); /*0x77dbfe*/
       ((DeleteAndZero*)(DeleteAndZero *)((char *)&v7))->Alt(); /*0x77dc07*/
     }
     else
     {
       PlayerTypeString = (const char **)GetPlayerTypeString((String *)((char *)&v7), v2); /*0x77dc14*/
       ((String *)((String *)&v7))->Reassign(PlayerTypeString); /*0x77dc1e*/
-      DeleteAndZero((ObjectClass *)((char *)&v7)); /*0x77dc27*/
+      j_DeleteAndZero((ObjectClass *)((char *)&v7)); /*0x77dc27*/
     }
     v5 = ((String *)((String *)&v7))->GetOrEmpty(); /*0x77dc35*/
     strncat((char *)((char *)&v7), v5, 0x100u); /*0x77dc40*/
@@ -554,7 +554,7 @@ int Lobby::BuildPlayerList()
     ++v1; /*0x77dc65*/
   }
   while ( (int)v1 < (int)&dword_A8DAB0 ); /*0x77dc6e*/
-  return (*(int (**)(LPVOID, int *))(*(unsigned int *)ppv + 60))(ppv, ((char *)&v7)); /*0x77dc84*/
+  return (*(int (**)(LPVOID, int *))(*(unsigned int *)ppv + 60))(ppv, ((char *)(int *)&v7)); /*0x77dc84*/
 
 }
 } // namespace gamemd

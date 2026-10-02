@@ -519,37 +519,37 @@ void DrawScoreScreenStats(ConvertClass * aP0, int a2)
     v18 = 0; /*0x72e321*/
     v19 = v5; /*0x72e32e*/
     v20 = v6; /*0x72e332*/
-    (*(void (**)(int *, int *, int, unsigned int))(v7 + 16))(aP0, &v17, a2, 0); /*0x72e336*/
+    (*(void (**)(int *, int *, int, unsigned int))(v7 + 16))(aP0, (int *)&v17, a2, 0); /*0x72e336*/
     v8 = *aP0; /*0x72e339*/
     v18 = 0; /*0x72e342*/
     v19 = 800; /*0x72e34b*/
     v17 = v5; /*0x72e353*/
     v20 = v6; /*0x72e357*/
-    (*(void (**)(int *, int *, int, unsigned int))(v8 + 16))(aP0, &v17, a2, 0); /*0x72e35b*/
+    (*(void (**)(int *, int *, int, unsigned int))(v8 + 16))(aP0, (int *)&v17, a2, 0); /*0x72e35b*/
     v9 = *aP0; /*0x72e35e*/
     v18 = 0; /*0x72e366*/
     v17 = v15; /*0x72e36f*/
     v19 = v5; /*0x72e377*/
     v20 = v6; /*0x72e37b*/
-    (*(void (**)(int *, int *, int, unsigned int))(v9 + 16))(aP0, &v17, a2, 0); /*0x72e37f*/
+    (*(void (**)(int *, int *, int, unsigned int))(v9 + 16))(aP0, (int *)&v17, a2, 0); /*0x72e37f*/
     v10 = *aP0; /*0x72e382*/
     v20 = 600; /*0x72e38d*/
     v17 = v15; /*0x72e397*/
     v18 = v6; /*0x72e39f*/
     v19 = v5; /*0x72e3a3*/
-    (*(void (**)(int *, int *, int, unsigned int))(v10 + 16))(aP0, &v17, a2, 0); /*0x72e3a7*/
+    (*(void (**)(int *, int *, int, unsigned int))(v10 + 16))(aP0, (int *)&v17, a2, 0); /*0x72e3a7*/
     v19 = v5; /*0x72e3af*/
     v17 = v15; /*0x72e3bb*/
     v20 = 600; /*0x72e3c5*/
     v11 = *aP0; /*0x72e3c9*/
     v18 = v16; /*0x72e3cf*/
-    (*(void (**)(int *, int *, int, unsigned int))(v11 + 16))(aP0, &v17, a2, 0); /*0x72e3d3*/
+    (*(void (**)(int *, int *, int, unsigned int))(v11 + 16))(aP0, (int *)&v17, a2, 0); /*0x72e3d3*/
     v19 = 800; /*0x72e3e5*/
     v12 = *aP0; /*0x72e3e9*/
     v17 = v5; /*0x72e3ef*/
     v18 = v16; /*0x72e3f3*/
     v20 = v6; /*0x72e3f7*/
-    (*(void (**)(int *, int *, int, unsigned int))(v12 + 16))(aP0, &v17, a2, 0); /*0x72e3fb*/
+    (*(void (**)(int *, int *, int, unsigned int))(v12 + 16))(aP0, (int *)&v17, a2, 0); /*0x72e3fb*/
     v17 = 0; /*0x72e40a*/
     v13 = *aP0; /*0x72e40e*/
     v18 = v16; /*0x72e414*/

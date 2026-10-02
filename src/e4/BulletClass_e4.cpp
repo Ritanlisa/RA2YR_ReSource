@@ -93,7 +93,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
   {
     v5 = this; /*0x4665a0*/
     v2 = (*(int (**)(int *, BulletClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x4665a4*/
-           ((char *)&g_BuildingLoadQueue_Array),
+           ((char *)(int *)&g_BuildingLoadQueue_Array),
            &v5);
     if ( v2 != -1 && v2 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x4665b4*/
     {

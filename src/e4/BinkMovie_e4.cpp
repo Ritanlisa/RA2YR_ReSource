@@ -1115,10 +1115,10 @@ int * BinkMovie::CreateSurfaceTracker(char * FullPath)
       v3[1] = 640; /*0x6c9a60*/
       v3[2] = 255; /*0x6c9a67*/
       v3[3] = 0; /*0x6c9a6e*/
-      *v3 = &XSurface_Vtable; /*0x6c9a71*/
+      *v3 = (unsigned int)(&XSurface_Vtable); /*0x6c9a71*/
       v3[4] = 2; /*0x6c9a77*/
       Buffer::Init(0, 0x4FB00u); /*0x6c9a7e*/
-      *v4 = &BSurface_Vtable; /*0x6c9a83*/
+      *v4 = (unsigned int)(&BSurface_Vtable); /*0x6c9a83*/
       (*(void (**)(unsigned int *, unsigned int))(*v4 + 24))(v4, 0); /*0x6c9a8e*/
       v2[4] = v4; /*0x6c9a91*/
     }

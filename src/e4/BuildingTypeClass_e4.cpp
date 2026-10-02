@@ -269,7 +269,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
     || (byte_A83C75 || !dword_A83C70)
     && dword_A83C7C > 0
     && (v5 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A83C68 + 8))(
-               &dword_A83C68,
+               (int *)&dword_A83C68,
                dword_A83C7C + dword_A83C70,
                0) == 0,
         v4 = dword_A83C78,
@@ -1387,7 +1387,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
         *(unsigned int *)&v1[1].Weapon[252] = 0; /*0x465174*/
         v1[1].Weapon[256] = 1; /*0x465177*/
         v1[1].Weapon[257] = 0; /*0x46517b*/
-        *(unsigned int *)v4 = &vt_VectorClassTPoint3D; /*0x46517e*/
+        *(unsigned int *)v4 = (unsigned int)(&vt_VectorClassTPoint3D); /*0x46517e*/
       }
       (*(void (**)(char *, int, unsigned int))(*(unsigned int *)v4 + 8))(v4, v14, 0); /*0x46518c*/
       v5 = 0; /*0x46518f*/

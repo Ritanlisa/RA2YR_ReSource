@@ -198,7 +198,7 @@ int E4Recv_5AFEF0::sub_5AFEF0()
   this->IsMoving = 0; /*0x5aff2e*/
   *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_MechLocomotionClass); /*0x5aff32*/
   (&this->HeadToCoord)[2] = v2; /*0x5aff38*/
-  *(unsigned int *)&(&this->LocomotionClass)[4] = &vt_MechLocomotionClass; /*0x5aff3b*/
+  *(unsigned int *)&(&this->LocomotionClass)[4] = (unsigned int)(&vt_MechLocomotionClass); /*0x5aff3b*/
   return (int)this->LocomotionClass; /*0x5aff44*/
 
 }
@@ -312,7 +312,7 @@ int E4Recv_728A00::sub_728A00()
   (&this->CurrentState)[7] = 0; /*0x728a36*/
   LOBYTE((&this->CurrentState)[8]) = 0; /*0x728a39*/
   *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_TunnelLocomotionClass); /*0x728a3c*/
-  *(unsigned int *)&(&this->LocomotionClass)[4] = &vt_TunnelLocomotionClass; /*0x728a42*/
+  *(unsigned int *)&(&this->LocomotionClass)[4] = (unsigned int)(&vt_TunnelLocomotionClass); /*0x728a42*/
   return (int)this->LocomotionClass; /*0x728a4b*/
 
 }

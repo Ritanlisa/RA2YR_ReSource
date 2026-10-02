@@ -112,7 +112,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v44 = (int *)(v14[1]);
     v45 = (int *)(v14[2]);
     v46 = (int *)(v14[3]);
-    (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v43, v11); /*0x704afa*/
+    (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, (int *)&v43, v11); /*0x704afa*/
     if ( *(unsigned int *)(dword_87F6C4 + 4) == 1 ) /*0x704b05*/
       v15 = **(uint8_t **)(dword_87F6C4 + 372); /*0x704b11*/
     else
@@ -130,7 +130,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v40 = (int *)(v18[1]); /*0x704b8f*/
     v41 = (int *)(v18[2]); /*0x704b9c*/
     v42 = (int *)(v18[3]); /*0x704ba3*/
-    (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v15); /*0x704bae*/
+    (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, (int *)&v39, v15); /*0x704bae*/
     v9 = dword_886FA4; /*0x704bb1*/
   }
   v38[1] = v9; /*0x704bc2*/
@@ -163,7 +163,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v40 = (int *)(v23[1]);
   v41 = (int *)(v23[2]);
   v42 = (int *)(v23[3]);
-  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v20); /*0x704d11*/
+  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, (int *)&v39, v20); /*0x704d11*/
   v35 = -2; /*0x704d1d*/
   v36 = (int *)(-2); /*0x704d21*/
   v24 = ((Coord2D *)(&v35))->Add(v37,(unsigned int *)(&v29)); /*0x704d35*/
@@ -177,7 +177,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v40 = (int *)(v26[1]); /*0x704d83*/
   v41 = (int *)(v26[2]); /*0x704d90*/
   v42 = (int *)(v26[3]); /*0x704d97*/
-  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v20); /*0x704da2*/
+  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, (int *)&v39, v20); /*0x704da2*/
   if ( a8 ) /*0x704dae*/
   {
     v27 = (0x7FFFFFFF - (int)dword_A8ED84) % 15; /*0x704dc9*/

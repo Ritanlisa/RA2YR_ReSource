@@ -598,7 +598,7 @@ LABEL_10:
     aP1 = (IUnknown *)(v3[27]); /*0x487a84*/
     (*(void (**)(unsigned int *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v6 + 364))( /*0x487a9e*/
       v3,
-      &aP1,
+      (int *)&aP1,
       0,
       *((unsigned int *)dword_8871E0 + 1002),
       0,
@@ -649,7 +649,7 @@ LABEL_12:
                   aP1 = (IUnknown *)(v10[27]); /*0x487bb6*/
                   (*(void (**)(int *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v12 + 364))( /*0x487bd0*/
                     v10,
-                    &aP1,
+                    (int *)&aP1,
                     0,
                     *((unsigned int *)dword_8871E0 + 1002),
                     0,

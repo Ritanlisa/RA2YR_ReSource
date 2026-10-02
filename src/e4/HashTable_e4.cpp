@@ -552,7 +552,7 @@ CampaignClass * * HashTable_flat::Clear(void *a1)
     v10 = v9[194]; /*0x6b95bf*/
     if ( v9 ) /*0x6b95c5*/
     {
-      DeleteAndZero(*(ObjectClass **)(v8 + 4 * v5)); /*0x6b95c9*/
+      j_DeleteAndZero(*(ObjectClass **)(v8 + 4 * v5)); /*0x6b95c9*/
       __3_YAXPAX_Z(v9); /*0x6b95cf*/
     }
     *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v5) = v10; /*0x6b95de*/
@@ -607,7 +607,7 @@ CampaignClass * * HashTable_flat::Clear(void *a1)
       (***(void (****)(unsigned int, int))&v30[20])(*(unsigned int *)&v30[20], 1); /*0x6b96ae*/
   }
 LABEL_23:
-  DeleteAndZero((ObjectClass *)v30); /*0x6b96b5*/
+  j_DeleteAndZero((ObjectClass *)v30); /*0x6b96b5*/
   if ( this->HashTable_field_0x08 ) /*0x6b96be*/
   {
     do /*0x6b96fe*/
@@ -677,13 +677,13 @@ int HashTable_flat::Find(const char * a1, ConvertClass * aP2)
     if ( aP2 ) /*0x6ba1f1*/
       qmemcpy(aP2, &unk_B0B94C, 0x300u); /*0x6ba1fd*/
     v7 = dword_B0B948; /*0x6ba1ff*/
-    DeleteAndZero((ObjectClass *)&a1); /*0x6ba209*/
+    j_DeleteAndZero((ObjectClass *)&a1); /*0x6ba209*/
     return v7; /*0x6ba20e*/
   }
   else
   {
 LABEL_7:
-    DeleteAndZero((ObjectClass *)&a1); /*0x6ba1c4*/
+    j_DeleteAndZero((ObjectClass *)&a1); /*0x6ba1c4*/
     return 0; /*0x6ba1cd*/
   }
 
@@ -745,7 +745,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
         v11 = v10[194]; /*0x6ba31b*/
         if ( v10 ) /*0x6ba321*/
         {
-          DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v8)); /*0x6ba325*/
+          j_DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v8)); /*0x6ba325*/
           __3_YAXPAX_Z(v10); /*0x6ba32b*/
         }
         v12 = *(float *)&v16[4]; /*0x6ba335*/
@@ -770,7 +770,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
           }
           *(unsigned int *)(v9 + 776) = *(unsigned int *)(v15 + 776); /*0x6ba37d*/
           --this->HashTable_field_0x04; /*0x6ba389*/
-          DeleteAndZero((ObjectClass *)v15); /*0x6ba390*/
+          j_DeleteAndZero((ObjectClass *)v15); /*0x6ba390*/
           __3_YAXPAX_Z((void *)v15); /*0x6ba396*/
         }
 LABEL_20:
@@ -784,7 +784,7 @@ LABEL_22:
   if ( *(unsigned int *)&v16[12] ) /*0x6ba3ba*/
     (***(void (****)(unsigned int, int))&v16[12])(*(unsigned int *)&v16[12], 1); /*0x6ba3c0*/
 LABEL_24:
-  DeleteAndZero((ObjectClass *)v16); /*0x6ba3c2*/
+  j_DeleteAndZero((ObjectClass *)v16); /*0x6ba3c2*/
 
 }
 } // namespace gamemd
@@ -845,7 +845,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
     v10 = v9[194]; /*0x6bacd4*/
     if ( v9 ) /*0x6bacda*/
     {
-      DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v7)); /*0x6bacde*/
+      j_DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v7)); /*0x6bacde*/
       __3_YAXPAX_Z(v9); /*0x6bace4*/
     }
     *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7) = v10; /*0x6bacf3*/
@@ -914,7 +914,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
       qmemcpy(a2, (const void *)(v24 + 4), 0x304u); /*0x6badfa*/
       *(unsigned int *)(v36 + 776) = *(unsigned int *)(v24 + 776); /*0x6bae02*/
       --this->HashTable_field_0x04; /*0x6bae0e*/
-      DeleteAndZero((ObjectClass *)v24); /*0x6bae15*/
+      j_DeleteAndZero((ObjectClass *)v24); /*0x6bae15*/
       __3_YAXPAX_Z((void *)v24); /*0x6bae1b*/
       v38 = 1; /*0x6bae23*/
     }
@@ -1413,7 +1413,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
     v10 = v9[28]; /*0x7add64*/
     if ( v9 ) /*0x7add67*/
     {
-      DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v7)); /*0x7add6b*/
+      j_DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v7)); /*0x7add6b*/
       __3_YAXPAX_Z(v9); /*0x7add71*/
     }
     *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7) = v10; /*0x7add80*/
@@ -1482,7 +1482,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
       qmemcpy(a2, (const void *)(v24 + 4), 0x6Cu); /*0x7ade7b*/
       *(unsigned int *)(v36 + 112) = *(unsigned int *)(v24 + 112); /*0x7ade80*/
       --this->HashTable_field_0x04; /*0x7ade89*/
-      DeleteAndZero((ObjectClass *)v24); /*0x7ade90*/
+      j_DeleteAndZero((ObjectClass *)v24); /*0x7ade90*/
       __3_YAXPAX_Z((void *)v24); /*0x7ade96*/
       v38 = 1; /*0x7ade9e*/
     }
@@ -1587,7 +1587,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
     v10 = v9[2]; /*0x7ae279*/
     if ( v9 ) /*0x7ae27c*/
     {
-      DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v7)); /*0x7ae280*/
+      j_DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v7)); /*0x7ae280*/
       __3_YAXPAX_Z(v9); /*0x7ae286*/
     }
     *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7) = v10; /*0x7ae294*/
@@ -1654,7 +1654,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
       *aP2 = *(unsigned int *)(v22 + 4); /*0x7ae375*/
       *(unsigned int *)(v8 + 8) = *(unsigned int *)(v22 + 8); /*0x7ae37a*/
       --this->HashTable_field_0x04; /*0x7ae383*/
-      DeleteAndZero((ObjectClass *)v22); /*0x7ae38a*/
+      j_DeleteAndZero((ObjectClass *)v22); /*0x7ae38a*/
       __3_YAXPAX_Z((void *)v22); /*0x7ae390*/
       v33 = 1; /*0x7ae398*/
     }
@@ -1824,7 +1824,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
     v10 = v9[68]; /*0x7ae9e4*/
     if ( v9 ) /*0x7ae9ea*/
     {
-      DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v7)); /*0x7ae9ee*/
+      j_DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v7)); /*0x7ae9ee*/
       __3_YAXPAX_Z(v9); /*0x7ae9f4*/
     }
     *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7) = v10; /*0x7aea03*/
@@ -1893,7 +1893,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
       qmemcpy(a3, (const void *)(v24 + 4), 0x10Cu); /*0x7aeb0a*/
       *(unsigned int *)(v36 + 272) = *(unsigned int *)(v24 + 272); /*0x7aeb12*/
       --this->HashTable_field_0x04; /*0x7aeb1e*/
-      DeleteAndZero((ObjectClass *)v24); /*0x7aeb25*/
+      j_DeleteAndZero((ObjectClass *)v24); /*0x7aeb25*/
       __3_YAXPAX_Z((void *)v24); /*0x7aeb2b*/
       v38 = 1; /*0x7aeb33*/
     }

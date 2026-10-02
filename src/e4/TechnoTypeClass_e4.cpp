@@ -741,7 +741,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
     || (byte_B0F67D || !dword_B0F678)
     && dword_B0F684 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670 + 8))(
-         &dword_B0F670,
+         (int *)&dword_B0F670,
          dword_B0F684 + dword_B0F678,
          0) )
   {
@@ -752,7 +752,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
     || (byte_A8EB0D || !dword_A8EB08)
     && dword_A8EB14 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(stru_A8EB00 + 8))(
-         &stru_A8EB00,
+         (int *)&stru_A8EB00,
          dword_A8EB14 + dword_A8EB08,
          0) )
   {

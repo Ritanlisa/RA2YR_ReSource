@@ -51,7 +51,7 @@ int ParasiteClass::Constructor(void *a1, void *a2, void *a3)
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_AC4910 + 8))(
-         &dword_AC4910,
+         (int *)&dword_AC4910,
          dword_AC4918 + dword_AC4924,
          0) )
   {
@@ -99,7 +99,7 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_AC4910 + 8))(
-         &dword_AC4910,
+         (int *)&dword_AC4910,
          dword_AC4918 + dword_AC4924,
          0) )
   {
@@ -237,7 +237,7 @@ void ParasiteClass::DeploySquad()
                   || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
                   && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
                   && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))(
-                       ((char *)&g_BuildingLoadQueue_Array),
+                       ((char *)(int *)&g_BuildingLoadQueue_Array),
                        *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + ((char *)&g_BuildingLoadQueue_Array),
                        0) )
                 {

@@ -1951,7 +1951,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   {
 LABEL_44:
     ((HashTable *)(v24))->DestroyHashTableINIClass(); /*0x49c553*/
-    v29[0] = &vt_CCFileClass; /*0x49c563*/
+    v29[0] = (unsigned int)(&vt_CCFileClass); /*0x49c563*/
     v31 = 0; /*0x49c56e*/
     ((Vector *)((int)v30))->Clear(); /*0x49c575*/
     v29[0] = &off_7E1668; /*0x49c581*/

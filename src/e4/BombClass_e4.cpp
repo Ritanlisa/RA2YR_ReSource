@@ -45,7 +45,7 @@ int BombClass::AbstractClass()
     || (byte_89C675 || !dword_89C670)
     && dword_89C67C > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_89C668 + 8))(
-         &dword_89C668,
+         (int *)&dword_89C668,
          dword_89C670 + dword_89C67C,
          0) )
   {

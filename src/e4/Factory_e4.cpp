@@ -262,12 +262,12 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
           if ( (v29[20] & 2) != 0 ) /*0x718f10*/
           {
             v30 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(*(unsigned int *)((*(int (**)(unsigned int *))(*v28 + 132))(v28) + 1460))));
-            v31 = (unsigned int *)((gamemd::CellClass *)((unsigned int *)(*(int (**)(unsigned char *, int *, unsigned int))(*(unsigned int *)v29 + 76))(v29, &v78, 0)));
+            v31 = (unsigned int *)((gamemd::CellClass *)((unsigned int *)(*(int (**)(unsigned char *, int *, unsigned int))(*(unsigned int *)v29 + 76))(v29, (int *)&v78, 0)));
             *(unsigned short *)v67 = *v31 / 256; /*0x718f45*/
             v32 = v6[3]; /*0x718f54*/
             *(unsigned short *)&v67[2] = v31[1] / 256; /*0x718f5c*/
             v68 = *(unsigned int *)v67; /*0x718f65*/
-            v33 = (unsigned int *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)v32 + 76))(v32, &v78, 0); /*0x718f70*/
+            v33 = (unsigned int *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)v32 + 76))(v32, (int *)&v78, 0); /*0x718f70*/
             v34 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v33)); /*0x718f79*/
             v35 = v6[3]; /*0x718f7e*/
             *(unsigned int *)v71 = (unsigned int)(v34); /*0x718f81*/
@@ -304,7 +304,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
             {
               v38 = (int *)(((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v66));
               v61 = (char)aP0; /*0x71904f*/
-              v60 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)v38 + 72))(v38, &v78); /*0x71905a*/
+              v60 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)v38 + 72))(v38, (int *)&v78); /*0x71905a*/
               v39 = (ObjectPlacement *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v66); /*0x71906a*/
               v40 = ObjectPlacement::CalcPosition(v39, v81, v60, v61, v65, 0); /*0x719071*/
               *v8 = *v40; /*0x71907a*/

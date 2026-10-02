@@ -134,7 +134,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_8B3D10 + 8))(
-         &dword_8B3D10,
+         (int *)&dword_8B3D10,
          dword_8B3D24 + dword_8B3D18,
          0) )
   {
@@ -235,7 +235,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_8B3D10 + 8))(
-         &dword_8B3D10,
+         (int *)&dword_8B3D10,
          dword_8B3D18 + dword_8B3D24,
          0) )
   {
@@ -378,7 +378,7 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_8B3D10 + 8))(
-         &dword_8B3D10,
+         (int *)&dword_8B3D10,
          dword_8B3D18 + dword_8B3D24,
          0) )
   {
@@ -593,7 +593,7 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_8B3D10 + 8))(
-         &dword_8B3D10,
+         (int *)&dword_8B3D10,
          dword_8B3D18 + dword_8B3D24,
          0) )
   {

@@ -543,7 +543,7 @@ LABEL_63:
         if ( v70 <= 0.0 )
           double v71 = -1.570796326794897;
         else
-          v71 = ((Math *)((double)v127 / v70))->ArcTan();
+          v71 = Math::ArcTan(((double)v127 / v70));
         *(float *)(a1 + 80) = *(float *)&v113->__pad_0[12] * var84_4 * 1.570796326794897 + v71 * var74_4;
       }
       else

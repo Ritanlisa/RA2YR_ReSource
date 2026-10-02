@@ -890,7 +890,7 @@ void PostLoadInitScenario()
           v31 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x6850b1*/
           if ( v31 ) /*0x6850b8*/
           {
-                        v31 = (gamemd::AnimClass *)((int *)(*(int (**)(int, int *))(*(unsigned int *)n + 72))(n, &v34));
+                        v31 = (gamemd::AnimClass *)((int *)(*(int (**)(int, int *))(*(unsigned int *)n + 72))(n, (int *)&v34));
             AnimClass::ctor( /*0x6850e0*/
               v31,
               *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6256),
@@ -967,7 +967,7 @@ void ScenarioClass_Reset()
       if ( !byte_A8E975 && v3 || dword_A8E97C <= 0 ) /*0x6852d3*/
         goto LABEL_16; /*0x6852d3*/
       if ( (*(uint8_t (**)(int *, int, unsigned int))(dword_A8E968 + 8))( /*0x6852e4*/
-             &dword_A8E968,
+             (int *)&dword_A8E968,
              v3 + dword_A8E97C,
              0) )
       {
