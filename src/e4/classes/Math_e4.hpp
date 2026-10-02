@@ -75,8 +75,6 @@ struct Math {
     unsigned int field_8;
     unsigned int u32_40;
     unsigned int u32_41;
-    void* ArcTan2;  // 0x0 (no offset truth)
-    void* SinCos;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Hypotenuse2D();  // 0x41C350
    static int Sin(...);  // 0x4CAD50

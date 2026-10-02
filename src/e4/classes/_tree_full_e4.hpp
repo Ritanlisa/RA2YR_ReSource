@@ -57,7 +57,6 @@ struct DialogControl_OwnerDraw {
 struct DynamicVectorClass {
     void* vtable1;  // 0x0 (no offset truth)
     void* VectorClass;  // 0x0 (no offset truth)
-    void* Destroy;  // 0x0 (no offset truth)
     void* vfptr;
     void* Items;  // 0x4
     int Capacity;  // 0x8
@@ -70,7 +69,6 @@ struct DynamicVectorClass {
     unsigned int * Copy(unsigned int *a2);  // 0x4779e0
     unsigned int * AnimTypeConstructor(int a2, int a3);  // 0x525250
 };
-    void* Dtor;  // 0x0 (no offset truth)
 
 struct FractalNoise {
     void* vfptr;
@@ -323,7 +321,6 @@ struct HashTable {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     static int Shrink2(void *aP0);  // A_c2039 R5 static-form sync
-    void* Shrink;  // 0x0 (no offset truth)
     static int Grow2(void *aP0);  // A_c2039 R5 static-form sync
     void* CleanupAndResize;  // 0x0 (no offset truth)
     unsigned char q01C;  // 0x1C
