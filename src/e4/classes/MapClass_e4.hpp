@@ -399,6 +399,7 @@ struct MapClass {
     unsigned int q1110;  // 0x1110
     unsigned int q1124;  // 0x1124
     AbstractTypeClass* q1128;  // 0x1128
+    unsigned char __pad_1140[25];  // 0x1140
     unsigned int q1158;  // 0x1158
     void* p115C;  // regen name
     void* q1160;  // 0x1160

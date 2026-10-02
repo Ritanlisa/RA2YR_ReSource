@@ -46,6 +46,7 @@ struct SuperClass {
     unsigned char needsSave;  // 0x32
     unsigned int alignmentPadding;  // 0x33
     unsigned int u32_34;  // 0x34
+    unsigned char __pad_34[113];  // 0x34
     int CustomChargeTime;  // 0x36
     void* q038;  // 0x38
     unsigned char q03A;  // 0x3A

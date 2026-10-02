@@ -187,6 +187,7 @@ struct WarheadTypeClass {
     unsigned char q1AB;  // 0x1AB
     CampaignClass* q1AC;  // 0x1AC
     unsigned int q1B0;  // 0x1B0
+    unsigned char __pad_1B0[9];  // 0x1B0
     unsigned int q1B1;  // 0x1B1
     unsigned char u8_1B4;  // 0x1B4
     void* p1B5;  // regen name

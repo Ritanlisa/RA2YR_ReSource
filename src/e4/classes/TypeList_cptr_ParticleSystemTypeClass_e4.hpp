@@ -9,6 +9,7 @@ struct TypeList_flat;  // fix_fwd_type_supply
 struct TypeList_cptr_ParticleSystemTypeClass {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
+    unsigned char __pad_0[87];  // 0x0
     void* Items;  // 0x4
     unsigned int Capacity;  // 0x8
     void* IsInitialized;  // 0xC

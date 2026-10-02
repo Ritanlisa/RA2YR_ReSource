@@ -14,6 +14,7 @@ struct FoggedObjectClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
+    unsigned char __pad_5[356];  // 0x5
     void* vtable3;  // 0x8
     unsigned int qC;  // 0xC
     int Count;  // 0x10

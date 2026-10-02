@@ -139,6 +139,7 @@ struct TechnoTypeClass {
     unsigned int q120;  // 0x120
     unsigned int q124;  // 0x124
     unsigned int q128;  // 0x128
+    unsigned char __pad_128[9];  // 0x128
     unsigned int q12C;  // 0x12C
     unsigned int q130;  // 0x130
     unsigned int q134;  // 0x134

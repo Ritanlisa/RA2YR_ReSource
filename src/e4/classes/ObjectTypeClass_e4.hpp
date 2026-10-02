@@ -77,6 +77,7 @@ struct ObjectTypeClass {
     void *q94;  // 0x94
     unsigned int tail_95;  // 0x95
     Color* q098;  // 0x98
+    unsigned char __pad_98[69];  // 0x98
     unsigned char unused_9B;  // 0x9B
     char Armor[4];  // 0x9C
     int q0A0;  // 0xA0

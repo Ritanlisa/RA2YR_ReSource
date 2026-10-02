@@ -7,6 +7,7 @@ namespace gamemd {
 struct ParticleSystemClass_32_ {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
+    unsigned char __pad_0[87];  // 0x0
     void* q004;  // 0x4
     int Capacity;  // 0x8
     void* q00C;  // 0xC

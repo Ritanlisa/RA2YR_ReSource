@@ -24,6 +24,7 @@ struct TimerStruct;  // fix_fwd_type_supply
 struct MouseClass {
 // --- flat members (BEGIN) ---
     void* q000;  // 0x0
+    unsigned char __pad_0[87];  // 0x0
     unsigned int u16_2;  // 0x2
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8

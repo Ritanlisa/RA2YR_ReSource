@@ -13,6 +13,7 @@ struct UDPInterfaceClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     bool Initialized;  // 0x4
+    unsigned char __pad_5[356];  // 0x5
     unsigned short BoundPort;  // 0x6
     unsigned int Socket;
     unsigned int q3F06C;

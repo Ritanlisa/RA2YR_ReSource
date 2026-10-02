@@ -8,6 +8,7 @@ struct StringVector {
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
     char Insert(const char **a2, int a3);  // 0x7ae5d0
+    unsigned char __pad_0[87];  // 0x0
     unsigned int m_8;  // 0x8
 };
 

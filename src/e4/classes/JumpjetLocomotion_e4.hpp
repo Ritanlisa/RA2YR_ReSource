@@ -47,6 +47,7 @@ struct JumpjetLocomotion {
     int u32_80;  // 0x80
     unsigned char q084;  // 0x84
     unsigned char q085;  // 0x85
+    unsigned char __pad_85[4];  // 0x85
     ObjectClass* q088;  // 0x88
     void* q08C;  // 0x8C
     void* q090;  // 0x90

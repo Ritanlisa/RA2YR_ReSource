@@ -56,6 +56,7 @@ struct ScriptAction {
     unsigned int q088;  // 0x88
     void* q08C;  // 0x8C
     ObjectClass* q090;  // 0x90
+    unsigned char __pad_90;  // 0x90
     void* q094;  // 0x94
     void* q098;  // 0x98
     unsigned char q09C;  // 0x9C

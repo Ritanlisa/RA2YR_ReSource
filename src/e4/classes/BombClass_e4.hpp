@@ -37,6 +37,7 @@ struct BombClass {
     bool q042;  // 0x42
     char soundIndex[4];  // 0x44
     unsigned int q048;  // 0x48
+    unsigned char __pad_48[13];  // 0x48
     bool q04A;  // 0x4A
     unsigned int q04C;  // 0x4C
     unsigned char q04F;  // 0x4F

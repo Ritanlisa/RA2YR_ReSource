@@ -21,6 +21,7 @@ struct NetworkLobby {
     unsigned char q038;  // 0x38
     unsigned char q03C;  // 0x3C
     unsigned char q03D;  // 0x3D
+    unsigned char __pad_3D[652];  // 0x3D
     unsigned int q040;  // 0x40
     unsigned int u32_44;  // 0x44
     unsigned int u32_48;  // 0x48

@@ -137,6 +137,7 @@ struct MPCooperative {
     unsigned char q320;  // 0x320
     void * q324;  // 0x324
     unsigned int q328;  // 0x328
+    unsigned char __pad_328[17];  // 0x328
     unsigned char q32C;  // 0x32C
     unsigned char q330;  // 0x330
     unsigned char u8_331;  // 0x331

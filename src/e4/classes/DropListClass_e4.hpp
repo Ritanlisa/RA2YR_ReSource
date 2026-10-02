@@ -8,6 +8,7 @@ namespace gamemd {
 struct DropListClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned char __pad_0[87];  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char q00C;  // 0xC

@@ -19,6 +19,7 @@ struct TeleportLocomotionClass {
     unsigned char Dirty;  // 0x11
     unsigned int RefCount;  // 0x14
     void* vtable3;  // 0x18
+    unsigned char __pad_18[121];  // 0x18
     char MovingDestination[12];  // 0x1C
     bool q01D;  // 0x1D
     ILocomotion * q020;  // 0x20

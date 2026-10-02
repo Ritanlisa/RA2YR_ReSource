@@ -8,6 +8,7 @@ namespace gamemd {
 struct DiskLaserClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned char __pad_0[87];  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC

@@ -9,6 +9,7 @@ struct CampaignScore;  // fix_fwd_type_supply
 struct E4Recv_71FF20 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
+    unsigned char __pad_0[87];  // 0x0
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
     unsigned int q020;  // 0x20

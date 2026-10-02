@@ -12,6 +12,7 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct IPXInterfaceClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned char __pad_0[87];  // 0x0
     bool Initialized;  // 0x4
     unsigned short BoundSocket;  // 0x6
     unsigned int LocalNetwork;  // 0x8

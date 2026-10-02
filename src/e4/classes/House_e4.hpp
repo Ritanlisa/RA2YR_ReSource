@@ -29,6 +29,7 @@ struct House {
     unsigned int q028;  // 0x28
     unsigned char q02C;  // 0x2C
     unsigned char q02D;  // 0x2D
+    unsigned char __pad_2D[64];  // 0x2D
     unsigned int u32_30;  // 0x30
     unsigned int u32_34;  // 0x34
     unsigned int q038;  // 0x38

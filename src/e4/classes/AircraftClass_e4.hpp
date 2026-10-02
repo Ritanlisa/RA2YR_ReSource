@@ -673,6 +673,7 @@ struct AircraftClass {
     bool FootClass_field_6BE;  // 0x6BE
     bool FootClass_field_6BF;  // 0x6BF
     void* vtable5;  // 0x6C0
+    unsigned char __pad_6C0;  // 0x6C0
     AircraftTypeClass* Type;  // 0x6C4
     bool AircraftClass_field_bool_6C8;  // 0x6C8
     bool HasPassengers;  // 0x6C9

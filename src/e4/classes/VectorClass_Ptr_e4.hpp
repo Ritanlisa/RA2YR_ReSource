@@ -8,6 +8,7 @@ namespace gamemd {
 struct AbstractClass;  // fix_fwd_type_supply
 struct VectorClass_Ptr {
 // --- flat members (BEGIN) ---
+    unsigned char __pad_0[87];  // 0x0
     AbstractClass * ptr_4;  // 0x4
     AbstractClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC

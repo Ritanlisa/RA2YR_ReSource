@@ -11,6 +11,7 @@ struct TechnoClass;  // fix_fwd_type_supply
 struct Surface {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned char __pad_0[87];  // 0x0
     int Width;  // 0x4
     int Height;  // 0x8
     unsigned int u32_B;  // 0xB

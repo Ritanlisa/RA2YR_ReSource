@@ -194,6 +194,7 @@ struct AnimClass {
     Coord * q184;  // 0x184
     AbstractClass* q188;  // 0x188
     unsigned int q18C;  // 0x18C
+    unsigned char __pad_18C[1049];  // 0x18C
     Coord* q190;  // 0x190
     unsigned int q194;  // 0x194
     unsigned int q198;  // 0x198

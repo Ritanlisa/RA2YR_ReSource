@@ -113,6 +113,7 @@ struct LightConvertClass {
     ConvertClass* q188;  // 0x188
     MapClass* q18C;  // 0x18C
     unsigned char q190;  // 0x190
+    unsigned char __pad_190;  // 0x190
     unsigned int u32_194;  // 0x194
     LightConvertClass* q198;  // 0x198
     ObjectClass* q19C;  // 0x19C

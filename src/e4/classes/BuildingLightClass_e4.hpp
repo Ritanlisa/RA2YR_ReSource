@@ -94,6 +94,7 @@ struct BuildingLightClass {
     unsigned int q0B1;  // 0xB1
     unsigned int q0B2;  // 0xB2
     unsigned int q0B4;  // 0xB4
+    unsigned char __pad_B4[85];  // 0xB4
     char BuildingLightClass_field_B8[12];  // 0xB8
     unsigned char q0B9;  // 0xB9
     unsigned int q0BC;  // 0xBC

@@ -9,6 +9,7 @@ struct DropListClass;  // fix_fwd_type_supply
 struct E4Recv_4B4E10 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
+    unsigned char __pad_0[87];  // 0x0
     unsigned int M24;  // 0x18
     unsigned int u32_20;  // 0x20
     unsigned int q024;  // 0x24

@@ -8,6 +8,7 @@ namespace gamemd {
 struct CStreamClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned char __pad_0[87];  // 0x0
     void* vtable2;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC

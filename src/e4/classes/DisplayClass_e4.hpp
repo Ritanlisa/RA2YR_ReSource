@@ -24,6 +24,7 @@ struct DisplayClass {
     void* vtable1;  // 0x0
     AbstractClass * ptr_4;  // 0x4
     unsigned int u32_8;  // 0x8
+    unsigned char __pad_8[25];  // 0x8
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int Count;  // 0x10

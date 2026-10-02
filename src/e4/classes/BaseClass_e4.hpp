@@ -11,6 +11,7 @@ struct HouseClass;  // fix_fwd_type_supply
 struct BaseClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned char __pad_0[87];  // 0x0
     char baseNodeCount[4];  // 0x4
     char baseNodeCapacity[4];  // 0x8
     char percentBuilt[4];  // 0xC
