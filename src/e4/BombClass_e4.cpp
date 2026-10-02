@@ -67,10 +67,10 @@ void * BombClass::GetCurrentFrame()
   if ( this->audioController[0] == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
   v2 = 2 /*0x438a4c*/
-     * ((*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - this->audioController[1])
+     * ((*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - this->audioController[1])
       / (*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4048)
        / 6));
-  if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % (2 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056)) >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056) ) /*0x438a53*/
+  if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) % (2 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056)) >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056) ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
     return __0Iostream_init_QAE_XZ_1((Iostream_init *)v2); /*0x438a59*/
@@ -86,7 +86,7 @@ int BombClass::TimeToExplode()
 {
 
   return !this->audioController[0] /*0x438a8c*/
-      && *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) > this->audioController[2]
+      && *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) > this->audioController[2]
       && !this->BombClass_field_58;
 
 }

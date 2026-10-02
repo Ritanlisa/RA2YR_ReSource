@@ -512,7 +512,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
              v15,
              (int)a9,
              (int *)0xFFFFFFFF,
-             (int)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
+             (int)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
              v24);
   }
   return (gamemd::AbstractClass **)(v23);

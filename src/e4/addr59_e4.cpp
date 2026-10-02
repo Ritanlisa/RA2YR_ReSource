@@ -110,14 +110,6 @@ namespace gamemd {
 void sub_594190(int * a1, int a2)
 {
     unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
   int *v2; // ebp
   int v3; // esi
   int result; // eax

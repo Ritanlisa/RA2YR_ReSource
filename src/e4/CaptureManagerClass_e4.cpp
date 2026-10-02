@@ -313,7 +313,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
       v12 = 0; /*0x471dd3*/
       if ( v11 ) /*0x471dda*/
       {
-        v13 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x471ddc*/
+        v13 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x471ddc*/
         *(unsigned int *)(v11 + 16) = 0; /*0x471de2*/
         *(unsigned int *)(v11 + 8) = v13; /*0x471de5*/
         v12 = (unsigned int *, unsigned int a1)v11; /*0x471de8*/
@@ -334,7 +334,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
       v18 = v12 + 2; /*0x471e31*/
       v5[176] = *(unsigned int *)((unsigned int)(a1)+ 72); /*0x471e34*/
       v19 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 784); /*0x471e45*/
-      *v18 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x471e4b*/
+      *v18 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x471e4b*/
       v18[1] = v33; /*0x471e52*/
       v18[2] = v19; /*0x471e57*/
       if ( !v5
@@ -519,7 +519,7 @@ int CaptureManagerClass::DrawLinks(int a1, ...)
       v9 = v6[2]; /*0x47219b*/
       if ( v9 == -1 ) /*0x4721a1*/
         goto LABEL_5; /*0x4721a1*/
-      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v9 < v8 ) /*0x4721ad*/
+      if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v9 < v8 ) /*0x4721ad*/
         break; /*0x4721ad*/
 LABEL_7:
       if ( *(unsigned char *)(v7 + 131) ) /*0x4721b7*/
@@ -558,7 +558,7 @@ LABEL_7:
       if ( --v4 < 0 ) /*0x47228c*/
         return v3; /*0x47228c*/
     }
-    v8 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v9; /*0x4721af*/
+    v8 -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v9; /*0x4721af*/
 LABEL_5:
     if ( v8 > 0 ) /*0x4721b3*/
       v5 = 1; /*0x4721b5*/

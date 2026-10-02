@@ -46,7 +46,7 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3)
   int v3; // eax
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x71a453*/
-  v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a458*/
+  v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *(unsigned int *)&this->__pad_28[4] = v2; /*0x71a464*/
   this->vtable1 = &vt_TemporalClass; /*0x71a467*/
@@ -57,7 +57,7 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3)
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 6))) || !((unsigned int *)&g_BuildingLoadQueue_Array)[5])
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3)) + 8))(
-         &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
+         (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
          *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 5)) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)),
          0) )
   {
@@ -78,7 +78,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   int v5; // [esp+Ch] [ebp-8h]
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
-  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a4fb*/
+  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   this->vtable1 = &vt_TemporalClass; /*0x71a501*/
   ((unsigned int *)this)[0] = &vt_TemporalClass; /*0x71a507*/
@@ -86,7 +86,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   ((unsigned int *)this)[0] = &vt_TemporalClass; /*0x71a515*/
   this->creationFrame = aP1; /*0x71a51c*/
   *(unsigned int *)this->__pad_28 = 0; /*0x71a51f*/
-  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a529*/
+  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a529*/
   this->TemporalClass_field_30 = v5; /*0x71a52c*/
   this->TemporalClass_field_34 = 0; /*0x71a52f*/
   *((unsigned int *)this + 16) = 0; /*0x71a532*/
@@ -95,7 +95,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 6))) || !((unsigned int *)&g_BuildingLoadQueue_Array)[5])
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3)) + 8))(
-         &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
+         (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
          *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 5)) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)),
          0) )
   {
@@ -385,7 +385,7 @@ void * TemporalClass::ProcessEvent(unsigned int * Block, char a2)
   ((unsigned int *)Block)[0] = (unsigned int)(&vt_TemporalClass); /*0x71b1d1*/
   v5 = (gamemd::TemporalClass *)(Block); /*0x71b1df*/
   v3 = (*(int (**)(int *, TemporalClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3)) + 16))( /*0x71b1e3*/
-         &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
+         (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
          &v5);
   if ( v3 != -1 && v3 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) ) /*0x71b1f3*/
   {

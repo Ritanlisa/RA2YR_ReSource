@@ -220,7 +220,7 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
   int v6; // eax
   int v7; // eax
 
-  if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 424) ) /*0x6a6a09*/
+  if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 424) ) /*0x6a6a09*/
   {
     v3 = a3; /*0x6a6a0f*/
     if ( a3 == -1 ) /*0x6a6a16*/
@@ -323,8 +323,8 @@ namespace gamemd {
 ObjectClass * CreateTeamCommand::AddRef(void *a1_1)
 {
 
-  sprintf(&(unsigned int *)((char *)&stru_A8EB00 + 2512), "TeamCreate_%d", *(unsigned int *)&this->m_1[3]); /*0x535c2e*/
-  return &(unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x535c3b*/
+  sprintf((unsigned int *)((char *)&stru_A8EB00 + 2512), "TeamCreate_%d", *(unsigned int *)&this->m_1[3]); /*0x535c2e*/
+  return (unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x535c3b*/
 
 }
 } // namespace gamemd
@@ -339,8 +339,8 @@ wchar_t * CreateTeamCommand::Release(void *a1_1)
 
   v3 = *(const wchar_t **)&this->m_1[3]; /*0x535c45*/
   StringCSF = GetStringCSF(aTxtCreateTeam, 0, g_Str_File_Init_CPP, 6165); /*0x535c55*/
-  swprintf((wchar_t *const)&(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535c60*/
-  return (wchar_t *)&(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535c6d*/
+  swprintf((wchar_t *const)(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535c60*/
+  return (wchar_t *)(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535c6d*/
 
 }
 } // namespace gamemd
@@ -365,8 +365,8 @@ wchar_t * CreateTeamCommand::Read(void *a1_1, void *a2_1)
 
   v3 = *(const wchar_t **)&this->m_1[3]; /*0x535c95*/
   StringCSF = GetStringCSF(aTxtCreateTeamD, 0, g_Str_File_Init_CPP, 6169); /*0x535ca5*/
-  swprintf((wchar_t *const)&(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535cb0*/
-  return (wchar_t *)&(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535cbd*/
+  swprintf((wchar_t *const)(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535cb0*/
+  return (wchar_t *)(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535cbd*/
 
 }
 } // namespace gamemd

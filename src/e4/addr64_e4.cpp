@@ -599,14 +599,14 @@ void RunNetworkGameLoop()
     }
     while ( v9 < 64 ); /*0x64858f*/
         ((Event *)0)->Dispatch();
-    if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 444) ) /*0x6485a1*/
+    if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 444) ) /*0x6485a1*/
     {
       ((InputManager_ProcessEvents *)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Vtable(&v16, &v18, &v17); /*0x6485b7*/
       SyncDelayClass::ProcessNetworkSync(&v16); /*0x6485c0*/
       (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x6485cd*/
       TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x6485d5*/
     }
-    v10 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) + 1000; /*0x6485e7*/
+    v10 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) + 1000; /*0x6485e7*/
     v11 = 0; /*0x6485ed*/
     if ( (*(int (**)(IPXManagerClass *))(v3->Socket + 16))(v3) > 0 ) /*0x6485f4*/
     {
@@ -620,7 +620,7 @@ void RunNetworkGameLoop()
       }
       while ( v11 < (*(int (**)(IPXManagerClass *))(v3->Socket + 16))(v3) ); /*0x648615*/
     }
-    if ( v10 + dword_A8B554 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x64862a*/
+    if ( v10 + dword_A8B554 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x64862a*/
     {
             ((Debug *)0)->Log();
       v2 = v13; /*0x648643*/

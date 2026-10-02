@@ -107,7 +107,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
     v20 = *(unsigned int **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1444); /*0x4b5eb6*/
     if ( v20 ) /*0x4b5ebe*/
     {
-      if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 6) ) /*0x4b5ecf*/
+      if ( !(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) % 6) ) /*0x4b5ecf*/
       {
         v21 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5edf*/
         if ( v21 ) /*0x4b5ee6*/
@@ -116,7 +116,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
           ((AnimClass *)(v21))->ctor(*(void **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * Index), v39, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
         }
       }
-      if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 3) ) /*0x4b5f1f*/
+      if ( !(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) % 3) ) /*0x4b5f1f*/
       {
         v33 = 0.0; /*0x4b5f39*/
         v23 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&a1->IsOutOfMap); /*0x4b5f41*/

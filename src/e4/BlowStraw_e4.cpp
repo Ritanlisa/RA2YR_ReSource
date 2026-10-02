@@ -210,8 +210,8 @@ CellStruct * * sub_731AF0()
   wchar_t *v7; // eax
   int v8; // ecx
 
-  result = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x731af1*/
-  if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x731afa*/
+  result = *(wchar_t **)(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x731af1*/
+  if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x731afa*/
   {
     StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_NothingSelected), 0,(const char *)(g_Str_File_UICmnds_cpp), 856));
     v3 = 3; /*0x731b18*/
@@ -228,9 +228,9 @@ CellStruct * * sub_731AF0()
                           1);
     goto LABEL_5; /*0x731b3e*/
   }
-  v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x731b4e*/
+  v4 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x731b4e*/
   v5 = 0; /*0x731b50*/
-  if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) <= 0 ) /*0x731b54*/
+  if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 228) <= 0 ) /*0x731b54*/
   {
   LABEL_5:
     IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 1; /*0x731b43*/
@@ -238,8 +238,8 @@ CellStruct * * sub_731AF0()
   }
   while ( 1 ) /*0x731b56*/
   {
-    result = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 216); /*0x731b56*/
-    v6 = *(unsigned char **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v5); /*0x731b5b*/
+    result = *(wchar_t **)(unsigned int *)((char *)&stru_A8EB00 + 216); /*0x731b56*/
+    v6 = *(unsigned char **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v5); /*0x731b5b*/
     if ( v6 ) /*0x731b60*/
     {
       if ( (v6[20] & 1) != 0 ) /*0x731b6c*/

@@ -692,12 +692,12 @@ void * Object::DrawObject(void ** Block, char a2)
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x5fdf91*/
   v5 = (gamemd::OverlayClass *)(Block); /*0x5fdfa6*/
   v3 = (*(int ((unsigned char *)(**))(unsigned char *, OverlayClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 108) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 108), &v5); /*0x5fdfaa*/
-  if ( v3 != -1 && v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 124) ) /*0x5fdfba*/
+  if ( v3 != -1 && v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 124) ) /*0x5fdfba*/
   {
-    --*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 124); /*0x5fdfbf*/
+    --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 124); /*0x5fdfbf*/
     for ( ; /*0x5fdfc5*/
-          v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 124);
-          *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 112) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 112) + 4 * v3) )
+          v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 124);
+          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 112) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 112) + 4 * v3) )
     {
       ++v3; /*0x5fdfcd*/
     }

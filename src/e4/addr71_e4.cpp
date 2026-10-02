@@ -924,7 +924,7 @@ char E4Recv_71C8E0::sub_71C8E0()
   if ( !result ) /*0x71c8eb*/
   {
     *((unsigned char *)this + 205) = 1; /*0x71c8ee*/
-    *((unsigned int *)this + 45) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71c905*/
+    *((unsigned int *)this + 45) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71c905*/
     *((unsigned int *)this + 48) = 2; /*0x71c90b*/
     *((unsigned int *)this + 46) = v2; /*0x71c911*/
     *((unsigned int *)this + 47) = 2; /*0x71c914*/

@@ -42,7 +42,7 @@ NeuronClass::NeuronClass()
   *((unsigned int *)this + 9) = 0; /*0x43a358*/
   *((unsigned int *)this + 10) = 0; /*0x43a35f*/
   *((unsigned int *)this + 11) = 0; /*0x43a366*/
-  *((unsigned int *)this + 12) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x43a372*/
+  *((unsigned int *)this + 12) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x43a372*/
   *(unsigned int *)this->__pad_0 = &vt_NeuronClass; /*0x43a375*/
   this->NeuronClass_field_0x04 = (int)&vt_NeuronClass; /*0x43a37b*/
   this->NeuronClass_field_0x08 = (int)&vt_NeuronClass; /*0x43a382*/
@@ -50,8 +50,8 @@ NeuronClass::NeuronClass()
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array) /*0x43a3c5*/
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 8))(
-         &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 8))(
+         (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
          ((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)),
          0) )
   {
@@ -103,8 +103,8 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
     }
   }
   v6 = (unsigned int *)((unsigned int)(Block));
-  v4 = (*(int (**)(char *, NeuronClass **))(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x43aa3c*/
-         &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
+  v4 = (*(int (**)(char *, NeuronClass **))(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x43aa3c*/
+         (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
          &v6);
   if ( v4 != -1 && v4 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x43aa4c*/
   {

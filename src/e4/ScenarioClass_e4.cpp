@@ -339,24 +339,24 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
   this->pauseTimer[0] = 0; /*0x6832eb*/
   this->pauseTimer[1] = ((Timer *)this)->GetTicks(); /*0x6832f6*/
   *(unsigned int *)this->__pad_628 = 0; /*0x6832fc*/
-  v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683302*/
+  v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683302*/
   this->missionTimer[2] = 0; /*0x683307*/
   this->missionTimer[0] = v2; /*0x68330d*/
   LOBYTE(this->missionTimer_text[0]) = 0; /*0x683313*/
-  v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683319*/
+  v3 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683319*/
   this->shroudRegrowTimer[2] = 0; /*0x68331f*/
   this->shroudRegrowTimer[0] = v3; /*0x683325*/
-  this->fogTimer[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683331*/
+  this->fogTimer[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683331*/
   this->fogTimer[2] = 0; /*0x683337*/
-  v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x68333d*/
+  v4 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x68333d*/
   this->iceTimer[2] = 0; /*0x683342*/
   this->iceTimer[0] = v4; /*0x683348*/
-  this->ScenarioClass_field_timer_123c[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683354*/
+  this->ScenarioClass_field_timer_123c[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683354*/
   this->ScenarioClass_field_timer_123c[2] = 0; /*0x68335a*/
-  v5 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683360*/
+  v5 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683360*/
   this->ambientTimer[2] = 0; /*0x683366*/
   this->ambientTimer[0] = v5; /*0x68336c*/
-  this->ScenarioClass_field_timer_34C0[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683381*/
+  this->ScenarioClass_field_timer_34C0[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683381*/
   this->ScenarioClass_field_timer_34C0[2] = 0; /*0x683387*/
   TypeList::TechnoTypeConstructor((TypeList *)this->allowableUnits, 0, 0); /*0x68338d*/
   this->dropshipUnitCounts = 0; /*0x683397*/
@@ -501,9 +501,9 @@ LABEL_21:
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x683c11*/
   *((unsigned int *)((char *)&v19 + 0)) = 0; /*0x683c18*/
   *((unsigned int *)((char *)&v19 + 1)) = 0; /*0x683c1c*/
-  GenericList::Constructor((GenericList *)&(unsigned int *)((char *)&v19 + 2)); /*0x683c20*/
+  GenericList::Constructor((GenericList *)(unsigned int *)((char *)&v19 + 2)); /*0x683c20*/
   *((unsigned int *)((char *)&v19 + 2)) = (int)&vt_List; /*0x683c29*/
-  memset(&(unsigned int *)((char *)&v19 + 8), 0, 13); /*0x683c32*/
+  memset((unsigned int *)((char *)&v19 + 8), 0, 13); /*0x683c32*/
   memset(&((char *)&v19), 0, 9); /*0x683c42*/
   *(unsigned int *)v19.INIClass = &CCINIClass_Vtable; /*0x683c4e*/
   CCFileClass::Construct(&v20, v4); /*0x683c56*/

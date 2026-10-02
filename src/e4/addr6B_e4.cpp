@@ -83,7 +83,6 @@ namespace gamemd {
 CellClass * * InitializeBuildabilityGrid(int a1)
 {
     unsigned int v24 = 0;  /* G37 hoist */
-    unsigned int v24 = 0;  /* G37 hoist */
   int v1; // esi
   char *v2; // eax
   unsigned char *v3; // ecx

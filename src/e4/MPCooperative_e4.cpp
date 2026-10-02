@@ -184,7 +184,7 @@ int MPCooperative::WriteCoopSaveINI()
   CCFileClass::Construct(&v19,(void *)(g_Str_File_coopsave_ini)); /*0x49be70*/
   *((unsigned int *)((char *)&v15 + 0)) = 0; /*0x49be79*/
   *((unsigned int *)((char *)&v15 + 1)) = 0; /*0x49be7d*/
-  INISectionList::Constructor((INISectionList *)&(unsigned int *)((char *)&v15 + 2)); /*0x49be81*/
+  INISectionList::Constructor((INISectionList *)(unsigned int *)((char *)&v15 + 2)); /*0x49be81*/
   Node::Init((Node *)&(unsigned int *)((char *)&v15 + 8)); /*0x49be8a*/
   ((unsigned int *)&v15)[0] = 0; /*0x49be9d*/
   v15.ownsFile = 0; /*0x49bea1*/

@@ -416,7 +416,7 @@ int Skirmish::RenderPreview(HWND aP1)
       *(unsigned int *)&stru_AC4B30.__pad_EC[612] = LoadFileSHP((gamemd::ConvertClass *)(aStartbutShp), (bool *)&v23 + 3); /*0x6408b2*/
     }
     v25 = VtableStub_72E280(); /*0x6408c3*/
-    BuildingAnimByName = FindBuildingAnimByName((gamemd::AbstractClass *)(&(unsigned int *)((char *)&stru_820320 + 12)), 1); /*0x6408c7*/
+    BuildingAnimByName = FindBuildingAnimByName((gamemd::AbstractClass *)((unsigned int *)((char *)&stru_820320 + 12)), 1); /*0x6408c7*/
     v15 = (gamemd::AbstractClass *)(dword_A8B230); /*0x6408cc*/
     v16 = BuildingAnimByName; /*0x6408d2*/
     result = (&dword_A8B230)[122].abstractFlags; /*0x6408d4*/

@@ -748,7 +748,7 @@ void PostLoadInitScenario()
         || (IDA_BYTE1(*((unsigned int *)((char *)&FootClass_Array + 7))) || !((unsigned int *)&FootClass_Array)[6])
         && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
         && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 8))(
-             &(unsigned int *)((char *)&FootClass_Array + 4),
+             (unsigned int *)((char *)&FootClass_Array + 4),
              *((unsigned int *)((char *)&FootClass_Array + 6)) + *((unsigned int *)((char *)&FootClass_Array + 1)),
              0) )
       {
@@ -850,7 +850,7 @@ void PostLoadInitScenario()
   Terrain::ConnectivityGraph((Terrain *)&stru_87F5F0.__pad_58[416]); /*0x684fd1*/
   MapClass::BuildSubzones((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x684fdb*/
   MarkCliffEdgePassability((int)&stru_87F5F0.__pad_58[416]); /*0x684fe5*/
-  if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 404) ) /*0x684ff0*/
+  if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 404) ) /*0x684ff0*/
   {
     v28 = (int *)RA2_OPNEW(0x100u); /*0x684ffc*/
     if ( v28 ) /*0x685003*/
@@ -859,7 +859,7 @@ void PostLoadInitScenario()
       v37 = 2688; /*0x685013*/
       GroundHeight = 0; /*0x685017*/
       v29 = WarheadTypeClass::applyDamage(aGascloudsys); /*0x68501b*/
-      *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 404) = ParticleSystemClass::Constructor( /*0x685040*/
+      *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 404) = ParticleSystemClass::Constructor( /*0x685040*/
                                          v28,
                                          *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * v29),
                                          &v36,
@@ -870,7 +870,7 @@ void PostLoadInitScenario()
     }
     else
     {
-      *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 404) = 0; /*0x685047*/
+      *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 404) = 0; /*0x685047*/
     }
   }
   if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6256) ) /*0x685052*/

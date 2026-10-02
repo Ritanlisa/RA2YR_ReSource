@@ -187,13 +187,13 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->TiberiumClass_field_F4 = 0; /*0x721758*/
   this->TiberiumClass_field_F8 = 0; /*0x72175e*/
   this->TiberiumClass_field_FC = 0; /*0x721764*/
-  this->SpreadTimer[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x721770*/
+  this->SpreadTimer[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x721770*/
   this->SpreadTimer[2] = 0; /*0x721776*/
   this->TiberiumClass_field_10C = 0; /*0x72177c*/
   this->TiberiumClass_field_110 = 0; /*0x721782*/
   this->TiberiumClass_field_114 = 0; /*0x721788*/
   this->TiberiumClass_field_118 = 0; /*0x72178e*/
-  v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x721794*/
+  v3 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x721794*/
   this->GrowthTimer[2] = 0; /*0x72179a*/
   this->GrowthTimer[0] = v3; /*0x7217a0*/
   this->vtable1 = &vt_TiberiumClass; /*0x7217a6*/
@@ -205,7 +205,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
     || (*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) || !((unsigned int *)&g_BuildingLoadQueue_Array)[3])
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) + 8))(
-         &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1),
+         (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1),
          *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3)) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)),
          0) )
   {
@@ -285,7 +285,7 @@ void TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   *(unsigned int *)(v5 + 192) = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
                             (BuildingTypeClass *)aP1,
                             (uint8_t *)(v5 + 36),
-                            (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 95),
+                            (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 95),
                             v22);
   if ( INIClass::GetString( /*0x721b57*/
          (INIClass *)aP1,

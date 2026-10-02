@@ -22,10 +22,6 @@ namespace gamemd {
 int WaypointPathClass::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
     unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
 
   int v2; // eax
 

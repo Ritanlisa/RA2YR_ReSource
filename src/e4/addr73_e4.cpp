@@ -272,12 +272,12 @@ int E4Recv_731130::sub_731130()
   int v4; // eax
   ObjectClass *v5; // ecx
 
-  v1 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; /*0x731138*/
-  if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1 < 0 ) /*0x73113f*/
+  v1 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; /*0x731138*/
+  if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164) - 1 < 0 ) /*0x73113f*/
     return 1; /*0x7311a6*/
   while ( 1 ) /*0x731147*/
   {
-    v3 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v1); /*0x731147*/
+    v3 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v1); /*0x731147*/
     if ( v3 && !*(unsigned char *)(v3 + 129) ) /*0x73114e*/
     {
       if ( *(unsigned int *)&dword_A8B238 ) /*0x73115f*/
@@ -313,13 +313,13 @@ AbstractClass * * sub_731AA0()
   AbstractClass ** v2;
   unsigned char *v3; // ecx
 
-  v1 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228))));
+  v1 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 228))));
   v2 = (gamemd::AbstractClass **)(0);
-  if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) <= 0 ) /*0x731aad*/
+  if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 228) <= 0 ) /*0x731aad*/
     return (gamemd::AbstractClass **)(1); /*0x731ad8*/
   while ( 1 ) /*0x731ab4*/
   {
-    v3 = *(unsigned char **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x731ab4*/
+    v3 = *(unsigned char **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x731ab4*/
     if ( v3 ) /*0x731ab9*/
     {
       if ( (v3[20] & 1) != 0 && !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)v3 + 1216))(v3) ) /*0x731ac9*/
@@ -517,12 +517,12 @@ void SelectAllOfType()
     {
       v4 = 0; /*0x7329c1*/
     }
-    v5 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x7329c3*/
-    if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) > 0 ) /*0x7329cb*/
+    v5 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x7329c3*/
+    if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 164) > 0 ) /*0x7329cb*/
     {
       do /*0x7329f3*/
       {
-        v23 = *(TechnoClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v2); /*0x7329d7*/
+        v23 = *(TechnoClass **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v2); /*0x7329d7*/
         if ( (uint8_t)((TechnoClass *)(v23))->IsOwnedByHuman() ) /*0x7329db*/
           ((DynamicVector *)((DynamicVector *)v4))->AddItem((unsigned int *)(&v23)); /*0x7329eb*/
         ++v2; /*0x7329f0*/
@@ -588,10 +588,10 @@ void SelectAllOfType()
       v6 = (DynamicVector *)((DynamicVector *)(v14))->Constructor_Techno(0, 0); /*0x732ae5*/
     else
       v6 = 0; /*0x732ae9*/
-    v15 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x732aeb*/
+    v15 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x732aeb*/
     for ( j = 0; j < v15; ++j ) /*0x732af5*/
     {
-      v23 = *(TechnoClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * j); /*0x732b01*/
+      v23 = *(TechnoClass **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * j); /*0x732b01*/
       if ( (uint8_t)((TechnoClass *)(v23))->IsOwnedByHuman() ) /*0x732b05*/
         ((DynamicVector *)(v6))->AddItem((unsigned int *)(&v23)); /*0x732b15*/
     }
@@ -603,7 +603,7 @@ void SelectAllOfType()
     if ( IDTechnoClassMatches(v19, (int)v24) ) /*0x732b34*/
       (*(void (**)(void *))(*(unsigned int *)v19 + 332))(v19); /*0x732b41*/
   }
-  if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x732b55*/
+  if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x732b55*/
   {
     if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x732b7c*/
       StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_SelAcrossMap), 0,(const char *)(g_Str_File_UICmnds_cpp), 1011); /*0x732b98*/

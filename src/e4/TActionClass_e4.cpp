@@ -54,7 +54,7 @@ int TActionClass::executeBuildAction()
   if ( *((unsigned int *)this + 166) == -1 ) /*0x4fcde3*/
   {
     result = *((unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x4fcde5*/
-    *((unsigned int *)this + 166) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4fcdea*/
+    *((unsigned int *)this + 166) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4fcdea*/
   }
   return result; /*0x4fcddb*/
 
@@ -101,7 +101,7 @@ int TActionClass::executeHuntAction(int a2)
 {
 
   *((unsigned int *)this + 5437) = a2; /*0x50da24*/
-  *((unsigned int *)this + 5439) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x50da30*/
+  *((unsigned int *)this + 5439) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x50da30*/
   return a2; /*0x50da36*/
 
 }
@@ -384,9 +384,9 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
     if ( v9 >= (unsigned int *)(75) ) /*0x6ac6fd*/
       goto LABEL_38; /*0x6ac6fd*/
   }
-  *(unsigned int *)&v10[52 * v9 + 136] = (unsigned int)(aP2)+ *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ac713*/
+  *(unsigned int *)&v10[52 * v9 + 136] = (unsigned int)(aP2)+ *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ac713*/
 LABEL_38:
-  result = (unsigned int)((unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) + (unsigned int)(aP2)+ 1)); /*0x6ac71a*/
+  result = (unsigned int)((unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) + (unsigned int)(aP2)+ 1)); /*0x6ac71a*/
   *((unsigned int *)this + 5352) = result; /*0x6ac728*/
   return result; /*0x6ac670*/
 
@@ -429,42 +429,42 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
   v8 = Field11; /*0x6e0ba0*/
   if ( !Field11 ) /*0x6e0ba4*/
     return 0; /*0x6e0ba4*/
-  v10 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x6e0bae*/
-  for ( i = 0; i < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164); ++i ) /*0x6e0bb8*/
+  v10 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x6e0bae*/
+  for ( i = 0; i < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 164); ++i ) /*0x6e0bb8*/
   {
-    v12 = *(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x6e0bbf*/
+    v12 = *(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x6e0bbf*/
     if ( v12[135] == a2 /*0x6e0bf4*/
       && (!v12
-       || (*(int (**)(unsigned int))(*v12 + 44))(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i)) != 6
+       || (*(int (**)(unsigned int))(*v12 + 44))(*(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i)) != 6
        || (v13 = v12[328]) == 0
        || !*(unsigned char *)(v13 + 5491) && !*(unsigned char *)(v13 + 5492)) )
     {
-      (*(void (**)(unsigned int, int, unsigned int))(**(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i) + 980))( /*0x6e0c0b*/
-        *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i),
+      (*(void (**)(unsigned int, int, unsigned int))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i) + 980))( /*0x6e0c0b*/
+        *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i),
         v8,
         0);
       v6 = 1; /*0x6e0c11*/
     }
-    v10 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x6e0c13*/
+    v10 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x6e0c13*/
   }
   v14 = 0; /*0x6e0c1d*/
   if ( v10 > 0 ) /*0x6e0c21*/
   {
     do /*0x6e0c89*/
     {
-      v15 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14); /*0x6e0c2c*/
+      v15 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14); /*0x6e0c2c*/
       if ( *(unsigned int *)(v15 + 540) == a2 ) /*0x6e0c35*/
       {
         if ( v15 ) /*0x6e0c39*/
         {
-          if ( (*(int (**)(unsigned int))(*(unsigned int *)v15 + 44))(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14)) == 6 ) /*0x6e0c45*/
+          if ( (*(int (**)(unsigned int))(*(unsigned int *)v15 + 44))(*(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14)) == 6 ) /*0x6e0c45*/
           {
             v16 = *(unsigned int *)(v15 + 1312); /*0x6e0c47*/
             if ( v16 ) /*0x6e0c4f*/
             {
               if ( *(unsigned char *)(v16 + 5491) || *(unsigned char *)(v16 + 5492) ) /*0x6e0c5b*/
               {
-                (*(void (**)(unsigned int, int, unsigned int))(**(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14) /*0x6e0c72*/
+                (*(void (**)(unsigned int, int, unsigned int))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14) /*0x6e0c72*/
                                                             + 980))(
                   *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14),
                   v8,

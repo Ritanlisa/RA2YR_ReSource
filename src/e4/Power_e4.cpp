@@ -21,7 +21,7 @@ int Power::Update(int * a2, void *a2_2, void *a3_1, void *a4_1)
 {
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x43a5d9*/
-  return Power::TimerProcess(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - *((unsigned int *)this + 12)); /*0x43a5f0*/
+  return Power::TimerProcess(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - *((unsigned int *)this + 12)); /*0x43a5f0*/
 
 }
 }
@@ -138,9 +138,9 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E8D4 + i4) + 52))( /*0x67c932*/
       *((unsigned int *)dword_A8E8D4 + i4),
       &v53);
-  for ( i5 = 0; i5 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 204); ++i5 ) /*0x67c948*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * i5) + 52))( /*0x67c95a*/
-      *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * i5),
+  for ( i5 = 0; i5 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 204); ++i5 ) /*0x67c948*/
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * i5) + 52))( /*0x67c95a*/
+      *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * i5),
       &v53);
   for ( i6 = 0; i6 < (int)((char *)&FootClass_Array); ++i6 ) /*0x67c970*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)&((char *)&FootClass_Array)->ObjectClass + i6) + 52))( /*0x67c982*/
@@ -218,17 +218,17 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C84 + i24) + 52))( /*0x67cc52*/
       *((unsigned int *)dword_A83C84 + i24),
       &v53);
-  for ( i25 = 0; i25 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 364); ++i25 ) /*0x67cc68*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * i25) + 52))( /*0x67cc7a*/
-      *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * i25),
+  for ( i25 = 0; i25 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 364); ++i25 ) /*0x67cc68*/
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * i25) + 52))( /*0x67cc7a*/
+      *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * i25),
       &v53);
   for ( i26 = 0; i26 < dword_B72618; ++i26 ) /*0x67cc90*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_B7260C + i26) + 52))( /*0x67cca2*/
       *((unsigned int *)dword_B7260C + i26),
       &v53);
-  for ( i27 = 0; i27 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 68); ++i27 ) /*0x67ccb8*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i27) + 52))( /*0x67ccca*/
-      *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i27),
+  for ( i27 = 0; i27 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68); ++i27 ) /*0x67ccb8*/
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i27) + 52))( /*0x67ccca*/
+      *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i27),
       &v53);
   for ( i28 = 0; i28 < *(int *)&stru_A83D50.__pad_3C[4]; ++i28 ) /*0x67cce0*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i28) + 52))( /*0x67ccf2*/
@@ -276,8 +276,8 @@ unsigned int * Power::UpdateAll()
       &v53);
   if ( dword_A83D4C ) /*0x67ce96*/
     Power::TimerProcess((int)dword_A83D4C->Object_field_0x30); /*0x67cea0*/
-  Power::TimerProcess(*(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x67ceb0*/
-  Power::TimerProcess(*(int *)&(unsigned int *)((char *)&stru_A8EB00 + 228)); /*0x67cebf*/
+  Power::TimerProcess(*(int *)(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x67ceb0*/
+  Power::TimerProcess(*(int *)(unsigned int *)((char *)&stru_A8EB00 + 228)); /*0x67cebf*/
   v50 = v54; /*0x67ceca*/
   this->Power_field_0x0 = v53; /*0x67cece*/
   v51 = v55; /*0x67ced0*/

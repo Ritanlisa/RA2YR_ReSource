@@ -271,7 +271,7 @@ void JumpjetLocomotionClass_Process(int a1)
   LABEL_39:
   if ( (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))(v1) ) /*0x4b078f*/
   {
-    if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 10) ) /*0x4b07a8*/
+    if ( !(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) % 10) ) /*0x4b07a8*/
     {
       v18 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b07ae*/
       if ( !*(unsigned short *)&v18->animation && *(unsigned int *)((*((int (**)(FootClass *))v18->vtable1 + 111))(v18) + 236) == 2 ) /*0x4b07c8*/
@@ -519,25 +519,25 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     if ( a4 ) /*0x4b99c4*/
     {
       v15 = (const wchar_t *)(*((int (**)(TechnoClass *))a3->vtable1 + 43))(a3); /*0x4b99ca*/
-      swprintf(v48, (const size_t)&(unsigned int *)((char *)&stru_820320 + 17), v15); /*0x4b99db*/
+      swprintf(v48, (const size_t)(unsigned int *)((char *)&stru_820320 + 17), v15); /*0x4b99db*/
     }
     else
     {
-      swprintf(v48, (const size_t)&(unsigned int *)((char *)&stru_820320 + 12), v32); /*0x4b99ef*/
+      swprintf(v48, (const size_t)(unsigned int *)((char *)&stru_820320 + 12), v32); /*0x4b99ef*/
     }
     if ( *(unsigned int *)TechnoClass::GetAudioEntry(a3, 0) ) /*0x4b99ff*/
     {
       AudioEntry = TechnoClass::GetAudioEntry(a3, 0); /*0x4b9a06*/
-      swprintf(v49, (const size_t)&(unsigned int *)((char *)&stru_820320 + 5), (const wchar_t *const)(*(unsigned int *)AudioEntry + 100)); /*0x4b9a1e*/
+      swprintf(v49, (const size_t)(unsigned int *)((char *)&stru_820320 + 5), (const wchar_t *const)(*(unsigned int *)AudioEntry + 100)); /*0x4b9a1e*/
     }
     else
     {
       swprintf(v49, (const size_t)&((char *)&stru_820320), v32); /*0x4b9a35*/
     }
-    swprintf(&v51, (const size_t)&(unsigned int *)((char *)&stru_820320 + 17), (&off_7E5210)[((unsigned int *)a3)[0]]); /*0x4b9a58*/
-    v17 = (char *)(&(unsigned int *)((char *)&stru_820320 + 9)); /*0x4b9a6e*/
+    swprintf(&v51, (const size_t)(unsigned int *)((char *)&stru_820320 + 17), (&off_7E5210)[((unsigned int *)a3)[0]]); /*0x4b9a58*/
+    v17 = (char *)((unsigned int *)((char *)&stru_820320 + 9)); /*0x4b9a6e*/
     if ( !a4 ) /*0x4b9a73*/
-      v17 = (char *)(&(unsigned int *)((char *)&stru_820320 + 5)); /*0x4b9a75*/
+      v17 = (char *)((unsigned int *)((char *)&stru_820320 + 5)); /*0x4b9a75*/
     BuildingAnimByName = FindBuildingAnimByName((gamemd::AbstractClass *)(v17), 1); /*0x4b9a87*/
     v39 = v41 + 300; /*0x4b9a97*/
     v38 = v40 + 450; /*0x4b9aa8*/

@@ -133,12 +133,12 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block,(gamemd::AbstractClass *)(1)); /*0x763221*/
   v6 = (gamemd::WaveClass *)(Block); /*0x763236*/
   v3 = (*(int ((unsigned char *)(**))(unsigned char *, WaveClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 84) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 84), &v6); /*0x76323a*/
-  if ( v3 != -1 && v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 100) ) /*0x76324a*/
+  if ( v3 != -1 && v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 100) ) /*0x76324a*/
   {
-    --*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 100); /*0x76324f*/
+    --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 100); /*0x76324f*/
     for ( ; /*0x763255*/
-          v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 100);
-          *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v3) )
+          v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 100);
+          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v3) )
     {
       ++v3; /*0x76325d*/
     }

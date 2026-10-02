@@ -89,7 +89,9 @@ def fix_qmember(txt):
         STATS['qmember-sub'] += 1
         pre, base, off = mm.group(1), mm.group(2), mm.group(3)
         if pre == '&':
-            return '%s(unsigned int *)((char *)&%s + %s)' % (pre, base, off)
+            # G42.29a: `&NAME[N]` -> the byte-offset expression IS the
+            # address; prefixing `&` yields address-of-rvalue (C2102).
+            return '(unsigned int *)((char *)&%s + %s)' % (base, off)
         return '%s*((unsigned int *)((char *)&%s + %s))' % (pre, base, off)
     return QMEMBER_SUB.sub(_sub, txt)
 
@@ -139,6 +141,13 @@ for rel in sorted(files):
     if rel in hoist:
         lines = txt.split('\n')
         for name in sorted(hoist[rel]):
+            # G42.29a idempotence: a previous run may already have hoisted
+            # this name -- re-inserting duplicates the initializer (C2374).
+            if any(('G37 hoist' in s) and
+                   re.match(r'\s*unsigned int %s\b' % re.escape(name), s)
+                   for s in lines):
+                STATS['hoist-skip-existing'] += 1
+                continue
             # insert after the first '{' at file scope containing the name
             target = None
             for i, s in enumerate(lines):

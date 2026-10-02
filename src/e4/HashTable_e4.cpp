@@ -76,9 +76,6 @@ namespace gamemd {
 AbstractClass * * HashTable_flat::Grow2()
 {
     unsigned int v3 = 0;  /* G37 hoist */
-    unsigned int v3 = 0;  /* G37 hoist */
-    unsigned int v3 = 0;  /* G37 hoist */
-    unsigned int v3 = 0;  /* G37 hoist */
 
   int HashTable_field_0x08; // esi
   unsigned int *v3; // ebp

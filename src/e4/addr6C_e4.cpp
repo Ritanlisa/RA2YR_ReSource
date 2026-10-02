@@ -211,11 +211,6 @@ int ProcessGameResults(char a1)
   if ( g_GameMode_Current == (int)((CellStruct *))4 && g_GameOptionsFlags == 3 )
   {
     unsigned int v23 = 0;  /* G37 hoist */
-    unsigned int v23 = 0;  /* G37 hoist */
-    unsigned int v23 = 0;  /* G37 hoist */
-    unsigned int v23 = 0;  /* G37 hoist */
-    unsigned int v23 = 0;  /* G37 hoist */
-    unsigned int v23 = 0;  /* G37 hoist */
     unsigned int v35 = 0;  /* G37 hoist */
     unsigned int v32 = 0;  /* G37 hoist */
     unsigned int v29 = 0;  /* G37 hoist */

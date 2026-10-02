@@ -35,39 +35,6 @@ namespace gamemd {
 AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
 {
     unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
   void *v2; // eax
   void *v3; // eax
   unsigned int *v4; // ecx

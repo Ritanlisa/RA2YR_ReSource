@@ -407,14 +407,6 @@ LABEL_58:
            - *(unsigned int *)((*((int (**)(VectorClass_flat *, int64_t *))aP1a->vtable1 + 18))(aP1a, &v143) + 8) <= 2 * *(unsigned int *)&((unsigned int *)(stru_89E138))[1848] )
         {
     unsigned int v148 = 0;  /* G37 hoist */
-    unsigned int v148 = 0;  /* G37 hoist */
-    unsigned int v148 = 0;  /* G37 hoist */
-    unsigned int v148 = 0;  /* G37 hoist */
-    unsigned int v148 = 0;  /* G37 hoist */
-    unsigned int v148 = 0;  /* G37 hoist */
-    unsigned int v148 = 0;  /* G37 hoist */
-    unsigned int v148 = 0;  /* G37 hoist */
-    unsigned int v148 = 0;  /* G37 hoist */
           v31[1] = 0;
           goto LABEL_67;
         }
@@ -451,12 +443,6 @@ LABEL_67:
           && var94 > 0
           && ((uint8_t (*)(IUnknown **, int, unsigned int))v117->field_8)(&v117, var94 + v126, 0) )
         {
-    unsigned int v145 = 0;  /* G37 hoist */
-    unsigned int v145 = 0;  /* G37 hoist */
-    unsigned int v145 = 0;  /* G37 hoist */
-    unsigned int v145 = 0;  /* G37 hoist */
-    unsigned int v145 = 0;  /* G37 hoist */
-    unsigned int v145 = 0;  /* G37 hoist */
     unsigned int v145 = 0;  /* G37 hoist */
           v48 = (IUnknown *)(v121);
           v121 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1))))))))))))));

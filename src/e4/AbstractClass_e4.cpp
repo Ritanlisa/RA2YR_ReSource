@@ -86,7 +86,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     v5[1].vtable1 = (void *)(*(int (**)(void *))(*(unsigned int *)aP1 + 60))(aP1); /*0x438f62*/
     v5[1].vtable0 = (unsigned int)(aP1); /*0x438f69*/
     v5[1].vtable2 = aP2; /*0x438f6c*/
-    v5[1].uniqueId = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x438f75*/
+    v5[1].uniqueId = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x438f75*/
     v7 = v5[1].uniqueId + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4048); /*0x438f87*/
     v5[1].vtable3 = 0; /*0x438f89*/
     v5[1].abstractFlags = v7; /*0x438f8c*/
@@ -570,8 +570,8 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, Abs
   switch ( v4 ) /*0x725911*/
   {
     case 24: /*0x725911*/
-      if ( aP0 == *(AbstractClass **)&(unsigned int *)((char *)&stru_A8EB00 + 404) ) /*0x72591d*/
-        *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 404) = 0; /*0x72591f*/
+      if ( aP0 == *(AbstractClass **)(unsigned int *)((char *)&stru_A8EB00 + 404) ) /*0x72591d*/
+        *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 404) = 0; /*0x72591f*/
       break;
     case 13: /*0x725911*/
       for ( i = 0; i < *(int *)&g_BuildingLoadQueue_Array.__pad_E88[16]; ++i ) /*0x7259e8*/

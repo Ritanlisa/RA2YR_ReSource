@@ -158,7 +158,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2)
             {
               v13 = strtok(0, Str); /*0x74337f*/
               v60 = atoi(v13); /*0x74338d*/
-              if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 408) < 4 ) /*0x74339f*/
+              if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 408) < 4 ) /*0x74339f*/
               {
                 v17 = strtok(0, Str); /*0x7433d0*/
                 v18 = atoi(v17); /*0x7433d6*/
@@ -1225,10 +1225,10 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fb9a*/
     if ( (uint8_t)((FileClass *)(&v9))->Open(0) ) /*0x74fba4*/
     {
-      ((FileClass *)(&v9))->Read(&(unsigned int *)((char *)&stru_A8EB00 + 294), 16); /*0x74fbb8*/
+      ((FileClass *)(&v9))->Read((unsigned int *)((char *)&stru_A8EB00 + 294), 16); /*0x74fbb8*/
       for ( *((unsigned int *)((char *)&stru_A8EB00 + 309)) = 0; /*0x74fbd9*/
-            ((unsigned int *)&stru_A8EB00)[strlen(&(unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] == 13;
-            ((unsigned int *)&stru_A8EB00)[strlen(&(unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] = 0 )
+            ((unsigned int *)&stru_A8EB00)[strlen((unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] == 13;
+            ((unsigned int *)&stru_A8EB00)[strlen((unsigned int *)((char *)&stru_A8EB00 + 294)) + 293] = 0 )
       {
         ; /*0x74fbee*/
       }
@@ -1238,9 +1238,9 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
       *((unsigned int *)((char *)&stru_A8EB00 + 294)) = 0; /*0x74fc07*/
     }
     ((RawFileClass *)(&v9))->Dtor(); /*0x74fc11*/
-    v5 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 320); /*0x74fc16*/
+    v5 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 320); /*0x74fc16*/
     LOBYTE(v5) = *((unsigned int *)((char *)&stru_A8EB00 + 320)) | 8; /*0x74fc1b*/
-    *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 320) = v5; /*0x74fc1d*/
+    *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 320) = v5; /*0x74fc1d*/
   }
   if ( (*((unsigned int *)((char *)&stru_A8EB00 + 320)) & 2) != 0 ) /*0x74fc2f*/
   {

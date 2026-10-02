@@ -665,7 +665,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
   v11[54] = GameOptions::GetEntry(); /*0x5ba6ca*/
   *(int *)((char *)&v11[7] + 2) = NetworkBuffer::GetField2(); /*0x5ba6db*/
   Field3 = NetworkBuffer::GetField3(); /*0x5ba6df*/
-  *(int *)((char *)&v11[36] + 2) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 432); /*0x5ba6f0*/
+  *(int *)((char *)&v11[36] + 2) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 432); /*0x5ba6f0*/
   *(int *)((char *)&v11[37] + 2) = (&dword_A8E960)[0]; /*0x5ba6fd*/
   *(int *)((char *)&v11[8] + 2) = Field3; /*0x5ba70a*/
   BYTE2(v11[40]) = stru_A8B250.__pad_0[24]; /*0x5ba71b*/

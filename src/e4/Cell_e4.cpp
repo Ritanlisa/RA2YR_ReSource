@@ -497,8 +497,8 @@ int Cell::IsBuildableAdvanced(void *a1_1)
   }
   result = this->Cell_field_0x38; /*0x48700a*/
   if ( result >= 0 /*0x487022*/
-    && result < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340)
-    && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * result) + 773) )
+    && result < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 340)
+    && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * result) + 773) )
   {
     goto LABEL_21; /*0x487022*/
   }

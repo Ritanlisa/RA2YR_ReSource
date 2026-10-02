@@ -372,17 +372,17 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
   *((char *)this + 157) = -1; /*0x4f57ea*/
   *((char *)this + 158) = -1; /*0x4f57f0*/
   *((char *)this + 159) = 0; /*0x4f57f6*/
-  *((char *)this + 160) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5802*/
+  *((char *)this + 160) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5802*/
   *((char *)this + 162) = 0; /*0x4f5808*/
-  v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f580e*/
+  v3 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f580e*/
   *((char *)this + 165) = 0; /*0x4f5814*/
   *((char *)this + 163) = v3; /*0x4f581a*/
-  *((char *)this + 166) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5825*/
+  *((char *)this + 166) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5825*/
   *((char *)this + 168) = 0; /*0x4f582b*/
-  v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5831*/
+  v4 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5831*/
   *((char *)this + 171) = 0; /*0x4f5837*/
   *((char *)this + 169) = v4; /*0x4f583d*/
-  *((char *)this + 172) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5849*/
+  *((char *)this + 172) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5849*/
   *((char *)this + 174) = 0; /*0x4f584f*/
   *((unsigned char *)this + 700) = 0; /*0x4f5855*/
   *((unsigned char *)this + 701) = 0; /*0x4f585b*/
@@ -454,8 +454,8 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
   *((char *)this + 5389) = 0; /*0x4f5a2a*/
   *((char *)this + 5410) = 0; /*0x4f5a30*/
   *((char *)this + 5411) = -1; /*0x4f5a36*/
-  *((char *)this + 5412) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 948); /*0x4f5a41*/
-  *((char *)this + 5413) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 948); /*0x4f5a4d*/
+  *((char *)this + 5412) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 948); /*0x4f5a41*/
+  *((char *)this + 5413) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 948); /*0x4f5a4d*/
   *((char *)this + 5414) = 0; /*0x4f5a53*/
   *((char *)this + 5430) = 0; /*0x4f5a59*/
   *((char *)this + 5431) = -1; /*0x4f5a5f*/
@@ -482,7 +482,7 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
   CounterClass::Construct((CounterClass *)((char *)this + 5485)); /*0x4f5b1e*/
   CounterClass::Construct((CounterClass *)this + 2745); /*0x4f5b29*/
   CounterClass::Construct((CounterClass *)((char *)this + 5495)); /*0x4f5b34*/
-  *((char *)this + 5500) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5b40*/
+  *((char *)this + 5500) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5b40*/
   *((char *)this + 5502) = 0; /*0x4f5b46*/
   *((char *)this + 5503) = 0; /*0x4f5b4c*/
   *((char *)this + 5504) = -1; /*0x4f5b59*/
@@ -494,9 +494,9 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
   *((char *)this + 5511) = (int)&vt_DynamicVectorClass; /*0x4f5b87*/
   *((char *)this + 5516) = 10; /*0x4f5b91*/
   *((char *)this + 5515) = 0; /*0x4f5b97*/
-  *((char *)this + 5517) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5ba2*/
+  *((char *)this + 5517) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5ba2*/
   *((char *)this + 5519) = 0; /*0x4f5ba8*/
-  v5 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5bae*/
+  v5 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5bae*/
   *((char *)this + 5522) = 0; /*0x4f5bb4*/
   *((char *)this + 5520) = v5; /*0x4f5bba*/
   *((char *)this + 5523) = -1; /*0x4f5bc0*/
@@ -537,12 +537,12 @@ int HouseClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void
   *((unsigned short *)this + 11203) = 0; /*0x4f5c94*/
   *((char *)this + 5602) = 0; /*0x4f5c9b*/
   LOWORD(v7) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5808) * 900.0); /*0x4f5cb3*/
-  v8 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5cb8*/
+  v8 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5cb8*/
   *((char *)this + 5605) = v7; /*0x4f5cbe*/
   *((char *)this + 5603) = v8; /*0x4f5cc4*/
-  *((char *)this + 5606) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5cd5*/
+  *((char *)this + 5606) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5cd5*/
   *((char *)this + 5608) = 1; /*0x4f5cdb*/
-  *((char *)this + 5609) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5ce7*/
+  *((char *)this + 5609) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5ce7*/
   *((char *)this + 5611) = 0; /*0x4f5ced*/
   v9 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5cf3*/
   *((char *)this + 5614) = 1; /*0x4f5cf9*/

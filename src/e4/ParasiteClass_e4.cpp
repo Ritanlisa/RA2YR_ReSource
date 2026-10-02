@@ -38,9 +38,9 @@ int ParasiteClass::Constructor(void *a1, void *a2, void *a3)
   int v3; // eax
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x629213*/
-  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x62921f*/
+  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x62921f*/
   this->ParasiteClass_field_34 = 0; /*0x629222*/
-  v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x629225*/
+  v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
   this->vtable1 = &vt_ParasiteClass; /*0x629231*/
@@ -213,7 +213,7 @@ void ParasiteClass::DeploySquad()
   {
     v10 = *(unsigned int *)(v5 + 368); /*0x629898*/
     v11 = (unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 1696); /*0x62989e*/
-    *v11 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6298a4*/
+    *v11 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6298a4*/
     v11[1] = v59; /*0x6298aa*/
     v11[2] = v10; /*0x6298ad*/
     switch ( (unsigned int)_ESI[1] ) /*0x6298bc*/

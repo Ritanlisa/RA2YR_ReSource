@@ -734,11 +734,11 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity(int a1, int a2)
 
   v2 = 0; /*0x4f6a27*/
   v3 = 0; /*0x4f6a29*/
-  if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) <= 0 ) /*0x4f6a2d*/
+  if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 164) <= 0 ) /*0x4f6a2d*/
     return 0; /*0x4f6a71*/
   do /*0x4f6a66*/
   {
-    v4 = *(HouseClass ***)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v3); /*0x4f6a42*/
+    v4 = *(HouseClass ***)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v3); /*0x4f6a42*/
     if ( v4[135] == (HouseClass *)((char *)a1 - 36) /*0x4f6a5b*/
       && *(unsigned int *)(((int (*)(HouseClass **))(*v4)->occupiablesCount)(v4) + 956) == a2 )
     {
@@ -746,7 +746,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity(int a1, int a2)
     }
     ++v3; /*0x4f6a63*/
   }
-  while ( v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) ); /*0x4f6a66*/
+  while ( v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 164) ); /*0x4f6a66*/
   return v2; /*0x4f6a6c*/
 
 }
@@ -789,17 +789,17 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1(int a1, int a2
 
   v2 = 0; /*0x4f6ae7*/
   v3 = 0; /*0x4f6ae9*/
-  if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) <= 0 ) /*0x4f6aed*/
+  if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 164) <= 0 ) /*0x4f6aed*/
     return 0; /*0x4f6b44*/
   do /*0x4f6b39*/
   {
-    v4 = *(HouseClass ***)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v3); /*0x4f6afe*/
+    v4 = *(HouseClass ***)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v3); /*0x4f6afe*/
     v5 = (int (__cdecl *)(gamemd::HouseClass **))((unsigned int *)((int (*)(HouseClass **))(*v4)->occupiablesCount)(v4)); /*0x4f6b05*/
     if ( v4[135] == (HouseClass *)((char *)a1 - 36) && v5[239] == a2 ) /*0x4f6b1f*/
       v2 += v5[412] + v5[413]; /*0x4f6b2f*/
     ++v3; /*0x4f6b36*/
   }
-  while ( v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) ); /*0x4f6b39*/
+  while ( v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 164) ); /*0x4f6b39*/
   return v2; /*0x4f6b3f*/
 
 }
@@ -855,10 +855,10 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3(int
   int v18; // [esp+18h] [ebp-10h]
   unsigned char v19[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = *(unsigned short *)&(unsigned int *)((char *)&stru_A8EB00 + 948); /*0x4f6bc0*/
-  v3 = *(unsigned short *)&(unsigned int *)((char *)&stru_A8EB00 + 950); /*0x4f6bcf*/
-  if ( LOWORD(a1->killedBuildingsOfHouses[15]) == *(unsigned short *)&(unsigned int *)((char *)&stru_A8EB00 + 948) /*0x4f6be6*/
-    && HIWORD(a1->killedBuildingsOfHouses[15]) == *(unsigned short *)&(unsigned int *)((char *)&stru_A8EB00 + 950) )
+  v2 = *(unsigned short *)(unsigned int *)((char *)&stru_A8EB00 + 948); /*0x4f6bc0*/
+  v3 = *(unsigned short *)(unsigned int *)((char *)&stru_A8EB00 + 950); /*0x4f6bcf*/
+  if ( LOWORD(a1->killedBuildingsOfHouses[15]) == *(unsigned short *)(unsigned int *)((char *)&stru_A8EB00 + 948) /*0x4f6be6*/
+    && HIWORD(a1->killedBuildingsOfHouses[15]) == *(unsigned short *)(unsigned int *)((char *)&stru_A8EB00 + 950) )
   {
     v4 = a1->killedBuildingsOfHouses[14]; /*0x4f6be8*/
   }

@@ -350,10 +350,10 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
         }
         if ( a2 == 1175 ) /*0x5dec2b*/
         {
-          NetworkBuffer::GetField((HWND)((NetworkBuffer *)&(unsigned int *)((char *)&stru_A8EB00 + 252))); /*0x5dec36*/
+          NetworkBuffer::GetField((HWND)((NetworkBuffer *)(unsigned int *)((char *)&stru_A8EB00 + 252))); /*0x5dec36*/
           v20 = Random::Range(&Randomizer_Global, 1, 0x7FFF); /*0x5dec47*/
           srand(v20); /*0x5dec4d*/
-          *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 432) = rand(); /*0x5dec5c*/
+          *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 432) = rand(); /*0x5dec5c*/
           Dialog::RestoreParent((Dialog *)hDlg); /*0x5dec61*/
           SkirmishDialog::FillComboBoxes((SkirmishDialog *)hDlg); /*0x5dec68*/
           InitGameDropdownColors(v31); /*0x5dec6d*/

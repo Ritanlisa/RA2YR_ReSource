@@ -64,34 +64,6 @@ void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int
 namespace gamemd { 
 void EnumConnectionPointsClass::ClearBuffer() {
     unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
   void *v2; // eax
 
   v2 = (unsigned int)(*(void **)&this->m_1[3]); /*0x4a0f26*/

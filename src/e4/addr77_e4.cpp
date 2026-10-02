@@ -293,7 +293,7 @@ void Dialog_Close(HWND a1, int a2)
           DestroyWindow((HWND)*v6); /*0x77585d*/
           v6 -= 2; /*0x775865*/
           --v7; /*0x775869*/
-          --*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 424); /*0x77586a*/
+          --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 424); /*0x77586a*/
         }
         while ( v7 ); /*0x775870*/
       }
@@ -818,8 +818,8 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
           *(unsigned int *)&stru_88732C.__pad_1C[32] = 0; /*0x777803*/
         }
         g_hWnd = 0; /*0x77780e*/
-        if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 500) ) /*0x777816*/
-          *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 500) = 2; /*0x777818*/
+        if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 500) ) /*0x777816*/
+          *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 500) = 2; /*0x777818*/
         return 0; /*0x777828*/
       case 3u: /*0x7776ae*/
         if ( g_DDraw_Initialized != 1 || !stru_887598.lineTrailer ) /*0x7777e3*/
@@ -827,7 +827,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
         MouseClass::CalcConfiningRect((MouseClass *)stru_887598.lineTrailer); /*0x7777e9*/
         goto LABEL_69; /*0x7777ee*/
       case 0xFu: /*0x7776ae*/
-        if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 444) /*0x777700*/
+        if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 444) /*0x777700*/
           || *((unsigned int *)((char *)&stru_A8EB00 + 412)) != 1 && g_DDraw_Initialized != 1
           || !stru_887598.lineTrailer
           || !g_DSurface_Primary

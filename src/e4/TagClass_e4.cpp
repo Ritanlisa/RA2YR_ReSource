@@ -147,7 +147,7 @@ LABEL_22:
                 if ( v13 ) /*0x6e50a8*/
                   *(unsigned int *)(Owner + 636) = v13 - 1; /*0x6e50ab*/
                 v14 = (unsigned int *)(Owner + 664); /*0x6e50b7*/
-                *v14 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6e50c1*/
+                *v14 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6e50c1*/
                 v14[1] = v22[2]; /*0x6e50c7*/
                 v14[2] = 60; /*0x6e50ca*/
               }

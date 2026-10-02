@@ -64,9 +64,6 @@ namespace gamemd {
 void Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5)
 {
     unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
   int v5; // ebp
   int v6; // ebx
   int v7; // esi

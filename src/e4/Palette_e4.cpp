@@ -353,7 +353,7 @@ unsigned char * Palette::ConvertIndices(int a2)
   do /*0x632c23*/
   {
     LOWORD(v4) = *v5; /*0x632c07*/
-    *v6 = ShiftBigIntAndScan(&(unsigned int *)((char *)&stru_A8EB00 + 1), a2, (int)v4, 64); /*0x632c19*/
+    *v6 = ShiftBigIntAndScan((unsigned int *)((char *)&stru_A8EB00 + 1), a2, (int)v4, 64); /*0x632c19*/
     ++v5; /*0x632c1c*/
     ++v6; /*0x632c1f*/
     --v3; /*0x632c22*/

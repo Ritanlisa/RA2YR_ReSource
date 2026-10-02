@@ -775,7 +775,7 @@ void VoxelAnimClass::VoxelAnimClass_Update()
   }
   if ( *((unsigned int *)v1->VoxelAnimClass_field_0x104 + 187) ) /*0x74a714*/
   {
-    if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 2) ) /*0x74a732*/
+    if ( !(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) % 2) ) /*0x74a732*/
     {
       v61 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a73f*/
       if ( v61 ) /*0x74a746*/

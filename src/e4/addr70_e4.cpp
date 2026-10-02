@@ -42,8 +42,6 @@ namespace gamemd {
 void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a5, int a6, int a7, char a8, char a9)
 {
     unsigned int v30 = 0;  /* G37 hoist */
-    unsigned int v30 = 0;  /* G37 hoist */
-    unsigned int v30 = 0;  /* G37 hoist */
   int v9; // edx
   char v10; // bl
   int v11; // esi

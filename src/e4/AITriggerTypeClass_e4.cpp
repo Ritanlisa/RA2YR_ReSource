@@ -374,7 +374,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   v4 = strtok(((unsigned int *)(v46))[0], Str); /*0x41f5d3*/
   if ( !v4 ) /*0x41f5df*/
     return 0; /*0x41f5df*/
-  strncpy(&(  strncpy((char *)(&((unsigned int *)&((unsigned int *)(v46))[0])[8]), v4, 0x30u); 
+  strncpy((char *)(&((unsigned int *)&((unsigned int *)(v46))[0])[8]), v4, 0x30u); 
   LOBYTE(v46[0]) = 0; /*0x41f5fe*/
   if ( &((unsigned int *)&((unsigned int *)(v46))[0])[8] != (char *)this + 100 ) /*0x41f602*/
   {

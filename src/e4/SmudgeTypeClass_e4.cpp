@@ -163,7 +163,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
     this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
                     (bool *)aP1,
                     (uint8_t *)((unsigned int *)this)[0],
-                    (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 151),
+                    (uint8_t *)(unsigned int *)((char *)&stru_82BA00 + 151),
                     Width);
     this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
                      (bool *)aP1,
@@ -207,15 +207,15 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
   }
   AbstractClass::AnnounceExpiredPointer(a3, 1); /*0x6b61a0*/
   v6 = a3; /*0x6b61b5*/
-  v4 = (*(int (**)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 52) + 16))( /*0x6b61b9*/
-         &(unsigned int *)((char *)&stru_A8EB00 + 52),
+  v4 = (*(int (**)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 52) + 16))( /*0x6b61b9*/
+         (unsigned int *)((char *)&stru_A8EB00 + 52),
          &v6);
-  if ( v4 != -1 && v4 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 68) ) /*0x6b61c9*/
+  if ( v4 != -1 && v4 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68) ) /*0x6b61c9*/
   {
-    --*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 68); /*0x6b61ce*/
+    --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 68); /*0x6b61ce*/
     for ( ; /*0x6b61d4*/
-          v4 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 68);
-          *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4) )
+          v4 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68);
+          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4) )
     {
       ++v4; /*0x6b61dc*/
     }

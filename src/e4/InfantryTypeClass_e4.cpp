@@ -212,9 +212,9 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
       v14[1] = v10; /*0x523bd9*/
       v11 = v9[2]; /*0x523bdd*/
       v14[2] = v11; /*0x523be0*/
-      if ( v14[0] != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1692) /*0x523bf4*/
-        || v10 != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1696)
-        || v11 != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1700) )
+      if ( v14[0] != *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1692) /*0x523bf4*/
+        || v10 != *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1696)
+        || v11 != *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1700) )
       {
         return (*(char (**)(int, unsigned int *, int))(*(unsigned int *)v6 + 216))(v6, v14, 64); /*0x523c0b*/
       }
@@ -297,11 +297,11 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v44.CapacityIncrement = (int)String; /*0x524111*/
   v44.Count = (int)&g_INI_DefaultBuffer; /*0x524112*/
   ((unsigned int *)&v44)[0] = (int)aOccupyweapon; /*0x524117*/
-  *(unsigned int *)&(unsigned int *)((char *)&v44 + 3) = v4 + 36; /*0x52411c*/
+  *(unsigned int *)(unsigned int *)((char *)&v44 + 3) = v4 + 36; /*0x52411c*/
   *(unsigned int *)(v4 + 3584) = PipIdx; /*0x52411f*/
   if ( INIClass::GetString( /*0x524125*/
          (INIClass *)a2,
-         *(uint8_t **)&(unsigned int *)((char *)&v44 + 3),
+         *(uint8_t **)(unsigned int *)((char *)&v44 + 3),
          (uint8_t *)((char *)&v44),
          (char *)v44.Count,
          (char *)v44.CapacityIncrement,
@@ -340,8 +340,8 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                                             inited,
                                             (uint8_t *)aVoicecomment,
                                             *(void ***)v44.VectorClass,
-                                            *(void **)&(unsigned int *)((char *)&v44 + 3),
-                                            *(int *)&(unsigned int *)((char *)&v44 + 3),
+                                            *(void **)(unsigned int *)((char *)&v44 + 3),
+                                            *(int *)(unsigned int *)((char *)&v44 + 3),
                                             ((char *)&v44),
                                             v44.Count,
                                             v44.CapacityIncrement,
@@ -450,11 +450,11 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v44.CapacityIncrement = (int)String; /*0x524433*/
   v44.Count = (int)&g_INI_DefaultBuffer; /*0x524434*/
   ((unsigned int *)&v44)[0] = (int)aLeavewatersoun; /*0x524439*/
-  *(unsigned int *)&(unsigned int *)((char *)&v44 + 3) = v4 + 36; /*0x52443e*/
+  *(unsigned int *)(unsigned int *)((char *)&v44 + 3) = v4 + 36; /*0x52443e*/
   *(unsigned int *)(v4 + 3748) = Index; /*0x524441*/
   if ( !INIClass::GetString( /*0x52445c*/
           (INIClass *)a2,
-          *(uint8_t **)&(unsigned int *)((char *)&v44 + 3),
+          *(uint8_t **)(unsigned int *)((char *)&v44 + 3),
           (uint8_t *)((char *)&v44),
           (char *)v44.Count,
           (char *)v44.CapacityIncrement,

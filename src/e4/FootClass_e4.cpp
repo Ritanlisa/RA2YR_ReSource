@@ -63,11 +63,11 @@ AbstractClass * FootClass::Destruct()
   if ( v3 != -1 ) /*0x4d35e7*/
     FootClass::RemoveFromPointerArray(&FootClass_Array, v3); /*0x4d35ef*/
   v11 = this; /*0x4d3604*/
-  v4 = (*(int (**)(char *, FootClass **))(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x4d3608*/
-         &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
+  v4 = (*(int (**)(char *, FootClass **))(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x4d3608*/
+         (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
          &v11);
   if ( v4 != -1 ) /*0x4d360e*/
-    ((DynamicVector *)((DynamicVector *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)))->RemoveItem(v4); /*0x4d3616*/
+    ((DynamicVector *)((DynamicVector *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)))->RemoveItem(v4); /*0x4d3616*/
   parasiteImUsing = (gamemd::ParasiteClass *)(this->parasiteImUsing); /*0x4d361b*/
   if ( parasiteImUsing ) /*0x4d3623*/
   {
@@ -121,7 +121,7 @@ void FootClass::Destroyed(int a2)
   {
     v3 = ((int64_t (*)(FootClass *, unsigned char *))*((unsigned int *)this->vtable1 + 110))(this, v4); /*0x4d98f0*/
     if ( (uint8_t)CreateTriggerClassIfFarEnough(7, SHIDWORD(v3), *(unsigned int *)v3) ) /*0x4d98fe*/
-      ((VoxClass *)((VoxClass *)&(unsigned int *)((char *)&stru_822420 + 8)))->FindAndPlay(-1); /*0x4d9911*/
+      ((VoxClass *)((VoxClass *)(unsigned int *)((char *)&stru_822420 + 8)))->FindAndPlay(-1); /*0x4d9911*/
   }
 
 }
@@ -139,8 +139,8 @@ int FootClass::updateThreat()
   v2 = ((unsigned int *)this)[2]; /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
-    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v1 < v2 ) /*0x70f7fb*/
-      return v2 == *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v1; /*0x70f808*/
+    if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v1 < v2 ) /*0x70f7fb*/
+      return v2 == *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v1; /*0x70f808*/
     v2 = 0; /*0x70f809*/
   }
   return v2 == 0; /*0x70f808*/

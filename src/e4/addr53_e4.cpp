@@ -329,11 +329,11 @@ char BulkData_Initialize()
   v0 = (File *)RA2_OPNEW(0x1Cu); /*0x53176d*/
   if ( !v0 ) /*0x531777*/
   {
-    *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) = 0; /*0x5317cc*/
+    *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 244) = 0; /*0x5317cc*/
     goto LABEL_11; /*0x5317d2*/
   }
-  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) = (unsigned int)(((File *)(v0))->LoadFileVXL((int)&v7, 0)); /*0x531788*/
-  if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 244) ) /*0x53178d*/
+  *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 244) = (unsigned int)(((File *)(v0))->LoadFileVXL((int)&v7, 0)); /*0x531788*/
+  if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 244) ) /*0x53178d*/
   {
   LABEL_11:
         Debug::Log();
@@ -349,11 +349,11 @@ char BulkData_Initialize()
   v2 = (File *)RA2_OPNEW(0x10u); /*0x5317e4*/
   if ( !v2 ) /*0x5317ee*/
   {
-    *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) = 0; /*0x531843*/
+    *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 248) = 0; /*0x531843*/
     goto LABEL_16; /*0x531849*/
   }
-  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) = (unsigned int)(((File *)(v2))->LoadFileHVA((int)&v10)); /*0x5317fe*/
-  if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 248) ) /*0x531803*/
+  *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 248) = (unsigned int)(((File *)(v2))->LoadFileHVA((int)&v10)); /*0x5317fe*/
+  if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 248) ) /*0x531803*/
   {
   LABEL_16:
         Debug::Log();

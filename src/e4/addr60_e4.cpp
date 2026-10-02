@@ -1702,12 +1702,6 @@ AbstractClass * * GadgetClass_RenderAnimation(HWND a1, char a2)
   while ( (HWND)*v4 != v62 )
   {
     unsigned int v63 = 0;  /* G37 hoist */
-    unsigned int v63 = 0;  /* G37 hoist */
-    unsigned int v63 = 0;  /* G37 hoist */
-    unsigned int v63 = 0;  /* G37 hoist */
-    unsigned int v63 = 0;  /* G37 hoist */
-    unsigned int v63 = 0;  /* G37 hoist */
-    unsigned int v63 = 0;  /* G37 hoist */
     v4 = (unsigned int *)v4[129];
     if ( !v4 )
       goto LABEL_6;
@@ -1730,8 +1724,6 @@ LABEL_6:
   while ( (HWND)*v6 != v62 )
   {
     unsigned int v60 = 0;  /* G37 hoist */
-    unsigned int v60 = 0;  /* G37 hoist */
-    unsigned int v60 = 0;  /* G37 hoist */
     v6 = (unsigned int *)v6[129];
     if ( !v6 )
       goto LABEL_17;
@@ -1753,7 +1745,6 @@ LABEL_17:
   a1 = v62;
   while ( (HWND)*v10 != v62 )
   {
-    unsigned int v61 = 0;  /* G37 hoist */
     unsigned int v61 = 0;  /* G37 hoist */
     v10 = (unsigned int *)v10[129];
     if ( !v10 )

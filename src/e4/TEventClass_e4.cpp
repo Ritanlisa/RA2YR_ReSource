@@ -92,9 +92,9 @@ DynamicVector * TEventClass::Execute(int a2, int a3, int a4, int *a5, int a6, in
       v28 = a5[2]; /*0x71ec39*/
       if ( *a5 == -1 ) /*0x71ec3f*/
         goto LABEL_44; /*0x71ec3f*/
-      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v27 < v28 ) /*0x71ec4b*/
+      if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v27 < v28 ) /*0x71ec4b*/
       {
-        v28 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v27; /*0x71ec4d*/
+        v28 -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v27; /*0x71ec4d*/
 LABEL_44:
         if ( v28 ) /*0x71ec51*/
           goto LABEL_139; /*0x71ec51*/
@@ -108,9 +108,9 @@ LABEL_44:
       abstractFlags = ((unsigned int *)(dword_A8B230))[127].abstractFlags; /*0x71ec02*/
       if ( vtable3 == (void *)-1 ) /*0x71ec0b*/
         goto LABEL_39; /*0x71ec0b*/
-      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable3 >= abstractFlags ) /*0x71ec17*/
+      if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable3 >= abstractFlags ) /*0x71ec17*/
         goto LABEL_153; /*0x71ec17*/
-      abstractFlags -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable3; /*0x71ec1d*/
+      abstractFlags -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable3; /*0x71ec1d*/
 LABEL_39:
       if ( abstractFlags ) /*0x71ec21*/
         goto LABEL_139; /*0x71ec21*/
@@ -138,7 +138,7 @@ LABEL_39:
       LOBYTE(v18) = (int)((unsigned int *)(dword_A8B230))[378].vtable1 >= this->TEventClass_field_34; /*0x71eb1f*/
       return v18; /*0x71eb25*/
     case 47: /*0x71e964*/
-      LOBYTE(v18) = this->TEventClass_field_34 <= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) / 15; /*0x71eb49*/
+      LOBYTE(v18) = this->TEventClass_field_34 <= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) / 15; /*0x71eb49*/
       return v18; /*0x71eb50*/
     case 60: /*0x71e964*/
       v10 = -1; /*0x71e971*/
@@ -167,12 +167,12 @@ LABEL_8:
       v14 = 0; /*0x71e9eb*/
       v15 = *(unsigned int *)(stru_A8EB00.ObjectTypeClass[1] + 4 * v10); /*0x71e9ed*/
       TEventClass_field_34 = (int)(this->TEventClass_field_34); /*0x71e9f5*/
-      v17 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; /*0x71e9f8*/
-      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1 < 0 ) /*0x71e9fd*/
+      v17 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; /*0x71e9f8*/
+      if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164) - 1 < 0 ) /*0x71e9fd*/
         goto LABEL_139; /*0x71e9fd*/
       while ( 1 ) /*0x71ea03*/
       {
-        if ( (*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v17) + 132))(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v17)) == v15 ) /*0x71ea16*/
+        if ( (*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v17) + 132))(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v17)) == v15 ) /*0x71ea16*/
           ++v14; /*0x71ea18*/
         if ( v14 >= TEventClass_field_34 ) /*0x71ea1b*/
           break; /*0x71ea1b*/
@@ -206,10 +206,10 @@ LABEL_22:
       if ( v19 >= stru_A8EB00.ObjectTypeClass[4] || v19 < 0 ) /*0x71eaa0*/
         goto LABEL_139; /*0x71eaa0*/
       v23 = *(unsigned int *)(stru_A8EB00.ObjectTypeClass[1] + 4 * v19); /*0x71eab2*/
-      v24 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; /*0x71eab5*/
-      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1 < 0 ) /*0x71eaba*/
+      v24 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; /*0x71eab5*/
+      if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164) - 1 < 0 ) /*0x71eaba*/
         goto LABEL_153; /*0x71eaba*/
-      while ( (*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v24) + 132))(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v24)) != v23 ) /*0x71ead2*/
+      while ( (*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v24) + 132))(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v24)) != v23 ) /*0x71ead2*/
       {
         if ( --v24 < 0 ) /*0x71ead9*/
         {

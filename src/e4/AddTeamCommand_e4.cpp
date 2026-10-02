@@ -24,8 +24,8 @@ namespace gamemd {
 char * AddTeamCommand::AddRef(void *a1)
 {
 
-  sprintf(&(  sprintf((char *const )(&(unsigned int *)((char *)&stru_A8EB00 + 2512)), "TeamAddSelect_%d", *(unsigned int *)&this->m_1[3]); 
-  return &(unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x5360eb*/
+  sprintf((char *const )(&(unsigned int *)((char *)&stru_A8EB00 + 2512)), "TeamAddSelect_%d", *(unsigned int *)&this->m_1[3]); 
+  return (unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x5360eb*/
 
 }
 } // namespace gamemd
@@ -39,8 +39,8 @@ wchar_t * AddTeamCommand::Release(void *a1)
 
   v3 = *(const wchar_t **)&this->m_1[3]; /*0x5360f5*/
   StringCSF = GetStringCSF((wchar_t *)(aTxtAddSelectTe), 0,(const char *)(g_Str_File_Init_CPP), 6326); /*0x536105*/
-  swprintf((wchar_t *const)&(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x536110*/
-  return (wchar_t *)&(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x53611d*/
+  swprintf((wchar_t *const)(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x536110*/
+  return (wchar_t *)(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x53611d*/
 
 }
 } // namespace gamemd

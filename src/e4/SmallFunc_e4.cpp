@@ -65,14 +65,14 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
     if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
     v7 = 0; /*0x6f1a2a*/
-    if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 204) > 0 ) /*0x6f1a2e*/
+    if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 204) > 0 ) /*0x6f1a2e*/
     {
-      while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7) + 36), Source) ) /*0x6f1a4c*/
+      while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7) + 36), Source) ) /*0x6f1a4c*/
       {
-        if ( ++v7 >= *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 204) ) /*0x6f1a56*/
+        if ( ++v7 >= *(int *)(unsigned int *)((char *)&stru_A8EB00 + 204) ) /*0x6f1a56*/
           goto LABEL_7; /*0x6f1a56*/
       }
-      Base = (unsigned int *)((gamemd::TeamTypeClass *)(*(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7)));
+      Base = (unsigned int *)((gamemd::TeamTypeClass *)(*(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7)));
       goto LABEL_11; /*0x6f1a82*/
     }
   LABEL_7: v8 = (gamemd::TeamTypeClass *)((gamemd::TeamTypeClass **)((TeamTypeClass *)RA2_OPNEW(0xF8u)));
@@ -307,7 +307,7 @@ int E4Recv_728A00::sub_728A00()
   this->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728a16*/
   this->CurrentState[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728a1e*/
   this->CurrentState[3] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728a27*/
-  this->CurrentState[4] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x728a30*/
+  this->CurrentState[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x728a30*/
   this->CurrentState[6] = 0; /*0x728a33*/
   this->CurrentState[7] = 0; /*0x728a36*/
   LOBYTE(this->CurrentState[8]) = 0; /*0x728a39*/

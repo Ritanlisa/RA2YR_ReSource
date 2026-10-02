@@ -175,7 +175,7 @@ int TeamClass::DeployUnit(int a2, int a3)
     ParasiteClass_field_34 = this->ParasiteClass_field_34; /*0x62a2a6*/
     if ( v6 != -1 ) /*0x62a2ac*/
     {
-      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v6 >= ParasiteClass_field_34 ) /*0x62a2b8*/
+      if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v6 >= ParasiteClass_field_34 ) /*0x62a2b8*/
       {
 LABEL_12: v9 = (int *)((unsigned int)((int *)((unsigned int *)(((Object *)((Object *)this))->CalculateObjectPlacementPosition(v18)))));
         v17[0] = (unsigned int)((unsigned int *)(*v9));
@@ -235,7 +235,7 @@ LABEL_12: v9 = (int *)((unsigned int)((int *)((unsigned int *)(((Object *)((Obje
         }
         return result; /*0x62a459*/
       }
-      ParasiteClass_field_34 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v6; /*0x62a2ba*/
+      ParasiteClass_field_34 -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v6; /*0x62a2ba*/
     }
     if ( ParasiteClass_field_34 > 0 /*0x62a2c2*/
       && !(*(uint8_t (**)(int))(*(unsigned int *)creationFrame + 352))(creationFrame) )

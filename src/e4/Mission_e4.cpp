@@ -562,9 +562,9 @@ int Mission::GetMissionDelay(void *a1_1)
   p_Mission_field_0x180 = (int *)(&this->Mission_field_0x180); /*0x70f783*/
   if ( Mission_field_0x180 != -1 ) /*0x70f789*/
   {
-    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - Mission_field_0x180 >= result ) /*0x70f795*/
+    if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - Mission_field_0x180 >= result ) /*0x70f795*/
       return result; /*0x70f795*/
-    result -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - Mission_field_0x180; /*0x70f797*/
+    result -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - Mission_field_0x180; /*0x70f797*/
   }
   if ( result > 10 ) /*0x70f79c*/
   {
@@ -572,7 +572,7 @@ int Mission::GetMissionDelay(void *a1_1)
     if ( !dword_A8E7AC ) /*0x70f7a5*/
     {
       result = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 4, 8); /*0x70f7b6*/
-      *p_Mission_field_0x180 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x70f7c1*/
+      *p_Mission_field_0x180 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x70f7c1*/
       p_Mission_field_0x180[1] = v4; /*0x70f7c7*/
       p_Mission_field_0x180[2] = result; /*0x70f7ca*/
     }

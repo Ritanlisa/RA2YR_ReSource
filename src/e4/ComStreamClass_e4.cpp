@@ -26,9 +26,6 @@ namespace gamemd {
 int ComStreamClass::Write(void * a1, void * a2, void * a3)
 {
     unsigned int v5 = 0;  /* G37 hoist */
-    unsigned int v5 = 0;  /* G37 hoist */
-    unsigned int v5 = 0;  /* G37 hoist */
-    unsigned int v5 = 0;  /* G37 hoist */
 
   HWND v5; // esi
   HWND DlgItem; // ebx
@@ -171,8 +168,6 @@ int ComStreamClass::Release(void *a1)
 namespace gamemd {
 int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
 {
-    unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
 
   char ***v3; // esi

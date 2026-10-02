@@ -782,7 +782,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
           {
             v13 = strtok(0, Str); /*0x41b1ef*/
             atoi(v13); /*0x41b1f5*/
-            if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 408) < 4 ) /*0x41b210*/
+            if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 408) < 4 ) /*0x41b210*/
             {
               v17 = strtok(0, Str); /*0x41b242*/
               v18 = atoi(v17); /*0x41b248*/
@@ -1924,7 +1924,7 @@ namespace gamemd {
 char E4Recv_41DD10::sub_41DD10()
 {
 
-  this->ambientSoundController[1] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x41dd15*/
+  this->ambientSoundController[1] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x41dd15*/
   LOBYTE(this->ambientSoundController[0]) = 0; /*0x41dd1a*/
   BYTE1(this->ambientSoundController[0]) = 0; /*0x41dd1d*/
   return 0; /*0x41dd20*/

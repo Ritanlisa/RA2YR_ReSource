@@ -115,9 +115,9 @@ int House::AnnounceUpgrade(int aP1)
     if ( v9 == 4 || v9 == 9 || *(unsigned char *)(v8 + 684) ) /*0x47d325*/
     {
       v10 = *((unsigned int *)this + 14); /*0x47d333*/
-      if ( v10 != 0xFFFF && v10 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340) ) /*0x47d343*/
+      if ( v10 != 0xFFFF && v10 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 340) ) /*0x47d343*/
         *((unsigned char *)this + 284) = HouseClass::GetCameoTypeIndex( /*0x47d35e*/
-                                   *(HouseClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v10),
+                                   *(HouseClass **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v10),
                                    *(uint8_t *)((char *)this + 282));
       if ( *((unsigned char *)this + 284) && *(unsigned char *)(v8 + 681) ) /*0x47d36e*/
       {
@@ -187,12 +187,12 @@ LABEL_19:
       return result; /*0x47d578*/
     }
   }
-  if ( *((unsigned int *)this + 14) >= *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340) ) /*0x47d58b*/
+  if ( *((unsigned int *)this + 14) >= *(int *)(unsigned int *)((char *)&stru_A8EB00 + 340) ) /*0x47d58b*/
     *((unsigned int *)this + 14) = 0xFFFF; /*0x47d58d*/
   v18 = *((unsigned int *)this + 14); /*0x47d590*/
   if ( v18 != 0xFFFF ) /*0x47d595*/
   {
-    v19 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v18); /*0x47d5ab*/
+    v19 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v18); /*0x47d5ab*/
     v54 = *(uint8_t *)((char *)this + 282); /*0x47d5ae*/
     *(unsigned int *)v55 = v19; /*0x47d5b1*/
     MapFileData = ((House *)((House *)v19))->LoadMapFileData(v54, 0); /*0x47d5b5*/

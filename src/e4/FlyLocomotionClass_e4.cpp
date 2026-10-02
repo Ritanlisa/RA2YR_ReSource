@@ -86,9 +86,9 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   {
     thisa = 0; /*0x4cfefd*/
   }
-  for ( i = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; i >= 0; --i ) /*0x4cff0c*/
+  for ( i = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; i >= 0; --i ) /*0x4cff0c*/
   {
-    v4 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x4cff17*/
+    v4 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x4cff17*/
     if ( thisa ) /*0x4cff20*/
     {
       if ( *(unsigned int *)(v4 + 540) != *((unsigned int *)((char *)&stru_A80220) + ((unsigned int *)a1)[0]->enemyHouseIndex) ) /*0x4cff5e*/

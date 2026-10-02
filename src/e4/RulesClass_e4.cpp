@@ -324,7 +324,7 @@ INIClass * * RulesClass::readDifficulty()
     INIClass::ReadDouble_Overwrite( /*0x674493*/
       (double *)v16,
       (uint8_t *)aJumpjetcontrol,
-      (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 103),
+      (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 103),
       COERCE_DOUBLE(__PAIR64__(v8, v9)));
     v10 = *(unsigned int *)&this->__pad_240[500]; /*0x674498*/
     v11 = *(unsigned int *)&this->__pad_240[496]; /*0x67449e*/

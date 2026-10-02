@@ -106,10 +106,6 @@ namespace gamemd {
 int GameClass::loadScenarioFiles(int aP1)
 {
     unsigned int v9 = 0;  /* G37 hoist */
-    unsigned int v9 = 0;  /* G37 hoist */
-    unsigned int v9 = 0;  /* G37 hoist */
-    unsigned int v9 = 0;  /* G37 hoist */
-    unsigned int v9 = 0;  /* G37 hoist */
 
   int result; // eax
   ObjectClass * v4;

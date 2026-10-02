@@ -151,7 +151,7 @@ int Scenario::ReadTeams()
             {
               v9 = strtok(0, Str); /*0x44f90b*/
               v61 = atoi(v9); /*0x44f919*/
-              if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 408) < 4 ) /*0x44f92c*/
+              if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 408) < 4 ) /*0x44f92c*/
               {
                 v13 = strtok(0, Str); /*0x44f95e*/
                 v14 = atoi(v13); /*0x44f964*/
@@ -376,10 +376,10 @@ int Scenario::CopyLocalScenarioData()
   abstractFlags = (char *)((unsigned int *)(dword_A8B230))[127].abstractFlags; /*0x4c61c0*/
   if ( vtable3 != (void *)-1 ) /*0x4c61c9*/
   {
-    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable3 >= (int)abstractFlags ) /*0x4c61d5*/
+    if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable3 >= (int)abstractFlags ) /*0x4c61d5*/
       abstractFlags = 0; /*0x4c61db*/
     else
-      abstractFlags -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable3; /*0x4c61d7*/
+      abstractFlags -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable3; /*0x4c61d7*/
   }
   this->Scenario_field_0x38 = (unsigned char)(abstractFlags);
   result = *(unsigned int *)&dword_A83D4C->__pad_140[68]; /*0x4c61e6*/
@@ -406,10 +406,10 @@ int Scenario::ProcessSidebarUnits()
   int i; // [esp+Ch] [ebp-8h]
   char v12[4]; // [esp+10h] [ebp-4h] BYREF
 
-  result = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; /*0x50d619*/
-  for ( i = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; i >= 0; --i ) /*0x50d622*/
+  result = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; /*0x50d619*/
+  for ( i = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; i >= 0; --i ) /*0x50d622*/
   {
-    v3 = *(Scenario ***)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * result); /*0x50d631*/
+    v3 = *(Scenario ***)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * result); /*0x50d631*/
     if ( v3[135] == this ) /*0x50d63a*/
     {
       v4 = *(unsigned int *)(*(int (**)(Scenario **, char *))&(*v3)->__pad_9C[284])(v3, v12); /*0x50d64d*/

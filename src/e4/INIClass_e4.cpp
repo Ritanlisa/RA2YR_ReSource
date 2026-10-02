@@ -34,10 +34,6 @@ namespace gamemd {
 ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
 {
     unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
 
   int v3; // eax
   size_t v4; // ecx

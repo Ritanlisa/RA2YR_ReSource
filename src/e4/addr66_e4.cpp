@@ -673,13 +673,6 @@ LABEL_119:
         if ( (unsigned short)v110 != *(unsigned short *)v111[8].__pad_0 || IDA_HIWORD(desiredFacing) != *(unsigned short *)&v111[((unsigned int *)(8].__pad_0))[2] )
         {
     unsigned int v90 = 0;  /* G37 hoist */
-    unsigned int v90 = 0;  /* G37 hoist */
-    unsigned int v90 = 0;  /* G37 hoist */
-    unsigned int v90 = 0;  /* G37 hoist */
-    unsigned int v90 = 0;  /* G37 hoist */
-    unsigned int v90 = 0;  /* G37 hoist */
-    unsigned int v90 = 0;  /* G37 hoist */
-    unsigned int v90 = 0;  /* G37 hoist */
           if ( v111->isAliveFlag )
             Coord::ToGridIndex(
               &((unsigned int *)(stru_87C374))[46356],
@@ -710,11 +703,6 @@ LABEL_119:
         v92 = -v91;
       if ( v92 <= *(float *)&v113->uniqueId )
       {
-    unsigned int v93 = 0;  /* G37 hoist */
-    unsigned int v93 = 0;  /* G37 hoist */
-    unsigned int v93 = 0;  /* G37 hoist */
-    unsigned int v93 = 0;  /* G37 hoist */
-    unsigned int v93 = 0;  /* G37 hoist */
     unsigned int v93 = 0;  /* G37 hoist */
         *(float *)(a1 + 80) = *(float *)(a1 + 80) + v91;
       }

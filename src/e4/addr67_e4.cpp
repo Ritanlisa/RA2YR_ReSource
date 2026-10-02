@@ -46,14 +46,6 @@ namespace gamemd {
 int sub_679CC0()
 {
     unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
   void *v1[3]; // [esp+4h] [ebp-C4h] BYREF
   unsigned int v2[10]; // [esp+10h] [ebp-B8h] BYREF
   char v3; // [esp+38h] [ebp-90h]

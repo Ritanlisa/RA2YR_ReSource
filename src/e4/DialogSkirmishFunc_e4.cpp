@@ -149,14 +149,6 @@ LABEL_151:
               if ( *(&g_MatrixTransformState + 2257) )
               {
     unsigned int v65 = 0;  /* G37 hoist */
-    unsigned int v65 = 0;  /* G37 hoist */
-    unsigned int v65 = 0;  /* G37 hoist */
-    unsigned int v65 = 0;  /* G37 hoist */
-    unsigned int v65 = 0;  /* G37 hoist */
-    unsigned int v65 = 0;  /* G37 hoist */
-    unsigned int v65 = 0;  /* G37 hoist */
-    unsigned int v65 = 0;  /* G37 hoist */
-    unsigned int v65 = 0;  /* G37 hoist */
                 ComPtr::Dtor(*(&g_MatrixTransformState + 2257));
                 RA2_OPDEL(v61);
               }

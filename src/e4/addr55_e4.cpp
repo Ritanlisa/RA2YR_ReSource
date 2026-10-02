@@ -67,9 +67,9 @@ LABEL_4:
       goto LABEL_7; /*0x5500a1*/
     goto LABEL_5; /*0x5500a1*/
   }
-  if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable2 < uniqueId ) /*0x55009b*/
+  if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable2 < uniqueId ) /*0x55009b*/
   {
-    uniqueId -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable2; /*0x55009d*/
+    uniqueId -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable2; /*0x55009d*/
     goto LABEL_4; /*0x55009d*/
   }
 LABEL_5:
@@ -80,7 +80,7 @@ LABEL_5:
     LOBYTE(((unsigned int *)Block)[0]) = 1; /*0x5500b1*/
     Block->AbstractClass = v5; /*0x5500b5*/
     v6 = (void *)v8[2]; /*0x5500bd*/
-    ((unsigned int *)Block)[0] = (unsigned int)(*(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x5500c1*/
+    ((unsigned int *)Block)[0] = (unsigned int)(*(void **)(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x5500c1*/
     ((unsigned int *)Block)[0] = (unsigned int)(v6); /*0x5500c4*/
     ((unsigned int *)Block)[0] = abstractFlags; /*0x5500c7*/
     goto LABEL_8; /*0x5500ca*/
@@ -138,9 +138,9 @@ void sub_550150()
       v5 = v3[4]; /*0x550176*/
       if ( v4 != -1 ) /*0x55017c*/
       {
-        if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v4 >= v5 ) /*0x550188*/
+        if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v4 >= v5 ) /*0x550188*/
           goto LABEL_7; /*0x550188*/
-        v5 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v4; /*0x55018a*/
+        v5 -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v4; /*0x55018a*/
       }
       if ( v5 ) /*0x55018e*/
         goto LABEL_9; /*0x55018e*/
@@ -155,7 +155,7 @@ void sub_550150()
       v7 = v3[6] + *v3; /*0x55019c*/
       *((unsigned char *)v3 + 4) = 1; /*0x55019e*/
       *v3 = v7; /*0x5501a2*/
-      v3[2] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x5501a9*/
+      v3[2] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x5501a9*/
       v3[3] = v2; /*0x5501ac*/
       v3[4] = v6; /*0x5501af*/
   LABEL_10:

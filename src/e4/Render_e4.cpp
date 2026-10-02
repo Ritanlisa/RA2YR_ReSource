@@ -1502,10 +1502,10 @@ AbstractClass * * sub_63B0A0()
     if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(**v3->vtable2 + 540), (void *)dword_A83D4C) ) /*0x63b100*/
       RenderScenarioActionLines((ObjectClass *)v3); /*0x63b10b*/
   }
-  v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x63b115*/
+  v4 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x63b115*/
   for ( i = 0; i < v4; ++i ) /*0x63b11f*/
   {
-    v6 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x63b12d*/
+    v6 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x63b12d*/
     if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(v6 + 540), (void *)dword_A83D4C) ) /*0x63b136*/
       ((ScriptAction *)((ScriptAction *)v6))->ProcessIdleAction(); /*0x63b141*/
   }
@@ -1547,9 +1547,9 @@ void sub_660000()
     v5 = *(unsigned int *)(v3 + 56); /*0x660018*/
     if ( v4 != -1 ) /*0x66001e*/
     {
-      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v4 >= v5 ) /*0x66002a*/
+      if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v4 >= v5 ) /*0x66002a*/
         goto LABEL_6; /*0x66002a*/
-      v5 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v4; /*0x66002c*/
+      v5 -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v4; /*0x66002c*/
     }
     if ( v5 > 0 ) /*0x660030*/
       goto LABEL_7; /*0x660030*/
@@ -1586,9 +1586,9 @@ void sub_6603B0()
       v5 = *(unsigned int *)(v3 + 44); /*0x6603d0*/
       if ( v4 != -1 ) /*0x6603d6*/
       {
-        if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v4 >= v5 ) /*0x6603e2*/
+        if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v4 >= v5 ) /*0x6603e2*/
           goto LABEL_7; /*0x6603e2*/
-        v5 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v4; /*0x6603e4*/
+        v5 -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v4; /*0x6603e4*/
       }
       if ( !v5 ) /*0x6603e8*/
       {

@@ -354,7 +354,6 @@ void TechnoClass::Uncloak(bool play_sound)
 AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
 {
     unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
   HouseClass *v2; // eax
   int result; // eax
   int v4; // edi

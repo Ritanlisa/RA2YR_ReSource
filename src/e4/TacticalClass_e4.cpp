@@ -186,12 +186,12 @@ void TacticalClass::DrawCellTerrainOverlay(int * a2, int * a3)
   if ( field38 == 0xFFFF ) /*0x4802ae*/
   {
     v5 = 0; /*0x4802df*/
-    v6 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * dword_AA10B0); /*0x4802e1*/
+    v6 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * dword_AA10B0); /*0x4802e1*/
   }
   else
   {
     v5 = BYTE2(this->visibleCells[13]); /*0x4802b8*/
-    v6 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * field38); /*0x4802be*/
+    v6 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * field38); /*0x4802be*/
     if ( *(int *)(v6 + 752) > 1 ) /*0x4802c8*/
       ((CellClass *)((CellClass *)v6))->GetTerrainFlag(BYTE2(this->visibleCells[13])); /*0x4802cd*/
   }

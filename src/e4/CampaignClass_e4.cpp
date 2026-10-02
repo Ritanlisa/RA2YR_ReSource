@@ -79,15 +79,15 @@ int CampaignClass::LoadFromINIList()
   int i; // [esp+8h] [ebp-24h]
   char Source[32]; // [esp+Ch] [ebp-20h] BYREF
 
-  result = (int)(INIClass::GetKeyCount((gamemd::INIClass *)(this->__pad_0), (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2))); /*0x46ce1c*/
+  result = (int)(INIClass::GetKeyCount((gamemd::INIClass *)(this->__pad_0), (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2))); /*0x46ce1c*/
   v3 = 0; /*0x46ce21*/
   for ( i = result; v3 < i; ++v3 ) /*0x46ce29*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex( /*0x46ce48*/
                                          this->__pad_0,
-                                         (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2),
+                                         (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2),
                                          v3);
-    INIClass::GetString((gamemd::INIClass *)(this), (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2),(gamemd::INIClass *)(StringByIndex),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
+    INIClass::GetString((gamemd::INIClass *)(this), (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2),(gamemd::INIClass *)(StringByIndex),(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
     v5 = 0; /*0x46ce5f*/
     if ( dword_A83D08 <= 0 ) /*0x46ce63*/
       goto LABEL_7; /*0x46ce63*/
@@ -196,7 +196,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   CCFileClass::Construct(&v33,(void *)(g_Str_File_coopsave_ini)); /*0x49c631*/
   *((unsigned int *)((char *)&v28 + 0)) = 0; /*0x49c63a*/
   *((unsigned int *)((char *)&v28 + 1)) = 0; /*0x49c63e*/
-  INISectionList::Constructor((INISectionList *)&(unsigned int *)((char *)&v28 + 2)); /*0x49c642*/
+  INISectionList::Constructor((INISectionList *)(unsigned int *)((char *)&v28 + 2)); /*0x49c642*/
   Node::Init((Node *)&(unsigned int *)((char *)&v28 + 8)); /*0x49c64b*/
   ((unsigned int *)&v28)[0] = 0; /*0x49c65e*/
   v28.ownsFile = 0; /*0x49c662*/

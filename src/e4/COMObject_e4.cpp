@@ -57,7 +57,7 @@ namespace gamemd {
 bool COMObject::IsSameType(GScreenClass * aP0)
 {
 
-  return *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 880) == (*(int (**)(GScreenClass *))(aP0->vfptr[0] + 24))(aP0); /*0x4f4408*/
+  return *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 880) == (*(int (**)(GScreenClass *))(aP0->vfptr[0] + 24))(aP0); /*0x4f4408*/
 
 }
 } // namespace gamemd

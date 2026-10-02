@@ -132,9 +132,6 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
 namespace gamemd { 
 int ObjectClass::DumpAudioDeviceDebug(unsigned int * a1, void (* a2) {
     unsigned int v16 = 0;  /* G37 hoist */
-    unsigned int v16 = 0;  /* G37 hoist */
-    unsigned int v16 = 0;  /* G37 hoist */
-    unsigned int v16 = 0;  /* G37 hoist */
 
   void (*v4)(char *); // edi
   int Next; // esi

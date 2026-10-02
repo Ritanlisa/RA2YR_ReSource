@@ -572,7 +572,7 @@ AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
     }
   }
   v6 = Block; /*0x428f18*/
-  v4 = (*(int (**)(int *, AnimTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 2)) + 16))(&(unsigned int *)((char *)&FootClass_Array + 2), &v6); /*0x428f1c*/
+  v4 = (*(int (**)(int *, AnimTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 2)) + 16))((unsigned int *)((char *)&FootClass_Array + 2), &v6); /*0x428f1c*/
   if ( v4 != -1 && v4 < *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x428f2c*/
   {
     --((unsigned int *)&FootClass_Array)[0]; /*0x428f31*/

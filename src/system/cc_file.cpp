@@ -74,7 +74,6 @@ int CCFileClass::Open(int pFileName)
 void* CCFileClass::ReadEntireFile()
 {
     unsigned int v2 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
   void *v2; // edi
   size_t v3; // ebx
 

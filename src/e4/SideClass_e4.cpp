@@ -92,9 +92,9 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A8E31C + i3) + 100))( /*0x679bd5*/
       *((unsigned int *)dword_A8E31C + i3),
       aP0);
-  for ( i4 = 0; i4 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 68); ++i4 ) /*0x679beb*/
-    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i4) + 100))( /*0x679bf9*/
-      *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i4),
+  for ( i4 = 0; i4 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68); ++i4 ) /*0x679beb*/
+    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i4) + 100))( /*0x679bf9*/
+      *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i4),
       aP0);
   for ( i5 = 0; i5 < *(int *)&stru_A83D50.__pad_3C[4]; ++i5 ) /*0x679c0f*/
     (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i5) + 100))( /*0x679c1c*/

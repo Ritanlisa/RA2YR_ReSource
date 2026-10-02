@@ -210,7 +210,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   *(unsigned int *)(_EBX + 192) = BuildingTypeClass::FindAnimByName( /*0x511942*/
                               (BuildingTypeClass *)v4,
                               (uint8_t *)(_EBX + 36),
-                              (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 95),
+                              (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 95),
                               *(unsigned int *)(_EBX + 192));
   Source[0] = *(unsigned char *)(_EBX + 420); /*0x51195a*/
   Source[1] = 0; /*0x511966*/

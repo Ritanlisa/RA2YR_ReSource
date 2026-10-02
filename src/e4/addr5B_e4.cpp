@@ -517,7 +517,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
         && g_RulesInitConfig == aP0->q08A
         && *(unsigned int *)&stru_A8B250.__pad_0[12] == *(unsigned int *)(aP0 + 126)
         && *(unsigned int *)&stru_A8B250.__pad_0[32] == aP0->q08B
-        && *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 432) == *(unsigned int *)(aP0 + 146)
+        && *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 432) == *(unsigned int *)(aP0 + 146)
         && ApplyGameOptions_Helper((ObjectClass *)dword_A8E960, (unsigned int *)(aP0 + 150))
         && *(unsigned int *)&stru_A8B250.__pad_0[24] == aP0->u32_A2 )
       {
@@ -550,7 +550,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   g_RulesInitConfig = aP0->q08A; /*0x5b6a96*/
   *(unsigned int *)&stru_A8B250.__pad_0[12] = *(unsigned int *)(aP0 + 126); /*0x5b6a9f*/
   *(unsigned int *)&stru_A8B250.__pad_0[32] = aP0->q08B; /*0x5b6aaa*/
-  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 432) = *(unsigned int *)(aP0 + 146); /*0x5b6ab6*/
+  *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 432) = *(unsigned int *)(aP0 + 146); /*0x5b6ab6*/
   v6 = *(unsigned int *)(aP0 + 150); /*0x5b6abc*/
   dword_A8E960[0] = v6; /*0x5b6ac4*/
   IDA_LOBYTE(v6) = v6 | 0xC0; /*0x5b6acf*/

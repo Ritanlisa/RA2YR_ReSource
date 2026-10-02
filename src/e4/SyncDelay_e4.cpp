@@ -77,7 +77,7 @@ void SyncDelay::Start(void *a1, void *a2)
       if ( !v6 ) /*0x55e1ed*/
         goto LABEL_38; /*0x55e1ed*/
       ((Event *)this)->Dispatch(); /*0x55e1f3*/
-      if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 444) && *((unsigned int *)((char *)&stru_A8EB00 + 412)) == 1 ) /*0x55e20b*/
+      if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 444) && *((unsigned int *)((char *)&stru_A8EB00 + 412)) == 1 ) /*0x55e20b*/
         break; /*0x55e20b*/
 LABEL_23:
       Sleep(0); /*0x55e2ac*/

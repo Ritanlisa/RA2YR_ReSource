@@ -98,16 +98,16 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x544933*/
   }
   if ( !a6 /*0x544970*/
-    && (*(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340) < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 332)
-     || (*((unsigned int *)((char *)&stru_A8EB00 + 337)) || !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 332))
-     && *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 344) > 0
-     && (*(uint8_t (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 324) + 8))(
-          &(unsigned int *)((char *)&stru_A8EB00 + 324),
-          *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 332) + *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 344),
+    && (*(int *)(unsigned int *)((char *)&stru_A8EB00 + 340) < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 332)
+     || (*((unsigned int *)((char *)&stru_A8EB00 + 337)) || !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 332))
+     && *(int *)(unsigned int *)((char *)&stru_A8EB00 + 344) > 0
+     && (*(uint8_t (**)(unsigned char *, int, unsigned int))(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 324) + 8))(
+          (unsigned int *)((char *)&stru_A8EB00 + 324),
+          *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 332) + *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 344),
           0)) )
   {
-    v8 = (*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 340))++; /*0x54497d*/
-    *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v8) = (unsigned int)(this); /*0x54498c*/
+    v8 = (*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 340))++; /*0x54497d*/
+    *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v8) = (unsigned int)(this); /*0x54498c*/
   }
   if ( aP4 ) /*0x544991*/
   {

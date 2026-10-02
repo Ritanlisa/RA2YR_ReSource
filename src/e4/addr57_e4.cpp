@@ -740,7 +740,7 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
   }
   LABEL_71:
   v26 = (gamemd::Cell *)(a3); /*0x57b12d*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * (v13 + dword_ABAD28) - 4); /*0x57b143*/
+  *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * (v13 + dword_ABAD28) - 4); /*0x57b143*/
   v27 = *(unsigned int *)&a3->__pad_1C[8]; /*0x57b149*/
   v28 = g_MissionQueueFrame.briefing[v13 + 71]; /*0x57b14c*/
   v29 = IDA_HIWORD(g_MissionQueueFrame.briefing[v13 + 71]); /*0x57b154*/

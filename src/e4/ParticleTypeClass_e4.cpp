@@ -50,7 +50,6 @@ namespace gamemd {
 AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
 {
     unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
 
   int v3; // ebp
   char *v5; // edi

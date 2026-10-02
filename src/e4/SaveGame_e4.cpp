@@ -225,7 +225,7 @@ int SaveGame::LoadMainGameState()
 
   result = (*(int (**)(SaveGame *, unsigned char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f7f1*/
              this,
-             &(unsigned int *)((char *)&stru_A8EB00 + 404),
+             (unsigned int *)((char *)&stru_A8EB00 + 404),
              4,
              0);
   if ( result >= 0 )
@@ -239,13 +239,13 @@ int SaveGame::LoadMainGameState()
     {
       result = (*(int (**)(SaveGame *, unsigned char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f81f*/
                  this,
-                 &(unsigned int *)((char *)&stru_A8EB00 + 416),
+                 (unsigned int *)((char *)&stru_A8EB00 + 416),
                  4,
                  0);
       if ( result >= 0 )
       {
         v3 = *(unsigned int *)this->__pad_0; /*0x67f82f*/
-        unk1Particles = *(ParticleSystemClass **)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x67f83b*/
+        unk1Particles = *(ParticleSystemClass **)(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x67f83b*/
         result = (*(int (**)(SaveGame *, ParticleSystemClass **, int, unsigned int))(v3 + 16))( /*0x67f83f*/
                    this,
                    &unk1Particles,
@@ -381,7 +381,7 @@ LABEL_17:
             {
               result = (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f865*/
                          this,
-                         *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v4,
+                         *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v4,
                          4,
                          0);
               if ( result < 0 ) /*0x67f86a*/
