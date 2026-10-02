@@ -214,7 +214,7 @@ int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 
 // 0x4393F0
 namespace gamemd {
-BombClass * BombClass::CopyTo(char a2 a2)
+BombClass * BombClass::CopyTo(char a2)
 {
 
   int v3; // eax

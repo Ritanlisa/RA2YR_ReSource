@@ -1553,7 +1553,7 @@ LABEL_15:
 }
 // 0x6D2790
 namespace gamemd {
-void* Cell::CreateCrater(IUnknown aP2, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
+void* Cell::CreateCrater(IUnknown, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 {
 
   int v5; // ecx

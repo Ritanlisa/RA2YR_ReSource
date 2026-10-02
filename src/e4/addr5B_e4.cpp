@@ -717,7 +717,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
 }
 // 0x5BC6E0
 namespace gamemd {
-void AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
+void AudioDebug_DlgProc(HWND hWnd, UINT, WPARAM, LPARAM)
 {
   int v5; // ecx
   int v6; // ecx

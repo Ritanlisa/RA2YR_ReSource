@@ -194,7 +194,7 @@ int Vector::RemoveAt(int aP1)
 
 // 0x4D2E40
 namespace gamemd {
-void Vector::ReallocDynamic(int a2 a2)
+void Vector::ReallocDynamic(int a2)
 {
 
   char *v3; // edi

@@ -478,7 +478,7 @@ char CChatEventSink::Check(unsigned int * a2, int a3, void *a3_2)
 } // namespace gamemd
 // 0x7AD350
 namespace gamemd {
-ObjectClass * CChatEventSink::DeleteAndZero(char a2 a2)
+ObjectClass * CChatEventSink::DeleteAndZero(char a2)
 {
 
   DeleteAndZero((char)((ObjectClass *)Block)); /*0x7ad353*/

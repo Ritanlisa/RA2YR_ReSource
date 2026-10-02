@@ -72,7 +72,7 @@ struct WWMouseClass {
     unsigned int q0081;
     unsigned int Debug;
 // --- flat members (END) ---
-    MouseClass * updateHotspot(char a2 a2);
+    MouseClass * updateHotspot(char a2);
     char checkCapture();
     int COMStub();
     int checkBounds();

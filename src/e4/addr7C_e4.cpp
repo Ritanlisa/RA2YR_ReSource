@@ -15008,7 +15008,7 @@ double _fload_withFB(int a1, unsigned int * a2)
 
   if ( (a2[1] & 0x7FF00000) != 0x7FF00000 ) /*0x7cf3e2*/
     return *(double *)a2; /*0x7cf3e4*/
-  result = (unsigned long long)(*(unsigned long long *)a2 << 11); /*0x7cf409*/
+  result = (unsigned long)(*(unsigned long long *)a2 << 11); /*0x7cf409*/
   return result; /*0x7cf3e6*/
 }
 } // namespace gamemd

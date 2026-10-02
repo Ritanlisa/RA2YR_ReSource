@@ -169,7 +169,7 @@ LABEL_14:
     if ( FileA != (HANDLE)-1 ) /*0x432830*/
     {
       SetFilePointer(FileA, lDistanceToMove[0], 0, 0); /*0x43283a*/
-      v9 = BinkOpen(*((unsigned int *)this + 10), &ToggleClass::`RTTI Class Hierarchy Descriptor'); /*0x432849*/
+      v9 = BinkOpen(*((unsigned int *)this + 10),0); /*0x432849*/
       goto LABEL_14; /*0x432849*/
     }
   }

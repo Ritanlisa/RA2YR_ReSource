@@ -3673,7 +3673,7 @@ int MouseClass::CheckCapture(void* a1) {
 }
 // 0x6969C0
 namespace gamemd { 
-int ListBox::SetCustomEntry(int nIDDlgItem, LPARAM a3, void * a4) {
+int ListBox::SetCustomEntry(int nIDDlgItem, LPARAM, void * a4) {
   int result; // eax
   HWND v5; // ebx
   wchar_t *StringCSF; // eax

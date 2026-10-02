@@ -413,9 +413,9 @@ namespace ra2 { namespace game { int AbstractClass::COMStub_5(void* a1, int a2) 
         if ( aP1 )
         {
           ObjectClass::Init(aP1, (AbstractClass *)&aP1a);
-          *(_DWORD *)aP1->__pad_0 = &IsometricTileClass::`vftable';
-          *(_DWORD *)&aP1->__pad_0[4] = &IsometricTileClass::`vftable';
-          *(_DWORD *)&aP1->__pad_0[8] = &IsometricTileClass::`vftable';
+          *(_DWORD *)aP1->__pad_0 = 0;
+          *(_DWORD *)&aP1->__pad_0[4] = 0;
+          *(_DWORD *)&aP1->__pad_0[8] = 0;
           *(_DWORD *)&aP1->__pad_0[12] = &vt_IsometricTileClass;
         }
         ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&aP1[1]);

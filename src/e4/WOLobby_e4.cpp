@@ -139,7 +139,7 @@ int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, H
 
 // 0x791B10
 namespace gamemd {  // G42.18c ns repair
-int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
+int WOLobby::ChatDlgProc(HWND hDlg, UINT, WPARAM, HWND hWnd)
 {
 
   int result; // eax
@@ -187,7 +187,7 @@ int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
 
 // 0x603F60
 namespace gamemd {
-wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM a3)
+wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM)
 {
   LPARAM lParam[2]; // [esp+8h] [ebp-Ch] BYREF
   wchar_t *v7; // [esp+10h] [ebp-4h] BYREF

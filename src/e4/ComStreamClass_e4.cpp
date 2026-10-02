@@ -416,7 +416,7 @@ int ComStreamClass::Seek(int a2, int a3, int a4, int a1, int a5)
 } // namespace gamemd
 // 0x7A40F0
 namespace gamemd {
-int ComStreamClass::ddtor(int a2, int a3, unsigned int a1, int a4 a4, int a5 a5)
+int ComStreamClass::ddtor(int a2, int a3, unsigned int a1, int a4, int a5)
 {
 
   if ( g_NetworkLobby_Init && *(unsigned int *)dword_B77780 ) /*0x7a4100*/
@@ -457,7 +457,7 @@ LONG ComStreamClass::AddRef(void *a1)
 } // namespace gamemd
 // 0x7AED20
 namespace gamemd {
-void ** ComStreamClass::writeData(char a2 a2)
+void ** ComStreamClass::writeData(char a2)
 {
 
   DeleteAndZero((ObjectClass *)Block); /*0x7aed23*/

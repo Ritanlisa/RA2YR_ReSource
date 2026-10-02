@@ -1316,7 +1316,7 @@ namespace gamemd { void TabClass::processTabInput() {
 } }
 
 // ==== BACKFILL 0x00637550  FlushPlanningQueue  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-void __usercall FlushPlanningQueue(CCINIClass *a1@<edi> a1)
+void __usercall FlushPlanningQueue(CCINIClass *a1)
 {
 {
     char *esi1;
@@ -1987,7 +1987,7 @@ namespace gamemd { int RadarClass::Create() {
       this->q1530 = 0;
       this->q1534 = 0;
       this->q1538 = 0;
-      *(_DWORD *)this = &PowerClass::`vftable';
+      *(_DWORD *)this = 0;
       return this;
 }
 } }

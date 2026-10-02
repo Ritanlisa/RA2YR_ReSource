@@ -106,8 +106,8 @@ inline unsigned char __CF__(int) { return 0; }
 
 // dword pairs -> qword (IDA __PAIR64__/__PAIR32__/__PAIR16__)
 #define IDA___PAIR64__(high, low) \
-    (((unsigned long long)(unsigned int)(low)) | \
-     ((unsigned long long)(unsigned int)(high) << 32))
+    (((unsigned long)(unsigned int)(low)) | \
+     ((unsigned long)(unsigned int)(high) << 32))
 #define IDA___PAIR32__(high, low) \
     (((unsigned int)(unsigned short)(low)) | \
      ((unsigned int)(unsigned short)(high) << 16))
@@ -134,7 +134,7 @@ inline unsigned char __CF__(int) { return 0; }
 // ---- G42.12 IDA decompiler macro shims (compile-verified round-2) ----
 // missing base forms (semantics per ida.hpp; OFSUB must compute in 32-bit)
 #define IDA___SPAIR64__(high, low) \
-    ((long long)(((unsigned long long)(unsigned int)(high) << 32) | (unsigned int)(low)))
+    ((long)(((unsigned long)(unsigned int)(high) << 32) | (unsigned int)(low)))
 inline bool IDA___OFSUB__(int a, int b) {
     int r = (unsigned int)a - (unsigned int)b;
     return ((a ^ b) & (a ^ r)) < 0;
@@ -142,7 +142,7 @@ inline bool IDA___OFSUB__(int a, int b) {
 inline unsigned int IDA___ROL4__(unsigned int v, unsigned int n) { n &= 31; return n ? (v << n) | (v >> (32 - n)) : v; }
 inline unsigned int IDA___ROR4__(unsigned int v, unsigned int n) { n &= 31; return n ? (v >> n) | (v << (32 - n)) : v; }
 inline bool IDA___CFADD__(unsigned int a, unsigned int b) {
-    return (unsigned long long)a + (unsigned long long)b > 0xFFFFFFFFull;
+    return (unsigned long)a + (unsigned long)b > 0xFFFFFFFFull;
 }
 #include <cmath>
 inline double IDA___FYL2X__(double y, double x) { return y * std::log2(x); }

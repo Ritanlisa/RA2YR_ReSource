@@ -50,7 +50,7 @@ void INIClass::SetGameOptionsPing()
 }
 
 // ==== BACKFILL 0x007A2110  sub_7A2110  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-INT_PTR sub_7A2110(HWND hWnd, UINT a2, WPARAM a3, char * a4)
+INT_PTR sub_7A2110(HWND hWnd, UINT, WPARAM, char * a4)
 {
 {
     if ( a2 > 0x2B )

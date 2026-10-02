@@ -35,7 +35,7 @@ LRESULT globalHelper_003DD0(HWND hWnd, unsigned char a2)
 }
 
 // ==== BACKFILL 0x00603F00  UI_Assign  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM a3, LPARAM a4)
+wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM, LPARAM)
 {
 {
     LPARAM lParam[2];
@@ -51,7 +51,7 @@ wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM a3, LPARAM a4)
 }
 
 // ==== BACKFILL 0x00603F60  WOLobby_Setup  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM a3)
+wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM)
 {
 {
     LPARAM lParam[2];
@@ -67,7 +67,7 @@ wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM a3)
 }
 
 // ==== BACKFILL 0x0060AA60  sub_60AA60  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-BOOL sub_60AA60(HWND hWnd, LPARAM a2)
+BOOL sub_60AA60(HWND hWnd, LPARAM)
 {
 {
     HWND Parent;
@@ -234,7 +234,7 @@ LRESULT sub_60D520(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 }
 
 // ==== BACKFILL 0x0060F320  Dialog::SubclassEditControl  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM a2)
+BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM)
 {
 {
     LONG WindowLongA;

@@ -3306,7 +3306,7 @@ void nullsub_18()
 
 // 0x52D430
 namespace gamemd {
-INT_PTR ReadModConfigINI(HWND hDlg, UINT a2, WPARAM a3, int * a4)
+INT_PTR ReadModConfigINI(HWND hDlg, UINT, WPARAM, int * a4)
 {
   HWND v5; // ebx
   int i; // esi

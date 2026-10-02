@@ -416,7 +416,7 @@ LABEL_36:
 }
 // 0x606800
 namespace gamemd {
-AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
+AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM)
 {
 
   HWND v2; // ebp
@@ -848,7 +848,7 @@ LABEL_31:
 }
 // 0x60A330
 namespace gamemd {
-int Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
+int Dialog::HandleTabKey(HWND hWnd, LPARAM)
 {
 
   HWND *v3; // eax
@@ -961,7 +961,7 @@ LABEL_33:
 }
 // 0x60A5B0
 namespace gamemd {
-AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
+AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM)
 {
 
   HWND v2; // ebp
@@ -1271,7 +1271,7 @@ LABEL_22:
 }
 // 0x60F9A0
 namespace gamemd {
-AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
+AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM)
 {
 
   char v2; // al
@@ -2102,7 +2102,7 @@ AbstractClass * * Dialog::Resize(void *a1_1, void *a2_1, void *a3_1)
       ScreenDialogToClient(*((HWND *)this + 5), &v6); /*0x6213c8*/
       GetClientRect(*((HWND *)this + 5), &Rect); /*0x6213d6*/
       result = GetWindowLongA(*((HWND *)this + 5), -16); /*0x6213e2*/
-      if ( ((unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor' & result) != 0 ) /*0x6213ed*/
+      if ( ((unsigned int)0 & result) != 0 ) /*0x6213ed*/
       {
         SystemMetrics = GetSystemMetrics(5); /*0x6213fa*/
         result = GetSystemMetrics(6); /*0x6213fe*/
@@ -3306,7 +3306,7 @@ BOOL Dialog::EnumAndCleanup()
 
 // 0x60F320
 namespace gamemd {
-BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM a2)
+BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM)
 {
 
   LONG WindowLongA; // ebx

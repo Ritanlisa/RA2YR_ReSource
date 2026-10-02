@@ -377,7 +377,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
 } // namespace gamemd
 // 0x5CABD0
 namespace gamemd {
-MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2 a2)
+MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
 {
 
   Block->MultiplayerSiege_field_00 = (int)&vt_MultiplayerSiege; /*0x5cabd3*/

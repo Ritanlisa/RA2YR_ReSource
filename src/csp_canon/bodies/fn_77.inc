@@ -1041,7 +1041,7 @@ int Dialog::FindByPtr()
 }
 
 // ==== BACKFILL 0x00775B40  sub_775B40  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-INT_PTR sub_775B40(HWND a1, UINT a2, WPARAM a3, LPARAM a4)
+INT_PTR sub_775B40(HWND a1, UINT, WPARAM, LPARAM)
 {
 return 0;
 }
@@ -1127,7 +1127,7 @@ unsigned int E4Recv_7767F0::sub_7767F0()
 }
 
 // ==== BACKFILL 0x007768F0  LoadWOLSettings  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-BOOL sub_7768F0(HWND hWnd, LPARAM a2)
+BOOL sub_7768F0(HWND hWnd, LPARAM)
 {
 {
     int v3;

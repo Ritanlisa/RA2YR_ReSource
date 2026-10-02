@@ -107,7 +107,7 @@ char Dialog::PumpMessages()
 }
 
 // ==== BACKFILL 0x00623170  UI_Connect  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-BOOL UI_Connect(HWND hWnd, LONG a2, LONG a3)
+BOOL UI_Connect(HWND hWnd, LONG, LONG)
 {
 {
     LONG v5;
@@ -1091,9 +1091,9 @@ namespace ra2 { namespace game { void AbstractClass::ProcessData() {
       int v5;
 
       v2 = this->q044;
-      *(_DWORD *)this = &ParasiteClass::`vftable';
-      this->vtable3 = &ParasiteClass::`vftable';
-      this->vtable4 = &ParasiteClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
+      this->vtable4 = 0;
       this->vtable4 = &vt_ParasiteClass;
       this->q04C = 0;
       this->q050 = 0;
@@ -1330,9 +1330,9 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
       this->Translucency = v13[756];
       this->q130 = 0;
       this->q131 = 0;
-      *(_DWORD *)this = &ParticleClass::`vftable';
-      this->vtable3 = &ParticleClass::`vftable';
-      this->vtable4 = &ParticleClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
+      this->vtable4 = 0;
       this->vtable4 = &vt_ParticleClass;
       AbstractClass::GenerateUniqueID(this + 4);
       if ( *(int *)&HouseClass_Player[140] < *(int *)&HouseClass_Player[132]
@@ -1480,9 +1480,9 @@ namespace ra2 { namespace game { int ObjectClass::ProcessUpdate() {
       this->q12F = 0;
       this->q130 = 0;
       this->q131 = 0;
-      *(_DWORD *)this = &ParticleClass::`vftable';
-      this->vtable3 = &ParticleClass::`vftable';
-      this->vtable4 = &ParticleClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
+      this->vtable4 = 0;
       this->vtable4 = &vt_ParticleClass;
       if ( DataGlobal_A83DD8 < DataGlobal_A83DD0
         || (DataGlobal_A83DD5 || !DataGlobal_A83DD0)
@@ -1851,9 +1851,9 @@ namespace gamemd { void* ParticleClass::UpdateParticle(int a1) {
       int v4;
       void **v6;
 
-      *this = &ParticleClass::`vftable';
-      *(this + 1) = &ParticleClass::`vftable';
-      *(this + 2) = &ParticleClass::`vftable';
+      *this = 0;
+      *(this + 1) = 0;
+      *(this + 2) = 0;
       *(this + 3) = &vt_ParticleClass;
       ObjectClass::Undeploy((#374 *)this);
       LOBYTE(v3) = 1;
@@ -1927,8 +1927,8 @@ namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3
       this->q0F8 = 0;
       this->ParticleSystemClass_field_bool_F9 = 0;
       this->OwnerHouse = 0;
-      *(_DWORD *)this = &ParticleSystemClass::`vftable';
-      this->vtable3 = &ParticleSystemClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
       this->vtable4 = &vt_ParticleSystemClass;
       this->vtable4 = &off_7EFB70;
       AbstractClass::GenerateUniqueID(this + 4);
@@ -2035,8 +2035,8 @@ namespace gamemd { int ParticleClass::ProcessCreation() {
       this->q0F4 = 0;
       this->q0F8 = 0;
       this->ParticleSystemClass_field_bool_F9 = 0;
-      *(_DWORD *)this = &ParticleSystemClass::`vftable';
-      this->vtable3 = &ParticleSystemClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
       this->vtable4 = &vt_ParticleSystemClass;
       this->vtable4 = &off_7EFB70;
       (*(void (**)(void))(v3 + 12))();

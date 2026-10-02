@@ -1247,7 +1247,7 @@ int SHP_DrawBuildingTiles(int * a1, int a2, char a3)
 }
 // 0x4A5EB0
 namespace gamemd {
-void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass aP3)
+void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass)
 {
   unsigned int *v9; // edi
   Char *v10; // ebx
@@ -2137,7 +2137,7 @@ unsigned char * sub_4AA380(unsigned char * a1)
     if ( v2 >= 0 ) /*0x4aa3b3*/
       break; /*0x4aa3b3*/
   LABEL_12:
-    if ( (int)++v1 >= (int)&DisplayClass::TacticalClass `RTTI Type Descriptor' ) /*0x4aa41d*/
+    if ( (int)++v1 >= (int)0 ) /*0x4aa41d*/
       return *(unsigned char **)&v6[1]; /*0x4aa42a*/
   }
   while ( 1 )

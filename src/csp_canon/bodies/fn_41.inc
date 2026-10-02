@@ -2047,9 +2047,9 @@ namespace ra2 { namespace game { void* AbstractClass::Create() {
       int v2;
 
       AbstractClass::Constructor(this);
-      this->__pad_0[0] = (int)&AirstrikeClass::`vftable';
-      this->__pad_0[1] = (int)&AirstrikeClass::`vftable';
-      this->__pad_0[2] = (int)&AirstrikeClass::`vftable';
+      this->__pad_0[0] = (int)0;
+      this->__pad_0[1] = (int)0;
+      this->__pad_0[2] = (int)0;
       this->__pad_0[3] = (int)&vt_AirstrikeClass;
       if ( DataGlobal_889FC8 < DataGlobal_889FC0
         || (DataGlobal_889FC5 || !DataGlobal_889FC0)

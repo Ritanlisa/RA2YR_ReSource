@@ -1829,7 +1829,7 @@ namespace gamemd { int INIClass::SaveToPipe(int a1) {
       v4[2] = 0;
       v5 = 0;
       v4[3] = a2;
-      v4[0] = &FilePipe::`vftable';
+      v4[0] = 0;
       v2 = INIClass::WriteToString(this, (int)v4);
       FilePipe::Destructor(v4);
       return v2;
@@ -1920,7 +1920,7 @@ namespace gamemd { int INIClass::ReadBase64Data(void* a1, int a2, int a3) {
       aP1.nextArrayIndex = 0;
       *(_DWORD *)aP1[0] = &vt_BufferStraw;
       memset(&aP1.NeedsSaveOrLink, 0, 16);
-      aP1.referenceCount = (int)&Base64Straw::`vftable';
+      aP1.referenceCount = (int)0;
       Delegate::Set(&aP1.referenceCount, &aP1);
       v5 = (INIClass *)1;
       v6 = BitmapClass::ProcessFrame((Base64Straw *)&aP1.referenceCount, &aP1[56], 70);
@@ -2588,7 +2588,7 @@ namespace gamemd { void* INIClass::sectionExists() {
       if ( v6 )
         *(_DWORD *)(v6 + 8) = v2;
       this->q008 = v2;
-      *this = &List<INIClass::INIEntry *>::`vftable';
+      *this = 0;
       return result;
 }
 } }
@@ -2666,7 +2666,7 @@ HWND BINK::Background_Setup()
 }
 
 // ==== BACKFILL 0x0052D430  ReadModConfigINI  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-INT_PTR ReadModConfigINI(HWND hDlg, UINT a2, WPARAM a3, int * a4)
+INT_PTR ReadModConfigINI(HWND hDlg, UINT, WPARAM, int * a4)
 {
 {
     HWND v5;

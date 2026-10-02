@@ -11,7 +11,7 @@
 
 // 0x691000
 namespace gamemd {
-unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2 a2)
+unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 {
 
   *(unsigned int *)Block->__pad_0 = &vt_ScoreAnimClass; /*0x691009*/
@@ -23,7 +23,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2 a2)
 } // namespace gamemd
 // 0x691020
 namespace gamemd {
-unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2 a2)
+unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
 {
 
   Block->m_0 = (int)&vt_ScoreAnimClass; /*0x691029*/
@@ -35,7 +35,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2 a2)
 } // namespace gamemd
 // 0x6910A0
 namespace gamemd {
-unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2 a2)
+unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
 {
 
   void *v3; // eax

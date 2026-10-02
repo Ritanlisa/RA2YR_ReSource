@@ -57,7 +57,7 @@ public:
     bool              BuildingLightClass_field_D8;         // +0xD8  (byte+216)
     int32_t           BehaviourMode;      // +0xDC  (this+55)
     uint32_t          BuildingLightClass_field_E0;         // +0xE0  (this+56)
-    ObjectClass*      FollowingObject;    // +0xE4  (this+57, ctor arg a2)
+    ObjectClass*      FollowingObject;    // +0xE4  (this+57, ctor arg)
 
 protected:
     BuildingLightClass() noexcept = default;

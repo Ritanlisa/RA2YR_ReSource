@@ -2471,7 +2471,7 @@ unsigned int * MultiplayerTeamVector::Destruct(char a2) {
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x5d8863*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<MultiplayerTeam *>::`vftable'; /*0x5d8866*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x5d8866*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5d8870*/
     {
       RA2_OPDEL(v3); /*0x5d8878*/
@@ -2491,7 +2491,7 @@ unsigned int * MultiplayerModeVector::Destruct(char a2) {
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x5d88b3*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d88b6*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x5d88b6*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5d88c0*/
     {
       RA2_OPDEL(v3); /*0x5d88c8*/
@@ -2511,7 +2511,7 @@ unsigned int * MultiplayerModeVector2::Destruct(char a2) {
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x5d8903*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d8906*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x5d8906*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5d8910*/
     {
       RA2_OPDEL(v3); /*0x5d8918*/
@@ -2556,7 +2556,7 @@ void ** MultiplayerTeam_Destru::QueryInterface(char a2) {
 
 // 0x5DDBD0
 namespace gamemd {
-int NetworkSettings::DlgProc(HWND hWnd, UINT a2, DeleteAndZero a3) {
+int NetworkSettings::DlgProc(HWND hWnd, UINT, DeleteAndZero) {
     int result; // eax
     unsigned int v4; // ebx
     int v5; // esi
@@ -5499,7 +5499,7 @@ int WOLGameList::PopulateLobbyLists(int a2, int ***a3, int a4, int a5, int a6) {
                 FillPersonaInfoWOL(*(int *)&v51[16], v48, (char **)&dword_B73E40, 0); /*0x7a3a72*/
             }
           }
-          *(unsigned int *)&v51[12] = &rc_ptr<PlayerProfile>::`vftable'; /*0x7a3a7b*/
+          *(unsigned int *)&v51[12] = 0; /*0x7a3a7b*/
           ComPtr::Release((ComPtr *)&v51[12]); /*0x7a3a83*/
         }
         *(unsigned int *)&v51[8] = *(unsigned int *)(*(unsigned int *)&v51[8] + 60); /*0x7a3a93*/

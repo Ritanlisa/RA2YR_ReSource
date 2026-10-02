@@ -9884,7 +9884,7 @@ void ArcTan::Update()
   dbl_B1D180 = Math::ArcTan((double)dword_B1D1C8 * 0.00390625); /*0x7492c7*/
 }
 // 0x4753f0
-void ArmorType::FindIndex( CCINIClass * aP1, uint8_t * a2, Armor a3)
+void ArmorType::FindIndex( CCINIClass * aP1, uint8_t * a2, Armor)
 {
   ArmorType Destination[16]; // [esp+0h] [ebp-80h] BYREF
 
@@ -13860,7 +13860,7 @@ void Chat::RefreshMessagePositions()
   return v2; /*0x5d43f0*/
 }
 // 0x79db50
-void ChatDialog::DlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND a4)
+void ChatDialog::DlgProc(HWND hWnd, UINT, WPARAM, HWND a4)
 {
   int result; // eax
   HWND DlgItem; // ebx

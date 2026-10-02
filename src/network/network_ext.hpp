@@ -442,7 +442,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~NetworkID() = default;
 
-    virtual __int16 Assign(_DWORD *a2, int a3, __int16 a4);
+    virtual __int16 Assign(_DWORD *a2, int a3, __int16);
     virtual int Compare(int a2);
 
     uint8_t NetworkID_field_0x04[4];

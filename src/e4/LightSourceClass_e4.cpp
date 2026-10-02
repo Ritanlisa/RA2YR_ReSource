@@ -171,7 +171,7 @@ int LightSourceClass::StubReturn54()
 } // namespace gamemd
 // 0x555150
 namespace gamemd {
-LightSourceClass * LightSourceClass::CopyTo(char a2 a2)
+LightSourceClass * LightSourceClass::CopyTo(char a2)
 {
 
   int v3; // eax

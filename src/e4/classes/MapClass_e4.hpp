@@ -582,7 +582,7 @@ struct MapClass {
     void InitCellVe_vt03();
     void allocateCellArrays();
     void checkCellBounds();
-    void* ApplyTerrainDamage(IUnknown *a1, IUnknown aP1);
+    void* ApplyTerrainDamage(IUnknown *a1, IUnknown);
     void* Destruct(void *a1, void *a2);
     void*  InitTileData(MouseClass * aP0, int aP3);
     int RevealArea2(int *a1, int a2, int a3, int a4);  // 0x567da0

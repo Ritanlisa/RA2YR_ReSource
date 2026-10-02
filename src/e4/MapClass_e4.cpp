@@ -2306,7 +2306,7 @@ int MapClass::TransitionCliff(MouseClass * aP0)
 } // namespace gamemd
 // 0x574C20
 namespace gamemd {
-void* MapClass::ApplyTerrainDamage(IUnknown *a1, IUnknown aP1)
+void* MapClass::ApplyTerrainDamage(IUnknown *a1, IUnknown)
 {
 
   CellClass *v2; // ebp

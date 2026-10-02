@@ -3393,7 +3393,7 @@ bool sub_60A100(int a1, HWND a2)
 }
 // 0x60A180
 namespace gamemd {
-void EnumFunc(HWND hWnd, LPARAM a2)
+void EnumFunc(HWND hWnd, LPARAM)
 {
   HWND v2; // esi
   HWND Parent; // edi
@@ -3430,7 +3430,7 @@ void EnumFunc(HWND hWnd, LPARAM a2)
 }
 // 0x60A250
 namespace gamemd {
-void sub_60A250(HWND hWnd, LPARAM a2)
+void sub_60A250(HWND hWnd, LPARAM)
 {
   HWND v2; // esi
   HWND Parent; // edi
@@ -3763,7 +3763,7 @@ int SkirmishDialog::ResizeDialogAndEnum(void *a1, void *a2)
 }  // G42.18c ns repair
 // 0x60F4B0
 namespace gamemd {
-AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
+AbstractClass * * InitializeDialogControls(HWND a1, LPARAM)
 {
   LPARAM v2; // edi
   unsigned int *v4; // eax
@@ -4164,7 +4164,7 @@ wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void
 
 // 0x60AA60
 namespace gamemd {
-bool sub_60AA60(HWND hWnd, LPARAM a2)
+bool sub_60AA60(HWND hWnd, LPARAM)
 {
   HWND Parent; // eax
 

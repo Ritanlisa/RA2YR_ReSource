@@ -3,7 +3,7 @@
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
 // ==== BACKFILL 0x00500200  BuildingPlacement::FindPosition  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknown a3)
+unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknown)
 {
 {
     int *v3;

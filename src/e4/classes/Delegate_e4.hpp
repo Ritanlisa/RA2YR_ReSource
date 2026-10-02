@@ -33,7 +33,7 @@ struct Delegate {
     unsigned int Delegate_field_08;
     unsigned char Pipe_field_0x04;  // 0x4
 // --- flat members (END) ---
-    GenericNode * Constructor_GenericNode(char a2 a2);
+    GenericNode * Constructor_GenericNode(char a2);
     int * ClearVectorAndStraw(char a2);
     int * DestroyPipe(char a2);
     int * DestroyStraw(char a2);

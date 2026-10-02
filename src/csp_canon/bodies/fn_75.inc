@@ -1315,9 +1315,9 @@ namespace ra2 { namespace game { int AbstractClass::ProcessInit() {
       void *v6;
       int v8;
 
-      *(_DWORD *)this = &WarheadTypeClass::`vftable';
-      this->vtable3 = &WarheadTypeClass::`vftable';
-      this->vtable4 = &WarheadTypeClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
+      this->vtable4 = 0;
       this->vtable4 = &vt_WarheadTypeClass;
       AbstractClass::AnnounceExpiredPointer((void **)this, 1);
       v8 = this;

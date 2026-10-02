@@ -229,9 +229,9 @@ int NullModemClass::ddtor(int a2, int a3, int a4)
 namespace ra2 { namespace game { void* ObjectClass::Init(int a1) {
 {
       AbstractClass::InitVtables(this, (int)aP1);
-      *this = &ObjectClass::`vftable';
-      *(this + 1) = &ObjectClass::`vftable';
-      *(this + 2) = &ObjectClass::`vftable';
+      *this = 0;
+      *(this + 1) = 0;
+      *(this + 2) = 0;
       *(this + 3) = &vt_ObjectClass;
       return this;
 }
@@ -1939,7 +1939,7 @@ namespace gamemd { int OverlayClass::WriteINI() {
       v21[2] = 0;
       Buffer::Init(v22, v6, v5);
       v22[3] = 0;
-      v21[0] = (int)&BufferPipe::`vftable';
+      v21[0] = (int)0;
       LCWPipe::Constructor(v26, 0, 0x2000);
       Pipe::SetDelegate(v26, (int)v21);
       do
@@ -1969,10 +1969,10 @@ namespace gamemd { int OverlayClass::WriteINI() {
       v14 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)DSurface_Alternate + 92))(DSurface_Alternate, 0, 0);
       v23[1] = 0;
       v23[2] = 0;
-      v23[0] = (int)&Pipe::`vftable';
+      v23[0] = (int)0;
       Buffer::Init(v24, v14, v13);
       v24[3] = 0;
-      v23[0] = (int)&BufferPipe::`vftable';
+      v23[0] = (int)0;
       LCWPipe::Constructor(v25, 0, 0x2000);
       Pipe::SetDelegate(v25, (int)v23);
       do

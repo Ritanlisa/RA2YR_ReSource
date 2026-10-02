@@ -13,7 +13,7 @@
 
 // 0x6C6880
 namespace gamemd {
-StaticButtonClass * StaticButtonClass::QueryInterface(char a2 a2)
+StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 {
 
   void *v3; // eax

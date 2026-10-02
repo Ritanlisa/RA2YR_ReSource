@@ -1139,7 +1139,7 @@ return 0;
 }
 
 // ==== BACKFILL 0x006BB2E0  WriteRegistryKeyCOM  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-char WriteRegistryKeyCOM(LPCSTR lpString2, LPCSTR a2, LPCSTR lpString)
+char WriteRegistryKeyCOM(LPCSTR lpString2, LPCSTR, LPCSTR lpString)
 {
 {
     char v4;

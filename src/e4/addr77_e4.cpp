@@ -70,7 +70,7 @@
 
 // 0x770E70
 namespace gamemd {
-void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass aP3)
+void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass)
 {
 
   unsigned int v5;
@@ -4309,7 +4309,7 @@ int sub_775670()
 
 // 0x775B40
 namespace gamemd {
-INT_PTR sub_775B40(HWND a1, UINT a2, WPARAM a3, LPARAM a4)
+INT_PTR sub_775B40(HWND a1, UINT, WPARAM, LPARAM)
 {
   return 0; /*0x775b42*/
 }
@@ -4480,7 +4480,7 @@ unsigned int E4Recv_7767F0::sub_7767F0()
 
 // 0x7768F0
 namespace gamemd {
-bool sub_7768F0(HWND hWnd, LPARAM a2)
+bool sub_7768F0(HWND hWnd, LPARAM)
 {
   int v3; // ebp
   LRESULT i; // esi

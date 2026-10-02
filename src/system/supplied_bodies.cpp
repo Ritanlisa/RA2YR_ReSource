@@ -38,7 +38,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2, int a4, int a5, int a3)
     this->headNode[1] = 0; /*0x478231*/
     IDA_LOBYTE(this->headNode[2]) = 1; /*0x478234*/
     IDA_BYTE1(this->headNode[2]) = 0; /*0x478238*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<RGBClass>::`vftable'; /*0x47823b*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x47823b*/
     if ( this == (INIClass *)a2 ) /*0x478241*/
       return this->__pad_0; /*0x478241*/
     FilePipe_38::ddtor((int)this); /*0x478247*/
@@ -157,7 +157,7 @@ unsigned int * INIClass::sectionExists() {
     if ( v6 ) /*0x52afad*/
       *(unsigned int *)(v6 + 8) = (unsigned int)(sectionHead); /*0x52afaf*/
     this->headNode[1] = (int)sectionHead; /*0x52afb2*/
-    *(unsigned int *)this->__pad_0 = &List<INIClass::INIEntry *>::`vftable'; /*0x52afb7*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x52afb7*/
     return result; /*0x52afb5*/
 }
 } // namespace gamemd
@@ -322,7 +322,7 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
     this->headNode[1] = 0; /*0x477f50*/
     IDA_LOBYTE(this->headNode[2]) = 1; /*0x477f53*/
     IDA_BYTE1(this->headNode[2]) = 0; /*0x477f57*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x477f5a*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x477f5a*/
     if ( this == (INIClass *)a2 ) /*0x477f60*/
       return this->__pad_0; /*0x477f60*/
     TypeList_TechnoType::ddtor((_VectorClass_PAVTechnoTypeClass *)this); /*0x477f62*/
@@ -619,7 +619,7 @@ unsigned int * TacticalClass::DestroyVector(unsigned int *Block, char a2) {
     void *v3; // eax
 
     v3 = (void *)*(Block + 1); /*0x5c0d83*/
-    *Block = &VectorClass<char const *>::`vftable'; /*0x5c0d86*/
+    *Block = 0; /*0x5c0d86*/
     if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c0d90*/
     {
       RA2_OPDEL(v3); /*0x5c0d98*/

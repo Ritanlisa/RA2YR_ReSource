@@ -340,7 +340,7 @@ int FontRenderer::InitContext(int *a2, int a4) {
 
 // 0x4349B0
 namespace gamemd {
-int FontClass::GetPixelData(unsigned __int16 a2, int a4) {
+int FontClass::GetPixelData(unsigned __int16, int a4) {
     unsigned int *FontClass_field_0x04; // ecx
     int v3; // eax
     uint8_t *v4; // eax
@@ -2092,7 +2092,7 @@ int ListClass::Construct(int this, int a2, int a3, int a4, int a5, int a6, int a
     *(unsigned char *)(this + 65) = 0; /*0x55726b*/
     *(unsigned int *)(this + 68) = 0; /*0x55726e*/
     *(unsigned char *)(this + 64) = 1; /*0x557280*/
-    *(unsigned int *)(this + 52) = &DynamicVectorClass<unsigned short const *>::`vftable'; /*0x557284*/
+    *(unsigned int *)(this + 52) = 0; /*0x557284*/
     *(unsigned int *)(this + 72) = 10; /*0x55728b*/
     ShapeButtonClass::Constructor((ShapeButtonClass *)(this + 88), 0, a8, a3 + a5, a4, 0, 0, 0); /*0x557292*/
     ShapeButtonClass::Constructor((ShapeButtonClass *)(this + 184), 0, a9, a3 + a5, a4 + a6, 0, 0, 0); /*0x5572af*/
@@ -2152,7 +2152,7 @@ int ListClass::Destruct() {
     ShapeButtonClass::Destructor((int)this + 184); /*0x557663*/
     ShapeButtonClass::Destructor((int)this + 88); /*0x55766b*/
     v4 = (void *)*((unsigned int *)this + 14); /*0x557670*/
-    *((unsigned int *)this + 13) = &VectorClass<unsigned short const *>::`vftable'; /*0x557673*/
+    *((unsigned int *)this + 13) = 0; /*0x557673*/
     if ( v4 && *((unsigned char *)this + 65) ) /*0x55767e*/
     {
       RA2_OPDEL(v4); /*0x557684*/
@@ -3087,7 +3087,7 @@ void ToolTipClass::updateString() {
     *((unsigned char *)this + 600) = 0; /*0x724167*/
     *((unsigned int *)this + 151) = 0; /*0x72416d*/
     v5 = (void *)*((unsigned int *)this + 142); /*0x724173*/
-    *((unsigned int *)this + 141) = &VectorClass<ToolTip const *>::`vftable'; /*0x72417b*/
+    *((unsigned int *)this + 141) = 0; /*0x72417b*/
     if ( v5 && *((unsigned char *)this + 577) ) /*0x724183*/
     {
       RA2_OPDEL(v5); /*0x724189*/
@@ -3326,7 +3326,7 @@ void ** Campaign_WorldDominationTour::QueryInterface(char a2) {
     *this = (Campaign_WorldDominationTour)0; /*0x765606*/
     DeleteAndZero((ObjectClass *)(this + 18)); /*0x76560c*/
     v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 7); /*0x765611*/
-    *((unsigned int *)this + 6) = &VectorClass<rc_ptr<WorldDominationTour::Conflict>>::`vftable'; /*0x765614*/
+    *((unsigned int *)this + 6) = 0; /*0x765614*/
     if ( v3 && *((unsigned char *)this + 37) ) /*0x76561f*/
     {
       (**v3)(v3, 3); /*0x76562e*/
@@ -3334,9 +3334,9 @@ void ** Campaign_WorldDominationTour::QueryInterface(char a2) {
     }
     *((unsigned char *)this + 37) = 0; /*0x76563a*/
     *((unsigned int *)this + 8) = 0; /*0x76563e*/
-    *((unsigned int *)this + 4) = &rc_ptr<WorldDominationTour::History>::`vftable'; /*0x765645*/
+    *((unsigned int *)this + 4) = 0; /*0x765645*/
     ComPtr::Release((ComPtr *)(this + 4)); /*0x76564b*/
-    *((unsigned int *)this + 2) = &rc_ptr<WorldDominationTour::CampaignProperties>::`vftable'; /*0x765653*/
+    *((unsigned int *)this + 2) = 0; /*0x765653*/
     ComPtr::Release((ComPtr *)(this + 2)); /*0x765659*/
     ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x765660*/
     if ( (a2 & 1) != 0 ) /*0x76566a*/

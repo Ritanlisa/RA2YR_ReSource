@@ -17,7 +17,7 @@ struct StaticButtonClass {
     unsigned int *__pad_0;
     unsigned int q00C6;
 // --- flat members (END) ---
-    StaticButtonClass * QueryInterface(char a2 a2);
+    StaticButtonClass * QueryInterface(char a2);
 };
 
 } // namespace gamemd

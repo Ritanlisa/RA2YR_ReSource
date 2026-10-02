@@ -71,7 +71,7 @@ void _VectorClass_PAUControlNode::CaptureManagerClass__vt_06_(int a2)
 }
 // 0x4770E0
 namespace gamemd {
-VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned char *** edx0, INIClass * a3, unsigned char * a2, VectorClass a5, int a6, int a7, int a8, void * a4)
+VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned char *** edx0, INIClass * a3, unsigned char * a2, VectorClass, int a6, int a7, int a8, void * a4)
 {
   char *i; // esi
   char v13; // bl

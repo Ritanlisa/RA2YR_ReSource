@@ -51,7 +51,7 @@ namespace gamemd { void* RadarClass::Construct() {
       this->q1254 = 0;
       this->q1258 = 0;
       VectorClass::PointConstructor(0, 0);
-      *(this + 1175) = &DynamicVectorClass<Point2D>::`vftable';
+      *(this + 1175) = 0;
       this->q1270 = 10;
       this->q126C = 0;
       this->q1274 = 0;
@@ -60,7 +60,7 @@ namespace gamemd { void* RadarClass::Construct() {
       do
       {
         VectorClass::PointConstructor(0, 0);
-        *v4 = &DynamicVectorClass<Point2D>::`vftable';
+        *v4 = 0;
         v4[5] = 10;
         v4[4] = 0;
         v4 += 6;

@@ -53,7 +53,7 @@ struct WinModemClass {
 // --- flat members (END) ---
     AbstractClass * * Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8);
     WinModemClass * * LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4);
-    WinModemClass * QueryInterface(char a2 a2);
+    WinModemClass * QueryInterface(char a2);
     int HangUp(int a2);
     int LogCommErrors(int aP1, char a3, int a4, int a5);
     int ReadBytes(unsigned char *a2, int a3, int aP2, int a4, int aP4, int a6, int a7, int a8, int aP1, int a5);

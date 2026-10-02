@@ -2144,9 +2144,9 @@ namespace ra2 { namespace game { int MissionClass::Construct(int a1, int a2, int
       this->inOpenToppedTransport = 0;
       this->isSelected = 0;
       this->hasParachute = 0;
-      *(_DWORD *)this = &TeamClass::`vftable';
-      this->vtable3 = &TeamClass::`vftable';
-      this->vtable4 = &TeamClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
+      this->vtable4 = 0;
       this->vtable4 = &vt_TeamClass;
       if ( *(int *)&stru_89E138[90048] < *(int *)&stru_89E138[90040]
         || (stru_89E138[90045] || !*(_DWORD *)&stru_89E138[90040])

@@ -279,7 +279,7 @@ namespace gamemd { void* TabClass::initTabData() {
       this->q53A8 = 0;
       this->q5514 = 0;
       this->q5515 = 0;
-      *(_DWORD *)this = &SidebarClass::`vftable';
+      *(_DWORD *)this = 0;
       v4 = this + 5444;
       v5 = 4;
       do

@@ -942,7 +942,7 @@ char NetworkLobby::ValidateSerialNumber()
 }
 
 // ==== BACKFILL 0x005DE360  SendNetworkLobbyChatMessage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-char SendNetworkLobbyChatMessage(HWND hWnd, LPARAM a2, int a3)
+char SendNetworkLobbyChatMessage(HWND hWnd, LPARAM, int a3)
 {
 {
     HWND DlgItem;

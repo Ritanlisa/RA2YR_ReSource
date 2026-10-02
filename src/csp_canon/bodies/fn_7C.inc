@@ -2568,8 +2568,8 @@ return _nh_malloc(Size, 1);
 unsigned long long _allmul(long long a1, long long a2)
 {
 if ((unsigned int)(a1 >> 32) | (unsigned int)(a2 >> 32))
-    return (unsigned long long)(a1 * a2);
-return (unsigned int)a2 * (unsigned long long)(unsigned int)a1;
+    return (unsigned long)(a1 * a2);
+return (unsigned int)a2 * (unsigned long)(unsigned int)a1;
 }
 
 // ==== BACKFILL 0x007C8EF4  _sprintf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====

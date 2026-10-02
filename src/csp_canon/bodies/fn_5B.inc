@@ -326,10 +326,10 @@ namespace ra2 { namespace game { int RadioClass::Constructor() {
       v2 = g_CurrentFrame;
       this->q0D0 = 0;
       this->missionTimer = v2;
-      *(_DWORD *)this = &MissionClass::`vftable';
-      this->vtable3 = &MissionClass::`vftable';
-      this->vtable4 = &MissionClass::`vftable';
-      this->vtable4 = &MissionClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
+      this->vtable4 = 0;
+      this->vtable4 = 0;
       return this;
 }
 } } }
@@ -925,7 +925,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
     char *v4;
     unsigned int v5;
     HWND v6;
-    int (__usercall *v7)@<eax>(char@<cf>, char@<zf>);
+    int (__usercall *v7)(char, char);
     HWND v8;
     int v9;
     wchar_t *Format;
@@ -967,7 +967,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
     if ( v5 >= 8 )
     v7 = Math::InitDegToRad;
     else
-    v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))DataGlobal_8316A8[v5];
+    v7 = (int (__usercall *)(char, char))DataGlobal_8316A8[v5];
     swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam);
     return (HWND)DrawDialogText((LPARAM)v7, Buffer, v6);
           }
@@ -1050,7 +1050,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
     char *v3;
     unsigned int v4;
     HWND DlgItem;
-    int (__usercall *v6)@<eax>(char@<cf>, char@<zf>);
+    int (__usercall *v6)(char, char);
     wchar_t *Format;
     int v8[62];
     short v9;
@@ -1074,7 +1074,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
     if ( v4 >= 8 )
     v6 = Math::InitDegToRad;
     else
-    v6 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))DataGlobal_8316A8[v4];
+    v6 = (int (__usercall *)(char, char))DataGlobal_8316A8[v4];
     swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source);
     DrawDialogText((LPARAM)v6, Buffer, DlgItem);
     }
@@ -1091,7 +1091,7 @@ HWND E4Recv_5B9250::sub_5B9250()
     char *v4;
     unsigned int v5;
     HWND v6;
-    int (__usercall *v7)@<eax>(char@<cf>, char@<zf>);
+    int (__usercall *v7)(char, char);
     HWND v8;
     int v9;
     wchar_t *Format;
@@ -1134,7 +1134,7 @@ HWND E4Recv_5B9250::sub_5B9250()
     if ( v5 >= 8 )
     v7 = Math::InitDegToRad;
     else
-    v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))DataGlobal_8316A8[v5];
+    v7 = (int (__usercall *)(char, char))DataGlobal_8316A8[v5];
     swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam);
     return (HWND)DrawDialogText((LPARAM)v7, Buffer, v6);
           }
@@ -1230,7 +1230,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     char *v3;
     unsigned int v4;
     HWND DlgItem;
-    int (__usercall *v6)@<eax>(char@<cf>, char@<zf>);
+    int (__usercall *v6)(char, char);
     wchar_t *Format;
     int v8[62];
     short v9;
@@ -1254,7 +1254,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     if ( v4 >= 8 )
     v6 = Math::InitDegToRad;
     else
-    v6 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))DataGlobal_8316A8[v4];
+    v6 = (int (__usercall *)(char, char))DataGlobal_8316A8[v4];
     swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source);
     DrawDialogText((LPARAM)v6, Buffer, DlgItem);
     }
@@ -1267,7 +1267,7 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
 {
 {
     HWND DlgItem;
-    int (__usercall *v5)@<eax>(char@<cf>, char@<zf>);
+    int (__usercall *v5)(char, char);
     wchar_t Buffer[256];
     if ( a4 )
   {
@@ -1277,7 +1277,7 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
     if ( a3 >= 8 )
     v5 = Math::InitDegToRad;
     else
-    v5 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))DataGlobal_8316A8[a3];
+    v5 = (int (__usercall *)(char, char))DataGlobal_8316A8[a3];
     swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4);
     DrawDialogText((LPARAM)v5, Buffer, DlgItem);
     }
@@ -1297,7 +1297,7 @@ unsigned int * NetworkGameSetup::DeleteComPtr(char a2)
 }
 
 // ==== BACKFILL 0x005BB580  Network_Find  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-HKEY sub_5BB580(HKEY a1, const CHAR * a2, const char * a3)
+HKEY sub_5BB580(HKEY, const CHAR * a2, const char * a3)
 {
 {
     HKEY v3;
@@ -1655,8 +1655,8 @@ namespace gamemd { void* MouseClass::drawCursor(int a1) {
 {
       UI_Init((int)this, a2);
       *(this + 5446) = &vt_INoticeSink;
-      *this = &TabClass::`vftable';
-      *(this + 5446) = &TabClass::`vftable';
+      *this = 0;
+      *(this + 5446) = 0;
       return this;
 }
 } }

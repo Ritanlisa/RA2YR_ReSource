@@ -86,7 +86,7 @@ struct IPXInterfaceClass {
     int initSocket(int aP1, int aP2);
     int AddRef(void *a1);
     AnimClass * * Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3);
-    DynamicVector * closeSession(char a2 a2);
+    DynamicVector * closeSession(char a2);
     IPXInterfaceClass * QueryInterface(char a2, int a1, int a3, int a4, int aP1);
     char ReceivePacket(char * name, AnimClass * aP1);
     int COMStub_Ret1139(int a1);

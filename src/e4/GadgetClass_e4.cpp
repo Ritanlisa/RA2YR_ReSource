@@ -115,7 +115,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 }
 // 0x60AAB0
 namespace gamemd {
-AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
+AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM)
 {
 
   HWND Parent; // edi

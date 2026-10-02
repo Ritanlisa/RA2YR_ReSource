@@ -131,7 +131,7 @@ BuildingClass::BuildingClass() noexcept
 
 // IDA 0x43b740
 // 0x43b740
-AbstractClass * BuildingClass::Construct(int a2 a2, int a3 a3)
+AbstractClass * BuildingClass::Construct(int a2, int a3)
 {
   int16_t v6; // cx
   int v7; // eax

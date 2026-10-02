@@ -5062,7 +5062,7 @@ int Network::SendSettingsRequest()
 
 // 0x5BB580
 namespace gamemd {
-HKEY sub_5BB580(HKEY a1, const CHAR * a2, const char * a3)
+HKEY sub_5BB580(HKEY, const CHAR * a2, const char * a3)
 {
   HKEY v3; // esi
   DWORD v4; // ebx
@@ -5426,7 +5426,7 @@ int Network::InitPlayerSlots()
 
 // 0x5E8D90
 namespace gamemd {
-void sub_5E8D90(int a1, LPARAM a2)
+void sub_5E8D90(int a1, LPARAM)
 {
   *(&dword_A8DA90 + a1) = a2; /*0x5e8d90*/
 }

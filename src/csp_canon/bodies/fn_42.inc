@@ -238,8 +238,8 @@ namespace gamemd { int AnimClass::SimpleCtor() {
       this->q19C = 1;
       this->q19D = 0;
       this->q19E = 0;
-      *(_DWORD *)this = &AnimClass::`vftable';
-      this->vtable3 = &AnimClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
       this->vtable4 = &vt_AnimClass;
       this->vtable4 = &off_7E3328;
       if ( g_AnimClassCount < DataGlobal_A8E9B0
@@ -471,8 +471,8 @@ namespace gamemd { int AnimClass::SaveLoad_Prefix(int a1, int a2) {
         {
           ObjectClass::Init(aP1, (AbstractClass *)&aP1a);
           __4type_info_AAEAAV0_ABV0__Z(&aP1[1].__pad_0[8], (int)&aP1a);
-          *(_DWORD *)aP1->__pad_0 = &AnimClass::`vftable';
-          *(_DWORD *)&aP1->__pad_0[4] = &AnimClass::`vftable';
+          *(_DWORD *)aP1->__pad_0 = 0;
+          *(_DWORD *)&aP1->__pad_0[4] = 0;
           *(_DWORD *)&aP1->__pad_0[8] = &vt_AnimClass;
           *(_DWORD *)&aP1->__pad_0[12] = &off_7E3328;
         }

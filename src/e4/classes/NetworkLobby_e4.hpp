@@ -64,7 +64,7 @@ struct NetworkLobby {
 // --- flat members (END) ---
     int MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int a6);  // 0x5D4210
     int CreateGame();  // 0x5DC350
-         INT_PTRDlgProc(HWND hDlg, UINT a2, int nIDDlgItem, unsigned int lParam);  // 0x5DE520
+         INT_PTRDlgProc(HWND hDlg, UINT, int nIDDlgItem, unsigned int lParam);  // 0x5DE520
     void SetupPlayers(wchar_t * Source);  // 0x5E8EA0
     int AssignPlayerSlot();  // 0x5E9240
     int InitLobbyDropdowns(SessionClass * hDlg);  // 0x5E9E00

@@ -58,7 +58,7 @@ struct FlyLocomotionClass {
     bool FlyLocomotionClass_field_bool_5F;  // 0x5F
     unsigned int LocomotionClass;
 // --- flat members (END) ---
-    FlyLocomotionClass * ProcessMove(char a2 a2);
+    FlyLocomotionClass * ProcessMove(char a2);
     int BeginMove(int * a1, int * a2);
     int StubReturn96();
     int ddtor(int a1, unsigned int * a2);

@@ -799,7 +799,7 @@ int IPXInterfaceClass::initSession(unsigned int * a2)
 } // namespace gamemd
 // 0x7B2B50
 namespace gamemd {
-DynamicVector * IPXInterfaceClass::closeSession(char a2 a2)
+DynamicVector * IPXInterfaceClass::closeSession(char a2)
 {
 
   void *v3; // eax

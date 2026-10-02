@@ -5585,7 +5585,7 @@ void sub_6BB2A0()
 
 // 0x6BB2E0
 namespace gamemd {
-char WriteRegistryKeyCOM(LPCSTR lpString2, LPCSTR a2, LPCSTR lpString)
+char WriteRegistryKeyCOM(LPCSTR lpString2, LPCSTR, LPCSTR lpString)
 {
   char v4; // bl
   int result; // eax

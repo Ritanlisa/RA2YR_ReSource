@@ -765,7 +765,7 @@ namespace gamemd { int INIClass::LookupEnum(void* a1, void* a2, int a3) {
     if ( (int)v5 >= (int)&DataGlobal_81BA88 )
     return 0;
   }
-    return `typeinfo for'x1[2 * v4];
+    return 0[2 * v4];
 }
 } }
 
@@ -1029,7 +1029,7 @@ namespace gamemd { void* CounterClass::Construct() {
       this->Capacity = 0;
       this->vtable4 = 1;
       this->q00D = 0;
-      *this = &CounterClass::`vftable';
+      *this = 0;
       this->Count = 0;
       return this;
 }
@@ -1082,7 +1082,7 @@ namespace gamemd { int CounterClass::Load(int a1) {
         this->Capacity = 0;
         this->vtable4 = 1;
         this->q00D = 0;
-        *this = &CounterClass::`vftable';
+        *this = 0;
         this->Count = 0;
       }
       v3 = aP1;
@@ -1608,7 +1608,7 @@ namespace gamemd { int HouseClass::Constructor(int a1) {
       this->q154 = 10;
       this->q150 = 0;
       StartingTechnoVector::Construct((_DWORD *)(this + 364), 0, 0);
-      this->q16C = &DynamicVectorClass<HouseClass::StartingTechnoStruct *>::`vftable';
+      this->q16C = 0;
       this->q180 = 10;
       this->q17C = 0;
       SuperClassVector::Construct((_DWORD *)(this + 596), 0, 0);
@@ -1630,11 +1630,11 @@ namespace gamemd { int HouseClass::Constructor(int a1) {
       CounterClass::Construct((_DWORD *)(this + 21960));
       CounterClass::Construct((_DWORD *)(this + 21980));
       AngerVector::Construct((_DWORD *)(this + 22020), 0, 0);
-      this->angerNodes = &DynamicVectorClass<AngerStruct>::`vftable';
+      this->angerNodes = 0;
       this->scoutNodesCapacity = 10;
       this->scoutNodesCount = 0;
       ScoutVector::Construct((_DWORD *)(this + 22044), 0, 0);
-      this->unkTimer3 = &DynamicVectorClass<ScoutStruct>::`vftable';
+      this->unkTimer3 = 0;
       this->q5630 = 10;
       this->q562C = 0;
       v3 = (_DWORD *)(this + 22128);
@@ -1654,13 +1654,13 @@ namespace gamemd { int HouseClass::Constructor(int a1) {
       this->waypointPathCount = &vt_DynamicVectorClass_IConnectionPoint;
       this->unused16088 = 10;
       this->unknown16084 = 0;
-      *(_DWORD *)this = &HouseClass::`vftable';
-      this->vtable3 = &HouseClass::`vftable';
-      this->vtable4 = &HouseClass::`vftable';
-      this->vtable4 = &HouseClass::`vftable';
-      this->vtable5 = &HouseClass::`vftable';
-      this->vtable6 = &HouseClass::`vftable';
-      this->vtable7 = &HouseClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
+      this->vtable4 = 0;
+      this->vtable4 = 0;
+      this->vtable5 = 0;
+      this->vtable6 = 0;
+      this->vtable7 = 0;
       return this;
 }
 } }
@@ -1791,13 +1791,13 @@ namespace gamemd { int HouseClass::Destruct() {
       int v39;
       int v40;
 
-      *(_DWORD *)this = &HouseClass::`vftable';
-      this->vtable3 = &HouseClass::`vftable';
-      this->vtable4 = &HouseClass::`vftable';
-      this->vtable4 = &HouseClass::`vftable';
-      this->vtable5 = &HouseClass::`vftable';
-      this->vtable6 = &HouseClass::`vftable';
-      this->vtable7 = &HouseClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
+      this->vtable4 = 0;
+      this->vtable4 = 0;
+      this->vtable5 = 0;
+      this->vtable6 = 0;
+      this->vtable7 = 0;
       AbstractClass::AnnounceExpiredPointer((void **)this);
       v2 = (_DWORD *)(this + 528);
       this->relatedTagsCapacity = 0;
@@ -1888,7 +1888,7 @@ namespace gamemd { int HouseClass::Destruct() {
       *(_DWORD *)(this + 22304) = &vt_VectorClass_Cell;
       Buffer::Cleanup(this + 22304);
       v18 = *(void **)(this + 22280);
-      this->q5704 = &VectorClass<BaseNodeClass>::`vftable';
+      this->q5704 = 0;
       if ( v18 && this->q5711 )
       {
         __3_YAXPAX_Z(v18);
@@ -3085,8 +3085,8 @@ LABEL_121:
   {
     AISelectTeamHouseClass(v118, (int)this, 0);
     TeamTypeVector::CopyConstruct(&v114, v118);
-    v114 = &TypeList<TeamTypeClass const *>::`vftable';
-    v118[0] = &VectorClass<TeamTypeClass const *>::`vftable';
+    v114 = 0;
+    v118[0] = 0;
     VectorClass::ClearAndFree3((int)v118);
     if ( v117 > 0 )
     {
@@ -3099,7 +3099,7 @@ LABEL_121:
     v44 = Block;
     *((_DWORD *)this + 5607) = v43;
     this->q57A0 = v42;
-    v114 = &VectorClass<TeamTypeClass const *>::`vftable';
+    v114 = 0;
     if ( v44 && v116 )
       __3_YAXPAX_Z(v44);
   }
@@ -4087,9 +4087,9 @@ lea     eax, [esp+5Ch+var_1C]
 lea     ecx, [esp+5Ch+var_38]
 push    eax
 call    TeamTypeVector__CopyConstruct
-mov     ebx, offset ??_7?$VectorClass@PBVTeamTypeClass@@@@6B@ ; const VectorClass<TeamTypeClass const *>::`vftable'
+mov     ebx, offset ??_7?$VectorClass@PBVTeamTypeClass@@@@6B@ ; const 0
 lea     ecx, [esp+5Ch+var_1C]
-mov     [esp+5Ch+var_38], offset ??_7?$TypeList@PBVTeamTypeClass@@@@6B@ ; const TypeList<TeamTypeClass const *>::`vftable'
+mov     [esp+5Ch+var_38], offset ??_7?$TypeList@PBVTeamTypeClass@@@@6B@ ; const 0
 mov     [esp+5Ch+var_1C], ebx
 call    VectorClass__ClearAndFree3
 mov     eax, [esp+5Ch+var_28]
@@ -5437,7 +5437,7 @@ int ObjectTypeClass::loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2,
 }
 
 // ==== BACKFILL 0x00477050  AnimTypeClass::ReadINIString  cls=AnimTypeClass  sig=csp  renamed_refs=0  residual=- ====
-int AnimTypeClass::ReadINIString(INIClass * aP1, unsigned char * a2, Layer a3)
+int AnimTypeClass::ReadINIString(INIClass * aP1, unsigned char * a2, Layer)
 {
 {
     INIClass *v5;

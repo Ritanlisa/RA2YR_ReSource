@@ -1195,8 +1195,8 @@ namespace gamemd { int TerrainClass::CleanupMembers() {
       int v13[2];
 
       v2 = this + 4;
-      *(_DWORD *)this = &TerrainClass::`vftable';
-      this->vtable4 = &TerrainClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable4 = 0;
       this->vtable4 = &vt_TerrainClass;
       this->vtable2 = &off_7F5200;
       AbstractClass::AnnounceExpiredPointer((void **)this, 1);

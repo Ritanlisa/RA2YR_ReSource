@@ -112,7 +112,7 @@ LONG TClassFactory_MechLocomotionClass::AddRef(void *a1)
 } // namespace gamemd
 // 0x6C4D90
 namespace gamemd {
-int TClassFactory_MechLocomotionClass::ddtor(int a2 a2, int a3 a3, unsigned int *a4 a4)
+int TClassFactory_MechLocomotionClass::ddtor(int a2, int a3, unsigned int *a4)
 {
 
   MechLocomotionClass *v5; // eax
@@ -142,7 +142,7 @@ int TClassFactory_MechLocomotionClass::ddtor(int a2 a2, int a3 a3, unsigned int 
 } // namespace gamemd
 // 0x6C4E10
 namespace gamemd {
-int TClassFactory_MechLocomotionClass::GetSize(int a2 a2)
+int TClassFactory_MechLocomotionClass::GetSize(int a2)
 {
 
   int v2; // ecx

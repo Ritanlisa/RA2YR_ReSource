@@ -629,9 +629,9 @@ namespace ra2 { namespace game { int ObjectClass::Initialize() {
       this->q110 = 0;
       this->q13C = 0;
       this->q140 = 0;
-      *(_DWORD *)this = &VoxelAnimClass::`vftable';
-      this->vtable3 = &VoxelAnimClass::`vftable';
-      this->vtable4 = &VoxelAnimClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
+      this->vtable4 = 0;
       this->vtable4 = &vt_VoxelAnimClass;
       AbstractClass::GenerateUniqueID(this + 4);
       AudioController::Init((_DWORD *)(this + 276));

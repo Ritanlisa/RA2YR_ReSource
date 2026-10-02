@@ -131,7 +131,7 @@ void SHA1::Compute(char *a2, int a1)
   return 20; /*0x69db1e*/
 }
 // 0x69db30
-void SHA1::Transform(int *a1 a1, unsigned int *a2 a2)
+void SHA1::Transform(int *a1, unsigned int *a2)
 {
   int *v2; // ecx
   int v3; // esi

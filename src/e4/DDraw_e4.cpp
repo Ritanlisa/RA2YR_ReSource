@@ -240,7 +240,7 @@ int DDraw::HandleSuspend(void *a1)
 } // namespace gamemd
 // 0x4A3DD0
 namespace gamemd {
-void DDraw::LogError(UINT a1, int a2 a2)
+void DDraw::LogError(UINT, int a2)
 {
 
   int result; // eax

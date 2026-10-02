@@ -5110,7 +5110,7 @@ Coord * * sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 }
 // 0x78E230
 namespace gamemd {
-ObjectClass * * sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
+ObjectClass * * sub_78E230(HWND hWnd, UINT, WPARAM, HWND hCtl)
 {
   HWND v5; // eax
   HWND v6; // eax
@@ -5405,7 +5405,7 @@ ObjectClass * * sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 }
 // 0x78E950
 namespace gamemd {
-void WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
+void WOLobbySmallDlgProc(HWND hWnd, UINT, WPARAM, HWND hCtl)
 {
   int v5; // ebx
   HWND v6; // eax

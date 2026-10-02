@@ -383,7 +383,7 @@ unsigned int * ScriptAction::Constructor(int a2) {
     *(unsigned int *)this->__pad_C = 0; /*0x635f2a*/
     IDA_LOBYTE(this->ScriptAction_field_0x10[0]) = 1; /*0x635f2d*/
     IDA_BYTE1(this->ScriptAction_field_0x10[0]) = 0; /*0x635f31*/
-    this->ScriptAction_field_0x4[0] = (int)&DynamicVectorClass<PlanningNodeClass *>::`vftable'; /*0x635f34*/
+    this->ScriptAction_field_0x4[0] = (int)0; /*0x635f34*/
     this->ScriptAction_field_0x18[0] = 10; /*0x635f3b*/
     this->ScriptAction_field_0x14 = 0; /*0x635f42*/
     this->__pad_1C[0] = 0; /*0x635f45*/

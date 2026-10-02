@@ -37,10 +37,10 @@ namespace gamemd {
 
 // CRT/RTTI/FILE compat stubs (blockers #30/#31/#33/#35)
 // IDA pseudo-intrinsics (bit-reinterpretation; value-safe casts)
-#define COERCE_UNSIGNED_INT64(x) ((unsigned long long)(x))
+#define COERCE_UNSIGNED_INT64(x) ((unsigned long)(x))
 #define COERCE_DOUBLE(x) (*(double *)&(x))
 #define COERCE_FLOAT(x) (*(float *)&(x))
-#define COERCE_INT64(x) ((long long)(x))
+#define COERCE_INT64(x) ((long)(x))
 #define COERCE_UNSIGNED_INT(x) ((unsigned int)(x))
 #define COERCE_INT(x) ((int)(x))
 

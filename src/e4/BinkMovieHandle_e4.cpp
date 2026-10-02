@@ -260,7 +260,7 @@ unsigned int * BinkMovieHandle::Close(void *a1, void *a2)
 } // namespace gamemd
 // 0x5C0A30
 namespace gamemd {
-BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2 a2)
+BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
 {
 
   BinkMovie *height; // edi

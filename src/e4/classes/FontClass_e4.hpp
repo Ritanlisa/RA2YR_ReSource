@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct FontClass {
-    int __thiscall RenderGlyph(unsigned __int16 a2, int xLeft, int yTop, int a5);
+    int __thiscall RenderGlyph(unsigned __int16, int xLeft, int yTop, int a5);
 };
 
 } // namespace gamemd

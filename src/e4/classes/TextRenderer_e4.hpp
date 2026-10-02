@@ -30,7 +30,7 @@ struct TextRenderer {
     unsigned int u32_87;
     unsigned int *__pad_4C;
 // --- flat members (END) ---
-    TriggerTypeClass * Destructor(char a2 a2);
+    TriggerTypeClass * Destructor(char a2);
     int MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6);
     static unsigned int * Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8);
     static void * GetInstance(void *a1);

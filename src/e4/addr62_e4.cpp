@@ -634,7 +634,7 @@ int ComputeHashModPrime(int * a1, int * a2, int a3)
 }
 // 0x621040
 namespace gamemd {
-int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
+int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
   int *v10; // esi
   void * v11;
@@ -1075,7 +1075,7 @@ int AddDynamicVector(HWND a1, int * a2)
 }
 // 0x622650
 namespace gamemd {
-void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2, void * a3)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
+void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2, void * a3)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM)
 {
   int v4; // ebp
   int result; // eax
@@ -1479,7 +1479,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
 }
 // 0x623230
 namespace gamemd {
-void* CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong)
+void* CreateMessageBox(LPARAM lParam, LPARAM, LONG dwNewLong)
 {
   HWND v5; // esi
   HWND DlgItem; // eax
@@ -1847,7 +1847,7 @@ AbstractClass * * GetDialogText(HWND hWnd, void ** a2)
 }
 // 0x6241F0
 namespace gamemd {
-void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
+void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM)
 {
   HWND Dialog; // eax
   Dialog *v4; // edi

@@ -3259,7 +3259,7 @@ char InitNetworkGameState()
 
 // 0x5DE360
 namespace gamemd {
-char SendNetworkLobbyChatMessage(HWND hWnd, LPARAM a2, int a3)
+char SendNetworkLobbyChatMessage(HWND hWnd, LPARAM, int a3)
 {
   HWND DlgItem; // eax
   int v5; // ebp

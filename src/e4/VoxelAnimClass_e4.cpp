@@ -72,7 +72,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
       v6 = (unsigned int)&unk_7FFFFF & LODWORD(v13); /*0x4caf75*/
       v7 = (LODWORD(v13) >> 23) - 127; /*0x4caf7e*/
       if ( (v7 & 1) != 0 ) /*0x4caf83*/
-        v6 |= (unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor'; /*0x4caf85*/
+        v6 |= (unsigned int)0; /*0x4caf85*/
       v5 = COERCE_FLOAT(((((int16_t)v7 >> 1) + 127) << 23) + (&dword_8650BC)[v6 >> 10]); /*0x4cafa7*/
     }
     v14 = v5; /*0x4cafab*/
@@ -90,7 +90,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
       v10 = (unsigned int)&unk_7FFFFF & LODWORD(v15); /*0x4cb005*/
       v11 = (LODWORD(v15) >> 23) - 127; /*0x4cb00e*/
       if ( (v11 & 1) != 0 ) /*0x4cb013*/
-        v10 |= (unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor'; /*0x4cb015*/
+        v10 |= (unsigned int)0; /*0x4cb015*/
       v9 = COERCE_FLOAT(((((int16_t)v11 >> 1) + 127) << 23) + (&dword_8650BC)[v10 >> 10]); /*0x4cb037*/
     }
     v16 = v9; /*0x4cb03b*/

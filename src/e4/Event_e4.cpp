@@ -384,7 +384,7 @@ void sub_7C5F3D()
     goto LABEL_8; /*0x7c5fcf*/
   _EAX = 1; /*0x7c5fd1*/
   __asm { cpuid } /*0x7c5fd6*/
-  if ( ((unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor' & _EDX) != 0 ) /*0x7c5fde*/
+  if ( ((unsigned int)0 & _EDX) != 0 ) /*0x7c5fde*/
   {
     byte_84E862 = 1; /*0x7c5fe5*/
     return 1; /*0x7c5fe0*/

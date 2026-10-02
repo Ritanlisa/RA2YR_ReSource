@@ -33,8 +33,8 @@ struct BlitTransLucent25AlphaZReadWrite_ushort {
     RLEBlitTransXlat * Constructor_RLEBlitter(char a2);
     int Blit_RLE_Remap(int arg0, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
     int CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);
-    int CallBlit0_0(int a2 a2, int a3 a3, int a4 a4, int a5 a5, int a6 a6, int a7 a7, int a8 a8, int a9 a9, int a10 a10, int a11 a11, int a12 a12);
-    int CallBlit0_1(int a2 a2, int a3 a3, int a4 a4, int a5 a5, int a6 a6, int a7 a7, int a8 a8, int a9 a9, int a10 a10, int a11 a11, int a12 a12);
+    int CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);
+    int CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);
     std::locale::facet * Constructor_RLEBlitter_0(char a2);
     std::locale::facet * Constructor_RLEBlitter_1(char a2);
     unsigned short * Blit_RLE_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);

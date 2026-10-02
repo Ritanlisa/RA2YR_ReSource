@@ -1333,7 +1333,7 @@ namespace gamemd { void* RadarClass::RenderSpySatellite() {
       this->q11D8 = 0;
       this->q11DC = 0;
       this->q11E0 = 0;
-      *this = &DisplayClass::`vftable';
+      *this = 0;
       DataGlobal_8A072C = 0;
       DataGlobal_8A03FC = 0;
       DataGlobal_8A0418 = 0;

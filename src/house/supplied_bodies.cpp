@@ -548,8 +548,8 @@ void HouseClass::Update_TogglePower(double a2) {
     {
       AISelectTeamHouseClass(v125, (int)v3, 0); /*0x4f8a6a*/
       TeamTypeVector::CopyConstruct(&v121, v125); /*0x4f8a78*/
-      v121 = (TeamTypeVector)&TypeList<TeamTypeClass const *>::`vftable'; /*0x4f8a86*/
-      v125[0] = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x4f8a8e*/
+      v121 = (TeamTypeVector)0; /*0x4f8a86*/
+      v125[0] = 0; /*0x4f8a8e*/
       VectorClass::ClearAndFree3((int)v125); /*0x4f8a92*/
       if ( v124 > 0 ) /*0x4f8a9d*/
       {
@@ -562,7 +562,7 @@ void HouseClass::Update_TogglePower(double a2) {
       v44 = Block; /*0x4f8adf*/
       *(unsigned int *)&v3[33].__pad_EC[16] = v43; /*0x4f8ae3*/
       *(unsigned int *)&v3[33].__pad_EC[20] = v42; /*0x4f8aeb*/
-      v121 = (TeamTypeVector)&VectorClass<TeamTypeClass const *>::`vftable'; /*0x4f8af1*/
+      v121 = (TeamTypeVector)0; /*0x4f8af1*/
       if ( v44 && v123 ) /*0x4f8afd*/
         RA2_OPDEL(v44); /*0x4f8b00*/
     }

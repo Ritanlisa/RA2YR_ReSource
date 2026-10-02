@@ -765,7 +765,7 @@ void ParseINIAnimGadgetDefinition()
 }
 // 0x4F3140
 namespace gamemd {
-ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned int * a2, ObjectClass a4)
+ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned int * a2, ObjectClass)
 {
   int Int; // ebx
   int v8; // ebp

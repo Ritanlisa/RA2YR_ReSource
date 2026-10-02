@@ -693,7 +693,7 @@ struct AircraftClass {
     unsigned int q169;
     unsigned int vtable0;
 // --- flat members (END) ---
-    AircraftClass * CheckActionStatus(char a2 a2);
+    AircraftClass * CheckActionStatus(char a2);
     AircraftTypeClass * GetCursorOverObject(IUnknown * aP1, IUnknown * a3, void *a3_2);
     HRESULT CheckPassengerCount(int a1, int pPStm, int a3);
     char * CheckLandingClearance(int a2, int a3, int a4);

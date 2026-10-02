@@ -15,7 +15,7 @@ struct WOLobby {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
 // --- flat members (END) ---
-    int ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd);
+    int ChatDlgProc(HWND hDlg, UINT, WPARAM, HWND hWnd);
     int SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd);
 };
 

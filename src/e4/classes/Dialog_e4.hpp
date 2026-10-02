@@ -88,13 +88,13 @@ struct Dialog {
     int GetMode3();  // 0x5D5DD0
     void RefreshDialogsGame(void *a1_1);  // 0x5EE350
     int RunModemDialing(int a2, int a3, char a4);  // 0x5F2950
-    AbstractClass * * MapControlToAction(HWND hWnd, LPARAM a2);  // 0x606800
+    AbstractClass * * MapControlToAction(HWND hWnd, LPARAM);  // 0x606800
     int StopBink(void *a1_1);  // 0x607FD0
     AbstractClass * * IdleProcess(void *a1_1, void *a2_1);  // 0x608070
-    int HandleTabKey(HWND hWnd, LPARAM a2);  // 0x60A330
-    AbstractClass * * DispatchEvent(HWND hWnd, LPARAM a2);  // 0x60A5B0
+    int HandleTabKey(HWND hWnd, LPARAM);  // 0x60A330
+    AbstractClass * * DispatchEvent(HWND hWnd, LPARAM);  // 0x60A5B0
     AbstractClass * * InitWindow(int a1, int a2);  // 0x60F760
-    AbstractClass * * InitializeControls(HWND hWnd, LPARAM a2);  // 0x60F9A0
+    AbstractClass * * InitializeControls(HWND hWnd, LPARAM);  // 0x60F9A0
     AbstractClass * * DestroyDialogSystem();  // 0x610360
     AbstractClass * * Resize(void *a1_1, void *a2_1, void *a3_1);  // 0x6213A0
     AbstractClass * * DrawBackground(HWND hWnd);  // 0x621E90
@@ -118,7 +118,7 @@ struct Dialog {
     unsigned int CheckButtonState();  // 0x5F3450
     BOOL IsSpecialTemplate(void *a1_1);  // 0x602AE0
     BOOL EnumAndCleanup();  // 0x60AAA0
-    BOOL SubclassEditControl(HWND hWnd, LPARAM a2);  // 0x60F320
+    BOOL SubclassEditControl(HWND hWnd, LPARAM);  // 0x60F320
     HWND Show();  // 0x622800
     char PumpMessages(void *a1_1);  // 0x623120
     int FindByPtr(void *a1_1);  // 0x7759B0

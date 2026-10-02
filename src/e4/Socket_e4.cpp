@@ -18,7 +18,7 @@
 
 // 0x7B2630
 namespace gamemd {
-int Socket::ConfigureBuffers(SOCKET aP1)
+int Socket::ConfigureBuffers(SOCKET)
 {
     unsigned int v2 = 0;  /* G37 hoist */
 

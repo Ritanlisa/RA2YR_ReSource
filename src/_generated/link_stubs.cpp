@@ -97,9 +97,9 @@ gamemd::XSurface::XSurface(int width, int height) noexcept {}
 // link stub (no binary body yet)
 //NODCL member not in any current header: bool gamemd::RawFileClass::HasHandle() { return {}; }
 // link stub (no binary body yet)
-//NODCL member not in any current header: bool gamemd::RawFileClass::Open(gamemd::FileAccessMode a0) { return {}; }
+//NODCL member not in any current header: bool gamemd::RawFileClass::Open(gamemd::FileAccessMode) { return {}; }
 // link stub (no binary body yet)
-//NODCL member not in any current header: bool gamemd::RawFileClass::OpenEx(const char* a0, gamemd::FileAccessMode a1) { return {}; }
+//NODCL member not in any current header: bool gamemd::RawFileClass::OpenEx(const char* a0, gamemd::FileAccessMode) { return {}; }
 // link stub (no binary body yet)
  bool gamemd::XSurface::CanLock(uint32_t unk1, uint32_t unk2) { return {}; }
 // link stub (no binary body yet)
@@ -129,7 +129,7 @@ gamemd::XSurface::XSurface(int width, int height) noexcept {}
 // link stub (no binary body yet)
 //NODCL member not in any current header: int gamemd::RawFileClass::ReadBytes(void* a0, int a1) { return {}; }
 // link stub (no binary body yet)
-//NODCL member not in any current header: int gamemd::RawFileClass::Seek(int a0, gamemd::FileSeekMode a1) { return {}; }
+//NODCL member not in any current header: int gamemd::RawFileClass::Seek(int a0, gamemd::FileSeekMode) { return {}; }
 // link stub (no binary body yet)
 //NODCL member not in any current header: int gamemd::RawFileClass::WriteBytes(void* a0, int a1) { return {}; }
 // link stub (no binary body yet)
@@ -237,7 +237,7 @@ gamemd::XSurface::XSurface(int width, int height) noexcept {}
 // link stub (no binary body yet)
  void ra2::game::CaptureManagerClass::pointerExpired(AbstractClass* ptr, bool removed) {}
 // link stub (no binary body yet)
-//NODCL member not in any current header: ra2::game::FootClass::Draw_A_SHP(struct ra2::game::SHPStruct* a0, int a1, gamemd::Vector2D<int>* a2, gamemd::RectangleStruct* a3, unsigned int a4, unsigned int a5, unsigned int a6, enum ra2::game::ZGradient a7, unsigned int a8, int a9, unsigned int a10, unsigned int a11, unsigned int a12, unsigned int a13, unsigned int a14, unsigned int a15) {}
+//NODCL member not in any current header: ra2::game::FootClass::Draw_A_SHP(struct ra2::game::SHPStruct* a0, int a1, gamemd::Vector2D<int>* a2, gamemd::RectangleStruct* a3, unsigned int a4, unsigned int a5, unsigned int a6, enum ra2::game::ZGradient, unsigned int a8, int a9, unsigned int a10, unsigned int a11, unsigned int a12, unsigned int a13, unsigned int a14, unsigned int a15) {}
 // link stub (no binary body yet)
 //NODCL member not in any current header: ra2::game::FootClass::Draw_A_VXL(struct ra2::game::VoxelStruct* a0, int a1, int a2, struct ra2::game::SomeVoxelCache* a3, gamemd::RectangleStruct* a4, gamemd::Vector2D<int>* a5, struct ra2::game::Matrix3DStruct* a6, unsigned int a7, unsigned int a8, unsigned int a9) {}
 // link stub (no binary body yet)

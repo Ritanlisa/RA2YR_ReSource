@@ -101,7 +101,7 @@ void ReferenceCounted::Constructor() {
 namespace gamemd {
 unsigned int * COMClass::releaseInterface() {
     ComPtr::Constructor((ComPtr *)this); /*0x765c73*/
-    *(unsigned int *)this->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x765c78*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x765c78*/
     return this->__pad_0; /*0x765c80*/
 }
 } // namespace gamemd
@@ -109,7 +109,7 @@ unsigned int * COMClass::releaseInterface() {
 // 0x767C50
 namespace gamemd {
 unsigned int * COMClass::marshalInterface(char a2, int a3, int a4) {
-    *(unsigned int *)this->__pad_0 = &rc_ptr<WDTState>::`vftable'; /*0x767c53*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x767c53*/
     ComPtr::Release((ComPtr *)this); /*0x767c59*/
     if ( (a2 & 1) != 0 ) /*0x767c63*/
       RA2_OPDEL(this); /*0x767c66*/
@@ -599,7 +599,7 @@ unsigned int * VectorClassUInt::Constructor(int a2, int a3) {
     *((unsigned int *)this + 2) = a2; /*0x42dc5e*/
     *((unsigned char *)this + 12) = 1; /*0x42dc61*/
     *((unsigned char *)this + 13) = 0; /*0x42dc65*/
-    *this = (VectorClassUInt)&VectorClass<unsigned int>::`vftable'; /*0x42dc68*/
+    *this = (VectorClassUInt)0; /*0x42dc68*/
     if ( a2 ) /*0x42dc6e*/
     {
       if ( a3 ) /*0x42dc76*/
@@ -1556,7 +1556,7 @@ unsigned int * StringVector::QueryInterface(char a2) {
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x49efa3*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<char *>::`vftable'; /*0x49efa6*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x49efa6*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x49efb0*/
     {
       RA2_OPDEL(v3); /*0x49efb8*/
@@ -1615,7 +1615,7 @@ LONG EnumConnectionsClass::Release() {
       }
       (*(void (__thiscall **)(int *))(this->EnumConnectionsClass_field_0x04 + 12))(&this->EnumConnectionsClass_field_0x04); /*0x4a0063*/
       EnumConnectionsClass_field_0x08 = (void *)this->EnumConnectionsClass_field_0x08; /*0x4a0066*/
-      this->EnumConnectionsClass_field_0x04 = (int)&VectorClass<tagCONNECTDATA>::`vftable'; /*0x4a0069*/
+      this->EnumConnectionsClass_field_0x04 = (int)0; /*0x4a0069*/
       if ( EnumConnectionsClass_field_0x08 ) /*0x4a0071*/
       {
         if ( IDA_BYTE1(this->EnumConnectionsClass_field_0x10) ) /*0x4a0073*/
@@ -1732,7 +1732,7 @@ LONG EnumConnectionPointsClass::Release() {
       }
       (*(void (__thiscall **)(int *))(this->EnumConnectionPointsClass_field_0x0C + 12))(&this->EnumConnectionPointsClass_field_0x0C); /*0x4a0a03*/
       EnumConnectionPointsClass_field_0x10 = (void *)this->EnumConnectionPointsClass_field_0x10; /*0x4a0a06*/
-      this->EnumConnectionPointsClass_field_0x0C = (int)&VectorClass<IConnectionPoint *>::`vftable'; /*0x4a0a09*/
+      this->EnumConnectionPointsClass_field_0x0C = (int)0; /*0x4a0a09*/
       if ( EnumConnectionPointsClass_field_0x10 ) /*0x4a0a11*/
       {
         if ( IDA_BYTE1(this->EnumConnectionPointsClass_field_0x18) ) /*0x4a0a13*/
@@ -2809,7 +2809,7 @@ char GraphicMenuShortcutItem::AddRef(int a2) {
       return 0; /*0x4f3eea*/
     *(unsigned int *)&v3.m_1[3] = this + 2; /*0x4f3ef6*/
     v4 = 0; /*0x4f3efe*/
-    *(unsigned int *)v3.__pad_0 = &VectorCursor<unsigned int,DynamicVectorClass<unsigned int>>::`vftable'; /*0x4f3f06*/
+    *(unsigned int *)v3.__pad_0 = 0; /*0x4f3f06*/
     if ( VectorCursor_uint_DynamicVectorClass_uint::AddRef(&v3) ) /*0x4f3f0e*/
     {
       do /*0x4f3f3f*/
@@ -2831,7 +2831,7 @@ unsigned int * GraphicMenuShortcutItem::QueryInterface(char a2) {
 
     *(unsigned int *)this->__pad_0 = 0; /*0x4f3f63*/
     v3 = (void *)*((unsigned int *)this + 5); /*0x4f3f69*/
-    *((unsigned int *)this + 4) = &VectorClass<unsigned int>::`vftable'; /*0x4f3f6e*/
+    *((unsigned int *)this + 4) = 0; /*0x4f3f6e*/
     if ( v3 && *((unsigned char *)this + 29) ) /*0x4f3f77*/
     {
       RA2_OPDEL(v3); /*0x4f3f7f*/
@@ -3233,7 +3233,7 @@ unsigned int * unknown::QueryInterface(char a2) {
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x58a423*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<ZoneConnectionClass>::`vftable'; /*0x58a426*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x58a426*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x58a430*/
     {
       RA2_OPDEL(v3); /*0x58a438*/
@@ -3256,7 +3256,7 @@ unsigned int * HashVector_UInt::Construct(int a2, int a3) {
     *((unsigned int *)this + 2) = a2; /*0x58b001*/
     *((unsigned char *)this + 12) = 1; /*0x58b004*/
     *((unsigned char *)this + 13) = 0; /*0x58b008*/
-    *this = (HashVector_UInt)&VectorClass<HashObject<unsigned int,unsigned int>>::`vftable'; /*0x58b00c*/
+    *this = (HashVector_UInt)0; /*0x58b00c*/
     if ( a2 ) /*0x58b012*/
     {
       if ( a3 ) /*0x58b01a*/
@@ -3539,7 +3539,7 @@ unsigned int * StringVector::Construct(int a2, int a3) {
     this->StringVector_field_0x08 = a2; /*0x5ad6fe*/
     IDA_LOBYTE(this->StringVector_field_0x0C) = 1; /*0x5ad701*/
     IDA_BYTE1(this->StringVector_field_0x0C) = 0; /*0x5ad705*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<char *>::`vftable'; /*0x5ad708*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x5ad708*/
     if ( a2 ) /*0x5ad70e*/
     {
       if ( a3 ) /*0x5ad716*/
@@ -4255,7 +4255,7 @@ int COMClassFactory::Register(IID *rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsConte
 namespace gamemd {
 unsigned int * COMClassFactory_3::Construct() {
     this->COMClassFactory_field_0x04 = 0; /*0x6bf142*/
-    *(unsigned int *)this->__pad_0 = &TClassFactory<TerrainTypeClass>::`vftable'; /*0x6bf149*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x6bf149*/
     return this->__pad_0; /*0x6bf14f*/
 }
 } // namespace gamemd
@@ -4264,7 +4264,7 @@ unsigned int * COMClassFactory_3::Construct() {
 namespace gamemd {
 unsigned int * COMClassFactory_4::Construct() {
     this->COMClassFactory_field_0x04 = 0; /*0x6bf2c2*/
-    *(unsigned int *)this->__pad_0 = &TClassFactory<TerrainClass>::`vftable'; /*0x6bf2c9*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x6bf2c9*/
     return this->__pad_0; /*0x6bf2cf*/
 }
 } // namespace gamemd
@@ -4273,7 +4273,7 @@ unsigned int * COMClassFactory_4::Construct() {
 namespace gamemd {
 unsigned int * COMClassFactory_5::Construct() {
     this->COMClassFactory_field_0x04 = 0; /*0x6bf442*/
-    *(unsigned int *)this->__pad_0 = &TClassFactory<SuperWeaponTypeClass>::`vftable'; /*0x6bf449*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x6bf449*/
     return this->__pad_0; /*0x6bf44f*/
 }
 } // namespace gamemd
@@ -4282,7 +4282,7 @@ unsigned int * COMClassFactory_5::Construct() {
 namespace gamemd {
 unsigned int * COMClassFactory_6::Construct() {
     this->COMClassFactory_field_0x04 = 0; /*0x6bf5c2*/
-    *(unsigned int *)this->__pad_0 = &TClassFactory<SuperClass>::`vftable'; /*0x6bf5c9*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x6bf5c9*/
     return this->__pad_0; /*0x6bf5cf*/
 }
 } // namespace gamemd
@@ -4291,7 +4291,7 @@ unsigned int * COMClassFactory_6::Construct() {
 namespace gamemd {
 unsigned int * COMClassFactory_7::Construct() {
     this->COMClassFactory_field_0x04 = 0; /*0x6bf742*/
-    *(unsigned int *)this->__pad_0 = &TClassFactory<Tactical>::`vftable'; /*0x6bf749*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x6bf749*/
     return this->__pad_0; /*0x6bf74f*/
 }
 } // namespace gamemd
@@ -4300,7 +4300,7 @@ unsigned int * COMClassFactory_7::Construct() {
 namespace gamemd {
 unsigned int * COMClassFactory_8::Construct() {
     this->COMClassFactory_field_0x04 = 0; /*0x6bf8c2*/
-    *(unsigned int *)this->__pad_0 = &TClassFactory<CellClass>::`vftable'; /*0x6bf8c9*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x6bf8c9*/
     return this->__pad_0; /*0x6bf8cf*/
 }
 } // namespace gamemd
@@ -4309,7 +4309,7 @@ unsigned int * COMClassFactory_8::Construct() {
 namespace gamemd {
 unsigned int * COMClassFactory_9::Construct() {
     this->COMClassFactory_field_0x04 = 0; /*0x6bfa42*/
-    *(unsigned int *)this->__pad_0 = &TClassFactory<EMPulseClass>::`vftable'; /*0x6bfa49*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x6bfa49*/
     return this->__pad_0; /*0x6bfa4f*/
 }
 } // namespace gamemd
@@ -4318,7 +4318,7 @@ unsigned int * COMClassFactory_9::Construct() {
 namespace gamemd {
 unsigned int * COMClassFactory_10::Construct() {
     this->COMClassFactory_field_0x04 = 0; /*0x6bfbc2*/
-    *(unsigned int *)this->__pad_0 = &TClassFactory<LightSourceClass>::`vftable'; /*0x6bfbc9*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x6bfbc9*/
     return this->__pad_0; /*0x6bfbcf*/
 }
 } // namespace gamemd
@@ -4327,7 +4327,7 @@ unsigned int * COMClassFactory_10::Construct() {
 namespace gamemd {
 unsigned int * COMClassFactory::CreateInstance() {
     this->COMClassFactory_field_0x04 = 0; /*0x6c0ac2*/
-    *(unsigned int *)this->__pad_0 = &TClassFactory<SlaveManagerClass>::`vftable'; /*0x6c0ac9*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x6c0ac9*/
     return this->__pad_0; /*0x6c0acf*/
 }
 } // namespace gamemd
@@ -4422,7 +4422,7 @@ char * COMClass::createInstance(char a2) {
         do /*0x765bdf*/
         {
           v5 = (ComPtr *)((char *)v5 - 8); /*0x765bce*/
-          *(unsigned int *)v5->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x765bd3*/
+          *(unsigned int *)v5->__pad_0 = 0; /*0x765bd3*/
           ComPtr::Release(v5); /*0x765bd9*/
           --v7; /*0x765bde*/
         }
@@ -4434,7 +4434,7 @@ char * COMClass::createInstance(char a2) {
     }
     else
     {
-      *(unsigned int *)this->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x765bfa*/
+      *(unsigned int *)this->__pad_0 = 0; /*0x765bfa*/
       ComPtr::Release((ComPtr *)this); /*0x765c00*/
       if ( (a2 & 1) != 0 ) /*0x765c08*/
         RA2_OPDEL(this); /*0x765c0b*/
@@ -4449,7 +4449,7 @@ unsigned int * COMClass::getInterface(char a2) {
     void (__thiscall ***v3)(unsigned int, int); // ecx
 
     v3 = *(void (__thiscall ****)(unsigned int, int))&this->m_1[3]; /*0x765c23*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<rc_ptr<WorldDominationTour::Conflict>>::`vftable'; /*0x765c26*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x765c26*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x765c30*/
     {
       (**v3)(v3, 3); /*0x765c3f*/
@@ -4481,7 +4481,7 @@ namespace gamemd {
 unsigned int * VectorCursor::Construct(int a2, int a3) {
     this->VectorCursor_field_0x04 = a2; /*0x76f0ca*/
     this->VectorCursor_field_0x08 = a3; /*0x76f0cd*/
-    *(unsigned int *)this->__pad_0 = &VectorCursor<rc_ptr<WorldDominationTour::Territory>,DynamicVectorClass<rc_ptr<WorldDominationTour::Territory>>>::`vftable'; /*0x76f0d0*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x76f0d0*/
     return this->__pad_0; /*0x76f0d6*/
 }
 } // namespace gamemd
@@ -4489,7 +4489,7 @@ unsigned int * VectorCursor::Construct(int a2, int a3) {
 // 0x76F140
 namespace gamemd {
 unsigned int * VectorCursor::drawCursor(char a2) {
-    *(unsigned int *)this->__pad_0 = &VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76f149*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x76f149*/
     if ( (a2 & 1) != 0 ) /*0x76f14f*/
       RA2_OPDEL(this); /*0x76f152*/
     return this->__pad_0; /*0x76f15c*/

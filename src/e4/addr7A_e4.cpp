@@ -1858,7 +1858,7 @@ void INIClass::SetGameOptionsPing()
 
 // 0x7A2110
 namespace gamemd {
-INT_PTR sub_7A2110(HWND hWnd, UINT a2, WPARAM a3, char * a4)
+INT_PTR sub_7A2110(HWND hWnd, UINT, WPARAM, char * a4)
 {
   if ( a2 > 0x2B ) /*0x7a2117*/
   {

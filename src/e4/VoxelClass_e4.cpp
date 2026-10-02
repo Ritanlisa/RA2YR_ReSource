@@ -226,7 +226,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       *(float *)&v58 = -*(float *)&v54; /*0x73ca62*/
       v67[0] = *(float *)&v54; /*0x73ca6c*/
       v59 = -v53; /*0x73ca74*/
-      v54 = (unsigned long long)(IDA_LODWORD(v58)); /*0x73ca7c*/
+      v54 = (unsigned long)(IDA_LODWORD(v58)); /*0x73ca7c*/
       v55 = v59; /*0x73ca84*/
       ((Matrix3x3 *)(v71))->Multiply((float *)&v54); /*0x73ca90*/
       v30 = *(unsigned int *)a1; /*0x73ca95*/

@@ -41,7 +41,7 @@
 
 // 0x792CF0
 namespace gamemd {
-void sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
+void sub_792CF0(HWND hWnd, UINT, WPARAM, char * a4)
 {
   INT_PTR result; // eax
   HWND DlgItem; // esi
@@ -108,7 +108,7 @@ void sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 }
 // 0x793280
 namespace gamemd {
-int sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
+int sub_793280(HWND hWnd, UINT, WPARAM, char * a4)
 {
   int result; // eax
   int v5; // edi
@@ -1991,7 +1991,7 @@ char HandleWOLRematch()
 }
 // 0x796B90
 namespace gamemd {
-CampaignScore * * WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
+CampaignScore * * WOL_LobbyDlgProc(HWND hWnd, LONG, int a3, HWND a4)
 {
   HWND v4; // ebp
   HWND v5; // esi
@@ -3171,7 +3171,7 @@ void Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
 }
 // 0x799080
 namespace gamemd {
-void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
+void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
 {
   unsigned int v4; // ebx
   HWND v5; // ebp

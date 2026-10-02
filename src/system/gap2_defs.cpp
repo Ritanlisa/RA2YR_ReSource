@@ -1626,7 +1626,7 @@ int INIClass::LookupEnum(ObjectClass * aP1, uint8_t * a2, Color * aP3) {
     if ( (int)v5 >= (int)&off_81BA88 ) /*0x474dec*/
       return 0; /*0x474df5*/
   }
-  return `typeinfo for'x1[2 * v4]; /*0x474dee*/
+  return 0[2 * v4]; /*0x474dee*/
 
 }
 }

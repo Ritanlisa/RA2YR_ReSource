@@ -276,7 +276,7 @@ int NetworkLobby::CreateGame()
 
 // 0x5DE520
 namespace gamemd {
-int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lParam)
+int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lParam)
 {
 
   wchar_t *StringCSF; // ebp

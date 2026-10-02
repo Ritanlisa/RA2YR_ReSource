@@ -138,7 +138,7 @@ LRESULT UI_Draw(HWND hWnd, wchar_t * Source, DropListClass * Count, LPARAM lPara
 }
 
 // ==== BACKFILL 0x005E2E40  sub_5E2E40  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-INT_PTR sub_5E2E40(HWND hWnd, UINT a2, WPARAM a3, char * a4)
+INT_PTR sub_5E2E40(HWND hWnd, UINT, WPARAM, char * a4)
 {
 {
     INT_PTR result;

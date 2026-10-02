@@ -587,7 +587,7 @@ int WinModemClass::LogCommErrors(int aP1, char a3, int a4, int a5)
 } // namespace gamemd
 // 0x775610
 namespace gamemd {
-WinModemClass * WinModemClass::QueryInterface(char a2 a2)
+WinModemClass * WinModemClass::QueryInterface(char a2)
 {
 
   int v3; // eax

@@ -26,7 +26,7 @@ struct BuildingLight {
     unsigned int *__pad_10;
     unsigned int field_C;
 // --- flat members (END) ---
-    Coord * * CalculateShading(__m64 a2);
+    Coord * * CalculateShading(__m64);
     double CalcIntensity(double a1);  // 0x4CAD80
 };
 } // namespace gamemd

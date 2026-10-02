@@ -46,7 +46,7 @@
 
 // 0x5E2820
 namespace gamemd {
-int DrawDialogText(LPARAM aP0, wchar_t *a1, HWND hWnd)
+int DrawDialogText(LPARAM, wchar_t *a1, HWND hWnd)
 {
   wchar_t *v3; // esi
   wint_t * v4;
@@ -4697,7 +4697,7 @@ AbstractClass * * PlayerSkirmishSlotHandler()
 }
 // 0x5ED270
 namespace gamemd {
-char sub_5ED270(SkirmishDialog * hDlg, int nIDDlgItem, LPARAM a3)
+char sub_5ED270(SkirmishDialog * hDlg, int nIDDlgItem, LPARAM)
 {
   LPARAM v5; // edx
   WPARAM v6; // ebx
@@ -5718,7 +5718,7 @@ int sub_5E2600()
 
 // 0x5E2E40
 namespace gamemd {
-INT_PTR sub_5E2E40(HWND hWnd, UINT a2, WPARAM a3, char * a4)
+INT_PTR sub_5E2E40(HWND hWnd, UINT, WPARAM, char * a4)
 {
   INT_PTR result; // eax
 

@@ -50,7 +50,7 @@ struct BombClass {
     unsigned int vtable23;
     unsigned int DTOR;
 // --- flat members (END) ---
-    BombClass * CopyTo(char a2 a2);
+    BombClass * CopyTo(char a2);
     int InitPool();
     int IsDeathBomb();
     int Seek(TechnoTypeClass * aP0, int * a1, int aP2);

@@ -494,9 +494,9 @@ namespace gamemd { int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
           ObjectClass::Init(a1, (AbstractClass *)&aP2);
           Timer::Start(a1 + 46, 0);
           Timer::Start(a1 + 49, 0);
-          *a1 = (int)&BulletClass::`vftable';
-          a1[1] = (int)&BulletClass::`vftable';
-          a1[2] = (int)&BulletClass::`vftable';
+          *a1 = (int)0;
+          a1[1] = (int)0;
+          a1[2] = (int)0;
           a1[3] = (int)&vt_BulletClass;
         }
         if ( a1[85]

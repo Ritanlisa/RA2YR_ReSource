@@ -55,7 +55,7 @@ int MSVQAnim::Stub()
 } // namespace gamemd
 // 0x5CECB0
 namespace gamemd {
-MSVQAnim * MSVQAnim::QueryInterface(char a2 a2)
+MSVQAnim * MSVQAnim::QueryInterface(char a2)
 {
 
   void (***v3)(unsigned int, int); // ecx

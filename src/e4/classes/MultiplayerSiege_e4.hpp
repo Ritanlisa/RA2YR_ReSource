@@ -19,7 +19,7 @@ struct MultiplayerSiege {
     unsigned int PlayerClass;
 // --- flat members (END) ---
     AbstractClass * * ProcessTurn(char a2);
-    MultiplayerSiege * QueryInterface(char a2 a2);
+    MultiplayerSiege * QueryInterface(char a2);
     char CheckStatus(int a1);
     char GetResult(unsigned int * ppv, int a2);
     char StubReturnFalse();

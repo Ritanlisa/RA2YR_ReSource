@@ -1045,7 +1045,7 @@ LRESULT UI_Draw(HWND hWnd, wchar_t *Source, size_t Count, LPARAM lParam)
 
 // 0x603F00
 namespace gamemd {
-wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM a3, LPARAM a4)
+wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM, LPARAM)
 {
   LPARAM lParam[2]; // [esp+8h] [ebp-Ch] BYREF
   wchar_t *v8; // [esp+10h] [ebp-4h] BYREF
@@ -1062,7 +1062,7 @@ wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM a3, LPARAM a4)
 
 // 0x623170
 namespace gamemd {
-bool UI_Connect(HWND hWnd, LONG a2, LONG a3)
+bool UI_Connect(HWND hWnd, LONG, LONG)
 {
   LONG v5; // ecx
   LONG v6; // eax

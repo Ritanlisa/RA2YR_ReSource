@@ -49,7 +49,7 @@ namespace gamemd { int RadarClass::RenderMapPreview() {
 
       RadarClass::initRadarSurface((_DWORD *)this);
       RadarClass::drawRadarTerrain((_DWORD *)(this + 80), 0, 0);
-      this->q140 = &DynamicVectorClass<ZoneConnectionClass>::`vftable';
+      this->q140 = 0;
       this->q064 = 10;
       this->q060 = 0;
       v2 = (_DWORD *)(this + 140);
@@ -57,7 +57,7 @@ namespace gamemd { int RadarClass::RenderMapPreview() {
       do
       {
         RadarClass::RenderJammerRadius(v2, 0, 0);
-        *v2 = &DynamicVectorClass<SubzoneTrackingStruct>::`vftable';
+        *v2 = 0;
         v2[5] = 10;
         v2[4] = 0;
         v2 += 6;
@@ -113,7 +113,7 @@ namespace gamemd { void* RadarClass::Render(int a1) {
       this->q010 = 0;
       this->q014 = 0;
       RadarClass::drawRadarTerrain((_DWORD *)this + 20, 0, 0);
-      *v3 = &DynamicVectorClass<ZoneConnectionClass>::`vftable';
+      *v3 = 0;
       v3[5] = 10;
       v3[4] = 0;
       v4 = this + 140;
@@ -121,7 +121,7 @@ namespace gamemd { void* RadarClass::Render(int a1) {
       do
       {
         RadarClass::RenderJammerRadius(v4, 0, 0);
-        *v4 = &DynamicVectorClass<SubzoneTrackingStruct>::`vftable';
+        *v4 = 0;
         v4[5] = 10;
         v4[4] = 0;
         v4 += 6;

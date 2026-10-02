@@ -672,7 +672,7 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
 }
 // 0x4C83E0
 namespace gamemd {
-void DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
+void DialogFunc(HWND hDlg, UINT, WPARAM, LPARAM)
 {
   if ( a2 > 0x111 ) /*0x4c83ea*/
   {

@@ -5340,7 +5340,7 @@ void __get_qualified_locale(char * a0, CCINIClass * aP1, int a3)
 }
 // 0x7D6F86
 namespace gamemd {
-void LangCountryEnumProc_4(LPSTR a1)
+void LangCountryEnumProc_4(LPSTR)
 {
   int v1; // esi
   int v2; // eax
@@ -5415,7 +5415,7 @@ void LangCountryEnumProc_4(LPSTR a1)
 }
 // 0x7D71E0
 namespace gamemd {
-void LanguageEnumProc_4(LPSTR a1)
+void LanguageEnumProc_4(LPSTR)
 {
   int v1; // esi
   int v2; // eax
@@ -5455,7 +5455,7 @@ void LanguageEnumProc_4(LPSTR a1)
 }
 // 0x7D72D4
 namespace gamemd {
-void int CountryEnumProc_4(LPSTR a1)
+void int CountryEnumProc_4(LPSTR)
 {
   int v1; // esi
   int v2; // eax
@@ -10324,7 +10324,7 @@ BlowStraw * * _wcsupr(CampaignScore * aP0)
 }
 // 0x7DE200
 namespace gamemd {
-unsigned int  __spoils<ecx> ConvertRGB24to556(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
+unsigned int  __spoils<ecx> ConvertRGB24to556(int a1, unsigned short * a2, __m64, __m64, int a5)
 {
   unsigned short *v5; // edi
   uint8_t *v6; // esi
@@ -10507,7 +10507,7 @@ unsigned int  __spoils<ecx> ConvertRGB24to556(int a1, unsigned short * a2, __m64
 }
 // 0x7DE53A
 namespace gamemd {
-unsigned int  __spoils<ecx> ConvertRGB24toRGB565(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
+unsigned int  __spoils<ecx> ConvertRGB24toRGB565(int a1, unsigned short * a2, __m64, __m64, int a5)
 {
   unsigned short *v5; // edi
   uint8_t *v6; // esi
@@ -10690,7 +10690,7 @@ unsigned int  __spoils<ecx> ConvertRGB24toRGB565(int a1, unsigned short * a2, __
 }
 // 0x7DE87A
 namespace gamemd {
-unsigned int  __spoils<ecx> ConvertRGB24to655(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
+unsigned int  __spoils<ecx> ConvertRGB24to655(int a1, unsigned short * a2, __m64, __m64, int a5)
 {
   unsigned short *v5; // edi
   uint8_t *v6; // esi
@@ -10873,7 +10873,7 @@ unsigned int  __spoils<ecx> ConvertRGB24to655(int a1, unsigned short * a2, __m64
 }
 // 0x7DEBBA
 namespace gamemd {
-unsigned int  __spoils<ecx> ConvertRGB24to565(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
+unsigned int  __spoils<ecx> ConvertRGB24to565(int a1, unsigned short * a2, __m64, __m64, int a5)
 {
   unsigned short *v5; // edi
   uint8_t *v6; // esi
@@ -11847,7 +11847,7 @@ int _fcloseall()
 
 // 0x7D362F
 namespace gamemd {
-UINT getSystemCP(UINT a1)
+UINT getSystemCP(UINT)
 {
   UINT result; // eax
 

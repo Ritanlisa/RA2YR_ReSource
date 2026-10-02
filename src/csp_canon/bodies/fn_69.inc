@@ -183,9 +183,9 @@ namespace gamemd { void* ScriptClass::Construct(int a1) {
       this->field28 = 0;
       this->buildingType = aP1;
       this->idxCurrentLine = -1;
-      *(_DWORD *)this->__pad_0 = &ScriptClass::`vftable';
-      *(_DWORD *)&this->__pad_0[4] = &ScriptClass::`vftable';
-      *(_DWORD *)&this->__pad_0[8] = &ScriptClass::`vftable';
+      *(_DWORD *)this->__pad_0 = 0;
+      *(_DWORD *)&this->__pad_0[4] = 0;
+      *(_DWORD *)&this->__pad_0[8] = 0;
       *(_DWORD *)&this->__pad_0[12] = &vt_ScriptClass;
       if ( *(int *)&DataGlobal_87F8E4[31196] < *(int *)&DataGlobal_87F8E4[31188]
         || (DataGlobal_87F8E4[31193] || !*(_DWORD *)&DataGlobal_87F8E4[31188])
@@ -665,7 +665,7 @@ HWND E4Recv_696950::sub_696950()
 }
 
 // ==== BACKFILL 0x006969C0  ListBox::SetCustomEntry  cls=ListBox  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int ListBox::SetCustomEntry(int nIDDlgItem, LPARAM a3, void * a4) {
+namespace gamemd { int ListBox::SetCustomEntry(int nIDDlgItem, LPARAM, void * a4) {
 {
     HWND result;
     HWND v5;

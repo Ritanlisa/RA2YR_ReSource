@@ -42,7 +42,7 @@ struct TagTypeClass {
     AbstractClass * * CleanupMembers(void *a1);
     AbstractTypeClass * Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);
     AbstractTypeClass * FindOrCreate(ObjectClass * Source);
-    TagTypeClass * ddtor(char a2 a2);
+    TagTypeClass * ddtor(char a2);
     TriggerTypeClass * * FindOrCreateTriggerType(char *Source);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);

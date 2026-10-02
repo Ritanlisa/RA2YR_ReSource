@@ -199,7 +199,7 @@ unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
     this->? = (void *)a2; /*0x49f09e*/
     IDA_LOBYTE(this->?) = 1; /*0x49f0a1*/
     IDA_BYTE1(this->?) = 0; /*0x49f0a5*/
-    this->AbstractClass = &VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49f0a8*/
+    this->AbstractClass = 0; /*0x49f0a8*/
     if ( a2 ) /*0x49f0ae*/
     {
       if ( a3 ) /*0x49f0b6*/
@@ -1690,7 +1690,7 @@ int CampaignClass::LoadFromINI() {
           do /*0x49dbf7*/
           {
             CampaignClass::Constructor_0((CampaignClass *)v8, 0, 0); /*0x49dbbe*/
-            *v8 = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49dbca*/
+            *v8 = 0; /*0x49dbca*/
             v8[5] = 10; /*0x49dbd0*/
             v8[4] = 0; /*0x49dbd7*/
             CampaignClass::Constructor((CampaignClass *)(v8 + 6), 0, 0); /*0x49dbde*/
@@ -1799,7 +1799,7 @@ int CampaignClass::LoadFromINI() {
               *(unsigned int *)(v19 + 8) = 0; /*0x49df13*/
               *(unsigned char *)(v19 + 12) = 1; /*0x49df16*/
               *(unsigned char *)(v19 + 13) = 0; /*0x49df1a*/
-              *(unsigned int *)v19 = &DynamicVectorClass<char *>::`vftable'; /*0x49df1d*/
+              *(unsigned int *)v19 = 0; /*0x49df1d*/
               *(unsigned int *)(v19 + 20) = 10; /*0x49df23*/
               *(unsigned int *)(v19 + 16) = 0; /*0x49df2a*/
               v20 = *(unsigned int *)&this->scenario[48]; /*0x49df2d*/
@@ -1882,7 +1882,7 @@ int CampaignClass::LoadFromINI() {
                 *(unsigned int *)(v39 + 8) = 0; /*0x49e12a*/
                 *(unsigned char *)(v39 + 12) = 1; /*0x49e12d*/
                 *(unsigned char *)(v39 + 13) = 0; /*0x49e131*/
-                *(unsigned int *)v39 = &DynamicVectorClass<char *>::`vftable'; /*0x49e134*/
+                *(unsigned int *)v39 = 0; /*0x49e134*/
                 *(unsigned int *)(v39 + 20) = 10; /*0x49e13a*/
                 *(unsigned int *)(v39 + 16) = 0; /*0x49e141*/
                 v40 = *(unsigned int *)&this->scenario[48]; /*0x49e144*/
@@ -1997,7 +1997,7 @@ unsigned int * CampaignClass::Constructor(int a2, int a3) {
     this->? = (void *)a2; /*0x49ece0*/
     IDA_LOBYTE(this->?) = 1; /*0x49ece3*/
     IDA_BYTE1(this->?) = 0; /*0x49ece7*/
-    this->AbstractClass = &VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49eceb*/
+    this->AbstractClass = 0; /*0x49eceb*/
     if ( a2 ) /*0x49ecf1*/
     {
       if ( a3 ) /*0x49ecf9*/
@@ -2010,7 +2010,7 @@ unsigned int * CampaignClass::Constructor(int a2, int a3) {
         IDA_BYTE1(this->?) = 1; /*0x49ed0f*/
       }
     }
-    this->AbstractClass = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49ed13*/
+    this->AbstractClass = 0; /*0x49ed13*/
     this->? = 10; /*0x49ed19*/
     this->? = 0; /*0x49ed20*/
     return this; /*0x49ed29*/

@@ -833,9 +833,9 @@ namespace gamemd { void* TriggerTypeClass::Construct(void* a1) {
       this->NextTrigger = 0;
       this->FirstEvent = 0;
       this->FirstAction = 0;
-      *this = &TriggerTypeClass::`vftable';
-      *(this + 1) = &TriggerTypeClass::`vftable';
-      *(this + 2) = &TriggerTypeClass::`vftable';
+      *this = 0;
+      *(this + 1) = 0;
+      *(this + 2) = 0;
       *(this + 3) = &vt_TriggerTypeClass;
       if ( *(int *)&stru_B05488[41440] < *(int *)&stru_B05488[41432]
         || (stru_B05488[41437] || !*(_DWORD *)&stru_B05488[41432])
@@ -887,9 +887,9 @@ namespace gamemd { int TriggerClass::ProcessEvents() {
       int v8;
       int v10;
 
-      *(_DWORD *)this = &TriggerTypeClass::`vftable';
-      this->vtable3 = &TriggerTypeClass::`vftable';
-      this->vtable4 = &TriggerTypeClass::`vftable';
+      *(_DWORD *)this = 0;
+      this->vtable3 = 0;
+      this->vtable4 = 0;
       this->vtable4 = &vt_TriggerTypeClass;
       AbstractClass::AnnounceExpiredPointer((void **)this, 1);
       v10 = this;
@@ -1753,7 +1753,7 @@ namespace gamemd { int MessageListClass::clearMessages(int a1, int a2, int a3, i
       this->__pad_40[1] = 0;
       this->field_44 = 0;
       this->field_48 = 0;
-      *(_DWORD *)this->__pad_0 = &TextLabelClass::`vftable';
+      *(_DWORD *)this->__pad_0 = 0;
       return (int)this->__pad_0;
 }
 } }

@@ -42,7 +42,7 @@ struct TagClass {
     unsigned int uniqueId;
 // --- flat members (END) ---
     void Unlink(void *a1);
-    TagClass * ProcessTrigger(char a2 a2);
+    TagClass * ProcessTrigger(char a2);
     TriggerClass * * Destructor();
     int CheckEvent(int a2, TagTypeClass * aP2);
     void HasValidHouse(void *a1);

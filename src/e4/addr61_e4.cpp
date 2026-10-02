@@ -32,7 +32,7 @@
 
 // 0x610570
 namespace gamemd {
-AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
+AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
 {
     unsigned int v11 = 0;  /* G37 hoist */
   void *v2; // eax

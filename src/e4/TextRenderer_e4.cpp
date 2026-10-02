@@ -295,7 +295,7 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
 
 // 0x727CD0
 namespace gamemd {
-TriggerTypeClass * TextRenderer::Destructor(char a2 a2)
+TriggerTypeClass * TextRenderer::Destructor(char a2)
 {
 
   ((TriggerClass *)((AbstractClass *)Block))->ProcessEvents(); /*0x727cd3*/

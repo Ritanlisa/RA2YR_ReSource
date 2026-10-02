@@ -989,9 +989,9 @@ namespace gamemd { int BuildingLightClass::SD_vt05(void* a1, int a2) {
         if ( aP1 )
         {
           ObjectClass::Init(aP1, (AbstractClass *)&aP1a);
-          *(_DWORD *)aP1->__pad_0 = &BuildingLightClass::`vftable';
-          *(_DWORD *)&aP1->__pad_0[4] = &BuildingLightClass::`vftable';
-          *(_DWORD *)&aP1->__pad_0[8] = &BuildingLightClass::`vftable';
+          *(_DWORD *)aP1->__pad_0 = 0;
+          *(_DWORD *)&aP1->__pad_0[4] = 0;
+          *(_DWORD *)&aP1->__pad_0[8] = 0;
           *(_DWORD *)&aP1->__pad_0[12] = &vt_BuildingLightClass;
         }
         ObjectPtr::RegisterForTracking(

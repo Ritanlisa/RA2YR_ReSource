@@ -1624,7 +1624,7 @@ void sub_6603B0()
 }
 // 0x7760B0
 namespace gamemd {
-void * Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
+void * Render_Render_7760B0(HDC hdc, const char * a2, LONG, LONG, char a5)
 {
   HFONT v7; // eax
   HFONT v8; // esi

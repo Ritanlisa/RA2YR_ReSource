@@ -153,9 +153,9 @@ namespace ra2 { namespace game { void* ObjectClass::Construct() {
       this->estimatedHealth = 10;
       this->health = 0;
       this->isOnMap = 1;
-      *this = &FoggedObjectClass::`vftable';
-      *(this + 1) = &FoggedObjectClass::`vftable';
-      *(this + 2) = &FoggedObjectClass::`vftable';
+      *this = 0;
+      *(this + 1) = 0;
+      *(this + 2) = 0;
       *(this + 3) = &vt_FoggedObjectClass;
       if ( g_FootClassConfig < DataGlobal_8B3D18
         || (DataGlobal_8B3D1D || !DataGlobal_8B3D18)

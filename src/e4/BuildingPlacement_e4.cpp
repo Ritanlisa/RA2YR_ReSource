@@ -687,7 +687,7 @@ LABEL_74:
 } // namespace gamemd
 // 0x500200
 namespace gamemd {
-unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknown a3)
+unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknown)
 {
 
   unsigned int *v3; // esi

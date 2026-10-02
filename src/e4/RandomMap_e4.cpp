@@ -3440,7 +3440,7 @@ int RandomMap::PlaceTerrainFeatures()
   *(unsigned long long *)&v31 = (unsigned int)((Random *)((Random *)&g_MissionQueueFrame.globalVariables[1552]))->State(); /*0x59b2ce*/
   v41[0] = *(unsigned int *)&stru_87F5F0.__pad_58[668]; /*0x59b2fe*/
   v41[1] = *(unsigned int *)&stru_87F5F0.__pad_58[672]; /*0x59b30d*/
-  if ( (double)((long long)(v31)) * 2.328306437080797e-10 >= 0.5 ) /*0x59b2f7*/
+  if ( (double)((long)(v31)) * 2.328306437080797e-10 >= 0.5 ) /*0x59b2f7*/
   {
     v42 = *(unsigned int *)&stru_87F5F0.__pad_58[676]; /*0x59b35c*/
     v43 = *(unsigned int *)&stru_87F5F0.__pad_58[680] / 2 - 1; /*0x59b36a*/

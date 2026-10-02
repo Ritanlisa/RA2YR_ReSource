@@ -39,7 +39,7 @@ struct WalkLocomotionClass {
 // --- flat members (END) ---
     HRESULT BeginMove(int * a1, int * pStm);
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);
-    WalkLocomotionClass * ProcessMove(char a2 a2);
+    WalkLocomotionClass * ProcessMove(char a2);
     int IsAtDestination(int a1, int a2, int a3, int a4);
     int SetWaypointTarget(int a1, int a2, unsigned int a3, long long a4);
     int StubReturn60();

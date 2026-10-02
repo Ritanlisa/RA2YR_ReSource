@@ -615,7 +615,7 @@ void * calloc(size_t Count, size_t Size)
 }
 
 // ==== BACKFILL 0x007D362F  _getSystemCP  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-UINT getSystemCP(UINT a1)
+UINT getSystemCP(UINT)
 {
 {
     UINT result;
