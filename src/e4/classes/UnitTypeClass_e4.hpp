@@ -1037,6 +1037,8 @@ struct UnitTypeClass {
     unsigned int UnitTypeClass_ConstructUnit;
     unsigned int UnitTypeClass_CreateUnit;
 // --- flat members (END) ---
+    char CreateUnit(short *a2, void *ppv);  // 0x7474B0 (G42.35f supply -- data member UnitTypeClass_CreateUnit is a different symbol)
+    int ConstructUnit(void *ppv);  // 0x747560 (G42.35f supply)
     INIClass * * ReadINIEntry();
     UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3);
     UnitTypeClass * ddtor(char a2);
