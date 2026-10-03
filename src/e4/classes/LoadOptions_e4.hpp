@@ -73,7 +73,8 @@ struct LoadOptions {
     void SetMode(uint32_t);
      double Cleanup(...);  // C2597 interim stub
     static double Run(...);  // C2597 interim stub
-    unsigned char m_10[64];  // pad compile-supply (G41.47)
+    // G42.35a: m_10[64] pad removed -- collides with generator-owned
+    // `unsigned int m_10;` in the flat block (C2040); no user anywhere.
     char Check();  // 0x559c20
 };
 #endif  // GAMEMD_CORE_OWNS_LOADOPTIONS

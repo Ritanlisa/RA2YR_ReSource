@@ -4,6 +4,7 @@
 
 
 #include "e4/classes/_fwd_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"  // G42.35a: q0584 by-value member needs the complete type
 
 namespace gamemd {
 struct BombClass;  // fix_fwd_type_supply

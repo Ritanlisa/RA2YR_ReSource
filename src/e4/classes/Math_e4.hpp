@@ -3,6 +3,16 @@
 
 #include "e4/classes/_fwd_e4.hpp"
 
+// G42.35a: tree TUs reach this header with GAMEMD_TREE_UNIVERSE set, which
+// suppresses _fwd_e4.hpp's struct TechnoClass; -- supply the bridge ourselves.
+#ifndef GAMEMD_USING_TechnoClass
+#define GAMEMD_USING_TechnoClass
+namespace ra2 { namespace game { class TechnoClass; } }
+#ifdef GAMEMD_TREE_UNIVERSE
+namespace gamemd { using ::ra2::game::TechnoClass; }
+#endif
+#endif
+
 namespace gamemd {
 struct Math {
 // --- flat members (BEGIN) ---
@@ -84,8 +94,10 @@ struct Math {
    static double ArcTan(...);  // 0x4CADE0
     void InitArcTan();  // 0x473650
     double ArcTan2_Table(double a1);  // 0x4CADB0
-    IUnknown * Sub16(BuildingTypeClass * aP1, IUnknown * aP2);  // 0x5B2950
-    bool Abs16Cmp(IUnknown * aP1, IUnknown * aP2);  // 0x5B2990
+    // G42.35a: IDA truth (0x5B2950/0x5B2990 decompiled heads) -- mechanical
+    // supply had filled both params with IUnknown* placeholders.
+    unsigned int * Sub16(unsigned int * aP1, unsigned short * aP2);  // 0x5B2950
+    bool Abs16Cmp(unsigned short * aP1, short * aP2);  // 0x5B2990
     static double ArcTan2(...);  // C2597 interim stub
 static int CalcAngle(...);  // C2597 interim stub
     static double InitDegToRad(...);  // C2597 interim stub

@@ -15,7 +15,10 @@ struct CellStruct {
     unsigned char q004;  // 0x4
 // --- flat members (END) ---
     void* Add(unsigned int *aP1, unsigned short *aP2);  // 0x42D510
-    unsigned int * Copy(void* aP1, void *a2_1);  // 0x437F30
+    // G42.35a: non-static form dropped -- G42.33 b9 added the static form
+    // without removing this one; identical params = C2686, and all callers
+    // (6 sites) use the static CellStruct::Copy(...) shape. IDA truth is
+    // thiscall, which the static form models.
     static unsigned int * Copy(void * aP0, void * aP1);  // 0x437F30 static-form sync (G42.33 b9)
 int Equals(unsigned short * a2, void *a2_2);  // 0x50E470
     void* Sub(unsigned int *aP1, unsigned short *aP2);  // 0x588C60

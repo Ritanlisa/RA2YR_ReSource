@@ -83,7 +83,8 @@ inline unsigned char __CF__(int) { return 0; }
 #define RA2_OPNEW(n) operator new(n)
 #endif
 #ifndef RA2_OPDEL
-#define RA2_OPDEL(p) operator delete(p)
+// G42.35a: callers pass int globals (dword_*) -- int overload doesn't exist.
+#define RA2_OPDEL(p) operator delete((void *)(p))
 #endif
 
 #define IDA_BYTE0(x) (((unsigned char*)&(x))[0])

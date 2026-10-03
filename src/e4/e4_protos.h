@@ -854,7 +854,8 @@ extern char sub_434840(unsigned int *a1, unsigned int *a2, unsigned int *a3);
 // G41.46: fwd decls for types used by the supply protos above
 using ::IUnknown;
 class MSG;
-class WCHAR;
+// G42.35a: `class WCHAR;` removed -- shadows ::WCHAR from windows.h and
+// breaks wchar CRT protos (C2079); windows.h is always in the include chain.
 
 
 // G41.46/G42.29j: FILE is a typedef -- using, not a class fwd (::FILE shadow fix)

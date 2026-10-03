@@ -17,6 +17,6 @@ struct E4Recv_4034A0 {
     unsigned int q774;  // 0x774
     unsigned int q1398;  // 0x1398
 // --- flat members (END) ---
-    struct Concurrency::IScheduler * _GetIScheduler_SchedulerBase_details_Concurrency__QAEPAUIScheduler_3_XZ();  // 0x4034A0
+    void * _GetIScheduler_SchedulerBase_details_Concurrency__QAEPAUIScheduler_3_XZ();  // 0x4034A0
 };
 } // namespace gamemd

@@ -7,6 +7,9 @@
 // incomplete gamemd::X declarations sufficient here.
 #define GAMEMD_USING_ObjectClass
 #define GAMEMD_USING_FootClass
+// G42.35a: with those using-decls suppressed, the gamemd-local fwd
+// must be self-supplied at TU top -- before headers using bare names.
+namespace gamemd { class ObjectClass; class FootClass; }
 #include <windows.h>
 #include <cstdint>
 #include "core/coordinate.hpp"

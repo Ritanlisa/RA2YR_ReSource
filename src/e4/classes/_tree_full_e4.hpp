@@ -78,10 +78,12 @@ struct DynamicVectorClass {
 };
 #endif
 
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct FractalNoise {
     void* vfptr;
     static void Dtor(void *aP0);  // G42.32 R5-style static sync
 };
+#endif  // GAMEMD_TREE_UNIVERSE (FractalNoise)
 
 struct Gap2Recv_402F60 {
     void* vfptr;
@@ -321,6 +323,7 @@ struct Gap2Recv_402F60 {
     unsigned int q7764961092133969250445526098;  // 0x7764961092133969250445526098
 };
 
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct HashTable {
     void* vfptr;
     unsigned char HashTable_field_0x04;  // 0x4
@@ -379,17 +382,21 @@ struct HashTable {
     static int Find(void *aP0, const char * a1, ConvertClass * aP2);  // A_c2039 R5 static-form sync
     unsigned char __pad_0;  // 0x0
 };
+#endif  // GAMEMD_TREE_UNIVERSE (HashTable)
 
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct KeywordType {
     void* vfptr;
     void* FindOrCreate2;  // 0x0 (no offset truth)
 };
+#endif  // GAMEMD_TREE_UNIVERSE (KeywordType)
 
 struct Locomotor {
     void* vfptr;
     char Locomotor_field_00[4];  // 0x0
 };
 
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct MSAnim {
     void* vfptr;
     void* vtable1;  // 0x0
@@ -397,12 +404,15 @@ struct MSAnim {
     int SetField(unsigned int a2);  // 0x5cb860
     void* vftable;  // 0x0 (no offset truth)
 };
+#endif  // GAMEMD_TREE_UNIVERSE (MSAnim)
 
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct MSShapeAnim {
     void* vfptr;
     unsigned int u32_7;  // 0x7
     void* vftable;  // 0x0 (no offset truth)
 };
+#endif  // GAMEMD_TREE_UNIVERSE (MSShapeAnim)
 
 #ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass {
@@ -581,11 +591,14 @@ struct ObjectClass {
 };
 #endif // GAMEMD_TREE_UNIVERSE
 
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct ReferenceCounted {
     void* vfptr;
     unsigned char __pad_0;  // 0x0
 };
+#endif  // GAMEMD_TREE_UNIVERSE (ReferenceCounted)
 
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct ShapeButtonClass {
     void* vfptr;
     unsigned char __pad_0;  // 0x0
@@ -593,6 +606,7 @@ struct ShapeButtonClass {
     unsigned int ShapeButtonClass_field_0x08;  // 0x8
     void* Constructor;  // 0x0 (no offset truth)
 };
+#endif  // GAMEMD_TREE_UNIVERSE (ShapeButtonClass)
 
 struct State {
     void* vfptr;
@@ -649,17 +663,22 @@ struct VectorClass {
 };
 #endif
 
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct VectorCursor_uint_DynamicVectorClass_uint {
     void* vfptr;
     unsigned char __pad_0;  // 0x0
 };
+#endif  // GAMEMD_TREE_UNIVERSE (VectorCursor_uint_DynamicVectorClass_uint)
 
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct WinAPI {
     void* vfptr;
     static int Wrapper(int a2);  // consensus: 350+ uniform 1-arg sites
     void* lpVtbl;  // 0x0 (vtable slot)
 };
+#endif  // GAMEMD_TREE_UNIVERSE (WinAPI)
 
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct WorldDominationTour {
     void* vfptr;
     void* vt_GameOption;  // 0x0 (no offset truth)
@@ -669,6 +688,7 @@ struct WorldDominationTour {
     void* Conflict;  // 0x0 (no offset truth)
     void* GameOption;  // 0x0 (no offset truth)
 };
+#endif  // GAMEMD_TREE_UNIVERSE (WorldDominationTour)
 
 struct _ {
     void* vfptr;

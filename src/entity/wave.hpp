@@ -131,7 +131,7 @@ public:
 protected:
     WaveClass() = default;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void Destroy();  // 0x755D10
+    int Destroy();  // 0x755D10 (G42.35a: base ObjectClass::Destroy is virtual int; IDA shows void return but ABI hides it)
     void* Constructor(void* a1, void* a2, void* a3, void* a4, void* a5);  // 0x75E950
     int Destructor();  // 0x75ED30
     int UpdateWave(int a1, int a2);  // 0x75F610

@@ -3,7 +3,9 @@
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
 #include "core/game_loop.hpp"
-#include "core/stream_ext.hpp"
+// G42.35a: stream_ext removed -- gamemd::IStream shadowed ::IStream and broke
+// 18 Load/Save override signatures across class headers (C3668), plus a
+// gamemd::Buffer double-supply (C2011). This TU uses none of its symbols.
 #include "core/utility_ext.hpp"
 #include "entity/anim.hpp"
 #include "entity/particle_system.hpp"
@@ -52,7 +54,7 @@ int AircraftClass::MissionStubReturnZero3() {
 } // namespace gamemd
 
 // 0x4494C0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CanBeSold() {
     int result; // eax
 
@@ -86,10 +88,10 @@ int BuildingClass::CanBeSold() {
       IDA_LOBYTE(result) = 1; /*0x449532*/
     return result; /*0x449510*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x44D5D0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CaptureBuilding() {
     int result; // eax
     HouseClass *v3; // [esp+Ch] [ebp+4h]
@@ -121,10 +123,10 @@ int BuildingClass::CaptureBuilding() {
     }
     return result; /*0x44d690*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x44D700
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetAmmoCountScaled() {
     BuildingTypeClass *Type; // esi
     int result; // eax
@@ -141,10 +143,10 @@ int BuildingClass::GetAmmoCountScaled() {
     IDA_LOWORD(result) = Math::RoundToInt((double)v3 * v4); /*0x44d74b*/
     return result; /*0x44d71a*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x44E3A0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::CheckOverlapWithOthers() {
     int v2; // ebp
     unsigned short *v3; // esi
@@ -177,10 +179,10 @@ char BuildingClass::CheckOverlapWithOthers() {
     }
     return v6; /*0x44e434*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x44F640
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetFactoryPosition() {
     BuildingTypeClass *Type; // eax
     int *location; // ecx
@@ -218,10 +220,10 @@ int BuildingClass::GetFactoryPosition() {
       return (int)v11; /*0x44f69d*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x451750
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::PlayUpgradeAnim(int a2, int a3, int a4, void *a5) {
     int result; // eax
     int *v6; // edx
@@ -246,10 +248,10 @@ int BuildingClass::PlayUpgradeAnim(int a2, int a3, int a4, void *a5) {
     }
     return result; /*0x4517c4*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x452170
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::SetConnectedBuildingMission(int a2) {
     char v3; // bl
     int *Anims; // ecx
@@ -272,10 +274,10 @@ int BuildingClass::SetConnectedBuildingMission(int a2) {
     while ( v5 ); /*0x4521ad*/
     return result; /*0x4521af*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4525F0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::IsPoweredOn() {
     int result; // eax
 
@@ -291,10 +293,10 @@ int BuildingClass::IsPoweredOn() {
     }
     return result; /*0x452605*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x452630
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CheckHealthForRepair() {
     int result; // eax
 
@@ -321,10 +323,10 @@ int BuildingClass::CheckHealthForRepair() {
     }
     return result; /*0x45263c*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x452670
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CanAcceptType(int a2, int a3) {
     int result; // eax
 
@@ -357,10 +359,10 @@ int BuildingClass::CanAcceptType(int a2, int a3) {
     IDA_LOBYTE(result) = 1; /*0x4526e3*/
     return result; /*0x4526b5*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4566B0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetPowerFrame() {
     int v2; // ecx
     int result; // eax
@@ -393,20 +395,20 @@ int BuildingClass::GetPowerFrame() {
     }
     return result; /*0x4566e5*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x457620
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::IsFactorySelectable() {
     int result; // eax
 
     IDA_LOBYTE(result) = BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable((BuildingClass *)this->Type); /*0x457626*/
     return result;
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x457630
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::SWAvailable() {
     int SuperWeapon; // eax
     int v3; // eax
@@ -420,10 +422,10 @@ int BuildingClass::SWAvailable() {
     else
       return -1; /*0x457676*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4578C0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::IsFootprintBlocked() {
     int result; // eax
     int *v3; // eax
@@ -520,38 +522,38 @@ int BuildingClass::IsFootprintBlocked() {
     IDA_LOBYTE(result) = 1; /*0x457a00*/
     return result; /*0x4579f3*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4581F0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::MissionStubReturnZero6() {
     return this->Audio8[2]; /*0x4581f6*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459870
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::MissionStubReturnZero() {
     return *(unsigned int *)&this->Type->__pad_F70[1460]; /*0x45987c*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459880
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::MissionStubReturnZero2() {
     return *(unsigned int *)&this->Type->__pad_F70[1464]; /*0x45988c*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459890
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::MissionStubReturnZero3() {
     return *(unsigned int *)&this->Type->__pad_F70[1468]; /*0x45989c*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459C00
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::IsMassSelectable() {
     int result; // eax
 
@@ -560,111 +562,111 @@ int BuildingClass::IsMassSelectable() {
       IDA_LOBYTE(result) = TechnoClass::CanMoveToCell((TechnoClass *)this); /*0x459c16*/
     return result; /*0x459c12*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459D80
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::StubReturnFalse() {
     int result; // eax
 
     IDA_LOBYTE(result) = 0; /*0x459d80*/
     return result; /*0x459d82*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459DA0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::MissionStubReturnZero5() {
     return 2; /*0x459da5*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459DF0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::StubReturnFalse3() {
     int result; // eax
 
     IDA_LOBYTE(result) = 0; /*0x459df0*/
     return result; /*0x459df2*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459E00
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::StubReturnFalse4() {
     int result; // eax
 
     IDA_LOBYTE(result) = 0; /*0x459e00*/
     return result; /*0x459e02*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459E10
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::StubReturnFalse10() {
     int result; // eax
 
     IDA_LOBYTE(result) = 0; /*0x459e10*/
     return result; /*0x459e12*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459E20
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::StubReturnFalse11() {
     int result; // eax
 
     IDA_LOBYTE(result) = 0; /*0x459e20*/
     return result; /*0x459e22*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459E30
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::StubReturnFalse12() {
     int result; // eax
 
     IDA_LOBYTE(result) = 0; /*0x459e30*/
     return result; /*0x459e32*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459E40
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::StubReturnFalse13() {
     int result; // eax
 
     IDA_LOBYTE(result) = 0; /*0x459e40*/
     return result; /*0x459e42*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459E50
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::StubReturnFalse14() {
     int result; // eax
 
     IDA_LOBYTE(result) = 0; /*0x459e50*/
     return result; /*0x459e52*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459ED0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetTypeField60() {
     return (int)this->Type->?; /*0x459ed9*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459EE0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetTypePtr() {
     return (int)this->Type; /*0x459ee6*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x483620
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 bool BuildingClass::IsTiberiumCollectorEligible() {
     int BuildingByTiberiumType; // eax
     int v4; // eax
@@ -681,10 +683,10 @@ bool BuildingClass::IsTiberiumCollectorEligible() {
       return *(double *)(v4 + 176) >= 0.00001; /*0x483686*/
     return 0; /*0x483634*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x487C10
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CheckC4Active() {
     int result; // eax
     unsigned int *v3; // esi
@@ -714,20 +716,20 @@ int BuildingClass::CheckC4Active() {
     }
     return result; /*0x487c1e*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4A5130
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CheckFlag24() {
     int result; // eax
 
     IDA_LOBYTE(result) = IDA_LOBYTE(this->?) && !IDA_BYTE1(this->?); /*0x4a5141*/
     return result; /*0x4a5140*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4A51B0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CheckPowerFlags() {
     int result; // eax
 
@@ -735,7 +737,7 @@ int BuildingClass::CheckPowerFlags() {
       IDA_LOBYTE(result) = 0; /*0x4a51c0*/
     return result; /*0x4a51c2*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4C2C10
 namespace gamemd {
@@ -781,7 +783,7 @@ int AircraftClass::StubReturnFalse4() {
 } // namespace gamemd
 
 // 0x5F5DD0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetSellPriority() {
     int result; // eax
     double v3; // st7
@@ -805,10 +807,10 @@ int BuildingClass::GetSellPriority() {
       return 2; /*0x5f5e6f*/
     return result; /*0x5f5e0b*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x5F6500
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::SquaredDistanceTo(int *a2) {
     int *v3; // eax
     int v4; // esi
@@ -827,10 +829,10 @@ int BuildingClass::SquaredDistanceTo(int *a2) {
     v7 = (unsigned int *)(*(int (__thiscall **)(int *, unsigned int *))(v5 + 72))(a2, v8); /*0x5f6539*/
     return (v4 - *v7) * (v4 - *v7) + (v6 - v7[1]) * (v6 - v7[1]); /*0x5f650e*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6B0300
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 unsigned int * BuildingClass::FindPlacementCells2(unsigned int *a2, int a3) {
     int occupant; // ecx
     int v5; // edi
@@ -929,7 +931,7 @@ unsigned int * BuildingClass::FindPlacementCells2(unsigned int *a2, int a3) {
       return a2; /*0x6b0482*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6B4F30
 namespace gamemd {
@@ -946,11 +948,11 @@ int UnitClass::StubReturn29() {
 } // namespace gamemd
 
 // 0x7105E0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::IsBeingRepairedOrCaptured() {
     return this->? || this->?; /*0x7105f6*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x414290
 namespace gamemd {
@@ -1181,7 +1183,7 @@ int AircraftClass::MissionStubReturnZero() {
 } // namespace gamemd
 
 // 0x424B50
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::AimTurret(unsigned char *a2) {
     unsigned char *v3; // ebp
     char isOnMap; // bl
@@ -1261,10 +1263,10 @@ int BuildingClass::AimTurret(unsigned char *a2) {
     }
     return result; /*0x424c81*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4260F0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::IsCellPlaceable(int16_t *a2) {
     int result; // eax
     int v4; // ecx
@@ -1308,10 +1310,10 @@ int BuildingClass::IsCellPlaceable(int16_t *a2) {
     IDA_LOBYTE(result) = 1; /*0x4261bc*/
     return result; /*0x42614d*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x429A90
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int * BuildingClass::UpdatePowerAnimation(int a2, int16_t *a3, unsigned int *a4, int a5, int a6, char a7) {
     int16_t *v7; // edi
     int v8; // ebp
@@ -1887,10 +1889,10 @@ int * BuildingClass::UpdatePowerAnimation(int a2, int16_t *a3, unsigned int *a4,
       BuildingClass::UpdatePowerAnim((BuildingClass *)this, v89); /*0x42a42d*/
     return v90; /*0x42a434*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x42A460
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::AddRectToDrawList(int ***a2, int *a3, int16_t *a4, float a5) {
     int uniqueId; // eax
     unsigned int *vtable3; // eax
@@ -1979,10 +1981,10 @@ int BuildingClass::AddRectToDrawList(int ***a2, int *a3, int16_t *a4, float a5) 
     *(float *)(_ESI + 8) = _ET1; /*0x42a59e*/
     return _ESI; /*0x42a5a1*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x42ACF0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::UpdatePowerAnim(int a2) {
     int v2; // eax
     int v3; // esi
@@ -2156,10 +2158,10 @@ char BuildingClass::UpdatePowerAnim(int a2) {
     v29->?[0] = 0; /*0x42aeca*/
     return v2; /*0x42aec7*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x43C2D0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::MissionController() {
     double v1; // st7
     int v2; // ebp
@@ -2623,10 +2625,10 @@ int BuildingClass::MissionController() {
         return TechnoClass::Mission_RepairDispatch(v62, v2, v2, v66, v53);
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x43CEA0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::DrawFactoryProduction() {
     int result; // eax
     int *v3; // eax
@@ -2709,10 +2711,10 @@ int BuildingClass::DrawFactoryProduction() {
     }
     return result; /*0x43cfef*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x43D030
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::DisplayProductionFrame() {
     int v2; // edx
     int (__thiscall **vtable0)(BuildingClass *); // eax
@@ -2878,10 +2880,10 @@ int BuildingClass::DisplayProductionFrame() {
     }
     return result; /*0x43d27f*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x43E7B0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::DrawVisible(int *a2, int *a3) {
     int v4; // eax
     FactoryClass *BuildLimit; // eax
@@ -2934,10 +2936,10 @@ void BuildingClass::DrawVisible(int *a2, int *a3) {
       }
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x43E900
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetZDrawOffset() {
     int v2; // eax
     int v3; // eax
@@ -2951,10 +2953,10 @@ int BuildingClass::GetZDrawOffset() {
     else
       return -v3; /*0x43e930*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x43EF90
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetProductionFrame() {
     BuildingTypeClass *Type; // eax
     int v3; // edi
@@ -3052,10 +3054,10 @@ int BuildingClass::GetProductionFrame() {
     else
       return 0; /*0x43f0f2*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x440580
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::Unlimbo_UnitDeliveryFix() {
     double v1; // st7
     TechnoClass *v2; // ebp
@@ -3869,10 +3871,10 @@ int BuildingClass::Unlimbo_UnitDeliveryFix() {
     }
     return result; /*0x440867*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x442230
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ProcessAttack() {
     int v1; // ebp
     int v3; // ebx
@@ -4361,10 +4363,10 @@ int BuildingClass::ProcessAttack() {
       RA2_OPDEL(Block); /*0x442928*/
     return 4; /*0x442396*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x445E50
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetFacingToTarget() {
     double v1; // st7
     AbstractClass *target; // ecx
@@ -4395,10 +4397,10 @@ int BuildingClass::GetFacingToTarget() {
       return (int)v12; /*0x445eca*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x445F00
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::SelectTargetTypeFlags() {
     Building **v2; // eax
     int v3; // edi
@@ -4424,10 +4426,10 @@ int BuildingClass::SelectTargetTypeFlags() {
     }
     return (int)TechnoClass::SelectAutoTarget_Start_AU((TechnoClass *)this, v4, v3 | 1, v8, v9); /*0x445f6d*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x447110
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ToggleSellMode() {
     int result; // eax
     BuildingTypeClass *Type; // ecx
@@ -4483,10 +4485,10 @@ int BuildingClass::ToggleSellMode() {
     }
     return result; /*0x4471c1*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x447540
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::HandleRepairCursor() {
     BuildingTypeClass *Type; // eax
     int16_t *v4; // edi
@@ -4602,10 +4604,10 @@ int BuildingClass::HandleRepairCursor() {
     }
     return v5; /*0x447558*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x447780
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::StartProduction(int a2) {
     int result; // eax
     int v4; // edi
@@ -4803,10 +4805,10 @@ int BuildingClass::StartProduction(int a2) {
     }
     return result; /*0x447aae*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x447AC0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetExitCoords() {
     BuildingClass *v1; // edi
     int v2; // esi
@@ -4828,10 +4830,10 @@ int BuildingClass::GetExitCoords() {
     v8[2] = (int)vtable2; /*0x447b0c*/
     return (int)v8; /*0x447b0f*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x447B20
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CalculateTurretAngle() {
     double v1; // st7
     BuildingTypeClass *Type; // eax
@@ -4990,10 +4992,10 @@ int BuildingClass::CalculateTurretAngle() {
     v38[2] = v33[2]; /*0x447df0*/
     return (int)v38; /*0x447b96*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x447E90
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::TogglePrimaryFactory() {
     BuildingTypeClass *Type; // eax
     int v2; // eax
@@ -5013,10 +5015,10 @@ int BuildingClass::TogglePrimaryFactory() {
     v6[2] = v3[2]; /*0x447f00*/
     return (int)v6; /*0x447efc*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x44ACF0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ProcessActiveUpdate() {
     double v1; // st7
     BuildingTypeClass *Type; // eax
@@ -5541,10 +5543,10 @@ int BuildingClass::ProcessActiveUpdate() {
     }
     return 1; /*0x44ad52*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x44C980
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ProcessSuperWeaponEffects() {
     double v1; // st7
     HouseClass *owner; // ecx
@@ -6142,10 +6144,10 @@ int BuildingClass::ProcessSuperWeaponEffects() {
     }
     return result; /*0x44cc5a*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x44D7D0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetTargetFacing() {
     unsigned int v2; // ecx
     int16_t v4; // dx
@@ -6182,10 +6184,10 @@ int BuildingClass::GetTargetFacing() {
       return (int)v8; /*0x44d7f0*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x44D880
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ClearFactoryBib() {
     double v1; // st7
     BuildingTypeClass *Type; // eax
@@ -6706,10 +6708,10 @@ int BuildingClass::ClearFactoryBib() {
     IDA_LOWORD(v35) = Math::RoundToInt(v1); /*0x44dc94*/
     return v35 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x44dcb1*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x44E440
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ProcessPowerPlantEffect() {
     double v1; // st7
     BuildingTypeClass *Type; // eax
@@ -6890,10 +6892,10 @@ int BuildingClass::ProcessPowerPlantEffect() {
     }
     return result; /*0x44e4e8*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x44E880
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetPowerDrain() {
     BuildingTypeClass *Type; // ecx
     int result; // eax
@@ -6921,10 +6923,10 @@ int BuildingClass::GetPowerDrain() {
     }
     return result; /*0x44e8dc*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x44EBF0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::Disappear_PrismForward() {
     int v1; // ebx
     FactoryClass *Factory; // ecx
@@ -7135,10 +7137,10 @@ int BuildingClass::Disappear_PrismForward() {
     }
     return ObjectClass::Destroy2((ObjectClass *)this); /*0x44eee7*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4500A0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetAdjustedExitCoords() {
     unsigned int *v2; // eax
     int v3; // edi
@@ -7160,10 +7162,10 @@ int BuildingClass::GetAdjustedExitCoords() {
     v10[2] = v4 + v7; /*0x4500e0*/
     return (int)v10; /*0x4500e5*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4503F0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::UpdatePrism() {
     int64_t v2; // rax
     int v3; // ecx
@@ -7229,20 +7231,20 @@ int BuildingClass::UpdatePrism() {
     }
     return v2; /*0x45045c*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4513D0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ProductionCheck() {
     if ( this->BuildingClass_field_int_534 && this->ActuallyPlacedOnMap ) /*0x4513da*/
       return (*((int (__thiscall **)(BuildingTypeClass *))this->Type->vtable1 + 39))(this->Type); /*0x4513ec*/
     else
       return (*((int (__thiscall **)(BuildingTypeClass *))this->Type->vtable1 + 48))(this->Type); /*0x4513fa*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x451890
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::PlayAnim(BuildingClass *a1, int a2, AnimTypeClass *a3, int a4, int a5, int a6, void *a7) {
     int v8; // edi
     int *Anims; // ebp
@@ -7367,10 +7369,10 @@ int BuildingClass::PlayAnim(BuildingClass *a1, int a2, AnimTypeClass *a3, int a4
     }
     return result; /*0x451b2c*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x451B40
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::StopAnim(int a2) {
     int Type; // eax
     int *i; // ecx
@@ -7551,10 +7553,10 @@ char BuildingClass::StopAnim(int a2) {
     }
     return Type; /*0x451b6b*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x451E40
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ClearAnims(int a2) {
     int result; // eax
     int *Anims; // esi
@@ -7589,10 +7591,10 @@ int BuildingClass::ClearAnims(int a2) {
     }
     return result; /*0x451e71*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4521C0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::DisableTemporal() {
     int *Anims; // ecx
     int v2; // edx
@@ -7619,10 +7621,10 @@ int BuildingClass::DisableTemporal() {
     while ( v2 ); /*0x4521fe*/
     return result; /*0x452200*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x452210
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 unsigned char * BuildingClass::EnableTogglePower() {
     int *Anims; // ecx
     int v2; // edx
@@ -7646,10 +7648,10 @@ unsigned char * BuildingClass::EnableTogglePower() {
     while ( v2 ); /*0x452242*/
     return result; /*0x452244*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x452360
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::PowerOff() {
     BuildingTypeClass *Type; // eax
     HouseClass *owner; // ecx
@@ -7682,10 +7684,10 @@ char BuildingClass::PowerOff() {
     }
     return (char)Type; /*0x452408*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x452410
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::EnableStuff() {
     LightSourceClass *LightSource; // ecx
     int v3; // esi
@@ -7711,10 +7713,10 @@ void BuildingClass::EnableStuff() {
     }
     while ( v3 < 1428 ); /*0x452476*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x452540
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::MakeTraversable() {
     if ( !this->Type->Gate ) /*0x45254a*/
       return 1; /*0x452558*/
@@ -7738,10 +7740,10 @@ char BuildingClass::MakeTraversable() {
     }
     return 0; /*0x452554*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4527D0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::HasOccupantAudio() {
     int result; // eax
     char UpgradeLevel; // al
@@ -7781,10 +7783,10 @@ int BuildingClass::HasOccupantAudio() {
     IDA_LOBYTE(result) = 0; /*0x452818*/
     return result; /*0x4527e2*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x452A40
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 unsigned int * BuildingClass::DemolishBridgeCheck(int a2) {
     unsigned int *result; // eax
     int v4; // esi
@@ -7853,10 +7855,10 @@ unsigned int * BuildingClass::DemolishBridgeCheck(int a2) {
     }
     return result; /*0x452ba3*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x452BB0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::FindBridgeSegment(int a2, char a3, int a4) {
     int v4; // ebx
     BuildingTypeClass *Type; // eax
@@ -7941,10 +7943,10 @@ int BuildingClass::FindBridgeSegment(int a2, char a3, int a4) {
     }
     return a4; /*0x452d30*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x452DC0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::DemolishBridge() {
     int BridgeSegment; // eax
     int v3; // ebp
@@ -8057,10 +8059,10 @@ void BuildingClass::DemolishBridge() {
       }
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x453060
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::DemolishBridgeAnim(int a2, char a3) {
     BuildingClass *v3; // ebx
     int result; // eax
@@ -8157,10 +8159,10 @@ int BuildingClass::DemolishBridgeAnim(int a2, char a3) {
     }
     return result; /*0x453231*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x453240
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::TraverseBridgeSegments() {
     Cell *v2; // eax
     Cell *v3; // ebp
@@ -8239,10 +8241,10 @@ char BuildingClass::TraverseBridgeSegments() {
     }
     return (char)v2; /*0x453360*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4533A0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::RepairPlacement(char a2) {
     BuildingClass *v2; // ebx
     int result; // eax
@@ -8479,10 +8481,10 @@ int BuildingClass::RepairPlacement(char a2) {
     }
     return result; /*0x453818*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x453BF0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 unsigned int * BuildingClass::CalcBarrelFlashPosition(unsigned int *a2, int a3, char a4) {
     int v5; // eax
     int currentBurstIndex; // ecx
@@ -8578,10 +8580,10 @@ unsigned int * BuildingClass::CalcBarrelFlashPosition(unsigned int *a2, int a3, 
     a2[2] = v23; /*0x453d4f*/
     return a2; /*0x453d48*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x453D60
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::MarkCellOccupied() {
     unsigned int *v1; // ecx
     unsigned int *v2; // eax
@@ -8599,10 +8601,10 @@ int BuildingClass::MarkCellOccupied() {
     *(unsigned int *)result = v3; /*0x453db0*/
     return result; /*0x453db2*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x453DC0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ClearCellOccupied() {
     unsigned int *v1; // ecx
     unsigned int *v2; // eax
@@ -8620,10 +8622,10 @@ int BuildingClass::ClearCellOccupied() {
     *(unsigned int *)result = v3; /*0x453e10*/
     return result; /*0x453e12*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x454260
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::PowerDrainUpdate() {
     int v2; // edx
     int v3; // eax
@@ -8743,10 +8745,10 @@ int BuildingClass::PowerDrainUpdate() {
     IDA_LOBYTE(v29) = this->UpgradeLevel; /*0x454488*/
     return Power::FinalizeDrain(v31, v29); /*0x454496*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4545D0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::ProcessAnimationStates() {
     int *Anims; // ecx
     int v3; // ebp
@@ -8829,10 +8831,10 @@ void BuildingClass::ProcessAnimationStates() {
     }
     while ( v4 < 357 ); /*0x454716*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x454730
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 unsigned char * BuildingClass::UpdateIdleAnims() {
     int v2; // ebx
     int i; // edi
@@ -8875,10 +8877,10 @@ unsigned char * BuildingClass::UpdateIdleAnims() {
     }
     return result; /*0x4547b1*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4547C0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::UpdateAnimationSlots() {
     int i; // edi
     char *v3; // eax
@@ -8974,10 +8976,10 @@ void BuildingClass::UpdateAnimationSlots() {
       }
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x454930
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::ProcessDamageAnim() {
     int v2; // edx
     int v4; // ecx
@@ -9012,10 +9014,10 @@ void BuildingClass::ProcessDamageAnim() {
       ++v6; /*0x4549a3*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4555D0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::IsPoweredActive() {
     int result; // eax
     BuildingTypeClass *Type; // ebx
@@ -9084,10 +9086,10 @@ int BuildingClass::IsPoweredActive() {
     IDA_LOBYTE(result) = 0; /*0x4556be*/
     return result; /*0x4556b8*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x455980
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ScanCircleForTiberium() {
     int DetectDisguiseRange; // ebx
     int result; // eax
@@ -9143,10 +9145,10 @@ int BuildingClass::ScanCircleForTiberium() {
     }
     return result; /*0x455a70*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x455A80
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::UpdateTerrainEffect() {
     int result; // eax
     int DetectDisguiseRange; // ebx
@@ -9202,10 +9204,10 @@ int BuildingClass::UpdateTerrainEffect() {
     }
     return result; /*0x455b84*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x456580
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::UpdateRevealField() {
     char *Field; // ebx
     int v3; // edi
@@ -9231,10 +9233,10 @@ int BuildingClass::UpdateRevealField() {
     this->? = 1; /*0x4565d2*/
     return result; /*0x4565d9*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4565E0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::UpdateGapGeneratorField() {
     char *Field; // ebp
     int v3; // edi
@@ -9260,10 +9262,10 @@ int BuildingClass::UpdateGapGeneratorField() {
     this->? = 0; /*0x456632*/
     return result; /*0x456639*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x456750
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::DrawDeployCircle() {
     double v1; // st7
     int result; // eax
@@ -9352,10 +9354,10 @@ int BuildingClass::DrawDeployCircle() {
     }
     return result; /*0x456907*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x457690
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::SW2Available() {
     int SuperWeapon2; // eax
     int v3; // eax
@@ -9369,10 +9371,10 @@ int BuildingClass::SW2Available() {
     else
       return -1; /*0x4576d6*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4576F0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::DestroyOnBridgeCollapse() {
     int result; // eax
     int i; // edi
@@ -9406,10 +9408,10 @@ int BuildingClass::DestroyOnBridgeCollapse() {
     }
     return result; /*0x457769*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x457DE0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::UnloadUnits(char a2, char a3) {
     int (**vtable0)(void); // eax
     BuildingTypeClass *Type; // ecx
@@ -9626,10 +9628,10 @@ void BuildingClass::UnloadUnits(char a2, char a3) {
       BuildingClass::UpdateThreatBounds(this, v44); /*0x4581d6*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4585C0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::AnimateUnloadUnits(int a2) {
     int v4; // edi
     int i; // edi
@@ -9713,10 +9715,10 @@ void BuildingClass::AnimateUnloadUnits(int a2) {
     v20 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *))this->vtable1 + 111))(this); /*0x458729*/
     BuildingClass::UpdateThreatBounds(this, v20); /*0x458732*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4593A0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::RemoveLimpet() {
     TechnoClass *bunkerLinkedUnit; // esi
     int *v3; // eax
@@ -9762,10 +9764,10 @@ void BuildingClass::RemoveLimpet() {
       vtable0[157](this, 3); /*0x459462*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459470
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::UpdateDamageAnim() {
     int result; // eax
     int v5; // ecx
@@ -9838,10 +9840,10 @@ int BuildingClass::UpdateDamageAnim() {
     }
     return result; /*0x4595ac*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4595C0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::EmptyBunker() {
     int v4; // ecx
     char *v5; // eax
@@ -10000,10 +10002,10 @@ int BuildingClass::EmptyBunker() {
     }
     return result; /*0x4596ce*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459900
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::SpawnParticles() {
     int result; // eax
     int v3; // ebp
@@ -10151,10 +10153,10 @@ int BuildingClass::SpawnParticles() {
     }
     return result; /*0x459be2*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x459EF0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetBuildCoordsAdjusted() {
     int *location; // edx
     int v2; // eax
@@ -10173,10 +10175,10 @@ int BuildingClass::GetBuildCoordsAdjusted() {
     v7[2] = v6; /*0x459f13*/
     return (int)v7; /*0x459f16*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x45EE70
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ApplyFoundationDamage(unsigned short *a2, void *other) {
     unsigned short *v4; // edi
     unsigned short *v5; // eax
@@ -10244,10 +10246,10 @@ int BuildingClass::ApplyFoundationDamage(unsigned short *a2, void *other) {
     }
     return v12 != 0; /*0x45f034*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x45F160
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetPlacementCoords(int *a2, unsigned int *a3) {
     int result; // eax
 
@@ -10277,10 +10279,10 @@ int BuildingClass::GetPlacementCoords(int *a2, unsigned int *a3) {
     IDA_LOBYTE(result) = 0; /*0x45f1bb*/
     return result; /*0x45f19f*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x47F6A0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::Draw_0(unsigned int *a2, int *a3) {
     int result; // eax
     unsigned int *v5; // eax
@@ -10522,10 +10524,10 @@ int BuildingClass::Draw_0(unsigned int *a2, int *a3) {
     }
     return result; /*0x47f828*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x47FDE0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int * BuildingClass::GetPlacementRect(int *a2) {
     int v3; // eax
     unsigned char *v4; // esi
@@ -10607,10 +10609,10 @@ int * BuildingClass::GetPlacementRect(int *a2) {
       return a2; /*0x47fe09*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x483C80
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::DetermineVisualState() {
     int v2; // eax
     int v3; // ecx
@@ -10715,17 +10717,17 @@ void BuildingClass::DetermineVisualState() {
     }
     this->?[4] = 5; /*0x483e1e*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x485010
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::FindByCellHash() {
     return FindBuildingByTiberiumType(this->?[2]);
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4852D0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::CreateDestructionCrater() {
     int v2; // kr04_4
     int v3; // kr00_4
@@ -10745,10 +10747,10 @@ char BuildingClass::CreateDestructionCrater() {
              30,
              0);
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x485AF0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::VisualizePlacement() {
     BuildingClass *v1; // ebp
     int *PlacementRect; // esi
@@ -11068,10 +11070,10 @@ void BuildingClass::VisualizePlacement() {
     Cell::CreateCrater(*v46, v46[1], v46[2], v46[3], 0); /*0x486366*/
     House::AnnounceUpgrade((int)v1, -1); /*0x48636f*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x486920
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::CreateIdleAnim() {
     int *v2; // esi
     AnimClass *v3; // ebp
@@ -11125,10 +11127,10 @@ void BuildingClass::CreateIdleAnim() {
       }
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x486E70
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CreatePlacementCrater() {
     int *ScreenRect; // edi
     int *StartCoords; // eax
@@ -11234,10 +11236,10 @@ int BuildingClass::CreatePlacementCrater() {
     Cell::CreateCrater(v5 - DSurface_ViewBounds.field_0, v15 - (unsigned int)DSurface_ViewBounds.field_4, v8, v16, 0); /*0x486fd1*/
     return BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)&this->?); /*0x486fe8*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x490B90
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetSHPFrame(int a2) {
     if ( !this->? ) /*0x490b93*/
       ConvertClass::InitTables((ConvertClass *)this); /*0x490b9a*/
@@ -11446,10 +11448,10 @@ int BuildingClass::GetSHPFrame(int a2) {
         }
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4A17C0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::BeginCrumblingTimer(int16_t *a2) {
     CellClass *p_vtable3; // edi
     void *vtable0; // edx
@@ -11500,10 +11502,10 @@ char BuildingClass::BeginCrumblingTimer(int16_t *a2) {
       this->TechnoClass = *(void **)&(&stru_A8EB00)[416]; /*0x4a18d4*/
     return 1; /*0x4a18d6*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4A18F0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::CreateCraterAtCell() {
     int v1; // ebp
     BuildingClass *v3; // edi
@@ -11599,10 +11601,10 @@ char BuildingClass::CreateCraterAtCell() {
       return 0; /*0x4a1a96*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4AC660
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::TogglePower(int a2) {
     int result; // eax
     char v4; // bl
@@ -11649,10 +11651,10 @@ int BuildingClass::TogglePower(int a2) {
     }
     return result; /*0x4ac6e0*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4DB9B0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::vt_entry_504() {
     int Member; // eax
     int v3; // esi
@@ -11673,10 +11675,10 @@ char BuildingClass::vt_entry_504() {
     IDA_LOBYTE(Member) = (unsigned char)Member == 0; /*0x4dba0f*/
     return (*((int (__thiscall **)(FootClass *, unsigned int, int))this->vtable1 + 289))(this, 0, Member); /*0x4dba1d*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4DD890
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int * BuildingClass::Validate(int *a2, int a3) {
     unsigned int *v4; // eax
     int v6; // ebx
@@ -11731,10 +11733,10 @@ int * BuildingClass::Validate(int *a2, int a3) {
       return a2; /*0x4dd9dd*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4DD9F0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ValidateCell(int16_t *a2, int a3, int a4) {
     int16_t *v4; // edi
     int16_t v6; // cx
@@ -11809,24 +11811,24 @@ int BuildingClass::ValidateCell(int16_t *a2, int a3, int a4) {
       IDA_LOBYTE(result) = 0; /*0x4ddb79*/
     return result; /*0x4ddb6e*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4DE750
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::vt_entry_4D4() {
     ; /*0x4de750*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4DE760
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::vt_entry_4D8() {
     ; /*0x4de760*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4DEE80
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int * BuildingClass::ValidatePlacementEx(int a2, int a3, int *a4, int *a5) {
     int v6; // ebp
     int v7; // edi
@@ -11889,10 +11891,10 @@ int * BuildingClass::ValidatePlacementEx(int a2, int a3, int *a4, int *a5) {
     while ( v6 < bunkersCount ); /*0x4df01b*/
     return v13; /*0x4df026*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4FD150
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CalcExitCoords() {
     double v1; // st7
     int v3; // ebx
@@ -12110,10 +12112,10 @@ int BuildingClass::CalcExitCoords() {
     }
     return result; /*0x4fd4e6*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4FF700
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::PowerUpdate(unsigned char *a2) {
     int v3; // eax
     int result; // eax
@@ -12192,10 +12194,10 @@ int BuildingClass::PowerUpdate(unsigned char *a2) {
     }
     return result; /*0x4ff7c2*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4FF980
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 unsigned int * BuildingClass::DecrementTypeCounter(unsigned int *a2) {
     unsigned int *result; // eax
     int v4; // eax
@@ -12237,10 +12239,10 @@ unsigned int * BuildingClass::DecrementTypeCounter(unsigned int *a2) {
     }
     return result; /*0x4ffa06*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x4FFA50
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 unsigned int * BuildingClass::IncrementOccupantTypeCounter(unsigned int *a2) {
     unsigned int *result; // eax
     int v4; // eax
@@ -12282,10 +12284,10 @@ unsigned int * BuildingClass::IncrementOccupantTypeCounter(unsigned int *a2) {
     }
     return result; /*0x4ffad6*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x505310
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::FindBySWType(int a2) {
     char v2; // cl
     int v3; // eax
@@ -12306,10 +12308,10 @@ int BuildingClass::FindBySWType(int a2) {
     }
     return *(unsigned int *)(*(unsigned int *)(a2 + 4) + 4 * v3); /*0x50534e*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x5F5CD0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::IsHealthLow() {
     double health; // [esp+4h] [ebp-8h]
 
@@ -12317,10 +12319,10 @@ int BuildingClass::IsHealthLow() {
     return health / (double)*(int *)((*((int (__thiscall **)(BuildingClass *))this->vtable1 + 34))(this) + 160) <= *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5896) /*0x5f5d0e*/
         && this->? > 0;
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x62D2A0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::UpdateFloatPosition() {
     int *location; // eax
     int currentMission; // ecx
@@ -12380,10 +12382,10 @@ int BuildingClass::UpdateFloatPosition() {
     }
     return (*((int (__thiscall **)(BuildingClass *, int *))this->vtable1 + 109))(this, &v17); /*0x62d3e4*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x634310
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CopyTypeDataForRender(int a2, int a3) {
     int uniqueId; // edx
     int v4; // eax
@@ -12421,10 +12423,10 @@ int BuildingClass::CopyTypeDataForRender(int a2, int a3) {
     *(unsigned char *)(a2 + 110) = v8[2]; /*0x634355*/
     return a2; /*0x634356*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6347B0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetTypeEntry(int a2) {
     int uniqueId; // esi
     int v3; // eax
@@ -12460,10 +12462,10 @@ int BuildingClass::GetTypeEntry(int a2) {
       return *(unsigned int *)(this->? + 4 * v6); /*0x6347f6*/
     return result; /*0x6347e8*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6385C0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::GetObjectData() {
     int Type; // eax
     int v3; // ebx
@@ -12516,10 +12518,10 @@ char BuildingClass::GetObjectData() {
     *(unsigned char *)(v3 + 28) = 1; /*0x6386ba*/
     return 1; /*0x6386be*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6395B0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::SetProduction(int a1, ScriptAction *a2) {
     ScriptAction *v2; // ebx
     int Type; // eax
@@ -12609,10 +12611,10 @@ char BuildingClass::SetProduction(int a1, ScriptAction *a2) {
     }
     return ScriptAction::FindSquadMember(v2); /*0x63971b*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x63AC70
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CheckBuildability() {
     int v1; // ebp
     int v2; // edi
@@ -12659,18 +12661,18 @@ int BuildingClass::CheckBuildability() {
     }
     return 3; /*0x63ace7*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x63BE10
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 bool BuildingClass::IsIdleWithNoCaptives() {
     return (*((int (__thiscall **)(BuildingClass *))this->vtable1 + 97))(this) == 11 /*0x63be4a*/
         && (!this || (this->? & 4) == 0 || !this->Anims[18] && !this->?);
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x63D560
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::DrawSelectionBlip(int a2, int a3, int a4, int a5) {
     double v5; // st7
     int result; // eax
@@ -12720,10 +12722,10 @@ int BuildingClass::DrawSelectionBlip(int a2, int a3, int a4, int a5) {
     }
     return result; /*0x63d620*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6B0690
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 unsigned int * BuildingClass::GetRallyPointCoord(unsigned int *a2) {
     int occupant; // ecx
     int v4; // edi
@@ -12756,10 +12758,10 @@ unsigned int * BuildingClass::GetRallyPointCoord(unsigned int *a2) {
       return a2; /*0x6b0737*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6B0CC0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int * BuildingClass::InitBuildLimit() {
     int *result; // eax
     int i; // edi
@@ -12783,10 +12785,10 @@ int * BuildingClass::InitBuildLimit() {
     }
     return result; /*0x6b0cfe*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6B0D60
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int * BuildingClass::RefreshOccupierCache() {
     int *result; // eax
     int i; // edi
@@ -12810,10 +12812,10 @@ int * BuildingClass::RefreshOccupierCache() {
     }
     return result; /*0x6b0d9e*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6B0DB0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 unsigned int * BuildingClass::ProcessEnterUnit() {
     int occupant; // ecx
     int v3; // edi
@@ -12911,7 +12913,7 @@ unsigned int * BuildingClass::ProcessEnterUnit() {
     }
     return result; /*0x6b0e9c*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6B4BE0
 namespace gamemd {
@@ -13516,7 +13518,7 @@ void UnitClass::ProcessExitQueue() {
 } // namespace gamemd
 
 // 0x6DA5C0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ProcessOccupancy(int *a2, void (__thiscall *a3)(unsigned char *)) {
     int *v3; // ebx
     int result; // eax
@@ -13597,10 +13599,10 @@ int BuildingClass::ProcessOccupancy(int *a2, void (__thiscall *a3)(unsigned char
     }
     return result; /*0x6da71c*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6F60D0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::DrawSelectionBox() {
     int v1; // edi
     int result; // eax
@@ -13732,10 +13734,10 @@ int BuildingClass::DrawSelectionBox() {
     }
     return result; /*0x6f6497*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6F9E10
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::IsInvisible() {
     int result; // eax
 
@@ -13751,10 +13753,10 @@ int BuildingClass::IsInvisible() {
     }
     return result; /*0x6f9e27*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6FB170
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::RevealShroud() {
     int result; // eax
     int v3; // edi
@@ -13883,10 +13885,10 @@ int BuildingClass::RevealShroud() {
     }
     return result; /*0x6fb45c*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x6FB470
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::RemoveShroud() {
     int result; // eax
     int v3; // edi
@@ -14008,10 +14010,10 @@ int BuildingClass::RemoveShroud() {
     }
     return result; /*0x6fb739*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x7013E0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CheckOccupantState() {
     int result; // eax
 
@@ -14026,10 +14028,10 @@ int BuildingClass::CheckOccupantState() {
     }
     return result; /*0x7013ff*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x705CA0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetBridgeAwareCoords() {
     AbstractClass *target; // ecx
     int *v3; // ecx
@@ -14054,27 +14056,27 @@ int BuildingClass::GetBridgeAwareCoords() {
       return (int)v7; /*0x705ce6*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x705D60
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 char BuildingClass::GetType_Thunk() {
     return BuildingClass::GetObjectData(this);
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x70C5A0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CheckCellPassability() {
     int result; // eax
 
     IDA_LOBYTE(result) = this->isCloakableFlag != 0; /*0x70c5a8*/
     return result; /*0x70c5ab*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x70F6E0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 void BuildingClass::UpdateThreatBounds(unsigned int *a2) {
     int v3; // eax
     int (__thiscall **vtable0)(BuildingClass *); // eax
@@ -14099,10 +14101,10 @@ void BuildingClass::UpdateThreatBounds(unsigned int *a2) {
       CellClass::SetThreatBounds((CellClass *)a2, v7, v9); /*0x70f727*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x70F8F0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::FindBridgeCell() {
     int (__thiscall **vtable0)(TechnoClass *, char *); // edx
     unsigned int *v2; // eax
@@ -14234,10 +14236,10 @@ int BuildingClass::FindBridgeCell() {
       return (int)v30; /*0x70fb36*/
     }
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x722240
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ClearFactoryData() {
     int result; // eax
     int i; // ebp
@@ -14322,10 +14324,10 @@ int BuildingClass::ClearFactoryData() {
     }
     return result; /*0x722385*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x722770
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::RebuildOccupancyTracking() {
     unsigned int *v2; // eax
     int i; // ecx
@@ -14400,10 +14402,10 @@ int BuildingClass::RebuildOccupancyTracking() {
     this->?[1] = (int)v8; /*0x722894*/
     return AudioClass::ProcessEvent((AudioClass *)this); /*0x72288b*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x722AF0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::AddOccupancy(int16_t *a2) {
     int16_t *v2; // ebp
     int v4; // edi
@@ -14475,10 +14477,10 @@ int BuildingClass::AddOccupancy(int16_t *a2) {
     }
     return result; /*0x722c2a*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x722D00
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ClearOccupancyData() {
     int result; // eax
     int i; // ebp
@@ -14563,10 +14565,10 @@ int BuildingClass::ClearOccupancyData() {
     }
     return result; /*0x722e45*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x723260
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::RebuildOccupancyTracking2() {
     unsigned int *v2; // eax
     int i; // ecx
@@ -14641,10 +14643,10 @@ int BuildingClass::RebuildOccupancyTracking2() {
     this->?[6] = (int)v8; /*0x723384*/
     return BuildingClass::RebuildOccupancy2(this); /*0x72337b*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x7233A0
-namespace gamemd::Math {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::RebuildOccupancy2() {
     int v2; // ecx
     int *v3; // eax
@@ -14729,7 +14731,7 @@ int BuildingClass::RebuildOccupancy2() {
     }
     return result; /*0x723501*/
 }
-} // namespace gamemd::Math
+} // namespace gamemd
 
 // 0x73D450
 namespace gamemd {
