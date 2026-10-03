@@ -1191,13 +1191,25 @@ struct AnimClass {
     unsigned int AnimClass_field_0xB4;
     unsigned int AnimClass_field_0xBC;
     unsigned int AnimClass_field_0xC0;
-    unsigned int AnimClass_field_0xC8;
+    Coord *AnimClass_field_0xC8;  // G42.33: raw type Coord* ([2].__pad_C sites)
     unsigned int *__pad_118;
     unsigned int *__pad_194;
     unsigned int AnimClass_field_0xD4;
     unsigned int *__pad_178;
     unsigned int *AnimClass_field_0xFC;
     unsigned int *__pad_C;
+    unsigned int AnimClass_field_0x4;  // G42.33 supply (vtable id)
+    unsigned int AnimClass_field_0x8;  // G42.33 supply
+    unsigned int AnimClass_field_0x9C;  // G42.33 supply
+    unsigned int AnimClass_field_0xA4;  // G42.33 supply (+0xA4)
+    unsigned char *AnimClass_field_0xCC;  // G42.33 supply
+    void *AnimClass_field_0x1A0;  // G42.33 supply (Mixer)
+    void *AnimClass_field_0x1B4;  // G42.33 supply (Mixer)
+    unsigned char AnimClass_field_0x35D[3];  // G42.33 supply (+0x35D..0x35F)
+    unsigned int *__pad_A0;  // G42.33 supply
+    unsigned char __pad_A8[4];  // G42.33 supply (+0xA8)
+    unsigned char __pad_120[20];  // G42.33 supply (+0x120..0x130)
+    unsigned char __pad_1B8[77];  // G42.33 supply (+0x1B8..0x200)
     unsigned int field_0;
     unsigned int field_16054;
     unsigned int field_4;
@@ -1205,7 +1217,7 @@ struct AnimClass {
 // --- flat members (END) ---
     BuildingTypeClass * * drawFrame(void *a1);
     char * sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int a6, char a7, int a8, char a9, int a10, int a11);
-    char ProcessAreaEffect(unsigned int * a1);
+    char ProcessAreaEffect(AnimClass * a1);
     char sub_773590(int a2, int a3);
     int * CheckMirrorFlags(int a1);
     int InWhichLayer_AttachedObjectLayer();
@@ -1213,9 +1225,9 @@ struct AnimClass {
     int MissionStubReturnZero2(int a1, unsigned int * a2);
     int ProcessFrame();
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
-    int Destruct(void * a2, void *a2_2);
+    int Destruct(AnimClass * a2, void *a2_2);
     void FreeRenderBuffer(void *a1);
-    void* Render(ConvertClass * a2, ConvertClass * aP5);
+    void Render(ConvertClass * a2, ConvertClass * aP5);
     static double SetField95(...);  // C2597 interim stub
     void ** ctor(void *a2, int *a3, void *a4, int a5, void *a6, void *a7, char a8);  // 0x421ea0
 };

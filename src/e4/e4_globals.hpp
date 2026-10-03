@@ -1240,6 +1240,9 @@ extern int g_MenuStateFlags;  // data: 0xAC10C8
 extern int g_MiscFlag;  // data: 0xABF23A
 extern int g_MissionPool;  // data: 0x8B3CC0
 extern int g_MissionQueueFrame;  // data: 0xABC5F8
+extern int dword_ABCD44;  // data: 0xABCD44 (MissionQueue waypoints[282], verified @0x422FD1)
+extern int dword_A83D4C;  // data: 0xA83D4C (object ptr array base, verified @0x42314B)
+extern void nullsub_89();  // G42.33 supply (atexit no-op stub, CheckMirrorFlags @0x423904)
 extern int g_MissionQueueParam;  // data: 0xABC5FC
 extern int g_MissionQueueType;  // data: 0xABC600
 extern int g_MissionState;  // data: 0x8B3CC4
@@ -1357,7 +1360,8 @@ extern int g_Rules_Bases;  // data: 0xA8B25C
 extern int g_Rules_EngineerCount;  // data: 0xA8B268
 extern int g_Rules_MultiEngineer;  // data: 0xA8B270
 extern int g_Rules_ShortGame;  // data: 0xA8B264
-extern int g_RulesClass_Instance;  // data: 0x8871E0
+namespace gamemd { struct RulesClass; }  // G42.33 supply (ptr-typed singleton access)
+extern gamemd::RulesClass *g_RulesClass_Instance;  // data: 0x8871E0 (RulesClass* singleton slot; G42.33 retyped int->RulesClass*)
 extern int g_RulesClassInitState;  // data: 0xA8E328
 extern int g_RulesInitConfig;  // data: 0x822CF4
 extern int g_ScenarioClass_Instance;  // data: 0xA8B230
@@ -15223,7 +15227,7 @@ extern void* __0Iostream_init_QAE_XZ_2;  // CRT static, fn-ptr cast use
 extern void* __0Iostream_init_QAE_XZ_6;  // CRT static, fn-ptr cast use
 extern void* __0Iostream_init_QAE_XZ_8;  // CRT static, fn-ptr cast use
 extern void* __strgtold12;  // CRT static
-extern void* __3_YAXPAX_Z;  // CRT static (operator delete mangled)
+extern void __3_YAXPAX_Z(void *);  // CRT operator delete (mangled ??3@YAXPAX@Z)
 
 // G42.32 M C2065 data supply: DataGlobal raw globals, bare/addr use-forms only
 // (member-form DataGlobal_008291B8 excluded -- needs typed struct, adjudication)

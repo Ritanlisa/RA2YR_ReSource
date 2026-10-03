@@ -195,6 +195,7 @@ struct RulesClass {
     int q284;  // 0x284
     unsigned char q287;  // 0x287
     int q288;  // 0x288
+    unsigned int WeatherConBolts[4];  // 0x288..0x297 G42.33 supply ([3]@0x294 per asm 0x729a26 mov ecx,[edx+294h])
     char q298[4];  // 0x298
     unsigned char q29C;  // 0x29C
     void * q2A0;  // 0x2A0

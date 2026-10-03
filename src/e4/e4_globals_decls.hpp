@@ -1353,7 +1353,8 @@ extern int g_Rules_Bases;  // data: 0xA8B25C
 extern int g_Rules_EngineerCount;  // data: 0xA8B268
 extern int g_Rules_MultiEngineer;  // data: 0xA8B270
 extern int g_Rules_ShortGame;  // data: 0xA8B264
-extern int g_RulesClass_Instance;  // data: 0x8871E0
+namespace gamemd { struct RulesClass; }  // G42.33 supply (ptr-typed singleton access)
+extern gamemd::RulesClass *g_RulesClass_Instance;  // data: 0x8871E0 (G42.33 retyped int->RulesClass*)
 extern int g_RulesClassInitState;  // data: 0xA8E328
 extern int g_RulesInitConfig;  // data: 0x822CF4
 extern int g_ScenarioClass_Instance;  // data: 0xA8B230

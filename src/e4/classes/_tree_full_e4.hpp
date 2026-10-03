@@ -391,6 +391,7 @@ struct MSShapeAnim {
 
 #ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass {
+    static int DetectCloaked(void *a1);  // G42.33 supply (direct call @0x76108F, ObjectClass__DetectCloaked)
     void* vfptr;
     void* vtable1;  // 0x0
     unsigned char __pad_0[29];  // 0x0
