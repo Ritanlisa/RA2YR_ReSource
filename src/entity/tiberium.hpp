@@ -116,6 +116,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SaveLoad_Prefix(int a1, int a2);  // 0x721e80
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x7220d0
     // === FUNCS-MOVE (END) ===
+    int SpreadGrowth(int a2, unsigned int *a3);  // (G42.35h supply)
 };
 
 } // namespace gamemd
