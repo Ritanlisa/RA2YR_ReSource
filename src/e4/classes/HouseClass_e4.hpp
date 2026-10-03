@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class FindSWBuilding;  // G42.36 fwd supply
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: 宏 TU 内由树头 using 提供
 class TechnoClass;
 #endif
@@ -1948,6 +1949,7 @@ struct HouseClass {
     int HandleAlliance(int a2, char a3);  // 0x4f9b70
     unsigned int * ClearStatArray();  // 0x748fd0
     int SaveToINI(char *a2); // N_fix R5 supply (cache truth)
+    ? FindSWBuilding(this, &v13);
 };
 
 } // namespace gamemd

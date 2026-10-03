@@ -4,6 +4,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Constructor_VectorClass_IonBlastClass___;  // G42.36 fwd supply
+class InfantryTypeClass;  // G42.36 fwd supply
+class CopyConstructor;  // G42.36 fwd supply
+class Constructor_VectorClass_AngerStruct_;  // G42.36 fwd supply
+class CompareVectors;  // G42.36 fwd supply
 class StubReturnNullPointer_0;  // G42.36 fwd supply
 class StubReturnNullPointer;  // G42.36 fwd supply
 class ScalarDeletingDestructor;  // G42.36 fwd supply
@@ -289,9 +294,15 @@ int Destroy(void *a1);
     DynamicVector * Constructor_VectorClass_ParticleSystemTypeClass___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_SuperWeaponTypeClass___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_AbstractTypeClass___(unsigned int * Block, char a2);
-    int Destroy(void *a1_1);
     int ScalarDeletingDestructor(unsigned int * a1);
     int StubReturnNullPointer(int a1, unsigned int * a2);
     int StubReturnNullPointer_0(int a1, const void * a2, unsigned int * a3);
+    int Destroy(void *a1_1);
+    char CompareVectors(int a2);
+    DynamicVector * Constructor_VectorClass_AngerStruct_(unsigned int * Block, char a2);
+    unsigned int * loc_5102C0(unsigned int * Block, char a2);
+    VectorClass_flat * Constructor_0(unsigned int * Block, char a2, void *a3_1);
+    unsigned int * CopyConstructor(InfantryTypeClass * aP1);
+    DynamicVector * Constructor_VectorClass_IonBlastClass___(unsigned int * Block, char a2);
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

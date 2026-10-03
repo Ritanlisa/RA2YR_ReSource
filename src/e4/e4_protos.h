@@ -1,5 +1,6 @@
 // GENERATED free-function prototypes (supply_protos_from_errors).
 #pragma once
+#include <windows.h>  // G42.36 Win32-type supply (LPARAM)
 
 #include "e4/classes/_fwd_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"

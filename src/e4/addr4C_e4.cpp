@@ -1566,9 +1566,7 @@ char sub_4C9160()
 namespace gamemd {
 char ObjectClass::_do_always_noconv_codecvt_base_std__MBE_NXZ_5()
 {
-
-  return 1; /*0x4c91b2*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C91B0)
 }
 } // namespace gamemd
 
@@ -1756,40 +1754,7 @@ double ComputeChronosphereDistortion(float a1)
 namespace gamemd {
 double globalHelper_0CB3D0(AbstractClass * aP0, AbstractClass * aP1)
 {
-  double v3; // st7
-  char v4; // c3
-  double result; // st7
-  int v6; // eax
-
-  v3 = aP0; /*0x4cb3da*/
-  if ( v4 ) /*0x4cb3e3*/
-  {
-    if ( v3 == 0.0 ) /*0x4cb3f0*/
-    {
-      return 0.0; /*0x4cb3f2*/
-    }
-    else if ( aP0 <= 0.0 ) /*0x4cb40a*/
-    {
-      return -1.5707964; /*0x4cb415*/
-    }
-    else
-    {
-      return 1.5707964; /*0x4cb40c*/
-    }
-  }
-  else
-  {
-    v6 = abs32(Math::RoundToInt(v3 / aP1 / flt_8650B8)); /*0x4cb430*/
-    if ( v6 >= 4097 ) /*0x4cb437*/
-      result = 1.5707964; /*0x4cb442*/
-    else
-      result = flt_8610B4[v6]; /*0x4cb439*/
-    if ( aP1 < 0.0 ) /*0x4cb457*/
-      result = 3.141592653589793 - result; /*0x4cb459*/
-    if ( aP0 < 0.0 ) /*0x4cb46e*/
-      return -result; /*0x4cb470*/
-  }
-  return result; /*0x4cb3f8*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4CB3D0)
 }
 } // namespace gamemd
 
@@ -1797,31 +1762,7 @@ double globalHelper_0CB3D0(AbstractClass * aP0, AbstractClass * aP1)
 namespace gamemd {
 u_short E4Recv_4CB8B0::sub_4CB8B0()
 {
-
-  int16_t v2; // ax
-  u_short vtable1_high; // cx
-  int result; // eax
-
-  switch ( LOWORD(((unsigned int *)this)[0]) ) /*0x4cb8c1*/
-  {
-    case 3: /*0x4cb8c1*/
-    case 4: /*0x4cb8c1*/
-      *(unsigned short *)((unsigned int *)this)[0] = htons(*(unsigned short *)((unsigned int *)this)[0]); /*0x4cb8d7*/
-      break; /*0x4cb8da*/
-    case 5: /*0x4cb8c1*/
-    case 6: /*0x4cb8c1*/
-      *(unsigned int *)((unsigned int *)this)[0] = htonl(*(unsigned int *)((unsigned int *)this)[0]); /*0x4cb8ea*/
-      break; /*0x4cb8ea*/
-    default:
-      break;
-  }
-  v2 = htons((u_short)((unsigned int *)this)[0]); /*0x4cb8ec*/
-  vtable1_high = HIWORD(((unsigned int *)this)[0]); /*0x4cb8f6*/
-  LOWORD(((unsigned int *)this)[0]) = v2; /*0x4cb8fa*/
-  result = htons(vtable1_high); /*0x4cb8ff*/
-  HIWORD(((unsigned int *)this)[0]) = result; /*0x4cb904*/
-  return result; /*0x4cb908*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4CB8B0)
 }
 } // namespace gamemd
 
@@ -2270,10 +2211,6 @@ int sub_4CC980()
 namespace gamemd {
 void E4Recv_4CCA70::sub_4CCA70()
 {
-
-  *(unsigned int *)this->LocomotionClass = &vt_FlyLocomotionClass; /*0x4cca70*/
-  *(unsigned int *)&this->LocomotionClass[4] = &vt_FlyLocomotionClass; /*0x4cca76*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x4cca7d*/
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4CCA70)
 }
 } // namespace gamemd

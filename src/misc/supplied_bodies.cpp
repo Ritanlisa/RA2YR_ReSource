@@ -25,6 +25,8 @@
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CellStruct_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Math_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Debug_e4.hpp"  // G42.36 C2027 supply
 // G42.33 批 3: TU 本地载体块 (缺席全局 + 自由函数真形 + typed 宿主)
 extern int g_AudioConfigState;          // data: 0x87E2A0
 extern unsigned int dword_87DE30;       // data: 0x87DE30
@@ -766,417 +768,65 @@ int PathfindingClass::FindPath(unsigned int *a2)
 
 // 0x54DC60
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-int JumpjetLocomotionClass::QueryInterface(const void *a2, int *a3) {
-    int result; // eax
-    int *p_TurnRate; // eax
-
-    result = LocomotionClass::QueryInterface((LocomotionClass *)this, a2, a3); /*0x54dc72*/
-    if ( result == -2147467262 ) /*0x54dc7c*/
-    {
-      if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x54dc8b*/
-      {
-        if ( this ) /*0x54dc92*/
-          p_TurnRate = &this->TurnRate; /*0x54dc94*/
-        else
-          p_TurnRate = 0; /*0x54dc99*/
-        *a3 = (int)p_TurnRate; /*0x54dc9b*/
-      }
-      if ( *a3 ) /*0x54dc9e*/
-      {
-        (*(void (__stdcall **)(JumpjetLocomotionClass *))(this->LocomotionClass[0] + 4))(this); /*0x54dcb2*/
-        return 0; /*0x54dcb5*/
-      }
-      else
-      {
-        return -2147467262; /*0x54dca6*/
-      }
-    }
-    return result; /*0x54dca4*/
-}
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x54DF50
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-LONG JumpjetLocomotionClass::AddRef() {
-    return COM::AddRef((LocomotionClass *)this); /*0x54df5a*/
-}
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x54DF60
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-LONG JumpjetLocomotionClass::Release() {
-    return COM::ReleaseRef((LocomotionClass *)this); /*0x54df6a*/
-}
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x5FB160
 namespace gamemd {
-void AudioOptionsClass::ApplySettings() {
-    double v2; // st7
-    int v3; // eax
-    double v4; // st7
-    int v5; // eax
-    int v6; // eax
-    double v7; // st7
-    int v8; // eax
-    int v9; // eax
-    int v10; // eax
-
-    v2 = *((float *)this + 14); /*0x5fb163*/
-    if ( v2 >= 1.0 ) /*0x5fb171*/
-      v2 = 1.0; /*0x5fb175*/
-    *((float *)this + 14) = v2; /*0x5fb17b*/
-    IDA_LOWORD(v3) = Math::RoundToInt(v2 * 16384.0); /*0x5fb184*/
-    EndBufferMixer((int *)g_MixerChannel_Score, v3); /*0x5fb191*/
-    Debug::Log(); /*0x5fb1a4*/
-    v4 = *((float *)this + 15); /*0x5fb1a9*/
-    if ( v4 >= 1.0 ) /*0x5fb1ba*/
-      v4 = 1.0; /*0x5fb1be*/
-    *((float *)this + 15) = v4; /*0x5fb1c4*/
-    IDA_LOWORD(v5) = Math::RoundToInt(v4 * 255.0); /*0x5fb1cd*/
-    ThemeClass::GetField(v5); /*0x5fb1d4*/
-    IDA_LOWORD(v6) = Math::RoundToInt(*((float *)this + 15) * 16384.0); /*0x5fb1e2*/
-    EndBufferMixer((int *)g_MixerChannel_Voice, v6); /*0x5fb1ef*/
-    Debug::Log(); /*0x5fb202*/
-    v7 = *((float *)this + 16); /*0x5fb207*/
-    if ( v7 >= 1.0 ) /*0x5fb218*/
-      v7 = 1.0; /*0x5fb21c*/
-    *((float *)this + 16) = v7; /*0x5fb222*/
-    IDA_LOWORD(v8) = Math::RoundToInt(v7 * 16384.0); /*0x5fb22b*/
-    EndBufferMixer((int *)g_MixerChannel_Theme, v8); /*0x5fb238*/
-    IDA_LOWORD(v9) = Math::RoundToInt(*((float *)this + 16) * 255.0); /*0x5fb246*/
-    TechnoTypeClass::CheckFlag((TechnoTypeClass *)&unk_A83D10, v9); /*0x5fb251*/
-    Debug::Log(); /*0x5fb264*/
-    byte_A83D20 = *((unsigned char *)this + 68); /*0x5fb26f*/
-    Debug::Log(); /*0x5fb28b*/
-    byte_A83D22 = *((unsigned char *)this + 70); /*0x5fb296*/
-    v10 = Debug::Log(); /*0x5fb2b2*/
-    IDA_LOBYTE(v10) = *((unsigned char *)this + 29); /*0x5fb2b7*/
-    nullsub_36(v10); /*0x5fb2c3*/
-    SetGlobalFlag(*((unsigned char *)this + 30)); /*0x5fb2cc*/
+void AudioOptionsClass::ApplySettings()
+{
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5FB160)
 }
 } // namespace gamemd
 
 // 0x69EE30
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-int ShipLocomotionClass::QueryInterface(const void *a2, int *a3) {
-    int result; // eax
-    char *pad_18; // eax
-
-    result = LocomotionClass::QueryInterface((LocomotionClass *)this, a2, a3); /*0x69ee42*/
-    if ( result == -2147467262 ) /*0x69ee4c*/
-    {
-      if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x69ee5b*/
-      {
-        if ( this ) /*0x69ee62*/
-          pad_18 = this->__pad_18; /*0x69ee64*/
-        else
-          pad_18 = 0; /*0x69ee69*/
-        *a3 = (int)pad_18; /*0x69ee6b*/
-      }
-      if ( *a3 ) /*0x69ee6e*/
-      {
-        (*(void (__stdcall **)(ShipLocomotionClass *))(*(unsigned int *)this->LocomotionClass + 4))(this); /*0x69ee82*/
-        return 0; /*0x69ee85*/
-      }
-      else
-      {
-        return -2147467262; /*0x69ee76*/
-      }
-    }
-    return result; /*0x69ee74*/
-}
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x6A4260
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-LONG ShipLocomotionClass::AddRef() {
-    return COM::AddRef((LocomotionClass *)this); /*0x6a426a*/
-}
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x6A4270
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-LONG ShipLocomotionClass::Release() {
-    return COM::ReleaseRef((LocomotionClass *)this); /*0x6a427a*/
-}
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x6E6E20
 namespace gamemd {
-void * BuildingLoadQueue::GetNext() {
-    char BuildingLoadQueue_field_0x04; // al
-    void *vtable1; // edx
-    int uniqueId; // eax
-    void ***v5; // eax
-    int v7; // ecx
-    int16_t v8[4]; // [esp+4h] [ebp-8h] BYREF
-
-    BuildingLoadQueue_field_0x04 = this->BuildingLoadQueue_field_0x04; /*0x6e6e26*/
-    if ( BuildingLoadQueue_field_0x04 == 52 ) /*0x6e6e2b*/
-    {
-      vtable1 = g_BuildingLoadQueue_Array; /*0x6e6e31*/
-      if ( g_BuildingLoadQueue_Array ) /*0x6e6e39*/
-      {
-        uniqueId = g_BuildingLoadQueue_Array; /*0x6e6e3b*/
-        if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->__pad_0 ) /*0x6e6e4c*/
-          goto LABEL_10; /*0x6e6e4c*/
-        if ( g_BuildingLoadQueue_Array ) /*0x6e6e50*/
-        {
-          if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array) ) /*0x6e6e59*/
-          {
-            qsort( /*0x6e6e6a*/
-              g_BuildingLoadQueue_Array.TechnoTypeClass,
-              (size_t)g_BuildingLoadQueue_Array,
-              8u,
-              (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-            vtable1 = g_BuildingLoadQueue_Array; /*0x6e6e6f*/
-            g_BuildingLoadQueue_Array = 0; /*0x6e6e78*/
-            IDA_LOBYTE(g_BuildingLoadQueue_Array) = 1; /*0x6e6e82*/
-          }
-          *(unsigned int *)v8 = *(unsigned int *)this->__pad_0; /*0x6e6e96*/
-          uniqueId = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, (int *)v8); /*0x6e6e9a*/
-          if ( uniqueId ) /*0x6e6ea1*/
-          {
-            g_BuildingLoadQueue_Array = uniqueId; /*0x6e6ea3*/
-  LABEL_10:
-            v5 = (void ***)(uniqueId + 4); /*0x6e6ea8*/
-            return __RTDynamicCast( /*0x6e6ecf*/
-                     *v5,
-                     0,
-                     0,
-                     0,
-                     0);
-          }
-        }
-      }
-      v5 = (void ***)&unk_B78828; /*0x6e6ead*/
-      return __RTDynamicCast(*v5, 0, 0, 0, 0); /*0x6e6ead*/
-    }
-    if ( BuildingLoadQueue_field_0x04 != 11 ) /*0x6e6ed2*/
-      return 0; /*0x6e6f0f*/
-    v7 = *(unsigned int *)this->__pad_0; /*0x6e6ed4*/
-    v8[0] = v7 % 1000; /*0x6e6ee5*/
-    v8[1] = v7 / 1000; /*0x6e6f00*/
-    return CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v8); /*0x6e6ecb*/
+void * BuildingLoadQueue::GetNext()
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E6E20)
 }
 } // namespace gamemd
 
 // 0x6E6F20
 namespace gamemd {
-void * BuildingLoadQueue::Find() {
-    int vtable1; // ecx
-    int uniqueId; // edx
-    int v4; // ebx
-    unsigned int *vtable0; // edi
-    int v6; // esi
-
-    if ( IDA_LOBYTE(this->BuildingLoadQueue_field_0x04) != 52 ) /*0x6e6f27*/
-      return 0; /*0x6e6fe0*/
-    vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e6f2d*/
-    if ( !g_BuildingLoadQueue_Array ) /*0x6e6f37*/
-      return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6f37*/
-    uniqueId = g_BuildingLoadQueue_Array; /*0x6e6f39*/
-    if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->__pad_0 ) /*0x6e6f49*/
-      return AbstractClass::IsTechnoType(*(AbstractClass **)(uniqueId + 4)); /*0x6e6fdf*/
-    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array) ) /*0x6e6f56*/
-    {
-      qsort( /*0x6e6f67*/
-        g_BuildingLoadQueue_Array.TechnoTypeClass,
-        (size_t)g_BuildingLoadQueue_Array,
-        8u,
-        (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e6f6c*/
-      g_BuildingLoadQueue_Array = 0; /*0x6e6f75*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array) = 1; /*0x6e6f7f*/
-    }
-    v4 = *(unsigned int *)this->__pad_0; /*0x6e6f86*/
-    vtable0 = g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x6e6f88*/
-    if ( vtable1 <= 0 ) /*0x6e6f90*/
-      return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6f90*/
-    while ( 1 ) /*0x6e6f99*/
-    {
-      v6 = vtable0[2 * (vtable1 / 2)]; /*0x6e6f99*/
-      uniqueId = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e6f9c*/
-      if ( v6 <= v4 ) /*0x6e6fa1*/
-        break; /*0x6e6fa1*/
-      vtable1 /= 2; /*0x6e6fa3*/
-  LABEL_12:
-      if ( vtable1 <= 0 ) /*0x6e6fb5*/
-        return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6fb5*/
-    }
-    if ( v6 != v4 ) /*0x6e6fa7*/
-    {
-      vtable0 = (unsigned int *)(uniqueId + 8); /*0x6e6fa9*/
-      vtable1 += -1 - vtable1 / 2; /*0x6e6fb1*/
-      goto LABEL_12; /*0x6e6fb1*/
-    }
-    if ( uniqueId ) /*0x6e6fc9*/
-    {
-      g_BuildingLoadQueue_Array = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e6fcb*/
-      return AbstractClass::IsTechnoType(*(AbstractClass **)(uniqueId + 4)); /*0x6e6fcb*/
-    }
-    return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6fc5*/
+void * BuildingLoadQueue::Find()
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E6F20)
 }
 } // namespace gamemd
 
 // 0x6E6FF0
 namespace gamemd {
-int BuildingLoadQueue::FindObject() {
-    int vtable1; // ecx
-    int uniqueId; // edx
-    int v4; // ebx
-    unsigned int *vtable0; // edi
-    int v6; // esi
-    void ***v7; // eax
-
-    if ( IDA_LOBYTE(this->BuildingLoadQueue_field_0x04) != 52 ) /*0x6e6ff7*/
-      return 0; /*0x6e70b8*/
-    vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e6ffd*/
-    if ( !g_BuildingLoadQueue_Array ) /*0x6e7007*/
-      goto LABEL_13; /*0x6e7007*/
-    uniqueId = g_BuildingLoadQueue_Array; /*0x6e7009*/
-    if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->__pad_0 ) /*0x6e7019*/
-    {
-  LABEL_17:
-      v7 = (void ***)(uniqueId + 4); /*0x6e70b3*/
-      return (int)__RTDynamicCast(*v7, 0, 0, 0, 0); /*0x6e70b6*/
-    }
-    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array) ) /*0x6e7026*/
-    {
-      qsort( /*0x6e7037*/
-        g_BuildingLoadQueue_Array.TechnoTypeClass,
-        (size_t)g_BuildingLoadQueue_Array,
-        8u,
-        (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e703c*/
-      g_BuildingLoadQueue_Array = 0; /*0x6e7045*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array) = 1; /*0x6e704f*/
-    }
-    v4 = *(unsigned int *)this->__pad_0; /*0x6e7056*/
-    vtable0 = g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x6e7058*/
-    if ( vtable1 <= 0 ) /*0x6e7060*/
-      goto LABEL_13; /*0x6e7060*/
-    while ( 1 ) /*0x6e7069*/
-    {
-      v6 = vtable0[2 * (vtable1 / 2)]; /*0x6e7069*/
-      uniqueId = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e706c*/
-      if ( v6 <= v4 ) /*0x6e7071*/
-        break; /*0x6e7071*/
-      vtable1 /= 2; /*0x6e7073*/
-  LABEL_12:
-      if ( vtable1 <= 0 ) /*0x6e7085*/
-        goto LABEL_13; /*0x6e7085*/
-    }
-    if ( v6 != v4 ) /*0x6e7077*/
-    {
-      vtable0 = (unsigned int *)(uniqueId + 8); /*0x6e7079*/
-      vtable1 += -1 - vtable1 / 2; /*0x6e7081*/
-      goto LABEL_12; /*0x6e7081*/
-    }
-    if ( uniqueId ) /*0x6e70ab*/
-    {
-      g_BuildingLoadQueue_Array = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e70ad*/
-      goto LABEL_17; /*0x6e70ad*/
-    }
-  LABEL_13:
-    v7 = (void ***)&unk_B78828; /*0x6e7087*/
-    return (int)__RTDynamicCast(*v7, 0, 0, 0, 0); /*0x6e70a7*/
+int BuildingLoadQueue::FindObject()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E6FF0)
 }
 } // namespace gamemd
 
 // 0x752DB0
 namespace gamemd {
-char AudioEvent::LoadFromINI(uint8_t ***a2) {
-    double v5; // [esp+0h] [ebp-20Ch]
-    char Source[500]; // [esp+18h] [ebp-1F4h] BYREF
-
-    _ESI = this; /*0x752dc0*/
-    INIClass::ResetSection((INIClass *)a2); /*0x752dc4*/
-    *((unsigned int *)_ESI + 10) = 1065353216; /*0x752dcc*/
-    if ( !INIClass::BinarySearchSection((int)a2, (uint8_t *)_ESI) ) /*0x752dd3*/
-      return 0; /*0x752fec*/
-    __asm { fld dword ptr [esi+28h] } /*0x752de7*/
-    __asm { fstp [esp+20Ch+var_20C]; double }
-    INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)_ESI, g_INI_Key_Volume, v5); /*0x752df9*/
-    __asm { fstp dword ptr [esi+28h] } /*0x752dfe*/
-    *((float *)_ESI + 10) = _ET1; /*0x752dfe*/
-    INIClass::GetString( /*0x752e18*/
-      (INIClass *)a2,
-      (uint8_t *)_ESI,
-      (uint8_t *)g_INI_Key_Type,
-      &g_INI_DefaultBuffer,
-      Source,
-      500);
-    if ( strlen(Source) ) /*0x752e21*/
-    {
-      if ( _strcmpi(Source, aQueue) ) /*0x752e37*/
-      {
-        if ( _strcmpi(Source, aStandard) ) /*0x752e56*/
-        {
-          if ( _strcmpi(Source, aInterrupt) ) /*0x752e71*/
-          {
-            if ( !_strcmpi(Source, aQueuedInterrup) ) /*0x752e90*/
-              *((unsigned int *)_ESI + 19) = 3; /*0x752e9c*/
-          }
-          else
-          {
-            *((unsigned int *)_ESI + 19) = 2; /*0x752e7d*/
-          }
-        }
-        else
-        {
-          *((unsigned int *)_ESI + 19) = 0; /*0x752e62*/
-        }
-      }
-      else
-      {
-        *((unsigned int *)_ESI + 19) = 1; /*0x752e43*/
-      }
-    }
-    INIClass::GetString( /*0x752eba*/
-      (INIClass *)a2,
-      (uint8_t *)_ESI,
-      (uint8_t *)&g_INI_Key_TRUCKA[3],
-      &g_INI_DefaultBuffer,
-      Source,
-      500);
-    if ( strlen(Source) ) /*0x752ec3*/
-    {
-      if ( _strcmpi(Source, aLow) ) /*0x752eda*/
-      {
-        if ( _strcmpi(Source, g_INI_Key_NORMAL) ) /*0x752ef5*/
-        {
-          if ( _strcmpi(Source, aImportant) ) /*0x752f14*/
-          {
-            if ( !_strcmpi(Source, aCritical) ) /*0x752f33*/
-              *((unsigned int *)_ESI + 18) = 3; /*0x752f3f*/
-          }
-          else
-          {
-            *((unsigned int *)_ESI + 18) = 2; /*0x752f20*/
-          }
-        }
-        else
-        {
-          *((unsigned int *)_ESI + 18) = 1; /*0x752f01*/
-        }
-      }
-      else
-      {
-        *((unsigned int *)_ESI + 18) = 0; /*0x752ee6*/
-      }
-    }
-    INIClass::GetString((INIClass *)a2, (uint8_t *)_ESI, aYuri, &g_INI_DefaultBuffer, Source, 500); /*0x752f5d*/
-    strncpy((char *)_ESI + 44, Source, 9u); /*0x752f6d*/
-    *((unsigned char *)_ESI + 52) = 0; /*0x752f79*/
-    INIClass::GetString((INIClass *)a2, (uint8_t *)_ESI, aRussian, &g_INI_DefaultBuffer, Source, 500); /*0x752f8f*/
-    strncpy((char *)_ESI + 53, Source, 9u); /*0x752f9f*/
-    *((unsigned char *)_ESI + 61) = 0; /*0x752fab*/
-    INIClass::GetString((INIClass *)a2, (uint8_t *)_ESI, aAllied, &g_INI_DefaultBuffer, Source, 500); /*0x752fc1*/
-    strncpy((char *)_ESI + 62, Source, 9u); /*0x752fd1*/
-    *((unsigned char *)_ESI + 70) = 0; /*0x752fd9*/
-    return 1; /*0x752fde*/
+char AudioEvent::LoadFromINI(uint8_t ***a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x752DB0)
 }
 } // namespace gamemd
 

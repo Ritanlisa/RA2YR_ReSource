@@ -199,6 +199,7 @@ public:
 
     virtual void FindPath(); // 0x4FFB20
 
+    int FindPath(unsigned int *a2);
 };
 
 } // namespace gamemd

@@ -12,6 +12,8 @@
 #ifdef GAMEMD_TREE_UNIVERSE
 namespace ra2 { namespace game { class AbstractClass; } }
 namespace gamemd {
+class CampaignScore;  // G42.36 fwd supply
+class Destination;  // G42.36 fwd supply
 class ReferenceCounted;  // G42.36 fwd supply
 class Constructor;  // G42.36 fwd supply
 class DtorWithDelete;  // G42.36 fwd supply
@@ -748,6 +750,10 @@ struct SessionClass {
     int ddtor(int a1, unsigned int * a2);
     SessionClass * DtorWithDelete(void ** Block, char a2);
     SessionClass * * Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5);
+    ObjectClass * * ParseGameInfo(wchar_t * Destination, char * Source, CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8);
+    unsigned int GetPlayerColorScheme(ObjectClass * aP0);
+    TypeList_flat * QueryInterface(unsigned int * Block, char a2);
+    VectorClass_flat * validateGame(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

@@ -662,7 +662,7 @@ struct ObjectClass {
     gamemd::AbstractClass * * sub_764A20();
     int sub_632A70(int a2, int a3, ObjectClass * aP3);
     void nullsub_51();
-    void sub_403810(int ()(void));
+    void sub_403810(int (*)(void));
     void sub_4038E0(int64_t a2);
     int sub_405490();
     int sub_407160();
