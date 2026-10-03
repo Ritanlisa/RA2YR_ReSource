@@ -32,7 +32,7 @@ struct SessionClass {
     unsigned int u32_1C;  // 0x1C
     unsigned int u32_20;  // 0x20
     void* q024;  // 0x24
-    AbstractClass * ptr_28;  // 0x28
+    void * ptr_28;  // 0x28
     unsigned int q029;  // 0x29
     char q02A[4];  // 0x2A
     void* q02C;  // 0x2C
@@ -43,7 +43,7 @@ struct SessionClass {
     char Handle;  // 0x38
     unsigned char u8_39;  // 0x39
     unsigned int u32_3C;  // 0x3C
-    AbstractClass * q040;  // 0x40
+    void * q040;  // 0x40
     CampaignClass * ptr_44;  // 0x44
     unsigned int u32_48;  // 0x48
     unsigned int u32_49;  // 0x49

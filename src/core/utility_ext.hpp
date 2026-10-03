@@ -1638,7 +1638,7 @@ public:
 class VectorCursor
 {
 public:
-    virtual ~ddtor() = default;  // 0x76F190
+    virtual ~VectorCursor() = default;  // 0x76F190
 
     virtual _DWORD * Construct(); // 0x76F0C0
     virtual void HasNext(); // 0x76F0E0

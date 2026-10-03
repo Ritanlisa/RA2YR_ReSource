@@ -599,9 +599,7 @@ extern bool MCVRedeploy;  // data: 0xa8b320
 // (Math::RoundToInt @ 0x7C5F00, SuperWeapon::UpdateSuperWeaponsOwnedHouseClass @
 // 0x50AF10). Defined inline here so the golden functions link without a separate
 // TU; the callee BODIES are outside this task's golden scope.
-namespace Math {
-int RoundToInt(double value); // 0x7C5F00 — round to nearest
-} // namespace Math
+// G42.32t: namespace Math block removed -- collides with class gamemd::Math (C2757)
 
 class SuperWeapon {
 void UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse); // 0x50AF10 (IDA arg is the house pointer)

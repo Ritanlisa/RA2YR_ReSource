@@ -318,7 +318,7 @@ class TClassFactory_MechLocomotionClass : public IClassFactory
 {
 public:
     TClassFactory_MechLocomotionClass() = default;
-    virtual ~RadarHashVector();  // 0x6C4D90
+    virtual ~TClassFactory_MechLocomotionClass();  // 0x6C4D90
 
     // IClassFactory
     // wrapper: delegates to TClassFactory_MechLocomotionClass::ddtor at 0x6C4D90
@@ -1377,7 +1377,7 @@ public:
 class TClassFactory_CampaignClass
 {
 public:
-    virtual ~RadarHashVector();  // 0x6C0290
+    virtual ~TClassFactory_CampaignClass();  // 0x6C0290
 
     virtual void AddRefCOM(); // 0x6C00C0
     virtual void Release(); // 0x6C00E0

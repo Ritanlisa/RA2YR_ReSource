@@ -126,7 +126,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     static uint32_t ComputeID(const char* filename);
 
-    virtual ~MixFileClass() override;
+    virtual ~GenericMixFiles() override;
 
     // unmatched: no callgraph reference and no git history record
     MixFileClass() noexcept;
