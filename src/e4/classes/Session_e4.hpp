@@ -94,6 +94,12 @@ struct Session {
     int RemoveTeam(int (__thiscall ***aP1)(unsigned int, int));  // 0x5D1D80
     int PrepareGame(HWND hWnd);  // 0x5E74E0
     int GetPlayerOption();  // 0x69B700
+    int AssignSide(int aP1, int aP2);  // G42.33 b10 member-form sync
+    int AssignColor(int aP1, int aP2);  // G42.33 b10
+    int SetPlayerOption(int aP1);  // G42.33 b10
+    int SetPlayerColor(int aP1);  // G42.33 b10
+    int SetOption(int aP1);  // G42.33 b10
+    int SetOption2(int aP1);  // G42.33 b10
     int GetPlayerColor();  // 0x69B720
     int StartGame(HWND hWnd);  // 0x5ED370
 };
