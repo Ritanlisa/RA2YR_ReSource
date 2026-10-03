@@ -179,7 +179,7 @@ struct Cell {
     int GetTerrainMask(int *aP1, int a3);  // 0x57B210
     void * Clear(void *a1_1);  // 0x5A9940
     int IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80
-    void* CreateCrater(IUnknown, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x6D2790
+    void* CreateCrater(void *a1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x6D2790 (G42.35m: IUnknown placeholder -> void*)
     static CellStruct * * GetAdjacentPassableMask(IUnknown * aP0, int a2);  // 0x6D8700
     unsigned short * GetHeight(int *aP1, int *a2);  // 0x4265B0
     unsigned int * GetWorldCoords(unsigned int *a2, int a3);  // 0x68BD00
