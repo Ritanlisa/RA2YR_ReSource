@@ -12033,7 +12033,7 @@ extern unsigned char unk_A8B31E;
 extern unsigned char unk_A8B31F;
 extern unsigned char unk_A8B320;
 extern unsigned char unk_A8B322;
-extern unsigned char unk_A8B380;
+extern unsigned char unk_A8B380[20];  // 0xA8B380..0xA8B394 game-setup string slot (G42.34, next named ea 0xA8B394)
 extern unsigned char unk_A8B394;
 extern unsigned char unk_A8B39C;
 extern unsigned char unk_A8B3A0;

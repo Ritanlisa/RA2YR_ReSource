@@ -40,6 +40,12 @@
 #include "ui/sidebar.hpp"
 #include "ui/tool_tip.hpp"
 #include "ui/ui_ext.hpp"
+// G42.34 T1: bridge for e4 flat headers using bare AbstractClass* (tree side)
+namespace ra2 { namespace game { class AbstractClass; } }
+using ra2::game::AbstractClass;
+#include "e4/classes/Base64Straw_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+
 #include "wdt/wdt.hpp"
 // G42.33 b3: e4 flat 载体 (体表 static-form 调用宿主)
 #include "core/ddraw_init.hpp"       // g_BitShift_*/g_BitMask_* 全局
@@ -65,9 +71,9 @@
 // G42.33 b3: 本地缺席全局/原型载体 (team R1 前例)
 extern unsigned int stru_A8EB00;      // data: 0xA8EB00
 // G42.33 b3: r6 缺席全局/原型
-extern int GetResourceIDCSF(int a1);  // 本地原型
+extern int GetResourceIDCSF(void *a1);  // 本地原型 (G42.34: thiscall static-form, this=ObjectClass* 0x4E41D0)
 extern int GetLobbyPlayerColor(int a1);  // 本地原型
-extern int SetupSkirmishSpawnLocations(HWND hDlg);  // 本地原型
+extern int SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3);  // 本地原型 (G42.34: 3-arg truth, def=0x4E49A0 addr4E_e4.cpp)
 extern wchar_t * GetStringCSF(wchar_t *key, unsigned int *a2, const char *a3, int a4);  // team R1 前例原型
 extern wchar_t * g_Str_File_CampScor_cpp;  // data: CSF 标签
 extern wchar_t * CharToWideString(int a1);  // 本地原型
@@ -86,7 +92,7 @@ extern int sub_434840(unsigned int *a1, unsigned int *a2, int *a3);  // 0x434840
 extern int IsKnownPointer(void *a1);   // 本地原型
 extern int GetResourceID3CSF(void *a1);  // 本地原型
 extern void *SendToPlayer(int a1, int a2, int a3, int a4, wchar_t *a5);  // 0x541260 本地原型 (Network:: 静态形式)
-extern void *ReceiveLoop(int a1);  // 0x5410B0 区 本地原型 (Network:: 静态形式)
+extern void *ReceiveLoop(void *a1);  // 0x5410B0 区 本地原型 (Network:: 静态形式, G42.34: ptr this)
 // Base64Straw 完整本地载体 (体表 __pad_0 下标/成员用)
 struct Base64Straw { unsigned char __pad_0[8]; };  // G42.33 b3
 extern int GetHouseClassSideIndex(int a1);  // 本地原型 (调用点 int)
@@ -459,7 +465,7 @@ int CampaignSelect::LookupByName() {
     v1 = 0; /*0x46cc96*/
     if ( dword_A83D08 <= 0 ) /*0x46cc9d*/
       return -1; /*0x46ccc2*/
-    while ( _strcmpi((char *)(*((unsigned int *)dword_A83CFC + v1) + 36), this->__pad_0) ) /*0x46ccb6*/
+    while ( _strcmpi((char *)(*((unsigned int *)dword_A83CFC + v1) + 36), (const char *)this->__pad_0) ) /*0x46ccb6*/
     {
       if ( ++v1 >= dword_A83D08 ) /*0x46ccc0*/
         return -1; /*0x46ccc0*/
@@ -884,7 +890,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         v60 = dword_A8DA8C; /*0x46ea4f*/
         if ( dword_A8DA8C != (ObjectClass *)-1 ) /*0x46ea58*/
         {
-          ResourceIDCSF = GetResourceIDCSF(dword_A8DA8C); /*0x46ea63*/
+          ResourceIDCSF = GetResourceIDCSF((void *)(long)dword_A8DA8C); /*0x46ea63*/
           LobbyPlayerColor = GetLobbyPlayerColor((int)v60); /*0x46ea65*/
           SetupSkirmishSpawnLocations(hDlg, ResourceIDCSF, LobbyPlayerColor); /*0x46ea6f*/
         }
@@ -952,7 +958,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             v26 = dword_A8DA8C; /*0x46e5b4*/
             if ( dword_A8DA8C != (ObjectClass *)-1 ) /*0x46e5bd*/
             {
-              v27 = GetResourceIDCSF(dword_A8DA8C); /*0x46e5c8*/
+              v27 = GetResourceIDCSF((void *)(long)dword_A8DA8C); /*0x46e5c8*/
               v28 = GetLobbyPlayerColor((int)v26); /*0x46e5ca*/
               SetupSkirmishSpawnLocations(v4, v27, v28); /*0x46e5d4*/
             }
@@ -1044,7 +1050,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
                   if ( v40 >= (int)dword_A8D580 ) /*0x46e7b1*/
                     goto LABEL_92; /*0x46e7b1*/
                 }
-                StringCSF = GetStringCSF(g_Str_TXT_READY, 0, g_Str_File_CampScor_cpp, 1346); /*0x46e7cb*/
+                StringCSF = GetStringCSF((wchar_t *)(long)g_Str_TXT_READY, 0, g_Str_File_CampScor_cpp, 1346); /*0x46e7cb*/
                 v45 = GetDlgItem(hWnd, nIDDlgItem); /*0x46e7d3*/
                 SendMessageA(v45, 0x4B2u, 0, (LPARAM)StringCSF); /*0x46e7e2*/
               }
@@ -1076,11 +1082,11 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           if ( v47 >= (int)dword_A8D580 ) /*0x46e87e*/
             goto LABEL_99; /*0x46e87e*/
         }
-        v49 = GetStringCSF(g_Str_TXT_WAITING, 0, g_Str_File_CampScor_cpp, 1363); /*0x46e898*/
+        v49 = GetStringCSF((wchar_t *)(long)g_Str_TXT_WAITING, 0, g_Str_File_CampScor_cpp, 1363); /*0x46e898*/
         v50 = GetDlgItem(hWnd, nIDDlgItem); /*0x46e8a0*/
         SendMessageA(v50, 0x4B2u, 0, (LPARAM)v49); /*0x46e8ab*/
   LABEL_99:
-        v51 = GetStringCSF(aGuiContinue, 0, g_Str_File_CampScor_cpp, 1368); /*0x46e8b1*/
+        v51 = GetStringCSF((wchar_t *)(long)aGuiContinue, 0, g_Str_File_CampScor_cpp, 1368); /*0x46e8b1*/
         v52 = GetDlgItem(hWnd, 1745); /*0x46e8cf*/
         SendMessageA(v52, 0x4B2u, 0, (LPARAM)v51); /*0x46e8da*/
         v53 = GetDlgItem(hWnd, 1472); /*0x46e8e8*/
@@ -1323,7 +1329,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           v123 = *((unsigned int *)hDlg + 4); /*0x46f1b2*/
           if ( v102 ) /*0x46f1bf*/
           {
-            v125 = (LPARAM)GetStringCSF(g_Str_TXT_WAITING, 0, g_Str_File_CampScor_cpp, 1213); /*0x46f1d7*/
+            v125 = (LPARAM)GetStringCSF((wchar_t *)(long)g_Str_TXT_WAITING, 0, g_Str_File_CampScor_cpp, 1213); /*0x46f1d7*/
             v103 = GetDlgItem(hWnd, v123); /*0x46f1e1*/
             SendMessageA(v103, 0x4B2u, 0, v125); /*0x46f1f0*/
           }
@@ -1440,7 +1446,7 @@ namespace gamemd {
 int CheckListClass::ScrollUp(int a2) {
     int *Clamped; // eax
 
-    Clamped = (int *)Array::GetClamped((ListClass *)this, a2); /*0x488365*/
+    Clamped = (int *)(long)((gamemd::Array *)(ListClass *)this)->GetClamped(a2); /*0x488365*/
     if ( Clamped ) /*0x48836c*/
       return *Clamped; /*0x48836e*/
     else
@@ -1460,7 +1466,7 @@ void CheckListClass::GetSelected(wchar_t *String2) {
     {
       while ( 1 ) /*0x48839b*/
       {
-        Clamped = (const wchar_t **)Array::GetClamped((ListClass *)this, v3); /*0x48839b*/
+        Clamped = (const wchar_t **)(long)((gamemd::Array *)(ListClass *)this)->GetClamped(v3); /*0x48839b*/
         v5 = Clamped; /*0x4883a0*/
         if ( Clamped ) /*0x4883a4*/
         {
@@ -1489,7 +1495,7 @@ int CheckListClass::SetItemData(wchar_t *String2) {
     {
       while ( 1 ) /*0x48840a*/
       {
-        Clamped = (const wchar_t **)Array::GetClamped((ListClass *)this, v3); /*0x48840a*/
+        Clamped = (const wchar_t **)(long)((gamemd::Array *)(ListClass *)this)->GetClamped(v3); /*0x48840a*/
         if ( Clamped ) /*0x488411*/
         {
           if ( !_wcsicmp(*Clamped, String2) ) /*0x488417*/

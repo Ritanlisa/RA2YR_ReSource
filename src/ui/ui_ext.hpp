@@ -419,11 +419,11 @@ class CheckListClass
 public:
     virtual ~CheckListClass() = default;  // 0x557E10
 
-    virtual void vt_method_488310(); // 0x488310
-    virtual void Clear(); // 0x488350
-    virtual void ScrollUp(); // 0x488360
-    virtual void GetSelected(); // 0x488380
-    virtual void SetItemData(); // 0x4883F0
+    virtual int vt_method_488310(int a2); // 0x488310
+    virtual int Clear(); // 0x488350
+    virtual int ScrollUp(int a2); // 0x488360
+    virtual void GetSelected(wchar_t *String2); // 0x488380
+    virtual int SetItemData(wchar_t *String2); // 0x4883F0
     // +34 more virtual methods
 
     uint8_t CheckListClass_field_0x04[4];
@@ -510,7 +510,7 @@ public:
     virtual ~Checksum() = default;
 
     // G42.33: binary truth 0x4A1DB0 -- AddString(this, uint8_t*) 单参
-    virtual void AddString(uint8_t* a1); // 0x4A1DB0
+    virtual int AddString(uint8_t* a1); // 0x4A1DB0 (G42.34: def truth int)
 
 };
 // 1 methods in IDA
@@ -557,11 +557,12 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ControlClass() = default;
 
-    virtual void Construct(); // 0x48E520
-    virtual void CtorFromData(); // 0x48E570
-    virtual void QueryInterface(); // 0x48E660
-    virtual void Constructor(); // 0x4E1340
+    virtual unsigned int * Construct(int a2, int a3, int a4, int a5, int a6, int a7, char a8); // 0x48E520
+    virtual unsigned int * CtorFromData(int a2); // 0x48E570
+    virtual unsigned int * QueryInterface(char a2); // 0x48E660
+    virtual unsigned int * Constructor(int a2); // 0x4E1340 (G42.34: def truth)
 
+    unsigned int *__pad_0;  // G42.34: supplied-bodies view (0x48E520 family)
     uint8_t ControlClass_field_0x04[4];
     uint8_t ControlClass_field_0x08[4];
     uint8_t ControlClass_field_0x0C[4];
@@ -616,11 +617,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DropListClass() = default;
 
-    virtual void OnClick(); // 0x4B4EE0
-    virtual void vt_method_4B4F20(); // 0x4B4F20
-    virtual void Draw(); // 0x4B4F40
-    virtual void HitTest(); // 0x4B4F60
-    virtual void OnDblClick(); // 0x4B4F80
+    virtual int OnClick(); // 0x4B4EE0 (G42.34: def truth int)
+    virtual int vt_method_4B4F20(int a2); // 0x4B4F20 (G42.34: def truth)
+    virtual int Draw(int a2); // 0x4B4F40 (G42.34: def truth)
+    virtual unsigned int * HitTest(int a2); // 0x4B4F60 (G42.34: def truth)
+    virtual int OnDblClick(); // 0x4B4F80 (G42.34: def truth)
     // +20 more virtual methods
 
     uint8_t DropListClass_field_0x04[4];
@@ -694,7 +695,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~EditClass() = default;
 
-    virtual void QueryInterface(); // 0x4B57D0
+    virtual unsigned int * QueryInterface(char a2); // 0x4B57D0 (G42.34: def truth)
 
 };
 // 2 methods in IDA

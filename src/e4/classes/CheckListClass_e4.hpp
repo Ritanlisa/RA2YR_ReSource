@@ -41,6 +41,12 @@ struct CheckListClass {
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
 // --- flat members (END) ---
+    // G42.34: member decls for supplied_bodies defs (0x488310 family)
+    int vt_method_488310(int a2);  // 0x488310
+    int Clear();  // 0x488350
+    int ScrollUp(int a2);  // 0x488360
+    void GetSelected(wchar_t *String2);  // 0x488380
+    int SetItemData(wchar_t *String2);  // 0x4883F0
     int COMStub();
     int COMStub_Return0();
     int ddtor(int a2);

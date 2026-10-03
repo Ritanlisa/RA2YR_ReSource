@@ -2771,7 +2771,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MIXClass() = default;
 
-    virtual void CopyHeader(); // 0x4A8D50
+    virtual int CopyHeader(const void *a2); // 0x4A8D50 G42.34 C5 体签名
 
 };
 // 4 methods in IDA
@@ -3839,6 +3839,7 @@ public:
 
 };
 // 2 methods in IDA
+#ifndef GAMEMD_E4_Straw  // G42.34: per-class opt-in -- e4 flat Straw_e4.hpp wins
 class Straw
 {
 public:
@@ -3849,6 +3850,7 @@ public:
 
     uint8_t Straw_field_0x04[4];
 };
+#endif // GAMEMD_E4_Straw
 // 3 methods in IDA
 class Subzone
 {
