@@ -30,28 +30,28 @@
 namespace gamemd {
 int __sbh_heap_check()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D038F.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D038F.json)
 }
 }
 // 0x7D06BE
 namespace gamemd {
 int _set_new_handler_shape(int (__cdecl *a1)(unsigned int), unsigned int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D06BE.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D06BE.json)
 }
 }
 // 0x7D0703
 namespace gamemd {
 int _filbuf(MouseClass * aP0)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D0703.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D0703.json)
 }
 }
 // 0x7D0844
 namespace gamemd {
 int _read_lk(int FileHandle, char * lpBuffer, DWORD nNumberOfBytesToRead)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D0844.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D0844.json)
 }
 }
 // 0x7D0A20
@@ -65,7 +65,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
 namespace gamemd {
 int _write_lk(int FileHandle, unsigned char * lpBuffer, DWORD nNumberOfBytesToWrite)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D0DBA.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D0DBA.json)
 }
 }
 // 0x7D0F45
@@ -86,14 +86,14 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
 namespace gamemd {
 int _isctype(int C, int Type)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D1311.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D1311.json)
 }
 }
 // 0x7D15A0
 namespace gamemd {
 int strlen(const char * Str)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D15A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D15A0.json)
 }
 }
 // 0x7D170D
@@ -861,7 +861,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
 namespace gamemd {
 int _hextodec(int C)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2132.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2132.json)
 }
 }
 // 0x7D21BE
@@ -889,21 +889,21 @@ unsigned int * _getstream()
 namespace gamemd {
 void _putwc_lk(wchar_t WCh, FILE * File)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2FC8.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2FC8.json)
 }
 }
 // 0x7D30D1
 namespace gamemd {
 void _commit(int FileHandle)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D30D1.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D30D1.json)
 }
 }
 // 0x7D3164
 namespace gamemd {
 void _ioinit()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D3164.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D3164.json)
 }
 }
 // 0x7D3320
@@ -917,7 +917,7 @@ void* _ioterm_0()
 namespace gamemd {
 void _setmbcp(int CodePage)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D3482.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D3482.json)
 }
 }
 // 0x7D36AC
@@ -968,7 +968,7 @@ unsigned char * _mbsnbcpy(IUnknown * aP0, const unsigned char * Source, size_t C
 namespace gamemd {
 void iswctype(wint_t C, wctype_t Type)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D3920.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D3920.json)
 }
 }
 // 0x7D3A6D
@@ -982,21 +982,21 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
 namespace gamemd {
 void _hextodec_0(wint_t C)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D453C.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D453C.json)
 }
 }
 // 0x7D482C
 namespace gamemd {
 void * signal_7D482C(int Signal, void * Function)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D482C.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D482C.json)
 }
 }
 // 0x7D4A10
 namespace gamemd {
 void raise(int Signal)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D4A10.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D4A10.json)
 }
 }
 // 0x7D4C00
@@ -1017,7 +1017,7 @@ void* __tzset()
 namespace gamemd {
 void _tzset()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D4D0E.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D4D0E.json)
 }
 }
 // 0x7D4D24
@@ -1031,21 +1031,21 @@ void* _tzset_lk()
 namespace gamemd {
 void _isindst_0(unsigned int * a1)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D4FCC.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D4FCC.json)
 }
 }
 // 0x7D5178
 namespace gamemd {
 void cvtdate(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D5178.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D5178.json)
 }
 }
 // 0x7D544A
 namespace gamemd {
 void _sopen(const char * FileName, int OpenFlag, int ShareFlag, ...)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D544A.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D544A.json)
 }
 }
 // 0x7D571F
@@ -1096,7 +1096,7 @@ unsigned char * _mbsrchr(const unsigned char * String, unsigned int C)
 namespace gamemd {
 int _rmtmp()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D5791.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D5791.json)
 }
 }
 // 0x7D5A68
@@ -1110,14 +1110,14 @@ unsigned char * _wincmdln()
 namespace gamemd {
 int _setenvp()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D5AC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D5AC0.json)
 }
 }
 // 0x7D5B79
 namespace gamemd {
 int _setargv()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D5B79.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D5B79.json)
 }
 }
 // 0x7D5C12
@@ -1313,35 +1313,35 @@ AbstractClass * * __init_ctype()
 namespace gamemd {
 void __get_qualified_locale(char * a0, CCINIClass * aP1, int a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D6D2A.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D6D2A.json)
 }
 }
 // 0x7D6F86
 namespace gamemd {
 void LangCountryEnumProc_4(LPSTR)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D6F86.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D6F86.json)
 }
 }
 // 0x7D71E0
 namespace gamemd {
 void LanguageEnumProc_4(LPSTR)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D71E0.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D71E0.json)
 }
 }
 // 0x7D72D4
 namespace gamemd {
 int CountryEnumProc_4(LPSTR)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D72D4.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D72D4.json)
 }
 }
 // 0x7D735A
 namespace gamemd {
 int GetLcidFromDefault()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D735A.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D735A.json)
 }
 }
 // 0x7D75E0
@@ -1355,28 +1355,28 @@ void * memset(void * a0, int Val, AbstractClass * aP2)
 namespace gamemd {
 void _wctomb_lk(LPSTR lpMultiByteStr, WCHAR WideCharStr)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D77D6.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D77D6.json)
 }
 }
 // 0x7D7AAF
 namespace gamemd {
 void _ld12cvt(unsigned short * a1, unsigned int * a2, int * a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7AAF.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7AAF.json)
 }
 }
 // 0x7D7EE0
 namespace gamemd {
 void unknown_libname_76()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7EE0.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7EE0.json)
 }
 }
 // 0x7D7FF7
 namespace gamemd {
 int unknown_libname_77()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7FF7.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7FF7.json)
 }
 }
 // 0x7D86E6
@@ -1411,27 +1411,27 @@ void* unknown_libname_93()
 namespace gamemd {
 void _87except(int a1, int a2, unsigned short * a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D8C6B.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D8C6B.json)
 }
 }
 // 0x7D8E22
 namespace gamemd {
 void __decomp()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D8E22.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D8E22.json)
 }
 }
 // 0x7D8EE3
 namespace gamemd {
 void _frnd(double a1)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D8EE3.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D8EE3.json)
 }
 // 0x7D9038
 namespace gamemd {
 double _nextafter(double X, double Y)
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9038.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9038.json)
 }
 }
 }
@@ -1439,14 +1439,14 @@ double _nextafter(double X, double Y)
 namespace gamemd {
 void _alloc_osfhnd()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D93A1.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D93A1.json)
 }
 }
 // 0x7D9729
 namespace gamemd {
 void __crtGetStringTypeA(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, LPWORD lpCharType, UINT CodePage, LCID Locale, int a7)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9729.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9729.json)
 }
 }
 // 0x7D9872
@@ -1460,28 +1460,28 @@ ControlClass * * __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int
 namespace gamemd {
 int _mbtowc_lk(LPWSTR lpWideCharStr, unsigned char * lpMultiByteStr, unsigned int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9DDC.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9DDC.json)
 }
 }
 // 0x7D9FAC
 namespace gamemd {
 void * sub_7D9FAC()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9FAC.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9FAC.json)
 }
 }
 // 0x7D9FCA
 namespace gamemd {
 void _flswbuf(unsigned short Buf, FILE * a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9FCA.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9FCA.json)
 }
 }
 // 0x7DA0F1
 namespace gamemd {
 void __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINIClass * aP3, UINT CodePage, LCID Locale)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DA0F1.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DA0F1.json)
 }
 }
 // 0x7DA2B6
@@ -1495,21 +1495,21 @@ ControlClass * * __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, Cam
 namespace gamemd {
 void _getwc_lk(FILE * File)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DA512.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DA512.json)
 }
 }
 // 0x7DA638
 namespace gamemd {
 void _ungetwc_lk(wchar_t MbCh, unsigned int * a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DA638.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DA638.json)
 }
 }
 // 0x7DA725
 namespace gamemd {
 void __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cchCount1, CHAR * lpString2, int cchCount2, UINT CodePage)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DA725.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DA725.json)
 }
 }
 // 0x7DA9CD
@@ -1523,28 +1523,28 @@ AbstractClass * * __crtsetenv(char * Str, int a2)
 namespace gamemd {
 void _chsize_lk(int FileHandle, LONG lDistanceToMove)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DAC6C.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DAC6C.json)
 }
 }
 // 0x7DAE6E
 namespace gamemd {
 void isctype_CRT(unsigned char a1, int a2, unsigned char a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DAE6E.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DAE6E.json)
 }
 }
 // 0x7DAE9F
 namespace gamemd {
 void __crtMessageBoxA(int a1, int a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DAE9F.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DAE9F.json)
 }
 }
 // 0x7DAF28
 namespace gamemd {
 void __getlocaleinfo(int a1, LCID Locale, LCTYPE LCType, CCINIClass * aP3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DAF28.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DAF28.json)
 }
 }
 // 0x7DB207
@@ -1558,14 +1558,14 @@ AbstractClass * * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
 namespace gamemd {
 void _raise_exc(ULONG_PTR Arguments, unsigned int * a2, DWORD dwExceptionCode, short a4, double * a5, double * a6)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DB68B.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DB68B.json)
 }
 }
 // 0x7DB93E
 namespace gamemd {
 void _handle_exc(char a1, double * a2, short a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DB93E.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DB93E.json)
 }
 }
 // 0x7DBC68
@@ -1579,21 +1579,21 @@ void* __clrfp()
 namespace gamemd {
 void ldexp(double X, int Y)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DBCF0.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DBCF0.json)
 }
 }
 // 0x7DBED6
 namespace gamemd {
 void __ld12mul(int a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DBED6.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DBED6.json)
 }
 }
 // 0x7DC291
 namespace gamemd {
 void _filwbuf(unsigned short ** a1)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DC291.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DC291.json)
 }
 }
 // 0x7DC378
@@ -1639,35 +1639,35 @@ unsigned char * _mbschr(const unsigned char * Str, unsigned int C)
 namespace gamemd {
 void _setmode_lk(int a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DC468.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DC468.json)
 }
 }
 // 0x7DC4C9
 namespace gamemd {
 void __crtGetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchData, UINT CodePage)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DC4C9.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DC4C9.json)
 }
 }
 // 0x7DC5DC
 namespace gamemd {
 void __crtGetLocaleInfoA(LCID Locale, LCTYPE LCType, CCINIClass * aP2, int cchData, UINT CodePage)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DC5DC.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DC5DC.json)
 }
 }
 // 0x7DC7CB
 namespace gamemd {
 void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperrinfo, LPCWSTR lpString, int a7, void ** a8)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DC7CB.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DC7CB.json)
 }
 }
 // 0x7DCE0E
 namespace gamemd {
 unsigned int * _com_error::sub_7DCE0E(int a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DCE0E.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DCE0E.json)
 }
 }
 // 0x7DCE3B
@@ -1675,7 +1675,7 @@ namespace gamemd {
 HLOCAL _com_error::sub_7DCE3B()
 {
     return nullptr;
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DCE3B.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DCE3B.json)
 }
 }
 // 0x7DCFC4
@@ -1689,14 +1689,14 @@ void * _strupr(char * String)
 namespace gamemd {
 int _getch()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DD20F.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DD20F.json)
 }
 }
 // 0x7DD505
 namespace gamemd {
 void output(char * a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DD505.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DD505.json)
 }
 }
 // 0x7DDCD6
@@ -1754,7 +1754,7 @@ int _callnewh(IUnknown * aP0)
 namespace gamemd {
 int _read(int FileHandle, void * DstBuf, unsigned int MaxCharCount)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D07DF.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D07DF.json)
 }
 } // namespace gamemd
 
@@ -1762,7 +1762,7 @@ int _read(int FileHandle, void * DstBuf, unsigned int MaxCharCount)
 namespace gamemd {
 int _write(int FileHandle, CCINIClass * aP1, unsigned int MaxCharCount)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D0D55.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D0D55.json)
 }
 } // namespace gamemd
 
@@ -1770,7 +1770,7 @@ int _write(int FileHandle, CCINIClass * aP1, unsigned int MaxCharCount)
 namespace gamemd {
 size_t _msize(CCINIClass * aP0)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D107D.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D107D.json)
 }
 } // namespace gamemd
 
@@ -1786,7 +1786,7 @@ unsigned char * strncnt(const unsigned char * String, int Count)
 namespace gamemd {
 int _mtinit()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D1386.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D1386.json)
 }
 } // namespace gamemd
 
@@ -1794,7 +1794,7 @@ int _mtinit()
 namespace gamemd {
 int _initptd(int a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D13F8.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D13F8.json)
 }
 } // namespace gamemd
 
@@ -1818,7 +1818,7 @@ int GetCurrentThread()
 namespace gamemd {
 int _fltin2(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D151E.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D151E.json)
 }
 } // namespace gamemd
 
@@ -1878,7 +1878,7 @@ unsigned char * _mbsdec(const unsigned char * Start, const unsigned char * Pos)
 namespace gamemd {
 int fgetc_0(FILE * Stream)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2169.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2169.json)
 }
 } // namespace gamemd
 
@@ -1886,7 +1886,7 @@ int fgetc_0(FILE * Stream)
 namespace gamemd {
 int _un_inc(int Character, FILE * Stream)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2183.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2183.json)
 }
 } // namespace gamemd
 
@@ -1894,7 +1894,7 @@ int _un_inc(int Character, FILE * Stream)
 namespace gamemd {
 int _whiteout(unsigned int * a1, FILE * Stream)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D219A.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D219A.json)
 }
 } // namespace gamemd
 
@@ -1950,7 +1950,7 @@ unsigned int * write_string_0(wchar_t * a1, unsigned int * a2, FILE * File, unsi
 namespace gamemd {
 int get_int_arg_0(ObjectClass * aP0)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2995.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2995.json)
 }
 } // namespace gamemd
 
@@ -1966,7 +1966,7 @@ long long get_int64_arg_0(ObjectClass * aP0)
 namespace gamemd {
 long __loctotime_t(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D29B2.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D29B2.json)
 }
 } // namespace gamemd
 
@@ -1974,7 +1974,7 @@ long __loctotime_t(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 namespace gamemd {
 int _close(int FileHandle)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2A74.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2A74.json)
 }
 } // namespace gamemd
 
@@ -1982,7 +1982,7 @@ int _close(int FileHandle)
 namespace gamemd {
 int _close_lk(int FileHandle)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2AD1.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2AD1.json)
 }
 } // namespace gamemd
 
@@ -1990,7 +1990,7 @@ int _close_lk(int FileHandle)
 namespace gamemd {
 int _freebuf(MouseClass * aP0)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2B54.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2B54.json)
 }
 } // namespace gamemd
 
@@ -1998,7 +1998,7 @@ int _freebuf(MouseClass * aP0)
 namespace gamemd {
 int _stbuf(int a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2B7F.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2B7F.json)
 }
 } // namespace gamemd
 
@@ -2006,7 +2006,7 @@ int _stbuf(int a1)
 namespace gamemd {
 int _ftbuf(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2C0C.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2C0C.json)
 }
 } // namespace gamemd
 
@@ -2014,7 +2014,7 @@ int _ftbuf(int a1, int a2)
 namespace gamemd {
 unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2E6E.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2E6E.json)
 }
 } // namespace gamemd
 
@@ -2022,7 +2022,7 @@ unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 namespace gamemd {
 ObjectClass * E4Recv_7D2E7F::sub_7D2E7F(void * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2E7F.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2E7F.json)
 }
 } // namespace gamemd
 
@@ -2030,7 +2030,7 @@ ObjectClass * E4Recv_7D2E7F::sub_7D2E7F(void * Block, char a2)
 namespace gamemd {
 exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2E9B.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2E9B.json)
 }
 } // namespace gamemd
 
@@ -2038,7 +2038,7 @@ exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
 namespace gamemd {
 exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2ED8.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2ED8.json)
 }
 } // namespace gamemd
 
@@ -2046,7 +2046,7 @@ exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
 namespace gamemd {
 ObjectClass * E4Recv_7D2F22::__4exception_QAEAAV0_ABV0__Z(struct exception * a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2F22.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2F22.json)
 }
 } // namespace gamemd
 
@@ -2054,7 +2054,7 @@ ObjectClass * E4Recv_7D2F22::__4exception_QAEAAV0_ABV0__Z(struct exception * a2)
 namespace gamemd {
 const char * E4Recv_7D2F57::_what_exception__UBEPBDXZ()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2F57.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2F57.json)
 }
 } // namespace gamemd
 
@@ -2070,7 +2070,7 @@ void _CxxThrowException_8(void * pExceptionObject, _ThrowInfo * pThrowInfo)
 namespace gamemd {
 short sub_7D2F9E(wchar_t WCh, FILE * Stream)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D2F9E.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D2F9E.json)
 }
 } // namespace gamemd
 
@@ -2086,7 +2086,7 @@ void * calloc(size_t Count, size_t Size)
 namespace gamemd {
 int _fcloseall()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D3401.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D3401.json)
 }
 } // namespace gamemd
 
@@ -2094,7 +2094,7 @@ int _fcloseall()
 namespace gamemd {
 UINT getSystemCP(UINT)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D362F.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D362F.json)
 }
 } // namespace gamemd
 
@@ -2102,7 +2102,7 @@ UINT getSystemCP(UINT)
 namespace gamemd {
 int CPtoLCID(int a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D3679.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D3679.json)
 }
 } // namespace gamemd
 
@@ -2110,7 +2110,7 @@ int CPtoLCID(int a1)
 namespace gamemd {
 wint_t towupper(wint_t C)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D3982.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D3982.json)
 }
 } // namespace gamemd
 
@@ -2118,7 +2118,7 @@ wint_t towupper(wint_t C)
 namespace gamemd {
 wint_t towupper_0(wint_t C)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D39F6.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D39F6.json)
 }
 } // namespace gamemd
 
@@ -2134,7 +2134,7 @@ int fgetwc(FILE * File)
 namespace gamemd {
 int _un_inc_0(short MbCh, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D45A1.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D45A1.json)
 }
 } // namespace gamemd
 
@@ -2142,7 +2142,7 @@ int _un_inc_0(short MbCh, int a2)
 namespace gamemd {
 wint_t _whiteout_0(unsigned int * a1, FILE * File)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D45BA.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D45BA.json)
 }
 } // namespace gamemd
 
@@ -2150,7 +2150,7 @@ wint_t _whiteout_0(unsigned int * a1, FILE * File)
 namespace gamemd {
 int _mbsnbicoll(const unsigned char * Str1, const unsigned char * Str2, size_t MaxCount)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D45DF.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D45DF.json)
 }
 } // namespace gamemd
 
@@ -2158,7 +2158,7 @@ int _mbsnbicoll(const unsigned char * Str1, const unsigned char * Str2, size_t M
 namespace gamemd {
 int __wtomb_environ()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D461E.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D461E.json)
 }
 } // namespace gamemd
 
@@ -2174,7 +2174,7 @@ char * _itoa(int Value, char * Buffer, int Radix)
 namespace gamemd {
 char xtoa(unsigned int a1, char * a2, unsigned int a3, int a4)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D46B9.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D46B9.json)
 }
 } // namespace gamemd
 
@@ -2275,7 +2275,7 @@ char * _ui64toa(unsigned long long Value, char * Buffer, int Radix)
 namespace gamemd {
 bool ctrlevent_capture_4(DWORD CtrlType)
 {
-    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D49AE.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D49AE.json)
 }
 } // namespace gamemd
 
@@ -2318,7 +2318,7 @@ char * strcpy(IUnknown * aP0, const char * Source)
 namespace gamemd {
 int _isindst(CampaignScore * aP0)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D4FAB.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D4FAB.json)
 }
 } // namespace gamemd
 
@@ -2334,7 +2334,7 @@ struct tm * gmtime(CampaignScore * aP0)
 namespace gamemd {
 int _access(const char * FileName, int AccessMode)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D53C2.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D53C2.json)
 }
 } // namespace gamemd
 
@@ -2350,7 +2350,7 @@ char * _strdup(INIClass * aP0)
 namespace gamemd {
 int _open(const char * FileName, int OpenFlag, ...)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D5433.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D5433.json)
 }
 } // namespace gamemd
 
@@ -2384,7 +2384,7 @@ unsigned char * store_dt(unsigned char * a1, int a2)
 namespace gamemd {
 LONG _XcptFilter(ObjectClass * aP0, struct _EXCEPTION_POINTERS * ExceptionInfo)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D58F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D58F0.json)
 }
 } // namespace gamemd
 
@@ -2416,7 +2416,7 @@ int * _NMSG_WRITE(DWORD NumberOfBytesWritten)
 namespace gamemd {
 int _get_lc_time(CCINIClass * aP0)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D6146.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D6146.json)
 }
 } // namespace gamemd
 
@@ -2424,7 +2424,7 @@ int _get_lc_time(CCINIClass * aP0)
 namespace gamemd {
 void _free_lc_time(CCINIClass * aP0)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D6494.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D6494.json)
 }
 } // namespace gamemd
 
@@ -2432,7 +2432,7 @@ void _free_lc_time(CCINIClass * aP0)
 namespace gamemd {
 char fix_grouping(CCINIClass * aP0)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D67F9.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D67F9.json)
 }
 } // namespace gamemd
 
@@ -2440,7 +2440,7 @@ char fix_grouping(CCINIClass * aP0)
 namespace gamemd {
 int __init_monetary()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D6830.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D6830.json)
 }
 } // namespace gamemd
 
@@ -2448,7 +2448,7 @@ int __init_monetary()
 namespace gamemd {
 int _get_lc_lconv(CCINIClass * aP0)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D68FB.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D68FB.json)
 }
 } // namespace gamemd
 
@@ -2456,7 +2456,7 @@ int _get_lc_lconv(CCINIClass * aP0)
 namespace gamemd {
 char fix_grouping_0(char * a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D6A1D.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D6A1D.json)
 }
 } // namespace gamemd
 
@@ -2464,7 +2464,7 @@ char fix_grouping_0(char * a1)
 namespace gamemd {
 void _free_lc_lconv(CCINIClass * aP0)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D6A54.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D6A54.json)
 }
 } // namespace gamemd
 
@@ -2488,7 +2488,7 @@ char * strpbrk(const char * Str, const char * Control)
 namespace gamemd {
 int TranslateName(int a1, int a2, char ** a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D6EA7.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D6EA7.json)
 }
 } // namespace gamemd
 
@@ -2496,7 +2496,7 @@ int TranslateName(int a1, int a2, char ** a3)
 namespace gamemd {
 int GetLcidFromLangCountry()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D6EFF.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D6EFF.json)
 }
 } // namespace gamemd
 
@@ -2504,7 +2504,7 @@ int GetLcidFromLangCountry()
 namespace gamemd {
 bool GetLcidFromLanguage()
 {
-    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D718A.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D718A.json)
 }
 } // namespace gamemd
 
@@ -2512,7 +2512,7 @@ bool GetLcidFromLanguage()
 namespace gamemd {
 bool GetLcidFromCountry()
 {
-    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D729D.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D729D.json)
 }
 } // namespace gamemd
 
@@ -2520,7 +2520,7 @@ bool GetLcidFromCountry()
 namespace gamemd {
 int ProcessCodePage(char * String)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7374.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7374.json)
 }
 } // namespace gamemd
 
@@ -2528,7 +2528,7 @@ int ProcessCodePage(char * String)
 namespace gamemd {
 int TestDefaultCountry(short a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D73DA.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D73DA.json)
 }
 } // namespace gamemd
 
@@ -2536,7 +2536,7 @@ int TestDefaultCountry(short a1)
 namespace gamemd {
 bool TestDefaultLanguage(int a1, int a2)
 {
-    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D73F9.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D73F9.json)
 }
 } // namespace gamemd
 
@@ -2544,7 +2544,7 @@ bool TestDefaultLanguage(int a1, int a2)
 namespace gamemd {
 bool IsThisWindowsNT()
 {
-    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D745B.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D745B.json)
 }
 } // namespace gamemd
 
@@ -2552,7 +2552,7 @@ bool IsThisWindowsNT()
 namespace gamemd {
 int crtGetLocaleInfoA_16(LCID Locale, LCTYPE LCType, LPSTR lpLCData, int cchData)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7491.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7491.json)
 }
 } // namespace gamemd
 
@@ -2560,7 +2560,7 @@ int crtGetLocaleInfoA_16(LCID Locale, LCTYPE LCType, LPSTR lpLCData, int cchData
 namespace gamemd {
 int LcidFromHexString(char * a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7577.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7577.json)
 }
 } // namespace gamemd
 
@@ -2568,7 +2568,7 @@ int LcidFromHexString(char * a1)
 namespace gamemd {
 int GetPrimaryLen(char * a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D75B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D75B0.json)
 }
 } // namespace gamemd
 
@@ -2576,7 +2576,7 @@ int GetPrimaryLen(char * a1)
 namespace gamemd {
 int _lseek(int FileHandle, int Offset, int Origin)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7638.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7638.json)
 }
 } // namespace gamemd
 
@@ -2584,7 +2584,7 @@ int _lseek(int FileHandle, int Offset, int Origin)
 namespace gamemd {
 DWORD _lseek_lk(int FileHandle, LONG lDistanceToMove, DWORD dwMoveMethod)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D769D.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D769D.json)
 }
 } // namespace gamemd
 
@@ -2592,7 +2592,7 @@ DWORD _lseek_lk(int FileHandle, LONG lDistanceToMove, DWORD dwMoveMethod)
 namespace gamemd {
 int _getbuf(MouseClass * aP0)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7710.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7710.json)
 }
 } // namespace gamemd
 
@@ -2600,7 +2600,7 @@ int _getbuf(MouseClass * aP0)
 namespace gamemd {
 int _isatty(int FileHandle)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7754.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7754.json)
 }
 } // namespace gamemd
 
@@ -2608,7 +2608,7 @@ int _isatty(int FileHandle)
 namespace gamemd {
 int wctomb(char * MbCh, wchar_t WCh)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D777D.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D777D.json)
 }
 } // namespace gamemd
 
@@ -2658,7 +2658,7 @@ unsigned long long _aullrem(unsigned long long a1, long long a2)
 namespace gamemd {
 int _ZeroTail(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D78B5.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D78B5.json)
 }
 } // namespace gamemd
 
@@ -2666,7 +2666,7 @@ int _ZeroTail(int a1, int a2)
 namespace gamemd {
 int _IncMan(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D78FE.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D78FE.json)
 }
 } // namespace gamemd
 
@@ -2674,7 +2674,7 @@ int _IncMan(int a1, int a2)
 namespace gamemd {
 int _RoundMan(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7954.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7954.json)
 }
 } // namespace gamemd
 
@@ -2702,7 +2702,7 @@ unsigned int * _CopyMan(int a1, unsigned int * a2)
 namespace gamemd {
 int _FillZeroMan(unsigned int * a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D79FB.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D79FB.json)
 }
 } // namespace gamemd
 
@@ -2710,7 +2710,7 @@ int _FillZeroMan(unsigned int * a1)
 namespace gamemd {
 int _IsZeroMan(unsigned int * a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7A07.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7A07.json)
 }
 } // namespace gamemd
 
@@ -2766,7 +2766,7 @@ int * _ShrMan(int * a1, int a2)
 namespace gamemd {
 int _ld12told(unsigned short * a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7C47.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7C47.json)
 }
 } // namespace gamemd
 
@@ -2774,7 +2774,7 @@ int _ld12told(unsigned short * a1, int a2)
 namespace gamemd {
 int _atoldbl(_LDOUBLE * Result, char * String)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7CEE.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7CEE.json)
 }
 } // namespace gamemd
 
@@ -2798,7 +2798,7 @@ unsigned int * _fltout2(char a1, int a2, unsigned int * a3, char * Destination)
 namespace gamemd {
 int ___dtold()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D7E1C.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D7E1C.json)
 }
 } // namespace gamemd
 
@@ -2814,7 +2814,7 @@ void _fptrap()
 namespace gamemd {
 int unknown_libname_78()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D8496.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D8496.json)
 }
 } // namespace gamemd
 
@@ -2822,7 +2822,7 @@ int unknown_libname_78()
 namespace gamemd {
 int unknown_libname_79()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D84A9.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D84A9.json)
 }
 } // namespace gamemd
 
@@ -2830,7 +2830,7 @@ int unknown_libname_79()
 namespace gamemd {
 int unknown_libname_88()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D86BC.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D86BC.json)
 }
 } // namespace gamemd
 
@@ -2838,7 +2838,7 @@ int unknown_libname_88()
 namespace gamemd {
 int unknown_libname_89()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D86D1.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D86D1.json)
 }
 } // namespace gamemd
 
@@ -2846,7 +2846,7 @@ int unknown_libname_89()
 namespace gamemd {
 double _set_exp(double a1, short a2)
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D8D3B.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D8D3B.json)
 }
 } // namespace gamemd
 
@@ -2854,7 +2854,7 @@ double _set_exp(double a1, short a2)
 namespace gamemd {
 double _set_bexp(double a1, short a2)
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D8DA4.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D8DA4.json)
 }
 } // namespace gamemd
 
@@ -2862,7 +2862,7 @@ double _set_bexp(double a1, short a2)
 namespace gamemd {
 int _sptype(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D8DC8.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D8DC8.json)
 }
 } // namespace gamemd
 
@@ -2870,7 +2870,7 @@ int _sptype(int a1, int a2)
 namespace gamemd {
 double _copysign(double Number, double Sign)
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D8EF5.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D8EF5.json)
 }
 } // namespace gamemd
 
@@ -2878,7 +2878,7 @@ double _copysign(double Number, double Sign)
 namespace gamemd {
 double _chgsign(double X)
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D8F16.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D8F16.json)
 }
 } // namespace gamemd
 
@@ -2894,7 +2894,7 @@ double _scalb(double X, int Y)
 namespace gamemd {
 double _logb(double X)
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D8F51.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D8F51.json)
 }
 } // namespace gamemd
 
@@ -2902,7 +2902,7 @@ double _logb(double X)
 namespace gamemd {
 int _finite(double X)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D92CD.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D92CD.json)
 }
 } // namespace gamemd
 
@@ -2910,7 +2910,7 @@ int _finite(double X)
 namespace gamemd {
 int _isnan(double X)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D92E1.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D92E1.json)
 }
 } // namespace gamemd
 
@@ -2918,7 +2918,7 @@ int _isnan(double X)
 namespace gamemd {
 int _fpclass(double X)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D930F.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D930F.json)
 }
 } // namespace gamemd
 
@@ -2926,7 +2926,7 @@ int _fpclass(double X)
 namespace gamemd {
 int _set_osfhnd(int a1, HANDLE hHandle)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D94C4.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D94C4.json)
 }
 } // namespace gamemd
 
@@ -2934,7 +2934,7 @@ int _set_osfhnd(int a1, HANDLE hHandle)
 namespace gamemd {
 int _free_osfhnd(int a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9540.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9540.json)
 }
 } // namespace gamemd
 
@@ -2942,7 +2942,7 @@ int _free_osfhnd(int a1)
 namespace gamemd {
 intptr_t _get_osfhandle(int FileHandle)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D95BF.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D95BF.json)
 }
 } // namespace gamemd
 
@@ -2950,7 +2950,7 @@ intptr_t _get_osfhandle(int FileHandle)
 namespace gamemd {
 int _open_osfhandle(intptr_t OSFileHandle, int Flags)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9601.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9601.json)
 }
 } // namespace gamemd
 
@@ -2958,7 +2958,7 @@ int _open_osfhandle(intptr_t OSFileHandle, int Flags)
 namespace gamemd {
 void _lock_fhandle(int a1)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D96A8.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D96A8.json)
 }
 } // namespace gamemd
 
@@ -2974,7 +2974,7 @@ void _unlock_fhandle(int a1)
 namespace gamemd {
 int __STRINGTOLD(int a1, char ** a2, char * a3, int a4)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9D43.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9D43.json)
 }
 } // namespace gamemd
 
@@ -2982,7 +2982,7 @@ int __STRINGTOLD(int a1, char ** a2, char * a3, int a4)
 namespace gamemd {
 int mbtowc(wchar_t * DstCh, const char * SrcCh, size_t SrcSizeInBytes)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9D7F.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9D7F.json)
 }
 } // namespace gamemd
 
@@ -2990,7 +2990,7 @@ int mbtowc(wchar_t * DstCh, const char * SrcCh, size_t SrcSizeInBytes)
 namespace gamemd {
 int __allshl()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9EB0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9EB0.json)
 }
 } // namespace gamemd
 
@@ -2998,7 +2998,7 @@ int __allshl()
 namespace gamemd {
 int ungetc(int Character, FILE * Stream)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9ECF.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9ECF.json)
 }
 } // namespace gamemd
 
@@ -3006,7 +3006,7 @@ int ungetc(int Character, FILE * Stream)
 namespace gamemd {
 int ungetc_0(int Character, FILE * Stream)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9EF8.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9EF8.json)
 }
 } // namespace gamemd
 
@@ -3014,7 +3014,7 @@ int ungetc_0(int Character, FILE * Stream)
 namespace gamemd {
 LONG ___CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z(struct _EXCEPTION_POINTERS * ExceptionInfo)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007D9F66.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007D9F66.json)
 }
 } // namespace gamemd
 
@@ -3030,7 +3030,7 @@ LPTOP_LEVEL_EXCEPTION_FILTER sub_7D9FBD()
 namespace gamemd {
 int wcsncnt_0(CampaignScore * aP0, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DA4BF.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DA4BF.json)
 }
 } // namespace gamemd
 
@@ -3038,7 +3038,7 @@ int wcsncnt_0(CampaignScore * aP0, int a2)
 namespace gamemd {
 wint_t fgetwc_0x7DA4EF(FILE * Stream)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DA4EF.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DA4EF.json)
 }
 } // namespace gamemd
 
@@ -3072,7 +3072,7 @@ unsigned char * strncnt_0(unsigned char * a1, int a2)
 namespace gamemd {
 int findenv(unsigned char * Str1, size_t MaxCount)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DAB54.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DAB54.json)
 }
 } // namespace gamemd
 
@@ -3176,7 +3176,7 @@ CCINIClass * sub_7DB060()
 namespace gamemd {
 int __addl(unsigned int a1, unsigned int a2, unsigned int * a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DB066.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DB066.json)
 }
 } // namespace gamemd
 
@@ -3184,7 +3184,7 @@ int __addl(unsigned int a1, unsigned int a2, unsigned int * a3)
 namespace gamemd {
 int __add_12(unsigned int * a1, unsigned int * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DB087.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DB087.json)
 }
 } // namespace gamemd
 
@@ -3230,7 +3230,7 @@ int * __shr_12(int * a1)
 namespace gamemd {
 short __mtold12(char * a1, int a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DB140.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DB140.json)
 }
 } // namespace gamemd
 
@@ -3238,7 +3238,7 @@ short __mtold12(char * a1, int a2, int a3)
 namespace gamemd {
 double _handle_qnan1(int a1, double a2, int a3)
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DB49A.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DB49A.json)
 }
 } // namespace gamemd
 
@@ -3246,7 +3246,7 @@ double _handle_qnan1(int a1, double a2, int a3)
 namespace gamemd {
 double _handle_qnan2(int a1, double a2, double a3, int a4)
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DB4EE.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DB4EE.json)
 }
 } // namespace gamemd
 
@@ -3254,7 +3254,7 @@ double _handle_qnan2(int a1, double a2, double a3, int a4)
 namespace gamemd {
 double _except1(DWORD dwExceptionCode, int a2, double a3, double a4, int a5)
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DB54E.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DB54E.json)
 }
 } // namespace gamemd
 
@@ -3262,7 +3262,7 @@ double _except1(DWORD dwExceptionCode, int a2, double a3, double a4, int a5)
 namespace gamemd {
 double _except2(DWORD dwExceptionCode, int a2, double a3, double a4, double a5, int a6)
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DB5E6.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DB5E6.json)
 }
 } // namespace gamemd
 
@@ -3270,7 +3270,7 @@ double _except2(DWORD dwExceptionCode, int a2, double a3, double a4, double a5, 
 namespace gamemd {
 double _umatherr(int Value, int a2, int a3, int a4, int a5, int a6, double a7, int a8)
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DBB55.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DBB55.json)
 }
 } // namespace gamemd
 
@@ -3278,7 +3278,7 @@ double _umatherr(int Value, int a2, int a3, int a4, int a5, int a6, double a7, i
 namespace gamemd {
 errno_t _set_errno(int Value)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DBBDD.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DBBDD.json)
 }
 } // namespace gamemd
 
@@ -3294,7 +3294,7 @@ void ** _get_fname(int a1)
 namespace gamemd {
 int _errcode(char a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DBC2A.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DBC2A.json)
 }
 } // namespace gamemd
 
@@ -3333,7 +3333,7 @@ void _set_statfp()
 namespace gamemd {
 void __multtenpow12(unsigned short * a1, int a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DC0F6.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DC0F6.json)
 }
 } // namespace gamemd
 
@@ -3381,7 +3381,7 @@ void nullsub_271(int a1)
 namespace gamemd {
 int sub_7DC78F(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * perrinfo, LPCWSTR lpString, int a7)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DC78F.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DC78F.json)
 }
 } // namespace gamemd
 
@@ -3389,7 +3389,7 @@ int sub_7DC78F(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * perrinfo, 
 namespace gamemd {
 int sub_7DCC74(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperrinfo, LPCWSTR lpString, int a7)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DCC74.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DCC74.json)
 }
 } // namespace gamemd
 
@@ -3405,7 +3405,7 @@ void COM_ThrowError(int a1, int a2, int a3)
 namespace gamemd {
 ObjectClass * E4Recv_7DCDF2::sub_7DCDF2(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DCDF2.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DCDF2.json)
 }
 } // namespace gamemd
 
@@ -3869,7 +3869,7 @@ int VariantInit()
 namespace gamemd {
 int _wcsicmp(const wchar_t * String1, const wchar_t * String2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DD0F8.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DD0F8.json)
 }
 } // namespace gamemd
 
@@ -3877,7 +3877,7 @@ int _wcsicmp(const wchar_t * String1, const wchar_t * String2)
 namespace gamemd {
 int sub_7DD1D7()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DD1D7.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DD1D7.json)
 }
 } // namespace gamemd
 
@@ -3885,7 +3885,7 @@ int sub_7DD1D7()
 namespace gamemd {
 int sub_7DD2E0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DD2E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DD2E0.json)
 }
 } // namespace gamemd
 
@@ -3893,7 +3893,7 @@ int sub_7DD2E0()
 namespace gamemd {
 int _kbhit()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DD334.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DD334.json)
 }
 } // namespace gamemd
 
@@ -3901,7 +3901,7 @@ int _kbhit()
 namespace gamemd {
 int _ungetch(int Ch)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DD413.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DD413.json)
 }
 } // namespace gamemd
 
@@ -3917,7 +3917,7 @@ unsigned char * _getextendedkeycode(int a1)
 namespace gamemd {
 int _cwprintf(const wchar_t *const Format, ...)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DD4F4.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DD4F4.json)
 }
 } // namespace gamemd
 
@@ -3973,7 +3973,7 @@ unsigned int * write_string_1(char * a1, unsigned int * a2, unsigned int * a3)
 namespace gamemd {
 int get_int_arg_1(unsigned int * a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DDCAB.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DDCAB.json)
 }
 } // namespace gamemd
 
@@ -3990,7 +3990,7 @@ long long get_int64_arg_1(unsigned int * a1)
 namespace gamemd {
 short get_short_arg_0(unsigned int * a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DDCC8.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DDCC8.json)
 }
 } // namespace gamemd
 
@@ -4014,7 +4014,7 @@ char * _strrev(IUnknown * aP0)
 namespace gamemd {
 int _wcsnicmp(ObjectClass * aP0, const wchar_t * String2, size_t MaxCount)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DDE80.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DDE80.json)
 }
 } // namespace gamemd
 
@@ -4022,7 +4022,7 @@ int _wcsnicmp(ObjectClass * aP0, const wchar_t * String2, size_t MaxCount)
 namespace gamemd {
 int _filelength(int FileHandle)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DDF78.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DDF78.json)
 }
 } // namespace gamemd
 
@@ -4030,7 +4030,7 @@ int _filelength(int FileHandle)
 namespace gamemd {
 wint_t towlower(wint_t C)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DE002.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DE002.json)
 }
 } // namespace gamemd
 
@@ -4038,7 +4038,7 @@ wint_t towlower(wint_t C)
 namespace gamemd {
 wint_t towlower_0(wint_t C)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DE07C.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DE07C.json)
 }
 } // namespace gamemd
 
@@ -4046,7 +4046,7 @@ wint_t towlower_0(wint_t C)
 namespace gamemd {
 HANDLE __initconin()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DE0F1.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DE0F1.json)
 }
 } // namespace gamemd
 
@@ -4054,7 +4054,7 @@ HANDLE __initconin()
 namespace gamemd {
 HANDLE __initconout()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DE110.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DE110.json)
 }
 } // namespace gamemd
 
@@ -4062,7 +4062,7 @@ HANDLE __initconout()
 namespace gamemd {
 HANDLE __termcon()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DE12F.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DE12F.json)
 }
 } // namespace gamemd
 
@@ -4070,7 +4070,7 @@ HANDLE __termcon()
 namespace gamemd {
 int _putch(int Ch)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007DE17D.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007DE17D.json)
 }
 } // namespace gamemd
 

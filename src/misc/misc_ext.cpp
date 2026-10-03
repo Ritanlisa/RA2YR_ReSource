@@ -59,7 +59,7 @@ int AITriggerTypeClass::SaveToINI(int *a2, int a3)
 // 0x41e5e0
 int AITriggerTypeClass::ProcessPower(int * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x00041E5E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x0041E5E0.json)
 }
 // 0x41eaf0
 bool AITriggerTypeClass::EnemyHouseOwns(int a2, unsigned int * a3)
@@ -1298,7 +1298,7 @@ void TClassFactory_CampaignClass::CreateInstanceCOM()
 // 0x6c0190
 int TClassFactory_CampaignClass::AdjustRefCOM()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom; truth = .omo/ida_cache/func_0x0006C0190.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom; truth = .omo/ida_cache/func_0x006C0190.json)
 }
 // 0x6c0240
 int TClassFactory_CampaignClass::AddRef()
@@ -1489,7 +1489,7 @@ void ArtConfig::resetConfig( unsigned int * a1, int a3, Selection_WorldDominatio
 // 0x534e50
 int AssetClass::ReleaseAndReload()
 {
-    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x000534E50.json)
+    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x00534E50.json)
 }
 // 0x69e100
 void BTree::DeleteSubtree()
@@ -1677,7 +1677,7 @@ void CChatEventSink::HandleUserSearch( int a2, void * a3)
 // 0x47a3f0
 void CDROM::DeviceIoControl(HANDLE hDevice, int a2)
 {
-    // TODO stub - quarantined G42 T9 (prior-epoch raw dump: def/decl arity mismatch; truth = .omo/ida_cache/func_0x00047A3F0.json)
+    // TODO stub - quarantined G42 T9 (prior-epoch raw dump: def/decl arity mismatch; truth = .omo/ida_cache/func_0x0047A3F0.json)
 }
 // 0x47a6f0
 void CDROM::LockVolume(ObjectClass * aP0, AnimClass * aP1, uint8_t a3, DWORD BytesReturned, int16_t a5)
@@ -1755,7 +1755,7 @@ void ComStreamClass::SetSize()
 // 0x7a30d0
 int ComStreamClass::Read()
 {
-    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x0007A30D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x007A30D0.json)
 }
 // 0x7a3b30
 void ComStreamClass::Commit()
@@ -1874,7 +1874,7 @@ void DiskLaserClass::Stat( AbstractClass * aP1)
 // 0x48dd50
 int DiskSpace::CheckAvailable()
 {
-    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x00048DD50.json)
+    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x0048DD50.json)
 }
 // 0x510970
 void DistributionVector_BuildingType::Construct( int a2, unsigned int * a3)
@@ -1891,7 +1891,7 @@ void DynamicArray::Resize(int *a1, unsigned int *aP2)
 // 0x625440
 int DynamicArray::ShrinkCapacity()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x000625440.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x00625440.json)
 }
 // 0x7acd60
 void DynamicArray::Remove( int a2)
@@ -1900,7 +1900,7 @@ void DynamicArray::Remove( int a2)
 // 0x7ad9d0
 int DynamicArray::Grow()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0007AD9D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x007AD9D0.json)
 }
 // 0x7aca00
 void DynamicClass::Insert( HashTable * aP1, IUnknown * aP2)
@@ -1929,7 +1929,7 @@ void Exception::Destructor()
 // 0x4c85e0
 int ExceptionHandler::GenerateReport()
 {
-    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x0004C85E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x004C85E0.json)
 }
 // 0x434110
 void Field::Int_Set(int aP1)
@@ -2014,7 +2014,7 @@ void GenericVector::Resize2( int a2, unsigned int * a3)
 // 0x422b20
 int GlobalArray::FindString()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x000422B20.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x00422B20.json)
 }
 // 0x5f7640
 void GlobalInit::RegisterSingleton(int a1)
@@ -2245,7 +2245,7 @@ void MPScore::DlgProc()
 // 0x5cb840
 void MSAnim::GetField( unsigned int a2)
 {
-    // TODO stub - quarantined G42 T9 (prior-epoch raw dump: def/decl arity mismatch; truth = .omo/ida_cache/func_0x0005CB840.json)
+    // TODO stub - quarantined G42 T9 (prior-epoch raw dump: def/decl arity mismatch; truth = .omo/ida_cache/func_0x005CB840.json)
 }
 // 0x5cb860
 void MSAnim::SetField( unsigned int a2)
@@ -2341,7 +2341,7 @@ char MSFont::AddRef(uint8_t szSrc)
 // 0x5d3250
 void MSFont::Create( int * a2, uint8_t szSrc, int a4, int a5, int a6, int a7)
 {
-    // TODO stub - quarantined G42 T9 (prior-epoch raw dump: def/decl arity mismatch; truth = .omo/ida_cache/func_0x0005D3250.json)
+    // TODO stub - quarantined G42 T9 (prior-epoch raw dump: def/decl arity mismatch; truth = .omo/ida_cache/func_0x005D3250.json)
 }
 // 0x5d3330
 short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
@@ -2610,12 +2610,12 @@ void PacketQueue::ReleaseEntry(void *a1, unsigned int *a2, int aP3, void *a4, un
 // 0x5355d0
 int Performance::Profile()
 {
-    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x0005355D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x005355D0.json)
 }
 // 0x5cafc0
 int Performance::MeasureTicks()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0005CAFC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x005CAFC0.json)
 }
 // 0x631060
 void PhoneEditor::PopulateList()
@@ -2624,7 +2624,7 @@ void PhoneEditor::PopulateList()
 // 0x55af60
 int PingPongBuffer::GetWriteOffset()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x00055AF60.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0055AF60.json)
 }
 // 0x4aec80
 void Pipe::QueryInterface(int * Block, char a2)
@@ -2650,7 +2650,7 @@ void PlanManager::Notify()
 // 0x63f850
 int PowerBar::CalcFill()
 {
-    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x00063F850.json)
+    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x0063F850.json)
 }
 // 0x63f960
 void PowerBar::ComputeFill(PowerClass * aP0, ObjectClass * aP1, ObjectClass * aP2)
@@ -2675,7 +2675,7 @@ void PrintTimerOnTactical::Start(int ecx0, int a2, int a3, wchar_t * Format, uns
 // 0x5ac960
 int PriorityQueue::Pop()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0005AC960.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x005AC960.json)
 }
 // 0x5d1c20
 void PriorityQueue::Add(int aP1)
@@ -2805,7 +2805,7 @@ void ShapeButtonClass_Destru::QueryInterface(void * Block, char a2)
 // 0x72fbc0
 int Sides::MixFileYuriFiles3()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x00072FBC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0072FBC0.json)
 }
 // 0x624110
 int SimpleDialogControl::Constructor()
@@ -2871,7 +2871,7 @@ void SortedVector::BinarySearch( int * a2)
 // 0x7314c0
 int SquadClass::SelectAllMembers()
 {
-    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x0007314C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x007314C0.json)
 }
 // 0x731840
 void SquadClass::ProcessMove()
@@ -2880,7 +2880,7 @@ void SquadClass::ProcessMove()
 // 0x4e4230
 int StartCombo::IDToIndex()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0004E4230.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x004E4230.json)
 }
 // 0x510690
 void StartingTechnoVector::Construct( int a2, int a3)
@@ -2913,7 +2913,7 @@ void StaticButtonClass::OnClick( size_t a2)
 // 0x7af2a0
 int StaticString::Factory()
 {
-    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x0007AF2A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x007AF2A0.json)
 }
 // 0x4aec10
 void Straw::QueryInterface(int * Block, char a2)
@@ -3016,12 +3016,12 @@ int TClassFactory_AITriggerTypeClass::GetClassName()
 // 0x6c5c90
 int TClassFactory_AITriggerTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C5C90.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C5C90.json)
 }
 // 0x6c5d10
 int TClassFactory_AITriggerTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C5D10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C5D10.json)
 }
 // 0x6c36c0
 int TClassFactory_AircraftClass::AddRef()
@@ -3044,12 +3044,12 @@ int TClassFactory_AircraftClass::GetClassName()
 // 0x6c3710
 int TClassFactory_AircraftClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C3710.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C3710.json)
 }
 // 0x6c3790
 int TClassFactory_AircraftClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C3790.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C3790.json)
 }
 // 0x6c2ac0
 int TClassFactory_AircraftTypeClass::AddRef()
@@ -3072,12 +3072,12 @@ int TClassFactory_AircraftTypeClass::GetClassName()
 // 0x6c2b10
 int TClassFactory_AircraftTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C2B10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C2B10.json)
 }
 // 0x6c2b90
 int TClassFactory_AircraftTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C2B90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C2B90.json)
 }
 // 0x6c0840
 int TClassFactory_AirstrikeClass::AddRef()
@@ -3104,7 +3104,7 @@ void TClassFactory_AirstrikeClass::ddtor()
 // 0x6c0910
 int TClassFactory_AirstrikeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C0910.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C0910.json)
 }
 // 0x6c60c0
 int TClassFactory_AlphaShapeClass::AddRef()
@@ -3127,12 +3127,12 @@ int TClassFactory_AlphaShapeClass::GetClassName()
 // 0x6c6110
 int TClassFactory_AlphaShapeClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C6110.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C6110.json)
 }
 // 0x6c6190
 int TClassFactory_AlphaShapeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C6190.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C6190.json)
 }
 // 0x6c3b40
 int TClassFactory_AnimTypeClass::AddRef()
@@ -3155,12 +3155,12 @@ int TClassFactory_AnimTypeClass::GetClassName()
 // 0x6c3b90
 int TClassFactory_AnimTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C3B90.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C3B90.json)
 }
 // 0x6c3c10
 int TClassFactory_AnimTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C3C10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C3C10.json)
 }
 // 0x6c1140
 int TClassFactory_BombClass::AddRef()
@@ -3183,12 +3183,12 @@ int TClassFactory_BombClass::GetClassName()
 // 0x6c1190
 int TClassFactory_BombClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C1190.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C1190.json)
 }
 // 0x6c1210
 int TClassFactory_BombClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C1210.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C1210.json)
 }
 // 0x6c3540
 int TClassFactory_BuildingClass::AddRef()
@@ -3211,12 +3211,12 @@ int TClassFactory_BuildingClass::GetClassName()
 // 0x6c3590
 int TClassFactory_BuildingClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C3590.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C3590.json)
 }
 // 0x6c3610
 int TClassFactory_BuildingClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C3610.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C3610.json)
 }
 // 0x6c03c0
 int TClassFactory_BuildingLightClass::AddRef()
@@ -3239,12 +3239,12 @@ int TClassFactory_BuildingLightClass::GetClassName()
 // 0x6c0410
 int TClassFactory_BuildingLightClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C0410.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C0410.json)
 }
 // 0x6c0490
 int TClassFactory_BuildingLightClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C0490.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C0490.json)
 }
 // 0x6c2940
 int TClassFactory_BuildingTypeClass::AddRef()
@@ -3267,12 +3267,12 @@ int TClassFactory_BuildingTypeClass::GetClassName()
 // 0x6c2990
 int TClassFactory_BuildingTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C2990.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C2990.json)
 }
 // 0x6c2a10
 int TClassFactory_BuildingTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C2A10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C2A10.json)
 }
 // 0x6c2dc0
 int TClassFactory_BulletTypeClass::AddRef()
@@ -3295,12 +3295,12 @@ int TClassFactory_BulletTypeClass::GetClassName()
 // 0x6c2e10
 int TClassFactory_BulletTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C2E10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C2E10.json)
 }
 // 0x6c2e90
 int TClassFactory_BulletTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C2E90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C2E90.json)
 }
 // 0x6c0cc0
 int TClassFactory_CaptureManagerClass::AddRef()
@@ -3323,12 +3323,12 @@ int TClassFactory_CaptureManagerClass::GetClassName()
 // 0x6c0d10
 int TClassFactory_CaptureManagerClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C0D10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C0D10.json)
 }
 // 0x6c0d90
 int TClassFactory_CaptureManagerClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C0D90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C0D90.json)
 }
 // 0x6c0e40
 int TClassFactory_DiskLaserClass::AddRef()
@@ -3351,12 +3351,12 @@ int TClassFactory_DiskLaserClass::GetClassName()
 // 0x6c0e90
 int TClassFactory_DiskLaserClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C0E90.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C0E90.json)
 }
 // 0x6c0f10
 int TClassFactory_DiskLaserClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C0F10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C0F10.json)
 }
 // 0x6c3fc0
 int TClassFactory_DriveLocomotionClass::AddRef()
@@ -3379,12 +3379,12 @@ int TClassFactory_DriveLocomotionClass::GetClassName()
 // 0x6c4010
 int TClassFactory_DriveLocomotionClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C4010.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C4010.json)
 }
 // 0x6c4090
 int TClassFactory_DriveLocomotionClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C4090.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C4090.json)
 }
 // 0x6c48c0
 int TClassFactory_DropPodLocomotionClass::AddRef()
@@ -3407,12 +3407,12 @@ int TClassFactory_DropPodLocomotionClass::GetClassName()
 // 0x6c4910
 int TClassFactory_DropPodLocomotionClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C4910.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C4910.json)
 }
 // 0x6c4990
 int TClassFactory_DropPodLocomotionClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C4990.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C4990.json)
 }
 // 0x6c51c0
 int TClassFactory_FactoryClass::AddRef()
@@ -3435,12 +3435,12 @@ int TClassFactory_FactoryClass::GetClassName()
 // 0x6c5210
 int TClassFactory_FactoryClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C5210.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C5210.json)
 }
 // 0x6c5290
 int TClassFactory_FactoryClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C5290.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C5290.json)
 }
 // 0x6c4a40
 int TClassFactory_FlyLocomotionClass::AddRef()
@@ -3463,12 +3463,12 @@ int TClassFactory_FlyLocomotionClass::GetClassName()
 // 0x6c4a90
 int TClassFactory_FlyLocomotionClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C4A90.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C4A90.json)
 }
 // 0x6c4b10
 int TClassFactory_FlyLocomotionClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C4B10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C4B10.json)
 }
 // 0x6c5f40
 int TClassFactory_FoggedObjectClass::AddRef()
@@ -3491,12 +3491,12 @@ int TClassFactory_FoggedObjectClass::GetClassName()
 // 0x6c5f90
 int TClassFactory_FoggedObjectClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C5F90.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C5F90.json)
 }
 // 0x6c6010
 int TClassFactory_FoggedObjectClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C6010.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C6010.json)
 }
 // 0x6c3e40
 int TClassFactory_HouseClass::AddRef()
@@ -3519,12 +3519,12 @@ int TClassFactory_HouseClass::GetClassName()
 // 0x6c3e90
 int TClassFactory_HouseClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x0006C3E90.json)
+    return 0; // TODO stub - quarantined G42 T9 (helper; truth = .omo/ida_cache/func_0x006C3E90.json)
 }
 // 0x6c3f10
 int TClassFactory_HouseClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C3F10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C3F10.json)
 }
 // 0x6c3cc0
 int TClassFactory_HouseTypeClass::AddRef()
@@ -3547,12 +3547,12 @@ int TClassFactory_HouseTypeClass::GetClassName()
 // 0x6c3d10
 int TClassFactory_HouseTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C3D10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C3D10.json)
 }
 // 0x6c3d90
 int TClassFactory_HouseTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C3D90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C3D90.json)
 }
 // 0x6c42c0
 int TClassFactory_HoverLocomotionClass::AddRef()
@@ -3575,12 +3575,12 @@ int TClassFactory_HoverLocomotionClass::GetClassName()
 // 0x6c4310
 int TClassFactory_HoverLocomotionClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C4310.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C4310.json)
 }
 // 0x6c4390
 int TClassFactory_HoverLocomotionClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C4390.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C4390.json)
 }
 // 0x6c3840
 int TClassFactory_InfantryClass::AddRef()
@@ -3603,12 +3603,12 @@ int TClassFactory_InfantryClass::GetClassName()
 // 0x6c3890
 int TClassFactory_InfantryClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C3890.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C3890.json)
 }
 // 0x6c3910
 int TClassFactory_InfantryClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C3910.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C3910.json)
 }
 // 0x6c2c40
 int TClassFactory_InfantryTypeClass::AddRef()
@@ -3631,12 +3631,12 @@ int TClassFactory_InfantryTypeClass::GetClassName()
 // 0x6c2c90
 int TClassFactory_InfantryTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C2C90.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C2C90.json)
 }
 // 0x6c2d10
 int TClassFactory_InfantryTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C2D10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C2D10.json)
 }
 // 0x6c2f40
 int TClassFactory_IsometricTileTypeClass::AddRef()
@@ -3659,12 +3659,12 @@ int TClassFactory_IsometricTileTypeClass::GetClassName()
 // 0x6c2f90
 int TClassFactory_IsometricTileTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C2F90.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C2F90.json)
 }
 // 0x6c3010
 int TClassFactory_IsometricTileTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C3010.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C3010.json)
 }
 // 0x6c4140
 int TClassFactory_JumpjetLocomotionClass::AddRef()
@@ -3687,12 +3687,12 @@ int TClassFactory_JumpjetLocomotionClass::GetClassName()
 // 0x6c4190
 int TClassFactory_JumpjetLocomotionClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C4190.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C4190.json)
 }
 // 0x6c4210
 int TClassFactory_JumpjetLocomotionClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C4210.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C4210.json)
 }
 // 0x6bfc40
 int TClassFactory_LightSourceClass::AddRef()
@@ -3715,12 +3715,12 @@ int TClassFactory_LightSourceClass::GetClassName()
 // 0x6bfc90
 int TClassFactory_LightSourceClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006BFC90.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006BFC90.json)
 }
 // 0x6bfd10
 int TClassFactory_LightSourceClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006BFD10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006BFD10.json)
 }
 // 0x6c5dc0
 int TClassFactory_NeuronClass::AddRef()
@@ -3743,12 +3743,12 @@ int TClassFactory_NeuronClass::GetClassName()
 // 0x6c5e10
 int TClassFactory_NeuronClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C5E10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C5E10.json)
 }
 // 0x6c5e90
 int TClassFactory_NeuronClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C5E90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C5E90.json)
 }
 // 0x6c30c0
 int TClassFactory_OverlayTypeClass::AddRef()
@@ -3771,12 +3771,12 @@ int TClassFactory_OverlayTypeClass::GetClassName()
 // 0x6c3110
 int TClassFactory_OverlayTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C3110.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C3110.json)
 }
 // 0x6c3190
 int TClassFactory_OverlayTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C3190.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C3190.json)
 }
 // 0x6c0fc0
 int TClassFactory_ParasiteClass::AddRef()
@@ -3799,12 +3799,12 @@ int TClassFactory_ParasiteClass::GetClassName()
 // 0x6c1010
 int TClassFactory_ParasiteClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C1010.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C1010.json)
 }
 // 0x6c1090
 int TClassFactory_ParasiteClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C1090.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C1090.json)
 }
 // 0x6c5660
 int TClassFactory_ParticleClass::GetClassName()
@@ -3820,12 +3820,12 @@ int TClassFactory_ParticleClass::GetClassName()
 // 0x6c5690
 int TClassFactory_ParticleClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C5690.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C5690.json)
 }
 // 0x6c5710
 int TClassFactory_ParticleClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C5710.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C5710.json)
 }
 // 0x6c5940
 int TClassFactory_ParticleSystemClass::AddRef()
@@ -3848,12 +3848,12 @@ int TClassFactory_ParticleSystemClass::GetClassName()
 // 0x6c5990
 int TClassFactory_ParticleSystemClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C5990.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C5990.json)
 }
 // 0x6c5a10
 int TClassFactory_ParticleSystemClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C5A10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C5A10.json)
 }
 // 0x6c5ac0
 int TClassFactory_ParticleSystemTypeClass::AddRef()
@@ -3876,12 +3876,12 @@ int TClassFactory_ParticleSystemTypeClass::GetClassName()
 // 0x6c5b10
 int TClassFactory_ParticleSystemTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C5B10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C5B10.json)
 }
 // 0x6c5b90
 int TClassFactory_ParticleSystemTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C5B90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C5B90.json)
 }
 // 0x6c57c0
 int TClassFactory_ParticleTypeClass::AddRef()
@@ -3904,12 +3904,12 @@ int TClassFactory_ParticleTypeClass::GetClassName()
 // 0x6c5810
 int TClassFactory_ParticleTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C5810.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C5810.json)
 }
 // 0x6c5890
 int TClassFactory_ParticleTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C5890.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C5890.json)
 }
 // 0x6c12c0
 int TClassFactory_RadSiteClass::AddRef()
@@ -3932,12 +3932,12 @@ int TClassFactory_RadSiteClass::GetClassName()
 // 0x6c1310
 int TClassFactory_RadSiteClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C1310.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C1310.json)
 }
 // 0x6c1390
 int TClassFactory_RadSiteClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C1390.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C1390.json)
 }
 // 0x6c4440
 int TClassFactory_RocketLocomotionClass::AddRef()
@@ -3960,12 +3960,12 @@ int TClassFactory_RocketLocomotionClass::GetClassName()
 // 0x6c4490
 int TClassFactory_RocketLocomotionClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C4490.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C4490.json)
 }
 // 0x6c4510
 int TClassFactory_RocketLocomotionClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C4510.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C4510.json)
 }
 // 0x6c1d40
 int TClassFactory_ScriptClass::AddRef()
@@ -3992,7 +3992,7 @@ void TClassFactory_ScriptClass::ddtor()
 // 0x6c1e10
 int TClassFactory_ScriptClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C1E10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C1E10.json)
 }
 // 0x6c1ec0
 int TClassFactory_ScriptTypeClass::AddRef()
@@ -4015,12 +4015,12 @@ int TClassFactory_ScriptTypeClass::GetClassName()
 // 0x6c1f10
 int TClassFactory_ScriptTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C1F10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C1F10.json)
 }
 // 0x6c1f90
 int TClassFactory_ScriptTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C1F90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C1F90.json)
 }
 // 0x6c4ec0
 int TClassFactory_ShipLocomotionClass::AddRef()
@@ -4043,12 +4043,12 @@ int TClassFactory_ShipLocomotionClass::GetClassName()
 // 0x6c4f10
 int TClassFactory_ShipLocomotionClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C4F10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C4F10.json)
 }
 // 0x6c4f90
 int TClassFactory_ShipLocomotionClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C4F90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C4F90.json)
 }
 // 0x6bfdc0
 int TClassFactory_SideClass::AddRef()
@@ -4071,12 +4071,12 @@ int TClassFactory_SideClass::GetClassName()
 // 0x6bfe10
 int TClassFactory_SideClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006BFE10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006BFE10.json)
 }
 // 0x6bfe90
 int TClassFactory_SideClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006BFE90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006BFE90.json)
 }
 // 0x6c0b40
 int TClassFactory_SlaveManagerClass::AddRef()
@@ -4099,12 +4099,12 @@ int TClassFactory_SlaveManagerClass::GetClassName()
 // 0x6c0b90
 int TClassFactory_SlaveManagerClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C0B90.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C0B90.json)
 }
 // 0x6c0c10
 int TClassFactory_SlaveManagerClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C0C10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C0C10.json)
 }
 // 0x6c3240
 int TClassFactory_SmudgeTypeClass::AddRef()
@@ -4127,12 +4127,12 @@ int TClassFactory_SmudgeTypeClass::GetClassName()
 // 0x6c3290
 int TClassFactory_SmudgeTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C3290.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C3290.json)
 }
 // 0x6c3310
 int TClassFactory_SmudgeTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C3310.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C3310.json)
 }
 // 0x6c09c0
 int TClassFactory_SpawnManagerClass::AddRef()
@@ -4155,12 +4155,12 @@ int TClassFactory_SpawnManagerClass::GetClassName()
 // 0x6c0a10
 int TClassFactory_SpawnManagerClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C0A10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C0A10.json)
 }
 // 0x6c0a90
 int TClassFactory_SpawnManagerClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C0A90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C0A90.json)
 }
 // 0x6c18c0
 int TClassFactory_TActionClass::AddRef()
@@ -4183,12 +4183,12 @@ int TClassFactory_TActionClass::GetClassName()
 // 0x6c1910
 int TClassFactory_TActionClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C1910.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C1910.json)
 }
 // 0x6c1990
 int TClassFactory_TActionClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C1990.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C1990.json)
 }
 // 0x6c1440
 int TClassFactory_TEventClass::AddRef()
@@ -4211,12 +4211,12 @@ int TClassFactory_TEventClass::GetClassName()
 // 0x6c1490
 int TClassFactory_TEventClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C1490.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C1490.json)
 }
 // 0x6c1510
 int TClassFactory_TEventClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C1510.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C1510.json)
 }
 // 0x6c2040
 int TClassFactory_TagClass::AddRef()
@@ -4239,12 +4239,12 @@ int TClassFactory_TagClass::GetClassName()
 // 0x6c2090
 int TClassFactory_TagClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C2090.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C2090.json)
 }
 // 0x6c2110
 int TClassFactory_TagClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C2110.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C2110.json)
 }
 // 0x6c21c0
 int TClassFactory_TagTypeClass::AddRef()
@@ -4267,12 +4267,12 @@ int TClassFactory_TagTypeClass::GetClassName()
 // 0x6c2210
 int TClassFactory_TagTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C2210.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C2210.json)
 }
 // 0x6c2290
 int TClassFactory_TagTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C2290.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C2290.json)
 }
 // 0x6c2640
 int TClassFactory_TaskForceClass::AddRef()
@@ -4295,12 +4295,12 @@ int TClassFactory_TaskForceClass::GetClassName()
 // 0x6c2690
 int TClassFactory_TaskForceClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C2690.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C2690.json)
 }
 // 0x6c2710
 int TClassFactory_TaskForceClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C2710.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C2710.json)
 }
 // 0x6c2340
 int TClassFactory_TeamClass::AddRef()
@@ -4323,12 +4323,12 @@ int TClassFactory_TeamClass::GetClassName()
 // 0x6c2390
 int TClassFactory_TeamClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C2390.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C2390.json)
 }
 // 0x6c2410
 int TClassFactory_TeamClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C2410.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C2410.json)
 }
 // 0x6c24c0
 int TClassFactory_TeamTypeClass::AddRef()
@@ -4351,12 +4351,12 @@ int TClassFactory_TeamTypeClass::GetClassName()
 // 0x6c2510
 int TClassFactory_TeamTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C2510.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C2510.json)
 }
 // 0x6c2590
 int TClassFactory_TeamTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C2590.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C2590.json)
 }
 // 0x6c4bc0
 int TClassFactory_TeleportLocomotionClass::AddRef()
@@ -4379,12 +4379,12 @@ int TClassFactory_TeleportLocomotionClass::GetClassName()
 // 0x6c4c10
 int TClassFactory_TeleportLocomotionClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C4C10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C4C10.json)
 }
 // 0x6c4c90
 int TClassFactory_TeleportLocomotionClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C4C90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C4C90.json)
 }
 // 0x6c06c0
 int TClassFactory_TemporalClass::AddRef()
@@ -4407,12 +4407,12 @@ int TClassFactory_TemporalClass::GetClassName()
 // 0x6c0710
 int TClassFactory_TemporalClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C0710.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C0710.json)
 }
 // 0x6c0790
 int TClassFactory_TemporalClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C0790.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C0790.json)
 }
 // 0x6bff40
 int TClassFactory_TiberiumClass::AddRef()
@@ -4435,12 +4435,12 @@ int TClassFactory_TiberiumClass::GetClassName()
 // 0x6bff90
 int TClassFactory_TiberiumClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006BFF90.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006BFF90.json)
 }
 // 0x6c0010
 int TClassFactory_TiberiumClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C0010.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C0010.json)
 }
 // 0x6c1a40
 int TClassFactory_TriggerClass::AddRef()
@@ -4463,12 +4463,12 @@ int TClassFactory_TriggerClass::GetClassName()
 // 0x6c1a90
 int TClassFactory_TriggerClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C1A90.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C1A90.json)
 }
 // 0x6c1b10
 int TClassFactory_TriggerClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C1B10.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C1B10.json)
 }
 // 0x6c1bc0
 int TClassFactory_TriggerTypeClass::AddRef()
@@ -4491,12 +4491,12 @@ int TClassFactory_TriggerTypeClass::GetClassName()
 // 0x6c1c10
 int TClassFactory_TriggerTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C1C10.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C1C10.json)
 }
 // 0x6c1c90
 int TClassFactory_TriggerTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C1C90.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C1C90.json)
 }
 // 0x6c45c0
 int TClassFactory_TunnelLocomotionClass::AddRef()
@@ -4519,12 +4519,12 @@ int TClassFactory_TunnelLocomotionClass::GetClassName()
 // 0x6c4610
 int TClassFactory_TunnelLocomotionClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C4610.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C4610.json)
 }
 // 0x6c4690
 int TClassFactory_TunnelLocomotionClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C4690.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C4690.json)
 }
 // 0x6c33c0
 int TClassFactory_UnitClass::AddRef()
@@ -4547,14 +4547,14 @@ int TClassFactory_UnitClass::GetClassName()
 // 0x6c3410
 int TClassFactory_UnitClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C3410.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C3410.json)
 }
     int v2;
 
 // 0x6c3490
 int TClassFactory_UnitClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C3490.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C3490.json)
 }
 // 0x6c27c0
 int TClassFactory_UnitTypeClass::AddRef()
@@ -4577,12 +4577,12 @@ int TClassFactory_UnitTypeClass::GetClassName()
 // 0x6c2810
 int TClassFactory_UnitTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C2810.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C2810.json)
 }
 // 0x6c2890
 int TClassFactory_UnitTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C2890.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C2890.json)
 }
 // 0x6c1740
 int TClassFactory_VoxelAnimClass::AddRef()
@@ -4605,12 +4605,12 @@ int TClassFactory_VoxelAnimClass::GetClassName()
 // 0x6c1790
 int TClassFactory_VoxelAnimClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C1790.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C1790.json)
 }
 // 0x6c1810
 int TClassFactory_VoxelAnimClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C1810.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C1810.json)
 }
 // 0x6c15c0
 int TClassFactory_VoxelAnimTypeClass::AddRef()
@@ -4633,12 +4633,12 @@ int TClassFactory_VoxelAnimTypeClass::GetClassName()
 // 0x6c1610
 int TClassFactory_VoxelAnimTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C1610.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C1610.json)
 }
 // 0x6c1690
 int TClassFactory_VoxelAnimTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C1690.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C1690.json)
 }
 // 0x6c4740
 int TClassFactory_WalkLocomotionClass::AddRef()
@@ -4661,12 +4661,12 @@ int TClassFactory_WalkLocomotionClass::GetClassName()
 // 0x6c4790
 int TClassFactory_WalkLocomotionClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C4790.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C4790.json)
 }
 // 0x6c4810
 int TClassFactory_WalkLocomotionClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C4810.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C4810.json)
 }
 // 0x6c5340
 int TClassFactory_WarheadTypeClass::AddRef()
@@ -4689,12 +4689,12 @@ int TClassFactory_WarheadTypeClass::GetClassName()
 // 0x6c5390
 int TClassFactory_WarheadTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C5390.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C5390.json)
 }
 // 0x6c5410
 int TClassFactory_WarheadTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C5410.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C5410.json)
 }
 // 0x6c0540
 int TClassFactory_WaypointPathClass::AddRef()
@@ -4717,12 +4717,12 @@ int TClassFactory_WaypointPathClass::GetClassName()
 // 0x6c0590
 int TClassFactory_WaypointPathClass::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C0590.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C0590.json)
 }
 // 0x6c0610
 int TClassFactory_WaypointPathClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C0610.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C0610.json)
 }
 // 0x6c54c0
 int TClassFactory_WeaponTypeClass::AddRef()
@@ -4745,12 +4745,12 @@ int TClassFactory_WeaponTypeClass::GetClassName()
 // 0x6c5510
 int TClassFactory_WeaponTypeClass::GetClassIdentifier()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x0006C5510.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x006C5510.json)
 }
 // 0x6c5590
 int TClassFactory_WeaponTypeClass::GetSize()
 {
-    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x0006C5590.json)
+    return 0; // TODO stub - quarantined G42 T9 (phantom params a2; truth = .omo/ida_cache/func_0x006C5590.json)
 }
 // 0x510640
 void TagClassVector::Construct( int a2, int a3)
@@ -4787,7 +4787,7 @@ void Territory_WorldDominationTour::QueryInterface( char a2)
 // 0x545000
 int TheatreClass::InitView()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x000545000.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x00545000.json)
 }
 // 0x58bdc0
 int TileData::Constructor()
@@ -4912,7 +4912,7 @@ void Viewport::ProcessScroll( unsigned int * a2)
 // 0x753e00
 int Viewport::Clear()
 {
-    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x000753E00.json)
+    return 0; // TODO stub - quarantined G42 T9 (voidret; truth = .omo/ida_cache/func_0x00753E00.json)
 }
 // 0x407510
 void VtableStub::Push_407510(void * Block)

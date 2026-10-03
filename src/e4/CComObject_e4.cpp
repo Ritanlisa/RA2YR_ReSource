@@ -36,56 +36,56 @@
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchConnectionPairs(void *a1_1)
 {
-    return 0; (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007937B0.json)
+    return 0; (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007937B0.json)
 }
 }
 // 0x7A4EC0
 namespace gamemd {
 Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a3, int a4)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A4EC0.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A4EC0.json)
 }
 }
 // 0x7A5290
 namespace gamemd {
 Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a2, const char *a3, int a1018, int a1, int a4, int a5)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A5290.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A5290.json)
 }
 }
 // 0x7A5690
 namespace gamemd {
 AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, unsigned char * a3)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A5690.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A5690.json)
 }
 }
 // 0x7A7B60
 namespace gamemd {
 Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a3, int a4, wchar_t * a5)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; (void)a5; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A7B60.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; (void)a5; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A7B60.json)
 }
 }
 // 0x7A7EA0
 namespace gamemd {
 Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a3, int a4, char * Source)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; (void)Source; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A7EA0.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; (void)Source; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A7EA0.json)
 }
 }
 // 0x7A8DA0
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, const char * a4, char * String1)
 {
-    return 0; (void)a1; (void)a2; (void)a3; (void)a4; (void)String1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A8DA0.json)
+    return 0; (void)a1; (void)a2; (void)a3; (void)a4; (void)String1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A8DA0.json)
 }
 }
 // 0x7A8ED0
 namespace gamemd {
 AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a2, int a3, const char * a4, wchar_t * String)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; (void)String; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A8ED0.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; (void)String; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A8ED0.json)
 }
 }
 // 0x7A8FC0
@@ -99,98 +99,98 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_17(int a1, int a
 namespace gamemd {
 AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a2, const char * a3, wchar_t * String)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; (void)String; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A9110.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; (void)String; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A9110.json)
 }
 }
 // 0x7A9200
 namespace gamemd {
 CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a2, const char * a3, const char * a4)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A9200.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A9200.json)
 }
 }
 // 0x7A9550
 namespace gamemd {
 AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a2, int a3, wchar_t * String)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; (void)String; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A9550.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; (void)String; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A9550.json)
 }
 }
 // 0x7A9800
 namespace gamemd {
 ObjectClass * * CComObject_CChatEventSink___ATL::DispatchStub_27(int a1, int a2)
 {
-    return nullptr; (void)a1; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A9800.json)
+    return nullptr; (void)a1; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A9800.json)
 }
 }
 // 0x7AA6D0
 namespace gamemd {
 void CComObject_CChatEventSink___ATL_DispatchStub_19()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AA6D0.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AA6D0.json)
 }
 }
 // 0x7AB440
 namespace gamemd {
 Coord * * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void * a3, int a4, int a5)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; (void)a5; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AB440.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; (void)a4; (void)a5; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AB440.json)
 }
 }
 // 0x7AB670
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int a4, int a5)
 {
-    return 0; (void)a1; (void)a2; (void)a3; (void)a4; (void)a5; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AB670.json)
+    return 0; (void)a1; (void)a2; (void)a3; (void)a4; (void)a5; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AB670.json)
 }
 }
 // 0x7AB8E0
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
 {
-    return 0; (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AB8E0.json)
+    return 0; (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AB8E0.json)
 }
 }
 // 0x7ABAF0
 namespace gamemd {
 AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a2, char * a3)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007ABAF0.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007ABAF0.json)
 }
 }
 // 0x7ABD40
 namespace gamemd {
 AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a2, float a3)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007ABD40.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007ABD40.json)
 }
 }
 // 0x7ABFA0
 namespace gamemd {
 AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a2, int a3)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007ABFA0.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007ABFA0.json)
 }
 }
 // 0x7AC220
 namespace gamemd {
 ObjectClass * * CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2, int a3)
 {
-    return nullptr; (void)a1; (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AC220.json)
+    return nullptr; (void)a1; (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AC220.json)
 }
 }
 // 0x7AC6B0
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::Release(void *a1_1)
 {
-    return 0; (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AC6B0.json)
+    return 0; (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AC6B0.json)
 }
 }
 // 0x7AC700
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::QueryInterface()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AC700.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AC700.json)
 }
 }
 // 0x7AE5B0
@@ -204,7 +204,7 @@ int CComObject_CChatEventSink___ATL_DispatchStub_Check()
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_20(int a1, int a2, const char * a3)
 {
-    return 0; (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A5220.json)
+    return 0; (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A5220.json)
 }
 } // namespace gamemd
 
@@ -212,7 +212,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_20(int a1, int a2, const char 
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::GetTypeInfoCount(int a1, int a2, int a3)
 {
-    return 0; (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A5240.json)
+    return 0; (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A5240.json)
 }
 } // namespace gamemd
 
@@ -220,7 +220,7 @@ int CComObject_CChatEventSink___ATL::GetTypeInfoCount(int a1, int a2, int a3)
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::GetIDsOfNames(int a1, int a2, char * Source)
 {
-    return 0; (void)a1; (void)a2; (void)Source; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A55F0.json)
+    return 0; (void)a1; (void)a2; (void)Source; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A55F0.json)
 }
 } // namespace gamemd
 
@@ -228,7 +228,7 @@ int CComObject_CChatEventSink___ATL::GetIDsOfNames(int a1, int a2, char * Source
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::Disconnect(int a1, int a2, int a3, const char * a4)
 {
-    return 0; (void)a1; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A70E0.json)
+    return 0; (void)a1; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A70E0.json)
 }
 } // namespace gamemd
 
@@ -236,7 +236,7 @@ int CComObject_CChatEventSink___ATL::Disconnect(int a1, int a2, int a3, const ch
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_18(int a1, int a2, int a3)
 {
-    return 0; (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AA6A0.json)
+    return 0; (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AA6A0.json)
 }
 } // namespace gamemd
 
@@ -244,7 +244,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_18(int a1, int a2, int a3)
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::Unadvise(int a1, int a2, const char * a3, const char * a4)
 {
-    return 0; (void)a1; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AAFB0.json)
+    return 0; (void)a1; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AAFB0.json)
 }
 } // namespace gamemd
 
@@ -252,7 +252,7 @@ int CComObject_CChatEventSink___ATL::Unadvise(int a1, int a2, const char * a3, c
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_42(int a1, int a2, const char * a3, wchar_t * String)
 {
-    return 0; (void)a1; (void)a2; (void)a3; (void)String; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AB0A0.json)
+    return 0; (void)a1; (void)a2; (void)a3; (void)String; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AB0A0.json)
 }
 } // namespace gamemd
 
@@ -260,7 +260,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_42(int a1, int a2, const char 
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::EnumDependents(int a1, int a2, int a3, const char * a4, const char * a5)
 {
-    return 0; (void)a1; (void)a2; (void)a3; (void)a4; (void)a5; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AB170.json)
+    return 0; (void)a1; (void)a2; (void)a3; (void)a4; (void)a5; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AB170.json)
 }
 } // namespace gamemd
 
@@ -268,7 +268,7 @@ int CComObject_CChatEventSink___ATL::EnumDependents(int a1, int a2, int a3, cons
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_43(int a1, int a2, int a3, const char * a4, wchar_t * String)
 {
-    return 0; (void)a1; (void)a2; (void)a3; (void)a4; (void)String; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AB260.json)
+    return 0; (void)a1; (void)a2; (void)a3; (void)a4; (void)String; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AB260.json)
 }
 } // namespace gamemd
 
@@ -296,7 +296,7 @@ int CComObject_CChatEventSink___ATL::StubReturnFalse(int a1, int a2, int a3)
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_29(int a1, int a2, __time32_t Time)
 {
-    return 0; (void)a1; (void)a2; (void)Time; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AB350.json)
+    return 0; (void)a1; (void)a2; (void)Time; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AB350.json)
 }
 } // namespace gamemd
 
@@ -304,7 +304,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_29(int a1, int a2, __time32_t 
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_31(int a1, int a2, unsigned char * a3, int a4)
 {
-    return 0; (void)a1; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007AB3C0.json)
+    return 0; (void)a1; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007AB3C0.json)
 }
 } // namespace gamemd
 

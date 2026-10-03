@@ -44,7 +44,7 @@ AircraftClass::AircraftClass() noexcept
 // 0x417fe0
 int AircraftClass::Mission_Attack()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000417FE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00417FE0.json)
 }
 
 
@@ -90,22 +90,22 @@ int AircraftClass::Mission_Retreat()
 // 0x4166c0
 int AircraftClass::Mission_Enter()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004166C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004166C0.json)
 }
 // 0x419c80
 int AircraftClass::Mission_Transport()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000419C80.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00419C80.json)
 }
 // 0x4190b0
 int AircraftClass::MissionDispatch()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004190B0.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004190B0.json)
 }
 // 0x414310
 int AircraftClass::MoveTo()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000414310.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00414310.json)
 }
 // IDA: 0x417BD0 (ValidateMovement, 137B)
 int AircraftClass::ValidateMovement()
@@ -129,7 +129,7 @@ bool AircraftClass::CanEnterCell()
 // 0x41ba90
 int AircraftClass::ProcessLanding()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041BA90.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BA90.json)
 }
 // IDA: 0x415B10 (FindLandingCell, 336B)
 int AircraftClass::FindLandingCell()
@@ -149,7 +149,7 @@ int AircraftClass::ValidateLandingCell()
 // 0x415a50
 int AircraftClass::ProcessReturnToBase()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000415A50.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00415A50.json)
 }
 // IDA: 0x41A590 (CheckLandingClearance, 33B)
 int AircraftClass::CheckLandingClearance()
@@ -235,23 +235,23 @@ int AircraftClass::CheckReloadTimer()
 // 0x41b610
 int AircraftClass::PowerDrainUpdate(int a2)
 {
-    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041B610.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041B610.json)
 }
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
 // 0x41b660
 int AircraftClass::HandleTargetDestroyed()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041B660.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041B660.json)
 }
 // 0x414a80
 int AircraftClass::ProcessMissionTimeout()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000414A80.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00414A80.json)
 }
 // 0x41a5c0
 int AircraftClass::GetMissionTimer()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041A5C0.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041A5C0.json)
 }
 // IDA: 0x41A940 (EvaluateTargetingState, 157B)
 int AircraftClass::EvaluateTargetingState()
@@ -310,7 +310,7 @@ int AircraftClass::LoadFromStream()
 // 0x414080
 void AircraftClass::Destruct()
 {
-      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000414080.json)
+      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00414080.json)
 }
 // IDA: 0x417CC0 (GetCursorOverObject, 692B)
 int AircraftClass::GetActionOnObject()
@@ -323,7 +323,7 @@ int AircraftClass::GetActionOnObject()
 // 0x41b920
 int AircraftClass::IsHeightAboveThreshold()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041B920.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041B920.json)
 }
 // IDA: 0x41B980 (IsBelowScreen, 82B)
 int AircraftClass::IsBelowScreen()

@@ -33,7 +33,7 @@
 namespace gamemd {
 bool sub_574600(int a1, int a2, int a3)
 {
-    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000574600.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00574600.json)
 }
 }
 // 0x575EE0
@@ -75,28 +75,28 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
 namespace gamemd {
 void sub_57C870(int a1)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00057C870.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0057C870.json)
 }
 }
 // 0x57C990
 namespace gamemd {
 void sub_57C990(int a1)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00057C990.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0057C990.json)
 }
 }
 // 0x57DAF0
 namespace gamemd {
 void sub_57DAF0(int a1)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00057DAF0.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0057DAF0.json)
 }
 }
 // 0x57DC20
 namespace gamemd {
 void sub_57DC20(int a1)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00057DC20.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0057DC20.json)
 }
 }
 // 0x57DD50
@@ -131,7 +131,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
 namespace gamemd {
 char globalHelper_072230(ObjectClass * aP0, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000572230.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00572230.json)
 }
 } // namespace gamemd
 
@@ -139,7 +139,7 @@ char globalHelper_072230(ObjectClass * aP0, int a2)
 namespace gamemd {
 char globalHelper_072330(IUnknown * aP0, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000572330.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00572330.json)
 }
 } // namespace gamemd
 
@@ -147,7 +147,7 @@ char globalHelper_072330(IUnknown * aP0, int a2)
 namespace gamemd {
 bool sub_5746C0(int a1, int a2)
 {
-    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005746C0.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005746C0.json)
 }
 } // namespace gamemd
 
@@ -155,7 +155,7 @@ bool sub_5746C0(int a1, int a2)
 namespace gamemd {
 int E4Recv_578B70::sub_578B70(short * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000578B70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00578B70.json)
 }
 } // namespace gamemd
 
@@ -163,7 +163,7 @@ int E4Recv_578B70::sub_578B70(short * a2)
 namespace gamemd {
 unsigned int * E4Recv_578C50::sub_578C50(unsigned int * a2, int a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000578C50.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00578C50.json)
 }
 } // namespace gamemd
 
@@ -171,7 +171,7 @@ unsigned int * E4Recv_578C50::sub_578C50(unsigned int * a2, int a3)
 namespace gamemd {
 int InitializeTileNeighborTable()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000579320.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00579320.json)
 }
 } // namespace gamemd
 
@@ -179,7 +179,7 @@ int InitializeTileNeighborTable()
 namespace gamemd {
 int sub_57A900(unsigned int * a1, signed int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00057A900.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0057A900.json)
 }
 } // namespace gamemd
 

@@ -38,7 +38,7 @@ bool ScriptAction::SetField10()
 namespace gamemd {
 int ScriptAction::ClassifyAction(int *a1, char *a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000638CE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00638CE0.json)
 }
 } // namespace gamemd
 
@@ -46,7 +46,7 @@ int ScriptAction::ClassifyAction(int *a1, char *a2)
 namespace gamemd {
 void * ScriptAction::CopyStructField(void *a2, const void *a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006E47C0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E47C0.json)
 }
 } // namespace gamemd
 
@@ -54,7 +54,7 @@ void * ScriptAction::CopyStructField(void *a2, const void *a3)
 namespace gamemd {
 int AudioQueue::StopAllVoices()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000403730.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00403730.json)
 }
 } // namespace gamemd
 
@@ -62,7 +62,7 @@ int AudioQueue::StopAllVoices()
 namespace gamemd {
 int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000633FA0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00633FA0.json)
 }
 } // namespace gamemd
 
@@ -70,7 +70,7 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3)
 namespace gamemd {
 unsigned int * ScriptAction::GetCoords(unsigned int *a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006343C0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006343C0.json)
 }
 } // namespace gamemd
 
@@ -78,7 +78,7 @@ unsigned int * ScriptAction::GetCoords(unsigned int *a2)
 namespace gamemd {
 unsigned int * ScriptAction::GetScreenPos(unsigned int *a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000634400.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00634400.json)
 }
 } // namespace gamemd
 
@@ -86,7 +86,7 @@ unsigned int * ScriptAction::GetScreenPos(unsigned int *a2)
 namespace gamemd {
 BOOL ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000634550.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00634550.json)
 }
 } // namespace gamemd
 
@@ -94,7 +94,7 @@ BOOL ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
 namespace gamemd {
 unsigned int * ScriptAction::FindItemByValue(int a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006346B0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006346B0.json)
 }
 } // namespace gamemd
 
@@ -102,7 +102,7 @@ unsigned int * ScriptAction::FindItemByValue(int a2)
 namespace gamemd {
 int ScriptAction::FindBuildingMatch(unsigned int *a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000634CC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00634CC0.json)
 }
 } // namespace gamemd
 
@@ -110,7 +110,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
 namespace gamemd {
 int ScriptAction::DecrementRefCount(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006351E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006351E0.json)
 }
 } // namespace gamemd
 
@@ -118,7 +118,7 @@ int ScriptAction::DecrementRefCount(int a2)
 namespace gamemd {
 unsigned int * ScriptAction::Constructor(int a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000635F20.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00635F20.json)
 }
 } // namespace gamemd
 
@@ -126,7 +126,7 @@ unsigned int * ScriptAction::Constructor(int a2)
 namespace gamemd {
 BOOL ScriptAction::Check()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000636570.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00636570.json)
 }
 } // namespace gamemd
 
@@ -134,7 +134,7 @@ BOOL ScriptAction::Check()
 namespace gamemd {
 int ScriptAction::ClearBuildingState()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000636CE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00636CE0.json)
 }
 } // namespace gamemd
 
@@ -142,7 +142,7 @@ int ScriptAction::ClearBuildingState()
 namespace gamemd {
 char ScriptAction::IsBuildingTypeMatch()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000638C70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00638C70.json)
 }
 } // namespace gamemd
 
@@ -150,7 +150,7 @@ char ScriptAction::IsBuildingTypeMatch()
 namespace gamemd {
 char ScriptAction::HitTest(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00063A8E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0063A8E0.json)
 }
 } // namespace gamemd
 
@@ -158,7 +158,7 @@ char ScriptAction::HitTest(int a1, int a2)
 namespace gamemd {
 char ScriptAction::ProcessIdleAction()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00063B550.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0063B550.json)
 }
 } // namespace gamemd
 
@@ -166,7 +166,7 @@ char ScriptAction::ProcessIdleAction()
 namespace gamemd {
 int ScriptAction::DrawPlacementMarker()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00063CE40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0063CE40.json)
 }
 } // namespace gamemd
 
@@ -174,7 +174,7 @@ int ScriptAction::DrawPlacementMarker()
 namespace gamemd {
 int Array::Contains(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00065AD50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0065AD50.json)
 }
 } // namespace gamemd
 
@@ -182,7 +182,7 @@ int Array::Contains(int a2)
 namespace gamemd {
 const char * ScriptAction::ParseScriptActionParams()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006DD5B0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006DD5B0.json)
 }
 } // namespace gamemd
 
@@ -190,7 +190,7 @@ const char * ScriptAction::ParseScriptActionParams()
 namespace gamemd {
 unsigned int * ScriptAction::ReadParameter()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006E1830.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E1830.json)
 }
 } // namespace gamemd
 
@@ -198,7 +198,7 @@ unsigned int * ScriptAction::ReadParameter()
 namespace gamemd {
 int ScriptAction::GetActionTypeInfo()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006E3B60.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E3B60.json)
 }
 } // namespace gamemd
 
@@ -206,7 +206,7 @@ int ScriptAction::GetActionTypeInfo()
 namespace gamemd {
 void * ScriptAction::CopyStringField(char *Destination, char *Source)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006E4790.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E4790.json)
 }
 } // namespace gamemd
 
@@ -214,7 +214,7 @@ void * ScriptAction::CopyStringField(char *Destination, char *Source)
 namespace gamemd {
 unsigned char * ScriptAction::GetWaypointCoords(void * aP1, void *a1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006E6AB0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E6AB0.json)
 }
 } // namespace gamemd
 
@@ -222,7 +222,7 @@ unsigned char * ScriptAction::GetWaypointCoords(void * aP1, void *a1)
 namespace gamemd {
 int ScriptAction::ExecuteMissionCmd()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FFBE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006FFBE0.json)
 }
 } // namespace gamemd
 
@@ -230,7 +230,7 @@ int ScriptAction::ExecuteMissionCmd()
 namespace gamemd {
 ObjectClass * ScriptAction::GetArgumentString(int a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000721270.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00721270.json)
 }
 } // namespace gamemd
 
