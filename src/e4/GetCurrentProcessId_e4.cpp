@@ -9,6 +9,6 @@
 namespace gamemd {
 int GetCurrentProcessId_0()
 {
-  return (int)(GetCurrentProcessId());
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7DCF22)
 }
 }

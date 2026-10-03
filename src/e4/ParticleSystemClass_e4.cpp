@@ -704,24 +704,9 @@ int ParticleSystemClass_32_::FindElementByValue(unsigned int * a2)
 
 // 0x4EF5D0
 namespace gamemd {
-DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___(unsigned int * Block, char a2)
+DynamicVector * VectorClass_flat::Constructor_VectorClass_BuildingClass___(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x4ef5d3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef5d6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4ef5e0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x4ef5e8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4ef5f0*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x4ef5fb*/
-  Block->m_8 = 0; /*0x4ef601*/
-  if ( (a2 & 1) != 0 ) /*0x4ef608*/
-    __3_YAXPAX_Z(Block); /*0x4ef60b*/
-  return Block->__pad_0; /*0x4ef615*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x004EF5D0.json)
 }
 } // namespace gamemd
 

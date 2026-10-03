@@ -13,13 +13,7 @@
 namespace gamemd {
 int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-
-  if ( !a2 ) /*0x5b1966*/
-    return -2147467261; /*0x5b1968*/
-  *(IID *)a2 = g_CLSID_TunnelLocomotion; /*0x5b1976*/
-  a2[3] = unk_7E9AAC; /*0x5b1990*/
-  return 0; /*0x5b196d*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B1960)
 }
 } // namespace gamemd
 // 0x5B19A0
@@ -55,13 +49,6 @@ int MechLocomotionClass::StubReturn52()
 namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
-
-  *(unsigned int *)Block->LocomotionClass = &vt_MechLocomotionClass; /*0x5b1b53*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &vt_MechLocomotionClass; /*0x5b1b59*/
-  ((LocomotionClass*)(gamemd::LocomotionClass *)Block)->Construct(); /*0x5b1b60*/
-  if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
-    __3_YAXPAX_Z(Block); /*0x5b1b6d*/
-  return Block->LocomotionClass; /*0x5b1b77*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B1B50)
 }
 } // namespace gamemd

@@ -38,27 +38,7 @@ int MovementAI::IsPathMovementAllowed()
 namespace gamemd {
 int MovementAI::IsProgressAtEnd()
 {
-
-  int MovementAI_field_14; // esi
-  int v2; // edx
-  int MovementAI_field_10; // eax
-
-  if ( !LOBYTE(this->MovementAI_field_18) ) /*0x4a5150*/
-    return 1; /*0x4a5150*/
-  MovementAI_field_14 = (int)(this->MovementAI_field_14); /*0x4a515b*/
-  if ( !MovementAI_field_14 ) /*0x4a5164*/
-    return 1; /*0x4a5164*/
-  v2 = this->m_Target[2]; /*0x4a5166*/
-  MovementAI_field_10 = this->MovementAI_field_10; /*0x4a5169*/
-  if ( v2 != -1 ) /*0x4a516f*/
-  {
-    if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v2 >= MovementAI_field_10 ) /*0x4a517b*/
-      MovementAI_field_10 = 0; /*0x4a5181*/
-    else
-      MovementAI_field_10 -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v2; /*0x4a517d*/
-  }
-  return (double)(MovementAI_field_14 - MovementAI_field_10) / (double)this->MovementAI_field_14 == 1.0; /*0x4a519e*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A5150)
 }
 } // namespace gamemd
 // 0x4A5360

@@ -10,17 +10,7 @@
 namespace gamemd {
 unsigned int Time::GetElapsedMS()
 {
-
-  DWORD Time; // eax
-  unsigned int v1; // ecx
-
-  Time = timeGetTime(); /*0x4e24a0*/
-  if ( Time > dword_8B3F14 ) /*0x4e24ae*/
-    v1 = 3 * (Time - dword_8B3F14); /*0x4e24c5*/
-  else
-    v1 = 3 * (Time - dword_8B3F14 - 1); /*0x4e24b3*/
-  return v1 / 0x32; /*0x4e24c2*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E24A0)
 }
 } // namespace gamemd
 // 0x777AC0

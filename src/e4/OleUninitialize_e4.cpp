@@ -11,6 +11,6 @@
 namespace gamemd {
 void OleUninitialize_0()
 {
-  OleUninitialize(); /*0x7c891a*/
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7C891A)
 }
 }

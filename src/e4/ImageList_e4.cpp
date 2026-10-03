@@ -15,6 +15,6 @@
 namespace gamemd {
 int ImageList_DragShowNolock()
 {
-  return ImageList_DragShowNolock(fShow);
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7C8A10)
 }
 }

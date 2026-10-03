@@ -15,17 +15,7 @@
 namespace gamemd {
 int COMObject::FindNextActive(unsigned char * a1)
 {
-
-  if ( !a1 ) /*0x4e1a02*/
-    return 0; /*0x4e1a16*/
-  while ( !LOBYTE(a1->Image) ) /*0x4e1a09*/
-  {
-    a1 = (ShpButtonClass *)(*(int (**)(ShpButtonClass *))(*(unsigned int *)a1->__pad_0 + 4))(a1); /*0x4e1a10*/
-    if ( !a1 ) /*0x4e1a14*/
-      return 0; /*0x4e1a14*/
-  }
-  return 1; /*0x4e1a18*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E1A00)
 }
 } // namespace gamemd
 // 0x4E30C0
@@ -41,24 +31,14 @@ int COMObject::Thunk_COMObject_sub_4E30C0()
 namespace gamemd {
 int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-
-  if ( !a3 ) /*0x4f4248*/
-    return -2147467261; /*0x4f424b*/
-  if ( memcmp(a2, &IID_IUnknown, 0x10u) && memcmp(a2, &unk_7EA6E8, 0x10u) ) /*0x4f427a*/
-    return -2147467262; /*0x4f427f*/
-  *a3 = a1; /*0x4f428c*/
-  (*(void (**)(GScreenClass *))(a1->vfptr[0] + 4))(a1); /*0x4f4291*/
-  return 0; /*0x4f424a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F4240)
 }
 } // namespace gamemd
 // 0x4F43F0
 namespace gamemd {
 bool COMObject::IsSameType(GScreenClass * aP0)
 {
-
-  return *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 880) == (*(int (**)(GScreenClass *))(aP0->vfptr[0] + 24))(aP0); /*0x4f4408*/
-
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F43F0)
 }
 } // namespace gamemd
 // 0x55AB40
@@ -117,14 +97,7 @@ int COMObject::GetSpecialValue(int a1)
 namespace gamemd {
 int COMObject::GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1)
 {
-
-  int result; // eax
-
-  result = ((ObjectClass *)((AbstractClass *)aP0))->GetSizeMax(); /*0x5f997a*/
-  if (result >= 0, unsigned int a3, unsigned int a2) /*0x5f9981*/
-    return 0; /*0x5f9983*/
-  return result; /*0x5f9985*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5F9970)
 }
 } // namespace gamemd
 // 0x6C0050

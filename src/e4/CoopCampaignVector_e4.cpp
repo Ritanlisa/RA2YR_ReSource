@@ -25,22 +25,7 @@ unsigned int CoopCampaignVector::Write(int a2)
 namespace gamemd {
 VectorClass_flat * CoopCampaignVector::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x5c5943*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5c5946*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5c5950*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5c5958*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5c5960*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x5c596b*/
-  Block->m_8 = 0; /*0x5c5971*/
-  if ( (a2 & 1) != 0 ) /*0x5c5978*/
-    __3_YAXPAX_Z(Block); /*0x5c597b*/
-  return Block->__pad_0; /*0x5c5985*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C5940)
 }
 } // namespace gamemd
 // 0x5C5A80

@@ -33,11 +33,6 @@ int GaugeClass::Draw(int a2)
 namespace gamemd {
 GaugeClass * GaugeClass::QueryInterface(unsigned int * Block, char a2)
 {
-
-  ((GadgetClass *)((GadgetClass *)Block))->Dtor(); /*0x4e30d3*/
-  if ( (a2 & 1) != 0 ) /*0x4e30dd*/
-    __3_YAXPAX_Z(Block); /*0x4e30e0*/
-  return Block->__pad_0; /*0x4e30ea*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E30D0)
 }
 } // namespace gamemd

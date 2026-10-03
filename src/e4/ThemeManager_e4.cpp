@@ -45,37 +45,6 @@ char ThemeManager::ProcessCallback(void *a1)
 namespace gamemd {
 void ThemeManager::Cleanup()
 {
-
-  int v2; // eax
-  int v3; // ecx
-  int v4; // eax
-  ThemeClass *v5; // ecx
-
-  while ( *((int *)this + 9) > 0 ) /*0x720778*/
-  {
-    __3_YAXPAX_Z(**((void ***)this + 6)); /*0x720780*/
-    v2 = *((unsigned int *)this + 9); /*0x720785*/
-    if ( v2 > 0 ) /*0x72078d*/
-    {
-      v3 = v2 - 1; /*0x72078f*/
-      v4 = 0; /*0x720792*/
-      for ( *((unsigned int *)this + 9) = v3; /*0x720799*/
-            v4 < *((unsigned int *)this + 9);
-            *(unsigned int *)(*((unsigned int *)this + 6) + 4 * v4 - 4) = *(unsigned int *)(*((unsigned int *)this + 6) + 4 * v4) )
-      {
-        ++v4; /*0x72079e*/
-      }
-    }
-  }
-  v5 = (ThemeClass *)*((unsigned int *)this + 11); /*0x7207b4*/
-  if ( v5 ) /*0x7207b9*/
-  {
-    ((ThemeClass *)(v5))->RequestBuffer(); /*0x7207bb*/
-    ThemeManager::ProcessCallback(*((ThemeManager **)this + 11)); /*0x7207c3*/
-    ((gamemd::Audio *)(*((Audio **)this + 11)))->Release(); /*0x7207cb*/
-    ((AudioSample*)*((AudioSample **)this + 11))->Destructor(); /*0x7207d3*/
-    *((unsigned int *)this + 11) = 0; /*0x7207d8*/
-  }
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x720770)
 }
 } // namespace gamemd

@@ -35,34 +35,6 @@ char sub_72B8E0()
 namespace gamemd {
 void sub_72B930()
 {
-  void *v1; // esi
-
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1453] ) /*0x72b93a*/
-  {
-    if ( g_BuildingLoadQueue_Array.__pad_F70[1452] ) /*0x72b942*/
-    {
-      v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[932]; /*0x72b945*/
-      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[932] ) /*0x72b94d*/
-      {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[932]); /*0x72b951*/
-        RA2_OPDEL(v1); /*0x72b957*/
-      }
-      g_BuildingLoadQueue_Array.__pad_F70[1452] = 0; /*0x72b95f*/
-    }
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[932] = 0; /*0x72b96b*/
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1456] ) /*0x72b973*/
-    {
-      RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1456]); /*0x72b976*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1456] = 0; /*0x72b97e*/
-    }
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1460] ) /*0x72b98c*/
-    {
-      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1460])( /*0x72b992*/
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1460],
-        1);
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1460] = 0; /*0x72b994*/
-    }
-  }
-  g_BuildingLoadQueue_Array.__pad_F70[1453] = 0; /*0x72b99a*/
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x72B930)
 }
 } // namespace gamemd

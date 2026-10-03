@@ -27,52 +27,7 @@
 namespace gamemd {
 ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
 {
-
-  int result; // eax
-  HWND v5; // edi
-  LRESULT v6; // eax
-  LRESULT v7; // edi
-  HWND v8; // ebx
-  LPARAM v9; // eax
-  signed int v10; // eax
-  int v11; // ebx
-  char v12; // dl
-  void *v13; // ecx
-  char v14; // al
-  int16_t v15; // bx
-  HWND v16; // eax
-  HWND v17; // eax
-  HWND (*v18)(HWND, int); // edi
-  HWND v19; // ebx
-  HWND v20; // ebx
-  LPARAM v21; // edi
-  const wchar_t *v22; // eax
-  LPARAM v23; // eax
-  LRESULT v24; // eax
-  HWND v25; // eax
-  HWND v26; // eax
-  HWND v27; // edi
-  HWND v28; // eax
-  HWND v29; // eax
-  int16_t v30; // ax
-  int v31; // edi
-  size_t v32; // eax
-  unsigned int *v33; // edx
-  int v34; // esi
-  unsigned int *v35; // ebx
-  int v36; // ecx
-  int v37; // ecx
-  unsigned int *v38; // ebx
-  int v39; // esi
-  unsigned int *v40; // eax
-  wchar_t *v41; // esi
-  HWND v42; // eax
-  size_t v43; // eax
-  int m; // esi
-  char *v45; // eax
-  HWND v46; // edi
-  LRESULT v47; // eax
- ... [22198 chars total]
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5FB320)
 }
 } // namespace gamemd
 

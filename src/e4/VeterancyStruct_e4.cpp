@@ -20,8 +20,6 @@ BOOL VeterancyStruct::IsVeteran()
 namespace gamemd {
 bool VeterancyStruct::IsElite()
 {
-
-  return *(float *)this >= 2.0; /*0x750024*/
-
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x750010)
 }
 } // namespace gamemd

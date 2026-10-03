@@ -81,50 +81,14 @@ int StreamClass::Set2(unsigned int * a2)
 namespace gamemd {
 int StreamClass::Set(unsigned int *aP1)
 {
-
-  int v3; // edi
-  unsigned int *v5; // ebx
-  int v6; // eax
-
-  if ( *aP1 ) /*0x45af28*/
-  {
-    v3 =(int)(int (__cdecl ***)(unsigned int,int *,unsigned int **))((**(int (***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, (unsigned int *)((char *)&stru_818E00 + 17), &aP1)); /*0x45af3d*/
-    if ( v3 >= 0 ) /*0x45af41*/
-    {
-      v5 = (unsigned int *)((unsigned int)(aP1));
-      if ( *(unsigned int *)this->__pad_0 ) /*0x45af5c*/
-        (*(void (**)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45af6a*/
-      *(unsigned int *)this->__pad_0 = (unsigned int)(v5); /*0x45af6d*/
-      return v3; /*0x45af70*/
-    }
-    else
-    {
-      if ( *(unsigned int *)this->__pad_0 ) /*0x45af43*/
-        (*(void (**)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45af4c*/
-      *(unsigned int *)this->__pad_0 = 0; /*0x45af51*/
-      return v3; /*0x45af4f*/
-    }
-  }
-  else
-  {
-    v6 = *(unsigned int *)this->__pad_0; /*0x45af77*/
-    if ( *(unsigned int *)this->__pad_0 ) /*0x45af77*/
-    {
-      *(unsigned int *)this->__pad_0 = 0; /*0x45af7d*/
-      (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x45af86*/
-    }
-    return -2147467262; /*0x45af8e*/
-  }
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x45AF20)
 }
 } // namespace gamemd
 // 0x4B4C30
 namespace gamemd {
 BOOL StreamClass::IsInactive(IUnknown * aP0)
 {
-
-  return BYTE1(aP0->field_10) == 0; /*0x4b4c3e*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B4C30)
 }
 } // namespace gamemd
 // 0x4B4C50

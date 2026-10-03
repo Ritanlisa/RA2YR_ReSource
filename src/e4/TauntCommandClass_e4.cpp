@@ -60,8 +60,6 @@ wchar_t * TauntCommandClass::Release()
 namespace gamemd {
 wchar_t TauntCommandClass::ddtor()
 {
-
-  return GetStringCSF((wchar_t *)(aTxtTaunt), 0,(const char *)(g_Str_File_Init_CPP), 6405); /*0x536316*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536300)
 }
 } // namespace gamemd

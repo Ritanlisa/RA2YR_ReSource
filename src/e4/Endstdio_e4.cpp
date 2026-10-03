@@ -9,6 +9,6 @@
 namespace gamemd {
 int sub_7CB255()
 {
-  return flsall((gamemd::MouseClass *)(1)); /*0x7cb25d*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7CB255)
 }
 } // namespace gamemd

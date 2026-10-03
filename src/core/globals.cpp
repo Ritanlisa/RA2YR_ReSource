@@ -53,24 +53,9 @@ int  g_DDraw_Initialized   = 0;   // 0x89F978 (window mode flag)
 bool byte_A8ED64           = false; // 0xA8ED64 (-XQ / -OQ)
 
 // 0xA8ED80 -- g_DDraw_Active (defined in ddraw_init.cpp, declared here for core access)
-
-// ============================================================
-// Stub functions (TODO: full IDA translation)
-// ============================================================
-
-// 0x734F50: RestartNetworkSession
-int RestartNetworkSession(int mode) {
+int RestartNetworkSession(int mode)
 {
-  int result; // eax
-
-  result = (int)(DataGlobal_B1CF84);
-  if ( (void *)DataGlobal_B1CF84 != this )
-  {
-    WinMain::ShutdownCleanup();
-    DataGlobal_B1CF84 = (int)this;
-    return CSFClass::LoadFile((const char *)DataGlobal_B1CF68);
-  }
-  return result;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00A8ED80.json)
 }
 
 /* ASM:
@@ -91,18 +76,9 @@ retn
 }
 
 // 0x734F80: ToggleNetworkSession
-int ToggleNetworkSession(int enable) {
+int ToggleNetworkSession(int enable)
 {
-  int result; // eax
-
-  result = (int)(DataGlobal_B1CF60);
-  if ( (void *)DataGlobal_B1CF60 != this )
-  {
-    WinMain::ShutdownCleanup();
-    DataGlobal_B1CF60 = (int)this;
-    return CSFClass::LoadFile((const char *)DataGlobal_B1CF68);
-  }
-  return result;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00734F80.json)
 }
 
 /* ASM:
@@ -123,13 +99,9 @@ retn
 }
 
 // 0x6B8AE0: ScenarioClass::ResetIntroFlags
-unsigned int ResetIntroFlags(int* obj) {
+unsigned int ResetIntroFlags(int* obj)
 {
-  unsigned int result; // eax
-
-  result = *this & 0xFFF80000 | 0x8088;
-  *this = result;
-  return result;
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6B8AE0)
 }
 
 /* ASM:
@@ -142,171 +114,9 @@ retn
 }
 
 // 0x47AB10: Game::FindGameDirectoryCD
-void FindGameDirectoryCD(const char* path) {
-// 0x47ab10
+void FindGameDirectoryCD(const char* path)
 {
-  char *i; // edx
-  char Str1[260]; // [esp+8h] [ebp-104h] BYREF
-
-  char v1 = 0;
-  if ( !Source )
-  {
-    char v1; // bl
-    char *v3; // ebp
-    char *i; // edx
-    char v5; // cl
-    unsigned int *v6; // esi
-    unsigned int *v7; // ecx
-    unsigned int *v8; // eax
-    unsigned int *v9; // eax
-    char Str1[260]; // [esp+8h] [ebp-104h] BYREF
-
-    v1 = 0; /*0x47ab17*/
-    if ( !Source ) /*0x47ab1b*/
-      return 0; /*0x47ab26*/
-    v3 = _strdup((const char *)(Source)); /*0x47ab30*/
-    if ( v3 != byte_89E41C ) /*0x47ab3b*/
-    {
-      strcat((char *)(byte_89E41C), asc_81C8FC); /*0x47ab61*/
-      strcat((char *)(byte_89E41C), v3); /*0x47ab89*/
-    }
-    for ( i = strtok(v3, asc_81C8FC); i; i = strtok(0, asc_81C8FC) ) /*0x47aba4*/
-    {
-      if ( strlen(i) ) /*0x47abac*/
-      {
-        strcpy(Str1, i); /*0x47abd6*/
-        v5 = Str1[strlen(Str1) - 1]; /*0x47abed*/
-        if ( v5 != 58 && v5 != 92 ) /*0x47abf9*/
-          strcat(Str1,(const char *)(asc_815E74)); /*0x47ac1e*/
-        if ( !strncmp(Str1,(const char *)(Str2), 2u) ) /*0x47ac33*/
-        {
-          if ( !dword_89E414 ) /*0x47ac47*/
-            continue; /*0x47ac47*/
-          v1 = 1; /*0x47ac52*/
-          if ( AlwaysFindYRCD(dword_89E414, 120) <= -1 ) /*0x47ac5c*/
-            continue; /*0x47ac5c*/
-          Str1[0] = dword_89E414 + 65; /*0x47ac6d*/
-          v6 = (unsigned int *)(RA2_OPNEW(8u)); /*0x47ac7a*/
-          v6[1] = (unsigned int)(_strdup(Str1)); /*0x47ac82*/
-          *v6 = 0; /*0x47ac85*/
-          v7 = (unsigned int *)(CmdLine_NoCD); /*0x47ac8b*/
-          if ( CmdLine_NoCD ) /*0x47ac96*/
-          {
-            v8 = *(unsigned int **)CmdLine_NoCD; /*0x47aca0*/
-            if ( *(unsigned int *)CmdLine_NoCD ) /*0x47aca0*/
-            {
-              do /*0x47acac*/
-              {
-                v7 = v8; /*0x47aca6*/
-                v8 = (unsigned int *)*v8; /*0x47aca8*/
-              }
-              while ( v8 ); /*0x47acac*/
-            }
-    LABEL_24:
-            *v7 = (unsigned int)(v6); /*0x47ad0c*/
-            continue; /*0x47ad0c*/
-          }
-          CmdLine_NoCD = (int)(v6); /*0x47ac98*/
-        }
-        else
-        {
-          if ( Str1[0] - 65 <= 0 || AlwaysFindYRCD(Str1[0] - 65, 120) != 2 ) /*0x47acc9*/
-            continue; /*0x47acc9*/
-          v1 = 1; /*0x47accd*/
-          v6 = (unsigned int *)(RA2_OPNEW(8u)); /*0x47acd4*/
-          v6[1] = (unsigned int)(_strdup(Str1)); /*0x47ace0*/
-          *v6 = 0; /*0x47ace3*/
-          v7 = (unsigned int *)(CmdLine_NoCD); /*0x47ace9*/
-          if ( CmdLine_NoCD ) /*0x47acf4*/
-          {
-            v9 = *(unsigned int **)CmdLine_NoCD; /*0x47acfe*/
-            if ( *(unsigned int *)CmdLine_NoCD ) /*0x47acfe*/
-            {
-              do /*0x47ad0a*/
-              {
-                v7 = v9; /*0x47ad04*/
-                v9 = (unsigned int *)*v9; /*0x47ad06*/
-              }
-              while ( v9 ); /*0x47ad0a*/
-            }
-            goto LABEL_24; /*0x47ad0a*/
-          }
-          CmdLine_NoCD = (int)(v6); /*0x47acf6*/
-        }
-      }
-    }
-    free(v3); /*0x47ad27*/
-    return v1 == 0; /*0x47ab1f*/
-  }
-  for ( i = strtok(v3, asc_81C8FC); i; i = strtok(0, asc_81C8FC) )
-  {
-    if ( strlen(i) )
-    {
-  unsigned int *v7; // ecx
-  unsigned int *v6; // esi
-      strcpy(Str1, i);
-      char v5 = Str1[strlen(Str1) - 1];
-      if ( v5 != 58 && v5 != 92 )
-        strcat(Str1,(const char *)(asc_815E74));
-      if ( !strncmp(Str1,(const char *)(Str2), 2) )
-      {
-        if ( !DataGlobal_87F7E8[31499] )
-          continue;
-        v1 = 1;
-        if ( AlwaysFindYRCD() <= -1 )
-          continue;
-        Str1[0] = IDA_LOBYTE(DataGlobal_87F7E8[31499]) + 65;
-        v6 = (unsigned int *)RA2_OPNEW(8);
-        v6[1] = (unsigned int)(_strdup(Str1));
-        *v6 = 0;
-        v7 = (unsigned int *)DataGlobal_87F7E8[31498];
-        if ( DataGlobal_87F7E8[31498] )
-        {
-          unsigned int * v8 = *(unsigned int **)DataGlobal_87F7E8[31498];
-          if ( *(unsigned int *)DataGlobal_87F7E8[31498] )
-          {
-            do
-            {
-              v7 = v8;
-              v8 = (unsigned int *)*v8;
-            }
-            while ( v8 );
-          }
-LABEL_24:
-          *v7 = (unsigned int)(v6);
-          continue;
-        }
-        DataGlobal_87F7E8[31498] = (unsigned char)(v6);
-      }
-      else
-      {
-        if ( Str1[0] - 65 <= 0 || AlwaysFindYRCD() != 2 )
-          continue;
-        v1 = 1;
-        v6 = (unsigned int *)RA2_OPNEW(8);
-        v6[1] = (unsigned int)(_strdup(Str1));
-        *v6 = 0;
-        v7 = (unsigned int *)DataGlobal_87F7E8[31498];
-        if ( DataGlobal_87F7E8[31498] )
-        {
-          unsigned int * v9 = *(unsigned int **)DataGlobal_87F7E8[31498];
-          if ( *(unsigned int *)DataGlobal_87F7E8[31498] )
-          {
-            do
-            {
-              v7 = v9;
-              v9 = (unsigned int *)*v9;
-            }
-            while ( v9 );
-          }
-          goto LABEL_24;
-        }
-        DataGlobal_87F7E8[31498] = (unsigned char)(v6);
-      }
-    }
-  }
-  free(v3);
-  return v1 == 0;
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0047AB10.json)
 }
 
 /* ASM:
@@ -549,24 +359,9 @@ retn
 }
 
 // 0x53ECE0: NetworkAddress::Assign
-void NetworkAssignAddress(void* addr, void* port, int arg) {
+void NetworkAssignAddress(void* addr, void* port, int arg)
 {
-  unsigned int *result; // eax
-
-  result = this;
-  char * v5 = &this->u32_4;
-  *(unsigned int *)v5 = *(unsigned int *)a3;
-  *((unsigned short *)v5 + 2) = *(unsigned short *)(a3 + 4);
-  if ( dword_828140 == 1 )
-  {
-    *result = *a2;
-  }
-  else
-  {
-    *result = 0;
-    *(unsigned short *)result = a4;
-  }
-  return result;
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0053ECE0.json)
 }
 
 /* ASM:
@@ -597,38 +392,16 @@ retn    0Ch
 }
 
 // 0x542430: Network::GetField
-void NetworkGetField(int port) {
-// 0x542430
+void NetworkGetField(int port)
 {
-  int result; // eax
-  int16_t v3; // dx
-  IDA_LOWORD(result) = a2;
-  {
-    int result; // eax
-    int16_t v3; // dx
-
-    IDA_LOWORD(result) = result; /*0x542430*/
-    IDA_LOBYTE(v3) = IDA_HIBYTE(result); /*0x542437*/
-    IDA_HIBYTE(v3) = result; /*0x542439*/
-    *(unsigned short *)this->Network_field_0x22 = v3; /*0x54243b*/
-    return result; /*0x54243f*/
-  }
-    (void)mode;
-    // Simplified: just sleep briefly to simulate fade timing
-    // Full impl: DSurface::Lock -> palette blend -> Unlock -> Flip, ~400B of loop
-    Sleep(16); // ~1 frame at 60fps
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00542430.json)
 }
 }
 
 // 0x6C87F0: InitSkirmishSettings
-int InitSkirmishSettings() {
+int InitSkirmishSettings()
 {
-
-  int v1; // [esp+4h] [ebp-4h] BYREF
-  (&dword_A8ED54)[127989] = TimerGetTicks();
-  (&dword_A8ED54)[127990] = v1;
-  IDA_LOBYTE((&dword_A8ED54)[128024]) = 1;
-  return v1;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006C87F0.json)
 }
 
 /* ASM:
@@ -648,40 +421,9 @@ retn
 }
 
 // 0x48E0B0: DumpNetworkStats
-FILE * DumpNetworkStats() {
-// 0x69bab0
+FILE * DumpNetworkStats()
 {
-  char result; // al
-
-  result = this->q30D8;
-  if ( !result )
-  {
-    char result; // al
-
-    result = result->q30D8; /*0x69bab0*/
-    if ( !result ) /*0x69bab8*/
-    {
-      result = g_WTFMode; /*0x69babe*/
-      if ( g_WTFMode ) /*0x69bac5*/
-      {
-        result->q30D8 = 1; /*0x69bac7*/
-        if ( dword_83ED20 == -1 ) /*0x69bad6*/
-          dword_83ED20 = *(unsigned int *)g_GameModeOptions; /*0x69badd*/
-        if ( !*(unsigned int *)result ) /*0x69bae2*/
-          *(unsigned int *)g_GameModeOptions = 2; /*0x69bae7*/
-        if ( !*((unsigned char *)g_ScenarioClass_Instance + 13730) ) /*0x69baf7*/
-        {
-          Scenario::ClearScreen(); /*0x69bb01*/
-          dword_B07784 = (int)g_CurrentFrame + 3; /*0x69bb0f*/
-        }
-        if ( !(*(uint8_t (**)(int))(*(unsigned int *)g_WWMouseClass_Instance + 28))(g_WWMouseClass_Instance) ) /*0x69bb1d*/
-          (*(void (**)(int))(*(unsigned int *)g_WWMouseClass_Instance + 24))(g_WWMouseClass_Instance); /*0x69bb2c*/
-        return EndBufferMixer((int *)g_MixerState, 0x4000); /*0x69bb3a*/
-      }
-    }
-    return (FILE *)(result); /*0x69bb3f*/
-  }
-  return (FILE *)(result);
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x48E0B0)
 }
 
 /* ASM:
@@ -738,39 +480,9 @@ retn
 }
 
 // 0x5F0070: CleanupCampaignResources
-char CleanupCampaignResources() {
+char CleanupCampaignResources()
 {
-  int16_t v5; // [esp+74h] [ebp-4h]
-  int v0; // eax
-  IDA_LOBYTE(v0) = DataGlobal_87F7E8[538500];
-  unsigned char v4[108]; // [esp+8h] [ebp-70h] BYREF
-  v4[0] = 0;
-  if ( (DataGlobal_87F7E8[538500] & 2) == 0 )
-  {
-    memset(v4, 0, sizeof(v4));
-    v5 = 0;
-    char v6 = 0;
-    v4[0] = 19;
-    ((Stream*)(int)&DataGlobal_87F7E8[539810])->WriteBlock((int)v4, 111, 0);
-    Stream::WriteBlock((int)&DataGlobal_87F7E8[539810], (int)v4, 111, 0);
-    int v1 = DataGlobal_87F7E8[7894];
-    if ( DataGlobal_87F7E8[7892] != -1 )
-      v1 += TimerGetTicks() - DataGlobal_87F7E8[7892];
-    while ( 1 )
-    {
-      IDA_LOBYTE(v0) = DataGlobal_87F7E8[7892];
-      int v2 = DataGlobal_87F7E8[7894];
-      if ( DataGlobal_87F7E8[7892] != -1 )
-      {
-        v0 = TimerGetTicks() - DataGlobal_87F7E8[7892];
-        v2 += v0;
-      }
-      if ( (unsigned int)(v2 - v1) >= 0x1E )
-        break;
-      Stream::ReadPacket((int)&DataGlobal_87F7E8[539810]);
-    }
-  }
-  return v0;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005F0070.json)
 }
 
 /* ASM:
@@ -839,462 +551,16 @@ retn
 }
 
 // 0x5DA720: Network::ShutdownInterface
-void NetworkShutdownInterface() {
-// 0x5da720
+void NetworkShutdownInterface()
 {
-  int result; // eax
-
-  IDA_LOWORD(DataGlobal_87F7E8[538506]) = 0;
-  {
-    int result; // eax
-
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x5da72b*/
-    if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5da732*/
-      result = (***(int (****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5da738*/
-    *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5da73a*/
-    return result; /*0x5da740*/
-  }
-// 0x5f9e80
-{
-  int i; // edx
-  int j; // esi
-  int k; // edi
-  char Destination[128]; // [esp+20h] [ebp-80h] BYREF
-
-  int v1; // ebp
-  IDA_HIWORD(v1) = 0;
-  {
-    int v1; // ebp
-    unsigned int v3; // kr04_4
-    int v4; // ebx
-    int v5; // esi
-    int v6; // esi
-    int v7; // ecx
-    int i; // edx
-    int v9; // ecx
-    int j; // esi
-    int k; // edi
-    char v12; // si
-    char v13; // dl
-    char v14; // cl
-    char v15; // cl
-    char v16; // si
-    char v17; // al
-    int v18; // [esp+4h] [ebp-9Ch]
-    char v19; // [esp+8h] [ebp-98h]
-    unsigned int v20; // [esp+Ch] [ebp-94h] BYREF
-    int v21; // [esp+10h] [ebp-90h]
-    int v22; // [esp+14h] [ebp-8Ch]
-    int v23; // [esp+18h] [ebp-88h]
-    int v24; // [esp+1Ch] [ebp-84h]
-    char Destination[128]; // [esp+20h] [ebp-80h] BYREF
-
-    IDA_HIWORD(v1) = 0; /*0x5f9e89*/
-    if ( !v1 ) /*0x5f9e8d*/
-      return 0; /*0x5f9e8f*/
-    memset(Destination, 0xA5u, sizeof(Destination)); /*0x5f9eaa*/
-    strncpy(Destination,(const char *)(v1), 0x80u); /*0x5f9eb7*/
-    Destination[127] = 0; /*0x5f9ec5*/
-    v3 = strlen(Destination) + 1; /*0x5f9ecd*/
-    v4 = v3 - 1; /*0x5f9ed2*/
-    v23 = v3 - 1; /*0x5f9ed9*/
-    _strupr(Destination); /*0x5f9edd*/
-    v5 = 0; /*0x5f9ee5*/
-    if ( (int)(v3 - 1) > 0 ) /*0x5f9ee9*/
-    {
-      do /*0x5f9f11*/
-      {
-        if ( !isgraph(Destination[v5]) ) /*0x5f9ef1*/
-          Destination[v5] = v5 % 26 + 65; /*0x5f9f0a*/
-        ++v5; /*0x5f9f0e*/
-      }
-      while ( v5 < v4 ); /*0x5f9f11*/
-    }
-    if ( v4 < 16 || (v4 & 3) != 0 ) /*0x5f9f1b*/
-    {
-      v6 = 16; /*0x5f9f20*/
-      if ( (((unsigned char)v4 + 3) & 0xFCu) > 0x10 ) /*0x5f9f2c*/
-        v6 = ((unsigned char)v4 + 3) & 0xFC; /*0x5f9f2e*/
-      v7 = v3 - 1; /*0x5f9f32*/
-      if ( v4 < v6 ) /*0x5f9f34*/
-      {
-        do /*0x5f9f56*/
-        {
-          Destination[v7] = (v7 + (Destination[v7 - v4] ^ 0x3F)) % 26 + 65; /*0x5f9f4f*/
-          ++v7; /*0x5f9f53*/
-        }
-        while ( v7 < v6 ); /*0x5f9f56*/
-      }
-      v4 = v7; /*0x5f9f58*/
-      Destination[v7] = 0; /*0x5f9f5a*/
-      v23 = v7; /*0x5f9f5f*/
-    }
-    v20 = 0; /*0x5f9f6d*/
-    v21 = 0; /*0x5f9f71*/
-    v22 = 0; /*0x5f9f75*/
-    ((Checksummer*)&v20)->Add_Buffer((uint8_t *)Destination, v4); /*0x5f9f79*/
-    _strrev(Destination); /*0x5f9f83*/
-    v20 = 0; /*0x5f9f93*/
-    v21 = 0; /*0x5f9f99*/
-    v22 = 0; /*0x5f9f9d*/
-    v18 = Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9fa6*/
-    _strrev(Destination); /*0x5f9faf*/
-    for ( i = 0; i < v4; v18 = (v9 >> 8) | ((uint8_t)v9 << 24) ) /*0x5f9fbb*/
-    {
-      v9 = (uint8_t)Destination[i] ^ v18; /*0x5f9fcd*/
-      Destination[i++] = v18; /*0x5f9fd1*/
-    }
-    for ( j = 0; j < v4; ++j ) /*0x5f9ff1*/
-      (&Destination)[j] = ~(&byte_832C0C)[j & 7] & ((&Destination)[j] | (&byte_832C14)[j & 7]); /*0x5fa00e*/
-    for ( k = 0; k < v4; Destination[k - 1] = (v17 + v16) ^ v15 ) /*0x5fa01b*/
-    {
-      v12 = Destination[k]; /*0x5fa01d*/
-      IDA_LOWORD(v1) = Destination[k + 2]; /*0x5fa029*/
-      v13 = v12 * v12; /*0x5fa033*/
-      v14 = Destination[k + 3]; /*0x5fa036*/
-      v19 = 2 * Destination[k + 1]; /*0x5fa03c*/
-      v24 = 2 * v1; /*0x5fa044*/
-      v15 = v14 * v14; /*0x5fa051*/
-      v16 = v12 * ((v12 * v12) ^ (2 * v1)); /*0x5fa058*/
-      k += 4; /*0x5fa066*/
-      v17 = v1 * (v16 + (v19 ^ v15)); /*0x5fa069*/
-      Destination[k - 4] = v17 ^ v13; /*0x5fa070*/
-      Destination[k - 3] = v17 ^ v24; /*0x5fa080*/
-      v4 = v23; /*0x5fa086*/
-      Destination[k - 2] = (v17 + v16) ^ v19; /*0x5fa08a*/
-    }
-    v20 = 0; /*0x5fa0a6*/
-    v21 = 0; /*0x5fa0aa*/
-    v22 = 0; /*0x5fa0ae*/
-// 0x4a1de0
-    return Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9e91*/
-  }
-  if ( v4 < 16 || (v4 & 3) != 0 )
-  {
-    int v6 = 16;
-    if ( (((unsigned char)v4 + 3) & 0xFCu) > 0x10 )
-      v6 = ((unsigned char)v4 + 3) & 0xFC;
-    int v7 = v3 - 1;
-    if ( v4 < v6 )
-    {
-      do
-      {
-        Destination[v7] = (v7 + (Destination[v7 - v4] ^ 0x3F)) % 26 + 65;
-        ++v7;
-      }
-      while ( v7 < v6 );
-    }
-    v4 = v7;
-    Destination[v7] = 0;
-    v23 = v7;
-  }
-  unsigned int v20 = 0;
-  int v21 = 0;
-  int v22 = 0;
-  Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4);
-  _strrev(Destination);
-  v20 = 0;
-  v21 = 0;
-  v22 = 0;
-  int v18 = Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4);
-  _strrev(Destination);
-  int v9; // ecx
-  for ( i = 0; i < v4; v18 = (v9 >> 8) | ((uint8_t)v9 << 24) )
-  {
-    v9 = (uint8_t)Destination[i] ^ v18;
-    Destination[i++] = v18;
-  }
-  for ( j = 0; j < v4; ++j )
-    (&Destination)[j] = ~(&byte_832C0C)[j & 7] & ((&Destination)[j] | (&byte_832C14)[j & 7]);
-  char v15; // cl
-  char v16; // si
-  char v17; // al
-  for ( k = 0; k < v4; Destination[k - 1] = (v17 + v16) ^ v15 )
-  {
-    char v12 = Destination[k];
-    IDA_LOWORD(v1) = Destination[k + 2];
-    char v13 = v12 * v12;
-    char v14 = Destination[k + 3];
-    char v19 = 2 * Destination[k + 1];
-    int v24 = 2 * v1;
-    v15 = v14 * v14;
-    v16 = v12 * ((v12 * v12) ^ (2 * v1));
-    k += 4;
-    v17 = v1 * (v16 + (v19 ^ v15));
-    Destination[k - 4] = v17 ^ v13;
-    Destination[k - 3] = v17 ^ v24;
-    v4 = v23;
-    Destination[k - 2] = (v17 + v16) ^ v19;
-  }
-  v20 = 0;
-  v21 = 0;
-  v22 = 0;
-  return Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4);
-}
-
-/* ASM:
-Destination     = byte ptr -80h
-var_7F          = byte ptr -7Fh
-var_7E          = byte ptr -7Eh
-var_7D          = byte ptr -7Dh
-var_1           = byte ptr -1
-
-sub     esp, 9Ch
-mov     edx, ecx
-push    ebp
-xor     ebp, ebp
-cmp     edx, ebp
-jnz     short loc_5F9E99
-xor     eax, eax
-pop     ebp
-add     esp, 9Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_5F9E99:                             ; CODE XREF: Checksummer__HashString+D↑j
-push    ebx
-push    esi
-push    edi
-mov     ecx, 20h ; ' '
-mov     eax, 0A5A5A5A5h
-lea     edi, [esp+0ACh+Destination]
-rep stosd
-push    80h             ; Count
-lea     eax, [esp+0B0h+Destination]
-push    edx             ; Source
-push    eax             ; Destination
-call    _strncpy
-lea     edi, [esp+0B8h+Destination]
-or      ecx, 0FFFFFFFFh
-xor     eax, eax
-mov     [esp+0B8h+var_1], 0
-repne scasb
-not     ecx
-dec     ecx
-mov     ebx, ecx
-lea     ecx, [esp+0B8h+Destination]
-push    ecx             ; String
-mov     [esp+0BCh+var_88], ebx
-call    __strupr
-add     esp, 10h
-xor     esi, esi
-cmp     ebx, ebp
-jle     short loc_5F9F13
-
-loc_5F9EEB:                             ; CODE XREF: Checksummer__HashString+91↓j
-movsx   edx, [esp+esi+0ACh+Destination]
-push    edx             ; C
-call    _isgraph
-add     esp, 4
-test    eax, eax
-jnz     short loc_5F9F0E
-mov     eax, esi
-mov     ecx, 1Ah
-cdq
-idiv    ecx
-add     dl, 41h ; 'A'
-mov     [esp+esi+0ACh+Destination], dl
-
-loc_5F9F0E:                             ; CODE XREF: Checksummer__HashString+7B↑j
-inc     esi
-cmp     esi, ebx
-jl      short loc_5F9EEB
-
-loc_5F9F13:                             ; CODE XREF: Checksummer__HashString+69↑j
-cmp     ebx, 10h
-jl      short loc_5F9F1D
-test    bl, 3
-jz      short loc_5F9F63
-
-loc_5F9F1D:                             ; CODE XREF: Checksummer__HashString+96↑j
-lea     eax, [ebx+3]
-mov     esi, 10h
-and     eax, 0FCh
-cmp     eax, esi
-jle     short loc_5F9F30
-mov     esi, eax
-
-loc_5F9F30:                             ; CODE XREF: Checksummer__HashString+AC↑j
-cmp     ebx, esi
-mov     ecx, ebx
-jge     short loc_5F9F58
-
-loc_5F9F36:                             ; CODE XREF: Checksummer__HashString+D6↓j
-mov     edx, ecx
-mov     edi, 1Ah
-sub     edx, ebx
-movsx   eax, [esp+edx+0ACh+Destination]
-xor     eax, 3Fh
-add     eax, ecx
-cdq
-idiv    edi
-add     dl, 41h ; 'A'
-mov     [esp+ecx+0ACh+Destination], dl
-inc     ecx
-cmp     ecx, esi
-jl      short loc_5F9F36
-
-loc_5F9F58:                             ; CODE XREF: Checksummer__HashString+B4↑j
-mov     ebx, ecx
-mov     [esp+ecx+0ACh+Destination], 0
-mov     [esp+0ACh+var_88], ebx
-
-loc_5F9F63:                             ; CODE XREF: Checksummer__HashString+9B↑j
-lea     eax, [esp+0ACh+Destination]
-push    ebx
-push    eax
-lea     ecx, [esp+0B4h+var_94]
-mov     [esp+0B4h+var_94], ebp
-mov     [esp+0B4h+var_90], ebp
-mov     [esp+0B4h+var_8C], ebp
-call    Checksummer__Add_Buffer
-lea     ecx, [esp+0ACh+Destination]
-push    ecx             ; Str
-call    __strrev
-add     esp, 4
-lea     edx, [esp+0ACh+Destination]
-lea     ecx, [esp+0ACh+var_94]
-mov     [esp+0ACh+var_94], ebp
-push    ebx
-push    edx
-mov     [esp+0B4h+var_90], ebp
-mov     [esp+0B4h+var_8C], ebp
-call    Checksummer__Add_Buffer
-mov     [esp+0ACh+var_9C], eax
-lea     eax, [esp+0ACh+Destination]
-push    eax             ; Str
-call    __strrev
-add     esp, 4
-xor     edx, edx
-cmp     ebx, ebp
-jle     short loc_5F9FED
-
-loc_5F9FBD:                             ; CODE XREF: Checksummer__HashString+16B↓j
-mov     al, [esp+edx+0ACh+Destination]
-mov     ecx, [esp+0ACh+var_9C]
-mov     esi, eax
-and     esi, 0FFh
-xor     ecx, esi
-xor     al, cl
-mov     [esp+edx+0ACh+Destination], al
-mov     eax, ecx
-and     eax, 0FFh
-shl     eax, 18h
-sar     ecx, 8
-or      eax, ecx
-inc     edx
-cmp     edx, ebx
-mov     [esp+0ACh+var_9C], eax
-jl      short loc_5F9FBD
-
-loc_5F9FED:                             ; CODE XREF: Checksummer__HashString+13B↑j
-xor     esi, esi
-cmp     ebx, ebp
-jle     short loc_5FA017
-
-loc_5F9FF3:                             ; CODE XREF: Checksummer__HashString+195↓j
-mov     dl, [esp+esi+0ACh+Destination]
-mov     edi, esi
-and     edi, 7
-mov     cl, byte_832C14[edi]
-or      cl, dl
-mov     dl, byte_832C0C[edi]
-not     dl
-and     cl, dl
-mov     [esp+esi+0ACh+Destination], cl
-inc     esi
-cmp     esi, ebx
-jl      short loc_5F9FF3
-
-loc_5FA017:                             ; CODE XREF: Checksummer__HashString+171↑j
-xor     edi, edi
-cmp     ebx, ebp
-jle     short loc_5FA09C
-
-loc_5FA01D:                             ; CODE XREF: Checksummer__HashString+218↓j
-movsx   si, [esp+edi+0ACh+Destination]
-movsx   ax, [esp+edi+0ACh+var_7F]
-movsx   bp, [esp+edi+0ACh+var_7E]
-mov     edx, esi
-add     eax, eax
-imul    edx, esi
-movsx   cx, [esp+edi+0ACh+var_7D]
-mov     [esp+0ACh+var_98], eax
-lea     eax, [ebp+ebp+0]
-mov     [esp+0ACh+var_84], eax
-xor     eax, edx
-mov     [esp+0ACh+var_9C], ecx
-imul    eax, esi
-imul    ecx, ecx
-mov     ebx, [esp+0ACh+var_98]
-mov     esi, eax
-mov     eax, ecx
-mov     [esp+0ACh+var_98], ebx
-xor     eax, ebx
-mov     ebx, esi
-add     eax, esi
-add     edi, 4
-imul    eax, ebp
-xor     edx, eax
-add     ebx, eax
-mov     byte ptr [esp+edi+0ACh+var_84], dl
-mov     dl, byte ptr [esp+0ACh+var_84]
-xor     dl, al
-mov     al, byte ptr [esp+0ACh+var_98]
-xor     al, bl
-mov     byte ptr [esp+edi+0ACh+var_84+1], dl
-xor     cl, bl
-mov     ebx, [esp+0ACh+var_88]
-mov     byte ptr [esp+edi+0ACh+var_84+2], al
-mov     byte ptr [esp+edi+0ACh+var_84+3], cl
-cmp     edi, ebx
-mov     [esp+0ACh+var_9C], esi
-jl      short loc_5FA01D
-xor     ebp, ebp
-
-loc_5FA09C:                             ; CODE XREF: Checksummer__HashString+19B↑j
-lea     ecx, [esp+0ACh+Destination]
-push    ebx
-push    ecx
-lea     ecx, [esp+0B4h+var_94]
-mov     [esp+0B4h+var_94], ebp
-mov     [esp+0B4h+var_90], ebp
-mov     [esp+0B4h+var_8C], ebp
-call    Checksummer__Add_Buffer
-pop     edi
-pop     esi
-pop     ebx
-pop     ebp
-add     esp, 9Ch
-retn
-*/
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005DA720.json)
 }
 }
 
 // 0x734E60: GetStringCSF -- returns "TXT_KEY" as placeholder
-const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {
+const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line)
 {
-
-  if ( a2 )
-    *a2 = 0;
-  if ( !dword_A8ED54[145544] )
-    return (void *)aFatalStringMan;
-  int v6 = bsearch(Format, (const void *)dword_A8ED54[145544], dword_A8ED54[145542], 40, _strcmpi);
-  if ( v6 )
-  {
-    if ( a2 )
-      *a2 = *(unsigned int *)(dword_A8ED54[145546] + 4 * *(unsigned int *)(v6 + 36));
-    return *(void **)(dword_A8ED54[145545] + 4 * *(unsigned int *)(v6 + 36));
-  }
-  else
-  {
-    int v7 = RA2_OPNEW(520);
-    swprintf((void *const)(v7 + 4), aMissingHs);
-    Debug::Log();
-    *(unsigned int *)v7 = dword_A8ED54[145549];
-    dword_A8ED54[145549] = v7;
-    return (void *)(v7 + 4);
-  }
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734E60)
 }
 
 /* ASM:

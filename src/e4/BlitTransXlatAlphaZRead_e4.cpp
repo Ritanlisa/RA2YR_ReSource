@@ -13,70 +13,14 @@
 namespace gamemd {
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
-
-  unsigned short *result; // eax
-  int v12; // edi
-  uint8_t v13; // dl
-  unsigned short *v14; // [esp+18h] [ebp+18h]
-
-  result = a6; /*0x494924*/
-  if ( a4 > 0 ) /*0x49492a*/
-  {
-    v12 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x494938*/
-    v14 = (unsigned short *)a4; /*0x49493e*/
-    do /*0x49499a*/
-    {
-      v13 = *a2++; /*0x494942*/
-      if ( v13 && *result ) /*0x49494d*/
-      {
-        *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v13) >> 1)); /*0x494978*/
-        v12 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x49497b*/
-      }
-      ++result; /*0x494984*/
-      ++a1; /*0x494987*/
-      if ( (unsigned int)result >= *(unsigned int *)(v12 + 28) ) /*0x49498c*/
-        result = (unsigned short *)((char *)result - *(unsigned int *)(v12 + 32)); /*0x49498e*/
-      v14 = (unsigned short *)((char *)v14 - 1); /*0x494996*/
-    }
-    while ( v14 ); /*0x49499a*/
-  }
-  return result; /*0x4949a0*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x494920)
 }
 } // namespace gamemd
 // 0x494A40
 namespace gamemd {
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
-
-  unsigned short *result; // eax
-  int v12; // edi
-  uint8_t v13; // dl
-  unsigned short *v14; // [esp+18h] [ebp+18h]
-
-  result = a6; /*0x494a44*/
-  if ( a4 > 0 ) /*0x494a4a*/
-  {
-    v12 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x494a58*/
-    v14 = (unsigned short *)a4; /*0x494a5e*/
-    do /*0x494aba*/
-    {
-      v13 = *a2++; /*0x494a62*/
-      if ( v13 && !*result ) /*0x494a6d*/
-      {
-        *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v13) >> 1)); /*0x494a98*/
-        v12 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x494a9b*/
-      }
-      ++result; /*0x494aa4*/
-      ++a1; /*0x494aa7*/
-      if ( (unsigned int)result >= *(unsigned int *)(v12 + 28) ) /*0x494aac*/
-        result = (unsigned short *)((char *)result - *(unsigned int *)(v12 + 32)); /*0x494aae*/
-      v14 = (unsigned short *)((char *)v14 - 1); /*0x494ab6*/
-    }
-    while ( v14 ); /*0x494aba*/
-  }
-  return result; /*0x494ac0*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x494A40)
 }
 } // namespace gamemd
 // 0x494B60

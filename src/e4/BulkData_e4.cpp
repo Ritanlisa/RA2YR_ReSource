@@ -22,31 +22,6 @@
 namespace gamemd {
 void BulkData::InitMissionHashing()
 {
-
-  DWORD v2; // eax
-  char *inited; // eax
-  const char *v4; // esi
-  unsigned int v5; // ebx
-  DWORD Time; // [esp+10h] [ebp-4h] BYREF
-
-  ((SessionClass*)(gamemd::SessionClass *)this)->LoadMissionList(); /*0x697ad7*/
-  Time = timeGetTime(); /*0x697ae2*/
-  v2 = DiskSpace::CheckAvailable(); /*0x697ae6*/
-  ComputeHash((unsigned int *)(&Time), v2); /*0x697af1*/
-  inited = Object_Init_7CBC11((char *)(aPath)); /*0x697afb*/
-  v4 = inited; /*0x697b00*/
-  if ( inited ) /*0x697b07*/
-  {
-    v5 = 0; /*0x697b10*/
-    if ( strlen(inited) ) /*0x697b12*/
-    {
-      do /*0x697b35*/
-        ComputeHash((unsigned int *)(&Time), v4[v5++]); /*0x697b21*/
-      while ( v5 < strlen(v4) ); /*0x697b35*/
-    }
-  }
-  *((unsigned int *)this + 81) = Time; /*0x697b41*/
-  ((gamemd::Debug *)this)->Log(); /*0x697b47*/
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x697AD0)
 }
 } // namespace gamemd

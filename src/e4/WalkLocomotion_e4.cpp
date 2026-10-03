@@ -129,57 +129,9 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
 }
 // 0x6A05F0
 namespace gamemd {
-void WalkLocomotion::ProcessCollision(char a2, void *a2_2)
+void ProcessCollision(char a2, void *a2_2)
 {
-
-  int v4; // eax
-  int v5; // edx
-  bool v6; // al
-  int v7; // esi
-  int v8; // eax
-  unsigned int *v9; // esi
-  int v10; // edx
-  int v11; // esi
-  int v12; // eax
-  int *v13; // ecx
-  int v14; // esi
-  char v15; // bl
-  int v16; // edx
-  int v17; // eax
-  int v18; // eax
-  int v19; // ecx
-  int v20; // eax
-  unsigned int *v21; // esi
-  int v22; // eax
-  unsigned int *v23; // ecx
-  int v24; // edx
-  int v25; // eax
-  int v26; // edx
-  unsigned int *v27; // esi
-  int v28; // eax
-  int v29; // edx
-  unsigned int *v30; // ebx
-  int v31; // ecx
-  int v32; // eax
-  int v33; // edx
-  CellClass *v34; // eax
-  int *Coords; // eax
-  int *v36; // ecx
-  int *v37; // ecx
-  int GroundHeight; // esi
-  int v39; // ebx
-  char *v41; // esi
-  char v42; // dl
-  int v43; // edx
-  int16_t v44; // cx
-  int v45; // eax
-  int v46; // esi
-  int v47; // ecx
-  unsigned int *v48; // ecx
-  int v49; // eax
-  int v50; // edx
-  int v51; // eax
-  int v52... [41340 chars total]
+    (void)a2; (void)a2_2;  // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x006A05F0.json)
 }
 } // namespace gamemd
 

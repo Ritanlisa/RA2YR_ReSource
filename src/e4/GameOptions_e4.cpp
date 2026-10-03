@@ -19,62 +19,7 @@
 namespace gamemd {
 int sub_682780(int a1, int a2, wchar_t * String)
 {
-  unsigned int * v3;
-  unsigned int *v4; // eax
-  void **v5; // ecx
-  int v6; // esi
-  size_t v7; // eax
-  int v9;
-
-  v9 = (int)((unsigned int *)(0));
-  v3 = (unsigned int *)((int)((unsigned int *)(0)));
-  v4 = (unsigned int *)(&unk_83D658);
-  while ( *v4 != a2 ) /*0x682797*/
-  {
-    v4 += 2; /*0x682799*/
-    ++v3; /*0x68279c*/
-    if ( (int)v4 >= (int)g_INI_Key_GameType ) /*0x6827a2*/
-    {
-      v5 = 0; /*0x6827a4*/
-      goto LABEL_5; /*0x6827a4*/
-    }
-  }
-  v5 = (void **)((&off_83D65C)[2 * v3]);
-  LABEL_5:
-  v6 = (*(int (**)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v9); /*0x6827a6*/
-  if ( v6 >= 0 ) /*0x6827c4*/
-  {
-    if ( !v9 ) /*0x6827e6*/
-      WinAPI::Wrapper(-2147467261); /*0x6827ed*/
-    v7 = wcslen(String); /*0x682803*/
-    v6 = (*(int (**)(int, wchar_t *, size_t, unsigned int))(*(unsigned int *)v9 + 16))(v9, String, 2 * v7 + 2, 0); /*0x682815*/
-    if ( v6 >= 0 ) /*0x68281f*/
-    {
-      if ( !v9 ) /*0x682834*/
-        WinAPI::Wrapper(-2147467261); /*0x68283b*/
-      v6 = (*(int (**)(int, unsigned int))(*(unsigned int *)v9 + 32))(v9, 0); /*0x68284c*/
-      if ( v6 >= 0 ) /*0x682854*/
-      {
-        if ( v9 ) /*0x682869*/
-          (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x68286e*/
-      }
-      else if ( v9 ) /*0x682858*/
-      {
-  LABEL_18:
-        (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x68285a*/
-        return v6; /*0x682864*/
-      }
-    }
-    else if ( v9 ) /*0x682823*/
-    {
-      goto LABEL_18; /*0x682823*/
-    }
-  }
-  else if ( v9 ) /*0x6827c8*/
-  {
-    goto LABEL_18; /*0x6827c8*/
-  }
-  return v6; /*0x6827d6*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x682780)
 }
 }
 // 0x6829A0

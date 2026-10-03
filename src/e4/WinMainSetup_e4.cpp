@@ -24,48 +24,7 @@
 namespace gamemd {
 AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
 {
-  uint8_t result; // al
-  DDraw *v2; // [esp+0h] [ebp-4h]
-
-  result = g_DDraw_Force3D; /*0x6bb8e0*/
-  if ( g_DDraw_Force3D ) /*0x6bb8ea*/
-    result = ((DDraw*)v2)->CleanupSurfaces(); /*0x6bb8ec*/
-  if ( !byte_B0BCF5 ) /*0x6bb8f7*/
-  {
-    if ( g_DSurface_Hidden ) /*0x6bb905*/
-    {
-      (*(void (**)(ObjectClass *, int))g_DSurface_Hidden->AbstractClass)(g_DSurface_Hidden, 1); /*0x6bb90b*/
-      g_DSurface_Hidden = 0; /*0x6bb90d*/
-    }
-    if ( DSurface_Alternate ) /*0x6bb91b*/
-    {
-      (*(void (**)(DSurface *, int))DSurface_Alternate->DSurface_field_0x0)(DSurface_Alternate, 1); /*0x6bb921*/
-      DSurface_Alternate = 0; /*0x6bb923*/
-    }
-    if ( DSurface_Tile ) /*0x6bb931*/
-    {
-      (*(void (**)(DSurface *, int))DSurface_Tile->DSurface_field_0x0)(DSurface_Tile, 1); /*0x6bb937*/
-      DSurface_Tile = 0; /*0x6bb939*/
-    }
-    if ( DSurface_Sidebar ) /*0x6bb947*/
-    {
-      (*(void (**)(DSurface *, int))DSurface_Sidebar->DSurface_field_0x0)(DSurface_Sidebar, 1); /*0x6bb94d*/
-      DSurface_Sidebar = 0; /*0x6bb94f*/
-    }
-    if ( DSurface_Composite ) /*0x6bb95d*/
-    {
-      (**(void (***)(AudioStream *, int))DSurface_Composite->__pad_0)(DSurface_Composite, 1); /*0x6bb963*/
-      DSurface_Composite = 0; /*0x6bb965*/
-    }
-    if ( g_DSurface_Primary ) /*0x6bb973*/
-    {
-      (*(void (**)(DSurface *, int))g_DSurface_Primary->DSurface_field_0x0)(g_DSurface_Primary, 1); /*0x6bb979*/
-      g_DSurface_Primary = 0; /*0x6bb97b*/
-    }
-    result = (uint8_t)sub_4A44F0((ObjectClass *)v2); /*0x6bb981*/
-    byte_B0BCF5 = 1; /*0x6bb986*/
-  }
-  return (gamemd::AbstractClass **)(result);
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6BB8E0)
 }
 }
 // 0x72B130
@@ -326,39 +285,7 @@ void sub_65FD50()
 namespace gamemd {
 void sub_72AC40()
 {
-  ObjectClass *v0; // [esp+0h] [ebp-4h]
-  LoadingScreen *v1; // [esp+0h] [ebp-4h]
-  ObjectClass *v2; // [esp+0h] [ebp-4h]
-
-  WinMainSetup_Setup_72AC40_Setup(); /*0x72ac41*/
-  WinMainSetup_Setup_72AC40_Setup_72B230(v0); /*0x72ac46*/
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1072] ) /*0x72ac54*/
-  {
-    g_BuildingLoadQueue_Array.__pad_F70[1072] = 0; /*0x72ac5a*/
-        ((LoadingScreen *)this)->DestroyFileTrees();
-    LoadingScreen::CleanupObjects(v1); /*0x72ac65*/
-    RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1120]); /*0x72ac70*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1120] = 0; /*0x72ac7b*/
-    RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1124]); /*0x72ac82*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1124] = 0; /*0x72ac8d*/
-    RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1128]); /*0x72ac94*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1128] = 0; /*0x72ac9e*/
-    RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1132]); /*0x72aca5*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1132] = 0; /*0x72acb0*/
-    RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1136]); /*0x72acb7*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1136] = 0; /*0x72acc2*/
-    RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1140]); /*0x72acc9*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1140] = 0; /*0x72acd3*/
-    RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1144]); /*0x72acda*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1144] = 0; /*0x72ace5*/
-    RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1148]); /*0x72acec*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1148] = 0; /*0x72acf4*/
-    ReleaseLoadingResources(v2); /*0x72acfa*/
-  }
-  FileTree::CleanupAll(); /*0x72acff*/
-  LoadingScreen::FreeResources(v1); /*0x72ad04*/
-    ((LoadingScreen *)this)->FreeResources2();
-  g_BuildingLoadQueue_Array.__pad_F70[1116] = 0; /*0x72ad0e*/
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x72AC40)
 }
 } // namespace gamemd
 

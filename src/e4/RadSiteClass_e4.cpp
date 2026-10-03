@@ -20,45 +20,7 @@
 namespace gamemd {
 RadSiteClass::RadSiteClass()
 {
-
-  int v2; // edx
-  int v3; // eax
-
-  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x65b1e3*/
-  this->LightSource = 0; /*0x65b1ea*/
-  this->RadLevelTimer[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b1f3*/
-  this->RadLevelTimer[2] = 0; /*0x65b1f6*/
-  v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b1f9*/
-  this->RadLightTimer[2] = 0; /*0x65b1ff*/
-  this->RadLightTimer[0] = v2; /*0x65b202*/
-  LOWORD(this->BaseCell[0]) = 0; /*0x65b205*/
-  HIWORD(this->BaseCell[0]) = 0; /*0x65b209*/
-  this->Spread = 0; /*0x65b20d*/
-  this->SpreadInLeptons = 0; /*0x65b210*/
-  this->RadLevel = 0; /*0x65b213*/
-  this->LevelSteps = 0; /*0x65b216*/
-  this->Intensity = 0; /*0x65b219*/
-  this->IntensitySteps = 0; /*0x65b21c*/
-  this->IntensityDecrement = 0; /*0x65b21f*/
-  this->RadDuration = 0; /*0x65b222*/
-  this->RadTimeLeft = 0; /*0x65b225*/
-  this->vtable1 = &vt_RadSiteClass; /*0x65b228*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b22e*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b235*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b23c*/
-  if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
-    || (byte_B04BDD || !dword_B04BD8)
-    && dword_B04BE4 > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(RadSiteClass_Array + 8))(
-         &RadSiteClass_Array,
-         dword_B04BD8 + dword_B04BE4,
-         0) )
-  {
-    v3 = (unsigned int)(dword_B04BE0++);
-    *((unsigned int *)dword_B04BD4 + v3) = (unsigned int)(this); /*0x65b293*/
-  }
-  return this; /*0x65b298*/
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65B1E0)
 }
 }
 // 0x65B3A0

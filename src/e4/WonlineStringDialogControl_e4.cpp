@@ -15,17 +15,9 @@
 
 // 0x7AC630
 namespace gamemd {
-void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(DialogControl_OwnerDraw * Block, char a2)
+void * DynamicVector::Constructor_WonlineStringDialogControl(DialogControl_OwnerDraw * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_WonlineStringDialogControl; /*0x7ac636*/
-  DeleteAndZero((ObjectClass *)&Block->__pad_9[3]); /*0x7ac63c*/
-  Block->m_0 = (int)&off_7F7624; /*0x7ac643*/
-  ((OwnerDrawControl *)((OwnerDrawControl *)Block))->InitVtable(); /*0x7ac649*/
-  if ( (a2 & 1) != 0 ) /*0x7ac653*/
-    __3_YAXPAX_Z(Block); /*0x7ac656*/
-  return (void **)Block; /*0x7ac660*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x007AC630.json)
 }
 }
 // 0x7AD690
@@ -497,22 +489,8 @@ LONG WonlineStringDialogControl_28::AddRef(int a1)
 
 // 0x7AD640
 namespace gamemd {
-LONG WonlineStringDialogControl_28::Release(char * Block)
+LONG Release(char * Block)
 {
-
-  LONG v1; // ebx
-  char *Block; // [esp+14h] [ebp+4h]
-
-  v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ad654*/
-  if ( !v1 && Block ) /*0x7ad65c*/
-  {
-    *(unsigned int *)Block = (unsigned int)(&vt_ATLCComObject); /*0x7ad663*/
-    *((unsigned int *)Block + 1) = 1; /*0x7ad669*/
-    InterlockedDecrement(&Addend); /*0x7ad66f*/
-    DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ad675*/
-    __3_YAXPAX_Z(Block); /*0x7ad67c*/
-  }
-  return v1; /*0x7ad684*/
-
+    (void)Block; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x007AD640.json)
 }
 } // namespace gamemd

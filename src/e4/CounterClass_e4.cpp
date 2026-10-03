@@ -11,21 +11,6 @@
 namespace gamemd {
 CounterClass * CounterClass::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *count; // eax
-
-  count = (void *)Block->count; /*0x49fce3*/
-  Block->items = &vt_VectorClass; /*0x49fce6*/
-  if ( count && *((unsigned char *)Block + 13) ) /*0x49fcf0*/
-  {
-    __3_YAXPAX_Z(count); /*0x49fcf8*/
-    Block->count = 0; /*0x49fd00*/
-  }
-  *((unsigned char *)Block + 13) = 0; /*0x49fd0b*/
-  *((unsigned int *)Block + 2) = 0; /*0x49fd11*/
-  if ( (a2 & 1) != 0 ) /*0x49fd18*/
-    __3_YAXPAX_Z(Block); /*0x49fd1b*/
-  return &Block->items; /*0x49fd25*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x49FCE0)
 }
 } // namespace gamemd

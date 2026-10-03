@@ -11,29 +11,6 @@
 namespace gamemd {
 char sub_6DA770()
 {
-  int *v0; // esi
-  int v1; // eax
-  bool v2; // zf
-  void *v3; // eax
-
-  if ( dword_A8ECC8 != (unsigned int)((wchar_t *))1 ) /*0x6da779*/
-    return 0; /*0x6da779*/
-  v0 = *(int **)dword_A8ECBC; /*0x6da780*/
-  if ( !(*(int (**)(unsigned int))(**(unsigned int **)dword_A8ECBC + 60))(*(unsigned int *)dword_A8ECBC) ) /*0x6da786*/
-    return 0; /*0x6da786*/
-  v1 = *v0; /*0x6da796*/
-  if ( ((unsigned int *)(dword_A8B238))[0] ) /*0x6da798*/
-  {
-    v3 = (void *)(*(int (**)(int *))(v1 + 60))(v0); /*0x6da7a7*/
-    v2 = (uint8_t)((House*)v3)->IsHumanPlayer() == 0; /*0x6da7b1*/
-  }
-  else
-  {
-    v2 = *(unsigned char *)((*(int (**)(int *))(v1 + 60))(v0) + 493) == 0; /*0x6da7a3*/
-  }
-  if ( !v2 ) /*0x6da7b3*/
-    return 0; /*0x6da7c3*/
-  (*(void (**)(int *))(*v0 + 336))(v0); /*0x6da7b9*/
-  return 1; /*0x6da7c1*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6DA770)
 }
 } // namespace gamemd

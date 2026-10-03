@@ -45,1058 +45,600 @@
 
 // 0x535CF0
 namespace gamemd {
-int CreateTeamCommand::vt02()
+int DeployCommandClass::vt02()
 {
-
-  return (*(int (**))(*(unsigned int *)this + 16))(this);
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535CF0.json)
 }
 // 0x537350
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_148()
+unsigned int * DeployCommandClass::performAction_148()
 {
-
-  int v1; // eax
-  unsigned int *result; // eax
-  int v3; // [esp+0h] [ebp-10h] BYREF
-  int v4[2]; // [esp+4h] [ebp-Ch] BYREF
-  int GroundHeight; // [esp+Ch] [ebp-4h]
-
-  v1 = (SLOWORD(((unsigned int *)(dword_A8B230))[373].referenceCount) << 8) + 128; /*0x537378*/
-  v4[0] = (SHIWORD(((unsigned int *)(dword_A8B230))[373].nextArrayIndex) << 8) + 128; /*0x53737d*/
-  v4[1] = v1; /*0x537386*/
-  GroundHeight = 0; /*0x53738a*/
-  GroundHeight = Cell::GetGroundHeight((unsigned int *)(v4)); /*0x53739d*/
-  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x5373a6*/
-  result = (unsigned int *)dword_880990; /*0x5373ab*/
-  if ( dword_880990 ) /*0x5373b2*/
-    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3),(unsigned int *)(&word_A8F2F8)); /*0x5373c3*/
-  return result; /*0x5373c8*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537350.json)
 }
 }
 // 0x537440
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_153()
+unsigned int * DeployCommandClass::performAction_153()
 {
-
-  int v1; // eax
-  unsigned int *result; // eax
-  int v3; // [esp+0h] [ebp-10h] BYREF
-  int v4[2]; // [esp+4h] [ebp-Ch] BYREF
-  int GroundHeight; // [esp+Ch] [ebp-4h]
-
-  v1 = (SLOWORD(((unsigned int *)(dword_A8B230))[373].NeedsSaveOrLink) << 8) + 128; /*0x537468*/
-  v4[0] = (SHIWORD(((unsigned int *)(dword_A8B230))[373].referenceCount) << 8) + 128; /*0x53746d*/
-  v4[1] = v1; /*0x537476*/
-  GroundHeight = 0; /*0x53747a*/
-  GroundHeight = Cell::GetGroundHeight((unsigned int *)(v4)); /*0x53748d*/
-  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x537496*/
-  result = (unsigned int *)dword_880990; /*0x53749b*/
-  if ( dword_880990 ) /*0x5374a2*/
-    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3),(unsigned int *)(&word_A8F2F8)); /*0x5374b3*/
-  return result; /*0x5374b8*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537440.json)
 }
 }
 // 0x537530
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_158()
+unsigned int * DeployCommandClass::performAction_158()
 {
-
-  int v1; // eax
-  unsigned int *result; // eax
-  int v3; // [esp+0h] [ebp-10h] BYREF
-  int v4[2]; // [esp+4h] [ebp-Ch] BYREF
-  int GroundHeight; // [esp+Ch] [ebp-4h]
-
-  v1 = (SLOWORD(((unsigned int *)(dword_A8B230))[374].vtable0) << 8) + 128; /*0x537558*/
-  v4[0] = (SHIWORD(((unsigned int *)(dword_A8B230))[373].NeedsSaveOrLink) << 8) + 128; /*0x53755d*/
-  v4[1] = v1; /*0x537566*/
-  GroundHeight = 0; /*0x53756a*/
-  GroundHeight = Cell::GetGroundHeight((unsigned int *)(v4)); /*0x53757d*/
-  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x537586*/
-  result = (unsigned int *)dword_880990; /*0x53758b*/
-  if ( dword_880990 ) /*0x537592*/
-    return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3),(unsigned int *)(&word_A8F2F8)); /*0x5375a3*/
-  return result; /*0x5375a8*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537530.json)
 }
 }
 // 0x5386A0
 namespace gamemd {
-AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
+AbstractClass * * DeployCommandClass::performAction_241(int a2, unsigned int * a3)
 {
-
-  unsigned int *v4; // edi
-  int v5; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x5386ac*/
-  {
-    *((unsigned char *)this + 12) = 0; /*0x5386b2*/
-    if ( a3 ) /*0x5386b8*/
-      v4 = a3; /*0x5386ce*/
-    else
-      v4 = (unsigned int *)(__2_YAPAXI_Z(4 * a2)); /*0x5386ca*/
-    *((unsigned char *)this + 12) = 1; /*0x5386d2*/
-    if ( !v4 ) /*0x5386d6*/
-      return 0; /*0x53874a*/
-    if ( *((unsigned int *)this + 1) ) /*0x5386d8*/
-    {
-      v5 = *((unsigned int *)this + 2); /*0x5386df*/
-      if ( a2 < v5 ) /*0x5386e4*/
-        v5 = a2; /*0x5386e6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) ) /*0x5386ec*/
-        ++i; /*0x5386f1*/
-      if ( *((unsigned char *)this + 13) ) /*0x5386fe*/
-      {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x538709*/
-        *((unsigned int *)this + 1) = 0; /*0x538711*/
-      }
-    }
-    *((unsigned int *)this + 1) = (unsigned int)(v4); /*0x53871a*/
-    *((unsigned int *)this + 2) = a2; /*0x538722*/
-    *((unsigned char *)this + 13) = a3 == 0; /*0x538725*/
-  }
-  else
-  {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x53872e*/
-  }
-  v7 = *((unsigned int *)this + 2); /*0x538731*/
-  if ( v7 < *((unsigned int *)this + 4) ) /*0x538739*/
-    *((unsigned int *)this + 4) = v7; /*0x53873b*/
-  return 1; /*0x53873e*/
-
+    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005386A0.json)
 }
 }
 // 0x538A20
 namespace gamemd {
-void * CreateTeamCommand::performAction_243(rc_ptr_base * Block, char a2)
+void * DeployCommandClass::performAction_243(rc_ptr_base * Block, char a2)
 {
-
-  int v3; // eax
-  char *v4; // ebp
-  ComPtr *v5; // esi
-  int v6; // eax
-  int v7; // edi
-
-  if ( (a2 & 2) != 0 ) /*0x538a2b*/
-  {
-    v3 = *((unsigned int *)Block - 1); /*0x538a2d*/
-    v4 = (char *)Block - 4; /*0x538a31*/
-    v5 = (ComPtr *)((char *)Block + 8 * v3); /*0x538a34*/
-    v6 = v3 - 1; /*0x538a37*/
-    if ( v6 >= 0 ) /*0x538a38*/
-    {
-      v7 = v6 + 1; /*0x538a3b*/
-      do /*0x538a4f*/
-      {
-        v5 = (ComPtr *)((char *)v5 - 8); /*0x538a3e*/
-        *(unsigned int *)v5->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x538a43*/
-        ((ComPtr *)(v5))->Release(); /*0x538a49*/
-        --v7; /*0x538a4e*/
-      }
-      while ( v7 ); /*0x538a4f*/
-    }
-    if ( (a2 & 1) != 0 ) /*0x538a55*/
-      __3_YAXPAX_Z(v4); /*0x538a58*/
-    return v4; /*0x538a60*/
-  }
-  else
-  {
-    *(unsigned int *)Block->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x538a6a*/
-    ((ComPtr *)((ComPtr *)Block))->Release(); /*0x538a70*/
-    if ( (a2 & 1) != 0 ) /*0x538a78*/
-      __3_YAXPAX_Z(Block); /*0x538a7b*/
-    return Block->__pad_0; /*0x538a83*/
-  }
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538A20.json)
 }
 }
 // 0x6A6A00
 namespace gamemd {
-int CreateTeamCommand::performAction_245(char a2, int a3)
+int DeployCommandClass::performAction_245(char a2, int a3)
 {
-
-  int v3; // eax
-  CreateTeamCommand *v4; // esi
-  int v6; // eax
-  int v7; // eax
-
-  if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 424) ) /*0x6a6a09*/
-  {
-    v3 = a3; /*0x6a6a0f*/
-    if ( a3 == -1 ) /*0x6a6a16*/
-      v3 = *((unsigned int *)this + 5351); /*0x6a6a18*/
-    v4 = (CreateTeamCommand *)((char *)this + 3988 * v3 + 5444); /*0x6a6a2b*/
-    if ( a2 ) /*0x6a6a38*/
-    {
-      if ( *((unsigned int *)this + 997 * v3 + 1378) ) /*0x6a6a3a*/
-      {
-        --*((unsigned int *)this + 997 * v3 + 1379); /*0x6a6a4b*/
-        (*(void (**)(CreateTeamCommand *, unsigned int))(*(unsigned int *)this->__pad_0 + 56))(this, 0); /*0x6a6a50*/
-        return 1; /*0x6a6a57*/
-      }
-      return 0; /*0x6a6a3f*/
-    }
-    v6 = 26; /*0x6a6a68*/
-    if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6a6a60*/
-      v6 = 18; /*0x6a6a6f*/
-    v7 = (g_DSurface_ViewBounds - g_SidebarBounds - v6 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a6aa4*/
-    if ( dword_A83D4C == (unsigned int)((gamemd::Object *))HouseClass_Observer ) /*0x6a6aae*/
-    {
-      if ( *(unsigned int *)&v4->__pad_14[48] + v7 / 2 < dword_884CF8 ) /*0x6a6ac2*/
-        goto LABEL_13; /*0x6a6ac2*/
-    }
-    else if ( 2 * (v7 + *(unsigned int *)&v4->__pad_14[48]) < *(unsigned int *)&v4->__pad_14[64] ) /*0x6a6ad2*/
-    {
-LABEL_13:
-      ++*(unsigned int *)&v4->__pad_14[52]; /*0x6a6ad4*/
-      (*(void (**)(CreateTeamCommand *, unsigned int))(*(unsigned int *)this->__pad_0 + 56))(this, 0); /*0x6a6adf*/
-      return 1; /*0x6a6ae6*/
-    }
-  }
-  return 0; /*0x6a6a53*/
-
+    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006A6A00.json)
 }
 }
 // 0x731060
 namespace gamemd {
-void CreateTeamCommand::performAction_246()
+void DeployCommandClass::performAction_246()
 {
-
-  int v1; // ebx
-  int i; // edi
-  int v4; // esi
-  int v5; // ecx
-
-  v1 = dword_A8EC88; /*0x731061*/
-  for ( i = 0; i < v1; ++i )
-  {
-    v4 = *((unsigned int *)dword_A8EC7C + i); /*0x731077*/
-    if ( v4 )
-    {
-      v5 = *(unsigned int *)(v4 + 540); /*0x731083*/
-      if ( (&dword_A8B238)[0] ? ((House*)(void *)v5)->IsHumanPlayer() : *(unsigned char *)(v5 + 493) )
-      {
-        if ( *(char **)(v4 + 532) == this - 1 ) /*0x7310a9*/
-          *(unsigned int *)(v4 + 532) = (unsigned int)(-1); /*0x7310ab*/
-        if ( *(unsigned char *)(v4 + 131) ) /*0x7310b5*/
-          *(unsigned int *)(v4 + 532) = (unsigned int)(this - 1); /*0x7310bf*/
-      }
-    }
-  }
-
+      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00731060.json)
 }
 }
 // 0x535BD0
 namespace gamemd {
-char CreateTeamCommand::Stub(int a1)
+char DeployCommandClass::Stub(int a1)
 {
-
-  return 0; /*0x535bd2*/
-
+    (void)a1; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535BD0.json)
 }
 } // namespace gamemd
 
 // 0x535BF0
 namespace gamemd {
-char CreateTeamCommand::Do(int a1)
+char DeployCommandClass::Do(int a1)
 {
-
-  return 0; /*0x535bf2*/
-
+    (void)a1; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535BF0.json)
 }
 } // namespace gamemd
 
 // 0x535C00
 namespace gamemd {
-unsigned int * CreateTeamCommand::Construct(int a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1)
+unsigned int * DeployCommandClass::Construct(int a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1)
 {
-
-  this->CreateTeamCommand_field_0x4 = (unsigned int)((void *)a2); /*0x535c06*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_CreateTeamCommandClass); /*0x535c09*/
-  return this->__pad_0; /*0x535c0f*/
-
+    (void)a2; (void)a2_2; (void)a3_1; (void)a4_1; (void)a5_1; (void)a6_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535C00.json)
 }
 } // namespace gamemd
 
 // 0x535C20
 namespace gamemd {
-ObjectClass * CreateTeamCommand::AddRef(void *a1_1)
+ObjectClass * DeployCommandClass::AddRef(void *a1_1)
 {
-
-  sprintf((char *const )((unsigned int *)((char *)&stru_A8EB00 + 2512)), "TeamCreate_%d", *(unsigned int *)&this->m_1[3]); /*0x535c2e*/
-  return (unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x535c3b*/
-
+    (void)a1_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535C20.json)
 }
 } // namespace gamemd
 
 // 0x535C40
 namespace gamemd {
-wchar_t * CreateTeamCommand::Release(void *a1_1, void * aTxtCreateTeam)
+wchar_t * DeployCommandClass::Release(void *a1_1)
 {
-
-  wchar_t *StringCSF; // eax
-  const wchar_t *v3; // [esp-4h] [ebp-4h]
-
-  v3 = *(const wchar_t **)&this->m_1[3]; /*0x535c45*/
-  StringCSF = GetStringCSF(aTxtCreateTeam, 0, g_Str_File_Init_CPP, 6165); /*0x535c55*/
-  swprintf((wchar_t *const)(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535c60*/
-  return (wchar_t *)(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535c6d*/
-
+    (void)a1_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535C40.json)
 }
 } // namespace gamemd
 
 // 0x535C70
 namespace gamemd {
-wchar_t * CreateTeamCommand::ddtor()
+wchar_t * DeployCommandClass::ddtor()
 {
-
-  return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0, g_Str_File_Init_CPP, 6167); /*0x535c86*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535C70.json)
 }
 } // namespace gamemd
 
 // 0x535C90
 namespace gamemd {
-wchar_t * CreateTeamCommand::Read(void *a1_1, void *a2_1, void * aTxtCreateTeamD)
+wchar_t * DeployCommandClass::Read(void *a1_1, void *a2_1)
 {
-
-  wchar_t *StringCSF; // eax
-  const wchar_t *v3; // [esp-4h] [ebp-4h]
-
-  v3 = *(const wchar_t **)&this->m_1[3]; /*0x535c95*/
-  StringCSF = GetStringCSF(aTxtCreateTeamD, 0, g_Str_File_Init_CPP, 6169); /*0x535ca5*/
-  swprintf((wchar_t *const)(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535cb0*/
-  return (wchar_t *)(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535cbd*/
-
+    (void)a1_1; (void)a2_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535C90.json)
 }
 } // namespace gamemd
 
 // 0x535CC0
 namespace gamemd {
-void CreateTeamCommand::Undo(int a2)
+void DeployCommandClass::Undo(int a2)
 {
-
-  CreateTeamCommand::performAction_246(*(char **)&this->m_1[3]); /*0x535cc3*/
-
+    (void)a2;  // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535CC0.json)
 }
 } // namespace gamemd
 
 // 0x535CD0
 namespace gamemd {
-CreateTeamCommand * CreateTeamCommand::performAction_0(char a2)
+CreateTeamCommand * DeployCommandClass::performAction_0(char a2)
 {
-
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_CommandClass); /*0x535cd9*/
-  if ( (a2 & 1) != 0 ) /*0x535cdf*/
-    __3_YAXPAX_Z(this); /*0x535ce2*/
-  return (std::locale::facet *)this; /*0x535cec*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535CD0.json)
 }
 } // namespace gamemd
 
 // 0x535D00
 namespace gamemd {
-CommandClass * CreateTeamCommand::performAction_1(char a2)
+CommandClass * DeployCommandClass::performAction_1(char a2)
 {
-
-  *this = (CommandClass)&vt_CommandClass; /*0x535d09*/
-  if ( (a2 & 1) != 0 ) /*0x535d0f*/
-    __3_YAXPAX_Z(this); /*0x535d12*/
-  return (std::locale::facet *)this; /*0x535d1c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535D00.json)
 }
 } // namespace gamemd
 
 // 0x535D20
 namespace gamemd {
-char * CreateTeamCommand::performAction_2()
+char * DeployCommandClass::performAction_2()
 {
-
-  return aStructuretab; /*0x535d25*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535D20.json)
 }
 } // namespace gamemd
 
 // 0x535D30
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_3(void * aTxtStructureTa)
+wchar_t * DeployCommandClass::performAction_3()
 {
-
-  return GetStringCSF(aTxtStructureTa, 0, g_Str_File_Init_CPP, 6186); /*0x535d46*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535D30.json)
 }
 } // namespace gamemd
 
 // 0x535D50
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_4()
+wchar_t * DeployCommandClass::performAction_4()
 {
-
-  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 6188); /*0x535d66*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535D50.json)
 }
 } // namespace gamemd
 
 // 0x535D70
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_5(void * aTxtStructureTa_0)
+wchar_t * DeployCommandClass::performAction_5()
 {
-
-  return GetStringCSF(aTxtStructureTa_0, 0, g_Str_File_Init_CPP, 6190); /*0x535d86*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535D70.json)
 }
 } // namespace gamemd
 
 // 0x535D90
 namespace gamemd {
-char CreateTeamCommand::performAction_6()
+char DeployCommandClass::performAction_6()
 {
-
-  int _7342A0; // eax
-  int v2; // eax
-  unsigned int *v4; // [esp-4h] [ebp-4h]
-
-  LOBYTE(_7342A0) = ((PlayerClass *)(&stru_880D2C))->HasPlayers(); /*0x535d95*/
-  if ( (unsigned char)_7342A0 ) /*0x535d9c*/
-  {
-    SidebarClass::SwitchTab((int)&dword_87F7E8, 0); /*0x535da5*/
-    _7342A0 = UI_Create_7342A0(); /*0x535daa*/
-    if ( _7342A0 ) /*0x535db1*/
-    {
-      v4 = (unsigned int *)_7342A0; /*0x535db5*/
-      v2 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)_7342A0 + 400))(_7342A0, 0, 0); /*0x535dbc*/
-      LOBYTE(_7342A0) = (unsigned char)(BuildingPlacement::Activate(dword_A83D4C, v2, v4)); /*0x535dc9*/
-    }
-  }
-  return _7342A0; /*0x535dce*/
-
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535D90.json)
 }
 } // namespace gamemd
 
 // 0x535DE0
 namespace gamemd {
-char * CreateTeamCommand::performAction_7()
+char * DeployCommandClass::performAction_7()
 {
-
-  return aDefensetab; /*0x535de5*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535DE0.json)
 }
 } // namespace gamemd
 
 // 0x535DF0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_8(void * aTxtDefenseTab)
+wchar_t * DeployCommandClass::performAction_8()
 {
-
-  return GetStringCSF(aTxtDefenseTab, 0, g_Str_File_Init_CPP, 6212); /*0x535e06*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535DF0.json)
 }
 } // namespace gamemd
 
 // 0x535E10
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_9()
+wchar_t * DeployCommandClass::performAction_9()
 {
-
-  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 6214); /*0x535e26*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535E10.json)
 }
 } // namespace gamemd
 
 // 0x535E30
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_10()
+wchar_t * DeployCommandClass::performAction_10()
 {
-
-  return GetStringCSF((wchar_t *)(aTxtDefenseTabD), 0, g_Str_File_Init_CPP, 6216); /*0x535e46*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535E30.json)
 }
 } // namespace gamemd
 
 // 0x535E50
 namespace gamemd {
-char CreateTeamCommand::performAction_11()
+char DeployCommandClass::performAction_11()
 {
-
-  int _7342B0; // eax
-  int v2; // eax
-  unsigned int *v4; // [esp-4h] [ebp-4h]
-
-  LOBYTE(_7342B0) = ((PlayerClass *)(&stru_881CC0))->HasPlayers(); /*0x535e55*/
-  if ( (unsigned char)_7342B0 ) /*0x535e5c*/
-  {
-    SidebarClass::SwitchTab((int)&dword_87F7E8, 1); /*0x535e65*/
-    _7342B0 = UI_Create_7342B0(); /*0x535e6a*/
-    if ( _7342B0 ) /*0x535e71*/
-    {
-      v4 = (unsigned int *)_7342B0; /*0x535e75*/
-      v2 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)_7342B0 + 400))(_7342B0, 0, 0); /*0x535e7c*/
-      LOBYTE(_7342B0) = (unsigned char)(BuildingPlacement::Activate(dword_A83D4C, v2, v4)); /*0x535e89*/
-    }
-  }
-  return _7342B0; /*0x535e8e*/
-
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535E50.json)
 }
 } // namespace gamemd
 
 // 0x535EA0
 namespace gamemd {
-char * CreateTeamCommand::performAction_12()
+char * DeployCommandClass::performAction_12()
 {
-
-  return aInfantrytab; /*0x535ea5*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535EA0.json)
 }
 } // namespace gamemd
 
 // 0x535EB0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_13()
+wchar_t * DeployCommandClass::performAction_13()
 {
-
-  return GetStringCSF((wchar_t *)(aTxtInfantryTab), 0, g_Str_File_Init_CPP, 6238); /*0x535ec6*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535EB0.json)
 }
 } // namespace gamemd
 
 // 0x535ED0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_14()
+wchar_t * DeployCommandClass::performAction_14()
 {
-
-  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 6240); /*0x535ee6*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535ED0.json)
 }
 } // namespace gamemd
 
 // 0x535EF0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_15()
+wchar_t * DeployCommandClass::performAction_15()
 {
-
-  return GetStringCSF((wchar_t *)(aTxtInfantryTab_0), 0, g_Str_File_Init_CPP, 6242); /*0x535f06*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535EF0.json)
 }
 } // namespace gamemd
 
 // 0x535F10
 namespace gamemd {
-int CreateTeamCommand::performAction_16()
+int DeployCommandClass::performAction_16()
 {
-
-  int result; // eax
-
-  result = ((PlayerClass *)(&stru_882C54))->HasPlayers(); /*0x535f15*/
-  if ( (unsigned char)result ) /*0x535f1c*/
-    return SidebarClass::SwitchTab((int)&dword_87F7E8, 2); /*0x535f25*/
-  return result; /*0x535f2a*/
-
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535F10.json)
 }
 } // namespace gamemd
 
 // 0x535F30
 namespace gamemd {
-char * CreateTeamCommand::performAction_17()
+char * DeployCommandClass::performAction_17()
 {
-
-  return aUnittab; /*0x535f35*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535F30.json)
 }
 } // namespace gamemd
 
 // 0x535F40
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_18()
+wchar_t * DeployCommandClass::performAction_18()
 {
-
-  return GetStringCSF((wchar_t *)(aTxtUnitTab), 0, g_Str_File_Init_CPP, 6259); /*0x535f56*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535F40.json)
 }
 } // namespace gamemd
 
 // 0x535F60
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_19()
+wchar_t * DeployCommandClass::performAction_19()
 {
-
-  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 6261); /*0x535f76*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535F60.json)
 }
 } // namespace gamemd
 
 // 0x535F80
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_20()
+wchar_t * DeployCommandClass::performAction_20()
 {
-
-  return GetStringCSF((wchar_t *)(aTxtUnitTabDesc), 0, g_Str_File_Init_CPP, 6263); /*0x535f96*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535F80.json)
 }
 } // namespace gamemd
 
 // 0x535FA0
 namespace gamemd {
-int CreateTeamCommand::performAction_21()
+int DeployCommandClass::performAction_21()
 {
-
-  int result; // eax
-
-  result = ((PlayerClass *)(&stru_883BE8))->HasPlayers(); /*0x535fa5*/
-  if ( (unsigned char)result ) /*0x535fac*/
-    return SidebarClass::SwitchTab((int)&dword_87F7E8, 3); /*0x535fb5*/
-  return result; /*0x535fba*/
-
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535FA0.json)
 }
 } // namespace gamemd
 
 // 0x536090
 namespace gamemd {
-SelectTeamCommand * CreateTeamCommand::performAction_22(char a2)
+SelectTeamCommand * DeployCommandClass::performAction_22(char a2)
 {
-
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_CommandClass); /*0x536099*/
-  if ( (a2 & 1) != 0 ) /*0x53609f*/
-    __3_YAXPAX_Z(this); /*0x5360a2*/
-  return (std::locale::facet *)this; /*0x5360ac*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536090.json)
 }
 } // namespace gamemd
 
 // 0x536180
 namespace gamemd {
-AddTeamCommand * CreateTeamCommand::performAction_23(char a2)
+AddTeamCommand * DeployCommandClass::performAction_23(char a2)
 {
-
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_CommandClass); /*0x536189*/
-  if ( (a2 & 1) != 0 ) /*0x53618f*/
-    __3_YAXPAX_Z(this); /*0x536192*/
-  return (std::locale::facet *)this; /*0x53619c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536180.json)
 }
 } // namespace gamemd
 
 // 0x536270
 namespace gamemd {
-CenterTeamCommand * CreateTeamCommand::performAction_24(char a2)
+CenterTeamCommand * DeployCommandClass::performAction_24(char a2)
 {
-
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_CommandClass); /*0x536279*/
-  if ( (a2 & 1) != 0 ) /*0x53627f*/
-    __3_YAXPAX_Z(this); /*0x536282*/
-  return (std::locale::facet *)this; /*0x53628c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536270.json)
 }
 } // namespace gamemd
 
 // 0x536580
 namespace gamemd {
-TauntCommandClass * CreateTeamCommand::performAction_25(char a2)
+TauntCommandClass * DeployCommandClass::performAction_25(char a2)
 {
-
-  *(unsigned int *)this->CommandClass = &vt_CommandClass; /*0x536589*/
-  if ( (a2 & 1) != 0 ) /*0x53658f*/
-    __3_YAXPAX_Z(this); /*0x536592*/
-  return (std::locale::facet *)this; /*0x53659c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536580.json)
 }
 } // namespace gamemd
 
 // 0x5365A0
 namespace gamemd {
-char * CreateTeamCommand::performAction_26()
+char * DeployCommandClass::performAction_26()
 {
-
-  return aNextobject; /*0x5365a5*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005365A0.json)
 }
 } // namespace gamemd
 
 // 0x5365B0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_27(void * aTxtNextObject)
+wchar_t * DeployCommandClass::performAction_27()
 {
-
-  return GetStringCSF(aTxtNextObject, 0, g_Str_File_Init_CPP, 6526); /*0x5365c6*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005365B0.json)
 }
 } // namespace gamemd
 
 // 0x5365D0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_28()
+wchar_t * DeployCommandClass::performAction_28()
 {
-
-  return GetStringCSF((wchar_t *)(g_Str_TXT_SELECTION), 0, g_Str_File_Init_CPP, 6528); /*0x5365e6*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005365D0.json)
 }
 } // namespace gamemd
 
 // 0x5365F0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_29()
+wchar_t * DeployCommandClass::performAction_29()
 {
-
-  return GetStringCSF(aTxtNextObjectD, 0, g_Str_File_Init_CPP, 6530); /*0x536606*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005365F0.json)
 }
 } // namespace gamemd
 
 // 0x536610
 namespace gamemd {
-unsigned char * CreateTeamCommand::performAction_30()
+unsigned char * DeployCommandClass::performAction_30()
 {
-
-  MapClass *v3; // esi
-  unsigned char *v4; // eax
-  AnimClass *result; // eax
-  AnimClass *v6; // esi
-  MapClass *v7; // [esp-4h] [ebp-4h]
-  TacticalClass *v8; // [esp-4h] [ebp-4h]
-
-  TacticalClass::SetObserverMode((TacticalClass *)&dword_87F7E8, 0); /*0x536617*/
-  TacticalClass::SetDisplayMode((TacticalClass *)&dword_87F7E8, 0, 0); /*0x536625*/
-  ((BuildingClass *)((BuildingClass *)&dword_87F7E8))->TogglePower2(0); /*0x536631*/
-  ((BuildingClass *)((BuildingClass *)&dword_87F7E8))->TogglePower(0); /*0x53663d*/
-  if ( dword_A8ECC8 ) /*0x536649*/
-    v4 = *(unsigned char **)dword_A8ECBC; /*0x536650*/
-  else
-    v4 = 0; /*0x536654*/
-  v7 = v3; /*0x536656*/
-  result = (AnimClass *)sub_4AA2B0(v4); /*0x53665d*/
-  v6 = result; /*0x536662*/
-  if ( result ) /*0x536666*/
-  {
-    MapClass::UnselectAll_ClearLimboLaunchers(v7); /*0x536668*/
-    (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))(v6); /*0x536671*/
-    TacticalClass::InterpolateView(v8); /*0x53667c*/
-    return (AnimClass *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1); /*0x536688*/
-  }
-  return result; /*0x53668e*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536610.json)
 }
 } // namespace gamemd
 
 // 0x5366A0
 namespace gamemd {
-char * CreateTeamCommand::performAction_31()
+char * DeployCommandClass::performAction_31()
 {
-
-  return g_INI_Key_PlanningMode; /*0x5366a5*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005366A0.json)
 }
 } // namespace gamemd
 
 // 0x5366B0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_32()
+wchar_t * DeployCommandClass::performAction_32()
 {
-
-  return GetStringCSF(aCmndPlanningmo, 0, g_Str_File_Init_CPP, 6580); /*0x5366c6*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005366B0.json)
 }
 } // namespace gamemd
 
 // 0x5366D0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_33()
+wchar_t * DeployCommandClass::performAction_33()
 {
-
-  return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6582); /*0x5366e6*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005366D0.json)
 }
 } // namespace gamemd
 
 // 0x5366F0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_34()
+wchar_t * DeployCommandClass::performAction_34()
 {
-
-  return GetStringCSF(aCmndPlanningmo_0, 0, g_Str_File_Init_CPP, 6584); /*0x536706*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005366F0.json)
 }
 } // namespace gamemd
 
 // 0x536710
 namespace gamemd {
-BOOL CreateTeamCommand::performAction_35()
+int DeployCommandClass::performAction_35()
 {
-
-  char v2; // [esp+5h] [ebp+5h]
-
-  return (v2 & 7) != 0; /*0x53671b*/
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536710.json)
 }
 } // namespace gamemd
 
 // 0x536730
 namespace gamemd {
-char CreateTeamCommand::performAction_36()
+char DeployCommandClass::performAction_36()
 {
-
-  return 1; /*0x536732*/
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536730.json)
 }
 } // namespace gamemd
 
 // 0x536740
 namespace gamemd {
-unsigned int CreateTeamCommand::performAction_37()
+unsigned int DeployCommandClass::performAction_37()
 {
-
-  int v2; // [esp+4h] [ebp+4h]
-
-  return ((unsigned int)~v2 >> 11) & 1; /*0x53674c*/
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536740.json)
 }
 } // namespace gamemd
 
 // 0x536750
 namespace gamemd {
-int CreateTeamCommand::performAction_38()
+int DeployCommandClass::performAction_38()
 {
-
-  char v2; // [esp+5h] [ebp+5h]
-
-  if ( (v2 & 8) != 0 ) /*0x536757*/
-    return UI_Create_731A70(0); /*0x53675b*/
-  else
-    return UI_Create_731A50(0); /*0x536765*/
-
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536750.json)
 }
 } // namespace gamemd
 
 // 0x536770
 namespace gamemd {
-char * CreateTeamCommand::performAction_39()
+char * DeployCommandClass::performAction_39()
 {
-
-  return aCombatantselec; /*0x536775*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536770.json)
 }
 } // namespace gamemd
 
 // 0x536780
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_40()
+wchar_t * DeployCommandClass::performAction_40()
 {
-
-  return GetStringCSF(aCmndCombatants, 0, g_Str_File_Init_CPP, 6664); /*0x536796*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536780.json)
 }
 } // namespace gamemd
 
 // 0x5367A0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_41()
+wchar_t * DeployCommandClass::performAction_41()
 {
-
-  return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6666); /*0x5367b6*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005367A0.json)
 }
 } // namespace gamemd
 
 // 0x5367C0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_42()
+wchar_t * DeployCommandClass::performAction_42()
 {
-
-  return GetStringCSF(aCmndCombatants_0, 0, g_Str_File_Init_CPP, 6668); /*0x5367d6*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005367C0.json)
 }
 } // namespace gamemd
 
 // 0x5367E0
 namespace gamemd {
-int CreateTeamCommand::performAction_43()
+int DeployCommandClass::performAction_43()
 {
-
-  unsigned int v2; // [esp+4h] [ebp+4h]
-
-  return (v2 >> 8) & 1; /*0x5367ea*/
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005367E0.json)
 }
 } // namespace gamemd
 
 // 0x5367F0
 namespace gamemd {
-int CreateTeamCommand::performAction_44()
+int DeployCommandClass::performAction_44()
 {
-
-  unsigned int v1; // ecx
-  unsigned int v3; // [esp+4h] [ebp+4h]
-
-  v1 = v3 >> 8; /*0x5367f4*/
-  LOBYTE(v1) = (v3 & 0x100) == 0; /*0x5367f9*/
-  return ((int (*)(unsigned int))loc_732280)(v1); /*0x536801*/
-
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005367F0.json)
 }
 } // namespace gamemd
 
 // 0x536810
 namespace gamemd {
-char * CreateTeamCommand::performAction_45()
+char * DeployCommandClass::performAction_45()
 {
-
-  return g_INI_Key_TypeSelect; /*0x536815*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536810.json)
 }
 } // namespace gamemd
 
 // 0x536820
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_46()
+wchar_t * DeployCommandClass::performAction_46()
 {
-
-  return GetStringCSF(aCmndTypeselect, 0, g_Str_File_Init_CPP, 6690); /*0x536836*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536820.json)
 }
 } // namespace gamemd
 
 // 0x536840
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_47()
+wchar_t * DeployCommandClass::performAction_47()
 {
-
-  return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6692); /*0x536856*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536840.json)
 }
 } // namespace gamemd
 
 // 0x536860
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_48()
+wchar_t * DeployCommandClass::performAction_48()
 {
-
-  return GetStringCSF(aCmndTypeselect_0, 0, g_Str_File_Init_CPP, 6694); /*0x536876*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536860.json)
 }
 } // namespace gamemd
 
 // 0x536880
 namespace gamemd {
-int CreateTeamCommand::performAction_49()
+int DeployCommandClass::performAction_49()
 {
-
-  unsigned int v2; // [esp+4h] [ebp+4h]
-
-  return (v2 >> 8) & 1; /*0x53688a*/
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536880.json)
 }
 } // namespace gamemd
 
 // 0x536890
 namespace gamemd {
-char CreateTeamCommand::performAction_50()
+char DeployCommandClass::performAction_50()
 {
-
-  return 1; /*0x536892*/
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536890.json)
 }
 } // namespace gamemd
 
 // 0x5368A0
 namespace gamemd {
-unsigned int CreateTeamCommand::performAction_51()
+unsigned int DeployCommandClass::performAction_51()
 {
-
-  int v2; // [esp+4h] [ebp+4h]
-
-  return ((unsigned int)~v2 >> 11) & 1; /*0x5368ac*/
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005368A0.json)
 }
 } // namespace gamemd
 
 // 0x5368B0
 namespace gamemd {
-char CreateTeamCommand::performAction_52()
+char DeployCommandClass::performAction_52()
 {
-
-  char v2; // [esp+5h] [ebp+5h]
-
-  if ( (v2 & 8) != 0 ) /*0x5368b7*/
-    return UI_Create_732CC0(); /*0x5368b9*/
-  else
-    return UI_Create_732CA0(); /*0x5368c1*/
-
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005368B0.json)
 }
 } // namespace gamemd
 
 // 0x5368D0
 namespace gamemd {
-char * CreateTeamCommand::performAction_53()
+char * DeployCommandClass::performAction_53()
 {
-
-  return aHealthnav; /*0x5368d5*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005368D0.json)
 }
 } // namespace gamemd
 
 // 0x5368E0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_54()
+wchar_t * DeployCommandClass::performAction_54()
 {
-
-  return GetStringCSF(aCmndHealthnavi, 0, g_Str_File_Init_CPP, 6728); /*0x5368f6*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005368E0.json)
 }
 } // namespace gamemd
 
 // 0x536900
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_55()
+wchar_t * DeployCommandClass::performAction_55()
 {
-
-  return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6730); /*0x536916*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536900.json)
 }
 } // namespace gamemd
 
 // 0x536920
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_56()
+wchar_t * DeployCommandClass::performAction_56()
 {
-
-  return GetStringCSF(aCmndHealthnavi_0, 0, g_Str_File_Init_CPP, 6732); /*0x536936*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536920.json)
 }
 } // namespace gamemd
 
 // 0x536940
 namespace gamemd {
-int CreateTeamCommand::performAction_57()
+int DeployCommandClass::performAction_57()
 {
-
-  unsigned int v2; // [esp+4h] [ebp+4h]
-
-  return (v2 >> 8) & 1; /*0x53694a*/
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536940.json)
 }
 } // namespace gamemd
 
 // 0x536950
 namespace gamemd {
-int CreateTeamCommand::performAction_58()
+int DeployCommandClass::performAction_58()
 {
-
-  char v2; // [esp+5h] [ebp+5h]
-
-  return UpdateUnitHealthTooltip((v2 & 1) == 0); /*0x536961*/
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536950.json)
 }
 } // namespace gamemd
 
 // 0x536970
 namespace gamemd {
-char * CreateTeamCommand::performAction_59()
+char * DeployCommandClass::performAction_59()
 {
-
-  return aVeterancynav; /*0x536975*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536970.json)
 }
 } // namespace gamemd
 
@@ -1196,36 +738,9 @@ wchar_t * CreateTeamCommand::performAction_68()
 
 // 0x536A80
 namespace gamemd {
-unsigned char * CreateTeamCommand::performAction_69()
+unsigned char * DeployCommandClass::performAction_69()
 {
-
-  MapClass *v3; // esi
-  unsigned char *v4; // eax
-  AnimClass *result; // eax
-  AnimClass *v6; // esi
-  MapClass *v7; // [esp-4h] [ebp-4h]
-  TacticalClass *v8; // [esp-4h] [ebp-4h]
-
-  TacticalClass::SetObserverMode((TacticalClass *)&dword_87F7E8, 0); /*0x536a87*/
-  TacticalClass::SetDisplayMode((TacticalClass *)&dword_87F7E8, 0, 0); /*0x536a95*/
-  ((BuildingClass *)((BuildingClass *)&dword_87F7E8))->TogglePower2(0); /*0x536aa1*/
-  ((BuildingClass *)((BuildingClass *)&dword_87F7E8))->TogglePower(0); /*0x536aad*/
-  if ( dword_A8ECC8 ) /*0x536ab9*/
-    v4 = *(unsigned char **)dword_A8ECBC; /*0x536ac0*/
-  else
-    v4 = 0; /*0x536ac4*/
-  v7 = v3; /*0x536ac6*/
-  result = (AnimClass *)sub_4AA380(v4); /*0x536acd*/
-  v6 = result; /*0x536ad2*/
-  if ( result ) /*0x536ad6*/
-  {
-    MapClass::UnselectAll_ClearLimboLaunchers(v7); /*0x536ad8*/
-    (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))(v6); /*0x536ae1*/
-    TacticalClass::InterpolateView(v8); /*0x536aec*/
-    return (AnimClass *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1); /*0x536af8*/
-  }
-  return result; /*0x536afe*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536A80.json)
 }
 } // namespace gamemd
 
@@ -1512,19 +1027,9 @@ wchar_t * CreateTeamCommand::performAction_98()
 
 // 0x536E00
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_99()
+wchar_t * DeployCommandClass::performAction_99()
 {
-
-  wchar_t *result; // eax
-
-  result = g_SelectionManager; /*0x536e00*/
-  if ( (int)g_SelectionManager > 0 ) /*0x536e07*/
-  {
-    TacticalClass::InterpolateView(); /*0x536e0e*/
-    return (wchar_t *)MapClass::MarkForRedraw(&MapClass_Instance, 1); /*0x536e1a*/
-  }
-  return result; /*0x536e1f*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536E00.json)
 }
 } // namespace gamemd
 
@@ -1758,19 +1263,9 @@ wchar_t * CreateTeamCommand::performAction_122()
 
 // 0x5370A0
 namespace gamemd {
-int CreateTeamCommand::performAction_123()
+int DeployCommandClass::performAction_123()
 {
-
-  int result; // eax
-
-  result = *(unsigned int *)&dword_A8B238; /*0x5370a0*/
-  if ( *(unsigned int *)&dword_A8B238 ) /*0x5370a7*/
-  {
-    if ( *(unsigned int *)&dword_A8B238 != 5 ) /*0x5370ac*/
-      return UI_Create_731A30(); /*0x5370ae*/
-  }
-  return result; /*0x5370b3*/
-
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005370A0.json)
 }
 } // namespace gamemd
 
@@ -1818,12 +1313,7 @@ wchar_t * CreateTeamCommand::performAction_127()
 namespace gamemd {
 int CreateTeamCommand::performAction_128()
 {
-
-  unsigned int result; // eax
-
-  LOWORD(result) = UI_Create_734120(); /*0x537130*/
-  return result; /*0x537135*/
-
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537130.json)
 }
 {
     return UI_Create_734120();
@@ -2188,23 +1678,9 @@ wchar_t * CreateTeamCommand::performAction_166()
 
 // 0x537710
 namespace gamemd {
-void * CreateTeamCommand::performAction_167()
+void * DeployCommandClass::performAction_167()
 {
-
-  int *v1; // eax
-  int v2; // edx
-  void *result; // eax
-  int v4[2]; // [esp+0h] [ebp-10h] BYREF
-  int v5[2]; // [esp+8h] [ebp-8h] BYREF
-
-  v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53771e*/
-  v5[0] = *v1; /*0x537725*/
-  v5[1] = v1[1]; /*0x53773c*/
-  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x537745*/
-  result = dword_A8B230; /*0x537747*/
-  *(int *)((char *)&dword_A8B230[373].nextArrayIndex + 2) = v2; /*0x53774c*/
-  return result; /*0x537752*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537710.json)
 }
 } // namespace gamemd
 
@@ -2250,23 +1726,9 @@ wchar_t * CreateTeamCommand::performAction_171()
 
 // 0x5377D0
 namespace gamemd {
-void * CreateTeamCommand::performAction_172()
+void * DeployCommandClass::performAction_172()
 {
-
-  int *v1; // eax
-  int v2; // edx
-  void *result; // eax
-  int v4[2]; // [esp+0h] [ebp-10h] BYREF
-  int v5[2]; // [esp+8h] [ebp-8h] BYREF
-
-  v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x5377de*/
-  v5[0] = *v1; /*0x5377e5*/
-  v5[1] = v1[1]; /*0x5377fc*/
-  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x537805*/
-  result = dword_A8B230; /*0x537807*/
-  *(int *)((char *)&dword_A8B230[373].referenceCount + 2) = v2; /*0x53780c*/
-  return result; /*0x537812*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005377D0.json)
 }
 } // namespace gamemd
 
@@ -2312,23 +1774,9 @@ wchar_t * CreateTeamCommand::performAction_176()
 
 // 0x537890
 namespace gamemd {
-void * CreateTeamCommand::performAction_177()
+void * DeployCommandClass::performAction_177()
 {
-
-  int *v1; // eax
-  int v2; // edx
-  void *result; // eax
-  int v4[2]; // [esp+0h] [ebp-10h] BYREF
-  int v5[2]; // [esp+8h] [ebp-8h] BYREF
-
-  v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53789e*/
-  v5[0] = *v1; /*0x5378a5*/
-  v5[1] = v1[1]; /*0x5378bc*/
-  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x5378c5*/
-  result = dword_A8B230; /*0x5378c7*/
-  *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2) = v2; /*0x5378cc*/
-  return result; /*0x5378d2*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537890.json)
 }
 } // namespace gamemd
 
@@ -2374,23 +1822,9 @@ wchar_t * CreateTeamCommand::performAction_181()
 
 // 0x537950
 namespace gamemd {
-void * CreateTeamCommand::performAction_182()
+void * DeployCommandClass::performAction_182()
 {
-
-  int *v1; // eax
-  int v2; // edx
-  void *result; // eax
-  int v4[2]; // [esp+0h] [ebp-10h] BYREF
-  int v5[2]; // [esp+8h] [ebp-8h] BYREF
-
-  v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53795e*/
-  v5[0] = *v1; /*0x537965*/
-  v5[1] = v1[1]; /*0x53797c*/
-  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x537985*/
-  result = dword_A8B230; /*0x537987*/
-  *(int *)((char *)&dword_A8B230[374].vtable0 + 2) = v2; /*0x53798c*/
-  return result; /*0x537992*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537950.json)
 }
 } // namespace gamemd
 
@@ -2436,14 +1870,9 @@ wchar_t * CreateTeamCommand::performAction_186()
 
 // 0x537A10
 namespace gamemd {
-bool CreateTeamCommand::performAction_187()
+bool DeployCommandClass::performAction_187()
 {
-
-  if ( !dword_A8ECC8 || MapClass::GetScrollMode((MapClass *)&dword_87F7E8) ) /*0x537a1e*/
-    return ((MapClass *)((int)&dword_87F7E8))->SetScrollMode(0); /*0x537a43*/
-  else
-    return ((MapClass *)((int)&dword_87F7E8))->SetScrollMode(*(unsigned int *)dword_A8ECBC); /*0x537a34*/
-
+     return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537A10.json)
 }
 } // namespace gamemd
 
@@ -2489,21 +1918,9 @@ void ** CreateTeamCommand::performAction_191()
 
 // 0x537AF0
 namespace gamemd {
-int CreateTeamCommand::performAction_192()
+int DeployCommandClass::performAction_192()
 {
-
-  bool v1; // zf
-  char *v2; // ecx
-  char *v3; // eax
-
-  v1 = byte_B04880 != 0; /*0x537b07*/
-  byte_B04880 = byte_B04880 == 0; /*0x537b09*/
-  v2 = aExtraSyncInfoO; /*0x537b10*/
-  if ( v1 ) /*0x537b15*/
-    v2 = aExtraSyncInfoO_0; /*0x537b17*/
-  v3 = CharToWideString(v2); /*0x537b1c*/
-  return MessageListClass::AddMessage(&unk_A8BC60, 0, 0, (wchar_t *)v3, 3, 16454, 150, 0); /*0x537b30*/
-
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537AF0.json)
 }
 } // namespace gamemd
 
@@ -2549,610 +1966,361 @@ wchar_t * CreateTeamCommand::performAction_196()
 
 // 0x537EF0
 namespace gamemd {
-bool CreateTeamCommand::performAction_197(int a1)
+bool DeployCommandClass::performAction_197(int a1)
 {
-
-  bool result; // al
-
-  result = LOBYTE(stru_A8EB00.__pad_CD4[1]) == 0; /*0x537ef7*/
-  LOBYTE(stru_A8EB00.__pad_CD4[1]) = LOBYTE(stru_A8EB00.__pad_CD4[1]) == 0; /*0x537efa*/
-  return result; /*0x537eff*/
-
+    (void)a1; return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537EF0.json)
 }
 } // namespace gamemd
 
 // 0x537FA0
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_198(char a2)
+std::locale::facet * DeployCommandClass::performAction_198(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x537fa9*/
-  if ( (a2 & 1) != 0 ) /*0x537faf*/
-    __3_YAXPAX_Z(this); /*0x537fb2*/
-  return (std::locale::facet *)this; /*0x537fbc*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537FA0.json)
 }
 } // namespace gamemd
 
 // 0x537FC0
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_199(char a2)
+std::locale::facet * DeployCommandClass::performAction_199(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x537fc9*/
-  if ( (a2 & 1) != 0 ) /*0x537fcf*/
-    __3_YAXPAX_Z(this); /*0x537fd2*/
-  return (std::locale::facet *)this; /*0x537fdc*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537FC0.json)
 }
 } // namespace gamemd
 
 // 0x537FE0
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_200(char a2)
+std::locale::facet * DeployCommandClass::performAction_200(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x537fe9*/
-  if ( (a2 & 1) != 0 ) /*0x537fef*/
-    __3_YAXPAX_Z(this); /*0x537ff2*/
-  return (std::locale::facet *)this; /*0x537ffc*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537FE0.json)
 }
 } // namespace gamemd
 
 // 0x538000
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_201(char a2)
+std::locale::facet * DeployCommandClass::performAction_201(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x538009*/
-  if ( (a2 & 1) != 0 ) /*0x53800f*/
-    __3_YAXPAX_Z(this); /*0x538012*/
-  return (std::locale::facet *)this; /*0x53801c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538000.json)
 }
 } // namespace gamemd
 
 // 0x538020
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_202(char a2)
+std::locale::facet * DeployCommandClass::performAction_202(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x538029*/
-  if ( (a2 & 1) != 0 ) /*0x53802f*/
-    __3_YAXPAX_Z(this); /*0x538032*/
-  return (std::locale::facet *)this; /*0x53803c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538020.json)
 }
 } // namespace gamemd
 
 // 0x538040
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_203(char a2)
+std::locale::facet * DeployCommandClass::performAction_203(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x538049*/
-  if ( (a2 & 1) != 0 ) /*0x53804f*/
-    __3_YAXPAX_Z(this); /*0x538052*/
-  return (std::locale::facet *)this; /*0x53805c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538040.json)
 }
 } // namespace gamemd
 
 // 0x538060
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_204(char a2)
+std::locale::facet * DeployCommandClass::performAction_204(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x538069*/
-  if ( (a2 & 1) != 0 ) /*0x53806f*/
-    __3_YAXPAX_Z(this); /*0x538072*/
-  return (std::locale::facet *)this; /*0x53807c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538060.json)
 }
 } // namespace gamemd
 
 // 0x538080
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_205(char a2)
+std::locale::facet * DeployCommandClass::performAction_205(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x538089*/
-  if ( (a2 & 1) != 0 ) /*0x53808f*/
-    __3_YAXPAX_Z(this); /*0x538092*/
-  return (std::locale::facet *)this; /*0x53809c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538080.json)
 }
 } // namespace gamemd
 
 // 0x5380A0
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_206(char a2)
+std::locale::facet * DeployCommandClass::performAction_206(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x5380a9*/
-  if ( (a2 & 1) != 0 ) /*0x5380af*/
-    __3_YAXPAX_Z(this); /*0x5380b2*/
-  return (std::locale::facet *)this; /*0x5380bc*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005380A0.json)
 }
 } // namespace gamemd
 
 // 0x5380C0
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_207(char a2)
+std::locale::facet * DeployCommandClass::performAction_207(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x5380c9*/
-  if ( (a2 & 1) != 0 ) /*0x5380cf*/
-    __3_YAXPAX_Z(this); /*0x5380d2*/
-  return (std::locale::facet *)this; /*0x5380dc*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005380C0.json)
 }
 } // namespace gamemd
 
 // 0x5380E0
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_208(char a2)
+std::locale::facet * DeployCommandClass::performAction_208(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x5380e9*/
-  if ( (a2 & 1) != 0 ) /*0x5380ef*/
-    __3_YAXPAX_Z(this); /*0x5380f2*/
-  return (std::locale::facet *)this; /*0x5380fc*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005380E0.json)
 }
 } // namespace gamemd
 
 // 0x538100
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_209(char a2)
+std::locale::facet * DeployCommandClass::performAction_209(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x538109*/
-  if ( (a2 & 1) != 0 ) /*0x53810f*/
-    __3_YAXPAX_Z(this); /*0x538112*/
-  return (std::locale::facet *)this; /*0x53811c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538100.json)
 }
 } // namespace gamemd
 
 // 0x538120
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_210(char a2)
+std::locale::facet * DeployCommandClass::performAction_210(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x538129*/
-  if ( (a2 & 1) != 0 ) /*0x53812f*/
-    __3_YAXPAX_Z(this); /*0x538132*/
-  return (std::locale::facet *)this; /*0x53813c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538120.json)
 }
 } // namespace gamemd
 
 // 0x538140
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_211(char a2)
+std::locale::facet * DeployCommandClass::performAction_211(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x538149*/
-  if ( (a2 & 1) != 0 ) /*0x53814f*/
-    __3_YAXPAX_Z(this); /*0x538152*/
-  return (std::locale::facet *)this; /*0x53815c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538140.json)
 }
 } // namespace gamemd
 
 // 0x538160
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_212(char a2)
+std::locale::facet * DeployCommandClass::performAction_212(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x538169*/
-  if ( (a2 & 1) != 0 ) /*0x53816f*/
-    __3_YAXPAX_Z(this); /*0x538172*/
-  return (std::locale::facet *)this; /*0x53817c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538160.json)
 }
 } // namespace gamemd
 
 // 0x538180
 namespace gamemd {
-std::locale::facet * CreateTeamCommand::performAction_213(char a2)
+std::locale::facet * DeployCommandClass::performAction_213(char a2)
 {
-
-  this->m_0 = (int)&vt_CommandClass; /*0x538189*/
-  if ( (a2 & 1) != 0 ) /*0x53818f*/
-    __3_YAXPAX_Z(this); /*0x538192*/
-  return (std::locale::facet *)this; /*0x53819c*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538180.json)
 }
 } // namespace gamemd
 
 // 0x5381A0
 namespace gamemd {
-ToggleSellCommandClass * CreateTeamCommand::performAction_214(char a2)
+ToggleSellCommandClass * DeployCommandClass::performAction_214(char a2)
 {
-
-  *this = (ToggleSellCommandClass)&vt_CommandClass; /*0x5381a9*/
-  if ( (a2 & 1) != 0 ) /*0x5381af*/
-    __3_YAXPAX_Z(this); /*0x5381b2*/
-  return (std::locale::facet *)this; /*0x5381bc*/
-
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005381A0.json)
 }
 } // namespace gamemd
 
 // 0x5381C0
 namespace gamemd {
-ToggleRepairCommandClass * CreateTeamCommand::performAction_215(unsigned int * Block, char a2)
+ToggleRepairCommandClass * DeployCommandClass::performAction_215(unsigned int * Block, char a2)
 {
-
-  *Block = (ToggleRepairCommandClass)&vt_CommandClass; /*0x5381c9*/
-  if ( (a2 & 1) != 0 ) /*0x5381cf*/
-    __3_YAXPAX_Z(Block); /*0x5381d2*/
-  return Block; /*0x5381dc*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005381C0.json)
 }
 } // namespace gamemd
 
 // 0x5381E0
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_216(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_216(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x5381e9*/
-  if ( (a2 & 1) != 0 ) /*0x5381ef*/
-    __3_YAXPAX_Z(Block); /*0x5381f2*/
-  return &Block->m_0; /*0x5381fc*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005381E0.json)
 }
 } // namespace gamemd
 
 // 0x538200
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_217(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_217(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x538209*/
-  if ( (a2 & 1) != 0 ) /*0x53820f*/
-    __3_YAXPAX_Z(Block); /*0x538212*/
-  return &Block->m_0; /*0x53821c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538200.json)
 }
 } // namespace gamemd
 
 // 0x538220
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_218(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_218(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x538229*/
-  if ( (a2 & 1) != 0 ) /*0x53822f*/
-    __3_YAXPAX_Z(Block); /*0x538232*/
-  return &Block->m_0; /*0x53823c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538220.json)
 }
 } // namespace gamemd
 
 // 0x538240
 namespace gamemd {
-ScatterCommandClass * CreateTeamCommand::performAction_219(unsigned int * Block, char a2)
+ScatterCommandClass * DeployCommandClass::performAction_219(unsigned int * Block, char a2)
 {
-
-  *Block = (ScatterCommandClass)&vt_CommandClass; /*0x538249*/
-  if ( (a2 & 1) != 0 ) /*0x53824f*/
-    __3_YAXPAX_Z(Block); /*0x538252*/
-  return Block; /*0x53825c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538240.json)
 }
 } // namespace gamemd
 
 // 0x538260
 namespace gamemd {
-GuardCommandClass * CreateTeamCommand::performAction_220(unsigned int * Block, char a2)
+GuardCommandClass * DeployCommandClass::performAction_220(unsigned int * Block, char a2)
 {
-
-  *Block = (GuardCommandClass)&vt_CommandClass; /*0x538269*/
-  if ( (a2 & 1) != 0 ) /*0x53826f*/
-    __3_YAXPAX_Z(Block); /*0x538272*/
-  return Block; /*0x53827c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538260.json)
 }
 } // namespace gamemd
 
 // 0x538280
 namespace gamemd {
-StopCommandClass * CreateTeamCommand::performAction_221(unsigned int * Block, char a2)
+StopCommandClass * DeployCommandClass::performAction_221(unsigned int * Block, char a2)
 {
-
-  *Block = (StopCommandClass)&vt_CommandClass; /*0x538289*/
-  if ( (a2 & 1) != 0 ) /*0x53828f*/
-    __3_YAXPAX_Z(Block); /*0x538292*/
-  return Block; /*0x53829c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538280.json)
 }
 } // namespace gamemd
 
 // 0x5382A0
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_222(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_222(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x5382a9*/
-  if ( (a2 & 1) != 0 ) /*0x5382af*/
-    __3_YAXPAX_Z(Block); /*0x5382b2*/
-  return &Block->m_0; /*0x5382bc*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005382A0.json)
 }
 } // namespace gamemd
 
 // 0x5382C0
 namespace gamemd {
-DeployCommandClass * CreateTeamCommand::performAction_223(unsigned int * Block, char a2)
+DeployCommandClass * DeployCommandClass::performAction_223(unsigned int * Block, char a2)
 {
-
-  *Block = (DeployCommandClass)&vt_CommandClass; /*0x5382c9*/
-  if ( (a2 & 1) != 0 ) /*0x5382cf*/
-    __3_YAXPAX_Z(Block); /*0x5382d2*/
-  return Block; /*0x5382dc*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005382C0.json)
 }
 } // namespace gamemd
 
 // 0x5382E0
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_224(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_224(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x5382e9*/
-  if ( (a2 & 1) != 0 ) /*0x5382ef*/
-    __3_YAXPAX_Z(Block); /*0x5382f2*/
-  return &Block->m_0; /*0x5382fc*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005382E0.json)
 }
 } // namespace gamemd
 
 // 0x538300
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_225(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_225(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x538309*/
-  if ( (a2 & 1) != 0 ) /*0x53830f*/
-    __3_YAXPAX_Z(Block); /*0x538312*/
-  return &Block->m_0; /*0x53831c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538300.json)
 }
 } // namespace gamemd
 
 // 0x538320
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_226(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_226(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x538329*/
-  if ( (a2 & 1) != 0 ) /*0x53832f*/
-    __3_YAXPAX_Z(Block); /*0x538332*/
-  return &Block->m_0; /*0x53833c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538320.json)
 }
 } // namespace gamemd
 
 // 0x538340
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_227(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_227(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x538349*/
-  if ( (a2 & 1) != 0 ) /*0x53834f*/
-    __3_YAXPAX_Z(Block); /*0x538352*/
-  return &Block->m_0; /*0x53835c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538340.json)
 }
 } // namespace gamemd
 
 // 0x538360
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_228(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_228(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x538369*/
-  if ( (a2 & 1) != 0 ) /*0x53836f*/
-    __3_YAXPAX_Z(Block); /*0x538372*/
-  return &Block->m_0; /*0x53837c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538360.json)
 }
 } // namespace gamemd
 
 // 0x538380
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_229(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_229(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x538389*/
-  if ( (a2 & 1) != 0 ) /*0x53838f*/
-    __3_YAXPAX_Z(Block); /*0x538392*/
-  return &Block->m_0; /*0x53839c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538380.json)
 }
 } // namespace gamemd
 
 // 0x5383A0
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_230(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_230(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x5383a9*/
-  if ( (a2 & 1) != 0 ) /*0x5383af*/
-    __3_YAXPAX_Z(Block); /*0x5383b2*/
-  return &Block->m_0; /*0x5383bc*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005383A0.json)
 }
 } // namespace gamemd
 
 // 0x5383C0
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_231(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_231(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x5383c9*/
-  if ( (a2 & 1) != 0 ) /*0x5383cf*/
-    __3_YAXPAX_Z(Block); /*0x5383d2*/
-  return &Block->m_0; /*0x5383dc*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005383C0.json)
 }
 } // namespace gamemd
 
 // 0x5383E0
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_232(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_232(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x5383e9*/
-  if ( (a2 & 1) != 0 ) /*0x5383ef*/
-    __3_YAXPAX_Z(Block); /*0x5383f2*/
-  return &Block->m_0; /*0x5383fc*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005383E0.json)
 }
 } // namespace gamemd
 
 // 0x538400
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_233(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_233(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x538409*/
-  if ( (a2 & 1) != 0 ) /*0x53840f*/
-    __3_YAXPAX_Z(Block); /*0x538412*/
-  return &Block->m_0; /*0x53841c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538400.json)
 }
 } // namespace gamemd
 
 // 0x538420
 namespace gamemd {
-unsigned int * CreateTeamCommand::performAction_234(unsigned int * Block, char a2)
+unsigned int * DeployCommandClass::performAction_234(unsigned int * Block, char a2)
 {
-
-  Block->m_0 = (int)&vt_CommandClass; /*0x538429*/
-  if ( (a2 & 1) != 0 ) /*0x53842f*/
-    __3_YAXPAX_Z(Block); /*0x538432*/
-  return &Block->m_0; /*0x53843c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538420.json)
 }
 } // namespace gamemd
 
 // 0x538440
 namespace gamemd {
-ScreenCaptureCommandClass * CreateTeamCommand::performAction_235(unsigned int * Block, char a2)
+ScreenCaptureCommandClass * DeployCommandClass::performAction_235(unsigned int * Block, char a2)
 {
-
-  *(unsigned int *)Block->CommandClass = &vt_CommandClass; /*0x538449*/
-  if ( (a2 & 1) != 0 ) /*0x53844f*/
-    __3_YAXPAX_Z(Block); /*0x538452*/
-  return Block->CommandClass; /*0x53845c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538440.json)
 }
 } // namespace gamemd
 
 // 0x538460
 namespace gamemd {
-PageUserCommandClass * CreateTeamCommand::performAction_236(unsigned int * Block, char a2)
+PageUserCommandClass * DeployCommandClass::performAction_236(unsigned int * Block, char a2)
 {
-
-  *(unsigned int *)Block->CommandClass = &vt_CommandClass; /*0x538469*/
-  if ( (a2 & 1) != 0 ) /*0x53846f*/
-    __3_YAXPAX_Z(Block); /*0x538472*/
-  return Block->CommandClass; /*0x53847c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538460.json)
 }
 } // namespace gamemd
 
 // 0x538480
 namespace gamemd {
-CursorPositionCommandClass * CreateTeamCommand::performAction_237(unsigned int * Block, char a2)
+CursorPositionCommandClass * DeployCommandClass::performAction_237(unsigned int * Block, char a2)
 {
-
-  *(unsigned int *)Block->CommandClass = &vt_CommandClass; /*0x538489*/
-  if ( (a2 & 1) != 0 ) /*0x53848f*/
-    __3_YAXPAX_Z(Block); /*0x538492*/
-  return Block->CommandClass; /*0x53849c*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538480.json)
 }
 } // namespace gamemd
 
 // 0x5384A0
 namespace gamemd {
-DeleteCommandClass * CreateTeamCommand::performAction_238(unsigned int * Block, char a2)
+DeleteCommandClass * DeployCommandClass::performAction_238(unsigned int * Block, char a2)
 {
-
-  *(unsigned int *)Block->CommandClass = &vt_CommandClass; /*0x5384a9*/
-  if ( (a2 & 1) != 0 ) /*0x5384af*/
-    __3_YAXPAX_Z(Block); /*0x5384b2*/
-  return Block->CommandClass; /*0x5384bc*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005384A0.json)
 }
 } // namespace gamemd
 
 // 0x5384C0
 namespace gamemd {
-void CreateTeamCommand::performAction_239()
+void DeployCommandClass::performAction_239()
 {
-
-  void *v2; // eax
-
-  v2 = *(void **)((char *)this + 4); /*0x5384c6*/
-  *((unsigned int *)this + 4) = 0; /*0x5384c9*/
-  if ( v2 && *((unsigned char *)this + 13) ) /*0x5384d0*/
-  {
-    __3_YAXPAX_Z(v2); /*0x5384d6*/
-    *((unsigned int *)this + 1) = 0; /*0x5384de*/
-  }
-  *((unsigned char *)this + 13) = 0; /*0x5384e1*/
-  *((unsigned int *)this + 2) = 0; /*0x5384e4*/
-
+      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005384C0.json)
 }
 } // namespace gamemd
 
 // 0x5384F0
 namespace gamemd {
-unsigned int CreateTeamCommand::performAction_240(int a2)
+unsigned int DeployCommandClass::performAction_240(int a2)
 {
-
-  if ( *((unsigned char *)this + 12) ) /*0x5384f0*/
-    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x538505*/
-  else
-    return 0; /*0x5384f7*/
-
+    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005384F0.json)
 }
 } // namespace gamemd
 
 // 0x538750
 namespace gamemd {
+int DeployCommandClass::performAction_242(unsigned int * a2)
 {
-  int result; // eax
-  unsigned int *i; // ecx
-
-    v2 = *((unsigned int *)this + 16);
-  result = 0; /*0x538753*/
-  if ( v2 <= 0 ) /*0x538758*/
-  {
-    int v2; // edx
-    int result; // eax
-    unsigned int *i; // ecx
-
-      v2 = *((unsigned int *)this + 16);
-    result = 0; /*0x538753*/
-    if ( v2 <= 0 ) /*0x538758*/
-      return -1; /*0x53876f*/
-      for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
-    {
-      if ( ++result >= v2 ) /*0x53876d*/
-        return -1; /*0x53876d*/
-    }
-    return result; /*0x538772*/
-  }
-  return result; /*0x538772*/
+    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538750.json)
 }
     return -1;
     for ( i = (int *)this->Items; *i != *a2; ++i )
@@ -3165,23 +2333,8 @@ namespace gamemd {
 
 // 0x538AE0
 namespace gamemd {
-DynamicVector * CreateTeamCommand::performAction_244(unsigned int * Block, char a2)
+DynamicVector * DeployCommandClass::performAction_244(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = (void *)*(Block + 1); /*0x538ae3*/
-  *Block = &vt_VectorClass; /*0x538ae6*/
-  if ( v3 && *((unsigned char *)Block + 13) ) /*0x538af0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x538af8*/
-    *(Block + 1) = 0; /*0x538b00*/
-  }
-  *((unsigned char *)Block + 13) = 0; /*0x538b0b*/
-  *(Block + 2) = 0; /*0x538b11*/
-  if ( (a2 & 1) != 0 ) /*0x538b18*/
-    __3_YAXPAX_Z(Block); /*0x538b1b*/
-  return Block; /*0x538b25*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538AE0.json)
 }
 } // namespace gamemd

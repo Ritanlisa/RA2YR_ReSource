@@ -9,7 +9,7 @@ static LogLevel g_level = LogLevel::Info;
 
 void LogSetLevel(LogLevel level)
 {
-    g_level = (gamemd::LogLevel)((void *)(level));
+    g_level = level;
 }
 
 void LogWrite(LogLevel level, const char* fmt, ...)

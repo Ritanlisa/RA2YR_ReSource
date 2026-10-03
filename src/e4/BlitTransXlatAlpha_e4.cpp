@@ -12,81 +12,16 @@
 
 // 0x493930
 namespace gamemd {
-int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+int Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-
-  int result; // eax
-  Stream * v11;
-  unsigned short *v13; // eax
-  unsigned short *v14; // [esp+18h] [ebp+14h]
-
-  result = a4; /*0x493930*/
-  if ( a4 > 0 ) /*0x49393b*/
-  {
-    v11 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)))));
-    v14 = (unsigned short *)a4; /*0x493952*/
-    do /*0x4939c4*/
-    {
-      if ( argC < (uint16_t)*a5 && *a2 ) /*0x493967*/
-      {
-        *a1 = (unsigned short)((gamemd::Stream *)(3 * (this->m_8 & (*a1 >> 2)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2))));
-        *a5 = (unsigned short)((gamemd::Stream *)(argC));
-        v11 = (gamemd::Stream *)(g_ZBufferDescriptor);
-      }
-      ++a1; /*0x4939a6*/
-      ++a2; /*0x4939aa*/
-      v13 = a5 + 1; /*0x4939ae*/
-      if ( (unsigned int)(a5 + 1) >= (unsigned int)(((unsigned int *)(v11))[1]).Stream_field_08 ) /*0x4939b4*/
-        v13 = (unsigned short *)((char *)v13 - ((unsigned int *)(v11))[1].Stream_field_0C); /*0x4939b6*/
-      a5 = v13; /*0x4939b9*/
-      result = (int)v14 - 1; /*0x4939bf*/
-      v14 = (unsigned short *)((char *)v14 - 1); /*0x4939c0*/
-    }
-    while ( v14 ); /*0x4939c4*/
-  }
-  return result; /*0x4939c9*/
-
+    (void)a1; (void)a2; (void)a4; (void)argC; (void)a5; (void)a7; (void)a8; (void)a9; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00493930.json)
 }
 }
 // 0x493A60
 namespace gamemd {
-int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+int Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-
-  int result; // eax
-  Stream * v12;
-  unsigned int v14;
-  unsigned short *v15; // eax
-  unsigned short *v16; // [esp+14h] [ebp+14h]
-
-  result = a4; /*0x493a60*/
-  if ( a4 > 0 ) /*0x493a6a*/
-  {
-    v12 = (gamemd::Stream *)((int)((gamemd::Stream *)(argC)));
-    v14 = g_ZBufferDescriptor; /*0x493a80*/
-    v16 = (unsigned short *)a4; /*0x493a86*/
-    do /*0x493aee*/
-    {
-      if ( v12 < (gamemd::Stream *)(uint16_t)*a5 && *a2 ) /*0x493a97*/
-      {
-        v12 = (gamemd::Stream *)((int)((gamemd::Stream *)(argC)));
-        *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 1)); /*0x493ac6*/
-        *a5 = argC; /*0x493ac9*/
-        v14 = g_ZBufferDescriptor; /*0x493acc*/
-      }
-      v15 = a5 + 1; /*0x493ad2*/
-      ++a2; /*0x493ad8*/
-      ++a1; /*0x493ad9*/
-      if ( (unsigned int)(a5 + 1) >= (unsigned int)(((unsigned int *)(v14))[1]).Stream_field_08 ) /*0x493ade*/
-        v15 = (unsigned short *)((char *)v15 - ((unsigned int *)(v14))[1].Stream_field_0C); /*0x493ae0*/
-      a5 = v15; /*0x493ae3*/
-      result = (int)v16 - 1; /*0x493ae9*/
-      v16 = (unsigned short *)((char *)v16 - 1); /*0x493aea*/
-    }
-    while ( v16 ); /*0x493aee*/
-  }
-  return result; /*0x493af4*/
-
+    (void)a1; (void)a2; (void)a4; (void)argC; (void)a5; (void)a7; (void)a8; (void)a9; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00493A60.json)
 }
 }
 // 0x493B90

@@ -59,20 +59,6 @@ LABEL_5:
 namespace gamemd {
 int VoxelPaletteClass::LoadFromFile()
 {
-
-  int v2; // esi
-  VoxelPalette v4; // [esp+4h] [ebp-20h] BYREF
-  int v5; // [esp+Ch] [ebp-18h]
-  int v6; // [esp+10h] [ebp-14h]
-
-  VoxelPalette::Init((int)(&v4), (int)&unk_B2FB78,(void *)((int)g_VoxelColorPalette)); /*0x753b84*/
-  v2 = ((VoxelPaletteClass *)((VoxelPaletteClass *)&v4))->ConvertFromFile((int)this); /*0x753b93*/
-  dword_B2FB74 = *(unsigned int *)v4.__pad_0; /*0x753ba1*/
-  dword_B4317C = v4.VoxelPalette_field_0x04; /*0x753baa*/
-  dword_B2FB58 = v5; /*0x753bb4*/
-  dword_B43178 = v6; /*0x753bba*/
-  ((VoxelPalette*)&v4)->Reset(); /*0x753bbf*/
-  return v2; /*0x753bc6*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x753B70)
 }
 } // namespace gamemd

@@ -13,40 +13,9 @@
 
 // 0x44F6E0
 namespace gamemd {
-unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
+unsigned int * sub_44F6E0(unsigned int * a2, int a3)
 {
-
-  int v3; // ebx
-  int v4; // edi
-  unsigned int *v5; // eax
-  int v6; // esi
-  int v7; // ecx
-  unsigned char v9[12]; // [esp+14h] [ebp-Ch] BYREF
-  int v10; // [esp+28h] [ebp+8h]
-
-  v3 = 6; /*0x44f6ed*/
-  v4 = 5; /*0x44f6f2*/
-  v5 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->vtable1 + 18))((gamemd::ObjectClass *)this, v9); /*0x44f6f7*/
-  v6 = *v5 / 256; /*0x44f71b*/
-  v7 = v5[1] / 256; /*0x44f71e*/
-  if ( a3 ) /*0x44f72e*/
-  {
-    if ( a3 == 2 ) /*0x44f733*/
-      v4 = 0; /*0x44f735*/
-  }
-  else
-  {
-    v3 = 0; /*0x44f739*/
-  }
-  if ( (int16_t)v6 - *(unsigned int *)&stru_87F5F0.__pad_58[708] > *(unsigned int *)&stru_87F5F0.__pad_58[716] / 2 ) /*0x44f751*/
-    v3 = -v3; /*0x44f753*/
-  if ( (int16_t)v7 - *(unsigned int *)&stru_87F5F0.__pad_58[712] > *(unsigned int *)&stru_87F5F0.__pad_58[720] / 2 ) /*0x44f76b*/
-    v4 = -v4; /*0x44f76d*/
-  LOWORD(v10) = v6 + v3; /*0x44f77f*/
-  HIWORD(v10) = v7 + v4; /*0x44f784*/
-  *a2 = v10; /*0x44f78f*/
-  return a2; /*0x44f78d*/
-
+    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x0044F6E0.json)
 }
 } // namespace gamemd
 

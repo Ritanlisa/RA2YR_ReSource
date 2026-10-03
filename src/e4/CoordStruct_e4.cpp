@@ -10,16 +10,8 @@
 
 // 0x642740
 namespace gamemd {
-unsigned int * CoordStruct::Set2(void* aP1, AbstractClass * aP2)
+unsigned int * Set2(void* aP1, AbstractClass * aP2)
 {
-
-  int v4; // edx
-
-  v4 = (unsigned int)(*(unsigned int *)(aP1) << 8);
-  *((unsigned int *)this + 1) = (aP1[1]<< 8) + 128; /*0x642759*/
-  *((unsigned int *)this + 2) = (unsigned int)(aP2); /*0x642766*/
-  this->vfptr = (void *)(v4 + 128); /*0x642769*/
-return (unsigned int *)&this->vfptr; /*0x64276b*/
-
+    (void)aP1; (void)aP2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00642740.json)
 }
 }

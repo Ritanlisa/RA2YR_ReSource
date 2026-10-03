@@ -41,14 +41,8 @@ int E4Recv_636EB0::sub_636EB0()
 
 // 0x638C40
 namespace gamemd {
-bool E4Recv_638C40::sub_638C40(int a2, char a3)
+bool sub_638C40(int a2, char a3)
 {
-
-  if ( this != (gamemd::E4Recv_638C40 *)((ObjectClass *))1 && this != (ObjectClass *)11 ) /*0x638c48*/
-    return 0; /*0x638c48*/
-  if ( a3 == 11 ) /*0x638c50*/
-    return 1; /*0x638c54*/
-  return this == (gamemd::E4Recv_638C40 *)((ObjectClass *))11 && !a3; /*0x638c60*/
-
+    (void)a2; (void)a3; return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00638C40.json)
 }
 } // namespace gamemd

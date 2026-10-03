@@ -12,35 +12,6 @@
 namespace gamemd {
 bool Process::WaitForExit(DWORD dwMilliseconds, char aP2)
 {
-
-  const HANDLE *v3; // esi
-  BOOL v5; // eax
-
-  v3 = (const HANDLE *)((unsigned int *)this + 7); /*0x664614*/
-  ((Debug *)this)->Log(); /*0x66461d*/
-  if ( !*v3 ) /*0x664629*/
-    return 1; /*0x664629*/
-  if ( WaitForMultipleObjects(1u, v3, 0, dwMilliseconds) != 258 ) /*0x664644*/
-  {
-    ((Debug *)this)->Log(); /*0x6646a7*/
-    *v3 = 0; /*0x6646af*/
-    return 1; /*0x6646b5*/
-  }
-  if ( !aP2 ) /*0x66464c*/
-    return 0; /*0x66464e*/
-  ((Debug *)this)->Log(); /*0x66465a*/
-  v5 = TerminateProcess(*v3, 0); /*0x664667*/
-  if ( v5 ) /*0x664671*/
-  {
-    *v3 = 0; /*0x664694*/
-    return v5; /*0x66469b*/
-  }
-  else
-  {
-    GetLastError(); /*0x664674*/
-    ((Debug *)this)->Log(); /*0x664680*/
-    return 0; /*0x66468c*/
-  }
-
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x664610)
 }
 } // namespace gamemd

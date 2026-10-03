@@ -49,23 +49,6 @@ unsigned int AbstractClassVector::Write(int a2)
 namespace gamemd {
 int AbstractClassVector::Construct(int aP1, int aP2)
 {
-
-  this->AbstractClassVector_field_0x04 = (unsigned char)(0);
-  this->AbstractClassVector_field_0x08 = (unsigned char)(aP1);
-  LOBYTE(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0e91*/
-  BYTE1(this->AbstractClassVector_field_0x0C) = 0; /*0x4e0e95*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4e0e98*/
-  if ( aP1 ) /*0x4e0e9e*/
-  {
-    if ( aP2 ) /*0x4e0ea6*/
-    {
-      this->AbstractClassVector_field_0x04 = (unsigned char)(aP2);
-return (int)this->__pad_0; /*0x4e0eae*/
-    }
-    this->AbstractClassVector_field_0x04 = __2_YAPAXI_Z(4 * aP1); /*0x4e0ebd*/
-    BYTE1(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0ec0*/
-  }
-return (int)this->__pad_0; /*0x4e0ead*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E0E80)
 }
 } // namespace gamemd

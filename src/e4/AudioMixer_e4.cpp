@@ -182,30 +182,13 @@ int AudioMixer::RequestOrEndBuffer(int a1, unsigned int a2)
 namespace gamemd {
 int AudioMixer::Shutdown()
 {
-
-  if ( g_Audio_Enabled ) /*0x406e88*/
-    ((AudioQueue *)(g_Audio_Enabled))->StopAllVoices(1); /*0x406e8f*/
-  return ((gamemd::AudioStream *)this)->CleanupChannels();
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x406E80)
 }
 } // namespace gamemd
 // 0x753620
 namespace gamemd {
 int AudioMixer::Pump()
 {
-
-  int result; // eax
-
-  if ( g_InfantryDrawState ) /*0x753628*/
-    AudioMixer::ProcessAudioFrame(); /*0x75362a*/
-  result = dword_B1D428; /*0x75362f*/
-  if ( dword_B1D428 ) /*0x753636*/
-  {
-    result = --dword_B1D428; /*0x75363d*/
-    if ( dword_B1D428 < 0 ) /*0x753643*/
-      dword_B1D428 = 0; /*0x753645*/
-  }
-  return result; /*0x75364f*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x753620)
 }
 } // namespace gamemd

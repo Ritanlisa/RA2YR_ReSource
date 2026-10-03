@@ -12,18 +12,6 @@
 namespace gamemd {
 int sub_7535D0()
 {
-  int result; // eax
-
-  if ( dword_B1D4C4 ) /*0x7535d7*/
-  {
-    *(unsigned int *)(dword_B1D4C4 + 80) = 2; /*0x7535d9*/
-    dword_B1D4C4 = 0; /*0x7535e0*/
-  }
-  if ( g_InfantryDrawState ) /*0x7535f2*/
-    ((Audio *)(g_InfantryDrawState))->Release(); /*0x7535f4*/
-    result = ((ThemeClass *)this)->ClearQueues();
-  dword_B1D428 = 0; /*0x7535fe*/
-  dword_B1D3D8 = 0; /*0x753608*/
-  return result; /*0x753612*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7535D0)
 }
 } // namespace gamemd

@@ -41,20 +41,7 @@ int HoverLocomotionClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int HoverLocomotionClass::BeginMove(int a1, int * a2)
 {
-
-  int v2; // edi
-
-  v2 = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2); /*0x5170c1*/
-  if ( v2 >= 0 && a1 ) /*0x5170c9*/
-  {
-    *(unsigned int *)a1->LocomotionClass = &vt_LocomotionClass; /*0x5170ce*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &vt_LocomotionClass; /*0x5170d4*/
-    FrameSnapshot::Init((FrameSnapshot *)a1->LocomotionFacing); /*0x5170db*/
-    *(unsigned int *)a1->LocomotionClass = &vt_HoverLocomotionClass; /*0x5170e0*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &vt_HoverLocomotionClass; /*0x5170e6*/
-  }
-  return v2; /*0x5170ef*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5170B0)
 }
 } // namespace gamemd
 // 0x5172B0
@@ -70,13 +57,6 @@ int HoverLocomotionClass::StubReturn120()
 namespace gamemd {
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
-
-  *(unsigned int *)Block->LocomotionClass = &vt_HoverLocomotionClass; /*0x5172c3*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &vt_HoverLocomotionClass; /*0x5172c9*/
-  ((LocomotionClass*)(gamemd::LocomotionClass *)Block)->Construct(); /*0x5172d0*/
-  if ( (a2 & 1) != 0 ) /*0x5172da*/
-    __3_YAXPAX_Z(Block); /*0x5172dd*/
-  return Block->LocomotionClass; /*0x5172e7*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5172C0)
 }
 } // namespace gamemd

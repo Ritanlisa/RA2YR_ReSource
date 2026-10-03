@@ -20,55 +20,13 @@
 namespace gamemd {
 void * COMClass::lockServer(rc_ptr_base * Block, char a2)
 {
-
-  int v3; // eax
-  char *v4; // ebp
-  ComPtr *v5; // esi
-  int v6; // eax
-  int v7; // edi
-
-  if ( (a2 & 2) != 0 ) /*0x76701b*/
-  {
-    v3 = *((unsigned int *)Block - 1); /*0x76701d*/
-    v4 = (char *)Block - 4; /*0x767021*/
-    v5 = (ComPtr *)((char *)Block + 8 * v3); /*0x767024*/
-    v6 = v3 - 1; /*0x767027*/
-    if ( v6 >= 0 ) /*0x767028*/
-    {
-      v7 = v6 + 1; /*0x76702b*/
-      do /*0x76703f*/
-      {
-        v5 = (ComPtr *)((char *)v5 - 8); /*0x76702e*/
-        *(unsigned int *)v5->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x767033*/
-        ((ComPtr *)(v5))->Release(); /*0x767039*/
-        --v7; /*0x76703e*/
-      }
-      while ( v7 ); /*0x76703f*/
-    }
-    if ( (a2 & 1) != 0 ) /*0x767045*/
-      __3_YAXPAX_Z(v4); /*0x767048*/
-    return v4; /*0x767050*/
-  }
-  else
-  {
-    *(unsigned int *)Block->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76705a*/
-    ((ComPtr *)((ComPtr *)Block))->Release(); /*0x767060*/
-    if ( (a2 & 1) != 0 ) /*0x767068*/
-      __3_YAXPAX_Z(Block); /*0x76706b*/
-    return Block->__pad_0; /*0x767073*/
-  }
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x767010)
 }
 } // namespace gamemd
 // 0x7669F0
 namespace gamemd {
 VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
 {
-
-  *(unsigned int *)Block->__pad_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x7669f9*/
-  if ( (a2 & 1) != 0 ) /*0x7669ff*/
-    __3_YAXPAX_Z(Block); /*0x766a02*/
-  return Block->__pad_0; /*0x766a0c*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7669F0)
 }
 } // namespace gamemd

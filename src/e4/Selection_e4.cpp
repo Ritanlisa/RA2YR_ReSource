@@ -14,13 +14,7 @@
 namespace gamemd {
 int Selection::SetCurrent()
 {
-
-  int result; // eax
-
-  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = this; /*0x731d00*/
-  LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 0; /*0x731d06*/
-  return result; /*0x731d0d*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731D00)
 }
 } // namespace gamemd
 // 0x732D00

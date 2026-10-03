@@ -147,13 +147,5 @@ int Struct::ZeroInitAndSetup_0_0()
 // 0x5F75E0
 unsigned int * Struct::InitTriple256(unsigned int * a1)
 {
-
-  void *v1; // esi
-
-  v1 = (void *)(2 * dword_AC1474); /*0x5f75ec*/
-  a1->AbstractTypeClass = (void *)256; /*0x5f75f7*/
-  ((unsigned int *)a1)[0] = (unsigned int)((void *)256); /*0x5f75f9*/
-  ((unsigned int *)a1)[0] = (unsigned int)(v1); /*0x5f75fc*/
-  return a1; /*0x5f75ff*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5F75E0)
 }

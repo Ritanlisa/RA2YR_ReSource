@@ -12,42 +12,7 @@
 namespace gamemd {
 void sub_72B460()
 {
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[972] ) /*0x72b46a*/
-  {
-    RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[972]); /*0x72b46d*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[972] = 0; /*0x72b475*/
-  }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[976] ) /*0x72b483*/
-  {
-    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[976])( /*0x72b489*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[976],
-      1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[976] = 0; /*0x72b48b*/
-  }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[980] ) /*0x72b498*/
-  {
-    RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[980]); /*0x72b49b*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[980] = 0; /*0x72b4a3*/
-  }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[984] ) /*0x72b4b1*/
-  {
-    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[984])( /*0x72b4b7*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[984],
-      1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[984] = 0; /*0x72b4b9*/
-  }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[988] ) /*0x72b4c6*/
-  {
-    RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[988]); /*0x72b4c9*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[988] = 0; /*0x72b4d1*/
-  }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[992] ) /*0x72b4df*/
-  {
-    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[992])( /*0x72b4e5*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[992],
-      1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[992] = 0; /*0x72b4e7*/
-  }
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x72B460)
 }
 } // namespace gamemd
 

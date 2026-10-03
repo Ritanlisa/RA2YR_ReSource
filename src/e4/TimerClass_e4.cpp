@@ -101,30 +101,9 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
 }
 // 0x5CEAD0
 namespace gamemd {
-signed int TimerClass::GetRemaining()
+signed intGetRemaining()
 {
-
-  signed int result; // eax
-  signed int v3; // edi
-
-  result = *((unsigned int *)this + 4); /*0x5cead3*/
-  if ( result != -1 ) /*0x5cead9*/
-  {
-    v3 = *((unsigned int *)this + 6); /*0x5ceadc*/
-    result = TimerGetTicks() - *((unsigned int *)this + 4); /*0x5ceaec*/
-    if ( result >= v3 ) /*0x5ceaf1*/
-    {
-      *((unsigned int *)this + 6) = 0; /*0x5ceb04*/
-      *((unsigned int *)this + 4) = -1; /*0x5ceb07*/
-    }
-    else
-    {
-      *((unsigned int *)this + 4) = -1; /*0x5ceaf5*/
-      *((unsigned int *)this + 6) = v3 - result; /*0x5ceafc*/
-    }
-  }
-  return result; /*0x5ceb00*/
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005CEAD0.json)
 }
 }
 // 0x5CEB20

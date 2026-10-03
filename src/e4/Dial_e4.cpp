@@ -260,24 +260,9 @@ int Dial8Class_48::FindItem(unsigned int * a2)
 }
 // 0x4A8030
 namespace gamemd {
-VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
+VectorClass_flat * DynamicVector::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x4a8033*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4a8036*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4a8040*/
-  {
-    __3_YAXPAX_Z(v3); /*0x4a8048*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4a8050*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x4a805b*/
-  Block->m_8 = 0; /*0x4a8061*/
-  if ( (a2 & 1) != 0 ) /*0x4a8068*/
-    __3_YAXPAX_Z(Block); /*0x4a806b*/
-  return Block->__pad_0; /*0x4a8075*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x004A8030.json)
 }
 } // namespace gamemd
 

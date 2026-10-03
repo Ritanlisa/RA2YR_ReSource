@@ -27,28 +27,7 @@ int ColorListClass::SetColor()
 namespace gamemd {
 int ColorListClass::Clear(unsigned int a2)
 {
-
-  int result; // eax
-  int v4; // ecx
-
-  result = a2; /*0x557f40*/
-  if ( a2 >= *((unsigned int *)this + 17) ) /*0x557f4a*/
-  {
-    *((unsigned int *)this + 91) = 0; /*0x557f9b*/
-  }
-  else
-  {
-    *((unsigned int *)this + 91) = a2; /*0x557f4c*/
-    (*(void (**))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x557f56*/
-    if ( *((unsigned int *)this + 91) < *((unsigned int *)this + 92) ) /*0x557f67*/
-      (*(void (**)(ListClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 192))((ListClass *)this, *((unsigned int *)this + 91)); /*0x557f6e*/
-    v4 = *((unsigned int *)this + 20); /*0x557f74*/
-    result = *((unsigned int *)this + 91); /*0x557f7d*/
-    if ( result >= v4 + *((unsigned int *)this + 92) ) /*0x557f87*/
-      return (*(int (**)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 192))((ListClass *)this, result - v4 + 1); /*0x557f91*/
-  }
-  return result; /*0x557f97*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x557F40)
 }
 } // namespace gamemd
 // 0x558010
@@ -84,29 +63,6 @@ int ColorListClass::GetColor(int a2)
 namespace gamemd {
 ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
 {
-
-  int v3; // eax
-  char *v4; // esi
-  void *v5; // eax
-
-  v3 = *((unsigned int *)Block + 93); /*0x488f05*/
-  v4 = (char *)Block + 372; /*0x488f0b*/
-  *(unsigned int *)Block->__pad_0 = &vt_ColorListClass; /*0x488f13*/
-  (*(void (**)(char *))(v3 + 12))((char *)Block + 372); /*0x488f19*/
-  *((unsigned int *)Block + 100) = 0; /*0x488f1e*/
-  v5 = (void *)*((unsigned int *)v4 + 1); /*0x488f24*/
-  *(unsigned int *)v4 = (unsigned int)(&vt_VectorClass); /*0x488f29*/
-  if ( v5 && v4[13] ) /*0x488f31*/
-  {
-    __3_YAXPAX_Z(v5); /*0x488f37*/
-    *((unsigned int *)v4 + 1) = 0; /*0x488f3f*/
-  }
-  v4[13] = 0; /*0x488f44*/
-  *((unsigned int *)v4 + 2) = 0; /*0x488f47*/
-  ((ListClass *)((ListClass *)Block))->Destruct(); /*0x488f4a*/
-  if ( (a2 & 1) != 0 ) /*0x488f54*/
-    __3_YAXPAX_Z(Block); /*0x488f57*/
-  return Block->__pad_0; /*0x488f61*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x488F00)
 }
 } // namespace gamemd

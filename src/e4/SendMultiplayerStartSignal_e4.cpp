@@ -14,12 +14,7 @@
 namespace gamemd {
 LRESULT sub_5E23A0()
 {
-  HWND Current; // eax
-  HWND DlgItem; // eax
-
-    Current = ((Dialog *)this)->GetCurrent();
-  DlgItem = GetDlgItem(Current, 1439); /*0x5e23ab*/
-  return SendMessageA(DlgItem, 0x4DCu, 0, 0); /*0x5e23c1*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5E23A0)
 }
 } // namespace gamemd
 
@@ -27,11 +22,6 @@ LRESULT sub_5E23A0()
 namespace gamemd {
 LRESULT sub_7A27D0()
 {
-  HWND Current; // eax
-  HWND DlgItem; // eax
-
-    Current = ((Dialog *)this)->GetCurrent();
-  DlgItem = GetDlgItem(Current, 1439); /*0x7a27db*/
-  return SendMessageA(DlgItem, 0x4DCu, 0, 0); /*0x7a27f1*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7A27D0)
 }
 } // namespace gamemd

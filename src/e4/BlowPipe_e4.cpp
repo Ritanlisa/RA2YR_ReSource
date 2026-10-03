@@ -618,24 +618,9 @@ int BlowPipe_23::FindItemIndex_1(unsigned int * a2)
 
 // 0x63ED90
 namespace gamemd {
-VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
+VectorClass_flat * DynamicVector::Destructor(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x63ed93*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x63ed96*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x63eda0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x63eda8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x63edb0*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x63edbb*/
-  Block->m_8 = 0; /*0x63edc1*/
-  if ( (a2 & 1) != 0 ) /*0x63edc8*/
-    __3_YAXPAX_Z(Block); /*0x63edcb*/
-  return Block->__pad_0; /*0x63edd5*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x0063ED90.json)
 }
 } // namespace gamemd
 

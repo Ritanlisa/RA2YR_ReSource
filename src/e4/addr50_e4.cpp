@@ -149,15 +149,7 @@ int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
 namespace gamemd {
 int House_GetTechLevel(int a1, int a2)
 {
-  int v4; // eax
-
-  if ( a2 < 0 ) /*0x5004e5*/
-    return 0; /*0x5004e7*/
-  v4 = (int)(((TechnoTypeClass *)(a1))->GetByTypeAndIndex(a2)); /*0x5004ed*/
-  if ( a1 == 6 || a1 == 7 ) /*0x5004fa*/
-    return v4->qE08; /*0x500500*/
-  else
-    return 0; /*0x5004fc*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5004E0)
 }
 } // namespace gamemd
 

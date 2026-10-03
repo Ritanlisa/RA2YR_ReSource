@@ -18,8 +18,7 @@ struct E4Recv_63DB20 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
     unsigned int AbstractClass;
-    unsigned int sub_63DB20;
 // --- flat members (END) ---
-         BOOLsub_63DB20(unsigned int * a2);  // 0x63DB20
+    int sub_63DB20(unsigned int * a2);  // 0x63DB20 (BOOL glue fix G42.36)
 };
 } // namespace gamemd
