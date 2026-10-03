@@ -4,6 +4,38 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Constructor_VectorClass_WeaponTypeClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_WarheadTypeClass___;  // G42.36 fwd supply
+class LoadTypeData;  // G42.36 fwd supply
+class Constructor_VectorClass_VoxelAnimClass___;  // G42.36 fwd supply
+class FindValue;  // G42.36 fwd supply
+class GetAt;  // G42.36 fwd supply
+class GetPtrOffset;  // G42.36 fwd supply
+class TryFreeAndClear;  // G42.36 fwd supply
+class LogicClass;  // G42.36 fwd supply
+class Constructor_VectorClass_ObjectClass___;  // G42.36 fwd supply
+class GetItem;  // G42.36 fwd supply
+class Constructor_VectorClass_IsometricTileClass___;  // G42.36 fwd supply
+class GetItemIndex;  // G42.36 fwd supply
+class Constructor_VectorClass_LightConvertClass___;  // G42.36 fwd supply
+class FindItemIndex;  // G42.36 fwd supply
+class Remove;  // G42.36 fwd supply
+class a1_1;  // G42.36 fwd supply
+class Add;  // G42.36 fwd supply
+class Get;  // G42.36 fwd supply
+class Clear;  // G42.36 fwd supply
+class SetCapacity_6;  // G42.36 fwd supply
+class SetCapacity_5;  // G42.36 fwd supply
+class SetCapacity_4;  // G42.36 fwd supply
+class SetCapacity_3;  // G42.36 fwd supply
+class SetCapacity_2;  // G42.36 fwd supply
+class SetCapacity_1;  // G42.36 fwd supply
+class SetCapacity_0;  // G42.36 fwd supply
+class SetCapacity;  // G42.36 fwd supply
+class EnumConnectionPointsClass;  // G42.36 fwd supply
+class a3_1;  // G42.36 fwd supply
+class Constructor;  // G42.36 fwd supply
+class a2_1;  // G42.36 fwd supply
 
 struct VectorClass_flat {
 // --- flat members (BEGIN) ---
@@ -40,7 +72,6 @@ struct VectorClass_flat {
     unsigned int vtable0;
     unsigned int IsInitialized;
     unsigned int Items;
-    void* RemoveObjectById;  // 0x0 (no offset truth)
 // --- flat members (END) ---
 VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);
 VectorClass_flat *  vt00(unsigned int * Block, char a2);
@@ -95,5 +126,38 @@ void ClearAndFree3();
 void ClearAndFree4();
 int Destroy(void *a1);
 // fused-garbage: void Desvoidvoid Destroy();
+    AbstractClass * * Release(int a2, unsigned int * a3);
+    int RemoveObjectById();
+    unsigned int * Constructor(EnumConnectionPointsClass * aP1, void *a2_1, void *a3_1);
+    int SetCapacity(int a1, int a2);
+    int SetCapacity_0(int a1, int a2);
+    int SetCapacity_1(int a1, int a2);
+    int SetCapacity_2(int a1, int a2);
+    unsigned int * SetCapacity_3(int a1, unsigned int * a2);
+    unsigned int * SetCapacity_4(int a1, unsigned int * a2);
+    int SetCapacity_5(int a1);
+    AbstractClass * * SetCapacity_6(int a2, unsigned int * a3);
+    int Clear(int a2, int a3);
+    int Get(int a2, void *a2_2);
+    char Add(int a2, void *a2_2, void *a3_1);
+    void Remove(void *a1_1);
+    int FindItemIndex(unsigned int * a2);
+    DynamicVector * Constructor_VectorClass_LightConvertClass___(unsigned int * Block, char a2);
+    unsigned int GetItemIndex(int a2);
+    DynamicVector * Constructor_VectorClass_IsometricTileClass___(unsigned int * Block, char a2);
+    int GetItem();
+    LogicClass * Constructor_VectorClass_ObjectClass___(unsigned int * Block, char a2);
+    void TryFreeAndClear();
+    unsigned int GetPtrOffset(int a2);
+    int GetAt(int a2);
+    int FindValue(unsigned int * a2);
+    int SetCapacity_0(int a1, int a2);
+    int SetCapacity(int a1, int a2);
+    DynamicVector * Constructor_VectorClass_VoxelAnimClass___(unsigned int * Block, char a2);
+    unsigned int LoadTypeData(int a2);
+    DynamicVector * Constructor_VectorClass_WarheadTypeClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_WeaponTypeClass___(unsigned int * Block, char a2);
+    int SetCapacity_0(int a1, int a2);
+    int SetCapacity(int a1, int a2);
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

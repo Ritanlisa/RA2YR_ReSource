@@ -5,6 +5,20 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Constructor_VectorClass_ScriptClass___;  // G42.36 fwd supply
+class QueryInterface;  // G42.36 fwd supply
+class FindItemIndex;  // G42.36 fwd supply
+class GetCapacity;  // G42.36 fwd supply
+class GetSize;  // G42.36 fwd supply
+class Remove;  // G42.36 fwd supply
+class Get;  // G42.36 fwd supply
+class GetItemIndex;  // G42.36 fwd supply
+class Destroy;  // G42.36 fwd supply
+class a1_1;  // G42.36 fwd supply
+class Constructor_ConvertClass;  // G42.36 fwd supply
+class Block;  // G42.36 fwd supply
+class SetCapacity;  // G42.36 fwd supply
+class Release;  // G42.36 fwd supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct DynamicVector {
 // --- flat members (BEGIN) ---
@@ -53,5 +67,22 @@ struct DynamicVector {
     char Add(DynamicVector * aP1, void *a2_1, void *a3_1);  // 0x6C6400
     unsigned int * Constructor_Techno(int a2, int a3);  // 0x7342D0
     char EnsureCapacity();  // 0x7AF000
+    char Add(int a2, void *a2_2, void *a3_1);
+    AbstractClass * * Release(int a2, int * a3);
+    AbstractClass * * SetCapacity(int a2, int * a3);
+    void * Constructor_ConvertClass(void ** Block, char a2);
+    int Destroy(void *a1_1);
+    unsigned int GetItemIndex(int a2);
+    int Get(int a2, void *a2_2);
+    void Remove(void *a1_1);
+    int GetSize(unsigned int * a2);
+    unsigned int GetCapacity(int a2);
+    int FindItemIndex(unsigned int * a2);
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_ScriptClass___(unsigned int * Block, char a2);
+    AbstractClass * * Release(int a2, int * a3);
+    AbstractClass * * SetCapacity(int a2, int * a3);
+    AbstractClass * * Release(int a2, int * a3);
+    AbstractClass * * SetCapacity(int a2, int * a3);
 };
 } // namespace gamemd
