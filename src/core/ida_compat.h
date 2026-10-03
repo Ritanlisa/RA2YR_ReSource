@@ -31,7 +31,12 @@ struct IdaRegVar {
     IdaRegVar() : v(0) {}
     IdaRegVar& operator=(unsigned long x) { v = x; return *this; }
     template <class T> IdaRegVar& operator=(T* p) { v = (unsigned long)p; return *this; }
-    operator unsigned long() const { return v; }
+    // G42.35c: explicit conversions -- the implicit operator unsigned long
+    // crossed with the global operator+(IdaRegVar, long) and made `_EBX + 36`
+    // ambiguous (C2666 x147 in HouseType/SuperWeapon). Boolean contexts
+    // (if (_EBX)) still work. The template T* overload fixes `(Class*)_EBX`.
+    explicit operator unsigned long() const { return v; }
+    template <class T> explicit operator T*() const { return (T*)(uintptr_t)v; }
 };
 inline unsigned long operator+(const IdaRegVar& r, long d) { return r.v + d; }
 inline unsigned long operator+(long d, const IdaRegVar& r) { return d + r.v; }
