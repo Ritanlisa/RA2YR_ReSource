@@ -268,9 +268,10 @@ public:
 
     // XSurface vtable ends at [35] GetPixelAtCoords — these two introduce
     // new virtuals here (DSurface vtable [36]/[37]); not overrides.
-    virtual bool DrawGradientLine(  // 0x4bf750
+    virtual bool DrawGradientLine( // 0x4bf750
+        const RectangleStruct& clip_rect,
         const Point2D& start, const Point2D& end,
-        int palette_idx, int fade_val,
+        const uint8_t* color_from, const uint8_t* color_to,
         float* gradient_start, float* gradient_step);
 
     virtual bool CheckBltStatus();  // impl at DSurface 0x4BAF20 (declared here, annotated there)
@@ -375,8 +376,9 @@ public:
     virtual int GetBytesPerPixel() const override;  // 0x4BAD60
     virtual int GetPitch() const override; // 0x4BAD70
     virtual bool DrawGradientLine( // 0x4BF750
+        const RectangleStruct& clip_rect,
         const Point2D& start, const Point2D& end,
-        int palette_idx, int fade_val,
+        const uint8_t* color_from, const uint8_t* color_to,
         float* gradient_start, float* gradient_step) override;
     virtual bool CheckBltStatus() override;  // 0x4BAF20
     virtual bool IsDSurface() const override final;  // 0x4C1AB0

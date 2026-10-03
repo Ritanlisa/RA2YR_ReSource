@@ -107,7 +107,7 @@ gamemd::XSurface::XSurface(int width, int height) noexcept {}
 // link stub (no binary body yet)
  bool gamemd::XSurface::DrawDashedLineStipple(const Point2D& start, const Point2D& end, uint16_t color, const uint8_t stipple[16], int dash_offset, bool update_z) { return {}; }
 // link stub (no binary body yet)
- bool gamemd::XSurface::DrawGradientLine(const Point2D& start, const Point2D& end, int palette_idx, int fade_val, float* gradient_start, float* gradient_step) { return {}; }
+ bool gamemd::XSurface::DrawGradientLine(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, const uint8_t* color_from, const uint8_t* color_to, float* gradient_start, float* gradient_step) { return {}; }
 // link stub (no binary body yet)
  bool gamemd::XSurface::DrawLineFaded(const Point2D& start, const Point2D& end, const uint8_t* stipple_pattern, int fade_start, int fade_end, bool z_buffer, float gradient_start, float gradient_step, bool flip_dir) { return {}; }
 // link stub (no binary body yet)
