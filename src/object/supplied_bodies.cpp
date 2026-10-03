@@ -112,6 +112,36 @@ struct stru_87F5F0_host {
     unsigned char __pad_58[0x280 - 0x58];  // 覆盖 __pad_58[416] = +0x1F8 (team 同款)
 };
 extern stru_87F5F0_host stru_87F5F0;    // data: 0x87F5F0
+// G42.34 W1: BuildingClass 迁移体词汇供给
+extern int g_BuildingClassPool;                 // data: 0x89C848 (globals_core 同款裸 extern)
+extern int FootClass_Array;                  // data: 0x8B3DC0  // G42.34 W2: e4_globals 同款裸 extern
+int PlayAudioAt2(unsigned int a1, int *a2, int a3);            // 0x750e20 真形
+int TimedCreateUnitAtCoords(int *a1, int a2, int a3, int a4);  // 0x6b5c90 真形
+int StandardCreateUnitAtCoords(int *a1, int a2, int a3, int a4); // 0x6b59a0 真形
+void * RandomCoordScatter(int a1, ...);          // 0x49f420 (5 参调用点变参兜底)
+double Math_CalcAngle(double a1, double a2);     // (IDA: Math::CalcAngle) 真形 (0x43ebdd/0x43ee13 家族)
+int ComputeMathFacingAngle(int a1, ...);         // (IDA: ComputeMathFacingAngle 0x43eca7 家族)
+void MapClass_MarkForRedraw(void *self, int a2); // (IDA: MapClass::MarkForRedraw)
+// Scenario 单例 @ 0xA8B230 旧 til 数组形态别名宿主 (team TU 同款)
+struct dword_A8B230_elem {
+    unsigned int vtable0;                    // +0x00 (idx*4 站点)
+    unsigned int NeedsSaveOrLink;
+    unsigned int referenceCount;
+    unsigned int uniqueId;
+};
+#define dword_A8B230_arr ((dword_A8B230_elem *)&dword_A8B230)
+// Random 真形载体 (0x65C7E0 Range / 0x65C780 State; team TU 同款 + State 补)
+struct Random_shadow { int Range(int a1, int a2); int State(); };
+// House::IsHumanPlayer 真形载体 (0x50B6F0; IDA 侧 House 已具名)
+struct House { static int IsHumanPlayer(void *self); };
+// VectorClass 原始 16B 栈形态载体 (ProcessDemolish v75; 0x441d6f)
+struct VectorClass_base16 {
+    void *vtable0;                    // 0x0
+    void *Items;                      // 0x4
+    int Capacity;                     // 0x8
+    unsigned int IsAllocated;         // 0xC 家族
+    static void *ConstructorWithVtable(VectorClass_base16 *self, int a2, int a3);  // 0x477be0 家族
+};
 struct CellCoord_shadow { void * To_CellObj(int a2); };  // 0x5657A0 影子 (G42.33 b4 W7: 返回 void* 站点形态)
 struct Coord_shadow { unsigned char flags[8]; struct Coord_shadow *To_Cell(int *a2); };  // Coord::To_Cell 影子
 int MapClass_RevealArea0(void *a, ...);   // 0x5673A0 (IDA: MapClass::RevealArea0)
@@ -1939,8 +1969,8 @@ int TechnoClass::ComputeTargetAngle() {
 } // namespace ra2::game
 
 // 0x43ED40
-namespace ra2::game {
-int FootClass::GetTurretAngle() {
+namespace gamemd {  // G42.34 归属正名: 真身 gamemd::BuildingClass (vt+1256)
+int BuildingClass::GetTurretAngle() {
     double v1; // st7
     int v3; // esi
     BuildingTypeClass *Type; // ecx
@@ -1963,9 +1993,9 @@ int FootClass::GetTurretAngle() {
     v3 = g_BuildingClassPool; /*0x43ed50*/
     Type = this->Type; /*0x43ed56*/
     v5 = dword_89C84C; /*0x43ed5d*/
-    if ( Type->PrimaryFirePixelOffset[0] != 0xFFFF || Type->PrimaryFirePixelOffset[1] != 0xFFFF ) /*0x43ed7e*/
+    if ( Type->PrimaryFirePixelOffset.X != 0xFFFF || Type->PrimaryFirePixelOffset.Y != 0xFFFF ) /*0x43ed7e*/
     {
-      v6 = (int *)World_ToScreen((void *)v13, Type->PrimaryFirePixelOffset, v12); /*0x43ed86 自由形*/
+      v6 = (int *)World_ToScreen((void *)v13, &Type->PrimaryFirePixelOffset, v12); /*0x43ed86 自由形*/
   LABEL_7:
       v3 = *v6; /*0x43edb9*/
       v5 = v6[1]; /*0x43edc0*/
@@ -1992,14 +2022,14 @@ int FootClass::GetTurretAngle() {
     *v17 = v19; /*0x43ee3b*/
     return (int)v17; /*0x43ee39*/
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x4415F0
-namespace ra2::game {
-int FootClass::ProcessDemolish() {
+namespace gamemd {  // G42.34 归属正名: 真身 gamemd::BuildingClass (vt+1260)
+int BuildingClass::ProcessDemolish() {
     double v1; // st7
     int v3; // ebp
-    int *DamageFireAnims; // edi
+    AnimClass **DamageFireAnims; // edi
     BuildingTypeClass *Type; // ecx
     int v6; // edx
     int bunkersCount; // edi
@@ -2070,7 +2100,7 @@ int FootClass::ProcessDemolish() {
     int v72[3]; // [esp+3Ch] [ebp-30h] BYREF
     int v73; // [esp+48h] [ebp-24h] BYREF
     int v74; // [esp+4Ch] [ebp-20h]
-    VectorClass v75; // [esp+54h] [ebp-18h] BYREF
+    VectorClass_base16 v75; // [esp+54h] [ebp-18h] BYREF (G42.34: 16B 栈形态载体)
     int v76; // [esp+64h] [ebp-8h]
     int v77; // [esp+68h] [ebp-4h]
     int v78; // [esp+74h] [ebp+8h]
@@ -2094,7 +2124,7 @@ int FootClass::ProcessDemolish() {
     {
       Type = this->Type; /*0x441624*/
       *(int *)((char *)this + 156) = 0; /*0x44162a*/
-      if ( Type->__pad_1624[128] ) /*0x441630*/
+      if ( Type->Radar ) /*0x441630*/
       {
         this->owner->radarVisibleTo[0] = 0; /*0x441640*/
         v6 = 0; /*0x44164c*/
@@ -2111,7 +2141,7 @@ int FootClass::ProcessDemolish() {
           }
           while ( v6 < bunkersCount ); /*0x441694*/
         }
-        MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x44169d*/
+        MapClass_MarkForRedraw(&stru_87F5F0.__pad_58[416], 2); /*0x44169d*/
       }
     }
     v10 = this->Type; /*0x4416a2*/
@@ -2127,7 +2157,7 @@ int FootClass::ProcessDemolish() {
       vtable0[260](this, 1); /*0x4416e3*/
     }
     if ( this->Type->LaserFencePost ) /*0x4416ef*/
-      BuildingClass::DemolishBridgeCheck(this, 1); /*0x4416fd*/
+      this->DemolishBridgeCheck(1); /*0x4416fd*/
     if ( this->Type->gattlingValue && !(uint8_t)House::IsHumanPlayer((House *)*(unsigned int *)((char *)this + 540)) ) /*0x441718 真值值槽*/
       (*((void (__thiscall **)(BuildingClass *, unsigned int, unsigned int, int, Object *))*(void ***)this + 291))( /*0x44172f*/
         this,
@@ -2142,20 +2172,20 @@ int FootClass::ProcessDemolish() {
       v65 = *(int *)((char *)this + 164); /*0x44176f*/
       PlayAudioAt2(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1768), &v63, 0); /*0x441779*/
     }
-    if ( BuildingTypeClass::GetFoundationWidth(this->Type) >= 2 /*0x4417a1*/
-      && BuildingTypeClass::GetFoundationHeight((int *)this->Type, 0) >= 2 )
+    if ( this->Type->GetFoundationWidth() >= 2 /*0x4417a1*/
+      && this->Type->GetFoundationHeight(0) >= 2 )
     {
-      if ( BuildingTypeClass::GetFoundationWidth(this->Type) > 2 ) /*0x4417b5*/
+      if ( this->Type->GetFoundationWidth() > 2 ) /*0x4417b5*/
       {
-        FoundationWidth = BuildingTypeClass::GetFoundationWidth(this->Type); /*0x4417bd*/
-        Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, FoundationWidth - 2); /*0x4417d3*/
+        FoundationWidth = this->Type->GetFoundationWidth(); /*0x4417bd*/
+        ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, FoundationWidth - 2); /*0x4417d3*/
       }
-      if ( BuildingTypeClass::GetFoundationHeight((int *)this->Type, 0) > 2 ) /*0x4417e7*/
+      if ( this->Type->GetFoundationHeight(0) > 2 ) /*0x4417e7*/
       {
-        FoundationHeight = BuildingTypeClass::GetFoundationHeight((int *)this->Type, 0); /*0x4417f0*/
-        Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, FoundationHeight - 2); /*0x441805*/
+        FoundationHeight = this->Type->GetFoundationHeight(0); /*0x4417f0*/
+        ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, FoundationHeight - 2); /*0x441805*/
       }
-      if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x441821*/
+      if ( ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 99) >= 50 ) /*0x441821*/
       {
         v65 = 0; /*0x441892*/
         v17 = *(int *)((char *)this + 156); /*0x441896*/
@@ -2202,9 +2232,9 @@ int FootClass::ProcessDemolish() {
         v29 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x4419c1*/
         if ( v29 ) /*0x4419c8*/
         {
-          v30 = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 3); /*0x4419f3*/
+          v30 = (void *)((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 3); /*0x4419f3*/
           Explosion = this->Type->gattlingValue; /*0x4419f5*/
-          v32 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x4419fb*/
+          v32 = ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->State(); /*0x4419fb*/
           AnimClass::ctor(v29, *(void **)(Explosion[1] + 4 * (v32 % Explosion[4])), &v66, v30, 1, (void *)0x600, 0, 0); /*0x441a1f*/
         }
       }
@@ -2232,7 +2262,7 @@ int FootClass::ProcessDemolish() {
             v35 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x441ace*/
             if ( v35 ) /*0x441ad5*/
             {
-              v36 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 3); /*0x441af1*/
+              v36 = ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(1, 3); /*0x441af1*/
               Index = AnimTypeClass::FindIndex(&stru_818E00); /*0x441af3*/
               AnimClass::ctor( /*0x441b1a*/
                 v35,
@@ -2256,7 +2286,7 @@ int FootClass::ProcessDemolish() {
       FloatPositive = FirstFloatPositive( ((char *)this + 828)); /*0x441b5b*/
       Float::SubtractClamped((int *) ((char *)this + 828), 1.0, FloatPositive); /*0x441b65*/
       Float::SubtractClamped(this->owner->ownedTiberium, 1.0, FloatPositive); /*0x441b7e*/
-      v39 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 256, 768); /*0x441b9a*/
+      v39 = ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(256, 768); /*0x441b9a*/
       v66 = *(int *)((char *)this + 156); /*0x441ba6*/
       v67 = *(int *)((char *)this + 160); /*0x441bad*/
       v68 = *(int *)((char *)this + 164); /*0x441bb8*/
@@ -2293,7 +2323,7 @@ int FootClass::ProcessDemolish() {
     if ( this->Type->gattlingValue[4] > 0 ) /*0x441cb8*/
     {
       v43 = *(void **)(this->Type->gattlingValue[1] /*0x441ce3*/
-                     + 4 * ((unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % this->Type->gattlingValue[4]));
+                     + 4 * ((unsigned int)((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->State() % this->Type->gattlingValue[4]));
       if ( v43 ) /*0x441ce8*/
       {
         v44 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x441cf4*/
@@ -2315,7 +2345,7 @@ int FootClass::ProcessDemolish() {
         }
       }
     }
-    VectorClass::ConstructorWithVtable(&v75, 0, 0); /*0x441d6f*/
+    VectorClass_base16::ConstructorWithVtable(&v75, 0, 0); /*0x441d6f*/
     v48 = (int (__thiscall **)(BuildingClass *))*(void ***)this; /*0x441d74*/
     v75.vtable0 = 0; /*0x441d78*/
     v77 = 10; /*0x441d80*/
@@ -2332,7 +2362,7 @@ int FootClass::ProcessDemolish() {
         if ( v76 < v75.Capacity /*0x441e11*/
           || (v75.IsAllocated || !v75.Capacity)
           && v77 > 0
-          && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v75.vtable0 + 2))(
+          && (*((uint8_t (__thiscall **)(VectorClass_base16 *, int, unsigned int))v75.vtable0 + 2))(
                &v75,
                v77 + v75.Capacity,
                0) )
@@ -2356,7 +2386,7 @@ int FootClass::ProcessDemolish() {
         v57 = v71 + *(int *)((char *)this + 164); /*0x441eb5*/
         v67 = v54 + v56; /*0x441eb7*/
         v68 = v57; /*0x441ecb*/
-        v58 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v76 - 1); /*0x441ecf*/
+        v58 = ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, v76 - 1); /*0x441ecf*/
         v59 = (ParticleSystemClass *)ParticleSystemClass::Constructor( /*0x441eed*/
                                        v55,
                                        *((unsigned int *)v75.Items + v58),
@@ -2376,17 +2406,17 @@ int FootClass::ProcessDemolish() {
     if ( v79 ) /*0x441f09*/
       this->NoCrew = 1; /*0x441f0b*/
     BuildingClass::EjectCrew(this, this->C4AppliedBy); /*0x441f1b*/
-    TechnoClass::CleanupAll((TechnoClass *)this, v78); /*0x441f27*/
+    ((TechnoClass *)this)->CleanupAll(v78); /*0x441f27*/
     result = (int)v75.Items; /*0x441f2c*/
     v75.vtable0 = 0; /*0x441f35*/
     if ( v75.Items && v75.IsAllocated ) /*0x441f46*/
       RA2_OPDEL(v75.Items); /*0x441f49*/
     return result; /*0x441f30*/
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x442C40
-namespace ra2::game {
+namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::Update() {
     int v1; // edi
     BuildingClass *owner; // ecx
@@ -2415,10 +2445,10 @@ int BuildingClass::Update() {
       if ( InitialAmmo == -1 ) /*0x442c8a*/
         InitialAmmo = *(unsigned int *)((char *)Type + 1668); /*0x442c8c*/
       *(bool *)((char *)this + 191) = InitialAmmo; /*0x442c92*/
-      BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)((char *)this + 904), *(unsigned int *)((char *)Type + 1820)); /*0x442ca5 真值 (_WORD*)this+452*/
+      ((BuildingTypeClass *)((char *)this + 904))->GetPowerOutput(*(unsigned int *)((char *)Type + 1820)); /*0x442ca5 真值 (_WORD*)this+452*/
       if ( (*((int (__thiscall **)(BuildingTypeClass *))*(void ***)this->Type + 48))(this->Type) ) /*0x442cb2*/
       {
-        BuildingTypeClass::IsPowered(this->Type); /*0x442cca*/
+        this->Type->IsPowered(); /*0x442cca*/
         this->BuildingClass_field_bool_6E9 = 1; /*0x442ccf*/
       }
       else
@@ -2432,7 +2462,7 @@ int BuildingClass::Update() {
         {
           v8 = this->Type; /*0x442cea*/
           if ( !*(unsigned char *)((char *)v8 + 3278) && *(unsigned char *)((char *)v8 + 3214) && *(unsigned int *)((char *)v8 + 1032) ) /*0x442d04 真值扁平*/
-            Power::ChangedHouse((Power *)((char *)this + 336), 1); /*0x442d16*/
+            ((PowerClass *)((char *)this + 336))->ChangedHouse(1); /*0x442d16 G42.34: 真体 PowerClass 0x750090*/
         }
       }
     }
@@ -2455,29 +2485,28 @@ int BuildingClass::Update() {
     }
     return result; /*0x442d85*/
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x443B90
-namespace ra2::game {
-int BuildingClass::AssignTarget_SyncLog() {
+namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
+int BuildingClass::AssignTarget_SyncLog(int syncFlag) {  // G42.34: [ebp+4h] 实参槽 (header (int) 同形)
     int v2; // edi
     int result; // eax
-    int v4; // [esp+Ch] [ebp+4h]
 
     if ( *(bool *)((char *)this + 43) == 19 || !(*((uint8_t (__thiscall **)(BuildingClass *))*(void ***)this + 212))(this) ) /*0x443b9f*/
     {
       v2 = 0; /*0x443ba9*/
       return TechnoClass::AssignTarget_SyncLog((TechnoClass *)this, v2); /*0x443bae*/
     }
-    v2 = v4; /*0x443bb8*/
-    if ( !v4 /*0x443bf4*/
+    v2 = syncFlag; /*0x443bb8*/
+    if ( !syncFlag /*0x443bf4*/
       || !*(unsigned int *)(*((int (__thiscall **)(BuildingClass *, unsigned int))*(void ***)this + 254))(this, 0)
       || *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*((int (__thiscall **)(BuildingClass *, unsigned int))*(void ***)this + 254))(
                                              this,
                                              0)
                               + 160)
                   + 676)
-      || (*((uint8_t (__thiscall **)(BuildingClass *, int))*(void ***)this + 235))(this, v4) )
+      || (*((uint8_t (__thiscall **)(BuildingClass *, int))*(void ***)this + 235))(this, syncFlag) )
     {
       return TechnoClass::AssignTarget_SyncLog((TechnoClass *)this, v2); /*0x443bfc*/
     }
@@ -2498,11 +2527,11 @@ int BuildingClass::AssignTarget_SyncLog() {
     }
     return result; /*0x443bb3*/
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x4456D0
-namespace ra2::game {
-int FootClass::UpdateSidebar() {
+namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (canon vt+1248/1264 归属正名)
+int BuildingClass::UpdateSidebar() {
     int result; // eax
     int j; // esi
     int m; // esi
@@ -2569,11 +2598,11 @@ int FootClass::UpdateSidebar() {
     }
     return result; /*0x445778*/
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x448160
-namespace ra2::game {
-int FootClass::ProcessPrimarySelect() {
+namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (canon vt+1248/1264 归属正名)
+int BuildingClass::ProcessPrimarySelect() {
     int v2; // ecx
     int result; // eax
     int v4; // edi
@@ -2634,7 +2663,7 @@ int FootClass::ProcessPrimarySelect() {
     }
     return result; /*0x448258*/
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x44D6A0
 namespace ra2::game {
@@ -2644,13 +2673,13 @@ int TechnoClass::StartOrResumeProduction() {
 
     if ( !v3 || dword_A8E7AC || (&stru_A8EB00)[391] ) /*0x44d6bb*/
     {
-      BuildingClass::StartProduction((BuildingClass *)this, 1); /*0x44d6e0*/
+      ((gamemd::BuildingClass *)this)->StartProduction(1); /*0x44d6e0 G42.34: gamemd 域限定下转型*/
       result = (*((int (__thiscall **)(TechnoClass *, int, unsigned int))*(void ***)this + 122))(this, 5, 0); /*0x44d6f1*/
       IDA_LOBYTE(result) = 0; /*0x44d6f7*/
     }
     else
     {
-      BuildingClass::StartProduction((BuildingClass *)this, 0); /*0x44d6bf*/
+      ((gamemd::BuildingClass *)this)->StartProduction(0); /*0x44d6bf*/
       result = (*((int (__thiscall **)(TechnoClass *, int, unsigned int))*(void ***)this + 122))(this, 18, 0); /*0x44d6d0*/
       IDA_LOBYTE(result) = 0; /*0x44d6d6*/
     }
@@ -2659,10 +2688,10 @@ int TechnoClass::StartOrResumeProduction() {
 } // namespace ra2::game
 
 // 0x44EB10
-namespace ra2::game {
+namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::GetCrew() {
     if ( this->HasBeenCaptured /*0x44eb43*/
-      || Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 25
+      || ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 99) >= 25
       || this->Type->Factory[0] != 7 )
     {
       return TechnoClass::GetCrew((TechnoClass *)this); /*0x44eb55*/
@@ -2672,7 +2701,7 @@ int BuildingClass::GetCrew() {
       return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3952); /*0x44eb4c*/
     }
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x453A70
 namespace ra2::game {
@@ -2763,7 +2792,7 @@ int TechnoClass::GetTurretScreenPos() {
 } // namespace ra2::game
 
 // 0x4544A0
-namespace ra2::game {
+namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::UpdatePowerDrain() {
     char Translucency; // al
     int v3; // edi
@@ -2811,7 +2840,7 @@ int BuildingClass::UpdatePowerDrain() {
     }
     return 5; /*0x45452d*/
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x4556D0
 namespace ra2::game {
@@ -2973,7 +3002,7 @@ int TechnoClass::ProcessMissionDeploy() {
 } // namespace ra2::game
 
 // 0x457770
-namespace ra2::game {
+namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::UpdateCloak() {
     int result; // eax
     int *v3; // eax
@@ -3070,10 +3099,10 @@ int BuildingClass::UpdateCloak() {
     IDA_LOBYTE(result) = 0; /*0x4578b0*/
     return result; /*0x4578a3*/
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x457C90
-namespace ra2::game {
+namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::IronCurtain() {
     int v1; // eax
     int v3; // [esp+4h] [ebp-8h]
@@ -3092,7 +3121,7 @@ int BuildingClass::IronCurtain() {
     }
     return TechnoClass::IronCurtain((TechnoClass *)this, v4, v5, v6); /*0x457cd8*/
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x458A80
 namespace ra2::game {
@@ -3988,7 +4017,7 @@ int FootClass::CheckVoiceResponse() {
     }
     MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x4d4c73*/
     IDA_LOWORD(v8) = Math_RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d4c81*/
-    return v8 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d4c9e*/
+    return v8 + ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2); /*0x4d4c9e*/
 }
 } // namespace ra2::game
 
@@ -4031,7 +4060,7 @@ int FootClass::ProcessMissionVoice() {
   LABEL_15:
     MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x4d4d86*/
     IDA_LOWORD(v7) = Math_RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d4d96*/
-    return v7 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d4db3*/
+    return v7 + ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2); /*0x4d4db3*/
 }
 } // namespace ra2::game
 
@@ -4218,7 +4247,7 @@ int FootClass::ProcessTeamAction() {
     }
     MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x4d946e*/
     IDA_LOWORD(v14) = Math_RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d947c*/
-    return v14 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d9499*/
+    return v14 + ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2); /*0x4d9499*/
 }
 } // namespace ra2::game
 
@@ -4798,7 +4827,7 @@ int FootClass::ProcessMovement() {
     }
     MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x4da4a6*/
     IDA_LOWORD(v14) = Math_RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4da4b4*/
-    return v14 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4da4d2*/
+    return v14 + ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2); /*0x4da4d2*/
 }
 } // namespace ra2::game
 
@@ -5743,7 +5772,7 @@ int FootClass::ProcessMissionState() {
     }
     MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x4de19c*/
     IDA_LOWORD(v22) = Math_RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4de1aa*/
-    return v22 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4de122*/
+    return v22 + ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2); /*0x4de122*/
 }
 } // namespace ra2::game
 
@@ -6057,16 +6086,16 @@ char FootClass::UpdateTeamAI(int a2) {
     *(bool *)((char *)this + 1061) = 1; /*0x4dec7f*/
     vtable0[157](this, 3); /*0x4dec86*/
     (*((void (__thiscall **)(FootClass *))*(void ***)this + 232))(this); /*0x4dec90*/
-    TechnoClass::CleanupAll((TechnoClass *)this, a2); /*0x4dec99*/
+    ((TechnoClass *)this)->CleanupAll(a2); /*0x4dec99*/
     if ( (*((int (__thiscall **)(FootClass *))*(void ***)this + 11))(this) != 15 && !dword_A8E7AC ) /*0x4decb5*/
     {
-      *(float *)&*(unsigned int *)((char *)this + 816) = (double)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646) /*0x4decf0*/
+      *(float *)&*(unsigned int *)((char *)this + 816) = (double)((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2147483646) /*0x4decf0*/
                          * 4.656612877414201e-10
                          * 0.15
                          + 0.1;
-      if ( !Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1) ) /*0x4ded02*/
+      if ( !((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 1) ) /*0x4ded02*/
         *(float *)((char *)this + 816) = -*(float *)((char *)this + 816); /*0x4ded13 真值 ((float*)this)+204*/
-      *(float *)&*(unsigned int *)((char *)this + 820) = (double)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646) /*0x4ded45*/
+      *(float *)&*(unsigned int *)((char *)this + 820) = (double)((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2147483646) /*0x4ded45*/
                          * 4.656612877414201e-10
                          * 0.1;
     }
@@ -7675,7 +7704,7 @@ char ObjectClass::FinalizeCellPlacement(int a2) {
                   IDA_HIWORD(v98) = v44; /*0x5fcb2c*/
                   *(unsigned int *)v99 = v98; /*0x5fcb3b*/
                   v45 = CellCoord_To_CellObj((void *)&dword_87F7E8, v99); /*0x5fcb4a*/
-                  v45[17] = dword_8333F0[v41] + (Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) & 3); /*0x5fcb67*/
+                  v45[17] = dword_8333F0[v41] + (((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->State() & 3); /*0x5fcb67*/
                   *((unsigned char *)v45 + 286) = v42; /*0x5fcb6a*/
                   House::AnnounceUpgrade((int)v45, -1); /*0x5fcb70*/
                   ++v42; /*0x5fcb75*/
@@ -7816,7 +7845,7 @@ char ObjectClass::FinalizeCellPlacement(int a2) {
                   IDA_HIWORD(v98) = v72; /*0x5fcf5a*/
                   *(unsigned int *)v100 = v98; /*0x5fcf69*/
                   v73 = CellCoord_To_CellObj((void *)&dword_87F7E8, v100); /*0x5fcf78*/
-                  v73[17] = dword_833438[v69] + (Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) & 3); /*0x5fcf95*/
+                  v73[17] = dword_833438[v69] + (((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->State() & 3); /*0x5fcf95*/
                   *((unsigned char *)v73 + 286) = v70; /*0x5fcf98*/
                   House::AnnounceUpgrade((int)v73, -1); /*0x5fcf9e*/
                   ++v70; /*0x5fcfa3*/
@@ -7979,10 +8008,10 @@ int FootClass::CreateWakes(int a2, int a3, int a4) {
     v12 = 3; /*0x629ef0*/
     do /*0x629fba*/
     {
-      IDA_LODWORD(v13) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -180, 180); /*0x629f13*/
+      IDA_LODWORD(v13) = ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(-180, 180); /*0x629f13*/
       /* G42.33 b4 W7: FPU __asm 单行 (fild [esp+40h+var_30]) 语义翻译占位 0x629f1c */
       /* G42.33 b4 W7: FPU __asm 单行 (fstp [esp+48h+var_28]) 语义翻译占位 */
-      IDA_LODWORD(v13) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -64, 64); /*0x629f33*/
+      IDA_LODWORD(v13) = ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(-64, 64); /*0x629f33*/
       /* G42.33 b4 W7: FPU __asm 块 (7 行) 语义翻译占位 0x629f37 */
       IDA_LOWORD(v6) = Math_RoundToInt(v4); /*0x629f4b*/
       /* G42.33 b4 W7: FPU __asm 块 (5 行) 语义翻译占位 0x629f50 */
@@ -8210,7 +8239,7 @@ int TechnoClass::CreatePlanningNode() {
 } // namespace ra2::game
 
 // 0x63BE60
-namespace ra2::game {
+namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 void BuildingClass::DrawActionLines() {
     ArrayClass *Type; // esi
     int (__thiscall **vtable0)(BuildingClass *, Coord3D *); // eax
@@ -8532,7 +8561,7 @@ void BuildingClass::DrawActionLines() {
     if ( updated != -1 ) /*0x63c658*/
       DrawTacticalWaypoint((int)v45, v50, v63, v64, v58, v59, updated); /*0x63c675*/
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x663030
 namespace ra2::game {
@@ -8783,7 +8812,7 @@ wchar_t * ObjectClass::GetTooltipText(int a2) {
         return Available; /*0x6ac25a*/
       }
       v8 = 26; /*0x6ac356*/
-      if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6ac350*/
+      if ( dword_A8B230_arr[374].NeedsSaveOrLink ) /*0x6ac350*/
         v8 = 18; /*0x6ac35f*/
       if ( a2 >= 1000 /*0x6ac3a0*/
         && a2 < 2 * ((g_DSurface_ViewBounds - g_SidebarBounds - v8 + g_DSurface_SidebarBounds - 7) / 50) + 1000 )
@@ -10180,7 +10209,7 @@ int TechnoClass::vt_entry_448() {
 } // namespace ra2::game
 
 // 0x6F64A0
-namespace ra2::game {
+namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::DrawHealthBar() {
     double v1; // st7
     int v3; // eax
@@ -10517,7 +10546,7 @@ int BuildingClass::DrawHealthBar() {
     }
     return result; /*0x6f6832*/
 }
-} // namespace ra2::game
+} // namespace gamemd
 
 // 0x6F6AC0
 namespace ra2::game {
@@ -12254,7 +12283,7 @@ void FootClass::UpdateLocomotion(double a2, int a3) {
             BuildingClass::GetHealthRatio((BuildingClass *)this); /*0x6fbc44*/
             _EAX = dword_8871E0; /*0x6fbc49*/
             /* G42.33 b4 W7: FPU __asm 块 (3 行) 语义翻译占位 0x6fbc4e */
-            if ( (IDA_BYTE1(_EAX) & 0x41) != 0 && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 10 ) /*0x6fbc72*/
+            if ( (IDA_BYTE1(_EAX) & 0x41) != 0 && ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 99) < 10 ) /*0x6fbc72*/
               (*(void (__thiscall **)(TechnoClass *, int))(*(void ***)this + 1116))(this, 1); /*0x6fbc7a*/
           }
           break;
@@ -12325,7 +12354,7 @@ void FootClass::UpdateLocomotion(double a2, int a3) {
           BuildingClass::GetHealthRatio((BuildingClass *)this); /*0x6fb88d*/
           _EAX = dword_8871E0; /*0x6fb892*/
           /* G42.33 b4 W7: FPU __asm 块 (3 行) 语义翻译占位 0x6fb897 */
-          if ( (IDA_BYTE1(_EAX) & 0x41) == 0 || Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 4 ) /*0x6fb8cf*/
+          if ( (IDA_BYTE1(_EAX) & 0x41) == 0 || ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 99) < 4 ) /*0x6fb8cf*/
             (*(void (__thiscall **)(TechnoClass *, unsigned int))(*(void ***)this + 1120))(this, 0); /*0x6fb8a9*/
         }
       }
@@ -12653,7 +12682,7 @@ int TechnoClass::CalculateROF() {
     currentBurstIndex = this->currentBurstIndex; /*0x6fd04e*/
     if ( currentBurstIndex >= *(unsigned int *)(v3 + 156) ) /*0x6fd05c*/
     {
-      v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x6fd0b0*/
+      v7 = ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2); /*0x6fd0b0*/
       IDA_LOWORD(v8) = Math_RoundToInt((double)*(int *)(v3 + 176) * *(double *)&this->owner->__pad_13C[108] + (double)v7); /*0x6fd0cf*/
       v9 = v8; /*0x6fd0da*/
       v15 = v8; /*0x6fd0de*/
@@ -12695,14 +12724,14 @@ int TechnoClass::CalculateROF() {
     else
     {
       if ( currentBurstIndex <= 0 ) /*0x6fd060*/
-        return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 3, 5); /*0x6fd060*/
+        return ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(3, 5); /*0x6fd060*/
       if ( currentBurstIndex > 4 ) /*0x6fd065*/
-        return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 3, 5); /*0x6fd065*/
+        return ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(3, 5); /*0x6fd065*/
       if ( !v4 ) /*0x6fd069*/
-        return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 3, 5); /*0x6fd069*/
+        return ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(3, 5); /*0x6fd069*/
       v6 = *(unsigned int *)(v4[1].ironTintTimer[2] + 4 * currentBurstIndex + 3652); /*0x6fd071*/
       if ( v6 == -1 ) /*0x6fd07b*/
-        return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 3, 5); /*0x6fd094*/
+        return ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(3, 5); /*0x6fd094*/
       else
         return v6; /*0x6fd07e*/
     }
@@ -14810,7 +14839,7 @@ char TechnoClass::EvaluateMission(int a2) {
                           v41 = (unsigned int *)*v40; /*0x7086c1*/
                           v42 = *(unsigned int *)(*v40 + 1492); /*0x7086c3*/
                           v43 = v42 && *(unsigned char *)(*(unsigned int *)(v42 + 36) + 246); /*0x7086da*/
-                          if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 66 || v43 ) /*0x7086fc*/
+                          if ( ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 99) >= 66 || v43 ) /*0x7086fc*/
                             (*(void (__thiscall **)(unsigned int *, int, unsigned int))(*v41 + 488))(v41, 11, 0); /*0x70870e*/
                           else
                             (*(void (__thiscall **)(unsigned int *, int, unsigned int))(*v41 + 488))(v41, 21, 0); /*0x708704*/
@@ -15326,9 +15355,9 @@ int TechnoClass::BeginFiringSequence() {
 
     this->unknown_4FC = (int)dword_A8ED84; /*0x70982e*/
     if ( this->currentMission == 11 ) /*0x70983f*/
-      v2 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2) + *(unsigned int *)&dword_8871E0->__pad_C3C[456]; /*0x709864*/
+      v2 = ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2) + *(unsigned int *)&dword_8871E0->__pad_C3C[456]; /*0x709864*/
     else
-      v2 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2) + *(unsigned int *)&dword_8871E0->__pad_C3C[460]; /*0x70989a*/
+      v2 = ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2) + *(unsigned int *)&dword_8871E0->__pad_C3C[460]; /*0x70989a*/
     this->targetingTimer[0] = (int)dword_A8ED84; /*0x70986c*/
     this->targetingTimer[1] = v11; /*0x7098b0*/
     this->targetingTimer[2] = v2; /*0x7098b6*/
@@ -18048,7 +18077,7 @@ char TechnoClass::DispatchPlayerInput(int a2, int a3) {
     v6 = *((unsigned int *)this + 433); /*0x737bf5*/
     if ( *(unsigned char *)(v6 + 3608) || *(unsigned char *)(v6 + 3609) ) /*0x737c03*/
     {
-      this->animation[0] = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 29); /*0x737c4c*/
+      this->animation[0] = ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 29); /*0x737c4c*/
       v9 = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x737c52*/
       this->animation[5] = 1; /*0x737c62*/
       this->animation[2] = v9; /*0x737c69*/
@@ -18291,7 +18320,7 @@ int TechnoClass::DeployIntoBuilding() {
     _EAX = MissionClass::GetMissionControl(this); /*0x73f05b*/
     /* G42.33 b4 W7: FPU __asm 块 (3 行) 语义翻译占位 0x73f060 */
     IDA_LOWORD(v9) = Math_RoundToInt(v1); /*0x73f069*/
-    return v9 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x73f087*/
+    return v9 + ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2); /*0x73f087*/
 }
 } // namespace ra2::game
 
@@ -18457,7 +18486,7 @@ int TechnoClass::ProcessAIDecision() {
   LABEL_34:
       MissionControl = MissionClass::GetMissionControl(this); /*0x740a1f*/
       IDA_LOWORD(v17) = Math_RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x740a2f*/
-      return v17 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x740a4f*/
+      return v17 + ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2); /*0x740a4f*/
     }
     Type = this->Type; /*0x740854*/
     if ( *(unsigned char *)(Type + 3598) || *(unsigned char *)(Type + 3599) ) /*0x740864*/
@@ -19134,7 +19163,7 @@ int TechnoClass::SelectAITarget() {
     BuildingClass::InitBuildLimit((BuildingClass *)this->slaveManager); /*0x744138*/
     MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x74413f*/
     IDA_LOWORD(v4) = Math_RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x74414d*/
-    return v4 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x74416a*/
+    return v4 + ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 2); /*0x74416a*/
 }
 } // namespace ra2::game
 

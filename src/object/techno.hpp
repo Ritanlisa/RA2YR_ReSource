@@ -400,7 +400,7 @@ public:
     virtual int RemoveFromDynamicVector(char a2);  // 0x4390D0 (G42.33 b4 W7c: 体签名同步)
     virtual int ComputeTargetAngle();  // 0x43E940 (G42.33 b4 W7c: 体签名同步)
     virtual int StartOrResumeProduction();  // 0x44D6A0
-    virtual int GetTurretScreenPos() const;  // 0x453A70
+    virtual int GetTurretScreenPos();  // 0x453A70 (G42.34: raw 零参非 const, 除 const 对齐 def)
     virtual void ProcessMissionDeploy();  // 0x456F80
     virtual int EvacuateFootprintCells();  // 0x458A80
     virtual int MissionStubReturnZero4(); // 0x459D90

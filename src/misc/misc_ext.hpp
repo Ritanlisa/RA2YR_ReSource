@@ -2346,6 +2346,7 @@ public:
     virtual ~FractalNoise() = default;
 
     virtual void Release(); // 0x420270
+    static void Dtor(void *aP0);  // G42.35 R5-style static sync (cache-verbatim Blit-dtor bodies 0x49A2xx/0x49AAxx call FractalNoise::Dtor; def in e4/e4_static_stubs.cpp, decl mirror of _tree_full_e4.hpp)
 
 };
 // 7 methods in IDA
@@ -3737,7 +3738,7 @@ public:
     uint8_t SortedArray_field_0x20[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    int BinarySearch();  // 0x52b620 -- SortedArray::BinarySearch
+    int BinarySearch(int *a2);  // 0x52b620 -- SortedArray::BinarySearch G42.35 C6 体签名
     int Append(int a1, int a2);  // 0x5387d0 -- SortedArray::Append
     int RemoveByKey(int a1);  // 0x5388a0 -- SortedArray::RemoveByKey
     int FindPair(int a1);  // 0x538980 -- SortedArray::FindPair

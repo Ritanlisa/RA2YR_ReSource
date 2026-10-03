@@ -114,10 +114,12 @@ public:
     virtual void StubReturnVoid(); // 0x41C110
 virtual void vt_entry_534(int);  // 0x41C130
     virtual void vt_entry_540();  // 0x41C140
-    virtual int GetTurretAngle() const;  // 0x43ED40
-    virtual void ProcessDemolish();  // 0x4415F0
-    virtual void UpdateSidebar();  // 0x4456D0
-    virtual void ProcessPrimarySelect();  // 0x448160
+    // G42 归属正名: GetTurretAngle(0x43ED40)/ProcessDemolish(0x4415F0) 真身 =
+    // BuildingClass (canon vt+1256/vt+1260 + IDA typed this=BuildingClass* +
+    // this->Type@1312 读 BuildingTypeClass*), 声明迁 building.hpp
+    // G42.34 同族: UpdateSidebar(0x4456D0 vt+1248)/ProcessPrimarySelect(0x448160
+    // vt+1264) 同为 canon BuildingClass 归属 (raw typed this=BuildingClass*,
+    // 体读 this->Type@1312), 声明迁 building.hpp
     virtual int StubReturn0();  // 0x452250
     virtual void ScanCircleForUnits();  // 0x4556D0
     virtual void ScanCircleForUnits2();  // 0x455820

@@ -247,7 +247,7 @@ int CanAcceptType(int,int);  // 0x452670
     void BuildTurretTransform();  // 0x458810
 
     // Bridge / Demolish
-    bool DemolishBridgeCheck();  // 0x452A40
+    unsigned int *DemolishBridgeCheck(int a2);  // 0x452A40 (G42 真形: thiscall(this,int); 结构侧 def 同形)
     void FindBridgeSegment();  // 0x452BB0
     void DemolishBridge();  // 0x452DC0
     void DemolishBridgeAnim();  // 0x453060
@@ -256,6 +256,16 @@ int CanAcceptType(int,int);  // 0x452670
     bool CheckBridge();  // 0x6B0880
     void DestroyOnBridgeCollapse();  // 0x4576F0
     CoordStruct* GetBridgeAwareCoords(CoordStruct* out) const;  // 0x705CA0
+
+    // G42 归属正名 (自 FootClass 迁入): canon vt+1256/vt+1260 + IDA typed
+    // this=BuildingClass* + 体读 this->Type@1312 (BuildingTypeClass*) +
+    // DamageFireAnims[8]/C4Timer/EjectCrew 全 BuildingClass 成员
+    virtual int GetTurretAngle();  // 0x43ED40 vt+1256
+    virtual int ProcessDemolish();  // 0x4415F0 vt+1260
+    // G42.34 同族迁入 (canon vt+1248/vt+1264; raw typed this=BuildingClass*;
+    // 体读 this->Type@1312)
+    virtual int UpdateSidebar();  // 0x4456D0 vt+1248
+    virtual int ProcessPrimarySelect();  // 0x448160 vt+1264
 
     // Deploy / Undeploy
     int Deploy() override;  // 0x62A4A0
