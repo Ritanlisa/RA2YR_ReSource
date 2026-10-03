@@ -59,7 +59,7 @@ bool TextRenderer::Init(int max_width, int max_height)
     return true;
 }
 
-void TextRenderer::Shutdown(void* a1, void* a2, void* a3, void* a4, int a5, void * a8)
+void TextRenderer::Shutdown()
 {
     if (m_old_bmp) { SelectObject(m_hdc, m_old_bmp); m_old_bmp = nullptr; }
     if (m_bmp)     { DeleteObject(m_bmp); m_bmp = nullptr; }
@@ -68,114 +68,21 @@ void TextRenderer::Shutdown(void* a1, void* a2, void* a3, void* a4, int a5, void
     m_bits = nullptr;
 }
 
-// 0x4a61c0
-void TextRenderer::DrawText(DSurface* target, int x, int y,
+// 0x4a61c0 -- G42.35d: raw formatter bodies quarantined (both def param lists
+// were truncated by a historical surgery; binary truth is a swprintf-style
+// formatter, see .omo/ida_cache/func_0x4A61C0.json). Hpp overloads are design API.
+void TextRenderer::DrawText(DSurface* target, int x, int y, const wchar_t* text,
+                            uint8_t r, uint8_t g, uint8_t b)
 {
-  int v8; // eax
-  int *v9; // eax
-  int v10; // eax
-  va_list v12; // [esp+0h] [ebp-410h]
-  int v13[2]; // [esp+4h] [ebp-40Ch] BYREF
-  unsigned char v14[4]; // [esp+Ch] [ebp-404h] BYREF
-  wchar_t Buffer[512]; // [esp+10h] [ebp-400h] BYREF
-  va_list Format; // [esp+434h] [ebp+24h] BYREF
-
-  va_start(Format, a8);
-  if ( BufferCount ) /*0x4a61cd*/
-  {
-    vswprintf(Buffer, BufferCount, (const wchar_t *const)Format, v12); /*0x4a61e1*/
-    v8 = Color::ConvertToRGB(v14); /*0x4a6202*/
-    IDA_LOWORD(v13[0]) = *(unsigned short *)v8; /*0x4a6210*/
-    IDA_BYTE2(v13[0]) = *(unsigned char *)(v8 + 2); /*0x4a621b*/
-    v9 = RenderTextLabel( /*0x4a6293*/
-           v13,
-           (int)Buffer,
-           a3,
-           a4,
-           a5,
-           (IDA_BYTE1(v13[0]) >> g_BitMask_Blue << g_BitMask_Green)
-         | (IDA_BYTE2(v13[0]) >> g_BitMask_Red << g_BitShift_Blue)
-         | (IDA_LOBYTE(v13[0]) >> g_BitShift_Green_0 << g_BitShift_Red),
-           a7,
-           a8,
-           1);
-  }
-  else
-  {
-    v10 = Color::ConvertToRGB(v14); /*0x4a62b1*/
-    IDA_LOWORD(v13[0]) = *(unsigned short *)v10; /*0x4a62bf*/
-    IDA_BYTE2(v13[0]) = *(unsigned char *)(v10 + 2); /*0x4a62ca*/
-    v9 = RenderTextLabel( /*0x4a6340*/
-           v13,
-           0,
-           a3,
-           a4,
-           a5,
-           (IDA_BYTE1(v13[0]) >> g_BitMask_Blue << g_BitMask_Green)
-         | (IDA_BYTE2(v13[0]) >> g_BitMask_Red << g_BitShift_Blue)
-         | (IDA_LOBYTE(v13[0]) >> g_BitShift_Green_0 << g_BitShift_Red),
-           a7,
-           a8,
-           1);
-  }
-  *a1 = (int *)(*v9);
-  a1[1] = v9[1]; /*0x4a6356*/
-  return a1; /*0x4a634e*/
+    (void)target; (void)x; (void)y; (void)text; (void)r; (void)g; (void)b;
 }
-// 0x4a61c0
-void TextRenderer::DrawText(DSurface* target, int x, int y,
+
+void TextRenderer::DrawText(DSurface* target, int x, int y, const char* text,
+                            uint8_t r, uint8_t g, uint8_t b)
 {
-  int v8; // eax
-  int *v9; // eax
-  int v10; // eax
-  va_list v12; // [esp+0h] [ebp-410h]
-  int v13[2]; // [esp+4h] [ebp-40Ch] BYREF
-  unsigned char v14[4]; // [esp+Ch] [ebp-404h] BYREF
-  wchar_t Buffer[512]; // [esp+10h] [ebp-400h] BYREF
-  va_list Format; // [esp+434h] [ebp+24h] BYREF
-
-  va_start(Format, a8);
-  if ( BufferCount ) /*0x4a61cd*/
-  {
-    vswprintf(Buffer, BufferCount, (const wchar_t *const)Format, v12); /*0x4a61e1*/
-    v8 = Color::ConvertToRGB(v14); /*0x4a6202*/
-    IDA_LOWORD(v13[0]) = *(unsigned short *)v8; /*0x4a6210*/
-    IDA_BYTE2(v13[0]) = *(unsigned char *)(v8 + 2); /*0x4a621b*/
-    v9 = RenderTextLabel( /*0x4a6293*/
-           v13,
-           (int)Buffer,
-           a3,
-           a4,
-           a5,
-           (IDA_BYTE1(v13[0]) >> g_BitMask_Blue << g_BitMask_Green)
-         | (IDA_BYTE2(v13[0]) >> g_BitMask_Red << g_BitShift_Blue)
-         | (IDA_LOBYTE(v13[0]) >> g_BitShift_Green_0 << g_BitShift_Red),
-           a7,
-           a8,
-           1);
-  }
-  else
-  {
-    v10 = Color::ConvertToRGB(v14); /*0x4a62b1*/
-    IDA_LOWORD(v13[0]) = *(unsigned short *)v10; /*0x4a62bf*/
-    IDA_BYTE2(v13[0]) = *(unsigned char *)(v10 + 2); /*0x4a62ca*/
-    v9 = RenderTextLabel( /*0x4a6340*/
-           v13,
-           0,
-           a3,
-           a4,
-           a5,
-           (IDA_BYTE1(v13[0]) >> g_BitMask_Blue << g_BitMask_Green)
-         | (IDA_BYTE2(v13[0]) >> g_BitMask_Red << g_BitShift_Blue)
-         | (IDA_LOBYTE(v13[0]) >> g_BitShift_Green_0 << g_BitShift_Red),
-           a7,
-           a8,
-           1);
-  }
-  *a1 = *v9; /*0x4a6351*/
-  a1[1] = v9[1]; /*0x4a6356*/
-  return a1; /*0x4a634e*/
+    (void)target; (void)x; (void)y; (void)text; (void)r; (void)g; (void)b;
 }
+
 int TextRenderer::GetTextWidth(const wchar_t* text)
 {
     if (!m_hdc || !text) return 0;

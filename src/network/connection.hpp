@@ -39,7 +39,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual bool  IsHost() const;
 
-    void queueSendPacket(const uint8_t*, int32_t, int32_t);                                   // 0x48B410
+    int queueSendPacket(const void* a2, int32_t a3, const void* a4, int32_t a5, int16_t a6); // 0x48B410 (G42.35e: 5-param int-return per ida truth)
     void* allocPacketSlot();                                                                  // 0x48B750
     uint32_t initQueue(uint32_t);                                                             // 0x48BA10
     void sendAck();  // 0x48BF40
@@ -71,8 +71,8 @@ public:
     virtual bool Open() override; // 0x69BC20
 
 virtual unsigned int * QueryInterface(char,int,int,int);  // 0x53F850
-    bool initConnection();  // 0x48BE60
-    bool closeConnection();  // 0x69BC20
+    bool initConnection(int a2, int a3, int a4, short a5, int a6, int a7, int a8, int a9, int a1);  // 0x48BE60 (G42.35e: 9-param per def/ida)
+    bool closeConnection(int a2, int a1, int a3, int a4, int a5, int a6, int a7);  // 0x69BC20 (G42.35e: 7-param per def/ida)
     bool send(int a2, int a3, int a4, int a5, int a6, int a7);
     int receive(int a2, int a3, int *a4, int **a5, int a6, int a7);
 

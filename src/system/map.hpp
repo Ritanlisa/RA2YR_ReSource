@@ -231,11 +231,11 @@ public:
     bool IsWithinUsableArea(const CoordStruct& coords) const;
     bool CoordinatesLegal(const CellStruct& cell) const;
 
-    CoordStruct* FindFirstFirestorm(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const;  // 0x5880A0
+    CoordStruct* FindFirstFirestorm(CoordStruct* out, const int* start, const int* end, const HouseClass* house = nullptr) const;  // 0x5880A0 (G42.35d: binary truth has int* params)
     CoordStruct FindFirstFirestorm(const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const;
 
-    void RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, CellStruct arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);  // 0x5678E0
-    void RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, uint32_t arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);  // 0x567DA0
+    int RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, CellStruct arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);  // 0x5678E0 (G42.35d: ida truth returns int)
+    int RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, uint32_t arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);  // 0x567DA0 (G42.35d: int return per ida)
     // unmatched: no callgraph reference and no git history record
     void RevealArea3(CoordStruct* coords, int height, int radius, bool skip_reveal);
 
