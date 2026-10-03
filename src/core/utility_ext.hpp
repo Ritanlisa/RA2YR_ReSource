@@ -28,6 +28,7 @@ class UnitClass;
 // IDA: Constructor 0x40C160, ProcessCommand 0x7327D0
 // COM class: IUnknown-based, vtable at this+0
 // ============================================================================
+#ifndef GAMEMD_E4_MoveFeedback  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class MoveFeedback
 {
 public:
@@ -42,7 +43,7 @@ public:
     // IDA 0x40B670
     int32_t PointerToIndex(void* ptr);  // 0x40B670
     // IDA 0x40B6D0
-    void Update();  // 0x40B6D0
+    unsigned int Update(int a2);  // 0x40B6D0 (G42.33 批 3: 真值对齐 retn 4)
     // IDA 0x40B6F0
     void Show();  // 0x40B6F0
     // IDA 0x40B930
@@ -76,6 +77,7 @@ public:
     int32_t     MoveFeedback_field_28;               // 0x28
     int32_t     MoveFeedback_field_2C;               // 0x2C
 };
+#endif  // GAMEMD_E4_MoveFeedback
 
 // ============================================================================
 // LoadGame — save/load game state management (12 methods)
@@ -118,6 +120,7 @@ public:
 // Buffer — DirectSound audio buffer wrapper (11 methods)
 // IDA: CreateDirectSound 0x40A340
 // ============================================================================
+#ifndef GAMEMD_E4_Buffer  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Buffer
 {
 public:
@@ -158,11 +161,13 @@ public:
     uint32_t    Buffer_field_20;           // 0x20
     uint32_t    Buffer_field_24;           // 0x24
 };
+#endif  // GAMEMD_E4_Buffer
 
 // ============================================================================
 // Delegate — callback dispatch system (11 methods)
 // IDA: Constructor 0x52AE20, Dispatch 0x631D10
 // ============================================================================
+#ifndef GAMEMD_E4_Delegate  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Delegate
 {
 public:
@@ -205,6 +210,7 @@ public:
     int32_t     Delegate_field_20;           // 0x20
     int32_t     Delegate_field_24;           // 0x24
 };
+#endif  // GAMEMD_E4_Delegate
 
 // ============================================================================
 // Struct — memory initialization & zero-fill utilities (10 methods)
@@ -257,6 +263,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // Count — reference counting utilities (6 methods)
 // IDA: DecrementRefCountsAudio
 // ============================================================================
+#ifndef GAMEMD_E4_Count  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Count
 {
 public:
@@ -277,6 +284,7 @@ public:
 
     int32_t     m_RefCount;     // 0x00
 };
+#endif  // GAMEMD_E4_Count
 
 // ============================================================================
 // Rect — rectangle operations (6 methods)
@@ -550,14 +558,16 @@ public:
 // Settings — settings utilities (1 method)
 // IDA: CheckString
 // ============================================================================
+#ifndef GAMEMD_E4_Settings  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Settings
 {
 public:
     // IDA 0x48B2A0 area
-    static bool CheckString(const char* str);  // 0x5E8760
+    static bool CheckString(const char* str = 0);  // 0x5E8760 (G42.33 b3: 默认参 -- ui 静态 0 参调用形)
 
     int32_t     Settings_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Settings
 
 // ============================================================================
 // Init — initialization stubs (1 method)
@@ -698,6 +708,7 @@ public:
 };
 // 22 methods in IDA
 // CSP: COMClass matched via T1
+#ifndef GAMEMD_E4_COMClass  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class COMClass
 {
 public:
@@ -750,6 +761,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int * marshalInterface(char a1);  // 0x767C50
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_E4_COMClass
 // 2 methods in IDA
 // CSP: COMClassFactory matched via T1
 class COMClassFactory
@@ -859,11 +871,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMObject() = default;
 
-    virtual void Release(); // 0x437FC0
+    virtual int Release(); // 0x437FC0 (G42.33 b3: 体真值 int 返回)
     virtual void DetachPrimary(); // 0x488690
-    virtual void IsValid(); // 0x48C3B0
+    virtual BOOL IsValid(); // 0x48C3B0 (G42.33 b3: 体真值 BOOL 返回)
     virtual void SetMember10(); // 0x48E600
-    virtual void GetMember09(); // 0x48E610
+    virtual int GetMember09(); // 0x48E610 (G42.33 b3: 体真值 int 返回)
     // +22 more virtual methods
 
     uint8_t COMObject_field_0x04[4];
@@ -972,7 +984,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~CountdownTimer() = default;
 
-    virtual void UpdateDisplay(); // 0x4A2600
+    virtual char UpdateDisplay(char a2);  // 0x4A2600 G42.33 b3 体签名
 
 };
 // 1 methods in IDA
@@ -992,22 +1004,22 @@ class EnumConnectionPointsClass
 public:
     virtual ~EnumConnectionPointsClass() = default;  // 0x4A0A50
 
-    virtual void QueryInterface(); // 0x4A0920
-    virtual void AddRef(); // 0x4A0990
-    virtual void Release(); // 0x4A09B0
-    virtual void ddtor(); // 0x4A0A50
-    virtual void Next(); // 0x4A0AF0
+    virtual int QueryInterface(const void *a2, unsigned int *a3);  // 0x4A0920 G42.33 b3 体签名
+    virtual LONG AddRef();  // 0x4A0990 G42.33 b3 体签名
+    virtual LONG Release();  // 0x4A09B0 G42.33 b3 体签名
+    virtual int ddtor(unsigned int a2, int a3, unsigned int *a4);  // 0x4A0A50 G42.33 b3 体签名
+    virtual int Next(int a2);  // 0x4A0AF0 G42.33 b3 体签名
     // +6 more virtual methods
 
-    uint8_t EnumConnectionPointsClass_field_0x04[4];
-    uint8_t EnumConnectionPointsClass_field_0x08[4];
-    uint8_t EnumConnectionPointsClass_field_0x0C[4];
-    uint8_t EnumConnectionPointsClass_field_0x10[4];
-    uint8_t EnumConnectionPointsClass_field_0x14[4];
-    uint8_t EnumConnectionPointsClass_field_0x18[4];
-    uint8_t EnumConnectionPointsClass_field_0x1C[4];
-    uint8_t EnumConnectionPointsClass_field_0x20[4];
-    uint8_t EnumConnectionPointsClass_field_0x24[4];
+    unsigned int EnumConnectionPointsClass_field_0x04;  // G42.33 b3
+    unsigned int EnumConnectionPointsClass_field_0x08;  // G42.33 b3
+    unsigned int EnumConnectionPointsClass_field_0x0C;  // G42.33 b3
+    unsigned int EnumConnectionPointsClass_field_0x10;  // G42.33 b3
+    unsigned int EnumConnectionPointsClass_field_0x14;  // G42.33 b3
+    unsigned int EnumConnectionPointsClass_field_0x18;  // G42.33 b3
+    unsigned int EnumConnectionPointsClass_field_0x1C;  // G42.33 b3
+    unsigned int EnumConnectionPointsClass_field_0x20;  // G42.33 b3
+    unsigned int EnumConnectionPointsClass_field_0x24;  // G42.33 b3
     uint8_t EnumConnectionPointsClass_field_0x28[4];
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor_VectorClass_IConnectionPoint___(int a1);  // 0x4A0E60
@@ -1032,18 +1044,18 @@ class EnumConnectionsClass
 public:
     virtual ~EnumConnectionsClass() = default;  // 0x4A00B0
 
-    virtual void QueryInterface(); // 0x49FF80
-    virtual void AddRef(); // 0x49FFF0
-    virtual void Release(); // 0x4A0010
-    virtual void ddtor(); // 0x4A00B0
-    virtual void Next(); // 0x4A0160
+    virtual int QueryInterface(const void *a2, unsigned int *a3);  // 0x49FF80 G42.33 b3 体签名
+    virtual LONG AddRef();  // 0x49FFF0 G42.33 b3 体签名 (LONG 返回)
+    virtual LONG Release();  // 0x4A0010 G42.33 b3 体签名
+    virtual int ddtor(unsigned int a2, int a3, unsigned int *a4);  // 0x4A00B0 G42.33 b3 体签名
+    virtual int Next(int a2);  // 0x4A0160 G42.33 b3 体签名
     // +1 more virtual methods
 
-    uint8_t EnumConnectionsClass_field_0x04[4];
-    uint8_t EnumConnectionsClass_field_0x08[4];
-    uint8_t EnumConnectionsClass_field_0x0C[4];
-    uint8_t EnumConnectionsClass_field_0x10[4];
-    uint8_t EnumConnectionsClass_field_0x14[4];
+    unsigned int EnumConnectionsClass_field_0x04;  // G42.33 b3: 标量形 (体表 uint/ptr 用法)
+    unsigned int EnumConnectionsClass_field_0x08;  // G42.33 b3
+    unsigned int EnumConnectionsClass_field_0x0C;  // G42.33 b3
+    unsigned int EnumConnectionsClass_field_0x10;  // G42.33 b3
+    unsigned int EnumConnectionsClass_field_0x14;  // G42.33 b3
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     int Skip(int a1);  // 0x4a0180
@@ -1180,6 +1192,7 @@ public:
     uint8_t GraphicMenuShortcutItem_field_0x04[4];
 };
 // 3 methods in IDA
+#ifndef GAMEMD_E4_Hash  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Hash
 {
 public:
@@ -1193,6 +1206,7 @@ public:
     uint8_t Hash_field_0x04[4];
     uint8_t Hash_field_0x08[4];
 };
+#endif  // GAMEMD_E4_Hash
 // 4 methods in IDA
 // CSP: HashMap matched via T1
 class HashMap
@@ -1296,7 +1310,8 @@ public:
     virtual ~PlayerClass() = default;
 
     virtual void FindNearestWaypoint(); // 0x430F70
-    virtual void ExecuteCommand(); // 0x4AB9B0
+    char FindNearestWaypoint(int a2, int a3, int a4);  // 0x430F70 G42.33 b3 supplied-body sync (3 参形)
+    virtual int ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6);  // 0x4AB9B0 G42.33 b3 体签名
     virtual void CheckHumanPlayer(); // 0x4AC2B0
     virtual void SetTargetOrClear(); // 0x4C6650
     virtual void AssignPlayerIndex_0(); // 0x5C5D30
@@ -1317,6 +1332,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool HasPlayers();  // 0x6ABAC0
     int ProcessOccupancyUpdate(void* a1);  // 0x6D9FF0
     int HasOccupiedCell();  // 0x6DA080
+    int HasOccupiedCell(int a2);  // G42.33 b3 supplied-call sync
     int UpdateAIUnits();  // 0x732600
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
@@ -1374,6 +1390,8 @@ public:
 
 };
 // 1 methods in IDA
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: e4 Queue_e4(audio DList) 树宇宙抑制
+#ifndef GAMEMD_E4_Queue  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Queue
 {
 public:
@@ -1383,6 +1401,8 @@ public:
     virtual void GetNext(); // 0x407470
 
 };
+#endif  // GAMEMD_E4_Queue
+#endif  // GAMEMD_TREE_UNIVERSE (Queue)
 // 4 methods in IDA
 class Random
 {
@@ -1436,6 +1456,7 @@ public:
 
 };
 // 6 methods in IDA
+#ifndef GAMEMD_E4_SHA1  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class SHA1
 {
 public:
@@ -1455,6 +1476,7 @@ public:
     uint8_t SHA1_field_0x10[4];
     uint8_t SHA1_field_0x14[4];
 };
+#endif  // GAMEMD_E4_SHA1
 // 1 methods in IDA
 class SettingsClass
 {
@@ -1486,6 +1508,7 @@ public:
 
 };
 // 2 methods in IDA
+#ifndef GAMEMD_E4_StringTable  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class StringTable
 {
 public:
@@ -1497,7 +1520,9 @@ public:
 
     uint8_t StringTable_field_0x04[4];
 };
+#endif  // GAMEMD_E4_StringTable
 // 7 methods in IDA
+#ifndef GAMEMD_E4_StringVector  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class StringVector
 {
 public:
@@ -1522,6 +1547,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Insert(void* a1, int a2);  // 0x7AE5D0
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_E4_StringVector
 // 1 methods in IDA
 class StructTable
 {
@@ -1529,7 +1555,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StructTable() = default;
 
-    virtual void Append(); // 0x4A3840
+    virtual int Append(const void *a2);  // 0x4A3840 G42.33 b3 体签名
 
 };
 // 1 methods in IDA
@@ -1574,6 +1600,7 @@ public:
 
 };
 // 2 methods in IDA
+#ifndef GAMEMD_E4_Vector2  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Vector2
 {
 public:
@@ -1585,8 +1612,10 @@ public:
 
     uint8_t Vector2_field_0x04[4];
 };
+#endif  // GAMEMD_E4_Vector2
 // 3 methods in IDA
 // CSP: Vector3 matched via T1
+#ifndef GAMEMD_E4_Vector3  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Vector3
 {
 public:
@@ -1600,7 +1629,9 @@ public:
     uint8_t Vector3_field_0x04[4];
     uint8_t Vector3_field_0x08[4];
 };
+#endif  // GAMEMD_E4_Vector3
 // 2 methods in IDA
+#ifndef GAMEMD_E4_Vector4  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Vector4
 {
 public:
@@ -1612,6 +1643,7 @@ public:
 
     uint8_t Vector4_field_0x04[4];
 };
+#endif  // GAMEMD_E4_Vector4
 // 1 methods in IDA
 // CSP: Vector8 matched via T1
 class Vector8
@@ -1632,6 +1664,7 @@ public:
     virtual ~VectorClassUInt() = default;
 
     virtual void Constructor(); // 0x42DC50
+    unsigned int * Constructor(int a2, int a3);  // 0x42DC50 G42.33 b3 supplied-body sync (2 参形)
 
 };
 // 7 methods in IDA
@@ -1655,6 +1688,7 @@ public:
     uint8_t VectorCursor_field_0x18[4];
 };
 // 3 methods in IDA
+#ifndef GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class VectorCursor_uint_DynamicVectorClass_uint
 {
 public:
@@ -1667,5 +1701,6 @@ public:
     uint8_t VectorCursor_uint_DynamicVectorClass_uint_field_0x04[4];
     uint8_t VectorCursor_uint_DynamicVectorClass_uint_field_0x08[4];
 };
+#endif  // GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint
 
 } // namespace gamemd

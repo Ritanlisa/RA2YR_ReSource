@@ -31,6 +31,9 @@ struct MoveFeedback {
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;
+    unsigned int PointerToIndex(int a2);  // 0x40B670 G42.33 b3 supplied-body sync
+    int Show(int a2);  // 0x40B6F0 G42.33 b3 supplied-body sync
+    int FindItem(unsigned int * a2);  // 0x40B930 G42.33 b3 supplied-body sync
 // --- flat members (END) ---
     void Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5);
     DynamicVector * QueryInterface(char a2, int a1, int a3, int a4, int a5);

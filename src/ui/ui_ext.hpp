@@ -38,6 +38,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // Text — text rendering / layout (4 methods)
 // IDA: Layout, MeasureWidth, sub_5BD3D0
 // ============================================================================
+#ifndef GAMEMD_E4_Text  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Text
 {
 public:
@@ -53,6 +54,7 @@ public:
 
     int32_t     Text_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Text
 
 // ============================================================================
 // Font — font management (2 methods)
@@ -294,6 +296,7 @@ public:
 
 };
 // 1 methods in IDA
+#ifndef GAMEMD_E4_BitmapClass  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class BitmapClass
 {
 public:
@@ -303,6 +306,7 @@ public:
 virtual size_t ProcessFrame(char *,int,int,int,int);  // 0x42DF90
 
 };
+#endif  // GAMEMD_E4_BitmapClass
 // 1 methods in IDA
 // CSP: ButtonClass matched via T1
 class ButtonClass
@@ -355,6 +359,7 @@ public:
 };
 // 9 methods in IDA
 // CSP: CampaignScore matched via T1
+#ifndef GAMEMD_E4_CampaignScore  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class CampaignScore
 {
 public:
@@ -383,7 +388,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* LoadScreenAssets();  // 0x72D460
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_E4_CampaignScore
 // 2 methods in IDA
+#ifndef GAMEMD_E4_CampaignSelect  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class CampaignSelect
 {
 public:
@@ -395,6 +402,7 @@ public:
 
     uint8_t CampaignSelect_field_0x04[4];
 };
+#endif  // GAMEMD_E4_CampaignSelect
 // 1 methods in IDA
 class Campaign_WorldDominationTour
 {
@@ -703,6 +711,7 @@ public:
 };
 // 6 methods in IDA
 // CSP: FontClass matched via T1
+#ifndef GAMEMD_E4_FontClass  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class FontClass
 {
 public:
@@ -725,7 +734,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* InitMetrics(void* a1, int a2, int a3, int a4, int a5, int a6);  // 0x68C710
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_E4_FontClass
 // 2 methods in IDA
+#ifndef GAMEMD_E4_FontRenderer  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class FontRenderer
 {
 public:
@@ -737,6 +748,7 @@ virtual int InitContext(int *,int);  // 0x4348F0
 
     uint8_t FontRenderer_field_0x04[4];
 };
+#endif  // GAMEMD_E4_FontRenderer
 // 2 methods in IDA
 class GadgetGrid
 {
@@ -970,6 +982,7 @@ public:
 };
 // 14 methods in IDA
 // CSP: ToolTipClass matched via T1
+#ifndef GAMEMD_E4_ToolTipClass  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class ToolTipClass
 {
 public:
@@ -1010,6 +1023,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* compareString(int a1);  // 0x724EF0
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_E4_ToolTipClass
 // 1 methods in IDA
 class Tooltip
 {

@@ -30,9 +30,9 @@ public:
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x772C90 (as GetClassIdentifier)
 
     // wrapper: delegates to WeaponTypeClass::GetClassIdentifier at 0x772C90
-    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    virtual HRESULT __stdcall Load(IStream* pStm);  // (G42.33 b3: 无基类可 override)
     // wrapper: delegates to WeaponTypeClass::GetClassIdentifier at 0x772C90
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty);  // (G42.33 b3: 无基类可 override)
 
     virtual ~WeaponTypeClass() = default;  // 0x7730F0 (as ddtor)
 

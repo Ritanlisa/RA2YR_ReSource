@@ -408,6 +408,9 @@ struct MSShapeAnim {
 struct ObjectClass {
     static int DetectCloaked(void *a1);  // G42.33 supply (direct call @0x76108F, ObjectClass__DetectCloaked)
     char Release();  // 0x6241C0 G42.33 b3 member-form sync (def in ObjectClass_e4.cpp)
+    void j_Exception_Destructor();  // 0x7CA9AF G42.33 b9 member-form sync
+    void j_Exception_Destructor_2();  // 0x7CAA00 G42.33 b9 member-form sync
+    void j_Exception_Destructor_3();  // G42.33 b9 member-form sync
     int GetMember01();  // 0x6241D0 G42.33 b3 member-form sync (def in ObjectClass_e4.cpp)
     void* vfptr;
     void* vtable1;  // 0x0

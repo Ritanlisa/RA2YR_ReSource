@@ -21,5 +21,10 @@ struct VectorCursor_uint_DynamicVectorClass_uint____13 {
     void Count(int a2, int a3);  // 0x4F4BB0
     void Add(void *a1_1, void *a2_1, void *a3_1);  // 0x4F42A0
     void Get(void *a1_1, void *a2_1);  // 0x4F42E0
+    unsigned int *__pad_0;  // G42.33 b3 flat-carrier vocab
+    unsigned int m_1[4];  // G42.33 b3 flat-carrier vocab
+    unsigned int * ddtor();  // 0x4F4000 G42.33 b3 supplied-body sync
+    int AddRef();  // G42.33 b3 supplied-body sync
+    unsigned int * Release();  // G42.33 b3 supplied-body sync
 };
 } // namespace gamemd

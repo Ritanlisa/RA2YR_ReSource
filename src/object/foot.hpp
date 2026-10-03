@@ -124,8 +124,8 @@ virtual void vt_entry_534(int);  // 0x41C130
     virtual int GetCapacity() const; // 0x45A540
     virtual int ResizeOccupiedCellList();  // 0x45A560
     virtual int sub_4734B0();
-    virtual int checkTerrainSpeed();  // 0x487150
-    virtual int updateLocomotion();  // 0x487160
+    virtual int checkTerrainSpeed(int a2);  // 0x487150 (G42.33 批 3: 真值 inc word [this+0x7C+a2*2])
+    virtual int updateLocomotion(int a2);  // 0x487160 (G42.33 批 3: 真值 dec word [this+0x7C+a2*2])
     virtual int FindPathWithRetry();
     virtual void ProcessDeployMission();  // 0x4CD2A0
     virtual void UpdateDeployMovement();  // 0x4CE680
@@ -196,7 +196,7 @@ virtual void vt_entry_534(int);  // 0x41C130
     virtual int CheckCellPassable() const; // 0x4DE940
     virtual bool DeployAction();  // 0x4DEAE0
     virtual void UpdateTeamAI();  // 0x4DEBB0
-    virtual int vt_entry_530();  // 0x4DEE50
+    virtual int vt_entry_530(int a2, int a3, int a4);  // 0x4DEE50 (G42.33 批 3: 真值 3 栈参)
     virtual void ClearPathIndex();  // 0x4DF0D0
     virtual int MissionSell_Dispatch();  // 0x4DF0E0
     virtual void UpdateAttackMove_SelectNewTarget();  // 0x4DF3A0
@@ -229,7 +229,7 @@ virtual void vt_entry_534(int);  // 0x41C130
     virtual int sub_5746D80();
     virtual bool CheckAccelLimit() const;  // 0x750030
     virtual int GetField() const;  // 0x7500d0
-    virtual void SetField(); // 0x7500E0
+    virtual int SetField(int a2); // 0x7500E0 (G42.33 批 3: 真值 fild a2 / fmul 0.01 / fstp [this])
 
 protected:
     // wrapper: delegates to FootClass::SetField at 0x7500E0

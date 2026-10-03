@@ -31,6 +31,7 @@ struct FileClass {
      double Load(...);  // C2597 interim stub
     int Write2(LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite);  // 0x65cdd0
     int Open2(const CHAR *a2);  // 0x65cb50
+    static const char * SetName(void * aP0, char * aP1);  // 0x65CAC0 thiscall static-form sync (G42.33 b3)
     int Delete();  // 0x65d190
     int CloseHandle();  // 0x65cca0
     int OpenWithCDSearch(char *Source); // N_fix R5 supply (cache truth)

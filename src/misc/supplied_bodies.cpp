@@ -3,28 +3,66 @@
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
 #include "core/utility_ext.hpp"
-#include "e4/classes/HouseClass_e4.hpp"
+#include "object/abstract.hpp"
+#include "object/techno.hpp"
+// G42.33 批 3: house/house.hpp 摘除 -- HouseClass_e4 已定义 gamemd::HouseClass (C2011)
+// G42.33 批 3: house/house.hpp 摘除 -- HouseClass_e4 已定义 gamemd::HouseClass (C2011)
 #include "entity/anim.hpp"
-#include "house/house.hpp"
 #include "misc/audio_ext.hpp"
 #include "misc/locomotion.hpp"
 #include "misc/misc_ext.hpp"
-#include "misc/movement_ext.hpp"
+#include "misc/movement_ext.hpp"  // G42.33 W3: 恢复 (Pathfinding 载体; MoveFeedback 双守卫已抑制)
 #include "misc/super_weapon.hpp"
-#include "object/abstract.hpp"
-#include "object/techno.hpp"
 #include "system/ini_class.hpp"
 #include "system/mix_file.hpp"
 #include "type/anim_type.hpp"
 #include "type/techno_type.hpp"
 #include "ui/sidebar.hpp"
 #include "ui/ui_ext.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
 #include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
+// G42.33 批 3: TU 本地载体块 (缺席全局 + 自由函数真形 + typed 宿主)
+extern int g_AudioConfigState;          // data: 0x87E2A0
+extern unsigned int dword_87DE30;       // data: 0x87DE30
+extern unsigned int dword_87E294;       // data: 0x87E294 (int* 比较位)
+extern unsigned int dword_816108;       // data: 0x816108
+extern unsigned int dword_87E2A4;       // data: 0x87E2A4
+extern unsigned int dword_87E2A8;       // data: 0x87E2A8 (LinkedList 池头)
+extern unsigned int dword_87E28C;       // data: 0x87E28C
+extern unsigned int dword_87E290;       // data: 0x87E290
+extern unsigned int dword_81610C;       // data: 0x81610C
+extern unsigned int dword_A83D4C;       // data: 0xA83D4C (Object* 全局)
+// g_AudioStreamObject @ 0x87E180 -- DList 头 typed 宿主 (team TU 同款手法)
+struct g_AudioStreamObject_host {
+    void *pad_0;                        // +0x00 首链指针
+    unsigned char __pad_rest[0x280 - 4];
+};
+extern g_AudioStreamObject_host g_AudioStreamObject;  // data: 0x87E180
+// stru_87F5F0 -- Sidebar 域宿主 (需覆盖 +0x258 = 0x87F7E8 SidebarClass 单例)
+struct stru_87F5F0_host {
+    unsigned char __pad_0[0x58];
+    unsigned char __pad_58[0x280 - 0x58];
+};
+extern stru_87F5F0_host stru_87F5F0;    // data: 0x87F5F0
+// stru_87E790 -- 临界区宿主 (Enter/LeaveCriticalSection @ +0x68)
+struct stru_87E790_host {
+    unsigned char __pad_0[0x280];
+};
+extern stru_87E790_host stru_87E790;    // data: 0x87E790
+namespace gamemd {
+// LinkedList 自由函数族真形 (mix_file.hpp 的模板 LinkedList 是碰撞源, 不用)
+int * LinkedList_Next(void *list);      // 0x407520 (IDA: LinkedList::Next)
+int LinkedList_Init(void *list);        // 0x407450 (IDA: LinkedList::Init)
+int InsertAfterDListNode(int a1, int a2);         // 0x407420
+int PushFrontLinkedListAlt(unsigned int a1, int a2);  // 0x407530
+int CellToTileIndexMap(void *a1, short *a2);          // 0x56D3F0 (G42.33 W2)
+} // namespace gamemd
 
 // 0x4AEBD0
 namespace gamemd {
-void InputManager_ProcessEvents::StubReturnFalse() {
+bool InputManager_ProcessEvents::StubReturnFalse() {
     ; /*0x4aebd0*/
 }
 } // namespace gamemd
@@ -36,20 +74,20 @@ char SuperClass::RemoveFromPointerArray(int a2) {
     int v3; // eax
     char *v4; // edx
 
-    SuperClass_field_0x10 = (char *)this->q010; /*0x6ce320*/
+    SuperClass_field_0x10 = (char *)*(unsigned int *)((char *)this + 16); /*0x6ce320 真值 [ecx+10h] count*/
     v3 = a2; /*0x6ce323*/
     if ( a2 >= (int)SuperClass_field_0x10 ) /*0x6ce329*/
       return 0; /*0x6ce34c*/
     v4 = SuperClass_field_0x10 - 1; /*0x6ce32b*/
-    this->q010 = v4; /*0x6ce32e*/
+    *(unsigned int *)((char *)this + 16) = (unsigned int)v4; /*0x6ce32e +0x10*/
     if ( a2 < (int)v4 ) /*0x6ce331*/
     {
       do /*0x6ce344*/
       {
         ++v3; /*0x6ce337*/
-        *((unsigned int *)this->vtable2 + v3 - 1) = *((unsigned int *)this->vtable2 + v3); /*0x6ce33b*/
+        *((unsigned int *)*(unsigned int *)((char *)this + 4) + v3 - 1) = *((unsigned int *)*(unsigned int *)((char *)this + 4) + v3); /*0x6ce33b 真值 [ecx+4] arr*/
       }
-      while ( v3 < (int)this->q010 ); /*0x6ce344*/
+      while ( v3 < (int)*(unsigned int *)((char *)this + 16) ); /*0x6ce344 +0x10*/
     }
     return 1; /*0x6ce349*/
 }
@@ -60,13 +98,13 @@ namespace gamemd {
 char SuperClass::Get(int a2, int a3, int a4, int a5) {
     int Status; // eax
 
-    ((SuperClass*)*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *(unsigned int *)&this->__pad_80[16]))->StartTimer(0, 0, 0); /*0x6e1c5d*/
+    ((SuperClass *)*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *(unsigned int *)((char *)this + 144)))->StartTimer(0, 0, 0); /*0x6e1c5d 真值 [esi+90h]*/
     *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *(unsigned int *)&this->__pad_80[16]) + 96) = 0; /*0x6e1c71*/
-    if ( dword_A83D4C == (Object *)a2 ) /*0x6e1c7c*/
+    if ( (Object *)dword_A83D4C == (Object *)(unsigned int)a2 ) /*0x6e1c7c*/
     {
-      SidebarClass::AddCameo((SidebarClass *)&stru_87F5F0.__pad_58[416], 31, *(unsigned int *)&this->__pad_80[16]); /*0x6e1c8c*/
-      Status = HouseClass::GetStatus((HouseClass *)0x1F, 0); /*0x6e1c9e*/
-      ((Sidebar*)(int *)&stru_87F5F0.__pad_58[416])->ActivateTab(Status); /*0x6e1ca9*/
+      ((SidebarClass *)((char *)&stru_87F5F0 + 600))->AddCameo((AbstractType)31, *(unsigned int *)((char *)this + 144)); /*0x6e1c8c 真值 this=0x87F7E8*/
+      Status = HouseClass::GetStatus((HouseClass *)0x1F, 0); /*0x6e1c9e e4 静态 varargs*/
+      ((Sidebar *)((char *)&stru_87F5F0 + 600))->ActivateTab(Status); /*0x6e1ca9*/
     }
     return 1; /*0x6e1cae*/
 }
@@ -75,7 +113,7 @@ char SuperClass::Get(int a2, int a3, int a4, int a5) {
 // 0x4010A0
 namespace gamemd {
 int AudioChannel::IsActive() {
-    return (this->__pad_0[0] & 2) != 0 || (*((unsigned char *)this + 40) & 2) != 0 || (*((unsigned char *)this + 80) & 2) != 0; /*0x4010b4*/
+    return (*(unsigned char *)this & 2) != 0 || (*((unsigned char *)this + 40) & 2) != 0 || (*((unsigned char *)this + 80) & 2) != 0; /*0x4010b4 +0 真值*/
 }
 } // namespace gamemd
 
@@ -117,15 +155,15 @@ int AudioSample::ResetState() {
       v2 = *((unsigned int *)this + 41); /*0x4024b1*/
       IDA_LOBYTE(v2) = v2 & 0xF7; /*0x4024b7*/
       *((unsigned int *)this + 41) = v2; /*0x4024b9*/
-      *((unsigned int *)this + 87) = (unsigned int)(AudioController::AdvanceQueue); /*0x4024c1*/
-      *((unsigned int *)this + 88) = (unsigned int)(AudioController::UpdatePlayback); /*0x4024cb*/
-      *((unsigned int *)this + 89) = (unsigned int)(AudioController::CleanupStream); /*0x4024d5*/
+      *((unsigned int *)this + 87) = 0x4022C0; /*0x4024c1 回调地址真值 AudioController::AdvanceQueue*/
+      *((unsigned int *)this + 88) = 0x402330; /*0x4024cb 回调地址真值 AudioController::UpdatePlayback*/
+      *((unsigned int *)this + 89) = 0x4023F0; /*0x4024d5 回调地址真值 AudioController::CleanupStream*/
       *((unsigned int *)this + 44) = 0; /*0x4024df*/
       *((unsigned int *)this + 45) = 0; /*0x4024e5*/
       *((unsigned int *)this + 46) = 0; /*0x4024eb*/
       *((unsigned int *)this + 47) = 0; /*0x4024f1*/
       *((unsigned int *)this + 48) = 0; /*0x4024f7*/
-      this->AudioSample_field_0x0C = 1; /*0x4024fd*/
+      *(unsigned int *)((char *)this + 12) = 1; /*0x4024fd +0xC*/
       *((unsigned int *)this + 42) = 0; /*0x402504*/
       *((unsigned int *)this + 41) = 0; /*0x40250a*/
       *((unsigned int *)this + 40) = 0; /*0x402510*/
@@ -134,7 +172,7 @@ int AudioSample::ResetState() {
       *((unsigned int *)this + 37) = v3; /*0x402522*/
       *((unsigned int *)this + 38) = 0; /*0x40252b*/
       *((unsigned int *)this + 39) = 0; /*0x402531*/
-      result = ((AudioMixer*)(AudioMixer *)&this->AudioSample_field_0x10)->Init(); /*0x402537*/
+      result = (int)((AudioMixer *)((char *)this + 16))->Init(); /*0x402537 +0x10*/
       *((unsigned int *)this + 90) = 0; /*0x40253c*/
     }
     return result; /*0x402543*/
@@ -213,16 +251,16 @@ int AudioThread::UpdateStats(int64_t a2) {
     v3 = a2 - *((unsigned long long *)this + 5); /*0x403930*/
     result = IDA_HIDWORD(v3); /*0x403930*/
     *((unsigned long long *)this + 2) = v3; /*0x403938*/
-    ++*(this + 18); /*0x403942*/
+    ++*((unsigned int *)this + 18); /*0x403942*/
     if ( *((unsigned long long *)this + 3) > *((unsigned long long *)this + 4) ) /*0x403957*/
     {
-      *(this + 6) = 0; /*0x40395b*/
-      *(this + 7) = 0; /*0x40395e*/
+      *((unsigned int *)this + 6) = 0; /*0x40395b*/
+      *((unsigned int *)this + 7) = 0; /*0x40395e*/
     }
     if ( v3 > *((unsigned long long *)this + 3) ) /*0x40396f*/
       *((unsigned long long *)this + 3) = v3; /*0x403971*/
     if ( v3 > *((unsigned long long *)this + 1) ) /*0x403985*/
-      ++*(this + 19); /*0x40398b*/
+      ++*((unsigned int *)this + 19); /*0x40398b*/
     if ( v3 > *((unsigned long long *)this + 6) ) /*0x40399c*/
       *((unsigned long long *)this + 6) = v3; /*0x40399e*/
     *((unsigned long long *)this + 5) = a2; /*0x4039a4*/
@@ -235,41 +273,41 @@ namespace gamemd {
 int * AudioPool::ProcessQueue() {
     AudioPool *v1; // ebx
     int *v2; // esi
-    LinkedList *v3; // esi
-    DListNode *v4; // edi
+    void *v3; // esi (G42.33 W2: LinkedList 模板碰撞规避)
+    void *v4; // edi (G42.33 W2)
     int v5; // eax
 
     v1 = this; /*0x40519a*/
     if ( !dword_816108 || !dword_87E2A4 || !*((unsigned int *)this + 3) ) /*0x4051b6*/
       return 0; /*0x4051b6*/
-    v2 = LinkedList::Next((LinkedList *)dword_87E2A8); /*0x4051ca*/
+    v2 = LinkedList_Next((void *)dword_87E2A8); /*0x4051ca 0x407520 真形*/
     if ( !v2 ) /*0x4051ce*/
     {
       if ( g_AudioConfigState ) /*0x4051d6*/
       {
-        v3 = *(LinkedList **)g_AudioStreamObject.__pad_0; /*0x4051d8*/
-        if ( *(DListNode **)g_AudioStreamObject.__pad_0 != &g_AudioStreamObject ) /*0x4051e4*/
+        v3 = *(void **)(char *)&g_AudioStreamObject; /*0x4051d8 +0 首链*/
+        if ( *(void **)(char *)&g_AudioStreamObject != (void *)&g_AudioStreamObject ) /*0x4051e4*/
         {
           do /*0x40522b*/
           {
-            v4 = *(DListNode **)v3->__pad_0; /*0x4051e8*/
-            if ( (v3[2].__pad_0[0] & 1) != 0 ) /*0x4051ef*/
+            v4 = *(void **)v3; /*0x4051e8 +0 首链*/
+            if ( (*(unsigned char *)((char *)v3 + 8) & 1) != 0 ) /*0x4051ef +8 真值*/
             {
-              LinkedList::Init(v3); /*0x4051f3*/
-              *(unsigned int *)v3[26].__pad_0 = 0; /*0x4051f8*/
-              if ( v3[2].__pad_0[0] < 0 ) /*0x405203*/
+              LinkedList_Init(v3); /*0x4051f3 0x407450 真形*/
+              *(unsigned int *)((char *)v3 + 104) = 0; /*0x4051f8 +0x68 真值*/
+              if ( *(int *)((char *)v3 + 8) < 0 ) /*0x405203 +8 符号位*/
                 RA2_OPDEL(v3); /*0x405206*/
               else
-                PushFrontLinkedListAlt(dword_87E2A8, (int)v3); /*0x405218*/
+                PushFrontLinkedListAlt(dword_87E2A8, (int)v3); /*0x405218 本地真形*/
               --dword_87E28C; /*0x40521d*/
             }
-            v3 = (LinkedList *)v4; /*0x405229*/
+            v3 = v4; /*0x405229*/
           }
-          while ( v4 != &g_AudioStreamObject ); /*0x40522b*/
+          while ( v4 != (void *)&g_AudioStreamObject ); /*0x40522b*/
           v1 = this; /*0x40522d*/
         }
       }
-      v2 = LinkedList::Next((LinkedList *)dword_87E2A8); /*0x40523c*/
+      v2 = LinkedList_Next((void *)dword_87E2A8); /*0x40523c 0x407520 真形*/
       if ( !v2 ) /*0x405240*/
         return 0; /*0x4052ce*/
     }
@@ -278,15 +316,15 @@ int * AudioPool::ProcessQueue() {
       dword_87E290 = v5; /*0x40525b*/
     memset(v2, 0, 0x280u); /*0x405269*/
     v2[9] = (int)v1; /*0x40526d*/
-    DListNode::InitEmpty((DListNode *)v2); /*0x405270*/
+    ((DListNode *)v2)->InitEmpty(); /*0x405270*/
     v2[7] = 0; /*0x405275*/
     v2[85] = 0; /*0x40527e*/
     v2[154] = 0; /*0x405284*/
     v2[120] = 0; /*0x40528a*/
     v2[42] = 0; /*0x405290*/
-    AudioMixer::Init((AudioMixer *)(v2 + 46)); /*0x405296*/
+    ((AudioMixer *)(v2 + 46))->Init(); /*0x405296*/
     v2[86] = 0; /*0x40529b*/
-    InsertAfterDListNode((int)&g_AudioStreamObject, v2); /*0x4052a8*/
+    InsertAfterDListNode((int)&g_AudioStreamObject, (int)v2); /*0x4052a8 本地真形*/
     v2[78] = dword_81610C++; /*0x4052b2*/
     return v2; /*0x4052be*/
 }
@@ -296,7 +334,7 @@ int * AudioPool::ProcessQueue() {
 namespace gamemd {
 unsigned int * AudioFileClass::Release() {
     unsigned int *result; // eax
-    AudioFileClass v2; // esi
+    unsigned int v2; // esi (G42.33 批 3: 指针值语义, 载体非类对象)
     int v3; // ecx
     int v4; // ebx
     RefCount **v5; // edi
@@ -305,10 +343,10 @@ unsigned int * AudioFileClass::Release() {
     result =(unsigned int *)this; /*0x405c01*/
     if ( g_AudioConfigState ) /*0x405c13*/
     {
-      if ( *((int **)this + 3) == &dword_87E294 ) /*0x405c20*/
+      if ( *(int **)((char *)this + 12) == (int *)&dword_87E294 ) /*0x405c20*/
       {
-        v2 = *this; /*0x405c26*/
-        if ( *this ) /*0x405c26*/
+        v2 = *(unsigned int *)this; /*0x405c26*/
+        if ( v2 ) /*0x405c26*/
         {
           if ( *((unsigned int *)this + 2) == *(unsigned int *)(*(unsigned int *)&v2 + 36) /*0x405c53*/
             && *((unsigned int *)this + 1) == *(unsigned int *)(*(unsigned int *)&v2 + 312)
@@ -318,8 +356,8 @@ unsigned int * AudioFileClass::Release() {
             if ( v3 && v2 == *(unsigned int *)(v3 + 192) ) /*0x405c69*/
             {
               if ( (*(unsigned char *)(*(unsigned int *)&v2 + 24) & 2) != 0 ) /*0x405c6f*/
-                Voice::Stop((int32_t)(v6)); /*0x405c71*/
-              AudioStream::ReleaseChannel(*(AudioStream **)(*(unsigned int *)&v2 + 176)); /*0x405c7c*/
+                v6->Stop(); /*0x405c71 实例真形*/
+              ((AudioStream *)*(void **)(*(unsigned int *)&v2 + 176))->ReleaseChannel(); /*0x405c7c*/
               *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 192) = 0; /*0x405c87*/
               *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 188) = 0; /*0x405c93*/
               *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 180) = 0; /*0x405c9f*/
@@ -336,7 +374,7 @@ unsigned int * AudioFileClass::Release() {
               v5 = (RefCount **)(*(unsigned int *)&v2 + 40); /*0x405ced*/
               do /*0x405d05*/
               {
-                RefCount::Decrement(*v5); /*0x405cf2*/
+                ((RefCount *)*v5)->Decrement(); /*0x405cf2*/
                 *v5 = 0; /*0x405cf7*/
                 ++v4; /*0x405cff*/
                 ++v5; /*0x405d00*/
@@ -365,13 +403,13 @@ namespace gamemd {
 int * AudioSource::Get() {
     int *result; // eax
 
-    if ( !g_AudioConfigState || *((int **)this + 3) != &dword_87E294 ) /*0x406140*/
+    if ( !g_AudioConfigState || *(int **)((char *)this + 12) != (int *)&dword_87E294 ) /*0x406140*/
       return 0; /*0x406166*/
-    result = (int *)*this; /*0x406142*/
-    if ( *(unsigned int *)this && (*((unsigned int *)this + 2) != result[9] || *((unsigned int *)this + 1) != result[78]) ) /*0x40615e*/
+    result = *(int **)this; /*0x406142*/
+    if ( *(unsigned int *)this && (*((unsigned int *)this + 2) != (unsigned int)result[9] || *((unsigned int *)this + 1) != (unsigned int)result[78]) ) /*0x40615e*/
     {
       result = 0; /*0x406160*/
-      *this = 0; /*0x406162*/
+      *(int **)this = 0; /*0x406162*/
     }
     return result; /*0x406165*/
 }
@@ -398,33 +436,33 @@ int AudioSample::Destructor() {
     if ( (AudioSample *)this->AudioSample_field_0x04 != this ) /*0x407aa4*/
     {
       EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407aab*/
-      LinkedList::Init((LinkedList *)this); /*0x407aaf*/
+      LinkedList_Init((void *)this); /*0x407aaf 0x407450 真形*/
       LeaveCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407ab9*/
     }
     if ( !*((unsigned int *)this + 34) && *((unsigned int *)this + 5) ) /*0x407ac5*/
     {
       EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407ad1*/
-      Voice::Stop((int32_t)v8); /*0x407ad6*/
+      v8->Stop(); /*0x407ad6 实例真形*/
       LeaveCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407ae0*/
     }
     v2 = (Count *)*((unsigned int *)this + 13); /*0x407ae2*/
     if ( v2 ) /*0x407ae7*/
     {
-      Count::DecrementRefCountsAudio(v2); /*0x407ae9*/
+      v2->DecrementRefCountsAudio(); /*0x407ae9 静态经实例调用 (载体 static)*/
       *((unsigned int *)this + 13) = 0; /*0x407aee*/
     }
     v3 = (Count *)*((unsigned int *)this + 14); /*0x407af5*/
     if ( v3 ) /*0x407afa*/
     {
-      Count::DecrementRefCountsAudio(v3); /*0x407afc*/
+      v3->DecrementRefCountsAudio(); /*0x407afc 静态经实例调用 (载体 static)*/
       *((unsigned int *)this + 14) = 0; /*0x407b01*/
     }
     v4 = (AudioSample *)*((unsigned int *)this + 12); /*0x407b08*/
     if ( v4 ) /*0x407b0d*/
-      AudioSample::InitLinkedList(v4); /*0x407b0f*/
+      v4->InitLinkedList(); /*0x407b0f 实例真形*/
     v5 = (AudioSample *)*((unsigned int *)this + 5); /*0x407b14*/
     if ( v5 ) /*0x407b19*/
-      AudioSample::ResetState(v5); /*0x407b1b*/
+      v5->ResetState(); /*0x407b1b 实例真形*/
     v6 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 31); /*0x407b20*/
     if ( v6 ) /*0x407b25*/
       (**v6)((unsigned int)v6, 1); /*0x407b2b*/
@@ -436,7 +474,7 @@ int AudioSample::Destructor() {
 // 0x4080D0
 namespace gamemd {
 int AudioSample::IsBuffering() {
-    return (this->AudioSample_field_0x0C & 1) != 0 /*0x4080e8*/
+    return (*(unsigned int *)((char *)this + 12) & 1) != 0 /*0x4080e8 +0xC*/
         && *(unsigned int *)(*((unsigned int *)this + 5) + 20) != *(unsigned int *)(*((unsigned int *)this + 5) + 24);
 }
 } // namespace gamemd
@@ -469,13 +507,13 @@ void AudioSample::InitLinkedList() {
     int *v13; // esi
 
     v1 = this; /*0x408843*/
-    AudioSample_field_0x04 =(int)this->AudioSample_field_0x04; /*0x40884b*/
-    p_AudioSample_field_0x04 = &this->AudioSample_field_0x04; /*0x40884e*/
-    if ( (int *)AudioSample_field_0x04 != &this->AudioSample_field_0x04 ) /*0x408853*/
+    AudioSample_field_0x04 = *(int *)((char *)this + 4); /*0x40884b +4 链指针*/
+    p_AudioSample_field_0x04 = (int *)((char *)this + 4); /*0x40884e +4 链头*/
+    if ( (int *)AudioSample_field_0x04 != (int *)((char *)this + 4) ) /*0x408853*/
     {
       do /*0x4088a0*/
       {
-        LinkedList::Init((LinkedList *)AudioSample_field_0x04); /*0x40885c*/
+        LinkedList_Init((void *)AudioSample_field_0x04); /*0x40885c 0x407450 真形*/
         v4 = *(unsigned int **)(AudioSample_field_0x04 + 48); /*0x408861*/
         *(unsigned int *)(AudioSample_field_0x04 + 48) = 0; /*0x408864*/
         v5 = v4[5]; /*0x40886d*/
@@ -517,7 +555,7 @@ void AudioSample::InitLinkedList() {
       while ( v8 != p_AudioSample_field_0x04 ); /*0x4088d5*/
       v1 = this; /*0x4088d7*/
     }
-    p_AudioSample_field_0x10 = &v1[3].AudioSample_field_0x10; /*0x4088db*/
+    p_AudioSample_field_0x10 = (int *)((char *)v1 + 76); /*0x4088db 真值 add ebx,4Ch*/
     v12 = 2; /*0x4088de*/
     v13 = p_AudioSample_field_0x10; /*0x4088e3*/
     do /*0x408906*/
@@ -526,7 +564,7 @@ void AudioSample::InitLinkedList() {
       *v13 = -1001; /*0x4088e8*/
       v13[1] = *v13; /*0x4088f0*/
       *(v13 - 1) = 0; /*0x4088f6*/
-      AudioSample::SetField((AudioSample *)(v13 - 13)); /*0x4088fd*/
+      ((AudioSample *)(v13 - 13))->SetField(); /*0x4088fd 实例真形*/
       v13 += 16; /*0x408902*/
       --v12; /*0x408905*/
     }
@@ -543,18 +581,18 @@ int AudioSample::SetField() {
 
     result = *((unsigned int *)this + 10); /*0x408930*/
     *((unsigned int *)this + 11) = 0; /*0x408937*/
-    this->AudioSample_field_0x0C = result; /*0x40893a*/
+    *(unsigned int *)((char *)this + 12) = result; /*0x40893a +0xC*/
     if ( result ) /*0x40893d*/
     {
       result = *(unsigned int *)(result + 8 * *((unsigned int *)this + 5) + 32); /*0x408943*/
-      this->AudioSample_field_0x04 = result; /*0x408948*/
+    *(unsigned int *)((char *)this + 4) = result; /*0x408948 +4*/
     }
     else
     {
-      this->AudioSample_field_0x04 = 0; /*0x408958*/
+    *(unsigned int *)((char *)this + 4) = 0; /*0x408958 +4*/
     }
-    this->AudioSample_field_0x08 = 0; /*0x40894b*/
-    this->AudioSample_field_0x10 &= ~1u; /*0x408954*/
+    *(unsigned int *)((char *)this + 8) = 0; /*0x40894b +8*/
+    *(unsigned int *)((char *)this + 16) &= ~1u; /*0x408954 +0x10*/
     return result; /*0x408957*/
 }
 } // namespace gamemd
@@ -562,21 +600,21 @@ int AudioSample::SetField() {
 // 0x409C40
 namespace gamemd {
 unsigned int * AudioBuffer::InitializePlayback() {
-    AudioBuffer v2; // ecx
+    unsigned int v2; // ecx (G42.33 W2: 指针值语义)
     unsigned int *result; // eax
-    AudioBuffer *v4; // eax
-    AudioBuffer v5; // ecx
-    AudioBuffer v6; // ecx
+    unsigned int *v4; // eax (G42.33 W2)
+    unsigned int v5; // ecx (G42.33 W2)
+    unsigned int v6; // ecx (G42.33 W2)
     int v7; // ecx
     void *v8; // eax
 
-    v2 = *this; /*0x409c46*/
+    v2 = *(unsigned int *)this; /*0x409c46*/
     result = *(unsigned int **)(*(unsigned int *)&v2 + 360); /*0x409c48*/
     if ( result ) /*0x409c50*/
     {
-      v4 = (AudioBuffer *)result[5]; /*0x409c56*/
+      v4 = (unsigned int *)result[5]; /*0x409c56*/
       if ( !v4 ) /*0x409c5b*/
-        v4 = (AudioBuffer *)(*(unsigned int *)(*(unsigned int *)&v2 + 172) + 68); /*0x409c63*/
+        v4 = (unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 172) + 68); /*0x409c63*/
       *((unsigned int *)this + 38) = 0; /*0x409c66*/
       *((unsigned int *)this + 33) = 0; /*0x409c6c*/
       *((unsigned int *)this + 32) = 0; /*0x409c72*/
@@ -585,7 +623,7 @@ unsigned int * AudioBuffer::InitializePlayback() {
       *((unsigned int *)this + 40) = 0; /*0x409c85*/
       v5 = v4[3]; /*0x409c8b*/
       *((unsigned int *)this + 42) = 0; /*0x409c8e*/
-      *(this + 41) = v5; /*0x409c94*/
+      *((unsigned int *)this + 41) = v5; /*0x409c94*/
       v6 = v4[1]; /*0x409c9a*/
       if ( v6 ) /*0x409c9f*/
       {
@@ -593,29 +631,29 @@ unsigned int * AudioBuffer::InitializePlayback() {
         if ( v7 ) /*0x409ca2*/
         {
           if ( v7 == 1 ) /*0x409ca5*/
-            *((unsigned int *)this + 28) = AudioController::LoadThemeBank; /*0x409ca7*/
+            *((unsigned int *)this + 28) = 0x409DE0; /*0x409ca7 回调地址真值 AudioController::LoadThemeBank*/
         }
         else
         {
-          *((unsigned int *)this + 28) = AudioController::LoadThemeBank; /*0x409cb0*/
-          *((unsigned int *)this + 44) = ProcessAudioChannelMovement; /*0x409cb7*/
-          *(this + 35) = v4[6]; /*0x409cc4*/
-          *(this + 43) = v4[6]; /*0x409ccd*/
+          *((unsigned int *)this + 28) = 0x409DE0; /*0x409cb0 回调地址真值 AudioController::LoadThemeBank*/
+          *((unsigned int *)this + 44) = 0x40AA70; /*0x409cb7 回调地址真值 ProcessAudioChannelMovement*/
+          *((unsigned int *)this + 35) = v4[6]; /*0x409cc4*/
+          *((unsigned int *)this + 43) = v4[6]; /*0x409ccd*/
           *((unsigned int *)this + 40) = 4 * *(unsigned int *)&v4[6] + 128; /*0x409cdd*/
         }
       }
       else
       {
-        *((unsigned int *)this + 28) = sub_409D90; /*0x409ce5*/
+        *((unsigned int *)this + 28) = 0x409D90; /*0x409ce5 回调地址真值 sub_409D90*/
       }
       if ( *((unsigned int *)this + 34) < *((unsigned int *)this + 35) ) /*0x409cfa*/
       {
         if ( *((unsigned int *)this + 31) ) /*0x409cfc*/
           free(*((void **)this + 31)); /*0x409d04*/
         v8 = malloc(*((unsigned int *)this + 35)); /*0x409d13*/
-        *((unsigned int *)this + 31) = v8; /*0x409d1d*/
+        *((unsigned int *)this + 31) = (unsigned int)v8; /*0x409d1d*/
         if ( v8 ) /*0x409d20*/
-          *(this + 34) = *(this + 35); /*0x409d30*/
+          *((unsigned int *)this + 34) = *((unsigned int *)this + 35); /*0x409d30*/
         else
           *((unsigned int *)this + 34) = 0; /*0x409d22*/
       }
@@ -624,12 +662,12 @@ unsigned int * AudioBuffer::InitializePlayback() {
       {
         if ( *((unsigned int *)this + 36) ) /*0x409d46*/
           free(*((void **)this + 36)); /*0x409d51*/
-        result = malloc(*((unsigned int *)this + 40)); /*0x409d60*/
-        *((unsigned int *)this + 36) = result; /*0x409d6a*/
+        result = (unsigned int *)malloc(*((unsigned int *)this + 40)); /*0x409d60*/
+        *((unsigned int *)this + 36) = (unsigned int)result; /*0x409d6a*/
         if ( result ) /*0x409d70*/
         {
           result = (unsigned int *)*((unsigned int *)this + 40); /*0x409d7b*/
-          *((unsigned int *)this + 39) = result; /*0x409d81*/
+          *((unsigned int *)this + 39) = (unsigned int)result; /*0x409d81*/
         }
         else
         {
@@ -644,8 +682,8 @@ unsigned int * AudioBuffer::InitializePlayback() {
 // 0x40B6D0
 namespace gamemd {
 unsigned int MoveFeedback::Update(int a2) {
-    if ( IDA_LOBYTE(this->m_C) ) /*0x40b6d0*/
-      return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x40b6e5*/
+    if ( this->m_IsAllocated ) /*0x40b6d0 真值 [ecx+0xC]*/
+      return (unsigned int)(a2 - this->m_Capacity) >> 2; /*0x40b6e5 真值 [ecx+4]*/
     else
       return 0; /*0x40b6d7*/
 }
@@ -762,8 +800,7 @@ char Pathfinding::AStar(int16_t *a2, int16_t *a3, int a4, int a5) {
       v74 = 0; /*0x42c2fb*/
       goto LABEL_6; /*0x42c2fb*/
     }
-    LocomotionClass::GetSpeedMultiplier((LocomotionClass *)a5); /*0x42c2ba*/
-    __asm { fst [esp+68h+var_8] } /*0x42c2c5*/
+    v106 = ((LocomotionClass *)a5)->GetSpeedMultiplier(); /*0x42c2ba+0x42c2c5 fst st(0)->var_8 语义翻译 (G42.33 W2)*/
     v94 = *(unsigned int *)(a5 + 540); /*0x42c2c9*/
     __asm { fcomp ds:dbl_7E3810 } /*0x42c2e9*/
     v74 = 1; /*0x42c2ef*/

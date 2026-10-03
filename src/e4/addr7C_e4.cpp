@@ -35,10 +35,47 @@
 #include "e4/classes/E4Recv_7BE4A0_e4.hpp"
 #include "e4/classes/Surface_e4.hpp"
 #include "e4/classes/AllocCallback_e4.hpp"
+// G42.33 b3 TU-local fwd decls / supplies (use-before-def in this TU)
+// G42.33 b7: Exception minimal carrier (fwd-only elsewhere)
+// G42.33 b7: Exception minimal carrier (fwd-only elsewhere)
+// G42.33 b8: ctype.h defines __iscsym/__iscsymf as macros containing || -> undef before defs
+#undef __iscsym
+#undef __iscsymf
+namespace gamemd { struct Exception { void Destructor(); }; }  // G42.33 b7 minimal E2
+// G42.33 b7: Exception minimal carrier (fwd-only elsewhere)
+namespace gamemd {
+char * swap(char * a1, char * a2, int a3);  // 0x7C8CEA def later in this TU
+char * shortsort(char * a1, char * a2, int a3, int (__cdecl *a4)(char *));  // 0x7C8C9C def below
+int tolower_0(int C);  // 0x7CB063 def later in this TU
+int toupper_0(int C);  // 0x7C9842 def later in this TU
+extern size_t SrcSizeInBytes;  // 0x87C79C (locale; decl in globals_system.hpp)
+void _lockexit();  // 0x7CBEC1 def later in this TU
+void _unlockexit();  // 0x7CBECA def later in this TU
+extern int _amsg_exit(unsigned int aP0);  // CRT internal
+extern int _flsbuf(int aP0, FILE * aP1);  // CRT internal
+extern void * _getptd(void);  // CRT internal
+extern int __crtLCMapStringA(unsigned int aP0, unsigned int aP1, const char * aP2, int aP3, char * aP4, int aP5, int aP6, int aP7);  // CRT internal
+int _PMDtoOffset_YAHPAXABUPMD___Z(void * aP0, const void * aP1);  // 0x7CAEF1 def later in this TU
+void _lock_file2(int aP0, int aP1);  // 0x7CB428 def later in this TU
+void _unlock_file2(int aP0, int aP1);  // 0x7CB47A def later in this TU
+extern int _stbuf(FILE * aP0);  // CRT internal
+extern int _ftbuf(int aP0, FILE * aP1);  // CRT internal
+extern int _putwc_lk(wchar_t aP0, FILE * aP1);  // CRT internal
+int _fflush_lk(FILE * aP0);  // 0x7CB1CB def later in this TU
+int flsall(int aP0);  // 0x7CB25E def later in this TU
+int _flush(FILE * aP0);  // 0x7CB1F9 def later in this TU
+void _forcdecpt(char * a1);  // 0x7CEB28 def later in this TU
+bool _positive(double * a1);  // 0x7CEBD0 def later in this TU
+void _cropzeros(char * a1);  // CRT internal printf helper (addr-taken only)
+void _cfltcvt(double a1, char *a2, int a3, int a4, int a5);  // CRT internal (addr-taken only)
+void _fassign(int a1, void *a2);  // CRT internal (addr-taken only)
+// MSVC6 CRT FILE layout (UCRT _iobuf is opaque; fread/fwrite bodies below)
+struct _iobuf_msvc6 { char *_ptr; int _cnt; char *_base; int _flag; int _file; int _charbuf; int _bufsiz; char *_tmpfname; };
+}
 
 // 0x7C0740
 namespace gamemd {
-void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char arg8, char * a5)
+int ProcessAudioStreamPlayback(int a1, unsigned int aP1, int arg0, char a4, char arg8, char * a5)
 {
   DSurface * v8;
   DSurface * v9;
@@ -59,7 +96,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   uint16_t *v24; // edx
   int v25; // ecx
   DSurface * v26;
-  DSurface * result;
+  int result;  // G42.33 b3: retype (truth int result)
   int v28; // edi
   DSurface * v29;
   bool v30; // cc
@@ -81,23 +118,23 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
 
   v8 = (gamemd::DSurface *)((int)((gamemd::DSurface *)(*(unsigned int *)(a1 + 1892))));
   v9 = (gamemd::DSurface *)(*(unsigned int *)(a1 + 416));
-  v42 = aP1; /*0x7c0759*/
+  v42 = (gamemd::DSurface *)(aP1); /*0x7c0759*/
   v39 = 0; /*0x7c075d*/
   if ( !v8 ) /*0x7c0765*/
     return -6; /*0x7c0765*/
-  v38 = aP1; /*0x7c0771*/
+  v38 = (gamemd::DSurface *)(aP1); /*0x7c0771*/
   if ( *(int *)(a1 + 140) <= 1 ) /*0x7c0778*/
   {
     v37 = (gamemd::DSurface *)((unsigned int)(1));
     v41 = (gamemd::DSurface *)((unsigned int)(aP1));
-    v40 = aP1; /*0x7c08a1*/
+    v40 = (gamemd::DSurface *)(aP1); /*0x7c08a1*/
     goto LABEL_23; /*0x7c08a1*/
   }
   v37 = 0; /*0x7c0782*/
   if ( arg0 <= 0 ) /*0x7c0789*/
   {
-    v39 = (gamemd::DSurface *)(Audio_Process_7C19F0(&v41, &v40));
-    v12 = (unsigned int)(Audio_Process_7C19F0(0, 0));
+    v39 = Audio_Process_7C19F0(a1, (gamemd::DSurface *)(arg0), (unsigned int *)&v41, (unsigned int *)&v40);
+    v12 = (unsigned int)(Audio_Process_7C19F0(0, 0, 0, 0));
     v10 = (gamemd::DSurface *)(v41);
   }
   else
@@ -170,8 +207,8 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
       v19 = v17 * (v15 / v17); /*0x7c091c*/
       if ( v15 > v19 ) /*0x7c0921*/
         ++v18; /*0x7c0923*/
-      v20 = aP1 - v18; /*0x7c0926*/
-      v43 = aP1 - v18; /*0x7c0928*/
+      v20 = (gamemd::DSurface *)(aP1 - v18); /*0x7c0926*/
+      v43 = (gamemd::DSurface *)(aP1 - v18); /*0x7c0928*/
       if ( aP1 - v18 >= 0 ) /*0x7c092c*/
       {
         *(unsigned int *)(a1 + 1964) = v17 + v19 - v15; /*0x7c0943*/
@@ -187,7 +224,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
     }
     else
     {
-      v43 = aP1; /*0x7c0955*/
+      v43 = (gamemd::DSurface *)(aP1); /*0x7c0955*/
       *(unsigned int *)(a1 + 1964) = 0; /*0x7c0959*/
     }
     if ( arg8 ) /*0x7c0969*/
@@ -219,7 +256,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   else
   {
     a4 = 0; /*0x7c09e7*/
-    v43 = aP1; /*0x7c09ec*/
+    v43 = (gamemd::DSurface *)(aP1); /*0x7c09ec*/
     *(unsigned int *)(a1 + 1964) = 0; /*0x7c09f0*/
   }
   if ( !aP1 ) /*0x7c09fe*/
@@ -232,19 +269,19 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
             a1,
             7,
             0,
-            2 * (*(unsigned int *)(*(unsigned int *)(a1 + 1892) + 4 * v38) & 0xFFFFFFF)) )
+            2 * (*(unsigned int *)(*(unsigned int *)(a1 + 1892) + 4 * (unsigned int)v38) & 0xFFFFFFF)) )
     {
       v26 = (gamemd::DSurface *)(v38);
-      result = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((int)((gamemd::DSurface *)(-1)))))))))))))))))))))))))))));
+          result = -1; /* G42.33 b4: mega-drape stripped */
       *(unsigned int *)(a1 + 384) = (unsigned int)(v38); /*0x7c0a6e*/
       v28 = 5; /*0x7c0a76*/
       if ( v39 ) /*0x7c0a7b*/
         v28 = 21; /*0x7c0a7d*/
       if ( !a4 ) /*0x7c0a88*/
         v28 |= 2u; /*0x7c0a8a*/
-      v29 = (gamemd::DSurface *)(aP1 - v38); /*0x7c0a8d*/
+      v29 = (gamemd::DSurface *)(aP1 - (unsigned int)(v38)); /*0x7c0a8d*/
       v45 = 0; /*0x7c0a8f*/
-      if ( v29 <= 0 ) /*0x7c0a99*/
+      if ( (int)v29 <= 0 ) /*0x7c0a99*/
         return result; /*0x7c0a99*/
       while ( 1 ) /*0x7c0a9f*/
       {
@@ -257,12 +294,12 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
           v28 |= 8u; /*0x7c0c23*/
         else
           v28 &= ~8u; /*0x7c0c28*/
-        result = (gamemd::DSurface *)(FillAudioStreamBuffer(a1, v28)); /*0x7c0c2f*/
-        if ( result != (unsigned int)(gamemd::DSurface *)(-1) ) /*0x7c0c37*/
+        result = FillAudioStreamBuffer(a1, v28); /*0x7c0c2f*/
+        if ( (unsigned int)result != (unsigned int)-1 ) /*0x7c0c37*/
         {
-          if ( !arg8 || result != (unsigned int)(gamemd::DSurface *)(-9) && result != -11 ) /*0x7c0c49*/
+          if ( !arg8 || (unsigned int)result != (unsigned int)-9 && (unsigned int)result != (unsigned int)-11 ) /*0x7c0c49*/
             return result; /*0x7c0c49*/
-          result = (gamemd::DSurface *)(-1); /*0x7c0c4b*/
+          result = -1; /*0x7c0c4b*/
         }
         ++v26; /*0x7c0c52*/
         if ( ++v45 >= (int)(v29) ) /*0x7c0c5a*/
@@ -310,7 +347,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   v32 = v42; /*0x7c0b22*/
   v33 = -1; /*0x7c0b26*/
   v34 = 0; /*0x7c0b29*/
-  if ( (*(unsigned char *)(a1 + 340) & 4) != 0 && v42 == *(unsigned int *)(a1 + 1800) ) /*0x7c0b3a*/
+  if ( (*(unsigned char *)(a1 + 340) & 4) != 0 && (unsigned int)v42 == *(unsigned int *)(a1 + 1800) ) /*0x7c0b3a*/
   {
     v35 = *(unsigned int *)(a1 + 1792); /*0x7c0b40*/
     if ( v35 ) /*0x7c0b48*/
@@ -318,7 +355,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
       v34 = (gamemd::DSurface *)(v35 + *(unsigned int *)(a1 + 1788) <= 2 * (*(unsigned int *)(v31 + 4 * *(unsigned int *)(a1 + 300)) & 0xFFFFFFF));
       *(unsigned int *)(a1 + 1796) = 0; /*0x7c0b6c*/
   LABEL_75:
-      if ( v32 > 0 /*0x7c0bc2*/
+      if ( (int)v32 > 0 /*0x7c0bc2*/
         && ((v44 & 0x10) == 0 || (*(unsigned char *)(a1 + 234) & 0x10) == 0)
         && (v33 = FillAudioStreamBuffer(a1, v44 | 6), v33 != -1)
         || !v34
@@ -327,26 +364,26 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
                     8,
                     0,
                     *(unsigned int *)(a1 + 1788) + *(unsigned int *)(a1 + 1792)) == 0,
-            result =(gamemd::DSurface *)-6,
+            result = -6,
             v36) )
       {
-        result = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(v33)))))))))))))))))))))))));
+        result = v33; /* G42.33 b3: mega-drape stripped */
       }
       goto LABEL_82; /*0x7c0bc4*/
     }
   }
-  if ( !(*(int (**)(int, int, unsigned int, int))(a1 + 64))(a1, 7, 0, 2 * (*(unsigned int *)(v31 + 4 * v42) & 0xFFFFFFF)) ) /*0x7c0c05*/
+  if ( !(*(int (**)(int, int, unsigned int, int))(a1 + 64))(a1, 7, 0, 2 * (*(unsigned int *)(v31 + 4 * (unsigned int)v42) & 0xFFFFFFF)) ) /*0x7c0c05*/
     goto LABEL_75; /*0x7c0c05*/
-  result = (gamemd::DSurface *)(-6); /*0x7c0c0b*/
+  result = -6; /*0x7c0c0b*/
   LABEL_82:
-  if ( arg8 && (result == (unsigned int)(gamemd::DSurface *)(-9) || result == -11) ) /*0x7c0bda*/
+  if ( arg8 && ((unsigned int)result == (unsigned int)-9 || (unsigned int)result == (unsigned int)-11) ) /*0x7c0bda*/
     return -1; /*0x7c0be3*/
   return result; /*0x7c0be0*/
 }
 }
 // 0x7C2590
 namespace gamemd {
-int RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2)
+int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** aP2)
 {
   int (__cdecl *v5)(unsigned int, int, unsigned int, int); // eax
   unsigned int *v6; // eax
@@ -630,7 +667,7 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2)
   }
   else
   {
-    if ( Audio_Render_7C3430(*((unsigned int *)v7 + 45), 2) != -1 ) /*0x7c2bab*/
+    if ( Audio_Render_7C3430((DSurface *)(void *)(unsigned int)v7, *((int *)v7 + 44), *((unsigned int *)v7 + 71), 2) != -1 ) /*0x7c2bab*/
       goto LABEL_104; /*0x7c2bab*/
   LABEL_108:
     if ( Audio_Render_7BE670(v7) != -1 ) /*0x7c2c06*/
@@ -913,10 +950,10 @@ int SeekAudioStream(int a1, signed int aP1, signed int aP2, int a4, unsigned int
 
   v5 = (int)(*(unsigned int *)(a1 + 16));
   result = -1; /*0x7c34b6*/
-  if ( aP1 >= (gamemd::DSurface *)(v5) ) /*0x7c34bb*/
+  if ( aP1 >= v5 ) /*0x7c34bb*/
     return -23; /*0x7c34bb*/
   v7 = (gamemd::DSurface *)(aP2); /*0x7c34c1*/
-  if ( aP2 >= (gamemd::DSurface *)(v5) ) /*0x7c34c7*/
+  if ( aP2 >= v5 ) /*0x7c34c7*/
     return -23; /*0x7c34c7*/
   if ( aP1 >= aP2 ) /*0x7c34cf*/
     return -23; /*0x7c34cf*/
@@ -3844,7 +3881,7 @@ short sub_7C6FC8(int a1, unsigned char * a2, int * a3, int a4, int a5, int a6)
 }
 // 0x7C85EA
 namespace gamemd {
-int wsprintfA()
+int wsprintfA(char * aP0, const char * aP1, ...)
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
@@ -3852,7 +3889,7 @@ int wsprintfA()
 
 // 0x7C85F0
 namespace gamemd {
-int PostMessageA()
+int PostMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
   return __imp_PostMessageA(hWnd, Msg, wParam, lParam);
 }
@@ -3860,14 +3897,14 @@ int PostMessageA()
 
 // 0x7C8992
 namespace gamemd {
-int closesocket()
+int closesocket(unsigned int s)
 {
   return __imp_closesocket(s);
 }
 }
 // 0x7C8B48
 namespace gamemd {
-int qsort(AbstractClass * aP0, IUnknown * aP1, size_t SizeOfElements, _CoreCrtNonSecureSearchSortCompareFunction CompareFunction)
+int qsort(void * aP0, unsigned int aP1, size_t SizeOfElements, _CoreCrtNonSecureSearchSortCompareFunction CompareFunction)
 {
   int result; // eax
   char *v6; // esi
@@ -3895,10 +3932,10 @@ int qsort(AbstractClass * aP0, IUnknown * aP1, size_t SizeOfElements, _CoreCrtNo
     {
       while ( 1 ) /*0x7c8b92*/
       {
-        v7 = (char *)((v6 - (unsigned char *)aP0) / SizeOfElements + 1); /*0x7c8b92*/
+        v7 = (v6 - (char *)aP0) / SizeOfElements + 1; /*0x7c8b92*/
         if ( v7 <= 8 ) /*0x7c8b96*/
         {
-          result = shortsort(aP0, v6, SizeOfElements, CompareFunction); /*0x7c8b9e*/
+          result = (int)shortsort((char *)aP0, v6, (int)SizeOfElements, (int (__cdecl *)(char *))CompareFunction); /*0x7c8b9e*/
           goto LABEL_6; /*0x7c8b9e*/
         }
         swap((char *)aP0 + SizeOfElements * (v7 >> 1), (char *)aP0, SizeOfElements); /*0x7c8bd1*/
@@ -3910,16 +3947,16 @@ int qsort(AbstractClass * aP0, IUnknown * aP1, size_t SizeOfElements, _CoreCrtNo
             v9 = &v16[SizeOfElements]; /*0x7c8be1*/
             v16 += SizeOfElements; /*0x7c8be6*/
           }
-          while ( v16 <= v6 && CompareFunction(v9) <= 0 ); /*0x7c8bf4*/
+          while ( v16 <= v6 && ((int (__cdecl *)(char *))CompareFunction)(v9) <= 0 ); /*0x7c8bf4*/
           do /*0x7c8c06*/
             i -= SizeOfElements; /*0x7c8bf6*/
-          while ( i > aP0 && CompareFunction(i) >= 0 ); /*0x7c8c06*/
+          while ( i > (char *)aP0 && ((int (__cdecl *)(char *))CompareFunction)(i) >= 0 ); /*0x7c8c06*/
           if ( i < v16 ) /*0x7c8c0f*/
             break; /*0x7c8c0f*/
         }
         swap((char *)aP0, i, SizeOfElements); /*0x7c8c1f*/
         result = (int)v16; /*0x7c8c24*/
-        if ( i - (unsigned char *)aP0 - 1 >= v6 - v16 ) /*0x7c8c35*/
+        if ( i - (char *)aP0 - 1 >= v6 - v16 ) /*0x7c8c35*/
           break; /*0x7c8c35*/
         if ( v16 < v6 ) /*0x7c8c69*/
         {
@@ -3966,7 +4003,7 @@ int qsort(AbstractClass * aP0, IUnknown * aP1, size_t SizeOfElements, _CoreCrtNo
 }
 // 0x7C8C9C
 namespace gamemd {
-void int shortsort(AbstractClass * aP0, unsigned int a2, int a3, int (__cdecl *a4)(unsigned int) a4)
+char * shortsort(char * a1, char * a2, int a3, int (__cdecl *a4)(char *))
 {
   char *result; // eax
   char *i; // edi
@@ -3989,7 +4026,7 @@ void int shortsort(AbstractClass * aP0, unsigned int a2, int a3, int (__cdecl *a
 }
 // 0x7C8D20
 namespace gamemd {
-void _strcmpi(char * a1, char * a2)
+int _strcmpi(char * a1, char * a2)
 {
   int result; // eax
   char v5; // t0
@@ -4062,7 +4099,7 @@ void _strcmpi(char * a1, char * a2)
 }
 // 0x7C8E25
 namespace gamemd {
-void * bsearch(const void * Key, const void * Base, ObjectClass * aP2, size_t SizeOfElements, _CoreCrtNonSecureSearchSortCompareFunction CompareFunction)
+void * bsearch(const void * Key, const void * Base, size_t aP2, size_t SizeOfElements, _CoreCrtNonSecureSearchSortCompareFunction CompareFunction)
 {
   size_t v5; // eax
   char *v6; // edi
@@ -4088,7 +4125,7 @@ void * bsearch(const void * Key, const void * Base, ObjectClass * aP2, size_t Si
     if ( !NumOfElementsa ) /*0x7c8e50*/
       v8 = v7 - 1; /*0x7c8e52*/
     v9 = (char *)Base + SizeOfElements * v8; /*0x7c8e5c*/
-    v10 = CompareFunction(Key); /*0x7c8e62*/
+    v10 = ((int (__cdecl *)(const void *))CompareFunction)(Key); /*0x7c8e62*/
     if ( !v10 ) /*0x7c8e69*/
       return v9; /*0x7c8e95*/
     if ( v10 >= 0 ) /*0x7c8e6b*/
@@ -4121,12 +4158,12 @@ int(__cdecl *_cfltcvt_init_13())( int, void * Src, int a3, size_t Size, int a5)
   off_87C4DC[0] = (void (*)())_forcdecpt; /*0x7c8f7c*/
   off_87C4E0[0] = (void (*)())_positive; /*0x7c8f86*/
   off_87C4E4 = (void (*)())_cfltcvt; /*0x7c8f90*/
-  return _cfltcvt; /*0x7c8f95*/
+  return (int (__cdecl *)( int, void * Src, int a3, size_t Size, int a5))_cfltcvt; /*0x7c8f95*/
 }
 }
 // 0x7C8F96
 namespace gamemd {
-void sub_7C8F96(int a1)
+int sub_7C8F96(int a1)
 {
   int result; // eax
 
@@ -4137,7 +4174,7 @@ void sub_7C8F96(int a1)
 }
 // 0x7C91D0
 namespace gamemd {
-void * strncpy(char * Destination, const char * Source, IUnknown * aP2)
+void * strncpy(char * Destination, const char * Source, size_t aP2)
 {
   size_t v3; // ecx
   size_t v4; // ebx
@@ -4263,7 +4300,7 @@ void * strncpy(char * Destination, const char * Source, IUnknown * aP2)
 }
 // 0x7C94EB
 namespace gamemd {
-void fread(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
+unsigned int fread(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
 {
   size_t v4; // edi
   size_t v6; // ecx
@@ -4280,24 +4317,24 @@ void fread(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream
   Buffera = ElementCount * ElementSize; /*0x7c9503*/
   if ( !(ElementCount * ElementSize) ) /*0x7c94f5*/
     return 0; /*0x7c950a*/
-  if ( (Stream->_flag & 0x10C) != 0 ) /*0x7c9518*/
-    Streama = Stream->_bufsiz; /*0x7c951d*/
+  if ( (((_iobuf_msvc6 *)Stream)->_flag & 0x10C) != 0 ) /*0x7c9518*/
+    Streama = ((_iobuf_msvc6 *)Stream)->_bufsiz; /*0x7c951d*/
   else
     Streama = 4096; /*0x7c9522*/
   while ( 1 ) /*0x7c952e*/
   {
-    if ( (Stream->_flag & 0x10C) != 0 ) /*0x7c9534*/
+    if ( (((_iobuf_msvc6 *)Stream)->_flag & 0x10C) != 0 ) /*0x7c9534*/
     {
-      cnt = Stream->_cnt; /*0x7c9536*/
+      cnt = ((_iobuf_msvc6 *)Stream)->_cnt; /*0x7c9536*/
       if ( cnt ) /*0x7c953b*/
       {
         v10 = v6; /*0x7c953f*/
         if ( v6 >= cnt ) /*0x7c9541*/
-          v10 = Stream->_cnt; /*0x7c9543*/
-        memcpy_0(Buffer, Stream->_ptr, v10); /*0x7c9549*/
+          v10 = ((_iobuf_msvc6 *)Stream)->_cnt; /*0x7c9543*/
+        memcpy_0(Buffer, ((_iobuf_msvc6 *)Stream)->_ptr, v10); /*0x7c9549*/
         Buffera -= v10; /*0x7c954e*/
-        Stream->_cnt -= v10; /*0x7c9551*/
-        Stream->_ptr += v10; /*0x7c9554*/
+        ((_iobuf_msvc6 *)Stream)->_cnt -= v10; /*0x7c9551*/
+        ((_iobuf_msvc6 *)Stream)->_ptr += v10; /*0x7c9554*/
         Buffer = (char *)Buffer + v10; /*0x7c9559*/
         v4 = ElementCount * ElementSize; /*0x7c955b*/
         goto LABEL_20; /*0x7c955e*/
@@ -4311,7 +4348,7 @@ void fread(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream
     *(unsigned char *)Buffer = v13; /*0x7c959f*/
     Buffer = (char *)Buffer + 1; /*0x7c95a4*/
     --Buffera; /*0x7c95a5*/
-    Streama = Stream->_bufsiz; /*0x7c95a8*/
+    Streama = ((_iobuf_msvc6 *)Stream)->_bufsiz; /*0x7c95a8*/
   LABEL_20:
     if ( !Buffera ) /*0x7c95af*/
       return ElementCount; /*0x7c95bc*/
@@ -4320,10 +4357,10 @@ void fread(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream
   v11 = v6; /*0x7c9569*/
   if ( Streama ) /*0x7c956b*/
     v11 = v6 - v6 % Streama; /*0x7c9574*/
-  v12 = _read(Stream->_file, Buffer, v11); /*0x7c957b*/
+  v12 = _read(((_iobuf_msvc6 *)Stream)->_file, Buffer, v11); /*0x7c957b*/
   if ( !v12 ) /*0x7c9585*/
   {
-    Stream->_flag |= 0x10u; /*0x7c95bd*/
+    ((_iobuf_msvc6 *)Stream)->_flag |= 0x10u; /*0x7c95bd*/
     return (v4 - Buffera) / ElementSize; /*0x7c95c1*/
   }
   if ( v12 != -1 ) /*0x7c958a*/
@@ -4332,13 +4369,13 @@ void fread(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream
     Buffer = (char *)Buffer + v12; /*0x7c958f*/
     goto LABEL_20; /*0x7c9591*/
   }
-  Stream->_flag |= 0x20u; /*0x7c95c3*/
+  ((_iobuf_msvc6 *)Stream)->_flag |= 0x20u; /*0x7c95c3*/
   return (v4 - Buffera) / ElementSize; /*0x7c95b8*/
 }
 }
 // 0x7C9602
 namespace gamemd {
-void fwrite(const void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
+unsigned int fwrite(const void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
 {
   size_t v4; // edi
   size_t v5; // ebx
@@ -4353,23 +4390,23 @@ void fwrite(const void * Buffer, size_t ElementSize, size_t ElementCount, FILE *
   v5 = ElementCount * ElementSize; /*0x7c961b*/
   if ( !(ElementCount * ElementSize) ) /*0x7c960c*/
     return 0; /*0x7c9621*/
-  if ( (Stream->_flag & 0x10C) != 0 ) /*0x7c962f*/
-    Streama = Stream->_bufsiz; /*0x7c9634*/
+  if ( (((_iobuf_msvc6 *)Stream)->_flag & 0x10C) != 0 ) /*0x7c962f*/
+    Streama = ((_iobuf_msvc6 *)Stream)->_bufsiz; /*0x7c9634*/
   else
     Streama = 4096; /*0x7c9639*/
   while ( 1 ) /*0x7c9640*/
   {
-    if ( (Stream->_flag & 0x108) != 0 ) /*0x7c9649*/
+    if ( (((_iobuf_msvc6 *)Stream)->_flag & 0x108) != 0 ) /*0x7c9649*/
     {
-      cnt = Stream->_cnt; /*0x7c964b*/
+      cnt = ((_iobuf_msvc6 *)Stream)->_cnt; /*0x7c964b*/
       if ( cnt ) /*0x7c9650*/
       {
         v9 = v5; /*0x7c9654*/
         if ( v5 >= cnt ) /*0x7c9656*/
-          v9 = Stream->_cnt; /*0x7c9658*/
-        memcpy_0(Stream->_ptr, Buffer, v9); /*0x7c9660*/
-        Stream->_cnt -= v9; /*0x7c9665*/
-        Stream->_ptr += v9; /*0x7c9668*/
+          v9 = ((_iobuf_msvc6 *)Stream)->_cnt; /*0x7c9658*/
+        memcpy_0(((_iobuf_msvc6 *)Stream)->_ptr, Buffer, v9); /*0x7c9660*/
+        ((_iobuf_msvc6 *)Stream)->_cnt -= v9; /*0x7c9665*/
+        ((_iobuf_msvc6 *)Stream)->_ptr += v9; /*0x7c9668*/
         v5 -= v9; /*0x7c966d*/
         Buffer = (char *)Buffer + v9; /*0x7c966f*/
   LABEL_19:
@@ -4383,23 +4420,23 @@ void fwrite(const void * Buffer, size_t ElementSize, size_t ElementCount, FILE *
       goto LABEL_26; /*0x7c96d1*/
     Buffer = (char *)Buffer + 1; /*0x7c96d3*/
     --v5; /*0x7c96d9*/
-    Streama = Stream->_bufsiz; /*0x7c96da*/
+    Streama = ((_iobuf_msvc6 *)Stream)->_bufsiz; /*0x7c96da*/
     if ( Streama <= 0 ) /*0x7c96df*/
       Streama = 1; /*0x7c96e1*/
   LABEL_23:
     if ( !v5 ) /*0x7c96ea*/
       return ElementCount; /*0x7c96f7*/
   }
-  if ( (Stream->_flag & 0x108) == 0 || !_flush(Stream) ) /*0x7c967e*/
+  if ( (((_iobuf_msvc6 *)Stream)->_flag & 0x108) == 0 || !_flush(Stream) ) /*0x7c967e*/
   {
     if ( Streama ) /*0x7c968c*/
       v10 = v5 - v5 % Streama; /*0x7c9697*/
     else
       v10 = v5; /*0x7c969b*/
-    v11 = _write(Stream->_file, Buffer, v10); /*0x7c96a4*/
+    v11 = _write(((_iobuf_msvc6 *)Stream)->_file, Buffer, v10); /*0x7c96a4*/
     if ( v11 == -1 || (Buffer = (char *)Buffer + v11, v5 -= v11, v11 < v10) ) /*0x7c96b8*/
     {
-      Stream->_flag |= 0x20u; /*0x7c96f8*/
+      ((_iobuf_msvc6 *)Stream)->_flag |= 0x20u; /*0x7c96f8*/
       v12 = ElementCount * ElementSize; /*0x7c96fc*/
       return (v12 - v5) / ElementSize; /*0x7c96ff*/
     }
@@ -4412,7 +4449,7 @@ void fwrite(const void * Buffer, size_t ElementSize, size_t ElementCount, FILE *
 }
 // 0x7C970C
 namespace gamemd {
-void _onexit(_onexit_t Func)
+_onexit_t _onexit(_onexit_t Func)
 {
   size_t v1; // eax
   _onexit_t *v2; // ecx
@@ -4422,16 +4459,16 @@ void _onexit(_onexit_t Func)
   int v6; // ecx
 
   _lockexit(); /*0x7c970d*/
-  v1 = _msize(dword_B78BC0); /*0x7c9718*/
+  v1 = _msize((void *)(unsigned int)dword_B78BC0); /*0x7c9718*/
   v2 = (_onexit_t *)dword_B78BBC; /*0x7c9724*/
   if ( v1 >= dword_B78BBC - (int)dword_B78BC0 + 4 ) /*0x7c9733*/
     goto LABEL_5; /*0x7c9733*/
-  v3 = _msize(dword_B78BC0); /*0x7c9736*/
-  v4 = (char *)realloc(dword_B78BC0, v3 + 16); /*0x7c9745*/
+  v3 = _msize((void *)(unsigned int)dword_B78BC0); /*0x7c9736*/
+  v4 = (char *)realloc((void *)(unsigned int)dword_B78BC0, v3 + 16); /*0x7c9745*/
   if ( v4 ) /*0x7c974f*/
   {
     v6 = dword_B78BBC - (unsigned int)dword_B78BC0; /*0x7c975b*/
-    dword_B78BC0 = v4; /*0x7c9761*/
+    dword_B78BC0 = (unsigned int)v4; /*0x7c9761*/
     v2 = (_onexit_t *)&v4[4 * (v6 >> 2)]; /*0x7c9769*/
     dword_B78BBC = (int)v2; /*0x7c976c*/
   LABEL_5:
@@ -4452,18 +4489,18 @@ void* * __onexitinit()
 {
   unsigned int *v0; // eax
 
-  v0 = malloc(0x80u); /*0x7c97a1*/
-  dword_B78BC0 = v0; /*0x7c97a9*/
+  v0 = (unsigned int *)malloc(0x80u); /*0x7c97a1*/
+  dword_B78BC0 = (unsigned int)v0; /*0x7c97a9*/
   if ( !v0 ) /*0x7c97ae*/
     _amsg_exit(0x18u); /*0x7c97b2*/
   *v0 = 0; /*0x7c97bd*/
   dword_B78BBC = (int)dword_B78BC0; /*0x7c97c5*/
-  return dword_B78BC0; /*0x7c97ca*/
+  return (void **)(void *)(unsigned int)dword_B78BC0; /*0x7c97ca*/
 }
 }
 // 0x7C97D3
 namespace gamemd {
-void toupper(Color * aP0)
+int toupper(int aP0)
 {
   int v1; // ebx
   int result; // eax
@@ -4497,7 +4534,7 @@ void toupper(Color * aP0)
 }
 // 0x7C9842
 namespace gamemd {
-ControlClass * * toupper_0(int C)
+int toupper_0(int C)
 {
   int result; // eax
   int v2; // ebx
@@ -4545,7 +4582,7 @@ ControlClass * * toupper_0(int C)
 }
 // 0x7C990E
 namespace gamemd {
-void isalpha(int C)
+int isalpha(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9915*/
     return *((unsigned short *)off_87C590 + C) & 0x103; /*0x7c9936*/
@@ -4575,7 +4612,7 @@ int islower(int C)
 }
 // 0x7C998C
 namespace gamemd {
-void isdigit(int C)
+int isdigit(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9993*/
     return *((unsigned char *)off_87C590 + 2 * C) & 4; /*0x7c99b0*/
@@ -4585,7 +4622,7 @@ void isdigit(int C)
 }
 // 0x7C99B4
 namespace gamemd {
-void isxdigit(int C)
+int isxdigit(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c99bb*/
     return *((unsigned char *)off_87C590 + 2 * C) & 0x80; /*0x7c99db*/
@@ -4595,7 +4632,7 @@ void isxdigit(int C)
 }
 // 0x7C99E1
 namespace gamemd {
-void isspace(int C)
+int isspace(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c99e8*/
     return *((unsigned char *)off_87C590 + 2 * C) & 8; /*0x7c9a05*/
@@ -4615,7 +4652,7 @@ int ispunct(int C)
 }
 // 0x7C9A31
 namespace gamemd {
-void isalnum(int C)
+int isalnum(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9a38*/
     return *((unsigned short *)off_87C590 + C) & 0x107; /*0x7c9a59*/
@@ -4635,7 +4672,7 @@ int isprint(int C)
 }
 // 0x7C9A8D
 namespace gamemd {
-void isgraph(int C)
+int isgraph(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9a94*/
     return *((unsigned short *)off_87C590 + C) & 0x117; /*0x7c9ab5*/
@@ -4685,7 +4722,7 @@ int __iscsym(int C)
 }
 // 0x7C9B72
 namespace gamemd {
-void atol(const char * String)
+long atol(const char * String)
 {
   int v3; // esi
   const char *v4; // edi
@@ -4716,7 +4753,7 @@ void atol(const char * String)
 }
 // 0x7C9C08
 namespace gamemd {
-long long long _atoi64(const char * String)
+long long _atoi64(const char * String)
 {
   int v3; // esi
   const char *v4; // edi
@@ -4753,7 +4790,7 @@ long long long _atoi64(const char * String)
 }
 // 0x7C9CC2
 namespace gamemd {
-ObjectClass * * strtok(char * String, ObjectClass * aP1)
+char * strtok(char * String, const char * aP1)
 {
   char v3; // dl
   char *v4; // edx
@@ -4785,13 +4822,13 @@ ObjectClass * * strtok(char * String, ObjectClass * aP1)
     }
     ++v4; /*0x7c9d4a*/
   }
-  *((unsigned int *)Delimitera + 6) = v4; /*0x7c9d51*/
+  *((unsigned int *)Delimitera + 6) = (unsigned int)v4; /*0x7c9d51*/
   return v4 != v5 ? v5 : 0;
 }
 }
 // 0x7C9D66
 namespace gamemd {
-void atof(CCINIClass * aP0)
+double atof(const char * aP0)
 {
   unsigned char v4[24]; // [esp+4h] [ebp-18h] BYREF
 
@@ -4805,7 +4842,7 @@ void atof(CCINIClass * aP0)
 }
 // 0x7C9DD4
 namespace gamemd {
-ControlClass * * strtoxl(unsigned char * a1, unsigned char ** a2, int a3, int a4)
+int strtoxl(unsigned char * a1, unsigned char ** a2, int a3, int a4)
 {
   uint8_t vtable0; // bl
   uint8_t *i; // esi
@@ -4925,7 +4962,7 @@ ControlClass * * strtoxl(unsigned char * a1, unsigned char ** a2, int a3, int a4
 }
 // 0x7CA090
 namespace gamemd {
-EditClass * * memcpy(void * a0, AbstractClass * aP1, size_t Size)
+void * memcpy(void * a0, const void * aP1, size_t Size)
 {
   char *v3; // esi
   char *v4; // edi
@@ -5096,7 +5133,7 @@ EditClass * * memcpy(void * a0, AbstractClass * aP1, size_t Size)
 }
 // 0x7CA4B0
 namespace gamemd {
-void * strstr(ObjectClass * aP0, const char * SubStr)
+char * strstr(const char * aP0, const char * SubStr)
 {
   char v2; // dl
   const char *v3; // edi
@@ -5161,18 +5198,18 @@ void * strstr(ObjectClass * aP0, const char * SubStr)
 }
 // 0x7CA650
 namespace gamemd {
-void _alloca_probe(WinModemClass * aP0, char a2)
+void _alloca_probe(unsigned int a1)
 {
   char *i; // ecx
 
-  for ( i = &a2; a1 >= 0x1000; a1 -= 4096 ) /*0x7ca65a*/
+  for ( i = (char *)&a1; a1 >= 0x1000; a1 -= 4096 ) /*0x7ca65a*/
     i -= 4096; /*0x7ca65c*/
   __asm { retn } /*0x7ca67e*/
 }
 }
 // 0x7CA67F
 namespace gamemd {
-void time(__time32_t *const Time)
+long time(__time32_t *const Time)
 {
   int v1; // eax
   DWORD v2; // eax
@@ -5198,7 +5235,7 @@ void time(__time32_t *const Time)
       v1 = -1; /*0x7ca711*/
     else
       v1 = v2 == 2 && TimeZoneInformation.DaylightDate.wMonth && TimeZoneInformation.DaylightBias; /*0x7ca70a*/
-    xmmword_B781B0 = (__int128)v5; /*0x7ca71e*/
+    *(unsigned int *)&xmmword_B781B0 = (unsigned int)v5; /*0x7ca71e G42.33 b7: __int128 -> uint[4] slot*/
     dword_B781A8 = v1; /*0x7ca723*/
   }
   result = __loctotime_t( /*0x7ca748*/
@@ -5219,7 +5256,7 @@ namespace gamemd {
 void ObjectClass::j_Exception_Destructor()
 {
 
-  Exception::Destructor((Exception *)this); /*0x7ca9af*/
+  ((Exception *)this)->Destructor(); /*0x7ca9af*/
 
 }
 }
@@ -5228,7 +5265,7 @@ namespace gamemd {
 void ObjectClass::j_Exception_Destructor_2()
 {
 
-  Exception::Destructor((Exception *)this); /*0x7caa00*/
+  ((Exception *)this)->Destructor(); /*0x7caa00*/
 
 }
 }
@@ -5237,7 +5274,7 @@ namespace gamemd {
 void ObjectClass::j_Exception_Destructor_3()
 {
 
-  Exception::Destructor((Exception *)this); /*0x7cac2f*/
+  ((Exception *)this)->Destructor(); /*0x7cac2f*/
 
 }
 }
@@ -5494,7 +5531,7 @@ void * strchr(const char * Str, int Val)
 }
 // 0x7CAFF4
 namespace gamemd {
-void tolower(int C)
+int tolower(int C)
 {
   int v1; // ebx
   int result; // eax
@@ -5528,7 +5565,7 @@ void tolower(int C)
 }
 // 0x7CB063
 namespace gamemd {
-ControlClass * * tolower_0(int C)
+int tolower_0(int C)
 {
   int result; // eax
   int v2; // ebx
@@ -5567,8 +5604,9 @@ ControlClass * * tolower_0(int C)
 }
 // 0x7CB12E
 namespace gamemd {
-void _putws(const wchar_t * Buffer)
+int _putws(const wchar_t * Buffer)
 {
+  FILE File;  // G42.33 b9: local restored (lost in rewrite)
   int v1; // ebx
   wchar_t v3; // ax
   int v5; // [esp+Ch] [ebp-4h]
@@ -5595,7 +5633,7 @@ void _putws(const wchar_t * Buffer)
 }
 // 0x7CB25E
 namespace gamemd {
-void flsall(MouseClass * aP0)
+int flsall(int aP0)
 {
   int v1; // ebx
   int v2; // edi
@@ -5620,10 +5658,10 @@ void flsall(MouseClass * aP0)
       {
         if ( aP0 == 1 ) /*0x7cb2a7*/
         {
-          if ( _fflush_lk(v5) != -1 ) /*0x7cb2b3*/
+          if ( _fflush_lk((FILE *)(void *)(unsigned int)v5) != -1 ) /*0x7cb2b3*/
             ++v1; /*0x7cb2b5*/
         }
-        else if ( !aP0 && (v6 & 2) != 0 && _fflush_lk(*(unsigned int *)(dword_B78BC4 + 4 * i)) == -1 ) /*0x7cb2ce*/
+        else if ( !aP0 && (v6 & 2) != 0 && _fflush_lk((FILE *)(void *)(unsigned int)(*(unsigned int *)(dword_B78BC4 + 4 * i))) == -1 ) /*0x7cb2ce*/
         {
           v2 = -1; /*0x7cb2d0*/
         }
@@ -9689,7 +9727,7 @@ int sub_7C61CF(int a1)
 
 // 0x7C8362
 namespace gamemd {
-int FindClose()
+BOOL FindClose(HANDLE hFindFile)  // G42.33 b3 head truth 0x7c8362
 {
   return __imp_FindClose(hFindFile);
 }
@@ -9697,7 +9735,7 @@ int FindClose()
 
 // 0x7C8368
 namespace gamemd {
-int FindNextFileA()
+BOOL FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData)  // G42.33 b3 head truth 0x7c8368
 {
   return __imp_FindNextFileA(hFindFile, lpFindFileData);
 }
@@ -9705,7 +9743,7 @@ int FindNextFileA()
 
 // 0x7C836E
 namespace gamemd {
-int FindFirstFileA()
+HANDLE FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData)  // G42.33 b3 head truth 0x7c836e
 {
   return __imp_FindFirstFileA(lpFileName, lpFindFileData);
 }
@@ -9713,7 +9751,7 @@ int FindFirstFileA()
 
 // 0x7C8374
 namespace gamemd {
-int FormatMessageA()
+DWORD FormatMessageA(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPSTR lpBuffer, DWORD nSize, va_list* Arguments)  // G42.33 b3 head truth 0x7c8374
 {
   return __imp_FormatMessageA(dwFlags, lpSource, dwMessageId, dwLanguageId, lpBuffer, nSize, Arguments);
 }
@@ -9721,7 +9759,7 @@ int FormatMessageA()
 
 // 0x7C837A
 namespace gamemd {
-int GetLastError()
+DWORD GetLastError(void)  // G42.33 b3 head truth 0x7c837a
 {
   return __imp_GetLastError();
 }
@@ -9729,7 +9767,7 @@ int GetLastError()
 
 // 0x7C8380
 namespace gamemd {
-int SetThreadPriority()
+BOOL SetThreadPriority(HANDLE hThread, int nPriority)  // G42.33 b3 head truth 0x7c8380
 {
   return __imp_SetThreadPriority(hThread, nPriority);
 }
@@ -9737,7 +9775,7 @@ int SetThreadPriority()
 
 // 0x7C8386
 namespace gamemd {
-int CreateThread()
+HANDLE CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId)  // G42.33 b3 head truth 0x7c8386
 {
   return __imp_CreateThread(lpThreadAttributes, dwStackSize, lpStartAddress, lpParameter, dwCreationFlags, lpThreadId);
 }
@@ -9745,7 +9783,7 @@ int CreateThread()
 
 // 0x7C838C
 namespace gamemd {
-int InitializeCriticalSection()
+void InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection)  // G42.33 b3 head truth 0x7c838c
 {
   __imp_InitializeCriticalSection(lpCriticalSection); /*0x7c838c*/
 }
@@ -9753,7 +9791,7 @@ int InitializeCriticalSection()
 
 // 0x7C8392
 namespace gamemd {
-int Sleep()
+void Sleep(DWORD dwMilliseconds)  // G42.33 b3 head truth 0x7c8392
 {
   __imp_Sleep(dwMilliseconds); /*0x7c8392*/
 }
@@ -9761,7 +9799,7 @@ int Sleep()
 
 // 0x7C8398
 namespace gamemd {
-int LeaveCriticalSection()
+void LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection)  // G42.33 b3 head truth 0x7c8398
 {
   __imp_LeaveCriticalSection(lpCriticalSection); /*0x7c8398*/
 }
@@ -9769,7 +9807,7 @@ int LeaveCriticalSection()
 
 // 0x7C839E
 namespace gamemd {
-int EnterCriticalSection()
+void EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection)  // G42.33 b3 head truth 0x7c839e
 {
   __imp_EnterCriticalSection(lpCriticalSection); /*0x7c839e*/
 }
@@ -9777,7 +9815,7 @@ int EnterCriticalSection()
 
 // 0x7C83A4
 namespace gamemd {
-int DeleteCriticalSection()
+void DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection)  // G42.33 b3 head truth 0x7c83a4
 {
   __imp_DeleteCriticalSection(lpCriticalSection); /*0x7c83a4*/
 }
@@ -9785,7 +9823,7 @@ int DeleteCriticalSection()
 
 // 0x7C83AA
 namespace gamemd {
-int CloseHandle()
+BOOL CloseHandle(HANDLE hObject)  // G42.33 b3 head truth 0x7c83aa
 {
   return __imp_CloseHandle(hObject);
 }
@@ -9793,7 +9831,7 @@ int CloseHandle()
 
 // 0x7C83B0
 namespace gamemd {
-int WaitForSingleObject()
+DWORD WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds)  // G42.33 b3 head truth 0x7c83b0
 {
   return __imp_WaitForSingleObject(hHandle, dwMilliseconds);
 }
@@ -9801,7 +9839,7 @@ int WaitForSingleObject()
 
 // 0x7C83B6
 namespace gamemd {
-int QueryPerformanceFrequency()
+BOOL QueryPerformanceFrequency(LARGE_INTEGER* lpFrequency)  // G42.33 b3 head truth 0x7c83b6
 {
   return __imp_QueryPerformanceFrequency(lpFrequency);
 }
@@ -9809,7 +9847,7 @@ int QueryPerformanceFrequency()
 
 // 0x7C83BC
 namespace gamemd {
-int QueryPerformanceCounter()
+BOOL QueryPerformanceCounter(LARGE_INTEGER* lpPerformanceCount)  // G42.33 b3 head truth 0x7c83bc
 {
   return __imp_QueryPerformanceCounter(lpPerformanceCount);
 }
@@ -9817,7 +9855,7 @@ int QueryPerformanceCounter()
 
 // 0x7C83C2
 namespace gamemd {
-int GetCurrentThreadId()
+DWORD GetCurrentThreadId(void)  // G42.33 b3 head truth 0x7c83c2
 {
   return __imp_GetCurrentThreadId();
 }
@@ -9825,7 +9863,7 @@ int GetCurrentThreadId()
 
 // 0x7C83C8
 namespace gamemd {
-int InterlockedDecrement()
+LONG InterlockedDecrement(volatile LONG* lpAddend)  // G42.33 b3 head truth 0x7c83c8
 {
   return __imp_InterlockedDecrement(lpAddend);
 }
@@ -9833,7 +9871,7 @@ int InterlockedDecrement()
 
 // 0x7C83CE
 namespace gamemd {
-int InterlockedIncrement()
+LONG InterlockedIncrement(volatile LONG* lpAddend)  // G42.33 b3 head truth 0x7c83ce
 {
   return __imp_InterlockedIncrement(lpAddend);
 }
@@ -9841,7 +9879,7 @@ int InterlockedIncrement()
 
 // 0x7C83D4
 namespace gamemd {
-int MultiByteToWideChar()
+int MultiByteToWideChar(UINT CodePage, DWORD dwFlags, LPCCH lpMultiByteStr, int cbMultiByte, int lpWideCharStr, int cchWideChar)  // G42.33 b3 head truth 0x7c83d4
 {
   return __imp_MultiByteToWideChar(CodePage, dwFlags, lpMultiByteStr, cbMultiByte, lpWideCharStr, cchWideChar);
 }
@@ -9849,7 +9887,7 @@ int MultiByteToWideChar()
 
 // 0x7C83DA
 namespace gamemd {
-int SetFilePointer()
+DWORD SetFilePointer(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod)  // G42.33 b3 head truth 0x7c83da
 {
   return __imp_SetFilePointer(hFile, lDistanceToMove, lpDistanceToMoveHigh, dwMoveMethod);
 }
@@ -9857,7 +9895,7 @@ int SetFilePointer()
 
 // 0x7C83E0
 namespace gamemd {
-int CreateFileA()
+HANDLE CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile)  // G42.33 b3 head truth 0x7c83e0
 {
   return __imp_CreateFileA(
            lpFileName,
@@ -9872,7 +9910,7 @@ int CreateFileA()
 
 // 0x7C83E6
 namespace gamemd {
-int DeviceIoControl()
+BOOL DeviceIoControl(HANDLE hDevice, DWORD dwIoControlCode, LPVOID lpInBuffer, DWORD nInBufferSize, LPVOID lpOutBuffer, DWORD nOutBufferSize, LPDWORD lpBytesReturned, LPOVERLAPPED lpOverlapped)  // G42.33 b3 head truth 0x7c83e6
 {
   return __imp_DeviceIoControl(
            hDevice,
@@ -9888,7 +9926,7 @@ int DeviceIoControl()
 
 // 0x7C83EC
 namespace gamemd {
-int GetDriveTypeA()
+UINT GetDriveTypeA(LPCSTR lpRootPathName)  // G42.33 b3 head truth 0x7c83ec
 {
   return __imp_GetDriveTypeA(lpRootPathName);
 }
@@ -9896,7 +9934,7 @@ int GetDriveTypeA()
 
 // 0x7C83F2
 namespace gamemd {
-int WideCharToMultiByte()
+int WideCharToMultiByte(UINT CodePage, DWORD dwFlags, LPCWCH lpWideCharStr, int cchWideChar, LPSTR lpMultiByteStr, int cbMultiByte, LPCCH lpDefaultChar, LPBOOL lpUsedDefaultChar)  // G42.33 b3 head truth 0x7c83f2
 {
   return __imp_WideCharToMultiByte(
            CodePage,
@@ -9912,7 +9950,7 @@ int WideCharToMultiByte()
 
 // 0x7C83F8
 namespace gamemd {
-int GetDiskFreeSpaceA()
+BOOL GetDiskFreeSpaceA(LPCSTR lpRootPathName, LPDWORD lpSectorsPerCluster, LPDWORD lpBytesPerSector, LPDWORD lpNumberOfFreeClusters, LPDWORD lpTotalNumberOfClusters)  // G42.33 b3 head truth 0x7c83f8
 {
   return __imp_GetDiskFreeSpaceA(
            lpRootPathName,
@@ -9925,7 +9963,7 @@ int GetDiskFreeSpaceA()
 
 // 0x7C83FE
 namespace gamemd {
-int GetProcAddress()
+FARPROC GetProcAddress(HMODULE hModule, LPCSTR lpProcName)  // G42.33 b3 head truth 0x7c83fe
 {
   return __imp_GetProcAddress(hModule, lpProcName);
 }
@@ -9933,7 +9971,7 @@ int GetProcAddress()
 
 // 0x7C8404
 namespace gamemd {
-int GetModuleHandleA()
+HMODULE GetModuleHandleA(LPCSTR lpModuleName)  // G42.33 b3 head truth 0x7c8404
 {
   return __imp_GetModuleHandleA(lpModuleName);
 }
@@ -9941,7 +9979,7 @@ int GetModuleHandleA()
 
 // 0x7C840A
 namespace gamemd {
-int CreateMutexA()
+HANDLE CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes, BOOL bInitialOwner, LPCSTR lpName)  // G42.33 b3 head truth 0x7c840a
 {
   return __imp_CreateMutexA(lpMutexAttributes, bInitialOwner, lpName);
 }
@@ -9949,7 +9987,7 @@ int CreateMutexA()
 
 // 0x7C8410
 namespace gamemd {
-int MapViewOfFileEx()
+LPVOID MapViewOfFileEx(HANDLE hFileMappingObject, DWORD dwDesiredAccess, DWORD dwFileOffsetHigh, DWORD dwFileOffsetLow, SIZE_T dwNumberOfBytesToMap, LPVOID lpBaseAddress)  // G42.33 b3 head truth 0x7c8410
 {
   return __imp_MapViewOfFileEx(
            hFileMappingObject,
@@ -9963,7 +10001,7 @@ int MapViewOfFileEx()
 
 // 0x7C8416
 namespace gamemd {
-int SetEvent()
+BOOL SetEvent(HANDLE hEvent)  // G42.33 b3 head truth 0x7c8416
 {
   return __imp_SetEvent(hEvent);
 }
@@ -9971,7 +10009,7 @@ int SetEvent()
 
 // 0x7C841C
 namespace gamemd {
-int OpenEventA()
+HANDLE OpenEventA(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR lpName)  // G42.33 b3 head truth 0x7c841c
 {
   return __imp_OpenEventA(dwDesiredAccess, bInheritHandle, lpName);
 }
@@ -9979,7 +10017,7 @@ int OpenEventA()
 
 // 0x7C8422
 namespace gamemd {
-int UnmapViewOfFile()
+BOOL UnmapViewOfFile(LPCVOID lpBaseAddress)  // G42.33 b3 head truth 0x7c8422
 {
   return __imp_UnmapViewOfFile(lpBaseAddress);
 }
@@ -9987,7 +10025,7 @@ int UnmapViewOfFile()
 
 // 0x7C8428
 namespace gamemd {
-int LockResource()
+LPVOID LockResource(HGLOBAL hResData)  // G42.33 b3 head truth 0x7c8428
 {
   return __imp_LockResource(hResData);
 }
@@ -9995,7 +10033,7 @@ int LockResource()
 
 // 0x7C842E
 namespace gamemd {
-int LoadResource()
+HGLOBAL LoadResource(HMODULE hModule, HRSRC hResInfo)  // G42.33 b3 head truth 0x7c842e
 {
   return __imp_LoadResource(hModule, hResInfo);
 }
@@ -10003,7 +10041,7 @@ int LoadResource()
 
 // 0x7C8434
 namespace gamemd {
-int FindResourceA()
+HRSRC FindResourceA(HMODULE hModule, LPCSTR lpName, LPCSTR lpType)  // G42.33 b3 head truth 0x7c8434
 {
   return __imp_FindResourceA(hModule, lpName, lpType);
 }
@@ -10011,7 +10049,7 @@ int FindResourceA()
 
 // 0x7C843A
 namespace gamemd {
-int GetVolumeInformationA()
+BOOL GetVolumeInformationA(LPCSTR lpRootPathName, LPSTR lpVolumeNameBuffer, DWORD nVolumeNameSize, LPDWORD lpVolumeSerialNumber, LPDWORD lpMaximumComponentLength, LPDWORD lpFileSystemFlags, LPSTR lpFileSystemNameBuffer, DWORD nFileSystemNameSize)  // G42.33 b3 head truth 0x7c843a
 {
   return __imp_GetVolumeInformationA(
            lpRootPathName,
@@ -10027,7 +10065,7 @@ int GetVolumeInformationA()
 
 // 0x7C8440
 namespace gamemd {
-int FreeLibrary()
+BOOL FreeLibrary(HMODULE hLibModule)  // G42.33 b3 head truth 0x7c8440
 {
   return __imp_FreeLibrary(hLibModule);
 }
@@ -10035,7 +10073,7 @@ int FreeLibrary()
 
 // 0x7C8446
 namespace gamemd {
-int LoadLibraryA()
+HMODULE LoadLibraryA(LPCSTR lpLibFileName)  // G42.33 b3 head truth 0x7c8446
 {
   return __imp_LoadLibraryA(lpLibFileName);
 }
@@ -10043,7 +10081,7 @@ int LoadLibraryA()
 
 // 0x7C844C
 namespace gamemd {
-int FreeConsole()
+BOOL FreeConsole(void)  // G42.33 b3 head truth 0x7c844c
 {
   return __imp_FreeConsole();
 }
@@ -10051,7 +10089,7 @@ int FreeConsole()
 
 // 0x7C8452
 namespace gamemd {
-int AllocConsole()
+BOOL AllocConsole(void)  // G42.33 b3 head truth 0x7c8452
 {
   return __imp_AllocConsole();
 }
@@ -10059,7 +10097,7 @@ int AllocConsole()
 
 // 0x7C8458
 namespace gamemd {
-int ExitProcess()
+void ExitProcess(UINT uExitCode)  // G42.33 b3 head truth 0x7c8458
 {
   __imp_ExitProcess(uExitCode); /*0x7c8458*/
 }
@@ -10067,7 +10105,7 @@ int ExitProcess()
 
 // 0x7C845E
 namespace gamemd {
-int IsBadReadPtr()
+BOOL IsBadReadPtr(const void* lp, UINT_PTR ucb)  // G42.33 b3 head truth 0x7c845e
 {
   return __imp_IsBadReadPtr(lp, ucb);
 }
@@ -10075,7 +10113,7 @@ int IsBadReadPtr()
 
 // 0x7C8464
 namespace gamemd {
-int IsBadCodePtr()
+BOOL IsBadCodePtr(FARPROC lpfn)  // G42.33 b3 head truth 0x7c8464
 {
   return __imp_IsBadCodePtr(lpfn);
 }
@@ -10083,7 +10121,7 @@ int IsBadCodePtr()
 
 // 0x7C846A
 namespace gamemd {
-int lstrcatA()
+LPSTR lstrcatA(LPSTR lpString1, LPCSTR lpString2)  // G42.33 b3 head truth 0x7c846a
 {
   return __imp_lstrcatA(lpString1, lpString2);
 }
@@ -10091,7 +10129,7 @@ int lstrcatA()
 
 // 0x7C8470
 namespace gamemd {
-int lstrlenA()
+int lstrlenA(LPCSTR lpString)  // G42.33 b3 head truth 0x7c8470
 {
   return __imp_lstrlenA(lpString);
 }
@@ -10099,7 +10137,7 @@ int lstrlenA()
 
 // 0x7C8476
 namespace gamemd {
-int GetModuleFileNameA()
+DWORD GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nSize)  // G42.33 b3 head truth 0x7c8476
 {
   return __imp_GetModuleFileNameA(hModule, lpFilename, nSize);
 }
@@ -10107,7 +10145,7 @@ int GetModuleFileNameA()
 
 // 0x7C847C
 namespace gamemd {
-int GetCurrentProcess()
+HANDLE GetCurrentProcess(void)  // G42.33 b3 head truth 0x7c847c
 {
   return __imp_GetCurrentProcess();
 }
@@ -10115,7 +10153,7 @@ int GetCurrentProcess()
 
 // 0x7C8482
 namespace gamemd {
-int WriteFile()
+BOOL WriteFile(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped)  // G42.33 b3 head truth 0x7c8482
 {
   return __imp_WriteFile(hFile, lpBuffer, nNumberOfBytesToWrite, lpNumberOfBytesWritten, lpOverlapped);
 }
@@ -10123,7 +10161,7 @@ int WriteFile()
 
 // 0x7C8488
 namespace gamemd {
-int FlushInstructionCache()
+BOOL FlushInstructionCache(HANDLE hProcess, LPCVOID lpBaseAddress, SIZE_T dwSize)  // G42.33 b3 head truth 0x7c8488
 {
   return __imp_FlushInstructionCache(hProcess, lpBaseAddress, dwSize);
 }
@@ -10131,7 +10169,7 @@ int FlushInstructionCache()
 
 // 0x7C848E
 namespace gamemd {
-int VirtualProtect()
+BOOL VirtualProtect(LPVOID lpAddress, SIZE_T dwSize, DWORD flNewProtect, PDWORD lpflOldProtect)  // G42.33 b3 head truth 0x7c848e
 {
   return __imp_VirtualProtect(lpAddress, dwSize, flNewProtect, lpflOldProtect);
 }
@@ -10139,7 +10177,7 @@ int VirtualProtect()
 
 // 0x7C8494
 namespace gamemd {
-int VirtualQuery()
+SIZE_T VirtualQuery(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer, SIZE_T dwLength)  // G42.33 b3 head truth 0x7c8494
 {
   return __imp_VirtualQuery(lpAddress, lpBuffer, dwLength);
 }
@@ -10147,7 +10185,7 @@ int VirtualQuery()
 
 // 0x7C849A
 namespace gamemd {
-int GetTickCount()
+DWORD GetTickCount(void)  // G42.33 b3 head truth 0x7c849a
 {
   return __imp_GetTickCount();
 }
@@ -10155,7 +10193,7 @@ int GetTickCount()
 
 // 0x7C84A0
 namespace gamemd {
-int GetSystemTime()
+void GetSystemTime(LPSYSTEMTIME lpSystemTime)  // G42.33 b3 head truth 0x7c84a0
 {
   __imp_GetSystemTime(lpSystemTime); /*0x7c84a0*/
 }
@@ -10163,7 +10201,7 @@ int GetSystemTime()
 
 // 0x7C84A6
 namespace gamemd {
-int GlobalMemoryStatus()
+void GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)  // G42.33 b3 head truth 0x7c84a6
 {
   __imp_GlobalMemoryStatus(lpBuffer); /*0x7c84a6*/
 }
@@ -10171,7 +10209,7 @@ int GlobalMemoryStatus()
 
 // 0x7C84AC
 namespace gamemd {
-int CreateProcessA()
+BOOL CreateProcessA(LPCSTR lpApplicationName, LPSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation)  // G42.33 b3 head truth 0x7c84ac
 {
   return __imp_CreateProcessA(
            lpApplicationName,
@@ -10189,7 +10227,7 @@ int CreateProcessA()
 
 // 0x7C84B2
 namespace gamemd {
-int DeleteFileA()
+BOOL DeleteFileA(LPCSTR lpFileName)  // G42.33 b3 head truth 0x7c84b2
 {
   return __imp_DeleteFileA(lpFileName);
 }
@@ -10197,7 +10235,7 @@ int DeleteFileA()
 
 // 0x7C84B8
 namespace gamemd {
-int GetTempFileNameA()
+UINT GetTempFileNameA(LPCSTR lpPathName, LPCSTR lpPrefixString, UINT uUnique, LPSTR lpTempFileName)  // G42.33 b3 head truth 0x7c84b8
 {
   return __imp_GetTempFileNameA(lpPathName, lpPrefixString, uUnique, lpTempFileName);
 }
@@ -10205,7 +10243,7 @@ int GetTempFileNameA()
 
 // 0x7C84BE
 namespace gamemd {
-int GetWindowsDirectoryA()
+UINT GetWindowsDirectoryA(LPSTR lpBuffer, UINT uSize)  // G42.33 b3 head truth 0x7c84be
 {
   return __imp_GetWindowsDirectoryA(lpBuffer, uSize);
 }
@@ -10213,7 +10251,7 @@ int GetWindowsDirectoryA()
 
 // 0x7C84C4
 namespace gamemd {
-int GetTimeFormatA()
+int GetTimeFormatA(LCID Locale, DWORD dwFlags, const SYSTEMTIME* lpTime, LPCSTR lpFormat, LPSTR lpTimeStr, int cchTime)  // G42.33 b3 head truth 0x7c84c4
 {
   return __imp_GetTimeFormatA(Locale, dwFlags, lpTime, lpFormat, lpTimeStr, cchTime);
 }
@@ -10221,7 +10259,7 @@ int GetTimeFormatA()
 
 // 0x7C84CA
 namespace gamemd {
-int GetDateFormatA()
+int GetDateFormatA(LCID Locale, DWORD dwFlags, const SYSTEMTIME* lpDate, LPCSTR lpFormat, LPSTR lpDateStr, int cchDate)  // G42.33 b3 head truth 0x7c84ca
 {
   return __imp_GetDateFormatA(Locale, dwFlags, lpDate, lpFormat, lpDateStr, cchDate);
 }
@@ -10229,7 +10267,7 @@ int GetDateFormatA()
 
 // 0x7C84D0
 namespace gamemd {
-int FileTimeToSystemTime()
+BOOL FileTimeToSystemTime(const FILETIME* lpFileTime, LPSYSTEMTIME lpSystemTime)  // G42.33 b3 head truth 0x7c84d0
 {
   return __imp_FileTimeToSystemTime(lpFileTime, lpSystemTime);
 }
@@ -10237,7 +10275,7 @@ int FileTimeToSystemTime()
 
 // 0x7C84D6
 namespace gamemd {
-int FileTimeToLocalFileTime()
+BOOL FileTimeToLocalFileTime(const FILETIME* lpFileTime, LPFILETIME lpLocalFileTime)  // G42.33 b3 head truth 0x7c84d6
 {
   return __imp_FileTimeToLocalFileTime(lpFileTime, lpLocalFileTime);
 }
@@ -10245,7 +10283,7 @@ int FileTimeToLocalFileTime()
 
 // 0x7C84DC
 namespace gamemd {
-int SystemTimeToFileTime()
+BOOL SystemTimeToFileTime(const SYSTEMTIME* lpSystemTime, LPFILETIME lpFileTime)  // G42.33 b3 head truth 0x7c84dc
 {
   return __imp_SystemTimeToFileTime(lpSystemTime, lpFileTime);
 }
@@ -10253,7 +10291,7 @@ int SystemTimeToFileTime()
 
 // 0x7C84E2
 namespace gamemd {
-int CompareFileTime()
+LONG CompareFileTime(const FILETIME* lpFileTime1, const FILETIME* lpFileTime2)  // G42.33 b3 head truth 0x7c84e2
 {
   return __imp_CompareFileTime(lpFileTime1, lpFileTime2);
 }
@@ -10261,7 +10299,7 @@ int CompareFileTime()
 
 // 0x7C84E8
 namespace gamemd {
-int CopyFileA()
+BOOL CopyFileA(LPCSTR lpExistingFileName, LPCSTR lpNewFileName, BOOL bFailIfExists)  // G42.33 b3 head truth 0x7c84e8
 {
   return __imp_CopyFileA(lpExistingFileName, lpNewFileName, bFailIfExists);
 }
@@ -10269,7 +10307,7 @@ int CopyFileA()
 
 // 0x7C84EE
 namespace gamemd {
-int CreateDirectoryA()
+BOOL CreateDirectoryA(LPCSTR lpPathName, LPSECURITY_ATTRIBUTES lpSecurityAttributes)  // G42.33 b3 head truth 0x7c84ee
 {
   return __imp_CreateDirectoryA(lpPathName, lpSecurityAttributes);
 }
@@ -10277,7 +10315,7 @@ int CreateDirectoryA()
 
 // 0x7C84F4
 namespace gamemd {
-int MulDiv()
+int MulDiv(int nNumber, int nNumerator, int nDenominator)  // G42.33 b3 head truth 0x7c84f4
 {
   return __imp_MulDiv(nNumber, nNumerator, nDenominator);
 }
@@ -10285,7 +10323,7 @@ int MulDiv()
 
 // 0x7C84FA
 namespace gamemd {
-int EscapeCommFunction()
+BOOL EscapeCommFunction(HANDLE hFile, DWORD dwFunc)  // G42.33 b3 head truth 0x7c84fa
 {
   return __imp_EscapeCommFunction(hFile, dwFunc);
 }
@@ -10293,7 +10331,7 @@ int EscapeCommFunction()
 
 // 0x7C8500
 namespace gamemd {
-int ClearCommBreak()
+BOOL ClearCommBreak(HANDLE hFile)  // G42.33 b3 head truth 0x7c8500
 {
   return __imp_ClearCommBreak(hFile);
 }
@@ -10301,7 +10339,7 @@ int ClearCommBreak()
 
 // 0x7C8506
 namespace gamemd {
-int SetCommBreak()
+BOOL SetCommBreak(HANDLE hFile)  // G42.33 b3 head truth 0x7c8506
 {
   return __imp_SetCommBreak(hFile);
 }
@@ -10309,7 +10347,7 @@ int SetCommBreak()
 
 // 0x7C850C
 namespace gamemd {
-int ReadFile()
+BOOL ReadFile(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped)  // G42.33 b3 head truth 0x7c850c
 {
   return __imp_ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
 }
@@ -10317,7 +10355,7 @@ int ReadFile()
 
 // 0x7C8512
 namespace gamemd {
-int GetFileSize()
+DWORD GetFileSize(HANDLE hFile, LPDWORD lpFileSizeHigh)  // G42.33 b3 head truth 0x7c8512
 {
   return __imp_GetFileSize(hFile, lpFileSizeHigh);
 }
@@ -10325,7 +10363,7 @@ int GetFileSize()
 
 // 0x7C8518
 namespace gamemd {
-int FileTimeToDosDateTime()
+BOOL FileTimeToDosDateTime(const FILETIME* lpFileTime, LPWORD lpFatDate, LPWORD lpFatTime)  // G42.33 b3 head truth 0x7c8518
 {
   return __imp_FileTimeToDosDateTime(lpFileTime, lpFatDate, lpFatTime);
 }
@@ -10333,7 +10371,7 @@ int FileTimeToDosDateTime()
 
 // 0x7C851E
 namespace gamemd {
-int GetFileInformationByHandle()
+BOOL GetFileInformationByHandle(HANDLE hFile, LPBY_HANDLE_FILE_INFORMATION lpFileInformation)  // G42.33 b3 head truth 0x7c851e
 {
   return __imp_GetFileInformationByHandle(hFile, lpFileInformation);
 }
@@ -10341,7 +10379,7 @@ int GetFileInformationByHandle()
 
 // 0x7C8524
 namespace gamemd {
-int SetFileTime()
+BOOL SetFileTime(HANDLE hFile, const FILETIME* lpCreationTime, const FILETIME* lpLastAccessTime, const FILETIME* lpLastWriteTime)  // G42.33 b3 head truth 0x7c8524
 {
   return __imp_SetFileTime(hFile, lpCreationTime, lpLastAccessTime, lpLastWriteTime);
 }
@@ -10349,7 +10387,7 @@ int SetFileTime()
 
 // 0x7C852A
 namespace gamemd {
-int DosDateTimeToFileTime()
+BOOL DosDateTimeToFileTime(WORD wFatDate, WORD wFatTime, LPFILETIME lpFileTime)  // G42.33 b3 head truth 0x7c852a
 {
   return __imp_DosDateTimeToFileTime(wFatDate, wFatTime, lpFileTime);
 }
@@ -10357,7 +10395,7 @@ int DosDateTimeToFileTime()
 
 // 0x7C8530
 namespace gamemd {
-int GetStartupInfoA()
+void GetStartupInfoA(LPSTARTUPINFOA lpStartupInfo)  // G42.33 b3 head truth 0x7c8530
 {
   __imp_GetStartupInfoA(lpStartupInfo); /*0x7c8530*/
 }
@@ -10365,7 +10403,7 @@ int GetStartupInfoA()
 
 // 0x7C8536
 namespace gamemd {
-int TerminateProcess()
+BOOL TerminateProcess(HANDLE hProcess, UINT uExitCode)  // G42.33 b3 head truth 0x7c8536
 {
   return __imp_TerminateProcess(hProcess, uExitCode);
 }
@@ -10373,7 +10411,7 @@ int TerminateProcess()
 
 // 0x7C853C
 namespace gamemd {
-int WaitForMultipleObjects()
+DWORD WaitForMultipleObjects(DWORD nCount, const HANDLE* lpHandles, BOOL bWaitAll, DWORD dwMilliseconds)  // G42.33 b3 head truth 0x7c853c
 {
   return __imp_WaitForMultipleObjects(nCount, lpHandles, bWaitAll, dwMilliseconds);
 }
@@ -10381,7 +10419,7 @@ int WaitForMultipleObjects()
 
 // 0x7C8542
 namespace gamemd {
-int lstrcpyA()
+LPSTR lstrcpyA(LPSTR lpString1, LPCSTR lpString2)  // G42.33 b3 head truth 0x7c8542
 {
   return __imp_lstrcpyA(lpString1, lpString2);
 }
@@ -10389,7 +10427,7 @@ int lstrcpyA()
 
 // 0x7C8548
 namespace gamemd {
-int SetUnhandledExceptionFilter()
+LPTOP_LEVEL_EXCEPTION_FILTER SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter)  // G42.33 b3 head truth 0x7c8548
 {
   return __imp_SetUnhandledExceptionFilter(lpTopLevelExceptionFilter);
 }
@@ -10397,7 +10435,7 @@ int SetUnhandledExceptionFilter()
 
 // 0x7C854E
 namespace gamemd {
-int SetCurrentDirectoryA()
+BOOL SetCurrentDirectoryA(LPCSTR lpPathName)  // G42.33 b3 head truth 0x7c854e
 {
   return __imp_SetCurrentDirectoryA(lpPathName);
 }
@@ -10405,7 +10443,7 @@ int SetCurrentDirectoryA()
 
 // 0x7C8554
 namespace gamemd {
-int OpenMutexA()
+HANDLE OpenMutexA(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR lpName)  // G42.33 b3 head truth 0x7c8554
 {
   return __imp_OpenMutexA(dwDesiredAccess, bInheritHandle, lpName);
 }
@@ -10413,7 +10451,7 @@ int OpenMutexA()
 
 // 0x7C855A
 namespace gamemd {
-int GetFileTime()
+BOOL GetFileTime(HANDLE hFile, LPFILETIME lpCreationTime, LPFILETIME lpLastAccessTime, LPFILETIME lpLastWriteTime)  // G42.33 b3 head truth 0x7c855a
 {
   return __imp_GetFileTime(hFile, lpCreationTime, lpLastAccessTime, lpLastWriteTime);
 }
@@ -10421,7 +10459,7 @@ int GetFileTime()
 
 // 0x7C8560
 namespace gamemd {
-int GetLogicalDriveStringsA()
+DWORD GetLogicalDriveStringsA(DWORD nBufferLength, LPSTR lpBuffer)  // G42.33 b3 head truth 0x7c8560
 {
   return __imp_GetLogicalDriveStringsA(nBufferLength, lpBuffer);
 }
@@ -10429,7 +10467,7 @@ int GetLogicalDriveStringsA()
 
 // 0x7C8566
 namespace gamemd {
-int ClearCommError()
+BOOL ClearCommError(HANDLE hFile, LPDWORD lpErrors, LPCOMSTAT lpStat)  // G42.33 b3 head truth 0x7c8566
 {
   return __imp_ClearCommError(hFile, lpErrors, lpStat);
 }
@@ -10437,7 +10475,7 @@ int ClearCommError()
 
 // 0x7C856C
 namespace gamemd {
-int SetCommTimeouts()
+BOOL SetCommTimeouts(HANDLE hFile, LPCOMMTIMEOUTS lpCommTimeouts)  // G42.33 b3 head truth 0x7c856c
 {
   return __imp_SetCommTimeouts(hFile, lpCommTimeouts);
 }
@@ -10445,7 +10483,7 @@ int SetCommTimeouts()
 
 // 0x7C8572
 namespace gamemd {
-int SetCommState()
+BOOL SetCommState(HANDLE hFile, LPDCB lpDCB)  // G42.33 b3 head truth 0x7c8572
 {
   return __imp_SetCommState(hFile, lpDCB);
 }
@@ -10453,7 +10491,7 @@ int SetCommState()
 
 // 0x7C8578
 namespace gamemd {
-int GetCommState()
+BOOL GetCommState(HANDLE hFile, LPDCB lpDCB)  // G42.33 b3 head truth 0x7c8578
 {
   return __imp_GetCommState(hFile, lpDCB);
 }
@@ -10461,7 +10499,7 @@ int GetCommState()
 
 // 0x7C857E
 namespace gamemd {
-int CreateEventA()
+HANDLE CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes, BOOL bManualReset, BOOL bInitialState, LPCSTR lpName)  // G42.33 b3 head truth 0x7c857e
 {
   return __imp_CreateEventA(lpEventAttributes, bManualReset, bInitialState, lpName);
 }
@@ -10469,7 +10507,7 @@ int CreateEventA()
 
 // 0x7C8584
 namespace gamemd {
-int PurgeComm()
+BOOL PurgeComm(HANDLE hFile, DWORD dwFlags)  // G42.33 b3 head truth 0x7c8584
 {
   return __imp_PurgeComm(hFile, dwFlags);
 }
@@ -10477,7 +10515,7 @@ int PurgeComm()
 
 // 0x7C858A
 namespace gamemd {
-int SetupComm()
+BOOL SetupComm(HANDLE hFile, DWORD dwInQueue, DWORD dwOutQueue)  // G42.33 b3 head truth 0x7c858a
 {
   return __imp_SetupComm(hFile, dwInQueue, dwOutQueue);
 }
@@ -10485,7 +10523,7 @@ int SetupComm()
 
 // 0x7C8590
 namespace gamemd {
-int GetCommMask()
+BOOL GetCommMask(HANDLE hFile, LPDWORD lpEvtMask)  // G42.33 b3 head truth 0x7c8590
 {
   return __imp_GetCommMask(hFile, lpEvtMask);
 }
@@ -10493,7 +10531,7 @@ int GetCommMask()
 
 // 0x7C8596
 namespace gamemd {
-int ResetEvent()
+BOOL ResetEvent(HANDLE hEvent)  // G42.33 b3 head truth 0x7c8596
 {
   return __imp_ResetEvent(hEvent);
 }
@@ -10501,7 +10539,7 @@ int ResetEvent()
 
 // 0x7C859C
 namespace gamemd {
-int GetCommModemStatus()
+BOOL GetCommModemStatus(HANDLE hFile, LPDWORD lpModemStat)  // G42.33 b3 head truth 0x7c859c
 {
   return __imp_GetCommModemStatus(hFile, lpModemStat);
 }
@@ -10509,7 +10547,7 @@ int GetCommModemStatus()
 
 // 0x7C85A2
 namespace gamemd {
-int GetOverlappedResult()
+BOOL GetOverlappedResult(HANDLE hFile, LPOVERLAPPED lpOverlapped, LPDWORD lpNumberOfBytesTransferred, BOOL bWait)  // G42.33 b3 head truth 0x7c85a2
 {
   return __imp_GetOverlappedResult(hFile, lpOverlapped, lpNumberOfBytesTransferred, bWait);
 }
@@ -10517,7 +10555,7 @@ int GetOverlappedResult()
 
 // 0x7C85A8
 namespace gamemd {
-int GetVersionExA()
+BOOL GetVersionExA(LPOSVERSIONINFOA lpVersionInformation)  // G42.33 b3 head truth 0x7c85a8
 {
   return __imp_GetVersionExA(lpVersionInformation);
 }
@@ -10525,7 +10563,7 @@ int GetVersionExA()
 
 // 0x7C85AE
 namespace gamemd {
-int GetExitCodeProcess()
+BOOL GetExitCodeProcess(HANDLE hProcess, LPDWORD lpExitCode)  // G42.33 b3 head truth 0x7c85ae
 {
   return __imp_GetExitCodeProcess(hProcess, lpExitCode);
 }
@@ -10533,7 +10571,7 @@ int GetExitCodeProcess()
 
 // 0x7C85B4
 namespace gamemd {
-int GetCurrentDirectoryA()
+DWORD GetCurrentDirectoryA(DWORD nBufferLength, LPSTR lpBuffer)  // G42.33 b3 head truth 0x7c85b4
 {
   return __imp_GetCurrentDirectoryA(nBufferLength, lpBuffer);
 }
@@ -10541,7 +10579,7 @@ int GetCurrentDirectoryA()
 
 // 0x7C85BA
 namespace gamemd {
-int HeapDestroy()
+BOOL HeapDestroy(HANDLE hHeap)  // G42.33 b3 head truth 0x7c85ba
 {
   return __imp_HeapDestroy(hHeap);
 }
@@ -10549,7 +10587,7 @@ int HeapDestroy()
 
 // 0x7C85C0
 namespace gamemd {
-int GetComputerNameA()
+BOOL GetComputerNameA(LPSTR lpBuffer, LPDWORD nSize)  // G42.33 b3 head truth 0x7c85c0
 {
   return __imp_GetComputerNameA(lpBuffer, nSize);
 }
@@ -10557,7 +10595,7 @@ int GetComputerNameA()
 
 // 0x7C85C6
 namespace gamemd {
-int ReleaseMutex()
+BOOL ReleaseMutex(HANDLE hMutex)  // G42.33 b3 head truth 0x7c85c6
 {
   return __imp_ReleaseMutex(hMutex);
 }
@@ -10565,7 +10603,7 @@ int ReleaseMutex()
 
 // 0x7C85CC
 namespace gamemd {
-int GetClientRect()
+BOOL GetClientRect(HWND hWnd, LPRECT lpRect)  // G42.33 b3 head truth 0x7c85cc
 {
   return __imp_GetClientRect(hWnd, lpRect);
 }
@@ -10573,7 +10611,7 @@ int GetClientRect()
 
 // 0x7C85D2
 namespace gamemd {
-int DispatchMessageA()
+LRESULT DispatchMessageA(const MSG* lpMsg)  // G42.33 b3 head truth 0x7c85d2
 {
   return __imp_DispatchMessageA(lpMsg);
 }
@@ -10581,7 +10619,7 @@ int DispatchMessageA()
 
 // 0x7C85D8
 namespace gamemd {
-int TranslateMessage()
+BOOL TranslateMessage(const MSG* lpMsg)  // G42.33 b3 head truth 0x7c85d8
 {
   return __imp_TranslateMessage(lpMsg);
 }
@@ -10589,7 +10627,7 @@ int TranslateMessage()
 
 // 0x7C85DE
 namespace gamemd {
-int ClientToScreen()
+BOOL ClientToScreen(HWND hWnd, LPPOINT lpPoint)  // G42.33 b3 head truth 0x7c85de
 {
   return __imp_ClientToScreen(hWnd, lpPoint);
 }
@@ -10597,7 +10635,7 @@ int ClientToScreen()
 
 // 0x7C85E4
 namespace gamemd {
-int SetRect()
+BOOL SetRect(LPRECT lprc, int xLeft, int yTop, int xRight, int yBottom)  // G42.33 b3 head truth 0x7c85e4
 {
   return __imp_SetRect(lprc, xLeft, yTop, xRight, yBottom);
 }
@@ -10605,7 +10643,7 @@ int SetRect()
 
 // 0x7C85F6
 namespace gamemd {
-int GetDlgItem()
+HWND GetDlgItem(HWND hDlg, int nIDDlgItem)  // G42.33 b3 head truth 0x7c85f6
 {
   return __imp_GetDlgItem(hDlg, nIDDlgItem);
 }
@@ -10613,7 +10651,7 @@ int GetDlgItem()
 
 // 0x7C85FC
 namespace gamemd {
-int SendMessageA()
+LRESULT SendMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)  // G42.33 b3 head truth 0x7c85fc
 {
   return __imp_SendMessageA(hWnd, Msg, wParam, lParam);
 }
@@ -10621,7 +10659,7 @@ int SendMessageA()
 
 // 0x7C8602
 namespace gamemd {
-int EnableWindow()
+BOOL EnableWindow(HWND hWnd, BOOL bEnable)  // G42.33 b3 head truth 0x7c8602
 {
   return __imp_EnableWindow(hWnd, bEnable);
 }
@@ -10629,7 +10667,7 @@ int EnableWindow()
 
 // 0x7C8608
 namespace gamemd {
-int InvalidateRect()
+BOOL InvalidateRect(HWND hWnd, const RECT* lpRect, BOOL bErase)  // G42.33 b3 head truth 0x7c8608
 {
   return __imp_InvalidateRect(hWnd, lpRect, bErase);
 }
@@ -10637,7 +10675,7 @@ int InvalidateRect()
 
 // 0x7C860E
 namespace gamemd {
-int ShowWindow()
+BOOL ShowWindow(HWND hWnd, int nCmdShow)  // G42.33 b3 head truth 0x7c860e
 {
   return __imp_ShowWindow(hWnd, nCmdShow);
 }
@@ -10645,7 +10683,7 @@ int ShowWindow()
 
 // 0x7C8614
 namespace gamemd {
-int SetTimer()
+UINT_PTR SetTimer(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, TIMERPROC lpTimerFunc)  // G42.33 b3 head truth 0x7c8614
 {
   return __imp_SetTimer(hWnd, nIDEvent, uElapse, lpTimerFunc);
 }
@@ -10653,7 +10691,7 @@ int SetTimer()
 
 // 0x7C861A
 namespace gamemd {
-int SendDlgItemMessageA()
+LRESULT SendDlgItemMessageA(HWND hDlg, int nIDDlgItem, UINT Msg, WPARAM wParam, LPARAM lParam)  // G42.33 b3 head truth 0x7c861a
 {
   return __imp_SendDlgItemMessageA(hDlg, nIDDlgItem, Msg, wParam, lParam);
 }
@@ -10661,7 +10699,7 @@ int SendDlgItemMessageA()
 
 // 0x7C8620
 namespace gamemd {
-int KillTimer()
+BOOL KillTimer(HWND hWnd, UINT_PTR uIDEvent)  // G42.33 b3 head truth 0x7c8620
 {
   return __imp_KillTimer(hWnd, uIDEvent);
 }
@@ -10669,7 +10707,7 @@ int KillTimer()
 
 // 0x7C8626
 namespace gamemd {
-int ValidateRect()
+BOOL ValidateRect(HWND hWnd, const RECT* lpRect)  // G42.33 b3 head truth 0x7c8626
 {
   return __imp_ValidateRect(hWnd, lpRect);
 }
@@ -10677,7 +10715,7 @@ int ValidateRect()
 
 // 0x7C862C
 namespace gamemd {
-int GetWindowLongA()
+LONG GetWindowLongA(HWND hWnd, int nIndex)  // G42.33 b3 head truth 0x7c862c
 {
   return __imp_GetWindowLongA(hWnd, nIndex);
 }
@@ -10685,7 +10723,7 @@ int GetWindowLongA()
 
 // 0x7C8632
 namespace gamemd {
-int SetWindowLongA()
+LONG SetWindowLongA(HWND hWnd, int nIndex, LONG dwNewLong)  // G42.33 b3 head truth 0x7c8632
 {
   return __imp_SetWindowLongA(hWnd, nIndex, dwNewLong);
 }
@@ -10693,7 +10731,7 @@ int SetWindowLongA()
 
 // 0x7C8638
 namespace gamemd {
-int UpdateWindow()
+BOOL UpdateWindow(HWND hWnd)  // G42.33 b3 head truth 0x7c8638
 {
   return __imp_UpdateWindow(hWnd);
 }
@@ -10701,7 +10739,7 @@ int UpdateWindow()
 
 // 0x7C863E
 namespace gamemd {
-int MessageBoxIndirectA()
+int MessageBoxIndirectA(const MSGBOXPARAMSA* lpmbp)  // G42.33 b3 head truth 0x7c863e
 {
   return __imp_MessageBoxIndirectA(lpmbp);
 }
@@ -10709,7 +10747,7 @@ int MessageBoxIndirectA()
 
 // 0x7C8644
 namespace gamemd {
-int PeekMessageA()
+BOOL PeekMessageA(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg)  // G42.33 b3 head truth 0x7c8644
 {
   return __imp_PeekMessageA(lpMsg, hWnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg);
 }
@@ -10717,7 +10755,7 @@ int PeekMessageA()
 
 // 0x7C864A
 namespace gamemd {
-int MessageBoxA()
+int MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType)  // G42.33 b3 head truth 0x7c864a
 {
   return __imp_MessageBoxA(hWnd, lpText, lpCaption, uType);
 }
@@ -10725,7 +10763,7 @@ int MessageBoxA()
 
 // 0x7C8650
 namespace gamemd {
-int ReleaseDC()
+int ReleaseDC(HWND hWnd, HDC hDC)  // G42.33 b3 head truth 0x7c8650
 {
   return __imp_ReleaseDC(hWnd, hDC);
 }
@@ -10733,7 +10771,7 @@ int ReleaseDC()
 
 // 0x7C8656
 namespace gamemd {
-int GetDC()
+HDC GetDC(HWND hWnd)  // G42.33 b3 head truth 0x7c8656
 {
   return __imp_GetDC(hWnd);
 }
@@ -10741,7 +10779,7 @@ int GetDC()
 
 // 0x7C865C
 namespace gamemd {
-int CloseWindow()
+BOOL CloseWindow(HWND hWnd)  // G42.33 b3 head truth 0x7c865c
 {
   return __imp_CloseWindow(hWnd);
 }
@@ -10749,7 +10787,7 @@ int CloseWindow()
 
 // 0x7C8662
 namespace gamemd {
-int DefWindowProcA()
+LRESULT DefWindowProcA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)  // G42.33 b3 head truth 0x7c8662
 {
   return __imp_DefWindowProcA(hWnd, Msg, wParam, lParam);
 }
@@ -10757,7 +10795,7 @@ int DefWindowProcA()
 
 // 0x7C8668
 namespace gamemd {
-int GetActiveWindow()
+HWND GetActiveWindow(void)  // G42.33 b3 head truth 0x7c8668
 {
   return __imp_GetActiveWindow();
 }
@@ -10765,7 +10803,7 @@ int GetActiveWindow()
 
 // 0x7C866E
 namespace gamemd {
-int EndDialog()
+BOOL EndDialog(HWND hDlg, INT_PTR nResult)  // G42.33 b3 head truth 0x7c866e
 {
   return __imp_EndDialog(hDlg, nResult);
 }
@@ -10773,7 +10811,7 @@ int EndDialog()
 
 // 0x7C8674
 namespace gamemd {
-int SetFocus()
+HWND SetFocus(HWND hWnd)  // G42.33 b3 head truth 0x7c8674
 {
   return __imp_SetFocus(hWnd);
 }
@@ -10781,7 +10819,7 @@ int SetFocus()
 
 // 0x7C867A
 namespace gamemd {
-int SetDlgItemTextA()
+BOOL SetDlgItemTextA(HWND hDlg, int nIDDlgItem, LPCSTR lpString)  // G42.33 b3 head truth 0x7c867a
 {
   return __imp_SetDlgItemTextA(hDlg, nIDDlgItem, lpString);
 }
@@ -10789,7 +10827,7 @@ int SetDlgItemTextA()
 
 // 0x7C8680
 namespace gamemd {
-int DialogBoxParamA()
+INT_PTR DialogBoxParamA(HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)  // G42.33 b3 head truth 0x7c8680
 {
   return __imp_DialogBoxParamA(hInstance, lpTemplateName, hWndParent, lpDialogFunc, dwInitParam);
 }
@@ -10797,7 +10835,7 @@ int DialogBoxParamA()
 
 // 0x7C8686
 namespace gamemd {
-int DialogBoxIndirectParamA()
+INT_PTR DialogBoxIndirectParamA(HINSTANCE hInstance, LPCDLGTEMPLATEA hDialogTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)  // G42.33 b3 head truth 0x7c8686
 {
   return __imp_DialogBoxIndirectParamA(hInstance, hDialogTemplate, hWndParent, lpDialogFunc, dwInitParam);
 }
@@ -10805,7 +10843,7 @@ int DialogBoxIndirectParamA()
 
 // 0x7C868C
 namespace gamemd {
-int ShowCursor()
+int ShowCursor(BOOL bShow)  // G42.33 b3 head truth 0x7c868c
 {
   return __imp_ShowCursor(bShow);
 }
@@ -10813,7 +10851,7 @@ int ShowCursor()
 
 // 0x7C8692
 namespace gamemd {
-int SetWindowPos()
+BOOL SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags)  // G42.33 b3 head truth 0x7c8692
 {
   return __imp_SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
 }
@@ -10821,7 +10859,7 @@ int SetWindowPos()
 
 // 0x7C8698
 namespace gamemd {
-int DestroyWindow()
+BOOL DestroyWindow(HWND hWnd)  // G42.33 b3 head truth 0x7c8698
 {
   return __imp_DestroyWindow(hWnd);
 }
@@ -10829,7 +10867,7 @@ int DestroyWindow()
 
 // 0x7C869E
 namespace gamemd {
-int ReleaseCapture()
+BOOL ReleaseCapture(void)  // G42.33 b3 head truth 0x7c869e
 {
   return __imp_ReleaseCapture();
 }
@@ -10837,7 +10875,7 @@ int ReleaseCapture()
 
 // 0x7C86A4
 namespace gamemd {
-int GetCapture()
+HWND GetCapture(void)  // G42.33 b3 head truth 0x7c86a4
 {
   return __imp_GetCapture();
 }
@@ -10845,7 +10883,7 @@ int GetCapture()
 
 // 0x7C86AA
 namespace gamemd {
-int SetCapture()
+HWND SetCapture(HWND hWnd)  // G42.33 b3 head truth 0x7c86aa
 {
   return __imp_SetCapture(hWnd);
 }
@@ -10853,7 +10891,7 @@ int SetCapture()
 
 // 0x7C86B0
 namespace gamemd {
-int GetDlgCtrlID()
+int GetDlgCtrlID(HWND hWnd)  // G42.33 b3 head truth 0x7c86b0
 {
   return __imp_GetDlgCtrlID(hWnd);
 }
@@ -10861,7 +10899,7 @@ int GetDlgCtrlID()
 
 // 0x7C86B6
 namespace gamemd {
-int ChildWindowFromPointEx()
+HWND ChildWindowFromPointEx(HWND hwnd, POINT pt, UINT flags)  // G42.33 b3 head truth 0x7c86b6
 {
   return __imp_ChildWindowFromPointEx(hwnd, pt, flags);
 }
@@ -10869,7 +10907,7 @@ int ChildWindowFromPointEx()
 
 // 0x7C86BC
 namespace gamemd {
-int GetWindowRect()
+BOOL GetWindowRect(HWND hWnd, LPRECT lpRect)  // G42.33 b3 head truth 0x7c86bc
 {
   return __imp_GetWindowRect(hWnd, lpRect);
 }
@@ -10877,7 +10915,7 @@ int GetWindowRect()
 
 // 0x7C86C2
 namespace gamemd {
-int GetCursorPos()
+BOOL GetCursorPos(LPPOINT lpPoint)  // G42.33 b3 head truth 0x7c86c2
 {
   return __imp_GetCursorPos(lpPoint);
 }
@@ -10885,7 +10923,7 @@ int GetCursorPos()
 
 // 0x7C86C8
 namespace gamemd {
-int GetKeyState()
+SHORT GetKeyState(int nVirtKey)  // G42.33 b3 head truth 0x7c86c8
 {
   return __imp_GetKeyState(nVirtKey);
 }
@@ -10893,7 +10931,7 @@ int GetKeyState()
 
 // 0x7C86CE
 namespace gamemd {
-int GetAsyncKeyState()
+SHORT GetAsyncKeyState(int vKey)  // G42.33 b3 head truth 0x7c86ce
 {
   return __imp_GetAsyncKeyState(vKey);
 }
@@ -10901,7 +10939,7 @@ int GetAsyncKeyState()
 
 // 0x7C86D4
 namespace gamemd {
-int ToAscii()
+int ToAscii(UINT uVirtKey, UINT uScanCode, const BYTE* lpKeyState, LPWORD lpChar, UINT uFlags)  // G42.33 b3 head truth 0x7c86d4
 {
   return __imp_ToAscii(uVirtKey, uScanCode, lpKeyState, lpChar, uFlags);
 }
@@ -10909,7 +10947,7 @@ int ToAscii()
 
 // 0x7C86DA
 namespace gamemd {
-int MapVirtualKeyA()
+UINT MapVirtualKeyA(UINT uCode, UINT uMapType)  // G42.33 b3 head truth 0x7c86da
 {
   return __imp_MapVirtualKeyA(uCode, uMapType);
 }
@@ -10917,7 +10955,7 @@ int MapVirtualKeyA()
 
 // 0x7C86E0
 namespace gamemd {
-int GetSystemMetrics()
+int GetSystemMetrics(int nIndex)  // G42.33 b3 head truth 0x7c86e0
 {
   return __imp_GetSystemMetrics(nIndex);
 }
@@ -10925,7 +10963,7 @@ int GetSystemMetrics()
 
 // 0x7C86E6
 namespace gamemd {
-int MoveWindow()
+BOOL MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL bRepaint)  // G42.33 b3 head truth 0x7c86e6
 {
   return __imp_MoveWindow(hWnd, X, Y, nWidth, nHeight, bRepaint);
 }
@@ -10933,7 +10971,7 @@ int MoveWindow()
 
 // 0x7C86EC
 namespace gamemd {
-int AdjustWindowRectEx()
+BOOL AdjustWindowRectEx(LPRECT lpRect, DWORD dwStyle, BOOL bMenu, DWORD dwExStyle)  // G42.33 b3 head truth 0x7c86ec
 {
   return __imp_AdjustWindowRectEx(lpRect, dwStyle, bMenu, dwExStyle);
 }
@@ -10941,7 +10979,7 @@ int AdjustWindowRectEx()
 
 // 0x7C86F2
 namespace gamemd {
-int GetMenu()
+HMENU GetMenu(HWND hWnd)  // G42.33 b3 head truth 0x7c86f2
 {
   return __imp_GetMenu(hWnd);
 }
@@ -10949,7 +10987,7 @@ int GetMenu()
 
 // 0x7C86F8
 namespace gamemd {
-int AdjustWindowRect()
+BOOL AdjustWindowRect(LPRECT lpRect, DWORD dwStyle, BOOL bMenu)  // G42.33 b3 head truth 0x7c86f8
 {
   return __imp_AdjustWindowRect(lpRect, dwStyle, bMenu);
 }
@@ -10957,7 +10995,7 @@ int AdjustWindowRect()
 
 // 0x7C86FE
 namespace gamemd {
-int GetSysColor()
+DWORD GetSysColor(int nIndex)  // G42.33 b3 head truth 0x7c86fe
 {
   return __imp_GetSysColor(nIndex);
 }
@@ -10965,7 +11003,7 @@ int GetSysColor()
 
 // 0x7C8704
 namespace gamemd {
-int CreateDialogParamA()
+HWND CreateDialogParamA(HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)  // G42.33 b3 head truth 0x7c8704
 {
   return __imp_CreateDialogParamA(hInstance, lpTemplateName, hWndParent, lpDialogFunc, dwInitParam);
 }
@@ -10973,7 +11011,7 @@ int CreateDialogParamA()
 
 // 0x7C870A
 namespace gamemd {
-int EndPaint()
+BOOL EndPaint(HWND hWnd, const PAINTSTRUCT* lpPaint)  // G42.33 b3 head truth 0x7c870a
 {
   return __imp_EndPaint(hWnd, lpPaint);
 }
@@ -10981,7 +11019,7 @@ int EndPaint()
 
 // 0x7C8710
 namespace gamemd {
-int BeginPaint()
+HDC BeginPaint(HWND hWnd, LPPAINTSTRUCT lpPaint)  // G42.33 b3 head truth 0x7c8710
 {
   return __imp_BeginPaint(hWnd, lpPaint);
 }
@@ -10989,7 +11027,7 @@ int BeginPaint()
 
 // 0x7C8716
 namespace gamemd {
-int CharToOemBuffA()
+BOOL CharToOemBuffA(LPCSTR lpszSrc, LPSTR lpszDst, DWORD cchDstLength)  // G42.33 b3 head truth 0x7c8716
 {
   return __imp_CharToOemBuffA(lpszSrc, lpszDst, cchDstLength);
 }
@@ -10997,7 +11035,7 @@ int CharToOemBuffA()
 
 // 0x7C871C
 namespace gamemd {
-int TranslateAcceleratorA()
+int TranslateAcceleratorA(HWND hWnd, HACCEL hAccTable, LPMSG lpMsg)  // G42.33 b3 head truth 0x7c871c
 {
   return __imp_TranslateAcceleratorA(hWnd, hAccTable, lpMsg);
 }
@@ -11005,7 +11043,7 @@ int TranslateAcceleratorA()
 
 // 0x7C8722
 namespace gamemd {
-int IsDialogMessageA()
+BOOL IsDialogMessageA(HWND hDlg, LPMSG lpMsg)  // G42.33 b3 head truth 0x7c8722
 {
   return __imp_IsDialogMessageA(hDlg, lpMsg);
 }
@@ -11013,7 +11051,7 @@ int IsDialogMessageA()
 
 // 0x7C8728
 namespace gamemd {
-int GetWindowTextA()
+int GetWindowTextA(HWND hWnd, LPSTR lpString, int nMaxCount)  // G42.33 b3 head truth 0x7c8728
 {
   return __imp_GetWindowTextA(hWnd, lpString, nMaxCount);
 }
@@ -11021,7 +11059,7 @@ int GetWindowTextA()
 
 // 0x7C872E
 namespace gamemd {
-int IsWindowEnabled()
+BOOL IsWindowEnabled(HWND hWnd)  // G42.33 b3 head truth 0x7c872e
 {
   return __imp_IsWindowEnabled(hWnd);
 }
@@ -11029,7 +11067,7 @@ int IsWindowEnabled()
 
 // 0x7C8734
 namespace gamemd {
-int GetNextDlgTabItem()
+HWND GetNextDlgTabItem(HWND hDlg, HWND hCtl, BOOL bPrevious)  // G42.33 b3 head truth 0x7c8734
 {
   return __imp_GetNextDlgTabItem(hDlg, hCtl, bPrevious);
 }
@@ -11037,7 +11075,7 @@ int GetNextDlgTabItem()
 
 // 0x7C873A
 namespace gamemd {
-int GetParent()
+HWND GetParent(HWND hWnd)  // G42.33 b3 head truth 0x7c873a
 {
   return __imp_GetParent(hWnd);
 }
@@ -11045,7 +11083,7 @@ int GetParent()
 
 // 0x7C8740
 namespace gamemd {
-int GetClassNameA()
+int GetClassNameA(HWND hWnd, LPSTR lpClassName, int nMaxCount)  // G42.33 b3 head truth 0x7c8740
 {
   return __imp_GetClassNameA(hWnd, lpClassName, nMaxCount);
 }
@@ -11053,7 +11091,7 @@ int GetClassNameA()
 
 // 0x7C8746
 namespace gamemd {
-int EnumChildWindows()
+BOOL EnumChildWindows(HWND hWndParent, WNDENUMPROC lpEnumFunc, LPARAM lParam)  // G42.33 b3 head truth 0x7c8746
 {
   return __imp_EnumChildWindows(hWndParent, lpEnumFunc, lParam);
 }
@@ -11061,7 +11099,7 @@ int EnumChildWindows()
 
 // 0x7C874C
 namespace gamemd {
-int IsWindowVisible()
+BOOL IsWindowVisible(HWND hWnd)  // G42.33 b3 head truth 0x7c874c
 {
   return __imp_IsWindowVisible(hWnd);
 }
@@ -11069,7 +11107,7 @@ int IsWindowVisible()
 
 // 0x7C8752
 namespace gamemd {
-int SetForegroundWindow()
+BOOL SetForegroundWindow(HWND hWnd)  // G42.33 b3 head truth 0x7c8752
 {
   return __imp_SetForegroundWindow(hWnd);
 }
@@ -11077,7 +11115,7 @@ int SetForegroundWindow()
 
 // 0x7C8758
 namespace gamemd {
-int RegisterClassA()
+ATOM RegisterClassA(const WNDCLASSA* lpWndClass)  // G42.33 b3 head truth 0x7c8758
 {
   return __imp_RegisterClassA(lpWndClass);
 }
@@ -11085,7 +11123,7 @@ int RegisterClassA()
 
 // 0x7C875E
 namespace gamemd {
-int CreateWindowExA()
+HWND CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam)  // G42.33 b3 head truth 0x7c875e
 {
   return __imp_CreateWindowExA(
            dwExStyle,
@@ -11105,7 +11143,7 @@ int CreateWindowExA()
 
 // 0x7C8764
 namespace gamemd {
-int CallWindowProcA()
+LRESULT CallWindowProcA(WNDPROC lpPrevWndFunc, HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)  // G42.33 b3 head truth 0x7c8764
 {
   return __imp_CallWindowProcA(lpPrevWndFunc, hWnd, Msg, wParam, lParam);
 }
@@ -11113,7 +11151,7 @@ int CallWindowProcA()
 
 // 0x7C876A
 namespace gamemd {
-int BringWindowToTop()
+BOOL BringWindowToTop(HWND hWnd)  // G42.33 b3 head truth 0x7c876a
 {
   return __imp_BringWindowToTop(hWnd);
 }
@@ -11121,7 +11159,7 @@ int BringWindowToTop()
 
 // 0x7C8770
 namespace gamemd {
-int GetWindow()
+HWND GetWindow(HWND hWnd, UINT uCmd)  // G42.33 b3 head truth 0x7c8770
 {
   return __imp_GetWindow(hWnd, uCmd);
 }
@@ -11129,7 +11167,7 @@ int GetWindow()
 
 // 0x7C8776
 namespace gamemd {
-int IntersectRect()
+BOOL IntersectRect(LPRECT lprcDst, const RECT* lprcSrc1, const RECT* lprcSrc2)  // G42.33 b3 head truth 0x7c8776
 {
   return __imp_IntersectRect(lprcDst, lprcSrc1, lprcSrc2);
 }
@@ -11137,7 +11175,7 @@ int IntersectRect()
 
 // 0x7C877C
 namespace gamemd {
-int WindowFromPoint()
+HWND WindowFromPoint(POINT Point)  // G42.33 b3 head truth 0x7c877c
 {
   return __imp_WindowFromPoint(Point);
 }
@@ -11145,7 +11183,7 @@ int WindowFromPoint()
 
 // 0x7C8782
 namespace gamemd {
-int GetUpdateRect()
+BOOL GetUpdateRect(HWND hWnd, LPRECT lpRect, BOOL bErase)  // G42.33 b3 head truth 0x7c8782
 {
   return __imp_GetUpdateRect(hWnd, lpRect, bErase);
 }
@@ -11153,7 +11191,7 @@ int GetUpdateRect()
 
 // 0x7C8788
 namespace gamemd {
-int GetFocus()
+HWND GetFocus(void)  // G42.33 b3 head truth 0x7c8788
 {
   return __imp_GetFocus();
 }
@@ -11161,7 +11199,7 @@ int GetFocus()
 
 // 0x7C878E
 namespace gamemd {
-int LockWindowUpdate()
+BOOL LockWindowUpdate(HWND hWndLock)  // G42.33 b3 head truth 0x7c878e
 {
   return __imp_LockWindowUpdate(hWndLock);
 }
@@ -11169,7 +11207,7 @@ int LockWindowUpdate()
 
 // 0x7C8794
 namespace gamemd {
-int ScreenToClient()
+BOOL ScreenToClient(HWND hWnd, LPPOINT lpPoint)  // G42.33 b3 head truth 0x7c8794
 {
   return __imp_ScreenToClient(hWnd, lpPoint);
 }
@@ -11177,7 +11215,7 @@ int ScreenToClient()
 
 // 0x7C879A
 namespace gamemd {
-int GetKeyNameTextA()
+int GetKeyNameTextA(LONG lParam, LPSTR lpString, int cchSize)  // G42.33 b3 head truth 0x7c879a
 {
   return __imp_GetKeyNameTextA(lParam, lpString, cchSize);
 }
@@ -11185,7 +11223,7 @@ int GetKeyNameTextA()
 
 // 0x7C87A0
 namespace gamemd {
-int CreateDialogIndirectParamA()
+HWND CreateDialogIndirectParamA(HINSTANCE hInstance, LPCDLGTEMPLATEA lpTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam)  // G42.33 b3 head truth 0x7c87a0
 {
   return __imp_CreateDialogIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam);
 }
@@ -11193,7 +11231,7 @@ int CreateDialogIndirectParamA()
 
 // 0x7C87A6
 namespace gamemd {
-int SetCursorPos()
+BOOL SetCursorPos(int X, int Y)  // G42.33 b3 head truth 0x7c87a6
 {
   return __imp_SetCursorPos(X, Y);
 }
@@ -11201,7 +11239,7 @@ int SetCursorPos()
 
 // 0x7C87AC
 namespace gamemd {
-int FindWindowA()
+HWND FindWindowA(LPCSTR lpClassName, LPCSTR lpWindowName)  // G42.33 b3 head truth 0x7c87ac
 {
   return __imp_FindWindowA(lpClassName, lpWindowName);
 }
@@ -11209,7 +11247,7 @@ int FindWindowA()
 
 // 0x7C87B2
 namespace gamemd {
-int PostQuitMessage()
+void PostQuitMessage(int nExitCode)  // G42.33 b3 head truth 0x7c87b2
 {
   __imp_PostQuitMessage(nExitCode); /*0x7c87b2*/
 }
@@ -11217,7 +11255,7 @@ int PostQuitMessage()
 
 // 0x7C87B8
 namespace gamemd {
-int SetCursor()
+HCURSOR SetCursor(HCURSOR hCursor)  // G42.33 b3 head truth 0x7c87b8
 {
   return __imp_SetCursor(hCursor);
 }
@@ -11225,7 +11263,7 @@ int SetCursor()
 
 // 0x7C87BE
 namespace gamemd {
-int LoadCursorA()
+HCURSOR LoadCursorA(HINSTANCE hInstance, LPCSTR lpCursorName)  // G42.33 b3 head truth 0x7c87be
 {
   return __imp_LoadCursorA(hInstance, lpCursorName);
 }
@@ -11233,7 +11271,7 @@ int LoadCursorA()
 
 // 0x7C87C4
 namespace gamemd {
-int ChildWindowFromPoint()
+HWND ChildWindowFromPoint(HWND hWndParent, POINT Point)  // G42.33 b3 head truth 0x7c87c4
 {
   return __imp_ChildWindowFromPoint(hWndParent, Point);
 }
@@ -11241,7 +11279,7 @@ int ChildWindowFromPoint()
 
 // 0x7C87CA
 namespace gamemd {
-int WinHelpA()
+BOOL WinHelpA(HWND hWndMain, LPCSTR lpszHelp, UINT uCommand, ULONG_PTR dwData)  // G42.33 b3 head truth 0x7c87ca
 {
   return __imp_WinHelpA(hWndMain, lpszHelp, uCommand, dwData);
 }
@@ -11249,7 +11287,7 @@ int WinHelpA()
 
 // 0x7C87D0
 namespace gamemd {
-int GetWindowContextHelpId()
+DWORD GetWindowContextHelpId(HWND)  // G42.33 b3 head truth 0x7c87d0
 {
   return __imp_GetWindowContextHelpId(a1);
 }
@@ -11257,7 +11295,7 @@ int GetWindowContextHelpId()
 
 // 0x7C87D6
 namespace gamemd {
-int RedrawWindow()
+BOOL RedrawWindow(HWND hWnd, const RECT* lprcUpdate, HRGN hrgnUpdate, UINT flags)  // G42.33 b3 head truth 0x7c87d6
 {
   return __imp_RedrawWindow(hWnd, lprcUpdate, hrgnUpdate, flags);
 }
@@ -11265,7 +11303,7 @@ int RedrawWindow()
 
 // 0x7C87DC
 namespace gamemd {
-int SetActiveWindow()
+HWND SetActiveWindow(HWND hWnd)  // G42.33 b3 head truth 0x7c87dc
 {
   return __imp_SetActiveWindow(hWnd);
 }
@@ -11273,7 +11311,7 @@ int SetActiveWindow()
 
 // 0x7C87E2
 namespace gamemd {
-int RegisterHotKey()
+BOOL RegisterHotKey(HWND hWnd, int id, UINT fsModifiers, UINT vk)  // G42.33 b3 head truth 0x7c87e2
 {
   return __imp_RegisterHotKey(hWnd, id, fsModifiers, vk);
 }
@@ -11281,7 +11319,7 @@ int RegisterHotKey()
 
 // 0x7C87E8
 namespace gamemd {
-int LoadIconA()
+HICON LoadIconA(HINSTANCE hInstance, LPCSTR lpIconName)  // G42.33 b3 head truth 0x7c87e8
 {
   return __imp_LoadIconA(hInstance, lpIconName);
 }
@@ -11289,7 +11327,7 @@ int LoadIconA()
 
 // 0x7C87EE
 namespace gamemd {
-int GetForegroundWindow()
+HWND GetForegroundWindow(void)  // G42.33 b3 head truth 0x7c87ee
 {
   return __imp_GetForegroundWindow();
 }
@@ -11297,7 +11335,7 @@ int GetForegroundWindow()
 
 // 0x7C87F4
 namespace gamemd {
-int GetTopWindow()
+HWND GetTopWindow(HWND hWnd)  // G42.33 b3 head truth 0x7c87f4
 {
   return __imp_GetTopWindow(hWnd);
 }
@@ -11305,7 +11343,7 @@ int GetTopWindow()
 
 // 0x7C87FA
 namespace gamemd {
-int WaitForInputIdle()
+DWORD WaitForInputIdle(HANDLE hProcess, DWORD dwMilliseconds)  // G42.33 b3 head truth 0x7c87fa
 {
   return __imp_WaitForInputIdle(hProcess, dwMilliseconds);
 }
@@ -11313,7 +11351,7 @@ int WaitForInputIdle()
 
 // 0x7C8800
 namespace gamemd {
-int CheckDlgButton()
+BOOL CheckDlgButton(HWND hDlg, int nIDButton, UINT uCheck)  // G42.33 b3 head truth 0x7c8800
 {
   return __imp_CheckDlgButton(hDlg, nIDButton, uCheck);
 }
@@ -11321,7 +11359,7 @@ int CheckDlgButton()
 
 // 0x7C8806
 namespace gamemd {
-int IsDlgButtonChecked()
+UINT IsDlgButtonChecked(HWND hDlg, int nIDButton)  // G42.33 b3 head truth 0x7c8806
 {
   return __imp_IsDlgButtonChecked(hDlg, nIDButton);
 }
@@ -11329,7 +11367,7 @@ int IsDlgButtonChecked()
 
 // 0x7C880C
 namespace gamemd {
-int CreateDIBSection()
+HBITMAP CreateDIBSection(HDC hdc, const BITMAPINFO* pbmi, UINT usage, void** ppvBits, HANDLE hSection, DWORD offset)  // G42.33 b3 head truth 0x7c880c
 {
   return __imp_CreateDIBSection(hdc, pbmi, usage, ppvBits, hSection, offset);
 }
@@ -11337,7 +11375,7 @@ int CreateDIBSection()
 
 // 0x7C8812
 namespace gamemd {
-int DeleteObject()
+BOOL DeleteObject(HGDIOBJ ho)  // G42.33 b3 head truth 0x7c8812
 {
   return __imp_DeleteObject(ho);
 }
@@ -11345,7 +11383,7 @@ int DeleteObject()
 
 // 0x7C8818
 namespace gamemd {
-int GetTextMetricsA()
+BOOL GetTextMetricsA(HDC hdc, LPTEXTMETRICA lptm)  // G42.33 b3 head truth 0x7c8818
 {
   return __imp_GetTextMetricsA(hdc, lptm);
 }
@@ -11353,7 +11391,7 @@ int GetTextMetricsA()
 
 // 0x7C881E
 namespace gamemd {
-int SelectObject()
+HGDIOBJ SelectObject(HDC hdc, HGDIOBJ h)  // G42.33 b3 head truth 0x7c881e
 {
   return __imp_SelectObject(hdc, h);
 }
@@ -11361,7 +11399,7 @@ int SelectObject()
 
 // 0x7C8824
 namespace gamemd {
-int CreateFontIndirectA()
+HFONT CreateFontIndirectA(const LOGFONTA* lplf)  // G42.33 b3 head truth 0x7c8824
 {
   return __imp_CreateFontIndirectA(lplf);
 }
@@ -11369,7 +11407,7 @@ int CreateFontIndirectA()
 
 // 0x7C882A
 namespace gamemd {
-int GetDeviceCaps()
+int GetDeviceCaps(HDC hdc, int index)  // G42.33 b3 head truth 0x7c882a
 {
   return __imp_GetDeviceCaps(hdc, index);
 }
@@ -11377,7 +11415,7 @@ int GetDeviceCaps()
 
 // 0x7C8830
 namespace gamemd {
-int TextOutA()
+BOOL TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c)  // G42.33 b3 head truth 0x7c8830
 {
   return __imp_TextOutA(hdc, x, y, lpString, c);
 }
@@ -11385,7 +11423,7 @@ int TextOutA()
 
 // 0x7C8836
 namespace gamemd {
-int SetTextColor()
+COLORREF SetTextColor(HDC hdc, COLORREF color)  // G42.33 b3 head truth 0x7c8836
 {
   return __imp_SetTextColor(hdc, color);
 }
@@ -11393,7 +11431,7 @@ int SetTextColor()
 
 // 0x7C883C
 namespace gamemd {
-int SetBkColor()
+COLORREF SetBkColor(HDC hdc, COLORREF color)  // G42.33 b3 head truth 0x7c883c
 {
   return __imp_SetBkColor(hdc, color);
 }
@@ -11401,7 +11439,7 @@ int SetBkColor()
 
 // 0x7C8842
 namespace gamemd {
-int SetBkMode()
+int SetBkMode(HDC hdc, int mode)  // G42.33 b3 head truth 0x7c8842
 {
   return __imp_SetBkMode(hdc, mode);
 }
@@ -11409,7 +11447,7 @@ int SetBkMode()
 
 // 0x7C8848
 namespace gamemd {
-int CreateSolidBrush()
+HBRUSH CreateSolidBrush(COLORREF color)  // G42.33 b3 head truth 0x7c8848
 {
   return __imp_CreateSolidBrush(color);
 }
@@ -11417,7 +11455,7 @@ int CreateSolidBrush()
 
 // 0x7C884E
 namespace gamemd {
-int GetTextColor()
+COLORREF GetTextColor(HDC hdc)  // G42.33 b3 head truth 0x7c884e
 {
   return __imp_GetTextColor(hdc);
 }
@@ -11425,7 +11463,7 @@ int GetTextColor()
 
 // 0x7C8854
 namespace gamemd {
-int GetBkColor()
+COLORREF GetBkColor(HDC hdc)  // G42.33 b3 head truth 0x7c8854
 {
   return __imp_GetBkColor(hdc);
 }
@@ -11433,7 +11471,7 @@ int GetBkColor()
 
 // 0x7C885A
 namespace gamemd {
-int GetBkMode()
+int GetBkMode(HDC hdc)  // G42.33 b3 head truth 0x7c885a
 {
   return __imp_GetBkMode(hdc);
 }
@@ -11441,7 +11479,7 @@ int GetBkMode()
 
 // 0x7C8860
 namespace gamemd {
-int GetStockObject()
+HGDIOBJ GetStockObject(int i)  // G42.33 b3 head truth 0x7c8860
 {
   return __imp_GetStockObject(i);
 }
@@ -11449,7 +11487,7 @@ int GetStockObject()
 
 // 0x7C8866
 namespace gamemd {
-int RestoreDC()
+BOOL RestoreDC(HDC hdc, int nSavedDC)  // G42.33 b3 head truth 0x7c8866
 {
   return __imp_RestoreDC(hdc, nSavedDC);
 }
@@ -11457,7 +11495,7 @@ int RestoreDC()
 
 // 0x7C886C
 namespace gamemd {
-int DPtoLP()
+BOOL DPtoLP(HDC hdc, LPPOINT lppt, int c)  // G42.33 b3 head truth 0x7c886c
 {
   return __imp_DPtoLP(hdc, lppt, c);
 }
@@ -11465,7 +11503,7 @@ int DPtoLP()
 
 // 0x7C8872
 namespace gamemd {
-int SetWindowOrgEx()
+BOOL SetWindowOrgEx(HDC hdc, int x, int y, LPPOINT lppt)  // G42.33 b3 head truth 0x7c8872
 {
   return __imp_SetWindowOrgEx(hdc, x, y, lppt);
 }
@@ -11473,7 +11511,7 @@ int SetWindowOrgEx()
 
 // 0x7C8878
 namespace gamemd {
-int SetViewportOrgEx()
+BOOL SetViewportOrgEx(HDC hdc, int x, int y, LPPOINT lppt)  // G42.33 b3 head truth 0x7c8878
 {
   return __imp_SetViewportOrgEx(hdc, x, y, lppt);
 }
@@ -11481,7 +11519,7 @@ int SetViewportOrgEx()
 
 // 0x7C887E
 namespace gamemd {
-int ModifyWorldTransform()
+BOOL ModifyWorldTransform(HDC hdc, const XFORM* lpxf, DWORD mode)  // G42.33 b3 head truth 0x7c887e
 {
   return __imp_ModifyWorldTransform(hdc, lpxf, mode);
 }
@@ -11489,7 +11527,7 @@ int ModifyWorldTransform()
 
 // 0x7C8884
 namespace gamemd {
-int SetGraphicsMode()
+int SetGraphicsMode(HDC hdc, int iMode)  // G42.33 b3 head truth 0x7c8884
 {
   return __imp_SetGraphicsMode(hdc, iMode);
 }
@@ -11497,7 +11535,7 @@ int SetGraphicsMode()
 
 // 0x7C888A
 namespace gamemd {
-int SaveDC()
+int SaveDC(HDC hdc)  // G42.33 b3 head truth 0x7c888a
 {
   return __imp_SaveDC(hdc);
 }
@@ -11505,7 +11543,7 @@ int SaveDC()
 
 // 0x7C8890
 namespace gamemd {
-int RegCloseKey()
+int RegCloseKey(HKEY hKey)  // G42.33 b3 head truth 0x7c8890
 {
   return __imp_RegCloseKey(hKey);
 }
@@ -11513,7 +11551,7 @@ int RegCloseKey()
 
 // 0x7C8896
 namespace gamemd {
-int RegQueryValueExA()
+int RegQueryValueExA(HKEY hKey, LPCSTR lpValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData)  // G42.33 b3 head truth 0x7c8896
 {
   return __imp_RegQueryValueExA(hKey, lpValueName, lpReserved, lpType, lpData, lpcbData);
 }
@@ -11521,7 +11559,7 @@ int RegQueryValueExA()
 
 // 0x7C889C
 namespace gamemd {
-int RegOpenKeyExA()
+int RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult)  // G42.33 b3 head truth 0x7c889c
 {
   return __imp_RegOpenKeyExA(hKey, lpSubKey, ulOptions, samDesired, phkResult);
 }
@@ -11529,7 +11567,7 @@ int RegOpenKeyExA()
 
 // 0x7C88A2
 namespace gamemd {
-int RegDeleteValueA()
+int RegDeleteValueA(HKEY hKey, LPCSTR lpValueName)  // G42.33 b3 head truth 0x7c88a2
 {
   return __imp_RegDeleteValueA(hKey, lpValueName);
 }
@@ -11537,7 +11575,7 @@ int RegDeleteValueA()
 
 // 0x7C88A8
 namespace gamemd {
-int RegSetValueExA()
+int RegSetValueExA(HKEY hKey, LPCSTR lpValueName, DWORD Reserved, DWORD dwType, const BYTE* lpData, DWORD cbData)  // G42.33 b3 head truth 0x7c88a8
 {
   return __imp_RegSetValueExA(hKey, lpValueName, Reserved, dwType, lpData, cbData);
 }
@@ -11545,7 +11583,7 @@ int RegSetValueExA()
 
 // 0x7C88AE
 namespace gamemd {
-int RegCreateKeyExA()
+int RegCreateKeyExA(HKEY hKey, LPCSTR lpSubKey, DWORD Reserved, LPSTR lpClass, DWORD dwOptions, REGSAM samDesired, const LPSECURITY_ATTRIBUTES lpSecurityAttributes, PHKEY phkResult, LPDWORD lpdwDisposition)  // G42.33 b3 head truth 0x7c88ae
 {
   return __imp_RegCreateKeyExA(
            hKey,
@@ -11562,7 +11600,7 @@ int RegCreateKeyExA()
 
 // 0x7C88B4
 namespace gamemd {
-int RegEnumKeyExA()
+int RegEnumKeyExA(HKEY hKey, DWORD dwIndex, LPSTR lpName, LPDWORD lpcchName, LPDWORD lpReserved, LPSTR lpClass, LPDWORD lpcchClass, PFILETIME lpftLastWriteTime)  // G42.33 b3 head truth 0x7c88b4
 {
   return __imp_RegEnumKeyExA(hKey, dwIndex, lpName, lpcchName, lpReserved, lpClass, lpcchClass, lpftLastWriteTime);
 }
@@ -11570,7 +11608,7 @@ int RegEnumKeyExA()
 
 // 0x7C88BA
 namespace gamemd {
-int RegDeleteKeyA()
+int RegDeleteKeyA(HKEY hKey, LPCSTR lpSubKey)  // G42.33 b3 head truth 0x7c88ba
 {
   return __imp_RegDeleteKeyA(hKey, lpSubKey);
 }
@@ -11578,7 +11616,7 @@ int RegDeleteKeyA()
 
 // 0x7C88C0
 namespace gamemd {
-int RegQueryInfoKeyA()
+int RegQueryInfoKeyA(HKEY hKey, LPSTR lpClass, LPDWORD lpcchClass, LPDWORD lpReserved, LPDWORD lpcSubKeys, LPDWORD lpcbMaxSubKeyLen, LPDWORD lpcbMaxClassLen, LPDWORD lpcValues, LPDWORD lpcbMaxValueNameLen, LPDWORD lpcbMaxValueLen, LPDWORD lpcbSecurityDescriptor, PFILETIME lpftLastWriteTime)  // G42.33 b3 head truth 0x7c88c0
 {
   return __imp_RegQueryInfoKeyA(
            hKey,
@@ -11598,7 +11636,7 @@ int RegQueryInfoKeyA()
 
 // 0x7C88C6
 namespace gamemd {
-int FindExecutableA()
+HINSTANCE FindExecutableA(LPCSTR lpFile, LPCSTR lpDirectory, LPSTR lpResult)  // G42.33 b3 head truth 0x7c88c6
 {
   return __imp_FindExecutableA(lpFile, lpDirectory, lpResult);
 }
@@ -11606,7 +11644,7 @@ int FindExecutableA()
 
 // 0x7C88CC
 namespace gamemd {
-int OleRun()
+HRESULT OleRun(LPUNKNOWN pUnknown)  // G42.33 b3 head truth 0x7c88cc
 {
   return __imp_OleRun(pUnknown);
 }
@@ -11614,7 +11652,7 @@ int OleRun()
 
 // 0x7C88D2
 namespace gamemd {
-int CoCreateInstance()
+HRESULT CoCreateInstance(const IID* const rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext, const IID* const riid, LPVOID* ppv)  // G42.33 b3 head truth 0x7c88d2
 {
   return __imp_CoCreateInstance(rclsid, pUnkOuter, dwClsContext, riid, ppv);
 }
@@ -11622,7 +11660,7 @@ int CoCreateInstance()
 
 // 0x7C88D8
 namespace gamemd {
-int OleLoadFromStream()
+HRESULT OleLoadFromStream(LPSTREAM pStm, const IID* const iidInterface, LPVOID* ppvObj)  // G42.33 b3 head truth 0x7c88d8
 {
   return __imp_OleLoadFromStream(pStm, iidInterface, ppvObj);
 }
@@ -11630,7 +11668,7 @@ int OleLoadFromStream()
 
 // 0x7C88DE
 namespace gamemd {
-int OleSaveToStream()
+HRESULT OleSaveToStream(void * pPStm, LPSTREAM pStm)  // G42.33 b3 head truth 0x7c88de
 {
   return __imp_OleSaveToStream(pPStm, pStm);
 }
@@ -11638,7 +11676,7 @@ int OleSaveToStream()
 
 // 0x7C88E4
 namespace gamemd {
-int CLSIDFromString()
+HRESULT CLSIDFromString(const wchar_t * lpsz, LPCLSID pclsid)  // G42.33 b3 head truth 0x7c88e4
 {
   return __imp_CLSIDFromString(lpsz, pclsid);
 }
@@ -11646,7 +11684,7 @@ int CLSIDFromString()
 
 // 0x7C88EA
 namespace gamemd {
-int StringFromCLSID()
+HRESULT StringFromCLSID(const IID* const rclsid, wchar_t ** lplpsz)  // G42.33 b3 head truth 0x7c88ea
 {
   return __imp_StringFromCLSID(rclsid, lplpsz);
 }
@@ -11654,7 +11692,7 @@ int StringFromCLSID()
 
 // 0x7C88F0
 namespace gamemd {
-int CoFileTimeNow()
+HRESULT CoFileTimeNow(FILETIME* lpFileTime)  // G42.33 b3 head truth 0x7c88f0
 {
   return __imp_CoFileTimeNow(lpFileTime);
 }
@@ -11662,7 +11700,7 @@ int CoFileTimeNow()
 
 // 0x7C88F6
 namespace gamemd {
-int StgCreateDocfile()
+HRESULT StgCreateDocfile(const WCHAR* pwcsName, DWORD grfMode, DWORD reserved, void** ppstgOpen)  // G42.33 b3 head truth 0x7c88f6
 {
   return __imp_StgCreateDocfile(pwcsName, grfMode, reserved, ppstgOpen);
 }
@@ -11670,7 +11708,7 @@ int StgCreateDocfile()
 
 // 0x7C88FC
 namespace gamemd {
-int StgOpenStorage()
+HRESULT StgOpenStorage(const WCHAR* pwcsName, void* pstgPriority, DWORD grfMode, wchar_t ** snbExclude, DWORD reserved, void** ppstgOpen)  // G42.33 b3 head truth 0x7c88fc
 {
   return __imp_StgOpenStorage(pwcsName, pstgPriority, grfMode, snbExclude, reserved, ppstgOpen);
 }
@@ -11678,7 +11716,7 @@ int StgOpenStorage()
 
 // 0x7C8902
 namespace gamemd {
-int StringFromGUID2()
+int StringFromGUID2(const GUID* const rguid, wchar_t * lpsz, int cchMax)  // G42.33 b3 head truth 0x7c8902
 {
   return __imp_StringFromGUID2(rguid, lpsz, cchMax);
 }
@@ -11686,7 +11724,7 @@ int StringFromGUID2()
 
 // 0x7C8908
 namespace gamemd {
-int CoDisconnectObject()
+HRESULT CoDisconnectObject(LPUNKNOWN pUnk, DWORD dwReserved)  // G42.33 b3 head truth 0x7c8908
 {
   return __imp_CoDisconnectObject(pUnk, dwReserved);
 }
@@ -11694,7 +11732,7 @@ int CoDisconnectObject()
 
 // 0x7C890E
 namespace gamemd {
-int CoRegisterClassObject()
+HRESULT CoRegisterClassObject(const IID* const rclsid, LPUNKNOWN pUnk, DWORD dwClsContext, DWORD flags, LPDWORD lpdwRegister)  // G42.33 b3 head truth 0x7c890e
 {
   return __imp_CoRegisterClassObject(rclsid, pUnk, dwClsContext, flags, lpdwRegister);
 }
@@ -11702,7 +11740,7 @@ int CoRegisterClassObject()
 
 // 0x7C8914
 namespace gamemd {
-int OleInitialize()
+HRESULT OleInitialize(LPVOID pvReserved)  // G42.33 b3 head truth 0x7c8914
 {
   return __imp_OleInitialize(pvReserved);
 }
@@ -11710,7 +11748,7 @@ int OleInitialize()
 
 // 0x7C8920
 namespace gamemd {
-int CoRevokeClassObject()
+HRESULT CoRevokeClassObject(DWORD dwRegister)  // G42.33 b3 head truth 0x7c8920
 {
   return __imp_CoRevokeClassObject(dwRegister);
 }
@@ -11718,7 +11756,7 @@ int CoRevokeClassObject()
 
 // 0x7C8926
 namespace gamemd {
-int SysAllocString()
+wchar_t * SysAllocString(const wchar_t* psz)  // G42.33 b3 head truth 0x7c8926
 {
   return __imp_SysAllocString(psz);
 }
@@ -11726,7 +11764,7 @@ int SysAllocString()
 
 // 0x7C892C
 namespace gamemd {
-int SysFreeString()
+void SysFreeString(wchar_t * bstrString)  // G42.33 b3 head truth 0x7c892c
 {
   __imp_SysFreeString(bstrString); /*0x7c892c*/
 }
@@ -11734,7 +11772,7 @@ int SysFreeString()
 
 // 0x7C8932
 namespace gamemd {
-int LoadTypeLib()
+HRESULT LoadTypeLib(const wchar_t * szFile, void** pptlib)  // G42.33 b3 head truth 0x7c8932
 {
   return __imp_LoadTypeLib(szFile, pptlib);
 }
@@ -11742,7 +11780,7 @@ int LoadTypeLib()
 
 // 0x7C8938
 namespace gamemd {
-int RevokeActiveObject()
+HRESULT RevokeActiveObject(DWORD dwRegister, void* pvReserved)  // G42.33 b3 head truth 0x7c8938
 {
   return __imp_RevokeActiveObject(dwRegister, pvReserved);
 }
@@ -11750,7 +11788,7 @@ int RevokeActiveObject()
 
 // 0x7C893E
 namespace gamemd {
-int RegisterActiveObject()
+HRESULT RegisterActiveObject(IUnknown* punk, const IID* const rclsid, DWORD dwFlags, DWORD* pdwRegister)  // G42.33 b3 head truth 0x7c893e
 {
   return __imp_RegisterActiveObject(punk, rclsid, dwFlags, pdwRegister);
 }
@@ -11766,7 +11804,7 @@ int _1timeGetTime()
 
 // 0x7C894A
 namespace gamemd {
-int timeEndPeriod()
+unsigned int timeEndPeriod(UINT uPeriod)  // G42.33 b3 head truth 0x7c894a
 {
   return __imp_timeEndPeriod(uPeriod);
 }
@@ -11774,7 +11812,7 @@ int timeEndPeriod()
 
 // 0x7C8950
 namespace gamemd {
-int timeKillEvent()
+unsigned int timeKillEvent(UINT uTimerID)  // G42.33 b3 head truth 0x7c8950
 {
   return __imp_timeKillEvent(uTimerID);
 }
@@ -11782,7 +11820,7 @@ int timeKillEvent()
 
 // 0x7C8956
 namespace gamemd {
-int timeSetEvent()
+unsigned int timeSetEvent(UINT uDelay, UINT uResolution, void (__stdcall *fptc)(unsigned int, unsigned int, void *, unsigned int, unsigned int), DWORD_PTR dwUser, UINT fuEvent)  // G42.33 b3 head truth 0x7c8956
 {
   return __imp_timeSetEvent(uDelay, uResolution, fptc, dwUser, fuEvent);
 }
@@ -11790,7 +11828,7 @@ int timeSetEvent()
 
 // 0x7C895C
 namespace gamemd {
-int timeBeginPeriod()
+unsigned int timeBeginPeriod(UINT uPeriod)  // G42.33 b3 head truth 0x7c895c
 {
   return __imp_timeBeginPeriod(uPeriod);
 }
@@ -11798,7 +11836,7 @@ int timeBeginPeriod()
 
 // 0x7C8962
 namespace gamemd {
-int htonl()
+unsigned int htonl(unsigned int hostlong)
 {
   return __imp_htonl(hostlong);
 }
@@ -11806,7 +11844,7 @@ int htonl()
 
 // 0x7C8968
 namespace gamemd {
-int htons()
+int htons(unsigned short hostshort)  // G42.33 b3 head truth 0x7c8968
 {
   int result; // eax
 
@@ -11817,7 +11855,7 @@ int htons()
 
 // 0x7C896E
 namespace gamemd {
-int ntohl()
+int ntohl(unsigned long netlong)  // G42.33 b3 head truth 0x7c896e
 {
   return __imp_ntohl(netlong);
 }
@@ -11825,7 +11863,7 @@ int ntohl()
 
 // 0x7C8974
 namespace gamemd {
-int ntohs()
+int ntohs(unsigned short netshort)  // G42.33 b3 head truth 0x7c8974
 {
   int result; // eax
 
@@ -11836,7 +11874,7 @@ int ntohs()
 
 // 0x7C897A
 namespace gamemd {
-int WSAGetLastError()
+int WSAGetLastError(void)  // G42.33 b3 head truth 0x7c897a
 {
   return __imp_WSAGetLastError();
 }
@@ -11844,7 +11882,7 @@ int WSAGetLastError()
 
 // 0x7C8980
 namespace gamemd {
-int gethostbyname()
+void* gethostbyname(const char* name)  // G42.33 b3 head truth 0x7c8980
 {
   return __imp_gethostbyname(name);
 }
@@ -11860,7 +11898,7 @@ int ntoainet()
 
 // 0x7C898C
 namespace gamemd {
-int getsockopt()
+int getsockopt(unsigned int s, int level, int optname, char* optval, int* optlen)  // G42.33 b3 head truth 0x7c898c
 {
   return __imp_getsockopt(s, level, optname, optval, optlen);
 }
@@ -11868,7 +11906,7 @@ int getsockopt()
 
 // 0x7C8998
 namespace gamemd {
-int bind()
+int bind(unsigned int s, const void* name, int namelen)  // G42.33 b3 head truth 0x7c8998
 {
   return __imp_bind(s, name, namelen);
 }
@@ -11876,7 +11914,7 @@ int bind()
 
 // 0x7C899E
 namespace gamemd {
-int socket()
+int socket(int af, int type, int protocol)  // G42.33 b3 head truth 0x7c899e
 {
   return __imp_socket(af, type, protocol);
 }
@@ -11884,7 +11922,7 @@ int socket()
 
 // 0x7C89A4
 namespace gamemd {
-int setsockopt()
+int setsockopt(unsigned int s, int level, int optname, const char* optval, int optlen)  // G42.33 b3 head truth 0x7c89a4
 {
   return __imp_setsockopt(s, level, optname, optval, optlen);
 }
@@ -11892,7 +11930,7 @@ int setsockopt()
 
 // 0x7C89AA
 namespace gamemd {
-int recvfrom()
+int recvfrom(unsigned int s, char* buf, int len, int flags, void* from, int* fromlen)  // G42.33 b3 head truth 0x7c89aa
 {
   return __imp_recvfrom(s, buf, len, flags, from, fromlen);
 }
@@ -11900,7 +11938,7 @@ int recvfrom()
 
 // 0x7C89B0
 namespace gamemd {
-int sendto()
+int sendto(unsigned int s, const char* buf, int len, int flags, const void* to, int tolen)  // G42.33 b3 head truth 0x7c89b0
 {
   return __imp_sendto(s, buf, len, flags, to, tolen);
 }
@@ -11908,7 +11946,7 @@ int sendto()
 
 // 0x7C89B6
 namespace gamemd {
-int WSACleanup()
+int WSACleanup(void)  // G42.33 b3 head truth 0x7c89b6
 {
   return __imp_WSACleanup();
 }
@@ -11916,7 +11954,7 @@ int WSACleanup()
 
 // 0x7C89BC
 namespace gamemd {
-int WSAAsyncSelect()
+void WSAAsyncSelect(unsigned int s, HWND hWnd, unsigned int wMsg, int lEvent)  // G42.33 b3 head truth 0x7c89bc
 {
   return (AnimClass *)__imp_WSAAsyncSelect((SOCKET)retstr, (HWND)s, (u_int)hWnd, wMsg);
 }
@@ -11924,7 +11962,7 @@ int WSAAsyncSelect()
 
 // 0x7C89C2
 namespace gamemd {
-int EnumProtocolsA()
+INT EnumProtocolsA(LPINT lpiProtocols, LPVOID lpProtocolBuffer, LPDWORD lpdwBufferLength)  // G42.33 b3 head truth 0x7c89c2
 {
   return __imp_EnumProtocolsA(lpiProtocols, lpProtocolBuffer, lpdwBufferLength);
 }
@@ -11932,7 +11970,7 @@ int EnumProtocolsA()
 
 // 0x7C89C8
 namespace gamemd {
-int WSAStartup()
+int WSAStartup(WORD wVersionRequested, void * lpWSAData)  // G42.33 b3 head truth 0x7c89c8
 {
   return __imp_WSAStartup(wVersionRequested, lpWSAData);
 }
@@ -11940,7 +11978,7 @@ int WSAStartup()
 
 // 0x7C89CE
 namespace gamemd {
-int gethostname()
+int gethostname(char* name, int namelen)  // G42.33 b3 head truth 0x7c89ce
 {
   return __imp_gethostname(name, namelen);
 }
@@ -11948,7 +11986,7 @@ int gethostname()
 
 // 0x7C89D4
 namespace gamemd {
-int DirectDrawCreate()
+int DirectDrawCreate(GUID* lpGUID, void* lplpDD, IUnknown* pUnkOuter)  // G42.33 b3 head truth 0x7c89d4
 {
   return __imp_DirectDrawCreate(lpGUID, lplpDD, pUnkOuter);
 }
@@ -11956,7 +11994,7 @@ int DirectDrawCreate()
 
 // 0x7C89DA
 namespace gamemd {
-int DirectSoundCreate()
+HRESULT DirectSoundCreate(LPCGUID pcGuidDevice, void* ppDS, LPUNKNOWN pUnkOuter)  // G42.33 b3 head truth 0x7c89da
 {
   return __imp_DirectSoundCreate(pcGuidDevice, ppDS, pUnkOuter);
 }
@@ -11964,7 +12002,7 @@ int DirectSoundCreate()
 
 // 0x7C89E0
 namespace gamemd {
-int VerQueryValueA()
+BOOL VerQueryValueA(LPCVOID pBlock, LPCSTR lpSubBlock, LPVOID* lplpBuffer, PUINT puLen)  // G42.33 b3 head truth 0x7c89e0
 {
   return __imp_VerQueryValueA(pBlock, lpSubBlock, lplpBuffer, puLen);
 }
@@ -11972,7 +12010,7 @@ int VerQueryValueA()
 
 // 0x7C89E6
 namespace gamemd {
-int GetFileVersionInfoA()
+BOOL GetFileVersionInfoA(LPCSTR lptstrFilename, DWORD dwHandle, DWORD dwLen, LPVOID lpData)  // G42.33 b3 head truth 0x7c89e6
 {
   return __imp_GetFileVersionInfoA(lptstrFilename, dwHandle, dwLen, lpData);
 }
@@ -11980,7 +12018,7 @@ int GetFileVersionInfoA()
 
 // 0x7C89EC
 namespace gamemd {
-int GetFileVersionInfoSizeA()
+DWORD GetFileVersionInfoSizeA(LPCSTR lptstrFilename, LPDWORD lpdwHandle)  // G42.33 b3 head truth 0x7c89ec
 {
   return __imp_GetFileVersionInfoSizeA(lptstrFilename, lpdwHandle);
 }
@@ -11988,7 +12026,7 @@ int GetFileVersionInfoSizeA()
 
 // 0x7C8A16
 namespace gamemd {
-int InitCommonControls()
+void InitCommonControls(void)  // G42.33 b3 head truth 0x7c8a16
 {
   __imp_InitCommonControls(); /*0x7c8a16*/
 }
@@ -11996,7 +12034,7 @@ int InitCommonControls()
 
 // 0x7C8A1C
 namespace gamemd {
-int ImmAssociateContext()
+int ImmAssociateContext(HWND, void *)  // G42.33 b3 head truth 0x7c8a1c
 {
   return (int)__imp_ImmAssociateContext(a1, a2);
 }
@@ -12004,7 +12042,7 @@ int ImmAssociateContext()
 
 // 0x7C8A22
 namespace gamemd {
-int ImmGetContext()
+void * ImmGetContext(HWND)  // G42.33 b3 head truth 0x7c8a22
 {
   return __imp_ImmGetContext(a1);
 }
@@ -12012,7 +12050,7 @@ int ImmGetContext()
 
 // 0x7C8A28
 namespace gamemd {
-int ImmNotifyIME()
+BOOL ImmNotifyIME(void *, DWORD dwAction, DWORD dwIndex, DWORD dwValue)  // G42.33 b3 head truth 0x7c8a28
 {
   return __imp_ImmNotifyIME(a1, dwAction, dwIndex, dwValue);
 }
@@ -12020,7 +12058,7 @@ int ImmNotifyIME()
 
 // 0x7C8A2E
 namespace gamemd {
-int ImmGetCandidateListA()
+DWORD ImmGetCandidateListA(void *, DWORD deIndex, void * lpCandList, DWORD dwBufLen)  // G42.33 b3 head truth 0x7c8a2e
 {
   return __imp_ImmGetCandidateListA(a1, deIndex, lpCandList, dwBufLen);
 }
@@ -12028,7 +12066,7 @@ int ImmGetCandidateListA()
 
 // 0x7C8A34
 namespace gamemd {
-int ImmGetCompositionStringA()
+int ImmGetCompositionStringA(void *, DWORD, LPVOID lpBuf, DWORD dwBufLen)  // G42.33 b3 head truth 0x7c8a34
 {
   return __imp_ImmGetCompositionStringA(a1, a2, lpBuf, dwBufLen);
 }
@@ -12036,7 +12074,7 @@ int ImmGetCompositionStringA()
 
 // 0x7C8A3A
 namespace gamemd {
-int ImmSetOpenStatus()
+BOOL ImmSetOpenStatus(void *, BOOL)  // G42.33 b3 head truth 0x7c8a3a
 {
   return __imp_ImmSetOpenStatus(a1, a2);
 }
@@ -13346,7 +13384,7 @@ int _fflush_lk(int a1)
 
 // 0x7CB1F9
 namespace gamemd {
-int _flush(MouseClass * aP0)
+int _flush(FILE * aP0)
 {
   int v1; // ebx
   const void *v2; // eax

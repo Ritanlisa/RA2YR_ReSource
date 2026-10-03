@@ -24,6 +24,12 @@ struct Lobby {
     void UpdatePlayerLabels();
     static double InvalidateFactionCombos(...);  // C2597 interim stub
     int FillPlayerFactions();  // 0x4e4820
+    int UpdateReadyIcons(HWND hDlg);  // G42.33 b3 supplied-call sync 0x46F490
+    int EnableStartButton(HWND hDlg);  // G42.33 b3 supplied-call sync 0x46F497
+    int SetupAllFactionSlots(HWND hDlg);  // G42.33 b3 supplied-call sync 0x46EA9C
+    int UpdateReadyIcons();  // 0x46F490 G42.33 b3 (实例 0 参形)
+    int EnableStartButton();  // 0x46F497 G42.33 b3 (实例 0 参形)
+    int SetupAllFactionSlots();  // 0x46EA9C G42.33 b3 (实例 0 参形)
 };
 
 } // namespace gamemd

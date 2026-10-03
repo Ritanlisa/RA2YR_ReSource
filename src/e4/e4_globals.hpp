@@ -1,5 +1,4 @@
-// E1: pseudo-body referenced globals missing from src (auto-generated)
-#pragma once
+// E1: pseudo-body referenced globals missing from src (auto-generated)#pragma once
 #include <cstdint>
 #include "e4/e4_abs_decls.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
@@ -1914,7 +1913,6 @@ extern int hObject;  // data: 0x87E7F0
 extern int hostshort;  // data: 0x841F30
 extern int HouseClass_Array;  // data: 0xA8022C
 extern int HouseClass_Array_0;  // data: 0xA80228
-extern int HouseClass_Count;  // data: 0xA80238
 extern int HouseClass_Observer;  // data: 0xAC1198
 extern int HouseClass_Player;  // data: 0xA83D4C
 extern int hWndParent;  // data: 0xABF234
@@ -1953,7 +1951,6 @@ extern int Map_InvalidCoord_Z;  // data: 0x89A180
 extern int Map_MaxHeight;  // data: 0x89A1B4
 extern int MaxCount;  // data: 0xB73568
 extern int MCV_DeployModeEnabled;  // data: 0xA8EB7F
-extern int MCVRedeploy;  // data: 0xA8B320
 extern int MixFileClass_MULTI;  // data: 0x884DDC
 extern int Mode;  // data: 0x81D988
 extern int ModuleName;  // data: 0x81D820
@@ -2042,355 +2039,355 @@ extern int xRight;  // data: 0xA8EB8C
 extern int yBottom;  // data: 0xA8EB90
 extern int yTop;  // data: 0xAC18A4
 extern int* DataGlobal_A8DB50;  // data: 0xA8DB50
-extern unsigned char __imp_AdjustWindowRect[4];  // data: 0x7E1408
-extern unsigned char __imp_AdjustWindowRectEx[4];  // data: 0x7E1400
-extern unsigned char __imp_AllocConsole[4];  // data: 0x7E1218
-extern unsigned char __imp_BeginPaint[4];  // data: 0x7E1500
-extern unsigned char __imp_bind[4];  // data: 0x7E1580
-extern unsigned char __imp_BringWindowToTop[4];  // data: 0x7E14CC
-extern unsigned char __imp_CallWindowProcA[4];  // data: 0x7E1488
-extern unsigned char __imp_CharToOemBuffA[4];  // data: 0x7E14FC
-extern unsigned char __imp_CheckDlgButton[4];  // data: 0x7E1414
-extern unsigned char __imp_ChildWindowFromPoint[4];  // data: 0x7E1438
-extern unsigned char __imp_ChildWindowFromPointEx[4];  // data: 0x7E13B8
-extern unsigned char __imp_ClearCommBreak[4];  // data: 0x7E1114
-extern unsigned char __imp_ClearCommError[4];  // data: 0x7E1158
-extern unsigned char __imp_ClientToScreen[4];  // data: 0x7E14B8
-extern unsigned char __imp_CloseHandle[4];  // data: 0x7E11E0
-extern unsigned char __imp_closesocket[4];  // data: 0x7E1584
-extern unsigned char __imp_CloseWindow[4];  // data: 0x7E13C4
-extern unsigned char __imp_CLSIDFromString[4];  // data: 0x7E15F0
-extern unsigned char __imp_CoCreateInstance[4];  // data: 0x7E15FC
-extern unsigned char __imp_CoDisconnectObject[4];  // data: 0x7E15DC
-extern unsigned char __imp_CoFileTimeNow[4];  // data: 0x7E15E8
-extern unsigned char __imp_CompareFileTime[4];  // data: 0x7E1100
+extern BOOL (__stdcall * __imp_AdjustWindowRect)(LPRECT lpRect, DWORD dwStyle, BOOL bMenu);  // data: 0x7c86f8 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_AdjustWindowRectEx)(LPRECT lpRect, DWORD dwStyle, BOOL bMenu, DWORD dwExStyle);  // data: 0x7c86ec IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_AllocConsole)(void);  // data: 0x7c8452 IAT slot fn-ptr truth (G42.33 b3)
+extern HDC (__stdcall * __imp_BeginPaint)(HWND hWnd, LPPAINTSTRUCT lpPaint);  // data: 0x7c8710 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_bind)(unsigned int s, const void* name, int namelen);  // data: 0x7c8998 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_BringWindowToTop)(HWND hWnd);  // data: 0x7c876a IAT slot fn-ptr truth (G42.33 b3)
+extern LRESULT (__stdcall * __imp_CallWindowProcA)(WNDPROC lpPrevWndFunc, HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);  // data: 0x7c8764 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_CharToOemBuffA)(LPCSTR lpszSrc, LPSTR lpszDst, DWORD cchDstLength);  // data: 0x7c8716 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_CheckDlgButton)(HWND hDlg, int nIDButton, UINT uCheck);  // data: 0x7c8800 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_ChildWindowFromPoint)(HWND hWndParent, POINT Point);  // data: 0x7c87c4 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_ChildWindowFromPointEx)(HWND hwnd, POINT pt, UINT flags);  // data: 0x7c86b6 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ClearCommBreak)(HANDLE hFile);  // data: 0x7c8500 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ClearCommError)(HANDLE hFile, LPDWORD lpErrors, LPCOMSTAT lpStat);  // data: 0x7c8566 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ClientToScreen)(HWND hWnd, LPPOINT lpPoint);  // data: 0x7c85de IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_CloseHandle)(HANDLE hObject);  // data: 0x7c83aa IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_closesocket)(unsigned int s);  // data: 0x7c8992 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_CloseWindow)(HWND hWnd);  // data: 0x7c865c IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_CLSIDFromString)(const wchar_t * lpsz, LPCLSID pclsid);  // data: 0x7c88e4 IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_CoCreateInstance)(const IID* const rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext, const IID* const riid, LPVOID* ppv);  // data: 0x7c88d2 IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_CoDisconnectObject)(LPUNKNOWN pUnk, DWORD dwReserved);  // data: 0x7c8908 IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_CoFileTimeNow)(FILETIME* lpFileTime);  // data: 0x7c88f0 IAT slot fn-ptr truth (G42.33 b3)
+extern LONG (__stdcall * __imp_CompareFileTime)(const FILETIME* lpFileTime1, const FILETIME* lpFileTime2);  // data: 0x7c84e2 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_CompareStringA[4];  // data: 0x7E1324
 extern unsigned char __imp_CompareStringW[4];  // data: 0x7E1328
-extern unsigned char __imp_CopyFileA[4];  // data: 0x7E1104
-extern unsigned char __imp_CoRegisterClassObject[4];  // data: 0x7E15D8
-extern unsigned char __imp_CoRevokeClassObject[4];  // data: 0x7E15CC
-extern unsigned char __imp_CreateDialogIndirectParamA[4];  // data: 0x7E1450
-extern unsigned char __imp_CreateDialogParamA[4];  // data: 0x7E1508
-extern unsigned char __imp_CreateDIBSection[4];  // data: 0x7E1058
-extern unsigned char __imp_CreateDirectoryA[4];  // data: 0x7E1108
+extern BOOL (__stdcall * __imp_CopyFileA)(LPCSTR lpExistingFileName, LPCSTR lpNewFileName, BOOL bFailIfExists);  // data: 0x7c84e8 IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_CoRegisterClassObject)(const IID* const rclsid, LPUNKNOWN pUnk, DWORD dwClsContext, DWORD flags, LPDWORD lpdwRegister);  // data: 0x7c890e IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_CoRevokeClassObject)(DWORD dwRegister);  // data: 0x7c8920 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_CreateDialogIndirectParamA)(HINSTANCE hInstance, LPCDLGTEMPLATEA lpTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);  // data: 0x7c87a0 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_CreateDialogParamA)(HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);  // data: 0x7c8704 IAT slot fn-ptr truth (G42.33 b3)
+extern HBITMAP (__stdcall * __imp_CreateDIBSection)(HDC hdc, const BITMAPINFO* pbmi, UINT usage, void** ppvBits, HANDLE hSection, DWORD offset);  // data: 0x7c880c IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_CreateDirectoryA)(LPCSTR lpPathName, LPSECURITY_ATTRIBUTES lpSecurityAttributes);  // data: 0x7c84ee IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_CreateErrorInfo[4];  // data: 0x7E1378
-extern unsigned char __imp_CreateEventA[4];  // data: 0x7E1168
-extern unsigned char __imp_CreateFileA[4];  // data: 0x7E11BC
-extern unsigned char __imp_CreateFontIndirectA[4];  // data: 0x7E1060
-extern unsigned char __imp_CreateMutexA[4];  // data: 0x7E1248
-extern unsigned char __imp_CreateProcessA[4];  // data: 0x7E10DC
-extern unsigned char __imp_CreateSolidBrush[4];  // data: 0x7E1078
-extern unsigned char __imp_CreateThread[4];  // data: 0x7E11F8
-extern unsigned char __imp_CreateWindowExA[4];  // data: 0x7E14D4
-extern unsigned char __imp_DefWindowProcA[4];  // data: 0x7E1394
-extern unsigned char __imp_DeleteCriticalSection[4];  // data: 0x7E11E4
-extern unsigned char __imp_DeleteFileA[4];  // data: 0x7E10E0
-extern unsigned char __imp_DeleteObject[4];  // data: 0x7E10AC
-extern unsigned char __imp_DestroyWindow[4];  // data: 0x7E13F4
-extern unsigned char __imp_DeviceIoControl[4];  // data: 0x7E11B8
-extern unsigned char __imp_DialogBoxIndirectParamA[4];  // data: 0x7E13D8
-extern unsigned char __imp_DialogBoxParamA[4];  // data: 0x7E13D4
-extern unsigned char __imp_DirectDrawCreate[4];  // data: 0x7E1048
-extern unsigned char __imp_DirectSoundCreate[4];  // data: 0x7E1050
-extern unsigned char __imp_DispatchMessageA[4];  // data: 0x7E14C0
-extern unsigned char __imp_DosDateTimeToFileTime[4];  // data: 0x7E1130
-extern unsigned char __imp_DPtoLP[4];  // data: 0x7E1090
-extern unsigned char __imp_EnableWindow[4];  // data: 0x7E14A0
-extern unsigned char __imp_EndDialog[4];  // data: 0x7E13C8
-extern unsigned char __imp_EndPaint[4];  // data: 0x7E1504
-extern unsigned char __imp_EnterCriticalSection[4];  // data: 0x7E11E8
-extern unsigned char __imp_EnumChildWindows[4];  // data: 0x7E14E4
-extern unsigned char __imp_EnumProtocolsA[4];  // data: 0x7E1568
+extern HANDLE (__stdcall * __imp_CreateEventA)(LPSECURITY_ATTRIBUTES lpEventAttributes, BOOL bManualReset, BOOL bInitialState, LPCSTR lpName);  // data: 0x7c857e IAT slot fn-ptr truth (G42.33 b3)
+extern HANDLE (__stdcall * __imp_CreateFileA)(LPCSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile);  // data: 0x7c83e0 IAT slot fn-ptr truth (G42.33 b3)
+extern HFONT (__stdcall * __imp_CreateFontIndirectA)(const LOGFONTA* lplf);  // data: 0x7c8824 IAT slot fn-ptr truth (G42.33 b3)
+extern HANDLE (__stdcall * __imp_CreateMutexA)(LPSECURITY_ATTRIBUTES lpMutexAttributes, BOOL bInitialOwner, LPCSTR lpName);  // data: 0x7c840a IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_CreateProcessA)(LPCSTR lpApplicationName, LPSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation);  // data: 0x7c84ac IAT slot fn-ptr truth (G42.33 b3)
+extern HBRUSH (__stdcall * __imp_CreateSolidBrush)(COLORREF color);  // data: 0x7c8848 IAT slot fn-ptr truth (G42.33 b3)
+extern HANDLE (__stdcall * __imp_CreateThread)(LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId);  // data: 0x7c8386 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_CreateWindowExA)(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam);  // data: 0x7c875e IAT slot fn-ptr truth (G42.33 b3)
+extern LRESULT (__stdcall * __imp_DefWindowProcA)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);  // data: 0x7c8662 IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_DeleteCriticalSection)(LPCRITICAL_SECTION lpCriticalSection);  // data: 0x7c83a4 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_DeleteFileA)(LPCSTR lpFileName);  // data: 0x7c84b2 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_DeleteObject)(HGDIOBJ ho);  // data: 0x7c8812 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_DestroyWindow)(HWND hWnd);  // data: 0x7c8698 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_DeviceIoControl)(HANDLE hDevice, DWORD dwIoControlCode, LPVOID lpInBuffer, DWORD nInBufferSize, LPVOID lpOutBuffer, DWORD nOutBufferSize, LPDWORD lpBytesReturned, LPOVERLAPPED lpOverlapped);  // data: 0x7c83e6 IAT slot fn-ptr truth (G42.33 b3)
+extern INT_PTR (__stdcall * __imp_DialogBoxIndirectParamA)(HINSTANCE hInstance, LPCDLGTEMPLATEA hDialogTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);  // data: 0x7c8686 IAT slot fn-ptr truth (G42.33 b3)
+extern INT_PTR (__stdcall * __imp_DialogBoxParamA)(HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);  // data: 0x7c8680 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_DirectDrawCreate)(GUID* lpGUID, void* lplpDD, IUnknown* pUnkOuter);  // data: 0x7c89d4 IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_DirectSoundCreate)(LPCGUID pcGuidDevice, void* ppDS, LPUNKNOWN pUnkOuter);  // data: 0x7c89da IAT slot fn-ptr truth (G42.33 b3)
+extern LRESULT (__stdcall * __imp_DispatchMessageA)(const MSG* lpMsg);  // data: 0x7c85d2 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_DosDateTimeToFileTime)(WORD wFatDate, WORD wFatTime, LPFILETIME lpFileTime);  // data: 0x7c852a IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_DPtoLP)(HDC hdc, LPPOINT lppt, int c);  // data: 0x7c886c IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_EnableWindow)(HWND hWnd, BOOL bEnable);  // data: 0x7c8602 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_EndDialog)(HWND hDlg, INT_PTR nResult);  // data: 0x7c866e IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_EndPaint)(HWND hWnd, const PAINTSTRUCT* lpPaint);  // data: 0x7c870a IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_EnterCriticalSection)(LPCRITICAL_SECTION lpCriticalSection);  // data: 0x7c839e IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_EnumChildWindows)(HWND hWndParent, WNDENUMPROC lpEnumFunc, LPARAM lParam);  // data: 0x7c8746 IAT slot fn-ptr truth (G42.33 b3)
+extern INT (__stdcall * __imp_EnumProtocolsA)(LPINT lpiProtocols, LPVOID lpProtocolBuffer, LPDWORD lpdwBufferLength);  // data: 0x7c89c2 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_EnumSystemLocalesA[4];  // data: 0x7E1310
-extern unsigned char __imp_EscapeCommFunction[4];  // data: 0x7E1110
-extern unsigned char __imp_ExitProcess[4];  // data: 0x7E1214
+extern BOOL (__stdcall * __imp_EscapeCommFunction)(HANDLE hFile, DWORD dwFunc);  // data: 0x7c84fa IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_ExitProcess)(UINT uExitCode);  // data: 0x7c8458 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_FatalAppExitA[4];  // data: 0x7E134C
-extern unsigned char __imp_FileTimeToDosDateTime[4];  // data: 0x7E1124
-extern unsigned char __imp_FileTimeToLocalFileTime[4];  // data: 0x7E10F8
-extern unsigned char __imp_FileTimeToSystemTime[4];  // data: 0x7E10F4
-extern unsigned char __imp_FindClose[4];  // data: 0x7E1300
-extern unsigned char __imp_FindExecutableA[4];  // data: 0x7E138C
-extern unsigned char __imp_FindFirstFileA[4];  // data: 0x7E1208
-extern unsigned char __imp_FindNextFileA[4];  // data: 0x7E120C
-extern unsigned char __imp_FindResourceA[4];  // data: 0x7E122C
-extern unsigned char __imp_FindWindowA[4];  // data: 0x7E1448
+extern BOOL (__stdcall * __imp_FileTimeToDosDateTime)(const FILETIME* lpFileTime, LPWORD lpFatDate, LPWORD lpFatTime);  // data: 0x7c8518 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_FileTimeToLocalFileTime)(const FILETIME* lpFileTime, LPFILETIME lpLocalFileTime);  // data: 0x7c84d6 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_FileTimeToSystemTime)(const FILETIME* lpFileTime, LPSYSTEMTIME lpSystemTime);  // data: 0x7c84d0 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_FindClose)(HANDLE hFindFile);  // data: 0x7c8362 IAT slot fn-ptr truth (G42.33 b3)
+extern HINSTANCE (__stdcall * __imp_FindExecutableA)(LPCSTR lpFile, LPCSTR lpDirectory, LPSTR lpResult);  // data: 0x7c88c6 IAT slot fn-ptr truth (G42.33 b3)
+extern HANDLE (__stdcall * __imp_FindFirstFileA)(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData);  // data: 0x7c836e IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_FindNextFileA)(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData);  // data: 0x7c8368 IAT slot fn-ptr truth (G42.33 b3)
+extern HRSRC (__stdcall * __imp_FindResourceA)(HMODULE hModule, LPCSTR lpName, LPCSTR lpType);  // data: 0x7c8434 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_FindWindowA)(LPCSTR lpClassName, LPCSTR lpWindowName);  // data: 0x7c87ac IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_FlushFileBuffers[4];  // data: 0x7E12C4
-extern unsigned char __imp_FlushInstructionCache[4];  // data: 0x7E119C
-extern unsigned char __imp_FormatMessageA[4];  // data: 0x7E1204
-extern unsigned char __imp_FreeConsole[4];  // data: 0x7E1210
+extern BOOL (__stdcall * __imp_FlushInstructionCache)(HANDLE hProcess, LPCVOID lpBaseAddress, SIZE_T dwSize);  // data: 0x7c8488 IAT slot fn-ptr truth (G42.33 b3)
+extern DWORD (__stdcall * __imp_FormatMessageA)(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPSTR lpBuffer, DWORD nSize, va_list* Arguments);  // data: 0x7c8374 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_FreeConsole)(void);  // data: 0x7c844c IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_FreeEnvironmentStringsA[4];  // data: 0x7E12F0
 extern unsigned char __imp_FreeEnvironmentStringsW[4];  // data: 0x7E12F4
-extern unsigned char __imp_FreeLibrary[4];  // data: 0x7E1224
+extern BOOL (__stdcall * __imp_FreeLibrary)(HMODULE hLibModule);  // data: 0x7c8440 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetACP[4];  // data: 0x7E12D8
-extern unsigned char __imp_GetActiveWindow[4];  // data: 0x7E13AC
-extern unsigned char __imp_GetAsyncKeyState[4];  // data: 0x7E13E0
-extern unsigned char __imp_GetBkColor[4];  // data: 0x7E1080
-extern unsigned char __imp_GetBkMode[4];  // data: 0x7E1084
-extern unsigned char __imp_GetCapture[4];  // data: 0x7E13B0
-extern unsigned char __imp_GetClassNameA[4];  // data: 0x7E14DC
-extern unsigned char __imp_GetClientRect[4];  // data: 0x7E14C4
+extern HWND (__stdcall * __imp_GetActiveWindow)(void);  // data: 0x7c8668 IAT slot fn-ptr truth (G42.33 b3)
+extern SHORT (__stdcall * __imp_GetAsyncKeyState)(int vKey);  // data: 0x7c86ce IAT slot fn-ptr truth (G42.33 b3)
+extern COLORREF (__stdcall * __imp_GetBkColor)(HDC hdc);  // data: 0x7c8854 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_GetBkMode)(HDC hdc);  // data: 0x7c885a IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_GetCapture)(void);  // data: 0x7c86a4 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_GetClassNameA)(HWND hWnd, LPSTR lpClassName, int nMaxCount);  // data: 0x7c8740 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_GetClientRect)(HWND hWnd, LPRECT lpRect);  // data: 0x7c85cc IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetCommandLineA[4];  // data: 0x7E1280
-extern unsigned char __imp_GetCommMask[4];  // data: 0x7E1174
-extern unsigned char __imp_GetCommModemStatus[4];  // data: 0x7E117C
-extern unsigned char __imp_GetCommState[4];  // data: 0x7E1164
-extern unsigned char __imp_GetComputerNameA[4];  // data: 0x7E1194
+extern BOOL (__stdcall * __imp_GetCommMask)(HANDLE hFile, LPDWORD lpEvtMask);  // data: 0x7c8590 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_GetCommModemStatus)(HANDLE hFile, LPDWORD lpModemStat);  // data: 0x7c859c IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_GetCommState)(HANDLE hFile, LPDCB lpDCB);  // data: 0x7c8578 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_GetComputerNameA)(LPSTR lpBuffer, LPDWORD nSize);  // data: 0x7c85c0 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetConsoleMode[4];  // data: 0x7E1270
 extern unsigned char __imp_GetCPInfo[4];  // data: 0x7E12D4
-extern unsigned char __imp_GetCurrentDirectoryA[4];  // data: 0x7E118C
-extern unsigned char __imp_GetCurrentProcess[4];  // data: 0x7E11A4
+extern DWORD (__stdcall * __imp_GetCurrentDirectoryA)(DWORD nBufferLength, LPSTR lpBuffer);  // data: 0x7c85b4 IAT slot fn-ptr truth (G42.33 b3)
+extern HANDLE (__stdcall * __imp_GetCurrentProcess)(void);  // data: 0x7c847c IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetCurrentProcessId[4];  // data: 0x7E12E8
 extern unsigned char __imp_GetCurrentThread[4];  // data: 0x7E12BC
-extern unsigned char __imp_GetCurrentThreadId[4];  // data: 0x7E11D0
-extern unsigned char __imp_GetCursorPos[4];  // data: 0x7E13C0
-extern unsigned char __imp_GetDateFormatA[4];  // data: 0x7E10F0
-extern unsigned char __imp_GetDC[4];  // data: 0x7E13A4
-extern unsigned char __imp_GetDeviceCaps[4];  // data: 0x7E1070
-extern unsigned char __imp_GetDiskFreeSpaceA[4];  // data: 0x7E1254
-extern unsigned char __imp_GetDlgCtrlID[4];  // data: 0x7E13B4
-extern unsigned char __imp_GetDlgItem[4];  // data: 0x7E14A8
-extern unsigned char __imp_GetDriveTypeA[4];  // data: 0x7E125C
+extern DWORD (__stdcall * __imp_GetCurrentThreadId)(void);  // data: 0x7c83c2 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_GetCursorPos)(LPPOINT lpPoint);  // data: 0x7c86c2 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_GetDateFormatA)(LCID Locale, DWORD dwFlags, const SYSTEMTIME* lpDate, LPCSTR lpFormat, LPSTR lpDateStr, int cchDate);  // data: 0x7c84ca IAT slot fn-ptr truth (G42.33 b3)
+extern HDC (__stdcall * __imp_GetDC)(HWND hWnd);  // data: 0x7c8656 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_GetDeviceCaps)(HDC hdc, int index);  // data: 0x7c882a IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_GetDiskFreeSpaceA)(LPCSTR lpRootPathName, LPDWORD lpSectorsPerCluster, LPDWORD lpBytesPerSector, LPDWORD lpNumberOfFreeClusters, LPDWORD lpTotalNumberOfClusters);  // data: 0x7c83f8 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_GetDlgCtrlID)(HWND hWnd);  // data: 0x7c86b0 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_GetDlgItem)(HWND hDlg, int nIDDlgItem);  // data: 0x7c85f6 IAT slot fn-ptr truth (G42.33 b3)
+extern UINT (__stdcall * __imp_GetDriveTypeA)(LPCSTR lpRootPathName);  // data: 0x7c83ec IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetEnvironmentStrings[4];  // data: 0x7E12F8
 extern unsigned char __imp_GetEnvironmentStringsW[4];  // data: 0x7E12FC
 extern unsigned char __imp_GetErrorInfo[4];  // data: 0x7E136C
-extern unsigned char __imp_GetExitCodeProcess[4];  // data: 0x7E1188
+extern BOOL (__stdcall * __imp_GetExitCodeProcess)(HANDLE hProcess, LPDWORD lpExitCode);  // data: 0x7c85ae IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetFileAttributesA[4];  // data: 0x7E12E4
-extern unsigned char __imp_GetFileInformationByHandle[4];  // data: 0x7E1128
-extern unsigned char __imp_GetFileTime[4];  // data: 0x7E1150
+extern BOOL (__stdcall * __imp_GetFileInformationByHandle)(HANDLE hFile, LPBY_HANDLE_FILE_INFORMATION lpFileInformation);  // data: 0x7c851e IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_GetFileTime)(HANDLE hFile, LPFILETIME lpCreationTime, LPFILETIME lpLastAccessTime, LPFILETIME lpLastWriteTime);  // data: 0x7c855a IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetFileType[4];  // data: 0x7E12D0
-extern unsigned char __imp_GetFileVersionInfoA[4];  // data: 0x7E1520
-extern unsigned char __imp_GetFileVersionInfoSizeA[4];  // data: 0x7E151C
-extern unsigned char __imp_GetFocus[4];  // data: 0x7E13A0
-extern unsigned char __imp_GetForegroundWindow[4];  // data: 0x7E1420
-extern unsigned char __imp_gethostbyname[4];  // data: 0x7E1588
-extern unsigned char __imp_gethostname[4];  // data: 0x7E1560
-extern unsigned char __imp_GetKeyNameTextA[4];  // data: 0x7E1454
-extern unsigned char __imp_GetKeyState[4];  // data: 0x7E13A8
-extern unsigned char __imp_GetLastError[4];  // data: 0x7E1200
+extern BOOL (__stdcall * __imp_GetFileVersionInfoA)(LPCSTR lptstrFilename, DWORD dwHandle, DWORD dwLen, LPVOID lpData);  // data: 0x7c89e6 IAT slot fn-ptr truth (G42.33 b3)
+extern DWORD (__stdcall * __imp_GetFileVersionInfoSizeA)(LPCSTR lptstrFilename, LPDWORD lpdwHandle);  // data: 0x7c89ec IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_GetFocus)(void);  // data: 0x7c8788 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_GetForegroundWindow)(void);  // data: 0x7c87ee IAT slot fn-ptr truth (G42.33 b3)
+extern void* (__stdcall * __imp_gethostbyname)(const char* name);  // data: 0x7c8980 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_gethostname)(char* name, int namelen);  // data: 0x7c89ce IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_GetKeyNameTextA)(LONG lParam, LPSTR lpString, int cchSize);  // data: 0x7c879a IAT slot fn-ptr truth (G42.33 b3)
+extern SHORT (__stdcall * __imp_GetKeyState)(int nVirtKey);  // data: 0x7c86c8 IAT slot fn-ptr truth (G42.33 b3)
+extern DWORD (__stdcall * __imp_GetLastError)(void);  // data: 0x7c837a IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetLocaleInfoA[4];  // data: 0x7E130C
 extern unsigned char __imp_GetLocaleInfoW[4];  // data: 0x7E1338
 extern unsigned char __imp_GetLocalTime[4];  // data: 0x7E1284
-extern unsigned char __imp_GetLogicalDriveStringsA[4];  // data: 0x7E1154
-extern unsigned char __imp_GetMenu[4];  // data: 0x7E1404
-extern unsigned char __imp_GetModuleFileNameA[4];  // data: 0x7E11A8
-extern unsigned char __imp_GetModuleHandleA[4];  // data: 0x7E1240
-extern unsigned char __imp_GetNextDlgTabItem[4];  // data: 0x7E14F0
+extern DWORD (__stdcall * __imp_GetLogicalDriveStringsA)(DWORD nBufferLength, LPSTR lpBuffer);  // data: 0x7c8560 IAT slot fn-ptr truth (G42.33 b3)
+extern HMENU (__stdcall * __imp_GetMenu)(HWND hWnd);  // data: 0x7c86f2 IAT slot fn-ptr truth (G42.33 b3)
+extern DWORD (__stdcall * __imp_GetModuleFileNameA)(HMODULE hModule, LPSTR lpFilename, DWORD nSize);  // data: 0x7c8476 IAT slot fn-ptr truth (G42.33 b3)
+extern HMODULE (__stdcall * __imp_GetModuleHandleA)(LPCSTR lpModuleName);  // data: 0x7c8404 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_GetNextDlgTabItem)(HWND hDlg, HWND hCtl, BOOL bPrevious);  // data: 0x7c8734 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetNumberOfConsoleInputEvents[4];  // data: 0x7E1354
 extern unsigned char __imp_GetOEMCP[4];  // data: 0x7E12DC
-extern unsigned char __imp_GetOverlappedResult[4];  // data: 0x7E1180
-extern unsigned char __imp_GetParent[4];  // data: 0x7E14EC
-extern unsigned char __imp_GetProcAddress[4];  // data: 0x7E1250
-extern unsigned char __imp_getsockopt[4];  // data: 0x7E1540
-extern unsigned char __imp_GetStartupInfoA[4];  // data: 0x7E1264
+extern BOOL (__stdcall * __imp_GetOverlappedResult)(HANDLE hFile, LPOVERLAPPED lpOverlapped, LPDWORD lpNumberOfBytesTransferred, BOOL bWait);  // data: 0x7c85a2 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_GetParent)(HWND hWnd);  // data: 0x7c873a IAT slot fn-ptr truth (G42.33 b3)
+extern FARPROC (__stdcall * __imp_GetProcAddress)(HMODULE hModule, LPCSTR lpProcName);  // data: 0x7c83fe IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_getsockopt)(unsigned int s, int level, int optname, char* optval, int* optlen);  // data: 0x7c898c IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_GetStartupInfoA)(LPSTARTUPINFOA lpStartupInfo);  // data: 0x7c8530 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetStdHandle[4];  // data: 0x7E12CC
-extern unsigned char __imp_GetStockObject[4];  // data: 0x7E1094
+extern HGDIOBJ (__stdcall * __imp_GetStockObject)(int i);  // data: 0x7c8860 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetStringTypeA[4];  // data: 0x7E131C
 extern unsigned char __imp_GetStringTypeW[4];  // data: 0x7E1320
-extern unsigned char __imp_GetSysColor[4];  // data: 0x7E140C
-extern unsigned char __imp_GetSystemMetrics[4];  // data: 0x7E13EC
-extern unsigned char __imp_GetSystemTime[4];  // data: 0x7E10D4
-extern unsigned char __imp_GetTempFileNameA[4];  // data: 0x7E10E4
-extern unsigned char __imp_GetTextColor[4];  // data: 0x7E1088
-extern unsigned char __imp_GetTextMetricsA[4];  // data: 0x7E1064
-extern unsigned char __imp_GetTickCount[4];  // data: 0x7E1138
-extern unsigned char __imp_GetTimeFormatA[4];  // data: 0x7E10EC
+extern DWORD (__stdcall * __imp_GetSysColor)(int nIndex);  // data: 0x7c86fe IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_GetSystemMetrics)(int nIndex);  // data: 0x7c86e0 IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_GetSystemTime)(LPSYSTEMTIME lpSystemTime);  // data: 0x7c84a0 IAT slot fn-ptr truth (G42.33 b3)
+extern UINT (__stdcall * __imp_GetTempFileNameA)(LPCSTR lpPathName, LPCSTR lpPrefixString, UINT uUnique, LPSTR lpTempFileName);  // data: 0x7c84b8 IAT slot fn-ptr truth (G42.33 b3)
+extern COLORREF (__stdcall * __imp_GetTextColor)(HDC hdc);  // data: 0x7c884e IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_GetTextMetricsA)(HDC hdc, LPTEXTMETRICA lptm);  // data: 0x7c8818 IAT slot fn-ptr truth (G42.33 b3)
+extern DWORD (__stdcall * __imp_GetTickCount)(void);  // data: 0x7c849a IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_GetTimeFormatA)(LCID Locale, DWORD dwFlags, const SYSTEMTIME* lpTime, LPCSTR lpFormat, LPSTR lpTimeStr, int cchTime);  // data: 0x7c84c4 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetTimeZoneInformation[4];  // data: 0x7E1274
-extern unsigned char __imp_GetTopWindow[4];  // data: 0x7E141C
-extern unsigned char __imp_GetUpdateRect[4];  // data: 0x7E139C
+extern HWND (__stdcall * __imp_GetTopWindow)(HWND hWnd);  // data: 0x7c87f4 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_GetUpdateRect)(HWND hWnd, LPRECT lpRect, BOOL bErase);  // data: 0x7c8782 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_GetUserDefaultLCID[4];  // data: 0x7E1314
 extern unsigned char __imp_GetVersion[4];  // data: 0x7E1288
-extern unsigned char __imp_GetVersionExA[4];  // data: 0x7E1184
-extern unsigned char __imp_GetVolumeInformationA[4];  // data: 0x7E121C
-extern unsigned char __imp_GetWindow[4];  // data: 0x7E14C8
-extern unsigned char __imp_GetWindowContextHelpId[4];  // data: 0x7E1430
-extern unsigned char __imp_GetWindowLongA[4];  // data: 0x7E1474
-extern unsigned char __imp_GetWindowRect[4];  // data: 0x7E13BC
-extern unsigned char __imp_GetWindowsDirectoryA[4];  // data: 0x7E10E8
-extern unsigned char __imp_GetWindowTextA[4];  // data: 0x7E150C
-extern unsigned char __imp_GlobalMemoryStatus[4];  // data: 0x7E10D8
+extern BOOL (__stdcall * __imp_GetVersionExA)(LPOSVERSIONINFOA lpVersionInformation);  // data: 0x7c85a8 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_GetVolumeInformationA)(LPCSTR lpRootPathName, LPSTR lpVolumeNameBuffer, DWORD nVolumeNameSize, LPDWORD lpVolumeSerialNumber, LPDWORD lpMaximumComponentLength, LPDWORD lpFileSystemFlags, LPSTR lpFileSystemNameBuffer, DWORD nFileSystemNameSize);  // data: 0x7c843a IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_GetWindow)(HWND hWnd, UINT uCmd);  // data: 0x7c8770 IAT slot fn-ptr truth (G42.33 b3)
+extern DWORD (__stdcall * __imp_GetWindowContextHelpId)(HWND);  // data: 0x7c87d0 IAT slot fn-ptr truth (G42.33 b3)
+extern LONG (__stdcall * __imp_GetWindowLongA)(HWND hWnd, int nIndex);  // data: 0x7c862c IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_GetWindowRect)(HWND hWnd, LPRECT lpRect);  // data: 0x7c86bc IAT slot fn-ptr truth (G42.33 b3)
+extern UINT (__stdcall * __imp_GetWindowsDirectoryA)(LPSTR lpBuffer, UINT uSize);  // data: 0x7c84be IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_GetWindowTextA)(HWND hWnd, LPSTR lpString, int nMaxCount);  // data: 0x7c8728 IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_GlobalMemoryStatus)(LPMEMORYSTATUS lpBuffer);  // data: 0x7c84a6 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_HeapAlloc[4];  // data: 0x7E1278
 extern unsigned char __imp_HeapCreate[4];  // data: 0x7E1298
-extern unsigned char __imp_HeapDestroy[4];  // data: 0x7E1190
+extern BOOL (__stdcall * __imp_HeapDestroy)(HANDLE hHeap);  // data: 0x7c85ba IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_HeapFree[4];  // data: 0x7E127C
 extern unsigned char __imp_HeapReAlloc[4];  // data: 0x7E12A4
 extern unsigned char __imp_HeapSize[4];  // data: 0x7E12A0
-extern unsigned char __imp_htonl[4];  // data: 0x7E1550
-extern unsigned char __imp_htons[4];  // data: 0x7E1548
-extern unsigned char __imp_ImmAssociateContext[4];  // data: 0x7E10B4
-extern unsigned char __imp_ImmGetCandidateListA[4];  // data: 0x7E10C0
-extern unsigned char __imp_ImmGetCompositionStringA[4];  // data: 0x7E10C4
-extern unsigned char __imp_ImmGetContext[4];  // data: 0x7E10B8
-extern unsigned char __imp_ImmNotifyIME[4];  // data: 0x7E10BC
-extern unsigned char __imp_ImmSetOpenStatus[4];  // data: 0x7E10C8
-extern unsigned char __imp_InitCommonControls[4];  // data: 0x7E102C
-extern unsigned char __imp_InitializeCriticalSection[4];  // data: 0x7E11F4
-extern unsigned char __imp_InterlockedDecrement[4];  // data: 0x7E11CC
-extern unsigned char __imp_InterlockedIncrement[4];  // data: 0x7E11C8
-extern unsigned char __imp_IntersectRect[4];  // data: 0x7E147C
-extern unsigned char __imp_InvalidateRect[4];  // data: 0x7E149C
-extern unsigned char __imp_IsBadCodePtr[4];  // data: 0x7E11B4
-extern unsigned char __imp_IsBadReadPtr[4];  // data: 0x7E115C
+extern int (__stdcall * __imp_htonl)(unsigned long hostlong);  // data: 0x7c8962 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_htons)(unsigned short hostshort);  // data: 0x7c8968 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_ImmAssociateContext)(HWND, void *);  // data: 0x7c8a1c IAT slot fn-ptr truth (G42.33 b3)
+extern DWORD (__stdcall * __imp_ImmGetCandidateListA)(void *, DWORD deIndex, void * lpCandList, DWORD dwBufLen);  // data: 0x7c8a2e IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_ImmGetCompositionStringA)(void *, DWORD, LPVOID lpBuf, DWORD dwBufLen);  // data: 0x7c8a34 IAT slot fn-ptr truth (G42.33 b3)
+extern void * (__stdcall * __imp_ImmGetContext)(HWND);  // data: 0x7c8a22 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ImmNotifyIME)(void *, DWORD dwAction, DWORD dwIndex, DWORD dwValue);  // data: 0x7c8a28 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ImmSetOpenStatus)(void *, BOOL);  // data: 0x7c8a3a IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_InitCommonControls)(void);  // data: 0x7c8a16 IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_InitializeCriticalSection)(LPCRITICAL_SECTION lpCriticalSection);  // data: 0x7c838c IAT slot fn-ptr truth (G42.33 b3)
+extern LONG (__stdcall * __imp_InterlockedDecrement)(volatile LONG* lpAddend);  // data: 0x7c83c8 IAT slot fn-ptr truth (G42.33 b3)
+extern LONG (__stdcall * __imp_InterlockedIncrement)(volatile LONG* lpAddend);  // data: 0x7c83ce IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_IntersectRect)(LPRECT lprcDst, const RECT* lprcSrc1, const RECT* lprcSrc2);  // data: 0x7c8776 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_InvalidateRect)(HWND hWnd, const RECT* lpRect, BOOL bErase);  // data: 0x7c8608 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_IsBadCodePtr)(FARPROC lpfn);  // data: 0x7c8464 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_IsBadReadPtr)(const void* lp, UINT_PTR ucb);  // data: 0x7c845e IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_IsBadWritePtr[4];  // data: 0x7E129C
-extern unsigned char __imp_IsDialogMessageA[4];  // data: 0x7E14F4
-extern unsigned char __imp_IsDlgButtonChecked[4];  // data: 0x7E1410
+extern BOOL (__stdcall * __imp_IsDialogMessageA)(HWND hDlg, LPMSG lpMsg);  // data: 0x7c8722 IAT slot fn-ptr truth (G42.33 b3)
+extern UINT (__stdcall * __imp_IsDlgButtonChecked)(HWND hDlg, int nIDButton);  // data: 0x7c8806 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_IsValidCodePage[4];  // data: 0x7E1308
 extern unsigned char __imp_IsValidLocale[4];  // data: 0x7E1304
-extern unsigned char __imp_IsWindowEnabled[4];  // data: 0x7E14E8
-extern unsigned char __imp_IsWindowVisible[4];  // data: 0x7E14E0
-extern unsigned char __imp_KillTimer[4];  // data: 0x7E148C
+extern BOOL (__stdcall * __imp_IsWindowEnabled)(HWND hWnd);  // data: 0x7c872e IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_IsWindowVisible)(HWND hWnd);  // data: 0x7c874c IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_KillTimer)(HWND hWnd, UINT_PTR uIDEvent);  // data: 0x7c8620 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_LCMapStringA[4];  // data: 0x7E12B0
 extern unsigned char __imp_LCMapStringW[4];  // data: 0x7E12A8
-extern unsigned char __imp_LeaveCriticalSection[4];  // data: 0x7E11EC
-extern unsigned char __imp_LoadCursorA[4];  // data: 0x7E143C
-extern unsigned char __imp_LoadIconA[4];  // data: 0x7E1424
-extern unsigned char __imp_LoadLibraryA[4];  // data: 0x7E1220
-extern unsigned char __imp_LoadResource[4];  // data: 0x7E1230
-extern unsigned char __imp_LoadTypeLib[4];  // data: 0x7E1360
+extern void (__stdcall * __imp_LeaveCriticalSection)(LPCRITICAL_SECTION lpCriticalSection);  // data: 0x7c8398 IAT slot fn-ptr truth (G42.33 b3)
+extern HCURSOR (__stdcall * __imp_LoadCursorA)(HINSTANCE hInstance, LPCSTR lpCursorName);  // data: 0x7c87be IAT slot fn-ptr truth (G42.33 b3)
+extern HICON (__stdcall * __imp_LoadIconA)(HINSTANCE hInstance, LPCSTR lpIconName);  // data: 0x7c87e8 IAT slot fn-ptr truth (G42.33 b3)
+extern HMODULE (__stdcall * __imp_LoadLibraryA)(LPCSTR lpLibFileName);  // data: 0x7c8446 IAT slot fn-ptr truth (G42.33 b3)
+extern HGLOBAL (__stdcall * __imp_LoadResource)(HMODULE hModule, HRSRC hResInfo);  // data: 0x7c842e IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_LoadTypeLib)(const wchar_t * szFile, void** pptlib);  // data: 0x7c8932 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_LocalFree[4];  // data: 0x7E1340
-extern unsigned char __imp_LockResource[4];  // data: 0x7E1228
-extern unsigned char __imp_LockWindowUpdate[4];  // data: 0x7E145C
-extern unsigned char __imp_lstrcatA[4];  // data: 0x7E1160
-extern unsigned char __imp_lstrcpyA[4];  // data: 0x7E1140
-extern unsigned char __imp_lstrlenA[4];  // data: 0x7E11AC
+extern LPVOID (__stdcall * __imp_LockResource)(HGLOBAL hResData);  // data: 0x7c8428 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_LockWindowUpdate)(HWND hWndLock);  // data: 0x7c878e IAT slot fn-ptr truth (G42.33 b3)
+extern LPSTR (__stdcall * __imp_lstrcatA)(LPSTR lpString1, LPCSTR lpString2);  // data: 0x7c846a IAT slot fn-ptr truth (G42.33 b3)
+extern LPSTR (__stdcall * __imp_lstrcpyA)(LPSTR lpString1, LPCSTR lpString2);  // data: 0x7c8542 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_lstrlenA)(LPCSTR lpString);  // data: 0x7c8470 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_lstrlenW[4];  // data: 0x7E133C
-extern unsigned char __imp_MapViewOfFileEx[4];  // data: 0x7E1244
-extern unsigned char __imp_MapVirtualKeyA[4];  // data: 0x7E13E8
-extern unsigned char __imp_MessageBoxA[4];  // data: 0x7E1460
-extern unsigned char __imp_MessageBoxIndirectA[4];  // data: 0x7E1480
-extern unsigned char __imp_ModifyWorldTransform[4];  // data: 0x7E109C
-extern unsigned char __imp_MoveWindow[4];  // data: 0x7E1398
-extern unsigned char __imp_MulDiv[4];  // data: 0x7E110C
-extern unsigned char __imp_MultiByteToWideChar[4];  // data: 0x7E11C4
-extern unsigned char __imp_ntohl[4];  // data: 0x7E1544
-extern unsigned char __imp_ntohs[4];  // data: 0x7E155C
-extern unsigned char __imp_OleInitialize[4];  // data: 0x7E15D4
-extern unsigned char __imp_OleLoadFromStream[4];  // data: 0x7E15F8
-extern unsigned char __imp_OleRun[4];  // data: 0x7E1600
-extern unsigned char __imp_OleSaveToStream[4];  // data: 0x7E15F4
+extern LPVOID (__stdcall * __imp_MapViewOfFileEx)(HANDLE hFileMappingObject, DWORD dwDesiredAccess, DWORD dwFileOffsetHigh, DWORD dwFileOffsetLow, SIZE_T dwNumberOfBytesToMap, LPVOID lpBaseAddress);  // data: 0x7c8410 IAT slot fn-ptr truth (G42.33 b3)
+extern UINT (__stdcall * __imp_MapVirtualKeyA)(UINT uCode, UINT uMapType);  // data: 0x7c86da IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_MessageBoxA)(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType);  // data: 0x7c864a IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_MessageBoxIndirectA)(const MSGBOXPARAMSA* lpmbp);  // data: 0x7c863e IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ModifyWorldTransform)(HDC hdc, const XFORM* lpxf, DWORD mode);  // data: 0x7c887e IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_MoveWindow)(HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL bRepaint);  // data: 0x7c86e6 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_MulDiv)(int nNumber, int nNumerator, int nDenominator);  // data: 0x7c84f4 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_MultiByteToWideChar)(UINT CodePage, DWORD dwFlags, LPCCH lpMultiByteStr, int cbMultiByte, int lpWideCharStr, int cchWideChar);  // data: 0x7c83d4 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_ntohl)(unsigned long netlong);  // data: 0x7c896e IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_ntohs)(unsigned short netshort);  // data: 0x7c8974 IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_OleInitialize)(LPVOID pvReserved);  // data: 0x7c8914 IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_OleLoadFromStream)(LPSTREAM pStm, const IID* const iidInterface, LPVOID* ppvObj);  // data: 0x7c88d8 IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_OleRun)(LPUNKNOWN pUnknown);  // data: 0x7c88cc IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_OleSaveToStream)(void * pPStm, LPSTREAM pStm);  // data: 0x7c88de IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_OleUninitialize[4];  // data: 0x7E15D0
-extern unsigned char __imp_OpenEventA[4];  // data: 0x7E123C
-extern unsigned char __imp_OpenMutexA[4];  // data: 0x7E114C
+extern HANDLE (__stdcall * __imp_OpenEventA)(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR lpName);  // data: 0x7c841c IAT slot fn-ptr truth (G42.33 b3)
+extern HANDLE (__stdcall * __imp_OpenMutexA)(DWORD dwDesiredAccess, BOOL bInheritHandle, LPCSTR lpName);  // data: 0x7c8554 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_PeekConsoleInputA[4];  // data: 0x7E1350
-extern unsigned char __imp_PeekMessageA[4];  // data: 0x7E1484
-extern unsigned char __imp_PostMessageA[4];  // data: 0x7E14AC
-extern unsigned char __imp_PostQuitMessage[4];  // data: 0x7E1444
-extern unsigned char __imp_PurgeComm[4];  // data: 0x7E116C
-extern unsigned char __imp_QueryPerformanceCounter[4];  // data: 0x7E11D4
-extern unsigned char __imp_QueryPerformanceFrequency[4];  // data: 0x7E11D8
+extern BOOL (__stdcall * __imp_PeekMessageA)(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg);  // data: 0x7c8644 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_PostMessageA)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);  // data: 0x7c85f0 IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_PostQuitMessage)(int nExitCode);  // data: 0x7c87b2 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_PurgeComm)(HANDLE hFile, DWORD dwFlags);  // data: 0x7c8584 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_QueryPerformanceCounter)(LARGE_INTEGER* lpPerformanceCount);  // data: 0x7c83bc IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_QueryPerformanceFrequency)(LARGE_INTEGER* lpFrequency);  // data: 0x7c83b6 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_RaiseException[4];  // data: 0x7E12C0
 extern unsigned char __imp_ReadConsoleInputA[4];  // data: 0x7E128C
-extern unsigned char __imp_ReadFile[4];  // data: 0x7E111C
-extern unsigned char __imp_recvfrom[4];  // data: 0x7E154C
-extern unsigned char __imp_RedrawWindow[4];  // data: 0x7E142C
-extern unsigned char __imp_RegCloseKey[4];  // data: 0x7E1004
-extern unsigned char __imp_RegCreateKeyExA[4];  // data: 0x7E1018
-extern unsigned char __imp_RegDeleteKeyA[4];  // data: 0x7E1020
-extern unsigned char __imp_RegDeleteValueA[4];  // data: 0x7E1010
-extern unsigned char __imp_RegEnumKeyExA[4];  // data: 0x7E101C
-extern unsigned char __imp_RegisterActiveObject[4];  // data: 0x7E1370
-extern unsigned char __imp_RegisterClassA[4];  // data: 0x7E14D8
-extern unsigned char __imp_RegisterHotKey[4];  // data: 0x7E1510
-extern unsigned char __imp_RegOpenKeyExA[4];  // data: 0x7E100C
-extern unsigned char __imp_RegQueryInfoKeyA[4];  // data: 0x7E1000
-extern unsigned char __imp_RegQueryValueExA[4];  // data: 0x7E1008
-extern unsigned char __imp_RegSetValueExA[4];  // data: 0x7E1014
-extern unsigned char __imp_ReleaseCapture[4];  // data: 0x7E13F8
-extern unsigned char __imp_ReleaseDC[4];  // data: 0x7E1464
-extern unsigned char __imp_ReleaseMutex[4];  // data: 0x7E1198
-extern unsigned char __imp_ResetEvent[4];  // data: 0x7E1178
-extern unsigned char __imp_RestoreDC[4];  // data: 0x7E108C
-extern unsigned char __imp_RevokeActiveObject[4];  // data: 0x7E1384
+extern BOOL (__stdcall * __imp_ReadFile)(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped);  // data: 0x7c850c IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_recvfrom)(unsigned int s, char* buf, int len, int flags, void* from, int* fromlen);  // data: 0x7c89aa IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_RedrawWindow)(HWND hWnd, const RECT* lprcUpdate, HRGN hrgnUpdate, UINT flags);  // data: 0x7c87d6 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_RegCloseKey)(HKEY hKey);  // data: 0x7c8890 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_RegCreateKeyExA)(HKEY hKey, LPCSTR lpSubKey, DWORD Reserved, LPSTR lpClass, DWORD dwOptions, REGSAM samDesired, const LPSECURITY_ATTRIBUTES lpSecurityAttributes, PHKEY phkResult, LPDWORD lpdwDisposition);  // data: 0x7c88ae IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_RegDeleteKeyA)(HKEY hKey, LPCSTR lpSubKey);  // data: 0x7c88ba IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_RegDeleteValueA)(HKEY hKey, LPCSTR lpValueName);  // data: 0x7c88a2 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_RegEnumKeyExA)(HKEY hKey, DWORD dwIndex, LPSTR lpName, LPDWORD lpcchName, LPDWORD lpReserved, LPSTR lpClass, LPDWORD lpcchClass, PFILETIME lpftLastWriteTime);  // data: 0x7c88b4 IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_RegisterActiveObject)(IUnknown* punk, const IID* const rclsid, DWORD dwFlags, DWORD* pdwRegister);  // data: 0x7c893e IAT slot fn-ptr truth (G42.33 b3)
+extern ATOM (__stdcall * __imp_RegisterClassA)(const WNDCLASSA* lpWndClass);  // data: 0x7c8758 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_RegisterHotKey)(HWND hWnd, int id, UINT fsModifiers, UINT vk);  // data: 0x7c87e2 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_RegOpenKeyExA)(HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult);  // data: 0x7c889c IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_RegQueryInfoKeyA)(HKEY hKey, LPSTR lpClass, LPDWORD lpcchClass, LPDWORD lpReserved, LPDWORD lpcSubKeys, LPDWORD lpcbMaxSubKeyLen, LPDWORD lpcbMaxClassLen, LPDWORD lpcValues, LPDWORD lpcbMaxValueNameLen, LPDWORD lpcbMaxValueLen, LPDWORD lpcbSecurityDescriptor, PFILETIME lpftLastWriteTime);  // data: 0x7c88c0 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_RegQueryValueExA)(HKEY hKey, LPCSTR lpValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData);  // data: 0x7c8896 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_RegSetValueExA)(HKEY hKey, LPCSTR lpValueName, DWORD Reserved, DWORD dwType, const BYTE* lpData, DWORD cbData);  // data: 0x7c88a8 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ReleaseCapture)(void);  // data: 0x7c869e IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_ReleaseDC)(HWND hWnd, HDC hDC);  // data: 0x7c8650 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ReleaseMutex)(HANDLE hMutex);  // data: 0x7c85c6 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ResetEvent)(HANDLE hEvent);  // data: 0x7c8596 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_RestoreDC)(HDC hdc, int nSavedDC);  // data: 0x7c8866 IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_RevokeActiveObject)(DWORD dwRegister, void* pvReserved);  // data: 0x7c8938 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_RtlUnwind[4];  // data: 0x7E1268
-extern unsigned char __imp_SaveDC[4];  // data: 0x7E10A4
-extern unsigned char __imp_ScreenToClient[4];  // data: 0x7E1458
-extern unsigned char __imp_SelectObject[4];  // data: 0x7E105C
-extern unsigned char __imp_SendDlgItemMessageA[4];  // data: 0x7E1490
-extern unsigned char __imp_SendMessageA[4];  // data: 0x7E14A4
-extern unsigned char __imp_sendto[4];  // data: 0x7E1558
-extern unsigned char __imp_SetActiveWindow[4];  // data: 0x7E1428
-extern unsigned char __imp_SetBkColor[4];  // data: 0x7E107C
-extern unsigned char __imp_SetBkMode[4];  // data: 0x7E1074
-extern unsigned char __imp_SetCapture[4];  // data: 0x7E13FC
-extern unsigned char __imp_SetCommBreak[4];  // data: 0x7E1118
-extern unsigned char __imp_SetCommState[4];  // data: 0x7E1260
-extern unsigned char __imp_SetCommTimeouts[4];  // data: 0x7E1258
+extern int (__stdcall * __imp_SaveDC)(HDC hdc);  // data: 0x7c888a IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ScreenToClient)(HWND hWnd, LPPOINT lpPoint);  // data: 0x7c8794 IAT slot fn-ptr truth (G42.33 b3)
+extern HGDIOBJ (__stdcall * __imp_SelectObject)(HDC hdc, HGDIOBJ h);  // data: 0x7c881e IAT slot fn-ptr truth (G42.33 b3)
+extern LRESULT (__stdcall * __imp_SendDlgItemMessageA)(HWND hDlg, int nIDDlgItem, UINT Msg, WPARAM wParam, LPARAM lParam);  // data: 0x7c861a IAT slot fn-ptr truth (G42.33 b3)
+extern LRESULT (__stdcall * __imp_SendMessageA)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);  // data: 0x7c85fc IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_sendto)(unsigned int s, const char* buf, int len, int flags, const void* to, int tolen);  // data: 0x7c89b0 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_SetActiveWindow)(HWND hWnd);  // data: 0x7c87dc IAT slot fn-ptr truth (G42.33 b3)
+extern COLORREF (__stdcall * __imp_SetBkColor)(HDC hdc, COLORREF color);  // data: 0x7c883c IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_SetBkMode)(HDC hdc, int mode);  // data: 0x7c8842 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_SetCapture)(HWND hWnd);  // data: 0x7c86aa IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetCommBreak)(HANDLE hFile);  // data: 0x7c8506 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetCommState)(HANDLE hFile, LPDCB lpDCB);  // data: 0x7c8572 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetCommTimeouts)(HANDLE hFile, LPCOMMTIMEOUTS lpCommTimeouts);  // data: 0x7c856c IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_SetConsoleCtrlHandler[4];  // data: 0x7E12E0
 extern unsigned char __imp_SetConsoleMode[4];  // data: 0x7E126C
-extern unsigned char __imp_SetCurrentDirectoryA[4];  // data: 0x7E1148
-extern unsigned char __imp_SetCursor[4];  // data: 0x7E1440
-extern unsigned char __imp_SetCursorPos[4];  // data: 0x7E144C
-extern unsigned char __imp_SetDlgItemTextA[4];  // data: 0x7E13D0
+extern BOOL (__stdcall * __imp_SetCurrentDirectoryA)(LPCSTR lpPathName);  // data: 0x7c854e IAT slot fn-ptr truth (G42.33 b3)
+extern HCURSOR (__stdcall * __imp_SetCursor)(HCURSOR hCursor);  // data: 0x7c87b8 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetCursorPos)(int X, int Y);  // data: 0x7c87a6 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetDlgItemTextA)(HWND hDlg, int nIDDlgItem, LPCSTR lpString);  // data: 0x7c867a IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_SetEndOfFile[4];  // data: 0x7E1334
 extern unsigned char __imp_SetEnvironmentVariableA[4];  // data: 0x7E132C
 extern unsigned char __imp_SetErrorInfo[4];  // data: 0x7E135C
-extern unsigned char __imp_SetEvent[4];  // data: 0x7E1234
-extern unsigned char __imp_SetFilePointer[4];  // data: 0x7E11C0
-extern unsigned char __imp_SetFileTime[4];  // data: 0x7E112C
-extern unsigned char __imp_SetFocus[4];  // data: 0x7E13CC
-extern unsigned char __imp_SetForegroundWindow[4];  // data: 0x7E14D0
-extern unsigned char __imp_SetGraphicsMode[4];  // data: 0x7E10A8
+extern BOOL (__stdcall * __imp_SetEvent)(HANDLE hEvent);  // data: 0x7c8416 IAT slot fn-ptr truth (G42.33 b3)
+extern DWORD (__stdcall * __imp_SetFilePointer)(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod);  // data: 0x7c83da IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetFileTime)(HANDLE hFile, const FILETIME* lpCreationTime, const FILETIME* lpLastAccessTime, const FILETIME* lpLastWriteTime);  // data: 0x7c8524 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_SetFocus)(HWND hWnd);  // data: 0x7c8674 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetForegroundWindow)(HWND hWnd);  // data: 0x7c8752 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_SetGraphicsMode)(HDC hdc, int iMode);  // data: 0x7c8884 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_SetHandleCount[4];  // data: 0x7E12C8
 extern unsigned char __imp_SetLastError[4];  // data: 0x7E12B4
-extern unsigned char __imp_SetRect[4];  // data: 0x7E14B4
-extern unsigned char __imp_setsockopt[4];  // data: 0x7E1554
+extern BOOL (__stdcall * __imp_SetRect)(LPRECT lprc, int xLeft, int yTop, int xRight, int yBottom);  // data: 0x7c85e4 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_setsockopt)(unsigned int s, int level, int optname, const char* optval, int optlen);  // data: 0x7c89a4 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_SetStdHandle[4];  // data: 0x7E1318
-extern unsigned char __imp_SetTextColor[4];  // data: 0x7E106C
-extern unsigned char __imp_SetThreadPriority[4];  // data: 0x7E11FC
-extern unsigned char __imp_SetTimer[4];  // data: 0x7E1494
-extern unsigned char __imp_SetUnhandledExceptionFilter[4];  // data: 0x7E1144
-extern unsigned char __imp_SetupComm[4];  // data: 0x7E1170
-extern unsigned char __imp_SetViewportOrgEx[4];  // data: 0x7E1098
-extern unsigned char __imp_SetWindowLongA[4];  // data: 0x7E1470
-extern unsigned char __imp_SetWindowOrgEx[4];  // data: 0x7E10A0
-extern unsigned char __imp_SetWindowPos[4];  // data: 0x7E13F0
-extern unsigned char __imp_ShowCursor[4];  // data: 0x7E13DC
-extern unsigned char __imp_ShowWindow[4];  // data: 0x7E1498
-extern unsigned char __imp_Sleep[4];  // data: 0x7E11F0
-extern unsigned char __imp_socket[4];  // data: 0x7E157C
-extern unsigned char __imp_StgCreateDocfile[4];  // data: 0x7E15C8
-extern unsigned char __imp_StgOpenStorage[4];  // data: 0x7E15E4
-extern unsigned char __imp_StringFromCLSID[4];  // data: 0x7E15EC
-extern unsigned char __imp_StringFromGUID2[4];  // data: 0x7E15E0
-extern unsigned char __imp_SysAllocString[4];  // data: 0x7E1368
-extern unsigned char __imp_SysFreeString[4];  // data: 0x7E1364
-extern unsigned char __imp_SystemTimeToFileTime[4];  // data: 0x7E10FC
-extern unsigned char __imp_TerminateProcess[4];  // data: 0x7E11B0
-extern unsigned char __imp_TextOutA[4];  // data: 0x7E1068
-extern unsigned char __imp_timeBeginPeriod[4];  // data: 0x7E1538
-extern unsigned char __imp_timeEndPeriod[4];  // data: 0x7E152C
+extern COLORREF (__stdcall * __imp_SetTextColor)(HDC hdc, COLORREF color);  // data: 0x7c8836 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetThreadPriority)(HANDLE hThread, int nPriority);  // data: 0x7c8380 IAT slot fn-ptr truth (G42.33 b3)
+extern UINT_PTR (__stdcall * __imp_SetTimer)(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, TIMERPROC lpTimerFunc);  // data: 0x7c8614 IAT slot fn-ptr truth (G42.33 b3)
+extern LPTOP_LEVEL_EXCEPTION_FILTER (__stdcall * __imp_SetUnhandledExceptionFilter)(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);  // data: 0x7c8548 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetupComm)(HANDLE hFile, DWORD dwInQueue, DWORD dwOutQueue);  // data: 0x7c858a IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetViewportOrgEx)(HDC hdc, int x, int y, LPPOINT lppt);  // data: 0x7c8878 IAT slot fn-ptr truth (G42.33 b3)
+extern LONG (__stdcall * __imp_SetWindowLongA)(HWND hWnd, int nIndex, LONG dwNewLong);  // data: 0x7c8632 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetWindowOrgEx)(HDC hdc, int x, int y, LPPOINT lppt);  // data: 0x7c8872 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SetWindowPos)(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags);  // data: 0x7c8692 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_ShowCursor)(BOOL bShow);  // data: 0x7c868c IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ShowWindow)(HWND hWnd, int nCmdShow);  // data: 0x7c860e IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_Sleep)(DWORD dwMilliseconds);  // data: 0x7c8392 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_socket)(int af, int type, int protocol);  // data: 0x7c899e IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_StgCreateDocfile)(const WCHAR* pwcsName, DWORD grfMode, DWORD reserved, void** ppstgOpen);  // data: 0x7c88f6 IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_StgOpenStorage)(const WCHAR* pwcsName, void* pstgPriority, DWORD grfMode, wchar_t ** snbExclude, DWORD reserved, void** ppstgOpen);  // data: 0x7c88fc IAT slot fn-ptr truth (G42.33 b3)
+extern HRESULT (__stdcall * __imp_StringFromCLSID)(const IID* const rclsid, wchar_t ** lplpsz);  // data: 0x7c88ea IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_StringFromGUID2)(const GUID* const rguid, wchar_t * lpsz, int cchMax);  // data: 0x7c8902 IAT slot fn-ptr truth (G42.33 b3)
+extern wchar_t * (__stdcall * __imp_SysAllocString)(const wchar_t* psz);  // data: 0x7c8926 IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_SysFreeString)(wchar_t * bstrString);  // data: 0x7c892c IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_SystemTimeToFileTime)(const SYSTEMTIME* lpSystemTime, LPFILETIME lpFileTime);  // data: 0x7c84dc IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_TerminateProcess)(HANDLE hProcess, UINT uExitCode);  // data: 0x7c8536 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_TextOutA)(HDC hdc, int x, int y, LPCSTR lpString, int c);  // data: 0x7c8830 IAT slot fn-ptr truth (G42.33 b3)
+extern unsigned int (__stdcall * __imp_timeBeginPeriod)(UINT uPeriod);  // data: 0x7c895c IAT slot fn-ptr truth (G42.33 b3)
+extern unsigned int (__stdcall * __imp_timeEndPeriod)(UINT uPeriod);  // data: 0x7c894a IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_timeGetTime[4];  // data: 0x7E1530
-extern unsigned char __imp_timeKillEvent[4];  // data: 0x7E1528
-extern unsigned char __imp_timeSetEvent[4];  // data: 0x7E1534
+extern unsigned int (__stdcall * __imp_timeKillEvent)(UINT uTimerID);  // data: 0x7c8950 IAT slot fn-ptr truth (G42.33 b3)
+extern unsigned int (__stdcall * __imp_timeSetEvent)(UINT uDelay, UINT uResolution, void (__stdcall *fptc)(unsigned int, unsigned int, void *, unsigned int, unsigned int), DWORD_PTR dwUser, UINT fuEvent);  // data: 0x7c8956 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_TlsAlloc[4];  // data: 0x7E1330
 extern unsigned char __imp_TlsFree[4];  // data: 0x7E1348
 extern unsigned char __imp_TlsGetValue[4];  // data: 0x7E12B8
 extern unsigned char __imp_TlsSetValue[4];  // data: 0x7E12AC
-extern unsigned char __imp_ToAscii[4];  // data: 0x7E13E4
-extern unsigned char __imp_TranslateAcceleratorA[4];  // data: 0x7E14F8
-extern unsigned char __imp_TranslateMessage[4];  // data: 0x7E14BC
+extern int (__stdcall * __imp_ToAscii)(UINT uVirtKey, UINT uScanCode, const BYTE* lpKeyState, LPWORD lpChar, UINT uFlags);  // data: 0x7c86d4 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_TranslateAcceleratorA)(HWND hWnd, HACCEL hAccTable, LPMSG lpMsg);  // data: 0x7c871c IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_TranslateMessage)(const MSG* lpMsg);  // data: 0x7c85d8 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_UnhandledExceptionFilter[4];  // data: 0x7E12EC
-extern unsigned char __imp_UnmapViewOfFile[4];  // data: 0x7E1238
-extern unsigned char __imp_UpdateWindow[4];  // data: 0x7E146C
-extern unsigned char __imp_ValidateRect[4];  // data: 0x7E1478
+extern BOOL (__stdcall * __imp_UnmapViewOfFile)(LPCVOID lpBaseAddress);  // data: 0x7c8422 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_UpdateWindow)(HWND hWnd);  // data: 0x7c8638 IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_ValidateRect)(HWND hWnd, const RECT* lpRect);  // data: 0x7c8626 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_VariantChangeType[4];  // data: 0x7E1374
 extern unsigned char __imp_VariantClear[4];  // data: 0x7E137C
 extern unsigned char __imp_VariantInit[4];  // data: 0x7E1380
-extern unsigned char __imp_VerQueryValueA[4];  // data: 0x7E1518
+extern BOOL (__stdcall * __imp_VerQueryValueA)(LPCVOID pBlock, LPCSTR lpSubBlock, LPVOID* lplpBuffer, PUINT puLen);  // data: 0x7c89e0 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_VirtualAlloc[4];  // data: 0x7E1294
 extern unsigned char __imp_VirtualFree[4];  // data: 0x7E1290
-extern unsigned char __imp_VirtualProtect[4];  // data: 0x7E10D0
-extern unsigned char __imp_VirtualQuery[4];  // data: 0x7E1134
-extern unsigned char __imp_WaitForInputIdle[4];  // data: 0x7E1418
-extern unsigned char __imp_WaitForMultipleObjects[4];  // data: 0x7E113C
-extern unsigned char __imp_WaitForSingleObject[4];  // data: 0x7E11DC
-extern unsigned char __imp_WideCharToMultiByte[4];  // data: 0x7E124C
-extern unsigned char __imp_WindowFromPoint[4];  // data: 0x7E1468
-extern unsigned char __imp_WinHelpA[4];  // data: 0x7E1434
+extern BOOL (__stdcall * __imp_VirtualProtect)(LPVOID lpAddress, SIZE_T dwSize, DWORD flNewProtect, PDWORD lpflOldProtect);  // data: 0x7c848e IAT slot fn-ptr truth (G42.33 b3)
+extern SIZE_T (__stdcall * __imp_VirtualQuery)(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer, SIZE_T dwLength);  // data: 0x7c8494 IAT slot fn-ptr truth (G42.33 b3)
+extern DWORD (__stdcall * __imp_WaitForInputIdle)(HANDLE hProcess, DWORD dwMilliseconds);  // data: 0x7c87fa IAT slot fn-ptr truth (G42.33 b3)
+extern DWORD (__stdcall * __imp_WaitForMultipleObjects)(DWORD nCount, const HANDLE* lpHandles, BOOL bWaitAll, DWORD dwMilliseconds);  // data: 0x7c853c IAT slot fn-ptr truth (G42.33 b3)
+extern DWORD (__stdcall * __imp_WaitForSingleObject)(HANDLE hHandle, DWORD dwMilliseconds);  // data: 0x7c83b0 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_WideCharToMultiByte)(UINT CodePage, DWORD dwFlags, LPCWCH lpWideCharStr, int cchWideChar, LPSTR lpMultiByteStr, int cbMultiByte, LPCCH lpDefaultChar, LPBOOL lpUsedDefaultChar);  // data: 0x7c83f2 IAT slot fn-ptr truth (G42.33 b3)
+extern HWND (__stdcall * __imp_WindowFromPoint)(POINT Point);  // data: 0x7c877c IAT slot fn-ptr truth (G42.33 b3)
+extern BOOL (__stdcall * __imp_WinHelpA)(HWND hWndMain, LPCSTR lpszHelp, UINT uCommand, ULONG_PTR dwData);  // data: 0x7c87ca IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_WriteConsoleA[4];  // data: 0x7E1344
-extern unsigned char __imp_WriteFile[4];  // data: 0x7E11A0
-extern unsigned char __imp_WSAAsyncSelect[4];  // data: 0x7E156C
-extern unsigned char __imp_WSACleanup[4];  // data: 0x7E1570
-extern unsigned char __imp_WSAGetLastError[4];  // data: 0x7E1574
-extern unsigned char __imp_WSAStartup[4];  // data: 0x7E1564
+extern BOOL (__stdcall * __imp_WriteFile)(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped);  // data: 0x7c8482 IAT slot fn-ptr truth (G42.33 b3)
+extern void (__stdcall * __imp_WSAAsyncSelect)(unsigned int s, HWND hWnd, unsigned int wMsg, int lEvent);  // data: 0x7c89bc IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_WSACleanup)(void);  // data: 0x7c89b6 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_WSAGetLastError)(void);  // data: 0x7c897a IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_WSAStartup)(WORD wVersionRequested, void * lpWSAData);  // data: 0x7c89c8 IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char a0000_0[4];  // data: 0x8497CC
 extern unsigned char a00W017V00[4];  // data: 0x84CCF4
 extern unsigned char a00W018V00[4];  // data: 0x84CCE8
@@ -15544,3 +15541,11 @@ extern char aWolNewaccountf[];  // data: 0x84B7D8
 extern char aTxtNosquad[];  // data: 0x84B940
 // G42.33 b10 supply: tail WOL strings
 extern char aWolLocale[];  // data: 0x84A684
+extern DWORD (__stdcall * __imp_GetFileSize)(HANDLE hFile, LPDWORD lpFileSizeHigh);  // data: 0x7c8512 IAT slot fn-ptr truth (G42.33 b3)
+
+extern int MCVRedeploy;  // data: 0xA8B320
+extern int HouseClass_Count;  // data: 0xA80238
+
+// G42.33 b8 supply: score-screen strings (addr6C C2065)
+extern wchar_t a02d02d02d_0[];  // data: 0x842158 (wide "%02d:%02d:%02d")
+extern char aDRa2mdpostStls[];  // data: 0x842178 (csf key)

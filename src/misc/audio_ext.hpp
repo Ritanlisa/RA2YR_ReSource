@@ -221,7 +221,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AudioBuffer() = default;
 
-    virtual void InitializePlayback(); // 0x409C40
+    virtual unsigned int * InitializePlayback(); // 0x409C40 (G42.33 批 3: 真值对齐)
 
 };
 // 3 methods in IDA
@@ -314,7 +314,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AudioIndex() = default;
 
-    virtual void GetSampleInformation(); // 0x401640
+    virtual unsigned int * GetSampleInformation(unsigned int *a1, int a2, unsigned int *a3); // 0x401640 (G42.33 批 3: 真值对齐)
 
 };
 // 1 methods in IDA

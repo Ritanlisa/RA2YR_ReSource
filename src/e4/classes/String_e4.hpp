@@ -41,7 +41,7 @@ struct String {
     void* ptr_8;
 // --- flat members (END) ---
     int AssignWideToChar(char *aP1, char *aP2);  // 0x49B760
-    void * AllocAndCopy(char * Destination, RandomStruct * aP1, IUnknown * aP2);  // 0x4CB5E0
+    char * AllocAndCopy(RandomStruct * aP1, IUnknown * aP2);  // 0x4CB5E0 thiscall (this=Destination, G42.33 b7: returns char*)
     int Release();  // 0x5BD5A0
     ObjectClass * * SplitComma(ObjectClass * aP1);  // 0x5D0380
     int NormalizeNewlines();  // 0x5F3350

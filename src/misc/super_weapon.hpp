@@ -136,7 +136,7 @@ public:
     void Constructor(SuperWeaponTypeClass* pSWType, HouseClass* pOwner);  // 0x6CAEC0
     void Construct();                                                                // 0x6CAF90
     void CleanupMembers();                                                           // 0x6CB120
-    void StartTimer(int32_t duration);  // 0x6CB560
+    void StartTimer(int32_t a2, int32_t a3, int32_t a4);  // 0x6CB560 (G42.33 批 3: 3 栈参真值, e4 载体同)
     void ExecuteAction(Action action);                                                // 0x6CDFF0
     void PowerDrainUpdate();  // 0x6CE020
     void AnnounceReady();  // 0x6CC080

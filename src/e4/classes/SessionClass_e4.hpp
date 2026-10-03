@@ -687,15 +687,19 @@ struct SessionClass {
     int CreateConnections();
     int Destruct();
     int GetOption();
+    static int GetOption(int *aP1);  // G42.33 b3 static-form sync
     int GetOption2();
     int GetPlayerColor();
+    static int GetPlayerColor(void *aP1);  // G42.33 b3 static-form sync
     int GetPlayerSide();
+    static int GetPlayerSide(int *aP1);  // G42.33 b3 static-form sync
     int  IsValidHouse(void * a2);
     MixFileClass * LoadGameSession(int aP1, const char **aP2);
     int Read(unsigned int * a2, void *a2_2);
     int Seek(int a2, void *a2_2, void *a3);
     int SetField();
     int SetOption(int aP1);
+    static int SetOption(int *aP1, int aP2);  // G42.33 b3 static-form sync
     int SetOption2(int aP1);
     int SetPlayerColor(int a2);
     int SetPlayerOption(int aP1);

@@ -39,6 +39,39 @@ struct COMClass {
     VectorCursor * disconnectPoint(unsigned int * Block, char a2);
     void * lockServer(rc_ptr_base * Block, char a2);
     static double RegisterAll(...);  // C2597 interim stub
+    unsigned int *m_1;  // G42.33 b3 flat-carrier vocab ([3] 索引基)
+    unsigned int m_C;  // G42.33 b3 flat-carrier vocab
+    unsigned int m_10;  // G42.33 b3 flat-carrier vocab
+    unsigned int field_18;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x08;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x0C;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x10;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x14;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x18;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x1C;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x20;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x24;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x28;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x2C;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x30;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x34;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x38;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x3C;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x40;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x44;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x48;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x4C;  // G42.33 b3 flat-carrier vocab
+    unsigned int COMClass_field_0x50;  // G42.33 b3 flat-carrier vocab
+    int RegisterAll();  // G42.33 b3 supplied-body sync (member form)
+    unsigned int * releaseInterface();  // 0x765C70 G42.33 b3 supplied-body sync
+    unsigned int * marshalInterface(char a2);  // 0x767C50 G42.33 b3 supplied-body sync
+    int ReleaseRef();  // G42.33 b3 supplied-body sync
+    unsigned int * initInterface(char a2);  // G42.33 b3 supplied-body sync
+    int queryProperty();  // G42.33 b3 supplied-body sync
+    unsigned int setProperty(int a2);  // G42.33 b3 supplied-body sync
+    char * createInstance(char a2);  // G42.33 b3 supplied-body sync
+    unsigned int * getInterface(char a2);  // G42.33 b3 supplied-body sync
+    void ** coUninitialize(char a2);  // G42.33 b3 supplied-body sync
 };
 
 } // namespace gamemd

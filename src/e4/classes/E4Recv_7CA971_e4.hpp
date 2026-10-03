@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_7CA971 {
     void* vfptr;  // minimal E2 declaration
-    __non_rtti_object * __0__non_rtti_object_QAE_PBD_Z(char * a2);  // 0x7CA971
+    void * __0__non_rtti_object_QAE_PBD_Z(char * a2);  // return void* (CRT internal type undeclared, G42.33 b3)  // 0x7CA971
 };
 } // namespace gamemd

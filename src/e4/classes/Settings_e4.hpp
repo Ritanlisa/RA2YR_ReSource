@@ -9,7 +9,7 @@ struct Settings {
 // --- flat members (BEGIN) ---
     char Settings_field_00[4];  // 0x0
 // --- flat members (END) ---
-    BOOL CheckString();
+    static BOOL CheckString();  // G42.33 b3 static-form sync (实例调用形同样合法)
 };
 
 } // namespace gamemd

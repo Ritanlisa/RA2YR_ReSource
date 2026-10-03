@@ -11048,12 +11048,12 @@ extern void* off_87C4BC;
 extern void* off_87C4C0;
 extern void* off_87C4C8;
 extern void* off_87C4CC;
-extern void* off_87C4D0;
-extern void* off_87C4D4;
-extern void* off_87C4D8;
-extern void* off_87C4DC;
-extern void* off_87C4E0;
-extern void* off_87C4E4;
+extern void (*off_87C4D0[2])();  // G42.33 b4 CRT _cfltcvt helper tbl
+extern void (*off_87C4D4[2])();  // G42.33 b4
+extern void (*off_87C4D8[2])();  // G42.33 b4
+extern void (*off_87C4DC[2])();  // G42.33 b4
+extern void (*off_87C4E0[2])();  // G42.33 b7
+extern void (*off_87C4E4)();  // G42.33 b4
 extern void* off_87C590;
 extern void* off_87C594;
 extern void* off_87CAF0;
@@ -11217,7 +11217,7 @@ extern unsigned char stru_829ABC;
 extern unsigned char stru_82A038;
 extern unsigned char stru_82ADA8;
 extern unsigned char stru_82BBD0;
-extern unsigned char stru_830620;
+extern unsigned char stru_830620[58523];  // .data blob base 0x830620, BYTE-indexed (G42.33 b3 truth)
 extern unsigned char stru_83665C;
 extern unsigned char stru_8392C0;
 extern unsigned char stru_83D598;

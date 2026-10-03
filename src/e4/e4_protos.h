@@ -431,9 +431,9 @@ extern char ReturnFalse2();
 extern char ReturnTrue(AnimClass * aP0);
 extern char ShowUIMessage(int a1, wchar_t **a2, char a3);
 extern char globalHelper_053C80(unsigned int * a1, SomeVoxelCache * edx0, SomeVoxelCache * aP2, float * a4, float * a2);
-extern char* BuildResultPacket(char* Destination, char* Source, char* a3);
+extern char* BuildResultPacket(char* Destination, void* Source, void* a3);  // G42.33 b4: args 2/3 void* (drape sites)
 extern char* Team_Helper_6F26E0(char* Block, char a2);
-extern char* TerrainInitMap(char* Destination, char* Source, int a3);
+extern char* TerrainInitMap(char* Destination, void* Source, int a3);  // G42.33 b4: arg2 void* (RandomStruct* drape sites)
 extern char * CharToWideString(unsigned char *a1);
 extern wchar_t * GetStringCSF(wchar_t *key, unsigned int *a2, const char *a3, int a4 = 0);
 extern double ComputeChronosphereDistortion(float a1);
@@ -462,7 +462,7 @@ extern int GetBitMask_Green();
 extern int GetBitMask_Red();
 extern int GetBitShift_Green();
 extern int GetBitShift_Red();
-extern int GetModuleInternalVersion(void*);
+extern char * GetModuleInternalVersion(void* aP0);  // 0x74FAE0 returns char* (G42.33 b5)
 extern int GetResourceID2CSF(int rtti);
 extern int GetResourceID3CSF(int rtti);
 extern int GetResourceID4CSF(int rtti);
@@ -507,7 +507,7 @@ extern int bind(void *a1 = 0, void *a2 = 0, void *a3 = 0);
 extern int fgetc_0(FILE * Stream);
 extern int getsockopt(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
 extern int globalHelper_0C9DBD(int a1, CCINIClass * aP1, int a3);
-extern int htonl(void *a1 = 0);
+extern unsigned int htonl(unsigned int a1);  // 0x7C8962 thunk DWORD arg (G42.33 b3 truth)
 extern int htons(void *a1 = 0);
 extern int ntoainet();
 extern int ntohl(void *a1 = 0);
@@ -611,7 +611,7 @@ extern int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4
 extern int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, char a5, int aP6);
 extern int PlayVocClass(int a1, int a2, float a3 = 0, int a4 = 0);
 extern int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9);
-extern int ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char arg8, char * a5);
+extern int ProcessAudioStreamPlayback(int a1, unsigned int aP1, int arg0, char a4, char arg8, char * a5);  // 0x7C0740 truth int a2 (G42.33 b3)
 extern void ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, DisplayClass * aP2, short * a3);
 extern void PumpMessages(void *a1 = 0);
 extern void ReadAudioStream(AudioStream * aP0, int a2);
@@ -998,3 +998,40 @@ extern int GetDialogText(HWND aP0, void *aP1);  // 0x623E40 (G42.33 b8)
 extern int WOLobby_SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4);  // 0x78F7F0 = WOLobby::SetupDlgProc (G42.33 b8 static-cast supply)
 extern int DisplayRankingsWOL(void * aP0);  // 0x783C80 1-arg truth (G42.33 b10)
 extern int ShowAudioSettingsDialog(void);  // 0x6B6230 (G42.33 b10)
+
+namespace gamemd {
+// G42.33 b3: audio family thiscall-1arg (asm-verified ecx-only call sites)
+extern int Audio_Render_7C1BE0(void * aP0);  // thiscall (G42.33 b3)
+extern int Audio_Render_7C1150(void * aP0);  // thiscall (G42.33 b3)
+extern int Audio_Render_7C1A70(void * aP0);  // thiscall (G42.33 b3)
+extern int Audio_Render_7BD170(void * aP0);  // thiscall (G42.33 b3)
+extern int Audio_Render_7BE670(void * aP0);  // thiscall (G42.33 b3)
+extern int Audio_Render_7C1130(void * aP0);  // thiscall (G42.33 b3)
+extern int Audio_Process_7C0490(void * aP0);  // thiscall (G42.33 b3)
+extern int Audio_Process_7BE4A0(void * aP0);  // thiscall (G42.33 b3)
+extern int Audio_Process_7BE660(void * aP0);  // thiscall (G42.33 b3)
+extern int Audio_Process_7BD290(void * aP0);  // thiscall (G42.33 b3)
+extern int Audio_Process_7BD2B0(void * aP0);  // thiscall (G42.33 b3)
+extern int Audio_Process_7C3750(void * aP0);  // thiscall (G42.33 b3)
+extern int Event_Process_77A8B0(void * aP0, int aP1);  // 0x77A8B0 thiscall (G42.33 b3)
+extern int Event_Process_77A890(void * aP0, int aP1);  // 0x77A890 thiscall (G42.33 b3)
+extern int Event_Process_77A870(void * aP0, int aP1);  // 0x77A870 thiscall (G42.33 b3)
+extern void SaveProfileWOL(void * aP0, const char ** aP1);  // 0x77A080 WOL_SaveProfile thiscall (G42.33 b3)
+extern int wsprintfA(char * aP0, const char * aP1, ...);  // 0x7C85EA vararg thunk (G42.33 b3)
+extern void * memcpy_0(void * aP0, const void * aP1, unsigned int aP2);  // 0x7CA090 _memcpy (G42.33 b3)
+extern int _filbuf(FILE * aP0);  // CRT internal (G42.33 b3)
+extern int _read(int aP0, void * aP1, unsigned int aP2);  // CRT internal (G42.33 b3)
+extern int _write(int aP0, const void * aP1, unsigned int aP2);  // CRT internal (G42.33 b3)
+} // namespace gamemd
+namespace gamemd {
+extern char * __0Iostream_init_QAE_XZ_7(void * aP0);  // 0x7490C0 Array::begin (G42.33 b5)
+} // namespace gamemd
+namespace gamemd {
+extern long __loctotime_t(int aP0, int aP1, int aP2, int aP3, int aP4, int aP5, int aP6);  // CRT internal 7-arg (G42.33 b8)
+} // namespace gamemd
+namespace gamemd {
+extern double _fltin2(void * aP0, const char * aP1);  // CRT internal (G42.33 b8)
+} // namespace gamemd
+namespace gamemd {
+extern int Event_Process_625C00(void * aP0, int aP1);  // 0x625C00 (G42.33 b8)
+} // namespace gamemd

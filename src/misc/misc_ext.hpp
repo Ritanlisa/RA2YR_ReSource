@@ -383,6 +383,7 @@ public:
 // InputManager_ProcessEvents — input event processing (5 methods)
 // IDA: AddRef, Release, StubReturnFalse
 // ============================================================================
+#ifndef GAMEMD_E4_InputManager_ProcessEvents  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class InputManager_ProcessEvents
 {
 public:
@@ -401,6 +402,7 @@ public:
     int32_t     InputManager_ProcessEvents_field_04;       // 0x04
     int32_t     InputManager_ProcessEvents_field_08;       // 0x08
 };
+#endif  // GAMEMD_E4_InputManager_ProcessEvents
 
 
 // === Batch-generated MISSING class stubs ===
@@ -2300,6 +2302,7 @@ public:
     virtual ~ErrorCode() = default;
 
     virtual void Map(); // 0x46F5E0
+    static int Map(void *aP0);  // 0x46F5E0 G42.33 b3 static-form sync (cache 返回 int 作控件 ID)
 
 };
 // 1 methods in IDA
@@ -2727,6 +2730,7 @@ public:
 
 };
 // 9 methods in IDA
+#ifndef GAMEMD_E4_Lobby  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Lobby
 {
 public:
@@ -2759,6 +2763,7 @@ public:
     int BuildPlayerList();  // 0x77db90
     // === FUNCS-MOVE (END) ===
 };
+#endif  // GAMEMD_E4_Lobby
 // 1 methods in IDA
 class MIXClass
 {
@@ -3017,6 +3022,7 @@ public:
 
     virtual _DWORD * Construct(); // 0x5CCA20
     virtual void ConstructMSVQAnimHidden(); // 0x5CCC30
+    static unsigned int * ConstructMSVQAnimHidden(void *aP0, char **aP1, int *aP2, int aP3, char aP4);  // 0x5CCC30 G42.33 b3 static-form sync
     virtual void Load(); // 0x5CCE90
     virtual void Play(); // 0x5CD0E0
     virtual int Stop(); // 0x5CD240
@@ -3174,6 +3180,7 @@ public:
     virtual ~NullGuard() = default;
 
     virtual void Call(); // 0x4F3B10
+    static int Call(void *aP0, int aP1);  // 0x4F3B10 G42.33 b3 static-form sync (cache: NullGuard::Call(obj,int))
 
 };
 // 2 methods in IDA

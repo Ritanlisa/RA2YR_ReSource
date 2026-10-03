@@ -15,6 +15,10 @@ struct StringVector {
     unsigned int StringVector_field_0x14;  // 0x14
     unsigned int StringVector_field_0x10;  // 0x10
     unsigned int m_C;  // 0xC (supplied C2039)
+    void ddtor();  // 0x49EF10 G42.33 b3 supplied-body sync
+    char Release(int a2, unsigned int *a3);  // 0x49EE60 G42.33 b3 supplied-body sync
+    unsigned int Remove(int a2);  // 0x49EF80 G42.33 b3 supplied-body sync
+    unsigned int * QueryInterface(char a2);  // 0x49EFA0 G42.33 b3 supplied-body sync
 };
 
 } // namespace gamemd

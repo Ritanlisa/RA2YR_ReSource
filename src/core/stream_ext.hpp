@@ -202,6 +202,7 @@ public:
 // === Batch-generated MISSING class stubs ===
 
 // 11 methods in IDA
+#ifndef GAMEMD_E4_Buffer  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Buffer
 {
 public:
@@ -226,6 +227,7 @@ public:
     uint8_t Buffer_field_0x24[4];
     uint8_t Buffer_field_0x28[4];
 };
+#endif  // GAMEMD_E4_Buffer
 // 1 methods in IDA
 class BufferClass
 {
@@ -233,7 +235,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BufferClass() = default;
 
-    virtual void CompareEqual(); // 0x477C30
+    char CompareEqual(int a2);  // 0x477C30 G42.33 b3 supplied-body sync (1 参形)
+    unsigned int m_8;  // G42.33 b3 flat-carrier vocab
+    unsigned char m_1[16];  // G42.33 b3 flat-carrier vocab
 
 };
 // 3 methods in IDA
@@ -245,8 +249,10 @@ public:
     virtual ~BufferIO() = default;
 
     virtual void FindActiveChannel(); // 0x431170
+    int FindActiveChannel(int a2);  // 0x431170 G42.33 b3 supplied-body sync (1 参形)
     virtual void Flush(); // 0x431DD0
     virtual void Cleanup(); // 0x434990
+    int Cleanup(int a2);  // 0x434990 G42.33 b3 supplied-body sync (1 参形)
 
     uint8_t BufferIO_field_0x04[4];
     uint8_t BufferIO_field_0x08[4];
@@ -257,16 +263,16 @@ class CStreamClass
 public:
     virtual ~CStreamClass() = default;  // 0x4A3110
 
-    virtual void AddRef(); // 0x4A2930
-    virtual void Release(); // 0x4A2950
-    virtual void QueryInterface(); // 0x4A2990
-    virtual void StubReturnNullPointer(); // 0x4A2A20
-    virtual void StreamRead(); // 0x4A2AB0
+    virtual LONG AddRef();  // 0x4A2930 G42.33 b3 体签名
+    virtual LONG Release();  // 0x4A2950 G42.33 b3 体签名
+    virtual int QueryInterface(const void *a2, unsigned int *a3);  // 0x4A2990 G42.33 b3 体签名
+    virtual int StubReturnNullPointer(int (__stdcall ***a2)(unsigned int, void *, unsigned int));  // 0x4A2A20 G42.33 b3 体签名
+    virtual int StreamRead(unsigned int *a2);  // 0x4A2AB0 G42.33 b3 体签名
     // +21 more virtual methods
 
-    uint8_t CStreamClass_field_0x04[4];
-    uint8_t CStreamClass_field_0x08[4];
-    uint8_t CStreamClass_field_0x0C[4];
+    unsigned int CStreamClass_field_0x04;  // G42.33 b3 标量形
+    unsigned int CStreamClass_field_0x08;  // G42.33 b3 标量形
+    LONG CStreamClass_field_0x0C;  // G42.33 b3 标量形 (InterlockedIncrement)
     uint8_t CStreamClass_field_0x10[4];
     uint8_t CStreamClass_field_0x14[4];
     uint8_t CStreamClass_field_0x18[4];
@@ -348,6 +354,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned char __pad_0;  // 0x0
 };
 // 4 methods in IDA
+#ifndef GAMEMD_E4_Text  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Text
 {
 public:
@@ -363,6 +370,7 @@ public:
     uint8_t Text_field_0x08[4];
     uint8_t Text_field_0x0C[4];
 };
+#endif  // GAMEMD_E4_Text
 // 1 methods in IDA
 class TextGroup
 {
@@ -371,6 +379,7 @@ public:
     virtual ~TextGroup() = default;
 
     int SetRect(); // 0x433CA0
+    unsigned int * SetRect(unsigned int *a2);  // 0x433CA0 G42.33 b3 supplied-body sync (1 参形)
 
 };
 

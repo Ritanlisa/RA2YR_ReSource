@@ -14,7 +14,9 @@ struct SHA1 {
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned int Compute;
-    unsigned int ProcessBlock;
+    int * ProcessBlock(const void **a2, int *a3);  // 0x69D8C0 G42.33 b3 supplied-body sync
+    static void Transform(int *a5, unsigned int *a6);  // 0x69DB30 call-form sync
+    int Reset(int a2);  // 0x69DFF0 G42.33 b3 supplied-body sync (cache 形参 this->a2)
     unsigned int SHA1_field_0x04;
     unsigned int SHA1_field_0x0C;
     unsigned int *__pad_0;

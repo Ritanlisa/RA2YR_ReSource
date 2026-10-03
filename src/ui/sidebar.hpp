@@ -97,7 +97,7 @@ public:
     virtual ~SidebarClass() = default;
 
     // IDA 0x6A6C30
-    virtual void Draw(uint32_t flags) override = 0;  // 0x4C9C50
+    virtual void Draw(uint32_t flags) = 0;  // 0x4C9C50 (G42.33 b3: 无基类可 override)
     // IDA 0x6A7590 (SwitchTab)
     // design: pure virtual function, no binary implementation
     virtual bool OnTabClick(int32_t tabIndex) = 0;

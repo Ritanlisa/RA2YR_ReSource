@@ -4,6 +4,19 @@
 
 #include "e4/classes/_fwd_e4.hpp"
 
+#ifdef GAMEMD_TREE_UNIVERSE
+// G42.33 b3: marker 抑制 _fwd_e4 的 AbstractClass/ObjectClass fwd -- 树侧桥接
+// (SessionClass_e4 G42.33 同款)
+namespace ra2 { namespace game { class AbstractClass; class ObjectClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_AbstractClass_Dialog
+#define GAMEMD_USING_AbstractClass_Dialog
+using ::ra2::game::AbstractClass;
+using ::ra2::game::ObjectClass;
+#endif
+} // namespace gamemd
+#endif
+
 namespace gamemd {
 struct AnimClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
@@ -104,6 +117,8 @@ struct Dialog {
     AbstractClass * * BindGadgetData(int *a2, char *Block);  // 0x624CA0
     INIClass * * ReadMultiplayerDialogSettings();  // 0x671EA0
     int FindByHandle();  // 0x775940
+    static int FindByHandle(int a1);  // G42.33 b3 static-form sync (cache: Dialog::FindByHandle((Dialog*)x))
+    static int FindByHandle(void *aP1);  // G42.33 b3 static-form sync (cache: Dialog::FindByHandle((Dialog*)x))
     static int GetCurrent();  // 0x775B10
     int GetCurrentType();  // 0x775B20
     BOOL GetField();  // 0x775BA0

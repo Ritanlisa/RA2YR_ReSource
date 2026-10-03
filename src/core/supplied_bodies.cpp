@@ -2,7 +2,22 @@
 #define GAMEMD_TREE_UNIVERSE 1
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
-#include "core/hash_table.hpp"
+// G42.33 b3: per-class opt-in -- e4 flat 载体取胜 (g143_research/core_ui_supplied_fix.py)
+#define GAMEMD_E4_Buffer 1
+#define GAMEMD_E4_Text 1
+#define GAMEMD_E4_BuildingLoadQueue 1
+#define GAMEMD_E4_FrameTimer 1
+#define GAMEMD_E4_MoveFeedback 1
+#define GAMEMD_E4_COMClass 1
+#define GAMEMD_E4_Hash 1
+#define GAMEMD_E4_Queue 1
+#define GAMEMD_E4_SHA1 1
+#define GAMEMD_E4_StringTable 1
+#define GAMEMD_E4_StringVector 1
+#define GAMEMD_E4_Vector2 1
+#define GAMEMD_E4_Vector3 1
+#define GAMEMD_E4_Vector4 1
+#define GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint 1
 #include "e4/classes/Vector_e4.hpp"
 #include "core/stream_ext.hpp"
 #include "core/utility_ext.hpp"
@@ -22,6 +37,71 @@
 #include "ui/sidebar.hpp"
 #include "ui/ui_ext.hpp"
 #include "e4/classes/MSEngine_e4.hpp"
+// G42.33 b3: e4 flat 载体 (体表词汇 m_C/m_1/__pad_0/*_field_0xNN 宿主)
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/COMClass_e4.hpp"
+#include "e4/classes/Hash_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/MoveFeedback_e4.hpp"
+#include "e4/classes/Queue_e4.hpp"
+#include "e4/classes/SHA1_e4.hpp"
+#include "e4/classes/StringTable_e4.hpp"
+#include "e4/classes/StringVector_e4.hpp"
+#include "e4/classes/Text_e4.hpp"
+#include "e4/classes/Vector2_e4.hpp"
+#include "e4/classes/Vector3_e4.hpp"
+#include "e4/classes/Vector4_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/ScriptAction_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+
+// G42.33 b3: 本地缺席全局/原型载体 (ida_globals.h 只覆盖裸名)
+extern unsigned int stru_A8EB00;      // data: 0xA8EB00 (帧计数基)
+extern void *DSurface_Alternate;       // data: DSurface 备用表面槽 (指针形态站点)
+extern int sub_401190(int a1, int a2);  // 0x401190 本地原型
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+// G42.33 b3: r6 缺席全局/原型 (team R1 前例)
+extern unsigned int stru_87F5F0;      // data: 0x87F5F0 (MapClass 宿主)
+extern unsigned int g_TacticalClass_Instance;  // data: Tactical 单例
+extern unsigned int g_VisibilitySystem;        // data: 可见性系统
+extern unsigned int HouseClass_Observer;       // data: 观察者 House
+extern unsigned int TimerGetTicks(void);  // 本地原型
+extern int MarkForRedraw(int a1);  // 本地原型 (display.hpp 极简 MapClass)
+extern int IsHumanPlayer(void *a1);  // 本地原型
+extern int GetWaypointCoords(int a1, int a2);  // 本地原型
+extern int IsButtonDown(int a1);  // 本地原型
+extern int ReadBuildingINIEntry(void);  // 本地原型
+extern int ReadBuildingINI(void);  // 本地原型
+extern int DispatchSelectionWaypointMove(void);  // 本地原型
+extern int PlacePlayerBeacon(void);  // 本地原型
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
 
 // 0x49EF10
 namespace gamemd {
@@ -43,7 +123,7 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int * a2) {
     unsigned int *v4; // eax
     char v5; // bl
     unsigned int *result; // eax
-    CCFileClass v7; // [esp+Ch] [ebp-6Ch] BYREF
+    CCFileClass v7(noinit_t()); // G42.33 b3 (载体无默认 ctor) [esp+Ch] BYREF
     int v8[3]; // [esp+64h] [ebp-14h] BYREF
     int v9; // [esp+70h] [ebp-8h]
 
@@ -51,10 +131,10 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int * a2) {
     v3 =(char **)(unsigned int *)((char **)((char *)this + 52)); /*0x4f37b2*/
     v4 = (unsigned int *)(((CCFileClass*)&v7)->Construct2(v3)); /*0x4f37ba*/
     v5 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v4 + 20))(v4, 0); /*0x4f37cc*/
-    *(unsigned int *)v7.CDFileClass = 0; /*0x4f37ce*/
+    *(unsigned int *)(char *)&v7 = 0; /*0x4f37ce CCFileClass vfptr 安装 (cache 伪迹还原)*/
     v9 = 0; /*0x4f37d6*/
     ((Vector*)(int)v8)->Clear(); /*0x4f37de*/
-    *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x4f37e7*/
+    *(unsigned int *)(char *)&v7 = (unsigned int)&off_7E1668; /*0x4f37e7 vfptr 安装*/
     result = (unsigned int *)((BufferIOFileClass*)(BufferIOFileClass *)&v7)->Dtor(); /*0x4f37ef*/
     if ( v5 ) /*0x4f37f6*/
     {
@@ -95,7 +175,7 @@ unsigned int * VectorCursor_uint_DynamicVectorClass_uint::ddtor() {
 // 0x65D660
 namespace gamemd {
 void ReferenceCounted::Constructor() {
-    *this = (ReferenceCounted)0; /*0x65d660*/
+    *(void **)(char *)this = 0; /*0x65d660 vfptr 安装 (cache: *this = &vftable)*/
 }
 } // namespace gamemd
 
@@ -121,7 +201,7 @@ unsigned int * COMClass::marshalInterface(char a2) {
 
 // 0x407470
 namespace gamemd {
-int Queue::GetNext() {
+int Queue::GetNext(void *a1) { /*G42.33 b3: Queue_e4 声明形态 (默认参)*/
     int result; // eax
 
     result = *(unsigned int *)this; /*0x407470*/
@@ -201,7 +281,7 @@ int StringTable::Lookup() {
 
     v2 = 0; /*0x40dce5*/
     v3 =(char **)&off_816EE0; /*0x40dce7*/
-    while ( _strcmpi(*v3, this->__pad_0) ) /*0x40dcfa*/
+    while ( _strcmpi(*v3, (const char *)&this->__pad_0) ) /*0x40dcfa G42.33 b3*/
     {
       v3 += 2; /*0x40dcfc*/
       ++v2; /*0x40dcff*/
@@ -507,17 +587,17 @@ char * Buffer::FillCircularBufferScroll(int a2, int a3, uint16_t a4) {
 
 // 0x41BF40
 namespace gamemd {
-int FrameTimer::HasRemaining() {
+bool FrameTimer::HasRemaining() const { /*G42.33 b3: 载体签名 (cache this=Techno*)*/
     int v1; // edx
     int result; // eax
 
-    v1 = *(unsigned int *)this->__pad_18C; /*0x41bf40*/
-    result = this->ironCurtainTimer[1]; /*0x41bf46*/
+    v1 = *(unsigned int *)((char *)this + 0x18C); /*0x41bf40*/
+    result = *(unsigned int *)((char *)this + 0x190); /*0x41bf46 ironCurtainTimer[1]*/
     if ( v1 != -1 ) /*0x41bf4f*/
     {
-      if ( *(unsigned int *)&(&stru_A8EB00)[416] - v1 < result ) /*0x41bf5b*/
+      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v1 < result ) /*0x41bf5b*/
       {
-        result -= *(unsigned int *)&(&stru_A8EB00)[416] - v1; /*0x41bf5d*/
+        result -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v1; /*0x41bf5d*/
         IDA_LOBYTE(result) = result > 0; /*0x41bf66*/
         return result; /*0x41bf68*/
       }
@@ -567,8 +647,8 @@ int Vector2::NormalizeNonZero() {
       IDA_LOWORD(result) = v7; /*0x41c478*/
       if ( v8 == 0.0 ) /*0x41c47d*/
       {
-        *this = 0; /*0x41c47f*/
-        *(this + 1) = 1079574528; /*0x41c485*/
+        *(int *)this = 0; /*0x41c47f G42.33 b3 裸 this 数组算术*/
+        *((int *)this + 1) = 1079574528; /*0x41c485*/
       }
     }
     return result; /*0x41c48c*/
@@ -577,20 +657,20 @@ int Vector2::NormalizeNonZero() {
 
 // 0x41CAA0
 namespace gamemd {
-int TypeClass::FindByName() {
+wchar_t * TypeClass::FindByName() { /*G42.33 b3: 载体签名; 体返回索引经转换*/
     int v2; // esi
 
     if ( !this ) /*0x41caa6*/
-      return -1; /*0x41caa6*/
+      return (wchar_t *)-1; /*0x41caa6*/
     v2 = 0; /*0x41caad*/
     if ( dword_A8B228 <= 0 ) /*0x41cab1*/
-      return -1; /*0x41cad6*/
+      return (wchar_t *)-1; /*0x41cad6*/
     while ( _strcmpi((char *)(*((unsigned int *)dword_A8B21C + v2) + 36), (char *)this) ) /*0x41caca*/
     {
       if ( ++v2 >= dword_A8B228 ) /*0x41cad4*/
-        return -1; /*0x41cad4*/
+        return (wchar_t *)-1; /*0x41cad4*/
     }
-    return v2; /*0x41cad6*/
+    return (wchar_t *)v2; /*0x41cad6*/
 }
 } // namespace gamemd
 
@@ -601,18 +681,18 @@ unsigned int * VectorClassUInt::Constructor(int a2, int a3) {
     *((unsigned int *)this + 2) = a2; /*0x42dc5e*/
     *((unsigned char *)this + 12) = 1; /*0x42dc61*/
     *((unsigned char *)this + 13) = 0; /*0x42dc65*/
-    *this = (VectorClassUInt)0; /*0x42dc68*/
+    *(void **)(char *)this = 0; /*0x42dc68 vfptr 安装 (cache 伪迹还原)*/
     if ( a2 ) /*0x42dc6e*/
     {
       if ( a3 ) /*0x42dc76*/
       {
         *((unsigned int *)this + 1) = a3; /*0x42dc78*/
-        return this; /*0x42dc7e*/
+        return (unsigned int *)this; /*0x42dc7e*/
       }
-      *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x42dc8d*/
+      *((unsigned int *)this + 1) = (unsigned int)RA2_OPNEW(4 * a2); /*0x42dc8d*/
       *((unsigned char *)this + 13) = 1; /*0x42dc90*/
     }
-    return this; /*0x42dc7d*/
+    return (unsigned int *)this; /*0x42dc7d*/
 }
 } // namespace gamemd
 
@@ -661,34 +741,15 @@ char PlayerClass::FindNearestWaypoint(int a2, int a3, int a4) {
     v6 = 0; /*0x430f99*/
     while ( 1 ) /*0x430f9b*/
     {
-      v7 = *(unsigned int **)p_PlayerClass_field_0x0C->__pad_0; /*0x430f9b*/
-      if ( *(unsigned int *)p_PlayerClass_field_0x0C->__pad_0 ) /*0x430f9b*/
+      v7 = *(unsigned int **)(char *)p_PlayerClass_field_0x0C; /*0x430f9b __pad_0 基址槽*/
+      if ( *(unsigned int *)(char *)p_PlayerClass_field_0x0C ) /*0x430f9b*/
       {
         v19 = a3 - v7[1]; /*0x430fb6*/
-        __asm { fild [esp+28h+var_8] } /*0x430fbc*/
+        /*0x430fbc..0x430fe8 FPU __asm 按指令语义译 C++ (fild x3 + 平方和 + fstp v13)*/
         v20 = a4 - v7[2]; /*0x430fc0*/
         v18 = a2 - *v7; /*0x430fc4*/
-        __asm /*0x430fc8*/
-        {
-          fild [esp+28h+var_4]
-          fild [esp+28h+var_C]
-        }
-        __asm
-        {
-          fld st
-          fmul st, st(1)
-          fld st(2)
-          fmul st, st(3)
-          faddp st(1), st
-          fld st(3)
-          fmul st, st(4)
-          faddp st(1), st
-          fstp [esp+30h+var_30]; double
-          fstp st
-          fstp st
-          fstp st
-        }
-        Math::Sqrt(v13); /*0x430fec*/
+        v13 = (double)v19 * v19 + (double)v20 * v20 + (double)v18 * v18;
+        v4 = Math::Sqrt((double)v13); /*0x430fec*/
         IDA_LOWORD(v8) = Math::RoundToInt(v4); /*0x430ff4*/
         if ( v8 < 128 ) /*0x430ffe*/
           break; /*0x430ffe*/
@@ -707,10 +768,10 @@ char PlayerClass::FindNearestWaypoint(int a2, int a3, int a4) {
         return 0; /*0x431020*/
       }
     }
-    v12 = *(unsigned int *)&this->__pad_0[8 * v15 + 4 * v6 + 4 * v15]; /*0x43103e*/
+    v12 = *(unsigned int *)((char *)this + 8 * v15 + 4 * v6 + 4 * v15); /*0x43103e __pad_0 数组基*/
     if ( !v12 ) /*0x431043*/
       return 0; /*0x431043*/
-    MapClass::UnselectAll_ClearLimboLaunchers(v14); /*0x431045*/
+    UnselectAll_ClearLimboLaunchers(v14); /*0x431045 G42.33 b3 本地原型 (display.hpp 极简 MapClass 获胜)*/
     *(unsigned char *)(v12 + 12) |= 2u; /*0x431050*/
     return 1; /*0x431028*/
 }
@@ -756,7 +817,7 @@ int BufferIO::FindActiveChannel(int a2) {
 
 // 0x431DD0
 namespace gamemd {
-int BufferIO::Flush() {
+void BufferIO::Flush() { /*G42.33 b3: 载体签名*/
     int result; // eax
     int v3; // eax
     DWORD v4; // edi
@@ -767,16 +828,16 @@ int BufferIO::Flush() {
       v4 = *((unsigned int *)this + 17) - v3; /*0x431df3*/
       if ( *((unsigned char *)this + 38) ) /*0x431dec*/
       {
-        FileClass::Seek((RawFileClass *)this, v3 + *((unsigned int *)this + 20) + *((unsigned int *)this + 15), 0); /*0x431e08*/
-        FileClass::Write2((RawFileClass *)this, *((LPCVOID *)this + 12), v4); /*0x431e14*/
-        result = FileClass::Seek((RawFileClass *)this, *((unsigned int *)this + 20) + *((unsigned int *)this + 19), 0); /*0x431e26*/
+        ((RawFileClass *)this)->Seek(v3 + *((unsigned int *)this + 20) + *((unsigned int *)this + 15), (FileSeekMode)0); /*0x431e08*/
+        ((RawFileClass *)this)->Write2(*((LPCVOID *)this + 12), v4); /*0x431e14*/
+        result = ((RawFileClass *)this)->Seek(*((unsigned int *)this + 20) + *((unsigned int *)this + 19), (FileSeekMode)0); /*0x431e26*/
       }
       else
       {
-        FileClass::Open2((RawFileClass *)this, (const CHAR *)1); /*0x431e38*/
-        FileClass::Seek((RawFileClass *)this, *((unsigned int *)this + 16) + *((unsigned int *)this + 15) + *((unsigned int *)this + 20), 0); /*0x431e4f*/
-        FileClass::Write2((RawFileClass *)this, *((LPCVOID *)this + 12), v4); /*0x431e5b*/
-        result = FileClass::CloseHandle((RawFileClass *)this); /*0x431e62*/
+        ((RawFileClass *)this)->Open2((const CHAR *)1); /*0x431e38*/
+        ((RawFileClass *)this)->Seek(*((unsigned int *)this + 16) + *((unsigned int *)this + 15) + *((unsigned int *)this + 20), (FileSeekMode)0); /*0x431e4f*/
+        ((RawFileClass *)this)->Write2(*((LPCVOID *)this + 12), v4); /*0x431e5b*/
+        result = ((RawFileClass *)this)->CloseHandle(); /*0x431e62*/
       }
       *((unsigned char *)this + 40) = 0; /*0x431e2b*/
       IDA_LOBYTE(result) = 1; /*0x431e30*/
@@ -785,7 +846,7 @@ int BufferIO::Flush() {
     {
       IDA_LOBYTE(result) = 0; /*0x431e70*/
     }
-    return result; /*0x431e32*/
+    return; /*0x431e32*/
 }
 } // namespace gamemd
 
@@ -797,11 +858,11 @@ unsigned int * TextGroup::SetRect(unsigned int *a2) {
     result = a2; /*0x433ca0*/
     if ( a2 ) /*0x433ca8*/
     {
-      *(this + 12) = *(TextGroup *)a2; /*0x433cac*/
-      *(this + 13) = (TextGroup)a2[1]; /*0x433cb2*/
-      *(this + 14) = (TextGroup)a2[2]; /*0x433cb8*/
+      *((unsigned int *)this + 12) = *(unsigned int *)a2; /*0x433cac*/
+      *((unsigned int *)this + 13) = a2[1]; /*0x433cb2*/
+      *((unsigned int *)this + 14) = a2[2]; /*0x433cb8*/
       result = (unsigned int *)a2[3]; /*0x433cbb*/
-      *((unsigned int *)this + 15) = result; /*0x433cbe*/
+      *((unsigned int *)this + 15) = (unsigned int)result; /*0x433cbe*/
     }
     else
     {
@@ -1028,8 +1089,8 @@ void COMObject::DetachPrimary() {
 // 0x48C3B0
 namespace gamemd {
 BOOL COMObject::IsValid() {
-    return (*(int (__thiscall **)(ConnectionClass *))(*(unsigned int *)this->__pad_0 + 28))(this) /*0x48c3cc*/
-        && (*(int (__thiscall **)(ConnectionClass *))(*(unsigned int *)this->__pad_0 + 32))(this);
+    return (*(int (__thiscall **)(ConnectionClass *))(*(unsigned int *)this->__pad_0 + 28))((ConnectionClass *)this) /*0x48c3cc*/
+        && (*(int (__thiscall **)(ConnectionClass *))(*(unsigned int *)this->__pad_0 + 32))((ConnectionClass *)this);
 }
 } // namespace gamemd
 
@@ -1136,359 +1197,359 @@ int COMClass::RegisterAll() {
 
     COMClass_field_0x08 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x08; /*0x490496*/
     if ( COMClass_field_0x08 ) /*0x49049b*/
-      result = (**COMClass_field_0x08)(COMClass_field_0x08, 1); /*0x4904a1*/
+      result = (**COMClass_field_0x08)((unsigned int)COMClass_field_0x08, 1); /*0x4904a1*/
     this->COMClass_field_0x08 = 0; /*0x4904a3*/
     COMClass_field_0x0C = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x0C; /*0x4904a6*/
     if ( COMClass_field_0x0C ) /*0x4904ab*/
-      result = (**COMClass_field_0x0C)(COMClass_field_0x0C, 1); /*0x4904b1*/
+      result = (**COMClass_field_0x0C)((unsigned int)COMClass_field_0x0C, 1); /*0x4904b1*/
     this->COMClass_field_0x0C = 0; /*0x4904b3*/
     COMClass_field_0x10 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x10; /*0x4904b6*/
     if ( COMClass_field_0x10 ) /*0x4904bb*/
-      result = (**COMClass_field_0x10)(COMClass_field_0x10, 1); /*0x4904c1*/
+      result = (**COMClass_field_0x10)((unsigned int)COMClass_field_0x10, 1); /*0x4904c1*/
     this->COMClass_field_0x10 = 0; /*0x4904c3*/
     COMClass_field_0x14 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x14; /*0x4904c6*/
     if ( COMClass_field_0x14 ) /*0x4904cb*/
-      result = (**COMClass_field_0x14)(COMClass_field_0x14, 1); /*0x4904d1*/
+      result = (**COMClass_field_0x14)((unsigned int)COMClass_field_0x14, 1); /*0x4904d1*/
     this->COMClass_field_0x14 = 0; /*0x4904d3*/
     COMClass_field_0x18 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x18; /*0x4904d6*/
     if ( COMClass_field_0x18 ) /*0x4904db*/
-      result = (**COMClass_field_0x18)(COMClass_field_0x18, 1); /*0x4904e1*/
+      result = (**COMClass_field_0x18)((unsigned int)COMClass_field_0x18, 1); /*0x4904e1*/
     this->COMClass_field_0x18 = 0; /*0x4904e3*/
     COMClass_field_0x1C = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x1C; /*0x4904e6*/
     if ( COMClass_field_0x1C ) /*0x4904eb*/
-      result = (**COMClass_field_0x1C)(COMClass_field_0x1C, 1); /*0x4904f1*/
+      result = (**COMClass_field_0x1C)((unsigned int)COMClass_field_0x1C, 1); /*0x4904f1*/
     this->COMClass_field_0x1C = 0; /*0x4904f3*/
     COMClass_field_0x20 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x20; /*0x4904f6*/
     if ( COMClass_field_0x20 ) /*0x4904fb*/
-      result = (**COMClass_field_0x20)(COMClass_field_0x20, 1); /*0x490501*/
+      result = (**COMClass_field_0x20)((unsigned int)COMClass_field_0x20, 1); /*0x490501*/
     this->COMClass_field_0x20 = 0; /*0x490503*/
     COMClass_field_0x24 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x24; /*0x490506*/
     if ( COMClass_field_0x24 ) /*0x49050b*/
-      result = (**COMClass_field_0x24)(COMClass_field_0x24, 1); /*0x490511*/
+      result = (**COMClass_field_0x24)((unsigned int)COMClass_field_0x24, 1); /*0x490511*/
     this->COMClass_field_0x24 = 0; /*0x490513*/
     COMClass_field_0x28 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x28; /*0x490516*/
     if ( COMClass_field_0x28 ) /*0x49051b*/
-      result = (**COMClass_field_0x28)(COMClass_field_0x28, 1); /*0x490521*/
+      result = (**COMClass_field_0x28)((unsigned int)COMClass_field_0x28, 1); /*0x490521*/
     this->COMClass_field_0x28 = 0; /*0x490523*/
     COMClass_field_0x2C = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x2C; /*0x490526*/
     if ( COMClass_field_0x2C ) /*0x49052b*/
-      result = (**COMClass_field_0x2C)(COMClass_field_0x2C, 1); /*0x490531*/
+      result = (**COMClass_field_0x2C)((unsigned int)COMClass_field_0x2C, 1); /*0x490531*/
     this->COMClass_field_0x2C = 0; /*0x490533*/
     COMClass_field_0x30 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x30; /*0x490536*/
     if ( COMClass_field_0x30 ) /*0x49053b*/
-      result = (**COMClass_field_0x30)(COMClass_field_0x30, 1); /*0x490541*/
+      result = (**COMClass_field_0x30)((unsigned int)COMClass_field_0x30, 1); /*0x490541*/
     this->COMClass_field_0x30 = 0; /*0x490543*/
     COMClass_field_0x34 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x34; /*0x490546*/
     if ( COMClass_field_0x34 ) /*0x49054b*/
-      result = (**COMClass_field_0x34)(COMClass_field_0x34, 1); /*0x490551*/
+      result = (**COMClass_field_0x34)((unsigned int)COMClass_field_0x34, 1); /*0x490551*/
     this->COMClass_field_0x34 = 0; /*0x490553*/
     COMClass_field_0x38 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x38; /*0x490556*/
     if ( COMClass_field_0x38 ) /*0x49055b*/
-      result = (**COMClass_field_0x38)(COMClass_field_0x38, 1); /*0x490561*/
+      result = (**COMClass_field_0x38)((unsigned int)COMClass_field_0x38, 1); /*0x490561*/
     this->COMClass_field_0x38 = 0; /*0x490563*/
     COMClass_field_0x3C = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x3C; /*0x490566*/
     if ( COMClass_field_0x3C ) /*0x49056b*/
-      result = (**COMClass_field_0x3C)(COMClass_field_0x3C, 1); /*0x490571*/
+      result = (**COMClass_field_0x3C)((unsigned int)COMClass_field_0x3C, 1); /*0x490571*/
     this->COMClass_field_0x3C = 0; /*0x490573*/
     COMClass_field_0x40 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x40; /*0x490576*/
     if ( COMClass_field_0x40 ) /*0x49057b*/
-      result = (**COMClass_field_0x40)(COMClass_field_0x40, 1); /*0x490581*/
+      result = (**COMClass_field_0x40)((unsigned int)COMClass_field_0x40, 1); /*0x490581*/
     this->COMClass_field_0x40 = 0; /*0x490583*/
     COMClass_field_0x44 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x44; /*0x490586*/
     if ( COMClass_field_0x44 ) /*0x49058b*/
-      result = (**COMClass_field_0x44)(COMClass_field_0x44, 1); /*0x490591*/
+      result = (**COMClass_field_0x44)((unsigned int)COMClass_field_0x44, 1); /*0x490591*/
     this->COMClass_field_0x44 = 0; /*0x490593*/
     COMClass_field_0x48 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x48; /*0x490596*/
     if ( COMClass_field_0x48 ) /*0x49059b*/
-      result = (**COMClass_field_0x48)(COMClass_field_0x48, 1); /*0x4905a1*/
+      result = (**COMClass_field_0x48)((unsigned int)COMClass_field_0x48, 1); /*0x4905a1*/
     this->COMClass_field_0x48 = 0; /*0x4905a3*/
     COMClass_field_0x4C = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x4C; /*0x4905a6*/
     if ( COMClass_field_0x4C ) /*0x4905ab*/
-      result = (**COMClass_field_0x4C)(COMClass_field_0x4C, 1); /*0x4905b1*/
+      result = (**COMClass_field_0x4C)((unsigned int)COMClass_field_0x4C, 1); /*0x4905b1*/
     this->COMClass_field_0x4C = 0; /*0x4905b3*/
     COMClass_field_0x50 = (int (__thiscall ***)(unsigned int, int))this->COMClass_field_0x50; /*0x4905b6*/
     if ( COMClass_field_0x50 ) /*0x4905bb*/
-      result = (**COMClass_field_0x50)(COMClass_field_0x50, 1); /*0x4905c1*/
+      result = (**COMClass_field_0x50)((unsigned int)COMClass_field_0x50, 1); /*0x4905c1*/
     this->COMClass_field_0x50 = 0; /*0x4905c3*/
     v22 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 21); /*0x4905c6*/
     if ( v22 ) /*0x4905cb*/
-      result = (**v22)(v22, 1); /*0x4905d1*/
+      result = (**v22)((unsigned int)v22, 1); /*0x4905d1*/
     *((unsigned int *)this + 21) = 0; /*0x4905d3*/
     v23 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 22); /*0x4905d6*/
     if ( v23 ) /*0x4905db*/
-      result = (**v23)(v23, 1); /*0x4905e1*/
+      result = (**v23)((unsigned int)v23, 1); /*0x4905e1*/
     *((unsigned int *)this + 22) = 0; /*0x4905e3*/
     v24 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 23); /*0x4905e6*/
     if ( v24 ) /*0x4905eb*/
-      result = (**v24)(v24, 1); /*0x4905f1*/
+      result = (**v24)((unsigned int)v24, 1); /*0x4905f1*/
     *((unsigned int *)this + 23) = 0; /*0x4905f3*/
     v25 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 24); /*0x4905f6*/
     if ( v25 ) /*0x4905fb*/
-      result = (**v25)(v25, 1); /*0x490601*/
+      result = (**v25)((unsigned int)v25, 1); /*0x490601*/
     *((unsigned int *)this + 24) = 0; /*0x490603*/
     v26 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 25); /*0x490606*/
     if ( v26 ) /*0x49060b*/
-      result = (**v26)(v26, 1); /*0x490611*/
+      result = (**v26)((unsigned int)v26, 1); /*0x490611*/
     *((unsigned int *)this + 25) = 0; /*0x490613*/
     v27 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 26); /*0x490616*/
     if ( v27 ) /*0x49061b*/
-      result = (**v27)(v27, 1); /*0x490621*/
+      result = (**v27)((unsigned int)v27, 1); /*0x490621*/
     *((unsigned int *)this + 26) = 0; /*0x490623*/
     v28 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 27); /*0x490626*/
     if ( v28 ) /*0x49062b*/
-      result = (**v28)(v28, 1); /*0x490631*/
+      result = (**v28)((unsigned int)v28, 1); /*0x490631*/
     *((unsigned int *)this + 27) = 0; /*0x490633*/
     v29 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 28); /*0x490636*/
     if ( v29 ) /*0x49063b*/
-      result = (**v29)(v29, 1); /*0x490641*/
+      result = (**v29)((unsigned int)v29, 1); /*0x490641*/
     *((unsigned int *)this + 28) = 0; /*0x490643*/
     v30 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 29); /*0x490646*/
     if ( v30 ) /*0x49064b*/
-      result = (**v30)(v30, 1); /*0x490651*/
+      result = (**v30)((unsigned int)v30, 1); /*0x490651*/
     *((unsigned int *)this + 29) = 0; /*0x490653*/
     v31 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 30); /*0x490656*/
     if ( v31 ) /*0x49065b*/
-      result = (**v31)(v31, 1); /*0x490661*/
+      result = (**v31)((unsigned int)v31, 1); /*0x490661*/
     *((unsigned int *)this + 30) = 0; /*0x490663*/
     v32 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 31); /*0x490666*/
     if ( v32 ) /*0x49066b*/
-      result = (**v32)(v32, 1); /*0x490671*/
+      result = (**v32)((unsigned int)v32, 1); /*0x490671*/
     *((unsigned int *)this + 31) = 0; /*0x490673*/
     v33 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 35); /*0x490676*/
     if ( v33 ) /*0x49067e*/
-      result = (**v33)(v33, 1); /*0x490684*/
+      result = (**v33)((unsigned int)v33, 1); /*0x490684*/
     *((unsigned int *)this + 35) = 0; /*0x490686*/
     v34 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 36); /*0x49068c*/
     if ( v34 ) /*0x490694*/
-      result = (**v34)(v34, 1); /*0x49069a*/
+      result = (**v34)((unsigned int)v34, 1); /*0x49069a*/
     *((unsigned int *)this + 36) = 0; /*0x49069c*/
     v35 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 32); /*0x4906a2*/
     if ( v35 ) /*0x4906aa*/
-      result = (**v35)(v35, 1); /*0x4906b0*/
+      result = (**v35)((unsigned int)v35, 1); /*0x4906b0*/
     *((unsigned int *)this + 32) = 0; /*0x4906b2*/
     v36 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 33); /*0x4906b8*/
     if ( v36 ) /*0x4906c0*/
-      result = (**v36)(v36, 1); /*0x4906c6*/
+      result = (**v36)((unsigned int)v36, 1); /*0x4906c6*/
     *((unsigned int *)this + 33) = 0; /*0x4906c8*/
     v37 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 34); /*0x4906ce*/
     if ( v37 ) /*0x4906d6*/
-      result = (**v37)(v37, 1); /*0x4906dc*/
+      result = (**v37)((unsigned int)v37, 1); /*0x4906dc*/
     *((unsigned int *)this + 34) = 0; /*0x4906de*/
     v38 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 37); /*0x4906e4*/
     if ( v38 ) /*0x4906ec*/
-      result = (**v38)(v38, 1); /*0x4906f2*/
+      result = (**v38)((unsigned int)v38, 1); /*0x4906f2*/
     *((unsigned int *)this + 37) = 0; /*0x4906f4*/
     v39 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 38); /*0x4906fa*/
     if ( v39 ) /*0x490702*/
-      result = (**v39)(v39, 1); /*0x490708*/
+      result = (**v39)((unsigned int)v39, 1); /*0x490708*/
     *((unsigned int *)this + 38) = 0; /*0x49070a*/
     v40 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 39); /*0x490710*/
     if ( v40 ) /*0x490718*/
-      result = (**v40)(v40, 1); /*0x49071e*/
+      result = (**v40)((unsigned int)v40, 1); /*0x49071e*/
     *((unsigned int *)this + 39) = 0; /*0x490720*/
     v41 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 40); /*0x490726*/
     if ( v41 ) /*0x49072e*/
-      result = (**v41)(v41, 1); /*0x490734*/
+      result = (**v41)((unsigned int)v41, 1); /*0x490734*/
     *((unsigned int *)this + 40) = 0; /*0x490736*/
     v42 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 41); /*0x49073c*/
     if ( v42 ) /*0x490744*/
-      result = (**v42)(v42, 1); /*0x49074a*/
+      result = (**v42)((unsigned int)v42, 1); /*0x49074a*/
     *((unsigned int *)this + 41) = 0; /*0x49074c*/
     v43 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 42); /*0x490752*/
     if ( v43 ) /*0x49075a*/
-      result = (**v43)(v43, 1); /*0x490760*/
+      result = (**v43)((unsigned int)v43, 1); /*0x490760*/
     *((unsigned int *)this + 42) = 0; /*0x490762*/
     v44 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 43); /*0x490768*/
     if ( v44 ) /*0x490770*/
-      result = (**v44)(v44, 1); /*0x490776*/
+      result = (**v44)((unsigned int)v44, 1); /*0x490776*/
     *((unsigned int *)this + 43) = 0; /*0x490778*/
     v45 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 44); /*0x49077e*/
     if ( v45 ) /*0x490786*/
-      result = (**v45)(v45, 1); /*0x49078c*/
+      result = (**v45)((unsigned int)v45, 1); /*0x49078c*/
     *((unsigned int *)this + 44) = 0; /*0x49078e*/
     v46 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 45); /*0x490794*/
     if ( v46 ) /*0x49079c*/
-      result = (**v46)(v46, 1); /*0x4907a2*/
+      result = (**v46)((unsigned int)v46, 1); /*0x4907a2*/
     *((unsigned int *)this + 45) = 0; /*0x4907a4*/
     v47 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 46); /*0x4907aa*/
     if ( v47 ) /*0x4907b2*/
-      result = (**v47)(v47, 1); /*0x4907b8*/
+      result = (**v47)((unsigned int)v47, 1); /*0x4907b8*/
     *((unsigned int *)this + 46) = 0; /*0x4907ba*/
     v48 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 47); /*0x4907c0*/
     if ( v48 ) /*0x4907c8*/
-      result = (**v48)(v48, 1); /*0x4907ce*/
+      result = (**v48)((unsigned int)v48, 1); /*0x4907ce*/
     *((unsigned int *)this + 47) = 0; /*0x4907d0*/
     v49 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 48); /*0x4907d6*/
     if ( v49 ) /*0x4907de*/
-      result = (**v49)(v49, 1); /*0x4907e4*/
+      result = (**v49)((unsigned int)v49, 1); /*0x4907e4*/
     *((unsigned int *)this + 48) = 0; /*0x4907e6*/
     v50 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 49); /*0x4907ec*/
     if ( v50 ) /*0x4907f4*/
-      result = (**v50)(v50, 1); /*0x4907fa*/
+      result = (**v50)((unsigned int)v50, 1); /*0x4907fa*/
     *((unsigned int *)this + 49) = 0; /*0x4907fc*/
     v51 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 50); /*0x490802*/
     if ( v51 ) /*0x49080a*/
-      result = (**v51)(v51, 1); /*0x490810*/
+      result = (**v51)((unsigned int)v51, 1); /*0x490810*/
     *((unsigned int *)this + 50) = 0; /*0x490812*/
     v52 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 51); /*0x490818*/
     if ( v52 ) /*0x490820*/
-      result = (**v52)(v52, 1); /*0x490826*/
+      result = (**v52)((unsigned int)v52, 1); /*0x490826*/
     *((unsigned int *)this + 51) = 0; /*0x490828*/
     v53 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 52); /*0x49082e*/
     if ( v53 ) /*0x490836*/
-      result = (**v53)(v53, 1); /*0x49083c*/
+      result = (**v53)((unsigned int)v53, 1); /*0x49083c*/
     *((unsigned int *)this + 52) = 0; /*0x49083e*/
     v54 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 53); /*0x490844*/
     if ( v54 ) /*0x49084c*/
-      result = (**v54)(v54, 1); /*0x490852*/
+      result = (**v54)((unsigned int)v54, 1); /*0x490852*/
     *((unsigned int *)this + 53) = 0; /*0x490854*/
     v55 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 54); /*0x49085a*/
     if ( v55 ) /*0x490862*/
-      result = (**v55)(v55, 1); /*0x490868*/
+      result = (**v55)((unsigned int)v55, 1); /*0x490868*/
     *((unsigned int *)this + 54) = 0; /*0x49086a*/
     v56 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 55); /*0x490870*/
     if ( v56 ) /*0x490878*/
-      result = (**v56)(v56, 1); /*0x49087e*/
+      result = (**v56)((unsigned int)v56, 1); /*0x49087e*/
     *((unsigned int *)this + 55) = 0; /*0x490880*/
     v57 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 56); /*0x490886*/
     if ( v57 ) /*0x49088e*/
-      result = (**v57)(v57, 1); /*0x490894*/
+      result = (**v57)((unsigned int)v57, 1); /*0x490894*/
     *((unsigned int *)this + 56) = 0; /*0x490896*/
     v58 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 57); /*0x49089c*/
     if ( v58 ) /*0x4908a4*/
-      result = (**v58)(v58, 1); /*0x4908aa*/
+      result = (**v58)((unsigned int)v58, 1); /*0x4908aa*/
     *((unsigned int *)this + 57) = 0; /*0x4908ac*/
     v59 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 58); /*0x4908b2*/
     if ( v59 ) /*0x4908ba*/
-      result = (**v59)(v59, 1); /*0x4908c0*/
+      result = (**v59)((unsigned int)v59, 1); /*0x4908c0*/
     *((unsigned int *)this + 58) = 0; /*0x4908c2*/
     v60 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 59); /*0x4908c8*/
     if ( v60 ) /*0x4908d0*/
-      result = (**v60)(v60, 1); /*0x4908d6*/
+      result = (**v60)((unsigned int)v60, 1); /*0x4908d6*/
     v61 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 60); /*0x4908d8*/
     *((unsigned int *)this + 59) = 0; /*0x4908de*/
     if ( v61 ) /*0x4908e6*/
-      result = (**v61)(v61, 1); /*0x4908ec*/
+      result = (**v61)((unsigned int)v61, 1); /*0x4908ec*/
     v62 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 61); /*0x4908ee*/
     *((unsigned int *)this + 60) = 0; /*0x4908f4*/
     if ( v62 ) /*0x4908fc*/
-      result = (**v62)(v62, 1); /*0x490902*/
+      result = (**v62)((unsigned int)v62, 1); /*0x490902*/
     v63 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 62); /*0x490904*/
     *((unsigned int *)this + 61) = 0; /*0x49090a*/
     if ( v63 ) /*0x490912*/
-      result = (**v63)(v63, 1); /*0x490918*/
+      result = (**v63)((unsigned int)v63, 1); /*0x490918*/
     v64 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 63); /*0x49091a*/
     *((unsigned int *)this + 62) = 0; /*0x490920*/
     if ( v64 ) /*0x490928*/
-      result = (**v64)(v64, 1); /*0x49092e*/
+      result = (**v64)((unsigned int)v64, 1); /*0x49092e*/
     v65 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 64); /*0x490930*/
     *((unsigned int *)this + 63) = 0; /*0x490936*/
     if ( v65 ) /*0x49093e*/
-      result = (**v65)(v65, 1); /*0x490944*/
+      result = (**v65)((unsigned int)v65, 1); /*0x490944*/
     v66 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 65); /*0x490946*/
     *((unsigned int *)this + 64) = 0; /*0x49094c*/
     if ( v66 ) /*0x490954*/
-      result = (**v66)(v66, 1); /*0x49095a*/
+      result = (**v66)((unsigned int)v66, 1); /*0x49095a*/
     v67 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 66); /*0x49095c*/
     *((unsigned int *)this + 65) = 0; /*0x490962*/
     if ( v67 ) /*0x49096a*/
-      result = (**v67)(v67, 1); /*0x490970*/
+      result = (**v67)((unsigned int)v67, 1); /*0x490970*/
     v68 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 67); /*0x490972*/
     *((unsigned int *)this + 66) = 0; /*0x490978*/
     if ( v68 ) /*0x490980*/
-      result = (**v68)(v68, 1); /*0x490986*/
+      result = (**v68)((unsigned int)v68, 1); /*0x490986*/
     v69 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 68); /*0x490988*/
     *((unsigned int *)this + 67) = 0; /*0x49098e*/
     if ( v69 ) /*0x490996*/
-      result = (**v69)(v69, 1); /*0x49099c*/
+      result = (**v69)((unsigned int)v69, 1); /*0x49099c*/
     v70 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 69); /*0x49099e*/
     *((unsigned int *)this + 68) = 0; /*0x4909a4*/
     if ( v70 ) /*0x4909ac*/
-      result = (**v70)(v70, 1); /*0x4909b2*/
+      result = (**v70)((unsigned int)v70, 1); /*0x4909b2*/
     v71 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 70); /*0x4909b4*/
     *((unsigned int *)this + 69) = 0; /*0x4909ba*/
     if ( v71 ) /*0x4909c2*/
-      result = (**v71)(v71, 1); /*0x4909c8*/
+      result = (**v71)((unsigned int)v71, 1); /*0x4909c8*/
     v72 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 71); /*0x4909ca*/
     *((unsigned int *)this + 70) = 0; /*0x4909d0*/
     if ( v72 ) /*0x4909d8*/
-      result = (**v72)(v72, 1); /*0x4909de*/
+      result = (**v72)((unsigned int)v72, 1); /*0x4909de*/
     v73 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 72); /*0x4909e0*/
     *((unsigned int *)this + 71) = 0; /*0x4909e6*/
     if ( v73 ) /*0x4909ee*/
-      result = (**v73)(v73, 1); /*0x4909f4*/
+      result = (**v73)((unsigned int)v73, 1); /*0x4909f4*/
     v74 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 73); /*0x4909f6*/
     *((unsigned int *)this + 72) = 0; /*0x4909fc*/
     if ( v74 ) /*0x490a04*/
-      result = (**v74)(v74, 1); /*0x490a0a*/
+      result = (**v74)((unsigned int)v74, 1); /*0x490a0a*/
     v75 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 74); /*0x490a0c*/
     *((unsigned int *)this + 73) = 0; /*0x490a12*/
     if ( v75 ) /*0x490a1a*/
-      result = (**v75)(v75, 1); /*0x490a20*/
+      result = (**v75)((unsigned int)v75, 1); /*0x490a20*/
     v76 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 75); /*0x490a22*/
     *((unsigned int *)this + 74) = 0; /*0x490a28*/
     if ( v76 ) /*0x490a30*/
-      result = (**v76)(v76, 1); /*0x490a36*/
+      result = (**v76)((unsigned int)v76, 1); /*0x490a36*/
     v77 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 76); /*0x490a38*/
     *((unsigned int *)this + 75) = 0; /*0x490a3e*/
     if ( v77 ) /*0x490a46*/
-      result = (**v77)(v77, 1); /*0x490a4c*/
+      result = (**v77)((unsigned int)v77, 1); /*0x490a4c*/
     v78 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 77); /*0x490a4e*/
     *((unsigned int *)this + 76) = 0; /*0x490a54*/
     if ( v78 ) /*0x490a5c*/
-      result = (**v78)(v78, 1); /*0x490a62*/
+      result = (**v78)((unsigned int)v78, 1); /*0x490a62*/
     v79 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 78); /*0x490a64*/
     *((unsigned int *)this + 77) = 0; /*0x490a6a*/
     if ( v79 ) /*0x490a72*/
-      result = (**v79)(v79, 1); /*0x490a78*/
+      result = (**v79)((unsigned int)v79, 1); /*0x490a78*/
     v80 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 79); /*0x490a7a*/
     *((unsigned int *)this + 78) = 0; /*0x490a80*/
     if ( v80 ) /*0x490a88*/
-      result = (**v80)(v80, 1); /*0x490a8e*/
+      result = (**v80)((unsigned int)v80, 1); /*0x490a8e*/
     v81 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 80); /*0x490a90*/
     *((unsigned int *)this + 79) = 0; /*0x490a96*/
     if ( v81 ) /*0x490a9e*/
-      result = (**v81)(v81, 1); /*0x490aa4*/
+      result = (**v81)((unsigned int)v81, 1); /*0x490aa4*/
     v82 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 81); /*0x490aa6*/
     *((unsigned int *)this + 80) = 0; /*0x490aac*/
     if ( v82 ) /*0x490ab4*/
-      result = (**v82)(v82, 1); /*0x490aba*/
+      result = (**v82)((unsigned int)v82, 1); /*0x490aba*/
     v83 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 82); /*0x490abc*/
     *((unsigned int *)this + 81) = 0; /*0x490ac2*/
     if ( v83 ) /*0x490aca*/
-      result = (**v83)(v83, 1); /*0x490ad0*/
+      result = (**v83)((unsigned int)v83, 1); /*0x490ad0*/
     v84 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 83); /*0x490ad2*/
     *((unsigned int *)this + 82) = 0; /*0x490ad8*/
     if ( v84 ) /*0x490ae0*/
-      result = (**v84)(v84, 1); /*0x490ae6*/
+      result = (**v84)((unsigned int)v84, 1); /*0x490ae6*/
     v85 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 84); /*0x490ae8*/
     *((unsigned int *)this + 83) = 0; /*0x490aee*/
     if ( v85 ) /*0x490af6*/
-      result = (**v85)(v85, 1); /*0x490afc*/
+      result = (**v85)((unsigned int)v85, 1); /*0x490afc*/
     v86 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 85); /*0x490afe*/
     *((unsigned int *)this + 84) = 0; /*0x490b04*/
     if ( v86 ) /*0x490b0c*/
-      result = (**v86)(v86, 1); /*0x490b12*/
+      result = (**v86)((unsigned int)v86, 1); /*0x490b12*/
     v87 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 86); /*0x490b14*/
     *((unsigned int *)this + 85) = 0; /*0x490b1a*/
     if ( v87 ) /*0x490b22*/
-      result = (**v87)(v87, 1); /*0x490b28*/
+      result = (**v87)((unsigned int)v87, 1); /*0x490b28*/
     v88 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 87); /*0x490b2a*/
     *((unsigned int *)this + 86) = 0; /*0x490b30*/
     if ( v88 ) /*0x490b38*/
-      result = (**v88)(v88, 1); /*0x490b3e*/
+      result = (**v88)((unsigned int)v88, 1); /*0x490b3e*/
     v89 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 88); /*0x490b40*/
     *((unsigned int *)this + 87) = 0; /*0x490b46*/
     if ( v89 ) /*0x490b4e*/
-      result = (**v89)(v89, 1); /*0x490b54*/
+      result = (**v89)((unsigned int)v89, 1); /*0x490b54*/
     v90 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 89); /*0x490b56*/
     *((unsigned int *)this + 88) = 0; /*0x490b5c*/
     if ( v90 ) /*0x490b64*/
-      result = (**v90)(v90, 1); /*0x490b6a*/
+      result = (**v90)((unsigned int)v90, 1); /*0x490b6a*/
     v91 = (int (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 90); /*0x490b6c*/
     *((unsigned int *)this + 89) = 0; /*0x490b72*/
     if ( v91 ) /*0x490b7a*/
-      result = (**v91)(v91, 1); /*0x490b80*/
+      result = (**v91)((unsigned int)v91, 1); /*0x490b80*/
     *((unsigned int *)this + 90) = 0; /*0x490b82*/
     return result; /*0x490b88*/
 }
@@ -1524,7 +1585,7 @@ char StringVector::Release(int a2, unsigned int *a3) {
             *(unsigned int *)&this->m_1[3] = 0; /*0x49eede*/
           }
         }
-        *(unsigned int *)&this->m_1[3] = v4; /*0x49eee7*/
+        *(unsigned int *)&this->m_1[3] = (unsigned int)v4; /*0x49eee7*/
         this->m_8 = a2; /*0x49eeef*/
         IDA_BYTE1(this->m_C) = a3 == 0; /*0x49eef2*/
         return 1; /*0x49eef8*/
@@ -1568,7 +1629,7 @@ unsigned int * StringVector::QueryInterface(char a2) {
     this->m_8 = 0; /*0x49efd1*/
     if ( (a2 & 1) != 0 ) /*0x49efd8*/
       RA2_OPDEL(this); /*0x49efdb*/
-    return this->__pad_0; /*0x49efe5*/
+    return (unsigned int *)&this->__pad_0; /*0x49efe5 G42.33 b3 __pad_0 数组基址*/
 }
 } // namespace gamemd
 
@@ -1579,9 +1640,9 @@ int EnumConnectionsClass::QueryInterface(const void *a2, unsigned int *a3) {
       return -2147467261; /*0x49ff89*/
     *a3 = 0; /*0x49ffa6*/
     if ( !memcmp(a2, &IID_IUnknown, 0x10u) ) /*0x49ffb0*/
-      *a3 = this; /*0x49ffb4*/
+      *a3 = (unsigned int)this; /*0x49ffb4*/
     if ( !memcmp(a2, &unk_7F7CB0, 0x10u) ) /*0x49ffc4*/
-      *a3 = this; /*0x49ffca*/
+      *a3 = (unsigned int)this; /*0x49ffca*/
     if ( !*a3 ) /*0x49ffcc*/
       return -2147467262; /*0x49ffdd*/
     (*(void (__stdcall **)(EnumConnectionsClass *))(*(unsigned int *)this->__pad_0 + 4))(this); /*0x49ffd4*/
@@ -1592,7 +1653,7 @@ int EnumConnectionsClass::QueryInterface(const void *a2, unsigned int *a3) {
 // 0x49FFF0
 namespace gamemd {
 LONG EnumConnectionsClass::AddRef() {
-    ++*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x49ffff*/
+    ++*(unsigned int *)&dword_ABFBE0; /*0x49ffff*/
     return InterlockedIncrement((volatile LONG *)this + 8); /*0x4a000b*/
 }
 } // namespace gamemd
@@ -1605,7 +1666,7 @@ LONG EnumConnectionsClass::Release() {
     void *EnumConnectionsClass_field_0x08; // eax
     int v4; // [esp-8h] [ebp-10h]
 
-    --*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x4a0020*/
+    --*(unsigned int *)&dword_ABFBE0; /*0x4a0020*/
     result = InterlockedDecrement((volatile LONG *)this + 8); /*0x4a0027*/
     if ( !result && this ) /*0x4a0035*/
     {
@@ -1698,7 +1759,7 @@ int EnumConnectionPointsClass::QueryInterface(const void *a2, unsigned int *a3) 
     v4 = 0; /*0x4a093a*/
     if ( !memcmp(a2, &unk_7F7CE0, 0x10u) || !memcmp(a2, &IID_IUnknown, 0x10u) ) /*0x4a0960*/
       v4 = this; /*0x4a0964*/
-    *a3 = v4; /*0x4a0967*/
+    *a3 = (unsigned int)v4; /*0x4a0967*/
     if ( !v4 ) /*0x4a096d*/
       return -2147467262; /*0x4a097d*/
     (*(void (__stdcall **)(EnumConnectionPointsClass *))(*(unsigned int *)this->__pad_0 + 4))(this); /*0x4a0972*/
@@ -1709,7 +1770,7 @@ int EnumConnectionPointsClass::QueryInterface(const void *a2, unsigned int *a3) 
 // 0x4A0990
 namespace gamemd {
 LONG EnumConnectionPointsClass::AddRef() {
-    ++*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x4a099f*/
+    ++*(unsigned int *)&dword_ABFBE0; /*0x4a099f*/
     return InterlockedIncrement(&this->EnumConnectionPointsClass_field_0x08); /*0x4a09ab*/
 }
 } // namespace gamemd
@@ -1722,7 +1783,7 @@ LONG EnumConnectionPointsClass::Release() {
     void *EnumConnectionPointsClass_field_0x10; // eax
     int v4; // [esp-8h] [ebp-10h]
 
-    --*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x4a09c0*/
+    --*(unsigned int *)&dword_ABFBE0; /*0x4a09c0*/
     result = InterlockedDecrement(&this->EnumConnectionPointsClass_field_0x08); /*0x4a09c7*/
     if ( !result && this ) /*0x4a09d5*/
     {
@@ -1823,7 +1884,7 @@ char CountdownTimer::UpdateDisplay(char a2) {
     void **p_vtable2; // ebx
     int v5; // eax
     int abstractFlags; // eax
-    CountdownTimer v7; // eax
+    unsigned int v7; // eax G42.33 b3 (cache: _DWORD)
     void *vtable3; // ecx
     int v9; // edx
     CountdownTimer v10; // ecx
@@ -1834,20 +1895,20 @@ char CountdownTimer::UpdateDisplay(char a2) {
     dword_89F95C = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x4a260f*/
     if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x4a261b*/
     {
-      uniqueId = dword_A8B230[43].uniqueId; /*0x4a262a*/
-      if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x4a2639*/
+      uniqueId = dword_A8B230_arr[43].uniqueId; /*0x4a262a*/
+      if ( dword_A8B230_arr[43].vtable2 != (void *)-1 ) /*0x4a2639*/
       {
         p_vtable2 = &dword_A8B230[43].vtable2; /*0x4a2630*/
         uniqueId += TimerGetTicks() - (unsigned int)*p_vtable2; /*0x4a2645*/
       }
       v5 = *((unsigned int *)this + 1); /*0x4a265b*/
-      *this = (CountdownTimer)(uniqueId / 60); /*0x4a2660*/
+      *(unsigned int *)this = uniqueId / 60; /*0x4a2660 G42.33 b3 首槽写*/
       if ( uniqueId / 60 != v5 || (IDA_LOBYTE(abstractFlags) = a2) != 0 ) /*0x4a266a*/
       {
         *((unsigned int *)this + 1) = uniqueId / 60; /*0x4a2670*/
   LABEL_26:
         *((unsigned char *)this + 8) = 1; /*0x4a2757*/
-        IDA_LOBYTE(abstractFlags) = MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x4a2761*/
+        IDA_LOBYTE(abstractFlags) = MarkForRedraw((GScreenClass *)((char *)&stru_87F5F0 + 0x240), 0); /*0x4a2761 G42.33 b3 host 形态*/
         byte_884B90 = 1; /*0x4a2766*/
         return abstractFlags; /*0x4a2766*/
       }
@@ -1917,7 +1978,7 @@ char CountdownTimer::UpdateDisplay(char a2) {
 // 0x4A2930
 namespace gamemd {
 LONG CStreamClass::AddRef() {
-    ++*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x4a293f*/
+    ++*(unsigned int *)&dword_ABFBE0; /*0x4a293f*/
     return InterlockedIncrement(&this->CStreamClass_field_0x0C); /*0x4a294b*/
 }
 } // namespace gamemd
@@ -1927,7 +1988,7 @@ namespace gamemd {
 LONG CStreamClass::Release() {
     LONG v1; // esi
 
-    --*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x4a2960*/
+    --*(unsigned int *)&dword_ABFBE0; /*0x4a2960*/
     v1 = InterlockedDecrement(&this->CStreamClass_field_0x0C); /*0x4a296d*/
     if ( !v1 && this ) /*0x4a2975*/
       (*(void (__thiscall **)(CStreamClass *, int))(*(unsigned int *)this->__pad_0 + 56))(this, 1); /*0x4a297d*/
@@ -2136,7 +2197,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
         PlayerClass::ProcessOccupancyUpdate( /*0x4abceb*/
           (PlayerClass *)g_TacticalClass_Instance,
           (void (__thiscall *)(unsigned char *))PlayerClass::CheckHumanPlayer);
-        FrameTimer::Init25(); /*0x4abcf0*/
+        Init25(); /*0x4abcf0 G42.33 b3 本地原型 (FrameTimer:: 静态形式)*/
         DisplayClass_field_0x0 = (void (__thiscall **)(DisplayClass *, unsigned int, int))this->DisplayClass_field_0x0; /*0x4abcf5*/
         this->__pad_11B4[27] = 0; /*0x4abcfd*/
         DisplayClass_field_0x0[18](this, 0, a6); /*0x4abd04*/
@@ -2153,7 +2214,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
           if ( *(unsigned int *)&(&stru_A8EB00)[228] ) /*0x4abd3c*/
           {
             v29 = (House *)(*(int (__thiscall **)(unsigned int))(***(unsigned int ***)&(&stru_A8EB00)[216] + 60))(**(unsigned int **)&(&stru_A8EB00)[216]); /*0x4abd4b*/
-            if ( (uint8_t)House::IsHumanPlayer(v29) ) /*0x4abd50*/
+            if ( (uint8_t)v29->IsHumanPlayer() ) /*0x4abd50 G42.33 b3 实例形式*/
             {
               if ( *((unsigned char *)v6 + 131) ) /*0x4abd59*/
               {
@@ -2659,7 +2720,7 @@ void *** GraphicMenuAnimItem::QueryInterface(char a2) {
     v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 9); /*0x4f30e3*/
     *(unsigned int *)this->__pad_0 = 0; /*0x4f30e6*/
     if ( v3 ) /*0x4f30ee*/
-      (**v3)(v3, 1); /*0x4f30f4*/
+      (**v3)((unsigned int)v3, 1); /*0x4f30f4*/
     GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f30f8*/
     if ( (a2 & 1) != 0 ) /*0x4f3102*/
       RA2_OPDEL(this); /*0x4f3105*/
@@ -3536,7 +3597,7 @@ int Random::Gaussian() {
 
 // 0x5AD6F0
 namespace gamemd {
-unsigned int * StringVector::Construct(int a2, int a3) {
+unsigned int * StringVector::Construct(int a2, int a3, void *a1, void *a4, void *a5, void *a6) { /*G42.33 b3: e4 声明形态 (6 默认参)*/
     this->StringVector_field_0x04 = 0; /*0x5ad6fb*/
     this->StringVector_field_0x08 = a2; /*0x5ad6fe*/
     IDA_LOBYTE(this->StringVector_field_0x0C) = 1; /*0x5ad701*/
@@ -3770,7 +3831,7 @@ int StreamWrapper::readData(int a2) {
         {
           v5 = *(void (__thiscall ****)(unsigned int, int))(this->StreamWrapper_field_0x0C + 4 * v4); /*0x5d6635*/
           if ( v5 ) /*0x5d663a*/
-            (**v5)(v5, 1); /*0x5d6640*/
+            (**v5)((unsigned int)v5, 1); /*0x5d6640*/
           ++v4; /*0x5d6645*/
         }
         while ( v4 < *((unsigned int *)this + 6) ); /*0x5d6648*/
@@ -4037,7 +4098,7 @@ int ComPtr::Dtor() {
     v2 = *(int (__thiscall ****)(unsigned int, int))this->__pad_0; /*0x6406f3*/
     if ( v2 ) /*0x6406f7*/
     {
-      result = (**v2)(v2, 1); /*0x6406fd*/
+      result = (**v2)((unsigned int)v2, 1); /*0x6406fd*/
       *(unsigned int *)this->__pad_0 = 0; /*0x6406ff*/
     }
     return result; /*0x640705*/
@@ -4211,15 +4272,15 @@ int * SHA1::ProcessBlock(const void **a2, int *a3) {
 
 // 0x69DFF0
 namespace gamemd {
-int SHA1::Reset(int this) {
+int SHA1::Reset(int a2) {
     int result; // eax
 
     result = 0; /*0x69dff3*/
-    if ( *(unsigned int *)(this + 56) ) /*0x69dff0*/
+    if ( *(unsigned int *)(a2 + 56) ) /*0x69dff0*/
     {
-      *(unsigned char *)(this + 52) = 0; /*0x69dff9*/
-      *(unsigned int *)(this + 60) = 0; /*0x69dffc*/
-      *(unsigned int *)(this + 56) = 0; /*0x69dfff*/
+      *(unsigned char *)(a2 + 52) = 0; /*0x69dff9*/
+      *(unsigned int *)(a2 + 60) = 0; /*0x69dffc*/
+      *(unsigned int *)(a2 + 56) = 0; /*0x69dfff*/
       IDA_LOBYTE(result) = 1; /*0x69e002*/
     }
     else

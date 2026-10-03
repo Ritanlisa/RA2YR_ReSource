@@ -8,6 +8,6 @@ struct E4Recv_7B60E0 {
     unsigned int AbstractClass;
     unsigned int vtable0;
     void* vfptr;  // minimal E2 declaration
-    AbstractClass * * sub_7B60E0(signed int a2, void ** a3);  // 0x7B60E0
+void ** sub_7B60E0(signed int a2, void ** a3);  // 0x7B60E0 (G42.33 b7: return void**, member-name shadow repaired)
 };
 } // namespace gamemd

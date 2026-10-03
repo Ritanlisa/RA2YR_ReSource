@@ -6,10 +6,15 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: 宏 TU 内由树头 using 提供
+class TechnoClass;
+#endif
 struct BuildingClass;  // fix_fwd_type_supply
 struct StartingTechnoStruct;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
-struct AbstractClass;  // fix_fwd_type_supply
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: 宏 TU 内由树头 using 提供
+struct AbstractClass;
+#endif
 struct SuperClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
 struct BuildingTypeClass;  // fix_fwd_type_supply
@@ -1867,6 +1872,8 @@ struct HouseClass {
     char UpdateAllSilos(int a2, int a3);
     double GiveTiberium_Storage(AbstractClass * aP1, BuildingClass * aP2);
     int COMStub_Ret1_1(int a1);
+    static int NetworkConvert(void *aP0);  // 0x749100 G42.33 b5 static-form sync
+    static int IncrementStat(void *aP0, unsigned int aP1);  // 0x749020 G42.33 b7 static-form sync
     int COMStub_Ret1_2(int a1);
     int CanAlly(HouseClass * aP1);
     int CanDetect();

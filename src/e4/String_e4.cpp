@@ -53,24 +53,24 @@ int String::AssignWideToChar(char *aP1, char *aP2)
 }
 // 0x4CB5E0
 namespace gamemd {
-void * String::AllocAndCopy(char * Destination, RandomStruct * aP1, IUnknown * aP2)
+char * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
 {
 
   char *v4; // eax
   unsigned int v5; // edx
   char *v6; // edi
 
-  strncpy(Destination,(const char *)(aP1), 4u); /*0x4cb5ed*/
-  *((unsigned short *)Destination + 2) = 2; /*0x4cb5f4*/
-  *((unsigned short *)Destination + 3) = 1; /*0x4cb5fa*/
+  strncpy((char *)this,(const char *)(aP1), 4u); /*0x4cb5ed*/
+  *((unsigned short *)this + 2) = 2; /*0x4cb5f4*/
+  *((unsigned short *)this + 3) = 1; /*0x4cb5fa*/
   v4 = (char *)__2_YAPAXI_Z(1u); /*0x4cb600*/
-  v5 = *((uint16_t *)Destination + 3); /*0x4cb611*/
-  *((unsigned int *)Destination + 2) = (unsigned int)(v4); /*0x4cb613*/
+  v5 = *((uint16_t *)this + 3); /*0x4cb611*/
+  *((unsigned int *)this + 2) = (unsigned int)(v4); /*0x4cb613*/
   qmemcpy(v4, &aP2, 4 * (v5 >> 2)); /*0x4cb619*/
   v6 = &v4[4 * (v5 >> 2)]; /*0x4cb619*/
   qmemcpy(v6, &aP2 + 4 * (v5 >> 2), v5 & 3); /*0x4cb625*/
-  *((unsigned int *)Destination + 3) = 0; /*0x4cb628*/
-  return Destination; /*0x4cb627*/
+  *((unsigned int *)this + 3) = 0; /*0x4cb628*/
+  return this; /*0x4cb627*/
 
 }
 }

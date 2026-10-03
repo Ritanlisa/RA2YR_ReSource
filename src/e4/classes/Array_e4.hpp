@@ -86,7 +86,8 @@ struct Array {
     int RemoveAt(int a2, void *a2_2);  // 0x63E590
     int Get(int a2);  // 0x65AD40
     int ContainsValue(int aP1);  // 0x65ADF0
-    int Zero(void *a1_1);  // 0x7490D0
+    static int Zero(void *aP0);  // 0x7490D0 G42.33 b8 static-form (flat member removed: C2686)
+    static void ByteSwap(void *aP0);  // 0x749150 G42.33 b7 static-form sync
     void ByteSwap();  // 0x749150
     int GetElement(int aP1);  // 0x763980
     int CleanupArrayWOL();  // 0x7ACD30

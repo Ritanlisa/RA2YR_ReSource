@@ -57,18 +57,19 @@
 #include "e4/classes/Rect_Point_e4.hpp"
 #include "e4/classes/ResultNode_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"  // G42.33 b3: FileClass body (SetName/Open2)
+#include "e4/classes/ComPtr_e4.hpp"  // G42.33 b3: ComPtr body (Release)
+#include "e4/classes/RawFileClass_e4.hpp"  // G42.33 b9: RawFileClass body
+// G42.33 b3 TU-local carriers/supplies
+// G42.33 b8: Performance minimal carrier
+namespace gamemd { struct Performance { static int MeasureTicks(void *aP0); }; }  // 0x5CAFC0 static-form (G42.33 b8)
+namespace gamemd { struct rc_ptr_base { void *vfptr; }; }  // fwd-only in _fwd_e4.hpp; minimal E2 (v264 storage)
+namespace gamemd { struct NetMessage { static char * Pack4(void *aP0, const void *aP1, int aP2); static char * Pack(void *aP0, const void *aP1, void *aP2, int aP3); }; }  // 0x4CB700/0x4CB830 thiscall static-form (G42.33 b3)
 
 // 0x6C6F50
 namespace gamemd {
 int ProcessGameResults(char a1)
 {
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v26 = 0;  /* G37 hoist */
-    unsigned int v20 = 0;  /* G37 hoist */
-    unsigned int v17 = 0;  /* G37 hoist */
-    unsigned int v15 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
   unsigned int v2;
   char *inited; // eax
   unsigned int v5;
@@ -95,15 +96,8 @@ int ProcessGameResults(char a1)
   IUnknown *v73; // esi
   IUnknown *v86; // esi
   char *eax130; // eax
-  char *v87; // eax
   IUnknown *v89; // esi
-  char *v90; // eax
-  char *v91; // eax
   char *ModuleInternalVersion; // eax
-  char *v93; // eax
-  char *v94; // eax
-  char *v97; // eax
-  char *v98; // eax
   IUnknown *v101; // esi
   IUnknown *v104; // eax
   ObjectClass *v110; // edi
@@ -190,41 +184,31 @@ int ProcessGameResults(char a1)
   CHAR v286[128]; // [esp+DCh] [ebp-82DCh] BYREF
   CHAR Filename[280]; // [esp+298h] [ebp-8120h] BYREF
 
+  char * v6, *v7, *v10, *v13, *v15, *v17, *v20, *v23, *v26, *v29, *v32, *v35, *v37, *v40, *v43, *v46, *v48, *v51, *v54, *v64, *v69, *v70, *v76, *v78, *v81, *v84, *v87, *v88, *v90, *v91, *v93, *v94, *v95, *v96, *v97, *v98, *v99, *v100, *v102, *v103, *v107, *v108, *v111, *v114, *v117, *v119, *v120, *v121, *v122, *v124, *v125, *v128, *v131, *v133, *v134, *v139, *v144, *v149, *v154, *v168, *v174, *v180, *v186, *v191, *v197, *v203, *v209, *v214, *v219, *v223, *v227, *v228, *v229, *v231, *v232, *v233, *v235, *v236, *v237, *v239, *v240, *v241, *v247, *v251, *v257, *v261;  /* G42.33 b3 hoist: decl-in-branch scope repair */
   v266 = a1;
   v262[0] = 0;
   v262[1] = 0;
   aP2 = 0;
   v269 = 0;
-  if ( *(&g_MatrixTransformState + 2274) && HouseClass_Player == (int)((IUnknown *))*(&g_MatrixTransformState + 2274) )
+  if ( *(IUnknown **)(&g_MatrixTransformState + 2274) && (unsigned int)HouseClass_Player == (unsigned int)(*(IUnknown **)(&g_MatrixTransformState + 2274)) )
   {
     ((ResultNode *)(v262))->CleanupList();
-    return;
+    return 0;
   }
   ((Debug *)0)->Log();
   v2 = dword_B779D4;
   char * v3 = (char *)operator new(0x10u);
   if ( v3 )
-    inited = TerrainInitMap(v3,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72452]), v2);
+    inited = TerrainInitMap(v3,(char *)((RandomStruct *)&stru_830620[72452]), v2);
   else
     inited = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)inited);
-  if ( g_GameMode_Current == (int)((CellStruct *))4 && g_GameOptionsFlags == 3 )
+  if ( g_GameMode_Current == 4 && g_GameOptionsFlags == 3 )
   {
-    unsigned int v23 = 0;  /* G37 hoist */
-    unsigned int v35 = 0;  /* G37 hoist */
-    unsigned int v32 = 0;  /* G37 hoist */
-    unsigned int v29 = 0;  /* G37 hoist */
-    unsigned int v51 = 0;  /* G37 hoist */
-    unsigned int v48 = 0;  /* G37 hoist */
-    unsigned int v46 = 0;  /* G37 hoist */
-    unsigned int v43 = 0;  /* G37 hoist */
-    unsigned int v40 = 0;  /* G37 hoist */
-    unsigned int v37 = 0;  /* G37 hoist */
-    unsigned int v54 = 0;  /* G37 hoist */
     v5 = g_GameDifficulty;
-    char * v6 = (char *)operator new(0x10u);
+    v6 = (char *)operator new(0x10u);
     if ( v6 )
-      unsigned int v7 =
+      v7 = NetMessage::Pack4(v6, &stru_830620[72444], v5);
     else
       v7 = 0;
     ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v7);
@@ -238,123 +222,123 @@ int ProcessGameResults(char a1)
   }
   char * v9 = (char *)operator new(0x10u);
   if ( v9 )
-    char * v10 = TerrainInitMap(v9,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72436]),(int)((IUnknown *)v8));
+    v10 = TerrainInitMap(v9,(char *)((RandomStruct *)&stru_830620[72436]),(int)((IUnknown *)v8));
   else
     v10 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v10);
   v11 = dword_B779C4;
   char * v12 = (char *)operator new(0x10u);
   if ( v12 )
-    char * v13 = TerrainInitMap(v12,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72428]), v11);
+    v13 = TerrainInitMap(v12,(char *)((RandomStruct *)&stru_830620[72428]), v11);
   else
     v13 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v13);
-  if ( g_GameMode_Current == (int)((CellStruct *))4 && g_GameOptionsFlags == 3 && a1 )
+  if ( g_GameMode_Current == 4 && g_GameOptionsFlags == 3 && a1 )
     dword_B779C4 = 0;
   IDA_LOBYTE(v264.vfptr) = DataGlobal_00A8B8C2 == 1;
   char * v14 = (char *)operator new(0x10u);
   if ( v14 )
-    char * v15 = (char *)(((String *)(v14))->AllocAndCopy((RandomStruct *)&((unsigned int *)(stru_830620))[72420], (IUnknown *)v264.vfptr));
+    v15 = (char *)(((String *)(v14))->AllocAndCopy((RandomStruct *)&stru_830620[72420], (IUnknown *)v264.vfptr));
   else
     v15 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v15);
-  IDA_LOBYTE(v264.vfptr) = DataGlobal_A8B8C1 == (unsigned char [58523])(1);
+  IDA_LOBYTE(v264.vfptr) = DataGlobal_A8B8C1[0] == 1;
   char * v16 = (char *)operator new(0x10u);
   if ( v16 )
-    char * v17 = (char *)(((String *)(v16))->AllocAndCopy((RandomStruct *)&((unsigned int *)(stru_830620))[72412], (IUnknown *)v264.vfptr));
+    v17 = (char *)(((String *)(v16))->AllocAndCopy((RandomStruct *)&stru_830620[72412], (IUnknown *)v264.vfptr));
   else
     v17 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v17);
   v19 = (ObjectClass *)(*(unsigned int *)&((unsigned int *)(g_OverlayTypeConfig))[17744] / 0x3Cu);
   eax31 = (char *)operator new(0x10u);
   if ( eax31 )
-    char * v20 = TerrainInitMap(eax31,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72404]),(int)((IUnknown *)v19));
+    v20 = TerrainInitMap(eax31,(char *)((RandomStruct *)&stru_830620[72404]),(int)((IUnknown *)v19));
   else
     v20 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v20);
   v21 = (IUnknown *)g_Rules_Bases;
   char * v22 = (char *)operator new(0x10u);
   if ( v22 )
-    char * v23 = TerrainInitMap(v22,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72396]), (int)v21);
+    v23 = TerrainInitMap(v22,(char *)((RandomStruct *)&stru_830620[72396]), (int)v21);
   else
     v23 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v23);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v23);
   bool v24 = (unsigned char)ShortGame != 0;
   char * v25 = (char *)operator new(0x10u);
   if ( v25 )
-    char * v26 = TerrainInitMap(v25,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72388]), (int)(IUnknown *)v24);
+    v26 = TerrainInitMap(v25,(char *)((RandomStruct *)&stru_830620[72388]), (int)(IUnknown *)v24);
   else
     v26 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v26);
   bool v27 = (unsigned char)SWAllowed != 0;
   char * v28 = (char *)operator new(0x10u);
   if ( v28 )
-    char * v29 = TerrainInitMap(v28,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72380]), (int)(IUnknown *)v27);
+    v29 = TerrainInitMap(v28,(char *)((RandomStruct *)&stru_830620[72380]), (int)(IUnknown *)v27);
   else
     v29 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v29);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v29);
   v30 = g_ScenarioFlags;
   char * v31 = (char *)operator new(0x10u);
   if ( v31 )
-    char * v32 = TerrainInitMap(v31,(char *)((RandomStruct *)&((unsigned int *)(stru_830620))[72372]), v30);
+    v32 = TerrainInitMap(v31,(char *)((RandomStruct *)&stru_830620[72372]), v30);
   else
     v32 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v32);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v32);
   v33 = (IUnknown *)(((unsigned char)MCVRedeploy == 1) + 2 * ((unsigned char)g_Rules_ShortGame == 1));
   char * v34 = (char *)operator new(0x10u);
   if ( v34 )
-    char * v35 = TerrainInitMap(v34, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72364], (int)v33);
+    v35 = TerrainInitMap(v34, (char *)(RandomStruct *)&stru_830620[72364], (int)(void *)((int)v33));
   else
     v35 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v35);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v35);
   IDA_LOBYTE(v264.vfptr) = (unsigned char)Bases != 0;
   char * v36 = (char *)operator new(0x10u);
   if ( v36 )
-    char * v37 = String::AllocAndCopy(v36, (RandomStruct *)&((unsigned int *)(stru_830620))[72356], (IUnknown *)v264.vfptr);
+    v37 = ((String *)v36)->AllocAndCopy((RandomStruct *)&stru_830620[72356], (IUnknown *)v264.vfptr);
   else
     v37 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v37);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v37);
   bool v38 = (unsigned char)Crates != 0;
   char * v39 = (char *)operator new(0x10u);
   if ( v39 )
-    char * v40 = TerrainInitMap(v39, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72348], (int)(IUnknown *)v38);
+    v40 = TerrainInitMap(v39, (char *)(RandomStruct *)&stru_830620[72348], (int)(void *)((int)(IUnknown *)v38));
   else
     v40 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v40);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v40);
   v41 = (IUnknown *)g_Rules_AlliesAllowed;
   char * v42 = (char *)operator new(0x10u);
   if ( v42 )
-    char * v43 = TerrainInitMap(v42, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72340], (int)v41);
+    v43 = TerrainInitMap(v42, (char *)(RandomStruct *)&stru_830620[72340], (int)(void *)((int)v41));
   else
     v43 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v43);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v43);
   v44 = (IUnknown *)g_Rules_MultiEngineer;
   char * v45 = (char *)operator new(0x10u);
   if ( v45 )
-    char * v46 = TerrainInitMap(v45, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[59868], (int)v44);
+    v46 = TerrainInitMap(v45, (char *)(RandomStruct *)&stru_830620[59868], (int)(void *)((int)v44));
   else
     v46 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v46);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v46);
   char * v47 = (char *)operator new(0x10u);
   if ( v47 )
-    char * v48 = BuildResultPacket(v47, &((unsigned int *)(stru_830620))[72332], (IUnknown *)&Destination);
+    v48 = BuildResultPacket(v47, &stru_830620[72332], (IUnknown *)&Destination);
   else
     v48 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v48);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v48);
   v49 = (IUnknown *)dword_B77780;
   char * v50 = (char *)operator new(0x10u);
   if ( v50 )
-    char * v51 = TerrainInitMap(v50, (char *)(RandomStruct *)&((unsigned int *)(stru_830620))[72324], (int)v49);
+    v51 = TerrainInitMap(v50, (char *)(RandomStruct *)&stru_830620[72324], (int)(void *)((int)v49));
   else
     v51 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v51);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v51);
   v52 = (IUnknown *)dword_B77CE0;
   char * v53 = (char *)operator new(0x10u);
   if ( v53 )
-    char * v54 = TerrainInitMap(v53, (RandomStruct *)&stru_830620[72316], v52);
+    v54 = TerrainInitMap(v53, (RandomStruct *)&stru_830620[72316], (int)(void *)(v52));
   else
     v54 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v54);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v54);
   if ( (int)HouseClass_Count > 0 )
   {
     v55 =(IUnknown *)HouseClass_Array;
@@ -363,8 +347,8 @@ int ProcessGameResults(char a1)
     v59 = HouseClass_Count;
     do
     {
-      eax72 = *(CampaignScore **)v55->__pad_0;
-      if ( *(unsigned char *)(*(unsigned int *)v55->__pad_0 + 492) && eax72 != v57 )
+      eax72 = *(CampaignScore **)v55;
+      if ( *(unsigned char *)(*(unsigned int *)v55 + 492) && eax72 != v57 )
       {
         v60 = aP2;
         *ecx71++ = eax72;
@@ -385,7 +369,7 @@ int ProcessGameResults(char a1)
       int v63 = (char *)v61 - (char *)v62 - 1;
       if ( v63 )
       {
-        unsigned char * v64 = v283;
+        v64 = (char *)v283;
         int v65 = v63;
         do
         {
@@ -411,12 +395,12 @@ int ProcessGameResults(char a1)
   v68 = (IUnknown *)aP2;
   if ( (unsigned int)aP2 > 1 )
   {
-    unsigned char * v69 = v283;
-    char * v70 = (char *)&aP2[-1].lineTrailer + 3;
+    v69 = (char *)v283;
+    v70 = (char *)&aP2[-1].lineTrailer[0] + 3;
     do
     {
       int v71 = *(unsigned int *)v69;
-      if ( !_strcmpi((char *)(*(unsigned int *)v69 + 90100), byte_B779E0) )
+      if ( !_strcmpi((char *)(*(unsigned int *)v69 + 90100), (const char *)&byte_B779E0) )
       {
         int v72 = v282;
         v282 = v71;
@@ -431,9 +415,8 @@ int ProcessGameResults(char a1)
   if ( v68 )
   {
     int * v74 = &v282;
-    while ( _strcmpi((char *)(*v74 + 90100), byte_B77830) )
+    while ( _strcmpi((char *)(*v74 + 90100), (const char *)&byte_B77830) )
     {
-    unsigned int v76 = 0;  /* G37 hoist */
       v73 = (IUnknown *)((char *)v73 + 1);
       ++v74;
       if ( v73 >= v68 )
@@ -444,35 +427,35 @@ int ProcessGameResults(char a1)
 LABEL_95:
   char * v75 = (char *)operator new(0x10u);
   if ( v75 )
-    char * v76 = TerrainInitMap(v75, (RandomStruct *)&stru_830620[72308], v68);
+    v76 = TerrainInitMap(v75, (RandomStruct *)&stru_830620[72308], (int)(void *)(v68));
   else
     v76 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v76);
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v76);
   char * v77 = (char *)operator new(0x10u);
   if ( v77 )
-    char * v78 = TerrainInitMap(v77, (RandomStruct *)&stru_830620[72300], v269);
+    v78 = TerrainInitMap(v77, (RandomStruct *)&stru_830620[72300], (int)(void *)(v269));
   else
     v78 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v78);
-  if ( dword_B779C4 == (IUnknown *)1 )
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v78);
+  if ( *(unsigned int *)dword_B779C4 == 1 )
   {
-    LoadPlayerProfile(&v264, (const char **)&g_WebBrowser);
+    LoadPlayerProfile((ObjectClass *)&v264, (const char **)&g_WebBrowser);
     if ( !v266 )
     {
   int v265; // [esp+38h] [ebp-8380h]
-      if ( !DataGlobal_A8B8C1 || HouseClass_Player->__pad_1D8[48] )
+      if ( !DataGlobal_A8B8C1[0] || *(unsigned char *)((char *)HouseClass_Player + 0x1D8 + 48) )
       {
-        Event_Process_77A8B0(v265, 1);
+        Event_Process_77A8B0((void *)v265, 1);
       }
-      else if ( HouseClass_Player->__pad_1D8[29] || HouseClass_Player->__pad_220[40] || HouseClass_Player->__pad_220[39] )
+      else if ( *(unsigned char *)((char *)HouseClass_Player + 0x1D8 + 29) || *(unsigned char *)((char *)HouseClass_Player + 0x220 + 40) || *(unsigned char *)((char *)HouseClass_Player + 0x220 + 39) )
       {
-        Event_Process_77A890(v265, 1);
+        Event_Process_77A890((void *)v265, 1);
       }
       else
       {
-        Event_Process_77A870(v265, 1);
+        Event_Process_77A870((void *)v265, 1);
       }
-      SaveProfileWOL(v265, &g_WebBrowser);
+      SaveProfileWOL((void *)v265, (const char **)&g_WebBrowser);
     }
     v264.vfptr = &vt_rc_ptr_PlayerProfile;
     ((ComPtr *)(&v264))->Release();
@@ -480,12 +463,12 @@ LABEL_95:
   unsigned int v79 = 0;
   if ( aP2 )
   {
-    char v80 = DataGlobal_A8B8C1;
+    char v80 = DataGlobal_A8B8C1[0];
     do
     {
       if ( v80 )
       {
-        unsigned char * v81 = *(unsigned char **)&v283[4 * v79 - 4];
+        v81 = (char *)(*(unsigned char **)&v283[4 * v79 - 4]);
         if ( v81[520] )
         {
           v284[v79] = (IUnknown *)2;
@@ -514,24 +497,24 @@ LABEL_95:
   int v82 = *(unsigned int *)dword_B77788;
   char * v83 = (char *)operator new(0x10u);
   if ( v83 )
-    char * v84 = NetMessage::Pack4(v83, (RandomStruct *)&stru_830620[72292], v82);
+    v84 = NetMessage::Pack4(v83, (RandomStruct *)&stru_830620[72292], v82);
   else
     v84 = 0;
-  ((LinkedList_flat *)v262)->PushFront((IUnknown *)v84);
-  if ( *(unsigned int *)&g_OverlayTypeConfig[17744] / 60 )
+  ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v84);
+  if ( *(unsigned int *)((char *)&g_OverlayTypeConfig + 17744) / 60 )
   {
-    v86 = (IUnknown *)(*(unsigned int *)&g_NetworkPlayerBuffer[5960]
-                     / (unsigned int)(*(unsigned int *)&g_OverlayTypeConfig[17744] / 60));
+    v86 = (IUnknown *)(*(unsigned int *)((char *)&g_NetworkPlayerBuffer + 5960)
+                     / (unsigned int)(*(unsigned int *)((char *)&g_OverlayTypeConfig + 17744) / 60));
     eax130 = (char *)operator new(0x10u);
     if ( eax130 )
     {
-      v87 = TerrainInitMap(eax130, (RandomStruct *)&stru_830620[72284], v86);
+      v87 = TerrainInitMap(eax130, (RandomStruct *)&stru_830620[72284], (int)(void *)(v86));
       goto LABEL_135;
     }
   }
   else
   {
-    char * v88 = (char *)operator new(0x10u);
+    v88 = (char *)operator new(0x10u);
     if ( v88 )
     {
       v87 = NetMessage::Pack4(v88, (RandomStruct *)&stru_830620[72284], 0);
@@ -541,15 +524,15 @@ LABEL_95:
   v87 = 0;
 LABEL_135:
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v87);
-  v89 = *(IUnknown **)&g_NetworkPlayerBuffer[5412];
+  v89 = *(IUnknown **)((char *)&g_NetworkPlayerBuffer + 5412);
   v90 = (char *)operator new(0x10u);
   if ( v90 )
-    v91 = TerrainInitMap(v90, (RandomStruct *)&stru_830620[72276], v89);
+    v91 = TerrainInitMap(v90, (RandomStruct *)&stru_830620[72276], (int)(void *)(v89));
   else
     v91 = 0;
   ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v91);
-  ModuleInternalVersion = GetModuleInternalVersion((int)&g_NetworkPlayerBuffer[5796]);
-  wsprintfA(v286, &stru_830620[72272], ModuleInternalVersion);
+  ModuleInternalVersion = GetModuleInternalVersion((void *)((char *)&g_NetworkPlayerBuffer + 5796));
+  wsprintfA(v286, (const char *)&stru_830620[72272], ModuleInternalVersion);
   v93 = (char *)operator new(0x10u);
   if ( v93 )
     v94 = BuildResultPacket(v93, &stru_830620[72264], (IUnknown *)v286);
@@ -573,21 +556,21 @@ LABEL_135:
   {
     LastWriteTime.dwLowDateTime = htonl(LastWriteTime.dwLowDateTime);
     LastWriteTime.dwHighDateTime = htonl(LastWriteTime.dwHighDateTime);
-    char * v95 = (char *)operator new(0x10u);
+    v95 = (char *)operator new(0x10u);
     if ( v95 )
-      char * v96 = NetMessage::Pack(v95, &stru_830620[72256], (IUnknown *)&LastWriteTime, (IUnknown *)8);
+      v96 = NetMessage::Pack(v95, &stru_830620[72256], (IUnknown *)&LastWriteTime, 8);
     else
       v96 = 0;
-    ((LinkedList_flat*)v262)->PushFront((IUnknown *)v96);
+    ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v96);
   }
   if ( g_GameOptionsFlags != 1 )
   {
     if ( g_GameOptionsFlags == 2 )
     {
-      char * v99 = (char *)operator new(0x10u);
+      v99 = (char *)operator new(0x10u);
       if ( v99 )
       {
-        v98 = TerrainInitMap(v99, (RandomStruct *)&stru_830620[72248], (IUnknown *)4);
+        v98 = TerrainInitMap(v99, (RandomStruct *)&stru_830620[72248], (int)(void *)((IUnknown *)4));
         goto LABEL_157;
       }
     }
@@ -595,10 +578,10 @@ LABEL_135:
     {
       if ( g_GameOptionsFlags != 4 )
         goto LABEL_158;
-      char * v100 = (char *)operator new(0x10u);
+      v100 = (char *)operator new(0x10u);
       if ( v100 )
       {
-        v98 = TerrainInitMap(v100, (RandomStruct *)&stru_830620[72248], (IUnknown *)1);
+        v98 = TerrainInitMap(v100, (RandomStruct *)&stru_830620[72248], (int)(void *)((IUnknown *)1));
         goto LABEL_157;
       }
     }
@@ -609,19 +592,19 @@ LABEL_156:
   v97 = (char *)operator new(0x10u);
   if ( !v97 )
     goto LABEL_156;
-  v98 = TerrainInitMap(v97, (RandomStruct *)&stru_830620[72248], (IUnknown *)2);
+  v98 = TerrainInitMap(v97, (RandomStruct *)&stru_830620[72248], (int)(void *)((IUnknown *)2));
 LABEL_157:
   ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v98);
 LABEL_158:
   if ( g_GameStateFlags )
   {
     v101 = (IUnknown *)(*(int (**)(SkirmishDialog *))(*(unsigned int *)g_GameStateFlags->__pad_0 + 184))(g_GameStateFlags);
-    char * v102 = (char *)operator new(0x10u);
+    v102 = (char *)operator new(0x10u);
     if ( v102 )
-      char * v103 = TerrainInitMap(v102, (RandomStruct *)&stru_830620[72240], v101);
+      v103 = TerrainInitMap(v102, (RandomStruct *)&stru_830620[72240], (int)(void *)(v101));
     else
       v103 = 0;
-    ((LinkedList_flat*)v262)->PushFront((IUnknown *)v103);
+    ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v103);
   }
   v104 = 0;
   v268 = 0;
@@ -629,96 +612,92 @@ LABEL_158:
   {
     while ( 1 )
     {
-  char *v240; // eax
-  char *v236; // eax
-  char *v232; // eax
-  char *v228; // eax
       int v105 = *(unsigned int *)&v283[4 * (unsigned int)v104 - 4];
       char v106 = (unsigned char)v104 + 48;
       char v263 = (unsigned char)v104 + 48;
       stru_830620[71971] = (unsigned char)v104 + 48;
-      char * v107 = (char *)operator new(0x10u);
+      v107 = (char *)operator new(0x10u);
       if ( v107 )
-        char * v108 = BuildResultPacket(v107, &stru_830620[71968], (IUnknown *)(v105 + 90100));
+        v108 = BuildResultPacket(v107, &stru_830620[71968], (IUnknown *)(v105 + 90100));
       else
         v108 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v108);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v108);
       v110 = *(ObjectClass **)(v105 + 512);
       stru_830620[72147] = v106;
       eax169 = (char *)operator new(0x10u);
       if ( eax169 )
-        char * v111 = TerrainInitMap(eax169, (RandomStruct *)&stru_830620[72144], (IUnknown *)v110);
+        v111 = TerrainInitMap(eax169, (RandomStruct *)&stru_830620[72144], (int)(void *)((IUnknown *)v110));
       else
         v111 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v111);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v111);
       v113 = *(ObjectClass **)(v105 + 516);
       stru_830620[72155] = v106;
       eax172 = (char *)operator new(0x10u);
       if ( eax172 )
-        char * v114 = TerrainInitMap(eax172, (RandomStruct *)&stru_830620[72152], (IUnknown *)v113);
+        v114 = TerrainInitMap(eax172, (RandomStruct *)&stru_830620[72152], (int)(void *)((IUnknown *)v113));
       else
         v114 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v114);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v114);
       stru_830620[71979] = v106;
       v116 = *(ObjectClass **)(v105 + 488);
       eax175 = (char *)operator new(0x10u);
       if ( eax175 )
-        char * v117 = TerrainInitMap(eax175, (RandomStruct *)&stru_830620[71976], (IUnknown *)v116);
+        v117 = TerrainInitMap(eax175, (RandomStruct *)&stru_830620[71976], (int)(void *)((IUnknown *)v116));
       else
         v117 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v117);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v117);
       stru_830620[71987] = v106;
       v118 = v268;
-      if ( dword_B779C4 == (IUnknown *)2 )
+      if ( *(unsigned int *)dword_B779C4 == 2 )
         v118 = *(IUnknown **)(v105 + 516);
-      char * v119 = (char *)operator new(0x10u);
+      v119 = (char *)operator new(0x10u);
       if ( v119 )
-        char * v120 = TerrainInitMap(v119, (RandomStruct *)&stru_830620[71984], v118);
+        v120 = TerrainInitMap(v119, (RandomStruct *)&stru_830620[71984], (int)(void *)(v118));
       else
         v120 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v120);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v120);
       stru_830620[72139] = v106;
-      char * v121 = (char *)operator new(0x10u);
+      v121 = (char *)operator new(0x10u);
       if ( v121 )
-        char * v122 = TerrainInitMap(v121, (RandomStruct *)&stru_830620[72136], v284[(unsigned int)v268]);
+        v122 = TerrainInitMap(v121, (RandomStruct *)&stru_830620[72136], (int)(void *)(v284[(unsigned int)v268]));
       else
         v122 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v122);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v122);
       stru_830620[72163] = v106;
       char v123 = *(unsigned char *)(v105 + 520);
       IDA_LOBYTE(v270) = 0;
       if ( v123 )
         IDA_LOBYTE(v270) = *(unsigned char *)(v105 + 583) == 0;
-      char * v124 = (char *)operator new(0x10u);
+      v124 = (char *)operator new(0x10u);
       if ( v124 )
-        char * v125 = String::AllocAndCopy(v124, (RandomStruct *)&stru_830620[72160], v270);
+        v125 = ((String *)v124)->AllocAndCopy((RandomStruct *)&stru_830620[72160], (IUnknown *)v270);
       else
         v125 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v125);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v125);
       stru_830620[71995] = v106;
       v127 = *(ObjectClass **)(v105 + 90196);
       eax191 = (char *)operator new(0x10u);
       if ( eax191 )
-        char * v128 = TerrainInitMap(eax191, (RandomStruct *)&stru_830620[71992], (IUnknown *)v127);
+        v128 = TerrainInitMap(eax191, (RandomStruct *)&stru_830620[71992], (int)(void *)((IUnknown *)v127));
       else
         v128 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v128);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v128);
       stru_830620[72003] = v106;
       v130 = *(ObjectClass **)(*(unsigned int *)(v105 + 52) + 184);
       eax194 = (char *)operator new(0x10u);
       if ( eax194 )
-        char * v131 = TerrainInitMap(eax194, (RandomStruct *)&stru_830620[72000], (IUnknown *)v130);
+        v131 = TerrainInitMap(eax194, (RandomStruct *)&stru_830620[72000], (int)(void *)((IUnknown *)v130));
       else
         v131 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v131);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v131);
       stru_830620[72011] = v106;
       int v132 = (*(int (**)(int))(*(unsigned int *)(v105 + 36) + 24))(v105 + 36);
-      char * v133 = (char *)operator new(0x10u);
+      v133 = (char *)operator new(0x10u);
       if ( v133 )
-        char * v134 = NetMessage::Pack4(v133, (RandomStruct *)&stru_830620[72008], v132);
+        v134 = NetMessage::Pack4(v133, (RandomStruct *)&stru_830620[72008], v132);
       else
         v134 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v134);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v134);
       stru_830620[72059] = v106;
       stru_830620[72051] = v106;
       stru_830620[72067] = v106;
@@ -737,15 +716,14 @@ LABEL_158:
       v138 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 2864));
       eax204 = (char *)operator new(0x10u);
       if ( eax204 )
-  char *v139; // eax
         v139 = NetMessage::Pack(
                  eax204,
                  &stru_830620[72056],
                  (IUnknown *)v138,
-                 (IUnknown *)(4 * (int)v264.vfptr));
+                 (4 * (int)v264.vfptr));
       else
         v139 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v139);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v139);
       int v140 = *(unsigned int *)(v105 + 6968);
       int v141 = 0;
       for ( v264.vfptr = 0; v141 < v140; ++v141 )
@@ -756,15 +734,14 @@ LABEL_158:
       v143 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 4920));
       eax211 = (char *)operator new(0x10u);
       if ( eax211 )
-  char *v144; // eax
         v144 = NetMessage::Pack(
                  eax211,
                  &stru_830620[72048],
                  (IUnknown *)v143,
-                 (IUnknown *)(4 * (int)v264.vfptr));
+                 (4 * (int)v264.vfptr));
       else
         v144 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v144);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v144);
       int v145 = *(unsigned int *)(v105 + 2856);
       int v146 = 0;
       for ( v264.vfptr = 0; v146 < v145; ++v146 )
@@ -775,15 +752,14 @@ LABEL_158:
       v148 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 808));
       eax218 = (char *)operator new(0x10u);
       if ( eax218 )
-  char *v149; // eax
         v149 = NetMessage::Pack(
                  eax218,
                  &stru_830620[72064],
                  (IUnknown *)v148,
-                 (IUnknown *)(4 * (int)v264.vfptr));
+                 (4 * (int)v264.vfptr));
       else
         v149 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v149);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v149);
       int v150 = *(unsigned int *)(v105 + 9024);
       int v151 = 0;
       for ( v264.vfptr = 0; v151 < v150; ++v151 )
@@ -794,15 +770,14 @@ LABEL_158:
       v153 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 6976));
       eax225 = (char *)operator new(0x10u);
       if ( eax225 )
-  char *v154; // eax
         v154 = NetMessage::Pack(
                  eax225,
                  &stru_830620[72072],
                  (IUnknown *)v153,
-                 (IUnknown *)(4 * (int)v264.vfptr));
+                 (4 * (int)v264.vfptr));
       else
         v154 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v154);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v154);
       Array::ByteSwap((u_long *)(v105 + 2864));
       Array::ByteSwap((u_long *)(v105 + 4920));
       Array::ByteSwap((u_long *)(v105 + 808));
@@ -811,9 +786,9 @@ LABEL_158:
       Array::Zero((unsigned int *)(v105 + 808));
       Array::Zero((unsigned int *)(v105 + 4920));
       Array::Zero((unsigned int *)(v105 + 6976));
-      for ( i = 0; i < *(int *)&g_CellDirectionOffsets[84616]; ++i )
+      for ( i = 0; i < *(int *)((char *)&g_CellDirectionOffsets + 84616); ++i )
       {
-        int v156 = *(unsigned int *)(*(unsigned int *)&g_CellDirectionOffsets[84604] + 4 * i);
+        int v156 = *(unsigned int *)(*(unsigned int *)((char *)&g_CellDirectionOffsets + 84604) + 4 * i);
         if ( v105 == *(unsigned int *)(v156 + 540) )
           HouseClass::IncrementStat((unsigned int *)(v105 + 4920), *(unsigned int *)(*(unsigned int *)(v156 + 1732) + 3576));
       }
@@ -827,9 +802,9 @@ LABEL_158:
             HouseClass::IncrementStat((unsigned int *)(v105 + 2864), *(unsigned int *)(v159 + 3576));
         }
       }
-      for ( k = 0; k < *(int *)&g_NetworkPlayerBuffer[3428]; ++k )
+      for ( k = 0; k < *(int *)((char *)&g_NetworkPlayerBuffer + 3428); ++k )
       {
-        int v161 = *(unsigned int *)(*(unsigned int *)&g_NetworkPlayerBuffer[3416] + 4 * k);
+        int v161 = *(unsigned int *)(*(unsigned int *)((char *)&g_NetworkPlayerBuffer + 3416) + 4 * k);
         if ( v105 == *(unsigned int *)(v161 + 540) )
           HouseClass::IncrementStat((unsigned int *)(v105 + 808), *(unsigned int *)(*(unsigned int *)(v161 + 1732) + 3576));
       }
@@ -856,15 +831,14 @@ LABEL_158:
       v167 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 2864));
       eax247 = (char *)operator new(0x10u);
       if ( eax247 )
-  char *v168; // eax
         v168 = NetMessage::Pack(
                  eax247,
                  &stru_830620[72024],
                  (IUnknown *)v167,
-                 (IUnknown *)(4 * (int)v264.vfptr));
+                 (4 * (int)v264.vfptr));
       else
         v168 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v168);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v168);
       int v169 = *(unsigned int *)(v105 + 6968);
       int v170 = 0;
       for ( n = 0; n < v169; ++n )
@@ -875,10 +849,10 @@ LABEL_158:
       v173 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 4920));
       eax254 = (char *)operator new(0x10u);
       if ( eax254 )
-        char * v174 = NetMessage::Pack(eax254, &stru_830620[72016], (IUnknown *)v173, (IUnknown *)(4 * v170));
+        v174 = NetMessage::Pack(eax254, &stru_830620[72016], (IUnknown *)v173, (4 * v170));
       else
         v174 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v174);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v174);
       int v175 = *(unsigned int *)(v105 + 2856);
       int v176 = 0;
       for ( ii = 0; ii < v175; ++ii )
@@ -889,10 +863,10 @@ LABEL_158:
       v179 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 808));
       eax261 = (char *)operator new(0x10u);
       if ( eax261 )
-        char * v180 = NetMessage::Pack(eax261, &stru_830620[72032], (IUnknown *)v179, (IUnknown *)(4 * v176));
+        v180 = NetMessage::Pack(eax261, &stru_830620[72032], (IUnknown *)v179, (4 * v176));
       else
         v180 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v180);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v180);
       int v181 = *(unsigned int *)(v105 + 9024);
       int v182 = 0;
       for ( jj = 0; jj < v181; ++jj )
@@ -903,10 +877,10 @@ LABEL_158:
       v185 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 6976));
       eax268 = (char *)operator new(0x10u);
       if ( eax268 )
-        char * v186 = NetMessage::Pack(eax268, &stru_830620[72040], (IUnknown *)v185, (IUnknown *)(4 * v182));
+        v186 = NetMessage::Pack(eax268, &stru_830620[72040], (IUnknown *)v185, (4 * v182));
       else
         v186 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v186);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v186);
       HouseClass::NetworkConvert((unsigned int *)(v105 + 11088));
       HouseClass::NetworkConvert((unsigned int *)(v105 + 13144));
       HouseClass::NetworkConvert((unsigned int *)(v105 + 9032));
@@ -931,15 +905,14 @@ LABEL_158:
       v190 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 11088));
       eax275 = (char *)operator new(0x10u);
       if ( eax275 )
-  char *v191; // eax
         v191 = NetMessage::Pack(
                  eax275,
                  &stru_830620[72088],
                  (IUnknown *)v190,
-                 (IUnknown *)(4 * (int)v264.vfptr));
+                 (4 * (int)v264.vfptr));
       else
         v191 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v191);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v191);
       int v192 = *(unsigned int *)(v105 + 15192);
       int v193 = 0;
       for ( kk = 0; kk < v192; ++kk )
@@ -950,10 +923,10 @@ LABEL_158:
       v196 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 13144));
       eax282 = (char *)operator new(0x10u);
       if ( eax282 )
-        char * v197 = NetMessage::Pack(eax282, &stru_830620[72080], (IUnknown *)v196, (IUnknown *)(4 * v193));
+        v197 = NetMessage::Pack(eax282, &stru_830620[72080], (IUnknown *)v196, (4 * v193));
       else
         v197 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v197);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v197);
       int v198 = *(unsigned int *)(v105 + 11080);
       int v199 = 0;
       for ( mm = 0; mm < v198; ++mm )
@@ -964,10 +937,10 @@ LABEL_158:
       v202 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 9032));
       eax289 = (char *)operator new(0x10u);
       if ( eax289 )
-        char * v203 = NetMessage::Pack(eax289, &stru_830620[72096], (IUnknown *)v202, (IUnknown *)(4 * v199));
+        v203 = NetMessage::Pack(eax289, &stru_830620[72096], (IUnknown *)v202, (4 * v199));
       else
         v203 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v203);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v203);
       int v204 = *(unsigned int *)(v105 + 17248);
       int v205 = 0;
       for ( nn = 0; nn < v204; ++nn )
@@ -978,10 +951,10 @@ LABEL_158:
       v208 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 15200));
       eax296 = (char *)operator new(0x10u);
       if ( eax296 )
-        char * v209 = NetMessage::Pack(eax296, &stru_830620[72104], (IUnknown *)v208, (IUnknown *)(4 * v205));
+        v209 = NetMessage::Pack(eax296, &stru_830620[72104], (IUnknown *)v208, (4 * v205));
       else
         v209 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v209);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v209);
       stru_830620[72115] = v263;
       HouseClass::NetworkConvert((unsigned int *)(v105 + 17256));
       int v210 = *(unsigned int *)(v105 + 19304);
@@ -994,15 +967,14 @@ LABEL_158:
       v213 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 17256));
       eax303 = (char *)operator new(0x10u);
       if ( eax303 )
-  char *v214; // eax
         v214 = NetMessage::Pack(
                  eax303,
                  &stru_830620[72112],
                  (IUnknown *)v213,
-                 (IUnknown *)(4 * (int)v264.vfptr));
+                 (4 * (int)v264.vfptr));
       else
         v214 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v214);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v214);
       stru_830620[72123] = v263;
       HouseClass::NetworkConvert((unsigned int *)(v105 + 19312));
       int v215 = *(unsigned int *)(v105 + 21360);
@@ -1015,40 +987,39 @@ LABEL_158:
       v218 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 19312));
       eax310 = (char *)operator new(0x10u);
       if ( eax310 )
-  char *v219; // eax
         v219 = NetMessage::Pack(
                  eax310,
                  &stru_830620[72120],
                  (IUnknown *)v218,
-                 (IUnknown *)(4 * (int)v264.vfptr));
+                 (4 * (int)v264.vfptr));
       else
         v219 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v219);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v219);
       char v220 = v263;
       stru_830620[72131] = v263;
       v222 = *(ObjectClass **)(v105 + 736);
       eax313 = (char *)operator new(0x10u);
       if ( eax313 )
-        char * v223 = TerrainInitMap(eax313, (RandomStruct *)&stru_830620[72128], (IUnknown *)v222);
+        v223 = TerrainInitMap(eax313, (RandomStruct *)&stru_830620[72128], (int)(void *)((IUnknown *)v222));
       else
         v223 = 0;
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v223);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v223);
       stru_830620[72171] = v220;
       v224 = v269;
       v225 = v268;
       if ( v269 == v268 )
       {
         v226 = (IUnknown *)DataGlobal_84E863;
-        char * v227 = (char *)operator new(0x10u);
+        v227 = (char *)operator new(0x10u);
         if ( v227 )
         {
-          v228 = TerrainInitMap(v227, (RandomStruct *)&stru_830620[72168], v226);
+          v228 = TerrainInitMap(v227, (RandomStruct *)&stru_830620[72168], (int)(void *)(v226));
           goto LABEL_322;
         }
       }
       else
       {
-        char * v229 = (char *)operator new(0x10u);
+        v229 = (char *)operator new(0x10u);
         if ( v229 )
         {
           v228 = NetMessage::Pack4(v229, (RandomStruct *)&stru_830620[72168], -1);
@@ -1057,12 +1028,12 @@ LABEL_158:
       }
       v228 = 0;
 LABEL_322:
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v228);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v228);
       stru_830620[72179] = v220;
       if ( v224 == v225 )
       {
-        unsigned int v230 = Performance::MeasureTicks();
-        char * v231 = (char *)operator new(0x10u);
+        unsigned int v230 = (unsigned int)Performance::MeasureTicks((void *)&v262);
+        v231 = (char *)operator new(0x10u);
         if ( v231 )
         {
           v232 = NetMessage::Pack4(v231, (RandomStruct *)&stru_830620[72176], v230);
@@ -1071,7 +1042,7 @@ LABEL_322:
       }
       else
       {
-        char * v233 = (char *)operator new(0x10u);
+        v233 = (char *)operator new(0x10u);
         if ( v233 )
         {
           v232 = NetMessage::Pack4(v233, (RandomStruct *)&stru_830620[72176], -1);
@@ -1080,21 +1051,21 @@ LABEL_322:
       }
       v232 = 0;
 LABEL_328:
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v232);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v232);
       stru_830620[72187] = v220;
       if ( v224 == v225 )
       {
         Buffer.dwLength = 32;
         GlobalMemoryStatus(&Buffer);
         dwTotalPhys = Buffer.dwTotalPhys;
-        char * v235 = (char *)operator new(0x10u);
+        v235 = (char *)operator new(0x10u);
         if ( !v235 )
           goto LABEL_333;
         v236 = NetMessage::Pack4(v235, (RandomStruct *)&stru_830620[72184], dwTotalPhys);
       }
       else
       {
-        char * v237 = (char *)operator new(0x10u);
+        v237 = (char *)operator new(0x10u);
         if ( !v237 )
         {
 LABEL_333:
@@ -1104,22 +1075,22 @@ LABEL_333:
         v236 = NetMessage::Pack4(v237, (RandomStruct *)&stru_830620[72184], -1);
       }
 LABEL_334:
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v236);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v236);
       stru_830620[72195] = v220;
-      if ( v224 == v225 && *(unsigned int *)&g_CellDirectionOffsets[2564] )
+      if ( v224 == v225 && *(unsigned int *)((char *)&g_CellDirectionOffsets + 2564) )
       {
   int v287[15]; // [esp+15Ch] [ebp-825Ch] BYREF
         v287[0] = 316;
-        if ( (*(int (**)(unsigned int, int *, unsigned int))(**(unsigned int **)&g_CellDirectionOffsets[2564] + 44))(
-               *(unsigned int *)&g_CellDirectionOffsets[2564],
+        if ( (*(int (**)(unsigned int, int *, unsigned int))(**(unsigned int **)((char *)&g_CellDirectionOffsets + 2564) + 44))(
+               *(unsigned int *)((char *)&g_CellDirectionOffsets + 2564),
                v287,
                0) )
         {
           goto LABEL_343;
         }
   int v288; // [esp+198h] [ebp-8220h]
-        unsigned int v238 = (v288 + 0xFFFFF) & 0xFFF00000;
-        char * v239 = (char *)operator new(0x10u);
+        unsigned int v238; v238 = (v288 + 0xFFFFF) & 0xFFF00000;  /* G42.33 b9: split init (goto crossing) */
+        v239 = (char *)operator new(0x10u);
         if ( !v239 )
         {
 LABEL_341:
@@ -1130,126 +1101,126 @@ LABEL_341:
       }
       else
       {
-        char * v241 = (char *)operator new(0x10u);
+        v241 = (char *)operator new(0x10u);
         if ( !v241 )
           goto LABEL_341;
         v240 = NetMessage::Pack4(v241, (RandomStruct *)&stru_830620[72192], -1);
       }
 LABEL_342:
-      ((LinkedList_flat*)v262)->PushFront((IUnknown *)v240);
+      ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v240);
 LABEL_343:
-      v268 = (IUnknown *)((char *)&v225->field_0 + 1);
-      if ( (char *)&v225->field_0 + 1 >= (char *)aP2 )
+      v268 = (IUnknown *)((char *)v225 + 1);
+      if ( (char *)v225 + 1 >= (char *)aP2 )
         break;
       v104 = v268;
     }
   }
-  vfptr = (char *)Event_Process_625C00((int)v262, (size_t *)&g_OverlayTypeConfig[17816]);
+  vfptr = (char *)(void *)(unsigned int)Event_Process_625C00((void *)v262, (int)*(unsigned int *)((char *)&g_OverlayTypeConfig + 17816));
   v264.vfptr = vfptr;
   if ( *(&g_MatrixTransformState + 2264) )
   {
     X = (*(&g_MatrixTransformState + 2264))->X;
     if ( v266 )
-      (*(void (**)(unsigned int, char *, CCINIClass *, char *, unsigned int))(X + 12))(
+      (*(void (__stdcall **)(unsigned int, const void *, void *, void *, unsigned int))(X + 12))(
         *(&g_MatrixTransformState + 2264),
         &byte_B77CE8,
-        dword_B75F5C,
+        (void *)dword_B75F5C,
         vfptr,
-        *(unsigned int *)&g_OverlayTypeConfig[17816]);
+        *(unsigned int *)((char *)&g_OverlayTypeConfig + 17816));
     else
-      (*(void (**)(unsigned int, char *, CCINIClass *, char *, unsigned int))(X + 12))(
+      (*(void (__stdcall **)(unsigned int, const void *, void *, void *, unsigned int))(X + 12))(
         *(&g_MatrixTransformState + 2264),
-        byte_B77930,
-        dword_B76184,
+        &byte_B77930,
+        (void *)dword_B76184,
         vfptr,
-        *(unsigned int *)&g_OverlayTypeConfig[17816]);
+        *(unsigned int *)((char *)&g_OverlayTypeConfig + 17816));
   }
-  if ( *(int *)&g_OverlayTypeConfig[17816] <= 0x8000
+  if ( *(int *)((char *)&g_OverlayTypeConfig + 17816) <= 0x8000
     && vfptr
-    && *(int *)&g_OverlayTypeConfig[17816] >= 1 )
+    && *(int *)((char *)&g_OverlayTypeConfig + 17816) >= 1 )
   {
   char *v255; // edx
   unsigned int v290[8194]; // [esp+3B0h] [ebp-8008h] BYREF
-    v290[1] = *(unsigned int *)&g_OverlayTypeConfig[17816];
-    char v244 = g_OverlayTypeConfig[17816];
+    v290[1] = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17816);
+    char v244 = *((char *)&g_OverlayTypeConfig + 17816);
     v290[0] = 0;
-    int v245 = *(unsigned int *)&g_OverlayTypeConfig[17816] >> 2;
-    qmemcpy(&v290[2], vfptr, 4 * (*(unsigned int *)&g_OverlayTypeConfig[17816] >> 2));
-    char * v247 = &vfptr[4 * v245];
+    int v245 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17816) >> 2;
+    qmemcpy(&v290[2], vfptr, 4 * (*(unsigned int *)((char *)&g_OverlayTypeConfig + 17816) >> 2));
+    v247 = &vfptr[4 * v245];
     unsigned int * v246 = &v290[v245 + 2];
     IDA_LOBYTE(v245) = v244;
-    int v248 = *(unsigned int *)&g_OverlayTypeConfig[17756];
+    int v248 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17756);
     qmemcpy(v246, v247, v245 & 3);
-    int v249 = *(unsigned int *)&g_OverlayTypeConfig[17752];
-    v269 = *(IUnknown **)&g_OverlayTypeConfig[17752];
-    if ( *(int *)&g_OverlayTypeConfig[17752] < v248 )
+    int v249 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
+    v269 = *(IUnknown **)((char *)&g_OverlayTypeConfig + 17752);
+    if ( *(int *)((char *)&g_OverlayTypeConfig + 17752) < v248 )
     {
-      v255 = *(char **)&g_OverlayTypeConfig[17760];
+      v255 = *(char **)((char *)&g_OverlayTypeConfig + 17760);
     }
     else
     {
-      int v250 = 2 * *(unsigned int *)&g_OverlayTypeConfig[17752];
-      if ( 2 * *(unsigned int *)&g_OverlayTypeConfig[17752] < 10 )
+      int v250 = 2 * *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
+      if ( 2 * *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752) < 10 )
         v250 = 10;
-      char * v251 = (char *)operator new(32776 * v250);
+      v251 = (char *)operator new(32776 * v250);
       memset(v251, 0, 4 * ((unsigned int)(32776 * v250) >> 2));
-      v252 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
-      if ( *(unsigned int *)&g_OverlayTypeConfig[17760] )
+      v252 = *(AbstractClass **)((char *)&g_OverlayTypeConfig + 17760);
+      if ( *(unsigned int *)((char *)&g_OverlayTypeConfig + 17760) )
       {
-        char v253 = 8 * g_OverlayTypeConfig[17752];
-        unsigned int v254 = (unsigned int)(32776 * *(unsigned int *)&g_OverlayTypeConfig[17752]) >> 2;
-        qmemcpy(v251, *(const void **)&g_OverlayTypeConfig[17760], 4 * v254);
+        char v253 = 8 * *((char *)&g_OverlayTypeConfig + 17752);
+        unsigned int v254 = (unsigned int)(32776 * *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752)) >> 2;
+        qmemcpy(v251, *(const void **)((char *)&g_OverlayTypeConfig + 17760), 4 * v254);
         qmemcpy(&v251[4 * v254], (char *)v252 + 4 * v254, v253 & 3);
-        v252 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
+        v252 = *(AbstractClass **)((char *)&g_OverlayTypeConfig + 17760);
       }
       RA2_OPDEL(v252);
-      v249 = *(unsigned int *)&g_OverlayTypeConfig[17752];
+      v249 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
       v255 = v251;
-      *(unsigned int *)&g_OverlayTypeConfig[17760] = v251;
-      *(unsigned int *)&g_OverlayTypeConfig[17756] = v250;
-      if ( *(int *)&g_OverlayTypeConfig[17752] >= v250 )
+      *(unsigned int *)((char *)&g_OverlayTypeConfig + 17760) = v251;
+      *(unsigned int *)((char *)&g_OverlayTypeConfig + 17756) = v250;
+      if ( *(int *)((char *)&g_OverlayTypeConfig + 17752) >= v250 )
       {
-        int v256 = 2 * *(unsigned int *)&g_OverlayTypeConfig[17752];
-        if ( 2 * *(unsigned int *)&g_OverlayTypeConfig[17752] < 10 )
+        int v256 = 2 * *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
+        if ( 2 * *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752) < 10 )
           v256 = 10;
-        char * v257 = (char *)operator new(32776 * v256);
+        v257 = (char *)operator new(32776 * v256);
         memset(v257, 0, 4 * ((unsigned int)(32776 * v256) >> 2));
-        v258 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
-        if ( *(unsigned int *)&g_OverlayTypeConfig[17760] )
+        v258 = *(AbstractClass **)((char *)&g_OverlayTypeConfig + 17760);
+        if ( *(unsigned int *)((char *)&g_OverlayTypeConfig + 17760) )
         {
-          char v259 = 8 * g_OverlayTypeConfig[17752];
-          unsigned int v260 = (unsigned int)(32776 * *(unsigned int *)&g_OverlayTypeConfig[17752]) >> 2;
-          qmemcpy(v257, *(const void **)&g_OverlayTypeConfig[17760], 4 * v260);
+          char v259 = 8 * *((char *)&g_OverlayTypeConfig + 17752);
+          unsigned int v260 = (unsigned int)(32776 * *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752)) >> 2;
+          qmemcpy(v257, *(const void **)((char *)&g_OverlayTypeConfig + 17760), 4 * v260);
           qmemcpy(&v257[4 * v260], (char *)v258 + 4 * v260, v259 & 3);
-          v258 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
+          v258 = *(AbstractClass **)((char *)&g_OverlayTypeConfig + 17760);
         }
         RA2_OPDEL(v258);
-        v249 = *(unsigned int *)&g_OverlayTypeConfig[17752];
+        v249 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
         v255 = v257;
-        *(unsigned int *)&g_OverlayTypeConfig[17760] = v257;
-        *(unsigned int *)&g_OverlayTypeConfig[17756] = v256;
+        *(unsigned int *)((char *)&g_OverlayTypeConfig + 17760) = v257;
+        *(unsigned int *)((char *)&g_OverlayTypeConfig + 17756) = v256;
       }
       if ( (int)v269 < v249 )
       {
         memcpy(
-          &v255[32776 * ((unsigned int)&v269->field_0 + 1)],
+          &v255[32776 * ((unsigned int)(char *)v269 + 1)],
           &v255[32776 * (unsigned int)v269],
           32776 * v249 - 32776 * (unsigned int)v269);
-        v255 = *(char **)&g_OverlayTypeConfig[17760];
-        v249 = *(unsigned int *)&g_OverlayTypeConfig[17752];
+        v255 = *(char **)((char *)&g_OverlayTypeConfig + 17760);
+        v249 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
       }
     }
-    char * v261 = &v255[32776 * (unsigned int)v269];
+    v261 = &v255[32776 * (unsigned int)v269];
     if ( v261 )
     {
       qmemcpy(v261, v290, 0x8008u);
-      v249 = *(unsigned int *)&g_OverlayTypeConfig[17752];
+      v249 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
     }
     vfptr = (char *)v264.vfptr;
-    *(unsigned int *)&g_OverlayTypeConfig[17752] = v249 + 1;
+    *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752) = v249 + 1;
   }
   RA2_OPDEL(vfptr);
-  g_NetworkPlayerBuffer[8900] = 1;
+  ((char *)&g_NetworkPlayerBuffer + 8900) = 1;
   ((RawFileClass *)((int *)&v272))->Dtor();
   ((ResultNode *)(v262))->CleanupList();
 }
@@ -1269,7 +1240,7 @@ int sub_6C87F0()
 }
 // 0x6C8FF0
 namespace gamemd {
-void DlgProcScoreScreen()
+int DlgProcScoreScreen(HWND hWnd, UINT a2, WPARAM wParam, LPARAM a4)
 {
   int result; // eax
   unsigned int *WindowLongA; // eax
@@ -1320,8 +1291,8 @@ void DlgProcScoreScreen()
       else if ( a2 == 1260 ) /*0x6c9388*/
       {
         ((AudioController *)(stru_B0BF28))->Stop(); /*0x6c938f*/
-        v32 = (unsigned int *)PlayVocClass(dword_8871E0->BunkerWallsUpSound, 0x2000, 1.0, 0); /*0x6c93ad*/
-        SetAudioSource((int)stru_B0BF28, v32, 0); /*0x6c93b9*/
+        v32 = (unsigned int *)(void *)(unsigned int)(PlayVocClass(dword_8871E0->BunkerWallsUpSound, 0x2000, 1.0, 0)); /*0x6c93ad*/
+        SetAudioSource((AudioMixer *)(void *)&stru_B0BF28, v32, 0); /*0x6c93b9*/
         SendDlgItemMessageA(hWnd, 1835, 0x4D3u, 0, 0); /*0x6c93c7*/
       }
       return 0; /*0x6c93e1*/
@@ -1368,7 +1339,7 @@ void DlgProcScoreScreen()
     v8 = v6 / 60; /*0x6c90fc*/
     swprintf( /*0x6c9146*/
       lParam,
-      (const size_t)a02d02d02d_0,
+      (const wchar_t *)a02d02d02d_0,
       (const wchar_t *const)(v6 / 60 / 60 / 60),
       v6 / 60 / 60 % 60,
       v6 / 60 % 60);
@@ -1384,7 +1355,7 @@ void DlgProcScoreScreen()
     v12 = v10 / 60; /*0x6c91b7*/
     swprintf( /*0x6c9209*/
       lParam,
-      (const size_t)a02d02d02d_0,
+      (const wchar_t *)a02d02d02d_0,
       (const wchar_t *const)(v10 / 60 / 60 / 60),
       v10 / 60 / 60 % 60,
       v10 / 60 % 60);
@@ -1400,8 +1371,8 @@ void DlgProcScoreScreen()
       v14 = (wchar_t *)((char *)dword_A8B230 + 13744); /*0x6c9235*/
       v15 = (wchar_t *)((char *)dword_A8B230 + 13775); /*0x6c923b*/
     }
-    String = GetStringCSF(v14, 0, aDRa2mdpostStls, 138); /*0x6c926e*/
-    v17 = GetStringCSF(v15, 0, aDRa2mdpostStls, 139); /*0x6c927b*/
+    String = GetStringCSF(v14, 0, (wchar_t *)aDRa2mdpostStls, 138); /*0x6c926e*/
+    v17 = GetStringCSF(v15, 0, (wchar_t *)aDRa2mdpostStls, 139); /*0x6c927b*/
     v18 = GetDlgItem(hWnd, 1779); /*0x6c927d*/
     v33 = (LPARAM)String; /*0x6c927f*/
     v19 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x6c9280*/

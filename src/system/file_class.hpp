@@ -81,6 +81,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindFirstWithCD();  // 0x47AF70
     void* SetName(void* a1);  // 0x65CAC0
     bool Open2();  // 0x65CB50
+    bool Open2(const char* mode);  // G42.33 b3 supplied-call sync (1 参形)
+    int Write2(const void* pBuffer, unsigned long nNumBytes);  // G42.33 b3 supplied-call sync (2 参形)
     int CloseHandle();  // 0x65CCA0
     int Write2();  // 0x65CDD0
     int GetDosTimestamp();  // 0x65D1F0

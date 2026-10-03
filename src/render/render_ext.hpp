@@ -183,6 +183,7 @@ public:
 // Screen — screen management (4 methods)
 // IDA: Capture 0x48B2A0 area, TransitionRender, TransitionLoop
 // ============================================================================
+#ifndef GAMEMD_E4_Screen  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class Screen
 {
 public:
@@ -203,6 +204,7 @@ public:
     int CleanupTransitionObjects();  // 0x690360 -- Screen::CleanupTransitionObjects
     // === SYMBOL-ANCHOR (END) ===
 };
+#endif  // GAMEMD_E4_Screen
 
 // ============================================================================
 // Camera — camera/viewport management (4 methods)
@@ -800,6 +802,8 @@ public:
 };
 // 4 methods in IDA
 // CSP: BuildingLoadQueue matched via T1
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: misc_ext 版树宇宙抑制 (双守卫; 已应用态)
+#ifndef GAMEMD_E4_BuildingLoadQueue  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class BuildingLoadQueue
 {
 public:
@@ -815,6 +819,8 @@ public:
     uint8_t BuildingLoadQueue_field_0x08[4];
     uint8_t BuildingLoadQueue_field_0x0C[4];
 };
+#endif  // GAMEMD_E4_BuildingLoadQueue
+#endif  // GAMEMD_TREE_UNIVERSE (BuildingLoadQueue)
 // 9 methods in IDA
 // CSP: BuildingPlacement matched via T1
 class BuildingPlacement
@@ -963,6 +969,8 @@ public:
     uint8_t FrameSnapshot_field_0x04[4];
 };
 // 2 methods in IDA
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制
+#ifndef GAMEMD_E4_FrameTimer  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class FrameTimer
 {
 public:
@@ -974,6 +982,8 @@ public:
 
     uint8_t FrameTimer_field_0x04[4];
 };
+#endif  // GAMEMD_E4_FrameTimer
+#endif  // GAMEMD_TREE_UNIVERSE (FrameTimer)
 // 1 methods in IDA
 // CSP: PaletteClass matched via T1
 class PaletteClass

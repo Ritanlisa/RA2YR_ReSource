@@ -34,6 +34,9 @@ struct Buffer {
     unsigned int u32_88;
     unsigned int Buffer_field_00;
     unsigned int Buffer_field_04;
+    unsigned char m_1[16];  // G42.33 b3 flat-carrier vocab ([3] 索引基)
+    unsigned int m_C;  // G42.33 b3 flat-carrier vocab
+    unsigned int m_8;  // G42.33 b3 flat-carrier vocab
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_ObjectClass___(char a2, int a3, int aP1);
     int * RotateBufferCrypto(int * a2, int a3);
@@ -42,6 +45,8 @@ struct Buffer {
     unsigned int * Init(int a2, int Size);
     void * FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4);
     int Cleanup();  // 0x42f7c0
+    int UpdateVolumeSettings();  // 0x40A6D0 G42.33 b3 supplied-body sync
+    char * FillCircularBufferScroll(int a2, int a3, unsigned short a4);  // 0x410ED0 G42.33 b3 supplied-body sync
 };
 
 } // namespace gamemd

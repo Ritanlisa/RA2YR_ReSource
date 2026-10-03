@@ -1,6 +1,25 @@
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
-#include "core/hash_table.hpp"
+// G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed (G42.33 b3 补齐)
+#define GAMEMD_TREE_UNIVERSE 1
+// G42.33 b3: per-class opt-in -- e4 flat 载体取胜
+#define GAMEMD_E4_Buffer 1
+#define GAMEMD_E4_Text 1
+#define GAMEMD_E4_BuildingLoadQueue 1
+#define GAMEMD_E4_FrameTimer 1
+#define GAMEMD_E4_BitmapClass 1
+#define GAMEMD_E4_CampaignScore 1
+#define GAMEMD_E4_CampaignSelect 1
+#define GAMEMD_E4_FontClass 1
+#define GAMEMD_E4_FontRenderer 1
+#define GAMEMD_E4_ToolTipClass 1
+#define GAMEMD_E4_InputManager_ProcessEvents 1
+#define GAMEMD_E4_Straw 1
+#define GAMEMD_E4_Delegate 1
+#define GAMEMD_E4_Settings 1
+#define GAMEMD_E4_Screen 1
+#define GAMEMD_E4_Lobby 1
+#define GAMEMD_E4_Count 1
 #include "e4/classes/Text_e4.hpp"
 #include "core/stream_ext.hpp"
 #include "core/utility_ext.hpp"
@@ -22,6 +41,78 @@
 #include "ui/tool_tip.hpp"
 #include "ui/ui_ext.hpp"
 #include "wdt/wdt.hpp"
+// G42.33 b3: e4 flat 载体 (体表 static-form 调用宿主)
+#include "core/ddraw_init.hpp"       // g_BitShift_*/g_BitMask_* 全局
+#include "e4/classes/BitmapClass_e4.hpp"
+#include "e4/classes/CampaignScore_e4.hpp"
+#include "e4/classes/CampaignSelect_e4.hpp"
+#include "e4/classes/Count_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/FontClass_e4.hpp"
+#include "e4/classes/FontRenderer_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/InputManager_ProcessEvents_e4.hpp"
+#include "e4/classes/Lobby_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/ToolTipClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/Settings_e4.hpp"
+#include "e4/classes/Delegate_e4.hpp"
+#include "e4/classes/Straw_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+
+// G42.33 b3: 本地缺席全局/原型载体 (team R1 前例)
+extern unsigned int stru_A8EB00;      // data: 0xA8EB00
+// G42.33 b3: r6 缺席全局/原型
+extern int GetResourceIDCSF(int a1);  // 本地原型
+extern int GetLobbyPlayerColor(int a1);  // 本地原型
+extern int SetupSkirmishSpawnLocations(HWND hDlg);  // 本地原型
+extern wchar_t * GetStringCSF(wchar_t *key, unsigned int *a2, const char *a3, int a4);  // team R1 前例原型
+extern wchar_t * g_Str_File_CampScor_cpp;  // data: CSF 标签
+extern wchar_t * CharToWideString(int a1);  // 本地原型
+extern char * ToWideStringChar(char *a1);  // 本地原型
+extern int MapSkirmishDialogPlayerToControl(int a1);  // 本地原型
+extern int sub_46DCC0(int a1);  // 本地原型
+extern int sub_46DE20(int a1);  // 本地原型
+extern int BaseDialogProc(HWND a1, unsigned int a2, unsigned int a3, unsigned int a4);  // 本地原型
+extern unsigned int stru_A80220;      // data: 0xA80220 (Color Lerp 表基)
+extern int g_GameModeOptionState;     // data: 全局
+extern int CompareFunc2Int(int a1, int a2);  // 0x725040 (_generated/global_funcs 真值)
+extern int SendCampaignOptions();     // 0x46D4A0 本地原型 (Game:: 静态形式)
+extern int DecodeBitmapRGB(void *a1, int a2, void *a3, int a4);  // 本地原型
+extern int EncodeBitmapRGB(void *a1, int a2, void *a3, int a4);  // 本地原型
+extern int sub_434840(unsigned int *a1, unsigned int *a2, int *a3);  // 0x434840 本地原型
+extern int IsKnownPointer(void *a1);   // 本地原型
+extern int GetResourceID3CSF(void *a1);  // 本地原型
+extern void *SendToPlayer(int a1, int a2, int a3, int a4, wchar_t *a5);  // 0x541260 本地原型 (Network:: 静态形式)
+extern void *ReceiveLoop(int a1);  // 0x5410B0 区 本地原型 (Network:: 静态形式)
+// Base64Straw 完整本地载体 (体表 __pad_0 下标/成员用)
+struct Base64Straw { unsigned char __pad_0[8]; };  // G42.33 b3
+extern int GetHouseClassSideIndex(int a1);  // 本地原型 (调用点 int)
+// G42.33 b3: r8 缺席全局/原型
+extern void *g_UIControlState;        // data: 0xAC1154 (globals_core 同形)
+extern int g_Str_Fmt_PctD;            // data: "%d" 串
+extern int g_Str_TXT_WAITING;         // data: CSF 标签
+extern int g_Str_TXT_READY;           // data: CSF 标签
+extern int aGuiContinue;              // data: "GUIContinue" 串
+extern int aTxtAborted;               // data: "TXT_Aborted" 串
+extern int g_TypeClass_DefaultString; // data: 缺省串
+extern unsigned int stru_A8D600;      // data: 0xA8D600
+extern int InitDegToRad(void);        // 本地原型
+extern int AssignPlayerColor(int a1);  // 本地原型
+extern int AssignPlayerSide(int a1);   // 本地原型
+extern int EnableGameModeControls(HWND hDlg);  // 本地原型
+extern int SelectLobbyCountry(HWND hDlg);  // 本地原型
+extern int ReadChatMessage(int a1);   // 本地原型
+extern int SetDialogPlayerName(HWND hDlg, int a2);  // 本地原型
+extern int StartGame(HWND hDlg);      // 本地原型
+extern int ResetLobbyFactionTable(HWND hDlg);  // 本地原型
+extern int SetupLobbyFactionSlots(HWND hDlg, int a2, int a3);  // 本地原型
+extern int InitGameDropdownColors(void *a1);  // 本地原型
+// stru_A8B250 typed 宿主 (ida_globals 无; [N] 下标站点承载)
+struct stru_A8B250_host { unsigned char __pad_0[160]; };
+extern stru_A8B250_host stru_A8B250;  // data: 0xA8B250
 struct Base64Straw;  // G42.32 S R4: local fwd (ptr-form uses only; e4_protos full-header C2990-risky here)
 
 // 0x623840
@@ -48,7 +139,7 @@ unsigned int * SidebarClass::queryInterface(char a2) {
     ((GadgetClass*)(GadgetClass *)this)->Dtor(); /*0x6ac783*/
     if ( (a2 & 1) != 0 ) /*0x6ac78d*/
       RA2_OPDEL(this); /*0x6ac790*/
-    return &this->field_0; /*0x6ac79a*/
+    return (unsigned int *)(char *)this; /*0x6ac79a field_0 基址*/
 }
 } // namespace gamemd
 
@@ -101,7 +192,7 @@ char ToolTipClass::addRef(int a2) {
 namespace gamemd {
 int CommandClass::BinarySearchAction(unsigned int *a2) {
     int result; // eax
-    CommandClass v4; // edi
+    unsigned int v4; // edi G42.33 b3 (cache: _DWORD v4; 类载体抽象不可实例化)
     unsigned int v5; // ebx
     int v6; // ecx
     unsigned int v7; // esi
@@ -115,19 +206,19 @@ int CommandClass::BinarySearchAction(unsigned int *a2) {
         *((unsigned int *)this + 4) = 0; /*0x724fe8*/
         *((unsigned char *)this + 12) = 1; /*0x724fef*/
       }
-      v4 = *this; /*0x724ff9*/
+      v4 = *(unsigned int *)this; /*0x724ff9*/
       v5 = *a2; /*0x724ffb*/
       v6 = *((unsigned int *)this + 1); /*0x724ffd*/
       if ( v6 <= 0 ) /*0x725002*/
         return 0; /*0x72502e*/
       while ( 1 ) /*0x72500b*/
       {
-        v7 = *(unsigned int *)(*(unsigned int *)&v4 + 8 * (v6 / 2)); /*0x72500b*/
+        v7 = *(unsigned int *)(v4 + 8 * (v6 / 2)); /*0x72500b*/
         if ( v7 <= v5 ) /*0x725013*/
         {
           if ( v7 == v5 ) /*0x725019*/
-            return *(unsigned int *)&v4 + 8 * (v6 / 2); /*0x725033*/
-          *(unsigned int *)&v4 += 8 * (v6 / 2) + 8; /*0x72501b*/
+            return v4 + 8 * (v6 / 2); /*0x725033*/
+          v4 += 8 * (v6 / 2) + 8; /*0x72501b*/
           v6 += -1 - v6 / 2; /*0x725023*/
         }
         else
@@ -167,15 +258,15 @@ size_t BitmapClass::ProcessFrame(char * a2, signed int Size) {
     {
       v18 = 4; /*0x42dfc2*/
       v17 = (Base64Straw *)((char *)this + 20); /*0x42dfca*/
-      v6 = this + 2; /*0x42dfce*/
+      v6 = (Base64Straw *)((unsigned int *)this + 2); /*0x42dfce*/
       v7 = 3; /*0x42dfd1*/
       v5 = (Base64Straw *)((char *)this + 20); /*0x42dfd6*/
     }
     else
     {
-      v5 = this + 2; /*0x42dfa6*/
+      v5 = (Base64Straw *)((unsigned int *)this + 2); /*0x42dfa6*/
       v18 = 3; /*0x42dfa9*/
-      v17 = this + 2; /*0x42dfb1*/
+      v17 = (Base64Straw *)((unsigned int *)this + 2); /*0x42dfb1*/
       v6 = (Base64Straw *)((char *)this + 20); /*0x42dfb5*/
       v7 = 4; /*0x42dfb8*/
     }
@@ -274,14 +365,14 @@ int FontClass::RenderText(unsigned __int16 *a2, int xLeft, int yTop, int a5, int
     {
       if ( v19 < 8 ) /*0x43455c*/
       {
-        IDA_LOBYTE(v16) = (uint8_t)(v10 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x43458e*/
+        IDA_LOBYTE(v16) = (uint8_t)(v10 >> g_BitShift_Red) << g_BitShift_Green; /*0x43458e G42.33 b3 载体名*/
         IDA_HIBYTE(v16) = (uint8_t)(v10 >> g_BitMask_Green) << g_BitMask_Blue; /*0x43459b*/
         IDA_LOWORD(v17.Color_field_00) = v16; /*0x4345b1*/
         IDA_BYTE2(v17.Color_field_00) = (uint8_t)(v10 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4345ba*/
         ((Color*)&v17)->Lerp(v12, (int)(uint8_t *)&stru_A80220); /*0x4345be*/
         IDA_LOWORD(v13) = (uint8_t)(IDA_BYTE2(v17.Color_field_00) >> g_BitMask_Red); /*0x4345ee*/
         v11 = a6; /*0x43460e*/
-        *((unsigned short *)this + 18) = ((uint8_t)(IDA_LOBYTE(v17.Color_field_00) >> g_BitShift_Green_0) << g_BitShift_Red) /*0x434614*/
+        *((unsigned short *)this + 18) = ((uint8_t)(IDA_LOBYTE(v17.Color_field_00) >> g_BitShift_Green) << g_BitShift_Red) /*0x434614*/
                               | (v13 << g_BitShift_Blue)
                               | ((uint8_t)(IDA_BYTE1(v17.Color_field_00) >> g_BitMask_Blue) << g_BitMask_Green);
       }
@@ -539,7 +630,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           byte_89E0A1 = 1; /*0x46f4c2*/
           return 0; /*0x46f4c2*/
         }
-        Game::SendCampaignOptions(); /*0x46f34c*/
+        SendCampaignOptions(); /*0x46f34c G42.33 b3 本地原型 (Game:: 静态形式)*/
         v108 = 0; /*0x46f351*/
         v109 = (ObjectClass **)dword_A8DA90; /*0x46f353*/
         do /*0x46f374*/
@@ -581,16 +672,16 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             ++WindowLongA; /*0x46f450*/
           }
           while ( v59 ); /*0x46f454*/
-          Count::SetupAllCountriesLobby((Count *)hDlg); /*0x46f460*/
-          Skirmish::SetupAllSpawnLocations((Skirmish *)hDlg); /*0x46f467*/
+          ((Count *)hDlg)->SetupAllCountriesLobby(); /*0x46f460*/
+          ((Skirmish *)hDlg)->SetupAllSpawnLocations(); /*0x46f467*/
           for ( i = 0; i < 8; ++i ) /*0x46f46c*/
           {
             ResourceID3CSF = GetResourceID3CSF((ObjectClass *)i); /*0x46f477*/
             HouseClassSideIndex = GetHouseClassSideIndex(i); /*0x46f479*/
             SetupLobbyFactionSlots(hDlg, ResourceID3CSF, HouseClassSideIndex); /*0x46f483*/
           }
-          Lobby::UpdateReadyIcons((Lobby *)hDlg); /*0x46f490*/
-          Lobby::EnableStartButton((Lobby *)hDlg); /*0x46f497*/
+          ((Lobby *)hDlg)->UpdateReadyIcons(); /*0x46f490*/
+          ((Lobby *)hDlg)->EnableStartButton(); /*0x46f497*/
         }
         SetTimer(hWnd, 0, 0x1F4u, 0); /*0x46f4a6*/
         byte_89E0A0 = 1; /*0x46f4af*/
@@ -601,7 +692,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         if ( a2 == 1261 ) /*0x46eb78*/
         {
           Screen::Capture(1, 0, (int)GetDlgItem, (int)hWnd); /*0x46eb82*/
-          Dialog::InitWindow(hWnd, 1); /*0x46eb8a*/
+          Dialog::InitWindow((int)hWnd, 1); /*0x46eb8a*/
           ShowWindow(hWnd, 0); /*0x46eb92*/
           return 0; /*0x46eba4*/
         }
@@ -619,7 +710,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         }
         while ( (int)v67 < (int)&stru_A8B250.__pad_0[108] ); /*0x46ebd0*/
         InitGameDropdownColors(v121); /*0x46ebd2*/
-        Lobby::FillPlayerFactions((Lobby *)hWnd); /*0x46ebd9*/
+        ((Lobby *)hWnd)->FillPlayerFactions(); /*0x46ebd9*/
         v68 = (int **)dword_A8DA90; /*0x46ebde*/
         do /*0x46ec0a*/
         {
@@ -663,30 +754,30 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         if ( !(uint8_t)Settings::CheckString() ) /*0x46ecb7*/
         {
           v131[0] = 51; /*0x46ecd8*/
-          strcpy((char *)&v131[1], unk_A8B380); /*0x46ece9*/
-          *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*dword_A8DA78); /*0x46ed05*/
-          *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*dword_A8DA78); /*0x46ed10*/
-          *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*dword_A8DA78); /*0x46ed20*/
-          if ( dword_A8DA90[0] ) /*0x46ed2b*/
+          strcpy((char *)&v131[1], (const char *)&unk_A8B380); /*0x46ece9*/
+          *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*(unsigned int *)dword_A8DA78); /*0x46ed05*/
+          *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*(unsigned int *)dword_A8DA78); /*0x46ed10*/
+          *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*(unsigned int *)dword_A8DA78); /*0x46ed20*/
+          if ( ((unsigned int *)dword_A8DA90)[0] ) /*0x46ed2b*/
           {
-            Network::SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)dword_A8DA90[0]); /*0x46ed3f*/
-            Network::ReceiveLoop(&unk_A8E9C0); /*0x46ed49*/
+            SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)((unsigned int *)dword_A8DA90)[0]); /*0x46ed3f*/
+            ReceiveLoop(&unk_A8E9C0); /*0x46ed49*/
           }
         }
         v74 = hWnd; /*0x46ed50*/
         if ( hWnd || (v74 = (HWND)Dialog::FindByHandle((Dialog *)0xBC6)) != 0 ) /*0x46ed62*/
         {
-          Skirmish::FillPlayerNames((Skirmish *)v74); /*0x46ed66*/
-          Count::SetupAllCountriesLobby((Count *)v74); /*0x46ed6d*/
-          Skirmish::SetupAllSpawnLocations((Skirmish *)v74); /*0x46ed74*/
+          ((Skirmish *)v74)->FillPlayerNames(); /*0x46ed66*/
+          ((Count *)v74)->SetupAllCountriesLobby(); /*0x46ed6d*/
+          ((Skirmish *)v74)->SetupAllSpawnLocations(); /*0x46ed74*/
           for ( j = 0; j < 8; ++j ) /*0x46ed79*/
           {
             nIDDlgItem = GetResourceID3CSF((ObjectClass *)j); /*0x46ed84*/
             v76 = GetHouseClassSideIndex(j); /*0x46ed88*/
             SetupLobbyFactionSlots(v74, nIDDlgItem, v76); /*0x46ed94*/
           }
-          Lobby::UpdateReadyIcons((Lobby *)v74); /*0x46eda1*/
-          Lobby::EnableStartButton((Lobby *)v74); /*0x46eda8*/
+          ((Lobby *)v74)->UpdateReadyIcons(); /*0x46eda1*/
+          ((Lobby *)v74)->EnableStartButton(); /*0x46eda8*/
         }
         v77 = 5; /*0x46edad*/
       }
@@ -726,14 +817,14 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         v132 = 0; /*0x46eada*/
         v133 = 0; /*0x46eadc*/
         v131[0] = 13; /*0x46eadd*/
-        strcpy((char *)&v131[1], ToWideStringChar((char *)*dword_A8DA78)); /*0x46eb06*/
+        strcpy((char *)&v131[1], ToWideStringChar((char *)*(unsigned int *)dword_A8DA78)); /*0x46eb06*/
         v66 = 1; /*0x46eb14*/
         if ( dword_A8DA84 <= 1 ) /*0x46eb1b*/
           return 0; /*0x46eb1b*/
         do /*0x46eb50*/
         {
-          Network::SendToPlayer((int)&unk_A8E9C0, (int)v131, 47, 1, (wchar_t *)dword_A8DA78[v66]); /*0x46eb39*/
-          Network::ReceiveLoop(&unk_A8E9C0); /*0x46eb43*/
+          SendToPlayer((int)&unk_A8E9C0, (int)v131, 47, 1, (wchar_t *)((unsigned int *)dword_A8DA78)[v66]); /*0x46eb39*/
+          ReceiveLoop(&unk_A8E9C0); /*0x46eb43*/
           ++v66; /*0x46eb4d*/
         }
         while ( v66 < dword_A8DA84 ); /*0x46eb50*/
@@ -745,7 +836,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         byte_89E0A0 = 0; /*0x46e931*/
         if ( !byte_89E0A1 ) /*0x46e93a*/
           return 0; /*0x46e93a*/
-        Game::SendCampaignOptions(); /*0x46e940*/
+        SendCampaignOptions(); /*0x46e940 G42.33 b3 本地原型*/
         v54 = (ObjectClass **)dword_A8DA90; /*0x46e945*/
         do /*0x46e966*/
         {
@@ -789,7 +880,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           v123 += 4; /*0x46ea3a*/
         }
         while ( v59 ); /*0x46ea3e*/
-        Count::SetupAllCountriesLobby((Count *)hDlg); /*0x46ea4a*/
+        ((Count *)hDlg)->SetupAllCountriesLobby(); /*0x46ea4a*/
         v60 = dword_A8DA8C; /*0x46ea4f*/
         if ( dword_A8DA8C != (ObjectClass *)-1 ) /*0x46ea58*/
         {
@@ -806,9 +897,9 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             SetupSkirmishSpawnLocations(hDlg, v64, v65); /*0x46ea8f*/
           }
         }
-        Lobby::SetupAllFactionSlots((Lobby *)hDlg); /*0x46ea9c*/
-        Lobby::UpdateReadyIcons((Lobby *)hDlg); /*0x46eaa3*/
-        Lobby::EnableStartButton((Lobby *)hDlg); /*0x46eaaa*/
+        ((Lobby *)hDlg)->SetupAllFactionSlots(); /*0x46ea9c*/
+        ((Lobby *)hDlg)->UpdateReadyIcons(); /*0x46eaa3*/
+        ((Lobby *)hDlg)->EnableStartButton(); /*0x46eaaa*/
         return 0; /*0x46eab2*/
       }
     }
@@ -825,19 +916,19 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             AssignPlayerColor(hWnd, (void *)(uint16_t)uIDEvent); /*0x46e4c5*/
             if ( (uint8_t)Settings::CheckString() ) /*0x46e4cc*/
             {
-              Game::SendCampaignOptions(); /*0x46e4d5*/
+              SendCampaignOptions(); /*G42.33 b3 本地原型*/ /*0x46e4d5*/
             }
             else
             {
               v131[0] = 51; /*0x46e4f3*/
-              strcpy((char *)&v131[1], unk_A8B380); /*0x46e504*/
-              *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*dword_A8DA78); /*0x46e520*/
-              *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*dword_A8DA78); /*0x46e52b*/
-              *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*dword_A8DA78); /*0x46e53b*/
-              if ( dword_A8DA90[0] ) /*0x46e546*/
+              strcpy((char *)&v131[1], (const char *)&unk_A8B380); /*0x46e504*/
+              *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*(unsigned int *)dword_A8DA78); /*0x46e520*/
+              *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*(unsigned int *)dword_A8DA78); /*0x46e52b*/
+              *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*(unsigned int *)dword_A8DA78); /*0x46e53b*/
+              if ( ((unsigned int *)dword_A8DA90)[0] ) /*0x46e546*/
               {
-                Network::SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)dword_A8DA90[0]); /*0x46e55a*/
-                Network::ReceiveLoop(&unk_A8E9C0); /*0x46e564*/
+                SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)((unsigned int *)dword_A8DA90)[0]); /*0x46e55a*/
+                ReceiveLoop(&unk_A8E9C0); /*0x46e564*/
               }
             }
             v24 = 0; /*0x46e569*/
@@ -856,8 +947,8 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
               if ( !v4 ) /*0x46e5a0*/
                 return 0; /*0x46e5a0*/
             }
-            Skirmish::FillPlayerNames((Skirmish *)v4); /*0x46e5a8*/
-            Count::SetupAllCountriesLobby((Count *)v4); /*0x46e5af*/
+            ((Skirmish *)v4)->FillPlayerNames(); /*0x46e5a8*/
+            ((Count *)v4)->SetupAllCountriesLobby(); /*0x46e5af*/
             v26 = dword_A8DA8C; /*0x46e5b4*/
             if ( dword_A8DA8C != (ObjectClass *)-1 ) /*0x46e5bd*/
             {
@@ -880,19 +971,19 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             AssignPlayerSide(hWnd, (uint16_t)uIDEvent); /*0x46e606*/
             if ( (uint8_t)Settings::CheckString() ) /*0x46e60b*/
             {
-              Game::SendCampaignOptions(); /*0x46e614*/
+              SendCampaignOptions(); /*G42.33 b3 本地原型*/ /*0x46e614*/
             }
             else
             {
               v131[0] = 51; /*0x46e632*/
               strcpy((char *)&v131[1], unk_A8B380); /*0x46e643*/
-              *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*dword_A8DA78); /*0x46e65f*/
-              *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*dword_A8DA78); /*0x46e66a*/
-              *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*dword_A8DA78); /*0x46e67a*/
-              if ( dword_A8DA90[0] ) /*0x46e685*/
+              *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*(unsigned int *)dword_A8DA78); /*0x46e65f*/
+              *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*(unsigned int *)dword_A8DA78); /*0x46e66a*/
+              *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*(unsigned int *)dword_A8DA78); /*0x46e67a*/
+              if ( ((unsigned int *)dword_A8DA90)[0] ) /*0x46e685*/
               {
-                Network::SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)dword_A8DA90[0]); /*0x46e699*/
-                Network::ReceiveLoop(&unk_A8E9C0); /*0x46e6a3*/
+                SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)((unsigned int *)dword_A8DA90)[0]); /*0x46e699*/
+                ReceiveLoop(&unk_A8E9C0); /*0x46e6a3*/
               }
             }
             v32 = 0; /*0x46e6a8*/
@@ -911,8 +1002,8 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
               if ( !v4 ) /*0x46e6df*/
                 return 0; /*0x46e6df*/
             }
-            Skirmish::FillPlayerNames((Skirmish *)v4); /*0x46e6e7*/
-            Count::SetupAllCountriesLobby((Count *)v4); /*0x46e6ee*/
+            ((Skirmish *)v4)->FillPlayerNames(); /*0x46e6e7*/
+            ((Count *)v4)->SetupAllCountriesLobby(); /*0x46e6ee*/
             v34 = dword_A8DA8C; /*0x46e6f3*/
             if ( dword_A8DA8C != (ObjectClass *)-1 ) /*0x46e6fc*/
             {
@@ -933,7 +1024,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           case 1745: /*0x46e4be*/
             EnableGameModeControls(hWnd, 0); /*0x46e747*/
             if ( byte_89E0A1 && (uint8_t)Settings::CheckString() ) /*0x46e755*/
-              Game::SendCampaignOptions(); /*0x46e75e*/
+              SendCampaignOptions(); /*G42.33 b3 本地原型*/ /*0x46e75e*/
             if ( !byte_89E05C ) /*0x46e76a*/
             {
               v40 = 0; /*0x46e775*/
@@ -945,7 +1036,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
                 {
                   v43 = *v41; /*0x46e78d*/
                   nIDDlgItem = *v42; /*0x46e78f*/
-                  if ( !wcscmp((const wchar_t *)*dword_A8DA78, v43) ) /*0x46e797*/
+                  if ( !wcscmp((const wchar_t *)*(unsigned int *)dword_A8DA78, v43) ) /*0x46e797*/
                     break; /*0x46e797*/
                   ++v40; /*0x46e7a8*/
                   v42 += 6; /*0x46e7a9*/
@@ -977,7 +1068,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         while ( 1 ) /*0x46e84c*/
         {
           nIDDlgItem = *v48; /*0x46e84c*/
-          if ( !wcscmp((const wchar_t *)*dword_A8DA78, *(const wchar_t **)hDlg) ) /*0x46e85c*/
+          if ( !wcscmp((const wchar_t *)*(unsigned int *)dword_A8DA78, *(const wchar_t **)hDlg) ) /*0x46e85c*/
             break; /*0x46e85c*/
           ++v47; /*0x46e871*/
           v48 += 6; /*0x46e872*/
@@ -1005,19 +1096,19 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         SelectLobbyCountry(hWnd, (void *)(uint16_t)uIDEvent); /*0x46e349*/
         if ( (uint8_t)Settings::CheckString() ) /*0x46e350*/
         {
-          Game::SendCampaignOptions(); /*0x46e359*/
+          SendCampaignOptions(); /*G42.33 b3 本地原型*/ /*0x46e359*/
         }
         else
         {
           v131[0] = 51; /*0x46e377*/
           strcpy((char *)&v131[1], unk_A8B380); /*0x46e388*/
-          *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*dword_A8DA78); /*0x46e3a4*/
-          *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*dword_A8DA78); /*0x46e3af*/
-          *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*dword_A8DA78); /*0x46e3bf*/
-          if ( dword_A8DA90[0] ) /*0x46e3ca*/
+          *(unsigned int *)((char *)&v131[11] + 3) = SessionClass::GetOption((int *)*(unsigned int *)dword_A8DA78); /*0x46e3a4*/
+          *(unsigned int *)((char *)&v131[12] + 3) = SessionClass::GetPlayerSide((int *)*(unsigned int *)dword_A8DA78); /*0x46e3af*/
+          *(unsigned int *)((char *)&v131[13] + 3) = SessionClass::GetPlayerColor((SessionClass *)*(unsigned int *)dword_A8DA78); /*0x46e3bf*/
+          if ( ((unsigned int *)dword_A8DA90)[0] ) /*0x46e3ca*/
           {
-            Network::SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)dword_A8DA90[0]); /*0x46e3de*/
-            Network::ReceiveLoop(&unk_A8E9C0); /*0x46e3e8*/
+            SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)((unsigned int *)dword_A8DA90)[0]); /*0x46e3de*/
+            ReceiveLoop(&unk_A8E9C0); /*0x46e3e8*/
           }
         }
         v16 = 0; /*0x46e3ed*/
@@ -1036,8 +1127,8 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           if ( !v4 ) /*0x46e424*/
             return 0; /*0x46e424*/
         }
-        Skirmish::FillPlayerNames((Skirmish *)v4); /*0x46e42c*/
-        Count::SetupAllCountriesLobby((Count *)v4); /*0x46e433*/
+        ((Skirmish *)v4)->FillPlayerNames(); /*0x46e42c*/
+        ((Count *)v4)->SetupAllCountriesLobby(); /*0x46e433*/
         v18 = dword_A8DA8C; /*0x46e438*/
         if ( dword_A8DA8C != (ObjectClass *)-1 ) /*0x46e441*/
         {
@@ -1055,9 +1146,9 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           }
         }
   LABEL_46:
-        Lobby::SetupAllFactionSlots((Lobby *)v4); /*0x46e483*/
-        Lobby::UpdateReadyIcons((Lobby *)v4); /*0x46e48c*/
-        Lobby::EnableStartButton((Lobby *)v4); /*0x46e493*/
+        ((Lobby *)v4)->SetupAllFactionSlots(); /*0x46e483*/
+        ((Lobby *)v4)->UpdateReadyIcons(); /*0x46e48c*/
+        ((Lobby *)v4)->EnableStartButton(); /*0x46e493*/
         return 0; /*0x46e49b*/
       }
       else
@@ -1101,10 +1192,10 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
               return 0; /*0x46e244*/
             do /*0x46e27b*/
             {
-              if ( dword_A8DA78[v14] ) /*0x46e250*/
+              if ( ((unsigned int *)dword_A8DA78)[v14] ) /*0x46e250*/
               {
-                Network::SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)dword_A8DA78[v14]); /*0x46e269*/
-                Network::ReceiveLoop(&unk_A8E9C0); /*0x46e273*/
+                SendToPlayer((int)&unk_A8E9C0, (int)v131, 455, 1, (wchar_t *)((unsigned int *)dword_A8DA78)[v14]); /*0x46e269*/
+                ReceiveLoop(&unk_A8E9C0); /*0x46e273*/
               }
               ++v14; /*0x46e278*/
             }
@@ -1120,11 +1211,11 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
               v132 = 0; /*0x46e2c3*/
               v133 = 0; /*0x46e2c5*/
               v131[0] = 36; /*0x46e2c6*/
-              strcpy((char *)&v131[1], ToWideStringChar((char *)*dword_A8DA78)); /*0x46e2ef*/
+              strcpy((char *)&v131[1], ToWideStringChar((char *)*(unsigned int *)dword_A8DA78)); /*0x46e2ef*/
               for ( jj = 1; jj < dword_A8DA84; ++jj ) /*0x46e304*/
               {
-                Network::SendToPlayer((int)&unk_A8E9C0, (int)v131, 47, 1, (wchar_t *)dword_A8DA78[jj]); /*0x46e31e*/
-                Network::ReceiveLoop(&unk_A8E9C0); /*0x46e328*/
+                SendToPlayer((int)&unk_A8E9C0, (int)v131, 47, 1, (wchar_t *)((unsigned int *)dword_A8DA78)[jj]); /*0x46e31e*/
+                ReceiveLoop(&unk_A8E9C0); /*0x46e328*/
               }
             }
             result = 1; /*0x46e33a*/
@@ -2460,7 +2551,7 @@ int ListBox::FillPlayers(HWND hWnd, int a3) {
     if ( a3 >= 0 && a3 < dword_A8DA84 ) /*0x5d6593*/
     {
       v7 = 0; /*0x5d659b*/
-      v11 = *(unsigned int *)(dword_A8DA78[a3] + 107); /*0x5d65a3*/
+      v11 = *(unsigned int *)(((unsigned int *)dword_A8DA78)[a3] + 107); /*0x5d65a3*/
       result = this->MultiplayerGameMode_field_0x18; /*0x5d65a7*/
       if ( result > 0 ) /*0x5d65ac*/
       {
@@ -3311,11 +3402,11 @@ int ToolTipClass::seek(int a2) {
 
 // 0x724FA0
 namespace gamemd {
-bool CommandClass::executeAction(unsigned int *a2) {
+bool CommandClass::executeAction(void *a2) { /*G42.33 b3: 载体 gap2 形*/
     unsigned int *v2; // eax
 
     v2 = (unsigned int *)*((unsigned int *)this + 4); /*0x724fa0*/
-    return v2 && *v2 == *a2; /*0x724fb3*/
+    return v2 && *v2 == *(unsigned int *)a2; /*0x724fb3*/
 }
 } // namespace gamemd
 

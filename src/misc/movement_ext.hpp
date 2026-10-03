@@ -112,6 +112,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
 // 14 methods in IDA
 // CSP: MoveFeedback matched via T1
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制 (Pathfinding 不受影响)
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制 (Pathfinding 不受影响)
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制 (Pathfinding 不受影响)
 class MoveFeedback
 {
 public:
@@ -139,6 +142,9 @@ public:
     uint8_t MoveFeedback_field_0x30[4];
     uint8_t MoveFeedback_field_0x34[4];
 };
+#endif  // GAMEMD_TREE_UNIVERSE (MoveFeedback)
+#endif  // GAMEMD_TREE_UNIVERSE (MoveFeedback)
+#endif  // GAMEMD_TREE_UNIVERSE (MoveFeedback)
 // 2 methods in IDA
 class MovementClass
 {
