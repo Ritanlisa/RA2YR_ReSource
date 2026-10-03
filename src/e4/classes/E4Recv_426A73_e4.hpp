@@ -17,6 +17,6 @@ struct E4Recv_426A73 {
     unsigned int q850;  // 0x850
     unsigned int q2128;  // 0x2128
 // --- flat members (END) ---
-    struct Concurrency::details::VirtualProcessor * _UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ();  // 0x426A73
+    void * _UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ();  // 0x426A73 (G42.35f: Concurrency:: PPL type not available in e4 universe)
 };
 } // namespace gamemd

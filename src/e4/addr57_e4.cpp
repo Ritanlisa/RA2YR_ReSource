@@ -33,39 +33,7 @@
 namespace gamemd {
 bool sub_574600(int a1, int a2, int a3)
 {
-  char v3; // bl
-  int v4; // edx
-  int v5; // eax
-
-  v3 = 2; /*0x574601*/
-  if ( a2 == 2 ) /*0x574609*/
-  {
-    v4 = a3; /*0x574610*/
-    v3 = 4; /*0x574616*/
-    if ( a1 == dword_ABC1E8 && *(unsigned char *)(a3 + 282) == 4 || a1 == dword_AA0E38 && *(unsigned char *)(a3 + 282) == 4 ) /*0x574634*/
-      return 1; /*0x574634*/
-    v5 = g_TerrainSoundTable2; /*0x574636*/
-    if ( a1 != g_TerrainSoundTable2 && a1 != g_TerrainSoundTable2 + 3 && a1 != g_TerrainSoundTable2 + 1 ) /*0x57464b*/
-    {
-  LABEL_20:
-      if ( a1 != v5 + 2 ) /*0x5746a3*/
-        return 0; /*0x5746a3*/
-    }
-  }
-  else
-  {
-    if ( a2 != 4 ) /*0x574652*/
-      return 0; /*0x574652*/
-    v4 = a3; /*0x574659*/
-    if ( a1 == dword_ABC1D0 && *(unsigned char *)(a3 + 282) == 2 ) /*0x574667*/
-      return 1; /*0x57466d*/
-    if ( a1 == dword_AA1540 && *(unsigned char *)(a3 + 282) == 2 ) /*0x57467e*/
-      return 1; /*0x574684*/
-    v5 = g_TerrainSoundConfig; /*0x574687*/
-    if ( a1 != g_TerrainSoundConfig && a1 != g_TerrainSoundConfig + 3 && a1 != g_TerrainSoundConfig + 1 ) /*0x57469c*/
-      goto LABEL_20; /*0x57469c*/
-  }
-  return *(unsigned char *)(v4 + 282) == v3; /*0x574669*/
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000574600.json)
 }
 }
 // 0x575EE0
@@ -928,276 +896,28 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
 namespace gamemd {
 void sub_57C870(int a1)
 {
-  int v1; // edi
-  int16_t v2; // bx
-  int16_t v3; // dx
-  int v4; // eax
-  bool v5; // sf
-  int v6; // eax
-  unsigned int *v7; // eax
-  int v8; // eax
-  int16_t v9; // dx
-  int v10; // eax
-  int v11; // eax
-  unsigned int *v12; // eax
-  int v13; // eax
-  int v15; // [esp+10h] [ebp-Ch]
-  int v16; // [esp+10h] [ebp-Ch]
-  void *v17; // [esp+14h] [ebp-8h]
-  int v18; // [esp+20h] [ebp+4h]
-  int16_t v19; // [esp+22h] [ebp+6h]
-
-  v1 = a1; /*0x57c877*/
-  v2 = a1; /*0x57c885*/
-  do /*0x57c8e3*/
-  {
-    v3 = IDA_HIWORD(a1) + IDA_HIWORD((&dword_89F688)[0]); /*0x57c895*/
-    IDA_LOWORD(v15) = IDA_LOWORD((&dword_89F688)[0]) + v2; /*0x57c89a*/
-    IDA_HIWORD(v15) = IDA_HIWORD(a1) + IDA_HIWORD((&dword_89F688)[0]); /*0x57c8a5*/
-    v2 += IDA_LOWORD((&dword_89F688)[0]); /*0x57c8aa*/
-    v4 = (int16_t)(IDA_HIWORD(a1) + IDA_HIWORD((&dword_89F688)[0])) << 9; /*0x57c8ae*/
-    v5 = v2 + v4 < 0; /*0x57c8b1*/
-    v6 = v2 + v4; /*0x57c8b1*/
-    IDA_HIWORD(a1) += IDA_HIWORD((&dword_89F688)[0]); /*0x57c8b3*/
-    if ( v5 || v6 >= 0x40000 || (v7 = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x57c8cb*/
-    {
-      dword_ABDC74 = v15; /*0x57c8cd*/
-      v7 = (unsigned int *)(unk_ABDC50); /*0x57c8d3*/
-    }
-    v8 = v7[17]; /*0x57c8d8*/
-  }
-  while ( v8 >= 74 && v8 <= 101 ); /*0x57c8e3*/
-  v19 = IDA_HIWORD(v1); /*0x57c8eb*/
-  IDA_LOWORD(v17) = v15 + dword_89F698; /*0x57c8f9*/
-  IDA_HIWORD(v17) = v3 + IDA_HIWORD(dword_89F698); /*0x57c904*/
-  do /*0x57c95d*/
-  {
-    v9 = v19 + IDA_HIWORD(dword_89F698); /*0x57c90f*/
-    IDA_LOWORD(v16) = v1 + dword_89F698; /*0x57c914*/
-    IDA_HIWORD(v16) = v19 + IDA_HIWORD(dword_89F698); /*0x57c91f*/
-    IDA_LOWORD(v1) = v1 + dword_89F698; /*0x57c924*/
-    v10 = (int16_t)(v19 + IDA_HIWORD(dword_89F698)) << 9; /*0x57c928*/
-    v5 = (int16_t)v1 + v10 < 0; /*0x57c92b*/
-    v11 = (int16_t)v1 + v10; /*0x57c92b*/
-    v19 += IDA_HIWORD(dword_89F698); /*0x57c92d*/
-    if ( v5 || v11 >= 0x40000 || (v12 = *(unsigned int **)(dword_87F924 + 4 * v11)) == 0 ) /*0x57c945*/
-    {
-      dword_ABDC74 = v16; /*0x57c947*/
-      v12 = (unsigned int *)(unk_ABDC50); /*0x57c94d*/
-    }
-    v13 = v12[17]; /*0x57c952*/
-  }
-  while ( v13 >= 74 && v13 <= 101 ); /*0x57c95d*/
-  IDA_LOWORD(v18) = IDA_LOWORD((&dword_89F688)[0]) + v16; /*0x57c968*/
-  IDA_HIWORD(v18) = IDA_HIWORD((&dword_89F688)[0]) + v9; /*0x57c96d*/
-  return UpdateTeamsInAreaMap(v17, v18); /*0x57c985*/
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00057C870.json)
 }
 }
 // 0x57C990
 namespace gamemd {
 void sub_57C990(int a1)
 {
-  int v1; // edi
-  int16_t v2; // bx
-  int16_t v3; // dx
-  int v4; // eax
-  bool v5; // sf
-  int v6; // eax
-  unsigned int *v7; // eax
-  int v8; // eax
-  int16_t v9; // dx
-  int v10; // eax
-  int v11; // eax
-  unsigned int *v12; // eax
-  int v13; // eax
-  int v15; // [esp+10h] [ebp-Ch]
-  int v16; // [esp+10h] [ebp-Ch]
-  void *v17; // [esp+14h] [ebp-8h]
-  int v18; // [esp+20h] [ebp+4h]
-  int16_t v19; // [esp+22h] [ebp+6h]
-
-  v1 = a1; /*0x57c997*/
-  v2 = a1; /*0x57c9a5*/
-  do /*0x57ca03*/
-  {
-    v3 = IDA_HIWORD(a1) + IDA_HIWORD(dword_89F6A0); /*0x57c9b5*/
-    IDA_LOWORD(v15) = dword_89F6A0 + v2; /*0x57c9ba*/
-    IDA_HIWORD(v15) = IDA_HIWORD(a1) + IDA_HIWORD(dword_89F6A0); /*0x57c9c5*/
-    v2 += dword_89F6A0; /*0x57c9ca*/
-    v4 = (int16_t)(IDA_HIWORD(a1) + IDA_HIWORD(dword_89F6A0)) << 9; /*0x57c9ce*/
-    v5 = v2 + v4 < 0; /*0x57c9d1*/
-    v6 = v2 + v4; /*0x57c9d1*/
-    IDA_HIWORD(a1) += IDA_HIWORD(dword_89F6A0); /*0x57c9d3*/
-    if ( v5 || v6 >= 0x40000 || (v7 = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x57c9eb*/
-    {
-      dword_ABDC74 = v15; /*0x57c9ed*/
-      v7 = (unsigned int *)(unk_ABDC50); /*0x57c9f3*/
-    }
-    v8 = v7[17]; /*0x57c9f8*/
-  }
-  while ( v8 >= 74 && v8 <= 101 ); /*0x57ca03*/
-  v19 = IDA_HIWORD(v1); /*0x57ca0b*/
-  IDA_LOWORD(v17) = v15 + dword_89F690; /*0x57ca19*/
-  IDA_HIWORD(v17) = v3 + IDA_HIWORD(dword_89F690); /*0x57ca24*/
-  do /*0x57ca7d*/
-  {
-    v9 = v19 + IDA_HIWORD(dword_89F690); /*0x57ca2f*/
-    IDA_LOWORD(v16) = v1 + dword_89F690; /*0x57ca34*/
-    IDA_HIWORD(v16) = v19 + IDA_HIWORD(dword_89F690); /*0x57ca3f*/
-    IDA_LOWORD(v1) = v1 + dword_89F690; /*0x57ca44*/
-    v10 = (int16_t)(v19 + IDA_HIWORD(dword_89F690)) << 9; /*0x57ca48*/
-    v5 = (int16_t)v1 + v10 < 0; /*0x57ca4b*/
-    v11 = (int16_t)v1 + v10; /*0x57ca4b*/
-    v19 += IDA_HIWORD(dword_89F690); /*0x57ca4d*/
-    if ( v5 || v11 >= 0x40000 || (v12 = *(unsigned int **)(dword_87F924 + 4 * v11)) == 0 ) /*0x57ca65*/
-    {
-      dword_ABDC74 = v16; /*0x57ca67*/
-      v12 = unk_ABDC50; /*0x57ca6d*/
-    }
-    v13 = v12[17]; /*0x57ca72*/
-  }
-  while ( v13 >= 74 && v13 <= 101 ); /*0x57ca7d*/
-  IDA_LOWORD(v18) = dword_89F6A0 + v16; /*0x57ca88*/
-  IDA_HIWORD(v18) = IDA_HIWORD(dword_89F6A0) + v9; /*0x57ca8d*/
-  return UpdateTeamsInAreaMap(v17, v18); /*0x57caa5*/
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00057C990.json)
 }
 }
 // 0x57DAF0
 namespace gamemd {
 void sub_57DAF0(int a1)
 {
-  int v1; // edi
-  int16_t v2; // bx
-  int16_t v3; // dx
-  int v4; // eax
-  bool v5; // sf
-  int v6; // eax
-  unsigned int *v7; // eax
-  int v8; // eax
-  int16_t v9; // dx
-  int v10; // eax
-  int v11; // eax
-  unsigned int *v12; // eax
-  int v13; // eax
-  int v15; // [esp+10h] [ebp-Ch]
-  int v16; // [esp+10h] [ebp-Ch]
-  void *v17; // [esp+14h] [ebp-8h]
-  int v18; // [esp+20h] [ebp+4h]
-  int16_t v19; // [esp+22h] [ebp+6h]
-
-  v1 = a1; /*0x57daf7*/
-  v2 = a1; /*0x57db05*/
-  do /*0x57db67*/
-  {
-    v3 = IDA_HIWORD(a1) + IDA_HIWORD((&dword_89F688)[0]); /*0x57db15*/
-    IDA_LOWORD(v15) = IDA_LOWORD((&dword_89F688)[0]) + v2; /*0x57db1a*/
-    IDA_HIWORD(v15) = IDA_HIWORD(a1) + IDA_HIWORD((&dword_89F688)[0]); /*0x57db25*/
-    v2 += IDA_LOWORD((&dword_89F688)[0]); /*0x57db2a*/
-    v4 = (int16_t)(IDA_HIWORD(a1) + IDA_HIWORD((&dword_89F688)[0])) << 9; /*0x57db2e*/
-    v5 = v2 + v4 < 0; /*0x57db31*/
-    v6 = v2 + v4; /*0x57db31*/
-    IDA_HIWORD(a1) += IDA_HIWORD((&dword_89F688)[0]); /*0x57db33*/
-    if ( v5 || v6 >= 0x40000 || (v7 = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x57db4b*/
-    {
-      dword_ABDC74 = v15; /*0x57db4d*/
-      v7 = unk_ABDC50; /*0x57db53*/
-    }
-    v8 = v7[17]; /*0x57db58*/
-  }
-  while ( v8 >= 205 && v8 <= 232 ); /*0x57db67*/
-  v19 = IDA_HIWORD(v1); /*0x57db6f*/
-  IDA_LOWORD(v17) = v15 + dword_89F698; /*0x57db7d*/
-  IDA_HIWORD(v17) = v3 + IDA_HIWORD(dword_89F698); /*0x57db88*/
-  do /*0x57dbe5*/
-  {
-    v9 = v19 + IDA_HIWORD(dword_89F698); /*0x57db93*/
-    IDA_LOWORD(v16) = v1 + dword_89F698; /*0x57db98*/
-    IDA_HIWORD(v16) = v19 + IDA_HIWORD(dword_89F698); /*0x57dba3*/
-    IDA_LOWORD(v1) = v1 + dword_89F698; /*0x57dba8*/
-    v10 = (int16_t)(v19 + IDA_HIWORD(dword_89F698)) << 9; /*0x57dbac*/
-    v5 = (int16_t)v1 + v10 < 0; /*0x57dbaf*/
-    v11 = (int16_t)v1 + v10; /*0x57dbaf*/
-    v19 += IDA_HIWORD(dword_89F698); /*0x57dbb1*/
-    if ( v5 || v11 >= 0x40000 || (v12 = *(unsigned int **)(dword_87F924 + 4 * v11)) == 0 ) /*0x57dbc9*/
-    {
-      dword_ABDC74 = v16; /*0x57dbcb*/
-      v12 = unk_ABDC50; /*0x57dbd1*/
-    }
-    v13 = v12[17]; /*0x57dbd6*/
-  }
-  while ( v13 >= 205 && v13 <= 232 ); /*0x57dbe5*/
-  IDA_LOWORD(v18) = IDA_LOWORD((&dword_89F688)[0]) + v16; /*0x57dbf0*/
-  IDA_HIWORD(v18) = IDA_HIWORD((&dword_89F688)[0]) + v9; /*0x57dbf5*/
-  return UpdateTeamsInAreaMap(v17, v18); /*0x57dc0d*/
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00057DAF0.json)
 }
 }
 // 0x57DC20
 namespace gamemd {
 void sub_57DC20(int a1)
 {
-  int v1; // edi
-  int16_t v2; // bx
-  int16_t v3; // dx
-  int v4; // eax
-  bool v5; // sf
-  int v6; // eax
-  unsigned int *v7; // eax
-  int v8; // eax
-  int16_t v9; // dx
-  int v10; // eax
-  int v11; // eax
-  unsigned int *v12; // eax
-  int v13; // eax
-  int v15; // [esp+10h] [ebp-Ch]
-  int v16; // [esp+10h] [ebp-Ch]
-  void *v17; // [esp+14h] [ebp-8h]
-  int v18; // [esp+20h] [ebp+4h]
-  int16_t v19; // [esp+22h] [ebp+6h]
-
-  v1 = a1; /*0x57dc27*/
-  v2 = a1; /*0x57dc35*/
-  do /*0x57dc97*/
-  {
-    v3 = IDA_HIWORD(a1) + IDA_HIWORD(dword_89F6A0); /*0x57dc45*/
-    IDA_LOWORD(v15) = dword_89F6A0 + v2; /*0x57dc4a*/
-    IDA_HIWORD(v15) = IDA_HIWORD(a1) + IDA_HIWORD(dword_89F6A0); /*0x57dc55*/
-    v2 += dword_89F6A0; /*0x57dc5a*/
-    v4 = (int16_t)(IDA_HIWORD(a1) + IDA_HIWORD(dword_89F6A0)) << 9; /*0x57dc5e*/
-    v5 = v2 + v4 < 0; /*0x57dc61*/
-    v6 = v2 + v4; /*0x57dc61*/
-    IDA_HIWORD(a1) += IDA_HIWORD(dword_89F6A0); /*0x57dc63*/
-    if ( v5 || v6 >= 0x40000 || (v7 = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x57dc7b*/
-    {
-      dword_ABDC74 = v15; /*0x57dc7d*/
-      v7 = unk_ABDC50; /*0x57dc83*/
-    }
-    v8 = v7[17]; /*0x57dc88*/
-  }
-  while ( v8 >= 205 && v8 <= 232 ); /*0x57dc97*/
-  v19 = IDA_HIWORD(v1); /*0x57dc9f*/
-  IDA_LOWORD(v17) = v15 + dword_89F690; /*0x57dcad*/
-  IDA_HIWORD(v17) = v3 + IDA_HIWORD(dword_89F690); /*0x57dcb8*/
-  do /*0x57dd15*/
-  {
-    v9 = v19 + IDA_HIWORD(dword_89F690); /*0x57dcc3*/
-    IDA_LOWORD(v16) = v1 + dword_89F690; /*0x57dcc8*/
-    IDA_HIWORD(v16) = v19 + IDA_HIWORD(dword_89F690); /*0x57dcd3*/
-    IDA_LOWORD(v1) = v1 + dword_89F690; /*0x57dcd8*/
-    v10 = (int16_t)(v19 + IDA_HIWORD(dword_89F690)) << 9; /*0x57dcdc*/
-    v5 = (int16_t)v1 + v10 < 0; /*0x57dcdf*/
-    v11 = (int16_t)v1 + v10; /*0x57dcdf*/
-    v19 += IDA_HIWORD(dword_89F690); /*0x57dce1*/
-    if ( v5 || v11 >= 0x40000 || (v12 = *(unsigned int **)(dword_87F924 + 4 * v11)) == 0 ) /*0x57dcf9*/
-    {
-      dword_ABDC74 = v16; /*0x57dcfb*/
-      v12 = unk_ABDC50; /*0x57dd01*/
-    }
-    v13 = v12[17]; /*0x57dd06*/
-  }
-  while ( v13 >= 205 && v13 <= 232 ); /*0x57dd15*/
-  IDA_LOWORD(v18) = dword_89F6A0 + v16; /*0x57dd20*/
-  IDA_HIWORD(v18) = IDA_HIWORD(dword_89F6A0) + v9; /*0x57dd25*/
-  return UpdateTeamsInAreaMap(v17, v18); /*0x57dd3d*/
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00057DC20.json)
 }
 }
 // 0x57DD50
@@ -2337,50 +2057,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
 namespace gamemd {
 char globalHelper_072230(ObjectClass * aP0, int a2)
 {
-  int v2; // eax
-  int16_t v3; // dx
-  unsigned int v4; // eax
-  unsigned int *v5; // eax
-  uint8_t v6; // dl
-  int v7; // eax
-
-  v2 = a2 & 7; /*0x572239*/
-  v3 = dword_89F688[v2]; /*0x57223c*/
-  IDA_LOWORD(v2) = aP0[1] + IDA_HIWORD(dword_89F688[v2]); /*0x572252*/
-  IDA_LOWORD(a2) = *aP0 + v3; /*0x572256*/
-  IDA_HIWORD(a2) = v2; /*0x57225e*/
-  v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x57226d*/
-  if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x572287*/
-  {
-    dword_ABDC74 = a2; /*0x572289*/
-    v5 = unk_ABDC50; /*0x57228f*/
-  }
-  if ( *((char *)v5 + 320) < 0 ) /*0x57229b*/
-  {
-    v6 = *((unsigned char *)v5 + 286); /*0x57229d*/
-    if ( v6 <= 3u ) /*0x5722a6*/
-    {
-      *((unsigned char *)v5 + 286) = 4; /*0x5722b6*/
-    }
-    else if ( v6 == 5 ) /*0x5722ab*/
-    {
-      *((unsigned char *)v5 + 286) = 6; /*0x5722ad*/
-    }
-  }
-  v7 = v5[14] - g_Cell_BuildabilityLUT + 1; /*0x5722ce*/
-  if ( v7 == dword_ABC1E8 || v7 == dword_AA0E38 ) /*0x5722d9*/
-  {
-    IDA_LOBYTE(v7) = Cell::UpdateTileType((int16_t *)&a2, 1, 0); /*0x572327*/
-  }
-  else if ( v7 == g_TerrainSoundTable2 ) /*0x5722e3*/
-  {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&a2, g_Cell_BuildabilityLUT + g_TerrainSoundTable2, -1, -1, 0); /*0x5722f3*/
-  }
-  else if ( v7 == g_TerrainSoundTable2 + 2 ) /*0x572303*/
-  {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&a2, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x572315*/
-  }
-  return v7; /*0x5722f8*/
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000572230.json)
 }
 } // namespace gamemd
 
@@ -2388,50 +2065,7 @@ char globalHelper_072230(ObjectClass * aP0, int a2)
 namespace gamemd {
 char globalHelper_072330(IUnknown * aP0, int a2)
 {
-  int v2; // eax
-  int16_t v3; // dx
-  unsigned int v4; // eax
-  unsigned int *v5; // eax
-  uint8_t v6; // dl
-  int v7; // eax
-
-  v2 = a2 & 7; /*0x572339*/
-  v3 = dword_89F688[v2]; /*0x57233c*/
-  IDA_LOWORD(v2) = aP0[1] + IDA_HIWORD(dword_89F688[v2]); /*0x572352*/
-  IDA_LOWORD(a2) = *aP0 + v3; /*0x572356*/
-  IDA_HIWORD(a2) = v2; /*0x57235e*/
-  v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x57236d*/
-  if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x572387*/
-  {
-    dword_ABDC74 = a2; /*0x572389*/
-    v5 = unk_ABDC50; /*0x57238f*/
-  }
-  if ( *((char *)v5 + 320) < 0 ) /*0x57239b*/
-  {
-    v6 = *((unsigned char *)v5 + 286); /*0x57239d*/
-    if ( v6 <= 3u ) /*0x5723a6*/
-    {
-      *((unsigned char *)v5 + 286) = 5; /*0x5723b6*/
-    }
-    else if ( v6 == 4 ) /*0x5723ab*/
-    {
-      *((unsigned char *)v5 + 286) = 6; /*0x5723ad*/
-    }
-  }
-  v7 = v5[14] - g_Cell_BuildabilityLUT + 1; /*0x5723ce*/
-  if ( v7 == dword_ABC2B4 || v7 == dword_AA1130 ) /*0x5723d9*/
-  {
-    IDA_LOBYTE(v7) = Cell::UpdateTileType((int16_t *)&a2, 1, 0); /*0x572429*/
-  }
-  else if ( v7 == g_TerrainSoundTable2 ) /*0x5723e3*/
-  {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&a2, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 1, -1, -1, 0); /*0x5723f5*/
-  }
-  else if ( v7 == g_TerrainSoundTable2 + 1 ) /*0x572405*/
-  {
-    IDA_LOBYTE(v7) = Cell::SetTileType((int16_t *)&a2, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x572417*/
-  }
-  return v7; /*0x5723fa*/
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000572330.json)
 }
 } // namespace gamemd
 
@@ -2439,27 +2073,7 @@ char globalHelper_072330(IUnknown * aP0, int a2)
 namespace gamemd {
 bool sub_5746C0(int a1, int a2)
 {
-  if ( a1 == dword_AA1548 && *(unsigned char *)(a2 + 282) == 12 ) /*0x5746d3*/
-    return 1; /*0x5746d6*/
-  if ( a1 == dword_AA0740 && *(unsigned char *)(a2 + 282) == 12 ) /*0x5746e7*/
-    return 1; /*0x5746ea*/
-  if ( (a1 == g_TerrainSoundTable2 /*0x574712*/
-     || a1 == g_TerrainSoundTable2 + 3
-     || a1 == g_TerrainSoundTable2 + 1
-     || a1 == g_TerrainSoundTable2 + 2)
-    && *(unsigned char *)(a2 + 282) == 4 )
-  {
-    return 1; /*0x574715*/
-  }
-  if ( a1 == dword_ABC2B4 && *(unsigned char *)(a2 + 282) == 8 ) /*0x57472a*/
-    return 1; /*0x57472d*/
-  if ( a1 == dword_AA1130 && *(unsigned char *)(a2 + 282) == 8 ) /*0x57473e*/
-    return 1; /*0x574741*/
-  return (a1 == g_TerrainSoundConfig /*0x5746d5*/
-       || a1 == g_TerrainSoundConfig + 3
-       || a1 == g_TerrainSoundConfig + 1
-       || a1 == g_TerrainSoundConfig + 2)
-      && *(unsigned char *)(a2 + 282) == 2;
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005746C0.json)
 }
 } // namespace gamemd
 
@@ -2467,38 +2081,7 @@ bool sub_5746C0(int a1, int a2)
 namespace gamemd {
 int E4Recv_578B70::sub_578B70(short * a2)
 {
-
-  int v2; // edx
-  int v3; // esi
-  int16_t v4; // ax
-  int16_t v5; // bp
-  int v6; // edx
-  int v7; // ecx
-  int v8; // ebx
-  int v9; // esi
-  int v10; // edi
-  int v11; // esi
-  unsigned int v12; // ecx
-  int v13; // eax
-
-  v2 = *((unsigned int *)this + 64); /*0x578b77*/
-  v3 = *((unsigned int *)this + 63); /*0x578b80*/
-  v4 = v2 + *((unsigned int *)this + 61) - v3; /*0x578b89*/
-  v5 = v2 + v3 + 1; /*0x578b8b*/
-  v6 = *((unsigned int *)this + 65); /*0x578b8f*/
-  v7 = *((unsigned int *)this + 66); /*0x578b95*/
-  v8 = *a2; /*0x578bac*/
-  v9 = a2[1]; /*0x578baf*/
-  v10 = (v8 + v4 - ((2 * v6 - 1) % 3 != 0) - v5 - v9) / ((2 * v6 - 1) / 3); /*0x578bf4*/
-  v11 = v9 - ((2 * v7 - 1) % 3 != 0) - v4 - v5; /*0x578c0d*/
-  v12 = (uint64_t)(1431655766LL * (2 * v7 - 1)) >> 32; /*0x578c16*/
-  v13 = (v8 + v11) / (int)((v12 >> 31) + v12); /*0x578c24*/
-  if ( v10 == 3 ) /*0x578c28*/
-    v10 = 2; /*0x578c2a*/
-  if ( v13 == 3 ) /*0x578c32*/
-    v13 = 2; /*0x578c34*/
-  return v13 + v10 + 2 * v13 + 1; /*0x578c3c*/
-
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000578B70.json)
 }
 } // namespace gamemd
 
@@ -2506,24 +2089,7 @@ int E4Recv_578B70::sub_578B70(short * a2)
 namespace gamemd {
 unsigned int * E4Recv_578C50::sub_578C50(unsigned int * a2, int a3)
 {
-
-  int v3; // esi
-  int v4; // eax
-  int v5; // edi
-  int v6; // edx
-  int16_t v8; // [esp+12h] [ebp-Eh]
-  int v9; // [esp+28h] [ebp+8h]
-
-  v3 = ((2 * *((unsigned int *)this + 65) - 1) % 3 != 0) + (2 * *((unsigned int *)this + 65) - 1) / 3 * ((a3 - 1) % 3); /*0x578ca4*/
-  v4 = *((unsigned int *)this + 64); /*0x578ccc*/
-  v5 = ((2 * *((unsigned int *)this + 66) - 1) % 3 != 0) + (a3 - 1) / 3 * ((2 * *((unsigned int *)this + 66) - 1) / 3); /*0x578cd8*/
-  v6 = *((unsigned int *)this + 63); /*0x578cda*/
-  v8 = v4 + *((unsigned int *)this + 61) - v6; /*0x578cf0*/
-  LOWORD(v9) = v4 + v6 + 1 + (v3 + (v5 & 1) + v5 + (v3 & 1)) / 2; /*0x578d34*/
-  HIWORD(v9) = (v5 - v3) / 2 + v8; /*0x578d3f*/
-  *a2 = v9; /*0x578d4b*/
-  return a2; /*0x578d48*/
-
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000578C50.json)
 }
 } // namespace gamemd
 
@@ -2531,52 +2097,7 @@ unsigned int * E4Recv_578C50::sub_578C50(unsigned int * a2, int a3)
 namespace gamemd {
 int InitializeTileNeighborTable()
 {
-  int result; // eax
-  int v1; // [esp+4h] [ebp-4h] BYREF
-
-  dword_ABDDA8 = 0; /*0x57934e*/
-  dword_ABDDAC = 0; /*0x579361*/
-  dword_ABDDB0 = 0; /*0x579375*/
-  dword_ABDDB4 = 0; /*0x579389*/
-  v1 = 0; /*0x57938e*/
-  dword_ABDDB8 = 0; /*0x57939c*/
-  dword_ABDDC4 = 0; /*0x5793b1*/
-  dword_ABDDBC = 0; /*0x5793bc*/
-  dword_ABDDC0 = 0; /*0x5793c2*/
-  dword_ABDDC8 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5793d4*/
-  dword_ABDDCC = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5793e7*/
-  dword_ABDDD0 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5793f4*/
-  dword_ABDDD4 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x57940c*/
-  dword_ABDDD8 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x57941f*/
-  dword_ABDDDC = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x57942c*/
-  dword_ABDDE0 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x579444*/
-  dword_ABDDE4 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x579457*/
-  dword_ABDDE8 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x579464*/
-  dword_ABDDEC = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x57947c*/
-  dword_ABDDF0 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x57948f*/
-  dword_ABDDF4 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x57949c*/
-  dword_ABDDF8 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5794b4*/
-  dword_ABDDFC = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5794c7*/
-  dword_ABDE00 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5794d4*/
-  dword_ABDE04 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5794ec*/
-  dword_ABDE08 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5794ff*/
-  dword_ABDE0C = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x57950c*/
-  dword_ABDE10 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x579524*/
-  dword_ABDE14 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x579537*/
-  dword_ABDE18 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x579544*/
-  dword_ABDE1C = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x57955c*/
-  dword_ABDE20 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x579570*/
-  dword_ABDE24 = *(unsigned int *)((CellStruct *)(&v1))->Set(1, 0); /*0x57957d*/
-  dword_ABDE28 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x579595*/
-  dword_ABDE2C = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5795a8*/
-  dword_ABDE30 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5795b5*/
-  dword_ABDE34 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5795cd*/
-  dword_ABDE38 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5795e0*/
-  dword_ABDE3C = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x5795ed*/
-  dword_ABDE40 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x579605*/
-  result = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 0); /*0x579610*/
-  dword_ABDE44 = result; /*0x579613*/
-  return result; /*0x579612*/
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000579320.json)
 }
 } // namespace gamemd
 
@@ -2584,41 +2105,7 @@ int InitializeTileNeighborTable()
 namespace gamemd {
 int sub_57A900(unsigned int * a1, signed int a2)
 {
-  int v3; // ebx
-  unsigned int v4; // ebp
-  Cell *NeighbourContent; // esi
-  Cell *v6; // edi
-  char IsValidHeight; // al
-  bool v8; // bl
-  bool v10; // [esp+13h] [ebp-15h]
-  int v11; // [esp+14h] [ebp-14h]
-  unsigned int v12[4]; // [esp+18h] [ebp-10h]
-
-  v12[1] = 4; /*0x57a913*/
-  v12[3] = 4; /*0x57a917*/
-  v12[0] = 2; /*0x57a91d*/
-  v12[2] = 2; /*0x57a921*/
-  v3 = 1; /*0x57a928*/
-  v4 = v12[a2 / 2]; /*0x57a92f*/
-  NeighbourContent = (Cell *)((Cell *)(a1))->GetNeighbourContent(v4); /*0x57a939*/
-  v6 = (Cell *)((Cell *)(NeighbourContent))->GetNeighbourContent(a2); /*0x57a945*/
-  v10 = (uint8_t)((Cell*)NeighbourContent)->IsValidHeight() == 0; /*0x57a950*/
-  IsValidHeight = ((Cell*)v6)->IsValidHeight(); /*0x57a955*/
-  if ( v10 ) /*0x57a960*/
-  {
-    while ( IsValidHeight ) /*0x57a96a*/
-    {
-      v11 = v3 + 1; /*0x57a970*/
-      NeighbourContent = (Cell *)((Cell *)(NeighbourContent))->GetNeighbourContent(v4); /*0x57a97b*/
-      v6 = (Cell *)((Cell *)(v6))->GetNeighbourContent(v4); /*0x57a985*/
-      v8 = (uint8_t)((Cell*)NeighbourContent)->IsValidHeight() == 0; /*0x57a990*/
-      IsValidHeight = ((Cell*)v6)->IsValidHeight(); /*0x57a993*/
-      if ( !v8 ) /*0x57a99a*/
-        return v11; /*0x57a9a7*/
-      v3 = v11; /*0x57a964*/
-    }
-  }
-  return v3; /*0x57a9a0*/
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00057A900.json)
 }
 } // namespace gamemd
 
