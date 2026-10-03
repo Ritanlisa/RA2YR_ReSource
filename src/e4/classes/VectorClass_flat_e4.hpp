@@ -20,7 +20,6 @@ class GetItemIndex;  // G42.36 fwd supply
 class Constructor_VectorClass_LightConvertClass___;  // G42.36 fwd supply
 class FindItemIndex;  // G42.36 fwd supply
 class Remove;  // G42.36 fwd supply
-class a1_1;  // G42.36 fwd supply
 class Add;  // G42.36 fwd supply
 class Get;  // G42.36 fwd supply
 class Clear;  // G42.36 fwd supply
@@ -33,9 +32,7 @@ class SetCapacity_1;  // G42.36 fwd supply
 class SetCapacity_0;  // G42.36 fwd supply
 class SetCapacity;  // G42.36 fwd supply
 class EnumConnectionPointsClass;  // G42.36 fwd supply
-class a3_1;  // G42.36 fwd supply
 class Constructor;  // G42.36 fwd supply
-class a2_1;  // G42.36 fwd supply
 
 struct VectorClass_flat {
 // --- flat members (BEGIN) ---
@@ -157,6 +154,8 @@ int Destroy(void *a1);
     unsigned int LoadTypeData(int a2);
     DynamicVector * Constructor_VectorClass_WarheadTypeClass___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_WeaponTypeClass___(unsigned int * Block, char a2);
+    int SetCapacity_0(int a1, int a2);
+    int SetCapacity(int a1, int a2);
     int SetCapacity_0(int a1, int a2);
     int SetCapacity(int a1, int a2);
 };  // fix_truncated_headers: restored closer

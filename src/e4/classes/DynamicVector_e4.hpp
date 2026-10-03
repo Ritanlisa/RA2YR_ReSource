@@ -14,7 +14,6 @@ class Remove;  // G42.36 fwd supply
 class Get;  // G42.36 fwd supply
 class GetItemIndex;  // G42.36 fwd supply
 class Destroy;  // G42.36 fwd supply
-class a1_1;  // G42.36 fwd supply
 class Constructor_ConvertClass;  // G42.36 fwd supply
 class Block;  // G42.36 fwd supply
 class SetCapacity;  // G42.36 fwd supply
@@ -80,6 +79,8 @@ struct DynamicVector {
     int FindItemIndex(unsigned int * a2);
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_ScriptClass___(unsigned int * Block, char a2);
+    AbstractClass * * Release(int a2, int * a3);
+    AbstractClass * * SetCapacity(int a2, int * a3);
     AbstractClass * * Release(int a2, int * a3);
     AbstractClass * * SetCapacity(int a2, int * a3);
     AbstractClass * * Release(int a2, int * a3);
