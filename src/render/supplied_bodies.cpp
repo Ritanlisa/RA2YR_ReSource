@@ -5,7 +5,6 @@
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
 #include "core/stream_ext.hpp"
-#include "e4/classes/Cell_e4.hpp"
 #include "core/utility_ext.hpp"
 #include "core/vector.hpp"
 #include "misc/misc_ext.hpp"
@@ -28,6 +27,8 @@
 #include "type/anim_type.hpp"
 #include "type/unit_type.hpp"
 #include "ui/ui_ext.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/e4_globals_decls.hpp"  // G42.34: globals carrier (g_DSurface_Hidden_2/stru_87F5F0/DSurface_ViewBounds)  // G42.34: moved after tree headers (fwd names resolve via bridges)
 #include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x40D250

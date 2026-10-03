@@ -6,14 +6,14 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.34: tree TUs get these via using bridges; unguarded fwd collides C2874
 struct AbstractClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
-#ifndef GAMEMD_TREE_UNIVERSE
 struct CellStruct;  // fix_fwd_type_supply
-#endif // GAMEMD_TREE_UNIVERSE
 struct TechnoClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
+#endif // GAMEMD_TREE_UNIVERSE
 struct Cell {
 // --- flat members (BEGIN) ---
     Cell* q000;  // 0x0
