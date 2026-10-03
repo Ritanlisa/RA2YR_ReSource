@@ -868,7 +868,7 @@ int sub_4291E0()
 namespace gamemd {
 void sub_429200()
 {
-  punk.field_0 = (struct IUnknownVtbl *)&off_7E36D4; /*0x429200*/
+    // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x429200.json)
 }
 } // namespace gamemd
 
