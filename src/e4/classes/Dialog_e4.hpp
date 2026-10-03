@@ -110,7 +110,14 @@ struct Dialog {
     int SideIDToIndex();  // 0x4E4EC0
     int OptionIDToIndex();  // 0x4E59A0
     static int FindGameUI();  // 0x5E26C0
-    HWND ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...);    // 0x5E2700
+    HWND ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...);
+    static HWND ShowMessage(int a1, int a2);  // G42.33 b4 static-form sync (raw 2-arg form; member truth 0x5E2700 is 3-arg thiscall)
+    static int DrawBackground(void *aP0);  // G42.33 b8 static-form sync
+    static int StopBink(void *aP0);  // G42.33 b8 static-form sync
+    static int Resize(void *aP0);  // G42.33 b8 static-form sync
+    static int RefreshDialogsGame(int aP0);  // 0x5EE350 G42.33 b10 static-form sync
+    static HWND ShowStatusText(int a1, int a2);  // G42.33 b8 static-form sync (2-arg raw)
+    static HWND ShowStatusText(LPARAM a1, int a2, int a3, wchar_t *a4);  // G42.33 b8 static-form sync (4-arg raw)
     HWND ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2);    // 0x5E2790
     LRESULT ShowPlayerName();  // 0x5E2F60
     int MapPlayerIDToIndex();  // 0x5E9950

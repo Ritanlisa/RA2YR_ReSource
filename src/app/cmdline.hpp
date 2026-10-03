@@ -28,6 +28,7 @@ struct GameConfig {
     // === FUNCS-MOVE (BEGIN) ===
     void* ComputeCRC();  // 0x5e84d0
     static int ComputeHash();  // 0x679d90
+    int BuildChecksum(char * Buffer);  // 0x77E7A0 e4-universe def; addr78 calls @0x789D05 (G42.33 b10)
     // === FUNCS-MOVE (END) ===
 };
 

@@ -21,6 +21,12 @@ struct ComPtr {
 // --- flat members (END) ---
     int DestroyWrapper(int aP0, ObjectClass * aP1);
      unsigned int * Constructor();  // was C2597 interim stub, := truth 0x0x65d430
+    unsigned int ComPtr_field_0x04;  // G42.33 b4 alias (flat-carrier vocab)
+    unsigned int ComPtr_field_0x10;  // G42.33 b4 alias (flat-carrier vocab)
+    unsigned int ComPtr_field_0x0C;  // G42.33 b7 alias
+    unsigned int ComPtr_field_0x18;  // G42.33 b7 alias
+    unsigned int ComPtr_field_0x20;  // G42.33 b7 alias
+    unsigned int ComPtr_field_0x1C;  // G42.33 b8 alias
      double Dtor(...);  // C2597 interim stub
     static double Release_Alt(...);  // C2597 interim stub
      int Set(int a2);  // was C2597 interim stub, := truth 0x0x65d480

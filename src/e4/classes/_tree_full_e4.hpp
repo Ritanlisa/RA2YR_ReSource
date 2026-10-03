@@ -328,6 +328,15 @@ struct HashTable {
     unsigned char q00C;  // 0xC
     unsigned int HashTable_field_0x0C;  // G42.33 b2 alias (flat-carrier vocab)
     unsigned int HashTable_field_0x18;  // G42.33 b2 alias (flat-carrier vocab)
+    unsigned int HashMap_field_0x04;  // G42.33 b4 alias (flat-carrier vocab)
+    unsigned int HashMap_field_0x08;  // G42.33 b4 alias (flat-carrier vocab)
+    unsigned int HashTable_field_0x38;  // G42.33 b4 alias
+    unsigned int HashTable_field_0x3C;  // G42.33 b4 alias
+    unsigned int HashTable_field_0x40;  // G42.33 b4 alias
+    unsigned int HashTable_field_0x44;  // G42.33 b4 alias
+    unsigned int HashTable_field_0x48;  // G42.33 b4 alias
+    unsigned int HashTable_field_0x4C;  // G42.33 b4 alias
+    unsigned int HashTable_field_0x50;  // G42.33 b4 alias
     unsigned int u32_10;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
@@ -358,6 +367,7 @@ struct HashTable {
     unsigned char q04C;  // 0x4C
     void* FindOrCreate2;  // 0x0 (no offset truth)
     static int ComputeHash(void *aP0, int a2);  // A_c2039 R5 static-form sync
+    static int Rebuild(void *aP0);  // G42.33 b4 static-form sync (RebuildEx vocab)
     unsigned char q050;  // 0x50
     int LookupAndMark();  // 0x608440
     static int Get(void *aP0, IUnknown * aP1, IUnknown * aP2);  // A_c2039 R5 static-form sync
@@ -397,6 +407,8 @@ struct MSShapeAnim {
 #ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass {
     static int DetectCloaked(void *a1);  // G42.33 supply (direct call @0x76108F, ObjectClass__DetectCloaked)
+    char Release();  // 0x6241C0 G42.33 b3 member-form sync (def in ObjectClass_e4.cpp)
+    int GetMember01();  // 0x6241D0 G42.33 b3 member-form sync (def in ObjectClass_e4.cpp)
     void* vfptr;
     void* vtable1;  // 0x0
     unsigned char __pad_0[29];  // 0x0

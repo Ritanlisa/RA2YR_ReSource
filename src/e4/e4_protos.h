@@ -486,14 +486,14 @@ extern int Release3COM(IUnknown** a1);
 extern int RequestBufferMixer(VolumeStruct* volume, int rate);
 extern int RevokeActiveObject(void *a1 = 0, void *a2 = 0);
 extern int RoundToInt(double value);
-extern int RunDialog(void);
+extern int RunDialog(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3);  // 0x6241F0 __fastcall 3-arg truth (G42.33 b3)
 extern int SetDialogActiveFlag(int a1 = 0, char a2 = 0);
 extern int SetEvent(void *a1 = 0);
 extern int SetRateMixerSample(unsigned int * a0, int a2, unsigned int a3, ObjectClass * aP3);
 extern int SetupSampleAudioMixer(int * a0, ObjectClass * aP1);
 extern int SetupSkirmishPlayerSlots(void *a1 = 0, void *a2 = 0, void *a3 = 0);
 extern int SetupSkirmishSpawnLocations(HWND a1 = 0, int a2 = 0, int a3 = 0);
-extern int ShowDialogConfirm(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+extern int ShowDialogConfirm(void *aP0 = 0, void *aP1 = 0, void *aP2 = 0, void *aP3 = 0);  // 0x5E2CD0 fastcall 4-arg truth (G42.33 b4)
 extern int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1);
 extern int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned char * a3, int aP1, int a6);
 extern int UpdateMultiplayerLobbySlots(HWND a1 = 0, ObjectClass *a2 = 0, int a3 = 0);
@@ -981,3 +981,20 @@ extern void __Release__NonReentrantLock_details_Concurrency__QAEXXZ_1(void * aP0
 extern unsigned int * LoadAccountInfoWOL(void * aP0);  // 0x778710 thiscall (G42.33 b2)
 extern int Memory_Pop(void * aP0);  // 0x623E00 thiscall (G42.33 b2)
 extern void ** ResetSystemWOL_Reset(void * aP0, char aP1);  // 0x7AD2F0 thiscall (G42.33 b2)
+extern int ReadRegistryOptionsWOL(void * aP0);  // 0x5175F0 thiscall (G42.33 b3)
+extern int ReadAutoLoginWOL(void * aP0);  // 0x779B50 (G42.33 b3)
+extern int GetBuddyEntryWOL(void * aP0, void * aP1, int aP2);  // 0x7AC9D0 thiscall (G42.33 b3)
+extern int ConnectAndLoginWOL(char * aP0);  // 0x7864C0 (G42.33 b3)
+extern char * * LoadConfigWOL(void * aP0);  // 0x779DD0 thiscall (G42.33 b6 truth: returns char**)
+extern void ReadSettingsWOL(void * aP0);  // 0x779C90 thiscall (G42.33 b3)
+extern void SaveConfigWOL(void * aP0);  // 0x6990A0 (G42.33 b3)
+extern int Network_Helper_7ADB00(void * aP0, void * aP1, int aP2);  // 0x7ADB00 (G42.33 b4)
+extern int FindLobbyIDWOL_Find(void);  // 0x7B0210 (G42.33 b4)
+extern int GameLoop_Thunk(void);  // 0x77D710 = GameLoop::Thunk (G42.33 b4 static-cast supply)
+extern int CreateGameWOL_Create_7AC610(void * aP0);  // 0x7AC610 (G42.33 b7)
+extern int ConnectAndLoginWOL_Connect(void * aP0);  // 0x77D1F0 (G42.33 b7)
+extern int NavigateDialogTab(HWND aP0, int aP1);  // 0x600C70 (G42.33 b8)
+extern int GetDialogText(HWND aP0, void *aP1);  // 0x623E40 (G42.33 b8)
+extern int WOLobby_SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4);  // 0x78F7F0 = WOLobby::SetupDlgProc (G42.33 b8 static-cast supply)
+extern int DisplayRankingsWOL(void * aP0);  // 0x783C80 1-arg truth (G42.33 b10)
+extern int ShowAudioSettingsDialog(void);  // 0x6B6230 (G42.33 b10)

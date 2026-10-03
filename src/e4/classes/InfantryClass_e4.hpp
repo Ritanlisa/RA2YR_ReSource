@@ -686,6 +686,7 @@ struct InfantryClass {
 // --- flat members (END) ---
     AbstractClass * * ProcessDeploy(void ** a1);
     static int ScanTarget(int * a1);
+    int SetField6();  // 0x5176A0 G42.33 b3 member-form sync
     void* Destruct(IUnknown * a1, AbstractClass * edx0);
     static double IsInBounds(...);  // C2597 interim stub
      double Construct(...);  // C2597 interim stub

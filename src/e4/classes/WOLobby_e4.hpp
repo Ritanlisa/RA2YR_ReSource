@@ -17,6 +17,7 @@ struct WOLobby {
 // --- flat members (END) ---
     int ChatDlgProc(HWND hDlg, UINT, WPARAM, HWND hWnd);
     int SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd);
+    static int DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4);  // 0x78AC10 G42.33 b3 static-form sync
 };
 
 } // namespace gamemd

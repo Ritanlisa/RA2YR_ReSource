@@ -49,6 +49,8 @@ struct String {
     int TrimLeft(const char **a2, int aP1, int a1, int a3, int aP2, int aP3, int a4, int a5);
     unsigned int Length();  // 0x7B54B0
     AbstractClass * * Replace(char * SubStr, const char * a3);  // 0x7B57A0
+    static AbstractClass * * Replace(void *aP0, const char *a1, const char *a2);  // G42.33 b7 static-form sync
+    unsigned char __tail_7[8];  // G42.33 b7 alias (flat-carrier vocab)
     AbstractClass * * Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3);  // 0x7B5F10
     AbstractClass * * Tokenize2(int a2, wchar_t * Str, void ** a4);  // 0x7B7A60
     ObjectClass * FormatDword(char * Buffer);  // 0x777B30

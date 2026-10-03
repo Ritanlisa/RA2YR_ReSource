@@ -20,8 +20,8 @@ struct Screen {
     unsigned int q044;  // 0x44
     unsigned int q068;  // 0x68
     unsigned int q104;  // 0x104
-    unsigned int Capture;
 // --- flat members (END) ---
+    static int Capture(int a1, int a2, int a3, int a4);  // 0x52FEC0 G42.33 b3 static-form sync (Capture field vocab removed: name collision, zero field uses)
     int CleanupTransitionObjects();
     int TransitionLoop(int a2);
     int TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4);

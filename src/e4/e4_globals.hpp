@@ -15526,3 +15526,21 @@ extern char aSttLobbylistga[];  // data: 0x84A590 G42.33 b2 supply (csf key, add
 extern char aMsgPinginfo[];  // data: 0x84A578 G42.33 b2 supply (csf key, addr78 use)
 extern wchar_t asc_84A69C[];  // data: 0x84A69C G42.33 b2 supply (L": " wide literal, addr78 use)
 extern char aWolGameping[];  // data: 0x84A5B8 G42.33 b2 supply (csf key WOL_GAMEPING, addr78 use)
+
+// G42.33 b4 supply: WOL locale strings + dialog state word (addr78 C2065)
+extern char aATerritory[];  // data: 0x84B608
+extern char aEurope[];  // data: 0x84B614
+extern char aNorthamerica[];  // data: 0x84B61C
+extern unsigned short word_B77AD0;  // data: 0xB77AD0
+
+// G42.33 b6 supply: WOL tail string globals (addr78 C2065)
+extern char aWolRequestingn[];  // data: 0x84B794
+extern char aTxtConsentRequ[];  // data: 0x84B77C
+extern char aTibsun[];  // data: 0x84B7AC
+extern char aTibpass99[];  // data: 0x84B7B4
+extern char aWolNewaccountf[];  // data: 0x84B7D8
+
+// G42.33 b8 supply: tail WOL strings + IDA reg artifact
+extern char aTxtNosquad[];  // data: 0x84B940
+// G42.33 b10 supply: tail WOL strings
+extern char aWolLocale[];  // data: 0x84A684

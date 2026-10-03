@@ -6,6 +6,7 @@
 namespace gamemd {
 
 struct NetworkAddress {
+    static int Assign(void *aP0, void *aP1, int aP2, int aP3);  // 0x53ECE0 G42.33 b10 static-form sync
 // --- flat members (BEGIN) ---
     unsigned int m_IP;  // 0x0
     unsigned int u32_4;  // 0x4
