@@ -34,6 +34,7 @@ public:
     uint32_t TotalBytesWritten = 0;
     void* FileID;  // 0x0 (no offset truth)
     void* MixFileIndex;  // 0x0 (no offset truth)
+    uint32_t FileClass;  // 0x0 (no offset truth)  G42.34 T11: QueryInterface body 0x432610 installs vftable via this->FileClass and returns &this->FileClass (IDA til member view; name shadows type FileClass -- member wins in member-access contexts)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x431B20
     int Dtor();  // 0x431B80

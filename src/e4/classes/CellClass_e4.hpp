@@ -130,7 +130,7 @@ struct CellClass {
     char flags[4];  // 0x140
     unsigned char padding144;  // 0x144
     unsigned int *__pad_28;
-    unsigned int mapCoords;
+    unsigned int mapCoords[2];  // G42.34 T11: initCellData body 0x588C40 does IDA_LOWORD/HIWORD(this->mapCoords[0]) (CellStruct 2-word truth); scalar form C2109
     unsigned int u32_11E;
     unsigned int u32_24;
     unsigned int u32_2F4;
@@ -195,6 +195,10 @@ static int * GetCoords(...);  // C2597 interim stub
     char ApplyTileModification3(int16_t *a2);  // 0x57cf60
     char ApplyTileModification2(int16_t *a2);  // 0x57c2b0
     char ApplyTileModification(int16_t *a2);  // 0x57bcf0
+    void DrawWrapper(unsigned int * a1, int a2, char a3, char a4);  // 0x653F50  G42.34 T11: supplied def carrier (tree decl: system/cell.hpp:280 same shape)
+    void UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4);  // 0x565C10  G42.34 T11: link-resolves to system/gap2_defs.cpp:1591 def (same shape as tree cell.hpp:421)
+    int ClearCrateStateForAll();  // 0x722AB0  G42.34 T11: supplied def carrier
+    unsigned short * initCellData(unsigned short * a1);  // 0x588C40  G42.34 T11: supplied def carrier
 };
 
 } // namespace gamemd

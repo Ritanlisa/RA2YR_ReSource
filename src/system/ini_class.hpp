@@ -50,7 +50,7 @@ struct INILinkNode {
 struct GenericList {
     void* vtable;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* Constructor();  // 0x52ACE0
+    unsigned int * Constructor();  // 0x52ACE0  G42.34: ret sync to cache truth (_DWORD* __thiscall)
     // --- gap2 auto-generated stub declarations (END) ---
 };
 
@@ -80,14 +80,17 @@ protected:
     uint32_t vtableDummy;           // +0x00: vtable ptr (set by constructor)
     unsigned int headNode[3];       // +0x04: embedded list head -- INILinkNode(vtable/Prev/Next) raw-int view (G42.34: bodies index raw; no .Prev/.Next users)
     // +0x10: GenericList vtable
-    INILinkNode sectionHead;         // +0x1C: section list head
-    int32_t    sectionCount;         // +0x28
-    int32_t    INIClass_field_2C;            // +0x2C
-    int32_t    unknown30;            // +0x30
-    bool       needsSave_flag;            // +0x34 (byte 52)
-    uint32_t   unknown38;            // +0x38
-    uint32_t   INIClass_field_3C;            // +0x3C
-    unsigned char __pad_0;  // 0x0
+    // G42.34 T11: IDA til renders sectionHead as raw int view (bodies index sectionHead[0..2];
+    // int* locals read it). Embedded INILinkNode form broke C2676 here + addr64_e4/addr5E_e4.
+    int        sectionHead[3];       // +0x10: section list head raw-int view (was INILinkNode embed, same 12B)
+    int32_t    sectionCount;         // +0x1C
+    int32_t    INIClass_field_2C;            // +0x20
+    int32_t    unknown30;            // +0x24
+    bool       needsSave_flag;            // +0x28 (byte 52)
+    uint32_t   unknown38;            // +0x2C
+    uint32_t   INIClass_field_3C;            // +0x30
+    int *      __pad_20;             // G42.34 T11: IDA til ptr member -- findSection truth 0x52AF00 writes *(uint*)__pad_20 = a8 and *(uint*)&__pad_20[4] = a6
+    unsigned int * __pad_0;          // G42.34 T11: IDA til ptr member -- ctor bodies write *(uint*)__pad_0 = vftable and return this->__pad_0 as _DWORD* (0x478220/0x477F40/0x52AF50 truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* loadFile(int a1);  // 0x43ADC0
     int WriteDigest(int a1, int a2);  // 0x474430
@@ -155,7 +158,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadBool(void* a1, void* a2, void* a3);  // 0x52A0A0
     int ReadTimeString(void* a1, void* a2, int a3);  // 0x52A760
     int SaveTimeField(void* a1, void* a2, int a3);  // 0x52A940
-    void* findSection(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x52AF00
+    unsigned int * findSection(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x52AF00  G42.34: ret sync to cache truth
     unsigned int * sectionExists();  // 0x52AF50
     void* getValue();  // 0x52B080
     int setValue(void* a1, void* a2);  // 0x52B0A0

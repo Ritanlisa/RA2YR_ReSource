@@ -93,6 +93,8 @@ class ScenarioClass
 {
 public:
     static ScenarioClass* Instance;
+    static int MissionStubReturnZero2(void *aP0);  // 0x5D6310 G42.35 C8 static-form sync
+    static int createStartingForces(void *aP0);    // 0x5D6340 G42.35 C8 static-form sync
 
     // design: no binary equivalent found in IDA
     bool IsDefinedWaypoint(int idx);
@@ -333,7 +335,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int UpdateCounters(int a1, int a2, int a3, int a4);  // 0x6E1BD0
     int Set(int a1, int a2, int a3, int a4);  // 0x6E26D0
     int checkMissionObjectives(int a1);  // 0x6E5560
-    void* processEndgame(int a1);  // 0x720940
+    char * processEndgame(unsigned int a1);  // 0x720940  G42.34: sig sync to cache truth (char* __thiscall(this, uint))
     int LoadWaypoints();  // 0x7283C0
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
@@ -363,6 +365,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ProcessIntroTimer();  // 0x684180
     int ReadMapINI(int a1, int a2, int a3);  // 0x689e90
     // === FUNCS-MOVE (END) ===
+    unsigned char m_1[4];  // 0x0 (no offset truth)  G42.34 T11: loadTheater body 0x5D8160 (_VectorClass_PAVMultiplayerGameMode-dialect this) reads *(uint*)&this->m_1[3]
 };
 
 } // namespace gamemd

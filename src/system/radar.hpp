@@ -146,7 +146,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int RenderMapPreview();  // 0x565090
     void* Render(int a1);  // 0x565190
     int RenderBlips(void* a1, int a2);  // 0x582D70
-    int updateRadarCells(int a1, void* a2);  // 0x589E20
+    char updateRadarCells(int a1, unsigned int * a2);  // 0x589E20  G42.34: sig sync to cache truth (char __thiscall(this, int, _DWORD*))
     void* drawRadarTerrain(int a1, int a2);  // 0x58ADB0
     void* RenderJammerRadius(int a1, void* a2);  // 0x58AE60
     int drawRadarEvents(void* a1);  // 0x58AF80
@@ -184,6 +184,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     bool GetBlip(int a1, int a2, int a3, int a4);  // 0x6a8420
     // === FUNCS-MOVE (END) ===
+    void* RadarClass_field_0x0;  // 0x0 (no offset truth)  G42.34 T11: updateRadarCells body 0x589E20 reads this->RadarClass_field_0x0 as unsigned int* base (IDA til member view)
 };
 
 } // namespace gamemd

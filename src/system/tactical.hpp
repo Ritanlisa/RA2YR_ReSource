@@ -127,7 +127,7 @@ public:
 
     // Cell visibility
     void CheckCellVisibility(const Point2D& screen_pos, int flags, bool unk);  // 0x480350
-    bool PixelToCellCheck(const Point2D& pixel, CellStruct* out_cell) const;  // 0x653760
+    unsigned int * PixelToCellCheck(int * a1);  // 0x653760  G42.34: sig sync to cache truth (_DWORD* __thiscall(this, int*)); tree Point2D form had no callers
     CellStruct ScreenToCellLookup(const Point2D& screen) const;  // 0x656750
     bool IsOccupiedByTechno(const CellStruct& cell) const;  // 0x6DA380
     bool CheckUnitOverlap(const CellStruct& cell, int facing) const;  // 0x6D9B50
@@ -138,7 +138,7 @@ public:
     void ProcessMouseClick(int x, int y);  // 0x6539D0
 
     // Helpers
-    Point2D TransformPixel(const Point2D& pixel) const;  // 0x6D2280
+    unsigned int * TransformPixel(unsigned int * a1, unsigned int * a2);  // 0x6D2280  G42.34: sig sync to cache truth (_DWORD* __thiscall(this, _DWORD*, _DWORD*)); tree Point2D form had no callers
     uint32_t InterpolateColor(uint32_t elapsed_ms);  // 0x631E50
     bool DecrementCounter(uint32_t delta); // 0x631EE0
     void MapSpecialDrawMode();  // 0x70F0B0
@@ -231,6 +231,7 @@ protected:
     unsigned char m_1[4];  // 0x1
     void* team;  // 0x0 (no offset truth)
     void* vtable1;  // 0x0 (no offset truth)
+    void* RadarClass_field_0x0;  // 0x0 (no offset truth)  G42.34 T11: PixelToCellCheck body 0x653760 (RadarClass-dialect this) stores/returns &this->RadarClass_field_0x0
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FillScanlinesTransparent(int a1, int a2, int a3, int a4);  // 0x411330
     int ProcessFrame();  // 0x41BFA0
@@ -253,7 +254,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     char CompareVector(int a1);  // 0x5C0AD0
     int ReallocVector(int a1, void* a2);  // 0x5C0C50
     int FindInVector(void* a1);  // 0x5C0D00
-    void* DestroyVector(int a1);  // 0x5C0D80
+    unsigned int * DestroyVector(unsigned int * a1, char a2);  // 0x5C0D80  G42.34: sig sync to cache truth (_DWORD* __thiscall(_DWORD *Block, char))
     int processInput(int a1);  // 0x5D4AD0
     void* saveConfig(int a1);  // 0x631E30
     void FreeResources();  // 0x655A90

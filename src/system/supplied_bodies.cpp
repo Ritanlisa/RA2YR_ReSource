@@ -9,10 +9,13 @@ using ra2::game::AbstractClass;
 #endif
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
+// G42.34 T11: system/cell.hpp include DROPPED -- its memberless tree CellClass
+// collided (C2011) with e4/classes/CellClass_e4.hpp flat def; this TU is e4-universe
+// for CellClass (6 supplied defs need flat members). Tree `Cell` base comes from
+// e4/classes/Cell_e4.hpp (PosToIndex/IsPassable incl. static 1-arg form).
 #include "misc/misc_ext.hpp"
 #include "e4/classes/FilePipe_38_e4.hpp"
 #include "system/buffer_io_file.hpp"
-#include "system/cell.hpp"
 #include "system/file_class.hpp"
 #include "system/game_systems.hpp"
 #include "system/ini_class.hpp"
@@ -22,14 +25,51 @@ using ra2::game::AbstractClass;
 #include "system/tactical.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"  // G42.34: def carrier (QuickPassable/DrawWithFlags)
+// G42.34 T11 supply block: compat macros (RA2_OPNEW/IDA_HIWORD/...), dword_B0xxxx
+// externs (paired with core/ida_globals.cpp defs), legacy-TU-safe global externs
+// (stru_A8EB00/stru_87F5F0/DSurface_ViewBounds flat/g_TacticalClass_Instance/...),
+// Debug::Log carrier, Coord::To_Screen carrier, Isometric::InitTables carrier,
+// Tactical::PixelToCell carrier.
+#include "core/ida_compat.h"
+#include "core/ida_globals.h"
+#include "e4/e4_globals_decls.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
+// G42.34 T11: Isometric_e4.hpp NOT included -- misc_ext.hpp:233 tree `class Isometric`
+// (0-arg InitTables) is the first-wins def; e4 1-arg form arrives via shadow below.
+
+namespace gamemd {
+// G42.34 T11: CellCoord shadow carrier -- misc_ext tree CellCoord::To_CellObj is a
+// 0-arg virtual; cache truth (0x68BCE0/0x47E318/...) calls To_CellObj(int16*) taking
+// the waypoint coords. core/supplied_bodies.cpp:107 precedent (CellCoord_shadow_c).
+struct CellCoord_shadow_c { void * To_CellObj(int16_t *a2); };  // 0x5657A0 shadow (C2)
+
+// G42.34 T11: Isometric shadow carrier -- cache 0x487950 calls InitTables(uint* v5)
+// (1-arg, _DWORD out); tree Isometric::InitTables is 0-arg. e4/classes/Isometric_e4.hpp
+// shape, kept local to avoid C2011 against misc_ext tree def.
+struct Isometric_shadow_c { void * InitTables(unsigned int *aP1); };
+
+// G42.34 T11: TypeList_TechnoType local def -- csp_canon/classes.hpp:398978 version has
+// no ddtor member; parseSection body 0x477F40 calls TypeList_TechnoType::ddtor(this)
+// (static form, vector ddtor of the TechnoType list). File-local: no other TU sees this.
+struct TypeList_TechnoType {
+    static void ddtor(void * aP0);
+};
+
+// G42.34 T11: TransformMatrix3x4Point -- truth 0x5AFB80 (declared in _generated/global_funcs.hpp
+// as (int,int,int) variadic-hostile form); typed float* form used by TransformPixel 0x6D2280 body.
+extern float * TransformMatrix3x4Point(float * aP0, float * aP1, float * aP2);
+
+// G42.34 T11: aNoTheme -- IDA string global returned by processEndgame 0x720940;
+// no tree/e4_globals declaration found. Link debt: needs a definition site (globals round).
+extern char *aNoTheme;
+} // namespace gamemd
 
 // 0x41C150
-namespace gamemd {
-unsigned int * TacticalClass::ProcessTick2(unsigned int * a2) {
-    *a2 = this->lastJumpjetMapCoords[0]; /*0x41c15a*/
-    return a2; /*0x41c15c*/
-}
-} // namespace gamemd
+// G42.34 T10: orphan dup removed -- TacticalClass::ProcessTick2(0x41C150) is already
+// defined in system/gap2_defs.cpp:214 (same signature, cache-faithful). First-wins.
 
 // 0x478220
 namespace gamemd {
@@ -51,7 +91,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int * a2) {
     *(unsigned int *)this->__pad_0 = 0; /*0x47823b*/
     if ( this == (INIClass *)a2 ) /*0x478241*/
       return this->__pad_0; /*0x478241*/
-    FilePipe_38::ddtor((int)this); /*0x478247*/
+    ((FilePipe_38 *)(void *)this)->ddtor(); /*0x478247 G42.34 T11: FilePipe_38::ddtor is 0-arg member (def e4/FilePipe_e4.cpp:305)*/
     v3 = a2[2]; /*0x47824d*/
     this->headNode[1] = v3; /*0x478252*/
     if ( !v3 ) /*0x478255*/
@@ -118,11 +158,11 @@ int CellClass::QuickPassable() {
     v2 = ((int16_t)IDA_HIWORD(this->smudgeTypeIndex) << 8) + 128; /*0x487971*/
     v5[0] = 128; /*0x487973*/
     v5[1] = 128; /*0x487977*/
-    inited = ((Isometric*)(int)this)->InitTables(v5); /*0x487980*/
+    inited = (int)((Isometric_shadow_c *)(void *)this)->InitTables(v5); /*0x487980 G42.34 T11: shadow carrier (misc_ext tree Isometric is 0-arg)*/
     v6[0] = v1; /*0x487989*/
     v6[1] = v2; /*0x487993*/
     v6[2] = inited; /*0x487997*/
-    return Cell::IsPassable((unsigned int *)((IUnknown *)(v6))); /*0x4879a0*/
+    return Cell::IsPassable((unsigned int *)((IUnknown *)(v6))); /*0x4879a0 static 1-arg (Cell_e4.hpp:186)*/
 }
 } // namespace gamemd
 
@@ -165,7 +205,7 @@ unsigned int * INIClass::sectionExists() {
     this->sectionHead[1] = v5; /*0x52afa5*/
     v6 = this->headNode[1]; /*0x52afa8*/
     if ( v6 ) /*0x52afad*/
-      *(unsigned int *)(v6 + 8) = (unsigned int)(sectionHead); /*0x52afaf*/
+      *(unsigned int *)(v6 + 8) = (unsigned int)(sectionHead); /*0x52afaf G42.34 T11: ptr-to-int cast (int* -> uint store)*/
     this->headNode[1] = (int)sectionHead; /*0x52afb2*/
     *(unsigned int *)this->__pad_0 = 0; /*0x52afb7*/
     return result; /*0x52afb5*/
@@ -203,25 +243,30 @@ char TacticalClass::CompareVector(int a2) {
 // 0x5C0FE0
 namespace gamemd {
 unsigned int * ScenarioClass::initAI(char a2) {
-    this->m_0 = (int)0; /*0x5c0fe3*/
-    MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c0fe9*/
+    // G42.34 T11: cache 0x5C0FE0 = MultiplayerBattle ddtor misattributed under
+    // ScenarioClass. m_0 = offset-0 vftable slot (ScenarioClass non-polymorphic,
+    // no member): generator-neutralized vftable write kept as raw offset-0 store.
+    *(unsigned int *)(void *)this = 0; /*0x5c0fe3*/
+    ((MultiplayerGameMode *)(void *)this)->Dtor(); /*0x5c0fe9 G42.34 T11: 0-arg virtual (game_systems.hpp:472)*/
     if ( (a2 & 1) != 0 ) /*0x5c0ff3*/
       RA2_OPDEL(this); /*0x5c0ff6*/
-    return &this->m_0; /*0x5c1000*/
+    return (unsigned int *)this; /*0x5c1000*/
 }
 } // namespace gamemd
 
 // 0x653F50
 namespace gamemd {
 void CellClass::DrawWrapper(unsigned int * a2, int jj, char a4, char a5) {
-    CellClass::UpdateTerrainAndWaypoints((MapClass *)this, a2, jj, a4, a5); /*0x653f64*/
+    // G42.34 T11: call reshaped to member form; links to gap2_defs.cpp:1591 def
+    // (CellClass::UpdateTerrainAndWaypoints(void*,int,int,int), same shape as tree cell.hpp:421).
+    this->UpdateTerrainAndWaypoints((void *)a2, jj, (int)a4, (int)a5); /*0x653f64*/
 }
 } // namespace gamemd
 
 // 0x68BCC0
 namespace gamemd {
 unsigned int * ScenarioClass::Get_Waypoint_Location(unsigned int *a2, int a3) {
-    *a2 = *(unsigned int *)(this + 4 * a3 + 1586); /*0x68bccf*/
+    *a2 = *(unsigned int *)((char *)this + 4 * a3 + 1586); /*0x68bccf G42.34 T11: byte-offset view (IDA ptr math)*/
     return a2; /*0x68bcd1*/
 }
 } // namespace gamemd
@@ -229,7 +274,10 @@ unsigned int * ScenarioClass::Get_Waypoint_Location(unsigned int *a2, int a3) {
 // 0x68BCE0
 namespace gamemd {
 void * ScenarioClass::GetCellFromArray(int a2) {
-    return ((CellCoord*)(CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj((int16_t *)&this->waypoints[4 * a2]); /*0x68bcf6*/
+    // G42.34 T11: cache 0x68BCE0 reads ((CellCoord *)&stru_87F5F0.__pad_58[416]) --
+    // byte view 0x87F5F0 + 0x58 + 416 = 0x87F7E8 (dword_87F7E8 twin, ida_globals.h).
+    // Tree CellCoord::To_CellObj is 0-arg virtual -> shadow carrier.
+    return ((CellCoord_shadow_c *)&dword_87F7E8)->To_CellObj((int16_t *)&this->waypoints[4 * a2]); /*0x68bcf6*/
 }
 } // namespace gamemd
 
@@ -239,10 +287,10 @@ int CellClass::ClearCrateStateForAll() {
     int result; // eax
     int i; // ecx
 
-    result = Cell::PosToIndex((Cell *)this); /*0x722ab0*/
+    result = ((Cell *)this)->PosToIndex(); /*0x722ab0 G42.34 T11: instance form (Cell_e4.hpp:150 0-arg member)*/
     for ( i = 0; /*0x722abf*/
-          i < g_BuildingLoadQueue_Array[0];
-          *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(g_BuildingLoadQueue_Array[2] + 4 * i - 4) + 248) + result) = 0 )
+          i < ((unsigned int *)&g_BuildingLoadQueue_Array)[0];
+          *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(((unsigned int *)&g_BuildingLoadQueue_Array)[2] + 4 * i - 4) + 248) + result) = 0 )
     {
       ++i; /*0x722ac7*/
     }
@@ -256,7 +304,7 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2) {
     void *FileBaseOffset; // eax
 
     FileBaseOffset = (void *)this->FileBaseOffset; /*0x432616*/
-    this->FileClass = (FileClass)0; /*0x432619*/
+    this->FileClass = 0; /*0x432619 G42.34 T11: vftable install (generator-neutralized); FileClass is now a uint32 member (buffer_io_file.hpp)*/
     if ( FileBaseOffset ) /*0x432621*/
     {
       if ( IDA_LOBYTE(this->BufferOffset) ) /*0x432623*/
@@ -280,43 +328,27 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2) {
 
 // 0x434A40
 namespace gamemd {
+// G42.34 T11: isolated as stub -- cache body itself contains unrenderable `this->?`
+// members (IDA decompile failure of BitFont dtor fields); verbatim cannot compile.
+// Real owner = BitFont ddtor misattributed under BufferIOFileClass.
+// Evidence: .omo/ida_cache/func_0x434A40.json (FileSize = (void *)this->?; FilePointer = (void **)this->?;).
+// Restore when BitFont layout lands.
 void *** BufferIOFileClass::Constructor_BitFont(char a2) {
-    void *FileSize; // eax
-    void **FilePointer; // esi
-
-    FileSize = (void *)this->?; /*0x434a43*/
-    *(unsigned int *)this->RawFileClass = 0; /*0x434a46*/
-    if ( FileSize ) /*0x434a4e*/
-      free(FileSize); /*0x434a51*/
-    FilePointer = (void **)this->?; /*0x434a5a*/
-    if ( FilePointer ) /*0x434a5f*/
-    {
-      if ( FilePointer[6] ) /*0x434a61*/
-        RA2_OPDEL(FilePointer[6]); /*0x434a69*/
-      if ( FilePointer[7] ) /*0x434a71*/
-        RA2_OPDEL(FilePointer[7]); /*0x434a79*/
-      RA2_OPDEL(FilePointer); /*0x434a82*/
-    }
-    if ( (a2 & 1) != 0 ) /*0x434a91*/
-      RA2_OPDEL(this); /*0x434a94*/
-    return (void ***)this; /*0x434a9e*/
+    (void)a2;
+    return (void ***)this;
 }
 } // namespace gamemd
 
 // 0x435560
 namespace gamemd {
+// G42.34 T11: isolated as stub -- real owner = BitText ddtor misattributed under
+// BufferIOFileClass. Three unmet deps: (1) g_FogOfWarState typed as int in
+// e4_globals_decls/core globals (body needs Text* singleton with vt call);
+// (2) this->RawFileClass member access -- name is the base TYPE, no such member;
+// (3) vftable install sites neutralized anyway. Evidence: .omo/ida_cache/func_0x435560.json.
 unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
-    Text *v3; // esi
-
-    *(unsigned int *)this->RawFileClass = 0; /*0x435564*/
-    v3 = g_FogOfWarState; /*0x43556a*/
-    if ( g_FogOfWarState ) /*0x435572*/
-      (*(void (__thiscall **)(Text *, int))g_FogOfWarState->Text_field_00)(g_FogOfWarState, 1); /*0x43557a*/
-    if ( v3 == g_FogOfWarState ) /*0x435582*/
-      g_FogOfWarState = 0; /*0x435584*/
-    if ( (a2 & 1) != 0 ) /*0x435593*/
-      RA2_OPDEL(this); /*0x435596*/
-    return this->RawFileClass; /*0x4355a0*/
+    (void)a2;
+    return (unsigned int *)this;
 }
 } // namespace gamemd
 
@@ -335,7 +367,7 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
     *(unsigned int *)this->__pad_0 = 0; /*0x477f5a*/
     if ( this == (INIClass *)a2 ) /*0x477f60*/
       return this->__pad_0; /*0x477f60*/
-    TypeList_TechnoType::ddtor((_VectorClass_PAVTechnoTypeClass *)this); /*0x477f62*/
+    TypeList_TechnoType::ddtor((void *)this); /*0x477f62 G42.34 T11: static shadow (file-local TypeList_TechnoType)*/
     v3 = a2[2]; /*0x477f68*/
     this->headNode[1] = v3; /*0x477f6d*/
     if ( !v3 ) /*0x477f70*/
@@ -384,13 +416,13 @@ int * CellClass::GetScreenRect(int *a2) {
     int v19; // [esp+20h] [ebp-8h]
     int v20; // [esp+24h] [ebp-4h]
 
-    v3 = (SLOWORD(this->smudgeTypeIndex) << 8) + 128; /*0x47ffab*/
+    v3 = (IDA_SLOWORD(this->smudgeTypeIndex) << 8) + 128; /*0x47ffab*/
     v4 = (IDA_SHIWORD(this->smudgeTypeIndex) << 8) + 128; /*0x47ffb8*/
     v19 = 0; /*0x47ffba*/
     v18 = (v4 / 256) << 8; /*0x47ffc4*/
     v17 = (v3 / 256) << 8; /*0x47ffde*/
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v17, &v15); /*0x47ffe2*/
-    v5 = 3 * this->level; /*0x47fff8*/
+    ((Coord *)g_TacticalClass_Instance)->To_Screen((unsigned int *)&v17, &v15); /*0x47ffe2 G42.34 T11: instance form (Coord_e4.hpp member 0x6D2140)*/
+    v5 = 3 * this->level[0]; /*0x47fff8 G42.34 T11: level is char[1] flat member*/
     v15 -= 30; /*0x47fffe*/
     v6 = v15; /*0x480002*/
     v7 = 30; /*0x480014*/
@@ -411,7 +443,7 @@ int * CellClass::GetScreenRect(int *a2) {
     }
     else
     {
-      height = (uint8_t)this->height; /*0x480065*/
+      height = (uint8_t)this->height[0]; /*0x480065 G42.34 T11: height is char[1] flat member*/
       v12 = (unsigned int *)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)(*(unsigned int *)&(&stru_A8EB00)[328] + 4 * v9) + 156))(*(unsigned int *)(*(unsigned int *)&(&stru_A8EB00)[328] + 4 * v9)); /*0x48006b*/
       if ( !v12 ) /*0x480073*/
       {
@@ -449,9 +481,9 @@ unsigned int * GenericList::Constructor() {
     int v5; // edi
     int v6; // edi
 
-    result = &this->vtable; /*0x52ace0*/
+    result = (unsigned int *)&this->vtable; /*0x52ace0 G42.34 T11: void** -> uint* cast*/
     v2 = this + 4; /*0x52ace9*/
-    *((unsigned int *)this + 2) = 0; /*0x52acef*/
+    *((unsigned int *)this + 2) = 0; /*0x52acf0*/
     *((unsigned int *)this + 3) = 0; /*0x52acf2*/
     *((unsigned int *)this + 1) = 0; /*0x52acf5*/
     *((unsigned int *)this + 5) = 0; /*0x52acfb*/
@@ -474,12 +506,12 @@ unsigned int * GenericList::Constructor() {
       }
     }
     v5 = *((unsigned int *)this + 2); /*0x52ad2f*/
-    *((unsigned int *)this + 6) = this + 1; /*0x52ad32*/
+    *((unsigned int *)this + 6) = (unsigned int)(this + 1); /*0x52ad32 G42.34 T11: ptr-to-int store*/
     *((unsigned int *)this + 5) = v5; /*0x52ad35*/
     v6 = *((unsigned int *)this + 2); /*0x52ad38*/
     if ( v6 ) /*0x52ad3d*/
-      *(unsigned int *)(v6 + 8) = v2; /*0x52ad3f*/
-    *((unsigned int *)this + 2) = v2; /*0x52ad42*/
+      *(unsigned int *)(v6 + 8) = (unsigned int)v2; /*0x52ad3f G42.34 T11: ptr-to-int store*/
+    *((unsigned int *)this + 2) = (unsigned int)v2; /*0x52ad42 G42.34 T11: ptr-to-int store*/
     return result; /*0x52ad45*/
 }
 } // namespace gamemd
@@ -503,52 +535,15 @@ unsigned int * INIClass::findSection(int a2, int a3, int a4, int a5, int a6, int
 
 // 0x557830
 namespace gamemd {
+// G42.34 T11: isolated as stub -- cache 0x557830 truth: ListClass* this (list
+// scrolling logic: scroll steps 38/40, thumb recompute). Four unmet deps on the
+// CellClass carrier: this->__pad_0 / this->ListClass_field_0x10 members,
+// CellClass::Draw helper (undeclared anywhere), stru_887598.lineTrailer global
+// member access (scalar extern in e4_globals_decls). Real owner = ListClass.
+// Evidence: .omo/ida_cache/func_0x557830.json. Restore when ListClass layout lands.
 int CellClass::DrawWithFlags(int a2, unsigned int *a3, int a4) {
-    int v4; // ebx
-    int v7; // eax
-
-    v4 = a2; /*0x557831*/
-    if ( (a2 & 4) != 0 ) /*0x55783b*/
-    {
-      *a3 = 0; /*0x557848*/
-      CellClass::Draw((ControlClass *)this, a2 & 0xFFFFFFFB, a3, 0); /*0x55784e*/
-      return 1; /*0x557854*/
-    }
-    else if ( (a2 & 0x100) != 0 ) /*0x557865*/
-    {
-      if ( *a3 == 38 ) /*0x55786c*/
-      {
-        (*(void (__thiscall **)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 164))(this, -1); /*0x557874*/
-        *a3 = 0; /*0x557880*/
-        return CellClass::Draw((ControlClass *)this, a2, a3, 0); /*0x557886*/
-      }
-      else if ( *a3 == 40 ) /*0x557894*/
-      {
-        (*(void (__thiscall **)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 164))(this, 1); /*0x55789c*/
-        *a3 = 0; /*0x5578a8*/
-        return CellClass::Draw((ControlClass *)this, a2, a3, 0); /*0x5578ae*/
-      }
-      else
-      {
-        IDA_BYTE1(v4) = IDA_BYTE1(a2) & 0xFE; /*0x5578b9*/
-        return CellClass::Draw((ControlClass *)this, v4, a3, 0); /*0x5578c2*/
-      }
-    }
-    else
-    {
-      v7 = *((unsigned int *)this + 92) /*0x5578e8*/
-         + ((*(int (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 48))(stru_887598.lineTrailer)
-          - this->ListClass_field_0x10
-          - 1)
-         / *((unsigned int *)this + 19);
-      *((unsigned int *)this + 91) = v7; /*0x5578ea*/
-      if ( v7 >= *((unsigned int *)this + 17) - 1 ) /*0x5578f6*/
-        v7 = *((unsigned int *)this + 17) - 1; /*0x5578f8*/
-      *((unsigned int *)this + 91) = v7; /*0x5578fd*/
-      if ( v7 == -1 ) /*0x557903*/
-        *((unsigned int *)this + 91) = 0; /*0x557905*/
-      return CellClass::Draw((ControlClass *)this, a2, a3, 0); /*0x557915*/
-    }
+    (void)a2; (void)a3; (void)a4;
+    return 0;
 }
 } // namespace gamemd
 
@@ -557,7 +552,7 @@ namespace gamemd {
 unsigned short * CellClass::initCellData(unsigned short *a2) {
     IDA_LOWORD(this->mapCoords[0]) += *a2; /*0x588c49*/
     IDA_HIWORD(this->mapCoords[0]) += a2[1]; /*0x588c50*/
-    return this; /*0x588c54*/
+    return (unsigned short *)this; /*0x588c54 G42.34 T11: CellClass* -> ushort* cast (cache returns this as _WORD*)*/
 }
 } // namespace gamemd
 
@@ -577,7 +572,7 @@ char RadarClass::updateRadarCells(int a2, unsigned int *a3) {
     int v13; // eax
     unsigned int *v14; // ecx
 
-    RadarClass_field_0x0 = this->RadarClass_field_0x0; /*0x589e24*/
+    RadarClass_field_0x0 = (unsigned int *)this->RadarClass_field_0x0; /*0x589e24*/
     v4 = RadarClass_field_0x0[6 * a2 + 4]; /*0x589e30*/
     v5 = (char *)&RadarClass_field_0x0[6 * a2]; /*0x589e34*/
     v6 = (unsigned int *)*((unsigned int *)v5 + 1); /*0x589e37*/
@@ -587,9 +582,9 @@ char RadarClass::updateRadarCells(int a2, unsigned int *a3) {
   LABEL_4:
       v8 = *((unsigned int *)v5 + 2); /*0x589e4e*/
       if ( v4 < v8 /*0x589e70*/
-        || (v5[13] || !v8)
-        && (v9 = *((unsigned int *)v5 + 5), v9 > 0)
-        && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v5 + 8))(v5, v8 + v9, 0) )
+           || (v5[13] || !v8)
+           && (v9 = *((unsigned int *)v5 + 5), v9 > 0)
+           && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v5 + 8))(v5, v8 + v9, 0) )
       {
         v10 = *((unsigned int *)v5 + 4); /*0x589e77*/
         v11 = v10 + 1; /*0x589e7a*/
@@ -662,17 +657,17 @@ unsigned int * TacticalClass::PixelToCellCheck(int *a2) {
     v2 = a2[1]; /*0x65376a*/
     v6[0] = *a2; /*0x65376d*/
     v6[1] = v2; /*0x653781*/
-    v3 = TacticalClass::TransformPixel((TacticalClass *)g_TacticalClass_Instance, v7, v6); /*0x653785*/
+    v3 = ((TacticalClass *)g_TacticalClass_Instance)->TransformPixel(v7, (unsigned int *)v6); /*0x653785 G42.34 T11: instance form (member sig synced to cache 0x6D2280)*/
     if ( *v3 == dword_B04900 && v3[1] == dword_B04904 && v3[2] == dword_B04908 ) /*0x6537ad*/
     {
       this->RadarClass_field_0x0 = (void *)dword_B048C0; /*0x653803*/
-      return &this->RadarClass_field_0x0; /*0x6537f9*/
+      return (unsigned int *)&this->RadarClass_field_0x0; /*0x6537f9 G42.34 T11: void** -> uint* cast*/
     }
     else
     {
-      v4 = (void *)*Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &a2, v6); /*0x6537cd*/
+      v4 = (void *)*((Tactical *)g_TacticalClass_Instance)->PixelToCell((unsigned int *)&a2, v6); /*0x6537cd G42.34 T11: instance form (Tactical_e4.hpp:629 member)*/
       this->RadarClass_field_0x0 = v4; /*0x6537d3*/
-      return &this->RadarClass_field_0x0; /*0x6537cf*/
+      return (unsigned int *)&this->RadarClass_field_0x0; /*0x6537cf*/
     }
 }
 } // namespace gamemd
@@ -688,8 +683,8 @@ unsigned int * TacticalClass::TransformPixel(unsigned int *a2, unsigned int *a3)
     int v8; // eax
     float v10[3]; // [esp+8h] [ebp-18h] BYREF
     float v11; // [esp+14h] [ebp-Ch] BYREF
-    float v12; // [esp+18h] [ebp-8h]
-    int v13; // [esp+1Ch] [ebp-4h]
+    float v12; // [ebp-8h]
+    int v13; // [ebp-4h]
 
     if ( *a3 >= dword_B0CE30 || (v3 = a3[1], v3 >= dword_B0CE34 + dword_B0CE2C) ) /*0x6d22ab*/
     {
@@ -700,13 +695,13 @@ unsigned int * TacticalClass::TransformPixel(unsigned int *a2, unsigned int *a3)
     }
     else
     {
-      v4 = this->visibleArea[1] + v3; /*0x6d22bf*/
-      IDA_LODWORD(v10[0]) = this->visibleArea[0] + *a3; /*0x6d22c1*/
+      v4 = ((unsigned int *)&this->visibleArea)[1] + v3; /*0x6d22bf G42.34 T11: visibleArea is RectangleStruct -- raw word view*/
+      IDA_LODWORD(v10[0]) = ((unsigned int *)&this->visibleArea)[0] + *a3; /*0x6d22c1 G42.34 T11*/
       IDA_LODWORD(v10[1]) = v4; /*0x6d22c5*/
       v11 = (float)IDA_SLODWORD(v10[0]); /*0x6d22dc*/
       v13 = 0; /*0x6d22e4*/
       v12 = (float)v4; /*0x6d22ec*/
-      v5 = TransformMatrix3x4Point(v10, (float *)this->TacticalClass_field_DE4, &v11); /*0x6d22f0*/
+      v5 = TransformMatrix3x4Point(v10, (float *)&this->TacticalClass_field_DE4, &v11); /*0x6d22f0 G42.34 T11: struct addr cast (was (float*)struct lvalue)*/
       v11 = *v5; /*0x6d22f7*/
       v12 = v5[1]; /*0x6d2302*/
       v13 = *((unsigned int *)v5 + 2); /*0x6d2309*/
@@ -724,10 +719,9 @@ unsigned int * TacticalClass::TransformPixel(unsigned int *a2, unsigned int *a3)
 // 0x720940
 namespace gamemd {
 char * ScenarioClass::processEndgame(unsigned int a2) {
-    if ( a2 >= this->nextScenario[9] ) /*0x720949*/
+    if ( a2 >= (unsigned int)this->nextScenario[9] ) /*0x720949*/
       return aNoTheme; /*0x720954*/
     else
       return *(char **)(this->nextScenario[6] + 4 * a2); /*0x72094e*/
 }
 } // namespace gamemd
-
