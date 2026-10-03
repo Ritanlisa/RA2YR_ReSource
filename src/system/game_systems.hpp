@@ -200,6 +200,7 @@ public:
 // Random — random number generation (4 methods)
 // IDA: Gaussian, State, Range
 // ============================================================================
+#ifndef GAMEMD_TREE_Random  // G42.35h: utility_ext Random carrier wins in tree TUs
 class Random
 {
 public:
@@ -217,6 +218,7 @@ public:
     static uint32_t s_State[4];     // 0x04
 };
 
+#endif  // GAMEMD_TREE_Random
 
 // === Batch-generated MISSING class stubs ===
 
@@ -340,6 +342,7 @@ public:
 
 };
 // 12 methods in IDA
+#ifndef GAMEMD_TREE_LoadGame  // G42.35h: e4 flat carrier wins in opt-in TUs
 class LoadGame
 {
 public:
@@ -365,6 +368,7 @@ public:
     uint8_t LoadGame_field_0x28[4];
     uint8_t LoadGame_field_0x2C[4];
 };
+#endif  // GAMEMD_TREE_LoadGame
 // 3 methods in IDA
 // CSP: LoadProgressMgr matched via T1
 class LoadProgressMgr

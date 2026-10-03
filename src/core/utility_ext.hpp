@@ -959,6 +959,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int *m_2D;  // supplied (C2039)
 };
 // 1 methods in IDA
+#ifndef GAMEMD_E4_CRC32  // G42.35h: e4 flat carrier wins in opt-in TUs (Hash/SHA1 pattern)
 class CRC32
 {
 public:
@@ -968,6 +969,7 @@ public:
     virtual void Compute(); // 0x4A1FB0
 
 };
+#endif  // GAMEMD_E4_CRC32
 // 9 methods in IDA
 class ComPtr
 {

@@ -1,5 +1,12 @@
 // G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
 #define GAMEMD_TREE_UNIVERSE 1
+// G42.35h: e4-carrier opt-outs -- utility_ext Hash/SHA1/CRC32 collide with the
+// e4 flat carriers (core/ui supplied_bodies battery pattern).
+#define GAMEMD_E4_Hash 1
+#define GAMEMD_E4_SHA1 1
+#define GAMEMD_E4_CRC32 1
+#define GAMEMD_TREE_Random 1
+#define GAMEMD_TREE_LoadGame 1
 // G42.32 S: guard-order tree-bridge -- ra2::game full defs precede e4 leaf headers
 #include "object/abstract.hpp"
 #ifdef GAMEMD_TREE_UNIVERSE
@@ -35,7 +42,7 @@ using ra2::game::AbstractClass;
 
 // 0x48C650
 namespace gamemd {
-unsigned int * ConnectionClass::QueryInterface(char a2)
+HRESULT __stdcall ConnectionClass::QueryInterface(const IID&, void**)
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00048C650.json)
 }
@@ -58,7 +65,7 @@ int NetworkID::Compare(int a2) {
 
 // 0x53F850
 namespace gamemd {
-unsigned int * IPXConnClass::QueryInterface(char a2)
+unsigned int * IPXConnClass::QueryInterface(char,int,int,int)
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00053F850.json)
 }
@@ -74,7 +81,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
 
 // 0x540030
 namespace gamemd {
-unsigned int * IPXGlobalConnClass::Disconnect(int a2)
+unsigned int * IPXGlobalConnClass::Disconnect(int,int)
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000540030.json)
 }
@@ -106,7 +113,7 @@ unsigned int IPXManagerClass::GetQueueSize()
 
 // 0x5424A0
 namespace gamemd {
-int IPXManagerClass::CheckStatus(int a2)
+int32_t IPXManagerClass::CheckStatus()
 {
     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5424A0)
 }
@@ -122,7 +129,7 @@ int IPXManagerClass::ProcessQueue()
 
 // 0x542EC0
 namespace gamemd {
-int IPXManagerClass::Flush(char a2)
+void IPXManagerClass::Flush()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000542EC0.json)
 }
@@ -130,7 +137,7 @@ int IPXManagerClass::Flush(char a2)
 
 // 0x543100
 namespace gamemd {
-unsigned int * IPXManagerClass::getPlayerName(char a2)
+int32_t IPXManagerClass::getPlayerName()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000543100.json)
 }
@@ -146,7 +153,7 @@ unsigned int * NetworkSession::ResetState()
 
 // 0x560480
 namespace gamemd {
-int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
+void NetworkOptions::DlgProc()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000560480.json)
 }
@@ -154,7 +161,7 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
 
 // 0x5B49B0
 namespace gamemd {
-char ModemGuest::Dialog()
+void ModemGuest::Dialog()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005B49B0.json)
 }
@@ -170,7 +177,7 @@ void ModemGuest::InitDialog()
 
 // 0x5B59B0
 namespace gamemd {
-int ModemGame::AdvanceTauntCommand()
+void ModemGame::AdvanceTauntCommand()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005B59B0.json)
 }
@@ -178,7 +185,7 @@ int ModemGame::AdvanceTauntCommand()
 
 // 0x5B5AD0
 namespace gamemd {
-int ModemGame::UpdatePlayerNameAndColor(wchar_t *Source, unsigned int a3, int a4)
+void ModemGame::UpdatePlayerNameAndColor()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005B5AD0.json)
 }
@@ -186,7 +193,7 @@ int ModemGame::UpdatePlayerNameAndColor(wchar_t *Source, unsigned int a3, int a4
 
 // 0x5B6020
 namespace gamemd {
-char ModemGame::ProcessPacket()
+void ModemGame::ProcessPacket()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005B6020.json)
 }
@@ -202,7 +209,7 @@ void ModemGame::ReceiveMapPreview()
 
 // 0x5B77E0
 namespace gamemd {
-char ModemHost::Dialog()
+void ModemHost::Dialog()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005B77E0.json)
 }
@@ -218,7 +225,7 @@ void ModemHost::InitDialog()
 
 // 0x5B9680
 namespace gamemd {
-int NetworkGameSetup::ReadRulesInitConfig()
+void NetworkGameSetup::ReadRulesInitConfig()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005B9680.json)
 }
@@ -226,7 +233,7 @@ int NetworkGameSetup::ReadRulesInitConfig()
 
 // 0x5B96B0
 namespace gamemd {
-int NetworkGameSetup::ReadRulesBases()
+void NetworkGameSetup::ReadRulesBases()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005B96B0.json)
 }
@@ -234,7 +241,7 @@ int NetworkGameSetup::ReadRulesBases()
 
 // 0x5B96E0
 namespace gamemd {
-int NetworkGameSetup::ReadRulesAlliesAllowed()
+void NetworkGameSetup::ReadRulesAlliesAllowed()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005B96E0.json)
 }
@@ -242,7 +249,7 @@ int NetworkGameSetup::ReadRulesAlliesAllowed()
 
 // 0x5B9710
 namespace gamemd {
-int NetworkGameSetup::ReadRulesEngineerCount()
+void NetworkGameSetup::ReadRulesEngineerCount()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005B9710.json)
 }
@@ -250,7 +257,7 @@ int NetworkGameSetup::ReadRulesEngineerCount()
 
 // 0x5BA060
 namespace gamemd {
-char ModemGuest::ProcessPacket(char a2)
+void ModemGuest::ProcessPacket()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005BA060.json)
 }
@@ -258,7 +265,7 @@ char ModemGuest::ProcessPacket(char a2)
 
 // 0x5BAC60
 namespace gamemd {
-char ModemHost::StartGame(char a2)
+void ModemHost::StartGame()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005BAC60.json)
 }
@@ -266,7 +273,7 @@ char ModemHost::StartGame(char a2)
 
 // 0x5C1090
 namespace gamemd {
-bool MultiplayerBattleTeam::AddRef()
+void MultiplayerBattleTeam::AddRef()
 {
     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C1090)
 }
@@ -274,7 +281,7 @@ bool MultiplayerBattleTeam::AddRef()
 
 // 0x5C10B0
 namespace gamemd {
-bool MultiplayerBattleTeam::Release(int a2)
+void MultiplayerBattleTeam::Release()
 {
     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C10B0)
 }
@@ -282,7 +289,7 @@ bool MultiplayerBattleTeam::Release(int a2)
 
 // 0x5C10D0
 namespace gamemd {
-void ** MultiplayerBattleTeam::QueryInterface(char a2)
+void MultiplayerBattleTeam::QueryInterface()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005C10D0.json)
 }
@@ -290,7 +297,7 @@ void ** MultiplayerBattleTeam::QueryInterface(char a2)
 
 // 0x5C94C0
 namespace gamemd {
-bool MultiplayerObserverTeam::AddRef()
+void MultiplayerObserverTeam::AddRef()
 {
     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C94C0)
 }
@@ -298,7 +305,7 @@ bool MultiplayerObserverTeam::AddRef()
 
 // 0x5C94D0
 namespace gamemd {
-void ** MultiplayerObserverTeam::QueryInterface(char a2)
+void MultiplayerObserverTeam::QueryInterface()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005C94D0.json)
 }
@@ -306,7 +313,7 @@ void ** MultiplayerObserverTeam::QueryInterface(char a2)
 
 // 0x5CAE70
 namespace gamemd {
-char MultiplayerSiegeDefenderTeam::AddRef()
+void MultiplayerSiegeDefenderTeam::AddRef()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005CAE70.json)
 }
@@ -314,7 +321,7 @@ char MultiplayerSiegeDefenderTeam::AddRef()
 
 // 0x5CAF10
 namespace gamemd {
-void ** MultiplayerSiegeDefenderTeam::QueryInterface(char a2)
+void MultiplayerSiegeDefenderTeam::QueryInterface()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005CAF10.json)
 }
@@ -322,7 +329,7 @@ void ** MultiplayerSiegeDefenderTeam::QueryInterface(char a2)
 
 // 0x5CAF40
 namespace gamemd {
-void ** MultiplayerSiegeAttackerTeam::QueryInterface(char a2)
+void MultiplayerSiegeAttackerTeam::QueryInterface()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005CAF40.json)
 }
@@ -330,7 +337,7 @@ void ** MultiplayerSiegeAttackerTeam::QueryInterface(char a2)
 
 // 0x5D8860
 namespace gamemd {
-unsigned int * MultiplayerTeamVector::Destruct(char a2)
+void MultiplayerTeamVector::Destruct()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005D8860.json)
 }
@@ -338,7 +345,7 @@ unsigned int * MultiplayerTeamVector::Destruct(char a2)
 
 // 0x5D88B0
 namespace gamemd {
-unsigned int * MultiplayerModeVector::Destruct(char a2)
+void MultiplayerModeVector::Destruct()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005D88B0.json)
 }
@@ -346,7 +353,7 @@ unsigned int * MultiplayerModeVector::Destruct(char a2)
 
 // 0x5D8900
 namespace gamemd {
-unsigned int * MultiplayerModeVector2::Destruct(char a2)
+void MultiplayerModeVector2::Destruct()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005D8900.json)
 }
@@ -354,7 +361,7 @@ unsigned int * MultiplayerModeVector2::Destruct(char a2)
 
 // 0x5D8C50
 namespace gamemd {
-wchar_t ** MultiplayerTeam::Constructor(const wchar_t **a2, wchar_t *a3)
+void MultiplayerTeam::Constructor()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005D8C50.json)
 }
@@ -370,7 +377,7 @@ void MultiplayerTeam::Destructor()
 
 // 0x5D8D50
 namespace gamemd {
-void ** MultiplayerTeam_Destru::QueryInterface(char a2)
+void MultiplayerTeam_Destru::QueryInterface()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005D8D50.json)
 }
@@ -378,7 +385,7 @@ void ** MultiplayerTeam_Destru::QueryInterface(char a2)
 
 // 0x5DDBD0
 namespace gamemd {
-int NetworkSettings::DlgProc(HWND hWnd, UINT, DeleteAndZero)
+void NetworkSettings::DlgProc()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005DDBD0.json)
 }
@@ -386,7 +393,7 @@ int NetworkSettings::DlgProc(HWND hWnd, UINT, DeleteAndZero)
 
 // 0x5E8D00
 namespace gamemd {
-int WOLobby::FindPlayerIndex()
+void WOLobby::FindPlayerIndex()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005E8D00.json)
 }
@@ -394,7 +401,7 @@ int WOLobby::FindPlayerIndex()
 
 // 0x5E8DA0
 namespace gamemd {
-int NetworkShare::GetField(int a1)
+bool NetworkShare::GetField()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005E8DA0.json)
 }
@@ -402,7 +409,7 @@ int NetworkShare::GetField(int a1)
 
 // 0x5EC030
 namespace gamemd {
-char MultiplayerLobby::FillSlots()
+void MultiplayerLobby::FillSlots()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005EC030.json)
 }
@@ -410,7 +417,7 @@ char MultiplayerLobby::FillSlots()
 
 // 0x5EF100
 namespace gamemd {
-unsigned int * NullModemClass::initConnection(int a2, int a3, int a4, int16_t a5)
+bool NullModemClass::initConnection()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005EF100.json)
 }
@@ -418,7 +425,7 @@ unsigned int * NullModemClass::initConnection(int a2, int a3, int a4, int16_t a5
 
 // 0x5EF170
 namespace gamemd {
-int NullModemClass::closeConnection(int a2)
+bool NullModemClass::closeConnection()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005EF170.json)
 }
@@ -426,7 +433,7 @@ int NullModemClass::closeConnection(int a2)
 
 // 0x5F0690
 namespace gamemd {
-char Modem::CheckStatus(int a2)
+void Modem::CheckStatus()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F0690.json)
 }
@@ -434,7 +441,7 @@ char Modem::CheckStatus(int a2)
 
 // 0x5F0D60
 namespace gamemd {
-char Modem::DetectAndConnect(int a2)
+void Modem::DetectAndConnect()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F0D60.json)
 }
@@ -442,7 +449,7 @@ char Modem::DetectAndConnect(int a2)
 
 // 0x5F16E0
 namespace gamemd {
-int NullModemClass::Init(int a2, int a3, const char *a4, int a5, char a6, int a7, int a8)
+bool NullModemClass::Init()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F16E0.json)
 }
@@ -450,7 +457,7 @@ int NullModemClass::Init(int a2, int a3, const char *a4, int a5, char a6, int a7
 
 // 0x5F19E0
 namespace gamemd {
-int Modem::OpenPort(unsigned int *a2)
+void Modem::OpenPort()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F19E0.json)
 }
@@ -458,7 +465,7 @@ int Modem::OpenPort(unsigned int *a2)
 
 // 0x5F1BC0
 namespace gamemd {
-int NullModemClass::Connect(int a2, int a3, int a4, int a5)
+bool NullModemClass::Connect()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F1BC0.json)
 }
@@ -466,7 +473,7 @@ int NullModemClass::Connect(int a2, int a3, int a4, int a5)
 
 // 0x5F1F70
 namespace gamemd {
-int NullModemClass::SendPacket(int a2, int a3, int a4, int a5, int a6, int a7)
+bool NullModemClass::SendPacket(const uint8_t*, int32_t)
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F1F70.json)
 }
@@ -474,7 +481,7 @@ int NullModemClass::SendPacket(int a2, int a3, int a4, int a5, int a6, int a7)
 
 // 0x5F1FA0
 namespace gamemd {
-char NullModemClass::DetectModem(unsigned int *a2, int a3)
+bool NullModemClass::DetectModem()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F1FA0.json)
 }
@@ -482,7 +489,7 @@ char NullModemClass::DetectModem(unsigned int *a2, int a3)
 
 // 0x5F3170
 namespace gamemd {
-char NullModemClass::Negotiate()
+bool NullModemClass::Negotiate()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F3170.json)
 }
@@ -490,7 +497,7 @@ char NullModemClass::Negotiate()
 
 // 0x6425F0
 namespace gamemd {
-int ModemGame::RenderPaletteImage(int *a2)
+void ModemGame::RenderPaletteImage()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006425F0.json)
 }
@@ -498,7 +505,7 @@ int ModemGame::RenderPaletteImage(int *a2)
 
 // 0x645820
 namespace gamemd {
-unsigned int * NetworkEventClass::Process(char *Source)
+void NetworkEventClass::Process()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000645820.json)
 }
@@ -506,7 +513,7 @@ unsigned int * NetworkEventClass::Process(char *Source)
 
 // 0x664240
 namespace gamemd {
-int NetworkManager::SetPlayerAddress(int a2, unsigned int *a3)
+void NetworkManager::SetPlayerAddress()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000664240.json)
 }
@@ -514,7 +521,7 @@ int NetworkManager::SetPlayerAddress(int a2, unsigned int *a3)
 
 // 0x664530
 namespace gamemd {
-int NetworkEventQueueClass::WaitForResponse()
+void NetworkEventQueueClass::WaitForResponse()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000664530.json)
 }
@@ -522,7 +529,7 @@ int NetworkEventQueueClass::WaitForResponse()
 
 // 0x6646C0
 namespace gamemd {
-char NetworkManager::RemovePlayer(int a2)
+void NetworkManager::RemovePlayer()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006646C0.json)
 }
@@ -530,7 +537,7 @@ char NetworkManager::RemovePlayer(int a2)
 
 // 0x695FD0
 namespace gamemd {
-int NetworkDialog::InitModemSettings(unsigned int *a2)
+void NetworkDialog::InitModemSettings()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000695FD0.json)
 }
@@ -538,7 +545,7 @@ int NetworkDialog::InitModemSettings(unsigned int *a2)
 
 // 0x6964C0
 namespace gamemd {
-int NetworkDialog::Dispatch()
+void NetworkDialog::Dispatch()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006964C0.json)
 }
@@ -546,7 +553,7 @@ int NetworkDialog::Dispatch()
 
 // 0x696610
 namespace gamemd {
-int NetworkDialog::UpdateListBox()
+void NetworkDialog::UpdateListBox()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000696610.json)
 }
@@ -554,7 +561,7 @@ int NetworkDialog::UpdateListBox()
 
 // 0x69B600
 namespace gamemd {
-char NetworkSession::IsPlayerInGame(int a2)
+void NetworkSession::IsPlayerInGame()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00069B600.json)
 }
@@ -562,7 +569,7 @@ char NetworkSession::IsPlayerInGame(int a2)
 
 // 0x74FD50
 namespace gamemd {
-int NetworkBuffer::GetField()
+bool NetworkBuffer::GetField()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00074FD50.json)
 }
@@ -570,7 +577,7 @@ int NetworkBuffer::GetField()
 
 // 0x74FD60
 namespace gamemd {
-int NetworkBuffer::UpdateWindow(unsigned int a2, unsigned int a3)
+int NetworkBuffer::UpdateWindow()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00074FD60.json)
 }
@@ -578,7 +585,7 @@ int NetworkBuffer::UpdateWindow(unsigned int a2, unsigned int a3)
 
 // 0x74FDA0
 namespace gamemd {
-int NetworkBuffer::GetField2()
+void NetworkBuffer::GetField2()
 {
     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x74FDA0)
 }
@@ -586,7 +593,7 @@ int NetworkBuffer::GetField2()
 
 // 0x74FDB0
 namespace gamemd {
-int NetworkBuffer::GetField3()
+void NetworkBuffer::GetField3()
 {
     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x74FDB0)
 }
@@ -594,7 +601,7 @@ int NetworkBuffer::GetField3()
 
 // 0x77A4A0
 namespace gamemd {
-uint8_t WOLOption::SetValue(const char **a2)
+void WOLOption::SetValue()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00077A4A0.json)
 }
@@ -602,7 +609,7 @@ uint8_t WOLOption::SetValue(const char **a2)
 
 // 0x77A4D0
 namespace gamemd {
-int16_t WOLPersona::FormatDateTime()
+void WOLPersona::FormatDateTime()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00077A4D0.json)
 }
@@ -610,7 +617,7 @@ int16_t WOLPersona::FormatDateTime()
 
 // 0x77A840
 namespace gamemd {
-bool WOLGameList::Check(int a2)
+void WOLGameList::Check()
 {
     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77A840)
 }
@@ -618,7 +625,7 @@ bool WOLGameList::Check(int a2)
 
 // 0x781D20
 namespace gamemd {
-void WOLobby::BuildStateList(char a1)
+void WOLobby::BuildStateList()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000781D20.json)
 }
@@ -626,7 +633,7 @@ void WOLobby::BuildStateList(char a1)
 
 // 0x783800
 namespace gamemd {
-void WOLobby::BuildPlayerList(char a1)
+void WOLobby::BuildPlayerList()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000783800.json)
 }
@@ -634,7 +641,7 @@ void WOLobby::BuildPlayerList(char a1)
 
 // 0x78F5C0
 namespace gamemd {
-wchar_t * WOLobby::FormatLatencyText()
+void WOLobby::FormatLatencyText()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00078F5C0.json)
 }
@@ -642,7 +649,7 @@ wchar_t * WOLobby::FormatLatencyText()
 
 // 0x7A3100
 namespace gamemd {
-int WOLGameList::PopulateLobbyLists(int a2, int ***a3, int a4, int a5, int a6)
+void WOLGameList::PopulateLobbyLists()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007A3100.json)
 }
@@ -666,7 +673,7 @@ void WOLGameList::GrowBuffer()
 
 // 0x7B2F90
 namespace gamemd {
-int UDPInterfaceClass_Destru::GetQueueSize()
+void UDPInterfaceClass_Destru::GetQueueSize()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007B2F90.json)
 }
@@ -674,7 +681,7 @@ int UDPInterfaceClass_Destru::GetQueueSize()
 
 // 0x7B2FF0
 namespace gamemd {
-int UDPInterfaceClass_Destru::Flush(char *Buffer, u_short a3)
+void UDPInterfaceClass_Destru::Flush()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007B2FF0.json)
 }
@@ -682,7 +689,7 @@ int UDPInterfaceClass_Destru::Flush(char *Buffer, u_short a3)
 
 // 0x7B30B0
 namespace gamemd {
-char UDPInterfaceClass_Destru::Send(u_short a2)
+int UDPInterfaceClass_Destru::Send()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007B30B0.json)
 }
@@ -690,7 +697,7 @@ char UDPInterfaceClass_Destru::Send(u_short a2)
 
 // 0x7B31E0
 namespace gamemd {
-char UDPInterfaceClass_Destru::SetAddress(u_short hostshort)
+void UDPInterfaceClass_Destru::SetAddress()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007B31E0.json)
 }
@@ -698,7 +705,7 @@ char UDPInterfaceClass_Destru::SetAddress(u_short hostshort)
 
 // 0x7B3430
 namespace gamemd {
-char UDPInterfaceClass_Destru::GetAddress()
+void UDPInterfaceClass_Destru::GetAddress()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007B3430.json)
 }

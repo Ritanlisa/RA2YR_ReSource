@@ -6,6 +6,7 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_TREE_UNIVERSE  // G42.35h: tree TU real class in network/connection.hpp (Cell_e4 G42.34j pattern)
 struct ConnectionClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -38,5 +39,6 @@ struct ConnectionClass {
     void dtor();
      double queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6);
 };
+#endif  // GAMEMD_TREE_UNIVERSE
 
 } // namespace gamemd
