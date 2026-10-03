@@ -40,7 +40,7 @@
 #include "e4/classes/VtableStub_e4.hpp"
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
-#include "src/e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x44F820
 namespace gamemd {

@@ -48,9 +48,9 @@
 #include "e4/classes/TClassFactory_CampaignClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
-#include "src/e4/classes/FileTreeNode_e4.hpp"
-#include "src/e4/classes/FontClass_e4.hpp"
-#include "src/e4/classes/MultiplayerConfig_e4.hpp"
+#include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/classes/FontClass_e4.hpp"
+#include "e4/classes/MultiplayerConfig_e4.hpp"
 
 // 0x52A9E0
 namespace gamemd {

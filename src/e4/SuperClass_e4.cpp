@@ -30,8 +30,8 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/PsyDom_e4.hpp"
-#include "src/e4/classes/ObjectPtr_e4.hpp"
-#include "src/e4/classes/VoxClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/VoxClass_e4.hpp"
 
 // 0x53AE50
 namespace gamemd {

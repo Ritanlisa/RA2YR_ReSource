@@ -50,7 +50,7 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/SidebarClass_e4.hpp"
-#include "e4/classes/ObjectClass_e4.hpp_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x6DD8B0
 namespace gamemd {

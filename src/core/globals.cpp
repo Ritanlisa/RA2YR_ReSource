@@ -15,8 +15,8 @@
 #include "object/object.hpp"
 #include "type/building_type.hpp"
 #include "e4/e4_globals_decls.hpp"
-#include "src/core/utility_ext.hpp"
-#include "src/misc/misc_ext.hpp"
+#include "core/utility_ext.hpp"
+#include "misc/misc_ext.hpp"
 
 namespace gamemd {
 

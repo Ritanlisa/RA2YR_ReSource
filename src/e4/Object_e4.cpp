@@ -37,10 +37,10 @@
 #include "e4/classes/Vector3_e4.hpp"
 #include "e4/classes/Particle_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
-#include "src/e4/classes/BuildingClass_e4.hpp"
-#include "src/e4/classes/CellClass_e4.hpp"
-#include "src/e4/classes/DeleteAndZero_e4.hpp"
-#include "src/e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x47C3D0
 namespace gamemd {

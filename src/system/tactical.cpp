@@ -19,8 +19,8 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/TerrainClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
-#include "src/misc/misc_ext.hpp"
-#include "src/render/render_ext.hpp"
+#include "misc/misc_ext.hpp"
+#include "render/render_ext.hpp"
 
 namespace gamemd
 {

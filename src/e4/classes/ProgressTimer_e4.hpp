@@ -6,6 +6,7 @@
 namespace gamemd {
 
 #ifndef GAMEMD_CORE_OWNS_PROGRESSTIMER  // G42.17c: core owns in mixed TUs
+#define GAMEMD_E4_OWNS_PROGRESSTIMER 1  // G42.36: order-independent pair
 struct ProgressTimer {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0

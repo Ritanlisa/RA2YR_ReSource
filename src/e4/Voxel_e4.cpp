@@ -22,7 +22,7 @@
 #include "e4/classes/E4Recv_756860_e4.hpp"
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/Float4_e4.hpp"
-#include "src/e4/classes/Int4_e4.hpp"
+#include "e4/classes/Int4_e4.hpp"
 
 // 0x748220
 namespace gamemd {

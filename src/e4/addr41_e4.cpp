@@ -44,7 +44,7 @@
 #include "e4/classes/AircraftClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
-#include "src/e4/classes/MapClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x4116A0
 namespace gamemd {

@@ -28,6 +28,8 @@ class BuildingClass;
 
 // IDA: BuildingLightClass (4 vtables, ctor 0x435820)
 // Inherits ObjectClass -> spotlight/illumination effect for buildings
+#ifndef GAMEMD_E4_OWNS_BUILDINGLIGHT  // G42.36: e4 flat struct dedup pair
+#define GAMEMD_CORE_OWNS_BUILDINGLIGHT 1
 class BuildingLightClass : public ObjectClass
 {
 public:
@@ -78,5 +80,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CalculateShading();  // 0x5ff850 -- BuildingLight::CalculateShading
     // === SYMBOL-ANCHOR (END) ===
 };
+#endif  // GAMEMD_E4_OWNS_BUILDINGLIGHT
 
 } // namespace gamemd

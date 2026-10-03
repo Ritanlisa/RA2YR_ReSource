@@ -138,7 +138,7 @@
 #include "e4/classes/VectorClass_ptr_TriggerClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_TriggerTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_TubeClass_e4.hpp"
-#include "src/e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_UnitClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_UnitTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_VocClass_e4.hpp"

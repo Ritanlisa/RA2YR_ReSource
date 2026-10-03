@@ -64,3 +64,4 @@ int TEventClass::GetStateA() const {
   }
   return result; /*0x71f96c*/
 }
+} // namespace gamemd

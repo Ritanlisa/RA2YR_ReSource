@@ -6,3 +6,4 @@ namespace gamemd {
 
 // 0x55a7d0
 void Audio3D::ComputeRotation() {}
+} // namespace gamemd

@@ -84,9 +84,9 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/Conflict_e4.hpp"
 #include "e4/classes/WDTClass_e4.hpp"
-#include "src/e4/classes/Conflict_WorldDominationTour_12__e4.hpp"
-#include "src/e4/classes/VtableStub_e4.hpp"
-#include "src/e4/classes/WDTObject_e4.hpp"
+#include "e4/classes/Conflict_WorldDominationTour_12__e4.hpp"
+#include "e4/classes/VtableStub_e4.hpp"
+#include "e4/classes/WDTObject_e4.hpp"
 
 // 0x7636F0
 namespace gamemd {

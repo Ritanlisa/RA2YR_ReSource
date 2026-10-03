@@ -70,8 +70,8 @@
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Window_e4.hpp"
-#include "src/e4/classes/AsyncIO_e4.hpp"
-#include "src/e4/classes/VtableStub_e4.hpp"
+#include "e4/classes/AsyncIO_e4.hpp"
+#include "e4/classes/VtableStub_e4.hpp"
 
 // 0x770E70
 namespace gamemd {

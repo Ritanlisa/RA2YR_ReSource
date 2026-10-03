@@ -10,7 +10,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
-#include "src/e4/classes/VtableStub_e4.hpp"
+#include "e4/classes/VtableStub_e4.hpp"
 
 // 0x7718A0
 namespace gamemd {

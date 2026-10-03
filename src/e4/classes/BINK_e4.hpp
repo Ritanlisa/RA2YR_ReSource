@@ -10,7 +10,7 @@ struct BINK {
     char BINK_field_00[4];  // 0x0
     unsigned int Background_Setup;
 // --- flat members (END) ---
-    HWNDBackground_Setup(HWND hDlg);
+    void * Background_Setup_0(void * hDlg);  // HWND glue fix G42.36 (name avoids data-member clash)
 };
 
 } // namespace gamemd

@@ -690,6 +690,8 @@ struct WorldDominationTour {
 };
 #endif  // GAMEMD_TREE_UNIVERSE (WorldDominationTour)
 
+#ifndef GAMEMD_E4_OWNS_UNDERSCORE  // G42.36: struct _ dedup pair (first include wins)
+#define GAMEMD_TREE_OWNS_UNDERSCORE 1
 struct _ {
     void* vfptr;
     unsigned int u32_C;  // 0xC
@@ -700,6 +702,7 @@ struct _ {
     unsigned char q25608;  // 0x25608
     unsigned char q1388694;  // 0x1388694
 };
+#endif  // GAMEMD_E4_OWNS_UNDERSCORE
 
 
 

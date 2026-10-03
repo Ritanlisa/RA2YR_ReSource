@@ -67,7 +67,7 @@
 #include "e4/classes/BuildingLoadQueue_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/ScoreText_e4.hpp"
-#include "src/e4/classes/StaticString_e4.hpp"
+#include "e4/classes/StaticString_e4.hpp"
 
 // 0x561180
 namespace gamemd {

@@ -32,12 +32,12 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/Viewport_e4.hpp"
-#include "src/e4/classes/AudioController_e4.hpp"
-#include "src/e4/classes/FrameSnapshot_e4.hpp"
-#include "src/e4/classes/HouseClass_e4.hpp"
-#include "src/e4/classes/JumpjetLocomotionClass_e4.hpp"
-#include "src/e4/classes/LocomotionClass_e4.hpp"
-#include "src/e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/FrameSnapshot_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/JumpjetLocomotionClass_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x4CAF20
 namespace gamemd {

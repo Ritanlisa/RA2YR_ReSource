@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+#ifndef GAMEMD_TREE_OWNS_UNDERSCORE  // G42.36: struct _ dedup pair
+#define GAMEMD_E4_OWNS_UNDERSCORE 1
 struct _ {
     void* vfptr;  // minimal E2 declaration
     char  AddRef(int a2);  // 0x74F3C0
@@ -15,4 +17,5 @@ struct _ {
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x74F650
     int  Seek(int a2);  // 0x74F3B0
 };
+#endif  // GAMEMD_TREE_OWNS_UNDERSCORE
 } // namespace gamemd

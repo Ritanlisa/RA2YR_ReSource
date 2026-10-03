@@ -36,7 +36,7 @@
 #include "e4/classes/IPersistStream_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/SwizzleManagerClass_e4.hpp"
-#include "src/e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 struct Type;  // fix_tu_missing_types
 
 // 0x438E70

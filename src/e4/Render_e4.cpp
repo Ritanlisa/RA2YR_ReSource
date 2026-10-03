@@ -52,9 +52,9 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Session_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
-#include "src/e4/classes/BufferIOFileClass_e4.hpp"
-#include "src/e4/classes/Color_e4.hpp"
-#include "src/e4/classes/Coord2D_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
+#include "e4/classes/Coord2D_e4.hpp"
 
 // 0x52FF90
 namespace gamemd {

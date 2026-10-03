@@ -156,7 +156,7 @@ struct CreateTeamCommand {
     wchar_t * performAction_32();  // 0x5366B0
     wchar_t * performAction_33();  // 0x5366D0
     wchar_t * performAction_34();  // 0x5366F0
-    BOOLperformAction_35();  // 0x536710
+    int performAction_35();  // 0x536710 (BOOL glue fix G42.36)
     unsigned int performAction_37();  // 0x536740
     int performAction_38();  // 0x536750
     wchar_t * performAction_40();  // 0x536780

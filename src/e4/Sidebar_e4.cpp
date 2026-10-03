@@ -32,8 +32,8 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/SuperClass_e4.hpp"
-#include "src/e4/classes/BuildingClass_e4.hpp"
-#include "src/e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/RadarClass_e4.hpp"
 
 // 0x4FA350
 namespace gamemd {

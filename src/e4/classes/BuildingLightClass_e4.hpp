@@ -7,6 +7,8 @@
 
 namespace gamemd {
 
+#define GAMEMD_E4_OWNS_BUILDINGLIGHT 1  // G42.36: dedup pair (first include wins)
+#ifndef GAMEMD_CORE_OWNS_BUILDINGLIGHT
 struct BuildingLightClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -131,5 +133,7 @@ struct BuildingLightClass {
     signed int UpdateOscillation();
     unsigned int * FindTarget(unsigned int * a2);
 };
+#endif  // GAMEMD_CORE_OWNS_BUILDINGLIGHT
+
 
 } // namespace gamemd

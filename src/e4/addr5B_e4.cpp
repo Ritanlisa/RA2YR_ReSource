@@ -76,9 +76,9 @@
 #include "e4/classes/Checksummer_e4.hpp"
 #include "e4/classes/ModemGame_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
-#include "src/e4/classes/Palette_e4.hpp"
-#include "src/e4/classes/Pipe_e4.hpp"
-#include "src/e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/Palette_e4.hpp"
+#include "e4/classes/Pipe_e4.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
 
 // 0x5B3B10
 namespace gamemd {

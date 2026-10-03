@@ -44,8 +44,8 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/Cliff_e4.hpp"
 #include "e4/classes/TileNode_e4.hpp"
-#include "src/e4/classes/AbstractClass_e4.hpp"
-#include "src/e4/classes/Random_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x5835D0
 namespace gamemd {

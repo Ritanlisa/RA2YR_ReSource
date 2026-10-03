@@ -32,7 +32,7 @@
 #include "e4/classes/TerrainClass_e4.hpp"
 #include "e4/classes/XSurface_e4.hpp"
 #include "e4/classes/Rect_e4.hpp"
-#include "e4/classes/TerrainClass_e4.hpp_e4.hpp"
+#include "e4/classes/TerrainClass_e4.hpp"
 
 // 0x480180
 namespace gamemd {

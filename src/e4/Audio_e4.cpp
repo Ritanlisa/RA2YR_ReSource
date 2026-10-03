@@ -47,10 +47,10 @@
 #include "e4/classes/Voice_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
-#include "src/e4/classes/AudioController_e4.hpp"
-#include "src/e4/classes/AudioSample_e4.hpp"
-#include "src/e4/classes/VocClass_e4.hpp"
-#include "src/e4/classes/VtableStub_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/AudioSample_e4.hpp"
+#include "e4/classes/VocClass_e4.hpp"
+#include "e4/classes/VtableStub_e4.hpp"
 
 // 0x402720
 namespace gamemd {

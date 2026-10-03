@@ -6,3 +6,4 @@ namespace gamemd {
 
 // 0x40a340
 void Buffer::CreateDirectSound() {}
+} // namespace gamemd

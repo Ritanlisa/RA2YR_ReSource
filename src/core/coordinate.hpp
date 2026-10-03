@@ -2,16 +2,13 @@
 
 #include <cstdint>
 #include "math.hpp"
+#include "core/cellcoord.hpp"  // G42.36: CellCoord::To_CellObj single authority
 
 namespace gamemd {
 
-// Cell lookup helper (IDA 0x5657A0 CellCoord::To_CellObj - global fn,
-// mis-modeled as a virtual member in misc_ext.hpp historically)
+// Cell lookup helper (IDA 0x5657A0) now lives in core/cellcoord.hpp.
 class MapClass;
 class CellClass;
-namespace CellCoord {
-CellClass* To_CellObj(MapClass* map, const CellStruct* coords);  // 0x5657A0
-}
 
 constexpr int kLeptonsPerCell = 256;
 constexpr int kCellCenter = kLeptonsPerCell / 2;

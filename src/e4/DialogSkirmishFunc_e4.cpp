@@ -23,7 +23,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
-#include "src/e4/classes/Player_e4.hpp"
+#include "e4/classes/Player_e4.hpp"
 
 // 0x6ACEE0
 namespace gamemd {

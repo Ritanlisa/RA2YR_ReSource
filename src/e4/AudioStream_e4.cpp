@@ -25,8 +25,8 @@
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/Socket_e4.hpp"
 #include "e4/classes/Voice_e4.hpp"
-#include "src/e4/classes/AudioSample_e4.hpp"
-#include "src/e4/classes/Struct_e4.hpp"
+#include "e4/classes/AudioSample_e4.hpp"
+#include "e4/classes/Struct_e4.hpp"
 
 // 0x401910
 namespace gamemd {

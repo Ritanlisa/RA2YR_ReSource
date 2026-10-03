@@ -49,14 +49,14 @@
 #include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
-#include "src/e4/classes/AsyncIO_e4.hpp"
-#include "src/e4/classes/Frame_e4.hpp"
-#include "src/e4/classes/GenericList_e4.hpp"
-#include "src/e4/classes/LoadScreen_e4.hpp"
-#include "src/e4/classes/LoadingScreen_e4.hpp"
-#include "src/e4/classes/MapClass_e4.hpp"
-#include "src/e4/classes/TacticalMap_e4.hpp"
-#include "src/e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/AsyncIO_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/GenericList_e4.hpp"
+#include "e4/classes/LoadScreen_e4.hpp"
+#include "e4/classes/LoadingScreen_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/TacticalMap_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
 
 // 0x58BB30
 namespace gamemd {

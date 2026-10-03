@@ -114,7 +114,7 @@
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/BuildingLoadQueue_e4.hpp"
 #include "e4/classes/PhoneEditor_e4.hpp"
-#include "src/e4/classes/Function_e4.hpp"
+#include "e4/classes/Function_e4.hpp"
 
 // 0x630310
 namespace gamemd {

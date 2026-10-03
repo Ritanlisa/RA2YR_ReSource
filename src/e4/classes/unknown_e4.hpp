@@ -22,7 +22,7 @@ struct unknown {
     unsigned int Write(int a2);
     wchar_t * ddtor(void *a1);
     unsigned int m_10;  // 0x10
-    unsigned char m_1[64];  // pad compile-supply (G41.47)
+    unsigned char m_pad_1[64];  // pad compile-supply (G41.47; renamed G42.36, canon m_1 exists above)
 };
 
 } // namespace gamemd

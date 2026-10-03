@@ -22,9 +22,9 @@ using ra2::game::ObjectClass;
 #include "house/base.hpp"
 #include "house/house.hpp"
 #include "e4/e4_globals_decls.hpp"
-#include "src/core/checksummer.hpp"
-#include "src/render/render_ext.hpp"
-#include "src/structure/building.hpp"
+#include "core/checksummer.hpp"
+#include "render/render_ext.hpp"
+#include "structure/building.hpp"
 
 // 0x42E6F0
 namespace gamemd { 

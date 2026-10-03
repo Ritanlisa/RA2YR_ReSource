@@ -1,4 +1,5 @@
 #pragma once
+#include "core/cellcoord.hpp"  // G42.36: CellCoord single authority
 
 #include <cstdint>
 #include <windows.h>
@@ -1939,16 +1940,7 @@ public:
     virtual void Destruct(unsigned int * Block, char a2);  // 0x5AD570 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
-// 1 methods in IDA
-class CellCoord
-{
-public:
-    // design: defaulted virtual destructor, no binary equivalent
-    virtual ~CellCoord() = default;
-
-    virtual void* To_CellObj(int16_t *a2);  // 0x5657A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth CellClass* 返回 -- G42.35 render TU 调用点 (int)/(int*) cast 需非 void)
-
-};
+// G42.36: CellCoord moved to core/cellcoord.hpp (top include)
 // 1 methods in IDA
 // CSP: CellLand matched via T1
 class CellLand

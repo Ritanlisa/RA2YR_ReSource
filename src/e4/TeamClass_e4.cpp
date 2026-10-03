@@ -41,8 +41,8 @@
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
-#include "src/e4/classes/AITriggerTypeClass_e4.hpp"
-#include "src/e4/classes/TagClass_e4.hpp"
+#include "e4/classes/AITriggerTypeClass_e4.hpp"
+#include "e4/classes/TagClass_e4.hpp"
 
 // 0x4D9E70
 namespace gamemd {

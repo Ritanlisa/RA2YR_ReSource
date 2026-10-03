@@ -54,7 +54,7 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
-#include "src/e4/classes/Rect_e4.hpp"
+#include "e4/classes/Rect_e4.hpp"
 
 // 0x5C00E0
 namespace gamemd {

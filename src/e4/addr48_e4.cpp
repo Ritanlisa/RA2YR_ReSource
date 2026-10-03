@@ -46,7 +46,7 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
-#include "src/e4/classes/Random_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x4880F0
 namespace gamemd {

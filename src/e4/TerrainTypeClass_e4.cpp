@@ -38,7 +38,7 @@
 #include "e4/classes/TeamTypeClass_e4.hpp"
 #include "e4/classes/Tiberium_e4.hpp"
 #include "e4/classes/TemporalClass_e4.hpp"
-#include "src/e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
 
 // 0x5447C0
 namespace gamemd {

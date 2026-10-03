@@ -1692,7 +1692,7 @@ void CellClassVector::Destruct(unsigned int * Block, char a2)
 {
 }
 // 0x5657a0
-void* CellCoord::To_CellObj(int16_t *a2)
+void* CellCoord::To_CellObj(void* a2, void* a3)
 {
     return {}; // TODO stub - G42 return-sync (void->virtual void*)
 }

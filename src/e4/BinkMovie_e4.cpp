@@ -25,13 +25,13 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/Rect_e4.hpp"
-#include "src/e4/classes/BufferIOFileClass_e4.hpp"
-#include "src/e4/classes/CCFileClass_e4.hpp"
-#include "src/e4/classes/FileStraw_e4.hpp"
-#include "src/e4/classes/Font_e4.hpp"
-#include "src/e4/classes/Property_e4.hpp"
-#include "src/e4/classes/TextGroup_e4.hpp"
-#include "src/e4/classes/Text_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/FileStraw_e4.hpp"
+#include "e4/classes/Font_e4.hpp"
+#include "e4/classes/Property_e4.hpp"
+#include "e4/classes/TextGroup_e4.hpp"
+#include "e4/classes/Text_e4.hpp"
 
 // 0x432690
 namespace gamemd {

@@ -23,7 +23,7 @@
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/DSurface_e4.hpp"
 #include "e4/classes/ParasiteClass_e4.hpp"
-#include "e4/classes/INIClass_e4.hpp_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x5FE250
 namespace gamemd {  // G42.18c ns repair

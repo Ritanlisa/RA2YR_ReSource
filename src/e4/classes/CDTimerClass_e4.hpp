@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct CDTimerClass {
-    int Locomotor:: TimeRemaining();
+    int TimeRemaining();  // G42.36: strip generator qualifier debris
 };
 
 } // namespace gamemd

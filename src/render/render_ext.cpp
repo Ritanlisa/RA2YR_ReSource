@@ -8,3 +8,4 @@ namespace gamemd {
 void BlitPlainXlatAlpha_ushort::AddRef() {}
 // 0x493d90
 void BlitPlainXlatAlpha_ushort::Release() {}
+} // namespace gamemd

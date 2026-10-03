@@ -17,7 +17,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
-#include "src/e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x657DA0
 namespace gamemd {

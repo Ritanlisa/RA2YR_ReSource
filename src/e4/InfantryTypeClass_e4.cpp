@@ -26,8 +26,8 @@
 #include "e4/classes/E4Recv_524EC0_e4.hpp"
 #include "e4/classes/AnimTypeVector_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
-#include "src/e4/classes/ObjectPtr_e4.hpp"
-#include "src/e4/classes/VocClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/VocClass_e4.hpp"
 
 // 0x5236A0
 namespace gamemd {

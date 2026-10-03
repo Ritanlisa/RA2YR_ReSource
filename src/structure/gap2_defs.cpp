@@ -26,7 +26,7 @@ using ra2::game::ObjectClass;
 #include "structure/unit.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Power_e4.hpp"
-#include "src/misc/misc_ext.hpp"
+#include "misc/misc_ext.hpp"
 
 // 0x517CC0
 namespace gamemd { 

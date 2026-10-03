@@ -45,10 +45,10 @@
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/ButtonClass_e4.hpp"
 #include "e4/classes/ShapeButton_e4.hpp"
-#include "src/e4/classes/CommandClass_e4.hpp"
-#include "src/e4/classes/DisplayClass_e4.hpp"
-#include "src/e4/classes/LinkClass_e4.hpp"
-#include "src/e4/classes/Rect_Point_e4.hpp"
+#include "e4/classes/CommandClass_e4.hpp"
+#include "e4/classes/DisplayClass_e4.hpp"
+#include "e4/classes/LinkClass_e4.hpp"
+#include "e4/classes/Rect_Point_e4.hpp"
 
 // 0x4C9C50
 namespace gamemd {

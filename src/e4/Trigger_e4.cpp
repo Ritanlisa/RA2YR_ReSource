@@ -38,7 +38,7 @@
 #include "e4/classes/VectorCursor_e4.hpp"
 #include "e4/classes/Count_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
-#include "src/e4/classes/PriorityQueue_e4.hpp"
+#include "e4/classes/PriorityQueue_e4.hpp"
 
 // 0x554A60
 namespace gamemd {

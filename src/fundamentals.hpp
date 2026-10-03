@@ -26,7 +26,7 @@ struct noinit_t
 };
 
 #define GAMEMD_CORE_OWNS_PROGRESSTIMER 1  // G42.17c: e4 flat def yields
-
+#ifndef GAMEMD_E4_OWNS_PROGRESSTIMER  // G42.36: order-independent pair, first include wins
 struct ProgressTimer
 {
     int32 Value;
@@ -36,6 +36,7 @@ struct ProgressTimer
     void* GetValue(int a1);  // 0x4c93d0 -- ProgressTimer::GetValue
     // === SYMBOL-ANCHOR (END) ===
 };
+#endif  // GAMEMD_E4_OWNS_PROGRESSTIMER
 
 extern int& CurrentFrame;
 

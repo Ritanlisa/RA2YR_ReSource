@@ -39,9 +39,9 @@
 #include "e4/classes/E4Recv_6C2450_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
-#include "src/e4/classes/BuildingClass_e4.hpp"
-#include "src/e4/classes/CommandClass_e4.hpp"
-#include "src/e4/classes/PlayerClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/CommandClass_e4.hpp"
+#include "e4/classes/PlayerClass_e4.hpp"
 
 // 0x535CF0
 namespace gamemd {

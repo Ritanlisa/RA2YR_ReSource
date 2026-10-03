@@ -39,7 +39,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/NetworkID_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
-#include "src/e4/classes/GameLoop_e4.hpp"
+#include "e4/classes/GameLoop_e4.hpp"
 
 // 0x792CF0
 namespace gamemd {
