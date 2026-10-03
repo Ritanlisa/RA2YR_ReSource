@@ -864,7 +864,7 @@ int TechnoClass::updateHealthBar() {
 
 // 0x473500
 namespace ra2::game {
-int TechnoClass::IndexOf(FootClass*) const
+int TechnoClass::IndexOf()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000473500.json)
 }
@@ -896,7 +896,7 @@ int TechnoClass::CopyStateFrom()
 
 // 0x4C1E10
 namespace ra2::game {
-int * TechnoClass::ResetDamageAccumulator()
+int TechnoClass::ResetDamageAccumulator()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004C1E10.json)
 }
@@ -904,7 +904,7 @@ int * TechnoClass::ResetDamageAccumulator()
 
 // 0x4CBBA0
 namespace ra2::game {
-void * FootClass::FindPathWithRetry(int16_t *a2, int a3, int a4, int a5, int a6, int a7)
+int FootClass::FindPathWithRetry()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004CBBA0.json)
 }
@@ -1008,7 +1008,7 @@ int FootClass::EnterAttackState()
 
 // 0x4D8560
 namespace ra2::game {
-CoordStruct* FootClass::GetCoords(CoordStruct* out) const
+int FootClass::GetCoords() const
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D8560.json)
 }
@@ -1544,7 +1544,7 @@ int TechnoClass::MapHouseRelationIndex()
 
 // 0x5216C0
 namespace ra2::game {
-int GetThreatValue_0() const
+int GetThreatValue_0()
 {
      return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x0005216C0.json)
 }
@@ -1680,7 +1680,7 @@ int TechnoClass::MutateAll()
 
 // 0x6B0D10
 namespace ra2::game {
-int * TechnoClass::RefreshDeployOccupierState()
+int TechnoClass::RefreshDeployOccupierState()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B0D10.json)
 }
@@ -1728,7 +1728,7 @@ int TechnoClass::GetWaypointCoords() const
 
 // 0x6F1920
 namespace ra2::game {
-int * TechnoClass::Create()
+int TechnoClass::Create()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F1920.json)
 }
@@ -2473,10 +2473,8 @@ int TechnoClass::ComputeDamage()
 // 0x70D190
 namespace ra2::game {
 int TechnoClass::GetRangeModifier() const
-    if ( (this->flashing[0] & 2) == 2 )
-      return a2 <= 1500 ? 2000 : 500;
-    else
-      return a2; /*0x70d1ba*/
+{
+    return 0; // TODO stub - quarantined G42 T9 (orphan body; truth = .omo/ida_cache/func_0x70D190.json)
 }
 } // namespace ra2::game
 
@@ -2786,7 +2784,7 @@ void FootClass::UpdatePassengerCoords()
 
 // 0x7106E0
 namespace ra2::game {
-void * TechnoClass::ScalarDtor(char a2)
+int TechnoClass::ScalarDtor()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007106E0.json)
 }
@@ -2923,7 +2921,8 @@ int TechnoClass::FindBestMovementDirection()
 // 0x740E50
 namespace ra2::game {
 int TechnoClass::GetAmmoCount_0() const
-    return TechnoClass::GetAmmoCount(this);
+{
+    return 0; // TODO stub - quarantined G42 T9 (orphan body; truth = .omo/ida_cache/func_0x740E50.json)
 }
 } // namespace ra2::game
 
@@ -2977,9 +2976,9 @@ int TechnoClass::GetAverageDamageScore() const
 
 // 0x7416A0
 namespace ra2::game {
-void TechnoClass::ProcessSpecialUnitDeployCrush(Math *a2, int16_t *a3, char a4)
+int TechnoClass::ProcessSpecialUnitDeployCrush()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007416A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007416A0.json)
 }
 } // namespace ra2::game
 
@@ -3057,7 +3056,7 @@ int TechnoClass::CaptureTurret()
 
 // 0x7464E0
 namespace ra2::game {
-int TechnoClass::TransferTurret(int *a2)
+int TechnoClass::TransferTurret()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007464E0.json)
 }
@@ -3065,7 +3064,7 @@ int TechnoClass::TransferTurret(int *a2)
 
 // 0x746670
 namespace ra2::game {
-void TechnoClass::ApplyObjectEffect(unsigned int *a2)
+int TechnoClass::ApplyObjectEffect()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746670.json)
 }
@@ -3081,7 +3080,7 @@ int TechnoClass::ClearAllTargets()
 
 // 0x746750
 namespace ra2::game {
-bool TechnoClass::IsGuardingTarget()
+int TechnoClass::IsGuardingTarget() const
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746750.json)
 }
@@ -3089,7 +3088,7 @@ bool TechnoClass::IsGuardingTarget()
 
 // 0x746B20
 namespace ra2::game {
-int TechnoClass::GetCommandTooltip()
+int TechnoClass::GetCommandTooltip() const
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746B20.json)
 }
@@ -3097,7 +3096,7 @@ int TechnoClass::GetCommandTooltip()
 
 // 0x746CD0
 namespace ra2::game {
-int TechnoClass::SelectAttackWeapon(int a2)
+int TechnoClass::SelectAttackWeapon()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746CD0.json)
 }
@@ -3105,7 +3104,7 @@ int TechnoClass::SelectAttackWeapon(int a2)
 
 // 0x750030
 namespace ra2::game {
-int FootClass::CheckAccelLimit()
+bool FootClass::CheckAccelLimit() const
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000750030.json)
 }
@@ -3113,7 +3112,7 @@ int FootClass::CheckAccelLimit()
 
 // 0x7500D0
 namespace ra2::game {
-int FootClass::GetField()
+int FootClass::GetField() const
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007500D0.json)
 }
@@ -3121,7 +3120,7 @@ int FootClass::GetField()
 
 // 0x773070
 namespace ra2::game {
-int TechnoClass::GetWeaponRange(void *a2)
+int TechnoClass::GetWeaponRange(int weapon_index) const
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000773070.json)
 }
