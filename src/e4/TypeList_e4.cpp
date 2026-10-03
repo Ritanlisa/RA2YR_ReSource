@@ -261,7 +261,7 @@ int TypeList_cptr_ParticleSystemTypeClass::Remove(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * TypeList_Particle::Add(unsigned int * Block, char a2, void *a3_1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x45A9C0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x45A9C0)
 }
 } // namespace gamemd
 
@@ -490,7 +490,7 @@ unsigned int TypeList_TechnoType::GetIndex(int a2)
 namespace gamemd {
 VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2, void *a3_1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x478680)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x478680)
 }
 } // namespace gamemd
 
@@ -498,7 +498,7 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2, void 
 namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::Copy(unsigned int * a2, void *a2_2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x478720)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x478720)
 }
 }  // G42.18c ns repair
 // 0x478790
@@ -614,7 +614,7 @@ char TypeList_Infantry::AddRef(int a2)
 namespace gamemd {
 DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x512E20)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x512E20)
 }
 } // namespace gamemd
 
@@ -622,7 +622,7 @@ DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2, vo
 namespace gamemd {
 char TypeList_Infantry::Remove(int a2, unsigned int * a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x512E70)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x512E70)
 }
 } // namespace gamemd
 
@@ -653,7 +653,7 @@ int TypeList_Infantry::GetSize(unsigned int * a2)
 namespace gamemd {
 DynamicVector * TypeList_Infantry::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5131F0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5131F0)
 }
 } // namespace gamemd
 
@@ -661,7 +661,7 @@ DynamicVector * TypeList_Infantry::Constructor_0(unsigned int * Block, char a2, 
 namespace gamemd {
 DynamicVector * TypeList_Infantry::Constructor_1(unsigned int * Block, char a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5135C0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5135C0)
 }
 } // namespace gamemd
 
@@ -669,14 +669,14 @@ DynamicVector * TypeList_Infantry::Constructor_1(unsigned int * Block, char a2)
 namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x513740)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x513740)
 }
 }  // G42.18c ns repair
 // 0x5255F0
 namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5255F0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5255F0)
 }
 }  // G42.18c ns repair
 // 0x5AC400
@@ -722,7 +722,7 @@ TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2, void *
 namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5AD660)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5AD660)
 }
 }  // G42.18c ns repair
 // 0x67A030
@@ -748,21 +748,21 @@ void TypeList_flat::InfantryCleanup()
 namespace gamemd {  // G42.18c ns repair
 int * TypeList_CopyFull_free(void * aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67A090)
+    return nullptr; // TODO stub - quarantined G42 T9 (truth = 0x67A090)
 }
 }  // G42.18c ns repair
 // 0x67A110
 namespace gamemd {  // G42.18c ns repair
 int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67A110)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67A110)
 }
 }  // G42.18c ns repair
 // 0x67A290
 namespace gamemd {  // G42.18c ns repair
 int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67A290)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67A290)
 }
 }  // G42.18c ns repair
 // 0x67A390
@@ -1150,7 +1150,7 @@ unsigned int TypeList_VoxelAnim::PointerToIndex(int a2)
 namespace gamemd {
 char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67ACD0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67ACD0)
 }
 } // namespace gamemd
 
@@ -1181,14 +1181,14 @@ int TypeList_VoxelAnim::GetSize(unsigned int * a2)
 namespace gamemd {  // G42.18c ns repair
 char TypeList_flat::AddRef(int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67AE70)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67AE70)
 }
 }  // G42.18c ns repair
 // 0x67B050
 namespace gamemd {  // G42.18c ns repair
 char TypeList_flat::Release(int a2, unsigned int * a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67B050)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67B050)
 }
 }  // G42.18c ns repair
 // 0x67B150
@@ -1249,7 +1249,7 @@ char TypeList_cptr_TerrainTypeClass::AddRef(int a2)
 namespace gamemd {
 char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67B230)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67B230)
 }
 } // namespace gamemd
 
@@ -1311,7 +1311,7 @@ unsigned int TypeList_cptr_TerrainTypeClass::PointerToIndex(int a2)
 namespace gamemd {
 char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67B3D0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67B3D0)
 }
 } // namespace gamemd
 
@@ -1342,7 +1342,7 @@ int TypeList_cptr_TerrainTypeClass::GetSize(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * TypeList_VoxelAnim::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
-    // TODO stub - quarantined G42 T9 (raw body; truth = 0x67C010)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = 0x67C010)
 }
 } // namespace gamemd
 
@@ -1374,7 +1374,7 @@ DynamicVector * TypeList_VoxelAnim::Constructor_1(unsigned int * Block, char a2)
 namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67C1F0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67C1F0)
 }
 }  // G42.18c ns repair
 // 0x717B70

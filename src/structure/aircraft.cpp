@@ -44,7 +44,7 @@ AircraftClass::AircraftClass() noexcept
 // 0x417fe0
 int AircraftClass::Mission_Attack()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000417FE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000417FE0.json)
 }
 
 
@@ -90,7 +90,7 @@ int AircraftClass::Mission_Retreat()
 // 0x4166c0
 int AircraftClass::Mission_Enter()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004166C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004166C0.json)
 }
 // 0x419c80
 int AircraftClass::Mission_Transport()
@@ -235,7 +235,7 @@ int AircraftClass::CheckReloadTimer()
 // 0x41b610
 int AircraftClass::PowerDrainUpdate(int a2)
 {
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041B610.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041B610.json)
 }
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
 // 0x41b660

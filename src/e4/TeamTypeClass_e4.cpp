@@ -46,21 +46,21 @@
 namespace gamemd {
 int TeamTypeClass::Construct()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C98B0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C98B0)
 }
 }
 // 0x691C00
 namespace gamemd {
 unsigned int * TeamTypeClass::CreateScriptType(char *Source)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x691C00)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x691C00)
 }
 }
 // 0x6E85F0
 namespace gamemd {
 unsigned int * TeamTypeClass::FindOrCreateTaskForce(char *Source)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E85F0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E85F0)
 }
 }
 // 0x6EF5F0
@@ -80,7 +80,7 @@ int TeamTypeClass::Check(int a2, void *a2_2, void *a3)
 namespace gamemd {
 int TeamTypeClass::DestroyAllInstances()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F0A70)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F0A70)
 }
 }
 // 0x6F1030
@@ -111,14 +111,14 @@ int TeamTypeClass::GetTeam(int a2, int a3)
 namespace gamemd {
 char TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1090)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1090)
 }
 }
 // 0x6F1550
 namespace gamemd {
 AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
 {
-    (void)aP1; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1550)
+    return nullptr; (void)aP1; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1550)
 }
 } // namespace gamemd
 
@@ -126,21 +126,21 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
 namespace gamemd {
 AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F22F0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F22F0)
 }
 }
 // 0x6F24B0
 namespace gamemd {
 AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F24B0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F24B0)
 }
 }
 // 0x6F0FC0
 namespace gamemd {
 int TeamTypeClass::FindByName()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F0FC0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F0FC0)
 }
 } // namespace gamemd
 
@@ -148,7 +148,7 @@ int TeamTypeClass::FindByName()
 namespace gamemd {
 TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1AB0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1AB0)
 }
 } // namespace gamemd
 
@@ -156,7 +156,7 @@ TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
 namespace gamemd {
 int TeamTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1B90)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1B90)
 }
 } // namespace gamemd
 
@@ -164,7 +164,7 @@ int TeamTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 namespace gamemd {
 int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1BB0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1BB0)
 }
 } // namespace gamemd
 
@@ -188,7 +188,7 @@ int TeamTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 namespace gamemd {
 int TeamTypeClass::FlashAllInstances(AnimClass * aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1F30)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1F30)
 }
 } // namespace gamemd
 
@@ -196,7 +196,7 @@ int TeamTypeClass::FlashAllInstances(AnimClass * aP1)
 namespace gamemd {
 int TeamTypeClass::FindFirstInstance()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1F70)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1F70)
 }
 } // namespace gamemd
 
@@ -232,7 +232,7 @@ void TeamTypeClass_28::ClearBuffer(void *a1_1)
 namespace gamemd {
 unsigned int TeamTypeClass_28::PointerToIndex(int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F21F0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F21F0)
 }
 } // namespace gamemd
 
@@ -240,7 +240,7 @@ unsigned int TeamTypeClass_28::PointerToIndex(int a2)
 namespace gamemd {
 unsigned int * TeamTypeClass_28::Seek(unsigned int * a2, int a3, void *a3_2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F2210)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F2210)
 }
 } // namespace gamemd
 
@@ -248,7 +248,7 @@ unsigned int * TeamTypeClass_28::Seek(unsigned int * a2, int a3, void *a3_2)
 namespace gamemd {
 char TeamTypeClass_28::AddRef(int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F2290)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F2290)
 }
 } // namespace gamemd
 
@@ -264,7 +264,7 @@ wchar_t * TeamTypeClass_28::ddtor(void *a1_1, void *a2_1)
 namespace gamemd {
 int TeamTypeClass_28::Read(unsigned int * a2, void *a2_2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F2440)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F2440)
 }
 } // namespace gamemd
 
@@ -272,7 +272,7 @@ int TeamTypeClass_28::Read(unsigned int * a2, void *a2_2)
 namespace gamemd {
 unsigned int TeamTypeClass_28::Write(int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F2490)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F2490)
 }
 } // namespace gamemd
 
@@ -280,14 +280,14 @@ unsigned int TeamTypeClass_28::Write(int a2)
 namespace gamemd {
 int TeamTypeClass_28::FindItem(unsigned int * a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F2640)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F2640)
 }
 }
 // 0x6F2680
 namespace gamemd {
 VectorClass_flat * TeamTypeClass_28::QueryInterface(unsigned int * Block, char a2)
 {
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x6F2680.json)
+    return nullptr; (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x6F2680.json)
 }
 } // namespace gamemd
 
@@ -295,6 +295,6 @@ VectorClass_flat * TeamTypeClass_28::QueryInterface(unsigned int * Block, char a
 namespace gamemd {
 DynamicVector * TeamTypeClass_28::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
-    (void)Block; (void)a2; (void)a3_1; return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x6F2720.json)
+    return nullptr; (void)Block; (void)a2; (void)a3_1; return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x6F2720.json)
 }
 } // namespace gamemd

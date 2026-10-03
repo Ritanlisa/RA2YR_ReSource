@@ -20,7 +20,7 @@
 namespace gamemd {
 char BaseClass::AddRef(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00042F490.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00042F490.json)
 }
 } // namespace gamemd
 
@@ -28,7 +28,7 @@ char BaseClass::AddRef(int a2)
 namespace gamemd {
 int BaseClass::Seek(int a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00042F3F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00042F3F0.json)
 }
 } // namespace gamemd
 
@@ -36,7 +36,7 @@ int BaseClass::Seek(int a2, int a3)
 namespace gamemd {
 int HouseClass::createStartingUnits(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000431410.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000431410.json)
 }
 } // namespace gamemd
 
@@ -44,7 +44,7 @@ int HouseClass::createStartingUnits(int a2)
 namespace gamemd {
 int HouseClass::GetFactoryProducing(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004F83C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004F83C0.json)
 }
 } // namespace gamemd
 

@@ -115,14 +115,14 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
 namespace gamemd {
 int GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E1FE0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E1FE0)
 }
 }
 // 0x4E34A0
 namespace gamemd {
 void * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E34A0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E34A0)
 }
 }
 // 0x4E3690
@@ -1204,7 +1204,7 @@ int SetupLobbyFactionSlots(HWND aP0, int nIDDlgItem, int a3)
 namespace gamemd {
 char FillComboBoxSides(HWND hDlg, int nIDDlgItem)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5700)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5700)
 }
 }
 // 0x4E5B60
@@ -1491,14 +1491,14 @@ void unknown_libname_18()
 namespace gamemd {
 AbstractClass * * HouseClass__vt_02__free(int a2, unsigned int * a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E9240)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E9240)
 }
 }
 // 0x4E9E20
 namespace gamemd {
 AbstractClass * * ParticleSystemClass__vt_02__free(int a2, unsigned int * a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E9E20)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E9E20)
 }
 }
 // 0x4E9ED0
@@ -1520,7 +1520,7 @@ void nullsub_138()
 namespace gamemd {
 unsigned int * FoggedObjectClass_42::loc_4E0D30(unsigned int * Block, char a2)
 {
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x4E0D30.json)
+    return nullptr; (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x4E0D30.json)
 }
 } // namespace gamemd
 
@@ -1826,7 +1826,7 @@ int sub_4E24E0()
 namespace gamemd {
 int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass * aP4, int aP5)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E2A50)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E2A50)
 }
 } // namespace gamemd
 
@@ -2069,7 +2069,7 @@ int GetComboBoxSelected(HWND aP0, int nIDDlgItem, LRESULT wParam)
 namespace gamemd {
 LPARAM * InitGameDropdownColors()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E43C0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E43C0)
 }
 } // namespace gamemd
 
@@ -2077,7 +2077,7 @@ LPARAM * InitGameDropdownColors()
 namespace gamemd {
 bool IsAvailableColorhWnd(int a1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4580)
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4580)
 }
 } // namespace gamemd
 
@@ -2133,7 +2133,7 @@ wchar_t * sub_4E4F30()
 namespace gamemd {
 int * _cfltcvt_init()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4F50)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4F50)
 }
 }
 // 0x4E4FC0
@@ -2173,7 +2173,7 @@ void Lobby_ResetFactionTable(int a1)
 namespace gamemd {
 bool sub_4E50A0(int a1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E50A0)
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E50A0)
 }
 } // namespace gamemd
 
@@ -2302,7 +2302,7 @@ char * Version_GetString(unsigned int * a1, unsigned char * a2, char * Destinati
 namespace gamemd {
 int sub_4E6190()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6190)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6190)
 }
 } // namespace gamemd
 
@@ -2762,7 +2762,7 @@ void sub_4E6A20()
 namespace gamemd {
 int sub_4E6A60()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6A60)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6A60)
 }
 } // namespace gamemd
 
@@ -2785,7 +2785,7 @@ void sub_4E6AA0()
 namespace gamemd {
 int sub_4E6AE0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6AE0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6AE0)
 }
 } // namespace gamemd
 
@@ -2808,7 +2808,7 @@ void sub_4E6B20()
 namespace gamemd {
 int sub_4E6B60()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6B60)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6B60)
 }
 } // namespace gamemd
 
@@ -2831,7 +2831,7 @@ void sub_4E6BA0()
 namespace gamemd {
 int sub_4E6BE0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6BE0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6BE0)
 }
 } // namespace gamemd
 
@@ -2854,7 +2854,7 @@ void sub_4E6C20()
 namespace gamemd {
 int sub_4E6C60()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6C60)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6C60)
 }
 } // namespace gamemd
 
@@ -2877,7 +2877,7 @@ void sub_4E6CA0()
 namespace gamemd {
 int sub_4E6D60()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6D60)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6D60)
 }
 } // namespace gamemd
 
@@ -2900,7 +2900,7 @@ void sub_4E6DA0()
 namespace gamemd {
 int sub_4E6DE0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6DE0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6DE0)
 }
 } // namespace gamemd
 
@@ -2923,7 +2923,7 @@ void sub_4E6E20()
 namespace gamemd {
 int sub_4E6E60()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6E60)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6E60)
 }
 } // namespace gamemd
 
@@ -2946,7 +2946,7 @@ void sub_4E6EA0()
 namespace gamemd {
 int sub_4E6EE0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6EE0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6EE0)
 }
 } // namespace gamemd
 
@@ -2969,7 +2969,7 @@ void sub_4E6F20()
 namespace gamemd {
 int sub_4E6F60()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6F60)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6F60)
 }
 } // namespace gamemd
 
@@ -2992,7 +2992,7 @@ void sub_4E6FA0()
 namespace gamemd {
 int sub_4E6FE0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6FE0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6FE0)
 }
 } // namespace gamemd
 
@@ -3015,7 +3015,7 @@ void sub_4E7020()
 namespace gamemd {
 int sub_4E7060()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7060)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7060)
 }
 } // namespace gamemd
 
@@ -3038,7 +3038,7 @@ void sub_4E70A0()
 namespace gamemd {
 int sub_4E70E0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E70E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E70E0)
 }
 } // namespace gamemd
 
@@ -3061,7 +3061,7 @@ void sub_4E7120()
 namespace gamemd {
 int sub_4E7160()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7160)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7160)
 }
 } // namespace gamemd
 
@@ -3084,7 +3084,7 @@ void sub_4E71A0()
 namespace gamemd {
 int sub_4E71E0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E71E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E71E0)
 }
 } // namespace gamemd
 
@@ -3107,7 +3107,7 @@ void sub_4E7220()
 namespace gamemd {
 int sub_4E7260()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7260)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7260)
 }
 } // namespace gamemd
 
@@ -3130,7 +3130,7 @@ void sub_4E72A0()
 namespace gamemd {
 int sub_4E72E0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E72E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E72E0)
 }
 } // namespace gamemd
 
@@ -3153,7 +3153,7 @@ void sub_4E7320()
 namespace gamemd {
 int sub_4E7360()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7360)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7360)
 }
 } // namespace gamemd
 
@@ -3176,7 +3176,7 @@ void sub_4E73A0()
 namespace gamemd {
 int sub_4E73E0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E73E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E73E0)
 }
 } // namespace gamemd
 
@@ -3199,7 +3199,7 @@ void sub_4E7420()
 namespace gamemd {
 int sub_4E74E0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E74E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E74E0)
 }
 } // namespace gamemd
 
@@ -3222,7 +3222,7 @@ void sub_4E7520()
 namespace gamemd {
 int sub_4E7560()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7560)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7560)
 }
 } // namespace gamemd
 
@@ -3245,7 +3245,7 @@ void sub_4E75A0()
 namespace gamemd {
 int sub_4E7660()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7660)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7660)
 }
 } // namespace gamemd
 
@@ -3268,7 +3268,7 @@ void sub_4E76A0()
 namespace gamemd {
 int sub_4E76E0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E76E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E76E0)
 }
 } // namespace gamemd
 
@@ -3291,7 +3291,7 @@ void sub_4E7720()
 namespace gamemd {
 int sub_4E7760()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7760)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7760)
 }
 } // namespace gamemd
 
@@ -3314,7 +3314,7 @@ void sub_4E77A0()
 namespace gamemd {
 int sub_4E77E0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E77E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E77E0)
 }
 } // namespace gamemd
 
@@ -3337,7 +3337,7 @@ void sub_4E7820()
 namespace gamemd {
 int sub_4E7860()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7860)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7860)
 }
 } // namespace gamemd
 
@@ -3360,7 +3360,7 @@ void sub_4E78A0()
 namespace gamemd {
 int sub_4E78E0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E78E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E78E0)
 }
 } // namespace gamemd
 
@@ -3383,7 +3383,7 @@ void sub_4E7920()
 namespace gamemd {
 int sub_4E7960()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7960)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7960)
 }
 } // namespace gamemd
 
@@ -3406,7 +3406,7 @@ void sub_4E79A0()
 namespace gamemd {
 int sub_4E79E0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E79E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E79E0)
 }
 } // namespace gamemd
 
@@ -3422,7 +3422,7 @@ void sub_4E7A20()
 namespace gamemd {
 int sub_4E7A60()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7A60)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7A60)
 }
 } // namespace gamemd
 
@@ -3445,7 +3445,7 @@ void sub_4E7AA0()
 namespace gamemd {
 int sub_4E7AE0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7AE0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7AE0)
 }
 } // namespace gamemd
 
@@ -3461,7 +3461,7 @@ void sub_4E7B20()
 namespace gamemd {
 int sub_4E7B60()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7B60)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7B60)
 }
 } // namespace gamemd
 
@@ -3484,7 +3484,7 @@ void sub_4E7BA0()
 namespace gamemd {
 int sub_4E7BE0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7BE0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7BE0)
 }
 } // namespace gamemd
 
@@ -3507,7 +3507,7 @@ void sub_4E7C20()
 namespace gamemd {
 int sub_4E7C60()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7C60)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7C60)
 }
 } // namespace gamemd
 
@@ -3538,7 +3538,7 @@ void sub_4E7CE0()
 namespace gamemd {
 int sub_4E7D10()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7D10)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7D10)
 }
 } // namespace gamemd
 
@@ -3546,7 +3546,7 @@ int sub_4E7D10()
 namespace gamemd {
 int unknown_libname_13()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7D30)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7D30)
 }
 } // namespace gamemd
 
@@ -3554,7 +3554,7 @@ int unknown_libname_13()
 namespace gamemd {
 int sub_4E7D40()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7D40)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7D40)
 }
 } // namespace gamemd
 
@@ -3570,7 +3570,7 @@ void sub_4E7D80()
 namespace gamemd {
 int sub_4E7DC0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7DC0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7DC0)
 }
 } // namespace gamemd
 
@@ -3586,7 +3586,7 @@ void sub_4E7DE0()
 namespace gamemd {
 int sub_4E7DF0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7DF0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7DF0)
 }
 } // namespace gamemd
 
@@ -3594,7 +3594,7 @@ int sub_4E7DF0()
 namespace gamemd {
 int unknown_libname_14()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E10)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E10)
 }
 } // namespace gamemd
 
@@ -3602,7 +3602,7 @@ int unknown_libname_14()
 namespace gamemd {
 int unknown_libname_15()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E20)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E20)
 }
 } // namespace gamemd
 
@@ -3610,7 +3610,7 @@ int unknown_libname_15()
 namespace gamemd {
 int sub_4E7E30()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E30)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E30)
 }
 } // namespace gamemd
 
@@ -3633,7 +3633,7 @@ void sub_4E7E50()
 namespace gamemd {
 int unknown_libname_16()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E90)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E90)
 }
 } // namespace gamemd
 
@@ -3641,7 +3641,7 @@ int unknown_libname_16()
 namespace gamemd {
 char * sub_4E7ED0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7ED0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7ED0)
 }
 } // namespace gamemd
 
@@ -3672,7 +3672,7 @@ unsigned char * sub_4E7F00()
 namespace gamemd {
 int sub_4E7F30()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7F30)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7F30)
 }
 } // namespace gamemd
 
@@ -3695,7 +3695,7 @@ void sub_4E7F70()
 namespace gamemd {
 int sub_4E7FB0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7FB0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7FB0)
 }
 } // namespace gamemd
 
@@ -3718,7 +3718,7 @@ void sub_4E7FF0()
 namespace gamemd {
 int sub_4E8030()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8030)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8030)
 }
 } // namespace gamemd
 
@@ -3726,7 +3726,7 @@ int sub_4E8030()
 namespace gamemd {
 int unknown_libname_17()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8050)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8050)
 }
 } // namespace gamemd
 
@@ -3734,7 +3734,7 @@ int unknown_libname_17()
 namespace gamemd {
 int sub_4E8060()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8060)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8060)
 }
 } // namespace gamemd
 
@@ -3742,7 +3742,7 @@ int sub_4E8060()
 namespace gamemd {
 int sub_4E80A0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E80A0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E80A0)
 }
 } // namespace gamemd
 
@@ -3750,7 +3750,7 @@ int sub_4E80A0()
 namespace gamemd {
 int unknown_libname_19()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E80E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E80E0)
 }
 } // namespace gamemd
 
@@ -3758,7 +3758,7 @@ int unknown_libname_19()
 namespace gamemd {
 int sub_4E80F0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E80F0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E80F0)
 }
 } // namespace gamemd
 
@@ -3767,7 +3767,7 @@ namespace gamemd {
 int unknown_libname_20()
 {
   nullsub_54(); /*0x4e8115*/
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw body; truth = 0x4E8110)
 } // namespace gamemd
 
 // 0x4E8120
@@ -3868,93 +3868,41 @@ char sub_4E8220()
 
 // 0x4E92F0
 namespace gamemd {
-void HouseClass::vt_03_()
+void HouseClass_vt_03_free_()
 {
-
-  if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4e92fd*/
-  {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4e9303*/
-    *((unsigned int *)this + 1) = 0; /*0x4e930b*/
-  }
-  *((unsigned char *)this + 13) = 0; /*0x4e930e*/
-  *((unsigned int *)this + 2) = 0; /*0x4e9311*/
-
+     // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
 } // namespace gamemd
 
 // 0x4E9320
 namespace gamemd {
-int HouseClass::vt_04_(int * a2)
+int HouseClass_vt_04_free_(int * a2)
 {
-
-  int result; // eax
-  int v3; // edx
-  unsigned int *i; // ecx
-
-  if ( !*((unsigned char *)this + 12) ) /*0x4e9320*/
-    return 0; /*0x4e9328*/
-  v3 = *((unsigned int *)this + 2); /*0x4e932e*/
-  result = 0; /*0x4e9331*/
-  if ( v3 <= 0 ) /*0x4e9335*/
-    return -1; /*0x4e934c*/
-  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x4e933b*/
-  {
-    if ( ++result >= v3 ) /*0x4e934a*/
-      return -1; /*0x4e934a*/
-  }
-  return result; /*0x4e932a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
 } // namespace gamemd
 
 // 0x4E9360
 namespace gamemd {
-unsigned int HouseClass::vt_05_(int a2)
+unsigned int HouseClass_vt_05_free_(int a2)
 {
-
-  if ( *((unsigned char *)this + 12) ) /*0x4e9360*/
-    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x4e9375*/
-  else
-    return 0; /*0x4e9367*/
-
+    return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
 } // namespace gamemd
 
 // 0x4E9F00
 namespace gamemd {
-int ParticleSystemClass::vt_04_(int * a2)
+int ParticleSystemClass_vt_04_free_(int * a2)
 {
-
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
-
-  if ( !LOBYTE(this->m_C) ) /*0x4e9f00*/
-    return 0; /*0x4e9f08*/
-  m_8 = this->m_8; /*0x4e9f0e*/
-  result = 0; /*0x4e9f11*/
-  if ( m_8 <= 0 ) /*0x4e9f15*/
-    return -1; /*0x4e9f2c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e9f1b*/
-  {
-    if ( ++result >= m_8 ) /*0x4e9f2a*/
-      return -1; /*0x4e9f2a*/
-  }
-  return result; /*0x4e9f0a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
 } // namespace gamemd
 
 // 0x4E9F40
 namespace gamemd {
-unsigned int ParticleSystemClass::vt_05_(int a2)
+unsigned int ParticleSystemClass_vt_05_free_(int a2)
 {
-
-  if ( LOBYTE(this->m_C) ) /*0x4e9f40*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4e9f55*/
-  else
-    return 0; /*0x4e9f47*/
-
+    return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
 } // namespace gamemd
 
@@ -3962,7 +3910,7 @@ unsigned int ParticleSystemClass::vt_05_(int a2)
 namespace gamemd {
 VectorClass_flat * HouseClass_vt_00__free(unsigned int * Block, char a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EF4E0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EF4E0)
 }
 } // namespace gamemd
 
@@ -3970,6 +3918,8 @@ VectorClass_flat * HouseClass_vt_00__free(unsigned int * Block, char a2)
 namespace gamemd {
 VectorClass_flat * ParticleSystemClass_vt_00__free(unsigned int * Block, char a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EF800)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EF800)
 }
 } // namespace gamemd
+
+} // namespace gamemd  // G42.35p: EOF close restored (depth was 1)

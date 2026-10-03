@@ -77,84 +77,84 @@ int NavigateDialogTab(HWND hCtl, bool a2)
 namespace gamemd {
 int ValidateDialogEvent(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600CA0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600CA0)
 }
 }
 // 0x6015E0
 namespace gamemd {
 int CtlDialogColorHandler(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6015E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6015E0)
 }
 }
 // 0x601D20
 namespace gamemd {
 int ValidateDialogControl(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x601D20)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x601D20)
 }
 }
 // 0x6023F0
 namespace gamemd {
 int sub_6023F0(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6023F0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6023F0)
 }
 }
 // 0x602490
 namespace gamemd {
 bool IsValidActionDialog(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x602490)
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x602490)
 }
 }
 // 0x602DD0
 namespace gamemd {
 char IsDialogControlHidden(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x602DD0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x602DD0)
 }
 }
 // 0x603040
 namespace gamemd {
 int LoadCampaignMissionData(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603040)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603040)
 }
 }
 // 0x6035F0
 namespace gamemd {
 AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6035F0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6035F0)
 }
 }
 // 0x603870
 namespace gamemd {
 AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603870)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603870)
 }
 }
 // 0x603AA0
 namespace gamemd {
 int IsDialogWindowClass(HWND a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603AA0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603AA0)
 }
 }
 // 0x603D30
 namespace gamemd {
 void * CacheDialogInvalidate(HWND hWnd, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603D30)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603D30)
 }
 }
 // 0x603E40
 namespace gamemd {
 unsigned int * sub_603E40(int a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603E40)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603E40)
 }
 }
 // 0x604060
@@ -181,21 +181,21 @@ wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
 namespace gamemd {
 AbstractClass * * DlgSkirmishMenuProc(HWND a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6040B0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6040B0)
 }
 }
 // 0x606740
 namespace gamemd {
 int Dialog_SetActiveFlag(int a1, char a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x606740)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x606740)
 }
 }
 // 0x6071E0
 namespace gamemd {
 AbstractClass * * GadgetClass_RenderAnimation(HWND a1, char a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6071E0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6071E0)
 }
 } // namespace gamemd
 
@@ -203,56 +203,56 @@ AbstractClass * * GadgetClass_RenderAnimation(HWND a1, char a2)
 namespace gamemd {
 AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x608500)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x608500)
 }
 }
 // 0x608CD0
 namespace gamemd {
 int IsDialogControlVisible(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x608CD0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x608CD0)
 }
 }
 // 0x6096A0
 namespace gamemd {
 char sub_6096A0(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6096A0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6096A0)
 }
 }
 // 0x609730
 namespace gamemd {
 int GetDialogDefaultButton(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x609730)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x609730)
 }
 }
 // 0x609AA0
 namespace gamemd {
 bool sub_609AA0(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x609AA0)
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x609AA0)
 }
 }
 // 0x609B30
 namespace gamemd {
 bool sub_609B30(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x609B30)
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x609B30)
 }
 }
 // 0x609BC0
 namespace gamemd {
 bool sub_609BC0(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x609BC0)
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x609BC0)
 }
 }
 // 0x609CF0
 namespace gamemd {
 bool sub_609CF0(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x609CF0)
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x609CF0)
 }
 }
 // 0x609E20
@@ -266,7 +266,7 @@ void FilterDialogButtonAction(int a1, HWND a2)
 namespace gamemd {
 bool sub_60A100(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60A100)
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60A100)
 }
 }
 // 0x60A180
@@ -287,14 +287,14 @@ void sub_60A250(HWND hWnd, LPARAM)
 namespace gamemd {
 AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60B000)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60B000)
 }
 }
 // 0x60B880
 namespace gamemd {
 bool sub_60B880(int a1, HWND a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60B880)
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60B880)
 }
 }
 // 0x60C0C0
@@ -308,14 +308,14 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
 namespace gamemd {  // G42.18c ns repair
 int SkirmishDialog::ResizeDialogAndEnum(void *a1, void *a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60C4A0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60C4A0)
 }
 }  // G42.18c ns repair
 // 0x60F4B0
 namespace gamemd {
 AbstractClass * * InitializeDialogControls(HWND a1, LPARAM)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60F4B0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60F4B0)
 }
 }
 // 0x600320
@@ -459,7 +459,7 @@ int sub_600510()
 namespace gamemd {
 int sub_600530()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600530)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600530)
 }
 } // namespace gamemd
 
@@ -467,7 +467,7 @@ int sub_600530()
 namespace gamemd {
 int unknown_libname_26()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600550)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600550)
 }
 } // namespace gamemd
 
@@ -475,7 +475,7 @@ int unknown_libname_26()
 namespace gamemd {
 ObjectClass * E4Recv_600660::ReadPointerFromECX()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600660)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600660)
 }
 } // namespace gamemd
 
@@ -483,7 +483,7 @@ ObjectClass * E4Recv_600660::ReadPointerFromECX()
 namespace gamemd {
 int sub_6006B0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6006B0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6006B0)
 }
 } // namespace gamemd
 
@@ -491,7 +491,7 @@ int sub_6006B0()
 namespace gamemd {
 int sub_600880()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600880)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600880)
 }
 } // namespace gamemd
 
@@ -499,7 +499,7 @@ int sub_600880()
 namespace gamemd {
 int sub_600A50()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600A50)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600A50)
 }
 } // namespace gamemd
 
@@ -515,7 +515,7 @@ LRESULT globalHelper_003DD0(HWND hWnd, unsigned char a2)
 namespace gamemd {
 wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void * a5)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603FC0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603FC0)
 }
 } // namespace gamemd
 

@@ -196,7 +196,7 @@ int ObjectClass::ClearFlags2() {
 namespace ra2::game {
 int * AudioController::Constructor()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000402040.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000402040.json)
 }
 } // namespace ra2::game
 
@@ -204,7 +204,7 @@ int * AudioController::Constructor()
 namespace ra2::game {
 int AudioController::AdvanceQueue()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004022C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004022C0.json)
 }
 } // namespace ra2::game
 
@@ -212,7 +212,7 @@ int AudioController::AdvanceQueue()
 namespace ra2::game {
 int AudioController::UpdatePlayback()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000402330.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000402330.json)
 }
 } // namespace ra2::game
 
@@ -220,7 +220,7 @@ int AudioController::UpdatePlayback()
 namespace ra2::game {
 int AudioController::CleanupStream()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004023F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004023F0.json)
 }
 } // namespace ra2::game
 
@@ -228,7 +228,7 @@ int AudioController::CleanupStream()
 namespace ra2::game {
 int AudioController::Init()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000405BE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000405BE0.json)
 }
 } // namespace ra2::game
 
@@ -243,7 +243,7 @@ int AudioController::GetOffset() {
 namespace ra2::game {
 int ObjectClass::GetCellCoords_Alt() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041BEA0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041BEA0.json)
 }
 } // namespace ra2::game
 
@@ -251,7 +251,7 @@ int ObjectClass::GetCellCoords_Alt() const
 namespace ra2::game {
 int TechnoClass::selectTarget()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041BEF0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041BEF0.json)
 }
 } // namespace ra2::game
 
@@ -259,7 +259,7 @@ int TechnoClass::selectTarget()
 namespace ra2::game {
 int TechnoClass::vt_entry_434()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041BFF0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041BFF0.json)
 }
 } // namespace gamemd
 
@@ -295,7 +295,7 @@ void FootClass::vt_entry_540() {
 namespace gamemd {  // G42.33 批 3: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::GetFireError()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000447F10.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000447F10.json)
 }
 } // namespace ra2::game
 
@@ -310,7 +310,7 @@ int FootClass::StubReturn0() {
 namespace ra2::game {
 int TechnoClass::MissionStubReturnZero4()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000459D90.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000459D90.json)
 }
 } // namespace ra2::game
 
@@ -318,7 +318,7 @@ int TechnoClass::MissionStubReturnZero4()
 namespace ra2::game {
 bool TechnoClass::StubReturnFalse2()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000459DD0.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000459DD0.json)
 }
 } // namespace ra2::game
 
@@ -356,7 +356,7 @@ void FootClass::vt_entry_54C() {
 namespace ra2::game {
 int TechnoClass::GetTargetCellCenter(AbstractClass *a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DBA50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DBA50.json)
 }
 } // namespace ra2::game
 
@@ -364,7 +364,7 @@ int TechnoClass::GetTargetCellCenter(AbstractClass *a2)
 namespace ra2::game {
 int FootClass::vt_entry_530(int a2, int a3, int a4)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DEE50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DEE50.json)
 }
 } // namespace ra2::game
 
@@ -393,7 +393,7 @@ BOOL TechnoClass::vt_entry_4C4() {
 namespace ra2::game {
 int TechnoClass::IsMission27to30() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000522510.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000522510.json)
 }
 } // namespace ra2::game
 
@@ -401,7 +401,7 @@ int TechnoClass::IsMission27to30() const
 namespace ra2::game {
 int TechnoClass::IsEnteringOrCapturingStructure() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000522CB0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000522CB0.json)
 }
 } // namespace ra2::game
 
@@ -444,7 +444,7 @@ bool ObjectClass::IsActive() const {
 namespace ra2::game {
 int TechnoClass::IsDeployed() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006EF9E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006EF9E0.json)
 }
 } // namespace ra2::game
 
@@ -490,7 +490,7 @@ int TechnoClass::HasPassengers() const {
 namespace ra2::game {
 int TechnoClass::COMStub_Return0_298()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F010.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F010.json)
 }
 } // namespace ra2::game
 
@@ -498,7 +498,7 @@ int TechnoClass::COMStub_Return0_298()
 namespace ra2::game {
 int TechnoClass::ProcessCellClearance()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F050.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F050.json)
 }
 } // namespace ra2::game
 
@@ -506,7 +506,7 @@ int TechnoClass::ProcessCellClearance()
 namespace ra2::game {
 int TechnoClass::COMStub_Return0_307()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F100.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F100.json)
 }
 } // namespace ra2::game
 
@@ -542,7 +542,7 @@ int TechnoClass::HasDeployFlags() const {
 namespace ra2::game {
 int FootClass::SetField(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007500E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007500E0.json)
 }
 } // namespace ra2::game
 
@@ -550,7 +550,7 @@ int FootClass::SetField(int a2)
 namespace ra2::game {
 int AbstractClass::setSWCharge(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007640B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007640B0.json)
 }
 } // namespace ra2::game
 
@@ -558,7 +558,7 @@ int AbstractClass::setSWCharge(int a2)
 namespace ra2::game {
 int ObjectClass::Cleanup()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000402220.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000402220.json)
 }
 } // namespace ra2::game
 
@@ -566,7 +566,7 @@ int ObjectClass::Cleanup()
 namespace ra2::game {
 void * AbstractClass::IsTechno()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00040DD20.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00040DD20.json)
 }
 } // namespace ra2::game
 
@@ -574,7 +574,7 @@ void * AbstractClass::IsTechno()
 namespace ra2::game {
 void * AbstractClass::IsTechnoType()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00040DD70.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00040DD70.json)
 }
 } // namespace ra2::game
 
@@ -582,7 +582,7 @@ void * AbstractClass::IsTechnoType()
 namespace ra2::game {
 int TechnoClass::ApplyIronCurtain()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004155F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004155F0.json)
 }
 } // namespace ra2::game
 
@@ -590,7 +590,7 @@ int TechnoClass::ApplyIronCurtain()
 namespace ra2::game {
 int TechnoClass::ReturnToBase()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004157C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004157C0.json)
 }
 } // namespace ra2::game
 
@@ -598,7 +598,7 @@ int TechnoClass::ReturnToBase()
 namespace ra2::game {
 int TechnoClass::ReturnToBaseAndReload()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004158E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004158E0.json)
 }
 } // namespace ra2::game
 
@@ -606,7 +606,7 @@ int TechnoClass::ReturnToBaseAndReload()
 namespace ra2::game {
 int TechnoClass::ScatterFromThreat()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000415960.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000415960.json)
 }
 } // namespace ra2::game
 
@@ -614,7 +614,7 @@ int TechnoClass::ScatterFromThreat()
 namespace ra2::game {
 int FootClass::MissionMoveCarryallLand()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000416AF0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000416AF0.json)
 }
 } // namespace ra2::game
 
@@ -629,7 +629,7 @@ int TechnoClass::ExecuteMissionCommand() {
 namespace ra2::game {
 int TechnoClass::FindNearbyBuildCell(int a2, int16_t *a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004195A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004195A0.json)
 }
 } // namespace ra2::game
 
@@ -637,7 +637,7 @@ int TechnoClass::FindNearbyBuildCell(int a2, int16_t *a3)
 namespace ra2::game {
 void * TechnoClass::FindClosestPlacementCell()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041A160.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041A160.json)
 }
 } // namespace ra2::game
 
@@ -645,7 +645,7 @@ void * TechnoClass::FindClosestPlacementCell()
 namespace ra2::game {
 unsigned int * TechnoClass::GetTurretFacing(unsigned int *a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041A570.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041A570.json)
 }
 } // namespace ra2::game
 
@@ -653,7 +653,7 @@ unsigned int * TechnoClass::GetTurretFacing(unsigned int *a2)
 namespace ra2::game {
 int TechnoClass::ComputeTeamAttackPriority()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041B6A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041B6A0.json)
 }
 } // namespace ra2::game
 
@@ -661,7 +661,7 @@ int TechnoClass::ComputeTeamAttackPriority()
 namespace ra2::game {
 int TechnoClass::GetAutoFireDirection()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041B760.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041B760.json)
 }
 } // namespace ra2::game
 
@@ -669,7 +669,7 @@ int TechnoClass::GetAutoFireDirection()
 namespace ra2::game {
 unsigned int * TechnoClass::HasOnlyOneGarrisonSlot()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041B7F0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041B7F0.json)
 }
 } // namespace ra2::game
 
@@ -677,7 +677,7 @@ unsigned int * TechnoClass::HasOnlyOneGarrisonSlot()
 namespace ra2::game {
 int TechnoClass::vt_entry_428()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041BFE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041BFE0.json)
 }
 } // namespace ra2::game
 
@@ -699,7 +699,7 @@ bool FootClass::StubReturnFalse() { /*G42.33 b4 W7c: 载体 bool*/
 namespace ra2::game {
 unsigned int * TechnoClass::GetBodyFacing(unsigned int *a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041C1E0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00041C1E0.json)
 }
 } // namespace ra2::game
 
@@ -707,7 +707,7 @@ unsigned int * TechnoClass::GetBodyFacing(unsigned int *a2)
 namespace ra2::game {
 int TechnoClass::ApplyDamageEffects()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000438720.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000438720.json)
 }
 } // namespace ra2::game
 
@@ -715,7 +715,7 @@ int TechnoClass::ApplyDamageEffects()
 namespace ra2::game {
 int TechnoClass::RemoveFromDynamicVector(char a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004390D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004390D0.json)
 }
 } // namespace ra2::game
 
@@ -723,7 +723,7 @@ int TechnoClass::RemoveFromDynamicVector(char a2)
 namespace ra2::game {
 int TechnoClass::ComputeTargetAngle()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00043E940.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00043E940.json)
 }
 } // namespace ra2::game
 
@@ -731,7 +731,7 @@ int TechnoClass::ComputeTargetAngle()
 namespace gamemd {  // G42.34 归属正名: 真身 gamemd::BuildingClass (vt+1256)
 int BuildingClass::GetTurretAngle()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00043ED40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00043ED40.json)
 }
 } // namespace gamemd
 
@@ -739,7 +739,7 @@ int BuildingClass::GetTurretAngle()
 namespace gamemd {  // G42.34 归属正名: 真身 gamemd::BuildingClass (vt+1260)
 int BuildingClass::ProcessDemolish()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004415F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004415F0.json)
 }
 } // namespace gamemd
 
@@ -747,7 +747,7 @@ int BuildingClass::ProcessDemolish()
 namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::Update()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000442C40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000442C40.json)
 }
 } // namespace gamemd
 
@@ -755,7 +755,7 @@ int BuildingClass::Update()
 namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::AssignTarget_SyncLog(int syncFlag)   // G42.34: [ebp+4h] 实参槽 (header (int) 同形)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000443B90.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000443B90.json)
 }
 } // namespace gamemd
 
@@ -763,7 +763,7 @@ int BuildingClass::AssignTarget_SyncLog(int syncFlag)   // G42.34: [ebp+4h] 实�
 namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (canon vt+1248/1264 归属正名)
 int BuildingClass::UpdateSidebar()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004456D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004456D0.json)
 }
 } // namespace gamemd
 
@@ -771,7 +771,7 @@ int BuildingClass::UpdateSidebar()
 namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (canon vt+1248/1264 归属正名)
 int BuildingClass::ProcessPrimarySelect()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000448160.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000448160.json)
 }
 } // namespace gamemd
 
@@ -779,7 +779,7 @@ int BuildingClass::ProcessPrimarySelect()
 namespace ra2::game {
 int TechnoClass::StartOrResumeProduction()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00044D6A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00044D6A0.json)
 }
 } // namespace ra2::game
 
@@ -787,7 +787,7 @@ int TechnoClass::StartOrResumeProduction()
 namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::GetCrew()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00044EB10.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00044EB10.json)
 }
 } // namespace gamemd
 
@@ -795,7 +795,7 @@ int BuildingClass::GetCrew()
 namespace ra2::game {
 int TechnoClass::GetTurretScreenPos()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000453A70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000453A70.json)
 }
 } // namespace ra2::game
 
@@ -803,7 +803,7 @@ int TechnoClass::GetTurretScreenPos()
 namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::UpdatePowerDrain()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004544A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004544A0.json)
 }
 } // namespace gamemd
 
@@ -843,7 +843,7 @@ void BuildingClass::UpdateCloak()
 namespace gamemd {  // G42.34: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::IronCurtain()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000457C90.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000457C90.json)
 }
 } // namespace gamemd
 
@@ -851,7 +851,7 @@ int BuildingClass::IronCurtain()
 namespace ra2::game {
 int TechnoClass::EvacuateFootprintCells()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000458A80.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000458A80.json)
 }
 } // namespace ra2::game
 
@@ -866,7 +866,7 @@ int TechnoClass::updateHealthBar() {
 namespace ra2::game {
 int TechnoClass::IndexOf()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000473500.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000473500.json)
 }
 } // namespace ra2::game
 
@@ -874,7 +874,7 @@ int TechnoClass::IndexOf()
 namespace ra2::game {
 int TechnoClass::ApplySplashDamageToNeighbors()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000487720.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000487720.json)
 }
 } // namespace ra2::game
 
@@ -882,7 +882,7 @@ int TechnoClass::ApplySplashDamageToNeighbors()
 namespace ra2::game {
 int TechnoClass::ComputeScanRange() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00048AB90.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00048AB90.json)
 }
 } // namespace ra2::game
 
@@ -890,7 +890,7 @@ int TechnoClass::ComputeScanRange() const
 namespace ra2::game {
 int TechnoClass::CopyStateFrom()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004B5210.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004B5210.json)
 }
 } // namespace ra2::game
 
@@ -898,7 +898,7 @@ int TechnoClass::CopyStateFrom()
 namespace ra2::game {
 int TechnoClass::ResetDamageAccumulator()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004C1E10.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004C1E10.json)
 }
 } // namespace ra2::game
 
@@ -906,7 +906,7 @@ int TechnoClass::ResetDamageAccumulator()
 namespace ra2::game {
 int FootClass::FindPathWithRetry()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004CBBA0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004CBBA0.json)
 }
 } // namespace ra2::game
 
@@ -914,7 +914,7 @@ int FootClass::FindPathWithRetry()
 namespace ra2::game {
 int TechnoClass::UpdateThunk()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004CC770.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004CC770.json)
 }
 } // namespace ra2::game
 
@@ -938,7 +938,7 @@ void FootClass::UpdateDeployMovement()
 namespace ra2::game {
 int TechnoClass::GetData() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004CF950.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004CF950.json)
 }
 } // namespace ra2::game
 
@@ -946,7 +946,7 @@ int TechnoClass::GetData() const
 namespace ra2::game {
 int FootClass::PostLoadInit()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D3540.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D3540.json)
 }
 } // namespace ra2::game
 
@@ -954,7 +954,7 @@ int FootClass::PostLoadInit()
 namespace ra2::game {
 int FootClass::Destru_vt337()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D3710.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D3710.json)
 }
 } // namespace ra2::game
 
@@ -970,7 +970,7 @@ void FootClass::UpdateReveal()
 namespace ra2::game {
 bool FootClass::CheckTileSeed(int* coords)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D3810.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D3810.json)
 }
 } // namespace ra2::game
 
@@ -978,7 +978,7 @@ bool FootClass::CheckTileSeed(int* coords)
 namespace ra2::game {
 bool FootClass::CheckVoiceResponse() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D4B20.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D4B20.json)
 }
 } // namespace ra2::game
 
@@ -994,7 +994,7 @@ void FootClass::ProcessMissionVoice()
 namespace ra2::game {
 int FootClass::Destru_vt319()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D55F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D55F0.json)
 }
 } // namespace ra2::game
 
@@ -1002,7 +1002,7 @@ int FootClass::Destru_vt319()
 namespace ra2::game {
 int FootClass::EnterAttackState()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D5660.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D5660.json)
 }
 } // namespace ra2::game
 
@@ -1010,7 +1010,7 @@ int FootClass::EnterAttackState()
 namespace ra2::game {
 int FootClass::GetCoords() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D8560.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D8560.json)
 }
 } // namespace ra2::game
 
@@ -1018,7 +1018,7 @@ int FootClass::GetCoords() const
 namespace ra2::game {
 int FootClass::OverrideMission_SyncLog()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D8F40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D8F40.json)
 }
 } // namespace ra2::game
 
@@ -1026,7 +1026,7 @@ int FootClass::OverrideMission_SyncLog()
 namespace ra2::game {
 int FootClass::ConditionalAction()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D8F80.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D8F80.json)
 }
 } // namespace ra2::game
 
@@ -1042,7 +1042,7 @@ void FootClass::ProcessTeamAction()
 namespace ra2::game {
 int FootClass::AssignDestination()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D94B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D94B0.json)
 }
 } // namespace ra2::game
 
@@ -1050,7 +1050,7 @@ int FootClass::AssignDestination()
 namespace ra2::game {
 int FootClass::DispatchSell()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D9720.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D9720.json)
 }
 } // namespace ra2::game
 
@@ -1058,7 +1058,7 @@ int FootClass::DispatchSell()
 namespace ra2::game {
 int TechnoClass::ComputeThreatLevel()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D97A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D97A0.json)
 }
 } // namespace ra2::game
 
@@ -1066,7 +1066,7 @@ int TechnoClass::ComputeThreatLevel()
 namespace ra2::game {
 int FootClass::HandleTargetDestroyed()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D9960.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D9960.json)
 }
 } // namespace ra2::game
 
@@ -1082,7 +1082,7 @@ void FootClass::vt_entry_524()
 namespace ra2::game {
 int FootClass::Destru_vt107()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D9C10.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D9C10.json)
 }
 } // namespace ra2::game
 
@@ -1090,7 +1090,7 @@ int FootClass::Destru_vt107()
 namespace ra2::game {
 int FootClass::vt_entry_4F0()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D9FF0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D9FF0.json)
 }
 } // namespace ra2::game
 
@@ -1106,7 +1106,7 @@ void FootClass::ClearSomeVector()
 namespace ra2::game {
 bool FootClass::CanBeControlled() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DA1D0.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DA1D0.json)
 }
 } // namespace ra2::game
 
@@ -1114,7 +1114,7 @@ bool FootClass::CanBeControlled() const
 namespace ra2::game {
 bool FootClass::CanBeRecruited() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DA230.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DA230.json)
 }
 } // namespace ra2::game
 
@@ -1138,7 +1138,7 @@ void FootClass::ProcessMovement()
 namespace ra2::game {
 bool FootClass::CheckTargetValidity() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DA4E0.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DA4E0.json)
 }
 } // namespace ra2::game
 
@@ -1146,7 +1146,7 @@ bool FootClass::CheckTargetValidity() const
 namespace ra2::game {
 int TechnoClass::ComputeSpeedFactor()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DAFC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DAFC0.json)
 }
 } // namespace ra2::game
 
@@ -1154,7 +1154,7 @@ int TechnoClass::ComputeSpeedFactor()
 namespace ra2::game {
 int FootClass::GetAttackSpeed() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DB0A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DB0A0.json)
 }
 } // namespace ra2::game
 
@@ -1162,7 +1162,7 @@ int FootClass::GetAttackSpeed() const
 namespace ra2::game {
 int TechnoClass::ComputeSpeedFactorEx()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DB1A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DB1A0.json)
 }
 } // namespace ra2::game
 
@@ -1170,7 +1170,7 @@ int TechnoClass::ComputeSpeedFactorEx()
 namespace ra2::game {
 int FootClass::Destru_vt30()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DB7E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DB7E0.json)
 }
 } // namespace ra2::game
 
@@ -1178,7 +1178,7 @@ int FootClass::Destru_vt30()
 namespace ra2::game {
 int TechnoClass::SetPositionAnimated()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DB810.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DB810.json)
 }
 } // namespace ra2::game
 
@@ -1186,7 +1186,7 @@ int TechnoClass::SetPositionAnimated()
 namespace ra2::game {
 int FootClass::BeginPowerUpdate()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DBAD0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DBAD0.json)
 }
 } // namespace ra2::game
 
@@ -1194,7 +1194,7 @@ int FootClass::BeginPowerUpdate()
 namespace ra2::game {
 bool FootClass::CanBeHunted() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DBDA0.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DBDA0.json)
 }
 } // namespace ra2::game
 
@@ -1202,7 +1202,7 @@ bool FootClass::CanBeHunted() const
 namespace ra2::game {
 int TechnoClass::GetDeployCoords()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DBDF0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DBDF0.json)
 }
 } // namespace ra2::game
 
@@ -1210,7 +1210,7 @@ int TechnoClass::GetDeployCoords()
 namespace ra2::game {
 int FootClass::vt_entry_4E0()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DBFD0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DBFD0.json)
 }
 } // namespace ra2::game
 
@@ -1218,7 +1218,7 @@ int FootClass::vt_entry_4E0()
 namespace ra2::game {
 int FootClass::vt_entry_4F4()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DC030.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DC030.json)
 }
 } // namespace ra2::game
 
@@ -1226,7 +1226,7 @@ int FootClass::vt_entry_4F4()
 namespace ra2::game {
 int FootClass::CheckTargetCell() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DC060.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DC060.json)
 }
 } // namespace ra2::game
 
@@ -1234,7 +1234,7 @@ int FootClass::CheckTargetCell() const
 namespace ra2::game {
 int FootClass::Destru_vt311()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DC790.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DC790.json)
 }
 } // namespace ra2::game
 
@@ -1250,7 +1250,7 @@ void FootClass::SetBuildingType()
 namespace ra2::game {
 int FootClass::MoveToTiberium()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DCFE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DCFE0.json)
 }
 } // namespace ra2::game
 
@@ -1258,7 +1258,7 @@ int FootClass::MoveToTiberium()
 namespace ra2::game {
 int FootClass::FindMoveTarget()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DD0A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DD0A0.json)
 }
 } // namespace ra2::game
 
@@ -1266,7 +1266,7 @@ int FootClass::FindMoveTarget()
 namespace ra2::game {
 int FootClass::MoveToWeed()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DDB90.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DDB90.json)
 }
 } // namespace ra2::game
 
@@ -1274,7 +1274,7 @@ int FootClass::MoveToWeed()
 namespace ra2::game {
 bool FootClass::CheckHeightDiff() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DDC40.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DDC40.json)
 }
 } // namespace ra2::game
 
@@ -1282,7 +1282,7 @@ bool FootClass::CheckHeightDiff() const
 namespace ra2::game {
 int FootClass::ValidateTargetCell()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DDC60.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DDC60.json)
 }
 } // namespace ra2::game
 
@@ -1290,7 +1290,7 @@ int FootClass::ValidateTargetCell()
 namespace ra2::game {
 int FootClass::HandleCursorWithCheck()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DDDE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DDDE0.json)
 }
 } // namespace ra2::game
 
@@ -1306,7 +1306,7 @@ void FootClass::ProcessMissionState()
 namespace ra2::game {
 int FootClass::PreDestroy()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE5D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE5D0.json)
 }
 } // namespace ra2::game
 
@@ -1314,7 +1314,7 @@ int FootClass::PreDestroy()
 namespace ra2::game {
 int FootClass::OnCompleteAction()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE630.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE630.json)
 }
 } // namespace ra2::game
 
@@ -1322,7 +1322,7 @@ int FootClass::OnCompleteAction()
 namespace ra2::game {
 int FootClass::RemovePassenger()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE670.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE670.json)
 }
 } // namespace ra2::game
 
@@ -1330,7 +1330,7 @@ int FootClass::RemovePassenger()
 namespace ra2::game {
 int FootClass::PopAndProcess()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE710.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE710.json)
 }
 } // namespace ra2::game
 
@@ -1338,7 +1338,7 @@ int FootClass::PopAndProcess()
 namespace ra2::game {
 bool FootClass::IsTimerActive() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE770.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE770.json)
 }
 } // namespace ra2::game
 
@@ -1346,7 +1346,7 @@ bool FootClass::IsTimerActive() const
 namespace ra2::game {
 bool FootClass::IsTargetInRange() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE7B0.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE7B0.json)
 }
 } // namespace ra2::game
 
@@ -1354,7 +1354,7 @@ bool FootClass::IsTargetInRange() const
 namespace ra2::game {
 int FootClass::CheckCellPassable() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE940.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE940.json)
 }
 } // namespace ra2::game
 
@@ -1370,7 +1370,7 @@ void FootClass::UpdateTeamAI()
 namespace ra2::game {
 int TechnoClass::GetThreatValue() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DED70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DED70.json)
 }
 } // namespace ra2::game
 
@@ -1378,7 +1378,7 @@ int TechnoClass::GetThreatValue() const
 namespace ra2::game {
 int TechnoClass::FindBestMatch()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF040.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF040.json)
 }
 } // namespace ra2::game
 
@@ -1394,7 +1394,7 @@ void FootClass::ClearPathIndex()
 namespace ra2::game {
 int FootClass::MissionSell_Dispatch()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF0E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF0E0.json)
 }
 } // namespace ra2::game
 
@@ -1402,7 +1402,7 @@ int FootClass::MissionSell_Dispatch()
 namespace ra2::game {
 int TechnoClass::vt_entry_4A8()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF1A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF1A0.json)
 }
 } // namespace ra2::game
 
@@ -1410,7 +1410,7 @@ int TechnoClass::vt_entry_4A8()
 namespace ra2::game {
 int TechnoClass::vt_entry_4C8()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF320.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF320.json)
 }
 } // namespace ra2::game
 
@@ -1426,7 +1426,7 @@ void FootClass::UpdateAttackMove_SelectNewTarget()
 namespace ra2::game {
 int TechnoClass::vt_entry_4D0()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF4B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF4B0.json)
 }
 } // namespace ra2::game
 
@@ -1434,7 +1434,7 @@ int TechnoClass::vt_entry_4D0()
 namespace ra2::game {
 int FootClass::Destru_vt322()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF7F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DF7F0.json)
 }
 } // namespace ra2::game
 
@@ -1442,7 +1442,7 @@ int FootClass::Destru_vt322()
 namespace ra2::game {
 bool FootClass::IsNotAttackAndPlayer() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DFA50.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DFA50.json)
 }
 } // namespace ra2::game
 
@@ -1450,7 +1450,7 @@ bool FootClass::IsNotAttackAndPlayer() const
 namespace ra2::game {
 int TechnoClass::FindClosestInfantry()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DFA70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DFA70.json)
 }
 } // namespace ra2::game
 
@@ -1458,7 +1458,7 @@ int TechnoClass::FindClosestInfantry()
 namespace ra2::game {
 int TechnoClass::FindClosestUnit()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DFB70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DFB70.json)
 }
 } // namespace ra2::game
 
@@ -1466,7 +1466,7 @@ int TechnoClass::FindClosestUnit()
 namespace ra2::game {
 int TechnoClass::FindClosestBuilding()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DFF40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DFF40.json)
 }
 } // namespace ra2::game
 
@@ -1474,7 +1474,7 @@ int TechnoClass::FindClosestBuilding()
 namespace ra2::game {
 int FootClass::Jumpjet_OccupyCell()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004E00B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004E00B0.json)
 }
 } // namespace ra2::game
 
@@ -1482,7 +1482,7 @@ int FootClass::Jumpjet_OccupyCell()
 namespace ra2::game {
 int TechnoClass::GetAnimationValue() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004E0150.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004E0150.json)
 }
 } // namespace ra2::game
 
@@ -1490,7 +1490,7 @@ int TechnoClass::GetAnimationValue() const
 namespace ra2::game {
 int FootClass::Destru_vt08()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004E0170.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004E0170.json)
 }
 } // namespace ra2::game
 
@@ -1498,7 +1498,7 @@ int FootClass::Destru_vt08()
 namespace ra2::game {
 int FootClass::RemoveFromPointerArray()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004E0ED0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004E0ED0.json)
 }
 } // namespace ra2::game
 
@@ -1506,7 +1506,7 @@ int FootClass::RemoveFromPointerArray()
 namespace ra2::game {
 int TechnoClass::GetDamageMultiplier() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00050BD30.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00050BD30.json)
 }
 } // namespace ra2::game
 
@@ -1514,7 +1514,7 @@ int TechnoClass::GetDamageMultiplier() const
 namespace ra2::game {
 int TechnoClass::GetTargetSpeedMultiplier() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00050C050.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00050C050.json)
 }
 } // namespace ra2::game
 
@@ -1522,7 +1522,7 @@ int TechnoClass::GetTargetSpeedMultiplier() const
 namespace ra2::game {
 int TechnoClass::FindDeployDestination()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00050C920.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00050C920.json)
 }
 } // namespace ra2::game
 
@@ -1530,7 +1530,7 @@ int TechnoClass::FindDeployDestination()
 namespace ra2::game {
 bool TechnoClass::ProcessTarget(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00050CAD0.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00050CAD0.json)
 }
 } // namespace ra2::game
 
@@ -1538,7 +1538,7 @@ bool TechnoClass::ProcessTarget(int a2)
 namespace ra2::game {
 int TechnoClass::MapHouseRelationIndex()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00050DAC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00050DAC0.json)
 }
 } // namespace ra2::game
 
@@ -1554,7 +1554,7 @@ int GetThreatValue_0()
 namespace ra2::game {
 int TechnoClass::GarrisonBuilding()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000522910.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000522910.json)
 }
 } // namespace ra2::game
 
@@ -1562,7 +1562,7 @@ int TechnoClass::GarrisonBuilding()
 namespace ra2::game {
 int TechnoClass::HandleSpecialAction()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000522A60.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000522A60.json)
 }
 } // namespace ra2::game
 
@@ -1570,7 +1570,7 @@ int TechnoClass::HandleSpecialAction()
 namespace ra2::game {
 int TechnoClass::GetTileAnimationData() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000547150.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000547150.json)
 }
 } // namespace ra2::game
 
@@ -1578,7 +1578,7 @@ int TechnoClass::GetTileAnimationData() const
 namespace ra2::game {
 int FootClass::FindNearestApproachableCell()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000586FC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000586FC0.json)
 }
 } // namespace ra2::game
 
@@ -1586,7 +1586,7 @@ int FootClass::FindNearestApproachableCell()
 namespace ra2::game {
 void * ObjectClass::Init(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F3B50.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F3B50.json)
 }
 } // namespace ra2::game
 
@@ -1602,7 +1602,7 @@ void TechnoClass::CreateDestructionEffect()
 namespace ra2::game {
 int ObjectClass::FinalizeCellPlacement(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005FC570.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005FC570.json)
 }
 } // namespace ra2::game
 
@@ -1610,7 +1610,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
 namespace ra2::game {
 bool FootClass::CreateWakes()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000629E90.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000629E90.json)
 }
 } // namespace ra2::game
 
@@ -1618,7 +1618,7 @@ bool FootClass::CreateWakes()
 namespace ra2::game {
 int TechnoClass::IsProductionChainActive() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000637840.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000637840.json)
 }
 } // namespace ra2::game
 
@@ -1626,7 +1626,7 @@ int TechnoClass::IsProductionChainActive() const
 namespace ra2::game {
 int TechnoClass::RemoveBuildingFromScripts()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000638840.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000638840.json)
 }
 } // namespace ra2::game
 
@@ -1634,7 +1634,7 @@ int TechnoClass::RemoveBuildingFromScripts()
 namespace ra2::game {
 int TechnoClass::CreatePlanningNode()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000638A80.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000638A80.json)
 }
 } // namespace ra2::game
 
@@ -1650,7 +1650,7 @@ void BuildingClass::DrawActionLines(Point2D* screen_pos, RectangleStruct* bounds
 namespace ra2::game {
 int TechnoClass::CalculateDamage()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000663030.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000663030.json)
 }
 } // namespace ra2::game
 
@@ -1658,7 +1658,7 @@ int TechnoClass::CalculateDamage()
 namespace ra2::game {
 void * ObjectClass::GetSidebarTooltip(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006A92E0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006A92E0.json)
 }
 } // namespace ra2::game
 
@@ -1666,7 +1666,7 @@ void * ObjectClass::GetSidebarTooltip(int a2)
 namespace ra2::game {
 void * ObjectClass::GetTooltipText(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006AC210.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006AC210.json)
 }
 } // namespace ra2::game
 
@@ -1674,7 +1674,7 @@ void * ObjectClass::GetTooltipText(int a2)
 namespace ra2::game {
 int TechnoClass::MutateAll()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B0AE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B0AE0.json)
 }
 } // namespace ra2::game
 
@@ -1682,7 +1682,7 @@ int TechnoClass::MutateAll()
 namespace ra2::game {
 int TechnoClass::RefreshDeployOccupierState()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B0D10.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B0D10.json)
 }
 } // namespace ra2::game
 
@@ -1690,7 +1690,7 @@ int TechnoClass::RefreshDeployOccupierState()
 namespace ra2::game {
 int TechnoClass::CountPassengers() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B7D80.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B7D80.json)
 }
 } // namespace ra2::game
 
@@ -1698,7 +1698,7 @@ int TechnoClass::CountPassengers() const
 namespace ra2::game {
 int FootClass::LinkToTransporter()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006EB380.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006EB380.json)
 }
 } // namespace ra2::game
 
@@ -1706,7 +1706,7 @@ int FootClass::LinkToTransporter()
 namespace ra2::game {
 int TechnoClass::IsWaypointHidden() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006EC300.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006EC300.json)
 }
 } // namespace ra2::game
 
@@ -1714,7 +1714,7 @@ int TechnoClass::IsWaypointHidden() const
 namespace ra2::game {
 int FootClass::GetGameSpeedFromSession() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F03B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F03B0.json)
 }
 } // namespace ra2::game
 
@@ -1722,7 +1722,7 @@ int FootClass::GetGameSpeedFromSession() const
 namespace ra2::game {
 int TechnoClass::GetWaypointCoords() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F18A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F18A0.json)
 }
 } // namespace ra2::game
 
@@ -1730,7 +1730,7 @@ int TechnoClass::GetWaypointCoords() const
 namespace ra2::game {
 int TechnoClass::Create()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F1920.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F1920.json)
 }
 } // namespace ra2::game
 
@@ -1738,7 +1738,7 @@ int TechnoClass::Create()
 namespace ra2::game {
 int TechnoClass::IsNotAircraftOrBuilding() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F3280.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F3280.json)
 }
 } // namespace ra2::game
 
@@ -1746,7 +1746,7 @@ int TechnoClass::IsNotAircraftOrBuilding() const
 namespace ra2::game {
 int TechnoClass::CanInitiateSell() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F32D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F32D0.json)
 }
 } // namespace ra2::game
 
@@ -1754,7 +1754,7 @@ int TechnoClass::CanInitiateSell() const
 namespace ra2::game {
 BOOL TechnoClass::GetCrewCount()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F3950.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F3950.json)
 }
 } // namespace ra2::game
 
@@ -1762,7 +1762,7 @@ BOOL TechnoClass::GetCrewCount()
 namespace ra2::game {
 int TechnoClass::GetValue() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F3970.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F3970.json)
 }
 } // namespace ra2::game
 
@@ -1770,7 +1770,7 @@ int TechnoClass::GetValue() const
 namespace ra2::game {
 int TechnoClass::ComputeTransform()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F3AD0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F3AD0.json)
 }
 } // namespace ra2::game
 
@@ -1778,7 +1778,7 @@ int TechnoClass::ComputeTransform()
 namespace ra2::game {
 int TechnoClass::SetHouseFlag()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F4960.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F4960.json)
 }
 } // namespace ra2::game
 
@@ -1786,7 +1786,7 @@ int TechnoClass::SetHouseFlag()
 namespace ra2::game {
 int TechnoClass::CheckPlayerOwned() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F4A40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F4A40.json)
 }
 } // namespace ra2::game
 
@@ -1794,7 +1794,7 @@ int TechnoClass::CheckPlayerOwned() const
 namespace ra2::game {
 int TechnoClass::UpdateProdWithSound()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F4A70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F4A70.json)
 }
 } // namespace ra2::game
 
@@ -1802,7 +1802,7 @@ int TechnoClass::UpdateProdWithSound()
 namespace ra2::game {
 int TechnoClass::PushNearbyUnits()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F4EB0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F4EB0.json)
 }
 } // namespace ra2::game
 
@@ -1810,7 +1810,7 @@ int TechnoClass::PushNearbyUnits()
 namespace ra2::game {
 int FootClass::CompleteProduction()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F5090.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F5090.json)
 }
 } // namespace ra2::game
 
@@ -1842,7 +1842,7 @@ void BuildingClass::DrawHealthBar(Point2D* screen_pos, RectangleStruct* bounds) 
 namespace ra2::game {
 int TechnoClass::CleanupDeploy()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F6AC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F6AC0.json)
 }
 } // namespace ra2::game
 
@@ -1850,7 +1850,7 @@ int TechnoClass::CleanupDeploy()
 namespace ra2::game {
 int TechnoClass::ComputeSlopeDifference()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F6F60.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F6F60.json)
 }
 } // namespace ra2::game
 
@@ -1858,7 +1858,7 @@ int TechnoClass::ComputeSlopeDifference()
 namespace ra2::game {
 int TechnoClass::ComputeSlopePenalty()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F70E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F70E0.json)
 }
 } // namespace ra2::game
 
@@ -1866,7 +1866,7 @@ int TechnoClass::ComputeSlopePenalty()
 namespace ra2::game {
 int TechnoClass::CheckTargetLOS() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F7220.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F7220.json)
 }
 } // namespace ra2::game
 
@@ -1874,7 +1874,7 @@ int TechnoClass::CheckTargetLOS() const
 namespace ra2::game {
 int TechnoClass::IsInRange() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F7660.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F7660.json)
 }
 } // namespace ra2::game
 
@@ -1882,7 +1882,7 @@ int TechnoClass::IsInRange() const
 namespace ra2::game {
 int TechnoClass::CheckCellPassable2() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F7780.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F7780.json)
 }
 } // namespace ra2::game
 
@@ -1890,7 +1890,7 @@ int TechnoClass::CheckCellPassable2() const
 namespace ra2::game {
 int TechnoClass::ValidateTarget(TechnoClass* target, int weapon_index) const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F77B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F77B0.json)
 }
 } // namespace ra2::game
 
@@ -1898,7 +1898,7 @@ int TechnoClass::ValidateTarget(TechnoClass* target, int weapon_index) const
 namespace ra2::game {
 int TechnoClass::CheckAndFireAtTarget()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F78D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F78D0.json)
 }
 } // namespace ra2::game
 
@@ -1906,7 +1906,7 @@ int TechnoClass::CheckAndFireAtTarget()
 namespace ra2::game {
 int TechnoClass::CheckCellPassable() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F7930.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F7930.json)
 }
 } // namespace ra2::game
 
@@ -1914,7 +1914,7 @@ int TechnoClass::CheckCellPassable() const
 namespace ra2::game {
 int TechnoClass::CheckCellPassable3() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F7970.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F7970.json)
 }
 } // namespace ra2::game
 
@@ -1922,7 +1922,7 @@ int TechnoClass::CheckCellPassable3() const
 namespace ra2::game {
 int TechnoClass::GetBridgeDamageMult() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F79A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F79A0.json)
 }
 } // namespace ra2::game
 
@@ -1930,7 +1930,7 @@ int TechnoClass::GetBridgeDamageMult() const
 namespace ra2::game {
 int TechnoClass::EvaluateBuildingTarget()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F8C10.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F8C10.json)
 }
 } // namespace ra2::game
 
@@ -1938,7 +1938,7 @@ int TechnoClass::EvaluateBuildingTarget()
 namespace ra2::game {
 int TechnoClass::SelectAutoTarget_Start_AU()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F8DF0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F8DF0.json)
 }
 } // namespace ra2::game
 
@@ -1946,7 +1946,7 @@ int TechnoClass::SelectAutoTarget_Start_AU()
 namespace ra2::game {
 int TechnoClass::SetTargetIfAllowed()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F9DD0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006F9DD0.json)
 }
 } // namespace ra2::game
 
@@ -1954,7 +1954,7 @@ int TechnoClass::SetTargetIfAllowed()
 namespace ra2::game {
 int TechnoClass::StepAnimFrame()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FB010.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FB010.json)
 }
 } // namespace ra2::game
 
@@ -1962,7 +1962,7 @@ int TechnoClass::StepAnimFrame()
 namespace ra2::game {
 int TechnoClass::CalcAnimDelay() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FB080.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FB080.json)
 }
 } // namespace ra2::game
 
@@ -1978,7 +1978,7 @@ void FootClass::UpdateLocomotion()
 namespace ra2::game {
 int TechnoClass::ShouldNotBeCloaked() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FBC90.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FBC90.json)
 }
 } // namespace ra2::game
 
@@ -1986,7 +1986,7 @@ int TechnoClass::ShouldNotBeCloaked() const
 namespace ra2::game {
 int TechnoClass::ShouldBeCloaked() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FBDC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FBDC0.json)
 }
 } // namespace ra2::game
 
@@ -1994,7 +1994,7 @@ int TechnoClass::ShouldBeCloaked() const
 namespace ra2::game {
 int TechnoClass::CanMoveToCell() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FC030.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FC030.json)
 }
 } // namespace ra2::game
 
@@ -2002,7 +2002,7 @@ int TechnoClass::CanMoveToCell() const
 namespace ra2::game {
 int TechnoClass::ProcessDeploymentState()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FCD40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FCD40.json)
 }
 } // namespace ra2::game
 
@@ -2010,7 +2010,7 @@ int TechnoClass::ProcessDeploymentState()
 namespace ra2::game {
 int TechnoClass::AssignTarget_SyncLog(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FCDB0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FCDB0.json)
 }
 } // namespace ra2::game
 
@@ -2018,7 +2018,7 @@ int TechnoClass::AssignTarget_SyncLog(int a2)
 namespace ra2::game {
 int TechnoClass::CalculateROF()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FCFA0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FCFA0.json)
 }
 } // namespace ra2::game
 
@@ -2026,7 +2026,7 @@ int TechnoClass::CalculateROF()
 namespace ra2::game {
 int TechnoClass::CreateFireEffect()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FD210.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FD210.json)
 }
 } // namespace ra2::game
 
@@ -2034,7 +2034,7 @@ int TechnoClass::CreateFireEffect()
 namespace ra2::game {
 int TechnoClass::CreateRadarBlip()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FD460.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FD460.json)
 }
 } // namespace ra2::game
 
@@ -2042,7 +2042,7 @@ int TechnoClass::CreateRadarBlip()
 namespace ra2::game {
 int TechnoClass::CreateFiringRadarBlip()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FD570.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FD570.json)
 }
 } // namespace ra2::game
 
@@ -2050,7 +2050,7 @@ int TechnoClass::CreateFiringRadarBlip()
 namespace ra2::game {
 int TechnoClass::CreateFireBeamEffect()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FD620.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FD620.json)
 }
 } // namespace ra2::game
 
@@ -2058,7 +2058,7 @@ int TechnoClass::CreateFireBeamEffect()
 namespace ra2::game {
 int TechnoClass::ComputeAudioFalloffDamage()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FDB80.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006FDB80.json)
 }
 } // namespace ra2::game
 
@@ -2066,7 +2066,7 @@ int TechnoClass::ComputeAudioFalloffDamage()
 namespace ra2::game {
 int TechnoClass::HandleCursor()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000700600.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000700600.json)
 }
 } // namespace ra2::game
 
@@ -2074,7 +2074,7 @@ int TechnoClass::HandleCursor()
 namespace ra2::game {
 int TechnoClass::CanReceivePassengers() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000700C40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000700C40.json)
 }
 } // namespace ra2::game
 
@@ -2082,7 +2082,7 @@ int TechnoClass::CanReceivePassengers() const
 namespace ra2::game {
 int TechnoClass::IsDeadOrInactive() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000700D10.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000700D10.json)
 }
 } // namespace ra2::game
 
@@ -2090,7 +2090,7 @@ int TechnoClass::IsDeadOrInactive() const
 namespace ra2::game {
 int TechnoClass::CanAttack() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000700D50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000700D50.json)
 }
 } // namespace ra2::game
 
@@ -2098,7 +2098,7 @@ int TechnoClass::CanAttack() const
 namespace ra2::game {
 int TechnoClass::HasActiveParam() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000701120.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000701120.json)
 }
 } // namespace ra2::game
 
@@ -2106,7 +2106,7 @@ int TechnoClass::HasActiveParam() const
 namespace ra2::game {
 int TechnoClass::FindLowestDamage()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007012C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007012C0.json)
 }
 } // namespace ra2::game
 
@@ -2114,7 +2114,7 @@ int TechnoClass::FindLowestDamage()
 namespace ra2::game {
 int TechnoClass::TransitionEffectState()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007036C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007036C0.json)
 }
 } // namespace ra2::game
 
@@ -2122,7 +2122,7 @@ int TechnoClass::TransitionEffectState()
 namespace ra2::game {
 int TechnoClass::StartEffectAudio()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000703770.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000703770.json)
 }
 } // namespace ra2::game
 
@@ -2130,7 +2130,7 @@ int TechnoClass::StartEffectAudio()
 namespace ra2::game {
 int TechnoClass::Vt279Thunk0()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000703850.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000703850.json)
 }
 } // namespace ra2::game
 
@@ -2138,7 +2138,7 @@ int TechnoClass::Vt279Thunk0()
 namespace ra2::game {
 int TechnoClass::CheckTargetCell() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000703B10.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000703B10.json)
 }
 } // namespace ra2::game
 
@@ -2146,7 +2146,7 @@ int TechnoClass::CheckTargetCell() const
 namespace ra2::game {
 int TechnoClass::ScanNeighborCells()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000703E70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000703E70.json)
 }
 } // namespace ra2::game
 
@@ -2154,7 +2154,7 @@ int TechnoClass::ScanNeighborCells()
 namespace ra2::game {
 int TechnoClass::IsValidBuildingPlacement()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000704000.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000704000.json)
 }
 } // namespace ra2::game
 
@@ -2162,7 +2162,7 @@ int TechnoClass::IsValidBuildingPlacement()
 namespace ra2::game {
 int TechnoClass::CheckAdjacencyFlags() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000704240.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000704240.json)
 }
 } // namespace ra2::game
 
@@ -2170,7 +2170,7 @@ int TechnoClass::CheckAdjacencyFlags() const
 namespace ra2::game {
 int TechnoClass::IsNotBusy() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000705D50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000705D50.json)
 }
 } // namespace ra2::game
 
@@ -2178,7 +2178,7 @@ int TechnoClass::IsNotBusy() const
 namespace ra2::game {
 int TechnoClass::GetBuildAnim() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000705D70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000705D70.json)
 }
 } // namespace ra2::game
 
@@ -2186,7 +2186,7 @@ int TechnoClass::GetBuildAnim() const
 namespace ra2::game {
 int TechnoClass::UpdateState()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000706640.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000706640.json)
 }
 } // namespace ra2::game
 
@@ -2194,7 +2194,7 @@ int TechnoClass::UpdateState()
 namespace ra2::game {
 int TechnoClass::ComputeTotalPowerDrain()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000707DD0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000707DD0.json)
 }
 } // namespace ra2::game
 
@@ -2202,7 +2202,7 @@ int TechnoClass::ComputeTotalPowerDrain()
 namespace ra2::game {
 int TechnoClass::ComputeScanDistance() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000707E60.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000707E60.json)
 }
 } // namespace ra2::game
 
@@ -2210,7 +2210,7 @@ int TechnoClass::ComputeScanDistance() const
 namespace ra2::game {
 int TechnoClass::CheckPlacementTileMatch() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000707F60.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000707F60.json)
 }
 } // namespace ra2::game
 
@@ -2218,7 +2218,7 @@ int TechnoClass::CheckPlacementTileMatch() const
 namespace ra2::game {
 int TechnoClass::EvaluateMission()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708080.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708080.json)
 }
 } // namespace ra2::game
 
@@ -2226,7 +2226,7 @@ int TechnoClass::EvaluateMission()
 namespace ra2::game {
 int TechnoClass::GetCostMultiplier() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708B40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708B40.json)
 }
 } // namespace ra2::game
 
@@ -2234,7 +2234,7 @@ int TechnoClass::GetCostMultiplier() const
 namespace ra2::game {
 int TechnoClass::ComputeAverageValue() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708BC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708BC0.json)
 }
 } // namespace ra2::game
 
@@ -2242,7 +2242,7 @@ int TechnoClass::ComputeAverageValue() const
 namespace ra2::game {
 int TechnoClass::GetAmmoCount() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708C30.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708C30.json)
 }
 } // namespace ra2::game
 
@@ -2250,7 +2250,7 @@ int TechnoClass::GetAmmoCount() const
 namespace ra2::game {
 int TechnoClass::Vt170()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708D70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708D70.json)
 }
 } // namespace ra2::game
 
@@ -2258,7 +2258,7 @@ int TechnoClass::Vt170()
 namespace ra2::game {
 int TechnoClass::SetMoveDestination()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708D90.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708D90.json)
 }
 } // namespace ra2::game
 
@@ -2266,7 +2266,7 @@ int TechnoClass::SetMoveDestination()
 namespace ra2::game {
 int TechnoClass::GetPrimaryTargetOrFallback() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708DC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708DC0.json)
 }
 } // namespace ra2::game
 
@@ -2274,7 +2274,7 @@ int TechnoClass::GetPrimaryTargetOrFallback() const
 namespace ra2::game {
 int TechnoClass::PickAlternateTarget()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708E00.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708E00.json)
 }
 } // namespace ra2::game
 
@@ -2282,7 +2282,7 @@ int TechnoClass::PickAlternateTarget()
 namespace ra2::game {
 int TechnoClass::SelectRandomTarget()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708EB0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708EB0.json)
 }
 } // namespace ra2::game
 
@@ -2290,7 +2290,7 @@ int TechnoClass::SelectRandomTarget()
 namespace ra2::game {
 int TechnoClass::ResponseMove_Pickup()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708FC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000708FC0.json)
 }
 } // namespace ra2::game
 
@@ -2298,7 +2298,7 @@ int TechnoClass::ResponseMove_Pickup()
 namespace ra2::game {
 int TechnoClass::GetSecondaryTargetOrFallback() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000709020.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000709020.json)
 }
 } // namespace ra2::game
 
@@ -2306,7 +2306,7 @@ int TechnoClass::GetSecondaryTargetOrFallback() const
 namespace ra2::game {
 int TechnoClass::GetTertiaryTargetOrFallback() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000709060.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000709060.json)
 }
 } // namespace ra2::game
 
@@ -2314,7 +2314,7 @@ int TechnoClass::GetTertiaryTargetOrFallback() const
 namespace ra2::game {
 int TechnoClass::VoiceAttack()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007090A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007090A0.json)
 }
 } // namespace ra2::game
 
@@ -2322,7 +2322,7 @@ int TechnoClass::VoiceAttack()
 namespace ra2::game {
 int TechnoClass::BeginFiringSequence()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000709820.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000709820.json)
 }
 } // namespace ra2::game
 
@@ -2330,7 +2330,7 @@ int TechnoClass::BeginFiringSequence()
 namespace ra2::game {
 int TechnoClass::IsTimerExpired() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007099E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007099E0.json)
 }
 } // namespace ra2::game
 
@@ -2338,7 +2338,7 @@ int TechnoClass::IsTimerExpired() const
 namespace ra2::game {
 int TechnoClass::CompleteFactoryProduction()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000709A40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000709A40.json)
 }
 } // namespace ra2::game
 
@@ -2346,7 +2346,7 @@ int TechnoClass::CompleteFactoryProduction()
 namespace ra2::game {
 int TechnoClass::GetCellCoordsV2() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070AD50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070AD50.json)
 }
 } // namespace ra2::game
 
@@ -2354,7 +2354,7 @@ int TechnoClass::GetCellCoordsV2() const
 namespace ra2::game {
 int TechnoClass::Vt46Thunk()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070ADA0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070ADA0.json)
 }
 } // namespace ra2::game
 
@@ -2362,7 +2362,7 @@ int TechnoClass::Vt46Thunk()
 namespace ra2::game {
 int TechnoClass::RevealAreaSmall()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070ADC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070ADC0.json)
 }
 } // namespace ra2::game
 
@@ -2370,7 +2370,7 @@ int TechnoClass::RevealAreaSmall()
 namespace ra2::game {
 int TechnoClass::ScanForEnemies()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070AF50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070AF50.json)
 }
 } // namespace ra2::game
 
@@ -2378,7 +2378,7 @@ int TechnoClass::ScanForEnemies()
 namespace ra2::game {
 int TechnoClass::RevealAreaConditional()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070B1D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070B1D0.json)
 }
 } // namespace ra2::game
 
@@ -2386,7 +2386,7 @@ int TechnoClass::RevealAreaConditional()
 namespace ra2::game {
 int TechnoClass::ComputeAimVector()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070B280.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070B280.json)
 }
 } // namespace ra2::game
 
@@ -2394,7 +2394,7 @@ int TechnoClass::ComputeAimVector()
 namespace ra2::game {
 int TechnoClass::UpdateBodyTilt()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070B570.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070B570.json)
 }
 } // namespace ra2::game
 
@@ -2402,7 +2402,7 @@ int TechnoClass::UpdateBodyTilt()
 namespace ra2::game {
 CoordStruct* TechnoClass::GetTargetCoords(CoordStruct* pCrd) const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070BCB0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070BCB0.json)
 }
 } // namespace ra2::game
 
@@ -2410,7 +2410,7 @@ CoordStruct* TechnoClass::GetTargetCoords(CoordStruct* pCrd) const
 namespace ra2::game {
 int TechnoClass::CalcOffsetFacing() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070BE50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070BE50.json)
 }
 } // namespace ra2::game
 
@@ -2418,7 +2418,7 @@ int TechnoClass::CalcOffsetFacing() const
 namespace ra2::game {
 int TechnoClass::ShouldSelfHealOneStep() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070BE80.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070BE80.json)
 }
 } // namespace ra2::game
 
@@ -2426,7 +2426,7 @@ int TechnoClass::ShouldSelfHealOneStep() const
 namespace ra2::game {
 int TechnoClass::SetFocus(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070C610.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070C610.json)
 }
 } // namespace ra2::game
 
@@ -2434,7 +2434,7 @@ int TechnoClass::SetFocus(int a2)
 namespace ra2::game {
 int TechnoClass::CheckCliffTransition() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070C620.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070C620.json)
 }
 } // namespace ra2::game
 
@@ -2442,7 +2442,7 @@ int TechnoClass::CheckCliffTransition() const
 namespace ra2::game {
 int TechnoClass::RadarUpdateOn()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070CC90.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070CC90.json)
 }
 } // namespace ra2::game
 
@@ -2450,7 +2450,7 @@ int TechnoClass::RadarUpdateOn()
 namespace ra2::game {
 int TechnoClass::RadarUpdateOff()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070CCC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070CCC0.json)
 }
 } // namespace ra2::game
 
@@ -2466,7 +2466,7 @@ int RevealOwnCell()
 namespace ra2::game {
 int TechnoClass::ComputeDamage()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070CD10.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070CD10.json)
 }
 } // namespace ra2::game
 
@@ -2482,7 +2482,7 @@ int TechnoClass::GetRangeModifier() const
 namespace ra2::game {
 int TechnoClass::ShouldScanArea() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D1D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D1D0.json)
 }
 } // namespace ra2::game
 
@@ -2490,7 +2490,7 @@ int TechnoClass::ShouldScanArea() const
 namespace ra2::game {
 int TechnoClass::IsPlayerCellPassable() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D420.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D420.json)
 }
 } // namespace ra2::game
 
@@ -2498,7 +2498,7 @@ int TechnoClass::IsPlayerCellPassable() const
 namespace ra2::game {
 int TechnoClass::IsCellPassableFor() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D460.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D460.json)
 }
 } // namespace ra2::game
 
@@ -2506,7 +2506,7 @@ int TechnoClass::IsCellPassableFor() const
 namespace ra2::game {
 int TechnoClass::IsCloseEnoughToBuilding() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D590.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D590.json)
 }
 } // namespace ra2::game
 
@@ -2514,7 +2514,7 @@ int TechnoClass::IsCloseEnoughToBuilding() const
 namespace ra2::game {
 int TechnoClass::DecCounter()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D670.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D670.json)
 }
 } // namespace ra2::game
 
@@ -2522,7 +2522,7 @@ int TechnoClass::DecCounter()
 namespace ra2::game {
 int TechnoClass::ComputeCombatDamage()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D690.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D690.json)
 }
 } // namespace ra2::game
 
@@ -2530,7 +2530,7 @@ int TechnoClass::ComputeCombatDamage()
 namespace ra2::game {
 int FootClass::ProcessEnterTransport()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D7E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D7E0.json)
 }
 } // namespace ra2::game
 
@@ -2538,7 +2538,7 @@ int FootClass::ProcessEnterTransport()
 namespace ra2::game {
 int TechnoClass::PlaceAtCell()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D8F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D8F0.json)
 }
 } // namespace ra2::game
 
@@ -2546,7 +2546,7 @@ int TechnoClass::PlaceAtCell()
 namespace ra2::game {
 int TechnoClass::OnEnterCell()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D990.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070D990.json)
 }
 } // namespace ra2::game
 
@@ -2554,7 +2554,7 @@ int TechnoClass::OnEnterCell()
 namespace ra2::game {
 int TechnoClass::OwnerHasPower() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DC60.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DC60.json)
 }
 } // namespace ra2::game
 
@@ -2562,7 +2562,7 @@ int TechnoClass::OwnerHasPower() const
 namespace ra2::game {
 int TechnoClass::GetPoweredWeaponIndex() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DD20.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DD20.json)
 }
 } // namespace ra2::game
 
@@ -2570,7 +2570,7 @@ int TechnoClass::GetPoweredWeaponIndex() const
 namespace ra2::game {
 int TechnoClass::GetVt252Byte() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DD50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DD50.json)
 }
 } // namespace ra2::game
 
@@ -2578,7 +2578,7 @@ int TechnoClass::GetVt252Byte() const
 namespace ra2::game {
 int TechnoClass::SetSpread()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DDD0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DDD0.json)
 }
 } // namespace ra2::game
 
@@ -2586,7 +2586,7 @@ int TechnoClass::SetSpread()
 namespace ra2::game {
 int TechnoClass::SetMember81()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DE00.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DE00.json)
 }
 } // namespace ra2::game
 
@@ -2594,7 +2594,7 @@ int TechnoClass::SetMember81()
 namespace ra2::game {
 int TechnoClass::GattlingValueRateDown_GattlingRateDownDelay()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DE40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DE40.json)
 }
 } // namespace ra2::game
 
@@ -2602,7 +2602,7 @@ int TechnoClass::GattlingValueRateDown_GattlingRateDownDelay()
 namespace ra2::game {
 int TechnoClass::GattlingRateUp_GattlingRateDownReset()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DE70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DE70.json)
 }
 } // namespace ra2::game
 
@@ -2610,7 +2610,7 @@ int TechnoClass::GattlingRateUp_GattlingRateDownReset()
 namespace ra2::game {
 int TechnoClass::ActivateEffect()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070E280.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070E280.json)
 }
 } // namespace ra2::game
 
@@ -2618,7 +2618,7 @@ int TechnoClass::ActivateEffect()
 namespace ra2::game {
 int TechnoClass::IronCurtain()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070E2B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070E2B0.json)
 }
 } // namespace ra2::game
 
@@ -2626,7 +2626,7 @@ int TechnoClass::IronCurtain()
 namespace ra2::game {
 int TechnoClass::ResetTimer()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070E300.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070E300.json)
 }
 } // namespace ra2::game
 
@@ -2634,7 +2634,7 @@ int TechnoClass::ResetTimer()
 namespace ra2::game {
 int TechnoClass::InvulnerabilityIntensity_SetContext()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070E380.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070E380.json)
 }
 } // namespace ra2::game
 
@@ -2642,7 +2642,7 @@ int TechnoClass::InvulnerabilityIntensity_SetContext()
 namespace ra2::game {
 int TechnoClass::Update2()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070ED10.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070ED10.json)
 }
 } // namespace ra2::game
 
@@ -2650,7 +2650,7 @@ int TechnoClass::Update2()
 namespace ra2::game {
 int TechnoClass::GetAnimationFlags() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070ED80.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070ED80.json)
 }
 } // namespace ra2::game
 
@@ -2658,7 +2658,7 @@ int TechnoClass::GetAnimationFlags() const
 namespace ra2::game {
 int TechnoClass::CheckFireCooldown() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070EE30.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070EE30.json)
 }
 } // namespace ra2::game
 
@@ -2666,7 +2666,7 @@ int TechnoClass::CheckFireCooldown() const
 namespace ra2::game {
 int TechnoClass::CanDamageTarget() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070EF00.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070EF00.json)
 }
 } // namespace ra2::game
 
@@ -2674,7 +2674,7 @@ int TechnoClass::CanDamageTarget() const
 namespace ra2::game {
 int TechnoClass::GetMaxSpeed() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070EFE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070EFE0.json)
 }
 } // namespace ra2::game
 
@@ -2682,7 +2682,7 @@ int TechnoClass::GetMaxSpeed() const
 namespace ra2::game {
 int TechnoClass::GetTypeVt40() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F070.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F070.json)
 }
 } // namespace ra2::game
 
@@ -2698,7 +2698,7 @@ void FootClass::SetThreatBounds()
 namespace ra2::game {
 int FootClass::ApplyThreatBounds()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F6A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F6A0.json)
 }
 } // namespace ra2::game
 
@@ -2706,7 +2706,7 @@ int FootClass::ApplyThreatBounds()
 namespace ra2::game {
 int TechnoClass::SetIdleState()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F850.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070F850.json)
 }
 } // namespace ra2::game
 
@@ -2714,7 +2714,7 @@ int TechnoClass::SetIdleState()
 namespace ra2::game {
 int TechnoClass::CanSelfRepair()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070FB50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070FB50.json)
 }
 } // namespace ra2::game
 
@@ -2722,7 +2722,7 @@ int TechnoClass::CanSelfRepair()
 namespace ra2::game {
 int TechnoClass::Activate()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070FBE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070FBE0.json)
 }
 } // namespace ra2::game
 
@@ -2730,7 +2730,7 @@ int TechnoClass::Activate()
 namespace ra2::game {
 int TechnoClass::Deactivate()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070FC90.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070FC90.json)
 }
 } // namespace ra2::game
 
@@ -2738,7 +2738,7 @@ int TechnoClass::Deactivate()
 namespace ra2::game {
 int TechnoClass::LinkToBridge()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070FD70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070FD70.json)
 }
 } // namespace ra2::game
 
@@ -2746,7 +2746,7 @@ int TechnoClass::LinkToBridge()
 namespace ra2::game {
 int TechnoClass::EjectPassengers()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070FEE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070FEE0.json)
 }
 } // namespace ra2::game
 
@@ -2754,7 +2754,7 @@ int TechnoClass::EjectPassengers()
 namespace ra2::game {
 int TechnoClass::EnteredOpenTopped()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000710470.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000710470.json)
 }
 } // namespace ra2::game
 
@@ -2762,7 +2762,7 @@ int TechnoClass::EnteredOpenTopped()
 namespace ra2::game {
 int TechnoClass::ExitedOpenTopped()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007104A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007104A0.json)
 }
 } // namespace ra2::game
 
@@ -2770,7 +2770,7 @@ int TechnoClass::ExitedOpenTopped()
 namespace ra2::game {
 int TechnoClass::MarkPassengersAsExited()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007104C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007104C0.json)
 }
 } // namespace ra2::game
 
@@ -2786,7 +2786,7 @@ void FootClass::UpdatePassengerCoords()
 namespace ra2::game {
 int TechnoClass::ScalarDtor()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007106E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007106E0.json)
 }
 } // namespace ra2::game
 
@@ -2794,7 +2794,7 @@ int TechnoClass::ScalarDtor()
 namespace ra2::game {
 int TechnoClass::GetBuildCost() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000711EC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000711EC0.json)
 }
 } // namespace ra2::game
 
@@ -2802,7 +2802,7 @@ int TechnoClass::GetBuildCost() const
 namespace ra2::game {
 int TechnoClass::GetSightRange() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000717800.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000717800.json)
 }
 } // namespace ra2::game
 
@@ -2818,7 +2818,7 @@ void FootClass::Cleanup()
 namespace ra2::game {
 int TechnoClass::IsOwnedByHuman() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000732580.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000732580.json)
 }
 } // namespace ra2::game
 
@@ -2826,7 +2826,7 @@ int TechnoClass::IsOwnedByHuman() const
 namespace ra2::game {
 int TechnoClass::IsCapturableByPlayer() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007335F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007335F0.json)
 }
 } // namespace ra2::game
 
@@ -2834,7 +2834,7 @@ int TechnoClass::IsCapturableByPlayer() const
 namespace ra2::game {
 int TechnoClass::UpdateUnitAnimation()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000736CA0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000736CA0.json)
 }
 } // namespace ra2::game
 
@@ -2842,7 +2842,7 @@ int TechnoClass::UpdateUnitAnimation()
 namespace ra2::game {
 int TechnoClass::IsC4AnimationActive() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000736D50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000736D50.json)
 }
 } // namespace ra2::game
 
@@ -2850,7 +2850,7 @@ int TechnoClass::IsC4AnimationActive() const
 namespace ra2::game {
 int TechnoClass::DispatchPlayerInput()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000737BA0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000737BA0.json)
 }
 } // namespace ra2::game
 
@@ -2858,7 +2858,7 @@ int TechnoClass::DispatchPlayerInput()
 namespace ra2::game {
 int TechnoClass::ValidateMoveType()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000738890.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000738890.json)
 }
 } // namespace ra2::game
 
@@ -2866,7 +2866,7 @@ int TechnoClass::ValidateMoveType()
 namespace ra2::game {
 int TechnoClass::SpawnInfantryFromBuilding()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000738910.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000738910.json)
 }
 } // namespace ra2::game
 
@@ -2874,7 +2874,7 @@ int TechnoClass::SpawnInfantryFromBuilding()
 namespace ra2::game {
 int FootClass::RespondToDestruction()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000738970.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000738970.json)
 }
 } // namespace ra2::game
 
@@ -2882,7 +2882,7 @@ int FootClass::RespondToDestruction()
 namespace ra2::game {
 int TechnoClass::DeployIntoBuilding()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00073EFC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00073EFC0.json)
 }
 } // namespace ra2::game
 
@@ -2890,7 +2890,7 @@ int TechnoClass::DeployIntoBuilding()
 namespace ra2::game {
 int TechnoClass::GetInfantryCursorAction() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007404B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007404B0.json)
 }
 } // namespace ra2::game
 
@@ -2898,7 +2898,7 @@ int TechnoClass::GetInfantryCursorAction() const
 namespace ra2::game {
 int TechnoClass::ProcessAIDecision()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740810.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740810.json)
 }
 } // namespace ra2::game
 
@@ -2906,7 +2906,7 @@ int TechnoClass::ProcessAIDecision()
 namespace ra2::game {
 int TechnoClass::CheckRepairNeeded() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740A90.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740A90.json)
 }
 } // namespace ra2::game
 
@@ -2914,7 +2914,7 @@ int TechnoClass::CheckRepairNeeded() const
 namespace ra2::game {
 int TechnoClass::FindBestMovementDirection()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740B60.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740B60.json)
 }
 } // namespace ra2::game
 
@@ -2938,7 +2938,7 @@ int GetCrew_0()
 namespace ra2::game {
 int TechnoClass::EnterRepairBuilding()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740EF0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740EF0.json)
 }
 } // namespace ra2::game
 
@@ -2946,7 +2946,7 @@ int TechnoClass::EnterRepairBuilding()
 namespace ra2::game {
 int TechnoClass::GetDeployProgressValue() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740F80.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740F80.json)
 }
 } // namespace ra2::game
 
@@ -2954,7 +2954,7 @@ int TechnoClass::GetDeployProgressValue() const
 namespace ra2::game {
 int TechnoClass::CheckUnitFireConstraints() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740FD0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000740FD0.json)
 }
 } // namespace ra2::game
 
@@ -2962,7 +2962,7 @@ int TechnoClass::CheckUnitFireConstraints() const
 namespace ra2::game {
 int TechnoClass::FireWeaponBurst()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000741340.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000741340.json)
 }
 } // namespace ra2::game
 
@@ -2970,7 +2970,7 @@ int TechnoClass::FireWeaponBurst()
 namespace ra2::game {
 int TechnoClass::GetAverageDamageScore() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007414A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007414A0.json)
 }
 } // namespace ra2::game
 
@@ -2986,7 +2986,7 @@ int TechnoClass::ProcessSpecialUnitDeployCrush()
 namespace ra2::game {
 int TechnoClass::ReturnCapturedFlag()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007440B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007440B0.json)
 }
 } // namespace ra2::game
 
@@ -2994,7 +2994,7 @@ int TechnoClass::ReturnCapturedFlag()
 namespace ra2::game {
 int TechnoClass::SelectAITarget()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744100.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744100.json)
 }
 } // namespace ra2::game
 
@@ -3002,7 +3002,7 @@ int TechnoClass::SelectAITarget()
 namespace ra2::game {
 int TechnoClass::AreBuildingFlagsClear() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744180.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744180.json)
 }
 } // namespace ra2::game
 
@@ -3010,7 +3010,7 @@ int TechnoClass::AreBuildingFlagsClear() const
 namespace ra2::game {
 int TechnoClass::MarkCellImpassable()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007441B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007441B0.json)
 }
 } // namespace ra2::game
 
@@ -3018,7 +3018,7 @@ int TechnoClass::MarkCellImpassable()
 namespace ra2::game {
 int TechnoClass::ClearCellImpassable()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744210.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744210.json)
 }
 } // namespace ra2::game
 
@@ -3026,7 +3026,7 @@ int TechnoClass::ClearCellImpassable()
 namespace ra2::game {
 int TechnoClass::CanBeTargeted() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744270.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744270.json)
 }
 } // namespace ra2::game
 
@@ -3034,7 +3034,7 @@ int TechnoClass::CanBeTargeted() const
 namespace ra2::game {
 int TechnoClass::NotifyTeamOnDestruction()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744720.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744720.json)
 }
 } // namespace ra2::game
 
@@ -3042,7 +3042,7 @@ int TechnoClass::NotifyTeamOnDestruction()
 namespace ra2::game {
 int TechnoClass::TransferSlavedUnit()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007463A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007463A0.json)
 }
 } // namespace ra2::game
 
@@ -3050,7 +3050,7 @@ int TechnoClass::TransferSlavedUnit()
 namespace ra2::game {
 int TechnoClass::CaptureTurret()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746420.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746420.json)
 }
 } // namespace ra2::game
 
@@ -3058,7 +3058,7 @@ int TechnoClass::CaptureTurret()
 namespace ra2::game {
 int TechnoClass::TransferTurret()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007464E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007464E0.json)
 }
 } // namespace ra2::game
 
@@ -3066,7 +3066,7 @@ int TechnoClass::TransferTurret()
 namespace ra2::game {
 int TechnoClass::ApplyObjectEffect()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746670.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746670.json)
 }
 } // namespace ra2::game
 
@@ -3074,7 +3074,7 @@ int TechnoClass::ApplyObjectEffect()
 namespace ra2::game {
 int TechnoClass::ClearAllTargets()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746720.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746720.json)
 }
 } // namespace ra2::game
 
@@ -3082,7 +3082,7 @@ int TechnoClass::ClearAllTargets()
 namespace ra2::game {
 int TechnoClass::IsGuardingTarget() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746750.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746750.json)
 }
 } // namespace ra2::game
 
@@ -3090,7 +3090,7 @@ int TechnoClass::IsGuardingTarget() const
 namespace ra2::game {
 int TechnoClass::GetCommandTooltip() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746B20.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746B20.json)
 }
 } // namespace ra2::game
 
@@ -3098,7 +3098,7 @@ int TechnoClass::GetCommandTooltip() const
 namespace ra2::game {
 int TechnoClass::SelectAttackWeapon()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746CD0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746CD0.json)
 }
 } // namespace ra2::game
 
@@ -3106,7 +3106,7 @@ int TechnoClass::SelectAttackWeapon()
 namespace ra2::game {
 bool FootClass::CheckAccelLimit() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000750030.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000750030.json)
 }
 } // namespace ra2::game
 
@@ -3114,7 +3114,7 @@ bool FootClass::CheckAccelLimit() const
 namespace ra2::game {
 int FootClass::GetField() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007500D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007500D0.json)
 }
 } // namespace ra2::game
 
@@ -3122,7 +3122,7 @@ int FootClass::GetField() const
 namespace ra2::game {
 int TechnoClass::GetWeaponRange(int weapon_index) const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000773070.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000773070.json)
 }
 } // namespace ra2::game
 
@@ -3130,7 +3130,7 @@ int TechnoClass::GetWeaponRange(int weapon_index) const
 namespace ra2::game {
 int FootClass::ValidateFoundation()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE580.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DE580.json)
 }
 } // namespace ra2::game
 

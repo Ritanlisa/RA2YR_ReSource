@@ -31,17 +31,38 @@ struct IdaRegVar {
     IdaRegVar() : v(0) {}
     IdaRegVar& operator=(unsigned long x) { v = x; return *this; }
     template <class T> IdaRegVar& operator=(T* p) { v = (unsigned long)p; return *this; }
-    // G42.35c: explicit conversions -- the implicit operator unsigned long
-    // crossed with the global operator+(IdaRegVar, long) and made `_EBX + 36`
-    // ambiguous (C2666 x147 in HouseType/SuperWeapon). Boolean contexts
-    // (if (_EBX)) still work. The template T* overload fixes `(Class*)_EBX`.
+    // G42.35o: explicit value conversions (fixes `_EBX + 36` ambiguity C2666);
+    // explicit operator bool + the non-member comparison/bitwise overloads
+    // below keep the verbatim vocabulary (`if (_EBX)`, `_AX & 0x4100`,
+    // `_ESI == 3`, `_EAX >= 1`) compiling.
     explicit operator unsigned long() const { return v; }
+    explicit operator bool() const { return v != 0; }
     template <class T> explicit operator T*() const { return (T*)(uintptr_t)v; }
 };
 inline unsigned long operator+(const IdaRegVar& r, long d) { return r.v + d; }
 inline unsigned long operator+(long d, const IdaRegVar& r) { return d + r.v; }
 inline unsigned long operator-(const IdaRegVar& r, long d) { return r.v - d; }
 inline unsigned long operator-(long d, const IdaRegVar& r) { return d - r.v; }
+inline unsigned long operator&(const IdaRegVar& r, unsigned long m) { return r.v & m; }
+inline unsigned long operator&(unsigned long m, const IdaRegVar& r) { return m & r.v; }
+inline unsigned long operator|(const IdaRegVar& r, unsigned long m) { return r.v | m; }
+inline unsigned long operator|(unsigned long m, const IdaRegVar& r) { return m | r.v; }
+inline unsigned long operator^(const IdaRegVar& r, unsigned long m) { return r.v ^ m; }
+inline unsigned long operator^(unsigned long m, const IdaRegVar& r) { return m ^ r.v; }
+inline unsigned long operator<<(const IdaRegVar& r, int s) { return r.v << s; }
+inline unsigned long operator>>(const IdaRegVar& r, int s) { return r.v >> s; }
+inline bool operator==(const IdaRegVar& r, unsigned long x) { return r.v == x; }
+inline bool operator==(unsigned long x, const IdaRegVar& r) { return x == r.v; }
+inline bool operator!=(const IdaRegVar& r, unsigned long x) { return r.v != x; }
+inline bool operator!=(unsigned long x, const IdaRegVar& r) { return x != r.v; }
+inline bool operator<(const IdaRegVar& r, unsigned long x) { return r.v < x; }
+inline bool operator<(unsigned long x, const IdaRegVar& r) { return x < r.v; }
+inline bool operator<=(const IdaRegVar& r, unsigned long x) { return r.v <= x; }
+inline bool operator<=(unsigned long x, const IdaRegVar& r) { return x <= r.v; }
+inline bool operator>(const IdaRegVar& r, unsigned long x) { return r.v > x; }
+inline bool operator>(unsigned long x, const IdaRegVar& r) { return x > r.v; }
+inline bool operator>=(const IdaRegVar& r, unsigned long x) { return r.v >= x; }
+inline bool operator>=(unsigned long x, const IdaRegVar& r) { return x >= r.v; }
 static IdaRegVar _EAX, _EBX, _ECX, _EDX, _ESI, _EDI, _EBP, _ESP;
 static IdaRegVar _AX, _BX, _CX, _DX, _SI, _DI, _SP, _BP;
 static IdaRegVar _AL, _BL, _CL, _DL, _AH, _BH, _CH, _DH;

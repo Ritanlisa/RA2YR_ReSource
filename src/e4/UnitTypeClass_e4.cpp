@@ -28,7 +28,7 @@
 namespace gamemd {
 INIClass * * UnitTypeClass::ReadINIEntry()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B4DD0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B4DD0.json)
 }
 } // namespace gamemd
 // 0x7470D0
@@ -42,14 +42,14 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
 namespace gamemd {
 char UnitTypeClass::CreateUnit(short *a2, void *ppv)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007474B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007474B0.json)
 }
 }
 // 0x747560
 namespace gamemd {
 int UnitTypeClass::ConstructUnit(void *ppv)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000747560.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000747560.json)
 }
 }
 // 0x747620
@@ -63,28 +63,28 @@ char UnitTypeClass_LoadFromINI()
 namespace gamemd {  // G42.18c ns repair
 VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate(ObjectClass * Source)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00074B960.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00074B960.json)
 }
 }  // G42.18c ns repair
 // 0x747590
 namespace gamemd {  // G42.18c ns repair
 int *  UnitTypeClass::GetDimensions(int * a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000747590.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000747590.json)
 }
 }  // G42.18c ns repair
 // 0x7475D0
 namespace gamemd {  // G42.18c ns repair
 unsigned int *  UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007475D0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007475D0.json)
 }
 }  // G42.18c ns repair
 // 0x747EB0
 namespace gamemd {  // G42.18c ns repair
 unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000747EB0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000747EB0.json)
 }
 }  // G42.18c ns repair
 // 0x747F20
@@ -100,28 +100,28 @@ int UnitTypeClass::GetGameplayValue()
 namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000747F30.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000747F30.json)
 }
 }  // G42.18c ns repair
 // 0x747F70
 namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::PowerDrainUpdate(int * a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000747F70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000747F70.json)
 }
 }  // G42.18c ns repair
 // 0x748010
 namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::LoadFromINI2(int a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000748010.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000748010.json)
 }
 }  // G42.18c ns repair
 // 0x7480B0
 namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007480B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007480B0.json)
 }
 }  // G42.18c ns repair
 
@@ -156,6 +156,6 @@ return (int)this->ArrayIndex; /*0x748186*/
 namespace gamemd {  // G42.35f: def was outside namespace (pre-existing damage)
 UnitTypeClass * UnitTypeClass::ddtor(char a2)
 {
-    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x748190.json)
+    return nullptr; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x748190.json)
 }
 } // namespace gamemd

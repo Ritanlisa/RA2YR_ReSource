@@ -65,7 +65,7 @@ int BuildingClass::CanBeSold()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::CaptureBuilding()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00044D5D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00044D5D0.json)
 }
 } // namespace gamemd
 
@@ -89,7 +89,7 @@ char BuildingClass::CheckOverlapWithOthers()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetFactoryPosition() const
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00044F640.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00044F640.json)
 }
 } // namespace gamemd
 
@@ -97,7 +97,7 @@ int BuildingClass::GetFactoryPosition() const
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::PlayUpgradeAnim(int a2, int a3, int a4, void *a5)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000451750.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000451750.json)
 }
 } // namespace gamemd
 
@@ -105,7 +105,7 @@ int BuildingClass::PlayUpgradeAnim(int a2, int a3, int a4, void *a5)
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::SetConnectedBuildingMission(int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000452170.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000452170.json)
 }
 } // namespace gamemd
 
@@ -362,7 +362,7 @@ int BuildingClass::GetSellPriority()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::SquaredDistanceTo(ObjectClass* target) const
 {
-    (void)target; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F6500.json)
+    return 0; (void)target; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005F6500.json)
 }
 } // namespace gamemd
 
@@ -400,7 +400,7 @@ bool BuildingClass::IsBeingRepairedOrCaptured()
 namespace gamemd {
 HRESULT __stdcall AircraftClass::QueryInterface(const IID& iid, void** ppvObject)
 {
-    (void)iid; (void)ppvObject; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000414290.json)
+    return 0; (void)iid; (void)ppvObject; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000414290.json)
 }
 } // namespace gamemd
 
@@ -422,7 +422,7 @@ ULONG __stdcall AircraftClass::Release() {
 namespace gamemd {
 int UnitClass::Mission_Harvest()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004151E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004151E0.json)
 }
 } // namespace gamemd
 
@@ -446,7 +446,7 @@ void BuildingClass::AimTurret()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 bool BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 {
-    (void)cell_x; (void)cell_y; return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004260F0.json)
+    return false; (void)cell_x; (void)cell_y; return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004260F0.json)
 }
 } // namespace gamemd
 
@@ -574,7 +574,7 @@ void BuildingClass::HandleRepairCursor()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::StartProduction(int type_index)
 {
-    (void)type_index; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000447780.json)
+    return 0; (void)type_index; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000447780.json)
 }
 } // namespace gamemd
 
@@ -663,7 +663,7 @@ void BuildingClass::Disappear_PrismForward()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 CoordStruct* BuildingClass::GetAdjustedExitCoords(CoordStruct* out) const
 {
-    (void)out; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004500A0.json)
+    return nullptr; (void)out; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004500A0.json)
 }
 } // namespace gamemd
 
@@ -703,7 +703,7 @@ void BuildingClass::StopAnim(int anim_index)
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::ClearAnims(int a2)
 {
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000451E40.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000451E40.json)
 }
 } // namespace gamemd
 
@@ -759,7 +759,7 @@ bool BuildingClass::HasOccupantAudio()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 unsigned int * BuildingClass::DemolishBridgeCheck(int a2)
 {
-    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000452A40.json)
+    return nullptr; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000452A40.json)
 }
 } // namespace gamemd
 
@@ -799,7 +799,7 @@ void BuildingClass::TraverseBridgeSegments()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::RepairPlacement(char a2)
 {
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004533A0.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004533A0.json)
 }
 } // namespace gamemd
 
@@ -831,7 +831,7 @@ void BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::PowerDrainUpdate(int a2)
 {
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000454260.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000454260.json)
 }
 } // namespace gamemd
 
@@ -983,7 +983,7 @@ void BuildingClass::SpawnParticles()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 CoordStruct* BuildingClass::GetBuildCoordsAdjusted(CoordStruct* out) const
 {
-    (void)out; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000459EF0.json)
+    return nullptr; (void)out; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000459EF0.json)
 }
 } // namespace gamemd
 
@@ -999,7 +999,7 @@ void BuildingClass::ApplyFoundationDamage()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetPlacementCoords(int* out, unsigned int* a3)
 {
-    (void)out; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00045F160.json)
+    return 0; (void)out; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00045F160.json)
 }
 } // namespace gamemd
 
@@ -1015,7 +1015,7 @@ void BuildingClass::Draw_0(Point2D* screen_pos, RectangleStruct* bounds) const
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int* BuildingClass::GetPlacementRect(int* out)
 {
-    (void)out; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00047FDE0.json)
+    return nullptr; (void)out; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00047FDE0.json)
 }
 } // namespace gamemd
 
@@ -1031,7 +1031,7 @@ int BuildingClass::DetermineVisualState() const
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 BuildingClass* BuildingClass::FindByCellHash(uint32_t hash)
 {
-    (void)hash; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000485010.json)
+    return nullptr; (void)hash; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000485010.json)
 }
 } // namespace gamemd
 
@@ -1111,7 +1111,7 @@ bool BuildingClass::vt_entry_504()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int* BuildingClass::Validate(int* a2, int a3)
 {
-    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DD890.json)
+    return nullptr; (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DD890.json)
 }
 } // namespace gamemd
 
@@ -1119,7 +1119,7 @@ int* BuildingClass::Validate(int* a2, int a3)
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 bool BuildingClass::ValidateCell(int cell_x, int cell_y)
 {
-    (void)cell_x; (void)cell_y; return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DD9F0.json)
+    return false; (void)cell_x; (void)cell_y; return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004DD9F0.json)
 }
 } // namespace gamemd
 
@@ -1149,7 +1149,7 @@ bool BuildingClass::ValidatePlacementEx()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 CoordStruct* BuildingClass::CalcExitCoords(CoordStruct* out, int dir) const
 {
-    (void)out; (void)dir; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004FD150.json)
+    return nullptr; (void)out; (void)dir; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004FD150.json)
 }
 } // namespace gamemd
 
@@ -1181,7 +1181,7 @@ void BuildingClass::IncrementOccupantTypeCounter()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 BuildingClass* BuildingClass::FindBySWType(int sw_type)
 {
-    (void)sw_type; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000505310.json)
+    return nullptr; (void)sw_type; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000505310.json)
 }
 } // namespace gamemd
 
@@ -1261,7 +1261,7 @@ void BuildingClass::DrawSelectionBlip(Point2D* screen_pos) const
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 CoordStruct* BuildingClass::GetRallyPointCoord(CoordStruct* out) const
 {
-    (void)out; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B0690.json)
+    return nullptr; (void)out; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B0690.json)
 }
 } // namespace gamemd
 
@@ -1293,7 +1293,7 @@ void BuildingClass::ProcessEnterUnit()
 namespace gamemd {
 int UnitClass::UnloadPassengers(int placementType)
 {
-    (void)placementType; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B4BE0.json)
+    return 0; (void)placementType; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B4BE0.json)
 }
 } // namespace gamemd
 
@@ -1357,7 +1357,7 @@ bool BuildingClass::CheckOccupantState()
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 CoordStruct* BuildingClass::GetBridgeAwareCoords(CoordStruct* out) const
 {
-    (void)out; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000705CA0.json)
+    return nullptr; (void)out; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000705CA0.json)
 }
 } // namespace gamemd
 

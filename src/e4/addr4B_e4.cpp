@@ -44,35 +44,35 @@
 namespace gamemd {
 char JumpjetLocomotionClass_Process(int a1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B0500)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B0500)
 }
 }
 // 0x4B69E0
 namespace gamemd {
 int E4Recv_4B69E0::sub_4B69E0(int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B69E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B69E0)
 }
 }
 // 0x4B6AB0
 namespace gamemd {
 int E4Recv_4B6AB0::sub_4B6AB0(int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B6AB0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B6AB0)
 }
 }
 // 0x4B6BF0
 namespace gamemd {
 int E4Recv_4B6BF0::sub_4B6BF0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B6BF0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B6BF0)
 }
 }
 // 0x4B9890
 namespace gamemd {
 CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a2, wchar_t * a3, char a4)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B9890)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B9890)
 }
 }
 // 0x4BE9D0
@@ -136,7 +136,7 @@ int Color_BlendPack(unsigned char * a1, int a2, int a3, int a4)
 namespace gamemd {
 char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int aP5, int aP6, int aP7, int a9, int a10, int a11)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B0DF0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B0DF0)
 }
 } // namespace gamemd
 
@@ -164,7 +164,7 @@ int sub_4B4DF0()
 namespace gamemd {
 DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String, int a4, DropListClass * aP4, ControlClass * aP5, ControlClass * aP6, ControlClass * aP7, int a9, ListClass * a10, int a11)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B4E10)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B4E10)
 }
 } // namespace gamemd
 
@@ -172,7 +172,7 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
 namespace gamemd {
 int E4Recv_4B53E0::sub_4B53E0(int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B53E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B53E0)
 }
 } // namespace gamemd
 
@@ -180,7 +180,7 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
 namespace gamemd {
 int E4Recv_4B56E0::sub_4B56E0(int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B56E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B56E0)
 }
 } // namespace gamemd
 
@@ -188,7 +188,7 @@ int E4Recv_4B56E0::sub_4B56E0(int a2)
 namespace gamemd {
 int E4Recv_4B5780::sub_4B5780(int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B5780)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B5780)
 }
 } // namespace gamemd
 
@@ -196,7 +196,7 @@ int E4Recv_4B5780::sub_4B5780(int a2)
 namespace gamemd {
 unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B5830)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B5830)
 }
 } // namespace gamemd
 
@@ -486,7 +486,7 @@ void nullsub_126_4B69D0()
 namespace gamemd {
 char E4Recv_4B6B80::sub_4B6B80()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B6B80)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B6B80)
 }
 } // namespace gamemd
 
@@ -640,6 +640,6 @@ BOOL E4Recv_4BAFE0::sub_4BAFE0()
 namespace gamemd {
 short BlendMinimapPixel(unsigned short a1, unsigned short a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4BF650)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4BF650)
 }
 } // namespace gamemd

@@ -35,21 +35,21 @@
 namespace gamemd {
 TechnoClass * * Cell::IsOccupied(short * a2, char a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x419B00)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x419B00)
 }
 }
 // 0x42B1C0
 namespace gamemd {
 int Cell::PosToIndex()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x42B1C0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x42B1C0)
 }
 }
 // 0x43B4C0
 namespace gamemd {
 int Cell::CanPlaceBuilding(unsigned int * a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x43B4C0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x43B4C0)
 }
 }
 // 0x481670
@@ -63,14 +63,14 @@ void Cell::ApplyDamage(int aP1, int a3, int a4, char aP4)
 namespace gamemd {  // G42.18c ns repair
 int Cell::GetNeighbourContent(unsigned int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x481810)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x481810)
 }
 }
 // 0x4834A0
 namespace gamemd {
 int Cell::IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char aP7)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4834A0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4834A0)
 }
 }
 // 0x485060
@@ -161,7 +161,7 @@ int Cell::IsShore()
 namespace gamemd {
 int Cell::IsBuildableAdvanced()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x486FF0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x486FF0)
 }
 }
 // 0x4870B0
@@ -177,7 +177,7 @@ int Cell::HasOccupierBit(char aP1)
 namespace gamemd {
 int Cell::SearchEnemies(IUnknown * aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x487A10)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x487A10)
 }
 }
 // 0x487CB0
@@ -219,14 +219,14 @@ int Cell::IsBridge2()
 namespace gamemd {
 Coord * * Cell::IsValidDestination(short * a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4DCE80)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4DCE80)
 }
 }
 // 0x5657E0
 namespace gamemd {
 int Cell::Exists(MouseClass * aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5657E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5657E0)
 }
 }
 // 0x56D430
@@ -242,77 +242,77 @@ int Cell::CoordToIndex(int16_t *aP1)
 namespace gamemd {
 int Cell::SetRadar(int16_t *aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x56D460)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x56D460)
 }
 }
 // 0x56E990
 namespace gamemd {
 AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x56E990)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x56E990)
 }
 }
 // 0x56EB80
 namespace gamemd {
 ObjectClass * * Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x56EB80)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x56EB80)
 }
 }
 // 0x578AD0
 namespace gamemd {
 int Cell::IsPassableAllied(IUnknown * aP0, IUnknown * aP1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x578AD0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x578AD0)
 }
 }
 // 0x579B70
 namespace gamemd {
 HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x579B70)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x579B70)
 }
 }
 // 0x57B210
 namespace gamemd {
 int Cell::GetTerrainMask(int *aP1, int a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x57B210)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x57B210)
 }
 }
 // 0x5A9940
 namespace gamemd {
 void * Cell::Clear(void *a1_1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5A9940)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5A9940)
 }
 }
 // 0x6B5F80
 namespace gamemd {
 int Cell::IsWalkable(unsigned short * a2, char a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6B5F80)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6B5F80)
 }
 }
 // 0x6D2790
 namespace gamemd {
 void* Cell::CreateCrater(void *a1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D2790)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D2790)
 }
 }
 // 0x6D8700
 namespace gamemd {
 CellStruct * * Cell::GetAdjacentPassableMask(IUnknown * aP0, int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D8700)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D8700)
 }
 }
 // 0x4265B0
 namespace gamemd {
 unsigned short * Cell::GetHeight(int *aP1, int *a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4265B0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4265B0)
 }
 } // namespace gamemd
 
@@ -330,7 +330,7 @@ BOOL Cell::IsPassableOffset(int aP1)
 namespace gamemd {
 int Cell::PosToLinearIndex(IUnknown * aP0)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x56BC50)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x56BC50)
 }
 } // namespace gamemd
 
@@ -348,7 +348,7 @@ int Cell::DecodeFlags()
 namespace gamemd {
 int Cell_GetGroundHeight_free(unsigned int * a1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x578080)
+    return 0; // TODO stub - quarantined G42 T9 (truth = 0x578080)
 }
 } // namespace gamemd
 
@@ -356,7 +356,7 @@ int Cell_GetGroundHeight_free(unsigned int * a1)
 namespace gamemd {
 bool Cell_IsPassable_free(void * aP0)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x586360)
+    return false; // TODO stub - quarantined G42 T9 (truth = 0x586360)
 }
 } // namespace gamemd
 

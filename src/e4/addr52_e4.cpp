@@ -147,49 +147,49 @@ int BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
 namespace gamemd {
 void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, void ** a5, void * a6, int a7, short a8, int a9, int a10, int a11)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x525430)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x525430)
 }
 }
 // 0x528220
 namespace gamemd {
 int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x528220)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x528220)
 }
 }
 // 0x529E70
 namespace gamemd {
 char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char ** a5)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x529E70)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x529E70)
 }
 }
 // 0x52A110
 namespace gamemd {
 void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float * a5)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52A110)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52A110)
 }
 }
 // 0x52A2F0
 namespace gamemd {
 Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float * a5)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52A2F0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52A2F0)
 }
 }
 // 0x52A4D0
 namespace gamemd {
 ObjectClass * * E4Recv_52A4D0::sub_52A4D0(uint8_t * a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52A4D0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52A4D0)
 }
 }
 // 0x52A610
 namespace gamemd {
 ObjectClass * * sub_52A610(void * a2, void * aPrivatekey, void * aPublickey)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52A610)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52A610)
 }
 }
 // 0x52B720
@@ -214,7 +214,7 @@ void InitGame()
 namespace gamemd {
 char PlayIntroSequence()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52CB50)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52CB50)
 }
 }
 // 0x52CD70
@@ -243,14 +243,14 @@ void MenuSelect()
 namespace gamemd {
 char CommandLine_Parse(int a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52F620)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52F620)
 }
 }
 // 0x52FC20
 namespace gamemd {
 Straw * * Random_Init()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52FC20)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52FC20)
 }
 }
 // 0x52FFD0
@@ -265,7 +265,7 @@ void sub_52FFD0(char a1)
 namespace gamemd {
 char E4Recv_520260::sub_520260()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x520260)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x520260)
 }
 } // namespace gamemd
 
@@ -436,7 +436,7 @@ void nullsub_147()
 namespace gamemd {
 int InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5247B0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5247B0)
 }
 } // namespace gamemd
 
@@ -444,7 +444,7 @@ int InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19()
 namespace gamemd {
 Iostream_init * E4Recv_524EC0::__0Iostream_init_QAE_XZ_4()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x524EC0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x524EC0)
 }
 } // namespace gamemd
 
@@ -464,7 +464,7 @@ int sub_5256D0()
 namespace gamemd {
 int E4Recv_526950::sub_526950()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x526950)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x526950)
 }
 } // namespace gamemd
 
@@ -636,7 +636,7 @@ void nullsub_18()
 namespace gamemd {
 INT_PTR ReadModConfigINI(HWND hDlg, UINT, WPARAM, int * a4)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52D430)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52D430)
 }
 } // namespace gamemd
 
@@ -668,6 +668,6 @@ void nullsub_150()
 namespace gamemd {
 int sub_52D790(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52D790)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52D790)
 }
 } // namespace gamemd

@@ -20,7 +20,7 @@
 namespace gamemd {
 int AnimClass::SimpleCtor()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000422720.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000422720.json)
 }
 } // namespace gamemd
 
@@ -36,7 +36,7 @@ void TerrainClass::ClearAnimationLinkFlags()
 namespace gamemd {
 int AnimClass::SetAnimSpeed()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x422BC0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x422BC0)
 }
 } // namespace gamemd
 
@@ -44,7 +44,7 @@ int AnimClass::SetAnimSpeed()
 namespace gamemd {
 int * AnimClass::UpdateZAdjust(int * a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000422BE0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000422BE0.json)
 }
 } // namespace gamemd
 
@@ -52,7 +52,7 @@ int * AnimClass::UpdateZAdjust(int * a2)
 namespace gamemd {
 char AnimClass::CheckLayerFlags(int a2, int a3, int a4)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000422C70.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000422C70.json)
 }
 } // namespace gamemd
 
@@ -60,7 +60,7 @@ char AnimClass::CheckLayerFlags(int a2, int a3, int a4)
 namespace gamemd {
 bool AnimClass::UpdateMirrorState(int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4238B0)
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4238B0)
 }
 } // namespace gamemd
 
@@ -68,7 +68,7 @@ bool AnimClass::UpdateMirrorState(int a2)
 namespace gamemd {
 int AnimClass::UpdateProjectileTrajectory()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000423930.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000423930.json)
 }
 } // namespace gamemd
 
@@ -76,7 +76,7 @@ int AnimClass::UpdateProjectileTrajectory()
 namespace gamemd {
 int AnimClass::SaveLoad_Prefix(int a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000425280.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000425280.json)
 }
 } // namespace gamemd
 
@@ -84,7 +84,7 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
 namespace gamemd {
 int AnimClass::ProcessPower(int *a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000425410.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000425410.json)
 }
 } // namespace gamemd
 
@@ -92,7 +92,7 @@ int AnimClass::ProcessPower(int *a2)
 namespace gamemd {
 int AnimClass::resetAnimation()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000449540.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000449540.json)
 }
 } // namespace gamemd
 
@@ -100,7 +100,7 @@ int AnimClass::resetAnimation()
 namespace gamemd {
 int AnimClass::setLoopCount()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000449A50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000449A50.json)
 }
 } // namespace gamemd
 
@@ -108,7 +108,7 @@ int AnimClass::setLoopCount()
 namespace gamemd {
 bool BulletClass::CheckMirrorState(int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4666C0)
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4666C0)
 }
 } // namespace gamemd
 
@@ -116,7 +116,7 @@ bool BulletClass::CheckMirrorState(int a2)
 namespace gamemd {
 int RadSiteClass::GetSpread() const
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65B4B0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65B4B0)
 }
 } // namespace gamemd
 
@@ -124,7 +124,7 @@ int RadSiteClass::GetSpread() const
 namespace gamemd {
 void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000421EA0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000421EA0.json)
 }
 } // namespace gamemd
 
@@ -132,7 +132,7 @@ void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, 
 namespace gamemd {
 int AnimClass::ClearTargetReferences(int a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000425150.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000425150.json)
 }
 } // namespace gamemd
 
@@ -164,7 +164,7 @@ void RadSiteClass::Add(int a2)
 namespace gamemd {
 int RadSiteClass::GetRadLevelAt(CellStruct* cell)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00065B8F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00065B8F0.json)
 }
 } // namespace gamemd
 
@@ -204,7 +204,7 @@ void RadSiteClass::DecreaseLight()
 namespace gamemd {
 int TiberiumClass::SpreadGrowth(int a2, unsigned int *a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007220A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007220A0.json)
 }
 } // namespace gamemd
 
