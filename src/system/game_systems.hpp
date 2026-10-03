@@ -170,6 +170,8 @@ public:
 // CaptureManager — capture flag manager (1 method)
 // IDA: FreeAll
 // ============================================================================
+#ifndef GAMEMD_CAPTUREMANAGER_DECLARED  // G42.34: first-wins (misc_ext.hpp twin)
+#define GAMEMD_CAPTUREMANAGER_DECLARED
 class CaptureManager
 {
 public:
@@ -178,6 +180,7 @@ public:
 
     static int32_t  s_Count;        // 0x00
 };
+#endif
 
 // ============================================================================
 // Queue — generic queue (1 method)

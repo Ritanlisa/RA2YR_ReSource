@@ -542,6 +542,8 @@ public:
     uint8_t CSFClass_field_0x08[4];
 };
 // 1 methods in IDA
+#ifndef GAMEMD_CAPTUREMANAGER_DECLARED  // G42.34: first-wins (game_systems.hpp twin)
+#define GAMEMD_CAPTUREMANAGER_DECLARED
 class CaptureManager
 {
 public:
@@ -551,6 +553,7 @@ public:
     virtual void FreeAll(); // 0x472140
 
 };
+#endif
 // 1 methods in IDA
 class ChronoScreen
 {

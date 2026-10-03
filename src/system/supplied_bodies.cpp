@@ -21,6 +21,7 @@ using ra2::game::AbstractClass;
 #include "system/scenario.hpp"
 #include "system/tactical.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"  // G42.34: def carrier (QuickPassable/DrawWithFlags)
 
 // 0x41C150
 namespace gamemd {

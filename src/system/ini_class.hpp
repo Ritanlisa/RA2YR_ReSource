@@ -78,7 +78,7 @@ public:
 protected:
     // IDA layout offsets (0x00-0x3F):
     uint32_t vtableDummy;           // +0x00: vtable ptr (set by constructor)
-    INILinkNode headNode;            // +0x04: head node (embedded linked list)
+    unsigned int headNode[3];       // +0x04: embedded list head -- INILinkNode(vtable/Prev/Next) raw-int view (G42.34: bodies index raw; no .Prev/.Next users)
     // +0x10: GenericList vtable
     INILinkNode sectionHead;         // +0x1C: section list head
     int32_t    sectionCount;         // +0x28
