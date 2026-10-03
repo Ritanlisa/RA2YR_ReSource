@@ -667,6 +667,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
+#ifndef GAMEMD_TREE_UNIVERSE
 class DropPod
 {
 public:
@@ -676,6 +677,7 @@ public:
     virtual void ProcessLanding(); // 0x4CE840
 
 };
+#endif  // G42.32u: e4 flat struct wins in marker TUs
 // 1 methods in IDA
 class EditClass
 {
@@ -766,6 +768,7 @@ public:
     uint8_t InputManager_field_0x10[4];
 };
 // 5 methods in IDA
+#ifndef GAMEMD_TREE_UNIVERSE
 class InputManager_ProcessEvents
 {
 public:
@@ -783,6 +786,7 @@ public:
     uint8_t InputManager_ProcessEvents_field_0x0C[4];
     uint8_t InputManager_ProcessEvents_field_0x10[4];
 };
+#endif  // G42.32u: e4 flat struct wins in marker TUs
 // 1 methods in IDA
 class Keyboard
 {
@@ -873,6 +877,7 @@ public:
 
 };
 // 1 methods in IDA
+#ifndef GAMEMD_TREE_UNIVERSE
 class Main
 {
 public:
@@ -882,6 +887,7 @@ public:
     virtual void CreateDialogMain();  // 0x4E1D00
 
 };
+#endif  // G42.32u: e4 flat struct wins in marker TUs
 // 1 methods in IDA
 class ProgressAnim
 {

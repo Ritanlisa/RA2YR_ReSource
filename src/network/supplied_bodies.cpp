@@ -383,7 +383,7 @@ int IPXManagerClass::ProcessQueue() {
       v5 = (int *)&unk_A8B5B4; /*0x542536*/
       do /*0x54260c*/
       {
-        v6 = (Object *)*((unsigned int *)stru_A80220.? + *(unsigned int *)(v4->Socket + 100)); /*0x542546*/
+        v6 = (Object *)*((unsigned int *)stru_A80220 + *(unsigned int *)(v4->Socket + 100)); /*0x542546*/
         if ( v6 && v6 != dword_A83D4C ) /*0x542557*/
         {
           if ( !*((unsigned char *)v5 - 64) ) /*0x54255d*/
@@ -870,21 +870,21 @@ void ModemGuest::InitDialog() {
     if ( v6 ) /*0x5b4f5c*/
     {
       SendMessageA(v6, 0x14Bu, 0, 0); /*0x5b4f6c*/
-      StringCSF = GetStringCSF((wchar_t *)&stru_82BA00.?[37], 0, (const char *)&stru_82BA00.?[40], 280); /*0x5b4f7f*/
+      StringCSF = GetStringCSF((wchar_t *)&stru_82BA00[37], 0, (const char *)&stru_82BA00[40], 280); /*0x5b4f7f*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)StringCSF); /*0x5b4f8d*/
-      v9 = GetStringCSF((wchar_t *)&stru_82BA00.?[35], 0, (const char *)&stru_82BA00.?[40], 281); /*0x5b4fa0*/
+      v9 = GetStringCSF((wchar_t *)&stru_82BA00[35], 0, (const char *)&stru_82BA00[40], 281); /*0x5b4fa0*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v9); /*0x5b4fae*/
-      v10 = GetStringCSF((wchar_t *)&stru_82BA00.?[32], 0, (const char *)&stru_82BA00.?[40], 282); /*0x5b4fc1*/
+      v10 = GetStringCSF((wchar_t *)&stru_82BA00[32], 0, (const char *)&stru_82BA00[40], 282); /*0x5b4fc1*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v10); /*0x5b4fcf*/
-      v11 = GetStringCSF((wchar_t *)&stru_82BA00.?[29], 0, (const char *)&stru_82BA00.?[40], 283); /*0x5b4fe2*/
+      v11 = GetStringCSF((wchar_t *)&stru_82BA00[29], 0, (const char *)&stru_82BA00[40], 283); /*0x5b4fe2*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v11); /*0x5b4ff0*/
-      v12 = GetStringCSF((wchar_t *)&stru_82BA00.?[26], 0, (const char *)&stru_82BA00.?[40], 284); /*0x5b5003*/
+      v12 = GetStringCSF((wchar_t *)&stru_82BA00[26], 0, (const char *)&stru_82BA00[40], 284); /*0x5b5003*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v12); /*0x5b5011*/
-      v13 = GetStringCSF((wchar_t *)&stru_82BA00.?[22], 0, (const char *)&stru_82BA00.?[40], 285); /*0x5b5024*/
+      v13 = GetStringCSF((wchar_t *)&stru_82BA00[22], 0, (const char *)&stru_82BA00[40], 285); /*0x5b5024*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v13); /*0x5b5032*/
-      v14 = GetStringCSF((wchar_t *)&stru_82BA00.?[19], 0, (const char *)&stru_82BA00.?[40], 286); /*0x5b5045*/
+      v14 = GetStringCSF((wchar_t *)&stru_82BA00[19], 0, (const char *)&stru_82BA00[40], 286); /*0x5b5045*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v14); /*0x5b5053*/
-      v15 = GetStringCSF((wchar_t *)&stru_82BA00.?[16], 0, (const char *)&stru_82BA00.?[40], 287); /*0x5b5066*/
+      v15 = GetStringCSF((wchar_t *)&stru_82BA00[16], 0, (const char *)&stru_82BA00[40], 287); /*0x5b5066*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v15); /*0x5b5074*/
       v16 = 0; /*0x5b5076*/
       v17 = dword_8316A8; /*0x5b5078*/
@@ -1011,7 +1011,7 @@ void ModemGuest::InitDialog() {
     if ( v43 ) /*0x5b55b3*/
       SendMessageA(v43, 0xF1u, byte_A8B31D == 1, 0); /*0x5b55cc*/
     Debug::Log(); /*0x5b55e7*/
-    NetworkBuffer::GetField((NetworkBuffer *)&stru_A8EB00.?[252]); /*0x5b55f4*/
+    NetworkBuffer::GetField((NetworkBuffer *)&stru_A8EB00[252]); /*0x5b55f4*/
     v44 = g_UIControlState; /*0x5b55f9*/
     if ( g_UIControlState ) /*0x5b5601*/
     {
@@ -1108,7 +1108,7 @@ int ModemGame::UpdatePlayerNameAndColor(wchar_t *Source, unsigned int a3, int a4
     v9 = (HWND)result; /*0x5b5b43*/
     if ( result ) /*0x5b5b47*/
     {
-      swprintf(lParam, (const size_t)&stru_82BA00.?[77], Source, *(unsigned int *)(*((unsigned int *)dword_A83C9C + a4) + 96)); /*0x5b5b68*/
+      swprintf(lParam, (const size_t)&stru_82BA00[77], Source, *(unsigned int *)(*((unsigned int *)dword_A83C9C + a4) + 96)); /*0x5b5b68*/
       SendMessageA(v9, 0x4B2u, 0, (LPARAM)lParam); /*0x5b5b83*/
       if ( a3 >= 8 ) /*0x5b5b87*/
         v10 = Math::InitDegToRad; /*0x5b5b97*/
@@ -1192,8 +1192,8 @@ char ModemGame::ProcessPacket() {
       {
         Debug::Log(); /*0x5b660d*/
         v37 = asc_82083C; /*0x5b661c*/
-        StringCSF = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.?[40], 1391); /*0x5b6639*/
-        v18 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.?, 0, (const char *)&stru_82BA00.?[40], 1391); /*0x5b664b*/
+        StringCSF = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00[40], 1391); /*0x5b6639*/
+        v18 = (int *)GetStringCSF((wchar_t *)&stru_82BA00, 0, (const char *)&stru_82BA00[40], 1391); /*0x5b664b*/
         Dialog::ShowMessageBox(v18, StringCSF, 0, 0, 0, v36); /*0x5b6655*/
         return 1; /*0x5b665d*/
       }
@@ -1210,8 +1210,8 @@ char ModemGame::ProcessPacket() {
       {
         Debug::Log(); /*0x5b60ac*/
         v38 = asc_82083C; /*0x5b60bb*/
-        v29 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.?[40], 1177); /*0x5b60d8*/
-        v4 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.?, 0, (const char *)&stru_82BA00.?[40], 1177); /*0x5b60ea*/
+        v29 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00[40], 1177); /*0x5b60d8*/
+        v4 = (int *)GetStringCSF((wchar_t *)&stru_82BA00, 0, (const char *)&stru_82BA00[40], 1177); /*0x5b60ea*/
         Dialog::ShowMessageBox(v4, v29, 0, 0, 0, v36); /*0x5b60f4*/
         return 1; /*0x5b6105*/
       }
@@ -1219,20 +1219,20 @@ char ModemGame::ProcessPacket() {
       {
         case 'e': /*0x5b611a*/
           Debug::Log(); /*0x5b6208*/
-          updated = NetworkBuffer::UpdateWindow((NetworkBuffer *)&stru_A8EB00.?[252], v46, v47); /*0x5b621f*/
+          updated = NetworkBuffer::UpdateWindow((NetworkBuffer *)&stru_A8EB00[252], v46, v47); /*0x5b621f*/
           if ( !updated ) /*0x5b6226*/
           {
             v41 = asc_82083C; /*0x5b623c*/
-            v31 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.?[40], 1209); /*0x5b6249*/
-            v25 = (int *)GetStringCSF((wchar_t *)stru_82BA00.?, 0, (const char *)&stru_82BA00.?[40], 1209); /*0x5b6260*/
+            v31 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00[40], 1209); /*0x5b6249*/
+            v25 = (int *)GetStringCSF((wchar_t *)stru_82BA00, 0, (const char *)&stru_82BA00[40], 1209); /*0x5b6260*/
             Dialog::ShowMessageBox(v25, v31, 0, 0, 0, v36); /*0x5b6265*/
             goto LABEL_35; /*0x5b6265*/
           }
           if ( updated == -1 ) /*0x5b626c*/
           {
             v40 = asc_82083C; /*0x5b6285*/
-            v32 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.?[40], 1215); /*0x5b6292*/
-            v26 = (int *)GetStringCSF((wchar_t *)stru_82BA00.?, 0, (const char *)&stru_82BA00.?[40], 1215); /*0x5b62a9*/
+            v32 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00[40], 1215); /*0x5b6292*/
+            v26 = (int *)GetStringCSF((wchar_t *)stru_82BA00, 0, (const char *)&stru_82BA00[40], 1215); /*0x5b62a9*/
             Dialog::ShowMessageBox(v26, v32, 0, 0, 0, v36); /*0x5b62ae*/
             goto LABEL_35; /*0x5b62ae*/
           }
@@ -1242,8 +1242,8 @@ char ModemGame::ProcessPacket() {
           if ( v51 != *((unsigned int *)this + 21) || !v11 ) /*0x5b62e5*/
           {
             v39 = asc_82083C; /*0x5b62fe*/
-            v33 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.?[40], 1262); /*0x5b630b*/
-            v27 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.?, 0, (const char *)&stru_82BA00.?[40], 1262); /*0x5b6322*/
+            v33 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00[40], 1262); /*0x5b630b*/
+            v27 = (int *)GetStringCSF((wchar_t *)&stru_82BA00, 0, (const char *)&stru_82BA00[40], 1262); /*0x5b6322*/
             Dialog::ShowMessageBox(v27, v33, 0, 0, 0, v36); /*0x5b6327*/
             goto LABEL_35; /*0x5b6327*/
           }
@@ -1269,8 +1269,8 @@ char ModemGame::ProcessPacket() {
             Stream::ReadPacket((int)&unk_A8EA70); /*0x5b6181*/
           }
           v38 = asc_82083C; /*0x5b619f*/
-          v30 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.?[40], 1193); /*0x5b61ac*/
-          v8 = (int *)GetStringCSF((wchar_t *)stru_82BA00.?, 0, (const char *)&stru_82BA00.?[40], 1193); /*0x5b61be*/
+          v30 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00[40], 1193); /*0x5b61ac*/
+          v8 = (int *)GetStringCSF((wchar_t *)stru_82BA00, 0, (const char *)&stru_82BA00[40], 1193); /*0x5b61be*/
           Dialog::ShowMessageBox(v8, v30, 0, 0, 0, v36); /*0x5b61c8*/
           v9 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b61d2*/
           if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b61da*/
@@ -1314,7 +1314,7 @@ char ModemGame::ProcessPacket() {
               this->ModemGame_field_0x04 = 2; /*0x5b6667*/
             goto LABEL_51; /*0x5b65cc*/
           }
-          if ( !dword_A8BB08 || !_strcmpi(byte_A8B8E0, &stru_82BA00.?) ) /*0x5b63fb*/
+          if ( !dword_A8BB08 || !_strcmpi(byte_A8B8E0, &stru_82BA00) ) /*0x5b63fb*/
           {
             if ( !RequestNetworkFile(byte_A8B8E0, 1, 0) ) /*0x5b64d3*/
               return 1; /*0x5b64e8*/
@@ -1331,8 +1331,8 @@ char ModemGame::ProcessPacket() {
           Event::Dispatch(); /*0x5b6441*/
           Stream::ReadPacket((int)&unk_A8EA70); /*0x5b644b*/
           v37 = asc_82083C; /*0x5b6467*/
-          v34 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.?[40], 1308); /*0x5b6474*/
-          v28 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.?[2], 0, (const char *)&stru_82BA00.?[40], 1308); /*0x5b648b*/
+          v34 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00[40], 1308); /*0x5b6474*/
+          v28 = (int *)GetStringCSF((wchar_t *)&stru_82BA00[2], 0, (const char *)&stru_82BA00[40], 1308); /*0x5b648b*/
           Dialog::ShowMessageBox(v28, v34, 0, 0, 0, v36); /*0x5b6490*/
   LABEL_35:
           v14 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b6495*/
@@ -1661,21 +1661,21 @@ void ModemHost::InitDialog() {
     if ( v9 ) /*0x5b8406*/
     {
       SendMessageA(v9, 0x14Bu, 0, 0); /*0x5b8416*/
-      StringCSF = GetStringCSF((wchar_t *)&stru_82BA00.?[37], 0, &stru_82BA00.__pad_F70[52], 407); /*0x5b8429*/
+      StringCSF = GetStringCSF((wchar_t *)&stru_82BA00[37], 0, &stru_82BA00.__pad_F70[52], 407); /*0x5b8429*/
       SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)StringCSF); /*0x5b8437*/
-      v12 = GetStringCSF((wchar_t *)&stru_82BA00.?[35], 0, &stru_82BA00.__pad_F70[52], 408); /*0x5b844a*/
+      v12 = GetStringCSF((wchar_t *)&stru_82BA00[35], 0, &stru_82BA00.__pad_F70[52], 408); /*0x5b844a*/
       SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v12); /*0x5b8458*/
-      v13 = GetStringCSF((wchar_t *)&stru_82BA00.?[32], 0, &stru_82BA00.__pad_F70[52], 409); /*0x5b846b*/
+      v13 = GetStringCSF((wchar_t *)&stru_82BA00[32], 0, &stru_82BA00.__pad_F70[52], 409); /*0x5b846b*/
       SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v13); /*0x5b8479*/
-      v14 = GetStringCSF((wchar_t *)&stru_82BA00.?[29], 0, &stru_82BA00.__pad_F70[52], 410); /*0x5b848c*/
+      v14 = GetStringCSF((wchar_t *)&stru_82BA00[29], 0, &stru_82BA00.__pad_F70[52], 410); /*0x5b848c*/
       SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v14); /*0x5b849a*/
-      v15 = GetStringCSF((wchar_t *)&stru_82BA00.?[26], 0, &stru_82BA00.__pad_F70[52], 411); /*0x5b84ad*/
+      v15 = GetStringCSF((wchar_t *)&stru_82BA00[26], 0, &stru_82BA00.__pad_F70[52], 411); /*0x5b84ad*/
       SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v15); /*0x5b84bb*/
-      v16 = GetStringCSF((wchar_t *)&stru_82BA00.?[22], 0, &stru_82BA00.__pad_F70[52], 412); /*0x5b84ce*/
+      v16 = GetStringCSF((wchar_t *)&stru_82BA00[22], 0, &stru_82BA00.__pad_F70[52], 412); /*0x5b84ce*/
       SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v16); /*0x5b84dc*/
-      v17 = GetStringCSF((wchar_t *)&stru_82BA00.?[19], 0, &stru_82BA00.__pad_F70[52], 413); /*0x5b84ef*/
+      v17 = GetStringCSF((wchar_t *)&stru_82BA00[19], 0, &stru_82BA00.__pad_F70[52], 413); /*0x5b84ef*/
       SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v17); /*0x5b84fd*/
-      v18 = GetStringCSF((wchar_t *)&stru_82BA00.?[16], 0, &stru_82BA00.__pad_F70[52], 414); /*0x5b8510*/
+      v18 = GetStringCSF((wchar_t *)&stru_82BA00[16], 0, &stru_82BA00.__pad_F70[52], 414); /*0x5b8510*/
       SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v18); /*0x5b851e*/
       v19 = 0; /*0x5b8520*/
       v20 = dword_8316A8; /*0x5b8522*/
@@ -1808,12 +1808,12 @@ void ModemHost::InitDialog() {
     if ( v46 ) /*0x5b8a93*/
       SendMessageA(v46, 0xF1u, stru_A8B250.__pad_0[28] == 1, 0); /*0x5b8aac*/
     Debug::Log(); /*0x5b8ac7*/
-    NetworkBuffer::GetField((NetworkBuffer *)&stru_A8EB00.?[252]); /*0x5b8ad4*/
+    NetworkBuffer::GetField((NetworkBuffer *)&stru_A8EB00[252]); /*0x5b8ad4*/
     v47 = Random::Range(&Randomizer_Global, 1, 0x7FFF); /*0x5b8ae5*/
     srand(v47); /*0x5b8aeb*/
     v48 = rand(); /*0x5b8af3*/
     v49 = g_UIControlState; /*0x5b8b04*/
-    *(unsigned int *)&stru_A8EB00.?[432] = v48; /*0x5b8b0a*/
+    *(unsigned int *)&stru_A8EB00[432] = v48; /*0x5b8b0a*/
     dword_A8E960[0] = dword_A8E960[0] & 0xFFFFFFEF /*0x5b8b22*/
                     | (16 * (*(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5298) & 1));
     if ( g_UIControlState ) /*0x5b8b27*/
@@ -1828,7 +1828,7 @@ void ModemHost::InitDialog() {
     v50 = v5(*v2, 1448); /*0x5b8b67*/
     SendMessageA(v50, 0x4B2u, 0, (LPARAM)MEMORY[0xA8B322]); /*0x5b8b76*/
     IDA_BYTE2(stru_A8D600.Network_field_0xC) = 1; /*0x5b8b81*/
-    v51 = CCFileClass::Construct((CCFileClass *)&v59.?, byte_A8B8E0); /*0x5b8b88*/
+    v51 = CCFileClass::Construct((CCFileClass *)&v59, byte_A8B8E0); /*0x5b8b88*/
     v52 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v51 + 20))(v51, 0); /*0x5b8b9a*/
     v61 = 0; /*0x5b8ba4*/
     Vector::Clear((int)v60); /*0x5b8bac*/
@@ -2005,7 +2005,7 @@ char ModemGuest::ProcessPacket(char a2) {
         {
           v35 = asc_82083C; /*0x5ba557*/
           StringCSF = GetStringCSF(g_Str_TXT_OK, 0, &stru_82BA00.__pad_F70[52], 2197); /*0x5ba564*/
-          v22 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.?, 0, &stru_82BA00.__pad_F70[52], 2197); /*0x5ba576*/
+          v22 = (int *)GetStringCSF((wchar_t *)&stru_82BA00, 0, &stru_82BA00.__pad_F70[52], 2197); /*0x5ba576*/
           Dialog::ShowMessageBox(v22, StringCSF, 0, 0, 0, (int)v34); /*0x5ba580*/
         }
         return 1; /*0x5ba588*/
@@ -2025,7 +2025,7 @@ char ModemGuest::ProcessPacket(char a2) {
         {
           case 'e': /*0x5ba16d*/
             Debug::Log(); /*0x5ba268*/
-            updated = NetworkBuffer::UpdateWindow((NetworkBuffer *)&stru_A8EB00.?[252], v43, v44); /*0x5ba27f*/
+            updated = NetworkBuffer::UpdateWindow((NetworkBuffer *)&stru_A8EB00[252], v43, v44); /*0x5ba27f*/
             if ( updated ) /*0x5ba286*/
             {
               if ( updated == -1 ) /*0x5ba2de*/
@@ -2034,7 +2034,7 @@ char ModemGuest::ProcessPacket(char a2) {
                 {
                   v37 = asc_82083C; /*0x5ba306*/
                   v31 = GetStringCSF(g_Str_TXT_OK, 0, &stru_82BA00.__pad_F70[52], 2068); /*0x5ba313*/
-                  v26 = (int *)GetStringCSF((wchar_t *)stru_82BA00.?, 0, &stru_82BA00.__pad_F70[52], 2068); /*0x5ba32a*/
+                  v26 = (int *)GetStringCSF((wchar_t *)stru_82BA00, 0, &stru_82BA00.__pad_F70[52], 2068); /*0x5ba32a*/
                   Dialog::ShowMessageBox(v26, v31, 0, 0, 0, (int)v34); /*0x5ba32f*/
                 }
               }
@@ -2055,7 +2055,7 @@ char ModemGuest::ProcessPacket(char a2) {
                 {
                   v35 = asc_82083C; /*0x5ba38e*/
                   v32 = GetStringCSF(g_Str_TXT_OK, 0, &stru_82BA00.__pad_F70[52], 2129); /*0x5ba39b*/
-                  v27 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.?, 0, &stru_82BA00.__pad_F70[52], 2129); /*0x5ba3b2*/
+                  v27 = (int *)GetStringCSF((wchar_t *)&stru_82BA00, 0, &stru_82BA00.__pad_F70[52], 2129); /*0x5ba3b2*/
                   Dialog::ShowMessageBox(v27, v32, 0, 0, 0, (int)v34); /*0x5ba3b7*/
                 }
               }
@@ -2064,7 +2064,7 @@ char ModemGuest::ProcessPacket(char a2) {
             {
               v38 = asc_82083C; /*0x5ba2ae*/
               v30 = GetStringCSF(g_Str_TXT_OK, 0, &stru_82BA00.__pad_F70[52], 2059); /*0x5ba2bb*/
-              v25 = (int *)GetStringCSF((wchar_t *)stru_82BA00.?, 0, &stru_82BA00.__pad_F70[52], 2059); /*0x5ba2d2*/
+              v25 = (int *)GetStringCSF((wchar_t *)stru_82BA00, 0, &stru_82BA00.__pad_F70[52], 2059); /*0x5ba2d2*/
               Dialog::ShowMessageBox(v25, v30, 0, 0, 0, (int)v34); /*0x5ba2d7*/
             }
             v13 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ba3c1*/
@@ -2091,7 +2091,7 @@ char ModemGuest::ProcessPacket(char a2) {
             {
               v36 = asc_82083C; /*0x5ba1fd*/
               v29 = GetStringCSF(g_Str_TXT_OK, 0, &stru_82BA00.__pad_F70[52], 2038); /*0x5ba20a*/
-              v9 = (int *)GetStringCSF((wchar_t *)stru_82BA00.?, 0, &stru_82BA00.__pad_F70[52], 2038); /*0x5ba21c*/
+              v9 = (int *)GetStringCSF((wchar_t *)stru_82BA00, 0, &stru_82BA00.__pad_F70[52], 2038); /*0x5ba21c*/
               Dialog::ShowMessageBox(v9, v29, 0, 0, 0, (int)v34); /*0x5ba226*/
             }
             v10 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5ba230*/
@@ -2152,7 +2152,7 @@ char ModemGuest::ProcessPacket(char a2) {
         {
           v36 = asc_82083C; /*0x5ba11c*/
           v28 = GetStringCSF(g_Str_TXT_OK, 0, &stru_82BA00.__pad_F70[52], 2018); /*0x5ba129*/
-          v5 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.?, 0, &stru_82BA00.__pad_F70[52], 2018); /*0x5ba13b*/
+          v5 = (int *)GetStringCSF((wchar_t *)&stru_82BA00, 0, &stru_82BA00.__pad_F70[52], 2018); /*0x5ba13b*/
           Dialog::ShowMessageBox(v5, v28, 0, 0, 0, (int)v34); /*0x5ba145*/
           return 1; /*0x5ba156*/
         }
@@ -2350,7 +2350,7 @@ char ModemHost::StartGame(char a2) {
         IDA_BYTE1(v25) = IDA_BYTE1(dword_A8E960[0]) & 0x77; /*0x5bb1fc*/
         v26 = v25 | ((byte_A8B31D & 1 | (16 * (stru_A8B250.__pad_0[16] & 1))) << 11); /*0x5bb202*/
         IDA_LOBYTE(v26) = IDA_LOBYTE(dword_A8E960[0]) | 0xC0; /*0x5bb209*/
-        *(unsigned int *)&stru_A8EB00.?[416] = 0; /*0x5bb20c*/
+        *(unsigned int *)&stru_A8EB00[416] = 0; /*0x5bb20c*/
         dword_A8B24C = 2; /*0x5bb212*/
         dword_A8E960[0] = v26; /*0x5bb21c*/
         vtable0 = dword_A8B230->vtable0; /*0x5bb222*/

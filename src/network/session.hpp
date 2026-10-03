@@ -82,6 +82,7 @@ struct GameModeOptionsClass
 };
 
 // CSP: SessionClass matched via T1
+#ifndef GAMEMD_TREE_UNIVERSE
 class SessionClass
 {
 public:
@@ -185,5 +186,6 @@ protected:
     void BuildLaunchString();  // 0x78f000
     // === FUNCS-MOVE (END) ===
 };
+#endif  // G42.32u: e4 flat struct wins in marker TUs
 
 } // namespace gamemd

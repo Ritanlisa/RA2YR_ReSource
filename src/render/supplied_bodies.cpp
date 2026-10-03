@@ -1140,7 +1140,7 @@ unsigned short * FrameSnapshot::Init() {
 
     *(unsigned short *)this->__pad_0 = 0; /*0x4c91c4*/
     IDA_LOWORD(this->FrameSnapshot_field_0x04) = 0; /*0x4c91c7*/
-    v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4c91cb*/
+    v2 = *(unsigned int *)&stru_A8EB00[416]; /*0x4c91cb*/
     *((unsigned int *)this + 4) = 0; /*0x4c91d1*/
     *((unsigned int *)this + 2) = v2; /*0x4c91d4*/
     *((unsigned short *)this + 10) = 0; /*0x4c91d7*/
@@ -1159,7 +1159,7 @@ unsigned short * FrameSnapshot::InitMax(int a2) {
     result = this; /*0x4c91e0*/
     *(unsigned short *)this->__pad_0 = 0; /*0x4c91e4*/
     IDA_LOWORD(this->FrameSnapshot_field_0x04) = 0; /*0x4c91e7*/
-    v3 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4c91eb*/
+    v3 = *(unsigned int *)&stru_A8EB00[416]; /*0x4c91eb*/
     *((unsigned int *)this + 4) = 0; /*0x4c91f1*/
     *((unsigned int *)this + 2) = v3; /*0x4c91f4*/
     *((unsigned short *)this + 10) = 0; /*0x4c91f7*/
@@ -1976,33 +1976,33 @@ int BuildingDebris::Init(int a2) {
     v3 = rand(); /*0x631d53*/
     *((unsigned int *)this + 12) = (v3 & 0x3F) - 31; /*0x631d69*/
     *((unsigned int *)this + 13) = ((v3 >> 5) & 0x1F) - 15; /*0x631d6c*/
-    *(this + 6) = *(BuildingDebris *)&stru_83665C.?[40 * a2 + 31]; /*0x631d71*/
-    *(this + 7) = *(BuildingDebris *)&stru_83665C.?[40 * a2 + 35]; /*0x631d77*/
-    *(this + 8) = *(BuildingDebris *)&stru_83665C.?[40 * a2 + 39]; /*0x631d7d*/
-    v4 = *(unsigned int *)&stru_83665C.?[40 * a2 + 55]; /*0x631d80*/
+    *(this + 6) = *(BuildingDebris *)&stru_83665C[40 * a2 + 31]; /*0x631d71*/
+    *(this + 7) = *(BuildingDebris *)&stru_83665C[40 * a2 + 35]; /*0x631d77*/
+    *(this + 8) = *(BuildingDebris *)&stru_83665C[40 * a2 + 39]; /*0x631d7d*/
+    v4 = *(unsigned int *)&stru_83665C[40 * a2 + 55]; /*0x631d80*/
     if ( v4 ) /*0x631d85*/
     {
       v5 = (1 << v4) - 1; /*0x631d8e*/
       v6 = rand(); /*0x631d8f*/
       v7 = *((unsigned int *)this + 7); /*0x631d9d*/
       *((unsigned int *)this + 6) -= v6 & v5; /*0x631da0*/
-      v8 = v6 >> *(unsigned int *)&stru_83665C.?[40 * a2 + 55]; /*0x631da6*/
+      v8 = v6 >> *(unsigned int *)&stru_83665C[40 * a2 + 55]; /*0x631da6*/
       *((unsigned int *)this + 7) = v7 - (v8 & v5); /*0x631dae*/
-      *((unsigned int *)this + 8) -= v5 & (v8 >> *(unsigned int *)&stru_83665C.?[40 * a2 + 55]); /*0x631dbd*/
+      *((unsigned int *)this + 8) -= v5 & (v8 >> *(unsigned int *)&stru_83665C[40 * a2 + 55]); /*0x631dbd*/
     }
-    v9 = *(unsigned int *)&stru_83665C.?[40 * a2 + 43]; /*0x631dc0*/
+    v9 = *(unsigned int *)&stru_83665C[40 * a2 + 43]; /*0x631dc0*/
     *((unsigned int *)this + 9) = v9; /*0x631dc3*/
     *((unsigned int *)this + 1) = v9; /*0x631dc6*/
-    v10 = *(unsigned int *)&stru_83665C.?[40 * a2 + 47]; /*0x631dc9*/
+    v10 = *(unsigned int *)&stru_83665C[40 * a2 + 47]; /*0x631dc9*/
     *((unsigned int *)this + 10) = v10; /*0x631dcc*/
     *((unsigned int *)this + 2) = v10; /*0x631dcf*/
-    v11 = *(unsigned int *)&stru_83665C.?[40 * a2 + 51]; /*0x631dd2*/
+    v11 = *(unsigned int *)&stru_83665C[40 * a2 + 51]; /*0x631dd2*/
     *((unsigned int *)this + 4) = 0; /*0x631dd5*/
     *((unsigned int *)this + 11) = v11; /*0x631ddc*/
     *((unsigned int *)this + 3) = v11; /*0x631ddf*/
-    v12 = *(unsigned int *)&stru_83665C.?[40 * a2 + 63] - *(unsigned int *)&stru_83665C.?[40 * a2 + 67] + 1; /*0x631dea*/
-    *((unsigned int *)this + 5) = *(unsigned int *)&stru_83665C.?[40 * a2 + 67] + rand() % v12; /*0x631df7*/
-    result = *(unsigned int *)&stru_83665C.?[40 * a2 + 59] & rand(); /*0x631e03*/
+    v12 = *(unsigned int *)&stru_83665C[40 * a2 + 63] - *(unsigned int *)&stru_83665C[40 * a2 + 67] + 1; /*0x631dea*/
+    *((unsigned int *)this + 5) = *(unsigned int *)&stru_83665C[40 * a2 + 67] + rand() % v12; /*0x631df7*/
+    result = *(unsigned int *)&stru_83665C[40 * a2 + 59] & rand(); /*0x631e03*/
     *((unsigned int *)this + 14) = result; /*0x631e05*/
     return result; /*0x631e02*/
 }
@@ -2043,7 +2043,7 @@ unsigned int TacticalMapClass::SetCameraPosition(int *a2) {
     v3 = *a2; /*0x6d6012*/
     v8 = a2[1]; /*0x6d6014*/
     v7 = v3; /*0x6d601b*/
-    if ( !ClampCoordMap(&v7) || stru_A8EB00.?[391] ) /*0x6d602f*/
+    if ( !ClampCoordMap(&v7) || stru_A8EB00[391] ) /*0x6d602f*/
     {
       v4 = *a2; /*0x6d603b*/
       v5 = a2[1]; /*0x6d603d*/
@@ -2207,7 +2207,7 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3) {
         v19 = (uint8_t)v32[282]; /*0x6d80eb*/
         if ( v18 != 0xFFFF && v18 != 255 ) /*0x6d80f8*/
         {
-          v20 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v18); /*0x6d8104*/
+          v20 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00[328] + 4 * v18); /*0x6d8104*/
           if ( v20 ) /*0x6d8109*/
           {
             v21 = (unsigned int *)(*(int (__thiscall **)(int))(*(unsigned int *)v20 + 156))(v20); /*0x6d8113*/
@@ -2251,26 +2251,26 @@ int BuildingLoadQueue::FindBuilding() {
 
     if ( IDA_LOBYTE(this->BuildingLoadQueue_field_0x04) != 52 ) /*0x6e7a87*/
       return 0; /*0x6e7b48*/
-    vtable1 = (int)g_BuildingLoadQueue_Array.?; /*0x6e7a8d*/
-    if ( !g_BuildingLoadQueue_Array.? ) /*0x6e7a97*/
+    vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e7a8d*/
+    if ( !g_BuildingLoadQueue_Array ) /*0x6e7a97*/
       goto LABEL_13; /*0x6e7a97*/
-    uniqueId = g_BuildingLoadQueue_Array.?; /*0x6e7a99*/
-    if ( g_BuildingLoadQueue_Array.? && *(unsigned int *)g_BuildingLoadQueue_Array.? == *(unsigned int *)this->__pad_0 ) /*0x6e7aa9*/
+    uniqueId = g_BuildingLoadQueue_Array; /*0x6e7a99*/
+    if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->__pad_0 ) /*0x6e7aa9*/
     {
   LABEL_17:
       v7 = (void ***)(uniqueId + 4); /*0x6e7b43*/
       return (int)__RTDynamicCast(*v7, 0, 0, 0, 0); /*0x6e7b46*/
     }
-    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array.?) ) /*0x6e7ab6*/
+    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array) ) /*0x6e7ab6*/
     {
       qsort( /*0x6e7ac7*/
         g_BuildingLoadQueue_Array.TechnoTypeClass,
-        (size_t)g_BuildingLoadQueue_Array.?,
+        (size_t)g_BuildingLoadQueue_Array,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = (int)g_BuildingLoadQueue_Array.?; /*0x6e7acc*/
-      g_BuildingLoadQueue_Array.? = 0; /*0x6e7ad5*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x6e7adf*/
+      vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e7acc*/
+      g_BuildingLoadQueue_Array = 0; /*0x6e7ad5*/
+      IDA_LOBYTE(g_BuildingLoadQueue_Array) = 1; /*0x6e7adf*/
     }
     v4 = *(unsigned int *)this->__pad_0; /*0x6e7ae6*/
     vtable0 = g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x6e7ae8*/
@@ -2295,7 +2295,7 @@ int BuildingLoadQueue::FindBuilding() {
     }
     if ( uniqueId ) /*0x6e7b3b*/
     {
-      g_BuildingLoadQueue_Array.? = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e7b3d*/
+      g_BuildingLoadQueue_Array = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e7b3d*/
       goto LABEL_17; /*0x6e7b3d*/
     }
   LABEL_13:
@@ -3245,7 +3245,7 @@ char Voxel_Section::Draw(int a2) {
     if ( INIClass::GetString( /*0x75d4be*/
            (INIClass *)a2,
            (uint8_t *)&_ESI->WarheadTypeClass_field_0x24,
-           (uint8_t *)&g_INI_Key_Special.?[8],
+           (uint8_t *)&g_INI_Key_Special[8],
            &g_INI_DefaultBuffer,
            (char *)&v86.DynamicVector_field_0x1C,
            128) )
@@ -3359,14 +3359,14 @@ char Voxel_Section::Draw(int a2) {
       TypeList::AnimTypeCopy(&v85, _ESI->__pad_104); /*0x75d710*/
     }
     VectorClass::CopyDefault((VectorClass *)_ESI->__pad_104, &v85); /*0x75d722*/
-    CapacityIncrement = v85.?; /*0x75d72b*/
+    CapacityIncrement = v85; /*0x75d72b*/
     unknown_18 = v85.unknown_18; /*0x75d72f*/
-    _ESI->WarheadTypeClass_field_0x114 = v85.?; /*0x75d733*/
-    Items = v85.?; /*0x75d736*/
+    _ESI->WarheadTypeClass_field_0x114 = v85; /*0x75d733*/
+    Items = v85; /*0x75d736*/
     *(unsigned int *)_ESI->__pad_118 = CapacityIncrement; /*0x75d73a*/
     *(unsigned int *)&_ESI->__pad_118[4] = unknown_18; /*0x75d73f*/
     v85.DynamicVectorClass = 0; /*0x75d742*/
-    if ( Items && v85.? ) /*0x75d752*/
+    if ( Items && v85 ) /*0x75d752*/
       RA2_OPDEL(Items); /*0x75d755*/
     _ESI->WarheadTypeClass_field_0x120 = INIClass::ReadInt_Overwrite( /*0x75d771*/
                                            (bool *)a2,
@@ -3625,9 +3625,9 @@ char Voxel_Section::Draw(int a2) {
     if ( _ESI->DebrisTypes != (int *)&v85 ) /*0x75dbed*/
     {
       (*(void (__thiscall **)(int *))(_ESI->DebrisTypes[0] + 12))(_ESI->DebrisTypes); /*0x75dbf3*/
-      Capacity = v85.?; /*0x75dbf6*/
-      v54 = v85.? == 0; /*0x75dbfa*/
-      _ESI->MaxDebris = v85.?; /*0x75dbfc*/
+      Capacity = v85; /*0x75dbf6*/
+      v54 = v85 == 0; /*0x75dbfa*/
+      _ESI->MaxDebris = v85; /*0x75dbfc*/
       if ( v54 ) /*0x75dbff*/
       {
         _ESI->WarheadTypeClass_field_0x190[0] = 0; /*0x75dc38*/
@@ -3646,7 +3646,7 @@ char Voxel_Section::Draw(int a2) {
           {
             do /*0x75dc34*/
             {
-              *(unsigned int *)(_ESI->WarheadTypeClass_field_0x190[0] + 4 * v57) = *((unsigned int *)v85.? + v57); /*0x75dc2b*/
+              *(unsigned int *)(_ESI->WarheadTypeClass_field_0x190[0] + 4 * v57) = *((unsigned int *)v85 + v57); /*0x75dc2b*/
               ++v57; /*0x75dc31*/
             }
             while ( v57 < _ESI->MaxDebris ); /*0x75dc34*/
@@ -3654,14 +3654,14 @@ char Voxel_Section::Draw(int a2) {
         }
       }
     }
-    v58 = v85.?; /*0x75dc47*/
+    v58 = v85; /*0x75dc47*/
     v59 = v85.unknown_18; /*0x75dc4b*/
-    _ESI->unused_1CC[0] = v85.?; /*0x75dc4f*/
-    v60 = v85.?; /*0x75dc52*/
+    _ESI->unused_1CC[0] = v85; /*0x75dc4f*/
+    v60 = v85; /*0x75dc52*/
     *(unsigned int *)_ESI->__pad_1A0 = v58; /*0x75dc56*/
     *(unsigned int *)&_ESI->__pad_1A0[4] = v59; /*0x75dc5b*/
     v85.DynamicVectorClass = 0; /*0x75dc5e*/
-    if ( v60 && v85.? ) /*0x75dc6e*/
+    if ( v60 && v85 ) /*0x75dc6e*/
       RA2_OPDEL(v60); /*0x75dc71*/
     v79 = 0; /*0x75dc88*/
     v80 = 0; /*0x75dc8b*/
@@ -3739,10 +3739,10 @@ char Voxel_Section::Draw(int a2) {
     *(unsigned int *)&_ESI->__pad_1B0[8] = *((unsigned int *)IntList + 4); /*0x75dd9c*/
     _ESI->WarheadTypeClass_field_0x1BC[0] = *((unsigned int *)IntList + 5); /*0x75dda2*/
     v68 = *((unsigned int *)IntList + 6); /*0x75dda5*/
-    v69 = v85.?; /*0x75dda8*/
+    v69 = v85; /*0x75dda8*/
     *(unsigned int *)_ESI->__pad_1C0 = v68; /*0x75ddac*/
     v85.DynamicVectorClass = 0; /*0x75ddb1*/
-    if ( v69 && v85.? ) /*0x75ddc1*/
+    if ( v69 && v85 ) /*0x75ddc1*/
       RA2_OPDEL(v69); /*0x75ddc4*/
     if ( INIClass::GetString( /*0x75dde6*/
            (INIClass *)a2,

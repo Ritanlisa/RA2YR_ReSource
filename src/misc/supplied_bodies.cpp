@@ -1468,14 +1468,14 @@ unsigned int * MovementClass::CompareAbsCoords(unsigned int *a2) {
     v4 = *((unsigned int *)this + 4); /*0x4c9540*/
     if ( v3 != -1 ) /*0x4c954c*/
     {
-      if ( *(unsigned int *)&stru_A8EB00.?[416] - v3 >= v4 ) /*0x4c9554*/
+      if ( *(unsigned int *)&stru_A8EB00[416] - v3 >= v4 ) /*0x4c9554*/
       {
   LABEL_14:
         v7 = *(unsigned int *)this->__pad_0; /*0x4c95b1*/
         v11 = *(unsigned int *)this->__pad_0; /*0x4c95b3*/
         goto LABEL_15; /*0x4c95b3*/
       }
-      v4 -= *(unsigned int *)&stru_A8EB00.?[416] - v3; /*0x4c9556*/
+      v4 -= *(unsigned int *)&stru_A8EB00[416] - v3; /*0x4c9556*/
     }
     if ( !v4 ) /*0x4c955a*/
       goto LABEL_14; /*0x4c955a*/
@@ -1489,12 +1489,12 @@ unsigned int * MovementClass::CompareAbsCoords(unsigned int *a2) {
       v9 = *((unsigned int *)this + 2); /*0x4c9582*/
       if ( v9 != -1 ) /*0x4c9588*/
       {
-        if ( *(unsigned int *)&stru_A8EB00.?[416] - v9 >= v8 ) /*0x4c9590*/
+        if ( *(unsigned int *)&stru_A8EB00[416] - v9 >= v8 ) /*0x4c9590*/
         {
           v10 = 0; /*0x4c95ad*/
           goto LABEL_11; /*0x4c95af*/
         }
-        IDA_LOWORD(v8) = v8 - (*(unsigned short *)&stru_A8EB00.?[416] - v9); /*0x4c9592*/
+        IDA_LOWORD(v8) = v8 - (*(unsigned short *)&stru_A8EB00[416] - v9); /*0x4c9592*/
       }
       v10 = v8; /*0x4c9594*/
   LABEL_11:
@@ -1716,8 +1716,8 @@ char DropPod::ProcessLanding() {
         v19 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x4ceb71*/
         if ( v19 ) /*0x4ceb78*/
         {
-          Index = AnimTypeClass::FindIndex((AnimTypeClass *)&stru_822420.?); /*0x4ceb83*/
-          AnimClass::ctor(v19, *(void **)(FootClass_Array.?[3] + 4 * Index), &v56, 0, 1, (void *)0x600, 0, 0); /*0x4ceba3*/
+          Index = AnimTypeClass::FindIndex((AnimTypeClass *)&stru_822420); /*0x4ceb83*/
+          AnimClass::ctor(v19, *(void **)(FootClass_Array[3] + 4 * Index), &v56, 0, 1, (void *)0x600, 0, 0); /*0x4ceba3*/
         }
       }
       else if ( (*(int (__thiscall **)(unsigned int))(**((unsigned int **)this + 3) + 44))(*((unsigned int *)this + 3)) == 2 ) /*0x4cec09*/
@@ -1728,7 +1728,7 @@ char DropPod::ProcessLanding() {
           if ( v23 ) /*0x4cec2f*/
           {
             v24 = AnimTypeClass::FindIndex(&stru_822420); /*0x4cec36*/
-            AnimClass::ctor(v23, *(void **)(FootClass_Array.?[3] + 4 * v24), &v56, 0, 1, (void *)0x600, 0, 0); /*0x4cec58*/
+            AnimClass::ctor(v23, *(void **)(FootClass_Array[3] + 4 * v24), &v56, 0, 1, (void *)0x600, 0, 0); /*0x4cec58*/
           }
         }
       }
@@ -1867,17 +1867,17 @@ int PathfindingClass::FindPath(unsigned int *a2) {
     unsigned char v27[12]; // [esp+38h] [ebp-Ch] BYREF
     unsigned int v28; // [esp+48h] [ebp+4h]
 
-    v3 = *(unsigned int *)&stru_A8EB00.?[1052]; /*0x4ffb23*/
+    v3 = *(unsigned int *)&stru_A8EB00[1052]; /*0x4ffb23*/
     _ESI = a2; /*0x4ffb2c*/
-    if ( *a2 == *(unsigned int *)&stru_A8EB00.?[1044] /*0x4ffb4e*/
-      && a2[1] == *(unsigned int *)&stru_A8EB00.?[1048]
-      && a2[2] == *(unsigned int *)&stru_A8EB00.?[1052] )
+    if ( *a2 == *(unsigned int *)&stru_A8EB00[1044] /*0x4ffb4e*/
+      && a2[1] == *(unsigned int *)&stru_A8EB00[1048]
+      && a2[2] == *(unsigned int *)&stru_A8EB00[1052] )
     {
       return -1; /*0x4ffb53*/
     }
     v7 = this + 5413; /*0x4ffb62*/
-    if ( *((unsigned short *)this + 10826) == *(unsigned short *)&stru_A8EB00.?[948] /*0x4ffb79*/
-      && *((unsigned short *)this + 10827) == *(unsigned short *)&stru_A8EB00.?[950] )
+    if ( *((unsigned short *)this + 10826) == *(unsigned short *)&stru_A8EB00[948] /*0x4ffb79*/
+      && *((unsigned short *)this + 10827) == *(unsigned short *)&stru_A8EB00[950] )
     {
       v8 = (PathfindingClass)*((unsigned int *)this + 5412); /*0x4ffb7b*/
     }
@@ -1886,10 +1886,10 @@ int PathfindingClass::FindPath(unsigned int *a2) {
       v8 = *v7; /*0x4ffb83*/
     }
     *(PathfindingClass *)v23 = v8; /*0x4ffb8d*/
-    if ( v8 == *(unsigned int *)&stru_A8EB00.?[948] ) /*0x4ffb91*/
+    if ( v8 == *(unsigned int *)&stru_A8EB00[948] ) /*0x4ffb91*/
     {
-      v9 = *(unsigned int *)&stru_A8EB00.?[1044]; /*0x4ffba0*/
-      v10 = *(unsigned int *)&stru_A8EB00.?[1048]; /*0x4ffba2*/
+      v9 = *(unsigned int *)&stru_A8EB00[1044]; /*0x4ffba0*/
+      v10 = *(unsigned int *)&stru_A8EB00[1048]; /*0x4ffba2*/
     }
     else
     {
@@ -1910,16 +1910,16 @@ int PathfindingClass::FindPath(unsigned int *a2) {
       return 0; /*0x4ffbff*/
     if ( v15 > 4 * v16 ) /*0x4ffc0d*/
       return -1; /*0x4ffc12*/
-    if ( (uint8_t)CellStruct::Equals((CellStruct *)(this + 5413), &stru_A8EB00.?[948]) ) /*0x4ffc23*/
+    if ( (uint8_t)CellStruct::Equals((CellStruct *)(this + 5413), &stru_A8EB00[948]) ) /*0x4ffc23*/
       v17 = (PathfindingClass)*((unsigned int *)this + 5412); /*0x4ffc2c*/
     else
       v17 = *v7; /*0x4ffc34*/
     *(PathfindingClass *)v23 = v17; /*0x4ffc42*/
-    if ( v17 == *(unsigned int *)&stru_A8EB00.?[948] ) /*0x4ffc46*/
+    if ( v17 == *(unsigned int *)&stru_A8EB00[948] ) /*0x4ffc46*/
     {
-      v18 = *(unsigned int *)&stru_A8EB00.?[1052]; /*0x4ffc61*/
-      v24 = *(unsigned int *)&stru_A8EB00.?[1044]; /*0x4ffc67*/
-      v25 = *(unsigned int *)&stru_A8EB00.?[1048]; /*0x4ffc6b*/
+      v18 = *(unsigned int *)&stru_A8EB00[1052]; /*0x4ffc61*/
+      v24 = *(unsigned int *)&stru_A8EB00[1044]; /*0x4ffc67*/
+      v25 = *(unsigned int *)&stru_A8EB00[1048]; /*0x4ffc6b*/
     }
     else
     {
@@ -2108,30 +2108,30 @@ void * BuildingLoadQueue::GetNext() {
     BuildingLoadQueue_field_0x04 = this->BuildingLoadQueue_field_0x04; /*0x6e6e26*/
     if ( BuildingLoadQueue_field_0x04 == 52 ) /*0x6e6e2b*/
     {
-      vtable1 = g_BuildingLoadQueue_Array.?; /*0x6e6e31*/
-      if ( g_BuildingLoadQueue_Array.? ) /*0x6e6e39*/
+      vtable1 = g_BuildingLoadQueue_Array; /*0x6e6e31*/
+      if ( g_BuildingLoadQueue_Array ) /*0x6e6e39*/
       {
-        uniqueId = g_BuildingLoadQueue_Array.?; /*0x6e6e3b*/
-        if ( g_BuildingLoadQueue_Array.? && *(unsigned int *)g_BuildingLoadQueue_Array.? == *(unsigned int *)this->__pad_0 ) /*0x6e6e4c*/
+        uniqueId = g_BuildingLoadQueue_Array; /*0x6e6e3b*/
+        if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->__pad_0 ) /*0x6e6e4c*/
           goto LABEL_10; /*0x6e6e4c*/
-        if ( g_BuildingLoadQueue_Array.? ) /*0x6e6e50*/
+        if ( g_BuildingLoadQueue_Array ) /*0x6e6e50*/
         {
-          if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array.?) ) /*0x6e6e59*/
+          if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array) ) /*0x6e6e59*/
           {
             qsort( /*0x6e6e6a*/
               g_BuildingLoadQueue_Array.TechnoTypeClass,
-              (size_t)g_BuildingLoadQueue_Array.?,
+              (size_t)g_BuildingLoadQueue_Array,
               8u,
               (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-            vtable1 = g_BuildingLoadQueue_Array.?; /*0x6e6e6f*/
-            g_BuildingLoadQueue_Array.? = 0; /*0x6e6e78*/
-            IDA_LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x6e6e82*/
+            vtable1 = g_BuildingLoadQueue_Array; /*0x6e6e6f*/
+            g_BuildingLoadQueue_Array = 0; /*0x6e6e78*/
+            IDA_LOBYTE(g_BuildingLoadQueue_Array) = 1; /*0x6e6e82*/
           }
           *(unsigned int *)v8 = *(unsigned int *)this->__pad_0; /*0x6e6e96*/
           uniqueId = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, (int *)v8); /*0x6e6e9a*/
           if ( uniqueId ) /*0x6e6ea1*/
           {
-            g_BuildingLoadQueue_Array.? = uniqueId; /*0x6e6ea3*/
+            g_BuildingLoadQueue_Array = uniqueId; /*0x6e6ea3*/
   LABEL_10:
             v5 = (void ***)(uniqueId + 4); /*0x6e6ea8*/
             return __RTDynamicCast( /*0x6e6ecf*/
@@ -2166,22 +2166,22 @@ void * BuildingLoadQueue::Find() {
 
     if ( IDA_LOBYTE(this->BuildingLoadQueue_field_0x04) != 52 ) /*0x6e6f27*/
       return 0; /*0x6e6fe0*/
-    vtable1 = (int)g_BuildingLoadQueue_Array.?; /*0x6e6f2d*/
-    if ( !g_BuildingLoadQueue_Array.? ) /*0x6e6f37*/
+    vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e6f2d*/
+    if ( !g_BuildingLoadQueue_Array ) /*0x6e6f37*/
       return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6f37*/
-    uniqueId = g_BuildingLoadQueue_Array.?; /*0x6e6f39*/
-    if ( g_BuildingLoadQueue_Array.? && *(unsigned int *)g_BuildingLoadQueue_Array.? == *(unsigned int *)this->__pad_0 ) /*0x6e6f49*/
+    uniqueId = g_BuildingLoadQueue_Array; /*0x6e6f39*/
+    if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->__pad_0 ) /*0x6e6f49*/
       return AbstractClass::IsTechnoType(*(AbstractClass **)(uniqueId + 4)); /*0x6e6fdf*/
-    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array.?) ) /*0x6e6f56*/
+    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array) ) /*0x6e6f56*/
     {
       qsort( /*0x6e6f67*/
         g_BuildingLoadQueue_Array.TechnoTypeClass,
-        (size_t)g_BuildingLoadQueue_Array.?,
+        (size_t)g_BuildingLoadQueue_Array,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = (int)g_BuildingLoadQueue_Array.?; /*0x6e6f6c*/
-      g_BuildingLoadQueue_Array.? = 0; /*0x6e6f75*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x6e6f7f*/
+      vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e6f6c*/
+      g_BuildingLoadQueue_Array = 0; /*0x6e6f75*/
+      IDA_LOBYTE(g_BuildingLoadQueue_Array) = 1; /*0x6e6f7f*/
     }
     v4 = *(unsigned int *)this->__pad_0; /*0x6e6f86*/
     vtable0 = g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x6e6f88*/
@@ -2206,7 +2206,7 @@ void * BuildingLoadQueue::Find() {
     }
     if ( uniqueId ) /*0x6e6fc9*/
     {
-      g_BuildingLoadQueue_Array.? = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e6fcb*/
+      g_BuildingLoadQueue_Array = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e6fcb*/
       return AbstractClass::IsTechnoType(*(AbstractClass **)(uniqueId + 4)); /*0x6e6fcb*/
     }
     return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6fc5*/
@@ -2225,26 +2225,26 @@ int BuildingLoadQueue::FindObject() {
 
     if ( IDA_LOBYTE(this->BuildingLoadQueue_field_0x04) != 52 ) /*0x6e6ff7*/
       return 0; /*0x6e70b8*/
-    vtable1 = (int)g_BuildingLoadQueue_Array.?; /*0x6e6ffd*/
-    if ( !g_BuildingLoadQueue_Array.? ) /*0x6e7007*/
+    vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e6ffd*/
+    if ( !g_BuildingLoadQueue_Array ) /*0x6e7007*/
       goto LABEL_13; /*0x6e7007*/
-    uniqueId = g_BuildingLoadQueue_Array.?; /*0x6e7009*/
-    if ( g_BuildingLoadQueue_Array.? && *(unsigned int *)g_BuildingLoadQueue_Array.? == *(unsigned int *)this->__pad_0 ) /*0x6e7019*/
+    uniqueId = g_BuildingLoadQueue_Array; /*0x6e7009*/
+    if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->__pad_0 ) /*0x6e7019*/
     {
   LABEL_17:
       v7 = (void ***)(uniqueId + 4); /*0x6e70b3*/
       return (int)__RTDynamicCast(*v7, 0, 0, 0, 0); /*0x6e70b6*/
     }
-    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array.?) ) /*0x6e7026*/
+    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array) ) /*0x6e7026*/
     {
       qsort( /*0x6e7037*/
         g_BuildingLoadQueue_Array.TechnoTypeClass,
-        (size_t)g_BuildingLoadQueue_Array.?,
+        (size_t)g_BuildingLoadQueue_Array,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = (int)g_BuildingLoadQueue_Array.?; /*0x6e703c*/
-      g_BuildingLoadQueue_Array.? = 0; /*0x6e7045*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x6e704f*/
+      vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e703c*/
+      g_BuildingLoadQueue_Array = 0; /*0x6e7045*/
+      IDA_LOBYTE(g_BuildingLoadQueue_Array) = 1; /*0x6e704f*/
     }
     v4 = *(unsigned int *)this->__pad_0; /*0x6e7056*/
     vtable0 = g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x6e7058*/
@@ -2269,7 +2269,7 @@ int BuildingLoadQueue::FindObject() {
     }
     if ( uniqueId ) /*0x6e70ab*/
     {
-      g_BuildingLoadQueue_Array.? = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e70ad*/
+      g_BuildingLoadQueue_Array = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e70ad*/
       goto LABEL_17; /*0x6e70ad*/
     }
   LABEL_13:
@@ -2330,7 +2330,7 @@ char AudioEvent::LoadFromINI(uint8_t ***a2) {
     INIClass::GetString( /*0x752eba*/
       (INIClass *)a2,
       (uint8_t *)_ESI,
-      (uint8_t *)&g_INI_Key_TRUCKA.?[3],
+      (uint8_t *)&g_INI_Key_TRUCKA[3],
       &g_INI_DefaultBuffer,
       Source,
       500);

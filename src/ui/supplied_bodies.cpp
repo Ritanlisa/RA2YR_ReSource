@@ -940,7 +940,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
               if ( (int)dword_A8D580 > 0 ) /*0x46e779*/
               {
                 v41 = (const wchar_t **)&unk_89DF80; /*0x46e77b*/
-                v42 = &stru_81AF8C.?[12]; /*0x46e780*/
+                v42 = &stru_81AF8C[12]; /*0x46e780*/
                 while ( 1 ) /*0x46e78d*/
                 {
                   v43 = *v41; /*0x46e78d*/
@@ -969,7 +969,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             if ( (int)dword_A8D580 <= 0 ) /*0x46e837*/
               goto LABEL_99; /*0x46e837*/
             hDlg = (HWND)&unk_89DF80; /*0x46e839*/
-            v48 = &stru_81AF8C.?[12]; /*0x46e841*/
+            v48 = &stru_81AF8C[12]; /*0x46e841*/
             break; /*0x46e841*/
           default:
             return 0;
@@ -1170,7 +1170,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
       if ( (int)dword_A8D580 > 0 ) /*0x46ef5b*/
       {
         WindowLongA = (ErrorCode *)&unk_89DF80; /*0x46ef61*/
-        hDlg = (HWND)&stru_81AF8C.?[8]; /*0x46ef69*/
+        hDlg = (HWND)&stru_81AF8C[8]; /*0x46ef69*/
         do /*0x46f27e*/
         {
           v86 = Color::ConvertToRGB( /*0x46ef8e*/
@@ -1812,14 +1812,14 @@ int InputManager_ProcessEvents::Vtable(unsigned int *a2, unsigned int *a3, unsig
 
     *a3 = (*(int (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 44))(stru_887598.lineTrailer); /*0x4f4337*/
     *a4 = (*(int (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 48))(stru_887598.lineTrailer); /*0x4f4349*/
-    if ( *(unsigned int *)&stru_A8EB00.?[880] ) /*0x4f4353*/
+    if ( *(unsigned int *)&stru_A8EB00[880] ) /*0x4f4353*/
     {
-      if ( (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&stru_A8EB00.?[880] + 92))(*(unsigned int *)&stru_A8EB00.?[880]) ) /*0x4f4357*/
+      if ( (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&stru_A8EB00[880] + 92))(*(unsigned int *)&stru_A8EB00[880]) ) /*0x4f4357*/
         (*(void (__thiscall **)(GScreenClass *, unsigned int))(this->vfptr[0] + 56))(this, 0); /*0x4f4364*/
       v5 = g_DSurface_Hidden_2; /*0x4f436e*/
       g_DSurface_Hidden_2 = (AudioStream *)g_DSurface_Hidden; /*0x4f4374*/
       v6 = a2; /*0x4f4385*/
-      *a2 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&stru_A8EB00.?[880] + 40))(*(unsigned int *)&stru_A8EB00.?[880]); /*0x4f4389*/
+      *a2 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&stru_A8EB00[880] + 40))(*(unsigned int *)&stru_A8EB00[880]); /*0x4f4389*/
       g_DSurface_Hidden_2 = v5; /*0x4f438b*/
     }
     else
@@ -1942,7 +1942,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
       switch ( Msg ) /*0x54f916*/
       {
         case 0x202u: /*0x54f916*/
-          if ( stru_A8EB00.?[440] ) /*0x54f924*/
+          if ( stru_A8EB00[440] ) /*0x54f924*/
             goto LABEL_45; /*0x54f924*/
           v10 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54f938*/
           if ( (int)(256 - ((IDA_HIDWORD(v10) ^ v10) - IDA_HIDWORD(v10))) < 3 ) /*0x54f947*/
@@ -1950,7 +1950,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
           EventClass::Enqueue((EventClass *)this, 1u, 1); /*0x54f94f*/
           goto LABEL_17; /*0x54f94f*/
         case 0x203u: /*0x54f916*/
-          if ( stru_A8EB00.?[440] ) /*0x54f958*/
+          if ( stru_A8EB00[440] ) /*0x54f958*/
             goto LABEL_45; /*0x54f958*/
           v11 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54f971*/
           if ( (int)(256 - ((IDA_HIDWORD(v11) ^ v11) - IDA_HIDWORD(v11))) >= 3 ) /*0x54f97b*/
@@ -1962,7 +1962,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
             x = v18[0]; /*0x54f9a3*/
             y = v17[0]; /*0x54f9a7*/
           }
-          if ( stru_A8EB00.?[440] ) /*0x54f9b2*/
+          if ( stru_A8EB00[440] ) /*0x54f9b2*/
             goto LABEL_45; /*0x54f9b2*/
           v12 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54f9c6*/
           if ( (int)(256 - ((IDA_HIDWORD(v12) ^ v12) - IDA_HIDWORD(v12))) < 3 ) /*0x54f9d5*/
@@ -1982,7 +1982,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
           InputManager::EnqueueInputEvent(this, 2u, v18[0], v17[0], 1); /*0x54fb13*/
           goto LABEL_45; /*0x54fb13*/
         case 0x207u: /*0x54f916*/
-          if ( !stru_A8EB00.?[440] ) /*0x54fa0d*/
+          if ( !stru_A8EB00[440] ) /*0x54fa0d*/
           {
             v13 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54fa26*/
             if ( (int)(256 - ((IDA_HIDWORD(v13) ^ v13) - IDA_HIDWORD(v13))) >= 3 ) /*0x54fa30*/
@@ -1996,7 +1996,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         case 0x208u: /*0x54f916*/
           goto LABEL_39;
         case 0x209u: /*0x54f916*/
-          if ( stru_A8EB00.?[440] ) /*0x54fa5d*/
+          if ( stru_A8EB00[440] ) /*0x54fa5d*/
             goto LABEL_45; /*0x54fa5d*/
           v14 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54fa76*/
           if ( (int)(256 - ((IDA_HIDWORD(v14) ^ v14) - IDA_HIDWORD(v14))) >= 3 ) /*0x54fa80*/
@@ -2008,7 +2008,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
             y = v17[0]; /*0x54faa1*/
           }
   LABEL_39:
-          if ( !stru_A8EB00.?[440] ) /*0x54faac*/
+          if ( !stru_A8EB00[440] ) /*0x54faac*/
           {
             v15 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54fabc*/
             if ( (int)(256 - ((IDA_HIDWORD(v15) ^ v15) - IDA_HIDWORD(v15))) >= 3 ) /*0x54facb*/
@@ -2039,7 +2039,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         case 0x102u: /*0x54f81d*/
           if ( stru_A8BB1C.__pad_87[214] ) /*0x54f863*/
           {
-            if ( !stru_A8EB00.?[440] ) /*0x54f870*/
+            if ( !stru_A8EB00[440] ) /*0x54f870*/
             {
               v8 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54f889*/
               if ( (int)(256 - ((IDA_HIDWORD(v8) ^ v8) - IDA_HIDWORD(v8))) >= 2 ) /*0x54f893*/
@@ -2054,7 +2054,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
           return 0;
       }
     }
-    if ( !stru_A8EB00.?[440] ) /*0x54f8c0*/
+    if ( !stru_A8EB00[440] ) /*0x54f8c0*/
     {
       v9 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54f8d9*/
       if ( (int)(256 - ((IDA_HIDWORD(v9) ^ v9) - IDA_HIDWORD(v9))) >= 3 ) /*0x54f8e3*/
@@ -2866,7 +2866,7 @@ int TabCameoListClass::AddCameo_ReplaceItAll(int a2, int a3) {
       v12[25] = 0; /*0x6a87b3*/
       *((unsigned int *)this + 12 * v4 + v4 + 26) = 0; /*0x6a87bd*/
       v12[27] = 0; /*0x6a87c0*/
-      v13 = *(TabCameoListClass *)&stru_A8EB00.?[416]; /*0x6a87c3*/
+      v13 = *(TabCameoListClass *)&stru_A8EB00[416]; /*0x6a87c3*/
       v12[32] = 0; /*0x6a87c8*/
       v12[29] = v13; /*0x6a87ce*/
       v12[30] = (TabCameoListClass)v14; /*0x6a87d4*/

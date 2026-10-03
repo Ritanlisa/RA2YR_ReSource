@@ -240,8 +240,8 @@ int CellClass::ClearCrateStateForAll() {
 
     result = Cell::PosToIndex((Cell *)this); /*0x722ab0*/
     for ( i = 0; /*0x722abf*/
-          i < g_BuildingLoadQueue_Array.?[0];
-          *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * i - 4) + 248) + result) = 0 )
+          i < g_BuildingLoadQueue_Array[0];
+          *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(g_BuildingLoadQueue_Array[2] + 4 * i - 4) + 248) + result) = 0 )
     {
       ++i; /*0x722ac7*/
     }
@@ -404,14 +404,14 @@ int * CellClass::GetScreenRect(int *a2) {
       a2[3] = 30; /*0x48003a*/
       return a2; /*0x480041*/
     }
-    if ( v9 < 0 || v9 >= *(int *)&stru_A8EB00.?[340] )
+    if ( v9 < 0 || v9 >= *(int *)&stru_A8EB00[340] )
     {
       Debug::Log(); /*0x4800e0*/
     }
     else
     {
       height = (uint8_t)this->height; /*0x480065*/
-      v12 = (unsigned int *)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v9) + 156))(*(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v9)); /*0x48006b*/
+      v12 = (unsigned int *)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_A8EB00[328] + 4 * v9) + 156))(*(unsigned int *)(*(unsigned int *)&stru_A8EB00[328] + 4 * v9)); /*0x48006b*/
       if ( !v12 ) /*0x480073*/
       {
         *a2 = v17; /*0x480082*/
