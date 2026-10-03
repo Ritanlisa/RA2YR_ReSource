@@ -4,6 +4,17 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class GetItemIndex_1;  // G42.36 fwd supply
+class Destroy_1;  // G42.36 fwd supply
+class GetItemIndex_0;  // G42.36 fwd supply
+class Destroy_0;  // G42.36 fwd supply
+class FindItemIndex_0;  // G42.36 fwd supply
+class Constructor_VectorClass_tagCONNECTDATA_;  // G42.36 fwd supply
+class Resize;  // G42.36 fwd supply
+class Constructor_VectorClass_CaptureManagerClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_Reestablish___;  // G42.36 fwd supply
+class Constructor_VectorClass_FoggedObjectClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_AirstrikeClass___;  // G42.36 fwd supply
 class Constructor_VectorClass_WeaponTypeClass___;  // G42.36 fwd supply
 class Constructor_VectorClass_WarheadTypeClass___;  // G42.36 fwd supply
 class LoadTypeData;  // G42.36 fwd supply
@@ -148,15 +159,23 @@ int Destroy(void *a1);
     unsigned int GetPtrOffset(int a2);
     int GetAt(int a2);
     int FindValue(unsigned int * a2);
-    int SetCapacity_0(int a1, int a2);
-    int SetCapacity(int a1, int a2);
     DynamicVector * Constructor_VectorClass_VoxelAnimClass___(unsigned int * Block, char a2);
     unsigned int LoadTypeData(int a2);
     DynamicVector * Constructor_VectorClass_WarheadTypeClass___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_WeaponTypeClass___(unsigned int * Block, char a2);
-    int SetCapacity_0(int a1, int a2);
-    int SetCapacity(int a1, int a2);
-    int SetCapacity_0(int a1, int a2);
-    int SetCapacity(int a1, int a2);
+    DynamicVector * Constructor_VectorClass_AirstrikeClass___(unsigned int * Block, char a2);
+    unsigned int * loc_421B10(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_FoggedObjectClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_Reestablish___(unsigned int * Block, char a2);
+    unsigned int * loc_46B910(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_CaptureManagerClass___(unsigned int * Block, char a2);
+    char Resize(int a2, unsigned int * a3);
+    DynamicVector * Constructor_VectorClass_tagCONNECTDATA_(unsigned int * Block, char a2);
+    int FindItemIndex_0(unsigned int * a2);
+    unsigned int * loc_4BA1B0(unsigned int * Block, char a2);
+    void Destroy_0();
+    unsigned int GetItemIndex_0(int a2);
+    void Destroy_1();
+    unsigned int GetItemIndex_1(int a2);
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

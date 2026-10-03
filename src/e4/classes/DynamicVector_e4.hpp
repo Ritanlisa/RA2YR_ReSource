@@ -5,6 +5,19 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class GetItemIndex_1;  // G42.36 fwd supply
+class Destroy_1;  // G42.36 fwd supply
+class GetItemIndex_0;  // G42.36 fwd supply
+class Destroy_0;  // G42.36 fwd supply
+class Clear;  // G42.36 fwd supply
+class Constructor_VectorClass_EMPulseClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_EgoClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_EBolt___;  // G42.36 fwd supply
+class Constructor_VectorClass_ConvertClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_DamageGroup___;  // G42.36 fwd supply
+class Destruct;  // G42.36 fwd supply
+class Constructor;  // G42.36 fwd supply
+class AddRef;  // G42.36 fwd supply
 class Constructor_VectorClass_ScriptClass___;  // G42.36 fwd supply
 class QueryInterface;  // G42.36 fwd supply
 class FindItemIndex;  // G42.36 fwd supply
@@ -79,11 +92,18 @@ struct DynamicVector {
     int FindItemIndex(unsigned int * a2);
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_ScriptClass___(unsigned int * Block, char a2);
-    AbstractClass * * Release(int a2, int * a3);
-    AbstractClass * * SetCapacity(int a2, int * a3);
-    AbstractClass * * Release(int a2, int * a3);
-    AbstractClass * * SetCapacity(int a2, int * a3);
-    AbstractClass * * Release(int a2, int * a3);
-    AbstractClass * * SetCapacity(int a2, int * a3);
+    char AddRef(int a2);
+    DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1);
+    DynamicVector * Destruct(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_DamageGroup___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_ConvertClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_EBolt___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_EgoClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_EMPulseClass___(unsigned int * Block, char a2);
+    unsigned int * Clear(unsigned int * a2, int a3);
+    void Destroy_0();
+    unsigned int GetItemIndex_0(int a2);
+    void Destroy_1();
+    unsigned int GetItemIndex_1(int a2);
 };
 } // namespace gamemd

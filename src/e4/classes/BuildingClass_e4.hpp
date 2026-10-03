@@ -788,6 +788,7 @@ static int GetSHPFrame(...);  // C2597 interim stub
     int GetSellPriority(); // N_fix R5 supply (cache truth)
     char MakeTraversable(); // N_fix R5 supply (cache truth)
     int IsPoweredOn(); // N_fix R5 supply (cache truth)
+    unsigned int * Construct(BuildingClass * aP1, BuildingClass * aP2, void *a3_1, void *a4_1, void *a5_1, void *a6_1);
 };
 
 } // namespace gamemd
