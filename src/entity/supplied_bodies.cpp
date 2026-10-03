@@ -25,7 +25,7 @@ int AnimClass::SimpleCtor() {
     ObjectClass::ctor((ObjectClass *)this); /*0x422724*/
     this->q0AC = 0; /*0x422730*/
     this->__pad_B0[0] = 0; /*0x422736*/
-    v2 = *(IUnknown **)&stru_A8EB00[416]; /*0x42273c*/
+    v2 = *(IUnknown **)&(&stru_A8EB00)[416]; /*0x42273c*/
     this->q0BC = 0; /*0x422741*/
     this->q0B4 = v2; /*0x422747*/
     this->q0C0 = 0; /*0x422750*/

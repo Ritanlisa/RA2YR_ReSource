@@ -2647,7 +2647,7 @@ int BuildingClass::DrawFactoryProduction() {
     char v18; // [esp+30h] [ebp+8h]
     char v19; // [esp+34h] [ebp+Ch]
 
-    if ( !stru_A8EB00[391] ) /*0x43ceb0*/
+    if ( !(&stru_A8EB00)[391] ) /*0x43ceb0*/
     {
       result = (int)g_hWnd; /*0x43ceb2*/
       if ( g_hWnd ) /*0x43ceb9*/
@@ -4794,7 +4794,7 @@ int BuildingClass::StartProduction(int a2) {
         if ( v4 ) /*0x447a78*/
           result = (int)Rules::GetProductionTimeMult((Rules *)&stru_A8EB00.ObjectTypeClass[24], v7[2]); /*0x447a80*/
       }
-      v44 = *(unsigned int *)&stru_A8EB00[416]; /*0x447a85*/
+      v44 = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x447a85*/
       this->?[5] = result; /*0x447a91*/
       this->?[2] = v44; /*0x447a97*/
       this->?[3] = v45; /*0x447a9d*/
@@ -5315,9 +5315,9 @@ int BuildingClass::ProcessActiveUpdate() {
           v38 = v36[4].ambientSoundController[2]; /*0x44b3b4*/
           if ( v37 != -1 ) /*0x44b3bd*/
           {
-            if ( *(unsigned int *)&stru_A8EB00[416] - v37 >= v38 ) /*0x44b3c8*/
+            if ( *(unsigned int *)&(&stru_A8EB00)[416] - v37 >= v38 ) /*0x44b3c8*/
               goto LABEL_86; /*0x44b3c8*/
-            v38 -= *(unsigned int *)&stru_A8EB00[416] - v37; /*0x44b3ca*/
+            v38 -= *(unsigned int *)&(&stru_A8EB00)[416] - v37; /*0x44b3ca*/
           }
           if ( !v38 ) /*0x44b3ce*/
           {
@@ -5827,7 +5827,7 @@ int BuildingClass::ProcessSuperWeaponEffects() {
             IDA_LODWORD(v78) = CellCoord::To_CellObj( /*0x44cf2a*/
                              (CellCoord *)&stru_87F5F0.__pad_58[416],
                              (int16_t *)&this->?->HouseClass_field_timer_C[1]);
-            if ( stru_A8EB00[391] || this->?->HouseClass_field_timer_C[1] == g_TerrainTypeTable ) /*0x44cf50*/
+            if ( (&stru_A8EB00)[391] || this->?->HouseClass_field_timer_C[1] == g_TerrainTypeTable ) /*0x44cf50*/
             {
               BuildingClass::StartProduction(this, 1); /*0x44d564*/
               (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44d571*/
@@ -6751,7 +6751,7 @@ int BuildingClass::ProcessPowerPlantEffect() {
               fmul ds:dbl_7E27F8
             }
             IDA_LOWORD(v5) = Math::RoundToInt(v1); /*0x44e490*/
-            v6 = *(unsigned int *)&stru_A8EB00[416]; /*0x44e495*/
+            v6 = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x44e495*/
             this->? = 2; /*0x44e4a1*/
             this->GateTimer[0] = v6; /*0x44e4ab*/
             this->GateTimer[1] = v28; /*0x44e4b1*/
@@ -6786,7 +6786,7 @@ int BuildingClass::ProcessPowerPlantEffect() {
           IDA_LOWORD(v12) = Math::RoundToInt(v1); /*0x44e5b2*/
           v13 = v31; /*0x44e5bd*/
           GateTimer = this->GateTimer; /*0x44e5c1*/
-          *GateTimer = *(unsigned int *)&stru_A8EB00[416]; /*0x44e5c7*/
+          *GateTimer = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x44e5c7*/
           GateTimer[1] = v13; /*0x44e5c9*/
           GateTimer[2] = v12; /*0x44e5cc*/
           GateTimer[3] = v12; /*0x44e5cf*/
@@ -6805,7 +6805,7 @@ int BuildingClass::ProcessPowerPlantEffect() {
               fmul ds:dbl_7E27F8
             }
             IDA_LOWORD(v21) = Math::RoundToInt(v1); /*0x44e6b1*/
-            this->GateTimer[0] = *(unsigned int *)&stru_A8EB00[416]; /*0x44e6c2*/
+            this->GateTimer[0] = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x44e6c2*/
             this->GateTimer[1] = v31; /*0x44e6cc*/
             this->GateTimer[2] = v21; /*0x44e6cf*/
             this->GateTimer[3] = v21; /*0x44e6d2*/
@@ -6820,10 +6820,10 @@ int BuildingClass::ProcessPowerPlantEffect() {
             v18 = this->GateTimer[2]; /*0x44e654*/
             if ( v17 != -1 ) /*0x44e65d*/
             {
-              if ( *(unsigned int *)&stru_A8EB00[416] - v17 >= v18 ) /*0x44e669*/
+              if ( *(unsigned int *)&(&stru_A8EB00)[416] - v17 >= v18 ) /*0x44e669*/
                 v18 = 0; /*0x44e66f*/
               else
-                v18 -= *(unsigned int *)&stru_A8EB00[416] - v17; /*0x44e66b*/
+                v18 -= *(unsigned int *)&(&stru_A8EB00)[416] - v17; /*0x44e66b*/
             }
             v24 = v16 - v18; /*0x44e673*/
             __asm /*0x44e677*/
@@ -8660,20 +8660,20 @@ int BuildingClass::PowerDrainUpdate() {
     v3 = this->C4Timer[2]; /*0x454274*/
     if ( v2 != -1 ) /*0x45427d*/
     {
-      if ( *(unsigned int *)&stru_A8EB00[416] - v2 >= v3 ) /*0x454289*/
+      if ( *(unsigned int *)&(&stru_A8EB00)[416] - v2 >= v3 ) /*0x454289*/
         v3 = 0; /*0x45428f*/
       else
-        v3 -= *(unsigned int *)&stru_A8EB00[416] - v2; /*0x45428b*/
+        v3 -= *(unsigned int *)&(&stru_A8EB00)[416] - v2; /*0x45428b*/
     }
     Power::TimerProcess(v3); /*0x454294*/
     v4 = *(unsigned int *)&this->__pad_6B8[24]; /*0x454299*/
     v5 = *(unsigned int *)&this->__pad_6B8[32]; /*0x45429f*/
     if ( v4 != -1 ) /*0x4542a8*/
     {
-      if ( *(unsigned int *)&stru_A8EB00[416] - v4 >= v5 ) /*0x4542b4*/
+      if ( *(unsigned int *)&(&stru_A8EB00)[416] - v4 >= v5 ) /*0x4542b4*/
         v5 = 0; /*0x4542ba*/
       else
-        v5 -= *(unsigned int *)&stru_A8EB00[416] - v4; /*0x4542b6*/
+        v5 -= *(unsigned int *)&(&stru_A8EB00)[416] - v4; /*0x4542b6*/
     }
     Power::TimerProcess(v5); /*0x4542bf*/
     Power::TimerProcess(this->BuildingClass_field_int_534); /*0x4542cd*/
@@ -8696,10 +8696,10 @@ int BuildingClass::PowerDrainUpdate() {
     v11 = this->BuildingClass_field_timer_550[2]; /*0x45433a*/
     if ( v10 != -1 ) /*0x454343*/
     {
-      if ( *(unsigned int *)&stru_A8EB00[416] - v10 >= v11 ) /*0x45434f*/
+      if ( *(unsigned int *)&(&stru_A8EB00)[416] - v10 >= v11 ) /*0x45434f*/
         v11 = 0; /*0x454355*/
       else
-        v11 -= *(unsigned int *)&stru_A8EB00[416] - v10; /*0x454351*/
+        v11 -= *(unsigned int *)&(&stru_A8EB00)[416] - v10; /*0x454351*/
     }
     Power::TimerProcess(v11); /*0x45435a*/
     Power::TimerProcess(this->SuperWeaponToken); /*0x454368*/
@@ -9053,14 +9053,14 @@ int BuildingClass::IsPoweredActive() {
       result = owner->powerBlackoutTimer[2]; /*0x45565f*/
       if ( v5 != -1 ) /*0x455668*/
       {
-        if ( *(unsigned int *)&stru_A8EB00[416] - v5 >= result ) /*0x455674*/
+        if ( *(unsigned int *)&(&stru_A8EB00)[416] - v5 >= result ) /*0x455674*/
         {
   LABEL_14:
           if ( IDA_HIBYTE(owner->HouseClass_field_timer_B[2]) ) /*0x45567c*/
             goto LABEL_20; /*0x455684*/
           goto LABEL_15; /*0x455684*/
         }
-        result -= *(unsigned int *)&stru_A8EB00[416] - v5; /*0x455676*/
+        result -= *(unsigned int *)&(&stru_A8EB00)[416] - v5; /*0x455676*/
       }
       if ( result ) /*0x45567a*/
         goto LABEL_20; /*0x45567a*/
@@ -10484,7 +10484,7 @@ int BuildingClass::Draw_0(unsigned int *a2, int *a3) {
                  0,
                  0);
       }
-      if ( *(unsigned int *)(this + 100) != *(unsigned int *)&stru_A8EB00[416] /*0x47f7ab*/
+      if ( *(unsigned int *)(this + 100) != *(unsigned int *)&(&stru_A8EB00)[416] /*0x47f7ab*/
         || *(unsigned char *)(this + 280) != stru_87F5F0.__pad_E12[1342]
         || *(unsigned int *)(this + 104) != *v10
         || *(unsigned int *)(this + 108) != v10[1]
@@ -10511,7 +10511,7 @@ int BuildingClass::Draw_0(unsigned int *a2, int *a3) {
           0,
           0,
           0);
-        *(unsigned int *)(this + 100) = *(unsigned int *)&stru_A8EB00[416]; /*0x47f818*/
+        *(unsigned int *)(this + 100) = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x47f818*/
         *(unsigned int *)(this + 104) = DSurface_ViewBounds.field_0; /*0x47f821*/
         *(unsigned int *)(this + 108) = DSurface_ViewBounds.field_4; /*0x47f829*/
         *(unsigned int *)(this + 112) = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x47f832*/
@@ -11473,10 +11473,10 @@ char BuildingClass::BeginCrumblingTimer(int16_t *a2) {
       if ( this->TechnoClass != (void *)-1 ) /*0x4a17f9*/
       {
         vtable2 = (char *)this->?; /*0x4a17fb*/
-        if ( *(unsigned int *)&stru_A8EB00[416] - (int)vtable0 >= (int)vtable2 ) /*0x4a180d*/
+        if ( *(unsigned int *)&(&stru_A8EB00)[416] - (int)vtable0 >= (int)vtable2 ) /*0x4a180d*/
           v6 = 0; /*0x4a1813*/
         else
-          v6 = &vtable2[-(*(unsigned int *)&stru_A8EB00[416] - (unsigned int)vtable0)]; /*0x4a180f*/
+          v6 = &vtable2[-(*(unsigned int *)&(&stru_A8EB00)[416] - (unsigned int)vtable0)]; /*0x4a180f*/
         this->? = v6; /*0x4a1815*/
         this->TechnoClass = (void *)-1; /*0x4a1818*/
       }
@@ -11490,14 +11490,14 @@ char BuildingClass::BeginCrumblingTimer(int16_t *a2) {
     v14 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5752) * 1800.0; /*0x4a187a*/
     v13 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5752) * 450.0; /*0x4a188a*/
     v15 = (int16_t *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x4a189b*/
-    v8 = *(void **)&stru_A8EB00[416]; /*0x4a189f*/
+    v8 = *(void **)&(&stru_A8EB00)[416]; /*0x4a189f*/
     IDA_LOWORD(v9) = Math::RoundToInt((v14 - v13) * ((double)(int)v15 * 4.656612877414201e-10) + v13); /*0x4a18b5*/
     v10 = (void *)IDA_HIDWORD(v14); /*0x4a18ba*/
     this->TechnoClass = v8; /*0x4a18c0*/
     this->? = v10; /*0x4a18c2*/
     this->? = v9; /*0x4a18c5*/
     if ( this->TechnoClass == (void *)-1 ) /*0x4a18cd*/
-      this->TechnoClass = *(void **)&stru_A8EB00[416]; /*0x4a18d4*/
+      this->TechnoClass = *(void **)&(&stru_A8EB00)[416]; /*0x4a18d4*/
     return 1; /*0x4a18d6*/
 }
 } // namespace gamemd::Math
@@ -11940,7 +11940,7 @@ int BuildingClass::CalcExitCoords() {
 
     v3 = 0; /*0x4fd164*/
     v4 = 5; /*0x4fd166*/
-    *((unsigned int *)this + 5412) = *(unsigned int *)&stru_A8EB00[948]; /*0x4fd16b*/
+    *((unsigned int *)this + 5412) = *(unsigned int *)&(&stru_A8EB00)[948]; /*0x4fd16b*/
     *((unsigned int *)this + 5414) = 0; /*0x4fd171*/
     result = (int)this + 21664; /*0x4fd177*/
     do /*0x4fd189*/
@@ -12036,8 +12036,8 @@ int BuildingClass::CalcExitCoords() {
             v14 = v39; /*0x4fd2f6*/
             if ( v39 && !*(unsigned char *)(v39 + 129) && *(int *)(v39 + 108) > 0 ) /*0x4fd318*/
             {
-              if ( *((unsigned short *)this + 10826) == *(unsigned short *)&stru_A8EB00[948] /*0x4fd33b*/
-                && *((unsigned short *)this + 10827) == *(unsigned short *)&stru_A8EB00[950] )
+              if ( *((unsigned short *)this + 10826) == *(unsigned short *)&(&stru_A8EB00)[948] /*0x4fd33b*/
+                && *((unsigned short *)this + 10827) == *(unsigned short *)&(&stru_A8EB00)[950] )
               {
                 v15 = *((unsigned int *)this + 5412); /*0x4fd33d*/
               }
@@ -12047,11 +12047,11 @@ int BuildingClass::CalcExitCoords() {
               }
               v36[1] = v15; /*0x4fd34e*/
               *(unsigned int *)v38 = v15; /*0x4fd352*/
-              if ( v15 == *(unsigned int *)&stru_A8EB00[948] ) /*0x4fd356*/
+              if ( v15 == *(unsigned int *)&(&stru_A8EB00)[948] ) /*0x4fd356*/
               {
-                v16 = *(unsigned int *)&stru_A8EB00[1044]; /*0x4fd35f*/
-                v17 = *(unsigned int *)&stru_A8EB00[1048]; /*0x4fd365*/
-                v18 = *(unsigned int *)&stru_A8EB00[1052]; /*0x4fd36b*/
+                v16 = *(unsigned int *)&(&stru_A8EB00)[1044]; /*0x4fd35f*/
+                v17 = *(unsigned int *)&(&stru_A8EB00)[1048]; /*0x4fd365*/
+                v18 = *(unsigned int *)&(&stru_A8EB00)[1052]; /*0x4fd36b*/
               }
               else
               {
@@ -12346,7 +12346,7 @@ int BuildingClass::UpdateFloatPosition() {
     v18 = location[1]; /*0x62d2c6*/
     v19 = location[2]; /*0x62d2cd*/
     v4 = *(unsigned int *)(currentMission + 760); /*0x62d2d1*/
-    if ( v4 > 0 && !(*(unsigned int *)&stru_A8EB00[416] % (10 / v4)) ) /*0x62d2e8*/
+    if ( v4 > 0 && !(*(unsigned int *)&(&stru_A8EB00)[416] % (10 / v4)) ) /*0x62d2e8*/
     {
       v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1964); /*0x62d2fe*/
       v6 = *(int *)((char *)&stru_83665C + v5 * 4); /*0x62d301*/
@@ -12624,13 +12624,13 @@ int BuildingClass::CheckBuildability() {
     int v9; // esi
     BuildingClass *v11; // [esp+14h] [ebp-4h] BYREF
 
-    v1 = *(unsigned int *)&stru_A8EB00[228]; /*0x63ac75*/
+    v1 = *(unsigned int *)&(&stru_A8EB00)[228]; /*0x63ac75*/
     v2 = 0; /*0x63ac7d*/
-    if ( *(int *)&stru_A8EB00[228] <= 0 ) /*0x63ac83*/
+    if ( *(int *)&(&stru_A8EB00)[228] <= 0 ) /*0x63ac83*/
       return -1; /*0x63ad1b*/
     while ( 1 ) /*0x63ac8e*/
     {
-      v4 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00[216] + 4 * v2); /*0x63ac8e*/
+      v4 = *(unsigned int *)(*(unsigned int *)&(&stru_A8EB00)[216] + 4 * v2); /*0x63ac8e*/
       if ( v4 ) /*0x63ac93*/
       {
         if ( (*(unsigned char *)(v4 + 20) & 1) != 0 ) /*0x63ac9f*/
@@ -12855,7 +12855,7 @@ unsigned int * BuildingClass::ProcessEnterUnit() {
       if ( *(unsigned int *)v21 == dword_B0B5B8 ) /*0x6b0e6d*/
       {
         this->?[3] = 0; /*0x6b0e7d*/
-        this->?[4] = *(unsigned int *)&stru_A8EB00[416]; /*0x6b0e8a*/
+        this->?[4] = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x6b0e8a*/
         return (*(unsigned int *(__thiscall **)(int, int, unsigned int))(*(unsigned int *)this->? + 488))(this->?, 5, 0); /*0x6b0e96*/
       }
       else
@@ -12906,7 +12906,7 @@ unsigned int * BuildingClass::ProcessEnterUnit() {
       {
         result = (unsigned int *)(*(int (__thiscall **)(int, int, unsigned int))(*(unsigned int *)this->? + 488))(this->?, 5, 0); /*0x6b0ff8*/
         this->?[3] = 0; /*0x6b0ffe*/
-        this->?[4] = *(unsigned int *)&stru_A8EB00[416]; /*0x6b100b*/
+        this->?[4] = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x6b100b*/
       }
     }
     return result; /*0x6b0e9c*/
@@ -12924,7 +12924,7 @@ char UnitClass::UnloadPassengers(int a2) {
     if ( !(uint8_t)ObjectClass::UpdateProductionDisplay((ObjectClass *)this) || v2 != 1 && v2 != 3 ) /*0x6b4bfb*/
       return 0; /*0x6b4c61*/
     a2 = *(unsigned int *)(*((int (__thiscall **)(SmudgeClass *, unsigned char *))this->vtable1 + 110))(this, v6); /*0x6b4c0e*/
-    if ( (int)dword_A8E7AC > 0 || stru_A8EB00[391] || (uint8_t)Cell::IsWalkable((Cell *)this->Type, &a2, 1) ) /*0x6b4c31*/
+    if ( (int)dword_A8E7AC > 0 || (&stru_A8EB00)[391] || (uint8_t)Cell::IsWalkable((Cell *)this->Type, &a2, 1) ) /*0x6b4c31*/
       UnitClass::CreateUnloadPlacementCraters((int *)this->Type, &a2); /*0x6b4c45*/
     vtable0 = (void (__thiscall **)(SmudgeClass *))this->ObjectClass; /*0x6b4c4a*/
     this->? = 0; /*0x6b4c4e*/
@@ -13034,15 +13034,15 @@ void UnitClass::ProcessExitQueue() {
     SpawnManagerClass_field_58 = this->SpawnManagerClass_field_58; /*0x6b7242*/
     if ( v2 != -1 ) /*0x6b7248*/
     {
-      if ( *(unsigned int *)&stru_A8EB00[416] - v2 >= SpawnManagerClass_field_58 ) /*0x6b7250*/
+      if ( *(unsigned int *)&(&stru_A8EB00)[416] - v2 >= SpawnManagerClass_field_58 ) /*0x6b7250*/
         goto LABEL_5; /*0x6b7250*/
-      SpawnManagerClass_field_58 -= *(unsigned int *)&stru_A8EB00[416] - v2; /*0x6b7252*/
+      SpawnManagerClass_field_58 -= *(unsigned int *)&(&stru_A8EB00)[416] - v2; /*0x6b7252*/
     }
     if ( SpawnManagerClass_field_58 ) /*0x6b7256*/
       return; /*0x6b7256*/
   LABEL_5:
     v4 = v91; /*0x6b725c*/
-    *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)&stru_A8EB00[416]; /*0x6b7265*/
+    *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x6b7265*/
     this->SpawnManagerClass_field_54 = v4; /*0x6b7268*/
     this->SpawnManagerClass_field_58 = 10; /*0x6b726b*/
     v5 = 0; /*0x6b7271*/
@@ -13065,9 +13065,9 @@ void UnitClass::ProcessExitQueue() {
             SpawnManagerClass_field_64 = this->SpawnManagerClass_field_64; /*0x6b72b0*/
             if ( SpawnManagerClass_field_5C == -1 ) /*0x6b72b6*/
               goto LABEL_11; /*0x6b72b6*/
-            if ( *(unsigned int *)&stru_A8EB00[416] - SpawnManagerClass_field_5C >= SpawnManagerClass_field_64 ) /*0x6b72c2*/
+            if ( *(unsigned int *)&(&stru_A8EB00)[416] - SpawnManagerClass_field_5C >= SpawnManagerClass_field_64 ) /*0x6b72c2*/
               goto LABEL_128; /*0x6b72c2*/
-            SpawnManagerClass_field_64 -= *(unsigned int *)&stru_A8EB00[416] - SpawnManagerClass_field_5C; /*0x6b72c4*/
+            SpawnManagerClass_field_64 -= *(unsigned int *)&(&stru_A8EB00)[416] - SpawnManagerClass_field_5C; /*0x6b72c4*/
   LABEL_11:
             if ( !SpawnManagerClass_field_64 )
             {
@@ -13093,13 +13093,13 @@ void UnitClass::ProcessExitQueue() {
                       if ( *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))owner->vtable1 + 33))(owner) + 3432) ) /*0x6b7392*/
                       {
                         v15 = v91; /*0x6b73a1*/
-                        this->SpawnManagerClass_field_5C = *(unsigned int *)&stru_A8EB00[416]; /*0x6b73a5*/
+                        this->SpawnManagerClass_field_5C = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x6b73a5*/
                         v16 = 9; /*0x6b73a8*/
                         this->SpawnManagerClass_field_60 = v15; /*0x6b73ad*/
                       }
                       else
                       {
-                        this->SpawnManagerClass_field_5C = *(unsigned int *)&stru_A8EB00[416]; /*0x6b73b2*/
+                        this->SpawnManagerClass_field_5C = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x6b73b2*/
                         v16 = 20; /*0x6b73b9*/
                         this->SpawnManagerClass_field_60 = v91; /*0x6b73be*/
                       }
@@ -13224,9 +13224,9 @@ void UnitClass::ProcessExitQueue() {
             v35 = *(unsigned int *)(v7 + 8); /*0x6b7616*/
             if ( v35 == -1 ) /*0x6b761c*/
               goto LABEL_49; /*0x6b761c*/
-            if ( *(unsigned int *)&stru_A8EB00[416] - v35 >= v34 ) /*0x6b7628*/
+            if ( *(unsigned int *)&(&stru_A8EB00)[416] - v35 >= v34 ) /*0x6b7628*/
               goto LABEL_50; /*0x6b7628*/
-            v34 -= *(unsigned int *)&stru_A8EB00[416] - v35; /*0x6b762a*/
+            v34 -= *(unsigned int *)&(&stru_A8EB00)[416] - v35; /*0x6b762a*/
   LABEL_49:
             if ( !v34 ) /*0x6b762e*/
   LABEL_50:
@@ -13316,7 +13316,7 @@ void UnitClass::ProcessExitQueue() {
                 *(unsigned int *)(*(unsigned int *)(this->spawnVectorCount + 4 * v5) + 4) = 6; /*0x6b780f*/
                 SpawnManagerClass_field_34 = this->SpawnManagerClass_field_34; /*0x6b781e*/
                 v49 = (unsigned int *)(*(unsigned int *)(this->spawnVectorCount + 4 * v5) + 8); /*0x6b7824*/
-                *v49 = *(unsigned int *)&stru_A8EB00[416]; /*0x6b7827*/
+                *v49 = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x6b7827*/
                 v49[1] = v94; /*0x6b782d*/
                 v49[2] = SpawnManagerClass_field_34; /*0x6b7830*/
               }
@@ -13333,9 +13333,9 @@ void UnitClass::ProcessExitQueue() {
             v51 = *(unsigned int *)(v7 + 16); /*0x6b786a*/
             if ( v50 == -1 ) /*0x6b7870*/
               goto LABEL_75; /*0x6b7870*/
-            if ( *(unsigned int *)&stru_A8EB00[416] - v50 >= v51 ) /*0x6b787c*/
+            if ( *(unsigned int *)&(&stru_A8EB00)[416] - v50 >= v51 ) /*0x6b787c*/
               goto LABEL_76; /*0x6b787c*/
-            v51 -= *(unsigned int *)&stru_A8EB00[416] - v50; /*0x6b787e*/
+            v51 -= *(unsigned int *)&(&stru_A8EB00)[416] - v50; /*0x6b787e*/
   LABEL_75:
             if ( !v51 ) /*0x6b7882*/
             {
@@ -13353,9 +13353,9 @@ void UnitClass::ProcessExitQueue() {
             v55 = *(unsigned int *)(v7 + 8); /*0x6b78b5*/
             if ( v55 == -1 ) /*0x6b78bb*/
               goto LABEL_80; /*0x6b78bb*/
-            if ( *(unsigned int *)&stru_A8EB00[416] - v55 >= v54 ) /*0x6b78c7*/
+            if ( *(unsigned int *)&(&stru_A8EB00)[416] - v55 >= v54 ) /*0x6b78c7*/
               goto LABEL_81; /*0x6b78c7*/
-            v54 -= *(unsigned int *)&stru_A8EB00[416] - v55; /*0x6b78c9*/
+            v54 -= *(unsigned int *)&(&stru_A8EB00)[416] - v55; /*0x6b78c9*/
   LABEL_80:
             if ( !v54 ) /*0x6b78cd*/
             {
@@ -13435,7 +13435,7 @@ void UnitClass::ProcessExitQueue() {
                   (int)&g_MissionQueueFrame,
                   (unsigned int *)*v73,
                   (unsigned int *)this->SpawnManagerClass_field_68);
-                g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&stru_A8EB00[416]; /*0x6b7a46*/
+                g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x6b7a46*/
                 g_MissionQueueFrame.nextScenario[1] = v72; /*0x6b7a4b*/
                 g_MissionQueueFrame.nextScenario[2] = 2; /*0x6b7a51*/
                 v74 = *(int **)(this->spawnVectorCount + 4 * v71); /*0x6b7a5a*/
@@ -13449,7 +13449,7 @@ void UnitClass::ProcessExitQueue() {
                     v75 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1252) /*0x6b7aab*/
                         + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1256);
                   v76 = (unsigned int *)(*(unsigned int *)(this->spawnVectorCount + 4 * v71) + 8); /*0x6b7a94*/
-                  *v76 = *(unsigned int *)&stru_A8EB00[416]; /*0x6b7a97*/
+                  *v76 = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x6b7a97*/
                   v76[1] = v94; /*0x6b7a9d*/
                   v76[2] = v75; /*0x6b7aa0*/
                 }
@@ -14432,7 +14432,7 @@ int BuildingClass::AddOccupancy(int16_t *a2) {
         if ( *(this + 60) >= Object::ComputeAllocationSize() - 20 ) /*0x722b3f*/
           AudioClass::ProcessEvent((AudioClass *)this); /*0x722b43*/
         *(unsigned int *)(*(this + 63) + 8 * *(this + 60)) = *(unsigned int *)a2; /*0x722b58*/
-        *(float *)(*(this + 63) + 8 * *(this + 60) + 4) = (float)(*(unsigned int *)&stru_A8EB00[416] /*0x722b95*/
+        *(float *)(*(this + 63) + 8 * *(this + 60) + 4) = (float)(*(unsigned int *)&(&stru_A8EB00)[416] /*0x722b95*/
                                                                 + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink))
                                                                 % 50);
         v7 = *(this + 60); /*0x722b99*/
@@ -14773,7 +14773,7 @@ char UnitClass::ProcessResourceHarvesting() {
         this->?[0] = 0; /*0x73d502*/
         v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5408); /*0x73d515*/
         __asm { fstp st } /*0x73d521*/
-        this->?[2] = *(unsigned int *)&stru_A8EB00[416]; /*0x73d523*/
+        this->?[2] = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x73d523*/
         v6 *= 3; /*0x73d529*/
         this->?[3] = v20; /*0x73d52c*/
         this->?[4] = v6; /*0x73d52f*/
@@ -14819,7 +14819,7 @@ char UnitClass::ProcessResourceHarvesting() {
         Float::Accumulate((int *)&this->?, v15, v9); /*0x73d5b9*/
         this->?[0] = 0; /*0x73d5be*/
         v13 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5408); /*0x73d5d5*/
-        this->?[2] = *(unsigned int *)&stru_A8EB00[416]; /*0x73d5e1*/
+        this->?[2] = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x73d5e1*/
         __asm { fstp st } /*0x73d5e7*/
         this->?[3] = v20; /*0x73d5e9*/
         this->?[4] = v13; /*0x73d5ec*/
@@ -14831,7 +14831,7 @@ char UnitClass::ProcessResourceHarvesting() {
     {
   LABEL_13:
       this->?[0] = 0; /*0x73d5fe*/
-      v14 = *(unsigned int *)&stru_A8EB00[416]; /*0x73d604*/
+      v14 = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x73d604*/
       this->?[5] = 0; /*0x73d611*/
       this->?[2] = v14; /*0x73d617*/
       this->?[3] = v20; /*0x73d61d*/

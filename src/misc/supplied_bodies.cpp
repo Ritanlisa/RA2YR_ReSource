@@ -1468,14 +1468,14 @@ unsigned int * MovementClass::CompareAbsCoords(unsigned int *a2) {
     v4 = *((unsigned int *)this + 4); /*0x4c9540*/
     if ( v3 != -1 ) /*0x4c954c*/
     {
-      if ( *(unsigned int *)&stru_A8EB00[416] - v3 >= v4 ) /*0x4c9554*/
+      if ( *(unsigned int *)&(&stru_A8EB00)[416] - v3 >= v4 ) /*0x4c9554*/
       {
   LABEL_14:
         v7 = *(unsigned int *)this->__pad_0; /*0x4c95b1*/
         v11 = *(unsigned int *)this->__pad_0; /*0x4c95b3*/
         goto LABEL_15; /*0x4c95b3*/
       }
-      v4 -= *(unsigned int *)&stru_A8EB00[416] - v3; /*0x4c9556*/
+      v4 -= *(unsigned int *)&(&stru_A8EB00)[416] - v3; /*0x4c9556*/
     }
     if ( !v4 ) /*0x4c955a*/
       goto LABEL_14; /*0x4c955a*/
@@ -1489,12 +1489,12 @@ unsigned int * MovementClass::CompareAbsCoords(unsigned int *a2) {
       v9 = *((unsigned int *)this + 2); /*0x4c9582*/
       if ( v9 != -1 ) /*0x4c9588*/
       {
-        if ( *(unsigned int *)&stru_A8EB00[416] - v9 >= v8 ) /*0x4c9590*/
+        if ( *(unsigned int *)&(&stru_A8EB00)[416] - v9 >= v8 ) /*0x4c9590*/
         {
           v10 = 0; /*0x4c95ad*/
           goto LABEL_11; /*0x4c95af*/
         }
-        IDA_LOWORD(v8) = v8 - (*(unsigned short *)&stru_A8EB00[416] - v9); /*0x4c9592*/
+        IDA_LOWORD(v8) = v8 - (*(unsigned short *)&(&stru_A8EB00)[416] - v9); /*0x4c9592*/
       }
       v10 = v8; /*0x4c9594*/
   LABEL_11:
@@ -1867,17 +1867,17 @@ int PathfindingClass::FindPath(unsigned int *a2) {
     unsigned char v27[12]; // [esp+38h] [ebp-Ch] BYREF
     unsigned int v28; // [esp+48h] [ebp+4h]
 
-    v3 = *(unsigned int *)&stru_A8EB00[1052]; /*0x4ffb23*/
+    v3 = *(unsigned int *)&(&stru_A8EB00)[1052]; /*0x4ffb23*/
     _ESI = a2; /*0x4ffb2c*/
-    if ( *a2 == *(unsigned int *)&stru_A8EB00[1044] /*0x4ffb4e*/
-      && a2[1] == *(unsigned int *)&stru_A8EB00[1048]
-      && a2[2] == *(unsigned int *)&stru_A8EB00[1052] )
+    if ( *a2 == *(unsigned int *)&(&stru_A8EB00)[1044] /*0x4ffb4e*/
+      && a2[1] == *(unsigned int *)&(&stru_A8EB00)[1048]
+      && a2[2] == *(unsigned int *)&(&stru_A8EB00)[1052] )
     {
       return -1; /*0x4ffb53*/
     }
     v7 = this + 5413; /*0x4ffb62*/
-    if ( *((unsigned short *)this + 10826) == *(unsigned short *)&stru_A8EB00[948] /*0x4ffb79*/
-      && *((unsigned short *)this + 10827) == *(unsigned short *)&stru_A8EB00[950] )
+    if ( *((unsigned short *)this + 10826) == *(unsigned short *)&(&stru_A8EB00)[948] /*0x4ffb79*/
+      && *((unsigned short *)this + 10827) == *(unsigned short *)&(&stru_A8EB00)[950] )
     {
       v8 = (PathfindingClass)*((unsigned int *)this + 5412); /*0x4ffb7b*/
     }
@@ -1886,10 +1886,10 @@ int PathfindingClass::FindPath(unsigned int *a2) {
       v8 = *v7; /*0x4ffb83*/
     }
     *(PathfindingClass *)v23 = v8; /*0x4ffb8d*/
-    if ( v8 == *(unsigned int *)&stru_A8EB00[948] ) /*0x4ffb91*/
+    if ( v8 == *(unsigned int *)&(&stru_A8EB00)[948] ) /*0x4ffb91*/
     {
-      v9 = *(unsigned int *)&stru_A8EB00[1044]; /*0x4ffba0*/
-      v10 = *(unsigned int *)&stru_A8EB00[1048]; /*0x4ffba2*/
+      v9 = *(unsigned int *)&(&stru_A8EB00)[1044]; /*0x4ffba0*/
+      v10 = *(unsigned int *)&(&stru_A8EB00)[1048]; /*0x4ffba2*/
     }
     else
     {
@@ -1910,16 +1910,16 @@ int PathfindingClass::FindPath(unsigned int *a2) {
       return 0; /*0x4ffbff*/
     if ( v15 > 4 * v16 ) /*0x4ffc0d*/
       return -1; /*0x4ffc12*/
-    if ( (uint8_t)CellStruct::Equals((CellStruct *)(this + 5413), &stru_A8EB00[948]) ) /*0x4ffc23*/
+    if ( (uint8_t)CellStruct::Equals((CellStruct *)(this + 5413), &(&stru_A8EB00)[948]) ) /*0x4ffc23*/
       v17 = (PathfindingClass)*((unsigned int *)this + 5412); /*0x4ffc2c*/
     else
       v17 = *v7; /*0x4ffc34*/
     *(PathfindingClass *)v23 = v17; /*0x4ffc42*/
-    if ( v17 == *(unsigned int *)&stru_A8EB00[948] ) /*0x4ffc46*/
+    if ( v17 == *(unsigned int *)&(&stru_A8EB00)[948] ) /*0x4ffc46*/
     {
-      v18 = *(unsigned int *)&stru_A8EB00[1052]; /*0x4ffc61*/
-      v24 = *(unsigned int *)&stru_A8EB00[1044]; /*0x4ffc67*/
-      v25 = *(unsigned int *)&stru_A8EB00[1048]; /*0x4ffc6b*/
+      v18 = *(unsigned int *)&(&stru_A8EB00)[1052]; /*0x4ffc61*/
+      v24 = *(unsigned int *)&(&stru_A8EB00)[1044]; /*0x4ffc67*/
+      v25 = *(unsigned int *)&(&stru_A8EB00)[1048]; /*0x4ffc6b*/
     }
     else
     {

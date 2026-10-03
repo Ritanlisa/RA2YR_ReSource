@@ -515,9 +515,9 @@ int FrameTimer::HasRemaining() {
     result = this->ironCurtainTimer[1]; /*0x41bf46*/
     if ( v1 != -1 ) /*0x41bf4f*/
     {
-      if ( *(unsigned int *)&stru_A8EB00[416] - v1 < result ) /*0x41bf5b*/
+      if ( *(unsigned int *)&(&stru_A8EB00)[416] - v1 < result ) /*0x41bf5b*/
       {
-        result -= *(unsigned int *)&stru_A8EB00[416] - v1; /*0x41bf5d*/
+        result -= *(unsigned int *)&(&stru_A8EB00)[416] - v1; /*0x41bf5d*/
         IDA_LOBYTE(result) = result > 0; /*0x41bf66*/
         return result; /*0x41bf68*/
       }
@@ -1021,7 +1021,7 @@ char BufferClass::CompareEqual(int a2) {
 // 0x488690
 namespace gamemd {
 void COMObject::DetachPrimary() {
-    FootClass_Array[1] = 0; /*0x488690*/
+    (&FootClass_Array)[1] = 0; /*0x488690*/
 }
 } // namespace gamemd
 
@@ -1831,7 +1831,7 @@ char CountdownTimer::UpdateDisplay(char a2) {
     int v12; // eax
     int v13; // ecx
 
-    dword_89F95C = *(unsigned int *)&stru_A8EB00[416]; /*0x4a260f*/
+    dword_89F95C = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x4a260f*/
     if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x4a261b*/
     {
       uniqueId = dword_A8B230[43].uniqueId; /*0x4a262a*/
@@ -1862,9 +1862,9 @@ char CountdownTimer::UpdateDisplay(char a2) {
     vtable3 = dword_A8B230[127].vtable3; /*0x4a26af*/
     if ( vtable3 != (void *)-1 ) /*0x4a26b8*/
     {
-      if ( *(unsigned int *)&stru_A8EB00[416] - (int)vtable3 >= abstractFlags ) /*0x4a26c4*/
+      if ( *(unsigned int *)&(&stru_A8EB00)[416] - (int)vtable3 >= abstractFlags ) /*0x4a26c4*/
         goto LABEL_13; /*0x4a26c4*/
-      abstractFlags -= *(unsigned int *)&stru_A8EB00[416] - (unsigned int)vtable3; /*0x4a26c6*/
+      abstractFlags -= *(unsigned int *)&(&stru_A8EB00)[416] - (unsigned int)vtable3; /*0x4a26c6*/
     }
     if ( abstractFlags ) /*0x4a26ca*/
     {
@@ -2113,9 +2113,9 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
 
     v6 = (House **)a4; /*0x4ab9b6*/
     if ( a4 /*0x4ab9ed*/
-      && stru_A8EB00[376]
+      && (&stru_A8EB00)[376]
       && byte_A8E9A0
-      && !stru_A8EB00[391]
+      && !(&stru_A8EB00)[391]
       && (*(int (__thiscall **)(void *, unsigned int, unsigned int))(*(unsigned int *)a4 + 104))(a4, 0, 0) == 5 )
     {
       v6 = 0; /*0x4ab9ef*/
@@ -2141,7 +2141,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
         this->__pad_11B4[27] = 0; /*0x4abcfd*/
         DisplayClass_field_0x0[18](this, 0, a6); /*0x4abd04*/
         IDA_LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4abd07*/
-        stru_A8EB00[441] = 1; /*0x4abd0e*/
+        (&stru_A8EB00)[441] = 1; /*0x4abd0e*/
         if ( !v26 ) /*0x4abd17*/
           goto LABEL_121; /*0x4abd17*/
       }
@@ -2150,9 +2150,9 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
       {
         if ( v6 ) /*0x4abd2f*/
         {
-          if ( *(unsigned int *)&stru_A8EB00[228] ) /*0x4abd3c*/
+          if ( *(unsigned int *)&(&stru_A8EB00)[228] ) /*0x4abd3c*/
           {
-            v29 = (House *)(*(int (__thiscall **)(unsigned int))(***(unsigned int ***)&stru_A8EB00[216] + 60))(**(unsigned int **)&stru_A8EB00[216]); /*0x4abd4b*/
+            v29 = (House *)(*(int (__thiscall **)(unsigned int))(***(unsigned int ***)&(&stru_A8EB00)[216] + 60))(**(unsigned int **)&(&stru_A8EB00)[216]); /*0x4abd4b*/
             if ( (uint8_t)House::IsHumanPlayer(v29) ) /*0x4abd50*/
             {
               if ( *((unsigned char *)v6 + 131) ) /*0x4abd59*/
@@ -2435,7 +2435,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
     else
       v18 = 0; /*0x4abbbf*/
     Selection::ClearGlobals(v18); /*0x4abbd7*/
-    if ( stru_A8EB00[391] ) /*0x4abbe3*/
+    if ( (&stru_A8EB00)[391] ) /*0x4abbe3*/
       goto LABEL_121; /*0x4abbe3*/
     v19 = (IUnknown *)this->DisplayClass_field_0x11A8; /*0x4abbe9*/
     v20 = *(unsigned int *)&this->__pad_1198[12]; /*0x4abbef*/
@@ -2516,10 +2516,10 @@ int Timeout::GetRemaining() {
     result = *((unsigned int *)this + 2); /*0x4b4d72*/
     if ( *this != -1 ) /*0x4b4d78*/
     {
-      if ( *(unsigned int *)&stru_A8EB00[416] - *(unsigned int *)&v1 >= result ) /*0x4b4d84*/
+      if ( *(unsigned int *)&(&stru_A8EB00)[416] - *(unsigned int *)&v1 >= result ) /*0x4b4d84*/
         return 0; /*0x4b4d89*/
       else
-        result -= *(unsigned int *)&stru_A8EB00[416] - *(unsigned int *)&v1; /*0x4b4d86*/
+        result -= *(unsigned int *)&(&stru_A8EB00)[416] - *(unsigned int *)&v1; /*0x4b4d86*/
     }
     return result; /*0x4b4d88*/
 }

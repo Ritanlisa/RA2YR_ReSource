@@ -556,7 +556,7 @@ void TeamClass::MoveToCellAndAttack(int a2, char a3) {
         TeamClass::SelectMember((int)v3, (int)CellFromArray); /*0x6ecd3b*/
     }
     IDA_LOWORD(v6) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4432) * 900.0); /*0x6ecd52*/
-    if ( !(*(unsigned int *)&stru_A8EB00[416] % v6) ) /*0x6ecd5f*/
+    if ( !(*(unsigned int *)&(&stru_A8EB00)[416] % v6) ) /*0x6ecd5f*/
     {
       firstUnit = v3->firstUnit; /*0x6ecd69*/
       v8 = -1; /*0x6ecd6d*/
@@ -618,7 +618,7 @@ char TeamClass::Create(int a2, int a3) {
     {
       v4 = MissionClass::Construct( /*0x6ecfdf*/
              v4,
-             *(unsigned int *)(*(unsigned int *)&stru_A8EB00[192] + 4 * *(unsigned int *)(a2 + 4)),
+             *(unsigned int *)(*(unsigned int *)&(&stru_A8EB00)[192] + 4 * *(unsigned int *)(a2 + 4)),
              (int)this->owner,
              0);
       v5 = (int *)v4; /*0x6ecfe4*/
@@ -1084,10 +1084,10 @@ int TriggerClass::FireTrigger(int *a2) {
     v8 = this->timer[2]; /*0x7267e4*/
     if ( v7 != -1 ) /*0x7267ea*/
     {
-      if ( *(unsigned int *)&stru_A8EB00[416] - v7 >= v8 ) /*0x7267f6*/
+      if ( *(unsigned int *)&(&stru_A8EB00)[416] - v7 >= v8 ) /*0x7267f6*/
         v8 = 0; /*0x7267fc*/
       else
-        v8 -= *(unsigned int *)&stru_A8EB00[416] - v7; /*0x7267f8*/
+        v8 -= *(unsigned int *)&(&stru_A8EB00)[416] - v7; /*0x7267f8*/
     }
     Power::TimerProcess(v8); /*0x726801*/
     return Power::TimerProcess(this->occuredEvents); /*0x726811*/
@@ -1139,12 +1139,12 @@ unsigned int * TriggerTypeClass::Construct(char *Source) {
       *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x726d90*/
     }
     this->ArrayIndex = *(unsigned int *)FootClass_Array; /*0x726d99*/
-    if ( *(int *)FootClass_Array < FootClass_Array[1] /*0x726dd0*/
-      || (IDA_BYTE1(FootClass_Array[2]) || !FootClass_Array[1])
+    if ( *(int *)FootClass_Array < (&FootClass_Array)[1] /*0x726dd0*/
+      || (IDA_BYTE1(FootClass_Array[2]) || !(&FootClass_Array)[1])
       && *(int *)&FootClass_Array > 0
       && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(FootClass_Array + 8))(
            &FootClass_Array,
-           FootClass_Array[1] + *(unsigned int *)&FootClass_Array,
+           (&FootClass_Array)[1] + *(unsigned int *)&FootClass_Array,
            0) )
     {
       v5 = (*(unsigned int *)FootClass_Array)++; /*0x726ddd*/
@@ -2075,12 +2075,12 @@ unsigned int * ScriptTypeClass::Constructor(char *Source) {
     this->? = 0; /*0x6916de*/
     this->? = 0; /*0x6916e5*/
     v3 = *(unsigned int *)&FootClass_Array; /*0x6916ec*/
-    if ( *(int *)&FootClass_Array < FootClass_Array[6] /*0x69172e*/
-      || (IDA_BYTE1(FootClass_Array[7]) || !FootClass_Array[6])
+    if ( *(int *)&FootClass_Array < (&FootClass_Array)[6] /*0x69172e*/
+      || (IDA_BYTE1(FootClass_Array[7]) || !(&FootClass_Array)[6])
       && *(int *)&FootClass_Array > 0
       && (v4 = (*(int (__thiscall **)(int *, int, unsigned int))(FootClass_Array[4] + 8))(
-                 &FootClass_Array[4],
-                 FootClass_Array[6] + *(unsigned int *)&FootClass_Array,
+                 &(&FootClass_Array)[4],
+                 (&FootClass_Array)[6] + *(unsigned int *)&FootClass_Array,
                  0),
           v3 = *(unsigned int *)&FootClass_Array,
           v4) )
@@ -2097,7 +2097,7 @@ unsigned int * ScriptTypeClass::Constructor(char *Source) {
     }
     else
     {
-      v6 = (ScriptTypeClass **)FootClass_Array[5]; /*0x69174e*/
+      v6 = (ScriptTypeClass **)(&FootClass_Array)[5]; /*0x69174e*/
       while ( *v6 != this ) /*0x691756*/
       {
         ++v5; /*0x691758*/
@@ -2129,7 +2129,7 @@ void ScriptTypeClass::GetAction(int a2, int a3) {
         v5 = 0; /*0x691e54*/
         if ( this->scriptActions[28] > 0 ) /*0x691e58*/
         {
-          v6 = *(unsigned int *)&stru_A8EB00[204]; /*0x691e5a*/
+          v6 = *(unsigned int *)&(&stru_A8EB00)[204]; /*0x691e5a*/
           v7 = &this->scriptActions[30]; /*0x691e60*/
           do /*0x691e66*/
           {
@@ -2140,7 +2140,7 @@ void ScriptTypeClass::GetAction(int a2, int a3) {
                 v8 = 0; /*0x691e71*/
                 if ( v6 <= 0 ) /*0x691e75*/
                   return; /*0x691e75*/
-                for ( i = *(unsigned int **)&stru_A8EB00[192]; *i != a2; ++i ) /*0x691e77*/
+                for ( i = *(unsigned int **)&(&stru_A8EB00)[192]; *i != a2; ++i ) /*0x691e77*/
                 {
                   if ( ++v8 >= v6 ) /*0x691e87*/
                     return; /*0x691e87*/
@@ -2153,7 +2153,7 @@ void ScriptTypeClass::GetAction(int a2, int a3) {
               {
                 --*v7; /*0x691e99*/
   LABEL_17:
-                v6 = *(unsigned int *)&stru_A8EB00[204]; /*0x691ea5*/
+                v6 = *(unsigned int *)&(&stru_A8EB00)[204]; /*0x691ea5*/
                 goto LABEL_18; /*0x691ea5*/
               }
               if ( *v7 == v4 ) /*0x691e9d*/
@@ -3306,7 +3306,7 @@ int TriggerClass::Construct(int a2) {
     *(unsigned int *)(this + 40) = 0; /*0x725fb2*/
     *(unsigned int *)(this + 44) = 0; /*0x725fb5*/
     *(unsigned char *)(this + 48) = 0; /*0x725fb8*/
-    v3 = *(unsigned int *)&stru_A8EB00[416]; /*0x725fbb*/
+    v3 = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x725fbb*/
     *(unsigned int *)(this + 60) = 0; /*0x725fc1*/
     *(unsigned int *)(this + 52) = v3; /*0x725fc4*/
     *(unsigned int *)(this + 64) = 0; /*0x725fc7*/

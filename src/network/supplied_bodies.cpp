@@ -1011,7 +1011,7 @@ void ModemGuest::InitDialog() {
     if ( v43 ) /*0x5b55b3*/
       SendMessageA(v43, 0xF1u, byte_A8B31D == 1, 0); /*0x5b55cc*/
     Debug::Log(); /*0x5b55e7*/
-    NetworkBuffer::GetField((NetworkBuffer *)&stru_A8EB00[252]); /*0x5b55f4*/
+    NetworkBuffer::GetField((NetworkBuffer *)&(&stru_A8EB00)[252]); /*0x5b55f4*/
     v44 = g_UIControlState; /*0x5b55f9*/
     if ( g_UIControlState ) /*0x5b5601*/
     {
@@ -1219,7 +1219,7 @@ char ModemGame::ProcessPacket() {
       {
         case 'e': /*0x5b611a*/
           Debug::Log(); /*0x5b6208*/
-          updated = NetworkBuffer::UpdateWindow((NetworkBuffer *)&stru_A8EB00[252], v46, v47); /*0x5b621f*/
+          updated = NetworkBuffer::UpdateWindow((NetworkBuffer *)&(&stru_A8EB00)[252], v46, v47); /*0x5b621f*/
           if ( !updated ) /*0x5b6226*/
           {
             v41 = asc_82083C; /*0x5b623c*/
@@ -1808,12 +1808,12 @@ void ModemHost::InitDialog() {
     if ( v46 ) /*0x5b8a93*/
       SendMessageA(v46, 0xF1u, stru_A8B250.__pad_0[28] == 1, 0); /*0x5b8aac*/
     Debug::Log(); /*0x5b8ac7*/
-    NetworkBuffer::GetField((NetworkBuffer *)&stru_A8EB00[252]); /*0x5b8ad4*/
+    NetworkBuffer::GetField((NetworkBuffer *)&(&stru_A8EB00)[252]); /*0x5b8ad4*/
     v47 = Random::Range(&Randomizer_Global, 1, 0x7FFF); /*0x5b8ae5*/
     srand(v47); /*0x5b8aeb*/
     v48 = rand(); /*0x5b8af3*/
     v49 = g_UIControlState; /*0x5b8b04*/
-    *(unsigned int *)&stru_A8EB00[432] = v48; /*0x5b8b0a*/
+    *(unsigned int *)&(&stru_A8EB00)[432] = v48; /*0x5b8b0a*/
     dword_A8E960[0] = dword_A8E960[0] & 0xFFFFFFEF /*0x5b8b22*/
                     | (16 * (*(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5298) & 1));
     if ( g_UIControlState ) /*0x5b8b27*/
@@ -2025,7 +2025,7 @@ char ModemGuest::ProcessPacket(char a2) {
         {
           case 'e': /*0x5ba16d*/
             Debug::Log(); /*0x5ba268*/
-            updated = NetworkBuffer::UpdateWindow((NetworkBuffer *)&stru_A8EB00[252], v43, v44); /*0x5ba27f*/
+            updated = NetworkBuffer::UpdateWindow((NetworkBuffer *)&(&stru_A8EB00)[252], v43, v44); /*0x5ba27f*/
             if ( updated ) /*0x5ba286*/
             {
               if ( updated == -1 ) /*0x5ba2de*/
@@ -2350,7 +2350,7 @@ char ModemHost::StartGame(char a2) {
         IDA_BYTE1(v25) = IDA_BYTE1(dword_A8E960[0]) & 0x77; /*0x5bb1fc*/
         v26 = v25 | ((byte_A8B31D & 1 | (16 * (stru_A8B250.__pad_0[16] & 1))) << 11); /*0x5bb202*/
         IDA_LOBYTE(v26) = IDA_LOBYTE(dword_A8E960[0]) | 0xC0; /*0x5bb209*/
-        *(unsigned int *)&stru_A8EB00[416] = 0; /*0x5bb20c*/
+        *(unsigned int *)&(&stru_A8EB00)[416] = 0; /*0x5bb20c*/
         dword_A8B24C = 2; /*0x5bb212*/
         dword_A8E960[0] = v26; /*0x5bb21c*/
         vtable0 = dword_A8B230->vtable0; /*0x5bb222*/
