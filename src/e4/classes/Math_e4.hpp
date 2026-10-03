@@ -93,10 +93,10 @@ static int CalcAngle(...);  // C2597 interim stub
     static double RoundToInt(...);  // C2597/C2039 interim stub
 static int Sqrt(...);  // C2597/C2039 interim stub
     static double Cos(...);  // C2597/C2039 interim stub
-    double ArcTan(double a1);  // interim stub
+    static double ArcTan(double a1);  // G42.33 b9 static-form (Math::ArcTan static call sites)
     static double Dist2D(...);  // interim stub
      // dup: double DistSq2D(...);  // interim stub
     int Hypotenuse2D(void *a1_1);  // interim stub
-    int Sin(double a1);  // interim stub
+    static int Sin(double a1);  // G42.33 b9 static-form (Math::Sin static call sites)
 };
 } // namespace gamemd

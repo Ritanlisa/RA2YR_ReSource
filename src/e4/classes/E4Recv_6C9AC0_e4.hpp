@@ -37,6 +37,6 @@ struct E4Recv_6C9AC0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    unsigned int * sub_6C9AC0();  // 0x6C9AC0
+    void * sub_6C9AC0();  // 0x6C9AC0 G42.33 b9 return void* (truth)
 };
 } // namespace gamemd

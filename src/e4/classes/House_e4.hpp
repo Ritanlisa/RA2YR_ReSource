@@ -13,6 +13,7 @@ struct ParticleSystemClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct TimerStruct;  // fix_fwd_type_supply
 struct House {
+    unsigned char __pad_2B0[0x1A0];  // G42.33 b4 C2: flat-carrier vocab ([120] fn-ptr 槽覆盖 0x2B0..0x450)
 // --- flat members (BEGIN) ---
     HouseClass* q000;  // 0x0
     unsigned char House_field_0x2[3];  // 0x2

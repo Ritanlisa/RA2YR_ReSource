@@ -372,22 +372,22 @@ public:
     virtual int ReturnToBaseAndReload();   // 0x4158E0
     virtual int ScatterFromThreat();  // 0x415960
     virtual int ExecuteMissionCommand();  // 0x417CA0
-    virtual int FindNearbyBuildCell();  // 0x4195A0
-    virtual int FindClosestPlacementCell();  // 0x41A160
-    virtual int GetTurretFacing() const;  // 0x41A570
-    virtual void ComputeTeamAttackPriority();  // 0x41B6A0
-    virtual int GetAutoFireDirection() const;  // 0x41B760
+    virtual int FindNearbyBuildCell(int a2, int16_t *a3);  // 0x4195A0 (G42.33 b4 W7: 体签名同步)
+    virtual void * FindClosestPlacementCell();  // 0x41A160 (G42.33 b4 W7: 体签名同步)
+    virtual unsigned int * GetTurretFacing(unsigned int *a2);  // 0x41A570 (G42.33 b4 W7: 体签名同步)
+    virtual int ComputeTeamAttackPriority();  // 0x41B6A0 (G42.33 b4 W7: 体签名同步)
+    virtual int GetAutoFireDirection();  // 0x41B760 (G42.33 b4 W7: 体签名同步 const 撤除)
     virtual int sub_41B7D0();
-    virtual bool HasOnlyOneGarrisonSlot() const;  // 0x41B7F0
+    virtual unsigned int * HasOnlyOneGarrisonSlot();  // 0x41B7F0 (G42.33 b4 W7: 体签名同步)
     virtual int sub_41B840();
     virtual int sub_41B860();
     virtual int sub_41B9E0();
     virtual bool CreateWarheadDamageEffect();  // 0x41BC30
     // wrapper: delegates to TechnoClass::CreateWarheadDamageEffect at 0x41BC30
     virtual void sub_41BEF0();
-    virtual void vt_entry_428();  // 0x41BFE0
+    virtual int vt_entry_428();  // 0x41BFE0 (G42.33 b4 W7: 体签名同步)
     virtual int vt_entry_434();  // 0x41BFF0
-    virtual int GetBodyFacing() const;  // 0x41C1E0
+    virtual unsigned int * GetBodyFacing(unsigned int *a2);  // 0x41C1E0 (G42.33 b4 W7c: 体签名同步)
     virtual int sub_41C640();
     virtual int sub_41C650();
     virtual int sub_41C660();
@@ -397,8 +397,8 @@ public:
     virtual int ApplyDamageEffects(); // 0x438720
     // wrapper: delegates to TechnoClass::ApplyDamageEffects at 0x438720
     virtual int sub_5439080();
-    virtual int RemoveFromDynamicVector();  // 0x4390D0
-    virtual void ComputeTargetAngle();  // 0x43E940
+    virtual int RemoveFromDynamicVector(char a2);  // 0x4390D0 (G42.33 b4 W7c: 体签名同步)
+    virtual int ComputeTargetAngle();  // 0x43E940 (G42.33 b4 W7c: 体签名同步)
     virtual int StartOrResumeProduction();  // 0x44D6A0
     virtual int GetTurretScreenPos() const;  // 0x453A70
     virtual void ProcessMissionDeploy();  // 0x456F80

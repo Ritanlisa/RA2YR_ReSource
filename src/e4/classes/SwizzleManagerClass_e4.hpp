@@ -26,6 +26,7 @@ struct SwizzleManagerClass {
     int Release(int a1);
     int Remove(int a1, int a2, int a3);
     static double Here_I_Am(...);  // C2597 interim stub
-};
+    static void Register(void);  // 0x6CF0F0 G42.33 b12 static-form (atexit target)
+    };
 
 } // namespace gamemd

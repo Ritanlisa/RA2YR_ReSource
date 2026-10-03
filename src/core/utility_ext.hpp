@@ -458,6 +458,7 @@ public:
 // ============================================================================
 class Selection
 {
+
 public:
     // IDA 0x724BD0 area
     int SetCurrent(ObjectClass* obj);  // 0x731D00
@@ -1078,7 +1079,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Flag() = default;
 
-    virtual void CheckNone(); // 0x4A51D0
+    virtual int CheckNone(); // 0x4A51D0 (G42.33 b4 C1: 体签名 int)
     virtual void IsZero(); // 0x4F4CA0
     virtual void IsNot2(); // 0x5176B0
 
@@ -1313,7 +1314,7 @@ public:
     char FindNearestWaypoint(int a2, int a3, int a4);  // 0x430F70 G42.33 b3 supplied-body sync (3 参形)
     virtual int ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6);  // 0x4AB9B0 G42.33 b3 体签名
     virtual void CheckHumanPlayer(); // 0x4AC2B0
-    virtual void SetTargetOrClear(); // 0x4C6650
+    virtual char * SetTargetOrClear(int a2, int a3, int16_t *a4); // 0x4C6650 (G42.33 b4 C2: 体签名)
     virtual void AssignPlayerIndex_0(); // 0x5C5D30
     // +7 more virtual methods
 
@@ -1328,6 +1329,15 @@ public:
     uint8_t PlayerClass_field_0x24[4];
     uint8_t PlayerClass_field_0x28[4];
     uint8_t PlayerClass_field_0x2C[4];
+    // G42.33 b4 C1: flat-carrier vocab (ExecuteCommand 体表槽位, 0x41E/0x1198..0x11D0)
+    unsigned char __pad_41E[0xD6A];  // G42.33 b4 C3: 扩容 ([3426] 站点)
+    unsigned char __pad_1198[0x11A8 - 0x1198];
+    unsigned int DisplayClass_field_0x11A8;
+    unsigned int __pad_11AC;
+    unsigned char __pad_1194[0x1198 - 0x1194];  // G42.33 b4 C4: vocab
+    unsigned char __pad_11B4[0x11D0 - 0x11B4];
+    void (__thiscall **DisplayClass_field_0x0)(void *, unsigned int, int);  // G42.33 b4 C3: vt 槽词汇
+    unsigned int DisplayClass_field_0x11D0;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool HasPlayers();  // 0x6ABAC0
     int ProcessOccupancyUpdate(void* a1);  // 0x6D9FF0

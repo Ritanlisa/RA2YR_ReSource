@@ -75,8 +75,8 @@ extern unsigned char byte_7F09A4;
 extern unsigned char byte_7F2A40;
 extern unsigned char byte_7F4194;
 extern unsigned char byte_7F7930;
-extern unsigned char byte_7F97CC;
-extern unsigned char byte_7F97EC;
+extern unsigned char byte_7F97CC[];  // G42.33 b16 array (hex table 0x7ce2f5)
+extern unsigned char byte_7F97EC[];  // G42.33 b16 array (hex table 0x7ce30a)
 extern unsigned char byte_7F98E4;
 extern unsigned char byte_7F9948;
 extern unsigned char byte_7F995F;
@@ -982,7 +982,7 @@ extern unsigned char byte_B785C0;
 extern unsigned char byte_B78600;
 extern unsigned char byte_B78620;
 extern unsigned char byte_B78860;
-extern unsigned char byte_B78961;
+extern unsigned char byte_B78961[];  // G42.33 b9: _mbcs table (byte-indexed, IDA 0x7cb6d7/0x7cbbb7/0x7d3575)
 extern double dbl_7E1708;
 extern double dbl_7E1710;
 extern double dbl_7E1718;
@@ -3407,7 +3407,7 @@ extern unsigned int dword_84066C;
 extern unsigned int dword_841F34;
 extern unsigned int dword_841F38;
 extern unsigned int dword_841F3C;
-extern unsigned int dword_8421DC;
+extern unsigned int dword_8421DC[];  // G42.33 b9: array (dword_8421DC[edi*8], IDA 0x6ca71a)
 extern unsigned int dword_8427CC;
 extern unsigned int dword_8428EC;
 extern unsigned int dword_84291C;
@@ -10440,7 +10440,7 @@ extern unsigned int dword_B78200;
 extern unsigned int dword_B78204;
 extern unsigned int dword_B78228;
 extern unsigned int dword_B78230;
-extern unsigned int dword_B78298;
+extern unsigned int dword_B78298[];  // G42.33 b16 array (locale table 0x7cdec6)
 extern unsigned int dword_B782A0;
 extern unsigned int dword_B782A4;
 extern unsigned int dword_B782A8;
@@ -10493,7 +10493,7 @@ extern unsigned int dword_B7860C;
 extern unsigned int dword_B78840;
 extern unsigned int dword_B7885C;
 extern unsigned int dword_B78A64;
-extern unsigned int dword_B78A80;
+extern unsigned int dword_B78A80[];  // G42.33 b9: ptr table (dword_B78A80[v4>>5], IDA 0x7cb3c8)
 extern unsigned int dword_B78B84;
 extern unsigned int dword_B78B88;
 extern unsigned int dword_B78B8C;

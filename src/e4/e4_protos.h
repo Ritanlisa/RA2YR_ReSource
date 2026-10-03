@@ -335,7 +335,7 @@ extern BitFont * * DrawHUD(void *a1 = 0);
 extern BuildingClass * ToCoordPixel(unsigned int * a1, unsigned int * a2);
 extern CCINIClass * UI_Load_72F4A0();
 extern CCINIClass * UI_Load_72F4E0();
-extern CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2);
+extern int BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2);  // G42.33 b9: DlgProc LRESULT truth (call 0x6c900c)
 extern CampaignScore * * DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, ObjectClass * aP3, unsigned int * a4, int ecx0, signed int * a6, int a8, int a9, int a10, int a11);
 extern CampaignScore * FormatWideString(wchar_t ** a1, const wchar_t * a2);
 extern Coord * * AssignWOLPlayerSide(const char ** a1, int a2);

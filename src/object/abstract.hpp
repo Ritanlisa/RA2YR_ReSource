@@ -192,6 +192,7 @@ protected:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* IsTechno();  // 0x40DD20
     void* IsTechnoType();  // 0x40DD70
+    static void* IsTechnoType(AbstractClass* a2);  // (G42.33 b4 W7c: 静态形 supplied 调用同步)
     void* Constructor();  // 0x410170
     void* InitVtables(int a1);  // 0x4101C0
     int COMStub_AddRef();  // 0x410300

@@ -107,7 +107,7 @@ public:
 
     // === Phase 3 generated declarations (IDA functions.json) ===
     virtual int MissionMoveCarryallLand();  // 0x416AF0
-    virtual void vt_entry_4F8();  // 0x41C080
+    virtual char vt_entry_4F8();  // 0x41C080 (G42.33 b4 W7: 体签名同步)
     virtual int Destru_vt323();  // 0x41C090
     virtual void vt_entry_514();  // 0x41C0F0
     virtual bool StubReturnFalse();  // 0x41c100

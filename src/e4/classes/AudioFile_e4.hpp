@@ -5,6 +5,7 @@ namespace gamemd {
 
 struct AudioFile {
     int GetCallback();
-};
+    static void Stop(void * aP0);  // G42.33 b9 static-form (call site 0x6c9079)
+    };
 
 } // namespace gamemd

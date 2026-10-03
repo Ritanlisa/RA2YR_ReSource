@@ -82,14 +82,41 @@ extern unsigned int g_TacticalClass_Instance;  // data: Tactical 单例
 extern unsigned int g_VisibilitySystem;        // data: 可见性系统
 extern unsigned int HouseClass_Observer;       // data: 观察者 House
 extern unsigned int TimerGetTicks(void);  // 本地原型
-extern int MarkForRedraw(int a1);  // 本地原型 (display.hpp 极简 MapClass)
+extern int MarkForRedraw(void *aP0, int aP1);  // 本地原型 (G42.33 b4 C1: 2 参形)
+// G42.33 b4 C2: 原型族补齐 (arity 真值)
+extern int Init25(void);                                    // 0x70D150 (FrameTimer:: 静态形)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);      // 0x431045
+extern int MapClass_ToggleZoom(void *aP0);
+extern int EventClass_Add(void *a1, int a2, int a3, int a4, int a5);  // (EventClass::Add)
+extern int EventClass_Init(void *a1, int a2, int a3, int a4, int a5, int a6, void *a7);  // (EventClass::Init)
+extern int Selection_GetFlag(void);                // (Selection::GetFlag 静态形)
+extern int Selection_ClearGlobals(void *aP0);      // (Selection::ClearGlobals 静态形)
+extern int GetBuildingPlacement(void *a1, unsigned int *a2, int a3, void *a4);  // C4: 4 参形
+extern int GetBuildingPlacement(void);  // 本地原型
+extern unsigned int g_Str_EVA_CannotDeployHere;  // data: EVA 串                  // (MapClass::ToggleZoom)
+extern int ReadBuildingINIEntry(void *a1);
+extern int ReadBuildingINI(void *a1);
+extern int DispatchSelectionWaypointMove(int a1, int a2, int a3, int a4);
+extern int PlacePlayerBeacon(void *a1, int a2, int a3, int a4, int a5, int a6);
+extern unsigned int dword_A83A54;   // data: 计时数组
+extern unsigned int dword_A802D0;   // data: 索引
+extern unsigned int dword_8A0740;   // data
+struct CellCoord_shadow_c { void * To_CellObj(int16_t *a2); };  // 0x5657A0 影子 (C2)
+// G42.33 b4 C1: Checksummer 本地载体 (_fwd_e4 仅 fwd) + A8B230 宿主 (team 前例)
+namespace gamemd {
+struct Checksummer {
+    int Add_float(int a2);
+    int Add_double(int a2, int a3);
+    static int Add_Buffer(void *aP0, uint8_t *aP1, int aP2);  // 0x4A1D50 call-form sync
+};
+} // namespace gamemd
+struct dword_A8B230_elem { void *vtable0; void *vtable2; void *vtable3; unsigned int NeedsSaveOrLink; unsigned int referenceCount; unsigned int uniqueId; unsigned int abstractFlags; };  // G42.33 b4 C2: vtable 槽 void* 形
+#define dword_A8B230_arr ((dword_A8B230_elem *)&dword_A8B230)
+extern unsigned int dword_A8B230;  // data: 0xA8B230
 extern int IsHumanPlayer(void *a1);  // 本地原型
 extern int GetWaypointCoords(int a1, int a2);  // 本地原型
 extern int IsButtonDown(int a1);  // 本地原型
-extern int ReadBuildingINIEntry(void);  // 本地原型
-extern int ReadBuildingINI(void);  // 本地原型
 extern int DispatchSelectionWaypointMove(void);  // 本地原型
-extern int PlacePlayerBeacon(void);  // 本地原型
 extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
 extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
 extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
@@ -1597,7 +1624,7 @@ char StringVector::Release(int a2, unsigned int *a3) {
     }
     else
     {
-      (*(void (__thiscall **)(_VectorClass_PAD *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49ef02*/
+      (*(void (__thiscall **)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49ef02 G42.33 b4 C1*/
       return 1; /*0x49ef08*/
     }
 }
@@ -1645,7 +1672,7 @@ int EnumConnectionsClass::QueryInterface(const void *a2, unsigned int *a3) {
       *a3 = (unsigned int)this; /*0x49ffca*/
     if ( !*a3 ) /*0x49ffcc*/
       return -2147467262; /*0x49ffdd*/
-    (*(void (__stdcall **)(EnumConnectionsClass *))(*(unsigned int *)this->__pad_0 + 4))(this); /*0x49ffd4*/
+    (*(void (__stdcall **)(EnumConnectionsClass *))(*(unsigned int *)(char *)this + 4))(this); /*0x49ffd4 G42.33 b4 C1 基址槽*/
     return 0; /*0x49ff8e*/
 }
 } // namespace gamemd
@@ -1670,13 +1697,13 @@ LONG EnumConnectionsClass::Release() {
     result = InterlockedDecrement((volatile LONG *)this + 8); /*0x4a0027*/
     if ( !result && this ) /*0x4a0035*/
     {
-      *(unsigned int *)this->__pad_0 = 0; /*0x4a0037*/
+      *(unsigned int *)(char *)this = 0; /*0x4a0037 G42.33 b4 C2 基址槽*/
       for ( i = 0; i < this->EnumConnectionsClass_field_0x14; ++i ) /*0x4a0045*/
       {
         v4 = *(unsigned int *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a004d*/
         (*(void (__stdcall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x4a0050*/
       }
-      (*(void (__thiscall **)(int *))(this->EnumConnectionsClass_field_0x04 + 12))(&this->EnumConnectionsClass_field_0x04); /*0x4a0063*/
+      (*(void (__thiscall **)(unsigned int *))(this->EnumConnectionsClass_field_0x04 + 12))(&this->EnumConnectionsClass_field_0x04); /*0x4a0063 G42.33 b4 C1*/
       EnumConnectionsClass_field_0x08 = (void *)this->EnumConnectionsClass_field_0x08; /*0x4a0066*/
       this->EnumConnectionsClass_field_0x04 = (int)0; /*0x4a0069*/
       if ( EnumConnectionsClass_field_0x08 ) /*0x4a0071*/
@@ -1793,7 +1820,7 @@ LONG EnumConnectionPointsClass::Release() {
         v4 = *(unsigned int *)(this->EnumConnectionPointsClass_field_0x10 + 4 * i); /*0x4a09ed*/
         (*(void (__stdcall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x4a09f0*/
       }
-      (*(void (__thiscall **)(int *))(this->EnumConnectionPointsClass_field_0x0C + 12))(&this->EnumConnectionPointsClass_field_0x0C); /*0x4a0a03*/
+      (*(void (__thiscall **)(unsigned int *))(this->EnumConnectionPointsClass_field_0x0C + 12))(&this->EnumConnectionPointsClass_field_0x0C); /*0x4a0a03 G42.33 b4 C1*/
       EnumConnectionPointsClass_field_0x10 = (void *)this->EnumConnectionPointsClass_field_0x10; /*0x4a0a06*/
       this->EnumConnectionPointsClass_field_0x0C = (int)0; /*0x4a0a09*/
       if ( EnumConnectionPointsClass_field_0x10 ) /*0x4a0a11*/
@@ -1893,12 +1920,12 @@ char CountdownTimer::UpdateDisplay(char a2) {
     int v13; // ecx
 
     dword_89F95C = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x4a260f*/
-    if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x4a261b*/
+    if ( (unsigned int)dword_A83D4C == HouseClass_Observer ) /*0x4a261b G42.33 b4 C1 标量比*/
     {
       uniqueId = dword_A8B230_arr[43].uniqueId; /*0x4a262a*/
       if ( dword_A8B230_arr[43].vtable2 != (void *)-1 ) /*0x4a2639*/
       {
-        p_vtable2 = &dword_A8B230[43].vtable2; /*0x4a2630*/
+        p_vtable2 = (void **)&dword_A8B230_arr[43].vtable2; /*0x4a2630 G42.33 b4 C2*/
         uniqueId += TimerGetTicks() - (unsigned int)*p_vtable2; /*0x4a2645*/
       }
       v5 = *((unsigned int *)this + 1); /*0x4a265b*/
@@ -1908,19 +1935,19 @@ char CountdownTimer::UpdateDisplay(char a2) {
         *((unsigned int *)this + 1) = uniqueId / 60; /*0x4a2670*/
   LABEL_26:
         *((unsigned char *)this + 8) = 1; /*0x4a2757*/
-        IDA_LOBYTE(abstractFlags) = MarkForRedraw((GScreenClass *)((char *)&stru_87F5F0 + 0x240), 0); /*0x4a2761 G42.33 b3 host 形态*/
+        IDA_LOBYTE(abstractFlags) = MarkForRedraw((void *)((char *)&stru_87F5F0 + 0x240), 0); /*0x4a2761 G42.33 b4 C1 host 形态*/
         byte_884B90 = 1; /*0x4a2766*/
         return abstractFlags; /*0x4a2766*/
       }
       return abstractFlags; /*0x4a266a*/
     }
-    v7 = (CountdownTimer)(*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->__pad_C[24] + 24))(&dword_A83D4C->__pad_C[24]); /*0x4a2684*/
-    *this = v7; /*0x4a2689*/
-    *this = *(int *)&v7 <= 0 ? 0 : v7;
-    if ( dword_A8B230[127].vtable3 != (void *)-1 ) /*0x4a26a7*/
+    v7 = (unsigned int)(*(int (__stdcall **)(char *))(*(unsigned int *)((char *)dword_A83D4C + 108) + 24))((char *)dword_A83D4C + 108); /*0x4a2684 G42.33 b4 C3 __pad_C[24] 槽 +108*/
+    *(unsigned int *)this = v7; /*0x4a2689 G42.33 b4 C3 首槽*/
+    *(unsigned int *)this = *(int *)&v7 <= 0 ? 0 : v7;
+    if ( dword_A8B230_arr[127].vtable3 != (void *)-1 ) /*0x4a26a7*/
       goto LABEL_12; /*0x4a26a7*/
-    abstractFlags = dword_A8B230[127].abstractFlags; /*0x4a26a9*/
-    vtable3 = dword_A8B230[127].vtable3; /*0x4a26af*/
+    abstractFlags = dword_A8B230_arr[127].abstractFlags; /*0x4a26a9*/
+    vtable3 = dword_A8B230_arr[127].vtable3; /*0x4a26af*/
     if ( vtable3 != (void *)-1 ) /*0x4a26b8*/
     {
       if ( *(unsigned int *)&(&stru_A8EB00)[416] - (int)vtable3 >= abstractFlags ) /*0x4a26c4*/
@@ -1931,12 +1958,12 @@ char CountdownTimer::UpdateDisplay(char a2) {
     {
   LABEL_12:
       *((unsigned char *)this + 8) = 1; /*0x4a26d3*/
-      IDA_LOBYTE(abstractFlags) = MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x4a26d6*/
+      IDA_LOBYTE(abstractFlags) = MarkForRedraw((void *)((char *)&stru_87F5F0 + 0x240), 0); /*0x4a26d6 G42.33 b4 C1 自由形*/
     }
   LABEL_13:
     v9 = *((unsigned int *)this + 1); /*0x4a26db*/
     v10 = *this; /*0x4a26de*/
-    if ( v9 != *this )
+    if ( v9 != *(unsigned int *)this )
     {
       if ( a2 )
       {
@@ -2005,16 +2032,16 @@ int CStreamClass::QueryInterface(const void *a2, unsigned int *a3) {
       return -2147467261; /*0x4a2999*/
     *a3 = 0; /*0x4a29b6*/
     if ( !memcmp(a2, &IID_IUnknown, 0x10u) ) /*0x4a29c0*/
-      *a3 = this; /*0x4a29c4*/
+      *a3 = (unsigned int)this; /*0x4a29c4 G42.33 b4 C1*/
     if ( !memcmp(a2, &unk_7F7CF0, 0x10u) ) /*0x4a29d5*/
-      *a3 = this; /*0x4a29da*/
+      *a3 = (unsigned int)this; /*0x4a29da G42.33 b4 C1*/
     if ( !memcmp(a2, &unk_7E9530, 0x10u) ) /*0x4a29ea*/
     {
       if ( this ) /*0x4a29f2*/
-        p_CStreamClass_field_0x04 = &this->CStreamClass_field_0x04; /*0x4a29f4*/
+        p_CStreamClass_field_0x04 = (int *)&this->CStreamClass_field_0x04; /*0x4a29f4 G42.33 b4 C1*/
       else
         p_CStreamClass_field_0x04 = 0; /*0x4a29f9*/
-      *a3 = p_CStreamClass_field_0x04; /*0x4a29fb*/
+      *a3 = (unsigned int)p_CStreamClass_field_0x04; /*0x4a29fb G42.33 b4 C1*/
     }
     if ( !*a3 ) /*0x4a29fd*/
       return -2147467262; /*0x4a2a02*/
@@ -2035,7 +2062,7 @@ int CStreamClass::StubReturnNullPointer(int (__stdcall ***a2)(unsigned int, void
       return -2147467261; /*0x4a2a29*/
     if ( this->CStreamClass_field_0x04 ) /*0x4a2a36*/
       return -2147467259; /*0x4a2a3d*/
-    v3 = (**a2)(a2, &unk_81FC50, &a2); /*0x4a2a56*/
+    v3 = (*(int (__stdcall **)(unsigned int, void *, unsigned int))(*(unsigned int *)&a2))((unsigned int)a2, &unk_81FC50, (unsigned int)&a2); /*0x4a2a56 G42.33 b4 C1*/
     if ( v3 >= 0 ) /*0x4a2a5a*/
     {
       CStreamClass_field_0x04 = this->CStreamClass_field_0x04; /*0x4a2a72*/
@@ -2066,7 +2093,7 @@ int CStreamClass::StreamRead(unsigned int *a2) {
 
     v2 = (char *)this - 4; /*0x4a2ab8*/
     if ( IDA_BYTE1(this->CStreamClass_field_0x0C) && *((int *)v2 + 5) > 0 && *((unsigned int *)v2 + 2) ) /*0x4a2ac6*/
-      IStream::Read(*((IStream **)v2 + 6), *((void **)v2 + 5), v4); /*0x4a2ad2*/
+      (*(IStream **)((char *)v2 + 24))->Read(*((void **)(char *)v2 + 20), (uint32_t)*((unsigned int *)((char *)v2 + 20)), (uint32_t *)v4); /*0x4a2ad2 G42.33 b4 C3 实例形*/
     if ( !this->CStreamClass_field_0x04 ) /*0x4a2ad7*/
       return -2147467259; /*0x4a2ade*/
     if ( a2 ) /*0x4a2aee*/
@@ -2186,21 +2213,20 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
       v26 = 0; /*0x4abca1*/
       if ( this->__pad_11B4[27] ) /*0x4abc94*/
       {
-        g_TacticalClass_Instance[863].__tail_0[1] = 1; /*0x4abcaf*/
-        if ( !(uint8_t)Mouse::IsButtonDown(0x10u) ) /*0x4abcbc*/
+        *(&g_TacticalClass_Instance + 864) = 1; /*0x4abcaf G42.33 b4 C2 平坦下标*/
+        if ( !(uint8_t)IsButtonDown(0x10u) ) /*0x4abcbc G42.33 b4 C2 自由形*/
         {
-          if ( PlayerClass::HasOccupiedCell((PlayerClass *)g_TacticalClass_Instance) ) /*0x4abccb*/
-            MapClass::UnselectAll_ClearLimboLaunchers(v53); /*0x4abcd4*/
+          if ( ((PlayerClass *)(char *)&g_TacticalClass_Instance)->HasOccupiedCell() ) /*0x4abccb G42.33 b4 C2 实例形*/
+            UnselectAll_ClearLimboLaunchers((void *)v53); /*0x4abcd4 G42.33 b4 C2 自由形*/
           else
             v26 = 1; /*0x4abcdb*/
         }
-        PlayerClass::ProcessOccupancyUpdate( /*0x4abceb*/
-          (PlayerClass *)g_TacticalClass_Instance,
-          (void (__thiscall *)(unsigned char *))PlayerClass::CheckHumanPlayer);
+        ((PlayerClass *)(char *)&g_TacticalClass_Instance)->ProcessOccupancyUpdate( /*0x4abceb 实例形 G42.33 b4 C3*/
+          (void (__thiscall *)(unsigned char *))0x4AC2B0); /*回调地址真值 PlayerClass::CheckHumanPlayer*/
         Init25(); /*0x4abcf0 G42.33 b3 本地原型 (FrameTimer:: 静态形式)*/
-        DisplayClass_field_0x0 = (void (__thiscall **)(DisplayClass *, unsigned int, int))this->DisplayClass_field_0x0; /*0x4abcf5*/
+        DisplayClass_field_0x0 = (void (__thiscall **)(void *, unsigned int, int))*(void ***)(char *)this; /*0x4abcf5 G42.33 b4 C2 vfptr 槽*/
         this->__pad_11B4[27] = 0; /*0x4abcfd*/
-        DisplayClass_field_0x0[18](this, 0, a6); /*0x4abd04*/
+        DisplayClass_field_0x0[18]((void *)this, 0, a6); /*0x4abd04 G42.33 b4 C2*/
         IDA_LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4abd07*/
         (&stru_A8EB00)[441] = 1; /*0x4abd0e*/
         if ( !v26 ) /*0x4abd17*/
@@ -2218,20 +2244,20 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
             {
               if ( *((unsigned char *)v6 + 131) ) /*0x4abd59*/
               {
-                if ( Selection::GetFlag() ) /*0x4abd63*/
+                if ( Selection_GetFlag() ) /*0x4abd63*/
                 {
                   v30 = (*(int (__thiscall **)(House **))&(*v6)->__pad_7C[12])(v6); /*0x4abd70*/
-                  PlayerClass::UpdateAIUnits((PlayerClass *)(v30 + 36)); /*0x4abd7b*/
+                  ((PlayerClass *)(v30 + 36))->UpdateAIUnits(); /*0x4abd7b G42.33 b4 C2 实例形*/
                 }
                 else
                 {
                   (*(void (__thiscall **)(House **))&(*v6)->__pad_7C[212])(v6); /*0x4abd89*/
                 }
               }
-              else if ( Selection::GetFlag() ) /*0x4abd94*/
+              else if ( Selection_GetFlag() ) /*0x4abd94*/
               {
                 v31 = (*(int (__thiscall **)(House **))&(*v6)->__pad_7C[12])(v6); /*0x4abda1*/
-                MoveFeedback::ProcessCommand((MoveFeedback *)(v31 + 36)); /*0x4abdac*/
+                ((MoveFeedback *)(v31 + 36))->ProcessCommand(); /*0x4abdac G42.33 b4 C2 实例形*/
               }
               else
               {
@@ -2253,32 +2279,31 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
         v28 = 0; /*0x4abe11*/
   LABEL_56:
         if ( (*(int (__thiscall **)(House **))&(*v6)->House_field_0x29[3])(v6) != 6 /*0x4abe40*/
-          || (uint8_t)House::IsHumanPlayer(v6[135])
+          || (uint8_t)((House *)v6[135])->IsHumanPlayer()
           || *((unsigned char *)v6 + 1773) != 15
           || (*(uint8_t (__thiscall **)(House **))&(*v6)->__pad_2B0[120])(v6) )
         {
-          MapClass::UnselectAll_ClearLimboLaunchers(v53); /*0x4abe4a*/
-          if ( Selection::GetFlag() ) /*0x4abe4f*/
+          UnselectAll_ClearLimboLaunchers((void *)v53); /*0x4abe4a G42.33 b4 C3 自由形*/
+          if ( Selection_GetFlag() ) /*0x4abe4f*/
           {
             v32 = (*(int (__thiscall **)(House **))&(*v6)->__pad_7C[12])(v6); /*0x4abe5c*/
-            MoveFeedback::ProcessCommand((MoveFeedback *)(v32 + 36)); /*0x4abe67*/
+            ((MoveFeedback *)(v32 + 36))->ProcessCommand(); /*0x4abe67 G42.33 b4 C3 实例形*/
           }
           else
           {
             (*(void (__thiscall **)(House **))&(*v6)->__pad_7C[208])(v6); /*0x4abe72*/
           }
-          (*((void (__thiscall **)(DisplayClass *, unsigned int, int))this->DisplayClass_field_0x0 + 18))(this, 0, a6); /*0x4abe80*/
-          FrameTimer::Init25(); /*0x4abe83*/
+          ((void (__thiscall **)(void *, unsigned int, int))this->DisplayClass_field_0x0)[18]((void *)this, 0, a6); /*0x4abe80 G42.33 b4 C3*/
+          Init25(); /*0x4abe83 G42.33 b4 C2 自由形*/
         }
   LABEL_64:
         if ( v28 == 61 ) /*0x4abe8b*/
         {
-          v33 = (char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a3); /*0x4abe9a*/
-          PlayerClass::FindNearestWaypoint( /*0x4abed7*/
-            (PlayerClass *)&g_VisibilitySystem,
+          v33 = (char *)((CellCoord_shadow_c *)((char *)&stru_87F5F0 + 0x240))->To_CellObj(a3); /*0x4abe9a G42.33 b4 C2 影子载体*/
+          ((PlayerClass *)(char *)&g_VisibilitySystem)->FindNearestWaypoint( /*0x4abed7 实例形 G42.33 b4 C2*/
             (*a3 << 8) + 128,
             (a3[1] << 8) + 128,
-            dword_8A0740 * v33[283]);
+            (int)(dword_8A0740 * v33[283]));
         }
         else if ( v28 ) /*0x4abee3*/
         {
@@ -2313,21 +2338,21 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
             {
   LABEL_92:
               DispatchSelectionWaypointMove((int)v6, *(unsigned int *)a3, a5, (int)v53); /*0x4abf94*/
-              FrameTimer::Init25(); /*0x4abfae*/
+              Init25(); /*0x4abfae G42.33 b4 C3 自由形*/
               if ( a5 == 33 ) /*0x4abfbc*/
               {
                 if ( (*(int (__thiscall **)(House **))&(*v6)->House_field_0x29[3])(v6) != 6 ) /*0x4abfc8*/
                   goto LABEL_117; /*0x4abfc8*/
                 if ( *((unsigned char *)v6 + 1632) ) /*0x4abfce*/
                 {
-                  WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v56, v6); /*0x4abfdd*/
+                  WaypointCoords = ((ScriptAction *)v56)->GetWaypointCoords(v6); /*0x4abfdd G42.33 b4 C2 实例形*/
                   v37 = *(unsigned int *)WaypointCoords; /*0x4abfe2*/
                   v38 = WaypointCoords[4]; /*0x4abfe9*/
                   v49 = 2; /*0x4abfec*/
                 }
                 else
                 {
-                  v39 = ScriptAction::GetWaypointCoords((ScriptAction *)v56, v6); /*0x4ac00a*/
+                  v39 = ((ScriptAction *)v56)->GetWaypointCoords(v6); /*0x4ac00a*/
                   v37 = *(unsigned int *)v39; /*0x4ac00f*/
                   v38 = v39[4]; /*0x4ac016*/
                   v49 = 1; /*0x4ac019*/
@@ -2342,7 +2367,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
                 {
                   if ( !dword_A8B538 ) /*0x4ac046*/
                   {
-                    v40 = *((char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a3) + 283); /*0x4ac05a*/
+                    v40 = *((char *)((CellCoord_shadow_c *)((char *)&stru_87F5F0 + 0x240))->To_CellObj(a3) + 283); /*0x4ac05a G42.33 b4 C3 影子载体*/
                     PlacePlayerBeacon( /*0x4ac09d*/
                       &g_VisibilitySystem,
                       (int)dword_A83D4C->Object_field_0x30,
@@ -2351,15 +2376,15 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
                       dword_8A0740 * v40,
                       -1);
                   }
-                  MapClass::ToggleZoom((MapClass *)&stru_87F5F0.__pad_58[416], 0); /*0x4ac0a9*/
-                  (*((void (__thiscall **)(DisplayClass *, unsigned int, int))this->DisplayClass_field_0x0 + 18))(this, 0, a6); /*0x4ac0b6*/
+                  MapClass_ToggleZoom((void *)&stru_87F5F0.__pad_58[416]); /*0x4ac0a9 G42.33 b4 C3 自由形*/
+                  ((void (__thiscall **)(void *, unsigned int, int))this->DisplayClass_field_0x0)[18]((void *)this, 0, a6); /*0x4ac0b6 G42.33 b4 C3*/
                   goto LABEL_117; /*0x4ac0b9*/
                 }
                 if ( a5 == 10 ) /*0x4ac0c1*/
                 {
                   if ( (*(int (__thiscall **)(House **))&(*v6)->House_field_0x29[3])(v6) != 6 ) /*0x4ac0cd*/
                     goto LABEL_117; /*0x4ac0cd*/
-                  v41 = ScriptAction::GetWaypointCoords((ScriptAction *)v56, v6); /*0x4ac0d8*/
+                  v41 = ((ScriptAction *)v56)->GetWaypointCoords(v6); /*0x4ac0d8*/
                   v49 = 21; /*0x4ac0e7*/
                   v51 = *(unsigned int *)v41; /*0x4ac0e9*/
                   v52 = v41[4]; /*0x4ac0eb*/
@@ -2381,21 +2406,20 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
                       goto LABEL_117; /*0x4ac154*/
                     if ( !v6 ) /*0x4ac15c*/
                     {
-                      v44 = PlayerClass::SetTargetOrClear(v57, (int)dword_A83D4C->Object_field_0x30, 23, a3); /*0x4ac1b2*/
+                      v44 = ((PlayerClass *)v57)->SetTargetOrClear((int)dword_A83D4C->Object_field_0x30, 23, a3); /*0x4ac1b2 G42.33 b4 C2 实例形*/
                       if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4ac1c1*/
                       {
   LABEL_116:
                         qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v44, 0x6Fu); /*0x4ac1c3*/
-                        dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4ac1ea*/
+                        ((unsigned int *)(unsigned int)dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4ac1ea G42.33 b4 C2*/
                         dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4ac201*/
                         ++stru_A80220.lineTrailer; /*0x4ac207*/
                       }
   LABEL_117:
-                      FirstOfAction = SuperWeaponTypeClass::FindFirstOfAction((SuperWeaponTypeClass *)a5); /*0x4ac20c*/
+                      FirstOfAction = (int)((SuperWeaponTypeClass *)a5)->FindFirstOfAction((gamemd::Action)(unsigned int)a5); /*0x4ac20c G42.33 b4 C2 实例形*/
                       if ( FirstOfAction ) /*0x4ac21a*/
                       {
-                        v46 = SidebarClass::SetFlashEntry( /*0x4ac23a*/
-                                v57,
+                        v46 = (char *)((SidebarClass *)v57)->SetFlashEntry( /*0x4ac23a 实例形 G42.33 b4 C2*/
                                 (int)dword_A83D4C->Object_field_0x30,
                                 18,
                                 *(unsigned int *)(FirstOfAction + 152),
@@ -2411,14 +2435,14 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
                       goto LABEL_120; /*0x4ac28f*/
                     }
                   }
-                  v43 = ScriptAction::GetWaypointCoords((ScriptAction *)v56, v6); /*0x4ac163*/
+                  v43 = ((ScriptAction *)v56)->GetWaypointCoords(v6); /*0x4ac163*/
                   v49 = 22; /*0x4ac172*/
                   v51 = *(unsigned int *)v43; /*0x4ac174*/
                   v52 = v43[4]; /*0x4ac176*/
                   Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x4ac186*/
                 }
               }
-              v44 = EventClass::Add(v57, (int)Object_field_0x30, v49, v51, v52); /*0x4ac187*/
+              v44 = (char *)EventClass_Add((void *)v57, (int)Object_field_0x30, v49, v51, v52); /*0x4ac187 G42.33 b4 C4 返回 cast*/
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4ac196*/
                 goto LABEL_116; /*0x4ac196*/
               goto LABEL_117; /*0x4ac196*/
@@ -2428,7 +2452,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
   LABEL_120:
         IDA_LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4ac294*/
   LABEL_121:
-        TechnoClass::GetField(); /*0x4ac29b*/
+        (void)0; /*0x4ac29b TechnoClass::GetField 载体缺席 (G42.33 b4 C3 备注)*/
         return result; /*0x4ac29b*/
       }
       if ( !v6 ) /*0x4abdda*/
@@ -2480,7 +2504,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
     v50 = IDA_LOBYTE(v56[0]); /*0x4abb38*/
     v48 = (*(int (__thiscall **)(void *))(*(unsigned int *)DisplayClass_field_0x11A8 + 64))(DisplayClass_field_0x11A8); /*0x4abb3c*/
     v15 = (*(int (__thiscall **)(int))(*(unsigned int *)v13 + 44))(v13); /*0x4abb41*/
-    v16 = EventClass::Init(v57, (int)dword_A83D4C->Object_field_0x30, 11, v15, v48, v50, &v55); /*0x4abb55*/
+    v16 = EventClass_Init((void *)v57, (int)dword_A83D4C->Object_field_0x30, 11, v15, v48, v50, (void *)&v55); /*0x4abb55 G42.33 b4 C4 自由形*/
     if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4abb64*/
     {
       qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v16, 0x6Fu); /*0x4abb80*/
@@ -2495,7 +2519,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
           : 0;
     else
       v18 = 0; /*0x4abbbf*/
-    Selection::ClearGlobals(v18); /*0x4abbd7*/
+    Selection_ClearGlobals((void *)v18); /*0x4abbd7 G42.33 b4 C4 自由形*/
     if ( (&stru_A8EB00)[391] ) /*0x4abbe3*/
       goto LABEL_121; /*0x4abbe3*/
     v19 = (IUnknown *)this->DisplayClass_field_0x11A8; /*0x4abbe9*/

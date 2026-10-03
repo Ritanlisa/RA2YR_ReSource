@@ -25,7 +25,8 @@ struct AudioController {
     int AdvanceQueue();  // 0x4022c0
     unsigned int * Stop();  // 0x405d40
     int * Constructor();  // 0x402040
-};
+    static void Init(void * aP0);  // G42.33 b9 static-form (call site 0x6c90a2)
+    };
 #endif // GAMEMD_TREE_UNIVERSE
 
 } // namespace gamemd

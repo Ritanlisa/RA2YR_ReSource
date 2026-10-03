@@ -1335,7 +1335,7 @@ extern int g_NetworkSetupConfig;  // data: 0xAC0260
 extern int g_NetworkTestFlag;  // data: 0xAC1344
 extern int g_ObjectClass_Capacity;  // data: 0xA8EC54
 extern int g_ObjectClass_CurrentCount;  // data: 0xA8ECBC
-extern int g_ObjectTrackingPool;  // data: 0xB0CB78
+extern unsigned int g_ObjectTrackingPool[];  // data: 0xB0CB78 G42.33 b9 array (truth 0x6cfd95 pool[a2])
 extern int g_ObjectTypeConfig;  // data: 0xA83D90
 extern int g_ObjectTypeList;  // data: 0x8B4130
 extern int g_OverlayTypeConfig;  // data: 0xB077F8
@@ -1905,7 +1905,7 @@ extern int hDlg;  // data: 0xAC0D40
 extern int hEvent;  // data: 0xB73698
 extern int hFindFile;  // data: 0x81C8EC
 extern int hHandle;  // data: 0xAA03F8
-extern int hHeap;  // data: 0xB78B9C
+extern void *hHeap;  // data: 0xB78B9C G42.33 b18: HANDLE truth
 extern int himl;  // data: 0xB730A8
 extern int hLibModule;  // data: 0x89F974
 extern int hMutex;  // data: 0xB78168
@@ -15549,3 +15549,7 @@ extern int HouseClass_Count;  // data: 0xA80238
 // G42.33 b8 supply: score-screen strings (addr6C C2065)
 extern wchar_t a02d02d02d_0[];  // data: 0x842158 (wide "%02d:%02d:%02d")
 extern char aDRa2mdpostStls[];  // data: 0x842178 (csf key)
+
+// G42.33 b4 supply: rule/state globals (addr6C C2065; same addrs as globals_core.hpp)
+extern int MCVRedeploy;  // data: 0xA8B320
+extern int HouseClass_Count;  // data: 0xA80238
