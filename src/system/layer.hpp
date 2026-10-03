@@ -37,7 +37,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (END) ===
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
-    void* Pathfinding_Find(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17);  // 0x56dc20
+    void* Pathfinding_Find(int a1, void* a2, int16_t* a3, int a4, int a5, int a6, char a7, int a8, int a9, char a10, char a11, char a12, char a13, int16_t* a14, char a15, char a16);  // 0x56dc20 IDA 真值原型定型 (this+16)
     // === FUNCS-MOVE (END) ===
 };
 

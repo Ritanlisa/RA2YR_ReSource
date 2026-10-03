@@ -50,7 +50,7 @@ public:
 
     // Construction
     TActionClass() noexcept;                               // 0x71E6A0
-    void Destructor();                                        // 0x6E4660
+    void* Destructor(char a2);                                // 0x6E4660 IDA: void** __thiscall(TActionClass*, char)
     void ddtor();                           // 0x6E3D70
 
     // Save/Load

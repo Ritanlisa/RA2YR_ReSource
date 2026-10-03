@@ -68,7 +68,7 @@ public:
     void DestroyAllMembers();                                                            // 0x6340B0
     FootClass* GetMember(int index);                                                      // 0x635C10
     int GetLeaderIndex() const;                                                          // 0x6339B0
-    FootClass* SelectMember(int idx);                                                     // 0x6E9050
+    char SelectMember(int idx);                                                           // 0x6E9050 IDA: char __thiscall(int,int)
 
     // script / action
     void ProcessScriptActions();                                                         // 0x636980
@@ -91,7 +91,7 @@ public:
     FootClass* FindClosestEnemy(FootClass* foot);                                         // 0x6EAEE0
     // G42.33: binary 0x6EDB5C call form FindClosestEnemy(this, out**, int*) -- overload
     void FindClosestEnemy(void* outTarget, void* outFlag);  // 3-arg form (supplied-bodies carrier)
-    void AttackCoordinator();                                                            // 0x6EB490
+    char AttackCoordinator();                                                            // 0x6EB490 IDA: char __thiscall(TeamClass*)
     void CheckCohesion();                                                                // 0x4D9E70
     bool HasAnyMemberFlagged(int flag) const;                                             // 0x4E0080
     void MoveTeamToWaypoint(CellStruct target);                                          // 0x6EC7D0
@@ -164,7 +164,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SelectAreaAttackTarget(int a1, int a2);  // 0x6EE310
     void ProcessTeamMovement(int a1, int a2);  // 0x6EE3F0
     void SelectBestMember(int a1, int a2);  // 0x6EE5C0
-    void* ScoreMember(void* a1, int a2, int a3);  // 0x6EEEA0
+    void* ScoreMember(unsigned int* a1, int a2, int a3);  // 0x6EEEA0 IDA: _DWORD* 首参
     void PlayMemberAnimation(int a1, int a2);  // 0x6EF610
     void SelectDeploymentTarget(int a1, int a2);  // 0x6EFA10
     void CheckMemberSuperWeapon(int a1, int a2);  // 0x6F0130
