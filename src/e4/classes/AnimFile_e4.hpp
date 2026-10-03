@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_ANIMFILE_DECLARED  // G42 first-wins (misc_ext.hpp tree twin co-included in misc TUs)
+#define GAMEMD_ANIMFILE_DECLARED
 struct AnimFile {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -26,5 +28,6 @@ struct AnimFile {
     AnimFile * QueryInterface(void * Block, char a2);
     char * Stub();
 };
+#endif  // GAMEMD_ANIMFILE_DECLARED
 
 } // namespace gamemd

@@ -1459,7 +1459,7 @@ public:
 
     virtual int Gaussian(); // 0x5980C0 G42.35 C7 体签名
     virtual int State(); // 0x65C780 G42.35 C8 体签名
-    virtual void Range(); // 0x65C7E0
+    virtual int Range(int a1, int a2);  // 0x65C7E0  // G42.35 def-truth sync (调用形 (Random*,min,max) @0x73E62B)
     virtual void AdvanceRandomBytes(); // 0x661850
 
     uint8_t Random_field_0x04[4];

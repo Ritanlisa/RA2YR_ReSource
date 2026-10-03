@@ -424,6 +424,9 @@ private:
         int* clip_src,
         int flags,
         char option2);
+    // G42.35 til-name machine slot: 真实 DSurface 0x20 槽（csp_canon q020 实证）。
+    // cache-verbatim body 0x4BAD70 (DSurface::GetPitch 读 *(u32*)field_0x20 + 16) 的载体。
+    void* DSurface_field_0x20;  // 0x20
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* CreatePrimary();  // 0x4ba770 -- DSurface::CreatePrimary

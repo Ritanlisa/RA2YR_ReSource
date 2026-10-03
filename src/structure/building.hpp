@@ -76,7 +76,7 @@ int Construct(int,int);  // 0x43B740
     void ValidatePlacement(char a2);  // 0x480630
     bool ValidateFoundation();  // 0x44EFB0
     bool ValidateFoundation_0();  // 0x4DC8C0
-    bool Validate();  // 0x4DD890
+    int* Validate(int* a2, int a3);  // 0x4DD890  // G42.35 def-truth sync (cache: int* __thiscall(BuildingClass*,int*,int); 调用形 object/render 同款静态形)
     bool ValidateCell(int cell_x, int cell_y);  // 0x4DD9F0
     bool ValidatePlacementEx();  // 0x4DEE80
     void FindPlacementCells();  // 0x7447B0

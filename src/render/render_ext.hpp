@@ -1392,10 +1392,10 @@ public:
     virtual ~VoxClass_Vector() = default;
 
     virtual void getItem(); // 0x753650
-    virtual void getItemAt(); // 0x753680
-    virtual void removeItem(); // 0x753830
-    virtual void getItemWithIndex(); // 0x7538E0
-    virtual void findItem(); // 0x753960
+    virtual unsigned int getItemAt(int a2); // 0x753680  // G42.35 def-truth sync
+    virtual char removeItem(int a2, unsigned int* a3); // 0x753830  // G42.35 def-truth sync
+    virtual int getItemWithIndex(unsigned int* a2); // 0x7538E0  // G42.35 def-truth sync
+    virtual unsigned int* findItem(char a2); // 0x753960  // G42.35 def-truth sync
 
     uint8_t VoxClass_Vector_field_0x04[4];
     uint8_t VoxClass_Vector_field_0x08[4];
@@ -1434,7 +1434,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~VoxelPalette() = default;
 
-    virtual void Init(); // 0x758950
+    virtual unsigned int* Init(int a2, int a3); // 0x758950  // G42.35 def-truth sync
     virtual void Reset(); // 0x7589C0
 
     uint8_t VoxelPalette_field_0x04[4];
@@ -1473,7 +1473,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~VoxelSection() = default;
 
-    virtual void GetInfo(); // 0x7564B0
+    virtual int GetInfo(int a2, int a3); // 0x7564B0  // G42.35 def-truth sync
 
 };
 // 1 methods in IDA

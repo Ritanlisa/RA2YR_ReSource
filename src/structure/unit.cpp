@@ -1,7 +1,6 @@
 // G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
 #define GAMEMD_TREE_UNIVERSE 1
 #include "structure/unit.hpp"
-#include "e4/classes/Cell_e4.hpp"
 #include "structure/globals_structure.hpp"
 
 #include <cstring>
@@ -12,6 +11,7 @@
 #include "misc/locomotion.hpp"
 #include "misc/misc_ext.hpp"
 #include "structure/building.hpp"
+#include "e4/classes/Cell_e4.hpp"  // G42.34j: after tree headers (fwd names provided)
 
 namespace gamemd {
 

@@ -4,10 +4,13 @@
 #include "core/math.hpp"
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
-#include "core/stream_ext.hpp"
+// G42.35: core/stream_ext.hpp 摘除 -- 其 gamemd::IStream stub 遮蔽 COM IStream 令
+// 本 TU Load/Save override 失效 6x C3668（object/supplied_bodies.cpp 同期摘除先例）；
+// 其 Buffer/Text 副本与 utility_ext/ui_ext 载体双定义 2x C2011。本 TU 仅用其
+// Stream::GetChecked / Text::MeasureWidth 两站点 -- 下方 TU 本地站点桥供给。
 #include "core/utility_ext.hpp"
 #include "core/vector.hpp"
-#include "misc/misc_ext.hpp"
+#include "misc/misc_ext.hpp"  // G42.35 note: 其 fwd 区由并行会话维护（AbstractClass/VectorClass 在途, 勿在本 TU 重复供给）
 #include "object/foot.hpp"
 #include "object/mission.hpp"
 #include "object/techno.hpp"
@@ -30,6 +33,194 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/e4_globals_decls.hpp"  // G42.34: globals carrier (g_DSurface_Hidden_2/stru_87F5F0/DSurface_ViewBounds)  // G42.34: moved after tree headers (fwd names resolve via bridges)
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"  // G42.35: Coord::To_ScreenRaw 静态站点载体（0x6D7F8E/0x6D843B 同款 e4 TU）
+#include "e4/classes/AudioStream_e4.hpp"  // G42.35: g_DSurface_Hidden_2 宿主基类（完整 AudioStream）
+
+// ============================================================================
+// G42.35 TU 本地载体块（stream_ext 摘除后所需 + C3861 原型供给 + 站点桥）
+// ============================================================================
+namespace gamemd {
+// stream_ext 摘除后站点桥（真值: Stream::GetChecked __thiscall 0x45A050;
+// Text::MeasureWidth 2 参形 0x433ED0, e4/classes/Text_e4.hpp 同款）
+struct Stream_site { static int GetChecked(void* self); };       // 0x45A050
+struct Text_site  { static int MeasureWidth(int a1, int a2); };  // 0x433ED0
+// BridgeClass 站点桥（唯一调用点 0x42E789 explicit-this 静态形; 载体 misc_ext.hpp
+// 为实例形 virtual void GetCellData() 不兼容; 真值 0x42E820 _DWORD* __thiscall(BridgeClass*,int)）
+struct BridgeClass_site { static unsigned int* GetCellData(void* self, int a2); };
+// ListClass 站点桥（载体 ui_ext.hpp 属 ui 域; 调用形 Class::Method(this,a2) 三处
+// 0x4888AB/0x4888FA/0x48894E; 真值 0x5576A0/0x557800/0x557730 __thiscall）
+struct ListClass_site {
+    static int AddItem(void* self, int a2);      // 0x5576A0
+    static int Destru_vt43(void* self, int a2);  // 0x557800
+    static char RemoveItem(void* self, int a2);  // 0x557730
+};
+// Object 站点壳（cache 名 Object; 树载体为 ObjectClass -- TU 内 C2027 未定义;
+// 唯一调用 0x47EE02 静态形, 真值 IDA Object::FindClosestObjectCell）
+struct Object {
+    static int FindClosestObjectCell(void* self, void* a2, int a3, int a4);
+};
+} // namespace gamemd
+#define Stream Stream_site      // G42.35: 语料名桥接（本 TU 唯一站点 0x73E7AB）
+#define Text Text_site          // G42.35: 语料名桥接（本 TU 三站点 0x5D4099 区）
+#define BridgeClass BridgeClass_site   // G42.35: 同上（唯一站点 0x42E789）
+#define ListClass ListClass_site       // G42.35: 同上（三站点 ColorListClass 区）
+// C3861 缺席原型（真值 ida_cache 首行签名）
+unsigned int* FillRectangle(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);  // 0x4A6500 IDA Rectangle_Fill __fastcall 10 参
+int DrawToSurfaceSHP(int a1, int a2, int a3, unsigned int a4, void* a5, void* a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, unsigned int a14, int a15, int a16);  // 0x4AED70 __fastcall 16 参
+int DrawBuildingTilesSHP(void* a1, int a2, int a3);  // 0x4A5A50 IDA SHP_DrawBuildingTiles __fastcall(int*,int,char)
+unsigned int TimerGetTicks(void);  // 0x5d41c1 调用 (IDA timeGetTicks 族)
+// G42.35: 结构化全局宿主（e4_globals_decls/ida_globals 载体为裸标量, 语料按 .__pad_N/成员访问）
+struct stru_87F5F0_flat {
+    unsigned char __pad_0[0x58];
+    unsigned char __pad_58[0xE12 - 0x58];    // 覆盖 __pad_58[416] = +0x1F8 (object TU 同款)
+    unsigned char __pad_E12[0x13AC - 0xE12]; // 覆盖 __pad_E12[1422] = +0x13A0 u32 读
+};
+extern stru_87F5F0_flat stru_87F5F0_t;   // data: 0x87F5F0
+#define stru_87F5F0 stru_87F5F0_t
+struct stru_88732C_flat { unsigned char __pad_0[6]; unsigned char __pad_6[0x20]; };  // __pad_6[14] 读
+extern stru_88732C_flat stru_88732C_t;   // data: 0x88732C
+#define stru_88732C stru_88732C_t
+struct stru_887598_flat { void* lineTrailer; unsigned char __pad_rest[0x20]; };  // lineTrailer 指针槽
+extern stru_887598_flat stru_887598_t;   // data: 0x887598
+#define stru_887598 stru_887598_t
+struct stru_8A0390_flat { unsigned int health; unsigned char __pad_rest[0x40]; };
+extern stru_8A0390_flat stru_8A0390_t;   // data: 0x8A0390
+#define stru_8A0390 stru_8A0390_t
+extern unsigned char stru_83665C_t[0x1000];  // data: 0x83665C (BuildingDebris 表; ida_globals 裸标量改数组宿主)
+#define stru_83665C stru_83665C_t
+// G42.35: 附加站点桥（String/Vector/WideString/CCFileClass -- cache 静态形调用, 树载体缺对应形）
+struct String_site {
+    static unsigned char Equals_Alt(void* self, int a2);   // 0x5CB598 区
+    static void CopyUpper(void* dst, void* src);           // 0x627BC0 区
+    static unsigned char Equals(const void* a, const void* b);  // 0x627C08 区
+};
+struct Vector_site {
+    static void Clear(int a2);                                             // 0x5CB5DB 区
+    static void MatrixMulVectorMath(int* a1, double a2, double a3, double a4);  // 0x755BD5 区
+    static void Cleanup2(void* a2);                                        // 0x75DBC2 区
+};
+struct WideString_site { static void WordWrap(int a1, void* a2, int a3, int a4, int a5); };  // 0x5D4171/0x5D40F4
+struct CCFileClass_site {
+    void* CDFileClass;   // til 基子对象槽词汇 (v11.CDFileClass)
+    static void Construct2(void* self, void* a2);   // 0x5CB5A6 区
+    static unsigned char Open(void* self, int a2);  // 0x5CB5C5 区
+    static void* ReadEntireFile(void* self);        // 0x5CB5C5 区
+};
+#define String String_site           // G42.35: 语料名桥接（AddLine 形参 String 同步改名无害）
+#define Vector Vector_site           // G42.35: 同上
+#define WideString WideString_site   // G42.35: 同上
+#define CCFileClass CCFileClass_site // G42.35: 同上（C2512/C7624/C2660 族一并解决）
+struct _VectorClass_UDrawRecord_FoggedObjectClass;  // G42.35: fn-ptr 形参 IDA 类型名 fwd（0x4D2B07）
+// G42.35: MIXFile/ColorScheme 站点壳（全树仅 fwd; cache 静态形调用 0x627C32/0x627C5F）
+struct MIXFile_site { static void* Load(void* self, void* a2); };       // 0x627590
+struct ColorScheme_site { static void Destructor(void* self); };        // ColorScheme::Destructor
+#define MIXFile MIXFile_site            // G42.35: 语料名桥接（唯一站点 0x627C32）
+#define ColorScheme ColorScheme_site    // G42.35: 同上（唯一站点 0x627C5F）
+char ClampCoordMap(void* aP0);  // 0x6D84B0 区 IDA ClampCoordMap(AbstractClass*) (addr6D_e4.cpp 同形)
+// G42.35 波7 站点壳（TacticalClass/LayerClass/IsoCoord/House -- 载体属 system/misc 域或形不符）
+struct TacticalClass_site {
+    static unsigned int CalcViewportCells(void* self);                       // 0x6D605A (真值 __thiscall; 载体 void 0 参)
+    static void CheckCellVisibility(void* a1, void* a2, void* a3, int a4);   // 0x6D7FCE 调用形 4 参
+};
+struct LayerClass_site {
+    static unsigned char CoordinatesLegal(void* self, void* a2);             // 0x6D8021
+    static unsigned int* Pathfinding_Find(void* a1, ...);                    // 0x73ED7F (16+ 参调用点变参兜底; object TU LayerClass_Pathfinding_Find 同形)
+};
+struct IsoCoord_site { static unsigned int* ToPixel(void* a1, int a2, int a3); };  // 0x6D81A5 (载体 2 参 void 不符)
+struct House_site { static unsigned char IsCurrentPlayer(void* self); };     // 0x73E67D
+#define TacticalClass TacticalClass_site  // G42.35: 语料名桥接（3 站点, 全静态形）
+#define LayerClass LayerClass_site        // G42.35: 同上（2 站点）
+#define IsoCoord IsoCoord_site            // G42.35: 同上（1 站点）
+#define House House_site                  // G42.35: 同上（1 站点）
+// G42.35 波7 原型
+extern int ZCoordToScreenY(int aP0);            // 0x6D20E0 (e4_protos 同形)
+extern int LoadPaletteSimple(void* aP0, void* a2, void* a3);  // 0x72AAB9 区 (e4_protos 真形 char*,int*,uint*; 调用点首参 off_844BXX 均为 ida_globals void*)
+extern int CompareFunction(void* a1, void* a2); // 0x6E7AC0 区 bsearch 比较子
+// g_BuildingLoadQueue_Array 宿主（e4_globals_decls 裸 int; 语料 .__pad_F70[N] 访问, N≤1464+4）
+struct g_BuildingLoadQueue_Array_flat {
+    unsigned char __pad_0[0xF70];
+    unsigned char __pad_F70[0x1360 - 0xF70];
+    unsigned int* TechnoTypeClass;  // G42.35 til 槽词汇 (0x6E7AE8 vtable0 赋值形)
+    // G42.35: 裸整型视图（同槽双视图 -- 标量用法站点 0x6E7A8D 等; 声明即可 /Zs）
+    operator unsigned int() const;
+    operator unsigned int*() const;   // (unsigned int*)g_... 强转站点 0x6E7AA9
+    g_BuildingLoadQueue_Array_flat& operator=(int v);
+};
+extern g_BuildingLoadQueue_Array_flat g_BuildingLoadQueue_Array_t;  // data: 0xB0E840
+#define g_BuildingLoadQueue_Array g_BuildingLoadQueue_Array_t
+// G42.35 波8 站点壳（BuildingLoadQueue/FootClass/ComPtr/DynamicVector）
+// BuildingLoadQueue_site 置于 gamemd（其 FindBuilding def 在 namespace gamemd 块内, C2888 规避）
+namespace gamemd { struct BuildingLoadQueue_site {
+    void* __pad_0;   // til 槽词汇 (0x6E7AA9)
+    unsigned int BuildingLoadQueue_field_0x04[4];  // til 槽词汇
+    int FindBuilding();   // 0x6E7A80 (def 0 参 int; 载体 misc 版无此法)
+}; } // namespace gamemd
+struct FootClass_site {
+    static int MoveToWeed(void* self, int a2);               // 0x4DDB90 (载体 foot.hpp 0 参 -- 其域 agent 在途)
+    static int MoveToTiberium(void* self, int a2, unsigned int a3); // 0x4DCFE0
+    static int ClearPathIndex(void* self);                   // 0x73EB55
+};
+struct ComPtr_site {
+    int ComPtr_field_0x04;  // til 槽词汇 (Validate int* 对齐)
+    int ComPtr_field_0x08;
+    int ComPtr_field_0x0C;
+    int ComPtr_field_0x10;
+    int ComPtr_field_0x14;
+    int ComPtr_field_0x18;
+    int ComPtr_field_0x20;
+    unsigned int* __pad_0;           // vfn 槽 (0x73E871)
+    static void Release_Alt(void* self);  // 0x73E7DA
+};
+struct DynamicVector_site {
+    unsigned int* __pad_0;                    // vfn 槽 (0x75E7xx)
+    unsigned char __pad_1[0x1C - 4];
+    unsigned char DynamicVector_field_0x1C[8];
+    static int GetOrGrow(void* self, int a2);      // 0x73E6A2
+    static void Add_Alt4(void* self, void* a2);    // 0x75D6CC
+    static void Constructor_VoxelAnim(void* self, int a2, int a3);  // 0x75DB12
+};
+#define BuildingLoadQueue BuildingLoadQueue_site  // G42.35: 语料名桥接（def 1 + misc 版缺法）
+#define FootClass FootClass_site                  // G42.35: 同上（5 站点全静态形）
+#define ComPtr ComPtr_site                        // G42.35: 同上（v66 局部 + 2 站点）
+#define DynamicVector DynamicVector_site          // G42.35: 同上（v86 局部 + 3 站点）
+// stru_B054D0 宿主（ida_globals 裸标量; 语料 .m_1[3] 访问）
+struct stru_B054D0_flat { unsigned char __pad_0[4]; void* m_1[16]; };
+extern stru_B054D0_flat stru_B054D0_t;  // data: 0xB054D0
+#define stru_B054D0 stru_B054D0_t
+// G42.35 波9: Math 站点壳（gamemd::Math 仅 fwd; Sqrt/RoundToInt 静态形）
+struct Math_site {
+    static double Sqrt(double a1);     // 0x73EE2D 区
+    static int RoundToInt(double a1);  // 0x73EE35 区
+};
+#define Math Math_site  // G42.35: 语料名桥接（8 站点全 Math:: 静态形）
+// dword_8871E0 宿主（ida_globals 裸 uint; 语料 ->CollapseChance/MutateExplosion/ChronoHarvTooFarDistance/__pad_* 访问）
+struct dword_8871E0_v {
+    unsigned char __pad_0[0xC3C];
+    unsigned char __pad_C3C[8];
+    unsigned int CollapseChance;
+    unsigned int MutateExplosion;
+    unsigned int ChronoHarvTooFarDistance;
+    unsigned char __pad_13BC[8];
+};
+extern dword_8871E0_v* dword_8871E0_t;  // data: 0x8871E0 (Rules 实例指针, object TU 注释同款)
+#define dword_8871E0 dword_8871E0_t
+// g_DSurface_Hidden_2 宿主（e4_globals_decls 裸 int; 语料 ->__pad_0 + (int) 双视图 + AudioStream* 裸传参）
+struct g_DSurface_Hidden_2_v : gamemd::AudioStream {
+    unsigned int* __pad_0;   // vfn 槽 (0x488A9B 等 23 站点)
+};
+extern g_DSurface_Hidden_2_v* g_DSurface_Hidden_2_t;  // data: 0x887314
+#define g_DSurface_Hidden_2 g_DSurface_Hidden_2_t
+// G42.35 波10: dword_A8B230 宿主（ida_globals 裸 uint; 语料 [14].NeedsSaveOrLink 访问）+ flt 数组宿主
+struct dword_A8B230_e { unsigned int NeedsSaveOrLink; };
+extern dword_A8B230_e dword_A8B230_t[32];  // data: 0xA8B230
+#define dword_A8B230 dword_A8B230_t
+extern float flt_B444A0_t[0x200];  // data: 0xB444A0 (ida_globals 裸 float 标量)
+#define flt_B444A0 flt_B444A0_t
+extern float flt_8467E4_t[0x40];   // data: 0x8467E4
+#define flt_8467E4 flt_8467E4_t
+// G42.35 波11: WinAPI 站点壳（全树载体 _tree_full_e4.hpp 未纳入本 TU; 同款 static Wrapper）
+struct WinAPI_site { static int Wrapper(int a2); };  // 0x73E7F2 区 (consensus 350+ 1-arg 站点)
+#define WinAPI WinAPI_site  // G42.35: 语料名桥接（2 站点）
 
 // 0x40D250
 namespace gamemd {
@@ -134,7 +325,7 @@ namespace gamemd {
 int BuildingQueue::AllocSlot(int a2) {
     int FreeSlot; // eax
 
-    FreeSlot = BuildingQueue::FindFreeSlot(this, a2); /*0x42eb28*/
+    FreeSlot = this->FindFreeSlot(a2); /*0x42eb28  G42.35 call-form: static形→instance形(同文件 def 真值)*/
     if ( FreeSlot == -1 ) /*0x42eb30*/
       return 0; /*0x42eb3e*/
     else
@@ -155,7 +346,7 @@ int BuildingQueue::FindFreeSlot(int a2) {
     while ( a2 != -1 ) /*0x42eb68*/
     {
       if ( *(unsigned int *)(this->BuildingQueue_field_0x08 + v4) == a2 /*0x42ebac*/
-        && !(uint8_t)BuildingQueue::IsCellSuitable(this, v3) )
+        && !this->IsCellSuitable(v3) ) /*0x42ebac  G42.35 call-form: static形→instance形*/
       {
         return v3; /*0x42ebac*/
       }
@@ -165,11 +356,11 @@ int BuildingQueue::FindFreeSlot(int a2) {
       if ( v3 >= *((unsigned int *)this + 5) ) /*0x42ebb7*/
         return -1; /*0x42ebb7*/
     }
-    if ( (uint8_t)BuildingQueue::IsCellSuitable(this, v3) ) /*0x42eb6d*/
+    if ( (uint8_t)this->IsCellSuitable(v3) ) /*0x42eb6d  G42.35 call-form: static形→instance形*/
       goto LABEL_11; /*0x42eb6d*/
     if ( !*(unsigned int *)&dword_A8B238 || !*(unsigned char *)(v4 + this->BuildingQueue_field_0x08 + 8) ) /*0x42eb84*/
       return v3; /*0x42eb89*/
-    if ( !((TechnoClass*)*((TechnoClass **)this + 29))->ProcessTarget(v4 + this->BuildingQueue_field_0x08) ) /*0x42eb8f*/
+    if ( !((TechnoClass*)*((TechnoClass **)this + 29))->ProcessTarget((int)(v4 + this->BuildingQueue_field_0x08)) ) /*0x42eb8f  G42.35: call-site cast (uint8_t* 指针和→int 真参)*/
       goto LABEL_11; /*0x42eb96*/
     *(unsigned int *)(16 * v3 + this->BuildingQueue_field_0x08 + 4) = dword_89C310; /*0x42ebd1*/
     return v3; /*0x42ebb9*/
@@ -242,8 +433,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
         if ( (int)!stru_87F5F0.__pad_E12[1382] /*0x47eeb1*/
           || !*(unsigned int *)&stru_87F5F0.__pad_E12[1422]
           || (*(int (**)(void))(**(unsigned int **)&stru_87F5F0.__pad_E12[1422] + 44))() != 7
-          || !(uint8_t)CellClass::IsPassable(
-                                 (int *)this,
+          || !(uint8_t)((CellClass *)(int *)this)->IsPassable( /*0x47ee02  G42.35 call-form: static形→instance形(e4 addr58 先例)*/
                                  v7,
                                  *(int *)&stru_87F5F0.__pad_E12[1422],
                                  (int)dword_A83D4C)
@@ -290,7 +480,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
           goto LABEL_43; /*0x47ee44*/
       }
       if ( (int)(*(int (__thiscall **)(bool *))(*(unsigned int *)v11 + 44))(v11) == 6 /*0x47ee61*/
-        && (uint8_t)BuildingClass::CanAcceptType(v11, *(int *)&stru_87F5F0.__pad_E12[1422], (int)dword_A83D4C) )
+        && (uint8_t)((BuildingClass *)v11)->CanAcceptType(*(int *)&stru_87F5F0.__pad_E12[1422], (int)dword_A83D4C) ) /*0x47ee5d  G42.35 call-form: static形→instance形*/
       {
   LABEL_42:
         v22 = 1; /*0x47eeb3*/
@@ -1129,7 +1319,7 @@ unsigned int * RLEBlitTransXlatAlphaZRead_ushort::QueryInterface(char a2) {
 
 // 0x4BAD70
 namespace gamemd {
-int DSurface::GetPitch() {
+int DSurface::GetPitch() const { /*G42.35: const 对齐载体 override 链（语义不变 getter）*/
     return *((unsigned int *)this->DSurface_field_0x20 + 4); /*0x4bad76*/
 }
 } // namespace gamemd
@@ -1157,7 +1347,7 @@ unsigned short * FrameSnapshot::InitMax(int a2) {
     char v4; // cl
     int16_t v5; // dx
 
-    result = this; /*0x4c91e0*/
+    result = (unsigned short *)this; /*0x4c91e0  G42.35: cache 原文裸赋值补 C 风格 cast*/
     *(unsigned short *)this->__pad_0 = 0; /*0x4c91e4*/
     IDA_LOWORD(this->FrameSnapshot_field_0x04) = 0; /*0x4c91e7*/
     v3 = *(unsigned int *)&(&stru_A8EB00)[416]; /*0x4c91eb*/
@@ -1228,7 +1418,7 @@ char FoggedObject_DrawVector::Release(int a2, char *a3) {
       }
       else
       {
-        v6 = RA2_OPNEW(16 * a2); /*0x4d2a35*/
+        v6 = (int)RA2_OPNEW(16 * a2); /*0x4d2a35  G42.35: house 风格 call-site cast（core/gap2_defs 先例）*/
         if ( v6 ) /*0x4d2a3f*/
         {
           if ( a2 - 1 >= 0 ) /*0x4d2a46*/
@@ -1284,7 +1474,7 @@ char FoggedObject_DrawVector::Release(int a2, char *a3) {
             *(unsigned int *)&this->FoggedObject_DrawVector_field_0x04 = 0; /*0x4d2ae3*/
           }
         }
-        *(unsigned int *)&this->FoggedObject_DrawVector_field_0x04 = v5; /*0x4d2aee*/
+        *(unsigned int *)&this->FoggedObject_DrawVector_field_0x04 = (unsigned int)v5; /*0x4d2aee  G42.35: call-site cast(char*→u32 槽写)*/
         *(unsigned int *)&this->FoggedObject_DrawVector_field_0x08 = v3; /*0x4d2af4*/
         IDA_BYTE1(*(unsigned int *)&this->FoggedObject_DrawVector_field_0x0C) = a3 == 0; /*0x4d2af7*/
         return 1; /*0x4d2afd*/
@@ -1296,7 +1486,7 @@ char FoggedObject_DrawVector::Release(int a2, char *a3) {
     }
     else
     {
-      (*(void (__thiscall **)(_VectorClass_UDrawRecord_FoggedObjectClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4d2b07*/
+      (*(void (__thiscall **)(_VectorClass_UDrawRecord_FoggedObjectClass *))(*(unsigned int *)this->__pad_0 + 12))((_VectorClass_UDrawRecord_FoggedObjectClass *)this); /*0x4d2b07  G42.35: fn-ptr 形参 thiscast*/
       return 1; /*0x4d2b0d*/
     }
 }
@@ -1409,13 +1599,13 @@ int BuildingPlacementClass::Draw(int a2) {
     v55 = m_10; /*0x4e2bc0*/
     DrawBuildingTilesSHP(&m_C, v3 != 0, 1); /*0x4e2bc4*/
     v6 = (*(int (__thiscall **)(TriColorGaugeClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 164))( /*0x4e2bd9*/
-           this,
+           (TriColorGaugeClass *)this, /*G42.35: fn-ptr 形参 thiscast*/
            *(unsigned int *)&this->__pad_31[11]);
     v7 = (*(int (__thiscall **)(TriColorGaugeClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 164))( /*0x4e2be9*/
-           this,
+           (TriColorGaugeClass *)this, /*G42.35: fn-ptr 形参 thiscast*/
            *(unsigned int *)&this->__pad_31[15]);
     v8 = (*(int (__thiscall **)(TriColorGaugeClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 164))( /*0x4e2bfa*/
-           this,
+           (TriColorGaugeClass *)this, /*G42.35: fn-ptr 形参 thiscast*/
            *(unsigned int *)&this->__pad_31[3]);
     v9 = *(unsigned int *)&this->__pad_31[3]; /*0x4e2bfc*/
     if ( v9 > *(unsigned int *)&this->__pad_31[11] ) /*0x4e2c01*/
@@ -1621,7 +1811,7 @@ int BuildingPlacementClass::Draw(int a2) {
       }
     }
     if ( this->m_2D[0] ) /*0x4e3069*/
-      (*(void (__thiscall **)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 156))(this); /*0x4e3074*/
+      (*(void (__thiscall **)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 156))((TriColorGaugeClass *)this); /*0x4e3074  G42.35: fn-ptr 形参 thiscast*/
     (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x4e3082*/
     return 1; /*0x4e308a*/
 }
@@ -1650,12 +1840,12 @@ unsigned int * PaletteClass::Load() {
       *(unsigned int *)v11.CDFileClass = 0; /*0x5cb5cb*/
       v13 = 0; /*0x5cb5d3*/
       Vector::Clear((int)v12); /*0x5cb5db*/
-      *(unsigned int *)v11.CDFileClass = &off_7E1668; /*0x5cb5e4*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v11); /*0x5cb5ec*/
+      *(unsigned int *)v11.CDFileClass = (unsigned int)&off_7E1668; /*0x5cb5e4  G42.35: call-site cast (取值层)*/
+      ((BufferIOFileClass *)&v11)->Dtor(); /*0x5cb5ec  G42.35 call-form: static形→instance形*/
       return 0; /*0x5cb5f7*/
     }
     v4 = 0; /*0x5cb5fa*/
-    v5 = v2 + 2; /*0x5cb5fc*/
+    v5 = (unsigned char *)(v2 + 2); /*0x5cb5fc  G42.35: house 风格 call-site cast*/
     do /*0x5cb646*/
     {
       IDA_LOBYTE(v10) = 4 * *(v5 - 2); /*0x5cb607*/
@@ -1677,8 +1867,8 @@ unsigned int * PaletteClass::Load() {
     *(unsigned int *)v11.CDFileClass = 0; /*0x5cb687*/
     v13 = 0; /*0x5cb68f*/
     Vector::Clear((int)v12); /*0x5cb697*/
-    *(unsigned int *)v11.CDFileClass = &off_7E1668; /*0x5cb6a0*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v11); /*0x5cb6a8*/
+    *(unsigned int *)v11.CDFileClass = (unsigned int)&off_7E1668; /*0x5cb6a0  G42.35: call-site cast (取值层)*/
+    ((BufferIOFileClass *)&v11)->Dtor(); /*0x5cb6a8  G42.35 call-form: static形→instance形*/
     return v9; /*0x5cb5f3*/
 }
 } // namespace gamemd
@@ -1714,7 +1904,7 @@ int ScrollingText::AddLine(wchar_t *String, int a3, wchar_t *Source, int a5) {
     while ( *(unsigned int *)(*(unsigned int *)&v7 + 40) != a3 ) /*0x5d3ff1*/
     {
   LABEL_8:
-      v7 = (ScrollingText)(*(int (__thiscall **)(ScrollingText))(**(unsigned int **)&v7 + 4))(v7); /*0x5d400d*/
+      v7 = *(ScrollingText *)(*(int (__thiscall **)(ScrollingText))(**(unsigned int **)&v7 + 4))(v7); /*0x5d400d  G42.35: int→类值 cast 合法形(位等价)*/
       if ( !*(unsigned int *)&v7 ) /*0x5d4019*/
         return 0; /*0x5d4019*/
     }
@@ -1781,7 +1971,7 @@ int BuildingLightQueue::RemoveEntry() {
     BuildingLightQueue *v2; // [esp+0h] [ebp-4h] BYREF
 
     v2 = this; /*0x5ff2db*/
-    result = (*(int (__thiscall **)(int *, BuildingLightQueue **))(dword_AC1678 + 16))(&dword_AC1678, &v2); /*0x5ff2e5*/
+    result = (*(int (__thiscall **)(int *, BuildingLightQueue **))(dword_AC1678 + 16))((int *)&dword_AC1678, &v2); /*0x5ff2e5  G42.35: fn-ptr 形参 cast*/ /*0x5ff2e5*/
     if ( result != -1 && result < dword_AC1688 && result < --dword_AC1688 ) /*0x5ff300*/
     {
       do /*0x5ff318*/
@@ -1832,7 +2022,7 @@ int ColorSchemeClass::LoadAllSchemes(int a2) {
     char String_v[256]; // [esp+28h] [ebp-100h] BYREF
 
     v2 = (unsigned int *)*((unsigned int *)this + 3); /*0x627b2f*/
-    *this = (ColorSchemeClass)a2; /*0x627b32*/
+    *this = *(ColorSchemeClass *)&a2; /*0x627b32  G42.35: int→类值 cast 合法形(位等价)*/
     result = v2[2]; /*0x627b35*/
     v4 = 0; /*0x627b38*/
     v34 = 0; /*0x627b41*/
@@ -1853,7 +2043,7 @@ int ColorSchemeClass::LoadAllSchemes(int a2) {
       {
         v6 = 65 * v4++; /*0x627b6b*/
         v7 = (Flag *)(*((unsigned int *)v5 + 1) + 4 * v6); /*0x627b6e*/
-        result = Flag::IsZero(v7); /*0x627b73*/
+        result = v7->IsZero(); /*0x627b73  G42.35 call-form: static形→instance形(FileSystem_e4 先例)*/
         if ( !(unsigned char)result ) /*0x627b7a*/
           break; /*0x627b7a*/
         if ( v4 >= *((unsigned int *)v5 + 4) ) /*0x627b7f*/
@@ -1912,10 +2102,10 @@ int ColorSchemeClass::LoadAllSchemes(int a2) {
             }
             v21 = *(int (__thiscall ****)(unsigned int, int))(v17 + 256); /*0x627c76*/
             if ( v21 ) /*0x627c7e*/
-              result = (**v21)(v21, 1); /*0x627c84*/
+              result = (**v21)((unsigned int)v21, 1); /*0x627c84  G42.35: fn-ptr 形参 cast*/
             *(unsigned int *)(v17 + 256) = 0; /*0x627c86*/
           }
-          *(unsigned int *)(v17 + 256) = v29; /*0x627c98*/
+          *(unsigned int *)(v17 + 256) = (unsigned int)v29; /*0x627c98  G42.35: call-site cast(char*→u32 槽写)*/
           v22 = v34; /*0x627c9e*/
           v23 = (unsigned int *)*((unsigned int *)this + 3); /*0x627ca2*/
           if ( v34 >= v23[2] ) /*0x627ca8*/
@@ -1940,7 +2130,7 @@ int ColorSchemeClass::LoadAllSchemes(int a2) {
           {
             v25 = 65 * v4++; /*0x627cc6*/
             v26 = (Flag *)(*(unsigned int *)(v24 + 4) + 4 * v25); /*0x627cc9*/
-            result = Flag::IsZero(v26); /*0x627cce*/
+            result = v26->IsZero(); /*0x627cce  G42.35 call-form: static形→instance形*/
             if ( !(unsigned char)result ) /*0x627cd5*/
               break; /*0x627cd5*/
             if ( v4 >= *(unsigned int *)(v24 + 16) ) /*0x627cda*/
@@ -2016,18 +2206,18 @@ unsigned int * VoxelAnimTypeVector::Constructor(int a2, int a3) {
     *((unsigned int *)this + 2) = a2; /*0x67c31e*/
     *((unsigned char *)this + 12) = 1; /*0x67c321*/
     *((unsigned char *)this + 13) = 0; /*0x67c325*/
-    *this = (VoxelAnimTypeVector)0; /*0x67c328*/
+    *this = *(VoxelAnimTypeVector *)&a2; /*0x67c328  G42.35: int→类值 cast 合法形 -- 复用 a2 槽位等价语义*/
     if ( a2 ) /*0x67c32e*/
     {
       if ( a3 ) /*0x67c336*/
       {
         *((unsigned int *)this + 1) = a3; /*0x67c338*/
-        return this; /*0x67c33e*/
+        return (unsigned int *)this; /*0x67c33e  G42.35: return-site cast*/
       }
-      *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x67c34d*/
+      *((unsigned int *)this + 1) = (unsigned int)RA2_OPNEW(4 * a2); /*0x67c34d  G42.35: call-site cast*/
       *((unsigned char *)this + 13) = 1; /*0x67c350*/
     }
-    return this; /*0x67c33d*/
+    return (unsigned int *)this; /*0x67c33d  G42.35: return-site cast*/
 }
 } // namespace gamemd
 
@@ -2109,13 +2299,13 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3) {
     int v43; // [esp+50h] [ebp-4h]
     char v44; // [esp+58h] [ebp+4h]
 
-    v4 = (int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x6d7f38*/
+    v4 = (int *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj(a2); /*0x6d7f38  G42.35 call-form: static形→instance形*/
     v5 = (*a2 << 8) + 128; /*0x6d7f5b*/
     v6 = (a2[1] << 8) + 128; /*0x6d7f68*/
     v43 = 0; /*0x6d7f6a*/
     v42 = (v6 / 256) << 8; /*0x6d7f74*/
     v41 = (v5 / 256) << 8; /*0x6d7f8a*/
-    v7 = Coord::To_ScreenRaw(v39, &v41); /*0x6d7f8e*/
+    v7 = Coord::To_ScreenRaw(v39, (unsigned int *)&v41); /*0x6d7f8e  G42.35: call-site cast*/
     v8 = v7[1]; /*0x6d7f9d*/
     v9 = *v7 - *((unsigned int *)this + 44); /*0x6d7fa6*/
     v10 = v8 - *((unsigned int *)this + 45); /*0x6d7fae*/
@@ -2142,7 +2332,7 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3) {
           goto LABEL_34; /*0x6d8021*/
         v36[0] = v33 + ((v11 + 1) >> 1); /*0x6d8031*/
         v36[1] = v34 - (v11 >> 1) + 1; /*0x6d8036*/
-        v14 = (char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v36); /*0x6d8040*/
+        v14 = (char *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj((int16_t *)v36); /*0x6d8040  G42.35 call-form: static形→instance形*/
         v15 = 0; /*0x6d8042*/
         v32 = v14; /*0x6d8044*/
         v16 = v14[283]; /*0x6d804b*/
@@ -2198,7 +2388,7 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3) {
           v27 = v25 - *((unsigned int *)this + 44); /*0x6d81ea*/
           v39[1] = v24 / 256 - v26 - *((unsigned int *)this + 45); /*0x6d81ee*/
           v39[0] = v27 - 30; /*0x6d8204*/
-          v28 = (int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v37); /*0x6d820f*/
+          v28 = (int *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj(v37); /*0x6d820f  G42.35 call-form: static形→instance形*/
           TacticalClass::CheckCellVisibility(v28, v39, &DSurface_ViewBounds, 0); /*0x6d8216*/
           goto LABEL_34; /*0x6d8216*/
         }
@@ -2374,7 +2564,7 @@ int PaletteManager::Load(int a2) {
     }
     if ( v5 ) /*0x72b5e4*/
     {
-      (**v5)(v5, 1); /*0x72b5ea*/
+      (**v5)((unsigned int)v5, 1); /*0x72b5ea  G42.35: fn-ptr 形参 cast*/
       result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1000]; /*0x72b5ec*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1008] = 0; /*0x72b5f1*/
     }
@@ -2574,7 +2764,7 @@ int VoxelTypeClass::ReadINI(double a2) {
     v4 = *((unsigned int *)this + 433); /*0x73e5e9*/
     if ( *(unsigned char *)(v4 + 1517) && *(unsigned char *)(v4 + 1516) && (v5 = (BuildingClass *)*((unsigned int *)this + 182)) != 0 ) /*0x73e60b*/
     {
-      BuildingClass::ProcessEnterUnit(v5); /*0x73e60d*/
+      ((BuildingClass *)v5)->ProcessEnterUnit(); /*0x73e60d  G42.35 call-form: static形→instance形*/
     }
     else
     {
@@ -2584,7 +2774,7 @@ int VoxelTypeClass::ReadINI(double a2) {
         || (v7 = *((unsigned int *)this + 433), v8 = 0, *(int *)(v7 + 1016) <= 0) )
       {
   LABEL_10:
-        (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))(this, 5, 0); /*0x73e651*/
+        (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))((Class_7F5C70 *)this, 5, 0); /*0x73e651  G42.35: fn-ptr 形参 thiscast*/
         return 1; /*0x73e66c*/
       }
       while ( DynamicVector::GetOrGrow( /*0x73e6a2*/
@@ -2601,7 +2791,7 @@ int VoxelTypeClass::ReadINI(double a2) {
       {
         case 0: /*0x73e6ea*/
           if ( !*(unsigned char *)(v9 + 3599) /*0x73e711*/
-            && ((double (__thiscall *)*(unsigned int *)(*(unsigned int *)this + 692))(this) >= 1.0 )
+            && ((double (__thiscall *)(void*))(*(unsigned int *)(*(unsigned int *)this + 692)))(this) >= 1.0 )
           {
             *((unsigned int *)this + 47) = 2; /*0x73e714*/
             return 1; /*0x73e729*/
@@ -2610,8 +2800,8 @@ int VoxelTypeClass::ReadINI(double a2) {
           IDA_LOBYTE(v66.ComPtr_field_0x04) = 1; /*0x73e730*/
           if ( v11 ) /*0x73e737*/
           {
-            (*(void (__thiscall **)(Class_7F5C70 *, int, int))(*(unsigned int *)this + 1152))(this, v11, 1); /*0x73e741*/
-            TechnoClass::SetFocus((TechnoClass *)this, 0); /*0x73e74b*/
+            (*(void (__thiscall **)(Class_7F5C70 *, int, int))(*(unsigned int *)this + 1152))((Class_7F5C70 *)this, v11, 1); /*0x73e741  G42.35: fn-ptr 形参 thiscast*/
+            ((TechnoClass *)this)->SetFocus(0); /*0x73e74b  G42.35 call-form: static形→instance形*/
             IDA_LOBYTE(v66.ComPtr_field_0x04) = 0; /*0x73e750*/
           }
           v12 = *((unsigned int *)this + 433); /*0x73e755*/
@@ -2627,7 +2817,7 @@ int VoxelTypeClass::ReadINI(double a2) {
             if ( !v14 ) /*0x73e7a9*/
               goto LABEL_31; /*0x73e7a9*/
             Checked = (int (__stdcall ***)(unsigned int, void *, int *))Stream::GetChecked((Stream *)(this + 1652)); /*0x73e7ab*/
-            v16 = (**Checked)(Checked, &unk_818858, &v66.ComPtr_field_0x0C); /*0x73e7bf*/
+            v16 = (**Checked)((unsigned int)Checked, &unk_818858, &v66.ComPtr_field_0x0C); /*0x73e7bf  G42.35: fn-ptr 形参 cast*/
             if ( v16 >= 0 ) /*0x73e7c3*/
             {
               ComPtr_field_0x0C = v66.ComPtr_field_0x0C; /*0x73e7d2*/
@@ -2645,9 +2835,9 @@ int VoxelTypeClass::ReadINI(double a2) {
             if ( !v17 ) /*0x73e7fd*/
   LABEL_31:
               WinAPI::Wrapper(-2147467261); /*0x73e804*/
-            (*(void (__stdcall **)(int, unsigned char *))(*(unsigned int *)v17 + 12))(v17, v73); /*0x73e815*/
+            (*(void (__stdcall **)(int, unsigned char *))(*(unsigned int *)v17 + 12))((int)v17, v73); /*0x73e815  G42.35: fn-ptr 形参 cast*/
             if ( !memcmp(v73, &g_CLSID_HoverLocomotion, 0x10u) && *((unsigned int *)this + 361) ) /*0x73e82c*/
-              (*(void (__thiscall **)(Class_7F5C70 *, unsigned int, int))(*(unsigned int *)this + 1152))(this, 0, 1); /*0x73e83e*/
+              (*(void (__thiscall **)(Class_7F5C70 *, unsigned int, int))(*(unsigned int *)this + 1152))((Class_7F5C70 *)this, 0, 1); /*0x73e83e  G42.35: fn-ptr 形参 thiscast*/
             v13 = FootClass::MoveToTiberium((FootClass *)this, dword_8871E0->CollapseChance / 256, v66.ComPtr_field_0x04); /*0x73e869*/
             if ( *(unsigned int *)v66.__pad_0 ) /*0x73e871*/
               (*(void (__stdcall **)(unsigned int))(**(unsigned int **)v66.__pad_0 + 8))(*(unsigned int *)v66.__pad_0); /*0x73e876*/
@@ -2655,7 +2845,7 @@ int VoxelTypeClass::ReadINI(double a2) {
           if ( v13 ) /*0x73e87b*/
           {
             *((unsigned char *)this + 1746) = 1; /*0x73e87d*/
-            v19 = dword_A8ED84; /*0x73e884*/
+            v19 = (wchar_t *)dword_A8ED84; /*0x73e884  G42.35: call-site cast(uint→wchar_t* 槽)*/
             *((unsigned int *)this + 67) = 2; /*0x73e894*/
             *((unsigned int *)this + 64) = v19; /*0x73e89b*/
             *((unsigned int *)this + 65) = v70; /*0x73e8a2*/
@@ -2672,7 +2862,7 @@ int VoxelTypeClass::ReadINI(double a2) {
           v20 = *((unsigned int *)this + 134); /*0x73e8cd*/
           if ( v20 ) /*0x73e8d5*/
           {
-            (*(void (__thiscall **)(Class_7F5C70 *, int, int))(*(unsigned int *)this + 1152))(this, v20, 1); /*0x73e8df*/
+            (*(void (__thiscall **)(Class_7F5C70 *, int, int))(*(unsigned int *)this + 1152))((Class_7F5C70 *)this, v20, 1); /*0x73e8df*/
             break; /*0x73e8e5*/
           }
           v21 = *((unsigned int *)this + 433); /*0x73e8ea*/
@@ -2685,7 +2875,7 @@ int VoxelTypeClass::ReadINI(double a2) {
           if ( !*((unsigned int *)this + 67) ) /*0x73e931*/
           {
             *((unsigned int *)this + 62) = 0; /*0x73e93b*/
-            v22 = dword_A8ED84; /*0x73e94b*/
+            v22 = (wchar_t *)dword_A8ED84; /*0x73e94b  G42.35: call-site cast(uint→wchar_t* 槽)*/
             v23 = *(unsigned int *)&dword_8871E0->__pad_13BC[356]; /*0x73e951*/
             *((unsigned int *)this + 67) = v23; /*0x73e95d*/
             *((unsigned int *)this + 64) = v22; /*0x73e963*/
@@ -2694,35 +2884,34 @@ int VoxelTypeClass::ReadINI(double a2) {
           }
           if ( *((int *)this + 62) < 9 ) /*0x73e976*/
             return 1; /*0x73e97b*/
-          if ( UnitClass::ProcessResourceHarvesting((UnitClass *)this) ) /*0x73e987*/
+          if ( ((UnitClass *)this)->ProcessResourceHarvesting() ) /*0x73e987*/
             return 1; /*0x73ee99*/
           v24 = *((unsigned int *)this + 433); /*0x73e994*/
           *((unsigned char *)this + 1746) = 0; /*0x73e99a*/
           if ( *(unsigned char *)(v24 + 3598) /*0x73e9c4*/
-            && ((double (__thiscall *)*(unsigned int *)(*(unsigned int *)this + 692))(this) == 1.0 )
+            && ((double (__thiscall *)())*(unsigned int *)(*(unsigned int *)this + 692))(this) == 1.0 )
           {
             v25 = *((unsigned int *)this + 433); /*0x73e9ca*/
             *((unsigned int *)this + 47) = 2; /*0x73e9d0*/
             if ( *(unsigned char *)(v25 + 3598) ) /*0x73e9da*/
               v26 = (int *)(*(int (__thiscall **)(Class_7F5C70 *, int *, int, unsigned int))(*(unsigned int *)this + 824))( /*0x73ea09*/
-                             this,
+                             (Class_7F5C70 *)this,
                              &v66.ComPtr_field_0x10,
                              *(unsigned int *)dword_8871E0->MutateExplosion / 256,
                              0);
             else
-              v26 = BuildingClass::Validate( /*0x73ea31*/
-                      (BuildingClass *)this,
+              v26 = ((BuildingClass *)this)->Validate( /*0x73ea31  G42.35 call-form: static形→instance形*/
                       &v66.ComPtr_field_0x14,
                       *(unsigned int *)dword_8871E0->MutateExplosion / 256);
             *(unsigned int *)v66.__pad_0 = *v26; /*0x73ea3f*/
             if ( *(unsigned int *)v66.__pad_0 == g_UnitSelectionState ) /*0x73ea43*/
             {
-              TechnoClass::SetFocus((TechnoClass *)this, 0); /*0x73ea7b*/
+              ((TechnoClass *)this)->SetFocus(0); /*0x73ea7b  G42.35 call-form: static形→instance形*/
             }
             else
             {
-              v27 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)v66.__pad_0); /*0x73ea5d*/
-              TechnoClass::SetFocus((TechnoClass *)this, (int)v27); /*0x73ea65*/
+              v27 = (int)((CellCoord *)&dword_87F7E8)->To_CellObj((int16_t *)v66.__pad_0); /*0x73ea5d  G42.35 call-form: static形→instance形*/
+              ((TechnoClass *)this)->SetFocus((int)v27); /*0x73ea65  G42.35 call-form: static形→instance形*/
             }
             return 1; /*0x73ea83*/
           }
@@ -2740,7 +2929,7 @@ int VoxelTypeClass::ReadINI(double a2) {
             }
             else
             {
-              TechnoClass::SetFocus((TechnoClass *)this, 0); /*0x73eaf2*/
+              ((TechnoClass *)this)->SetFocus(0); /*0x73eaf2  G42.35 call-form: static形→instance形*/
               *((unsigned int *)this + 47) = 2; /*0x73eaf8*/
               return 1; /*0x73eb04*/
             }
@@ -2749,7 +2938,7 @@ int VoxelTypeClass::ReadINI(double a2) {
           if ( *((unsigned int *)this + 361) /*0x73eb49*/
             && v10
             && (*(int (__thiscall **)(Class_7F5C70 *, int, unsigned int, unsigned int))(*(unsigned int *)this + 1320))(
-                 this,
+                 (Class_7F5C70 *)this,
                  v9 + 1000,
                  0,
                  0) )
@@ -2759,7 +2948,7 @@ int VoxelTypeClass::ReadINI(double a2) {
           if ( *((unsigned int *)this + 361) ) /*0x73eb5a*/
             break; /*0x73eb62*/
           v29 = (*(int (__thiscall **)(Class_7F5C70 *, int, unsigned int, unsigned int))(*(unsigned int *)this + 1320))( /*0x73eb7e*/
-                  this,
+                  (Class_7F5C70 *)this,
                   *((unsigned int *)this + 433) + 1000,
                   0,
                   0);
@@ -2769,7 +2958,7 @@ int VoxelTypeClass::ReadINI(double a2) {
             if ( !v29 ) /*0x73edc2*/
               goto LABEL_75; /*0x73edc2*/
             v52 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v29 + 72))(v29, v73); /*0x73edd7*/
-            v53 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))(this, v72); /*0x73ede0*/
+            v53 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))((Class_7F5C70 *)this, v72); /*0x73ede0*/
             v54 = *v53 - *v52; /*0x73ede7*/
             v55 = v53[1]; /*0x73ede9*/
             v56 = v53[2]; /*0x73edec*/
@@ -2786,7 +2975,7 @@ int VoxelTypeClass::ReadINI(double a2) {
             if ( !v29 ) /*0x73eb90*/
               goto LABEL_75; /*0x73eb90*/
             v31 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v29 + 72))(v29, v72); /*0x73eba5*/
-            v32 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))(this, v73); /*0x73ebae*/
+            v32 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))((Class_7F5C70 *)this, v73); /*0x73ebae*/
             v33 = *v32 - *v31; /*0x73ebb5*/
             v34 = v32[1]; /*0x73ebb7*/
             v35 = v32[2]; /*0x73ebba*/
@@ -2798,7 +2987,7 @@ int VoxelTypeClass::ReadINI(double a2) {
             if ( v36 > *(unsigned int *)&dword_8871E0->__pad_C3C[316] << 8 ) /*0x73ec19*/
               goto LABEL_75; /*0x73ec19*/
           }
-          if ( (*(int (__thiscall **)(Class_7F5C70 *, int, int))(*(unsigned int *)this + 632))(this, 2, v30) == 1 ) /*0x73ee62*/
+          if ( (*(int (__thiscall **)(Class_7F5C70 *, int, int))(*(unsigned int *)this + 632))((Class_7F5C70 *)this, 2, v30) == 1 ) /*0x73ee62*/
           {
             *((unsigned int *)this + 47) = 3; /*0x73ee68*/
             break; /*0x73ee72*/
@@ -2806,7 +2995,7 @@ int VoxelTypeClass::ReadINI(double a2) {
   LABEL_75:
           ++dword_A8E7AC; /*0x73ec1f*/
           v37 = (*(int (__thiscall **)(Class_7F5C70 *, int, unsigned int, int))(*(unsigned int *)this + 1320))( /*0x73ec41*/
-                  this,
+                  (Class_7F5C70 *)this,
                   *((unsigned int *)this + 433) + 1000,
                   0,
                   1);
@@ -2815,7 +3004,7 @@ int VoxelTypeClass::ReadINI(double a2) {
           if ( v37 ) /*0x73ec58*/
           {
             v39 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v37 + 72))(v37, v73); /*0x73ec6d*/
-            v40 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))(this, v72); /*0x73ec76*/
+            v40 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))((Class_7F5C70 *)this, v72); /*0x73ec76*/
             v41 = *v40 - *v39; /*0x73ec7d*/
             v42 = v40[1]; /*0x73ec7f*/
             v43 = v40[2]; /*0x73ec82*/
@@ -2861,34 +3050,34 @@ int VoxelTypeClass::ReadINI(double a2) {
                                           0);
               if ( *(unsigned int *)v66.__pad_0 == g_UnitSelectionState ) /*0x73ed8a*/
               {
-                (*(void (__thiscall **)(Class_7F5C70 *, unsigned int, int))(*(unsigned int *)this + 1152))(this, 0, 1); /*0x73ee7f*/
+                (*(void (__thiscall **)(Class_7F5C70 *, unsigned int, int))(*(unsigned int *)this + 1152))((Class_7F5C70 *)this, 0, 1); /*0x73ee7f*/
               }
               else
               {
                 v50 = *(unsigned int *)this; /*0x73ed9e*/
                 v51 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)v66.__pad_0); /*0x73edad*/
-                (*(void (__thiscall **)(Class_7F5C70 *, void *, int))(v50 + 1152))(this, v51, 1); /*0x73edb5*/
+                (*(void (__thiscall **)(Class_7F5C70 *, void *, int))(v50 + 1152))((Class_7F5C70 *)this, v51, 1); /*0x73edb5*/
               }
             }
           }
           break; /*0x73ee85*/
         case 3: /*0x73e6ea*/
-          (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))(this, 7, 0); /*0x73ee93*/
+          (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))((Class_7F5C70 *)this, 7, 0); /*0x73ee93*/
           return 1; /*0x73ee93*/
         case 4: /*0x73e6ea*/
           if ( *((unsigned char *)this + 976) ) /*0x73eea6*/
           {
             if ( (*(int (__thiscall **)(Class_7F5C70 *, int *, unsigned int, int))(*(unsigned int *)this + 1320))( /*0x73eec6*/
-                   this,
+                   (Class_7F5C70 *)this,
                    &dword_8871E0->ChronoHarvTooFarDistance,
                    0,
                    1) )
             {
-              (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))(this, 20, 0); /*0x73eed9*/
+              (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))((Class_7F5C70 *)this, 20, 0); /*0x73eed9*/
             }
             else
             {
-              (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))(this, 15, 0); /*0x73eeea*/
+              (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))((Class_7F5C70 *)this, 15, 0); /*0x73eeea*/
             }
           }
           v69 = *((unsigned int *)this + 39); /*0x73eefc*/
@@ -2907,18 +3096,18 @@ int VoxelTypeClass::ReadINI(double a2) {
                                                &v66.ComPtr_field_0x1C,
                                                (int)v59);
               v63 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, PlacementCellsAlt); /*0x73ef5a*/
-              (*(void (__thiscall **)(Class_7F5C70 *, void *, int))(v61 + 1152))(this, v63, 1); /*0x73ef62*/
+              (*(void (__thiscall **)(Class_7F5C70 *, void *, int))(v61 + 1152))((Class_7F5C70 *)this, v63, 1); /*0x73ef62*/
             }
           }
-          (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))(this, 5, 0); /*0x73ef71*/
+          (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))((Class_7F5C70 *)this, 5, 0); /*0x73ef71*/
           break; /*0x73ef71*/
         default:
           break;
       }
     }
-    MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x73ef77*/
+    MissionControl = ((MissionClass *)this)->GetMissionControl(); /*0x73ef77  G42.35 call-form: static形→instance形*/
     IDA_LOWORD(v65) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x73ef87*/
-    return v65 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x73e62b*/
+    return v65 + ((Random *)&dword_A8B230_t[14].NeedsSaveOrLink)->Range(0, 2); /*0x73e62b  G42.35 call-form: static形→instance形 + 宿主*/
 }
 } // namespace gamemd
 
