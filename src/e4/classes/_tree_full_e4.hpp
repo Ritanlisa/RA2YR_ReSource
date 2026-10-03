@@ -413,6 +413,9 @@ struct ObjectClass {
     void j_Exception_Destructor();  // 0x7CA9AF G42.33 b9 member-form sync
     void j_Exception_Destructor_2();  // 0x7CAA00 G42.33 b9 member-form sync
     void j_Exception_Destructor_3();  // G42.33 b9 member-form sync
+    ObjectClass * sub_7CA993(void * Block, char a2);  // 0x7CA993 ___G scalar deleting dtor (G42.33 b24 member-form)
+    ObjectClass * sub_7CA9E4(void * Block, char a2);  // 0x7CA9E4 ___G scalar deleting dtor (G42.33 b24 member-form)
+    ObjectClass * sub_7CAC13(void * Block, char a2);  // 0x7CAC13 ___G scalar deleting dtor (G42.33 b24 member-form)
     int GetMember01();  // 0x6241D0 G42.33 b3 member-form sync (def in ObjectClass_e4.cpp)
     void* vfptr;
     void* vtable1;  // 0x0

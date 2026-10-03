@@ -2249,7 +2249,7 @@ extern int (__stdcall * __imp_MessageBoxIndirectA)(const MSGBOXPARAMSA* lpmbp); 
 extern BOOL (__stdcall * __imp_ModifyWorldTransform)(HDC hdc, const XFORM* lpxf, DWORD mode);  // data: 0x7c887e IAT slot fn-ptr truth (G42.33 b3)
 extern BOOL (__stdcall * __imp_MoveWindow)(HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL bRepaint);  // data: 0x7c86e6 IAT slot fn-ptr truth (G42.33 b3)
 extern int (__stdcall * __imp_MulDiv)(int nNumber, int nNumerator, int nDenominator);  // data: 0x7c84f4 IAT slot fn-ptr truth (G42.33 b3)
-extern int (__stdcall * __imp_MultiByteToWideChar)(UINT CodePage, DWORD dwFlags, LPCCH lpMultiByteStr, int cbMultiByte, int lpWideCharStr, int cchWideChar);  // data: 0x7c83d4 IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_MultiByteToWideChar)(UINT CodePage, DWORD dwFlags, LPCCH lpMultiByteStr, int cbMultiByte, wchar_t * lpWideCharStr, int cchWideChar);  // data: 0x7c83d4 IAT slot fn-ptr (G42.33 b24: arg5 LPWSTR)
 extern int (__stdcall * __imp_ntohl)(unsigned long netlong);  // data: 0x7c896e IAT slot fn-ptr truth (G42.33 b3)
 extern int (__stdcall * __imp_ntohs)(unsigned short netshort);  // data: 0x7c8974 IAT slot fn-ptr truth (G42.33 b3)
 extern HRESULT (__stdcall * __imp_OleInitialize)(LPVOID pvReserved);  // data: 0x7c8914 IAT slot fn-ptr truth (G42.33 b3)
