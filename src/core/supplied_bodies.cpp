@@ -56,6 +56,15 @@
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/ScriptAction_e4.hpp"
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
@@ -68,6 +77,24 @@
 extern unsigned int stru_A8EB00;      // data: 0xA8EB00 (帧计数基)
 extern void *DSurface_Alternate;       // data: DSurface 备用表面槽 (指针形态站点)
 extern int sub_401190(int a1, int a2);  // 0x401190 本地原型
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
+extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
+extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
 extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
 extern int FootClass_Array;             // data: 0x8B3DC0 (e4_globals 名)
 extern int UnselectAll_ClearLimboLaunchers(void *aP0);  // 0x431045 本地原型
@@ -91,17 +118,54 @@ extern int EventClass_Add(void *a1, int a2, int a3, int a4, int a5);  // (EventC
 extern int EventClass_Init(void *a1, int a2, int a3, int a4, int a5, int a6, void *a7);  // (EventClass::Init)
 extern int Selection_GetFlag(void);                // (Selection::GetFlag 静态形)
 extern int Selection_ClearGlobals(void *aP0);      // (Selection::ClearGlobals 静态形)
-extern int GetBuildingPlacement(void *a1, unsigned int *a2, int a3, void *a4);  // C4: 4 参形
+extern int GetBuildingPlacement(void *a1, unsigned int a2, int a3, int16_t *a4);  // G42.34 C5: arg2 标量形
 extern int GetBuildingPlacement(void);  // 本地原型
 extern unsigned int g_Str_EVA_CannotDeployHere;  // data: EVA 串                  // (MapClass::ToggleZoom)
 extern int ReadBuildingINIEntry(void *a1);
 extern int ReadBuildingINI(void *a1);
 extern int DispatchSelectionWaypointMove(int a1, int a2, int a3, int a4);
 extern int PlacePlayerBeacon(void *a1, int a2, int a3, int a4, int a5, int a6);
-extern unsigned int dword_A83A54;   // data: 计时数组
+extern unsigned int dword_A83A54;   // data: 计时数组基 (ida_globals.h 标量同名, G42.35 C6 回退标量)
 extern unsigned int dword_A802D0;   // data: 索引
 extern unsigned int dword_8A0740;   // data
 struct CellCoord_shadow_c { void * To_CellObj(int16_t *a2); };  // 0x5657A0 影子 (C2)
+struct Object_A83D4C_shadow_c { unsigned int Object_field_0x30; };  // G42.34 C5: 0xA83D4C (HouseClass_Player) Object* 指针词汇
+struct Host_87F5F0_c { unsigned char __pad_head[0x58]; unsigned char __pad_58[0xE12 - 0x58]; unsigned char __pad_E12[0x800]; };  // G42.35 C7: 0x87F5F0 宿主 (0x58/0xE12 区段词汇)
+extern int Mouse_SetBounds(void *a1, const void *a2);  // 0x4A8BF0 (Mouse::SetBounds 静态形 G42.34 C5)
+extern int Team_ReleaseAll(void *a1, int a2);          // 0x5D26C0 (Team::ReleaseAll 静态形 G42.34 C5)
+extern int DSurface_Flip2(void);                       // 0x5D1E50 (DSurface::Flip2 自由形 G42.34 C5)
+extern int nullsub_24(void *a1);                       // 0x5D0590 (G42.34 C5)
+extern void TechnoClass_GetField(void);                // 0x731CF0 (SmokeUpdate 形 G42.34 C5)
+extern int g_MoveFeedback;                             // data: 0x822CF2 (G42.34 C5)
+extern int UI_Find(int a1, int a2, int *a3);          // 0x52B6D0 (G42.35 C6)
+extern int CompareFunc3Int(const void *a1, const void *a2);  // 0x52B6A0 qsort cmp (G42.35 C6)
+extern int CompareFunc4Int(const void *a1, const void *a2);  // 0x52B720 qsort cmp (G42.35 C6)
+extern void j_DeleteAndZero(void *a1);                // 0x5D0580 thunk (G42.35 C6)
+extern const char g_Str__Player___A_[];  // 0x825070 (G42.35 C7)
+extern const char g_Str__Player___B_[];  // 0x825060 (G42.35 C7)
+extern const char g_Str__Player___C_[];  // 0x825050 (G42.35 C7)
+extern const char g_Str__Player___D_[];  // 0x825040 (G42.35 C7)
+extern const char aPlayerE[];            // (G42.35 C7)
+extern const char aPlayerF[];            // (G42.35 C7)
+extern const char aPlayerG[];            // (G42.35 C7)
+extern double _RT1;                      // x87 st0 结果占位 vocab (G42.35 C7)
+struct DialogPool_208_c { unsigned char __pad_208[0x400]; };  // G42.35 C8: 0xAC18C0 宿主 (0x208 区段词汇)
+struct A80220_c { unsigned int lineTrailer; };  // G42.35 C8: 0xA80220 宿主词汇
+struct MQF_ABFBE0_c { unsigned int localVariables[1]; };  // G42.35 C8: g_MissionQueueFrame 宿主词汇
+extern DialogPool_208_c g_DialogPool;           // 0xAC18C0 (G42.35 C8)
+extern unsigned char g_FileExtensionState[16];  // 0xAC48F0 (G42.35 C8)
+struct AA0398_c { unsigned char __pad_head[0xB0]; unsigned int AudioStream_field_0xB0; unsigned int __pad_B4[8]; };  // G42.35 C10: 0xAA0398 宿主 (0xB0/0xB4 区段词汇)
+extern IID riid;                       // cache 裸引用全局 (G42.35 C9)
+extern HRESULT OleRun(LPUNKNOWN pUnkOuter);  // OLE 原型 (G42.35 C9)
+namespace gamemd {
+struct String {  // G42.35 C8: String 本地载体 (_fwd_e4 仅 fwd; 调用词汇)
+    bool NotEquals(const void *a2);
+    void AssignFromPtr(const void *a2);
+    void ToLower();
+    bool Compare(const char **a2);
+    static bool Equals(const char *a1, const void *a2);
+};
+} // namespace gamemd
 // G42.33 b4 C1: Checksummer 本地载体 (_fwd_e4 仅 fwd) + A8B230 宿主 (team 前例)
 namespace gamemd {
 struct Checksummer {
@@ -2167,7 +2231,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
     const void *v24; // eax
     int result; // eax
     int v26; // ebx
-    void (__thiscall **DisplayClass_field_0x0)(DisplayClass *, unsigned int, int); // edx
+    void (__thiscall **DisplayClass_field_0x0)(void *, unsigned int, int); // edx G42.34 C5: void* 槽形
     int v28; // ebx
     House *v29; // eax
     int v30; // eax
@@ -2359,7 +2423,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
                 }
                 v51 = v37; /*0x4abfee*/
                 v52 = v38; /*0x4abff0*/
-                Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x4ac000*/
+                Object_field_0x30 = (void *)((Object_A83D4C_shadow_c *)(void *)dword_A83D4C)->Object_field_0x30; /*0x4ac000 G42.35 C6*/
               }
               else
               {
@@ -2370,13 +2434,13 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
                     v40 = *((char *)((CellCoord_shadow_c *)((char *)&stru_87F5F0 + 0x240))->To_CellObj(a3) + 283); /*0x4ac05a G42.33 b4 C3 影子载体*/
                     PlacePlayerBeacon( /*0x4ac09d*/
                       &g_VisibilitySystem,
-                      (int)dword_A83D4C->Object_field_0x30,
+                      (int)((Object_A83D4C_shadow_c *)(void *)dword_A83D4C)->Object_field_0x30,
                       (*a3 << 8) + 128,
                       (a3[1] << 8) + 128,
                       dword_8A0740 * v40,
                       -1);
                   }
-                  MapClass_ToggleZoom((void *)&stru_87F5F0.__pad_58[416]); /*0x4ac0a9 G42.33 b4 C3 自由形*/
+                  MapClass_ToggleZoom((void *)&((Host_87F5F0_c *)(void *)&stru_87F5F0)->__pad_58[416]); /*0x4ac0a9 G42.35 C7 宿主词汇*/
                   ((void (__thiscall **)(void *, unsigned int, int))this->DisplayClass_field_0x0)[18]((void *)this, 0, a6); /*0x4ac0b6 G42.33 b4 C3*/
                   goto LABEL_117; /*0x4ac0b9*/
                 }
@@ -2388,7 +2452,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
                   v49 = 21; /*0x4ac0e7*/
                   v51 = *(unsigned int *)v41; /*0x4ac0e9*/
                   v52 = v41[4]; /*0x4ac0eb*/
-                  Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x4ac0fb*/
+                  Object_field_0x30 = (void *)((Object_A83D4C_shadow_c *)(void *)dword_A83D4C)->Object_field_0x30; /*0x4ac0fb G42.35 C6*/
                 }
                 else
                 {
@@ -2406,30 +2470,30 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
                       goto LABEL_117; /*0x4ac154*/
                     if ( !v6 ) /*0x4ac15c*/
                     {
-                      v44 = ((PlayerClass *)v57)->SetTargetOrClear((int)dword_A83D4C->Object_field_0x30, 23, a3); /*0x4ac1b2 G42.33 b4 C2 实例形*/
-                      if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4ac1c1*/
+                      v44 = ((PlayerClass *)v57)->SetTargetOrClear((int)((Object_A83D4C_shadow_c *)(void *)dword_A83D4C)->Object_field_0x30, 23, a3); /*0x4ac1b2 G42.33 b4 C2 实例形*/
+                      if ( (int)((A80220_c *)(void *)&stru_A80220)->lineTrailer < 128 ) /*0x4ac1c1*/
                       {
   LABEL_116:
                         qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v44, 0x6Fu); /*0x4ac1c3*/
                         ((unsigned int *)(unsigned int)dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4ac1ea G42.33 b4 C2*/
                         dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4ac201*/
-                        ++stru_A80220.lineTrailer; /*0x4ac207*/
+                        ++((A80220_c *)(void *)&stru_A80220)->lineTrailer; /*0x4ac207*/
                       }
   LABEL_117:
                       FirstOfAction = (int)((SuperWeaponTypeClass *)a5)->FindFirstOfAction((gamemd::Action)(unsigned int)a5); /*0x4ac20c G42.33 b4 C2 实例形*/
                       if ( FirstOfAction ) /*0x4ac21a*/
                       {
                         v46 = (char *)((SidebarClass *)v57)->SetFlashEntry( /*0x4ac23a 实例形 G42.33 b4 C2*/
-                                (int)dword_A83D4C->Object_field_0x30,
+                                (int)((Object_A83D4C_shadow_c *)(void *)dword_A83D4C)->Object_field_0x30,
                                 18,
                                 *(unsigned int *)(FirstOfAction + 152),
                                 a3);
-                        if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4ac249*/
+                        if ( (int)((A80220_c *)(void *)&stru_A80220)->lineTrailer < 128 ) /*0x4ac249*/
                         {
                           qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v46, 0x6Fu); /*0x4ac265*/
-                          dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4ac272*/
+                          (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4ac272 G42.35 C6 &取址形*/
                           dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4ac289*/
-                          ++stru_A80220.lineTrailer; /*0x4ac28f*/
+                          ++((A80220_c *)(void *)&stru_A80220)->lineTrailer; /*0x4ac28f*/
                         }
                       }
                       goto LABEL_120; /*0x4ac28f*/
@@ -2439,11 +2503,11 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
                   v49 = 22; /*0x4ac172*/
                   v51 = *(unsigned int *)v43; /*0x4ac174*/
                   v52 = v43[4]; /*0x4ac176*/
-                  Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x4ac186*/
+                  Object_field_0x30 = (void *)((Object_A83D4C_shadow_c *)(void *)dword_A83D4C)->Object_field_0x30; /*0x4ac186 G42.35 C6*/
                 }
               }
               v44 = (char *)EventClass_Add((void *)v57, (int)Object_field_0x30, v49, v51, v52); /*0x4ac187 G42.33 b4 C4 返回 cast*/
-              if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4ac196*/
+              if ( (int)((A80220_c *)(void *)&stru_A80220)->lineTrailer < 128 ) /*0x4ac196*/
                 goto LABEL_116; /*0x4ac196*/
               goto LABEL_117; /*0x4ac196*/
             }
@@ -2459,7 +2523,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
         goto LABEL_120; /*0x4abdda*/
       goto LABEL_56; /*0x4abdda*/
     }
-    if ( (*(int (__thiscall **)(void *))(*(unsigned int *)this->DisplayClass_field_0x11A8 + 44))(this->DisplayClass_field_0x11A8) == 7 ) /*0x4aba14*/
+    if ( (*(int (__thiscall **)(void *))(*(unsigned int *)this->DisplayClass_field_0x11A8 + 44))((void *)this->DisplayClass_field_0x11A8) == 7 ) /*0x4aba14*/
     {
       v8 = a3[1] + *(unsigned short *)&this->__pad_41E[3420]; /*0x4aba27*/
       IDA_LOWORD(v55) = *(unsigned short *)&this->__pad_41E[3418] + *a3; /*0x4aba2b*/
@@ -2472,11 +2536,10 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
                                 v9,
                                 v56);
     }
-    if ( (*(int (__thiscall **)(void *))(*(unsigned int *)this->DisplayClass_field_0x11A8 + 44))(this->DisplayClass_field_0x11A8) == 7 /*0x4aba94*/
+    if ( (*(int (__thiscall **)(void *))(*(unsigned int *)this->DisplayClass_field_0x11A8 + 44))((void *)this->DisplayClass_field_0x11A8) == 7 /*0x4aba94*/
       && v6
       && (*(int (__thiscall **)(House **))&(*v6)->House_field_0x29[3])(v6) == 6
-      && (uint8_t)BuildingClass::CanAcceptType(
-                            (bool *)v6,
+      && (uint8_t)((BuildingClass *)(void *)v6)->CanAcceptType(
                             (int)this->DisplayClass_field_0x11A8,
                             (int)dword_A83D4C) )
     {
@@ -2484,11 +2547,11 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
     }
     if ( !this->__pad_41E[3426] || !this->__pad_41E[3427] ) /*0x4abab2*/
     {
-      VoxClass::FindAndPlay(&g_Str_EVA_CannotDeployHere, -1); /*0x4abc80*/
-      TechnoClass::GetField(); /*0x4abc85*/
+      ((VoxClass *)&g_Str_EVA_CannotDeployHere)->FindAndPlay(-1); /*0x4abc80 G42.34 C5 实例形*/
+      TechnoClass_GetField(); /*0x4abc85*/
       return result; /*0x4abc91*/
     }
-    v10 = __RTDynamicCast( /*0x4abad5*/
+    v10 = (unsigned char *)__RTDynamicCast( /*0x4abad5 G42.34 C5*/
             (void **)this->DisplayClass_field_0x11A8,
             0,
             0,
@@ -2499,18 +2562,18 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
     v12 = a3[1] + *(unsigned short *)&this->__pad_41E[3420]; /*0x4abb06*/
     v13 = *(unsigned int *)&this->__pad_1198[12]; /*0x4abb0a*/
     IDA_LOWORD(v55) = *(unsigned short *)&this->__pad_41E[3418] + *a3; /*0x4abb10*/
-    DisplayClass_field_0x11A8 = this->DisplayClass_field_0x11A8; /*0x4abb15*/
+    DisplayClass_field_0x11A8 = (void *)this->DisplayClass_field_0x11A8; /*0x4abb15 G42.34 C5*/
     IDA_HIWORD(v55) = v12; /*0x4abb1b*/
     v50 = IDA_LOBYTE(v56[0]); /*0x4abb38*/
     v48 = (*(int (__thiscall **)(void *))(*(unsigned int *)DisplayClass_field_0x11A8 + 64))(DisplayClass_field_0x11A8); /*0x4abb3c*/
     v15 = (*(int (__thiscall **)(int))(*(unsigned int *)v13 + 44))(v13); /*0x4abb41*/
-    v16 = EventClass_Init((void *)v57, (int)dword_A83D4C->Object_field_0x30, 11, v15, v48, v50, (void *)&v55); /*0x4abb55 G42.33 b4 C4 自由形*/
-    if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4abb64*/
+    v16 = (char *)EventClass_Init((void *)v57, (int)((Object_A83D4C_shadow_c *)(void *)dword_A83D4C)->Object_field_0x30, 11, v15, v48, v50, (void *)&v55); /*0x4abb55 G42.33 b4 C4 自由形*/
+    if ( (int)((A80220_c *)(void *)&stru_A80220)->lineTrailer < 128 ) /*0x4abb64*/
     {
       qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v16, 0x6Fu); /*0x4abb80*/
-      dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4abb91*/
+      (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4abb91 G42.35 C6 &取址形*/
       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4abba8*/
-      ++stru_A80220.lineTrailer; /*0x4abbae*/
+      ++((A80220_c *)(void *)&stru_A80220)->lineTrailer; /*0x4abbae*/
     }
     v17 = *(unsigned int *)&this->__pad_1198[12]; /*0x4abbb3*/
     if ( v17 )
@@ -2535,14 +2598,14 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
     *(unsigned int *)this->__pad_1198 = v23; /*0x4abc29*/
     if ( v19 ) /*0x4abc2f*/
     {
-      v24 = (const void *)(*(int (__thiscall **)(IUnknown *, int))(v19->field_0 + 144))(v19, 1); /*0x4abc35*/
-      MIXClass::CopyHeader((int *)&stru_87F5F0.__pad_58[416], v24); /*0x4abc41*/
+      v24 = (const void *)(*(int (__thiscall **)(IUnknown *, int))(*(unsigned int *)v19 + 144))(v19, 1); /*0x4abc35 G42.34 C5 vfptr 形*/
+      ((MIXClass *)&((Host_87F5F0_c *)(void *)&stru_87F5F0)->__pad_58[416])->CopyHeader(v24); /*0x4abc41 G42.35 C7 宿主词汇*/
     }
-    Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], 0); /*0x4abc4c*/
-    *(unsigned int *)&stru_87F5F0.__pad_E12[1418] = 0; /*0x4abc51*/
-    *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = 0; /*0x4abc57*/
-    *(unsigned int *)&stru_87F5F0.__pad_E12[1426] = -1; /*0x4abc5d*/
-    TechnoClass::GetField(); /*0x4abc67*/
+    Mouse_SetBounds((void *)&((Host_87F5F0_c *)(void *)&stru_87F5F0)->__pad_58[416], 0); /*0x4abc4c G42.35 C7 宿主词汇*/
+    *(unsigned int *)&((Host_87F5F0_c *)(void *)&stru_87F5F0)->__pad_E12[1418] = 0; /*0x4abc51 G42.35 C7 宿主词汇*/
+    *(unsigned int *)&((Host_87F5F0_c *)(void *)&stru_87F5F0)->__pad_E12[1422] = 0; /*0x4abc57 G42.35 C7 宿主词汇*/
+    *(unsigned int *)&((Host_87F5F0_c *)(void *)&stru_87F5F0)->__pad_E12[1426] = -1; /*0x4abc5d G42.35 C7 宿主词汇*/
+    TechnoClass_GetField(); /*0x4abc67*/
     return result; /*0x4abc6c*/
 }
 } // namespace gamemd
@@ -2555,7 +2618,7 @@ char PlayerClass::CheckHumanPlayer() {
     v2 = (House *)(*(int (__thiscall **)(PlayerClass *))(*(unsigned int *)this->__pad_0 + 60))(this); /*0x4ac2b5*/
     if ( v2 ) /*0x4ac2ba*/
     {
-      IDA_LOBYTE(v2) = House::IsHumanPlayer(v2); /*0x4ac2be*/
+      IDA_LOBYTE(v2) = v2->IsHumanPlayer(); /*0x4ac2be G42.34 C5 实例形*/
       if ( (unsigned char)v2 ) /*0x4ac2c5*/
       {
         IDA_LOBYTE(v2) = (*(int (__thiscall **)(PlayerClass *))(*(unsigned int *)this->__pad_0 + 312))(this); /*0x4ac2cb*/
@@ -2599,7 +2662,7 @@ int Timeout::GetRemaining() {
 
     v1 = *this; /*0x4b4d70*/
     result = *((unsigned int *)this + 2); /*0x4b4d72*/
-    if ( *this != -1 ) /*0x4b4d78*/
+    if ( *(unsigned int *)this != -1 ) /*0x4b4d78 G42.34 C5 标量比*/
     {
       if ( *(unsigned int *)&(&stru_A8EB00)[416] - *(unsigned int *)&v1 >= result ) /*0x4b4d84*/
         return 0; /*0x4b4d89*/
@@ -2625,7 +2688,7 @@ int ComPtr::ReleaseAndSet(unsigned int *a2) {
         v5 = a2; /*0x4d04cf*/
         if ( *(unsigned int *)this->__pad_0 ) /*0x4d04cc*/
           (*(void (__stdcall **)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x4d04da*/
-        *(unsigned int *)this->__pad_0 = v5; /*0x4d04dd*/
+        *(unsigned int *)this->__pad_0 = (unsigned int)v5; /*0x4d04dd G42.35 C6 指针值形*/
         return v3; /*0x4d04e0*/
       }
       else
@@ -2723,11 +2786,11 @@ BOOL GraphicMenuAnimItem::Release(unsigned int *a2) {
     result = 0; /*0x4f30c3*/
     if ( IDA_BYTE1(this->GraphicMenuAnimItem_field_0x08) ) /*0x4f3090*/
     {
-      GraphicMenuAnimItem_field_0x10 = this->GraphicMenuAnimItem_field_0x10; /*0x4f309c*/
+      GraphicMenuAnimItem_field_0x10 = *(unsigned int *)&this->GraphicMenuAnimItem_field_0x10; /*0x4f309c G42.35 C6*/
       if ( *a2 >= GraphicMenuAnimItem_field_0x10 && *a2 < GraphicMenuAnimItem_field_0x10 + *((unsigned int *)this + 6) ) /*0x4f30ae*/
       {
         v3 = a2[1]; /*0x4f30b0*/
-        GraphicMenuAnimItem_field_0x14 = this->GraphicMenuAnimItem_field_0x14; /*0x4f30b3*/
+        GraphicMenuAnimItem_field_0x14 = *(unsigned int *)&this->GraphicMenuAnimItem_field_0x14; /*0x4f30b3 G42.35 C6*/
         if ( v3 >= GraphicMenuAnimItem_field_0x14 && v3 < GraphicMenuAnimItem_field_0x14 + *((unsigned int *)this + 7) ) /*0x4f30c1*/
           return 1; /*0x4f3096*/
       }
@@ -2745,7 +2808,7 @@ void *** GraphicMenuAnimItem::QueryInterface(char a2) {
     *(unsigned int *)this->__pad_0 = 0; /*0x4f30e6*/
     if ( v3 ) /*0x4f30ee*/
       (**v3)((unsigned int)v3, 1); /*0x4f30f4*/
-    GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f30f8*/
+    ((GraphicMenuItem *)this)->Destructor(); /*0x4f30f8 G42.34 C5 实例形*/
     if ( (a2 & 1) != 0 ) /*0x4f3102*/
       RA2_OPDEL(this); /*0x4f3105*/
     return (void ***)this; /*0x4f310f*/
@@ -2802,8 +2865,8 @@ int GraphicMenuImageItem::Load(char a2) {
     v7 = *((unsigned int *)this + 11); /*0x4f36da*/
     if ( v7 ) /*0x4f36df*/
       (*(void (__thiscall **)(int, bool))(*(unsigned int *)v7 + 4))(v7, IDA_BYTE1(this->GraphicMenuImageItem_field_0x08) == 0); /*0x4f36ec*/
-    Team::ReleaseAll((Team *)this->GraphicMenuImageItem_field_0x10, (int)(this + 1)); /*0x4f36f6*/
-    result = DSurface::Flip2(); /*0x4f36fe*/
+    Team_ReleaseAll((void *)this->GraphicMenuImageItem_field_0x10, (int)(this + 1)); /*0x4f36f6 G42.34 C5 自由形*/
+    result = DSurface_Flip2(); /*0x4f36fe G42.34 C5 自由形*/
     if ( a2 ) /*0x4f3705*/
     {
       if ( *((unsigned int *)this + 12) ) /*0x4f3707*/
@@ -2837,15 +2900,15 @@ int GraphicMenuImageItem::Draw(char a2) {
     v7 = *((unsigned int *)this + 11); /*0x4f376a*/
     if ( v7 ) /*0x4f376f*/
       (*(void (__thiscall **)(int, bool))(*(unsigned int *)v7 + 4))(v7, a2 == 0); /*0x4f3779*/
-    Team::ReleaseAll((Team *)this->GraphicMenuImageItem_field_0x10, (int)(this + 1)); /*0x4f3783*/
-    return DSurface::Flip2(); /*0x4f3790*/
+    Team_ReleaseAll((void *)this->GraphicMenuImageItem_field_0x10, (int)(this + 1)); /*0x4f3783 G42.35 C6 自由形*/
+    return DSurface_Flip2(); /*0x4f3790 G42.35 C6 自由形*/
 }
 } // namespace gamemd
 
 // 0x4F3A50
 namespace gamemd {
 unsigned int * GraphicMenuItem::Constructor(int a2) {
-    this->GraphicMenuItem_field_0x04 = a2; /*0x4f3a56*/
+    *(unsigned int *)&this->GraphicMenuItem_field_0x04 = a2; /*0x4f3a56 G42.35 C7*/
     *((unsigned char *)this + 8) = 0; /*0x4f3a5b*/
     *((unsigned char *)this + 9) = 1; /*0x4f3a5e*/
     *((unsigned int *)this + 3) = 0; /*0x4f3a62*/
@@ -2889,25 +2952,25 @@ void *** GraphicMenuItem_Destru::QueryInterface(char a2) {
 // 0x4F3EE0
 namespace gamemd {
 char GraphicMenuShortcutItem::AddRef(int a2) {
-    _VectorCursor_IV_DynamicVectorClass_I v3; // [esp+0h] [ebp-Ch] BYREF
+    VectorCursor_uint_DynamicVectorClass_uint v3; // [esp+0h] [ebp-Ch] BYREF G42.35 C6 e4 载体形
     int v4; // [esp+8h] [ebp-4h]
 
     if ( !*((unsigned char *)this + 9) ) /*0x4f3ee0*/
       return 0; /*0x4f3eea*/
-    *(unsigned int *)&v3.m_1[3] = this + 2; /*0x4f3ef6*/
+    *(unsigned int *)&v3.m_1[3] = (unsigned int)(this + 2); /*0x4f3ef6 G42.35 C6 指针值形*/
     v4 = 0; /*0x4f3efe*/
     *(unsigned int *)v3.__pad_0 = 0; /*0x4f3f06*/
-    if ( VectorCursor_uint_DynamicVectorClass_uint::AddRef(&v3) ) /*0x4f3f0e*/
+    if ( v3.AddRef() ) /*0x4f3f0e G42.35 C6 实例形*/
     {
       do /*0x4f3f3f*/
       {
         if ( *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v3.m_1[3] + 4) + 4 * v4) == a2 ) /*0x4f3f2a*/
           break; /*0x4f3f2a*/
-        (*(void (__thiscall **)(_VectorCursor_IV_DynamicVectorClass_I *))(*(unsigned int *)v3.__pad_0 + 8))(&v3); /*0x4f3f34*/
+        (*(void (__thiscall **)(VectorCursor_uint_DynamicVectorClass_uint *))(*(unsigned int *)v3.__pad_0 + 8))(&v3); /*0x4f3f34*/
       }
-      while ( (*(uint8_t (__thiscall **)(_VectorCursor_IV_DynamicVectorClass_I *))(*(unsigned int *)v3.__pad_0 + 4))(&v3) ); /*0x4f3f3f*/
+      while ( (*(uint8_t (__thiscall **)(VectorCursor_uint_DynamicVectorClass_uint *))(*(unsigned int *)v3.__pad_0 + 4))(&v3) ); /*0x4f3f3f*/
     }
-    return (*(int (__thiscall **)(_VectorCursor_IV_DynamicVectorClass_I *))(*(unsigned int *)v3.__pad_0 + 4))(&v3); /*0x4f3eec*/
+    return (*(int (__thiscall **)(VectorCursor_uint_DynamicVectorClass_uint *))(*(unsigned int *)v3.__pad_0 + 4))(&v3); /*0x4f3eec*/
 }
 } // namespace gamemd
 
@@ -2926,7 +2989,7 @@ unsigned int * GraphicMenuShortcutItem::QueryInterface(char a2) {
     }
     *((unsigned char *)this + 29) = 0; /*0x4f3f90*/
     *((unsigned int *)this + 6) = 0; /*0x4f3f94*/
-    GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f3f9b*/
+    ((GraphicMenuItem *)this)->Destructor(); /*0x4f3f9b G42.35 C6 实例形*/
     if ( (a2 & 1) != 0 ) /*0x4f3fa5*/
       RA2_OPDEL(this); /*0x4f3fa8*/
     return this->__pad_0; /*0x4f3fb2*/
@@ -2957,22 +3020,22 @@ int Flag::IsZero() {
 
 // 0x510FB0
 namespace gamemd {
-int PlayerSlot::NameToDialogID(const char *this) {
-    if ( !strcmp(this, g_Str__Player___A_) ) /*0x510fc4*/
+int PlayerSlot::NameToDialogID(const char *a1) { /*G42.35 C6 this 形参名合法化*/
+    if ( !strcmp(a1, g_Str__Player___A_) ) /*0x510fc4*/
       return 4475; /*0x510fef*/
-    if ( !strcmp(this, g_Str__Player___B_) ) /*0x511005*/
+    if ( !strcmp(a1, g_Str__Player___B_) ) /*0x511005*/
       return 4476; /*0x511030*/
-    if ( !strcmp(this, g_Str__Player___C_) ) /*0x511046*/
+    if ( !strcmp(a1, g_Str__Player___C_) ) /*0x511046*/
       return 4477; /*0x511071*/
-    if ( !strcmp(this, g_Str__Player___D_) ) /*0x511087*/
+    if ( !strcmp(a1, g_Str__Player___D_) ) /*0x511087*/
       return 4478; /*0x5110b2*/
-    if ( !strcmp(this, aPlayerE) ) /*0x5110c8*/
+    if ( !strcmp(a1, aPlayerE) ) /*0x5110c8*/
       return 4479; /*0x5110f3*/
-    if ( !strcmp(this, aPlayerF) ) /*0x511109*/
+    if ( !strcmp(a1, aPlayerF) ) /*0x511109*/
       return 4480; /*0x511134*/
-    if ( !strcmp(this, aPlayerG) ) /*0x51114a*/
+    if ( !strcmp(a1, aPlayerG) ) /*0x51114a*/
       return 4481; /*0x511175*/
-    if ( !strcmp(this, unk_825000) ) /*0x51118b*/
+    if ( !strcmp(a1, (const char *)&unk_825000) ) /*0x51118b G42.35 C7 取址形*/
       return 4482; /*0x5111b5*/
     return -1; /*0x510fed*/
 }
@@ -3012,9 +3075,9 @@ int HashTableSection::FindSection(uint8_t *a2, uint8_t *a3) {
     unsigned int v22[3]; // [esp+20h] [ebp-Ch] BYREF
 
     v3 = a2; /*0x526b14*/
-    if ( a2 == (uint8_t *)*(this + 1) ) /*0x526b20*/
+    if ( a2 == (uint8_t *)*((unsigned int *)this + 1) ) /*0x526b20 G42.35 C6 dword 索引形*/
     {
-      v5 = *(this + 2); /*0x526b26*/
+      v5 = *((unsigned int *)this + 2); /*0x526b26 G42.35 C6*/
       goto LABEL_3; /*0x526b26*/
     }
     if ( !a2 ) /*0x526c07*/
@@ -3022,31 +3085,31 @@ int HashTableSection::FindSection(uint8_t *a2, uint8_t *a3) {
     memset(v21, 0, sizeof(v21)); /*0x526c17*/
     v16 = (uint8_t *)Checksummer::Add_Buffer(v21, a2, strlen((const char *)a2)); /*0x526c31*/
     a2 = v16; /*0x526c33*/
-    if ( !*(this + 11) ) /*0x526c37*/
+    if ( !*((unsigned int *)this + 11) ) /*0x526c37 G42.35 C6*/
       goto LABEL_29; /*0x526c37*/
-    v17 = (uint8_t **)*(this + 14); /*0x526c3e*/
+    v17 = (uint8_t **)*((unsigned int *)this + 14); /*0x526c3e G42.35 C6*/
     if ( v17 && *v17 == v16 ) /*0x526c47*/
       goto LABEL_24; /*0x526c47*/
-    v18 = SortedArray::BinarySearch((char **)this + 10, (int *)&a2); /*0x526c50*/
+    v18 = ((SortedArray *)((char *)this + 40))->BinarySearch((int *)&a2); /*0x526c50 G42.35 C6 实例形*/
     if ( !v18 ) /*0x526c57*/
     {
   LABEL_29:
-      *(this + 1) = 0; /*0x526c90*/
-      *(this + 2) = 0; /*0x526c93*/
+      *((unsigned int *)this + 1) = 0; /*0x526c90 G42.35 C6*/
+      *((unsigned int *)this + 2) = 0; /*0x526c93 G42.35 C6*/
       return 0; /*0x526c93*/
     }
-    *(this + 14) = v18; /*0x526c59*/
+    *((unsigned int *)this + 14) = v18; /*0x526c59 G42.35 C6*/
   LABEL_24:
     v20 = (int)v16; /*0x526c5c*/
-    if ( (uint8_t)HashTable::BinarySearch(this + 10, &v20) ) /*0x526c67*/
-      v19 = (int *)(*(this + 14) + 4); /*0x526c73*/
+    if ( (uint8_t)((HashTable *)((unsigned int *)this + 10))->BinarySearch(&v20) ) /*0x526c67 G42.35 C6 实例形*/
+      v19 = (int *)(*((unsigned int *)this + 14) + 4); /*0x526c73 G42.35 C6*/
     else
       v19 = (int *)&unk_B7882C; /*0x526c78*/
     v5 = *v19; /*0x526c7d*/
     if ( !v5 ) /*0x526c81*/
       goto LABEL_29; /*0x526c81*/
-    *(this + 2) = v5; /*0x526c83*/
-    *(this + 1) = (int)v3; /*0x526c86*/
+    *((unsigned int *)this + 2) = v5; /*0x526c83 G42.35 C6*/
+    *((unsigned int *)this + 1) = (int)v3; /*0x526c86 G42.35 C6*/
   LABEL_3:
     if ( !v5 ) /*0x526b2d*/
       return 0; /*0x526b2d*/
@@ -3083,7 +3146,7 @@ int HashTableSection::FindSection(uint8_t *a2, uint8_t *a3) {
       v13 = *(uint8_t ***)(v8 + 16); /*0x526bcf*/
       if ( v13 && *v13 == v6 ) /*0x526bd8*/
         return *(unsigned int *)(*(unsigned int *)(v8 + 16) + 4); /*0x526bd8*/
-      v14 = HashTable::BinarySearchAlt((char **)v8, (int *)&a2); /*0x526be1*/
+      v14 = ((HashTable *)(void *)(unsigned int)v8)->BinarySearchAlt((int *)&a2); /*0x526be1 G42.35 C6 实例形*/
       if ( v14 ) /*0x526be8*/
       {
         *(unsigned int *)(v8 + 16) = v14; /*0x526bee*/
@@ -3105,10 +3168,10 @@ int HashTable::BinarySearch(int *a2) {
     int v8; // esi
     int v9; // edx
 
-    v4 = *(this + 1); /*0x52b395*/
+    v4 = *((unsigned int *)this + 1); /*0x52b395 G42.35 C6*/
     if ( !v4 ) /*0x52b39b*/
       goto LABEL_13; /*0x52b39b*/
-    result = *(this + 4); /*0x52b39d*/
+    result = *((unsigned int *)this + 4); /*0x52b39d G42.35 C6*/
     if ( result ) /*0x52b3a6*/
     {
       result = *(unsigned int *)result; /*0x52b3a8*/
@@ -3120,13 +3183,13 @@ int HashTable::BinarySearch(int *a2) {
     }
     if ( !*((unsigned char *)this + 12) ) /*0x52b3b9*/
     {
-      result = qsort((void *)*this, v4, 8u, CompareFunc4Int); /*0x52b3cb*/
-      *(this + 4) = 0; /*0x52b3d3*/
+      qsort((void *)*(unsigned int *)this, v4, 8u, CompareFunc4Int); /*0x52b3cb G42.35 C6 void 返回剥赋值*/
+      *((unsigned int *)this + 4) = 0; /*0x52b3d3 G42.35 C6*/
       *((unsigned char *)this + 12) = 1; /*0x52b3da*/
     }
-    v5 = *(this + 1); /*0x52b3de*/
+    v5 = *((unsigned int *)this + 1); /*0x52b3de G42.35 C6*/
     v6 = *a2; /*0x52b3e1*/
-    v7 = *this; /*0x52b3e3*/
+    v7 = *(unsigned int *)this; /*0x52b3e3 G42.35 C6*/
     if ( v5 <= 0 ) /*0x52b3e7*/
       goto LABEL_13; /*0x52b3e7*/
     while ( 1 ) /*0x52b3ee*/
@@ -3153,7 +3216,7 @@ int HashTable::BinarySearch(int *a2) {
       IDA_LOBYTE(result) = 0; /*0x52b40e*/
       return result; /*0x52b414*/
     }
-    *(this + 4) = v9; /*0x52b41d*/
+    *((unsigned int *)this + 4) = v9; /*0x52b41d G42.35 C6*/
     IDA_LOBYTE(result) = 1; /*0x52b421*/
     return result; /*0x52b3b0*/
 }
@@ -3168,18 +3231,18 @@ int HashTable::BinarySearchAlt(int *a2) {
     int HashTable_field_0x04; // ecx
     int v7; // esi
 
-    result = this->HashTable_field_0x04; /*0x52b4f3*/
+    result = *(unsigned int *)&this->HashTable_field_0x04; /*0x52b4f3 G42.35 C6*/
     if ( result ) /*0x52b4f8*/
     {
       if ( !IDA_LOBYTE(this->HashTable_field_0x0C) ) /*0x52b4fe*/
       {
-        qsort(*(void **)this->__pad_0, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc3Int); /*0x52b510*/
-        this->HashTable_field_0x10 = 0; /*0x52b518*/
+        qsort(*(void **)this->__pad_0, result, 8u, CompareFunc3Int); /*0x52b510 G42.35 C6 剥 IDA typedef*/
+        *(unsigned int *)&this->HashTable_field_0x10 = 0; /*0x52b518 G42.35 C6*/
         IDA_LOBYTE(this->HashTable_field_0x0C) = 1; /*0x52b51f*/
       }
       v4 = *(unsigned int *)this->__pad_0; /*0x52b529*/
       v5 = *a2; /*0x52b52b*/
-      HashTable_field_0x04 = this->HashTable_field_0x04; /*0x52b52d*/
+      HashTable_field_0x04 = *(unsigned int *)&this->HashTable_field_0x04; /*0x52b52d G42.35 C6*/
       if ( HashTable_field_0x04 <= 0 ) /*0x52b532*/
         return 0; /*0x52b55e*/
       while ( 1 ) /*0x52b53b*/
@@ -3211,12 +3274,12 @@ unsigned int * TimerPool::AllocSlot() {
     int v2; // esi
     TimerPool **v3; // edi
 
-    result = stru_AA0398.AudioStream_field_0xB0; /*0x53e3c0*/
-    if ( stru_AA0398.AudioStream_field_0xB0 ) /*0x53e3ca*/
+    result = (unsigned int *)((AA0398_c *)(void *)&stru_AA0398)->AudioStream_field_0xB0; /*0x53e3c0 G42.35 C10 宿主词汇*/
+    if ( ((AA0398_c *)(void *)&stru_AA0398)->AudioStream_field_0xB0 ) /*0x53e3ca G42.35 C10 宿主词汇*/
     {
       if ( this ) /*0x53e3ce*/
       {
-        result = *(unsigned int **)stru_AA0398.__pad_B4; /*0x53e3d6*/
+        result = *(unsigned int **)((AA0398_c *)(void *)&stru_AA0398)->__pad_B4; /*0x53e3d6 G42.35 C10 宿主词汇*/
         v2 = 1; /*0x53e3db*/
         v3 = 0; /*0x53e3e0*/
         if ( dword_AA0374 > 1 ) /*0x53e3e4*/
@@ -3239,7 +3302,7 @@ unsigned int * TimerPool::AllocSlot() {
           if ( v3 ) /*0x53e402*/
           {
             *v3 = this; /*0x53e404*/
-            return (unsigned int *)++*(unsigned int *)&stru_AA0398.__pad_B4[4]; /*0x53e40b*/
+            return (unsigned int *)++*(unsigned int *)&((AA0398_c *)(void *)&stru_AA0398)->__pad_B4[4]; /*0x53e40b G42.35 C10 宿主词汇*/
           }
         }
       }
@@ -3343,25 +3406,25 @@ unsigned int * HashVector_UInt::Construct(int a2, int a3) {
     *((unsigned int *)this + 2) = a2; /*0x58b001*/
     *((unsigned char *)this + 12) = 1; /*0x58b004*/
     *((unsigned char *)this + 13) = 0; /*0x58b008*/
-    *this = (HashVector_UInt)0; /*0x58b00c*/
+    *(unsigned int *)this = 0; /*0x58b00c G42.35 C7 vftable 伪迹抑制*/
     if ( a2 ) /*0x58b012*/
     {
       if ( a3 ) /*0x58b01a*/
       {
         *((unsigned int *)this + 1) = a3; /*0x58b01d*/
-        return this; /*0x58b028*/
+        return (unsigned int *)this; /*0x58b028 G42.35 C7*/
       }
-      v5 = RA2_OPNEW(8 * a2); /*0x58b033*/
+      v5 = (unsigned int)RA2_OPNEW(8 * a2); /*0x58b033 G42.35 C7*/
       if ( v5 ) /*0x58b03d*/
       {
         *((unsigned int *)this + 1) = v5; /*0x58b040*/
         *((unsigned char *)this + 13) = 1; /*0x58b047*/
-        return this; /*0x58b04f*/
+        return (unsigned int *)this; /*0x58b04f G42.35 C7*/
       }
       *((unsigned char *)this + 13) = 1; /*0x58b054*/
       *((unsigned int *)this + 1) = 0; /*0x58b058*/
     }
-    return this; /*0x58b026*/
+    return (unsigned int *)this; /*0x58b026 G42.35 C7*/
 }
 } // namespace gamemd
 
@@ -3543,6 +3606,9 @@ namespace gamemd {
 int Random::Gaussian() {
     int result; // eax
     double v6; // [esp+0h] [ebp-20h]
+    double var_20; // G42.35 C7 asm 槽词汇 (ebp-20h, v6 别名)
+    double var_10; // G42.35 C7 asm 槽词汇 (ebp-10h)
+    double var_8;  // G42.35 C7 asm 槽词汇 (ebp-8h)
 
     _ESI = this; /*0x5980ca*/
     if ( *(unsigned char *)this ) /*0x5980cc*/
@@ -3554,14 +3620,14 @@ int Random::Gaussian() {
     {
       while ( 1 ) /*0x5980de*/
       {
-        ((void (*)(void))_ESI[4])(); /*0x5980de*/
+        ((void (*)(void))((unsigned int *)_ESI.v)[4])(); /*0x5980de G42.35 C7 IdaRegVar 槽形*/
         __asm /*0x5980e1*/
         {
           fadd st, st
           fsub ds:dbl_7E1718
           fstp [esp+18h+var_10]
         }
-        ((void (*)(void))_ESI[4])(); /*0x5980ed*/
+        ((void (*)(void))((unsigned int *)_ESI.v)[4])(); /*0x5980ed G42.35 C7 IdaRegVar 槽形*/
         __asm /*0x5980f0*/
         {
           fadd st, st
@@ -3610,9 +3676,9 @@ int Random::Gaussian() {
         fld st
         fmul [esp+20h+var_8]
       }
-      *(unsigned char *)_ESI = 1; /*0x59814c*/
+      *(unsigned char *)(unsigned long)_ESI = 1; /*0x59814c G42.35 C7 IdaRegVar 槽形*/
       __asm { fstp qword ptr [esi+8] } /*0x59814f*/
-      *((double *)_ESI + 1) = _RT1; /*0x59814f*/
+      *((double *)(unsigned long)_ESI + 1) = _RT1; /*0x59814f G42.35 C7 IdaRegVar 槽形*/
       __asm { fmul [esp+14h+var_10] } /*0x598153*/
     }
     return result; /*0x5980d7*/
@@ -3632,12 +3698,12 @@ unsigned int * StringVector::Construct(int a2, int a3, void *a1, void *a4, void 
       if ( a3 ) /*0x5ad716*/
       {
         this->StringVector_field_0x04 = a3; /*0x5ad718*/
-        return this->__pad_0; /*0x5ad71e*/
+        return (unsigned int *)this->__pad_0; /*0x5ad71e G42.35 C7*/
       }
-      this->StringVector_field_0x04 = RA2_OPNEW(4 * a2); /*0x5ad72d*/
+      this->StringVector_field_0x04 = (unsigned int)RA2_OPNEW(4 * a2); /*0x5ad72d G42.35 C7*/
       IDA_BYTE1(this->StringVector_field_0x0C) = 1; /*0x5ad730*/
     }
-    return this->__pad_0; /*0x5ad71d*/
+    return (unsigned int *)this->__pad_0; /*0x5ad71d G42.35 C7*/
 }
 } // namespace gamemd
 
@@ -3675,12 +3741,12 @@ void Tree::Destructor() {
 
     if ( this ) /*0x5b4085*/
     {
-      v2 = (Tree *)*this; /*0x5b4087*/
-      if ( *this ) /*0x5b4087*/
-        Tree::Destructor(v2); /*0x5b408d*/
+      v2 = (Tree *)*(unsigned int *)this; /*0x5b4087 G42.35 C8 dword 读形*/
+      if ( *(unsigned int *)this ) /*0x5b4087 G42.35 C8 dword 判形*/
+        v2->Destructor(); /*0x5b408d G42.35 C8 实例形*/
       v3 = (Tree *)*((unsigned int *)this + 1); /*0x5b4092*/
       if ( v3 ) /*0x5b4097*/
-        Tree::Destructor(v3); /*0x5b4099*/
+        v3->Destructor(); /*0x5b4099 G42.35 C8 实例形*/
       RA2_OPDEL(this); /*0x5b409f*/
     }
 }
@@ -3700,21 +3766,21 @@ BOOL Text::DrawCharAtGrid(HDC hdc, int String, int a4) {
     {
       if ( v7 == 1 ) /*0x5bd3f7*/
       {
-        SetBkColor(hdc, g_MissionQueueFrame.localVariables[419]); /*0x5bd405*/
-        SetTextColor(hdc, g_MissionQueueFrame.localVariables[425]); /*0x5bd417*/
+        SetBkColor(hdc, ((MQF_ABFBE0_c *)(void *)&dword_ABFBE0)->localVariables[419]); /*0x5bd405*/
+        SetTextColor(hdc, ((MQF_ABFBE0_c *)(void *)&dword_ABFBE0)->localVariables[425]); /*0x5bd417*/
       }
       else
       {
-        SetBkColor(hdc, g_MissionQueueFrame.localVariables[425]); /*0x5bd424*/
-        SetTextColor(hdc, g_MissionQueueFrame.localVariables[419]); /*0x5bd436*/
+        SetBkColor(hdc, ((MQF_ABFBE0_c *)(void *)&dword_ABFBE0)->localVariables[425]); /*0x5bd424*/
+        SetTextColor(hdc, ((MQF_ABFBE0_c *)(void *)&dword_ABFBE0)->localVariables[419]); /*0x5bd436*/
       }
       *((unsigned int *)this + 2501) = v7; /*0x5bd43c*/
     }
     IDA_LOBYTE(String) = *((unsigned char *)&this->Text_field_00 + 20 * v5 + 5 * v5 + v4); /*0x5bd45a*/
     return TextOutA( /*0x5bd484*/
              hdc,
-             v5 * g_MissionQueueFrame.localVariables[471] + 10,
-             v4 * (g_MissionQueueFrame.localVariables[469] + g_MissionQueueFrame.localVariables[465]) + 10,
+             v5 * ((MQF_ABFBE0_c *)(void *)&dword_ABFBE0)->localVariables[471] + 10,
+             v4 * (((MQF_ABFBE0_c *)(void *)&dword_ABFBE0)->localVariables[469] + ((MQF_ABFBE0_c *)(void *)&dword_ABFBE0)->localVariables[465]) + 10,
              (LPCSTR)&String,
              1);
 }
@@ -3742,14 +3808,14 @@ char StreamWrapper::Read() {
       v2 = 0; /*0x5c5d57*/
       if ( dword_A8DA84 > 0 ) /*0x5c5d5b*/
       {
-        v3 = dword_A8DA78; /*0x5c5d5d*/
+        v3 = (unsigned int *)&dword_A8DA78; /*0x5c5d5d G42.35 C8 取址形*/
         do /*0x5c5d83*/
         {
           v4 = v3[v2]; /*0x5c5d67*/
           if ( *(unsigned int *)(v4 + 107) != -1 ) /*0x5c5d6d*/
           {
             *(unsigned int *)(v4 + 107) = v2; /*0x5c5d71*/
-            v3 = dword_A8DA78; /*0x5c5d74*/
+            v3 = (unsigned int *)&dword_A8DA78; /*0x5c5d74 G42.35 C8 取址形*/
           }
           ++v2; /*0x5c5d80*/
         }
@@ -3773,7 +3839,7 @@ bool StreamWrapper::Write() {
     {
       for ( i = 0; i < dword_A8DA84; ++i ) /*0x5c5da4*/
       {
-        v3 = dword_A8DA78[i]; /*0x5c5daf*/
+        v3 = ((unsigned int *)&dword_A8DA78)[i]; /*0x5c5daf G42.35 C8 取址形*/
         if ( *(unsigned int *)(v3 + 107) != -1 ) /*0x5c5db5*/
           *(unsigned int *)(v3 + 107) = i; /*0x5c5db7*/
       }
@@ -3789,13 +3855,13 @@ LRESULT StreamWrapper::Seek(HWND hWnd, int a3) {
     int Data; // eax
     int v5; // eax
 
-    ListBox::Clear((ListBox *)hWnd); /*0x5c5dda*/
-    Data = StreamWrapper::readData((StreamWrapper *)this, a3); /*0x5c5de6*/
+    ((ListBox *)(void *)hWnd)->Clear(); /*0x5c5dda G42.35 C8 实例形*/
+    Data = ((StreamWrapper *)this)->readData(a3); /*0x5c5de6 G42.35 C9 int 局部形*/
     if ( Data ) /*0x5c5ded*/
-      MPCombatTeam::AddToList(Data, hWnd); /*0x5c5df2*/
-    v5 = StreamWrapper::readData((StreamWrapper *)this, -1); /*0x5c5dfb*/
+      ((MPCombatTeam *)(void *)Data)->AddToList(hWnd); /*0x5c5df2 G42.35 C8 实例形*/
+    v5 = ((StreamWrapper *)this)->readData(-1); /*0x5c5dfb G42.35 C8 实例形*/
     if ( v5 ) /*0x5c5e02*/
-      MPCombatTeam::AddToList(v5, hWnd); /*0x5c5e07*/
+      ((MPCombatTeam *)(void *)(unsigned int)v5)->AddToList(hWnd); /*0x5c5e07 G42.35 C8 实例形*/
     return SendMessageA(hWnd, 0x14Eu, 0, 0); /*0x5c5e1c*/
 }
 } // namespace gamemd
@@ -3809,27 +3875,27 @@ int StringTable::Find(const char **a2) {
     char *v7; // [esp+Ch] [ebp-4h] BYREF
 
     v2 = a2; /*0x5cf6b2*/
-    if ( !(uint8_t)String::NotEquals((String *)a2, 0) ) /*0x5cf6be*/
+    if ( !(uint8_t)((String *)a2)->NotEquals(0) ) /*0x5cf6be G42.35 C8 实例形*/
       return 0; /*0x5cf6be*/
     v4 = 0; /*0x5cf6ca*/
     if ( *((int *)this + 4) <= 0 ) /*0x5cf6ce*/
       return 0; /*0x5cf728*/
     while ( 1 ) /*0x5cf6d5*/
     {
-      String::AssignFromPtr((String *)&v7, v2); /*0x5cf6d5*/
-      String::ToLower((String *)&v7); /*0x5cf6de*/
-      String::AssignFromPtr((String *)&a2, *(const char ***)(this->StringTable_field_0x04 + 4 * v4)); /*0x5cf6ee*/
-      String::ToLower((String *)&a2); /*0x5cf6f7*/
-      if ( (uint8_t)String::Compare((String *)&v7, (const char **)&a2) ) /*0x5cf705*/
+      ((String *)&v7)->AssignFromPtr(v2); /*0x5cf6d5 G42.35 C8 实例形*/
+      ((String *)&v7)->ToLower(); /*0x5cf6de G42.35 C8 实例形*/
+      ((String *)&a2)->AssignFromPtr(*(const char ***)(this->StringTable_field_0x04 + 4 * v4)); /*0x5cf6ee G42.35 C8 实例形*/
+      ((String *)&a2)->ToLower(); /*0x5cf6f7 G42.35 C8 实例形*/
+      if ( (uint8_t)((String *)&v7)->Compare((const char **)&a2) ) /*0x5cf705 G42.35 C8 实例形*/
         break; /*0x5cf705*/
-      DeleteAndZero((ObjectClass *)&a2); /*0x5cf712*/
-      DeleteAndZero((ObjectClass *)&v7); /*0x5cf71b*/
+      j_DeleteAndZero((ObjectClass *)&a2); /*0x5cf712 G42.35 C8 j_ 形*/
+      j_DeleteAndZero((ObjectClass *)&v7); /*0x5cf71b G42.35 C8 j_ 形*/
       if ( ++v4 >= *((unsigned int *)this + 4) ) /*0x5cf726*/
         return 0; /*0x5cf726*/
     }
     v6 = *(unsigned int *)(this->StringTable_field_0x04 + 4 * v4); /*0x5cf738*/
-    DeleteAndZero((ObjectClass *)&a2); /*0x5cf73b*/
-    DeleteAndZero((ObjectClass *)&v7); /*0x5cf744*/
+    j_DeleteAndZero((ObjectClass *)&a2); /*0x5cf73b G42.35 C8 j_ 形*/
+    j_DeleteAndZero((ObjectClass *)&v7); /*0x5cf744 G42.35 C8 j_ 形*/
     return v6; /*0x5cf728*/
 }
 } // namespace gamemd
@@ -3860,10 +3926,10 @@ int StreamWrapper::readData(int a2) {
         }
         while ( v4 < *((unsigned int *)this + 6) ); /*0x5d6648*/
       }
-      (*(void (__thiscall **)(int *))(this->StreamWrapper_field_0x08 + 12))(&this->StreamWrapper_field_0x08); /*0x5d6652*/
+      (*(void (__thiscall **)(int *))(*(unsigned int *)&this->StreamWrapper_field_0x08 + 12))((int *)&this->StreamWrapper_field_0x08); /*0x5d6652 G42.35 C8 槽值形*/
       (*(void (__thiscall **)(StreamWrapper *, int *))(*(unsigned int *)this->__pad_0 + 192))( /*0x5d665a*/
         this,
-        &this->StreamWrapper_field_0x08);
+        (int *)&this->StreamWrapper_field_0x08);
     }
     v6 = *((unsigned int *)this + 6); /*0x5d6660*/
     v7 = 0; /*0x5d6663*/
@@ -4000,7 +4066,7 @@ char StreamWrapper::StubReturnFalse() {
 // 0x624C80
 namespace gamemd {
 int HashMap::ComputeIndex(int a2) {
-    return ((int (__thiscall *)(int))*(this + 6))(a2) & ((1 << *(this + 3)) - 1); /*0x624c94*/
+    return ((int (__thiscall *)(int))*((unsigned int *)this + 6))(a2) & ((1 << *((unsigned int *)this + 3)) - 1); /*0x624c94 G42.35 C9 dword 索引形*/
 }
 } // namespace gamemd
 
@@ -4040,7 +4106,7 @@ int FlagSystem::GetNextActive() {
   LABEL_6:
       v7 = *this; /*0x6266ea*/
       *((unsigned int *)this + 1) = 0; /*0x6266ec*/
-      *this = (FlagSystem)++*(unsigned int *)&v7; /*0x6266f4*/
+      *(unsigned int *)this = ++*(unsigned int *)&v7; /*0x6266f4 G42.35 C7 dword 写形*/
       if ( *(unsigned int *)&v7 >= v1[2] ) /*0x6266fd*/
         goto LABEL_7; /*0x6266fd*/
     }
@@ -4049,7 +4115,7 @@ int FlagSystem::GetNextActive() {
       v5 = *(unsigned int *)(v3 + 4); /*0x6266c4*/
       *((unsigned int *)this + 1) = v4 + 1; /*0x6266cf*/
       v6 = (Flag *)(v5 + 260 * v4); /*0x6266d2*/
-      if ( !(uint8_t)Flag::IsZero(v6) ) /*0x6266d7*/
+      if ( !(uint8_t)v6->IsZero() ) /*0x6266d7 G42.35 C8 实例形*/
         break; /*0x6266d7*/
       v4 = *((unsigned int *)this + 1); /*0x6266e0*/
       if ( v4 >= *(unsigned int *)(v3 + 16) ) /*0x6266e8*/
@@ -4138,16 +4204,16 @@ int Random::State() {
 
     if ( this->__pad_0[0] ) /*0x65c780*/
       return 0; /*0x65c785*/
-    *(&this->Random_field_0x0C + this->Random_field_0x04) ^= *(&this->Random_field_0x0C + this->Random_field_0x08); /*0x65c79d*/
-    Random_field_0x04 = this->Random_field_0x04; /*0x65c79f*/
-    result = *(&this->Random_field_0x0C + Random_field_0x04++); /*0x65c7a5*/
-    v3 = this->Random_field_0x08 + 1; /*0x65c7aa*/
-    this->Random_field_0x04 = Random_field_0x04; /*0x65c7b1*/
-    this->Random_field_0x08 = v3; /*0x65c7b4*/
+    *((unsigned int *)&this->Random_field_0x0C + *(unsigned int *)&this->Random_field_0x04) ^= *((unsigned int *)&this->Random_field_0x0C + *(unsigned int *)&this->Random_field_0x08); /*0x65c79d G42.35 C8 dword 值形*/
+    Random_field_0x04 = *(unsigned int *)&this->Random_field_0x04; /*0x65c79f G42.35 C7*/
+    result = *((unsigned int *)&this->Random_field_0x0C + Random_field_0x04++); /*0x65c7a5 G42.35 C8*/
+    v3 = *(unsigned int *)&this->Random_field_0x08 + 1; /*0x65c7aa G42.35 C8*/
+    *(unsigned int *)&this->Random_field_0x04 = Random_field_0x04; /*0x65c7b1 G42.35 C7*/
+    *(unsigned int *)&this->Random_field_0x08 = v3; /*0x65c7b4 G42.35 C7*/
     if ( Random_field_0x04 >= 250 ) /*0x65c7b7*/
-      this->Random_field_0x04 = 0; /*0x65c7b9*/
+      *(unsigned int *)&this->Random_field_0x04 = 0; /*0x65c7b9 G42.35 C7*/
     if ( v3 >= 250 ) /*0x65c7c7*/
-      this->Random_field_0x08 = 0; /*0x65c7c9*/
+      *(unsigned int *)&this->Random_field_0x08 = 0; /*0x65c7c9 G42.35 C7*/
     return result; /*0x65c787*/
 }
 } // namespace gamemd
@@ -4162,17 +4228,17 @@ int RandomStraw::AdvanceState() {
     int v5; // ecx
     uint16_t v6; // dx
 
-    result = this->RandomStraw_field_0x04; /*0x65c8b0*/
+    result = *(unsigned int *)&this->RandomStraw_field_0x04; /*0x65c8b0 G42.35 C7*/
     v2 = *(unsigned int *)this->__pad_0; /*0x65c8ba*/
-    this->RandomStraw_field_0x04 = result + 1; /*0x65c8bc*/
+    *(unsigned int *)&this->RandomStraw_field_0x04 = result + 1; /*0x65c8bc G42.35 C7*/
     v3 = 0; /*0x65c8bf*/
     do /*0x65c907*/
     {
       v4 = result; /*0x65c8c7*/
-      v5 = result ^ dword_839644[v3++]; /*0x65c8c9*/
+      v5 = result ^ (&dword_839644)[v3++]; /*0x65c8c9 G42.35 C9 &取址形*/
       v6 = v5; /*0x65c8ce*/
       v5 >>= 16; /*0x65c8d0*/
-      result = v2 ^ (v6 * v5 + (dword_839690[v3] ^ (((v6 * v6 + ~(v5 * v5)) << 16) | ((v6 * v6 + ~(v5 * v5)) >> 16)))); /*0x65c903*/
+      result = v2 ^ (v6 * v5 + ((&dword_839690)[v3] ^ (((v6 * v6 + ~(v5 * v5)) << 16) | ((v6 * v6 + ~(v5 * v5)) >> 16)))); /*0x65c903*/
       v2 = v4; /*0x65c905*/
     }
     while ( v3 < 4 ); /*0x65c907*/
@@ -4183,7 +4249,7 @@ int RandomStraw::AdvanceState() {
 // 0x65D430
 namespace gamemd {
 unsigned int * ComPtr::Constructor() {
-    this->ComPtr_field_0x04 = 0; /*0x65d432*/
+    *(unsigned int *)&this->ComPtr_field_0x04 = 0; /*0x65d432 G42.35 C7*/
     *(unsigned int *)this->__pad_0 = 0; /*0x65d439*/
     return this->__pad_0; /*0x65d43f*/
 }
@@ -4199,7 +4265,7 @@ int COMClass::ReleaseRef() {
     if ( !result ) /*0x65d677*/
     {
       if ( this ) /*0x65d67b*/
-        return (**(int (__thiscall ***)(ReferenceCounted *, int))this)(this, 1); /*0x65d681*/
+        return (**(int (__thiscall ***)(ReferenceCounted *, int))this)((ReferenceCounted *)(void *)this, 1); /*0x65d681 G42.35 C8 接收者对齐*/
     }
     return result; /*0x65d683*/
 }
@@ -4208,10 +4274,10 @@ int COMClass::ReleaseRef() {
 // 0x65D6A0
 namespace gamemd {
 unsigned int * COMClass::initInterface(char a2) {
-    *this = (ReferenceCounted)0; /*0x65d6a9*/
+    *(unsigned int *)this = 0; /*0x65d6a9 G42.35 C7 vftable 伪迹抑制*/
     if ( (a2 & 1) != 0 ) /*0x65d6af*/
       RA2_OPDEL(this); /*0x65d6b2*/
-    return this; /*0x65d6bc*/
+    return (unsigned int *)this; /*0x65d6bc G42.35 C7*/
 }
 } // namespace gamemd
 
@@ -4225,12 +4291,12 @@ int RandomStraw::Release(int a2, int a3) {
     v3 = a3; /*0x661c11*/
     v4 = (unsigned char *)a2; /*0x661c17*/
     if ( !a2 || a3 < 1 ) /*0x661c24*/
-      return Delegate::Invoke((Straw *)this, a2, a3); /*0x661c5d*/
+      return ((Delegate *)(void *)this)->Invoke(a2, a3); /*0x661c5d G42.35 C8 实例形*/
     do /*0x661c4d*/
     {
       v6 = *((unsigned int *)this + 4); /*0x661c30*/
       *((unsigned int *)this + 4) = v6 + 1; /*0x661c38*/
-      *v4++ = RandomStraw::AdvanceState((RandomStraw *)((char *)this + 8 * v6 + 20)); /*0x661c40*/
+      *v4++ = ((RandomStraw *)((char *)this + 8 * v6 + 20))->AdvanceState(); /*0x661c40 G42.35 C9 实例形*/
       --v3; /*0x661c49*/
       *((unsigned int *)this + 4) &= 0x1Fu; /*0x661c4a*/
     }
@@ -4246,7 +4312,7 @@ int * RandomStraw::QueryInterface(char a2) {
     *((unsigned int *)this + 3) = 0; /*0x661c84*/
     *((unsigned int *)this + 4) = 0; /*0x661c87*/
     memset((char *)this + 20, 0, 0x100u); /*0x661c8a*/
-    Straw::Dtor((Straw *)this); /*0x661c8e*/
+    ((Straw *)this)->Dtor(); /*0x661c8e G42.35 C9 实例形*/
     if ( (a2 & 1) != 0 ) /*0x661c98*/
       RA2_OPDEL(this); /*0x661c9b*/
     return (int *)this->__pad_0; /*0x661ca5*/
@@ -4284,8 +4350,8 @@ int * SHA1::ProcessBlock(const void **a2, int *a3) {
             SHA1::Transform((int *)this + 13, (unsigned int *)this + 6); /*0x69d939*/
             v8 = *((unsigned int *)this + 11); /*0x69d93e*/
             *((unsigned int *)this + 12) = 0; /*0x69d941*/
-            result = (int *)(v8 + 64); /*0x69d948*/
-            *((unsigned int *)this + 11) = result; /*0x69d94a*/
+            result = (int *)(v8 + 64); /*0x69d948 G42.35 C10 还原 int* 局部形*/
+            *((unsigned int *)this + 11) = (unsigned int)result; /*0x69d94a G42.35 C10 指针值形*/
           }
         }
       }
@@ -4324,14 +4390,14 @@ int COMClassFactory::Register(IID *rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsConte
     if ( *(unsigned int *)this->__pad_0 ) /*0x6bedb4*/
       (*(void (__stdcall **)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x6bedbd*/
     if ( (dwClsContext & 0x14) == 0 ) /*0x6bedc6*/
-      return CoCreateInstance(rclsid, pUnkOuter, dwClsContext, &riid, (LPVOID *)this); /*0x6bee2b*/
-    result = CoCreateInstance(rclsid, pUnkOuter, dwClsContext, &riid, (LPVOID *)&pUnkOuter); /*0x6beddd*/
+      return CoCreateInstance(*rclsid, pUnkOuter, dwClsContext, riid, (LPVOID *)this); /*0x6bee2b G42.35 C10 REFIID 引用形*/
+    result = CoCreateInstance(*rclsid, pUnkOuter, dwClsContext, riid, (LPVOID *)&pUnkOuter); /*0x6beddd G42.35 C10 REFIID 引用形*/
     if ( result >= 0 ) /*0x6bede5*/
     {
       v6 = OleRun(pUnkOuter); /*0x6bedf2*/
       if ( v6 >= 0 ) /*0x6bedf6*/
-        v6 = (*(int (__stdcall **)(LPUNKNOWN, IID *, COMClassFactory *))pUnkOuter->field_0)(pUnkOuter, &riid, this); /*0x6bee07*/
-      (*(void (__stdcall **)(LPUNKNOWN))(pUnkOuter->field_0 + 8))(pUnkOuter); /*0x6bee10*/
+        v6 = (*(int (__stdcall **)(LPUNKNOWN, IID *, COMClassFactory *))(*(void **)pUnkOuter))(pUnkOuter, &riid, this); /*0x6bee07 G42.35 C9 vfptr 槽形*/
+      (*(void (__stdcall **)(LPUNKNOWN))((char *)*(void **)pUnkOuter + 8))(pUnkOuter); /*0x6bee10 G42.35 C10 字节偏移形*/
       return v6; /*0x6bee13*/
     }
     return result; /*0x6bee15*/
@@ -4413,7 +4479,7 @@ unsigned int * COMClassFactory_10::Construct() {
 // 0x6C0AC0
 namespace gamemd {
 unsigned int * COMClassFactory::CreateInstance() {
-    this->COMClassFactory_field_0x04 = 0; /*0x6c0ac2*/
+    *(unsigned int *)&this->COMClassFactory_field_0x04 = 0; /*0x6c0ac2 G42.35 C7*/
     *(unsigned int *)this->__pad_0 = 0; /*0x6c0ac9*/
     return this->__pad_0; /*0x6c0acf*/
 }
@@ -4431,9 +4497,9 @@ namespace gamemd {
 unsigned int * Vector2::Subtract(unsigned int *a2) {
     int Vector2_field_0x04; // edx
 
-    Vector2_field_0x04 = this->Vector2_field_0x04; /*0x6dc4cd*/
+    Vector2_field_0x04 = *(unsigned int *)&this->Vector2_field_0x04; /*0x6dc4cd G42.35 C7*/
     *(unsigned int *)this->__pad_0 -= *a2; /*0x6dc4d0*/
-    this->Vector2_field_0x04 = Vector2_field_0x04 - a2[1]; /*0x6dc4d8*/
+    *(unsigned int *)&this->Vector2_field_0x04 = Vector2_field_0x04 - a2[1]; /*0x6dc4d8 G42.35 C7*/
     return this->__pad_0; /*0x6dc4d7*/
 }
 } // namespace gamemd
@@ -4469,7 +4535,7 @@ int COMClass::queryProperty() {
     this->m_10 = 0; /*0x765689*/
     if ( v2 && IDA_BYTE1(this->m_C) ) /*0x765690*/
     {
-      result = (**v2)(v2, 3); /*0x76569d*/
+      result = (**v2)((unsigned int)v2, 3); /*0x76569d G42.35 C9 接收者值形*/
       *(unsigned int *)&this->m_1[3] = 0; /*0x76569f*/
     }
     IDA_BYTE1(this->m_C) = 0; /*0x7656a2*/
@@ -4510,7 +4576,7 @@ char * COMClass::createInstance(char a2) {
         {
           v5 = (ComPtr *)((char *)v5 - 8); /*0x765bce*/
           *(unsigned int *)v5->__pad_0 = 0; /*0x765bd3*/
-          ComPtr::Release(v5); /*0x765bd9*/
+          v5->Release(); /*0x765bd9 G42.35 C6 实例形*/
           --v7; /*0x765bde*/
         }
         while ( v7 ); /*0x765bdf*/
@@ -4522,10 +4588,10 @@ char * COMClass::createInstance(char a2) {
     else
     {
       *(unsigned int *)this->__pad_0 = 0; /*0x765bfa*/
-      ComPtr::Release((ComPtr *)this); /*0x765c00*/
+      ((ComPtr *)this)->Release(); /*0x765c00 G42.35 C6 实例形*/
       if ( (a2 & 1) != 0 ) /*0x765c08*/
         RA2_OPDEL(this); /*0x765c0b*/
-      return this->__pad_0; /*0x765c13*/
+      return (char *)this->__pad_0; /*0x765c13 G42.35 C9 char* 形*/
     }
 }
 } // namespace gamemd
@@ -4539,7 +4605,7 @@ unsigned int * COMClass::getInterface(char a2) {
     *(unsigned int *)this->__pad_0 = 0; /*0x765c26*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x765c30*/
     {
-      (**v3)(v3, 3); /*0x765c3f*/
+      (**v3)((unsigned int)v3, 3); /*0x765c3f G42.35 C9 接收者值形*/
       *(unsigned int *)&this->m_1[3] = 0; /*0x765c41*/
     }
     IDA_BYTE1(this->m_C) = 0; /*0x765c4c*/
@@ -4553,10 +4619,10 @@ unsigned int * COMClass::getInterface(char a2) {
 // 0x767880
 namespace gamemd {
 void ** COMClass::coUninitialize(char a2) {
-    DeleteAndZero((ObjectClass *)&this->field_18); /*0x767886*/
-    DeleteAndZero((ObjectClass *)&this->__pad_0[20]); /*0x76788e*/
+    j_DeleteAndZero((ObjectClass *)&this->field_18); /*0x767886 G42.35 C8 j_ 形*/
+    j_DeleteAndZero((ObjectClass *)&this->__pad_0[20]); /*0x76788e G42.35 C8 j_ 形*/
     *(unsigned int *)this->__pad_0 = 0; /*0x767895*/
-    ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x76789b*/
+    ((ReferenceCounted *)this)->Constructor(); /*0x76789b G42.35 C9 实例形*/
     if ( (a2 & 1) != 0 ) /*0x7678a5*/
       RA2_OPDEL(this); /*0x7678a8*/
     return (void **)this; /*0x7678b2*/
@@ -4566,8 +4632,8 @@ void ** COMClass::coUninitialize(char a2) {
 // 0x76F0C0
 namespace gamemd {
 unsigned int * VectorCursor::Construct(int a2, int a3) {
-    this->VectorCursor_field_0x04 = a2; /*0x76f0ca*/
-    this->VectorCursor_field_0x08 = a3; /*0x76f0cd*/
+    *(unsigned int *)&this->VectorCursor_field_0x04 = a2; /*0x76f0ca G42.35 C7*/
+    *(unsigned int *)&this->VectorCursor_field_0x08 = a3; /*0x76f0cd G42.35 C7*/
     *(unsigned int *)this->__pad_0 = 0; /*0x76f0d0*/
     return this->__pad_0; /*0x76f0d6*/
 }
@@ -4586,11 +4652,11 @@ unsigned int * VectorCursor::drawCursor(char a2) {
 // 0x77B030
 namespace gamemd {
 void ** PlayerProfile::QueryInterface(char a2) {
-    *this = (PlayerProfile)0; /*0x77b036*/
+    *(unsigned int *)this = 0; /*0x77b036 G42.35 C7 vftable 伪迹抑制*/
     DeleteAndZero::Alt((DeleteAndZero *)(this + 16)); /*0x77b03c*/
     DeleteAndZero::Alt((DeleteAndZero *)this + 5); /*0x77b044*/
-    DeleteAndZero((ObjectClass *)(this + 3)); /*0x77b04c*/
-    ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x77b053*/
+    j_DeleteAndZero((ObjectClass *)(this + 3)); /*0x77b04c G42.35 C8 j_ 形*/
+    ((ReferenceCounted *)this)->Constructor(); /*0x77b053 G42.35 C9 实例形*/
     if ( (a2 & 1) != 0 ) /*0x77b05d*/
       RA2_OPDEL(this); /*0x77b060*/
     return (void **)this; /*0x77b06a*/
@@ -4614,18 +4680,18 @@ int HashMap::Shrink2() {
     int v13; // eax
     int *v14; // [esp+8h] [ebp-4h]
 
-    HashMap_field_0x08 = this->HashMap_field_0x08; /*0x7adf75*/
+    HashMap_field_0x08 = *(unsigned int *)&this->HashMap_field_0x08; /*0x7adf75 G42.35 C7*/
     result = *((unsigned int *)this + 12); /*0x7adf78*/
     if ( HashMap_field_0x08 > result && *((unsigned char *)this + 20) != 1 ) /*0x7adf87*/
     {
       v4 = *(int **)this->__pad_0; /*0x7adf90*/
-      HashMap_field_0x0C = this->HashMap_field_0x0C; /*0x7adf93*/
+      HashMap_field_0x0C = *(unsigned int *)&this->HashMap_field_0x0C; /*0x7adf93 G42.35 C7*/
       v14 = *(int **)this->__pad_0; /*0x7adf96*/
-      this->HashMap_field_0x08 = HashMap_field_0x08 >> 1; /*0x7adf9c*/
-      this->HashMap_field_0x0C = HashMap_field_0x0C - 1; /*0x7adfa4*/
+      *(unsigned int *)&this->HashMap_field_0x08 = HashMap_field_0x08 >> 1; /*0x7adf9c G42.35 C7*/
+      *(unsigned int *)&this->HashMap_field_0x0C = HashMap_field_0x0C - 1; /*0x7adfa4 G42.35 C7*/
       v6 = (void *)RA2_OPNEW(4 * (HashMap_field_0x08 >> 1)); /*0x7adfaf*/
-      v7 = 4 * this->HashMap_field_0x08; /*0x7adfb4*/
-      *(unsigned int *)this->__pad_0 = v6; /*0x7adfbb*/
+      v7 = 4 * *(unsigned int *)&this->HashMap_field_0x08; /*0x7adfb4 G42.35 C9*/
+      *(unsigned int *)this->__pad_0 = (unsigned int)v6; /*0x7adfbb G42.35 C9 指针值形*/
       memset(v6, 0, v7); /*0x7adfc0*/
       if ( (int)HashMap_field_0x08 > 0 ) /*0x7adfcb*/
       {
@@ -4638,7 +4704,7 @@ int HashMap::Shrink2() {
           {
             do /*0x7adffd*/
             {
-              v11 = (*((int (__thiscall **)(int))this + 6))(v10) & ((1 << this->HashMap_field_0x0C) - 1); /*0x7adfe7*/
+              v11 = (*(int (__thiscall **)(int))((unsigned int *)this + 6))(v10) & ((1 << *(unsigned int *)&this->HashMap_field_0x0C) - 1); /*0x7adfe7 G42.35 C9 槽形*/
               v12 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11); /*0x7adfeb*/
               *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11) = v10; /*0x7adff1*/
               v13 = *(unsigned int *)(v10 + 112); /*0x7adff3*/
@@ -4662,7 +4728,7 @@ int HashMap::Shrink2() {
 // 0x7AE0C0
 namespace gamemd {
 int HashMap::ComputeIndex_2(int a2) {
-    return ((int (__thiscall *)(int))*(this + 6))(a2) & ((1 << *(this + 3)) - 1); /*0x7ae0d4*/
+    return ((int (__thiscall *)(int))*((unsigned int *)this + 6))(a2) & ((1 << *((unsigned int *)this + 3)) - 1); /*0x7ae0d4 G42.35 C9 dword 索引形*/
 }
 } // namespace gamemd
 
@@ -4683,18 +4749,18 @@ int HashMap::Shrink() {
     int v13; // eax
     int *v14; // [esp+8h] [ebp-4h]
 
-    HashMap_field_0x08 = this->HashMap_field_0x08; /*0x7ae465*/
+    HashMap_field_0x08 = *(unsigned int *)&this->HashMap_field_0x08; /*0x7ae465 G42.35 C7*/
     result = *((unsigned int *)this + 12); /*0x7ae468*/
     if ( HashMap_field_0x08 > result && *((unsigned char *)this + 20) != 1 ) /*0x7ae477*/
     {
       v4 = *(int **)this->__pad_0; /*0x7ae480*/
-      HashMap_field_0x0C = this->HashMap_field_0x0C; /*0x7ae483*/
+      HashMap_field_0x0C = *(unsigned int *)&this->HashMap_field_0x0C; /*0x7ae483 G42.35 C7*/
       v14 = *(int **)this->__pad_0; /*0x7ae486*/
-      this->HashMap_field_0x08 = HashMap_field_0x08 >> 1; /*0x7ae48c*/
-      this->HashMap_field_0x0C = HashMap_field_0x0C - 1; /*0x7ae494*/
+      *(unsigned int *)&this->HashMap_field_0x08 = HashMap_field_0x08 >> 1; /*0x7ae48c G42.35 C7*/
+      *(unsigned int *)&this->HashMap_field_0x0C = HashMap_field_0x0C - 1; /*0x7ae494 G42.35 C7*/
       v6 = (void *)RA2_OPNEW(4 * (HashMap_field_0x08 >> 1)); /*0x7ae49f*/
-      v7 = 4 * this->HashMap_field_0x08; /*0x7ae4a4*/
-      *(unsigned int *)this->__pad_0 = v6; /*0x7ae4ab*/
+      v7 = 4 * *(unsigned int *)&this->HashMap_field_0x08; /*0x7ae4a4 G42.35 C9*/
+      *(unsigned int *)this->__pad_0 = (unsigned int)v6; /*0x7ae4ab G42.35 C9 指针值形*/
       memset(v6, 0, v7); /*0x7ae4b0*/
       if ( (int)HashMap_field_0x08 > 0 ) /*0x7ae4bb*/
       {
@@ -4707,7 +4773,7 @@ int HashMap::Shrink() {
           {
             do /*0x7ae4ed*/
             {
-              v11 = (*((int (__thiscall **)(int))this + 6))(v10) & ((1 << this->HashMap_field_0x0C) - 1); /*0x7ae4d7*/
+              v11 = (*(int (__thiscall **)(int))((unsigned int *)this + 6))(v10) & ((1 << *(unsigned int *)&this->HashMap_field_0x0C) - 1); /*0x7ae4d7 G42.35 C9 槽形*/
               v12 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11); /*0x7ae4db*/
               *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11) = v10; /*0x7ae4e1*/
               v13 = *(unsigned int *)(v10 + 8); /*0x7ae4e3*/

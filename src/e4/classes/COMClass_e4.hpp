@@ -42,6 +42,7 @@ struct COMClass {
     unsigned int *m_1;  // G42.33 b3 flat-carrier vocab ([3] 索引基)
     unsigned int m_C;  // G42.33 b3 flat-carrier vocab
     unsigned int m_10;  // G42.33 b3 flat-carrier vocab
+    unsigned int m_8;  // G42.35 C9 flat-carrier vocab (0x7656a5)
     unsigned int field_18;  // G42.33 b3 flat-carrier vocab
     unsigned int COMClass_field_0x08;  // G42.33 b3 flat-carrier vocab
     unsigned int COMClass_field_0x0C;  // G42.33 b3 flat-carrier vocab

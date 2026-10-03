@@ -178,6 +178,7 @@ public:
 
     // IDA 0x42DDB0
     void ProcessBitmapStream();  // 0x42DDB0
+    int Invoke(int a2, int a3);  // 0x6C98E0 G42.35 C8 体词汇
     // IDA 0x42DF40
     // wrapper: delegates to Delegate::ProcessBitmapAndDispatch at 0x42DF40
     void sub_42DF40();
@@ -422,8 +423,10 @@ class EventQueue
 public:
     // IDA 0x54F000
      __int16 Process(void* bink_player);  // 0x54F000
+    static short Process(EventQueue *aP0);  // 0x54F000 G42.35 static-form sync (truth 0-arg thiscall; ui/supplied site 0x4E167C)
     // IDA 0x54F000 area
      void Read();  // 0x54F050
+    static unsigned short Read(void *aP0);  // 0x54F050 G42.35 static-form sync (truth __int16 0-arg thiscall; ui/supplied site 0x4E1692)
     // IDA 0x54F000 area
      bool Check();  // 0x54F650
     // IDA 0x54F000 area
@@ -436,6 +439,7 @@ public:
     unsigned int q318;  // 0x318
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool CheckPosition();  // 0x54F6B0
+    static int CheckPosition(EventQueue *aP0);  // 0x54F6B0 G42.35 static-form sync (truth 0-arg thiscall; ui/supplied sites 0x54F98A)
     // --- gap2 auto-generated stub declarations (END) ---
 };
 
@@ -671,11 +675,12 @@ public:
     unsigned char m_1[4];  // 0x1
     unsigned int m_C;  // 0xC
     int m_8;  // 0x8
+    unsigned int *__pad_0;  // G42.35 C8 体词汇 (0x58a426 vfptr 槽)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int AddRef(int a1);  // 0x589300
     int Release(int a1, void* a2);  // 0x589550
     void* Init();  // 0x589680
-    void* QueryInterface(int a1);  // 0x58A420
+    unsigned int * QueryInterface(char a2);  // 0x58A420 G42.35 C7 体签名
     // --- gap2 auto-generated stub declarations (END) ---
 };
 
@@ -771,10 +776,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory() = default;
 
-    virtual void Register(); // 0x6BEDB0
-    virtual void CreateInstance(); // 0x6C0AC0
+    virtual int Register(IID *rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext); // 0x6BEDB0 G42.35 C9 体签名
+    virtual unsigned int * CreateInstance(); // 0x6C0AC0 G42.35 C9 体签名
 
     uint8_t COMClassFactory_field_0x04[4];
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6bedb4)
 };
 // 1 methods in IDA
 // CSP: COMClassFactory_10 matched via T1
@@ -785,6 +791,8 @@ public:
     virtual ~COMClassFactory_10() = default;
 
     virtual _DWORD * Construct(); // 0x6BFBC0
+    unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BFBC0)
 
 };
 // 1 methods in IDA
@@ -796,6 +804,8 @@ public:
     virtual ~COMClassFactory_3() = default;
 
     virtual _DWORD * Construct(); // 0x6BF140
+    unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF140)
 
 };
 // 1 methods in IDA
@@ -807,6 +817,8 @@ public:
     virtual ~COMClassFactory_4() = default;
 
     virtual _DWORD * Construct(); // 0x6BF2C0
+    unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF2C0)
 
 };
 // 1 methods in IDA
@@ -818,6 +830,8 @@ public:
     virtual ~COMClassFactory_5() = default;
 
     virtual _DWORD * Construct(); // 0x6BF440
+    unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF440)
 
 };
 // 1 methods in IDA
@@ -829,6 +843,8 @@ public:
     virtual ~COMClassFactory_6() = default;
 
     virtual _DWORD * Construct(); // 0x6BF5C0
+    unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF5C0)
 
 };
 // 1 methods in IDA
@@ -840,6 +856,8 @@ public:
     virtual ~COMClassFactory_7() = default;
 
     virtual _DWORD * Construct(); // 0x6BF740
+    unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF740)
 
 };
 // 1 methods in IDA
@@ -851,6 +869,8 @@ public:
     virtual ~COMClassFactory_8() = default;
 
     virtual _DWORD * Construct(); // 0x6BF8C0
+    unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF8C0)
 
 };
 // 1 methods in IDA
@@ -862,6 +882,8 @@ public:
     virtual ~COMClassFactory_9() = default;
 
     virtual _DWORD * Construct(); // 0x6BFA40
+    unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BFA40)
 
 };
 // 27 methods in IDA
@@ -952,10 +974,11 @@ class ComPtr
 public:
     virtual ~ComPtr() = default;  // 0x6406F0
 
-    virtual void Release_Alt(); // 0x4B4D50
-    virtual void ReleaseAndSet(); // 0x4D0490
-    virtual void Dtor(); // 0x6406F0
-    virtual void Constructor(); // 0x65D430
+    virtual int Release_Alt(); // 0x4B4D50 G42.34 C5 体签名
+    virtual int ReleaseAndSet(unsigned int *a2); // 0x4D0490 G42.34 C5 体签名
+    virtual int Dtor(); // 0x6406F0 G42.35 C6 体签名
+    static int Dtor(void *aP0);  // 0x6406F0 G42.35 static-form sync (ui/supplied site 0x46E088)
+    virtual unsigned int * Constructor(); // 0x65D430 G42.35 C6 体签名
     virtual void Release(); // 0x65D460
     // +4 more virtual methods
 
@@ -967,7 +990,7 @@ public:
     uint8_t ComPtr_field_0x18[4];
     uint8_t ComPtr_field_0x1C[4];
     uint8_t ComPtr_field_0x20[4];
-    unsigned char __pad_0;  // 0x0
+    unsigned int *__pad_0;  // 0x0 G42.35 C7 指针形 (return this->__pad_0 体)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Set(int a1);  // 0x65D480
     int ReleaseSimple();  // 0x67FDD0
@@ -996,7 +1019,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CountryCombo() = default;
 
-    virtual void IDToIndex(); // 0x4E3830
+    virtual int IDToIndex(); // 0x4E3830 G42.34 C5 体签名
 
 };
 // 11 methods in IDA
@@ -1069,7 +1092,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~EventBuffer() = default;
 
-    virtual void Enqueue(); // 0x54F1C0
+    virtual int Enqueue(int16_t a2); // 0x54F1C0 G42.35 C7 体签名
+    static int Enqueue(void *aP0, int16_t aP1);  // 0x54F1C0 G42.35 static-form sync (ui/supplied sites 0x54F99E+)
 
 };
 // 3 methods in IDA
@@ -1080,11 +1104,12 @@ public:
     virtual ~Flag() = default;
 
     virtual int CheckNone(); // 0x4A51D0 (G42.33 b4 C1: 体签名 int)
-    virtual void IsZero(); // 0x4F4CA0
-    virtual void IsNot2(); // 0x5176B0
+    virtual int IsZero(); // 0x4F4CA0 G42.35 C6 体签名
+    virtual int IsNot2(); // 0x5176B0 G42.35 C6 体签名
 
     uint8_t Flag_field_0x04[4];
     uint8_t Flag_field_0x08[4];
+    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f4ca9 指针解引用)
 };
 // 1 methods in IDA
 class FlagSystem
@@ -1093,7 +1118,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~FlagSystem() = default;
 
-    virtual void GetNextActive(); // 0x626690
+    virtual int GetNextActive(); // 0x626690 G42.35 C7 体签名
 
 };
 // 2 methods in IDA
@@ -1117,7 +1142,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~FloatArray() = default;
 
-    virtual void Get(); // 0x6C9680
+    virtual int Get(int a2); // 0x6C9680 G42.35 C9 体签名
 
 };
 // 6 methods in IDA
@@ -1126,11 +1151,11 @@ class GraphicMenuAnimItem
 public:
     virtual ~GraphicMenuAnimItem() = default; // 0x4F3090
 
-    virtual void Release(); // 0x4F3090
-    virtual void QueryInterface(); // 0x4F30E0
+    virtual BOOL Release(unsigned int *a2); // 0x4F3090 G42.34 C5 体签名
+    virtual void ***QueryInterface(char a2); // 0x4F30E0 G42.34 C5 体签名
     virtual void StubReturnFalse(); // 0x4F3AD0
     virtual void Stub(); // 0x4F3AE0
-    virtual void AddRef(); // 0x4F3B00
+    virtual char AddRef(); // 0x4F3B00 G42.35 C6 体签名
     // +1 more virtual methods
 
     uint8_t GraphicMenuAnimItem_field_0x04[4];
@@ -1138,6 +1163,7 @@ public:
     uint8_t GraphicMenuAnimItem_field_0x0C[4];
     uint8_t GraphicMenuAnimItem_field_0x10[4];
     uint8_t GraphicMenuAnimItem_field_0x14[4];
+    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f30e6 vfptr 槽)
 };
 // 5 methods in IDA
 class GraphicMenuImageItem
@@ -1145,9 +1171,9 @@ class GraphicMenuImageItem
 public:
     virtual ~GraphicMenuImageItem() = default;  // 0x4F37A0
 
-    virtual void Release(); // 0x4F3640
-    virtual void Load(); // 0x4F3690
-    virtual void Draw(); // 0x4F3720
+    virtual BOOL Release(unsigned int *a2); // 0x4F3640 G42.34 C5 体签名
+    virtual int Load(char a2); // 0x4F3690 G42.34 C5 体签名
+    virtual int Draw(char a2); // 0x4F3720 G42.34 C5 体签名
 virtual unsigned int * ddtor(unsigned int *);  // 0x4F37A0
     virtual void QueryInterface(); // 0x4F3840
 
@@ -1163,10 +1189,11 @@ class GraphicMenuItem
 public:
     virtual ~GraphicMenuItem() = default; // 0x4F3A70
 
-    virtual void Constructor(); // 0x4F3A50
+    virtual unsigned int * Constructor(int a2); // 0x4F3A50 G42.35 C6 体签名
     virtual int Destructor(); // 0x4F3A70
 
     uint8_t GraphicMenuItem_field_0x04[4];
+    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3a65 vfptr 槽)
 };
 // 2 methods in IDA
 class GraphicMenuItem_Destru
@@ -1175,10 +1202,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GraphicMenuItem_Destru() = default;
 
-    virtual void Release(); // 0x4F3AF0
-    virtual void QueryInterface(); // 0x4F3B20
+    virtual char Release(); // 0x4F3AF0 G42.35 C6 体签名
+    virtual void ***QueryInterface(char a2); // 0x4F3B20 G42.35 C6 体签名
 
     uint8_t GraphicMenuItem_Destru_field_0x04[4];
+    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3b27 vfptr 槽)
 };
 // 2 methods in IDA
 class GraphicMenuShortcutItem
@@ -1187,10 +1215,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GraphicMenuShortcutItem() = default;
 
-    virtual void AddRef(); // 0x4F3EE0
-    virtual void QueryInterface(); // 0x4F3F60
+    virtual char AddRef(int a2); // 0x4F3EE0 G42.35 C6 体签名
+    virtual unsigned int *QueryInterface(char a2); // 0x4F3F60 G42.35 C6 体签名
 
     uint8_t GraphicMenuShortcutItem_field_0x04[4];
+    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3f63 vfptr 槽)
 };
 // 3 methods in IDA
 #ifndef GAMEMD_E4_Hash  // G42.33 b3: e4 flat carrier wins in opt-in TUs
@@ -1203,6 +1232,7 @@ public:
     virtual void ComputeHashSHA1(); // 0x476D80
     virtual void InsertOrdered(); // 0x4F4410
     virtual void Reset(); // 0x5565F0
+    static int Reset(void *aP0);  // 0x5565F0 G42.35 static-form sync (ui/supplied site 0x4B4F1C)
 
     uint8_t Hash_field_0x04[4];
     uint8_t Hash_field_0x08[4];
@@ -1216,12 +1246,13 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~HashMap() = default;
 
-    virtual void ComputeIndex(); // 0x624C80
-    virtual void Shrink2(); // 0x7ADF70
-    virtual void ComputeIndex_2(); // 0x7AE0C0
-    virtual void Shrink(); // 0x7AE460
+    virtual int ComputeIndex(int a2); // 0x624C80 G42.35 C8 体签名
+    virtual int Shrink2(); // 0x7ADF70 G42.35 C9 体签名
+    virtual int ComputeIndex_2(int a2); // 0x7AE0C0 G42.35 C8 体签名
+    virtual int Shrink(); // 0x7AE460 G42.35 C9 体签名
 
     uint8_t HashMap_field_0x04[4];
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x7adf90)
     uint8_t HashMap_field_0x08[4];
     uint8_t HashMap_field_0x0C[4];
 };
@@ -1233,10 +1264,10 @@ public:
     virtual ~HashTable() = default;
 
     virtual void DestroyHashTableINIClass(); // 0x5256F0
-    virtual void BinarySearch(); // 0x52B390
-    virtual void BinarySearchAlt(); // 0x52B4F0
-    virtual void LookupAndMark(); // 0x608440
-    virtual void FindAndMark();
+    virtual int BinarySearch(int *a2); // 0x52B390 G42.35 C6 体签名
+    virtual int BinarySearchAlt(int *a2); // 0x52B4F0 G42.35 C6 体签名
+    virtual int LookupAndMark(); // 0x608440 G42.35 C6 体签名
+    virtual int FindAndMark(int a2, int a3); // G42.35 C6 体签名
     // +22 more virtual methods
 
     uint8_t HashTable_field_0x04[4];
@@ -1259,6 +1290,9 @@ public:
     uint8_t HashTable_field_0x48[4];
     uint8_t HashTable_field_0x4C[4];
     uint8_t HashTable_field_0x50[4];
+    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x52b510 数组基)
+    unsigned int m_4;  // G42.35 C8 体词汇 (0x62414c)
+    unsigned int m_8;  // G42.35 C8 体词汇 (0x6241af)
 };
 // 1 methods in IDA
 // CSP: HashTableSection matched via T1
@@ -1268,7 +1302,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~HashTableSection() = default;
 
-    virtual void FindSection(); // 0x526B10
+    virtual int FindSection(uint8_t *a2, uint8_t *a3); // 0x526B10 G42.35 C6 体签名
 
 };
 // 1 methods in IDA
@@ -1289,7 +1323,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~HashVector_UInt() = default;
 
-    virtual _DWORD * Construct(); // 0x58AFF0
+    virtual _DWORD * Construct(int a2, int a3); // 0x58AFF0 G42.35 C6 体签名
 
 };
 // 1 methods in IDA
@@ -1299,7 +1333,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PairVector() = default;
 
-    virtual void PushBack(); // 0x4E0C40
+    virtual char PushBack(unsigned int *a2); // 0x4E0C40 G42.34 C5 体签名
 
 };
 // 12 methods in IDA
@@ -1313,9 +1347,9 @@ public:
     virtual void FindNearestWaypoint(); // 0x430F70
     char FindNearestWaypoint(int a2, int a3, int a4);  // 0x430F70 G42.33 b3 supplied-body sync (3 参形)
     virtual int ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6);  // 0x4AB9B0 G42.33 b3 体签名
-    virtual void CheckHumanPlayer(); // 0x4AC2B0
+    virtual char CheckHumanPlayer(); // 0x4AC2B0 G42.34 C5 体签名
     virtual char * SetTargetOrClear(int a2, int a3, int16_t *a4); // 0x4C6650 (G42.33 b4 C2: 体签名)
-    virtual void AssignPlayerIndex_0(); // 0x5C5D30
+    virtual char AssignPlayerIndex_0(); // 0x5C5D30 G42.35 C9 体签名
     // +7 more virtual methods
 
     uint8_t PlayerClass_field_0x04[4];
@@ -1334,10 +1368,11 @@ public:
     unsigned char __pad_1198[0x11A8 - 0x1198];
     unsigned int DisplayClass_field_0x11A8;
     unsigned int __pad_11AC;
-    unsigned char __pad_1194[0x1198 - 0x1194];  // G42.33 b4 C4: vocab
+    void *DisplayClass_field_0x1194;  // G42.34 C5: 体词汇 (0x4abbf5 IUnknown* 写)
     unsigned char __pad_11B4[0x11D0 - 0x11B4];
     void (__thiscall **DisplayClass_field_0x0)(void *, unsigned int, int);  // G42.33 b4 C3: vt 槽词汇
     unsigned int DisplayClass_field_0x11D0;
+    unsigned char __pad_0;  // 0x0 G42.34 C5: vfptr 槽词汇 (CheckHumanPlayer 体)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool HasPlayers();  // 0x6ABAC0
     int ProcessOccupancyUpdate(void* a1);  // 0x6D9FF0
@@ -1362,7 +1397,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PlayerProfile() = default;
 
-    virtual void QueryInterface(); // 0x77B030
+    virtual void **QueryInterface(char a2); // 0x77B030 G42.35 C9 体签名
 
 };
 // 2 methods in IDA
@@ -1373,8 +1408,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PlayerSlot() = default;
 
-    virtual void NameToDialogID(); // 0x510FB0
-    virtual void IndexToDlgID(); // 0x5E98F0
+    virtual int NameToDialogID(const char *a1); // 0x510FB0 G42.35 C6 体签名 (ecx 字串形)
+    virtual int IndexToDlgID(); // 0x5E98F0 G42.35 C6 体签名
 
     uint8_t PlayerSlot_field_0x04[4];
 };
@@ -1420,14 +1455,15 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Random() = default;
 
-    virtual void Gaussian(); // 0x5980C0
-    virtual void State(); // 0x65C780
+    virtual int Gaussian(); // 0x5980C0 G42.35 C7 体签名
+    virtual int State(); // 0x65C780 G42.35 C8 体签名
     virtual void Range(); // 0x65C7E0
     virtual void AdvanceRandomBytes(); // 0x661850
 
     uint8_t Random_field_0x04[4];
     uint8_t Random_field_0x08[4];
     uint8_t Random_field_0x0C[4];
+    unsigned int *__pad_0;  // G42.35 C8 体词汇 (0x65c780 指针解引用)
 };
 // 3 methods in IDA
 class RandomStraw
@@ -1436,11 +1472,12 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~RandomStraw() = default;
 
-    virtual void AdvanceState(); // 0x65C8B0
-    virtual void Release(); // 0x661C10
-    virtual void QueryInterface(); // 0x661C70
+    virtual int AdvanceState(); // 0x65C8B0 G42.35 C8 体签名
+    virtual int Release(int a2, int a3); // 0x661C10 G42.35 C8 体签名
+    virtual int *QueryInterface(char a2); // 0x661C70 G42.35 C8 体签名
 
     uint8_t RandomStraw_field_0x04[4];
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x65c8ba)
     uint8_t RandomStraw_field_0x08[4];
 };
 // 1 methods in IDA
@@ -1451,8 +1488,10 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Rect_Point() = default;
 
-    virtual _DWORD * Set(); // 0x4E1A20
+    virtual int Set(int a2, int a3); // 0x4E1A20 G42.34 C5 体签名
 
+    int Width;   // G42.34 C5: Set 体词汇 (0x4e1a28)
+    int Height;  // G42.34 C5: Set 体词汇 (0x4e1a2b)
 };
 // 1 methods in IDA
 // CSP: ReferenceCounted matched via T1
@@ -1494,7 +1533,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SettingsClass() = default;
 
-    virtual void ClampValues(); // 0x5975E0
+    virtual int ClampValues(); // 0x5975E0 G42.35 C7 体签名
 
 };
 // 1 methods in IDA
@@ -1504,7 +1543,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StringBuffer() = default;
 
-    virtual void Reset(); // 0x5F33A0
+    virtual unsigned char * Reset(); // 0x5F33A0 G42.35 C8 体签名
 
 };
 // 1 methods in IDA
@@ -1514,7 +1553,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StringList() = default;
 
-    virtual void Find(); // 0x721210
+    virtual int Find(const char *a2); // 0x721210 G42.35 C9 体签名
 
 };
 // 2 methods in IDA
@@ -1575,7 +1614,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Timeout() = default;
 
-    virtual void GetRemaining(); // 0x4B4D70
+    virtual int GetRemaining(); // 0x4B4D70 G42.34 C5 体签名
 
 };
 // 1 methods in IDA
@@ -1586,7 +1625,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TimerPool() = default;
 
-    virtual void AllocSlot(); // 0x53E3C0
+    virtual unsigned int * AllocSlot(); // 0x53E3C0 G42.35 C7 体签名
 
 };
 // 1 methods in IDA
@@ -1596,7 +1635,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Tree() = default;
 
-    virtual int Destructor(); // 0x5B4080
+    virtual void Destructor(); // 0x5B4080 G42.35 C8 体签名
 
 };
 // 1 methods in IDA
@@ -1621,6 +1660,7 @@ public:
     virtual void Subtract(); // 0x6DC4C0
 
     uint8_t Vector2_field_0x04[4];
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6dc4d0)
 };
 #endif  // GAMEMD_E4_Vector2
 // 3 methods in IDA
@@ -1648,8 +1688,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Vector4() = default;
 
-    virtual void EraseAt(); // 0x5AD790
-    virtual void EraseAt_Copy(); // 0x63EF70
+    virtual char EraseAt(int a2); // 0x5AD790 G42.35 C7 体签名 (Vector4)
+    virtual int EraseAt_Copy(int a2); // 0x63EF70 G42.35 C7 体签名
 
     uint8_t Vector4_field_0x04[4];
 };
@@ -1662,7 +1702,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Vector8() = default;
 
-    virtual void EraseAt(); // 0x589290
+    virtual int EraseAt(int a2); // 0x589290 G42.35 C7 体签名 (Vector8)
 
 };
 // 1 methods in IDA
@@ -1683,14 +1723,15 @@ class VectorCursor
 public:
     virtual ~VectorCursor() = default;  // 0x76F190
 
-    virtual _DWORD * Construct(); // 0x76F0C0
+    virtual _DWORD * Construct(int a2, int a3); // 0x76F0C0 G42.35 C9 体签名
     virtual void HasNext(); // 0x76F0E0
     virtual void initCursor(); // 0x76F100
     virtual void updateCursor(); // 0x76F120
-    virtual void drawCursor(); // 0x76F140
+    virtual unsigned int * drawCursor(char a2); // 0x76F140 G42.35 C9 体签名
     // +2 more virtual methods
 
     uint8_t VectorCursor_field_0x04[4];
+    unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x76f0d0)
     uint8_t VectorCursor_field_0x08[4];
     uint8_t VectorCursor_field_0x0C[4];
     uint8_t VectorCursor_field_0x10[4];

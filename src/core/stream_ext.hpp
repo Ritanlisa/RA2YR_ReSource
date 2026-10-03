@@ -336,11 +336,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StreamWrapper() = default;
 
-    virtual int Read(); // 0x5C5D40
-    virtual void Write(); // 0x5C5D90
-    virtual void Seek(); // 0x5C5DD0
-    virtual void readData(); // 0x5D6620
-    virtual void StubReturnFalse(); // 0x6241E0
+    virtual char Read(); // 0x5C5D40 G42.35 C7 体签名
+    virtual bool Write(); // 0x5C5D90 G42.35 C7 体签名
+    virtual LRESULT Seek(HWND hWnd, int a3); // 0x5C5DD0 G42.35 C7 体签名
+    virtual int readData(int a2); // 0x5D6620 G42.35 C7 体签名
+    virtual char StubReturnFalse(); // 0x6241E0 G42.35 C7 体签名
     // +1 more virtual methods
 
     uint8_t StreamWrapper_field_0x04[4];
