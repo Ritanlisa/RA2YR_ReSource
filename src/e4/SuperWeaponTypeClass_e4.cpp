@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/classes/VocClass_e4.hpp"
 #include "e4/e4_globals.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"  // G42.35f: C2027 supply
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"

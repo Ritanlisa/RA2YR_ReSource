@@ -83,9 +83,9 @@ struct TeamTypeClass {
     unsigned char u8_B3;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    AbstractClass * * FindOrCreateTaskForce(char *Source);
+    unsigned int * FindOrCreateTaskForce(char *Source);  // G42.35f: ida truth 0x6E85F0 int* return
     AbstractClass * * GetMaxCount(CCINIClass * aP1);
-    AbstractClass * * LoadFromINI(unsigned char *** aP1, void *a2);
+    char LoadFromINI(unsigned char *** aP1);  // G42.35f: ida truth 0x6F1090 = char __thiscall (uint8_t***)
     TeamTypeClass * ReadScriptData(char * a1, int a2);
     TeamTypeClass * ddtor(char a2);
     int Check(int a2, void *a2_2, void *a3);
@@ -105,7 +105,7 @@ struct TeamTypeClass {
     int ProcessTaskForce();
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int * GetTransportWaypoint(unsigned int * a2);
-    void * CreateScriptType(char *Source);
+    unsigned int * CreateScriptType(char *Source);  // G42.35f: ida truth 0x691C00 int* return
     static double vftable(...);  // C2597 interim stub
 };
 

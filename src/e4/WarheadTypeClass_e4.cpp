@@ -3,6 +3,8 @@
 #include "e4/classes/AnimTypeVector_e4.hpp"
 #include "e4/classes/Checksummer_e4.hpp"
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Block_e4.hpp"  // G42.35f: C2027 supply
+#include "e4/classes/CampaignClass_e4.hpp"  // G42.35f: C2027 supply
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/Power_e4.hpp"

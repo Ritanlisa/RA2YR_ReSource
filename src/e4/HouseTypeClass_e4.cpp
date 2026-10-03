@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/UnitTypeVector_e4.hpp"  // G42.35f: C2079 by-value supply
+#include "e4/classes/InfantryTypeVector_e4.hpp"  // G42.35f: C2079 by-value supply
 #include "e4/classes/HouseTypeClass_28_e4.hpp"
 #include "e4/classes/HouseTypeClass_36_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"

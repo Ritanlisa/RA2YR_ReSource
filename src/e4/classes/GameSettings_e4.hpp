@@ -64,7 +64,7 @@ struct GameSettings {
     void* ptr_8;
     void* ptr_10;
 // --- flat members (END) ---
-    short Read(void *a1, void *a2);
+    int Read();  // G42.35f: ida truth 0x5FA620 = int __thiscall Read(this) 0-param
     static char * FindFlagged();
     void * ParseNetworkAddress();
     void SetScoreVolume(int volume, void *a2, void *a3);
