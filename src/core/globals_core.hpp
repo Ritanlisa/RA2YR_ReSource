@@ -792,7 +792,7 @@ extern uint8_t AlliesAllowed; // data: 0xA8B31C
 extern uint32_t HarvesterTruce; // data: 0xA8B31D
 extern uint8_t CTF; // data: 0xA8B31E
 extern uint8_t FOW; // data: 0xA8B31F
-extern uint32_t MCVRedeploy; // data: 0xA8B320
+extern int MCVRedeploy; // data: 0xA8B320
 extern uint8_t g_GameSetupBuffer[20]; // data: 0xA8B380
 extern int32_t g_TauntCommandState; // data: 0xA8B394
 extern void* g_CommandExecState; // data: 0xA8B3AC

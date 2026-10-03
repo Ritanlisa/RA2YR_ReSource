@@ -1,0 +1,40 @@
+#include "structure/building.hpp"
+#include "fundamentals.hpp"
+#include "misc/repeatable_timer.hpp"
+template<int N> struct PrintOff;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, Type)])> po_Type;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, Factory)])> po_Factory;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, C4Timer)])> po_C4Timer;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, BuildingClass_field_int_534)])> po_f534;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, OwnerCountryIndex)])> po_OwnerCountryIndex;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, Anims)])> po_Anims;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, AnimStates)])> po_AnimStates;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, DamageFireAnims)])> po_DamageFireAnims;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, Upgrades)])> po_Upgrades;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, FiringSWType)])> po_FiringSWType;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, SuperWeaponToken)])> po_SuperWeaponToken;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, Spotlight)])> po_Spotlight;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, GateTimer)])> po_GateTimer;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, LightSource)])> po_LightSource;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, RepairProgress)])> po_RepairProgress;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, BuildingClass_field_rect_63C)])> po_rect63C;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, BuildingClass_field_coord_64C)])> po_coord64C;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, BuildingClass_field_int_658)])> po_f658;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, HasPower)])> po_HasPower;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, Overpowerers)])> po_Overpowerers;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, Occupants)])> po_Occupants;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, FiringOccupantIndex)])> po_FiringOccupantIndex;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, Audio7)])> po_Audio7;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, Audio8)])> po_Audio8;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, WasOnline)])> po_WasOnline;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, CashProductionTimer)])> po_CashProductionTimer;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, BuildingClass_field_bool_6DC)])> po_b6DC;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, StuffEnabled)])> po_StuffEnabled;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, ColorAdd)])> po_ColorAdd;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, BuildingClass_field_int_6FC)])> po_f6FC;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, BuildingClass_field_short_700)])> po_s700;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, PrismStage)])> po_PrismStage;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, PrismTargetCoords)])> po_PrismTargetCoords;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, BunkerState)])> po_BunkerState;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, ProductionTimer)])> po_ProductionTimer;
+PrintOff<(int)sizeof(char[(int)offsetof(gamemd::BuildingClass, padProd3)])> po_padProd3;

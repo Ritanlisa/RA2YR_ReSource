@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct ObjectClass;  // fix_fwd_type_supply (G42.33b2: ForEachReverse param)
 struct Array {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0

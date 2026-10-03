@@ -139,7 +139,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadString(void* a1, void* a2, void* a3, int a4);  // 0x528C00
     int SetWideAsHex(void* a1, void* a2, void* a3);  // 0x528E00
     int ParseValue_Wide();  // 0x528F00
-    int GetStringEx();  // 0x529160
+    // G42.33: binary truth 0x529160 -- __thiscall GetStringEx(this, u8* section,
+    // u8* key, wchar_t* out, size_t count) (CSF 查找)
+    int GetStringEx(void* a1, void* a2, void* a3, unsigned int a4);  // 0x529160
     int GetCSFString();  // 0x529350
     int SetBool(void* a1, void* a2, int a3);  // 0x529560
     int ReadBool3(void* a1, void* a2, int a3);  // 0x5295A0

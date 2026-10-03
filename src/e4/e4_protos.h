@@ -317,7 +317,7 @@ extern char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int 
 extern AbstractClass * * GenerateRangeRingTextures(void *a1 = 0);
 extern AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2);
 extern int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2);
-extern AbstractClass * * InsertGameSettings(unsigned char * a1, char a2);
+extern char InsertGameSettings(unsigned char * a1, char a2);  // 0x781FB0 truth (G42.33 b2)
 extern AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1);
 extern char PlayerSkirmishSlotHandler(HWND a1 = 0, int a2 = 0, LPARAM a3 = 0, int a4 = 0);
 extern AbstractClass * * PopulateWOLLobbyListBox(void *a1 = 0);
@@ -667,7 +667,7 @@ extern void sub_4F38B0(void *a1 = 0, void *a2 = 0, void *a3 = 0);
 extern void unknown_libname_27(void *a1 = 0);
 extern void unknown_libname_35(void *a1 = 0);
 extern void unknown_libname_73(void *a1 = 0);
-extern void unknown_libname_74(void *a1 = 0);
+extern void *unknown_libname_74(void *a1 = 0);  // 0x7B66C0 returns _DWORD* (G42.33 b2 truth)
 extern void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int a6, int a7, int a8, IUnknown * a9, int a10, int a11, char a12);
 extern void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a4, IUnknown * aP5, unsigned char * a6, int * a7, int * a8);
 extern void* CreateMessageBox(LPARAM lParam, LPARAM, LONG dwNewLong);
@@ -974,3 +974,10 @@ void nullsub_23();  // G42.32: IDA null stub, fn-ptr cast use
 void nullsub_265();  // G42.32: IDA null stub, fn-ptr cast use
 void nullsub_39();  // G42.32: IDA null stub, fn-ptr cast use
 void nullsub_56();  // G42.32: IDA null stub, fn-ptr cast use
+extern unsigned int * LoadAccountInfoWOL(void * aP0);  // 0x778710 thiscall (G42.33 b2)
+extern int Memory_Pop(void * aP0);  // 0x623E00 thiscall (G42.33 b2)
+extern void ** ResetSystemWOL_Reset(void * aP0, char aP1);  // 0x7AD2F0 thiscall (G42.33 b2)
+extern void __Release__NonReentrantLock_details_Concurrency__QAEXXZ_1(void * aP0);  // 0x7ACBD0 thunk (G42.33 b2)
+extern unsigned int * LoadAccountInfoWOL(void * aP0);  // 0x778710 thiscall (G42.33 b2)
+extern int Memory_Pop(void * aP0);  // 0x623E00 thiscall (G42.33 b2)
+extern void ** ResetSystemWOL_Reset(void * aP0, char aP1);  // 0x7AD2F0 thiscall (G42.33 b2)

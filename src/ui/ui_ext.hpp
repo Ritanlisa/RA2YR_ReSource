@@ -501,7 +501,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Checksum() = default;
 
-    virtual void AddString(); // 0x4A1DB0
+    // G42.33: binary truth 0x4A1DB0 -- AddString(this, uint8_t*) 单参
+    virtual void AddString(uint8_t* a1); // 0x4A1DB0
 
 };
 // 1 methods in IDA

@@ -106,6 +106,7 @@ public:
         MixFileClass* SIDEC02D           = nullptr;
         MixFileClass* MULTI              = nullptr;
         MixFileClass* MULTIMD            = nullptr;
+    ~GenericMixFiles();  // gap2 anchor (was mis-declared in MixFileClass scope)
     };
 
     // Global search pool -- all loaded MIX files (including sub-MIX)
@@ -126,7 +127,6 @@ public:
     // unmatched: no callgraph reference and no git history record
     static uint32_t ComputeID(const char* filename);
 
-    virtual ~GenericMixFiles() override;
 
     // unmatched: no callgraph reference and no git history record
     MixFileClass() noexcept;

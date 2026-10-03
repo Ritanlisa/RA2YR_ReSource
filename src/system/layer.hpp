@@ -28,7 +28,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    bool CoordinatesLegal(int a1);  // 0x568300 -- LayerClass::CoordinatesLegal
+    bool CoordinatesLegal(void* a1);  // 0x568300 -- LayerClass::CoordinatesLegal (IDA: int16_t*)
     void* Reveal(int a1);  // 0x577d90 -- LayerClass::Reveal
     int CellIteratorNext();  // 0x578290 -- LayerClass::CellIteratorNext
     int CellIteratorReset();  // 0x578350 -- LayerClass::CellIteratorReset

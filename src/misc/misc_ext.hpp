@@ -5330,7 +5330,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WinAPI() = default;
 
-    virtual void Wrapper(); // 0x7DC720
+    // G42.33: binary truth 0x7DC720 -- __fastcall Wrapper(int); e4 corpus
+    // (addr4*_e4.cpp) has 350+ uniform 1-arg call sites; 0-arg callers: none.
+    static int Wrapper(int a2); // 0x7DC720
 
 };
 // 15 methods in IDA

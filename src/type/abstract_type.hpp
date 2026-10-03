@@ -55,6 +55,11 @@ public:
     void* ddtor(int a1);  // 0x410c30 -- AbstractTypeClass::ddtor
     void* FindName();  // 0x40dcb0 -- AbstractType::FindName
     // === SYMBOL-ANCHOR (END) ===
+public:  // --- G42.33 gap2 supply ---
+    // binary truth 0x410800: __thiscall (this, char *Source) -- e4 corpus
+    // (e4/AbstractTypeClass_e4.cpp) defines/calls it member-style; leaf TUs
+    // need it reachable on the tree class too.
+    void* Constructor(char* a1);  // 0x410800 (as Constructor)
 };
 
 } // namespace gamemd

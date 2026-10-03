@@ -32993,8 +32993,9 @@ void WideChar::ToLong(BlowStraw * aP0, int a2, int a3)
   return wcstoxl(a1, a2, a3, 1); /*0x7cbb8c*/
 }
 // 0x7dc720
-void WinAPI::Wrapper()
+int WinAPI::Wrapper(int a2)
 {
+  return a2; /*0x7dc720 SetLastError 族封装占位 (G42.33 签名对齐二进制 __fastcall(int))*/
 }
 
 // 0x774120

@@ -326,10 +326,15 @@ struct HashTable {
     unsigned char HashTable_field_0x04;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char q00C;  // 0xC
+    unsigned int HashTable_field_0x0C;  // G42.33 b2 alias (flat-carrier vocab)
+    unsigned int HashTable_field_0x18;  // G42.33 b2 alias (flat-carrier vocab)
     unsigned int u32_10;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     static int Shrink2(void *aP0);  // A_c2039 R5 static-form sync
+    static int Shrink(void *aP0);  // G42.33 b2 static-form sync (HashMap::Shrink vocab)
+    static int LookupString(void *aP0, const char **a2, unsigned int *a3);  // G42.33 b2 static-form sync
+    static int ComputeIndex_2(int *aP1, int aP2);  // G42.33 b2 static-form sync (HashMap vocab)
     static int Grow2(void *aP0);  // A_c2039 R5 static-form sync
     void* CleanupAndResize;  // 0x0 (no offset truth)
     unsigned char q01C;  // 0x1C

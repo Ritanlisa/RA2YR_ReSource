@@ -153,7 +153,7 @@ public:
     SuperClass*      CurrentSuperWeapon;        // 0x3FD4
 
 protected:
-    initButtons2() = default; // 0x40D270
+    char initButtons2(); // 0x40D270 thunk -> InitButtons (0x6D03A0)
     unsigned int u32_539C;  // 0x539C
     unsigned int u32_F94;  // 0xF94
     unsigned int u32_53A6;  // 0x53A6

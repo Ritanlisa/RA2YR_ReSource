@@ -55,7 +55,9 @@ public:
     void DestroyAllInstances();                              // 0x6F0A70
     void FlashAllInstances();                                // 0x6F1F30
     TeamClass* FindFirstInstance();                          // 0x6F1F70
-     TeamTypeClass* FindByName(const char*);           // 0x6F0FC0
+     // G42.33: binary 0x71F595 caller passes name in ECX only -- single-arg
+     // static form (IDA thiscall rendering is a mis-model)
+     static TeamTypeClass* FindByName(const char* name);           // 0x6F0FC0
     int GetAuxField() const;                                 // 0x6F20C0
     int GetClassIdentifier();                                // 0x6F1C40
     int GetGroup() const;                                    // 0x6F1870

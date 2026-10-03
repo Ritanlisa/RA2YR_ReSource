@@ -5,6 +5,20 @@
 
 #include "e4/classes/_fwd_e4.hpp"
 
+// G42.33: under GAMEMD_TREE_UNIVERSE the e4 fwd for AbstractClass is
+// suppressed (tree owns it as ra2::game::AbstractClass). Bridge the name so
+// the pointer members below resolve; guarded to keep non-tree TUs on the
+// e4-local fwd.
+#ifdef GAMEMD_TREE_UNIVERSE
+namespace ra2 { namespace game { class AbstractClass; } }
+namespace gamemd {
+#ifndef GAMEMD_USING_AbstractClass
+#define GAMEMD_USING_AbstractClass
+using ::ra2::game::AbstractClass;
+#endif
+} // namespace gamemd
+#endif // GAMEMD_TREE_UNIVERSE
+
 namespace gamemd {
 struct MPGameModeClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply

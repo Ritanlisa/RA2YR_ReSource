@@ -61,6 +61,8 @@ public:
     void LiberateMember_Start(FootClass* foot, int idx, uint8_t count);  // 0x6EA870
     void RecruitMember(FootClass* foot, int idx);                                        // 0x6EAA90
     void AddMember(FootClass* foot);                                                     // 0x6EA500
+    // G42.33: binary 0x6ED002 call form AddMember(this, FootClass*, int) -- overload
+    int AddMember(FootClass* foot, int flag);  // 2-arg form (supplied-bodies carrier)
     bool ValidateMember(FootClass* foot);                                                // 0x6EA610
     void RemoveAllMembers();                                                             // 0x636120
     void DestroyAllMembers();                                                            // 0x6340B0
@@ -87,6 +89,8 @@ public:
 
     // coordination
     FootClass* FindClosestEnemy(FootClass* foot);                                         // 0x6EAEE0
+    // G42.33: binary 0x6EDB5C call form FindClosestEnemy(this, out**, int*) -- overload
+    void FindClosestEnemy(void* outTarget, void* outFlag);  // 3-arg form (supplied-bodies carrier)
     void AttackCoordinator();                                                            // 0x6EB490
     void CheckCohesion();                                                                // 0x4D9E70
     bool HasAnyMemberFlagged(int flag) const;                                             // 0x4E0080

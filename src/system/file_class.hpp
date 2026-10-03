@@ -123,7 +123,10 @@ public:
     // design: inline accessor, inlined at all call sites
     bool HasHandle() override;
     // design: inline accessor, inlined at all call sites
-    bool Open(FileAccessMode access) override;
+    // G42.33: real slot is 0x65CB50 (a genuine RawFileClass vtable entry), but
+    // the FileClass base models Open as int(int). Keep it virtual (binary
+    // truth) without `override` -- signature intentionally hides the base.
+    virtual bool Open(FileAccessMode access);
     // unmatched: no callgraph reference and no git history record
     bool OpenEx(const char* pFileName, FileAccessMode access) override;
     int ReadBytes(void* pBuffer, int nNumBytes) override;

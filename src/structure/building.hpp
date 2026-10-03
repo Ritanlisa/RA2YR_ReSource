@@ -56,8 +56,8 @@ int Construct(int,int);  // 0x43B740
     int Activate() override;  // 0x452480
     int Deactivate() override;   // 0x452480
     virtual void Destroyed(ObjectClass* killer) override;  // 0x459E80
-    void AfterDestruction();  // 0x441F60
-    void Cleanup();  // 0x43EEB0
+    int AfterDestruction();  // 0x441F60
+    void Cleanup(int a2);  // 0x43EEB0
 
     // Stream/placement
     void LoadFromStream(void* stream);  // 0x453E20
@@ -73,7 +73,7 @@ int Construct(int,int);  // 0x43B740
     // design: virtual function, no binary implementation matched in IDA
     virtual int canPlaceHere(ObjectClass* pObj) const;
     bool IsCellPlaceable(int cell_x, int cell_y) const;  // 0x4260F0
-    bool ValidatePlacement();  // 0x480630
+    void ValidatePlacement(char a2);  // 0x480630
     bool ValidateFoundation();  // 0x44EFB0
     bool ValidateFoundation_0();  // 0x4DC8C0
     bool Validate();  // 0x4DD890
@@ -81,16 +81,16 @@ int Construct(int,int);  // 0x43B740
     bool ValidatePlacementEx();  // 0x4DEE80
     void FindPlacementCells();  // 0x7447B0
     void FindPlacementCells2(int* outCell, int inCell);  // 0x6B0300
-    void SearchPlacement();  // 0x56BEC0
+    int SearchPlacement(int a2, int a3);  // 0x56BEC0
     void VisualizePlacement();  // 0x485AF0
-    CoordStruct* GetPlacementCoords(CoordStruct* out) const;  // 0x45F160
-    RectangleStruct* GetPlacementRect(RectangleStruct* out) const;  // 0x47FDE0
+    int GetPlacementCoords(int* out, unsigned int* a3);  // 0x45F160
+    int* GetPlacementRect(int* out);  // 0x47FDE0
     char CheckOverlapWithOthers();  // 0x44E3A0
     int IsFootprintBlocked();  // 0x4578C0
     // wrapper: delegates to BuildingClass::IsFootprintBlocked at 0x4578C0
     void DamageFactoryBibCells();
     void ClearFactoryBib();  // 0x44D880
-    void RepairPlacement();  // 0x4533A0
+    int RepairPlacement(char a2);  // 0x4533A0
     bool CheckBuildability();  // 0x63AC70
     bool CheckCellPassability();  // 0x70C5A0
     void OnCellPlacementComplete();  // 0x710670
@@ -268,9 +268,9 @@ int CanAcceptType(int,int);  // 0x452670
     // UpdateBuilding*Particles); body reads particle location@+0x9C/height@+0xE4.
 
     // Animation
-    void PlayAnim(int anim_index, int anim_type, int frame_count);  // 0x451890
+    void PlayAnim(int a2, void* a3, int a4, int a5, int a6, void* a7);  // 0x451890
     void StopAnim(int anim_index);  // 0x451B40
-    void ClearAnims();  // 0x451E40
+    int ClearAnims(int a2);  // 0x451E40
     void ProcessActiveAnimation();  // 0x450630
     void UpdateAnimFrames();  // 0x4509D0
     void ProcessAnimationStates();  // 0x4545D0
@@ -308,7 +308,7 @@ int CanAcceptType(int,int);  // 0x452670
     void DisguiseDetectorDeactivate(CellStruct cell);
 
     // Update
-    void Update();  // 0x442C40
+    int Update();  // 0x442C40
     void OnObjectExpired(ObjectClass* obj);  // 0x44E8F0
     void UpdateTimerWithElapsed();  // 0x4A5290
     bool HasActiveParam();  // 0x458DB0
@@ -590,7 +590,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // External globals
 extern RulesClass* RulesClass_Instance;
 extern bool IKnowWhatImDoing; // data: 0xA8E7AC
-extern bool MCVRedeploy;  // data: 0xa8b320
+extern int MCVRedeploy;  // data: 0xA8B320
 
 // ------------------------------------------------------------
 // Faithful callees referenced by BuildingClass::GetPowerOutput (0x44E7B0) and
