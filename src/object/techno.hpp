@@ -450,7 +450,7 @@ public:
     virtual int sub_550D9D0();
     virtual int MapHouseRelationIndex();  // 0x50DAC0
     virtual int GetDamageMultiplier() const;  // 0x50BD30
-    virtual int ProcessTarget();  // 0x50CAD0
+    virtual bool ProcessTarget(int a2);  // 0x50CAD0  // G42.35 def-truth sync (def=object/supplied_bodies.cpp:6851 `bool ProcessTarget(int)`; cache: bool __thiscall TechnoClass::ProcessTarget(TechnoClass*,int))
     // wrapper: delegates to TechnoClass::ProcessTarget at 0x50CAD0
     virtual int sub_55224F0();
     virtual int GetDeployCoords();  // 0x4DBDF0
@@ -480,7 +480,7 @@ public:
     virtual int CanSelfRepair();  // 0x70FB50
     virtual int Mission_RepairDispatch();  // 0x6F4AB0
     virtual int PushNearbyUnits();  // 0x6F4EB0
-    virtual int SetFocus();
+    virtual int SetFocus(int a2);  // G42.35 def-truth sync (调用形 static (this,0) @0x73E74B)
     virtual int SetHouseFlag();  // 0x6F4960
     virtual int ProcessAIDecision();  // 0x740810
     virtual int CheckPlayerOwned() const;  // 0x6F4A40

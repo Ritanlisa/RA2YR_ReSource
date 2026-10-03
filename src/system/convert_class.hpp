@@ -19,6 +19,7 @@ public:
     static DynamicVectorClass<ConvertClass*>& Array;
     // IDA 0x48E740 -- ConvertClass::Construct (builds palette+blitter tables)
 
+    static unsigned int * Construct(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5);  // 0x48E740 G42.35 static-form sync (ui/supplied site 0x5D301C)
     // wrapper: delegates to ConvertClass::Construct at 0x48E740
     static ConvertClass* FindOrCreate(const char* pFilename);
     // unmatched: no callgraph reference and no git history record

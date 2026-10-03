@@ -29,6 +29,7 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual const char* GetFileName() const = 0;
     virtual const char* SetFileName(const char* pFileName) = 0;  // 0x473FC0
+    static int SetFileName(void *aP0, char *aP1);  // 0x473FC0 G42.35 static-form sync (ui/supplied sites 0x5D2ECF/0x5D2F06/0x5D2F11)
     virtual bool CreateFile() = 0;  // 0x7C83E0
     virtual bool DeleteFile() = 0;  // 0x7C84B2
     // design: pure virtual function, no binary implementation

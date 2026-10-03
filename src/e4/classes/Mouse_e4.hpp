@@ -40,6 +40,7 @@ struct Mouse {
     void DrawCursor(int *aP1, int aP2, int a4);
     SHORT GetKeyState(uint8_t vKey);  // 0x53EC90
     BOOL IsButtonDown(unsigned char a1);  // 0x54F5C0
+    static int IsButtonDown(unsigned int a1);  // 0x54F5C0 G42.35 static-form sync (truth __stdcall; ui/supplied sites 0x4E1761+)
     HWND HideWindow();  // 0x5BC400
 };
 } // namespace gamemd

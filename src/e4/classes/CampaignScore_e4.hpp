@@ -11,7 +11,9 @@ struct CampaignScore {
     std::locale::facet * Constructor_CampaignScoreClass(char a2);  // 0x471500 G42.33 b3
     std::locale::facet * Constructor_CampaignEndScoreClass(char a2);  // 0x471520 G42.33 b3
     static int LookupDialogHash(int aP0);  // 0x60CBA0 G42.33 b3 static-form sync
+    static int LookupDialogHash(void *aP0);  // 0x60CBA0 G42.35 static-form (ui/supplied site 0x46F2BA passes CampaignScore*)
     static int FindDialogTemplate(int aP0);  // 0x60CC00 G42.33 b3 static-form sync
+    static int FindDialogTemplate(void *aP0);  // 0x60CC00 G42.35 static-form (ui/supplied site 0x46F2CF passes CampaignScore*)
 };
 
 } // namespace gamemd

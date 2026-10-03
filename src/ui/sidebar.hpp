@@ -166,6 +166,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int addToList(void* a1);  // 0x63E880
     int Load(int a1);  // 0x6568A0
     int Save(int a1);  // 0x656AC0
+    static int Save(void *aP0, int aP1);  // 0x656AC0 G42.35 static-form sync (ui/supplied site 0x6AC5EA)
     int ReadButtonList();  // 0x674650
     int startButtonFlash(int a1, int a2, int a3);  // 0x69DFC0
     int updateFlashTimer();  // 0x69E010

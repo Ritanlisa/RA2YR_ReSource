@@ -332,9 +332,11 @@ public:
     virtual ~MultiplayerTeam() = default;
 
     virtual void Constructor(); // 0x5D8C50
+    static wchar_t ** Constructor(void *aP0, const wchar_t **aP1, wchar_t *aP2);  // 0x5D8C50 G42.35 static-form sync (ui/supplied site 0x5C1062)
     virtual void Destructor(); // 0x5D8C80
 
     uint8_t MultiplayerTeam_field_0x04[4];
+    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (site 0x5C1067)
 };
 // 1 methods in IDA
 class MultiplayerTeamVector

@@ -102,5 +102,6 @@ struct Session {
     int SetOption2(int aP1);  // G42.33 b10
     int GetPlayerColor();  // 0x69B720
     int StartGame(HWND hWnd);  // 0x5ED370
+    static int StartGame(void *aP0);  // 0x5ED370 G42.35 static-form sync (truth 0-arg thiscall; ui/supplied site 0x46F2C8)
 };
 } // namespace gamemd

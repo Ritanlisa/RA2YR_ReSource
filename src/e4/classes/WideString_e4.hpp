@@ -38,10 +38,12 @@ struct WideString {
     char RemoveChar(wchar_t a2);  // 0x7B6E20
     int GetOrEmpty();  // 0x7B7100
     int GetOrEmpty_Alt();  // 0x7B7140
+    static wchar_t * GetOrEmpty_Alt(void *aP0);  // 0x7B7140 G42.35 static-form sync (ui/supplied site 0x5D65B8)
          int GetChar(size_t aP1);  // 0x7B7180
     int Length();  // 0x7B71B0
     short Reassign(wchar_t * String, void *a2_1);  // 0x7B7600
     char IsASCII();  // 0x7B7D90
     int Hash(wchar_t * Source);  // def-aligned
+    static int Hash(void *aP0);  // 0x5DAC00 G42.35 static-form sync (ui/supplied site 0x46E22B)
 };
 } // namespace gamemd

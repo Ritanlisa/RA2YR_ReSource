@@ -183,6 +183,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     bool GetBlip(int a1, int a2, int a3, int a4);  // 0x6a8420
+    static int GetBlip(int aP0, int aP1, unsigned int aP2, unsigned int aP3);  // 0x6A8420 G42.35 static-form sync (truth __stdcall 4-arg 无 this; ui/supplied site 0x6A8742)
     // === FUNCS-MOVE (END) ===
     void* RadarClass_field_0x0;  // 0x0 (no offset truth)  G42.34 T11: updateRadarCells body 0x589E20 reads this->RadarClass_field_0x0 as unsigned int* base (IDA til member view)
 };

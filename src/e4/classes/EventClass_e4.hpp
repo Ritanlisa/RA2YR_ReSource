@@ -112,6 +112,7 @@ struct EventClass {
     AbstractClass * * ProcessEvent();  // 0x4C6CB0
     int deserializeEvent(int a2, IUnknown * aP2);  // 0x542280
     int Enqueue(unsigned short a2, char a3);  // 0x54F200
+    static int Enqueue(void *aP0, unsigned short aP1, char aP2);  // 0x54F200 G42.35 static-form sync (ui/supplied site 0x54F94F)
     int CheckFlag();  // 0x5F19C0
     AbstractClass * * validateEventType();  // 0x664440
     SHORT GetKeyStateSafe(unsigned char nVirtKey);  // 0x53EC70

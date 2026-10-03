@@ -63,7 +63,7 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void Construct(int x, int y, int w, int h, unsigned flags, bool isSticky);  // 0x4E12F0
     bool ClearState(bool force);  // 0x4E1550
-    void* QueryInterface(int a1);  // 0x4E1A60
+    unsigned int * QueryInterface(char a1);  // 0x4E1A60 G42.35 def-truth sync (dtor-form body in ui/supplied)
     int InitControls();  // 0x557BE0
     void SetTooltip(const wchar_t* tooltip);  // 0x623560
     void Show();  // 0x723EA0
@@ -75,6 +75,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* InitProperties();  // 0x600630 -- Gadget::InitProperties
     int Dtor();  // 0x4E1390 -- GadgetClass::Dtor
+    static int Dtor(void *aP0);  // 0x4E1390 G42.35 static-form sync (ui/supplied sites 0x48E663)
+    static int Construct(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, char aP6);  // 0x4E12F0 G42.35 static-form sync (truth char a7)
+    unsigned int Hovered;  // G42.35: supplied-bodies vocab (e4 flat member)
+    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view
     // === SYMBOL-ANCHOR (END) ===
 };
 
@@ -131,6 +135,7 @@ public:
     void OnMouseLeave() override;
 
     ShpImage* Image = nullptr;
+    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view
     // unmatched: no callgraph reference and no git history record
     const uint8_t (*Palette)[4] = nullptr;
     bool Hovered = false;

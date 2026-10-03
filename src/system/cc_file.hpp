@@ -49,6 +49,7 @@ public:
 
     int Open(int pFileName);  // 0x473C50
     void* ReadEntireFile();  // 0x4A3890
+    static void* ReadEntireFile(void *aP0);  // 0x4A3890 G42.35 static-form sync (ui/supplied site 0x5D2EE2)
     int Reset();  // 0x473CE0
 
 protected:
@@ -67,6 +68,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Construct(void* a1);  // 0x4739F0
     void* Construct2(void* a1);  // 0x473A30
     int Construct3();  // 0x473A80
+    static int Construct3(void *aP0);  // 0x473A80 G42.35 static-form sync (ui/supplied site 0x5D2E9C)
     int Destru_vt16(int a1, int a2, int a3);  // 0x473AB0
     int Read();  // 0x473B10
     int GetSize();  // 0x473C00

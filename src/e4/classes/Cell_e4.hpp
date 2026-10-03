@@ -5,15 +5,29 @@
 
 #include "e4/classes/_fwd_e4.hpp"
 
+#ifdef GAMEMD_TREE_UNIVERSE
+// G42.34i: tree TUs -- alias to ra2::game fwd (a using never collides C2874,
+// unlike a bare gamemd-ns struct fwd meeting the tree headers' using bridges).
+// The ra2::game fwd below is compatible with the later full tree definitions.
+namespace ra2 { namespace game {
+    class AbstractClass; class ObjectClass; class HouseClass; class TechnoClass;
+} }
+#endif
+
 namespace gamemd {
-#ifndef GAMEMD_TREE_UNIVERSE  // G42.34: tree TUs get these via using bridges; unguarded fwd collides C2874
+#ifdef GAMEMD_TREE_UNIVERSE
+using ::ra2::game::AbstractClass;
+using ::ra2::game::ObjectClass;
+using ::ra2::game::HouseClass;
+using ::ra2::game::TechnoClass;
+#else
 struct AbstractClass;  // fix_fwd_type_supply
 struct ObjectClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
 struct CellStruct;  // fix_fwd_type_supply
 struct TechnoClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
-#endif // GAMEMD_TREE_UNIVERSE
+#endif
 struct Cell {
 // --- flat members (BEGIN) ---
     Cell* q000;  // 0x0

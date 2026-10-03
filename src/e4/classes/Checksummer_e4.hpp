@@ -5,6 +5,7 @@ namespace gamemd {
 
 struct Checksummer {
     int Add_Buffer(uint8_t * state, int a3);
+    static int Add_Buffer(void *aP0, unsigned char *aP1, int aP2);  // 0x4A1DE0 G42.35 static-form sync (ui/supplied site 0x4A1DCC)
     int Add_double(int a2, int a3);
     int Add_float(int a2);
     static int Add_WORD(...);  // 0x4a1d30

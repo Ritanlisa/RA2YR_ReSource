@@ -28,6 +28,7 @@ struct ComPtr {
     unsigned int ComPtr_field_0x20;  // G42.33 b7 alias
     unsigned int ComPtr_field_0x1C;  // G42.33 b8 alias
      double Dtor(...);  // C2597 interim stub
+    static int Dtor(void *aP0);  // G42.35 static-form sync (ui/supplied site 0x46E088)
     static double Release_Alt(...);  // C2597 interim stub
      int Set(int a2);  // was C2597 interim stub, := truth 0x0x65d480
     unsigned int * Release();  // 0x65d460

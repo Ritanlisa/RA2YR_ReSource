@@ -27,6 +27,8 @@ public:
     // wrapper: delegates to TextRenderer::DrawText at 0x4A61C0
     int GetTextHeight();
 
+    static int GetInstance();  // 0x4A60D0 G42.35 static-form sync (ui/supplied site 0x557366)
+
 private:
     HDC          m_hdc;
     HBITMAP      m_bmp;

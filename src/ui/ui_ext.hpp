@@ -30,7 +30,7 @@ public:
 
     int32_t     Control_field_00;       // 0x00
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* CreateControlDialog();  // 0x60CF00
+    unsigned int * CreateControlDialog();  // 0x60CF00 (G42.35 def truth)
     // --- gap2 auto-generated stub declarations (END) ---
 };
 
@@ -249,8 +249,14 @@ public:
 
     // IDA 0x48B2A0 area
     int Destroy();  // 0x4E1480
+    static int Destroy(void *aP0);  // 0x4E1480 G42.35 static-form sync (ui/supplied site 0x4B4FAD)
     void Destru_vt00();  // 0x4E1AD0
     int Destruct();  // 0x5565A0
+    static int Destruct(void *aP0);  // 0x5565A0 G42.35 static-form sync (ui/supplied site 0x4E1AAC)
+    // G42.35: IDA til "LinkedList::" 三件实为 LinkClass vt 槽 (disasm truth: 0x5566A0 vt+12 / 0x556700 vt+16 / 0x5566D0 vt+20)
+    static int InsertAfter(void *aP0, int aP1);  // 0x5566A0 vt+12
+    static int Append(void *aP0, int aP1);       // 0x556700 vt+16
+    static unsigned int * Attach(void *aP0, int aP1);  // 0x5566D0 vt+20
 
     LinkClass*  m_Next;         // 0x04 (after vtable)
     LinkClass*  m_Prev;         // 0x08
@@ -292,7 +298,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Bitmap() = default;
 
-    virtual void GetNumberBitmapWOL(); // 0x783A90
+    virtual int GetNumberBitmapWOL(); // 0x783A90 (G42.35 def truth)
 
 };
 // 1 methods in IDA
@@ -315,7 +321,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ButtonClass() = default;
 
-    virtual void SetState(); // 0x69DEA0
+    virtual char SetState(char a2); // 0x69DEA0 (G42.35 def truth)
 
 };
 // 1 methods in IDA
@@ -409,6 +415,7 @@ class Campaign_WorldDominationTour
 public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Campaign_WorldDominationTour() = default;
+    virtual void ** QueryInterface(char a2); // 0x765600 (G42.35 def truth)
 
     virtual void QueryInterface(); // 0x765600
 
@@ -488,8 +495,9 @@ class CheckSum
 public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CheckSum() = default;
+    unsigned char __tail_0[1024];  // G42.35: supplied-bodies 尾数组词汇 (0x632C52 family)
 
-    virtual void AccumulateModulo(); // 0x632C40
+    virtual int AccumulateModulo(int16_t a2); // 0x632C40 (G42.35 def truth)
 
 };
 // 1 methods in IDA
@@ -531,8 +539,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ComboBoxOwnerDraw() = default;
 
-    virtual void GetWidthHeight(); // 0x600670
-    virtual void MatchDimensions(); // 0x600680
+    virtual int GetWidthHeight(); // 0x600670 (G42.35 def truth)
+    virtual bool MatchDimensions(unsigned int *a2); // 0x600680 (G42.35 def truth)
     virtual void DlgProc(); // 0x610CA0
     virtual void SortItems(); // 0x6252F0
     virtual void ComputeMask(); // 0x625390
@@ -544,6 +552,7 @@ public:
     uint8_t ComboBoxOwnerDraw_field_0x10[4];
     uint8_t ComboBoxOwnerDraw_field_0x14[4];
     uint8_t ComboBoxOwnerDraw_field_0x18[4];
+    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void SetCapacity();  // 0x6258E0
     int GrowBuffer();  // 0x625990
@@ -558,9 +567,11 @@ public:
     virtual ~ControlClass() = default;
 
     virtual unsigned int * Construct(int a2, int a3, int a4, int a5, int a6, int a7, char a8); // 0x48E520
+    static unsigned int * Construct(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, int aP6, char aP7);  // 0x48E520 G42.35 static-form sync (ui/supplied site 0x4E2524)
     virtual unsigned int * CtorFromData(int a2); // 0x48E570
     virtual unsigned int * QueryInterface(char a2); // 0x48E660
     virtual unsigned int * Constructor(int a2); // 0x4E1340 (G42.34: def truth)
+    static unsigned int * Constructor(void *aP0, int aP1);  // 0x4E1340 G42.35 static-form sync (ui/supplied site 0x48E579)
 
     unsigned int *__pad_0;  // G42.34: supplied-bodies view (0x48E520 family)
     uint8_t ControlClass_field_0x04[4];
@@ -663,6 +674,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ScrollDown(int a1);  // 0x4B55D0
     void* QueryInterface(int a1);  // 0x4B55F0
     int Constructor();  // 0x4C30B0
+    static int Constructor(void *aP0);  // 0x4C30B0 G42.35 static-form sync (ui/supplied site 0x4B57D3)
     int SelectItem(void* a1, int a2);  // 0x4C30E0
     int GetItem(int a1);  // 0x4C3110
     int GetCount(int a1, void* a2, int a3);  // 0x4C3190
@@ -706,7 +718,8 @@ public:
     virtual ~EditControl() = default;
 
     virtual void WndProc(); // 0x614B30
-    virtual void GrowBuffer(); // 0x7B72F0
+    virtual char GrowBuffer(wchar_t a2, size_t a3); // 0x7B72F0 (G42.35 def truth)
+    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view
 
     uint8_t EditControl_field_0x04[4];
 };
@@ -770,16 +783,20 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~InputManager() = default;
 
-    virtual void FindBestHitElement(); // 0x4E15A0
-    virtual void ProcessEvents(); // 0x4E1640
-    virtual void EnqueueInputEvent(); // 0x54F2F0
-    virtual void PushInputEvent(); // 0x54F670
-    virtual void WndProc(); // 0x54F790
+    virtual unsigned int * FindBestHitElement(int a2, int a3); // 0x4E15A0 (G42.35: def truth _DWORD* thiscall 2-arg)
+    virtual int ProcessEvents(); // 0x4E1640 (G42.35: def truth int thiscall)
+    static unsigned int * FindBestHitElement(void *aP0, int aP1, int aP2);  // 0x4E15A0 G42.35 static-form sync (ui/supplied site 0x4E16DF)
+    virtual void EnqueueInputEvent(); // 0x54F2F0 (member truth 4-arg thiscall)
+    static char EnqueueInputEvent(void *aP0, unsigned short aP1, short aP2, short aP3, char aP4);  // 0x54F2F0 G42.35 static-form sync (ui/supplied sites 0x54FA0D+)
+    virtual char PushInputEvent(int16_t a2); // 0x54F670 (G42.35 def truth)
+    static char PushInputEvent(void *aP0, int16_t aP1);  // 0x54F670 G42.35 static-form sync (ui/supplied sites 0x54F996)
+    virtual int WndProc(HWND a1, UINT a2, WPARAM a3, unsigned int a4); // 0x54F790 (G42.35 def truth)
 
     uint8_t InputManager_field_0x04[4];
     uint8_t InputManager_field_0x08[4];
     uint8_t InputManager_field_0x0C[4];
     uint8_t InputManager_field_0x10[4];
+    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (sites 0x4E1620/0x4E1626)
 };
 // 5 methods in IDA
 #ifndef GAMEMD_TREE_UNIVERSE
@@ -808,7 +825,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Keyboard() = default;
 
-    virtual void MapKey(); // 0x54F450
+    virtual int MapKey(uint16_t a2); // 0x54F450 (G42.35 def truth)
 
 };
 // 1 methods in IDA
@@ -818,7 +835,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~List() = default;
 
-    virtual void FindByValue(); // 0x5943E0
+    virtual int FindByValue(); // 0x5943E0 (G42.35 def truth)
 
 };
 // 8 methods in IDA
@@ -829,11 +846,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ListBox() = default;
 
-    virtual void Constructor(); // 0x5C1030
-    virtual void FillEntries(); // 0x5D6450
-    virtual void Refresh(); // 0x5D64C0
-    virtual void FillPlayers(); // 0x5D6540
-    virtual void AddEntries(); // 0x5D6690
+    virtual wchar_t ** Constructor(); // 0x5C1030 (G42.35 def truth)
+    virtual int FillEntries(int a2, int a3); // 0x5D6450 (G42.35 def truth, __stdcall form)
+    virtual int Refresh(int a2, int a3); // 0x5D64C0 (G42.35 def truth, __stdcall form)
+    virtual int FillPlayers(HWND a2, int a3); // 0x5D6540 (G42.35 def truth)
+    virtual int AddEntries(); // 0x5D6690 (G42.35 def truth, __stdcall form)
     // +3 more virtual methods
 
     uint8_t ListBox_field_0x04[4];
@@ -843,8 +860,17 @@ public:
     uint8_t ListBox_field_0x14[4];
     uint8_t ListBox_field_0x18[4];
     uint8_t ListBox_field_0x1C[4];
+    int MultiplayerGameMode_field_0x04;  // G42.35: supplied-bodies vocab (IDA til MultiplayerGameMode fields on ListBox)
+    int MultiplayerGameMode_field_0x08;
+    int MultiplayerGameMode_field_0x0C;
+    int MultiplayerGameMode_field_0x10;
+    int MultiplayerGameMode_field_0x14;
+    int MultiplayerGameMode_field_0x18;
+    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (site 0x5D657F)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Clear();  // 0x623840
+    static int Clear(void *aP0);  // 0x623840 G42.35 static-form sync (ui/supplied sites 0x5D2Exx family)
+    static wchar_t ** Constructor(void *aP0);  // 0x5C1030 G42.35 static-form sync (ui/supplied site 0x5D6705)
     int SetCustomEntry();  // 0x6969C0
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // funcs-move
@@ -859,11 +885,14 @@ class ListClass
 public:
     virtual ~ListClass() = default;  // 0x557600
 
-    virtual void Constructor(); // 0x4E2500
-    virtual void Construct(); // 0x557230
+    virtual int Constructor(int a2, int a3, int a4, int a5, int a6); // 0x4E2500 (G42.35 def truth)
+    static int Constructor(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5);  // 0x4E2500 G42.35 static-form sync (ui/supplied site 0x6B1B44)
+    virtual int Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9); // 0x557230 (G42.35 def truth)
     virtual int Destruct(); // 0x557600
-    virtual void AddItem(); // 0x5576A0
+    virtual int AddItem(int a2); // 0x5576A0 (G42.35 def truth)
+    static int AddItem(void *aP0, int aP1);  // 0x5576A0 G42.35 static-form sync (truth: int thiscall(this,int); ui/supplied sites 0x48833C/0x488333)
     virtual void RemoveItem(); // 0x557730
+    static char RemoveItem(void *aP0, signed int aP1);  // 0x557730 G42.35 static-form sync (truth: char thiscall(this,sint); ui/supplied site 0x4883CF)
     // +3 more virtual methods
 
     uint8_t ListClass_field_0x04[4];
@@ -873,6 +902,7 @@ public:
     uint8_t ListClass_field_0x14[4];
     uint8_t ListClass_field_0x18[4];
     uint8_t ListClass_field_0x1C[4];
+    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (sites 0x557609/0x55764F)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Destru_vt43(int a1);  // 0x557800
     void* Destru_vt50(int a1, int a2, int a3, int a4, int a5);  // 0x557D20
@@ -887,7 +917,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ListNode() = default;
 
-    virtual void Alloc(); // 0x5A9A20
+    virtual unsigned int * Alloc(unsigned int *a2); // 0x5A9A20 (G42.35 def truth)
 
 };
 // 1 methods in IDA
@@ -928,11 +958,14 @@ class SliderClass
 public:
     virtual ~SliderClass() = default; // 0x6B1D00
 
-    virtual void vt_method_558120(); // 0x558120
-    virtual void QueryInterface(); // 0x558180
-    virtual void Constructor(); // 0x6B1B20
-    virtual void Destructor(); // 0x6B1D00
-    virtual void GetValue(); // 0x6B1D40
+    virtual int vt_method_558120(); // 0x558120 (G42.35 def truth)
+    virtual unsigned int * QueryInterface(char a2); // 0x558180 (G42.35 def truth)
+    static int Destructor(void *aP0);  // 0x6B1D00 G42.35 static-form sync (ui/supplied sites 0x557658/0x558183)
+    virtual int * Constructor(int a2, int a3, int a4, int a5, int a6, int a7); // 0x6B1B20 (G42.35 def truth)
+    static int * Constructor(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, int aP6);  // 0x6B1B20 G42.35 static-form sync (ui/supplied site 0x5572C3)
+    virtual int Destructor(); // 0x6B1D00 (G42.35 def truth)
+    virtual int GetValue(int a2); // 0x6B1D40 (G42.35 def truth)
+    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (site 0x55819A)
     // +8 more virtual methods
 
     uint8_t SliderClass_field_0x04[4];
@@ -966,7 +999,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TabCameoListClass() = default;
 
-    virtual void AddCameo_ReplaceItAll(); // 0x6A8710
+    virtual int AddCameo_ReplaceItAll(int a2, int a3); // 0x6A8710 (G42.35 def truth)
 
 };
 // 2 methods in IDA
@@ -1036,7 +1069,7 @@ public:
 
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    int Enable(int a1);  // 0x7241a0 -- Tooltip::Enable
+    int Enable(char a1);  // 0x7241a0 -- Tooltip::Enable (G42.35 def truth char)
     // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
@@ -1045,7 +1078,7 @@ class TooltipClass
 public:
     virtual ~TooltipClass() = default;  // 0x724C30
 
-    virtual void GetText(); // 0x7248C0
+    virtual char GetText(unsigned int a2, void *a3); // 0x7248C0 (G42.35 def truth)
 
 };
 

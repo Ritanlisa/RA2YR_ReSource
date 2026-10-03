@@ -127,6 +127,7 @@ struct Dialog {
     static int FindGameUI();  // 0x5E26C0
     HWND ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...);
     static HWND ShowMessage(int a1, int a2);  // G42.33 b4 static-form sync (raw 2-arg form; member truth 0x5E2700 is 3-arg thiscall)
+    static int ShowMessage(int aP0, size_t aP1, char *aP2, wchar_t *aP3);  // G42.35 static-form sync (ui/supplied 4-arg raw site 0x46E1C3)
     static int DrawBackground(void *aP0);  // G42.33 b8 static-form sync
     static int StopBink(void *aP0);  // G42.33 b8 static-form sync
     static int Resize(void *aP0);  // G42.33 b8 static-form sync
@@ -135,6 +136,7 @@ struct Dialog {
     static HWND ShowStatusText(LPARAM a1, int a2, int a3, wchar_t *a4);  // G42.33 b8 static-form sync (4-arg raw)
     HWND ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2);    // 0x5E2790
     LRESULT ShowPlayerName();  // 0x5E2F60
+    static LRESULT ShowPlayerName(void *aP0);  // 0x5E2F60 G42.35 static-form sync (ui/supplied site 0x46F2C1)
     int MapPlayerIDToIndex();  // 0x5E9950
     unsigned int CheckButtonState();  // 0x5F3450
     BOOL IsSpecialTemplate();  // 0x602AE0

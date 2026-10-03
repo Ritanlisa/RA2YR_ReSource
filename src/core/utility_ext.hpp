@@ -980,6 +980,7 @@ public:
     static int Dtor(void *aP0);  // 0x6406F0 G42.35 static-form sync (ui/supplied site 0x46E088)
     virtual unsigned int * Constructor(); // 0x65D430 G42.35 C6 体签名
     virtual void Release(); // 0x65D460
+    static int Release(void *aP0);  // 0x65D460 G42.35 static-form sync (ui/supplied sites 0x76564B/0x765659)
     // +4 more virtual methods
 
     uint8_t ComPtr_field_0x04[4];
@@ -1268,6 +1269,7 @@ public:
     virtual int BinarySearchAlt(int *a2); // 0x52B4F0 G42.35 C6 体签名
     virtual int LookupAndMark(); // 0x608440 G42.35 C6 体签名
     virtual int FindAndMark(int a2, int a3); // G42.35 C6 体签名
+    static int Find(void *aP0, const char *aP1, int aP2);  // 0x6BA140 G42.35 static-form sync (truth thiscall(this, const char*, void*); ui/supplied sites 0x783Axx family)
     // +22 more virtual methods
 
     uint8_t HashTable_field_0x04[4];
@@ -1502,6 +1504,7 @@ public:
     virtual ~ReferenceCounted() = default;
 
     virtual void Constructor(); // 0x65D660
+    static int Constructor(void *aP0);  // 0x65D660 G42.35 static-form sync (ui/supplied site 0x765660)
 
 };
 // 6 methods in IDA

@@ -160,6 +160,7 @@ class Color
 public:
     // IDA 0x48B2A0 area
     int ConvertToRGB(int a2);  // 0x517440
+    static int ConvertToRGB(void *aP0, int aP1);  // 0x517440 G42.35 static-form sync (ui/supplied site 0x46EF8E)
     // IDA 0x48B2A0 area
     static uint32_t Lerp2(uint32_t a, uint32_t b, float t);  // 0x661020
     // IDA 0x48B2A0 area
@@ -406,12 +407,13 @@ public:
     virtual void ddtor();  // 0x493D60
     virtual void Release(); // 0x493D90
     virtual void Blit(); // 0x493DC0
-    virtual void QueryInterface(); // 0x49A200
+    virtual unsigned int* QueryInterface(char a2); // 0x49A200
 
     uint8_t BlitPlainXlatAlpha_ushort_field_0x04[4];
     uint8_t BlitPlainXlatAlpha_ushort_field_0x08[4];
     uint8_t BlitPlainXlatAlpha_ushort_field_0x0C[4];
     uint8_t BlitPlainXlatAlpha_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 };
 // 5 methods in IDA
 class BlitTransLucent25AlphaZReadWarp_ushort
@@ -423,12 +425,14 @@ public:
     virtual void ddtor();  // 0x495840
     virtual void BlitRect(); // 0x495870
     virtual void GetSize(); // 0x4958A0
-    virtual void Blit(); // 0x49A5E0
+    virtual unsigned int* Blit(char a2); // 0x49A5E0
 
     uint8_t BlitTransLucent25AlphaZReadWarp_ushort_field_0x04[4];
     uint8_t BlitTransLucent25AlphaZReadWarp_ushort_field_0x08[4];
     uint8_t BlitTransLucent25AlphaZReadWarp_ushort_field_0x0C[4];
     uint8_t BlitTransLucent25AlphaZReadWarp_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_8;  // G42.35 til-name member sync
 };
 // 14 methods in IDA
 class BlitTransLucent25AlphaZReadWrite_ushort
@@ -476,12 +480,14 @@ public:
     virtual void ddtor();  // 0x495360
     virtual void BlitRect(); // 0x495390
     virtual void GetSize(); // 0x4953C0
-    virtual void Blit(); // 0x49A520
+    virtual unsigned int* Blit(char a2); // 0x49A520
 
     uint8_t BlitTransLucent25AlphaZRead_ushort_field_0x04[4];
     uint8_t BlitTransLucent25AlphaZRead_ushort_field_0x08[4];
     uint8_t BlitTransLucent25AlphaZRead_ushort_field_0x0C[4];
     uint8_t BlitTransLucent25AlphaZRead_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_8;  // G42.35 til-name member sync
 };
 // 10 methods in IDA
 class BlitTransLucent25Alpha_ushort
@@ -523,12 +529,14 @@ public:
     virtual void ddtor();  // 0x4956A0
     virtual void BlitRect(); // 0x4956D0
     virtual void GetSize(); // 0x495700
-    virtual void Blit(); // 0x49A5A0
+    virtual unsigned int* Blit(char a2); // 0x49A5A0
 
     uint8_t BlitTransLucent50AlphaZReadWarp_ushort_field_0x04[4];
     uint8_t BlitTransLucent50AlphaZReadWarp_ushort_field_0x08[4];
     uint8_t BlitTransLucent50AlphaZReadWarp_ushort_field_0x0C[4];
     uint8_t BlitTransLucent50AlphaZReadWarp_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_8;  // G42.35 til-name member sync
 };
 // 5 methods in IDA
 class BlitTransLucent50AlphaZReadWrite_ushort
@@ -540,12 +548,14 @@ public:
     virtual void ddtor();  // 0x495E70
     virtual void BlitRect(); // 0x495EA0
     virtual void GetSize(); // 0x495ED0
-    virtual void Blit(); // 0x49A6E0
+    virtual unsigned int* Blit(char a2); // 0x49A6E0
 
     uint8_t BlitTransLucent50AlphaZReadWrite_ushort_field_0x04[4];
     uint8_t BlitTransLucent50AlphaZReadWrite_ushort_field_0x08[4];
     uint8_t BlitTransLucent50AlphaZReadWrite_ushort_field_0x0C[4];
     uint8_t BlitTransLucent50AlphaZReadWrite_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_8;  // G42.35 til-name member sync
 };
 // 5 methods in IDA
 class BlitTransLucent50AlphaZRead_ushort
@@ -557,12 +567,13 @@ public:
     virtual void ddtor();  // 0x4951C0
     virtual void BlitRect(); // 0x4951F0
     virtual void GetSize(); // 0x495220
-    virtual void Blit(); // 0x49A4E0
+    virtual unsigned int* Blit(char a2); // 0x49A4E0
 
     uint8_t BlitTransLucent50AlphaZRead_ushort_field_0x04[4];
     uint8_t BlitTransLucent50AlphaZRead_ushort_field_0x08[4];
     uint8_t BlitTransLucent50AlphaZRead_ushort_field_0x0C[4];
     uint8_t BlitTransLucent50AlphaZRead_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 };
 // 5 methods in IDA
 class BlitTransLucent50Alpha_ushort
@@ -574,12 +585,14 @@ public:
     virtual void ddtor();  // 0x4942A0
     virtual void BlitRect(); // 0x4942D0
     virtual void GetSize(); // 0x494300
-    virtual void Blit(); // 0x49A300
+    virtual unsigned int* Blit(char a2); // 0x49A300
 
     uint8_t BlitTransLucent50Alpha_ushort_field_0x04[4];
     uint8_t BlitTransLucent50Alpha_ushort_field_0x08[4];
     uint8_t BlitTransLucent50Alpha_ushort_field_0x0C[4];
     uint8_t BlitTransLucent50Alpha_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_8;  // G42.35 til-name member sync
 };
 // 5 methods in IDA
 class BlitTransLucent75AlphaZReadWarp_ushort
@@ -591,12 +604,14 @@ public:
     virtual void ddtor();  // 0x495500
     virtual void BlitRect(); // 0x495530
     virtual void GetSize(); // 0x495560
-    virtual void Blit(); // 0x49A560
+    virtual unsigned int* Blit(char a2); // 0x49A560
 
     uint8_t BlitTransLucent75AlphaZReadWarp_ushort_field_0x04[4];
     uint8_t BlitTransLucent75AlphaZReadWarp_ushort_field_0x08[4];
     uint8_t BlitTransLucent75AlphaZReadWarp_ushort_field_0x0C[4];
     uint8_t BlitTransLucent75AlphaZReadWarp_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_8;  // G42.35 til-name member sync
 };
 // 5 methods in IDA
 class BlitTransLucent75AlphaZReadWrite_ushort
@@ -608,12 +623,14 @@ public:
     virtual void ddtor();  // 0x495CD0
     virtual void BlitRect(); // 0x495D00
     virtual void GetSize(); // 0x495D30
-    virtual void Blit(); // 0x49A6A0
+    virtual unsigned int* Blit(char a2); // 0x49A6A0
 
     uint8_t BlitTransLucent75AlphaZReadWrite_ushort_field_0x04[4];
     uint8_t BlitTransLucent75AlphaZReadWrite_ushort_field_0x08[4];
     uint8_t BlitTransLucent75AlphaZReadWrite_ushort_field_0x0C[4];
     uint8_t BlitTransLucent75AlphaZReadWrite_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_8;  // G42.35 til-name member sync
 };
 // 5 methods in IDA
 class BlitTransLucent75AlphaZRead_ushort
@@ -625,12 +642,14 @@ public:
     virtual void ddtor();  // 0x495030
     virtual void BlitRect(); // 0x495060
     virtual void GetSize(); // 0x495090
-    virtual void Blit(); // 0x49A4A0
+    virtual unsigned int* Blit(char a2); // 0x49A4A0
 
     uint8_t BlitTransLucent75AlphaZRead_ushort_field_0x04[4];
     uint8_t BlitTransLucent75AlphaZRead_ushort_field_0x08[4];
     uint8_t BlitTransLucent75AlphaZRead_ushort_field_0x0C[4];
     uint8_t BlitTransLucent75AlphaZRead_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_8;  // G42.35 til-name member sync
 };
 // 5 methods in IDA
 class BlitTransLucent75Alpha_ushort
@@ -642,12 +661,14 @@ public:
     virtual void ddtor();  // 0x494150
     virtual void BlitRect(); // 0x494180
     virtual void GetSize(); // 0x4941B0
-    virtual void Blit(); // 0x49A2C0
+    virtual unsigned int* Blit(char a2); // 0x49A2C0
 
     uint8_t BlitTransLucent75Alpha_ushort_field_0x04[4];
     uint8_t BlitTransLucent75Alpha_ushort_field_0x08[4];
     uint8_t BlitTransLucent75Alpha_ushort_field_0x0C[4];
     uint8_t BlitTransLucent75Alpha_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_8;  // G42.35 til-name member sync
 };
 // 5 methods in IDA
 class BlitTransXlatAlphaZReadWrite_ushort
@@ -659,12 +680,13 @@ public:
     virtual void ddtor();  // 0x4959C0
     virtual void BlitRect(); // 0x4959F0
     virtual void GetSize(); // 0x495A20
-    virtual void Blit(); // 0x49A620
+    virtual unsigned int* Blit(char a2); // 0x49A620
 
     uint8_t BlitTransXlatAlphaZReadWrite_ushort_field_0x04[4];
     uint8_t BlitTransXlatAlphaZReadWrite_ushort_field_0x08[4];
     uint8_t BlitTransXlatAlphaZReadWrite_ushort_field_0x0C[4];
     uint8_t BlitTransXlatAlphaZReadWrite_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 };
 // 25 methods in IDA
 class BlitTransXlatAlphaZRead_ushort
@@ -745,12 +767,14 @@ public:
     virtual void ddtor();  // 0x494E90
     virtual void BlitRect(); // 0x494EC0
     virtual void GetSize(); // 0x494EF0
-    virtual void Blit(); // 0x49A460
+    virtual unsigned int* Blit(char a2); // 0x49A460
 
     uint8_t BlitTransZRemapXlatAlphaZRead_ushort_field_0x04[4];
     uint8_t BlitTransZRemapXlatAlphaZRead_ushort_field_0x08[4];
     uint8_t BlitTransZRemapXlatAlphaZRead_ushort_field_0x0C[4];
     uint8_t BlitTransZRemapXlatAlphaZRead_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_C;  // G42.35 til-name member sync
 };
 // 5 methods in IDA
 class BlitTransZRemapXlatAlpha_ushort
@@ -762,12 +786,14 @@ public:
     virtual void ddtor();  // 0x493FF0
     virtual void BlitRect(); // 0x494020
     virtual void GetSize(); // 0x494050
-    virtual void Blit(); // 0x49A280
+    virtual unsigned int* Blit(char a2); // 0x49A280
 
     uint8_t BlitTransZRemapXlatAlpha_ushort_field_0x04[4];
     uint8_t BlitTransZRemapXlatAlpha_ushort_field_0x08[4];
     uint8_t BlitTransZRemapXlatAlpha_ushort_field_0x0C[4];
     uint8_t BlitTransZRemapXlatAlpha_ushort_field_0x10[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_C;  // G42.35 til-name member sync
 };
 // 1 methods in IDA
 class BlitterList
@@ -786,7 +812,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BuildingDebris() = default;
 
-    virtual void Init(); // 0x631D40
+    virtual int Init(int a2); // 0x631D40  // G42.35 def-truth sync
 
 };
 // 1 methods in IDA
@@ -797,7 +823,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BuildingLightQueue() = default;
 
-    virtual void RemoveEntry(); // 0x5FF2D0
+    virtual int RemoveEntry(); // 0x5FF2D0  // G42.35 def-truth sync (def 体 int 返回)
 
 };
 // 4 methods in IDA
@@ -813,7 +839,7 @@ public:
     virtual void GetNext(); // 0x6E6E20
     virtual void Find(); // 0x6E6F20
     virtual void FindObject(); // 0x6E6FF0
-    virtual void FindBuilding(); // 0x6E7A80
+    virtual int FindBuilding(); // 0x6E7A80  // G42.35 def-truth sync
 
     uint8_t BuildingLoadQueue_field_0x04[4];
     uint8_t BuildingLoadQueue_field_0x08[4];
@@ -833,7 +859,7 @@ public:
 virtual char RenderBuildingPlacementPreview(unsigned int *,int *,char);  // 0x47EC90
     virtual int ValidateType(int a2, int a3);
     virtual bool IsPlacementFlagSet(unsigned int a2, char a3);
-    virtual void HandleClick(); // 0x4E2690
+    static int HandleClick(void* aP0, int a2); // 0x4E2690  // G42.35 R5 static-form sync (call 0x4E2B5E explicit-this form)
     // +4 more virtual methods
 
     uint8_t BuildingPlacement_field_0x04[4];
@@ -862,8 +888,15 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BuildingPlacementClass() = default;
 
-    virtual void Draw(); // 0x4E2B50
+    virtual int Draw(int a2); // 0x4E2B50  // G42.35 def-truth sync
 
+    unsigned int* __pad_0;  // G42.35 til-name member sync (Draw body 0x4E2B50)
+    unsigned int* __pad_14;  // G42.35 til-name member sync
+    unsigned int* __pad_31;  // G42.35 til-name member sync
+    int m_10;  // G42.35 til-name member sync
+    int m_C;  // G42.35 til-name member sync
+    char m_1E[4];  // G42.35 til-name member sync
+    unsigned int m_2D[4];  // G42.35 til-name member sync (Draw body 0x4E2B50 m_2D[0..3])
 };
 // 1 methods in IDA
 // CSP: BuildingPrerequisiteClass matched via T1
@@ -918,6 +951,7 @@ virtual unsigned int * DrawColorRect(int,int,int,int,int);  // 0x488980
     int GetColor(int a1);  // 0x488ee0 -- ColorListClass::GetColor
     void* QueryInterface(int a1);  // 0x488f00 -- ColorListClass::QueryInterface
     int SetColor();  // 0x557ae0 -- ColorListClass::SetColor
+    static int SetColor(void *aP0);  // 0x557ae0 G42.35 static-form sync (ui/supplied site 0x488350)
     int Clear(int a1);  // 0x557f40 -- ColorListClass::Clear
     void RemoveColor(int a1);  // 0x558010 -- ColorListClass::RemoveColor
     // === SYMBOL-ANCHOR (END) ===
@@ -929,7 +963,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ColorSchemeClass() = default;
 
-    virtual void LoadAllSchemes(); // 0x627B20
+    virtual int LoadAllSchemes(int a2); // 0x627B20  // G42.35 def-truth sync
 
 };
 // 6 methods in IDA
@@ -938,11 +972,11 @@ class FoggedObject_DrawVector
 public:
     virtual ~FoggedObject_DrawVector() = default;  // 0x4D2B20
 
-    virtual void Seek(); // 0x4D2980
-    virtual void Release(); // 0x4D2A10
+    virtual int Seek(int a2, int a3); // 0x4D2980  // G42.35 def-truth sync
+    virtual char Release(int a2, char* a3); // 0x4D2A10  // G42.35 def-truth sync
     virtual void ddtor();  // 0x4D2B20
-    virtual char * Read(); // 0x4D2B50
-    virtual void Write(); // 0x4D2BA0
+    virtual int Read(unsigned int* a2); // 0x4D2B50  // G42.35 def-truth sync
+    virtual unsigned int Write(int a2); // 0x4D2BA0  // G42.35 def-truth sync
     // +1 more virtual methods
 
     uint8_t FoggedObject_DrawVector_field_0x04[4];
@@ -950,6 +984,7 @@ public:
     uint8_t FoggedObject_DrawVector_field_0x0C[4];
     uint8_t FoggedObject_DrawVector_field_0x10[4];
     uint8_t FoggedObject_DrawVector_field_0x14[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (body 0x4D2A10-0x4D2B07)
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x4d2d10 -- FoggedObject_DrawVector::QueryInterface
@@ -963,10 +998,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~FrameSnapshot() = default;
 
-    virtual void Init(); // 0x4C91C0
-    virtual void InitMax(); // 0x4C91E0
+    virtual unsigned short* Init(); // 0x4C91C0  // G42.35 def-truth sync
+    virtual unsigned short* InitMax(int a2); // 0x4C91E0  // G42.35 def-truth sync
 
     uint8_t FrameSnapshot_field_0x04[4];
+    unsigned short* __pad_0;  // G42.35 til-name member sync (bodies 0x4C91C0/0x4C91E0)
 };
 // 2 methods in IDA
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制
@@ -992,7 +1028,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PaletteClass() = default;
 
-    virtual void Load(); // 0x5CB590
+    virtual unsigned int* Load(); // 0x5CB590  // G42.35 def-truth sync
 
 };
 // 1 methods in IDA
@@ -1003,7 +1039,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PaletteManager() = default;
 
-    virtual void Load(); // 0x72B530
+    virtual int Load(int a2); // 0x72B530  // G42.35 def-truth sync (cache: int __thiscall(PaletteManager*,int))
 
 };
 // 3 methods in IDA
@@ -1057,10 +1093,11 @@ public:
 
     virtual void AddRef(); // 0x497E60
     virtual void Release(); // 0x497F90
-    virtual void QueryInterface(); // 0x49AB00
+    virtual unsigned int* QueryInterface(char a2); // 0x49AB00
 
     uint8_t RLEBlitTransLucent25Alpha_ushort_field_0x04[4];
     uint8_t RLEBlitTransLucent25Alpha_ushort_field_0x08[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 };
 // 3 methods in IDA
 class RLEBlitTransLucent50AlphaZReadWarp_ushort
@@ -1113,10 +1150,12 @@ public:
 
     virtual void AddRef(); // 0x497CF0
     virtual void Release(); // 0x497E20
-    virtual void QueryInterface(); // 0x49AAC0
+    virtual unsigned int* QueryInterface(char a2); // 0x49AAC0
 
     uint8_t RLEBlitTransLucent50Alpha_ushort_field_0x04[4];
     uint8_t RLEBlitTransLucent50Alpha_ushort_field_0x08[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+    unsigned int m_8;  // G42.35 til-name member sync
 };
 // 3 methods in IDA
 class RLEBlitTransLucent75AlphaZReadWarp_ushort
@@ -1169,10 +1208,11 @@ public:
 
     virtual void AddRef(); // 0x497B80
     virtual void Release(); // 0x497CB0
-    virtual void QueryInterface(); // 0x49AA80
+    virtual unsigned int* QueryInterface(char a2); // 0x49AA80
 
     uint8_t RLEBlitTransLucent75Alpha_ushort_field_0x04[4];
     uint8_t RLEBlitTransLucent75Alpha_ushort_field_0x08[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 };
 // 3 methods in IDA
 class RLEBlitTransXlatAlphaZReadWrite_ushort
@@ -1197,10 +1237,11 @@ public:
 
     virtual void AddRef(); // 0x497FD0
     virtual void Release(); // 0x498150
-    virtual void QueryInterface(); // 0x49AB40
+    virtual unsigned int* QueryInterface(char a2); // 0x49AB40
 
     uint8_t RLEBlitTransXlatAlphaZRead_ushort_field_0x04[4];
     uint8_t RLEBlitTransXlatAlphaZRead_ushort_field_0x08[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 };
 // 3 methods in IDA
 class RLEBlitTransXlatAlpha_ushort
@@ -1211,10 +1252,11 @@ public:
 
     virtual void AddRef(); // 0x4978C0
     virtual void Release(); // 0x4979D0
-    virtual void QueryInterface(); // 0x49AA00
+    virtual unsigned int* QueryInterface(char a2); // 0x49AA00
 
     uint8_t RLEBlitTransXlatAlpha_ushort_field_0x04[4];
     uint8_t RLEBlitTransXlatAlpha_ushort_field_0x08[4];
+    unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 };
 // 3 methods in IDA
 class RLEBlitTransZRemapXlatAlphaZReadWrite_ushort
@@ -1321,7 +1363,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScrollingText() = default;
 
-    virtual void AddLine(); // 0x5D3FC0
+    virtual int AddLine(wchar_t* String, int a3, wchar_t* Source, int a5); // 0x5D3FC0  // G42.35 def-truth sync
 
 };
 // 2 methods in IDA
@@ -1332,10 +1374,15 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TacticalMapClass() = default;
 
-    virtual void SetCameraPosition(); // 0x6D6000
-    virtual void ProcessCell(); // 0x6D7F20
+    virtual unsigned int SetCameraPosition(int* a2); // 0x6D6000  // G42.35 def-truth sync
+    virtual int ProcessCell(int16_t* a2, int a3); // 0x6D7F20  // G42.35 def-truth sync
 
     uint8_t TacticalMapClass_field_0x04[4];
+    unsigned int TacticalClass_field_D64;  // G42.35 til-name member sync (SetCameraPosition 0x6D6040)
+    unsigned int TacticalClass_field_D68;  // G42.35
+    unsigned int TacticalClass_field_D74;  // G42.35
+    unsigned int TacticalClass_field_D78;  // G42.35
+    int redrawing;  // G42.35 (0x6D605F)
 };
 // 5 methods in IDA
 class VoxClass_Vector
@@ -1362,7 +1409,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~VoxelAnimTypeVector() = default;
 
-    virtual void Constructor(); // 0x67C310
+    virtual unsigned int* Constructor(int a2, int a3); // 0x67C310  // G42.35 def-truth sync
 
 };
 // 3 methods in IDA
@@ -1436,7 +1483,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~VoxelTypeClass() = default;
 
-    virtual void ReadINI(); // 0x73E5E0
+    virtual int ReadINI(double a2); // 0x73E5E0  // G42.35 def-truth sync (cache: int __thiscall(Class_7F5C70*,double))
 
 };
 // 2 methods in IDA
