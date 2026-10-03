@@ -6,6 +6,45 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class CloseAll;  // G42.36 fwd supply
+class UpdateGameUI;  // G42.36 fwd supply
+class RestoreParent;  // G42.36 fwd supply
+class GetField;  // G42.36 fwd supply
+class FindByPtr;  // G42.36 fwd supply
+class PumpMessages;  // G42.36 fwd supply
+class Show;  // G42.36 fwd supply
+class SubclassEditControl;  // G42.36 fwd supply
+class BOOL;  // G42.36 fwd supply
+class EnumAndCleanup;  // G42.36 fwd supply
+class CheckButtonState;  // G42.36 fwd supply
+class MapPlayerIDToIndex;  // G42.36 fwd supply
+class SessionClass;  // G42.36 fwd supply
+class CampaignScore;  // G42.36 fwd supply
+class FindGameUI;  // G42.36 fwd supply
+class OptionIDToIndex;  // G42.36 fwd supply
+class SideIDToIndex;  // G42.36 fwd supply
+class GetCurrent;  // G42.36 fwd supply
+class FindByHandle;  // G42.36 fwd supply
+class ReadMultiplayerDialogSettings;  // G42.36 fwd supply
+class BindGadgetData;  // G42.36 fwd supply
+class GrowBuffer;  // G42.36 fwd supply
+class UpdateControlState;  // G42.36 fwd supply
+class CampaignClass;  // G42.36 fwd supply
+class CleanupTree;  // G42.36 fwd supply
+class Destroy;  // G42.36 fwd supply
+class DrawBackground;  // G42.36 fwd supply
+class Resize;  // G42.36 fwd supply
+class DestroyDialogSystem;  // G42.36 fwd supply
+class InitializeControls;  // G42.36 fwd supply
+class InitWindow;  // G42.36 fwd supply
+class DispatchEvent;  // G42.36 fwd supply
+class HandleTabKey;  // G42.36 fwd supply
+class StopBink;  // G42.36 fwd supply
+class LPARAM;  // G42.36 fwd supply
+class HWND;  // G42.36 fwd supply
+class RunModemDialing;  // G42.36 fwd supply
+class InitializeGameSettings;  // G42.36 fwd supply
+class MapDialogResource;  // G42.36 fwd supply
 struct VoxelStruct;  // fix_fwd_type_supply
 
 struct INIClass {
@@ -93,6 +132,43 @@ static int WriteToString(...);  // C2597 interim stub
     unsigned int * GetRect(_DWORD *a2, char **a3, char **a4, int *a5); // N_fix R5 supply (cache truth)
     int SetDouble(unsigned __int8 *Block, char *a3, double a4); // N_fix R5 supply (cache truth)
     char SetString(unsigned __int8 *Block, char *a3, char *Source); // N_fix R5 supply (cache truth)
+    void MapDialogResource();
+    int InitializeGameSettings();
+    int RunModemDialing(int a2, int a3, char a4);
+    AbstractClass * * MapControlToAction(HWND hWnd, LPARAM);
+    int StopBink();
+    int HandleTabKey(HWND hWnd, LPARAM);
+    AbstractClass * * DispatchEvent(HWND hWnd, LPARAM);
+    AbstractClass * * InitWindow(int a1, int a2);
+    AbstractClass * * InitializeControls(HWND hWnd, LPARAM);
+    AbstractClass * * DestroyDialogSystem();
+    AbstractClass * * Resize();
+    AbstractClass * * DrawBackground(HWND hWnd);
+    int Destroy();
+    CampaignClass * * CleanupTree();
+    int UpdateControlState(unsigned int * a2, unsigned int * a3);
+    AbstractClass * * GrowBuffer();
+    AbstractClass * * BindGadgetData(int *a2, char *Block);
+    INIClass * * ReadMultiplayerDialogSettings();
+    int FindByHandle();
+    int GetCurrent();
+    int SideIDToIndex();
+    int OptionIDToIndex();
+    int FindGameUI();
+    HWND ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2);
+    int MapPlayerIDToIndex();
+    unsigned int CheckButtonState();
+    BOOL EnumAndCleanup();
+    BOOL SubclassEditControl(HWND hWnd, LPARAM);
+    HWND Show();
+    char PumpMessages();
+    int FindByPtr();
+    BOOL GetField();
+    HWND RestoreParent();
+    char UpdateGameUI();
+    HWND CloseAll();
+    unsigned int GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2);
+    int ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, int aP3);
 };
 
 } // namespace gamemd

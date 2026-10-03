@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class ProcessEvent;  // G42.36 fwd supply
 struct Color;  // fix_fwd_type_supply
 struct SHPStruct;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
@@ -1629,6 +1630,10 @@ struct BuildingTypeClass {
     void* LoadAnimations(int aP1);
     void* ProcessPower(int *aP1);
     int GetFoundationHeight(char a2);  // 0x45eca0
+    OverlayTypeClass * * FindOrCreate2(ObjectClass * Source);
+    ParticleSystemTypeClass * * LoadOrGet(ObjectClass * Source);
+    AbstractClass * * FindOrCreateAlt(INIClass * Source);
+    BuildingTypeClass * * ProcessEvent();
 };
 
 } // namespace gamemd

@@ -150,40 +150,7 @@ void j_DeleteAndZero_5D0580()
 namespace gamemd {
 int sub_5D2350(int a1, int * a2)
 {
-  int result; // eax
-  int v3; // eax
-  int v4; // ecx
-  unsigned int v5[4]; // [esp+8h] [ebp-20h] BYREF
-  struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
-
-  result = a2[2]; /*0x5d2359*/
-  if ( result > 0 ) /*0x5d235e*/
-  {
-    result = a2[3]; /*0x5d2364*/
-    if ( result > 0 ) /*0x5d2369*/
-    {
-      GetClientRect((HWND)(g_hWnd), &Rect); /*0x5d237b*/
-      ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5d238c*/
-      if ( dword_887640 ) /*0x5d239e*/
-        (*(void (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 60))(dword_887640, a1, 0); /*0x5d23a5*/
-      v3 = *a2; /*0x5d23af*/
-      v4 = a2[1]; /*0x5d23b3*/
-      v5[2] = a2[2]; /*0x5d23b9*/
-      v5[3] = a2[3]; /*0x5d23c6*/
-      v5[1] = Rect.top + v4; /*0x5d23ce*/
-      v5[0] = Rect.left + v3; /*0x5d23de*/
-      result = (*(int (**)(int, unsigned int *, int, int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x5d23e5*/
-                 g_DSurface_Primary,
-                 v5,
-                 a1,
-                 a2,
-                 0,
-                 1);
-      if ( dword_887640 ) /*0x5d23f1*/
-        return (*(int (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 64))(dword_887640, a1, 0); /*0x5d23f8*/
-    }
-  }
-  return result; /*0x5d23fb*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D2350)
 }
 }
 // 0x5D25D0

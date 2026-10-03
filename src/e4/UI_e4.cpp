@@ -180,44 +180,7 @@ void * sub_730FE0()
 namespace gamemd {
 AbstractClass * * sub_7318F0()
 {
-  char *result; // eax
-  char v2[112]; // [esp+0h] [ebp-70h] BYREF
-
-  result = *(char **)(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x7318f0*/
-  if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x7318fa*/
-  {
-    result = (char *)dword_A83D4C; /*0x731900*/
-    if ( !dword_A83D4C->__pad_140[181] ) /*0x731905*/
-    {
-      result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)(unsigned int *)((char *)&stru_A8EB00 + 216) + 60))(**(unsigned int **)(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x73191d*/
-      if ( result != (char *)dword_A83D4C ) /*0x731926*/
-      {
-        result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)(unsigned int *)((char *)&stru_A8EB00 + 216) + 60))(**(unsigned int **)(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x731935*/
-        if ( result[492] ) /*0x731938*/
-        {
-          result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)(unsigned int *)((char *)&stru_A8EB00 + 216) + 56))(**(unsigned int **)(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x73194f*/
-          if ( *(unsigned int *)&dword_A8B238 ) /*0x73195a*/
-          {
-            if ( ((int)dword_A8B230->vtable1 & 0x400) == 0 /*0x731981*/
-              && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5301)
-              && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5307) )
-            {
-              result = (char *)(((EventClass*)v2)->Add2((int)dword_A83D4C->Object_field_0x30, 3u, (int)result));
-              if ( (int)stru_A80220.lineTrailer < 128 ) /*0x7319ab*/
-              {
-                qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, result, 0x6Fu); /*0x7319c9*/
-                (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x7319dc*/
-                result = (char *)stru_A80220.lineTrailer + 1; /*0x7319f2*/
-                dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x7319f3*/
-                ++stru_A80220.lineTrailer; /*0x7319f9*/
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  return (gamemd::AbstractClass **)(result);
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7318F0)
 }
 }
 // 0x6D0E60

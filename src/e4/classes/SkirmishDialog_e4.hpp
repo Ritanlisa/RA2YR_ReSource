@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class HandleMultiplayerMapSelection;  // G42.36 fwd supply
 
 struct SkirmishDialog {
 // --- flat members (BEGIN) ---
@@ -15,6 +16,7 @@ struct SkirmishDialog {
     int ResizeDialogAndEnum(void *a1, void *a2);
      static double Show(...);  // C2597 interim stub
     static double FillComboBoxes(...);  // C2597 interim stub
+    SkirmishDialog * * HandleMultiplayerMapSelection();
 };
 
 } // namespace gamemd

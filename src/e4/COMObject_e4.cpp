@@ -45,13 +45,7 @@ bool COMObject::IsSameType(GScreenClass * aP0)
 namespace gamemd {
 int COMObject::GetStringValue(int a1, unsigned int * a2)
 {
-
-  if ( !a2 ) /*0x55ab47*/
-    return -2147467261; /*0x55ab49*/
-  *a2 = (*(int (**)(IUnknown *))(a1->field_0 + 36))(a1) + 4; /*0x55ab5e*/
-  a2[1] = 0; /*0x55ab60*/
-  return 0; /*0x55ab4e*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x55AB40)
 }
 } // namespace gamemd
 // 0x55ABD0
@@ -69,19 +63,7 @@ unsigned int * COMObject::ReturnZeroPos(int a1, unsigned int * a2)
 namespace gamemd {
 unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 {
-
-  FootClass *Owner; // ecx
-  int v3; // edx
-  int v4; // esi
-
-  Owner = a1->Owner; /*0x55aca6*/
-  v3 = ((unsigned int *)Owner)[1]; /*0x55acb3*/
-  v4 = ((unsigned int *)Owner)[2]; /*0x55acb6*/
-  *a2 = ((unsigned int *)Owner)[0]; /*0x55acbf*/
-  a2[1] = v3; /*0x55acc1*/
-  a2[2] = v4; /*0x55acc4*/
-  return a2; /*0x55acc7*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x55ACA0)
 }
 } // namespace gamemd
 // 0x55AD10

@@ -19,36 +19,13 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/GameState_e4.hpp"
 #include "e4/classes/WTFMode_e4.hpp"
+#include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x559D60
 namespace gamemd {
 char LoadOptions::AddRef(LPCCH lpMultiByteStr)
 {
-
-  int v1; // esi
-  wchar_t *StringCSF; // eax
-  Dialog *MessageBox; // edi
-  char Saved; // bl
-  const CHAR *lpMultiByteStr; // [esp+10h] [ebp+4h]
-
-  v1 = (wchar_t *)((*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640));
-  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtLoading), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1052));
-  MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
-  (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559d9b*/
-  if ( MessageBox ) /*0x559da0*/
-    ((Dialog *)(MessageBox))->Show(); /*0x559da4*/
-  byte_A8ED5C = 0; /*0x559dae*/
-  byte_A8E378 = 0; /*0x559db5*/
-  ((WTFMode*)&dword_A8B238)->Shutdown(); /*0x559dbc*/
-  Saved = Game::LoadSaved(lpMultiByteStr); /*0x559dd0*/
-  while ( (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640) < v1 ) /*0x559dd9*/
-    (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 16))(dword_887640); /*0x559de3*/
-  while ( (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640) > v1 ) /*0x559e02*/
-    (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559e0c*/
-  if ( MessageBox ) /*0x559e20*/
-    ((Dialog*)MessageBox)->Destroy(); /*0x559e24*/
-  return Saved; /*0x559e29*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x559D60)
 }
 } // namespace gamemd
 
@@ -56,22 +33,7 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
 namespace gamemd {
 char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
 {
-
-  wchar_t *StringCSF; // eax
-  Dialog *MessageBox; // esi
-  char v4; // bl
-  wchar_t *Sourcea; // [esp+10h] [ebp+8h]
-StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtSavingGame), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1107));
-  MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559e69*/
-  (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559e6d*/
-  if ( MessageBox ) /*0x559e72*/
-    ((Dialog *)(MessageBox))->Show(); /*0x559e76*/
-  v4 = SaveScenarioClassGame_AdjustMPSaveFileName((LPCCH)Source, Sourcea, 0); /*0x559e90*/
-  (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 16))(dword_887640); /*0x559e94*/
-  if ( MessageBox ) /*0x559e99*/
-    ((Dialog*)MessageBox)->Destroy(); /*0x559e9d*/
-  return v4; /*0x559ea4*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x559E40)
 }
 } // namespace gamemd
 
@@ -79,28 +41,7 @@ StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtSavingGame), 0,(const char 
 namespace gamemd {
 char LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
 {
-  IStorage *v3; // eax
-  bool v4; // sf
-  IStorage *ppstgOpen; // [esp+4h] [ebp-84h] BYREF
-  WCHAR WideCharStr[64]; // [esp+8h] [ebp-80h] BYREF
-
-  MultiByteToWideChar(0, 0, lpMultiByteStr, -1, WideCharStr, 64); /*0x67fd3f*/
-  ppstgOpen = 0; /*0x67fd65*/
-  if ( StgOpenStorage(WideCharStr, 0, 0x12u, 0, 0, &ppstgOpen) < 0 ) /*0x67fd75*/
-  {
-    v3 = ppstgOpen; /*0x67fd77*/
-  LABEL_4:
-    if ( v3 ) /*0x67fd93*/
-      ((gamemd::LoadOptions*)v3)->lpVtbl->Release(v3); /*0x67fd98*/
-    return 0; /*0x67fda4*/
-  }
-  v4 = ScenarioPropertyReadCOM(a2, (int)ppstgOpen) < 0; /*0x67fd89*/
-  v3 = ppstgOpen; /*0x67fd8b*/
-  if ( v4 ) /*0x67fd8f*/
-    goto LABEL_4; /*0x67fd8f*/
-  if ( ppstgOpen ) /*0x67fda7*/
-    ((gamemd::LoadOptions*)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67fdac*/
-  return 1; /*0x67fd9d*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67FD20)
 }
 } // namespace gamemd
 
@@ -118,49 +59,7 @@ bool LoadOptions::ddtor(LPCSTR lpFileName)
 namespace gamemd {
 char LoadOptions::Read(wchar_t * Destination, int a2)
 {
-
-  const CHAR *v2; // edi
-  char Options_Load; // bl
-  const wchar_t *v4; // eax
-  const wchar_t *v5; // eax
-  char *Data; // eax
-  ObjectClass v8; // [esp+Ch] [ebp-3F4h] BYREF
-  int v9; // [esp+408h] [ebp+8h]
-
-  if ( !a2 && !v9 ) /*0x559eed*/
-    return 0; /*0x559eed*/
-  v2 = (const CHAR *)(v9 + 44); /*0x559eff*/
-  if ( !_strcmpi((char *)(v9 + 44),(const char *)(MultiByteStr)) ) /*0x559f03*/
-    return 0; /*0x559f03*/
-  ((GameState*)(GameState *)&v8)->Reset(); /*0x559f17*/
-  Options_Load = LoadOptions_Load(v2, (int)&v8); /*0x559f27*/
-  if ( !Options_Load ) /*0x559f2b*/
-    return 0; /*0x55a03f*/
-  if ( ReadPointerFromECX3((int)(&v8)) == dword_83D560 ) /*0x559f46*/
-  {
-    v5 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)&v8); /*0x559f60*/
-    wcscpy((wchar_t *)a2, v5); /*0x559f67*/
-    *(unsigned char *)(a2 + 437) = 0; /*0x559f6f*/
-  }
-  else
-  {
-    v4 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)&v8); /*0x559f48*/
-    wcscpy((wchar_t *)a2, v4); /*0x559f4f*/
-    *(unsigned char *)(a2 + 437) = 1; /*0x559f57*/
-  }
-  *(unsigned char *)(a2 + 436) = Options_Load; /*0x559f7b*/
-  *(unsigned int *)(a2 + 288) = LoadOptions::GetFlag99((LoadOptions *)&v8); /*0x559f8a*/
-  *(unsigned int *)(a2 + 424) = LoadOptions::GetFlag98((LoadOptions *)&v8); /*0x559f99*/
-  *(unsigned int *)(a2 + 440) = LoadOptions::GetFlag252((LoadOptions *)&v8); /*0x559fa4*/
-  strcpy((char *)(a2 + 256), v2); /*0x559fc4*/
-  Data = LoadOptions::GetData((char *)&v8); /*0x559fd1*/
-  wcscpy((wchar_t *)(a2 + 296), (const wchar_t *)Data); /*0x559fde*/
-  if ( !strlen((const char *)(a2 + 256)) ) /*0x559fe5*/
-    strcpy((char *)(a2 + 256), (const char *)(v9 + 304)); /*0x55a013*/
-  *(unsigned int *)(a2 + 432) = *(unsigned int *)(v9 + 24); /*0x55a020*/
-  *(unsigned int *)(a2 + 428) = *(unsigned int *)(v9 + 20); /*0x55a029*/
-  return 1; /*0x55a02f*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x559ED0)
 }
 } // namespace gamemd
 
@@ -208,27 +107,7 @@ wchar_t * LoadOptions::Close(void *a1, void *a2)
 namespace gamemd {
 LoadOptions * LoadOptions::QueryInterface(char a2, int a3, int a1)
 {
-
-  int v3; // esi
-  void *v4; // eax
-
-  v3 = 0; /*0x55a0d4*/
-  for ( this->m_0 = (int)&vt_LoadOptionsClass; v3 < *((unsigned int *)this + 12); ++v3 ) /*0x55a0e1*/
-    __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 9) + 4 * v3)); /*0x55a0ea*/
-  (*(void (**)(LoadOptionsClass *))(*((unsigned int *)this + 8) + 12))(this + 2); /*0x55a102*/
-  v4 = (void *)*((unsigned int *)this + 9); /*0x55a105*/
-  *((unsigned int *)Block + 8) = (unsigned int)(&vt_VectorClass); /*0x55a108*/
-  if ( v4 && *((unsigned char *)this + 45) ) /*0x55a112*/
-  {
-    __3_YAXPAX_Z(v4); /*0x55a11a*/
-    *((unsigned int *)Block + 9) = 0; /*0x55a122*/
-  }
-  *((unsigned char *)Block + 45) = 0; /*0x55a12d*/
-  *((unsigned int *)Block + 10) = 0; /*0x55a133*/
-  if ( (a2 & 1) != 0 ) /*0x55a13a*/
-    __3_YAXPAX_Z(this); /*0x55a13d*/
-return (gamemd::LoadOptions *)(char *)this; /*0x55a147*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x55A0D0)
 }
 } // namespace gamemd
 
@@ -361,22 +240,7 @@ int LoadOptions::vt04(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a2, int a1)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&this->m_1[3]; /*0x55a413*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x55a416*/
-  if ( v3 && BYTE1(this->m_C) ) /*0x55a420*/
-  {
-    __3_YAXPAX_Z(v3); /*0x55a428*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x55a430*/
-  }
-  BYTE1(this->m_C) = 0; /*0x55a43b*/
-  this->m_8 = 0; /*0x55a441*/
-  if ( (a2 & 1) != 0 ) /*0x55a448*/
-    __3_YAXPAX_Z(this); /*0x55a44b*/
-return (gamemd::VectorClass_flat *)this->__pad_0; /*0x55a455*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x55A410)
 }
 } // namespace gamemd
 
@@ -384,22 +248,7 @@ return (gamemd::VectorClass_flat *)this->__pad_0; /*0x55a455*/
 namespace gamemd {
 DynamicVector * LoadOptions::vt00(char a2, int a1)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&this->m_1[3]; /*0x55a463*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x55a466*/
-  if ( v3 && BYTE1(this->m_C) ) /*0x55a470*/
-  {
-    __3_YAXPAX_Z(v3); /*0x55a478*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x55a480*/
-  }
-  BYTE1(this->m_C) = 0; /*0x55a48b*/
-  this->m_8 = 0; /*0x55a491*/
-  if ( (a2 & 1) != 0 ) /*0x55a498*/
-    __3_YAXPAX_Z(this); /*0x55a49b*/
-return (gamemd::DynamicVector *)this->__pad_0; /*0x55a4a5*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x55A460)
 }
 } // namespace gamemd
 

@@ -6,6 +6,16 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class DispatchTeam;  // G42.36 fwd supply
+class UpdateSuperWeaponReadyState;  // G42.36 fwd supply
+class UpdateTargetRedrawState;  // G42.36 fwd supply
+class SerializeSuperWeaponState;  // G42.36 fwd supply
+class UpdateSuperWeaponsUnavailableHouseClass;  // G42.36 fwd supply
+class EvaluateAITarget;  // G42.36 fwd supply
+class FireSuperWeaponHouseClass;  // G42.36 fwd supply
+class SelectSuperWeaponTarget;  // G42.36 fwd supply
+class CreateNukePayload;  // G42.36 fwd supply
+class CreateUnits;  // G42.36 fwd supply
 struct BombClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct LineTrail;  // fix_fwd_type_supply
@@ -789,6 +799,16 @@ static int GetSHPFrame(...);  // C2597 interim stub
     char MakeTraversable(); // N_fix R5 supply (cache truth)
     int IsPoweredOn(); // N_fix R5 supply (cache truth)
     unsigned int * Construct(BuildingClass * aP1, BuildingClass * aP2, void *a3_1, void *a4_1, void *a5_1, void *a6_1);
+    int CreateUnits();
+    int CreateNukePayload();
+    int SelectSuperWeaponTarget(int a1);
+    int FireSuperWeaponHouseClass(int a1, int a2);
+    int EvaluateAITarget(int a1, void* a2);
+    int UpdateSuperWeaponsUnavailableHouseClass();
+    int SerializeSuperWeaponState();
+    void* UpdateTargetRedrawState(void* a1);
+    int UpdateSuperWeaponReadyState(int a1);
+    void DispatchTeam(int a1, int a2);
 };
 
 } // namespace gamemd

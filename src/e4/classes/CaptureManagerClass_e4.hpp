@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 struct HouseClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
@@ -82,6 +83,9 @@ struct CaptureManagerClass {
     unsigned int PointerToIndex(int a2);
     int Destroy(void *a1);
     void* CaptureUnit(int a1, int a2, int a3, int aP1, int aP0);
+    CaptureManagerClass * ddtor(unsigned int * Block, char a2);
+    VectorClass_flat * Constructor_VectorClass_ControlNode___(unsigned int * Block, char a2);
+    DynamicVector * QueryInterface(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

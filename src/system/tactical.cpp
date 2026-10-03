@@ -267,10 +267,6 @@ void TacticalClass::updateVisibility()
       // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005090A0.json)
 }
 // 0x5090a0
-void TacticalClass::updateVisibility()
-{
-      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005090A0.json)
-}
 // 0x6d9ef0
 void TacticalClass::AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y)
 {

@@ -640,5 +640,6 @@ struct Tactical {
     int ddtor(int a1, unsigned int * a2);  // 0x6DBCE0
     int StubReturn56();  // 0x6DC450
     int StubReturn3608();  // 0x6DC460
+    int UpdateUIVisibility(void *a1_1);
 };
 } // namespace gamemd

@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 
 struct SlaveManagerClass {
 // --- flat members (BEGIN) ---
@@ -79,6 +80,7 @@ struct SlaveManagerClass {
     void* ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6);
     wchar_t * CreateSlave(wchar_t ** a2);
     static double ProcessSlaves(...);  // C2597 interim stub
+    SlaveManagerClass * ProcessOrders(void * Block, char a2);
 };
 
 } // namespace gamemd

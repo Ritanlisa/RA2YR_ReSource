@@ -10,6 +10,7 @@
 #include "e4/classes/CreateTeamCommand_e4.hpp"
 #include "e4/classes/SidebarClass_e4.hpp"
 #include "e4/classes/TabClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 
 // 0x63DC20
 namespace gamemd {
@@ -628,22 +629,7 @@ VectorClass_flat * DynamicVector::Destructor(unsigned int * Block, char a2)
 namespace gamemd {
 DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x63ede3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x63ede6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x63edf0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x63edf8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x63ee00*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x63ee0b*/
-  Block->m_8 = 0; /*0x63ee11*/
-  if ( (a2 & 1) != 0 ) /*0x63ee18*/
-    __3_YAXPAX_Z(Block); /*0x63ee1b*/
-  return Block->__pad_0; /*0x63ee25*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x63EDE0)
 }
 } // namespace gamemd
 
@@ -651,22 +637,7 @@ DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x63ee33*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x63ee36*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x63ee40*/
-  {
-    __3_YAXPAX_Z(v3); /*0x63ee48*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x63ee50*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x63ee5b*/
-  Block->m_8 = 0; /*0x63ee61*/
-  if ( (a2 & 1) != 0 ) /*0x63ee68*/
-    __3_YAXPAX_Z(Block); /*0x63ee6b*/
-  return Block->__pad_0; /*0x63ee75*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x63EE30)
 }
 } // namespace gamemd
 

@@ -22,5 +22,6 @@ struct Debug {
     char Printf();  // 0x5BD1F0
     static int Log();  // 0x4068E0
     static void Log_0();  // 0x4A4AC0
+    void Log_0(void *a1_1, void *a2_1);
 };
 } // namespace gamemd

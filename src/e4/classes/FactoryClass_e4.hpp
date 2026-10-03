@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 
 struct FactoryClass {
 // --- flat members (BEGIN) ---
@@ -100,6 +101,7 @@ struct FactoryClass {
     wchar_t * ResetProductionTimers();  // 0x6b0c80
     unsigned int * CompleteItem();  // 0x71abc0
     int * RemoveFromArrays(char a2);  // 0x63d9c0
+    void * CopyTo(void ** Block, char a2);
 };
 
 } // namespace gamemd

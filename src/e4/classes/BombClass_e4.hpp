@@ -60,6 +60,8 @@ struct BombClass {
     int ddtor(int a1, unsigned int * a2);
     void * GetCurrentFrame();
     int AbstractClass();  // 0x4385d0
+    BombClass * * sub_56AF40(int a2);
+    BombClass * * sub_56B250(int a2);
 };
 
 } // namespace gamemd

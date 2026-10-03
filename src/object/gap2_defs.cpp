@@ -806,8 +806,9 @@ int RadioClass::Constructor() {
 
 // 0x5b2fd0
 namespace ra2 { namespace game { 
-int MissionClass::ForceMission() {
-  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x5b2fd0.json */
+int MissionClass::ForceMission()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5b2fd0)
 }
 }
 }
@@ -830,8 +831,9 @@ int ObjectClass::ProcessCloaking() {
 
 // 0x5b3570
 namespace ra2 { namespace game { 
-int MissionClass::NextMission() {
-  return 0;  /* G42.33b2 restub: auto restub (pass4+, 15 errs): wrong-universe gap2 body; truth func_0x5b3570.json */
+int MissionClass::NextMission()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5b3570)
 }
 }
 }
@@ -1704,8 +1706,9 @@ bool FootClass::CanEnterBuilding() {
 
 // 0x709a90
 namespace ra2 { namespace game { 
-int __thiscall TechnoClass::DrawPips(void *a1) {
-  return 0;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x709a90.json */
+int __thiscall TechnoClass::DrawPips(void *a1)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x709a90)
 }
 }
 }

@@ -139,6 +139,8 @@ struct TeamClass {
     void* AttackCoordinator();
     static double AddToBuildQueue(...);  // C2597 interim stub
     static double CreateOneOf(...);  // C2597 interim stub
+    AbstractClass * * DestroyAllMembers(unsigned int *p_vtable0, int aP1, int a2, int a1);
+    void Update(TechnoClass * aP0, unsigned int * a1, int j, void *a4);
 };
 
 } // namespace gamemd

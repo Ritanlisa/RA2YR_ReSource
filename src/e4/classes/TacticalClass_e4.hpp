@@ -335,6 +335,7 @@ struct TacticalClass {
     int ResetScrollBounds();  // 0x6da160
     int ScrollView(char aP1);  // 0x554af0
     AnimClass * SetObserverView(); // N_fix R5 supply (cache truth)
+    void DrawCellOverlay(int a2, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8, int a9, int a10);
 };
 
 } // namespace gamemd

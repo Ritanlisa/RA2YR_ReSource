@@ -6,6 +6,59 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class WDT_Campaign_Constructor;  // G42.36 fwd supply
+class IsLobbyFeature;  // G42.36 fwd supply
+class IsMultiplayerActive;  // G42.36 fwd supply
+class GetMaxPacketSize;  // G42.36 fwd supply
+class CleanupOnDisconnect;  // G42.36 fwd supply
+class HWND;  // G42.36 fwd supply
+class InitPlayerSlots;  // G42.36 fwd supply
+class Source;  // G42.36 fwd supply
+class SendOptionsGame;  // G42.36 fwd supply
+class WaitForPacket;  // G42.36 fwd supply
+class QueryAddress;  // G42.36 fwd supply
+class SendSettingsRequest;  // G42.36 fwd supply
+class SetPort;  // G42.36 fwd supply
+class FormatAddress;  // G42.36 fwd supply
+class CopyAddress_Small;  // G42.36 fwd supply
+class SyncPlayerList;  // G42.36 fwd supply
+class DynamicVector;  // G42.36 fwd supply
+class ProcessAddressChange;  // G42.36 fwd supply
+class SendMasterPlayerList;  // G42.36 fwd supply
+class SendUnreachable;  // G42.36 fwd supply
+class RecordEvent;  // G42.36 fwd supply
+class ProcessEventList;  // G42.36 fwd supply
+class QueueProcessingLoop;  // G42.36 fwd supply
+class AddFrameEvent;  // G42.36 fwd supply
+class CountDisconnectedHouses;  // G42.36 fwd supply
+class ResolveNetworkAddress;  // G42.36 fwd supply
+class IPXConnClass;  // G42.36 fwd supply
+class ResolveAndConnect;  // G42.36 fwd supply
+class SetupRematch;  // G42.36 fwd supply
+class Disconnect;  // G42.36 fwd supply
+class IPXManagerClass;  // G42.36 fwd supply
+class SetPlayerCoords;  // G42.36 fwd supply
+class GetLobbyStatus;  // G42.36 fwd supply
+class SendPacketThunk2;  // G42.36 fwd supply
+class SendPacket;  // G42.36 fwd supply
+class SendPacketThunk;  // G42.36 fwd supply
+class Send;  // G42.36 fwd supply
+class String2;  // G42.36 fwd supply
+class SendToPlayer;  // G42.36 fwd supply
+class FindPlayerByID;  // G42.36 fwd supply
+class GetClass;  // G42.36 fwd supply
+class GetConnectionSpeed;  // G42.36 fwd supply
+class GetSendCount;  // G42.36 fwd supply
+class AnimClass;  // G42.36 fwd supply
+class SetConnectionParams;  // G42.36 fwd supply
+class IsBroadcastAddr;  // G42.36 fwd supply
+class CopyAddress;  // G42.36 fwd supply
+class GetAddress;  // G42.36 fwd supply
+class Init;  // G42.36 fwd supply
+class SendOffer;  // G42.36 fwd supply
+class Dispatch;  // G42.36 fwd supply
+class SendBeacon;  // G42.36 fwd supply
+class SendBeaconDelete;  // G42.36 fwd supply
 struct CampaignClass;  // fix_fwd_type_supply
 
 struct HashTable_flat {
@@ -50,6 +103,70 @@ unsigned int Rebuild();
 void Rebuild2();
 int Shrink();
 void Shrink2();
+    int SendBeaconDelete(int a2, int a3);
+    int SendBeacon(wchar_t *aP1, int a3, int a4, char a5);
+    int Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);
+    void * initConnection(int a2, unsigned int * a3, char a4);
+    int SendOffer();
+    AbstractClass * * Init();
+    int GetAddress(unsigned int *a1, int aP2, unsigned short *a3);
+    void * CopyAddress(unsigned int *a2, int a3);
+    int IsBroadcastAddr();
+    int processPacket(TechnoTypeClass * aP1);
+    AbstractClass * * SetConnectionParams(int aP1, int a3, int a4, char aP4);
+    int sendData(AnimClass * aP1);
+    int GetSendCount(void *a1_1);
+    int GetConnectionSpeed(int aP1);
+    int GetClass(int a2);
+    int FindPlayerByID(int aP1);
+    AbstractClass * * SendToPlayer(int a2, int a3, int a4, wchar_t * String2, void *a5_1);
+    int Send(int a2, int a3, int aP3, int a5);
+    int SendPacketThunk(int a2, int a3, int a4, int a5, int a6, int a7);
+    int receiveData(int a2);
+    int SendPacket(int a2, int a3, unsigned char a4);
+    int SendPacketThunk2(int a2, int a3, int a4, int a5);
+    int GetLobbyStatus();
+    int updateLatency();
+    unsigned int * SetPlayerCoords(IPXManagerClass * aP1);
+    int Disconnect();
+    int validateConnection(int a2, int a3);
+    AbstractClass * * SetupRematch();
+    int dispatchEvent();
+    IPXConnClass * * ResolveAndConnect(unsigned char * a2);
+    unsigned short ResolveNetworkAddress(uint16_t a2);
+    int processQueue();
+    int CountDisconnectedHouses();
+    int AddFrameEvent();
+    AbstractClass * * QueueProcessingLoop();
+    int syncGameState(void *a1_1);
+    AbstractClass * * ProcessEventList(int a1, int * a2, int a3);
+    AbstractClass * * RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27);
+    int SendUnreachable();
+    void validatePacket();
+    int SendMasterPlayerList();
+    HashTable_flat * * ProcessAddressChange();
+    void * processAcknowledgment(IUnknown * aP1);
+    void * reconnect(DynamicVector * aP1, short a3);
+    unsigned int * processGameEvent();
+    AbstractClass * * SyncPlayerList();
+    int finalizeSession();
+    int CopyAddress_Small(IPXManagerClass * aP1);
+    char * FormatAddress(uint16_t *aP1);
+    short SetPort(int16_t aP1);
+    int SendSettingsRequest();
+    char QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4);
+    short WaitForPacket(int a1, int a2);
+    int SendOptionsGame(char * Source);
+    int InitPlayerSlots();
+    HWND handleTimeout(HWND hDlg);
+    int CleanupOnDisconnect();
+    AbstractClass * * handleDisconnect(IUnknown * aP1);
+    int checkTimeout(int a2);
+    bool sendGameEvent(unsigned int *aP0);
+    int GetMaxPacketSize();
+    bool IsMultiplayerActive();
+    char IsLobbyFeature();
+    HashTable_flat * * WDT_Campaign_Constructor(const char ** a2, int a3);
 };
 
 } // namespace gamemd

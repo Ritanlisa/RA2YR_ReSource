@@ -28,77 +28,14 @@ int Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int 
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-
-  int result; // eax
-  Stream * v11;
-  unsigned short *v13; // eax
-  unsigned short *v14; // [esp+18h] [ebp+14h]
-
-  result = a4; /*0x493b90*/
-  if ( a4 > 0 ) /*0x493b9b*/
-  {
-    v11 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)))));
-    v14 = (unsigned short *)a4; /*0x493bb2*/
-    do /*0x493c24*/
-    {
-      if ( argC < (uint16_t)*a5 && *a2 ) /*0x493bc7*/
-      {
-        *a1 = (unsigned short)((gamemd::Stream *)((this->m_8 & (*a1 >> 2)) + 3 * (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2))));
-        *a5 = (unsigned short)((gamemd::Stream *)(argC));
-        v11 = (gamemd::Stream *)(g_ZBufferDescriptor);
-      }
-      ++a1; /*0x493c06*/
-      ++a2; /*0x493c0a*/
-      v13 = a5 + 1; /*0x493c0e*/
-      if ( (unsigned int)(a5 + 1) >= (unsigned int)(((unsigned int *)(v11))[1]).Stream_field_08 ) /*0x493c14*/
-        v13 = (unsigned short *)((char *)v13 - ((unsigned int *)(v11))[1].Stream_field_0C); /*0x493c16*/
-      a5 = v13; /*0x493c19*/
-      result = (int)v14 - 1; /*0x493c1f*/
-      v14 = (unsigned short *)((char *)v14 - 1); /*0x493c20*/
-    }
-    while ( v14 ); /*0x493c24*/
-  }
-  return result; /*0x493c29*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x493B90)
 }
 }
 // 0x493DF0
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * a7, int a8, int a9)
 {
-
-  int v11; // eax
-  int result; // eax
-  int v14; // edi
-  uint8_t v16; // bl
-  uint16_t *v17; // [esp+20h] [ebp+18h]
-
-  v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
-  if ( v11 > 254 ) /*0x493e18*/
-    v11 = 254; /*0x493e1a*/
-  result = *((unsigned int *)this + 2) + (v11 << 9); /*0x493e25*/
-  if ( a4 > 0 ) /*0x493e2d*/
-  {
-    v14 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x493e35*/
-    v17 = (uint16_t *)a4; /*0x493e3b*/
-    do /*0x493e8e*/
-    {
-      v16 = *a3++; /*0x493e43*/
-      if ( v16 ) /*0x493e4c*/
-      {
-        *a2 = *(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * (v16 | *(uint16_t *)(result + 2 * *a7))); /*0x493e6c*/
-        v14 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x493e6f*/
-      }
-      ++a7; /*0x493e78*/
-      ++a2; /*0x493e7b*/
-      if ( (unsigned int)a7 >= *(unsigned int *)(v14 + 28) ) /*0x493e80*/
-        a7 = (uint16_t *)((char *)a7 - *(unsigned int *)(v14 + 32)); /*0x493e82*/
-      v17 = (uint16_t *)((char *)v17 - 1); /*0x493e8a*/
-    }
-    while ( v17 ); /*0x493e8e*/
-  }
-  return result; /*0x493e92*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x493DF0)
 }
 }
 // 0x493EA0

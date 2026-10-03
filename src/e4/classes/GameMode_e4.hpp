@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class CCINIClass;  // G42.36 fwd supply
 struct GameMode {
 // --- flat members (BEGIN) ---
     unsigned int u32_18;  // 0x18
@@ -17,5 +18,6 @@ struct GameMode {
 // --- flat members (END) ---
     int IsValid(unsigned int a2);  // 0x5D5DE0
     unsigned int ReadFlagsFromINI(unsigned int * aP1);  // 0x6B8CA0
+    unsigned int ReadFlagsFromINI(CCINIClass * aP1, void * aDestroyablebri, void * aFixedalliance, void * aHarvesterimmun, void * aInert, void * aInitialveteran, void * aIonstorms, void * aMcvdeploy, void * aMeteorites, void * aTiberiumspread, void * aVisceroids);
 };
 } // namespace gamemd

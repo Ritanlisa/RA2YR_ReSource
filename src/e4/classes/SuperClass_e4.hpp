@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class CCINIClass;  // G42.36 fwd supply
 struct HouseClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
@@ -724,6 +725,10 @@ struct SuperClass {
     wchar_t * NameReadiness();
     int SetFieldX();  // 0x6ce270
     char RemoveFromPointerArray(int a2);  // 0x6ce320
+    int Constructor(void *a1, void *a2, void *a3);
+    int Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5, void *a6);
+    int AnnounceReady(DynamicVector * aP1, void *a2, void * aEvaForceshield, void * aEvaIroncurtain, void * aEvaNuclearmiss, void * aEvaPsychicdomi, void * aEvaReinforceme, void * aEvaSpyplanerea);
+    wchar_t * NameReadiness(void * aTxtHold);
 };
 
 } // namespace gamemd

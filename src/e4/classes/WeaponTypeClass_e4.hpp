@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class AbstractClass;  // G42.36 fwd supply
 struct WarheadTypeClass;  // fix_fwd_type_supply
 struct AnimTypeClass;  // fix_fwd_type_supply
 struct ParticleSystemTypeClass;  // fix_fwd_type_supply
@@ -213,6 +214,8 @@ struct WeaponTypeClass {
     unsigned int * Constructor(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5);
     unsigned int * loadWeaponProperties(int aP1);
     void * Create();
+    void * Create(AbstractClass * Source);
+    WeaponTypeClass * ddtor(void ** Block, char a2);
 };
 
 } // namespace gamemd

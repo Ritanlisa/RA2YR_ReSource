@@ -717,6 +717,7 @@ struct AircraftClass {
     AircraftTypeClass * Update(int a2);
     void* LoadFromStream(unsigned int * a0, FootClass * aP1);
      double Construct(...);  // C2597 interim stub
+    AircraftTypeClass * Update(void * a1, void * a2, void *a3, void *a4);
 };
 
 } // namespace gamemd

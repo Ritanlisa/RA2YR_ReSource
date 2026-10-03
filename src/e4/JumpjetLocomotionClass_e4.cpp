@@ -43,6 +43,7 @@
 #include "e4/classes/Turret_e4.hpp"
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/Function_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 
 // 0x439B00
 namespace gamemd {
@@ -2062,18 +2063,14 @@ int JumpjetLocomotionClass::SmallStub_71A160(int a1, const void * a2, int * a3)
 namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_71A170(int a1)
 {
-
-  return JumpjetLocomotionClass::IUnknownAddRef(a1 - 4);
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x71A170)
 }
 }  // G42.18c ns repair
 // 0x71A180
 namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_71A180(int a1)
 {
-
-  return JumpjetLocomotionClass::IUnknownRelease((volatile LONG *)(a1 - 4));
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x71A180)
 }
 }  // G42.18c ns repair
 // 0x71A190
@@ -2089,18 +2086,14 @@ int JumpjetLocomotionClass::SmallStub_71A190(int a1, const void * a2, int * a3)
 namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_71A1A0(int a1)
 {
-
-  return JumpjetLocomotionClass::IUnknownAddRef(a1 - 24);
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x71A1A0)
 }
 }  // G42.18c ns repair
 // 0x71A1B0
 namespace gamemd {  // G42.18c ns repair
 LONG JumpjetLocomotionClass::SmallStub_71A1B0(int a1)
 {
-
-  return JumpjetLocomotionClass::IUnknownRelease((volatile LONG *)(a1 - 24));
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x71A1B0)
 }
 }  // G42.18c ns repair
 // 0x728A50

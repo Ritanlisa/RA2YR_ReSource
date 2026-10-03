@@ -14,6 +14,7 @@ struct Socket {
     unsigned int Debug;
 // --- flat members (END) ---
     int ConfigureBuffers(void * aP1);  // G42.35a: SOCKET type unknown here (winsock not included); handles flow as void*
+    int ConfigureBuffers(SOCKET aP1);
 };
 
 } // namespace gamemd

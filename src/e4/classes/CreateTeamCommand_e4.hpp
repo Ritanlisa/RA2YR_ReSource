@@ -6,6 +6,19 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class MouseClass;  // G42.36 fwd supply
+class FactoryClass;  // G42.36 fwd supply
+class FlushSidebarTooltip;  // G42.36 fwd supply
+class ActivateTab;  // G42.36 fwd supply
+class Render;  // G42.36 fwd supply
+class RemoveItem;  // G42.36 fwd supply
+class TechnoClass;  // G42.36 fwd supply
+class CancelSidebarProductionQueue;  // G42.36 fwd supply
+class ScrollSidebarSkipGame;  // G42.36 fwd supply
+class IUnknown;  // G42.36 fwd supply
+class Dispatch;  // G42.36 fwd supply
+class HouseClass;  // G42.36 fwd supply
+class StartSidebarProduction;  // G42.36 fwd supply
 struct CommandClass;  // fix_fwd_type_supply
 struct SelectTeamCommand;  // fix_fwd_type_supply
 struct AddTeamCommand;  // fix_fwd_type_supply
@@ -329,5 +342,15 @@ struct CreateTeamCommand {
     wchar_t * performAction_190();  // 0x537AD0
     char Stub(int a1);  // 0x535BD0
     char Do(int a1);  // 0x535BF0
+    AbstractClass * * StartSidebarProduction(HouseClass *a1, int aP2, char aP3, char a5);
+    int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);
+    CreateTeamCommand * * ScrollSidebarSkipGame();
+    TechnoClass * * CancelSidebarProductionQueue(int * Block);
+    char RemoveItem(int a2, void *a2_2);
+    ObjectClass * * Render(char a2);
+    int ActivateTab(int aP1);
+    AbstractClass * * FlushSidebarTooltip(char a2);
+    char FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, void *a4_2);
+    int performAction_79();
 };
 } // namespace gamemd

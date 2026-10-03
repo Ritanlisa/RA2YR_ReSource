@@ -34,6 +34,7 @@
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/Matrix3x4_e4.hpp"
+#include "e4/classes/PowerClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x483610
 namespace gamemd {

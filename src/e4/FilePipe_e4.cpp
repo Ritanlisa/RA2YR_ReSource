@@ -9,6 +9,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/FileClass_e4.hpp"
 #include "e4/classes/File_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"  // G42.36 C2027 supply
 
 // 0x478340
 namespace gamemd {

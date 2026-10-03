@@ -55,23 +55,7 @@ int String::AssignWideToChar(char *aP1, char *aP2)
 namespace gamemd {
 char * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
 {
-
-  char *v4; // eax
-  unsigned int v5; // edx
-  char *v6; // edi
-
-  strncpy((char *)this,(const char *)(aP1), 4u); /*0x4cb5ed*/
-  *((unsigned short *)this + 2) = 2; /*0x4cb5f4*/
-  *((unsigned short *)this + 3) = 1; /*0x4cb5fa*/
-  v4 = (char *)__2_YAPAXI_Z(1u); /*0x4cb600*/
-  v5 = *((uint16_t *)this + 3); /*0x4cb611*/
-  *((unsigned int *)this + 2) = (unsigned int)(v4); /*0x4cb613*/
-  qmemcpy(v4, &aP2, 4 * (v5 >> 2)); /*0x4cb619*/
-  v6 = &v4[4 * (v5 >> 2)]; /*0x4cb619*/
-  qmemcpy(v6, &aP2 + 4 * (v5 >> 2), v5 & 3); /*0x4cb625*/
-  *((unsigned int *)this + 3) = 0; /*0x4cb628*/
-  return this; /*0x4cb627*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4CB5E0)
 }
 }
 // 0x5BD5A0
@@ -93,133 +77,28 @@ int String::Release()
 namespace gamemd {
 ObjectClass * * String::SplitComma(ObjectClass * aP1)
 {
-
-  int v3; // ebx
-  int v4; // ebx
-  int v5; // eax
-  int v6; // ebx
-  int v7; // eax
-  int v8; // eax
-  char *v10; // [esp+Ch] [ebp-4h] BYREF
-
-  ((String *)((String *)this))->Assign(0); /*0x5d0389*/
-  *((unsigned int *)this + 1) = 0; /*0x5d0392*/
-  *((unsigned int *)this + 2) = 0; /*0x5d0395*/
-  *((unsigned int *)this + 3) = 0; /*0x5d0398*/
-  unknown_libname_73(&v10); /*0x5d039b*/
-  v3 = String::Tokenize(aP1, 0, Str, (void **)&v10); /*0x5d03ba*/
-  if ( ((String*)((String *)&v10))->Length() ) /*0x5d03bc*/
-    ((String *)((String *)this))->Reassign((const char **)&v10); /*0x5d03cc*/
-  v4 = String::Tokenize(aP1, v3, Str, (void **)&v10); /*0x5d03e7*/
-  if ( ((String*)((String *)&v10))->Length() ) /*0x5d03e9*/
-  {
-    __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d03f6*/
-    *((unsigned int *)this + 1) = v5; /*0x5d03fb*/
-  }
-  v6 = String::Tokenize(aP1, v4, Str, (void **)&v10); /*0x5d0414*/
-  if ( ((String*)((String *)&v10))->Length() ) /*0x5d0416*/
-  {
-    __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d0423*/
-    *((unsigned int *)this + 2) = v7; /*0x5d0428*/
-  }
-  String::Tokenize(aP1, v6, Str, (void **)&v10); /*0x5d0438*/
-  if ( ((String*)((String *)&v10))->Length() ) /*0x5d0441*/
-  {
-    __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d044e*/
-    *((unsigned int *)this + 3) = v8; /*0x5d0453*/
-  }
-  j_DeleteAndZero((ObjectClass *)&v10); /*0x5d045a*/
-  return (gamemd::ObjectClass **)(this); /*0x5d0461*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D0380)
 }
 }
 // 0x5F3350
 namespace gamemd {
 int String::NormalizeNewlines()
 {
-
-  const char *v0; // esi
-  int64_t v1; // rax
-  char v2; // al
-
-  v0 = (const char *)dword_A8EA7C; /*0x5f3351*/
-  v1 = 0; /*0x5f335d*/
-  if ( strlen((const char *)dword_A8EA7C) ) /*0x5f3361*/
-  {
-    while ( 1 ) /*0x5f3368*/
-    {
-      v2 = v0[HIDWORD(v1)]; /*0x5f3368*/
-      if ( v2 == 13 ) /*0x5f336d*/
-        break; /*0x5f336d*/
-      if ( v2 == 10 ) /*0x5f3377*/
-      {
-        v0[HIDWORD(v1)] = 2; /*0x5f3379*/
-        goto LABEL_6; /*0x5f3379*/
-      }
-LABEL_7:
-      LODWORD(v1) = 0; /*0x5f3383*/
-      ++HIDWORD(v1); /*0x5f338a*/
-      if ( HIDWORD(v1) >= strlen(v0) ) /*0x5f3392*/
-        return v1; /*0x5f3392*/
-    }
-    v0[HIDWORD(v1)] = 1; /*0x5f336f*/
-LABEL_6:
-    v0 = (const char *)dword_A8EA7C; /*0x5f337d*/
-    goto LABEL_7; /*0x5f337d*/
-  }
-  return v1; /*0x5f3394*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5F3350)
 }
 }
 // 0x763690
 namespace gamemd {
 ControlClass * * String::To_Waypoint()
 {
-
-  int v2; // esi
-
-  v2 = (int)(-1); /*0x763694*/
-  if ( isalpha(*this) && (v2 = toupper(*(int *)this) - 65, isalpha(*((unsigned char *)this + 1))) ) /*0x7636ba*/
-    return (gamemd::ControlClass **)(toupper(*((unsigned char *)this + 1)) + 26 * v2 - 39); /*0x7636db*/
-  else
-    return (gamemd::ControlClass **)(v2); /*0x7636e0*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x763690)
 }
 }
 // 0x7B51D0
 namespace gamemd {
 int String::TrimLeft(const char **a2, int aP1, int a1, int a3, int aP2, int aP3, int a4, int a5)
 {
-
-  int result; // eax
-  int i; // esi
-  signed int v5; // ecx
-  char *v6; // eax
-
-  for ( i = 0; ; ++i ) /*0x7b51da*/
-  {
-    if ( *(unsigned int *)this->__pad_0 ) /*0x7b51dc*/
-    {
-      result = 0; /*0x7b51eb*/
-      v5 = strlen(*(const char **)this->__pad_0); /*0x7b51f1*/
-    }
-    else
-    {
-      v5 = 0; /*0x7b51e2*/
-    }
-    if ( i >= v5 ) /*0x7b51f4*/
-      break; /*0x7b51f4*/
-    v6 = (char *)*aP1; /*0x7b51f6*/
-    if ( !*aP1 ) /*0x7b51f6*/
-      v6 = (char *)(&g_INI_DefaultBuffer); /*0x7b51fd*/
-    result = (int)strchr(v6, *(char *)(*(unsigned int *)this->__pad_0 + i)); /*0x7b5208*/
-    if ( !result ) /*0x7b5212*/
-      break; /*0x7b5212*/
-  }
-  if ( i > 0 ) /*0x7b5219*/
-    return ((String *)(int a1))->Erase(0, i) ; /*0x7b5220*/
-  return result; /*0x7b5225*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B51D0)
 }
 }
 // 0x7B54B0
@@ -376,93 +255,7 @@ LABEL_35:
 namespace gamemd {
 AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 {
-
-  int v4; // esi
-  signed int v7; // ecx
-  signed int v8; // ecx
-  signed int v9; // ecx
-  char *v10; // ebp
-  const char *v11; // esi
-  size_t v12; // ecx
-  unsigned char *v13; // eax
-  const char *v14; // edi
-  size_t v15; // esi
-  char *v16; // eax
-  char *v17; // ebp
-  const char *v18; // esi
-  size_t v19; // ecx
-  unsigned char *v20; // eax
-  int v21; // [esp+14h] [ebp+4h]
-  char *Stra; // [esp+18h] [ebp+8h]
-
-  v4 = (int)((gamemd::AbstractClass **)(a2));
-  if ( a2 < 0 ) /*0x7b5f1c*/
-    return (gamemd::AbstractClass **)(-1); /*0x7b5f21*/
-  while ( 1 )
-  {
-    v7 = *(unsigned int *)this->__pad_0 ? strlen(*(const char **)this->__pad_0) : 0;
-    if ( v4 >= v7 || !strchr(aP2, *(char *)(*(unsigned int *)this->__pad_0 + v4)) ) /*0x7b5f4c*/
-      break; /*0x7b5f4c*/
-    ++v4; /*0x7b5f58*/
-  }
-  if ( *(unsigned int *)this->__pad_0 ) /*0x7b5f5b*/
-    v8 = strlen(*(const char **)this->__pad_0); /*0x7b5f6e*/
-  else
-    v8 = 0; /*0x7b5f61*/
-  if ( v4 >= v8 ) /*0x7b5f71*/
-    return (gamemd::AbstractClass **)(-1); /*0x7b5f76*/
-  v21 = v4; /*0x7b5f7d*/
-  while ( 1 )
-  {
-    v9 = *(unsigned int *)this->__pad_0 ? strlen(*(const char **)this->__pad_0) : 0;
-    if ( v4 >= v9 || strchr(aP2, *(char *)(*(unsigned int *)this->__pad_0 + v4)) ) /*0x7b5fa1*/
-      break; /*0x7b5fa1*/
-    ++v4; /*0x7b5fad*/
-  }
-  v10 = (char *)((const char *)((char *)(v4 - 1)));
-  v11 = (const char *)((unsigned int)((const char *)(v21 + *(unsigned int *)this->__pad_0)));
-  Stra = (char *)((unsigned int)(v10));
-  if ( *aP3 ) /*0x7b5fc3*/
-    __3_YAXPAX_Z((void *)(*aP3)); /*0x7b5fca*/
-  *(unsigned int *)aP3 = (unsigned int)((const char *)(0));
-  if ( v11 ) /*0x7b5fda*/
-    v12 = strlen(v11) + 1; /*0x7b5fe3*/
-  else
-    v12 = 1; /*0x7b5fe9*/
-  v13 = (unsigned char *)__2_YAPAXI_Z(v12); /*0x7b5fef*/
-  *aP3 = v13; /*0x7b5ff7*/
-  *v13 = 0; /*0x7b5ffb*/
-  if ( v11 ) /*0x7b5ffe*/
-    strcpy((char *)*aP3, v11); /*0x7b6016*/
-  v14 = (const char *)(&g_INI_DefaultBuffer); /*0x7b6029*/
-  v15 = (size_t)&v10[-v21 + 1]; /*0x7b602e*/
-  if ( *aP3 ) /*0x7b6023*/
-    v14 = (const char *)*aP3; /*0x7b6033*/
-  v16 = (char *)__2_YAPAXI_Z((size_t)&v10[-v21 + 2]); /*0x7b6039*/
-  v17 = v16; /*0x7b603e*/
-  *v16 = 0; /*0x7b6045*/
-  if ( v14 ) /*0x7b6049*/
-    strncpy(v16, v14, v15); /*0x7b604e*/
-  v17[v15] = 0; /*0x7b6056*/
-  v18 = (const char *)(&g_INI_DefaultBuffer); /*0x7b605a*/
-  if ( v17 ) /*0x7b6061*/
-    v18 = v17; /*0x7b6063*/
-  if ( *aP3 ) /*0x7b6065*/
-    __3_YAXPAX_Z((void *)(*aP3)); /*0x7b606c*/
-  *(unsigned int *)aP3 = 0; /*0x7b6076*/
-  if ( v18 ) /*0x7b607c*/
-    v19 = strlen(v18) + 1; /*0x7b6085*/
-  else
-    v19 = 1; /*0x7b608b*/
-  v20 = (unsigned char *)__2_YAPAXI_Z(v19); /*0x7b6091*/
-  *aP3 = v20; /*0x7b6099*/
-  *v20 = 0; /*0x7b609d*/
-  if ( v18 ) /*0x7b60a0*/
-    strcpy((char *)*aP3, v18); /*0x7b60b8*/
-  if ( v17 ) /*0x7b60c3*/
-    __3_YAXPAX_Z(v17); /*0x7b60c6*/
-  return (gamemd::AbstractClass **)((int)(Stra + 1)); /*0x7b5f1e*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B5F10)
 }
 }
 // 0x7B7A60
@@ -567,71 +360,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
 namespace gamemd {
 exception * * int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
 {
-  void *v5; // eax
-  uint8_t *v6; // esi
-  uint8_t v7; // al
-  char *v8; // esi
-  int v10; // [esp+Ch] [ebp-8h]
-  unsigned int v11; // [esp+10h] [ebp-4h] BYREF
-
-  v11 = a2; /*0x7cca44*/
-  InterlockedIncrement(&dword_B78BA4); /*0x7cca48*/
-  if ( dword_B78BA0 ) /*0x7cca5c*/
-  {
-    InterlockedDecrement(&dword_B78BA4); /*0x7cca5f*/
-    _lock(19); /*0x7cca63*/
-    v10 = 1; /*0x7cca69*/
-  }
-  else
-  {
-    v10 = 0; /*0x7cca72*/
-  }
-  v5 = a5; /*0x7cca75*/
-  if ( !a5 ) /*0x7cca7a*/
-    v5 = off_87C1E0; /*0x7cca7c*/
-  a5 = v5; /*0x7cca84*/
-  if ( v11 ) /*0x7cca87*/
-  {
-    v6 = a3; /*0x7cca89*/
-    do /*0x7ccafe*/
-    {
-      v7 = *v6; /*0x7cca8c*/
-      if ( !*v6 ) /*0x7cca8c*/
-        break; /*0x7cca90*/
-      if ( v7 == 37 ) /*0x7cca94*/
-      {
-        dword_B78BAC = 0; /*0x7ccac8*/
-        v8 = (char *)(v6 + 1); /*0x7ccacf*/
-        if ( *v8 == 35 ) /*0x7ccad3*/
-        {
-          dword_B78BAC = 1; /*0x7ccad5*/
-          ++v8; /*0x7ccadf*/
-        }
-        _expandtime(*v8, a4, &a1, &v11, a5); /*0x7ccaf1*/
-        v6 = (uint8_t *)(v8 + 1); /*0x7ccaf9*/
-      }
-      else
-      {
-        if ( *((char *)off_87C590 + 2 * v7 + 1) < 0 && v11 > 1 ) /*0x7ccaaa*/
-        {
-          *a1++ = v7; /*0x7ccaaf*/
-          ++v6; /*0x7ccab4*/
-          --v11; /*0x7ccab5*/
-        }
-        *a1++ = *v6++; /*0x7ccabd*/
-        --v11; /*0x7ccac3*/
-      }
-    }
-    while ( v11 ); /*0x7ccafe*/
-  }
-  if ( v10 ) /*0x7ccb04*/
-    _unlock(19); /*0x7ccb08*/
-  else
-    InterlockedDecrement(&dword_B78BA4); /*0x7ccb11*/
-  if ( !v11 ) /*0x7ccb1a*/
-    return 0; /*0x7ccb2a*/
-  *a1 = 0; /*0x7ccb1f*/
-  return a2 - v11; /*0x7ccb17*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7CCA34)
 }
 }
 // 0x4F4C30
@@ -708,38 +437,7 @@ unsigned int String::ComputeHash(void *a1_1)
 namespace gamemd {
 char * String::Trim()
 {
-
-  char v2; // al
-  const char *v3; // ebx
-  signed int i; // ecx
-
-  if ( this ) /*0x727cf5*/
-  {
-    v2 = (char)(*this); /*0x727cf7*/
-    v3 = (const char *)(this); /*0x727cfc*/
-    if ( *this ) /*0x727cf7*/
-    {
-      do /*0x727d0a*/
-      {
-        if ( (uint8_t)v2 > 0x20u ) /*0x727d02*/
-          break; /*0x727d02*/
-        v2 = *++v3; /*0x727d04*/
-      }
-      while ( v2 ); /*0x727d0a*/
-      if ( v3 != this ) /*0x727d0e*/
-        strcpy((char *)(this), v3); /*0x727d27*/
-    }
-    for ( i = strlen((const char *)(this)) - 1; i >= 0; --i ) /*0x727d3f*/
-    {
-      if ( !*v3 ) /*0x727d41*/
-        break; /*0x727d44*/
-      if ( (uint8_t)*(this + i) > 0x20u ) /*0x727d4a*/
-        break; /*0x727d4a*/
-      *(this + i) = 0; /*0x727d4c*/
-    }
-  }
-  return (char *)(this); /*0x727d55*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x727CF0)
 }
 } // namespace gamemd
 
@@ -1219,65 +917,7 @@ char String::Erase(int aP1, int a3)
 namespace gamemd {
 void String::TrimRight(ObjectClass * aP1)
 {
-
-  unsigned int v3; // esi
-  unsigned int v4; // eax
-  unsigned int v5; // esi
-  char *v6; // eax
-  size_t v8; // esi
-  const char *v9; // edi
-  char *v10; // eax
-  char *v11; // ebx
-  const char *v12; // esi
-  size_t v13; // ecx
-  unsigned char *v14; // eax
-
-  if ( *(unsigned int *)this->__pad_0 ) /*0x7b5236*/
-    v3 = strlen(*(const char **)this->__pad_0); /*0x7b524b*/
-  else
-    v3 = 0; /*0x7b523d*/
-  v4 = v3; /*0x7b524d*/
-  v5 = v3 - 1; /*0x7b524f*/
-  if ( v4 ) /*0x7b5252*/
-  {
-    do /*0x7b527d*/
-    {
-      v6 = (char *)*aP1; /*0x7b5258*/
-      if ( !*aP1 ) /*0x7b5258*/
-        v6 = (char *)(&g_INI_DefaultBuffer); /*0x7b525e*/
-      if ( !strchr(v6, *(char *)(*(unsigned int *)this->__pad_0 + v5)) ) /*0x7b526c*/
-        break; /*0x7b5276*/
-    }
-    while ( v5-- ); /*0x7b527d*/
-  }
-  v8 = v5 + 1; /*0x7b5282*/
-  v9 = (const char *)(&g_INI_DefaultBuffer); /*0x7b5285*/
-  if ( *(unsigned int *)this->__pad_0 ) /*0x7b527f*/
-    v9 = *(const char **)this->__pad_0; /*0x7b528c*/
-  v10 = (char *)__2_YAPAXI_Z(v8 + 1); /*0x7b5292*/
-  v11 = v10; /*0x7b5297*/
-  *v10 = 0; /*0x7b529e*/
-  if ( v9 ) /*0x7b52a1*/
-    strncpy(v10, v9, v8); /*0x7b52a6*/
-  v11[v8] = 0; /*0x7b52ae*/
-  v12 = (const char *)(&g_INI_DefaultBuffer); /*0x7b52b2*/
-  if ( v11 ) /*0x7b52b9*/
-    v12 = v11; /*0x7b52bb*/
-  if ( *(unsigned int *)this->__pad_0 ) /*0x7b52bd*/
-    __3_YAXPAX_Z(*(void **)this->__pad_0); /*0x7b52c5*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x7b52cf*/
-  if ( v12 ) /*0x7b52d6*/
-    v13 = strlen(v12) + 1; /*0x7b52df*/
-  else
-    v13 = 1; /*0x7b52e5*/
-  v14 = (unsigned char *)__2_YAPAXI_Z(v13); /*0x7b52eb*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(v14); /*0x7b52f3*/
-  *v14 = 0; /*0x7b52f8*/
-  if ( v12 ) /*0x7b52fb*/
-    strcpy(*(char **)this->__pad_0, v12); /*0x7b5314*/
-  if ( v11 ) /*0x7b531f*/
-    __3_YAXPAX_Z(v11); /*0x7b5322*/
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B5230)
 }
 } // namespace gamemd
 

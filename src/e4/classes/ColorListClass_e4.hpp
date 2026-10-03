@@ -4,6 +4,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class ControlClass;  // G42.36 fwd supply
+class ListClass;  // G42.36 fwd supply
 
 struct ColorListClass {
 // --- flat members (BEGIN) ---
@@ -36,6 +38,7 @@ struct ColorListClass {
     int GetColor(int a2);
     int SetColor();
     void RemoveColor(wchar_t * String2);
+    ColorListClass * sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9);
 };
 
 } // namespace gamemd

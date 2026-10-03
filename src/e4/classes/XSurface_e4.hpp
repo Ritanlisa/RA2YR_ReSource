@@ -41,6 +41,7 @@ struct XSurface {
     static double Fill(...);  // C2597 interim stub
     static double GetPixel(...);  // C2597 interim stub
     static double SetPixel(...);  // C2597 interim stub
+    void* WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5, int a6, int a7, int a8, int a9, int a10);
 };
 
 } // namespace gamemd

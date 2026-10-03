@@ -12,6 +12,23 @@
 #ifdef GAMEMD_TREE_UNIVERSE
 namespace ra2 { namespace game { class AbstractClass; } }
 namespace gamemd {
+class ReferenceCounted;  // G42.36 fwd supply
+class Constructor;  // G42.36 fwd supply
+class DtorWithDelete;  // G42.36 fwd supply
+class TechnoTypeClass;  // G42.36 fwd supply
+class SaveObject;  // G42.36 fwd supply
+class LoadObject;  // G42.36 fwd supply
+class IUnknown;  // G42.36 fwd supply
+class CheckState;  // G42.36 fwd supply
+class Unlink;  // G42.36 fwd supply
+class RemoveObjectArray;  // G42.36 fwd supply
+class CalculateObjectPlacementPosition;  // G42.36 fwd supply
+class Block;  // G42.36 fwd supply
+class DrawObject;  // G42.36 fwd supply
+class FindNearestObjectAtCell;  // G42.36 fwd supply
+class IsAlliedWithObjectSimpleHouse;  // G42.36 fwd supply
+class TechnoClass;  // G42.36 fwd supply
+class FindObjectCell;  // G42.36 fwd supply
 #ifndef GAMEMD_USING_AbstractClass
 #define GAMEMD_USING_AbstractClass
 using ::ra2::game::AbstractClass;
@@ -718,6 +735,19 @@ struct SessionClass {
     void SetupNetwork();
     wchar_t * ddtor(void *a1);
     void removePlayer();
+    int FindObjectCell(TechnoClass * aP1, char aP2);
+    int IsAlliedWithObjectSimpleHouse(unsigned char * a2);
+    unsigned int * FindNearestObjectAtCell(unsigned int * a2);
+    void * DrawObject(void ** Block, char a2);
+    void* * CalculateObjectPlacementPosition(int *a2);
+    void ** RemoveObjectArray();
+    int Unlink();
+    char CheckState(IUnknown * aP1, int a3);
+    int LoadObject(ObjectClass * aP1, int aP1a);
+    int SaveObject(TechnoTypeClass * aP0, int * a1, int aP2);
+    int ddtor(int a1, unsigned int * a2);
+    SessionClass * DtorWithDelete(void ** Block, char a2);
+    SessionClass * * Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5);
 };
 
 } // namespace gamemd

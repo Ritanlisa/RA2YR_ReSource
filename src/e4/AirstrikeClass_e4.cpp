@@ -31,85 +31,7 @@
 namespace gamemd {
 int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
 {
-
-  int v3; // eax
-  int v4; // ebp
-  int v5; // ebx
-  unsigned int *v7; // eax
-  void *v8; // eax
-  unsigned int *v9; // eax
-  int result; // eax
-  unsigned int *v11; // eax
-  int v12; // eax
-  int v13; // eax
-  int v14; // [esp-14h] [ebp-38h]
-  int v15; // [esp-Ch] [ebp-30h]
-  int v16; // [esp+10h] [ebp-14h] BYREF
-  int v17; // [esp+14h] [ebp-10h]
-  unsigned int v18[3]; // [esp+18h] [ebp-Ch] BYREF
-  int v19; // [esp+28h] [ebp+4h]
-
-  v3 = *((unsigned int *)this + 21); /*0x41d869*/
-  *((unsigned char *)this + 60) = 1; /*0x41d86c*/
-  *((unsigned char *)this + 61) = 1; /*0x41d870*/
-  *((unsigned int *)this + 13) = 0; /*0x41d874*/
-  v4 = *(unsigned int *)(v3 + 3576); /*0x41d881*/
-  v17 = *(unsigned int *)(*(unsigned int *)((unsigned int *)dword_8871E0)[0] + 3576); /*0x41d895*/
-  if ( Audio::IsLoud((float *)(*((unsigned int *)this + 19) + 336)) ) /*0x41d8a2*/
-  {
-    v5 = *((unsigned int *)this + 10); /*0x41d8ae*/
-    v4 = *(unsigned int *)(*((unsigned int *)this + 22) + 3576); /*0x41d8b1*/
-  }
-  else
-  {
-    v5 = *((unsigned int *)this + 9); /*0x41d8b9*/
-  }
-  v7 = (unsigned int *)((int)((unsigned int *)(*(int (**)(int *, unsigned int *))(*a2 + 72))(a2, v18)));
-  LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
-  HIWORD(v19) = v7[1] / 256; /*0x41d8f5*/
-  v16 = v19; /*0x41d902*/
-  v8 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16); /*0x41d907*/
-  v15 = v17; /*0x41d916*/
-  v14 = (int)v8; /*0x41d919*/
-  v9 = (unsigned int *)(*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 76) + 60))(*((unsigned int *)this + 19)); /*0x41d91f*/
-  result = PlaceAircraftOnMap(v9, v4, v5, 1, v14, 0, v15, 0,(int)(this)); /*0x41d926*/
-  *((unsigned int *)this + 11) = result; /*0x41d92d*/
-  *((unsigned int *)this + 12) = result; /*0x41d930*/
-  if ( result ) /*0x41d933*/
-  {
-    result = *((unsigned int *)this + 23); /*0x41d939*/
-    if ( result ) /*0x41d93e*/
-    {
-      v11 = (unsigned int *)(result + 156); /*0x41d940*/
-      v18[0] = *v11; /*0x41d949*/
-      v18[1] = v11[1]; /*0x41d956*/
-      v18[2] = v11[2]; /*0x41d961*/
-      result = (int)(StartAudioControllerAt((int)((gamemd::AudioController *)(((unsigned int *)dword_8871E0)[0])),(unsigned int *)((int)v18), 0)); 
-    }
-    *((unsigned int *)this + 20) = (unsigned int)(a2); /*0x41d972*/
-    if ( a2 ) /*0x41d975*/
-    {
-      result = (*(int (**)(int *))(*a2 + 44))(a2); /*0x41d97f*/
-      if ( result == 6 ) /*0x41d985*/
-      {
-        v12 = (int)(*a2);
-        a2[165] = (int)(this);
-        (*(void (**)(int *, int))(v12 + 348))(a2, 100000); /*0x41d99a*/
-        *((unsigned char *)a2 + 1784) = *((unsigned char *)&((unsigned int *)&((unsigned int *)(dword_8871E0))[1])[12] + 2 * ((unsigned int *)&(&dword_8871E0)[1])[10] + ((unsigned int *)&(&dword_8871E0)[1])[10]); /*0x41d9b8*/
-        *((unsigned char *)a2 + 1785) = *((unsigned char *)&((unsigned int *)&((unsigned int *)(dword_8871E0))[1])[12] + 2 * ((unsigned int *)&(&dword_8871E0)[1])[10] /*0x41d9d5*/
-                                                                  + ((unsigned int *)&(&dword_8871E0)[1])[10]
-                                                                  + 1);
-        v13 = *a2; /*0x41d9f1*/
-        *((unsigned char *)a2 + 1786) = *((unsigned char *)&((unsigned int *)&((unsigned int *)(dword_8871E0))[1])[12] + 2 * ((unsigned int *)&(&dword_8871E0)[1])[10] /*0x41d9f5*/
-                                                                  + ((unsigned int *)&(&dword_8871E0)[1])[10]
-                                                                  + 2);
-        a2[447] = 1; /*0x41d9fb*/
-        return (*(int (**)(int *, int))(v13 + 292))(a2, 2); /*0x41da05*/
-      }
-    }
-  }
-  return result; /*0x41da0b*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41D860)
 }
 } // namespace ra2
 
@@ -247,30 +169,7 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
 namespace gamemd {
 void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
 {
-
-  int v3; // eax
-  AirstrikeClass *v5; // [esp+4h] [ebp-4h] BYREF
-
-  this->vtable1 = &vt_AirstrikeClass; /*0x41dd5d*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd63*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd6a*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd71*/
-  v5 = (gamemd::AirstrikeClass *)(this); /*0x41dd7f*/
-  v3 = ((int *)(*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16)))(&dword_889FB8, &v5); 
-  if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/
-  {
-    do /*0x41ddb6*/
-    {
-      ++v3; /*0x41dda6*/
-      *((unsigned int *)dword_889FBC + v3 - 1) = *((unsigned int *)dword_889FBC + v3); /*0x41ddaa*/
-    }
-    while ( v3 < dword_889FC8 ); /*0x41ddb6*/
-  }
-  ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x41ddba*/
-  if ( (a2 & 1) != 0 ) /*0x41ddc4*/
-    __3_YAXPAX_Z(this); /*0x41ddc7*/
-  return this; /*0x41ddd1*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41DD50)
 }
 } // namespace ra2
 
@@ -341,60 +240,7 @@ LABEL_9:
 namespace gamemd {
 AirstrikeClass::AirstrikeClass(int a2)
 {
-
-  int v3; // eax
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
-  int v7; // ecx
-  int v8; // eax
-  int v9; // ecx
-  int v10; // eax
-  int v11; // ecx
-  int v12; // eax
-  int v13; // ecx
-  int v14; // eax
-
-  ((AbstractClass*)(AbstractClass *)this)->Constructor(); /*0x41d384*/
-  *(unsigned int *)this = (unsigned int)(&vt_AirstrikeClass); /*0x41d389*/
-  *((unsigned int *)this + 1) = (unsigned int)(&vt_AirstrikeClass); /*0x41d38f*/
-  *((unsigned int *)this + 2) = (unsigned int)(&vt_AirstrikeClass); /*0x41d396*/
-  *((unsigned int *)this + 3) = (unsigned int)(&vt_AirstrikeClass); /*0x41d39d*/
-  if ( dword_889FC8 < dword_889FC0 /*0x41d3d9*/
-    || (byte_889FC5 || !dword_889FC0)
-    && dword_889FCC > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(dword_889FB8 + 8))(
-         (int *)&dword_889FB8,
-         dword_889FC0 + dword_889FCC,
-         0) )
-  {
-    v3 = dword_889FC8++; /*0x41d3e6*/
-    *((unsigned int *)dword_889FBC + v3) = (unsigned int)(this); /*0x41d3f5*/
-  }
-  *((unsigned char *)this + 60) = 0; /*0x41d3fc*/
-  *((unsigned int *)this + 19) = a2; /*0x41d3ff*/
-  *((unsigned char *)this + 61) = 0; /*0x41d402*/
-  v4 = (*(int (**)(int))(*(unsigned int *)a2 + 132))(a2); /*0x41d407*/
-  v5 = *((unsigned int *)this + 19); /*0x41d413*/
-  *((unsigned int *)this + 9) = *(unsigned int *)(v4 + 1564); /*0x41d416*/
-  v6 = (*(int (**)(int))(*(unsigned int *)v5 + 132))(v5); /*0x41d41b*/
-  v7 = *((unsigned int *)this + 19); /*0x41d427*/
-  *((unsigned int *)this + 10) = *(unsigned int *)(v6 + 1568); /*0x41d42a*/
-  v8 = (*(int (**)(int))(*(unsigned int *)v7 + 132))(v7); /*0x41d42f*/
-  v9 = *((unsigned int *)this + 19); /*0x41d43b*/
-  *((unsigned int *)this + 17) = *(unsigned int *)(v8 + 1580); /*0x41d43e*/
-  v10 = (*(int (**)(int))(*(unsigned int *)v9 + 132))(v9); /*0x41d443*/
-  v11 = *((unsigned int *)this + 19); /*0x41d44f*/
-  *((unsigned int *)this + 18) = *(unsigned int *)(v10 + 1584); /*0x41d452*/
-  v12 = (*(int (**)(int))(*(unsigned int *)v11 + 132))(v11); /*0x41d457*/
-  v13 = *((unsigned int *)this + 19); /*0x41d463*/
-  *((unsigned int *)this + 21) = *(unsigned int *)(v12 + 1572); /*0x41d466*/
-  v14 = *(unsigned int *)((*(int (**)(int))(*(unsigned int *)v13 + 132))(v13) + 1576); /*0x41d471*/
-  *((unsigned int *)this + 23) = 0; /*0x41d477*/
-  *((unsigned int *)this + 22) = v14; /*0x41d47a*/
-  *((unsigned int *)this + 20) = 0; /*0x41d47d*/
-  return this; /*0x41d482*/
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41D380)
 }
 } // namespace gamemd
 
@@ -441,9 +287,7 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-
-  return Abs  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); 
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41D780)
 }
 } // namespace gamemd
 
@@ -467,15 +311,6 @@ int AirstrikeClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 char AirstrikeClass::StartMission(int * a2)
 {
-
-  char result; // al
-
-  result = (char)a2; /*0x41d835*/
-  if ( !*((unsigned char *)this + 60) ) /*0x41d830*/
-    return AirstrikeClass::SpawnAircraft(a2) ; /*0x41d83c*/
-  if ( a2 != *(int **)((char *)a1 + 80) ) /*0x41d847*/
-    return A    return AirstrikeClass::ReassignTarget(a1,(void *)((int)a2)); 
-  return result; /*0x41d841*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41D830)
 }
 } // namespace gamemd

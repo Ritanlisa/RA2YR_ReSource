@@ -11,6 +11,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x7228B0
 namespace gamemd {

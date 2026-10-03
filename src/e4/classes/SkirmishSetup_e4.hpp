@@ -12,6 +12,7 @@ struct SkirmishSetup {
 // --- flat members (END) ---
     int DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5);
     int PlayButtonClickAnim();
+    int PlayButtonClickAnim(HWND hWnd);
 };
 
 } // namespace gamemd

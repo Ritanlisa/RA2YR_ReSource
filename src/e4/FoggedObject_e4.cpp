@@ -81,20 +81,5 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
 // 0x4D2D10
 VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x4d2d13*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4d2d16*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4d2d20*/
-  {
-    __3_YAXPAX_Z(v3); /*0x4d2d28*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4d2d30*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x4d2d3b*/
-  Block->m_8 = 0; /*0x4d2d41*/
-  if ( (a2 & 1) != 0 ) /*0x4d2d48*/
-    __3_YAXPAX_Z(Block); /*0x4d2d4b*/
-  return Block->__pad_0; /*0x4d2d55*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4D2D10)
 }

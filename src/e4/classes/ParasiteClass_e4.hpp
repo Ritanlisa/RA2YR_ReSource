@@ -74,6 +74,7 @@ struct ParasiteClass {
     void * UpdateParasite(char a2);
     void DeploySquad();
     void TickDamage();
+    void * UpdateParasite(ParasiteClass * Block, char a2);
 };
 
 } // namespace gamemd

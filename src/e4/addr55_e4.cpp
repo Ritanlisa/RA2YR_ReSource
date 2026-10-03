@@ -47,6 +47,7 @@
 #include "e4/classes/ListClass_e4.hpp"
 #include "e4/classes/Pipe_e4.hpp"
 #include "e4/classes/SaveLoadDialog_e4.hpp"
+#include "e4/classes/LightConvertClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x550080
 namespace gamemd {

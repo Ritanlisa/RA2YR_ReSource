@@ -20,14 +20,7 @@
 namespace gamemd {
 int sub_798340()
 {
-  HANDLE *v0; // esi
-  BOOL result; // eax
-
-  v0 = (HANDLE *)(&Handles);
-  do /*0x79835b*/
-    result = ResetEvent(*v0++); /*0x798350*/
-  while ( (int)v0 < (int)g_WOL_RequestObject ); /*0x79835b*/
-  return result; /*0x79835d*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x798340)
 }
 }
 // 0x72C060

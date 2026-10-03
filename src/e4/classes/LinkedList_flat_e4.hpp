@@ -27,9 +27,6 @@ struct LinkedList_flat {
     unsigned int Debug;
 
 
-    void* Attach;  // 0x0 (no offset truth)
-    void* Pop;  // 0x0 (no offset truth)
-    void* RemoveNode;  // 0x0 (no offset truth)
 // --- flat members (END) ---
 AbstractClass * * LoadScenarioMixFiles(int a2, int a3, int a4, int aP0, int aP1);
 LinkClass * * Append(int a2, void *a2_2);
@@ -44,6 +41,9 @@ void RelinkNode(int a2);
 int Remove(unsigned int * a2);
     int PushFront(int a2); // N_fix R5 supply (cache truth)
     int Prepend(int a2); // N_fix R5 supply (cache truth)
+    unsigned int * Attach(int a2);
+    int RemoveNode();
+    int Pop();
 };
 
 } // namespace gamemd

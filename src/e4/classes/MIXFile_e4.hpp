@@ -11,5 +11,6 @@ struct MixFile {
     MixFileClass * * LoadAll();  // 0x530460
     AbstractClass * * LoadSide();  // 0x534FA0
     unsigned int *  Load(void * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x627590
+    AbstractClass * * LoadSide(void * aUimdIni);
 };
 } // namespace gamemd

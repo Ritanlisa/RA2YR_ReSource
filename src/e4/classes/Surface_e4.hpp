@@ -34,6 +34,8 @@ struct Surface {
     unsigned int * CopyRect(int *aP1);
     unsigned int *  GetRect(unsigned int * a2);
     void   RenderToSurfaceVoxel(unsigned int * a2, int * a3);
+    unsigned int * CopyRect(int *aP1, void * a1);
+    LPDIRECTDRAW CreateSurfacePalette(AbstractClass * Src);
 };
 
 } // namespace gamemd

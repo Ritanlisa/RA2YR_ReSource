@@ -714,22 +714,7 @@ DynamicVector * VectorClass_flat::Constructor_VectorClass_BuildingClass___(unsig
 namespace gamemd {
 VectorClass_flat * ParticleSystemClass_16::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x4efd53*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efd56*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4efd60*/
-  {
-    __3_YAXPAX_Z(v3); /*0x4efd68*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4efd70*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x4efd7b*/
-  Block->m_8 = 0; /*0x4efd81*/
-  if ( (a2 & 1) != 0 ) /*0x4efd88*/
-    __3_YAXPAX_Z(Block); /*0x4efd8b*/
-  return Block->__pad_0; /*0x4efd95*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EFD50)
 }
 } // namespace gamemd
 
@@ -737,22 +722,7 @@ VectorClass_flat * ParticleSystemClass_16::QueryInterface(unsigned int * Block, 
 namespace gamemd {
 VectorClass_flat * ParticleSystemClass_32::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x4efdf3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efdf6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4efe00*/
-  {
-    __3_YAXPAX_Z(v3); /*0x4efe08*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4efe10*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x4efe1b*/
-  Block->m_8 = 0; /*0x4efe21*/
-  if ( (a2 & 1) != 0 ) /*0x4efe28*/
-    __3_YAXPAX_Z(Block); /*0x4efe2b*/
-  return Block->__pad_0; /*0x4efe35*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EFDF0)
 }
 } // namespace gamemd
 

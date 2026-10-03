@@ -17,6 +17,7 @@
 #include "e4/classes/TubeClass_e4.hpp"
 #include "e4/classes/TypeList_TechnoType_e4.hpp"
 #include "e4/classes/SwizzleManager_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x728C00
 namespace gamemd {
@@ -44,27 +45,7 @@ int TunnelLocomotionClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
 {
-
-  int result; // eax
-  int v3; // edx
-
-  result = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2); /*0x72a15b*/
-  if ( result >= 0 ) /*0x72a164*/
-  {
-    if ( a1 ) /*0x72a168*/
-    {
-      *(unsigned int *)a1->LocomotionClass = &vt_LocomotionClass; /*0x72a16a*/
-      *(unsigned int *)&a1->LocomotionClass[4] = &vt_LocomotionClass; /*0x72a170*/
-      v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x72a177*/
-      a1->CurrentState[6] = 0; /*0x72a17d*/
-      a1->CurrentState[4] = v3; /*0x72a180*/
-      a1->CurrentState[7] = 0; /*0x72a183*/
-      *(unsigned int *)a1->LocomotionClass = &vt_TunnelLocomotionClass; /*0x72a186*/
-      *(unsigned int *)&a1->LocomotionClass[4] = &vt_TunnelLocomotionClass; /*0x72a18c*/
-    }
-  }
-  return result; /*0x72a193*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x72A150)
 }
 } // namespace gamemd
 // 0x72A200
@@ -80,11 +61,6 @@ int TunnelLocomotionClass::StubReturn60()
 namespace gamemd {
 TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
-
-  LocomotionClass::Construct((LocomotionClass *)Block); /*0x72a213*/
-  if ( (a2 & 1) != 0 ) /*0x72a21d*/
-    __3_YAXPAX_Z(Block); /*0x72a220*/
-  return Block->LocomotionClass; /*0x72a22a*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x72A210)
 }
 } // namespace gamemd

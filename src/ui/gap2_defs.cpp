@@ -1191,14 +1191,13 @@ int WWMouseClass::UpdateCursorMovement() {
 namespace gamemd {
 bool WWMouseClass::IsRefCountNegative()
 {
-  return (int)this->WWMouseClass_field_0xC < 0; /*0x7ba32a*/
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BA320)
 }
 }
 // 0x7BA380
 namespace gamemd { 
-int WWMouseClass::checkHotspot(int a1, int a2) {
-  this->WWMouseClass_field_0x1C = (void *)a1; /*0x7ba388*/
-  this->WWMouseClass_field_0x20 = (void *)a2; /*0x7ba38b*/
-  return a1; /*0x7ba38e*/
+int WWMouseClass::checkHotspot(int a1, int a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BA380)
 }
 }

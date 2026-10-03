@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class WebBrowser___vt03;  // G42.36 fwd supply
 struct WebBrowser {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -40,5 +41,6 @@ struct WebBrowser {
     int LockRegion();  // 0x773B90
     int UnlockRegion();  // 0x773BA0
     int COMStub_Return0();  // 0x773B00
+    int WebBrowser___vt03();
 };
 } // namespace gamemd

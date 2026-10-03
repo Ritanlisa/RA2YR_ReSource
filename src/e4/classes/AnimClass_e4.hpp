@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class ComputePosition;  // G42.36 fwd supply
 struct WinModemClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
@@ -1230,6 +1231,7 @@ struct AnimClass {
     void Render(ConvertClass * a2, ConvertClass * aP5);
     static double SetField95(...);  // C2597 interim stub
     void ** ctor(void *a2, int *a3, void *a4, int a5, void *a6, void *a7, char a8);  // 0x421ea0
+    AnimClass * * ComputePosition(int *aP1);
 };
 
 } // namespace gamemd

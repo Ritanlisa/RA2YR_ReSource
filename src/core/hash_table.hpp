@@ -77,6 +77,8 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     int ComputeThunk(int a1);  // 0x69e9e0 -- SHA1::ComputeThunk
     // === SYMBOL-ANCHOR (END) ===
+    void Compute(char *a2, int a1);
+    void Transform(int *a1, unsigned int *a2);
 };
 
 // ============================================================================

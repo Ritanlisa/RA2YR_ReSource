@@ -156,6 +156,7 @@ public:
     virtual void CalcSpeed(); // 0x54BFF0
 
     uint8_t MovementClass_field_0x04[4];
+    unsigned int * CompareAbsCoords(unsigned int *a2);
 };
 // 7 methods in IDA
 // CSP: Pathfinding matched via T1
@@ -185,6 +186,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void* ExpandNode(int a1, int a2);  // 0x5a5360
     // === FUNCS-MOVE (END) ===
+    char AStar(int16_t *a2, int16_t *a3, int a4, int a5);
+    void SiftDown(int a2);
 };
 // 1 methods in IDA
 // CSP: PathfindingClass matched via T1

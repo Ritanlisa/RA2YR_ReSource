@@ -7,5 +7,6 @@ namespace gamemd {
 struct E4Recv_6C5450 {
     void* vfptr;  // minimal E2 declaration
     int CreateTClassFactory_WeaponTypeClass();  // 0x6C5450
+    int CreateTClassFactory_WeaponTypeClass(void * a2, void * a3);
 };
 } // namespace gamemd

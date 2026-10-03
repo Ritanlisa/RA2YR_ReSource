@@ -13,6 +13,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/SwizzleManager_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 
 // 0x661EC0
 namespace gamemd {  // G42.18c ns repair

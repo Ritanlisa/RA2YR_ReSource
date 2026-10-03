@@ -646,9 +646,7 @@ char * DeployCommandClass::performAction_59()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_60()
 {
-
-  return GetStringCSF(aCmndVetnavigat, 0, g_Str_File_Init_CPP, 6754); /*0x536996*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536980)
 }
 } // namespace gamemd
 
@@ -656,9 +654,7 @@ wchar_t * CreateTeamCommand::performAction_60()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_61()
 {
-
-  return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6756); /*0x5369b6*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5369A0)
 }
 } // namespace gamemd
 
@@ -666,9 +662,7 @@ wchar_t * CreateTeamCommand::performAction_61()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_62()
 {
-
-  return GetStringCSF(aCmndVetnavigat_0, 0, g_Str_File_Init_CPP, 6758); /*0x5369d6*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5369C0)
 }
 } // namespace gamemd
 
@@ -676,11 +670,7 @@ wchar_t * CreateTeamCommand::performAction_62()
 namespace gamemd {
 int CreateTeamCommand::performAction_63()
 {
-
-  unsigned int v2; // [esp+4h] [ebp+4h]
-
-  return (v2 >> 8) & 1; /*0x5369ea*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5369E0)
 }
 } // namespace gamemd
 
@@ -688,11 +678,7 @@ int CreateTeamCommand::performAction_63()
 namespace gamemd {
 int CreateTeamCommand::performAction_64()
 {
-
-  char v2; // [esp+5h] [ebp+5h]
-
-  return DrawUnitExperiencePopup((v2 & 1) == 0); /*0x536a01*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5369F0)
 }
 } // namespace gamemd
 
@@ -700,9 +686,7 @@ int CreateTeamCommand::performAction_64()
 namespace gamemd {
 char * CreateTeamCommand::performAction_65()
 {
-
-  return aPreviousobject; /*0x536a15*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536A10)
 }
 } // namespace gamemd
 
@@ -710,9 +694,7 @@ char * CreateTeamCommand::performAction_65()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_66()
 {
-
-  return GetStringCSF(aTxtPrevObject, 0, g_Str_File_Init_CPP, 6817); /*0x536a36*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536A20)
 }
 } // namespace gamemd
 
@@ -720,9 +702,7 @@ wchar_t * CreateTeamCommand::performAction_66()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_67()
 {
-
-  return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6819); /*0x536a56*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536A40)
 }
 } // namespace gamemd
 
@@ -730,9 +710,7 @@ wchar_t * CreateTeamCommand::performAction_67()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_68()
 {
-
-  return GetStringCSF(aTxtPrevObjectD, 0, g_Str_File_Init_CPP, 6821); /*0x536a76*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536A60)
 }
 } // namespace gamemd
 
@@ -748,9 +726,7 @@ unsigned char * DeployCommandClass::performAction_69()
 namespace gamemd {
 char * CreateTeamCommand::performAction_70()
 {
-
-  return aStopobject; /*0x536b15*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B10)
 }
 } // namespace gamemd
 
@@ -758,9 +734,7 @@ char * CreateTeamCommand::performAction_70()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_71()
 {
-
-  return GetStringCSF(aTxtStopObject, 0, g_Str_File_Init_CPP, 6858); /*0x536b36*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B20)
 }
 } // namespace gamemd
 
@@ -768,9 +742,7 @@ wchar_t * CreateTeamCommand::performAction_71()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_72()
 {
-
-  return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6860); /*0x536b56*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B40)
 }
 } // namespace gamemd
 
@@ -778,9 +750,7 @@ wchar_t * CreateTeamCommand::performAction_72()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_73()
 {
-
-  return GetStringCSF(aTxtStopObjectD, 0, g_Str_File_Init_CPP, 6862); /*0x536b76*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B60)
 }
 } // namespace gamemd
 
@@ -788,7 +758,7 @@ wchar_t * CreateTeamCommand::performAction_73()
 namespace gamemd {
 int CreateTeamCommand_performAction_74()
 {
-  return UI_Create_730EA0(); /*0x536b85*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B80)
 }
 } // namespace gamemd
 
@@ -796,9 +766,7 @@ int CreateTeamCommand_performAction_74()
 namespace gamemd {
 char * CreateTeamCommand::performAction_75()
 {
-
-  return aAlltocheer; /*0x536b95*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B90)
 }
 } // namespace gamemd
 
@@ -806,9 +774,7 @@ char * CreateTeamCommand::performAction_75()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_76()
 {
-
-  return GetStringCSF(aCmndAllcheer, 0, g_Str_File_Init_CPP, 6876); /*0x536bb6*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536BA0)
 }
 } // namespace gamemd
 
@@ -816,9 +782,7 @@ wchar_t * CreateTeamCommand::performAction_76()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_77()
 {
-
-  return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6878); /*0x536bd6*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536BC0)
 }
 } // namespace gamemd
 
@@ -826,9 +790,7 @@ wchar_t * CreateTeamCommand::performAction_77()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_78()
 {
-
-  return GetStringCSF(aCmndAllcheerde, 0, g_Str_File_Init_CPP, 6880); /*0x536bf6*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536BE0)
 }
 } // namespace gamemd
 
@@ -836,18 +798,14 @@ wchar_t * CreateTeamCommand::performAction_78()
 namespace gamemd {
 int CreateTeamCommand::performAction_79()
 {
-
-  return UI_Create_730F30(); /*0x536c05*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536C00)
 }
 }
 // 0x536C10
 namespace gamemd {
 char * CreateTeamCommand::performAction_80()
 {
-
-  return aDeployobject; /*0x536c15*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536C10)
 }
 } // namespace gamemd
 

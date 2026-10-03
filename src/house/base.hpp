@@ -69,6 +69,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadBaseNodeClass(int a1, int a2);  // 0x42ee30
     int LoadArrayFields(int a1, int a2);  // 0x42f070
     // === FUNCS-MOVE (END) ===
+    int ProcessPowerTimer(unsigned int *a2, int aP1, int a1, int a3, int a4, int a5, int a6);
 };
 
 } // namespace gamemd

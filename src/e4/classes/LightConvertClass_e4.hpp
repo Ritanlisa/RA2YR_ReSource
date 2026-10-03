@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 struct ConvertClass;  // fix_fwd_type_supply
 struct MapClass;  // fix_fwd_type_supply
 
@@ -710,6 +711,7 @@ struct LightConvertClass {
 // --- flat members (END) ---
     int SelectRLEBlitter(IUnknown * aP1);
      double Constructor(...);  // C2597 interim stub
+    LightConvertClass * sub_556520(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

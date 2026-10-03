@@ -351,6 +351,8 @@ struct AnimTypeClass {
     AnimTypeClass * Construct(char *aP1);
     unsigned int * Construct2(char *Source);
     void* GetWarhead(int a2);
+    AnimTypeClass * * FindOrCreate(char *Source, int a2, int aP0, int aP1, int aP2, int a1, int a3);
+    int ReadINIString(unsigned __int8 *a3, unsigned __int8 *aP1, unsigned int a2);
 };
 
 } // namespace gamemd

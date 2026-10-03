@@ -92,23 +92,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
 namespace gamemd {
 void sub_40D1B0()
 {
-  int *v0; // esi
-  int v1; // edi
-  ObjectClass *v2; // [esp+0h] [ebp-8h]
-
-  *(unsigned int *)&stru_87F5F0.__pad_58[416] = (void*)&MouseClass_vftable; /*0x40d1b2*/
-  dword_884D00 = (int)&MouseClass_vftable; /*0x40d1bc*/
-  v0 = (int *)(&dword_884B84); /*0x40d1c6*/
-  v1 = 4; /*0x40d1cb*/
-  do /*0x40d1f0*/
-  {
-    v0 -= 997; /*0x40d1d0*/
-    Array::ForEachReverse(v0 + 20, 52, 75, (int (*)(int))nullsub_56); /*0x40d1e3*/
-    nullsub_57(v2); /*0x40d1ea*/
-    --v1; /*0x40d1ef*/
-  }
-  while ( v1 ); /*0x40d1f0*/
-  ((RadarClass *)((RadarClass *)&stru_87F5F0.__pad_58[416]))->Destruct(); /*0x40d1f7*/
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x40D1B0)
 }
 } // namespace gamemd
 
@@ -185,22 +169,7 @@ char sub_5A1F60()
 namespace gamemd {
 int E4Recv_5AFEF0::sub_5AFEF0()
 {
-
-  int v2; // eax
-
-  ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Init(); /*0x5afef3*/
-  (&this->MovingDestination)[0] = (&g_MissionQueueFrame.localVariables)[227]; /*0x5aff01*/
-  (&this->MovingDestination)[1] = (&g_MissionQueueFrame.localVariables)[228]; /*0x5aff0a*/
-  (&this->MovingDestination)[2] = (&g_MissionQueueFrame.localVariables)[229]; /*0x5aff16*/
-  (&this->HeadToCoord)[0] = (&g_MissionQueueFrame.localVariables)[227]; /*0x5aff1e*/
-  (&this->HeadToCoord)[1] = (&g_MissionQueueFrame.localVariables)[228]; /*0x5aff26*/
-  v2 = g_MissionQueueFrame.localVariables[229]; /*0x5aff29*/
-  this->IsMoving = 0; /*0x5aff2e*/
-  *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_MechLocomotionClass); /*0x5aff32*/
-  (&this->HeadToCoord)[2] = v2; /*0x5aff38*/
-  *(unsigned int *)&(&this->LocomotionClass)[4] = (unsigned int)(&vt_MechLocomotionClass); /*0x5aff3b*/
-  return (int)this->LocomotionClass; /*0x5aff44*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5AFEF0)
 }
 } // namespace gamemd
 
@@ -208,13 +177,7 @@ int E4Recv_5AFEF0::sub_5AFEF0()
 namespace gamemd {
 int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, int a4)
 {
-  char Destination[128]; // [esp+0h] [ebp-80h] BYREF
-
-  if ( ((INIClass*)(INIClass *)a1)->GetString((unsigned char *)(edx0), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x67b51e*/
-// 0x75e3b0
-    return WarheadTypeClass::FindOrCreate((gamemd::ObjectClass *)(Destination)); /*0x67b52b*/
-  else
-    return a4; /*0x67b539*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67B500)
 }
 } // namespace gamemd
 
@@ -222,13 +185,7 @@ int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, 
 namespace gamemd {
 BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
 {
-  char Destination[128]; // [esp+0h] [ebp-80h] BYREF
-
-  if ( ((INIClass*)((INIClass *)a0))->GetString((unsigned char *)(aP1), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x67bcfe*/
-// 0x4653c0
-    return (gamemd::BuildingTypeClass *)(((BuildingTypeClass *)(Destination))->FindOrCreate());
-  else
-    return (gamemd::BuildingTypeClass *)(a4); /*0x67bd19*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67BCE0)
 }
 } // namespace gamemd
 
@@ -236,13 +193,7 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 namespace gamemd {
 TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsigned char * a2, int a4)
 {
-  char Destination[128]; // [esp+0h] [ebp-80h] BYREF
-
-  if ( ((INIClass*)((INIClass *)a1))->GetString((unsigned char *)(edx0), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x67bd9e*/
-// 0x71e2a0
-    return (gamemd::TerrainTypeClass *)(((TerrainTypeClass *)(Destination))->FindOrCreate());
-  else
-    return (gamemd::TerrainTypeClass *)(a4); /*0x67bdb9*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67BD80)
 }
 } // namespace gamemd
 
@@ -270,30 +221,7 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
 namespace gamemd {
 char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int _18, unsigned int * a5, int a7, void * a3, void * a4, void * a6)
 {
-  HouseClass *v7; // esi
-  int Field11; // eax
-  HouseClass *v10; // [esp+0h] [ebp-4h]
-
-  v7 = *(HouseClass **)(a1 + 144); /*0x6e3121*/
-  if ( !a6 ) /*0x6e312d*/
-    return 0; /*0x6e312d*/
-  if ( v7 == (HouseClass *)8997 ) /*0x6e3135*/
-  {
-    Field11 = ((Property *)(a6))->GetField11(); /*0x6e3137*/
-  }
-  else
-  {
-    if ( v7 == (HouseClass *)-1 ) /*0x6e3141*/
-      return 0; /*0x6e3163*/
-    if ( (uint8_t)((BuildingType*)v7)->IsSpecialType() ) /*0x6e3145*/
-      Field11 = ((BuildingType*)v7)->FindOwnerHouse(); /*0x6e3150*/
-    else
-      Field11 = ((HouseClass *)(v7))->FindOwner(); /*0x6e3157*/
-  }
-  if ( !Field11 ) /*0x6e315e*/
-    return 0; /*0x6e315e*/
-  RespawnStartingBuildings(v10, a2, a3, (int)v7); /*0x6e3168*/
-  return 1; /*0x6e3162*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E3120)
 }
 } // namespace gamemd
 
@@ -301,19 +229,6 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
 namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
-
-  ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Init(); /*0x728a03*/
-  (&this->CurrentState)[0] = 0; /*0x728a0d*/
-  (&this->CurrentState)[1] = *(unsigned int *)&(&g_BuildingLoadQueue_Array.__pad_F70)[352]; /*0x728a16*/
-  (&this->CurrentState)[2] = *(unsigned int *)&(&g_BuildingLoadQueue_Array.__pad_F70)[356]; /*0x728a1e*/
-  (&this->CurrentState)[3] = *(unsigned int *)&(&g_BuildingLoadQueue_Array.__pad_F70)[360]; /*0x728a27*/
-  (&this->CurrentState)[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x728a30*/
-  (&this->CurrentState)[6] = 0; /*0x728a33*/
-  (&this->CurrentState)[7] = 0; /*0x728a36*/
-  LOBYTE((&this->CurrentState)[8]) = 0; /*0x728a39*/
-  *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_TunnelLocomotionClass); /*0x728a3c*/
-  *(unsigned int *)&(&this->LocomotionClass)[4] = (unsigned int)(&vt_TunnelLocomotionClass); /*0x728a42*/
-  return (int)this->LocomotionClass; /*0x728a4b*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x728A00)
 }
 } // namespace gamemd

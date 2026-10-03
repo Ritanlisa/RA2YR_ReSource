@@ -30,27 +30,6 @@ bool Selection::GetFlag(void *a1)
 namespace gamemd {
 int Selection::ClearGlobals()
 {
-
-  int result; // eax
-
-  result = 0; /*0x734270*/
-  if ( this ) /*0x734274*/
-  {
-    if ( this == (Selection *)g_BuildingLoadQueue_Array.QueueingCell[1] ) /*0x734287*/
-    {
-      g_BuildingLoadQueue_Array.QueueingCell[1] = 0; /*0x734289*/
-    }
-    else if ( this == (Selection *)g_BuildingLoadQueue_Array.NumberImpassableRows ) /*0x734295*/
-    {
-      g_BuildingLoadQueue_Array.NumberImpassableRows = 0; /*0x734297*/
-    }
-  }
-  else
-  {
-    g_BuildingLoadQueue_Array.QueueingCell[1] = 0; /*0x734276*/
-    g_BuildingLoadQueue_Array.NumberImpassableRows = 0; /*0x73427b*/
-  }
-  return result; /*0x734280*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734270)
 }
 } // namespace gamemd

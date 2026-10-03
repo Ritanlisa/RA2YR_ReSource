@@ -1154,6 +1154,15 @@ struct RulesClass {
     int LoadCountries();  // 0x6722f0
     int Reset();  // 0x74e6b0
     int IsTypeBuildable(unsigned int a2);  // 0x721140
+    INIClass * * ReadPowerupsSection(void * aPowerups);
+    INIClass * * readDifficulty(void * aClimb, void * aCruiseheight, void * aJumpjetcontrol, void * aTurnrate, void * aWobbledeviatio, void * aWobblesperseco);
+    INIClass * * ReadMovies(void * aMovies);
+    int readSpecialWeapons(void * aAlliedwalltran, void * aWallmodel, void * aWallpenetrator);
+    int ReadColors(void * aColors);
+    int ReadColorAdd(void * aColoradd);
+    int readCrateRules(void * aInfantrytypes);
+    int readRadiation(void * aAircrafttypes);
+    int ReadSidesList(void * aSuperweapontyp);
 };
 
 } // namespace gamemd

@@ -76,22 +76,7 @@ int WDTState_4::Read(int a2, void *a2_2)
 namespace gamemd {
 DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void (***v3)(unsigned int, int); // ecx
-
-  v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x76bc13*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x76bc16*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x76bc20*/
-  {
-    (**v3)((unsigned int)v3, 3); /*0x76bc2f*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x76bc31*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x76bc3c*/
-  Block->m_8 = 0; /*0x76bc42*/
-  if ( (a2 & 1) != 0 ) /*0x76bc49*/
-    __3_YAXPAX_Z(Block); /*0x76bc4c*/
-  return Block->__pad_0; /*0x76bc56*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x76BC10)
 }
 } // namespace gamemd
 

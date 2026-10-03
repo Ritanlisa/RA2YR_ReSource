@@ -13,32 +13,5 @@
 // 0x543780
 IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
 {
-
-  int v4; // eax
-
-  ((ObjectClass *)((ObjectClass *)this))->ctor(); /*0x543786*/
-  *((unsigned int *)this + 43) = *(IsometricTileClass *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * aP1); /*0x54379c*/
-  *this = (IsometricTileClass)&vt_IsometricTileClass; /*0x5437a2*/
-  *((unsigned int *)this + 1) = &vt_IsometricTileClass; /*0x5437a8*/
-  *((unsigned int *)this + 2) = &vt_IsometricTileClass; /*0x5437af*/
-  *((unsigned int *)this + 3) = &vt_IsometricTileClass; /*0x5437b6*/
-  if ( *aP2 != word_AA06D0 || aP2[1] != word_AA06D2 ) /*0x5437d4*/
-  {
-    *((unsigned char *)this + 129) = 0; /*0x543805*/
-    ObjectClass::SetPosition((IUnknown *)this); /*0x54380c*/
-    (*(void (**)(IsometricTileClass *, int))(*(unsigned int *)this + 292))(this, 1); /*0x543818*/
-  }
-  if ( *(int *)&stru_87F5F0.__pad_58[280] < *(int *)&stru_87F5F0.__pad_58[272] /*0x543855*/
-    || (stru_87F5F0.__pad_58[277] || !*(unsigned int *)&stru_87F5F0.__pad_58[272])
-    && *(int *)&stru_87F5F0.__pad_58[284] > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_87F5F0.__pad_58[264] + 8))(
-         &stru_87F5F0.__pad_58[264],
-         *(unsigned int *)&stru_87F5F0.__pad_58[272] + *(unsigned int *)&stru_87F5F0.__pad_58[284],
-         0) )
-  {
-    v4 = (*(unsigned int *)&stru_87F5F0.__pad_58[280])++; /*0x543862*/
-    *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[268] + 4 * v4) = this; /*0x543871*/
-  }
-  return this; /*0x543876*/
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x543780)
 }

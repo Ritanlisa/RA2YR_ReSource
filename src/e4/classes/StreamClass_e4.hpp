@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class IUnknown;  // G42.36 fwd supply
 
 struct StreamClass {
 // --- flat members (BEGIN) ---
@@ -28,6 +29,7 @@ struct StreamClass {
     int Vt32Thunk(int a1);
     int WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6);
     unsigned int ReadAndSeek(int aP1, int aP2);
+    BOOL IsInactive(IUnknown * aP0);
 };
 
 } // namespace gamemd

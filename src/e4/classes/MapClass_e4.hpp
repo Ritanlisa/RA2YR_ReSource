@@ -6,6 +6,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class MapResourceClass;  // G42.36 fwd supply
+class Block;  // G42.36 fwd supply
+class MapClass_IsRectInBounds;  // G42.36 fwd supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
@@ -587,6 +590,12 @@ struct MapClass {
     void* Destruct();
     void*  InitTileData(MouseClass * aP0, int aP3);
     int RevealArea2(int *a1, int a2, int a3, int a4);  // 0x567da0
+    INIClass * * SaveCellTagsToINI(char * a2, void * aIsomappack, void * aIsomappack2, void * aIsomappack3, void * aIsomappack4, void * aIsomappack5);
+    void MapClass_IsRectInBounds();
+    int MarkForRedraw(int a2, void *a2_2);
+    MapClass * Destru_vt04(char * Block, char a2);
+    VectorClass_flat * InitCellVe_vt00(unsigned int * Block, char a2);
+    int GetTileDataField14(MapResourceClass * aP0);
 };
 
 } // namespace gamemd

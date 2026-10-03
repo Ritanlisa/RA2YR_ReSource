@@ -48,21 +48,21 @@
 namespace gamemd {
 int AddMessageListPlayerMessage(wchar_t *a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x730A90)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x730A90)
 }
 }
 // 0x730AF0
 namespace gamemd {
 AbstractClass * * ProcessSelectionExperience()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x730AF0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x730AF0)
 }
 }
 // 0x730D60
 namespace gamemd {
 CellStruct * * sub_730D60()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x730D60)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x730D60)
 }
 }
 // 0x731130
@@ -112,54 +112,42 @@ LABEL_17:
 namespace gamemd {
 AbstractClass * * sub_731AA0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731AA0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731AA0)
 }
 }
 // 0x731EB0
 namespace gamemd {
 unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731EB0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731EB0)
 }
 }
 // 0x731F70
 namespace gamemd {
 unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, int) a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731F70)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731F70)
 }
 }
 // 0x732770
 namespace gamemd {
 int TechnoClass_StepCleanupIfHuman(int a1, void * a2)
 {
-  char v4; // al
-  BOOL result; // eax
-
-  result = 0; /*0x7327b7*/
-  if ( a1 && *(unsigned char *)(a1 + 144) )
-  {
-    v4 = *(unsigned int *)&dword_A8B238
-       ? ((House*)*(House **)(a1 + 540))->IsHumanPlayer()
-       : *(unsigned char *)(*(unsigned int *)(a1 + 540) + 493);
-    if ( v4 && (uint8_t)((ObjectClass *)((ObjectClass *)a1))->StepCleanup(a2) ) /*0x7327ad*/
-      return 1; /*0x732782*/
-  }
-  return result; /*0x7327b6*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732770)
 }
 }
 // 0x732950
 namespace gamemd {
 int SelectAllOfType()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732950)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732950)
 }
 }
 // 0x732FF0
 namespace gamemd {
 char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732FF0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732FF0)
 }
 }
 // 0x7331B0
@@ -173,56 +161,56 @@ void sub_7331B0()
 namespace gamemd {
 int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * aMsgHealthy, void * aMsgHeavilydama)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x733380)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x733380)
 }
 }
 // 0x7336C0
 namespace gamemd {
 int E4Recv_7336C0::DrawUnitExperiencePopup()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7336C0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7336C0)
 }
 }
 // 0x7339B0
 namespace gamemd {
 int SelectUnitsByTheme(char a1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7339B0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7339B0)
 }
 }
 // 0x733CD0
 namespace gamemd {
 unsigned int * E4Recv_733CD0::sub_733CD0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x733CD0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x733CD0)
 }
 }
 // 0x733E10
 namespace gamemd {
 void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a4)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x733E10)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x733E10)
 }
 }
 // 0x734E60
 namespace gamemd {
 wchar_t * GetStringCSF(wchar_t *Format, unsigned int *a2, const char *aP3, int a4)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734E60)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734E60)
 }
 }
 // 0x734F50
 namespace gamemd {
 int E4Recv_734F50::sub_734F50()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734F50)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734F50)
 }
 }
 // 0x734F80
 namespace gamemd {
 int E4Recv_734F80::sub_734F80()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734F80)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734F80)
 }
 }
 // 0x734FB0
@@ -243,7 +231,7 @@ int sub_734FC0()
 namespace gamemd {
 char * CharToWideString(unsigned char *a1)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x735120)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x735120)
 }
 }
 // 0x735370
@@ -272,7 +260,7 @@ int sub_735390()
 namespace gamemd {
 int unknown_libname_34()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x730660)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x730660)
 }
 } // namespace gamemd
 
@@ -449,7 +437,7 @@ int sub_730AE0()
 namespace gamemd {
 int j_FactoryClass_GetFlag()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731A90)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731A90)
 }
 } // namespace gamemd
 
@@ -465,7 +453,7 @@ void sub_731BE0()
 namespace gamemd {
 wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731D90)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731D90)
 }
 } // namespace gamemd
 
@@ -473,7 +461,7 @@ wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
 namespace gamemd {
 int sub_732110(int a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732110)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732110)
 }
 } // namespace gamemd
 
@@ -481,7 +469,7 @@ int sub_732110(int a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
 namespace gamemd {
 int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int) a2, void (__fastcall *a3)(int, int) a3, int a4, int a5)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732140)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732140)
 }
 } // namespace gamemd
 
@@ -489,7 +477,7 @@ int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int) a2, void (__fast
 namespace gamemd {
 char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732190)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732190)
 }
 } // namespace gamemd
 
@@ -497,7 +485,7 @@ char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, in
 namespace gamemd {
 char sub_7321D0(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7321D0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7321D0)
 }
 } // namespace gamemd
 
@@ -505,7 +493,7 @@ char sub_7321D0(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, in
 namespace gamemd {
 BOOL E4Recv_7325C0::sub_7325C0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7325C0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7325C0)
 }
 } // namespace gamemd
 
@@ -640,7 +628,7 @@ int sub_7345D0()
 namespace gamemd {
 int sub_7345E0()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7345E0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7345E0)
 }
 } // namespace gamemd
 
@@ -671,7 +659,7 @@ int sub_734620()
 namespace gamemd {
 int WideMessageBox(CampaignScore * aP0, const WCHAR * a1, LPCWCH lpWideCharStr, UINT uType)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734FE0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734FE0)
 }
 } // namespace gamemd
 
@@ -707,7 +695,7 @@ void WideToChar_Copy(unsigned char * a1, char * a2, int a3)
 namespace gamemd {
 char * ToWideStringChar(IUnknown * aP0)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7350C0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7350C0)
 }
 } // namespace gamemd
 
@@ -839,7 +827,7 @@ int sub_735350()
 namespace gamemd {
 char E4Recv_736C10::sub_736C10()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x736C10)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x736C10)
 }
 } // namespace gamemd
 

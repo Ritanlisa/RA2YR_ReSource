@@ -38,6 +38,7 @@ struct ThemeClass {
     void * InitializeThemes(char * a2);
     bool GetField(int a1);
     int Play(int a2);  // 0x720bb0
+    int ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, void * aSide, void * aSound);
 };
 
 } // namespace gamemd

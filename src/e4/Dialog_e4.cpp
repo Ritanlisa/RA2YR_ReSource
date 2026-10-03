@@ -33,6 +33,7 @@
 #include "e4/classes/TimerPool_e4.hpp"
 #include "e4/classes/DialogClass_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x49F740
 namespace gamemd {
@@ -297,26 +298,7 @@ unsigned int INIClass::CheckButtonState()
 namespace gamemd {
 BOOL Dialog::IsSpecialTemplate()
 {
-
-  return this == (Dialog *)293 /*0x602b7a*/
-      || this == (Dialog *)231
-      || this == (Dialog *)278
-      || this == (Dialog *)194
-      || this == (Dialog *)201
-      || this == (Dialog *)285
-      || this == (Dialog *)284
-      || this == (Dialog *)276
-      || this == (Dialog *)700
-      || this == (Dialog *)275
-      || this == (Dialog *)265
-      || this == (Dialog *)271
-      || this == (Dialog *)279
-      || this == (Dialog *)230
-      || this == (Dialog *)243
-      || this == (Dialog *)244
-      || this == (Dialog *)270
-      || this == (Dialog *)274;
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x602AE0)
 }
 } // namespace gamemd
 

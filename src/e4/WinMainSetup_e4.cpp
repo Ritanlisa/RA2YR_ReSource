@@ -155,14 +155,7 @@ void sub_5BE940()
 namespace gamemd {
 int sub_5DB6F0()
 {
-  int result; // eax
-
-  result = WinMainSetup_Setup_5DB6F0_Setup(); /*0x5db6f1*/
-  IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x5db700*/
-  if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5db707*/
-    result = (***(int (****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5db70d*/
-  *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5db70f*/
-  return result; /*0x5db715*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5DB6F0)
 }
 } // namespace gamemd
 
@@ -252,32 +245,7 @@ void sub_626FF0()
 namespace gamemd {
 void sub_65FD50()
 {
-  int i; // edi
-  void *v2; // esi
-  int v3; // eax
-  int v4; // [esp+4h] [ebp-4h] BYREF
-
-  for ( i = stru_B04DA8.LoadGame_field_0x10 - 1; i >= 0; --i ) /*0x65fd5c*/
-  {
-    v2 = *(void **)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x65fd65*/
-    if ( v2 ) /*0x65fd6a*/
-    {
-      v4 = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x65fd7b*/
-      v3 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v4); /*0x65fd7f*/
-      if ( v3 != -1 && v3 < stru_B04DA8.LoadGame_field_0x10 ) /*0x65fd8f*/
-      {
-        --stru_B04DA8.LoadGame_field_0x10; /*0x65fd94*/
-        for ( ; /*0x65fd9a*/
-              v3 < stru_B04DA8.LoadGame_field_0x10;
-              *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * v3 - 4) = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04
-                                                                                    + 4 * v3) )
-        {
-          ++v3; /*0x65fda2*/
-        }
-      }
-      RA2_OPDEL(v2); /*0x65fdb5*/
-    }
-  }
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65FD50)
 }
 } // namespace gamemd
 

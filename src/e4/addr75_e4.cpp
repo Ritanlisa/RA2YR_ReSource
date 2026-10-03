@@ -1210,14 +1210,7 @@ int E4Recv_756570::sub_756570()
 namespace gamemd {
 BOOL E4Recv_7589F0::sub_7589F0(int a2)
 {
-
-  BOOL v4; // ebx
-
-  (*(void (**)(int, int))(*(unsigned int *)a2 + 28))(a2, 1); /*0x758a01*/
-  v4 = (*(int (**)(int, int, int))(*(unsigned int *)a2 + 36))(a2, ((unsigned int *)this)[0], 768) != 768; /*0x758a1b*/
-  (*(void (**)(int))(*(unsigned int *)a2 + 52))(a2); /*0x758a24*/
-  return v4; /*0x758a27*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7589F0)
 }
 } // namespace gamemd
 

@@ -16,6 +16,7 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WonlineStringDialogControl_12_e4.hpp"
+#include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x774980
 namespace gamemd {
@@ -192,125 +193,7 @@ int WinModemClass::WriteSerial(LPCVOID lpBuffer, DWORD aP2)
 namespace gamemd {
 WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
 {
-
-  WinModemClass *v5; // esi
-  int v6; // ebx
-  WinModemClass * v7;
-  int (*WinModemClass_field_0x2C)(void); // eax
-  int result; // eax
-  int Bytes; // eax
-  int v11; // esi
-  int v12; // eax
-  WinModemClass * v13;
-  int v14; // eax
-  char *v15; // esi
-  char *v16; // eax
-  int v17; // eax
-  int v19; // [esp+14h] [ebp-30h]
-  int Ticks; // [esp+20h] [ebp-24h]
-  WinModemClass * v21;
-
-  v5 = (gamemd::WinModemClass *)((int)(this));
-  v6 = 0; /*0x774ce6*/
-  ((gamemd::Timer *)this)->GetTicks(); /*0x774ce1*/
-  ((gamemd::Timer *)this)->GetTicks(); /*0x774cf4*/
-  memset(Str, 0, a4); /*0x774d0e*/
-  v7 = aP4; /*0x774d24*/
-  Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x774d28*/
-  v21 = aP4; /*0x774d30*/
-LABEL_2:
-  v19 = ((gamemd::Timer *)this)->GetTicks(); /*0x774d38*/
-  while ( 1 )
-  {
-    WinModemClass_field_0x2C = (int (*)(void))v5[1].WinModemClass_field_0x2C; /*0x774d63*/
-    if ( WinModemClass_field_0x2C ) /*0x774d68*/
-    {
-      result = WinModemClass_field_0x2C(); /*0x774d6a*/
-      if ( result ) /*0x774d6e*/
-        return (gamemd::WinModemClass **)(result); /*0x774f2f*/
-    }
-    if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x774d7b*/
-      return 0; /*0x774d7b*/
-    Bytes = ((WinModemClass*)v5)->ReadBytes(&Str[v6], a4 - v6 < 0 ? 0 : a4 - v6);
-    if ( Bytes ) /*0x774da0*/
-    {
-      v6 += Bytes; /*0x774da6*/
-      Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x774db1*/
-      v21 = v7; /*0x774dc3*/
-    }
-    v11 = a2; /*0x774dcb*/
-    if ( v19 != -1 ) /*0x774dd2*/
-    {
-      v12 = ((gamemd::Timer *)this)->GetTicks() - v19; /*0x774ddd*/
-      if ( v12 >= a2 ) /*0x774de3*/
-        goto LABEL_20; /*0x774de3*/
-      v11 = a2 - v12; /*0x774de5*/
-    }
-    if ( !v11 || v6 >= a4 ) /*0x774def*/
-      goto LABEL_20; /*0x774def*/
-    if ( strchr(Str, 13) ) /*0x774df4*/
-    {
-      if ( v7 == (gamemd::WinModemClass *)(-1) ) /*0x774e07*/
-        goto LABEL_20; /*0x774e07*/
-      v13 = v21; /*0x774e0d*/
-      if ( Ticks != -1 ) /*0x774e14*/
-      {
-        v14 = (int)(((gamemd::Timer *)this)->GetTicks() - Ticks);
-        if ( v14 >= (int)(v21) ) /*0x774e25*/
-          goto LABEL_20; /*0x774e25*/
-        v13 = v21 - v14; /*0x774e27*/
-      }
-      if ( !v13 ) /*0x774e2b*/
-      {
-LABEL_20: Str[a4 - 1] = (char)((char *)(0));
-        v15 = (char *)(strstr(Str, word_832678));
-        if ( v15 ) /*0x774e4c*/
-        {
-          if ( *Str == 65 && Str[1] == 84 && strchr(Str, 13) ) /*0x774e5d*/
-            v15 = strchr(Str, 13); /*0x774e74*/
-          if ( v15 ) /*0x774e78*/
-            goto LABEL_38; /*0x774e78*/
-        }
-        if ( *Str == 13 || *Str == 10 ) /*0x774e83*/
-        {
-          v15 = strchr(Str, 13); /*0x774e90*/
-          v16 = strchr(Str, 10); /*0x774e92*/
-          if ( !v15 || v16 && v16 < v15 ) /*0x774ea4*/
-            v15 = strchr(Str, 10); /*0x774eb1*/
-          if ( v15 ) /*0x774eb5*/
-          {
-LABEL_38:
-            while ( *v15 == 13 || *v15 == 10 ) /*0x774ebf*/
-              ++v15; /*0x774ec1*/
-            if ( v15 != Str ) /*0x774ec6*/
-            {
-              memcpy(Str, v15, a4 - (v15 - Str)); /*0x774ed5*/
-              v6 -= v15 - Str; /*0x774edd*/
-              v7 = aP4; /*0x774edf*/
-            }
-            if ( v15 ) /*0x774ee5*/
-            {
-              v5 = this; /*0x774ee7*/
-              goto LABEL_2; /*0x774eeb*/
-            }
-          }
-        }
-        if ( strrchr(Str, 13) ) /*0x774ef3*/
-          *strrchr(Str, 13) = 0; /*0x774f0a*/
-        result = a2; /*0x774f11*/
-        if ( v19 != -1 ) /*0x774f1a*/
-        {
-          v17 = ((gamemd::Timer *)this)->GetTicks() - v19; /*0x774f25*/
-          if ( v17 < a2 ) /*0x774f2b*/
-            return (gamemd::WinModemClass **)(a2 - v17); /*0x774f38*/
-          return 0; /*0x774f3b*/
-        }
-        return (gamemd::WinModemClass **)(result); /*0x774f1a*/
-      }
-    }
-    v5 = this; /*0x774d5f*/
-  }
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x774CD0)
 }
 } // namespace gamemd
 // 0x774F50
@@ -357,146 +240,7 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
 namespace gamemd {
 AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8)
 {
-
-  unsigned int v9; // kr0C_4
-  int v10; // ecx
-  int v11; // edx
-  int v12; // esi
-  int v13; // eax
-  int v14; // eax
-  int v15; // esi
-  int v16; // esi
-  int v17; // eax
-  int v18; // eax
-  int v19; // esi
-  int v20; // esi
-  int v21; // eax
-  size_t v22; // eax
-  size_t v24; // eax
-  int i; // [esp+10h] [ebp-108h] BYREF
-  int Ticks; // [esp+14h] [ebp-104h]
-  int v27; // [esp+1Ch] [ebp-FCh]
-  DWORD v28; // [esp+20h] [ebp-F8h] BYREF
-  DWORD NumberOfBytesWritten; // [esp+24h] [ebp-F4h] BYREF
-  char Str[80]; // [esp+28h] [ebp-F0h] BYREF
-  char Buffer[80]; // [esp+78h] [ebp-A0h] BYREF
-  unsigned char v32[80]; // [esp+C8h] [ebp-50h] BYREF
-
-  LOWORD(i) = a3; /*0x77512a*/
-  strcpy(Buffer, a2); /*0x77514b*/
-  strcat(Buffer, (const char *)&i); /*0x77517a*/
-  ((WinModemClass*)this)->ReadBytes(v32, 80); /*0x77518d*/
-  Sleep(0x64u); /*0x775194*/
-  ((WinModemClass*)this)->ReadBytes(v32, 80); /*0x7751a6*/
-  for ( i = 0; i < a7; ++i ) /*0x7751bc*/
-  {
-    Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x7751d1*/
-    v9 = strlen(Buffer) + 1; /*0x7751de*/
-    v27 = a6; /*0x7751ea*/
-    ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x7751f2*/
-    if ( !WriteFile(*((HANDLE *)this + 23), Buffer, v9 - 1, &NumberOfBytesWritten, (LPOVERLAPPED)(unsigned int *)this + 3) ) /*0x77520d*/
-    {
-      if ( GetLastError() == 997 ) /*0x77521e*/
-        *((unsigned char *)this + 81) = 1; /*0x775220*/
-      else
-        ((gamemd::Debug *)this)->Log(); /*0x77522d*/
-    }
-    ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x775237*/
-    v10 = Ticks; /*0x77523c*/
-    v11 = v27; /*0x775240*/
-    v12 = v27; /*0x775247*/
-    if ( Ticks == -1 ) /*0x775249*/
-    {
-      v15 = v27; /*0x77526a*/
-    }
-    else
-    {
-      v13 = ((gamemd::Timer *)this)->GetTicks(); /*0x77524f*/
-      v10 = Ticks; /*0x775254*/
-      v14 = v13 - Ticks; /*0x775258*/
-      if ( v14 >= v12 ) /*0x77525c*/
-        return 0; /*0x77525c*/
-      v11 = v27; /*0x775262*/
-      v15 = v12 - v14; /*0x775266*/
-    }
-    if ( v15 <= 0 ) /*0x77526e*/
-      return 0; /*0x77526e*/
-    v16 = v11; /*0x775277*/
-    if ( v10 == -1 ) /*0x775279*/
-    {
-      v19 = v11; /*0x775296*/
-    }
-    else
-    {
-      v17 = ((gamemd::Timer *)this)->GetTicks(); /*0x77527f*/
-      v10 = Ticks; /*0x775284*/
-      v18 = v17 - Ticks; /*0x775288*/
-      if ( v18 >= v16 ) /*0x77528c*/
-        goto LABEL_16; /*0x77528c*/
-      v11 = v27; /*0x77528e*/
-      v19 = v16 - v18; /*0x775292*/
-    }
-    if ( v19 < 1 ) /*0x77529b*/
-    {
-LABEL_16:
-      v11 = 1; /*0x77529d*/
-      goto LABEL_21; /*0x7752a2*/
-    }
-    v20 = v11; /*0x7752a7*/
-    if ( v10 != -1 ) /*0x7752a9*/
-    {
-      v21 = ((gamemd::Timer *)this)->GetTicks() - Ticks; /*0x7752b4*/
-      if ( v21 >= v20 ) /*0x7752ba*/
-        v11 = 0; /*0x7752c2*/
-      else
-        v11 = v20 - v21; /*0x7752be*/
-    }
-LABEL_21:
-    memset(Str, 0, sizeof(Str)); /*0x7752cf*/
-    (*(void (**)(WinModemClass *, int, char *, int, int))(*(unsigned int *)this->__pad_0 + 20))( /*0x7752e6*/
-      this,
-      v11,
-      Str,
-      80,
-      a8);
-    if ( !strcmp(Str, (const char *)((char *)&stru_82BA00)) ) /*0x77531d*/
-      return (gamemd::AbstractClass **)(3); /*0x775437*/
-    if ( strstr(Str, g_INI_Key_OK) ) /*0x77532d*/
-      return (gamemd::AbstractClass **)(2); /*0x775337*/
-    if ( strstr(Str, aError) ) /*0x775347*/
-      return (gamemd::AbstractClass **)(1); /*0x775449*/
-    if ( strlen(Str) == 3 /*0x77538a*/
-      && Str[0] >= 48
-      && Str[0] <= 57
-      && Str[1] >= 48
-      && Str[1] <= 57
-      && Str[2] >= 48
-      && Str[2] <= 57 )
-    {
-      v24 = Count; /*0x77544c*/
-      if ( Count >= 80 ) /*0x775456*/
-        v24 = 80; /*0x775458*/
-      strncpy(Destination, Str, v24); /*0x77546b*/
-      return (gamemd::AbstractClass **)(2); /*0x775482*/
-    }
-    v22 = Count; /*0x775390*/
-    if ( Count >= 80 ) /*0x77539a*/
-      v22 = 80; /*0x77539c*/
-    strncpy(Destination, Str, v22); /*0x7753af*/
-    Sleep(0x64u); /*0x7753bf*/
-    ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x7753c3*/
-    if ( !WriteFile(*((HANDLE *)this + 23), &word_8327A0, 1u, &v28, (LPOVERLAPPED)(unsigned int *)this + 3) ) /*0x7753dc*/
-    {
-      if ( GetLastError() == 997 ) /*0x7753ed*/
-        *((unsigned char *)this + 81) = 1; /*0x7753ef*/
-      else
-        ((gamemd::Debug *)this)->Log(); /*0x7753fc*/
-    }
-    ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x775406*/
-    Sleep(0x64u); /*0x77540d*/
-  }
-  return 0; /*0x775428*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x775110)
 }
 } // namespace gamemd
 // 0x7754A0
@@ -589,22 +333,6 @@ int WinModemClass::LogCommErrors(int aP1, char a3, int a4, int a5)
 namespace gamemd {
 WinModemClass * WinModemClass::QueryInterface(char a2)
 {
-
-  int v3; // eax
-
-  v3 = *((unsigned int *)Block + 23); /*0x775613*/
-  *(unsigned int *)Block->__pad_0 = &vt_WinModemClass; /*0x775616*/
-  if ( v3 != -1 ) /*0x77561f*/
-  {
-    ((gamemd::Debug *)this)->Log(); /*0x775626*/
-    CloseHandle(*((HANDLE *)Block + 23)); /*0x775632*/
-    *((unsigned int *)Block + 23) = -1; /*0x775638*/
-  }
-  if ( Block->WinModemClass_field_0x24 ) /*0x77563f*/
-    __3_YAXPAX_Z((void *)Block->WinModemClass_field_0x24); /*0x775647*/
-  if ( (a2 & 1) != 0 ) /*0x775654*/
-    __3_YAXPAX_Z(Block); /*0x775657*/
-  return Block; /*0x775661*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x775610)
 }
 } // namespace gamemd

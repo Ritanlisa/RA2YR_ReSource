@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 struct ILocomotion;  // fix_fwd_type_supply
 struct BuildingClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
@@ -360,6 +361,9 @@ struct JumpjetLocomotionClass {
     void* * ComputeTurretTransform(unsigned int * a1, void * a2, int * a3);
     void* * ProcessLanding(int * a2, unsigned int * a3);
     void* Update2();
+    void* Update2(void * a1, void * a2);
+    JumpjetLocomotionClass * ProcessAttach(int * Block, char a2);
+    TeleportLocomotionClass * ConstructLocomotor(ILocomotion ** Block, char a2);
 };
 
 } // namespace gamemd

@@ -10,6 +10,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x658B10
 namespace gamemd {
@@ -127,71 +128,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
 namespace gamemd {
 unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *a3, void *a4, void *a5, void *a6)
 {
-
-  unsigned int *v4; // eax
-  int v5; // ecx
-  int v6; // eax
-  unsigned int *v7; // ecx
-  int v8; // edx
-
-  this->RadarHashVector_field_0x04 = 0; /*0x658ded*/
-  this->RadarHashVector_field_0x08 = (unsigned int)(aP1); /*0x658df0*/
-  LOBYTE(this->RadarHashVector_field_0x0C) = 1; /*0x658df3*/
-  BYTE1(this->RadarHashVector_field_0x0C) = 0; /*0x658df7*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClassHashObject); /*0x658dfa*/
-  if ( aP1 ) /*0x658e00*/
-  {
-    if ( aP2 ) /*0x658e08*/
-    {
-      if ( aP1 - 1 >= 0 ) /*0x658e0f*/
-      {
-        v4 = (unsigned int *)(aP2 + 4); /*0x658e11*/
-        v5 = (int)(aP1); /*0x658e14*/
-        do /*0x658e21*/
-        {
-          *(v4 - 1) = 0; /*0x658e15*/
-          *v4 = 0; /*0x658e18*/
-          v4[1] = 0; /*0x658e1a*/
-          v4 += 4; /*0x658e1d*/
-          --v5; /*0x658e20*/
-        }
-        while ( v5 ); /*0x658e21*/
-      }
-      this->RadarHashVector_field_0x04 = (unsigned int)(aP2); /*0x658e23*/
-    }
-    else
-    {
-      v6 = __2_YAPAXI_Z(16 * aP1); /*0x658e2e*/
-      if ( v6 ) /*0x658e38*/
-      {
-        if ( aP1 - 1 >= 0 ) /*0x658e3f*/
-        {
-          v7 = (unsigned int *)(v6 + 4); /*0x658e41*/
-          v8 = (int)(aP1); /*0x658e44*/
-          do /*0x658e51*/
-          {
-            *(v7 - 1) = 0; /*0x658e45*/
-            *v7 = 0; /*0x658e48*/
-            v7[1] = 0; /*0x658e4a*/
-            v7 += 4; /*0x658e4d*/
-            --v8; /*0x658e50*/
-          }
-          while ( v8 ); /*0x658e51*/
-        }
-      }
-      else
-      {
-        v6 = 0; /*0x658e55*/
-      }
-      this->RadarHashVector_field_0x04 = v6; /*0x658e57*/
-      BYTE1(this->RadarHashVector_field_0x0C) = 1; /*0x658e5a*/
-    }
-  }
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_DynamicVectorClassHashObject); /*0x658e5e*/
-  this->RadarHashVector_field_0x14 = 10; /*0x658e64*/
-  this->RadarHashVector_field_0x10 = 0; /*0x658e6b*/
-  return this->__pad_0; /*0x658e70*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x658DE0)
 }
 } // namespace gamemd
 // 0x658A70
@@ -271,83 +208,13 @@ int RadarHashVector::FindItemIndex(unsigned int * a2)
 namespace gamemd {
 char * RadarHashVector::Destructor(char a2)
 {
-
-  int v3; // eax
-  char *v4; // ebp
-  int v5; // ecx
-  int v6; // eax
-  char *v7; // esi
-  int v8; // edi
-  void *v9; // eax
-  void *v11; // eax
-
-  if ( (a2 & 2) != 0 ) /*0x658c6a*/
-  {
-    v3 = *((unsigned int *)this - 1); /*0x658c6c*/
-    v4 = (char *)this - 4; /*0x658c70*/
-    v5 = 3 * v3; /*0x658c73*/
-    v6 = v3 - 1; /*0x658c76*/
-    v7 =(char *)&this->__pad_0[8 * v5]; /*0x658c77*/
-    if ( v6 >= 0 ) /*0x658c7a*/
-    {
-      v8 = v6 + 1; /*0x658c7d*/
-      do /*0x658caa*/
-      {
-        v9 = (void *)*((unsigned int *)v7 - 5); /*0x658c82*/
-        v7 -= 24; /*0x658c85*/
-        *(unsigned int *)v7 = (unsigned int)(&vt_VectorClassHashObject); /*0x658c8a*/
-        if ( v9 && v7[13] ) /*0x658c92*/
-        {
-          __3_YAXPAX_Z(v9); /*0x658c98*/
-          *((unsigned int *)v7 + 1) = 0; /*0x658ca0*/
-        }
-        --v8; /*0x658ca3*/
-        v7[13] = 0; /*0x658ca4*/
-        *((unsigned int *)v7 + 2) = 0; /*0x658ca7*/
-      }
-      while ( v8 ); /*0x658caa*/
-    }
-    if ( (a2 & 1) != 0 ) /*0x658cb2*/
-      __3_YAXPAX_Z(v4); /*0x658cb5*/
-    return v4; /*0x658cbd*/
-  }
-  else
-  {
-    v11 = *(void **)&this->m_1[3]; /*0x658cc5*/
-    *(unsigned int *)Block->__pad_0 = &vt_VectorClassHashObject; /*0x658ccc*/
-    if ( v11 && BYTE1(this->m_C) ) /*0x658cd4*/
-    {
-      __3_YAXPAX_Z(v11); /*0x658cda*/
-      *(unsigned int *)&Block->m_1[3] = 0; /*0x658ce2*/
-    }
-    BYTE1(this->m_C) = 0; /*0x658ce9*/
-    this->m_8 = 0; /*0x658cee*/
-    if ( (a2 & 1) != 0 ) /*0x658cf1*/
-      __3_YAXPAX_Z(this); /*0x658cf4*/
-return (char *)this->__pad_0; /*0x658cfc*/
-  }
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x658C60)
 }
 } // namespace gamemd
 // 0x658D10
 namespace gamemd {
 VectorClass_flat * RadarHashVector::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x658d13*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClassHashObject; /*0x658d16*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x658d20*/
-  {
-    __3_YAXPAX_Z(v3); /*0x658d28*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x658d30*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x658d3b*/
-  Block->m_8 = 0; /*0x658d41*/
-  if ( (a2 & 1) != 0 ) /*0x658d48*/
-    __3_YAXPAX_Z(Block); /*0x658d4b*/
-  return Block->__pad_0; /*0x658d55*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x658D10)
 }
 } // namespace gamemd

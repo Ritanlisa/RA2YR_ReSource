@@ -362,10 +362,6 @@ int CComObject_CChatEventSink___ATL::DispatchStub_47(int a1, int a2, int a3)
 namespace gamemd {
 LONG CComObject_CChatEventSink___ATL::AddRef(void *a1_1)
 {
-
-  int v2; // [esp+4h] [ebp+4h]
-
-  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x7ac69e*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7AC690)
 }
 } // namespace gamemd

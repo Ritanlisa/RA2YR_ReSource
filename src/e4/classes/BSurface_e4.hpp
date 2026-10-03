@@ -21,7 +21,6 @@ struct BSurface {
     unsigned int u32_1C;
     unsigned int u32_24;
     unsigned int u32_4;
-    void* Stub;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     _DWORD * Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a6_1);  // 0x410CE0
     bool CreateTripleBuffer();  // 0x7B8C60
@@ -29,5 +28,6 @@ struct BSurface {
     int GetBytesPerPixel();  // 0x411630
     int GetPitch();  // 0x411640
     BSurface * ScalarDtor(char * Block, char a2);  // 0x411650
+    char Stub(int a1, int a2);
 };
 } // namespace gamemd

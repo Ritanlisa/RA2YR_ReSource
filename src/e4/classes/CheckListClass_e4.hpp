@@ -4,6 +4,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class ListClass;  // G42.36 fwd supply
+class ControlClass;  // G42.36 fwd supply
 
 struct CheckListClass {
 // --- flat members (BEGIN) ---
@@ -55,6 +57,7 @@ struct CheckListClass {
     void StubReturnVoid();
     unsigned int u32_174;  // 0x174
     unsigned int u32_16C;  // 0x16C
+    CheckListClass * sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9);
 };
 
 } // namespace gamemd

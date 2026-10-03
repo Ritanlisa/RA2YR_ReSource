@@ -19,79 +19,13 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Pipe_e4.hpp"
 #include "e4/classes/Straw_e4.hpp"
+#include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x42DDB0
 namespace gamemd {
 int Delegate::ProcessBitmapStream(char * Src, int a3)
 {
-
-  char *v3; // ebp
-  unsigned char * v5;
-  unsigned char *v6; // ebx
-  int v7; // ecx
-  unsigned char * v8;
-  int v9; // eax
-  int v10; // eax
-  uint8_t *pad_14; // [esp+8h] [ebp-Ch]
-  int v13; // [esp+Ch] [ebp-8h]
-  unsigned char * Size;
-  int Srca; // [esp+18h] [ebp+4h]
-
-  v3 = Src; /*0x42ddb4*/
-  if ( !Src || a3 < 1 ) /*0x42ddc8*/
-    return ((Delegate*)(Pipe *)this)->Dispatch((int)Src, a3); /*0x42df25*/
-  v13 = 0; /*0x42ddd5*/
-  if ( this->field_C ) /*0x42ddce*/
-  {
-    v5 = (unsigned char *)((int)((unsigned char *)(4)));
-    pad_14 = (unsigned char *)((uint8_t *)this->__pad_14);
-    v6 = (unsigned char *)(&this->field_18);
-    Srca = 3; /*0x42de07*/
-  }
-  else
-  {
-    v5 = (unsigned char *)((int)((unsigned char *)(3)));
-    pad_14 = (unsigned char *)((uint8_t *)&this->field_18);
-    v6 = (unsigned char *)(this->__pad_14);
-    Srca = 4; /*0x42ddee*/
-  }
-  v7 = this->field_10; /*0x42de0f*/
-  if ( v7 > 0 ) /*0x42de14*/
-  {
-    Size = (unsigned char *)((int)(a3));
-    if ( a3 >= (int)(v5) - v7 ) /*0x42de28*/
-      Size = v5 - v7; /*0x42de2a*/
-    memcpy(&pad_14[this->field_10], v3,(size_t)(Size)); /*0x42de3e*/
-    v8 = Size + this->field_10; /*0x42de4e*/
-    v3 += Size; /*0x42de55*/
-    this->field_10 = (unsigned int)(v8); /*0x42de59*/
-    a3 -= Size; /*0x42de5c*/
-    if ( v8 == (unsigned char *)(int)(v5) ) /*0x42de60*/
-    {
-      if ( this->field_C ) /*0x42de62*/
-        v9 = DecodeBitmapRGB((gamemd::Pipe *)(pad_14),(int)(v5), v6, Srca); /*0x42de88*/
-      else
-        v9 = EncodeBitmapRGB((gamemd::Pipe *)((char *)pad_14),(int)(v5), v6, Srca); /*0x42de75*/
-      v13 = ((Delegate*)((Pipe *)this))->Dispatch((int)v6, v9); /*0x42de96*/
-      this->field_10 = 0; /*0x42de9a*/
-    }
-  }
-  for ( ; a3 >= (int)(v5); a3 -= v5 ) /*0x42dea5*/
-  {
-    if ( this->field_C ) /*0x42dea7*/
-      v10 = DecodeBitmapRGB((gamemd::Pipe *)((uint8_t *)v3),(int)(v5), v6, Srca); /*0x42dec9*/
-    else
-      v10 = EncodeBitmapRGB((gamemd::Pipe *)(v3),(int)(v5), v6, Srca); /*0x42deb8*/
-    v3 += v5; /*0x42ded2*/
-    v13 += ((Delegate*)((Pipe *)this))->Dispatch((int)v6, v10); /*0x42dee5*/
-  }
-  if ( a3 > 0 ) /*0x42def9*/
-  {
-    memcpy(pad_14, v3, a3); /*0x42df02*/
-    this->field_10 = a3; /*0x42df0e*/
-  }
-  return v13; /*0x42df15*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x42DDB0)
 }
 } // namespace gamemd
 // 0x631D10
@@ -257,30 +191,7 @@ int Delegate::StreamToBuffer(char * a1, int a3)
 namespace gamemd {
 GenericNode * Delegate::Constructor_GenericNode(char a2)
 {
-
-  int Previous; // ecx
-  int v4; // eax
-
-  *(unsigned int *)Block->__pad_0 = &vt_GenericNode; /*0x52ae27*/
-  if ( this ) /*0x52ae2d*/
-  {
-    Previous = this->Previous; /*0x52ae2f*/
-    if ( Previous ) /*0x52ae34*/
-    {
-      v4 = *(unsigned int *)this->Blowfish; /*0x52ae36*/
-      if ( v4 ) /*0x52ae3b*/
-      {
-        *(unsigned int *)(v4 + 4) = Previous; /*0x52ae3d*/
-        *(unsigned int *)(Block->Previous + 8) = *(unsigned int *)Block->Blowfish; /*0x52ae46*/
-        *(unsigned int *)Block->Blowfish = 0; /*0x52ae49*/
-        this->Previous = 0; /*0x52ae4c*/
-      }
-    }
-  }
-  if ( (a2 & 1) != 0 ) /*0x52ae54*/
-    __3_YAXPAX_Z(this); /*0x52ae57*/
-return (gamemd::GenericNode *)this->__pad_0; /*0x52ae61*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x52AE20)
 }
 } // namespace gamemd
 // 0x52AE70

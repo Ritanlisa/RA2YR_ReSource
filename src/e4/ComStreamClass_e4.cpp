@@ -89,11 +89,7 @@ int ComStreamClass::ddtor(int a2, int a3, unsigned int a1, int a4, int a5)
 namespace gamemd {
 LONG ComStreamClass::AddRef(void *a1)
 {
-
-  int v2; // [esp+4h] [ebp+4h]
-
-  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x7ac80e*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7AC800)
 }
 } // namespace gamemd
 // 0x7AED20

@@ -7,6 +7,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 struct SHPStruct;  // fix_fwd_type_supply
 struct OverlayTypeClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
@@ -1124,6 +1125,11 @@ struct TechnoTypeClass {
     void* CanAttackMove_IgnoreWeapon_0();
     void* CanAttackMove_IgnoreWeapon_0_0();
     static double HasVoiceResponse(...);  // C2597 interim stub
+    int DTOR(void *a1);
+    int SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3);
+    TechnoTypeClass * ddtor(void * Block, char a2);
+    unsigned int * Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3);
+    TechnoTypeClass * * sub_404BB0();
 };
 
 } // namespace gamemd

@@ -5,6 +5,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
+class MSAnim;  // G42.36 fwd supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct CampaignScore;  // fix_fwd_type_supply
 struct TechnoTypeClass;  // fix_fwd_type_supply
@@ -561,6 +563,8 @@ struct ScenarioClass {
     int Is_Waypoint_Valid(unsigned int a2);  // 0x68bd80
     char Write_Waypoints(char *a2);  // 0x68be90
     char * SetFileName(char *Source); // N_fix R5 supply (cache truth)
+    int LoadScenarioAndStart(char *Source, char a2, double a3, int aP1, void * a4);
+    MSAnim * checkWinningConditions(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

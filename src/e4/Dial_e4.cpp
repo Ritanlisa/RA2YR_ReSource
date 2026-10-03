@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 
 // 0x4A7D20
 namespace gamemd {
@@ -270,21 +271,6 @@ VectorClass_flat * DynamicVector::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x4a8083*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4a8086*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4a8090*/
-  {
-    __3_YAXPAX_Z(v3); /*0x4a8098*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4a80a0*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x4a80ab*/
-  Block->m_8 = 0; /*0x4a80b1*/
-  if ( (a2 & 1) != 0 ) /*0x4a80b8*/
-    __3_YAXPAX_Z(Block); /*0x4a80bb*/
-  return Block->__pad_0; /*0x4a80c5*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A8080)
 }
 } // namespace gamemd

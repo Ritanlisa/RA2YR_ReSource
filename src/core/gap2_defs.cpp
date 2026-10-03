@@ -123,10 +123,9 @@ void* WTFMode::FindObjectByType(int a1) {
 }
 // 0x4A31F0
 namespace gamemd { 
-int CStreamClass::IsEmpty(int a2) {
-  if ( a2 ) /*0x4a31f9*/
-    WinAPI::Wrapper(-2147467261); /*0x4a3200*/
-  return *(unsigned int *)this->__pad_0 == 0; /*0x4a320e*/
+int CStreamClass::IsEmpty(int a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A31F0)
 }
 }
 // 0x4A4AD0
@@ -201,40 +200,16 @@ int CStreamClass::CopyItems(int a1, void* a2) {
 }
 // 0x4A4D60
 namespace gamemd { 
-int CStreamClass::FindItem(unsigned int * a2) {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
-
-  m_10 = this->max_entries; /*0x4a4d60*/
-  result = 0; /*0x4a4d63*/
-  if ( m_10 <= 0 ) /*0x4a4d68*/
-    return -1; /*0x4a4d7f*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4a4d6e*/
-  {
-    if ( ++result >= m_10 ) /*0x4a4d7d*/
-      return -1; /*0x4a4d7d*/
-  }
-  return result; /*0x4a4d82*/
+int CStreamClass::FindItem(unsigned int * a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A4D60)
 }
 }
 // 0x4A4DE0
 namespace gamemd { 
-void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
-  void *v3; // eax
-
-  v3 = *(void **)&this->m_1[3]; /*0x4a4de3*/
-  *(unsigned int *)this->__pad_0 =(unsigned int)(void *)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4de6*/
-  if ( v3 && IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) ) /*0x4a4df0*/
-  {
-    RA2_OPDEL(v3); /*0x4a4df8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4a4e00*/
-  }
-  IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) = 0; /*0x4a4e0b*/
-  *(unsigned int *)&this->CStreamClass_field_0x08 = 0; /*0x4a4e11*/
-  if ( (a2 & 1) != 0 ) /*0x4a4e18*/
-    RA2_OPDEL(this); /*0x4a4e1b*/
-  return this->__pad_0; /*0x4a4e25*/
+void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A4DE0)
 }
 }
 // 0x55A150
@@ -255,240 +230,44 @@ void LoadOptions::vt03() {
 }
 // 0x5AE6F0
 namespace gamemd { 
-void* Matrix3D::Constructor(float a1, float a2) {
-  float v5; // [esp+0h] [ebp-8h]
-
-  *(unsigned int *)&this->m_1[3] = 0; /*0x5ae6fa*/
-  *(unsigned int *)&this->m_5[3] = 0; /*0x5ae6fd*/
-  *(unsigned int *)&this->m_9[3] = 0; /*0x5ae700*/
-  *((unsigned int *)this + 4) = 0; /*0x5ae703*/
-  *((unsigned int *)this + 6) = 0; /*0x5ae706*/
-  *((unsigned int *)this + 7) = 0; /*0x5ae709*/
-  *((unsigned int *)this + 8) = 0; /*0x5ae70c*/
-  *((unsigned int *)this + 9) = 0; /*0x5ae70f*/
-  *((unsigned int *)this + 11) = 0; /*0x5ae712*/
-  *(unsigned int *)this->__pad_0 = 1065353216; /*0x5ae719*/
-  *((unsigned int *)this + 5) = 1065353216; /*0x5ae71b*/
-  *((unsigned int *)this + 10) = 1065353216; /*0x5ae71e*/
-  ((Matrix2D*)(int *)this->__pad_0)->Rotate(a1); /*0x5ae724*/
-  ((Matrix3x3*)(int *)this->__pad_0)->RotateX(a2); /*0x5ae730*/
-  v5 = -a1; /*0x5ae73e*/
-  Matrix2D::Rotate((int *)this->__pad_0, v5); /*0x5ae741*/
-  return (int *)this->__pad_0; /*0x5ae748*/
+void* Matrix3D::Constructor(float a1, float a2)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5AE6F0)
 }
 }
 // 0x5AF080
 namespace gamemd { 
-void Matrix3D::RotateZ(float a1) {
-  double v2; // kr00_8
-  double v4; // st7
-  double v5; // st6
-  double v6; // st5
-  double v7; // st6
-  double v8; // st5
-  double v9; // st6
-  double v10; // st5
-  float v11; // [esp+Ch] [ebp+4h]
-
-  a1 = a1; /*0x5af092*/
-  v11 = Math::SinCos(a1); /*0x5af09f*/
-  v4 = Math::ArcTan2(a1); /*0x5af0a5*/
-  v5 = *this; /*0x5af0aa*/
-  v6 = this->u32_8; /*0x5af0ac*/
-  *this = v5 * v4 - v6 * v11; /*0x5af0bf*/
-  this->u32_8 = v6 * v4 + v5 * v11; /*0x5af0cb*/
-  v7 = this->u32_10; /*0x5af0ce*/
-  v8 = this->u32_18; /*0x5af0d1*/
-  this->u32_10 = v7 * v4 - v8 * v11; /*0x5af0e0*/
-  this->u32_18 = v8 * v4 + v7 * v11; /*0x5af0ed*/
-  v9 = this->q080; /*0x5af0f0*/
-  v10 = this->u32_28; /*0x5af0f3*/
-  this->q080 = v9 * v4 - v10 * v11; /*0x5af102*/
-  this->u32_28 = v10 * v4 + v9 * v11; /*0x5af10f*/
+void Matrix3D::RotateZ(float a1)
+{
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5AF080)
 }
 }
 // 0x5F1BF0
 namespace gamemd { 
-int Stream::WriteBlock(int a1, int a2, int a3) {
-  int result; // eax
-
-  if ( !*(this + 15) ) /*0x5f1bf3*/
-    return 0; /*0x5f1bfa*/
-  result = (*(int (**)(unsigned int, int, int, int, unsigned int))(*(unsigned int *)*(this + 14) + 8))( /*0x5f1c16*/
-             *(this + 14),
-             a1,
-             a2,
-             a3,
-             0);
-  if ( !result ) /*0x5f1c1b*/
-    ++*(this + 26); /*0x5f1c1d*/
-  return result; /*0x5f1bfc*/
+int Stream::WriteBlock(int a1, int a2, int a3)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5F1BF0)
 }
 }
 // 0x5F1C60
 namespace gamemd { 
-int Stream::ReadPacket() {
-  unsigned int v3; // ecx
-  int v4; // edi
-  char *v5; // eax
-  int v6; // ecx
-  char *v7; // ebp
-  int v8; // edi
-  int v9; // ecx
-  int v10; // edx
-  int v11; // ebx
-  int v12; // edi
-  int v13; // ecx
-  int v14; // edi
-  int v15; // ecx
-  unsigned int v16; // [esp+14h] [ebp-4h]
-
-  if ( !this->u32_3C ) /*0x5f1c69*/
-    return 0; /*0x5f1c79*/
-  v3 = WinModemClass::ReadBytes( /*0x5f1c97*/
-         this->u32_58 + this->PacketsReceived,
-         this->u32_54 - this->u32_58)
-     + this->u32_58;
-  this->u32_58 = v3; /*0x5f1c9c*/
-  if ( v3 < 0xB ) /*0x5f1c9f*/
-    return (*(int (**)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1c9f*/
-  v4 = 0; /*0x5f1cb4*/
-  if ( (int)(v3 - 2) < 0 ) /*0x5f1cb8*/
-    goto LABEL_11; /*0x5f1cb8*/
-  v5 = *(char **)(&this->Active0); /*0x5f1cba*/
-  while ( *(unsigned short *)&v5[v4] != 0xDABD ) /*0x5f1cc3*/
-  {
-    if ( ++v4 > (int)(v3 - 2) ) /*0x5f1cc8*/
-      goto LABEL_11; /*0x5f1cc8*/
-  }
-  if ( v4 == -1 ) /*0x5f1ccf*/
-  {
-  LABEL_11:
-    memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v4), 1u); /*0x5f1cd1*/
-    v6 = this->u32_38; /*0x5f1ce0*/
-    this->u32_58 = 1; /*0x5f1ce3*/
-    return (*(int (**)(int))(v6->abstractFlags))(v6); /*0x5f1cef*/
-  }
-  else if ( v3 - v4 >= 6 ) /*0x5f1d05*/
-  {
-    v7 = &v5[v4]; /*0x5f1d36*/
-    if ( *(unsigned short *)&v5[v4 + 4] == 0xDEAF ) /*0x5f1d39*/
-    {
-      v10 =(int)this->Active; /*0x5f1d6a*/
-      v11 = *((uint16_t *)v7 + 1); /*0x5f1d6d*/
-      if ( v11 <= v10 ) /*0x5f1d75*/
-      {
-        v16 = v11 + v4 + 10; /*0x5f1dbb*/
-        if ( v16 > v3 ) /*0x5f1dbf*/
-        {
-          if ( v4 ) /*0x5f1dc3*/
-          {
-            memcpy(v5, &v5[v4], v3 - v4); /*0x5f1dcc*/
-            this->u32_58 -= v4; /*0x5f1dd9*/
-          }
-          return (*(int (**)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1cb0*/
-        }
-        if ( Audio_Read(v7 + 6, v11) == *(unsigned int *)&v5[v11 + 6 + v4] ) /*0x5f1e06*/
-        {
-          if ( !(*(int (**)(unsigned int, int, int))(**(unsigned int **)(&this->PacketsReceived6) + 12))( /*0x5f1e58*/
-                  this->u32_38,
-                  (int)this->PacketsReceived + v4 + 6,
-                  v11) )
-            ++this->u32_6C; /*0x5f1e5f*/
-          memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v16), this->u32_58 - v16); /*0x5f1e74*/
-          this->u32_58 -= v16; /*0x5f1e81*/
-          return (*(int (**)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1e8b*/
-        }
-        else
-        {
-          ++this->u32_70; /*0x5f1e11*/
-          Debug::Log(aSerialPacketFa); /*0x5f1e14*/
-          v14 = v4 + 2; /*0x5f1e1f*/
-          memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v14), this->u32_58 - v14); /*0x5f1e2a*/
-          v15 = this->u32_38; /*0x5f1e32*/
-          this->u32_58 -= v14; /*0x5f1e3a*/
-          return (*(int (**)(int))(v15->abstractFlags))(v15); /*0x5f1e3f*/
-        }
-      }
-      else
-      {
-        Debug::Log("Serial packet length too long by %d bytes\n", v11 - v10); /*0x5f1d7f*/
-        v12 = v4 + 2; /*0x5f1d8a*/
-        memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v12), this->u32_58 - v12); /*0x5f1d95*/
-        v13 = this->u32_38; /*0x5f1d9d*/
-        this->u32_58 -= v12; /*0x5f1da5*/
-        return (*(int (**)(int))(v13->abstractFlags))(v13); /*0x5f1daa*/
-      }
-    }
-    else
-    {
-      v8 = v4 + 2; /*0x5f1d3b*/
-      memcpy(v5, &v5[v8], v3 - v8); /*0x5f1d46*/
-      v9 = this->u32_38; /*0x5f1d4e*/
-      this->u32_58 -= v8; /*0x5f1d56*/
-      return (*(int (**)(int))(v9->abstractFlags))(v9); /*0x5f1d5b*/
-    }
-  }
-  else
-  {
-    memcpy(v5, &v5[v4], v3 - v4); /*0x5f1d0d*/
-    this->u32_58 -= v4; /*0x5f1d1a*/
-    return (*(int (**)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1d24*/
-  }
+int Stream::ReadPacket()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5F1C60)
 }
 }
 // 0x67C690
 namespace gamemd { 
-int Stream::ReadOLEObjects() {
-  int result; // eax
-  int v3; // ebx
-  int v4; // [esp+10h] [ebp-8h] BYREF
-  LPVOID ppvObj; // [esp+14h] [ebp-4h] BYREF
-
-  result = ((int (*)(Stream *, int *, int, unsigned int))this->m_Stream->m_Size)(this, &v4, 4, 0); /*0x67c6a4*/
-  if ( result >= 0 ) /*0x67c6a9*/
-  {
-    v3 = 0; /*0x67c6af*/
-    if ( v4 <= 0 ) /*0x67c6b3*/
-    {
-      return 0; /*0x67c6d5*/
-    }
-    else
-    {
-      while ( 1 ) /*0x67c6c6*/
-      {
-        result = OleLoadFromStream((LPSTREAM)this, &IID_IUnknown, &ppvObj); /*0x67c6c6*/
-        if ( result < 0 ) /*0x67c6ca*/
-          break; /*0x67c6ca*/
-        if ( ++v3 >= v4 ) /*0x67c6d3*/
-          return 0; /*0x67c6d3*/
-      }
-    }
-  }
-  return result; /*0x67c6d7*/
+int Stream::ReadOLEObjects()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67C690)
 }
 }
 // 0x7B0440
 namespace gamemd { 
-void* StreamWrapper::QueryInterface(int a2) {
-  void (__thiscall ***v3)(unsigned int, int); // ecx
-  void (__thiscall ***v4)(unsigned int, int); // ecx
-  void (__thiscall ***v5)(unsigned int, int); // ecx
-
-  v3 =(void (__thiscall ***)(unsigned int,int))(void (***)(unsigned int, int))*((unsigned int *)this + 4); /*0x7b0443*/
-  *(unsigned int *)this->__pad_0 =(unsigned int)(void *)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7b0446*/
-  if ( v3 ) /*0x7b044e*/
-    (**v3)((unsigned int)v3, 1); /*0x7b0454*/
-  v4 =(void (__thiscall ***)(unsigned int,int))(void (***)(unsigned int, int))*((unsigned int *)this + 5); /*0x7b0456*/
-  if ( v4 ) /*0x7b045b*/
-    (**v4)((unsigned int)v4, 1); /*0x7b0461*/
-  v5 =(void (__thiscall ***)(unsigned int,int))(void (***)(unsigned int, int))*((unsigned int *)this + 6); /*0x7b0463*/
-  if ( v5 ) /*0x7b0468*/
-    (**v5)((unsigned int)v5, 1); /*0x7b046e*/
-  OwnerDrawControl::InitVtable((OwnerDrawControl *)this); /*0x7b0472*/
-  if ( (a2 & 1) != 0 ) /*0x7b047c*/
-    RA2_OPDEL(this); /*0x7b047f*/
-  return this->__pad_0; /*0x7b0489*/
+void* StreamWrapper::QueryInterface(int a2)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B0440)
 }
 }
 // 0x7BCAE0

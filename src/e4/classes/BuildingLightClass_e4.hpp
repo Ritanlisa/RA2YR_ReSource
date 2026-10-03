@@ -6,6 +6,16 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class FindAllTargets;  // G42.36 fwd supply
+class SD_vt54;  // G42.36 fwd supply
+class SD_vt53;  // G42.36 fwd supply
+class SD_vt13;  // G42.36 fwd supply
+class CalculateDistanceIntensity;  // G42.36 fwd supply
+class SD_vt10;  // G42.36 fwd supply
+class SD_vt05;  // G42.36 fwd supply
+class SD_vt23;  // G42.36 fwd supply
+class Draw_Start;  // G42.36 fwd supply
+class CTOR;  // G42.36 fwd supply
 
 #define GAMEMD_E4_OWNS_BUILDINGLIGHT 1  // G42.36: dedup pair (first include wins)
 #ifndef GAMEMD_CORE_OWNS_BUILDINGLIGHT
@@ -132,6 +142,17 @@ struct BuildingLightClass {
     int SD_vt34();
     signed int UpdateOscillation();
     unsigned int * FindTarget(unsigned int * a2);
+    void* CTOR(int a1);
+    int Draw_Start(int a1, int a2);
+    int SD_vt23();
+    int SD_vt05(void* a1, int a2);
+    int SD_vt10(int a1, int a2);
+    int CalculateDistanceIntensity();
+    int SD_vt13(void* a1);
+    int SD_vt53();
+    int SD_vt54(int a1, int a2);
+    int FindAllTargets(int a1, int a2, int a3, int a4);
+    unsigned int * FindTarget(unsigned int *a2, int aP1, int a1, int aP0, int aP2);
 };
 #endif  // GAMEMD_CORE_OWNS_BUILDINGLIGHT
 

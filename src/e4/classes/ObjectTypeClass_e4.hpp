@@ -349,6 +349,7 @@ struct ObjectTypeClass {
     int SetRTTI71();
     void UnloadPipsSHP();
     void* LoadFromINI(uint8_t ***aP1);
+    ObjectTypeClass * Destru_vt08(void * Block, char a2);
 };
 
 } // namespace gamemd

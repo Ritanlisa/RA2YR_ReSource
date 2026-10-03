@@ -6,6 +6,33 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Constructor;  // G42.36 fwd supply
+class UpdateCountdowners;  // G42.36 fwd supply
+class UpdateTimers;  // G42.36 fwd supply
+class InitListAndCounters;  // G42.36 fwd supply
+class CheckFormatChanged;  // G42.36 fwd supply
+class Destructor;  // G42.36 fwd supply
+class ProcessStream;  // G42.36 fwd supply
+class SetFlag4C;  // G42.36 fwd supply
+class IUnknown;  // G42.36 fwd supply
+class DrawWaveform;  // G42.36 fwd supply
+class ReadSamples;  // G42.36 fwd supply
+class ReadStreamAndReturn;  // G42.36 fwd supply
+class GetChannel;  // G42.36 fwd supply
+class InitNodeFields;  // G42.36 fwd supply
+class ProcessCallback;  // G42.36 fwd supply
+class SetPlaybackCallback;  // G42.36 fwd supply
+class ReadStreamAndSyncPosition;  // G42.36 fwd supply
+class CleanupChannels;  // G42.36 fwd supply
+class SelectRandom;  // G42.36 fwd supply
+class SetupPlayback;  // G42.36 fwd supply
+class ResetChannel2;  // G42.36 fwd supply
+class ResetChannel;  // G42.36 fwd supply
+class Reset;  // G42.36 fwd supply
+class Block;  // G42.36 fwd supply
+class DestroyAll;  // G42.36 fwd supply
+class ReleaseChannel;  // G42.36 fwd supply
+class ReleaseSubsystem;  // G42.36 fwd supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct AbstractTypeClass;  // fix_fwd_type_supply
@@ -1158,6 +1185,31 @@ struct MouseClass {
     unsigned char m_10[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
     int GetPosition();  // 0x5bdaa0
+    int ReleaseSubsystem();
+    int ReleaseChannel();
+    void DestroyAll(void * Block);
+    int Reset();
+    int ResetChannel(int a2, int a3);
+    int ResetChannel2(int a2, int a3);
+    int SetupPlayback();
+    int SelectRandom();
+    void CleanupChannels();
+    int ReadStreamAndSyncPosition();
+    int SetPlaybackCallback();
+    int ProcessCallback(void *a1_1);
+    void InitNodeFields();
+    int GetChannel();
+    int ReadStreamAndReturn(void *a1_1);
+    int ReadSamples(const void * a2, void *a2_2);
+    MouseClass * * DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8);
+    int SetFlag4C();
+    int ProcessStream();
+    void Destructor(unsigned int * Block);
+    int CheckFormatChanged(int a1, const void * a2);
+    int InitListAndCounters(void *a1_1);
+    int UpdateTimers();
+    int UpdateCountdowners();
+    char * Constructor(uint64_t);
 };
 
 } // namespace gamemd

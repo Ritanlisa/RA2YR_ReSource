@@ -34,204 +34,28 @@
 namespace gamemd {
 int Mouse::SetBounds(const void *aP1)
 {
-
-  int result; // eax
-  int16_t v4; // cx
-  const void *v5; // esi
-  bool v6; // zf
-  int v7; // eax
-  int16_t v8; // cx
-  unsigned short v9[4]; // [esp+8h] [ebp-8h] BYREF
-
-  result = *((unsigned int *)this + 1119); /*0x4a8bf7*/
-  if ( result ) /*0x4a8bff*/
-  {
-    v4 = *((unsigned short *)this + 2235) + *((unsigned short *)this + 2237); /*0x4a8c16*/
-    v9[0] = *((unsigned short *)this + 2234) + *((unsigned short *)this + 2236); /*0x4a8c1f*/
-    v9[1] = v4; /*0x4a8c24*/
-    result = ((MapClass *)((MapClass *)this))->SetCellFlagsAlongPath((unsigned short *)((IUnknown *)(v9)), 0); /*0x4a8c38*/
-  }
-  v5 = aP1; /*0x4a8c3d*/
-  v6 = aP1 == 0; /*0x4a8c47*/
-  *((unsigned int *)this + 1118) = *(unsigned int *)&stru_8A0390.bombVisible; /*0x4a8c49*/
-  if ( v6 ) /*0x4a8c4f*/
-  {
-    *((unsigned int *)this + 1119) = 0; /*0x4a8d1f*/
-  }
-  else
-  {
-    if ( (byte_8A0618 & 1) == 0 ) /*0x4a8c5c*/
-    {
-      byte_8A0618 |= 1u; /*0x4a8c68*/
-      atexit(nullsub_10); /*0x4a8c6e*/
-    }
-    qmemcpy(&stru_8A0390.onBridge, v5, 0x1E0u); /*0x4a8c85*/
-    *((unsigned int *)this + 1119) = &stru_8A0390.onBridge; /*0x4a8c8f*/
-    v7 = *CoordList::GetBounds(&aP1, (int16_t *)&stru_8A0390.onBridge); /*0x4a8c9e*/
-    v9[0] = v7 - 1; /*0x4a8ca6*/
-    v9[1] = HIWORD(v7) - 1; /*0x4a8cab*/
-    LOWORD(aP1) = (int16_t)(1 - v7) / 2; /*0x4a8cc4*/
-    HIWORD(aP1) = (int16_t)(1 - HIWORD(v7)) / 2; /*0x4a8cd1*/
-    v8 = (int16_t)aP1; /*0x4a8cd6*/
-    *((unsigned int *)this + 1118) = (unsigned int)(aP1); /*0x4a8cda*/
-    LOWORD(v7) = *((unsigned short *)this + 2237) + *((unsigned short *)this + 2235); /*0x4a8cee*/
-    LOWORD(aP1) = v8 + *((unsigned short *)this + 2234); /*0x4a8cf8*/
-    HIWORD(aP1) = v7; /*0x4a8cfd*/
-    return ((MapClass *)((MapClass *)this))->SetCellFlagsAlongPath((unsigned short *)((IUnknown *)(&aP1)), (unsigned short *)1); /*0x4a8d11*/
-  }
-  return result; /*0x4a8d17*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A8BF0)
 }
 }
 // 0x5BDC80
 namespace gamemd {
 int Mouse::SetCursor(int aP1, char aP2)
 {
-
-  ObjectClass * result;
-  ObjectClass * v5;
-  int v6; // edi
-  int Ticks; // eax
-  int v8; // ecx
-  int v9; // eax
-  int v10; // ebx
-  int v11; // edi
-  int v12; // esi
-  int v13; // [esp+10h] [ebp-Ch] BYREF
-  int v14; // [esp+14h] [ebp-8h]
-
-  result = (gamemd::ObjectClass *)((int)(aP1));
-  if ( (&dword_82D034)[7 * aP1] == -1 ) /*0x5bdca6*/
-  {
-    v5 = 0; /*0x5bdca8*/
-    aP2 = 0; /*0x5bdcaa*/
-  }
-  else
-  {
-    v5 = (gamemd::ObjectClass *)((char)(aP2));
-  }
-  if ( byte_ABF2DD && (!dword_ABF294 || aP1 == *((unsigned int *)this + 5464) && v5 == *((unsigned char *)this + 21852)) ) /*0x5bdcd6*/
-  {
-    LOBYTE(result) = 0; /*0x5bdcda*/
-  }
-  else
-  {
-    byte_ABF2DD = 1; /*0x5bdce4*/
-    v6 = (&dword_82D030)[7 * aP1]; /*0x5bdceb*/
-    Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x5bdcf2*/
-    v8 = 0; /*0x5bdcfb*/
-    dword_ABF2A0 = Ticks; /*0x5bdcfd*/
-    dword_ABF2A4 = v14; /*0x5bdd02*/
-    dword_ABF2A8 = v6; /*0x5bdd08*/
-    *((unsigned int *)this + 5466) = 0; /*0x5bdd0e*/
-    if ( !v5 || (v9 = (&dword_82D034)[7 * aP1], v9 == -1) ) /*0x5bdd1e*/
-      v9 = (&dword_82D028)[7 * aP1]; /*0x5bdd20*/
-    v10 = (&dword_82D03C)[7 * aP1]; /*0x5bdd22*/
-    v11 = 0; /*0x5bdd25*/
-    if ( v10 == 12345 ) /*0x5bdd31*/
-      v11 = *((int16_t *)dword_ABF294 + 1) / 2; /*0x5bdd42*/
-    if ( v10 == 54321 ) /*0x5bdd50*/
-      v11 = *((int16_t *)dword_ABF294 + 1); /*0x5bdd52*/
-    v12 = (&unk_82D040)[7 * aP1]; /*0x5bdd56*/
-    if ( v12 == 12345 ) /*0x5bdd5f*/
-      v8 = *((int16_t *)dword_ABF294 + 2) / 2; /*0x5bdd6a*/
-    if ( v12 == 54321 ) /*0x5bdd72*/
-      v8 = *((int16_t *)dword_ABF294 + 2); /*0x5bdd74*/
-    v14 = v8; /*0x5bdd7c*/
-    v13 = v11; /*0x5bdd87*/
-    (*(void (**)(int, int *, void *, int))(*(unsigned int *)dword_887640 + 4))( /*0x5bdd93*/
-      dword_887640,
-      &v13,
-      (void *)dword_ABF294,
-      v9);
-    result = (gamemd::ObjectClass *)((unsigned char)(aP1));
-    *((unsigned int *)this + 5464) = (unsigned int)(aP1); /*0x5bdd9f*/
-    *((unsigned char *)this + 21852) = (unsigned char)(aP2); /*0x5bdda5*/
-    LOBYTE(result) = 1; /*0x5bddad*/
-  }
-  return (int)(result);
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5BDC80)
 }
 }
 // 0x6938C0
 namespace gamemd {
 HWND Mouse::ReleaseCapture()
 {
-
-  int result; // eax
-
-  ((DisplayClass*)(gamemd::DisplayClass *)this)->ExitMode(); /*0x6938c3*/
-  *((unsigned char *)this + 21850) = 0; /*0x6938c8*/
-  result = (int)GetCapture(); /*0x6938cf*/
-  if ( (HWND)result == (HWND)(g_hWnd) ) /*0x6938de*/
-    return ReleaseCapture(); /*0x6938e0*/
-  return (HWND)(result); /*0x6938db*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6938C0)
 }
 }
 // 0x7B93F0
 namespace gamemd {
 void Mouse::DrawCursor(int * aP1, int aP2, int a4)
 {
-
-  MixFileClass *v5; // ecx
-  int v6; // ebx
-  WWMouseClass * v7;
-  WWMouseClass * v8;
-  int v9; // edi
-  int SubFile; // eax
-  int v11; // eax
-  unsigned int *v12; // [esp-2Ch] [ebp-78h]
-  WWMouseClass * v13;
-  int v14; // [esp+8h] [ebp-44h]
-  int v15; // [esp+Ch] [ebp-40h] BYREF
-  int v16; // [esp+10h] [ebp-3Ch]
-  int v17; // [esp+14h] [ebp-38h]
-  WWMouseClass * v18;
-  unsigned char v19[16]; // [esp+1Ch] [ebp-30h] BYREF
-  int v20[5]; // [esp+2Ch] [ebp-20h] BYREF
-  int v21[3]; // [esp+40h] [ebp-Ch] BYREF
-
-  v13 = (gamemd::WWMouseClass *)((int)this);
-  v5 = *(MixFileClass **)&this->m_1[3]; /*0x7b93f9*/
-  if ( v5 && aP1 && *(unsigned int *)&stru_87F5F0.__pad_58[128] ) /*0x7b9418*/
-  {
-    v6 = (int)(*((unsigned int *)this + 20));
-    v7 = (gamemd::WWMouseClass *)((int)((gamemd::WWMouseClass *)(*((unsigned int *)this + 21))));
-    v8 = (gamemd::WWMouseClass *)((unsigned int)(aP2)+ *((unsigned int *)this + 18));
-    v9 = (int)(a4 + *((unsigned int *)this + 19));
-    SubFile = (int)(MixFileClass::GetSubFile(v5, *(unsigned int *)&this->__pad_5[3]));
-    v20[1] = v6; /*0x7b9447*/
-    v20[2] = (int)(v7); /*0x7b9454*/
-    v20[3] = 0; /*0x7b9458*/
-    v20[4] = 1; /*0x7b9468*/
-    ((Buffer*)((int)(Buffer *)v21))->Init(SubFile, v7 * v6); /*0x7b9470*/
-    v20[0] = (int)&BSurface_Vtable; /*0x7b947d*/
-    if ( aP1 == *(int **)((unsigned int)(v13)+ 36) ) /*0x7b9488*/
-    {
-      v15 = (int)(0);
-      v16 = (int)(0);
-      v12 = (unsigned int *)((unsigned int)(v13)+ 44); /*0x7b94a6*/
-      v13 = v8; /*0x7b94b8*/
-      v14 = v9; /*0x7b94bc*/
-      v17 = v6; /*0x7b94c0*/
-      v18 = v7; /*0x7b94c4*/
-    }
-    else
-    {
-      v15 = (int)(0);
-      v16 = (int)(0);
-      v11 = (int)(*aP1);
-      v13 = (gamemd::WWMouseClass *)((int)(v8));
-      v14 = v9; /*0x7b94ea*/
-      v17 = v6; /*0x7b94ee*/
-      v18 = v7; /*0x7b94f2*/
-      v12 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v11 + 120))(aP1, v19); /*0x7b94f9*/
-    }
-    BlitterDrawSHP(aP1, *(int *)&stru_87F5F0.__pad_58[128], v20, &v15, &v13, v12, 0, 0, 0, 0, 1000, 0, 0); /*0x7b94c8*/
-    ((Vector *)((int)v21))->Clear(); /*0x7b951f*/
-  }
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B93F0)
 }
 }
 // 0x53EC90

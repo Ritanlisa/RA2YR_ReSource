@@ -72,6 +72,7 @@
 #include "e4/classes/Window_e4.hpp"
 #include "e4/classes/AsyncIO_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
+#include "e4/classes/NetworkAddress_e4.hpp"  // G42.36 C2027 supply
 
 // 0x770E70
 namespace gamemd {
@@ -154,38 +155,7 @@ int sub_776320(LPARAM lParam)
 namespace gamemd {
 struct tagPOINT * Dialog_HitTest(unsigned int a1, int a2, struct tagPOINT * a3)
 {
-  LONG v3; // ebx
-  LONG v4; // esi
-  HWND WindowLongA; // eax
-  HWND v6; // edi
-  HWND v7; // ebp
-  POINT v9; // [esp-8h] [ebp-58h]
-  struct tagPOINT Point; // [esp+10h] [ebp-40h] BYREF
-  struct tagRECT Rect; // [esp+18h] [ebp-38h] BYREF
-  struct tagPOINT v12[5]; // [esp+28h] [ebp-28h] BYREF
-
-  v3 = IDA_HIWORD(a1); /*0x7764a7*/
-  v4 = (uint16_t)a1; /*0x7764a9*/
-  v9.y = IDA_HIWORD(a1); /*0x7764af*/
-  v9.x = (uint16_t)a1; /*0x7764b0*/
-  WindowLongA = (HWND)GetWindowLongA((HWND)(qword_B730A0), -8); /*0x7764b4*/
-  v6 = ChildWindowFromPoint(WindowLongA, v9); /*0x7764bd*/
-  v7 = (HWND)GetWindowLongA(v6, -8); /*0x7764ca*/
-  if ( v6 == (HWND)GetWindowLongA((HWND)(qword_B730A0), -8) ) /*0x7764d7*/
-    v7 = v6; /*0x7764d9*/
-  Point = (struct tagPOINT)IDA___PAIR64__(v3, v4); /*0x7764df*/
-  ClientToScreen(v7, &Point); /*0x7764e9*/
-  v12[2] = Point; /*0x7764fd*/
-  GetWindowRect(v6, &Rect); /*0x776505*/
-  v12[4].x = Point.x - Rect.left; /*0x77651d*/
-  v12[0].x = (LONG)v6; /*0x77652d*/
-  v12[1] = *(struct tagPOINT *)&qword_B730A0; /*0x776531*/
-  v12[3].x = v4; /*0x77653b*/
-  v12[4].y = Point.y - Rect.top; /*0x77653f*/
-  v12[0].y = (LONG)v7; /*0x77654e*/
-  v12[3].y = v3; /*0x776556*/
-  qmemcpy(a3, v12, 0x28u); /*0x77655a*/
-  return a3; /*0x77655c*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x776490)
 }
 }
 // 0x776570
@@ -241,282 +211,14 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
 namespace gamemd {
 CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
 {
-  char *v3; // eax
-  char *v4; // eax
-  wchar_t *v5; // eax
-  wchar_t *StringCSF; // eax
-  wchar_t *v7; // eax
-  wchar_t *v8; // eax
-  wchar_t *v9; // eax
-  wchar_t *v10; // eax
-  wchar_t *v11; // eax
-  wchar_t *v12; // eax
-  wchar_t *v13; // eax
-  wchar_t *v14; // eax
-  wchar_t *v15; // eax
-  wchar_t *v16; // eax
-  wchar_t *v17; // eax
-  wchar_t *v18; // eax
-  wchar_t *v19; // eax
-  wchar_t *v20; // eax
-  wchar_t *v21; // eax
-  wchar_t *v22; // eax
-  wchar_t *v23; // eax
-  wchar_t *v24; // eax
-  wchar_t *v25; // eax
-  wchar_t *v26; // eax
-  wchar_t *v27; // eax
-  wchar_t *v28; // eax
-  wchar_t *v29; // eax
-
-  v3 = ((String *)(a1))->GetOrEmpty_Alt(); /*0x778f33*/
-  v4 = CharToWideString(v3); /*0x778f3a*/
-  WideString::Reassign(a2, (wchar_t *)v4); /*0x778f42*/
-  v5 = WideString::GetOrEmpty(a2); /*0x778f4e*/
-  if ( wcsstr(v5, L"Jan") ) /*0x778f54*/
-  {
-    StringCSF = GetStringCSF(g_Str_TXT_JANUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 127); /*0x778f6e*/
-    IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"Jan", StringCSF); /*0x778f7b*/
-  }
-  else
-  {
-    v8 = WideString::GetOrEmpty(a2); /*0x778f89*/
-    if ( wcsstr(v8, L"Feb") ) /*0x778f8f*/
-    {
-      v9 = GetStringCSF(g_Str_TXT_FEBRUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 132); /*0x778fac*/
-      IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"Feb", v9); /*0x778fb9*/
-    }
-    else
-    {
-      v10 = WideString::GetOrEmpty(a2); /*0x778fc7*/
-      if ( wcsstr(v10, L"Mar") ) /*0x778fcd*/
-      {
-        v11 = GetStringCSF(g_Str_TXT_MARCH, 0, g_Str_File_WOLPersonaInformation_cpp, 137); /*0x778fea*/
-        IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"Mar", v11); /*0x778ff7*/
-      }
-      else
-      {
-        v12 = WideString::GetOrEmpty(a2); /*0x779005*/
-        if ( wcsstr(v12, L"Apr") ) /*0x77900b*/
-        {
-          v13 = GetStringCSF(g_Str_TXT_APRIL, 0, g_Str_File_WOLPersonaInformation_cpp, 142); /*0x779028*/
-          IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"Apr", v13); /*0x779035*/
-        }
-        else
-        {
-          v14 = WideString::GetOrEmpty(a2); /*0x779043*/
-          if ( wcsstr(v14, L"May") ) /*0x779049*/
-          {
-            v15 = GetStringCSF(g_Str_TXT_MAY, 0, g_Str_File_WOLPersonaInformation_cpp, 147); /*0x779066*/
-            IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"May", v15); /*0x779073*/
-          }
-          else
-          {
-            v16 = WideString::GetOrEmpty(a2); /*0x779081*/
-            if ( wcsstr(v16, L"Jun") ) /*0x779087*/
-            {
-              v17 = GetStringCSF(g_Str_TXT_JUNE, 0, g_Str_File_WOLPersonaInformation_cpp, 152); /*0x7790a4*/
-              IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"Jun", v17); /*0x7790b1*/
-            }
-            else
-            {
-              v18 = WideString::GetOrEmpty(a2); /*0x7790bf*/
-              if ( wcsstr(v18, L"Jul") ) /*0x7790c5*/
-              {
-                v19 = GetStringCSF(g_Str_TXT_JULY, 0, g_Str_File_WOLPersonaInformation_cpp, 157); /*0x7790e2*/
-                IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"Jul", v19); /*0x7790ef*/
-              }
-              else
-              {
-                v20 = WideString::GetOrEmpty(a2); /*0x7790fd*/
-                if ( wcsstr(v20, L"Aug") ) /*0x779103*/
-                {
-                  v21 = GetStringCSF(g_Str_TXT_AUGUST, 0, g_Str_File_WOLPersonaInformation_cpp, 162); /*0x779120*/
-                  IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"Aug", v21); /*0x77912d*/
-                }
-                else
-                {
-                  v22 = WideString::GetOrEmpty(a2); /*0x77913b*/
-                  if ( wcsstr(v22, L"Sep") ) /*0x779141*/
-                  {
-                    v23 = GetStringCSF(g_Str_TXT_SEPTEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 167); /*0x77915e*/
-                    IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"Sep", v23); /*0x77916b*/
-                  }
-                  else
-                  {
-                    v24 = WideString::GetOrEmpty(a2); /*0x779179*/
-                    if ( wcsstr(v24, L"Oct") ) /*0x77917f*/
-                    {
-                      v25 = GetStringCSF(g_Str_TXT_OCTOBER, 0, g_Str_File_WOLPersonaInformation_cpp, 172); /*0x77919c*/
-                      IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"Oct", v25); /*0x7791a9*/
-                    }
-                    else
-                    {
-                      v26 = WideString::GetOrEmpty(a2); /*0x7791b7*/
-                      if ( wcsstr(v26, L"Nov") ) /*0x7791bd*/
-                      {
-                        v27 = GetStringCSF(g_Str_TXT_NOVEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 177); /*0x7791da*/
-                        IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"Nov", v27); /*0x7791e7*/
-                      }
-                      else
-                      {
-                        v28 = WideString::GetOrEmpty(a2); /*0x7791f5*/
-                        v7 = wcsstr(v28, L"Dec"); /*0x7791fb*/
-                        if ( v7 ) /*0x779205*/
-                        {
-                          v29 = GetStringCSF(g_Str_TXT_DECEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 182); /*0x779218*/
-                          IDA_LOBYTE(v7) = WideString::Replace(a2, (wchar_t *)L"Dec", v29); /*0x779225*/
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  return (char)v7; /*0x778f80*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x778F30)
 }
 }
 // 0x779230
 namespace gamemd {
 CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
 {
-  wchar_t *v4; // eax
-  wchar_t *v5; // eax
-  wchar_t *v6; // eax
-  wchar_t *v7; // eax
-  wchar_t *v8; // eax
-  wchar_t *v9; // eax
-  wchar_t *v10; // eax
-  wchar_t *v11; // eax
-  wchar_t *v12; // eax
-  wchar_t *v13; // eax
-  wchar_t *v14; // eax
-  wchar_t *v15; // eax
-  wchar_t *v16; // eax
-  wchar_t *v17; // eax
-  wchar_t *v18; // eax
-  wchar_t *v19; // eax
-  wchar_t *v20; // eax
-  wchar_t *v21; // eax
-  wchar_t *v22; // eax
-  wchar_t *v23; // eax
-  wchar_t *v24; // eax
-  wchar_t *v25; // eax
-  wchar_t *v26; // eax
-  wchar_t *v27; // eax
-  wchar_t *v28; // eax
-  char *v29; // eax
-  char *v30; // eax
-  wchar_t *StringCSF; // [esp-4h] [ebp-10h]
-  wchar_t *v32; // [esp-4h] [ebp-10h]
-  wchar_t *v33; // [esp-4h] [ebp-10h]
-  wchar_t *v34; // [esp-4h] [ebp-10h]
-  wchar_t *v35; // [esp-4h] [ebp-10h]
-  wchar_t *v36; // [esp-4h] [ebp-10h]
-  wchar_t *v37; // [esp-4h] [ebp-10h]
-  wchar_t *v38; // [esp-4h] [ebp-10h]
-  wchar_t *v39; // [esp-4h] [ebp-10h]
-  wchar_t *v40; // [esp-4h] [ebp-10h]
-  wchar_t *v41; // [esp-4h] [ebp-10h]
-  wchar_t *v42; // [esp-4h] [ebp-10h]
-  WideString v43[4]; // [esp+8h] [ebp-4h] BYREF
-
-  unknown_libname_74(v43); /*0x77923b*/
-  v4 = WideString::GetOrEmpty_Alt((WideString *)a1); /*0x779242*/
-  WideString::Reassign(v43, v4); /*0x77924c*/
-  StringCSF = GetStringCSF(g_Str_TXT_JANUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 191); /*0x77926b*/
-  v5 = WideString::GetOrEmpty(v43); /*0x77926c*/
-  if ( wcsstr(v5, StringCSF) ) /*0x779272*/
-  {
-    v6 = GetStringCSF(g_Str_TXT_JANUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 192); /*0x779294*/
-    WideString::Replace(v43, v6, (wchar_t *)L"Jan"); /*0x77929e*/
-  }
-  v32 = GetStringCSF(g_Str_TXT_FEBRUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 194); /*0x7792bd*/
-  v7 = WideString::GetOrEmpty(v43); /*0x7792be*/
-  if ( wcsstr(v7, v32) ) /*0x7792c4*/
-  {
-    v8 = GetStringCSF(g_Str_TXT_FEBRUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 195); /*0x7792e6*/
-    WideString::Replace(v43, v8, (wchar_t *)L"Feb"); /*0x7792f0*/
-  }
-  v33 = GetStringCSF(g_Str_TXT_MARCH, 0, g_Str_File_WOLPersonaInformation_cpp, 197); /*0x77930f*/
-  v9 = WideString::GetOrEmpty(v43); /*0x779310*/
-  if ( wcsstr(v9, v33) ) /*0x779316*/
-  {
-    v10 = GetStringCSF(g_Str_TXT_MARCH, 0, g_Str_File_WOLPersonaInformation_cpp, 198); /*0x779338*/
-    WideString::Replace(v43, v10, (wchar_t *)L"Mar"); /*0x779342*/
-  }
-  v34 = GetStringCSF(g_Str_TXT_APRIL, 0, g_Str_File_WOLPersonaInformation_cpp, 200); /*0x779361*/
-  v11 = WideString::GetOrEmpty(v43); /*0x779362*/
-  if ( wcsstr(v11, v34) ) /*0x779368*/
-  {
-    v12 = GetStringCSF(g_Str_TXT_APRIL, 0, g_Str_File_WOLPersonaInformation_cpp, 201); /*0x77938a*/
-    WideString::Replace(v43, v12, (wchar_t *)L"Apr"); /*0x779394*/
-  }
-  v35 = GetStringCSF(g_Str_TXT_MAY, 0, g_Str_File_WOLPersonaInformation_cpp, 203); /*0x7793b3*/
-  v13 = WideString::GetOrEmpty(v43); /*0x7793b4*/
-  if ( wcsstr(v13, v35) ) /*0x7793ba*/
-  {
-    v14 = GetStringCSF(g_Str_TXT_MAY, 0, g_Str_File_WOLPersonaInformation_cpp, 204); /*0x7793dc*/
-    WideString::Replace(v43, v14, (wchar_t *)L"May"); /*0x7793e6*/
-  }
-  v36 = GetStringCSF(g_Str_TXT_JUNE, 0, g_Str_File_WOLPersonaInformation_cpp, 206); /*0x779405*/
-  v15 = WideString::GetOrEmpty(v43); /*0x779406*/
-  if ( wcsstr(v15, v36) ) /*0x77940c*/
-  {
-    v16 = GetStringCSF(g_Str_TXT_JUNE, 0, g_Str_File_WOLPersonaInformation_cpp, 207); /*0x77942e*/
-    WideString::Replace(v43, v16, (wchar_t *)L"Jun"); /*0x779438*/
-  }
-  v37 = GetStringCSF(g_Str_TXT_JULY, 0, g_Str_File_WOLPersonaInformation_cpp, 209); /*0x779457*/
-  v17 = WideString::GetOrEmpty(v43); /*0x779458*/
-  if ( wcsstr(v17, v37) ) /*0x77945e*/
-  {
-    v18 = GetStringCSF(g_Str_TXT_JULY, 0, g_Str_File_WOLPersonaInformation_cpp, 210); /*0x779480*/
-    WideString::Replace(v43, v18, (wchar_t *)L"Jul"); /*0x77948a*/
-  }
-  v38 = GetStringCSF(g_Str_TXT_AUGUST, 0, g_Str_File_WOLPersonaInformation_cpp, 212); /*0x7794a9*/
-  v19 = WideString::GetOrEmpty(v43); /*0x7794aa*/
-  if ( wcsstr(v19, v38) ) /*0x7794b0*/
-  {
-    v20 = GetStringCSF(g_Str_TXT_AUGUST, 0, g_Str_File_WOLPersonaInformation_cpp, 213); /*0x7794d2*/
-    WideString::Replace(v43, v20, (wchar_t *)L"Aug"); /*0x7794dc*/
-  }
-  v39 = GetStringCSF(g_Str_TXT_SEPTEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 215); /*0x7794fb*/
-  v21 = WideString::GetOrEmpty(v43); /*0x7794fc*/
-  if ( wcsstr(v21, v39) ) /*0x779502*/
-  {
-    v22 = GetStringCSF(g_Str_TXT_SEPTEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 216); /*0x779524*/
-    WideString::Replace(v43, v22, (wchar_t *)L"Sep"); /*0x77952e*/
-  }
-  v40 = GetStringCSF(g_Str_TXT_OCTOBER, 0, g_Str_File_WOLPersonaInformation_cpp, 218); /*0x77954d*/
-  v23 = WideString::GetOrEmpty(v43); /*0x77954e*/
-  if ( wcsstr(v23, v40) ) /*0x779554*/
-  {
-    v24 = GetStringCSF(g_Str_TXT_OCTOBER, 0, g_Str_File_WOLPersonaInformation_cpp, 219); /*0x779576*/
-    WideString::Replace(v43, v24, (wchar_t *)L"Oct"); /*0x779580*/
-  }
-  v41 = GetStringCSF(g_Str_TXT_NOVEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 221); /*0x77959f*/
-  v25 = WideString::GetOrEmpty(v43); /*0x7795a0*/
-  if ( wcsstr(v25, v41) ) /*0x7795a6*/
-  {
-    v26 = GetStringCSF(g_Str_TXT_NOVEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 222); /*0x7795c8*/
-    WideString::Replace(v43, v26, (wchar_t *)L"Nov"); /*0x7795d2*/
-  }
-  v42 = GetStringCSF(g_Str_TXT_DECEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 224); /*0x7795f1*/
-  v27 = WideString::GetOrEmpty(v43); /*0x7795f2*/
-  if ( wcsstr(v27, v42) ) /*0x7795f8*/
-  {
-    v28 = GetStringCSF(g_Str_TXT_DECEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 225); /*0x77961a*/
-    WideString::Replace(v43, v28, (wchar_t *)L"Dec"); /*0x779624*/
-  }
-  v29 = (char *)WideString::GetOrEmpty(v43); /*0x77962d*/
-  v30 = ToWideStringChar(v29); /*0x779634*/
-  ((String *)(a2))->Assign_Bool(v30); /*0x77963c*/
-  ((DeleteAndZero*)((DeleteAndZero *)v43))->Alt(); /*0x779645*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x779230)
 }
 }
 // 0x77B2A0
@@ -607,137 +309,7 @@ int OpenURLWOL(INIClass * a1, int a2)
 namespace gamemd {
 Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
 {
-  bool v4; // zf
-  const char **v5; // eax
-  HWND v6; // eax
-  int owningHouseIndex; // eax
-  char *v8; // ebx
-  int v9; // esi
-  int v10; // edi
-  char *v11; // eax
-  int v12; // esi
-  char **v13; // eax
-  char v14; // bl
-  int v15; // edx
-  int v16; // eax
-  int v17; // ebx
-  unsigned int *v18; // ebp
-  int v19; // eax
-  int v20; // ecx
-  unsigned int *v21; // esi
-  bool v22; // [esp+13h] [ebp-81h]
-  String v23; // [esp+14h] [ebp-80h] BYREF
-  DeleteAndZero v24; // [esp+1Ch] [ebp-78h] BYREF
-  unsigned char v25[108]; // [esp+28h] [ebp-6Ch] BYREF
-
-  v4 = ((String*)a1)->Length() == 0; /*0x77e913*/
-  v5 = (const char **)a1; /*0x77e915*/
-  if ( v4 ) /*0x77e917*/
-    v5 = (const char **)&g_WindowManager.__pad_EC[684]; /*0x77e919*/
-  ((String *)((String *)&v23.q4))->AssignFromPtr(v5); /*0x77e923*/
-  if ( (uint8_t)((String *)((String *)&v23.q4))->Compare((const char **)&g_WindowManager.__pad_EC[684]) && !a2 ) /*0x77e93c*/
-  {
-    v6 = (HWND)((Dialog*)((Dialog *)0xC9))->FindByHandle(); /*0x77e943*/
-    EnablePlayerSlotControls(v6, 1u); /*0x77e94c*/
-  }
-  owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x77e951*/
-  v8 = 0; /*0x77e956*/
-  v9 = 0; /*0x77e958*/
-  if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x77e95c*/
-  {
-    v10 = 0; /*0x77e95e*/
-    while ( 1 ) /*0x77e960*/
-    {
-      if ( v10 >= 0 && v9 < owningHouseIndex ) /*0x77e966*/
-        v8 = (char *)g_WOL_UserList.nextObject + v10; /*0x77e96d*/
-      v11 = ((String *)((String *)&v23.q4))->GetOrEmpty_Alt(); /*0x77e978*/
-      if ( !_strcmpi(v11, v8 + 36) ) /*0x77e97e*/
-        break; /*0x77e97e*/
-      owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x77e98a*/
-      ++v9; /*0x77e98f*/
-      v10 += 108; /*0x77e990*/
-      if ( v9 >= g_WOL_UserList.owningHouseIndex ) /*0x77e995*/
-        goto LABEL_16; /*0x77e995*/
-    }
-    if ( v9 != -1 ) /*0x77e99c*/
-    {
-      g_WOL_LoginObject.ambientSoundController[37 * v9] = a2; /*0x77e9a8*/
-      DisplayRankingsWOL(0); /*0x77e9af*/
-    }
-  }
-  LABEL_16:
-  v22 = dword_B77E4C == 1; /*0x77e9b4*/
-  ((String *)((String *)&v23.q4))->ToLowerCopy((char **)&v24.DeleteAndZero_field_0x04); /*0x77e9cb*/
-  v12 = 0; /*0x77e9d5*/
-  if ( dword_A8DA84 > 0 ) /*0x77e9d9*/
-  {
-    while ( 1 ) /*0x77e9e9*/
-    {
-      ((WideString *)((wchar_t **)&v24))->Assign((wchar_t *)dword_A8DA78[v12]); /*0x77e9e9*/
-      ToWideStringCharAlt((char **)&v23, (const wchar_t **)&v24); /*0x77e9f6*/
-      ((DeleteAndZero*)&v24)->Alt(); /*0x77e9ff*/
-      v13 = ((String *)(&v23))->ToLowerCopy((char **)&v24.DeleteAndZero_field_0x08); /*0x77ea12*/
-      v14 = ((String *)((String *)v13))->Compare((const char **)&v24.DeleteAndZero_field_0x04); /*0x77ea22*/
-      DeleteAndZero((ObjectClass *)&v24.DeleteAndZero_field_0x08); /*0x77ea24*/
-      if ( v14 ) /*0x77ea2f*/
-        break; /*0x77ea2f*/
-      DeleteAndZero((ObjectClass *)&v23); /*0x77ea31*/
-      if ( ++v12 >= dword_A8DA84 ) /*0x77ea3e*/
-        goto LABEL_21; /*0x77ea3e*/
-    }
-    DeleteAndZero((ObjectClass *)&v23); /*0x77ea42*/
-  }
-  LABEL_21:
-  if ( v12 < dword_A8DA84 ) /*0x77ea4d*/
-  {
-    *(unsigned int *)(dword_A8DA78[v12] + 119) = a2; /*0x77ea61*/
-    if ( v22 && (dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2) && !byte_B77DEC && v12 == 1 ) /*0x77ea92*/
-    {
-      v15 = g_WOL_UserList.owningHouseIndex; /*0x77ea98*/
-      if ( g_WOL_UserList.owningHouseIndex == 2 ) /*0x77eaa1*/
-      {
-        v16 = 0; /*0x77eaac*/
-        *(unsigned int *)v24.__pad_0 = 0; /*0x77eab2*/
-        memset(v25, 0, sizeof(v25)); /*0x77eaba*/
-        v17 = 0; /*0x77eabc*/
-        for ( *(unsigned int *)v23.__pad_0 = 0; ; v16 = *(unsigned int *)v23.__pad_0 ) /*0x77eabe*/
-        {
-          if ( v16 >= 0 && v17 < v15 ) /*0x77eace*/
-            qmemcpy(v25, (char *)g_WOL_UserList.nextObject + v16, sizeof(v25)); /*0x77eae2*/
-          v18 = (unsigned int *)RA2_OPNEW(0x6Cu); /*0x77eaeb*/
-          v19 = *(unsigned int *)v24.__pad_0; /*0x77eaed*/
-          qmemcpy(v18, v25, 0x6Cu); /*0x77eaff*/
-          v20 = *(unsigned int *)v23.__pad_0; /*0x77eb01*/
-          v18[8] = v19; /*0x77eb05*/
-          v15 = g_WOL_UserList.owningHouseIndex; /*0x77eb08*/
-          ++v17; /*0x77eb0e*/
-          *(unsigned int *)v24.__pad_0 = v18; /*0x77eb14*/
-          *(unsigned int *)v23.__pad_0 = v20 + 108; /*0x77eb18*/
-          if ( v17 >= g_WOL_UserList.owningHouseIndex ) /*0x77eb1c*/
-            break; /*0x77eb1c*/
-        }
-        g_WOL_GameListState = 0; /*0x77eb20*/
-        g_WOL_IdleHandler = 9; /*0x77eb2a*/
-        g_WOL_GameProcessState = 90; /*0x77eb34*/
-        g_WOL_GameListPool = time(0); /*0x77eb43*/
-        (*(void (**)(LPVOID, unsigned int *))(*(unsigned int *)ppv + 72))(ppv, v18); /*0x77eb54*/
-        byte_B77DEC = 1; /*0x77eb59*/
-        if ( v18 ) /*0x77eb60*/
-        {
-          do /*0x77eb72*/
-          {
-            v21 = (unsigned int *)v18[8]; /*0x77eb62*/
-            RA2_OPDEL(v18); /*0x77eb66*/
-            v18 = v21; /*0x77eb6e*/
-          }
-          while ( v21 ); /*0x77eb72*/
-        }
-      }
-    }
-    DisplayRankingsWOL(0); /*0x77eb78*/
-  }
-  DeleteAndZero((ObjectClass *)&v24.DeleteAndZero_field_0x04); /*0x77eb81*/
-  DeleteAndZero((ObjectClass *)&v23.q4); /*0x77eb8a*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77E900)
 }
 }
 // 0x77ED00
@@ -765,98 +337,7 @@ char RequestChannelListWOL()
 namespace gamemd {
 AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
 {
-  int v3; // ebx
-  char result; // al
-  HANDLE *v6; // esi
-  int v7; // eax
-  int v8; // esi
-  int v9; // ebp
-  void *v10; // ebx
-  void *v11; // eax
-  int v12; // ebp
-  void *v13; // ebx
-  void *v14; // eax
-  unsigned int *v15; // ecx
-  int v16; // [esp+10h] [ebp-8h]
-
-  v3 = a1; /*0x77f32a*/
-  if ( !dword_B76520 || (result = RequestChannelListWOL()) != 0 ) /*0x77f33f*/
-  {
-    v6 = &Handles; /*0x77f351*/
-    do /*0x77f364*/
-      ResetEvent(*v6++); /*0x77f359*/
-    while ( (int)v6 < (int)g_WOL_RequestObject ); /*0x77f364*/
-    Debug::Log(); /*0x77f375*/
-    if ( (*(int (**)(LPVOID, int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, v3, a2) ) /*0x77f387*/
-    {
-      SetEvent(Handles); /*0x77f4fd*/
-      return 0; /*0x77f503*/
-    }
-    else
-    {
-      v7 = dword_B76520; /*0x77f392*/
-      v8 = dword_B76520; /*0x77f397*/
-      v16 = dword_B76520; /*0x77f39b*/
-      v9 = dword_B76524; /*0x77f3a5*/
-      if ( dword_B76520 >= dword_B76524 ) /*0x77f3ad*/
-      {
-        v9 = 2 * dword_B76520; /*0x77f3b7*/
-        if ( 2 * dword_B76520 < 10 ) /*0x77f3bd*/
-          v9 = 10; /*0x77f3bf*/
-        v10 = RA2_OPNEW(4 * v9); /*0x77f3d3*/
-        memset(v10, 0, 4 * ((unsigned int)(4 * v9) >> 2)); /*0x77f3e1*/
-        v11 = dword_B76528; /*0x77f3ea*/
-        if ( dword_B76528 ) /*0x77f3f1*/
-        {
-          qmemcpy(v10, dword_B76528, 4 * dword_B76520); /*0x77f3fd*/
-          v11 = dword_B76528; /*0x77f3ff*/
-          v8 = v16; /*0x77f404*/
-        }
-        RA2_OPDEL(v11); /*0x77f409*/
-        v7 = dword_B76520; /*0x77f40e*/
-        dword_B76528 = v10; /*0x77f413*/
-        v3 = a1; /*0x77f419*/
-        dword_B76524 = v9; /*0x77f420*/
-      }
-      if ( v7 >= v9 ) /*0x77f428*/
-      {
-        v12 = 2 * v7; /*0x77f42a*/
-        if ( 2 * v7 < 10 ) /*0x77f430*/
-          v12 = 10; /*0x77f432*/
-        v13 = RA2_OPNEW(4 * v12); /*0x77f446*/
-        memset(v13, 0, 4 * ((unsigned int)(4 * v12) >> 2)); /*0x77f454*/
-        v14 = dword_B76528; /*0x77f45d*/
-        if ( dword_B76528 ) /*0x77f464*/
-        {
-          qmemcpy(v13, dword_B76528, 4 * dword_B76520); /*0x77f470*/
-          v14 = dword_B76528; /*0x77f472*/
-          v8 = v16; /*0x77f477*/
-        }
-        RA2_OPDEL(v14); /*0x77f47c*/
-        v7 = dword_B76520; /*0x77f481*/
-        dword_B76528 = v13; /*0x77f486*/
-        v3 = a1; /*0x77f48c*/
-        dword_B76524 = v12; /*0x77f493*/
-      }
-      if ( v8 < v7 ) /*0x77f49b*/
-      {
-        memcpy((char *)dword_B76528 + 4 * v8 + 4, (char *)dword_B76528 + 4 * v8, 4 * (v7 + 0x3FFFFFFF * v8)); /*0x77f4b8*/
-        v7 = dword_B76520; /*0x77f4bd*/
-      }
-      v15 = (char *)dword_B76528 + 4 * v8; /*0x77f4cb*/
-      if ( v15 ) /*0x77f4d0*/
-      {
-        *v15 = v3; /*0x77f4d2*/
-        v7 = dword_B76520; /*0x77f4d4*/
-      }
-      dword_B76520 = v7 + 1; /*0x77f4da*/
-      if ( a3 ) /*0x77f4e5*/
-        return RequestChannelListWOL(); /*0x77f4e7*/
-      else
-        return 1; /*0x77f512*/
-    }
-  }
-  return result; /*0x77f341*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77F320)
 }
 }
 // 0x77F520
@@ -1363,33 +844,7 @@ int sub_773430()
 namespace gamemd {
 unsigned int * sub_773450(int a1, int a2)
 {
-  unsigned int *v4; // esi
-  unsigned int *result; // eax
-  unsigned int *v6; // edi
-
-  v4 = RA2_OPNEW(0x414u); /*0x773462*/
-  result = 0; /*0x773464*/
-  if ( v4 ) /*0x77346b*/
-  {
-    v6 = v4 + 2; /*0x773471*/
-    v4[1] = 1; /*0x773474*/
-    v4[2] = 0; /*0x773480*/
-    *((unsigned char *)v4 + 1036) = 0; /*0x773482*/
-    v4[260] = 0; /*0x773488*/
-    *v4 = (void*)&WebBrowser_vftable; /*0x77348e*/
-    Debug::Log(); /*0x773494*/
-    v4[260] = a1; /*0x77349c*/
-    Debug::Log(); /*0x7734a7*/
-    if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)v4 + 2) >= 0 ) /*0x7734c6*/
-    {
-      Debug::Log(); /*0x7734cd*/
-      (*(void (**)(unsigned int, unsigned int *))(*(unsigned int *)*v6 + 20))(*v6, v4); /*0x7734db*/
-      (*(void (**)(unsigned int, int, int))(*(unsigned int *)*v6 + 12))(*v6, a1, a2); /*0x7734e5*/
-      (*(void (**)(unsigned int, int))(*(unsigned int *)*v6 + 60))(*v6, 1); /*0x7734ef*/
-    }
-    return v4; /*0x7734f2*/
-  }
-  return result; /*0x7734f4*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x773450)
 }
 } // namespace gamemd
 
@@ -1461,7 +916,7 @@ int sub_775670()
 namespace gamemd {
 INT_PTR sub_775B40(HWND a1, UINT, WPARAM, LPARAM)
 {
-  return 0; /*0x775b42*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x775B40)
 }
 } // namespace gamemd
 
@@ -1721,7 +1176,7 @@ void nullsub_48()
 namespace gamemd {
 HIMC IME_Disable()
 {
-  return ImmAssociateContext(g_hWnd, 0); /*0x7781ad*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7781A0)
 }
 } // namespace gamemd
 
@@ -1859,7 +1314,7 @@ int sub_7786E0()
 namespace gamemd {
 int unknown_libname_38()
 {
-  DeleteAndZero((void **)&stru_B73590); /*0x778705*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x778700)
 }
 } // namespace gamemd
 
@@ -2151,7 +1606,7 @@ int sub_77B8A0()
 namespace gamemd {
 int OleUninitialize()
 {
-  __imp_OleUninitialize(); /*0x77b8c0*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77B8C0)
 }
 } // namespace gamemd
 
@@ -2167,7 +1622,7 @@ int sub_77B8D0()
 namespace gamemd {
 int unknown_libname_39()
 {
-  DeleteAndZero((void **)&unk_B73AE0); /*0x77b8f5*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77B8F0)
 }
 } // namespace gamemd
 
@@ -2519,7 +1974,7 @@ int sub_77CA00()
 namespace gamemd {
 int unknown_libname_40()
 {
-  DeleteAndZero((void **)&unk_B73ACC); /*0x77ca25*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77CA20)
 }
 } // namespace gamemd
 
@@ -2535,7 +1990,7 @@ int sub_77CA30()
 namespace gamemd {
 int unknown_libname_41()
 {
-  DeleteAndZero((void **)&g_WOL_LoginObject); /*0x77ca55*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77CA50)
 }
 } // namespace gamemd
 
@@ -2615,7 +2070,7 @@ int sub_77CF10()
 namespace gamemd {
 int unknown_libname_42()
 {
-  DeleteAndZero((void **)&stru_B76AC4); /*0x77cf35*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77CF30)
 }
 } // namespace gamemd
 
@@ -2631,7 +2086,7 @@ int sub_77CF70()
 namespace gamemd {
 int unknown_libname_43()
 {
-  DeleteAndZero((void **)&unk_B76E34); /*0x77cf95*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77CF90)
 }
 } // namespace gamemd
 
@@ -2647,7 +2102,7 @@ int sub_77CFA0()
 namespace gamemd {
 int unknown_libname_44()
 {
-  DeleteAndZero((void **)&unk_B73B30); /*0x77cfc5*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77CFC0)
 }
 } // namespace gamemd
 
@@ -2663,7 +2118,7 @@ int sub_77CFD0()
 namespace gamemd {
 int unknown_libname_45()
 {
-  DeleteAndZero((void **)&stru_B7622C); /*0x77cff5*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77CFF0)
 }
 } // namespace gamemd
 
@@ -2679,7 +2134,7 @@ int sub_77D000()
 namespace gamemd {
 int unknown_libname_46()
 {
-  DeleteAndZero((void **)&unk_B76908); /*0x77d025*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D020)
 }
 } // namespace gamemd
 
@@ -2695,7 +2150,7 @@ int sub_77D030()
 namespace gamemd {
 int unknown_libname_47()
 {
-  DeleteAndZero((void **)&unk_B77794); /*0x77d055*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D050)
 }
 } // namespace gamemd
 
@@ -2711,7 +2166,7 @@ int sub_77D060()
 namespace gamemd {
 int unknown_libname_48()
 {
-  DeleteAndZero((void **)&unk_B778F4); /*0x77d085*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D080)
 }
 } // namespace gamemd
 
@@ -2727,7 +2182,7 @@ int sub_77D090()
 namespace gamemd {
 int unknown_libname_49()
 {
-  DeleteAndZero((void **)&unk_B778FC); /*0x77d0b5*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D0B0)
 }
 } // namespace gamemd
 
@@ -2743,7 +2198,7 @@ int sub_77D0C0()
 namespace gamemd {
 int unknown_libname_50()
 {
-  DeleteAndZero((void **)&stru_B765EC); /*0x77d0e5*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D0E0)
 }
 } // namespace gamemd
 
@@ -2759,7 +2214,7 @@ int sub_77D0F0()
 namespace gamemd {
 int unknown_libname_51()
 {
-  DeleteAndZero(&stru_B76900); /*0x77d115*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D110)
 }
 } // namespace gamemd
 
@@ -2839,31 +2294,7 @@ bool ObjectClass::sub_77D3A0(ObjectClass * String1)
 namespace gamemd {
 unsigned int * sub_77D720(unsigned int * a1, int a2)
 {
-  u_long v3; // ecx
-  u_long v4; // eax
-  int v5; // eax
-  int v6; // edx
-  int v8; // [esp+4h] [ebp-18h] BYREF
-  unsigned char v9[3]; // [esp+8h] [ebp-14h] BYREF
-  int16_t v10; // [esp+Bh] [ebp-11h]
-  char v11; // [esp+Dh] [ebp-Fh]
-  unsigned int v12[3]; // [esp+10h] [ebp-Ch] BYREF
-
-  v3 = *(unsigned int *)(a2 + 24); /*0x77d726*/
-  v8 = 0; /*0x77d730*/
-  v11 = 0; /*0x77d738*/
-  v4 = ntohl(v3); /*0x77d73d*/
-  v9[2] = IDA_BYTE1(v4); /*0x77d752*/
-  v10 = (uint8_t)v4; /*0x77d752*/
-  v9[0] = IDA_HIBYTE(v4); /*0x77d756*/
-  v9[1] = IDA_BYTE2(v4); /*0x77d765*/
-  NetworkAddress::Assign(v12, &v8, (int)v9, 0); /*0x77d76f*/
-  v5 = v12[1]; /*0x77d77a*/
-  *a1 = v12[0]; /*0x77d77e*/
-  v6 = v12[2]; /*0x77d780*/
-  a1[1] = v5; /*0x77d784*/
-  a1[2] = v6; /*0x77d78a*/
-  return a1; /*0x77d789*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D720)
 }
 } // namespace gamemd
 
@@ -2871,7 +2302,7 @@ unsigned int * sub_77D720(unsigned int * a1, int a2)
 namespace gamemd {
 int unknown_libname_54()
 {
-  return WebBrowser::ShowDialog(g_INI_Key_Battleclans);
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D8C0)
 }
 } // namespace gamemd
 
@@ -2879,7 +2310,7 @@ int unknown_libname_54()
 namespace gamemd {
 int unknown_libname_55()
 {
-  return WebBrowser::ShowDialog(g_INI_Key_Battleclans);
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D8D0)
 }
 } // namespace gamemd
 
@@ -2887,7 +2318,7 @@ int unknown_libname_55()
 namespace gamemd {
 int unknown_libname_56()
 {
-  return WebBrowser::ShowDialog(g_INI_Key_Ladder);
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D8E0)
 }
 } // namespace gamemd
 
@@ -2895,7 +2326,7 @@ int unknown_libname_56()
 namespace gamemd {
 int unknown_libname_57()
 {
-  return WebBrowser::ShowDialog(aNews);
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D8F0)
 }
 } // namespace gamemd
 
@@ -2903,7 +2334,7 @@ int unknown_libname_57()
 namespace gamemd {
 int unknown_libname_58()
 {
-  return WebBrowser::ShowDialog(g_INI_Key_Manage);
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77D900)
 }
 } // namespace gamemd
 
@@ -2919,7 +2350,7 @@ int sub_77D9F0()
 namespace gamemd {
 int unknown_libname_59()
 {
-  DeleteAndZero((void **)&dword_B73E40); /*0x77da15*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77DA10)
 }
 } // namespace gamemd
 
@@ -2935,7 +2366,7 @@ int sub_77DA20()
 namespace gamemd {
 int unknown_libname_60()
 {
-  DeleteAndZero((void **)&g_WebBrowserConfig); /*0x77da45*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77DA40)
 }
 } // namespace gamemd
 
@@ -2967,50 +2398,6 @@ int sub_77E780()
 namespace gamemd {
 void ** ParseStringCommaInts(char * String, int * a2, int * a3, int * a4, int * a5, int * a6, void ** a7)
 {
-  char *v8; // eax
-  int v9; // eax
-  char *v10; // eax
-  int v11; // eax
-  char *v12; // eax
-  int v13; // eax
-  char *v14; // eax
-  int v15; // eax
-  char *v16; // eax
-  int v17; // eax
-  char *v18; // eax
-
-  v8 = strtok(String, Str); /*0x77e829*/
-  if ( v8 ) /*0x77e833*/
-    v9 = atol(v8); /*0x77e836*/
-  else
-    v9 = 0; /*0x77e840*/
-  *a2 = v9; /*0x77e849*/
-  v10 = strtok(0, Str); /*0x77e84b*/
-  if ( v10 ) /*0x77e856*/
-    v11 = atol(v10); /*0x77e859*/
-  else
-    v11 = 0; /*0x77e863*/
-  *a3 = v11; /*0x77e870*/
-  v12 = strtok(0, Str); /*0x77e872*/
-  if ( v12 ) /*0x77e87c*/
-    v13 = atol(v12); /*0x77e87f*/
-  else
-    v13 = 0; /*0x77e889*/
-  *a4 = v13; /*0x77e896*/
-  v14 = strtok(0, Str); /*0x77e898*/
-  if ( v14 ) /*0x77e8a2*/
-    v15 = atol(v14); /*0x77e8a5*/
-  else
-    v15 = 0; /*0x77e8af*/
-  *a5 = v15; /*0x77e8bc*/
-  v16 = strtok(0, Str); /*0x77e8be*/
-  if ( v16 ) /*0x77e8c8*/
-    v17 = atol(v16); /*0x77e8cb*/
-  else
-    v17 = 0; /*0x77e8d5*/
-  *a6 = v17; /*0x77e8e2*/
-  v18 = strtok(0, Str); /*0x77e8e4*/
-// 0x7b48d0
-  return ((String *)(a7))->Assign_Alt(v18); /*0x77e8f6*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x77E820)
 }
 } // namespace gamemd

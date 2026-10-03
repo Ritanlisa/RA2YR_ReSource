@@ -124,70 +124,7 @@ LABEL_9:
 namespace gamemd {
 ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
 {
-
-  size_t v3; // eax
-  int v4; // edi
-  unsigned int *v5; // ebp
-  int v6; // edx
-  char *v7; // ecx
-  int v9; // ecx
-  int i; // ecx
-  int v11; // edi
-  int v12; // eax
-  unsigned int *v13; // edi
-  ObjectClass ** v14;
-  int v15; // [esp+10h] [ebp-8h]
-
-  v3 = *((unsigned int *)this + 1); /*0x5388a9*/
-  if ( !v3 ) /*0x5388ae*/
-    return 0; /*0x5388ae*/
-  if ( !*((unsigned char *)this + 12) ) /*0x5388b0*/
-  {
-    qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5388c2*/
-    *((unsigned int *)this + 4) = 0; /*0x5388ca*/
-    *((unsigned char *)this + 12) = 1; /*0x5388d1*/
-  }
-  v4 = (int)(*((unsigned int *)this + 1));
-  v5 = (unsigned int *)((int)(*(unsigned int **)this));
-  v15 = *(int *)aP1;
-  if ( v4 <= 0 ) /*0x5388e8*/
-    return 0; /*0x5388e8*/
-  while ( 1 ) /*0x5388f1*/
-  {
-    v6 = v5[2 * (v4 / 2)]; /*0x5388f1*/
-    v7 = (char *)&v5[2 * (v4 / 2)]; /*0x5388f5*/
-    if ( v15 >= v6 ) /*0x5388fd*/
-      break; /*0x5388fd*/
-    v4 /= 2; /*0x5388ff*/
-LABEL_9:
-    if ( v4 <= 0 ) /*0x538915*/
-      return 0; /*0x538915*/
-  }
-  if ( v6 != v15 ) /*0x538907*/
-  {
-    v5 = (unsigned int *)(v7 + 8);
-    v4 += -1 - v4 / 2; /*0x538911*/
-    goto LABEL_9; /*0x538911*/
-  }
-  if ( !v7 ) /*0x538927*/
-    return 0; /*0x538927*/
-  v9 = (int)&v7[-*(unsigned int *)this] >> 3; /*0x53892b*/
-  if ( v9 == -1 ) /*0x538931*/
-    return 0; /*0x538920*/
-  for ( i = v9 + 1; i < *((unsigned int *)this + 1); *(unsigned int *)(v12 - 4) = *(unsigned int *)(v12 + 4) ) /*0x538939*/
-  {
-    v11 = *(unsigned int *)(*(unsigned int *)this + 8 * i); /*0x53893d*/
-    v12 = *(unsigned int *)this + 8 * i++; /*0x538940*/
-    *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
-  }
-  v13 = (unsigned int *)((gamemd::ObjectClass **)(*(unsigned int **)this));
-  v14 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 1) - 1)));
-  *((unsigned int *)this + 1) = (unsigned int)(v14); /*0x53895c*/
-  v13[2 * v14] = 0; /*0x53895f*/
-  v13[2 * v14 + 1] = 0; /*0x538962*/
-  *((unsigned int *)this + 4) = 0; /*0x538966*/
-  return (gamemd::ObjectClass **)(1); /*0x538917*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5388A0)
 }
 } // namespace gamemd
 // 0x538980

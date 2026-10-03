@@ -5,6 +5,44 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Constructor_VectorClass_FactoryClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_AnimClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_HouseClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_UnitClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_OverlayClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_WaveClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_TubeClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_TeamClass___;  // G42.36 fwd supply
+class FindItemIndex_1;  // G42.36 fwd supply
+class SetCapacity_1;  // G42.36 fwd supply
+class FindItemIndex_0;  // G42.36 fwd supply
+class Destructor_2;  // G42.36 fwd supply
+class Destructor_1;  // G42.36 fwd supply
+class ProcessAll;  // G42.36 fwd supply
+class IsEqualTo;  // G42.36 fwd supply
+class GetItem;  // G42.36 fwd supply
+class Clear_627D80;  // G42.36 fwd supply
+class Clear_627D20;  // G42.36 fwd supply
+class Destructor_0;  // G42.36 fwd supply
+class GetCount;  // G42.36 fwd supply
+class Clear_49E9B0;  // G42.36 fwd supply
+class CCINIClass;  // G42.36 fwd supply
+class SetCapacity_0;  // G42.36 fwd supply
+class Constructor_VectorClass_KamikazeControl___;  // G42.36 fwd supply
+class Write;  // G42.36 fwd supply
+class Seek;  // G42.36 fwd supply
+class ClearBuffer;  // G42.36 fwd supply
+class FindItem;  // G42.36 fwd supply
+class Launch;  // G42.36 fwd supply
+class PointerToIndex;  // G42.36 fwd supply
+class IndexOf;  // G42.36 fwd supply
+class BeginMove;  // G42.36 fwd supply
+class Spawn;  // G42.36 fwd supply
+class SaveState;  // G42.36 fwd supply
+class LoadState;  // G42.36 fwd supply
+class DialogControl_OwnerDraw;  // G42.36 fwd supply
+class Constructor_WonlineStringDialogControl;  // G42.36 fwd supply
+class Destructor;  // G42.36 fwd supply
 class GetItemIndex_1;  // G42.36 fwd supply
 class Destroy_1;  // G42.36 fwd supply
 class GetItemIndex_0;  // G42.36 fwd supply
@@ -105,5 +143,51 @@ struct DynamicVector {
     unsigned int GetItemIndex_0(int a2);
     void Destroy_1();
     unsigned int GetItemIndex_1(int a2);
+    VectorClass_flat * Destructor(unsigned int * Block, char a2);
+    AbstractClass * * Release(int a2, unsigned int * a3);
+    void * Constructor_WonlineStringDialogControl(DialogControl_OwnerDraw * Block, char a2);
+    AbstractClass * * SetCapacity(int a2, unsigned int * a3);
+    wchar_t * ddtor(void *a1_1, void *a2_1);
+    unsigned int LoadState(int a2);
+    int SaveState(int a2);
+    int Spawn(unsigned int * a2);
+    unsigned int BeginMove(int a2);
+    int IndexOf(unsigned int * a2);
+    unsigned int PointerToIndex(int a2);
+    int Launch(unsigned int * a2);
+    AbstractClass * * Release(int a2, char * a3);
+    AbstractClass * * SetCapacity(int a2, char * a3);
+    int FindItem(unsigned int * a2);
+    void ClearBuffer(void *a1_1);
+    int Seek(int a2, void *a2_2, void *a3_1);
+    int Read(unsigned int * a2, void *a2_2);
+    unsigned int Write(int a2);
+    DynamicVector * Constructor_VectorClass_KamikazeControl___(unsigned int * Block, char a2);
+    AbstractClass * * SetCapacity_0(int a2, char * a3);
+    AbstractClass * * Remove(CCINIClass * aP1, unsigned char * a2);
+    void Clear_49E9B0();
+    unsigned int GetCount(int a2);
+    DynamicVector * Add(unsigned int * Block, char a2, void *a3_1);
+    unsigned int * Destructor_0(char a2);
+    void Clear_627D20();
+    void Clear_627D80();
+    int GetItem(int a2, int a3);
+    char IsEqualTo(int a2);
+    int ProcessAll(int a2);
+    DynamicVector * Destructor_1(unsigned int * Block, char a2);
+    DynamicVector * Destructor_2(unsigned int * Block, char a2);
+    int Clear(int a2, int a3);
+    char SetCapacity_0(int a2, unsigned int * a3);
+    int FindItemIndex_0(unsigned int * a2);
+    char SetCapacity_1(int a2, unsigned int * a3);
+    int FindItemIndex_1(unsigned int * a2);
+    DynamicVector * Constructor_VectorClass_TeamClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_TubeClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_WaveClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_OverlayClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_UnitClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_HouseClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_AnimClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_FactoryClass___(unsigned int * Block, char a2);
 };
 } // namespace gamemd

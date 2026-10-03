@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 struct HouseClass;  // fix_fwd_type_supply
 
 struct SpawnManagerClass {
@@ -74,6 +75,7 @@ struct SpawnManagerClass {
     unsigned int * Constructor_6B83A0(DynamicVector * aP1, DynamicVector * aP2);
     void Constructor_SpawnManagerClass();
     void* Constructor(void *a1, void *a2, void *a3);
+    SpawnManagerClass * ProcessEvent(void * Block, char a2);
 };
 
 } // namespace gamemd

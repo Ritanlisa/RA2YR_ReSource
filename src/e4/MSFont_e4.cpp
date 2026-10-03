@@ -17,118 +17,14 @@
 namespace gamemd {
 AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 {
-
-  int v3; // ebp
-  unsigned int *v5; // edi
-  int v6; // eax
-  unsigned int *v7; // ecx
-  int v8; // edx
-  unsigned int *v9; // eax
-  int v10; // ecx
-  int m_8; // edx
-  int v12; // ecx
-  int v13; // eax
-  unsigned int *v14; // ebx
-  int v15; // eax
-
-  v3 = a2; /*0x5d55a2*/
-  if ( a2 ) /*0x5d55ae*/
-  {
-    v5 = a3; /*0x5d55b4*/
-    LOBYTE(this->m_C) = 0; /*0x5d55b8*/
-    if ( a3 ) /*0x5d55bd*/
-    {
-      v9 = a3; /*0x5d55f3*/
-      if ( a2 - 1 >= 0 ) /*0x5d55f7*/
-      {
-        v10 = a2; /*0x5d55f9*/
-        do /*0x5d5603*/
-        {
-          *v9 = 0; /*0x5d55fa*/
-          v9[1] = 0; /*0x5d55fc*/
-          v9 += 2; /*0x5d55ff*/
-          --v10; /*0x5d5602*/
-        }
-        while ( v10 ); /*0x5d5603*/
-      }
-    }
-    else
-    {
-      v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x5d55c7*/
-      if ( v6 ) /*0x5d55d1*/
-      {
-        v7 = (unsigned int *)v6; /*0x5d55d6*/
-        if ( a2 - 1 >= 0 ) /*0x5d55da*/
-        {
-          v8 = a2; /*0x5d55dc*/
-          do /*0x5d55e6*/
-          {
-            *v7 = 0; /*0x5d55dd*/
-            v7[1] = 0; /*0x5d55df*/
-            v7 += 2; /*0x5d55e2*/
-            --v8; /*0x5d55e5*/
-          }
-          while ( v8 ); /*0x5d55e6*/
-        }
-        v5 = (unsigned int *)v6; /*0x5d55e8*/
-      }
-      else
-      {
-        v5 = 0; /*0x5d55ec*/
-      }
-    }
-    LOBYTE(this->m_C) = 1; /*0x5d5607*/
-    if ( !v5 ) /*0x5d560b*/
-      return 0; /*0x5d5694*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x5d5611*/
-    {
-      m_8 = this->m_8; /*0x5d5616*/
-      if ( a2 < m_8 ) /*0x5d561b*/
-        m_8 = a2; /*0x5d561d*/
-      v12 = 0; /*0x5d561f*/
-      if ( m_8 > 0 ) /*0x5d5623*/
-      {
-        do /*0x5d5642*/
-        {
-          v13 = 2 * v12; /*0x5d5628*/
-          v14 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * v12++); /*0x5d5631*/
-          v5[v13] = *v14; /*0x5d5638*/
-          v5[v13 + 1] = v14[1]; /*0x5d563e*/
-        }
-        while ( v12 < m_8 ); /*0x5d5642*/
-        v3 = a2; /*0x5d5644*/
-      }
-      if ( BYTE1(this->m_C) ) /*0x5d564a*/
-      {
-        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5d5653*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x5d565b*/
-      }
-    }
-    *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x5d5666*/
-    this->m_8 = v3; /*0x5d566c*/
-    BYTE1(this->m_C) = a3 == 0; /*0x5d566f*/
-  }
-  else
-  {
-    (*(void (**)(_DynamicVectorClass_UAcceleratorTracker *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d5678*/
-  }
-  v15 = this->m_8; /*0x5d567b*/
-  if ( v15 < this->m_10 ) /*0x5d5683*/
-    this->m_10 = v15; /*0x5d5685*/
-  return (gamemd::AbstractClass **)(1); /*0x5d5688*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D55A0)
 }
 }
 // 0x5D3450
 namespace gamemd {  // G42.18c ns repair
 MSFont * MSFont::QueryInterface(char a2, int a3)
 {
-
-  MSFont::Constructor_MSFont(Block); /*0x5d3453*/
-  if ( (a2 & 1) != 0 ) /*0x5d345d*/
-    __3_YAXPAX_Z(Block); /*0x5d3460*/
-  return Block; /*0x5d346a*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D3450)
 }
 }  // G42.18c ns repair
 // 0x5D5080

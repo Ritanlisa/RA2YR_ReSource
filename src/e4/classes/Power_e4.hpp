@@ -80,5 +80,6 @@ struct Power {
     int FlagProcess(int Power_field_0x8);
     static int TimerProcess(int a1);
     char ChangedHouse(char a2);  // 0x750090
+    int FlagProcess(int Power_field_0x8, int a2, int a1);
 };
 } // namespace gamemd

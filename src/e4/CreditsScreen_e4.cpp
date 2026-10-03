@@ -26,67 +26,7 @@
 namespace gamemd {
 INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-
-  INIClass ** result;
-  unsigned int *WindowLongA; // eax
-  HWND DlgItem; // esi
-  wchar_t *String; // eax
-  char *ModuleVersion; // eax
-  char *ModuleInternalVersion; // eax
-  const char *v10; // eax
-  const unsigned int v11;
-  const char *v12; // [esp-8h] [ebp-29Ch]
-  char v13; // [esp+Fh] [ebp-285h] BYREF
-  int v14; // [esp+10h] [ebp-284h] BYREF
-  char Buffer[256]; // [esp+14h] [ebp-280h] BYREF
-  char v16[128]; // [esp+114h] [ebp-180h] BYREF
-  char v17[128]; // [esp+194h] [ebp-100h] BYREF
-  char Destination[128]; // [esp+214h] [ebp-80h] BYREF
-
-  result = (gamemd::INIClass **)((int)((gamemd::INIClass **)(BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), a2, a3, a4))));
-  if ( result ) /*0x531a2f*/
-    return result; /*0x531a2f*/
-  WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531a38*/
-  if ( a2 == 273 ) /*0x531a44*/
-  {
-    if ( (unsigned short)a3 && (uint16_t)a3 <= 2u ) /*0x531c19*/
-      *WindowLongA = (uint16_t)a3; /*0x531c1b*/
-    return 0; /*0x531c1b*/
-  }
-  if ( a2 != 1175 ) /*0x531a50*/
-    return 0; /*0x531c1d*/
-  DlgItem = GetDlgItem(hWnd, 1461); /*0x531a73*/
-  String = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_SHORT_TITLE), 0,(const char *)(g_Str_File_Init_CPP), 5680)); /*0x531a75*/
-  SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)String); /*0x531a89*/
-  ModuleVersion = (char *)(GetModuleVersion()); /*0x531a8b*/
-  sprintf(Buffer, "Version %s", ModuleVersion); /*0x531a9b*/
-  SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531ab0*/
-  ModuleInternalVersion = (char *)(GetModuleInternalVersion((void *)((int)&dword_A8ECE0))); /*0x531ab7*/
-  sprintf(Buffer, "Internal Version %s", ModuleInternalVersion); /*0x531ac7*/
-  SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531adc*/
-  v16[0] = 0; /*0x531aea*/
-  ((Time *)(v16))->FormatDate(); /*0x531af2*/
-  v12 = (const char *)((String *)(Destination))->CopyConstant(); /*0x531b10*/
-  v10 = (const char *)((String *)(v17))->FormatDword(); /*0x531b1d*/
-  sprintf(Buffer, "Release Build: %s by %s - %s", v10, v12, v16);
-  SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531b42*/
-  v14 = 5; /*0x531b51*/
-  v13 = 0; /*0x531b59*/
-  SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&byte_A8F314); /*0x531b5e*/
-  SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&byte_A8F4A0); /*0x531b6d*/
-  SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&byte_A8F420); /*0x531b7c*/
-  SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&byte_A8F520); /*0x531b8b*/
-  SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&byte_A8F394); /*0x531b9a*/
-  GetVersionString((unsigned int *)(&v14),(unsigned char *)(&v13), 0, 0); /*0x531ba8*/
-  v11 = (const unsigned int)((const char *)&off_821F08); /*0x531bb3*/
-  if ( !v13 ) /*0x531bb8*/
-    v11 = g_INI_Key_No; /*0x531bba*/
-  sprintf(Buffer, "MMX %s, Vendor: %s", v11, Source);
-  SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531be4*/
-  ((CreditsScreen*)Buffer)->Init(); /*0x531bea*/
-  SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531bfc*/
-  return 0; /*0x531bfe*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x531A00)
 }
 } // namespace gamemd
 // 0x4A3C00

@@ -20,185 +20,14 @@
 namespace gamemd {
 int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5)
 {
-
-  wchar_t *v6; // ebp
-  signed int v7; // eax
-  unsigned int v8;
-  CampaignScore * v9;
-  wchar_t *v10; // esi
-  wchar_t *v11; // edx
-
-  if ( a3 <= 0 ) /*0x5d4b27*/
-    return 0; /*0x5d4b2c*/
-  v6 = (wchar_t *)(aP1); /*0x5d4b31*/
-  v7 = wcslen((const wchar_t *)(aP1)); /*0x5d4b37*/
-  v8 = (unsigned int)(aP3); /*0x5d4b3c*/
-  if ( aP3 > (gamemd::CampaignScore *)(v7) ) /*0x5d4b49*/
-    v8 = v7; /*0x5d4b4b*/
-  if ( a5 ) /*0x5d4b53*/
-  {
-    v9 = (gamemd::CampaignScore *)((int)(v8));
-    if ( v8 >= (unsigned int)(gamemd::CampaignScore *)(a3) ) /*0x5d4b7b*/
-    {
-      v11 = (wchar_t *)(&aP1[v8 - 1]);
-      while ( !*v11 || *v11 > 0x20u ) /*0x5d4b8d*/
-      {
-        --v9; /*0x5d4b8f*/
-        --v11; /*0x5d4b90*/
-        if ( v9 < (gamemd::CampaignScore *)(a3) ) /*0x5d4b95*/
-          goto LABEL_17; /*0x5d4b95*/
-      }
-      goto LABEL_18; /*0x5d4b8d*/
-    }
-  }
-  else
-  {
-    v9 = (gamemd::CampaignScore *)(a3);
-    if ( a3 <= (int)(v8) ) /*0x5d4b59*/
-    {
-      v10 = (wchar_t *)(&aP1[a3 - 1]);
-      while ( !*v10 || *v10 > 0x20u ) /*0x5d4b6b*/
-      {
-        ++v9; /*0x5d4b6d*/
-        ++v10; /*0x5d4b6e*/
-        if ( v9 > (gamemd::CampaignScore *)(int)(v8) ) /*0x5d4b73*/
-          goto LABEL_17; /*0x5d4b73*/
-      }
-      goto LABEL_18; /*0x5d4b6b*/
-    }
-  }
-LABEL_17: v9 = (gamemd::CampaignScore *)(a3);
-LABEL_18:
-  if ( a0 ) /*0x5d4b9f*/
-  {
-    qmemcpy(a0, aP1, 2 * v9); /*0x5d4baf*/
-    v6 = (wchar_t *)(aP1); /*0x5d4bb3*/
-    a0[v9] = 0; /*0x5d4bbc*/
-  }
-  memcpy(v6, &v6[v9], 2 * (v7 + 0x7FFFFFFF * v9) + 2); /*0x5d4bdc*/
-return (int)v9; /*0x5d4b2b*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D4B20)
 }
 }
 // 0x7B73F0
 namespace gamemd {
 AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
 {
-
-  void **v3; // ebx
-  const wchar_t *v4; // edi
-  wchar_t *v5; // esi
-  wchar_t *v6; // eax
-  size_t v7; // ebp
-  wchar_t *v8; // ebx
-  wchar_t *v9; // eax
-  wchar_t *v10; // ebx
-  int v11; // edi
-  wchar_t *v12; // eax
-  wchar_t *v13; // ebp
-  int v14; // ebx
-  wchar_t *v15; // eax
-  const wchar_t *v16; // edi
-  int v17; // eax
-  unsigned short *v18; // eax
-  size_t v20; // [esp+Ch] [ebp-Ch]
-  wchar_t *v22; // [esp+14h] [ebp-4h]
-
-  v3 = (void **)this; /*0x7b73f4*/
-  v4 = *(const wchar_t **)this; /*0x7b73f8*/
-  v5 = 0; /*0x7b73fa*/
-  if ( !*(unsigned int *)this ) /*0x7b73f8*/
-  {
-    v4 = (const wchar_t *)(&g_TypeClass_DefaultString);
-    if ( !&g_TypeClass_DefaultString ) /*0x7b740b*/
-      goto LABEL_33; /*0x7b740b*/
-  }
-  while ( *v4 ) /*0x7b7416*/
-  {
-    v6 = (wchar_t *)(wcsstr(v4, aP1));
-    v22 = v6; /*0x7b742a*/
-    if ( !v6 ) /*0x7b7430*/
-    {
-      if ( v4 ) /*0x7b7521*/
-      {
-        v13 = v5; /*0x7b7524*/
-        v14 = wcslen(v4) + 1; /*0x7b7530*/
-        if ( v5 ) /*0x7b7533*/
-          v14 += wcslen(v5); /*0x7b753e*/
-        v15 = (wchar_t *)__2_YAPAXI_Z(4 * v14); /*0x7b7548*/
-        v5 = v15; /*0x7b7550*/
-        if ( v13 ) /*0x7b7554*/
-          wcscpy(v15, v13); /*0x7b7558*/
-        else
-          *v15 = 0; /*0x7b7562*/
-        wcscat(v5, v4); /*0x7b7569*/
-        if ( v13 ) /*0x7b7573*/
-          __3_YAXPAX_Z(v13); /*0x7b7576*/
-      }
-      break; /*0x7b7576*/
-    }
-    v7 = (char *)v6 - (char *)v4; /*0x7b7438*/
-    if ( v6 != v4 ) /*0x7b743a*/
-    {
-      v8 = v5; /*0x7b743f*/
-      v20 = v7 + 1; /*0x7b7443*/
-      if ( v5 ) /*0x7b7447*/
-        v20 += wcslen(v5); /*0x7b7458*/
-      v9 = (wchar_t *)__2_YAPAXI_Z(4 * v20); /*0x7b7468*/
-      v5 = v9; /*0x7b7470*/
-      if ( v8 ) /*0x7b7474*/
-        wcscpy(v9, v8); /*0x7b7478*/
-      else
-        *v9 = 0; /*0x7b7482*/
-      wcsncat(v5, v4, v7); /*0x7b748a*/
-      if ( v8 ) /*0x7b7494*/
-        __3_YAXPAX_Z(v8); /*0x7b7497*/
-    }
-    if ( String ) /*0x7b74a5*/
-    {
-      v10 = v5; /*0x7b74a8*/
-      v11 = wcslen(String) + 1; /*0x7b74b4*/
-      if ( v5 ) /*0x7b74b7*/
-        v11 += wcslen(v5); /*0x7b74c2*/
-      v12 = (wchar_t *)__2_YAPAXI_Z(4 * v11); /*0x7b74cc*/
-      v5 = v12; /*0x7b74d4*/
-      if ( v10 ) /*0x7b74d8*/
-        wcscpy(v12, v10); /*0x7b74dc*/
-      else
-        *v12 = 0; /*0x7b74e6*/
-      wcscat(v5, String); /*0x7b74ed*/
-      if ( v10 ) /*0x7b74f7*/
-        __3_YAXPAX_Z(v10); /*0x7b74fa*/
-    }
-    v4 = &v22[wcslen((const wchar_t *)(aP1))]; /*0x7b7513*/
-    if ( !v4 ) /*0x7b7518*/
-      break; /*0x7b7518*/
-  }
-  if ( !v5 ) /*0x7b7581*/
-  {
-    v3 = (void **)((const wchar_t *)((void **)this));
-LABEL_33: v16 = (const wchar_t *)((void **)(&g_TypeClass_DefaultString));
-    goto LABEL_35; /*0x7b758c*/
-  }
-  v3 = (void **)((gamemd::AbstractClass **)((void **)this));
-  v16 = (const wchar_t *)((gamemd::AbstractClass **)(v5));
-LABEL_35:
-  if ( *v3 ) /*0x7b7594*/
-    __3_YAXPAX_Z(*v3); /*0x7b759b*/
-  *v3 = 0; /*0x7b75a5*/
-  if ( v16 ) /*0x7b75ab*/
-    v17 = wcslen(v16) + 1; /*0x7b75b6*/
-  else
-    v17 = 1; /*0x7b75b9*/
-  v18 = (unsigned short *)__2_YAPAXI_Z(2 * v17); /*0x7b75c1*/
-  *v3 = v18; /*0x7b75c9*/
-  *v18 = 0; /*0x7b75cd*/
-  if ( v16 ) /*0x7b75d2*/
-    wcscpy((wchar_t *)*v3, v16); /*0x7b75d8*/
-  if ( v5 ) /*0x7b75e2*/
-    __3_YAXPAX_Z(v5); /*0x7b75e5*/
-  return (gamemd::AbstractClass **)(1); /*0x7b75ed*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B73F0)
 }
 }
 // 0x5DAC00
@@ -416,31 +245,7 @@ wchar_t ** WideString::Append2(wchar_t *aP1)
 namespace gamemd {
 wchar_t ** WideString::Append(CampaignScore * aP1, void *a2_1)
 {
-
-  wchar_t *v2; // ebp
-  wchar_t *v4; // esi
-  int v5; // edi
-  wchar_t *v6; // eax
-
-  v2 = (wchar_t *)*aP1; /*0x7b6b67*/
-  if ( *aP1 || (v2 = &g_TypeClass_DefaultString) != 0 ) /*0x7b6b76*/
-  {
-    v4 = (wchar_t *)((unsigned int)(*(wchar_t **)this));
-    v5 = (unsigned int)(wcslen(v2) + 1);
-    if ( v4 ) /*0x7b6b89*/
-      v5 += wcslen(v4); /*0x7b6b94*/
-    v6 = (wchar_t *)__2_YAPAXI_Z(4 * v5); /*0x7b6b9e*/
-    *(unsigned int *)this = (unsigned int)(v6); /*0x7b6ba6*/
-    if ( v4 ) /*0x7b6bab*/
-      wcscpy(v6, v4); /*0x7b6baf*/
-    else
-      *v6 = 0; /*0x7b6bb9*/
-    wcscat(*(wchar_t **)this, v2); /*0x7b6bc2*/
-    if ( v4 ) /*0x7b6bcc*/
-      __3_YAXPAX_Z(v4); /*0x7b6bcf*/
-  }
-  return (wchar_t **)this; /*0x7b6bd7*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B6B60)
 }
 } // namespace gamemd
 
@@ -498,51 +303,7 @@ wchar_t ** WideString::AssignConcat(wchar_t ** a2, wchar_t * String)
 namespace gamemd {
 wchar_t ** WideString::ConcatAlloc(wchar_t ** a1, ObjectClass * aP2)
 {
-
-  wchar_t *v4; // esi
-  int v5; // eax
-  wchar_t *v6; // ebp
-  wchar_t *v7; // ebx
-  int v8; // edi
-  wchar_t *v9; // eax
-  int v10; // eax
-  wchar_t *v11; // eax
-
-  v4 = 0; /*0x7b6cb4*/
-  if ( *(unsigned int *)this ) /*0x7b6cb6*/
-  {
-    v5 = wcslen(*(const wchar_t **)this); /*0x7b6cbd*/
-    v4 = (wchar_t *)__2_YAPAXI_Z(2 * v5 + 2); /*0x7b6cce*/
-    wcscpy(v4, *(const wchar_t **)this); /*0x7b6cd2*/
-  }
-  v6 = (wchar_t *)*aP2; /*0x7b6ce0*/
-  if ( *aP2 || (v6 = &g_TypeClass_DefaultString) != 0 ) /*0x7b6ced*/
-  {
-    v7 =(wchar_t *)v4; /*0x7b6cf0*/
-    v8 = wcslen(v6) + 1; /*0x7b6cfc*/
-    if ( v4 ) /*0x7b6cff*/
-      v8 += wcslen(v4); /*0x7b6d0a*/
-    v9 = (wchar_t *)__2_YAPAXI_Z(4 * v8); /*0x7b6d14*/
-    v4 = v9; /*0x7b6d1c*/
-    if ( v7 ) /*0x7b6d20*/
-      wcscpy(v9, v7); /*0x7b6d24*/
-    else
-      *v9 = 0; /*0x7b6d2e*/
-    wcscat(v4, v6); /*0x7b6d35*/
-    if ( v7 ) /*0x7b6d3f*/
-      __3_YAXPAX_Z(v7); /*0x7b6d42*/
-  }
-  *a1 = 0; /*0x7b6d51*/
-  if ( v4 ) /*0x7b6d58*/
-  {
-    v10 = wcslen(v4); /*0x7b6d5b*/
-    v11 = (wchar_t *)__2_YAPAXI_Z(2 * v10 + 2); /*0x7b6d65*/
-    *a1 = v11; /*0x7b6d6c*/
-    wcscpy(v11, v4); /*0x7b6d6e*/
-    __3_YAXPAX_Z(v4); /*0x7b6d74*/
-  }
-  return a1; /*0x7b6d7e*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B6CB0)
 }
 } // namespace gamemd
 

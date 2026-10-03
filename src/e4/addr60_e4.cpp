@@ -56,21 +56,7 @@ void sub_600AF0()
 namespace gamemd {
 int NavigateDialogTab(HWND hCtl, bool a2)
 {
-  HWND Parent; // eax
-  int result; // eax
-
-  Parent = GetParent(hCtl); /*0x600c77*/
-  result = (int)GetNextDlgTabItem(Parent, hCtl, a2); /*0x600c86*/
-  if ( (HWND)result == hCtl ) /*0x600c90*/
-  {
-    IDA_LOBYTE(result) = 0; /*0x600c9c*/
-  }
-  else
-  {
-    result = (int)SetFocus((HWND)result); /*0x600c93*/
-    IDA_LOBYTE(result) = 1; /*0x600c99*/
-  }
-  return result; /*0x600c8e*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x600C70)
 }
 }
 // 0x600CA0
@@ -161,20 +147,7 @@ unsigned int * sub_603E40(int a1, int a2)
 namespace gamemd {
 wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
 {
-  char *v4; // eax
-  wchar_t *StringCSF; // eax
-
-  v4 = (char *)(DlgSkirmishMenuProc(a2, a3));
-  if ( v4 ) /*0x604072*/
-  {
-    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)v4, 0,(const char *)(g_Str_File_ownrdraw_cpp), 1957));
-    ((WideString *)((WideString *)aP0))->Assign(StringCSF); /*0x60408a*/
-  }
-  else
-  {
-    ((WideString *)((WideString *)aP0))->Assign((wchar_t *)(&g_TypeClass_DefaultString)); /*0x60409c*/
-  }
-  return (wchar_t **)(aP0);
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x604060)
 }
 }
 // 0x6040B0
@@ -507,7 +480,7 @@ int sub_600A50()
 namespace gamemd {
 LRESULT globalHelper_003DD0(HWND hWnd, unsigned char a2)
 {
-  return SendMessageA(hWnd, 0x4E6u, 0, a2); /*0x603de5*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x603DD0)
 }
 } // namespace gamemd
 
@@ -523,12 +496,7 @@ wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void
 namespace gamemd {
 bool sub_60AA60(HWND hWnd, LPARAM)
 {
-  HWND Parent; // eax
-
-  Parent = GetParent(hWnd); /*0x60aa66*/
-  if ( IsValidActionDialog((int)Parent, hWnd) ) /*0x60aa70*/
-    SendMessageA(hWnd, 0x4EEu, 0, 0); /*0x60aa83*/
-  return 1; /*0x60aa8e*/
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60AA60)
 }
 } // namespace gamemd
 
@@ -536,16 +504,7 @@ bool sub_60AA60(HWND hWnd, LPARAM)
 namespace gamemd {
 BOOL E4Recv_60B740::sub_60B740(HWND hWnd)
 {
-
-  HWND Parent; // eax
-  struct tagRECT v4; // [esp+8h] [ebp-20h] BYREF
-  struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
-
-  Parent = GetParent((HWND)hWnd); /*0x60b748*/
-  GetWindowRect(Parent, &Rect); /*0x60b75a*/
-  GetWindowRect((HWND)hWnd, &v4); /*0x60b762*/
-  return MoveWindow((HWND)hWnd, v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0); /*0x60b791*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60B740)
 }
 } // namespace gamemd
 
@@ -561,6 +520,6 @@ void nullsub_31()
 namespace gamemd {
 LRESULT sub_60D520(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
-  return DefWindowProcA(hWnd, Msg, wParam, lParam); /*0x60d53a*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60D520)
 }
 } // namespace gamemd

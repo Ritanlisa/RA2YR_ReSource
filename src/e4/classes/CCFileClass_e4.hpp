@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class AudioController;  // G42.36 fwd supply
 
 struct CCFileClass {
 // --- flat members (BEGIN) ---
@@ -55,6 +56,7 @@ static int GetSize(...);  // C2597 interim stub
      _DWORD * Construct(char *Source);
     LONG Load();  // 0x595bc0
     int Reopen(char *Source, CHAR *a3);  // 0x47af10
+    AudioController * * Close(void * a1);
 };
 
 } // namespace gamemd

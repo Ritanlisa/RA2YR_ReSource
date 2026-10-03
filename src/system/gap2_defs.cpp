@@ -30,6 +30,7 @@
 #include "system/tactical.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
 
 // 0x0 (lnk)
 namespace gamemd { unsigned int Randomizer::Random() { return 0; } }
@@ -402,8 +403,9 @@ int TacticalClass::initTacticalMap(void* a1, void* a2) {
 
 // 0x4722C0
 namespace gamemd { 
-BOOL CellClass::HasContent() {
-  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x4722C0.json */
+BOOL CellClass::HasContent()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4722C0)
 }
 }
 
@@ -1510,8 +1512,9 @@ int LayerClass::Save(void* a1) {
 
 // 0x551B90
 namespace gamemd { 
-int LayerClass::Load(unsigned int * a2) {
-  return 0;  /* G42.33b2 restub: auto restub (pass4+, 13 errs): wrong-universe gap2 body; truth func_0x551B90.json */
+int LayerClass::Load(unsigned int * a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x551B90)
 }
 }
 
@@ -1917,8 +1920,9 @@ int CellClass::ProcessUpdate() {
 
 // 0x5AE100
 namespace gamemd { 
-int ScenarioClass::Load(ObjectClass * aP1) {
-  return 0;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x5AE100.json */
+int ScenarioClass::Load(ObjectClass * aP1)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5AE100)
 }
 }
 
@@ -2185,15 +2189,17 @@ void FileSystem::FlushTempFiles() {
 
 // 0x628110
 namespace gamemd { 
-void* FileSystem::openFile(int () {
-  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 22 errs): wrong-universe gap2 body; truth func_0x628110.json */
+void* FileSystem::openFile(int ()
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x628110)
 }
 }
 
 // 0x628170
 namespace gamemd { 
-void* FileSystem::closeFile(int * a2) {
-  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x628170.json */
+void* FileSystem::closeFile(int * a2)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x628170)
 }
 }
 
@@ -2422,22 +2428,25 @@ int TacticalClass::UpdateObjects() {
 
 // 0x65CA80
 namespace gamemd { 
-void* RawFileClass::Construct(RawFileClass * aP1) {
-  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 14 errs): wrong-universe gap2 body; truth func_0x65CA80.json */
+void* RawFileClass::Construct(RawFileClass * aP1)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CA80)
 }
 }
 
 // 0x65CAC0
 namespace gamemd { 
-void* FileClass::SetName(char * Source) {
-  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 11 errs): wrong-universe gap2 body; truth func_0x65CAC0.json */
+void* FileClass::SetName(char * Source)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CAC0)
 }
 }
 
 // 0x65CB50
 namespace gamemd { 
-int FileClass::Open2(const CHAR *a2) {
-  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+int FileClass::Open2(const CHAR *a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CB50)
 }
 }
 
@@ -3019,8 +3028,9 @@ int INIEntry::LookupByName() {
 
 // 0x74ffc0
 namespace gamemd { 
-bool VeterancyStruct::IsRookie() {
-  return false;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x74ffc0.json */
+bool VeterancyStruct::IsRookie()
+{
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x74ffc0)
 }
 }
 

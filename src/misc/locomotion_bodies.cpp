@@ -6,37 +6,9 @@
 
 namespace gamemd {
 // 0x55a9b0
-HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
-  char *v4; // ecx
-  char *v5; // ecx
-
-  if ( !ppv ) /*0x55a9b6*/
-    return -2147467261; /*0x55a9b8*/
-  *ppv = 0; /*0x55a9d9*/
-  if ( !memcmp((const void *)(iid), &IID_IUnknown, 0x10u) ) /*0x55a9df*/
-  {
-    if ( this ) /*0x55a9e5*/
-      v4 = &this->ILocomotion[4]; /*0x55a9e7*/
-    else
-      v4 = 0; /*0x55a9ec*/
-    *ppv = v4; /*0x55a9ee*/
-  }
-  if ( !memcmp((const void *)(iid), &IID_IPersistStream, 0x10u) ) /*0x55a9ff*/
-    *ppv = this; /*0x55aa03*/
-  if ( !memcmp(iid, &IID_ILocomotion, 0x10u) ) /*0x55aa13*/
-  {
-    if ( this ) /*0x55aa1a*/
-      v5 = &this->ILocomotion[4]; /*0x55aa1c*/
-    else
-      v5 = 0; /*0x55aa21*/
-    *ppv = v5; /*0x55aa23*/
-  }
-  if ( !memcmp((const void *)(iid), &IID_IPersist, 0x10u) ) /*0x55aa33*/
-    *ppv = this; /*0x55aa3a*/
-  if ( !*ppv ) /*0x55aa3c*/
-    return -2147467262; /*0x55aa41*/
-  (*(void (**)(LocomotionClass *))(*(unsigned int *)this->ILocomotion + 4))(this); /*0x55aa4c*/
-  return 0; /*0x55a9bd*/
+HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x55a9b0)
 }
 ULONG __stdcall LocomotionClass::AddRef() { return ++RefCount; }
 

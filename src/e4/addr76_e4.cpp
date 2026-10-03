@@ -87,6 +87,7 @@
 #include "e4/classes/Conflict_WorldDominationTour_12__e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
 #include "e4/classes/WDTObject_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x7636F0
 namespace gamemd {

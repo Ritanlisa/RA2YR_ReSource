@@ -116,6 +116,7 @@ struct ConvertClass {
     int ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8);
     unsigned int * Construct(int a2, int a3, int a4, int a5, char a6);
      double InitTables(...);  // C2597 interim stub
+    ConvertClass * * sub_4880F0(int a2);
 };
 
 } // namespace gamemd

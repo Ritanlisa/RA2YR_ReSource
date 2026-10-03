@@ -10,32 +10,14 @@
 namespace gamemd {
 void* CellStruct::Add(unsigned int *aP1, unsigned short *aP2)
 {
-
-  void * v3;
-  unsigned short *v5; // [esp+8h] [ebp+8h]
-
-  v3 = (short)(LOWORD((unsigned int)(this-)>field_0) + *(unsigned int *)(aP2));
-  HIWORD(v5) = HIWORD(this->field_0) + aP2[1]; /*0x42d522*/
-  LOWORD(v5) = (unsigned short)(v3); /*0x42d52b*/
-  *(unsigned int *)(aP1) = (unsigned int)(v5); /*0x42d534*/
-  return aP1; /*0x42d536*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x42D510)
 }
 }
 // 0x437F30
 namespace gamemd {
 unsigned int * CellStruct::Copy(void* aP1, void *a2_1)
 {
-
-  unsigned int * v3;
-  void *v4; // ecx
-
-  v3 = (unsigned int *)((int)((unsigned int *)(this->field_0)));
-  v4 = (unsigned int *)(this->field_4);
-  *(unsigned int *)(aP1) = (unsigned int)(v3); /*0x437f39*/
-  aP1[1] = v4; /*0x437f3b*/
-  return (unsigned int *)(aP1); /*0x437f3e*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x437F30)
 }
 }
 // 0x50E470

@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct TEventClass {
@@ -60,6 +61,7 @@ struct TEventClass {
     void * Fire(char a2);
     static double GetStateA(...);  // C2597 interim stub
     static double GetStateB_SpyEvent(...);  // C2597 interim stub
+    void * Fire(void ** Block, char a2);
 };
 
 } // namespace gamemd

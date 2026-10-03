@@ -110,14 +110,7 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
 namespace gamemd {
 unsigned int * Coord::ToCell(IUnknown * aP1)
 {
-
-  int v3; // [esp+0h] [ebp-4h]
-
-  LOWORD(v3) = *(unsigned int *)this->__pad_0 / 256; /*0x413a3f*/
-  HIWORD(v3) = *(unsigned int *)&this->Coord_field_0x2[2] / 256; /*0x413a53*/
-  *aP1 = v3; /*0x413a60*/
-  return (unsigned int *)(aP1); /*0x413a63*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x413A30)
 }
 }
 // 0x41C230
@@ -231,37 +224,7 @@ int Coord::Compare2D(unsigned short * a2, void *a2_2)
 namespace gamemd {
 void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 {
-
-  int v4; // ebx
-  int v5; // esi
-  int v7; // eax
-  int v8; // ebp
-  int v9; // eax
-  int v10; // ecx
-  int v11; // edi
-
-  v4 = *(int *)aP2; /*0x6557f7*/
-  v5 = ((int *)aP2)[1]; /*0x6557f9*/
-  LOWORD(v7) = Math::RoundToInt((double)(*aP2 + (*((unsigned int *)this + 1316) << 8) - v5) * *((float *)this + 1314) * 0.00390625); /*0x655820*/
-  v8 = v7; /*0x65582b*/
-  LOWORD(v9) = Math::RoundToInt((double)(v4 + v5 - (*((unsigned int *)this + 1318) << 8)) * *((float *)this + 1314) * 0.00390625); /*0x655848*/
-  if ( a4 ) /*0x655853*/
-  {
-    if ( v8 < 0 ) /*0x655857*/
-      v8 = 0; /*0x655859*/
-    v10 = *((unsigned int *)this + 1321); /*0x65585b*/
-    if ( v8 >= v10 ) /*0x655863*/
-      v8 = v10 - 1; /*0x655865*/
-    if ( v9 < 0 ) /*0x65586a*/
-      v9 = 0; /*0x65586c*/
-    v11 = *((unsigned int *)this + 1322); /*0x65586e*/
-    if ( v9 >= v11 ) /*0x655876*/
-      v9 = v11 - 1; /*0x655878*/
-  }
-  *aP1 = v8; /*0x655881*/
-  aP1[1] = v9; /*0x655883*/
-  return aP1; /*0x65587f*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6557F0)
 }
 }
 // 0x6D2140

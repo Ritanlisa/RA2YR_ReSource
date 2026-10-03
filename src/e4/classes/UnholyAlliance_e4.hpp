@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class MPCooperative;  // G42.36 fwd supply
 
 struct UnholyAlliance {
 // --- flat members (BEGIN) ---
@@ -14,6 +15,7 @@ struct UnholyAlliance {
     UnholyAlliance * QueryInterface(unsigned int * Block, char a2);
     char Read(void *a1, void *a2);
     char Seek(void *a1, void *a2, void *a3);
+    BOOL Write(MPCooperative * aP0);
 };
 
 } // namespace gamemd

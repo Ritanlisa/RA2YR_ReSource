@@ -19,17 +19,6 @@
 namespace gamemd {
 LRESULT OptionsDlgProcWOL_Assign(ObjectClass * aP0, WPARAM wParam, void ** a2)
 {
-  LRESULT v5; // esi
-  char *v6; // esi
-  LRESULT v7; // edi
-
-  v5 = SendMessageA((HWND)(aP0), 0x149u, wParam, 0); /*0x623fd9*/
-  if ( v5 <= 0 ) /*0x623fdd*/
-    ((DeleteAndZero*)a2)->Alt2(); /*0x623fe3*/
-  v6 = (char *)RA2_OPNEW(v5 + 2); /*0x623ff4*/
-  v7 = SendMessageA((HWND)(aP0), 0x4BDu, wParam, (LPARAM)v6); /*0x624000*/
-  ((String *)(a2))->Assign_Alt(v6); /*0x624007*/
-  RA2_OPDEL(v6); /*0x62400d*/
-  return v7; /*0x624017*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x623FC0)
 }
 } // namespace gamemd

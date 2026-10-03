@@ -21,26 +21,6 @@ float Float::Accumulate(float value, int index)
 namespace gamemd {
 float Float::SubtractClamped(BuildingTypeClass * aP1, IUnknown * aP2)
 {
-
-  int16_t v3; // fps
-  double v4; // st7
-  bool v5; // c0
-  char v6; // c2
-  bool v7; // c3
-  int result; // eax
-  double v9; // st6
-
-  v4 = *((float *)(unsigned int)(this)+ aP2); /*0x6c96b4*/
-  v5 = v4 < (double)(aP1); /*0x6c96b7*/
-  v6 = 0; /*0x6c96b7*/
-  v7 = v4 == (double)(aP1); /*0x6c96b7*/
-  LOWORD(result) = v3; /*0x6c96bb*/
-  if ( v4 >= (double)(aP1) ) /*0x6c96c0*/
-    v9 = *((float *)(unsigned int)(this)+ aP2) - aP1; /*0x6c96d7*/
-  else
-    v9 = *((float *)(unsigned int)(this)+ aP2) (unsigned int)(-)*((float *)this + aP2); /*0x6c96c8*/
-  *((float *)(unsigned int)(this)+ aP2) = v9; /*0x6c96ca*/
-  return result; /*0x6c96cd*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6C96B0)
 }
 } // namespace gamemd

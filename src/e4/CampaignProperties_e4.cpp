@@ -6,6 +6,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/VectorClass_flat_e4.hpp"  // G42.36 C2027 supply
 
 // 0x5D2770
 namespace gamemd {

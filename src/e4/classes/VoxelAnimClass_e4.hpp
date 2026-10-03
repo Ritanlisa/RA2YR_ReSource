@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 struct TagClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
@@ -698,7 +699,6 @@ struct VoxelAnimClass {
     unsigned int VoxelAnimClass_field_0x140;
     unsigned int *__pad_110;
     unsigned int Undeploy;
-    void* VoxelAnimClass_Update;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * GetFrameCount(int * a2);
     Coord * * ProcessAnim(int * a2, unsigned int * a3);
@@ -718,6 +718,9 @@ struct VoxelAnimClass {
     int StubReturnFalse(int a1);
     int ddtor(int a1, unsigned int * a2);
     unsigned int ProcessFrame();
+    int VoxelAnimClass_Update();
+    int Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
+    VoxelAnimClass * DrawVoxel(void * Block, char a2);
 };
 
 } // namespace gamemd

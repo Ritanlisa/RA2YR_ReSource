@@ -55,6 +55,7 @@ struct TriggerClass {
     static double NotifyLocalChanged(...);  // C2597 interim stub
     char EvaluateCondition(TriggerClass *a2, unsigned int *a3, char a4);  // 0x41e720
     int ProcessEvents();  // 0x726e00
+    int RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP1, int aP2, int a1, int aP0);
 };
 
 } // namespace gamemd

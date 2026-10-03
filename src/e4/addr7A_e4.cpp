@@ -43,6 +43,7 @@
 #include "e4/classes/StringVector_e4.hpp"
 #include "e4/classes/DynamicArray_e4.hpp"
 #include "e4/classes/GameLoop_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 
 // 0x7A0430
 namespace gamemd {

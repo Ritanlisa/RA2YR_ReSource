@@ -90,177 +90,42 @@ int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
 namespace gamemd {
 void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
 {
-
-  Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c65fc*/
-  if ( aP1 < 0 ) /*0x4c660a*/
-  {
-    *((unsigned char *)this + 2) = -1; /*0x4c6631*/
-    *(unsigned int *)this = 0; /*0x4c6635*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c663d*/
-    return this; /*0x4c6640*/
-  }
-  else
-  {
-    *((unsigned char *)this + 2) = (unsigned char)(aP1); /*0x4c6610*/
-    *(unsigned int *)this = a3; /*0x4c661a*/
-    *(unsigned int *)((unsigned char *)this + 7) = a4; /*0x4c661c*/
-    *((unsigned char *)this + 11) = a5; /*0x4c6620*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c6629*/
-    return this; /*0x4c661e*/
-  }
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C65E0)
 }
 }
 // 0x4C66C0
 namespace gamemd {
 int EventClass::AddEvent(int a2, unsigned __int8 a3)
 {
-
-  Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c66dc*/
-  if ( a2 < 0 ) /*0x4c66ea*/
-  {
-    *((unsigned char *)this + 2) = -1; /*0x4c6701*/
-    *(unsigned int *)this = 0; /*0x4c6705*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c670d*/
-    return (int)(this); /*0x4c6710*/
-  }
-  else
-  {
-    *((unsigned char *)this + 2) = a2; /*0x4c66ec*/
-    *(unsigned int *)this = a3; /*0x4c66ef*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c66f9*/
-    return (int)(this); /*0x4c66f7*/
-  }
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C66C0)
 }
 }
 // 0x4C6720
 namespace gamemd {
 int EventClass::Add2(int a3, unsigned __int8 aP1, int aP3)
 {
-
-  Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c673c*/
-  if ( aP1 < 0 ) /*0x4c674a*/
-  {
-    *((unsigned char *)this + 2) = -1; /*0x4c6767*/
-    *(unsigned int *)this = 0; /*0x4c676b*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6776*/
-    return (int)(this); /*0x4c6774*/
-  }
-  else
-  {
-    *((unsigned char *)this + 2) = (unsigned char)(aP1); /*0x4c6750*/
-    *(unsigned int *)this = a3; /*0x4c6753*/
-    *(unsigned int *)((unsigned char *)this + 7) = (unsigned int)(aP3); /*0x4c6755*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c675d*/
-    return (int)(this); /*0x4c6760*/
-  }
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C6720)
 }
 }
 // 0x4C6970
 namespace gamemd {
 int EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5)
 {
-
-  Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c698c*/
-  if ( aP1 < 0 ) /*0x4c699a*/
-  {
-    *((unsigned char *)this + 2) = -1; /*0x4c69c6*/
-    *(unsigned int *)this = 0; /*0x4c69ca*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c69d2*/
-    return (int)(this); /*0x4c69d5*/
-  }
-  else
-  {
-    *((unsigned char *)this + 2) = (unsigned char)(aP1); /*0x4c69a4*/
-    *(unsigned int *)this = a3; /*0x4c69ab*/
-    *(unsigned int *)((unsigned char *)this + 7) = (unsigned int)(aP3); /*0x4c69ad*/
-    *(unsigned int *)((unsigned char *)this + 11) = (unsigned int)(aP4); /*0x4c69b0*/
-    *(unsigned int *)((unsigned char *)this + 15) = (unsigned int)(aP5); /*0x4c69b3*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c69be*/
-    return (int)(this); /*0x4c69bc*/
-  }
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C6970)
 }
 }
 // 0x4C6AE0
 namespace gamemd {
 int EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6, void *a7_1, void *a8_1)
 {
-
-  ((Debug *)this)->Log(); /*0x4c6afc*/
-  if ( aP1 < 0 ) /*0x4c6b0a*/
-  {
-    *((unsigned char *)this + 2) = -1; /*0x4c6b49*/
-    *(unsigned int *)this = 0; /*0x4c6b4d*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6b58*/
-    return (int)(this); /*0x4c6b56*/
-  }
-  else
-  {
-    *((unsigned char *)this + 2) = (unsigned char)(aP1); /*0x4c6b14*/
-    *(unsigned int *)((unsigned char *)this + 11) = a5; /*0x4c6b1b*/
-    *(unsigned int *)this = a3; /*0x4c6b22*/
-    *(unsigned int *)((unsigned char *)this + 7) = a4; /*0x4c6b24*/
-    *(unsigned int *)((unsigned char *)this + 15) = arg10; /*0x4c6b27*/
-    *(unsigned short *)((unsigned char *)this + 19) = *a6; /*0x4c6b2d*/
-    *(unsigned short *)((unsigned char *)this + 21) = a6[1]; /*0x4c6b35*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6b3f*/
-    return (int)(this); /*0x4c6b42*/
-  }
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C6AE0)
 }
 }
 // 0x4C6CB0
 namespace gamemd {
 AbstractClass * * EventClass::ProcessEvent()
 {
-
-  void *v2; // ebx
-  int v3; // edi
-  BuildingClass *Building; // esi
-  BuildingClass *v5; // esi
-  TechnoClass *v6; // edi
-  void *v7; // eax
-  wchar_t *v8; // eax
-  unsigned char *v9; // esi
-  unsigned char *v10; // edi
-  unsigned int *v11; // eax
-  CellClass *v12; // eax
-  int16_t v13; // ax
-  int v14; // eax
-  AnimClass *v15; // eax
-  void **v16; // eax
-  AnimClass *v17; // eax
-  void **v18; // edi
-  int v19; // esi
-  int16_t v20; // dx
-  bool v21; // zf
-  void *v22; // eax
-  int v23; // esi
-  Team *v24; // edi
-  int v25; // ebx
-  int v26; // eax
-  int Object; // eax
-  void *v28; // eax
-  void *v29; // ebp
-  unsigned char *Member; // eax
-  unsigned char *v31; // ebp
-  int *v32; // ecx
-  int v33; // ebx
-  TechnoClass *v34; // ebp
-  FactoryClass *v35; // ecx
-  int v36; // ebx
-  BuildingLoadQueue *v37; // esi
-  void *Next; // eax
-  void *v39; // eax
-  void *v40; // ebx
-  int v41; // ebp
-  void *v42; // eax
-  int v43; // ebx
-  void *v44; // eax
-  FootClass *v45; ... [37047 chars total]
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C6CB0)
 }
 } // namespace gamemd
 
@@ -289,52 +154,7 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
 namespace gamemd {
 int EventClass::Enqueue(unsigned short a2, char a3)
 {
-
-  int result; // eax
-  int16_t v5; // si
-  int v6; // ecx
-
-  result = ChronoScreen::IsActive(); /*0x54f205*/
-  if ( (unsigned char)result ) /*0x54f20c*/
-    goto LABEL_19; /*0x54f20c*/
-  v5 = a2; /*0x54f217*/
-  if ( *((unsigned int *)((char *)&stru_A8EB00 + 440)) ) /*0x54f21d*/
-  {
-    if ( a2 != 27 ) /*0x54f223*/
-      goto LABEL_19; /*0x54f223*/
-  }
-  Memory_Helper(a2, a3); /*0x54f237*/
-  if ( (uint8_t)a2 != 1 && (uint8_t)a2 != 4 && (uint8_t)a2 != 2 && (uint8_t)a2 != 10 ) /*0x54f259*/
-  {
-    if ( (((uint16_t)EventClass::GetKeyStateSafe((unsigned char)((EventClass *)0x10)) >> 8) & 0x80u) != 0 ) /*0x54f268*/
-      v5 = a2 | 0x100; /*0x54f26a*/
-    if ( (((uint16_t)EventClass::GetKeyStateSafe((unsigned char)((EventClass *)0x11)) >> 8) & 0x80u) != 0 ) /*0x54f27d*/
-      v5 |= 0x200u; /*0x54f27f*/
-    result = EventClass::GetKeyStateSafe((unsigned char)((EventClass *)0x12)); /*0x54f28a*/
-    if ( (result & 0x8000) != 0 ) /*0x54f292*/
-    {
-      if ( v5 == 9 ) /*0x54f298*/
-      {
-LABEL_19:
-        LOBYTE(result) = 1; /*0x54f2d7*/
-        return result; /*0x54f2dc*/
-      }
-      v5 |= 0x400u; /*0x54f29a*/
-    }
-  }
-  if ( a3 ) /*0x54f2a2*/
-    v5 |= 0x800u; /*0x54f2a4*/
-  v6 = *(unsigned int *)&this->__pad_58[704]; /*0x54f2aa*/
-  result = (v6 + 1) % 256; /*0x54f2c0*/
-  if ( result != *(unsigned int *)&this->__pad_58[700] ) /*0x54f2c7*/
-  {
-    *(unsigned short *)&this->__pad_58[2 * v6 + 188] = v5; /*0x54f2c9*/
-    *(unsigned int *)&this->__pad_58[704] = result; /*0x54f2d1*/
-    goto LABEL_19; /*0x54f2d1*/
-  }
-  LOBYTE(result) = 0; /*0x54f2e1*/
-  return result; /*0x54f2d7*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x54F200)
 }
 }
 // 0x5F19C0
@@ -355,81 +175,7 @@ int EventClass::CheckFlag()
 namespace gamemd {
 AbstractClass * * EventClass::validateEventType()
 {
-
-  int v1; // ebx
-  int v3; // eax
-  int v4; // ecx
-  char *v5; // eax
-  int v6; // eax
-  int v7; // ecx
-  char *v8; // eax
-  Network *v9; // ecx
-  int v10; // eax
-  unsigned int *v11; // edx
-  int v13; // [esp+Ch] [ebp-Ch] BYREF
-  uint8_t v14[8]; // [esp+10h] [ebp-8h] BYREF
-
-  v1 = dword_A8E2CC; /*0x664444*/
-  if ( dword_A8E2CC == -1 ) /*0x664451*/
-  {
-    v3 = *(unsigned int *)this->__pad_10; /*0x664453*/
-    v4 = 0; /*0x664456*/
-    if ( v3 > 0 ) /*0x66445a*/
-    {
-      do /*0x66447c*/
-      {
-        v5 = *(char **)(this->EventClass_field_0x4 + 4 * v4); /*0x664461*/
-        if ( v5[41] && !v5[39] ) /*0x66446a*/
-        {
-          v1 = *v5; /*0x664470*/
-          v5[39] = 1; /*0x664473*/
-        }
-        ++v4; /*0x664479*/
-      }
-      while ( v4 < *(unsigned int *)this->__pad_10 ); /*0x66447c*/
-    }
-  }
-  else
-  {
-    v6 = *(unsigned int *)this->__pad_10; /*0x664480*/
-    v7 = 0; /*0x664483*/
-    if ( v6 > 0 ) /*0x664487*/
-    {
-      do /*0x6644a7*/
-      {
-        v8 = *(char **)(this->EventClass_field_0x4 + 4 * v7); /*0x66448e*/
-        v8[39] = *v8 == v1; /*0x664498*/
-        ++v7; /*0x6644a4*/
-      }
-      while ( v7 < *(unsigned int *)this->__pad_10 ); /*0x6644a7*/
-    }
-  }
-  if ( SessionClass::IsValidHouse((int)&dword_A8B238, 0) /*0x6644d2*/
-    || v1 == -1
-    || v1 != dword_A83D4C->Object_field_0x30
-    || dword_A8DA84 <= 2 )
-  {
-    return (gamemd::AbstractClass **)(v1); /*0x664526*/
-  }
-  v9 = 0; /*0x6644d4*/
-  v10 = 0; /*0x6644d6*/
-  if ( dword_A8DA84 > 0 ) /*0x6644db*/
-  {
-    v11 = (unsigned int *)(dword_A8DA78);
-    while ( *(unsigned int *)(*v11 + 111) != v1 ) /*0x6644e8*/
-    {
-      ++v10; /*0x6644ea*/
-      ++v11; /*0x6644eb*/
-      if ( v10 >= dword_A8DA84 ) /*0x6644f0*/
-        goto LABEL_23; /*0x6644f0*/
-    }
-    v9 = (Network *)(((unsigned int *)(dword_A8DA78))[v10] + 40); /*0x6644fd*/
-  }
-LABEL_23:
-  ((Network *)(v9))->CopyAddress((unsigned int *)(&v13), (int)v14); /*0x664500*/
-  LaunchMultiplayerHost((bool *)this, v14); /*0x664516*/
-  return (gamemd::AbstractClass **)(v1); /*0x66451c*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x664440)
 }
 }
 // 0x40B6A0
@@ -656,22 +402,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
 namespace gamemd {
 DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x40bc13*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40bc16*/
-  if ( v3 && BYTE1(Block->q00C) ) /*0x40bc20*/
-  {
-    __3_YAXPAX_Z(v3); /*0x40bc28*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40bc30*/
-  }
-  BYTE1(Block->q00C) = 0; /*0x40bc3b*/
-  Block->q008 = 0; /*0x40bc41*/
-  if ( (a2 & 1) != 0 ) /*0x40bc48*/
-    __3_YAXPAX_Z(Block); /*0x40bc4b*/
-  return Block->__pad_0; /*0x40bc55*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x40BC10)
 }
 } // namespace gamemd
 

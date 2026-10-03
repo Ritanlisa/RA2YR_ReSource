@@ -47,6 +47,10 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/CampaignClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/CheckListClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ColorListClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x4880F0
 namespace gamemd {

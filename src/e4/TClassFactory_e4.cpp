@@ -24,60 +24,21 @@
 namespace gamemd {
 int TClassFactory_CampaignClass::GetClassName()
 {
-
-  LONG v1; // esi
-  volatile LONG *Block; // [esp+Ch] [ebp+4h]
-
-  v1 = InterlockedDecrement(Block + 1); /*0x6c0270*/
-  if ( !v1 ) /*0x6c0274*/
-    __3_YAXPAX_Z((void *)Block); /*0x6c0277*/
-  return v1; /*0x6c0281*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6C0260)
 }
 } // namespace gamemd
 // 0x6C4D60
 namespace gamemd {
 int TClassFactory_MechLocomotionClass::GetClassName()
 {
-
-  LONG v1; // esi
-  volatile LONG *Block; // [esp+Ch] [ebp+4h]
-
-  v1 = InterlockedDecrement(Block + 1); /*0x6c4d70*/
-  if ( !v1 ) /*0x6c4d74*/
-    __3_YAXPAX_Z((void *, unsigned int a3, unsigned int a4)Block); /*0x6c4d77*/
-  return v1; /*0x6c4d81*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6C4D60)
 }
 } // namespace gamemd
 // 0x6C0290
 namespace gamemd {
 int TClassFactory_CampaignClass::ddtor(int a2, int a3, unsigned int *a4, int a1)
 {
-
-  CampaignClass *v5; // eax
-  int (***v6)(unsigned int, unsigned int *, unsigned int *); // eax
-  int (***v7)(unsigned int, unsigned int *, unsigned int *); // esi
-  int v8; // edi
-  unsigned int *v9; // [esp+18h] [ebp+10h]
-
-  if ( !v9 ) /*0x6c0298*/
-    return -2147024809; /*0x6c029b*/
-  *v9 = 0; /*0x6c02a8*/
-  if ( a3 ) /*0x6c02b0*/
-    return -2147221232; /*0x6c02b3*/
-  v5 = (CampaignClass *)__2_YAPAXI_Z(0x3A0u); /*0x6c02c1*/
-  if ( !v5 ) /*0x6c02cb*/
-    return -2147024882; /*0x6c02cb*/
-  v6 = (int (***)(unsigned int, unsigned int *, unsigned int *))CampaignClass::CampaignClass(v5, 0); /*0x6c02d1*/
-  v7 = v6; /*0x6c02d6*/
-  if ( !v6 ) /*0x6c02da*/
-    return -2147024882; /*0x6c02dd*/
-  v8 = (**v6)((unsigned int)v6, a4, v9); /*0x6c02f1*/
-  if ( v8 < 0 ) /*0x6c02f5*/
-    ((void (*)(int (***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c02fd*/
-  return v8; /*0x6c029a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6C0290)
 }
 } // namespace gamemd
 // 0x6C0310
@@ -103,41 +64,14 @@ int TClassFactory_CampaignClass::GetSize(int a2, int a1, int a3, int a4)
 namespace gamemd {
 LONG TClassFactory_MechLocomotionClass::AddRef(void *a1)
 {
-
-  int v2; // [esp+4h] [ebp+4h]
-
-  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c4d4e*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6C4D40)
 }
 } // namespace gamemd
 // 0x6C4D90
 namespace gamemd {
 int TClassFactory_MechLocomotionClass::ddtor(int a2, int a3, unsigned int *a4)
 {
-
-  MechLocomotionClass *v5; // eax
-  int (***v6)(unsigned int, unsigned int *, unsigned int *); // eax
-  int (***v7)(unsigned int, unsigned int *, unsigned int *); // esi
-  int v8; // edi
-  unsigned int *v9; // [esp+18h] [ebp+10h]
-
-  if ( !v9 ) /*0x6c4d98*/
-    return -2147024809; /*0x6c4d9b*/
-  *v9 = 0; /*0x6c4da8*/
-  if ( a3 ) /*0x6c4db0*/
-    return -2147221232; /*0x6c4db3*/
-  v5 = (MechLocomotionClass *)__2_YAPAXI_Z(0x34u); /*0x6c4dbe*/
-  if ( !v5 ) /*0x6c4dc8*/
-    return -2147024882; /*0x6c4dc8*/
-  v6 = (int (***)(unsigned int, unsigned int *, unsigned int *))SmallFunc_5AFEF0(v5); /*0x6c4dcc*/
-  v7 = v6; /*0x6c4dd1*/
-  if ( !v6 ) /*0x6c4dd5*/
-    return -2147024882; /*0x6c4dd8*/
-  v8 = (**v6)((unsigned int)v6, a4, v9); /*0x6c4dec*/
-  if ( v8 < 0 ) /*0x6c4df0*/
-    ((void (*)(int (***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4df8*/
-  return v8; /*0x6c4d9a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6C4D90)
 }
 } // namespace gamemd
 // 0x6C4E10

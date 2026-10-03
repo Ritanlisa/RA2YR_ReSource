@@ -6,6 +6,45 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class FindOwner;  // G42.36 fwd supply
+class CreateInstance;  // G42.36 fwd supply
+class IsAboveScreenMargin;  // G42.36 fwd supply
+class GetCell;  // G42.36 fwd supply
+class GetZAboveGround;  // G42.36 fwd supply
+class SetDeployState;  // G42.36 fwd supply
+class BuildingTypeClass;  // G42.36 fwd supply
+class ComputeScreenYOffset;  // G42.36 fwd supply
+class GetWidth;  // G42.36 fwd supply
+class InputThunkB;  // G42.36 fwd supply
+class InputThunkA;  // G42.36 fwd supply
+class GetStateFlag;  // G42.36 fwd supply
+class COMStub_108;  // G42.36 fwd supply
+class GetCoordsThunk2;  // G42.36 fwd supply
+class GetMember06;  // G42.36 fwd supply
+class ObjectClass_GetTypeVt41_2;  // G42.36 fwd supply
+class ObjectClass_GetTypeVt40_2;  // G42.36 fwd supply
+class FindPlacementPosition;  // G42.36 fwd supply
+class TabClass;  // G42.36 fwd supply
+class ToggleSidebarDisplay;  // G42.36 fwd supply
+class CleanupSidebarResources;  // G42.36 fwd supply
+class SidebarClass;  // G42.36 fwd supply
+class GetBoundingSize;  // G42.36 fwd supply
+class UpdateProductionDisplay;  // G42.36 fwd supply
+class LONG;  // G42.36 fwd supply
+class LPARAM;  // G42.36 fwd supply
+class Destroy2;  // G42.36 fwd supply
+class Size;  // G42.36 fwd supply
+class RenderPreview;  // G42.36 fwd supply
+class GetBoundsRect;  // G42.36 fwd supply
+class DropAsBomb_Track;  // G42.36 fwd supply
+class ObjectClass_GetTypeVt41_0;  // G42.36 fwd supply
+class ObjectClass_GetTypeVt40_0;  // G42.36 fwd supply
+class BuildTransform;  // G42.36 fwd supply
+class ObjectClass_IsHeightAboveThreshold_0;  // G42.36 fwd supply
+class FindPlacementCell;  // G42.36 fwd supply
+class CheckCellFlags;  // G42.36 fwd supply
+class ProcessMapEvents;  // G42.36 fwd supply
+class EnableOnce;  // G42.36 fwd supply
 
 struct AudioChannel;
 struct CampaignScore;
@@ -411,6 +450,12 @@ struct MSShapeAnim {
     void* vfptr;
     unsigned int u32_7;  // 0x7
     void* vftable;  // 0x0 (no offset truth)
+    int EnableOnce(char aP1);
+    MSShapeAnim * * initTrigger(char **aP1, int aP2, int a4, int a5, int a6, int a7, int aP7);
+    void ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char a6);
+    unsigned int * processTrigger(int a2, int a3);
+    unsigned int * checkCondition(int aP1, int aP2);
+    int executeActions(int a2, void *a2_2);
 };
 #endif  // GAMEMD_TREE_UNIVERSE (MSShapeAnim)
 
@@ -512,8 +557,6 @@ struct ObjectClass {
     unsigned int lastLayer;  // 0x94
     bool isInLogic;  // 0x98
     void* unknown_libname_74;  // 0x0 (no offset truth)
-    void* unknown_libname_73;  // 0x0 (no offset truth)
-    void* unknown_libname_35;  // 0x0 (no offset truth)
     void* unknown_libname_27;  // 0x0 (no offset truth)
     static int sub_770E70(void *aP0, ObjectClass * aP1, ObjectClass * aP2, ObjectClass, void * aP3);  // A_c2039 R5 static-form sync
     static int sub_550080(void *aP0, ObjectClass ** Block);  // A_c2039 R5 static-form sync
@@ -521,9 +564,6 @@ struct ObjectClass {
     char sub_47A1B0(DWORD BytesReturned);  // A_c2039 R5 static-form sync
     void* Constructor;  // 0x0 (no offset truth)
     void sub_47A080(DWORD a2);  // A_c2039 R5 static-form sync
-    void* nullsub_86;  // 0x0 (no offset truth)
-    void* nullsub_7;  // 0x0 (no offset truth)
-    void* nullsub_5;  // 0x0 (no offset truth)
     void* nullsub_126;  // 0x0 (no offset truth)
     void* j_DeleteAndZero;  // 0x0 (no offset truth)
     static int SaveToStream_Common(void *aP0, IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2);  // A_c2039 R5 static-form sync
@@ -532,9 +572,7 @@ struct ObjectClass {
     void* IsCliffWall;  // 0x0 (no offset truth)
     void* IsBelowScreen;  // 0x0 (no offset truth)
     static int HasLinkedObject(int aP0);  // A_c2039 R5 static-form sync
-    void* GetMember09;  // 0x0 (no offset truth)
     static int DrawPowerBarForPlayers(void *aP0, HWND hDlg);  // A_c2039 R5 static-form sync
-    void* Deploy;  // 0x0 (no offset truth)
     static int CreateUnitOnCompletion(void *aP0, void * aP1);  // A_c2039 R5 static-form sync
     bool isVisible;  // 0x99
     unsigned char alignmentPadding99;  // 0x9A
@@ -588,6 +626,89 @@ struct ObjectClass {
     int Undeploy();  // 0x5f4d30
     char SetReference(int a2);  // 0x5f5b50
     unsigned char ShapeButtonClass_field_0x08;  // 0x8
+    void sub_550080(ObjectClass ** Block);
+    int DrawPowerBarForPlayers(HWND hDlg);
+    void unknown_libname_73();
+    gamemd::AbstractClass * * sub_7BC580(ObjectClass * aP1, double a3);
+    char _do_always_noconv_codecvt_base_std__MBE_NXZ_7();
+    void nullsub_7();
+    char _do_always_noconv_codecvt_base_std__MBE_NXZ_3();
+    void sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, void * aP3);
+    int CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, unsigned int * a5);
+    int LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm);
+    int SaveToStream_Common(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2);
+    void* * FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2, int a4, int a5, char a6);
+    void ObjectClass_IsHeightAboveThreshold_0();
+    gamemd::AbstractClass * * BuildTransform(unsigned int * a1, float * a2, unsigned int * a3);
+    void ObjectClass_GetTypeVt40_0();
+    void ObjectClass_GetTypeVt41_0();
+    void * checkLimbo();
+    int DropAsBomb_Track();
+    int GetBoundsRect();
+    gamemd::AbstractClass * * Deploy();
+    void sub_401580(void ** Block);
+    void sub_401B00(int * Block);
+    void sub_401FB0();
+    int sub_401FC0();
+    void sub_402020();
+    void sub_402430();
+    void * sub_402440(int a1, int a2);
+    char _do_always_noconv_codecvt_base_std__MBE_NXZ_20();
+    void nullsub_5();
+    void nullsub_28();
+    void nullsub_29();
+    void nullsub_86();
+    void nullsub_84();
+    gamemd::AbstractClass * * sub_764A20();
+    int sub_632A70(int a2, int a3, ObjectClass * aP3);
+    void nullsub_51();
+    void sub_403810(int ()(void));
+    void sub_4038E0(int64_t a2);
+    int sub_405490();
+    int sub_407160();
+    unsigned int * sub_408460(size_t Size);
+    void ** sub_40B010(void ** Block, char a2);
+    void nullsub_57();
+    ObjectClass * sub_40E4A0(void ** Block, char a2);
+    gamemd::AbstractClass * * Destroy2();
+    char sub_776670(LPARAM lParam);
+    LONG sub_777F90(HWND hWnd);
+    bool sub_77D350(ObjectClass * String1);
+    bool sub_77D3A0(ObjectClass * String1);
+    char _do_always_noconv_codecvt_base_std__MBE_NXZ_18();
+    void unknown_libname_35();
+    void nullsub_143();
+    void nullsub_69();
+    char _do_always_noconv_codecvt_base_std__MBE_NXZ_23();
+    int UpdateProductionDisplay();
+    int GetBoundingSize();
+    int resetObjectState(SidebarClass * aP1);
+    ConvertClass * * CleanupSidebarResources();
+    unsigned char ToggleSidebarDisplay(unsigned int * a0, TabClass * aP1, int a3, int _20, SidebarClass * a4, char a6);
+    void* FindPlacementPosition(int a2, int a3, int a4, int a5);
+    void ObjectClass_GetTypeVt40_2();
+    void ObjectClass_GetTypeVt41_2();
+    int GetMember06();
+    int GetCoordsThunk2();
+    int COMStub_108();
+    char GetStateFlag();
+    int GetMember09();
+    int InputThunkA();
+    int InputThunkB();
+    int GetWidth();
+    int updateMissionState(int a2);
+    unsigned int * ComputeScreenYOffset(BuildingTypeClass * aP0, unsigned int * a1);
+    char SetDeployState(ObjectClass * aP0, char a2);
+    int GetZAboveGround();
+    int GetCell();
+    int IsAboveScreenMargin();
+    int CreateInstance();
+    int checkHealth();
+    unsigned int * updateAnimation(char a2);
+    int FindOwner(unsigned int * a0, AnimClass * aP1);
+    int setTarget(int a2);
+    unsigned int * clearTarget(char a2);
+    unsigned int * loc_7A2E70(HWND hWnd, unsigned int a2, int a3, unsigned int a4);
 };
 #endif // GAMEMD_TREE_UNIVERSE
 
@@ -595,6 +716,7 @@ struct ObjectClass {
 struct ReferenceCounted {
     void* vfptr;
     unsigned char __pad_0;  // 0x0
+    int RenderPreview(void *aP0, HWND aP1);
 };
 #endif  // GAMEMD_TREE_UNIVERSE (ReferenceCounted)
 

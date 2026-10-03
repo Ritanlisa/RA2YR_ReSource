@@ -338,9 +338,7 @@ void Shutdown(void *a1_1)
 namespace gamemd {
 BOOL Audio::IsSoundEnabled()
 {
-
-  return g_Audio_Enabled != 0; /*0x40700d*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x407000)
 }
 } // namespace gamemd
 

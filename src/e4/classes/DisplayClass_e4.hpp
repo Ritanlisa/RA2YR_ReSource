@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class PowerClass;  // G42.36 fwd supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
@@ -502,6 +503,7 @@ struct DisplayClass {
     unsigned int * updateRenderState(char a2);
     void * Draw(int a2);
     void Update(int a2);
+    void Update(PowerClass * aP1, int a3, void *a3_2, void *a4);
 };
 
 } // namespace gamemd

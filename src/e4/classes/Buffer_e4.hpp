@@ -47,6 +47,7 @@ struct Buffer {
     int Cleanup();  // 0x42f7c0
     int UpdateVolumeSettings();  // 0x40A6D0 G42.33 b3 supplied-body sync
     char * FillCircularBufferScroll(int a2, int a3, unsigned short a4);  // 0x410ED0 G42.33 b3 supplied-body sync
+    _DWORD * Init(int a2, int Size, int aP2, int a3, int aP1);
 };
 
 } // namespace gamemd

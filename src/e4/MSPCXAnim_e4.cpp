@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x5CEAB0
 namespace gamemd {
@@ -21,89 +22,14 @@ int MSPCXAnim::Stub()
 namespace gamemd {
 AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
 {
-
-  unsigned int *v4; // ebx
-  int v5; // eax
-  unsigned int *v6; // edi
-  int m_8; // ecx
-  int v8; // eax
-  int v9; // edx
-  int v10; // eax
-
-  if ( a2 ) /*0x5d09cc*/
-  {
-    v4 = a3; /*0x5d09d2*/
-    LOBYTE(this->m_C) = 0; /*0x5d09d6*/
-    if ( a3 ) /*0x5d09dc*/
-    {
-      v6 = a3; /*0x5d0a04*/
-    }
-    else
-    {
-      v5 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x5d09e6*/
-      if ( v5 ) /*0x5d09f0*/
-        v6 = (unsigned int *)v5; /*0x5d09f5*/
-      else
-        v6 = 0; /*0x5d09fd*/
-    }
-    LOBYTE(this->m_C) = 1; /*0x5d0a0c*/
-    if ( !v6 ) /*0x5d0a10*/
-      return 0; /*0x5d0a90*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x5d0a12*/
-    {
-      m_8 = this->m_8; /*0x5d0a19*/
-      if ( a2 < m_8 ) /*0x5d0a1e*/
-        m_8 = a2; /*0x5d0a20*/
-      v8 = 0; /*0x5d0a22*/
-      if ( m_8 > 0 ) /*0x5d0a26*/
-      {
-        do /*0x5d0a3e*/
-        {
-          v9 = *(unsigned int *)&this->m_1[3]; /*0x5d0a28*/
-          ++v8; /*0x5d0a2b*/
-          v6[2 * v8 - 2] = *(unsigned int *)(v9 + 8 * v8 - 8); /*0x5d0a32*/
-          v6[2 * v8 - 1] = *(unsigned int *)(v9 + 8 * v8 - 4); /*0x5d0a3a*/
-        }
-        while ( v8 < m_8 ); /*0x5d0a3e*/
-        v4 = a3; /*0x5d0a40*/
-      }
-      if ( BYTE1(this->m_C) ) /*0x5d0a44*/
-      {
-        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5d0a4f*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x5d0a57*/
-      }
-    }
-    *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x5d0a60*/
-    this->m_8 = a2; /*0x5d0a68*/
-    BYTE1(this->m_C) = v4 == 0; /*0x5d0a6b*/
-  }
-  else
-  {
-    (*(void (**)(_DynamicVectorClass_VPoint2D *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d0a74*/
-  }
-  v10 = this->m_8; /*0x5d0a77*/
-  if ( v10 < this->m_10 ) /*0x5d0a7f*/
-    this->m_10 = v10; /*0x5d0a81*/
-  return (gamemd::AbstractClass **)(1); /*0x5d0a84*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D09C0)
 }
 }
 // 0x5CED70
 namespace gamemd {  // G42.18c ns repair
 MSPCXAnim * MSPCXAnim::QueryInterface(char a2, int a3)
 {
-
-  void (***v3)(unsigned int, int); // ecx
-
-  v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 9); /*0x5ced73*/
-  *(unsigned int *)Block->__pad_0 = &vt_MSPCXAnim; /*0x5ced76*/
-  if ( v3 ) /*0x5ced7e*/
-    (**v3)((unsigned int)v3, 1); /*0x5ced84*/
-  *(unsigned int *)Block->__pad_0 = &vt_MSAnim; /*0x5ced8a*/
-  if ( (a2 & 1) != 0 ) /*0x5ced92*/
-    __3_YAXPAX_Z(this); /*0x5ced95*/
-  return this->__pad_0; /*0x5ced9f*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5CED70)
 }
 }  // G42.18c ns repair
 // 0x5D05A0
@@ -981,22 +907,7 @@ int MSPCXAnim_26::FindIndex_1(unsigned int * a2)
 namespace gamemd {
 DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x5d1713*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d1716*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d1720*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5d1728*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d1730*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x5d173b*/
-  Block->m_8 = 0; /*0x5d1741*/
-  if ( (a2 & 1) != 0 ) /*0x5d1748*/
-    __3_YAXPAX_Z(Block); /*0x5d174b*/
-  return Block->__pad_0; /*0x5d1755*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D1710)
 }
 } // namespace gamemd
 

@@ -6,6 +6,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class DTOR;  // G42.36 fwd supply
+class Block;  // G42.36 fwd supply
 struct Color;  // fix_fwd_type_supply
 struct SHPStruct;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
@@ -1109,6 +1111,8 @@ struct InfantryTypeClass {
     unsigned int * Constructor_523980(ObjectTypeClass * aP1);
     unsigned int * CopyDataArray(unsigned int *aP1);
     unsigned int * GetDefaultDimensions(unsigned int * a1);
+    InfantryTypeClass * ddtor(int Block, char a2);
+    int DTOR();
 };
 
 } // namespace gamemd

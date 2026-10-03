@@ -28,33 +28,7 @@
 namespace gamemd {
 int BombClass::AbstractClass()
 {
-
-  int v2; // eax
-
-  ((AbstractClass*)(gamemd::AbstractClass *)this)->Constructor(); /*0x4385d4*/
-  this->BombClass_field_54 = 0; /*0x4385de*/
-  this->vtable1 = &vt_BombClass; /*0x4385e1*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4385e7*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4385ee*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4385f5*/
-  this->BombClass_field_28 = 0; /*0x4385fc*/
-  this->BombClass_field_2C = 0; /*0x4385ff*/
-  this->BombClass_field_58 = 0; /*0x438602*/
-  ((AudioController*)(AudioController *)&(&this->audioController)[3])->Init(); /*0x438605*/
-  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 524); /*0x438615*/
-  if ( dword_89C678 < dword_89C670 /*0x43864a*/
-    || (byte_89C675 || !dword_89C670)
-    && dword_89C67C > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(dword_89C668 + 8))(
-         (int *)&dword_89C668,
-         dword_89C670 + dword_89C67C,
-         0) )
-  {
-    v2 = (unsigned int)(dword_89C678++);
-    *((unsigned int *)dword_89C66C + v2) = (unsigned int)(this); /*0x438666*/
-  }
-  return (int)this; /*0x43866b*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4385D0)
 }
 } // namespace ra2
 
@@ -97,37 +71,7 @@ int BombClass::TimeToExplode()
 namespace gamemd {
 int BombClass::Stat(int * a2)
 {
-
-  int v3; // edx
-  int BombClass_field_28; // eax
-  int v5; // eax
-  int v6; // eax
-  int v7; // eax
-  int BombClass_field_2C; // eax
-  int v9; // eax
-
-  ((AbstractClass *)(gamemd::AbstractClass *)this)->ProcessPower(); /*0x438a99*/
-  BombClass_field_28 = (int)(this->BombClass_field_28); /*0x438a9e*/
-  if ( BombClass_field_28 ) /*0x438aa3*/
-  {
-    v5 = (*(int (**)(int))(*(unsigned int *)(BombClass_field_28 + 4) + 16))(BombClass_field_28 + 4); /*0x438aac*/
-    Power::TimerProcess(v5); /*0x438ab2*/
-  }
-  v6 = *(unsigned int *)this->__pad_24; /*0x438ab7*/
-  if ( v6 ) /*0x438abc*/
-  {
-    v7 = (*(int (**)(int))(*(unsigned int *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
-    Power::TimerProcess(v7); /*0x438acb*/
-  }
-  BombClass_field_2C = (int)(this->BombClass_field_2C);
-  if ( BombClass_field_2C ) /*0x438ad5*/
-  {
-    v9 = (*(int (**)(int))(*(unsigned int *)(BombClass_field_2C + 4) + 16))(BombClass_field_2C + 4); /*0x438ade*/
-    Power::TimerProcess(v9); /*0x438ae4*/
-  }
-  LOBYTE(v3) = this->BombClass_field_58; /*0x438ae9*/
-  return ((Power *)((Power *)a2))->FlagProcess(v3); /*0x438af4*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x438A90)
 }
 } // namespace ra2
 
@@ -178,28 +122,7 @@ int BombClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
 {
-
-  int Prefix_0; // edi
-
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)aP0, (gamemd::AbstractClass *)aP1); /*0x438b51*/
-  if ( Prefix_0 >= 0 ) /*0x438b55*/
-  {
-    if ( aP0 ) /*0x438b59*/
-    {
-      AbstractClass::InitVtables((gamemd::AbstractClass *)aP0, (int)&aP1); /*0x438b62*/
-      aP0->vtable1 = &vt_BombClass; /*0x438b67*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_BombClass); /*0x438b6d*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_BombClass); /*0x438b74*/
-      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_BombClass); /*0x438b7b*/
-    }
-    AudioController::Init((AudioController *)&aP0->audioController[3]); /*0x438b85*/
-    aP0->BombClass_field_54 = 0; /*0x438b8d*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->BombClass_field_28); /*0x438b9a*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0->__pad_24); /*0x438ba8*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->BombClass_field_2C); /*0x438bb6*/
-  }
-  return Prefix_0; /*0x438bbd*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x438B40)
 }
 } // namespace gamemd
 
@@ -217,30 +140,6 @@ int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 namespace gamemd {
 BombClass * BombClass::CopyTo(char a2)
 {
-
-  int v3; // eax
-  BombClass *v5; // [esp+4h] [ebp-4h] BYREF
-
-  this->vtable1 = &vt_BombClass; /*0x4393f7*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4393fd*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x439404*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x43940b*/
-  AudioFileClass::Release((AudioFileClass *)&this->audioController[3]); /*0x439412*/
-  v5 = (gamemd::BombClass *)(this); /*0x439427*/
-  v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))((int *)&dword_89C668, &v5); /*0x43942b*/
-  if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
-  {
-    do /*0x43945e*/
-    {
-      ++v3; /*0x43944e*/
-      *((unsigned int *)dword_89C66C + v3 - 1) = *((unsigned int *)dword_89C66C + v3); /*0x439452*/
-    }
-    while ( v3 < dword_89C678 ); /*0x43945e*/
-  }
-  ((AbstractClass*)((gamemd::AbstractClass *)this))->DTOR(); /*0x439462*/
-  if ( (a2 & 1) != 0 ) /*0x43946c*/
-    __3_YAXPAX_Z(this); /*0x43946f*/
-  return this; /*0x439479*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4393F0)
 }
 } // namespace gamemd

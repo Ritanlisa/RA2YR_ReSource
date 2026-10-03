@@ -11,6 +11,7 @@ using ra2::game::AbstractClass;
 // no-file FAIL family; bodies are cache-verbatim transforms.
 #include "structure/building.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/ParticleTypeClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x45ECA0
 namespace gamemd {

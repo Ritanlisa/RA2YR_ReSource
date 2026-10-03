@@ -107,28 +107,9 @@ LoadOptions::~LoadOptions() {
 
 // IDA 0x558790: LoadOptions::Cleanup
 // 0x558790
-int LoadOptions::Cleanup() {
-  int v2; // edi
-  int v3; // edx
-  char *p_is_active; // esi
-  int result; // eax
-
-  v2 = (unsigned int)(0);
-  for ( this->extension = (const char *)(void *)&LoadOptionsClass_vftable; v2 < this->capacity; ++v2 ) /*0x5587a4*/
-    RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)(this) + 0x22)[2] + 4 * v2)); /*0x5587ad*/
-  v3 = *(unsigned int *)&this->is_active; /*0x5587bd*/
-  p_is_active = (char *)(&this->is_active); /*0x5587c0*/
-  (*(void (**)(char *))(v3 + 12))(p_is_active); /*0x5587c5*/
-  result = *((unsigned int *)p_is_active + 1); /*0x5587c8*/
-  *(unsigned int *)p_is_active = (unsigned int)((void *)&VectorClass_FileEntryClass___vftable); /*0x5587cb*/
-  if ( result && p_is_active[13] ) /*0x5587d5*/
-  {
-    RA2_OPDEL((void *)result); /*0x5587db*/
-    *((unsigned int *)p_is_active + 1) = 0; /*0x5587e3*/
-  }
-  p_is_active[13] = 0; /*0x5587e6*/
-  *((unsigned int *)p_is_active + 2) = 0; /*0x5587e9*/
-  return; /*0x5587ec*/
+int LoadOptions::Cleanup()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x558790)
 }
 // IDA 0x55A0D0: VT00_Destroy (QueryInterface destructor)
 void LoadOptions::VT00_Destroy(char free_self) {
@@ -154,214 +135,14 @@ int LoadOptions::Run() {
   return result;
 }
 // 0x559c20
-char LoadOptions::Check() {
-  char v2; // bl
-  const char *v3; // eax
-  HANDLE FirstFileA; // edi
-  CHAR FileName[64]; // [esp+Ch] [ebp-33Ch] BYREF
-  unsigned short v7[128]; // [esp+4Ch] [ebp-2FCh] BYREF
-  char v8; // [esp+14Ch] [ebp-1FCh]
-  int v9; // [esp+16Ch] [ebp-1DCh]
-  int v10; // [esp+170h] [ebp-1D8h]
-  int16_t v11; // [esp+174h] [ebp-1D4h]
-  int v12; // [esp+1F4h] [ebp-154h]
-  int v13; // [esp+1F8h] [ebp-150h]
-  int v14; // [esp+1FCh] [ebp-14Ch]
-  char v15; // [esp+200h] [ebp-148h]
-  char v16; // [esp+201h] [ebp-147h]
-  int v17; // [esp+204h] [ebp-144h]
-  struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
-
-  v2 = 0; /*0x559c2f*/
-  v3 = *(const char **)&((unsigned char *)(this) + 0x4)[4]; /*0x559c31*/
-  v9 = 0; /*0x559c34*/
-  v10 = -1; /*0x559c42*/
-  v12 = -1; /*0x559c4d*/
-  v15 = 1; /*0x559c58*/
-  v16 = 0; /*0x559c60*/
-  v17 = 0; /*0x559c67*/
-  v7[0] = 0; /*0x559c6e*/
-  v8 = 0; /*0x559c73*/
-  v11 = 0; /*0x559c7a*/
-  v14 = 0; /*0x559c82*/
-  v13 = 0; /*0x559c89*/
-  sprintf(FileName, "*.%3s", v3); /*0x559c90*/
-  FirstFileA = FindFirstFileA(FileName, &FindFileData); /*0x559cab*/
-  if ( FirstFileA != (HANDLE)-1 ) /*0x559cb0*/
-  {
-    while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
-         || !_strcmpi(FindFileData.cFileName, MultiByteStr)
-         || (*((uint8_t (**)(LoadOptions *, unsigned short *, struct _WIN32_FIND_DATAA *))this->extension + 4))(
-              this,
-              v7,
-              &FindFileData) != 1
-         || v16 )
-    {
-      if ( !FindNextFileA(FirstFileA, &FindFileData) ) /*0x559d0a*/
-        goto LABEL_9; /*0x559d0a*/
-    }
-    v2 = 1; /*0x559d0e*/
-  }
-  LABEL_9:
-  FindClose(FirstFileA); /*0x559d10*/
-  return v2; /*0x559d17*/
+char LoadOptions::Check()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x559c20)
 }
 // 0x559c20
     char __thiscall LoadOptions::Check(const char **a1)
-    {
-      char v2; // bl
-      const char *v3; // eax
-      HANDLE FirstFileA; // edi
-      CHAR FileName[64]; // [esp+Ch] [ebp-33Ch] BYREF
-      unsigned short v7[128]; // [esp+4Ch] [ebp-2FCh] BYREF
-      char v8; // [esp+14Ch] [ebp-1FCh]
-      int v9; // [esp+16Ch] [ebp-1DCh]
-      int v10; // [esp+170h] [ebp-1D8h]
-      int16_t v11; // [esp+174h] [ebp-1D4h]
-      int v12; // [esp+1F4h] [ebp-154h]
-      int v13; // [esp+1F8h] [ebp-150h]
-      int v14; // [esp+1FCh] [ebp-14Ch]
-      char v15; // [esp+200h] [ebp-148h]
-      char v16; // [esp+201h] [ebp-147h]
-      int v17; // [esp+204h] [ebp-144h]
-      struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
-
-      v2 = 0; /*0x559c2f*/
-      v3 = *(const char **)&((unsigned char *)(this) + 0x4)[4]; /*0x559c31*/
-      v9 = 0; /*0x559c34*/
-      v10 = -1; /*0x559c42*/
-      v12 = -1; /*0x559c4d*/
-      v15 = 1; /*0x559c58*/
-      v16 = 0; /*0x559c60*/
-      v17 = 0; /*0x559c67*/
-      v7[0] = 0; /*0x559c6e*/
-      v8 = 0; /*0x559c73*/
-      v11 = 0; /*0x559c7a*/
-      v14 = 0; /*0x559c82*/
-      v13 = 0; /*0x559c89*/
-      sprintf(FileName, "*.%3s", v3); /*0x559c90*/
-      FirstFileA = FindFirstFileA(FileName, &FindFileData); /*0x559cab*/
-      if ( FirstFileA != (HANDLE)-1 ) /*0x559cb0*/
-      {
-        while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
-             || !_strcmpi(FindFileData.cFileName, MultiByteStr)
-             || (*((uint8_t (**)(LoadOptions *, unsigned short *, struct _WIN32_FIND_DATAA *))this->extension + 4))(
-                  this,
-                  v7,
-                  &FindFileData) != 1
-             || v16 )
-        {
-          if ( !FindNextFileA(FirstFileA, &FindFileData) ) /*0x559d0a*/
-            goto LABEL_9; /*0x559d0a*/
-        }
-        v2 = 1; /*0x559d0e*/
-      }
-      LABEL_9:
-      FindClose(FirstFileA); /*0x559d10*/
-      return v2; /*0x559d17*/
-    }
-/* ASM:
-FileName        = OMOTestDerived ptr -33Ch
-var_2FC         = word ptr -2FCh
-var_1FC         = byte ptr -1FCh
-var_1DC         = dword ptr -1DCh
-var_1D8         = dword ptr -1D8h
-var_1D4         = word ptr -1D4h
-var_154         = dword ptr -154h
-var_150         = dword ptr -150h
-var_14C         = dword ptr -14Ch
-var_148         = byte ptr -148h
-var_147         = byte ptr -147h
-var_144         = dword ptr -144h
-FindFileData    = byte ptr -140h
-
-sub     esp, 33Ch
-push    ebx
-push    esi
-mov     esi, ecx
-push    edi
-lea     ecx, [esp+348h+FileName]
-xor     ebx, ebx
-mov     eax, [esi+8]
-mov     [esp+348h+var_1DC], ebx
-push    eax
-push    offset a3s      ; "*.%3s"
-push    ecx             ; Buffer
-mov     [esp+354h+var_1D8], 0FFFFFFFFh
-mov     [esp+354h+var_154], 0FFFFFFFFh
-mov     [esp+354h+var_148], 1
-mov     [esp+354h+var_147], bl
-mov     [esp+354h+var_144], ebx
-mov     [esp+354h+var_2FC], bx
-mov     [esp+354h+var_1FC], bl
-mov     [esp+354h+var_1D4], bx
-mov     [esp+354h+var_14C], ebx
-mov     [esp+354h+var_150], ebx
-call    _sprintf
-add     esp, 0Ch
-lea     edx, [esp+348h+FindFileData]
-lea     eax, [esp+348h+FileName]
-push    edx             ; lpFindFileData
-push    eax             ; lpFileName
-call    ds:__imp_FindFirstFileA
-mov     edi, eax
-cmp     edi, 0FFFFFFFFh
-jz      short loc_559D10
-
-loc_559CB2:                             ; CODE XREF: LoadOptions__Check+EC↓j
-test    dword ptr [esp+348h+FindFileData], 116h
-jnz     short loc_559CF9
-lea     ecx, [esp+348h+FindFileData+2Ch]
-push    offset MultiByteStr ; "SAVEGAME.NET"
-push    ecx             ; void *
-call    __strcmpi
-add     esp, 8
-test    eax, eax
-jz      short loc_559CF9
-mov     edx, [esi]
-lea     eax, [esp+348h+FindFileData]
-lea     ecx, [esp+348h+var_2FC]
-push    eax
-push    ecx
-mov     ecx, esi
-call    dword ptr [edx+10h]
-cmp     al, 1
-jnz     short loc_559CF9
-cmp     [esp+348h+var_147], bl
-jz      short loc_559D0E
-
-loc_559CF9:                             ; CODE XREF: LoadOptions__Check+9D↑j
-; LoadOptions__Check+B6↑j ...
-lea     edx, [esp+348h+FindFileData]
-push    edx             ; lpFindFileData
-push    edi             ; hFindFile
-call    ds:__imp_FindNextFileA
-test    eax, eax
-jz      short loc_559D10
-jmp     short loc_559CB2
-; ---------------------------------------------------------------------------
-
-loc_559D0E:                             ; CODE XREF: LoadOptions__Check+D7↑j
-mov     bl, 1
-
-loc_559D10:                             ; CODE XREF: LoadOptions__Check+90↑j
-; LoadOptions__Check+EA↑j
-push    edi             ; hFindFile
-call    ds:__imp_FindClose
-pop     edi
-mov     al, bl
-pop     esi
-pop     ebx
-add     esp, 33Ch
-retn
-*/
-
-// IDA 0x559D60: LoadGame (AddRef/vt01)
-bool LoadOptions::LoadGame(const char* filename) {
-    // In original: creates "Loading" message box, calls Game::LoadSaved
-    // For now: return false (stub)
-    (void)filename;
-    return false; // PENDING: Game::LoadSaved integration
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x559c20)
 }
 
 // IDA 0x559E40: SaveGame (Release/vt02)
@@ -441,23 +222,9 @@ void LoadOptions::ClearBuffer() {
   this->m_8 = 0; /*0x55a2c1*/
 }
 // 0x55a2d0
-int LoadOptions::FindItem(FileEntryClass* const* key) {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
-
-  if ( !IDA_LOBYTE(this->m_C) ) /*0x55a2d0*/
-    return 0; /*0x55a2d8*/
-  m_8 = (int)(this->m_8); /*0x55a2de*/
-  result = 0; /*0x55a2e1*/
-  if ( m_8 <= 0 ) /*0x55a2e5*/
-    return -1; /*0x55a2fc*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *(unsigned int *)(unsigned int)(i) != *key; ++i ) /*0x55a2eb*/
-  {
-    if ( ++result >= m_8 ) /*0x55a2fa*/
-      return -1; /*0x55a2fa*/
-  }
-  return result; /*0x55a2da*/
+int LoadOptions::FindItem(FileEntryClass* const* key)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x55a2d0)
 }
 // 0x55a310
 uint32_t LoadOptions::PointerToIndex(FileEntryClass* ptr) {
@@ -667,16 +434,19 @@ namespace gamemd {
 
 char* LoadOptions::GetDataPtr() { return (char*)(this) + 264; }
 // 0x681120
-uint32_t LoadOptions::GetFlag98() const {
-  return this->u32_188; /*0x681126*/
+uint32_t LoadOptions::GetFlag98() const
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x681120)
 }
 // 0x681140
-uint32_t LoadOptions::GetFlag99() const {
-  return this->u32_18C; /*0x681146*/
+uint32_t LoadOptions::GetFlag99() const
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x681140)
 }
 // 0x6812d0
-uint32_t LoadOptions::GetFlag252() const {
-  return this->u32_3F0; /*0x6812d6*/
+uint32_t LoadOptions::GetFlag252() const
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6812d0)
 }
 uint32_t LoadOptions::GetMode() const { return m; }
 void LoadOptions::SetMode(uint32_t m) { m = m; }

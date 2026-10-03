@@ -10,6 +10,7 @@
 namespace ra2 { namespace game { class TechnoClass; } }
 #ifdef GAMEMD_TREE_UNIVERSE
 namespace gamemd { using ::ra2::game::TechnoClass; }
+class BuildingTypeClass;  // G42.36 fwd supply
 #endif
 #endif
 
@@ -110,5 +111,7 @@ static int Sqrt(...);  // C2597/C2039 interim stub
      // dup: double DistSq2D(...);  // interim stub
     int Hypotenuse2D(void *a1_1);  // interim stub
     static int Sin(double a1);  // G42.33 b9 static-form (Math::Sin static call sites)
+    IUnknown * Sub16(BuildingTypeClass * aP1, IUnknown * aP2);
+    bool Abs16Cmp(IUnknown * aP1, IUnknown * aP2);
 };
 } // namespace gamemd

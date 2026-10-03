@@ -42,6 +42,7 @@ struct TextRenderer {
     static double m_font(...);  // C2597 interim stub
     static double m_hdc(...);  // C2597 interim stub
     static double m_old_bmp(...);  // C2597 interim stub
+    int * RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8, void * aSD, void * aYellow);
 };
 
 } // namespace gamemd

@@ -2,6 +2,30 @@
 #pragma once
 
 namespace gamemd {
+class InitDistanceTable;  // G42.36 fwd supply
+class SetProjectionAngle;  // G42.36 fwd supply
+class FacePixelBuffer3;  // G42.36 fwd supply
+class FacePixelBufferEx;  // G42.36 fwd supply
+class FacePixelBuffer;  // G42.36 fwd supply
+class TransformMatrix;  // G42.36 fwd supply
+class LightRender;  // G42.36 fwd supply
+class SectionProject;  // G42.36 fwd supply
+class FaceBlit;  // G42.36 fwd supply
+class FaceDraw;  // G42.36 fwd supply
+class BlendColor;  // G42.36 fwd supply
+class ShadowCalc;  // G42.36 fwd supply
+class CellStruct;  // G42.36 fwd supply
+class WaveClass;  // G42.36 fwd supply
+class BlendShadowColor;  // G42.36 fwd supply
+class IUnknown;  // G42.36 fwd supply
+class DrawHelper;  // G42.36 fwd supply
+class ProcessColor;  // G42.36 fwd supply
+class ObjectClass;  // G42.36 fwd supply
+class SortDepth;  // G42.36 fwd supply
+class Projection_Setup;  // G42.36 fwd supply
+class AbstractClass;  // G42.36 fwd supply
+class RenderFrame;  // G42.36 fwd supply
+class BuildIndexTable;  // G42.36 fwd supply
 
 struct DynamicVectorClass_flat {
     unsigned int q010;
@@ -43,6 +67,28 @@ int Destroy(void *a1);
     void* VectorClass;  // 0x0 (no offset truth)
 int Destroy_Alt();
     void* vtable1;  // 0x0 (no offset truth)
+    int BuildIndexTable();
+    AbstractClass * RenderFrame();
+    int Projection_Setup();
+    AbstractClass * * SortDepth(ObjectClass * aP1, int a3, void *a3_2);
+    int ProcessColor(unsigned int *a2, float *a3);
+    void* DrawHelper(IUnknown * aP1);
+    int BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4);
+    int loadSectionData();
+    CellStruct * * renderSection(ObjectClass * aP1);
+    void ShadowCalc(WaveClass * aP1, int * a2);
+    int BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4);
+    AbstractClass * * FaceDraw(unsigned int * a1, WaveClass * aP2);
+    void* FaceBlit();
+    int SectionProject(int * a2, int a3);
+    AbstractClass * * LightRender(AbstractClass ** a2, int a3);
+    DynamicVectorClass_flat * * TransformMatrix();
+    int freeSectionMemory(unsigned int * a2);
+    int FacePixelBuffer(int * a1);
+    int FacePixelBufferEx(int a1);
+    int FacePixelBuffer3(int * a1);
+    int SetProjectionAngle(float a1);
+    int InitDistanceTable();
 };
 
 } // namespace gamvoid Destroy();

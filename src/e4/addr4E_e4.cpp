@@ -129,1075 +129,70 @@ void * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
 namespace gamemd {
 void * sub_4E3690(HWND hDlg, int a2)
 {
-  int v4; // eax
-  HWND DlgItem; // ebp
-  int v6; // esi
-  LRESULT v7; // eax
-  LRESULT v8; // eax
-  HWND Default; // eax
-
-  if ( a2 )
-  {
-    switch ( a2 )
-    {
-      case 1:
-        v4 = 1755; /*0x4e36a8*/
-        break;
-      case 2:
-        v4 = 1756; /*0x4e36b4*/
-        break;
-      case 3:
-        v4 = 1757; /*0x4e36c0*/
-        break;
-      case 4:
-        v4 = 1758; /*0x4e36cc*/
-        break;
-      case 5:
-        v4 = 1759; /*0x4e36d8*/
-        break;
-      case 6:
-        v4 = 1760; /*0x4e36e4*/
-        break;
-      default:
-        v4 = a2 != 7 ? -1 : 1761;
-        break;
-    }
-  }
-  else
-  {
-    v4 = 1754; /*0x4e369c*/
-  }
-  DlgItem = GetDlgItem(hDlg, v4); /*0x4e3708*/
-  if ( a2 )
-  {
-    switch ( a2 )
-    {
-      case 1:
-        v6 = 1296; /*0x4e3718*/
-        break;
-      case 2:
-        v6 = 1299; /*0x4e3724*/
-        break;
-      case 3:
-        v6 = 1310; /*0x4e3730*/
-        break;
-      case 4:
-        v6 = 1300; /*0x4e373c*/
-        break;
-      case 5:
-        v6 = 1311; /*0x4e3748*/
-        break;
-      case 6:
-        v6 = 1312; /*0x4e3754*/
-        break;
-      default:
-        v6 = a2 != 7 ? -1 : 1313;
-        break;
-    }
-  }
-  else
-  {
-    v6 = 1697; /*0x4e370c*/
-  }
-  v7 = SendDlgItemMessageA(hDlg, v6, 0x147u, 0, 0); /*0x4e377f*/
-  v8 = SendDlgItemMessageA(hDlg, v6, 0x150u, v7, 0); /*0x4e378b*/
-  if ( v8 < -3 || v8 > 9 ) /*0x4e3795*/
-  {
-    if ( dword_A8B23C ) /*0x4e379f*/
-      v8 = (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 40))(dword_A8B23C); /*0x4e37a3*/
-    else
-      v8 = -2; /*0x4e37a8*/
-  }
-  Default = (HWND)((BuildingType*)(void *)v8)->FindDefault(); /*0x4e37af*/
-  return CacheDialogInvalidate(DlgItem, Default); /*0x4e37b8*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E3690)
 }
 }
 // 0x4E3CE0
 namespace gamemd {
 void * SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2)
 {
-  int v3; // esi
-  HWND DlgItem; // ebx
-  LRESULT v5; // ebp
-  WPARAM v6; // edi
-  HWND v7; // ebp
-  int v8; // esi
-  int v9; // eax
-  HWND v10; // edi
-  int v11; // esi
-  LRESULT v12; // eax
-  LRESULT v13; // eax
-  HWND Default; // eax
-  bool v16; // [esp+7h] [ebp-9h]
-  int v18; // [esp+Ch] [ebp-4h]
-
-  v18 = dword_A8B3BC; /*0x4e3ce9*/
-  if ( dword_A8B3C0 == -2 ) /*0x4e3cfb*/
-  {
-    v18 = -2; /*0x4e3cfd*/
-  }
-  else if ( dword_A8B3C0 == -3 ) /*0x4e3d06*/
-  {
-    v18 = -3; /*0x4e3d08*/
-  }
-  if ( a2 )
-  {
-    switch ( a2 )
-    {
-      case 1:
-        v3 = 1296; /*0x4e3d1f*/
-        break;
-      case 2:
-        v3 = 1299; /*0x4e3d2b*/
-        break;
-      case 3:
-        v3 = 1310; /*0x4e3d37*/
-        break;
-      case 4:
-        v3 = 1300; /*0x4e3d43*/
-        break;
-      case 5:
-        v3 = 1311; /*0x4e3d4f*/
-        break;
-      case 6:
-        v3 = 1312; /*0x4e3d5b*/
-        break;
-      default:
-        v3 = a2 != 7 ? -1 : 1313;
-        break;
-    }
-  }
-  else
-  {
-    v3 = 1697; /*0x4e3d13*/
-  }
-  DlgItem = GetDlgItem(hDlg, v3); /*0x4e3d7f*/
-  v16 = !ShowWindow(DlgItem, 0); /*0x4e3d97*/
-  v5 = SendDlgItemMessageA(hDlg, v3, 0x146u, 0, 0); /*0x4e3da2*/
-  v6 = 0; /*0x4e3da4*/
-  if ( v5 <= 0 ) /*0x4e3da8*/
-  {
-  LABEL_23:
-    v7 = hDlg; /*0x4e3dc9*/
-  }
-  else
-  {
-    while ( SendDlgItemMessageA(hDlg, v3, 0x150u, v6, 0) != v18 ) /*0x4e3dc2*/
-    {
-      if ( (int)++v6 >= v5 ) /*0x4e3dc7*/
-        goto LABEL_23; /*0x4e3dc7*/
-    }
-    v7 = hDlg; /*0x4e3df2*/
-    SendDlgItemMessageA(hDlg, v3, 0x14Eu, v6, 0); /*0x4e3e00*/
-  }
-  if ( !v16 ) /*0x4e3dd3*/
-    ShowWindow(DlgItem, 5); /*0x4e3dd8*/
-  switch ( v3 ) /*0x4e3de4*/
-  {
-    case 1697: /*0x4e3de4*/
-      v8 = 0; /*0x4e3de6*/
-      v9 = 1754; /*0x4e3de8*/
-      break;
-    case 1296: /*0x4e3de4*/
-      v8 = 1; /*0x4e3e10*/
-      v9 = 1755; /*0x4e3e15*/
-      break;
-    case 1299: /*0x4e3de4*/
-      v8 = 2; /*0x4e3e24*/
-      v9 = 1756; /*0x4e3e29*/
-      break;
-    case 1310: /*0x4e3de4*/
-      v8 = 3; /*0x4e3e38*/
-      v9 = 1757; /*0x4e3e3d*/
-      break;
-    case 1300: /*0x4e3de4*/
-      v8 = 4; /*0x4e3e4c*/
-      v9 = 1758; /*0x4e3e51*/
-      break;
-    case 1311: /*0x4e3de4*/
-      v8 = 5; /*0x4e3e60*/
-      v9 = 1759; /*0x4e3e65*/
-      break;
-    case 1312: /*0x4e3de4*/
-      v8 = 6; /*0x4e3e74*/
-      v9 = 1760; /*0x4e3e79*/
-      break;
-    case 1313: /*0x4e3de4*/
-      v8 = 7; /*0x4e3e88*/
-      v9 = 1761; /*0x4e3e8d*/
-      break;
-    default:
-      v8 = -1; /*0x4e3e94*/
-      v9 = -1; /*0x4e3e97*/
-      break;
-  }
-  v10 = GetDlgItem(v7, v9); /*0x4e3ea4*/
-  if ( v8 )
-  {
-    switch ( v8 )
-    {
-      case 1:
-        v11 = 1296; /*0x4e3eb4*/
-        break;
-      case 2:
-        v11 = 1299; /*0x4e3ec0*/
-        break;
-      case 3:
-        v11 = 1310; /*0x4e3ecc*/
-        break;
-      case 4:
-        v11 = 1300; /*0x4e3ed8*/
-        break;
-      case 5:
-        v11 = 1311; /*0x4e3ee4*/
-        break;
-      case 6:
-        v11 = 1312; /*0x4e3ef0*/
-        break;
-      default:
-        v11 = v8 != 7 ? -1 : 1313;
-        break;
-    }
-  }
-  else
-  {
-    v11 = 1697; /*0x4e3ea8*/
-  }
-  v12 = SendDlgItemMessageA(v7, v11, 0x147u, 0, 0); /*0x4e3f1b*/
-  v13 = SendDlgItemMessageA(v7, v11, 0x150u, v12, 0); /*0x4e3f27*/
-  if ( v13 < -3 || v13 > 9 ) /*0x4e3f34*/
-  {
-    if ( dword_A8B23C ) /*0x4e3f3e*/
-      v13 = (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 40))(dword_A8B23C); /*0x4e3f42*/
-    else
-      v13 = -2; /*0x4e3f47*/
-  }
-  Default = (HWND)((BuildingType*)(void *)v13)->FindDefault(); /*0x4e3f4e*/
-  return CacheDialogInvalidate(v10, Default); /*0x4e3f5c*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E3CE0)
 }
 }
 // 0x4E3F70
 namespace gamemd {
 HWND * SetupLobbyCountryCombo(HWND aP0, int nIDDlgItem, int a3)
 {
-  LRESULT v5; // ebx
-  WPARAM v6; // edi
-  int v7; // esi
-  int v8; // eax
-  HWND DlgItem; // edi
-  int v10; // esi
-  LRESULT v11; // eax
-  LRESULT v12; // eax
-  HWND Default; // eax
-  bool v15; // [esp+13h] [ebp-5h]
-  HWND hWnd; // [esp+14h] [ebp-4h]
-
-  hWnd = GetDlgItem(aP0, nIDDlgItem); /*0x4e3f86*/
-  v15 = !ShowWindow(hWnd, 0); /*0x4e3f9d*/
-  v5 = SendDlgItemMessageA(aP0, nIDDlgItem, 0x146u, 0, 0); /*0x4e3fa8*/
-  v6 = 0; /*0x4e3faa*/
-  if ( v5 > 0 ) /*0x4e3fae*/
-  {
-    while ( SendDlgItemMessageA(aP0, nIDDlgItem, 0x150u, v6, 0) != a3 ) /*0x4e3fc4*/
-    {
-      if ( (int)++v6 >= v5 ) /*0x4e3fc9*/
-        goto LABEL_6; /*0x4e3fc9*/
-    }
-    SendDlgItemMessageA(aP0, nIDDlgItem, 0x14Eu, v6, 0); /*0x4e3fd7*/
-  }
-  LABEL_6:
-  if ( !v15 ) /*0x4e3fe3*/
-    ShowWindow(hWnd, 5); /*0x4e3fec*/
-  switch ( nIDDlgItem ) /*0x4e3ff8*/
-  {
-    case 1697: /*0x4e3ff8*/
-      v7 = 0; /*0x4e3ffa*/
-      v8 = 1754; /*0x4e3ffc*/
-      break;
-    case 1296: /*0x4e3ff8*/
-      v7 = 1; /*0x4e400e*/
-      v8 = 1755; /*0x4e4013*/
-      break;
-    case 1299: /*0x4e3ff8*/
-      v7 = 2; /*0x4e4022*/
-      v8 = 1756; /*0x4e4027*/
-      break;
-    case 1310: /*0x4e3ff8*/
-      v7 = 3; /*0x4e4036*/
-      v8 = 1757; /*0x4e403b*/
-      break;
-    case 1300: /*0x4e3ff8*/
-      v7 = 4; /*0x4e404a*/
-      v8 = 1758; /*0x4e404f*/
-      break;
-    case 1311: /*0x4e3ff8*/
-      v7 = 5; /*0x4e405e*/
-      v8 = 1759; /*0x4e4063*/
-      break;
-    case 1312: /*0x4e3ff8*/
-      v7 = 6; /*0x4e4072*/
-      v8 = 1760; /*0x4e4077*/
-      break;
-    case 1313: /*0x4e3ff8*/
-      v7 = 7; /*0x4e4086*/
-      v8 = 1761; /*0x4e408b*/
-      break;
-    default:
-      v7 = -1; /*0x4e4092*/
-      v8 = -1; /*0x4e4095*/
-      break;
-  }
-  DlgItem = GetDlgItem(aP0, v8); /*0x4e40a2*/
-  if ( v7 )
-  {
-    switch ( v7 )
-    {
-      case 1:
-        v10 = 1296; /*0x4e40b2*/
-        break;
-      case 2:
-        v10 = 1299; /*0x4e40be*/
-        break;
-      case 3:
-        v10 = 1310; /*0x4e40ca*/
-        break;
-      case 4:
-        v10 = 1300; /*0x4e40d6*/
-        break;
-      case 5:
-        v10 = 1311; /*0x4e40e2*/
-        break;
-      case 6:
-        v10 = 1312; /*0x4e40ee*/
-        break;
-      default:
-        v10 = v7 != 7 ? -1 : 1313;
-        break;
-    }
-  }
-  else
-  {
-    v10 = 1697; /*0x4e40a6*/
-  }
-  v11 = SendDlgItemMessageA(aP0, v10, 0x147u, 0, 0); /*0x4e4119*/
-  v12 = SendDlgItemMessageA(aP0, v10, 0x150u, v11, 0); /*0x4e4125*/
-  if ( v12 < -3 || v12 > 9 ) /*0x4e412f*/
-  {
-    if ( dword_A8B23C ) /*0x4e4139*/
-      v12 = (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 40))(dword_A8B23C); /*0x4e413d*/
-    else
-      v12 = -2; /*0x4e4142*/
-  }
-  Default =(HWND)(HWND *)((HWND)((BuildingType*)(void *)v12)->FindDefault()); /*0x4e4149*/
-  return (HWND *)(CacheDialogInvalidate(DlgItem, Default)); /*0x4e4157*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E3F70)
 }
 }
 // 0x4E45A0
 namespace gamemd {
 bool FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
 {
-  wchar_t * DlgItem;
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // ebx
-  unsigned int v6;
-  LRESULT v7; // ebp
-  int result; // eax
-  bool v9; // [esp+12h] [ebp-Eh]
-  bool v10; // [esp+13h] [ebp-Dh]
-  int v11; // [esp+14h] [ebp-Ch]
-  LPARAM lParam; // [esp+18h] [ebp-8h]
-  WPARAM wParam; // [esp+1Ch] [ebp-4h]
-
-  DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem))));
-  v10 = (wchar_t *)(!ShowWindow((HWND)(DlgItem), 0));
-  SendMessageA((HWND)(DlgItem), 0x14Bu, 0, 0); /*0x4e45d3*/
-  SendMessageA((HWND)(DlgItem), 0x4DDu, 0, 1); /*0x4e45df*/
-  SendMessageA((HWND)(DlgItem), 0x4DEu, 0, 9); /*0x4e45eb*/
-  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 522)); /*0x4e45fe*/
-  v5 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e460e*/
-  SendMessageA((HWND)(DlgItem), 0x151u, v5, -2); /*0x4e4619*/
-  SendMessageA((HWND)(DlgItem), 0x498u, v5, -1); /*0x4e4624*/
-  switch ( nIDDlgItem )
-  {
-    case 1698:
-      v11 = 0; /*0x4e462e*/
-      break;
-    case 1314:
-      v11 = 1; /*0x4e4643*/
-      break;
-    case 1315:
-      v11 = 2; /*0x4e4655*/
-      break;
-    case 1316:
-      v11 = 3; /*0x4e4667*/
-      break;
-    case 1317:
-      v11 = 4; /*0x4e4679*/
-      break;
-    case 1318:
-      v11 = 5; /*0x4e468b*/
-      break;
-    case 1319:
-      v11 = 6; /*0x4e469d*/
-      break;
-    default:
-      v11 = nIDDlgItem != 1320 ? -1 : 7;
-      break;
-  }
-  v6 = dword_8B4040; /*0x4e46bd*/
-  wParam = 0; /*0x4e46c2*/
-  lParam = 0; /*0x4e46c6*/
-  do /*0x4e472c*/
-  {
-    v9 = *(unsigned int *)(v6) == v11; /*0x4e46d7*/
-    if ( *(unsigned int *)(v6) == v11 || *(unsigned int *)(v6) == -1 ) /*0x4e46e0*/
-    {
-      v7 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, (LPARAM)aAb); /*0x4e46f1*/
-      SendMessageA((HWND)(DlgItem), 0x498u, v7, *(unsigned int *)((v6 - 1))); /*0x4e46fe*/
-      SendMessageA((HWND)(DlgItem), 0x151u, v7, lParam); /*0x4e470c*/
-      if ( v9 ) /*0x4e4714*/
-        wParam = v7; /*0x4e4716*/
-    }
-    v6 += 3; /*0x4e471e*/
-    ++lParam; /*0x4e4728*/
-  }
-  while ( (int)v6 < (int)&dbl_8B40A0 ); /*0x4e472c*/
-  SendMessageA((HWND)(DlgItem), 0x14Eu, wParam, 0); /*0x4e473b*/
-  result = SendMessageA((HWND)(DlgItem), 0x4F1u, 0, 0); /*0x4e4747*/
-  IDA_LOBYTE(result) = v10; /*0x4e4749*/
-  if ( !v10 ) /*0x4e474f*/
-    return ShowWindow((HWND)(DlgItem), 5); /*0x4e4754*/
-  return result; /*0x4e475a*/
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E45A0)
 }
 }
 // 0x4E48E0
 namespace gamemd {
 int SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 {
-  int v2; // edi
-  int v3; // eax
-  int v4; // edx
-
-  v2 = dword_A8B3B4; /*0x4e48e7*/
-  if ( dword_A8B3B8 == -2 ) /*0x4e48f0*/
-    v2 = -2; /*0x4e48f2*/
-  if ( a2 )
-  {
-    switch ( a2 )
-    {
-      case 1:
-        v3 = 1314; /*0x4e4907*/
-        break;
-      case 2:
-        v3 = 1315; /*0x4e4913*/
-        break;
-      case 3:
-        v3 = 1316; /*0x4e491f*/
-        break;
-      case 4:
-        v3 = 1317; /*0x4e492b*/
-        break;
-      case 5:
-        v3 = 1318; /*0x4e4937*/
-        break;
-      case 6:
-        v3 = 1319; /*0x4e4943*/
-        break;
-      default:
-        v3 = a2 != 7 ? -1 : 1320;
-        break;
-    }
-  }
-  else
-  {
-    v3 = 1698; /*0x4e48fb*/
-  }
-  if ( dword_A8B238 == 3 || dword_A8B238 == 4 ) /*0x4e496b*/
-  {
-    v4 = *(&dword_A8DA90 + a2); /*0x4e496d*/
-    if ( v4 == g_Lobby_MaxPlayers && *(unsigned int *)(v4 + 107) == -1 ) /*0x4e4982*/
-      v2 = 8; /*0x4e4984*/
-  }
-  return SetupSkirmishSpawnLocations(a1, v3, v2); /*0x4e4991*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E48E0)
 }
 }
 // 0x4E49A0
 namespace gamemd {
 int SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
 {
-  HWND v4; // ebp
-  int v5; // eax
-  int v6; // eax
-  int v7; // edx
-  unsigned int v8;
-  WPARAM v9; // edi
-  LRESULT v10; // ebp
-  int v11; // esi
-  int i; // esi
-  int v13; // edx
-  int v14; // eax
-  int result; // eax
-  bool v16; // [esp+Bh] [ebp-Dh]
-  LRESULT v18; // [esp+10h] [ebp-8h]
-  HWND hWnd; // [esp+14h] [ebp-4h]
-
-  v4 = hDlg; /*0x4e49a7*/
-  hWnd = GetDlgItem(hDlg, nIDDlgItem); /*0x4e49b8*/
-  v16 = !ShowWindow(hWnd, 0); /*0x4e49c4*/
-  switch ( nIDDlgItem ) /*0x4e49cf*/
-  {
-    case 1698: /*0x4e49cf*/
-      v5 = 0; /*0x4e49d1*/
-      break;
-    case 1314: /*0x4e49cf*/
-      v5 = 1; /*0x4e49dd*/
-      break;
-    case 1315: /*0x4e49cf*/
-      v5 = 2; /*0x4e49ec*/
-      break;
-    case 1316: /*0x4e49cf*/
-      v5 = 3; /*0x4e49fb*/
-      break;
-    case 1317: /*0x4e49cf*/
-      v5 = 4; /*0x4e4a0a*/
-      break;
-    case 1318: /*0x4e49cf*/
-      v5 = 5; /*0x4e4a19*/
-      break;
-    case 1319: /*0x4e49cf*/
-      v5 = 6; /*0x4e4a28*/
-      break;
-    default:
-      v6 = -(nIDDlgItem != 1320); /*0x4e4a38*/
-      IDA_LOBYTE(v6) = v6 & 0xF8; /*0x4e4a3a*/
-      v5 = v6 + 7; /*0x4e4a3c*/
-      break;
-  }
-  v7 = 0; /*(unsigned int *)(0x4e4a41)*/
-  v8 = dword_8B4040; /*0x4e4a43*/
-  while ( *(unsigned int *)(v8) != v5 ) /*0x4e4a4a*/
-  {
-    v8 += 3; /*0x4e4a4c*/
-    ++v7; /*0x4e4a4f*/
-    if ( (int)v8 >= (int)&dword_8B40AC ) /*0x4e4a56*/
-      goto LABEL_22; /*0x4e4a56*/
-  }
-  if ( v7 != -1 ) /*0x4e4a5d*/
-    (&dword_8B4040)[3 * v7] = -1; /*0x4e4a62*/
-  LABEL_22:
-  v9 = 0; /*0x4e4a6d*/
-  v18 = SendDlgItemMessageA(v4, nIDDlgItem, 0x146u, 0, 0); /*0x4e4a84*/
-  if ( v18 > 0 )
-  {
-    while ( 1 ) /*0x4e4a9a*/
-    {
-      v10 = SendDlgItemMessageA(v4, nIDDlgItem, 0x150u, v9, 0); /*0x4e4a9a*/
-      if ( v10 == a3 ) /*0x4e4aa0*/
-        break; /*0x4e4aa0*/
-      v4 = hDlg; /*0x4e4aa6*/
-      if ( (int)++v9 >= v18 ) /*0x4e4aad*/
-        goto LABEL_44; /*0x4e4aad*/
-    }
-    SendDlgItemMessageA(hDlg, nIDDlgItem, 0x14Eu, v9, 0); /*0x4e4ac2*/
-    if ( v10 != -2 )
-    {
-      switch ( nIDDlgItem )
-      {
-        case 1698:
-          v11 = 0; /*0x4e4ad5*/
-          break;
-        case 1314:
-          v11 = 1; /*0x4e4ae1*/
-          break;
-        case 1315:
-          v11 = 2; /*0x4e4af0*/
-          break;
-        case 1316:
-          v11 = 3; /*0x4e4aff*/
-          break;
-        case 1317:
-          v11 = 4; /*0x4e4b0e*/
-          break;
-        case 1318:
-          v11 = 5; /*0x4e4b1d*/
-          break;
-        case 1319:
-          v11 = 6; /*0x4e4b2c*/
-          break;
-        default:
-          v11 = nIDDlgItem != 1320 ? -1 : 7;
-          break;
-      }
-      (&dword_8B4040)[3 * v10] = v11; /*0x4e4b47*/
-    }
-    v4 = hDlg; /*0x4e4b4e*/
-  }
-  LABEL_44:
-  if ( !v16 ) /*0x4e4b5a*/
-    ShowWindow(hWnd, 5); /*0x4e4b63*/
-  for ( i = 0; i < 8; ++i )
-  {
-    if ( i )
-    {
-      switch ( i )
-      {
-        case 1:
-          v13 = 1314; /*0x4e4b7b*/
-          break;
-        case 2:
-          v13 = 1315; /*0x4e4b87*/
-          break;
-        case 3:
-          v13 = 1316; /*0x4e4b93*/
-          break;
-        case 4:
-          v13 = 1317; /*0x4e4b9f*/
-          break;
-        case 5:
-          v13 = 1318; /*0x4e4bab*/
-          break;
-        case 6:
-          v13 = 1319; /*0x4e4bb7*/
-          break;
-        default:
-          v13 = i != 7 ? -1 : 1320;
-          break;
-      }
-    }
-    else
-    {
-      v13 = 1698; /*0x4e4b6f*/
-    }
-    if ( (((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4) /*0x4e4bf7*/
-      && ((v14 = *(&dword_A8DA90 + i), v14 == g_Lobby_MaxPlayers) || *(unsigned int *)(v14 + 107) == -1) )
-    {
-      result = FillListBox(v4, v13); /*0x4e4c04*/
-    }
-    else
-    {
-      result = (int)(FillComboBoxFactions(v4, v13));
-    }
-  }
-  return result; /*0x4e4c13*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E49A0)
 }
 }
 // 0x4E4C20
 namespace gamemd {
 char FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
 {
-  int v4; // eax
-  int v5; // eax
-  int v6; // edx
-  unsigned int v7;
-  LRESULT v8; // eax
-  LRESULT v9; // eax
-  int v10; // esi
-  int i; // esi
-  int v12; // edx
-  int v13; // eax
-  int result; // eax
-
-  switch ( nIDDlgItem ) /*0x4e4c2c*/
-  {
-    case 1698: /*0x4e4c2c*/
-      v4 = 0; /*0x4e4c2e*/
-      break;
-    case 1314: /*0x4e4c2c*/
-      v4 = 1; /*0x4e4c3a*/
-      break;
-    case 1315: /*0x4e4c2c*/
-      v4 = 2; /*0x4e4c49*/
-      break;
-    case 1316: /*0x4e4c2c*/
-      v4 = 3; /*0x4e4c58*/
-      break;
-    case 1317: /*0x4e4c2c*/
-      v4 = 4; /*0x4e4c67*/
-      break;
-    case 1318: /*0x4e4c2c*/
-      v4 = 5; /*0x4e4c76*/
-      break;
-    case 1319: /*0x4e4c2c*/
-      v4 = 6; /*0x4e4c85*/
-      break;
-    default:
-      v5 = -(nIDDlgItem != 1320); /*0x4e4c95*/
-      IDA_LOBYTE(v5) = v5 & 0xF8; /*0x4e4c97*/
-      v4 = v5 + 7; /*0x4e4c99*/
-      break;
-  }
-  v6 = 0; /*(unsigned int *)(0x4e4c9d)*/
-  v7 = dword_8B4040; /*0x4e4c9f*/
-  while ( *(unsigned int *)(v7) != v4 ) /*0x4e4ca6*/
-  {
-    v7 += 3; /*0x4e4ca8*/
-    ++v6; /*0x4e4cab*/
-    if ( (int)v7 >= (int)&dword_8B40AC ) /*0x4e4cb2*/
-      goto LABEL_22; /*0x4e4cb2*/
-  }
-  if ( v6 != -1 ) /*0x4e4cb9*/
-    (&dword_8B4040)[3 * v6] = -1; /*0x4e4cbe*/
-  LABEL_22:
-  v8 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147u, 0, 0); /*0x4e4cc9*/
-  v9 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v8, 0); /*0x4e4ce6*/
-  switch ( nIDDlgItem )
-  {
-    case 1698:
-      v10 = 0; /*0x4e4cf1*/
-      break;
-    case 1314:
-      v10 = 1; /*0x4e4cfd*/
-      break;
-    case 1315:
-      v10 = 2; /*0x4e4d0c*/
-      break;
-    case 1316:
-      v10 = 3; /*0x4e4d1b*/
-      break;
-    case 1317:
-      v10 = 4; /*0x4e4d2a*/
-      break;
-    case 1318:
-      v10 = 5; /*0x4e4d39*/
-      break;
-    case 1319:
-      v10 = 6; /*0x4e4d48*/
-      break;
-    default:
-      v10 = nIDDlgItem != 1320 ? -1 : 7;
-      break;
-  }
-  if ( v9 != -2 ) /*0x4e4d62*/
-    (&dword_8B4040)[3 * v9] = v10; /*0x4e4d67*/
-  for ( i = 0; i < 8; ++i )
-  {
-    if ( i )
-    {
-      switch ( i )
-      {
-        case 1:
-          v12 = 1314; /*0x4e4d80*/
-          break;
-        case 2:
-          v12 = 1315; /*0x4e4d8c*/
-          break;
-        case 3:
-          v12 = 1316; /*0x4e4d98*/
-          break;
-        case 4:
-          v12 = 1317; /*0x4e4da4*/
-          break;
-        case 5:
-          v12 = 1318; /*0x4e4db0*/
-          break;
-        case 6:
-          v12 = 1319; /*0x4e4dbc*/
-          break;
-        default:
-          v12 = i != 7 ? -1 : 1320;
-          break;
-      }
-    }
-    else
-    {
-      v12 = 1698; /*0x4e4d74*/
-    }
-    if ( (((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4) /*0x4e4dfc*/
-      && ((v13 = *(&dword_A8DA90 + i), v13 == g_Lobby_MaxPlayers) || *(unsigned int *)(v13 + 107) == -1) )
-    {
-      result = FillListBox(hDlg, v12); /*0x4e4e09*/
-    }
-    else
-    {
-      result = (int)(FillComboBoxFactions(hDlg, v12));
-    }
-  }
-  return result; /*0x4e4e18*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4C20)
 }
 }
 // 0x4E50C0
 namespace gamemd {
 bool FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
 {
-  wchar_t * DlgItem;
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // eax
-  unsigned int v6;
-  LRESULT v7; // ebx
-  int result; // eax
-  bool v9; // [esp+12h] [ebp-Eh]
-  bool v10; // [esp+13h] [ebp-Dh]
-  int v11; // [esp+14h] [ebp-Ch]
-  LPARAM lParam; // [esp+18h] [ebp-8h]
-  WPARAM wParam; // [esp+1Ch] [ebp-4h]
-
-  DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem))));
-  v10 = (wchar_t *)(!ShowWindow((HWND)(DlgItem), 0));
-  SendMessageA((HWND)(DlgItem), 0x14Bu, 0, 0); /*0x4e50f2*/
-  SendMessageA((HWND)(DlgItem), 0x4DDu, 0, 1); /*0x4e50fd*/
-  SendMessageA((HWND)(DlgItem), 0x4DEu, 0, 9); /*0x4e5108*/
-  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 833)); /*0x4e511b*/
-  v5 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5128*/
-  SendMessageA((HWND)(DlgItem), 0x151u, v5, -2); /*0x4e5133*/
-  switch ( nIDDlgItem )
-  {
-    case 1699:
-      v11 = 0; /*0x4e513d*/
-      break;
-    case 1700:
-      v11 = 1; /*0x4e514e*/
-      break;
-    case 1701:
-      v11 = 2; /*0x4e5160*/
-      break;
-    case 1702:
-      v11 = 3; /*0x4e5172*/
-      break;
-    case 1703:
-      v11 = 4; /*0x4e5184*/
-      break;
-    case 1704:
-      v11 = 5; /*0x4e5196*/
-      break;
-    case 1706:
-      v11 = 6; /*0x4e51a8*/
-      break;
-    default:
-      v11 = nIDDlgItem != 1707 ? -1 : 7;
-      break;
-  }
-  wParam = 0; /*0x4e51c6*/
-  lParam = 0; /*0x4e51ca*/
-  v6 = dword_8B3F38; /*0x4e51ce*/
-  do /*0x4e5228*/
-  {
-    v9 = *(unsigned int *)(v6) == v11; /*0x4e51e1*/
-    if ( *(unsigned int *)(v6) == v11 || *(unsigned int *)(v6) == -1 ) /*0x4e51ea*/
-    {
-      v7 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, *(unsigned int *)((v6 - 2))); /*0x4e51fa*/
-      SendMessageA((HWND)(DlgItem), 0x151u, v7, lParam); /*0x4e5208*/
-      if ( v9 ) /*0x4e5210*/
-        wParam = v7; /*0x4e5212*/
-    }
-    v6 += 3; /*0x4e521a*/
-    ++lParam; /*0x4e5224*/
-  }
-  while ( (int)v6 < (int)&dword_8B3F98 ); /*0x4e5228*/
-  SendMessageA((HWND)(DlgItem), 0x14Eu, wParam, 0); /*0x4e5237*/
-  result = SendMessageA((HWND)(DlgItem), 0x4F1u, 0, 0); /*0x4e5243*/
-  IDA_LOBYTE(result) = v10; /*0x4e5245*/
-  if ( !v10 ) /*0x4e524b*/
-    return ShowWindow((HWND)(DlgItem), 5); /*0x4e5250*/
-  return result; /*0x4e5256*/
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E50C0)
 }
 }
 // 0x4E53D0
 namespace gamemd {
 int Lobby_FillFactionComboBox(HWND a1, int a2)
 {
-  int v2; // edi
-  int v3; // eax
-  int v4; // edx
-
-  v2 = -2; /*0x4e53d4*/
-  if ( a2 )
-  {
-    switch ( a2 )
-    {
-      case 1:
-        v3 = 1700; /*0x4e53e7*/
-        break;
-      case 2:
-        v3 = 1701; /*0x4e53f3*/
-        break;
-      case 3:
-        v3 = 1702; /*0x4e53ff*/
-        break;
-      case 4:
-        v3 = 1703; /*0x4e540b*/
-        break;
-      case 5:
-        v3 = 1704; /*0x4e5417*/
-        break;
-      case 6:
-        v3 = 1706; /*0x4e5423*/
-        break;
-      default:
-        v3 = a2 != 7 ? -1 : 1707;
-        break;
-    }
-  }
-  else
-  {
-    v3 = 1699; /*0x4e53db*/
-  }
-  if ( dword_A8B238 == 3 || dword_A8B238 == 4 ) /*0x4e544b*/
-  {
-    v4 = *(&dword_A8DA90 + a2); /*0x4e544d*/
-    if ( v4 == g_Lobby_MaxPlayers && *(unsigned int *)(v4 + 107) == -1 ) /*0x4e5462*/
-      v2 = 8; /*0x4e5464*/
-  }
-  return SetupLobbyFactionSlots(a1, v3, v2); /*0x4e5471*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E53D0)
 }
 }
 // 0x4E5480
 namespace gamemd {
 int SetupLobbyFactionSlots(HWND aP0, int nIDDlgItem, int a3)
 {
-  SessionClass * v4;
-  int v5; // eax
-  int v6; // eax
-  int v7; // edx
-  unsigned int v8;
-  WPARAM v9; // edi
-  LRESULT v10; // ebp
-  int v11; // esi
-  int i; // esi
-  int v13; // edx
-  int v14; // eax
-  int result; // eax
-  bool v16; // [esp+Bh] [ebp-Dh]
-  LRESULT v18; // [esp+10h] [ebp-8h]
-  HWND hWnd; // [esp+14h] [ebp-4h]
-
-  v4 = (gamemd::SessionClass *)(aP0); /*0x4e5487*/
-  hWnd = GetDlgItem(aP0, nIDDlgItem); /*0x4e5498*/
-  v16 = !ShowWindow(hWnd, 0); /*0x4e54a4*/
-  switch ( nIDDlgItem ) /*0x4e54af*/
-  {
-    case 1699: /*0x4e54af*/
-      v5 = 0; /*0x4e54b1*/
-      break;
-    case 1700: /*0x4e54af*/
-      v5 = 1; /*0x4e54bd*/
-      break;
-    case 1701: /*0x4e54af*/
-      v5 = 2; /*0x4e54cc*/
-      break;
-    case 1702: /*0x4e54af*/
-      v5 = 3; /*0x4e54db*/
-      break;
-    case 1703: /*0x4e54af*/
-      v5 = 4; /*0x4e54ea*/
-      break;
-    case 1704: /*0x4e54af*/
-      v5 = 5; /*0x4e54f9*/
-      break;
-    case 1706: /*0x4e54af*/
-      v5 = 6; /*0x4e5508*/
-      break;
-    default:
-      v6 = -(nIDDlgItem != 1707); /*0x4e5518*/
-      IDA_LOBYTE(v6) = v6 & 0xF8; /*0x4e551a*/
-      v5 = v6 + 7; /*0x4e551c*/
-      break;
-  }
-  v7 = 0; /*(unsigned int *)(0x4e5521)*/
-  v8 = dword_8B3F38; /*0x4e5523*/
-  while ( *(unsigned int *)(v8) != v5 ) /*0x4e552a*/
-  {
-    v8 += 3; /*0x4e552c*/
-    ++v7; /*0x4e552f*/
-    if ( (int)v8 >= (int)&unk_8B3FA4 ) /*0x4e5536*/
-      goto LABEL_22; /*0x4e5536*/
-  }
-  if ( v7 != -1 ) /*0x4e553d*/
-    (&dword_8B3F38)[3 * v7] = -1; /*0x4e5542*/
-  LABEL_22:
-  v9 = 0; /*0x4e554d*/
-  v18 = SendDlgItemMessageA((HWND)(v4), nIDDlgItem, 0x146u, 0, 0); /*0x4e5564*/
-  if ( v18 > 0 )
-  {
-    while ( 1 ) /*0x4e557a*/
-    {
-      v10 = SendDlgItemMessageA((HWND)(v4), nIDDlgItem, 0x150u, v9, 0); /*0x4e557a*/
-      if ( v10 == a3 ) /*0x4e5580*/
-        break; /*0x4e5580*/
-      v4 = (gamemd::SessionClass *)(aP0); /*0x4e5586*/
-      if ( (int)++v9 >= v18 ) /*0x4e558d*/
-        goto LABEL_44; /*0x4e558d*/
-    }
-    SendDlgItemMessageA(aP0, nIDDlgItem, 0x14Eu, v9, 0); /*0x4e55a2*/
-    if ( v10 != -2 )
-    {
-      switch ( nIDDlgItem )
-      {
-        case 1699:
-          v11 = 0; /*0x4e55b5*/
-          break;
-        case 1700:
-          v11 = 1; /*0x4e55c1*/
-          break;
-        case 1701:
-          v11 = 2; /*0x4e55d0*/
-          break;
-        case 1702:
-          v11 = 3; /*0x4e55df*/
-          break;
-        case 1703:
-          v11 = 4; /*0x4e55ee*/
-          break;
-        case 1704:
-          v11 = 5; /*0x4e55fd*/
-          break;
-        case 1706:
-          v11 = 6; /*0x4e560c*/
-          break;
-        default:
-          v11 = nIDDlgItem != 1707 ? -1 : 7;
-          break;
-      }
-      (&dword_8B3F38)[3 * v10] = v11; /*0x4e5627*/
-    }
-    v4 = (gamemd::SessionClass *)(aP0); /*0x4e562e*/
-  }
-  LABEL_44:
-  if ( !v16 ) /*0x4e563a*/
-    ShowWindow(hWnd, 5); /*0x4e5643*/
-  for ( i = 0; i < 8; ++i )
-  {
-    if ( i )
-    {
-      switch ( i )
-      {
-        case 1:
-          v13 = 1700; /*0x4e565b*/
-          break;
-        case 2:
-          v13 = 1701; /*0x4e5667*/
-          break;
-        case 3:
-          v13 = 1702; /*0x4e5673*/
-          break;
-        case 4:
-          v13 = 1703; /*0x4e567f*/
-          break;
-        case 5:
-          v13 = 1704; /*0x4e568b*/
-          break;
-        case 6:
-          v13 = 1706; /*0x4e5697*/
-          break;
-        default:
-          v13 = i != 7 ? -1 : 1707;
-          break;
-      }
-    }
-    else
-    {
-      v13 = 1699; /*0x4e564f*/
-    }
-    if ( (((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4) /*0x4e56d7*/
-      && ((v14 = *(&dword_A8DA90 + i), v14 == g_Lobby_MaxPlayers) || *(unsigned int *)(v14 + 107) == -1) )
-    {
-      result = SetupComboBoxRandomAlliance((HWND)(v4), v13); /*0x4e56e4*/
-    }
-    else
-    {
-      result = (int)(FillComboBoxAllianceSlots((HWND)(v4), v13));
-    }
-  }
-  return result; /*0x4e56f3*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5480)
 }
 }
 // 0x4E5700
@@ -1211,67 +206,7 @@ char FillComboBoxSides(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 bool FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  int v3; // eax
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // eax
-  LPARAM v6; // ebx
-  LPARAM *v7; // ebp
-  LRESULT v8; // eax
-  int result; // eax
-  HWND v10; // eax
-  bool v11; // [esp+Bh] [ebp-5h]
-
-  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e5b71*/
-  v11 = !ShowWindow(DlgItem, 0); /*0x4e5b8e*/
-  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e5b93*/
-  SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5b9f*/
-  SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5bab*/
-  if ( (&dword_A8B238)[0] == 3 || (&dword_A8B238)[0] == 4 ) /*0x4e5bba*/
-  {
-    if ( dword_A8B23C && (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 44))(dword_A8B23C) < 0 ) /*0x4e5be8*/
-    {
-      StringCSF = GetStringCSF((wchar_t *)(aGuiNoneassymbo), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 1110); /*0x4e5bfb*/
-      goto LABEL_9; /*0x4e5bfb*/
-    }
-  }
-  else
-  {
-    v3 = Skirmish_Setup(); /*0x4e5bbc*/
-    if ( v3 && (*(int (**)(int))(*(unsigned int *)v3 + 44))(v3) < 0 ) /*0x4e5bce*/
-    {
-      StringCSF = GetStringCSF((wchar_t *)(aGuiNoneassymbo), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 1119); /*0x4e5bd5*/
-  LABEL_9:
-      v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5c00*/
-      SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5c14*/
-    }
-  }
-  v6 = 0; /*0x4e5c16*/
-  v7 = (LPARAM *)(&dword_8B3FC0); /*0x4e5c1a*/
-  do /*0x4e5c41*/
-  {
-    v8 = SendMessageA(DlgItem, 0x4C2u, 0, *v7); /*0x4e5c2b*/
-    SendMessageA(DlgItem, 0x151u, v8, v6); /*0x4e5c35*/
-    v7 += 3; /*0x4e5c37*/
-    ++v6; /*0x4e5c3a*/
-  }
-  while ( (int)v7 < (int)&dword_8B3FF0 ); /*0x4e5c41*/
-  SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e5c4d*/
-  SendMessageA(DlgItem, 0x4F1u, 0, 0); /*0x4e5c59*/
-  result = (&dword_A8B238)[0]; /*0x4e5c5b*/
-  if ( (&dword_A8B238)[0] == 4 && Network::IsLobbyFeature() ) /*0x4e5c67*/
-  {
-    ShowWindow(DlgItem, 0); /*0x4e5c79*/
-    v10 = GetDlgItem(hDlg, 1940); /*0x4e5c85*/
-    return ShowWindow(v10, 0); /*0x4e5c8e*/
-  }
-  else
-  {
-    IDA_LOBYTE(result) = v11; /*0x4e5c96*/
-    if ( !v11 ) /*0x4e5c9c*/
-      return ShowWindow(DlgItem, 5); /*0x4e5ca1*/
-  }
-  return result; /*0x4e5c90*/
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5B60)
 }
 }
 // 0x4E5E20
@@ -1285,79 +220,7 @@ void Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 namespace gamemd {
 bool SetupLobbyPlayerSlots(SessionClass * aP0, int nIDDlgItem, int a3)
 {
-  int result; // eax
-  WPARAM v6; // ebp
-  LRESULT v7; // ebx
-  int v8; // esi
-  HWND DlgItem; // eax
-  bool v10; // [esp+13h] [ebp-9h]
-  HWND hWnd; // [esp+14h] [ebp-8h]
-  int v12; // [esp+18h] [ebp-4h]
-
-  hWnd = GetDlgItem((HWND)(aP0), nIDDlgItem); /*0x4e5ee6*/
-  v10 = !ShowWindow(hWnd, 0); /*0x4e5efd*/
-  result = SendDlgItemMessageA((HWND)(aP0), nIDDlgItem, 0x146u, 0, 0); /*0x4e5f02*/
-  v6 = 0; /*0x4e5f08*/
-  v12 = result; /*0x4e5f0c*/
-  if ( result > 0 )
-  {
-    while ( 1 ) /*0x4e5f26*/
-    {
-      v7 = SendDlgItemMessageA((HWND)(aP0), nIDDlgItem, 0x150u, v6, 0); /*0x4e5f26*/
-      if ( v7 == a3 ) /*0x4e5f2c*/
-        break; /*0x4e5f2c*/
-      result = v12; /*0x4e5f2e*/
-      if ( (int)++v6 >= v12 ) /*0x4e5f35*/
-        goto LABEL_22; /*0x4e5f35*/
-    }
-    result = SendDlgItemMessageA((HWND)(aP0), nIDDlgItem, 0x14Eu, v6, 0); /*0x4e5f46*/
-    if ( v7 != -2 )
-    {
-      switch ( nIDDlgItem )
-      {
-        case 1901:
-          v8 = 0; /*0x4e5f5d*/
-          break;
-        case 1902:
-          v8 = 1; /*0x4e5f69*/
-          break;
-        case 1903:
-          v8 = 2; /*0x4e5f78*/
-          break;
-        case 1904:
-          v8 = 3; /*0x4e5f87*/
-          break;
-        case 1905:
-          v8 = 4; /*0x4e5f96*/
-          break;
-        case 1906:
-          v8 = 5; /*0x4e5fa5*/
-          break;
-        case 1907:
-          v8 = 6; /*0x4e5fb4*/
-          break;
-        default:
-          v8 = nIDDlgItem != 1908 ? -1 : 7;
-          break;
-      }
-      result = 3 * v7; /*0x4e5fcb*/
-      (&dword_8B3FC8)[3 * v7] = v8; /*0x4e5fce*/
-    }
-  }
-  LABEL_22:
-  if ( (&dword_A8B238)[0] == 4 && Network::IsLobbyFeature() ) /*0x4e5fde*/
-  {
-    ShowWindow(hWnd, 0); /*0x4e5ff4*/
-    DlgItem = GetDlgItem((HWND)(aP0), 1940); /*0x4e5ffc*/
-    return ShowWindow(DlgItem, 0); /*0x4e6005*/
-  }
-  else
-  {
-    IDA_LOBYTE(result) = v10; /*0x4e6011*/
-    if ( !v10 ) /*0x4e6017*/
-      return ShowWindow(hWnd, 5); /*0x4e6020*/
-  }
-  return result; /*0x4e6007*/
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5ED0)
 }
 }
 // 0x4E6860
@@ -1971,50 +834,7 @@ int sub_4E3300()
 namespace gamemd {
 bool FillComboBoxRandomOnly(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  wchar_t *StringCSF; // eax
-  LRESULT v4; // eax
-  int v5; // ecx
-  int v6; // ebx
-  int v7; // ebp
-  int v8; // eax
-  LRESULT v9; // eax
-  int result; // eax
-  bool v11; // [esp+Fh] [ebp-5h]
-  int i; // [esp+10h] [ebp-4h]
-
-  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e3a0e*/
-  v11 = !ShowWindow(DlgItem, 0); /*0x4e3a2b*/
-  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e3a30*/
-  SendMessageA(DlgItem, 0x4DEu, 0, 7); /*0x4e3a3c*/
-  StringCSF = GetStringCSF((wchar_t *)aGuiRandomex, 0, (const char *)g_Str_File_GDlgSupp_cpp, 276); /*0x4e3a4f*/
-  v4 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e3a5d*/
-  SendMessageA(DlgItem, 0x151u, v4, -2); /*0x4e3a68*/
-  v5 = dword_A83CA8; /*0x4e3a6a*/
-  v6 = 0; /*0x4e3a70*/
-  for ( i = dword_A83CA8; v6 < v5; ++v6 ) /*0x4e3a78*/
-  {
-    v7 = *((unsigned int *)dword_A83C9C + v6); /*0x4e3a80*/
-    if ( v7 ) /*0x4e3a85*/
-    {
-      if ( *(unsigned char *)(v7 + 421) ) /*0x4e3a87*/
-      {
-        v8 = *(unsigned int *)(v7 + 184); /*0x4e3a91*/
-        if ( v8 > -3 && v8 <= 9 && **(unsigned short **)(v7 + 96) ) /*0x4e3aa4*/
-        {
-          v9 = SendMessageA(DlgItem, 0x4C2u, 0, *(unsigned int *)(v7 + 96)); /*0x4e3ab3*/
-          SendMessageA(DlgItem, 0x151u, v9, *(unsigned int *)(v7 + 184)); /*0x4e3ac3*/
-          v5 = i; /*0x4e3ac5*/
-        }
-      }
-    }
-  }
-  SendMessageA(DlgItem, 0x4F1u, 0, 0); /*0x4e3ad9*/
-  result = SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e3ae5*/
-  IDA_LOBYTE(result) = v11; /*0x4e3ae7*/
-  if ( !v11 ) /*0x4e3aed*/
-    return ShowWindow(DlgItem, 5); /*0x4e3af2*/
-  return result; /*0x4e3af8*/
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E3A00)
 }
 } // namespace gamemd
 
@@ -2022,24 +842,7 @@ bool FillComboBoxRandomOnly(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 LRESULT SetupComboBoxObserver(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  bool v3; // bl
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // eax
-  int result; // eax
-
-  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e3b12*/
-  v3 = !ShowWindow(DlgItem, 0); /*0x4e3b2b*/
-  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e3b2e*/
-  SendMessageA(DlgItem, 0x4DEu, 0, 7); /*0x4e3b3a*/
-  StringCSF = GetStringCSF((wchar_t *)aGuiObserver, 0, (const char *)g_Str_File_GDlgSupp_cpp, 309); /*0x4e3b4d*/
-  v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e3b5b*/
-  SendMessageA(DlgItem, 0x151u, v5, -3); /*0x4e3b66*/
-  SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e3b72*/
-  result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e3b7e*/
-  if ( !v3 ) /*0x4e3b82*/
-    return ShowWindow(DlgItem, 5); /*0x4e3b87*/
-  return result; /*0x4e3b89*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E3B00)
 }
 } // namespace gamemd
 
@@ -2047,21 +850,7 @@ LRESULT SetupComboBoxObserver(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 int GetComboBoxSelected(HWND aP0, int nIDDlgItem, LRESULT wParam)
 {
-  LRESULT v3; // eax
-  int result; // eax
-
-  v3 = wParam; /*0x4e4170*/
-  if ( wParam == -1 ) /*0x4e4184*/
-    v3 = SendDlgItemMessageA(aP0, nIDDlgItem, 0x147u, 0, 0); /*0x4e4191*/
-  result = SendDlgItemMessageA(aP0, nIDDlgItem, 0x150u, v3, 0); /*0x4e419d*/
-  if ( result < -3 || result > 9 ) /*0x4e41aa*/
-  {
-    if ( dword_A8B23C ) /*0x4e41b4*/
-      return (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 40))(dword_A8B23C); /*0x4e41b8*/
-    else
-      return -2; /*0x4e41be*/
-  }
-  return result; /*0x4e41a2*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4170)
 }
 } // namespace gamemd
 
@@ -2085,26 +874,7 @@ bool IsAvailableColorhWnd(int a1)
 namespace gamemd {
 LRESULT FillListBox(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  bool v3; // bl
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // ebp
-  int result; // eax
-
-  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e477c*/
-  v3 = !ShowWindow(DlgItem, 0); /*0x4e4799*/
-  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e479c*/
-  SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e47a8*/
-  SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e47b4*/
-  StringCSF = GetStringCSF((wchar_t *)g_Str_GUI_RandomAsSymbols, 0, (const char *)g_Str_File_GDlgSupp_cpp, 567); /*0x4e47c7*/
-  v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e47d7*/
-  SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e47e2*/
-  SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e47ed*/
-  SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e47f9*/
-  result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e4805*/
-  if ( !v3 ) /*0x4e4809*/
-    return ShowWindow(DlgItem, 5); /*0x4e480e*/
-  return result; /*0x4e4814*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4770)
 }
 } // namespace gamemd
 
@@ -2112,12 +882,7 @@ LRESULT FillListBox(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 int GetComboBoxSelectedRaw(HWND aP0, int nIDDlgItem, LRESULT wParam)
 {
-  LRESULT v3; // eax
-
-  v3 = wParam; /*0x4e4e20*/
-  if ( wParam == -1 ) /*0x4e4e34*/
-    v3 = SendDlgItemMessageA(aP0, nIDDlgItem, 0x147u, 0, 0); /*0x4e4e41*/
-  return SendDlgItemMessageA(aP0, nIDDlgItem, 0x150u, v3, 0); /*0x4e4e4f*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4E20)
 }
 } // namespace gamemd
 
@@ -2181,26 +946,7 @@ bool sub_4E50A0(int a1)
 namespace gamemd {
 int SetupComboBoxRandomAlliance(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  bool v3; // bl
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // ebp
-  int result; // eax
-
-  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e526c*/
-  v3 = !ShowWindow(DlgItem, 0); /*0x4e5289*/
-  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e528c*/
-  SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5298*/
-  SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e52a4*/
-  StringCSF = GetStringCSF((wchar_t *)g_Str_GUI_RandomAsSymbols, 0, (const char *)g_Str_File_GDlgSupp_cpp, 876); /*0x4e52b7*/
-  v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e52c7*/
-  SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e52d2*/
-  SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e52dd*/
-  SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e52e9*/
-  result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e52f5*/
-  if ( !v3 ) /*0x4e52f9*/
-    return ShowWindow(DlgItem, 5); /*0x4e52fe*/
-  return result; /*0x4e5304*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5260)
 }
 } // namespace gamemd
 
@@ -2208,12 +954,7 @@ int SetupComboBoxRandomAlliance(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 LRESULT SetComboBoxSelection(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 {
-  LRESULT v3; // eax
-
-  v3 = wParam; /*0x4e5900*/
-  if ( wParam == -1 ) /*0x4e5914*/
-    v3 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147u, 0, 0); /*0x4e5921*/
-  return SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v3, 0); /*0x4e592f*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5900)
 }
 } // namespace gamemd
 
@@ -2221,26 +962,7 @@ LRESULT SetComboBoxSelection(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 namespace gamemd {
 LRESULT InitComboBoxNone(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  bool v3; // bl
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // ebp
-  int result; // eax
-
-  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e5cbc*/
-  v3 = !ShowWindow(DlgItem, 0); /*0x4e5cd9*/
-  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e5cdc*/
-  SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5ce8*/
-  SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5cf4*/
-  StringCSF = GetStringCSF((wchar_t *)aGuiNoneassymbo, 0, (const char *)g_Str_File_GDlgSupp_cpp, 1165); /*0x4e5d07*/
-  v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5d17*/
-  SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5d22*/
-  SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e5d2d*/
-  SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e5d39*/
-  result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e5d45*/
-  if ( !v3 ) /*0x4e5d49*/
-    return ShowWindow(DlgItem, 5); /*0x4e5d4e*/
-  return result; /*0x4e5d54*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5CB0)
 }
 } // namespace gamemd
 
@@ -2248,12 +970,7 @@ LRESULT InitComboBoxNone(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 LRESULT GetComboBoxSelectedRaw2(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 {
-  LRESULT v3; // eax
-
-  v3 = wParam; /*0x4e6030*/
-  if ( wParam == -1 ) /*0x4e6044*/
-    v3 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147u, 0, 0); /*0x4e6051*/
-  return SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v3, 0); /*0x4e605f*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6030)
 }
 } // namespace gamemd
 

@@ -25,6 +25,7 @@ using ra2::game::ObjectClass;
 #include "core/checksummer.hpp"
 #include "render/render_ext.hpp"
 #include "structure/building.hpp"
+#include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
 
 // 0x42E6F0
 namespace gamemd { 

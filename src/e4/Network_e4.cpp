@@ -43,6 +43,7 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/IPXManagerClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"  // G42.36 C2027 supply
 
 // 0x4311C0
 namespace gamemd {

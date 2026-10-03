@@ -45,145 +45,21 @@
 namespace gamemd {  // G42.18c ns repair
 SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, int a6, int aP1, int aP0, int aP2, int a1)
 {
-
-  int v3; // eax
-  bool v4; // zf
-  int v5; // ecx
-  void **v6; // edx
-
-  ((ObjectTypeClass *)((int)this))->ConstructFull(Source); /*0x6b5269*/
-  *((unsigned int *)this + 165) = -1; /*0x6b5277*/
-  *((unsigned int *)this + 166) = 1; /*0x6b5281*/
-  *((unsigned int *)this + 167) = 1; /*0x6b5287*/
-  *((unsigned char *)this + 672) = 0; /*0x6b528d*/
-  *((unsigned char *)this + 673) = 0; /*0x6b5294*/
-  *(unsigned int *)this = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b529b*/
-  *((unsigned int *)this + 1) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52a1*/
-  *((unsigned int *)this + 2) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52a7*/
-  *((unsigned int *)this + 3) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52ae*/
-  AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x6b52b5*/
-  *(unsigned short *)((unsigned char *)this + 559) = 1; /*0x6b52ba*/
-  *((unsigned char *)this + 561) = 0; /*0x6b52c7*/
-  *((unsigned char *)this + 562) = 1; /*0x6b52ce*/
-  *((unsigned char *)this + 563) = 1; /*0x6b52d4*/
-  *((unsigned char *)this + 565) = 0; /*0x6b52da*/
-  v3 = dword_A8EC28; /*0x6b52e1*/
-  if ( dword_A8EC28 < dword_A8EC20 /*0x6b5322*/
-    || (byte_A8EC25 || !dword_A8EC20)
-    && dword_A8EC2C > 0
-    && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A8EC18 + 8))(
-               (int *)&dword_A8EC18,
-               dword_A8EC20 + dword_A8EC2C,
-               0) == 0,
-        v3 = dword_A8EC28,
-        !v4) )
-  {
-    dword_A8EC28 = v3 + 1; /*0x6b5327*/
-    *((unsigned int *)dword_A8EC1C + v3) =(unsigned int)this; /*0x6b5331*/
-    v3 = dword_A8EC28; /*0x6b5334*/
-  }
-  v5 = 0; /*0x6b5339*/
-  if ( v3 <= 0 ) /*0x6b533d*/
-  {
-LABEL_11:
-    *((unsigned int *)this + 165) = -1; /*0x6b5351*/
-    return this; /*0x6b535a*/
-  }
-  else
-  {
-    v6 = (void **)dword_A8EC1C; /*0x6b533f*/
-    while ( *v6 != this ) /*0x6b5347*/
-    {
-      ++v5; /*0x6b5349*/
-      ++v6; /*0x6b534a*/
-      if ( v5 >= v3 ) /*0x6b534f*/
-        goto LABEL_11; /*0x6b534f*/
-    }
-    *((unsigned int *)this + 165) = v5; /*0x6b5361*/
-    return this; /*0x6b5367*/
-  }
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6B5260)
 }
 }  // G42.18c ns repair
 // 0x6B55F0
 namespace gamemd {  // G42.18c ns repair
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
-
-  int v7; // ebx
-  int v8; // edx
-  int Width; // ecx
-  unsigned int *v10; // esi
-  int v11; // eax
-  int v12; // [esp-1Ch] [ebp-2Ch]
-  int v13; // [esp+8h] [ebp-8h] BYREF
-  int v14; // [esp+Ch] [ebp-4h]
-
-  v7 = (*((int (**)(SmudgeTypeClass *))this->vtable1 + 39))(this); /*0x6b55ff*/
-  if ( v7 ) /*0x6b5603*/
-  {
-    v8 = a2[1]; /*0x6b5614*/
-    v13 = *a2; /*0x6b5619*/
-    v14 = v8; /*0x6b561d*/
-    if ( a4 ) /*0x6b5621*/
-    {
-      Width = this->Width; /*0x6b5623*/
-      v14 += -15 * (a4 / Width + a4 % Width); /*0x6b5659*/
-      v13 += 60 * (a4 / Width - a4 % Width) / 2; /*0x6b5661*/
-    }
-    v10 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(a6); /*0x6b5674*/
-    v12 = *((int16_t *)v10 + 134); /*0x6b568a*/
-    v11 = ZCoordToScreenY(a5); /*0x6b568c*/
-    DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v10[13],(gamemd::ConvertClass *)(v7), 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
-  }
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6B55F0)
 }
 }  // G42.18c ns repair
 // 0x6B56D0
 namespace gamemd {  // G42.18c ns repair
 int SmudgeTypeClass::GetSize(uint8_t *** aP1)
 {
-
-  int result; // eax
-  char Bool_Overwrite; // al
-  char Burn; // cl
-  char v6; // al
-  int Width; // [esp-8h] [ebp-210h]
-  char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
-
-  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x6b56e3*/
-  if ( ((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI(aP1) ) /*0x6b56eb*/
-  {
-    Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aCrater, this->Crater); /*0x6b570b*/
-    Burn = this->Burn; /*0x6b5710*/
-    this->Crater = Bool_Overwrite; /*0x6b5716*/
-    v6 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aBurn, Burn); /*0x6b5725*/
-    Width = this->Width; /*0x6b5732*/
-    this->Burn = v6; /*0x6b5739*/
-    this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
-                    (bool *)aP1,
-                    (uint8_t *)((unsigned int *)this)[0],
-                    (uint8_t *)(unsigned int *)((char *)&stru_82BA00 + 151),
-                    Width);
-    this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
-                     (bool *)aP1,
-                     (uint8_t *)((unsigned int *)this)[0],
-                     (uint8_t *)g_INI_Key_Height,
-                     this->Height);
-    if ( ((unsigned int *)this)[0] ) /*0x6b5764*/
-      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x6b57b4*/
-    else
-      _makepath(Buffer, 0, 0,(const char *)(((unsigned int *)this)[0]), (const char *)Ext); /*0x6b5784*/
-    result = (int)SearchMIXFile(Buffer, 0); /*0x6b57c2*/
-    ((unsigned int *)this)[0] = (unsigned int)((SHPStruct *)result); /*0x6b57c7*/
-    LOBYTE(result) = 1; /*0x6b57ce*/
-  }
-  else
-  {
-    LOBYTE(result) = 0; /*0x6b57db*/
-  }
-  return result; /*0x6b57cd*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6B56D0)
 }
 }  // G42.18c ns repair
 // 0x6B6160
@@ -362,7 +238,5 @@ int SmudgeTypeClass::GetObjectSize()
 // 0x6B6150
 int SmudgeTypeClass::GetAuxField()
 {
-
-  return this->ArrayIndex; /*0x6b6156*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6B6150)
 }

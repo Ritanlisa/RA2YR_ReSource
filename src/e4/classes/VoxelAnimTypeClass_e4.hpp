@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 struct SHPStruct;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct OverlayTypeClass;  // fix_fwd_type_supply
@@ -284,6 +285,7 @@ struct VoxelAnimTypeClass {
     int StubReturnFalse(int a1);
     long long GetData(ObjectTypeClass * aP1, int a3);
     VoxelAnimTypeClass * Constructor(char *Source);
+    VoxelAnimTypeClass * ddtor(void ** Block, char a2);
 };
 
 } // namespace gamemd

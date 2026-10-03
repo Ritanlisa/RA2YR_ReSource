@@ -46,6 +46,7 @@
 #include "e4/classes/Lobby_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"  // G42.36 C2027 supply
 
 // 0x5E2820
 namespace gamemd {
@@ -79,94 +80,7 @@ void SetDialogPlayerName(HWND hDlg, int a2)
 namespace gamemd {
 AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
 {
-  int v3; // eax
-  HWND DlgItem; // eax
-  HWND v5; // eax
-  HWND v6; // eax
-  HWND v7; // eax
-  HWND v8; // eax
-  HWND v9; // eax
-  HWND v10; // eax
-  int v12; // [esp+Ch] [ebp-1Ch]
-  LPARAM lParam; // [esp+10h] [ebp-18h]
-  LPARAM v14; // [esp+14h] [ebp-14h]
-  WPARAM wParam; // [esp+18h] [ebp-10h] BYREF
-  int v16; // [esp+1Ch] [ebp-Ch]
-  unsigned int v17[2]; // [esp+20h] [ebp-8h] BYREF
-
-  v14 = (LPARAM)((int)(g_abs_A8B270));
-  lParam = (LPARAM)((int)(g_abs_A8B25C));
-  v12 = (int)(g_abs_A8B268);
-  if ( a2 ) /*0x5e303c*/
-  {
-    ((ComPtr *)(&wParam))->Constructor(); /*0x5e3047*/
-    wParam = (WPARAM)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e3059*/
-    if ( dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x5e3066*/
-    {
-      v3 = (unsigned int)(FindWDTTerritoryClass(v17, *(unsigned int *)dword_A8B240));
-      ((ComPtr *)(&wParam))->Set(v3->q010); /*0x5e307f*/
-      v17[0] = (unsigned int)((void*)&rc_ptr_WDTTerritory_vftable); /*0x5e3088*/
-      ((ComPtr *)(v17))->Release(); /*0x5e308c*/
-    }
-    if ( v16 ) /*0x5e3097*/
-    {
-      DlgItem = GetDlgItem(hDlg, 1348); /*0x5e30ab*/
-      EnableWindow(DlgItem, 0); /*0x5e30b4*/
-      v5 = GetDlgItem(hDlg, 1748); /*0x5e30be*/
-      EnableWindow(v5, 0); /*0x5e30c1*/
-      if ( (*(unsigned int *)(v16 + 60) & 0x20000) == 0 ) /*0x5e30ce*/
-      {
-        v6 = GetDlgItem(hDlg, 1026); /*0x5e30d8*/
-        EnableWindow(v6, 0); /*0x5e30db*/
-      }
-      if ( (IDA_BYTE1(*(unsigned int *)(v16 + 60)) & 0x80u) == 0 ) /*0x5e30e7*/
-      {
-        v7 = GetDlgItem(hDlg, 1359); /*0x5e30f1*/
-        EnableWindow(v7, 0); /*0x5e30f4*/
-      }
-      if ( (*(unsigned int *)(v16 + 60) & 0x400) == 0 ) /*0x5e3100*/
-      {
-        v8 = GetDlgItem(hDlg, 1358); /*0x5e310a*/
-        EnableWindow(v8, 0); /*0x5e310d*/
-      }
-      if ( (*(unsigned char *)(v16 + 60) & 0x20) == 0 ) /*0x5e3117*/
-      {
-        v9 = GetDlgItem(hDlg, 1000); /*0x5e3121*/
-        EnableWindow(v9, 0); /*0x5e3124*/
-      }
-      if ( (*(unsigned int *)(v16 + 60) & 0x100) == 0 ) /*0x5e3130*/
-      {
-        v10 = GetDlgItem(hDlg, 1357); /*0x5e313a*/
-        EnableWindow(v10, 0); /*0x5e313d*/
-      }
-    }
-    SendDlgItemMessageA(hDlg, 1321, 0x406u, 1u, 393216); /*0x5e3151*/
-    SendDlgItemMessageA( /*0x5e317d*/
-      hDlg,
-      1026,
-      0x406u,
-      1u,
-      *((uint16_t *)dword_8871E0 + 2624) | (*((uint16_t *)dword_8871E0 + 2628) << 16));
-    SendDlgItemMessageA(hDlg, 1026, 0x4ABu, 0, *((unsigned int *)dword_8871E0 + 1315)); /*0x5e3198*/
-    SendDlgItemMessageA( /*0x5e31c4*/
-      hDlg,
-      1359,
-      0x406u,
-      1u,
-      *((uint16_t *)dword_8871E0 + 2632) | (*((uint16_t *)dword_8871E0 + 2636) << 16));
-    wParam = (WPARAM)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e31ca*/
-    ((ComPtr *)(&wParam))->Release(); /*0x5e31d2*/
-  }
-  SendDlgItemMessageA(hDlg, 1321, 0x405u, 1u, 6 - v12); /*0x5e31f1*/
-  SendDlgItemMessageA(hDlg, 1026, 0x405u, 1u, lParam); /*0x5e3205*/
-  SendDlgItemMessageA(hDlg, 1359, 0x405u, 1u, v14); /*0x5e3219*/
-  wParam = 0; /*0x5e3223*/
-  v16 = 1; /*0x5e322b*/
-  SendDlgItemMessageA(hDlg, 1358, 0xF1u, *(&wParam + (uint8_t)g_abs_A8B262), 0); /*0x5e3245*/
-  SendDlgItemMessageA(hDlg, 1690, 0xF1u, *(&wParam + (uint8_t)g_abs_A8B263), 0); /*0x5e3261*/
-  SendDlgItemMessageA(hDlg, 1693, 0xF1u, *(&wParam + (uint8_t)g_abs_A8B264), 0); /*0x5e327f*/
-  SendDlgItemMessageA(hDlg, 1000, 0xF1u, *(&wParam + (uint8_t)dword_A8B320), 0); /*0x5e329f*/
-  return (gamemd::AbstractClass **)(SendDlgItemMessageA(hDlg, 1357, 0xF1u, *(&wParam + (uint8_t)g_abs_A8B261), 0)); /*0x5e32bd*/
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5E3010)
 }
 }
 // 0x5E32D0

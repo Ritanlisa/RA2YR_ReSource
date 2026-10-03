@@ -15,6 +15,7 @@
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 
 // 0x5ACD30
 namespace gamemd {

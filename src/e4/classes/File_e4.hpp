@@ -44,5 +44,6 @@ struct File {
     AbstractClass * * LoadWDT(ObjectClass * aP1);  // 0x76AC90
     AbstractClass * * LoadWDTDecompress(int aP1, int a3);  // 0x76B0A0
     int ParseAudioFileRIFF();  // 0x7C12B0
+    AbstractClass * * ParseFileHVA(int a2, int aP1, int a3);
 };
 } // namespace gamemd

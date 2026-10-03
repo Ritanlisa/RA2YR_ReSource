@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Size;  // G42.36 fwd supply
 struct OverlayTypeClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct AbstractTypeClass;  // fix_fwd_type_supply
@@ -229,6 +230,9 @@ struct CampaignClass {
      double LoadFromINI(...);  // C2597 interim stub
     int GetValue(unsigned int *a2);  // 0x49e4f0
     int Check(uint16_t a2);  // 0x5cf810
+    AbstractClass * * sub_48B0E0(int a2, int a3, size_t Size, int a5);
+    void sub_48B1F0();
+    CampaignClass * * sub_7B2E50();
 };
 
 } // namespace gamemd

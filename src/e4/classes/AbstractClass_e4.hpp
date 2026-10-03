@@ -115,8 +115,6 @@ struct AbstractClass {
     unsigned int QueryInterface;
     void* Buildup;  // 0x0 (no offset truth)
     void* BuildupLoaded;  // 0x0 (no offset truth)
-    void* AbstractClass_COMStub_133;  // 0x0 (no offset truth)
-    void* AbstractClass_COMStub_137;  // 0x0 (no offset truth)
     void* BlitterCore;  // 0x0 (no offset truth)
     void* RLEBlitterCore;  // 0x0 (no offset truth)
 // --- flat members (END) ---
@@ -335,6 +333,9 @@ int DTOR(); // 0x4101F0
     int COMStub_Release(); // N_fix R5 supply (cache truth)
     int COMStub_AddRef(); // N_fix R5 supply (cache truth)
     int ProcessPower(); // N_fix R5 supply (cache truth)
+    int AbstractClass_COMStub_133();
+    int AbstractClass_COMStub_137();
+    AbstractClass * * AnnounceExpiredPointer(AbstractClass *a1, int a2, int aP0, int aP1, int aP2);
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

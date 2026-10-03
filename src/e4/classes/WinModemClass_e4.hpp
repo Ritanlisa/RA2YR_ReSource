@@ -60,6 +60,7 @@ struct WinModemClass {
     int SaveToINI(const char * NumberOfBytesWritten);
     int WriteSerial(LPCVOID lpBuffer, DWORD aP2);
     int ddtor(int a2);
+    int SaveToINI(const char * NumberOfBytesWritten, void * aP);
 };
 
 } // namespace gamemd

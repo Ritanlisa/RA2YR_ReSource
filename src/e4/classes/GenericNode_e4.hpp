@@ -13,6 +13,7 @@ struct GenericNode {
 // --- flat members (END) ---
     GenericNode * sub_40E390(char a2);
     unsigned int * Constructor();  // 0x40e320
+    GenericNode * sub_40E390(GenericNode ** Block, char a2);
 };
 
 } // namespace gamemd

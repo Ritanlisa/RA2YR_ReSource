@@ -35,6 +35,7 @@
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/GameOptions_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 
 // 0x430980
 namespace gamemd {

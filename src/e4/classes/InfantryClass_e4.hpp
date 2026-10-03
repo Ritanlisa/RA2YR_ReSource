@@ -6,6 +6,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class FindIdleAITarget;  // G42.36 fwd supply
+class CanEnterBuilding;  // G42.36 fwd supply
+class FireAtTargetPos;  // G42.36 fwd supply
+class GetDeployWeaponIndex;  // G42.36 fwd supply
+class CanDeployAtCell;  // G42.36 fwd supply
 struct BombClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
@@ -692,6 +697,11 @@ struct InfantryClass {
      double Construct(...);  // C2597 interim stub
     static double GetType(...);  // C2597 interim stub
     void * FindNearbyCell(int a2);  // 0x418e20
+    AnimClass * CanDeployAtCell(__int16 *a2, __int16 *a3, int a1, int a4);
+    AnimClass * GetDeployWeaponIndex();
+    AnimClass * FireAtTargetPos(int a2, int a3, int a4);
+    bool CanEnterBuilding();
+    int FindIdleAITarget();
 };
 
 } // namespace gamemd

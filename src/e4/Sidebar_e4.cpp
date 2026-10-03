@@ -34,6 +34,7 @@
 #include "e4/classes/SuperClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/CreateTeamCommand_e4.hpp"  // G42.36 C2027 supply
 
 // 0x4FA350
 namespace gamemd {

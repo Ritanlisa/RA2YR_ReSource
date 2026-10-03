@@ -307,6 +307,7 @@ struct DSurface {
     void* DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8);
     void* FillRectEx(int a2, int a3, int a4);
     static double Lock(...);  // C2597 interim stub
+    int FillRectWithColor(int * a0, ObjectClass * aP1, int16_t a3, uint8_t a4);
 };
 
 } // namespace gamemd

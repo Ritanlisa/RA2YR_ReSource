@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct AITriggerTypeClass {
@@ -92,6 +93,7 @@ struct AITriggerTypeClass {
     unsigned char q0E8;  // 0xE8
     unsigned int q0E4;  // 0xE4
     unsigned char q09C;  // 0x9C
+    AITriggerTypeClass * ddtor(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

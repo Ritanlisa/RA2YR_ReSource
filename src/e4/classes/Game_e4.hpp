@@ -6,6 +6,23 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class SetDword30;  // G42.36 fwd supply
+class SetDword32;  // G42.36 fwd supply
+class ResetDisplayArrays;  // G42.36 fwd supply
+class CCINIClass;  // G42.36 fwd supply
+class FindBuildingTypeByName;  // G42.36 fwd supply
+class LoadWithProgress;  // G42.36 fwd supply
+class ClearScreen;  // G42.36 fwd supply
+class SetByte96;  // G42.36 fwd supply
+class PreGameInit;  // G42.36 fwd supply
+class LoadOrReloadOptions;  // G42.36 fwd supply
+class Update;  // G42.36 fwd supply
+class ComputeDialogPos;  // G42.36 fwd supply
+class ComputeDisplayPosition;  // G42.36 fwd supply
+class ProcessSidebarUnits;  // G42.36 fwd supply
+class CopyLocalScenarioData;  // G42.36 fwd supply
+class ReadTeams;  // G42.36 fwd supply
+class Game_DumpMultiplayerGameInfo;  // G42.36 fwd supply
 struct ObjectClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
 struct HashTable_flat;  // fix_fwd_type_supply
@@ -146,5 +163,23 @@ struct Game {
     int readIniSettings();  // 0x67FDE0
     char InitializeToolTipColor();  // 0x72F440
     static int Stub3(int a1);  // 0x5865E0
+    int LoadSaved(void *a1_1);
+    CellStruct * * Game_DumpMultiplayerGameInfo();
+    int ReadTeams();
+    int CopyLocalScenarioData();
+    int ProcessSidebarUnits();
+    Game * * ComputeDisplayPosition();
+    unsigned int * ComputeDialogPos(unsigned int * a2);
+    void Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1);
+    int LoadOrReloadOptions(IUnknown * aP1);
+    int PreGameInit();
+    void SetByte96();
+    int ClearScreen(...);
+    int LoadWithProgress(const char *aP0, double a2);
+    int FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCINIClass * aP3);
+    void * ResetDisplayArrays();
+    int SetDword32(int a2);
+    int SetDword30(int a2);
+    Game * * sub_634B20();
 };
 } // namespace gamemd

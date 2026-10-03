@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 struct ILocomotion;  // fix_fwd_type_supply
 struct State;  // fix_fwd_type_supply
 
@@ -56,6 +57,7 @@ struct TunnelLocomotionClass {
     int StubReturn60();
     int ddtor(int a1, unsigned int * a2);
     void ProcessFormationPosition(unsigned int * a1);
+    TunnelLocomotionClass * ProcessMove(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

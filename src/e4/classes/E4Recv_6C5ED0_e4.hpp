@@ -7,5 +7,6 @@ namespace gamemd {
 struct E4Recv_6C5ED0 {
     void* vfptr;  // minimal E2 declaration
     int CreateTClassFactory_FoggedObjectClass();  // 0x6C5ED0
+    int CreateTClassFactory_FoggedObjectClass(void * a2, void * a3);
 };
 } // namespace gamemd
