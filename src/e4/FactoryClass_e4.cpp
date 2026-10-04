@@ -47,7 +47,7 @@ int FactoryClass::HasProgressChanged()
 }
 // 0x4C9C70
 namespace gamemd {
-int FactoryClass::DemandProduction(int a2, #375 *a3, char a4)
+int FactoryClass::DemandProduction(int a2, void * a3, char a4)  // G42.40e: '#375' ida-internal-id -> void* per hpp:81
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004C9C70.json)
 }
@@ -191,7 +191,7 @@ char VectorClass_flat::AddRef(int a2)
 
 // 0x4CA930
 namespace gamemd {
-gamemd::AbstractClass VectorClass_flat::Release(int a2, unsigned int * a3)
+char FactoryClass_33::Release(int a2, unsigned int * a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004CA930.json)
 }
@@ -199,7 +199,7 @@ gamemd::AbstractClass VectorClass_flat::Release(int a2, unsigned int * a3)
 
 // 0x4CA9E0
 namespace gamemd {
-wchar_t * VectorClass_flat::ddtor()
+wchar_t * FactoryClass_33::ddtor()
 {
      return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004CA9E0.json)
 }
