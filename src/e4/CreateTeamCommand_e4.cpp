@@ -843,21 +843,17 @@ int CreateTeamCommand_performAction_84()
 
 // 0x536C90
 namespace gamemd {
-char * CreateTeamCommand::performAction_85()
+char * DeployCommandClass::performAction_85()
 {
-
-  return aGuardobject; /*0x536c95*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536C90.json)
 }
 } // namespace gamemd
 
 // 0x536CA0
 namespace gamemd {
-wchar_t * CreateTeamCommand::performAction_86()
+wchar_t * DeployCommandClass::performAction_86()
 {
-
-  return GetStringCSF(aTxtGuard, 0, g_Str_File_Init_CPP, 6931); /*0x536cb6*/
-
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536CA0.json)
 }
 } // namespace gamemd
 

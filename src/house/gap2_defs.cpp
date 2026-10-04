@@ -12,7 +12,7 @@ using ra2::game::ObjectClass;
 // Symbols genuinely exist (NOT #if 0). Declarations live in the class hpp
 // bodies with `// 0xADDR` after the semicolon. Bodies return a safe default.
 #include <cstdint>
-#include "e4/classes/INIClass_e4.hpp"
+#include "house/house.hpp"
 // neutralise Win32 macros that collide with IDA method names
 #ifdef _WIN32
 #include <windows.h>
@@ -20,7 +20,7 @@ using ra2::game::ObjectClass;
 #endif
 #include "object/abstract.hpp"
 #include "house/base.hpp"
-#include "house/house.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "core/checksummer.hpp"
 #include "render/render_ext.hpp"
@@ -391,179 +391,129 @@ int HouseClass::CanBuild(int a1, int a2, int a3)
     (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F7870.json)
 }
 // 0x4F9370
-namespace gamemd { 
 int HouseClass::Update()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F9370.json)
 }
-}
 // 0x4F93E0
-namespace gamemd { 
 int HouseClass::NotifyUnderAttack(void* a1)
 {
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F93E0.json)
 }
-}
 // 0x4F9790
-namespace gamemd { 
 int HouseClass::ProcessPowerDrain(int a1)
 {
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F9790.json)
 }
-}
 // 0x4F9950
-namespace gamemd { 
 int HouseClass::AddPower(int a1)
 {
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F9950.json)
 }
-}
 // 0x4F9A10
-namespace gamemd { 
 bool HouseClass::IsAllied(int a1)
 {
     (void)a1; return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F9A10.json)
 }
-}
 // 0x4F9B70
-namespace gamemd { 
 int HouseClass::HandleAlliance(int a1, int a2)
 {
     (void)a1; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F9B70.json)
 }
-}
 // 0x4F9F90
-namespace gamemd { 
 int HouseClass::SetAlliance(int a1, int a2)
 {
     (void)a1; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F9F90.json)
 }
-}
 // 0x4FA2E0
-namespace gamemd { 
 int HouseClass::SetThreat_Bounds(int a1, int a2)
 {
     (void)a1; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FA2E0.json)
 }
-}
 // 0x4FA910
-namespace gamemd { 
 int HouseClass::StartFactoryProduction(void* a1, int a2, int a3)
 {
     (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FA910.json)
 }
-}
 // 0x4FAA10
-namespace gamemd { 
 int HouseClass::CancelProduction(void* a1, int a2, int a3, int a4)
 {
     (void)a1; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FAA10.json)
 }
-}
 // 0x4FB0E0
-namespace gamemd { 
 int HouseClass::CompleteProduction(void* a1, int a2, int a3, int a4)
 {
     (void)a1; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FB0E0.json)
 }
-}
 // 0x4FB6B0
-namespace gamemd { 
 int HouseClass::ProcessPromotionSound(void* a1)
 {
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FB6B0.json)
 }
-}
 // 0x4FC0B0
-namespace gamemd { 
 int HouseClass::DefeatPlayer()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FC0B0.json)
 }
-}
 // 0x4FC6D0
-namespace gamemd { 
 int HouseClass::ClearLowPowerTargets()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FC6D0.json)
 }
-}
 // 0x4FC9E0
-namespace gamemd { 
 int HouseClass::CheckWinCondition(int a1)
 {
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FC9E0.json)
 }
-}
 // 0x4FCBD0
-namespace gamemd { 
 int HouseClass::CheckDefeat(int a1)
 {
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FCBD0.json)
 }
 // 0x4FCE30
-namespace gamemd { 
 double HouseClass::GetPowerRatio()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FCE30.json)
 }
-}
-}
 // 0x4FD060
-namespace gamemd { 
 int HouseClass::FindBuildingOfType(int a1, int a2)
 {
     (void)a1; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FD060.json)
 }
-}
 // 0x4FDD10
-namespace gamemd { 
 int HouseClass::ManageProduction(int a1)
 {
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FDD10.json)
 }
-}
 // 0x4FE3E0
-namespace gamemd { 
 int HouseClass::AutoBuild()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FE3E0.json)
 }
-}
 // 0x4FEA60
-namespace gamemd { 
 int HouseClass::AIUnitProduction()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FEA60.json)
 }
-}
 // 0x4FEEE0
-namespace gamemd { 
 int HouseClass::AIInfantryProduction()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FEEE0.json)
 }
-}
 // 0x4FF210
-namespace gamemd { 
 int HouseClass::AIAircraftProduction()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FF210.json)
 }
-}
 // 0x4FF550
-namespace gamemd { 
 int HouseClass::DecrementUnitCount(void* a1)
 {
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004FF550.json)
 }
-}
 // 0x500510
-namespace gamemd { 
 int HouseClass::GetBuildLimit(int a1, int a2, int a3)
 {
     (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00500510.json)
-}
 }
 // 0x500910
 int HouseClass::GetFactoryCount(int a1, int a2)
@@ -809,11 +759,9 @@ int HouseClass::CalculateCostMultipliers()
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0050BF60.json)
 }
 // 0x50C0A0
-namespace gamemd { 
 double HouseClass::GetBuildingDamageMultiplier(void* a1)
 {
     (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0050C0A0.json)
-}
 }
 }
 // 0x50C170

@@ -1,12 +1,12 @@
 // GENERATED flat e4 class (mechanical, supply_e4_class_decls)
 #pragma once
+#include <windows.h>  // G42.37 Win32-type supply (LPARAM/HWND in decls)
 
 
 
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class CloseAll;  // G42.36 fwd supply
 class UpdateGameUI;  // G42.36 fwd supply
 class RestoreParent;  // G42.36 fwd supply
 class GetField;  // G42.36 fwd supply
