@@ -33,9 +33,9 @@ struct ConnectionPointClass {
     unsigned int u32_28;
     unsigned int u32_29;
 // --- flat members (END) ---
-    int EnumConnections(int a1, int a2);
+    int EnumConnections(int a2);  // G42.41c: truth 0x4A0700
     int GetConnectionInterface(unsigned int * a1, int a2);
-    int Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *) a2, int * updated);
+    int Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *), int * updated);  // G42.41b: fnptr trailing-name dropped (truth 0x4A0630)
     unsigned int * Construct(unsigned int * a1, ConnectionPointClass * aP2, void *a3, void *a4, void *a5, void *a6);
 };
 

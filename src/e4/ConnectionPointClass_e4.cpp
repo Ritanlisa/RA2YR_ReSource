@@ -80,14 +80,14 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 }
 // 0x4A0630
 namespace gamemd {  // G42.18c ns repair
-int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *) a2, int * updated)
+int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *), int * updated)  // G42.41b: fnptr trailing-name dropped (truth 0x4A0630)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A0630)
 }
 }  // G42.18c ns repair
 // 0x4A0700
 namespace gamemd {  // G42.18c ns repair
-int ConnectionPointClass::EnumConnections(int a1, int a2)
+int ConnectionPointClass::EnumConnections(int a2)  // G42.41c: truth 0x4A0700 = 1 param; a1 was this made explicit
 {
 
   int v2; // eax
@@ -98,25 +98,25 @@ int ConnectionPointClass::EnumConnections(int a1, int a2)
   int ConnectionPointClass_field_0x20; // ecx
 
   v2 = 0; /*0x4a0705*/
-  v3 = *((unsigned int *)a1 + 11); /*0x4a0707*/
+  v3 = *((unsigned int *)this + 11); /*0x4a0707*/
   if ( v3 <= 0 ) /*0x4a070d*/
     return -2147220992; /*0x4a0725*/
-  for ( i = (unsigned int *)(a1->ConnectionPointClass_field_0x20 + 4); *i != a2; i += 2 ) /*0x4a0716*/
+  for ( i = (unsigned int *)(this->ConnectionPointClass_field_0x20 + 4); *i != a2; i += 2 ) /*0x4a0716*/
   {
     if ( ++v2 >= v3 ) /*0x4a0723*/
       return -2147220992; /*0x4a0723*/
   }
-  v6 = *((unsigned int *)a1 + 11); /*0x4a072f*/
+  v6 = *((unsigned int *)this + 11); /*0x4a072f*/
   if ( v2 < v6 ) /*0x4a0734*/
   {
     v7 = v6 - 1; /*0x4a0736*/
-    for ( *((unsigned int *)a1 + 11) = v7; /*0x4a073c*/
-          v2 < *((unsigned int *)a1 + 11);
+    for ( *((unsigned int *)this + 11) = v7; /*0x4a073c*/
+          v2 < *((unsigned int *)this + 11);
           *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v2 - 4) = *(unsigned int *)(ConnectionPointClass_field_0x20
                                                                                 + 8 * v2
                                                                                 + 4) )
     {
-      ConnectionPointClass_field_0x20 = a1->ConnectionPointClass_field_0x20; /*0x4a073e*/
+      ConnectionPointClass_field_0x20 = this->ConnectionPointClass_field_0x20; /*0x4a073e*/
       ++v2; /*0x4a0741*/
       *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v2 - 8) = *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v2); /*0x4a0745*/
     }
@@ -206,23 +206,23 @@ unsigned int ConnectionPointClass_9::Unadvise(int a2)
 
 // 0x4A14F0
 namespace gamemd {
-VectorClass_flat * ConnectionPointClass_9::QueryInterface(unsigned int * Block, char a2)
+unsigned int * ConnectionPointClass_9::QueryInterface(char a2)  // G42.41d: truth 0x4A14F0 - first param was this; ret _DWORD*
 {
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4a14f3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4a14f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4a1500*/
+  v3 = *(void **)&this->m_1[3]; /*0x4a14f3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4a14f6*/
+  if ( v3 && BYTE1(this->m_C) ) /*0x4a1500*/
   {
     __3_YAXPAX_Z(v3); /*0x4a1508*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4a1510*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4a1510*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4a151b*/
-  Block->m_8 = 0; /*0x4a1521*/
+  BYTE1(this->m_C) = 0; /*0x4a151b*/
+  this->m_8 = 0; /*0x4a1521*/
   if ( (a2 & 1) != 0 ) /*0x4a1528*/
-    __3_YAXPAX_Z(Block); /*0x4a152b*/
-  return Block->__pad_0; /*0x4a1535*/
+    __3_YAXPAX_Z(this); /*0x4a152b*/
+  return this->__pad_0; /*0x4a1535*/
 
 }
 } // namespace gamemd

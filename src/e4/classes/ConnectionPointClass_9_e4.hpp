@@ -22,7 +22,7 @@ struct ConnectionPointClass_9 {
     int EnumConnections(int a2);  // 0x4A0F70
     char AddRef(int a2);  // 0x4A1240
     int Advise(unsigned int * a2);  // 0x4A1360
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4A14F0
+    unsigned int * QueryInterface(char a2);  // 0x4A14F0 G42.41d truth (param1 was this)
     unsigned int Unadvise(int a2);  // 0x4A13A0
 };
 } // namespace gamemd
