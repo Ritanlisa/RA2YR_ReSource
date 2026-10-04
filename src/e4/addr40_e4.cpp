@@ -172,7 +172,7 @@ int sub_406750()
 
 // 0x406760
 namespace gamemd {
-INIClass * * E4Recv_406760::sub_406760(void (*)(char *) a1)
+void * E4Recv_406760::sub_406760(void (*a1)(char *))
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00406760.json)
 }
@@ -270,7 +270,7 @@ void ReadAudioStream(AudioStream * aP0, int a2)
 }
 // 0x4093F0
 namespace gamemd {
-void long sub_4093F0()
+long sub_4093F0()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4093F0)
 }
@@ -527,7 +527,7 @@ int sub_403480(int a1, int a2)
 
 // 0x403490
 namespace gamemd {
-struct Concurrency::ISchedulerProxy * E4Recv_403490::_GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ()
+void * E4Recv_403490::_GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x403490)
 }
@@ -535,7 +535,7 @@ struct Concurrency::ISchedulerProxy * E4Recv_403490::_GetSchedulerProxy_Schedule
 
 // 0x4034A0
 namespace gamemd {
-struct Concurrency::IScheduler * E4Recv_4034A0::_GetIScheduler_SchedulerBase_details_Concurrency__QAEPAUIScheduler_3_XZ()
+void * E4Recv_4034A0::_GetIScheduler_SchedulerBase_details_Concurrency__QAEPAUIScheduler_3_XZ()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4034A0)
 }
@@ -1534,6 +1534,7 @@ namespace gamemd {
 int unknown_libname_1()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x40AD80)
+    return 0;
 }
 } // namespace gamemd
 
@@ -1672,6 +1673,7 @@ namespace gamemd {
 int unknown_libname_2()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x40AFC0)
+    return 0;
 }
 } // namespace gamemd
 
@@ -2348,6 +2350,7 @@ namespace gamemd {
 int unknown_libname_4()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x40D9F0)
+    return 0;
 }
 } // namespace gamemd
 
@@ -2632,6 +2635,7 @@ namespace gamemd {
 int unknown_libname_5()
 {
   ((HashTable *)((void **)&dword_887180))->DestroyHashTableINIClass(); /*0x40e055*/
+    return 0;
 }
 } // namespace gamemd
 
@@ -2648,6 +2652,7 @@ namespace gamemd {
 int unknown_libname_6()
 {
   ((HashTable *)((void **)&dword_887208))->DestroyHashTableINIClass(); /*0x40e105*/
+    return 0;
 }
 } // namespace gamemd
 
@@ -2664,6 +2669,7 @@ namespace gamemd {
 int unknown_libname_7()
 {
   ((HashTable *)((void **)&dword_887128))->DestroyHashTableINIClass(); /*0x40e1b5*/
+    return 0;
 }
 } // namespace gamemd
 
@@ -2680,6 +2686,7 @@ namespace gamemd {
 int unknown_libname_8()
 {
   ((HashTable *)((void **)&dword_887058))->DestroyHashTableINIClass(); /*0x40e265*/
+    return 0;
 }
 } // namespace gamemd
 
@@ -2696,6 +2703,7 @@ namespace gamemd {
 int unknown_libname_9()
 {
   ((HashTable *)((void **)&dword_8870C0))->DestroyHashTableINIClass(); /*0x40e315*/
+    return 0;
 }
 } // namespace gamemd
 
@@ -2873,6 +2881,7 @@ namespace gamemd {
 int unknown_libname_10()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x40EBC0)
+    return 0;
 }
 } // namespace gamemd
 

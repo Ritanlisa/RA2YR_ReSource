@@ -95,6 +95,9 @@ struct GScreenClass {
     FileClass * processAITrigger(unsigned int * Block, char a2);
 };  // G42.37 class-body supply (defs in AbstractClass_e4.cpp)
 #ifndef GAMEMD_TREE_UNIVERSE
+#ifndef GAMEMD_USING_AbstractClass
+#define GAMEMD_USING_AbstractClass 1
+#endif
 struct AbstractClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0

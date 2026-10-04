@@ -314,7 +314,7 @@ void sub_6DA980()
 }
 // 0x769E30
 namespace gamemd {
-gamemd::AbstractClass VectorClass_flat::Release(int a2, unsigned int * a3)
+gamemd::AbstractClass * * VectorClass_flat::Release(int a2, unsigned int * a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00769E30.json)
 }
@@ -328,9 +328,9 @@ void * VectorClass_flat::Constructor_0(rc_ptr_base * Block, char a2, void *a3_1)
 }
 // 0x76A3F0
 namespace gamemd {
-char * VectorClass_flat::Release(int a2, char * a3)
+char VectorClass_flat::Release(int a2, char * a3)
 {
-    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0076A3F0.json)
+    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0076A3F0.json)
 }
 }
 // 0x535BE0
@@ -400,9 +400,9 @@ char sub_5BF580()
 
 // 0x5C9720
 namespace gamemd {
-void __usercall sub_5C9720(int a1, int a2, int a3)
+void sub_5C9720(int a1, int a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C9720)
+    // // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C9720)
 }
 } // namespace gamemd
 
@@ -474,9 +474,9 @@ int sub_6823D0(int a1, int a2, wchar_t * Destination)
 
 // 0x6C8E80
 namespace gamemd {
-void __usercall sub_6C8E80(int a1, int a2, int a3)
+void sub_6C8E80(int a1, int a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6C8E80)
+    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6C8E80)
 }
 } // namespace gamemd
 
@@ -619,9 +619,9 @@ char VectorClass_flat::AddRef(int a2)
 
 // 0x769F50
 namespace gamemd {
-wchar_t VectorClass_flat::ddtor(void *a1_1)
+wchar_t * VectorClass_flat::ddtor(void *a1_1)
 {
-    (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00769F50.json)
+    (void)a1_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00769F50.json)
 }
 } // namespace gamemd
 

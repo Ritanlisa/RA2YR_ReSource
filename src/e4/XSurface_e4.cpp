@@ -212,7 +212,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
 } // namespace gamemd
 // 0x7BAB90
 namespace gamemd {
-void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5, int a6, int a7, int a8, int a9, int a10)
+void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5_len, int a6, int a7, int a8, int a9, int a10)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BAB90)
 }
