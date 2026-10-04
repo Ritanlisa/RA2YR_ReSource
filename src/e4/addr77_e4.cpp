@@ -102,6 +102,7 @@ int ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00775690.json)
 }
 }
+#undef CreateDialogIndirect  // G42.41h: truth-name wrapper collides with winuser.h macro
 // 0x775700
 namespace gamemd {
 const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndParent, DLGPROC lpDialogFunc, int a5, void * a1, void * a3, void * a4)
@@ -118,9 +119,9 @@ int Dialog_Close(HWND a1, int a2)
 }
 // 0x7759E0
 namespace gamemd {
-void MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void), int a3, char a4, char a5)
+int MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void), int a3, char a4, char a5)  // G42.41h: truth 0x7759E0 = int
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007759E0.json)
+    (void)hWnd; (void)a2; (void)a3; (void)a4; (void)a5; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007759E0.json)
 }
 }
 // 0x775B30
@@ -922,7 +923,7 @@ INT_PTR sub_775B40(HWND a1, UINT, WPARAM, LPARAM)
 
 // 0x775B50
 namespace gamemd {
-int sub_775B50(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, int a3, LONG * a4)
+int sub_775B50(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), int a3, LONG * a4)  // G42.41h: fnptr trailing-name dropped
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00775B50.json)
 }
@@ -2263,6 +2264,7 @@ namespace gamemd {
 int unknown_libname_53()
 {
   ((DeleteAndZero*)&unk_B76230)->Alt(); /*0x77d1c5*/
+  return 0; // G42.41h: C4716 return added
 }
 } // namespace gamemd
 
