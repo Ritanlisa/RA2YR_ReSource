@@ -87,13 +87,11 @@ char sub_5902C0(int a1)
 }
 // 0x5FC380
 namespace gamemd {  // G42.18c ns repair
-int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3)
-int Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
-}  // G42.18c ns repair
+int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3)  // G42.41k: dup head + misplaced close removed
 {
 
-  IUnknown * v5;
-  Object * v6;
+  int v5; // eax (G42.41k: truth int, was IUnknown*)
+  int v6; // eax (G42.41k: truth int, was Object*)
   int v7; // ecx
   CellClass *v8; // eax
 
@@ -104,17 +102,17 @@ int Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
   this->Object_field_0x8 = (int)&vt_OverlayClass; /*0x5fc39f*/
   *(unsigned int *)&this->Object_field_0x2[2] = (unsigned int)(&vt_OverlayClass); /*0x5fc3a6*/
   *(unsigned int *)this->__pad_C = (unsigned int)(&vt_OverlayClass); /*0x5fc3ac*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->Object_field_0x2[2]); /*0x5fc3b3*/
+  AbstractClass::GenerateUniqueID((int)(AbstractClass *)&this->Object_field_0x2[2]);  // G42.41k: decl takes int /*0x5fc3b3*/
   if ( dword_A8EC60 < dword_A8EC58 /*0x5fc3ef*/
     || (byte_A8EC5D || !dword_A8EC58)
     && dword_A8EC64 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(dword_A8EC50 + 8))(
-         &dword_A8EC50,
+         (int *)&dword_A8EC50,
          dword_A8EC58 + dword_A8EC64,
          0) )
   {
-    v6 = (gamemd::Object *)((unsigned int)(dword_A8EC60++));
-    *((unsigned int *)dword_A8EC54 + v6) = this; /*0x5fc40b*/
+    v6 = dword_A8EC60++;
+    *((unsigned int *)dword_A8EC54 + v6) = (unsigned int)this; /*0x5fc40b*/
   }
   if ( *aP2 != word_AC1528 || aP2[1] != word_AC152A ) /*0x5fc429*/
   {
@@ -124,7 +122,7 @@ int Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
     HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
     v8 = (CellClass *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj((int16_t *)&aP1); /*0x5fc497*/
     if ( !((CellClass *)(v8))->FindInfantry(0) ) /*0x5fc4a0*/
-      ObjectClass::Deploy((ObjectClass *)this); /*0x5fc4b1*/
+      ((ObjectClass *)this)->Deploy(); /*0x5fc4b1*/  // G42.41k: Object not derived from ObjectClass in e4 model; explicit receiver
     dword_8333BC = -1; /*0x5fc4b6*/
   }
   return (int)(this);
@@ -133,7 +131,7 @@ int Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
 }
 // 0x5FD970
 namespace gamemd {
-void* SessionClass::HandleAction(int * a2, int * a3)
+void * Object::HandleAction(int * a2, int * a3)  // G42.41k: truth 0x5FD970 = Object::HandleAction (was misbound to SessionClass)
 {
     (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005FD970.json)
 }
