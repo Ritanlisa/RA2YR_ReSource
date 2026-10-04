@@ -1433,7 +1433,7 @@ int sub_497470(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, i
 
 // 0x499CA0
 namespace gamemd {
-BlitTransXlat * BlitTransXlat::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
+std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_4(char a2)  // G42.40i-b: truth = facet CRT free fn (was misbound to Blit member)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00499CA0.json)
 }
@@ -1457,7 +1457,7 @@ std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
 
 // 0x499D80
 namespace gamemd {
-RLEBlitTransXlat * RLEBlitTransXlat::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
+std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_11(char a2)  // G42.40i-b: truth = facet CRT free fn (was misbound to Blit member)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00499D80.json)
 }
@@ -1489,7 +1489,7 @@ std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
 
 // 0x499E20
 namespace gamemd {
-RLEBlitTransXlatZRead * RLEBlitTransXlatZRead::___Gfacet_locale_std__UAEPAXI_Z_16(char a2)
+std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_16(char a2)  // G42.40i-b: truth = facet CRT free fn (was misbound to Blit member)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00499E20.json)
 }
@@ -1553,7 +1553,7 @@ std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 
 // 0x499F20
 namespace gamemd {
-BlitPlainXlat * BlitPlainXlat::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
+std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_24(char a2)  // G42.40i-b: truth = facet CRT free fn (was misbound to Blit member)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00499F20.json)
 }
@@ -1569,7 +1569,7 @@ std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 
 // 0x499F60
 namespace gamemd {
-BlitTransDarken * BlitTransDarken::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
+std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_26(char a2)  // G42.40i-b: truth = facet CRT free fn (was misbound to Blit member)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00499F60.json)
 }
@@ -1577,7 +1577,7 @@ BlitTransDarken * BlitTransDarken::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 
 // 0x499F80
 namespace gamemd {
-BlitTransLucent75 * BlitTransLucent75::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
+std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_27(char a2)  // G42.40i-b: truth = facet CRT free fn (was misbound to Blit member)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00499F80.json)
 }
@@ -1585,7 +1585,7 @@ BlitTransLucent75 * BlitTransLucent75::___Gfacet_locale_std__UAEPAXI_Z_27(char a
 
 // 0x499FA0
 namespace gamemd {
-BlitTransLucent50 * BlitTransLucent50::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
+std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_28(char a2)  // G42.40i-b: truth = facet CRT free fn (was misbound to Blit member)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00499FA0.json)
 }
@@ -1593,7 +1593,7 @@ BlitTransLucent50 * BlitTransLucent50::___Gfacet_locale_std__UAEPAXI_Z_28(char a
 
 // 0x499FC0
 namespace gamemd {
-BlitTransLucent25 * BlitTransLucent25::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
+std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_29(char a2)  // G42.40i-b: truth = facet CRT free fn (was misbound to Blit member)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00499FC0.json)
 }
@@ -1609,7 +1609,7 @@ std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
 
 // 0x49A000
 namespace gamemd {
-BlitTransXlatZRead * BlitTransXlatZRead::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
+std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_31(char a2)  // G42.40i-b: truth = facet CRT free fn (was misbound to Blit member)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A000.json)
 }
@@ -1689,7 +1689,7 @@ std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 
 // 0x49A140
 namespace gamemd {
-BlitTransXlatZReadWrite * BlitTransXlatZReadWrite::___Gfacet_locale_std__UAEPAXI_Z_41(char a2)
+std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_41(char a2)  // G42.40i-b: truth = facet CRT free fn (was misbound to Blit member)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A140.json)
 }
@@ -1737,7 +1737,7 @@ std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
 
 // 0x49A820
 namespace gamemd {
-RLEBlitTransXlatZRead * RLEBlitTransXlatZRead::___Gfacet_locale_std__UAEPAXI_Z_58(char a2)
+std::locale::facet * ___Gfacet_locale_std__UAEPAXI_Z_58(char a2)  // G42.40i-b: truth = facet CRT free fn (was misbound to Blit member)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A820.json)
 }
