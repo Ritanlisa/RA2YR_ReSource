@@ -1949,6 +1949,7 @@ struct HouseClass {
     int HandleAlliance(int a2, char a3);  // 0x4f9b70
     unsigned int * ClearStatArray();  // 0x748fd0
     int SaveToINI(char *a2); // N_fix R5 supply (cache truth)
+    double GiveTiberium_Storage(float aP1, int aP2);
 };
 
 } // namespace gamemd

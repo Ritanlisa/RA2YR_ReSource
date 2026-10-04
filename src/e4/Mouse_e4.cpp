@@ -62,12 +62,7 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
 namespace gamemd {
 SHORT Mouse::GetKeyState(uint8_t vKey)
 {
-
-  if ( stru_AA0398.AudioStream_field_0xAC ) /*0x53ec97*/
-    return (&word_AA0168)[(uint8_t)vKey]; /*0x53eca7*/
-  else
-    return GetAsyncKeyState((uint8_t)vKey); /*0x53ec9a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x53EC90)
 }
 } // namespace gamemd
 

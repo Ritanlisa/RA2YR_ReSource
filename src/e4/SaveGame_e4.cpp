@@ -189,47 +189,7 @@ int SaveGame::WriteObject(int a1, int a2)
 namespace gamemd {
 HRESULT SaveGame_Start(LPSTREAM pStm, int a2)
 {
-  IStreamVtbl *lpVtbl; // ecx
-  HRESULT result; // eax
-  int v6; // esi
-  int v7; // eax
-  LPPERSISTSTREAM pPStm; // [esp+1Ch] [ebp-8h] BYREF
-  int v9; // [esp+20h] [ebp-4h] BYREF
-
-  lpVtbl =(struct IStreamVtbl *)((gamemd::IStream*)pStm)->__pad_0; /*0x67fe03*/
-  v9 = *(unsigned int *)(a2 + 16); /*0x67fe09*/
-  result = lpVtbl->Write(pStm, &v9, 4, 0); /*0x67fe0d*/
-  if ( result >= 0 ) /*0x67fe12*/
-  {
-    v6 = 0; /*0x67fe18*/
-    if ( v9 <= 0 ) /*0x67fe1c*/
-    {
-      return 0; /*0x67fe66*/
-    }
-    else
-    {
-      while ( 1 ) /*0x67fe1e*/
-      {
-        v7 = *(unsigned int *)(a2 + 4); /*0x67fe1e*/
-        pPStm = 0; /*0x67fe21*/
-        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67fe39*/
-                   *(unsigned int *)(v7 + 4 * v6),
-                   (void *)&IID_IPersistStream,
-                   &pPStm);
-        if ( result < 0 ) /*0x67fe3d*/
-          break; /*0x67fe3d*/
-        result = OleSaveToStream(pPStm, pStm); /*0x67fe45*/
-        if ( result < 0 ) /*0x67fe4d*/
-          break; /*0x67fe4d*/
-        result = ((gamemd::IPersistStream*)pPStm)->__tail_0->Release(pPStm); /*0x67fe56*/
-        if ( result < 0 ) /*0x67fe5b*/
-          break; /*0x67fe5b*/
-        if ( ++v6 >= v9 ) /*0x67fe64*/
-          return 0; /*0x67fe64*/
-      }
-    }
-  }
-  return result; /*0x67fe68*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67FDF0)
 }
 } // namespace gamemd
 

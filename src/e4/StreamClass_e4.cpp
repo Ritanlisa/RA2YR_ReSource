@@ -113,10 +113,7 @@ int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 namespace gamemd {
 int StreamClass::SetDirty(unsigned char * a1)
 {
-
-  LOBYTE(a1->field_C) = 1; /*0x55a8f5*/
-  return (*(int (**)(IUnknown *))(a1->field_0 + 96))(a1); /*0x55a8fe*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x55A8F0)
 }
 } // namespace gamemd
 // 0x55A910

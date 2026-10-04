@@ -16,7 +16,9 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x718000
+namespace gamemd {
 TeleportLocomotionClass::TeleportLocomotionClass()
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x718000)
+}
 }

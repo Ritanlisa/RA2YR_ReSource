@@ -923,22 +923,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(unsigned in
 namespace gamemd {
 DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x5d1853*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d1856*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d1860*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5d1868*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d1870*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x5d187b*/
-  Block->m_8 = 0; /*0x5d1881*/
-  if ( (a2 & 1) != 0 ) /*0x5d1888*/
-    __3_YAXPAX_Z(Block); /*0x5d188b*/
-  return Block->__pad_0; /*0x5d1895*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D1850)
 }
 } // namespace gamemd
 

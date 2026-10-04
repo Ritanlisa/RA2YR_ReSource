@@ -1634,6 +1634,7 @@ struct BuildingTypeClass {
     ParticleSystemTypeClass * * LoadOrGet(ObjectClass * Source);
     AbstractClass * * FindOrCreateAlt(INIClass * Source);
     BuildingTypeClass * * ProcessEvent();
+    int SaveLoad_Prefix_0();
 };
 
 } // namespace gamemd

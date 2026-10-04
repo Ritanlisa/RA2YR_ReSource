@@ -653,21 +653,6 @@ DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
 namespace gamemd {
 DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x63ef23*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x63ef26*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x63ef30*/
-  {
-    __3_YAXPAX_Z(v3); /*0x63ef38*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x63ef40*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x63ef4b*/
-  Block->m_8 = 0; /*0x63ef51*/
-  if ( (a2 & 1) != 0 ) /*0x63ef58*/
-    __3_YAXPAX_Z(Block); /*0x63ef5b*/
-  return Block->__pad_0; /*0x63ef65*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x63EF20)
 }
 } // namespace gamemd

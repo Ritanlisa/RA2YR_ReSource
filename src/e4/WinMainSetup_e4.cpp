@@ -269,15 +269,6 @@ void sub_72B230()
 namespace gamemd {
 int sub_730970()
 {
-  int result; // eax
-
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] ) /*0x730978*/
-  {
-    result = (***(int (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_1624[8])( /*0x73097e*/
-               *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8],
-               1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] = 0; /*0x730980*/
-  }
-  return result; /*0x73098a*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x730970)
 }
 } // namespace gamemd

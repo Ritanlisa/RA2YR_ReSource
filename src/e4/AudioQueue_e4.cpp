@@ -517,38 +517,7 @@ int AudioQueue::IsNotEmpty(int a1, int a2)
 namespace gamemd {
 int AudioQueue::HaltVoices(Voice *a1)
 {
-
-  int result; // eax
-  int v2; // esi
-  Voice *v3; // [esp-8h] [ebp-Ch]
-
-  result = *(unsigned int *)&stru_87E790.__pad_5C[48]; /*0x4081a0*/
-  if ( *(unsigned int *)&stru_87E790.__pad_5C[48] ) /*0x4081a8*/
-  {
-    result = ((AudioQueue *)((AudioQueue *)&stru_87E790.__pad_5C[36]))->GetNext(); /*0x4081af*/
-    v2 = result; /*0x4081b4*/
-    if ( result ) /*0x4081b8*/
-    {
-      v3 = (gamemd::Voice *)(a1);
-      do /*0x4081fa*/
-      {
-        if ( !*(unsigned int *)(v2 + 136) ) /*0x4081c8*/
-        {
-          if ( *(unsigned int *)(v2 + 20) ) /*0x4081d2*/
-          {
-            EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x4081de*/
-            ((Voice *)(v3))->Stop(); /*0x4081e3*/
-            LeaveCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x4081ed*/
-          }
-        }
-        result = ((AudioQueue *)((AudioQueue *)v2))->GetNextAlt(); /*0x4081f1*/
-        v2 = result; /*0x4081f6*/
-      }
-      while ( result ); /*0x4081fa*/
-    }
-  }
-  return result; /*0x4081fe*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4081A0)
 }
 } // namespace gamemd
 

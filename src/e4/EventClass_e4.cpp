@@ -535,16 +535,7 @@ void EventClass::getEventCount()
 namespace gamemd {
 SHORT EventClass::GetKeyStateSafe(unsigned char nVirtKey)
 {
-
-  int result; // eax
-
-  HIWORD(result) = HIWORD(stru_AA0398.AudioStream_field_0xAC); /*0x53ec70*/
-  if ( stru_AA0398.AudioStream_field_0xAC ) /*0x53ec77*/
-    LOWORD(result) = (&word_AA0168)[(uint8_t)nVirtKey]; /*0x53ec87*/
-  else
-    LOWORD(result) = GetKeyState((uint8_t)nVirtKey); /*0x53ec7a*/
-  return result; /*0x53ec80*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x53EC70)
 }
 } // namespace gamemd
 

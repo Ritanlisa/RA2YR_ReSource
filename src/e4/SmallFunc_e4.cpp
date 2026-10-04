@@ -163,19 +163,7 @@ TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsig
 namespace gamemd {
 char sub_6E2660(int a1, int a2, int a3, int a4)
 {
-  Scenario *v5; // [esp+0h] [ebp-4h]
-
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1418] = 0; /*0x6e2669*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = 0; /*0x6e266f*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1426] = -1; /*0x6e2675*/
-  ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetBounds(0); /*0x6e267f*/
-  ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower2(0); /*0x6e268a*/
-  ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower(0); /*0x6e2695*/
-  stru_87F5F0.__pad_E12[1432] = 0; /*0x6e269a*/
-  stru_87F5F0.__pad_E12[1433] = 0; /*0x6e26a0*/
-  stru_87F5F0.__pad_E12[1434] = 0; /*0x6e26a6*/
-  Scenario::ClearScreen(v5); /*0x6e26ac*/
-  return 1; /*0x6e26b3*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E2660)
 }
 } // namespace gamemd
 

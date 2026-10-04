@@ -19,9 +19,9 @@
 
 // 0x6CF5A0
 namespace gamemd {
-int DynamicVector::Release(int a2, unsigned int * a3)
+AbstractClass * * DynamicVector::Release(int a2, unsigned int * a3)
 {
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x006CF5A0.json)
+    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x006CF5A0.json)
 }
 }
 // 0x6CF720
@@ -238,22 +238,7 @@ int SwizzleManagerClass_19::FindItem(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x6cf853*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6cf856*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6cf860*/
-  {
-    __3_YAXPAX_Z(v3); /*0x6cf868*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6cf870*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x6cf87b*/
-  Block->m_8 = 0; /*0x6cf881*/
-  if ( (a2 & 1) != 0 ) /*0x6cf888*/
-    __3_YAXPAX_Z(Block); /*0x6cf88b*/
-  return Block->__pad_0; /*0x6cf895*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6CF850)
 }
 } // namespace gamemd
 
@@ -261,21 +246,6 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, 
 namespace gamemd {
 DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerClass_(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x6cf8a3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6cf8a6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6cf8b0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x6cf8b8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6cf8c0*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x6cf8cb*/
-  Block->m_8 = 0; /*0x6cf8d1*/
-  if ( (a2 & 1) != 0 ) /*0x6cf8d8*/
-    __3_YAXPAX_Z(Block); /*0x6cf8db*/
-  return Block->__pad_0; /*0x6cf8e5*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6CF8A0)
 }
 } // namespace gamemd

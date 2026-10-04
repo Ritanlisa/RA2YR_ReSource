@@ -5,6 +5,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class GetAt;  // G42.36 fwd supply
+class SetAt;  // G42.36 fwd supply
+class Constructor_VectorClass_MSSfx___;  // G42.36 fwd supply
+class Set;  // G42.36 fwd supply
 class Count;  // G42.36 fwd supply
 class Constructor_VectorClass_double_;  // G42.36 fwd supply
 class Constructor_1;  // G42.36 fwd supply
@@ -201,5 +205,11 @@ struct DynamicVector {
     DynamicVector * Constructor_1(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_double_(unsigned int * Block, char a2);
     unsigned int * Count(unsigned int * a2, int a3);
+    void Set(void *a1_1, void *a2_1, void *a3_1);
+    DynamicVector * Constructor_VectorClass_MSSfx___(unsigned int * Block, char a2);
+    char SetAt(int a2, unsigned int * a3);
+    VectorClass_flat * GetAt(unsigned int * Block, char a2);
+    int j_vt09(unsigned char * a1, signed int a3, int a4, int a5, int a6, int a7);
+    unsigned int * j_vt00(char a2);
 };
 } // namespace gamemd

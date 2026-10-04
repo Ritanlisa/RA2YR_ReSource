@@ -32,6 +32,8 @@
 #include "e4/classes/InfantryTypeVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Multiplayer_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Float4_e4.hpp"  // G42.36 C2027 supply
 
 // 0x43B5E0
 namespace gamemd {
@@ -320,9 +322,7 @@ int HouseClass::vt_placeholder_00()
 namespace gamemd {
 int HouseClass::vt_placeholder_01()
 {
-
-  return 1; /*0x4e8255*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8250)
 }
 } // namespace gamemd
 
@@ -330,9 +330,7 @@ int HouseClass::vt_placeholder_01()
 namespace gamemd {
 int HouseClass::vt_placeholder_02()
 {
-
-  return 0; /*0x4e8262*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8260)
 }
 } // namespace gamemd
 
@@ -340,12 +338,7 @@ int HouseClass::vt_placeholder_02()
 namespace gamemd {
 std::locale::facet * HouseClass::initAngerStruct(char a2)
 {
-
-  this->vtable1 = &vt_VersionClass; /*0x4e8279*/
-  if ( (a2 & 1) != 0 ) /*0x4e827f*/
-    __3_YAXPAX_Z(this); /*0x4e8282*/
-  return (std::locale::facet *)this; /*0x4e828c*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8270)
 }
 } // namespace gamemd
 
@@ -353,9 +346,7 @@ std::locale::facet * HouseClass::initAngerStruct(char a2)
 namespace gamemd {
 int HouseClass_24::Seek(int a2, void *a2_2, void *a3_1)
 {
-
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4f28aa*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F28A0)
 }
 } // namespace gamemd
 
@@ -363,12 +354,7 @@ int HouseClass_24::Seek(int a2, void *a2_2, void *a3_1)
 namespace gamemd {
 VectorCursor * HouseClass::vt_placeholder_07(char a2)
 {
-
-  *(unsigned int *)this = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f28c9*/
-  if ( (a2 & 1) != 0 ) /*0x4f28cf*/
-    __3_YAXPAX_Z(this); /*0x4f28d2*/
-  return this; /*0x4f28dc*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F28C0)
 }
 } // namespace gamemd
 
@@ -376,30 +362,7 @@ VectorCursor * HouseClass::vt_placeholder_07(char a2)
 namespace gamemd {
 char HouseClass_24::AddRef(int a2)
 {
-
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
-
-  m_8 = this->m_8; /*0x4f28e2*/
-  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4f28ed*/
-  {
-    v3 = 0; /*0x4f28ef*/
-    if ( m_8 <= 0 ) /*0x4f28f3*/
-      return 1; /*0x4f2913*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x4f28f5*/
-    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4f28fb*/
-    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4f2904*/
-    {
-      ++v3; /*0x4f2906*/
-      ++v4; /*0x4f2907*/
-      if ( v3 >= m_8 ) /*0x4f290c*/
-        return 1; /*0x4f290c*/
-    }
-  }
-  return 0; /*0x4f290e*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F28E0)
 }
 } // namespace gamemd
 
@@ -407,50 +370,7 @@ char HouseClass_24::AddRef(int a2)
 namespace gamemd {
 char HouseClass_24::Release(int a2, unsigned int * a3)
 {
-
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-
-  if ( a2 ) /*0x4f292c*/
-  {
-    LOBYTE(this->m_C) = 0; /*0x4f2936*/
-    if ( a3 ) /*0x4f293c*/
-      v4 = a3; /*0x4f2952*/
-    else
-      v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4f294e*/
-    LOBYTE(this->m_C) = 1; /*0x4f2956*/
-    if ( v4 ) /*0x4f295a*/
-    {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x4f2965*/
-      {
-        m_8 = this->m_8; /*0x4f296c*/
-        if ( a2 < m_8 ) /*0x4f2971*/
-          m_8 = a2; /*0x4f2973*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4f2979*/
-          ++i; /*0x4f297e*/
-        if ( BYTE1(this->m_C) ) /*0x4f298b*/
-        {
-          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4f2996*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x4f299e*/
-        }
-      }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4f29a7*/
-      this->m_8 = a2; /*0x4f29af*/
-      BYTE1(this->m_C) = a3 == 0; /*0x4f29b2*/
-      return 1; /*0x4f29b8*/
-    }
-    else
-    {
-      return 0; /*0x4f295f*/
-    }
-  }
-  else
-  {
-    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4f29c2*/
-    return 1; /*0x4f29c8*/
-  }
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F2920)
 }
 } // namespace gamemd
 
@@ -458,15 +378,7 @@ char HouseClass_24::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void HouseClass_24::ddtor()
 {
-
-  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4f29dd*/
-  {
-    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4f29e3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4f29eb*/
-  }
-  BYTE1(this->m_C) = 0; /*0x4f29ee*/
-  this->m_8 = 0; /*0x4f29f1*/
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F29D0)
 }
 } // namespace gamemd
 
@@ -474,24 +386,7 @@ void HouseClass_24::ddtor()
 namespace gamemd {
 int HouseClass_24::Read(unsigned int * a2, void *a2_2)
 {
-
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
-
-  if ( !LOBYTE(this->m_C) ) /*0x4f2a00*/
-    return 0; /*0x4f2a08*/
-  m_8 = this->m_8; /*0x4f2a0e*/
-  result = 0; /*0x4f2a11*/
-  if ( m_8 <= 0 ) /*0x4f2a15*/
-    return -1; /*0x4f2a2c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4f2a1b*/
-  {
-    if ( ++result >= m_8 ) /*0x4f2a2a*/
-      return -1; /*0x4f2a2a*/
-  }
-  return result; /*0x4f2a0a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F2A00)
 }
 } // namespace gamemd
 
@@ -499,12 +394,7 @@ int HouseClass_24::Read(unsigned int * a2, void *a2_2)
 namespace gamemd {
 unsigned int HouseClass_24::Write(int a2)
 {
-
-  if ( LOBYTE(this->m_C) ) /*0x4f2a40*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4f2a55*/
-  else
-    return 0; /*0x4f2a47*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F2A40)
 }
 } // namespace gamemd
 
@@ -512,10 +402,7 @@ unsigned int HouseClass_24::Write(int a2)
 namespace gamemd {
 unsigned int * HouseClass::vt_placeholder_09()
 {
-
-  ++*((unsigned int *)this + 2); /*0x4f2b42*/
-  return this; /*0x4f2b45*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F2B40)
 }
 } // namespace gamemd
 
@@ -523,10 +410,7 @@ unsigned int * HouseClass::vt_placeholder_09()
 namespace gamemd {
 unsigned int * HouseClass::vt_placeholder_10()
 {
-
-  --*((unsigned int *)this + 2); /*0x4f2b52*/
-  return this; /*0x4f2b55*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F2B50)
 }
 } // namespace gamemd
 
@@ -534,22 +418,7 @@ unsigned int * HouseClass::vt_placeholder_10()
 namespace gamemd {
 VectorClass_flat * HouseClass_24::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x4f2b63*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f2b66*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f2b70*/
-  {
-    __3_YAXPAX_Z(v3); /*0x4f2b78*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f2b80*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x4f2b8b*/
-  Block->m_8 = 0; /*0x4f2b91*/
-  if ( (a2 & 1) != 0 ) /*0x4f2b98*/
-    __3_YAXPAX_Z(Block); /*0x4f2b9b*/
-  return Block->__pad_0; /*0x4f2ba5*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F2B60)
 }
 } // namespace gamemd
 
@@ -557,49 +426,7 @@ VectorClass_flat * HouseClass_24::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 int HouseClass::QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2)
 {
-
-  int *p_arrayIndex; // ecx
-  HouseTypeClass **p_buildingType; // ecx
-  int *relatedTags; // ecx
-
-  if ( !a2 ) /*0x4f6836*/
-    return -2147467261; /*0x4f6838*/
-  *a2 = 0; /*0x4f6859*/
-  if ( !memcmp(a1, &IID_IUnknown, 0x10u) ) /*0x4f685f*/
-    *a2 = aP0; /*0x4f6863*/
-  if ( !memcmp(a1, &IID_IHouse, 0x10u) ) /*0x4f6874*/
-  {
-    if ( aP0 ) /*0x4f687a*/
-      p_arrayIndex = &aP0->arrayIndex; /*0x4f687c*/
-    else
-      p_arrayIndex = 0; /*0x4f6881*/
-    *a2 = p_arrayIndex; /*0x4f6883*/
-  }
-  if ( !memcmp(a1, &IID_IPublicHouse, 0x10u) ) /*0x4f6893*/
-  {
-    if ( aP0 ) /*0x4f6899*/
-      p_buildingType = &aP0->buildingType; /*0x4f689b*/
-    else
-      p_buildingType = 0; /*0x4f68a0*/
-    *a2 = p_buildingType; /*0x4f68a2*/
-  }
-  if ( !memcmp(a1, &unk_7F7CD0, 0x10u) ) /*0x4f68b2*/
-  {
-    if ( aP0 ) /*0x4f68b8*/
-      relatedTags = aP0->relatedTags; /*0x4f68ba*/
-    else
-      relatedTags = 0; /*0x4f68bf*/
-    *a2 = relatedTags; /*0x4f68c1*/
-  }
-  if ( !memcmp(a1, &IID_IPersist, 0x10u) ) /*0x4f68d1*/
-    *a2 = aP0; /*0x4f68d6*/
-  if ( !memcmp(a1, &IID_IPersistStream, 0x10u) ) /*0x4f68e6*/
-    *a2 = aP0; /*0x4f68ed*/
-  if ( !*a2 ) /*0x4f68ef*/
-    return -2147467262; /*0x4f68f4*/
-  (*((void (**)(HouseClass *))aP0->vtable1 + 1))(aP0); /*0x4f68ff*/
-  return 0; /*0x4f683d*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F6830)
 }
 } // namespace gamemd
 
@@ -607,20 +434,7 @@ int HouseClass::QueryInterface(CCINIClass * aP0, const void * a1, unsigned int *
 namespace gamemd {
 double HouseClass::GiveTiberium_Storage(float aP1, int aP2)
 {
-
-  int v4; // eax
-  int result; // eax
-
-  LOWORD(v4) = Math::RoundToInt(aP1 * 5.0 + (double)this->siloMoney); /*0x4f9623*/
-  this->siloMoney = v4; /*0x4f9628*/
-  LOWORD(result) = Math::RoundToInt( /*0x4f9654*/
-                     (double)*(int *)(*(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * aP2) + 184)
-                   * *(float *)(this->relatedTagsCapacity + 328)
-                   * aP1
-                   + (double)this->balance);
-  this->balance = result; /*0x4f965d*/
-  return result; /*0x4f9664*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F9610)
 }
 } // namespace gamemd
 
@@ -628,44 +442,7 @@ double HouseClass::GiveTiberium_Storage(float aP1, int aP2)
 namespace gamemd {
 char HouseClass::UpdateAllSilos(int a2, int a3)
 {
-
-  int v3; // esi
-  int v5; // eax
-  double v6; // st7
-  int v7; // ebx
-  int i; // esi
-  int v9; // ecx
-
-  v3 = 0; /*0x4f9976*/
-  if ( a3 ) /*0x4f997d*/
-    v3 = Math::RoundToInt((double)a2 / (double)a3 * 4.0 + 0.5); /*0x4f9998*/
-  v5 = 0; /*0x4f99a0*/
-  if ( *((unsigned int *)this + 196) ) /*0x4f999a*/
-  {
-    v6 = Float4::Sum((float *)((char *)this + 764)); /*0x4f99ac*/
-    v5 = Math::RoundToInt(v6 / (double)*((int *)this + 196) * 4.0 + 0.5); /*0x4f99c3*/
-  }
-  if ( v3 != v5 ) /*0x4f99ca*/
-  {
-    v7 = *((unsigned int *)this + 30); /*0x4f99cc*/
-    for ( i = 0; i < v7; ++i ) /*0x4f99d3*/
-    {
-      v5 = *((unsigned int *)this + 27); /*0x4f99d5*/
-      v9 = *(unsigned int *)(v5 + 4 * i); /*0x4f99d8*/
-      if ( v9 ) /*0x4f99dd*/
-      {
-        LOBYTE(v5) = *(unsigned char *)(v9 + 129); /*0x4f99df*/
-        if ( !(unsigned char)v5 ) /*0x4f99e7*/
-        {
-          LOBYTE(v5) = *(unsigned char *)(*(unsigned int *)(v9 + 1312) + 5800); /*0x4f99ef*/
-          if ( (unsigned char)v5 ) /*0x4f99f7*/
-            LOBYTE(v5) = (*(int (**)(int, int))(*(unsigned int *)v9 + 292))(v9, 2); /*0x4f99fd*/
-        }
-      }
-    }
-  }
-  return v5; /*0x4f9a08*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F9970)
 }
 } // namespace gamemd
 
@@ -673,9 +450,7 @@ char HouseClass::UpdateAllSilos(int a2, int a3)
 namespace gamemd {
 int HouseClass::MakeAlly(int a2, char a3)
 {
-
-  return ((HouseClass *)((int *)this))->HandleAlliance(*((unsigned int *)((char *)&stru_A80220) + a2), a3); /*0x4f9b67*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F9B50)
 }
 } // namespace gamemd
 
@@ -683,59 +458,7 @@ int HouseClass::MakeAlly(int a2, char a3)
 namespace gamemd {
 unsigned int * HouseClass::SDDTORAllAndTriggers()
 {
-
-  int v1; // esi
-  int v3; // eax
-  HouseClass **v4; // ecx
-  unsigned int *result; // eax
-  int v6; // esi
-  int v7; // ecx
-
-  v1 = 0; /*0x4fb926*/
-  if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) > 0 ) /*0x4fb92d*/
-  {
-    v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152); /*0x4fb92f*/
-    do /*0x4fb959*/
-    {
-      v4 = *(HouseClass ***)(v3 + 4 * v1); /*0x4fb934*/
-      if ( v4[135] == this ) /*0x4fb93d*/
-      {
-        if ( v4 ) /*0x4fb941*/
-        {
-          ((void (*)(HouseClass **, int))(*v4))(v4, 1); /*0x4fb947*/
-          v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152); /*0x4fb94a*/
-        }
-        --v1; /*0x4fb94f*/
-      }
-      ++v1; /*0x4fb956*/
-    }
-    while ( v1 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) ); /*0x4fb959*/
-  }
-  result = (unsigned int *)dword_A8EAF8; /*0x4fb95b*/
-  v6 = 0; /*0x4fb960*/
-  if ( dword_A8EAF8 > 0 ) /*0x4fb964*/
-  {
-    result = dword_A8EAEC; /*0x4fb966*/
-    do /*0x4fb99b*/
-    {
-      if ( *(unsigned int *)(*(unsigned int *)(result[v6] + 36) + 164) == this->relatedTagsCapacity ) /*0x4fb97c*/
-      {
-        v7 = result[v6]; /*0x4fb97e*/
-        if ( v7 ) /*0x4fb983*/
-        {
-          (*(void (**)(int, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x4fb989*/
-          result = dword_A8EAEC; /*0x4fb98c*/
-        }
-        --v6; /*0x4fb991*/
-      }
-      ++v6; /*0x4fb998*/
-    }
-    while ( v6 < dword_A8EAF8 ); /*0x4fb99b*/
-  }
-  if ( this ) /*0x4fb99f*/
-    return (*((unsigned int *(**)(HouseClass *, int))this->vtable1 + 8))(this, 1); /*0x4fb9a7*/
-  return result; /*0x4fb9aa*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4FB920)
 }
 } // namespace gamemd
 

@@ -172,7 +172,7 @@ int sub_406750()
 
 // 0x406760
 namespace gamemd {
-INIClass * * E4Recv_406760::sub_406760(void ()(char *) a1)
+INIClass * * E4Recv_406760::sub_406760(void (*)(char *) a1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00406760.json)
 }
@@ -567,7 +567,7 @@ int sub_4036F0(int a1, int a2)
 
 // 0x403810
 namespace gamemd {
-void ObjectClass::sub_403810(int ()(void))
+void ObjectClass::sub_403810(int (*)(void))
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x403810)
 }
