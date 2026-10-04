@@ -10,6 +10,10 @@ struct Vector3 {
     int AddAssign(float *a2);
     int * Subtract(int *a2, unsigned int *a3);
     int Magnitude();  // 0x41c3c0
+
+    double q008;  // G42.39 data supply (Sqrt operand)
+
+    double q040;  // G42.39 data supply (Sqrt operand)
 };
 
 } // namespace gamemd

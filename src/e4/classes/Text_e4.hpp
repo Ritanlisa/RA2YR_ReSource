@@ -10,6 +10,18 @@ struct Text {
     int Layout(unsigned short *a2, int *a3, unsigned int *a4, int a5);  // G42.33 b3 member-form (core TU 体定义)
     BOOL DrawCharAtGrid(HDC hdc, int String, int a4);  // 0x5BD3D0 G42.35 C8 体签名
     static int __stdcall MeasureWidth(int a1, int a2);
+
+    unsigned int u32_4;  // G42.39 data supply
+
+    unsigned int u32_1C;  // G42.39 data supply
+
+    unsigned int u32_28;  // G42.39 data supply
+
+    unsigned int u32_8;  // G42.39 data supply
+
+    unsigned int u32_2C;  // G42.39 data supply
+
+    unsigned int u32_2714;  // G42.39 data supply
 };
 
 } // namespace gamemd

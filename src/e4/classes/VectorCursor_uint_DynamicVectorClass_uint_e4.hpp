@@ -25,5 +25,7 @@ struct VectorCursor_uint_DynamicVectorClass_uint {
     unsigned int * ddtor();  // 0x4F4000 G42.33 b3 supplied-body sync
     int AddRef();  // G42.33 b3 supplied-body sync
     unsigned int * Release();  // G42.33 b3 supplied-body sync
+
+    unsigned int q008;  // G42.39 data supply (counter)
 };
 } // namespace gamemd

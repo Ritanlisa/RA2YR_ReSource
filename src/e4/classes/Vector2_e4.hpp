@@ -8,6 +8,10 @@ struct Vector2 {
     unsigned int *__pad_0;  // G42.35 C9 flat-carrier vocab (0x6dc4d0)
     int NormalizeNonZero();  // 0x41C460 G42.33 b3 supplied-body sync
     unsigned int * Subtract(unsigned int *a2);  // 0x6DC4C0 G42.33 b3 supplied-body sync
+
+    unsigned int u32_8;  // G42.39 data supply
+
+    unsigned int u32_4;  // G42.39 data supply
 };
 
 } // namespace gamemd

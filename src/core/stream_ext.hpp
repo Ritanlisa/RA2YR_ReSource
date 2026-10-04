@@ -226,6 +226,10 @@ public:
     uint8_t Buffer_field_0x20[4];
     uint8_t Buffer_field_0x24[4];
     uint8_t Buffer_field_0x28[4];
+
+    unsigned int u32_158;  // G42.39 data supply
+    unsigned int u32_DC;  // G42.39 data supply
+    unsigned int u32_12C;  // G42.39 data supply
 };
 #endif  // GAMEMD_E4_Buffer
 // 1 methods in IDA
@@ -256,6 +260,8 @@ public:
 
     uint8_t BufferIO_field_0x04[4];
     uint8_t BufferIO_field_0x08[4];
+
+    unsigned int u32_60;  // G42.39 data supply
 };
 // 26 methods in IDA
 class CStreamClass
@@ -327,6 +333,8 @@ public:
 
     virtual int Release(); // 0x410E50
 
+
+    unsigned int u32_14;  // G42.39 data supply
 };
 // 6 methods in IDA
 // CSP: StreamWrapper matched via T1
@@ -352,6 +360,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* QueryInterface(int a1);  // 0x7B0440
     // --- gap2 auto-generated stub declarations (END) ---
     unsigned char __pad_0;  // 0x0
+
+    unsigned int u32_18;  // G42.39 data supply
 };
 // 4 methods in IDA
 #ifndef GAMEMD_E4_Text  // G42.33 b3: e4 flat carrier wins in opt-in TUs
@@ -369,6 +379,12 @@ public:
     uint8_t Text_field_0x04[4];
     uint8_t Text_field_0x08[4];
     uint8_t Text_field_0x0C[4];
+
+    unsigned int u32_4;  // G42.39 data supply
+    unsigned int u32_1C;  // G42.39 data supply
+    unsigned int u32_28;  // G42.39 data supply
+    unsigned int u32_8;  // G42.39 data supply
+    unsigned int u32_2C;  // G42.39 data supply
 };
 #endif  // GAMEMD_E4_Text
 // 1 methods in IDA
@@ -381,6 +397,13 @@ public:
     int SetRect(); // 0x433CA0
     unsigned int * SetRect(unsigned int *a2);  // 0x433CA0 G42.33 b3 supplied-body sync (1 参形)
 
+
+    unsigned int u32_30;  // G42.39 data supply
+    unsigned int u32_34;  // G42.39 data supply
+
+    unsigned int u32_38;  // G42.39 data supply
+
+    unsigned int u32_3C;  // G42.39 data supply
 };
 
 } // namespace gamemd

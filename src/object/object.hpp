@@ -2,6 +2,7 @@
 
 #include "abstract.hpp"
 
+namespace gamemd { struct ILocomotion; struct RandomStruct; }
 namespace ra2 {
 namespace game {
 
@@ -602,11 +603,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
 
 
-    int CreateInstanceCOM(LPVOID * ppv, IID * rclsid, ILocomotion * aP2, DWORD dwClsContext);  // 0x41C250 (G42.39 supply)
+    int CreateInstanceCOM(LPVOID * ppv, IID * rclsid, gamemd::ILocomotion * aP2, DWORD dwClsContext);  // 0x41C250 (G42.39 supply)
     int Release2COM();  // 0x45A160 (G42.39 supply)
 
     int COMStub_48DEB0();  // 0x48DEB0 (G42.39 supply)
-    char * TerrainInitMap(char * Destination, RandomStruct * aP1, ::IUnknown * aP2);  // G42.39 supply
+    char * TerrainInitMap(char * Destination, gamemd::RandomStruct * aP1, ::IUnknown * aP2);  // G42.39 supply
 
     char * BuildResultPacket(char * Destination, char * Source, ::IUnknown * aP2);  // G42.39 supply
 

@@ -48,6 +48,12 @@ struct Buffer {
     int UpdateVolumeSettings();  // 0x40A6D0 G42.33 b3 supplied-body sync
     char * FillCircularBufferScroll(int a2, int a3, unsigned short a4);  // 0x410ED0 G42.33 b3 supplied-body sync
     _DWORD * Init(int a2, int Size, int aP2, int a3, int aP1);
+
+    unsigned int u32_158;  // G42.39 data supply
+
+    unsigned int u32_DC;  // G42.39 data supply
+
+    unsigned int u32_12C;  // G42.39 data supply
 };
 
 } // namespace gamemd

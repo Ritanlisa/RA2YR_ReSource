@@ -766,6 +766,38 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* coUninitialize(int a1);  // 0x767880
     unsigned int * marshalInterface(char a1);  // 0x767C50
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned int u32_54;  // G42.39 data supply
+    unsigned int u32_5C;  // G42.39 data supply
+    unsigned int u32_64;  // G42.39 data supply
+    unsigned int u32_68;  // G42.39 data supply
+    unsigned int u32_6C;  // G42.39 data supply
+    unsigned int u32_74;  // G42.39 data supply
+    unsigned int u32_78;  // G42.39 data supply
+    unsigned int u32_7C;  // G42.39 data supply
+    unsigned int u32_8C;  // G42.39 data supply
+    unsigned int u32_84;  // G42.39 data supply
+    unsigned int u32_88;  // G42.39 data supply
+    unsigned int u32_94;  // G42.39 data supply
+    unsigned int u32_98;  // G42.39 data supply
+    unsigned int u32_9C;  // G42.39 data supply
+    unsigned int u32_A4;  // G42.39 data supply
+    unsigned int u32_A8;  // G42.39 data supply
+    unsigned int u32_AC;  // G42.39 data supply
+    unsigned int u32_B4;  // G42.39 data supply
+    unsigned int u32_B8;  // G42.39 data supply
+    unsigned int u32_BC;  // G42.39 data supply
+    unsigned int u32_C4;  // G42.39 data supply
+    unsigned int u32_C8;  // G42.39 data supply
+    unsigned int u32_CC;  // G42.39 data supply
+    unsigned int u32_D4;  // G42.39 data supply
+    unsigned int u32_D8;  // G42.39 data supply
+    unsigned int u32_DC;  // G42.39 data supply
+    unsigned int u32_E4;  // G42.39 data supply
+    unsigned int u32_E8;  // G42.39 data supply
+    unsigned int u32_EC;  // G42.39 data supply
+    unsigned int u32_F4;  // G42.39 data supply
+    unsigned int u32_F8;  // G42.39 data supply
 };
 #endif  // GAMEMD_E4_COMClass
 // 2 methods in IDA
@@ -957,6 +989,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int *q01C;  // supplied (C2039)
     unsigned int *__pad_31;  // supplied (C2039)
     unsigned int *m_2D;  // supplied (C2039)
+
+    unsigned char __pad_009;  // G42.39 data supply
 };
 // 1 methods in IDA
 #ifndef GAMEMD_E4_CRC32  // G42.35h: e4 flat carrier wins in opt-in TUs (Hash/SHA1 pattern)
@@ -1087,6 +1121,8 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int Skip(int a1);  // 0x4a0180
     // === FUNCS-MOVE (END) ===
+
+    unsigned int u32_1C;  // G42.39 data supply
 };
 // 1 methods in IDA
 class EventBuffer
@@ -1098,6 +1134,10 @@ public:
     virtual int Enqueue(int16_t a2); // 0x54F1C0 G42.35 C7 体签名
     static int Enqueue(void *aP0, int16_t aP1);  // 0x54F1C0 G42.35 static-form sync (ui/supplied sites 0x54F99E+)
 
+
+    unsigned int u32_318;  // G42.39 data supply
+
+    unsigned int u32_314;  // G42.39 data supply
 };
 // 3 methods in IDA
 class Flag
@@ -1113,6 +1153,10 @@ public:
     uint8_t Flag_field_0x04[4];
     uint8_t Flag_field_0x08[4];
     unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f4ca9 指针解引用)
+
+    unsigned int u32_19;  // G42.39 data supply
+
+    unsigned int u32_18;  // G42.39 data supply
 };
 // 1 methods in IDA
 class FlagSystem
@@ -1123,6 +1167,10 @@ public:
 
     virtual int GetNextActive(); // 0x626690 G42.35 C7 体签名
 
+
+    unsigned int u32_8;  // G42.39 data supply
+
+    unsigned int u32_4;  // G42.39 data supply
 };
 // 2 methods in IDA
 // CSP: Float4 matched via T1
@@ -1167,6 +1215,10 @@ public:
     uint8_t GraphicMenuAnimItem_field_0x10[4];
     uint8_t GraphicMenuAnimItem_field_0x14[4];
     unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f30e6 vfptr 槽)
+
+    unsigned int u32_18;  // G42.39 data supply
+
+    unsigned int u32_1C;  // G42.39 data supply
 };
 // 5 methods in IDA
 class GraphicMenuImageItem
@@ -1184,6 +1236,14 @@ virtual unsigned int * ddtor(unsigned int *);  // 0x4F37A0
     uint8_t GraphicMenuImageItem_field_0x08[4];
     uint8_t GraphicMenuImageItem_field_0x0C[4];
     uint8_t GraphicMenuImageItem_field_0x10[4];
+
+    unsigned int u32_14;  // G42.39 data supply
+
+    unsigned int u32_1C;  // G42.39 data supply
+
+    unsigned int u32_18;  // G42.39 data supply
+
+    unsigned int q008;  // G42.39 (size usage)  // G42.39 data supply
 };
 // 2 methods in IDA
 // CSP: GraphicMenuItem matched via T1
@@ -1197,6 +1257,12 @@ public:
 
     uint8_t GraphicMenuItem_field_0x04[4];
     unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3a65 vfptr 槽)
+
+    unsigned int u32_9;  // G42.39 data supply
+
+    unsigned int u32_8;  // G42.39 data supply
+
+    unsigned int u32_C;  // G42.39 data supply
 };
 // 2 methods in IDA
 class GraphicMenuItem_Destru
@@ -1210,6 +1276,8 @@ public:
 
     uint8_t GraphicMenuItem_Destru_field_0x04[4];
     unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3b27 vfptr 槽)
+
+    unsigned int u32_C;  // G42.39 data supply
 };
 // 2 methods in IDA
 class GraphicMenuShortcutItem
@@ -1223,6 +1291,8 @@ public:
 
     uint8_t GraphicMenuShortcutItem_field_0x04[4];
     unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3f63 vfptr 槽)
+
+    unsigned int u32_9;  // G42.39 data supply
 };
 // 3 methods in IDA
 #ifndef GAMEMD_E4_Hash  // G42.33 b3: e4 flat carrier wins in opt-in TUs
@@ -1258,6 +1328,12 @@ public:
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x7adf90)
     uint8_t HashMap_field_0x08[4];
     uint8_t HashMap_field_0x0C[4];
+
+    unsigned int q00C;  // G42.39 data supply (shift operand)
+
+    unsigned int u32_14;  // G42.39 data supply
+
+    unsigned int u32_18;  // G42.39 data supply
 };
 // 27 methods in IDA
 class HashTable
@@ -1297,6 +1373,10 @@ public:
     unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x52b510 数组基)
     unsigned int m_4;  // G42.35 C8 体词汇 (0x62414c)
     unsigned int m_8;  // G42.35 C8 体词汇 (0x6241af)
+
+    unsigned int u32_4;  // G42.39 data supply
+    unsigned int u32_C;  // G42.39 data supply
+    unsigned int u32_10;  // G42.39 data supply
 };
 // 1 methods in IDA
 // CSP: HashTableSection matched via T1
@@ -1329,6 +1409,14 @@ public:
 
     virtual _DWORD * Construct(int a2, int a3); // 0x58AFF0 G42.35 C6 体签名
 
+
+    unsigned int Capacity;  // G42.39 data supply
+
+    unsigned int IsInitialized;  // G42.39 data supply
+
+    unsigned int IsAllocated;  // G42.39 data supply
+
+    unsigned int Items;  // G42.39 data supply
 };
 // 1 methods in IDA
 class PairVector
@@ -1393,6 +1481,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int AssignPlayerIndex();  // 0x5d62c0
     bool IsValidIndex(int a1);  // 0x5d8c90
     // === FUNCS-MOVE (END) ===
+
+    void * q018;  // G42.39 data supply
+    void * q020;  // G42.39 data supply
+
+    unsigned int u32_81;  // G42.39 data supply
 };
 // 1 methods in IDA
 class PlayerProfile
@@ -1403,6 +1496,8 @@ public:
 
     virtual void **QueryInterface(char a2); // 0x77B030 G42.35 C9 体签名
 
+
+    void * q0046;  // G42.39 data supply
 };
 // 2 methods in IDA
 // CSP: PlayerSlot matched via T1
@@ -1540,6 +1635,36 @@ public:
 
     virtual int ClampValues(); // 0x5975E0 G42.35 C7 体签名
 
+
+    unsigned int u32_40;  // G42.39 data supply
+
+    unsigned int u32_3C;  // G42.39 data supply
+
+    unsigned int u32_48;  // G42.39 data supply
+
+    unsigned int u32_44;  // G42.39 data supply
+
+    unsigned int u32_4C;  // G42.39 data supply
+
+    unsigned int u32_50;  // G42.39 data supply
+
+    unsigned int u32_58;  // G42.39 data supply
+
+    unsigned int u32_60;  // G42.39 data supply
+
+    unsigned int u32_70;  // G42.39 data supply
+
+    unsigned int u32_54;  // G42.39 data supply
+
+    unsigned int u32_5C;  // G42.39 data supply
+
+    unsigned int u32_64;  // G42.39 data supply
+
+    unsigned int u32_68;  // G42.39 data supply
+
+    unsigned int u32_6C;  // G42.39 data supply
+
+    unsigned int u32_74;  // G42.39 data supply
 };
 // 1 methods in IDA
 class StringBuffer
@@ -1550,6 +1675,8 @@ public:
 
     virtual unsigned char * Reset(); // 0x5F33A0 G42.35 C8 体签名
 
+
+    unsigned int u32_14;  // G42.39 data supply
 };
 // 1 methods in IDA
 class StringList
@@ -1560,6 +1687,10 @@ public:
 
     virtual int Find(const char *a2); // 0x721210 G42.35 C9 体签名
 
+
+    unsigned int u32_24;  // G42.39 data supply
+
+    unsigned int u32_18;  // G42.39 data supply
 };
 // 2 methods in IDA
 #ifndef GAMEMD_E4_StringTable  // G42.33 b3: e4 flat carrier wins in opt-in TUs
@@ -1611,6 +1742,8 @@ public:
 
     virtual int Append(const void *a2);  // 0x4A3840 G42.33 b3 体签名
 
+
+    unsigned int u32_18000;  // G42.39 data supply
 };
 // 1 methods in IDA
 class Timeout
@@ -1621,6 +1754,8 @@ public:
 
     virtual int GetRemaining(); // 0x4B4D70 G42.34 C5 体签名
 
+
+    unsigned int u32_8;  // G42.39 data supply
 };
 // 1 methods in IDA
 // CSP: TimerPool matched via T1
@@ -1666,6 +1801,9 @@ public:
 
     uint8_t Vector2_field_0x04[4];
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6dc4d0)
+
+    unsigned int u32_8;  // G42.39 data supply
+    unsigned int u32_4;  // G42.39 data supply
 };
 #endif  // GAMEMD_E4_Vector2
 // 3 methods in IDA
@@ -1683,6 +1821,8 @@ public:
 
     uint8_t Vector3_field_0x04[4];
     uint8_t Vector3_field_0x08[4];
+
+    void * q040;  // G42.39 data supply
 };
 #endif  // GAMEMD_E4_Vector3
 // 2 methods in IDA
@@ -1721,6 +1861,11 @@ public:
     virtual void Constructor(); // 0x42DC50
     unsigned int * Constructor(int a2, int a3);  // 0x42DC50 G42.33 b3 supplied-body sync (2 参形)
 
+
+    int Items;  // G42.39 data supply
+    int Capacity;  // G42.39 data supply
+    int IsInitialized;  // G42.39 data supply
+    int IsAllocated;  // G42.39 data supply
 };
 // 7 methods in IDA
 class VectorCursor
@@ -1756,6 +1901,8 @@ public:
 
     uint8_t VectorCursor_uint_DynamicVectorClass_uint_field_0x04[4];
     uint8_t VectorCursor_uint_DynamicVectorClass_uint_field_0x08[4];
+
+    void * q008;  // G42.39 data supply
 };
 #endif  // GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint
 

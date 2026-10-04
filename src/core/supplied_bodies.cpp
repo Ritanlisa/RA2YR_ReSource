@@ -857,7 +857,7 @@ char PlayerClass::FindNearestWaypoint(int a2, int a3, int a4) {
         return 0; /*0x431020*/
       }
     }
-    v12 = *(unsigned int *)((char *)&this->q020 * v15 + 4 * v6 + 4 * v15); /*0x43103e __pad_0 数组基*/
+    v12 = *(unsigned int *)((char *)&this->q020 + (unsigned int)v15 * 1 + 4 * v6 + 4 * v15); /*0x43103e __pad_0 数组基 (G42.39: ptr*int rewritten)*/
     if ( !v12 ) /*0x431043*/
       return 0; /*0x431043*/
     UnselectAll_ClearLimboLaunchers(v14); /*0x431045 G42.33 b3 本地原型 (display.hpp 极简 MapClass 获胜)*/
@@ -873,13 +873,14 @@ int BufferIO::FindActiveChannel(int a2) {
     int v4; // edx
     int *v5; // ecx
     int result; // eax
+    BufferIO *walk = this;  // G42.39: IDA array-step local
 
     if ( !this->u32_60 ) /*0x431170*/
       return 0; /*0x4311b3*/
     v2 = 0; /*0x43117f*/
   LABEL_3:
     v4 = 0; /*0x431185*/
-    v5 = (int *)this; /*0x431187*/
+    v5 = (int *)walk; /*0x431187*/
     while ( 1 ) /*0x431189*/
     {
       result = *v5; /*0x431189*/
@@ -893,7 +894,7 @@ int BufferIO::FindActiveChannel(int a2) {
       if ( v4 >= 3 ) /*0x4311a8*/
       {
         ++v2; /*0x4311aa*/
-        ++this; /*0x4311ab*/
+        walk = (BufferIO *)(((char *)walk) + 0x10);  // G42.39: IDA array-step /*0x4311ab*/
         if ( v2 < 8 ) /*0x4311b1*/
           goto LABEL_3; /*0x4311b1*/
         return 0; /*0x4311b1*/
@@ -3153,6 +3154,7 @@ int HashTableSection::FindSection(uint8_t *a2, uint8_t *a3) {
 } // namespace gamemd
 
 // 0x52B390
+namespace gamemd {
 int HashTable::BinarySearch(int *a2) {
     int result; // eax
     size_t v4; // ecx
@@ -3373,6 +3375,8 @@ int Vector8::EraseAt(int a2) {
 
 // 0x58A420
 namespace gamemd {
+unsigned int * unknown::QueryInterface(char a2) {
+    void * v3;  // G42.39: restored local
 
     v3 = *(void **)&this->m_1[3]; /*0x58a423*/
     *(unsigned int *)this->__pad_0 = 0; /*0x58a426*/
