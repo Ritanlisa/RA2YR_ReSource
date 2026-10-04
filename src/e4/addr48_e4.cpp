@@ -81,11 +81,9 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x48A620)
 }
 // 0x48A9D0
-namespace gamemd {
 void Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0048A9D0.json)
-}
 }
 // 0x48B0E0
 AbstractClass * * CampaignClass::sub_48B0E0(int a2, int a3, size_t Size, int a5)
@@ -93,14 +91,11 @@ AbstractClass * * CampaignClass::sub_48B0E0(int a2, int a3, size_t Size, int a5)
     (void)a2; (void)a3; (void)Size; (void)a5; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0048B0E0.json)
 }
 // 0x48BB60
-namespace gamemd {
 bool sub_48BB60(int a1)
 {
     return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0048BB60.json)
 }
-}
 // 0x48BC20
-namespace gamemd {
 int CompareFuncInt(unsigned int * a1, unsigned int * a2)
 {
   if ( *a1 == *a2 )
@@ -108,146 +103,109 @@ int CompareFuncInt(unsigned int * a1, unsigned int * a2)
   else
     return *a1 >= *a2 ? 1 : -1;
 }
-}
 // 0x48C8B0
-namespace gamemd {
 AbstractClass * * Main_Game_Frame()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x48C8B0)
 }
-}
 // 0x48CCC0
-namespace gamemd {
 void MainGame()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0048CCC0.json)
 }
-}
 // 0x48DEE0
-namespace gamemd {
 void sub_48DEE0(unsigned int * a1, int a2, int a3)
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0048DEE0.json)
 }
-}
 // 0x48E0B0
-namespace gamemd {
 CellStruct * * sub_48E0B0()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x48E0B0)
 }
-}
 // 0x483710
-namespace gamemd {
 char sub_483710()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00483710.json)
 }
-} // namespace gamemd
 
 // 0x484A80
-namespace gamemd {
 int sub_484A80(int a1)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00484A80.json)
 }
-} // namespace gamemd
 
 // 0x484F10
-namespace gamemd {
 char sub_484F10(int a1)
 {
   return 1; /*0x484f12*/
 }
-} // namespace gamemd
 
 // 0x484F50
-namespace gamemd {
 int sub_484F50()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00484F50.json)
 }
-} // namespace gamemd
 
 // 0x4863A0
-namespace gamemd {
 bool sub_4863A0()
 {
      return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004863A0.json)
 }
-} // namespace gamemd
 
 // 0x4866D0
-namespace gamemd {
 bool sub_4866D0()
 {
      return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004866D0.json)
 }
-} // namespace gamemd
 
 // 0x4866F0
-namespace gamemd {
 bool sub_4866F0()
 {
      return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004866F0.json)
 }
-} // namespace gamemd
 
 // 0x486D90
-namespace gamemd {
 int sub_486D90(char a2)
 {
     (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00486D90.json)
 }
-} // namespace gamemd
 
 // 0x4879B0
-namespace gamemd {
 char sub_4879B0()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004879B0.json)
 }
-} // namespace gamemd
 
 // 0x487C80
-namespace gamemd {
 unsigned int _GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ()
 {
      return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00487C80.json)
 }
-} // namespace gamemd
 
 // 0x487EA0
-namespace gamemd {
 unsigned int * Coord_Neighbor(unsigned int * a1, unsigned short * a2, char a3)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x487EA0)
 }
-} // namespace gamemd
 
 // 0x4880D0
-namespace gamemd {
 int sub_4880D0()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004880D0.json)
 }
-} // namespace gamemd
 
 // 0x488210
-namespace gamemd {
 int sub_488210(unsigned int a2, unsigned int * a3, int a4)
 {
     (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00488210.json)
 }
-} // namespace gamemd
 
 // 0x488260
-namespace gamemd {
 int sub_488260()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00488260.json)
 }
-} // namespace gamemd
 
 // 0x488280
 CheckListClass * CheckListClass::sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
@@ -256,12 +214,10 @@ CheckListClass * CheckListClass::sub_488280(ListClass * aP1, int a3, int a4, Lis
 }
 
 // 0x488740
-namespace gamemd {
 int sub_488740()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00488740.json)
 }
-} // namespace gamemd
 
 // 0x488760
 ColorListClass * ColorListClass::sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
@@ -270,71 +226,54 @@ ColorListClass * ColorListClass::sub_488760(ListClass * aP1, int a3, int a4, Lis
 }
 
 // 0x4887F0
-namespace gamemd {
 int sub_4887F0()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004887F0.json)
 }
-} // namespace gamemd
 
 // 0x488F70
-namespace gamemd {
 int sub_488F70()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00488F70.json)
 }
-} // namespace gamemd
 
 // 0x488F90
-namespace gamemd {
 void sub_488F90()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00488F90.json)
 }
-} // namespace gamemd
 
 // 0x488FC0
-namespace gamemd {
 void sub_488FC0()
 {
   dbl_89E868 = dbl_89E818 / 60.0; /*0x488fcc*/
 }
-} // namespace gamemd
 
 // 0x488FE0
-namespace gamemd {
 void sub_488FE0()
 {
   dbl_89E850 = 1.0 / dbl_89E868; /*0x488fec*/
 }
-} // namespace gamemd
 
 // 0x489000
-namespace gamemd {
 void sub_489000()
 {
   dbl_89E848 = 0.0174532925199433 * 45.0; /*0x48900c*/
 }
-} // namespace gamemd
 
 // 0x489020
-namespace gamemd {
 void sub_489020()
 {
   dbl_89E820 = 0.0174532925199433 * 60.0; /*0x48902c*/
 }
-} // namespace gamemd
 
 // 0x489040
-namespace gamemd {
 void sub_489040()
 {
   dbl_89E7F8 = 0.0174532925199433 * 90.0; /*0x48904c*/
 }
-} // namespace gamemd
 
 // 0x489060
-namespace gamemd {
 long long sub_489060()
 {
   double v0; // st7
@@ -345,26 +284,20 @@ long long sub_489060()
   dword_89E870 = result; /*0x48908b*/
   return result; /*0x489090*/
 }
-} // namespace gamemd
 
 // 0x4890A0
-namespace gamemd {
 void sub_4890A0()
 {
   dbl_89E828 = Math::ArcTan((double)dword_89E870 * 0.00390625); /*0x4890b7*/
 }
-} // namespace gamemd
 
 // 0x4890D0
-namespace gamemd {
 void sub_4890D0()
 {
   dbl_89E840 = Math::ArcTan((double)(2 * dword_89E870) / dbl_89E818); /*0x4890f2*/
 }
-} // namespace gamemd
 
 // 0x489100
-namespace gamemd {
 long long sub_489100()
 {
   int64_t result; // rax
@@ -373,42 +306,32 @@ long long sub_489100()
   dword_89E864 = result; /*0x489120*/
   return result; /*0x489126*/
 }
-} // namespace gamemd
 
 // 0x489130
-namespace gamemd {
 int sub_489130()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00489130.json)
 }
-} // namespace gamemd
 
 // 0x489140
-namespace gamemd {
 int sub_489140()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00489140.json)
 }
-} // namespace gamemd
 
 // 0x489160
-namespace gamemd {
 int sub_489160()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00489160.json)
 }
-} // namespace gamemd
 
 // 0x489270
-namespace gamemd {
 void CellChainReact()
 {
   ; /*0x489270*/
 }
-} // namespace gamemd
 
 // 0x48A4F0
-namespace gamemd {
 int GetWarheadVersusMultiplier(int aP0, int aP1, int aP2, BulletClass * aP3)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0048A4F0.json)
@@ -424,7 +347,6 @@ int GetWarheadVersusMultiplier(int aP0, int aP1, int aP2, BulletClass * aP3)
   if ( v4 >= v10 ) /*0x48a5f4*/
     v4 = v10; /*0x48a5f6*/
   return *(unsigned int *)(*(unsigned int *)(aP1 + 264) + 4 * (v4 / 25)); /*0x48a57d*/
-}
 } // namespace gamemd
 
 // 0x48A8D0

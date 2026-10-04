@@ -5,7 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class TacticalMap_Render;  // G42.36 fwd supply
 struct ScenarioClass;  // fix_fwd_type_supply
 
 struct TacticalMap {

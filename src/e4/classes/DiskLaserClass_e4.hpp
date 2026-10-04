@@ -4,7 +4,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class Block;  // G42.36 fwd supply
 
 struct DiskLaserClass {
 // --- flat members (BEGIN) ---

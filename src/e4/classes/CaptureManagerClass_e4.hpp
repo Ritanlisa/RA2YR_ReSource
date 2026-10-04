@@ -6,7 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class Block;  // G42.36 fwd supply
 struct HouseClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply

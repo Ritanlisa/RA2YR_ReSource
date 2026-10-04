@@ -7,7 +7,6 @@
 #include "e4/classes/ProgressTimer_e4.hpp"  // G42.35a: q0584 by-value member needs the complete type
 
 namespace gamemd {
-class DrawPips;  // G42.36 fwd supply
 struct BombClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply

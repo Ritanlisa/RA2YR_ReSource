@@ -4,121 +4,12 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class Constructor_VectorClass_GlobalPacketType___;  // G42.36 fwd supply
-class Constructor_VectorClass_MultiMission___;  // G42.36 fwd supply
-class CopyAssign;  // G42.36 fwd supply
-class Constructor_VectorClass_PlanningBranchClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_PlanningMemberClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_ParasiteClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_AircraftClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_HSVClass_;  // G42.36 fwd supply
-class Constructor_VectorClass_SpotLightClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_ObjectTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_MSAnim___;  // G42.36 fwd supply
-class Constructor_VectorClass_LightSourceClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_LaserDrawClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_IonBlastClass___;  // G42.36 fwd supply
-class InfantryTypeClass;  // G42.36 fwd supply
-class CopyConstructor;  // G42.36 fwd supply
-class Constructor_VectorClass_AngerStruct_;  // G42.36 fwd supply
-class CompareVectors;  // G42.36 fwd supply
-class StubReturnNullPointer_0;  // G42.36 fwd supply
-class StubReturnNullPointer;  // G42.36 fwd supply
-class ScalarDeletingDestructor;  // G42.36 fwd supply
-class Constructor_VectorClass_AbstractTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_SuperWeaponTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_ParticleSystemTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_ParticleTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_IsometricTileTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_VoxelAnimTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_BulletTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_InfantryTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_AnimTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_UnitTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_AircraftTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_BuildingTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_TerrainTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_SmudgeTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_OverlayTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_ScriptTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_TeamTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_TaskForceClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_HouseTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_SideClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_CampaignClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_ParticleSystemClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_TriggerTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_TriggerClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_BuildingLightClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_AITriggerTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_SuperClass___;  // G42.36 fwd supply
-class FindItemIndex_1;  // G42.36 fwd supply
-class Set;  // G42.36 fwd supply
-class VectorCursor;  // G42.36 fwd supply
-class Constructor_0;  // G42.36 fwd supply
-class MouseClass;  // G42.36 fwd supply
-class CalculateSpread;  // G42.36 fwd supply
-class MapResourceClass;  // G42.36 fwd supply
-class ProcessGrowth;  // G42.36 fwd supply
-class Write;  // G42.36 fwd supply
-class Read;  // G42.36 fwd supply
-class Seek;  // G42.36 fwd supply
-class DynamicVectorClass_uint;  // G42.36 fwd supply
-class Destructor;  // G42.36 fwd supply
-class Clear_0;  // G42.36 fwd supply
-class LookupByName;  // G42.36 fwd supply
-class ClimbCheck;  // G42.36 fwd supply
-class ScenarioClass;  // G42.36 fwd supply
-class PlaceTiberiumTrees;  // G42.36 fwd supply
-class Random;  // G42.36 fwd supply
-class SelectTileType;  // G42.36 fwd supply
-class CreateCrater;  // G42.36 fwd supply
-class RecursiveModify;  // G42.36 fwd supply
-class ProcessCellModification;  // G42.36 fwd supply
-class FloodFillConnectivity;  // G42.36 fwd supply
-class ConnectivityGraph;  // G42.36 fwd supply
-class PlaceCliffs;  // G42.36 fwd supply
-class Constructor_VectorClass_BuildingClass___;  // G42.36 fwd supply
-class GetItemIndex_1;  // G42.36 fwd supply
-class Destroy_1;  // G42.36 fwd supply
-class GetItemIndex_0;  // G42.36 fwd supply
-class Destroy_0;  // G42.36 fwd supply
-class FindItemIndex_0;  // G42.36 fwd supply
-class Constructor_VectorClass_tagCONNECTDATA_;  // G42.36 fwd supply
-class Resize;  // G42.36 fwd supply
-class Constructor_VectorClass_CaptureManagerClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_Reestablish___;  // G42.36 fwd supply
-class Constructor_VectorClass_FoggedObjectClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_AirstrikeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_WeaponTypeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_WarheadTypeClass___;  // G42.36 fwd supply
-class LoadTypeData;  // G42.36 fwd supply
-class Constructor_VectorClass_VoxelAnimClass___;  // G42.36 fwd supply
-class FindValue;  // G42.36 fwd supply
-class GetAt;  // G42.36 fwd supply
-class GetPtrOffset;  // G42.36 fwd supply
-class TryFreeAndClear;  // G42.36 fwd supply
-class LogicClass;  // G42.36 fwd supply
-class Constructor_VectorClass_ObjectClass___;  // G42.36 fwd supply
-class GetItem;  // G42.36 fwd supply
-class Constructor_VectorClass_IsometricTileClass___;  // G42.36 fwd supply
-class GetItemIndex;  // G42.36 fwd supply
-class Constructor_VectorClass_LightConvertClass___;  // G42.36 fwd supply
-class FindItemIndex;  // G42.36 fwd supply
-class Remove;  // G42.36 fwd supply
-class Add;  // G42.36 fwd supply
-class Get;  // G42.36 fwd supply
-class Clear;  // G42.36 fwd supply
-class SetCapacity_6;  // G42.36 fwd supply
-class SetCapacity_5;  // G42.36 fwd supply
-class SetCapacity_4;  // G42.36 fwd supply
-class SetCapacity_3;  // G42.36 fwd supply
-class SetCapacity_2;  // G42.36 fwd supply
-class SetCapacity_1;  // G42.36 fwd supply
-class SetCapacity_0;  // G42.36 fwd supply
-class SetCapacity;  // G42.36 fwd supply
-class EnumConnectionPointsClass;  // G42.36 fwd supply
-class Constructor;  // G42.36 fwd supply
+class WDTState;  // G42.36 fwd supply
+class Constructor_VectorClass_WaypointPathClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_TiberiumClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_TemporalClass___;  // G42.36 fwd supply
+class CopyParticle;  // G42.36 fwd supply
+class Constructor_VectorClass_ShadowControlClass___;  // G42.36 fwd supply
 
 struct VectorClass_flat {
 // --- flat members (BEGIN) ---
@@ -214,6 +105,7 @@ int Destroy(void *a1);
     unsigned int * Constructor(EnumConnectionPointsClass * aP1, void *a2_1, void *a3_1);
     int SetCapacity(int a1, int a2);
     int SetCapacity_0(int a1, int a2);
+    char SetCapacity_0(int a2, unsigned int * a3);  // G42.38 overload supply
     int SetCapacity_1(int a1, int a2);
     int SetCapacity_2(int a1, int a2);
     unsigned int * SetCapacity_3(int a1, unsigned int * a2);
@@ -332,5 +224,15 @@ int Destroy(void *a1);
     DynamicVector * Constructor_VectorClass_MultiMission___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_GlobalPacketType___(unsigned int * Block, char a2);
     unsigned int * loc_69D720(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_SlaveManagerClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_SpawnManagerClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_SubTitle___(unsigned int * Block, char a2);
+    unsigned int * loc_6DCC80(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_ShadowControlClass___(unsigned int * Block, char a2);
+    unsigned int * CopyParticle(DynamicVector * aP1);
+    DynamicVector * Constructor_VectorClass_TemporalClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_TiberiumClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_WaypointPathClass___(unsigned int * Block, char a2);
+    unsigned int * loc_76B6C0(WDTState * aP1, int a3);
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

@@ -5,9 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class ProgressScreenClass;  // G42.36 fwd supply
-class Network_UpdateLatencyDisplay;  // G42.36 fwd supply
-class Network_resetConnectionState;  // G42.36 fwd supply
 struct WinModemClass;  // fix_fwd_type_supply
 struct IPXConnClass;  // fix_fwd_type_supply
 struct HashTable_flat;  // fix_fwd_type_supply

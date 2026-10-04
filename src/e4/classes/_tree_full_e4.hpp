@@ -6,44 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class DumpAudioDeviceDebug;  // G42.36 fwd supply
-class FindOwner;  // G42.36 fwd supply
-class CreateInstance;  // G42.36 fwd supply
-class IsAboveScreenMargin;  // G42.36 fwd supply
-class GetCell;  // G42.36 fwd supply
-class GetZAboveGround;  // G42.36 fwd supply
-class SetDeployState;  // G42.36 fwd supply
-class BuildingTypeClass;  // G42.36 fwd supply
-class ComputeScreenYOffset;  // G42.36 fwd supply
-class GetWidth;  // G42.36 fwd supply
-class InputThunkB;  // G42.36 fwd supply
-class InputThunkA;  // G42.36 fwd supply
-class GetStateFlag;  // G42.36 fwd supply
-class COMStub_108;  // G42.36 fwd supply
-class GetCoordsThunk2;  // G42.36 fwd supply
-class GetMember06;  // G42.36 fwd supply
-class ObjectClass_GetTypeVt41_2;  // G42.36 fwd supply
-class ObjectClass_GetTypeVt40_2;  // G42.36 fwd supply
-class FindPlacementPosition;  // G42.36 fwd supply
-class TabClass;  // G42.36 fwd supply
-class ToggleSidebarDisplay;  // G42.36 fwd supply
-class CleanupSidebarResources;  // G42.36 fwd supply
-class SidebarClass;  // G42.36 fwd supply
-class GetBoundingSize;  // G42.36 fwd supply
-class UpdateProductionDisplay;  // G42.36 fwd supply
-class Destroy2;  // G42.36 fwd supply
-class Size;  // G42.36 fwd supply
-class RenderPreview;  // G42.36 fwd supply
-class GetBoundsRect;  // G42.36 fwd supply
-class DropAsBomb_Track;  // G42.36 fwd supply
-class ObjectClass_GetTypeVt41_0;  // G42.36 fwd supply
-class ObjectClass_GetTypeVt40_0;  // G42.36 fwd supply
-class BuildTransform;  // G42.36 fwd supply
-class ObjectClass_IsHeightAboveThreshold_0;  // G42.36 fwd supply
-class FindPlacementCell;  // G42.36 fwd supply
-class CheckCellFlags;  // G42.36 fwd supply
-class ProcessMapEvents;  // G42.36 fwd supply
-class EnableOnce;  // G42.36 fwd supply
 
 struct AudioChannel;
 struct CampaignScore;

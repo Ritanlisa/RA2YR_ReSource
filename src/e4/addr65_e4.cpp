@@ -160,18 +160,14 @@ int nullsub_0_2(int a2)
     (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0065C350.json)
 }
 // 0x65C3A0
-namespace gamemd {
 AbstractClass * * nullsub_0_3(void * a1, signed int Size)
 {
     (void)a1; (void)Size; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0065C3A0.json)
 }
-}
 // 0x65C420
-namespace gamemd {
 AbstractClass * * nullsub_0_4(int a2, int a3)
 {
     (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0065C420.json)
-}
 }
 // 0x65C560
 namespace gamemd {

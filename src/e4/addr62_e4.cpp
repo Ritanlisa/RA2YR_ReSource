@@ -90,11 +90,9 @@ int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, voi
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00621040.json)
 }
 // 0x621150
-namespace gamemd {
 double sub_621150(int a1)
 {
     return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00621150.json)
-}
 }
 }
 // 0x6211D0

@@ -168,138 +168,104 @@ char Tactical::SelectObject(int a2, void *a2_2)
 }
 
 // 0x6DA560
-namespace gamemd {
 int * Tactical::ScrollMap(Tactical * aP0, int a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6DA560)
 }
-} // namespace gamemd
 
 // 0x6DBCE0
-namespace gamemd {
 int Tactical::ddtor(int a1, unsigned int * a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6DBCE0)
 }
-} // namespace gamemd
 
 // 0x6DBD20
-namespace gamemd {
 int Tactical::InitMap(int a1, int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6DBD20)
 }
-} // namespace gamemd
 
 // 0x6DBE00
-namespace gamemd {
 int Tactical::UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6DBE00)
 }
-} // namespace gamemd
 
 // 0x6DC450
-namespace gamemd {
 int Tactical::StubReturn56()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6DC450)
 }
-} // namespace gamemd
 
 // 0x6DC460
-namespace gamemd {
 int Tactical::StubReturn3608()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6DC460)
 }
-} // namespace gamemd
 
 // 0x6DC470
-namespace gamemd {
 Tactical * Tactical::UpdateView(unsigned int * Block, char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6DC470)
 }
-} // namespace gamemd
 
 // 0x6E47F0
-namespace gamemd {
 void Tactical_42::ClearBuffer(void *a1_1)
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E47F0)
 }
-} // namespace gamemd
 
 // 0x6E4820
-namespace gamemd {
 unsigned int Tactical_42::PointerToIndex(int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4820)
 }
-} // namespace gamemd
 
 // 0x6E4840
-namespace gamemd {
 int Tactical_42::UpdateView(int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4840)
 }
-} // namespace gamemd
 
 // 0x6E4850
-namespace gamemd {
 char Tactical_42::AddRef(int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4850)
 }
-} // namespace gamemd
 
 // 0x6E4890
-namespace gamemd {
 char Tactical_42::Release(int a2, unsigned int * a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4890)
 }
-} // namespace gamemd
 
 // 0x6E4940
-namespace gamemd {
 wchar_t Tactical_42::ddtor(void *a1_1, void *a2_1)
 {
      return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4940)
 }
-} // namespace gamemd
 
 // 0x6E4970
-namespace gamemd {
 int Tactical::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4970)
 }
-} // namespace gamemd
 
 // 0x6E49B0
-namespace gamemd {
 unsigned int Tactical_42::InitMap(int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E49B0)
 }
-} // namespace gamemd
 
 // 0x6E49D0
-namespace gamemd {
 char Tactical_42::SetCapacity(int a2, unsigned int * a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E49D0)
 }
-} // namespace gamemd
 
 // 0x6E4AB0
-namespace gamemd {
 VectorClass_flat * Tactical_42::QueryInterface(unsigned int * Block, char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4AB0)
 }
-} // namespace gamemd
 }  // L-fix: close namespace tail 1

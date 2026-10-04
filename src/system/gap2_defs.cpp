@@ -33,8 +33,7 @@
 #include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
 
 // 0x0 (lnk)
-namespace gamemd { unsigned int Randomizer::Random() { return 0; } }
-// 0x401980
+x401980
 namespace gamemd { 
 int CCFileClass::Destru_vt08(int a2, int a3) {
   (*(void (**)(CCFileClass *, int))(*(unsigned int *)this + 8))(this, a2); /*0x40198c*/

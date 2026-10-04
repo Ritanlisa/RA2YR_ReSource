@@ -20,16 +20,13 @@ namespace gamemd { class HouseTypeClass; }
 // LNK2019 data global (reference)
 namespace ra2 { namespace game { int _gap2_CurrentFrame_store = {}; int& CurrentFrame = _gap2_CurrentFrame_store; } }
 // LNK2019 data global
-namespace gamemd { unsigned int g_ObjectTypeList = {}; }
-// LNK2019 data global
+K2019 data global
 namespace gamemd { gamemd::HouseTypeClass * * g_HouseTypeArray = nullptr; }
 // LNK2019 data global
 gamemd::HouseTypeClass * * g_HouseTypeArray = nullptr;
 // LNK2019 data global
-namespace gamemd { int g_ScrollOffsetX = {}; }
-// LNK2019 data global
-namespace gamemd { int g_ScrollOffsetY = {}; }
-extern "C" int BlitterCopySimpleSHP() { return 0; }  // LNK2019 cdecl
+K2019 data global
+n "C" int BlitterCopySimpleSHP() { return 0; }  // LNK2019 cdecl
 // LNK2019 data global
 void * g_ZBufferDescriptor = nullptr;  // data: 0x887644
 // 0x70E240
@@ -865,7 +862,6 @@ int Gap2Recv_421350::RenderAlphaShapes() {
 
 }
 // 0x429830
-namespace gamemd { 
 double Gap2Recv_429830::ComputeMovementWeight(int * a1, unsigned int * a2, DynamicVectorClass_uint * aP3, int a5, int a6) {
 
   int v7; // ebx
@@ -969,7 +965,6 @@ LABEL_20:
     v17 = 2.0; /*0x429a6f*/
   return v17 * v28; /*0x429a5c*/
 
-}
 }
 }
 // 0x42B210
@@ -3018,7 +3013,6 @@ char Gap2Recv_459CA0::ProcessDataCellClass() {
 }
 }
 // 0x45A160
-namespace gamemd {
 int ObjectClass::Release2COM()
 {
 
@@ -3030,9 +3024,7 @@ int ObjectClass::Release2COM()
   return result; /*0x45a16c*/
 
 }
-}
 // 0x465570
-namespace gamemd { 
 void* Gap2Recv_465570::CalculateBuildingFoundationBounds(BuildingTypeClass * aP1) {
 
   int16_t *v3; // eax
@@ -3252,9 +3244,7 @@ void* Gap2Recv_465570::CalculateBuildingFoundationBounds(BuildingTypeClass * aP1
   }
 
 }
-}
 // 0x471890
-namespace gamemd { 
 int Gap2Recv_471890::SmallFunc_471890() {
 
   int v2; // eax
@@ -3291,9 +3281,7 @@ int Gap2Recv_471890::SmallFunc_471890() {
   return (int)this; /*0x471940*/
 
 }
-}
 // 0x47BDB0
-namespace gamemd { 
 int Gap2Recv_47BDB0::GetBridgeCellColor(char* a2, char a3) {
 
   unsigned int *v4; // edi
@@ -3399,9 +3387,7 @@ LABEL_27:
   return v12 | (v12 << 16); /*0x47be7f*/
 
 }
-}
 // 0x47C060
-namespace gamemd { 
 char Gap2Recv_47C060::GetCellRadarColors(int this, int a3) {
 
   int RadarColor; // eax
@@ -3547,9 +3533,7 @@ LABEL_18:
   return RadarColor; /*0x47c082*/
 
 }
-}
 // 0x4838E0
-namespace gamemd { 
 char Gap2Recv_4838E0::IsCoordValidMap(ObjectClass * aP1) {
 
   int result; // eax
@@ -3620,9 +3604,7 @@ LABEL_24:
   return result; /*0x4839e2*/
 
 }
-}
 // 0x486E30
-namespace gamemd { 
 int Gap2Recv_486E30::Helper_486E30() {
 
   int16_t *p_occupant; // edi
@@ -3643,9 +3625,7 @@ int Gap2Recv_486E30::Helper_486E30() {
   return 0; /*0x486e4a*/
 
 }
-}
 // 0x48DEB0
-namespace gamemd {
 int ObjectClass::COMStub_48DEB0()
 {
 
@@ -3658,9 +3638,7 @@ int ObjectClass::COMStub_48DEB0()
     return 1 << v1; /*0x48dec5*/
 
 }
-}
 // 0x48DF30
-namespace gamemd { 
 int Gap2Recv_48DF30::LookupNameIndex() {
 
   int v2; // esi
@@ -3680,9 +3658,7 @@ int Gap2Recv_48DF30::LookupNameIndex() {
   return v2; /*0x48df75*/
 
 }
-}
 // 0x49B930
-namespace gamemd { 
 char Gap2Recv_49B930::UpdateScoreScreenStatistics() {
 
   int v3; // ebx
@@ -3826,9 +3802,7 @@ char Gap2Recv_49B930::UpdateScoreScreenStatistics() {
   return 1; /*0x49b942*/
 
 }
-}
 // 0x49E740
-namespace gamemd { 
 char Gap2Recv_49E740::SmallFunc_49E740(void* a2) {
 
   int v3; // esi
@@ -3855,7 +3829,6 @@ char Gap2Recv_49E740::SmallFunc_49E740(void* a2) {
   }
   return 1; /*0x49e7b3*/
 
-}
 }
 // 0x4A3660
 namespace gamemd { 
@@ -5504,7 +5477,6 @@ LABEL_23:
 }
 }
 // 0x50DA10
-namespace gamemd { 
 int Gap2Recv_50DA10::GlobalHelper_0E4440_Helper() {
 
   int result; // eax
@@ -5514,9 +5486,7 @@ int Gap2Recv_50DA10::GlobalHelper_0E4440_Helper() {
   return result; /*0x50da1b*/
 
 }
-}
 // 0x50DA50
-namespace gamemd { 
 int Gap2Recv_50DA50::GlobalHelper_0E44C0_Helper() {
 
   int result; // eax
@@ -5528,9 +5498,7 @@ int Gap2Recv_50DA50::GlobalHelper_0E44C0_Helper() {
   return result; /*0x50da71*/
 
 }
-}
 // 0x50DFF0
-namespace gamemd { 
 int Gap2Recv_50DFF0::GlobalHelper_0E4540_Helper() {
 
   int result; // eax
@@ -5540,9 +5508,7 @@ int Gap2Recv_50DFF0::GlobalHelper_0E4540_Helper() {
   return result; /*0x50dffb*/
 
 }
-}
 // 0x515ED0
-namespace gamemd { 
 void Gap2Recv_515ED0::UpdateFootFacing() {
 
   double v1; // st7
@@ -5738,9 +5704,7 @@ LABEL_19:
   }
 
 }
-}
 // 0x5175F0
-namespace gamemd { 
 char Gap2Recv_5175F0::ReadRegistryOptionsWOL() {
 
   int result; // eax
@@ -5770,17 +5734,13 @@ char Gap2Recv_5175F0::ReadRegistryOptionsWOL() {
   return result; /*0x517696*/
 
 }
-}
 // 0x5176C0
-namespace gamemd { 
 bool Gap2Recv_5176C0::WinMain_Helper() {
 
   return (~(uint8_t)this->AbstractClass & 4) != 0; /*0x5176c9*/
 
 }
-}
 // 0x518D80
-namespace gamemd { 
 int Gap2Recv_518D80::CalculateLocomotionFrameIndex() {
 
   int v2; // ebx
@@ -5860,9 +5820,7 @@ LABEL_25:
   return v15 + *v11; /*0x518f0d*/
 
 }
-}
 // 0x51FB00
-namespace gamemd { 
 int Gap2Recv_51FB00::PlaceScenarioInfantry() {
 
   int result; // eax
@@ -6042,9 +6000,7 @@ int Gap2Recv_51FB00::PlaceScenarioInfantry() {
   return result; /*0x51fed9*/
 
 }
-}
 // 0x5202F0
-namespace gamemd { 
 char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
 
   int v2; // ecx
@@ -6198,9 +6154,7 @@ char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
   return 1; /*0x520473*/
 
 }
-}
 // 0x5206B0
-namespace gamemd { 
 void Gap2Recv_5206B0::FireTechnoAtTarget() {
 
   int target; // eax
@@ -6391,9 +6345,7 @@ LABEL_46:
   }
 
 }
-}
 // 0x5272B0
-namespace gamemd { 
 char* Gap2Recv_5272B0::LookupCSFString(char* a2, char* Destination, int Count) {
 
   int v4; // eax
@@ -6581,9 +6533,7 @@ LABEL_33:
   return a2; /*0x5272c5*/
 
 }
-}
 // 0x52A670
-namespace gamemd { 
 void* Gap2Recv_52A670::WinMain_Init(void* a2, char a3) {
 
   ObjectClass v5[3]; // [esp+8h] [ebp-504h] BYREF
@@ -6609,9 +6559,7 @@ void* Gap2Recv_52A670::WinMain_Init(void* a2, char a3) {
   return a2; /*0x52a747*/
 
 }
-}
 // 0x53B780
-namespace gamemd { 
 int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
 
   int result; // eax
@@ -6767,9 +6715,7 @@ int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
   return result; /*0x53b8ef*/
 
 }
-}
 // 0x53E4F0
-namespace gamemd { 
 bool ObjectClass::WinMain_Helper_53E4F0(char* FileName) {
 
   if ( !dword_AA0448 || dword_AA0468 ) /*0x53e503*/
@@ -6782,9 +6728,7 @@ bool ObjectClass::WinMain_Helper_53E4F0(char* FileName) {
   return dword_AA0468 != 0; /*0x53e549*/
 
 }
-}
 // 0x53E550
-namespace gamemd { 
 bool ObjectClass::WinMain_Write(char* FileName) {
 
   signed int SampleSize; // eax
@@ -6805,9 +6749,7 @@ bool ObjectClass::WinMain_Write(char* FileName) {
   return dword_AA0468 != 0; /*0x53e5e5*/
 
 }
-}
 // 0x53FA90
-namespace gamemd { 
 void* Gap2Recv_53FA90::Network_Init_53FA90(int aP1, int aP2, int aP3, short aP4, short a6) {
 
   int v7; // eax
@@ -6861,9 +6803,7 @@ void* Gap2Recv_53FA90::Network_Init_53FA90(int aP1, int aP2, int aP3, short aP4,
   return (int *)this->__pad_0; /*0x53fb64*/
 
 }
-}
 // 0x5402B0
-namespace gamemd { 
 int Gap2Recv_5402B0::Network_Init_5402B0(int a2) {
 
 
@@ -6872,9 +6812,7 @@ int Gap2Recv_5402B0::Network_Init_5402B0(int a2) {
     this->u32_C4 = 0; /*0x5402b9*/
 
 }
-}
 // 0x540A80
-namespace gamemd { 
 int Gap2Recv_540A80::Network_Init() {
 
   void (***v3)(unsigned int, int); // ecx
@@ -6983,9 +6921,7 @@ int Gap2Recv_540A80::Network_Init() {
   return result; /*0x540abb*/
 
 }
-}
 // 0x542FC0
-namespace gamemd { 
 int Gap2Recv_542FC0::Network_Init_542FC0(int a2) {
 
   ObjectClass *v2; // ecx
@@ -6997,9 +6933,7 @@ int Gap2Recv_542FC0::Network_Init_542FC0(int a2) {
   return result; /*0x542fd1*/
 
 }
-}
 // 0x5430C0
-namespace gamemd { 
 int Gap2Recv_5430C0::StartGameWOL_Start(int a2) {
 
   int v2; // ecx
@@ -7011,9 +6945,7 @@ int Gap2Recv_5430C0::StartGameWOL_Start(int a2) {
   return result; /*0x5430d1*/
 
 }
-}
 // 0x544CE0
-namespace gamemd { 
 int Gap2Recv_544CE0::Entity_Read() {
 
   int v2; // esi
@@ -7031,9 +6963,7 @@ int Gap2Recv_544CE0::Entity_Read() {
   return v2; /*0x544d16*/
 
 }
-}
 // 0x544E00
-namespace gamemd { 
 void* Gap2Recv_544E00::Map_Get(int a2) {
 
   int v2; // esi
@@ -7049,9 +6979,7 @@ void* Gap2Recv_544E00::Map_Get(int a2) {
   return result; /*0x544e18*/
 
 }
-}
 // 0x549E50
-namespace gamemd { 
 int Gap2Recv_549E50::Map_Get_549E50(int a2, int a3) {
 
   if ( !*((unsigned int *)this + 41) && *((unsigned char *)this + 756) ) /*0x549e5d*/
@@ -7059,9 +6987,7 @@ int Gap2Recv_549E50::Map_Get_549E50(int a2, int a3) {
   return *(unsigned int *)(this->q0AA + 4 * a2) + 4 * a3; /*0x549e7a*/
 
 }
-}
 // 0x54BD30
-namespace gamemd { 
 int Gap2Recv_54BD30::UpdateFootMoveToState() {
 
   int v2; // ecx
@@ -7205,9 +7131,7 @@ LABEL_19:
   return result; /*0x54be34*/
 
 }
-}
 // 0x551A30
-namespace gamemd { 
 int Gap2Recv_551A30::ProcessAutoSave() {
 
   int v2; // ebx
@@ -7237,7 +7161,6 @@ int Gap2Recv_551A30::ProcessAutoSave() {
   }
   return result; /*0x551a81*/
 
-}
 }
 // 0x556B70
 namespace gamemd { 
@@ -14172,7 +14095,6 @@ void* Gap2Recv_5CE4A0::UI_Load(char* a2, int a3, char a4) {
 
 }
 // 0x5CEDD0
-namespace gamemd { 
 char* Gap2Recv_5CEDD0::Map_Delete_5CEDD0() {
 
   int *p_DynamicVector_field_0x28; // ebp
@@ -14206,17 +14128,13 @@ char* Gap2Recv_5CEDD0::Map_Delete_5CEDD0() {
   return this->__pad_0; /*0x5cee51*/
 
 }
-}
 // 0x5CF830
-namespace gamemd { 
 int Gap2Recv_5CF830::Network_Load(ObjectClass * aP1) {
 
   return (*((int (**)(ObjectClass *, char *))this->vtable1 + 4))(this, &aP1); /*0x5cf83a*/
 
 }
-}
 // 0x5D1C90
-namespace gamemd { 
 int Gap2Recv_5D1C90::UI_Load_5D1C90( int (*** a2) {
 
   int *p_nextArrayIndex; // esi
@@ -14274,9 +14192,7 @@ int Gap2Recv_5D1C90::UI_Load_5D1C90( int (*** a2) {
   return result; /*0x5d1d6f*/
 
 }
-}
 // 0x5D4430
-namespace gamemd { 
 int Gap2Recv_5D4430::SyncFrameCounter() {
 
   int v2; // ebp
@@ -14352,9 +14268,7 @@ LABEL_13:
   return v2; /*0x5d4506*/
 
 }
-}
 // 0x5D6D80
-namespace gamemd { 
 char Gap2Recv_5D6D80::ComputeMultiEngineerAdjustment() {
 
   int v1; // ebp
@@ -14498,9 +14412,7 @@ LABEL_41:
   }
 
 }
-}
 // 0x5D9360
-namespace gamemd { 
 void Gap2Recv_5D9360::SmallFunc_5D9360() {
 
   RawFileClass v2; // [esp+4h] [ebp-24h] BYREF
@@ -14522,9 +14434,7 @@ void Gap2Recv_5D9360::SmallFunc_5D9360() {
   RawFileClass::Dtor(&v2); /*0x5d93bc*/
 
 }
-}
 // 0x5DB600
-namespace gamemd { 
 int Gap2Recv_5DB600::PlayerSkirmishSlotHandler_Handle_5DB600() {
 
   memset(&stru_A8D600.__pad_34[4], 0, 0x1C4u); /*0x5db611*/
@@ -14542,9 +14452,7 @@ int Gap2Recv_5DB600::PlayerSkirmishSlotHandler_Handle_5DB600() {
            0);
 
 }
-}
 // 0x5DBEC0
-namespace gamemd { 
 int Gap2Recv_5DBEC0::SendMultiplayerStartSignal_Start() {
 
   char *v1; // ebx
@@ -14577,9 +14485,7 @@ int Gap2Recv_5DBEC0::SendMultiplayerStartSignal_Start() {
     return *(unsigned int *)(*(unsigned int *)(dword_A8DA78 + 4 * v4) + 119); /*0x5dbf36*/
 
 }
-}
 // 0x5E23D0
-namespace gamemd { 
 char Gap2Recv_5E23D0::Network_Check(int a2) {
 
   int uniqueId; // edx
@@ -14604,9 +14510,7 @@ char Gap2Recv_5E23D0::Network_Check(int a2) {
   return 1; /*0x5e23f9*/
 
 }
-}
 // 0x5E9340
-namespace gamemd { 
 int Gap2Recv_5E9340::Audio_Helper() {
 
   int v2; // ebx
@@ -14660,9 +14564,7 @@ int Gap2Recv_5E9340::Audio_Helper() {
   return result; /*0x5e93b0*/
 
 }
-}
 // 0x5E93F0
-namespace gamemd { 
 bool Gap2Recv_5E93F0::IsKnownPointer() {
 
   return this /*0x5e9431*/
@@ -14675,9 +14577,7 @@ bool Gap2Recv_5E93F0::IsKnownPointer() {
       && this != (ObjectClass *)g_Lobby_PlayerColor;
 
 }
-}
 // 0x5EAAD0
-namespace gamemd { 
 int Gap2Recv_5EAAD0::RefreshLobbyAll_Helper_5EAAD0() {
 
   if ( !this ) /*0x5eaad4*/
@@ -14697,9 +14597,7 @@ int Gap2Recv_5EAAD0::RefreshLobbyAll_Helper_5EAAD0() {
   return this != (ObjectClass *)7 ? -1 : 1753;
 
 }
-}
 // 0x5EAB30
-namespace gamemd { 
 int Gap2Recv_5EAB30::RefreshLobbyAll_Play_5EAB30() {
 
   int *v2; // ebx
@@ -14747,9 +14645,7 @@ int Gap2Recv_5EAB30::RefreshLobbyAll_Play_5EAB30() {
   return result; /*0x5eabf1*/
 
 }
-}
 // 0x5EAC00
-namespace gamemd { 
 int Gap2Recv_5EAC00::RefreshLobbyAll_Get_5EAC00() {
 
   int *v2; // ebx
@@ -14797,9 +14693,7 @@ int Gap2Recv_5EAC00::RefreshLobbyAll_Get_5EAC00() {
   return result; /*0x5eacc1*/
 
 }
-}
 // 0x5EACD0
-namespace gamemd { 
 int Gap2Recv_5EACD0::RefreshLobbyAll_Get_5EACD0() {
 
   int *v2; // ebx
@@ -14847,9 +14741,7 @@ int Gap2Recv_5EACD0::RefreshLobbyAll_Get_5EACD0() {
   return result; /*0x5ead91*/
 
 }
-}
 // 0x5EADA0
-namespace gamemd { 
 char Gap2Recv_5EADA0::RefreshLobbyAll_Get_5EADA0(SessionClass * hDlg) {
 
   ObjectClass *v2; // edi
@@ -14897,9 +14789,7 @@ char Gap2Recv_5EADA0::RefreshLobbyAll_Get_5EADA0(SessionClass * hDlg) {
   return result; /*0x5eae36*/
 
 }
-}
 // 0x5EAE40
-namespace gamemd { 
 char Gap2Recv_5EAE40::RefreshLobbyAll_Setup(SessionClass * hDlg) {
 
   ObjectClass *v2; // edi
@@ -14950,9 +14840,7 @@ char Gap2Recv_5EAE40::RefreshLobbyAll_Setup(SessionClass * hDlg) {
   return result; /*0x5eaed6*/
 
 }
-}
 // 0x5EAEE0
-namespace gamemd { 
 char Gap2Recv_5EAEE0::RefreshLobbyAll_Play_5EAEE0() {
 
   const wchar_t *result; // eax
@@ -15078,9 +14966,7 @@ LABEL_8:
   return result; /*0x5eb051*/
 
 }
-}
 // 0x5EE100
-namespace gamemd { 
 bool Gap2Recv_5EE100::Network_Send() {
 
   return (uint8_t)String::Equals_Alt((String *)this, off_831704) /*0x5ee17e*/
@@ -15092,9 +14978,7 @@ bool Gap2Recv_5EE100::Network_Send() {
       || (uint8_t)String::Equals_Alt((String *)this, off_83171C);
 
 }
-}
 // 0x5EEF60
-namespace gamemd { 
 void Gap2Recv_5EEF60::String_Process() {
 
   unsigned int vtable2; // esi
@@ -15152,9 +15036,7 @@ void Gap2Recv_5EEF60::String_Process() {
   }
 
 }
-}
 // 0x5EF010
-namespace gamemd { 
 void Gap2Recv_5EF010::Map_Helper_5EF010() {
 
   int vtable2; // esi
@@ -15212,9 +15094,7 @@ void Gap2Recv_5EF010::Map_Helper_5EF010() {
   }
 
 }
-}
 // 0x5FD2E0
-namespace gamemd { 
 int Gap2Recv_5FD2E0::ReadOverlayINI() {
 
   int Buffer_field_14; // edi
@@ -15360,9 +15240,7 @@ int Gap2Recv_5FD2E0::ReadOverlayINI() {
   return ProcessExpiredPointers(v20); /*0x5fd697*/
 
 }
-}
 // 0x60B350
-namespace gamemd { 
 int Gap2Recv_60B350::UI_Get_60B350(HWND hWnd) {
 
   ObjectClass *v1; // edi
@@ -15406,9 +15284,7 @@ int Gap2Recv_60B350::UI_Get_60B350(HWND hWnd) {
   return MoveWindow((HWND)v1, v6, v7, v4, v5, 0); /*0x60b3f4*/
 
 }
-}
 // 0x60B420
-namespace gamemd { 
 int Gap2Recv_60B420::UI_Get_60B420(HWND hWnd) {
 
   HWND Parent; // esi
@@ -15470,9 +15346,7 @@ LABEL_9:
   return MoveWindow((HWND)hWnd, v9, v10 - v6, v5, v6, 0); /*0x60b542*/
 
 }
-}
 // 0x60B550
-namespace gamemd { 
 int Gap2Recv_60B550::UI_Get_60B550(HWND hWnd) {
 
   HWND Parent; // edi
@@ -15501,9 +15375,7 @@ int Gap2Recv_60B550::UI_Get_60B550(HWND hWnd) {
            0);
 
 }
-}
 // 0x60B610
-namespace gamemd { 
 int Gap2Recv_60B610::UI_Get_60B610(HWND hWnd) {
 
   HWND Parent; // esi
@@ -15564,9 +15436,7 @@ LABEL_9:
   return MoveWindow((HWND)hWnd, v9, v10->vtable2 + v10->vtable4 - v6, v5, v6, 0); /*0x60b718*/
 
 }
-}
 // 0x60B7A0
-namespace gamemd { 
 char Gap2Recv_60B7A0::UI_Get_60B7A0(HWND hWnd) {
 
   HWND Parent; // edi
@@ -15622,9 +15492,7 @@ char Gap2Recv_60B7A0::UI_Get_60B7A0(HWND hWnd) {
   return result; /*0x60b873*/
 
 }
-}
 // 0x60C7D0
-namespace gamemd { 
 char Gap2Recv_60C7D0::UI_Helper_60C7D0() {
 
   ObjectClass **v1; // eax
@@ -15677,9 +15545,7 @@ char Gap2Recv_60C7D0::UI_Helper_60C7D0() {
   return 1; /*0x60c819*/
 
 }
-}
 // 0x60C930
-namespace gamemd { 
 char Gap2Recv_60C930::UI_Helper_60C930() {
 
   ObjectClass **v1; // eax
@@ -15723,9 +15589,7 @@ char Gap2Recv_60C930::UI_Helper_60C930() {
   }
 
 }
-}
 // 0x60CAF0
-namespace gamemd { 
 char Gap2Recv_60CAF0::UI_Helper_60CAF0() {
 
   ObjectClass **v1; // eax
@@ -15772,9 +15636,7 @@ char Gap2Recv_60CAF0::UI_Helper_60CAF0() {
   }
 
 }
-}
 // 0x60CCC0
-namespace gamemd { 
 char Gap2Recv_60CCC0::UI_Helper_60CCC0() {
 
   ObjectClass **v1; // eax
@@ -15813,9 +15675,7 @@ char Gap2Recv_60CCC0::UI_Helper_60CCC0() {
   }
 
 }
-}
 // 0x60CDB0
-namespace gamemd { 
 char Gap2Recv_60CDB0::UI_Helper_60CDB0() {
 
   ObjectClass **v1; // eax
@@ -15854,9 +15714,7 @@ char Gap2Recv_60CDB0::UI_Helper_60CDB0() {
   }
 
 }
-}
 // 0x623E00
-namespace gamemd { 
 int Gap2Recv_623E00::Memory_Pop(HWND hWnd) {
 
   LRESULT v2; // eax
@@ -15873,9 +15731,7 @@ int Gap2Recv_623E00::Memory_Pop(HWND hWnd) {
   return 0; /*0x623e30*/
 
 }
-}
 // 0x625C00
-namespace gamemd { 
 void* Gap2Recv_625C00::Event_Process_625C00(ObjectClass * aP1) {
 
   int i; // eax
@@ -15925,9 +15781,7 @@ void* Gap2Recv_625C00::Event_Process_625C00(ObjectClass * aP1) {
   return v13; /*0x625d06*/
 
 }
-}
 // 0x626120
-namespace gamemd { 
 unsigned char Gap2Recv_6120::Render_Helper(ObjectClass * aP1, int a3) {
 
   int i; // esi
@@ -15941,9 +15795,7 @@ unsigned char Gap2Recv_6120::Render_Helper(ObjectClass * aP1, int a3) {
   return result; /*0x62615a*/
 
 }
-}
 // 0x62C6E0
-namespace gamemd { 
 void ParticleClass::Update() {
 
   double v2; // st7
@@ -16149,9 +16001,7 @@ LABEL_31:
   }
 
 }
-}
 // 0x62CB10
-namespace gamemd { 
 void Gap2Recv_62CB10::UpdateAreaDamageEffect() {
 
   double v2; // st7
@@ -16294,9 +16144,7 @@ LABEL_16:
   }
 
 }
-}
 // 0x62E430
-namespace gamemd { 
 int Gap2Recv_62E430::CreateFireAtSW(int aP1, IUnknown * aP2) {
 
   double v3; // st7
@@ -16331,9 +16179,7 @@ int Gap2Recv_62E430::CreateFireAtSW(int aP1, IUnknown * aP2) {
   return v6; /*0x62e4ab*/
 
 }
-}
 // 0x62E840
-namespace gamemd { 
 char Gap2Recv_62E840::UpdateProductionParticleSystem() {
 
   double v1; // st7
@@ -16707,9 +16553,7 @@ LABEL_34:
   return v40; /*0x62ed35*/
 
 }
-}
 // 0x62ED40
-namespace gamemd { 
 void Gap2Recv_62ED40::UpdateBuildingParticleSystem() {
 
   double v1; // st7
@@ -16945,7 +16789,6 @@ LABEL_30:
   if ( v47 > *(float *)(v46 + 684) ) /*0x62f216*/
     LOBYTE(this->animation[0]) = 1; /*0x62f218*/
 
-}
 }
 // 0x62F9A0
 namespace gamemd { 

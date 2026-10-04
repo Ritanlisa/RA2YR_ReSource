@@ -6,8 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class NextMission;  // G42.36 fwd supply
-class ForceMission;  // G42.36 fwd supply
 struct TagClass;  // fix_fwd_type_supply
 struct BombClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply

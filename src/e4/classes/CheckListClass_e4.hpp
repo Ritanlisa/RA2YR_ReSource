@@ -4,8 +4,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class ListClass;  // G42.36 fwd supply
-class ControlClass;  // G42.36 fwd supply
 
 struct CheckListClass {
 // --- flat members (BEGIN) ---

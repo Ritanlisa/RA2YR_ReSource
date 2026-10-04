@@ -6,8 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class ReleaseBuffers;  // G42.36 fwd supply
-class ComputePosition;  // G42.36 fwd supply
 struct WinModemClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply

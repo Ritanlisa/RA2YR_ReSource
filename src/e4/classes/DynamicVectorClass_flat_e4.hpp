@@ -2,29 +2,6 @@
 #pragma once
 
 namespace gamemd {
-class InitDistanceTable;  // G42.36 fwd supply
-class SetProjectionAngle;  // G42.36 fwd supply
-class FacePixelBuffer3;  // G42.36 fwd supply
-class FacePixelBufferEx;  // G42.36 fwd supply
-class FacePixelBuffer;  // G42.36 fwd supply
-class TransformMatrix;  // G42.36 fwd supply
-class LightRender;  // G42.36 fwd supply
-class SectionProject;  // G42.36 fwd supply
-class FaceBlit;  // G42.36 fwd supply
-class FaceDraw;  // G42.36 fwd supply
-class BlendColor;  // G42.36 fwd supply
-class ShadowCalc;  // G42.36 fwd supply
-class CellStruct;  // G42.36 fwd supply
-class WaveClass;  // G42.36 fwd supply
-class BlendShadowColor;  // G42.36 fwd supply
-class DrawHelper;  // G42.36 fwd supply
-class ProcessColor;  // G42.36 fwd supply
-class ObjectClass;  // G42.36 fwd supply
-class SortDepth;  // G42.36 fwd supply
-class Projection_Setup;  // G42.36 fwd supply
-class AbstractClass;  // G42.36 fwd supply
-class RenderFrame;  // G42.36 fwd supply
-class BuildIndexTable;  // G42.36 fwd supply
 
 struct DynamicVectorClass_flat {
     unsigned int q010;

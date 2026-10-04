@@ -6,7 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class Size;  // G42.36 fwd supply
 struct OverlayTypeClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct AbstractTypeClass;  // fix_fwd_type_supply

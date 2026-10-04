@@ -120,12 +120,10 @@ int BuildingClass::HandleFactoryCommand()
 }
 }
 // 0x445F80
-namespace gamemd { int SuperWeapon::CreateUnits() {
 int BuildingClass::CreateUnits()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00445F80.json)
 }
-} }
 // 0x44D760
 namespace gamemd { 
 int BuildingClass::PushScriptAction()
@@ -265,7 +263,6 @@ int InfantryClass::Construct(int a1, void* a2)
 }
 }
 // 0x517FA0
-namespace gamemd { int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5, int a6, int a7) {
 int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5, int a6, int a7)
 {
     (void)a1; (void)a2; (void)a3; (void)a4; (void)a5; (void)a6; (void)a7; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00517FA0.json)
@@ -1472,7 +1469,6 @@ pop     ebx
 add     esp, 0C0h
 retn    1Ch
 */
-}
 }
 // 0x51BAB0
 namespace gamemd { 

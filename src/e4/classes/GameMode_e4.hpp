@@ -4,7 +4,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class CCINIClass;  // G42.36 fwd supply
 struct GameMode {
 // --- flat members (BEGIN) ---
     unsigned int u32_18;  // 0x18

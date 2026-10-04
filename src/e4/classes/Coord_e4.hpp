@@ -5,29 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class CreateAIPlayer_Potato;  // G42.36 fwd supply
-class CreateAIPlayer;  // G42.36 fwd supply
-class InitializeToolTipColor;  // G42.36 fwd supply
-class LoadMultiplayerScoreAssets;  // G42.36 fwd supply
-class ResetReadyStates;  // G42.36 fwd supply
-class ResetFlags;  // G42.36 fwd supply
-class Stub3;  // G42.36 fwd supply
-class SetupWOLTournament;  // G42.36 fwd supply
-class ProcessIdle;  // G42.36 fwd supply
-class EncodeGameSetupState;  // G42.36 fwd supply
-class CellStruct;  // G42.36 fwd supply
-class SerializeGameSaveState;  // G42.36 fwd supply
-class LockMutex;  // G42.36 fwd supply
-class ManageGameSpeed;  // G42.36 fwd supply
-class Buffer;  // G42.36 fwd supply
-class BuildGameSettingsPacket;  // G42.36 fwd supply
-class GetMultiplayerScoreScreenBar;  // G42.36 fwd supply
-class BuildGameSetupPacket;  // G42.36 fwd supply
-class HashTable_flat;  // G42.36 fwd supply
-class StartModemMultiplayer;  // G42.36 fwd supply
-class MakeScreenshot;  // G42.36 fwd supply
-class DestroyAllObjects;  // G42.36 fwd supply
-class SendCampaignOptions;  // G42.36 fwd supply
 struct Coord {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0

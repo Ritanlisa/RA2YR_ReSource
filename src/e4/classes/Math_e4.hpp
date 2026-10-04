@@ -10,7 +10,6 @@
 namespace ra2 { namespace game { class TechnoClass; } }
 #ifdef GAMEMD_TREE_UNIVERSE
 namespace gamemd { using ::ra2::game::TechnoClass; }
-class BuildingTypeClass;  // G42.36 fwd supply
 #endif
 #endif
 

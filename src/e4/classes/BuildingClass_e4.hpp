@@ -6,16 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class DispatchTeam;  // G42.36 fwd supply
-class UpdateSuperWeaponReadyState;  // G42.36 fwd supply
-class UpdateTargetRedrawState;  // G42.36 fwd supply
-class SerializeSuperWeaponState;  // G42.36 fwd supply
-class UpdateSuperWeaponsUnavailableHouseClass;  // G42.36 fwd supply
-class EvaluateAITarget;  // G42.36 fwd supply
-class FireSuperWeaponHouseClass;  // G42.36 fwd supply
-class SelectSuperWeaponTarget;  // G42.36 fwd supply
-class CreateNukePayload;  // G42.36 fwd supply
-class CreateUnits;  // G42.36 fwd supply
 struct BombClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct LineTrail;  // fix_fwd_type_supply

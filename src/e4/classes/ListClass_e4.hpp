@@ -2,8 +2,6 @@
 #pragma once
 
 namespace gamemd {
-class ControlClass;  // G42.36 fwd supply
-class CheckListClass__vt_19_;  // G42.36 fwd supply
 
 struct ListClass {
     unsigned int ListClass_field_0x10;

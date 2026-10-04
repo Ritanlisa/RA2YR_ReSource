@@ -5,83 +5,11 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class Constructor_VectorClass_RadSiteClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_RadBeam___;  // G42.36 fwd supply
-class Constructor_VectorClass_MapStage___;  // G42.36 fwd supply
-class GetAt;  // G42.36 fwd supply
-class SetAt;  // G42.36 fwd supply
-class Constructor_VectorClass_MSSfx___;  // G42.36 fwd supply
-class Set;  // G42.36 fwd supply
-class Count;  // G42.36 fwd supply
-class Constructor_VectorClass_double_;  // G42.36 fwd supply
-class Constructor_1;  // G42.36 fwd supply
-class Constructor_0;  // G42.36 fwd supply
-class LoadTypeData;  // G42.36 fwd supply
-class Constructor_VectorClass_bool_;  // G42.36 fwd supply
-class Constructor_VectorClass_FactoryClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_AnimClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_HouseClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_UnitClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_OverlayClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_WaveClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_TubeClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_TeamClass___;  // G42.36 fwd supply
-class FindItemIndex_1;  // G42.36 fwd supply
-class SetCapacity_1;  // G42.36 fwd supply
-class FindItemIndex_0;  // G42.36 fwd supply
-class Destructor_2;  // G42.36 fwd supply
-class Destructor_1;  // G42.36 fwd supply
-class ProcessAll;  // G42.36 fwd supply
-class IsEqualTo;  // G42.36 fwd supply
-class GetItem;  // G42.36 fwd supply
-class Clear_627D80;  // G42.36 fwd supply
-class Clear_627D20;  // G42.36 fwd supply
-class Destructor_0;  // G42.36 fwd supply
-class GetCount;  // G42.36 fwd supply
-class Clear_49E9B0;  // G42.36 fwd supply
-class CCINIClass;  // G42.36 fwd supply
-class SetCapacity_0;  // G42.36 fwd supply
-class Constructor_VectorClass_KamikazeControl___;  // G42.36 fwd supply
-class Write;  // G42.36 fwd supply
-class Seek;  // G42.36 fwd supply
-class ClearBuffer;  // G42.36 fwd supply
-class FindItem;  // G42.36 fwd supply
-class Launch;  // G42.36 fwd supply
-class PointerToIndex;  // G42.36 fwd supply
-class IndexOf;  // G42.36 fwd supply
-class BeginMove;  // G42.36 fwd supply
-class Spawn;  // G42.36 fwd supply
-class SaveState;  // G42.36 fwd supply
-class LoadState;  // G42.36 fwd supply
-class DialogControl_OwnerDraw;  // G42.36 fwd supply
-class Constructor_WonlineStringDialogControl;  // G42.36 fwd supply
-class Destructor;  // G42.36 fwd supply
-class GetItemIndex_1;  // G42.36 fwd supply
-class Destroy_1;  // G42.36 fwd supply
-class GetItemIndex_0;  // G42.36 fwd supply
-class Destroy_0;  // G42.36 fwd supply
-class Clear;  // G42.36 fwd supply
-class Constructor_VectorClass_EMPulseClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_EgoClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_EBolt___;  // G42.36 fwd supply
-class Constructor_VectorClass_ConvertClass___;  // G42.36 fwd supply
-class Constructor_VectorClass_DamageGroup___;  // G42.36 fwd supply
-class Destruct;  // G42.36 fwd supply
-class Constructor;  // G42.36 fwd supply
-class AddRef;  // G42.36 fwd supply
-class Constructor_VectorClass_ScriptClass___;  // G42.36 fwd supply
-class QueryInterface;  // G42.36 fwd supply
-class FindItemIndex;  // G42.36 fwd supply
-class GetCapacity;  // G42.36 fwd supply
-class GetSize;  // G42.36 fwd supply
-class Remove;  // G42.36 fwd supply
-class Get;  // G42.36 fwd supply
-class GetItemIndex;  // G42.36 fwd supply
-class Destroy;  // G42.36 fwd supply
-class Constructor_ConvertClass;  // G42.36 fwd supply
-class Block;  // G42.36 fwd supply
-class SetCapacity;  // G42.36 fwd supply
-class Release;  // G42.36 fwd supply
+class Constructor_VectorClass_MovieHandle___;  // G42.36 fwd supply
+class Constructor_VectorClass_VocClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_ThemeControl___;  // G42.36 fwd supply
+class Constructor_VectorClass_TEventClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_TagTypeClass___;  // G42.36 fwd supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct DynamicVector {
 // --- flat members (BEGIN) ---
@@ -217,5 +145,11 @@ struct DynamicVector {
     VectorClass_flat * Constructor_VectorClass_MapStage___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_RadBeam___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_RadSiteClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_UndoInfoStruct_(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_TagTypeClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_TEventClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_ThemeControl___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_VocClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_MovieHandle___(unsigned int * Block, char a2);
 };
 } // namespace gamemd

@@ -6,23 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class SetDword30;  // G42.36 fwd supply
-class SetDword32;  // G42.36 fwd supply
-class ResetDisplayArrays;  // G42.36 fwd supply
-class CCINIClass;  // G42.36 fwd supply
-class FindBuildingTypeByName;  // G42.36 fwd supply
-class LoadWithProgress;  // G42.36 fwd supply
-class ClearScreen;  // G42.36 fwd supply
-class SetByte96;  // G42.36 fwd supply
-class PreGameInit;  // G42.36 fwd supply
-class LoadOrReloadOptions;  // G42.36 fwd supply
-class Update;  // G42.36 fwd supply
-class ComputeDialogPos;  // G42.36 fwd supply
-class ComputeDisplayPosition;  // G42.36 fwd supply
-class ProcessSidebarUnits;  // G42.36 fwd supply
-class CopyLocalScenarioData;  // G42.36 fwd supply
-class ReadTeams;  // G42.36 fwd supply
-class Game_DumpMultiplayerGameInfo;  // G42.36 fwd supply
 struct ObjectClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
 struct HashTable_flat;  // fix_fwd_type_supply

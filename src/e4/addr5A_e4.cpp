@@ -4476,7 +4476,6 @@ float * MultiplyMatrix3x4(ObjectClass * aP0, float *a1, float *a2)
   return result; /*0x5afb74*/
 }
 // 0x5A1190
-namespace gamemd {
 double sub_5A1190(short * a1, short * a2, double a3)
 {
   int v3; // esi
@@ -4509,10 +4508,8 @@ double sub_5A1190(short * a1, short * a2, double a3)
     v9 = 6.283185307179586 - v5; /*0x5a1224*/
   return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 2.328306437080797e-10 * 2.0 + 1.5 * v9; /*0x5a125c*/
 }
-} // namespace gamemd
 
 // 0x5A2ED0
-namespace gamemd {
 double sub_5A2ED0(short * a1, short * a2)
 {
   int v2; // eax
@@ -4524,10 +4521,8 @@ double sub_5A2ED0(short * a1, short * a2)
   v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3)); /*0x5a2f0d*/
   return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 5.0 * 2.328306437080797e-10 + v5; /*0x5a2f3f*/
 }
-} // namespace gamemd
 
 // 0x5A4AE0
-namespace gamemd {
 double sub_5A4AE0(short * a1, short * a2)
 {
   int v2; // eax
@@ -4539,10 +4534,8 @@ double sub_5A4AE0(short * a1, short * a2)
   v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3)); /*0x5a4b1d*/
   return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 5.0 * 2.328306437080797e-10 + v5; /*0x5a4b4f*/
 }
-} // namespace gamemd
 
 // 0x5A4FA0
-namespace gamemd {
 double sub_5A4FA0(short * a1, short * a2)
 {
   int v2; // eax
@@ -4554,10 +4547,8 @@ double sub_5A4FA0(short * a1, short * a2)
   v5 = Math::Sqrt((double)(v2 * v2 + v3 * v3)); /*0x5a4fdd*/
   return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 5.0 * 2.328306437080797e-10 + v5; /*0x5a500f*/
 }
-} // namespace gamemd
 
 // 0x5A5AE0
-namespace gamemd {
 double sub_5A5AE0(short * a1, short * a2)
 {
   signed int v2; // ecx
@@ -4571,7 +4562,6 @@ double sub_5A5AE0(short * a1, short * a2)
     v5 = v2; /*0x5a5b15*/
   return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 3.0 * 2.328306437080797e-10 + (double)v5; /*0x5a5b45*/
 }
-} // namespace gamemd
 }
 
 // 0x5A7640

@@ -4,7 +4,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class WebBrowser___vt03;  // G42.36 fwd supply
 struct WebBrowser {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0

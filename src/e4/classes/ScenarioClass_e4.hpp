@@ -5,8 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class Block;  // G42.36 fwd supply
-class MSAnim;  // G42.36 fwd supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct CampaignScore;  // fix_fwd_type_supply
 struct TechnoTypeClass;  // fix_fwd_type_supply

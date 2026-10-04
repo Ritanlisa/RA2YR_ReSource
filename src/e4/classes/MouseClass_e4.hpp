@@ -6,32 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class Constructor;  // G42.36 fwd supply
-class UpdateCountdowners;  // G42.36 fwd supply
-class UpdateTimers;  // G42.36 fwd supply
-class InitListAndCounters;  // G42.36 fwd supply
-class CheckFormatChanged;  // G42.36 fwd supply
-class Destructor;  // G42.36 fwd supply
-class ProcessStream;  // G42.36 fwd supply
-class SetFlag4C;  // G42.36 fwd supply
-class DrawWaveform;  // G42.36 fwd supply
-class ReadSamples;  // G42.36 fwd supply
-class ReadStreamAndReturn;  // G42.36 fwd supply
-class GetChannel;  // G42.36 fwd supply
-class InitNodeFields;  // G42.36 fwd supply
-class ProcessCallback;  // G42.36 fwd supply
-class SetPlaybackCallback;  // G42.36 fwd supply
-class ReadStreamAndSyncPosition;  // G42.36 fwd supply
-class CleanupChannels;  // G42.36 fwd supply
-class SelectRandom;  // G42.36 fwd supply
-class SetupPlayback;  // G42.36 fwd supply
-class ResetChannel2;  // G42.36 fwd supply
-class ResetChannel;  // G42.36 fwd supply
-class Reset;  // G42.36 fwd supply
-class Block;  // G42.36 fwd supply
-class DestroyAll;  // G42.36 fwd supply
-class ReleaseChannel;  // G42.36 fwd supply
-class ReleaseSubsystem;  // G42.36 fwd supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
 struct AbstractTypeClass;  // fix_fwd_type_supply

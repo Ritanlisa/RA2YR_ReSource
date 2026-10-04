@@ -12,24 +12,6 @@
 #ifdef GAMEMD_TREE_UNIVERSE
 namespace ra2 { namespace game { class AbstractClass; } }
 namespace gamemd {
-class CampaignScore;  // G42.36 fwd supply
-class Destination;  // G42.36 fwd supply
-class ReferenceCounted;  // G42.36 fwd supply
-class Constructor;  // G42.36 fwd supply
-class DtorWithDelete;  // G42.36 fwd supply
-class TechnoTypeClass;  // G42.36 fwd supply
-class SaveObject;  // G42.36 fwd supply
-class LoadObject;  // G42.36 fwd supply
-class CheckState;  // G42.36 fwd supply
-class Unlink;  // G42.36 fwd supply
-class RemoveObjectArray;  // G42.36 fwd supply
-class CalculateObjectPlacementPosition;  // G42.36 fwd supply
-class Block;  // G42.36 fwd supply
-class DrawObject;  // G42.36 fwd supply
-class FindNearestObjectAtCell;  // G42.36 fwd supply
-class IsAlliedWithObjectSimpleHouse;  // G42.36 fwd supply
-class TechnoClass;  // G42.36 fwd supply
-class FindObjectCell;  // G42.36 fwd supply
 #ifndef GAMEMD_USING_AbstractClass
 #define GAMEMD_USING_AbstractClass
 using ::ra2::game::AbstractClass;

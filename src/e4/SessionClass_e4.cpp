@@ -264,163 +264,117 @@ SessionClass::SessionClass()
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6970A0)
 }  // G42.18c ns repair
 // 0x697B70
-namespace gamemd {  // G42.18c ns repair
 int SessionClass::CreateConnections()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x697B70)
 }
-}  // G42.18c ns repair
 // 0x697E70
-namespace gamemd {  // G42.18c ns repair
 int  SessionClass::IsValidHouse(void * a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x697E70)
 }
-}  // G42.18c ns repair
 // 0x699980
-namespace gamemd {  // G42.18c ns repair
 AbstractClass * * SessionClass::LoadMissionList()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x699980)
 }
-}  // G42.18c ns repair
 // 0x69A980
-namespace gamemd {  // G42.18c ns repair
 ObjectClass * *  SessionClass::ParseGameInfo(wchar_t * Destination, char * Source, CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69A980)
 }
-}  // G42.18c ns repair
 // 0x69B7E0
-namespace gamemd {  // G42.18c ns repair
 int SessionClass::AssignColor(int a2, char aP2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69B7E0)
 }
-}  // G42.18c ns repair
 // 0x69BD60
-namespace gamemd {  // G42.18c ns repair
 void SessionClass::SetupNetwork()
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69BD60)
 }
-}  // G42.18c ns repair
 // 0x78F000
-namespace gamemd {  // G42.18c ns repair
 Coord * * SessionClass::BuildLaunchString()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x78F000)
 }
-}  // G42.18c ns repair
 // 0x69A310
-namespace gamemd {  // G42.18c ns repair
 unsigned int SessionClass::GetPlayerColorScheme(ObjectClass * aP0)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69A310)
 }
-}  // G42.18c ns repair
 // 0x69B760
-namespace gamemd {  // G42.18c ns repair
 int SessionClass::AssignSide(int a2, char aP2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69B760)
 }
-}  // G42.18c ns repair
 // 0x69BBE0
-namespace gamemd {  // G42.18c ns repair
 char SessionClass::GetGameSpeed()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69BBE0)
 }
-}  // G42.18c ns repair
 // 0x69C4A0
-namespace gamemd {  // G42.18c ns repair
 wchar_t SessionClass::ddtor(void *a1)
 {
      return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C4A0)
 }
-}  // G42.18c ns repair
 // 0x69C4D0
-namespace gamemd {  // G42.18c ns repair
 unsigned int SessionClass::Write(int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C4D0)
 }
-}  // G42.18c ns repair
 // 0x69C4F0
-namespace gamemd {  // G42.18c ns repair
 int SessionClass::Seek(int a2, void *a2_2, void *a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C4F0)
 }
-}  // G42.18c ns repair
 // 0x69C6C0
-namespace gamemd {  // G42.18c ns repair
 TypeList_flat * SessionClass::QueryInterface(unsigned int * Block, char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C6C0)
 }
-}  // G42.18c ns repair
 // 0x69C710
-namespace gamemd {  // G42.18c ns repair
 char SessionClass::AddRef(int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C710)
 }
-}  // G42.18c ns repair
 // 0x69C750
-namespace gamemd {  // G42.18c ns repair
 char SessionClass::addPlayer(int a2, unsigned int * a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C750)
 }
-}  // G42.18c ns repair
 // 0x69C800
-namespace gamemd {  // G42.18c ns repair
 void SessionClass::removePlayer()
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C800)
 }
-}  // G42.18c ns repair
 // 0x69C830
-namespace gamemd {  // G42.18c ns repair
 int  SessionClass::findPlayer(unsigned int * a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C830)
 }
-}  // G42.18c ns repair
 // 0x69C870
-namespace gamemd {  // G42.18c ns repair
 unsigned int SessionClass::updatePlayer(int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C870)
 }
-}  // G42.18c ns repair
 // 0x69C890
-namespace gamemd {  // G42.18c ns repair
 char SessionClass::Release(int a2, unsigned int * a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C890)
 }
-}  // G42.18c ns repair
 // 0x69C940
-namespace gamemd {  // G42.18c ns repair
 int SessionClass::Read(unsigned int * a2, void *a2_2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C940)
 }
-}  // G42.18c ns repair
 // 0x69D460
-namespace gamemd {  // G42.18c ns repair
 VectorClass_flat * SessionClass::validateGame(unsigned int * Block, char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69D460)
 }
-}  // G42.18c ns repair
 // 0x7B2720
-namespace gamemd {
 void SessionClass::SetInstance()
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B2720)
-}
 }

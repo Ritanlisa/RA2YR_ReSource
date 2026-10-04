@@ -1757,7 +1757,6 @@ void* ParticleSystemClass::finalizeParticles(int a2) {
 }
 }
 // 0x547CF0
-namespace gamemd { void TerrainClass::GenerateTexture(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17) {
 
 
 /* ASM:
@@ -3901,7 +3900,6 @@ pop     ebx
 add     esp, 1Ch
 retn    44h ; 'D'
 */
-} }
 
 // 0x549E90
 namespace gamemd { 
@@ -8504,4 +8502,3 @@ int WaveClass::Update() {
 }
 }
 // 0x7632D0
-namespace gamemd { void* WaveClass::Constructor_7632D0(int a1, int a2) { return nullptr; } }

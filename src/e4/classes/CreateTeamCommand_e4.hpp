@@ -6,18 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class MouseClass;  // G42.36 fwd supply
-class FactoryClass;  // G42.36 fwd supply
-class FlushSidebarTooltip;  // G42.36 fwd supply
-class ActivateTab;  // G42.36 fwd supply
-class Render;  // G42.36 fwd supply
-class RemoveItem;  // G42.36 fwd supply
-class TechnoClass;  // G42.36 fwd supply
-class CancelSidebarProductionQueue;  // G42.36 fwd supply
-class ScrollSidebarSkipGame;  // G42.36 fwd supply
-class Dispatch;  // G42.36 fwd supply
-class HouseClass;  // G42.36 fwd supply
-class StartSidebarProduction;  // G42.36 fwd supply
 struct CommandClass;  // fix_fwd_type_supply
 struct SelectTeamCommand;  // fix_fwd_type_supply
 struct AddTeamCommand;  // fix_fwd_type_supply

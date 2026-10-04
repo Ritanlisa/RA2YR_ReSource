@@ -6,58 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class WDT_Campaign_Constructor;  // G42.36 fwd supply
-class IsLobbyFeature;  // G42.36 fwd supply
-class IsMultiplayerActive;  // G42.36 fwd supply
-class GetMaxPacketSize;  // G42.36 fwd supply
-class CleanupOnDisconnect;  // G42.36 fwd supply
-class InitPlayerSlots;  // G42.36 fwd supply
-class Source;  // G42.36 fwd supply
-class SendOptionsGame;  // G42.36 fwd supply
-class WaitForPacket;  // G42.36 fwd supply
-class QueryAddress;  // G42.36 fwd supply
-class SendSettingsRequest;  // G42.36 fwd supply
-class SetPort;  // G42.36 fwd supply
-class FormatAddress;  // G42.36 fwd supply
-class CopyAddress_Small;  // G42.36 fwd supply
-class SyncPlayerList;  // G42.36 fwd supply
-class DynamicVector;  // G42.36 fwd supply
-class ProcessAddressChange;  // G42.36 fwd supply
-class SendMasterPlayerList;  // G42.36 fwd supply
-class SendUnreachable;  // G42.36 fwd supply
-class RecordEvent;  // G42.36 fwd supply
-class ProcessEventList;  // G42.36 fwd supply
-class QueueProcessingLoop;  // G42.36 fwd supply
-class AddFrameEvent;  // G42.36 fwd supply
-class CountDisconnectedHouses;  // G42.36 fwd supply
-class ResolveNetworkAddress;  // G42.36 fwd supply
-class IPXConnClass;  // G42.36 fwd supply
-class ResolveAndConnect;  // G42.36 fwd supply
-class SetupRematch;  // G42.36 fwd supply
-class Disconnect;  // G42.36 fwd supply
-class IPXManagerClass;  // G42.36 fwd supply
-class SetPlayerCoords;  // G42.36 fwd supply
-class GetLobbyStatus;  // G42.36 fwd supply
-class SendPacketThunk2;  // G42.36 fwd supply
-class SendPacket;  // G42.36 fwd supply
-class SendPacketThunk;  // G42.36 fwd supply
-class Send;  // G42.36 fwd supply
-class String2;  // G42.36 fwd supply
-class SendToPlayer;  // G42.36 fwd supply
-class FindPlayerByID;  // G42.36 fwd supply
-class GetClass;  // G42.36 fwd supply
-class GetConnectionSpeed;  // G42.36 fwd supply
-class GetSendCount;  // G42.36 fwd supply
-class AnimClass;  // G42.36 fwd supply
-class SetConnectionParams;  // G42.36 fwd supply
-class IsBroadcastAddr;  // G42.36 fwd supply
-class CopyAddress;  // G42.36 fwd supply
-class GetAddress;  // G42.36 fwd supply
-class Init;  // G42.36 fwd supply
-class SendOffer;  // G42.36 fwd supply
-class Dispatch;  // G42.36 fwd supply
-class SendBeacon;  // G42.36 fwd supply
-class SendBeaconDelete;  // G42.36 fwd supply
 struct CampaignClass;  // fix_fwd_type_supply
 
 struct HashTable_flat {

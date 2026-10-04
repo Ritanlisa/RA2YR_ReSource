@@ -142,90 +142,68 @@ int AircraftClass::IsBelowScreen()
 }
 
 // 0x41BE60
-namespace gamemd {
 int AircraftClass::LandingCheckStub()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41BE60)
 }
-} // namespace gamemd
 
 // 0x41BE80
-namespace gamemd {
 int AircraftClass::CheckStateFlag()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BE80.json)
 }
-} // namespace gamemd
 
 // 0x41BE90
-namespace gamemd {
 int AircraftClass::CheckStateFlag2()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BE90.json)
 }
-} // namespace gamemd
 
 // 0x41C020
-namespace gamemd {
 int AircraftClass::CheckReloadTimer()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041C020.json)
 }
-} // namespace gamemd
 
 // 0x41C070
-namespace gamemd {
 char AircraftClass::CheckDockState()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41C070)
 }
-} // namespace gamemd
 
 // 0x41C190
-namespace gamemd {
 int AircraftClass::PowerDrainProcess(int a1, unsigned int * a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041C190.json)
 }
-} // namespace gamemd
 
 // 0x41C1D0
-namespace gamemd {
 int AircraftClass::CheckMissionAbort()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41C1D0)
 }
-} // namespace gamemd
 
 // 0x41C200
-namespace gamemd {
 int AircraftClass::CheckMissionFail()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41C200)
 }
-} // namespace gamemd
 
 // 0x41C210
-namespace gamemd {
 AircraftClass * AircraftClass::CheckActionStatus(char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041C210.json)
 }
-} // namespace gamemd
 
 // 0x5B2E90
-namespace gamemd {
 int AircraftClass::CheckMissionStatus()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B2E90)
 }
-} // namespace gamemd
 
 // 0x5B2F30
-namespace gamemd {
 int AircraftClass::CheckMissionStatus2()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B2F30)
 }
-} // namespace gamemd
 }  // L-fix: close namespace tail 1

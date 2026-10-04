@@ -5,9 +5,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class Buffer;  // G42.36 fwd supply
-class BuildChecksum;  // G42.36 fwd supply
-class Constructor;  // G42.36 fwd supply
 struct AITriggerTypeClass;  // fix_fwd_type_supply
 struct MultiplayerGameMode;  // fix_fwd_type_supply
 

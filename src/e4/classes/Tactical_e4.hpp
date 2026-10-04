@@ -6,7 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class CoordStruct;  // G42.36 fwd supply
 struct Coord;  // fix_fwd_type_supply
 struct InfantryClass;  // fix_fwd_type_supply
 struct AbstractTypeClass;  // fix_fwd_type_supply

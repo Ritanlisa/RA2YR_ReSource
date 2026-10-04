@@ -2486,17 +2486,14 @@ int unknown_libname_20()
 } // namespace gamemd
 
 // 0x4E8120
-namespace gamemd {
 char sub_4E8120()
 {
   byte_A83CD9 = 0; /*0x4e8122*/
   word_A83CDA = 0; /*0x4e8127*/
   return 0; /*0x4e8131*/
 }
-} // namespace gamemd
 
 // 0x4E8140
-namespace gamemd {
 char sub_4E8140()
 {
   byte_A83CD4 = 127; /*0x4e8142*/
@@ -2504,30 +2501,24 @@ char sub_4E8140()
   byte_A83CD6 = 127; /*0x4e814c*/
   return 127; /*0x4e8151*/
 }
-} // namespace gamemd
 
 // 0x4E8160
-namespace gamemd {
 char sub_4E8160()
 {
   stru_A80220 = -1; /*0x4e8162*/
   DataGlobal_A80221 = -1; /*0x4e8167*/
   return -1; /*0x4e8171*/
 }
-} // namespace gamemd
 
 // 0x4E8180
-namespace gamemd {
 char sub_4E8180()
 {
   byte_A8EAE4 = -1; /*0x4e8182*/
   word_A8EAE5 = 0; /*0x4e8189*/
   return 0; /*0x4e8193*/
 }
-} // namespace gamemd
 
 // 0x4E81A0
-namespace gamemd {
 char sub_4E81A0()
 {
   byte_A83EC9 = -1; /*0x4e81a2*/
@@ -2535,10 +2526,8 @@ char sub_4E81A0()
   byte_A83ECA = 0; /*0x4e81ae*/
   return 0; /*0x4e81b3*/
 }
-} // namespace gamemd
 
 // 0x4E81C0
-namespace gamemd {
 char sub_4E81C0()
 {
   byte_A8E8C6 = -1; /*0x4e81c2*/
@@ -2546,10 +2535,8 @@ char sub_4E81C0()
   byte_A8E8C5 = 0; /*0x4e81ce*/
   return 0; /*0x4e81d3*/
 }
-} // namespace gamemd
 
 // 0x4E81E0
-namespace gamemd {
 char sub_4E81E0()
 {
   byte_A83DC0 = 0; /*0x4e81e2*/
@@ -2557,10 +2544,8 @@ char sub_4E81E0()
   byte_A83DC2 = -1; /*0x4e81ee*/
   return -1; /*0x4e81f3*/
 }
-} // namespace gamemd
 
 // 0x4E8200
-namespace gamemd {
 char sub_4E8200()
 {
   byte_8B40E1 = 0; /*0x4e8202*/
@@ -2568,10 +2553,8 @@ char sub_4E8200()
   byte_8B40E2 = -1; /*0x4e820e*/
   return -1; /*0x4e8213*/
 }
-} // namespace gamemd
 
 // 0x4E8220
-namespace gamemd {
 char sub_4E8220()
 {
   byte_A8E982 = 0; /*0x4e8222*/
@@ -2579,62 +2562,47 @@ char sub_4E8220()
   byte_A8E981 = -1; /*0x4e822e*/
   return -1; /*0x4e8233*/
 }
-} // namespace gamemd
 
 // 0x4E92F0
-namespace gamemd {
 void HouseClass_vt_03_free_()
 {
      // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
-} // namespace gamemd
 
 // 0x4E9320
-namespace gamemd {
 int HouseClass_vt_04_free_(int * a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
-} // namespace gamemd
 
 // 0x4E9360
-namespace gamemd {
 unsigned int HouseClass_vt_05_free_(int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
-} // namespace gamemd
 
 // 0x4E9F00
-namespace gamemd {
 int ParticleSystemClass_vt_04_free_(int * a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
-} // namespace gamemd
 
 // 0x4E9F40
-namespace gamemd {
 unsigned int ParticleSystemClass_vt_05_free_(int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
 }
-} // namespace gamemd
 
 // 0x4EF4E0
-namespace gamemd {
 VectorClass_flat * HouseClass_vt_00__free(unsigned int * Block, char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EF4E0)
 }
-} // namespace gamemd
 
 // 0x4EF800
-namespace gamemd {
 VectorClass_flat * ParticleSystemClass_vt_00__free(unsigned int * Block, char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EF800)
 }
-} // namespace gamemd
 
 } // namespace gamemd  // G42.35p: EOF close restored (depth was 1)

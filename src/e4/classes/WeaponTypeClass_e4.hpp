@@ -6,7 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class AbstractClass;  // G42.36 fwd supply
 struct WarheadTypeClass;  // fix_fwd_type_supply
 struct AnimTypeClass;  // fix_fwd_type_supply
 struct ParticleSystemTypeClass;  // fix_fwd_type_supply
