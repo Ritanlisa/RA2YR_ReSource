@@ -82,36 +82,8 @@ int __stdcall LocomotionClass::Z_Adjust() { return 0; }
 ZGradient __stdcall LocomotionClass::Z_Gradient() { return ZGradient::Deg90; }
 
 // 0x69ec50
-bool __stdcall LocomotionClass::Process() { return true; }
-  int v3; // ecx
-
-  LocomotionClass::Init((unsigned int *)this); /*0x69ec53*/
-  this->u32_1C = 0; /*0x69ec5d*/
-  ((unsigned char *)(this) + 0x020) = 0; /*0x69ec60*/
-  g_CurrentFrame = g_CurrentFrame; /*0x69ec63*/
-  this->u32_2C = 0; /*0x69ec69*/
-  this->q024 = g_CurrentFrame; /*0x69ec6c*/
-  this->u32_30 = 0; /*0x69ec6f*/
-  this->q034 = g_OverlayTypeConfig; /*0x69ec78*/
-  this->q038 = qword_B077FC; /*0x69ec80*/
-  this->q040 = g_OverlayTypeConfig; /*0x69ec95*/
-  this->q044 = qword_B077FC; /*0x69ec9e*/
-  v3 = IDA_HIDWORD(qword_B077FC); /*0x69eca1*/
-  this->q050 = 0; /*0x69eca7*/
-  this->u32_4C = 0; /*0x69ecaa*/
-  ((unsigned char *)(this) + 0x048) = v3; /*0x69ecad*/
-  this->ptr_24 = 0; /*0x69ecb3*/
-  ((unsigned char *)(this) + 0x058) = -1; /*0x69ecb6*/
-  this->q05C = -1; /*0x69ecb9*/
-  this->u8_60 = 0; /*0x69ecbc*/
-  this->__pad_061 = 0; /*0x69ecbf*/
-  this->u8_62 = 0; /*0x69ecc2*/
-  this->u8_63 = 0; /*0x69ecc5*/
-  this->q064 = 0; /*0x69ecc8*/
-  this->u32_65 = 1; /*0x69eccb*/
-  this->q068 = 0; /*0x69eccf*/
-  *(unsigned int *)this = (void *)&(void*)(void*)(void*)(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd2*/
-  this->vtable2 = (void *)&(void*)(void*)(void*)(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd8*/
-  this->ptr_18 = &off_7F2D68; /*0x69ecdf*/
-  return this; /*0x69ece8*/
-}  // L-fix: close namespace tail 1
+bool LocomotionClass::Process()
+{
+    return true; // TODO stub - quarantined G42 (raw dialect residue; truth = ida_cache)
+}
+} // namespace gamemd
