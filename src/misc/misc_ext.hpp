@@ -439,6 +439,8 @@ public:
     int32_t     m_RefCount;     // 0x00
     int32_t     InputManager_ProcessEvents_field_04;       // 0x04
     int32_t     InputManager_ProcessEvents_field_08;       // 0x08
+
+    int Stub();  // G42.39 supply (0x4AEBE0)
 };
 #endif  // GAMEMD_E4_InputManager_ProcessEvents
 
@@ -5456,6 +5458,16 @@ public:
     int LogCommErrors(int a1, int a2, int a3, int a4);  // 0x7754d0 -- WinModemClass::LogCommErrors
     void* QueryInterface(int a1);  // 0x775610 -- WinModemClass::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned int u32_17;  // G42.39 data supply
+
+    unsigned int u32_51;  // G42.39 data supply
+
+    void * q0083;  // G42.39 data supply
+
+    unsigned int u32_64;  // G42.39 data supply
+
+    unsigned int u32_68;  // G42.39 data supply
 };
 // 1 methods in IDA
 class WonlineStringDialogControl

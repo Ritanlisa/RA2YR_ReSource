@@ -67,7 +67,7 @@ int CellToTileIndexMap(void *a1, short *a2);          // 0x56D3F0 (G42.33 W2)
 // 0x4AEBD0
 namespace gamemd {
 bool InputManager_ProcessEvents::StubReturnFalse() {
-    ; /*0x4aebd0*/
+    return false; /*0x4aebd0*/
 }
 } // namespace gamemd
 
@@ -167,12 +167,12 @@ int AudioSample::ResetState() {
 } // namespace gamemd
 
 // 0x4025B0
+namespace gamemd {
 int Voice::Stop()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4025B0)
 }
 } // namespace gamemd
-
 // 0x402600
 namespace gamemd {
 int AudioChannel::DeactivatePlay()
@@ -490,73 +490,57 @@ void Pathfinding::SiftDown(int a2)
 
 // 0x4AEBE0
 namespace gamemd {
-char InputManager_ProcessEvents::Stub()
+int InputManager_ProcessEvents::Stub()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4AEBE0)
 }
 } // namespace gamemd
 
 // 0x4AF720
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
 namespace gamemd {
-int DriveLocomotionClass::QueryInterface(const void *a2, int *a3)
+HRESULT DriveLocomotionClass::QueryInterface(const IID& iid, void** ppv)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4AF720)
+    (void)iid; (void)ppv; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4AF720)
 }
 }
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x4B4CB0
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
 namespace gamemd {
-LONG DriveLocomotionClass::AddRef()
+ULONG DriveLocomotionClass::AddRef()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B4CB0)
 }
 }
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x4B4CC0
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
 namespace gamemd {
-LONG DriveLocomotionClass::Release()
+ULONG DriveLocomotionClass::Release()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B4CC0)
 }
 }
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x4B6470
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x4B66A0
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x4B66B0
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x4C9220
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
 namespace gamemd {
-int FacingClass::Update(unsigned short *a2)
+int FacingClass::Update(unsigned int *a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C9220)
 }
 }
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x4C9300
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
 namespace gamemd {
 int FacingClass::Set_SyncLog(unsigned int *a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C9300)
 }
 }
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x4C9530
 namespace gamemd {
@@ -570,7 +554,7 @@ unsigned int * MovementClass::CompareAbsCoords(unsigned int *a2)
 namespace gamemd {
 void DropPod::ProcessLanding()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4CE840)
+    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4CE840)
 }
 } // namespace gamemd
 
@@ -583,16 +567,10 @@ int PathfindingClass::FindPath(unsigned int *a2)
 } // namespace gamemd
 
 // 0x54DC60
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x54DF50
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x54DF60
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x5FB160
 namespace gamemd {
@@ -603,16 +581,10 @@ void AudioOptionsClass::ApplySettings()
 } // namespace gamemd
 
 // 0x69EE30
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x6A4260
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x6A4270
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x6E6E20
 namespace gamemd {
@@ -648,9 +620,9 @@ char AudioEvent::LoadFromINI(uint8_t ***a2)
 
 // 0x754BE0
 namespace gamemd {
-void * AudioConfig::InitDefault()
+void AudioConfig::InitDefault()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x754BE0)
+    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x754BE0)
 }
 } // namespace gamemd
 
@@ -658,19 +630,13 @@ void * AudioConfig::InitDefault()
 namespace gamemd {
 void AudioOcclusion::ComputeBoundingVertices()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x756BB0)
+    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x756BB0)
 }
 } // namespace gamemd
 
 // 0x75C7F0
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x75CB80
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x75CB90
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 

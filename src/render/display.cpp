@@ -3,6 +3,8 @@
 #include "core/ddraw_init.hpp"
 #include <windows.h>
 #include <cstring>
+#include "core/game_loop.hpp"  // G42.39: g_hWnd (HWND form)
+namespace gamemd { extern void * g_ScrollOffsetX; extern void * g_ScrollOffsetY; }  // G42.39 decl supply (extern form)
 
 namespace gamemd
 {
@@ -83,24 +85,24 @@ bool FramePresent(Surface* composite_surface, int flags, int arg3, int arg4)
     int src_w = surf_rect.Width;
     int src_h = surf_rect.Height;
 
-    if (g_ScrollOffsetX < 0)
+    if ((int)(long)g_ScrollOffsetX < 0)
     {
-        src_x = (int)(-g_ScrollOffsetX);
-        src_w += g_ScrollOffsetX;
+        src_x = (int)(-(int)(long)g_ScrollOffsetX);
+        src_w += (int)(long)g_ScrollOffsetX;
     }
-    else if (g_ScrollOffsetX > 0)
+    else if ((int)(long)g_ScrollOffsetX > 0)
     {
-        dst_x = (int)(g_ScrollOffsetX);
+        dst_x = (int)((int)(long)g_ScrollOffsetX);
     }
 
-    if (g_ScrollOffsetY < 0)
+    if ((int)(long)g_ScrollOffsetY < 0)
     {
-        src_y = (int)(-g_ScrollOffsetY);
-        src_h += g_ScrollOffsetY;
+        src_y = (int)(-(int)(long)g_ScrollOffsetY);
+        src_h += (int)(long)g_ScrollOffsetY;
     }
-    else if (g_ScrollOffsetY > 0)
+    else if ((int)(long)g_ScrollOffsetY > 0)
     {
-        dst_y = (int)(g_ScrollOffsetY);
+        dst_y = (int)((int)(long)g_ScrollOffsetY);
     }
 
     // Clamp to window size
@@ -215,7 +217,7 @@ HRESULT GScreenClass::Load(IStream* stream) { return S_OK; }
 HRESULT GScreenClass::Save(IStream* stream) { return S_OK; }
 void GScreenClass::LoadFromINI(CCINIClass* ini) {}
 const wchar_t* GScreenClass::GetToolTip(unsigned int dialog_id) { return nullptr; }
-int GScreenClass::CloseWindow() {}
+int GScreenClass::CloseWindow() { return 0; }
 void GScreenClass::vt_entry_8C() {}
 bool GScreenClass::vt_entry_90(const CellStruct& cell, HouseClass* house) { return false; }
 bool GScreenClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) { return false; }
@@ -226,8 +228,9 @@ bool GScreenClass::vt_entry_9C(const CellStruct& cell, HouseClass* house) { retu
 
 void DisplayClass::LoadFromINI(CCINIClass* ini) {}
 const wchar_t* DisplayClass::GetToolTip(unsigned int dialog_id) { return nullptr; }
-int DisplayClass::CloseWindow() {}
+int DisplayClass::CloseWindow() { return 0; }
 void DisplayClass::vt_entry_8C() {}
 bool DisplayClass::vt_entry_90(const CellStruct& cell, HouseClass* house) { return false; }
 // 0x4a9ca0
 bool DisplayClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) { return false; }
+} // namespace gamemd

@@ -6,6 +6,8 @@ namespace gamemd {
 struct FacingClass {
     int Set_SyncLog(unsigned int * a2);
     int Update(unsigned short * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);
+
+    int Update(unsigned short * a2);  // G42.39 supply
 };
 
 } // namespace gamemd

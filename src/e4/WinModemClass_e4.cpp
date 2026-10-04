@@ -162,6 +162,7 @@ int WinModemClass::ReadBytes(unsigned char * a2, int a3)
 }
 } // namespace gamemd
 // 0x774C70
+namespace gamemd {
 int WinModemClass::WriteSerial(LPCVOID lpBuffer, DWORD aP2)
 {
 

@@ -61,6 +61,16 @@ struct WinModemClass {
     int WriteSerial(LPCVOID lpBuffer, DWORD aP2);
     int ddtor(int a2);
     int SaveToINI(const char * NumberOfBytesWritten, void * aP);
+
+    unsigned int u32_17;  // G42.39 data supply
+
+    unsigned int u32_51;  // G42.39 data supply
+
+    void * q0083;  // G42.39 data supply
+
+    unsigned int u32_64;  // G42.39 data supply
+
+    unsigned int u32_68;  // G42.39 data supply
 };
 
 } // namespace gamemd

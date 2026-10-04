@@ -52,6 +52,7 @@ struct FacingClass {
     int Update(unsigned int* a1);  // 0x4c9220 -- FacingClass::Update
     int Set_SyncLog(unsigned int* a1);  // 0x4c9300 -- FacingClass::Set_SyncLog
     // === SYMBOL-ANCHOR (END) ===
+
 };
 static_assert(sizeof(FacingClass) == 0x18, "FacingClass size");
 
