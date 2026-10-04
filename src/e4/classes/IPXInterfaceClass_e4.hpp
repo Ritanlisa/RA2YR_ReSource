@@ -88,14 +88,14 @@ struct IPXInterfaceClass {
     AbstractClass * * getSocketState(int a2, unsigned int * a3);
     int initSocket(int aP1, int aP2);
     int AddRef(void *a1);
-    AnimClass * * Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3);
+    __int16 Connect(const void * a1, unsigned int a3, char aP3);  // G42.40f-d truth 0x7B24E0
     DynamicVector * closeSession(char a2);
     IPXInterfaceClass * QueryInterface(char a2, int a1, int a3, int a4, int aP1);
     char ReceivePacket(char * name, AnimClass * aP1);
     int COMStub_Ret1139(int a1);
     int COMStub_Return0();
     int COMStub_Return1();
-    int GetAddress(gamemd::SOCKET s, void *a2, void *a3, void *a4);
+    int GetAddress(unsigned int s, void *a2, void *a3, void *a4);  // G42.40f-b: canonical type (gamemd::SOCKET not visible in all TU orders)
     int GetLocalAddress(int a2);
     int Send(int a1, void *a2, void *a3, void *a4, void *a5);
     int SetAddress(unsigned int * a1);
@@ -108,7 +108,7 @@ struct IPXInterfaceClass {
     void GetQueueSize();
     void StubReturnFalse(int a1, int a2);
     void getSocketCount();
-    int GetAddress(SOCKET s, void *a2, void *a3, void *a4);
+    // G42.40f: duplicate removed - unqualified SOCKET inside gamemd == gamemd::SOCKET (same as decl above)
 };
 
 } // namespace gamemd

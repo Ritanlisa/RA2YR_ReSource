@@ -29,6 +29,7 @@
 #include "e4/classes/NetworkID_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/EventQueue_e4.hpp"  // G42.40f-c supply (Process call @0x7b25d4)
 
 // 0x7B0D90
 namespace gamemd {
@@ -243,7 +244,7 @@ unsigned char * IPXInterfaceClass::processPacket(void *a1)
 } // namespace gamemd
 // 0x7B24E0
 namespace gamemd {
-AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3)
+__int16 IPXInterfaceClass::Connect(const void * a1, unsigned int a3, char aP3)  // G42.40f-d truth 0x7B24E0
 {
 
   unsigned char *v5; // ebx
@@ -301,7 +302,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
   }
   v15 = (*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))((WinsockInterfaceClass *)this, v10); /*0x7b25b9*/
   SendMessageA((HWND)(g_hWnd), v15, 0, 2); /*0x7b25c3*/
-  return ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x7b25d4*/
+  return ((EventQueue *)g_BinkMoviePlayer)->Process(); /*0x7b25d4*/  // G42.40f-c: stru_87F5F0.__pad_58[296] == 0x87F770 == g_BinkMoviePlayer
 
 }
 } // namespace gamemd

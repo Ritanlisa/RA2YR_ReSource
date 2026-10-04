@@ -24,6 +24,7 @@ struct IPXManagerClass {
     unsigned int u32_48;
     unsigned int u32_4C;
     unsigned int u32_50;
+    unsigned int u32_54;  // G42.40f supply (truth 0x5415F0: *((_DWORD*)this+21), cursor index)
     unsigned int connTable;
 // --- flat members (END) ---
     IPXManagerClass * QueryInterface(char * Block, char a2);

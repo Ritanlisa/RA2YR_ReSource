@@ -19,7 +19,7 @@ struct WinsockInterfaceClass {
     int Destru_vt13();
     int Destru_vt14(int a1);
     int Destru_vt16(int a1, int a2, int a3, int a4);
-    SOCKET * Destru_vt00(SOCKET * Block, char a2);
+    unsigned int * Destru_vt00(unsigned int * Block, char a2);  // G42.40f-b: canonical type (gamemd::SOCKET not visible in all TU orders)
 };
 
 } // namespace gamemd

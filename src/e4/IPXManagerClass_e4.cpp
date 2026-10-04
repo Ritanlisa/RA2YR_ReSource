@@ -87,7 +87,7 @@ LABEL_5:
 } // namespace gamemd
 // 0x5415F0
 namespace gamemd {
-int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
+int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)  // G42.40f: param renamed back (was colliding with local v10)
 {
 
   int v5; // eax
@@ -127,7 +127,7 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
     if ( ++v13 >= v11 ) /*0x54165f*/
       return 0; /*0x54165f*/
   }
-  *v10 = v10; /*0x54166f*/
+  *a4 = v10; /*0x54166f*/
   return 1; /*0x541661*/
 
 }
