@@ -28,7 +28,7 @@
 
 // 0x765840
 namespace gamemd {
-int rc_ptr::Release(int a2, unsigned int * a3)
+int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00765840.json)
 }
@@ -65,7 +65,7 @@ LONG Campaign::Screen(char a1)
 }  // G42.18c ns repair
 // 0x7656D0
 namespace gamemd {
-unsigned int * rc_ptr::Seek(unsigned int * a2, int a3, void *a3_2)
+unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3, void *a3_2)
 {
     (void)a2; (void)a3; (void)a3_2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007656D0.json)
 }
@@ -73,7 +73,7 @@ unsigned int * rc_ptr::Seek(unsigned int * a2, int a3, void *a3_2)
 
 // 0x765710
 namespace gamemd {
-rc_ptr * rc_ptr::Constructor(unsigned int * Block, char a2, void *a3_1)
+rc_ptr * Campaign_WorldDominationTour_16::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
     (void)Block; (void)a2; (void)a3_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00765710.json)
 }
@@ -81,7 +81,7 @@ rc_ptr * rc_ptr::Constructor(unsigned int * Block, char a2, void *a3_1)
 
 // 0x765740
 namespace gamemd {
-rc_ptr * rc_ptr::Constructor_0(unsigned int * Block, char a2, void *a3_1)
+rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
     (void)Block; (void)a2; (void)a3_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00765740.json)
 }
@@ -89,7 +89,7 @@ rc_ptr * rc_ptr::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 
 // 0x765770
 namespace gamemd {
-VectorCursor * rc_ptr::Constructor_1(unsigned int * Block, char a2)
+VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(unsigned int * Block, char a2)
 {
     (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00765770.json)
 }
@@ -97,7 +97,7 @@ VectorCursor * rc_ptr::Constructor_1(unsigned int * Block, char a2)
 
 // 0x7657F0
 namespace gamemd {
-char rc_ptr::AddRef(int a2)
+char Campaign_WorldDominationTour_16::AddRef(int a2)
 {
     (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007657F0.json)
 }
@@ -105,7 +105,7 @@ char rc_ptr::AddRef(int a2)
 
 // 0x765960
 namespace gamemd {
-int rc_ptr::ddtor()
+int Campaign_WorldDominationTour_16::ddtor()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00765960.json)
 }
@@ -113,14 +113,14 @@ int rc_ptr::ddtor()
 
 // 0x765990
 namespace gamemd {
-int rc_ptr::Read(int a2, void *a2_2)
+int Campaign_WorldDominationTour_16::Read(int a2, void *a2_2)
 {
     (void)a2; (void)a2_2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00765990.json)
 }
 }
 // 0x7659D0
 namespace gamemd {
-unsigned int rc_ptr::Write(int a2)
+unsigned int Campaign_WorldDominationTour_16::Write(int a2)
 {
     (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007659D0.json)
 }
@@ -128,7 +128,7 @@ unsigned int rc_ptr::Write(int a2)
 
 // 0x765B60
 namespace gamemd {
-VectorClass_flat * rc_ptr::QueryInterface(unsigned int * Block, char a2)
+VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(unsigned int * Block, char a2)
 {
     (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00765B60.json)
 }
