@@ -46,7 +46,7 @@ int ObjectClass::processPointerInvalid()
 
 // 0x4D7D50
 namespace gamemd {
-char _::SpawnInfantry(int aP1, int16_t *aP2, int16_t *aP3, void **aP4)
+char ObjectClass::SpawnInfantry(int aP1, int16_t *aP2, int16_t *aP3, void **aP4)  // G42.41l: truth 0x4D7D50
 {
     (void)aP1; (void)aP2; (void)aP3; (void)aP4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004D7D50.json)
 }
@@ -123,7 +123,7 @@ void * ObjectClass::checkLimbo()
 
 // 0x5F3B80
 namespace gamemd {
-int _::Dtor()
+int ObjectClass::Dtor()  // G42.41l: truth 0x5F3B80
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005F3B80.json)
 }
@@ -147,7 +147,7 @@ int ObjectClass::GetBoundsRect()
 
 // 0x5F4D30
 namespace gamemd {
-int _::Undeploy()
+int ObjectClass::Undeploy()  // G42.41l: truth 0x5F4D30
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005F4D30.json)
 }
@@ -238,8 +238,8 @@ int ObjectClass::processDeath()
   int v1; // edx
   char *i; // esi
 
-  v1 = ((char *)&stru_B1D290) - 1; /*0x74cd68*/
-  if ( ((char *)&stru_B1D290) - 1 < 0 ) /*0x74cd6d*/
+  v1 = (int)(((char *)&stru_B1D290) - 1); /*0x74cd68*/
+  if ( (int)(((char *)&stru_B1D290) - 1) < 0 ) /*0x74cd6d*/
     return 0; /*0x74cda2*/
   for ( i = (char *)((char *)&stru_B1D290) + 4 * v1; /*0x74cd78*/
         *(unsigned short *)(*(unsigned int *)i + 248) != LOWORD(this->AbstractClass)
@@ -396,7 +396,7 @@ int ObjectClass::CreateInstance()
 
 // 0x6241C0
 namespace gamemd {
-char _::Release()
+char ObjectClass::Release()  // G42.41l: truth 0x6241C0
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006241C0.json)
 }
@@ -418,7 +418,7 @@ int ObjectClass::processDamage()
   int result; // eax
   int v3; // [esp+0h] [ebp-4h]
 
-  PowerClass::Stub((PowerClass *)this, v3); /*0x6a5001*/
+  nullsub_36((int)this); (void)v3; /*0x6a5001 G42.41l: PowerClass::Stub = nullsub_36(0x6A4FF0) misrender*/
   v1 = 4; /*0x6a5006*/
   do /*0x6a501d*/
   {

@@ -15401,3 +15401,7 @@ extern char aDRa2mdpostStls[];  // data: 0x842178 (csf key)
 // G42.33 b4 supply: rule/state globals (addr6C C2065; same addrs as globals_core.hpp)
 extern int MCVRedeploy;  // data: 0xA8B320
 extern int HouseClass_Count;  // data: 0xA80238
+
+extern char * aDarkenShp;  // G42.41l supply (processDamage 0x6A5012)
+extern int dword_B07BC0;  // G42.41l supply (0xB07BC0)
+extern unsigned int stru_B1D290;  // G42.41l supply (processDeath 0x74CD60; til '?'-member blob)

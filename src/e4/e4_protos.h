@@ -325,6 +325,7 @@ extern AbstractClass * * PopulateWOLLobbyListBox(void *a1 = 0);
 extern AbstractClass * * ProcessSelectionExperience(void *a1 = 0);
 extern AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3);
 extern AbstractClass * * SearchMIXFile(char *Source, char aP1);
+extern void nullsub_36(int a1);  // G42.41l supply (0x6A4FF0; misrendered as PowerClass::Stub in export)
 extern BOOL SetDialogParent(HWND hWnd, HWND a2);
 extern int SetupDialog(Dialog *hWnd, int a2);
 extern int SetupDialogRenderBuffer(int *a1, HWND a2, uint8_t a3);
