@@ -26,6 +26,27 @@ struct ToolTipClass {
     unsigned int ToolTipClass_field_0x24;
     unsigned int ToolTipClass_field_0x28;
     unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view
+
+    unsigned int u32_24C;  // G42.39 data supply
+
+    unsigned int u32_250;  // G42.39 data supply
+
+    unsigned int u32_254;  // G42.39 data supply
+
+    unsigned int u32_258;  // G42.39 data supply
+
+    unsigned int u32_25C;  // G42.39 data supply
+
+    unsigned int q091;  // G42.39 retype (loop bound)  // G42.39 data supply
+
+    unsigned int * q08E;  // G42.39 retype (array base)  // G42.39 data supply
+
+    unsigned int * q08D;  // G42.39 retype (vtbl)  // G42.39 data supply
+
+    unsigned int u32_241;  // G42.39 data supply
+
+    unsigned int u32_23C;  // G42.39 data supply
+
 };
 
 } // namespace gamemd

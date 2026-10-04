@@ -323,6 +323,8 @@ public:
 
     virtual char SetState(char a2); // 0x69DEA0 (G42.35 def truth)
 
+
+    unsigned int u32_5C;  // G42.39 data supply
 };
 // 1 methods in IDA
 class ButtonOwnerDraw
@@ -568,7 +570,7 @@ public:
 
     virtual unsigned int * Construct(int a2, int a3, int a4, int a5, int a6, int a7, char a8); // 0x48E520
     static unsigned int * Construct(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, int aP6, char aP7);  // 0x48E520 G42.35 static-form sync (ui/supplied site 0x4E2524)
-    virtual unsigned int * CtorFromData(int a2); // 0x48E570
+    virtual unsigned int * CtorFromData(ControlClass * a2); // 0x48E570 (G42.39 param truth: object)
     virtual unsigned int * QueryInterface(char a2); // 0x48E660
     virtual unsigned int * Constructor(int a2); // 0x4E1340 (G42.34: def truth)
     static unsigned int * Constructor(void *aP0, int aP1);  // 0x4E1340 G42.35 static-form sync (ui/supplied site 0x48E579)
@@ -577,6 +579,24 @@ public:
     uint8_t ControlClass_field_0x04[4];
     uint8_t ControlClass_field_0x08[4];
     uint8_t ControlClass_field_0x0C[4];
+
+    void * q028;  // G42.39 data supply
+
+    unsigned int u32_24;  // G42.39 data supply
+
+    int m_Next;  // G42.39 data supply
+
+    unsigned int u32_14;  // G42.39 data supply
+
+    unsigned int u32_18;  // G42.39 data supply
+
+    unsigned int u32_1C;  // G42.39 data supply
+
+    unsigned int u32_1D;  // G42.39 data supply
+
+    unsigned int u32_1E;  // G42.39 data supply
+
+    int m_Prev;  // G42.39 data supply
 };
 // 2 methods in IDA
 // CSP: CreditsPower matched via T1
@@ -797,6 +817,10 @@ public:
     uint8_t InputManager_field_0x0C[4];
     uint8_t InputManager_field_0x10[4];
     unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (sites 0x4E1620/0x4E1626)
+
+    unsigned int u32_314;  // G42.39 data supply
+
+    unsigned int u32_318;  // G42.39 data supply
 };
 // 5 methods in IDA
 #ifndef GAMEMD_TREE_UNIVERSE
@@ -827,6 +851,12 @@ public:
 
     virtual int MapKey(uint16_t a2); // 0x54F450 (G42.35 def truth)
 
+
+    unsigned int u32_24;  // G42.39 data supply
+
+    unsigned int u32_25;  // G42.39 data supply
+
+    unsigned int u32_26;  // G42.39 data supply
 };
 // 1 methods in IDA
 class List
@@ -908,6 +938,28 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Destru_vt50(int a1, int a2, int a3, int a4, int a5);  // 0x557D20
     void* Destru_vt00(int a1);  // 0x558060
     // --- gap2 auto-generated stub declarations (END) ---
+
+    int Enabled;  // G42.39 data supply
+
+    unsigned int u32_118;  // G42.39 data supply
+
+    unsigned int u32_12C;  // G42.39 data supply
+
+    unsigned int u32_1C0;  // G42.39 data supply
+
+    unsigned int u32_58;  // G42.39 data supply
+
+    unsigned int u32_88;  // G42.39 data supply
+
+    unsigned int u32_B8;  // G42.39 data supply
+
+    unsigned int u32_38;  // G42.39 data supply
+
+    unsigned int u32_D;  // G42.39 data supply
+
+    unsigned int u32_41;  // G42.39 data supply
+
+    unsigned int u32_3C;  // G42.39 data supply
 };
 // 1 methods in IDA
 // CSP: ListNode matched via T1
@@ -919,6 +971,8 @@ public:
 
     virtual unsigned int * Alloc(unsigned int *a2); // 0x5A9A20 (G42.35 def truth)
 
+
+    unsigned int u32_4;  // G42.39 data supply
 };
 // 1 methods in IDA
 #ifndef GAMEMD_TREE_UNIVERSE
@@ -990,6 +1044,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetRange(int a1);  // 0x6B20F0
     int SetRange(int a1, int a2, int a3);  // 0x6B2160
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned int u32_3C;  // G42.39 data supply
+
+    void * q010;  // G42.39 data supply
 };
 // 1 methods in IDA
 // CSP: TabCameoListClass matched via T1
@@ -1001,6 +1059,8 @@ public:
 
     virtual int AddCameo_ReplaceItAll(int a2, int a3); // 0x6A8710 (G42.35 def truth)
 
+
+    unsigned int u32_54;  // G42.39 data supply
 };
 // 2 methods in IDA
 class TabControl
@@ -1056,6 +1116,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int read(void* a1);  // 0x724EC0
     void* compareString(int a1);  // 0x724EF0
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned int q091;  // G42.39 data supply (usage-typed)
+    unsigned int * q08E;  // G42.39 data supply (usage-typed)
+    unsigned int * q08D;  // G42.39 data supply (usage-typed)
 };
 #endif  // GAMEMD_E4_ToolTipClass
 // 1 methods in IDA
@@ -1071,6 +1135,10 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     int Enable(char a1);  // 0x7241a0 -- Tooltip::Enable (G42.35 def truth char)
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned int u32_C;  // G42.39 data supply
+
+    unsigned int u32_4;  // G42.39 data supply
 };
 // 1 methods in IDA
 class TooltipClass
@@ -1080,6 +1148,14 @@ public:
 
     virtual char GetText(unsigned int a2, void *a3); // 0x7248C0 (G42.35 def truth)
 
+
+    unsigned int u32_250;  // G42.39 data supply
+
+    unsigned int u32_25C;  // G42.39 data supply
+
+    unsigned int u32_258;  // G42.39 data supply
+
+    unsigned int u32_24C;  // G42.39 data supply
 };
 
 } // namespace gamemd

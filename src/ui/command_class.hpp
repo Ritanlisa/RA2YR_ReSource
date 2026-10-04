@@ -63,6 +63,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int BuildBar();  // 0x6d1200 -- CommandClass::BuildBar
     int AddAction(int a1);  // 0x724580 -- CommandClass::AddAction
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned int u32_4;  // G42.39 data supply
+
+    unsigned int u32_C;  // G42.39 data supply
+
+    unsigned int u32_10;  // G42.39 data supply
 };
 
 // ============================================================================

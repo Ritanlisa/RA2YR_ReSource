@@ -468,6 +468,7 @@ int FontClass::RenderText(unsigned __int16 *a2, int xLeft, int yTop, int a5, int
 }
 } // namespace gamemd
 
+namespace gamemd {
 int FontRenderer::InitContext(int * a2) {
     int v3; // edx
     int v4; // eax
@@ -511,12 +512,15 @@ int FontRenderer::InitContext(int * a2) {
 
 // 0x4349B0
 namespace gamemd {
+int FontClass::GetPixelData(unsigned short a2) {
+    int v3;  // G42.39 restored local
+    uint8_t *v4b = nullptr; (void)v4b;
     uint8_t *v4; // eax
 
-    FontClass_field_0x04 = (unsigned int *)this->FontClass_field_0x04; /*0x4349b0*/
-    if ( FontClass_field_0x04 /*0x4349dc*/
-      && (v3 = *(uint16_t *)(FontClass_field_0x04[6] + 2 * a2), (unsigned short)v3)
-      && (v4 = (uint8_t *)(FontClass_field_0x04[7] + (v3 - 1) * FontClass_field_0x04[5])) != 0 )
+    unsigned int *fb = *(unsigned int **)&this->FontClass_field_0x04;  // G42.39: alias restored (member holds a pointer value)
+    if ( fb /*0x4349dc*/
+      && (v3 = *(uint16_t *)(fb[6] + 2 * a2), (unsigned short)v3)
+      && (v4 = (uint8_t *)(fb[7] + (v3 - 1) * fb[5])) != 0 )
     {
       return *v4; /*0x4349e2*/
     }
@@ -1595,8 +1599,8 @@ unsigned int * ControlClass::Construct(int a2, int a3, int a4, int a5, int a6, i
 
 // 0x48E570
 namespace gamemd {
-unsigned int * ControlClass::CtorFromData(int a2) {
-    ControlClass::Constructor(this, a2); /*0x48e579*/
+unsigned int * ControlClass::CtorFromData(ControlClass * a2) {
+    ControlClass::Constructor((void *)this, (int)(long)a2); /*0x48e579*/
     this->u32_24 = a2->u32_24; /*0x48e581*/
     *((unsigned int *)this + 10) = *(unsigned int *)(a2 + 40); /*0x48e587*/
     *(unsigned int *)this->__pad_0 = 0; /*0x48e58a*/
@@ -3229,7 +3233,7 @@ namespace gamemd {
 void ToolTipClass::updateString() {
     HWND ToolTipClass_field_0x08; // eax
     int i; // edi
-    int v4; // edx
+    unsigned int *v4; // edx (G42.39 retype: q08E array base)
     void *v5; // eax
 
     ToolTipClass_field_0x08 = (HWND)this->ToolTipClass_field_0x08; /*0x7240ba*/
