@@ -190,7 +190,7 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
 }
 // 0x7B66C0
 namespace gamemd {
-extern void * AddMessageListPlayerMessage::unknown_libname_74(void *a1 = 0)
+void * unknown_libname_74(void *a1)
 {
      return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007B66C0.json)
 }
@@ -1032,7 +1032,7 @@ void sub_7BC610(int a1, char * a2, int a3, int a4, int a5, int a6, int a7, int a
 
 // 0x7BC640
 namespace gamemd {
-BlitPlain * BlitPlain::___Gfacet_locale_std__UAEPAXI_Z_148(unsigned int * Block, char a2)
+BlitPlain * E4Recv_7BC640::___Gfacet_locale_std__UAEPAXI_Z_148(unsigned int * Block, char a2)
 {
     (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007BC640.json)
 }
@@ -1040,7 +1040,7 @@ BlitPlain * BlitPlain::___Gfacet_locale_std__UAEPAXI_Z_148(unsigned int * Block,
 
 // 0x7BC660
 namespace gamemd {
-BlitPlain * BlitPlain::___Gfacet_locale_std__UAEPAXI_Z_149(unsigned int * Block, char a2)
+BlitPlain * E4Recv_7BC660::___Gfacet_locale_std__UAEPAXI_Z_149(unsigned int * Block, char a2)
 {
     (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007BC660.json)
 }
@@ -1048,7 +1048,7 @@ BlitPlain * BlitPlain::___Gfacet_locale_std__UAEPAXI_Z_149(unsigned int * Block,
 
 // 0x7BC680
 namespace gamemd {
-BlitTrans * BlitTrans::___Gfacet_locale_std__UAEPAXI_Z_150(unsigned int * Block, char a2)
+BlitTrans * E4Recv_7BC680::___Gfacet_locale_std__UAEPAXI_Z_150(unsigned int * Block, char a2)
 {
     (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007BC680.json)
 }
@@ -1056,7 +1056,7 @@ BlitTrans * BlitTrans::___Gfacet_locale_std__UAEPAXI_Z_150(unsigned int * Block,
 
 // 0x7BC6A0
 namespace gamemd {
-BlitTrans * BlitTrans::___Gfacet_locale_std__UAEPAXI_Z_151(unsigned int * Block, char a2)
+BlitTrans * E4Recv_7BC6A0::___Gfacet_locale_std__UAEPAXI_Z_151(unsigned int * Block, char a2)
 {
     (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007BC6A0.json)
 }

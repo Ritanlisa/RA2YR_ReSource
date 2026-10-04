@@ -14,9 +14,8 @@ struct Socket {
     unsigned int u32_3F06C;
     unsigned int Debug;
 // --- flat members (END) ---
-    int ConfigureBuffers(void * aP1);  // G42.35a: SOCKET type unknown here (winsock not included); handles flow as void*
-    int ConfigureBuffers(gamemd::SOCKET aP1);
-    int ConfigureBuffers(SOCKET aP1);
+    // G42.40: dup void*/gamemd::SOCKET overloads removed; Socket_e4.cpp def uses winsock SOCKET
+    int ConfigureBuffers(unsigned int aP1);  // G42.40b: bare SOCKET invisible when windows.h lean-guarded; canonical = e4_protos.h typedef unsigned int SOCKET
 };
 
 } // namespace gamemd

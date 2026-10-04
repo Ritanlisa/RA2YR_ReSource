@@ -17378,6 +17378,7 @@ struct rc_ptr_;
 struct rc_ptr_b;
 struct rc_ptr_ba;
 struct rc_ptr_bas;
+struct rc_ptr;  // G42.40 fwd supply (addr7B FindWDTTerritoryClass ret type)
 struct rc_ptr_base;
 struct t;
 struct ty;
