@@ -307,7 +307,6 @@ struct BulletTypeClass {
     unsigned char * Construct(char *aP1);
     unsigned int * GetROF(unsigned int * a1, int * a2);
     int ProcessPower(int * a2, void *a2_2);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
 };
 
 } // namespace gamemd

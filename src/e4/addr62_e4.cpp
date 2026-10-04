@@ -176,7 +176,7 @@ extern int GetDialogText(HWND aP0, void *aP1)
 }
 // 0x6241F0
 namespace gamemd {
-extern int AddMessageListPlayerMessage::RunDialog(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3)
+extern int AddMessageListPlayerMessage::RunDialog(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, gamemd::LPARAM), gamemd::LPARAM a3)
 {
     (void)a1; (void)HWND; (void)UINT; (void)WPARAM; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006241F0.json)
 }

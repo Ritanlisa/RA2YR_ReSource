@@ -292,7 +292,6 @@ struct MPCooperative {
     char Stub();  // 0x5D6360
     char StubReturnFalse();  // 0x5C3700
     int COMStub_Ret2();  // 0x5C42C0
-    CampaignClass * * MPCooperative___vt07(int a2);
     int j__do_always_noconv_codecvt_base_std__MBE_NXZ_17();
 };
 } // namespace gamemd

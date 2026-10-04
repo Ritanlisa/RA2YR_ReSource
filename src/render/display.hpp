@@ -69,12 +69,12 @@ public:
     // wrapper: delegates to CloseWindow at 0x7C865C
     virtual void vt_entry_8C() override;
     // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house) override;
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override;
+    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);
     // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) override;
+    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
     // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house) override;
+    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
 
     // design: pure virtual function, no binary implementation
     virtual MouseCursorType GetLastMouseCursor() = 0;

@@ -35,10 +35,10 @@ public:
     // wrapper: delegates to WarheadTypeClass::FindOrCreate at 0x75E3B0
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassIdentifier(CLSID* pClassID) override;  // 0x524ED0 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassIdentifier(CLSID* pClassID);  // 0x524ED0 (as GetClassIdentifier)
 
-    virtual HRESULT __stdcall LoadTypeData(IStream* pStm) override;  // 0x524F00 (as LoadTypeData)
-    virtual HRESULT __stdcall SaveToINI(IStream* pStm, BOOL fClearDirty) override;  // 0x524FB0 (as SaveToINI)
+    virtual HRESULT __stdcall LoadTypeData(IStream* pStm);  // 0x524F00 (as LoadTypeData)
+    virtual HRESULT __stdcall SaveToINI(IStream* pStm, BOOL fClearDirty);  // 0x524FB0 (as SaveToINI)
 
     virtual ~WarheadTypeClass() = default;  // 0x75E510 (as Destructor)
 

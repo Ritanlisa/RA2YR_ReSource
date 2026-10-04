@@ -18,7 +18,6 @@ struct Palette {
     int LoadFile();
     unsigned char * ConvertIndices(int a2);
     unsigned char * SixBitTo16Bit(char a2, char a3, char a4);  // 0x4355b0
-    unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4);
 };
 
 } // namespace gamemd

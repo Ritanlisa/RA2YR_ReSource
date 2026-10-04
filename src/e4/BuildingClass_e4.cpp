@@ -88,7 +88,7 @@ int BuildingClass::processCapture()
 namespace gamemd {
 void* BuildingClass_ProcessSell()
 {
-// (no pseudocode — ASM-only function)
+    return nullptr; // TODO stub - G42.36 (ASM-only, no pseudocode; truth pending ida_cache)
 } // namespace gamemd
 }
 

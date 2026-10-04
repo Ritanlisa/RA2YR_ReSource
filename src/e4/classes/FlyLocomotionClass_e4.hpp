@@ -61,7 +61,6 @@ struct FlyLocomotionClass {
     int StubReturn96();
     int ddtor(int a1, unsigned int * a2);
     void ILocomotion_AcquireHunterSeekerTarget(int a1);
-    int LocomotionClass();
 };
 
 } // namespace gamemd

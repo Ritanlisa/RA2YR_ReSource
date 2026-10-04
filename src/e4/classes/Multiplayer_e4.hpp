@@ -27,7 +27,6 @@ struct Multiplayer {
     unsigned int * CopyDataArray(unsigned int *aP1);
     void * FindStartPositions();
     void ShowProgress(int a2);
-    void Screen();
 };
 
 } // namespace gamemd

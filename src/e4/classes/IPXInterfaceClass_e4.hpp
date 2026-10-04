@@ -95,7 +95,7 @@ struct IPXInterfaceClass {
     int COMStub_Ret1139(int a1);
     int COMStub_Return0();
     int COMStub_Return1();
-    int GetAddress(SOCKET s, void *a2, void *a3, void *a4);
+    int GetAddress(gamemd::SOCKET s, void *a2, void *a3, void *a4);
     int GetLocalAddress(int a2);
     int Send(int a1, void *a2, void *a3, void *a4, void *a5);
     int SetAddress(unsigned int * a1);

@@ -192,6 +192,6 @@ struct House {
     int LookupObject(int a2, void *a2_2);  // 0x544BE0
     int LoadMapFileData(int a2, char a3);  // 0x544C20
     void Constructor();  // 0x69E090
-    int PowerBeginUpdate(AbstractClass * aP1);  // 0x70C270
+    int PowerBeginUpdate(gamemd::AbstractClass * aP1);  // 0x70C270
 };
 } // namespace gamemd

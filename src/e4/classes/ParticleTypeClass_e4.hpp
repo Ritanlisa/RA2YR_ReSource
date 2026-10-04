@@ -338,7 +338,6 @@ struct ParticleTypeClass {
     unsigned int LoadTypeData(int a2);
     void GetClassIdentifier();
     int GetFoundationHeight(char a2);
-    void ParticleTypeClass_LoadFromINI(uint8_t *** aP1);
 };
 
 } // namespace gamemd
