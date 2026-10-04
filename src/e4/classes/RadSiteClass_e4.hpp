@@ -60,6 +60,8 @@ struct RadSiteClass {
     int StubReturn69();
     int ddtor(int a1, unsigned int * a2);
     RadSiteClass();
+
+    int Constructor();  // G42.39 supply (0x4E2C10 family)
 };
 
 } // namespace gamemd

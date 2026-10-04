@@ -81,8 +81,8 @@ struct Coord {
     int GetMultiplayerScoreScreenBar();
     void BuildGameSettingsPacket(char * Buffer);
     unsigned char ManageGameSpeed();
-    unsigned int * LockMutex(IUnknown * aP1, IUnknown * aP2);
-    CellStruct * * SerializeGameSaveState();
+    unsigned int * LockMutex(void * aP1, void * aP2);  // G42.39: IUnknown global-fwd hazard
+    void * * SerializeGameSaveState();  // G42.39: template-type hazard
     int validateScenario(unsigned int *a2);
     void EncodeGameSetupState(char * Buffer);
     Coord * * ProcessIdle();

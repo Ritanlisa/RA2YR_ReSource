@@ -6,6 +6,13 @@
 
 #include "e4/classes/_fwd_e4.hpp"
 
+#ifndef GAMEMD_USING_AbstractClass
+#define GAMEMD_USING_AbstractClass
+namespace ra2 { namespace game { class AbstractClass; } }
+namespace gamemd {
+using ::ra2::game::AbstractClass;
+}
+#endif
 namespace gamemd {
 struct HouseClass;  // fix_fwd_type_supply
 struct ProgressTimer;  // fix_fwd_type_supply
@@ -34,7 +41,7 @@ struct House {
     unsigned int u32_30;  // 0x30
     unsigned int u32_34;  // 0x34
     unsigned int q038;  // 0x38
-    AbstractClass * ptr_40;  // 0x40
+    void * ptr_40;  // 0x40 (G42.39: fwd hazard void*-ified)
     void * ptr_44;  // 0x44
     unsigned char __pad_C[27];  // 0xC
     unsigned int u32_48;  // 0x48
@@ -43,7 +50,7 @@ struct House {
     unsigned int q054;  // 0x54
     unsigned int u32_5C;  // 0x5C
     unsigned int q060;  // 0x60
-    AbstractClass * q064;  // 0x64
+    void * q064;  // 0x64 (G42.39: fwd hazard void*-ified)
     unsigned char House_field_0x29[4];  // 0x29
     void * q068;  // 0x68
     unsigned int u32_6C;  // 0x6C
@@ -68,7 +75,7 @@ struct House {
     unsigned int u32_EC;  // 0xEC
     unsigned char __pad_7C[163];  // 0x7C
     unsigned int u32_F0;  // 0xF0
-    AbstractClass * q100;  // 0x100
+    void * q100;  // 0x100
     void * q104;  // 0x104
     unsigned int q108;  // 0x108
     unsigned int q114;  // 0x114
@@ -116,7 +123,7 @@ struct House {
     unsigned int u32_210;  // 0x210
     unsigned int u32_214;  // 0x214
     unsigned int u32_21C;  // 0x21C
-    AbstractClass * ptr_220;  // 0x220
+    void * ptr_220;  // 0x220
     unsigned int q228;  // 0x228
     unsigned int q240;  // 0x240
     ProgressTimer * ptr_248;  // 0x248
@@ -188,10 +195,10 @@ struct House {
     int UpdateHouseAI();  // 0x4FD500
     int IsHumanPlayer();  // 0x50B6F0
     int IsCurrentPlayer();  // 0x50B730
-    AbstractClass * * ChooseHouseEnemy(BuildingClass * aP1);  // 0x50DB00
+    void * * ChooseHouseEnemy(void * aP1);  // 0x50DB00 (G42.39: fwd hazard)
     int LookupObject(int a2, void *a2_2);  // 0x544BE0
     int LoadMapFileData(int a2, char a3);  // 0x544C20
     void Constructor();  // 0x69E090
-    int PowerBeginUpdate(gamemd::AbstractClass * aP1);  // 0x70C270
+    int PowerBeginUpdate(void * aP1);  // 0x70C270
 };
 } // namespace gamemd

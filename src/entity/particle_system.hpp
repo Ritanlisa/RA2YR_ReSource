@@ -85,6 +85,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Stub();  // 0x630220
     void* resetSystemState(int a1, int a2);  // 0x6302A0
     // --- gap2 auto-generated stub declarations (END) ---
+
+    int Constructor(int a2, int *a3, int a4, void *a5, unsigned int *a6, int a7);  // G42.39 supply (0x62DC50)
 };
 
 } // namespace gamemd

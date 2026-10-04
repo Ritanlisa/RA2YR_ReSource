@@ -32,12 +32,12 @@ struct MissionClass {
     unsigned int owningHouseIndex;  // 0x28
     bool q02B;  // 0x2B
     char fallRate[4];  // 0x2C
-    ObjectClass* nextObject;  // 0x30
+    void * nextObject;  // G42.39 fwd hazard  // 0x30
     unsigned char q031;  // 0x31
     unsigned char needsSave;  // 0x32
     unsigned int pad21;  // 0x33
-    TagClass* attachedTag;  // 0x34
-    BombClass* attachedBomb;  // 0x38
+    void * attachedTag;  // G42.39 fwd hazard  // 0x34
+    void * attachedBomb;  // G42.39 fwd hazard  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B
     char ambientSoundController[20];  // 0x3C
@@ -77,7 +77,7 @@ struct MissionClass {
     bool isSelected;  // 0x83
     bool hasParachute;  // 0x84
     unsigned char alignmentPadding85;  // 0x85
-    AnimClass* parachute;  // 0x88
+    void * parachute;  // G42.39 fwd hazard  // 0x88
     unsigned int q08A;  // 0x8A
     unsigned int q08B;  // 0x8B
     bool onBridge;  // 0x8C
@@ -95,7 +95,7 @@ struct MissionClass {
     unsigned char q0A1;  // 0xA1
     unsigned char q0A3;  // 0xA3
     unsigned int q0A4;  // 0xA4
-    LineTrail* lineTrailer;  // 0xA8
+    void * lineTrailer;  // G42.39 fwd hazard  // 0xA8
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
@@ -138,6 +138,8 @@ static char * GetMissionControl(...);  // C2597 interim stub
     unsigned int * Init();  // 0x49b610
     int ForceMission();
     int NextMission();
+
+    int QueueMission();  // G42.39 supply (0x5B35E0)
 };
 
 } // namespace gamemd
