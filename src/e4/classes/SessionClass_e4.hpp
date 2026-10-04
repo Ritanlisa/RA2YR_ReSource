@@ -716,7 +716,7 @@ struct SessionClass {
     void ** ResetSystemWOL_Reset(char a2);
     void SetInstance();
     void SetupNetwork();
-    wchar_t * ddtor(void *a1);
+    void ddtor(void *a1);  // G42.40c truth 0x69C4A0: void __thiscall ddtor(this)
     void removePlayer();
     int FindObjectCell(TechnoClass * aP1, char aP2);
     int IsAlliedWithObjectSimpleHouse(unsigned char * a2);

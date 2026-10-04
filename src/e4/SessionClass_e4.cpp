@@ -223,6 +223,7 @@ int SessionClass::SetPlayerOption(int aP1)
 
 }
 } // namespace gamemd
+namespace gamemd {  // G42.40c ns re-open (def had fallen to global scope)
 int SessionClass::SetPlayerColor(int a2)
 {
 
@@ -245,9 +246,22 @@ int SessionClass::SetPlayerColor(int a2)
 } // namespace gamemd
 // 0x696FF0
 namespace gamemd {
-  if ( aP1 == -2 ) /*0x696ff7*/
+int SessionClass::SetOption(int aP1)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x696FF0)
+  int result; // eax
+
+  result = aP1; /*0x696ff0*/
+  if ( aP1 == -2 ) /*0x696ff7*/
+  {
+    *(int *)((char *)this + 91) = -1; /*0x696ff9*/
+    *(int *)((char *)this + 95) = -2; /*0x697000*/
+  }
+  else
+  {
+    *(int *)((char *)this + 91) = aP1; /*0x697006*/
+    *(int *)((char *)this + 95) = -1; /*0x697009*/
+  }
+  return result; /*0x697003*/
 }
 } // namespace gamemd
 // 0x697020
@@ -314,9 +328,9 @@ char SessionClass::GetGameSpeed()
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69BBE0)
 }
 // 0x69C4A0
-wchar_t SessionClass::ddtor(void *a1)
+void SessionClass::ddtor(void *a1)
 {
-     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C4A0)
+    (void)a1; return; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C4A0)
 }
 // 0x69C4D0
 unsigned int SessionClass::Write(int a2)
@@ -378,3 +392,4 @@ void SessionClass::SetInstance()
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B2720)
 }
+} // namespace gamemd  // G42.40c close for :275 opener
