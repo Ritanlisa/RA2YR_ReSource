@@ -23,6 +23,7 @@ struct ProgressTimer {
     unsigned char ProgressTimer_field_0x14;  // 0x14
 // --- flat members (END) ---
     void* GetValue(unsigned int *aP1);
+    static void * GetValue(void * aP1, void * aP2);  // G42.39a static-call supply
 };
 #endif  // GAMEMD_CORE_OWNS_PROGRESSTIMER
 

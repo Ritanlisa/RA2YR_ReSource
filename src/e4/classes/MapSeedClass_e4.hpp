@@ -44,6 +44,11 @@ struct MapSeedClass {
     wchar_t * GetCell();
     wchar_t * SetCell();
     wchar_t * Validate();
+
+    char PlaceCityBlockVariant(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
+    char PlaceCityBlockDiagonal(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
+
+    char PlaceCityBlockVariant2(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
 };
 
 } // namespace gamemd

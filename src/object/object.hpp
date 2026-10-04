@@ -597,6 +597,41 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void CleanupSidebarResources();  // 0x6a5bf0
     int FindOwner(int a1, int a2);  // 0x6e45e0
     // === FUNCS-MOVE (END) ===
+
+    int DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1);  // 0x403A80 (G42.39a supply)
+
+
+
+    int CreateInstanceCOM(LPVOID * ppv, IID * rclsid, ILocomotion * aP2, DWORD dwClsContext);  // 0x41C250 (G42.39 supply)
+    int Release2COM();  // 0x45A160 (G42.39 supply)
+
+    int COMStub_48DEB0();  // 0x48DEB0 (G42.39 supply)
+    char * TerrainInitMap(char * Destination, RandomStruct * aP1, ::IUnknown * aP2);  // G42.39 supply
+
+    char * BuildResultPacket(char * Destination, char * Source, ::IUnknown * aP2);  // G42.39 supply
+
+    int Release3COM();  // 0x4D0430 (G42.39 supply)
+
+    int GetResourceID2CSF();  // G42.39 supply
+    int GetResourceIDCSF();  // G42.39 supply
+    int GetResourceID3CSF();  // G42.39 supply
+    int GetResourceID4CSF();  // G42.39 supply
+
+    bool WinMain_Helper_53E4F0(char* FileName);  // G42.39 supply
+
+    bool WinMain_Write(char* FileName);  // G42.39 supply
+
+    int CollectMatchingTileCells( unsigned short * a1, int a3, int a4, void * aP4, int a6, int a7, ::IUnknown * aP7, int aP4a);  // G42.39 supply
+
+    int ReadMPMapsINI(char* Source);  // G42.39 supply
+
+    int LoadSHPFile(int lpBuffer, char* Source);  // G42.39 supply
+
+    char* Team_Helper_6F26E0(char* Block, char a2);  // G42.39 supply
+
+    int QueueTechnoVoiceLine( TechnoClass * aP1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, TechnoClass * aP5, TechnoClass * aP6, TechnoClass * aP7, TechnoClass * aP8, TechnoClass * aP9, TechnoClass * aP10, TechnoClass * aP11);  // G42.39 supply
+
+    void* RenderTechnoOverlaySHP( TechnoClass * aP1, int a3, TechnoClass * aP3, int a5, TechnoClass * aP5, TechnoClass * aP6, int a8, char a9, TechnoClass * aP9, TechnoClass * aP10, int a12);  // G42.39 supply
 };
 
 } // namespace game

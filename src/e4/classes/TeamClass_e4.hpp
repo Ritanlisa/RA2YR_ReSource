@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct FootClass;  // G42.39a tree-TU fwd
 struct TeamTypeClass;  // fix_fwd_type_supply
 struct ScriptClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
@@ -141,6 +142,7 @@ struct TeamClass {
     static double CreateOneOf(...);  // C2597 interim stub
     AbstractClass * * DestroyAllMembers(unsigned int *p_vtable0, int aP1, int a2, int a1);
     void Update(TechnoClass * aP0, unsigned int * a1, int j, void *a4);
+    static int LiberateMember_Start(void * aP1, int aP2, int aP3);  // G42.39a static-call supply
 };
 
 } // namespace gamemd

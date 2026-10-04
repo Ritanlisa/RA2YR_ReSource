@@ -72,6 +72,8 @@ struct VocClass {
      double Check(...);  // C2597 interim stub
     static double FindIndex(...);  // C2597 interim stub
     char * GetSampleName(); // N_fix R5 supply (cache truth)
+
+    char LoadFromINI(CCINIClass * aP1);  // G42.39 supply
 };
 
 } // namespace gamemd

@@ -575,6 +575,8 @@ struct ParticleClass {
     int LoadParticleData(ObjectClass * aP1, int aP1a);
     int AdjustHeight();
     void DrawParticle(int * a2, int * a3);
+
+    void Update();  // G42.39 supply
 };
 
 } // namespace gamemd

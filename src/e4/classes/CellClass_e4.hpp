@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+struct FootClass;  // G42.39a tree-TU fwd
 struct LightConvertClass;  // fix_fwd_type_supply
 struct TagClass;  // fix_fwd_type_supply
 struct BuildingTypeClass;  // fix_fwd_type_supply
@@ -199,6 +200,7 @@ static int * GetCoords(...);  // C2597 interim stub
     void UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4);  // 0x565C10  G42.34 T11: link-resolves to system/gap2_defs.cpp:1591 def (same shape as tree cell.hpp:421)
     int ClearCrateStateForAll();  // 0x722AB0  G42.34 T11: supplied def carrier
     unsigned short * initCellData(unsigned short * a1);  // 0x588C40  G42.34 T11: supplied def carrier
+    static void * AddObject(void * a1, void * a2);  // G42.39a static-call supply
 };
 
 } // namespace gamemd

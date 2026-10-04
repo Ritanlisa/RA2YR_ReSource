@@ -98,5 +98,6 @@ struct Coord {
     int CreateAIPlayer();
     int CreateAIPlayer_Potato();
     Coord * * sub_7A2830();
+    static unsigned int * To_Cell(void * aP1, void * aP2);  // G42.39a static-call supply
 };
 } // namespace gamemd

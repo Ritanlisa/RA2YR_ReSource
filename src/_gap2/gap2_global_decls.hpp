@@ -15,6 +15,56 @@ typedef unsigned char u_char;
 #endif
 
 // ---- forward declarations for signature types ----
+namespace ra2 { namespace game { class ProgressScreenClass; } }
+namespace gamemd { using ::ra2::game::ProgressScreenClass; }
+namespace ra2 { namespace game { class AbstractClass; } }
+namespace ra2 { namespace game { class BlowStraw; } }
+namespace ra2 { namespace game { class CCINIClass; } }
+namespace ra2 { namespace game { class DynamicVector; } }
+namespace ra2 { namespace game { class FootClass; } }
+namespace ra2 { namespace game { class HashTable; } }
+namespace ra2 { namespace game { class INIClass; } }
+namespace ra2 { namespace game { class InfantryClass; } }
+namespace ra2 { namespace game { class MapClass; } }
+namespace ra2 { namespace game { class RadarClass; } }
+namespace ra2 { namespace game { class ReferenceCounted; } }
+namespace ra2 { namespace game { class ScoreScreen; } }
+namespace ra2 { namespace game { class ScriptClass; } }
+namespace ra2 { namespace game { class Selection_WorldDominationTour; } }
+namespace ra2 { namespace game { class SessionClass; } }
+namespace ra2 { namespace game { class Straw; } }
+namespace ra2 { namespace game { class Tactical; } }
+namespace ra2 { namespace game { class TechnoClass; } }
+namespace ra2 { namespace game { class WDTState; } }
+namespace gamemd { using ::ra2::game::AbstractClass; }
+namespace gamemd { using ::ra2::game::BlowStraw; }
+namespace gamemd { using ::ra2::game::CCINIClass; }
+namespace gamemd { using ::ra2::game::DynamicVector; }
+namespace gamemd { using ::ra2::game::FootClass; }
+namespace gamemd { using ::ra2::game::HashTable; }
+namespace gamemd { using ::ra2::game::INIClass; }
+namespace gamemd { using ::ra2::game::InfantryClass; }
+namespace gamemd { using ::ra2::game::MapClass; }
+namespace gamemd { using ::ra2::game::RadarClass; }
+namespace gamemd { using ::ra2::game::ReferenceCounted; }
+namespace gamemd { using ::ra2::game::ScoreScreen; }
+namespace gamemd { using ::ra2::game::ScriptClass; }
+namespace gamemd { using ::ra2::game::Selection_WorldDominationTour; }
+namespace gamemd { using ::ra2::game::SessionClass; }
+namespace gamemd { using ::ra2::game::Straw; }
+namespace gamemd { using ::ra2::game::Tactical; }
+namespace gamemd { using ::ra2::game::TechnoClass; }
+namespace gamemd { using ::ra2::game::WDTState; }
+
+namespace ra2 { namespace game { class ObjectClass; } }
+namespace ra2 { namespace game { class BuildingTypeClass; } }
+namespace gamemd { using ::ra2::game::ObjectClass; }
+namespace gamemd { using ::ra2::game::BuildingTypeClass; }
+
+struct RandomStruct;
+struct ILocomotion;
+struct DynamicVectorClass_uint;
+namespace ra2 { namespace game { class ObjectClass; } }
 struct Block;
 struct Destination;
 struct ExceptionInfo;
@@ -28,1569 +78,2566 @@ struct exception;
 
 namespace gamemd {
     struct Gap2Recv_402F60 {
-        int ProcessAudioMixerFrame();
     void* bombVisible;  // 0x0 (no offset truth)
+        int ProcessAudioMixerFrame();  // G42.39 def-derived
     };
     struct Gap2Recv_4048B0 {
-        int PrefetchAudioSamples();
+        int PrefetchAudioSamples();  // G42.39 def-derived
     };
     struct Gap2Recv_4055C0 {
-        int UpdateVoicePlayback();
+        int UpdateVoicePlayback();  // G42.39 def-derived
     };
     struct Gap2Recv_40AA70 {
-        bool ProcessAudioChannelMovement();
+    int hasParachute;  // G42.39a supply
+    int isAliveFlag[8];  // G42.39a supply (indexed usage)
+    int lastLayer;  // G42.39a supply
+    int location[8];  // G42.39a supply (indexed usage)
+    int needsRedraw;  // G42.39a supply
+    int u32_105;  // G42.39a supply
+    int visibilityFlags;  // G42.39a supply
+        bool ProcessAudioChannelMovement();  // G42.39 def-derived
     };
     struct Gap2Recv_415C60 {
-        int ProcessTechnoMovementAction();
+    int M1492;  // G42.39a supply
+    int M164;  // G42.39a supply
+    int M1747;  // G42.39a supply
+    int M748;  // G42.39a supply
+    int M752;  // G42.39a supply
+    int M756;  // G42.39a supply
+    int M764;  // G42.39a supply
+    int q114;  // G42.39a supply
+    int u32_189;  // G42.39a supply
+    int u32_3C6;  // G42.39a supply
+    int u32_710;  // G42.39a supply
+        int ProcessTechnoMovementAction();  // G42.39 def-derived
     };
     struct Gap2Recv_4197C0 {
-        void * FindSpiralMoveTarget();
+    int vtable0;  // G42.39a supply
+        void * FindSpiralMoveTarget(ra2::game::ObjectClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_41AF80 {
-        int SaveAircraftToINI();
     };
     struct Gap2Recv_421350 {
-        int RenderAlphaShapes();
+        int RenderAlphaShapes();  // G42.39 def-derived
     };
     struct Gap2Recv_429830 {
-        double ComputeMovementWeight(int*, char, int, int);
-    };
+    int Items;  // G42.39a supply
+    int u32_3C;  // G42.39a supply
+        double ComputeMovementWeight(int * a1, unsigned int * a2, void * aP3, int a5, int a6);  // G42.39 def-derived
+};
     struct Gap2Recv_42B210 {
-        char ParsePathDirections(int*);
-    };
+        char ParsePathDirections(int a2, void* a3);  // G42.39 def-derived
+};
     struct Gap2Recv_42B7F0 {
-        unsigned int * SimplifyPathFilter(int);
-    };
+        void* SimplifyPathFilter(void* a2, int a3);  // G42.39 def-derived
+};
     struct Gap2Recv_42E1C0 {
-        int RenderTooltipBorder();
+    int AbstractClass_v;  // G42.39a supply
+    int fallRate;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        int RenderTooltipBorder();  // G42.39 def-derived
     };
     struct Gap2Recv_430250 {
-        char RenderBuildingTag(int, int, int, int);
-    };
+    int q044;  // G42.39a supply
+    int vtable24;  // G42.39a supply
+    int vtable4;  // G42.39a supply
+        char RenderBuildingTag(int a2, int a3, int a4, int a5, int a6);  // G42.39 def-derived
+};
     struct Gap2Recv_430AC0 {
-        int RenderAlliedBuildingTags(int, int, int, int);
-    };
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+        int RenderAlliedBuildingTags(int a2, int a3, int a4, int a5, int a6);  // G42.39 def-derived
+};
     struct Gap2Recv_430BA0 {
-        void PlacePlayerBeacon(int, int, int, int);
-    };
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+        void PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6);  // G42.39 def-derived
+};
     struct Gap2Recv_432C10 {
-        int COMStub_432C10();
-    };
+    int nextObject;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+        int COMStub_432C10(int a2);  // G42.39 def-derived
+};
     struct Gap2Recv_438BF0 {
-        int DispatchBuildingAudioEvents();
     };
     struct Gap2Recv_43B150 {
-        bool DetectNearbyAlliedThreat();
+    int abstractFlags;  // G42.39a supply
+    int target;  // G42.39a supply
+    int vtable2;  // G42.39a supply
+        bool DetectNearbyAlliedThreat();  // G42.39 def-derived
     };
     struct Gap2Recv_43C0D0 {
-        void* CreateDominatorDestructionEffects();
+    int lastLayer0;  // G42.39a supply
+    int needsRedraw8;  // G42.39a supply
+    int u32_520;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* CreateDominatorDestructionEffects();  // G42.39 def-derived
     };
     struct Gap2Recv_4500F0 {
-        void ProcessAutoProduction();
+    int location[8];  // G42.39a supply (indexed usage)
+    int owner;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void ProcessAutoProduction();  // G42.39 def-derived
     };
     struct Gap2Recv_455F10 {
-        char MarkBuildingFoundationCells();
-    };
+    int location[8];  // G42.39a supply (indexed usage)
+    int needsRedraw8;  // G42.39a supply
+    int owner;  // G42.39a supply
+    int u32_520;  // G42.39a supply
+        char MarkBuildingFoundationCells(int a2);  // G42.39 def-derived
+};
     struct Gap2Recv_4561F0 {
-        int RecalculateBuildingFoundation();
+    int location[8];  // G42.39a supply (indexed usage)
+    int needsRedraw8;  // G42.39a supply
+    int owner;  // G42.39a supply
+    int vtable2;  // G42.39a supply
+        int RecalculateBuildingFoundation();  // G42.39 def-derived
     };
     struct Gap2Recv_458330 {
-        char* PlayHealthDependentBuildingAnim();
+    int vtable0;  // G42.39a supply
+        char* PlayHealthDependentBuildingAnim();  // G42.39 def-derived
     };
     struct Gap2Recv_459CA0 {
-        char ProcessDataCellClass();
+    int AbstractClass_v;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        char ProcessDataCellClass();  // G42.39 def-derived
     };
     struct Gap2Recv_465570 {
-        int * CalculateBuildingFoundationBounds();
-    };
+    int u32_1518;  // G42.39a supply
+    int u32_1538;  // G42.39a supply
+    int u32_153C;  // G42.39a supply
+    int u32_1540;  // G42.39a supply
+    int u32_1544;  // G42.39a supply
+    int u32_1762;  // G42.39a supply
+    int u32_E00;  // G42.39a supply
+    int u32_E04;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+        void* CalculateBuildingFoundationBounds(BuildingTypeClass * aP1);  // G42.39 def-derived
+};
     struct Gap2Recv_471890 {
-        int SmallFunc_471890();
+    int CaptureManagerClass_field_30;  // G42.39a supply
+    int CaptureManagerClass_field_40;  // G42.39a supply
+    int CaptureManagerClass_field_41;  // G42.39a supply
+    int __pad_3C;  // G42.39a supply
+    int controlNodeCapacity;  // G42.39a supply
+    int controlNodeCount;  // G42.39a supply
+    int controlNodes[8];  // G42.39a supply (indexed usage)
+    int linkCount;  // G42.39a supply
+    int originalOwner;  // G42.39a supply
+    int overloadCount;  // G42.39a supply
+    int overloadLimit;  // G42.39a supply
+    int owner;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+        int SmallFunc_471890();  // G42.39 def-derived
     };
     struct Gap2Recv_47BDB0 {
-        int GetBridgeCellColor(char);
-    };
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int estimatedHealth2;  // G42.39a supply
+    int u32_11B;  // G42.39a supply
+        int GetBridgeCellColor(char* a2, char a3);  // G42.39 def-derived
+};
     struct Gap2Recv_47C060 {
-        char GetCellRadarColors(int);
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int vtable3;  // G42.39a supply
+        char GetCellRadarColors(int aThis, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_4838E0 {
-        char IsCoordValidMap();
-    };
+        char IsCoordValidMap(ObjectClass * aP1);  // G42.39 def-derived
+};
     struct Gap2Recv_486E30 {
-        int Helper_486E30();
+    int occupant;  // G42.39a supply
+        int Helper_486E30();  // G42.39 def-derived
     };
     struct Gap2Recv_48DF30 {
-        int LookupNameIndex();
+        int LookupNameIndex();  // G42.39 def-derived
     };
     struct Gap2Recv_49B930 {
-        char UpdateScoreScreenStatistics();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int bombVisible;  // G42.39a supply
+    int customSound;  // G42.39a supply
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int health;  // G42.39a supply
+        char UpdateScoreScreenStatistics();  // G42.39 def-derived
     };
     struct Gap2Recv_49E740 {
-        char SmallFunc_49E740();
-    };
+    int q058;  // G42.39a supply
+    int q05C;  // G42.39a supply
+        char SmallFunc_49E740(void* a2);  // G42.39 def-derived
+};
     struct Gap2Recv_4A3660 {
-        int RenderTactical3DScene();
-    };
+    int u32_18000;  // G42.39a supply
+        int RenderTactical3DScene(int a2);  // G42.39 def-derived
+};
     struct Gap2Recv_4B5AB0 {
-        int SmallFunc_4B5AB0();
+    int DestinationCoords[8];  // G42.39a supply (indexed usage)
+    int IsOutOfMap;  // G42.39a supply
+    int LocomotionClass[8];  // G42.39a supply (indexed usage)
+    int Piggybackee;  // G42.39a supply
+    int __pad_18;  // G42.39a supply
+        int SmallFunc_4B5AB0();  // G42.39 def-derived
     };
     struct Gap2Recv_4C5370 {
-        int Helper_4C5370();
+    int EMPulseClass_field_0x04;  // G42.39a supply
+    int EMPulseClass_field_0x08;  // G42.39a supply
+    int EMPulseClass_field_0x0C;  // G42.39a supply
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+    int q00C;  // G42.39a supply
+    int q028;  // G42.39a supply
+    int u32_24;  // G42.39a supply
+    int u32_2C;  // G42.39a supply
+        int Helper_4C5370();  // G42.39 def-derived
     };
     struct Gap2Recv_4C54E0 {
-        int ApplyEMPPulseEffect();
-    };
+    int fallRate;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+        int ApplyEMPPulseEffect(int a2);  // G42.39 def-derived
+};
     struct Gap2Recv_4CBC40 {
-        int * WalkPathfindingLine(int, int*, int, int);
-    };
+    int AbstractClass_v;  // G42.39a supply
+        void* WalkPathfindingLine(void* a2, int a3, void* a4, int a5, int a6);  // G42.39 def-derived
+};
     struct Gap2Recv_4CE4B0 {
-        int ProcessDataHelper(int);
-    };
+    int AbstractClass_v;  // G42.39a supply
+        int ProcessDataHelper(void* a2, int a3);  // G42.39 def-derived
+};
     struct Gap2Recv_4DC340 {
-        char DrawFootTargetLine();
+    int location[8];  // G42.39a supply (indexed usage)
+    int owner;  // G42.39a supply
+    int target;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        char DrawFootTargetLine();  // G42.39 def-derived
     };
     struct Gap2Recv_4E3320 {
-        int GetResourceIDHardcodedCSF();
+        int GetResourceIDHardcodedCSF();  // G42.39 def-derived
     };
     struct Gap2Recv_4E37D0 {
-        int GetResourceID2CSF();
     };
     struct Gap2Recv_4E41D0 {
-        int GetResourceIDCSF();
     };
     struct Gap2Recv_4E4E60 {
-        int GetResourceID3CSF();
     };
     struct Gap2Recv_4E5940 {
-        int GetResourceID4CSF();
     };
     struct Gap2Recv_4F9F70 {
-        char COMStub_4F9F70(char);
-    };
+        char COMStub_4F9F70(int a2, char a3);  // G42.39 def-derived
+};
     struct Gap2Recv_4FD9A0 {
-        int ValidateAIBuildAffordability();
+    int armorMultiplier[8];  // G42.39a supply (indexed usage)
+    int attachedTag[8];  // G42.39a supply (indexed usage)
+    int disguiseBlinkTimer[8];  // G42.39a supply (indexed usage)
+    int occupant;  // G42.39a supply
+    int spawnStatus;  // G42.39a supply
+    int u32_564C;  // G42.39a supply
+    int u32_5650;  // G42.39a supply
+        int ValidateAIBuildAffordability();  // G42.39 def-derived
     };
     struct Gap2Recv_504860 {
-        int Team_Helper();
-    };
+    int u32_5620;  // G42.39a supply
+    int u32_562C;  // G42.39a supply
+        int Team_Helper(int a2);  // G42.39 def-derived
+};
     struct Gap2Recv_507B80 {
-        int CollectSuperWeaponBuildingTypes(int);
-    };
+    int alignmentPadding75;  // G42.39a supply
+    int attachedTag[8];  // G42.39a supply (indexed usage)
+        int CollectSuperWeaponBuildingTypes(int a2, void * aP2);  // G42.39 def-derived
+};
     struct Gap2Recv_BA00 {
-        long long ComputeSessionColorVector();
+        long long ComputeSessionColorVector();  // G42.39 def-derived
     };
     struct Gap2Recv_50D6D0 {
-        int16_t SelectSimilarBuildingTypes();
+        short SelectSimilarBuildingTypes(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_50DA10 {
-        int GlobalHelper_0E4440_Helper();
+    int u32_54F0;  // G42.39a supply
+        int GlobalHelper_0E4440_Helper();  // G42.39 def-derived
     };
     struct Gap2Recv_50DA50 {
-        int GlobalHelper_0E44C0_Helper();
+    int u32_54F4;  // G42.39a supply
+    int u32_54F8;  // G42.39a supply
+    int u32_54FC;  // G42.39a supply
+        int GlobalHelper_0E44C0_Helper();  // G42.39 def-derived
     };
     struct Gap2Recv_50DFF0 {
-        int GlobalHelper_0E4540_Helper();
+    int u32_5494;  // G42.39a supply
+        int GlobalHelper_0E4540_Helper();  // G42.39 def-derived
     };
     struct Gap2Recv_515ED0 {
-        void UpdateFootFacing();
+    int NeedsSaveOrLink;  // G42.39a supply
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int estimatedHealth;  // G42.39a supply
+    int fallRate;  // G42.39a supply
+    int nextArrayIndex;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+    int referenceCount;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+    int vtable3;  // G42.39a supply
+        void UpdateFootFacing();  // G42.39 def-derived
     };
     struct Gap2Recv_5175F0 {
-        char ReadRegistryOptionsWOL();
+    int AbstractClass_v;  // G42.39a supply
+        char ReadRegistryOptionsWOL();  // G42.39 def-derived
     };
     struct Gap2Recv_5176C0 {
-        bool WinMain_Helper();
+    int AbstractClass_v;  // G42.39a supply
+        bool WinMain_Helper();  // G42.39 def-derived
     };
     struct Gap2Recv_518D80 {
-        int CalculateLocomotionFrameIndex();
+    int animation[8];  // G42.39a supply (indexed usage)
+    int onBridge[8];  // G42.39a supply (indexed usage)
+    int primaryFacing[8];  // G42.39a supply (indexed usage)
+    int target;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        int CalculateLocomotionFrameIndex();  // G42.39 def-derived
     };
     struct Gap2Recv_51FB00 {
-        int PlaceScenarioInfantry();
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+        int PlaceScenarioInfantry();  // G42.39 def-derived
     };
     struct Gap2Recv_5202F0 {
-        char ProcessTechnoSquadResponse();
+    int attachedTag[8];  // G42.39a supply (indexed usage)
+    int owner;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        char ProcessTechnoSquadResponse();  // G42.39 def-derived
     };
     struct Gap2Recv_5206B0 {
-        void FireTechnoAtTarget();
+    int airstrike;  // G42.39a supply
+    int animation[8];  // G42.39a supply (indexed usage)
+    int location[8];  // G42.39a supply (indexed usage)
+    int primaryFacing[8];  // G42.39a supply (indexed usage)
+    int target;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void FireTechnoAtTarget();  // G42.39 def-derived
     };
     struct Gap2Recv_5272B0 {
-        uint8_t * LookupCSFString(char*, int);
+    int owningHouseIndex;  // G42.39a supply
+        char* LookupCSFString(char* a2, char* Destination, int Count);  // G42.39 def-derived
     };
     struct Gap2Recv_52A670 {
-        void * WinMain_Init(char);
+        void* WinMain_Init(void* a2, char a3);  // G42.39 def-derived
     };
     struct Gap2Recv_53B780 {
-        int ApplyChronoScreenColorShift();
+    int vtable1;  // G42.39a supply
+        int ApplyChronoScreenColorShift();  // G42.39 def-derived
     };
     struct Gap2Recv_53FA90 {
-        int * Network_Init_53FA90(int, int, int16_t, int16_t);
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+    int q034;  // G42.39a supply
+    int u32_CC;  // G42.39a supply
+    int u32_D4;  // G42.39a supply
+    int u32_D8;  // G42.39a supply
+        void* Network_Init_53FA90(int aP1, int aP2, int aP3, short aP4, short a6);  // G42.39 def-derived
     };
     struct Gap2Recv_5402B0 {
-        int Network_Init_5402B0();
+    int u32_C4;  // G42.39a supply
+        int Network_Init_5402B0(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_540A80 {
-        int Network_Init();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int isInLogic;  // G42.39a supply
+    int isOnMap;  // G42.39a supply
+    int lastLayer;  // G42.39a supply
+    int needsRedraw;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+    int visibilityFlags;  // G42.39a supply
+        int Network_Init();  // G42.39 def-derived
     };
     struct Gap2Recv_542FC0 {
-        int Network_Init_542FC0();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+        int Network_Init_542FC0(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_5430C0 {
-        int StartGameWOL_Start();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+        int StartGameWOL_Start(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_544CE0 {
-        int Entity_Read();
+        int Entity_Read();  // G42.39 def-derived
     };
     struct Gap2Recv_544E00 {
-        unsigned int * Map_Get();
+    int diskLaserTimer[8];  // G42.39a supply (indexed usage)
+    int vtable0;  // G42.39a supply
+        void* Map_Get(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_549E50 {
-        int Map_Get_549E50(int);
+    int q0AA;  // G42.39a supply
+        int Map_Get_549E50(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_54BD30 {
-        int UpdateFootMoveToState();
+        int UpdateFootMoveToState();  // G42.39 def-derived
     };
     struct Gap2Recv_551A30 {
-        int ProcessAutoSave();
+        int ProcessAutoSave();  // G42.39 def-derived
     };
     struct Gap2Recv_556B70 {
-        int Render_Render_556B70();
+    int uniqueId;  // G42.39a supply
+        int Render_Render_556B70();  // G42.39 def-derived
     };
     struct Gap2Recv_556C00 {
-        void* Render_Render_556C00();
+    int uniqueId;  // G42.39a supply
+        void* Render_Render_556C00();  // G42.39 def-derived
     };
     struct Gap2Recv_55AF50 {
-        void Map_Init();
+        void Map_Init();  // G42.39 def-derived
     };
     struct Gap2Recv_55F690 {
-        int CheckNetworkSync(int);
+    int AbstractClass_v;  // G42.39a supply
+        int CheckNetworkSync(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_569760 {
-        void DestroyCliffMap(int, int*);
+        void DestroyCliffMap(int a2, int a3, IUnknown * aP3);  // G42.39 def-derived
     };
     struct Gap2Recv_56A080 {
-        int PlaceTerrainCliffsRegion();
+    int q04A;  // G42.39a supply
+    void * q04C;  // G42.39a supply (deref usage)
+    int q04F;  // G42.39a supply
+    int u32_12C;  // G42.39a supply
+    int u32_49;  // G42.39a supply
+        int PlaceTerrainCliffsRegion();  // G42.39 def-derived
     };
     struct Gap2Recv_56A4C0 {
-        void FlattenCliffMap();
+    int q04A;  // G42.39a supply
+    void * q04C;  // G42.39a supply (deref usage)
+    int q04F;  // G42.39a supply
+    int u32_12C;  // G42.39a supply
+    int u32_49;  // G42.39a supply
+        void FlattenCliffMap(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_56A980 {
-        void RepairMapCliff();
+    int q04A;  // G42.39a supply
+    void * q04C;  // G42.39a supply (deref usage)
+    int q04F;  // G42.39a supply
+    int u32_12C;  // G42.39a supply
+    int u32_49;  // G42.39a supply
+        void RepairMapCliff(void* v34);  // G42.39 def-derived
     };
     struct Gap2Recv_56D3F0 {
-        int CellToTileIndexMap();
+    int health;  // G42.39a supply
+    int q03D;  // G42.39a supply
+    int u32_F8;  // G42.39a supply
+        int CellToTileIndexMap(IUnknown * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_56DA10 {
-        int GetRegionMap(int, int);
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+        int GetRegionMap(void* aP1, int a3, int a4);  // G42.39 def-derived
     };
     struct Gap2Recv_56DB70 {
-        char InvalidateTileRegionMap();
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+        char InvalidateTileRegionMap(IUnknown * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_56E890 {
-        char ProcessDataHouseClass(int*, int*);
+    int q03D;  // G42.39a supply
+    int u32_F8;  // G42.39a supply
+        char ProcessDataHouseClass(void* a2, void* a3, void* a4);  // G42.39 def-derived
     };
     struct Gap2Recv_5785F0 {
-        bool IsCoordVisibleMap();
+        bool IsCoordVisibleMap(IUnknown * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_578640 {
-        bool Math_Helper(int16_t*, char);
+    int q03D;  // G42.39a supply
+        bool Math_Helper(unsigned int * a2, int16_t * a3, char a4);  // G42.39 def-derived
     };
     struct Gap2Recv_57B870 {
-        int Map_Create();
+    int AbstractClass_v;  // G42.39a supply
+        int Map_Create();  // G42.39 def-derived
     };
     struct Gap2Recv_57B990 {
-        char Map_Create_57B990();
+    int AbstractClass_v;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        char Map_Create_57B990();  // G42.39 def-derived
     };
     struct Gap2Recv_57CAB0 {
-        int Map_Create_57CAB0();
+    int AbstractClass_v;  // G42.39a supply
+        int Map_Create_57CAB0();  // G42.39 def-derived
     };
     struct Gap2Recv_57CBE0 {
-        char Map_Create_57CBE0();
+    int AbstractClass_v;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        char Map_Create_57CBE0();  // G42.39 def-derived
     };
     struct Gap2Recv_580BC0 {
-        unsigned int * FindMapSpawnCell();
+    int q03D;  // G42.39a supply
+    int u32_F8;  // G42.39a supply
+        void* FindMapSpawnCell(FootClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_581090 {
-        int CleanupMapSystems();
+    int needsRedraw;  // G42.39a supply
+    int onBridge[8];  // G42.39a supply (indexed usage)
+        int CleanupMapSystems();  // G42.39 def-derived
     };
     struct Gap2Recv_582D30 {
-        int SmallFunc_582D30();
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+        int SmallFunc_582D30(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_5840C0 {
-        char CheckMapReachability(int, int, int);
+    int estimatedHealth;  // G42.39a supply
+    int health;  // G42.39a supply
+    int isAliveFlag[8];  // G42.39a supply (indexed usage)
+    int q03D;  // G42.39a supply
+    int u32_F8;  // G42.39a supply
+        char CheckMapReachability(CCINIClass * aP1, int a3, int a4, int j);  // G42.39 def-derived
     };
     struct Gap2Recv_584E50 {
-        int UpdateCellConnectivityGraph();
+    int estimatedHealth;  // G42.39a supply
+    int health;  // G42.39a supply
+    int isAliveFlag[8];  // G42.39a supply (indexed usage)
+        int UpdateCellConnectivityGraph(void* v56);  // G42.39 def-derived
     };
     struct Gap2Recv_5851B0 {
-        int BuildTileAdjacencyTable();
+    int estimatedHealth;  // G42.39a supply
+    int isAliveFlag[8];  // G42.39a supply (indexed usage)
+        int BuildTileAdjacencyTable(IUnknown * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_585930 {
-        void FloodFillConnectedCells(int);
+    int q03D;  // G42.39a supply
+    int u32_F8;  // G42.39a supply
+        void FloodFillConnectedCells(MapClass * aP1, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_5866C0 {
-        int SmallFunc_5866C0();
+    int q03D;  // G42.39a supply
+    int q044;  // G42.39a supply
+    int q04F;  // G42.39a supply
+    int u32_10C;  // G42.39a supply
+    int u32_46;  // G42.39a supply
+    int u8_45;  // G42.39a supply
+        int SmallFunc_5866C0();  // G42.39 def-derived
     };
     struct Gap2Recv_5868A0 {
-        void UpdateAreaConnectivityMap();
+        void UpdateAreaConnectivityMap(IUnknown * v35);  // G42.39 def-derived
     };
     struct Gap2Recv_587C50 {
-        char DiagnoseMapCheck();
+        char DiagnoseMapCheck();  // G42.39 def-derived
     };
     struct Gap2Recv_588960 {
-        int Object_Create();
+    int u32_148;  // G42.39a supply
+        int Object_Create(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_591740 {
-        char PlaceMapSeedCityArea(int16_t*, void*);
+        char PlaceMapSeedCityArea(void* a2, void* a3, void* a4);  // G42.39 def-derived
     };
     struct Gap2Recv_594870 {
-        void PlaceRandomWaypoints();
+    int AbstractClass_v;  // G42.39a supply
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int fallRate;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        void PlaceRandomWaypoints(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_595400 {
-        char PlaceNeutralBuilding();
+        char PlaceNeutralBuilding();  // G42.39 def-derived
     };
     struct Gap2Recv_597430 {
-        void* Team_Start_597430();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int bombVisible;  // G42.39a supply
+    int customSound;  // G42.39a supply
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int estimatedHealth;  // G42.39a supply
+    int health;  // G42.39a supply
+    int isOnMap;  // G42.39a supply
+        void* Team_Start_597430();  // G42.39 def-derived
     };
     struct Gap2Recv_5A1FB0 {
-        char SpreadMapSeedTerrainFromWaypoints();
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+        char SpreadMapSeedTerrainFromWaypoints();  // G42.39 def-derived
     };
     struct Gap2Recv_5A2F50 {
-        void SmoothTerrainMap();
+        void SmoothTerrainMap();  // G42.39 def-derived
     };
     struct Gap2Recv_5A35F0 {
-        int GenerateTerrainHeightMap();
+        int GenerateTerrainHeightMap();  // G42.39 def-derived
     };
     struct Gap2Recv_5A82E0 {
-        void ScatterMapSeedBuildings();
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+        void ScatterMapSeedBuildings(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_5A95B0 {
-        void* PlaceRandomAIBuildings();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+        void* PlaceRandomAIBuildings();  // G42.39 def-derived
     };
     struct Gap2Recv_5A99B0 {
-        void* Object_Helper_5A99B0();
+    int AbstractClass_v;  // G42.39a supply
+        void* Object_Helper_5A99B0();  // G42.39 def-derived
     };
     struct Gap2Recv_5AD930 {
-        char Map_Helper_5AD930();
+        char Map_Helper_5AD930(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_5AD9F0 {
-        unsigned int * Map_Cleanup(int);
+    int Capacity;  // G42.39a supply
+    int IsAllocated;  // G42.39a supply
+    int IsInitialized;  // G42.39a supply
+    int Items;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* Map_Cleanup(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_5B3910 {
-        int LookupWaypointName();
+        int LookupWaypointName();  // G42.39 def-derived
     };
     struct Gap2Recv_5B6CD0 {
-        int Surface_Lock();
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+        int Surface_Lock();  // G42.39 def-derived
     };
     struct Gap2Recv_5B6EB0 {
-        void UI_Setup(unsigned int, int);
+    int AbstractClass_v;  // G42.39a supply
+        void UI_Setup(void* Format, unsigned int a3, int a4);  // G42.39 def-derived
     };
     struct Gap2Recv_5C80A0 {
-        int ComputeModularInverse(int);
+        int ComputeModularInverse(void* a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_5CB790 {
-        unsigned int TerritoryUpdateDisplayWOL();
+    int AbstractClass_v;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        unsigned int TerritoryUpdateDisplayWOL(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_5CC690 {
-        void Map_Process_5CC690();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+        void Map_Process_5CC690();  // G42.39 def-derived
     };
     struct Gap2Recv_5CE4A0 {
-        unsigned int * UI_Load(int, char);
+    int BufferOffset;  // G42.39a supply
+    int MSAnim_field_0x04;  // G42.39a supply
+    int MSAnim_field_0x08;  // G42.39a supply
+    int NeedsSaveOrLink;  // G42.39a supply
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int attachedTag[8];  // G42.39a supply (indexed usage)
+    int fallRate;  // G42.39a supply
+    int nextArrayIndex;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int objectTypeFlags;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+    int q0A4;  // G42.39a supply
+    int referenceCount;  // G42.39a supply
+    int uniqueId;  // G42.39a supply
+    int uniqueId4;  // G42.39a supply
+    int vtable4;  // G42.39a supply
+        void* UI_Load(char* a2, int a3, char a4);  // G42.39 def-derived
     };
     struct Gap2Recv_5CEDD0 {
-        char* Map_Delete_5CEDD0();
+    int DynamicVector_field_0x1[8];  // G42.39a supply (indexed usage)
+    int DynamicVector_field_0x10;  // G42.39a supply
+    int DynamicVector_field_0x28;  // G42.39a supply
+    int DynamicVector_field_0x8;  // G42.39a supply
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+    int __pad_14;  // G42.39a supply
+    int __pad_C[8];  // G42.39a supply (indexed usage)
+        char* Map_Delete_5CEDD0();  // G42.39 def-derived
     };
     struct Gap2Recv_5CF830 {
-        int Network_Load();
+    int vtable1;  // G42.39a supply
+        int Network_Load(ObjectClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_5D1C90 {
-        int UI_Load_5D1C90(void*);
+        int UI_Load_5D1C90(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_5D4430 {
-        int SyncFrameCounter();
+        int SyncFrameCounter();  // G42.39 def-derived
     };
     struct Gap2Recv_5D6D80 {
-        char ComputeMultiEngineerAdjustment();
+        char ComputeMultiEngineerAdjustment();  // G42.39 def-derived
     };
     struct Gap2Recv_5D9360 {
-        void SmallFunc_5D9360();
+    int AbstractClass_v;  // G42.39a supply
+        void SmallFunc_5D9360();  // G42.39 def-derived
     };
     struct Gap2Recv_5DB600 {
-        int PlayerSkirmishSlotHandler_Handle_5DB600();
+    int owningHouseIndex;  // G42.39a supply
+        int PlayerSkirmishSlotHandler_Handle_5DB600();  // G42.39 def-derived
     };
     struct Gap2Recv_5DBEC0 {
-        int SendMultiplayerStartSignal_Start();
+        int SendMultiplayerStartSignal_Start();  // G42.39 def-derived
     };
     struct Gap2Recv_5E23D0 {
-        char Network_Check();
+        char Network_Check(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_5E9340 {
-        int Audio_Helper();
+        int Audio_Helper();  // G42.39 def-derived
     };
     struct Gap2Recv_5E93F0 {
-        bool IsKnownPointer();
+        bool IsKnownPointer();  // G42.39 def-derived
     };
     struct Gap2Recv_5EAAD0 {
-        int RefreshLobbyAll_Helper_5EAAD0();
+        int RefreshLobbyAll_Helper_5EAAD0();  // G42.39 def-derived
     };
     struct Gap2Recv_5EAB30 {
-        int RefreshLobbyAll_Play_5EAB30();
+        int RefreshLobbyAll_Play_5EAB30();  // G42.39 def-derived
     };
     struct Gap2Recv_5EAC00 {
-        int RefreshLobbyAll_Get_5EAC00();
+        int RefreshLobbyAll_Get_5EAC00();  // G42.39 def-derived
     };
     struct Gap2Recv_5EACD0 {
-        int RefreshLobbyAll_Get_5EACD0();
+        int RefreshLobbyAll_Get_5EACD0();  // G42.39 def-derived
     };
     struct Gap2Recv_5EADA0 {
-        char RefreshLobbyAll_Get_5EADA0();
+        char RefreshLobbyAll_Get_5EADA0(SessionClass * hDlg);  // G42.39 def-derived
     };
     struct Gap2Recv_5EAE40 {
-        char RefreshLobbyAll_Setup();
+        char RefreshLobbyAll_Setup(SessionClass * hDlg);  // G42.39 def-derived
     };
     struct Gap2Recv_5EAEE0 {
-        char RefreshLobbyAll_Play_5EAEE0();
+        char RefreshLobbyAll_Play_5EAEE0();  // G42.39 def-derived
     };
     struct Gap2Recv_5EE100 {
-        bool Network_Send();
+        bool Network_Send();  // G42.39 def-derived
     };
     struct Gap2Recv_5EEF60 {
-        void String_Process();
+    int AbstractClass_v;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        void String_Process();  // G42.39 def-derived
     };
     struct Gap2Recv_5EF010 {
-        void Map_Helper_5EF010();
+    int AbstractClass_v;  // G42.39a supply
+        void Map_Helper_5EF010();  // G42.39 def-derived
     };
     struct Gap2Recv_5FD2E0 {
-        int ReadOverlayINI();
+        int ReadOverlayINI();  // G42.39 def-derived
     };
     struct Gap2Recv_60B350 {
-        int UI_Get_60B350();
+        int UI_Get_60B350(HWND hWnd);  // G42.39 def-derived
     };
     struct Gap2Recv_60B420 {
-        int UI_Get_60B420();
+        int UI_Get_60B420(HWND hWnd);  // G42.39 def-derived
     };
     struct Gap2Recv_60B550 {
-        int UI_Get_60B550();
+        int UI_Get_60B550(HWND hWnd);  // G42.39 def-derived
     };
     struct Gap2Recv_60B610 {
-        int UI_Get_60B610();
+        int UI_Get_60B610(HWND hWnd);  // G42.39 def-derived
     };
     struct Gap2Recv_60B7A0 {
-        char UI_Get_60B7A0();
+        char UI_Get_60B7A0(HWND hWnd);  // G42.39 def-derived
     };
     struct Gap2Recv_60C7D0 {
-        char UI_Helper_60C7D0();
+        char UI_Helper_60C7D0();  // G42.39 def-derived
     };
     struct Gap2Recv_60C930 {
-        char UI_Helper_60C930();
+        char UI_Helper_60C930();  // G42.39 def-derived
     };
     struct Gap2Recv_60CAF0 {
-        char UI_Helper_60CAF0();
+        char UI_Helper_60CAF0();  // G42.39 def-derived
     };
     struct Gap2Recv_60CCC0 {
-        char UI_Helper_60CCC0();
+        char UI_Helper_60CCC0();  // G42.39 def-derived
     };
     struct Gap2Recv_60CDB0 {
-        char UI_Helper_60CDB0();
+        char UI_Helper_60CDB0();  // G42.39 def-derived
     };
     struct Gap2Recv_623E00 {
-        int Memory_Pop();
+        int Memory_Pop(HWND hWnd);  // G42.39 def-derived
     };
     struct Gap2Recv_625C00 {
-        u_short * Event_Process_625C00();
+    int vtable2;  // G42.39a supply
+    int vtable3;  // G42.39a supply
+        void* Event_Process_625C00(ObjectClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_6120 {
-        uint8_t Render_Helper(int);
+    int animation[8];  // G42.39a supply (indexed usage)
+    int currentMission;  // G42.39a supply
+    int deployAnim;  // G42.39a supply
+    int location[8];  // G42.39a supply (indexed usage)
+    int missionQueued;  // G42.39a supply
+    int missionStatus;  // G42.39a supply
+    int passengers[8];  // G42.39a supply (indexed usage)
+    int queuedMission;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        unsigned char Render_Helper(ObjectClass * aP1, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_62CB10 {
-        void UpdateAreaDamageEffect();
+    int AbstractClass_v;  // G42.39a supply
+    int attachedBomb8;  // G42.39a supply
+    int location[8];  // G42.39a supply (indexed usage)
+    int q02B;  // G42.39a supply
+    int q044;  // G42.39a supply
+    int u32_108;  // G42.39a supply
+    int u32_10C;  // G42.39a supply
+    int u32_12A;  // G42.39a supply
+    int u32_12C;  // G42.39a supply
+    int u32_12E;  // G42.39a supply
+    int u32_12F;  // G42.39a supply
+    int u32_131;  // G42.39a supply
+    int u32_39;  // G42.39a supply
+    int u32_41;  // G42.39a supply
+    int u32_49;  // G42.39a supply
+    int u8_45;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        void UpdateAreaDamageEffect();  // G42.39 def-derived
     };
     struct Gap2Recv_62E430 {
-        int CreateFireAtSW(int);
+    int pad21;  // G42.39a supply
+    int q031;  // G42.39a supply
+        int CreateFireAtSW(int aP1, IUnknown * aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_62E840 {
-        char UpdateProductionParticleSystem();
+    int animation[8];  // G42.39a supply (indexed usage)
+    int currentMission;  // G42.39a supply
+    int flashing[8];  // G42.39a supply (indexed usage)
+    int location[8];  // G42.39a supply (indexed usage)
+    int missionStartTime;  // G42.39a supply
+    int missionStatus;  // G42.39a supply
+    int missionTimer[8];  // G42.39a supply (indexed usage)
+        char UpdateProductionParticleSystem();  // G42.39 def-derived
     };
     struct Gap2Recv_62ED40 {
-        void UpdateBuildingParticleSystem();
+    int animation[8];  // G42.39a supply (indexed usage)
+    int currentMission;  // G42.39a supply
+    int isAliveFlag[8];  // G42.39a supply (indexed usage)
+    int lastCommands;  // G42.39a supply
+    int location[8];  // G42.39a supply (indexed usage)
+    int missionData;  // G42.39a supply
+    int missionQueued;  // G42.39a supply
+    int missionStartTime;  // G42.39a supply
+    int missionStatus;  // G42.39a supply
+    int missionTimer[8];  // G42.39a supply (indexed usage)
+    int queuedMission;  // G42.39a supply
+    int radioLinks[8];  // G42.39a supply (indexed usage)
+    int suspendedMission;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void UpdateBuildingParticleSystem();  // G42.39 def-derived
     };
     struct Gap2Recv_62F9A0 {
-        char UpdateBuildingDamageParticles();
+        char UpdateBuildingDamageParticles();  // G42.39 def-derived
     };
     struct Gap2Recv_630EA0 {
-        char UI_Get_630EA0();
+    int AbstractClass_v;  // G42.39a supply
+        char UI_Get_630EA0();  // G42.39 def-derived
     };
     struct Gap2Recv_631380 {
-        void* UI_Pop();
+    int AbstractClass_v;  // G42.39a supply
+        void* UI_Pop();  // G42.39 def-derived
     };
     struct Gap2Recv_631500 {
-        void UI_Pop_631500();
+    int AbstractClass_v;  // G42.39a supply
+        void UI_Pop_631500();  // G42.39 def-derived
     };
     struct Gap2Recv_6316E0 {
-        bool UI_Pop_631500_Pop(int a2);
+        bool UI_Pop_631500_Pop(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6319C0 {
-        void Network_Set();
+    int AbstractClass_v;  // G42.39a supply
+        void Network_Set();  // G42.39 def-derived
     };
     struct Gap2Recv_631B20 {
-        int UI_Pop_631500_Pop_Pop();
+    int AbstractClass_v;  // G42.39a supply
+        int UI_Pop_631500_Pop_Pop();  // G42.39 def-derived
     };
     struct Gap2Recv_632000 {
-        int System_Init_632000();
+    int reloadTimer[8];  // G42.39a supply (indexed usage)
+        int System_Init_632000(char* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_632030 {
-        char System_Init_632030();
+        char System_Init_632030(char* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_633AC0 {
-        void* ExecuteActionPlanManager_Helper();
+    int AbstractClass_v;  // G42.39a supply
+    int estimatedHealth;  // G42.39a supply
+    int isOnMap;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        void* ExecuteActionPlanManager_Helper();  // G42.39 def-derived
     };
     struct Gap2Recv_6342E0 {
-        int Team_Helper_6342E0(int);
+        int Team_Helper_6342E0(TechnoClass * aP1, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_6345A0 {
-        unsigned int * Render_Render_6345A0();
+        void* Render_Render_6345A0(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_634770 {
-        int Render_Render_634770();
+        int Render_Render_634770();  // G42.39 def-derived
     };
     struct Gap2Recv_634970 {
-        int Helper_634970();
+        int Helper_634970();  // G42.39 def-derived
     };
     struct Gap2Recv_635490 {
-        int Render_Render_635490();
+        int Render_Render_635490(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_636EB0 {
-        int ExecuteActionPlanManager_Helper_636EB0();
+        int ExecuteActionPlanManager_Helper_636EB0();  // G42.39 def-derived
     };
     struct Gap2Recv_637D00 {
-        char UI_Delete_Delete();
+        char UI_Delete_Delete();  // G42.39 def-derived
     };
     struct Gap2Recv_638C40 {
-        bool ExecuteActionPlanManager_Helper_638C40(char);
+        bool ExecuteActionPlanManager_Helper_638C40(int a2, char a3);  // G42.39 def-derived
     };
     struct Gap2Recv_63B050 {
-        void* Team_Load_63B050();
+        void* Team_Load_63B050();  // G42.39 def-derived
     };
     struct Gap2Recv_63C690 {
-        int RenderScenarioActionLines();
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int fallRate;  // G42.39a supply
+    int lineTrailer;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int uniqueId;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+        int RenderScenarioActionLines();  // G42.39 def-derived
     };
     struct Gap2Recv_63CAE0 {
-        int RenderScenarioActionLines2();
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int lineTrailer;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int u32_B0;  // G42.39a supply
+    int uniqueId;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+        int RenderScenarioActionLines2();  // G42.39 def-derived
     };
     struct Gap2Recv_63D0F0 {
-        int Render_Render_63D0F0();
+    int isSelected;  // G42.39a supply
+        int Render_Render_63D0F0();  // G42.39 def-derived
     };
     struct Gap2Recv_63D480 {
-        int DrawActionLineSegment(int);
+        int DrawActionLineSegment(Tactical * aP1, ObjectClass * aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_DAD0 {
-        int PackRGBFromBytes();
+    int AbstractClass_v;  // G42.39a supply
+        int PackRGBFromBytes();  // G42.39 def-derived
     };
     struct Gap2Recv_63DB20 {
-        bool HandlePlanningModeClick_Handle(void* a2);
+    int AbstractClass_v;  // G42.39a supply
+        bool HandlePlanningModeClick_Handle(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_63DEC0 {
-        unsigned int * ExecuteActionPlanManager_Helper_63DEC0(int);
+    int Capacity;  // G42.39a supply
+    int IsAllocated;  // G42.39a supply
+    int IsInitialized;  // G42.39a supply
+    int Items;  // G42.39a supply
+    int abstractFlags;  // G42.39a supply
+    int uniqueId;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* ExecuteActionPlanManager_Helper_63DEC0(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_63E1D0 {
-        unsigned int * ExecuteActionPlanManager_Helper_63E1D0(int);
+    int Capacity;  // G42.39a supply
+    int IsAllocated;  // G42.39a supply
+    int IsInitialized;  // G42.39a supply
+    int Items;  // G42.39a supply
+    int abstractFlags;  // G42.39a supply
+    int uniqueId;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* ExecuteActionPlanManager_Helper_63E1D0(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_63E5D0 {
-        char Team_Destroy();
+    int vtable1;  // G42.39a supply
+        char Team_Destroy(int aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_63EFB0 {
-        unsigned int * Object_Set(int);
+    int Capacity;  // G42.39a supply
+    int IsAllocated;  // G42.39a supply
+    int IsInitialized;  // G42.39a supply
+    int Items;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* Object_Set(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_641B00 {
-        char LoadMapPreviewImage();
+    int AbstractClass_v;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        char LoadMapPreviewImage(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_643720 {
-        int RenderBuildingProductionButton(int, int*, int, char);
+    int NeedsSaveOrLink;  // G42.39a supply
+    int q048;  // G42.39a supply
+    void * q04C;  // G42.39a supply (deref usage)
+    int referenceCount2;  // G42.39a supply
+    int u32_61;  // G42.39a supply
+        int RenderBuildingProductionButton(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, int a5, char a6);  // G42.39 def-derived
     };
     struct Gap2Recv_645BB0 {
-        int GetSuperWeaponTypeFlag();
+        int GetSuperWeaponTypeFlag();  // G42.39 def-derived
     };
     struct Gap2Recv_64A7B0 {
-        int RenderPlayerLatencyBars();
+        int RenderPlayerLatencyBars();  // G42.39 def-derived
     };
     struct Gap2Recv_652540 {
-        int Network_Process_652540();
+    int AbstractClass_v;  // G42.39a supply
+        int Network_Process_652540();  // G42.39 def-derived
     };
     struct Gap2Recv_652560 {
-        char Network_Process_652560();
+        char Network_Process_652560(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6525A0 {
-        char Network_Process_6525A0();
+        char Network_Process_6525A0(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6547C0 {
-        int * GenerateImageThumbnail(int*, int*, char);
+        void* GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2, RadarClass * aP3, RadarClass * aP4);  // G42.39 def-derived
     };
     struct Gap2Recv_6550C0 {
-        unsigned int * Team_Load_6550C0(int16_t*);
+        void* Team_Load_6550C0(unsigned int * a2, int16_t * a3);  // G42.39 def-derived
     };
     struct Gap2Recv_659510 {
-        int SpreadRadiationAreaEffect_Helper(int);
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+        int SpreadRadiationAreaEffect_Helper(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_659530 {
-        int SpreadRadiationAreaEffect_Helper_659530();
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+        int SpreadRadiationAreaEffect_Helper_659530(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_659650 {
-        bool RenderProjectileTrail();
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int attachedTag[8];  // G42.39a supply (indexed usage)
+    int fallRate;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+        bool RenderProjectileTrail();  // G42.39 def-derived
     };
     struct Gap2Recv_659E30 {
-        int Weapon_Update_Update();
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int attachedTag[8];  // G42.39a supply (indexed usage)
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int fallRate;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+        int Weapon_Update_Update();  // G42.39 def-derived
     };
     struct Gap2Recv_659EE0 {
-        int Weapon_Update_Update_659EE0();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int visibilityFlags;  // G42.39a supply
+        int Weapon_Update_Update_659EE0();  // G42.39 def-derived
     };
     struct Gap2Recv_659FF0 {
-        long long Weapon_Update_Update_659FF0();
+        long long Weapon_Update_Update_659FF0();  // G42.39 def-derived
     };
     struct Gap2Recv_65A1B0 {
-        int * Render_Render_65A1B0();
+    int AbstractClass_v;  // G42.39a supply
+        void* Render_Render_65A1B0(BuildingTypeClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_65A7E0 {
-        unsigned int * Helper_65A7E0();
+    int radioLinks[8];  // G42.39a supply (indexed usage)
+    int vtable1;  // G42.39a supply
+        void* Helper_65A7E0(TechnoClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_65C250 {
-        unsigned char * WinMain_Helper_65C250(int);
+    int RAMFileClass_field_0x10;  // G42.39a supply
+    int RAMFileClass_field_0x8;  // G42.39a supply
+    int RAMFileClass_field_0xC;  // G42.39a supply
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+    int q01D;  // G42.39a supply
+        char* WinMain_Helper_65C250(int a2, int aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_65C2A0 {
-        void WinMain_Helper_65C2A0();
+    int RAMFileClass_field_0x8;  // G42.39a supply
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+    int q01D;  // G42.39a supply
+    int referenceCount;  // G42.39a supply
+        void WinMain_Helper_65C2A0();  // G42.39 def-derived
     };
     struct Gap2Recv_65C6D0 {
-        unsigned int * SeedInitRNG();
+    int AbstractClass_v;  // G42.39a supply
+        void* SeedInitRNG(int aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_65DD30 {
-        void* ConstructTeamMembers();
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int location[8];  // G42.39a supply (indexed usage)
+    int u32_39;  // G42.39a supply
+        void* ConstructTeamMembers();  // G42.39 def-derived
     };
     struct Gap2Recv_65FB80 {
-        unsigned int * Team_Load_65FB80(int);
+    int AbstractClass_v;  // G42.39a supply
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int fallRate;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        void* Team_Load_65FB80(int a2, IUnknown * aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_65FE00 {
-        void Map_Helper_65FE00();
+    int AbstractClass_v;  // G42.39a supply
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int attachedTag[8];  // G42.39a supply (indexed usage)
+    int fallRate;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        void Map_Helper_65FE00();  // G42.39 def-derived
     };
     struct Gap2Recv_660050 {
-        char RenderGradientTrapezoid();
+        char RenderGradientTrapezoid();  // G42.39 def-derived
     };
     struct Gap2Recv_660540 {
-        int Map_Helper_660540();
+        int Map_Helper_660540();  // G42.39 def-derived
     };
     struct Gap2Recv_660730 {
-        int Render_Render_660730();
+    int uniqueId;  // G42.39a supply
+    int vtable4;  // G42.39a supply
+        int Render_Render_660730(ObjectClass ** v4);  // G42.39 def-derived
     };
     struct Gap2Recv_660BB0 {
-        void* UI_Create_734120_Create();
+    int AbstractClass_v;  // G42.39a supply
+        void* UI_Create_734120_Create();  // G42.39 def-derived
     };
     struct Gap2Recv_660BE0 {
-        void* UI_Create_734120_Create_660BE0();
+    int AbstractClass_v;  // G42.39a supply
+        void* UI_Create_734120_Create_660BE0();  // G42.39 def-derived
     };
     struct Gap2Recv_661770 {
-        void * SHA1TickRNG();
+    int u32_14D0;  // G42.39a supply
+        void* SHA1TickRNG(Straw * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_66B900 {
-        int ReadCrateRulesINI();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int animation[8];  // G42.39a supply (indexed usage)
+    int u32_1140;  // G42.39a supply
+    int u32_1148;  // G42.39a supply
+    int u32_1464;  // G42.39a supply
+    int u32_1468;  // G42.39a supply
+    int u32_146C;  // G42.39a supply
+    int u32_1470;  // G42.39a supply
+    int u32_1474;  // G42.39a supply
+    int u32_1678;  // G42.39a supply
+    int u32_167C;  // G42.39a supply
+    int u32_172C;  // G42.39a supply
+    int u32_718;  // G42.39a supply
+        int ReadCrateRulesINI();  // G42.39 def-derived
     };
     struct Gap2Recv_672230 {
-        int ReadMaximumPlayersINI();
+    int u32_14D0;  // G42.39a supply
+        int ReadMaximumPlayersINI();  // G42.39 def-derived
     };
     struct Gap2Recv_672840 {
-        int ReadBuildingTypesBuildingTypeClass();
+        int ReadBuildingTypesBuildingTypeClass();  // G42.39 def-derived
     };
     struct Gap2Recv_678850 {
-        int InitInterfaceStubsCOM();
+    int AALimit[8];  // G42.39a supply (indexed usage)
+    int AIPlayers;  // G42.39a supply
+    int AISafeDistance[8];  // G42.39a supply (indexed usage)
+    int Aircraft[8];  // G42.39a supply (indexed usage)
+    int AutocreateTime[8];  // G42.39a supply (indexed usage)
+    int BarrelParticle;  // G42.39a supply
+    int BaseBias;  // G42.39a supply
+    int BaseUnit[8];  // G42.39a supply (indexed usage)
+    int Behind;  // G42.39a supply
+    int BombParachute[8];  // G42.39a supply (indexed usage)
+    int BridgeDestruction[8];  // G42.39a supply (indexed usage)
+    int BuildingGarrisonedSound[8];  // G42.39a supply (indexed usage)
+    int C4Warhead[8];  // G42.39a supply (indexed usage)
+    int CHRONOSK_SHP;  // G42.39a supply
+    int CMislWarhead[8];  // G42.39a supply (indexed usage)
+    int CanDetonateTimeBomb[8];  // G42.39a supply (indexed usage)
+    int ChronoRangeMinimum[8];  // G42.39a supply (indexed usage)
+    int ChronoReinfDelay[8];  // G42.39a supply (indexed usage)
+    int CrateFireSound;  // G42.39a supply
+    int CrateMaximum[8];  // G42.39a supply (indexed usage)
+    int CrateRevealSound;  // G42.39a supply
+    int CrateUnitSound;  // G42.39a supply
+    int CreateInfantrySound;  // G42.39a supply
+    int DropPodPuff;  // G42.39a supply
+    int DropZoneRadius[8];  // G42.39a supply (indexed usage)
+    int Engineer[8];  // G42.39a supply (indexed usage)
+    int FlashFrameTime;  // G42.39a supply
+    int GDIBaseDefenseCoefficient[8];  // G42.39a supply (indexed usage)
+    int GDIWallDefenseCoefficient[8];  // G42.39a supply (indexed usage)
+    int GUICheckboxSound[8];  // G42.39a supply (indexed usage)
+    int GUIMoveInSound[8];  // G42.39a supply (indexed usage)
+    int GUITabSound[8];  // G42.39a supply (indexed usage)
+    int HarvesterDumpRate;  // G42.39a supply
+    int HarvesterLoadRate;  // G42.39a supply
+    int HelipadRatio[8];  // G42.39a supply (indexed usage)
+    int InfantryBaseMult[8];  // G42.39a supply (indexed usage)
+    int InfantryBrute;  // G42.39a supply
+    int InfantryMutate;  // G42.39a supply
+    int IvanWarhead[8];  // G42.39a supply (indexed usage)
+    int LargeFire[8];  // G42.39a supply (indexed usage)
+    int LargeVisceroid;  // G42.39a supply
+    int MaxUnitCount;  // G42.39a supply
+    int MaxWaypointPathLength;  // G42.39a supply
+    int MinUnitCount;  // G42.39a supply
+    int MissileSafetyAltitude;  // G42.39a supply
+    int MyEffectivenessCoefficientDefault;  // G42.39a supply
+    int NukeProjectile[8];  // G42.39a supply (indexed usage)
+    int PatrolScan[8];  // G42.39a supply (indexed usage)
+    int PlaceBeaconSound;  // G42.39a supply
+    int Production;  // G42.39a supply
+    int RadarEventColorSpeed[8];  // G42.39a supply (indexed usage)
+    int RepairSell[8];  // G42.39a supply (indexed usage)
+    int SilverCrate[8];  // G42.39a supply (indexed usage)
+    int SmallVisceroid;  // G42.39a supply
+    int SovietSurvivorDivisor[8];  // G42.39a supply (indexed usage)
+    int SpyPowerBlackout[8];  // G42.39a supply (indexed usage)
+    int SuperWeapons;  // G42.39a supply
+    int TargetSpecialThreatCoefficientDefault;  // G42.39a supply
+    int ThirdCrew[8];  // G42.39a supply (indexed usage)
+    int TreeFire[8];  // G42.39a supply (indexed usage)
+    int VeteranRatio;  // G42.39a supply
+    int WarRatio[8];  // G42.39a supply (indexed usage)
+    int __pad_A0;  // G42.39a supply
+    int __pad_C3C;  // G42.39a supply
+        int InitInterfaceStubsCOM();  // G42.39 def-derived
     };
     struct Gap2Recv_67BFA0 {
-        unsigned int * System_Load_67BFA0();
+    int vtable1;  // G42.39a supply
+        void* System_Load_67BFA0(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_681060 {
-        int Map_Save();
+        int Map_Save(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_681080 {
-        int Map_Save_681080();
+    int AbstractClass_v;  // G42.39a supply
+        int Map_Save_681080(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6810A0 {
-        wchar_t * Map_Save_6810A0();
+        void* Map_Save_6810A0(void* Source);  // G42.39 def-derived
     };
     struct Gap2Recv_6810D0 {
-        wchar_t * Map_Save_6810D0();
+        void* Map_Save_6810D0(void* Source);  // G42.39 def-derived
     };
     struct Gap2Recv_681110 {
-        int Map_Save_681110();
+        int Map_Save_681110(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_681130 {
-        int Map_Save_681130();
+        int Map_Save_681130(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6811C0 {
-        char * Map_Save_6811C0();
+        char* Map_Save_6811C0(char* Source);  // G42.39 def-derived
     };
     struct Gap2Recv_681200 {
-        int Map_Save_681200();
+    int turretRecoil[8];  // G42.39a supply (indexed usage)
+        int Map_Save_681200(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_681240 {
-        int Map_Save_681240();
+    int turretRecoil[8];  // G42.39a supply (indexed usage)
+        int Map_Save_681240(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_681280 {
-        int Map_Save_681280();
+    int turretRecoil[8];  // G42.39a supply (indexed usage)
+        int Map_Save_681280(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6812C0 {
-        int Map_Save_6812C0();
+    int turretRecoil[8];  // G42.39a supply (indexed usage)
+        int Map_Save_6812C0(void * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_681840 {
-        int ScenarioPropertyReadCOM();
+    int customSound0;  // G42.39a supply
+    int u32_624;  // G42.39a supply
+    int u32_632;  // G42.39a supply
+        int ScenarioPropertyReadCOM(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_683050 {
-        int Map_Read_683050();
+    int AbstractClass_v;  // G42.39a supply
+        int Map_Read_683050();  // G42.39 def-derived
     };
     struct Gap2Recv_683060 {
-        int ReleaseCOM();
+    int AbstractClass_v;  // G42.39a supply
+        int ReleaseCOM();  // G42.39 def-derived
     };
     struct Gap2Recv_68C260 {
-        char DynamicVector_PushBack();
+    int vtable1;  // G42.39a supply
+        char DynamicVector_PushBack(void* aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_68C860 {
-        int LoadTheaterClassMIX_Load(int, int, int, int);
+        int LoadTheaterClassMIX_Load(BlowStraw * aP1, int a3, int a4, int a5, int a6);  // G42.39 def-derived
     };
     struct Gap2Recv_68FBB0 {
-        int RenderScoreTypeText(int, int);
+    int NeedsSaveOrLink;  // G42.39a supply
+    int fallRate;  // G42.39a supply
+        int RenderScoreTypeText(int a2, int a3, ScoreScreen * aP3);  // G42.39 def-derived
     };
     struct Gap2Recv_68FFE0 {
-        signed int Render_Render_68FFE0(int);
+        int Render_Render_68FFE0(int a2, ScoreScreen * aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_691590 {
-        char SetLandTypeMap();
+    int fallRate;  // G42.39a supply
+        char SetLandTypeMap();  // G42.39 def-derived
     };
     struct Gap2Recv_692290 {
-        int SmallFunc_692290();
+        int SmallFunc_692290();  // G42.39 def-derived
     };
     struct Gap2Recv_693440 {
-        char ScrollMapEdge();
+    int AbstractClass_v;  // G42.39a supply
+    int u32_554C;  // G42.39a supply
+    int u32_5550;  // G42.39a supply
+    int u32_5554;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        char ScrollMapEdge(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_695BC0 {
-        char ApplyModemConfigSettings();
+    int AbstractClass_v;  // G42.39a supply
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int isAliveFlag[8];  // G42.39a supply (indexed usage)
+    int isInLogic;  // G42.39a supply
+    int lastLayer;  // G42.39a supply
+    int lineTrailer;  // G42.39a supply
+    int location[8];  // G42.39a supply (indexed usage)
+    int parachute;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        char ApplyModemConfigSettings();  // G42.39 def-derived
     };
     struct Gap2Recv_696200 {
-        int InitializeModemPortSelect();
+    int AbstractClass_v;  // G42.39a supply
+    int parachute;  // G42.39a supply
+    int q0484;  // G42.39a supply
+    int u32_F8;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        int InitializeModemPortSelect();  // G42.39 def-derived
     };
     struct Gap2Recv_6967B0 {
-        int DlgProcLoadGame_Load();
+    int AbstractClass_v;  // G42.39a supply
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int AbstractClass;  // G42.39a supply
+        int DlgProcLoadGame_Load();  // G42.39 def-derived
     };
     struct Gap2Recv_696C40 {
-        int DlgProcLoadGame_Load_696C40();
+    int AbstractClass_v;  // G42.39a supply
+    int isInLogic;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        int DlgProcLoadGame_Load_696C40();  // G42.39 def-derived
     };
     struct Gap2Recv_697F10 {
-        int ReadGameSettingsINI(int, int*, int*);
+    int AbstractClass_v;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        int ReadGameSettingsINI(CCINIClass * aP1, int a1, unsigned int * a3, unsigned int * a4);  // G42.39 def-derived
     };
     struct Gap2Recv_6990A0 {
-        void SaveConfigWOL();
+    int __pad_18C;  // G42.39a supply
+    int ambientParticles;  // G42.39a supply
+    int ammoReloadTimer;  // G42.39a supply
+    int chronoLockRemaining;  // G42.39a supply
+    int currentBurstCount;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+    int radarFlashTimer[8];  // G42.39a supply (indexed usage)
+    int sparkParticles;  // G42.39a supply
+    int targetingTimer[8];  // G42.39a supply (indexed usage)
+    int u32_2884;  // G42.39a supply
+    int u32_2888;  // G42.39a supply
+    int u32_288C;  // G42.39a supply
+    int u32_2890;  // G42.39a supply
+    int u32_2894;  // G42.39a supply
+    int u32_2898;  // G42.39a supply
+    int u32_289C;  // G42.39a supply
+    int u32_28A0;  // G42.39a supply
+    int u32_28A4;  // G42.39a supply
+    int u32_2900;  // G42.39a supply
+    int u32_290C;  // G42.39a supply
+    int u32_2918;  // G42.39a supply
+    int u32_2924;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+        void SaveConfigWOL();  // G42.39 def-derived
     };
     struct Gap2Recv_69B170 {
-        void ParseAndApplyAlliances();
+    int AbstractClass_v;  // G42.39a supply
+    int u32_688;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        void ParseAndApplyAlliances();  // G42.39 def-derived
     };
     struct Gap2Recv_69BBF0 {
-        void Network_Disconnect_69BBF0();
+        void Network_Disconnect_69BBF0(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_69D870 {
-        unsigned int * ParseAndApplyAlliances_Parse(int);
+    int Capacity;  // G42.39a supply
+    int IsAllocated;  // G42.39a supply
+    int IsInitialized;  // G42.39a supply
+    int Items;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* ParseAndApplyAlliances_Parse(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_69E900 {
-        char Helper_69E900();
+        char Helper_69E900(unsigned int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6A4F20 {
-        int UI_Init();
+    int dword_A8ED84;  // G42.39a supply
+    int u32_1520;  // G42.39a supply
+    int u32_1528;  // G42.39a supply
+    int u32_1548;  // G42.39a supply
+    int u32_1554;  // G42.39a supply
+    int u32_1558;  // G42.39a supply
+    int u32_155C;  // G42.39a supply
+        int UI_Init(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6A94F0 {
-        int SmallFunc_6A94F0();
+    int alignmentPadding69[8];  // G42.39a supply (indexed usage)
+    int bombVisible;  // G42.39a supply
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+        int SmallFunc_6A94F0(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6AC840 {
-        char * System_Init_6AC840();
+    int u32_11CE;  // G42.39a supply
+        char* System_Init_6AC840(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6AC8D0 {
-        unsigned int * System_Init_6AC8D0(int);
+    int Capacity;  // G42.39a supply
+    int IsAllocated;  // G42.39a supply
+    int IsInitialized;  // G42.39a supply
+    int Items;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* System_Init_6AC8D0(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_6B0490 {
-        void* Event_Process_6B0490();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+        void* Event_Process_6B0490();  // G42.39 def-derived
     };
     struct Gap2Recv_6B2520 {
-        char System_Init_6B2520();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int occupant;  // G42.39a supply
+    int radioLinks[8];  // G42.39a supply (indexed usage)
+        char System_Init_6B2520();  // G42.39 def-derived
     };
     struct Gap2Recv_6B4100 {
-        int Map_Get_6B4100();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int occupant;  // G42.39a supply
+        int Map_Get_6B4100();  // G42.39 def-derived
     };
     struct Gap2Recv_6B5440 {
-        int Object_Read_6B5440();
+        int Object_Read_6B5440();  // G42.39 def-derived
     };
     struct Gap2Recv_6B8AF0 {
-        bool ApplyGameOptions_Helper();
+    int AbstractClass_v;  // G42.39a supply
+        bool ApplyGameOptions_Helper(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6BAFA0 {
-        void Render_Load_6BAFA0();
+    int AbstractClass_v;  // G42.39a supply
+        void Render_Load_6BAFA0();  // G42.39 def-derived
     };
     struct Gap2Recv_6BB990 {
-        int TopLevelExceptionFilter(void* ExceptionInfo, int a3, int a4, int a5);
+    int AbstractClass_v;  // G42.39a supply
+        int TopLevelExceptionFilter(void* ExceptionInfo, int a3, int a4, int a5);  // G42.39 def-derived
     };
     struct Gap2Recv_6BFD40 {
-        void* WinMain_Helper_6BFD40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6BFD40();  // G42.39 def-derived
     };
     struct Gap2Recv_6BFEC0 {
-        void* WinMain_Helper_6BFEC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6BFEC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C0040 {
-        void* WinMain_Helper_6C0040();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C0040();  // G42.39 def-derived
     };
     struct Gap2Recv_6C01C0 {
-        void* WinMain_Helper_6C01C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C01C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C0340 {
-        void* WinMain_Helper_6C0340();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C0340();  // G42.39 def-derived
     };
     struct Gap2Recv_6C04C0 {
-        void* WinMain_Helper_6C04C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C04C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C0640 {
-        void* WinMain_Helper_6C0640();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C0640();  // G42.39 def-derived
     };
     struct Gap2Recv_6C07C0 {
-        void* WinMain_Helper_6C07C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C07C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C0940 {
-        void* WinMain_Helper_6C0940();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C0940();  // G42.39 def-derived
     };
     struct Gap2Recv_6C0C40 {
-        void* WinMain_Helper_6C0C40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C0C40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C0DC0 {
-        void* WinMain_Helper_6C0DC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C0DC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C0F40 {
-        void* WinMain_Helper_6C0F40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C0F40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C10C0 {
-        void* WinMain_Helper_6C10C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C10C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C1240 {
-        void* WinMain_Helper_6C1240();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C1240();  // G42.39 def-derived
     };
     struct Gap2Recv_6C13C0 {
-        void* WinMain_Helper_6C13C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C13C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C1540 {
-        void* WinMain_Helper_6C1540();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C1540();  // G42.39 def-derived
     };
     struct Gap2Recv_6C16C0 {
-        void* WinMain_Helper_6C16C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C16C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C1840 {
-        void* WinMain_Helper_6C1840();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C1840();  // G42.39 def-derived
     };
     struct Gap2Recv_6C19C0 {
-        void* WinMain_Helper_6C19C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C19C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C1B40 {
-        void* WinMain_Helper_6C1B40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C1B40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C1CC0 {
-        void* WinMain_Helper_6C1CC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C1CC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C1E40 {
-        void* WinMain_Helper_6C1E40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C1E40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C1FC0 {
-        void* WinMain_Helper_6C1FC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C1FC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C2140 {
-        void* WinMain_Helper_6C2140();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C2140();  // G42.39 def-derived
     };
     struct Gap2Recv_6C22C0 {
-        void* WinMain_Helper_6C22C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C22C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C2440 {
-        void* WinMain_Helper_6C2440();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C2440();  // G42.39 def-derived
     };
     struct Gap2Recv_6C25C0 {
-        void* WinMain_Helper_6C25C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C25C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C2740 {
-        void* WinMain_Helper_6C2740();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C2740();  // G42.39 def-derived
     };
     struct Gap2Recv_6C28C0 {
-        void* WinMain_Helper_6C28C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C28C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C2A40 {
-        void* WinMain_Helper_6C2A40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C2A40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C2BC0 {
-        void* WinMain_Helper_6C2BC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C2BC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C2D40 {
-        void* WinMain_Helper_6C2D40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C2D40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C2EC0 {
-        void* WinMain_Helper_6C2EC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C2EC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C3040 {
-        void* WinMain_Helper_6C3040();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C3040();  // G42.39 def-derived
     };
     struct Gap2Recv_6C31C0 {
-        void* WinMain_Helper_6C31C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C31C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C3340 {
-        void* WinMain_Helper_6C3340();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C3340();  // G42.39 def-derived
     };
     struct Gap2Recv_6C34C0 {
-        void* WinMain_Helper_6C34C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C34C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C3640 {
-        void* WinMain_Helper_6C3640();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C3640();  // G42.39 def-derived
     };
     struct Gap2Recv_6C37C0 {
-        void* WinMain_Helper_6C37C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C37C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C3940 {
-        void* WinMain_Helper_6C3940();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C3940();  // G42.39 def-derived
     };
     struct Gap2Recv_6C3AC0 {
-        void* WinMain_Helper_6C3AC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C3AC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C3C40 {
-        void* WinMain_Helper_6C3C40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C3C40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C3DC0 {
-        void* WinMain_Helper_6C3DC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C3DC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C3F40 {
-        void* WinMain_Helper_6C3F40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C3F40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C40C0 {
-        void* WinMain_Helper_6C40C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C40C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C4240 {
-        void* WinMain_Helper_6C4240();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C4240();  // G42.39 def-derived
     };
     struct Gap2Recv_6C43C0 {
-        void* WinMain_Helper_6C43C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C43C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C4540 {
-        void* WinMain_Helper_6C4540();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C4540();  // G42.39 def-derived
     };
     struct Gap2Recv_6C46C0 {
-        void* WinMain_Helper_6C46C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C46C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C4840 {
-        void* WinMain_Helper_6C4840();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C4840();  // G42.39 def-derived
     };
     struct Gap2Recv_6C49C0 {
-        void* WinMain_Helper_6C49C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C49C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C4B40 {
-        void* WinMain_Helper_6C4B40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C4B40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C4CC0 {
-        void* WinMain_Helper_6C4CC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C4CC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C4E40 {
-        void* WinMain_Helper_6C4E40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C4E40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C4FC0 {
-        void* WinMain_Helper_6C4FC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C4FC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C5140 {
-        void* WinMain_Helper_6C5140();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C5140();  // G42.39 def-derived
     };
     struct Gap2Recv_6C52C0 {
-        void* WinMain_Helper_6C52C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C52C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C5440 {
-        void* WinMain_Helper_6C5440();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C5440();  // G42.39 def-derived
     };
     struct Gap2Recv_6C55C0 {
-        void* WinMain_Helper_6C55C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C55C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C5740 {
-        void* WinMain_Helper_6C5740();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C5740();  // G42.39 def-derived
     };
     struct Gap2Recv_6C58C0 {
-        void* WinMain_Helper_6C58C0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C58C0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C5A40 {
-        void* WinMain_Helper_6C5A40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C5A40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C5BC0 {
-        void* WinMain_Helper_6C5BC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C5BC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C5D40 {
-        void* WinMain_Helper_6C5D40();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C5D40();  // G42.39 def-derived
     };
     struct Gap2Recv_6C5EC0 {
-        void* WinMain_Helper_6C5EC0();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C5EC0();  // G42.39 def-derived
     };
     struct Gap2Recv_6C6040 {
-        void* WinMain_Helper_6C6040();
+    int vtable1;  // G42.39a supply
+        void* WinMain_Helper_6C6040();  // G42.39 def-derived
     };
     struct Gap2Recv_6C61C0 {
-        int COM_SafeRelease();
+    int AbstractClass_v;  // G42.39a supply
+        int COM_SafeRelease();  // G42.39 def-derived
     };
     struct Gap2Recv_6C6B00 {
-        unsigned int * Audio_Read_6C6B00();
+    int AbstractClass_v;  // G42.39a supply
+        void* Audio_Read_6C6B00(AbstractClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_6C8870 {
-        char Audio_Read_6C8870();
+    int AbstractClass_v;  // G42.39a supply
+        char Audio_Read_6C8870();  // G42.39 def-derived
     };
     struct Gap2Recv_6C9900 {
-        void* Render_Parse();
+    int AbstractClass_v;  // G42.39a supply
+        void* Render_Parse();  // G42.39 def-derived
     };
     struct Gap2Recv_6C9F10 {
-        int ParseMovieSubtitles();
+    int u32_804;  // G42.39a supply
+    int vtable2;  // G42.39a supply
+        int ParseMovieSubtitles(char* Source);  // G42.39 def-derived
     };
     struct Gap2Recv_6CABA0 {
-        unsigned int * Render_Parse_6CABA0(int);
+    int Capacity;  // G42.39a supply
+    int IsAllocated;  // G42.39a supply
+    int IsInitialized;  // G42.39a supply
+    int Items;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* Render_Parse_6CABA0(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_6CEE60 {
-        int ObjectTypeClass_Read();
+        int ObjectTypeClass_Read();  // G42.39 def-derived
     };
     struct Gap2Recv_6CF1D0 {
-        void SmallFunc_6CF1D0();
+    int SwizzleManagerClass_field_0x04;  // G42.39a supply
+    int SwizzleManagerClass_field_0x08;  // G42.39a supply
+    int SwizzleManagerClass_field_0x0C;  // G42.39a supply
+    int SwizzleManagerClass_field_0x10;  // G42.39a supply
+    int SwizzleManagerClass_field_0x1C;  // G42.39a supply
+    int SwizzleManagerClass_field_0x20;  // G42.39a supply
+    int SwizzleManagerClass_field_0x24;  // G42.39a supply
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+        void SmallFunc_6CF1D0();  // G42.39 def-derived
     };
     struct Gap2Recv_6D04D0 {
-        int SidebarUpdateAll();
+    int vtable1;  // G42.39a supply
+        int SidebarUpdateAll();  // G42.39 def-derived
     };
     struct Gap2Recv_6D1E30 {
-        unsigned int * SmallFunc_6D1E30();
+    int Tactical_field_0x2[8];  // G42.39a supply (indexed usage)
+    int Tactical_field_0x8[8];  // G42.39a supply (indexed usage)
+    int Tactical_field_0xC[8];  // G42.39a supply (indexed usage)
+    int Tactical_field_0xDA4;  // G42.39a supply
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+    int __pad_DA8[8];  // G42.39a supply (indexed usage)
+        void* SmallFunc_6D1E30(AbstractClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_6D3290 {
-        int DrawBuildingAnimFrame(int*, char);
+    int q0B4;  // G42.39a supply
+    int q108;  // G42.39a supply
+    int visibleArea;  // G42.39a supply
+    int visibleCellCount;  // G42.39a supply
+    int visibleCells;  // G42.39a supply
+        int DrawBuildingAnimFrame(AbstractClass * aP1, int * a2, char a4);  // G42.39 def-derived
     };
     struct Gap2Recv_6D3470 {
-        int DrawBuildingShadow(int*, char);
+        int DrawBuildingShadow(IUnknown * aP1, AbstractClass * aP2, char a4);  // G42.39 def-derived
     };
     struct Gap2Recv_6D5730 {
-        int RenderBridgeRadarBlips(int*);
+    int queuedMission;  // G42.39a supply
+    int suspendedMission;  // G42.39a supply
+        int RenderBridgeRadarBlips(AbstractClass * aP1, AbstractClass * aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_6D5C50 {
-        int RenderRadarBlips(int);
+        int RenderRadarBlips(char a2, AbstractClass * aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_6D6170 {
-        unsigned int * RequestMapSnapshot();
+    int u32_D64;  // G42.39a supply
+    int u32_D68;  // G42.39a supply
+        void* RequestMapSnapshot(AbstractClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_6D9CE0 {
-        int FindBuildingsInScreenRect(int, int, int);
+    int fallRate;  // G42.39a supply
+    int u32_2D;  // G42.39a supply
+    int u32_DB0;  // G42.39a supply
+        int FindBuildingsInScreenRect(int a2, int a3, int a4, int a5);  // G42.39 def-derived
     };
     struct Gap2Recv_6DA9D0 {
-        char * RenderSelectionBeacons();
+    int fallRate;  // G42.39a supply
+    int u32_2D;  // G42.39a supply
+        char* RenderSelectionBeacons(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6DAD60 {
-        int RenderRallyPointLines();
+    int fallRate;  // G42.39a supply
+    int u32_2D;  // G42.39a supply
+    int u32_DA0;  // G42.39a supply
+        int RenderRallyPointLines(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6DC420 {
-        int GetHeightMap();
+    int u32_DB0;  // G42.39a supply
+        int GetHeightMap();  // G42.39 def-derived
     };
     struct Gap2Recv_6E0490 {
-        char PlayWaypointEffect(int, int, int);
+    int isAliveFlag[8];  // G42.39a supply (indexed usage)
+        char PlayWaypointEffect(int a2, int a3, int a4, IUnknown * aP4);  // G42.39 def-derived
     };
     struct Gap2Recv_6E14A0 {
-        char ProcessDataObjectClass(int, int, int);
+    int isAliveFlag[8];  // G42.39a supply (indexed usage)
+        char ProcessDataObjectClass(int a2, int a3, int a4, int a5);  // G42.39 def-derived
     };
     struct Gap2Recv_6E5FE0 {
-        int SaveTriggerTagsToINI();
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+        int SaveTriggerTagsToINI();  // G42.39 def-derived
     };
     struct Gap2Recv_6E7330 {
-        int System_Read_6E7330();
+    int AbstractClass_v;  // G42.39a supply
+        int System_Read_6E7330();  // G42.39 def-derived
     };
     struct Gap2Recv_6E7C20 {
-        void* Network_Process_6E7C20();
+    int AbstractClass_v;  // G42.39a supply
+        void* Network_Process_6E7C20();  // G42.39 def-derived
     };
     struct Gap2Recv_6EA0D0 {
-        void SelectTeamProductionBuilding();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int attachedTag[8];  // G42.39a supply (indexed usage)
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int fallRate;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+    int visibilityFlags;  // G42.39a supply
+        void SelectTeamProductionBuilding();  // G42.39 def-derived
     };
     struct Gap2Recv_6ED200 {
-        char AssignTeamProductionFacilities(int);
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int occupant;  // G42.39a supply
+        char AssignTeamProductionFacilities(ScriptClass * aP1, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_6EE800 {
-        char SelectTeamMembers(int);
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int fallRate;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int u32_35;  // G42.39a supply
+    int u32_564C;  // G42.39a supply
+    int u32_5658;  // G42.39a supply
+    int visibilityFlags;  // G42.39a supply
+        char SelectTeamMembers(ScriptClass * aP1, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_6EF110 {
-        char DispatchTeamOrders(int);
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int occupant;  // G42.39a supply
+        char DispatchTeamOrders(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_6EF470 {
-        char Team_Create();
+    int occupant;  // G42.39a supply
+        char Team_Create();  // G42.39 def-derived
     };
     struct Gap2Recv_6EF700 {
-        void DeployTeamMembersAtStart(char);
+    int NeedsSaveOrLink4;  // G42.39a supply
+    int needsRedraw;  // G42.39a supply
+        void DeployTeamMembersAtStart(ScriptClass * aP1, char a3);  // G42.39 def-derived
     };
     struct Gap2Recv_6F2230 {
-        unsigned int * Team_Helper_6F2230(int);
+    int Capacity;  // G42.39a supply
+    int IsAllocated;  // G42.39a supply
+    int IsInitialized;  // G42.39a supply
+    int Items;  // G42.39a supply
+    int abstractFlags;  // G42.39a supply
+    int uniqueId;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* Team_Helper_6F2230(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_6F25E0 {
-        char Team_Helper_6F25E0();
+    int vtable1;  // G42.39a supply
+        char Team_Helper_6F25E0(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_6F2780 {
-        unsigned int * Team_Helper_6F2780();
+    int vtable1;  // G42.39a supply
+        void* Team_Helper_6F2780(void* aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_6F27F0 {
-        unsigned int * Team_Helper_6F27F0(int*);
+    int Capacity;  // G42.39a supply
+    int IsAllocated;  // G42.39a supply
+    int IsInitialized;  // G42.39a supply
+    int Items;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* Team_Helper_6F27F0(int a2, void* a3);  // G42.39 def-derived
     };
     struct Gap2Recv_6FD800 {
-        int SpreadRadiationAreaEffect();
+    int AbstractClass_v;  // G42.39a supply
+    int cloakState;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        int SpreadRadiationAreaEffect(InfantryClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_7087C0 {
-        bool ValidateAttackTarget(int);
+    int abstractFlags;  // G42.39a supply
+    int attachedTag2;  // G42.39a supply
+    int currentMission;  // G42.39a supply
+    int hasParachute6;  // G42.39a supply
+    int owner;  // G42.39a supply
+    int q1104;  // G42.39a supply
+    int q1280;  // G42.39a supply
+    int q175;  // G42.39a supply
+    int q17C6;  // G42.39a supply
+    int target;  // G42.39a supply
+    int u32_6C4;  // G42.39a supply
+    int u32_D80;  // G42.39a supply
+    int uniqueId4;  // G42.39a supply
+        bool ValidateAttackTarget(TechnoClass * aP1, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_70E5A0 {
-        int UpdateTechnoIdleTimer();
+    int alignmentPadding69[8];  // G42.39a supply (indexed usage)
+    int bombVisible;  // G42.39a supply
+    int objectTypeFlags9;  // G42.39a supply
+    int q0A08;  // G42.39a supply
+    int u32_198;  // G42.39a supply
+    int u32_19C;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+        int UpdateTechnoIdleTimer();  // G42.39 def-derived
     };
     struct Gap2Recv_70F1D0 {
-        char DrawBuildingRangeIndicator(int);
+    int u32_12C;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+        char DrawBuildingRangeIndicator(TechnoClass * aP1, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_710750 {
-        char Object_Helper_710750();
+        char Object_Helper_710750(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_721D10 {
-        char SmallFunc_721D10();
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+        char SmallFunc_721D10();  // G42.39 def-derived
     };
     struct Gap2Recv_722440 {
-        void PropagateCellOccupancy();
+    int location[8];  // G42.39a supply (indexed usage)
+    int passengers[8];  // G42.39a supply (indexed usage)
+    int vtable2;  // G42.39a supply
+        void PropagateCellOccupancy();  // G42.39 def-derived
     };
     struct Gap2Recv_722F00 {
-        void RebuildBuildingOccupancy();
+    int fallRate;  // G42.39a supply
+    int isInLogic;  // G42.39a supply
+    int nextArrayIndex8;  // G42.39a supply
+    int q044;  // G42.39a supply
+    int u32_10C;  // G42.39a supply
+    int u32_46;  // G42.39a supply
+    int u8_45;  // G42.39a supply
+        void RebuildBuildingOccupancy();  // G42.39 def-derived
     };
     struct Gap2Recv_724200 {
-        void HandleToolTipMessage();
+    int abstractFlags;  // G42.39a supply
+    int alignmentPadding91;  // G42.39a supply
+    int onBridge[8];  // G42.39a supply (indexed usage)
+    int q08A;  // G42.39a supply
+    int uniqueId;  // G42.39a supply
+    int vtable2;  // G42.39a supply
+    int vtable26;  // G42.39a supply
+    int vtable4;  // G42.39a supply
+    int wasFallingDown;  // G42.39a supply
+        void HandleToolTipMessage(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_724510 {
-        int sub_724510();
+    int cloakProgress[8];  // G42.39a supply (indexed usage)
+        int sub_724510();  // G42.39 def-derived
     };
     struct Gap2Recv_727880 {
-        int ReadAudioEventINI();
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+        int ReadAudioEventINI();  // G42.39 def-derived
     };
     struct Gap2Recv_729580 {
-        int FindUnitPlacementTarget();
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+        int FindUnitPlacementTarget();  // G42.39 def-derived
     };
     struct Gap2Recv_730990 {
-        char SidebarHasAvailableUnit();
+        char SidebarHasAvailableUnit();  // G42.39 def-derived
     };
     struct Gap2Recv_730A10 {
-        int SidebarCountAvailableUnits();
+        int SidebarCountAvailableUnits();  // G42.39 def-derived
     };
     struct Gap2Recv_7310D0 {
-        void SidebarClearReferences();
+        void SidebarClearReferences();  // G42.39 def-derived
     };
     struct Gap2Recv_7342C0 {
-        char SelectAllOfType_Helper();
+        char SelectAllOfType_Helper();  // G42.39 def-derived
     };
     struct Gap2Recv_734330 {
-        unsigned int * SelectFactionThemeMusic_Helper_734330(int);
+    int Capacity;  // G42.39a supply
+    int IsAllocated;  // G42.39a supply
+    int IsInitialized;  // G42.39a supply
+    int Items;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* SelectFactionThemeMusic_Helper_734330(void * aP1, void * aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_734390 {
-        char SelectFactionThemeMusic_Helper_734390();
+    int vtable1;  // G42.39a supply
+        char SelectFactionThemeMusic_Helper_734390(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_736DF0 {
-        int UpdateTechnoFiring();
+    int ammoReloadTimer;  // G42.39a supply
+    int animation[8];  // G42.39a supply (indexed usage)
+    int primaryFacing[8];  // G42.39a supply (indexed usage)
+    int secondaryFacing[8];  // G42.39a supply (indexed usage)
+    int spawnManager;  // G42.39a supply
+    int target;  // G42.39a supply
+    int u32_5A4;  // G42.39a supply
+    int u32_674;  // G42.39a supply
+    int u32_68D;  // G42.39a supply
+    int u32_6C4;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        int UpdateTechnoFiring();  // G42.39 def-derived
     };
     struct Gap2Recv_737180 {
-        int UpdateInfantryIdleWander();
+    int animation[8];  // G42.39a supply (indexed usage)
+    int target;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        int UpdateInfantryIdleWander();  // G42.39 def-derived
     };
     struct Gap2Recv_7436E0 {
-        int ReadFootINI();
+        int ReadFootINI();  // G42.39 def-derived
     };
     struct Gap2Recv_746D90 {
-        bool Event_Process_746D90();
+        bool Event_Process_746D90();  // G42.39 def-derived
     };
     struct Gap2Recv_74C9F0 {
-        int DestroyVeinholeMonster();
+    int VeinholeMonsterClass_field_0x04;  // G42.39a supply
+    int VeinholeMonsterClass_field_0x08;  // G42.39a supply
+    int VeinholeMonsterClass_field_0x0C;  // G42.39a supply
+    int __pad_0[8];  // G42.39a supply (indexed usage)
+        int DestroyVeinholeMonster();  // G42.39 def-derived
     };
     struct Gap2Recv_74CDB0 {
-        int Helper_486E30_Helper();
+    int q031;  // G42.39a supply
+        int Helper_486E30_Helper();  // G42.39 def-derived
     };
     struct Gap2Recv_74E1C0 {
-        void ProcessVeinholeMonster();
+    int fallRate;  // G42.39a supply
+    int q02B;  // G42.39a supply
+    int q031;  // G42.39a supply
+    int u32_2D;  // G42.39a supply
+    int u32_41;  // G42.39a supply
+        void ProcessVeinholeMonster();  // G42.39 def-derived
     };
     struct Gap2Recv_74E8A0 {
-        void System_Init_74E8A0();
+    int fallRate;  // G42.39a supply
+    int q02B;  // G42.39a supply
+    int q031;  // G42.39a supply
+    int u32_2D;  // G42.39a supply
+    int uniqueId5;  // G42.39a supply
+    int uniqueId9;  // G42.39a supply
+        void System_Init_74E8A0();  // G42.39 def-derived
     };
     struct Gap2Recv_74EA70 {
-        char LoadVeinholeMonsters();
+    int AbstractClass_v;  // G42.39a supply
+    int vtable1;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        char LoadVeinholeMonsters();  // G42.39 def-derived
     };
     struct Gap2Recv_74F620 {
-        void DestroyVeinholeMonster_Destroy();
+    int AbstractClass_v;  // G42.39a supply
+        void DestroyVeinholeMonster_Destroy();  // G42.39 def-derived
     };
     struct Gap2Recv_74F6F0 {
-        char DestroyVeinholeMonster_Destroy_74F6F0();
+        char DestroyVeinholeMonster_Destroy_74F6F0(DynamicVector * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_750060 {
-        char Team_Create_750060();
+    int AbstractClass_v;  // G42.39a supply
+        char Team_Create_750060(char a2);  // G42.39 def-derived
     };
     struct Gap2Recv_751520 {
-        int System_Get_751520();
+        int System_Get_751520();  // G42.39 def-derived
     };
     struct Gap2Recv_7515C0 {
-        int System_Get_7515C0();
+        int System_Get_7515C0();  // G42.39 def-derived
     };
     struct Gap2Recv_756860 {
-        int InitializeTileAudioOcclusion(float*);
+        int InitializeTileAudioOcclusion(int a2, void* a3);  // G42.39 def-derived
     };
     struct Gap2Recv_758B70 {
-        int GenerateLightRemapTable(int);
+    int AbstractClass_v;  // G42.39a supply
+        int GenerateLightRemapTable(void* a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_7597A0 {
-        char Render_Load_7597A0();
+    int disguiseAsType;  // G42.39a supply
+    int estimatedHealth;  // G42.39a supply
+    int planningToken;  // G42.39a supply
+    int radarFlashTimer[8];  // G42.39a supply (indexed usage)
+    int reloadTimer[8];  // G42.39a supply (indexed usage)
+    int shouldLoseTarget;  // G42.39a supply
+    int threatPosed;  // G42.39a supply
+    int v5;  // G42.39a supply
+        char Render_Load_7597A0();  // G42.39 def-derived
     };
     struct Gap2Recv_759830 {
-        int Render_Load_759830();
+    int u32_77;  // G42.39a supply
+        int Render_Load_759830(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_759850 {
-        bool Render_Render_759850(int);
+    int reloadTimer[8];  // G42.39a supply (indexed usage)
+        bool Render_Render_759850(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_759880 {
-        bool Render_Render_759880(int, int);
+    int reloadTimer[8];  // G42.39a supply (indexed usage)
+    int threatPosed;  // G42.39a supply
+        bool Render_Render_759880(int a2, int a3, int a4);  // G42.39 def-derived
     };
     struct Gap2Recv_759EA0 {
-        int Render_Load_759EA0();
+    int shouldLoseTarget;  // G42.39a supply
+        int Render_Load_759EA0();  // G42.39 def-derived
     };
     struct Gap2Recv_759EB0 {
-        bool Render_Load_759EB0(unsigned int, unsigned int, int, int);
+    int reloadTimer[8];  // G42.39a supply (indexed usage)
+    int u32_520;  // G42.39a supply
+    int u32_524;  // G42.39a supply
+        bool Render_Load_759EB0(int a2, unsigned int a3, unsigned int a4, int a5, int a6);  // G42.39 def-derived
     };
     struct Gap2Recv_759F20 {
-        int Render_Load_759F20();
+    int a2;  // G42.39a supply
+        int Render_Load_759F20(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_7639A0 {
-        char WaypointClass_Find();
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int nextObject;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+        char WaypointClass_Find(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_764FA0 {
-        bool Team_Start_764FA0();
+    int nextObject;  // G42.39a supply
+        bool Team_Start_764FA0();  // G42.39 def-derived
     };
     struct Gap2Recv_764FC0 {
-        bool ConstructWDTSelection_Create();
+    int nextObject;  // G42.39a supply
+    int uniqueId;  // G42.39a supply
+    int vtable22;  // G42.39a supply
+        bool ConstructWDTSelection_Create(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_765380 {
-        unsigned int * FindWDTTerritoryClass_Find(int);
+        void* FindWDTTerritoryClass_Find(void* a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_765410 {
-        char * Team_Start_765410();
+    int q044;  // G42.39a supply
+    int referenceCount2;  // G42.39a supply
+        char* Team_Start_765410(INIClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_765C90 {
-        unsigned int * Team_Create_765C90(int*);
+    int vtable1;  // G42.39a supply
+        void* Team_Create_765C90(int a2, void* a3);  // G42.39 def-derived
     };
     struct Gap2Recv_766060 {
-        int FindWDTTerritoryClass_Find_Find();
+        int FindWDTTerritoryClass_Find_Find();  // G42.39 def-derived
     };
     struct Gap2Recv_7665D0 {
-        wchar_t ** TerritorySelectWDT_Create();
+        void* TerritorySelectWDT_Create(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_7668F0 {
-        void* System_Init_7668F0();
+        void* System_Init_7668F0();  // G42.39 def-derived
     };
     struct Gap2Recv_766900 {
-        void* System_Init_766900();
+        void* System_Init_766900();  // G42.39 def-derived
     };
     struct Gap2Recv_766910 {
-        void* System_Init_766910();
+        void* System_Init_766910();  // G42.39 def-derived
     };
     struct Gap2Recv_766A10 {
-        void * System_Init_766A10(int, void*, int);
+        void* System_Init_766A10(int a2, int arg4, void * a3, ObjectClass * aP4);  // G42.39 def-derived
     };
     struct Gap2Recv_766EE0 {
-        char System_Init_766EE0();
+    int vtable1;  // G42.39a supply
+        char System_Init_766EE0(int aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_766F70 {
-        unsigned int * System_Init_766F70();
+        void* System_Init_766F70(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_767820 {
-        void * ConstructorWDTFlagOption_Create(void*, int, void*, int);
+        void* ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5);  // G42.39 def-derived
     };
     struct Gap2Recv_768000 {
-        void * ConstructWDTSelection_Create_767FB0_Create(int, int);
+    int ptr_21;  // G42.39a supply
+    int q014;  // G42.39a supply
+    int q030;  // G42.39a supply
+    int q034;  // G42.39a supply
+    int q044;  // G42.39a supply
+    int q068;  // G42.39a supply
+    int q070;  // G42.39a supply
+    int q100;  // G42.39a supply
+    int u32_24;  // G42.39a supply
+    int u32_2C;  // G42.39a supply
+    int u32_3C;  // G42.39a supply
+    int u32_6C;  // G42.39a supply
+    int u32_74;  // G42.39a supply
+    int u32_78;  // G42.39a supply
+    int u32_BC;  // G42.39a supply
+    int u32_C4;  // G42.39a supply
+        void* ConstructWDTSelection_Create_767FB0_Create(int a2, int a3, ReferenceCounted * aP3);  // G42.39 def-derived
     };
     struct Gap2Recv_7692F0 {
-        int ConstructWDTSelection_Create_76EEB0_Create(int*);
+        int ConstructWDTSelection_Create_76EEB0_Create(void* aP1, void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_7694C0 {
-        int * Map_Load_7694C0();
+    int AbstractClass_v;  // G42.39a supply
+        void* Map_Load_7694C0(int * a2);  // G42.39 def-derived
     };
     struct Gap2Recv_769C20 {
-        unsigned int * Map_Load_769C20();
+        void* Map_Load_769C20(ObjectClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_76A7E0 {
-        unsigned int * ConstructWDTSelection_Create_767FB0_Create_Create(int*);
+    int vtable1;  // G42.39a supply
+        void* ConstructWDTSelection_Create_767FB0_Create_Create(HashTable * aP1, HashTable * aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_76AAF0 {
-        void* ParseWDTTerritories_Parse();
+    int AbstractClass_v;  // G42.39a supply
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int attachedTag[8];  // G42.39a supply (indexed usage)
+    int fallRate;  // G42.39a supply
+    int nextObject;  // G42.39a supply
+    int occupant;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+    int AbstractClass;  // G42.39a supply
+        void* ParseWDTTerritories_Parse();  // G42.39 def-derived
     };
     struct Gap2Recv_76B180 {
-        char ParseWDTTerritories(int);
+    int NeedsSaveOrLink;  // G42.39a supply
+    int u32_20;  // G42.39a supply
+    int u32_2C;  // G42.39a supply
+    int u32_30;  // G42.39a supply
+    int u32_34;  // G42.39a supply
+    int u32_39;  // G42.39a supply
+    int u32_3C;  // G42.39a supply
+    int u32_40;  // G42.39a supply
+        char ParseWDTTerritories(WDTState * aP1, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_76B790 {
-        unsigned int * ParseWDTTerritories_Parse_76B790();
+        void* ParseWDTTerritories_Parse_76B790(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_76BF00 {
-        char * Audio_Create_76BF00();
+    int q004;  // G42.39a supply
+        char* Audio_Create_76BF00(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_76BFC0 {
-        int ConstructWDTSelection_Create_76BFC0();
+        int ConstructWDTSelection_Create_76BFC0();  // G42.39 def-derived
     };
     struct Gap2Recv_76C290 {
-        int ConstructWDTSelection(int);
+    int q0208;  // G42.39a supply
+    int u32_444;  // G42.39a supply
+    int u32_448;  // G42.39a supply
+    int u32_44C;  // G42.39a supply
+    int u32_450;  // G42.39a supply
+    int u32_454;  // G42.39a supply
+    int u32_45C;  // G42.39a supply
+    int u32_460;  // G42.39a supply
+    int u32_464;  // G42.39a supply
+    int u32_46C;  // G42.39a supply
+    int u32_470;  // G42.39a supply
+    int u32_474;  // G42.39a supply
+    int u32_478;  // G42.39a supply
+    int u32_47C;  // G42.39a supply
+    int u32_48;  // G42.39a supply
+    int u32_480;  // G42.39a supply
+    int u32_484;  // G42.39a supply
+    int u32_4A4;  // G42.39a supply
+    int u32_4AC;  // G42.39a supply
+    int u32_50;  // G42.39a supply
+        int ConstructWDTSelection(int arg0, int arg4);  // G42.39 def-derived
     };
     struct Gap2Recv_76C6E0 {
-        void SelectionInitializeWOL();
+    int u32_458;  // G42.39a supply
+    int u32_45C;  // G42.39a supply
+    int u32_464;  // G42.39a supply
+    int u32_48;  // G42.39a supply
+    int u32_488;  // G42.39a supply
+    int u32_494;  // G42.39a supply
+    int u32_4AC;  // G42.39a supply
+    int u32_50;  // G42.39a supply
+        void SelectionInitializeWOL();  // G42.39 def-derived
     };
     struct Gap2Recv_76C970 {
-        void ConstructWDTSelection_Create_76C970(int);
+    int u32_434;  // G42.39a supply
+    int u32_438;  // G42.39a supply
+    int u32_43C;  // G42.39a supply
+        void ConstructWDTSelection_Create_76C970(unsigned int * a1, Selection_WorldDominationTour * aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_76CA60 {
-        void ConstructWDTSelection_Create_76CA60(char**);
+        void ConstructWDTSelection_Create_76CA60(Selection_WorldDominationTour * aP1, char ** a2);  // G42.39 def-derived
     };
     struct Gap2Recv_76CBF0 {
-        void ConstructWDTSelection_Create_76CBF0(char**);
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int attackedTargets[8];  // G42.39a supply (indexed usage)
+    int currentTargets[8];  // G42.39a supply (indexed usage)
+        void ConstructWDTSelection_Create_76CBF0(void* aP1, char* aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_76CDA0 {
-        int ShowWDTTerritorySelection();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int currentTargetThreatValues[8];  // G42.39a supply (indexed usage)
+    int currentTargets[8];  // G42.39a supply (indexed usage)
+    int turretRotateSoundController[8];  // G42.39a supply (indexed usage)
+    int vtable0;  // G42.39a supply
+        void* ShowWDTTerritorySelection(void* a2);  // G42.39 def-derived
     };
     struct Gap2Recv_76DAD0 {
-        bool TerritorySelectWDT();
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int attackedTargets[8];  // G42.39a supply (indexed usage)
+    int currentTargetThreatValues[8];  // G42.39a supply (indexed usage)
+    int currentTargets[8];  // G42.39a supply (indexed usage)
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int turretRotateSoundController[8];  // G42.39a supply (indexed usage)
+    int vtable0;  // G42.39a supply
+        bool TerritorySelectWDT(ObjectClass * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_76E180 {
-        void ShowWDTTerritorySelection_Show();
+    int currentTargets[8];  // G42.39a supply (indexed usage)
+    int turretRotateSoundController[8];  // G42.39a supply (indexed usage)
+    int vtable0;  // G42.39a supply
+        void ShowWDTTerritorySelection_Show();  // G42.39 def-derived
     };
     struct Gap2Recv_76E2F0 {
-        char * Team_Start_76E2F0();
+    int NeedsSaveOrLink8;  // G42.39a supply
+    void * q04C;  // G42.39a supply (deref usage)
+    int referenceCount6;  // G42.39a supply
+    int u32_444;  // G42.39a supply
+        char* Team_Start_76E2F0(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_76E430 {
-        int Team_Start_76E430(bool*);
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int currentTargetThreatValues[8];  // G42.39a supply (indexed usage)
+    int grindingAnimHandle;  // G42.39a supply
+    int isCountedAsOwned_special;  // G42.39a supply
+    int previousTeam;  // G42.39a supply
+        int Team_Start_76E430(int a2, void* aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_76E750 {
-        unsigned int * Team_Start_76E750();
+    int NeedsSaveOrLink8;  // G42.39a supply
+    int q0208;  // G42.39a supply
+    void * q04C;  // G42.39a supply (deref usage)
+    int referenceCount6;  // G42.39a supply
+    int u32_43C;  // G42.39a supply
+    int u32_440;  // G42.39a supply
+    int u32_444;  // G42.39a supply
+        void* Team_Start_76E750(ScoreScreen * aP1);  // G42.39 def-derived
     };
     struct Gap2Recv_76E8B0 {
-        bool Team_Start_76E8B0(int);
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int currentTargetThreatValues[8];  // G42.39a supply (indexed usage)
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int grindingAnimHandle;  // G42.39a supply
+        bool Team_Start_76E8B0(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_76EEB0 {
-        int ConstructWDTSelection_Create_76EEB0();
+    int currentTargets[8];  // G42.39a supply (indexed usage)
+    int customSound_controller[8];  // G42.39a supply (indexed usage)
+    int turretRotateSoundController[8];  // G42.39a supply (indexed usage)
+        int ConstructWDTSelection_Create_76EEB0();  // G42.39 def-derived
     };
     struct Gap2Recv_76F210 {
-        unsigned int * ConstructWDTSelection_Create_76F210(int);
+    int Capacity;  // G42.39a supply
+    int IsAllocated;  // G42.39a supply
+    int IsInitialized;  // G42.39a supply
+    int Items;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void* ConstructWDTSelection_Create_76F210(int a2, int a3);  // G42.39 def-derived
     };
     struct Gap2Recv_76F500 {
-        void* ConstructWDTSelection_Create_76F500();
+        void* ConstructWDTSelection_Create_76F500();  // G42.39 def-derived
     };
     struct Gap2Recv_76FEB0 {
-        void TerritorySelectWDT_Process(int*);
+    int owningHouseIndex;  // G42.39a supply
+        void TerritorySelectWDT_Process(int a2, void* aP2);  // G42.39 def-derived
     };
     struct Gap2Recv_770430 {
-        void System_Init_770430();
+    int barrelFacing[8];  // G42.39a supply (indexed usage)
+    int isSinking[8];  // G42.39a supply (indexed usage)
+    int isUseless;  // G42.39a supply
+    int secondaryFacing[8];  // G42.39a supply (indexed usage)
+    int targetLaserTimer[8];  // G42.39a supply (indexed usage)
+    int turretRecoil[8];  // G42.39a supply (indexed usage)
+    int unknown_short_3C8;  // G42.39a supply
+        void System_Init_770430();  // G42.39 def-derived
     };
     struct Gap2Recv_7714B0 {
-        void TerritorySelectWDT_Delete(char, int);
+    int barrelFacing[8];  // G42.39a supply (indexed usage)
+    int currentBurstIndex;  // G42.39a supply
+    int isALoaner;  // G42.39a supply
+    int isSinking[8];  // G42.39a supply (indexed usage)
+    int isUseless;  // G42.39a supply
+    int primaryFacing[8];  // G42.39a supply (indexed usage)
+    int secondaryFacing[8];  // G42.39a supply (indexed usage)
+    int targetLaserTimer[8];  // G42.39a supply (indexed usage)
+    int unknown_short_3C8;  // G42.39a supply
+    int vtable0;  // G42.39a supply
+        void TerritorySelectWDT_Delete(int a2, char a3, int a4);  // G42.39 def-derived
     };
     struct Gap2Recv_771800 {
-        void* ConstructWDTSelection_Create_771800();
+        void* ConstructWDTSelection_Create_771800();  // G42.39 def-derived
     };
     struct Gap2Recv_776880 {
-        int System_Read_776880();
+        int System_Read_776880();  // G42.39 def-derived
     };
     struct Gap2Recv_7768A0 {
-        int System_Read_7768A0();
+        int System_Read_7768A0(HWND hWndMain);  // G42.39 def-derived
     };
     struct Gap2Recv_778710 {
-        void* LoadAccountInfoWOL();
+    int NeedsSaveOrLink;  // G42.39a supply
+    int abstractFlags;  // G42.39a supply
+    int ambientSoundController[8];  // G42.39a supply (indexed usage)
+    int attachedBomb[8];  // G42.39a supply (indexed usage)
+    int attachedTag[8];  // G42.39a supply (indexed usage)
+    int nextArrayIndex;  // G42.39a supply
+    int objectTypeFlags;  // G42.39a supply
+    int owningHouseIndex;  // G42.39a supply
+    int q040;  // G42.39a supply
+    int referenceCount;  // G42.39a supply
+    int uniqueId;  // G42.39a supply
+    int vtable2;  // G42.39a supply
+    int vtable3;  // G42.39a supply
+        void* LoadAccountInfoWOL();  // G42.39 def-derived
     };
     struct Gap2Recv_779B50 {
-        char* ReadAutoLoginWOL();
+        char* ReadAutoLoginWOL();  // G42.39 def-derived
     };
     struct Gap2Recv_779C90 {
-        int ReadSettingsWOL();
+        int ReadSettingsWOL();  // G42.39 def-derived
     };
     struct Gap2Recv_779DD0 {
-        char* LoadConfigWOL();
+        char* LoadConfigWOL();  // G42.39 def-derived
     };
     struct Gap2Recv_779F10 {
-        int SavePersonaConfigWOL();
     };
     struct Gap2Recv_77A080 {
-        void SaveProfileWOL();
     };
     struct Gap2Recv_77A760 {
-        char MainLobbyDlgProcWOL_Helper();
     };
     struct Gap2Recv_77A780 {
-        int MainLobbyDlgProcWOL_Helper_77A780();
     };
     struct Gap2Recv_77A7A0 {
-        int MainLobbyDlgProcWOL_Helper_77A7A0();
     };
     struct Gap2Recv_77A870 {
-        int Event_Process_77A870();
     };
     struct Gap2Recv_77A890 {
-        int Event_Process_77A890();
     };
     struct Gap2Recv_77A8B0 {
-        int Event_Process_77A8B0();
     };
     struct Gap2Recv_77A9F0 {
-        void FillPersonaInfoWOL(int hDlg, char* a3, void* a4);
     };
     struct Gap2Recv_77D1F0 {
-        void ConnectAndLoginWOL_Connect();
     };
     struct Gap2Recv_77D4C0 {
-        bool IsBuddyOrIgnoreWOL();
     };
     struct Gap2Recv_77E1D0 {
-        int FillPlayerListWOL();
     };
     struct Gap2Recv_77E300 {
-        int FillBuddyListExWOL();
     };
     struct Gap2Recv_77EBA0 {
-        int SendMultiplayerStartSignal_Start_77EBA0();
     };
     struct Gap2Recv_783B80 {
-        int Render_Find();
+        int Render_Find();  // G42.39 def-derived
     };
     struct Gap2Recv_783C80 {
-        void DisplayRankingsWOL(char a2);
     };
     struct Gap2Recv_785370 {
-        int InitializeWestwoodOnline();
     };
     struct Gap2Recv_785740 {
-        void LeaveChannelWOL();
     };
     struct Gap2Recv_7864C0 {
-        char ConnectAndLoginWOL();
     };
     struct Gap2Recv_78F200 {
-        void* BuildWOLPlayerTooltip();
     };
     struct Gap2Recv_791AA0 {
-        void UI_Setup_791AA0();
     };
     struct Gap2Recv_795650 {
-        char QueryNATPortWOL();
     };
     struct Gap2Recv_798F50 {
-        void* MainLobbyDlgProcWOL_Read();
     };
     struct Gap2Recv_79AF10 {
-        int FillBuddyListWOL();
     };
     struct Gap2Recv_79C040 {
-        void ShowUserProfileWOL();
     };
     struct Gap2Recv_79C8D0 {
-        void QueueWOLAuthRequest();
     };
     struct Gap2Recv_7A2FC0 {
-        char* System_Init_7A2FC0();
     };
     struct Gap2Recv_7A41A0 {
-        char* System_Init_7A41A0();
     };
     struct Gap2Recv_7AC610 {
-        void* CreateGameWOL_Create_7AC610();
     };
     struct Gap2Recv_7AC670 {
-        int System_Init_7AC670();
     };
     struct Gap2Recv_7AC680 {
-        int System_Init_7AC680();
     };
     struct Gap2Recv_7AC9D0 {
-        char GetBuddyEntryWOL(int);
     };
     struct Gap2Recv_7ACB90 {
-        char StartGameWOL_Start_7ACB90(int);
     };
     struct Gap2Recv_7AD410 {
-        char * System_Init_7AD410();
     };
     struct Gap2Recv_7ADB00 {
-        char Network_Helper_7ADB00(int);
     };
     struct Gap2Recv_7AE180 {
-        bool ConnectAndLoginWOL_Connect_7AE180(int*);
     };
     struct Gap2Recv_7AE7C0 {
-        bool GameOptionsScreenWOL_Helper_7AE7C0(int*);
     };
     struct Gap2Recv_7AE830 {
-        void RemoveWOLPlayerLogin_Remove();
     };
     struct Gap2Recv_7AE8E0 {
-        bool GameOptionsScreenWOL_Helper_7AE8E0(int*);
     };
     struct Gap2Recv_7AECD0 {
-        unsigned int * QueryNATPortWOL_Helper(int);
     };
     struct Gap2Recv_7AF3D0 {
-        char* GetRegionStringWOL();
     };
     struct Gap2Recv_7AF500 {
-        void Team_Start_7AF500();
     };
     struct Gap2Recv_7AF540 {
-        int WorldDominationFactionDlgProc_Helper(int hWnd, void* a3);
     };
     struct Gap2Recv_7B0490 {
-        void* Team_Start_7B0490();
     };
     struct Gap2Recv_7B4A10 {
-        char String_Process_7B4A10();
     };
     struct Gap2Recv_7B6780 {
-        bool String_Helper();
     };
     struct Gap2Recv_7B67C0 {
-        bool SendMultiplayerStartSignal_Start_77EBA0_Start();
     };
     struct Gap2Recv_7B71D0 {
-        char Render_Helper_7B71D0(void* Src, unsigned int a3);
     };
     struct Gap2Recv_7B7660 {
-        char String_Helper_7B7660(short a2, unsigned int a3);
     };
     struct Gap2Recv_7B7740 {
-        wchar_t ** SendMultiplayerStartSignal_Start_77EBA0_Start_7B7740();
     };
     struct Gap2Recv_7B7980 {
-        char UI_Helper_7B7980(short a2);
     };
     struct Gap2Recv_7BD170 {
-        int Audio_Render_7BD170();
     };
     struct Gap2Recv_7BD290 {
-        char Audio_Process_7BD290();
     };
     struct Gap2Recv_7BD2B0 {
-        char Audio_Process_7BD2B0();
     };
     struct Gap2Recv_7BE4A0 {
-        int Audio_Process_7BE4A0();
     };
     struct Gap2Recv_7BE660 {
-        int Audio_Process_7BE660();
     };
     struct Gap2Recv_7BE670 {
-        int Audio_Render_7BE670();
     };
     struct Gap2Recv_7C0490 {
-        int Audio_Process_7C0490();
     };
     struct Gap2Recv_7C1150 {
-        int Audio_Render_7C1150();
     };
     struct Gap2Recv_7C1A70 {
-        int Audio_Render_7C1A70();
     };
     struct Gap2Recv_7C1BE0 {
-        int Audio_Render_7C1BE0();
     };
     struct Gap2Recv_7C3750 {
-        int Audio_Process_7C3750();
     };
     struct Gap2Recv_7CAACB {
-        exception * RTtypeid_Helper();
     };
     struct Gap2Recv_7DCDC0 {
-        unsigned int * ThrowErrorCOM_Helper(int, char);
     };
+    struct ObjectPlacement {
+        static int * CalcPosition(void * aP1, void * aP2, void * aP3, void * aP4, void * aP5, void * aP6);  // 0x481180 (G42.39a static-call supply)
+    };
+    struct LinkedList {
+        static void * Pop(void * aP1);  // G42.39a static-call supply
+    };
+    int MoveCoordByDirection(int a1, int * a2);  // 0x40acd0 (G42.39a decl supply)
+    int StartAudioControllerAt(unsigned int aP1, int aP2, int aP3);  // 0x7509E0 (G42.39a decl supply)
 }  // namespace gamemd
 
 // ---- pending thiscall free defs converted to member form (D1-1a) ----

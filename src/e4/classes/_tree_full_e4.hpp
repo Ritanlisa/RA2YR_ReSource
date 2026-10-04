@@ -672,6 +672,14 @@ struct ObjectClass {
     unsigned int * loc_7A2E70(HWND hWnd, unsigned int a2, int a3, unsigned int a4);
     char _do_always_noconv_codecvt_base_std__MBE_NXZ_5();
     int DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1);
+
+    int CreateInstanceCOM(LPVOID * ppv, IID * rclsid, ILocomotion * aP2, DWORD dwClsContext);  // G42.39 supply
+
+    int COMStub_48DEB0();  // G42.39 supply
+
+    char* BuildResultPacket(char * Destination, char * Source, IUnknown * aP2);  // G42.39 supply
+
+    char* TerrainInitMap(char * Destination, RandomStruct * aP1, IUnknown * aP2);  // G42.39 supply
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

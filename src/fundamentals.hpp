@@ -34,6 +34,7 @@ struct ProgressTimer
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* GetValue(int a1);  // 0x4c93d0 -- ProgressTimer::GetValue
+    static void * GetValue(void * aP1, void * aP2);  // G42.39a static-call supply
     // === SYMBOL-ANCHOR (END) ===
 };
 #endif  // GAMEMD_E4_OWNS_PROGRESSTIMER

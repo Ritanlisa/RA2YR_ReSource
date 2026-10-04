@@ -1163,6 +1163,8 @@ struct RulesClass {
     int readCrateRules(void * aInfantrytypes);
     int readRadiation(void * aAircrafttypes);
     int ReadSidesList(void * aSuperweapontyp);
+
+    int ResetRules();  // G42.39 supply
 };
 
 } // namespace gamemd
