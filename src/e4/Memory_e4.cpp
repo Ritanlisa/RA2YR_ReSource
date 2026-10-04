@@ -65,7 +65,9 @@ char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, in
 }
 }  // G42.18c ns repair
 // 0x731CE0
+namespace gamemd {
 int Memory::Alloc76()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731CE0)
+}
 }

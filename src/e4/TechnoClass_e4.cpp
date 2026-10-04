@@ -224,8 +224,8 @@ int TechnoClass::StubReturnFalse9()
 
 // 0x731CF0
 namespace gamemd {
-void TechnoClass::GetField(void *a1, void *a2)
+bool TechnoClass::GetField(void *a1, void *a2)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731CF0)
+     return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731CF0)
 }
 } // namespace gamemd

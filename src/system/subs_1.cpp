@@ -19,8 +19,10 @@ void InitGlobal()
 // IDA: 0x403D50  proposal: InitDegToRad
 // IDA: void sub_403D50()
 //   dbl_87E260 = 0.0174532925199433 * 45.0;
+namespace gamemd {
 void Math::InitDegToRad()
 {
+}
 }
 
 // IDA: 0x403D70  proposal: InitScale60

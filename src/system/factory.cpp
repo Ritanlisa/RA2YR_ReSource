@@ -29,7 +29,7 @@ void FactoryClass::calculateChecksum(void* checksum) const {}
 
 // owner fix 2026-09-10: FactoryClass (not BuildingClass) — YRpp layout owner@0x6C/object@0x58 tri-mapped
 // 0x4c9ff0
-HouseClass * * FactoryClass::AbandonProduction()
+bool * FactoryClass::AbandonProduction()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4c9ff0)
 }

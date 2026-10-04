@@ -37,7 +37,7 @@ wchar_t * ScreenCaptureCommandClass::ddtor()
 } // namespace gamemd
 // 0x537B80
 namespace gamemd {
-wchar_t * ScreenCaptureCommandClass::Release(void *a1)
+int * ScreenCaptureCommandClass::Release(void *a1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x537B80)
 }

@@ -39,7 +39,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 } // namespace gamemd
 // 0x50BDF0
 namespace gamemd {
-double TechnoTypeClass::Dispatch(TechnoTypeClass * aP1, void *a2, void *a3, void *a4, void *a5)
+void TechnoTypeClass::Dispatch(TechnoTypeClass * aP1, void *a2, void *a3, void *a4, void *a5)
 {
     return 0.0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0050BDF0.json)
 }
@@ -67,9 +67,9 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
 } // namespace gamemd
 // 0x711840
 namespace gamemd {
-void TechnoTypeClass::Construct(int aP1)
+_DWORD TechnoTypeClass::Construct(int aP1)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00711840.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00711840.json)
 }
 } // namespace gamemd
 // 0x711AE0

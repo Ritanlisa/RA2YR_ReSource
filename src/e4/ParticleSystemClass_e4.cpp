@@ -736,24 +736,9 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(
 
 // 0x4EFEE0
 namespace gamemd {
-DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___(unsigned int * Block, char a2)
+DynamicVector * VectorClass_flat::Constructor_VectorClass_AircraftClass___(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x4efee3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efee6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4efef0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x4efef8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4eff00*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x4eff0b*/
-  Block->m_8 = 0; /*0x4eff11*/
-  if ( (a2 & 1) != 0 ) /*0x4eff18*/
-    __3_YAXPAX_Z(Block); /*0x4eff1b*/
-  return Block->__pad_0; /*0x4eff25*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x004EFEE0.json)
 }
 } // namespace gamemd
 

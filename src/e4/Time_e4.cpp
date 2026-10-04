@@ -8,7 +8,7 @@
 
 // 0x4E24A0
 namespace gamemd {
-unsigned int Time::GetElapsedMS()
+int Time::GetElapsedMS()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E24A0)
 }

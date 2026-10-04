@@ -42,6 +42,5 @@ struct Vector {
     BOOL HasCapacity();  // 0x76F0B0
     char Grow();  // 0x7AEEC0
     static double TwoDMagnitudeMath(...);  // C2597 interim stub
-    void Math_Vector2D_Magnitude();
 };
 } // namespace gamemd

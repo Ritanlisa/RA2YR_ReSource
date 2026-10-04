@@ -17,7 +17,9 @@ wchar_t DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
 }
 }
 // 0x4B55A0
+namespace gamemd {
 int DropListClass::COMStub()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B55A0)
+}
 }

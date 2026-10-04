@@ -266,7 +266,7 @@ int ObjectClass::GetMember06()
 
 // 0x4135A0
 namespace gamemd {
-bool ObjectClass::HasLinkedObject(int aP0)
+int ObjectClass::HasLinkedObject(int aP0)
 {
     return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004135A0.json)
 }

@@ -13,7 +13,7 @@
 
 // 0x478340
 namespace gamemd {
-AbstractClass * * VectorClass_flat::Release(int a2, char * a3)
+char * VectorClass_flat::Release(int a2, char * a3)
 {
     (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00478340.json)
 }

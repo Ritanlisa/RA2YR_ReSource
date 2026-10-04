@@ -731,7 +731,9 @@ char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
 }
 }  // G42.18c ns repair
 // 0x7BB340
+namespace gamemd {
 char XSurface::entry_1C_(int a1, int a2, int a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BB340)
+}
 }

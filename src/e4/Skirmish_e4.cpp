@@ -56,7 +56,7 @@ int Skirmish::FillPlayerNames()
 } // namespace gamemd
 // 0x46F8F0
 namespace gamemd {
-CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
+int * Skirmish::SetupAllSpawnLocations(HWND hDlg)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0046F8F0.json)
 }

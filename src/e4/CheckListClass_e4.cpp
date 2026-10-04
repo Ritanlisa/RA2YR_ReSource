@@ -62,7 +62,9 @@ void CheckListClass::StubReturnVoid()
 }
 }  // G42.18c ns repair
 // 0x4E1520
+namespace gamemd {
 void CheckListClass::StubReturn()
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E1520)
+}
 }

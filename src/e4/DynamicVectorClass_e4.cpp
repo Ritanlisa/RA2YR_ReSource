@@ -180,7 +180,7 @@ wchar_t * DynamicVector::ddtor(void *a1_1)
 
 // 0x49E980
 namespace gamemd {
-unsigned int DynamicVector::Get(int a2, void *a2_2)
+int DynamicVector::Get(int a2, void *a2_2)
 {
     (void)a2; (void)a2_2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049E980.json)
 }
@@ -275,7 +275,7 @@ namespace gamemd {
 
 // 0x49ED30
 namespace gamemd {
-char DynamicVector::SetCapacity(int a2, unsigned int * a3)
+gamemd::AbstractClass DynamicVector::SetCapacity(int a2, unsigned int * a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049ED30.json)
 }
@@ -307,7 +307,7 @@ VectorClass_flat * VectorClass_flat::QueryInterface(unsigned int * Block, char a
 
 // 0x49F040
 namespace gamemd {
-DynamicVector * DynamicVector::Destructor(unsigned int * Block, char a2)
+gamemd::VectorClass_flat * DynamicVector::Destructor(unsigned int * Block, char a2)
 {
     (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049F040.json)
 }
@@ -356,7 +356,7 @@ namespace gamemd {
 
 // 0x588CC0
 namespace gamemd {
-unsigned int DynamicVector::Remove(int a2)
+char DynamicVector::Remove(int a2, unsigned int * a3)
 {
     (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00588CC0.json)
 }
@@ -421,7 +421,7 @@ namespace gamemd {
 
 // 0x6244A0
 namespace gamemd {
-unsigned int * DynamicVector::Destructor(char a2)
+DynamicVector * DynamicVector::Destructor(unsigned int * Block, char a2)
 {
     (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006244A0.json)
 }
@@ -541,7 +541,7 @@ namespace gamemd {
 
 // 0x628D80
 namespace gamemd {
-int DynamicVector::GetSize(int a2)
+int DynamicVector::GetSize(unsigned int * a2)
 {
     (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00628D80.json)
 }

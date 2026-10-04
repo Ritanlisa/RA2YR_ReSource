@@ -314,7 +314,7 @@ void sub_6DA980()
 }
 // 0x769E30
 namespace gamemd {
-int VectorClass_flat::Release(int a2, unsigned int * a3)
+gamemd::AbstractClass VectorClass_flat::Release(int a2, unsigned int * a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00769E30.json)
 }
@@ -328,7 +328,7 @@ void * VectorClass_flat::Constructor_0(rc_ptr_base * Block, char a2, void *a3_1)
 }
 // 0x76A3F0
 namespace gamemd {
-AbstractClass * * VectorClass_flat::Release(int a2, char * a3)
+char * VectorClass_flat::Release(int a2, char * a3)
 {
     (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0076A3F0.json)
 }
@@ -619,7 +619,7 @@ char VectorClass_flat::AddRef(int a2)
 
 // 0x769F50
 namespace gamemd {
-int VectorClass_flat::ddtor(void *a1_1)
+wchar_t VectorClass_flat::ddtor(void *a1_1)
 {
     (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00769F50.json)
 }

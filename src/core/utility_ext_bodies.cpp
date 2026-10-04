@@ -4,7 +4,7 @@
 
 namespace gamemd {
 // 0x7be5d0
-void AllocCallback::Dispatch() {}
+int AllocCallback::Dispatch() {}
 // 0x4f3840
 void GraphicMenuImageItem::QueryInterface() {}
 // 0x49ef40

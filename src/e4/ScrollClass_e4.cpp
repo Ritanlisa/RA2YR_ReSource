@@ -28,8 +28,8 @@ int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 } // namespace gamemd
 // 0x6938F0
 namespace gamemd {
-char * ScrollClass::Read(char * Block, char a2)
+short ScrollClass::Read(char * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6938F0)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6938F0)
 }
 } // namespace gamemd

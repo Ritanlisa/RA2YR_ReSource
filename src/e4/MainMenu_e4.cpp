@@ -26,7 +26,9 @@ long MainMenu_Screen(void * a1, void * a2)
 }
 }
 // 0x531F60
+namespace gamemd {
 int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x531F60)
+}
 }

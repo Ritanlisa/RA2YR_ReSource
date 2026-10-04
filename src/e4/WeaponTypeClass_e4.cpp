@@ -130,7 +130,9 @@ int WeaponTypeClass::GetObjectSize()
 }
 }  // G42.18c ns repair
 // 0x7730E0
+namespace gamemd {
 int WeaponTypeClass::GetTypeIdentifier()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7730E0)
+}
 }

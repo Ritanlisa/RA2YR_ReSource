@@ -149,6 +149,6 @@ int ParticleClass::onParticleExpired() { return 0; }
 
 // 0x62d5e0 -- ParticleClass::AdjustHeight (moved from building.cpp stub land;
 // original owner BuildingClass was a misattribution, see particle.hpp comment)
-void ParticleClass::AdjustHeight() {}
+int ParticleClass::AdjustHeight() {}
 
 } // namespace gamemd

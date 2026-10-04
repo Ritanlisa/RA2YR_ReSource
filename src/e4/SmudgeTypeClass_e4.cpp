@@ -202,7 +202,9 @@ int SmudgeTypeClass::GetObjectSize()
 }
 }  // G42.18c ns repair
 // 0x6B6150
+namespace gamemd {
 int SmudgeTypeClass::GetAuxField()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6B6150)
+}
 }

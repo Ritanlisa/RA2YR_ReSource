@@ -132,7 +132,9 @@ int SidebarClass::select()
 }
 }  // G42.18c ns repair
 // 0x6AB9E0
+namespace gamemd {
 int SidebarClass::deselect()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006AB9E0.json)
+}
 }

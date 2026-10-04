@@ -120,10 +120,7 @@ int StreamClass::SetDirty(unsigned char * a1)
 namespace gamemd {
 int StreamClass::ClearDirty(unsigned char * a1)
 {
-
-  LOBYTE(a1->field_C) = 0; /*0x55a915*/
-  return (*(int (**)(IUnknown *))(a1->field_0 + 96))(a1); /*0x55a91e*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x55A910)
 }
 } // namespace gamemd
 // 0x55A930

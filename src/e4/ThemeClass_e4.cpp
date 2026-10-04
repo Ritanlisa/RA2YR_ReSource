@@ -64,8 +64,8 @@ int ThemeClass::ClearQueues()
 } // namespace gamemd
 // 0x752AB0
 namespace gamemd {
-void ThemeClass::GetField(int a1)
+bool ThemeClass::GetField(int a1)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x752AB0)
+     return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x752AB0)
 }
 } // namespace gamemd

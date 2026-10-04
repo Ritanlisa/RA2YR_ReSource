@@ -191,7 +191,7 @@ char VectorClass_flat::AddRef(int a2)
 
 // 0x4CA930
 namespace gamemd {
-char VectorClass_flat::Release(int a2, unsigned int * a3)
+gamemd::AbstractClass VectorClass_flat::Release(int a2, unsigned int * a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004CA930.json)
 }

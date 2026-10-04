@@ -323,24 +323,9 @@ int MapSeedClass_18::FindItem(unsigned int * a2)
 }
 // 0x5AD430
 namespace gamemd {
-VectorClass_flat * MapSeedClass_18::QueryInterface(unsigned int * Block, char a2)
+VectorClass_flat * DynamicVector::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x5ad433*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5ad436*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5ad440*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5ad448*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5ad450*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x5ad45b*/
-  Block->m_8 = 0; /*0x5ad461*/
-  if ( (a2 & 1) != 0 ) /*0x5ad468*/
-    __3_YAXPAX_Z(Block); /*0x5ad46b*/
-  return Block->__pad_0; /*0x5ad475*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005AD430.json)
 }
 } // namespace gamemd
 

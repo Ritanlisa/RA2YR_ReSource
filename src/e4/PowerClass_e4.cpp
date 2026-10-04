@@ -23,7 +23,9 @@ void PowerClass_Stub()
 }
 }
 // 0x63F7E0
+namespace gamemd {
 void PowerClass::checkLowPower()
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x63F7E0)
+}
 }

@@ -291,7 +291,9 @@ int UDPInterfaceClass_Destru::COMStub_Ret2()
 }
 }  // G42.18c ns repair
 // 0x7B45D0
+namespace gamemd {
 DynamicVector * UDPInterfaceClass::receivePacket(unsigned int * Block, char a2, void *a3)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B45D0)
+}
 }

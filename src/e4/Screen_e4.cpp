@@ -41,7 +41,9 @@ int Screen::TransitionLoop(int a2)
 }
 }  // G42.18c ns repair
 // 0x690360
+namespace gamemd {
 int Screen::CleanupTransitionObjects()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x690360)
+}
 }

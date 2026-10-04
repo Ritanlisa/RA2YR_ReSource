@@ -19,7 +19,9 @@ void VtableStub::VtableStub_643E70()
 }
 }
 // 0x65D690
+namespace gamemd {
 char VtableStub::RetZero_eax_35(int a1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65D690)
+}
 }

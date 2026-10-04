@@ -329,9 +329,9 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
 
 // 0x472C30
 namespace gamemd {
-void CaptureManagerClass::Destroy(void *a1)
+int CaptureManagerClass::Destroy(void *a1)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x472C30)
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x472C30)
 }
 } // namespace gamemd
 

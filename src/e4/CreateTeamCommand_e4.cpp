@@ -837,7 +837,7 @@ wchar_t * CreateTeamCommand::performAction_83()
 namespace gamemd {
 int CreateTeamCommand_performAction_84()
 {
-  return ProcessSelectionExperience(); /*0x536c85*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536C80)
 }
 } // namespace gamemd
 

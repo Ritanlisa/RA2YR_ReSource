@@ -692,25 +692,31 @@ char InputManager_ProcessEvents::Stub()
 
 // 0x4AF720
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
+namespace gamemd {
 int DriveLocomotionClass::QueryInterface(const void *a2, int *a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4AF720)
+}
 }
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x4B4CB0
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
+namespace gamemd {
 LONG DriveLocomotionClass::AddRef()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B4CB0)
+}
 }
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x4B4CC0
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
+namespace gamemd {
 LONG DriveLocomotionClass::Release()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B4CC0)
+}
 }
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
@@ -728,17 +734,21 @@ namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
 
 // 0x4C9220
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
+namespace gamemd {
 int FacingClass::Update(unsigned short *a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C9220)
+}
 }
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x4C9300
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
+namespace gamemd {
 int FacingClass::Set_SyncLog(unsigned int *a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C9300)
+}
 }
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
@@ -752,7 +762,7 @@ unsigned int * MovementClass::CompareAbsCoords(unsigned int *a2)
 
 // 0x4CE840
 namespace gamemd {
-char DropPod::ProcessLanding()
+void DropPod::ProcessLanding()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4CE840)
 }
@@ -808,7 +818,7 @@ void * BuildingLoadQueue::GetNext()
 
 // 0x6E6F20
 namespace gamemd {
-void * BuildingLoadQueue::Find()
+void* BuildingLoadQueue::Find(int32_t index)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E6F20)
 }
@@ -816,7 +826,7 @@ void * BuildingLoadQueue::Find()
 
 // 0x6E6FF0
 namespace gamemd {
-int BuildingLoadQueue::FindObject()
+void* BuildingLoadQueue::FindObject(ObjectClass* obj)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E6FF0)
 }
@@ -840,7 +850,7 @@ void * AudioConfig::InitDefault()
 
 // 0x756BB0
 namespace gamemd {
-int AudioOcclusion::ComputeBoundingVertices()
+void AudioOcclusion::ComputeBoundingVertices()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x756BB0)
 }

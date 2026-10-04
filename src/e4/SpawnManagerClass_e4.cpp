@@ -164,7 +164,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, Dynami
 
 // 0x6B8400
 namespace gamemd {
-char DynamicVector::Release(int a2, unsigned int * a3)
+gamemd::AbstractClass DynamicVector::Release(int a2, unsigned int * a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006B8400.json)
 }
@@ -179,7 +179,7 @@ int DynamicVector::Spawn(unsigned int * a2)
 }
 // 0x6B8790
 namespace gamemd {
-DynamicVector * DynamicVector::QueryInterface(unsigned int * Block, char a2)
+gamemd::VectorClass_flat * DynamicVector::QueryInterface(unsigned int * Block, char a2)
 {
     (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006B8790.json)
 }

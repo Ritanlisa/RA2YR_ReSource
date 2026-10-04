@@ -75,7 +75,9 @@ int DiskLaserClass::StubReturn64()
 }
 }  // G42.18c ns repair
 // 0x4A7C80
+namespace gamemd {
 int DiskLaserClass::StubReturn73()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A7C80)
+}
 }

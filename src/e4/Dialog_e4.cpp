@@ -76,7 +76,7 @@ int Dialog::GetMode3()
 }
 // 0x5EE350
 namespace gamemd {
-int Dialog::RefreshDialogsGame()
+void Dialog::RefreshDialogsGame()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EE350.json)
 }

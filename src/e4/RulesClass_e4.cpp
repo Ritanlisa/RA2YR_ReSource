@@ -263,7 +263,9 @@ int RulesClass::readWarheads()
 }
 }  // G42.18c ns repair
 // 0x67A8E0
+namespace gamemd {
 int  RulesClass::readParticleSystems(TechnoTypeClass * aP1)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0067A8E0.json)
+}
 }

@@ -450,7 +450,7 @@ void GadgetGrid::InsertItem(int index, void* item)
 }
 
 // IDA 0x4135D0: GadgetGrid::RemoveItem
-void GadgetGrid::RemoveItem(int index)
+int GadgetGrid::RemoveItem(int index)
 {
     uint8_t* p = (uint8_t*)(this);
     int count = p->u32_4;

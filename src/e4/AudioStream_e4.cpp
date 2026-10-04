@@ -178,7 +178,7 @@ int MouseClass::ProcessStream()
 }
 // 0x7C3960
 namespace gamemd {
-unsigned int MouseClass::GetPosition()
+int MouseClass::GetPosition()
 {
      return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x007C3960.json)
 }

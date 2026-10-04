@@ -79,7 +79,9 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
 }
 }
 // 0x4D2D10
+namespace gamemd {
 VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block, char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4D2D10)
+}
 }

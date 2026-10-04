@@ -113,9 +113,11 @@ int TerrainTypeClass::LoadFromINI(unsigned __int8 ***a2, int aP1, int aP3, int a
 
 }
 // 0x71E2A0
+namespace gamemd {
 TerrainTypeClass * * TerrainTypeClass::FindOrCreate(char *Source)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0071E2A0.json)
+}
 }
 // 0x71E360
 TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)

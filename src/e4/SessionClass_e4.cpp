@@ -401,9 +401,9 @@ char SessionClass::GetGameSpeed()
 }  // G42.18c ns repair
 // 0x69C4A0
 namespace gamemd {  // G42.18c ns repair
-void SessionClass::ddtor(void *a1)
+wchar_t SessionClass::ddtor(void *a1)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C4A0)
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C4A0)
 }
 }  // G42.18c ns repair
 // 0x69C4D0
@@ -514,7 +514,9 @@ VectorClass_flat * SessionClass::validateGame(unsigned int * Block, char a2)
 }
 }  // G42.18c ns repair
 // 0x7B2720
+namespace gamemd {
 void SessionClass::SetInstance()
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B2720)
+}
 }

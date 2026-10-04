@@ -88,7 +88,7 @@ char DynamicVector::AddRef(int a2)
 
 // 0x664850
 namespace gamemd {
-char DynamicVector::SetCapacity(int a2, unsigned int * a3)
+gamemd::AbstractClass DynamicVector::SetCapacity(int a2, unsigned int * a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00664850.json)
 }
@@ -120,7 +120,7 @@ unsigned int DynamicVector::PointerToIndex(int a2)
 
 // 0x664990
 namespace gamemd {
-char DynamicVector::Release(int a2, unsigned int * a3)
+gamemd::AbstractClass DynamicVector::Release(int a2, unsigned int * a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00664990.json)
 }
@@ -135,15 +135,15 @@ int DynamicVector::Launch(unsigned int * a2)
 }
 // 0x664A70
 namespace gamemd {
-void DynamicVector::Constructor(unsigned int * Block, char a2, void *a3_1)
+gamemd::DynamicVector DynamicVector::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
-    (void)Block; (void)a2; (void)a3_1;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00664A70.json)
+    return 0; (void)Block; (void)a2; (void)a3_1;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00664A70.json)
 }
 } // namespace gamemd
 
 // 0x664AC0
 namespace gamemd {
-DynamicVector * DynamicVector::QueryInterface(unsigned int * Block, char a2)
+gamemd::VectorClass_flat * DynamicVector::QueryInterface(unsigned int * Block, char a2)
 {
     (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00664AC0.json)
 }

@@ -34,6 +34,9 @@
 #include "e4/classes/Multiplayer_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Float4_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ShroudClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/FacingClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/GadgetGrid_e4.hpp"  // G42.36 C2027 supply
 
 // 0x43B5E0
 namespace gamemd {
@@ -376,9 +379,9 @@ char HouseClass_24::Release(int a2, unsigned int * a3)
 
 // 0x4F29D0
 namespace gamemd {
-void HouseClass_24::ddtor()
+wchar_t HouseClass_24::ddtor()
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F29D0)
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F29D0)
 }
 } // namespace gamemd
 
@@ -466,54 +469,7 @@ unsigned int * HouseClass::SDDTORAllAndTriggers()
 namespace gamemd {
 char HouseClass::DroppedFlag(UnitClass * aP1, int a3)
 {
-
-  int16_t *v3; // edi
-  int relatedTagsCapacity; // eax
-  HouseClass *v6; // eax
-  char v7; // bl
-  HouseClass *v8; // eax
-  int v10; // [esp-8h] [ebp-14h]
-  int v11; // [esp-8h] [ebp-14h]
-  int v12; // [esp+8h] [ebp-4h] BYREF
-
-  v3 = aP1; /*0x4fbf63*/
-  if ( !(uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CoordinatesLegal(aP1) ) /*0x4fbf6f*/
-    return 0; /*0x4fc055*/
-  HouseClass::IsCellOccupied((int *)this, this->ourFlagCoords[0], a3); /*0x4fbf8b*/
-  relatedTagsCapacity = this->relatedTagsCapacity; /*0x4fbf92*/
-  aP1 = *(int16_t **)v3; /*0x4fbf95*/
-  v10 = *(unsigned int *)(relatedTagsCapacity + 184); /*0x4fbfa3*/
-  v6 = (HouseClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP1); /*0x4fbfaa*/
-  v7 = HouseClass::MarkCellBuildable(v6, v10); /*0x4fbfb6*/
-  if ( v7 /*0x4fc034*/
-    || (a3 = 0,
-        aP1 = (int16_t *)*LayerClass::Pathfinding_Find(
-                           &stru_87F5F0.__pad_58[416],
-                           0,
-                           &v12,
-                           v3,
-                           1,
-                           -1,
-                           0,
-                           0,
-                           1,
-                           1,
-                           0,
-                           0,
-                           0,
-                           1,
-                           (int16_t *)&a3,
-                           0,
-                           0),
-        aP1 != *(int16_t **)&(unsigned int *)((char *)&stru_A8EB00 + 948))
-    && (v11 = *(unsigned int *)(this->relatedTagsCapacity + 184),
-        v8 = (HouseClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP1),
-        (v7 = HouseClass::MarkCellBuildable(v8, v11)) != 0) )
-  {
-    this->ourFlagCoords[0] = (int)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP1); /*0x4fc045*/
-  }
-  return v7; /*0x4fc04e*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4FBF60)
 }
 } // namespace gamemd
 
@@ -521,14 +477,7 @@ char HouseClass::DroppedFlag(UnitClass * aP1, int a3)
 namespace gamemd {
 char HouseClass::PickedUpFlag(ObjectClass * aP1, char a3)
 {
-
-  if ( !aP1 || *(unsigned char *)(aP1 + 129) ) /*0x4fc06c*/
-    return 0; /*0x4fc0a8*/
-  HouseClass::IsCellOccupied((int *)this, this->ourFlagCoords[0], a3); /*0x4fc084*/
-  HouseClass::SetPrimaryFactory((HouseClass *)aP1, *(unsigned int *)(this->relatedTagsCapacity + 184)); /*0x4fc095*/
-  this->ourFlagCoords[0] = aP1; /*0x4fc09a*/
-  return 1; /*0x4fc0a0*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4FC060)
 }
 } // namespace gamemd
 
@@ -536,9 +485,7 @@ char HouseClass::PickedUpFlag(ObjectClass * aP1, char a3)
 namespace gamemd {
 void HouseClass::AcquiredThreatNode()
 {
-
-  this->hasThreatNode = 1; /*0x509130*/
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x509130)
 }
 } // namespace gamemd
 
@@ -546,14 +493,7 @@ void HouseClass::AcquiredThreatNode()
 namespace gamemd {
 char HouseClass::ReshroudMap()
 {
-
-  char result; // al
-
-  result = BYTE2(this->HouseClass_field_timer_B[2]); /*0x50bd10*/
-  if ( !result ) /*0x50bd18*/
-    return ShroudClass::Reset((ShroudClass *)&stru_87F5F0.__pad_58[416], (int)this); /*0x50bd20*/
-  return result; /*0x50bd25*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x50BD10)
 }
 } // namespace gamemd
 
@@ -561,19 +501,16 @@ char HouseClass::ReshroudMap()
 namespace gamemd {
 BOOL HouseClass::GainedPoweredCenter(int a2)
 {
-
-  return this->poweredUnitCenters > 0; /*0x50e1bd*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x50E1B0)
 }
 } // namespace gamemd
+}
 
 // 0x50E340
 namespace gamemd {
 int HouseClass::COMStub_Ret1_1(int a1)
 {
-
-  return 1; /*0x50e345*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x50E340)
 }
 } // namespace gamemd
 
@@ -581,9 +518,7 @@ int HouseClass::COMStub_Ret1_1(int a1)
 namespace gamemd {
 int HouseClass::COMStub_Ret1_2(int a1)
 {
-
-  return 1; /*0x50e355*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x50E350)
 }
 } // namespace gamemd
 
@@ -591,9 +526,7 @@ int HouseClass::COMStub_Ret1_2(int a1)
 namespace gamemd {
 char HouseClass::IonSensitivesShouldBeOffline()
 {
-
-  return 0; /*0x53a132*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x53A130)
 }
 } // namespace gamemd
 
@@ -601,35 +534,7 @@ char HouseClass::IonSensitivesShouldBeOffline()
 namespace gamemd {
 char HouseClass::Set(void *a1, void *a2, void *a3)
 {
-
-  unsigned int *v2; // eax
-  unsigned int *Value; // eax
-  int v4; // ecx
-  int v6; // [esp+Ch] [ebp-4h] BYREF
-
-  LOBYTE(v2) = (*((int (**)(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]); /*0x54b98b*/
-  if ( (unsigned char)v2 ) /*0x54b990*/
-  {
-    (*(void (**)(void *, unsigned int, int))(*(unsigned int *)((unsigned int *)this)[0] + 1348))(((unsigned int *)this)[0], 0, 1072693248); /*0x54b9a4*/
-    Value = ((ProgressTimer *)((ProgressTimer *)((char *)((unsigned int *)this)[0] + 904)))->GetValue(&v6); /*0x54b9b8*/
-    ((FacingClass*)((char *)&this->repairStationsCount))->Set_SyncLog(Value); /*0x54b9c1*/
-    v4 = this->relatedTags[0]; /*0x54b9c6*/
-    this->absorbersCapacity = 0; /*0x54b9cc*/
-    this->bunkersCount = 0; /*0x54b9cf*/
-    this->bunkers[0] = 0; /*0x54b9d2*/
-    this->bunkersCapacity = 0; /*0x54b9d5*/
-    this->occupiables[0] = v4; /*0x54b9d8*/
-    LOBYTE(v2) = HouseClass::IonSensitivesShouldBeOffline(); /*0x54b9e4*/
-    if ( !(unsigned char)v2 ) /*0x54b9ec*/
-    {
-      v2 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)((unsigned int *)this)[0] + 756))(((unsigned int *)this)[0], &v6); /*0x54b9f8*/
-      if ( *v2 == dword_ABC588 ) /*0x54ba08*/
-        LOBYTE(v2) = ((GadgetGrid *)((GadgetGrid *)&g_CellClassManager))->InsertItem((int)((unsigned int *)this)[0]); /*0x54ba20*/
-      this->unitRepairStations[0] = 1; /*0x54ba25*/
-    }
-  }
-  return (char)v2; /*0x54ba2c*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x54B980)
 }
 } // namespace gamemd
 
@@ -637,19 +542,7 @@ char HouseClass::Set(void *a1, void *a2, void *a3)
 namespace gamemd {
 int HouseClass::GetStatus(int aP1)
 {
-
-  int v2; // edx
-
-  if ( this == (HouseClass *)15 || this == (HouseClass *)16 ) /*0x6abc68*/
-    return 2; /*0x6abcbf*/
-  if ( this == (HouseClass *)1 || this == (HouseClass *)40 || this == (HouseClass *)2 || this == (HouseClass *)3 ) /*0x6abc7c*/
-    return 3; /*0x6abcb7*/
-  if ( this == (HouseClass *)6 || this == (HouseClass *)7 ) /*0x6abc86*/
-    return GetHouseTechLevel((int)this, v2) == 5; /*0x6abcb2*/
-  if ( this == (HouseClass *)57 || this == (HouseClass *)32 || this == (HouseClass *)31 ) /*0x6abc95*/
-    return 1; /*0x6abc9d*/
-  return -1; /*0x6abc9a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6ABC60)
 }
 } // namespace gamemd
 }  // L-fix: close namespace tail 2

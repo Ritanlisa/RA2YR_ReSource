@@ -71,7 +71,9 @@ unsigned char * Palette::ConvertIndices(int a2)
 }
 }  // G42.18c ns repair
 // 0x72B820
+namespace gamemd {
 int Palette::LoadFile(char * Source)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x72B820)
+}
 }

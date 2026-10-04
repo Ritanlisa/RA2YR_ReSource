@@ -929,24 +929,9 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(unsigned i
 
 // 0x5D18A0
 namespace gamemd {
-VectorClass_flat * MSPCXAnim_26::Constructor_VectorClass_MapStage___(unsigned int * Block, char a2)
+VectorClass_flat * DynamicVector::Constructor_VectorClass_MapStage___(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x5d18a3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d18a6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d18b0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5d18b8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d18c0*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x5d18cb*/
-  Block->m_8 = 0; /*0x5d18d1*/
-  if ( (a2 & 1) != 0 ) /*0x5d18d8*/
-    __3_YAXPAX_Z(Block); /*0x5d18db*/
-  return Block->__pad_0; /*0x5d18e5*/
-
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005D18A0.json)
 }
 } // namespace gamemd
 

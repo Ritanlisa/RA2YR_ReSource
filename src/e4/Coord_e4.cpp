@@ -99,27 +99,9 @@ void * Coord::Scale(float aP1)
 }
 // 0x565730
 namespace gamemd {
-void * Coord::To_Cell(unsigned int *aP1)
+void * SendCampaignOptions::To_Cell(unsigned int *aP1)
 {
-
-  int v2; // eax
-  int v3; // edx
-  CellClass *v4; // edx
-  unsigned int *v6; // [esp+Ch] [ebp+4h]
-
-  v2 = aP1[1] / 256; /*0x56574f*/
-  v3 = *aP1 / 256 + (v2 << 9); /*0x56575a*/
-  if ( v3 >= 0 && v3 < *((unsigned int *)this + 80) ) /*0x565764*/
-  {
-    v4 = (CellClass *)*((unsigned int *)this->q13C + v3); /*0x56576c*/
-    if ( v4 ) /*0x565771*/
-      return v4; /*0x565774*/
-  }
-  LOWORD(v6) = *aP1 / 256; /*0x56577a*/
-  HIWORD(v6) = v2; /*0x56577f*/
-  g_MissionQueueFrame.briefing[139] = (int)v6; /*0x565789*/
-  return (CellClass *)&g_MissionQueueFrame.briefing[130]; /*0x565773*/
-
+    (void)aP1; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00565730.json)
 }
 }
 // 0x5AC370

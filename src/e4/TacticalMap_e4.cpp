@@ -49,7 +49,7 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
 } // namespace gamemd
 // 0x4F4480
 namespace gamemd {
-int TacticalMap::Redraw()
+void TacticalMap::Redraw()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F4480.json)
 }
@@ -63,16 +63,16 @@ void TacticalMap::MultiplyByScalar(ObjectClass * aP1, void *a2)
 } // namespace gamemd
 // 0x5D49A0
 namespace gamemd {
-char TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
+void TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D49A0.json)
 }
 } // namespace gamemd
 // 0x6D1C20
 namespace gamemd {
-void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
+_DWORD TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006D1C20.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006D1C20.json)
 }
 } // namespace gamemd
 // 0x6D2B60
@@ -105,7 +105,9 @@ int TacticalMap::DrawOccupiedRegion()
 }
 }  // G42.18c ns repair
 // 0x7BCFB0
+namespace gamemd {
 unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int aP3, int a5)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007BCFB0.json)
+}
 }

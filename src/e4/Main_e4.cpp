@@ -17,8 +17,8 @@
 
 // 0x4E1D00
 namespace gamemd {
-void Main::CreateDialog()
+int Main::CreateDialog()
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E1D00)
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E1D00)
 }
 } // namespace gamemd

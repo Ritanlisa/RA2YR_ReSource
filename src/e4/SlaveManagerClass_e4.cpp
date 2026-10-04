@@ -278,9 +278,9 @@ SlaveManagerClass * SlaveManagerClass::ProcessOrders(void * Block, char a2)
 
 // 0x6B13B0
 namespace gamemd {
-void SlaveManagerClass_25::ddtor(void *a1_1, void *a2_1)
+wchar_t SlaveManagerClass_25::ddtor(void *a1_1, void *a2_1)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6B13B0)
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6B13B0)
 }
 } // namespace gamemd
 

@@ -28,6 +28,7 @@ ScriptActionNode* ScriptClass::GetNextAction(
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x691540)
 }
+namespace gamemd {
 bool ScriptClass::HasNextAction() const
 {
     // Check if there is another action after the current line index.
@@ -35,9 +36,11 @@ bool ScriptClass::HasNextAction() const
         return false;
     return (idxCurrentLine + 1) < buildingType->actionsCount;
 }
+}
 
 // --- ScriptTypeClass ---
 
+namespace gamemd {
 bool ScriptTypeClass::LoadFromINIList(CCINIClass* ini, bool is_global)
 {
     (void)ini;
@@ -47,6 +50,7 @@ bool ScriptTypeClass::LoadFromINIList(CCINIClass* ini, bool is_global)
     // scriptActions[50] and actionsCount.
     // isGlobal flag is set per-instance during parsing.
     return true;
+}
 }
 
 } // namespace gamemd

@@ -65,7 +65,9 @@ wchar_t * PageUserCommandClass::Read(void *a1, void *a2)
 }
 }  // G42.18c ns repair
 // 0x537E50
+namespace gamemd {
 char PageUserCommandClass::Do(int a1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x537E50)
+}
 }

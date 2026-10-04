@@ -58,7 +58,9 @@ BOOL UnholyAlliance::Write(MPCooperative * aP0)
 }
 }  // G42.18c ns repair
 // 0x5CB430
+namespace gamemd {
 char UnholyAlliance::Seek(void *a1, void *a2, void *a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5CB430)
+}
 }

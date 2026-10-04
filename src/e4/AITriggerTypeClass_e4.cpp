@@ -389,9 +389,9 @@ unsigned int AITriggerTypeClass_40::PointerToIndex(int a2)
 
 // 0x4203C0
 namespace gamemd {
-void AITriggerTypeClass_40::Seek(int a2, void *a2_2, void *a3_1)
+wchar_t AITriggerTypeClass_40::Seek(int a2, void *a2_2, void *a3_1)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4203C0)
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4203C0)
 }
 } // namespace gamemd
 
@@ -413,9 +413,9 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
 
 // 0x4204C0
 namespace gamemd {
-void AITriggerTypeClass_40::ddtor()
+wchar_t AITriggerTypeClass_40::ddtor()
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4204C0)
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4204C0)
 }
 } // namespace gamemd
 

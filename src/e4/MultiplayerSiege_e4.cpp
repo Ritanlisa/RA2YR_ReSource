@@ -27,7 +27,7 @@
 
 // 0x5CA680
 namespace gamemd {
-char MultiplayerSiege::Read(void *a1, void *a2)
+short MultiplayerSiege::Read(void *a1, void *a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5CA680)
 }

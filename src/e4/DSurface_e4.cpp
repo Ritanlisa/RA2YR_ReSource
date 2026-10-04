@@ -244,7 +244,9 @@ int DSurface::DrawMarker(AbstractClass * aP1, ObjectClass * aP2)
 }
 }  // G42.18c ns repair
 // 0x759E60
+namespace gamemd {
 char DSurface::FlipIfNeeded()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00759E60.json)
+}
 }

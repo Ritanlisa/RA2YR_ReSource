@@ -541,37 +541,9 @@ int * AudioQueue::IncrementPriority()
 
 // 0x408270
 namespace gamemd {
-int AudioQueue::ReleaseBuffers()
+int AnimClass::ReleaseBuffers()
 {
-
-  int result; // eax
-  int i; // esi
-  int v2; // eax
-
-  result = *(unsigned int *)&stru_87E790.__pad_5C[48]; /*0x408270*/
-  if ( *(unsigned int *)&stru_87E790.__pad_5C[48] ) /*0x408278*/
-  {
-    result = ((AudioQueue *)((AudioQueue *)&stru_87E790.__pad_5C[36]))->GetNext(); /*0x40827f*/
-    for ( i = result; result; i = result ) /*0x408288*/
-    {
-      if ( !*(unsigned int *)(i + 128) && *(unsigned int *)(i + 20) ) /*0x4082a2*/
-      {
-        EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x4082ae*/
-        ((AudioChannel *)(*(AudioChannel **)(i + 20)))->DeactivatePlay(); /*0x4082b3*/
-        v2 = *(unsigned int *)(i + 12); /*0x4082b8*/
-        if ( (v2 & 1) != 0 ) /*0x4082bd*/
-        {
-          LOBYTE(v2) = v2 & 0xFC | 2; /*0x4082c1*/
-          *(unsigned int *)(i + 12) = v2; /*0x4082c3*/
-        }
-        LeaveCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x4082cb*/
-      }
-      ++*(unsigned int *)(i + 128); /*0x4082d4*/
-      result = ((AudioQueue *)((AudioQueue *)i))->GetNextAlt(); /*0x4082dc*/
-    }
-  }
-  return result; /*0x4082e9*/
-
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00408270.json)
 }
 } // namespace gamemd
 

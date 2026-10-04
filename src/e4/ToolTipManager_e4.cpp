@@ -60,7 +60,7 @@ int ToolTipManager::stubReturnFalse(int a1)
 } // namespace gamemd
 // 0x724F40
 namespace gamemd {
-DynamicVector * DynamicVector::QueryInterface(unsigned int * Block, char a2)
+gamemd::VectorClass_flat * DynamicVector::QueryInterface(unsigned int * Block, char a2)
 {
     (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00724F40.json)
 }

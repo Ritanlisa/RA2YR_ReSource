@@ -28,7 +28,7 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 // IDA 0x4F4410: Hash::InsertOrdered (stub).
 // NOTE: previous annotation pointed at Int_CompareFunc4 (a different function).
 // 0x4f4410
-int Hash::InsertOrdered(void* table, const void* entry)
+void Hash::InsertOrdered(void* table, const void* entry)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4f4410)
 }
@@ -130,7 +130,7 @@ static const uint32_t crc32_table[256] = {
 
 // IDA 0x69E000: Compute
 // 0x4a1fb0
-int CRC32::Compute(const void* data, uint32_t size)
+uint32_t CRC32::Compute(const void* data, uint32_t size)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4a1fb0)
 }

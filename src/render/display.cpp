@@ -215,7 +215,7 @@ HRESULT GScreenClass::Load(IStream* stream) { return S_OK; }
 HRESULT GScreenClass::Save(IStream* stream) { return S_OK; }
 void GScreenClass::LoadFromINI(CCINIClass* ini) {}
 const wchar_t* GScreenClass::GetToolTip(unsigned int dialog_id) { return nullptr; }
-void GScreenClass::CloseWindow() {}
+int GScreenClass::CloseWindow() {}
 void GScreenClass::vt_entry_8C() {}
 bool GScreenClass::vt_entry_90(const CellStruct& cell, HouseClass* house) { return false; }
 bool GScreenClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) { return false; }
@@ -226,7 +226,7 @@ bool GScreenClass::vt_entry_9C(const CellStruct& cell, HouseClass* house) { retu
 
 void DisplayClass::LoadFromINI(CCINIClass* ini) {}
 const wchar_t* DisplayClass::GetToolTip(unsigned int dialog_id) { return nullptr; }
-void DisplayClass::CloseWindow() {}
+int DisplayClass::CloseWindow() {}
 void DisplayClass::vt_entry_8C() {}
 bool DisplayClass::vt_entry_90(const CellStruct& cell, HouseClass* house) { return false; }
 // 0x4a9ca0

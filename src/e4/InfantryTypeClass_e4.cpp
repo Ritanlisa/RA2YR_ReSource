@@ -171,7 +171,9 @@ int InfantryTypeClass::GetObjectSize()
 }
 }  // G42.18c ns repair
 // 0x524D60
+namespace gamemd {
 int InfantryTypeClass::GetAuxField()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x524D60)
+}
 }

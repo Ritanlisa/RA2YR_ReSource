@@ -154,9 +154,7 @@ void * JumpjetLocomotionClass::ComputeRotationMatrix(int a1, float * a2, signed 
 namespace gamemd {
 int JumpjetLocomotionClass::DispatchVirtualCall_0(int a1)
 {
-
-  return (*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 114))(((unsigned int *)a1)[0]) > 0 ? 4 : 2;
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4CFCF0)
 }
 } // namespace gamemd
 // 0x4CFD20
@@ -1219,7 +1217,7 @@ char DynamicVector::AddRef(int a2)
 
 // 0x54E930
 namespace gamemd {
-char DynamicVector::Release(int a2, unsigned int * a3)
+gamemd::AbstractClass DynamicVector::Release(int a2, unsigned int * a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0054E930.json)
 }
@@ -1251,7 +1249,7 @@ unsigned int DynamicVector::Write(int a2)
 
 // 0x54EA70
 namespace gamemd {
-char DynamicVector::SetCapacity(int a2, unsigned int * a3)
+gamemd::AbstractClass DynamicVector::SetCapacity(int a2, unsigned int * a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0054EA70.json)
 }
@@ -2370,7 +2368,9 @@ LONG JumpjetLocomotionClass::SmallStub_75CC70(int a1)
 }
 }  // G42.18c ns repair
 // 0x75CC80
+namespace gamemd {
 LONG JumpjetLocomotionClass::SmallStub_75CC80(int a1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x75CC80)
+}
 }

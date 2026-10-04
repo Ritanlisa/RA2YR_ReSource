@@ -91,9 +91,9 @@ int ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseCl
 }
 // 0x588CE0
 namespace gamemd {  // G42.18c ns repair
-void unknown::ddtor(void *a1)
+wchar_t unknown::ddtor(void *a1)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00588CE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00588CE0.json)
 }
 }  // G42.18c ns repair
 // 0x5896A0

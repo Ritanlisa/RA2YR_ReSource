@@ -285,9 +285,9 @@ char Tactical_42::Release(int a2, unsigned int * a3)
 
 // 0x6E4940
 namespace gamemd {
-void Tactical_42::ddtor(void *a1_1, void *a2_1)
+wchar_t Tactical_42::ddtor(void *a1_1, void *a2_1)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4940)
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4940)
 }
 } // namespace gamemd
 

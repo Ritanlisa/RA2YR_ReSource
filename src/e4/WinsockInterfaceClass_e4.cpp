@@ -103,7 +103,9 @@ int WinsockInterfaceClass::Destru_vt16(int a1, int a2, int a3, int a4)
 }
 }  // G42.18c ns repair
 // 0x7B2780
+namespace gamemd {
 SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B2780)
+}
 }

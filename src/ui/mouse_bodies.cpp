@@ -17,7 +17,7 @@ bool WWMouseClass::IsRefCountNegative() { return false; }
 
 void WWMouseClass::HideCursor() {}
 
-void WWMouseClass::ShowCursor() {}
+int WWMouseClass::ShowCursor() {}
 
 void WWMouseClass::ReleaseMouse() {}
 
@@ -25,7 +25,7 @@ void WWMouseClass::CaptureMouse() {}
 
 uint8_t WWMouseClass::GetField10() { return 0; }
 
-void WWMouseClass::InvalidateRect(const RectangleStruct& rect) {}
+int WWMouseClass::InvalidateRect(const RectangleStruct& rect) {}
 
 void WWMouseClass::CallFunc10() {}
 

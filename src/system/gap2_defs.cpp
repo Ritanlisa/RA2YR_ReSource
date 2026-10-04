@@ -403,7 +403,7 @@ int TacticalClass::initTacticalMap(void* a1, void* a2) {
 
 // 0x4722C0
 namespace gamemd { 
-BOOL CellClass::HasContent()
+bool CellClass::HasContent()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4722C0)
 }
@@ -1920,7 +1920,7 @@ int CellClass::ProcessUpdate() {
 
 // 0x5AE100
 namespace gamemd { 
-int ScenarioClass::Load(ObjectClass * aP1)
+int ScenarioClass::Load(int a1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5AE100)
 }
@@ -2428,7 +2428,7 @@ int TacticalClass::UpdateObjects() {
 
 // 0x65CA80
 namespace gamemd { 
-void* RawFileClass::Construct(RawFileClass * aP1)
+void* RawFileClass::Construct(int a1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CA80)
 }
@@ -2436,7 +2436,7 @@ void* RawFileClass::Construct(RawFileClass * aP1)
 
 // 0x65CAC0
 namespace gamemd { 
-void* FileClass::SetName(char * Source)
+void* FileClass::SetName(void* a1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CAC0)
 }
@@ -2444,7 +2444,7 @@ void* FileClass::SetName(char * Source)
 
 // 0x65CB50
 namespace gamemd { 
-int FileClass::Open2(const CHAR *a2)
+bool FileClass::Open2(const CHAR *a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CB50)
 }

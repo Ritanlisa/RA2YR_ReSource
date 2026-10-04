@@ -1706,7 +1706,7 @@ bool FootClass::CanEnterBuilding() {
 
 // 0x709a90
 namespace ra2 { namespace game { 
-int __thiscall TechnoClass::DrawPips(void *a1)
+int TechnoClass::DrawPips()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x709a90)
 }

@@ -45,7 +45,7 @@ int Waypoint::FindCell(unsigned int * a2)
 }
 // 0x763610
 namespace gamemd {
-CHAR * Waypoint::To_String(int aP0)
+char * Waypoint::To_String(int aP0)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x763610)
 }

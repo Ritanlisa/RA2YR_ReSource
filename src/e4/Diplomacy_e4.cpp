@@ -35,7 +35,9 @@ LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 } // namespace gamemd
 
 // 0x656580
+namespace gamemd {
 char * Diplomacy::GetField(int aP1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x656580)
+}
 }

@@ -1744,14 +1744,14 @@ struct Campaign_WorldDominationTour_24_ { unsigned int* Campaign_WorldDomination
 }  // G42.18c ns repair
 // 0x76f190
 namespace gamemd {  // G42.18c ns repair
-unsigned int* VectorCursor::ddtor()
+BOOL VectorCursor::ddtor()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0076F190.json)
 }
 }  // G42.18c ns repair
 // 0x76f170
 namespace gamemd {  // G42.18c ns repair
-unsigned int* Count::ddtor()
+int32_t * Count::ddtor()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0076F170.json)
 }

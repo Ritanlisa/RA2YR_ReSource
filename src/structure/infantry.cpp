@@ -75,62 +75,62 @@ void InfantryClass::ProcessDeploy()
 
 // IDA: 0x51D6F0 (ProcessDeployAction, 1013B) — validates weapon, checks mission, sets loco
 // 0x51d6f0
-InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
+int * InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0051D6F0.json)
 }
 // 0x5200b0
-AnimClass * * InfantryClass::ProcessIdleDeploy()
+int * InfantryClass::ProcessIdleDeploy()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005200B0.json)
 }
 // 0x521b60
-AnimClass * InfantryClass::CanInitiateDeploy()
+bool * InfantryClass::CanInitiateDeploy()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00521B60.json)
 }
 // 0x5221d0
-AnimClass * InfantryClass::CanDeployAtCell(__int16 *a2, __int16 *a3, int a1, int a4)
+bool InfantryClass::CanDeployAtCell()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005221D0.json)
 }
 // 0x521eb0
-AnimClass * InfantryClass::CheckDeployPath()
+bool * InfantryClass::CheckDeployPath()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00521EB0.json)
 }
 // 0x522fe0
-AnimClass * InfantryClass::CreateDeployLocomotor()
+int * InfantryClass::CreateDeployLocomotor()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00522FE0.json)
 }
 // 0x522c00
-AnimClass * InfantryClass::StartBombDeploy()
+bool * InfantryClass::StartBombDeploy()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00522C00.json)
 }
 // 0x5228d0
-AnimClass * InfantryClass::IsBombDeployMission()
+bool * InfantryClass::IsBombDeployMission()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005228D0.json)
 }
 // 0x514310
-AnimClass * InfantryClass::DeployAnimation()
+int * InfantryClass::DeployAnimation()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00514310.json)
 }
 // 0x521d80
-AnimClass * InfantryClass::ComputeDeploySpeedFactor()
+int * InfantryClass::ComputeDeploySpeedFactor()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00521D80.json)
 }
 // 0x5218e0
-AnimClass * InfantryClass::GetDeployWeaponIndex()
+int InfantryClass::GetDeployWeaponIndex(int weapon_index)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005218E0.json)
 }
 // 0x522600
-AnimClass * InfantryClass::FireAtTargetPos(int a2, int a3, int a4)
+int InfantryClass::FireAtTargetPos()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00522600.json)
 }
@@ -313,9 +313,11 @@ int InfantryClass::ProcessIdleAction()
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0051CDB0.json)
 }
 // 0x5239d0
+namespace gamemd {
 int InfantryTypeClass::DTOR()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005239D0.json)
+}
 }
 // 0x521320
 int InfantryClass::GetIdleTimer()
@@ -563,7 +565,7 @@ bool InfantryClass::CanEnterBuilding()
     return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00522BC0.json)
 }
 // 0x522bc0
-    bool __thiscall InfantryClass::CanEnterBuilding(int *a1)
+bool InfantryClass::CanEnterBuilding()
 {
     return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00522BC0.json)
 }
@@ -573,7 +575,7 @@ int InfantryClass::FindIdleAITarget()
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0051F640.json)
 }
 // 0x51f640
-    int __thiscall InfantryClass::FindIdleAITarget(int *a1)
+int InfantryClass::FindIdleAITarget()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0051F640.json)
 }
@@ -707,7 +709,7 @@ int InfantryClass::UpdateBehavior()
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00736579.json)
 }
 // 0x51dbd0
-void* InfantryClass::CalcFacingToTarget()
+int * InfantryClass::CalcFacingToTarget()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0051DBD0.json)
 }
@@ -717,7 +719,7 @@ int InfantryClass::EvaluateTarget()
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0051BF90.json)
 }
 // 0x51e140
-BuildingTypeClass * * InfantryClass::SelectAutoTarget(unsigned int flags, int64_t a3)
+int * InfantryClass::SelectAutoTarget(unsigned int flags, int64_t a3)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0051E140.json)
 }
@@ -729,33 +731,43 @@ BuildingTypeClass * * InfantryClass::SelectAutoTarget(unsigned int flags, int64_
 }
 
 // 0x51b1f0
+namespace gamemd {
 int InfantryClass::AssignTarget_SyncLog(int syncFlag)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0051B1F0.json)
 }
+}
 // 0x51aa40
+namespace gamemd {
 int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0051AA40.json)
 }
+}
 // 0x51cba0
+namespace gamemd {
 int InfantryClass::ValidatePlacement()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0051CBA0.json)
 }
+}
 // 0x484ae0
+namespace gamemd {
 int InfantryClass::ValidateAttackPosition()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00484AE0.json)
+}
 }
 // ============================================================
 // Phase 3: Stream & Save
 // ============================================================
 
 // 0x521960
+namespace gamemd {
 int InfantryClass::LoadFromStream()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00521960.json)
+}
 }
 // 0x521b00
 int InfantryClass::SaveLoad_Prefix()

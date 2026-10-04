@@ -27,7 +27,7 @@ int WaypointPathClass::Init()
 }
 // 0x763810
 namespace gamemd {
-int WaypointPathClass::Construct(unsigned int aP1)
+_DWORD WaypointPathClass::Construct(unsigned int aP1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x763810)
 }
