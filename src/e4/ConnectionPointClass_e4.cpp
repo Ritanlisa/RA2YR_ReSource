@@ -25,24 +25,7 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 namespace gamemd {
 unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPointClass * aP2, void *a3, void *a4, void *a5, void *a6)
 {
-
-  this->ConnectionPointClass_field_0x04 = *a1; /*0x4a087c*/
-  this->ConnectionPointClass_field_0x08 = a1[1]; /*0x4a0881*/
-  this->ConnectionPointClass_field_0x0C = a1[2]; /*0x4a0887*/
-  this->ConnectionPointClass_field_0x10 = a1[3]; /*0x4a088d*/
-  this->ConnectionPointClass_field_0x18 = (unsigned int)(aP2); /*0x4a0896*/
-  this->ConnectionPointClass_field_0x14 = 0; /*0x4a0899*/
-  this->ConnectionPointClass_field_0x20 = 0; /*0x4a089c*/
-  this->u32_24 = 0; /*0x4a089f*/
-  this->u32_28 = 1; /*0x4a08a2*/
-  this->u32_29 = 0; /*0x4a08a6*/
-  this->ConnectionPointClass_field_0x1C = (int)&vt_DynamicVectorClass; /*0x4a08a9*/
-  this->q00C = 10; /*0x4a08b0*/
-  this->q00B = 0; /*0x4a08b7*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ConnectionPointClass); /*0x4a08ba*/
-  (*(void (**)(int))(aP2->q004)((int)aP2); /*0x4a08c3*/
-  return this->__pad_0; /*0x4a08c8*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A0870)
 }
 } // namespace gamemd
 // 0x4A1280

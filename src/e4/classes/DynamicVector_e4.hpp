@@ -5,6 +5,9 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Constructor_VectorClass_RadSiteClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_RadBeam___;  // G42.36 fwd supply
+class Constructor_VectorClass_MapStage___;  // G42.36 fwd supply
 class GetAt;  // G42.36 fwd supply
 class SetAt;  // G42.36 fwd supply
 class Constructor_VectorClass_MSSfx___;  // G42.36 fwd supply
@@ -211,5 +214,8 @@ struct DynamicVector {
     VectorClass_flat * GetAt(unsigned int * Block, char a2);
     int j_vt09(unsigned char * a1, signed int a3, int a4, int a5, int a6, int a7);
     unsigned int * j_vt00(char a2);
+    VectorClass_flat * Constructor_VectorClass_MapStage___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_RadBeam___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_RadSiteClass___(unsigned int * Block, char a2);
 };
 } // namespace gamemd

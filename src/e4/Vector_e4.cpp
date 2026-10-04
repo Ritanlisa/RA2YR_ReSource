@@ -170,31 +170,14 @@ void Vector::ReallocDynamic(int a2)
 namespace gamemd {
 int Vector::Find(unsigned int * a2)
 {
-
-  int v2; // edx
-  int result; // eax
-  unsigned int *i; // ecx
-
-  v2 = this->q010; /*0x4e0550*/
-  result = 0; /*0x4e0553*/
-  if ( v2 <= 0 ) /*0x4e0558*/
-    return -1; /*0x4e056f*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e055e*/
-  {
-    if ( ++result >= v2 ) /*0x4e056d*/
-      return -1; /*0x4e056d*/
-  }
-  return result; /*0x4e0572*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E0550)
 }
 }
 // 0x76F0B0
 namespace gamemd {
 BOOL Vector::HasCapacity()
 {
-
-  return this->q008 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0bd*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x76F0B0)
 }
 } // namespace gamemd
 

@@ -322,12 +322,7 @@ int JumpjetLocomotionClass::StubReturnZero_0(int a1, unsigned int * a2)
 namespace gamemd {  // G42.18c ns repair
 bool JumpjetLocomotionClass::CheckPiggybackState(int a1)
 {
-
-  return !(*(uint8_t (**)(char *))(*((unsigned int *)a1 - 5) + 16))((char *)a1 - 20) /*0x4af9a0*/
-      && *(unsigned int *)a1->__pad_50
-      && a1->unknown_4D
-      && !*(unsigned char *)(*((unsigned int *)a1 - 3) + 1709);
-
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4AF970)
 }
 }  // G42.18c ns repair
 // 0x4AFB40

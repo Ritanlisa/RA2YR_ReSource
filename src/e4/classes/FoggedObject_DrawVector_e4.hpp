@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Block;  // G42.36 fwd supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct FoggedObject_DrawVector {
@@ -19,6 +20,7 @@ struct FoggedObject_DrawVector {
     VectorClass_flat * QueryInterface(char a2);
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

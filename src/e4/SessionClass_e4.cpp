@@ -108,28 +108,7 @@ unsigned int * SessionClass::saveSettings()
 namespace gamemd {
 unsigned int SessionClass::initPlayers()
 {
-
-  signed int PlayerCountMap; // esi
-  int v3; // eax
-
-  if ( this == (SessionClass *)-1 ) /*0x5e64c3*/
-    return 8; /*0x5e64ca*/
-  PlayerCountMap = ReadPlayerCountMap((int)this); /*0x5e64d7*/
-  if ( dword_A8B23C ) /*0x5e64db*/
-  {
-    v3 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 38))(dword_A8B23C); /*0x5e64df*/
-    if ( v3 != -1 && v3 < PlayerCountMap ) /*0x5e64ec*/
-      PlayerCountMap = v3; /*0x5e64ee*/
-  }
-  if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5e64f7*/
-  {
-    if ( Network::IsLobbyFeature() ) /*0x5e64f9*/
-      return PlayerCountMap & 0xFFFFFFFE; /*0x5e6508*/
-    if ( Network::IsMultiplayerActive() ) /*0x5e6509*/
-      return 2; /*0x5e6512*/
-  }
-  return PlayerCountMap; /*0x5e64ca*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5E64C0)
 }
 } // namespace gamemd
 // 0x663B40
@@ -177,14 +156,7 @@ int SessionClass::SetField()
 namespace gamemd {
 int SessionClass::GetPlayerSide()
 {
-
-  int result; // eax
-
-  result = -2; /*0x696f13*/
-  if ( *(int *)((char *)&this->u32_1C9) != -2 ) /*0x696f1a*/
-    return *(int *)((char *)&this->u32_1C5); /*0x696f1c*/
-  return result; /*0x696f1f*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x696F10)
 }
 } // namespace gamemd
 // 0x696F20
@@ -273,43 +245,16 @@ int SessionClass::SetPlayerColor(int a2)
 } // namespace gamemd
 // 0x696FF0
 namespace gamemd {
-
-  int result; // eax
-
-  result = aP1; /*0x696ff0*/
   if ( aP1 == -2 ) /*0x696ff7*/
-  {
-    *(int *)((char *)this + 91) = -1; /*0x696ff9*/
-    *(int *)((char *)this + 95) = -2; /*0x697000*/
-  }
-  else
-  {
-    *(int *)((char *)this + 91) = aP1; /*0x697006*/
-    *(int *)((char *)this + 95) = -1; /*0x697009*/
-  }
-  return result; /*0x697003*/
-
+{
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x696FF0)
 }
 } // namespace gamemd
 // 0x697020
 namespace gamemd {
 int SessionClass::SetOption2(int aP1)
 {
-  int result; // eax
-
-  result = aP1; /*0x697020*/
-  if ( aP1 == -2 ) /*0x697027*/
-  {
-    *(int *)((char *)this + 99) = -1; /*0x697029*/
-    *(int *)((char *)this + 103) = -2; /*0x697030*/
-  }
-  else
-  {
-    *(int *)((char *)this + 99) = aP1; /*0x697036*/
-    *(int *)((char *)this + 103) = -1; /*0x697039*/
-  }
-  return result; /*0x697033*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x697020)
 }
 } // namespace gamemd
 // 0x6970A0
@@ -385,12 +330,7 @@ int SessionClass::AssignSide(int a2, char aP2)
 namespace gamemd {  // G42.18c ns repair
 char SessionClass::GetGameSpeed()
 {
-
-  int result; // eax
-
-  LOBYTE(result) = this->CurrentlyInGame; /*0x69bbe0*/
-  return result; /*0x69bbe6*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69BBE0)
 }
 }  // G42.18c ns repair
 // 0x69C4A0
@@ -418,22 +358,7 @@ int SessionClass::Seek(int a2, void *a2_2, void *a3)
 namespace gamemd {  // G42.18c ns repair
 TypeList_flat * SessionClass::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x69c6c3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x69c6c6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x69c6d0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x69c6d8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x69c6e0*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x69c6eb*/
-  Block->m_8 = 0; /*0x69c6f1*/
-  if ( (a2 & 1) != 0 ) /*0x69c6f8*/
-    __3_YAXPAX_Z(Block); /*0x69c6fb*/
-  return Block->__pad_0; /*0x69c705*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69C6C0)
 }
 }  // G42.18c ns repair
 // 0x69C710
@@ -489,22 +414,7 @@ int SessionClass::Read(unsigned int * a2, void *a2_2)
 namespace gamemd {  // G42.18c ns repair
 VectorClass_flat * SessionClass::validateGame(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x69d463*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x69d466*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x69d470*/
-  {
-    __3_YAXPAX_Z(v3); /*0x69d478*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x69d480*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x69d48b*/
-  Block->m_8 = 0; /*0x69d491*/
-  if ( (a2 & 1) != 0 ) /*0x69d498*/
-    __3_YAXPAX_Z(Block); /*0x69d49b*/
-  return Block->__pad_0; /*0x69d4a5*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69D460)
 }
 }  // G42.18c ns repair
 // 0x7B2720

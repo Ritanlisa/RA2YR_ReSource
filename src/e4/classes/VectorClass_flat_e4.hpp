@@ -4,6 +4,13 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Constructor_VectorClass_GlobalPacketType___;  // G42.36 fwd supply
+class Constructor_VectorClass_MultiMission___;  // G42.36 fwd supply
+class CopyAssign;  // G42.36 fwd supply
+class Constructor_VectorClass_PlanningBranchClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_PlanningMemberClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_ParasiteClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_AircraftClass___;  // G42.36 fwd supply
 class Constructor_VectorClass_HSVClass_;  // G42.36 fwd supply
 class Constructor_VectorClass_SpotLightClass___;  // G42.36 fwd supply
 class Constructor_VectorClass_ObjectTypeClass___;  // G42.36 fwd supply
@@ -316,5 +323,14 @@ int Destroy(void *a1);
     DynamicVector * Constructor_VectorClass_ObjectTypeClass___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_SpotLightClass___(unsigned int * Block, char a2);
     VectorClass_flat * Constructor_VectorClass_HSVClass_(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_AircraftClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_ParasiteClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_PlanningMemberClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_PlanningBranchClass___(unsigned int * Block, char a2);
+    unsigned int * loc_660FD0(unsigned int * Block, char a2);
+    unsigned int * CopyAssign(VectorClass_flat * aP1);
+    DynamicVector * Constructor_VectorClass_MultiMission___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_GlobalPacketType___(unsigned int * Block, char a2);
+    unsigned int * loc_69D720(unsigned int * Block, char a2);
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

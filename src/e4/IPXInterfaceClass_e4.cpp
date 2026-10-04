@@ -64,10 +64,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
 namespace gamemd {
 int IPXInterfaceClass::GetLocalAddress(int a2)
 {
-
-  this->u32_3F2F8 = a2; /*0x7b1764*/
-  return a2; /*0x7b176a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B1760)
 }
 } // namespace gamemd
 // 0x7B19C0

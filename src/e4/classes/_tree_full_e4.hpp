@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class DumpAudioDeviceDebug;  // G42.36 fwd supply
 class FindOwner;  // G42.36 fwd supply
 class CreateInstance;  // G42.36 fwd supply
 class IsAboveScreenMargin;  // G42.36 fwd supply
@@ -708,6 +709,7 @@ struct ObjectClass {
     unsigned int * clearTarget(char a2);
     unsigned int * loc_7A2E70(HWND hWnd, unsigned int a2, int a3, unsigned int a4);
     char _do_always_noconv_codecvt_base_std__MBE_NXZ_5();
+    int DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1);
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

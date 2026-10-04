@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Source;  // G42.36 fwd supply
 
 struct Palette {
 // --- flat members (BEGIN) ---
@@ -18,6 +19,7 @@ struct Palette {
     int LoadFile();
     unsigned char * ConvertIndices(int a2);
     unsigned char * SixBitTo16Bit(char a2, char a3, char a4);  // 0x4355b0
+    int LoadFile(char * Source);
 };
 
 } // namespace gamemd

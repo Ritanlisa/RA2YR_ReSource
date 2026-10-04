@@ -8,6 +8,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 
 // 0x5CEAB0
 namespace gamemd {
@@ -939,22 +940,7 @@ VectorClass_flat * DynamicVector::Constructor_VectorClass_MapStage___(unsigned i
 namespace gamemd {
 DynamicVector * MSPCXAnim_26::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x5d18f3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d18f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d1900*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5d1908*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d1910*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x5d191b*/
-  Block->m_8 = 0; /*0x5d1921*/
-  if ( (a2 & 1) != 0 ) /*0x5d1928*/
-    __3_YAXPAX_Z(Block); /*0x5d192b*/
-  return Block->__pad_0; /*0x5d1935*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D18F0)
 }
 } // namespace gamemd
 

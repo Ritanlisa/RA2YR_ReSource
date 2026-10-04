@@ -333,21 +333,6 @@ VectorClass_flat * DynamicVector::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 DynamicVector * MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x5ad483*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5ad486*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5ad490*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5ad498*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5ad4a0*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x5ad4ab*/
-  Block->m_8 = 0; /*0x5ad4b1*/
-  if ( (a2 & 1) != 0 ) /*0x5ad4b8*/
-    __3_YAXPAX_Z(Block); /*0x5ad4bb*/
-  return Block->__pad_0; /*0x5ad4c5*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5AD480)
 }
 } // namespace gamemd

@@ -103,18 +103,14 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, void * s, int a4, u
 namespace gamemd {
 int UDPInterfaceClass::Connect(int a2)
 {
-
-  return *(unsigned int *)(this->u32_3F554 + 4 * a2); /*0x7b415d*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B4150)
 }
 } // namespace gamemd
 // 0x7B4160
 namespace gamemd {
 int UDPInterfaceClass::Receive()
 {
-
-  return this->u32_3F2FC; /*0x7b4167*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B4160)
 }
 } // namespace gamemd
 // 0x7B4170
@@ -223,62 +219,21 @@ int UDPInterfaceClass_Destru::CheckStatus()
 namespace gamemd {  // G42.18c ns repair
 void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)
 {
-
-  int v4; // edi
-  int16_t v5; // bp
-  int v6; // eax
-  unsigned int *v7; // edx
-  unsigned short *v8; // ecx
-
-  v4 = this->u32_3F568; /*0x7b3926*/
-  if ( v4 < 16 ) /*0x7b392f*/
-  {
-    v5 = a3; /*0x7b3939*/
-    v6 = 0; /*0x7b393d*/
-    if ( v4 > 0 ) /*0x7b3941*/
-    {
-      v7 = (unsigned int *)this + 64859; /*0x7b3943*/
-      v8 = (unsigned short *)this + 129750; /*0x7b3949*/
-      do /*0x7b3967*/
-      {
-        if ( v5 == *v8 ) /*0x7b3952*/
-        {
-          if ( *a2 == *v7 ) /*0x7b3958*/
-            return; /*0x7b3958*/
-          v5 = a3; /*0x7b395a*/
-        }
-        ++v6; /*0x7b395e*/
-        ++v8; /*0x7b395f*/
-        ++v7; /*0x7b3962*/
-      }
-      while ( v6 < v4 ); /*0x7b3967*/
-    }
-    Debug::Log(); /*0x7b398d*/
-    *((unsigned int *)this + this->u32_3F568 + 64859) = *a2; /*0x7b399d*/
-    *((unsigned short *)this + (this->u32_3F568)++ + 129750) = v5; /*0x7b39aa*/
-  }
-
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B3920)
 }
 }  // G42.18c ns repair
 // 0x7B4100
 namespace gamemd {  // G42.18c ns repair
 int UDPInterfaceClass_Destru::GetStatistics(int a2)
 {
-
-  if ( a2 == this->u32_3F06C || a2 == -1 )
-    return 1140; /*0x7b412e*/
-  else
-    return a2 != this->u32_3F070 ? 0 : 0x475;
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B4100)
 }
 }  // G42.18c ns repair
 // 0x7B4140
 namespace gamemd {  // G42.18c ns repair
 int UDPInterfaceClass_Destru::COMStub()
 {
-
-  return this->u32_3F560; /*0x7b4146*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B4140)
 }
 }  // G42.18c ns repair
 // 0x7B40F0

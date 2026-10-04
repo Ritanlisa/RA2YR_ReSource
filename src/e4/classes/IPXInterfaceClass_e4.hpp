@@ -108,6 +108,7 @@ struct IPXInterfaceClass {
     void GetQueueSize();
     void StubReturnFalse(int a1, int a2);
     void getSocketCount();
+    int GetAddress(SOCKET s, void *a2, void *a3, void *a4);
 };
 
 } // namespace gamemd

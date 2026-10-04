@@ -62,35 +62,7 @@ return (void *)Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B8); /
 namespace gamemd {
 ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
 {
-
-  int v3; // eax
-  ParticleSystemTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
-
-  Block->ParticleSystemTypeClass_field_0x0 = &vt_ParticleSystemTypeClass; /*0x644966*/
-  Block->ParticleSystemTypeClass_field_0x4 = &vt_ParticleSystemTypeClass; /*0x64496c*/
-  Block->ParticleSystemTypeClass_field_0x8 = &vt_ParticleSystemTypeClass; /*0x644973*/
-  Block->SpawnCount = &vt_ParticleSystemTypeClass; /*0x64497a*/
-  AbstractClass::AnnounceExpiredPointer(&Block->ParticleSystemTypeClass_field_0x0, 1); /*0x644981*/
-  v5 =(gamemd::ParticleSystemTypeClass *)Block; /*0x644996*/
-  v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/
-         &stru_A83D50.__pad_14[4],
-         &v5);
-  if ( v3 != -1 && v3 < (int)stru_A83D50.SuperClass_field_0x28 ) /*0x6449aa*/
-  {
-    --stru_A83D50.SuperClass_field_0x28; /*0x6449af*/
-    for ( ; /*0x6449b5*/
-          v3 < (int)stru_A83D50.SuperClass_field_0x28;
-          *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8]
-                                                                                    + 4 * v3) )
-    {
-      ++v3; /*0x6449bd*/
-    }
-  }
-  ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x6449d1*/
-  if ( (a2 & 1) != 0 ) /*0x6449db*/
-    __3_YAXPAX_Z(Block); /*0x6449de*/
-  return &Block->ParticleSystemTypeClass_field_0x0; /*0x6449e8*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x644960)
 }
 } // namespace gamemd
 

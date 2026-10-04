@@ -267,26 +267,7 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
 namespace gamemd {
 AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
 {
-
-  void *vtable2; // edx
-  unsigned int v5[4]; // [esp+4h] [ebp-10h] BYREF
-
-  ((TextRenderer *)this)->GetInstance(); /*0x4c3dd9*/
-  Text::MeasureWidth((int)this->AbstractClass, 0); /*0x4c3de5*/
-  vtable2 = (void *)(((unsigned int *)this)[0]); /*0x4c3def*/
-  v5[2] = g_DisplayWidth; /*0x4c3df8*/
-  v5[0] = 0; /*0x4c3e09*/
-  v5[1] = (unsigned int)(vtable2); /*0x4c3e12*/
-  v5[3] = 18; /*0x4c3e16*/
-  return (*(int (**)(AudioStream *, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 /*0x4c3e28*/
-                                                                                    + 8))(
-           g_DSurface_Hidden_2,
-           v5,
-           a2,
-           v5,
-           0,
-           1);
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C3DD0)
 }
 }
 // 0x4C83E0

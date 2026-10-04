@@ -720,8 +720,9 @@ void VoxelModel_BuildDrawList_3p(float *a1, int a2, int a3)
 
 // 0x7564B0
 namespace gamemd {
-int VoxelSection::GetInfo(int a2, int a3) {
-    return this->u32_14 + 164 * (a3 + *(unsigned int *)(this->u32_10 + 12 * a2)); /*0x7564cf*/
+int VoxelSection::GetInfo(int a2, int a3)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7564B0)
 }
 } // namespace gamemd
 

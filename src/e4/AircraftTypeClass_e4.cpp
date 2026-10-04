@@ -140,9 +140,7 @@ int AircraftTypeClass::GetObjectSize()
 namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::GetAuxField()
 {
-
-  return this->ArrayIndex; /*0x41cfd6*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41CFD0)
 }
 }  // G42.18c ns repair
 // 0x712120

@@ -247,86 +247,14 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
 namespace gamemd {
 int AITriggerTypeClass::RegisterSuccess()
 {
-
-  int v1; // edx
-  double v2; // st7
-  double v3; // st7
-  int result; // eax
-
-  v1 = this->u32_108; /*0x41fd61*/
-  v2 = 0.0; /*0x41fd67*/
-  if ( v1 > 0 ) /*0x41fd73*/
-  {
-    v2 = (double)this->u32_108 * ((double)this->u32_104 / (double)this->u32_108 - 0.5); /*0x41fd89*/
-    if ( v2 < 0.0 ) /*0x41fd96*/
-      v2 = 0.0; /*0x41fd9a*/
-  }
-  v3 = v2 + *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 192) + this->u32_B8; /*0x41fdb1*/
-  this->u32_B8 = v3; /*0x41fdb3*/
-  if ( v3 < this->q030 ) /*0x41fdc4*/
-  {
-    this->u32_B8 = this->q030; /*0x41fdcc*/
-    this->u32_BC = this->q031; /*0x41fdd8*/
-  }
-  if ( this->u32_B8 > this->u32_C8 ) /*0x41fdef*/
-  {
-    this->u32_B8 = this->u32_C8; /*0x41fdf7*/
-    this->u32_BC = this->alignmentPadding; /*0x41fe03*/
-  }
-  result = this->u32_104 + 1; /*0x41fe0f*/
-  this->u32_104 = result; /*0x41fe11*/
-  this->u32_108 = v1 + 1; /*0x41fe17*/
-  return result; /*0x41fe1e*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41FD60)
 }
 } // namespace gamemd
 // 0x41FE20
 namespace gamemd {
 int AITriggerTypeClass::RegisterFailure()
 {
-
-  int v1; // edx
-  double v2; // st7
-  double v3; // st7
-  int result; // eax
-  int16_t v5; // fps
-  double v6; // st7
-  bool v7; // c0
-  char v8; // c2
-  bool v9; // c3
-
-  v1 = this->u32_108; /*0x41fe21*/
-  v2 = 0.0; /*0x41fe28*/
-  if ( v1 > 0 ) /*0x41fe3a*/
-  {
-    v2 = (double)v1 /*0x41fe56*/
-       * (((double)this->u32_104 / (double)v1 - 0.5)
-        * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 208));
-    if ( v2 > 0.0 ) /*0x41fe63*/
-      v2 = 0.0; /*0x41fe67*/
-  }
-  v3 = v2 + *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 200) + this->u32_B8; /*0x41fe7a*/
-  this->u32_B8 = v3; /*0x41fe7c*/
-  if ( v3 < this->q030 ) /*0x41fe8d*/
-  {
-    this->u32_B8 = this->q030; /*0x41fe95*/
-    result = this->q031; /*0x41fe9b*/
-    this->u32_BC = result; /*0x41fea1*/
-  }
-  v6 = this->u32_B8; /*0x41fea7*/
-  v7 = v6 < this->u32_C8; /*0x41fead*/
-  v8 = 0; /*0x41fead*/
-  v9 = v6 == this->u32_C8; /*0x41fead*/
-  LOWORD(result) = v5; /*0x41feb3*/
-  if ( v6 > this->u32_C8 ) /*0x41feb8*/
-  {
-    this->u32_B8 = this->u32_C8; /*0x41fec0*/
-    result = this->alignmentPadding; /*0x41fec6*/
-    this->u32_BC = result; /*0x41fecc*/
-  }
-  this->u32_108 = v1 + 1; /*0x41fed3*/
-  return result; /*0x41fed9*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41FE20)
 }
 } // namespace gamemd
 // 0x41FFF0

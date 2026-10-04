@@ -21,6 +21,7 @@
 #include "e4/classes/FogOfWar_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/VectorClass_flat_e4.hpp"  // G42.36 C2027 supply
 
 // 0x4D0980
 namespace gamemd {
@@ -84,13 +85,7 @@ HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
 namespace gamemd {
 unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * v3)
 {
-
-  int v3; // [esp+0h] [ebp-4h]
-
-  LOWORD(v3) = this->u32_34 / 256; /*0x4d28e0*/
-  HIWORD(v3) = this->u32_38 / 256; /*0x4d28f4*/
-  *v3 = v3; /*0x4d2901*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4D28D0)
 }
 } // namespace gamemd
 // 0x4D2BC0

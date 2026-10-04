@@ -421,10 +421,6 @@ namespace gamemd {
 
 // 0x6244A0
 namespace gamemd {
-DynamicVector * DynamicVector::Destructor(unsigned int * Block, char a2)
-{
-    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006244A0.json)
-}
 } // namespace gamemd
 
 // 0x6244C0
@@ -541,10 +537,6 @@ namespace gamemd {
 
 // 0x628D80
 namespace gamemd {
-int DynamicVector::GetSize(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00628D80.json)
-}
 } // namespace gamemd
 
 // 0x67C060

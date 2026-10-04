@@ -1541,18 +1541,9 @@ int LightConvertClass::Constructor(int a1, int a2, int a3, int a4, int a5, int a
 
 // 0x556B30
 namespace gamemd { 
-int TacticalClass::GetField() {
-
-  int result; // eax
-
-  result = (int)((unsigned int *)this)[0]; /*0x556b30*/
-  if ( result ) /*0x556b37*/
-  {
-    result->TacticalClass_field_A8 = 0; /*0x556b39*/
-    ((unsigned int *)this)[0] = 0; /*0x556b3f*/
-  }
-  return result; /*0x556b42*/
-
+int TacticalClass::GetField()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x556B30)
 }
 }
 // 0x55AF40
@@ -1920,10 +1911,6 @@ int CellClass::ProcessUpdate() {
 
 // 0x5AE100
 namespace gamemd { 
-int ScenarioClass::Load(int a1)
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5AE100)
-}
 }
 
 // 0x5B3C20
@@ -1962,31 +1949,16 @@ int CellClass::SetOccupancy() {
 
 // 0x5C0A70
 namespace gamemd { 
-void TacticalClass::ClearVector() {
-
-  void *v2; // eax
-
-  v2 = *(void **)((char *)this + 4); /*0x5c0a76*/
-  this->uniqueId = 0; /*0x5c0a79*/
-  if ( v2 && this->q00D ) /*0x5c0a80*/
-  {
-    delete v2; /*0x5c0a86*/
-    this->q004 = 0; /*0x5c0a8e*/
-  }
-  this->q00D = 0; /*0x5c0a91*/
-  this->q008 = 0; /*0x5c0a94*/
-
+void TacticalClass::ClearVector()
+{
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C0A70)
 }
 }
 // 0x5C0AA0
 namespace gamemd { 
-int TacticalClass::ProbeCalling(int a2) {
-
-  if ( this->q00C ) /*0x5c0aa0*/
-    return (unsigned int)(a2 - this->q004) >> 2; /*0x5c0ab5*/
-  else
-    return 0; /*0x5c0aa7*/
-
+int TacticalClass::ProbeCalling(int a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C0AA0)
 }
 }
 // 0x5C0C50
@@ -2065,42 +2037,23 @@ int ScenarioClass::AssignStartingPoints(int a1) {
 
 // 0x5D80E0
 namespace gamemd { 
-int ScenarioClass::deallocateCells(int a2) {
-
-  if ( this->q00C ) /*0x5d80e0*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x5d80f5*/
-  else
-    return 0; /*0x5d80e7*/
-
+int ScenarioClass::deallocateCells(int a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D80E0)
 }
 }
 // 0x5D8110
 namespace gamemd { 
-void ScenarioClass::resetScenarioData() {
-
-  void *v2; // eax
-
-  v2 = *(void **)((char *)this + 4); /*0x5d8116*/
-  this->q010 = 0; /*0x5d8119*/
-  if ( v2 && this->IsAllocated ) /*0x5d8120*/
-  {
-    delete v2; /*0x5d8126*/
-    this->Items = 0; /*0x5d812e*/
-  }
-  this->IsAllocated = 0; /*0x5d8131*/
-  this->Capacity = 0; /*0x5d8134*/
-
+void ScenarioClass::resetScenarioData()
+{
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D8110)
 }
 }
 // 0x5D8140
 namespace gamemd { 
-int ScenarioClass::validateMap(int a2) {
-
-  if ( this->q00C ) /*0x5d8140*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x5d8155*/
-  else
-    return 0; /*0x5d8147*/
-
+int ScenarioClass::validateMap(int a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D8140)
 }
 }
 // 0x5D8550
@@ -2119,13 +2072,9 @@ int ScenarioClass::initLocalVariables(void* a1) {
 
 // 0x5D86B0
 namespace gamemd { 
-int ScenarioClass::setGameSpeed(int a2) {
-
-  if ( this->q00C ) /*0x5d86b0*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x5d86c5*/
-  else
-    return 0; /*0x5d86b7*/
-
+int ScenarioClass::setGameSpeed(int a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D86B0)
 }
 }
 // 0x5D87E0
@@ -2428,18 +2377,10 @@ int TacticalClass::UpdateObjects() {
 
 // 0x65CA80
 namespace gamemd { 
-void* RawFileClass::Construct(int a1)
-{
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CA80)
-}
 }
 
 // 0x65CAC0
 namespace gamemd { 
-void* FileClass::SetName(void* a1)
-{
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CAC0)
-}
 }
 
 // 0x65CB50

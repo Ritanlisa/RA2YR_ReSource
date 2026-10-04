@@ -36,8 +36,9 @@ using ra2::game::FootClass;
 
 // 0x40D280
 namespace gamemd {
-int MouseClass::ProcessInput() {
-  return this->u32_5564; /*0x40d286*/
+int MouseClass::ProcessInput()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x40D280)
 }
 }
 // 0x40D290

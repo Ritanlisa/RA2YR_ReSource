@@ -861,9 +861,7 @@ wchar_t * DeployCommandClass::performAction_86()
 namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_87()
 {
-
-  return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6933); /*0x536cd6*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536CC0)
 }
 } // namespace gamemd
 

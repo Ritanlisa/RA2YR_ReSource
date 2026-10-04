@@ -40,9 +40,7 @@
 namespace gamemd {
 int ObjectClass::processPointerInvalid()
 {
-
-  return (this->customSound_controller >> 8) & 1; /*0x48361c*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x483610)
 }
 } // namespace gamemd
 
@@ -408,9 +406,7 @@ char _::Release()
 namespace gamemd {
 int ObjectClass::GetMember01()
 {
-
-  return this->vtable2; /*0x6241d3*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6241D0)
 }
 } // namespace gamemd
 

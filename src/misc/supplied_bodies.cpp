@@ -73,26 +73,9 @@ bool InputManager_ProcessEvents::StubReturnFalse() {
 
 // 0x6CE320
 namespace gamemd {
-char SuperClass::RemoveFromPointerArray(int a2) {
-    char *SuperClass_field_0x10; // edx
-    char *v4; // edx
-
-    SuperClass_field_0x10 = (char *)*(unsigned int *)((char *)&this->vtable26); /*0x6ce320 真值 [ecx+10h] count*/
-    a2 = a2; /*0x6ce323*/
-    if ( a2 >= (int)SuperClass_field_0x10 ) /*0x6ce329*/
-      return 0; /*0x6ce34c*/
-    v4 = SuperClass_field_0x10 - 1; /*0x6ce32b*/
-    *(unsigned int *)((char *)&this->vtable26) = (unsigned int)v4; /*0x6ce32e +0x10*/
-    if ( a2 < (int)v4 ) /*0x6ce331*/
-    {
-      do /*0x6ce344*/
-      {
-        ++a2; /*0x6ce337*/
-        *((unsigned int *)*(unsigned int *)((char *)this + 4) + a2 - 1) = *((unsigned int *)*(unsigned int *)((char *)this + 4) + a2); /*0x6ce33b 真值 [ecx+4] arr*/
-      }
-      while ( a2 < (int)*(unsigned int *)((char *)&this->vtable26) ); /*0x6ce344 +0x10*/
-    }
-    return 1; /*0x6ce349*/
+char SuperClass::RemoveFromPointerArray(int a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6CE320)
 }
 } // namespace gamemd
 
@@ -115,8 +98,9 @@ char SuperClass::Get(int a2, int a3, int a4, int a5) {
 
 // 0x4010A0
 namespace gamemd {
-int AudioChannel::IsActive() {
-    return (*(unsigned char *)this & 2) != 0 || (this->u32_28 & 2) != 0 || (this->u32_50 & 2) != 0; /*0x4010b4 +0 真值*/
+int AudioChannel::IsActive()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4010A0)
 }
 } // namespace gamemd
 
@@ -183,56 +167,25 @@ int AudioSample::ResetState() {
 } // namespace gamemd
 
 // 0x4025B0
-int Voice::Stop() {
-    int v1; // ecx
-    int result; // eax
-
-    v1 = v1; /*0x4025b1*/
-    (*(void (**)(void))(*(unsigned int *)(v1 + 212) + 40))(); /*0x4025b9*/
-    if ( (*(unsigned char *)(v1 + 164) & 5) != 0 ) /*0x4025c3*/
-      (*(void (__thiscall **)(int))(*(unsigned int *)(v1 + 212) + 16))(v1); /*0x4025cd*/
-    (*(void (__thiscall **)(int))(*(unsigned int *)(v1 + 212) + 44))(v1); /*0x4025d8*/
-    result = *(unsigned int *)(v1 + 188); /*0x4025db*/
-    if ( result ) /*0x4025e3*/
-      result = result(v1); /*0x4025e7*/
-    *(unsigned int *)(v1 + 360) = 0; /*0x4025e9*/
-    return result; /*0x4025f3*/
+int Voice::Stop()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4025B0)
 }
 } // namespace gamemd
 
 // 0x402600
 namespace gamemd {
-int AudioChannel::DeactivatePlay() {
-    int v2; // eax
-
-    (*(void (**)(void))(this->u32_D4 + 40))(); /*0x402609*/
-    if ( (this->u32_A4 & 1) != 0 ) /*0x402613*/
-    {
-      this->u32_A4 &= ~1u; /*0x40261e*/
-      (*(void (__thiscall **)(AudioChannel *))(this->u32_D4 + 20))(this); /*0x40262c*/
-      v2 = this->u32_A4; /*0x40262f*/
-      IDA_LOBYTE(v2) = v2 | 4; /*0x402635*/
-      this->u32_A4 = v2; /*0x402637*/
-    }
-    return (*(int (__thiscall **)(AudioChannel *))(this->u32_D4 + 44))(this);
+int AudioChannel::DeactivatePlay()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x402600)
 }
 } // namespace gamemd
 
 // 0x402650
 namespace gamemd {
-int AudioChannel::ActivatePlay() {
-    int v2; // eax
-
-    (*(void (**)(void))(this->u32_D4 + 40))(); /*0x402659*/
-    if ( (this->u32_A4 & 4) != 0 ) /*0x402663*/
-    {
-      (*(void (__thiscall **)(AudioChannel *))(this->u32_D4 + 24))(this); /*0x40266d*/
-      v2 = this->u32_A4; /*0x402670*/
-      IDA_LOBYTE(v2) = v2 & 0xFB; /*0x402676*/
-      this->u32_A4 = v2; /*0x402678*/
-      this->u32_A4 |= 1u; /*0x402687*/
-    }
-    return (*(int (__thiscall **)(AudioChannel *))(this->u32_D4 + 44))(this);
+int AudioChannel::ActivatePlay()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x402650)
 }
 } // namespace gamemd
 
@@ -333,91 +286,25 @@ int * AudioPool::ProcessQueue() {
 
 // 0x405C00
 namespace gamemd {
-unsigned int * AudioFileClass::Release() {
-    int v3; // ecx
-    int v4; // ebx
-    RefCount **v5; // edi
-    Voice *v6; // [esp+0h] [ebp-Ch]
-
-    result =(unsigned int *)this; /*0x405c01*/
-    if ( g_AudioConfigState ) /*0x405c13*/
-    {
-      if ( *(int **)((char *)this + 12) == (int *)&dword_87E294 ) /*0x405c20*/
-      {
-        v2 = *(unsigned int *)this; /*0x405c26*/
-        if ( v2 ) /*0x405c26*/
-        {
-          if ( *((unsigned int *)this + 2) == *(unsigned int *)(*(unsigned int *)&v2 + 36) /*0x405c53*/
-            && *((unsigned int *)this + 1) == *(unsigned int *)(*(unsigned int *)&v2 + 312)
-            && (*(unsigned char *)(*(unsigned int *)&v2 + 24) & 1) == 0 )
-          {
-            v3 = *(unsigned int *)(*(unsigned int *)&v2 + 176); /*0x405c59*/
-            if ( v3 && v2 == *(unsigned int *)(v3 + 192) ) /*0x405c69*/
-            {
-              if ( (*(unsigned char *)(*(unsigned int *)&v2 + 24) & 2) != 0 ) /*0x405c6f*/
-                v6->Stop(); /*0x405c71 实例真形*/
-              ((AudioStream *)*(void **)(*(unsigned int *)&v2 + 176))->ReleaseChannel(); /*0x405c7c*/
-              *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 192) = 0; /*0x405c87*/
-              *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 188) = 0; /*0x405c93*/
-              *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 180) = 0; /*0x405c9f*/
-              *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 184) = 0; /*0x405cab*/
-              *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 144) = 0; /*0x405cb7*/
-              *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 152) = 0; /*0x405cc3*/
-              *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 156) = 0; /*0x405ccf*/
-              result =(unsigned int *)this; /*0x405cd5*/
-              *(unsigned int *)(*(unsigned int *)&v2 + 176) = 0; /*0x405cd9*/
-            }
-            v4 = 0; /*0x405ce6*/
-            if ( *(int *)(*(unsigned int *)&v2 + 168) > 0 ) /*0x405cea*/
-            {
-              v5 = (RefCount **)(*(unsigned int *)&v2 + 40); /*0x405ced*/
-              do /*0x405d05*/
-              {
-                ((RefCount *)*v5)->Decrement(); /*0x405cf2*/
-                *v5 = 0; /*0x405cf7*/
-                ++v4; /*0x405cff*/
-                ++v5; /*0x405d00*/
-              }
-              while ( v4 < *(unsigned int *)(*(unsigned int *)&v2 + 168) ); /*0x405d05*/
-              result =(unsigned int *)this; /*0x405d07*/
-            }
-            *(unsigned int *)(*(unsigned int *)&v2 + 168) = 0; /*0x405d0c*/
-            *(unsigned int *)(*(unsigned int *)&v2 + 28) = 4; /*0x405d12*/
-            *(unsigned int *)(*(unsigned int *)&v2 + 312) = 0; /*0x405d19*/
-            *(unsigned int *)(*(unsigned int *)&v2 + 632) = 0; /*0x405d1f*/
-            *(unsigned int *)(*(unsigned int *)&v2 + 24) |= 1u; /*0x405d2b*/
-          }
-          *result = 0; /*0x405d2f*/
-        }
-      }
-    }
-    result[2] = 0; /*0x405d31*/
-    result[3] = 0; /*0x405d34*/
-    return result; /*0x405d37*/
+unsigned int * AudioFileClass::Release()
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x405C00)
 }
 } // namespace gamemd
 
 // 0x406130
 namespace gamemd {
-int * AudioSource::Get() {
-    int *result; // eax
-
-    if ( !g_AudioConfigState || *(int **)((char *)this + 12) != (int *)&dword_87E294 ) /*0x406140*/
-      return 0; /*0x406166*/
-    result = *(int **)this; /*0x406142*/
-    if ( *(unsigned int *)this && (this->u32_8 != (unsigned int)result[9] || this->u32_4 != (unsigned int)result[78]) ) /*0x40615e*/
-    {
-      result = 0; /*0x406160*/
-      *(int **)this = 0; /*0x406162*/
-    }
-    return result; /*0x406165*/
+int * AudioSource::Get()
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x406130)
 }
 } // namespace gamemd
 
 // 0x407480
 namespace gamemd {
-int AudioList::GetNextEntry() {
-    return *(unsigned int *)(this->u32_4 + 8) != this->u32_4 ? this->u32_4 : 0;
+int AudioList::GetNextEntry()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x407480)
 }
 } // namespace gamemd
 
@@ -555,83 +442,9 @@ int AudioSample::SetField() {
 
 // 0x409C40
 namespace gamemd {
-unsigned int * AudioBuffer::InitializePlayback() {
-    unsigned int v2; // ecx (G42.33 W2: 指针值语义)
-    unsigned int *result; // eax
-    unsigned int *v4; // eax (G42.33 W2)
-    unsigned int v5; // ecx (G42.33 W2)
-    unsigned int v6; // ecx (G42.33 W2)
-    int v7; // ecx
-    void *v8; // eax
-
-    v2 = *(unsigned int *)this; /*0x409c46*/
-    result = *(unsigned int **)(*(unsigned int *)&v2 + 360); /*0x409c48*/
-    if ( result ) /*0x409c50*/
-    {
-      v4 = (unsigned int *)result[5]; /*0x409c56*/
-      if ( !v4 ) /*0x409c5b*/
-        v4 = (unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 172) + 68); /*0x409c63*/
-      this->u32_98 = 0; /*0x409c66*/
-      this->u32_84 = 0; /*0x409c6c*/
-      this->u32_80 = 0; /*0x409c72*/
-      this->u32_74 = 3; /*0x409c78*/
-      this->u32_8C = 0; /*0x409c7f*/
-      this->u32_A0 = 0; /*0x409c85*/
-      v5 = v4[3]; /*0x409c8b*/
-      this->u32_A8 = 0; /*0x409c8e*/
-      this->u32_A4 = v5; /*0x409c94*/
-      v6 = v4[1]; /*0x409c9a*/
-      if ( v6 ) /*0x409c9f*/
-      {
-        v7 = *(unsigned int *)&v6 - 1; /*0x409ca1*/
-        if ( v7 ) /*0x409ca2*/
-        {
-          if ( v7 == 1 ) /*0x409ca5*/
-            this->u32_70 = 0x409DE0; /*0x409ca7 回调地址真值 AudioController::LoadThemeBank*/
-        }
-        else
-        {
-          this->u32_70 = 0x409DE0; /*0x409cb0 回调地址真值 AudioController::LoadThemeBank*/
-          this->u32_B0 = 0x40AA70; /*0x409cb7 回调地址真值 ProcessAudioChannelMovement*/
-          this->u32_8C = v4[6]; /*0x409cc4*/
-          this->u32_AC = v4[6]; /*0x409ccd*/
-          this->u32_A0 = 4 * *(unsigned int *)&v4[6] + 128; /*0x409cdd*/
-        }
-      }
-      else
-      {
-        this->u32_70 = 0x409D90; /*0x409ce5 回调地址真值 sub_409D90*/
-      }
-      if ( this->u32_88 < this->u32_8C ) /*0x409cfa*/
-      {
-        if ( this->u32_7C ) /*0x409cfc*/
-          free(*((void **)this + 31)); /*0x409d04*/
-        v8 = malloc(this->u32_8C); /*0x409d13*/
-        this->u32_7C = (unsigned int)v8; /*0x409d1d*/
-        if ( v8 ) /*0x409d20*/
-          this->u32_88 = this->u32_8C; /*0x409d30*/
-        else
-          this->u32_88 = 0; /*0x409d22*/
-      }
-      result = (unsigned int *)this->u32_A0; /*0x409d3c*/
-      if ( this->u32_9C < (int)result ) /*0x409d44*/
-      {
-        if ( this->u32_90 ) /*0x409d46*/
-          free(*((void **)this + 36)); /*0x409d51*/
-        result = (unsigned int *)malloc(this->u32_A0); /*0x409d60*/
-        this->u32_90 = (unsigned int)result; /*0x409d6a*/
-        if ( result ) /*0x409d70*/
-        {
-          result = (unsigned int *)this->u32_A0; /*0x409d7b*/
-          this->u32_9C = (unsigned int)result; /*0x409d81*/
-        }
-        else
-        {
-          this->u32_9C = 0; /*0x409d72*/
-        }
-      }
-    }
-    return result; /*0x409d78*/
+unsigned int * AudioBuffer::InitializePlayback()
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x409C40)
 }
 } // namespace gamemd
 

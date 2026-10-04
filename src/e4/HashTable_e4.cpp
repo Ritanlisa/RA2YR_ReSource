@@ -929,8 +929,6 @@ LABEL_24:
 namespace gamemd {
 int HashTable_flat::ComputeHash(int a2)
 {
-
-  return ((int (*)(int))*((char *)this + 6))(a2) & ((1 << *((char *)this + 3)) - 1); /*0x625084*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x625070)
 }
 } // namespace gamemd
