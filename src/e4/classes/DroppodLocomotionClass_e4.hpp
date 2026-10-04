@@ -15,12 +15,13 @@ struct DroppodLocomotionClass {
     void* q1554;  // 0x1554
     void* q5188;  // 0x5188
     void* q5460;  // 0x5460
-    unsigned int BeginMove;
-    unsigned int ProcessMove;
-    unsigned int StubReturn48;
-    unsigned int UpdateMovement;
-    unsigned int ddtor;
 // --- flat members (END) ---
     int ILoco_Process(int a1);  // 0x4B5B70
+
+    int ddtor(int a1, unsigned int * a2);  // G42.39 supply (method, not data)
+    HRESULT BeginMove(int * a1, int * pStm);  // G42.39 supply (method, not data)
+    HRESULT UpdateMovement(int * a1, int * pPStm, int a3);  // G42.39 supply (method, not data)
+    int StubReturn48();  // G42.39 supply (method, not data)
+    void * ProcessMove(void ** Block, char a2);  // G42.39 supply (method, not data)
 };
 } // namespace gamemd

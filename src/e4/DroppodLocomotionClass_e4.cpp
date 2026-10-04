@@ -40,34 +40,36 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
 }
 // 0x4B6200
 namespace gamemd {  // G42.18c ns repair
-int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
+int DroppodLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004B6200.json)
 }
 }  // G42.18c ns repair
 // 0x4B6240
 namespace gamemd {  // G42.18c ns repair
-HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
+HRESULT DroppodLocomotionClass::BeginMove(int * a1, int * pStm)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004B6240.json)
 }
 }  // G42.18c ns repair
 // 0x4B62C0
 namespace gamemd {  // G42.18c ns repair
-HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
+HRESULT DroppodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004B62C0.json)
 }
 }  // G42.18c ns repair
 // 0x4B66E0
 namespace gamemd {  // G42.18c ns repair
-int DropPodLocomotionClass::StubReturn48()
+int DroppodLocomotionClass::StubReturn48()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B66E0)
 }
 }  // G42.18c ns repair
 // 0x4B66F0
-DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
+namespace gamemd {
+void * DroppodLocomotionClass::ProcessMove(void ** Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004B66F0.json)
+    return nullptr; // TODO stub - quarantined G42 (raw dialect; truth = ida_cache)
 }
+} // namespace gamemd
