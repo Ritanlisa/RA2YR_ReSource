@@ -112,7 +112,7 @@ public:
     virtual bool DrawGradientLine(
         const Point2D& start, const Point2D& end,
         int palette_idx, int fade_val,
-        float* gradient_start, float* gradient_step) = 0;
+        float* gradient_start, float* gradient_step);  // G42.41b: de-pured (never overridden; 7-param truth 0x4BF750 at XSurface/DSurface new slots; body in surface.cpp)
     virtual bool CheckBltStatus() = 0;
 
     // SHP sprite blit + text draw (overloads; definitions in surface.cpp)

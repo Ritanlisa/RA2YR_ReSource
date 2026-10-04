@@ -1296,6 +1296,18 @@ bool XSurface::BlitWhole(Surface* src, bool option1, bool option2)
     src_rect.Y = 0;
     return BlitPart(dest_rect, src, src_rect, option1, option2);
 }
+// G42.41b: Surface 6-param slot - never overridden (truth arity = 7 @0x4BF750);
+// de-pured so DSurface instantiates. No callers; compile-glue body.
+bool Surface::DrawGradientLine(
+    const Point2D& start, const Point2D& end,
+    int palette_idx, int fade_val,
+    float* gradient_start, float* gradient_step)
+{
+    (void)start; (void)end; (void)palette_idx; (void)fade_val;
+    (void)gradient_start; (void)gradient_step;
+    return false;
+}
+
 // 0x4bf750
 bool DSurface::DrawGradientLine(
     const RectangleStruct& clip_rect,
