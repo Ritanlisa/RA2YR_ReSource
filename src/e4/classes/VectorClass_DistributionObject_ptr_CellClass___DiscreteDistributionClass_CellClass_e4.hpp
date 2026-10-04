@@ -33,4 +33,8 @@ struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_
     unsigned char m_10[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
+
+struct _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass {
+    void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize(unsigned int * a2);  // 0x4E0990
+};
 } // namespace gamemd

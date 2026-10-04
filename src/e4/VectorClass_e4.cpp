@@ -1987,6 +1987,7 @@ namespace gamemd {
 
 // 0x4E0990
 namespace gamemd {
+struct _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass;  // G42.38d fwd: flattened template receiver (def 0x4E0990)
 void _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize( unsigned int * a2)
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004E0990.json)
@@ -4171,7 +4172,7 @@ namespace gamemd {
 
 // 0x4F6A00
 namespace gamemd {
-int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem(int a1)
+int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem(HouseClass * a1)
 {
 
   return a1->numWarFactories; /*0x4f6a0a*/
@@ -4181,7 +4182,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem(int a1)
 
 // 0x4F6A10
 namespace gamemd {
-int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_0(int a1)
+int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_0(HouseClass * a1)
 {
 
   return a1->numConYards; /*0x4f6a1a*/
@@ -4527,13 +4528,6 @@ namespace gamemd {
 namespace gamemd {
 } // namespace gamemd
 
-// 0x50FB20
-namespace gamemd {
-gamemd::AbstractClass DynamicVector::SetCapacity(signed int Size, char * a3)
-{
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0050FB20.json)
-}
-} // namespace gamemd
 
 // 0x50FBD0
 namespace gamemd {

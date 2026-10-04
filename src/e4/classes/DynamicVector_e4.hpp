@@ -120,7 +120,7 @@ struct DynamicVector {
     int Clear(int a2, int a3);
     char SetCapacity_0(int a2, unsigned int * a3);
     int FindItemIndex_0(unsigned int * a2);
-    char SetCapacity_1(int a2, unsigned int * a3);
+    char SetCapacity_1(int a2, char * a3);  // 0x58A2A0
     int FindItemIndex_1(unsigned int * a2);
     DynamicVector * Constructor_VectorClass_TeamClass___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_TubeClass___(unsigned int * Block, char a2);
@@ -151,5 +151,9 @@ struct DynamicVector {
     DynamicVector * Constructor_VectorClass_ThemeControl___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_VocClass___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_MovieHandle___(unsigned int * Block, char a2);
+    wchar_t * ddtor(void *a1_1);  // 0x4EA390
+    char SetCapacity_1(int a2, unsigned int * a3);  // 0x4EB180
+
+    char Remove(signed int Size, char * a3);
 };
 } // namespace gamemd

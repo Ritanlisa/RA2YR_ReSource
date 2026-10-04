@@ -786,6 +786,23 @@ struct _ {
     unsigned char q6408;  // 0x6408
     unsigned char q25608;  // 0x25608
     unsigned char q1388694;  // 0x1388694
+    // G42.38d: receiver `gamemd::_` member supplies (defs in VectorClass_e4.cpp T9 stubs)
+    unsigned int * CellConstructor(int a2, int a3);
+    unsigned int * Copy(unsigned int *a2);
+    unsigned int * Construct(int a2, int a3);
+    int Destroy();
+    unsigned int * BuildingConstructor(int a2, int a3);
+    unsigned int * BuildingTypeConstructor(int a2, int a3);
+    unsigned int * CopyDefault(unsigned int *a2);
+    int RemoveItem(int a2);
+    unsigned int * ConstructHSV(int a2, int a3);
+    int Cleanup2();
+    int Append(unsigned int *a2);
+    int EraseAt(int a2);
+    unsigned int * CopyBuilding(unsigned int *a2);
+    unsigned int * WstringConstructor(int a2, unsigned int *a3);
+    int RemoveAt(int a2);
+    int Shrink();
 };
 #endif  // GAMEMD_E4_OWNS_UNDERSCORE
 

@@ -234,5 +234,19 @@ int Destroy(void *a1);
     DynamicVector * Constructor_VectorClass_TiberiumClass___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_WaypointPathClass___(unsigned int * Block, char a2);
     unsigned int * loc_76B6C0(WDTState * aP1, int a3);
+    char SetCapacity_1(int a2, unsigned int * a3);  // 0x4EA800
+    char Set(int a2, unsigned int * a3, void *a3_2);  // 0x???
+    VectorClass_flat * Get(unsigned int * Block, char a2);  // 0x???
+    int Destructor();  // 0x???
+    void Dtor();  // 0x???
+    char ** Clear(char ** a2, int a3);  // 0x???
+    int GetSize(const char ** a2);  // 0x???
+    int GetSize(int a2);  // 0x???
+    int FindItemIndex(int a2);  // 0x???
+    unsigned int * Clear(unsigned int * a2, int a3);  // 0x???
+    bool SetCapacity(const char ** a2);  // 0x???
+    char Remove(int a2, int * a3);
+
+    char Clear(int a2);
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

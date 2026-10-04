@@ -1520,8 +1520,8 @@ struct HouseClass {
     unsigned char q5368;  // 0x5368
     char numAirpads[4];  // 0x5378
     char numBarracks[4];  // 0x537C
-    char numWarFactories[4];  // 0x5380
-    char numConYards[4];  // 0x5384
+    int numWarFactories;  // 0x5380 (int32_t per canon)
+    int numConYards;  // 0x5384
     char numShipyards[4];  // 0x5388
     char numOrePurifiers[4];  // 0x538C
     float costInfantryMult;  // 0x5390

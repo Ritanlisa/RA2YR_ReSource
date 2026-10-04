@@ -131,8 +131,8 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     BSTR FindItemIndex(int a1);  // 0x4F6950
     long long FindItemIndex_0(int a1);  // 0x4F6990
     int Destroy(int a1);  // 0x4F69D0
-    int GetItem(int a1);  // 0x4F6A00
-    int GetItem_0(int a1);  // 0x4F6A10
+    int GetItem(HouseClass * a1);  // 0x4F6A00
+    int GetItem_0(HouseClass * a1);  // 0x4F6A10
     int GetItem_1(int a1);  // 0x4F6E60
     int ScalarDeletingDestructor(unsigned int * a1);  // 0x5013A0
     int StubReturnNullPointer(int a1, unsigned int * a2);  // 0x5024F0

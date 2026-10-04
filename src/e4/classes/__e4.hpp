@@ -16,6 +16,23 @@ struct _ {
     unsigned int  Write(int a2);  // 0x74F520
     VectorClass_flat *  QueryInterface(unsigned int * Block, char a2);  // 0x74F650
     int  Seek(int a2);  // 0x74F3B0
+    // G42.38d: receiver `gamemd::_` member supplies (defs in VectorClass_e4.cpp T9 stubs)
+    unsigned int * CellConstructor(int a2, int a3);
+    unsigned int * Copy(unsigned int *a2);
+    unsigned int * Construct(int a2, int a3);
+    int Destroy();
+    unsigned int * BuildingConstructor(int a2, int a3);
+    unsigned int * BuildingTypeConstructor(int a2, int a3);
+    unsigned int * CopyDefault(unsigned int *a2);
+    int RemoveItem(int a2);
+    unsigned int * ConstructHSV(int a2, int a3);
+    int Cleanup2();
+    int Append(unsigned int *a2);
+    int EraseAt(int a2);
+    unsigned int * CopyBuilding(unsigned int *a2);
+    unsigned int * WstringConstructor(int a2, unsigned int *a3);
+    int RemoveAt(int a2);
+    int Shrink();
 };
 #endif  // GAMEMD_TREE_OWNS_UNDERSCORE
 } // namespace gamemd
