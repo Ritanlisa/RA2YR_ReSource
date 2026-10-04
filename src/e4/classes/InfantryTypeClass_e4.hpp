@@ -6,7 +6,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-class DTOR;  // G42.36 fwd supply
 class Block;  // G42.36 fwd supply
 struct Color;  // fix_fwd_type_supply
 struct SHPStruct;  // fix_fwd_type_supply

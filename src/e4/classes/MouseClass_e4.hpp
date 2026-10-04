@@ -14,7 +14,6 @@ class CheckFormatChanged;  // G42.36 fwd supply
 class Destructor;  // G42.36 fwd supply
 class ProcessStream;  // G42.36 fwd supply
 class SetFlag4C;  // G42.36 fwd supply
-class IUnknown;  // G42.36 fwd supply
 class DrawWaveform;  // G42.36 fwd supply
 class ReadSamples;  // G42.36 fwd supply
 class ReadStreamAndReturn;  // G42.36 fwd supply

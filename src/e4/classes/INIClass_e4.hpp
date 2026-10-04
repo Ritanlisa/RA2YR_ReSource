@@ -14,7 +14,6 @@ class FindByPtr;  // G42.36 fwd supply
 class PumpMessages;  // G42.36 fwd supply
 class Show;  // G42.36 fwd supply
 class SubclassEditControl;  // G42.36 fwd supply
-class BOOL;  // G42.36 fwd supply
 class EnumAndCleanup;  // G42.36 fwd supply
 class CheckButtonState;  // G42.36 fwd supply
 class MapPlayerIDToIndex;  // G42.36 fwd supply
@@ -40,8 +39,6 @@ class InitWindow;  // G42.36 fwd supply
 class DispatchEvent;  // G42.36 fwd supply
 class HandleTabKey;  // G42.36 fwd supply
 class StopBink;  // G42.36 fwd supply
-class LPARAM;  // G42.36 fwd supply
-class HWND;  // G42.36 fwd supply
 class RunModemDialing;  // G42.36 fwd supply
 class InitializeGameSettings;  // G42.36 fwd supply
 class MapDialogResource;  // G42.36 fwd supply

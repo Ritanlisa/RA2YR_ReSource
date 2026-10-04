@@ -17,7 +17,6 @@ class ShadowCalc;  // G42.36 fwd supply
 class CellStruct;  // G42.36 fwd supply
 class WaveClass;  // G42.36 fwd supply
 class BlendShadowColor;  // G42.36 fwd supply
-class IUnknown;  // G42.36 fwd supply
 class DrawHelper;  // G42.36 fwd supply
 class ProcessColor;  // G42.36 fwd supply
 class ObjectClass;  // G42.36 fwd supply

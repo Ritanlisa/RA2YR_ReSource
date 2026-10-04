@@ -20,7 +20,6 @@ class DtorWithDelete;  // G42.36 fwd supply
 class TechnoTypeClass;  // G42.36 fwd supply
 class SaveObject;  // G42.36 fwd supply
 class LoadObject;  // G42.36 fwd supply
-class IUnknown;  // G42.36 fwd supply
 class CheckState;  // G42.36 fwd supply
 class Unlink;  // G42.36 fwd supply
 class RemoveObjectArray;  // G42.36 fwd supply

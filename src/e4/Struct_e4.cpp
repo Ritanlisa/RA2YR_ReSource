@@ -145,7 +145,9 @@ int Struct::ZeroInitAndSetup_0_0()
 }
 }
 // 0x5F75E0
+namespace gamemd {
 unsigned int * Struct::InitTriple256(unsigned int * a1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5F75E0)
+}
 }

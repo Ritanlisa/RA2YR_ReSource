@@ -11,7 +11,6 @@ class IsLobbyFeature;  // G42.36 fwd supply
 class IsMultiplayerActive;  // G42.36 fwd supply
 class GetMaxPacketSize;  // G42.36 fwd supply
 class CleanupOnDisconnect;  // G42.36 fwd supply
-class HWND;  // G42.36 fwd supply
 class InitPlayerSlots;  // G42.36 fwd supply
 class Source;  // G42.36 fwd supply
 class SendOptionsGame;  // G42.36 fwd supply

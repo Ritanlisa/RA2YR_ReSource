@@ -76,7 +76,6 @@ namespace gamemd {
 int E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 {
 
-  HIBYTE((&dword_A8B230)[374].vtable3) = this->isAliveFlag; /*0x6e025c*/
   return 1; /*0x6e0264*/
 
 }
@@ -85,20 +84,14 @@ int E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 namespace gamemd {
 int E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
 {
-
-  BYTE2(((unsigned int *)(dword_A8B230))[374].vtable3) = this->isAliveFlag; /*0x6e027c*/
-  return 1; /*0x6e0284*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E0270)
 }
 }
 // 0x6E0290
 namespace gamemd {
 int E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 {
-
-  LOBYTE((&dword_A8B230)[374].uniqueId) = this->isAliveFlag; /*0x6e029c*/
-  return 1; /*0x6e02a4*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E0290)
 }
 }
 // 0x6E2050
@@ -170,33 +163,7 @@ char sub_6E4090(int a1, int a2, int a3, int a4)
 namespace gamemd {
 int sub_6EC250(int a1, int a2)
 {
-  int result; // eax
-  int i; // ebp
-  int v4; // esi
-  int j; // eax
-  int v7; // eax
-  int v10; // [esp+10h] [ebp-8h]
-
-  result = g_HouseClass_AIProductionState; /*0x6ec253*/
-  for ( i = 0; i < g_HouseClass_AIProductionState; ++i ) /*0x6ec265*/
-  {
-    v4 = *((unsigned int *)g_TeamClassPool + i); /*0x6ec275*/
-    if ( v4 && a2 == v4->owner && v4->buildingType->q0B4 < a1 ) /*0x6ec294*/
-    {
-      for ( j = v4->firstUnit; j; j = v4->firstUnit ) /*0x6ec29b*/
-        ((TeamClass *)(v4))->LiberateMember_Start(j, 0xFFFFFFFF, 0); /*0x6ec2a4*/
-            *(unsigned char *)(v4 + 126) = 1;
-            *(unsigned char *)(v4 + 125) = 1;
-      g_CurrentFrame = g_CurrentFrame; /*0x6ec2bc*/
-      v7 = Math::RoundToInt(*(double *)&((unsigned int *)(g_RulesClass_Instance))[1].AITriggerTrackRecordCoefficient * 900.0); /*0x6ec2ce*/
-      v4->isSuspended = 1; /*0x6ec2da*/
-      v4->suspendTimer = g_CurrentFrame; /*0x6ec2e0*/
-      v4->q068 = v10; /*0x6ec2e2*/
-      v4->q06C = v7; /*0x6ec2e5*/
-    }
-    result = g_HouseClass_AIProductionState; /*0x6ec2e8*/
-  }
-  return result; /*0x6ec2f9*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6EC250)
 }
 }
 // 0x6EDFD0
@@ -370,22 +337,7 @@ char globalHelper_0E4540(unsigned int * a0, int a2, int a3, IUnknown * aP3)
 namespace gamemd {
 unsigned int * Tactical_42::loc_6E4B00(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x6e4ab3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6e4ab6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6e4ac0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x6e4ac8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6e4ad0*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x6e4adb*/
-  Block->m_8 = 0; /*0x6e4ae1*/
-  if ( (a2 & 1) != 0 ) /*0x6e4ae8*/
-    __3_YAXPAX_Z(Block); /*0x6e4aeb*/
-  return Block->__pad_0; /*0x6e4af5*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4B00)
 }
 } // namespace gamemd
 

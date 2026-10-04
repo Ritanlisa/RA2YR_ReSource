@@ -30,8 +30,6 @@ class CleanupSidebarResources;  // G42.36 fwd supply
 class SidebarClass;  // G42.36 fwd supply
 class GetBoundingSize;  // G42.36 fwd supply
 class UpdateProductionDisplay;  // G42.36 fwd supply
-class LONG;  // G42.36 fwd supply
-class LPARAM;  // G42.36 fwd supply
 class Destroy2;  // G42.36 fwd supply
 class Size;  // G42.36 fwd supply
 class RenderPreview;  // G42.36 fwd supply

@@ -15,7 +15,6 @@ class SD_vt10;  // G42.36 fwd supply
 class SD_vt05;  // G42.36 fwd supply
 class SD_vt23;  // G42.36 fwd supply
 class Draw_Start;  // G42.36 fwd supply
-class CTOR;  // G42.36 fwd supply
 
 #define GAMEMD_E4_OWNS_BUILDINGLIGHT 1  // G42.36: dedup pair (first include wins)
 #ifndef GAMEMD_CORE_OWNS_BUILDINGLIGHT

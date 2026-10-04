@@ -15,7 +15,6 @@ class RemoveItem;  // G42.36 fwd supply
 class TechnoClass;  // G42.36 fwd supply
 class CancelSidebarProductionQueue;  // G42.36 fwd supply
 class ScrollSidebarSkipGame;  // G42.36 fwd supply
-class IUnknown;  // G42.36 fwd supply
 class Dispatch;  // G42.36 fwd supply
 class HouseClass;  // G42.36 fwd supply
 class StartSidebarProduction;  // G42.36 fwd supply
