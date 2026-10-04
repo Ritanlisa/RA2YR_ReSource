@@ -22,7 +22,7 @@ from _blockspan import block_span, find_marker, brace_delta
 import normalize_blocks as _NB
 from normalize_blocks import build_types
 from _vtable import VT_OPEN, balance_paren, split_args, slot_name
-import json, re, subprocess, sys, time
+import json, os, re, subprocess, sys, time
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 

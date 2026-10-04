@@ -91,7 +91,6 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * a
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004AD7E0.json)
 }
-int MapClass::SetScrollMode(int aP1)
 // 0x4AEB30
 int MapClass::SetScrollMode(int a2, int aP1, int a1, int aP2, int a3)
 {
@@ -143,95 +142,69 @@ int MapClass::RevealArea0(int *a2, int a3, void *a4, char a5, char a6, char a7, 
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005673A0.json)
 }
 // 0x5683C0
-namespace gamemd {
 void MapClass::FillRevealBuffer(MouseClass * aP1, IUnknown * aP2)
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005683C0.json)
 }
-} // namespace gamemd
 // 0x5687F0
-namespace gamemd {
 void MapClass::ApplyOverlayReveal(MouseClass * aP1, BuildingClass * aP2)
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005687F0.json)
 }
-} // namespace gamemd
 // 0x568BB0
-namespace gamemd {
 TechnoTypeClass * * MapClass::PostProcessReveal(char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00568BB0.json)
 }
-} // namespace gamemd
 // 0x56B3F0
-namespace gamemd {
 BombClass * * MapClass::DecompressCellData(MouseClass * aP1, void *a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0056B3F0.json)
 }
-int MapClass::GetTileIndex(int16_t *aP1, int aP2, char aP3)
 // 0x56D230
-namespace gamemd {
 int MapClass::GetTileIndex(int16_t *aP1, int aP2, char aP3)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0056D230.json)
 }
-} // namespace gamemd
 // 0x56D6E0
-namespace gamemd {
 int MapClass::ProcessRegion()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0056D6E0.json)
 }
-} // namespace gamemd
 // 0x56DAE0
-namespace gamemd {
 int MapClass::ClearRegions(IUnknown * aP1)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0056DAE0.json)
 }
-} // namespace gamemd
 // 0x56E7C0
-namespace gamemd {
 ObjectClass * * MapClass::CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, int aP6, IUnknown * aP7, IUnknown * aP8)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0056E7C0.json)
 }
-} // namespace gamemd
 // 0x574780
-namespace gamemd {
 int MapClass::TransitionCliff(MouseClass * aP0)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00574780.json)
 }
-} // namespace gamemd
 // 0x574C20
-namespace gamemd {
-void* MapClass::ApplyTerrainDamage(IUnknown *a1, IUnknown)
+void* MapClass::ApplyTerrainDamage(IUnknown *a1, void *a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00574C20.json)
 }
-} // namespace gamemd
 // 0x577920
-namespace gamemd {
 MapClass * * MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00577920.json)
 }
-} // namespace gamemd
 // 0x577F30
-namespace gamemd {
 void * MapClass::ClearShroud(HouseClass * aP1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00577F30.json)
 }
-} // namespace gamemd
 // 0x578390
-namespace gamemd {
 void MapClass::MapClass_IsRectInBounds()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00578390.json)
-}
 }
 // 0x578710
 unsigned int * MapClass::SpiralSearch(void *a1)
@@ -354,7 +327,7 @@ int MapClass::UpdateLightingPostProcess()
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004AE4C0.json)
 }
 // 0x4AEB10
-int MapClass::GetScrollMode()
+int MapClass::GetScrollMode(...)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004AEB10.json)
 }
@@ -483,5 +456,4 @@ int MapClass::ClearCellOverlayFlag()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005F6120.json)
 }
-}  // L-fix: close namespace tail 2
 }  // L-fix: close namespace tail 2

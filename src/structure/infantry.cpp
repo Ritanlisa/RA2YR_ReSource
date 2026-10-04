@@ -313,11 +313,9 @@ int InfantryClass::ProcessIdleAction()
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0051CDB0.json)
 }
 // 0x5239d0
-namespace gamemd {
 int InfantryTypeClass::DTOR()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005239D0.json)
-}
 }
 // 0x521320
 int InfantryClass::GetIdleTimer()

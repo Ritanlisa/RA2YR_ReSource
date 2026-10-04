@@ -191,11 +191,9 @@ int HouseClass::CreateRadarOutage(int a2)
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x50BCD0)
 }
 // 0x50D320
-namespace gamemd {
 void HouseClass_RespawnStartingBuildings()
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x50D320)
-}
 }
 // 0x50D440
 int HouseClass::RespawnStartingForces(TechnoClass * aP0, void ** a1, unsigned int * a2, int a4)

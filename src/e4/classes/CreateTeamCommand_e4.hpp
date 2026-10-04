@@ -485,5 +485,9 @@ struct CreateTeamCommand {
     AbstractClass * * FlushSidebarTooltip(char a2);
     char FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, void *a4_2);
     int performAction_79();
+    int performAction_104();
+    int performAction_109();
+    int performAction_128();
+    int performAction_143();
 };
 } // namespace gamemd
