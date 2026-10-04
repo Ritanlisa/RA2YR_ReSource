@@ -209,7 +209,7 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
 }
 // 0x79CE70
 namespace gamemd {
-AbstractClass * * int WOL_RefreshChannelList()
+unsigned int WOL_RefreshChannelList()  // G42.41g: truth 0x79CE70 (double return-type glue fixed)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x79CE70)
 }
