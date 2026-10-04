@@ -10,7 +10,35 @@ struct Pipe;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct PKPipe;  // fix_fwd_type_supply
-struct PKStrawClass;  // fix_fwd_type_supply
+struct PKStrawClass {  // G42.39: e4-local minimal def (misc_ext tree def unreachable in e4 TUs)
+    int initGameMode(int a2, int a3);  // 0x437FD0
+    int applyGameSettings2(int a2, int a3);  // G42.39 supply
+    int QueryGameMode(int a2);  // G42.39 supply
+
+    unsigned int * processFrame(int a2, int a3);  // G42.39 supply
+    unsigned int * updateUI(int a2, int a3, void *a3_2);  // G42.39 supply
+    int loadScenarioFiles(int aP1);  // G42.39 supply
+    int FrameLoop(int a2);  // G42.39 supply
+    int FindOpenSlot();  // G42.39 supply
+    int GetRelatedObject();  // G42.39 supply
+    void * WriteEncryptedStream(BombClass * Src, signed int aP2);  // G42.39 supply
+    int ReadEncryptedStream(char * a2, signed int Size);  // G42.39 supply
+    int initPlayerData(const char **a2);  // G42.39 supply
+    ObjectClass * * Shutdown(void *a1_1);  // G42.39 supply
+    int ReadVersionFile();  // G42.39 supply
+    int ReadVersionFile2();  // G42.39 supply
+    void ReadVersionString();  // G42.39 supply
+    int processNetworkPacket(void * Src, signed int Size);  // G42.39 supply
+    int * initDisplay(char a2);  // G42.39 supply
+    void InitDifficultyButtons();  // G42.39 supply
+    wchar_t * GetDifficultyString();  // G42.39 supply
+    unsigned int * saveGameState(char a2);  // G42.39 supply
+    int loadGameState(int a2);  // G42.39 supply
+    PKPipe * validateGameFile(unsigned int * Block, char a2);  // G42.39 supply
+    int parseGameOptions(int a2);  // G42.39 supply
+    PKStrawClass * applyGameSettings(unsigned int * Block, char a2);  // G42.39 supply
+    int FindPlayerName(int a1);  // G42.39 supply
+};
 struct GameClass {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0

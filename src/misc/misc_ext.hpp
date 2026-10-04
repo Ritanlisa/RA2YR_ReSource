@@ -3318,6 +3318,52 @@ public:
 
     uint8_t PKStrawClass_field_0x04[4];
     uint8_t PKStrawClass_field_0x08[4];
+
+    int processFrame;  // G42.39 data supply
+
+    int updateUI;  // G42.39 data supply
+
+    int loadScenarioFiles;  // G42.39 data supply
+
+    int FrameLoop;  // G42.39 data supply
+
+    int FindOpenSlot;  // G42.39 data supply
+
+    int GetRelatedObject;  // G42.39 data supply
+
+    int WriteEncryptedStream;  // G42.39 data supply
+
+    int ReadEncryptedStream;  // G42.39 data supply
+
+    int initPlayerData;  // G42.39 data supply
+
+    int Shutdown;  // G42.39 data supply
+
+    int ReadVersionFile;  // G42.39 data supply
+
+    int ReadVersionFile2;  // G42.39 data supply
+
+    int ReadVersionString;  // G42.39 data supply
+
+    int processNetworkPacket;  // G42.39 data supply
+
+    int initDisplay;  // G42.39 data supply
+
+    int InitDifficultyButtons;  // G42.39 data supply
+
+    int GetDifficultyString;  // G42.39 data supply
+
+    int saveGameState;  // G42.39 data supply
+
+    int loadGameState;  // G42.39 data supply
+
+    int validateGameFile;  // G42.39 data supply
+
+    int parseGameOptions;  // G42.39 data supply
+
+    int applyGameSettings;  // G42.39 data supply
+
+    int FindPlayerName;  // G42.39 data supply
 };
 // 2 methods in IDA
 // CSP: PacketQueue matched via T1

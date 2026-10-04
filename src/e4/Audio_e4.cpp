@@ -228,7 +228,7 @@ int sub_7BE830(int a1, int a2)
 }
 // 0x7BEE20
 namespace gamemd {
-void int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
+int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BEE20)
 }
@@ -249,9 +249,9 @@ void Audio_Process_7C06B0(DSurface * aP0, int edx0, unsigned int * a2, unsigned 
 }
 // 0x7C19F0
 namespace gamemd {
-void Audio_Process_7C19F0(int a1, DSurface * aP1, unsigned int * a2, unsigned int * a3)
+int Audio_Process_7C19F0(int a1, DSurface * aP1, unsigned int * a2, unsigned int * a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007C19F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007C19F0.json)
 }
 }
 // 0x7C3270
@@ -442,7 +442,7 @@ char Audio_Render(unsigned int * a0, SomeVoxelCache * edx0, ObjectClass * aP2, f
 
 // 0x764B30
 namespace gamemd {
-rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
+void * Audio_Create(void * a1, const char ** a2, int a3)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x764B30)
 }
@@ -450,7 +450,7 @@ rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
 
 // 0x76ABA0
 namespace gamemd {
-rc_ptr * Audio_Set(rc_ptr_base * a1, void * a2)
+void * Audio_Set(void * a1, void * a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x76ABA0)
 }
@@ -458,7 +458,7 @@ rc_ptr * Audio_Set(rc_ptr_base * a1, void * a2)
 
 // 0x76BE90
 namespace gamemd {
-rc_ptr * Audio_Create_76BE90(rc_ptr_base * a1, int a2)
+void * Audio_Create_76BE90(void * a1, int a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x76BE90)
 }

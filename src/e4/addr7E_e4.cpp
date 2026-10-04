@@ -21,33 +21,33 @@ void nullsub_272()
 
 // 0x7E0001
 namespace gamemd {
-void  __spoils<ecx> sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
+void  sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7E0001)
+    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7E0001)
 }
 } // namespace gamemd
 
 // 0x7E00A6
 namespace gamemd {
-void  __spoils<ecx> sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
+void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7E00A6)
+    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7E00A6)
 }
 } // namespace gamemd
 
 // 0x7E0170
 namespace gamemd {
-void  __spoils<ecx> ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
+void  ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7E0170)
+    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7E0170)
 }
 } // namespace gamemd
 
 // 0x7E01D2
 namespace gamemd {
-void  __spoils<ecx> sub_7E01D2(unsigned char * a1, unsigned char * a2, unsigned char * a3, int a4)
+void  sub_7E01D2(unsigned char * a1, unsigned char * a2, unsigned char * a3, int a4)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7E01D2)
+    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7E01D2)
 }
 } // namespace gamemd
 

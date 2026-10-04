@@ -111,9 +111,9 @@ int SetupDialogRenderBuffer(int *a1, HWND a2, uint8_t a3)
 }
 // 0x6223C0
 namespace gamemd {
-unsigned int * DestroyDialog(void *a1_1)
+int DestroyDialog(void *a1_1)
 {
-    (void)a1_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006223C0.json)
+    (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006223C0.json)
 }
 }
 // 0x622470
@@ -125,7 +125,7 @@ int AddDynamicVector(HWND a1, int * a2)
 }
 // 0x622650
 namespace gamemd {
-void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2, void * a3)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM)
+void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3)
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00622650.json)
 }
@@ -139,9 +139,9 @@ int SetupDialog(Dialog *hWnd, int a2)
 }
 // 0x622B50
 namespace gamemd {
-CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2)
+int BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x622B50)
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x622B50)
 }
 }
 // 0x623230
@@ -174,9 +174,9 @@ extern int GetDialogText(HWND aP0, void *aP1)
 }
 // 0x6241F0
 namespace gamemd {
-extern int AddMessageListPlayerMessage::RunDialog(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, gamemd::LPARAM), gamemd::LPARAM a3)
+int RunDialog(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3)
 {
-    (void)a1; (void)HWND; (void)UINT; (void)WPARAM; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006241F0.json)
+    (void)a1; (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006241F0.json)
 }
 }
 // 0x6242B0

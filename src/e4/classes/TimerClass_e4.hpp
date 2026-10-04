@@ -50,5 +50,37 @@ struct TimerClass {
     void * Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12, int a13, char a14, char a15, int a16, int a17);  // 0x54FE60
     signed intGetRemaining();  // 0x5CEAD0
     void StartIfIdle();  // 0x5CEB20
+
+    unsigned int u32_C6;  // G42.39 data supply
+
+    unsigned int u32_21;  // G42.39 data supply
+
+    unsigned int u32_34;  // G42.39 data supply
+
+    unsigned int u32_41;  // G42.39 data supply
+
+    unsigned int u32_42;  // G42.39 data supply
+
+    unsigned int u32_43;  // G42.39 data supply
+
+    unsigned int u32_44;  // G42.39 data supply
+
+    unsigned int u32_45;  // G42.39 data supply
+
+    unsigned int u32_46;  // G42.39 data supply
+
+    unsigned int u32_47;  // G42.39 data supply
+
+    unsigned int u32_48;  // G42.39 data supply
+
+    unsigned int u32_49;  // G42.39 data supply
+
+    unsigned int u32_51;  // G42.39 data supply
+
+    unsigned int u32_50;  // G42.39 data supply
+
+    unsigned int u32_52;  // G42.39 data supply
+
+    unsigned int u32_54;  // G42.39 data supply
 };
 } // namespace gamemd
