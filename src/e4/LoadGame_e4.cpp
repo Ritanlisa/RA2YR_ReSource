@@ -39,40 +39,16 @@
 namespace gamemd {
 int LoadGame::LoadTriggerEvents()
 {
+    // G42.40g: glued-defhead debris removed (11 errors); full body = .omo/ida_cache/func_0x00660840.json (needs stru_B04DA8/word_B04D78/
+    // Team_Load_65FB80 + CRT new/delete protos before it can materialize)
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x660840)
-}
-    return 0; /*0x6608e8*/
-  v9 = 0; /*0x6608ed*/
-  if ( v13 > 0 ) /*0x6608f1*/
-  {
-    while ( 1 ) /*0x6608f5*/
-    {
-      v10 = (unsigned int *)(RA2_OPNEW(0x40u));
-      if ( v10 ) /*0x6608ff*/
-      {
-        v12 = 0; /*0x660901*/
-        v11 = Team_Load_65FB80(v10, -1, 0); /*0x660914*/
-      }
-      else
-      {
-        v11 = 0; /*0x66091b*/
-      }
-      ( this, _65FB80, 64, 0)
-        break; /*0x660929*/
-      if ( ++v9 >= v13 ) /*0x660932*/
-        // glued-defhead: bool LoadGame::LoadTriggerEvents(LoadGame *this)
-    }
-    return 0; /*0x660929*/
-  }
-  ( this, &word_B04D78, 4, 0)
-
 }
 } // namespace gamemd
 // 0x660F10
 namespace gamemd {
-void LoadGame::RemoveItem(int a2)
+char LoadGame::RemoveItem(int a2)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x660F10)
+    (void)a2; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x660F10)
 }
 } // namespace gamemd
 // 0x67E730
