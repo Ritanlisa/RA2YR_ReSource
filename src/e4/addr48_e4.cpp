@@ -336,17 +336,7 @@ int GetWarheadVersusMultiplier(int aP0, int aP1, int aP2, BulletClass * aP3)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0048A4F0.json)
 }
-  if ( aP1 == *((unsigned int *)dword_8871E0 + 1517) ) /*0x48a5a5*/
-    return *((unsigned int *)dword_8871E0 + 189); /*0x48a5b0*/
-  v9 = *(unsigned int *)(aP1 + 276); /*0x48a5b3*/
-  if ( !v9 ) /*0x48a5bb*/
-    return 0; /*0x48a5bb*/
-  if ( *(unsigned char *)(aP1 + 340) ) /*0x48a5bd*/
-    return *(unsigned int *)(*(unsigned int *)(aP1 + 264) + 4 * Random::Range((unsigned int *)dword_A8B230 + 134, 0, v9 - 1)); /*0x48a5e4*/
-  v10 = 25 * v9 - 1; /*0x48a5ee*/
-  if ( v4 >= v10 ) /*0x48a5f4*/
-    v4 = v10; /*0x48a5f6*/
-  return *(unsigned int *)(*(unsigned int *)(aP1 + 264) + 4 * (v4 / 25)); /*0x48a57d*/
+    // G42.40h: glued body-tail debris removed (11 errors); full truth = .omo/ida_cache/func_0x0048A4F0.json
 } // namespace gamemd
 
 // 0x48A8D0
@@ -866,4 +856,3 @@ void sub_48E6E0()
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0048E6E0.json)
 }
 } // namespace gamemd
-}  // L-fix: close namespace tail 1
