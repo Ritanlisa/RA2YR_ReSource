@@ -230,6 +230,14 @@ public:
     unsigned int u32_158;  // G42.39 data supply
     unsigned int u32_DC;  // G42.39 data supply
     unsigned int u32_12C;  // G42.39 data supply
+
+    int Buffer_field_046;  // G42.39 data supply
+
+    int Buffer_field_047;  // G42.39 data supply
+
+    unsigned int u32_744;  // G42.39 data supply
+
+    unsigned int u32_748;  // G42.39 data supply
 };
 #endif  // GAMEMD_E4_Buffer
 // 1 methods in IDA

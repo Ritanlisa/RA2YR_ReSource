@@ -36,39 +36,7 @@ const char* FileClass::SetFileName(char *aP1)
 namespace gamemd {
 int FileClass::Open(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CBF0)
-}
-    return 1; /*0x65cc0b*/
-  if ( !a2 ) /*0x65cc17*/
-  {
-    FileA = (HANDLE)((int)(CreateFileA((LPCSTR)*((char *)this + 6), 0x80000000, 1u, 0, 3u, 0x80u, 0)));
-    *((char *)this + 5) = (int)FileA; /*0x65cc62*/
-    if ( FileA == (HANDLE)-1 ) /*0x65cc65*/
-      return 0; /*0x65cc6b*/
-    if ( CloseHandle(FileA) ) /*0x65cc6f*/
-      goto LABEL_13; /*0x65cc77*/
-    v4 = *this; /*0x65cc7c*/
-    v7 = *((char *)this + 6); /*0x65cc7e*/
-    goto LABEL_12; /*0x65cc7e*/
-  }
-  FileClass::Open2(1); /*0x65cc1d*/
-  int FileClass::Open(int a2, int a1, int aP1, int aP2)
-  {
-    if ( CloseHandle((HANDLE)*((char *)a1 + 5)) ) /*0x65cc31*/
-    {
-LABEL_13:
-      *((char *)a1 + 5) = -1; /*0x65cc8d*/
-      return 1; /*0x65cc8d*/
-    }
-    v4 = (int)(*a1);
-    v7 = *((char *)a1 + 6); /*0x65cc40*/
-LABEL_12:
-    LastError = GetLastError(); /*0x65cc7f*/
-    (*(void (**)(int *, DWORD, unsigned int, int))(v4 + 64))(a1, LastError, 0, v7); /*0x65cc8a*/
-    goto LABEL_13; /*0x65cc8a*/
-  }
-  return 1; /*0x65cbfb*/
-
+    return 0; // TODO stub - quarantined G42 (orphan body; truth = ida_cache)
 }
 } // namespace gamemd
 // 0x65CCE0

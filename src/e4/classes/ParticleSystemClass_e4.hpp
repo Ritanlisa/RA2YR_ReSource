@@ -149,7 +149,6 @@ struct ParticleSystemClass {
     void initParticleArray();
     int Constructor(int a1, int *a2, int a3, void *a4, unsigned int *a5, int a6);  // 0x62dc50
 
-    int Constructor(int a2, int *a3, int a4, void *a5, unsigned int *a6, int a7);  // G42.39 supply
 };
 
 } // namespace gamemd

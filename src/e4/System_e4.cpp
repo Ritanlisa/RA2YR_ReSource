@@ -134,7 +134,7 @@ int sub_7C8F46()
 }
 // 0x7A2EA0
 namespace gamemd {
-void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, int a3, int a4)
+void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *), int a2, int a3, int a4)
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007A2EA0.json)
 }
@@ -196,7 +196,7 @@ void sub_748360()
 
 // 0x766880
 namespace gamemd {
-rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectClass * aP4)
+void * System_Init_766880(void * a1, int a2, int a3, void * a4, void * aP4)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x766880)
 }
@@ -204,7 +204,7 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
 
 // 0x7676F0
 namespace gamemd {
-rc_ptr * System_Init_7676F0(rc_ptr_base * a1, int a2)
+void * System_Init_7676F0(void * a1, int a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7676F0)
 }

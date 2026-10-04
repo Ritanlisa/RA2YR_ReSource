@@ -595,6 +595,26 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindClosestForRepair(int a1);  // 0x4dfcb0
     int FindClosestForRepair2(int a1);  // 0x4dfe00
     // === FUNCS-MOVE (END) ===
+
+    int CreateUnits();  // G42.39 supply (gap2_defs site)
+
+    int CreateNukePayload();  // G42.39 supply (gap2_defs site)
+
+    int SelectSuperWeaponTarget(int a1);  // G42.39 supply (gap2_defs site)
+
+    int FireSuperWeaponHouseClass(int a1, int a2);  // G42.39 supply (gap2_defs site)
+
+    int EvaluateAITarget(int a1, void* a2);  // G42.39 supply (gap2_defs site)
+
+    int UpdateSuperWeaponsUnavailableHouseClass();  // G42.39 supply (gap2_defs site)
+
+    int SerializeSuperWeaponState();  // G42.39 supply (gap2_defs site)
+
+    void* UpdateTargetRedrawState(void* a1);  // G42.39 supply (gap2_defs site)
+
+    int UpdateSuperWeaponReadyState(int a1);  // G42.39 supply (gap2_defs site)
+
+    void DispatchTeam(int a1, int a2);  // G42.39 supply (gap2_defs site)
 };
 
 // External globals

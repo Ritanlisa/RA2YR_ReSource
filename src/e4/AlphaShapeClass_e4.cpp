@@ -54,11 +54,14 @@ int AlphaShapeClass::SD_vt10(int a2, int a3)
 
 }
 } // namespace gamemd
+// 0x421730
+namespace gamemd {
 AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x421730)
 }
 } // namespace gamemd
+namespace gamemd {
 int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
 {
 
