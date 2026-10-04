@@ -175,7 +175,6 @@ int MSEngine::ProcessEvents(char aP1, int a3)
 
 }
 }
-// 0x5AC520
 namespace gamemd {
 CampaignClass * MSEngine::ClearBuffer(void *a1_1)
 {

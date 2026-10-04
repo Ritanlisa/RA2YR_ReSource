@@ -410,15 +410,15 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
   if ( !content ) /*0x47ea9d*/
     return; /*0x47ea9d*/
   if ( on_bridge ) /*0x47eaa9*/
-    v4 = (unsigned int *)((unsigned int)(*(unsigned int **)(this + 232))); /*0x47eaab*/
+    v4 = (unsigned int *)((unsigned int)(*(unsigned int **)(&this->CellClass_field_5C2))); /*0x47eaab*/
   else
-    v4 = (unsigned int *)((unsigned int)(*(unsigned int **)(this + 228))); /*0x47eab3*/
+    v4 = (unsigned int *)((unsigned int)(*(unsigned int **)(&this->altInfantryOwnerIndex8))); /*0x47eab3*/
   if ( v4 == (unsigned int *)(content) ) /*0x47eabb*/
   {
     if ( on_bridge ) /*0x47eabf*/
-      *(unsigned int *)(this + 232) = (unsigned int)(content[12]); /*0x47eac4*/
+      this->altObject = (unsigned int)(content[12]); /*0x47eac4*/
     else
-      *(unsigned int *)(this + 228) = (unsigned int)(content[12]); /*0x47eacf*/
+      this->firstObject = (unsigned int)(content[12]); /*0x47eacf*/
   LABEL_14:
     content[12] = 0; /*0x47eaf0*/
     goto LABEL_15; /*0x47eaf0*/
@@ -443,8 +443,8 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
   {
     if ( (*(int (**)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47eb1f*/
     {
-      v6 = *(int16_t *)(this + 36); /*0x47eb21*/
-      v7 = (int)(*(int16_t *)(this + 38)); /*0x47eb25*/
+      v6 = *(int16_t *)(&this->vtable46); /*0x47eb21*/
+      v7 = (int)(*(int16_t *)(&this->vtable48)); /*0x47eb25*/
       v8 = (int)(*content); /*0x47eb29*/
       v11 = (int)(0); /*0x47eb2b*/
       v9 = (int)((v6 << 8) + 128); /*0x47eb3c*/
@@ -466,15 +466,13 @@ ObjectClass* CellClass::GetSomeObject(const CoordStruct& coords, bool alt) const
     return alt ? altObject : firstObject;
 }
 
-CoordStruct* CellClass::GetCenterCoords(CoordStruct* out) const
+CoordStruct* CellClass::GetCenterCoords(CoordStruct* coords) const
 {
-    if (!out)
-        return out;
+    if (!coords)
     // Center = cell top-left + half cell width in leptons
-    out->X = (int)(mapCoords.X) * 256 + 128;
-    out->Y = (int)(mapCoords.Y) * 256 + 128;
-    out->Z = (int)(height);
-    return out;
+    coords->X = (int)(mapCoords.X) * 256 + 128;
+    coords->Y = (int)(mapCoords.Y) * 256 + 128;
+    coords->Z = (int)(height);
 }
 
 int CellClass::GetFloorHeight(const Point2D& subcoords) const
@@ -491,31 +489,29 @@ void CellClass::SetMapCoords(const CoordStruct& coords)
     height = (int8_t)(coords.Z);
 }
 
-CoordStruct* CellClass::FindInfantrySubposition(CoordStruct* out, const CoordStruct& coords,
+CoordStruct* CellClass::FindInfantrySubposition(CoordStruct* coords, const CoordStruct& coords,
     bool ignore_contents, bool alt, bool use_cell_coords)
 {
-    if (!out)
-        return out;
+    if (!coords)
     // Find a free sub-position for infantry placement within this cell
     // 5 sub-positions arranged in a cross pattern within a cell
-    *out = coords;
+    *coords = coords;
     (void)ignore_contents;
     (void)alt;
     (void)use_cell_coords;
-    return out;
 }
 
 bool CellClass::TryAssignJumpjet(FootClass* object)
 {
-    if (!object || jumpjet)
+    if (!object || object)
         return false;
-    jumpjet = object;
+    object = object;
     return true;
 }
 
 void CellClass::ReplaceTag(TagClass* tag)
 {
-    attachedTag = tag;
+    tag = tag;
 }
 
 // 0x47d210

@@ -992,7 +992,7 @@ namespace gamemd {
 unsigned int E4Recv_4A5950::_GetNumExternalThreads_SchedulerProxy_details_Concurrency__QAEIXZ()
 {
 
-  return *((unsigned int *)this + 45); /*0x4a5956*/
+  return this->M180; /*0x4a5956*/
 
 }
 } // namespace gamemd

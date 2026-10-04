@@ -107,8 +107,6 @@ int TeamTypeClass::GetTeam(int a2, int a3)
 
 }
 }
-// 0x6F1090
-namespace gamemd {
 char TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F1090)

@@ -14,12 +14,12 @@ void GraphicMenuItem::Dtor(void *a1)
 
   ObjectClass *v1; // esi
 
-  v1 = (ObjectClass *)*((unsigned int *)this + 3); /*0x4f3a71*/
+  v1 = (ObjectClass *)this->u32_C; /*0x4f3a71*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_GraphicMenuItem); /*0x4f3a76*/
   if ( v1 ) /*0x4f3a7c*/
   {
     j_DeleteAndZero(v1); /*0x4f3a80*/
-    __3_YAXPAX_Z(v1); /*0x4f3a86*/
+    delete v1; /*0x4f3a86*/
   }
 
 }

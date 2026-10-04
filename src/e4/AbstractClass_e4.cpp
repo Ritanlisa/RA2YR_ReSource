@@ -293,9 +293,7 @@ Surface * GScreenClass::getObjectValue(char a2)
 namespace gamemd {
 int AbstractClass::GetField9()
 {
-
-  return dword_8871E0->PoseDir; /*0x417fd8*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x417FD0)
 }
 } // namespace gamemd
 
@@ -303,9 +301,7 @@ int AbstractClass::GetField9()
 namespace gamemd {
 unsigned int AbstractClass::updateLayer()
 {
-
-  return *((unsigned int *)this + 50); /*0x425526*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x425520)
 }
 } // namespace gamemd
 
@@ -339,9 +335,7 @@ int GScreenClass::COMStub_Return0_32()
 namespace gamemd {
 int AbstractClass::COMStub_Ret8487648_36()
 {
-
-  return (int)&g_INI_Key_Civilian.__pad_16D[15]; /*0x4263c5*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4263C0)
 }
 } // namespace gamemd
 
@@ -499,9 +493,7 @@ int AbstractClass::getAltitude()
 namespace gamemd {
 int AbstractClass::getMapCoords()
 {
-
-  return *((uint16_t *)this + 81); /*0x426a89*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x426A80)
 }
 } // namespace gamemd
 
@@ -618,9 +610,7 @@ RLEBlitter * GScreenClass::clearOverlayFlags(char a2)
 namespace gamemd {
 int AbstractClass::GetType()
 {
-
-  return *((unsigned int *)this + 22); /*0x4ca163*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4CA160)
 }
 } // namespace gamemd
 
@@ -691,9 +681,7 @@ int AbstractClass::computeMovementCost()
 namespace gamemd {
 int AbstractClass::checkPassability()
 {
-
-  return *((unsigned int *)this + 12); /*0x50e373*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x50E370)
 }
 } // namespace gamemd
 
@@ -1118,7 +1106,7 @@ namespace gamemd {
 char AbstractClass::processTeamOrder()
 {
 
-  return *((unsigned char *)this + 28); /*0x65c333*/
+  return this->referenceCount; /*0x65c333*/
 
 }
 } // namespace gamemd
@@ -1136,7 +1124,7 @@ namespace gamemd {
 void AbstractClass::resetTeamState()
 {
 
-  *((unsigned char *)this + 28) = 0; /*0x65c540*/
+  this->referenceCount = 0; /*0x65c540*/
 
 }
 } // namespace gamemd

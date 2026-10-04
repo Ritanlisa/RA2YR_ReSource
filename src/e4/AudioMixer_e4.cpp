@@ -19,7 +19,7 @@ int AudioMixer::SetVolume()
   int result; // eax
 
   result = 1; /*0x406653*/
-  if ( (this->AudioMixer_field_10 & 1) == 0 || *((unsigned int *)this + 19) ) /*0x40665c*/
+  if ( (this->AudioMixer_field_10 & 1) == 0 || this->u32_4C ) /*0x40665c*/
     return 0; /*0x406663*/
   return result; /*0x406665*/
 
@@ -37,7 +37,6 @@ int AudioMixer::PlaySample()
   int v7; // eax
   unsigned int v8; // edi
   unsigned int v9; // ebp
-  int v10; // ecx
   int AudioMixer_field_14; // eax
   int AudioMixer_field_10; // ecx
   unsigned int v13; // edi
@@ -65,14 +64,14 @@ int AudioMixer::PlaySample()
   else
   {
     v7 = ((gamemd::Audio *)this)->Callback(); /*0x4071f2*/
-    v8 = *((unsigned int *)this + 6); /*0x4071f7*/
-    v9 = *((unsigned int *)this + 7); /*0x4071fa*/
-    v10 = v7; /*0x4071fd*/
-    *((unsigned int *)this + 6) = v7; /*0x4071ff*/
+    v8 = this->u32_18; /*0x4071f7*/
+    v9 = this->u32_1C; /*0x4071fa*/
+    v7 = v7; /*0x4071fd*/
+    this->u32_18 = v7; /*0x4071ff*/
     AudioMixer_field_14 = this->AudioMixer_field_14; /*0x407202*/
-    *((unsigned int *)this + 7) = v15; /*0x407209*/
-    v14 = __PAIR64__(v15, v10) - __PAIR64__(v9, v8); /*0x407205*/
-    v13 = (__PAIR64__(v15, v10) - __PAIR64__(v9, v8)) >> 32; /*0x407205*/
+    this->u32_1C = v15; /*0x407209*/
+    v14 = __PAIR64__(v15, v7) - __PAIR64__(v9, v8); /*0x407205*/
+    v13 = (__PAIR64__(v15, v7) - __PAIR64__(v9, v8)) >> 32; /*0x407205*/
     AudioMixer_field_10 = v14; /*0x407205*/
     if ( __PAIR64__(v13, v14) > __PAIR64__(AudioMixer_field_14, this->AudioMixer_field_10) ) /*0x40721b*/
       AudioMixer_field_10 = this->AudioMixer_field_10; /*0x40721d*/
@@ -124,10 +123,10 @@ int AudioMixer::Init()
 
   SetupSampleAudioMixer((int *)(&this->AudioMixer_field_00),(gamemd::ObjectClass *)(0x4000)); /*0x40100a*/
   SetupSampleAudioMixer((int *)this + 10,(gamemd::ObjectClass *)(100)); /*0x401019*/
-  SetupSampleAudioMixer((int *)this + 20,(gamemd::ObjectClass *)(0x2000)); /*0x401028*/
+  SetupSampleAudioMixer((int *)&this->AudioMixer_field_14,(gamemd::ObjectClass *)(0x2000)); /*0x401028*/
   SetRateMixerSample((unsigned int *)this + 10, 10, 0x3E8u, 0); /*0x40103b*/
   SetRateMixerSample((unsigned int *)(this), 0x4000, 0x3E8u, 0); /*0x40104e*/
-  SetRateMixerSample((unsigned int *)this + 20, 0x4000, 0x3E8u, 0); /*0x401061*/
+  SetRateMixerSample((unsigned int *)&this->AudioMixer_field_14, 0x4000, 0x3E8u, 0); /*0x401061*/
   return EndBufferMixer((gamemd::VolumeStruct *)(&this->AudioMixer_field_00), 0x4000); /*0x40106d*/
 
 }

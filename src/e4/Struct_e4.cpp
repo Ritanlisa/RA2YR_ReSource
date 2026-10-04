@@ -25,61 +25,61 @@ int Struct::ClearAllMemberFlags()
   int v6; // esi
   unsigned int *v7; // edi
 
-  v1 = *((unsigned int *)this + 1); /*0x48b2a0*/
+  v1 = this->u32_4; /*0x48b2a0*/
   v2 = 0; /*0x48b2a7*/
-  *((unsigned int *)this + 11) = 0; /*0x48b2ac*/
-  *((unsigned int *)this + 15) = 0; /*0x48b2af*/
-  *((unsigned int *)this + 5) = 0; /*0x48b2b2*/
-  *((unsigned int *)this + 6) = 0; /*0x48b2b5*/
-  *((unsigned int *)this + 7) = 0; /*0x48b2b8*/
-  *((unsigned int *)this + 8) = 0; /*0x48b2bb*/
-  *((unsigned int *)this + 10) = 0; /*0x48b2be*/
-  *((unsigned int *)this + 14) = 0; /*0x48b2c1*/
+  this->u32_2C = 0; /*0x48b2ac*/
+  this->u32_3C = 0; /*0x48b2af*/
+  this->u32_14 = 0; /*0x48b2b2*/
+  this->u32_18 = 0; /*0x48b2b5*/
+  this->u32_1C = 0; /*0x48b2b8*/
+  this->u32_20 = 0; /*0x48b2bb*/
+  this->u32_28 = 0; /*0x48b2be*/
+  this->u32_38 = 0; /*0x48b2c1*/
   if ( v1 > 0 ) /*0x48b2c4*/
   {
     v3 = 0; /*0x48b2c6*/
     do /*0x48b327*/
     {
-      *(unsigned int *)(v3 + *((unsigned int *)this + 9)) &= ~1u; /*0x48b2d2*/
-      *(unsigned int *)(v3 + *((unsigned int *)this + 9)) &= ~2u; /*0x48b2de*/
-      v4 = (unsigned int *)(v3 + *((unsigned int *)this + 9)); /*0x48b2e3*/
+      *(unsigned int *)(v3 + this->u32_24) &= ~1u; /*0x48b2d2*/
+      *(unsigned int *)(v3 + this->u32_24) &= ~2u; /*0x48b2de*/
+      v4 = (unsigned int *)(v3 + this->u32_24); /*0x48b2e3*/
       v3 += 36; /*0x48b2e5*/
       ++v2; /*0x48b2ed*/
       *v4 &= ~4u; /*0x48b2ee*/
-      *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 32) = 0; /*0x48b2f3*/
-      *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 28) = 0; /*0x48b2fa*/
-      *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 24) = 0; /*0x48b301*/
-      *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 20) = 0; /*0x48b308*/
-      *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 12) = 0; /*0x48b30f*/
-      *(unsigned short *)(v3 + *((unsigned int *)this + 9) - 4) = 0; /*0x48b316*/
-      *(unsigned int *)(*((unsigned int *)this + 12) + 4 * v2 - 4) = 0; /*0x48b31e*/
+      *(unsigned int *)(v3 + this->u32_24 - 32) = 0; /*0x48b2f3*/
+      *(unsigned int *)(v3 + this->u32_24 - 28) = 0; /*0x48b2fa*/
+      *(unsigned int *)(v3 + this->u32_24 - 24) = 0; /*0x48b301*/
+      *(unsigned int *)(v3 + this->u32_24 - 20) = 0; /*0x48b308*/
+      *(unsigned int *)(v3 + this->u32_24 - 12) = 0; /*0x48b30f*/
+      *(unsigned short *)(v3 + this->u32_24 - 4) = 0; /*0x48b316*/
+      *(unsigned int *)(this->u32_30 + 4 * v2 - 4) = 0; /*0x48b31e*/
     }
-    while ( v2 < *((unsigned int *)this + 1) ); /*0x48b327*/
+    while ( v2 < this->u32_4 ); /*0x48b327*/
   }
-  result = *((unsigned int *)this + 2); /*0x48b329*/
+  result = this->u32_8; /*0x48b329*/
   v6 = 0; /*0x48b32c*/
   if ( result > 0 ) /*0x48b330*/
   {
     result = 0; /*0x48b332*/
     do /*0x48b37d*/
     {
-      *(unsigned int *)(result + *((unsigned int *)this + 13)) &= ~1u; /*0x48b33e*/
-      *(unsigned int *)(result + *((unsigned int *)this + 13)) &= ~2u; /*0x48b34a*/
-      v7 = (unsigned int *)(result + *((unsigned int *)this + 13)); /*0x48b34f*/
+      *(unsigned int *)(result + this->u32_34) &= ~1u; /*0x48b33e*/
+      *(unsigned int *)(result + this->u32_34) &= ~2u; /*0x48b34a*/
+      v7 = (unsigned int *)(result + this->u32_34); /*0x48b34f*/
       result += 24; /*0x48b351*/
       ++v6; /*0x48b359*/
       *v7 &= ~4u; /*0x48b35a*/
-      *(unsigned int *)(*((unsigned int *)this + 13) + result - 20) = 0; /*0x48b35f*/
-      *(unsigned int *)(*((unsigned int *)this + 13) + result - 16) = 0; /*0x48b366*/
-      *(unsigned int *)(*((unsigned int *)this + 13) + result - 8) = 0; /*0x48b36d*/
-      *(unsigned int *)(*((unsigned int *)this + 16) + 4 * v6 - 4) = 0; /*0x48b374*/
+      *(unsigned int *)(this->u32_34 + result - 20) = 0; /*0x48b35f*/
+      *(unsigned int *)(this->u32_34 + result - 16) = 0; /*0x48b366*/
+      *(unsigned int *)(this->u32_34 + result - 8) = 0; /*0x48b36d*/
+      *(unsigned int *)(this->u32_40 + 4 * v6 - 4) = 0; /*0x48b374*/
     }
-    while ( v6 < *((unsigned int *)this + 2) ); /*0x48b37d*/
+    while ( v6 < this->u32_8 ); /*0x48b37d*/
   }
-  *((unsigned int *)this + 17) = 0; /*0x48b381*/
-  *((unsigned int *)this + 18) = 0; /*0x48b384*/
-  *((unsigned int *)this + 19) = 0; /*0x48b387*/
-  *((unsigned int *)this + 21) = 0; /*0x48b38a*/
+  this->u32_44 = 0; /*0x48b381*/
+  this->u32_48 = 0; /*0x48b384*/
+  this->u32_4C = 0; /*0x48b387*/
+  this->u32_54 = 0; /*0x48b38a*/
   return result; /*0x48b37f*/
 
 }

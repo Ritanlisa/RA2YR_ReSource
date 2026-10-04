@@ -97,14 +97,13 @@ int DamageArea::CheckOccupancyEligibility()
   int (***v3)(unsigned int, void *, int *); // ecx
   int v4; // eax
   int v5; // esi
-  int v6; // edi
   int v8; // [esp+18h] [ebp-8h] BYREF
   int v9; // [esp+1Ch] [ebp-4h] BYREF
 
-  v2 = (unsigned int *)*((unsigned int *)this + 3); /*0x4d0187*/
+  v2 = (unsigned int *)this->u32_C; /*0x4d0187*/
   if ( v2 ) /*0x4d018c*/
   {
-    if ( (*(int (**)(unsigned int))(*v2 + 44))(*((unsigned int *)this + 3)) == 2 ) /*0x4d0198*/
+    if ( (*(int (**)(unsigned int))(*v2 + 44))(this->u32_C) == 2 ) /*0x4d0198*/
     {
       if ( (*(int (**)(unsigned int *))(v2[432] + 32))(v2 + 432) ) /*0x4d01ab*/
         return 0; /*0x4d01b0*/
@@ -114,11 +113,11 @@ int DamageArea::CheckOccupancyEligibility()
       v2 = 0; /*0x4d019a*/
     }
   }
-  if ( *((unsigned char *)this + 81) || !*((unsigned char *)this + 92) ) /*0x4d01c1*/
+  if ( this->u32_51 || !this->u32_5C ) /*0x4d01c1*/
     return 1; /*0x4d01c6*/
   if ( !v2 || !*(unsigned char *)(v2[433] + 3595) ) /*0x4d01d6*/
   {
-    v3 = (int (***)(unsigned int, void *, int *))*((unsigned int *)this + 3); /*0x4d01e4*/
+    v3 = (int (***)(unsigned int, void *, int *))this->u32_C; /*0x4d01e4*/
     v4 = 0; /*0x4d01e7*/
     v8 = 0; /*0x4d01eb*/
     if ( v3 ) /*0x4d01ef*/
@@ -126,10 +125,10 @@ int DamageArea::CheckOccupancyEligibility()
       v5 = (**v3)((unsigned int)v3, &unk_822410, &v9); /*0x4d0204*/
       if ( v5 >= 0 ) /*0x4d0208*/
       {
-        v6 = v9; /*0x4d021c*/
+        v9 = v9; /*0x4d021c*/
         Release3COM((gamemd::IUnknown **)((ObjectClass *)&v8)); /*0x4d0224*/
-        v4 = v6; /*0x4d0229*/
-        v8 = v6; /*0x4d022c*/
+        v4 = v9; /*0x4d0229*/
+        v8 = v9; /*0x4d022c*/
       }
       else
       {
@@ -154,7 +153,7 @@ int DamageArea::CheckOccupancyEligibility()
         v4 = v8; /*0x4d027a*/
       }
     }
-    if ( !*(unsigned int *)(*((unsigned int *)this + 3) + 764) ) /*0x4d0281*/
+    if ( !*(unsigned int *)(this->u32_C + 764) ) /*0x4d0281*/
     {
 LABEL_24:
       if ( v4 ) /*0x4d028d*/
@@ -182,11 +181,11 @@ unsigned int * DamageArea::CalcScatterOffset(unsigned int * a2, int16_t * a3)
   int v9; // ecx
   int16_t *v11; // [esp+20h] [ebp+8h]
 
-  v3 = *((unsigned int *)this + 61); /*0x565668*/
-  v4 = *((unsigned int *)this + 63); /*0x56566f*/
+  v3 = this->u32_F4; /*0x565668*/
+  v4 = this->u32_FC; /*0x56566f*/
   v5 = a3[1]; /*0x565676*/
   v6 = *a3; /*0x56567b*/
-  v7 = *((unsigned int *)this + 64); /*0x56567e*/
+  v7 = this->u32_100; /*0x56567e*/
   v8 = *a3; /*0x565684*/
   if ( (v3 & 1) != 0 ) /*0x56568d*/
     v9 = v8 - v5 + 1; /*0x565691*/

@@ -188,8 +188,8 @@ long long Cell::GetTraversability()
   double v1; // st7
 
   v1 = (double)*((int *)dword_8871E0 + 1539); /*0x487cb5*/
-  if ( *((unsigned int *)this + 30) < v1 ) /*0x487cc8*/
-    v1 = *((unsigned int *)this + 30); /*0x487ccc*/
+  if ( this->q078 < v1 ) /*0x487cc8*/
+    v1 = this->q078; /*0x487ccc*/
   return Math::RoundToInt(v1);
 
 }
@@ -199,7 +199,7 @@ namespace gamemd {
 int Cell::GetSlopeIndex()
 {
 
-  return *((char *)this + 283) + 4 * ((*((unsigned int *)this + 80) >> 7) & 1); /*0x487d66*/
+  return this->u32_11B + 4 * ((this->q140 >> 7) & 1); /*0x487d66*/
 
 }
 }

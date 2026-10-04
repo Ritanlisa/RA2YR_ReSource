@@ -864,9 +864,6 @@ LABEL_24:
 
 }
 } // namespace gamemd
-// 0x7AEC00
-namespace gamemd {
-int HashTable_flat::Shrink()
 {
 
   unsigned int HashTable_field_0x08; // esi

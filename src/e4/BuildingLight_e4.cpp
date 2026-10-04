@@ -27,10 +27,8 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5FF850)
 }
 // 0x4CAD80
-namespace gamemd {
 double BuildingLight::CalcIntensity(double a1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4CAD80)
 }
-} // namespace gamemd
 }

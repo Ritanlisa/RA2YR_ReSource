@@ -16,7 +16,84 @@ struct Blitter;  // fix_fwd_type_supply
 struct BlitPlainXlat;  // fix_fwd_type_supply
 struct BlitTransXlat;  // fix_fwd_type_supply
 struct RLEBlitter;  // fix_fwd_type_supply
-struct GScreenClass;  // fix_fwd_type_supply
+struct GScreenClass {
+    void Initialize(TechnoClass * aP1, TechnoClass * aP2);
+    unsigned int * checkVisibility(char a2);
+    unsigned int * updateVisibilityState(char a2);
+    unsigned int * processFogReveal(char a2);
+    unsigned int * checkShroudState(char a2);
+    unsigned int * updateShroudMap(char a2);
+    void ClearTargetToMeClearManagerTarget(int a1);
+    int initVtableBase();
+    int DTOR();
+    int GenerateUniqueID(int a1);
+    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1, ObjectTypeClass * aP2);
+    int SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1);
+    int computeDistance();
+    int StubReturnFalse();
+    int COMStub_Return0_10();
+    int COMStub_Return0_20();
+    int COMStub_Return0_21();
+    int COMStub_Return0_23();
+    Surface * getObjectValue(char a2);
+    int COMStub_Return0_25();
+    int COMStub_Return0_32();
+    int getCoordCenter();
+    int COMStub_Return0_49();
+    int COMStub_50();
+    int COMStub_Return0_67();
+    int COMStub_Return0_68();
+    int COMStub_Return0_85();
+    int COMStub_Return0_86();
+    int COMStub_Return0_87();
+    int COMStub_Return0_88();
+    int COMStub_Return0_92();
+    int COMStub_Return0_99();
+    int COMStub_Return0_117();
+    int COMStub_Return0_118();
+    int COMStub_Return0_119();
+    int getCoordCenter2();
+    std::locale::facet * setMapCoords(char a2);
+    int COMStub_Return0_190();
+    int COMStub_Return0_205();
+    int COMStub_Return0_270();
+    Blitter * getTileIndex(char a2);
+    BlitPlainXlat * setTileIndex(char a2);
+    BlitTransXlat * getOverlayType(char a2);
+    std::locale::facet * setOverlayFlags(char a2);
+    RLEBlitter * clearOverlayFlags(char a2);
+    unsigned int queueMission(int a2);
+    GScreenClass * getHouseHandle(char a2);
+    int saveToStream(int a1, const void * a2, unsigned int * a3);
+    int loadFromStream(int a1);
+    int computeSize(int a1);
+    int COMStub_6(TechnoTypeClass * aP0, int * a1, int aP2);
+    MissionClass * getWeaponRange(unsigned int * Block, char a2);
+    char validatePathNode();
+    unsigned int * processRevealArea(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);
+    unsigned int * computeRevealRadius(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);
+    unsigned int * applyRevealToCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);
+    unsigned int * checkRevealCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, int a5, int a6);
+    int COMStub_Return0_37();
+    int COMStub_Return0_38();
+    int COMStub_Return0_39();
+    int COMStub_Return0_40();
+    int COMStub_Return0_56();
+    int COMStub_Return0_57();
+    int COMStub_Return0_63();
+    int COMStub_Return0_71();
+    int COMStub_Return0_72();
+    int COMStub_81();
+    int COMStub_80();
+    int COMStub_Return0_82();
+    int COMStub_89();
+    int COMStub_Return0_93();
+    int COMStub_Return0_104();
+    int COMStub_Return0_105();
+    int SaveLoad_PrefixWrapper(TechnoTypeClass * aP0, ObjectTypeClass * aP1, TechnoTypeClass * aP2);
+    int checkTeamObjective();
+    FileClass * processAITrigger(unsigned int * Block, char a2);
+};  // G42.37 class-body supply (defs in AbstractClass_e4.cpp)
 #ifndef GAMEMD_TREE_UNIVERSE
 struct AbstractClass {
 // --- flat members (BEGIN) ---

@@ -452,7 +452,7 @@ int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
   char *v6; // edx
 
   result = 3 * a2 + 963; /*0x45e8bc*/
-  v6 = (char *)this + 12 * a2; /*0x45e8c3*/
+  v6 = (char *)&this->u32_C * a2; /*0x45e8c3*/
   *((unsigned int *)v6 + 961) = a3; /*0x45e8c6*/
   *((unsigned int *)v6 + 962) = a4; /*0x45e8d0*/
   *((unsigned int *)this + result) = a5; /*0x45e8da*/

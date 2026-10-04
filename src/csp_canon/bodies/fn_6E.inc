@@ -5,696 +5,1326 @@
 // ==== BACKFILL 0x006E0030  sub_6E0030  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_6E0030(int a1, int a2, int a3, int a4)
 {
-return 1;
+  return 1; /*0x6e0032*/
 }
 
 // ==== BACKFILL 0x006E0040  sub_6E0040  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_6E0040(int a1, int a2, int a3, int a4)
 {
-return 1;
+  return 1; /*0x6e0042*/
 }
 
 // ==== BACKFILL 0x006E0080  sub_6E0080  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6E0080::sub_6E0080(int a2, int a3, int a4, int a5)
 {
-{
-    int v5;
-    int v6;
-    short v7;
-    char *v8;
-    short *v9;
-    int v11;
-    v5 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v11, this->M68);
-    v6 = 0;
-    v11 = v5;
-    if ( g_GameCleanupState <= 0 )
-    return 1;
-    v7 = HIWORD(v11);
-    do
-  {
-    v8 = (char *)*((int *)(DataGlobal_A8020C) + v6);
-    if ( v8[144] )
-    {
-    v9 = (short *)(*(int (__thiscall **)(char *, int *))(*(int *)(v8) + 440))(v8, &v11);
-    if ( *v9 == (short)v5 && v9[1] == v7 )
-    (*(void (__thiscall **)(char *))(*(int *)(v8) + 248))(v8);
-    }
-    ++v6;
-  }
-    while ( v6 < g_GameCleanupState );
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E0080)
 }
 
 // ==== BACKFILL 0x006E0110  ScenarioClass::Create  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int ScenarioClass::Create(int a1, int a2, int a3, int a4) {
-{
-    int v6;
-    ParticleSystemClass *v8;
-    int v9;
-    int v10;
-    int GroundHeight;
-    int v12[3];
-    v8 = (ParticleSystemClass *)*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v8, *(this + 17));
-    GroundHeight = 0;
-    v12[2] = 0;
-    v10 = (SHIWORD(v8) << 8) + 128;
-    v12[1] = v10;
-    v9 = ((short)v8 << 8) + 128;
-    v12[0] = v9;
-    GroundHeight = Cell::GetGroundHeight(v12);
-    v6 = __2_YAPAXI_Z(0x100u);
-    if ( v6 )
-    ParticleSystemClass::Constructor( v6, *(int *)&DataGlobal_A83D6C->__pad_0[4 * *(this + 36)], &v9, 0, 0, &g_OverlayTypeConfig[28328], 0);
-    return 1;
+int ScenarioClass::Create(int a1, int a2, int a3, int a4) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
 }
-} }
 
 // ==== BACKFILL 0x006E01C0  globalHelper_0E01C0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char globalHelper_0E01C0(int a1, int a2, int aP1, IUnknown * aP3)
 {
-{
-    int v4;
-    char *v5;
-    int *v6;
-    v4 = 0;
-    if ( *(int *)&HouseClass_Player[44860] <= 0 )
-    return 1;
-    do
-  {
-    v5 = *(char **)(*(int *)&HouseClass_Player[44848] + 4 * v4);
-    if ( (*(int (__thiscall **)(char *))(*(int *)(v5) + 44))(v5) != 6 )
-    {
-    if ( v5[144] )
-      {
-    if ( v5[116] )
-        {
-    v6 = (int *)*((int *)(v5) + 13);
-    if ( v6 )
-          {
-    if ( LinkedList::Contains(v6, (IUnknown *)aP1) && (!(*(int (__thiscall **)(char *))(*(int *)(v5) + 388))(v5) || (*(int (__thiscall **)(char *))(*(int *)(v5) + 388))(v5) == 23) )
-            {
-    (*(void (__thiscall **)(char *, int, int))(*(int *)(v5) + 488))(v5, 5, 0);
-            }
-          }
-        }
-      }
-    }
-    ++v4;
-  }
-    while ( v4 < *(int *)&HouseClass_Player[44860] );
-    return 1;
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E01C0)
 }
+
+// ==== BACKFILL 0x006E0490  PlayWaypointEffect  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char Gap2Recv_6E0490::PlayWaypointEffect(int a2, int a3, int a4, IUnknown * aP4) {
+
+  int *WorldCoords; // eax
+  unsigned int *v7; // eax
+  int *v8; // eax
+  unsigned int *v9; // eax
+  int *v10; // eax
+  unsigned int *v11; // eax
+  int *v12; // eax
+  unsigned int *v13; // eax
+  int *v14; // eax
+  int v15; // esi
+  int v16; // edx
+  int16_t v18[2]; // [esp+8h] [ebp-38h] BYREF
+  int v19; // [esp+Ch] [ebp-34h] BYREF
+  int v20; // [esp+10h] [ebp-30h] BYREF
+  int v21; // [esp+14h] [ebp-2Ch]
+  int v22; // [esp+18h] [ebp-28h]
+  int v23; // [esp+1Ch] [ebp-24h] BYREF
+  int v24; // [esp+20h] [ebp-20h]
+  int v25; // [esp+24h] [ebp-1Ch]
+  unsigned int v26[3]; // [esp+28h] [ebp-18h] BYREF
+  unsigned int v27[3]; // [esp+34h] [ebp-Ch] BYREF
+
+  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, &v20, *(unsigned int *)&this->isAliveFlag); /*0x6e04a9*/
+  v23 = *WorldCoords; /*0x6e04b2*/
+  v24 = WorldCoords[1]; /*0x6e04bb*/
+  v25 = WorldCoords[2]; /*0x6e04c7*/
+  PlaySoundEffectAt(&v23, 100, 0, *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008), 1, 0); /*0x6e04dd*/
+  v7 = Cell::GetWorldCoords((Cell *)dword_A8B230, &v20, *(unsigned int *)&this->isAliveFlag); /*0x6e04f4*/
+  v8 = Coord::Subtract((Coord *)v26, *v7 + 85, v7[1] + 85, v7[2]); /*0x6e0510*/
+  v23 = *v8; /*0x6e0519*/
+  v24 = v8[1]; /*0x6e0528*/
+  v25 = v8[2]; /*0x6e052f*/
+  PlaySoundEffectAt(&v23, 100, 0, *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008), 1, 0); /*0x6e0545*/
+  v9 = Cell::GetWorldCoords((Cell *)dword_A8B230, v26, *(unsigned int *)&this->isAliveFlag); /*0x6e055c*/
+  v10 = Coord::Subtract((Coord *)&v20, *v9 - 85, v9[1] + 85, v9[2]); /*0x6e0578*/
+  v23 = *v10; /*0x6e0581*/
+  v24 = v10[1]; /*0x6e058a*/
+  v25 = v10[2]; /*0x6e0591*/
+  PlaySoundEffectAt(&v23, 100, 0, *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008), 1, 0); /*0x6e05ad*/
+  Coord::Subtract((Coord *)&v23, 85, -85, 0); /*0x6e05bc*/
+  v11 = Cell::GetWorldCoords((Cell *)dword_A8B230, v26, *(unsigned int *)&this->isAliveFlag); /*0x6e05d3*/
+  v12 = Coord::Subtract((Coord *)v27, *v11 + v23, v11[1] + v24, v11[2] + v25); /*0x6e05fb*/
+  v20 = *v12; /*0x6e0604*/
+  v21 = v12[1]; /*0x6e060d*/
+  v22 = v12[2]; /*0x6e0619*/
+  PlaySoundEffectAt(&v20, 100, 0, *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008), 1, 0); /*0x6e062f*/
+  v13 = Cell::GetWorldCoords((Cell *)dword_A8B230, v27, *(unsigned int *)&this->isAliveFlag); /*0x6e0646*/
+  v14 = Coord::Subtract((Coord *)v26, *v13 - 85, v13[1] - 85, v13[2]); /*0x6e0662*/
+  v23 = *v14; /*0x6e066b*/
+  v24 = v14[1]; /*0x6e067a*/
+  v25 = v14[2]; /*0x6e0681*/
+  PlaySoundEffectAt(&v23, 100, 0, *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008), 1, 0); /*0x6e0697*/
+  if ( (uint8_t)ScenarioClass::Is_Waypoint_Valid((char *)dword_A8B230, *(unsigned int *)&this->isAliveFlag) ) /*0x6e06a9*/
+  {
+    *(unsigned int *)v18 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v19, *(unsigned int *)&this->isAliveFlag); /*0x6e06d9*/
+    v15 = 3; /*0x6e06dd*/
+    if ( !(uint8_t)CellClass::SetTerrainType((CellClass *)&stru_87F5F0.__pad_58[416], v18) ) /*0x6e06e2*/
+    {
+      do /*0x6e0703*/
+        v16 = v15--; /*0x6e06eb*/
+      while ( v16 > 0 && !(uint8_t)CellClass::SetTerrainType((CellClass *)&stru_87F5F0.__pad_58[416], v18) ); /*0x6e0703*/
+    }
+    v24 = (v18[1] << 8) + 128; /*0x6e0722*/
+    v23 = (v18[0] << 8) + 128; /*0x6e0730*/
+    v25 = dword_B0E6D4; /*0x6e073c*/
+    Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v23, &v20); /*0x6e0748*/
+    Cell::CreateCrater(v20 - 128, v21 - 128, 256, 256, 0); /*0x6e077a*/
+  }
+  return 1; /*0x6e077f*/
+
 }
 
 // ==== BACKFILL 0x006E0790  sub_6E0790  cls=AnimTypeClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6E0790::sub_6E0790(int a2, int a3, int a4, int a5)
 {
-{
-    int v5;
-    int *WorldCoords;
-    int v8[3];
-    v5 = g_RulesClass_Instance->?[5];
-    WorldCoords = Cell::GetWorldCoords((short *)g_ScenarioClass_Instance, v8, this->M144);
-    CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0);
-    return 1;
-}
+
+  int v5; // esi
+  int *WorldCoords; // eax
+  unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
+
+  v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e07a3*/
+  WorldCoords = (int *)(((Cell *)((Cell *)dword_A8B230))->GetWorldCoords(v8, *(unsigned int *)&((unsigned int *)this)[44])); /*0x6e07b5*/
+  CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e07d6*/
+  return 1; /*0x6e07dd*/
+
 }
 
 // ==== BACKFILL 0x006E07F0  sub_6E07F0  cls=AnimTypeClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6E07F0::sub_6E07F0(int a2, int a3, int a4, int a5)
 {
-{
-    int v5;
-    int *WorldCoords;
-    int v8[3];
-    v5 = g_RulesClass_Instance->?[5];
-    WorldCoords = Cell::GetWorldCoords((short *)g_ScenarioClass_Instance, v8, this->M144);
-    CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0);
-    return 1;
-}
+
+  int v5; // esi
+  int *WorldCoords; // eax
+  unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
+
+  v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e0803*/
+  WorldCoords = (int *)(((Cell *)((Cell *)dword_A8B230))->GetWorldCoords(v8, *(unsigned int *)&((unsigned int *)this)[44])); /*0x6e0815*/
+  CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0836*/
+  return 1; /*0x6e083d*/
+
 }
 
 // ==== BACKFILL 0x006E0850  sub_6E0850  cls=AnimTypeClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6E0850::sub_6E0850(int a2, int a3, int a4, int a5)
 {
-{
-    int v5;
-    int *WorldCoords;
-    int v8[3];
-    v5 = g_RulesClass_Instance->?[5];
-    WorldCoords = Cell::GetWorldCoords((short *)g_ScenarioClass_Instance, v8, this->M144);
-    CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0);
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E0850)
 }
 
 // ==== BACKFILL 0x006E0AA0  TActionClass::executeEnterAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 char TActionClass::executeEnterAction(int a2, int _10, unsigned int * a3, IUnknown * aP4)
 {
-{
-    void *v5;
-    int Field11;
-    int v7;
-    char v9;
-    int i;
-    int v11;
-    int *v12;
-    v5 = (void *)this->Value;
-    if ( !a3 )
-    return 0;
-    if ( v5 == (void *)8997 )
-  {
-    Field11 = Property::GetField11(a3);
-  }
-    else
-  {
-    if ( v5 == (void *)-1 )
-    return 0;
-    if ( BuildingType::IsSpecialType(v5) )
-    Field11 = BuildingType::FindOwnerHouse(v5);
-    else
-    Field11 = HouseClass::FindOwner(v5);
-  }
-    v7 = Field11;
-    if ( !Field11 )
-    return 0;
-    v9 = 0;
-    for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer[5708]; ++i )
-  {
-    v11 = *(int *)(*(int *)&g_NetworkPlayerBuffer[5696] + 4 * i);
-    if ( *(char *)(v11 + 144) )
-    {
-    if ( *(char *)(v11 + 116) )
-      {
-    if ( !*(char *)(v11 + 129) )
-        {
-    v12 = *(int **)(v11 + 52);
-    if ( v12 )
-          {
-    if ( LinkedList::Contains(v12, (IUnknown *)a3) )
-            {
-    (*(void (__thiscall **)(int, int, int))(*(int *)(v11) + 980))(v11, v7, 0);
-    v9 = 1;
-            }
-          }
-        }
-      }
-    }
-  }
-    return v9;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E0AA0.json)
 }
 
 // ==== BACKFILL 0x006E0CA0  TActionClass::executeCaptureAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 char TActionClass::executeCaptureAction(void * a1, int _C, unsigned int * a3, IUnknown * aP4)
 {
-{
-    void *v5;
-    int Field11;
-    v5 = (void *)this->Value;
-    if ( !a3 )
-    return 0;
-    if ( v5 == (void *)8997 )
-  {
-    Field11 = Property::GetField11(a3);
-  }
-    else
-  {
-    if ( v5 == (void *)-1 )
-    return 0;
-    if ( BuildingType::IsSpecialType(v5) )
-    Field11 = BuildingType::FindOwnerHouse(v5);
-    else
-    Field11 = HouseClass::FindOwner(v5);
-  }
-    if ( !Field11 )
-    return 0;
-    TActionClass::executeAttackAction(a1, Field11);
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E0CA0.json)
 }
 
 // ==== BACKFILL 0x006E0D00  TActionClass::executeSabotageAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 char TActionClass::executeSabotageAction(unsigned int * a1, int _C, unsigned int * a3, IUnknown * aP4)
 {
-{
-    void *v5;
-    int Field11;
-    v5 = (void *)this->Value;
-    if ( !a3 )
-    return 0;
-    if ( v5 == (void *)8997 )
-  {
-    Field11 = Property::GetField11(a3);
-  }
-    else
-  {
-    if ( v5 == (void *)-1 )
-    return 0;
-    if ( BuildingType::IsSpecialType(v5) )
-    Field11 = BuildingType::FindOwnerHouse(v5);
-    else
-    Field11 = HouseClass::FindOwner(v5);
-  }
-    if ( !Field11 )
-    return 0;
-    TActionClass::executeMoveAction(a1, Field11);
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E0D00.json)
 }
 
 // ==== BACKFILL 0x006E0FE0  TActionClass::RevealWaypointArea  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 char TActionClass::RevealWaypointArea(int a2, int a3, int a4, IUnknown * aP4)
 {
-{
-    int v5;
-    int v6;
-    int v8;
-    int v9;
-    int v10;
-    short v11[4];
-    if ( HouseClass_Player->__pad_220[32] )
-    return 1;
-    *(int *)v11 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v8, this->Value);
-    if ( (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v11) + 80) & 0x100) != 0 || (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v11) + 80) & 0x400) != 0 )
-  {
-    v5 = 4;
-  }
-    else
-  {
-    v5 = 0;
-  }
-    v6 = v5 + *((char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v11) + 283);
-    v10 = v6 * *(int *)&g_OverlayTypeConfig[28392];
-    v9 = ((short)(v11[1] - v6 / 2) << 8) + 128;
-    v8 = ((short)(v11[0] - v6 / 2) << 8) + 128;
-    MapClass::RevealArea1( (int *)&DataGlobal_87F7E8, &v8, *(int *)(*(int *)&DataGlobal_87F8E4[30972] + 1580), (HouseClass *)HouseClass_Player, 0, 0, 0, 1, 0);
-    v8 = ((short)(v11[0] - v6 / 2) << 8) + 128;
-    v10 = v6 * *(int *)&g_OverlayTypeConfig[28392];
-    v9 = ((short)(v11[1] - v6 / 2) << 8) + 128;
-    MapClass::RevealArea1( (int *)&DataGlobal_87F7E8, &v8, *(int *)(*(int *)&DataGlobal_87F8E4[30972] + 1580), (HouseClass *)HouseClass_Player, 0, 0, 0, 1, 1);
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E0FE0.json)
 }
 
 // ==== BACKFILL 0x006E1180  sub_6E1180  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6E1180::sub_6E1180(int a2, int a3, int a4, int a5)
 {
-{
-    int v6;
-    int v7;
-    v6 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->M144);
-    MapClass::TriggerEVA((short *)&v6);
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E1180)
 }
 
 // ==== BACKFILL 0x006E11C0  TActionClass::RevealTileTypeAtWaypoint  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 char TActionClass::RevealTileTypeAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
 {
-{
-    IUnknown *Waypoint_Location;
-    int TileIndex;
-    IUnknown *v7;
-    MouseClass *v8;
-    short v9;
-    int v10;
-    short v11;
-    short v12;
-    int v14;
-    int v15[3];
-    int v16[3];
-    if ( HouseClass_Player->__pad_220[32] )
-    return 1;
-    Waypoint_Location = (IUnknown *)ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v14, this->Value);
-    TileIndex = MapClass::GetTileIndex(&DataGlobal_87F7E8, Waypoint_Location, (IUnknown *)1, 0);
-    TActionClass::executeSellAction(&DataGlobal_87F7E8);
-    v7 = (IUnknown *)MapClass::SpiralSearch(&DataGlobal_87F7E8);
-    if ( !v7 )
-    return 1;
-    do
-  {
-    v8 = (MouseClass *)&v7->field_24;
-    if ( MapClass::GetTileIndex(&DataGlobal_87F7E8, (IUnknown *)&v7->field_24, (IUnknown *)1, 0) == TileIndex )
-    {
-    v9 = HIWORD(v7->field_24);
-    v10 = SHIBYTE(v7->field_118) / 2;
-    v15[0] = ((short)(LOWORD(v8->field_0) - v10 / 2) << 8) + 128;
-    v15[1] = ((short)(v9 - v10 / 2) << 8) + 128;
-    v15[2] = v10 * *(int *)&g_OverlayTypeConfig[28392];
-    MapClass::RevealArea1((int *)&DataGlobal_87F7E8, v15, 2, (HouseClass *)HouseClass_Player, 0, 0, 0, 1, 0);
-    v11 = v8->field_0;
-    v12 = HIWORD(v8->field_0) - v10 / 2;
-    v16[2] = v10 * *(int *)&g_OverlayTypeConfig[28392];
-    v16[0] = ((short)(v11 - v10 / 2) << 8) + 128;
-    v16[1] = (v12 << 8) + 128;
-    MapClass::RevealArea1((int *)&DataGlobal_87F7E8, v16, 2, (HouseClass *)HouseClass_Player, 0, 0, 0, 1, 1);
-    }
-    v7 = (IUnknown *)MapClass::SpiralSearch(&DataGlobal_87F7E8);
-  }
-    while ( v7 );
-    return 1;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E11C0.json)
 }
+
+// ==== BACKFILL 0x006E14A0  ProcessDataObjectClass  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char Gap2Recv_6E14A0::ProcessDataObjectClass(int a2, int a3, int a4, int a5) {
+
+  void **p_vtable3; // eax
+  int abstractFlags; // edx
+  void *vtable3; // esi
+  int v8; // edi
+  void *v9; // edx
+  int v10; // ecx
+  void *v11; // esi
+  int v12; // ecx
+  void *v14; // [esp+10h] [ebp-8h]
+
+  p_vtable3 = &dword_A8B230[127].vtable3; /*0x6e14a8*/
+  abstractFlags = dword_A8B230[127].abstractFlags; /*0x6e14b4*/
+  vtable3 = dword_A8B230[127].vtable3; /*0x6e14b8*/
+  if ( vtable3 != (void *)-1 ) /*0x6e14be*/
+  {
+    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable3 >= abstractFlags ) /*0x6e14c6*/
+      abstractFlags = 0; /*0x6e14cc*/
+    else
+      abstractFlags -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable3; /*0x6e14c8*/
+  }
+  v8 = 15 * *(unsigned int *)&this->isAliveFlag; /*0x6e14d7*/
+  if ( abstractFlags > v8 ) /*0x6e14dc*/
+  {
+    v11 = *p_vtable3; /*0x6e14e8*/
+    v12 = dword_A8B230[127].abstractFlags; /*0x6e14ea*/
+    if ( *p_vtable3 != (void *)-1 ) /*0x6e14f0*/
+    {
+      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)v11 >= v12 ) /*0x6e14f8*/
+        v12 = 0; /*0x6e14fe*/
+      else
+        v12 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)v11; /*0x6e14fa*/
+    }
+    v9 = v14; /*0x6e1500*/
+    v10 = v12 - v8; /*0x6e1504*/
+    *p_vtable3 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6e1506*/
+  }
+  else
+  {
+    v9 = v14; /*0x6e14de*/
+    v10 = 0; /*0x6e14e2*/
+    *p_vtable3 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6e14e4*/
+  }
+  p_vtable3[1] = v9; /*0x6e1508*/
+  p_vtable3[2] = (void *)v10; /*0x6e150b*/
+  ObjectClass::PreDraw((ObjectClass *)&stru_87F5F0.__pad_58[416]); /*0x6e1513*/
+  return 1; /*0x6e1518*/
+
 }
 
 // ==== BACKFILL 0x006E1530  ScenarioClass::PrepareTextDisplay  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int ScenarioClass::PrepareTextDisplay(int a1, int a2, int a3, int a4) {
-{
-    int v5;
-    int *missionTimer;
-    ScenarioClass *v7;
-    int v9;
-    char Destination[32];
-    v5 = *(this + 36);
-    missionTimer = g_ScenarioClass_Instance->missionTimer;
-    g_ScenarioClass_Instance->missionTimer[0] = *(int *)&g_NetworkPlayerBuffer[5960];
-    missionTimer[1] = v9;
-    missionTimer[2] = 15 * v5;
-    v7 = g_ScenarioClass_Instance;
-    if ( g_ScenarioClass_Instance->missionTimer[0] == -1 )
-  {
-    g_ScenarioClass_Instance->missionTimer[0] = *(int *)&g_NetworkPlayerBuffer[5960];
-    v7 = g_ScenarioClass_Instance;
-  }
-    v7->missionTimer_text_csf = &DataGlobal_87F8E4[32336];
-    if ( &DataGlobal_87F8E4 == (MouseClass *)-42624 )
-  {
-    Destination[0] = (unsigned char)&DataGlobal_87F8E4[42624];
-  }
-    else
-  {
-    strncpy(Destination, &DataGlobal_87F8E4[42624], 0x1Fu);
-    Destination[31] = 0;
-  }
-    if ( Destination != (char *)g_ScenarioClass_Instance->missionTimer_text )
-    qmemcpy(g_ScenarioClass_Instance->missionTimer_text, Destination, sizeof(g_ScenarioClass_Instance->missionTimer_text));
-    ObjectClass::PreDraw(&DataGlobal_87F7E8);
-    return 1;
+int ScenarioClass::PrepareTextDisplay(int a1, int a2, int a3, int a4) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
 }
-} }
 
 // ==== BACKFILL 0x006E1780  TActionClass::PlayAudioAtRandomWP  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 char TActionClass::PlayAudioAtRandomWP(int a2, int a3, int a4, int a5)
 {
-    int v5;
-    int v7;
-    int *v8;
-    short *v9;
-    int v10;
-    int v11;
-    int v13[3];
-    int v14;
-    int v15[100];
-
-    v5 = 0;
-    v7 = 0;
-    v8 = v15;
-    do
-    {
-        if ( ScenarioClass::Is_Waypoint_Valid((char *)DataGlobal_A8B230, v7) )
-        {
-            ++v5;
-            *v8++ = *ScenarioClass::Get_Waypoint_Location((char *)DataGlobal_A8B230, &v14, v7);
-            if ( v5 == 400 )
-                break;
-        }
-        ++v7;
-    }
-    while ( v7 < 702 );
-    v9 = (short *)&v15[Random::Range((_DWORD *)DataGlobal_A8B230 + 134, 0, v5 - 1)];
-    v10 = (v9[1] << 8) + 128;
-    v13[0] = (*v9 << 8) + 128;
-    v11 = this->Value;
-    v13[1] = v10;
-    v13[2] = 0;
-    PlayAudioAt2(v11, v13, 0);
-    return 1;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E1780.json)
 }
 
 // ==== BACKFILL 0x006E18B0  CellClass::Find  cls=CellClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int CellClass::Find(int a1, int a2, int a3, int a4) {
-{
-    int *WorldCoords;
-    int *v7;
-    int *Infantry;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    int v14[3];
-    WorldCoords = Cell::GetWorldCoords((short *)g_ScenarioClass_Instance, v14, *(this + 17));
-    v11 = *WorldCoords;
-    v12 = WorldCoords[1];
-    v13 = WorldCoords[2];
-    LOWORD(v10) = v11 / 256;
-    HIWORD(v10) = v12 / 256;
-    if ( v10 != DataGlobal_B0E680 && ((v7 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v10), (Infantry = Cell::IsBridge(v7)) != 0) || (Infantry = CellClass::FindInfantry(v7, 0)) != 0) )
-  {
-    ObjectClass::CheckFlagD0(Infantry, *(this + 36));
-    return 1;
-  }
-    else
-  {
-    PlayAudioAt2(*(this + 36), &v11, 1);
-    return 1;
-  }
+int CellClass::Find(int a2, int a3, int a4, int a5) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 11 errs): wrong-universe gap2 body; truth func_0x6E18B0.json */
 }
-} }
 
-// ==== BACKFILL 0x006E1980  TActionClass::executeGuardAreaAction  cls=TActionClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x006E1980  TActionClass::executeGuardAreaAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 char TActionClass::executeGuardAreaAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-{
-    IUnknown **WorldCoords;
-    BuildingTypeClass *v6;
-    int *Infantry;
-    short v9[2];
-    IUnknown *v10;
-    IUnknown *v11;
-    IUnknown *v12;
-    int v13[3];
-    WorldCoords = (IUnknown **)Cell::GetWorldCoords((short *)g_ScenarioClass_Instance, v13, this->TActionClass_field_44);
-    v10 = *WorldCoords;
-    v11 = WorldCoords[1];
-    v12 = WorldCoords[2];
-    v9[0] = (int)v10 / 256;
-    v9[1] = (int)v11 / 256;
-    if ( v9[0] == *(short *)&g_OverlayTypeConfig[28296] && (unsigned short)((int)v11 / 256) == *(short *)&g_OverlayTypeConfig[28298] || (v6 = (BuildingTypeClass *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v9), (Infantry = Cell::IsBridge(v6)) == 0) && (Infantry = CellClass::FindInfantry(v6, 0)) == 0 )
-  {
-    globalHelper_050F40(&v10, 1);
-    return 1;
-  }
-    else
-  {
-    ObjectClass::CheckFlagD0(Infantry, (IUnknown *)0xFFFFFFFF);
-    return 1;
-  }
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E1980.json)
 }
 
-// ==== BACKFILL 0x006E1A40  TActionClass::executePatrolAction  cls=TActionClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x006E1A40  TActionClass::executePatrolAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 char TActionClass::executePatrolAction(void * a1, int a3, int a4, IUnknown * aP4)
 {
-{
-    int *Waypoint_Location;
-    int *v7;
-    v7 = this;
-    Waypoint_Location = ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->TActionClass_field_44);
-    SelectSimilarBuildingTypes(a1, *Waypoint_Location);
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E1A40.json)
 }
 
 // ==== BACKFILL 0x006E1A70  TActionClass::executeScatterAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 char TActionClass::executeScatterAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-{
-    int v5;
-    int v6;
-    int v8[3];
-    short v9[4];
-    if ( HouseClass_Player->__pad_220[32] )
-    return 1;
-    *(int *)v9 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, v8, this->Value);
-    if ( (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v9) + 80) & 0x100) != 0 || (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v9) + 80) & 0x400) != 0 )
-  {
-    v5 = 4;
-  }
-    else
-  {
-    v5 = 0;
-  }
-    v6 = v5 + *((char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v9) + 283);
-    v8[2] = v6 * *(int *)&g_OverlayTypeConfig[28392];
-    v8[1] = ((short)(v9[1] - v6 / 2) << 8) + 128;
-    v8[0] = ((short)(v9[0] - v6 / 2) << 8) + 128;
-    TActionClass_Helper(v8, *(int *)(*(int *)&DataGlobal_87F8E4[30972] + 1580));
-    CellSystem::UpdateVisibility(&DataGlobal_87F7E8);
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E1A70.json)
 }
 
 // ==== BACKFILL 0x006E1BD0  ScenarioClass::UpdateCounters  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int ScenarioClass::UpdateCounters(int a1, int a2, int a3, int a4) {
-{
-    int Status;
-    SuperClass::StartTimer(*(int *)(*(int *)(a2 + 600) + 4 * *(this + 36)), 1, 0, 0);
-    if ( HouseClass_Player == (#375 *)a2 )
-  {
-    SidebarClass::AddCameo((int *)&DataGlobal_87F7E8, 31, *(this + 36));
-    Status = HouseClass::GetStatus((void *)0x1F, 0);
-    Sidebar::ActivateTab((int)&DataGlobal_87F7E8, Status);
-  }
-    return 1;
+int ScenarioClass::UpdateCounters(int a2, int a3, int a4, int a5) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 9 errs): wrong-universe gap2 body; truth func_0x6E1BD0.json */
 }
-} }
 
 // ==== BACKFILL 0x006E1C40  SuperClass::Get  cls=SuperClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int SuperClass::Get(int a1, int a2, int a3, int a4) {
-{
-    int Status;
-    SuperClass::StartTimer(*(int *)(*(int *)(a2 + 600) + 4 *(void**)this->q090), 0, 0, 0);
-    *(char *)(*(int *)(*(int *)(a2 + 600) + 4 *(void**)this->q090) + 96) = 0;
-    if ( HouseClass_Player == (HouseClass *)a2 )
-  {
-    SidebarClass::AddCameo((int *)&DataGlobal_87F7E8, 31, this->q090);
-    Status = HouseClass::GetStatus((void *)0x1F, 0);
-    Sidebar::ActivateTab((int)&DataGlobal_87F7E8, Status);
-  }
-    return 1;
+char SuperClass::Get(int a2, int a3, int a4, int a5) {
+    int Status; // eax
+
+    ((SuperClass *)*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *(unsigned int *)((char *)this + 144)))->StartTimer(0, 0, 0); /*0x6e1c5d 真值 [esi+90h]*/
+    *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *(unsigned int *)&this->__pad_80[16]) + 96) = 0; /*0x6e1c71*/
+    if ( (Object *)dword_A83D4C == (Object *)(unsigned int)a2 ) /*0x6e1c7c*/
+    {
+      ((SidebarClass *)((char *)&stru_87F5F0 + 600))->AddCameo((AbstractType)31, *(unsigned int *)((char *)this + 144)); /*0x6e1c8c 真值 this=0x87F7E8*/
+      Status = HouseClass::GetStatus((HouseClass *)0x1F, 0); /*0x6e1c9e e4 静态 varargs*/
+      ((Sidebar *)((char *)&stru_87F5F0 + 600))->ActivateTab(Status); /*0x6e1ca9*/
+    }
+    return 1; /*0x6e1cae*/
 }
-} }
 
 // ==== BACKFILL 0x006E21D0  sub_6E21D0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_6E21D0(int a1, int a2, int a3, int a4)
 {
-return 1;
+  return 1; /*0x6e21d2*/
 }
 
 // ==== BACKFILL 0x006E21E0  TActionClass::executeFollowAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 char TActionClass::executeFollowAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-{
-    int *v5;
-    int i;
-    int j;
-    v5 = this + 13;
-    DataGlobal_87F8E4.field_0 = *v5;
-    DataGlobal_87F8E4.field_4 = (void *)v5[1];
-    DataGlobal_87F8E4.field_8 = (void *)v5[2];
-    DataGlobal_87F8E4.field_C = (void *)v5[3];
-    RadarClass::Process(&DataGlobal_87F7E8);
-    LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
-    for ( i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); i; i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
-    House::AnnounceUpgrade(i, (IUnknown *)0xFFFFFFFF);
-    Terrain::ConnectivityGraph(&DataGlobal_87F7E8);
-    MapClass::BuildSubzones(&DataGlobal_87F7E8);
-    FogOfWar::Render((int **)&DataGlobal_87F7E8);
-    for ( j = *(int *)&g_NetworkPlayerBuffer[5396] - 1; j >= 0; --j )
-    (*(void (__thiscall **)(int, int))(**(int **)(*(int *)&g_NetworkPlayerBuffer[5384] + 4 * j) + 1184))( *(int *)(*(int *)&g_NetworkPlayerBuffer[5384] + 4 * j), 1);
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E21E0.json)
 }
 
-// ==== BACKFILL 0x006E2520  TActionClass::executeLoadAction  cls=TActionClass  sig=csp  renamed_refs=1  residual=- ====
+// ==== BACKFILL 0x006E2520  TActionClass::executeLoadAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
 char TActionClass::executeLoadAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-{
-    AnimClass *v6;
-    IUnknown *v8;
-    VoxelAnimClass *v9;
-    int v10[2];
-    int GroundHeight;
-    v8 = (IUnknown *)*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v9, this->TActionClass_field_44);
-    GroundHeight = 0;
-    v10[1] = (SHIWORD(v8) << 8) + 128;
-    v10[0] = ((short)v8 << 8) + 128;
-    GroundHeight = Cell::GetGroundHeight(v10);
-    if ( (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v8) + 80) & 0x100) != 0 || (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v8) + 80) & 0x400) != 0 )
-  {
-    GroundHeight += *(int *)&g_OverlayTypeConfig[28380];
-  }
-    v6 = (AnimClass *)__2_YAPAXI_Z(0x148u);
-    if ( v6 )
-    DamageAnimClass::Constructor( v6, *(int *)(*(int *)&g_NetworkPlayerBuffer[5360] + 4 *(void**)this->Value), v10, 0);
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E2520.json)
 }
 
 // ==== BACKFILL 0x006E2660  SmallFunc_6E2660  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char sub_6E2660(int a1, int a2, int a3, int a4)
 {
-{
-    g_RadarBlipPool = 0;
-    g_RadarBlipManager = 0;
-    DataGlobal_880994 = -1;
-    Mouse::SetBounds((int)&DataGlobal_87F7E8, 0);
-    BuildingClass::TogglePower2(&DataGlobal_87F7E8, 0);
-    BuildingClass::TogglePower(&DataGlobal_87F7E8, 0);
-    DataGlobal_88099A = 0;
-    DataGlobal_88099B = 0;
-    DataGlobal_88099C = 0;
-    Scenario::ClearScreen();
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E2660)
 }
 
 // ==== BACKFILL 0x006E26D0  ScenarioClass::Set  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int ScenarioClass::Set(int a1, int a2, int a3, int a4) {
-{
-    int v7;
-    int v8;
-    int v9[2];
-    int GroundHeight;
-    v7 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v8, *(this + 17));
-    GroundHeight = 0;
-    v9[1] = (SHIWORD(v7) << 8) + 128;
-    v9[0] = ((short)v7 << 8) + 128;
-    GroundHeight = Cell::GetGroundHeight(v9);
-    if ( (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v7) + 80) & 0x100) != 0 || (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v7) + 80) & 0x400) != 0 )
-  {
-    GroundHeight += DataGlobal_B0E6D4;
-  }
-    TacticalClass::SetPosition(g_TacticalClass_Instance, v9, *(this + 36));
-    return 1;
+int ScenarioClass::Set(int a2, int a3, int a4, int a5) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 8 errs): wrong-universe gap2 body; truth func_0x6E26D0.json */
 }
-} }
 
 // ==== BACKFILL 0x006E2970  BuildingLightClass::FindAllTargets  cls=BuildingLightClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int BuildingLightClass::FindAllTargets(int a1, int a2, int a3, int a4) {
+int BuildingLightClass::FindAllTargets(int a1, int a2, int a3, int a4)
 {
-      char v5;
-      int v6;
-      int v8;
-      _DWORD *v9;
+    (void)a1; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E2970.json)
+}
 
-      v5 = 0;
-      v6 = 0;
-      if ( g_BuildingProductionState <= 0 )
-        return 0;
-      do
+// ==== BACKFILL 0x006E2A50  sub_6E2A50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char E4Recv_6E2A50::sub_6E2A50(int a2, int a3, int a4, int a5)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E2A50)
+}
+
+// ==== BACKFILL 0x006E2AF0  TActionClass::executeUnloadAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeUnloadAction(int a2, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E2AF0.json)
+}
+
+// ==== BACKFILL 0x006E2C20  globalHelper_0E2C20  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
+char globalHelper_0E2C20(int a1, int a2, int a3, IUnknown * aP3)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E2C20)
+}
+
+// ==== BACKFILL 0x006E2E60  TActionClass::executeSelfDestructAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeSelfDestructAction(int a2, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E2E60.json)
+}
+
+// ==== BACKFILL 0x006E2EB0  TActionClass::executeExplodeAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeExplodeAction(int a2, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E2EB0.json)
+}
+
+// ==== BACKFILL 0x006E2F00  TActionClass::executeChronoshiftAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeChronoshiftAction(int a2, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E2F00.json)
+}
+
+// ==== BACKFILL 0x006E3120  SmallFunc_6E3120  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int _18, unsigned int * a5, int a7, void * a3, void * a4, void * a6)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E3120)
+}
+
+// ==== BACKFILL 0x006E3180  TActionClass::executePlaceBeaconAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executePlaceBeaconAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E3180.json)
+}
+
+// ==== BACKFILL 0x006E31E0  TActionClass::executeJumpjetAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeJumpjetAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E31E0.json)
+}
+
+// ==== BACKFILL 0x006E3240  TActionClass::executeOpenGateAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeOpenGateAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E3240.json)
+}
+
+// ==== BACKFILL 0x006E32A0  TActionClass::executeCloseGateAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeCloseGateAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E32A0.json)
+}
+
+// ==== BACKFILL 0x006E3410  TActionClass::CreateNukeEffect  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::CreateNukeEffect(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E3410.json)
+}
+
+// ==== BACKFILL 0x006E35F0  sub_6E35F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E35F0)
+}
+
+// ==== BACKFILL 0x006E3B40  TActionClass::executeLightningAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeLightningAction(int a2, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E3B40.json)
+}
+
+// ==== BACKFILL 0x006E3D70  TActionClass::ddtor  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+int TActionClass::ddtor(int a1, unsigned int * a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E3D70.json)
+}
+
+// ==== BACKFILL 0x006E3DB0  TActionClass::SaveLoad_Prefix  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E3DB0.json)
+}
+
+// ==== BACKFILL 0x006E3E30  TActionClass::SaveLoad_Prefix_0  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+int TActionClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E3E30.json)
+}
+
+// ==== BACKFILL 0x006E3E50  TActionClass::Validate  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+int TActionClass::Validate(int a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E3E50.json)
+}
+
+// ==== BACKFILL 0x006E3EE0  TriggerTypeClass::Dispatch  cls=TriggerTypeClass  sig=csp  renamed_refs=0  residual=- ====
+int TriggerTypeClass::Dispatch() {
+    int result; // eax
+
+    result = 0; /*0x6e3ee3*/
+    switch ( (unsigned int)this ) /*0x6e3ef2*/
+    {
+      case 0xEu: /*0x6e3ef2*/
+      case 0x20u: /*0x6e3ef2*/
+      case 0x3Cu: /*0x6e3ef2*/
+      case 0x3Du: /*0x6e3ef2*/
+      case 0x3Eu: /*0x6e3ef2*/
+      case 0x5Bu: /*0x6e3ef2*/
+      case 0x6Fu: /*0x6e3ef2*/
+        result = 2; /*0x6e3ef9*/
+        break; /*0x6e3ef9*/
+      default:
+        return result;
+    }
+    return result; /*0x6e3efe*/
+}
+
+// ==== BACKFILL 0x006E3F70  sub_6E3F70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+unsigned int * E4Recv_6E3F70::sub_6E3F70(unsigned int * a2)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E3F70)
+}
+
+// ==== BACKFILL 0x006E4100  TActionClass::executePsychicDominatorAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executePsychicDominatorAction(int a2, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E4100.json)
+}
+
+// ==== BACKFILL 0x006E4200  TActionClass::executeForceShieldAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeForceShieldAction(int a2, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E4200.json)
+}
+
+// ==== BACKFILL 0x006E4360  TActionClass::executeSpyPlaneAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeSpyPlaneAction(int a2, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E4360.json)
+}
+
+// ==== BACKFILL 0x006E43A0  TActionClass::executeChronoSphereAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeChronoSphereAction(int a2, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E43A0.json)
+}
+
+// ==== BACKFILL 0x006E43E0  TActionClass::executeWeatherStormAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E43E0.json)
+}
+
+// ==== BACKFILL 0x006E4440  globalHelper_0E4440  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
+char globalHelper_0E4440(unsigned int * a0, int a2, int a3, IUnknown * aP3)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4440)
+}
+
+// ==== BACKFILL 0x006E4460  TActionClass::executeDominatorAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeDominatorAction(unsigned int * a1, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E4460.json)
+}
+
+// ==== BACKFILL 0x006E44C0  globalHelper_0E44C0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
+char globalHelper_0E44C0(unsigned int * a0, int a2, int a3, IUnknown * aP3)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E44C0)
+}
+
+// ==== BACKFILL 0x006E44E0  TActionClass::executeRevealAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeRevealAction(unsigned int * a1, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E44E0.json)
+}
+
+// ==== BACKFILL 0x006E4540  globalHelper_0E4540  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
+char globalHelper_0E4540(unsigned int * a0, int a2, int a3, IUnknown * aP3)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4540)
+}
+
+// ==== BACKFILL 0x006E4560  TActionClass::executeEMPulseAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+char TActionClass::executeEMPulseAction(int a2, int a3, int a4, IUnknown * aP4)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E4560.json)
+}
+
+// ==== BACKFILL 0x006E45E0  ObjectClass::FindOwner  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
+int ObjectClass::FindOwner(unsigned int * a0, AnimClass * aP1)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E45E0.json)
+}
+
+// ==== BACKFILL 0x006E4630  TActionClass::StubReturn148  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+int TActionClass::StubReturn148()
+{
+
+  return 148; /*0x6e4635*/
+
+}
+
+// ==== BACKFILL 0x006E4640  TActionClass::StubReturn47  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+int TActionClass::StubReturn47()
+{
+
+  return 47; /*0x6e4645*/
+
+}
+
+// ==== BACKFILL 0x006E4650  TActionClass::Stub  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
+int TActionClass::Stub()
+{
+
+  return this->idxArray; /*0x6e4653*/
+
+}
+
+// ==== BACKFILL 0x006E47C0  ScriptAction::CopyStructField  cls=ScriptAction  sig=csp  renamed_refs=0  residual=- ====
+void * ScriptAction::CopyStructField(void *a2, const void *a3)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E47C0.json)
+}
+
+// ==== BACKFILL 0x006E47F0  Tactical_42::ClearBuffer  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
+void Tactical_42::ClearBuffer(void *a1_1)
+{
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E47F0)
+}
+
+// ==== BACKFILL 0x006E4820  Tactical_42::PointerToIndex  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
+unsigned int Tactical_42::PointerToIndex(int a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4820)
+}
+
+// ==== BACKFILL 0x006E49D0  Tactical_42::SetCapacity  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
+char Tactical_42::SetCapacity(int a2, unsigned int * a3)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E49D0)
+}
+
+// ==== BACKFILL 0x006E5290  sub_6E5290  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char E4Recv_6E5290::sub_6E5290()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E5290)
+}
+
+// ==== BACKFILL 0x006E5560  ScenarioClass::checkMissionObjectives  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
+int ScenarioClass::checkMissionObjectives(int a2) {
+
+  this->nextScenario[12] = a2; /*0x6e5564*/
+  return a2; /*0x6e5567*/
+
+}
+
+// ==== BACKFILL 0x006E5570  Map_Reset_6E5570  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int sub_6E5570()
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E5570.json)
+}
+
+// ==== BACKFILL 0x006E5610  TagClass::CheckEvent  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
+int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E5610)
+}
+
+// ==== BACKFILL 0x006E56A0  TagClass::ddtor  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
+int TagClass::ddtor(int a1, unsigned int * a2)
+{
+
+  if ( !a2 ) /*0x6e56a6*/
+    return -2147467261; /*0x6e56a8*/
+  *a2 = 1425466418; /*0x6e56b6*/
+  a2[1] = 298977773; /*0x6e56be*/
+  a2[2] = 1610655148; /*0x6e56c7*/
+  a2[3] = unk_7E97CC; /*0x6e56d0*/
+  return 0; /*0x6e56ad*/
+
+}
+
+// ==== BACKFILL 0x006E56E0  TagClass::ProcessTag  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
+int TagClass::ProcessTag(int * a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E56E0)
+}
+
+// ==== BACKFILL 0x006E5730  TagClass::LoadTag  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
+int TagClass::LoadTag(AbstractClass * aP0, int aP1)
+{
+
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x6e573b*/
+  if ( result >= 0 ) /*0x6e5742*/
+  {
+    if ( aP0 ) /*0x6e5746*/
+    {
+      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e574f*/
+      aP0->vtable1 = &vt_TagClass; /*0x6e5754*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e575a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5761*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5768*/
+    }
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x6e5778*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->firstTrigger); /*0x6e5786*/
+    return 0; /*0x6e578b*/
+  }
+  return result; /*0x6e578d*/
+
+}
+
+// ==== BACKFILL 0x006E57A0  TagClass::SaveTag  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
+int TagClass::SaveTag(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); /*0x6e57af*/
+  if ( result >= 0 ) /*0x6e57b6*/
+    return 0; /*0x6e57b8*/
+  return result; /*0x6e57ba*/
+
+}
+
+// ==== BACKFILL 0x006E57DE  ?do_always_noconv_codecvt_base_std__MBE_NXZ_18  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char ObjectClass::_do_always_noconv_codecvt_base_std__MBE_NXZ_18()
+{
+
+  return 1; /*0x6e57e0*/
+
+}
+
+// ==== BACKFILL 0x006E5820  TriggerActionQueue::ProcessAll  cls=TriggerActionQueue  sig=csp  renamed_refs=0  residual=- ====
+int TriggerActionQueue::ProcessAll()
+{
+
+  int result; // eax
+  int i; // esi
+
+  result = g_GameObjectCleanup; /*0x6e5820*/
+  for ( i = 0; i < g_GameObjectCleanup; ++i ) /*0x6e582d*/
+  {
+    TriggerClass::NotifyLocalChanged(*(TriggerClass **)(*((unsigned int *)g_TagClassCount + i) + 40), (int)this); /*0x6e583b*/
+    result = g_GameObjectCleanup; /*0x6e5840*/
+  }
+  return result; /*0x6e584a*/
+
+}
+
+// ==== BACKFILL 0x006E5890  TagClass::StubReturn56  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
+int TagClass::StubReturn56()
+{
+
+  return 56; /*0x6e5895*/
+
+}
+
+// ==== BACKFILL 0x006E58A0  TagClass::StubReturn44  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
+int TagClass::StubReturn44()
+{
+
+  return 44; /*0x6e58a5*/
+
+}
+
+// ==== BACKFILL 0x006E58B0  TagClass::ProcessTrigger  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
+TagClass * TagClass::ProcessTrigger(char a2)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E58B0)
+}
+
+// ==== BACKFILL 0x006E5E70  ObjectTypeClass::FindByName  cls=ObjectTypeClass  sig=csp  renamed_refs=0  residual=- ====
+int ObjectTypeClass::FindByName()
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E5E70.json)
+}
+
+// ==== BACKFILL 0x006E63A0  TagTypeClass::GetClassIdentifier  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
+int TagTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
+{
+
+  if ( !a2 ) /*0x6e63a6*/
+    return -2147467261; /*0x6e63a8*/
+  *a2 = 1425466419; /*0x6e63b6*/
+  a2[1] = 298977773; /*0x6e63be*/
+  a2[2] = 1610655148; /*0x6e63c7*/
+  a2[3] = unk_7E97DC; /*0x6e63d0*/
+  return 0; /*0x6e63ad*/
+
+}
+
+// ==== BACKFILL 0x006E6410  TagTypeClass::LoadTypeData  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
+int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
+{
+
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(aP0),(gamemd::AbstractClass *)(aP1)); /*0x6e641b*/
+  if ( result >= 0 ) /*0x6e6422*/
+  {
+    if ( aP0 ) /*0x6e6426*/
+    {
+      ((AbstractTypeClass*)((int)aP0))->Init((int)&aP1); /*0x6e642f*/
+      aP0->vtable1 = &vt_TagTypeClass; /*0x6e6434*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e643a*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e6441*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e6448*/
+    }
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 40); /*0x6e645b*/
+    return 0; /*0x6e6460*/
+  }
+  return result; /*0x6e6462*/
+
+}
+
+// ==== BACKFILL 0x006E6470  TagTypeClass::SaveToINI  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
+int TagTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); /*0x6e647f*/
+  if ( result >= 0 ) /*0x6e6486*/
+    return 0; /*0x6e6488*/
+  return result; /*0x6e648a*/
+
+}
+
+// ==== BACKFILL 0x006E6490  TagTypeClass::GetTypeIdentifier  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
+int TagTypeClass::GetTypeIdentifier()
+{
+
+  return 45; /*0x6e6495*/
+
+}
+
+// ==== BACKFILL 0x006E64A0  TagTypeClass::GetObjectSize  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
+int TagTypeClass::GetObjectSize()
+{
+
+  return 164; /*0x6e64a5*/
+
+}
+
+// ==== BACKFILL 0x006E64C0  TagTypeClass::ddtor  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
+TagTypeClass * TagTypeClass::ddtor(char a2)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E64C0)
+}
+
+// ==== BACKFILL 0x006E6B70  sub_6E6B70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+unsigned char * E4Recv_6E6B70::sub_6E6B70(unsigned int * a2)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E6B70)
+}
+
+// ==== BACKFILL 0x006E8000  sub_6E8000  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E8000)
+}
+
+// ==== BACKFILL 0x006E8160  TeamClass::SumMemberCounts  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+int TeamClass::SumMemberCounts() {
+    int v1; // edx
+    int result; // eax
+    TeamClass *v3; // ecx
+    void *vtable0; // esi
+
+    v1 = this->countObjects[5]; /*0x6e8160*/
+    result = 0; /*0x6e8166*/
+    if ( v1 > 0 ) /*0x6e816a*/
+    {
+      v3 = (TeamClass *)((char *)this + 164); /*0x6e816d*/
+      do /*0x6e817b*/
       {
-        v8 = *((_DWORD *)g_BuildingClass_InstanceCount + v6);
-        if ( *(int *)(v8 + 108) > 0 )
+        vtable0 = *(void **)v3; /*0x6e8173 member first dword*/
+        v3 = (TeamClass *)((char *)v3 + 8); /*0x6e8175*/
+        result += (int)vtable0; /*0x6e8178*/
+        --v1; /*0x6e817a*/
+      }
+      while ( v1 ); /*0x6e817b*/
+    }
+    return result; /*0x6e817e*/
+}
+
+// ==== BACKFILL 0x006E8340  ScriptTypeClass::ReadINI  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
+TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E8340)
+}
+
+// ==== BACKFILL 0x006E8420  TaskForceClass::GetUnitCount  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
+char TaskForceClass::GetUnitCount(unsigned char *** aP1)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E8420)
+}
+
+// ==== BACKFILL 0x006E8510  TaskForceClass::GetUnitType  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
+char TaskForceClass::GetUnitType(char * a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E8510)
+}
+
+// ==== BACKFILL 0x006E85B0  sub_6E85B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char E4Recv_6E85B0::sub_6E85B0()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E85B0)
+}
+
+// ==== BACKFILL 0x006E8680  TaskForceClass::SaveTaskForce  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
+int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0->__pad_0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); /*0x6e868f*/
+  if ( result >= 0 ) /*0x6e8696*/
+    return 0; /*0x6e8698*/
+  return result; /*0x6e869a*/
+
+}
+
+// ==== BACKFILL 0x006E86A0  TaskForceClass::LoadTaskForce  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
+int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
+{
+
+  int result; // eax
+  int *v3; // esi
+  int v4; // edi
+
+  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(aP0),(gamemd::AbstractClass *)(aP1)); /*0x6e86ab*/
+  if ( result >= 0 ) /*0x6e86b2*/
+  {
+    if ( aP0 ) /*0x6e86b6*/
+    {
+      ((AbstractTypeClass*)(int)aP0)->Init((int)&aP1); /*0x6e86bf*/
+      *(unsigned int *)aP0->__pad_0 = (unsigned int)(&vt_TaskForceClass); /*0x6e86c4*/
+      aP0->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e86ca*/
+      *(unsigned int *)aP0->__pad_8 = (unsigned int)(&vt_TaskForceClass); /*0x6e86d1*/
+      *(unsigned int *)&aP0->__pad_8[4] = (unsigned int)(&vt_TaskForceClass); /*0x6e86d8*/
+    }
+    v3 = (int *)(aP0 + 1); /*0x6e86e0*/
+    v4 = 6; /*0x6e86e6*/
+    do /*0x6e86fa*/
+    {
+      ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, v3); /*0x6e86f1*/
+      v3 += 2; /*0x6e86f6*/
+      --v4; /*0x6e86f9*/
+    }
+    while ( v4 ); /*0x6e86fa*/
+    return 0; /*0x6e86fc*/
+  }
+  return result; /*0x6e86ff*/
+
+}
+
+// ==== BACKFILL 0x006E8710  TaskForceClass::ddtor  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
+int TaskForceClass::ddtor(int a1, unsigned int * a2)
+{
+
+  if ( !a2 ) /*0x6e8716*/
+    return -2147467261; /*0x6e8718*/
+  *a2 = 1641952286; /*0x6e8726*/
+  a2[1] = 298977140; /*0x6e872e*/
+  a2[2] = 1610655148; /*0x6e8737*/
+  a2[3] = unk_7E977C; /*0x6e8740*/
+  return 0; /*0x6e871d*/
+
+}
+
+// ==== BACKFILL 0x006E8750  TaskForceClass::LoadTask  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
+int TaskForceClass::LoadTask(int * a2)
+{
+
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6e8759*/
+  Power::TimerProcess((int)this->TaskForceClass_field_0x98); /*0x6e8767*/
+  return Power::TimerProcess(this->TaskForceClass_field_0x9C[0]); /*0x6e877a*/
+
+}
+
+// ==== BACKFILL 0x006E8780  HouseClass::GetMaxBuildLevel  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+int HouseClass::GetMaxBuildLevel()
+{
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E8780.json)
+}
+
+// ==== BACKFILL 0x006E87D0  TaskForceClass::StubReturn33  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
+int TaskForceClass::StubReturn33()
+{
+
+  return 33; /*0x6e87d5*/
+
+}
+
+// ==== BACKFILL 0x006E87E0  TaskForceClass::StubReturn212  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
+int TaskForceClass::StubReturn212()
+{
+
+  return 212; /*0x6e87e5*/
+
+}
+
+// ==== BACKFILL 0x006E8A90  MissionClass::Construct  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+int MissionClass::Construct(int a1, int a2, int a3) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x6e8a90.json */
+}
+
+// ==== BACKFILL 0x006E9050  TeamClass::SelectMember  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+char TeamClass::SelectMember(AbstractClass * aP1, void *a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E9050.json)
+}
+
+// ==== BACKFILL 0x006EA080  sub_6EA080  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char E4Recv_6EA080::sub_6EA080()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6EA080)
+}
+
+// ==== BACKFILL 0x006EA0D0  SelectTeamProductionBuilding  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+void Gap2Recv_6EA0D0::SelectTeamProductionBuilding() {
+
+  double v1; // st7
+  ObjectClass *owningHouseIndex; // ecx
+  TagClass **p_attachedTag; // esi
+  BombClass *attachedBomb; // edi
+  unsigned int *v6; // eax
+  int fallRate; // ecx
+  int v8; // eax
+  int v9; // esi
+  unsigned int *v10; // eax
+  TagClass *attachedTag; // ecx
+  unsigned int *v12; // edi
+  unsigned int *v13; // eax
+  int v14; // ecx
+  int v15; // edx
+  int v16; // eax
+  int v17; // edi
+  unsigned int *v18; // eax
+  int v19; // esi
+  int v20; // ebp
+  int v21; // eax
+  int v22; // [esp+2Ch] [ebp-68h] BYREF
+  int v23; // [esp+30h] [ebp-64h]
+  int v24; // [esp+34h] [ebp-60h]
+  int v25; // [esp+38h] [ebp-5Ch]
+  ObjectClass *v26; // [esp+3Ch] [ebp-58h]
+  int v27; // [esp+40h] [ebp-54h]
+  int i; // [esp+44h] [ebp-50h]
+  int16_t v29[2]; // [esp+48h] [ebp-4Ch] BYREF
+  int j; // [esp+4Ch] [ebp-48h] BYREF
+  int v31; // [esp+50h] [ebp-44h]
+  int v32; // [esp+54h] [ebp-40h] BYREF
+  int v33; // [esp+58h] [ebp-3Ch] BYREF
+  int v34; // [esp+5Ch] [ebp-38h]
+  int v35; // [esp+60h] [ebp-34h]
+  unsigned char v36[12]; // [esp+64h] [ebp-30h] BYREF
+  unsigned char v37[12]; // [esp+70h] [ebp-24h] BYREF
+  unsigned char v38[12]; // [esp+7Ch] [ebp-18h] BYREF
+  unsigned char v39[12]; // [esp+88h] [ebp-Ch] BYREF
+
+  owningHouseIndex = (ObjectClass *)this->owningHouseIndex; /*0x6ea0de*/
+  HIBYTE(this->visibilityFlags) = 0; /*0x6ea0e2*/
+  SetLandTypeMap(owningHouseIndex); /*0x6ea0e6*/
+  if ( this->ambientSoundController[3] <= 0 ) /*0x6ea0f0*/
+  {
+    this->attachedTag = 0; /*0x6ea3c2*/
+  }
+  else
+  {
+    p_attachedTag = &this->attachedTag; /*0x6ea0f9*/
+    TeamClass::FindClosestEnemy((int)this, (void **)&this->attachedTag, (int *)&this->attachedBomb); /*0x6ea100*/
+    if ( !this->attachedTag ) /*0x6ea105*/
+    {
+      attachedBomb = this->attachedBomb; /*0x6ea10a*/
+      if ( !attachedBomb ) /*0x6ea10e*/
+        return; /*0x6ea10e*/
+      *p_attachedTag = (TagClass *)attachedBomb; /*0x6ea114*/
+    }
+    v6 = (unsigned int *)(*((int (**)(TagClass *, int *))(*p_attachedTag)->vtable1 + 18))( /*0x6ea11f*/
+                     *p_attachedTag,
+                     &v33);
+    v27 = 0x7FFFFFFF; /*0x6ea124*/
+    LOWORD(v22) = *v6 / 256; /*0x6ea13a*/
+    fallRate = this->fallRate; /*0x6ea143*/
+    HIWORD(v22) = v6[1] / 256; /*0x6ea151*/
+    *(unsigned int *)v29 = v22; /*0x6ea15a*/
+    v8 = 0; /*0x6ea161*/
+    v31 = *(unsigned int *)(fallRate + 120); /*0x6ea163*/
+    for ( i = 0; i < v31; ++i ) /*0x6ea16d*/
+    {
+      v9 = *(unsigned int *)(*(unsigned int *)(this->fallRate + 108) + 4 * v8); /*0x6ea179*/
+      if ( v9 && !*(unsigned char *)(v9 + 129) && !*(unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)v9 + 1016))(v9, 0) ) /*0x6ea19e*/
+      {
+        v10 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v9 + 72))(v9, v36); /*0x6ea1b0*/
+        LOWORD(v23) = *v10 / 256; /*0x6ea1c3*/
+        attachedTag = this->attachedTag; /*0x6ea1d2*/
+        HIWORD(v23) = v10[1] / 256; /*0x6ea1da*/
+        v22 = v23; /*0x6ea1e3*/
+        v12 = (unsigned int *)(*((int (**)(TagClass *, unsigned char *))attachedTag->vtable1 + 18))(attachedTag, v37); /*0x6ea1f5*/
+        v13 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v9 + 72))(v9, v38); /*0x6ea1fc*/
+        v14 = v13[1]; /*0x6ea203*/
+        v33 = *v13 - *v12; /*0x6ea208*/
+        v15 = v13[2]; /*0x6ea211*/
+        v34 = v14 - v12[1]; /*0x6ea214*/
+        v35 = v15 - v12[2]; /*0x6ea224*/
+        Math::Sqrt((double)v33 * (double)v33 + (double)v35 * (double)v35 + (double)v34 * (double)v34); /*0x6ea249*/
+        LOWORD(v16) = Math::RoundToInt(v1); /*0x6ea251*/
+        v17 = v16 * (CellClass::GetTileData((int16_t *)&v22, this->fallRate) + 1); /*0x6ea27a*/
+        if ( *(unsigned char *)(*(unsigned int *)(v9 + 1312) + 5801) ) /*0x6ea274*/
+          v17 /= 2; /*0x6ea288*/
+        if ( v17 < v27 ) /*0x6ea28e*/
         {
-          if ( *(_BYTE *)(v8 + 144) )
+          v18 = (unsigned int *)(*((int (**)(TagClass *, unsigned char *))this->attachedTag->vtable1 + 18))( /*0x6ea29e*/
+                            this->attachedTag,
+                            v39);
+          v19 = this->customSound_controller[1]; /*0x6ea2a3*/
+          v26 = (ObjectClass *)v19; /*0x6ea2a6*/
+          v25 = -1; /*0x6ea2aa*/
+          LOWORD(v24) = *v18 / 256; /*0x6ea2c0*/
+          HIWORD(v24) = v18[1] / 256; /*0x6ea2d4*/
+          for ( j = v24; v19; v19 = *(unsigned int *)(v19 + 1496) ) /*0x6ea2e3*/
           {
-            if ( *(_BYTE *)(v8 + 116) )
+            v20 = *(unsigned int *)((*(int (**)(int))(*(unsigned int *)v19 + 132))(v19) + 1532); /*0x6ea2ef*/
+            if ( *(unsigned char *)(v19 + 144) /*0x6ea337*/
+              && *(unsigned int *)(v19 + 108)
+              && (dword_A8E7AC || !*(unsigned char *)(v19 + 129))
+              && (*(unsigned char *)(v19 + 1673) || (*(int (**)(int))(*(unsigned int *)v19 + 44))(v19) == 2)
+              && v20 > v25 )
             {
-              if ( !*(_BYTE *)(v8 + 129) )
+              v26 = (ObjectClass *)v19; /*0x6ea339*/
+              v25 = v20; /*0x6ea33d*/
+            }
+          }
+          v21 = *WalkPathfindingLine(v26, &v32, (int)&j, &v22, 2, 4); /*0x6ea367*/
+          v22 = v21; /*0x6ea370*/
+          if ( v21 != *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x6ea374*/
+          {
+            v27 = v17; /*0x6ea384*/
+            *(unsigned int *)v29 = v21; /*0x6ea388*/
+          }
+        }
+      }
+      v8 = i + 1; /*0x6ea394*/
+    }
+    this->ambientSoundController[1] = (int)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v29); /*0x6ea3b2*/
+    TeamClass::UpdateMembers((TeamClass *)this); /*0x6ea3b5*/
+  }
+
+}
+
+// ==== BACKFILL 0x006EA4F0  CaptureManagerClass::AddMember  cls=CaptureManagerClass  sig=csp  renamed_refs=0  residual=- ====
+char CaptureManagerClass::AddMember(TechnoClass * aP1, void *a2, void *a3)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6EA4F0)
+}
+
+// ==== BACKFILL 0x006EA500  TeamClass::AddMember  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+char TeamClass::AddMember(int aP1, char aP2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006EA500.json)
+}
+
+// ==== BACKFILL 0x006EA610  TeamClass::ValidateMember  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+bool TeamClass::ValidateMember(TechnoClass * aP1, int * a2, char a4)
+{
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006EA610.json)
+}
+
+// ==== BACKFILL 0x006EAE60  TeamClass::ExecuteAction  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+int TeamClass::ExecuteAction(int a2, char a3)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006EAE60.json)
+}
+
+// ==== BACKFILL 0x006EC130  ObjectClass::Get  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int ObjectClass::Get(int a1) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x6ec130.json */
+}
+
+// ==== BACKFILL 0x006EC370  sub_6EC370  cls=AnimTypeClass  sig=csp  renamed_refs=0  residual=- ====
+char E4Recv_6EC370::sub_6EC370()
+{
+
+  int v1; // ecx
+  char result; // al
+
+  v1 = *(unsigned int *)&((unsigned int *)this)[23]; /*0x6ec370*/
+  result = 1; /*0x6ec373*/
+  if ( v1 ) /*0x6ec377*/
+  {
+    while ( *(unsigned char *)(v1 + 981) ) /*0x6ec381*/
+    {
+      v1 = *(unsigned int *)(v1 + 1496); /*0x6ec383*/
+      if ( !v1 ) /*0x6ec38b*/
+        return result; /*0x6ec38b*/
+    }
+    return 0; /*0x6ec38e*/
+  }
+  return result; /*0x6ec38d*/
+
+}
+
+// ==== BACKFILL 0x006EC3A0  TeamClass::WakeUpAllMembers  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+char TeamClass::WakeUpAllMembers()
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006EC3A0.json)
+}
+
+// ==== BACKFILL 0x006EC3D0  HouseClass::FindBestBuildingToRepair  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+void* HouseClass::FindBestBuildingToRepair()
+{
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006EC3D0.json)
+}
+
+// ==== BACKFILL 0x006EC450  TeamClass::SaveLoad_Prefix  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+int TeamClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006EC450.json)
+}
+
+// ==== BACKFILL 0x006EC540  TeamClass::SaveLoad_Prefix_0  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+int TeamClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006EC540.json)
+}
+
+// ==== BACKFILL 0x006EC560  TeamClass::ddtor  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+int TeamClass::ddtor(int a1, unsigned int * a2)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006EC560.json)
+}
+
+// ==== BACKFILL 0x006ECCE0  TeamClass::MoveToCellAndAttack  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+void TeamClass::MoveToCellAndAttack(int a2, int a3) {
+    TeamClass *v3; // edi
+    void *CellFromArray; // esi
+    unsigned int *Entry; // eax
+    int v6; // eax
+    FootClass *firstUnit; // esi
+    int v8; // ebp
+    FootClass *v9; // ebx
+    int v10; // edi
+    void *vtable0; // edx
+    int v12; // eax
+    AbstractClass *focus; // eax
+    int v15; // [esp+10h] [ebp-14h] BYREF
+    unsigned int v16[3]; // [esp+18h] [ebp-Ch] BYREF
+    int v17; // [esp+28h] [ebp+4h]
+
+    v3 = this; /*0x6eccea*/
+    CellFromArray = ((ScenarioClass *)dword_A8B230)->GetCellFromArray(*(unsigned int *)(a2 + 4)); /*0x6eccff*/
+    v17 = (int)CellFromArray; /*0x6ecd07*/
+    if ( a3 ) /*0x6ecd0b*/
+      v3->SelectMember((int)CellFromArray); /*0x6ecd10*/
+    if ( !v3->focus ) /*0x6ecd15*/
+    {
+      Entry = ((SessionClass *)v3->currentScript)->GetEntry((unsigned int *)&v15); /*0x6ecd24*/
+      v16[0] = *Entry; /*0x6ecd2b*/
+      if ( Entry[1] < 0x2BEu ) /*0x6ecd36*/
+        v3->SelectMember((int)CellFromArray); /*0x6ecd3b*/
+    }
+    IDA_LOWORD(v6) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4432) * 900.0); /*0x6ecd52*/
+    if ( !(*(unsigned int *)&(&stru_A8EB00)[416] % v6) ) /*0x6ecd5f*/
+    {
+      firstUnit = v3->firstUnit; /*0x6ecd69*/
+      v8 = -1; /*0x6ecd6d*/
+      v9 = firstUnit; /*0x6ecd70*/
+      if ( firstUnit ) /*0x6ecd74*/
+      {
+        do /*0x6ecdd4*/
+        {
+          v10 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))*(void ***)firstUnit + 33))(firstUnit) + 1532); /*0x6ecd80*/
+          if ( *(unsigned char *)((char *)firstUnit + 144) /*0x6ecdc6 +90*/
+            && *(unsigned int *)((char *)firstUnit + 108) /*+6C*/
+            && (dword_A8E7AC || !*(unsigned char *)((char *)firstUnit + 129)) /*+81*/
+            && ( *(unsigned char *)((char *)firstUnit + 1673) /*0x6ecd9b isTeamLeader@0x689*/
+             || (*((int (__thiscall **)(FootClass *))*(void ***)firstUnit + 11))(firstUnit) == 2)
+            && v10 > v8 )
+          {
+            v9 = firstUnit; /*0x6ecdc8*/
+            v8 = v10; /*0x6ecdca*/
+          }
+          firstUnit = *(FootClass **)((char *)firstUnit + 1496); /*0x6ecdcc nextTeamMember@0x5D8*/
+        }
+        while ( firstUnit ); /*0x6ecdd4*/
+        v3 = this; /*0x6ecdd6*/
+      }
+      if ( v9 ) /*0x6ecddd*/
+      {
+        v16[0] = *(unsigned int *)((char *)v9 + 156); /*0x6ecde9 +9C cellXY*/
+        vtable0 = *(void ***)v9; /*0x6ecded TechnoClass 基类虚表*/
+        v16[1] = *(unsigned int *)((char *)v9 + 160); /*0x6ecdf2 +A0*/
+        v16[2] = *(unsigned int *)((char *)v9 + 164); /*0x6ecdfe +A4*/
+        v12 = (*((int (__thiscall **)(FootClass *, int, unsigned int *, unsigned int))vtable0 + 241))(v9, 1, v16, 0); /*0x6ece06*/
+        if ( v12 ) /*0x6ece0e*/
+        {
+          v3->SelectMember(v12); /*0x6ece11*/
+        }
+        else if ( v3->focus != (AbstractClass *)v17 ) /*0x6ece1c*/
+        {
+          v3->SelectMember(0); /*0x6ece22*/
+        }
+      }
+    }
+    focus = v3->focus; /*0x6ece27*/
+    if ( focus && (focus->abstractFlags & 2) != 0 ) /*0x6ece32*/
+      v3->AttackCoordinator(); /*0x6ece36*/
+    else
+      v3->UpdateMembers(); /*0x6ece46*/
+}
+
+// ==== BACKFILL 0x006ECFB0  TeamClass::Create  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+int TeamClass::Create(int a2, int a3) {
+    int v4; // eax
+    int *v5; // ebx
+    FootClass *i; // esi
+
+    v4 = (int)RA2_OPNEW(0xA0u); /*0x6ecfba*/
+    if ( v4 ) /*0x6ecfc4*/
+    {
+      v4 = ((ra2::game::MissionClass *)v4)->Construct( /*0x6ecfdf*/
+             *(unsigned int *)(*(unsigned int *)&(&stru_A8EB00)[192] + 4 * *(unsigned int *)(a2 + 4)),
+             (int)this->owner,
+             0);
+      v5 = (int *)v4; /*0x6ecfe4*/
+    }
+    else
+    {
+      v5 = 0; /*0x6ecfe8*/
+    }
+    for ( i = this->firstUnit; i; i = this->firstUnit ) /*0x6ecfef*/
+    {
+      this->LiberateMember_Start((FootClass *)i, (int)0xFFFFFFFF, 0); /*0x6ecff8*/
+      IDA_LOBYTE(v4) = (unsigned char)((TeamClass *)v5)->AddMember((FootClass *)i, 0); /*0x6ed002*/
+    }
+    if ( this ) /*0x6ed010*/
+      IDA_LOBYTE(v4) = (*((char (__thiscall **)(TeamClass *, int))*(void ***)this + 8))(this, 1); /*0x6ed018*/
+    return v4; /*0x6ed01b*/
+}
+
+// ==== BACKFILL 0x006EDB50  TeamClass::AssignAttackTarget  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
+int TeamClass::AssignAttackTarget(int a2, int a3) {
+    AbstractClass **p_spawnCell; // edi
+    unsigned int *health; // eax
+    unsigned int *v6; // edi
+    FootClass *i; // esi
+    AbstractClass *target; // eax
+
+    p_spawnCell = (AbstractClass **)&this->spawnCell; /*0x6edb57*/
+    this->FindClosestEnemy((void **)&this->spawnCell, &this->unknown38); /*0x6edb5c 3-arg 重载*/
+    this->focus = *p_spawnCell; /*0x6edb63*/
+    this->UpdateMembers(); /*0x6edb68*/
+    health = (unsigned int *)((AbstractClass *)*p_spawnCell)->IsTechnoType(); /*0x6edb6f*/
+    v6 = health; /*0x6edb74*/
+    if ( health ) /*0x6edb78*/
+    {
+      for ( i = this->firstUnit; i; i = i ) /*0x6edb83*/
+      {
+        IDA_LOBYTE(health) = *(unsigned char *)((char *)i + 144); /*0x6edb89 +90*/
+        if ( (unsigned char)health ) /*0x6edb91*/
+        {
+          health = (unsigned int *)*(void **)((char *)i + 108); /*0x6edb97 +6C target*/
+          if ( health ) /*0x6edb9c*/
+          {
+            if ( dword_A8E7AC || (IDA_LOBYTE(health) = *(unsigned char *)((char *)i + 1673), !(unsigned char)health) ) /*0x6edbb3 +689*/
+            {
+              if ( *(unsigned char *)((char *)i + 1673) /*0x6edbcd isTeamLeader@0x689*/
+                || (health = (unsigned int *)(*((int (__thiscall **)(FootClass *))*(void ***)i + 11))(i), health == (unsigned int *)2) )
               {
-                if ( *(_BYTE *)(*(_DWORD *)(v8 + 1312) + 5451) )
+                target = (AbstractClass *)*(void **)((char *)i + 692); /*0x6edbd3 +2B4*/
+                if ( target && target != (AbstractClass *)v6[173] ) /*0x6edbe3*/
+                  (*((void (__thiscall **)(FootClass *, unsigned int))*(void ***)i + 242))(i, 0); /*0x6edbeb*/
+                health = (unsigned int *)v6[173]; /*0x6edbf1*/
+                if ( health ) /*0x6edbf9*/
                 {
-                  if ( *(_DWORD *)(v8 + 1536) )
+                  if ( !*(void **)((char *)i + 1652) ) /*0x6edbfb*/
+                    WinAPI::Wrapper(-2147467261); /*0x6edc0a*/
+                  IDA_LOBYTE(health) = (*(int (__stdcall **)(int))(*(unsigned int *)*(void **)((char *)i + 1652) + 16))((int)*(void **)((char *)i + 1652)); /*0x6edc18*/
+                  if ( !(unsigned char)health ) /*0x6edc1d*/
                   {
-                    v9 = *(_DWORD **)(v8 + 52);
-                    if ( v9 )
+                    IDA_LOBYTE(health) = (*((int (__thiscall **)(FootClass *))*(void ***)i + 171))(i); /*0x6edc23*/
+                    if ( (unsigned char)health ) /*0x6edc2b*/
                     {
-                      if ( LinkedList::Contains(v9, a4) )
+                      health = (unsigned int *)(*((int (__thiscall **)(FootClass *))*(void ***)i + 97))(i); /*0x6edc31*/
+                      if ( health == (unsigned int *)5 ) /*0x6edc3a*/
                       {
-                        BuildingLightClass::FindTarget(*(_DWORD **)(v8 + 1536), this->isAliveFlag);
-                        v5 = 1;
+                        (*((void (__thiscall **)(FootClass *, int, unsigned int))*(void ***)i + 122))(i, 1, 0); /*0x6edc44*/
+                        IDA_LOBYTE(health) = (*((int (__thiscall **)(FootClass *, unsigned int))*(void ***)i + 242))(i, v6[173]); /*0x6edc55*/
                       }
                     }
                   }
@@ -703,2340 +1333,232 @@ namespace gamemd { int BuildingLightClass::FindAllTargets(int a1, int a2, int a3
             }
           }
         }
-        ++v6;
-      }
-      while ( v6 < g_BuildingProductionState );
-      return v5;
-}
-} }
-
-// ==== BACKFILL 0x006E2A50  sub_6E2A50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_6E2A50::sub_6E2A50(int a2, int a3, int a4, int a5)
-{
-{
-    int v6;
-    int v7;
-    int *v8;
-    int v9;
-    if ( this->M76 )
-  {
-    v6 = g_GameObjectCleanup;
-    v7 = 0;
-    if ( g_GameObjectCleanup > 0 )
-    {
-    v8 = g_TagClassCount;
-    do
-      {
-    if ( *(int *)(v8[v7] + 36) == this->M76 )
-        {
-    v9 = v8[v7];
-    if ( v9 )
-          {
-    (*(void (__thiscall **)(int, int))(*(int *)(v9) + 32))(v9, 1);
-    v8 = g_TagClassCount;
-          }
-    --v7;
-        }
-    ++v7;
-      }
-    while ( v7 < v6 );
-    }
-  }
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E2AF0  TActionClass::executeUnloadAction  cls=TActionClass  sig=csp  renamed_refs=2  residual=- ====
-char TActionClass::executeUnloadAction(int a2, int a3, int a4, IUnknown * aP4)
-{
-{
-    int v6;
-    int *v7;
-    char *v8;
-    int difficulty2;
-    if ( !this->TActionClass_field_50 )
-    return 1;
-    v6 = 0;
-    if ( *(int *)&g_NetworkPlayerBuffer[5308] <= 0 )
-    return 1;
-    do
-  {
-    v7 = *(int **)(*(int *)g_NetworkPlayerBuffer[5296] + 4 * v6);
-    v8 = (char *)v7[9];
-    if ( v8 == (char *)this->TActionClass_field_50 )
-    {
-    difficulty2 = g_ScenarioClass_Instance->difficulty2;
-    if ( (difficulty2 || v8[156]) && (difficulty2 != 1 || v8[157]) && (difficulty2 != 2 || v8[158]) )
-    TActionClass::executeAirstrikeAction(v7);
-    }
-    ++v6;
-  }
-    while ( v6 < *(int *)&g_NetworkPlayerBuffer[5308] );
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E2C20  globalHelper_0E2C20  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-char globalHelper_0E2C20(int a1, int a2, int a3, IUnknown * aP3)
-{
-{
-    LayerClass::ClearFactoryCellAssignments(&DataGlobal_87C374[13428]);
-    MapClass::MarkForRedraw(&DataGlobal_87C374[13428], 1);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E2E60  TActionClass::executeSelfDestructAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executeSelfDestructAction(int a2, int a3, int a4, IUnknown * aP4)
-{
-{
-    UpdateSurfaceAnimations( 10 *(void**)this->Value, 10 * g_ScenarioClass_Instance->nukeLevel, 10 * g_ScenarioClass_Instance->nukeAmbientChangeRate, 0);
-    g_ScenarioClass_Instance->nukeGround = this->Value;
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E2EB0  TActionClass::executeExplodeAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executeExplodeAction(int a2, int a3, int a4, IUnknown * aP4)
-{
-{
-    UpdateSurfaceAnimations( 10 * g_ScenarioClass_Instance->nukeGround, 10 *(void**)this->Value, 10 * g_ScenarioClass_Instance->nukeAmbientChangeRate, 0);
-    g_ScenarioClass_Instance->nukeLevel = this->Value;
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E2F00  TActionClass::executeChronoshiftAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executeChronoshiftAction(int a2, int a3, int a4, IUnknown * aP4)
-{
-{
-    UpdateSurfaceAnimations(10 * g_ScenarioClass_Instance->nukeGround, 10 * g_ScenarioClass_Instance->nukeLevel, 10 *(void**)this->Value, 0);
-    g_ScenarioClass_Instance->nukeAmbientChangeRate = this->Value;
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E3120  SmallFunc_6E3120  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char SmallFunc_6E3120(int _8, _UNKNOWN ** a1, unsigned int * a2, IUnknown * aP3, int _18, unsigned int * a5, int a7)
-{
-{
-    int v7;
-    _UNKNOWN **v8;
-    int *v9;
-    void *v10;
-    int Field11;
-    v10 = *(void **)(v7 + 144);
-    if ( !a2 )
-    return 0;
-    if ( v10 == (void *)8997 )
-  {
-    Field11 = Property::GetField11(a2);
-  }
-    else
-  {
-    if ( v10 == (void *)-1 )
-    return 0;
-    if ( BuildingType::IsSpecialType(v10) )
-    Field11 = BuildingType::FindOwnerHouse(v10);
-    else
-    Field11 = HouseClass::FindOwner(v10);
-  }
-    if ( !Field11 )
-    return 0;
-    HouseClass::RespawnStartingBuildings(Field11, v8, v9, (int)v10);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E3180  TActionClass::executePlaceBeaconAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executePlaceBeaconAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
-{
-{
-    void *v5;
-    void *Field11;
-    v5 = (void *)this->Value;
-    if ( !a3 )
-    return 0;
-    if ( v5 == (void *)8997 )
-  {
-    Field11 = (void *)Property::GetField11(a3);
-  }
-    else
-  {
-    if ( v5 == (void *)-1 )
-    return 0;
-    if ( BuildingType::IsSpecialType(v5) )
-    Field11 = (void *)BuildingType::FindOwnerHouse(v5);
-    else
-    Field11 = (void *)HouseClass::FindOwner(v5);
-  }
-    if ( !Field11 )
-    return 0;
-    HouseClass::ClearLowPowerTargets(Field11);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E31E0  TActionClass::executeJumpjetAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executeJumpjetAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
-{
-{
-    void *v5;
-    void *Field11;
-    v5 = (void *)this->Value;
-    if ( !a3 )
-    return 0;
-    if ( v5 == (void *)8997 )
-  {
-    Field11 = (void *)Property::GetField11(a3);
-  }
-    else
-  {
-    if ( v5 == (void *)-1 )
-    return 0;
-    if ( BuildingType::IsSpecialType(v5) )
-    Field11 = (void *)BuildingType::FindOwnerHouse(v5);
-    else
-    Field11 = (void *)HouseClass::FindOwner(v5);
-  }
-    if ( !Field11 )
-    return 0;
-    HouseClass::DestroyAllBuildings(Field11);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E3240  TActionClass::executeOpenGateAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executeOpenGateAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
-{
-{
-    void *v5;
-    void *Field11;
-    v5 = (void *)this->Value;
-    if ( !a3 )
-    return 0;
-    if ( v5 == (void *)8997 )
-  {
-    Field11 = (void *)Property::GetField11(a3);
-  }
-    else
-  {
-    if ( v5 == (void *)-1 )
-    return 0;
-    if ( BuildingType::IsSpecialType(v5) )
-    Field11 = (void *)BuildingType::FindOwnerHouse(v5);
-    else
-    Field11 = (void *)HouseClass::FindOwner(v5);
-  }
-    if ( !Field11 )
-    return 0;
-    HouseClass::DestroyAllNonBuildingsNonNaval(Field11);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E32A0  TActionClass::executeCloseGateAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executeCloseGateAction(int a2, int _C, unsigned int * a3, IUnknown * aP4)
-{
-{
-    void *v5;
-    void *Field11;
-    v5 = (void *)this->Value;
-    if ( !a3 )
-    return 0;
-    if ( v5 == (void *)8997 )
-  {
-    Field11 = (void *)Property::GetField11(a3);
-  }
-    else
-  {
-    if ( v5 == (void *)-1 )
-    return 0;
-    if ( BuildingType::IsSpecialType(v5) )
-    Field11 = (void *)BuildingType::FindOwnerHouse(v5);
-    else
-    Field11 = (void *)HouseClass::FindOwner(v5);
-  }
-    if ( !Field11 )
-    return 0;
-    HouseClass::DestroyAllNonBuildingsNaval(Field11);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E3410  TActionClass::CreateNukeEffect  cls=TActionClass  sig=csp  renamed_refs=1  residual=- ====
-char TActionClass::CreateNukeEffect(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
-{
-{
-    int v5;
-    BuildingTypeClass *v6;
-    TechnoClass *v7;
-    BulletClass *UIObjectCOM;
-    double v9;
-    double v10;
-    int v11;
-    TechnoClass *v13;
-    InfantryClass *v14;
-    int v15;
-    double v16;
-    double v17;
-    double v18;
-    int v19;
-    int v20;
-    int GroundHeight;
-    int v22[3];
-    __int64 v23[3];
-    v15 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v16, this->TActionClass_field_44);
-    GroundHeight = 0;
-    v20 = (SHIWORD(v15) << 8) + 128;
-    v19 = ((short)v15 << 8) + 128;
-    GroundHeight = Cell::GetGroundHeight(&v19);
-    if ( (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v15) + 80) & 0x100) != 0 )
-    GroundHeight += *(int *)&g_OverlayTypeConfig[28380];
-    v5 = *(int *)(*(int *)&DataGlobal_87F8E4[31880] + 4 * SuperWeaponClass::FindByName(g_INI_Key_NukePayload));
-    v6 = *(BuildingTypeClass **)(v5 + 160);
-    v14 = *(InfantryClass **)(v5 + 172);
-    v13 = *(TechnoClass **)(v5 + 164);
-    v7 = (TechnoClass *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&v19);
-    UIObjectCOM = (BulletClass *)CreateUIObjectCOM((AbstractClass *)v6, v7, 0, v13, v14, 50, 0);
-    Function::Method_46B260(UIObjectCOM, v5);
-    v22[0] = v19;
-    v22[1] = v20;
-    v22[2] = GroundHeight + 20000;
-    if ( !UIObjectCOM )
-    return 0;
-    v16 = Math::SinCos(1.570748388432313);
-    v16 = Math::ArcTan2(1.570748388432313) * v16 * -100.0;
-    v17 = Math::ArcTan2(1.570748388432313);
-    v9 = Math::ArcTan2(1.570748388432313);
-    v18 = v16;
-    *(double *)&v23[1] = v16;
-    v17 = v9 * v17 * -100.0;
-    *(double *)v23 = v17;
-    v10 = Math::SinCos(1.570748388432313);
-    v11 = *(int *)UIObjectCOM->__pad_0;
-    *(double *)&v23[2] = v10 * -100.0;
-    (*(void (__thiscall **)(BulletClass *, int *, __int64 *))(v11 + 496))(UIObjectCOM, v22, v23);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E35F0  sub_6E35F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
-{
-{
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int GroundHeight;
-    v6 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->M68);
-    GroundHeight = 0;
-    v9 = (SHIWORD(v6) << 8) + 128;
-    v8 = ((short)v6 << 8) + 128;
-    GroundHeight = Cell::GetGroundHeight(&v8);
-    if ( (*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v6) + 80) & 0x100) != 0 )
-    GroundHeight += DataGlobal_B0E6D4;
-    LOWORD(v7) = v8 / 256;
-    HIWORD(v7) = v9 / 256;
-    if ( LightningStorm::IsActive() )
-    return 0;
-    LightningStorm::Start(HIDWORD(g_RulesClass_Instance[1].?), *(int *)&g_RulesClass_Instance[1].?[4], v7, a2);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E3B40  TActionClass::executeLightningAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executeLightningAction(int a2, int a3, int a4, IUnknown * aP4)
-{
-{
-    if ( !a2 )
-    return 0;
-    HouseClass::CreateRadarOutage(a2, this->Value);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E3D70  TActionClass::ddtor  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-int TActionClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1326367634;
-  a2[1] = 298977877;
-  a2[2] = 1610655660;
-  a2[3] = -1252326136;
-  return 0;
-}
-
-// ==== BACKFILL 0x006E3DB0  TActionClass::SaveLoad_Prefix  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_TActionClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TActionClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TActionClass;
-    *(int *)&aP0->__pad_0[12] = &vt_TActionClass;
-    }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[12]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[8]);
-    return 0;
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E3E30  TActionClass::SaveLoad_Prefix_0  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-int TActionClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E3E50  TActionClass::Validate  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-int TActionClass::Validate(int a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    AbstractClass::ProcessPower((AbstractClass *)this);
-    v3 = this->TActionClass_field_28;
-    if ( v3 )
-  {
-    v4 = (*(int (__stdcall **)(int))(*(int *)(v3 + 4) + 16))(v3 + 4);
-    Power::TimerProcess(v4);
-  }
-    Power::TimerProcess(this->TActionClass_field_2C);
-    v5 = this->TActionClass_field_30;
-    if ( v5 )
-  {
-    v6 = (*(int (__stdcall **)(int))(*(int *)(v5 + 4) + 16))(v5 + 4);
-    Power::TimerProcess(v6);
-  }
-    v7 = this->TActionClass_field_4C;
-    if ( v7 )
-  {
-    v8 = (*(int (__stdcall **)(int))(*(int *)(v7 + 4) + 16))(v7 + 4);
-    Power::TimerProcess(v8);
-  }
-    v9 = this->TActionClass_field_50;
-    if ( v9 )
-  {
-    v10 = (*(int (__stdcall **)(int))(*(int *)(v9 + 4) + 16))(v9 + 4);
-    Power::TimerProcess(v10);
-  }
-    return Power::TimerProcess(this->Value);
-}
-}
-
-// ==== BACKFILL 0x006E3EE0  TriggerTypeClass::Dispatch  cls=TriggerTypeClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int TriggerTypeClass::Dispatch() {
-{
-    int result;
-    result = 0;
-    switch ( (unsigned int)this )
-  {
-    case 0xEu: case 0x20u: case 0x3Cu: case 0x3Du: case 0x3Eu: case 0x5Bu: case 0x6Fu: result = 2;
-    break;
-    default: return result;
-  }
-    return result;
-}
-} }
-
-// ==== BACKFILL 0x006E3F70  sub_6E3F70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * E4Recv_6E3F70::sub_6E3F70(unsigned int * a2)
-{
-{
-    int *WorldCoords;
-    int v4[3];
-    WorldCoords = Cell::GetWorldCoords((short *)g_ScenarioClass_Instance, v4, this->M144);
-    *a2 = *WorldCoords;
-    *((int*)(a2) + 1) = WorldCoords[1];
-    *((int*)(a2) + 2) = WorldCoords[2];
-    return a2;
-}
-}
-
-// ==== BACKFILL 0x006E4100  TActionClass::executePsychicDominatorAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executePsychicDominatorAction(int a2, int a3, int a4, IUnknown * aP4)
-{
-{
-    unsigned int v5;
-    v5 = this->Value;
-    if ( v5 >= 4 || !PlayerClass::HasPlayers((int *)(3988 * v5 + 8916268)) )
-    return 0;
-    SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, v5);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E4200  TActionClass::executeForceShieldAction  cls=TActionClass  sig=csp  renamed_refs=1  residual=- ====
-char TActionClass::executeForceShieldAction(int a2, int a3, int a4, IUnknown * aP4)
-{
-{
-    int v5;
-    void *v7;
-    int *v8;
-    int IndexByName;
-    int v10;
-    int v11;
-    int v12;
-    IUnknown *v14;
-    int v15[3];
-    char v16[12];
-    v5 = a2;
-    if ( !a2 )
-    return 0;
-    a2 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v14, this->TActionClass_field_44);
-    v7 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&a2);
-    v8 = (int *)(*(int (__thiscall **)(void *, char *))(*(int *)(v7) + 72))(v7, v16);
-    v15[0] = *v8;
-    v15[1] = v8[1];
-    v15[2] = v8[2];
-    IndexByName = BuildingTypeClass::FindIndexByName(this + 21);
-    if ( IndexByName < 0 )
-    return 0;
-    if ( IndexByName > (int)g_TriggerClassCount )
-    return 0;
-    v10 = *((int *)(g_TriggerTypeCount) + IndexByName);
-    if ( !v10 )
-    return 0;
-    v11 = (*(int (__thiscall **)(int, int))(*(int *)(v10) + 140))(v10, v5);
-    v12 = v11;
-    if ( !v11 )
-    return 0;
-    if ( !(*(unsigned char (__thiscall **)(int, int *, int))(*(int *)(v11) + 1168))(v11, v15, 0) )
-  {
-    (*(void (__thiscall **)(int))(*(int *)(v12) + 248))(v12);
-    return 0;
-  }
-    (*(void (__thiscall **)(int, int))(*(int *)(v12) + 1244))(v12, 0);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E4360  TActionClass::executeSpyPlaneAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executeSpyPlaneAction(int a2, int a3, int a4, IUnknown * aP4)
-{
-{
-    int v5;
-    if ( !a2 )
-    return 0;
-    v5 = this->Value;
-    if ( v5 < 0 || v5 > *(int *)(a2 + 612) )
-    return 0;
-    SuperClass::ResetRechargeTime(*(int **)(*(int *)(a2 + 600) + 4 * v5));
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E43A0  TActionClass::executeChronoSphereAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executeChronoSphereAction(int a2, int a3, int a4, IUnknown * aP4)
-{
-{
-    int v5;
-    if ( !a2 )
-    return 0;
-    v5 = this->Value;
-    if ( v5 < 0 || v5 > *(int *)(a2 + 612) )
-    return 0;
-    SuperClass::Reset(*(int *)(*(int *)(a2 + 600) + 4 * v5));
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E43E0  TActionClass::executeWeatherStormAction  cls=TActionClass  sig=csp  renamed_refs=1  residual=- ====
-char TActionClass::executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4)
-{
-{
-    int *v5;
-    int *v7;
-    v5 = a1;
-    if ( !a1 )
-    return 0;
-    v7 = (int *)*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &a1, this->TActionClass_field_44);
-    a1 = v7;
-    if ( v7 == *(int **)&g_OverlayTypeConfig[28296] )
-    return 0;
-    TActionClass::executeGuardAction(v5, (int)v7);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E4440  globalHelper_0E4440  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-char globalHelper_0E4440(unsigned int * a0, int a2, int a3, IUnknown * aP3)
-{
-{
-    if ( !a0 )
-    return 0;
-    GlobalHelper_0E4440_Helper(a0);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E4460  TActionClass::executeDominatorAction  cls=TActionClass  sig=csp  renamed_refs=1  residual=- ====
-char TActionClass::executeDominatorAction(unsigned int * a1, int a3, int a4, IUnknown * aP4)
-{
-{
-    int *v5;
-    int *v7;
-    v5 = a1;
-    if ( !a1 )
-    return 0;
-    v7 = (int *)*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &a1, this->TActionClass_field_44);
-    a1 = v7;
-    if ( v7 == *(int **)&g_OverlayTypeConfig[28296] )
-    return 0;
-    TActionClass::executeHuntAction(v5, (int)v7);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E44C0  globalHelper_0E44C0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-char globalHelper_0E44C0(unsigned int * a0, int a2, int a3, IUnknown * aP3)
-{
-{
-    if ( !a0 )
-    return 0;
-    GlobalHelper_0E44C0_Helper(a0);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E44E0  TActionClass::executeRevealAction  cls=TActionClass  sig=csp  renamed_refs=1  residual=- ====
-char TActionClass::executeRevealAction(unsigned int * a1, int a3, int a4, IUnknown * aP4)
-{
-{
-    int *v5;
-    int *v7;
-    v5 = a1;
-    if ( !a1 )
-    return 0;
-    v7 = (int *)*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &a1, this->TActionClass_field_44);
-    a1 = v7;
-    if ( v7 == *(int **)&g_OverlayTypeConfig[28296] )
-    return 0;
-    TActionClass::executeDeployAction(v5, (int)v7);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E4540  globalHelper_0E4540  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-char globalHelper_0E4540(unsigned int * a0, int a2, int a3, IUnknown * aP3)
-{
-{
-    if ( !a0 )
-    return 0;
-    GlobalHelper_0E4540_Helper(a0);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E4560  TActionClass::executeEMPulseAction  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-char TActionClass::executeEMPulseAction(int a2, int a3, int a4, IUnknown * aP4)
-{
-{
-    int i;
-    int v7;
-    if ( !a2 )
-    return 0;
-    for ( i = *(int *)(a2 + 120) - 1; i >= 0; --i )
-  {
-    v7 = *(int *)(*(int *)(a2 + 108) + 4 * i);
-    if ( !strcmp((const char *)(*(int *)(v7 + 1312) + 36), (const char *)(this + 84)) )
-    *(int *)(v7 + 240) = this->Value;
-  }
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E45E0  ObjectClass::FindOwner  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int ObjectClass::FindOwner(unsigned int * a0, AnimClass * aP1)
-{
-{
-    if ( !a0 )
-    return 0;
-    if ( aP1 == (AnimClass *)8997 )
-    return Property::GetField11(a0);
-    if ( aP1 == (AnimClass *)-1 )
-    return 0;
-    if ( BuildingType::IsSpecialType(aP1) )
-    return BuildingType::FindOwnerHouse(aP1);
-    return HouseClass::FindOwner(aP1);
-}
-}
-
-// ==== BACKFILL 0x006E4630  TActionClass::StubReturn148  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-int TActionClass::StubReturn148()
-{
-return 148;
-}
-
-// ==== BACKFILL 0x006E4640  TActionClass::StubReturn47  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-int TActionClass::StubReturn47()
-{
-return 47;
-}
-
-// ==== BACKFILL 0x006E4650  TActionClass::Stub  cls=TActionClass  sig=csp  renamed_refs=0  residual=- ====
-int TActionClass::Stub()
-{
-{
-    return this->idxArray;
-}
-}
-
-// ==== BACKFILL 0x006E47C0  ScriptAction::CopyStructField  cls=ScriptAction  sig=csp  renamed_refs=0  residual=- ====
-void * ScriptAction::CopyStructField(void * a2, const void * a3)
-{
-{
-    if ( a3 != this )
-    qmemcpy(this, a3, 0x20u);
-    qmemcpy(a2, this, 0x20u);
-    return a2;
-}
-}
-
-// ==== BACKFILL 0x006E47F0  Tactical_42::ClearBuffer  cls=Tactical  sig=csp  renamed_refs=0  residual=IsAllocated ====
-void Tactical_42::ClearBuffer()
-{
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->Tactical_42_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->Tactical_42_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->Tactical_42_field_0x8 = 0;
-}
-}
-
-// ==== BACKFILL 0x006E4820  Tactical_42::PointerToIndex  cls=Tactical  sig=csp  renamed_refs=0  residual=- ====
-unsigned int Tactical_42::PointerToIndex(int a2)
-{
-{
-    if ( (unsigned char)this->Tactical_42_field_0xC )
-    return (unsigned int)(a2 - this->Tactical_42_field_0x4) >> 2;
-    else
-    return 0;
-}
-}
-
-// ==== BACKFILL 0x006E49D0  Tactical_42::SetCapacity  cls=Tactical  sig=csp  renamed_refs=0  residual=IsAllocated ====
-char Tactical_42::SetCapacity(int a2, unsigned int * a3)
-{
-{
-    int *v4;
-    int v5;
-    int i;
-    int v7;
-    if ( a2 )
-  {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
-    else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( !v4 )
-    return 0;
-    if ( this->Tactical_42_field_0x4 )
-    {
-    v5 = this->Tactical_42_field_0x8;
-    if ( a2 < v5 )
-    v5 = a2;
-    for ( i = 0; i < v5; v4[i - 1] = *(int *)(this->Tactical_42_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
-      {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->Tactical_42_field_0x4 = 0;
       }
     }
-    this->Tactical_42_field_0x4 = v4;
-    this->Tactical_42_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-  }
-    else
-  {
-    this->FindItem();
-  }
-    v7 = this->Tactical_42_field_0x8;
-    if ( v7 < this->Tactical_42_field_0x10 )
-    this->Tactical_42_field_0x10 = v7;
-    return 1;
+    return (char)health; /*0x6edc69*/
 }
-}
-
-// ==== BACKFILL 0x006E5290  sub_6E5290  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_6E5290::sub_6E5290()
-{
-{
-    return this->M52;
-}
-}
-
-// ==== BACKFILL 0x006E5560  ScenarioClass::checkMissionObjectives  cls=ScenarioClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int ScenarioClass::checkMissionObjectives(int a1) {
-{
-      this->q030 = a2;
-      return a2;
-}
-} }
-
-// ==== BACKFILL 0x006E5570  Map_Reset_6E5570  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int sub_6E5570()
-{
-{
-    int result;
-    for ( result = g_GameObjectCleanup; g_GameObjectCleanup > 0; result = g_GameObjectCleanup )
-  {
-    if ( *(int *)g_TagClassCount )
-    (*(void (__thiscall **)(int, int))(**(int **)g_TagClassCount + 32))(*(int *)g_TagClassCount, 1);
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E5610  TagClass::CheckEvent  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
-int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
-{
-{
-    TriggerClass *v4;
-    TagTypeClass *result;
-    if ( this->buildingType == a2 )
-    this->buildingType = 0;
-    v4 = *(TriggerClass **)(this + 40);
-    if ( v4 == (TriggerClass *)a2 )
-    this->firstTrigger = v4->nextTrigger;
-    result = *(TagTypeClass **)(this + 36);
-    if ( !result )
-  {
-    this->destroyed = 1;
-    result = *(TagTypeClass **)&DataGlobal_B05488[41496];
-    if ( *(int *)&DataGlobal_B05488[41504] < *(int *)&DataGlobal_B05488[41496] || (DataGlobal_B05488[41501] || !*(int *)&DataGlobal_B05488[41496]) && *(int *)&DataGlobal_B05488[41508] > 0 && (result = (TagTypeClass *)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488[41488] + 8))( &DataGlobal_B05488[41488], *(int *)&DataGlobal_B05488[41496] + *(int *)&DataGlobal_B05488[41508], 0), (char)result) )
-    {
-    result = (TagTypeClass *)(*(int *)&DataGlobal_B05488[41504])++;
-    *(int *)(*(int *)&DataGlobal_B05488[41492] + 4 * (int)result) = this;
-    }
-  }
-    return (int)result->__pad_0;
-}
-}
-
-// ==== BACKFILL 0x006E56A0  TagClass::ddtor  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
-int TagClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1425466418;
-  a2[1] = 298977773;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
-}
-
-// ==== BACKFILL 0x006E56E0  TagClass::ProcessTag  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
-int TagClass::ProcessTag(int * a2)
-{
-{
-    int v3;
-    int v4;
-    int v5;
-    AbstractClass::ProcessPower((AbstractClass *)this);
-    v3 = (*(int (__stdcall **)(int))(*(int *)(this->buildingType + 4) + 16))(this->buildingType + 4);
-    Power::TimerProcess(v3);
-    v4 = this->firstTrigger;
-    if ( v4 )
-  {
-    v5 = (*(int (__stdcall **)(int))(*(int *)(v4 + 4) + 16))(v4 + 4);
-    v4 = Power::TimerProcess(v5);
-  }
-    LOBYTE(v4) = this->destroyed;
-    return Power::FlagProcess(a2, v4);
-}
-}
-
-// ==== BACKFILL 0x006E5730  TagClass::LoadTag  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
-int TagClass::LoadTag(AbstractClass * aP0, int aP1)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_TagClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TagClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TagClass;
-    *(int *)&aP0->__pad_0[12] = &vt_TagClass;
-    }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
-    return 0;
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E57A0  TagClass::SaveTag  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
-int TagClass::SaveTag(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E57DE  ?do_always_noconv_codecvt_base_std__MBE_NXZ_18  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_18()
-{
-return 1;
-}
-
-// ==== BACKFILL 0x006E5820  TriggerActionQueue::ProcessAll  cls=TriggerActionQueue  sig=csp  renamed_refs=0  residual=- ====
-int TriggerActionQueue::ProcessAll()
-{
-{
-    int result;
-    int i;
-    result = g_GameObjectCleanup;
-    for ( i = 0; i < g_GameObjectCleanup; ++i )
-  {
-    TriggerClass::NotifyLocalChanged(this);
-    result = g_GameObjectCleanup;
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E5890  TagClass::StubReturn56  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
-int TagClass::StubReturn56()
-{
-return 56;
-}
-
-// ==== BACKFILL 0x006E58A0  TagClass::StubReturn44  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
-int TagClass::StubReturn44()
-{
-return 44;
-}
-
-// ==== BACKFILL 0x006E58B0  TagClass::ProcessTrigger  cls=TagClass  sig=csp  renamed_refs=0  residual=- ====
-TagClass * TagClass::ProcessTrigger(char a2)
-{
-{
-    TagClass::Destructor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TagClass *)this;
-}
-}
-
-// ==== BACKFILL 0x006E5E70  ObjectTypeClass::FindByName  cls=ObjectTypeClass  sig=csp  renamed_refs=0  residual=- ====
-int ObjectTypeClass::FindByName()
-{
-{
-    int v2;
-    int v3;
-    if ( !this )
-    return 0;
-    v2 = 0;
-    if ( *(int *)&DataGlobal_B05488[37640] <= 0 )
-    return 0;
-    while ( 1 )
-  {
-    v3 = *(int *)(*(int *)&DataGlobal_B05488[37628] + 4 * v2);
-    if ( !_strcmpi((const void *)(v3 + 36), this) || !_strcmpi((const void *)(v3 + 100), this) )
-    break;
-    if ( ++v2 >= *(int *)&DataGlobal_B05488[37640] )
-    return 0;
-  }
-    return v3;
-}
-}
-
-// ==== BACKFILL 0x006E63A0  TagTypeClass::GetClassIdentifier  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
-int TagTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1425466419;
-  a2[1] = 298977773;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
-}
-
-// ==== BACKFILL 0x006E6410  TagTypeClass::LoadTypeData  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
-int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_TagTypeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TagTypeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TagTypeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_TagTypeClass;
-    }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[8]);
-    return 0;
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E6470  TagTypeClass::SaveToINI  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
-int TagTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E6490  TagTypeClass::GetTypeIdentifier  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
-int TagTypeClass::GetTypeIdentifier()
-{
-return 45;
-}
-
-// ==== BACKFILL 0x006E64A0  TagTypeClass::GetObjectSize  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
-int TagTypeClass::GetObjectSize()
-{
-return 164;
-}
-
-// ==== BACKFILL 0x006E64C0  TagTypeClass::ddtor  cls=TagTypeClass  sig=csp  renamed_refs=0  residual=- ====
-TagTypeClass * TagTypeClass::ddtor(char a2)
-{
-{
-    TagTypeClass::CleanupMembers((int)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TagTypeClass *)this;
-}
-}
-
-// ==== BACKFILL 0x006E6B70  sub_6E6B70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned char * E4Recv_6E6B70::sub_6E6B70(unsigned int * a2)
-{
-{
-    this->M4 = 11;
-    *(int *)this = *a2 / 256 + 1000 * (*((int*)(a2) + 1) / 256);
-    return this;
-}
-}
-
-// ==== BACKFILL 0x006E8000  sub_6E8000  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
-{
-{
-    int *result;
-    int *v3;
-    int v4;
-    int v5;
-    int v6;
-    result = this;
-    this->M8 = &vt_INoticeSink;
-    this->M12 = &vt_INoticeSource;
-    this->M16 = *(int *)(a2 + 16);
-    this->M20 = *(char *)(a2 + 20);
-    this->M24 = *(int *)(a2 + 24);
-    this->M28 = *(int *)(a2 + 28);
-    this->M32 = *(char *)(a2 + 32);
-    *(void**)this = vt_AbstractClass;
-    this->M4 = (unsigned int)vt_AbstractClass;
-    this->M8 = (unsigned int)vt_AbstractClass;
-    this->M12 = &vt_AbstractClass;
-    qmemcpy(this + 9, (const void *)(a2 + 36), 0x19u);
-    qmemcpy((char *)(this) + 61, (const void *)(a2 + 61), 0x20u);
-    this->M96 = *(int *)(a2 + 96);
-    qmemcpy(this + 25, (const void *)(a2 + 100), 0x31u);
-    *(void**)this = vt_TaskForceClass;
-    this->M4 = (unsigned int)vt_TaskForceClass;
-    this->M8 = (unsigned int)vt_TaskForceClass;
-    this->M12 = &vt_TaskForceClass;
-    v3 = this + 41;
-    result[38] = *(int *)(a2 + 152);
-    result[39] = *(int *)(a2 + 156);
-    v4 = result[39];
-    result[40] = *(int *)(a2 + 160);
-    v5 = 0;
-    if ( v4 > 0 )
-  {
-    v6 = a2 - (int)result;
-    do
-    {
-    ++v5;
-    *v3 = *(int *)((char *)(v3) + v6);
-    v3[1] = *(int *)((char *)(v3) + v6 + 4);
-    v3 += 2;
-    }
-    while ( v5 < result[39] );
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E8160  TeamClass::SumMemberCounts  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int TeamClass::SumMemberCounts() {
-{
-      int v1;
-      int result;
-      int *v3;
-      int v4;
-
-      v1 = this->q09C;
-      result = 0;
-      if ( v1 > 0 )
-      {
-        v3 = this + 41;
-        do
-        {
-          v4 = *v3;
-          v3 += 2;
-          result += v4;
-          --v1;
-        }
-        while ( v1 );
-      }
-      return result;
-}
-} }
-
-// ==== BACKFILL 0x006E8340  ScriptTypeClass::ReadINI  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
-{
-{
-    CCINIClass *KeyCount;
-    CCINIClass *i;
-    unsigned char *StringByIndex;
-    TaskForceClass *result;
-    INIClass *v7;
-    int j;
-    int v9;
-    INIClass *v10;
-    char Buffer[32];
-    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&DataGlobal_830620[75672]);
-    for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
-  {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)&DataGlobal_830620[75672], i);
-    INIClass::GetString( (unsigned char ***)a1, (INIClass *)&DataGlobal_830620[75672], StringByIndex, (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)Buffer, 32);
-    INIClass::ClearSection((int)a1, (INIClass *)Buffer, 0);
-  }
-    INIClass::ClearSection((int)a1, (INIClass *)&DataGlobal_830620[75672], 0);
-    result = *(TaskForceClass **)&g_NetworkPlayerBuffer[4772];
-    v7 = 0;
-    for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer[4772]; ++j )
-  {
-    v9 = *(int *)(*(int *)&g_NetworkPlayerBuffer[4760] + 4 * j);
-    if ( *(int *)(v9 + 160) == a2 )
-    {
-    v10 = v7;
-    v7 = (INIClass *)((char *)(v7) + 1);
-    sprintf(Buffer, g_Str_Trace__d, v10);
-    String::Trim(Buffer);
-    INIClass::SetString(a1, (INIClass *)&DataGlobal_830620[75672], (INIClass *)Buffer, (INIClass *)(v9 + 36));
-    (*(void (__thiscall **)(int, char *))(*(int *)(v9) + 104))(v9, a1);
-    }
-    result = *(TaskForceClass **)&g_NetworkPlayerBuffer[4772];
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E8420  TaskForceClass::GetUnitCount  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
-char TaskForceClass::GetUnitCount(unsigned char *** aP1)
-{
-{
-    INIClass *v3;
-    int *v4;
-    INIClass *v5;
-    INIClass *v6;
-    int v8;
-    char Buffer[32];
-    INIClass Destination[2];
-    INIClass::ResetSection(aP1);
-    if ( !AbstractTypeClass::LoadFromINI(this, (AbstractTypeClass *)aP1) )
-    return 0;
-    v3 = 0;
-    this->TaskForceClass_field_0x9C = 0;
-    do
-  {
-    sprintf(Buffer, g_Str_Trace__d, v3);
-    if ( (int)INIClass::GetString( aP1, (INIClass *)(this + 36), (unsigned char *)Buffer, (INIClass *)&DataGlobal_87F8E4[42624], Destination, 128) > 0 )
-    {
-    v4 = TaskForceClass::ParseUnitCountAndType(&v8, Destination[0].__pad_0);
-    v5 = *(INIClass **)(this + 156);
-    *(int *)(this + 8 * (int)v5 + 164) = *v4;
-    *(int *)(this + 8 * (int)v5 + 168) = v4[1];
-    v6 = *(INIClass **)(this + 156);
-    if ( *(int *)(this + 8 * (int)v6 + 168) )
-    this->TaskForceClass_field_0x9C = &v6->__pad_0[1];
-    }
-    v3 = (INIClass *)((char *)(v3) + 1);
-  }
-    while ( (int)v3 < 6 );
-    this->TaskForceClass_field_0x98 = INIClass::ReadInt_Overwrite( (int)aP1, (unsigned char *)(this + 36), (CCINIClass *)&DataGlobal_830620[75684], *(INIClass **)(this + 152));
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E8510  TaskForceClass::GetUnitType  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
-char TaskForceClass::GetUnitType(char * a2)
-{
-{
-    int v3;
-    int *v4;
-    char *v5;
-    char Buffer[32];
-    if ( !AbstractTypeClass::WriteINI((char *)this, a2) )
-    return 0;
-    v3 = 0;
-    v4 = (int *)(this + 164);
-    do
-  {
-    sprintf(Buffer, g_Str_Trace__d, v3);
-    if ( v3 >= this->TaskForceClass_field_0x9C )
-    {
-    INIClass::ClearSection((int)a2, this + 36, (unsigned char *)Buffer);
-    }
-    else
-    {
-    v5 = TaskForceClass::Check(v4);
-    INIClass::SetString(a2, (unsigned char *)(this + 36), Buffer, v5);
-    }
-    ++v3;
-    v4 += 2;
-  }
-    while ( v3 < 6 );
-    INIClass::SetInt(a2, (unsigned char *)(this + 36), g_INI_Key_Group, this->TaskForceClass_field_0x98, 0);
-    return 1;
-}
-}
-
-// ==== BACKFILL 0x006E85B0  sub_6E85B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_6E85B0::sub_6E85B0()
-{
-{
-    int v2;
-    int *i;
-    v2 = 0;
-    if ( this->M156 <= 0 )
-    return 1;
-    for ( i = this + 42; (*(int (__thiscall **)(int))(*(int *)*i + 44))(*i) == 16; i += 2 )
-  {
-    if ( ++v2 >= this->M156 )
-    return 1;
-  }
-    return 0;
-}
-}
-
-// ==== BACKFILL 0x006E8680  TaskForceClass::SaveTaskForce  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
-int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E86A0  TaskForceClass::LoadTaskForce  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
-int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
-{
-{
-    int result;
-    MouseClass *v3;
-    int v4;
-    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_TaskForceClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TaskForceClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TaskForceClass;
-    *(int *)&aP0->__pad_0[12] = &vt_TaskForceClass;
-    }
-    v3 = (MouseClass *)&aP0[1].uniqueId;
-    v4 = 6;
-    do
-    {
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], v3);
-    v3 = (MouseClass *)((char *)(v3) + 8);
-    --v4;
-    }
-    while ( v4 );
-    return 0;
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006E8710  TaskForceClass::ddtor  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
-int TaskForceClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1641952286;
-  a2[1] = 298977140;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
-}
-
-// ==== BACKFILL 0x006E8750  TaskForceClass::LoadTask  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
-int TaskForceClass::LoadTask(int * a2)
-{
-{
-    AbstractTypeClass::ProcessPower((char *)this, a2);
-    Power::TimerProcess(this->TaskForceClass_field_0x98);
-    return Power::TimerProcess(this->TaskForceClass_field_0x9C);
-}
-}
-
-// ==== BACKFILL 0x006E8780  HouseClass::GetMaxBuildLevel  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int HouseClass::GetMaxBuildLevel() {
-{
-    int v1;
-    int result;
-    int *v3;
-    int v4;
-    v1 = this->secretLabsCount;
-    result = 0;
-    if ( v1 > 0 )
-  {
-    v3 = this + 42;
-    do
-    {
-    v4 = *(int *)(*v3 + 1588);
-    if ( v4 <= result )
-      {
-    if ( v4 == -1 )
-        {
-    if ( g_GameMode_Current[0] )
-    result = 11;
-        }
-      }
-    else
-      {
-    result = *(int *)(*v3 + 1588);
-      }
-    v3 += 2;
-    --v1;
-    }
-    while ( v1 );
-  }
-    return result;
-}
-} }
-
-// ==== BACKFILL 0x006E87D0  TaskForceClass::StubReturn33  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
-int TaskForceClass::StubReturn33()
-{
-return 33;
-}
-
-// ==== BACKFILL 0x006E87E0  TaskForceClass::StubReturn212  cls=TaskForceClass  sig=csp  renamed_refs=0  residual=- ====
-int TaskForceClass::StubReturn212()
-{
-return 212;
-}
-
-// ==== BACKFILL 0x006E8A90  MissionClass::Construct  cls=TeamClass  sig=csp  renamed_refs=6  residual=- ====
-namespace ra2 { namespace game { int MissionClass::Construct(int a1, int a2, int a3) {
-{
-      AbstractClass *v5;
-      TeamTypeClass *v6;
-      TimerStruct *v7;
-      int v8;
-      int v9;
-      int v10;
-      int v11;
-      int v12;
-      TeamTypeClass *v13;
-      int v14;
-      _WORD *v15;
-      CellClass *WaypointCoords;
-      int v17;
-      TagClass *v16;
-      AbstractClass *v19;
-
-      AbstractClass::Constructor((AbstractClass *)this);
-      v5 = aP2;
-      v6 = aP3;
-      this->objectTypeFlags = aP1;
-      this->owningHouseIndex = 0;
-      this->fallRate = v5;
-      this->nextObject = 0;
-      this->attachedTag = 0;
-      this->attachedBomb = 0;
-      this->ambientSoundController = 0;
-      this->q040 = 0;
-      this->unknown44 = v6;
-      this->totalObjects = 0;
-      this->totalThreatValue = 0;
-      this->customSound_controller = *(_DWORD *)&HouseClass_Player[45112];
-      this->firstUnit = 0;
-      v7 = *(TimerStruct **)&HouseClass_Player[45112];
-      this->q060 = 0;
-      this->q058 = v7;
-      this->customSound = *(_DWORD *)&HouseClass_Player[45112];
-      this->health = 0;
-      this->estimatedHealth = 0;
-      this->isOnMap = 0;
-      this->alignmentPadding75 = 0;
-      this->q076 = 0;
-      this->q077 = 0;
-      this->spawnStatus = 0;
-      this->q079 = 0;
-      this->q07A = 1;
-      this->q07B = 0;
-      this->visibilityFlags = 0;
-      this->q07D = 1;
-      this->q07E = 0;
-      this->q07F = 0;
-      this->needsRedraw = 1;
-      this->inLimbo = 0;
-      this->inOpenToppedTransport = 0;
-      this->isSelected = 0;
-      this->hasParachute = 0;
-      *(_DWORD *)this = 0;
-      this->vtable3 = 0;
-      this->vtable4 = 0;
-      this->vtable4 = &vt_TeamClass;
-      if ( *(int *)&stru_89E138[90048] < *(int *)&stru_89E138[90040]
-        || (stru_89E138[90045] || !*(_DWORD *)&stru_89E138[90040])
-        && *(int *)&stru_89E138[90052] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_89E138[90032] + 8))(
-             &stru_89E138[90032],
-             *(_DWORD *)&stru_89E138[90040] + *(_DWORD *)&stru_89E138[90052],
-             0) )
-      {
-        v8 = (*(_DWORD *)&stru_89E138[90048])++;
-        *(_DWORD *)(*(_DWORD *)&stru_89E138[90036] + 4 * v8) = this;
-      }
-      if ( *(int *)&stru_B05488[41464] < *(int *)&stru_B05488[41456]
-        || (stru_B05488[41461] || !*(_DWORD *)&stru_B05488[41456])
-        && *(int *)&stru_B05488[41468] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41448] + 8))(
-             &stru_B05488[41448],
-             *(_DWORD *)&stru_B05488[41456] + *(_DWORD *)&stru_B05488[41468],
-             0) )
-      {
-        v9 = (*(_DWORD *)&stru_B05488[41464])++;
-        *(_DWORD *)(*(_DWORD *)&stru_B05488[41452] + 4 * v9) = this;
-      }
-      if ( *(int *)&stru_B05488[41376] < *(int *)&stru_B05488[41368]
-        || (stru_B05488[41373] || !*(_DWORD *)&stru_B05488[41368])
-        && *(int *)&stru_B05488[41380] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41360] + 8))(
-             &stru_B05488[41360],
-             *(_DWORD *)&stru_B05488[41368] + *(_DWORD *)&stru_B05488[41380],
-             0) )
-      {
-        v10 = (*(_DWORD *)&stru_B05488[41376])++;
-        *(_DWORD *)(*(_DWORD *)&stru_B05488[41364] + 4 * v10) = this;
-      }
-      if ( *(int *)&stru_B05488[41640] < *(int *)&stru_B05488[41632]
-        || (stru_B05488[41637] || !*(_DWORD *)&stru_B05488[41632])
-        && *(int *)&stru_B05488[41644] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41624] + 8))(
-             &stru_B05488[41624],
-             *(_DWORD *)&stru_B05488[41632] + *(_DWORD *)&stru_B05488[41644],
-             0) )
-      {
-        v11 = (*(_DWORD *)&stru_B05488[41640])++;
-        *(_DWORD *)(*(_DWORD *)&stru_B05488[41628] + 4 * v11) = this;
-      }
-      if ( *(int *)&stru_B05488[41592] < *(int *)&stru_B05488[41584]
-        || (stru_B05488[41589] || !*(_DWORD *)&stru_B05488[41584])
-        && *(int *)&stru_B05488[41596] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41576] + 8))(
-             &stru_B05488[41576],
-             *(_DWORD *)&stru_B05488[41584] + *(_DWORD *)&stru_B05488[41596],
-             0) )
-      {
-        v12 = (*(_DWORD *)&stru_B05488[41592])++;
-        *(_DWORD *)(*(_DWORD *)&stru_B05488[41580] + 4 * v12) = this;
-      }
-      memset((void *)(this + 136), 0, 0x18u);
-      v13 = *(TeamTypeClass **)(this + 36);
-      if ( v13 )
-      {
-        v14 = this->fallRate;
-        if ( v14 && v13[2].__pad_0[14] )
-          ++*(_DWORD *)(v14 + 22124);
-        v15 = TechnoClass::GetWaypointCoords(*(_DWORD **)(this + 36), (AbstractClass *)&aP1);
-        if ( *v15 != *(_WORD *)&stru_B05488[38080] || v15[1] != *(_WORD *)&stru_B05488[38082] )
-        {
-          WaypointCoords = (CellClass *)TechnoClass::GetWaypointCoords(*(_DWORD **)(this + 36), (AbstractClass *)&aP1);
-          this->attachedTag = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)WaypointCoords);
-        }
-        ++*(_DWORD *)(this->objectTypeFlags + 220);
-        if ( *(_DWORD *)(this->objectTypeFlags + 208) )
-        {
-          v17 = __2_YAPAXI_Z(0x38u);
-          if ( v17 )
-            v16 = (TagClass *)TeknoClass::GetType(v17, *(TeamTypeClass **)(this->objectTypeFlags + 208));
-          else
-            v16 = 0;
-          this->estimatedHealth = v16;
-        }
-        v19 = (AbstractClass *)__2_YAPAXI_Z(0x30u);
-        if ( v19 )
-        {
-          this->owningHouseIndex = ScriptClass::Construct(v19, *(AbstractClass **)(this->objectTypeFlags + 224));
-          return this;
-        }
-        this->owningHouseIndex = 0;
-      }
-      return this;
-}
-} } }
-
-// ==== BACKFILL 0x006E9050  TeamClass::SelectMember  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-char TeamClass::SelectMember(AbstractClass * aP1)
-{
-{
-    AbstractClass *v4;
-    FootClass *v5;
-    AbstractClass *v6;
-    AbstractClass *movementDestination;
-    bool v8;
-    AbstractClass *v9;
-    FootClass *v10;
-    bool aP1a;
-    v4 = *(AbstractClass **)(this + 60);
-    if ( aP1 != v4 )
-  {
-    v5 = *(FootClass **)(this + 84);
-    if ( v4 )
-    {
-    for ( ; v5; v5 = (FootClass *)v5->nextTeamMember )
-      {
-    v6 = *(AbstractClass **)(this + 60);
-    movementDestination = (AbstractClass *)v5->movementDestination;
-    aP1a = v5->sprayOffsetIndex == (int)v6;
-    v8 = movementDestination == v6;
-    if ( (AbstractClass *)v5->sprayOffsetIndex == v6 || movementDestination == v6 )
-        {
-    (*(void (__thiscall **)(FootClass *, int, int))(*(int *)v5->__pad_0 + 488))(v5, 5, 0);
-    if ( v8 )
-    (*(void (__thiscall **)(FootClass *, int, int))(*(int *)v5->__pad_0 + 1152))(v5, 0, 1);
-    if ( aP1a )
-    (*(void (__thiscall **)(FootClass *, int))(*(int *)v5->__pad_0 + 968))(v5, 0);
-        }
-      }
-    }
-  }
-    v9 = *(AbstractClass **)(this + 64);
-    if ( v9 == *(AbstractClass **)(this + 60) || !v9 )
-    this->focus = aP1;
-    this->queuedFocus = aP1;
-    if ( aP1 )
-  {
-    v9 = (AbstractClass *)(*(int (__thiscall **)(AbstractClass *))(*(int *)aP1->__pad_0 + 44))(aP1);
-    if ( v9 == (AbstractClass *)11 )
-    {
-    LOBYTE(v9) = Type::CheckAmbiguity(&DataGlobal_87C374[13428], (int)aP1, 1);
-    if ( (char)v9 )
-      {
-    this->unknown82 = 0;
-      }
-    else
-      {
-    v10 = *(FootClass **)(this + 84);
-    for ( this->unknown82 = 1; v10; v10 = (FootClass *)v10->nextTeamMember )
-    LOBYTE(v9) = (*(int (__thiscall **)(FootClass *, int, int))(*(int *)v10->__pad_0 + 1152))(v10, 0, 1);
-      }
-    }
-  }
-    return (char)v9;
-}
-}
-
-// ==== BACKFILL 0x006EA080  sub_6EA080  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_6EA080::sub_6EA080()
-{
-{
-    int v2;
-    char result;
-    v2 = this->M84;
-    this->M127 = 1;
-    this->M120 = 1;
-    for ( this->M122 = 0; v2; v2 = *(int *)(v2 + 1496) )
-  {
-    if ( (unsigned char)this->M123 || (unsigned char)this->M119 )
-    *(char *)(v2 + 1673) = 1;
-  }
-    result = SetLandTypeMap(*(int **)(this + 40));
-    this->M128 = 1;
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006EA4F0  CaptureManagerClass::AddMember  cls=CaptureManagerClass  sig=csp  renamed_refs=0  residual=- ====
-char CaptureManagerClass::AddMember(TechnoClass * aP1)
-{
-{
-    return TeamClass::AddMember((int)this, (IUnknown *)aP1, (IUnknown *)1);
-}
-}
-
-// ==== BACKFILL 0x006EA500  TeamClass::AddMember  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-char TeamClass::AddMember(IUnknown * aP1, IUnknown * aP2)
-{
-{
-    IUnknown *v3;
-    char result;
-    char v6;
-    int v7;
-    int eax12;
-    AbstractClass *v8;
-    int v10;
-    v3 = aP1;
-    if ( !aP1 )
-    return 0;
-    v6 = (char)aP2;
-    result = TeamClass::ValidateMember((int *)this, (TechnoClass *)aP1, (int *)&aP1, (char)aP2);
-    if ( result )
-  {
-    v7 = *(int *)&v3->__pad_524[176];
-    if ( v7 )
-    TeamClass::LiberateMember_Start(v7, v3, 0xFFFFFFFF, 0);
-    if ( !v6 )
-    ++*(int *)(this + 4 * (int)aP1 + 136);
-    v3->__pad_524[357] = this->firstUnit == 0;
-    *(int *)&v3->__pad_524[180] = this->firstUnit;
-    this->firstUnit = v3;
-    *(int *)&v3->__pad_524[176] = this;
-    *(int *)&v3->__pad_1D8[60] = TeamTypeClass::GetGroup(*(int **)(this + 36));
-    if ( this->tag && (!*(char *)(this->buildingType + 179) || *(int *)((*(int (__thiscall **)(IUnknown *))(v3->field_0 + 132))(v3) + 1504) > 0) )
-    {
-    ObjectClass::SetReference(v3, this->tag);
-    }
-    ++this->totalObjects;
-    eax12 = (*(int (__thiscall **)(IUnknown *))(v3->field_0 + 704))(v3);
-    v8 = *(AbstractClass **)(this + 52);
-    this->totalThreatValue += eax12;
-    if ( !v8 )
-    TeamClass::FindClosestEnemy(this, (AbstractClass *)(this + 52), (AbstractClass *)(this + 56));
-    v10 = this->buildingType;
-    this->TeamClass_field_7E = 1;
-    this->needsToDisappear = 1;
-    v3->__pad_3BC[102] = *(char *)(v10 + 245);
-    return 1;
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006EA610  TeamClass::ValidateMember  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-bool TeamClass::ValidateMember(TechnoClass * aP1, int * a2, char a4)
-{
-{
-    int v5;
-    int v6;
-    int *v7;
-    bool v8;
-    int queuedMission;
-    TechnoClass *v11;
-    if ( this == (int *)aP1[1].queuedMission || !aP1 || !aP1->isAliveFlag || !aP1->health || !*(int *)&g_NetworkPlayerBuffer[4464] && aP1->inLimbo || aP1->focus != (void *)this->owner || Team::AllMembersValid((int *)aP1->__pad_0) && ((*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 44))(aP1) != 2 || !*(char *)(aP1[1].ironTintTimer[2] + 3597)) )
-  {
-    return 0;
-  }
-    *a2 = 0;
-    if ( *(int *)(*(int *)(this->buildingType + 228) + 156) > 0 )
-  {
-    do
-    {
-    v5 = *a2;
-    if ( *(int *)(*(int *)(this->buildingType + 228) + 8 * v5 + 168) == (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 136))(aP1) )
-    break;
-    *a2 = v5 + 1;
-    }
-    while ( v5 + 1 < *(int *)(*(int *)(this->buildingType + 228) + 156) );
-  }
-    if ( *a2 == *(int *)(*(int *)(this->buildingType + 228) + 156) && !a4 )
-    return 0;
-    if ( (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 388))(aP1) != -1 )
-  {
-    v6 = (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 388))(aP1);
-    if ( !IPersistStream::SetField(v6) )
-    return 0;
-  }
-    if ( !aP1->__pad_3F7[42] && !*(char *)(this->buildingType + 169) )
-    return 0;
-    v7 = (int *)this->currentScript;
-    v8 = 0;
-    if ( v7 )
-    v8 = *SessionClass::GetEntry(v7, (IUnknown *)&v11) == 8;
-    if ( (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 44))(aP1) == 2 )
-    v8 = 1;
-    return (aP1->__pad_3F7[43] || !*(char *)(this->buildingType + 169) || v8)
-    && !TeamClass::HasAnyMemberFlagged(aP1)
-    && !FootClass::checkPassability(aP1)
-    && !aP1->spawnManager && ((queuedMission = aP1[1].queuedMission) == 0 || *(int *)(*(int *)(queuedMission + 36) + 180) < *(int *)(this->buildingType + 180))
-    && ((*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 44))(aP1) != 2 || !*(int *)(*(int (__thiscall **)(TechnoClass *, int))(*(int *)aP1->__pad_0 + 1016))(aP1, 0) || LODWORD(aP1->pitchAngle))
-    && (*(this + *a2 + 34) < *(int *)(*(int *)(this->buildingType + 228) + 8 * *a2 + 164) || a4)
-    && !aP1->spawnManager && aP1->isBerserk_duration_left == 0;
-}
-}
-
-// ==== BACKFILL 0x006EAE60  TeamClass::ExecuteAction  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-int TeamClass::ExecuteAction(int a2, char a3)
-{
-{
-    int result;
-    int v4;
-    result = a2;
-    if ( a2 == this->tag )
-    this->tag = 0;
-    v4 = this->firstUnit;
-    if ( a2 == v4 && a3 )
-    this->firstUnit = *(int *)(v4 + 1496);
-    if ( a2 == this->owner )
-    this->owner = 0;
-    if ( a2 == this->currentScript )
-    this->currentScript = 0;
-    if ( this->focus == a2 )
-    this->focus = 0;
-    if ( this->queuedFocus == a2 )
-    this->queuedFocus = 0;
-    if ( this->spawnCell == a2 )
-    this->spawnCell = 0;
-    if ( this->buildingType == a2 )
-    this->buildingType = 0;
-    if ( this->unknown38 == a2 )
-    this->unknown38 = 0;
-    if ( this->unknown44 == a2 )
-    this->unknown44 = 0;
-    if ( this->target == a2 )
-    this->target = 0;
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006EC130  ObjectClass::Get  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int ObjectClass::Get(int a1) {
-{
-      int v3;
-      int v4;
-      int v6;
-
-      if ( !a2
-        || !*(_BYTE *)(a2 + 144)
-        || !*(_DWORD *)(a2 + 108)
-        || !g_IKnowWhatImDoing && *(_BYTE *)(a2 + 129)
-        || *(_BYTE *)(a2 + 1673) )
-      {
-        return 0;
-      }
-      v3 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), &v6);
-      if ( v3 == 54 || v3 == 53 )
-        v4 = g_RulesClass_Instance[1].?[1];
-      else
-        v4 = g_RulesClass_Instance[1].?[0];
-      if ( ObjectClass::DistanceTo((void *)a2, this->attachedTag) <= v4 )
-      {
-        *(_BYTE *)(a2 + 1673) = 1;
-        return 0;
-      }
-      if ( !*(_DWORD *)(a2 + 1444) )
-      {
-        (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a2 + 488))(a2, 2, 0);
-        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)a2 + 968))(a2, 0);
-        (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a2 + 1152))(a2, this->attachedTag, 1);
-      }
-      return 1;
-}
-} } }
-
-// ==== BACKFILL 0x006EC370  sub_6EC370  cls=AnimTypeClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_6EC370::sub_6EC370()
-{
-{
-    int v1;
-    char result;
-    v1 = this->M84;
-    result = 1;
-    if ( v1 )
-  {
-    while ( *(char *)(v1 + 981) )
-    {
-    v1 = *(int *)(v1 + 1496);
-    if ( !v1 )
-    return result;
-    }
-    return 0;
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006EC3A0  TeamClass::WakeUpAllMembers  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-char TeamClass::WakeUpAllMembers()
-{
-{
-    char result;
-    int i;
-    result = TeamClass::SelectMember((int)this, 0);
-    i = this->firstUnit;
-    for ( ; i; i = *(int *)(i + 1496) )
-  {
-    result = (*(int (__thiscall **)(int, int))(*(int *)(i) + 968))(i, 0);
-    *(char *)(i + 1672) = 1;
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006EC3D0  HouseClass::FindBestBuildingToRepair  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { void* HouseClass::FindBestBuildingToRepair() {
-{
-    int *v1;
-    int v2;
-    int *v3;
-    int v4;
-    v1 = (int *)this->repairStationsCount;
-    v2 = -1;
-    v3 = v1;
-    if ( !v1 )
-    return 0;
-    do
-  {
-    v4 = *(int *)((*(int (__thiscall **)(int *))(*v1 + 132))(v1) + 1532);
-    if ( *((char *)(v1) + 144) && v1[27] && (IKnowWhatImDoing || !*((char *)(v1) + 129)) && (*((char *)(v1) + 1673) || (*(int (__thiscall **)(int *))(*v1 + 44))(v1) == 2) && v4 > v2 )
-    {
-    v3 = v1;
-    v2 = v4;
-    }
-    v1 = (int *)v1[374];
-  }
-    while ( v1 );
-    return v3;
-}
-} }
-
-// ==== BACKFILL 0x006EC450  TeamClass::SaveLoad_Prefix  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-int TeamClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    __4type_info_AAEAAV0_ABV0__Z(&aP0[2].referenceCount, (int)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_TeamClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TeamClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TeamClass;
-    *(int *)&aP0->__pad_0[12] = &vt_TeamClass;
-    }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[8]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[3].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[12]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].abstractFlags);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].referenceCount);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].uniqueId);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].nextArrayIndex);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[12]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].NeedsSaveOrLink);
-    return 0;
-  }
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006EC540  TeamClass::SaveLoad_Prefix_0  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-int TeamClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
-{
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
-}
-
-// ==== BACKFILL 0x006EC560  TeamClass::ddtor  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-int TeamClass::ddtor(int a1, unsigned int * a2)
-{
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448655;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
-}
-
-// ==== BACKFILL 0x006ECCE0  TeamClass::MoveToCellAndAttack  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { void TeamClass::MoveToCellAndAttack(int a1, int a2) {
-{
-      TeamClass *v3;
-      AbstractClass *CellFromArray;
-      _DWORD *Entry;
-      int *firstUnit;
-      int v7;
-      int *v8;
-      int v9;
-      int v10;
-      AbstractClass *v11;
-      _BYTE *focus;
-      int v14;
-      _DWORD v15[3];
-      AbstractClass *aP1a;
-
-      v3 = (TeamClass *)this;
-      CellFromArray = (AbstractClass *)ScenarioClass::GetCellFromArray(
-                                         *(__int16 **)&HouseClass_Player[29924],
-                                         *(ScenarioClass **)&aP1->__pad_0[4]);
-      aP1a = CellFromArray;
-      if ( a3 )
-        TeamClass::SelectMember((int)v3, CellFromArray);
-      if ( !v3->focus )
-      {
-        Entry = SessionClass::GetEntry((_DWORD *)v3->currentScript, (IUnknown *)&v14);
-        v15[0] = *Entry;
-        if ( Entry[1] < 0x2BEu )
-          TeamClass::SelectMember((int)v3, CellFromArray);
-      }
-      if ( !(*(_DWORD *)&HouseClass_Player[45112]
-           % (int)Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 4432) * 900.0)) )
-      {
-        firstUnit = (int *)v3->firstUnit;
-        v7 = -1;
-        v8 = firstUnit;
-        if ( firstUnit )
-        {
-          do
-          {
-            v9 = *(_DWORD *)((*(int (__thiscall **)(int *))(*firstUnit + 132))(firstUnit) + 1532);
-            if ( *((_BYTE *)firstUnit + 144)
-              && firstUnit[27]
-              && (*(_DWORD *)&HouseClass_Player[43616] || !*((_BYTE *)firstUnit + 129))
-              && (*((_BYTE *)firstUnit + 1673) || (*(int (__thiscall **)(int *))(*firstUnit + 44))(firstUnit) == 2)
-              && v9 > v7 )
-            {
-              v8 = firstUnit;
-              v7 = v9;
-            }
-            firstUnit = (int *)firstUnit[374];
-          }
-          while ( firstUnit );
-          v3 = (TeamClass *)this;
-        }
-        if ( v8 )
-        {
-          v15[0] = v8[39];
-          v10 = *v8;
-          v15[1] = v8[40];
-          v15[2] = v8[41];
-          v11 = (AbstractClass *)(*(int (__thiscall **)(int *, int, _DWORD *, _DWORD))(v10 + 964))(v8, 1, v15, 0);
-          if ( v11 )
-          {
-            TeamClass::SelectMember((int)v3, v11);
-          }
-          else if ( v3->focus != aP1a )
-          {
-            TeamClass::SelectMember((int)v3, 0);
-          }
-        }
-      }
-      focus = v3->focus;
-      if ( focus && (focus[20] & 2) != 0 )
-        TeamClass::AttackCoordinator((int *)v3->__pad_0);
-      else
-        TeamClass::UpdateMembers((int)v3);
-}
-} }
-
-// ==== BACKFILL 0x006ECFB0  TeamClass::Create  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int TeamClass::Create(int a1, int a2) {
-{
-    TeamClass *v4;
-    TeamClass *v5;
-    FootClass *i;
-    v4 = (TeamClass *)__2_YAPAXI_Z(0xA0u);
-    if ( v4 )
-  {
-    v4 = (TeamClass *)MissionClass::Construct( (int)v4, *(int *)(*(int *)&g_NetworkPlayerBuffer[5736] + 4 * *(int *)(a2 + 4)), this->owner, 0);
-    v5 = v4;
-  }
-    else
-  {
-    v5 = 0;
-  }
-    i = (FootClass *)this->firstUnit;
-    for ( ; i; i = (FootClass *)this->firstUnit )
-  {
-    TeamClass::LiberateMember_Start((int)this, (IUnknown *)i, 0xFFFFFFFF, 0);
-    LOBYTE(v4) = TeamClass::AddMember((int)v5, (IUnknown *)i, 0);
-  }
-    if ( this )
-    LOBYTE(v4) = this->ProcessEvent(1);
-    return (char)v4;
-}
-} }
-
-// ==== BACKFILL 0x006EDB50  TeamClass::AssignAttackTarget  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int TeamClass::AssignAttackTarget(int a1, int a2) {
-{
-    ObjectClass *v4;
-    int health;
-    AbstractClass *v6;
-    FootClass *i;
-    int sprayOffsetIndex;
-    v4 = (ObjectClass *)(this + 52);
-    TeamClass::FindClosestEnemy(this, (AbstractClass *)(this + 52), (AbstractClass *)(this + 56));
-    this->focus = *(int *)v4->__pad_0;
-    TeamClass::UpdateMembers(this);
-    health = (int)AbstractClass::IsTechnoType(*(void **)v4->__pad_0);
-    v6 = (AbstractClass *)health;
-    if ( health )
-  {
-    for ( i = *(FootClass **)(this + 84); i; i = (FootClass *)i->nextTeamMember )
-    {
-    LOBYTE(health) = i->isAliveFlag;
-    if ( (char)health )
-      {
-    health = i->health;
-    if ( health )
-        {
-    if ( *(int *)&g_NetworkPlayerBuffer[4464] || (health = (unsigned char)i->inLimbo, !(char)health) )
-          {
-    if ( i->isTeamLeader || (health = (*(int (__thiscall **)(FootClass *))(*(int *)i->__pad_0 + 44))(i), health == 2) )
-            {
-    sprayOffsetIndex = i->sprayOffsetIndex;
-    if ( sprayOffsetIndex && sprayOffsetIndex != *(int *)&v6[19].__pad_0[8] )
-    (*(void (__thiscall **)(FootClass *, int))(*(int *)i->__pad_0 + 968))(i, 0);
-    health = *(int *)&v6[19].__pad_0[8];
-    if ( health )
-              {
-    if ( !i->locomotor[0] )
-    WinAPI::Wrapper(-2147467261);
-    LOBYTE(health) = (*(int (__stdcall **)(int))(*(int *)i->locomotor[0] + 16))(i->locomotor[0]);
-    if ( !(char)health )
-                {
-    LOBYTE(health) = (*(int (__thiscall **)(FootClass *))(*(int *)i->__pad_0 + 684))(i);
-    if ( (char)health )
-                  {
-    health = (*(int (__thiscall **)(FootClass *))(*(int *)i->__pad_0 + 388))(i);
-    if ( health == 5 )
-                    {
-    (*(void (__thiscall **)(FootClass *, int, int))(*(int *)i->__pad_0 + 488))(i, 1, 0);
-    LOBYTE(health) = (*(int (__thiscall **)(FootClass *, int))(*(int *)i->__pad_0 + 968))( i, *(int *)&v6[19].__pad_0[8]);
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-    return health;
-}
-} }
 
 // ==== BACKFILL 0x006EDDC0  sub_6EDDC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_6EDDC0::sub_6EDDC0(int a2, int a3)
 {
-{
-    int *v4;
-    int result;
-    v4 = *(int **)(this + 84);
-    if ( v4 )
-  {
-    do
-    {
-    result = (*(int (__thiscall **)(int *, int))(*v4 + 1312))(v4, *(int *)(a2 + 4));
-    v4 = (int *)v4[374];
-    }
-    while ( v4 );
-    this->M128 = 1;
-  }
-    else
-  {
-    this->M128 = 1;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6EDDC0)
 }
 
 // ==== BACKFILL 0x006EDE80  sub_6EDE80  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_6EDE80::sub_6EDE80(int a2, int a3)
 {
-{
-    this->M128 = 1;
-}
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6EDE80)
 }
 
 // ==== BACKFILL 0x006EDF10  sub_6EDF10  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void E4Recv_6EDF10::sub_6EDF10(int a2, int a3)
 {
-{
-    int *i;
-    int *v5;
-    int v6;
-    int v7;
-    char v8[12];
-    for ( i = *(int **)(this + 84); i; i = (int *)i[374] )
-  {
-    v5 = (int *)(*(int (__thiscall **)(int *, char *))(*i + 72))(i, v8);
-    LOWORD(v6) = *v5 / 256;
-    HIWORD(v6) = v5[1] / 256;
-    v7 = v6;
-    MapClass::TriggerEVA((short *)&v7);
-  }
-    this->M128 = 1;
-}
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6EDF10)
 }
 
 // ==== BACKFILL 0x006EDF90  sub_6EDF90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6EDF90::sub_6EDF90(int a2, int a3)
 {
-{
-    *(char *)(this->M44 + 494) = 1;
-    this->M128 = 1;
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6EDF90)
 }
 
 // ==== BACKFILL 0x006EDFB0  sub_6EDFB0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_6EDFB0::sub_6EDFB0(int a2, int a3)
 {
-{
-    int result;
-    result = this->M44;
-    *(int *)(result + 592) = 4;
-    this->M128 = 1;
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6EDFB0)
 }
 
 // ==== BACKFILL 0x006EE050  sub_6EE050  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_6EE050::sub_6EE050(int a2, int a3)
 {
-{
-    int *v4;
-    int *v5;
-    int result;
-    v4 = *(int **)(this + 84);
-    if ( v4 )
-  {
-    do
-    {
-    v5 = (int *)v4[374];
-    (*(void (__thiscall **)(int *))(*v4 + 212))(v4);
-    result = (*(int (__thiscall **)(int *))(*v4 + 248))(v4);
-    v4 = v5;
-    }
-    while ( v5 );
-    this->M128 = 1;
-  }
-    else
-  {
-    this->M128 = 1;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6EE050)
 }
 
 // ==== BACKFILL 0x006EE100  TacticalClass::Get  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int TacticalClass::Get(int a1, int a2) {
-{
-    int *v4;
-    int result;
-    int v6[2];
-    int GroundHeight;
-    char v8[12];
-    v4 = (int *)(*(int (__thiscall **)(int, char *))(**(int **)(this + 52) + 72))(this->field34, v8);
-    v6[0] = *v4;
-    v6[1] = v4[1];
-    GroundHeight = v4[2];
-    GroundHeight = Cell::GetGroundHeight(v6);
-    if ( (*((int *)Coord::To_Cell(&DataGlobal_87F7E8, v6) + 80) & 0x100) != 0 || (*((int *)Coord::To_Cell(&DataGlobal_87F7E8, v6) + 80) & 0x400) != 0 )
-  {
-    GroundHeight += DataGlobal_B0E99C;
-  }
-    result = TacticalClass::SetPosition(g_TacticalClass_Instance, v6, *(int *)(a2 + 4));
-    this->field80 = 1;
-    return result;
+int TacticalClass::Get(int a2, int a3) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x6EE100.json */
 }
-} }
 
 // ==== BACKFILL 0x006EF450  sub_6EF450  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_6EF450::sub_6EF450(int a2, int a3)
 {
-{
-    this->M128 = 1;
-    this->M132 = 1;
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6EF450)
 }
 
-// ==== BACKFILL 0x006EF4D0  HouseClass::UpdateProductionQueue  cls=HouseClass  sig=csp  renamed_refs=2  residual=- ====
-namespace gamemd { int HouseClass::UpdateProductionQueue(int a1) {
-{
-      int v3;
-      int v4;
-      int result;
-      int v6;
-      int v7;
-      int v8;
-      int v9;
-      int v10;
-      int v11;
-      _DWORD *i;
-      int v13;
-      int v14;
+// ==== BACKFILL 0x006EF470  Team_Create  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char Gap2Recv_6EF470::Team_Create() {
 
-      v3 = a2;
-      v4 = 0;
-      result = *(_DWORD *)(this->vtable5 + 228);
-      if ( *(int *)(result + 156) > 0 )
-      {
-        do
-        {
-          v6 = *(_DWORD *)(result + 8 * v4 + 168);
-          v7 = *(_DWORD *)(result + 8 * v4 + 164);
-          if ( v7 > 0 )
-          {
-            a2 = v7;
-            do
-            {
-              v8 = *(_DWORD *)(v3 + 8);
-              if ( *(_DWORD *)(v3 + 16) < v8
-                || (*(_BYTE *)(v3 + 13) || !v8)
-                && (v9 = *(_DWORD *)(v3 + 20), v9 > 0)
-                && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v3 + 8))(v3, v8 + v9, 0) )
-              {
-                v10 = *(_DWORD *)(v3 + 16);
-                v11 = *(_DWORD *)(v3 + 4);
-                *(_DWORD *)(v3 + 16) = v10 + 1;
-                *(_DWORD *)(v11 + 4 * v10) = v6;
-              }
-              --a2;
-            }
-            while ( a2 );
-          }
-          ++v4;
-          result = *(_DWORD *)(this->vtable5 + 228);
-        }
-        while ( v4 < *(_DWORD *)(result + 156) );
-      }
-      for ( i = (_DWORD *)this->repairStationsCount; i; i = (_DWORD *)i[374] )
-      {
-        a2 = (*(int (__thiscall **)(_DWORD *))(*i + 132))(i);
-        result = (*(int (__thiscall **)(int, int *))(*(_DWORD *)v3 + 16))(v3, &a2);
-        if ( result != -1 )
-        {
-          v13 = *(_DWORD *)(v3 + 16);
-          if ( result < v13 )
-          {
-            v14 = v13 - 1;
-            for ( *(_DWORD *)(v3 + 16) = v14;
-                  result < *(_DWORD *)(v3 + 16);
-                  *(_DWORD *)(*(_DWORD *)(v3 + 4) + 4 * result - 4) = *(_DWORD *)(*(_DWORD *)(v3 + 4) + 4 * result) )
-            {
-              ++result;
-            }
-          }
-        }
-      }
-      return result;
-}
-} }
+  int v2; // edi
+  int v3; // eax
+  int i; // ebx
+  int *v5; // esi
 
-// ==== BACKFILL 0x006EF610  TeamClass::PlayMemberAnimation  cls=TeamClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { void TeamClass::PlayMemberAnimation(ScriptClass * aP1, char a3) {
-{
-    int v3;
-    IUnknown *v4;
-    CoordStruct *v5;
-    CoordStruct *v6;
-    ObjectClass *v7;
-    CoordStruct *v8;
-    AnimClass *v9;
-    char v11[12];
-    v3 = *(int *)&aP1->__pad_0[4];
-    if ( a3 && (unsigned short)v3 < *(int *)&g_CellDirectionOffsets[84688] && (v4 = *(IUnknown **)(this + 84), v5 = (CoordStruct *)HIWORD(v3), v6 = *(CoordStruct **)(*(int *)&g_CellDirectionOffsets[84676] + 4 * (unsigned short)v3), v4) )
+  v2 = 0; /*0x6ef476*/
+  v3 = *(unsigned int *)(this->occupant + 228); /*0x6ef47b*/
+  if ( *(int *)(v3 + 156) <= 0 ) /*0x6ef489*/
+    return 0; /*0x6ef4be*/
+  for ( i = 168; ; i += 8 ) /*0x6ef48b*/
   {
-    do
+    v5 = *(int **)(i + v3); /*0x6ef490*/
+    if ( (*(int (**)(int *))(*v5 + 44))(v5) == 3 && v5[376] > 0 ) /*0x6ef4a7*/
+      break; /*0x6ef4a7*/
+    ++v2; /*0x6ef4ac*/
+    v3 = *(unsigned int *)(this->occupant + 228); /*0x6ef4b0*/
+    if ( v2 >= *(unsigned int *)(v3 + 156) ) /*0x6ef4bc*/
+      return 0; /*0x6ef4bc*/
+  }
+  return 1; /*0x6ef4be*/
+
+}
+
+// ==== BACKFILL 0x006EF4D0  HouseClass::UpdateProductionQueue  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
+int HouseClass::UpdateProductionQueue(int a1)
+{
+    (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006EF4D0.json)
+}
+
+// ==== BACKFILL 0x006EF700  DeployTeamMembersAtStart  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+void Gap2Recv_6EF700::DeployTeamMembersAtStart(ScriptClass * aP1, char a3) {
+
+  unsigned int *v3; // esi
+  unsigned int *v4; // edi
+  int v5; // ebx
+  int v6; // eax
+  unsigned int *v7; // eax
+  int *StartCoordsHouseClass; // eax
+  int v9; // esi
+  bool v10; // zf
+  int v11; // ebx
+  int v12; // eax
+  int *v13; // edx
+  int v14; // ecx
+  int v15; // eax
+  int v16; // edx
+  int *v17; // edx
+  double v18; // st7
+  int v19; // edx
+  double v20; // st7
+  double v21; // st7
+  int v22; // eax
+  int v23; // eax
+  void *v24; // eax
+  int v25; // esi
+  int v26; // [esp+24h] [ebp-38h] BYREF
+  int v27; // [esp+28h] [ebp-34h]
+  double v28; // [esp+2Ch] [ebp-30h] BYREF
+  double v29; // [esp+34h] [ebp-28h] BYREF
+  double v30; // [esp+3Ch] [ebp-20h]
+  int v31; // [esp+44h] [ebp-18h]
+  int v32; // [esp+48h] [ebp-14h]
+  int v33; // [esp+4Ch] [ebp-10h]
+  unsigned int v34[3]; // [esp+50h] [ebp-Ch] BYREF
+
+  v27 = this; /*0x6ef711*/
+  if ( a3 ) /*0x6ef715*/
+  {
+    v3 = *(unsigned int **)((char *)this + 84); /*0x6ef71b*/
+    LODWORD(v28) = -1; /*0x6ef71e*/
+    v4 = v3; /*0x6ef728*/
+    if ( v3 ) /*0x6ef72a*/
     {
-    v7 = (ObjectClass *)__2_YAPAXI_Z(0x1C8u);
-    if ( v7 )
+      do /*0x6ef771*/
       {
-    v8 = (CoordStruct *)(*(int (__thiscall **)(IUnknown *, char *))(v4->field_0 + 72))(v4, v11);
-    v9 = AnimClass::ctor((void **)v7, v6, v8, 0, v5, (void *)0x600, 0, 0);
-    if ( v9 )
-    BuildingClass::AimTurret(v9, v4);
+        v5 = *(unsigned int *)((*(int (**)(unsigned int *))(*v3 + 132))(v3) + 1532); /*0x6ef736*/
+        if ( TechnoClass::IsDeployed((int)v3) /*0x6ef761*/
+          && (*((unsigned char *)v3 + 1673) || (*(int (**)(unsigned int *))(*v3 + 44))(v3) == 2)
+          && v5 > SLODWORD(v28) )
+        {
+          v4 = v3; /*0x6ef763*/
+          LODWORD(v28) = v5; /*0x6ef765*/
+        }
+        v3 = (unsigned int *)v3[374]; /*0x6ef769*/
       }
-    v4 = *(IUnknown **)&v4->__pad_524[180];
+      while ( v3 ); /*0x6ef771*/
+      this = v27; /*0x6ef773*/
     }
-    while ( v4 );
-    this->stepCompleted = 1;
+    if ( !v4 ) /*0x6ef779*/
+    {
+      *((unsigned char *)this + 128) = 1; /*0x6ef77b*/
+      return; /*0x6ef788*/
+    }
+    v6 = *(unsigned int *)(v4[135] + 22016); /*0x6ef791*/
+    if ( v6 == -1 || (v7 = *(unsigned int **)dword_A8022C[4 * v6]) == 0 ) /*0x6ef7a7*/
+    {
+      *((unsigned char *)this + 128) = 1; /*0x6ef7a9*/
+      return; /*0x6ef7b6*/
+    }
+    StartCoordsHouseClass = HouseClass::GetStartCoords(v7, v34); /*0x6ef7c0*/
+    v9 = *StartCoordsHouseClass; /*0x6ef7c5*/
+    v10 = *StartCoordsHouseClass == dword_B0E968; /*0x6ef7cd*/
+    v31 = *StartCoordsHouseClass; /*0x6ef7cf*/
+    v11 = StartCoordsHouseClass[1]; /*0x6ef7d3*/
+    v32 = v11; /*0x6ef7d6*/
+    v12 = StartCoordsHouseClass[2]; /*0x6ef7da*/
+    v33 = v12; /*0x6ef7dd*/
+    if ( v10 && v11 == dword_B0E96C && v12 == dword_B0E970 ) /*0x6ef7f1*/
+    {
+      *(unsigned char *)(v27 + 128) = 1; /*0x6ef7f7*/
+      return; /*0x6ef804*/
+    }
+    v13 = HouseClass::GetStartCoords((unsigned int *)v4[135], v34); /*0x6ef817*/
+    v14 = *v13; /*0x6ef819*/
+    v10 = *v13 == dword_B0E968; /*0x6ef81b*/
+    v15 = v13[1]; /*0x6ef821*/
+    v16 = v13[2]; /*0x6ef824*/
+    if ( v10 && v15 == dword_B0E96C && v16 == dword_B0E970 ) /*0x6ef837*/
+    {
+      v17 = (int *)(*(int (**)(unsigned int *, unsigned int *))(*v4 + 72))(v4, v34); /*0x6ef845*/
+      v14 = *v17; /*0x6ef847*/
+      v15 = v17[1]; /*0x6ef849*/
+      v34[2] = v17[2]; /*0x6ef84f*/
+    }
+    v34[0] = v14 - v9; /*0x6ef857*/
+    v18 = Math::CalcAngle((double)(v11 - v15), (double)(v14 - v9)); /*0x6ef875*/
+    LODWORD(v28) = (int16_t)Math::RoundToInt((v18 - 1.570796326794897) * -10430.06004058427) - 0x3FFF; /*0x6ef899*/
+    v19 = HIDWORD(((unsigned int *)dword_8871E0)[0]) << 8; /*0x6ef8a7*/
+    v28 = (double)SLODWORD(v28) * -0.00009587672516830327; /*0x6ef8b4*/
+    v30 = (double)v19; /*0x6ef8c6*/
+    v29 = (double)v32; /*0x6ef8ce*/
+    v20 = Math::SinCos(v28); /*0x6ef8d2*/
+    LODWORD(v29) = Math::RoundToInt(v29 - v20 * v30); /*0x6ef8e6*/
+    v21 = Math::ArcTan2(v28); /*0x6ef8ea*/
+    v22 = Math::RoundToInt(v21 * v30 + (double)v31); /*0x6ef8fa*/
+    Coord::Subtract(v34, v22, SLODWORD(v29), v33); /*0x6ef90e*/
+    LOWORD(v28) = v34[0] / 256; /*0x6ef927*/
+    WORD1(v28) = v34[1] / 256; /*0x6ef93e*/
+    v26 = LODWORD(v28); /*0x6ef949*/
+    LODWORD(v28) = 0; /*0x6ef956*/
+    v23 = (*(int (**)(unsigned int *))(*v4 + 132))(v4); /*0x6ef96e*/
+    v26 = *LayerClass::Pathfinding_Find( /*0x6ef99b*/
+             &dword_87F7E8,
+             (int)&v29,
+             &v29,
+             (int16_t *)&v26,
+             *(unsigned int *)(v23 + 1660),
+             -1,
+             0,
+             0,
+             3,
+             3,
+             0,
+             0,
+             0,
+             1,
+             (int16_t *)&v28,
+             0,
+             0);
+    v24 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v26); /*0x6ef99f*/
+    v25 = v27; /*0x6ef9a4*/
+    TeamClass::SelectMember(v27, (int)v24); /*0x6ef9ab*/
+    Debug::Log(); /*0x6ef9c8*/
+    this = v25; /*0x6ef9d0*/
   }
-    else
-  {
-    this->stepCompleted = 1;
-  }
-}
-} }
+  TeamClass::UpdateMembers(this); /*0x6ef9d2*/
 
-// ==== BACKFILL 0x006EF9E0  TechnoClass::IsDeployed  cls=TechnoClass  sig=csp  renamed_refs=1  residual=- ====
-int TechnoClass::IsDeployed() const {
-return this && this->q240 && this->airstrikeTimer && (g_IKnowWhatImDoing || !this->q204);
+}
+
+// ==== BACKFILL 0x006EF9E0  TechnoClass::IsDeployed  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
+int TechnoClass::IsDeployed() const
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006EF9E0.json)
 }

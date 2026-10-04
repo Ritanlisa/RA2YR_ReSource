@@ -82,15 +82,14 @@ HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
 } // namespace gamemd
 // 0x4D28D0
 namespace gamemd {
-unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * a2)
+unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * v3)
 {
 
   int v3; // [esp+0h] [ebp-4h]
 
-  LOWORD(v3) = *((unsigned int *)this + 13) / 256; /*0x4d28e0*/
-  HIWORD(v3) = *((unsigned int *)this + 14) / 256; /*0x4d28f4*/
-  *a2 = v3; /*0x4d2901*/
-  return a2; /*0x4d2904*/
+  LOWORD(v3) = this->u32_34 / 256; /*0x4d28e0*/
+  HIWORD(v3) = this->u32_38 / 256; /*0x4d28f4*/
+  *v3 = v3; /*0x4d2901*/
 
 }
 } // namespace gamemd

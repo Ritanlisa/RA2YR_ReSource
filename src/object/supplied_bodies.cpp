@@ -325,7 +325,7 @@ bool TechnoClass::StubReturnFalse2()
 // 0x487150
 namespace ra2::game {
 int FootClass::checkTerrainSpeed(int a2) {
-    ++*(unsigned short *)((char *)this + 124 + 2 * a2); /*0x487154 真值 inc word [this+0x7C+a2*2]*/
+    ++*(unsigned short *)((char *)&this->q1F0 + 2 * a2); /*0x487154 真值 inc word [&this->q1F0+a2*2]*/
     return a2; /*0x487159*/
 }
 } // namespace ra2::game
@@ -333,7 +333,7 @@ int FootClass::checkTerrainSpeed(int a2) {
 // 0x487160
 namespace ra2::game {
 int FootClass::updateLocomotion(int a2) {
-    --*(unsigned short *)((char *)this + 124 + 2 * a2); /*0x487164 真值 dec word [this+0x7C+a2*2]*/
+    --*(unsigned short *)((char *)&this->q1F0 + 2 * a2); /*0x487164 真值 dec word [&this->q1F0+a2*2]*/
     return a2; /*0x487169*/
 }
 } // namespace ra2::game
@@ -371,21 +371,21 @@ int FootClass::vt_entry_530(int a2, int a3, int a4)
 // 0x4DF1C0
 namespace ra2::game {
 BOOL TechnoClass::vt_entry_4AC() {
-    return *((unsigned int *)this + 369) != -1; /*0x4df1ce*/
+    return this->u32_5C4 != -1; /*0x4df1ce*/
 }
 } // namespace ra2::game
 
 // 0x4DF1D0
 namespace ra2::game {
 int TechnoClass::vt_entry_4B0() {
-    return *((unsigned char *)this + 1489); /*0x4df1d6*/
+    return this->u32_5D1; /*0x4df1d6*/
 }
 } // namespace ra2::game
 
 // 0x4DF310
 namespace ra2::game {
 BOOL TechnoClass::vt_entry_4C4() {
-    return *((unsigned int *)this + 369) == 29; /*0x4df31e*/
+    return this->u32_5C4 == 29; /*0x4df31e*/
 }
 } // namespace ra2::game
 
@@ -436,7 +436,7 @@ int TechnoClass::CheckState2() const {
 // 0x5F6690
 namespace ra2::game {
 bool ObjectClass::IsActive() const {
-    return *(unsigned char *)((char *)this + 144) == 0; /*0x5f669d 真值 [ecx+90h]*/
+    return *(unsigned char *)((char *)&this->attachedBomb4) == 0; /*0x5f669d 真值 [ecx+90h]*/
 }
 } // namespace ra2::game
 
@@ -513,28 +513,28 @@ int TechnoClass::COMStub_Return0_307()
 // 0x711EB0
 namespace ra2::game {
 int TechnoClass::GetMember388() const {
-    return *(unsigned int *)((char *)this + 1552); /*0x711eb6 真值 [ecx+610h]*/
+    return *(unsigned int *)((char *)&this->gapRadius2); /*0x711eb6 真值 [ecx+610h]*/
 }
 } // namespace ra2::game
 
 // 0x741490
 namespace ra2::game {
 int TechnoClass::checkTargetValidity() {
-    return *((unsigned int *)this + 433); /*0x741496*/
+    return this->u32_6C4; /*0x741496*/
 }
 } // namespace ra2::game
 
 // 0x746400
 namespace ra2::game {
 int TechnoClass::processParasiteAttachment() {
-    return *(unsigned char *)(*((unsigned int *)this + 433) + 3611) == 0; /*0x746415*/
+    return *(unsigned char *)(this->u32_6C4 + 3611) == 0; /*0x746415*/
 }
 } // namespace ra2::game
 
 // 0x746DB0
 namespace ra2::game {
 int TechnoClass::HasDeployFlags() const {
-    return *((unsigned char *)this + 1761) || *((unsigned char *)this + 1762); /*0x746dc6*/
+    return this->u32_6E1 || this->u32_6E2; /*0x746dc6*/
 }
 } // namespace ra2::game
 

@@ -122,8 +122,6 @@ unsigned int Movie::SelectNextBuildableType(int aP1)
 
 }
 }
-// 0x49BC80
-namespace gamemd {
 char Movie::GetSectionID(unsigned int *a2)
 {
 

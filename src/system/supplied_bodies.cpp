@@ -220,7 +220,7 @@ char TacticalClass::CompareVector(int a2) {
     unsigned int *v4; // eax
     int v5; // ecx
 
-    v2 = *((unsigned int *)this + 2); /*0x5c0ad2*/
+    v2 = this->q008; /*0x5c0ad2*/
     if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x5c0add*/
     {
       v3 = 0; /*0x5c0adf*/
@@ -266,7 +266,7 @@ void CellClass::DrawWrapper(unsigned int * a2, int jj, char a4, char a5) {
 // 0x68BCC0
 namespace gamemd {
 unsigned int * ScenarioClass::Get_Waypoint_Location(unsigned int *a2, int a3) {
-    *a2 = *(unsigned int *)((char *)this + 4 * a3 + 1586); /*0x68bccf G42.34 T11: byte-offset view (IDA ptr math)*/
+    *a2 = *(unsigned int *)((char *)&this->q010 * a3 + 1586); /*0x68bccf G42.34 T11: byte-offset view (IDA ptr math)*/
     return a2; /*0x68bcd1*/
 }
 } // namespace gamemd
@@ -483,35 +483,35 @@ unsigned int * GenericList::Constructor() {
 
     result = (unsigned int *)&this->vtable; /*0x52ace0 G42.34 T11: void** -> uint* cast*/
     v2 = this + 4; /*0x52ace9*/
-    *((unsigned int *)this + 2) = 0; /*0x52acf0*/
-    *((unsigned int *)this + 3) = 0; /*0x52acf2*/
-    *((unsigned int *)this + 1) = 0; /*0x52acf5*/
-    *((unsigned int *)this + 5) = 0; /*0x52acfb*/
-    *((unsigned int *)this + 6) = 0; /*0x52acfe*/
-    *((unsigned int *)this + 4) = 0; /*0x52ad01*/
+    this->u32_8 = 0; /*0x52acf0*/
+    this->u32_C = 0; /*0x52acf2*/
+    this->u32_4 = 0; /*0x52acf5*/
+    this->u32_14 = 0; /*0x52acfb*/
+    this->u32_18 = 0; /*0x52acfe*/
+    this->u32_10 = 0; /*0x52ad01*/
     this->vtable = 0; /*0x52ad07*/
     if ( this != (GenericList *)-16 ) /*0x52ad0d*/
     {
-      v3 = *((unsigned int *)this + 5); /*0x52ad0f*/
+      v3 = this->u32_14; /*0x52ad0f*/
       if ( v3 ) /*0x52ad14*/
       {
-        v4 = *((unsigned int *)this + 6); /*0x52ad16*/
+        v4 = this->u32_18; /*0x52ad16*/
         if ( v4 ) /*0x52ad1b*/
         {
           *(unsigned int *)(v4 + 4) = v3; /*0x52ad1d*/
-          *(GenericList *)(*((unsigned int *)this + 5) + 8) = *(this + 6); /*0x52ad26*/
-          *((unsigned int *)this + 6) = 0; /*0x52ad29*/
-          *((unsigned int *)this + 5) = 0; /*0x52ad2c*/
+          *(GenericList *)(this->u32_14 + 8) = this->u32_18; /*0x52ad26*/
+          this->u32_18 = 0; /*0x52ad29*/
+          this->u32_14 = 0; /*0x52ad2c*/
         }
       }
     }
-    v5 = *((unsigned int *)this + 2); /*0x52ad2f*/
-    *((unsigned int *)this + 6) = (unsigned int)(this + 1); /*0x52ad32 G42.34 T11: ptr-to-int store*/
-    *((unsigned int *)this + 5) = v5; /*0x52ad35*/
-    v6 = *((unsigned int *)this + 2); /*0x52ad38*/
+    v5 = this->u32_8; /*0x52ad2f*/
+    this->u32_18 = (unsigned int)(this + 1); /*0x52ad32 G42.34 T11: ptr-to-int store*/
+    this->u32_14 = v5; /*0x52ad35*/
+    v6 = this->u32_8; /*0x52ad38*/
     if ( v6 ) /*0x52ad3d*/
       *(unsigned int *)(v6 + 8) = (unsigned int)v2; /*0x52ad3f G42.34 T11: ptr-to-int store*/
-    *((unsigned int *)this + 2) = (unsigned int)v2; /*0x52ad42 G42.34 T11: ptr-to-int store*/
+    this->u32_8 = (unsigned int)v2; /*0x52ad42 G42.34 T11: ptr-to-int store*/
     return result; /*0x52ad45*/
 }
 } // namespace gamemd

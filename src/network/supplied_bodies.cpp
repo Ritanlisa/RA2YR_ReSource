@@ -59,7 +59,7 @@ int16_t NetworkID::Assign(unsigned int *a2, int a3, int16_t a4)
 // 0x53EF30
 namespace gamemd {
 int NetworkID::Compare(int a2) {
-    return memcmp(this + 4, (const void *)(a2 + 4), dword_828140 != 2 ? 6 : 4) == 0;
+    return memcmp(&this->q004, (const void *)(a2 + 4), dword_828140 != 2 ? 6 : 4) == 0;
 }
 } // namespace gamemd
 

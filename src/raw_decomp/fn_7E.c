@@ -218,6 +218,7 @@ void nullsub_272()
 }
 
 
+
 // ==== 0x007E0001  sub_7E0001  this=-  sig=csp ====
 void __cdecl __spoils<ecx> sub_7E0001(int *a1, _DWORD *a2, int a3, int a4, int a5)
 {
@@ -238,10 +239,10 @@ void __cdecl __spoils<ecx> sub_7E0001(int *a1, _DWORD *a2, int a3, int a4, int a
       v8 = *a1; /*0x7e0040*/
       a1 = (int *)((char *)a1 + 2); /*0x7e0042*/
       v9 = __ROR4__(v8, 8); /*0x7e004f*/
-      LOBYTE(v9) = MEMORY[0xA8F91C][(unsigned __int16)v8]; /*0x7e0052*/
+      LOBYTE(v9) = byte_A8F91C[(unsigned __int16)v8]; /*0x7e0052*/
       BYTE1(v9) = BYTE1(v8); /*0x7e0058*/
       v10 = __ROR4__(v9, 8); /*0x7e005f*/
-      BYTE1(v10) = MEMORY[0xA8F91C][(v8 & 0xFFFF00u) >> 8]; /*0x7e0065*/
+      BYTE1(v10) = byte_A8F91C[(v8 & 0xFFFF00u) >> 8]; /*0x7e0065*/
       *v7++ = __ROR4__(v10, 16); /*0x7e006e*/
       --v6; /*0x7e0073*/
     }
@@ -250,7 +251,7 @@ void __cdecl __spoils<ecx> sub_7E0001(int *a1, _DWORD *a2, int a3, int a4, int a
     *(_BYTE *)v7 = *(_WORD *)a1; /*0x7e007b*/
     v12 = (char *)v7 + 1; /*0x7e007d*/
     a1 = (int *)((char *)a1 + 2); /*0x7e007e*/
-    *v12++ = MEMORY[0xA8F91C][v11]; /*0x7e0087*/
+    *v12++ = byte_A8F91C[v11]; /*0x7e0087*/
     *v12 = HIBYTE(v11); /*0x7e008a*/
     v12[1] = 0; /*0x7e008d*/
     a2 = (_DWORD *)((char *)a2 + a5); /*0x7e0093*/
@@ -258,6 +259,7 @@ void __cdecl __spoils<ecx> sub_7E0001(int *a1, _DWORD *a2, int a3, int a4, int a
   }
   while ( a3 ); /*0x7e0099*/
 }
+
 
 
 // ==== 0x007E00A6  sub_7E00A6  this=-  sig=csp ====
@@ -285,10 +287,10 @@ void __cdecl __spoils<ecx> sub_7E00A6(int *a1, char *a2, int a3, unsigned int a4
       v8 = *a1; /*0x7e00e0*/
       a1 = (int *)((char *)a1 + 2); /*0x7e00e2*/
       v9 = __ROR4__(v8, 8); /*0x7e00ef*/
-      LOBYTE(v9) = MEMORY[0xA8F91C][(unsigned __int16)v8]; /*0x7e00f2*/
+      LOBYTE(v9) = byte_A8F91C[(unsigned __int16)v8]; /*0x7e00f2*/
       BYTE1(v9) = BYTE1(v8); /*0x7e00f8*/
       v10 = __ROR4__(v9, 8); /*0x7e00ff*/
-      BYTE1(v10) = MEMORY[0xA8F91C][(v8 & 0xFFFF00u) >> 8]; /*0x7e0105*/
+      BYTE1(v10) = byte_A8F91C[(v8 & 0xFFFF00u) >> 8]; /*0x7e0105*/
       v11 = __ROR4__(v10, 16); /*0x7e010b*/
       *v7 = v11; /*0x7e010e*/
       *v6 = v11; /*0x7e0110*/
@@ -302,7 +304,7 @@ void __cdecl __spoils<ecx> sub_7E00A6(int *a1, char *a2, int a3, unsigned int a4
     *(_BYTE *)v6 = v12; /*0x7e0124*/
     v13 = (char *)v7 + 1; /*0x7e0126*/
     v14 = (char *)v6 + 1; /*0x7e0127*/
-    LOBYTE(v12) = MEMORY[0xA8F91C][v12]; /*0x7e012b*/
+    LOBYTE(v12) = byte_A8F91C[v12]; /*0x7e012b*/
     *v13 = v12; /*0x7e0131*/
     *v14 = v12; /*0x7e0133*/
     ++v13; /*0x7e0135*/
@@ -321,6 +323,7 @@ void __cdecl __spoils<ecx> sub_7E00A6(int *a1, char *a2, int a3, unsigned int a4
 }
 
 
+
 // ==== 0x007E0170  ObfuscateDataBlock  this=-  sig=csp ====
 void __cdecl __spoils<ecx> ObfuscateDataBlock(int *a1, _DWORD *a2, int a3)
 {
@@ -337,10 +340,10 @@ void __cdecl __spoils<ecx> ObfuscateDataBlock(int *a1, _DWORD *a2, int a3)
     v6 = *a1; /*0x7e0182*/
     a1 = (int *)((char *)a1 + 2); /*0x7e0184*/
     v7 = __ROR4__(v6, 8); /*0x7e0191*/
-    LOBYTE(v7) = MEMORY[0xA8F91C][(unsigned __int16)v6]; /*0x7e0194*/
+    LOBYTE(v7) = byte_A8F91C[(unsigned __int16)v6]; /*0x7e0194*/
     BYTE1(v7) = BYTE1(v6); /*0x7e019a*/
     v8 = __ROR4__(v7, 8); /*0x7e01a1*/
-    BYTE1(v8) = MEMORY[0xA8F91C][(v6 & 0xFFFF00u) >> 8]; /*0x7e01a7*/
+    BYTE1(v8) = byte_A8F91C[(v6 & 0xFFFF00u) >> 8]; /*0x7e01a7*/
     *a2++ = __ROR4__(v8, 16); /*0x7e01b0*/
     --v3; /*0x7e01b5*/
   }
@@ -348,10 +351,11 @@ void __cdecl __spoils<ecx> ObfuscateDataBlock(int *a1, _DWORD *a2, int a3)
   v9 = *(_WORD *)a1; /*0x7e01ba*/
   *(_BYTE *)a2 = *(_WORD *)a1; /*0x7e01bd*/
   v10 = (char *)a2 + 1; /*0x7e01bf*/
-  *v10++ = MEMORY[0xA8F91C][v9]; /*0x7e01c6*/
+  *v10++ = byte_A8F91C[v9]; /*0x7e01c6*/
   *v10 = HIBYTE(v9); /*0x7e01c9*/
   v10[1] = 0; /*0x7e01cc*/
 }
+
 
 
 // ==== 0x007E01D2  sub_7E01D2  this=-  sig=csp ====
@@ -368,11 +372,12 @@ void __cdecl __spoils<ecx> sub_7E01D2(_BYTE *a1, _BYTE *a2, _BYTE *a3, int a4)
     BYTE1(v7) = *a2; /*0x7e01e8*/
     ++a1; /*0x7e01ea*/
     ++a2; /*0x7e01eb*/
-    *a3++ = MEMORY[0xA8F91C][v7]; /*0x7e01f2*/
+    *a3++ = byte_A8F91C[v7]; /*0x7e01f2*/
     --v8; /*0x7e01f5*/
   }
   while ( v8 ); /*0x7e01f6*/
 }
+
 
 
 // ==== 0x007E01FB  sub_7E01FB  this=-  sig=csp ====
@@ -412,4 +417,5 @@ void __cdecl sub_7E01FB(int *a1, char *a2, int a3, unsigned int a4, unsigned int
   ObfuscateDataBlock(v11, v7, a4); /*0x7e02b5*/
   qmemcpy(a2, v7, 4 * v8); /*0x7e02c6*/
 }
+
 

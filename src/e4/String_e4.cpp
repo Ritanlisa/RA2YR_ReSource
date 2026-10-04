@@ -65,10 +65,10 @@ int String::Release()
 
   int result; // eax
 
-  result = *((unsigned int *)this + 3); /*0x5bd5a3*/
+  result = this->u32_C; /*0x5bd5a3*/
   if ( result ) /*0x5bd5a8*/
     __3_YAXPAX_Z(*((void **)this + 3)); /*0x5bd5ab*/
-  *((unsigned int *)this + 3) = 0; /*0x5bd5b3*/
+  this->u32_C = 0; /*0x5bd5b3*/
   return result; /*0x5bd5ba*/
 
 }

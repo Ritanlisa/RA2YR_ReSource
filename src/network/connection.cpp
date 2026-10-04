@@ -85,7 +85,7 @@ int IPXManagerClass::Init(int a2, int a3, int a4, int a5, int a6, int a7)
 // 0x48ba90
 int IPXManagerClass::init()
 {
-  return *((unsigned int *)this + 8); /*0x48ba93*/
+  return this->u32_20; /*0x48ba93*/
 }
 // 0x5409f0
 int IPXManagerClass::processPacket()

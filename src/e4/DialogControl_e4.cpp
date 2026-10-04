@@ -14,8 +14,8 @@ int DialogControl::Hide()
   int v1; // eax
 
   v1 = *(unsigned int *)this->__pad_0; /*0x4e1450*/
-  *((unsigned char *)this + 30) = 0; /*0x4e1452*/
-  *((unsigned char *)this + 28) = 1; /*0x4e1456*/
+  this->u32_1E = 0; /*0x4e1452*/
+  this->u32_1C = 1; /*0x4e1456*/
   return (*(int (**)(void))(v1 + 84))();
 
 }
@@ -32,7 +32,7 @@ namespace gamemd {
 int DialogControl::IsHidden()
 {
 
-  return *((unsigned char *)this + 30) == 0; /*0x4e147a*/
+  return this->u32_1E == 0; /*0x4e147a*/
 
 }
 } // namespace gamemd

@@ -795,11 +795,9 @@ int InfantryClass::GetActionOnObject_EMP(AbstractClass* object, int flags)
 }
 
 // 0x4dded0
-namespace gamemd {
 int FootClass::GetActionOnObject()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004DDED0.json)
-}
 }
 // 0x51FAF0
 namespace gamemd {

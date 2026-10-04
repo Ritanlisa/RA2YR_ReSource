@@ -399,7 +399,7 @@ int E4Recv_5A1C70::sub_5A1C70()
     if ( v4 ) /*0x5a1cc5*/
     {
       TileNode::Cleanup(*(TileNode **)(g_MissionQueueFrame.briefing[339] + 4 * i)); /*0x5a1cc9*/
-      __3_YAXPAX_Z(v4); /*0x5a1ccf*/
+      delete v4; /*0x5a1ccf*/
     }
   }
   g_MissionQueueFrame.localVariables[164] = 0; /*0x5a1ce5*/
@@ -426,13 +426,13 @@ int E4Recv_5A1C70::sub_5A1C70()
   for ( j = 0; j < g_MissionQueueFrame.briefing[342]; ++j ) /*0x5a1d5a*/
   {
     v9 = *(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * j); /*0x5a1d67*/
-    if ( *(unsigned char *)(v9 + 20) ) /*0x5a1d6a*/
+    if ( v9->q014 ) /*0x5a1d6a*/
     {
       v10 = v17->ambientSoundController[0]; /*0x5a1d75*/
       v11 = v10 == 3 || v10 == 4; /*0x5a1d86*/
       RandomMap::CollectTerrainCells( /*0x5a1da3*/
         *(RandomMap **)(g_MissionQueueFrame.briefing[339] + 4 * j),
-        (*(unsigned int *)(v9 + 12) > 8000) + !v11 + 4);
+        (v9->q00C > 8000) + !v11 + 4);
       ((RandomMap*)(RandomMap *)v9)->PlaceRandomMapTerrain(); /*0x5a1daa*/
     }
   }
@@ -445,13 +445,13 @@ int E4Recv_5A1C70::sub_5A1C70()
     {
       result = v13 + g_MissionQueueFrame.localVariables[163]; /*0x5a1dd0*/
       if ( *(unsigned int *)(v13 + g_MissionQueueFrame.localVariables[163] + 56) == -1 /*0x5a1de2*/
-        && (*(unsigned short *)result || *(unsigned short *)(result + 2)) )
+        && (*(unsigned short *)result || result->u16_2) )
       {
         v15 = (RandomMap *)/*0x5a1def*/
                              ((CellCoord*)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(/*0x5a1def*/ (int16_t *)(v13 + g_MissionQueueFrame.localVariables[163]));
         result = (int)((RandomMap*)v15)->GenerateTerrain(); /*0x5a1df6*/
         if ( result ) /*0x5a1dfd*/
-          *(unsigned char *)(result + 26) = 0; /*0x5a1dff*/
+          result->u8_1A = 0; /*0x5a1dff*/
       }
       v13 += 80; /*0x5a1e03*/
       --v14; /*0x5a1e06*/
@@ -809,7 +809,6 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   return v42; /*0x5a4aca*/
 }
 }
-// 0x5A4B60
 namespace gamemd {
 void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5)
 {
@@ -4623,7 +4622,6 @@ unsigned int * globalHelper_0A7640(unsigned int *a0, int aP1)
 }
 } // namespace gamemd
 
-// 0x5A9920
 namespace gamemd {
 ObjectClass * E4Recv_5A9920::sub_5A9920(unsigned int * a1, ObjectClass * aP2)
 {
@@ -4683,7 +4681,7 @@ Concurrency::details::_ReaderWriterLock * E4Recv_5A9BF0::__0_ReaderWriterLock_de
 {
 
   *(unsigned int *)this = 0; /*0x5a9bf2*/
-  *((unsigned int *)this + 1) = 0; /*0x5a9bf8*/
+  this->vtable2 = 0; /*0x5a9bf8*/
   return this; /*0x5a9bff*/
 
 }
@@ -5293,18 +5291,18 @@ void E4Recv_5AF000::sub_5AF000(ObjectClass * aP1, ObjectClass * aP2)
   double v7; // st7
   double v8; // st6
 
-  v3 = *((unsigned int *)this + 1); /*0x5af000*/
-  v4 = *((unsigned int *)this + 2); /*0x5af003*/
-  *((unsigned int *)this + 1) = v4 * aP1 + v3 * aP2; /*0x5af014*/
-  *((unsigned int *)this + 2) = v4 * aP2 - v3 * aP1; /*0x5af023*/
-  v5 = *((unsigned int *)this + 5); /*0x5af026*/
-  v6 = *((unsigned int *)this + 6); /*0x5af029*/
-  *((unsigned int *)this + 5) = v6 * aP1 + v5 * aP2; /*0x5af03a*/
-  *((unsigned int *)this + 6) = v6 * aP2 - v5 * aP1; /*0x5af049*/
-  v7 = *((unsigned int *)this + 9); /*0x5af04c*/
-  v8 = *((unsigned int *)this + 10); /*0x5af04f*/
-  *((unsigned int *)this + 9) = v8 * aP1 + v7 * aP2; /*0x5af060*/
-  *((unsigned int *)this + 10) = v8 * aP2 - v7 * aP1; /*0x5af06f*/
+  v3 = this->vtable2; /*0x5af000*/
+  v4 = this->vtable3; /*0x5af003*/
+  this->vtable2 = v4 * aP1 + v3 * aP2; /*0x5af014*/
+  this->vtable3 = v4 * aP2 - v3 * aP1; /*0x5af023*/
+  v5 = this->abstractFlags; /*0x5af026*/
+  v6 = this->nextArrayIndex; /*0x5af029*/
+  this->abstractFlags = v6 * aP1 + v5 * aP2; /*0x5af03a*/
+  this->nextArrayIndex = v6 * aP2 - v5 * aP1; /*0x5af049*/
+  v7 = this->objectTypeFlags; /*0x5af04c*/
+  v8 = this->owningHouseIndex; /*0x5af04f*/
+  this->objectTypeFlags = v8 * aP1 + v7 * aP2; /*0x5af060*/
+  this->owningHouseIndex = v8 * aP2 - v7 * aP1; /*0x5af06f*/
 
 }
 } // namespace gamemd
@@ -5322,17 +5320,17 @@ void E4Recv_5AF120::sub_5AF120(float a2, float a3)
   double v8; // st6
 
   v3 = *this; /*0x5af120*/
-  v4 = *((unsigned int *)this + 2); /*0x5af122*/
+  v4 = this->vtable3; /*0x5af122*/
   *this = v3 * a3 - v4 * a2; /*0x5af133*/
-  *((unsigned int *)this + 2) = v3 * a2 + v4 * a3; /*0x5af143*/
-  v5 = *((unsigned int *)this + 4); /*0x5af146*/
-  v6 = *((unsigned int *)this + 6); /*0x5af149*/
-  *((unsigned int *)this + 4) = v5 * a3 - v6 * a2; /*0x5af15a*/
-  *((unsigned int *)this + 6) = v5 * a2 + v6 * a3; /*0x5af16b*/
-  v7 = *((unsigned int *)this + 8); /*0x5af16e*/
-  v8 = *((unsigned int *)this + 10); /*0x5af171*/
-  *((unsigned int *)this + 8) = v7 * a3 - v8 * a2; /*0x5af182*/
-  *((unsigned int *)this + 10) = v7 * a2 + v8 * a3; /*0x5af193*/
+  this->vtable3 = v3 * a2 + v4 * a3; /*0x5af143*/
+  v5 = this->uniqueId; /*0x5af146*/
+  v6 = this->nextArrayIndex; /*0x5af149*/
+  this->uniqueId = v5 * a3 - v6 * a2; /*0x5af15a*/
+  this->nextArrayIndex = v5 * a2 + v6 * a3; /*0x5af16b*/
+  v7 = this->NeedsSaveOrLink; /*0x5af16e*/
+  v8 = this->owningHouseIndex; /*0x5af171*/
+  this->NeedsSaveOrLink = v7 * a3 - v8 * a2; /*0x5af182*/
+  this->owningHouseIndex = v7 * a2 + v8 * a3; /*0x5af193*/
 
 }
 } // namespace gamemd

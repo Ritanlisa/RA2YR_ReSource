@@ -26,15 +26,15 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
 
   v4 = (gamemd::AbstractClass *)((unsigned int)(0));
   this->FoggedObject_field_0x4 = (unsigned int)(0);
-  *((unsigned int *)this + 2) = (unsigned int)(aP1); /*0x4d2dc0*/
-  *((unsigned char *)this + 12) = 1; /*0x4d2dc3*/
-  *((unsigned char *)this + 13) = 0; /*0x4d2dc7*/
+  this->u32_8 = (unsigned int)(aP1); /*0x4d2dc0*/
+  this->u32_C = 1; /*0x4d2dc3*/
+  this->u32_D = 0; /*0x4d2dc7*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
     return (int)(this->__pad_0); /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
   {
-    v8 = (int)(__2_YAPAXI_Z(16 * aP1)); /*0x4d2e07*/
+    v8 = (int)(new unsigned char[16 * aP1]); /*0x4d2e07*/
     if ( v8 ) /*0x4d2e11*/
     {
       if ( aP1 - 1 >= 0 ) /*0x4d2e18*/
@@ -55,7 +55,7 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
       v4 = (AbstractClass *)v8; /*0x4d2e2f*/
     }
     this->FoggedObject_field_0x4 = (unsigned char)(v4);
-    *((unsigned char *)this + 13) = 1; /*0x4d2e34*/
+    this->u32_D = 1; /*0x4d2e34*/
     return (int)(this->__pad_0); /*0x4d2e34*/
   }
   if ( aP1 - 1 >= 0 ) /*0x4d2ddf*/
@@ -67,7 +67,7 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
       *(unsigned int *)(v5 - 8) = 0; /*0x4d2de5*/
       *(unsigned int *)(v5 - 4) = 0; /*0x4d2de8*/
       *(unsigned char *)v5 = 0; /*0x4d2deb*/
-      *(unsigned int *)(v5 + 4) = 0; /*0x4d2ded*/
+      v5->u32_4 = 0; /*0x4d2ded*/
       v5 += 16; /*0x4d2df0*/
       --v6; /*0x4d2df3*/
     }

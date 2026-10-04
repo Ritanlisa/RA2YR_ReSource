@@ -25,14 +25,14 @@ int Type::CheckAmbiguity(int a2, char a3)
     v4 = *(char *)(a2 + 283); /*0x578560*/
     if ( *(unsigned char *)(a2 + 284) ) /*0x57855a*/
     {
-      if ( v3 + v5 < v4 + *((unsigned int *)this + 61) + 2 * *((unsigned int *)this + 64) + 4 ) /*0x578582*/
+      if ( v3 + v5 < v4 + this->u32_F4 + 2 * this->u32_100 + 4 ) /*0x578582*/
         ++v4; /*0x578584*/
     }
   }
-  result = *((unsigned int *)this + 61); /*0x57858b*/
-  LOBYTE(result) = v3 + v5 > v4 + result + 2 * *((unsigned int *)this + 64) /*0x5785e9*/
-                && v3 + v5 <= v4 + result + 2 * (*((unsigned int *)this + 64) + *((unsigned int *)this + 66)) + 2
-                && (v7 = *((unsigned int *)this + 63), v5 - v3 < 2 * (v7 + *((unsigned int *)this + 65)) - result)
+  result = this->u32_F4; /*0x57858b*/
+  LOBYTE(result) = v3 + v5 > v4 + result + 2 * this->u32_100 /*0x5785e9*/
+                && v3 + v5 <= v4 + result + 2 * (this->u32_100 + this->u32_108) + 2
+                && (v7 = this->u32_FC, v5 - v3 < 2 * (v7 + this->u32_104) - result)
                 && (result -= 2 * v7, v3 - v5 < result);
   return result; /*0x5785dd*/
 

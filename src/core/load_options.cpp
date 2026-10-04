@@ -428,7 +428,6 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
 #include "core/load_options.hpp"
 #include "e4/e4_globals_decls.hpp"
 
-namespace gamemd {
 
 // --- LoadOptions ---
 
@@ -457,4 +456,3 @@ FileEntryClass** LoadOptions::GetEntries() { return entries; }
 uint32_t LoadOptions::GetCapacity() const { return capacity; }
 uint32_t LoadOptions::GetMaxEntries() const { return max_entries; }
 
-} // namespace gamemd

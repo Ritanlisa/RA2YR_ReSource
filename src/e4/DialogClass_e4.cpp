@@ -15,7 +15,7 @@ namespace gamemd {
 int DialogClass::GetFlag(void *a1)
 {
 
-  return *((unsigned char *)this + 52); /*0x5d6353*/
+  return this->q034; /*0x5d6353*/
 
 }
 }

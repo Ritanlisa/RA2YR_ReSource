@@ -278,11 +278,8 @@ void sub_612930()
   unsigned int v0; // eax
   unsigned int i; // edi
   unsigned int *v2; // esi
-  void *v3; // eax
   unsigned int v4; // ecx
   int *v5; // ebx
-  int v6; // esi
-  int *v7; // edi
   int v8; // ebp
   int v9; // esi
   int v10; // edx
@@ -295,9 +292,9 @@ void sub_612930()
     v2 = (unsigned int *)*((unsigned int *)stru_AC1858 + i); /*0x612944*/
     while ( v2 ) /*0x612949*/
     {
-      v3 = v2; /*0x61294b*/
+      v2 = v2; /*0x61294b*/
       v2 = (unsigned int *)v2[3]; /*0x61294d*/
-      RA2_OPDEL(v3); /*0x612951*/
+      RA2_OPDEL(v2); /*0x612951*/
     }
     *((unsigned int *)stru_AC1858 + i++) = 0; /*0x612964*/
   }
@@ -310,23 +307,23 @@ void sub_612930()
       if ( byte_AC186C || v0 <= v4 ) /*0x61299d*/
         break; /*0x61299d*/
       v5 = (int *)stru_AC1858; /*0x6129a9*/
-      v6 = v0; /*0x6129af*/
+      v0 = v0; /*0x6129af*/
       dword_AC1860 = v0 >> 1; /*0x6129b4*/
       --dword_AC1864; /*0x6129c0*/
       stru_AC1858 = (unsigned char)(RA2_OPNEW(4 * (v0 >> 1))); /*0x6129d9*/
       memset((void *)(stru_AC1858), 0, 4 * dword_AC1860); /*0x6129e1*/
-      if ( v6 > 0 ) /*0x6129e3*/
+      if ( v0 > 0 ) /*0x6129e3*/
       {
-        v7 = v5; /*0x6129e5*/
-        v8 = v6; /*0x6129e7*/
+        v5 = v5; /*0x6129e5*/
+        v8 = v0; /*0x6129e7*/
         do /*0x612a22*/
         {
-          v9 = *v7; /*0x6129e9*/
-          if ( *v7 ) /*0x6129e9*/
+          v9 = *v5; /*0x6129e9*/
+          if ( *v5 ) /*0x6129e9*/
           {
             do /*0x612a1c*/
             {
-              v10 = ((unsigned int (__cdecl *)(unsigned int))dword_AC1870)(v9) & ((1 << dword_AC1864) - 1); /*0x612a05*/
+              v10 = dword_AC1870(v9) & ((1 << dword_AC1864) - 1); /*0x612a05*/
               v11 = *((unsigned int *)stru_AC1858 + v10); /*0x612a0c*/
               *((unsigned int *)stru_AC1858 + v10) = v9; /*0x612a0f*/
               v12 = *(unsigned int *)(v9 + 12); /*0x612a12*/
@@ -335,7 +332,7 @@ void sub_612930()
             }
             while ( v12 ); /*0x612a1c*/
           }
-          ++v7; /*0x612a1e*/
+          ++v5; /*0x612a1e*/
           --v8; /*0x612a21*/
         }
         while ( v8 ); /*0x612a22*/
@@ -407,10 +404,8 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   return (gamemd::AbstractClass **)(GetStockObject(5)); /*0x612b47*/
 }
 }
-// 0x61D6D0
 namespace gamemd {
 AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
-{
   HWND v4; // ebp
   AbstractClass ** result;
   unsigned int *v6; // esi
@@ -523,7 +518,6 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
 }
 }
 // 0x61ECA0
-namespace gamemd {
 AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
   UINT v4; // edi
@@ -658,9 +652,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
 }
 // 0x61EF70
 namespace gamemd {
-int FormatHotkeyDisplayString(__int16 a1, wchar_t *a2)
 {
-  int result; // eax
   void * v3;
   UINT v4; // eax
   UINT v5; // eax
@@ -1124,9 +1116,9 @@ unsigned int * E4Recv_6107E0::sub_6107E0()
   ((unsigned int *)this)[0] = 0; /*0x6107ec*/
   ((unsigned int *)this)[0] = 0; /*0x6107ef*/
   LOWORD(((unsigned int *)this)[0]) = 0; /*0x6107f2*/
-  *((unsigned int *)this + 69) = 0; /*0x6107f6*/
-  *((unsigned int *)this + 70) = 0; /*0x6107fc*/
-  *((unsigned int *)this + 71) = 0; /*0x610802*/
+  this->u8_45 = 0; /*0x6107f6*/
+  this->u32_46 = 0; /*0x6107fc*/
+  this->u32_47 = 0; /*0x610802*/
   return (unsigned int *)this; /*0x610808*/
 
 }

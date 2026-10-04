@@ -61,7 +61,7 @@ namespace gamemd {
 int Dialog::GetModeNeg2()
 {
 
-  return *((unsigned char *)this + 63) != 0 ? 0 : -2;
+  return this->u32_FC != 0 ? 0 : -2;
 
 }
 }
@@ -70,7 +70,7 @@ namespace gamemd {
 int Dialog::GetMode3()
 {
 
-  return *((unsigned char *)this + 60) != 0 ? 3 : -2;
+  return this->q03C != 0 ? 3 : -2;
 
 }
 }

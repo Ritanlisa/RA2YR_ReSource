@@ -3,600 +3,359 @@
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
 // ==== BACKFILL 0x00730400  LoadingScreen::FreeResources  cls=LoadingScreen  sig=csp  renamed_refs=0  residual=- ====
-int LoadingScreen::FreeResources()
+char LoadingScreen::FreeResources(void *a1)
 {
-{
-    int result;
-    if ( DataGlobal_B0FC04 )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0FC04);
-    DataGlobal_B0FC04 = 0;
-  }
-    HashTree::MarkEntry(DataGlobal_844C08);
-    if ( DataGlobal_B0FC08 )
-  {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FC08)(DataGlobal_B0FC08, 1);
-    DataGlobal_B0FC08 = 0;
-  }
-    if ( DataGlobal_B0FBFC )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0FBFC);
-    DataGlobal_B0FBFC = 0;
-  }
-    HashTree::MarkEntry(DataGlobal_844C04);
-    if ( DataGlobal_B0FC00 )
-  {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FC00)(DataGlobal_B0FC00, 1);
-    DataGlobal_B0FC00 = 0;
-  }
-    if ( DataGlobal_B0FBF4 )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0FBF4);
-    DataGlobal_B0FBF4 = 0;
-  }
-    HashTree::MarkEntry(DataGlobal_844C00);
-    if ( DataGlobal_B0FBF8 )
-  {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBF8)(DataGlobal_B0FBF8, 1);
-    DataGlobal_B0FBF8 = 0;
-  }
-    if ( DataGlobal_B0FBE4 )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0FBE4);
-    DataGlobal_B0FBE4 = 0;
-  }
-    HashTree::MarkEntry(DataGlobal_844BF0);
-    if ( DataGlobal_B0FBE8 )
-  {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FBE8)(DataGlobal_B0FBE8, 1);
-    DataGlobal_B0FBE8 = 0;
-  }
-    if ( DataGlobal_B0FBEC )
-  {
-    __3_YAXPAX_Z(DataGlobal_B0FBEC);
-    DataGlobal_B0FBEC = 0;
-  }
-    result = HashTree::MarkEntry(DataGlobal_844BF4);
-    if ( DataGlobal_B0FBF0 )
-  {
-    result = (**(int (__thiscall ***)(int, int))DataGlobal_B0FBF0)(DataGlobal_B0FBF0, 1);
-    DataGlobal_B0FBF0 = 0;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x730400)
 }
 
 // ==== BACKFILL 0x00730970  WinMainSetup_Setup_730970  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_730970()
 {
-{
-    int result;
-    if ( g_UnitTooltipState )
-  {
-    result = (**(int (__thiscall ***)(int, int))g_UnitTooltipState)(g_UnitTooltipState, 1);
-    g_UnitTooltipState = 0;
-  }
-    return result;
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x730970)
 }
+
+// ==== BACKFILL 0x00730A10  SidebarCountAvailableUnits  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int Gap2Recv_730A10::SidebarCountAvailableUnits() {
+
+  int v1; // ebx
+  int v2; // ebp
+  int v3; // edi
+  int v4; // esi
+  int v5; // ecx
+  char IsHumanPlayer; // al
+
+  v1 = dword_A8EC88; /*0x730a12*/
+  v2 = 0; /*0x730a1a*/
+  v3 = 0; /*0x730a1c*/
+  if ( dword_A8EC88 <= 0 ) /*0x730a24*/
+    return 0; /*0x730a7a*/
+  do /*0x730a70*/
+  {
+    v4 = *((unsigned int *)dword_A8EC7C + v3); /*0x730a2c*/
+    if ( v4 && !*(unsigned char *)(v4 + 129) ) /*0x730a33*/
+    {
+      v5 = *(unsigned int *)(v4 + 540); /*0x730a42*/
+      if ( dword_A8B238[0] ) /*0x730a4a*/
+        IsHumanPlayer = House::IsHumanPlayer((void *)v5); /*0x730a54*/
+      else
+        IsHumanPlayer = *(unsigned char *)(v5 + 493); /*0x730a4c*/
+      if ( IsHumanPlayer ) /*0x730a5b*/
+      {
+        if ( *(char **)(v4 + 532) == this - 1 ) /*0x730a6a*/
+          ++v2; /*0x730a6c*/
+      }
+    }
+    ++v3; /*0x730a6d*/
+  }
+  while ( v3 < v1 ); /*0x730a70*/
+  return v2; /*0x730a75*/
+
+}
+
+// ==== BACKFILL 0x007310D0  SidebarClearReferences  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+void Gap2Recv_7310D0::SidebarClearReferences() {
+
+  int v1; // ebx
+  int i; // edi
+  int v4; // esi
+  int v5; // ecx
+  char IsHumanPlayer; // al
+
+  v1 = dword_A8EC88; /*0x7310d1*/
+  for ( i = 0; i < v1; ++i ) /*0x7310df*/
+  {
+    v4 = *((unsigned int *)dword_A8EC7C + i); /*0x7310e7*/
+    if ( v4 ) /*0x7310ec*/
+    {
+      v5 = *(unsigned int *)(v4 + 540); /*0x7310f3*/
+      if ( dword_A8B238[0] ) /*0x7310fb*/
+        IsHumanPlayer = House::IsHumanPlayer((void *)v5); /*0x731105*/
+      else
+        IsHumanPlayer = *(unsigned char *)(v5 + 493); /*0x7310fd*/
+      if ( IsHumanPlayer ) /*0x73110c*/
+      {
+        if ( *(char **)(v4 + 532) == this - 1 ) /*0x731119*/
+          *(unsigned int *)(v4 + 532) = -1; /*0x73111b*/
+      }
+    }
+  }
+
 }
 
 // ==== BACKFILL 0x007313A0  TacticalClass::ResetView  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int TacticalClass::ResetView() {
-{
-      int i;
-      int v3;
-      char IsHumanPlayer;
-      int result;
-
-      TacticalClass::SetObserverMode(&DataGlobal_87F7E8, 0);
-      TacticalClass::SetDisplayMode(&DataGlobal_87F7E8, 0, 0);
-      BuildingClass::TogglePower2(&DataGlobal_87F7E8, 0);
-      BuildingClass::TogglePower(&DataGlobal_87F7E8, 0);
-      MapClass::ToggleZoom((int *)&DataGlobal_87F7E8, 0);
-      if ( g_SelectionManager
-        && (!*(_DWORD *)g_ObjectClass_CurrentCount
-         || (*(_BYTE *)(*(_DWORD *)g_ObjectClass_CurrentCount + 20) & 4) == 0
-         || *(char **)(*(_DWORD *)g_ObjectClass_CurrentCount + 532) != this - 1) )
-      {
-        SuperWeaponClass::UpdateAll();
-      }
-      for ( i = 0; i < g_SidebarState; ++i )
-      {
-        v3 = *((_DWORD *)g_TechnoClass_Count + i);
-        if ( v3 && !*(_BYTE *)(v3 + 129) && *(char **)(v3 + 532) == this - 1 )
-        {
-          if ( g_GameMode_Current[0] )
-            IsHumanPlayer = House::IsHumanPlayer(*(#375 **)(v3 + 540));
-          else
-            IsHumanPlayer = *(_BYTE *)(*(_DWORD *)(v3 + 540) + 493);
-          if ( IsHumanPlayer && !*(_BYTE *)(v3 + 131) )
-          {
-            (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 332))(v3);
-            g_MoveFeedback = 0;
-          }
-        }
-      }
-      TacticalClass::InterpolateView();
-      result = MapClass::MarkForRedraw(&DataGlobal_87F7E8, 1);
-      g_MoveFeedback = 1;
-      return result;
+int TacticalClass::ResetView() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x7313A0.json */
 }
-} }
 
 // ==== BACKFILL 0x00731CB0  Map_Handle_731CB0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_731CB0()
 {
-return 71;
+  return 71; /*0x731cb5*/
 }
 
 // ==== BACKFILL 0x00731CC0  Map_Handle_731CC0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_731CC0()
 {
-return 22;
+  return 22; /*0x731cc5*/
 }
 
 // ==== BACKFILL 0x00731D00  Selection::SetCurrent  cls=Selection  sig=csp  renamed_refs=0  residual=- ====
-void Selection::SetCurrent()
+int Selection::SetCurrent()
 {
-{
-    DataGlobal_B0FE54 = (int)this;
-    DataGlobal_B0FE58 = 0;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731D00)
 }
 
 // ==== BACKFILL 0x00731D90  FillUnitTooltipUI  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
 {
-{
-    wchar_t *v2;
-    const wchar_t *v3;
-    wchar_t *v4;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    wchar_t *StringCSF;
-    wchar_t *v12;
-    CampaignScore *v13;
-    CampaignScore Destinationa[5];
-    v2 = Destination;
-    if ( *(int *)(*(int *)&DataGlobal_B05488[43492] + 16) && Source )
-  {
-    wcscpy((wchar_t *)Destinationa, Source);
-    _wcsupr(Destinationa);
-    v3 = *(const wchar_t **)&HouseClass_Player[44924];
-    if ( *(int *)&HouseClass_Player[44924] )
-    {
-    v6 = 0;
-    v7 = 0;
-    if ( *(int *)&HouseClass_Player[44924] > 0 )
-      {
-    do
-        {
-    v8 = *(int *)(*(int *)&HouseClass_Player[44912] + 4 * v7);
-    if ( v8 )
-          {
-    if ( (*(char *)(v8 + 20) & 1) != 0 )
-            {
-    v9 = *(int *)(v8 + 540);
-    v10 = (*(int (__thiscall **)(int))(*(int *)(v8) + 136))(v8);
-    v6 += (*(int (__thiscall **)(int, int))(*(int *)(v10) + 132))(v10, v9);
-    v2 = Destination;
-            }
-          }
-    ++v7;
-        }
-    while ( v7 < (int)v3 );
-      }
-    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620[85964], 0, &DataGlobal_830620[85880], 1052);
-    return (wchar_t *)swprintf(v2, (const size_t)StringCSF, v3, Destinationa);
-    }
-    else
-    {
-    v4 = GetStringCSF((wchar_t *)&DataGlobal_830620[85980], 0, &DataGlobal_830620[85880], 1032);
-    return (wchar_t *)swprintf(v2, (const size_t)v4, (const wchar_t *const)Destinationa, v13);
-    }
-  }
-    else
-  {
-    v12 = GetStringCSF((wchar_t *)&DataGlobal_830620[85948], 0, &DataGlobal_830620[85880], 1022);
-    return wcscpy(v2, v12);
-  }
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731D90)
 }
 
 // ==== BACKFILL 0x00732210  SelectFactionThemeMusic_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_732210(int a1, const char * a2)
 {
-{
-    int v2;
-    int v3;
-    const char **i;
-    v2 = *(int *)(a1 + 16);
-    v3 = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = *(const char ***)(a1 + 4); strcmp(a2, *i); ++i )
+  int v2; // eax
+  int v3; // edi
+  const char **i; // ebp
+
+  v2 = *(unsigned int *)(a1 + 16); /*0x732211*/
+  v3 = 0; /*0x732218*/
+  if ( v2 <= 0 ) /*0x732220*/
+    return -1; /*0x732261*/
+  for ( i = *(const char ***)(a1 + 4); strcmp(a2, *i); ++i ) /*0x732222*/
   {
-    if ( ++v3 >= v2 )
-    return -1;
+    if ( ++v3 >= v2 ) /*0x73225f*/
+      return -1; /*0x73225f*/
   }
-    return v3;
-}
+  return v3; /*0x732261*/
 }
 
 // ==== BACKFILL 0x007325C0  sub_7325C0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL E4Recv_7325C0::sub_7325C0()
 {
-{
-    return this->Vf44() != 6 && *(char *)(this->Vf132() + 3516)
-    && this->Vf316();
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7325C0)
 }
 
 // ==== BACKFILL 0x00732600  PlayerClass::UpdateAIUnits  cls=PlayerClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int PlayerClass::UpdateAIUnits() {
-{
-      int HeightMap;
-      _DWORD *v2;
-      int v3;
-      int v4;
-      int v5;
-      int v6;
-      int v7;
-      _DWORD *v8;
-      int v9;
-      int i;
-      int v11;
-      int j;
-      int v13;
-      int v16;
+int PlayerClass::UpdateAIUnits() {
+  int HeightMap; // eax
+  EventClass *v2; // esi
+  int v3; // ebp
+  int v4; // ebx
+  int v5; // edi
+  void *EventClass_field_0x8; // ecx
+  unsigned int *EventClass_field_0x4; // edx
+  EventClass *v8; // eax
+  int v9; // ebp
+  int i; // edi
+  int v11; // ebp
+  int j; // edi
+  int v13; // ecx
+  int v16; // [esp+14h] [ebp-4h] BYREF
 
-      if ( DataGlobal_B0FE64 )
+  if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x732613*/
+  {
+    HeightMap = RA2_OPNEW(0x18u); /*0x732619*/
+    v2 = (EventClass *)HeightMap; /*0x73261e*/
+    v3 = 0; /*0x732620*/
+    if ( HeightMap ) /*0x732627*/
+    {
+      IDA_LOBYTE(HeightMap) = (uint8_t)EventClass::resetEvent((EventClass *)HeightMap, 0, 0); /*0x73262d*/
+      v2->EventClass_field_0x0 = (int)(void *)&DynamicVectorClass_TechnoClass___vftable; /*0x732632*/
+      *(unsigned int *)&v2->__pad_10[4] = 10; /*0x732638*/
+      *(unsigned int *)v2->__pad_10 = 0; /*0x73263f*/
+    }
+    else
+    {
+      v2 = 0; /*0x732644*/
+    }
+    v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x732647*/
+    if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) > 0 ) /*0x73264f*/
+    {
+      do /*0x7326a6*/
       {
-        HeightMap = (int)__2_YAPAXI_Z(0x18u);
-        v2 = (_DWORD *)HeightMap;
-        v3 = 0;
-        if ( HeightMap )
+        v5 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v3); /*0x73265a*/
+        IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(v5, this); /*0x73265f*/
+        if ( (unsigned char)HeightMap ) /*0x732666*/
         {
-          LOBYTE(HeightMap) = (unsigned __int8)EventClass::resetEvent((_DWORD *)HeightMap, 0, 0);
-          *v2 = &vt_DynamicVectorClass_TechnoClass;
-          v2[5] = 10;
-          v2[4] = 0;
-        }
-        else
-        {
-          v2 = 0;
-        }
-        v4 = g_SidebarState;
-        if ( g_SidebarState > 0 )
-        {
-          do
+          EventClass_field_0x8 = v2->EventClass_field_0x8; /*0x732668*/
+          if ( *(unsigned int *)v2->__pad_10 < (int)EventClass_field_0x8 /*0x732692*/
+            || ((IDA_LOBYTE(HeightMap) = IDA_BYTE1(v2->EventClass_field_0xC), (unsigned char)HeightMap) || !EventClass_field_0x8)
+            && (HeightMap = *(unsigned int *)&v2->__pad_10[4], HeightMap > 0)
+            && (IDA_LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v2->EventClass_field_0x0 + 8))(
+                                      v2,
+                                      (int)EventClass_field_0x8 + HeightMap,
+                                      0),
+                (unsigned char)HeightMap) )
           {
-            v5 = *((_DWORD *)g_TechnoClass_Count + v3);
-            LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(v5, this);
-            if ( (_BYTE)HeightMap )
-            {
-              v6 = v2[2];
-              if ( v2[4] < v6
-                || ((LOBYTE(HeightMap) = *((_BYTE *)v2 + 13), (_BYTE)HeightMap) || !v6)
-                && (HeightMap = v2[5], HeightMap > 0)
-                && (LOBYTE(HeightMap) = (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*v2 + 8))(v2, v6 + HeightMap, 0),
-                    (_BYTE)HeightMap) )
-              {
-                HeightMap = v2[4];
-                v7 = v2[1];
-                v2[4] = HeightMap + 1;
-                *(_DWORD *)(v7 + 4 * HeightMap) = v5;
-              }
-            }
-            ++v3;
-          }
-          while ( v3 < v4 );
-        }
-      }
-      else
-      {
-        v8 = __2_YAPAXI_Z(0x18u);
-        v2 = v8;
-        if ( v8 )
-        {
-          EventClass::resetEvent(v8, 0, 0);
-          *v2 = &vt_DynamicVectorClass_TechnoClass;
-          v2[5] = 10;
-          v2[4] = 0;
-        }
-        else
-        {
-          v2 = 0;
-        }
-        HeightMap = GetHeightMap(g_TacticalClass_Instance);
-        v9 = HeightMap;
-        for ( i = 0; i < v9; ++i )
-        {
-          HeightMap = GetCoordDataMap(i);
-          if ( HeightMap )
-          {
-            if ( (*(_BYTE *)(HeightMap + 20) & 1) != 0 )
-            {
-              v16 = HeightMap;
-              LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(HeightMap, this);
-              if ( (_BYTE)HeightMap )
-                LOBYTE(HeightMap) = DynamicVector::AddItem(v2, &v16);
-            }
+            HeightMap = *(unsigned int *)v2->__pad_10; /*0x732694*/
+            EventClass_field_0x4 = v2->EventClass_field_0x4; /*0x732697*/
+            *(unsigned int *)v2->__pad_10 = HeightMap + 1; /*0x73269d*/
+            EventClass_field_0x4[HeightMap] = v5; /*0x7326a0*/
           }
         }
+        ++v3; /*0x7326a3*/
       }
-      v11 = v2[4];
-      for ( j = 0; j < v11; ++j )
+      while ( v3 < v4 ); /*0x7326a6*/
+    }
+  }
+  else
+  {
+    v8 = (EventClass *)RA2_OPNEW(0x18u); /*0x7326ae*/
+    v2 = v8; /*0x7326b3*/
+    if ( v8 ) /*0x7326ba*/
+    {
+      EventClass::resetEvent(v8, 0, 0); /*0x7326c2*/
+      v2->EventClass_field_0x0 = (int)(void *)&DynamicVectorClass_TechnoClass___vftable; /*0x7326c7*/
+      *(unsigned int *)&v2->__pad_10[4] = 10; /*0x7326cd*/
+      *(unsigned int *)v2->__pad_10 = 0; /*0x7326d4*/
+    }
+    else
+    {
+      v2 = 0; /*0x7326dd*/
+    }
+    HeightMap = GetHeightMap((ObjectClass *)g_TacticalClass_Instance); /*0x7326e5*/
+    v9 = HeightMap; /*0x7326ea*/
+    for ( i = 0; i < v9; ++i ) /*0x7326f0*/
+    {
+      HeightMap = GetCoordDataMap(i); /*0x7326f9*/
+      if ( HeightMap ) /*0x732700*/
       {
-        v13 = *(_DWORD *)(v2[1] + 4 * j);
-        LOBYTE(HeightMap) = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 336))(v13);
+        if ( (*(unsigned char *)(HeightMap + 20) & 1) != 0 ) /*0x73270c*/
+        {
+          v16 = HeightMap; /*0x732714*/
+          IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(HeightMap, this); /*0x732718*/
+          if ( (unsigned char)HeightMap ) /*0x73271f*/
+            IDA_LOBYTE(HeightMap) = DynamicVector::AddItem((DynamicVector *)v2, &v16); /*0x732728*/
+        }
       }
-      if ( v2 )
-        LOBYTE(HeightMap) = (*(int (__thiscall **)(_DWORD *, int))*v2)(v2, 1);
-      return HeightMap;
+    }
+  }
+  v11 = *(unsigned int *)v2->__pad_10; /*0x732732*/
+  for ( j = 0; j < v11; ++j ) /*0x732739*/
+  {
+    v13 = *((unsigned int *)v2->EventClass_field_0x4 + j); /*0x73273e*/
+    IDA_LOBYTE(HeightMap) = (*(int (**)(int))(*(unsigned int *)v13 + 336))(v13); /*0x732743*/
+  }
+  if ( v2 ) /*0x732750*/
+    IDA_LOBYTE(HeightMap) = (*(char (**)(EventClass *, int))v2->EventClass_field_0x0)(v2, 1); /*0x732758*/
+  return HeightMap; /*0x73275a*/
 }
-} }
 
 // ==== BACKFILL 0x00732C30  IDTechnoClassMatches  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char IDTechnoClassMatches(void * a1, int a2)
 {
-{
-    int v3;
-    int v4;
-    v3 = *(int *)(a2 + 16);
-    v4 = 0;
-    if ( v3 <= 0 )
-    return 0;
-    while ( !(unsigned char)ObjectClass::StepCleanup(a1, *(void **)(*(int *)(a2 + 4) + 4 * v4)) || !(*(unsigned char (__thiscall **)(void *))(*(int *)(a1) + 316))(a1) && (!a1 || (*(int (__thiscall **)(void *))(*(int *)(a1) + 44))(a1) != 6 || !*(int *)((*(int (__thiscall **)(void *))(*(int *)(a1) + 132))(a1) + 1032)) )
+  int v3; // ebp
+  int v4; // edi
+
+  v3 = *(unsigned int *)(a2 + 16); /*0x732c35*/
+  v4 = 0; /*0x732c39*/
+  if ( v3 <= 0 ) /*0x732c3f*/
+    return 0; /*0x732c8a*/
+  while ( !(uint8_t)((ObjectClass *)(a1))->StepCleanup(*(void **)(*(unsigned int *)(a2 + 4) + 4 * v4)) /*0x732c83*/
+       || !(*((uint8_t (**)(ObjectClass *))a1->vtable1 + 79))(a1)
+       && (!a1
+        || (*((int (**)(ObjectClass *))a1->vtable1 + 11))(a1) != 6
+        || !*(unsigned int *)((*((int (**)(ObjectClass *))a1->vtable1 + 33))(a1) + 1032)) )
   {
-    if ( ++v4 >= v3 )
-    return 0;
+    if ( ++v4 >= v3 ) /*0x732c88*/
+      return 0; /*0x732c88*/
   }
-    return 1;
-}
+  return 1; /*0x732c8a*/
 }
 
 // ==== BACKFILL 0x00733160  AbstractClass::processRadarEvent  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { void AbstractClass::processRadarEvent() {
-{
-      int v2;
-      int v3;
-      void **i;
-      int v5;
-      int v6;
-
-      v2 = g_UnitTooltipState;
-      if ( g_UnitTooltipState )
-      {
-        v3 = *(_DWORD *)(g_UnitTooltipState + 16) - 1;
-        if ( v3 >= 0 )
-        {
-          for ( i = (void **)(*(_DWORD *)(g_UnitTooltipState + 4) + 4 * v3); *i != this; --i )
-          {
-            if ( --v3 < 0 )
-              return;
-          }
-          v5 = *(_DWORD *)(g_UnitTooltipState + 16);
-          if ( v3 < v5 )
-          {
-            v6 = v5 - 1;
-            *(_DWORD *)(g_UnitTooltipState + 16) = v6;
-            if ( v3 < v6 )
-            {
-              do
-              {
-                ++v3;
-                *(_DWORD *)(*(_DWORD *)(v2 + 4) + 4 * v3 - 4) = *(_DWORD *)(*(_DWORD *)(v2 + 4) + 4 * v3);
-              }
-              while ( v3 < *(_DWORD *)(v2 + 16) );
-            }
-          }
-        }
-      }
+void AbstractClass::processRadarEvent() {
 }
-} } }
 
 // ==== BACKFILL 0x00733C60  Object_Helper_733C60  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-BOOL sub_733C60(int a1, const char * a2)
+bool sub_733C60(int a1, const char * a2)
 {
-{
-    const char *v4;
-    v4 = (const char *)((*(int (__thiscall **)(int))(*(int *)(a1) + 136))(a1) + 36);
-    return a2 && !strcmp(v4, a2) && (*(unsigned char (__thiscall **)(int))(*(int *)(a1) + 316))(a1);
-}
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00733C60.json)
 }
 
 // ==== BACKFILL 0x00734250  SidebarClass::registerBuildingType  cls=SidebarClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int SidebarClass::registerBuildingType() {
-{
-      int result;
-
-      result = this->q520;
-      if ( *(_DWORD *)(result + 3592) == 5 )
-        DataGlobal_B0FE60 = (int)this;
-      else
-        DataGlobal_B0FE5C = (int)this;
-      return result;
+int SidebarClass::registerBuildingType() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x734250.json */
 }
-} }
 
 // ==== BACKFILL 0x00734270  Selection::ClearGlobals  cls=Selection  sig=csp  renamed_refs=0  residual=- ====
 int Selection::ClearGlobals()
 {
-{
-    int result;
-    result = 0;
-    if ( this )
-  {
-    if ( this == (void *)DataGlobal_B0FE5C )
-    {
-    DataGlobal_B0FE5C = 0;
-    }
-    else if ( this == (void *)DataGlobal_B0FE60 )
-    {
-    DataGlobal_B0FE60 = 0;
-    }
-  }
-    else
-  {
-    DataGlobal_B0FE5C = 0;
-    DataGlobal_B0FE60 = 0;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734270)
 }
 
-// ==== BACKFILL 0x007342D0  DynamicVector::Constructor_Techno  cls=DynamicVector  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x007342D0  DynamicVector::Constructor_Techno  cls=DynamicVector  sig=csp  renamed_refs=0  residual=DynamicVector_field_0x1 ====
 unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
 {
-{
-    this->Items = 0;
-    this->q008 = a2;
-    this->IsInitialized = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_TechnoClass;
-    if ( a2 )
+
+  *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] = 0; /*0x7342d9*/
+  this->DynamicVector_field_0x8 = a2; /*0x7342e0*/
+  this->__pad_C[0] = 1; /*0x7342e3*/
+  this->__pad_C[1] = (unsigned int)(0); /*0x7342e7*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x7342eb*/
+  if ( a2 ) /*0x7342f1*/
   {
-    if ( a3 )
+    if ( a3 ) /*0x7342f9*/
     {
-    this->Items = a3;
+      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] = a3; /*0x7342fb*/
     }
     else
     {
-    this->Items = __2_YAPAXI_Z(4 * a2);
-    this->IsAllocated = 1;
+      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] =(unsigned int)__2_YAPAXI_Z(4 * a2); /*0x73430c*/
+      this->__pad_C[1] = 1; /*0x73430f*/
     }
   }
-    *(void**)this = &vt_DynamicVectorClass_TechnoClass;
-    this->CapacityIncrement = 10;
-    this->q010 = 0;
-    return this;
-}
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_DynamicVectorClass); /*0x734313*/
+  *(unsigned int *)this->__pad_14 = 10; /*0x734319*/
+  this->DynamicVector_field_0x10 = 0; /*0x734320*/
+  return this->__pad_0; /*0x734329*/
+
 }
 
 // ==== BACKFILL 0x007343E0  TacticalClass::updateScroll  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { void* TacticalClass::updateScroll(int a1, int a2) {
-{
-      this->q004 = 0;
-      this->q008 = a2;
-      this->q00C = 1;
-      this->q00D = 0;
-      *this = &vt_VectorClass_char_const;
-      if ( a2 )
-      {
-        if ( a3 )
-        {
-          this->q004 = a3;
-          return this;
-        }
-        this->q004 = __2_YAPAXI_Z(4 * a2);
-        this->q00D = 1;
-      }
-      return this;
+void* TacticalClass::updateScroll(int a2, int a3) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x7343E0.json */
 }
-} }
 
 // ==== BACKFILL 0x00734FE0  WideMessageBox  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int WideMessageBox(CampaignScore * aP0, const WCHAR * a1, LPCWCH lpWideCharStr, UINT uType)
 {
-{
-    CHAR Caption[2048];
-    CHAR MultiByteStr[5120];
-    WideCharToMultiByte(0, 0, a1, -1, MultiByteStr, 5120, 0, 0);
-    WideCharToMultiByte(0, 0, lpWideCharStr, -1, Caption, 2048, 0, 0);
-    return MessageBoxA((HWND)aP0, MultiByteStr, Caption, uType);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x734FE0)
 }
 
 // ==== BACKFILL 0x00735060  BulkCharToWide  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 unsigned char CharToWide_Bulk(unsigned short * a1, unsigned char * a2, int a3)
 {
-{
-    unsigned char result;
-    for ( result = *a2; *a2; result = *a2 )
+  uint8_t result; // al
+
+  for ( result = *a2; *a2; result = *a2 ) /*0x735060*/
   {
-    if ( !a3 )
-    break;
-    *a1++ = result;
-    ++a2;
-    if ( a3 != -1 )
-    --a3;
+    if ( !a3 ) /*0x73506d*/
+      break; /*0x73506d*/
+    *a1++ = result; /*0x735073*/
+    ++a2; /*0x735079*/
+    if ( a3 != -1 ) /*0x73507d*/
+      --a3; /*0x73507f*/
   }
-    *a1 = 0;
-    return result;
-}
+  *a1 = 0; /*0x735086*/
+  return result; /*0x73508b*/
 }
 
 // ==== BACKFILL 0x00735090  CopyWideToChar  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void WideToChar_Copy(unsigned char * a1, char * a2, int a3)
 {
-{
-    char v4;
-    while ( *(short *)a2 )
-  {
-    if ( !a3 )
-    break;
-    v4 = *a2;
-    a2 += 2;
-    *a1++ = v4;
-    if ( a3 != -1 )
-    --a3;
-  }
-    *a1 = 0;
-}
+    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x735090)
 }
 
 // ==== BACKFILL 0x007350C0  ToWideStringChar  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * ToWideStringChar(IUnknown * aP0)
 {
-{
-    char *result;
-    int v2;
-    char *v3;
-    char v4;
-    if ( !aP0 )
-    return 0;
-    result = &DataGlobal_B05488[22428][1024 * DataGlobal_B1CF90 + 21104];
-    v2 = 1024;
-    v3 = result;
-    while ( LOWORD(aP0->field_0) )
-  {
-    if ( !v2 )
-    break;
-    v4 = aP0->field_0;
-    aP0 = (IUnknown *)((char *)(aP0) + 2);
-    *v3++ = v4;
-    if ( v2 != -1 )
-    --v2;
-  }
-    *v3 = 0;
-    result[1023] = 0;
-    DataGlobal_B1CF90 = ((char)DataGlobal_B1CF90 + 1) & 7;
-    return result;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7350C0)
 }
 
 // ==== BACKFILL 0x00736C10  sub_736C10  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_736C10::sub_736C10()
 {
-{
-    int v2;
-    int v4[3];
-    if ( this->Vf388() != 5 )
-    return 0;
-    v4[0] = this->M156;
-    v4[1] = this->M160;
-    v4[2] = this->M164;
-    if ( Tactical::IsCellVisible(&DataGlobal_87F7E8, v4) || !(unsigned char)this->M981 )
-    return 0;
-    v2 = this->M1492;
-    if ( v2 )
-    *(char *)(v2 + 130) = 1;
-    this->Vf928();
-    this->Vf248();
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x736C10)
 }

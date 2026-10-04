@@ -40,15 +40,13 @@
 
 // 0x4E0A00
 namespace gamemd {
-unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
+unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a2)
 {
 
   unsigned int *v4; // eax
-  int v5; // ecx
   int *v6; // eax
   unsigned int *v7; // edx
   unsigned int *v8; // eax
-  int v9; // ecx
   void *v10; // eax
 
   this->Items = 0; /*0x4e0a0a*/
@@ -58,26 +56,26 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
   this->vtable1 = &vt_VectorClassDiscreteDistributionClassDistributionObject; /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
   {
-    if ( a3 ) /*0x4e0a2a*/
+    if ( a2 ) /*0x4e0a2a*/
     {
-      *a3 = a2; /*0x4e0a2f*/
+      *a2 = a2; /*0x4e0a2f*/
       if ( a2 - 1 >= 0 ) /*0x4e0a36*/
       {
-        v4 = a3 + 2; /*0x4e0a38*/
-        v5 = a2; /*0x4e0a3b*/
+        v4 = a2 + 2; /*0x4e0a38*/
+        a2 = a2; /*0x4e0a3b*/
         do /*0x4e0a46*/
         {
           *v4 = 0; /*0x4e0a3c*/
           v4 += 2; /*0x4e0a42*/
-          --v5; /*0x4e0a45*/
+          --a2; /*0x4e0a45*/
         }
-        while ( v5 ); /*0x4e0a46*/
+        while ( a2 ); /*0x4e0a46*/
       }
-      this->Items = a3 + 1; /*0x4e0a48*/
+      this->Items = a2 + 1; /*0x4e0a48*/
     }
     else
     {
-      v6 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x4e0a55*/
+      v6 = (int *)new unsigned char[8 * a2 + 4]; /*0x4e0a55*/
       if ( v6 ) /*0x4e0a5f*/
       {
         *v6 = (int)((unsigned int *)(a2));
@@ -85,14 +83,14 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
         if ( a2 - 1 >= 0 ) /*0x4e0a6b*/
         {
           v8 = (unsigned int *)(v6 + 2);
-          v9 = a2; /*0x4e0a70*/
+          a2 = a2; /*0x4e0a70*/
           do /*0x4e0a7b*/
           {
             *v8 = 0; /*0x4e0a71*/
             v8 += 2; /*0x4e0a77*/
-            --v9; /*0x4e0a7a*/
+            --a2; /*0x4e0a7a*/
           }
-          while ( v9 ); /*0x4e0a7b*/
+          while ( a2 ); /*0x4e0a7b*/
         }
         v10 = v7; /*0x4e0a7d*/
       }
@@ -105,8 +103,8 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
     }
   }
   this->vtable1 = &vt_DynamicVectorClassDiscreteDistributionClassDistributionObject; /*0x4e0a8a*/
-  *((unsigned int *)this + 5) = 10; /*0x4e0a90*/
-  *((unsigned int *)this + 4) = 0; /*0x4e0a97*/
+  this->M20 = 10; /*0x4e0a90*/
+  this->M16 = 0; /*0x4e0a97*/
   return (unsigned int *)(&this->vtable1); /*0x4e0aa0*/
 
 }

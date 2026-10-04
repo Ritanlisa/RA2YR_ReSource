@@ -5,3328 +5,2451 @@
 // ==== BACKFILL 0x00534DE0  ReleaseLoadingResources  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char ReleaseLoadingResources()
 {
-{
-    if ( DataGlobal_884E5C )
-  {
-    Debug::Log();
-    if ( DataGlobal_884E5C )
-    (**(void (__thiscall ***)(int, int))DataGlobal_884E5C)(DataGlobal_884E5C, 1);
-    DataGlobal_884E5C = 0;
-  }
-    if ( DataGlobal_884E58 )
-  {
-    Debug::Log();
-    if ( DataGlobal_884E58 )
-    (**(void (__thiscall ***)(int, int))DataGlobal_884E58)(DataGlobal_884E58, 1);
-    DataGlobal_884E58 = 0;
-  }
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00534DE0.json)
 }
 
 // ==== BACKFILL 0x00535A60  BufferIOFileClass::Destruct  cls=BufferIOFileClass  sig=csp  renamed_refs=0  residual=- ====
 int BufferIOFileClass::Destruct()
 {
-{
-    *(void**)this = &DataGlobal_7E1668;
-    return BufferIOFileClass::Dtor(this);
-}
+
+  *(unsigned int *)this->RawFileClass = (unsigned int)(&off_7E1668); /*0x535a60*/
+  return this->Dtor() ;
+
 }
 
 // ==== BACKFILL 0x00535BD0  CreateTeamCommand::Stub  cls=CommandClass  sig=csp  renamed_refs=0  residual=- ====
-char CreateTeamCommand::Stub(int a1)
+char DeployCommandClass::Stub(int a1)
 {
-return 0;
+    (void)a1; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535BD0.json)
 }
 
 // ==== BACKFILL 0x00535BE0  Map::IsCellFlag  cls=CommandClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int Map::IsCellFlag(int a1)
 {
-{
-    return ((unsigned int)~a1 >> 11) & 1;
-}
+
+  return (~(unsigned int)a1 >> 11) & 1; /*0x535bec*/
+
 }
 
 // ==== BACKFILL 0x00535BF0  CreateTeamCommand::Do  cls=CommandClass  sig=csp  renamed_refs=0  residual=- ====
-char CreateTeamCommand::Do(int a1)
+char DeployCommandClass::Do(int a1)
 {
-return 0;
+    (void)a1; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535BF0.json)
 }
 
-// ==== BACKFILL 0x00535C00  CreateTeamCommand::Construct  cls=CreateTeamCommand  sig=csp  renamed_refs=1  residual=- ====
-unsigned int * CreateTeamCommand::Construct(int a2)
+// ==== BACKFILL 0x00535C00  CreateTeamCommand::Construct  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
+unsigned int * DeployCommandClass::Construct(int a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1)
 {
-{
-    this->q004 = a2;
-    *(void**)this = &vt_CreateTeamCommandClass;
-    return this;
-}
+    (void)a2; (void)a2_2; (void)a3_1; (void)a4_1; (void)a5_1; (void)a6_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535C00.json)
 }
 
-// ==== BACKFILL 0x00535C20  CreateTeamCommand::AddRef  cls=CreateTeamCommand  sig=csp  renamed_refs=1  residual=- ====
-ObjectClass * CreateTeamCommand::AddRef()
+// ==== BACKFILL 0x00535C20  CreateTeamCommand::AddRef  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
+ObjectClass * DeployCommandClass::AddRef(void *a1_1)
 {
-{
-    sprintf(&HouseClass_Player[47208], &DataGlobal_826F84, (INIClass *)this->q004);
-    return (ObjectClass *)&HouseClass_Player[47208];
-}
+    (void)a1_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535C20.json)
 }
 
 // ==== BACKFILL 0x00535C40  CreateTeamCommand::Release  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::Release()
+wchar_t * DeployCommandClass::Release(void *a1_1)
 {
-{
-    wchar_t *StringCSF;
-    const wchar_t *v3;
-    v3 = *(this + 1);
-    StringCSF = GetStringCSF(DataGlobal_826F94, 0, g_Str_File_Init_CPP, 6165);
-    swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3);
-    return &g_TeamCommandBuffer;
-}
+    (void)a1_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535C40.json)
 }
 
 // ==== BACKFILL 0x00535C70  CreateTeamCommand::ddtor  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::ddtor()
+wchar_t * DeployCommandClass::ddtor()
 {
-{
-    return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6167);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535C70.json)
 }
 
 // ==== BACKFILL 0x00535C90  CreateTeamCommand::Read  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::Read()
+wchar_t * DeployCommandClass::Read(void *a1_1, void *a2_1)
 {
-{
-    wchar_t *StringCSF;
-    const wchar_t *v3;
-    v3 = *(this + 1);
-    StringCSF = GetStringCSF(DataGlobal_826FB0, 0, g_Str_File_Init_CPP, 6169);
-    swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3);
-    return &g_TeamCommandBuffer;
-}
+    (void)a1_1; (void)a2_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535C90.json)
 }
 
 // ==== BACKFILL 0x00535CC0  CreateTeamCommand::Undo  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-void CreateTeamCommand::Undo(int a2)
+void DeployCommandClass::Undo(int a2)
 {
-{
-    CreateTeamCommand::performAction_246(*(this + 1));
-}
+    (void)a2;  // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535CC0.json)
 }
 
 // ==== BACKFILL 0x00535CD0  CreateTeamCommand::performAction_0  cls=CreateTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-CreateTeamCommand * CreateTeamCommand::performAction_0(char a2)
+CreateTeamCommand * DeployCommandClass::performAction_0(char a2)
 {
-{
-    *(int *)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (CreateTeamCommand *)this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535CD0.json)
 }
 
 // ==== BACKFILL 0x00535D00  CreateTeamCommand::performAction_1  cls=CommandClass  sig=csp  renamed_refs=0  residual=- ====
-CommandClass * CreateTeamCommand::performAction_1(char a2)
+CommandClass * DeployCommandClass::performAction_1(char a2)
 {
-{
-    *(int *)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (CommandClass *)this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535D00.json)
 }
 
 // ==== BACKFILL 0x00535D20  CreateTeamCommand::performAction_2  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * CreateTeamCommand::performAction_2()
+char * DeployCommandClass::performAction_2()
 {
-{
-    return DataGlobal_826FC8;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535D20.json)
 }
 
 // ==== BACKFILL 0x00535D30  CreateTeamCommand::performAction_3  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_3()
+wchar_t * DeployCommandClass::performAction_3()
 {
-{
-    return GetStringCSF(DataGlobal_826FD8, 0, g_Str_File_Init_CPP, 6186);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535D30.json)
 }
 
 // ==== BACKFILL 0x00535D50  CreateTeamCommand::performAction_4  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_4()
+wchar_t * DeployCommandClass::performAction_4()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6188);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535D50.json)
 }
 
 // ==== BACKFILL 0x00535D70  CreateTeamCommand::performAction_5  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_5()
+wchar_t * DeployCommandClass::performAction_5()
 {
-{
-    return GetStringCSF(DataGlobal_826FFC, 0, g_Str_File_Init_CPP, 6190);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535D70.json)
 }
 
 // ==== BACKFILL 0x00535D90  CreateTeamCommand::performAction_6  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char CreateTeamCommand::performAction_6()
+char DeployCommandClass::performAction_6()
 {
-{
-    int _7342A0;
-    int v2;
-    int *v4;
-    LOBYTE(_7342A0) = PlayerClass::HasPlayers(&DataGlobal_87F8E4[5192]);
-    if ( (char)_7342A0 )
-  {
-    SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 0);
-    _7342A0 = UI_Create_7342A0();
-    if ( _7342A0 )
-    {
-    v4 = (int *)_7342A0;
-    v2 = (*(int (__thiscall **)(int, int, int))(*(int *)(_7342A0) + 400))(_7342A0, 0, 0);
-    LOBYTE(_7342A0) = BuildingPlacement::Activate((int)HouseClass_Player, v2, v4);
-    }
-  }
-    return _7342A0;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535D90.json)
 }
 
 // ==== BACKFILL 0x00535DE0  CreateTeamCommand::performAction_7  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * CreateTeamCommand::performAction_7()
+char * DeployCommandClass::performAction_7()
 {
-{
-    return DataGlobal_827014;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535DE0.json)
 }
 
 // ==== BACKFILL 0x00535DF0  CreateTeamCommand::performAction_8  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_8()
+wchar_t * DeployCommandClass::performAction_8()
 {
-{
-    return GetStringCSF(DataGlobal_827020, 0, g_Str_File_Init_CPP, 6212);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535DF0.json)
 }
 
 // ==== BACKFILL 0x00535E10  CreateTeamCommand::performAction_9  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_9()
+wchar_t * DeployCommandClass::performAction_9()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6214);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535E10.json)
 }
 
 // ==== BACKFILL 0x00535E30  CreateTeamCommand::performAction_10  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_10()
+wchar_t * DeployCommandClass::performAction_10()
 {
-{
-    return GetStringCSF(aTxtDefenseTabD, 0, g_Str_File_Init_CPP, 6216);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535E30.json)
 }
 
 // ==== BACKFILL 0x00535E50  CreateTeamCommand::performAction_11  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char CreateTeamCommand::performAction_11()
+char DeployCommandClass::performAction_11()
 {
-{
-    int _7342B0;
-    int v2;
-    int *v4;
-    LOBYTE(_7342B0) = PlayerClass::HasPlayers(&DataGlobal_87F8E4[9180]);
-    if ( (char)_7342B0 )
-  {
-    SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 1);
-    _7342B0 = UI_Create_7342B0();
-    if ( _7342B0 )
-    {
-    v4 = (int *)_7342B0;
-    v2 = (*(int (__thiscall **)(int, int, int))(*(int *)(_7342B0) + 400))(_7342B0, 0, 0);
-    LOBYTE(_7342B0) = BuildingPlacement::Activate((int)HouseClass_Player, v2, v4);
-    }
-  }
-    return _7342B0;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535E50.json)
 }
 
 // ==== BACKFILL 0x00535EA0  CreateTeamCommand::performAction_12  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * CreateTeamCommand::performAction_12()
+char * DeployCommandClass::performAction_12()
 {
-return aInfantrytab;
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535EA0.json)
 }
 
 // ==== BACKFILL 0x00535EB0  CreateTeamCommand::performAction_13  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_13()
+wchar_t * DeployCommandClass::performAction_13()
 {
-{
-    return GetStringCSF(aTxtInfantryTab, 0, g_Str_File_Init_CPP, 6238);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535EB0.json)
 }
 
 // ==== BACKFILL 0x00535ED0  CreateTeamCommand::performAction_14  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_14()
+wchar_t * DeployCommandClass::performAction_14()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6240);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535ED0.json)
 }
 
 // ==== BACKFILL 0x00535EF0  CreateTeamCommand::performAction_15  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_15()
+wchar_t * DeployCommandClass::performAction_15()
 {
-{
-    return GetStringCSF(aTxtInfantryTab_0, 0, g_Str_File_Init_CPP, 6242);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535EF0.json)
 }
 
 // ==== BACKFILL 0x00535F10  CreateTeamCommand::performAction_16  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_16()
+int DeployCommandClass::performAction_16()
 {
-{
-    int result;
-    result = PlayerClass::HasPlayers(&DataGlobal_87F8E4[13168]);
-    if ( (char)result )
-    return SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 2);
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535F10.json)
 }
 
 // ==== BACKFILL 0x00535F30  CreateTeamCommand::performAction_17  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * CreateTeamCommand::performAction_17()
+char * DeployCommandClass::performAction_17()
 {
-return aUnittab;
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535F30.json)
 }
 
 // ==== BACKFILL 0x00535F40  CreateTeamCommand::performAction_18  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_18()
+wchar_t * DeployCommandClass::performAction_18()
 {
-{
-    return GetStringCSF(aTxtUnitTab, 0, g_Str_File_Init_CPP, 6259);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535F40.json)
 }
 
 // ==== BACKFILL 0x00535F60  CreateTeamCommand::performAction_19  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_19()
+wchar_t * DeployCommandClass::performAction_19()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6261);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535F60.json)
 }
 
 // ==== BACKFILL 0x00535F80  CreateTeamCommand::performAction_20  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_20()
+wchar_t * DeployCommandClass::performAction_20()
 {
-{
-    return GetStringCSF(aTxtUnitTabDesc, 0, g_Str_File_Init_CPP, 6263);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00535F80.json)
 }
 
 // ==== BACKFILL 0x00535FA0  CreateTeamCommand::performAction_21  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_21()
+int DeployCommandClass::performAction_21()
 {
-{
-    int result;
-    result = PlayerClass::HasPlayers(&DataGlobal_87F8E4[17156]);
-    if ( (char)result )
-    return SidebarClass::SwitchTab((int)&DataGlobal_87F7E8, 3);
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00535FA0.json)
 }
 
 // ==== BACKFILL 0x00536030  SelectTeamCommand::ddtor  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * SelectTeamCommand::ddtor()
 {
-{
-    return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6294);
-}
+
+  return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0,(const char *)(g_Str_File_Init_CPP), 6294); /*0x536046*/
+
 }
 
-// ==== BACKFILL 0x00536050  SelectTeamCommand::Read  cls=SelectTeamCommand  sig=csp  renamed_refs=1  residual=- ====
-namespace gamemd { void* SelectTeamCommand::Read() {
-{
-      wchar_t *StringCSF;
-      const wchar_t *v3;
-
-      v3 = this->SelectTeamCommand_field_00;
-      StringCSF = GetStringCSF(DataGlobal_8270F8, 0, g_Str_File_Init_CPP, 6296);
-      swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3);
-      return &g_TeamCommandBuffer;
+// ==== BACKFILL 0x00536050  SelectTeamCommand::Read  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
+void* SelectTeamCommand::Read() {
+  return nullptr;  /* G42.33b2 restub: wrong-universe body */
 }
-} }
 
 // ==== BACKFILL 0x00536080  SelectTeamCommand::Do  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int SelectTeamCommand::Do(int a1) {
-{
-    return TacticalClass::SetObserverView(*(this + 1));
+int SelectTeamCommand::Do(int a1) {
+  return 0;  /* G42.33b2 restub: wrong-universe body */
 }
-} }
 
 // ==== BACKFILL 0x00536090  CreateTeamCommand::performAction_22  cls=SelectTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-SelectTeamCommand * CreateTeamCommand::performAction_22(char a2)
+SelectTeamCommand * DeployCommandClass::performAction_22(char a2)
 {
-{
-    *(int *)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (SelectTeamCommand *)this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536090.json)
 }
 
 // ==== BACKFILL 0x00536120  AddTeamCommand::ddtor  cls=AddTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * AddTeamCommand::ddtor()
 {
-{
-    return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6328);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536120)
 }
 
-// ==== BACKFILL 0x00536140  AddTeamCommand::Read  cls=AddTeamCommand  sig=csp  renamed_refs=1  residual=- ====
-namespace gamemd { void* AddTeamCommand::Read() {
-{
-      wchar_t *StringCSF;
-      const wchar_t *v3;
-
-      v3 = this->AddTeamCommand_field_00;
-      StringCSF = GetStringCSF(DataGlobal_82715C, 0, g_Str_File_Init_CPP, 6330);
-      swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3);
-      return &g_TeamCommandBuffer;
+// ==== BACKFILL 0x00536140  AddTeamCommand::Read  cls=AddTeamCommand  sig=csp  renamed_refs=0  residual=- ====
+void* AddTeamCommand::Read() {
+  return nullptr;  /* G42.33b2 restub: wrong-universe body */
 }
-} }
 
 // ==== BACKFILL 0x00536170  AddTeamCommand::Do  cls=AddTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int AddTeamCommand::Do(int a1) {
-{
-    return SquadClass::SelectAllMembers(*(this + 1));
+int AddTeamCommand::Do(int a1) {
+  return 0;  /* G42.33b2 restub: wrong-universe body */
 }
-} }
 
 // ==== BACKFILL 0x00536180  CreateTeamCommand::performAction_23  cls=AddTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-AddTeamCommand * CreateTeamCommand::performAction_23(char a2)
+AddTeamCommand * DeployCommandClass::performAction_23(char a2)
 {
-{
-    *(int *)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (AddTeamCommand *)this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536180.json)
 }
 
 // ==== BACKFILL 0x00536210  CSF::GetTeamString  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CSF::GetTeamString()
 {
-{
-    return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6363);
-}
+
+  return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0,(const char *)(g_Str_File_Init_CPP), 6363); /*0x536226*/
+
 }
 
-// ==== BACKFILL 0x00536230  CenterTeamCommand::Read  cls=CenterTeamCommand  sig=csp  renamed_refs=1  residual=- ====
-namespace gamemd { void* CenterTeamCommand::Read() {
-{
-      wchar_t *StringCSF;
-      const wchar_t *v3;
-
-      v3 = this->CenterTeamCommand_field_00;
-      StringCSF = GetStringCSF(DataGlobal_8271C0, 0, g_Str_File_Init_CPP, 6365);
-      swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3);
-      return &g_TeamCommandBuffer;
+// ==== BACKFILL 0x00536230  CenterTeamCommand::Read  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
+void* CenterTeamCommand::Read() {
+  return nullptr;  /* G42.33b2 restub: wrong-universe body */
 }
-} }
 
 // ==== BACKFILL 0x00536260  CenterTeamCommand::Do  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int CenterTeamCommand::Do(int a1) {
-{
-    return TacticalClass::ResetView(*(this + 1));
+int CenterTeamCommand::Do(int a1) {
+  return 0;  /* G42.33b2 restub: wrong-universe body */
 }
-} }
 
 // ==== BACKFILL 0x00536270  CreateTeamCommand::performAction_24  cls=CenterTeamCommand  sig=csp  renamed_refs=0  residual=- ====
-CenterTeamCommand * CreateTeamCommand::performAction_24(char a2)
+CenterTeamCommand * DeployCommandClass::performAction_24(char a2)
 {
-{
-    *(int *)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (CenterTeamCommand *)this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536270.json)
 }
 
 // ==== BACKFILL 0x00536300  TauntCommandClass::ddtor  cls=TauntCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * TauntCommandClass::ddtor()
+wchar_t TauntCommandClass::ddtor()
 {
-{
-    return GetStringCSF(DataGlobal_827218, 0, g_Str_File_Init_CPP, 6405);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536300)
 }
 
-// ==== BACKFILL 0x00536320  TauntCommandClass::Read  cls=TauntCommandClass  sig=csp  renamed_refs=1  residual=- ====
-namespace gamemd { void* TauntCommandClass::Read() {
-{
-      wchar_t *StringCSF;
-      const wchar_t *v3;
-
-      v3 = this->TauntCommandClass_field_00;
-      StringCSF = GetStringCSF(DataGlobal_827224, 0, g_Str_File_Init_CPP, 6409);
-      swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3);
-      return &g_TeamCommandBuffer;
+// ==== BACKFILL 0x00536320  TauntCommandClass::Read  cls=TauntCommandClass  sig=csp  renamed_refs=0  residual=- ====
+void* TauntCommandClass::Read() {
+  return nullptr;  /* G42.33b2 restub: wrong-universe body */
 }
-} }
 
 // ==== BACKFILL 0x00536580  CreateTeamCommand::performAction_25  cls=TauntCommandClass  sig=csp  renamed_refs=0  residual=- ====
-TauntCommandClass * CreateTeamCommand::performAction_25(char a2)
+TauntCommandClass * DeployCommandClass::performAction_25(char a2)
 {
-{
-    *(int *)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TauntCommandClass *)this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536580.json)
 }
 
 // ==== BACKFILL 0x005365A0  CreateTeamCommand::performAction_26  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * CreateTeamCommand::performAction_26()
+char * DeployCommandClass::performAction_26()
 {
-{
-    return DataGlobal_827234;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005365A0.json)
 }
 
 // ==== BACKFILL 0x005365B0  CreateTeamCommand::performAction_27  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_27()
+wchar_t * DeployCommandClass::performAction_27()
 {
-{
-    return GetStringCSF(DataGlobal_827240, 0, g_Str_File_Init_CPP, 6526);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005365B0.json)
 }
 
 // ==== BACKFILL 0x005365D0  CreateTeamCommand::performAction_28  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_28()
+wchar_t * DeployCommandClass::performAction_28()
 {
-{
-    return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6528);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005365D0.json)
 }
 
 // ==== BACKFILL 0x005365F0  CreateTeamCommand::performAction_29  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_29()
+wchar_t * DeployCommandClass::performAction_29()
 {
-{
-    return GetStringCSF(aTxtNextObjectD, 0, g_Str_File_Init_CPP, 6530);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005365F0.json)
 }
 
 // ==== BACKFILL 0x00536610  CreateTeamCommand::performAction_30  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned char * CreateTeamCommand::performAction_30()
+unsigned char * DeployCommandClass::performAction_30()
 {
-{
-    char *v1;
-    char *result;
-    char *v3;
-    TacticalClass::SetObserverMode(&DataGlobal_87F7E8, 0);
-    TacticalClass::SetDisplayMode(&DataGlobal_87F7E8, 0, 0);
-    BuildingClass::TogglePower2(&DataGlobal_87F7E8, 0);
-    BuildingClass::TogglePower(&DataGlobal_87F7E8, 0);
-    if ( *(int *)&g_NetworkPlayerBuffer[5772] )
-    v1 = **(char ***)&g_NetworkPlayerBuffer[5760];
-    else
-    v1 = 0;
-    result = sub_4AA2B0(v1);
-    v3 = result;
-    if ( result )
-  {
-    MapClass::UnselectAll_ClearLimboLaunchers();
-    (*(void (__thiscall **)(char *))(*(int *)(v3) + 332))(v3);
-    TacticalClass::InterpolateView();
-    return (char *)MapClass::MarkForRedraw(&DataGlobal_87F7E8, 1);
-  }
-    return result;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536610.json)
 }
 
 // ==== BACKFILL 0x005366A0  CreateTeamCommand::performAction_31  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * CreateTeamCommand::performAction_31()
+char * DeployCommandClass::performAction_31()
 {
-return g_INI_Key_PlanningMode;
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005366A0.json)
 }
 
 // ==== BACKFILL 0x005366B0  CreateTeamCommand::performAction_32  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_32()
+wchar_t * DeployCommandClass::performAction_32()
 {
-{
-    return GetStringCSF(aCmndPlanningmo, 0, g_Str_File_Init_CPP, 6580);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005366B0.json)
 }
 
 // ==== BACKFILL 0x005366D0  CreateTeamCommand::performAction_33  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_33()
+wchar_t * DeployCommandClass::performAction_33()
 {
-{
-    return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6582);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005366D0.json)
 }
 
 // ==== BACKFILL 0x005366F0  CreateTeamCommand::performAction_34  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_34()
+wchar_t * DeployCommandClass::performAction_34()
 {
-{
-    return GetStringCSF(aCmndPlanningmo_0, 0, g_Str_File_Init_CPP, 6584);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005366F0.json)
 }
 
 // ==== BACKFILL 0x00536710  CreateTeamCommand::performAction_35  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
-BOOL CreateTeamCommand::performAction_35()
+int DeployCommandClass::performAction_35()
 {
-{
-    char v2;
-    return (v2 & 7) != 0;
-}
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536710.json)
 }
 
 // ==== BACKFILL 0x00536730  CreateTeamCommand::performAction_36  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char CreateTeamCommand::performAction_36()
+char DeployCommandClass::performAction_36()
 {
-return 1;
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536730.json)
 }
 
 // ==== BACKFILL 0x00536740  CreateTeamCommand::performAction_37  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int CreateTeamCommand::performAction_37()
+unsigned int DeployCommandClass::performAction_37()
 {
-{
-    int v2;
-    return ((unsigned int)~v2 >> 11) & 1;
-}
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536740.json)
 }
 
 // ==== BACKFILL 0x00536750  CreateTeamCommand::performAction_38  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_38()
+int DeployCommandClass::performAction_38()
 {
-{
-    char v2;
-    if ( (v2 & 8) != 0 )
-    return UI_Create_731A70(0);
-    else
-    return UI_Create_731A50(0);
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536750.json)
 }
 
 // ==== BACKFILL 0x00536770  CreateTeamCommand::performAction_39  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * CreateTeamCommand::performAction_39()
+char * DeployCommandClass::performAction_39()
 {
-return aCombatantselec;
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536770.json)
 }
 
 // ==== BACKFILL 0x00536780  CreateTeamCommand::performAction_40  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_40()
+wchar_t * DeployCommandClass::performAction_40()
 {
-{
-    return GetStringCSF(aCmndCombatants, 0, g_Str_File_Init_CPP, 6664);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536780.json)
 }
 
 // ==== BACKFILL 0x005367A0  CreateTeamCommand::performAction_41  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_41()
+wchar_t * DeployCommandClass::performAction_41()
 {
-{
-    return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6666);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005367A0.json)
 }
 
 // ==== BACKFILL 0x005367C0  CreateTeamCommand::performAction_42  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_42()
+wchar_t * DeployCommandClass::performAction_42()
 {
-{
-    return GetStringCSF(aCmndCombatants_0, 0, g_Str_File_Init_CPP, 6668);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005367C0.json)
 }
 
 // ==== BACKFILL 0x005367E0  CreateTeamCommand::performAction_43  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_43()
+int DeployCommandClass::performAction_43()
 {
-{
-    unsigned int v2;
-    return (v2 >> 8) & 1;
-}
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005367E0.json)
 }
 
 // ==== BACKFILL 0x005367F0  CreateTeamCommand::performAction_44  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_44()
+int DeployCommandClass::performAction_44()
 {
-{
-    unsigned int v1;
-    unsigned int v3;
-    v1 = v3 >> 8;
-    LOBYTE(v1) = (v3 & 0x100) == 0;
-    return ((int (__thiscall *)(unsigned int))loc_732280)(v1);
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005367F0.json)
 }
 
 // ==== BACKFILL 0x00536810  CreateTeamCommand::performAction_45  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * CreateTeamCommand::performAction_45()
+char * DeployCommandClass::performAction_45()
 {
-return g_INI_Key_TypeSelect;
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536810.json)
 }
 
 // ==== BACKFILL 0x00536820  CreateTeamCommand::performAction_46  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_46()
+wchar_t * DeployCommandClass::performAction_46()
 {
-{
-    return GetStringCSF(aCmndTypeselect, 0, g_Str_File_Init_CPP, 6690);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536820.json)
 }
 
 // ==== BACKFILL 0x00536840  CreateTeamCommand::performAction_47  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_47()
+wchar_t * DeployCommandClass::performAction_47()
 {
-{
-    return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6692);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536840.json)
 }
 
 // ==== BACKFILL 0x00536860  CreateTeamCommand::performAction_48  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_48()
+wchar_t * DeployCommandClass::performAction_48()
 {
-{
-    return GetStringCSF(aCmndTypeselect_0, 0, g_Str_File_Init_CPP, 6694);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536860.json)
 }
 
 // ==== BACKFILL 0x00536880  CreateTeamCommand::performAction_49  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_49()
+int DeployCommandClass::performAction_49()
 {
-{
-    unsigned int v2;
-    return (v2 >> 8) & 1;
-}
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536880.json)
 }
 
 // ==== BACKFILL 0x00536890  CreateTeamCommand::performAction_50  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char CreateTeamCommand::performAction_50()
+char DeployCommandClass::performAction_50()
 {
-return 1;
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536890.json)
 }
 
 // ==== BACKFILL 0x005368A0  CreateTeamCommand::performAction_51  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int CreateTeamCommand::performAction_51()
+unsigned int DeployCommandClass::performAction_51()
 {
-{
-    int v2;
-    return ((unsigned int)~v2 >> 11) & 1;
-}
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005368A0.json)
 }
 
 // ==== BACKFILL 0x005368B0  CreateTeamCommand::performAction_52  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char CreateTeamCommand::performAction_52()
+char DeployCommandClass::performAction_52()
 {
-{
-    char v2;
-    if ( (v2 & 8) != 0 )
-    return UI_Create_732CC0();
-    else
-    return UI_Create_732CA0();
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005368B0.json)
 }
 
 // ==== BACKFILL 0x005368D0  CreateTeamCommand::performAction_53  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * CreateTeamCommand::performAction_53()
+char * DeployCommandClass::performAction_53()
 {
-return aHealthnav;
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005368D0.json)
 }
 
 // ==== BACKFILL 0x005368E0  CreateTeamCommand::performAction_54  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_54()
+wchar_t * DeployCommandClass::performAction_54()
 {
-{
-    return GetStringCSF(aCmndHealthnavi, 0, g_Str_File_Init_CPP, 6728);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005368E0.json)
 }
 
 // ==== BACKFILL 0x00536900  CreateTeamCommand::performAction_55  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_55()
+wchar_t * DeployCommandClass::performAction_55()
 {
-{
-    return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6730);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536900.json)
 }
 
 // ==== BACKFILL 0x00536920  CreateTeamCommand::performAction_56  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_56()
+wchar_t * DeployCommandClass::performAction_56()
 {
-{
-    return GetStringCSF(aCmndHealthnavi_0, 0, g_Str_File_Init_CPP, 6732);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536920.json)
 }
 
 // ==== BACKFILL 0x00536940  CreateTeamCommand::performAction_57  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_57()
+int DeployCommandClass::performAction_57()
 {
-{
-    unsigned int v2;
-    return (v2 >> 8) & 1;
-}
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536940.json)
 }
 
 // ==== BACKFILL 0x00536950  CreateTeamCommand::performAction_58  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_58()
+int DeployCommandClass::performAction_58()
 {
-{
-    HealthNavCommandClass *v1;
-    unsigned int v3;
-    v1 = (HealthNavCommandClass *)(v3 >> 8);
-    LOBYTE(v1) = (v3 & 0x100) == 0;
-    return UpdateUnitHealthTooltip(v1);
-}
+     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536950.json)
 }
 
 // ==== BACKFILL 0x00536970  CreateTeamCommand::performAction_59  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * CreateTeamCommand::performAction_59()
+char * DeployCommandClass::performAction_59()
 {
-return aVeterancynav;
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536970.json)
 }
 
 // ==== BACKFILL 0x00536980  CreateTeamCommand::performAction_60  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_60()
 {
-{
-    return GetStringCSF(aCmndVetnavigat, 0, g_Str_File_Init_CPP, 6754);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536980)
 }
 
 // ==== BACKFILL 0x005369A0  CreateTeamCommand::performAction_61  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_61()
 {
-{
-    return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6756);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5369A0)
 }
 
 // ==== BACKFILL 0x005369C0  CreateTeamCommand::performAction_62  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_62()
 {
-{
-    return GetStringCSF(aCmndVetnavigat_0, 0, g_Str_File_Init_CPP, 6758);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5369C0)
 }
 
 // ==== BACKFILL 0x005369E0  CreateTeamCommand::performAction_63  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_63()
 {
-{
-    unsigned int v2;
-    return (v2 >> 8) & 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5369E0)
 }
 
 // ==== BACKFILL 0x005369F0  CreateTeamCommand::performAction_64  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand::performAction_64()
 {
-{
-    VeterancyNavCommandClass *v1;
-    unsigned int v3;
-    v1 = (VeterancyNavCommandClass *)(v3 >> 8);
-    LOBYTE(v1) = (v3 & 0x100) == 0;
-    return DrawUnitExperiencePopup(v1);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5369F0)
 }
 
 // ==== BACKFILL 0x00536A10  CreateTeamCommand::performAction_65  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_65()
 {
-return aPreviousobject;
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536A10)
 }
 
 // ==== BACKFILL 0x00536A20  CreateTeamCommand::performAction_66  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_66()
 {
-{
-    return GetStringCSF(aTxtPrevObject, 0, g_Str_File_Init_CPP, 6817);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536A20)
 }
 
 // ==== BACKFILL 0x00536A40  CreateTeamCommand::performAction_67  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_67()
 {
-{
-    return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6819);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536A40)
 }
 
 // ==== BACKFILL 0x00536A60  CreateTeamCommand::performAction_68  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_68()
 {
-{
-    return GetStringCSF(aTxtPrevObjectD, 0, g_Str_File_Init_CPP, 6821);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536A60)
 }
 
 // ==== BACKFILL 0x00536A80  CreateTeamCommand::performAction_69  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned char * CreateTeamCommand::performAction_69()
+unsigned char * DeployCommandClass::performAction_69()
 {
-{
-    char *v1;
-    char *result;
-    char *v3;
-    TacticalClass::SetObserverMode(&DataGlobal_87F7E8, 0);
-    TacticalClass::SetDisplayMode(&DataGlobal_87F7E8, 0, 0);
-    BuildingClass::TogglePower2(&DataGlobal_87F7E8, 0);
-    BuildingClass::TogglePower(&DataGlobal_87F7E8, 0);
-    if ( *(int *)&g_NetworkPlayerBuffer[5772] )
-    v1 = **(char ***)&g_NetworkPlayerBuffer[5760];
-    else
-    v1 = 0;
-    result = sub_4AA380(v1);
-    v3 = result;
-    if ( result )
-  {
-    MapClass::UnselectAll_ClearLimboLaunchers();
-    (*(void (__thiscall **)(char *))(*(int *)(v3) + 332))(v3);
-    TacticalClass::InterpolateView();
-    return (char *)MapClass::MarkForRedraw(&DataGlobal_87F7E8, 1);
-  }
-    return result;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536A80.json)
 }
 
 // ==== BACKFILL 0x00536B10  CreateTeamCommand::performAction_70  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_70()
 {
-return aStopobject;
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B10)
 }
 
 // ==== BACKFILL 0x00536B20  CreateTeamCommand::performAction_71  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_71()
 {
-{
-    return GetStringCSF(aTxtStopObject, 0, g_Str_File_Init_CPP, 6858);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B20)
 }
 
 // ==== BACKFILL 0x00536B40  CreateTeamCommand::performAction_72  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_72()
 {
-{
-    return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6860);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B40)
 }
 
 // ==== BACKFILL 0x00536B60  CreateTeamCommand::performAction_73  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_73()
 {
-{
-    return GetStringCSF(aTxtStopObjectD, 0, g_Str_File_Init_CPP, 6862);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B60)
 }
 
 // ==== BACKFILL 0x00536B80  CreateTeamCommand::performAction_74  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand_performAction_74()
 {
-    wchar_t *__stdcall CreateTeamCommand::sub_536B80(int a1)
-{
-    return UI_Create_730EA0();
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B80)
 }
 
 // ==== BACKFILL 0x00536B90  CreateTeamCommand::performAction_75  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_75()
 {
-return aAlltocheer;
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536B90)
 }
 
 // ==== BACKFILL 0x00536BA0  CreateTeamCommand::performAction_76  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_76()
 {
-{
-    return GetStringCSF(aCmndAllcheer, 0, g_Str_File_Init_CPP, 6876);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536BA0)
 }
 
 // ==== BACKFILL 0x00536BC0  CreateTeamCommand::performAction_77  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_77()
 {
-{
-    return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6878);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536BC0)
 }
 
 // ==== BACKFILL 0x00536BE0  CreateTeamCommand::performAction_78  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_78()
 {
-{
-    return GetStringCSF(aCmndAllcheerde, 0, g_Str_File_Init_CPP, 6880);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536BE0)
 }
 
 // ==== BACKFILL 0x00536C10  CreateTeamCommand::performAction_80  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_80()
 {
-return aDeployobject;
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536C10)
 }
 
 // ==== BACKFILL 0x00536C20  CreateTeamCommand::performAction_81  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_81()
 {
-{
-    return GetStringCSF(aTxtDeployObjec, 0, g_Str_File_Init_CPP, 6903);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536C20)
 }
 
 // ==== BACKFILL 0x00536C40  CreateTeamCommand::performAction_82  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_82()
 {
-{
-    return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6905);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536C40)
 }
 
 // ==== BACKFILL 0x00536C60  CreateTeamCommand::performAction_83  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_83()
 {
-{
-    return GetStringCSF(aTxtDeployObjec_0, 0, g_Str_File_Init_CPP, 6907);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536C60)
 }
 
 // ==== BACKFILL 0x00536C80  CreateTeamCommand::performAction_84  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand_performAction_84()
 {
-    char __stdcall CreateTeamCommand::sub_536C80(int a1)
-{
-    return ProcessSelectionExperience();
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536C80)
 }
 
 // ==== BACKFILL 0x00536C90  CreateTeamCommand::performAction_85  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * CreateTeamCommand::performAction_85()
+char * DeployCommandClass::performAction_85()
 {
-return aGuardobject;
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536C90.json)
 }
 
 // ==== BACKFILL 0x00536CA0  CreateTeamCommand::performAction_86  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_86()
+wchar_t * DeployCommandClass::performAction_86()
 {
-{
-    return GetStringCSF(aTxtGuard, 0, g_Str_File_Init_CPP, 6931);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00536CA0.json)
 }
 
 // ==== BACKFILL 0x00536CC0  CreateTeamCommand::performAction_87  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_87()
 {
-{
-    return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6933);
-}
+
+  return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6933); /*0x536cd6*/
+
 }
 
 // ==== BACKFILL 0x00536CE0  CreateTeamCommand::performAction_88  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_88()
 {
-{
-    return GetStringCSF(aTxtGuardDesc, 0, g_Str_File_Init_CPP, 6935);
-}
+
+  return GetStringCSF(aTxtGuardDesc, 0, g_Str_File_Init_CPP, 6935); /*0x536cf6*/
+
 }
 
 // ==== BACKFILL 0x00536D00  CreateTeamCommand::performAction_89  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand_performAction_89()
 {
-    char __stdcall CreateTeamCommand::sub_536D00(int a1)
-{
-    return GetFactoryData();
-}
+  return GetFactoryData(); /*0x536d05*/
 }
 
 // ==== BACKFILL 0x00536D10  CreateTeamCommand::performAction_90  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_90()
 {
-return aScatterobject;
+
+  return aScatterobject; /*0x536d15*/
+
 }
 
 // ==== BACKFILL 0x00536D20  CreateTeamCommand::performAction_91  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_91()
 {
-{
-    return GetStringCSF(aTxtScatter, 0, g_Str_File_Init_CPP, 6960);
-}
+
+  return GetStringCSF(aTxtScatter, 0, g_Str_File_Init_CPP, 6960); /*0x536d36*/
+
 }
 
 // ==== BACKFILL 0x00536D40  CreateTeamCommand::performAction_92  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_92()
 {
-{
-    return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6962);
-}
+
+  return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 6962); /*0x536d56*/
+
 }
 
 // ==== BACKFILL 0x00536D60  CreateTeamCommand::performAction_93  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_93()
 {
-{
-    return GetStringCSF(aTxtScatterDesc, 0, g_Str_File_Init_CPP, 6964);
-}
+
+  return GetStringCSF(aTxtScatterDesc, 0, g_Str_File_Init_CPP, 6964); /*0x536d76*/
+
 }
 
 // ==== BACKFILL 0x00536D80  CreateTeamCommand::performAction_94  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
 int CreateTeamCommand_performAction_94()
 {
-    wchar_t *__stdcall CreateTeamCommand::sub_536D80(int a1)
-{
-    return UI_Create_730FE0();
-}
+  return UI_Create_730FE0(); /*0x536d85*/
 }
 
 // ==== BACKFILL 0x00536D90  CreateTeamCommand::performAction_95  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_95()
 {
-return aCenterview;
+
+  return aCenterview; /*0x536d95*/
+
 }
 
 // ==== BACKFILL 0x00536DA0  CreateTeamCommand::performAction_96  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_96()
 {
-{
-    return GetStringCSF(aTxtCenterView, 0, g_Str_File_Init_CPP, 6987);
-}
+
+  return GetStringCSF(aTxtCenterView, 0, g_Str_File_Init_CPP, 6987); /*0x536db6*/
+
 }
 
 // ==== BACKFILL 0x00536DC0  CreateTeamCommand::performAction_97  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_97()
 {
-{
-    return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6989);
-}
+
+  return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 6989); /*0x536dd6*/
+
 }
 
 // ==== BACKFILL 0x00536DE0  CreateTeamCommand::performAction_98  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_98()
 {
-{
-    return GetStringCSF(aTxtCenterViewD, 0, g_Str_File_Init_CPP, 6991);
-}
+
+  return GetStringCSF(aTxtCenterViewD, 0, g_Str_File_Init_CPP, 6991); /*0x536df6*/
+
 }
 
 // ==== BACKFILL 0x00536E00  CreateTeamCommand::performAction_99  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * CreateTeamCommand::performAction_99()
+wchar_t * DeployCommandClass::performAction_99()
 {
-{
-    ParticleSystemClass *result;
-    result = *(ParticleSystemClass **)&g_NetworkPlayerBuffer[5772];
-    if ( *(int *)&g_NetworkPlayerBuffer[5772] > 0 )
-  {
-    TacticalClass::InterpolateView();
-    return (wchar_t *)MapClass::MarkForRedraw(&DataGlobal_87F7E8, 1);
-  }
-    return (wchar_t *)result;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00536E00.json)
 }
 
 // ==== BACKFILL 0x00536E30  CreateTeamCommand::performAction_100  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_100()
 {
-return aCenterbase;
+
+  return aCenterbase; /*0x536e35*/
+
 }
 
 // ==== BACKFILL 0x00536E40  CreateTeamCommand::performAction_101  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_101()
 {
-{
-    return GetStringCSF(aTxtCenterBase, 0, g_Str_File_Init_CPP, 7018);
-}
+
+  return GetStringCSF(aTxtCenterBase, 0, g_Str_File_Init_CPP, 7018); /*0x536e56*/
+
 }
 
 // ==== BACKFILL 0x00536E60  CreateTeamCommand::performAction_102  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_102()
 {
-{
-    return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 7020);
-}
+
+  return GetStringCSF(g_Str_TXT_SELECTION, 0, g_Str_File_Init_CPP, 7020); /*0x536e76*/
+
 }
 
 // ==== BACKFILL 0x00536E80  CreateTeamCommand::performAction_103  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_103()
 {
-{
-    return GetStringCSF(aTxtCenterBaseD, 0, g_Str_File_Init_CPP, 7022);
-}
+
+  return GetStringCSF(aTxtCenterBaseD, 0, g_Str_File_Init_CPP, 7022); /*0x536e96*/
+
 }
 
 // ==== BACKFILL 0x00536EB0  CreateTeamCommand::performAction_105  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_105()
 {
-return aTogglealliance;
+
+  return aTogglealliance; /*0x536eb5*/
+
 }
 
 // ==== BACKFILL 0x00536EC0  CreateTeamCommand::performAction_106  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_106()
 {
-{
-    return GetStringCSF(aTxtAlliance, 0, g_Str_File_Init_CPP, 7045);
-}
+
+  return GetStringCSF(aTxtAlliance, 0, g_Str_File_Init_CPP, 7045); /*0x536ed6*/
+
 }
 
 // ==== BACKFILL 0x00536EE0  CreateTeamCommand::performAction_107  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_107()
 {
-{
-    return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 7047);
-}
+
+  return GetStringCSF(g_Str_TXT_CONTROL, 0, g_Str_File_Init_CPP, 7047); /*0x536ef6*/
+
 }
 
 // ==== BACKFILL 0x00536F00  CreateTeamCommand::performAction_108  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_108()
 {
-{
-    return GetStringCSF(aTxtAllianceDes, 0, g_Str_File_Init_CPP, 7049);
-}
+
+  return GetStringCSF(aTxtAllianceDes, 0, g_Str_File_Init_CPP, 7049); /*0x536f16*/
+
 }
 
 // ==== BACKFILL 0x00536F30  CreateTeamCommand::performAction_110  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_110()
 {
-return aTogglerepair;
+
+  return aTogglerepair; /*0x536f35*/
+
 }
 
 // ==== BACKFILL 0x00536F40  CreateTeamCommand::performAction_111  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_111()
 {
-{
-    return GetStringCSF(aTxtRepairMode, 0, g_Str_File_Init_CPP, 7103);
-}
+
+  return GetStringCSF(aTxtRepairMode, 0, g_Str_File_Init_CPP, 7103); /*0x536f56*/
+
 }
 
 // ==== BACKFILL 0x00536F60  CreateTeamCommand::performAction_112  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_112()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7105);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7105); /*0x536f76*/
+
 }
 
 // ==== BACKFILL 0x00536F80  CreateTeamCommand::performAction_113  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_113()
 {
-{
-    return GetStringCSF(aTxtRepairModeD, 0, g_Str_File_Init_CPP, 7107);
-}
+
+  return GetStringCSF(aTxtRepairModeD, 0, g_Str_File_Init_CPP, 7107); /*0x536f96*/
+
 }
 
 // ==== BACKFILL 0x00536FB0  CreateTeamCommand::performAction_114  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_114()
 {
-return aTogglesell;
+
+  return aTogglesell; /*0x536fb5*/
+
 }
 
 // ==== BACKFILL 0x00536FC0  CreateTeamCommand::performAction_115  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_115()
 {
-{
-    return GetStringCSF(aTxtSellMode, 0, g_Str_File_Init_CPP, 7129);
-}
+
+  return GetStringCSF(aTxtSellMode, 0, g_Str_File_Init_CPP, 7129); /*0x536fd6*/
+
 }
 
 // ==== BACKFILL 0x00536FE0  CreateTeamCommand::performAction_116  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_116()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7131);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7131); /*0x536ff6*/
+
 }
 
 // ==== BACKFILL 0x00537000  CreateTeamCommand::performAction_117  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_117()
 {
-{
-    return GetStringCSF(aTxtSellModeDes, 0, g_Str_File_Init_CPP, 7133);
-}
+
+  return GetStringCSF(aTxtSellModeDes, 0, g_Str_File_Init_CPP, 7133); /*0x537016*/
+
 }
 
 // ==== BACKFILL 0x00537020  CreateTeamCommand::performAction_118  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::performAction_118(int a1)
 {
-{
-    return BuildingClass::TogglePower(&DataGlobal_87F7E8, -1);
-}
+
+  return ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower(-1); /*0x53702c*/
+
 }
 
 // ==== BACKFILL 0x00537030  CreateTeamCommand::performAction_119  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_119()
 {
-return aPlacebeacon;
+
+  return aPlacebeacon; /*0x537035*/
+
 }
 
 // ==== BACKFILL 0x00537040  CreateTeamCommand::performAction_120  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_120()
 {
-{
-    return GetStringCSF(aTxtPlaceBeacon, 0, g_Str_File_Init_CPP, 7172);
-}
+
+  return GetStringCSF(aTxtPlaceBeacon, 0, g_Str_File_Init_CPP, 7172); /*0x537056*/
+
 }
 
 // ==== BACKFILL 0x00537060  CreateTeamCommand::performAction_121  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_121()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7174);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7174); /*0x537076*/
+
 }
 
 // ==== BACKFILL 0x00537080  CreateTeamCommand::performAction_122  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_122()
 {
-{
-    return GetStringCSF(aTxtPlaceBeacon_0, 0, g_Str_File_Init_CPP, 7176);
-}
+
+  return GetStringCSF(aTxtPlaceBeacon_0, 0, g_Str_File_Init_CPP, 7176); /*0x537096*/
+
 }
 
 // ==== BACKFILL 0x005370A0  CreateTeamCommand::performAction_123  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_123()
+int DeployCommandClass::performAction_123()
 {
-{
-    CellStruct *result;
-    result = g_GameMode_Current;
-    if ( g_GameMode_Current )
-  {
-    if ( g_GameMode_Current != (CellStruct *)5 )
-    return UI_Create_731A30();
-  }
-    return (int)result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005370A0.json)
 }
 
 // ==== BACKFILL 0x005370C0  CreateTeamCommand::performAction_124  cls=CenterREventCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_124()
 {
-return aCenteronradare;
+
+  return aCenteronradare; /*0x5370c5*/
+
 }
 
 // ==== BACKFILL 0x005370D0  CreateTeamCommand::performAction_125  cls=CenterREventCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_125()
 {
-{
-    return GetStringCSF(aTxtRadarEvent, 0, g_Str_File_Init_CPP, 7195);
-}
+
+  return GetStringCSF(aTxtRadarEvent, 0, g_Str_File_Init_CPP, 7195); /*0x5370e6*/
+
 }
 
 // ==== BACKFILL 0x005370F0  CreateTeamCommand::performAction_126  cls=CenterREventCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_126()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7197);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7197); /*0x537106*/
+
 }
 
 // ==== BACKFILL 0x00537110  CreateTeamCommand::performAction_127  cls=CenterREventCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_127()
 {
-{
-    return GetStringCSF(aTxtRadarEventD, 0, g_Str_File_Init_CPP, 7199);
-}
+
+  return GetStringCSF(aTxtRadarEventD, 0, g_Str_File_Init_CPP, 7199); /*0x537126*/
+
 }
 
 // ==== BACKFILL 0x00537140  CreateTeamCommand::performAction_129  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_129()
 {
-return aSidebarup;
+
+  return aSidebarup; /*0x537145*/
+
 }
 
 // ==== BACKFILL 0x00537150  CreateTeamCommand::performAction_130  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_130()
 {
-{
-    return GetStringCSF(aTxtSidebarUp, 0, g_Str_File_Init_CPP, 7249);
-}
+
+  return GetStringCSF(aTxtSidebarUp, 0, g_Str_File_Init_CPP, 7249); /*0x537166*/
+
 }
 
 // ==== BACKFILL 0x00537170  CreateTeamCommand::performAction_131  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_131()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7251);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7251); /*0x537186*/
+
 }
 
 // ==== BACKFILL 0x00537190  CreateTeamCommand::performAction_132  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_132()
 {
-{
-    return GetStringCSF(aTxtSidebarUpDe, 0, g_Str_File_Init_CPP, 7253);
-}
+
+  return GetStringCSF(aTxtSidebarUpDe, 0, g_Str_File_Init_CPP, 7253); /*0x5371a6*/
+
 }
 
 // ==== BACKFILL 0x005371B0  CreateTeamCommand::performAction_133  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::performAction_133()
 {
-{
-    return CreateTeamCommand::performAction_245(&DataGlobal_87F7E8, 1, -1);
-}
+
+  return CreateTeamCommand::performAction_245((CreateTeamCommand *)&dword_87F7E8, 1, -1); /*0x5371be*/
+
 }
 
 // ==== BACKFILL 0x005371D0  CreateTeamCommand::performAction_134  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_134()
 {
-return aSidebardown;
+
+  return aSidebardown; /*0x5371d5*/
+
 }
 
 // ==== BACKFILL 0x005371E0  CreateTeamCommand::performAction_135  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_135()
 {
-{
-    return GetStringCSF(aTxtSidebarDown, 0, g_Str_File_Init_CPP, 7389);
-}
+
+  return GetStringCSF(aTxtSidebarDown, 0, g_Str_File_Init_CPP, 7389); /*0x5371f6*/
+
 }
 
 // ==== BACKFILL 0x00537200  CreateTeamCommand::performAction_136  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_136()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7391);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7391); /*0x537216*/
+
 }
 
 // ==== BACKFILL 0x00537220  CreateTeamCommand::performAction_137  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_137()
 {
-{
-    return GetStringCSF(aTxtSidebarDown_0, 0, g_Str_File_Init_CPP, 7393);
-}
+
+  return GetStringCSF(aTxtSidebarDown_0, 0, g_Str_File_Init_CPP, 7393); /*0x537236*/
+
 }
 
 // ==== BACKFILL 0x00537240  CreateTeamCommand::performAction_138  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char CreateTeamCommand::performAction_138()
 {
-{
-    return CreateTeamCommand::performAction_245(&DataGlobal_87F7E8, 0, -1);
-}
+
+  return CreateTeamCommand::performAction_245((CreateTeamCommand *)&dword_87F7E8, 0, -1); /*0x53724e*/
+
 }
 
 // ==== BACKFILL 0x00537260  CreateTeamCommand::performAction_139  cls=OptionsCommandClass  sig=csp  renamed_refs=0  residual=- ====
 CHAR * CreateTeamCommand::performAction_139()
 {
-{
-    return (CHAR *)&g_INI_Key_Options;
-}
+
+  return g_INI_Key_Options; /*0x537265*/
+
 }
 
 // ==== BACKFILL 0x00537270  CreateTeamCommand::performAction_140  cls=OptionsCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_140()
 {
-{
-    return GetStringCSF(aTxtOptions, 0, g_Str_File_Init_CPP, 7530);
-}
+
+  return GetStringCSF(aTxtOptions, 0, g_Str_File_Init_CPP, 7530); /*0x537286*/
+
 }
 
 // ==== BACKFILL 0x00537290  CreateTeamCommand::performAction_141  cls=OptionsCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_141()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7532);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7532); /*0x5372a6*/
+
 }
 
 // ==== BACKFILL 0x005372B0  CreateTeamCommand::performAction_142  cls=OptionsCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_142()
 {
-{
-    return GetStringCSF(aTxtOptionsDesc, 0, g_Str_File_Init_CPP, 7534);
-}
+
+  return GetStringCSF(aTxtOptionsDesc, 0, g_Str_File_Init_CPP, 7534); /*0x5372c6*/
+
 }
 
 // ==== BACKFILL 0x005372E0  CreateTeamCommand::performAction_144  cls=View1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_144()
 {
-return aView1;
+
+  return aView1; /*0x5372e5*/
+
 }
 
 // ==== BACKFILL 0x005372F0  CreateTeamCommand::performAction_145  cls=View1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_145()
 {
-{
-    return GetStringCSF(aTxtViewBookmar, 0, g_Str_File_Init_CPP, 7707);
-}
+
+  return GetStringCSF(aTxtViewBookmar, 0, g_Str_File_Init_CPP, 7707); /*0x537306*/
+
 }
 
 // ==== BACKFILL 0x00537310  CreateTeamCommand::performAction_146  cls=View1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_146()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7709);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7709); /*0x537326*/
+
 }
 
 // ==== BACKFILL 0x00537330  CreateTeamCommand::performAction_147  cls=View1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_147()
 {
-{
-    return GetStringCSF(aTxtViewBookmar_0, 0, g_Str_File_Init_CPP, 7711);
-}
+
+  return GetStringCSF(aTxtViewBookmar_0, 0, g_Str_File_Init_CPP, 7711); /*0x537346*/
+
 }
 
 // ==== BACKFILL 0x005373D0  CreateTeamCommand::performAction_149  cls=View2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_149()
 {
-return aView2;
+
+  return aView2; /*0x5373d5*/
+
 }
 
 // ==== BACKFILL 0x005373E0  CreateTeamCommand::performAction_150  cls=View2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_150()
 {
-{
-    return GetStringCSF(aTxtViewBookmar_1, 0, g_Str_File_Init_CPP, 7743);
-}
+
+  return GetStringCSF(aTxtViewBookmar_1, 0, g_Str_File_Init_CPP, 7743); /*0x5373f6*/
+
 }
 
 // ==== BACKFILL 0x00537400  CreateTeamCommand::performAction_151  cls=View2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_151()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7745);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7745); /*0x537416*/
+
 }
 
 // ==== BACKFILL 0x00537420  CreateTeamCommand::performAction_152  cls=View2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_152()
 {
-{
-    return GetStringCSF(aTxtViewBookmar_2, 0, g_Str_File_Init_CPP, 7747);
-}
+
+  return GetStringCSF(aTxtViewBookmar_2, 0, g_Str_File_Init_CPP, 7747); /*0x537436*/
+
 }
 
 // ==== BACKFILL 0x005374C0  CreateTeamCommand::performAction_154  cls=View3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_154()
 {
-return aView3;
+
+  return aView3; /*0x5374c5*/
+
 }
 
 // ==== BACKFILL 0x005374D0  CreateTeamCommand::performAction_155  cls=View3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_155()
 {
-{
-    return GetStringCSF(aTxtViewBookmar_3, 0, g_Str_File_Init_CPP, 7779);
-}
+
+  return GetStringCSF(aTxtViewBookmar_3, 0, g_Str_File_Init_CPP, 7779); /*0x5374e6*/
+
 }
 
 // ==== BACKFILL 0x005374F0  CreateTeamCommand::performAction_156  cls=View3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_156()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7781);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7781); /*0x537506*/
+
 }
 
 // ==== BACKFILL 0x00537510  CreateTeamCommand::performAction_157  cls=View3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_157()
 {
-{
-    return GetStringCSF(aTxtViewBookmar_4, 0, g_Str_File_Init_CPP, 7783);
-}
+
+  return GetStringCSF(aTxtViewBookmar_4, 0, g_Str_File_Init_CPP, 7783); /*0x537526*/
+
 }
 
 // ==== BACKFILL 0x005375B0  CreateTeamCommand::performAction_159  cls=View4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_159()
 {
-return aView4;
+
+  return aView4; /*0x5375b5*/
+
 }
 
 // ==== BACKFILL 0x005375C0  CreateTeamCommand::performAction_160  cls=View4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_160()
 {
-{
-    return GetStringCSF(aTxtViewBookmar_5, 0, g_Str_File_Init_CPP, 7815);
-}
+
+  return GetStringCSF(aTxtViewBookmar_5, 0, g_Str_File_Init_CPP, 7815); /*0x5375d6*/
+
 }
 
 // ==== BACKFILL 0x005375E0  CreateTeamCommand::performAction_161  cls=View4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_161()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7817);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7817); /*0x5375f6*/
+
 }
 
 // ==== BACKFILL 0x00537600  CreateTeamCommand::performAction_162  cls=View4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_162()
 {
-{
-    return GetStringCSF(aTxtViewBookmar_6, 0, g_Str_File_Init_CPP, 7819);
-}
+
+  return GetStringCSF(aTxtViewBookmar_6, 0, g_Str_File_Init_CPP, 7819); /*0x537616*/
+
 }
 
 // ==== BACKFILL 0x005376A0  CreateTeamCommand::performAction_163  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_163()
 {
-return aSetview1;
+
+  return aSetview1; /*0x5376a5*/
+
 }
 
 // ==== BACKFILL 0x005376B0  CreateTeamCommand::performAction_164  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_164()
 {
-{
-    return GetStringCSF(aTxtSetBookmark, 0, g_Str_File_Init_CPP, 7851);
-}
+
+  return GetStringCSF(aTxtSetBookmark, 0, g_Str_File_Init_CPP, 7851); /*0x5376c6*/
+
 }
 
 // ==== BACKFILL 0x005376D0  CreateTeamCommand::performAction_165  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_165()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7853);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7853); /*0x5376e6*/
+
 }
 
 // ==== BACKFILL 0x005376F0  CreateTeamCommand::performAction_166  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_166()
 {
-{
-    return GetStringCSF(aTxtSetBookmark_0, 0, g_Str_File_Init_CPP, 7855);
-}
+
+  return GetStringCSF(aTxtSetBookmark_0, 0, g_Str_File_Init_CPP, 7855); /*0x537706*/
+
 }
 
 // ==== BACKFILL 0x00537710  CreateTeamCommand::performAction_167  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
-void * CreateTeamCommand::performAction_167()
+void * DeployCommandClass::performAction_167()
 {
-{
-    int *v1;
-    int v2;
-    ScenarioClass *result;
-    int v4[2];
-    int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
-    v5[0] = *v1;
-    v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
-    result = g_ScenarioClass_Instance;
-    *(int *)((char *)&g_ScenarioClass_Instance->localVariables[1024] + 2) = v2;
-    return result;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537710.json)
 }
 
 // ==== BACKFILL 0x00537760  CreateTeamCommand::performAction_168  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_168()
 {
-return aSetview2;
+
+  return aSetview2; /*0x537765*/
+
 }
 
 // ==== BACKFILL 0x00537770  CreateTeamCommand::performAction_169  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_169()
 {
-{
-    return GetStringCSF(aTxtSetBookmark_1, 0, g_Str_File_Init_CPP, 7878);
-}
+
+  return GetStringCSF(aTxtSetBookmark_1, 0, g_Str_File_Init_CPP, 7878); /*0x537786*/
+
 }
 
 // ==== BACKFILL 0x00537790  CreateTeamCommand::performAction_170  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_170()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7880);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7880); /*0x5377a6*/
+
 }
 
 // ==== BACKFILL 0x005377B0  CreateTeamCommand::performAction_171  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_171()
 {
-{
-    return GetStringCSF(aTxtSetBookmark_2, 0, g_Str_File_Init_CPP, 7882);
-}
+
+  return GetStringCSF(aTxtSetBookmark_2, 0, g_Str_File_Init_CPP, 7882); /*0x5377c6*/
+
 }
 
 // ==== BACKFILL 0x005377D0  CreateTeamCommand::performAction_172  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
-void * CreateTeamCommand::performAction_172()
+void * DeployCommandClass::performAction_172()
 {
-{
-    int *v1;
-    int v2;
-    ScenarioClass *result;
-    int v4[2];
-    int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
-    v5[0] = *v1;
-    v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
-    result = g_ScenarioClass_Instance;
-    *(int *)((char *)g_ScenarioClass_Instance->view1 + 2) = v2;
-    return result;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005377D0.json)
 }
 
 // ==== BACKFILL 0x00537820  CreateTeamCommand::performAction_173  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_173()
 {
-return aSetview3;
+
+  return aSetview3; /*0x537825*/
+
 }
 
 // ==== BACKFILL 0x00537830  CreateTeamCommand::performAction_174  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_174()
 {
-{
-    return GetStringCSF(aTxtSetBookmark_3, 0, g_Str_File_Init_CPP, 7905);
-}
+
+  return GetStringCSF(aTxtSetBookmark_3, 0, g_Str_File_Init_CPP, 7905); /*0x537846*/
+
 }
 
 // ==== BACKFILL 0x00537850  CreateTeamCommand::performAction_175  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_175()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7907);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7907); /*0x537866*/
+
 }
 
 // ==== BACKFILL 0x00537870  CreateTeamCommand::performAction_176  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_176()
 {
-{
-    return GetStringCSF(aTxtSetBookmark_4, 0, g_Str_File_Init_CPP, 7909);
-}
+
+  return GetStringCSF(aTxtSetBookmark_4, 0, g_Str_File_Init_CPP, 7909); /*0x537886*/
+
 }
 
 // ==== BACKFILL 0x00537890  CreateTeamCommand::performAction_177  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
-void * CreateTeamCommand::performAction_177()
+void * DeployCommandClass::performAction_177()
 {
-{
-    int *v1;
-    int v2;
-    ScenarioClass *result;
-    int v4[2];
-    int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
-    v5[0] = *v1;
-    v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
-    result = g_ScenarioClass_Instance;
-    *(int *)((char *)g_ScenarioClass_Instance->view2 + 2) = v2;
-    return result;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537890.json)
 }
 
 // ==== BACKFILL 0x005378E0  CreateTeamCommand::performAction_178  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_178()
 {
-return aSetview4;
+
+  return aSetview4; /*0x5378e5*/
+
 }
 
 // ==== BACKFILL 0x005378F0  CreateTeamCommand::performAction_179  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_179()
 {
-{
-    return GetStringCSF(aTxtSetBookmark_5, 0, g_Str_File_Init_CPP, 7932);
-}
+
+  return GetStringCSF(aTxtSetBookmark_5, 0, g_Str_File_Init_CPP, 7932); /*0x537906*/
+
 }
 
 // ==== BACKFILL 0x00537910  CreateTeamCommand::performAction_180  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_180()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7934);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7934); /*0x537926*/
+
 }
 
 // ==== BACKFILL 0x00537930  CreateTeamCommand::performAction_181  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_181()
 {
-{
-    return GetStringCSF(aTxtSetBookmark_6, 0, g_Str_File_Init_CPP, 7936);
-}
+
+  return GetStringCSF(aTxtSetBookmark_6, 0, g_Str_File_Init_CPP, 7936); /*0x537946*/
+
 }
 
 // ==== BACKFILL 0x00537950  CreateTeamCommand::performAction_182  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
-void * CreateTeamCommand::performAction_182()
+void * DeployCommandClass::performAction_182()
 {
-{
-    int *v1;
-    int v2;
-    ScenarioClass *result;
-    int v4[2];
-    int v5[2];
-    v1 = ObjectClass::ComputeDelta(*(int **)&DataGlobal_87F8E4[31296], v4);
-    v5[0] = *v1;
-    v5[1] = v1[1];
-    v2 = *Tactical::PixelToCell(*(int *)&DataGlobal_87F8E4[31296], (AbstractClass *)v4, (IUnknown *)v5);
-    result = g_ScenarioClass_Instance;
-    *(int *)((char *)g_ScenarioClass_Instance->view3 + 2) = v2;
-    return result;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537950.json)
 }
 
 // ==== BACKFILL 0x005379A0  CreateTeamCommand::performAction_183  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_183()
 {
-return aFollow;
+
+  return aFollow; /*0x5379a5*/
+
 }
 
 // ==== BACKFILL 0x005379B0  CreateTeamCommand::performAction_184  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_184()
 {
-{
-    return GetStringCSF(aTxtFollow, 0, g_Str_File_Init_CPP, 7959);
-}
+
+  return GetStringCSF(aTxtFollow, 0, g_Str_File_Init_CPP, 7959); /*0x5379c6*/
+
 }
 
 // ==== BACKFILL 0x005379D0  CreateTeamCommand::performAction_185  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_185()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7961);
-}
+
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7961); /*0x5379e6*/
+
 }
 
 // ==== BACKFILL 0x005379F0  CreateTeamCommand::performAction_186  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_186()
 {
-{
-    return GetStringCSF(aTxtFollowDesc, 0, g_Str_File_Init_CPP, 7963);
-}
+
+  return GetStringCSF(aTxtFollowDesc, 0, g_Str_File_Init_CPP, 7963); /*0x537a06*/
+
 }
 
 // ==== BACKFILL 0x00537A10  CreateTeamCommand::performAction_187  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
-bool CreateTeamCommand::performAction_187()
+bool DeployCommandClass::performAction_187()
 {
-{
-    if ( !*(int *)&g_NetworkPlayerBuffer[5772] || MapClass::GetScrollMode((int)&DataGlobal_87F7E8) )
-    return MapClass::SetScrollMode((int)&DataGlobal_87F7E8, 0);
-    else
-    return MapClass::SetScrollMode((int)&DataGlobal_87F7E8, **(MouseClass ***)&g_NetworkPlayerBuffer[5760]);
-}
+     return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537A10.json)
 }
 
 // ==== BACKFILL 0x00537A50  Commands::AddRef  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * Commands::AddRef()
+int32_t Commands::AddRef(void *a1)
 {
-{
-    return aMultiplayerdeb;
-}
+
+  return (int32_t)(aMultiplayerdeb); /*0x537a55*/
+
 }
 
 // ==== BACKFILL 0x00537A60  Commands::ddtor  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
-const wchar_t * Commands::ddtor()
+int32_t Commands::ddtor()
 {
-return g_INI_Key_De;
+
+  return g_INI_Key_De; /*0x537a65*/
+
 }
 
 // ==== BACKFILL 0x00537A70  Commands::Release  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char ** Commands::Release()
+int32_t Commands::Release(void *a1)
 {
-{
-    return &DataGlobal_8278C0;
-}
+
+  return (int32_t)(&off_8278C0); /*0x537a75*/
+
 }
 
 // ==== BACKFILL 0x00537A80  Commands::StubReturn8550640  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
-_UNKNOWN ** Commands::StubReturn8550640()
+void ** Commands::StubReturn8550640()
 {
-{
-    return &DataGlobal_8278F0;
-}
+
+  return &off_8278F0; /*0x537a85*/
+
 }
 
 // ==== BACKFILL 0x00537A90  Commands::Execute  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char Commands::Execute()
+int32_t Commands::Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7)
 {
-{
-    char result;
-    result = DataGlobal_A8B8B4;
-    if ( DataGlobal_A8B8B4 )
+
+  char result; // al
+
+  result = byte_A8B8B4; /*0x537a90*/
+  if ( byte_A8B8B4 ) /*0x537a97*/
   {
-    result = DataGlobal_A8B8B5 == 0;
-    DataGlobal_A8B8B5 = DataGlobal_A8B8B5 == 0;
+    result = byte_A8B8B5 == 0; /*0x537aa0*/
+    byte_A8B8B5 = byte_A8B8B5 == 0; /*0x537aa3*/
   }
-    return result;
-}
+  return result; /*0x537aa8*/
+
 }
 
 // ==== BACKFILL 0x00537AB0  CreateTeamCommand::performAction_188  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_188()
 {
-return aExtrasynccheck;
+
+  return aExtrasynccheck; /*0x537ab5*/
+
 }
 
 // ==== BACKFILL 0x00537AC0  CreateTeamCommand::performAction_189  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
 const wchar_t * CreateTeamCommand::performAction_189()
 {
-return g_INI_Key_De;
+
+  return g_INI_Key_De; /*0x537ac5*/
+
 }
 
 // ==== BACKFILL 0x00537AD0  CreateTeamCommand::performAction_190  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_190()
 {
-return aGameSyncLoggin;
+
+  return aGameSyncLoggin; /*0x537ad5*/
+
 }
 
 // ==== BACKFILL 0x00537AE0  CreateTeamCommand::performAction_191  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
-_UNKNOWN ** CreateTeamCommand::performAction_191()
+void ** CreateTeamCommand::performAction_191()
 {
-{
-    return &DataGlobal_827970;
-}
+
+  return &off_827970; /*0x537ae5*/
+
 }
 
 // ==== BACKFILL 0x00537AF0  CreateTeamCommand::performAction_192  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
-int CreateTeamCommand::performAction_192()
+int DeployCommandClass::performAction_192()
 {
-{
-    bool v1;
-    char *v2;
-    char *v3;
-    v1 = DataGlobal_B04880 != 0;
-    DataGlobal_B04880 = DataGlobal_B04880 == 0;
-    v2 = aExtraSyncInfoO;
-    if ( v1 )
-    v2 = aExtraSyncInfoO_0;
-    v3 = CharToWideString(v2);
-    return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, (CellStruct *)v3, 3, (IUnknown *)0x4046, 150, 0);
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537AF0.json)
 }
 
 // ==== BACKFILL 0x00537B40  ScreenCaptureCommandClass::Constructor  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * ScreenCaptureCommandClass::Constructor()
+_DWORD * ScreenCaptureCommandClass::Constructor()
 {
-{
-    *(void**)this = &vt_ScreenCaptureCommandClass;
-    return this;
-}
+
+  *(unsigned int *)this->CommandClass = (unsigned int)(&vt_ScreenCaptureCommandClass); /*0x537b42*/
+return (unsigned int *)this->CommandClass; /*0x537b48*/
+
 }
 
 // ==== BACKFILL 0x00537B50  ScreenCaptureCommandClass::AddRef  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * ScreenCaptureCommandClass::AddRef()
+char ScreenCaptureCommandClass::AddRef(void *a1)
 {
-return aScreencapture;
+
+  return (char)(aScreencapture); /*0x537b55*/
+
 }
 
 // ==== BACKFILL 0x00537B60  ScreenCaptureCommandClass::ddtor  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * ScreenCaptureCommandClass::ddtor()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 8071);
-}
+
+  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0,(const char *)(g_Str_File_Init_CPP), 8071); /*0x537b76*/
+
 }
 
 // ==== BACKFILL 0x00537B80  ScreenCaptureCommandClass::Release  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * ScreenCaptureCommandClass::Release()
+int * ScreenCaptureCommandClass::Release(void *a1)
 {
-{
-    return GetStringCSF(aTxtScrncap, 0, g_Str_File_Init_CPP, 8072);
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x537B80)
 }
 
 // ==== BACKFILL 0x00537BA0  ScreenCaptureCommandClass::Execute  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * ScreenCaptureCommandClass::Execute()
+wchar_t * ScreenCaptureCommandClass::Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7)
 {
-{
-    return GetStringCSF(aTxtScrncapDesc, 0, g_Str_File_Init_CPP, 8073);
-}
+
+  return GetStringCSF((wchar_t *)(aTxtScrncapDesc), 0,(const char *)(g_Str_File_Init_CPP), 8073); /*0x537bb6*/
+
 }
 
 // ==== BACKFILL 0x00537DD0  PageUserCommandClass::PageUserCommandClass  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * PageUserCommandClass::PageUserCommandClass()
+PageUserCommandClass::PageUserCommandClass()
 {
-{
-    *(void**)this = &vt_PageUserCommandClass;
-    return this;
-}
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x537DD0)
 }
 
 // ==== BACKFILL 0x00537DE0  PageUserCommandClass::AddRef  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * PageUserCommandClass::AddRef()
+char * PageUserCommandClass::AddRef(void *a1)
 {
-{
-    return DataGlobal_827A7C;
-}
+
+  return (char *)(aPageuser); /*0x537de5*/
+
 }
 
 // ==== BACKFILL 0x00537DF0  PageUserCommandClass::Release  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * PageUserCommandClass::Release()
+wchar_t * PageUserCommandClass::Release(void *a1)
 {
-{
-    return GetStringCSF(DataGlobal_827A88, 0, g_Str_File_Init_CPP, 7563);
-}
+
+  return GetStringCSF((wchar_t *)(aTxtPageuser), 0, g_Str_File_Init_CPP, 7563); /*0x537e06*/
+
 }
 
 // ==== BACKFILL 0x00537E10  PageUserCommandClass::ddtor  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * PageUserCommandClass::ddtor()
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7565);
-}
+
+  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 7565); /*0x537e26*/
+
 }
 
 // ==== BACKFILL 0x00537E30  PageUserCommandClass::Read  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * PageUserCommandClass::Read()
+wchar_t * PageUserCommandClass::Read(void *a1, void *a2)
 {
-{
-    return GetStringCSF(DataGlobal_827A98, 0, g_Str_File_Init_CPP, 7567);
-}
+
+  return GetStringCSF((wchar_t *)(aTxtPageuserDes), 0, g_Str_File_Init_CPP, 7567); /*0x537e46*/
+
 }
 
 // ==== BACKFILL 0x00537E50  PageUserCommandClass::Do  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char PageUserCommandClass::Do(int a1)
 {
-{
-    char result;
-    if ( g_GameMode_Current[0] == 4 )
-    return UI_Add();
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x537E50)
 }
 
 // ==== BACKFILL 0x00537E70  CursorPositionCommandClass::Constructor  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CursorPositionCommandClass::Constructor()
+_DWORD * CursorPositionCommandClass::Constructor()
 {
-{
-    *(void**)this = &vt_CursorPositionCommandClass;
-    return this;
-}
+
+  *(unsigned int *)this->CommandClass = (unsigned int)(&vt_CursorPositionCommandClass); /*0x537e72*/
+return (unsigned int *)this->CommandClass; /*0x537e78*/
+
 }
 
 // ==== BACKFILL 0x00537E80  CreateTeamCommand::performAction_193  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
 char * CreateTeamCommand::performAction_193()
 {
-{
-    return DataGlobal_827ADC;
-}
+
+  return aCursorcheat; /*0x537e85*/
+
 }
 
 // ==== BACKFILL 0x00537E90  CreateTeamCommand::performAction_194  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_194()
 {
-{
-    return GetStringCSF(DataGlobal_827AE8, 0, g_Str_File_Init_CPP, 8231);
-}
+
+  return GetStringCSF(aGuiCursorcheat, 0, g_Str_File_Init_CPP, 8231); /*0x537ea6*/
+
 }
 
 // ==== BACKFILL 0x00537EB0  CreateTeamCommand::performAction_195  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_195()
 {
-{
-    return GetStringCSF(aGuiDebug, 0, g_Str_File_Init_CPP, 8232);
-}
+
+  return GetStringCSF(aGuiDebug, 0, g_Str_File_Init_CPP, 8232); /*0x537ec6*/
+
 }
 
 // ==== BACKFILL 0x00537ED0  CreateTeamCommand::performAction_196  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
 wchar_t * CreateTeamCommand::performAction_196()
 {
-{
-    return GetStringCSF(aDescCursorchea, 0, g_Str_File_Init_CPP, 8233);
-}
+
+  return GetStringCSF(aDescCursorchea, 0, g_Str_File_Init_CPP, 8233); /*0x537ee6*/
+
 }
 
 // ==== BACKFILL 0x00537EF0  CreateTeamCommand::performAction_197  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
-bool CreateTeamCommand::performAction_197(int a1)
+bool DeployCommandClass::performAction_197(int a1)
 {
-{
-    bool result;
-    result = DataGlobal_A8F7D8 == 0;
-    DataGlobal_A8F7D8 = DataGlobal_A8F7D8 == 0;
-    return result;
-}
+    (void)a1; return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537EF0.json)
 }
 
 // ==== BACKFILL 0x00537F10  DeleteCommandClass::Constructor  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * DeleteCommandClass::Constructor()
+unsigned int * DeleteCommandClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5)
 {
-{
-    *(void**)this = &vt_DeleteCommandClass;
-    return this;
-}
+
+  *(unsigned int *)this->CommandClass =(unsigned int)(&vt_DeleteCommandClass); /*0x537f12*/
+return (unsigned int *)this->CommandClass; /*0x537f18*/
+
 }
 
 // ==== BACKFILL 0x00537F20  DeleteCommandClass::AddRef  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
-char * DeleteCommandClass::AddRef()
+char * DeleteCommandClass::AddRef(void *a1)
 {
-return aDelete;
+
+  return (char *)(aDelete);
+
 }
 
 // ==== BACKFILL 0x00537F30  DeleteCommandClass::Release  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * DeleteCommandClass::Release()
+wchar_t * DeleteCommandClass::Release(void *a1)
 {
-{
-    return GetStringCSF(aCmndDelete, 0, g_Str_File_Init_CPP, 6559);
-}
+
+  return GetStringCSF((wchar_t *)(aCmndDelete), 0, g_Str_File_Init_CPP, 6559); /*0x537f46*/
+
 }
 
 // ==== BACKFILL 0x00537F50  DeleteCommandClass::ddtor  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * DeleteCommandClass::ddtor()
+wchar_t * DeleteCommandClass::ddtor(void *a1)
 {
-{
-    return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6561);
-}
+
+  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 6561); /*0x537f66*/
+
 }
 
 // ==== BACKFILL 0x00537F70  DeleteCommandClass::Read  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * DeleteCommandClass::Read()
+wchar_t * DeleteCommandClass::Read(void *a1, void *a2)
 {
-{
-    return GetStringCSF(aCmndDeletedesc, 0, g_Str_File_Init_CPP, 6563);
-}
+
+  return GetStringCSF((wchar_t *)(aCmndDeletedesc), 0, g_Str_File_Init_CPP, 6563); /*0x537f86*/
+
 }
 
 // ==== BACKFILL 0x00537FA0  CreateTeamCommand::performAction_198  cls=MultiplayerDebugCommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_198(char a2)
+std::locale::facet * DeployCommandClass::performAction_198(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537FA0.json)
 }
 
 // ==== BACKFILL 0x00537FC0  CreateTeamCommand::performAction_199  cls=MultiplayerSyncCommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_199(char a2)
+std::locale::facet * DeployCommandClass::performAction_199(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537FC0.json)
 }
 
 // ==== BACKFILL 0x00537FE0  CreateTeamCommand::performAction_200  cls=FollowCommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_200(char a2)
+std::locale::facet * DeployCommandClass::performAction_200(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00537FE0.json)
 }
 
 // ==== BACKFILL 0x00538000  CreateTeamCommand::performAction_201  cls=View1CommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_201(char a2)
+std::locale::facet * DeployCommandClass::performAction_201(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538000.json)
 }
 
 // ==== BACKFILL 0x00538020  CreateTeamCommand::performAction_202  cls=View2CommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_202(char a2)
+std::locale::facet * DeployCommandClass::performAction_202(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538020.json)
 }
 
 // ==== BACKFILL 0x00538040  CreateTeamCommand::performAction_203  cls=View3CommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_203(char a2)
+std::locale::facet * DeployCommandClass::performAction_203(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538040.json)
 }
 
 // ==== BACKFILL 0x00538060  CreateTeamCommand::performAction_204  cls=View4CommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_204(char a2)
+std::locale::facet * DeployCommandClass::performAction_204(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538060.json)
 }
 
 // ==== BACKFILL 0x00538080  CreateTeamCommand::performAction_205  cls=SetView1CommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_205(char a2)
+std::locale::facet * DeployCommandClass::performAction_205(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538080.json)
 }
 
 // ==== BACKFILL 0x005380A0  CreateTeamCommand::performAction_206  cls=SetView2CommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_206(char a2)
+std::locale::facet * DeployCommandClass::performAction_206(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005380A0.json)
 }
 
 // ==== BACKFILL 0x005380C0  CreateTeamCommand::performAction_207  cls=SetView3CommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_207(char a2)
+std::locale::facet * DeployCommandClass::performAction_207(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005380C0.json)
 }
 
 // ==== BACKFILL 0x005380E0  CreateTeamCommand::performAction_208  cls=SetView4CommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_208(char a2)
+std::locale::facet * DeployCommandClass::performAction_208(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005380E0.json)
 }
 
 // ==== BACKFILL 0x00538100  CreateTeamCommand::performAction_209  cls=OptionsCommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_209(char a2)
+std::locale::facet * DeployCommandClass::performAction_209(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538100.json)
 }
 
 // ==== BACKFILL 0x00538120  CreateTeamCommand::performAction_210  cls=SidebarUpCommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_210(char a2)
+std::locale::facet * DeployCommandClass::performAction_210(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538120.json)
 }
 
 // ==== BACKFILL 0x00538140  CreateTeamCommand::performAction_211  cls=SidebarDownCommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_211(char a2)
+std::locale::facet * DeployCommandClass::performAction_211(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538140.json)
 }
 
 // ==== BACKFILL 0x00538160  CreateTeamCommand::performAction_212  cls=CenterREventCommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_212(char a2)
+std::locale::facet * DeployCommandClass::performAction_212(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538160.json)
 }
 
 // ==== BACKFILL 0x00538180  CreateTeamCommand::performAction_213  cls=BeaconPlacementCommandClass  sig=csp  renamed_refs=0  residual=- ====
-std::locale::facet * CreateTeamCommand::performAction_213(char a2)
+std::locale::facet * DeployCommandClass::performAction_213(char a2)
 {
-{
-    *(void**)this = vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538180.json)
 }
 
 // ==== BACKFILL 0x005381A0  CreateTeamCommand::performAction_214  cls=ToggleSellCommandClass  sig=csp  renamed_refs=0  residual=- ====
-ToggleSellCommandClass * CreateTeamCommand::performAction_214(char a2)
+ToggleSellCommandClass * DeployCommandClass::performAction_214(char a2)
 {
-{
-    *(int *)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (ToggleSellCommandClass *)this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005381A0.json)
 }
 
 // ==== BACKFILL 0x005381C0  CreateTeamCommand::performAction_215  cls=ToggleRepairCommandClass  sig=csp  renamed_refs=0  residual=- ====
-ToggleRepairCommandClass * CreateTeamCommand::performAction_215(char a2)
+ToggleRepairCommandClass * DeployCommandClass::performAction_215(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (ToggleRepairCommandClass *)this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005381C0.json)
 }
 
 // ==== BACKFILL 0x005381E0  CreateTeamCommand::performAction_216  cls=AllianceCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_216(char a2)
+unsigned int * DeployCommandClass::performAction_216(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005381E0.json)
 }
 
 // ==== BACKFILL 0x00538200  CreateTeamCommand::performAction_217  cls=CenterBaseCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_217(char a2)
+unsigned int * DeployCommandClass::performAction_217(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538200.json)
 }
 
 // ==== BACKFILL 0x00538220  CreateTeamCommand::performAction_218  cls=CenterViewCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_218(char a2)
+unsigned int * DeployCommandClass::performAction_218(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538220.json)
 }
 
 // ==== BACKFILL 0x00538240  CreateTeamCommand::performAction_219  cls=ScatterCommandClass  sig=csp  renamed_refs=0  residual=- ====
-ScatterCommandClass * CreateTeamCommand::performAction_219(char a2)
+ScatterCommandClass * DeployCommandClass::performAction_219(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (ScatterCommandClass *)this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538240.json)
 }
 
 // ==== BACKFILL 0x00538260  CreateTeamCommand::performAction_220  cls=GuardCommandClass  sig=csp  renamed_refs=0  residual=- ====
-GuardCommandClass * CreateTeamCommand::performAction_220(char a2)
+GuardCommandClass * DeployCommandClass::performAction_220(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (GuardCommandClass *)this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538260.json)
 }
 
 // ==== BACKFILL 0x00538280  CreateTeamCommand::performAction_221  cls=StopCommandClass  sig=csp  renamed_refs=0  residual=- ====
-StopCommandClass * CreateTeamCommand::performAction_221(char a2)
+StopCommandClass * DeployCommandClass::performAction_221(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (StopCommandClass *)this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538280.json)
 }
 
 // ==== BACKFILL 0x005382A0  CreateTeamCommand::performAction_222  cls=AllToCheerCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_222(char a2)
+unsigned int * DeployCommandClass::performAction_222(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005382A0.json)
 }
 
 // ==== BACKFILL 0x005382C0  CreateTeamCommand::performAction_223  cls=DeployCommandClass  sig=csp  renamed_refs=0  residual=- ====
-DeployCommandClass * CreateTeamCommand::performAction_223(char a2)
+DeployCommandClass * DeployCommandClass::performAction_223(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DeployCommandClass *)this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005382C0.json)
 }
 
 // ==== BACKFILL 0x005382E0  CreateTeamCommand::performAction_224  cls=PrevObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_224(char a2)
+unsigned int * DeployCommandClass::performAction_224(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005382E0.json)
 }
 
 // ==== BACKFILL 0x00538300  CreateTeamCommand::performAction_225  cls=NextObjectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_225(char a2)
+unsigned int * DeployCommandClass::performAction_225(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538300.json)
 }
 
 // ==== BACKFILL 0x00538320  CreateTeamCommand::performAction_226  cls=PlanningModeCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_226(char a2)
+unsigned int * DeployCommandClass::performAction_226(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538320.json)
 }
 
 // ==== BACKFILL 0x00538340  CreateTeamCommand::performAction_227  cls=CombatantSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_227(char a2)
+unsigned int * DeployCommandClass::performAction_227(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538340.json)
 }
 
 // ==== BACKFILL 0x00538360  CreateTeamCommand::performAction_228  cls=TypeSelectCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_228(char a2)
+unsigned int * DeployCommandClass::performAction_228(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538360.json)
 }
 
 // ==== BACKFILL 0x00538380  CreateTeamCommand::performAction_229  cls=HealthNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_229(char a2)
+unsigned int * DeployCommandClass::performAction_229(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538380.json)
 }
 
 // ==== BACKFILL 0x005383A0  CreateTeamCommand::performAction_230  cls=VeterancyNavCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_230(char a2)
+unsigned int * DeployCommandClass::performAction_230(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005383A0.json)
 }
 
 // ==== BACKFILL 0x005383C0  CreateTeamCommand::performAction_231  cls=SetStructureTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_231(char a2)
+unsigned int * DeployCommandClass::performAction_231(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005383C0.json)
 }
 
 // ==== BACKFILL 0x005383E0  CreateTeamCommand::performAction_232  cls=SetDefenseTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_232(char a2)
+unsigned int * DeployCommandClass::performAction_232(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005383E0.json)
 }
 
 // ==== BACKFILL 0x00538400  CreateTeamCommand::performAction_233  cls=SetUnitTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_233(char a2)
+unsigned int * DeployCommandClass::performAction_233(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538400.json)
 }
 
 // ==== BACKFILL 0x00538420  CreateTeamCommand::performAction_234  cls=SetInfantryTabCommandClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * CreateTeamCommand::performAction_234(char a2)
+unsigned int * DeployCommandClass::performAction_234(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538420.json)
 }
 
 // ==== BACKFILL 0x00538440  CreateTeamCommand::performAction_235  cls=ScreenCaptureCommandClass  sig=csp  renamed_refs=0  residual=- ====
-ScreenCaptureCommandClass * CreateTeamCommand::performAction_235(char a2)
+ScreenCaptureCommandClass * DeployCommandClass::performAction_235(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (ScreenCaptureCommandClass *)this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538440.json)
 }
 
 // ==== BACKFILL 0x00538460  CreateTeamCommand::performAction_236  cls=PageUserCommandClass  sig=csp  renamed_refs=0  residual=- ====
-PageUserCommandClass * CreateTeamCommand::performAction_236(char a2)
+PageUserCommandClass * DeployCommandClass::performAction_236(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (PageUserCommandClass *)this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538460.json)
 }
 
 // ==== BACKFILL 0x00538480  CreateTeamCommand::performAction_237  cls=CursorPositionCommandClass  sig=csp  renamed_refs=0  residual=- ====
-CursorPositionCommandClass * CreateTeamCommand::performAction_237(char a2)
+CursorPositionCommandClass * DeployCommandClass::performAction_237(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (CursorPositionCommandClass *)this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538480.json)
 }
 
 // ==== BACKFILL 0x005384A0  CreateTeamCommand::performAction_238  cls=DeleteCommandClass  sig=csp  renamed_refs=0  residual=- ====
-DeleteCommandClass * CreateTeamCommand::performAction_238(char a2)
+DeleteCommandClass * DeployCommandClass::performAction_238(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = &vt_CommandClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DeleteCommandClass *)this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005384A0.json)
 }
 
-// ==== BACKFILL 0x005384C0  CreateTeamCommand::performAction_239  cls=DynamicVector  sig=csp  renamed_refs=1  residual=- ====
-void CreateTeamCommand::performAction_239()
+// ==== BACKFILL 0x005384C0  CreateTeamCommand::performAction_239  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
+void DeployCommandClass::performAction_239()
 {
-{
-    void *v2;
-    v2 = *(void **)(this + 4);
-    this->CreateTeamCommand_field_0x10 = 0;
-    if ( v2 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v2);
-    this->CreateTeamCommand_field_0x4 = 0;
-  }
-    this->IsAllocated = 0;
-    this->q008 = 0;
-}
+      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005384C0.json)
 }
 
 // ==== BACKFILL 0x005384F0  CreateTeamCommand::performAction_240  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
-unsigned int CreateTeamCommand::performAction_240(int a2)
+unsigned int DeployCommandClass::performAction_240(int a2)
 {
-{
-    if ( (unsigned char)this->CreateTeamCommand_field_0xC )
-    return (unsigned int)(a2 - this->CreateTeamCommand_field_0x4) >> 2;
-    else
-    return 0;
-}
+    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005384F0.json)
 }
 
-// ==== BACKFILL 0x00538780  DynamicVector::Add_Alt2  cls=DynamicVector  sig=csp  renamed_refs=4  residual=- ====
+// ==== BACKFILL 0x00538780  DynamicVector::Add_Alt2  cls=DynamicVector  sig=csp  renamed_refs=0  residual=DynamicVector_field_0x1 ====
 char DynamicVector::Add_Alt2(DynamicVector * aP1)
 {
-{
-    int v3;
-    int v4;
-    int v6;
-    int v7;
-    v3 = this->q008;
-    if ( this->q010 >= v3 )
+
+  int DynamicVector_field_0x8; // ecx
+  int v4; // eax
+  void *DynamicVector_field_0x10; // eax
+  int v7; // edx
+
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x538783*/
+  if ( (int)this->DynamicVector_field_0x10 >= DynamicVector_field_0x8 ) /*0x53878b*/
   {
-    if ( !this->IsAllocated && v3 )
-    return 0;
-    v4 = this->CapacityIncrement;
-    if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
-    return 0;
+    if ( !this->__pad_C[1] && DynamicVector_field_0x8 ) /*0x538796*/
+      return 0; /*0x538796*/
+    v4 = *(unsigned int *)this->__pad_14; /*0x538798*/
+    if ( v4 <= 0 /*0x5387a8*/
+      || !(*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+            this,
+            DynamicVector_field_0x8 + v4,
+            0) )
+    {
+      return 0; /*0x5387af*/
+    }
   }
-    v6 = this->q010;
-    v7 = this->Items;
-    this->q010 = v6 + 1;
-    *(int *)(v7 + 4 * v6) = *(int *)aP1->__pad_0;
-    return 1;
-}
+  DynamicVector_field_0x10 = (void *)(this->DynamicVector_field_0x10); /*0x5387b5*/
+  v7 = (unsigned int)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3]); /*0x5387b8*/
+  this->DynamicVector_field_0x10 = (unsigned int)((char *)DynamicVector_field_0x10 + 1); /*0x5387be*/
+  *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = *(unsigned int *)aP1; /*0x5387c8*/
+  return 1; /*0x5387b1*/
+
 }
 
 // ==== BACKFILL 0x00538AE0  CreateTeamCommand::performAction_244  cls=DynamicVector  sig=csp  renamed_refs=0  residual=- ====
-DynamicVector * CreateTeamCommand::performAction_244(char a2)
+DynamicVector * DeployCommandClass::performAction_244(unsigned int * Block, char a2)
 {
-{
-    void *v3;
-    v3 = (void *)*(this + 1);
-    *(void**)this = &vt_VectorClass_CCINIClass;
-    if ( v3 && *((char *)(this) + 13) )
-  {
-    __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
-  }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538AE0.json)
 }
 
 // ==== BACKFILL 0x00538C40  sub_538C40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_538C40::sub_538C40()
+int sub_538C40(char * Source)
 {
-{
-    int v2[22];
-    char v3[12];
-    int v4;
-    CCFileClass::Construct(v2, this);
-    if ( CCFileClass::Open(v2, 0) )
-  {
-    FileClass::Load(v2, 1);
-    CCFileClass::Read(v2, DataGlobal_A8F91C, 0x10000);
-    CCFileClass::Reset(v2);
-    DataGlobal_A9F91C = 0;
-  }
-    v2[0] = (unsigned int)vt_CCFileClass;
-    v4 = 0;
-    Vector::Clear((int)v3);
-    v2[0] = (int)&DataGlobal_7E1668;
-    return BufferIOFileClass::Dtor(v2);
-}
+    (void)Source; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538C40.json)
 }
 
 // ==== BACKFILL 0x00538CC0  sub_538CC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_538CC0::sub_538CC0()
+int sub_538CC0(char * Source)
 {
-{
-    int v2[22];
-    char v3[12];
-    int v4;
-    CCFileClass::Construct(v2, this);
-    if ( !CCFileClass::Open(v2, 0) )
-  {
-    FileClass::Load(v2, 2);
-    FileClass::Write(v2, DataGlobal_A8F91C, 0x10000u);
-    CCFileClass::Reset(v2);
-  }
-    v2[0] = (unsigned int)vt_CCFileClass;
-    v4 = 0;
-    Vector::Clear((int)v3);
-    v2[0] = (int)&DataGlobal_7E1668;
-    return BufferIOFileClass::Dtor(v2);
-}
+    (void)Source; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00538CC0.json)
 }
 
 // ==== BACKFILL 0x0053AD00  UpdateSurfaceAnimations  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int UpdateSurfaceAnimations(int a1, AnimClass * aP1, int a3, int a4)
+int UpdateSurfaceAnimations(int a1, int aP1, int a3, int a4)
 {
-{
-    int i;
-    int j;
-    int v9;
-    int v10;
-    int v11;
-    int v13;
-    int v14[2];
-    char v15;
-    int k;
-    for ( i = 0; i < *(int *)&DataGlobal_87C374[13108]; ++i )
-    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(**(int **)(*(int *)&DataGlobal_87C374[13096] + 4 * i) + 4))( *(int *)(*(int *)&DataGlobal_87C374[13096] + 4 * i), a1, aP1, a3, a4);
-    for ( j = 0; j < *(int *)DataGlobal_B05488[88]; ++j )
-  {
-    v9 = *(int *)(DataGlobal_B05488.field_4C + 4 * j);
-    if ( *(int *)(v9 + 784) > 1 )
-    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(**(int **)(v9 + 780) + 4))( *(int *)(v9 + 780), a1, aP1, a3, a4);
-  }
-    v14[0] = 0;
-    v14[1] = 0;
-    v15 = 0;
-    for ( k = FlagSystem::GetNextActive(v14); k; k = FlagSystem::GetNextActive(v14) )
-  {
-    v10 = 0;
-    v13 = Surface_Update();
-    if ( v13 > 0 )
-    {
-    do
-      {
-    v11 = *(int *)(*(int *)(*(int *)(k + 4) + 4 * v10) + 780);
-    (*(void (__thiscall **)(int, int, AnimClass *, int, int))(*(int *)(v11) + 4))(v11, a1, aP1, a3, a4);
-    ++v10;
-      }
-    while ( v10 < v13 );
-    }
-  }
-    MapClass::UpdateLightingPostProcess();
-    return MapClass::MarkForRedraw(&DataGlobal_87C374[13428], 1);
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0053AD00.json)
 }
 
 // ==== BACKFILL 0x0053B400  PsyDom::IsActive  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 bool PsyDom::IsActive()
 {
-{
-    return PsyDom_Status != 0;
-}
+
+  int result; // eax
+
+  result = PsyDom_Status; /*0x53b400*/
+  LOBYTE(result) = PsyDom_Status != 0; /*0x53b407*/
+  return result; /*0x53b40a*/
+
 }
 
 // ==== BACKFILL 0x0053B780  ApplyChronoScreenColorShift  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
-{
-      int result;
-      void *v2;
-      int v3;
-      int v4;
-      int v5;
-      int v6;
-      int v7;
-      unsigned int v8;
-      unsigned int v9;
-      unsigned int v10;
-      int v11;
-      _WORD *v12;
-      _WORD *v13;
-      _WORD *v14;
-      int v15;
-      int v16;
-      int v18;
-      int v19;
-      int v20;
-      int v21;
-      int v22;
-      int v23;
-      int v24;
+int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
 
-      result = ChronoScreenEffect_Status;
-      v2 = this;
-      if ( ChronoScreenEffect_Status == 3 )
+  int result; // eax
+  ObjectClass *v2; // esi
+  int v3; // ebx
+  int v4; // ebp
+  int v5; // edi
+  int v6; // eax
+  int v7; // edx
+  unsigned int v8; // eax
+  unsigned int v9; // eax
+  unsigned int v10; // eax
+  int v11; // ebp
+  unsigned short *v12; // [esp+8h] [ebp-1Ch]
+  unsigned short *v13; // [esp+8h] [ebp-1Ch]
+  unsigned short *v14; // [esp+8h] [ebp-1Ch]
+  int v15; // [esp+Ch] [ebp-18h]
+  int v16; // [esp+10h] [ebp-14h]
+  int v18; // [esp+18h] [ebp-Ch]
+  int v19; // [esp+1Ch] [ebp-8h]
+  int v20; // [esp+1Ch] [ebp-8h]
+  int v21; // [esp+1Ch] [ebp-8h]
+  int v22; // [esp+20h] [ebp-4h]
+  int v23; // [esp+20h] [ebp-4h]
+  int v24; // [esp+20h] [ebp-4h]
+
+  result = ChronoScreenEffect_Status; /*0x53b783*/
+  v2 = this; /*0x53b789*/
+  if ( ChronoScreenEffect_Status == 3 ) /*0x53b792*/
+  {
+    v15 = (*((int (**)(ObjectClass *))this->vtable1 + 31))(this); /*0x53b7a6*/
+    v3 = (*((int (**)(ObjectClass *))v2->vtable1 + 32))(v2) - 32; /*0x53b7cc*/
+    v4 = ((*((int (**)(ObjectClass *))v2->vtable1 + 29))(v2) - 2 * v15) / 2; /*0x53b7d0*/
+    v18 = v4; /*0x53b7d6*/
+    v5 = (*((int (**)(ObjectClass *, unsigned int, unsigned int))v2->vtable1 + 23))(v2, 0, 0); /*0x53b7e3*/
+    v16 = 255 * ChronoScreenEffect_Duration / dword_A9FAA8; /*0x53b7f3*/
+    v6 = DDraw_GetStatus() - 1; /*0x53b7fc*/
+    if ( v6 ) /*0x53b7fd*/
+    {
+      if ( v6 == 1 ) /*0x53b804*/
       {
-        v15 = this->vt31();
-        v3 = (*(int (__thiscall **)(void *))(*(_DWORD *)v2 + 128))(v2) - 32;
-        v4 = ((*(int (__thiscall **)(void *))(*(_DWORD *)v2 + 116))(v2) - 2 * v15) / 2;
-        v18 = v4;
-        v5 = (*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)v2 + 92))(v2, 0, 0);
-        v16 = 255 * ChronoScreenEffect_Duration / DataGlobal_A9FAA8;
-        v6 = DDraw::GetStatus() - 1;
-        if ( v6 )
+        v13 = (unsigned short *)v5; /*0x53b8f6*/
+        if ( v3 > 0 ) /*0x53b8fa*/
         {
-          if ( v6 == 1 )
+          v20 = v3; /*0x53b900*/
+          do /*0x53b9c8*/
           {
-            v13 = (_WORD *)v5;
-            if ( v3 > 0 )
+            HIWORD(v9) = HIWORD(v15); /*0x53b904*/
+            if ( v15 > 0 ) /*0x53b90a*/
             {
-              v20 = v3;
-              do
+              v23 = v15; /*0x53b914*/
+              do /*0x53b9a1*/
               {
-                HIWORD(v9) = HIWORD(v15);
-                if ( v15 > 0 )
-                {
-                  v23 = v15;
-                  do
-                  {
-                    v5 += 2;
-                    LOWORD(v9) = *v13;
-                    *(_WORD *)(v5 - 2) = ((*v13 & 0x1F) + (((unsigned __int16)v16 * (31 - (*v13 & 0x1F))) >> 8))
-                                       | (32
-                                        * (((v9 >> 5) & 0x3F)
-                                         + ((int)((unsigned __int16)v16 * (63 - ((v9 >> 5) & 0x3F))) >> 8)))
-                                       | (((*v13 >> 11)
-                                         + (unsigned __int16)(((unsigned __int16)v16 * (31 - (*v13 >> 11))) >> 8)) << 11);
-                    v9 = v23 - 1;
-                    ++v13;
-                    v23 = v9;
-                  }
-                  while ( v9 );
-                  v4 = v18;
-                  v2 = this;
-                }
-                v5 += 2 * v4;
-                v13 += v4;
-                --v20;
+                v5 += 2; /*0x53b927*/
+                LOWORD(v9) = *v13; /*0x53b92a*/
+                *(unsigned short *)(v5 - 2) = ((*v13 & 0x1F) + (((uint16_t)v16 * (31 - (*v13 & 0x1F))) >> 8)) /*0x53b991*/
+                                   | (32
+                                    * (((v9 >> 5) & 0x3F)
+                                     + ((int)((uint16_t)v16 * (63 - ((v9 >> 5) & 0x3F))) >> 8)))
+                                   | (((*v13 >> 11)
+                                     + (uint16_t)(((uint16_t)v16 * (31 - (*v13 >> 11))) >> 8)) << 11);
+                v9 = v23 - 1; /*0x53b998*/
+                ++v13; /*0x53b999*/
+                v23 = v9; /*0x53b99d*/
               }
-              while ( v20 );
+              while ( v9 ); /*0x53b9a1*/
+              v4 = v18; /*0x53b9a7*/
+              v2 = this; /*0x53b9ab*/
             }
+            v5 += 2 * v4; /*0x53b9b7*/
+            v13 += v4; /*0x53b9bf*/
+            --v20; /*0x53b9c4*/
           }
-          else
-          {
-            v12 = (_WORD *)v5;
-            if ( v3 > 0 )
-            {
-              v22 = v3;
-              do
-              {
-                if ( v15 > 0 )
-                {
-                  v19 = v15;
-                  do
-                  {
-                    HIWORD(v8) = HIWORD(v12);
-                    v5 += 2;
-                    LOWORD(v8) = *v12;
-                    *(_WORD *)(v5 - 2) = ((*v12 & 0x1F) + (((unsigned __int16)v16 * (31 - (*v12 & 0x1F))) >> 8))
-                                       | (32
-                                        * (((v8 >> 5) & 0x1F)
-                                         + ((int)((unsigned __int16)v16 * (31 - ((v8 >> 5) & 0x1F))) >> 8)))
-                                       | ((((v8 >> 10) & 0x1F)
-                                         + (unsigned __int16)((int)((unsigned __int16)v16 * (31 - ((v8 >> 10) & 0x1F))) >> 8)) << 10);
-                    ++v12;
-                    --v19;
-                  }
-                  while ( v19 );
-                  v2 = this;
-                  v4 = v18;
-                }
-                v5 += 2 * v4;
-                v12 += v4;
-                --v22;
-              }
-              while ( v22 );
-            }
-          }
+          while ( v20 ); /*0x53b9c8*/
         }
-        else
-        {
-          v14 = (_WORD *)v5;
-          if ( v3 > 0 )
-          {
-            v21 = v3;
-            do
-            {
-              if ( v15 > 0 )
-              {
-                v24 = v15;
-                do
-                {
-                  HIWORD(v10) = HIWORD(v14);
-                  v5 += 2;
-                  LOWORD(v10) = *v14;
-                  LOWORD(v7) = *v14 >> 11;
-                  v11 = v7 + (((unsigned __int16)v16 * (31 - (unsigned __int16)v7)) >> 8);
-                  v7 = (*v14 & 0x3F) + (((unsigned __int16)v16 * (63 - (*v14 & 0x3F))) >> 8);
-                  *(_WORD *)(v5 - 2) = v7
-                                     | ((((v10 >> 6) & 0x1F)
-                                       + (unsigned __int16)((int)((unsigned __int16)v16 * (31 - ((v10 >> 6) & 0x1F))) >> 8)) << 6)
-                                     | ((_WORD)v11 << 11);
-                  ++v14;
-                  --v24;
-                }
-                while ( v24 );
-                v2 = this;
-                v4 = v18;
-              }
-              v5 += 2 * v4;
-              v14 += v4;
-              --v21;
-            }
-            while ( v21 );
-          }
-        }
-        return (*(int (__thiscall **)(void *))(*(_DWORD *)v2 + 96))(v2);
       }
-      return result;
+      else
+      {
+        v12 = (unsigned short *)v5; /*0x53b80c*/
+        if ( v3 > 0 ) /*0x53b810*/
+        {
+          v22 = v3; /*0x53b816*/
+          do /*0x53b8df*/
+          {
+            if ( v15 > 0 ) /*0x53b820*/
+            {
+              v19 = v15; /*0x53b82a*/
+              do /*0x53b8b8*/
+              {
+                HIWORD(v8) = HIWORD(v12); /*0x53b834*/
+                v5 += 2; /*0x53b83d*/
+                LOWORD(v8) = *v12; /*0x53b840*/
+                *(unsigned short *)(v5 - 2) = ((*v12 & 0x1F) + (((uint16_t)v16 * (31 - (*v12 & 0x1F))) >> 8)) /*0x53b8a8*/
+                                   | (32
+                                    * (((v8 >> 5) & 0x1F)
+                                     + ((int)((uint16_t)v16 * (31 - ((v8 >> 5) & 0x1F))) >> 8)))
+                                   | ((((v8 >> 10) & 0x1F)
+                                     + (uint16_t)((int)((uint16_t)v16 * (31 - ((v8 >> 10) & 0x1F))) >> 8)) << 10);
+                ++v12; /*0x53b8b0*/
+                --v19; /*0x53b8b4*/
+              }
+              while ( v19 ); /*0x53b8b8*/
+              v2 = this; /*0x53b8be*/
+              v4 = v18; /*0x53b8c2*/
+            }
+            v5 += 2 * v4; /*0x53b8ce*/
+            v12 += v4; /*0x53b8d6*/
+            --v22; /*0x53b8db*/
+          }
+          while ( v22 ); /*0x53b8df*/
+        }
+      }
+    }
+    else
+    {
+      v14 = (unsigned short *)v5; /*0x53b9df*/
+      if ( v3 > 0 ) /*0x53b9e3*/
+      {
+        v21 = v3; /*0x53b9e9*/
+        do /*0x53bab1*/
+        {
+          if ( v15 > 0 ) /*0x53b9f3*/
+          {
+            v24 = v15; /*0x53b9fd*/
+            do /*0x53ba8a*/
+            {
+              HIWORD(v10) = HIWORD(v14); /*0x53ba07*/
+              v5 += 2; /*0x53ba10*/
+              LOWORD(v10) = *v14; /*0x53ba13*/
+              LOWORD(v7) = *v14 >> 11; /*0x53ba1b*/
+              v11 = v7 + (((uint16_t)v16 * (31 - (uint16_t)v7)) >> 8); /*0x53ba3d*/
+              v7 = (*v14 & 0x3F) + (((uint16_t)v16 * (63 - (*v14 & 0x3F))) >> 8); /*0x53ba72*/
+              *(unsigned short *)(v5 - 2) = v7 /*0x53ba7a*/
+                                 | ((((v10 >> 6) & 0x1F)
+                                   + (uint16_t)((int)((uint16_t)v16 * (31 - ((v10 >> 6) & 0x1F))) >> 8)) << 6)
+                                 | ((unsigned short)v11 << 11);
+              ++v14; /*0x53ba82*/
+              --v24; /*0x53ba86*/
+            }
+            while ( v24 ); /*0x53ba8a*/
+            v2 = this; /*0x53ba90*/
+            v4 = v18; /*0x53ba94*/
+          }
+          v5 += 2 * v4; /*0x53baa0*/
+          v14 += v4; /*0x53baa8*/
+          --v21; /*0x53baad*/
+        }
+        while ( v21 ); /*0x53bab1*/
+      }
+    }
+    return (*((int (**)(ObjectClass *))v2->vtable1 + 24))(v2); /*0x53babb*/
+  }
+  return result; /*0x53b8ef*/
+
 }
-} }
 
 // ==== BACKFILL 0x0053D310  ProcessIonCannonEffect  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 void sub_53D310()
 {
-{
-    int i;
-    for ( i = DataGlobal_AA0128 - 1; i >= 0; --i )
-    ExplosionClass::ProcessFrame(*((int **)(DataGlobal_AA011C) + i));
-}
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0053D310.json)
 }
 
 // ==== BACKFILL 0x0053D550  WinMainSetup_Setup  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_53D550()
 {
-{
-    int *v0;
-    int result;
-    v0 = DataGlobal_A9FFC8;
-    do
+  unsigned int v1;
+  int result; // eax
+
+  v1 = dword_A9FFC8; /*0x53d551*/
+  do /*0x53d571*/
   {
-    if ( *v0 )
-    result = (**(int (__thiscall ***)(int, int))*v0)(*v0, 1);
-    *v0++ = 0;
+    if ( *(unsigned int *)(v1) ) /*0x53d556*/
+      result = (**(int (***)(int, int))*(unsigned int *)(v1))(*(unsigned int *)(v1), 1); /*0x53d560*/
+    *(unsigned int *)(v1)++ = 0; /*0x53d562*/
   }
-    while ( (int)v0 < (int)&DataGlobal_AA0108 );
-    return result;
-}
+  while ( (int)v1 < (int)&dbl_AA0108 ); /*0x53d571*/
+  return result; /*0x53d573*/
 }
 
 // ==== BACKFILL 0x0053D8E0  ComputeSpiralOffset  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int * ComputeSpiralOffset(int * a1, int a2)
 {
-{
-    int v2;
-    int *result;
-    int v4;
-    int i;
-    int v6;
-    int v7;
-    int v8;
-    v2 = a2 - 1;
-    result = a1;
-    v4 = 1;
-    if ( v2 >= 8 )
+  int v2; // edx
+  int *result; // eax
+  int v4; // esi
+  int i; // ecx
+  int v6; // ecx
+  int v7; // esi
+  int v8; // edx
+
+  v2 = a2 - 1; /*0x53d8e0*/
+  result = a1; /*0x53d8e5*/
+  v4 = 1; /*0x53d8e7*/
+  if ( v2 >= 8 ) /*0x53d8ec*/
   {
-    for ( i = 8; i <= v2; i += 8 )
+    for ( i = 8; i <= v2; i += 8 ) /*0x53d8ee*/
     {
-    v2 -= i;
-    ++v4;
+      v2 -= i; /*0x53d8f3*/
+      ++v4; /*0x53d8f8*/
     }
   }
-    if ( v2 >= 2 * v4 + 1 )
+  if ( v2 >= 2 * v4 + 1 ) /*0x53d903*/
   {
-    if ( v2 >= 4 * v4 + 1 )
+    if ( v2 >= 4 * v4 + 1 ) /*0x53d91a*/
     {
-    if ( v2 >= 6 * v4 + 1 )
+      if ( v2 >= 6 * v4 + 1 ) /*0x53d92b*/
       {
-    v8 = v2 - 7 * v4;
-    v7 = -v4;
-    *result = v8;
+        v8 = v2 - 7 * v4; /*0x53d946*/
+        v7 = -v4; /*0x53d948*/
+        *result = v8; /*0x53d94a*/
       }
-    else
+      else
       {
-    v6 = v4;
-    v7 = 5 * v4 - v2;
-    *result = -v6;
+        v6 = v4; /*0x53d92d*/
+        v7 = 5 * v4 - v2; /*0x53d934*/
+        *result = -v6; /*0x53d936*/
       }
-    result[1] = v7;
+      result[1] = v7; /*0x53d938*/
     }
     else
     {
-    *result = 3 * v4 - v2;
-    result[1] = v4;
+      *result = 3 * v4 - v2; /*0x53d91e*/
+      result[1] = v4; /*0x53d920*/
     }
   }
-    else
+  else
   {
-    *result = v4;
-    result[1] = v2 - v4;
+    *result = v4; /*0x53d907*/
+    result[1] = v2 - v4; /*0x53d909*/
   }
-    return result;
-}
+  return result; /*0x53d90c*/
 }
 
 // ==== BACKFILL 0x0053D960  GenerateLightningStormGlow_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_53D960(int a1, int a2)
 {
-{
-    signed int v3;
-    signed int v4;
-    int v5;
-    int i;
-    if ( !a1 && !a2 )
-    return 0;
-    v3 = abs32(a2);
-    v4 = abs32(a1);
-    if ( v4 > v3 )
-    v3 = v4;
-    v5 = 1;
-    for ( i = 1; i < v3; ++i )
-    v5 += 8 * i;
-    if ( a1 == v3 )
-    return v3 + a2 + v5;
-    if ( a2 == v3 )
-    return 3 * v3 - a1 + v5;
-    if ( a1 == -v3 )
-    return 5 * v3 - a2 + v5;
-    return a1 + 7 * v3 + v5;
-}
+  signed int v3; // ecx
+  signed int v4; // eax
+  int v5; // eax
+  int i; // edx
+
+  if ( !a1 && !a2 ) /*0x53d970*/
+    return 0; /*0x53d973*/
+  v3 = abs32(a2); /*0x53d982*/
+  v4 = abs32(a1); /*0x53d987*/
+  if ( v4 > v3 ) /*0x53d98b*/
+    v3 = v4; /*0x53d98d*/
+  v5 = 1; /*0x53d98f*/
+  for ( i = 1; i < v3; ++i ) /*0x53d998*/
+    v5 += 8 * i; /*0x53d99a*/
+  if ( a1 == v3 ) /*0x53d9a4*/
+    return v3 + a2 + v5; /*0x53d9a8*/
+  if ( a2 == v3 ) /*0x53d9b1*/
+    return 3 * v3 - a1 + v5; /*0x53d9ba*/
+  if ( a1 == -v3 ) /*0x53d9c5*/
+    return 5 * v3 - a2 + v5; /*0x53d9cd*/
+  return a1 + 7 * v3 + v5; /*0x53d972*/
 }
 
 // ==== BACKFILL 0x0053E070  sub_53E070  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 DWORD sub_53E070(unsigned int * lpThreadParameter)
 {
-{
-    int *v1;
-    __int64 v2;
-    int *v3;
-    unsigned int v4;
-    signed int v5;
-    unsigned int v6;
-    unsigned int Channel;
-    v1 = lpThreadParameter;
-    lpThreadParameter[6] = 1;
-    v1[2] = 0;
-    if ( *v1 )
-  {
-    v1[2] = 1;
-    return 0;
-  }
-    else
-  {
-    do
-    {
-    LODWORD(v2) = Audio::Callback();
-    AudioThread::UpdateStats((int)(v1 + 8), v2);
-    v3 = (int *)DataGlobal_AA045C;
-    if ( DataGlobal_AA045C && g_StreamBufferState && Stream )
-      {
-    EnterCriticalSection(&DataGlobal_AA0418);
-    if ( g_StreamBufferState == 2 && (v4 = (unsigned int)AudioStream::GetChannel(v3) >> 1, sub_408D30(v3) < v4) )
-        {
-    if ( DataGlobal_AA0460 )
-          {
-    v5 = sub_408D40(v3);
-    if ( WriteAudioStreamToFile(DataGlobal_AA0460, Stream, v5, (char *)&lpThreadParameter) != 1 )
-    DataGlobal_AA046C = 1;
-          }
-        }
-    else if ( g_StreamBufferState == 1 )
-        {
-    v6 = (unsigned int)AudioStream::GetChannel(v3) >> 1;
-    if ( sub_408D40(v3) < v6 )
-          {
-    if ( g_StreamConfig )
-            {
-    Channel = AudioStream::GetChannel(v3);
-    WriteAudioStreamToFile(g_StreamConfig, Stream, Channel >> 1, 0);
-    fflush(Stream);
-            }
-          }
-        }
-    LeaveCriticalSection(&DataGlobal_AA0418);
-      }
-    Sleep(v1[4]);
-    ++v1[1];
-    }
-    while ( !*v1 );
-    v1[2] = 1;
-    return 0;
-  }
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0053E070.json)
 }
 
 // ==== BACKFILL 0x0053E420  Object::RemoveObjectArray  cls=Object  sig=csp  renamed_refs=0  residual=- ====
-void ** Object::RemoveObjectArray()
+void ** SessionClass::RemoveObjectArray()
 {
-{
-    void **result;
-    int v2;
-    result = (void **)g_StreamPool;
-    if ( g_StreamPool )
-  {
-    if ( this )
-    {
-    result = (void **)DataGlobal_AA044C;
-    v2 = 1;
-    if ( DataGlobal_AA0374 > 1 )
-      {
-    while ( *result != this )
-        {
-    ++v2;
-    ++result;
-    if ( v2 >= DataGlobal_AA0374 )
-    return result;
-        }
-    *result = 0;
-    return (void **)--DataGlobal_AA0450;
-      }
-    }
-  }
-    return result;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0053E420.json)
 }
 
 // ==== BACKFILL 0x0053E4F0  WinMain_Helper_53E4F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { bool WinMain_Helper_53E4F0(char* FileName) {
-{
-    if ( !g_StreamPool || Stream )
-    return 0;
-    EnterCriticalSection(&DataGlobal_AA0418);
-    Stream = fopen(FileName, aWb);
-    if ( Stream )
-    g_StreamBufferState = 1;
-    LeaveCriticalSection(&DataGlobal_AA0418);
-    return Stream != 0;
+bool ObjectClass::WinMain_Helper_53E4F0(char* FileName) {
+
+  if ( !dword_AA0448 || dword_AA0468 ) /*0x53e503*/
+    return 0; /*0x53e54b*/
+  EnterCriticalSection(&unk_AA0418); /*0x53e50a*/
+  dword_AA0468 = fopen(FileName, aWb); /*0x53e51e*/
+  if ( dword_AA0468 ) /*0x53e525*/
+    dword_AA0444 = 1; /*0x53e527*/
+  LeaveCriticalSection(&unk_AA0418); /*0x53e536*/
+  return dword_AA0468 != 0; /*0x53e549*/
+
 }
-} }
 
 // ==== BACKFILL 0x0053E550  WinMain_Write  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { bool WinMain_Write(char* FileName) {
-{
-    signed int SampleSize;
-    if ( !g_StreamPool || Stream )
-    return 0;
-    EnterCriticalSection(&DataGlobal_AA0418);
-    Stream = fopen(FileName, aRb);
-    DataGlobal_AA046C = 0;
-    if ( Stream )
+bool ObjectClass::WinMain_Write(char* FileName) {
+
+  signed int SampleSize; // eax
+
+  if ( !dword_AA0448 || dword_AA0468 ) /*0x53e567*/
+    return 0; /*0x53e5e7*/
+  EnterCriticalSection(&unk_AA0418); /*0x53e56e*/
+  dword_AA0468 = fopen(FileName, aRb); /*0x53e582*/
+  dword_AA046C = 0; /*0x53e589*/
+  if ( dword_AA0468 ) /*0x53e593*/
   {
-    g_StreamBufferState = 2;
-    SampleSize = Audio::GetSampleSize((int *)DataGlobal_AA0460);
-    if ( WriteAudioStreamToFile(DataGlobal_AA0460, Stream, SampleSize, 0) != 1 )
-    DataGlobal_AA046C = 1;
+    dword_AA0444 = 2; /*0x53e59d*/
+    SampleSize = Audio::GetSampleSize((unsigned int *)dword_AA0460); /*0x53e5a7*/
+    if ( WriteAudioStreamToFile(dword_AA0460, dword_AA0468, SampleSize, 0) != 1 ) /*0x53e5c1*/
+      dword_AA046C = 1; /*0x53e5c3*/
   }
-    LeaveCriticalSection(&DataGlobal_AA0418);
-    return Stream != 0;
+  LeaveCriticalSection(&unk_AA0418); /*0x53e5d2*/
+  return dword_AA0468 != 0; /*0x53e5e5*/
+
 }
-} }
 
 // ==== BACKFILL 0x0053E6B0  WinMain_Write_53E6B0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void sub_53E6B0()
 {
-{
-    signed int SampleSize;
-    if ( g_StreamPool )
-  {
-    EnterCriticalSection(&DataGlobal_AA0418);
-    if ( Stream && DataGlobal_AA045C && g_StreamBufferState == 1 )
-    {
-    if ( g_StreamConfig )
-      {
-    SampleSize = Audio::GetSampleSize((int *)g_StreamConfig);
-    WriteAudioStreamToFile(g_StreamConfig, Stream, SampleSize, 0);
-    fflush(Stream);
-      }
-    }
-    LeaveCriticalSection(&DataGlobal_AA0418);
-  }
-}
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x53E6B0)
 }
 
 // ==== BACKFILL 0x0053EC70  EventClass::GetKeyStateSafe  cls=EventClass  sig=csp  renamed_refs=0  residual=- ====
 SHORT EventClass::GetKeyStateSafe(unsigned char nVirtKey)
 {
-    if ( g_StreamBufferState )
-        return *(DataGlobal_AA0168 + nVirtKey);
-    else
-        return GetKeyState(nVirtKey);
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x53EC70)
 }
 
 // ==== BACKFILL 0x0053EC90  Mouse::GetKeyState  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
-SHORT Mouse::GetKeyState()
+SHORT Mouse::GetKeyState(uint8_t vKey)
 {
-{
-    if ( g_StreamBufferState )
-    return DataGlobal_AA0168[this];
-    else
-    return GetAsyncKeyState(this);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x53EC90)
 }
 
 // ==== BACKFILL 0x0053ECE0  NetworkAddress::Assign  cls=NetworkAddress  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, short a4)
+int NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, int16_t a4)
 {
-{
-    int *result;
-    int *v5;
-    result = this;
-    v5 = this + 1;
-    *v5 = aP2->field_0;
-    *((short *)(v5) + 2) = aP2->field_4;
-    if ( DataGlobal_828140 == 1 )
+
+  unsigned int *result; // eax
+  char *m_Port; // ecx
+
+  result = &this->m_IP; /*0x53ece4*/
+  m_Port =(char *)this->m_Port; /*0x53ece9*/
+  *(unsigned int *)m_Port = *(unsigned int *)aP2; /*0x53ecec*/
+  *((unsigned short *)m_Port + 2) = *(unsigned short *)(aP2 + 4); /*0x53ecf4*/
+  if ( dword_828140 == 1 ) /*0x53ed01*/
   {
-    *result = *a1;
+    *result = *a1; /*0x53ed09*/
   }
-    else
+  else
   {
-    *result = 0;
-    *(short *)result = a4;
+    *result = 0; /*0x53ed13*/
+    *(unsigned short *)result = a4; /*0x53ed19*/
   }
-    return result;
-}
+  return (int)(result); /*0x53ecf3*/
+
 }
 
 // ==== BACKFILL 0x0053EDC0  Network::CopyAddress_Small  cls=Network  sig=csp  renamed_refs=0  residual=- ====
-int Network::CopyAddress_Small(IPXManagerClass * aP1)
+int HashTable_flat::CopyAddress_Small(IPXManagerClass * aP1)
 {
-{
-    char *v3;
-    v3 = this + 4;
-    aP1->Socket = *(int *)v3;
-    *(short *)&aP1->Initialized = *((short *)(v3) + 2);
-    return (int)aP1;
-}
+    (void)aP1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0053EDC0.json)
 }
 
 // ==== BACKFILL 0x0053EDE0  Struct::Copy6Bytes  cls=Struct  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int Struct::Copy6Bytes(IPXManagerClass * aP1) {
-{
-    char *v2;
-    short result;
-    v2 = this + 4;
-    *(int *)v2 = aP1->Socket;
-    result = *(short *)&aP1->Initialized;
-    *((short *)(v2) + 2) = result;
-    return result;
+int Struct::Copy6Bytes(int a2, int aP1, int a3, int a4, int a5, int a1) {
+  char *v2; // ecx
+  int16_t result; // ax
+
+  v2 = this + 4; /*0x53ede4*/
+  *(unsigned int *)v2 = *(unsigned int *)aP1; /*0x53ede9*/
+  result = aP1->Initialized; /*0x53edeb*/
+  *((unsigned short *)v2 + 2) = result; /*0x53edef*/
+  return result; /*0x53edf3*/
 }
-} }
 
 // ==== BACKFILL 0x0053F020  sub_53F020  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_53F020::sub_53F020(const char * a2)
 {
-{
-    return memcmp(this, a2, 10) > 0;
-}
+
+  return memcmp((const char *)this, a2, 10) > 0; /*0x53f031*/
+
 }
 
 // ==== BACKFILL 0x0053F050  sub_53F050  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_53F050::sub_53F050(const char * a2)
 {
-{
-    return memcmp(this, a2, 10) < 0;
-}
+
+  return memcmp((const char *)this, a2, 10) < 0; /*0x53f061*/
+
 }
 
 // ==== BACKFILL 0x0053F080  sub_53F080  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_53F080::sub_53F080(const char * a2)
 {
-{
-    return memcmp(this, a2, 10) >= 0;
-}
+
+  return memcmp((const char *)this, a2, 10) >= 0; /*0x53f091*/
+
 }
 
 // ==== BACKFILL 0x0053F0B0  sub_53F0B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 bool E4Recv_53F0B0::sub_53F0B0(const char * a2)
 {
-{
-    return memcmp(this, a2, 10) <= 0;
-}
+
+  return memcmp((const char *)this, a2, 10) <= 0; /*0x53f0c1*/
+
 }
 
 // ==== BACKFILL 0x0053F0E0  Network::FormatAddress  cls=Network  sig=csp  renamed_refs=0  residual=- ====
-char * Network::FormatAddress(IUnknown * aP1)
+char * HashTable_flat::FormatAddress(uint16_t *aP1)
 {
-{
-    IUnknown *v2;
-    int v3;
-    v2 = aP1;
-    if ( !aP1 )
-    v2 = (IUnknown *)this;
-    v3 = v2->field_4;
-    if ( DataGlobal_828140 == 1 )
-    sprintf( &g_NetworkPlayerBuffer[77376], DataGlobal_828158, (unsigned char)v2->field_0, BYTE1(v2->field_0), (unsigned char)BYTE2(v2->field_0), HIBYTE(v2->field_0), (unsigned char)v3, BYTE1(v3), BYTE2(v3), HIBYTE(v3), (unsigned char)LOWORD(v2->field_8), HIBYTE(LOWORD(v2->field_8)));
-    else
-    sprintf( &g_NetworkPlayerBuffer[77376], DataGlobal_828144, (unsigned char)v3, BYTE1(v3), BYTE2(v3), HIBYTE(v3), *(void**)this);
-    return &g_NetworkPlayerBuffer[77376];
-}
+    (void)aP1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0053F0E0.json)
 }
 
 // ==== BACKFILL 0x0053F1F0  Multiplayer::Screen  cls=Multiplayer  sig=csp  renamed_refs=0  residual=- ====
 void Multiplayer::Screen()
 {
-{
-    DataGlobal_828140 = (int)this;
-}
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x53F1F0)
 }
 
 // ==== BACKFILL 0x0053F200  Network::SetPort  cls=Network  sig=csp  renamed_refs=0  residual=- ====
-short Network::SetPort(IPXManagerClass * aP1)
+short HashTable_flat::SetPort(int16_t aP1)
 {
-{
-    short result;
-    if ( DataGlobal_828140 == 2 )
-  {
-    *(void**)this = (short)aP1;
-    return (short)aP1;
-  }
-    return result;
-}
+    (void)aP1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0053F200.json)
 }
 
 // ==== BACKFILL 0x0053F4F0  Network_Init_53F4F0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_53F4F0(short a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
-{
-    LOWORD(DataGlobal_AA0568) = a1;
-    DataGlobal_AA0548 = a2;
-    DataGlobal_AA055C = a3;
-    DataGlobal_AA0578 = a4;
-    DataGlobal_AA0530 = a5;
-    DataGlobal_AA0508 = a6;
-    DataGlobal_AA056C = a7;
-    DataGlobal_AA05A4 = 1;
-    return a6;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0053F4F0.json)
 }
 
 // ==== BACKFILL 0x0053FA90  Network_Init_53FA90  cls=IPXGlobalConnClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { void* Gap2Recv_53FA90::Network_Init_53FA90(int aP1, int aP2, int aP3, short aP4, short a6) {
-{
-    int v7;
-    int v8;
-    IPXManagerClass *v9;
-    IPXManagerClass *v10;
-    int v11;
-    int v12;
-    IPXConnClass::constructor( this, (int)aP1, (SessionClass *)aP2, (IPXConnClass *)&aP3->__pad_0[2], (IPXConnClass *)a6, 0, 0, (wchar_t *)&DataGlobal_87F8E4[32336], 12);
-    *(void**)this = (int)&vt_IPXGlobalConnClass;
-    this->M184 = (short)aP4;
-    this->M196 = 0;
-    this->M200 = 1;
-    this->M212 = (int)aP2;
-    v7 = __2_YAPAXI_Z(4 * (int)aP2);
-    v8 = this->M212;
-    this->M208 = v7;
-    v9 = (IPXManagerClass *)__2_YAPAXI_Z(12 * v8);
-    if ( v9 )
-  {
-    v10 = v9;
-    if ( v8 - 1 >= 0 )
-    {
-    do
-      {
-    Waypoint::InitInvalid(v10);
-    v10 = (IPXManagerClass *)((char *)(v10) + 12);
-    --v8;
-      }
-    while ( v8 );
-    }
-  }
-    else
-  {
-    v9 = 0;
-  }
-    v11 = this->M212;
-    v12 = 0;
-    this->M204 = (int)v9;
-    if ( v11 > 0 )
-  {
-    do
-    {
-    ++v12;
-    *(int *)(this->M208 + 4 * v12 - 4) = -1;
-    }
-    while ( v12 < this->M212 );
-  }
-    this->M216 = 0;
-    return this;
-}
-} }
+void* Gap2Recv_53FA90::Network_Init_53FA90(int aP1, int aP2, int aP3, short aP4, short a6) {
 
-// ==== BACKFILL 0x0053FFA0  TerrainTypeClass::GetTileData  cls=IPXGlobalConnClass  sig=csp  renamed_refs=0  residual=- ====
-int TerrainTypeClass::GetTileData(AnimClass * aP1, void * a2, signed int * a3, unsigned int * a4, unsigned short * a5, unsigned int * a6)
-{
-{
-    IPXGlobalConnClass *v7;
-    int TileType;
-    int v9;
-    int v10;
-    int *v11;
-    v7 = (IPXGlobalConnClass *)this->Foundation;
-    if ( *(int *)v7[1].__pad_0 < (int)aP1 )
-    return 0;
-    TileType = Terrain::GetTileType(v7, aP1);
-    if ( !TileType || (*(char *)TileType & 2) != 0 )
-    return 0;
-    v9 = *(int *)(TileType + 12);
-    v10 = *(int *)(TileType + 8) - 16;
-    if ( v10 > 0 )
-    qmemcpy(a2, (const void *)(v9 + 16), v10);
-    *a3 = v10;
-    *a5 = *(short *)(v9 + 14);
-    v11 = *(int **)(TileType + 20);
-    *a4 = *v11;
-    *((int*)(a4) + 1) = v11[1];
-    *((int*)(a4) + 2) = v11[2];
-    if ( a6 )
-    *a6 = *(int *)(v9 + 4);
-    return 1;
+  int v7; // eax
+  int v8; // edi
+  int v9; // ebx
+  Waypoint *v10; // ebp
+  int v11; // ecx
+  int v12; // eax
+
+  IPXConnClass::constructor((IPXConnClass *)this, aP1, aP2, aP3 + 2, a6, 0, 0, &g_TypeClass_DefaultString, 12); /*0x53faba*/
+  *(unsigned int *)this->__pad_0 = &vt_IPXGlobalConnClass; /*0x53facc*/
+  *((unsigned short *)this + 92) = aP4; /*0x53fad2*/
+  *((unsigned int *)this + 49) = 0; /*0x53fad9*/
+  *((unsigned char *)this + 200) = 1; /*0x53fadf*/
+  *((unsigned int *)this + 53) = aP2; /*0x53fae6*/
+  v7 = __2_YAPAXI_Z(4 * aP2); /*0x53faec*/
+  v8 = *((unsigned int *)this + 53); /*0x53faf1*/
+  *((unsigned int *)this + 52) = v7; /*0x53faf7*/
+  v9 = __2_YAPAXI_Z(12 * v8); /*0x53fb09*/
+  if ( v9 ) /*0x53fb10*/
+  {
+    v10 = (Waypoint *)v9; /*0x53fb15*/
+    if ( v8 - 1 >= 0 ) /*0x53fb19*/
+    {
+      do /*0x53fb29*/
+      {
+        Waypoint::InitInvalid(v10); /*0x53fb20*/
+        v10 = (Waypoint *)((char *)v10 + 12); /*0x53fb25*/
+        --v8; /*0x53fb28*/
+      }
+      while ( v8 ); /*0x53fb29*/
+    }
+  }
+  else
+  {
+    v9 = 0; /*0x53fb2f*/
+  }
+  v11 = *((unsigned int *)this + 53); /*0x53fb31*/
+  v12 = 0; /*0x53fb37*/
+  *((unsigned int *)this + 51) = v9; /*0x53fb3b*/
+  if ( v11 > 0 ) /*0x53fb41*/
+  {
+    do /*0x53fb5a*/
+    {
+      ++v12; /*0x53fb49*/
+      *(unsigned int *)(*((unsigned int *)this + 52) + 4 * v12 - 4) = -1; /*0x53fb4a*/
+    }
+    while ( v12 < *((unsigned int *)this + 53) ); /*0x53fb5a*/
+  }
+  *((unsigned int *)this + 54) = 0; /*0x53fb5c*/
+  return (int *)this->__pad_0; /*0x53fb64*/
+
 }
+
+// ==== BACKFILL 0x0053FFA0  IPXGlobalConnClass::GetTileData  cls=IPXGlobalConnClass  sig=csp  renamed_refs=0  residual=- ====
+int TerrainTypeClass::GetTileData(int a2, void * a3, signed int * a4, unsigned int * a5, unsigned short * a6, unsigned int * a7)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0053FFA0.json)
 }

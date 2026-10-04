@@ -14,7 +14,7 @@ namespace gamemd {
 int MSPCXAnim::Stub()
 {
 
-  return *((unsigned char *)this + 41); /*0x5ceab3*/
+  return this->u32_29; /*0x5ceab3*/
 
 }
 } // namespace gamemd

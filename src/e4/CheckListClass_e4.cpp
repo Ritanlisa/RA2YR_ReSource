@@ -23,7 +23,7 @@ namespace gamemd {  // G42.18c ns repair
 int CheckListClass::COMStub()
 {
 
-  return *((unsigned int *)this + 17); /*0x4886b3*/
+  return this->q044; /*0x4886b3*/
 
 }
 }  // G42.18c ns repair

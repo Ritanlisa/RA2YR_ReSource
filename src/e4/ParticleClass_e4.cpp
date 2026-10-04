@@ -42,58 +42,44 @@ int ParticleClass::AdjustHeight()
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x62D5E0)
 }
 // 0x62D710
-namespace gamemd {
 int * ParticleClass::CheckDrawFlags(int a1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x62D710)
 }
-} // namespace gamemd
 
 // 0x62D770
-namespace gamemd {
 int ParticleClass::CheckStateFlag()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x62D770)
 }
-} // namespace gamemd
 
 // 0x62D7A0
-namespace gamemd {
 int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x62D7A0)
 }
-} // namespace gamemd
 
 // 0x62D810
-namespace gamemd {
 int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x62D810)
 }
-} // namespace gamemd
 
 // 0x62D930
-namespace gamemd {
 int ParticleClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x62D930)
 }
-} // namespace gamemd
 
 // 0x62D970
-namespace gamemd {
 int ParticleClass::GetObjectSize()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x62D970)
 }
-} // namespace gamemd
 
 // 0x62D980
-namespace gamemd {
 int ParticleClass::GetTypeIdentifier()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x62D980)
 }
-} // namespace gamemd
 }  // L-fix: close namespace tail 1

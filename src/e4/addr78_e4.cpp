@@ -3385,11 +3385,6 @@ int NetworkLobbyWOL(HWND hWnd, char a2)
   return result; /*0x788148*/
 }
 }
-// 0x788180
-namespace gamemd {
-int WOL_FindLobbyID(char a1)
-{
-  int v1; // esi
   unsigned int *v2; // eax
   int v3; // ebx
   unsigned int *v4; // ebp
@@ -3582,12 +3577,6 @@ int WOL_FindLobbyID(char a1)
   return v8; /*0x788619*/
 }
 }
-// 0x788710
-namespace gamemd {
-int sub_788710(int a1, char a2)
-{
-  wchar_t *StringCSF; // eax
-  int i; // esi
   HWND v6; // eax
   HWND Current; // eax
   HWND DlgItem; // eax

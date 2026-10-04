@@ -65,7 +65,7 @@ namespace gamemd {
 int IPXInterfaceClass::GetLocalAddress(int a2)
 {
 
-  *((unsigned int *)this + 64702) = a2; /*0x7b1764*/
+  this->u32_3F2F8 = a2; /*0x7b1764*/
   return a2; /*0x7b176a*/
 
 }
@@ -139,16 +139,16 @@ int IPXInterfaceClass::AddRef(void *a1)
 
   int result; // eax
 
-  if ( *((unsigned int *)this + 64539) != -1 ) /*0x7b1b8c*/
+  if ( this->u32_3F06C != -1 ) /*0x7b1b8c*/
   {
-    closesocket((void *)(*((unsigned int *)this + 64539))); /*0x7b1b8f*/
-    *((unsigned int *)this + 64539) = -1; /*0x7b1b94*/
+    closesocket((void *)(this->u32_3F06C)); /*0x7b1b8f*/
+    this->u32_3F06C = -1; /*0x7b1b94*/
   }
-  result = *((unsigned int *)this + 64540); /*0x7b1b9e*/
+  result = this->u32_3F070; /*0x7b1b9e*/
   if ( result != -1 ) /*0x7b1ba7*/
   {
-    result = closesocket((void *)(*((unsigned int *)this + 64540))); /*0x7b1baa*/
-    *((unsigned int *)this + 64540) = -1; /*0x7b1baf*/
+    result = closesocket((void *)(this->u32_3F070)); /*0x7b1baa*/
+    this->u32_3F070 = -1; /*0x7b1baf*/
   }
   return result; /*0x7b1bb9*/
 
@@ -211,9 +211,9 @@ unsigned char * IPXInterfaceClass::processPacket(void *a1)
   int v3; // esi
 
   result = 0; /*0x7b2249*/
-  if ( *((unsigned int *)this + 64535) == 128 ) /*0x7b2253*/
+  if ( this->u32_3F05C == 128 ) /*0x7b2253*/
   {
-    result = (unsigned char *)__2_YAPAXI_Z(0x2A0u); /*0x7b225a*/
+    result = (unsigned char *)new unsigned char[0x2A0u]; /*0x7b225a*/
     result[22] = 1; /*0x7b2264*/
     result[21] = 1; /*0x7b2267*/
   }
@@ -222,10 +222,10 @@ unsigned char * IPXInterfaceClass::processPacket(void *a1)
     v2 = 0; /*0x7b226c*/
     while ( 1 ) /*0x7b226e*/
     {
-      v3 = *((unsigned int *)this + 64532); /*0x7b226e*/
-      *((unsigned int *)this + 64532) = v3 + 1; /*0x7b227a*/
+      v3 = this->u32_3F050; /*0x7b226e*/
+      this->u32_3F050 = v3 + 1; /*0x7b227a*/
       if ( v3 + 1 > 127 ) /*0x7b2280*/
-        *((unsigned int *)this + 64532) = 0; /*0x7b2282*/
+        this->u32_3F050 = 0; /*0x7b2282*/
       if ( !*((unsigned char *)this + 672 * v3 + 101) ) /*0x7b2297*/
         break; /*0x7b2297*/
       if ( ++v2 >= 128 ) /*0x7b22a4*/
@@ -233,7 +233,7 @@ unsigned char * IPXInterfaceClass::processPacket(void *a1)
     }
     result = (unsigned char *)((char *)this + 672 * v3 + 80); /*0x7b22b9*/
     *((unsigned char *)this + 672 * v3 + 101) = 1; /*0x7b22bd*/
-    ++*((unsigned int *)this + 64535); /*0x7b22c8*/
+    ++this->u32_3F05C; /*0x7b22c8*/
   }
   if ( result ) /*0x7b22d0*/
   {

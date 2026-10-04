@@ -544,23 +544,23 @@ void E4Recv_4DF280::sub_4DF280()
   int v2; // ecx
   unsigned int *v3; // eax
   int v4; // [esp+4h] [ebp-14h]
-  int16_t v5[2]; // [esp+8h] [ebp-10h] BYREF
+  int16_t v4[2]; // [esp+8h] [ebp-10h] BYREF
   unsigned char v6[12]; // [esp+Ch] [ebp-Ch] BYREF
 
-  v2 = *((unsigned int *)this + 371); /*0x4df286*/
+  v2 = this->M1484; /*0x4df286*/
   if ( v2 ) /*0x4df28e*/
   {
     v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v2 + 72))(v2, v6); /*0x4df297*/
     LOWORD(v4) = *v3 / 256; /*0x4df2aa*/
     HIWORD(v4) = v3[1] / 256; /*0x4df2c3*/
-    *(unsigned int *)v5 = v4; /*0x4df2d1*/
-    *((unsigned int *)this + 370) = (unsigned int)(((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v5)); /*0x4df2da*/
+    *(unsigned int *)v4 = v4; /*0x4df2d1*/
+    this->M1480 = (unsigned int)(((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v4)); /*0x4df2da*/
   }
   else
   {
-    *((unsigned int *)this + 370) = 0; /*0x4df2ef*/
+    this->M1480 = 0; /*0x4df2ef*/
   }
-  *((unsigned int *)this + 371) = 0; /*0x4df2e0*/
+  this->M1484 = 0; /*0x4df2e0*/
 
 }
 } // namespace gamemd

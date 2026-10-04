@@ -423,7 +423,6 @@ int MPCooperative::ReadCoopSaveINI()
 
 }
 }
-// 0x5C1470
 namespace gamemd {
 unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerGameMode * aP3, MPCooperative * aP4, MultiplayerGameMode * aP5, MPCooperative * aP6)
 {
@@ -1414,10 +1413,6 @@ LABEL_31:
 }
 }
 // 0x5C2A60
-namespace gamemd {
-const char * MPCooperative::UpdateLobby(const char * a2, char * String)
-{
-
   const char *result; // eax
   int *MPCooperative_field_0x1A4; // esi
   int v6; // ebp
@@ -1676,7 +1671,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
     {
       do /*0x5c2ebc*/
       {
-        if ( vtable2 >= *(unsigned int *)(v4 + 16) ) /*0x5c2eb3*/
+        if ( vtable2 >= v4->q010 ) /*0x5c2eb3*/
           break; /*0x5c2eb3*/
         v15 = *(unsigned char *)(vtable2 + a4 + 1); /*0x5c2eb5*/
         ++vtable2; /*0x5c2eb9*/
@@ -1685,7 +1680,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
     }
     *(unsigned char *)(vtable2 + a4) = 1; /*0x5c2ec2*/
     *(&dword_A8B230[124].uniqueId + vtable2) = a2; /*0x5c2ecc*/
-    v16 = *(void **)(*(unsigned int *)(v4 + 4) + 4 * vtable2); /*0x5c2ed8*/
+    v16 = *(void **)(v4->q004 + 4 * vtable2); /*0x5c2ed8*/
     a1->MPCooperative_field_0x0 = v16; /*0x5c2ee0*/
     return &a1->MPCooperative_field_0x0; /*0x5c2edb*/
   }
@@ -3250,14 +3245,14 @@ void MPCooperative::loadGameState()
   void *v2; // eax
 
   v2 = *(void **)((char *)this + 4); /*0x5c5016*/
-  *((unsigned int *)this + 4) = 0; /*0x5c5019*/
-  if ( v2 && *((unsigned char *)this + 13) ) /*0x5c5020*/
+  this->q010 = 0; /*0x5c5019*/
+  if ( v2 && this->IsAllocated ) /*0x5c5020*/
   {
-    __3_YAXPAX_Z(v2); /*0x5c5026*/
-    *((unsigned int *)this + 1) = 0; /*0x5c502e*/
+    delete v2; /*0x5c5026*/
+    this->Items = 0; /*0x5c502e*/
   }
-  *((unsigned char *)this + 13) = 0; /*0x5c5031*/
-  *((unsigned int *)this + 2) = 0; /*0x5c5034*/
+  this->IsAllocated = 0; /*0x5c5031*/
+  this->q008 = 0; /*0x5c5034*/
 
 }
 } // namespace gamemd
@@ -3293,14 +3288,14 @@ void MPCooperative::processPlayerInput()
   void *v2; // eax
 
   v2 = *(void **)((char *)this + 4); /*0x5c50d6*/
-  *((unsigned int *)this + 4) = 0; /*0x5c50d9*/
-  if ( v2 && *((unsigned char *)this + 13) ) /*0x5c50e0*/
+  this->q010 = 0; /*0x5c50d9*/
+  if ( v2 && this->IsAllocated ) /*0x5c50e0*/
   {
-    __3_YAXPAX_Z(v2); /*0x5c50e6*/
-    *((unsigned int *)this + 1) = 0; /*0x5c50ee*/
+    delete v2; /*0x5c50e6*/
+    this->Items = 0; /*0x5c50ee*/
   }
-  *((unsigned char *)this + 13) = 0; /*0x5c50f1*/
-  *((unsigned int *)this + 2) = 0; /*0x5c50f4*/
+  this->IsAllocated = 0; /*0x5c50f1*/
+  this->q008 = 0; /*0x5c50f4*/
 
 }
 } // namespace gamemd
@@ -3328,7 +3323,7 @@ char MPCooperative::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  v2 = *((unsigned int *)this + 2); /*0x5c5132*/
+  v2 = this->Capacity; /*0x5c5132*/
   if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x5c513d*/
   {
     v3 = 0; /*0x5c513f*/
@@ -3408,10 +3403,10 @@ void MPCooperative::ddtor()
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5c522d*/
   {
     __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5c5233*/
-    *((unsigned int *)this + 1) = 0; /*0x5c523b*/
+    this->Items = 0; /*0x5c523b*/
   }
-  *((unsigned char *)this + 13) = 0; /*0x5c523e*/
-  *((unsigned int *)this + 2) = 0; /*0x5c5241*/
+  this->IsAllocated = 0; /*0x5c523e*/
+  this->Capacity = 0; /*0x5c5241*/
 
 }
 } // namespace gamemd
@@ -3425,9 +3420,9 @@ int MPCooperative::checkTimeout(unsigned int * a2)
   int v3; // edx
   unsigned int *i; // ecx
 
-  if ( !*((unsigned char *)this + 12) ) /*0x5c5250*/
+  if ( !this->IsInitialized ) /*0x5c5250*/
     return 0; /*0x5c5258*/
-  v3 = *((unsigned int *)this + 2); /*0x5c525e*/
+  v3 = this->Capacity; /*0x5c525e*/
   result = 0; /*0x5c5261*/
   if ( v3 <= 0 ) /*0x5c5265*/
     return -1; /*0x5c527c*/
@@ -3512,11 +3507,11 @@ int MPCooperative::validatePlayerAction(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = *((char *)this + 4); /*0x5c5360*/
+  v2 = this->Items; /*0x5c5360*/
   result = 0; /*0x5c5363*/
   if ( v2 <= 0 ) /*0x5c5368*/
     return -1; /*0x5c537f*/
-  for ( i = (unsigned int *)*((char *)this + 1); *i != *a2; ++i ) /*0x5c536e*/
+  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x5c536e*/
   {
     if ( ++result >= v2 ) /*0x5c537d*/
       return -1; /*0x5c537d*/
@@ -3584,10 +3579,10 @@ void MPCooperative::updateScoreBoard()
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5c548d*/
   {
     __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5c5493*/
-    *((unsigned int *)this + 1) = 0; /*0x5c549b*/
+    this->Items = 0; /*0x5c549b*/
   }
-  *((unsigned char *)this + 13) = 0; /*0x5c549e*/
-  *((unsigned int *)this + 2) = 0; /*0x5c54a1*/
+  this->IsAllocated = 0; /*0x5c549e*/
+  this->Capacity = 0; /*0x5c54a1*/
 
 }
 } // namespace gamemd
@@ -3601,9 +3596,9 @@ int MPCooperative::processAITurn(unsigned int * a2)
   int v3; // edx
   unsigned int *i; // ecx
 
-  if ( !*((unsigned char *)this + 12) ) /*0x5c54b0*/
+  if ( !this->IsInitialized ) /*0x5c54b0*/
     return 0; /*0x5c54b8*/
-  v3 = *((unsigned int *)this + 2); /*0x5c54be*/
+  v3 = this->Capacity; /*0x5c54be*/
   result = 0; /*0x5c54c1*/
   if ( v3 <= 0 ) /*0x5c54c5*/
     return -1; /*0x5c54dc*/
@@ -3688,11 +3683,11 @@ int MPCooperative::handlePlayerReady(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = *((char *)this + 4); /*0x5c5820*/
+  v2 = this->Items; /*0x5c5820*/
   result = 0; /*0x5c5823*/
   if ( v2 <= 0 ) /*0x5c5828*/
     return -1; /*0x5c583f*/
-  for ( i = (unsigned int *)*((char *)this + 1); *i != *a2; ++i ) /*0x5c582e*/
+  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x5c582e*/
   {
     if ( ++result >= v2 ) /*0x5c583d*/
       return -1; /*0x5c583d*/

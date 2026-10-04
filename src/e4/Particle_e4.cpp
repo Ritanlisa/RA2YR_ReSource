@@ -15,27 +15,27 @@ int Particle::Init(int aP1, int aP2, int aP3, int aP4, int aP5, int a7, char aP7
   AbstractClass * result;
 
   result = (gamemd::AbstractClass *)((char)(aP1));
-  *((char *)this + 67) = (char)(aP2); /*0x4664c8*/
-  *((char *)this + 68) = a7; /*0x4664d2*/
-  *((char *)this + 74) = (char)(aP5); /*0x4664dc*/
-  *((unsigned char *)this + 224) = (unsigned char)(aP7); /*0x4664e6*/
-  *((char *)this + 27) = (char)(aP4); /*0x4664f6*/
-  *((char *)this + 43) = (char)(aP1); /*0x4664fb*/
-  *((char *)this + 44) = (char)(aP3); /*0x466501*/
-  *((unsigned char *)this + 300) = 0; /*0x466507*/
-  *((unsigned char *)this + 301) = *(unsigned char *)(aP1 + 758); /*0x466513*/
+  this->q10C = (char)(aP2); /*0x4664c8*/
+  this->q044 = a7; /*0x4664d2*/
+  this->q128 = (char)(aP5); /*0x4664dc*/
+  this->q0E0 = (unsigned char)(aP7); /*0x4664e6*/
+  this->q06C = (char)(aP4); /*0x4664f6*/
+  this->q0AC = (char)(aP1); /*0x4664fb*/
+  this->q0B0 = (char)(aP3); /*0x466501*/
+  this->q12C = 0; /*0x466507*/
+  this->u8_12D = *(unsigned char *)(aP1 + 758); /*0x466513*/
   if ( *(unsigned char *)(aP1 + 681) && aP3 ) /*0x466525*/
   {
     result = (gamemd::AbstractClass *)((char)(*(unsigned int *)(*(unsigned int *)(aP3 + 540) + 90196)));
-    *((char *)this + 69) = (char)(result); /*0x466533*/
+    this->q114 = (char)(result); /*0x466533*/
   }
   else
   {
-    *((char *)this + 69) = -1; /*0x46653b*/
+    this->q114 = -1; /*0x46653b*/
   }
-  *((char *)this + 84) = 256; /*0x466546*/
-  *((char *)this + 85) = 0; /*0x466550*/
-  *((unsigned char *)this + 344) = 0; /*0x466556*/
+  this->q150 = 256; /*0x466546*/
+  this->q154 = 0; /*0x466550*/
+  this->q158 = 0; /*0x466556*/
   return (int)(result); /*0x466545*/
 
 }

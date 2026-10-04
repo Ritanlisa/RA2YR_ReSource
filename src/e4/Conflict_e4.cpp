@@ -50,7 +50,7 @@ namespace gamemd {
 BOOL Conflict_WorldDominationTour_26::AddRef(void *a1_1)
 {
 
-  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76692d*/
+  return this->RefCount < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76692d*/
 
 }
 }
@@ -59,7 +59,7 @@ namespace gamemd {
 BOOL Conflict_WorldDominationTour_26::Release(void *a1_1)
 {
 
-  ++*((unsigned int *)this + 2); /*0x766fa2*/
+  ++this->RefCount; /*0x766fa2*/
   return (BOOL)(this->__pad_0); /*0x766fa5*/
 
 }
@@ -69,7 +69,7 @@ namespace gamemd {
 BOOL Conflict_WorldDominationTour_26::ddtor()
 {
 
-  --*((unsigned int *)this + 2); /*0x766fb2*/
+  --this->RefCount; /*0x766fb2*/
   return (BOOL)(this->__pad_0); /*0x766fb5*/
 
 }
@@ -97,7 +97,7 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, 
   v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x76685d*/
   ((ComPtr *)((ComPtr *)a2))->Constructor(); /*0x766862*/
   *a2 = (unsigned int)(&vt_rc_ptr); /*0x766867*/
-  ((ComPtr *)((ComPtr *)a2))->Set(*(unsigned int *)(v3 + 4)); /*0x766873*/
+  ((ComPtr *)((ComPtr *)a2))->Set(v3->q010); /*0x766873*/
   return a2; /*0x76687a*/
 
 }
@@ -158,13 +158,13 @@ int Conflict_WorldDominationTour_12::ddtor()
   int result; // eax
 
   v2 = *(int (****)(unsigned int, int))((char *)this + 4); /*0x766d36*/
-  if ( v2 && *((unsigned char *)this + 13) ) /*0x766d3d*/
+  if ( v2 && this->IsAllocated ) /*0x766d3d*/
   {
     result = (**v2)((unsigned int)v2, 3); /*0x766d4a*/
-    *((unsigned int *)this + 1) = 0; /*0x766d4c*/
+    this->q004 = 0; /*0x766d4c*/
   }
-  *((unsigned char *)this + 13) = 0; /*0x766d4f*/
-  *((unsigned int *)this + 2) = 0; /*0x766d52*/
+  this->IsAllocated = 0; /*0x766d4f*/
+  this->q008 = 0; /*0x766d52*/
   return result; /*0x766d55*/
 
 }

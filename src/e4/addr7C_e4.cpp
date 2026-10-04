@@ -4080,10 +4080,10 @@ int qsort(void * aP0, unsigned int aP1, size_t SizeOfElements, _CoreCrtNonSecure
             v9 = &v16[SizeOfElements]; /*0x7c8be1*/
             v16 += SizeOfElements; /*0x7c8be6*/
           }
-          while ( v16 <= v6 && ((int (__cdecl *)(char *))CompareFunction)(v9) <= 0 ); /*0x7c8bf4*/
+          while ( v16 <= v6 && CompareFunction(v9) <= 0 ); /*0x7c8bf4*/
           do /*0x7c8c06*/
             i -= SizeOfElements; /*0x7c8bf6*/
-          while ( i > (char *)aP0 && ((int (__cdecl *)(char *))CompareFunction)(i) >= 0 ); /*0x7c8c06*/
+          while ( i > (char *)aP0 && CompareFunction(i) >= 0 ); /*0x7c8c06*/
           if ( i < v16 ) /*0x7c8c0f*/
             break; /*0x7c8c0f*/
         }
@@ -4258,7 +4258,7 @@ void * bsearch(const void * Key, const void * Base, size_t aP2, size_t SizeOfEle
     if ( !NumOfElementsa ) /*0x7c8e50*/
       v8 = v7 - 1; /*0x7c8e52*/
     v9 = (char *)Base + SizeOfElements * v8; /*0x7c8e5c*/
-    v10 = ((int (__cdecl *)(const void *))CompareFunction)(Key); /*0x7c8e62*/
+    v10 = CompareFunction(Key); /*0x7c8e62*/
     if ( !v10 ) /*0x7c8e69*/
       return v9; /*0x7c8e95*/
     if ( v10 >= 0 ) /*0x7c8e6b*/
@@ -6500,8 +6500,6 @@ unsigned int _mbstowcs_lk(LPWSTR lpWideCharStr, LPCCH lpMultiByteStr, unsigned i
   return result; /*0x7cc404*/
 }
 }
-// 0x7CC409
-namespace gamemd {
 wchar_t * wcspbrk(const wchar_t * aP0, const wchar_t * aP1)  // truth 0x7CC409 (G42.33 b9)
 {
   wchar_t *result; // eax
@@ -6533,9 +6531,6 @@ wchar_t * wcspbrk(const wchar_t * aP0, const wchar_t * aP1)  // truth 0x7CC409 (
   return result; /*0x7cc443*/
 }
 }
-// 0x7CC4A4
-namespace gamemd {
-int _wcstombs_lk(char * aP0, const wchar_t * aP1, unsigned int cchWideChar)  // truth int(char*, const wchar_t*) (G42.33 b9)
 {
   int v3; // edi
   int result; // eax
@@ -9744,7 +9739,7 @@ namespace gamemd {
 int E4Recv_7C35B0::sub_7C35B0()
 {
 
-  return *((uint16_t *)this + 906); /*0x7c35b9*/
+  return *((uint16_t *)&this->q05A6); /*0x7c35b9*/
 
 }
 } // namespace gamemd
@@ -9754,9 +9749,9 @@ namespace gamemd {
 int E4Recv_7C3670::sub_7C3670()
 {
 
-  *((unsigned int *)this + 452) = -1; /*0x7c3673*/
-  *((unsigned int *)this + 450) = -1; /*0x7c3679*/
-  *((unsigned int *)this + 451) = -1; /*0x7c367f*/
+  this->u32_710 = -1; /*0x7c3673*/
+  this->u32_708 = -1; /*0x7c3679*/
+  this->u32_70C = -1; /*0x7c367f*/
   return -1; /*0x7c3685*/
 
 }
@@ -12344,7 +12339,7 @@ void E4Recv_7C8A8E::__1type_info_UAE_XZ()
 
   *(unsigned int *)this = (unsigned int)&off_7F9594; /*0x7c8a93 G42.33 b23*/
   _lock(27); /*0x7c8a99*/
-  v2 = (void *)*((unsigned int *)this + 1); /*0x7c8a9e*/
+  v2 = (void *)this->q004; /*0x7c8a9e*/
   if ( v2 ) /*0x7c8aa4*/
     free(v2); /*0x7c8aa7*/
   _unlock(27); /*0x7c8aaf*/
@@ -13953,7 +13948,7 @@ namespace gamemd {
 void _cinit()
 {
   if ( off_87BEB8 ) /*0x7cbdb6*/
-    ((void (*)(void))off_87BEB8)(); /*0x7cbdb8 G42.33 b25: fn-ptr call (void* global)*/
+    off_87BEB8(); /*0x7cbdb8 G42.33 b25: fn-ptr call (void* global)*/
   _initterm((_PVFV *)&First, (_PVFV *)&Last); /*0x7cbdc4*/
   _initterm((_PVFV *)&dword_812000, (_PVFV *)&dword_815DA4); /*0x7cbdd3*/
 }

@@ -259,13 +259,13 @@ char Array::GetElementAt(unsigned int * a2, int a3)
   LOBYTE(result) = 0; /*0x49d079*/
   *a2 = 0; /*0x49d07e*/
   if ( a3 == -1 ) /*0x49d084*/
-    v3 = *((char *)this + 14); /*0x49d086*/
-  if ( v3 < 0 || v3 >= *((char *)this + 16) ) /*0x49d094*/
+    v3 = this->q038; /*0x49d086*/
+  if ( v3 < 0 || v3 >= this->q010 ) /*0x49d094*/
     v3 = -1; /*0x49d096*/
-  if ( *((unsigned char *)this + 108) ) /*0x49d09a*/
+  if ( this->q06C ) /*0x49d09a*/
   {
     if ( v3 != -1 ) /*0x49d0a5*/
-      *a2 = *(unsigned int *)(*((char *)this + 15) + 4 * v3); /*0x49d0ad*/
+      *a2 = *(unsigned int *)(this->u32_3C + 4 * v3); /*0x49d0ad*/
     if ( *a2 ) /*0x49d0af*/
       LOBYTE(result) = 1; /*0x49d0b4*/
   }

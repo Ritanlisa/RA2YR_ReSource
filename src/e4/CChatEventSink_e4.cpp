@@ -111,7 +111,7 @@ namespace gamemd {
 int CChatEventSink::ComputeBucketMask(int a2)
 {
 
-  return (*(int (**)(int))((char *)this + 24))(a2) & ((1 << *((unsigned int *)this + 3)) - 1); /*0x7aecc4*/
+  return (*(int (**)(int))((char *)&this->u32_84))(a2) & ((1 << this->q00C) - 1); /*0x7aecc4*/
 
 }
 } // namespace gamemd

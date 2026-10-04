@@ -63,22 +63,19 @@ unsigned int * Coord::GetCoords(int * outCoords, void *a2_1)
 {
 
   int v2; // ecx
-  int v3; // esi
   int v4; // eax
-  int v5; // edi
   int v6; // eax
-  int v7; // ebx
   int v8; // eax
 
-  v3 = v2; /*0x4399a2*/
+  v2 = v2; /*0x4399a2*/
   LOWORD(v4) = Math::RoundToInt(*(float *)(v2 + 24)); /*0x4399a8*/
-  v5 = v4; /*0x4399b0*/
-  LOWORD(v6) = Math::RoundToInt(*(float *)(v3 + 28)); /*0x4399b2*/
-  v7 = v6; /*0x4399ba*/
-  LOWORD(v8) = Math::RoundToInt(*(float *)(v3 + 32)); /*0x4399bc*/
-  *outCoords = v5; /*0x4399c7*/
-  *(outCoords + 1) = v7; /*0x4399cb*/
-  *(outCoords + 2) = v8; /*0x4399cf*/
+  v4 = v4; /*0x4399b0*/
+  LOWORD(v6) = Math::RoundToInt(*(float *)(v2 + 28)); /*0x4399b2*/
+  v6 = v6; /*0x4399ba*/
+  LOWORD(v8) = Math::RoundToInt(*(float *)(v2 + 32)); /*0x4399bc*/
+  *outCoords = v4; /*0x4399c7*/
+  outCoords->u32_4 = v6; /*0x4399cb*/
+  outCoords->q008 = v8; /*0x4399cf*/
   return (unsigned int *)((int)outCoords); /*0x4399c9*/
 
 }

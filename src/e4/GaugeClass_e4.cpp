@@ -15,7 +15,7 @@ namespace gamemd {
 int GaugeClass::Stub()
 {
 
-  return *((unsigned int *)this + 13); /*0x4e30a3*/
+  return this->u32_D; /*0x4e30a3*/
 
 }
 } // namespace gamemd
@@ -24,7 +24,7 @@ namespace gamemd {
 int GaugeClass::Draw(int a2)
 {
 
-  *((unsigned char *)this + 45) = a2 != 0; /*0x4e30b9*/
+  this->u32_2D = a2 != 0; /*0x4e30b9*/
   return a2 != 0; /*0x4e30bc*/
 
 }

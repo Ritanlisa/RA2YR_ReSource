@@ -28,7 +28,7 @@ namespace gamemd {
 int MSVQAnim::Stub()
 {
 
-  return *((unsigned char *)this + 45); /*0x5cd323*/
+  return this->u32_2D; /*0x5cd323*/
 
 }
 } // namespace gamemd

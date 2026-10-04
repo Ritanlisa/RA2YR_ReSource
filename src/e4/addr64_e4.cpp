@@ -1970,10 +1970,6 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
   }
 }
 }
-// 0x64A630
-namespace gamemd {
-int Network_ProcessMessage(int a1, int a2)
-{
   int v3; // eax
   char *v5; // ebp
   wchar_t *v6; // edi
@@ -2037,10 +2033,6 @@ int Network_ProcessMessage(int a1, int a2)
   return v11 + 6; /*0x64a660*/
 }
 }
-// 0x64AAE0
-namespace gamemd {
-void KickNetworkPlayer(HWND hDlg, LPARAM lParam)
-{
   int result; // eax
   HWND DlgItem; // eax
   HWND v6; // esi

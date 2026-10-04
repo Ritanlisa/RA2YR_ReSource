@@ -5,1780 +5,790 @@
 // ==== BACKFILL 0x005B0060  JumpjetLocomotionClass::ShortFunc_5B0060  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::ShortFunc_5B0060(int a1)
 {
-{
-    BuildingClass::ProcessMission(a1 - 4, 1);
-    return (*(int (__stdcall **)(int))(*(int *)(a1) + 16))(a1);
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B0060.json)
 }
 
 // ==== BACKFILL 0x005B0080  JumpjetLocomotionClass::ConvertCoordToCell_1  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::ConvertCoordToCell_1(int a1, int aP1, IUnknown * aP2, IUnknown * aP3)
 {
-{
-    int result;
-    IUnknown *v5;
-    IUnknown *v6;
-    result = (*(int (__thiscall **)(int))(**(int **)(a1 + 8) + 892))(*(int *)(a1 + 8));
-    if ( !(char)result )
-  {
-    result = (*(int (__thiscall **)(int))(**(int **)(a1 + 8) + 896))(*(int *)(a1 + 8));
-    if ( !(char)result )
-    {
-    result = (*(int (__thiscall **)(int))(**(int **)(a1 + 8) + 468))(*(int *)(a1 + 8));
-    if ( !(char)result )
-      {
-    result = (*(int (__thiscall **)(int))(**(int **)(a1 + 8) + 472))(*(int *)(a1 + 8));
-    if ( !(char)result )
-        {
-    v5 = aP2;
-    v6 = aP3;
-    *(int *)(a1 + 20) = aP1;
-    *(int *)(a1 + 24) = v5;
-    *(int *)(a1 + 28) = v6;
-    result = (int)Coord::To_Cell(&DataGlobal_87C374[13428], (IUnknown *)&aP1);
-    if ( (*(int *)(result + 320) & 0x100) != 0 )
-          {
-    result = Coord::ScaleToScreenY((void *)0x3C);
-    *(int *)(a1 + 28) += result;
-          }
-    *(char *)(a1 + 44) = 1;
-        }
-      }
-    }
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B0080.json)
 }
 
 // ==== BACKFILL 0x005B0120  JumpjetLocomotionClass::SyncMatrixTransformState  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SyncMatrixTransformState(int a1)
 {
-{
-    int result;
-    result = a1;
-    *(int *)(a1 + 20) = g_MatrixTransformState;
-    *(int *)(a1 + 24) = DataGlobal_ABEE14;
-    *(int *)(a1 + 28) = DataGlobal_ABEE18;
-    if ( *(int *)(a1 + 32) == g_MatrixTransformState && *(int *)(a1 + 36) == DataGlobal_ABEE14 && *(int *)(a1 + 40) == DataGlobal_ABEE18 )
-  {
-    *(char *)(a1 + 44) = 0;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B0120.json)
 }
 
 // ==== BACKFILL 0x005B0170  JumpjetLocomotionClass::UpdateFacingDirection_1  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 char JumpjetLocomotionClass::UpdateFacingDirection_1(int a1, int a2)
 {
-{
-    return FacingClass::Update((char *)(*(int *)(a1 + 8) + 904), &a2);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B0170)
 }
 
 // ==== BACKFILL 0x005B01A0  JumpjetLocomotionClass::InitMultiFieldArray  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::InitMultiFieldArray(unsigned int * a1, int a2, int a3, int a4)
 {
-{
-    *((int*)(a1) + 8) = a2;
-    *((int*)(a1) + 9) = a3;
-    *((int*)(a1) + 10) = a4;
-    return a2;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B01A0.json)
 }
 
 // ==== BACKFILL 0x005B1960  MechLocomotionClass::ddtor  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-{
-    if ( !a2 )
-    return -2147467261;
-    *a2 = 1439777208;
-    *((int*)(a2) + 1) = 298965908;
-    *((int*)(a2) + 2) = 1610651820;
-    *((int*)(a2) + 3) = -1252326136;
-    return 0;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B1960)
 }
 
 // ==== BACKFILL 0x005B19A0  MechLocomotionClass::BeginMove  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int MechLocomotionClass::BeginMove(int * a1, int * a2)
 {
-{
-    int result;
-    result = SwizzleManager::SaveLoad(a1, a2);
-    if ( result >= 0 )
-  {
-    if ( a1 )
-    {
-    *a1 = (int)(unsigned int)vt_MechLocomotionClass;
-    *((int*)(a1) + 1) = (int)&vt_MechLocomotionClass;
-    }
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B19A0)
 }
 
 // ==== BACKFILL 0x005B19D0  JumpjetLocomotionClass::SmallStub_5B19D0  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::SmallStub_5B19D0(int a1)
 {
-return 2;
+
+  return 2; /*0x5b19d5*/
+
 }
 
 // ==== BACKFILL 0x005B19E0  JumpjetLocomotionClass::StubReturnTrue_4  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 bool JumpjetLocomotionClass::StubReturnTrue_4(InfantryClass * aP0)
 {
-{
-    if ( TimerClass::Active(*(int *)&aP0->__pad_0[8] + 904) )
-    return 1;
-    return (*(unsigned char (__stdcall **)(InfantryClass *))(*(int *)aP0->__pad_0 + 16))(aP0)
-    && (aP0->NeedsSaveOrLink != g_MatrixTransformState || *(__int64 *)&aP0->objectTypeFlags != *(__int64 *)(&g_MatrixTransformState + 1))
-    && (*(int (__thiscall **)(int))(**(int **)&aP0->__pad_0[8] + 1336))(*(int *)&aP0->__pad_0[8]) > 0;
-}
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B19E0.json)
 }
 
 // ==== BACKFILL 0x005B1A50  JumpjetLocomotionClass::DispatchVirtualCall_5  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int JumpjetLocomotionClass::DispatchVirtualCall_5(unsigned int * a1, int a2)
 {
-{
-    int result;
-    int *v3;
-    int v4;
-    int v5[3];
-    char v6[12];
-    result = a2;
-    if ( !a2 )
-  {
-    v3 = (int *)(*(int (__stdcall **)(int *, char *))(*a1 + 24))(a1, v6);
-    v5[0] = *v3;
-    v5[1] = v3[1];
-    v4 = *((int*)(a1) + 2);
-    v5[2] = v3[2];
-    return (*(int (__thiscall **)(int, int *))(*(int *)(v4) + 244))(v4, v5);
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B1A50.json)
 }
 
 // ==== BACKFILL 0x005B1AA0  JumpjetLocomotionClass::IsPositionWithinThreshold_0  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 bool JumpjetLocomotionClass::IsPositionWithinThreshold_0(int a1, int a2, int a3, int a4)
 {
-{
-    int *v4;
-    int v5;
-    int v6;
-    int v7;
-    char v9[12];
-    v4 = (int *)(*(int (__stdcall **)(int, char *))(*(int *)(a1) + 24))(a1, v9);
-    v5 = v4[2];
-    v6 = *v4;
-    v7 = v4[1] / 256;
-    return (unsigned short)(v6 / 256) == (unsigned short)(a2 / 256)
-    && (short)v7 == (unsigned short)(a3 / 256)
-    && (int)abs32(v5 - a4) <= DataGlobal_ABEE50;
-}
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B1AA0.json)
 }
 
 // ==== BACKFILL 0x005B1B40  MechLocomotionClass::StubReturn52  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
 int MechLocomotionClass::StubReturn52()
 {
-return 52;
+
+  return 52; /*0x5b1b45*/
+
 }
 
 // ==== BACKFILL 0x005B1B50  MechLocomotionClass::ProcessMove  cls=MechLocomotionClass  sig=csp  renamed_refs=0  residual=- ====
-MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
+MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = vt_MechLocomotionClass;
-    *(this + 1) = &vt_MechLocomotionClass;
-    LocomotionClass::Construct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (MechLocomotionClass *)this;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B1B50)
 }
 
 // ==== BACKFILL 0x005B1D90  sub_5B1D90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-double * E4Recv_5B1D90::sub_5B1D90()
+double * sub_5B1D90()
 {
-{
-    DWORD v2;
-    unsigned int v4;
-    double v5;
-    *(int *)this = 0;
-    v4 = 0;
-    this->M4 = 1072693248;
-    v2 = sub_5CAF70((LONG *)&v4);
-    if ( v2 || v4 )
-  {
-    v5 = (double)v4;
-    Debug::Log();
-    *(void**)this = (v5 * 4294967296.0 + (double)v2) * 0.001;
-    return this;
-  }
-    else
-  {
-    timeBeginPeriod(1u);
-    return this;
-  }
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B1D90.json)
 }
 
 // ==== BACKFILL 0x005B2930  Movement::Check  cls=Movement  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * Movement::Check(unsigned int * a2, unsigned short * a3)
+unsigned int * Movement::Check(unsigned int * a2, unsigned short * a3, void *a3_2)
 {
-{
-    LOWORD(a3) = *(void**)(this) + *a3;
-    *a2 = a3;
-    return a2;
-}
+
+  LOWORD(a3) = LOWORD(this->Movement_field_00) + *a3; /*0x5b293e*/
+  *a2 =(unsigned int)a3; /*0x5b2947*/
+  return a2; /*0x5b2949*/
+
 }
 
 // ==== BACKFILL 0x005B2950  Math::Sub16  cls=Math  sig=csp  renamed_refs=0  residual=- ====
 IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
 {
-{
-    LOWORD(aP2) = *(void**)this - LOWORD(aP2->field_0);
-    *(int *)aP1->vtable0 = aP2;
-    return (IUnknown *)aP1;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B2950)
 }
 
 // ==== BACKFILL 0x005B2970  Movement::DivideAndStoreScaled  cls=Movement  sig=csp  renamed_refs=0  residual=- ====
 int * Movement::DivideAndStoreScaled(int * a2, int a3)
 {
-{
-    LOWORD(a3) = *(void**)this / a3;
-    *a2 = a3;
-    return a2;
-}
+
+  LOWORD(a3) = SLOWORD(this->Movement_field_00) / a3; /*0x5b2978*/
+  *a2 = a3; /*0x5b2985*/
+  return a2; /*0x5b2987*/
+
 }
 
 // ==== BACKFILL 0x005B2990  Math::Abs16Cmp  cls=Math  sig=csp  renamed_refs=0  residual=- ====
 bool Math::Abs16Cmp(IUnknown * aP1, IUnknown * aP2)
 {
-{
-    return abs16(aP2->field_0) >= (int)abs16(*(void**)this - LOWORD(aP1->field_0));
-}
+    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B2990)
 }
 
 // ==== BACKFILL 0x005B29C0  Movement::CompareAbsCoords  cls=Movement  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int Movement::CompareAbsCoords(void* a2, void* a3) {
-{
-    short v3;
-    short v4;
-    short v5;
-    v3 = *a3;
-    v4 = *a2;
-    v5 = *(void**)this;
-    if ( abs16(*a3) < (int)abs16(*(void**)this - *a2) )
-  {
-    if ( (short)(v4 - v5) >= 0 )
-    *(void**)this = v5 + v3;
-    else
-    *(void**)this = v5 - v3;
-    return 0;
-  }
-    else
-  {
-    *(void**)this = v4;
-    return 1;
-  }
+int Movement::CompareAbsCoords(void* a2, void* a3) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x5B29C0.json */
 }
-} }
 
 // ==== BACKFILL 0x005B2A30  Movement::UpdateLocomotion  cls=Movement  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { void Movement::UpdateLocomotion(void* a1) {
-{
-      double v3;
-      double v4;
-      double v5;
-      double v6;
-
-      v3 = Math::Sqrt(*this * *this + this->q004 * this->q004);
-      v4 = Math::CalcAngle(this->q008, v3);
-      v5 = (double)((__int16)Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427) - 0x3FFF)
-         * -0.00009587672516830327;
-      v6 = Math::Sqrt(this->q008 * this->q008 + *this * *this + this->q004 * this->q004);
-      if ( v5 != 0.0 )
-      {
-        *this = *this / Math::ArcTan2(v5);
-        this->q004 = this->q004 / Math::ArcTan2(v5);
-      }
-      *this = Math::ArcTan2((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * *this;
-      this->q004 = Math::ArcTan2((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * this->q004;
-      this->q008 = Math::SinCos((double)(SLOWORD(aP1->field_0) - 0x3FFF) * -0.00009587672516830327) * v6;
+void Movement::UpdateLocomotion(void* a1) {
 }
-} }
 
-// ==== BACKFILL 0x005B2DA0  RadioClass::Constructor  cls=MissionClass  sig=csp  renamed_refs=2  residual=- ====
-namespace ra2 { namespace game { int RadioClass::Constructor() {
-{
-      #72 *v2; // ecx
-
-      ObjectClass::ctor((_DWORD *)this);
-      this->currentMission = -1;
-      this->suspendedMission = -1;
-      this->queuedMission = -1;
-      this->missionQueued = 0;
-      this->missionStatus = 0;
-      this->missionStartTime = 0;
-      this->missionData = 0;
-      v2 = g_CurrentFrame;
-      this->q0D0 = 0;
-      this->missionTimer = v2;
-      *(_DWORD *)this = 0;
-      this->vtable3 = 0;
-      this->vtable4 = 0;
-      this->vtable4 = 0;
-      return this;
+// ==== BACKFILL 0x005B2DA0  RadioClass::Constructor  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
+int RadioClass::Constructor() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x5b2da0.json */
 }
-} } }
 
 // ==== BACKFILL 0x005B2E10  MissionClass::Return450A  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450A()
 {
-return 450;
+
+  return 450; /*0x5b2e15*/
+
 }
 
 // ==== BACKFILL 0x005B2E20  MissionClass::Return450B  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450B()
 {
-return 450;
+
+  return 450; /*0x5b2e25*/
+
 }
 
 // ==== BACKFILL 0x005B2E30  MissionClass::Return450C  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450C()
 {
-return 450;
+
+  return 450; /*0x5b2e35*/
+
 }
 
 // ==== BACKFILL 0x005B2E40  TechnoClass::StubReturn450  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
-int TechnoClass::StubReturn450() { return 0; }
+int TechnoClass::StubReturn450() {
+    return 450; /*0x5b2e45*/
+}
 
 // ==== BACKFILL 0x005B2E50  IPersistStream::StubReturn450  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int IPersistStream::StubReturn450()
 {
-return 450;
+
+  return 450; /*0x5b2e55*/
+
 }
 
 // ==== BACKFILL 0x005B2E60  AbstractClass::COMStub_Ret450_134  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_134()
 {
-return 450;
+
+  return 450; /*0x5b2e65*/
+
 }
 
 // ==== BACKFILL 0x005B2E70  TechnoClass::CheckState1  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
-int TechnoClass::CheckState1() const { return false; }
+int TechnoClass::CheckState1() const {
+    return 450; /*0x5b2e75*/
+}
 
 // ==== BACKFILL 0x005B2E80  TechnoClass::CheckState2  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
-int TechnoClass::CheckState2() const { return false; }
+int TechnoClass::CheckState2() const {
+    return 450; /*0x5b2e85*/
+}
 
 // ==== BACKFILL 0x005B2E90  AircraftClass::CheckMissionStatus  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::CheckMissionStatus()
 {
-return 450;
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B2E90)
 }
 
 // ==== BACKFILL 0x005B2EA0  AbstractClass::COMStub_Ret450_138  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_138()
 {
-return 450;
+
+  return 450; /*0x5b2ea5*/
+
 }
 
 // ==== BACKFILL 0x005B2EB0  AbstractClass::COMStub_Ret450_139  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_139()
 {
-return 450;
+
+  return 450; /*0x5b2eb5*/
+
 }
 
 // ==== BACKFILL 0x005B2EC0  AbstractClass::COMStub_Ret450_140  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_140()
 {
-  return 450;
+
+  return 450; /*0x5b2ec5*/
+
 }
 
 // ==== BACKFILL 0x005B2ED0  MissionClass::Return450D  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450D()
 {
-return 450;
+
+  return 450; /*0x5b2ed5*/
+
 }
 
 // ==== BACKFILL 0x005B2EE0  MissionClass::Return450E  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450E()
 {
-return 450;
+
+  return 450; /*0x5b2ee5*/
+
 }
 
 // ==== BACKFILL 0x005B2EF0  IPersistStream::GetMaxSize  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int IPersistStream::GetMaxSize()
 {
-return 450;
+
+  return 450; /*0x5b2ef5*/
+
 }
 
 // ==== BACKFILL 0x005B2F00  AbstractClass::COMStub_Ret450_144  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_144()
 {
-return 450;
+
+  return 450; /*0x5b2f05*/
+
 }
 
 // ==== BACKFILL 0x005B2F10  MissionClass::Return450G  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450G()
 {
-return 450;
+
+  return 450; /*0x5b2f15*/
+
 }
 
 // ==== BACKFILL 0x005B2F20  MissionClass::Return450H  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450H()
 {
-return 450;
+
+  return 450; /*0x5b2f25*/
+
 }
 
 // ==== BACKFILL 0x005B2F30  AircraftClass::CheckMissionStatus2  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::CheckMissionStatus2()
 {
-return 450;
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B2F30)
 }
 
 // ==== BACKFILL 0x005B2F40  MissionClass::Return450I  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450I()
 {
-return 450;
+
+  return 450; /*0x5b2f45*/
+
 }
 
 // ==== BACKFILL 0x005B2F50  MissionClass::Return450J  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450J()
 {
-return 450;
+
+  return 450; /*0x5b2f55*/
+
 }
 
 // ==== BACKFILL 0x005B2F60  AbstractClass::COMStub_Ret450_150  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_150()
 {
-return 450;
+
+  return 450; /*0x5b2f65*/
+
 }
 
 // ==== BACKFILL 0x005B2F70  AbstractClass::COMStub_Ret450_151  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Ret450_151()
 {
-return 450;
+
+  return 450; /*0x5b2f75*/
+
 }
 
 // ==== BACKFILL 0x005B2F80  MissionClass::Return450K  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450K()
 {
-return 450;
+
+  return 450; /*0x5b2f85*/
+
 }
 
 // ==== BACKFILL 0x005B2F90  MissionClass::Return450L  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450L()
 {
-return 450;
+
+  return 450; /*0x5b2f95*/
+
 }
 
 // ==== BACKFILL 0x005B2FA0  MissionClass::Return450F  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450F()
 {
-return 450;
+
+  return 450; /*0x5b2fa5*/
+
 }
 
 // ==== BACKFILL 0x005B2FB0  MissionClass::Return450M  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450M()
 {
-return 450;
+
+  return 450; /*0x5b2fb5*/
+
 }
 
 // ==== BACKFILL 0x005B2FC0  MissionClass::Return450N  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::Return450N()
 {
-return 450;
+
+  return 450; /*0x5b2fc5*/
+
 }
 
 // ==== BACKFILL 0x005B2FD0  MissionClass::ForceMission  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int MissionClass::ForceMission() {
+int MissionClass::ForceMission()
 {
-    int result;
-    int *v2;
-    int v3;
-    int v4;
-    result = v4;
-    if ( this->currentMission != 28 || v4 != 5 )
-  {
-    this->currentMission = v4;
-    this->queuedMission = -1;
-    this->missionQueued = 0;
-    this->missionStatus = 0;
-    this->missionStartTime = g_CurrentFrame;
-    this->missionData = 0;
-    v2 = (int *)((char *)(this) + 200);
-    *v2 = g_CurrentFrame;
-    v2[1] = v3;
-    v2[2] = 0;
-    return v3;
-  }
-    return result;
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5b2fd0)
 }
-} } }
 
 // ==== BACKFILL 0x005B3040  MissionClass::GetPrimaryOrFallback  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int ra2::game::MissionClass::GetPrimaryOrFallback() {
-    int result = this->currentMission;
-    if ( result == -1 )
-        return this->queuedMission;
-    return result;
-
-/* ASM:
-mov     eax, [ecx+0ACh]
-cmp     eax, 0FFFFFFFFh
-jnz     short locret_5B3051
-mov     eax, [ecx+0B4h]
-
-locret_5B3051:                          ; CODE XREF: MissionClass__GetPrimaryOrFallback+9↑j
-retn
-*/
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x5B3040.json */
 }
 
 // ==== BACKFILL 0x005B3570  MissionClass::NextMission  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int MissionClass::NextMission() {
+int MissionClass::NextMission()
 {
-      int result;
-      wchar_t *v2;
-      int v3;
-
-      result = this->queuedMission;
-      if ( result == -1 )
-      {
-        LOBYTE(result) = 0;
-      }
-      else
-      {
-        this->currentMission = result;
-        this->queuedMission = -1;
-        v2 = g_CurrentFrame;
-        this->missionStatus = 0;
-        this->missionTimer = v2;
-        this->q0CC = v3;
-        this->q0D0 = 0;
-        result = (int)g_CurrentFrame;
-        this->missionStartTime = g_CurrentFrame;
-        this->missionData = 0;
-        this->missionQueued = 0;
-        LOBYTE(result) = 1;
-      }
-      return result;
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5b3570)
 }
-} } }
 
 // ==== BACKFILL 0x005B35E0  MissionClass::QueueMission  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int MissionClass::QueueMission() {
-{
-    int result;
-    int v3;
-    int v4;
-    int v5;
-    char v6;
-    result = v5;
-    v3 = this->currentMission;
-    if ( (v3 != 28 || v5 != 5) && v3 != 19 )
+int MissionClass::QueueMission() {
+  int result; // eax
+  int currentMission; // ecx
+  int queuedMission; // ecx
+  int v5; // [esp+8h] [ebp+4h]
+  char v6; // [esp+Ch] [ebp+8h]
+
+  result = v5; /*0x5b35e0*/
+  currentMission = this->currentMission; /*0x5b35e7*/
+  if ( (currentMission != 28 || v5 != 5) && currentMission != 19 ) /*0x5b35fa*/
   {
-    if ( v5 != -1 )
+    if ( v5 != -1 ) /*0x5b35ff*/
     {
-    if ( v3 != v5 || (v4 = this->queuedMission, v4 != v5) && v4 != -1 )
+      if ( currentMission != v5 || (queuedMission = this->queuedMission, queuedMission != v5) && queuedMission != -1 ) /*0x5b3612*/
       {
-    this->queuedMission = v5;
-    this->missionQueued = 0;
+        this->queuedMission = v5; /*0x5b3614*/
+        this->missionQueued = 0; /*0x5b361a*/
       }
     }
-    LOBYTE(result) = v6;
-    if ( v6 )
+    IDA_LOBYTE(result) = v6; /*0x5b3621*/
+    if ( v6 ) /*0x5b3627*/
     {
-    result = this->isMissionDone();
-    if ( (char)result )
-    return this->nextMission();
+      result = (*((int (**)(MissionClass *))this->vtable1 + 128))(this); /*0x5b362d*/
+      if ( (unsigned char)result ) /*0x5b3635*/
+        return (*((int (**)(MissionClass *))this->vtable1 + 123))(this); /*0x5b363b*/
     }
   }
-    return result;
+  return result; /*0x5b3641*/
 }
-} }
 
 // ==== BACKFILL 0x005B3650  AbstractClass::COMStub_125  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int AbstractClass::COMStub_125(int a1, int a2, int a3) {
-{
-    int result;
-    int v5;
-    result = this->psychicDetectionCapacity;
-    if ( (result != 28 || a2 != 5) && result != 19 )
-  {
-    v5 = this->productionFactory_plants_count;
-    if ( v5 == -1 )
-    {
-    this->productionFactory_plants = result;
-    this->psychicDetectionCapacity = a2;
-    }
-    else
-    {
-    this->psychicDetectionCapacity = a2;
-    this->productionFactory_plants = v5;
-    }
-    this->productionFactory_plants_capacity = 0;
-  }
-    return result;
+int AbstractClass::COMStub_125(int a1, int a2, int a3) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x5b3650.json */
 }
-} } }
 
 // ==== BACKFILL 0x005B36B0  AbstractClass::COMStub_126  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int AbstractClass::COMStub_126() {
-{
-    int v1;
-    v1 = this->productionFactory_plants;
-    if ( v1 == -1 )
-    return 0;
-    this->psychicDetectionCapacity = v1;
-    this->productionFactory_plants = -1;
-    this->productionFactory_plants_capacity = 0;
-    return 1;
+int AbstractClass::COMStub_126() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x5b36b0.json */
 }
-} } }
 
-// ==== BACKFILL 0x005B3700  MissionClass::FindName  cls=MissionClass  sig=csp  renamed_refs=2  residual=q005,q006,q007,q009 ====
-namespace ra2 { namespace game { void* MissionClass::FindName() {
-{
-      this->vtable2 = 0;
-      this->q005 = 0;
-      this->q007 = 0;
-      this->q006 = 1;
-      this->vtable3 = 1;
-      this->q009 = 1;
-      this->uniqueId = -755914244;
-      this->nextArrayIndex = -755914244;
-      *(_DWORD *)this = -1;
-      this->abstractFlags = 1066426957;
-      this->referenceCount = 1066426957;
-      return this;
+// ==== BACKFILL 0x005B3700  MissionClass::FindName  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
+void* MissionClass::FindName() {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x5b3700.json */
 }
-} } }
 
 // ==== BACKFILL 0x005B3950  FromNameIndex  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * Name_FromIndex(int a1)
 {
-{
-    if ( a1 == -1 )
-    return g_Str__none_;
-    else
-    return DataGlobal_816CAC[a1];
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B3950)
 }
 
 // ==== BACKFILL 0x005B3970  AbstractClass::COMStub_13  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int AbstractClass::COMStub_13(int a1) {
-{
-    HouseClass::ProcessPower((#374 *)this);
-    Power::TimerProcess(aP1);
-    Power::TimerProcess(aP1);
-    Power::TimerProcess(aP1);
-    Power::TimerProcess(aP1);
-    Power::TimerProcess(aP1);
-    return Power::TimerProcess(aP1);
+int AbstractClass::COMStub_13(int a1) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x5b3970.json */
 }
-} } }
 
 // ==== BACKFILL 0x005B3A00  MissionClass::GetMissionControl  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { void* MissionClass::GetMissionControl() {
-{
-    return (char *)&DataGlobal_A8E3A8 + 32 *(void**)this->currentMission;
+void* MissionClass::GetMissionControl() {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x5b3a00.json */
 }
-} } }
 
 // ==== BACKFILL 0x005B3A10  MissionClass::HasValidTarget  cls=MissionClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::HasValidTarget()
 {
-{
-    return this->suspendedMission != -1;
-}
+
+  return this->suspendedMission != (char [4])(-1); /*0x5b3a1e*/
+
 }
 
 // ==== BACKFILL 0x005B3A50  IPersistStream::StubReturnFalse  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int IPersistStream::StubReturnFalse()
 {
-{
-    int result;
-    return result;
-}
+
+  int result; // eax
+
+  return result; /*0x5b3a50*/
+
 }
 
 // ==== BACKFILL 0x005B3A60  AbstractClass::getWeaponRange  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-MissionClass * AbstractClass::getWeaponRange(char a2)
+MissionClass * GScreenClass::getWeaponRange(unsigned int * Block, char a2)
 {
-{
-    *(void**)this = vt_MissionClass;
-    *(this + 1) = (unsigned int)vt_MissionClass;
-    *(this + 2) = (unsigned int)vt_MissionClass;
-    *(this + 3) = &vt_MissionClass;
-    ObjectClass::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (MissionClass *)this;
-}
+    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B3A60.json)
 }
 
 // ==== BACKFILL 0x005B3E90  sub_5B3E90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_5B3E90::sub_5B3E90()
+char sub_5B3E90()
 {
-{
-    int i;
-    ObjectClass Filename;
-    char Ext[256];
-    char Buffer[260];
-    for ( i = (int)*(&g_MatrixTransformState + 116); ; i = *(int *)(i + 4) )
-  {
-    if ( !i || !*(int *)(i + 4) || !*(int *)(i + 8) )
-    return 0;
-    _splitpath(*(const char **)(i + 12), 0, 0, &Filename, Ext);
-    _makepath(Buffer, 0, 0, &Filename, Ext);
-    if ( !_strcmpi(Buffer, this) )
-    break;
-  }
-    if ( *(int *)(i + 36) )
-  {
-    if ( *(char *)(i + 18) )
-    __3_YAXPAX_Z(*(void **)(i + 36));
-  }
-    *(int *)(i + 36) = 0;
-    *(char *)(i + 18) = 0;
-    return 1;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B3E90.json)
 }
 
 // ==== BACKFILL 0x005B3F50  sub_5B3F50  cls=MixFileClass  sig=csp  renamed_refs=0  residual=- ====
-void E4Recv_5B3F50::sub_5B3F50()
+void sub_5B3F50()
 {
-{
-    void *v2;
-    void *v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    v2 = (void *)this->M12;
-    *(int *)this = &vt_MixFileClass;
-    if ( v2 )
-    free(v2);
-    if ( this->M36 && (unsigned char)this->M18 )
-  {
-    __3_YAXPAX_Z(*((void **)(this) + 9));
-    this->M18 = 0;
-  }
-    v3 = (void *)this->M32;
-    this->M36 = 0;
-    if ( v3 )
-  {
-    __3_YAXPAX_Z(v3);
-    this->M32 = 0;
-  }
-    if ( this )
-  {
-    v4 = this->M4;
-    if ( v4 )
-    {
-    v5 = this->M8;
-    if ( v5 )
-      {
-    *(int *)(v5 + 4) = v4;
-    *(int *)(this->M4 + 8) = this->M8;
-    this->M8 = 0;
-    this->M4 = 0;
-      }
-    }
-  }
-    *(int *)this = &vt_GenericNode;
-    if ( this )
-  {
-    v6 = this->M4;
-    if ( v6 )
-    {
-    v7 = this->M8;
-    if ( v7 )
-      {
-    *(int *)(v7 + 4) = v6;
-    *(int *)(this->M4 + 8) = this->M8;
-    this->M8 = 0;
-    this->M4 = 0;
-      }
-    }
-  }
-}
+      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B3F50.json)
 }
 
 // ==== BACKFILL 0x005B4350  sub_5B4350  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_5B4350::sub_5B4350()
+int sub_5B4350()
 {
-{
-    int i;
-    ObjectClass Filename;
-    char Ext[256];
-    char Buffer[260];
-    for ( i = (int)*(&g_MatrixTransformState + 116); i && *(int *)(i + 4) && *(int *)(i + 8); i = *(int *)(i + 4) )
-  {
-    _splitpath(*(const char **)(i + 12), 0, 0, &Filename, Ext);
-    _makepath(Buffer, 0, 0, &Filename, Ext);
-    if ( !_strcmpi(Buffer, this) )
-    return i;
-  }
-    return 0;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B4350.json)
 }
 
 // ==== BACKFILL 0x005B43E0  ?do_always_noconv_codecvt_base_std__MBE_NXZ_7  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_7()
+char ObjectClass::_do_always_noconv_codecvt_base_std__MBE_NXZ_7()
 {
-return 1;
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B43E0)
 }
 
 // ==== BACKFILL 0x005B43F0  ReturnTrue  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char ReturnTrue(AnimClass * aP0)
 {
-return 1;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B43F0.json)
 }
 
 // ==== BACKFILL 0x005B4400  sub_5B4400  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-void E4Recv_5B4400::sub_5B4400()
+void sub_5B4400()
 {
-{
-    if ( this->M36 && (unsigned char)this->M18 )
-    __3_YAXPAX_Z(*(void **)(this + 36));
-    this->M36 = 0;
-    this->M18 = 0;
-}
+      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B4400.json)
 }
 
 // ==== BACKFILL 0x005B4590  MixFileClass::LinkIntoPool  cls=MixFileClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { void MixFileClass::LinkIntoPool() {
-{
-    int v1;
-    int v2;
-    if ( this )
-  {
-    v1 = this->Previous;
-    if ( v1 )
-    {
-    v2 = this->Blowfish;
-    if ( v2 )
-      {
-    *(int *)(v2 + 4) = v1;
-    *(int *)(this->Previous + 8) = this->Blowfish;
-    this->Blowfish = 0;
-    this->Previous = 0;
-      }
-    }
-  }
+void MixFileClass::LinkIntoPool() {
 }
-} }
 
 // ==== BACKFILL 0x005B4610  MixFileClass::UnlinkFromPool  cls=MixFileClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { void* MixFileClass::UnlinkFromPool(int a2) {
-{
-    COMObject::Release(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
+void* MixFileClass::UnlinkFromPool(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
 }
-} }
 
 // ==== BACKFILL 0x005B56F0  Game::processStartup  cls=Game  sig=csp  renamed_refs=0  residual=- ====
 void Game::processStartup()
 {
-{
-    HWND DlgItem;
-    HWND v3;
-    HWND v4;
-    HWND v5;
-    LRESULT v6;
-    char lParam[40];
-    Debug::Log();
-    DlgItem = GetDlgItem(*(void**)this, 1473);
-    if ( DlgItem )
-  {
-    SendMessageA(DlgItem, 0x4B3u, 0x14u, (LPARAM)lParam);
-    CopyWideToChar(g_GameSetupBuffer, lParam, -1);
-  }
-    Debug::Log();
-    v3 = GetDlgItem(*(void**)this, 1029);
-    if ( v3 )
-    g_TauntCommandState = SendMessageA(v3, 0x147u, 0, 0);
-    Debug::Log();
-    v4 = GetDlgItem(*(void**)this, 1639);
-    v5 = v4;
-    if ( v4 )
-  {
-    v6 = SendMessageA(v4, 0x147u, 0, 0);
-    g_CommandExecState = SendMessageA(v5, 0x150u, v6, 0);
-  }
-    Debug::Log();
-}
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B56F0.json)
 }
 
 // ==== BACKFILL 0x005B57D0  sub_5B57D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-HWND E4Recv_5B57D0::sub_5B57D0()
+HWND sub_5B57D0()
 {
-{
-    HWND result;
-    HWND v3;
-    char *v4;
-    unsigned int v5;
-    HWND v6;
-    int (__usercall *v7)(char, char);
-    HWND v8;
-    int v9;
-    wchar_t *Format;
-    int v11[62];
-    short v12;
-    wchar_t lParam[256];
-    wchar_t Buffer[256];
-    result = GetDlgItem(*(void**)this, 1344);
-    v3 = result;
-    if ( result )
-  {
-    SendMessageA(result, 0x4B3u, 0x100u, (LPARAM)lParam);
-    SendMessageA(v3, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString);
-    result = (HWND)wcslen(lParam);
-    if ( result )
-    {
-    if ( lParam[0] != 13 )
-      {
-    WideString::Trim(lParam);
-    result = (HWND)lParam;
-    if ( &v9 != (int *)-272 )
-        {
-    memset(v11, 0, sizeof(v11));
-    v12 = 0;
-    v11[0] = 104;
-    strcpy((char *)&v11[1], g_GameSetupBuffer);
-    LOBYTE(v11[6]) = g_TauntCommandState;
-    wcscpy((wchar_t *)((char *)&v11[6] + 1), lParam);
-    Stream::WriteBlock((int)&g_EventManager, (int)v11, 250, 1);
-    Stream::ReadPacket((int)&g_EventManager);
-    v4 = CharToWideString(g_GameSetupBuffer);
-    v5 = g_TauntCommandState;
-    v8 = *(void**)this;
-    Format = (wchar_t *)v4;
-    result = GetDlgItem(v8, 1343);
-    v6 = result;
-    if ( result )
-          {
-    if ( v5 >= 8 )
-    v7 = Math::InitDegToRad;
-    else
-    v7 = (int (__usercall *)(char, char))DataGlobal_8316A8[v5];
-    swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam);
-    return (HWND)DrawDialogText((LPARAM)v7, Buffer, v6);
-          }
-        }
-      }
-    }
-  }
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B57D0.json)
 }
 
 // ==== BACKFILL 0x005B5960  sub_5B5960  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_5B5960::sub_5B5960()
+char sub_5B5960()
 {
-{
-    HWND DlgItem;
-    HWND v3;
-    DlgItem = GetDlgItem(*(HWND *)this, 1639);
-    v3 = DlgItem;
-    if ( DlgItem )
-  {
-    DlgItem = (HWND)SendMessageA(DlgItem, 0x147u, 0, 0);
-    if ( DlgItem != HWND_MESSAGE|0x2 )
-    {
-    g_CommandExecState = SendMessageA(v3, 0x150u, (WPARAM)DlgItem, 0);
-    this->M9 = 1;
-    this->M8 = 1;
-    LOBYTE(DlgItem) = 1;
-    }
-  }
-    return (char)DlgItem;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B5960.json)
 }
 
 // ==== BACKFILL 0x005B5A50  sub_5B5A50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_5B5A50::sub_5B5A50(char a2)
+char sub_5B5A50(char a2)
 {
-{
-    HWND DlgItem;
-    HWND v4;
-    wchar_t lParam[22];
-    DlgItem = GetDlgItem(*(HWND *)this, 1473);
-    v4 = DlgItem;
-    if ( DlgItem )
-  {
-    SendMessageA(DlgItem, 0x4B3u, 0x15u, (LPARAM)lParam);
-    WideString::Trim(lParam);
-    if ( !a2 )
-    SendMessageA(v4, 0x4B2u, 0, (LPARAM)lParam);
-    CopyWideToChar(g_GameSetupBuffer, (char *)lParam, -1);
-    this->M9 = 1;
-    this->M8 = 1;
-    LOBYTE(DlgItem) = 1;
-  }
-    return (char)DlgItem;
-}
+    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B5A50.json)
 }
 
 // ==== BACKFILL 0x005B5E90  Network::SendSettingsRequest  cls=Network  sig=csp  renamed_refs=0  residual=- ====
-int Network::SendSettingsRequest()
+int HashTable_flat::SendSettingsRequest()
 {
-{
-    HWND DlgItem;
-    int v3[62];
-    short v4;
-    DlgItem = GetDlgItem(*(void**)this, 1);
-    if ( DlgItem )
-    EnableWindow(DlgItem, 0);
-    memset(v3, 0, sizeof(v3));
-    v4 = 0;
-    v3[0] = 116;
-    return Stream::WriteBlock((int)&g_EventManager, (int)v3, 250, 1);
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B5E90.json)
 }
+
+// ==== BACKFILL 0x005B6CD0  Surface_Lock  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int Gap2Recv_5B6CD0::Surface_Lock() {
+
+  int v2; // ecx
+  int v3; // eax
+  int v4; // edx
+  char v5; // dl
+  int v7[62]; // [esp+8h] [ebp-FCh] BYREF
+  int16_t v8; // [esp+100h] [ebp-4h]
+
+  memset(v7, 0, sizeof(v7)); /*0x5b6ce5*/
+  v2 = this->customSound_controller[1]; /*0x5b6ce7*/
+  v8 = 0; /*0x5b6cea*/
+  v3 = this->customSound_controller[0]; /*0x5b6cec*/
+  v4 = this->customSound_controller[2]; /*0x5b6cef*/
+  v7[0] = 101; /*0x5b6cf2*/
+  *(int *)((char *)&v7[33] + 2) = v3; /*0x5b6cfa*/
+  v7[53] = v2; /*0x5b6d01*/
+  v7[52] = v4; /*0x5b6d08*/
+  v7[54] = GameOptions::GetEntry(); /*0x5b6d19*/
+  *(int *)((char *)&v7[7] + 2) = NetworkBuffer::GetField2(); /*0x5b6d2a*/
+  *(int *)((char *)&v7[8] + 2) = NetworkBuffer::GetField3(); /*0x5b6d33*/
+  LOBYTE(v7[6]) = dword_A8DB30; /*0x5b6d3c*/
+  v5 = dword_A8B394; /*0x5b6d5a*/
+  strcpy((char *)&v7[1], unk_A8B380); /*0x5b6d63*/
+  *(int *)((char *)&v7[6] + 1) = dword_A8B3AC; /*0x5b6d7d*/
+  BYTE1(v7[7]) = v5; /*0x5b6d87*/
+  return Stream::WriteBlock((int *)&unk_A8EA70, (int)v7, 250, 1); /*0x5b6d90*/
+
 }
 
 // ==== BACKFILL 0x005B6DA0  sub_5B6DA0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
+void sub_5B6DA0(wchar_t * Source)
 {
-{
-    char *v3;
-    unsigned int v4;
-    HWND DlgItem;
-    int (__usercall *v6)(char, char);
-    wchar_t *Format;
-    int v8[62];
-    short v9;
-    wchar_t Buffer[256];
-    if ( Source )
+    (void)Source;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B6DA0.json)
+}
+
+// ==== BACKFILL 0x005B6EB0  UI_Setup  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+void Gap2Recv_5B6EB0::UI_Setup(void* Format, unsigned int a3, int a4) {
+
+  HWND DlgItem; // edi
+  int (__usercall *v5)(char, char); // esi
+  wchar_t Buffer[256]; // [esp+8h] [ebp-200h] BYREF
+
+  if ( a4 ) /*0x5b6ec1*/
   {
-    memset(v8, 0, sizeof(v8));
-    v9 = 0;
-    v8[0] = 104;
-    strcpy((char *)&v8[1], g_GameSetupBuffer);
-    LOBYTE(v8[6]) = g_TauntCommandState;
-    wcscpy((wchar_t *)((char *)&v8[6] + 1), Source);
-    Stream::WriteBlock((int)&g_EventManager, (int)v8, 250, 1);
-    Stream::ReadPacket((int)&g_EventManager);
-    v3 = CharToWideString(g_GameSetupBuffer);
-    v4 = g_TauntCommandState;
-    Format = (wchar_t *)v3;
-    DlgItem = GetDlgItem(*(void**)this, 1343);
-    if ( DlgItem )
+    DlgItem = GetDlgItem((HWND)this->AbstractClass, 1343); /*0x5b6ed1*/
+    if ( DlgItem ) /*0x5b6ed5*/
     {
-    if ( v4 >= 8 )
-    v6 = Math::InitDegToRad;
-    else
-    v6 = (int (__usercall *)(char, char))DataGlobal_8316A8[v4];
-    swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source);
-    DrawDialogText((LPARAM)v6, Buffer, DlgItem);
+      if ( a3 >= 8 ) /*0x5b6ee1*/
+        v5 = Math::InitDegToRad; /*0x5b6ef1*/
+      else
+        v5 = (int (__usercall *)(char, char))dword_8316A8[a3]; /*0x5b6ee8*/
+      swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4); /*0x5b6f0a*/
+      DrawDialogText((LPARAM)v5, Buffer, DlgItem); /*0x5b6f19*/
     }
   }
-}
+
 }
 
 // ==== BACKFILL 0x005B9250  sub_5B9250  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-HWND E4Recv_5B9250::sub_5B9250()
+HWND sub_5B9250()
 {
-{
-    HWND result;
-    HWND v3;
-    char *v4;
-    unsigned int v5;
-    HWND v6;
-    int (__usercall *v7)(char, char);
-    HWND v8;
-    int v9;
-    wchar_t *Format;
-    int v11[62];
-    short v12;
-    wchar_t lParam[256];
-    wchar_t Buffer[256];
-    memset(lParam, 0, sizeof(lParam));
-    result = GetDlgItem(*(void**)this, 1344);
-    v3 = result;
-    if ( result )
-  {
-    SendMessageA(result, 0x4B3u, 0x100u, (LPARAM)lParam);
-    SendMessageA(v3, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString);
-    result = (HWND)wcslen(lParam);
-    if ( result )
-    {
-    if ( lParam[0] != 13 )
-      {
-    WideString::Trim(lParam);
-    result = (HWND)lParam;
-    if ( &v9 != (int *)-272 )
-        {
-    memset(v11, 0, sizeof(v11));
-    v12 = 0;
-    v11[0] = 104;
-    strcpy((char *)&v11[1], g_GameSetupBuffer);
-    LOBYTE(v11[6]) = g_TauntCommandState;
-    wcscpy((wchar_t *)((char *)&v11[6] + 1), lParam);
-    Stream::WriteBlock((int)&g_EventManager, (int)v11, 250, 1);
-    Stream::ReadPacket((int)&g_EventManager);
-    v4 = CharToWideString(g_GameSetupBuffer);
-    v5 = g_TauntCommandState;
-    v8 = *(void**)this;
-    Format = (wchar_t *)v4;
-    result = GetDlgItem(v8, 1343);
-    v6 = result;
-    if ( result )
-          {
-    if ( v5 >= 8 )
-    v7 = Math::InitDegToRad;
-    else
-    v7 = (int (__usercall *)(char, char))DataGlobal_8316A8[v5];
-    swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam);
-    return (HWND)DrawDialogText((LPARAM)v7, Buffer, v6);
-          }
-        }
-      }
-    }
-  }
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B9250.json)
 }
 
 // ==== BACKFILL 0x005B93F0  sub_5B93F0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_5B93F0::sub_5B93F0()
+char sub_5B93F0()
 {
-{
-    HWND DlgItem;
-    HWND v3;
-    DlgItem = GetDlgItem(*(HWND *)this, 1639);
-    v3 = DlgItem;
-    if ( DlgItem )
-  {
-    DlgItem = (HWND)SendMessageA(DlgItem, 0x147u, 0, 0);
-    if ( DlgItem != HWND_MESSAGE|0x2 )
-    {
-    DlgItem = (HWND)SendMessageA(v3, 0x150u, (WPARAM)DlgItem, 0);
-    if ( DlgItem != HWND_MESSAGE|0x2 )
-      {
-    g_CommandExecState = (int)DlgItem;
-    this->M9 = 1;
-    this->M8 = 1;
-    LOBYTE(DlgItem) = 1;
-      }
-    }
-  }
-    return (char)DlgItem;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B93F0.json)
 }
 
 // ==== BACKFILL 0x005B9450  sub_5B9450  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int E4Recv_5B9450::sub_5B9450()
+unsigned int sub_5B9450()
 {
-{
-    unsigned int result;
-    HWND v3;
-    result = (unsigned int)GetDlgItem(*(HWND *)this, 1029);
-    v3 = (HWND)result;
-    if ( result )
-  {
-    result = SendMessageA((HWND)result, 0x147u, 0, 0);
-    if ( result != -1 )
-    {
-    g_TauntCommandState = result;
-    this->M9 = 1;
-    this->M8 = 1;
-    if ( result >= 8 )
-    return SendMessageA(v3, 0x498u, 0, (LPARAM)Math::InitDegToRad);
-    else
-    return SendMessageA(v3, 0x498u, 0, DataGlobal_8316A8[result]);
-    }
-  }
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B9450.json)
 }
 
 // ==== BACKFILL 0x005B94C0  sub_5B94C0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_5B94C0::sub_5B94C0(char a2)
+char sub_5B94C0(char a2)
 {
-{
-    HWND DlgItem;
-    HWND v4;
-    wchar_t lParam[20];
-    DlgItem = GetDlgItem(*(HWND *)this, 1473);
-    v4 = DlgItem;
-    if ( DlgItem )
-  {
-    SendMessageA(DlgItem, 0x4B3u, 0x14u, (LPARAM)lParam);
-    WideString::Trim(lParam);
-    if ( !a2 )
-    SendMessageA(v4, 0x4B2u, 0, (LPARAM)lParam);
-    strcpy(g_GameSetupBuffer, ToWideStringChar((char *)lParam));
-    this->M9 = 1;
-    this->M8 = 1;
-    LOBYTE(DlgItem) = 1;
-  }
-    return (char)DlgItem;
-}
+    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005B94C0.json)
 }
 
 // ==== BACKFILL 0x005BA970  NetworkGameSetup::SendGameSetupPacket  cls=NetworkGameSetup  sig=csp  renamed_refs=0  residual=- ====
 void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 {
-{
-    char *v3;
-    unsigned int v4;
-    HWND DlgItem;
-    int (__usercall *v6)(char, char);
-    wchar_t *Format;
-    int v8[62];
-    short v9;
-    wchar_t Buffer[256];
-    if ( Source )
-  {
-    memset(v8, 0, sizeof(v8));
-    v9 = 0;
-    v8[0] = 104;
-    strcpy((char *)&v8[1], g_GameSetupBuffer);
-    LOBYTE(v8[6]) = g_TauntCommandState;
-    wcscpy((wchar_t *)((char *)&v8[6] + 1), Source);
-    Stream::WriteBlock((int)&g_EventManager, (int)v8, 250, 1);
-    Stream::ReadPacket((int)&g_EventManager);
-    v3 = CharToWideString(g_GameSetupBuffer);
-    v4 = g_TauntCommandState;
-    Format = (wchar_t *)v3;
-    DlgItem = GetDlgItem(*(void**)this, 1343);
-    if ( DlgItem )
-    {
-    if ( v4 >= 8 )
-    v6 = Math::InitDegToRad;
-    else
-    v6 = (int (__usercall *)(char, char))DataGlobal_8316A8[v4];
-    swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source);
-    DrawDialogText((LPARAM)v6, Buffer, DlgItem);
-    }
-  }
-}
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5BA970)
 }
 
 // ==== BACKFILL 0x005BAA80  sub_5BAA80  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
+void sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
 {
-{
-    HWND DlgItem;
-    int (__usercall *v5)(char, char);
-    wchar_t Buffer[256];
-    if ( a4 )
-  {
-    DlgItem = GetDlgItem(*(void**)this, 1343);
-    if ( DlgItem )
-    {
-    if ( a3 >= 8 )
-    v5 = Math::InitDegToRad;
-    else
-    v5 = (int (__usercall *)(char, char))DataGlobal_8316A8[a3];
-    swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4);
-    DrawDialogText((LPARAM)v5, Buffer, DlgItem);
-    }
-  }
-}
+    (void)Format; (void)a3; (void)a4;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005BAA80.json)
 }
 
 // ==== BACKFILL 0x005BB560  NetworkGameSetup::DeleteComPtr  cls=NetworkGameSetup  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * NetworkGameSetup::DeleteComPtr(char a2)
+unsigned int * NetworkGameSetup::DeleteComPtr(unsigned int * Block, char a2)
 {
-{
-    ComPtr::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5BB560)
 }
 
 // ==== BACKFILL 0x005BB580  Network_Find  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 HKEY sub_5BB580(HKEY, const CHAR * a2, const char * a3)
 {
-{
-    HKEY v3;
-    DWORD v4;
-    CHAR *v5;
-    HKEY RegistrySubKey;
-    int v7;
-    DWORD v9;
-    LPBYTE lpData;
-    DWORD cchName;
-    DWORD cbData;
-    LPCSTR lpValueName;
-    DWORD Type;
-    HKEY v15;
-    struct _FILETIME ftLastWriteTime;
-    v3 = a1;
-    lpValueName = a2;
-    v15 = a1;
-    v4 = 0;
-    v5 = (CHAR *)__2_YAPAXI_Z(0x100u);
-    lpData = (LPBYTE)__2_YAPAXI_Z(0x100u);
-    cbData = 256;
-    while ( 1 )
-  {
-    v9 = v4;
-    cchName = 256;
-    ++v4;
-    if ( RegEnumKeyExA(v3, v9, v5, &cchName, 0, 0, 0, &ftLastWriteTime) )
-    break;
-    RegistrySubKey = FindRegistrySubKey(v3, v5, 0);
-    if ( RegistrySubKey )
-    {
-    cbData = 256;
-    if ( !RegQueryValueExA(RegistrySubKey, lpValueName, 0, &Type, lpData, &cbData) && Type == 1 && !strcmp((const char *)lpData, a3) )
-      {
-    __3_YAXPAX_Z(v5);
-    __3_YAXPAX_Z(lpData);
-    return RegistrySubKey;
-      }
-    v7 = Network_Find(a3);
-    RegCloseKey(RegistrySubKey);
-    if ( v7 )
-      {
-    __3_YAXPAX_Z(v5);
-    __3_YAXPAX_Z(lpData);
-    return (HKEY)v7;
-      }
-    v3 = v15;
-    }
-  }
-    __3_YAXPAX_Z(v5);
-    __3_YAXPAX_Z(lpData);
-    return 0;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005BB580.json)
 }
 
 // ==== BACKFILL 0x005BC4D0  sub_5BC4D0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char sub_5BC4D0()
 {
-{
-    int *v0;
-    char *v1;
-    int v2;
-    int v3;
-    char *v4;
-    int *v5;
-    int v6;
-    char result;
-    v0 = DataGlobal_ABF168;
-    do
-  {
-    v1 = (char *)*v0;
-    v2 = 0;
-    v3 = *v0 + 2000;
-    do
-    {
-    v4 = &v1[v2];
-    v5 = (int *)v3;
-    v6 = 80;
-    do
-      {
-    *v4 = 32;
-    *v5 = 0;
-    v5 += 25;
-    v4 += 25;
-    --v6;
-      }
-    while ( v6 );
-    ++v2;
-    v3 += 4;
-    }
-    while ( v2 < 25 );
-    v1[10036] = 1;
-    result = Text::DrawRepeated(v1, 0, 0, 80, 25);
-    ++v0;
-  }
-    while ( (int)v0 < (int)&DataGlobal_ABF188 );
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005BC4D0.json)
 }
 
 // ==== BACKFILL 0x005BCB90  sub_5BCB90  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-ObjectClass * E4Recv_5BCB90::sub_5BCB90(int a2)
+ObjectClass * sub_5BCB90(int a2)
 {
-{
-    int v3;
-    int *v4;
-    char *v5;
-    int *v6;
-    int v7;
-    v3 = 0;
-    this->M10008 = a2;
-    this->M10012 = 0;
-    this->M10016 = 0;
-    this->M10020 = 0;
-    this->M10024 = 0;
-    this->M10028 = 80;
-    this->M10032 = 25;
-    v4 = (int *)(this + 2000);
-    do
-  {
-    v5 = (char *)(v3 + this);
-    v6 = v4;
-    v7 = 80;
-    do
-    {
-    *v5 = 32;
-    *v6 = 0;
-    v6 += 25;
-    v5 += 25;
-    --v7;
-    }
-    while ( v7 );
-    ++v3;
-    ++v4;
-  }
-    while ( v3 < 25 );
-    this->M10036 = 1;
-    Text::DrawRepeated((void *)this, 0, 0, 80, 25);
-    return (ObjectClass *)this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005BCB90.json)
 }
 
 // ==== BACKFILL 0x005BCC30  sub_5BCC30  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_5BCC30::sub_5BCC30()
 {
-{
-    return this->M10008;
-}
+
+  return *((unsigned int *)this + 2502); /*0x5bcc36*/
+
 }
 
 // ==== BACKFILL 0x005BCC60  sub_5BCC60  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_5BCC60::sub_5BCC60(int a2, int a3, int a4, int a5)
+int sub_5BCC60(int a2, int a3, int a4, int a5)
 {
-{
-    this->M10020 = a2;
-    this->M10024 = a3;
-    this->M10028 = a4;
-    this->M10032 = a5;
-    return a4;
-}
+    (void)a2; (void)a3; (void)a4; (void)a5; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005BCC60.json)
 }
 
 // ==== BACKFILL 0x005BCCE0  sub_5BCCE0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char E4Recv_5BCCE0::sub_5BCCE0()
 {
-{
-    return this->M10036;
-}
+
+  return *((unsigned char *)this + 10036); /*0x5bcce6*/
+
 }
 
 // ==== BACKFILL 0x005BD1F0  Debug::Printf  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char Debug::Printf()
 {
-{
-    char result;
-    char Buffer[256];
-    int v3;
-    char *Format;
-    char ArgList;
-    result = g_MiscFlag;
-    if ( g_MiscFlag )
+
+  char result; // al
+  char Buffer[256]; // [esp+0h] [ebp-100h] BYREF
+  va_list va; // [esp+10Ch] [ebp+Ch] BYREF
+
+  va_start(va, Format);
+  result = byte_ABF23A; /*0x5bd1f0*/
+  if ( byte_ABF23A ) /*0x5bd1fd*/
   {
-    vsprintf(Buffer, Format, &ArgList);
-    Buffer[255] = 0;
-    return Debug::ScrollText(v3, Buffer);
+    vsprintf(Buffer,(const char *const )(Format), va); /*0x5bd214*/
+    Buffer[255] = 0; /*0x5bd227*/
+    return Debug::ScrollText((const char *)(int)(Buffer)); /*0x5bd230*/
   }
-    return result;
-}
+  return result; /*0x5bd235*/
+
 }
 
 // ==== BACKFILL 0x005BD2E0  sub_5BD2E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_5BD2E0::sub_5BD2E0(ObjectClass * aP1, int a3, int a4, int a5)
+char sub_5BD2E0(ObjectClass * aP1, int a3, int a4, int a5)
 {
-{
-    char result;
-    CellStruct Buffer;
-    result = *((char *)&(&g_MatrixTransformState)[22] + 10);
-    if ( *((char *)&(&g_MatrixTransformState)[22] + 10) )
-  {
-    this->M10012 = a3;
-    this->M10016 = a4;
-    if ( *((char *)&(&g_MatrixTransformState)[22] + 10) )
-    this->M10000 = a5;
-    sprintf((char *const)&Buffer, &DataGlobal_82D020, (INIClass *)aP1);
-    return Debug::ScrollText((int)this, &Buffer);
-  }
-    return result;
-}
+    (void)aP1; (void)a3; (void)a4; (void)a5; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005BD2E0.json)
 }
 
 // ==== BACKFILL 0x005BD360  Debug_Helper  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char Debug_Helper(ObjectClass * aP0)
 {
-{
-    char result;
-    result = (char)aP0;
-    switch ( (char)aP0 )
-  {
-    case 0xA: return 32;
-    case 0xB3: return 124;
-    case 0xC4: return 45;
-    case 0xCD: return 61;
-    case 0xDA: case 0xC2: case 0xBF: case 0xC6: case 0xC3: case 0xD1: case 0xC5: case 0xD8: case 0xB5: case 0xC0: case 0xC1: case 0xD9: case 0xD5: case 0xB4: return 43;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5BD360)
 }
 
 // ==== BACKFILL 0x005BD560  sub_5BD560  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * E4Recv_5BD560::sub_5BD560()
+unsigned int * sub_5BD560()
 {
-{
-    *(char *)this = 0;
-    this->M4 = 0;
-    this->M8 = 0;
-    this->M12 = 0;
-    return this;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005BD560.json)
 }
 
 // ==== BACKFILL 0x005BDA40  sub_5BDA40  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned char * E4Recv_5BDA40::sub_5BDA40()
+unsigned char * sub_5BDA40()
 {
-{
-    SmallFunc_692290((int)this);
-    *(void**)this = vt_MouseClass;
-    this->M21852 = 0;
-    this->M21856 = 0;
-    this->M21860 = 0;
-    this->M21864 = 0;
-    this->M21784 = &vt_MouseClass;
-    return this;
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005BDA40.json)
 }
 
 // ==== BACKFILL 0x005BDAB0  MouseClass::SetPosition  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int MouseClass::SetPosition(int a1) {
-{
-      char result;
-      int v3;
-      int v4;
-      int v5;
-      int v6;
-      int v7;
-      _DWORD v8[2];
-      int v9;
-
-      result = this->q555C;
-      if ( result != a2 )
-      {
-        v3 = this->q5560;
-        this->q555C = a2;
-        if ( !a2 || DataGlobal_82D034[7 * v3] == -1 )
-          v9 = MouseClass_Cursors[7 * v3];
-        else
-          v9 = DataGlobal_82D034[7 * v3];
-        v4 = DataGlobal_82D03C[7 * v3];
-        v5 = 0;
-        v6 = 0;
-        if ( v4 == 12345 )
-          v5 = *((__int16 *)DataGlobal_ABF294 + 1) / 2;
-        if ( v4 == 54321 )
-          v5 = *((__int16 *)DataGlobal_ABF294 + 1);
-        v7 = DataGlobal_82D040[7 * v3];
-        if ( v7 == 12345 )
-          v6 = *((__int16 *)DataGlobal_ABF294 + 2) / 2;
-        if ( v7 == 54321 )
-          v6 = *((__int16 *)DataGlobal_ABF294 + 2);
-        v8[1] = v6;
-        v8[0] = v5;
-        return (*(int (__thiscall **)(int, _DWORD *, void *, int))(*(_DWORD *)g_WWMouseClass_Instance + 4))(
-                 g_WWMouseClass_Instance,
-                 v8,
-                 DataGlobal_ABF294,
-                 v9 + this->q5568);
-      }
-      return result;
+int MouseClass::SetPosition(int a1) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x5BDAB0.json */
 }
-} }
 
 // ==== BACKFILL 0x005BDB90  System_Handle  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5BDB90(int a1, char a2)
 {
-{
-    int result;
-    if ( !a2 )
-    return MouseClass_Cursors[7 * a1];
-    result = DataGlobal_82D034[7 * a1];
-    if ( result == -1 )
-    return MouseClass_Cursors[7 * a1];
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005BDB90.json)
 }
 
 // ==== BACKFILL 0x005BDF30  MouseClass::LoadTypeData  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { void* MouseClass::LoadTypeData() {
-{
-    void *result;
-    BlowStraw_29::Stub(this);
-    result = LoadFileSHP(g_Str_File_MOUSE_SHA, (bool *)&DataGlobal_ABF2DC);
-    DataGlobal_ABF294 = result;
-    return result;
+void* MouseClass::LoadTypeData() {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 4 errs): wrong-universe gap2 body; truth func_0x5BDF30.json */
 }
-} }
 
 // ==== BACKFILL 0x005BDF50  MouseClass::HandleClick  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int MouseClass::HandleClick() {
-{
-      HouseClass::InitSubsystems((_BYTE *)this);
-      this->q555C = 0;
-      this->q5564 = 0;
-      return 0;
+int MouseClass::HandleClick() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x5BDF50.json */
 }
-} }
 
 // ==== BACKFILL 0x005BE970  Render_Render_5BE970  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5BE970(int a1)
 {
-{
-    return MouseClass_Cursors[7 * a1];
-}
+  return (&dword_82D028)[7 * a1]; /*0x5be984*/
 }
 
 // ==== BACKFILL 0x005BE990  Render_Render_5BE990  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5BE990(int a1)
 {
-{
-    return DataGlobal_82D02C[7 * a1];
-}
+  return (&dword_82D02C)[7 * a1]; /*0x5be9a4*/
 }
 
 // ==== BACKFILL 0x005BE9B0  MouseClass::drawCursor  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { void* MouseClass::drawCursor(int a1) {
-{
-      UI_Init((int)this, a2);
-      *(this + 5446) = &vt_INoticeSink;
-      *this = 0;
-      *(this + 5446) = 0;
-      return this;
+void* MouseClass::drawCursor(int a1) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 6 errs): wrong-universe gap2 body; truth func_0x5BE9B0.json */
 }
-} }
 
 // ==== BACKFILL 0x005BE9E0  BlowStraw_29::Read  cls=TabClass  sig=csp  renamed_refs=0  residual=- ====
-TabClass * BlowStraw_29::Read(char a2)
+TabClass * BlowStraw_29::Read(char * Block, char a2)
 {
-{
-    char *v3;
-    int v4;
-    v3 = this + 21484;
-    v4 = 4;
-    do
-  {
-    v3 -= 3988;
-    Array::ForEachReverse((int)v3, 52, 75, (int (__thiscall *)(int))nullsub_56);
-    --v4;
-  }
-    while ( v4 );
-    RadarClass::Destruct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TabClass *)this;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5BE9E0)
 }
 
-// ==== BACKFILL 0x005BEA30  MouseClass::loadCursor  cls=MouseClass  sig=csp  renamed_refs=7  residual=- ====
-namespace gamemd { void* MouseClass::loadCursor(int a2, int a3) {
-{
-    void *v4;
-    this->q004 = 0;
-    this->q008 = a2;
-    this->q00C = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_HashObject_unsigned_int_unsigned_int;
-    if ( a2 )
-  {
-    if ( a3 )
-    {
-    this->q004 = a3;
-    }
-    else
-    {
-    v4 = __2_YAPAXI_Z(8 * a2);
-    if ( !v4 )
-    v4 = 0;
-    this->q004 = v4;
-    this->IsAllocated = 1;
-    }
-  }
-    *(void**)this = &vt_DynamicVectorClass_HashObject_unsigned_int_unsigned_int;
-    this->q014 = 10;
-    this->q010 = 0;
-    return this;
+// ==== BACKFILL 0x005BEA30  MouseClass::loadCursor  cls=MouseClass  sig=csp  renamed_refs=0  residual=- ====
+void* MouseClass::loadCursor(int a2, int a3) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 13 errs): wrong-universe gap2 body; truth func_0x5BEA30.json */
 }
-} }
 
 // ==== BACKFILL 0x005BECC0  sub_5BECC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_5BECC0::sub_5BECC0()
+int sub_5BECC0()
 {
-{
-    int v1;
-    int result;
-    char *v3;
-    int v4;
-    int v5;
-    char *v6;
-    char v7;
-    v1 = 0;
-    result = 256 - (int)this;
-    v3 = this;
-    do
-  {
-    v4 = v1 + 1;
-    v5 = v1 + 1;
-    if ( v1 + 1 < 256 )
-    {
-    v6 = &v3[result + v1 + (int)this];
-    do
-      {
-    v7 = *v6;
-    v6 += 256;
-    v3[v5++] = v7;
-      }
-    while ( v5 < 256 );
-    result = 256 - (int)this;
-    }
-    ++v1;
-    v3 += 256;
-  }
-    while ( v4 < 255 );
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005BECC0.json)
 }
 
 // ==== BACKFILL 0x005BF360  sub_5BF360  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_5BF360::sub_5BF360()
+int sub_5BF360()
 {
-{
-    int result;
-    if ( this )
-    return MessageListClass::AddMessage( g_GameNetworkObject, 0, 0, *(wchar_t **)(this + 20), 0, 16454, this->M4, 0);
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005BF360.json)
 }
 
 // ==== BACKFILL 0x005BF500  AsyncIO::Read  cls=AsyncIO  sig=csp  renamed_refs=0  residual=- ====
 int AsyncIO::Read()
 {
-{
-    int result;
-    result = g_AsyncIOState;
-    if ( g_AsyncIOState > 0 )
-    return (*(int (__thiscall **)(int, void *))(**(int **)(AsyncIO_Instance) + 12))( *(int *)AsyncIO_Instance, this);
-    return result;
-}
+
+  int result; // eax
+
+  result = g_AsyncIOState; /*0x5bf500*/
+  if ( g_AsyncIOState > 0 ) /*0x5bf507*/
+    return (*(int (**)(unsigned int, AsyncIO *))(**(unsigned int **)AsyncIO_Instance + 12))( /*0x5bf515*/
+             *(unsigned int *)AsyncIO_Instance,
+             this);
+  return result; /*0x5bf518*/
+
 }
 
 // ==== BACKFILL 0x005BF8B0  sub_5BF8B0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int sub_5BF8B0()
 {
-{
-    return (*(int (__thiscall **)(int))(**(int **)(g_BigIntPool + 8) + 96))(*(int *)(g_BigIntPool + 8));
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5BF8B0)
 }

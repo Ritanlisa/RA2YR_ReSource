@@ -56,7 +56,7 @@ namespace gamemd {
 int TeamClass::HasAnyMemberFlagged()
 {
 
-  return *((unsigned char *)this + 1679) || *((unsigned char *)this + 1680) || *((unsigned char *)this + 1681); /*0x4e00a0*/
+  return this->u32_68F || this->u32_690 || this->u32_691; /*0x4e00a0*/
 
 }
 }

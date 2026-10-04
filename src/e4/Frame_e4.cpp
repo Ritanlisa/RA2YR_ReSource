@@ -30,7 +30,7 @@ namespace gamemd {
 TechnoTypeClass * Frame::Init()
 {
 
-  return (gamemd::TechnoTypeClass *)(*((unsigned int *)this + 1) != 0);
+  return (gamemd::TechnoTypeClass *)(this->q004 != 0);
 
 }
 } // namespace gamemd

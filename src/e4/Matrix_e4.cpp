@@ -23,9 +23,9 @@ int Matrix3x4::Translate(float aP1)
 
   int result; // eax
 
-  *((float *)this + 3) = (unsigned int)(aP1)* *(float *)this + *((float *)this + 3); /*0x5ae989*/
-  *((float *)this + 7) = (unsigned int)(aP1)* *((float *)this + 4) + *((float *)this + 7); /*0x5ae996*/
-  *((float *)this + 11) = (unsigned int)(aP1)* *((float *)this + 8) + *((float *)this + 11); /*0x5ae9a3*/
+  this->q00C = (unsigned int)(aP1)* *(float *)this + this->q00C; /*0x5ae989*/
+  this->q01C = (unsigned int)(aP1)* this->q010 + this->q01C; /*0x5ae996*/
+  this->q02C = (unsigned int)(aP1)* this->q020 + this->q02C; /*0x5ae9a3*/
   return result; /*0x5ae9a6*/
 
 }

@@ -940,12 +940,10 @@ int sub_556510()
 } // namespace gamemd
 
 // 0x556520
-namespace gamemd {
 LightConvertClass * LightConvertClass::sub_556520(unsigned int * Block, char a2)
 {
     (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00556520.json)
 }
-} // namespace gamemd
 
 // 0x556790
 namespace gamemd {

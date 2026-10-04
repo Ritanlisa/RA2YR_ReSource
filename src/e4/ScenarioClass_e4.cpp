@@ -86,39 +86,29 @@ int ScenarioClass::MissionStubReturnZero3()
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D6440)
 }
 // 0x5D6BE0
-namespace gamemd {
 int ScenarioClass::AssignStartPositions(char a1)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D6BE0.json)
 }
-}
 // 0x6832C0
-namespace gamemd {
 TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006832C0.json)
 }
-}
 // 0x683AB0
-namespace gamemd {
 int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP1, void * a4)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00683AB0.json)
 }
-}
 // 0x683EB0
-namespace gamemd {
 int ScenarioClass::CleanupTemporary()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00683EB0.json)
 }
-}
 // 0x684180
-namespace gamemd {
 unsigned char * ScenarioClass::ProcessIntroTimer()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00684180.json)
-}
 }
 // 0x686730
 namespace gamemd {
@@ -136,44 +126,34 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
 } // namespace gamemd
 
 // 0x689E90
-namespace gamemd {
 int ScenarioClass::ReadMapINI(CCINIClass * aP1)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00689E90.json)
 }
-} // namespace gamemd
 
 // 0x5C0E20
-namespace gamemd {
 char ScenarioClass::initUnits()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C0E20)
 }
-} // namespace gamemd
 
 // 0x5C0E30
-namespace gamemd {
 char ScenarioClass::StubReturnFalse()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C0E30)
 }
-} // namespace gamemd
 
 // 0x5C0E40
-namespace gamemd {
 char ScenarioClass::StubReturnFalse2()
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C0E40)
 }
-} // namespace gamemd
 
 // 0x5C0E50
-namespace gamemd {
 char ScenarioClass::StubReturnFalse3(int a1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C0E50)
 }
-} // namespace gamemd
 
 // 0x5C0E60
 namespace gamemd {

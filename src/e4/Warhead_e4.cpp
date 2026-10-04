@@ -51,11 +51,11 @@ int Warhead::GetWarheadSound(int a2)
 
   int v3; // eax
 
-  if ( (uint8_t)Audio::IsLoud((int *)(*((unsigned int *)this + 19) + 336)) ) /*0x41d7ec*/
-    v3 = *((unsigned int *)this + 18); /*0x41d7f5*/
+  if ( (uint8_t)Audio::IsLoud((int *)(this->q130 + 336)) ) /*0x41d7ec*/
+    v3 = this->q048; /*0x41d7f5*/
   else
-    v3 = *((unsigned int *)this + 17); /*0x41d7fa*/
-  return !*((unsigned int *)this + 60) && v3 + *((unsigned int *)this + 16) <= (int)dword_A8ED84 || a2 != *((unsigned int *)this + 20); /*0x41d814*/
+    v3 = this->q044; /*0x41d7fa*/
+  return !this->u8_3C && v3 + this->q040 <= (int)dword_A8ED84 || a2 != this->u32_14; /*0x41d814*/
 
 }
 } // namespace gamemd

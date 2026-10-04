@@ -47,20 +47,20 @@ AbstractClass * KeyboardConfig::ReleaseBuffer(int a2, void *a2_2)
 
   if ( a2 < 0 ) /*0x538b8c*/
     return 0; /*0x538b8c*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + *((unsigned int *)this + 2))); /*0x538ba0*/
+  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->u32_8)); /*0x538ba0*/
   if ( !v3 ) /*0x538ba7*/
     return 0; /*0x538c00*/
-  for ( i = 0; i < *((unsigned int *)this + 1); *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
+  for ( i = 0; i < this->u32_4; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
   {
     v5 = 8 * i; /*0x538bb9*/
     v6 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x538bc2*/
     *(unsigned int *)&v3[v5] = *v6; /*0x538bc7*/
   }
   __3_YAXPAX_Z(*(void **)this); /*0x538bdb*/
-  v7 = (char *)(a2 + *((unsigned int *)this + 2)); /*0x538be6*/
+  v7 = (char *)(a2 + this->u32_8); /*0x538be6*/
   *(unsigned int *)this = (unsigned int)(v3); /*0x538be8*/
-  *((unsigned int *)this + 2) = (unsigned int)(v7); /*0x538bea*/
-  *((unsigned int *)this + 4) = 0; /*0x538bed*/
+  this->u32_8 = (unsigned int)(v7); /*0x538bea*/
+  this->u32_10 = 0; /*0x538bed*/
   return (gamemd::AbstractClass *)(1); /*0x538bf4*/
 
 }

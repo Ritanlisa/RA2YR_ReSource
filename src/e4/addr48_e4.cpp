@@ -88,11 +88,9 @@ void Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
 }
 }
 // 0x48B0E0
-namespace gamemd {
 AbstractClass * * CampaignClass::sub_48B0E0(int a2, int a3, size_t Size, int a5)
 {
     (void)a2; (void)a3; (void)Size; (void)a5; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0048B0E0.json)
-}
 }
 // 0x48BB60
 namespace gamemd {
@@ -252,12 +250,10 @@ int sub_488260()
 } // namespace gamemd
 
 // 0x488280
-namespace gamemd {
 CheckListClass * CheckListClass::sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
 {
     (void)aP1; (void)a3; (void)a4; (void)aP4; (void)a6; (void)aP6; (void)aP7; (void)a9; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00488280.json)
 }
-} // namespace gamemd
 
 // 0x488740
 namespace gamemd {
@@ -268,12 +264,10 @@ int sub_488740()
 } // namespace gamemd
 
 // 0x488760
-namespace gamemd {
 ColorListClass * ColorListClass::sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
 {
     (void)aP1; (void)a3; (void)a4; (void)aP4; (void)a6; (void)aP6; (void)aP7; (void)a9; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00488760.json)
 }
-} // namespace gamemd
 
 // 0x4887F0
 namespace gamemd {

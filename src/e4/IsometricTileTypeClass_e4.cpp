@@ -72,11 +72,11 @@ int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
 
   int result; // eax
 
-  if ( *((unsigned int *)this + 175) == a2 ) /*0x549ddc*/
-    *((unsigned int *)this + 175) = 0; /*0x549dde*/
-  result = *((unsigned int *)this + 178); /*0x549de8*/
+  if ( this->u32_2BC == a2 ) /*0x549ddc*/
+    this->u32_2BC = 0; /*0x549dde*/
+  result = this->u32_2C8; /*0x549de8*/
   if ( result != -1 && *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * result) == a2 ) /*0x549e02*/
-    *((unsigned int *)this + 178) = -1; /*0x549e04*/
+    this->u32_2C8 = -1; /*0x549e04*/
   return result; /*0x549e0e*/
 
 }
@@ -86,7 +86,7 @@ namespace gamemd {
 int IsometricTileTypeClass::GetAuxField()
 {
 
-  return *((unsigned int *)this + 165); /*0x54a166*/
+  return this->u32_294; /*0x54a166*/
 
 }
 } // namespace gamemd

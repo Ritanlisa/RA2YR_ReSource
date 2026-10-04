@@ -24,7 +24,7 @@ int LoadingScreen::GetColorScheme()
 
   if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) && *(unsigned int *)(*(unsigned int *)(dword_A8DA78) + 107) == -1 ) /*0x642b7a*/
     return FindBuildingAnimByName((gamemd::AbstractClass *)(g_INI_Key_LightGrey), 1); /*0x642b86*/
-  if ( *((unsigned int *)this + 32) ) /*0x642b8b*/
+  if ( this->q020 ) /*0x642b8b*/
     return FindBuildingAnimByName((gamemd::AbstractClass *)(g_INI_Key_SovietLoad), 1); /*0x642ba9*/
   return FindBuildingAnimByName((gamemd::AbstractClass *)(g_INI_Key_AlliedLoad), 1);
 

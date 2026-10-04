@@ -643,7 +643,7 @@ void Player::RandomAssign() {
 // 0x6ABAC0
 namespace gamemd { 
 bool PlayerClass::HasPlayers() {
-  return *((unsigned int *)this + 21) > 0; /*0x6abaca*/
+  return this->u32_54 > 0; /*0x6abaca*/
 }
 }
 // 0x6D1810
@@ -1030,7 +1030,7 @@ void* COMClass::adviseConnection(void* a1, int a2, void* a3) {
   DeleteAndZero v13; // [esp+8h] [ebp-90h] BYREF
   DeleteAndZero v14[11]; // [esp+14h] [ebp-84h] BYREF
 
-  v5 = ((int (*)(unsigned int))this->m_10)(*(unsigned int *)(a2 + 4)); /*0x766ab0*/
+  v5 = ((int (*)(unsigned int))this->m_10)(a2->q004); /*0x766ab0*/
   FromStringInt((char **)&Format, v5); /*0x766ab9*/
   v6 = String::GetOrEmpty_Alt((String *)&this->m_14); /*0x766acb*/
   StringCSF = GetStringCSF((wchar_t *)v6, 0, aDRa2mdpostWdtg, 161); /*0x766ad4*/

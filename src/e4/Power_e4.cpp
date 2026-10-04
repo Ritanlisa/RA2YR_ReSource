@@ -61,7 +61,7 @@ int Power::FinalizeDrain(int a2)
   {
     LOBYTE(this->Power_field_0xC) = this->Power_field_0x4; /*0x4a1c34*/
     for ( i = (char *)this->Power_field_0x4 + 1; (unsigned int)i < 4; ++i ) /*0x4a1c3d*/
-      i[(unsigned int)(unsigned int *)this + 8] = (char)this->a2; /*0x4a1c42*/
+      i[(unsigned int)(unsigned int *)&this->q008] = (char)this->a2; /*0x4a1c42*/
     a2 = (int)this->a2; /*0x4a1c50*/
     p_Power_field_0x8 = &a2; /*0x4a1c57*/
     v6 = ~this->Power_field_0x0; /*0x4a1c5b*/

@@ -220,8 +220,6 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
 {
 
   int v6; // ebp
-  int v7; // ebx
-  int v8; // esi
   int v9; // edi
   int v10; // edx
   int v11; // ecx
@@ -242,7 +240,6 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v26; // edx
   int v27; // eax
   int *v28; // ecx
-  int v29; // edx
   int v30; // ecx
   int64_t v31; // rax
   int64_t v32; // rax
@@ -258,7 +255,6 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v42; // edx
   int v43; // eax
   int *v44; // ecx
-  int v45; // edx
   int v46; // ecx
   int v47; // ebp
   int v48; // eax
@@ -280,7 +276,6 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v64; // edx
   int v65; // eax
   int *v66; // ecx
-  int v67; // edx
   int v68; // esi
   int v69; // ecx
   int v70; // edx
@@ -300,17 +295,12 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v84; // edx
   int v85; // eax
   int *v86; // ecx
-  int v87; // edx
   int v89; // [esp+18h] [ebp-5Ch]
   int v90; // [esp+18h] [ebp-5Ch]
-  int v91; // [esp+18h] [ebp-5Ch]
-  int v92; // [esp+18h] [ebp-5Ch]
-  int v94; // [esp+20h] [ebp-54h]
   int16_t v95[2]; // [esp+24h] [ebp-50h] BYREF
   int v96; // [esp+28h] [ebp-4Ch]
   int v97; // [esp+2Ch] [ebp-48h]
   int v98; // [esp+30h] [ebp-44h]
-  int v99; // [esp+34h] [ebp-40h]
   int v100; // [esp+38h] [ebp-3Ch]
   int16_t v101[2]; // [esp+3Ch] [ebp-38h] BYREF
   unsigned int *v102; // [esp+40h] [ebp-34h]
@@ -330,8 +320,8 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
 
   v6 = aP1; /*0x5824a5*/
   v98 = *(int16_t *)(aP1 + 6); /*0x5824b3*/
-  v7 = aP1; /*0x5824be*/
-  v8 = aP1; /*0x5824c0*/
+  aP1 = aP1; /*0x5824be*/
+  aP1 = aP1; /*0x5824c0*/
   v9 = *aP5; /*0x5824c6*/
   v115 = (int16_t *)aP5[1]; /*0x5824cd*/
   v112 = 0; /*0x5824d4*/
@@ -343,30 +333,30 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   v97 = -1; /*0x5824f0*/
   v96 = v9; /*0x5824fc*/
   v100 = v11 + v10 - 1; /*0x582500*/
-  v94 = v9; /*0x582508*/
-  v99 = v10; /*0x58250c*/
+  v9 = v9; /*0x582508*/
+  v10 = v10; /*0x58250c*/
   v111 = v12 + v106 - 1; /*0x582518*/
   v102 = *(unsigned int **)&this->__pad_64[4 * aP2 + 28]; /*0x582527*/
-  v13 = *(uint8_t *)(aP1 + 8); /*0x58252d*/
+  v13 = aP1->q008; /*0x58252d*/
   while ( v9 >= v10 ) /*0x582538*/
   {
-    v14 = *(uint8_t *)(v7 + 8) - v13; /*0x582541*/
+    v14 = aP1->q008 - v13; /*0x582541*/
     if ( (int)((HIDWORD(v14) ^ v14) - HIDWORD(v14)) >= 2 ) /*0x582549*/
       break; /*0x582549*/
-    *(unsigned short *)(v7 + 2 * aP2) = aP3; /*0x582556*/
-    v13 = *(uint8_t *)(v7 + 8); /*0x58255a*/
-    v15 = *(int16_t *)(v7 - 4); /*0x58255d*/
-    v7 -= 10; /*0x582565*/
+    *(unsigned short *)(aP1 + 2 * aP2) = aP3; /*0x582556*/
+    v13 = aP1->q008; /*0x58255a*/
+    v15 = *(int16_t *)(aP1 - 4); /*0x58255d*/
+    aP1 -= 10; /*0x582565*/
     --v9; /*0x582568*/
     if ( v15 != v98 ) /*0x58256b*/
       break; /*0x58256b*/
-    v10 = v99; /*0x582532*/
+    v10 = v10; /*0x582532*/
   }
   v96 = v9; /*0x582571*/
-  v89 = *(int16_t *)(v7 + 2 * aP2); /*0x58257b*/
+  v89 = *(int16_t *)(aP1 + 2 * aP2); /*0x58257b*/
   if ( v89 > 0 ) /*0x58257f*/
   {
-    v16 = *(uint8_t *)(v7 + 8) - v13; /*0x58258c*/
+    v16 = aP1->q008 - v13; /*0x58258c*/
     if ( (int)((HIDWORD(v16) ^ v16) - HIDWORD(v16)) < 2 && v89 != -1 ) /*0x58259f*/
     {
       v101[1] = (int16_t)v115; /*0x5825b1*/
@@ -398,10 +388,10 @@ LABEL_14:
               v27 = *(unsigned int *)(v19 + 4); /*0x58267a*/
               *(unsigned int *)(v19 + 16) = v25; /*0x58267d*/
               v28 = (int *)(v27 + 4 * v26); /*0x582680*/
-              v29 = v113; /*0x582683*/
+              v113 = v113; /*0x582683*/
               *v28 = v17; /*0x582687*/
               v28[1] = v17; /*0x582689*/
-              v28[2] = v29; /*0x58268c*/
+              v28[2] = v113; /*0x58268c*/
             }
           }
           else
@@ -420,34 +410,34 @@ LABEL_14:
       }
     }
   }
-  v30 = *(uint8_t *)(v6 + 8); /*0x5826a9*/
+  v30 = v6->q008; /*0x5826a9*/
   if ( *(int16_t *)(v6 + 6) == v98 ) /*0x5826ae*/
   {
     do /*0x5826f5*/
     {
-      if ( v94 > v100 ) /*0x5826ba*/
+      if ( v9 > v100 ) /*0x5826ba*/
         break; /*0x5826ba*/
-      v31 = *(uint8_t *)(v8 + 8) - v30; /*0x5826c3*/
+      v31 = aP1->q008 - v30; /*0x5826c3*/
       if ( (int)((HIDWORD(v31) ^ v31) - HIDWORD(v31)) >= 2 ) /*0x5826cb*/
         break; /*0x5826cb*/
-      *(unsigned short *)(v8 + 2 * aP2) = aP3; /*0x5826da*/
-      v30 = *(uint8_t *)(v8 + 8); /*0x5826e0*/
-      v8 += 10; /*0x5826e7*/
-      ++v94; /*0x5826eb*/
+      *(unsigned short *)(aP1 + 2 * aP2) = aP3; /*0x5826da*/
+      v30 = aP1->q008; /*0x5826e0*/
+      aP1 += 10; /*0x5826e7*/
+      ++v9; /*0x5826eb*/
     }
-    while ( *(int16_t *)(v8 + 6) == v98 ); /*0x5826f5*/
+    while ( *(int16_t *)(aP1 + 6) == v98 ); /*0x5826f5*/
   }
-  v90 = *(int16_t *)(v8 + 2 * aP2); /*0x582701*/
+  v90 = *(int16_t *)(aP1 + 2 * aP2); /*0x582701*/
   if ( v90 > 0 ) /*0x582705*/
   {
-    v32 = *(uint8_t *)(v8 + 8) - v30; /*0x582712*/
+    v32 = aP1->q008 - v30; /*0x582712*/
     if ( (int)((HIDWORD(v32) ^ v32) - HIDWORD(v32)) < 2 && v90 != v97 ) /*0x58272a*/
     {
-      v101[0] = v94; /*0x582741*/
+      v101[0] = v9; /*0x582741*/
       v101[1] = (int16_t)v115; /*0x58274d*/
       if ( (uint8_t)((LayerClass *)((LayerClass *)this))->IsWithinUsableArea(v101, 1) ) /*0x582752*/
       {
-        v101[0] = v94 - 1; /*0x582770*/
+        v101[0] = v9 - 1; /*0x582770*/
         v101[1] = (int16_t)v115; /*0x58277c*/
         if ( (uint8_t)((LayerClass *)((LayerClass *)this))->IsWithinUsableArea(v101, 1) ) /*0x582781*/
         {
@@ -472,10 +462,10 @@ LABEL_33:
               v43 = *(unsigned int *)(v34 + 4); /*0x58280b*/
               *(unsigned int *)(v34 + 16) = v41; /*0x58280e*/
               v44 = (int *)(v43 + 4 * v42); /*0x582811*/
-              v45 = v113; /*0x582814*/
+              v113 = v113; /*0x582814*/
               *v44 = v33; /*0x582818*/
               v44[1] = v33; /*0x58281a*/
-              v44[2] = v45; /*0x58281d*/
+              v44[2] = v113; /*0x58281d*/
             }
           }
           else
@@ -495,21 +485,21 @@ LABEL_33:
     }
   }
   v46 = *(unsigned int *)&this->__pad_64[148]; /*0x58284b*/
-  v110 = (v8 - v6) / 10 - 1; /*0x582851*/
+  v110 = (aP1 - v6) / 10 - 1; /*0x582851*/
   v109 = v46 + *(unsigned int *)&this->__pad_64[144] + 1; /*0x58285f*/
   *(unsigned int *)v101 = 10 * v109; /*0x582868*/
-  v47 = v7 - 10 * v109; /*0x58286c*/
-  v48 = v7 + 10 * v109; /*0x58286e*/
+  v47 = aP1 - 10 * v109; /*0x58286c*/
+  v48 = aP1 + 10 * v109; /*0x58286e*/
   v49 = v9; /*0x582870*/
   v114 = v48; /*0x582872*/
   v95[0] = 0; /*0x582878*/
   v95[1] = 0; /*0x58287d*/
-  if ( v9 > v94 ) /*0x582886*/
+  if ( v9 > v9 ) /*0x582886*/
     return v110; /*0x582886*/
   do /*0x582aca*/
   {
     v50 = *(int16_t *)(v47 + 2 * aP2); /*0x582892*/
-    v91 = v50; /*0x582897*/
+    v50 = v50; /*0x582897*/
     if ( v49 == v9 ) /*0x58289b*/
     {
       v51 = v49; /*0x5828a5*/
@@ -521,7 +511,7 @@ LABEL_33:
     else
     {
       v51 = v49; /*0x5828ce*/
-      if ( v49 >= v94 ) /*0x5828d2*/
+      if ( v49 >= v9 ) /*0x5828d2*/
       {
         v105[0] = v49 - 1; /*0x582902*/
         v105[1] = (int16_t)v115; /*0x582907*/
@@ -536,7 +526,7 @@ LABEL_33:
         v52 = *(unsigned int *)v101 + v47; /*0x5828f2*/
       }
     }
-    if ( v50 || (int)v115 <= v106 || v49 < v99 || v49 > v100 ) /*0x582939*/
+    if ( v50 || (int)v115 <= v106 || v49 < v10 || v49 > v100 ) /*0x582939*/
     {
       if ( v50 != (uint16_t)aP3 && v50 != v97 ) /*0x5829ad*/
       {
@@ -551,10 +541,10 @@ LABEL_33:
               v108[0] = v51; /*0x582a07*/
               if ( (uint8_t)((LayerClass *)((LayerClass *)this))->IsWithinUsableArea(v108, 1) ) /*0x582a0c*/
               {
-                v55 = (uint16_t)aP3 | (v91 << 16); /*0x582a26*/
-                if ( v49 < v99 || (LOBYTE(v113) = 0, v49 > v100) ) /*0x582a37*/
+                v55 = (uint16_t)aP3 | (v50 << 16); /*0x582a26*/
+                if ( v49 < v10 || (LOBYTE(v113) = 0, v49 > v100) ) /*0x582a37*/
                   LOBYTE(v113) = 1; /*0x582a39*/
-                v56 = *v102 + 24 * (aP3 & 0xF | (16 * (v91 & 0xF))); /*0x582a52*/
+                v56 = *v102 + 24 * (aP3 & 0xF | (16 * (v50 & 0xF))); /*0x582a52*/
                 v57 = *(unsigned int *)(v56 + 16); /*0x582a55*/
                 v58 = *(unsigned int **)(v56 + 4); /*0x582a59*/
                 v59 = v57 - 1; /*0x582a5c*/
@@ -573,10 +563,10 @@ LABEL_65:
                     v65 = *(unsigned int *)(v56 + 4); /*0x582a9f*/
                     *(unsigned int *)(v56 + 16) = v63; /*0x582aa2*/
                     v66 = (int *)(v65 + 4 * v64); /*0x582aa5*/
-                    v67 = v113; /*0x582aa8*/
+                    v113 = v113; /*0x582aa8*/
                     *v66 = v55; /*0x582aac*/
                     v66[1] = v55; /*0x582aae*/
-                    v66[2] = v67; /*0x582ab1*/
+                    v66[2] = v113; /*0x582ab1*/
                   }
                 }
                 else
@@ -588,7 +578,7 @@ LABEL_65:
                       goto LABEL_65; /*0x582a6b*/
                   }
                 }
-                v97 = v91; /*0x582ab8*/
+                v97 = v50; /*0x582ab8*/
               }
             }
           }
@@ -611,14 +601,14 @@ LABEL_65:
 LABEL_73:
     v9 = v96; /*0x582ac0*/
   }
-  while ( v49 <= v94 ); /*0x582aca*/
-  if ( v96 <= v94 ) /*0x582ad2*/
+  while ( v49 <= v9 ); /*0x582aca*/
+  if ( v96 <= v9 ) /*0x582ad2*/
   {
     v68 = v114; /*0x582ad8*/
     do /*0x582ae6*/
     {
       v69 = *(int16_t *)(v68 + 2 * aP2); /*0x582ae6*/
-      v92 = v69; /*0x582aea*/
+      v69 = v69; /*0x582aea*/
       if ( v9 == v96 ) /*0x582aee*/
       {
         v108[0] = v9 + 1; /*0x582af9*/
@@ -628,7 +618,7 @@ LABEL_73:
       }
       else
       {
-        if ( v9 < v94 ) /*0x582b1a*/
+        if ( v9 < v9 ) /*0x582b1a*/
         {
           v72 = v115; /*0x582b20*/
           v107[0] = v9; /*0x582b29*/
@@ -645,7 +635,7 @@ LABEL_73:
       v72 = v115; /*0x582b68*/
       *(unsigned int *)v95 = v70; /*0x582b6f*/
 LABEL_82:
-      if ( v69 || (int)v72 >= v111 || v9 < v99 || v9 > v100 ) /*0x582b87*/
+      if ( v69 || (int)v72 >= v111 || v9 < v10 || v9 > v100 ) /*0x582b87*/
       {
         if ( v69 != (uint16_t)aP3 && v69 != v97 ) /*0x582bfa*/
         {
@@ -660,10 +650,10 @@ LABEL_82:
                 HIWORD(v104) = (unsigned short)v72 + 1; /*0x582c4f*/
                 if ( (uint8_t)((LayerClass *)((LayerClass *)this))->IsWithinUsableArea((int16_t *)&v104, 1) ) /*0x582c54*/
                 {
-                  v75 = (uint16_t)aP3 | (v92 << 16); /*0x582c6e*/
-                  if ( v9 < v99 || (LOBYTE(v113) = 0, v9 > v100) ) /*0x582c7f*/
+                  v75 = (uint16_t)aP3 | (v69 << 16); /*0x582c6e*/
+                  if ( v9 < v10 || (LOBYTE(v113) = 0, v9 > v100) ) /*0x582c7f*/
                     LOBYTE(v113) = 1; /*0x582c81*/
-                  v76 = *v102 + 24 * (aP3 & 0xF | (16 * (v92 & 0xF))); /*0x582c9c*/
+                  v76 = *v102 + 24 * (aP3 & 0xF | (16 * (v69 & 0xF))); /*0x582c9c*/
                   v77 = *(unsigned int *)(v76 + 16); /*0x582c9f*/
                   v78 = *(unsigned int **)(v76 + 4); /*0x582ca3*/
                   v79 = v77 - 1; /*0x582ca6*/
@@ -682,10 +672,10 @@ LABEL_102:
                       v85 = *(unsigned int *)(v76 + 4); /*0x582ce9*/
                       *(unsigned int *)(v76 + 16) = v83; /*0x582cec*/
                       v86 = (int *)(v85 + 4 * v84); /*0x582cef*/
-                      v87 = v113; /*0x582cf2*/
+                      v113 = v113; /*0x582cf2*/
                       *v86 = v75; /*0x582cf6*/
                       v86[1] = v75; /*0x582cf8*/
-                      v86[2] = v87; /*0x582cfb*/
+                      v86[2] = v113; /*0x582cfb*/
                     }
                   }
                   else
@@ -697,7 +687,7 @@ LABEL_102:
                         goto LABEL_102; /*0x582cb5*/
                     }
                   }
-                  v97 = v92; /*0x582cfe*/
+                  v97 = v69; /*0x582cfe*/
                 }
               }
             }
@@ -722,7 +712,7 @@ LABEL_102:
         v114 = v68; /*0x582bdb*/
       }
     }
-    while ( v9 <= v94 ); /*0x582ae6*/
+    while ( v9 <= v9 ); /*0x582ae6*/
   }
   return v110; /*0x582d1e*/
 
@@ -743,7 +733,6 @@ AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4
   int v9; // edi
   int v10; // edx
   int v11; // eax
-  int v12; // esi
   int v13; // edi
   int16_t v14; // bp
   int v15; // edx
@@ -759,8 +748,6 @@ AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4
   int v25; // eax
   unsigned int *v26; // edi
   int v27; // edx
-  int v28; // ebp
-  int v29; // esi
   int v30; // eax
   int v31; // ecx
   int v32; // edx
@@ -791,14 +778,12 @@ AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4
   int v57; // ecx
   int v58; // eax
   int v59; // edx
-  int v60; // ecx
   int v61; // ecx
   int v62; // eax
   int v63; // esi
   int v64; // ecx
   int v65; // eax
   int v66; // edx
-  int v67; // ecx
   bool v68; // sf
   int v69; // edi
   int v70; // ebp
@@ -816,11 +801,9 @@ AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4
   int v82; // edi
   int16_t v83; // bp
   int v84; // ecx
-  int v85; // [esp+20h] [ebp-94h]
   int v86; // [esp+20h] [ebp-94h]
   int v87; // [esp+20h] [ebp-94h]
   int v88; // [esp+20h] [ebp-94h]
-  int v89; // [esp+24h] [ebp-90h]
   int v90; // [esp+24h] [ebp-90h]
   int v91; // [esp+24h] [ebp-90h]
   int v92; // [esp+24h] [ebp-90h]
@@ -829,7 +812,6 @@ AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4
   char *Radar_field_0x60; // [esp+28h] [ebp-8Ch]
   unsigned char *v96; // [esp+28h] [ebp-8Ch]
   int i; // [esp+2Ch] [ebp-88h]
-  unsigned int *v98; // [esp+30h] [ebp-84h]
   int v99; // [esp+30h] [ebp-84h]
   int v100; // [esp+30h] [ebp-84h]
   int v101; // [esp+30h] [ebp-84h]
@@ -838,7 +820,6 @@ AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4
   int v104; // [esp+38h] [ebp-7Ch] BYREF
   int v105; // [esp+3Ch] [ebp-78h]
   int v106; // [esp+40h] [ebp-74h]
-  int v107; // [esp+44h] [ebp-70h]
   int16_t v108[2]; // [esp+48h] [ebp-6Ch] BYREF
   WordVector v109; // [esp+4Ch] [ebp-68h] BYREF
   void *v110; // [esp+50h] [ebp-64h]
@@ -852,7 +833,6 @@ AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4
   int16_t v118[2]; // [esp+70h] [ebp-44h] BYREF
   int16_t v119[2]; // [esp+74h] [ebp-40h] BYREF
   int16_t v120[2]; // [esp+78h] [ebp-3Ch] BYREF
-  unsigned int *v121; // [esp+7Ch] [ebp-38h]
   VectorClass v122; // [esp+80h] [ebp-34h] BYREF
   int v123; // [esp+90h] [ebp-24h]
   int v124; // [esp+94h] [ebp-20h]
@@ -872,7 +852,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4
       v4 = *aP1; /*0x584594*/
       v106 = 1 << (i + 1); /*0x584599*/
       v5 = aP1[1]; /*0x5845a0*/
-      v107 = v106; /*0x5845a6*/
+      v106 = v106; /*0x5845a6*/
       v104 = v4 - v4 % v106; /*0x5845af*/
       v105 = v5 - v5 % v106; /*0x5845b9*/
       v6 = 0; /*0x5845bd*/
@@ -882,7 +862,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4
       v114 = 10; /*0x5845d5*/
       v113 = 0; /*0x5845dd*/
       v8 = v7[2]; /*0x5845e1*/
-      v121 = v7; /*0x5845e4*/
+      v7 = v7; /*0x5845e4*/
       if ( v8 > 0 ) /*0x5845ea*/
       {
         v102 = 0; /*0x5845ec*/
@@ -897,19 +877,19 @@ AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4
       v9 = v106; /*0x584618*/
       v103 = &v2->__pad_64[24 * i + 40]; /*0x584623*/
       v10 = v105; /*0x584627*/
-      v89 = v105; /*0x58462d*/
+      v105 = v105; /*0x58462d*/
       v11 = v104; /*0x584633*/
-      if ( v105 < v105 + v107 ) /*0x584637*/
+      if ( v105 < v105 + v106 ) /*0x584637*/
       {
         while ( 1 ) /*0x584640*/
         {
-          v12 = v11; /*0x584640*/
+          v11 = v11; /*0x584640*/
           if ( v11 >= v9 + v11 ) /*0x584644*/
             goto LABEL_23; /*0x584644*/
           do /*0x584723*/
           {
-            v118[0] = v12; /*0x584656*/
-            v118[1] = v89; /*0x58465b*/
+            v118[0] = v11; /*0x584656*/
+            v118[1] = v105; /*0x58465b*/
             v13 = *(unsigned int *)&v2->__pad_64[12] + 10 * CellToTileIndexMap((ObjectClass *)v2, v118); /*0x58466f*/
             v14 = *(unsigned short *)(v13 + 2 * i); /*0x584672*/
             if ( v14 ) /*0x584679*/
@@ -946,20 +926,20 @@ LABEL_20:
                 }
               }
             }
-            v120[0] = v12; /*0x5846e2*/
+            v120[0] = v11; /*0x5846e2*/
             *(unsigned short *)(v13 + 2 * i) = 0; /*0x5846f7*/
-            v120[1] = v89; /*0x5846fd*/
-            ++v12; /*0x58470a*/
+            v120[1] = v105; /*0x5846fd*/
+            ++v11; /*0x58470a*/
             *(unsigned short *)(v13 + 6) = *(unsigned short *)(*(unsigned int *)&v2->__pad_64[4] /*0x584712*/
                                            + 4 * CellToTileIndexMap((ObjectClass *)v2, v120)
                                            + 2);
             v9 = v106; /*0x584716*/
             v11 = v104; /*0x58471a*/
           }
-          while ( v12 < v106 + v104 ); /*0x584723*/
+          while ( v11 < v106 + v104 ); /*0x584723*/
           v10 = v105; /*0x584729*/
 LABEL_23:
-          if ( ++v89 >= v10 + v107 ) /*0x58473e*/
+          if ( ++v105 >= v10 + v106 ) /*0x58473e*/
           {
             v3 = i; /*0x584744*/
             break; /*0x584744*/
@@ -975,9 +955,9 @@ LABEL_23:
         {
           v19 = *((uint16_t *)v110 + v18); /*0x584776*/
           v20 = (unsigned int *)(*(unsigned int *)v93 + 36 * v19); /*0x584782*/
-          v98 = v20; /*0x584785*/
+          v20 = v20; /*0x584785*/
           v21 = v20[4] - 1; /*0x58478c*/
-          v85 = v21; /*0x58478d*/
+          v21 = v21; /*0x58478d*/
           if ( v21 >= 0 ) /*0x584791*/
           {
             while ( 1 ) /*0x5847a8*/
@@ -1008,11 +988,11 @@ LABEL_23:
                   }
                 }
 LABEL_39:
-                v20 = v98; /*0x5847f1*/
+                v20 = v20; /*0x5847f1*/
               }
-              if ( --v85 < 0 ) /*0x5847fe*/
+              if ( --v21 < 0 ) /*0x5847fe*/
                 break; /*0x5847fe*/
-              v21 = v85; /*0x584795*/
+              v21 = v21; /*0x584795*/
             }
           }
           (*(void (**)(unsigned int *))(*v20 + 12))(v20); /*0x584804*/
@@ -1024,9 +1004,9 @@ LABEL_39:
         v11 = v104; /*0x58481a*/
         v10 = v105; /*0x58481e*/
       }
-      v28 = v10; /*0x584826*/
+      v10 = v10; /*0x584826*/
       v86 = *(unsigned int *)&v2->__pad_64[4 * i + 16]; /*0x58482c*/
-      if ( v10 < v10 + v107 ) /*0x584838*/
+      if ( v10 < v10 + v106 ) /*0x584838*/
         break; /*0x584838*/
 LABEL_73:
       *(unsigned int *)&v2->__pad_64[4 * i + 16] = v86; /*0x584ab8*/
@@ -1040,11 +1020,11 @@ LABEL_73:
         {
           v45 = (int *)(*(unsigned int *)&v2->__pad_34[32] + v44); /*0x584adc*/
           v46 = *(int16_t *)v45; /*0x584adf*/
-          if ( v46 >= v11 && v46 < v9 + v11 && (v47 = *((int16_t *)v45 + 1), v47 >= v10) && v47 < v10 + v107 /*0x584b1e*/
+          if ( v46 >= v11 && v46 < v9 + v11 && (v47 = *((int16_t *)v45 + 1), v47 >= v10) && v47 < v10 + v106 /*0x584b1e*/
             || (v48 = *((int16_t *)v45 + 2), v48 >= v11)
             && v48 < v9 + v11
             && (v49 = *((int16_t *)v45 + 3), v49 >= v10)
-            && v49 < v10 + v107 )
+            && v49 < v10 + v106 )
           {
             if ( *((unsigned char *)v45 + 8) ) /*0x584b20*/
             {
@@ -1065,10 +1045,10 @@ LABEL_73:
       v87 = 0; /*0x584b57*/
       do /*0x584c85*/
       {
-        if ( *(int *)(v50 + *v121 + 16) > 0 ) /*0x584b6b*/
+        if ( *(int *)(v50 + *v7 + 16) > 0 ) /*0x584b6b*/
         {
-          v101 = *(unsigned int *)(v50 + *v121 + 16); /*0x584b74*/
-          v96 = (unsigned char *)(*(unsigned int *)(*v121 + v50 + 4) + 8); /*0x584b7b*/
+          v101 = *(unsigned int *)(v50 + *v7 + 16); /*0x584b74*/
+          v96 = (unsigned char *)(*(unsigned int *)(*v7 + v50 + 4) + 8); /*0x584b7b*/
           do /*0x584c6a*/
           {
             v51 = *v96; /*0x584b86*/
@@ -1086,9 +1066,9 @@ LABEL_73:
               v58 = *(unsigned int *)(v56 + 16); /*0x584bdf*/
               v59 = *(unsigned int *)(v56 + 4); /*0x584be2*/
               *(unsigned int *)(v56 + 16) = v58 + 1; /*0x584be8*/
-              v60 = v128; /*0x584beb*/
+              v128 = v128; /*0x584beb*/
               *(unsigned int *)(v59 + 8 * v58) = v53; /*0x584bf2*/
-              *(unsigned int *)(v59 + 8 * v58 + 4) = v60; /*0x584bf5*/
+              *(unsigned int *)(v59 + 8 * v58 + 4) = v128; /*0x584bf5*/
             }
             LOBYTE(v129) = v51; /*0x584c01*/
             v61 = *((unsigned int *)v103 + 1); /*0x584c08*/
@@ -1102,9 +1082,9 @@ LABEL_73:
               v65 = *(unsigned int *)(v63 + 16); /*0x584c3c*/
               v66 = *(unsigned int *)(v63 + 4); /*0x584c3f*/
               *(unsigned int *)(v63 + 16) = v65 + 1; /*0x584c45*/
-              v67 = v129; /*0x584c48*/
+              v129 = v129; /*0x584c48*/
               *(unsigned int *)(v66 + 8 * v65) = v52; /*0x584c4f*/
-              *(unsigned int *)(v66 + 8 * v65 + 4) = v67; /*0x584c52*/
+              *(unsigned int *)(v66 + 8 * v65 + 4) = v129; /*0x584c52*/
             }
             v42 = v101 == 1; /*0x584c61*/
             v96 += 12; /*0x584c62*/
@@ -1121,7 +1101,7 @@ LABEL_73:
       v109 = (WordVector)&vt_VectorClass; /*0x584c93*/
       if ( v110 && v112 ) /*0x584ca3*/
       {
-        __3_YAXPAX_Z(v110); /*0x584ca6*/
+        delete v110; /*0x584ca6*/
         v110 = 0; /*0x584cae*/
       }
       v112 = 0; /*0x584cb6*/
@@ -1198,22 +1178,22 @@ LABEL_73:
     }
     while ( 1 ) /*0x584841*/
     {
-      v29 = v11; /*0x584841*/
+      v11 = v11; /*0x584841*/
       if ( v11 < v9 + v11 ) /*0x584845*/
         break; /*0x584845*/
 LABEL_72:
-      if ( ++v28 >= v10 + v107 ) /*0x584ab2*/
+      if ( ++v10 >= v10 + v106 ) /*0x584ab2*/
         goto LABEL_73; /*0x584ab2*/
     }
     v94 = 36 * v86; /*0x584855*/
     while ( 1 )
     {
-      v117[0] = v29; /*0x584862*/
-      v117[1] = v28; /*0x584867*/
+      v117[0] = v11; /*0x584862*/
+      v117[1] = v10; /*0x584867*/
       if ( (uint8_t)((LayerClass *)((LayerClass *)v2))->IsWithinUsableArea(v117, 1) )
       {
-        v116[0] = v29; /*0x584880*/
-        v116[1] = v28; /*0x584885*/
+        v116[0] = v11; /*0x584880*/
+        v116[1] = v10; /*0x584885*/
         v30 = ((Cell *)((Cell *)v2))->CoordToIndex(v116); /*0x58488a*/
         if ( v30 >= 0 ) /*0x584891*/
         {
@@ -1226,8 +1206,8 @@ LABEL_72:
           v30 = 0; /*0x584893*/
         }
         v32 = *(unsigned int *)&v2->__pad_64[12]; /*0x5848a1*/
-        v119[0] = v29; /*0x5848a7*/
-        v119[1] = v28; /*0x5848ac*/
+        v119[0] = v11; /*0x5848a7*/
+        v119[1] = v10; /*0x5848ac*/
         v91 = v32 + 10 * v30; /*0x5848bb*/
         v33 = ((Cell *)((Cell *)v2))->CoordToIndex(v119); /*0x5848bf*/
         if ( v33 >= 0 ) /*0x5848c6*/
@@ -1243,8 +1223,8 @@ LABEL_72:
         v99 = *(uint8_t *)(*(unsigned int *)&v2->__pad_64[4] + 4 * v33); /*0x5848e3*/
         if ( v99 != 7 && !*(unsigned short *)(v91 + 2 * i) )
         {
-          v108[0] = v29; /*0x58491b*/
-          v108[1] = v28; /*0x584920*/
+          v108[0] = v11; /*0x58491b*/
+          v108[1] = v10; /*0x584920*/
           Radar::ProcessSubzone(v2, v91, i, v86, &v104, v108); /*0x584925*/
           VectorClass::ConstructSubzone(&v122, 0, 0); /*0x584932*/
           v122.vtable0 = &vt_DynamicVectorClass; /*0x58493b*/
@@ -1265,15 +1245,15 @@ LABEL_72:
             *(unsigned int *)&v2->__pad_64[24 * i + 56] = v38 + 1; /*0x5849ae*/
             v39 = *(unsigned int *)&v2->__pad_64[24 * i + 44] + 36 * v38; /*0x5849b8*/
             Radar::CopyDataArray((Radar *)v39, (int *)&v122); /*0x5849be*/
-            *(unsigned short *)(v39 + 24) = v125; /*0x5849cb*/
-            *(unsigned int *)(v39 + 28) = v126; /*0x5849d6*/
-            *(unsigned int *)(v39 + 32) = v127; /*0x5849e0*/
+            v39->u32_18 = v125; /*0x5849cb*/
+            v39->q01C = v126; /*0x5849d6*/
+            v39->q020 = v127; /*0x5849e0*/
             v35 = (int)&v2->__pad_64[24 * i + 40]; /*0x5849e3*/
           }
           v122.vtable0 = &vt_VectorClass; /*0x5849eb*/
           if ( v122.Items && v122.IsAllocated ) /*0x5849fd*/
           {
-            __3_YAXPAX_Z(v122.Items); /*0x584a00*/
+            delete v122.Items; /*0x584a00*/
             v122.Items = 0; /*0x584a08*/
           }
           v40 = v94 + *(unsigned int *)(v35 + 4); /*0x584a1b*/
@@ -1283,7 +1263,7 @@ LABEL_72:
           *(unsigned short *)(v40 + 24) = v41; /*0x584a3c*/
           *(unsigned int *)(v40 + 28) = v99; /*0x584a44*/
           *(unsigned int *)(v40 + 20) = 16; /*0x584a47*/
-          *(unsigned int *)(v40 + 32) = (int16_t)v29 / 4 + 130 * ((int16_t)v28 / 4) + 131; /*0x584a78*/
+          *(unsigned int *)(v40 + 32) = (int16_t)v11 / 4 + 130 * ((int16_t)v10 / 4) + 131; /*0x584a78*/
           v42 = v94 == -36; /*0x584a80*/
           ++v86; /*0x584a83*/
           v94 += 36; /*0x584a87*/
@@ -1293,7 +1273,7 @@ LABEL_72:
       }
       v9 = v106; /*0x584a91*/
       v11 = v104; /*0x584a95*/
-      if ( ++v29 >= v106 + v104 ) /*0x584a9f*/
+      if ( ++v11 >= v106 + v104 ) /*0x584a9f*/
       {
         v10 = v105; /*0x584aa5*/
         goto LABEL_72; /*0x584aa5*/
@@ -1311,7 +1291,7 @@ LABEL_72:
     MapClass::AllocArrays(&stru_87E790.__pad_D8[80]); /*0x584d8b*/
     v109 = (WordVector)&vt_VectorClass; /*0x584d94*/
     if ( v110 && v112 ) /*0x584daa*/
-      __3_YAXPAX_Z(v110); /*0x584db1*/
+      delete v110; /*0x584db1*/
   }
 
 }
@@ -1947,15 +1927,6 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
   unsigned short *v16; // eax
   char *v17; // eax
   void *v18; // eax
-  void *v19; // eax
-  int v20; // eax
-  unsigned int *v21; // edi
-  bool v22; // bl
-  void *v23; // ecx
-  void *v24; // eax
-  int v25; // edx
-  unsigned int *v26; // eax
-  int v27; // eax
   int v28; // [esp-4h] [ebp-24h]
   int v29; // [esp-4h] [ebp-24h]
   int v30; // [esp+10h] [ebp-10h]

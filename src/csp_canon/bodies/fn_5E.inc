@@ -2,1133 +2,737 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x005E26C0  Dialog::FindGameUI  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int Dialog::FindGameUI()
-{
-{
-    int result;
-    result = Dialog::FindByHandle((void *)0xC2);
-    if ( !result )
+// ==== BACKFILL 0x005E23D0  Network_Check  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char Gap2Recv_5E23D0::Network_Check(int a2) {
+
+  int uniqueId; // edx
+  int v3; // eax
+  int v4; // edx
+
+  uniqueId = ((unsigned int *)this)[0]; /*0x5e23d0*/
+  v3 = a2; /*0x5e23d3*/
+  if ( a2 >= uniqueId ) /*0x5e23d9*/
+    return 0; /*0x5e23fc*/
+  v4 = uniqueId - 1; /*0x5e23db*/
+  ((unsigned int *)this)[0] = v4; /*0x5e23de*/
+  if ( a2 < v4 ) /*0x5e23e1*/
   {
-    result = Dialog::FindByHandle((void *)0xC9);
-    if ( !result )
+    do /*0x5e23f4*/
     {
-    result = Dialog::FindByHandle((void *)0xBC);
-    if ( !result )
-    return Dialog::FindByHandle((void *)0xBD);
+      ++v3; /*0x5e23e7*/
+      *((unsigned int *)((unsigned int *)this)[0] + v3 - 1) = *((unsigned int *)((unsigned int *)this)[0] + v3); /*0x5e23eb*/
     }
+    while ( v3 < ((unsigned int *)this)[0] ); /*0x5e23f4*/
   }
-    return result;
+  return 1; /*0x5e23f9*/
+
 }
+
+// ==== BACKFILL 0x005E2620  String::ComputeHash  cls=String  sig=csp  renamed_refs=0  residual=- ====
+unsigned int String::ComputeHash(void *a1_1)
+{
+
+  unsigned int v2; // esi
+  unsigned int i; // edi
+  char *v4; // eax
+
+  v2 = ((String*)this)->Length(); /*0x5e262c*/
+  for ( i = 0; i < ((String*)this)->Length(); ++i ) /*0x5e2630*/
+  {
+    v4 = ((String *)(this))->GetOrEmpty(); /*0x5e263b*/
+    v2 = ((i + v4[i] + v2) >> 24) ^ ((i + v4[i] + v2) << 8); /*0x5e2650*/
+  }
+  return v2; /*0x5e2660*/
+
+}
+
+// ==== BACKFILL 0x005E26C0  Dialog::FindGameUI  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
+int INIClass::FindGameUI()
+{
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E26C0.json)
 }
 
 // ==== BACKFILL 0x005E2700  Dialog::ShowMessage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ... a4)
+HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...)
 {
-{
-    HWND result;
-    ObjectClass *Current;
-    HWND DlgItem;
-    ObjectClass *v5;
-    wchar_t Buffer[1024];
-    va_list va;
-    va_start(va, Format);
-    memset(Buffer, 0, sizeof(Buffer));
-    vswprintf(Buffer, BufferCount, &Format, (SessionClass *)v5);
-    result = Dialog::GetCurrent();
-    if ( result )
-  {
-    Current = (ObjectClass *)Dialog::GetCurrent();
-    DlgItem = GetDlgItem((HWND)Current, 1343);
-    if ( DlgItem )
-    {
-    return (HWND)DrawDialogText(aP0, Buffer, DlgItem);
-    }
-    else
-    {
-    while ( 1 )
-      {
-    result = (HWND)Dialog::FindByPtr(Current);
-    Current = (ObjectClass *)result;
-    if ( !result )
-    break;
-    DlgItem = GetDlgItem(result, 1343);
-    if ( DlgItem )
-    return (HWND)DrawDialogText(aP0, Buffer, DlgItem);
-      }
-    }
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E2700.json)
 }
 
 // ==== BACKFILL 0x005E2790  Dialog::ShowStatusText  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2)
+HWND INIClass::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2)
 {
-{
-    HWND result;
-    ObjectClass *Current;
-    HWND DlgItem;
-    CampaignScore *v5;
-    wchar_t Buffer[1024];
-    memset(Buffer, 0, sizeof(Buffer));
-    vswprintf(Buffer, aP1, (ObjectClass *)&aP2, (SessionClass *)v5);
-    result = Dialog::GetCurrent();
-    if ( result )
-  {
-    Current = (ObjectClass *)Dialog::GetCurrent();
-    DlgItem = GetDlgItem((HWND)Current, 1461);
-    if ( DlgItem )
-    {
-    return (HWND)DrawDialogText((ObjectClass *)aP0, Buffer, DlgItem);
-    }
-    else
-    {
-    while ( 1 )
-      {
-    result = (HWND)Dialog::FindByPtr(Current);
-    Current = (ObjectClass *)result;
-    if ( !result )
-    break;
-    DlgItem = GetDlgItem(result, 1461);
-    if ( DlgItem )
-    return (HWND)DrawDialogText((ObjectClass *)aP0, Buffer, DlgItem);
-      }
-    }
-  }
-    return result;
-}
+    (void)aP0; (void)aP1; (void)aP2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E2790.json)
 }
 
 // ==== BACKFILL 0x005E29A0  UI_Draw  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-LRESULT UI_Draw(HWND hWnd, wchar_t * Source, DropListClass * Count, LPARAM lParam)
+LRESULT UI_Draw(HWND hWnd, wchar_t *Source, size_t Count, LPARAM lParam)
 {
-{
-    wchar_t *v5;
-    DropListClass *v6;
-    LRESULT v7;
-    bool v8;
-    LRESULT v9;
-    LRESULT v11;
-    struct tagRECT Rect;
-    signed int Counta;
-    memset(&g_MatrixTransformState + 1315, 0, 0x400u);
-    wcsncpy((wchar_t *)&g_MatrixTransformState + 2630, Source, Count);
-    v5 = wcschr((BlowStraw *)(&g_MatrixTransformState + 1315), (CCINIClass *)0xD);
-    if ( v5 || (v5 = wcschr((BlowStraw *)(&g_MatrixTransformState + 1315), (CCINIClass *)0xA)) != 0 )
-    *v5 = 0;
-    v11 = SendMessageA(hWnd, 0x49Du, 0, 1);
-    v6 = (DropListClass *)SendMessageA(hWnd, 0x18Eu, 0, 0);
-    v7 = SendMessageA(hWnd, 0x18Bu, 0, 0);
-    Counta = SendMessageA(hWnd, 0x1A1u, (WPARAM)v6, 0);
-    GetWindowRect(hWnd, &Rect);
-    v8 = v7 - (int)v6 <= (Rect.bottom - Rect.top) / Counta;
-    if ( v7 > 500 )
-  {
-    SendMessageA(hWnd, 0x182u, 0, 0);
-    --v7;
-  }
-    v9 = SendMessageA(hWnd, 0x4CDu, 0, (LPARAM)(&g_MatrixTransformState + 1315));
-    if ( lParam != -1 )
-    SendMessageA(hWnd, 0x498u, v9, lParam);
-    if ( v8 )
-    SendMessageA(hWnd, 0x197u, v7, 0);
-    return SendMessageA(hWnd, 0x49Du, 0, v11);
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E29A0.json)
 }
 
 // ==== BACKFILL 0x005E2E40  sub_5E2E40  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 INT_PTR sub_5E2E40(HWND hWnd, UINT, WPARAM, char * a4)
 {
-{
-    INT_PTR result;
-    if ( a2 <= 0x2B )
-  {
-    switch ( a2 )
-    {
-    case 0x2Bu: Dialog::Resize(a4);
-    return 1;
-    case 0xFu: Dialog::DrawBackground(hWnd);
-    Dialog::StopBink(hWnd);
-    ValidateRect(hWnd, 0);
-    return 1;
-    case 0x14u: return 1;
-    }
-    return 0;
-  }
-    if ( a2 != 273 )
-    return 0;
-    switch ( (short)a3 )
-  {
-    case 1: case 2: case 6: case 7: CloseDialog(hWnd, (unsigned short)a3);
-    result = 1;
-    break;
-    default: return 0;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E2E40.json)
 }
 
 // ==== BACKFILL 0x005E2F60  Dialog::ShowPlayerName  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
 LRESULT Dialog::ShowPlayerName()
 {
-{
-    HWND DlgItem;
-    DlgItem = GetDlgItem(this, 1448);
-    return SendMessageA(DlgItem, 0x4B2u, 0, 11055906);
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E2F60.json)
 }
 
 // ==== BACKFILL 0x005E35A0  sub_5E35A0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char sub_5E35A0()
 {
-{
-    unsigned int v0;
-    int v1;
-    int i;
-    int v4[113];
-    short v5;
-    char v6;
-    memset(v4, 0, sizeof(v4));
-    v5 = 0;
-    v6 = 0;
-    v4[0] = 40;
-    v0 = strlen(g_GameSetupBuffer) + 1;
-    qmemcpy(&v4[1], g_GameSetupBuffer, v0);
-    v1 = Game_PlayerCount;
-    for ( i = 1; i < v1; ++i )
-  {
-    Network::SendMessage((int)g_NetworkManager, (int)v4, 455, 1, *(int *)(Game_PlayerInfoArray + 4 * i) + 40, 0, 0);
-    LOBYTE(v0) = Event::Dispatch();
-  }
-    return v0;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E35A0.json)
 }
 
 // ==== BACKFILL 0x005E3630  Network_Create  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char sub_5E3630()
 {
-{
-    unsigned int v0;
-    int v1;
-    int i;
-    int v4[113];
-    short v5;
-    char v6;
-    if ( g_GameMode_Current[0] == 3 )
-  {
-    memset(v4, 0, sizeof(v4));
-    v5 = 0;
-    v6 = 0;
-    v4[0] = 40;
-    v0 = strlen(g_GameSetupBuffer) + 1;
-    qmemcpy(&v4[1], g_GameSetupBuffer, v0);
-    v1 = Game_PlayerCount;
-    for ( i = 1; i < v1; ++i )
-    {
-    Network::SendMessage((int)g_NetworkManager, (int)v4, 455, 1, *(int *)(Game_PlayerInfoArray + 4 * i) + 40, 0, 0);
-    LOBYTE(v0) = Event::Dispatch();
-    }
-  }
-    else
-  {
-    LOBYTE(v0) = LOBYTE(g_GameMode_Current[0]) - 4;
-    if ( g_GameMode_Current[0] == 4 )
-    LOBYTE(v0) = (unsigned char)Network_Create_7A2730();
-  }
-    return v0;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E3630.json)
 }
 
 // ==== BACKFILL 0x005E3720  Network::SendOptionsGame  cls=Network  sig=csp  renamed_refs=0  residual=- ====
-int Network::SendOptionsGame()
+int HashTable_flat::SendOptionsGame(char * Source)
 {
-{
-    int result;
-    ObjectClass *v2;
-    int i;
-    IUnknown *v4;
-    int v5[114];
-    char Destination[1024];
-    if ( *(&g_MatrixTransformState + 2263) )
-  {
-    strncpy(Destination, this, (IUnknown *)0x3FF);
-    return (*(int (__stdcall **)(int, char *))((*(&g_MatrixTransformState + 2263))->X + 60))( *(&g_MatrixTransformState + 2263), Destination);
-  }
-    else
-  {
-    memset(v5, 0, 455);
-    v5[0] = 23;
-    strcpy((char *)&v5[1], &HouseClass_Player[30260]);
-    v2 = *(ObjectClass **)&HouseClass_Player[30280];
-    strcpy((char *)&v5[11] + 3, this);
-    *(int *)((char *)&v5[111] + 3) = v2;
-    *(int *)((char *)&v5[112] + 3) = WideString::Hash((wchar_t *)&HouseClass_Player[39108]);
-    result = *(int *)&HouseClass_Player[40248];
-    for ( i = 1; i < *(int *)&HouseClass_Player[40248]; ++i )
-    {
-    v4 = *(IUnknown **)(*(int *)&HouseClass_Player[40236] + 4 * i);
-    ToWideStringChar(v4);
-    Debug::Log();
-    Network::SendMessage((int)&HouseClass_Player[44148], (int)v5, 455, 1, (int)v4->__pad_28, 0, 0);
-    Event::Dispatch();
-    result = *(int *)&HouseClass_Player[40248];
-    }
-  }
-    return result;
-}
+    (void)Source; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E3720.json)
 }
 
 // ==== BACKFILL 0x005E70D0  SkirmishSetup_Setup_5E70D0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 WPARAM SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2)
 {
-{
-    WPARAM v4;
-    signed int v5;
-    LRESULT v7;
-    if ( !a2 )
-    return -1;
-    v4 = 0;
-    v5 = 0;
-    v7 = SendDlgItemMessageA(hDlg, 1363, 0x18Bu, 0, 0);
-    if ( v7 > 0 )
-  {
-    do
-    {
-    if ( SendDlgItemMessageA(hDlg, 1363, 0x199u, v5, 0) == a2 )
-    v4 = v5;
-    ++v5;
-    }
-    while ( v5 < v7 );
-  }
-    SendDlgItemMessageA(hDlg, 1363, 0x186u, v4, 0);
-    SendDlgItemMessageA(hDlg, 1363, 0x197u, v4, 0);
-    return v4;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E70D0.json)
 }
 
 // ==== BACKFILL 0x005E84D0  GameConfig::ComputeCRC  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * GameConfig::ComputeCRC()
 {
-{
-    unsigned int v0;
-    int *v1;
-    int v2;
-    unsigned int v3;
-    int v4;
-    int v5;
-    int *v6;
-    int v7;
-    char *v8;
-    int *v10;
-    char v11[256];
-    v0 = 0;
-    qmemcpy(v11, &DataGlobal_ABE050, sizeof(v11));
-    v1 = &DataGlobal_ABE010;
-    v10 = &DataGlobal_ABE010;
-    v2 = 320;
-    memset(&DataGlobal_ABE050, 0, 0x100u);
-    do
-  {
-    v3 = v0 >> 31;
-    if ( v2 < 4 )
-    {
-    v5 = 0;
-    v6 = v1;
-    v7 = v2;
-    v2 = 0;
-    do
-      {
-    v5 = *(unsigned char *)v6 | (v5 << 8);
-    v6 = (int *)((char *)(v6) + 1);
-    --v7;
-      }
-    while ( v7 );
-    v1 = v10;
-    v0 = v3 + v5 + 2 * v0;
-    }
-    else
-    {
-    v4 = *v1++;
-    v10 = v1;
-    v0 = v3 + v4 + 2 * v0;
-    v2 -= 4;
-    }
-  }
-    while ( v2 > 0 );
-    v8 = (char *)__2_YAPAXI_Z(0xCu);
-    sprintf(v8, Format, v0);
-    qmemcpy(&DataGlobal_ABE050, v11, 0x100u);
-    return v8;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E84D0.json)
 }
 
 // ==== BACKFILL 0x005E8760  Settings::CheckString  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 BOOL Settings::CheckString()
 {
-{
-    char *v0;
-    v0 = CharToWideString(g_GameSetupBuffer);
-    return wcscmp((const wchar_t *)v0, &g_CurrentPlayerName) == 0;
-}
+
+  char *v0; // eax
+
+  v0 = (char *)(CharToWideString((unsigned char *)(unk_A8B380)));
+  return wcscmp((const wchar_t *)v0,(const wchar_t *)(word_A8D610)) == 0; /*0x5e877d*/
+
 }
 
 // ==== BACKFILL 0x005E8A20  WinMainSetup_Setup_5DB6F0_Setup  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5E8A20()
 {
-{
-    if ( g_HouseClass_ObserverFlags )
+  if ( g_HouseClass_ObserverFlags ) /*0x5e8a2a*/
   {
-    __3_YAXPAX_Z((void *)g_HouseClass_ObserverFlags);
-    g_HouseClass_ObserverFlags = 0;
+    RA2_OPDEL((void *)g_HouseClass_ObserverFlags); /*0x5e8a2d*/
+    g_HouseClass_ObserverFlags = 0; /*0x5e8a35*/
   }
-    if ( g_Lobby_PlayerCount )
+  if ( g_Lobby_PlayerCount ) /*0x5e8a42*/
   {
-    __3_YAXPAX_Z((void *)g_Lobby_PlayerCount);
-    g_Lobby_PlayerCount = 0;
+    RA2_OPDEL((void *)g_Lobby_PlayerCount); /*0x5e8a45*/
+    g_Lobby_PlayerCount = 0; /*0x5e8a4d*/
   }
-    if ( g_Lobby_PlayerTeam )
+  if ( g_Lobby_PlayerTeam ) /*0x5e8a5a*/
   {
-    __3_YAXPAX_Z((void *)g_Lobby_PlayerTeam);
-    g_Lobby_PlayerTeam = 0;
+    RA2_OPDEL((void *)g_Lobby_PlayerTeam); /*0x5e8a5d*/
+    g_Lobby_PlayerTeam = 0; /*0x5e8a65*/
   }
-    if ( g_Lobby_PlayerSide )
+  if ( g_Lobby_PlayerSide ) /*0x5e8a72*/
   {
-    __3_YAXPAX_Z((void *)g_Lobby_PlayerSide);
-    g_Lobby_PlayerSide = 0;
+    RA2_OPDEL((void *)g_Lobby_PlayerSide); /*0x5e8a75*/
+    g_Lobby_PlayerSide = 0; /*0x5e8a7d*/
   }
-    if ( g_Lobby_PlayerColor )
+  if ( g_Lobby_PlayerColor ) /*0x5e8a8a*/
   {
-    __3_YAXPAX_Z((void *)g_Lobby_PlayerColor);
-    g_Lobby_PlayerColor = 0;
+    RA2_OPDEL((void *)g_Lobby_PlayerColor); /*0x5e8a8d*/
+    g_Lobby_PlayerColor = 0; /*0x5e8a95*/
   }
-    if ( g_Lobby_PlayerReady )
+  if ( g_Lobby_PlayerReady ) /*0x5e8aa2*/
   {
-    __3_YAXPAX_Z(g_Lobby_PlayerReady);
-    g_Lobby_PlayerReady = 0;
+    RA2_OPDEL(g_Lobby_PlayerReady); /*0x5e8aa5*/
+    g_Lobby_PlayerReady = 0; /*0x5e8aad*/
   }
-    if ( g_Lobby_MaxPlayers )
+  if ( g_Lobby_MaxPlayers ) /*0x5e8aba*/
   {
-    __3_YAXPAX_Z((void *)g_Lobby_MaxPlayers);
-    g_Lobby_MaxPlayers = 0;
+    RA2_OPDEL((void *)g_Lobby_MaxPlayers); /*0x5e8abd*/
+    g_Lobby_MaxPlayers = 0; /*0x5e8ac5*/
   }
-    return PtrVector::Destroy(&g_PlayerInfoCount);
-}
+// 0x5c6120
+  return ((PtrVector*)&stru_A8DA74)->Destroy(); /*0x5e8ad0*/
 }
 
 // ==== BACKFILL 0x005E8BF0  Player::FindByName  cls=Player  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * Player::FindByName()
+wchar_t * Player::FindByName(wchar_t * String2)
 {
-{
-    int v3;
-    int v4;
-    const wchar_t *v5;
-    if ( !wcscmp((const wchar_t *)g_HouseClass_ObserverFlags, this) )
-    return (wchar_t *)g_HouseClass_ObserverFlags;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerCount, this) )
-    return (wchar_t *)g_Lobby_PlayerCount;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerTeam, this) )
-    return (wchar_t *)g_Lobby_PlayerTeam;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerSide, this) )
-    return (wchar_t *)g_Lobby_PlayerSide;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerColor, this) )
-    return (wchar_t *)g_Lobby_PlayerColor;
-    if ( !wcscmp(g_Lobby_PlayerReady, this) )
-    return g_Lobby_PlayerReady;
-    if ( !wcscmp((const wchar_t *)g_Lobby_MaxPlayers, this) )
-    return (wchar_t *)g_Lobby_MaxPlayers;
-    v3 = Game_PlayerCount;
-    v4 = 0;
-    if ( Game_PlayerCount <= 0 )
-    return 0;
-    while ( 1 )
+
+  int v3; // ebp
+  int v4; // esi
+  const wchar_t *v5; // edi
+
+  if ( !wcscmp((const wchar_t *)g_HouseClass_ObserverFlags, (const wchar_t *)String2) ) /*0x5e8bfd*/
+    return (wchar_t *)g_HouseClass_ObserverFlags; /*0x5e8c09*/
+  if ( !wcscmp((const wchar_t *)g_Lobby_PlayerCount, (const wchar_t *)String2) ) /*0x5e8c1b*/
+    return (wchar_t *)g_Lobby_PlayerCount; /*0x5e8c27*/
+  if ( !wcscmp((const wchar_t *)g_Lobby_PlayerTeam, (const wchar_t *)String2) ) /*0x5e8c39*/
+    return (wchar_t *)g_Lobby_PlayerTeam; /*0x5e8c45*/
+  if ( !wcscmp((const wchar_t *)g_Lobby_PlayerSide, (const wchar_t *)String2) ) /*0x5e8c56*/
+    return (wchar_t *)g_Lobby_PlayerSide; /*0x5e8c62*/
+  if ( !wcscmp((const wchar_t *)g_Lobby_PlayerColor, (const wchar_t *)String2) ) /*0x5e8c74*/
+    return (wchar_t *)g_Lobby_PlayerColor; /*0x5e8c80*/
+  if ( !wcscmp((const wchar_t *)(g_Lobby_PlayerReady), (const wchar_t *)String2) ) /*0x5e8c92*/
+return (wchar_t *)g_Lobby_PlayerReady; /*0x5e8c9e*/
+  if ( !wcscmp((const wchar_t *)g_Lobby_MaxPlayers, (const wchar_t *)String2) ) /*0x5e8caf*/
+    return (wchar_t *)g_Lobby_MaxPlayers; /*0x5e8cbb*/
+  v3 = dword_A8DA84; /*0x5e8cc5*/
+  v4 = 0; /*0x5e8ccb*/
+  if ( dword_A8DA84 <= 0 ) /*0x5e8ccf*/
+    return 0; /*0x5e8ced*/
+  while ( 1 ) /*0x5e8cd8*/
   {
-    v5 = *(const wchar_t **)(Game_PlayerInfoArray + 4 * v4);
-    if ( !wcscmp(v5, this) )
-    break;
-    if ( ++v4 >= v3 )
-    return 0;
+    v5 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v4]; /*0x5e8cd8*/
+    if ( !wcscmp(v5, (const wchar_t *)String2) ) /*0x5e8cdc*/
+      break; /*0x5e8cdc*/
+    if ( ++v4 >= v3 ) /*0x5e8ceb*/
+      return 0; /*0x5e8ceb*/
   }
-    return (wchar_t *)v5;
-}
+  return (wchar_t *)v5; /*0x5e8c0e*/
+
 }
 
 // ==== BACKFILL 0x005E9290  NetworkLobby::CheckLobbyConditions  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
-char NetworkLobby::CheckLobbyConditions()
+char CheckLobbyConditions()
 {
-{
-    int v2;
-    int v3;
-    LPARAM *v4;
-    LPARAM v5;
-    if ( g_GameMode_Current[0] == 4 )
-  {
-    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() )
-    v2 = 6;
-    else
-    v2 = 2;
-  }
-    else
-  {
-    v2 = 8;
-  }
-    if ( !g_MPCooperativeState && v2 < 7 )
-    ++v2;
-    v3 = 0;
-    v4 = &g_NetworkPlayerName;
-    while ( 1 )
-  {
-    LOBYTE(v5) = GUID::Compare((char *)(*v4 + 40), (int)this);
-    if ( (char)v5 )
-    break;
-    ++v4;
-    ++v3;
-    if ( (int)v4 >= (int)&g_PlayerNameListEnd )
-    return v5;
-  }
-    v5 = *(&g_NetworkPlayerName + v3);
-    if ( *(int *)(v5 + 107) == -1 )
-  {
-    *(&g_NetworkPlayerName + v3) = g_Lobby_MaxPlayers;
-  }
-    else
-  {
-    v5 = g_HouseClass_ObserverFlags;
-    if ( v3 >= v2 )
-    v5 = g_Lobby_PlayerCount;
-    *(&g_NetworkPlayerName + v3) = v5;
-  }
-    return v5;
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E9290.json)
 }
+
+// ==== BACKFILL 0x005E9340  Audio_Helper  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int Gap2Recv_5E9340::Audio_Helper() {
+
+  int v2; // ebx
+  int result; // eax
+  int v4; // edi
+  char **v5; // esi
+  char *v6; // eax
+
+  if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5e934e*/
+  {
+    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5e9359*/
+      v2 = 6; /*0x5e9369*/
+    else
+      v2 = 2; /*0x5e9362*/
+  }
+  else
+  {
+    v2 = 8; /*0x5e9370*/
+  }
+  result = (int)g_MPCooperativeState; /*0x5e9375*/
+  if ( !g_MPCooperativeState && v2 < 7 ) /*0x5e9381*/
+    ++v2; /*0x5e9383*/
+  v4 = 0; /*0x5e9384*/
+  v5 = (char **)dword_A8DA90; /*0x5e9386*/
+  while ( 1 ) /*0x5e938b*/
+  {
+    if ( *v5 ) /*0x5e938b*/
+    {
+      v6 = ToWideStringChar(*v5); /*0x5e9391*/
+      result = _strcmpi((char *)this, v6); /*0x5e9398*/
+      if ( !result ) /*0x5e93a2*/
+        break; /*0x5e93a2*/
+    }
+    ++v5; /*0x5e93a4*/
+    ++v4; /*0x5e93a7*/
+    if ( (int)v5 >= (int)&dword_A8DAB0 ) /*0x5e93ae*/
+      return result; /*0x5e93ae*/
+  }
+  result = dword_A8DA90[v4]; /*0x5e93b5*/
+  if ( *(unsigned int *)(result + 107) == -1 ) /*0x5e93c0*/
+  {
+    dword_A8DA90[v4] = g_Lobby_MaxPlayers; /*0x5e93c8*/
+  }
+  else
+  {
+    result = g_HouseClass_ObserverFlags; /*0x5e93d4*/
+    if ( v4 >= v2 ) /*0x5e93db*/
+      result = g_Lobby_PlayerCount; /*0x5e93dd*/
+    dword_A8DA90[v4] = result; /*0x5e93e2*/
+  }
+  return result; /*0x5e93b0*/
+
+}
+
+// ==== BACKFILL 0x005E93F0  IsKnownPointer  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+bool Gap2Recv_5E93F0::IsKnownPointer() {
+
+  return this /*0x5e9431*/
+      && this != (ObjectClass *)g_HouseClass_ObserverFlags
+      && this != (ObjectClass *)g_Lobby_PlayerCount
+      && this != (ObjectClass *)g_Lobby_PlayerReady
+      && this != (ObjectClass *)g_Lobby_MaxPlayers
+      && this != (ObjectClass *)g_Lobby_PlayerTeam
+      && this != (ObjectClass *)g_Lobby_PlayerSide
+      && this != (ObjectClass *)g_Lobby_PlayerColor;
+
 }
 
 // ==== BACKFILL 0x005E9440  Player::IsObserver  cls=Player  sig=csp  renamed_refs=0  residual=- ====
-BOOL Player::IsObserver()
+int Player::IsObserver()
 {
-{
-    return this && (this == (void *)g_Lobby_PlayerTeam || this == (void *)g_Lobby_PlayerSide || this == (void *)g_Lobby_PlayerColor);
-}
+
+  return this /*0x5e9461*/
+      && (this == (Player *)g_Lobby_PlayerTeam
+       || this == (Player *)g_Lobby_PlayerSide
+       || this == (Player *)g_Lobby_PlayerColor);
+
 }
 
 // ==== BACKFILL 0x005E9470  NetworkLobby::IsValidPlayerName  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
 BOOL NetworkLobby::IsValidPlayerName()
 {
-{
-    return this && this != (wchar_t *)g_HouseClass_ObserverFlags && this != (wchar_t *)g_Lobby_PlayerCount && this != (wchar_t *)g_Lobby_MaxPlayers && this != g_Lobby_PlayerReady;
-}
+
+  return this /*0x5e9499*/
+      && this != (NetworkLobby *)g_HouseClass_ObserverFlags
+      && this != (NetworkLobby *)g_Lobby_PlayerCount
+      && this != (NetworkLobby *)g_Lobby_MaxPlayers
+      && this != (NetworkLobby *)g_Lobby_PlayerReady;
+
 }
 
 // ==== BACKFILL 0x005E94D0  Hash_Check_5E94D0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5E94D0()
 {
-{
-    int result;
-    LPARAM *v1;
-    LPARAM v2;
-    result = 0;
-    v1 = &g_NetworkPlayerName;
-    do
+  LPARAM * result;
+  LPARAM *v1; // edx
+  LPARAM v2; // ecx
+
+  result = (LPARAM *)((int)((LPARAM *)(0)));
+  v1 = (LPARAM *)(&dword_A8DA90);
+  do /*0x5e9508*/
   {
-    v2 = *v1;
-    if ( *v1 && (v2 == g_Lobby_PlayerTeam || v2 == g_Lobby_PlayerSide || v2 == g_Lobby_PlayerColor) )
-    ++result;
-    ++v1;
+    v2 = *v1; /*0x5e94ec*/
+    if ( *v1 && (v2 == g_Lobby_PlayerTeam || v2 == g_Lobby_PlayerSide || v2 == g_Lobby_PlayerColor) ) /*0x5e94fc*/
+      ++result; /*0x5e94fe*/
+    ++v1; /*0x5e94ff*/
   }
-    while ( (int)v1 < (int)&g_PlayerNameListEnd );
-    return result;
-}
+  while ( (int)v1 < (int)&dword_A8DAB0 ); /*0x5e9508*/
+  return (int)(result); /*0x5e950a*/
 }
 
 // ==== BACKFILL 0x005E9510  NetworkLobby::CheckMinPlayers  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
-bool NetworkLobby::CheckMinPlayers()
+bool CheckMinPlayers()
 {
-{
-    int v0;
-    int v1;
-    LPARAM *i;
-    v0 = DataGlobal_A8BB0C;
-    if ( DataGlobal_A8B548 < DataGlobal_A8BB0C )
-    v0 = DataGlobal_A8B548;
-    v1 = 0;
-    if ( v0 > 0 )
-  {
-    for ( i = &g_NetworkPlayerName; *i != g_HouseClass_ObserverFlags; ++i )
-    {
-    if ( ++v1 >= v0 )
-    return g_MPCooperativeState || v0 >= 8 || *(&g_NetworkPlayerName + v0) != g_HouseClass_ObserverFlags;
-    }
-    return 0;
-  }
-    return g_MPCooperativeState || v0 >= 8 || *(&g_NetworkPlayerName + v0) != g_HouseClass_ObserverFlags;
-}
+     return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E9510.json)
 }
 
 // ==== BACKFILL 0x005E9560  GameOption::CheckDuplicate  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char GameOption::CheckDuplicate()
 {
-{
-    LPARAM *v0;
-    v0 = &g_NetworkPlayerName;
-    while ( *v0 != g_Lobby_MaxPlayers )
-  {
-    if ( (int)++v0 >= (int)&g_PlayerNameListEnd )
-    return 1;
-  }
-    return 0;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5E9560)
 }
 
 // ==== BACKFILL 0x005E9580  Hash_Check_5E9580  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 char sub_5E9580()
 {
-{
-    int v0;
-    LPARAM *v1;
-    LPARAM v2;
-    v0 = 0;
-    v1 = &g_NetworkPlayerName;
-    while ( 1 )
+  LPARAM * v0;
+  LPARAM *v1; // ecx
+  LPARAM v2; // eax
+
+  v0 = (LPARAM *)((int)((LPARAM *)(0)));
+  v1 = (LPARAM *)(&dword_A8DA90);
+  while ( 1 ) /*0x5e959c*/
   {
-    v2 = *v1;
-    if ( *v1 )
+    v2 = *v1; /*0x5e959c*/
+    if ( *v1 ) /*0x5e959c*/
     {
-    if ( v2 != g_HouseClass_ObserverFlags && v2 != g_Lobby_PlayerCount && v2 != g_Lobby_MaxPlayers && (wchar_t *)v2 != g_Lobby_PlayerReady && v0 == g_MPCooperativeState && *(int *)(v2 + 107) == -1 )
+      if ( v2 != g_HouseClass_ObserverFlags /*0x5e95c2*/
+        && v2 != g_Lobby_PlayerCount
+        && v2 != g_Lobby_MaxPlayers
+        && (wchar_t *)v2 != (wchar_t *)(g_Lobby_PlayerReady)
+        && v0 == (LPARAM *)(g_MPCooperativeState)
+        && *(unsigned int *)(v2 + 107) == -1 )
       {
-    break;
+        break; /*0x5e95c2*/
       }
     }
-    ++v1;
-    ++v0;
-    if ( (int)v1 >= (int)&g_PlayerNameListEnd )
-    return 0;
+    ++v1; /*0x5e95c4*/
+    ++v0; /*0x5e95c7*/
+    if ( (int)v1 >= (int)&dword_A8DAB0 ) /*0x5e95ce*/
+      return 0; /*0x5e95d5*/
   }
-    return 1;
-}
+  return 1; /*0x5e95d0*/
 }
 
 // ==== BACKFILL 0x005E96A0  NetworkLobby::CheckPlayerNameValid  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
-char NetworkLobby::CheckPlayerNameValid()
+char CheckPlayerNameValid()
 {
-{
-    wchar_t **v2;
-    wchar_t *v3;
-    int *v4;
-    if ( this == (void *)-2 )
-    return 0;
-    v2 = (wchar_t **)&g_NetworkPlayerName;
-    while ( 1 )
-  {
-    v3 = *v2;
-    if ( *v2 )
-    {
-    if ( v3 != (wchar_t *)g_HouseClass_ObserverFlags && v3 != (wchar_t *)g_Lobby_PlayerCount && v3 != g_Lobby_PlayerReady && v3 != (wchar_t *)g_Lobby_MaxPlayers && v3 != (wchar_t *)g_Lobby_PlayerTeam && v3 != (wchar_t *)g_Lobby_PlayerSide && v3 != (wchar_t *)g_Lobby_PlayerColor && (void *)SessionClass::GetPlayerColor((int)v3) == this )
-      {
-    break;
-      }
-    }
-    if ( (int)++v2 >= (int)&g_PlayerNameListEnd )
-    {
-    v4 = g_CampaignConfig;
-    while ( (void *)*v4 != this )
-      {
-    if ( (int)++v4 >= (int)g_CampaignSideIndex )
-    return 0;
-      }
-    return 1;
-    }
-  }
-    return 1;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E96A0.json)
 }
 
 // ==== BACKFILL 0x005E9720  NetworkLobby::CheckPlayerNames  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
-char NetworkLobby::CheckPlayerNames()
+char CheckPlayerNames()
 {
-{
-    wchar_t **v2;
-    wchar_t *v3;
-    int *v4;
-    if ( this == (void *)-2 )
-    return 0;
-    v2 = (wchar_t **)&g_NetworkPlayerName;
-    while ( 1 )
-  {
-    v3 = *v2;
-    if ( *v2 )
-    {
-    if ( v3 != (wchar_t *)g_HouseClass_ObserverFlags && v3 != (wchar_t *)g_Lobby_PlayerCount && v3 != g_Lobby_PlayerReady && v3 != (wchar_t *)g_Lobby_MaxPlayers && v3 != (wchar_t *)g_Lobby_PlayerTeam && v3 != (wchar_t *)g_Lobby_PlayerSide && v3 != (wchar_t *)g_Lobby_PlayerColor && (void *)SessionClass::GetOption((int)v3) == this )
-      {
-    break;
-      }
-    }
-    if ( (int)++v2 >= (int)&g_PlayerNameListEnd )
-    {
-    v4 = g_CampaignSideIndex;
-    while ( (void *)*v4 != this )
-      {
-    if ( (int)++v4 >= (int)g_CampaignFactionSlot )
-    return 0;
-      }
-    return 1;
-    }
-  }
-    return 1;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E9720.json)
 }
 
 // ==== BACKFILL 0x005E9950  Dialog::MapPlayerIDToIndex  cls=Dialog  sig=csp  renamed_refs=0  residual=- ====
-int Dialog::MapPlayerIDToIndex()
+int INIClass::MapPlayerIDToIndex()
 {
-{
-    int v2;
-    if ( this == (void *)1041 )
-    return 0;
-    if ( this == (void *)1042 )
-    return 1;
-    if ( this == (void *)1043 )
-    return 2;
-    if ( this == (void *)1044 )
-    return 3;
-    if ( this == (void *)1045 )
-    return 4;
-    if ( this == (void *)1046 )
-    return 5;
-    if ( this == (void *)1047 )
-    return 6;
-    v2 = -(this != (void *)1048);
-    LOBYTE(v2) = v2 & 0xF8;
-    return v2 + 7;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E9950.json)
 }
 
 // ==== BACKFILL 0x005E99C0  GameClass::GetDifficultyString  cls=GameClass  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * GameClass::GetDifficultyString()
+wchar_t * PKStrawClass::GetDifficultyString()
 {
-{
-    if ( this == (void *)g_HouseClass_ObserverFlags )
-    return GetStringCSF(DataGlobal_831D34, 0, g_Str_File_netshare_cpp, 4948);
-    if ( this == (void *)g_Lobby_PlayerCount )
-    return GetStringCSF(DataGlobal_831D20, 0, g_Str_File_netshare_cpp, 4950);
-    if ( this == (void *)g_Lobby_PlayerTeam )
-    return GetStringCSF(g_Str_STT_PlayerDumbAI, 0, g_Str_File_netshare_cpp, 4952);
-    if ( this == (void *)g_Lobby_PlayerSide )
-    return GetStringCSF(g_Str_STT_PlayerSmartAI, 0, g_Str_File_netshare_cpp, 4954);
-    if ( this == (void *)g_Lobby_PlayerColor )
-    return GetStringCSF(g_Str_STT_PlayerGeniusAI, 0, g_Str_File_netshare_cpp, 4956);
-    if ( this == (void *)g_Lobby_MaxPlayers )
-    return GetStringCSF(DataGlobal_831CCC, 0, g_Str_File_netshare_cpp, 4958);
-    return GetStringCSF(DataGlobal_831CBC, 0, g_Str_File_netshare_cpp, 4960);
-}
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E99C0.json)
 }
 
 // ==== BACKFILL 0x005E9B60  SelectLobbyCountry  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int Lobby_SelectCountry(HWND a1, void * a2)
 {
-{
-    LRESULT Selected;
-    int result;
-    int v5;
-    Selected = GetComboBoxSelected(a1, (int)a2, -1);
-    result = CountryCombo::IDToIndex(a2);
-    if ( result == g_NetworkPlayerCount )
-  {
-    SessionClass::AssignSide(&g_GameMode_Current, Selected, 0);
-    result = Game_PlayerCount;
-    if ( Game_PlayerCount )
-    return SessionClass::SetPlayerOption(*(int *)Game_PlayerInfoArray, Selected);
-  }
-    else
-  {
-    v5 = *(&g_NetworkPlayerName + result);
-    if ( v5 && (v5 == g_Lobby_PlayerTeam || v5 == g_Lobby_PlayerSide || v5 == g_Lobby_PlayerColor) )
-    {
-    g_CampaignPlayerArray[result] = Selected;
-    }
-    else
-    {
-    g_CampaignPlayerArray[result] = -1;
-    DataGlobal_A8B27C[result] = -1;
-    g_CampaignConfig[result] = -1;
-    }
-  }
-    return result;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005E9B60.json)
 }
+
+// ==== BACKFILL 0x005EAAD0  RefreshLobbyAll_Helper_5EAAD0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int Gap2Recv_5EAAD0::RefreshLobbyAll_Helper_5EAAD0() {
+
+  if ( !this ) /*0x5eaad4*/
+    return 1746; /*0x5eaad6*/
+  if ( this == (ObjectClass *)1 ) /*0x5eaadf*/
+    return 1747; /*0x5eaae1*/
+  if ( this == (ObjectClass *)2 ) /*0x5eaaea*/
+    return 1748; /*0x5eaaec*/
+  if ( this == (ObjectClass *)3 ) /*0x5eaaf5*/
+    return 1749; /*0x5eaaf7*/
+  if ( this == (ObjectClass *)4 ) /*0x5eab00*/
+    return 1750; /*0x5eab02*/
+  if ( this == (ObjectClass *)5 ) /*0x5eab0b*/
+    return 1751; /*0x5eab0d*/
+  if ( this == (ObjectClass *)6 ) /*0x5eab16*/
+    return 1752; /*0x5eab18*/
+  return this != (ObjectClass *)7 ? -1 : 1753;
+
+}
+
+// ==== BACKFILL 0x005EAB30  RefreshLobbyAll_Play_5EAB30  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int Gap2Recv_5EAB30::RefreshLobbyAll_Play_5EAB30() {
+
+  int *v2; // ebx
+  wchar_t *v3; // ecx
+  int PlayerColor; // eax
+  int result; // eax
+  char Buffer[4]; // [esp+10h] [ebp-4h] BYREF
+
+  v2 = MEMORY[0xA8B2BC]; /*0x5eab37*/
+  *this = 0; /*0x5eab3c*/
+  do /*0x5eabeb*/
+  {
+    v3 = (wchar_t *)v2[2549]; /*0x5eab40*/
+    if ( v3 /*0x5eab60*/
+      && (v3 == (wchar_t *)g_Lobby_PlayerTeam
+       || v3 == (wchar_t *)g_Lobby_PlayerSide
+       || v3 == (wchar_t *)g_Lobby_PlayerColor) )
+    {
+      PlayerColor = *v2; /*0x5eab62*/
+    }
+    else if ( v3 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x5eab6c*/
+    {
+      PlayerColor = -2; /*0x5eab6e*/
+    }
+    else if ( v3 == (wchar_t *)g_Lobby_PlayerCount ) /*0x5eab7b*/
+    {
+      PlayerColor = -2; /*0x5eab7d*/
+    }
+    else if ( v3 == g_Lobby_PlayerReady ) /*0x5eab8a*/
+    {
+      PlayerColor = -2; /*0x5eab8c*/
+    }
+    else
+    {
+      PlayerColor = -2; /*0x5eab9a*/
+      if ( v3 != (wchar_t *)g_Lobby_MaxPlayers ) /*0x5eab9f*/
+        PlayerColor = SessionClass::GetPlayerColor((int)v3); /*0x5eaba1*/
+    }
+    sprintf(Buffer, "%d,", PlayerColor); /*0x5eabb1*/
+    result = 0; /*0x5eabbd*/
+    ++v2; /*0x5eabc8*/
+    strcat(this, Buffer); /*0x5eabdc*/
+  }
+  while ( (int)v2 < (int)MEMORY[0xA8B2DC] ); /*0x5eabeb*/
+  return result; /*0x5eabf1*/
+
+}
+
+// ==== BACKFILL 0x005EAC00  RefreshLobbyAll_Get_5EAC00  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int Gap2Recv_5EAC00::RefreshLobbyAll_Get_5EAC00() {
+
+  int *v2; // ebx
+  wchar_t *v3; // ecx
+  int Option; // eax
+  int result; // eax
+  char Buffer[4]; // [esp+10h] [ebp-4h] BYREF
+
+  v2 = MEMORY[0xA8B2DC]; /*0x5eac07*/
+  *this = 0; /*0x5eac0c*/
+  do /*0x5eacbb*/
+  {
+    v3 = (wchar_t *)v2[2541]; /*0x5eac10*/
+    if ( v3 /*0x5eac30*/
+      && (v3 == (wchar_t *)g_Lobby_PlayerTeam
+       || v3 == (wchar_t *)g_Lobby_PlayerSide
+       || v3 == (wchar_t *)g_Lobby_PlayerColor) )
+    {
+      Option = *v2; /*0x5eac32*/
+    }
+    else if ( v3 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x5eac3c*/
+    {
+      Option = -2; /*0x5eac3e*/
+    }
+    else if ( v3 == (wchar_t *)g_Lobby_PlayerCount ) /*0x5eac4b*/
+    {
+      Option = -2; /*0x5eac4d*/
+    }
+    else if ( v3 == g_Lobby_PlayerReady ) /*0x5eac5a*/
+    {
+      Option = -2; /*0x5eac5c*/
+    }
+    else
+    {
+      Option = -2; /*0x5eac6a*/
+      if ( v3 != (wchar_t *)g_Lobby_MaxPlayers ) /*0x5eac6f*/
+        Option = SessionClass::GetOption((int)v3); /*0x5eac71*/
+    }
+    sprintf(Buffer, "%d,", Option); /*0x5eac81*/
+    result = 0; /*0x5eac8d*/
+    ++v2; /*0x5eac98*/
+    strcat(this, Buffer); /*0x5eacac*/
+  }
+  while ( (int)v2 < (int)MEMORY[0xA8B2FC] ); /*0x5eacbb*/
+  return result; /*0x5eacc1*/
+
+}
+
+// ==== BACKFILL 0x005EACD0  RefreshLobbyAll_Get_5EACD0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int Gap2Recv_5EACD0::RefreshLobbyAll_Get_5EACD0() {
+
+  int *v2; // ebx
+  wchar_t *v3; // ecx
+  int Option2; // eax
+  int result; // eax
+  char Buffer[4]; // [esp+10h] [ebp-4h] BYREF
+
+  v2 = MEMORY[0xA8B2FC]; /*0x5eacd7*/
+  *this = 0; /*0x5eacdc*/
+  do /*0x5ead8b*/
+  {
+    v3 = (wchar_t *)v2[2533]; /*0x5eace0*/
+    if ( v3 /*0x5ead00*/
+      && (v3 == (wchar_t *)g_Lobby_PlayerTeam
+       || v3 == (wchar_t *)g_Lobby_PlayerSide
+       || v3 == (wchar_t *)g_Lobby_PlayerColor) )
+    {
+      Option2 = *v2; /*0x5ead02*/
+    }
+    else if ( v3 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x5ead0c*/
+    {
+      Option2 = -2; /*0x5ead0e*/
+    }
+    else if ( v3 == (wchar_t *)g_Lobby_PlayerCount ) /*0x5ead1b*/
+    {
+      Option2 = -2; /*0x5ead1d*/
+    }
+    else if ( v3 == g_Lobby_PlayerReady ) /*0x5ead2a*/
+    {
+      Option2 = -2; /*0x5ead2c*/
+    }
+    else
+    {
+      Option2 = -2; /*0x5ead3a*/
+      if ( v3 != (wchar_t *)g_Lobby_MaxPlayers ) /*0x5ead3f*/
+        Option2 = SessionClass::GetOption2((int)v3); /*0x5ead41*/
+    }
+    sprintf(Buffer, "%d,", Option2); /*0x5ead51*/
+    result = 0; /*0x5ead5d*/
+    ++v2; /*0x5ead68*/
+    strcat(this, Buffer); /*0x5ead7c*/
+  }
+  while ( (int)v2 < (int)&byte_A8B31C ); /*0x5ead8b*/
+  return result; /*0x5ead91*/
+
+}
+
+// ==== BACKFILL 0x005EADA0  RefreshLobbyAll_Get_5EADA0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char Gap2Recv_5EADA0::RefreshLobbyAll_Get_5EADA0(SessionClass * hDlg) {
+
+  ObjectClass *v2; // edi
+  int *v3; // esi
+  int ResourceID3CSF; // eax
+  int *v5; // ecx
+  int v6; // ebx
+  int Option; // eax
+  int result; // eax
+
+  v2 = 0; /*0x5eada6*/
+  v3 = (int *)&stru_A8B250.__pad_0[140]; /*0x5eada8*/
+  do /*0x5eae30*/
+  {
+    ResourceID3CSF = GetResourceID3CSF(v2); /*0x5eadaf*/
+    v5 = (int *)v3[2541]; /*0x5eadb4*/
+    v6 = ResourceID3CSF; /*0x5eadba*/
+    if ( v5 && (v5 == (int *)g_Lobby_PlayerTeam || v5 == (int *)g_Lobby_PlayerSide || v5 == (int *)g_Lobby_PlayerColor) ) /*0x5eadd6*/
+    {
+      Option = *v3; /*0x5eadd8*/
+    }
+    else if ( v5 == (int *)g_HouseClass_ObserverFlags ) /*0x5eade2*/
+    {
+      Option = -2; /*0x5eade4*/
+    }
+    else if ( v5 == (int *)g_Lobby_PlayerCount ) /*0x5eadf1*/
+    {
+      Option = -2; /*0x5eadf3*/
+    }
+    else if ( v5 == (int *)g_Lobby_PlayerReady ) /*0x5eae00*/
+    {
+      Option = -2; /*0x5eae02*/
+    }
+    else
+    {
+      Option = -2; /*0x5eae10*/
+      if ( v5 != (int *)g_Lobby_MaxPlayers ) /*0x5eae15*/
+        Option = SessionClass::GetOption(v5); /*0x5eae17*/
+    }
+    result = SetupLobbyFactionSlots((HWND)hDlg, v6, Option); /*0x5eae21*/
+    ++v3; /*0x5eae26*/
+    v2 = (ObjectClass *)((char *)v2 + 1); /*0x5eae29*/
+  }
+  while ( (int)v3 < (int)&stru_A8B250.__pad_0[172] ); /*0x5eae30*/
+  return result; /*0x5eae36*/
+
+}
+
+// ==== BACKFILL 0x005EAE40  RefreshLobbyAll_Setup  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+char Gap2Recv_5EAE40::RefreshLobbyAll_Setup(SessionClass * hDlg) {
+
+  ObjectClass *v2; // edi
+  int *v3; // esi
+  int ResourceID4CSF; // eax
+  SessionClass *v5; // ecx
+  int v6; // ebx
+  int Option2; // eax
+  int result; // eax
+
+  v2 = 0; /*0x5eae46*/
+  v3 = (int *)&stru_A8B250.__pad_0[172]; /*0x5eae48*/
+  do /*0x5eaed0*/
+  {
+    ResourceID4CSF = GetResourceID4CSF(v2); /*0x5eae4f*/
+    v5 = (SessionClass *)v3[2533]; /*0x5eae54*/
+    v6 = ResourceID4CSF; /*0x5eae5a*/
+    if ( v5 /*0x5eae76*/
+      && (v5 == (SessionClass *)g_Lobby_PlayerTeam
+       || v5 == (SessionClass *)g_Lobby_PlayerSide
+       || v5 == (SessionClass *)g_Lobby_PlayerColor) )
+    {
+      Option2 = *v3; /*0x5eae78*/
+    }
+    else if ( v5 == (SessionClass *)g_HouseClass_ObserverFlags ) /*0x5eae82*/
+    {
+      Option2 = -2; /*0x5eae84*/
+    }
+    else if ( v5 == (SessionClass *)g_Lobby_PlayerCount ) /*0x5eae91*/
+    {
+      Option2 = -2; /*0x5eae93*/
+    }
+    else if ( v5 == (SessionClass *)g_Lobby_PlayerReady ) /*0x5eaea0*/
+    {
+      Option2 = -2; /*0x5eaea2*/
+    }
+    else
+    {
+      Option2 = -2; /*0x5eaeb0*/
+      if ( v5 != (SessionClass *)g_Lobby_MaxPlayers ) /*0x5eaeb5*/
+        Option2 = SessionClass::GetOption2(v5); /*0x5eaeb7*/
+    }
+    result = SetupLobbyPlayerSlots((HWND)hDlg, v6, Option2); /*0x5eaec1*/
+    ++v3; /*0x5eaec6*/
+    v2 = (ObjectClass *)((char *)v2 + 1); /*0x5eaec9*/
+  }
+  while ( (int)v3 < (int)&byte_A8B31C ); /*0x5eaed0*/
+  return result; /*0x5eaed6*/
+
 }
 
 // ==== BACKFILL 0x005ED370  Session::StartGame  cls=Session  sig=csp  renamed_refs=0  residual=- ====
-int Session::StartGame()
+int Session::StartGame(HWND hWnd)
 {
-{
-    ObjectClass *v2;
-    int *v3;
-    ObjectClass *v4;
-    if ( !IsRandMap::Sed(*(int *)(g_MultiplayerGameState + 4 * g_GameRulesOptions)) )
-    return Session::PrepareGame(this);
-    v2 = (ObjectClass *)g_UIControlState;
-    if ( g_UIControlState )
-  {
-    ComPtr::Dtor(g_UIControlState);
-    __3_YAXPAX_Z(v2);
-  }
-    v3 = __2_YAPAXI_Z(4u);
-    if ( v3 )
-    v4 = (ObjectClass *)unknown_libname_27(v3);
-    else
-    v4 = 0;
-    g_UIControlState = v4;
-    Surface::LoadToSurfaceSHP((char **)v4, ExistingFileName);
-    if ( !*(int *)g_UIControlState )
-    Session::PrepareGame(this);
-    return InvalidateRect(this, 0, 0);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5ED370)
 }
 
 // ==== BACKFILL 0x005EDD00  ReadChatMessage  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** ReadChatMessage(wchar_t ** a1, HWND a2)
 {
-{
-    size_t v4;
-    size_t v5;
-    wchar_t *v6;
-    void *v8;
-    void *v9;
-    unknown_libname_74(&v8);
-    GetEditControlText(a2, &v8);
-    v4 = 120;
-    if ( !WideString::IsASCII((const wchar_t **)&v8) )
-  {
-    v5 = 0;
-    if ( WideString::Length((const wchar_t **)&v8) )
-    {
-    do
-      {
-    if ( WideString::GetChar((const wchar_t **)&v8, v5) > 0x100u )
-    break;
-    ++v5;
-      }
-    while ( v5 < (unsigned int)WideString::Length((const wchar_t **)&v8) );
-    }
-    v4 = v5 - 1;
-    if ( v4 <= 0x28 )
-    v4 = 40;
-  }
-    if ( (unsigned int)WideString::Length((const wchar_t **)&v8) > v4 )
-  {
-    String::TruncateTo(&v8, v4);
-    v6 = WideString::GetOrEmpty_Alt((wchar_t **)&v8);
-    SendMessageA(a2, 0x4B2u, 0, (LPARAM)v6);
-  }
-    WideString::Assign((wchar_t **)&v9, DataGlobal_831D9C);
-    WString::TrimRight((const wchar_t **)&v8, (const wchar_t **)&v9);
-    DeleteAndZero::Alt(&v9);
-    WideString::AssignFromPtr(a1, (const wchar_t **)&v8);
-    DeleteAndZero::Alt(&v8);
-    return a1;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5EDD00)
 }
 
 // ==== BACKFILL 0x005EDEF0  GetPlayerTypeString  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char ** Player_GetTypeString(char ** a1, wchar_t * a2)
 {
-{
-    if ( a2 == (wchar_t *)g_HouseClass_ObserverFlags )
-  {
-    String::Assign(a1, DataGlobal_831704[0]);
-    return a1;
-  }
-    else if ( a2 == (wchar_t *)g_Lobby_PlayerCount )
-  {
-    String::Assign(a1, DataGlobal_831708[0]);
-    return a1;
-  }
-    else if ( a2 == g_Lobby_PlayerReady )
-  {
-    String::Assign(a1, DataGlobal_83170C[0]);
-    return a1;
-  }
-    else if ( a2 == (wchar_t *)g_Lobby_PlayerTeam )
-  {
-    String::Assign(a1, DataGlobal_831710[0]);
-    return a1;
-  }
-    else if ( a2 == (wchar_t *)g_Lobby_PlayerSide )
-  {
-    String::Assign(a1, DataGlobal_831714[0]);
-    return a1;
-  }
-    else if ( a2 == (wchar_t *)g_Lobby_PlayerColor )
-  {
-    String::Assign(a1, DataGlobal_831718[0]);
-    return a1;
-  }
-    else
-  {
-    if ( a2 == (wchar_t *)g_Lobby_MaxPlayers )
-    String::Assign(a1, DataGlobal_83171C);
-    else
-    String::Assign(a1, DataGlobal_83170C[0]);
-    return a1;
-  }
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5EDEF0)
 }
 
 // ==== BACKFILL 0x005EDFC0  NetworkLobby::DeleteAndZero  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
-wchar_t * NetworkLobby::DeleteAndZero()
+wchar_t * DeleteAndZero()
 {
-{
-    LPARAM v2;
-    LPARAM v4;
-    wchar_t *v5;
-    LPARAM v6;
-    LPARAM v7;
-    LPARAM v8;
-    LPARAM v9;
-    void *v10;
-    if ( WideString::IsASCII(this) )
-  {
-    ToWideStringCharAlt((char **)&v10, this);
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831704[0]) )
-    {
-    v2 = g_HouseClass_ObserverFlags;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v2;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831708[0]) )
-    {
-    v4 = g_Lobby_PlayerCount;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v4;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_83170C[0]) )
-    {
-    v5 = g_Lobby_PlayerReady;
-    DeleteAndZero(&v10);
-    return v5;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831710[0]) )
-    {
-    v6 = g_Lobby_PlayerTeam;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v6;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831714[0]) )
-    {
-    v7 = g_Lobby_PlayerSide;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v7;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_831718[0]) )
-    {
-    v8 = g_Lobby_PlayerColor;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v8;
-    }
-    if ( String::Equals_Alt((const char **)&v10, DataGlobal_83171C) )
-    {
-    v9 = g_Lobby_MaxPlayers;
-    DeleteAndZero(&v10);
-    return (wchar_t *)v9;
-    }
-    DeleteAndZero(&v10);
-  }
-    return 0;
+     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EDFC0.json)
 }
+
+// ==== BACKFILL 0x005EE100  Network_Send  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+bool Gap2Recv_5EE100::Network_Send() {
+
+  return (uint8_t)String::Equals_Alt((String *)this, off_831704) /*0x5ee17e*/
+      || (uint8_t)String::Equals_Alt((String *)this, off_831708)
+      || (uint8_t)String::Equals_Alt((String *)this, off_83170C)
+      || (uint8_t)String::Equals_Alt((String *)this, off_831710)
+      || (uint8_t)String::Equals_Alt((String *)this, off_831714)
+      || (uint8_t)String::Equals_Alt((String *)this, off_831718)
+      || (uint8_t)String::Equals_Alt((String *)this, off_83171C);
+
 }
 
 // ==== BACKFILL 0x005EE200  UpdateObserveButtonWOL  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-void E4Recv_5EE200::UpdateObserveButtonWOL()
+void UpdateObserveButtonWOL(HWND hDlg)
 {
-{
-    HWND DlgItem;
-    IUnknown *v3;
-    IUnknown *v4;
-    HWND v5;
-    IUnknown *v6;
-    wchar_t *StringCSF;
-    IUnknown *v8;
-    wchar_t *v9;
-    if ( this )
-  {
-    DlgItem = GetDlgItem(this, 1888);
-    if ( DlgItem )
-    SendMessageA(DlgItem, 0xF1u, g_MenuStateFlags != 0, 0);
-    if ( g_MenuStateFlags )
-    v3 = (IUnknown *)HashTable::Find(g_DialogHashTable, g_Str_File_wolob_pcx, 0);
-    else
-    v3 = (IUnknown *)HashTable::Find(g_DialogHashTable, DataGlobal_831DD0, 0);
-    v4 = v3;
-    v5 = GetDlgItem(this, 1887);
-    CacheDialogInvalidate(v5, (HWND)v4);
-    v6 = (IUnknown *)GetDlgItem(this, 1741);
-    if ( v6 )
-    {
-    if ( g_MenuStateFlags )
-    StringCSF = GetStringCSF(g_Str_GUI_Observe, 0, g_Str_File_netshare_cpp, 6751);
-    else
-    StringCSF = GetStringCSF(DataGlobal_831DC4, 0, g_Str_File_netshare_cpp, 6753);
-    SendMessageA((HWND)v6, 0x4B2u, 0, (LPARAM)StringCSF);
-    InvalidateRect((HWND)v6, 0, 0);
-    }
-    v8 = (IUnknown *)GetDlgItem(this, 1581);
-    if ( v8 )
-    {
-    if ( g_MenuStateFlags )
-      {
-    v9 = GetStringCSF(g_Str_GUI_Observe, 0, g_Str_File_netshare_cpp, 6762);
-      }
-    else if ( (HWND)Dialog::FindByHandle((void *)0x113) == this )
-      {
-    v9 = GetStringCSF((wchar_t *)DataGlobal_831DB4, 0, g_Str_File_netshare_cpp, 6766);
-      }
-    else
-      {
-    v9 = GetStringCSF(DataGlobal_831DC4, 0, g_Str_File_netshare_cpp, 6768);
-      }
-    SendMessageA((HWND)v8, 0x4B2u, 0, (LPARAM)v9);
-    InvalidateRect((HWND)v8, 0, 0);
-    }
-  }
-}
+    (void)hDlg;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EE200.json)
 }
 
 // ==== BACKFILL 0x005EE6A0  NetworkLobby::UpdateLabels  cls=NetworkLobby  sig=csp  renamed_refs=0  residual=- ====
-void NetworkLobby::UpdateLabels()
+void UpdateLabels(HWND hDlg)
 {
-{
-    char *v2;
-    int *v3;
-    int ResourceID3CSF;
-    LRESULT v5;
-    if ( this )
-  {
-    v2 = 0;
-    v3 = &g_NetworkPlayerName;
-    do
-    {
-    ResourceID3CSF = GetResourceID3CSF(v2);
-    FillComboBoxSides(this, ResourceID3CSF);
-    v5 = SetComboBoxSelection(this, ResourceID3CSF, -1);
-    if ( *v3 )
-    SessionClass::SetOption(*v3, v5);
-    ++v3;
-    ++v2;
-    }
-    while ( (int)v3 < (int)&g_PlayerNameListEnd );
-  }
-}
+    (void)hDlg;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EE6A0.json)
 }
 
 // ==== BACKFILL 0x005EED00  VectorClass::Cleanup3  cls=VectorClass  sig=csp  renamed_refs=0  residual=- ====
-void VectorClass::Cleanup3()
+void VectorClass_flat::Cleanup3()
 {
-if ( this->Items && this->IsAllocated )
-{
-    operator delete(this->Items);
-    this->Items = 0;
-}
-this->IsAllocated = 0;
-this->Capacity = 0;
-}
-
-// ==== BACKFILL 0x005EF190  VectorClass_cptr_MultiMission::j_vt09  cls=NullModemConnClass  sig=csp  renamed_refs=0  residual=- ====
-int VectorClass_cptr_MultiMission::j_vt09(unsigned char * a1, signed int a3, int a4, int a5, int a6, int a7)
-{
-{
-    short *v8;
-    signed int v9;
-    unsigned int *v10;
-    unsigned int v11;
-    int v12;
-    if ( *(int *)&this->__pad_0[76] == -1 )
-    return 0;
-    v8 = (short *)this->field_50;
-    *v8 = -9539;
-    v8[1] = a3;
-    v8[2] = -8529;
-    qmemcpy((void *)(this->field_50 + 6), a1, a3);
-    v9 = 0;
-    v10 = (unsigned int *)(this->field_50 + a3 + 6);
-    v11 = 0;
-    if ( a3 > 0 )
-  {
-    do
-    {
-    v12 = a1[v9++] + (v11 >> 31);
-    v11 = v12 + 2 * v11;
-    }
-    while ( v9 < a3 );
-    v10 = (unsigned int *)(this->field_50 + a3 + 6);
-  }
-    *v10 = v11;
-    *(char *)(a3 + 10 + this->field_50) = 13;
-    WinModemClass::WriteSerial((int)g_ClipboardBuffer, (LPCVOID)this->field_50, (WinModemClass *)(a3 + 11));
-    return 1;
-}
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EED00.json)
 }
 
 // ==== BACKFILL 0x005EF290  VectorClass_cptr_MultiMission::j_vt00  cls=NullModemConnClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
+unsigned int * DynamicVector::j_vt00(char a2)
 {
-{
-    IPXConnClass *v3;
-    v3 = (IPXConnClass *)this->field_50;
-    *(int *)this->__pad_0 = &vt_NullModemConnClass;
-    __3_YAXPAX_Z(v3);
-    ConnectionClass::dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this->__pad_0;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EF290.json)
 }
 
 // ==== BACKFILL 0x005EFF00  sub_5EFF00  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 int sub_5EFF00(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 {
-{
-    int result;
-    unsigned int *WindowLongA;
-    result = BaseDialogProc(hWnd, a2, a3, a4);
-    if ( !result )
-  {
-    if ( a2 == 273 )
-    {
-    WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8);
-    if ( a3 == 2 || a3 > 0x651 && a3 <= 0x655 )
-    *WindowLongA = a3;
-    }
-    else if ( a2 == 1175 )
-    {
-    Network::handleTimeout(hWnd);
-    return 0;
-    }
-    return 0;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EFF00.json)
 }
 
 // ==== BACKFILL 0x005EFF70  Network::handleTimeout  cls=Network  sig=csp  renamed_refs=0  residual=- ====
-HWND Network::handleTimeout()
+HWND HashTable_flat::handleTimeout(HWND hDlg)
 {
-{
-    HWND DlgItem;
-    HWND v3;
-    HWND result;
-    unsigned char v5;
-    v5 = 1;
-    if ( !*(int *)&g_NetworkPlayerBuffer[1156] || *(int *)&g_NetworkPlayerBuffer[1160] == -1 || *(int *)&g_NetworkPlayerBuffer[1164] == -1 || Modem::OpenPort(&g_NetworkPlayerBuffer[5172], (Modem *)&g_NetworkPlayerBuffer[1156]) )
-  {
-    v5 = 0;
-  }
-    DlgItem = GetDlgItem(this, 1619);
-    if ( DlgItem )
-    EnableWindow(DlgItem, v5);
-    v3 = GetDlgItem(this, 1620);
-    if ( v3 )
-    EnableWindow(v3, v5);
-    result = GetDlgItem(this, 1621);
-    if ( result )
-    return (HWND)EnableWindow(result, v5);
-    return result;
-}
+    (void)hDlg; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EFF70.json)
 }

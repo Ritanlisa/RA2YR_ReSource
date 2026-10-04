@@ -31,7 +31,7 @@ namespace gamemd {
 int GameMode::IsValid(unsigned int a2)
 {
 
-  return (!*((unsigned char *)this + 63) || a2 != -2) && a2 < 4; /*0x5d5df2*/
+  return (!this->u32_FC || a2 != -2) && a2 < 4; /*0x5d5df2*/
 
 }
 }

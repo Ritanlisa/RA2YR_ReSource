@@ -48,18 +48,18 @@ AbstractClass * * GadgetClass::SetTooltip(void * String)
   int v3; // eax
   wchar_t *v4; // eax
 
-  if ( *((unsigned int *)this + 10) ) /*0x623564*/
+  if ( this->u32_28 ) /*0x623564*/
   {
-    __3_YAXPAX_Z(*((void **)this + 10)); /*0x62356c*/
-    *((unsigned int *)this + 10) = 0; /*0x623574*/
+    __3_YAXPAX_Z(*((void **)&this->X0)); /*0x62356c*/
+    this->u32_28 = 0; /*0x623574*/
   }
   if ( String ) /*0x623581*/
   {
     if ( *(unsigned int *)(String) ) /*0x623583*/
     {
       v3 = (unsigned int)(wcslen((const wchar_t *)(String)));
-      v4 = (wchar_t *)((unsigned int)((wchar_t *)__2_YAPAXI_Z(2 * v3 + 2)));
-      *((unsigned int *)this + 10) = (unsigned int)(v4); /*0x62359b*/
+      v4 = (wchar_t *)((unsigned int)((wchar_t *)new unsigned char[2 * v3 + 2]));
+      this->u32_28 = (unsigned int)(v4); /*0x62359b*/
       wcscpy(v4,(const wchar_t *)(String)); /*0x62359e*/
     }
   }

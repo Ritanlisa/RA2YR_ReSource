@@ -1415,14 +1415,14 @@ namespace gamemd {
 void* BulletClass::AddVector3(void* a1) {
   *this = *a1 + *this; /*0x46b96a*/
   this->vtable2 = a1[1] + this->vtable2; /*0x46b972*/
-  *(this + 2) = a1[2] + *(this + 2); /*0x46b97b*/
+  this->vtable3 = a1[2] + this->vtable3; /*0x46b97b*/
   return this; /*0x46b97e*/
 }
 }
 // 0x487C70
 namespace gamemd { 
 int TerrainClass::SetFieldF8(int a1) {
-  *((unsigned int *)this + 62) = a1; /*0x487c74*/
+  this->u32_F8 = a1; /*0x487c74*/
   return a1; /*0x487c7a*/
 }
 }
@@ -6553,7 +6553,6 @@ int ParticleSystemClass::UpdateSystem(int a1, int a1_2) {
 // 0x62FF20
 namespace gamemd { 
 int ParticleSystemClass::Write(int a1, void* a1_2) {
-  int *v3; // ebp
   int v4; // edi
   int result; // eax
   int v6; // ecx
@@ -6565,7 +6564,7 @@ int ParticleSystemClass::Write(int a1, void* a1_2) {
   int i; // esi
   unsigned char v15[4]; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = a1; /*0x62ff23*/
+  a1 = a1; /*0x62ff23*/
   v4 = a1; /*0x62ff29*/
   result = BuildingClass::SaveLoad_Register((ObjectClass *)this); /*0x62ff2f*/
   if ( result >= 0 ) /*0x62ff38*/
@@ -6574,47 +6573,47 @@ int ParticleSystemClass::Write(int a1, void* a1_2) {
     {
       ObjectClass::Init((ObjectClass *)v4, (int)&a1); /*0x62ff49*/
       ParticleSystemClass::resetSystemState((ParticleSystemClass *)(v4 + 188), 0, 0); /*0x62ff58*/
-      *(unsigned int *)(v4 + 188) = (void *)&DynamicVectorClass_ParticleClass___vftable; /*0x62ff5d*/
-      *(unsigned int *)(v4 + 208) = 10; /*0x62ff63*/
-      *(unsigned int *)(v4 + 204) = 0; /*0x62ff6a*/
+      v4->u32_2F = (void *)&DynamicVectorClass_ParticleClass___vftable; /*0x62ff5d*/
+      v4->attachedTag = 10; /*0x62ff63*/
+      v4->pad21 = 0; /*0x62ff6a*/
       *(unsigned int *)v4 = (void *)&ParticleSystemClass_vftable; /*0x62ff6d*/
-      *(unsigned int *)(v4 + 4) = (void *)&ParticleSystemClass_vftable; /*0x62ff73*/
-      *(unsigned int *)(v4 + 8) = (void *)&ParticleSystemClass_vftable; /*0x62ff7a*/
-      *(unsigned int *)(v4 + 12) = &off_7EFB70; /*0x62ff81*/
+      v4->vtable2 = (void *)&ParticleSystemClass_vftable; /*0x62ff73*/
+      v4->vtable3 = (void *)&ParticleSystemClass_vftable; /*0x62ff7a*/
+      v4->vtable4 = &off_7EFB70; /*0x62ff81*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 172)); /*0x62ff94*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 228)); /*0x62ffa5*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 224)); /*0x62ffb6*/
-    v6 = *v3; /*0x62ffbb*/
+    v6 = *a1; /*0x62ffbb*/
     a1 = 0; /*0x62ffc7*/
-    result = (*(int (**)(int *, int *, int, unsigned int))(v6 + 12))(v3, &a1, 4, 0); /*0x62ffcb*/
+    result = (*(int (**)(int *, int *, int, unsigned int))(v6 + 12))(a1, &a1, 4, 0); /*0x62ffcb*/
     if ( result >= 0 ) /*0x62ffd0*/
     {
       if ( a1-- == 0 ) /*0x62ffdd*/
       {
   LABEL_14:
-        for ( i = 0; i < *(unsigned int *)(v4 + 204); ++i ) /*0x630065*/
-          ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(unsigned int *)(v4 + 192) + 4 * i)); /*0x630076*/
+        for ( i = 0; i < v4->pad21; ++i ) /*0x630065*/
+          ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4->nextObject + 4 * i)); /*0x630076*/
         return 0; /*0x630086*/
       }
       else
       {
         while ( 1 ) /*0x62ffe5*/
         {
-          v8 = *v3; /*0x62ffe5*/
+          v8 = *a1; /*0x62ffe5*/
           a1 = 0; /*0x62fff5*/
-          result = (*(int (**)(int *, int **, int, unsigned char *))(v8 + 12))(v3, &a1, 4, v15); /*0x62fff9*/
+          result = (*(int (**)(int *, int **, int, unsigned char *))(v8 + 12))(a1, &a1, 4, v15); /*0x62fff9*/
           if ( result < 0 ) /*0x62fffe*/
             break; /*0x62fffe*/
-          v9 = *(unsigned int *)(v4 + 196); /*0x630004*/
-          if ( *(unsigned int *)(v4 + 204) < v9 /*0x630032*/
+          v9 = v4->q031; /*0x630004*/
+          if ( v4->pad21 < v9 /*0x630032*/
             || (*(unsigned char *)(v4 + 201) || !v9)
-            && (v10 = *(unsigned int *)(v4 + 208), v10 > 0)
-            && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(v4 + 188) + 8))(v4 + 188, v9 + v10, 0) )
+            && (v10 = v4->attachedTag, v10 > 0)
+            && (*(uint8_t (**)(int, int, unsigned int))(v4->u32_2F + 8))(v4 + 188, v9 + v10, 0) )
           {
-            v11 = *(unsigned int *)(v4 + 204); /*0x630039*/
-            v12 = *(unsigned int *)(v4 + 192); /*0x63003c*/
-            *(unsigned int *)(v4 + 204) = v11 + 1; /*0x630042*/
+            v11 = v4->pad21; /*0x630039*/
+            v12 = v4->nextObject; /*0x63003c*/
+            v4->pad21 = v11 + 1; /*0x630042*/
             *(unsigned int *)(v12 + 4 * v11) = a1; /*0x630049*/
           }
           if ( !a1-- ) /*0x630050*/

@@ -5301,7 +5301,7 @@ int E4Recv_6B93E0::sub_6B93E0()
   int v5; // eax
   int result; // eax
 
-  v1 = (uint8_t *)this + 2; /*0x6b93e4*/
+  v1 = (uint8_t *)&this->u32_8; /*0x6b93e4*/
   v2 = 256; /*0x6b93e7*/
   do /*0x6b943e*/
   {

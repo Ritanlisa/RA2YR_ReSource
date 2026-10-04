@@ -3,542 +3,141 @@
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
 // ==== BACKFILL 0x004436F0  ObjectClass::HandleRallyPointCommand  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int ObjectClass::HandleRallyPointCommand() {
-{
-      int result;
-      int v3;
-      void *v4;
-      char v5;
-      _BYTE *WaypointCoords;
-      AbstractClass *v7;
-      int v8;
-      char v9;
-      char v10[8];
-      char v11[112];
-      int v12;
-      __int16 *aP1;
-
-      result = v12;
-      if ( v12 == 5 )
-      {
-        v3 = *(_DWORD *)this;
-        v4 = CellCoord::To_CellObj(&DataGlobal_87F7E8, aP1);
-        result = (*(int (__thiscall **)(#377 *, int, void *, _DWORD, _DWORD))(v3 + 888))(this, 1, v4, 0, 0);
-        LOBYTE(result) = 1;
-      }
-      else
-      {
-        if ( v12 == 6 || v12 == 1 )
-        {
-          v5 = 0;
-          if ( !*(_BYTE *)(this->q520 + 5817)
-            || (unsigned __int8)House::IsCurrentPlayer(*((#375 **)this + 135))
-            && g_GameMode_Current
-            && (_BYTE)MCVRedeploy
-            && !this->q2C0 )
-          {
-            if ( *(_DWORD *)(this->q520 + 1032)
-              || this->vt161() )
-            {
-              BuildingClass::SetRallyPoint((int)this, (IUnknown *)aP1, 1);
-            }
-          }
-          else
-          {
-            v5 = 1;
-          }
-          result = *(_DWORD *)(this->q520 + 1032);
-          if ( result && !v5 )
-          {
-            WaypointCoords = ScriptAction::GetWaypointCoords(v10, (IUnknown *)this);
-            v8 = *(_DWORD *)WaypointCoords;
-            v9 = WaypointCoords[4];
-            v7 = (AbstractClass *)this->vt14();
-            result = (int)EventClass::Add(v11, v7, 0x16u, v8, v9);
-            if ( Networking_LastEventIndex < 128 )
-            {
-              qmemcpy(&g_NetworkPacketIndex[111 * Networking_NextPacketIndex], (const void *)result, 0x6Fu);
-              g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime();
-              result = Networking_LastEventIndex + 1;
-              Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F;
-              ++Networking_LastEventIndex;
-            }
-          }
-        }
-        LOBYTE(result) = 1;
-      }
-      return result;
+int ObjectClass::HandleRallyPointCommand() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x4436F0.json */
 }
-} } }
 
-// ==== BACKFILL 0x00445F80  SuperWeapon::CreateUnits  cls=BuildingClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x00445F80  SuperWeapon::CreateUnits  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
 namespace gamemd { int SuperWeapon::CreateUnits() {
+int BuildingClass::CreateUnits()
 {
-      int v2;
-      _DWORD *v3;
-      _DWORD *v4;
-      int v5;
-      int v6;
-      int v7;
-      int v8;
-      HRESULT result;
-      _DWORD *v10;
-      int v11;
-      _DWORD *v12;
-      int v13;
-      double v14;
-      double v15;
-      int v16;
-      LPVOID ppv;
-      LPVOID v18;
-      int v19;
-      int v20;
-      int v21;
-      int v22;
-      double v23;
-      double v24;
-      _DWORD v25[2];
-      int v26;
-      double v27[2];
-      _QWORD v28[3];
-
-      v2 = this->behindAnim;
-      v3 = (_DWORD *)(*(int (__thiscall **)(int, double *))(*(_DWORD *)v2 + 72))(v2, v27);
-      LOWORD(ppv) = *v3 / 256;
-      HIWORD(ppv) = v3[1] / 256;
-      v18 = ppv;
-      LODWORD(v24) = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v18);
-      ppv = 0;
-      v4 = (_DWORD *)*((_DWORD *)g_WeaponTypeConfig + SuperWeaponClass::FindByName(g_INI_Key_NukePayload));
-      v5 = v4[40];
-      v6 = v4[43];
-      v19 = v4[42];
-      LODWORD(v23) = v5;
-      v7 = v4[41];
-      v20 = v6;
-      v8 = this->suspendedMission;
-      v21 = v7;
-      v22 = v8;
-      result = CoCreateInstance(&rclsid, 0, 7u, &IID_IUnknown, &ppv);
-      if ( result >= 0 )
-      {
-        v10 = ppv;
-        result = Particle::Init((int)ppv, SLODWORD(v23), v2, v22, v21, v20, v19, 1);
-        if ( v10 )
-        {
-          (*(void (__thiscall **)(_DWORD *))(*v10 + 212))(v10);
-          v11 = LODWORD(v24);
-          v10[76] = v4;
-          v12 = (_DWORD *)(*(int (__thiscall **)(int, double *))(*(_DWORD *)v11 + 72))(v11, v27);
-          v13 = this->q130;
-          v25[0] = *v12;
-          v25[1] = v12[1];
-          v26 = v12[2];
-          v26 += *(_DWORD *)(*(_DWORD *)(v13 + 160) + 700);
-          v24 = Math::SinCos(1.570748388432313);
-          v24 = Math::ArcTan2(1.570748388432313) * v24 * -1.0;
-          v23 = Math::ArcTan2(1.570748388432313);
-          v14 = Math::ArcTan2(1.570748388432313);
-          v27[1] = v24;
-          *(double *)&v28[1] = v24;
-          v27[0] = v14 * v23 * -1.0;
-          *(double *)v28 = v27[0];
-          v15 = Math::SinCos(1.570748388432313);
-          v16 = *v10;
-          *(double *)&v28[2] = v15 * -1.0;
-          return (*(int (__thiscall **)(_DWORD *, _DWORD *, _QWORD *))(v16 + 496))(v10, v25, v28);
-        }
-      }
-      return result;
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00445F80.json)
 }
 } }
 
-// ==== BACKFILL 0x00447F10  BuildingClass::GetFireError  cls=BuildingClass  sig=csp  renamed_refs=3  residual=- ====
+// ==== BACKFILL 0x00447E00  AnimClass::initAnimation  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
+int AnimClass::initAnimation() {
+  double v1; // st7
+  unsigned int *v3; // esi
+  unsigned int *v4; // eax
+  int result; // eax
+  int v6; // [esp+28h] [ebp-1Ch]
+  unsigned char v7[12]; // [esp+2Ch] [ebp-18h] BYREF
+  unsigned char v8[12]; // [esp+38h] [ebp-Ch] BYREF
+  int v9; // [esp+48h] [ebp+4h]
+
+  v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v9 + 72))(v9, v7); /*0x447e1a*/
+  v4 = (unsigned int *)(*((int (**)(BuildingClass *, unsigned char *, int))this->vtable1 + 42))(this, v8, v9); /*0x447e24*/
+  v6 = v4[2] - v3[2]; /*0x447e48*/
+  Math::Sqrt( /*0x447e74*/
+    (double)(*v4 - *v3) * (double)(*v4 - *v3)
+  + (double)v6 * (double)v6
+  + (double)(v4[1] - v3[1]) * (double)(v4[1] - v3[1]));
+  IDA_LOWORD(result) = Math::RoundToInt(v1); /*0x447e7c*/
+  return result; /*0x447e81*/
+}
+
+// ==== BACKFILL 0x00447F10  BuildingClass::GetFireError  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd {  // G42.33 批 3: BuildingClass 载体在 gamemd (structure/building.hpp)
 int BuildingClass::GetFireError()
 {
-BuildingTypeClass* typePtr = this->Type;
-if (((typePtr->CanBeOccupied && !typePtr->CanOccupyFire)) && !this->MissionStubReturnZero6() || ObjectClass::HasLocation(this))
-    return 5;
-if (this->Type->EMPulseCannon)
-    return 6;
-if (this->GetCurrentMission() == 19 || this->GetCurrentMission() == 18)
-    return 5;
-if (!this->IsPoweredActive())
-    return 6;
-if (this->DelayBeforeFiring)
-    return 3;
-int occupyHeightArg;
-int delayedArg;
-int fireError = TriggerTypeClass::ReadINI(this, occupyHeightArg, delayedArg);
-if (fireError)
-    return fireError;
-if (!this->HasOccupantAudio())
-    return fireError;
-int angleOut;
-int effectArg;
-int turretAngle = this->GetTurretAngle(&angleOut, effectArg);
-int angleLimit = this->Type->TurretAnimIsVoxel != 0 ? 0 : 8;
-short facingOut;
-int* facingValue = ProgressTimer::GetValue((ProgressTimer*)((char*)this + 904), &facingOut);
-short facingDelta = (short)(angleLimit << 8);
-if (abs16(facingDelta) >= (int)abs16((int)*(unsigned short*)facingValue - turretAngle))
-    return fireError;
-return 2;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00447F10.json)
+}
+} // namespace ra2::game
+
+// ==== BACKFILL 0x004494C0  BuildingClass::CanBeSold  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
+int BuildingClass::CanBeSold()
+{
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004494C0.json)
+}
+} // namespace gamemd
+
+// ==== BACKFILL 0x00449540  AnimClass::resetAnimation  cls=AnimClass  sig=csp  renamed_refs=0  residual=- ====
+int AnimClass::resetAnimation()
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00449540.json)
 }
 
-// ==== BACKFILL 0x00449410  BuildingClass::GetBoundingSizeExt  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
-int __thiscall BuildingClass::GetBoundingSizeExt(#377 *this)
+// ==== BACKFILL 0x00449A50  AnimClass::setLoopCount  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
+int AnimClass::setLoopCount()
 {
-  return (*(_BYTE *)(this->Type + 5829) != 0 ? 0x20 : 0)
-       - (*(_BYTE *)(this->Type + 5815) != 0 ? 0x10 : 0)
-       + ObjectClass::GetBoundingSize(this);
-}
-
-// ==== BACKFILL 0x004494C0  BuildingClass::CanBeSold  cls=BuildingClass  sig=csp  renamed_refs=4  residual=- ====
-bool BuildingClass::CanBeSold()
-{
-bool result;
-if (ObjectClass::HasLocation(this)) {
-    result = false;
-} else {
-    if (this->Type->Unsellable) {
-        result = false;
-    } else {
-        if (this->BuildingClass_field_bool_6E9) {
-            if (this->BuildingClass_field_int_534) {
-                if (this->GetCurrentMission() != 19) {
-                    if (this->GetCurrentMission() != 18)
-                        return true;
-                }
-            }
-        }
-        if (!this->Type->FirestormWall || this->owner->firestormActive)
-            result = false;
-        else
-            result = true;
-    }
-}
-return result;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00449A50.json)
 }
 
 // ==== BACKFILL 0x0044B760  AbstractClass::COMStub_133  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass_COMStub_133()
+int AbstractClass::AbstractClass_COMStub_133()
 {
-  return IPersistStream::StubReturn450();
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x44B760)
 }
 
 // ==== BACKFILL 0x0044B770  AbstractClass::COMStub_137  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass_COMStub_137()
+int AbstractClass::AbstractClass_COMStub_137()
 {
-  return AircraftClass::CheckMissionStatus();
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x44B770)
 }
 
-// ==== BACKFILL 0x0044D5D0  BuildingClass::CaptureBuilding  cls=BuildingClass  sig=csp  renamed_refs=1  residual=- ====
-bool BuildingClass::CaptureBuilding(HouseClass* newOwner)
+// ==== BACKFILL 0x0044D5D0  BuildingClass::CaptureBuilding  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
+int BuildingClass::CaptureBuilding()
 {
-bool result;
-if (TechnoClass::SetHouseFlag(this, newOwner)) {
-    if (!g_IKnowWhatImDoing) {
-        this->owner->lastBuiltVehicleType = this->Type->ArrayIndex;
-        this->owner->unknownBool246 = 1;
-    }
-    HouseClass* ownerHouse = this->owner;
-    ownerHouse->recheckTechTree = 1;
-    if (!Team::AllMembersValid(this)
-        && House::IsCurrentPlayer(ownerHouse)
-        && this->GetCurrentMission() != 18
-        && this->queuedMission != 18
-        || !Team::AllMembersValid(this)
-        && !House::IsCurrentPlayer(ownerHouse)
-        && newOwner == ownerHouse
-        && this->GetCurrentMission() != 18)
-        this->CreateUnits();
-    result = true;
-} else {
-    result = false;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0044D5D0.json)
 }
-return result;
-}
+} // namespace gamemd
 
 // ==== BACKFILL 0x0044D700  BuildingClass::GetAmmoCountScaled  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 int BuildingClass::GetAmmoCountScaled()
 {
-    // IDA 0x44D700. Type@+0x520, PipScale@+0x3D4, HasTiberiumAmmo@+0x16BC,
-    // Owner@+0x21C, vtable[29]=GetPipMax(+0x74), RoundToInt@0x7C5F00.
-    BuildingTypeClass* buildingType = this->Type;
-    if (buildingType->PipScale != PipScale::Tiberium)
-        return TechnoClass::GetAmmoCount();
-    if (!buildingType->HasTiberiumAmmo)
-        return 0;
-    double repairRatio = BuildingClass::checkRepairEligibility(this->Owner);
-    int maxPips = buildingType->GetPipMax();
-    return Math::RoundToInt((double)maxPips * repairRatio);
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0044D700.json)
 }
+} // namespace gamemd
 
 // ==== BACKFILL 0x0044D760  BuildingClass::PushScriptAction  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int BuildingClass::PushScriptAction() {
+int BuildingClass::PushScriptAction()
 {
-    int result;
-    int *v3;
-    int v4;
-    char v5[12];
-    int v6;
-    int v7;
-    result = v6;
-    if ( v6 )
-  {
-    result = House::IsHumanPlayer(*((HouseClass **)(this) + 135));
-    if ( (char)result )
-    {
-    v3 = (int *)this->ClearPointerRefs(v5, 0);
-    LOWORD(v7) = *v3 / 256;
-    HIWORD(v7) = v3[1] / 256;
-    v4 = v7;
-    return ScriptActionQueue::PushNext(&v4);
-    }
-  }
-    return result;
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0044D760.json)
 }
-} }
 
 // ==== BACKFILL 0x0044E3A0  BuildingClass::CheckOverlapWithOthers  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
-bool BuildingClass::CheckOverlapWithOthers() {
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
+char BuildingClass::CheckOverlapWithOthers()
 {
-    int v2;
-    short *v3;
-    int *v4;
-    char v6;
-    int v7;
-    int v8;
-    v2 = *(int *)this->SetZ(&v8);
-    v3 = (short *)this->CheckPlayerOwned(0);
-    v6 = 0;
-    while ( *v3 != 0x7FFF || v3[1] != 0x7FFF )
-  {
-    LOWORD(v7) = v2 + *v3;
-    HIWORD(v7) = HIWORD(v2) + v3[1];
-    v8 = v7;
-    v3 += 2;
-    v4 = (int *)*((int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v8) + 57);
-    if ( v4 )
-    {
-    while ( this == v4 )
-      {
-    v4 = (int *)v4[12];
-    if ( !v4 )
-        break;
-      }
-      v6 = v6 || v4 != 0;
-    }
-  }
-    return v6;
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0044E3A0.json)
 }
-
-/* ASM:
-sub     esp, 0Ch
-push    ebx
-push    ebp
-push    esi
-push    edi
-mov     edi, ecx
-lea     ecx, [esp+1Ch+var_4]
-mov     eax, [edi]
-push    ecx
-mov     ecx, edi
-call    dword ptr [eax+1B8h]
-mov     ebp, [eax]
-mov     edx, [edi]
-push    0
-mov     ecx, edi
-mov     [esp+20h+var_8], ebp
-call    dword ptr [edx+108h]
-mov     bx, word ptr [esp+1Ch+var_8+2]
-mov     esi, eax
-mov     byte ptr [esp+1Ch+var_C+3], 0
-
-loc_44E3D6:                             ; CODE XREF: BuildingClass__CheckOverlapWithOthers+7A↓j
-; BuildingClass__CheckOverlapWithOthers+87↓j ...
-mov     ax, [esi]
-cmp     ax, 7FFFh
-jnz     short loc_44E3E5
-cmp     [esi+2], ax
-jz      short loc_44E430
-
-loc_44E3E5:                             ; CODE XREF: BuildingClass__CheckOverlapWithOthers+3D↑j
-add     eax, ebp
-lea     edx, [esp+1Ch+var_4]
-mov     word ptr [esp+1Ch+var_8], ax
-mov     ax, [esi+2]
-add     ax, bx
-push    edx
-mov     word ptr [esp+20h+var_8+2], ax
-mov     ecx, [esp+20h+var_8]
-mov     [esp+20h+var_4], ecx
-mov     ecx, 87F7E8h
-add     esi, 4
-call    CellCoord__To_CellObj
-mov     eax, [eax+0E4h]
-test    eax, eax
-jz      short loc_44E3D6
-
-loc_44E41C:                             ; CODE XREF: BuildingClass__CheckOverlapWithOthers+85↓j
-cmp     edi, eax
-jnz     short loc_44E429
-mov     eax, [eax+30h]
-test    eax, eax
-jnz     short loc_44E41C
-jmp     short loc_44E3D6
-; ---------------------------------------------------------------------------
-
-loc_44E429:                             ; CODE XREF: BuildingClass__CheckOverlapWithOthers+7E↑j
-mov     byte ptr [esp+1Ch+var_C+3], 1
-jmp     short loc_44E3D6
-; ---------------------------------------------------------------------------
-
-loc_44E430:                             ; CODE XREF: BuildingClass__CheckOverlapWithOthers+43↑j
-mov     al, byte ptr [esp+1Ch+var_C+3]
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 0Ch
-retn
-*/
-}
+} // namespace gamemd
 
 // ==== BACKFILL 0x0044F640  BuildingClass::GetFactoryPosition  cls=BuildingClass  sig=csp  renamed_refs=0  residual=- ====
-CoordStruct* BuildingClass::GetFactoryPosition(CoordStruct* out) const {
-BuildingTypeClass* buildingType = this->Type;
-CoordStruct* coords = &this->location;
-if ( buildingType->ExitCoord.X == 0 && buildingType->ExitCoord.Y == 0 && buildingType->ExitCoord.Z == 0 )
+namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
+int BuildingClass::GetFactoryPosition() const
 {
-    CoordStruct exitCoords;
-    CoordStruct* result = this->GetExitCoords(&exitCoords, 0);
-    out->X = result->X;
-    out->Y = result->Y;
-    out->Z = result->Z;
-    return out;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0044F640.json)
 }
-else
-{
-    out->X = coords->X + buildingType->ExitCoord.X;
-    out->Y = coords->Y + buildingType->ExitCoord.Y;
-    out->Z = coords->Z + buildingType->ExitCoord.Z;
-    return out;
-}
-/* ASM:
-mov     eax, [ecx+520h]
-sub     esp, 0Ch
-mov     edx, [eax+0EC8h]
-push    esi
-cmp     edx, ds:89C848h
-jnz     short loc_44F678
-mov     edx, [eax+0ECCh]
-mov     esi, ds:89C84Ch
-cmp     edx, esi
-jnz     short loc_44F678
-mov     edx, [eax+0ED0h]
-mov     esi, ds:89C850h
-cmp     edx, esi
-jz      short loc_44F6B5
-
-loc_44F678:                             ; CODE XREF: BuildingClass__GetFactoryPosition+16↑j
-; BuildingClass__GetFactoryPosition+26↑j
-add     ecx, 9Ch
-push    edi
-mov     edx, [ecx]
-mov     esi, [ecx+4]
-mov     edi, [ecx+8]
-mov     ecx, [eax+0EC8h]
-add     ecx, edx
-mov     edx, [eax+0ECCh]
-add     edx, esi
-mov     esi, [eax+0ED0h]
-mov     eax, [esp+14h+arg_0]
-add     esi, edi
-mov     edi, eax
-mov     [edi], ecx
-mov     [edi+4], edx
-mov     [edi+8], esi
-pop     edi
-pop     esi
-add     esp, 0Ch
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_44F6B5:                             ; CODE XREF: BuildingClass__GetFactoryPosition+36↑j
-mov     eax, [ecx]
-lea     edx, [esp+10h+var_C]
-push    edx
-call    dword ptr [eax+48h]
-mov     ecx, eax
-mov     eax, [esp+10h+arg_0]
-mov     edx, eax
-mov     esi, [ecx]
-mov     [edx], esi
-mov     esi, [ecx+4]
-mov     [edx+4], esi
-pop     esi
-mov     ecx, [ecx+8]
-mov     [edx+8], ecx
-add     esp, 0Ch
-retn    8
-*/
-    return {}; // TODO stub - translate quarantined IDA block above
-}
+} // namespace gamemd
 
 // ==== BACKFILL 0x0044F6E0  sub_44F6E0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
+unsigned int * sub_44F6E0(unsigned int * a2, int a3)
 {
-{
-    int v3;
-    int v4;
-    int *v5;
-    int v6;
-    int v7;
-    char v9[12];
-    int v10;
-    v3 = 6;
-    v4 = 5;
-    v5 = (int *)this->Vf72(v9);
-    v6 = *v5 / 256;
-    v7 = v5[1] / 256;
-    if ( a3 )
-  {
-    if ( a3 == 2 )
-    v4 = 0;
-  }
-    else
-  {
-    v3 = 0;
-  }
-    if ( (short)v6 - DataGlobal_87F90C > g_AircraftTrackerPool / 2 )
-    v3 = -v3;
-    if ( (short)v7 - DataGlobal_87F910 > g_AircraftTrackerState / 2 )
-    v4 = -v4;
-    LOWORD(v10) = v6 + v3;
-    HIWORD(v10) = v7 + v4;
-    *a2 = v10;
-    return a2;
-}
+    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x0044F6E0.json)
 }
 
 // ==== BACKFILL 0x0044FE60  sub_44FE60  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int INIClass::sub_44FE60()
 {
-{
-    int result;
-    int i;
-    int v4;
-    INIClass::ClearSection((int)this, (INIClass *)aStructures, 0);
-    result = *(int *)&g_NetworkPlayerBuffer[5396];
-    for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer[5396]; ++i )
+
+  int result; // eax
+  int i; // esi
+  int v4; // ecx
+
+  INIClass::ClearSection((int)this, (int)aStructures, 0); /*0x44fe6c*/
+  result = dword_A8EB50; /*0x44fe71*/
+  for ( i = 0; i < dword_A8EB50; ++i ) /*0x44fe7a*/
   {
-    v4 = *(int *)(*(int *)&g_NetworkPlayerBuffer[5384] + 4 * i);
-    if ( !*(char *)(v4 + 129) && !*(char *)(*(int *)(v4 + 1312) + 5823) )
-    BuildingClass::ReadConstructionData(v4, this);
-    result = *(int *)&g_NetworkPlayerBuffer[5396];
+    v4 = *((unsigned int *)dword_A8EB44 + i); /*0x44fe82*/
+    if ( !*(unsigned char *)(v4 + 129) && !*(unsigned char *)(*(unsigned int *)(v4 + 1312) + 5823) ) /*0x44fe95*/
+      BuildingClass::ReadConstructionData(v4, this); /*0x44fea0*/
+    result = dword_A8EB50; /*0x44fea5*/
   }
-    return result;
-}
+  return result; /*0x44feaf*/
+
 }

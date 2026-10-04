@@ -66,9 +66,9 @@ void ConnectionClass::dtor()
   void *v2; // eax
   void (***PlayerIndex)(unsigned int, int); // ecx
 
-  v2 = (void *)*((unsigned int *)this + 8); /*0x48bee3*/
+  v2 = (void *)this->Active; /*0x48bee3*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ConnectionClass); /*0x48bee6*/
-  __3_YAXPAX_Z(v2); /*0x48beed*/
+  delete v2; /*0x48beed*/
   PlayerIndex = (void (***)(unsigned int, int))this->PlayerIndex; /*0x48bef2*/
   if ( PlayerIndex ) /*0x48befb*/
     (**PlayerIndex)((unsigned int)PlayerIndex, 1); /*0x48bf01*/

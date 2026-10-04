@@ -33,30 +33,29 @@ int WinModemClass::ReadSerial()
   bool v10; // zf
   void *v11; // ecx
   BOOL v12; // eax
-  bool v13; // dl
   DWORD i; // eax
   DWORD NumberOfBytesTransferred; // [esp+10h] [ebp-18h] BYREF
   DWORD v16; // [esp+14h] [ebp-14h]
   DWORD Errors; // [esp+18h] [ebp-10h] BYREF
   struct _COMSTAT Stat; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = *((unsigned char *)this + 80); /*0x77498b*/
+  v2 = this->q014; /*0x77498b*/
   v16 = 0; /*0x77498e*/
   if ( v2 ) /*0x774994*/
   {
-    v3 = *(void **)((char *)this + 92); /*0x774996*/
+    v3 = *(void **)((char *)&this->q0242); /*0x774996*/
     NumberOfBytesTransferred = 0; /*0x7749a4*/
-    if ( GetOverlappedResult(v3, (LPOVERLAPPED)((char *)this + 40), &NumberOfBytesTransferred, 0) ) /*0x7749a8*/
+    if ( GetOverlappedResult(v3, (LPOVERLAPPED)((char *)&this->u32_100), &NumberOfBytesTransferred, 0) ) /*0x7749a8*/
     {
       v4 = NumberOfBytesTransferred; /*0x7749b2*/
-      *((unsigned char *)this + 80) = 0; /*0x7749b6*/
+      this->q014 = 0; /*0x7749b6*/
       if ( v4 ) /*0x7749bb*/
       {
         v5 = 0; /*0x7749bd*/
         do /*0x7749e4*/
         {
-          *(unsigned char *)(*((unsigned int *)this + 9) + *((unsigned int *)this + 22)) = *(unsigned char *)(this + v5++ + 108); /*0x7749cd*/
-          *((unsigned int *)this + 22) = ((uint16_t)*((unsigned int *)this + 22) + 1) & 0x1FFF; /*0x7749db*/
+          *(unsigned char *)(this->q024 + this->u32_58) = *(unsigned char *)(this + v5++ + 108); /*0x7749cd*/
+          this->u32_58 = ((uint16_t)this->u32_58 + 1) & 0x1FFF; /*0x7749db*/
         }
         while ( v5 < NumberOfBytesTransferred ); /*0x7749e4*/
         v16 = NumberOfBytesTransferred; /*0x7749e6*/
@@ -69,16 +68,16 @@ int WinModemClass::ReadSerial()
       ((gamemd::Debug *)this)->Log(); /*0x774a09*/
     }
   }
-  ResetEvent(*(HANDLE *)((char *)this + 56)); /*0x774a15*/
+  ResetEvent(*(HANDLE *)((char *)&this->q0146)); /*0x774a15*/
   cbInQue = 1; /*0x774a29*/
-  if ( ClearCommError(*(HANDLE *)((char *)this + 92), &Errors, &Stat) ) /*0x774a2e*/
+  if ( ClearCommError(*(HANDLE *)((char *)&this->q0242), &Errors, &Stat) ) /*0x774a2e*/
   {
     v8 = Errors; /*0x774a38*/
     cbInQue = Stat.cbInQue; /*0x774a3c*/
     cbOutQue = Stat.cbOutQue; /*0x774a40*/
     v10 = Errors == 0; /*0x774a44*/
-    *((unsigned int *)this + 7) = Stat.cbInQue; /*0x774a46*/
-    *((unsigned int *)this + 8) = cbOutQue; /*0x774a49*/
+    this->q01C = Stat.cbInQue; /*0x774a46*/
+    this->u32_20 = cbOutQue; /*0x774a49*/
     if ( !v10 ) /*0x774a4c*/
     {
       ((WinModemClass *)((WinModemClass *)this))->LogCommErrors(v8, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774a62*/
@@ -96,29 +95,29 @@ int WinModemClass::ReadSerial()
   }
   while ( 1 ) /*0x774a86*/
   {
-    v11 = *(void **)((char *)this + 92); /*0x774a86*/
+    v11 = *(void **)((char *)&this->q0242); /*0x774a86*/
     NumberOfBytesTransferred = 0; /*0x774a95*/
-    v12 = ReadFile(v11, (LPVOID)((char *)this + 108), cbInQue, &NumberOfBytesTransferred, (LPOVERLAPPED)((char *)this + 40)); /*0x774a99*/
-    v13 = v12; /*0x774aa1*/
+    v12 = ReadFile(v11, (LPVOID)((char *)&this->u32_288), cbInQue, &NumberOfBytesTransferred, (LPOVERLAPPED)((char *)&this->u32_100)); /*0x774a99*/
+    v12 = v12; /*0x774aa1*/
     if ( !v12 ) /*0x774aa6*/
       break; /*0x774aa6*/
     if ( NumberOfBytesTransferred ) /*0x774aae*/
     {
       for ( i = 0; i < NumberOfBytesTransferred; ++i ) /*0x774ab0*/
       {
-        *(unsigned char *)(*((unsigned int *)this + 9) + *((unsigned int *)this + 22)) = *(unsigned char *)(i + (char *)this + 108); /*0x774abf*/
-        *((unsigned int *)this + 22) = ((uint16_t)*((unsigned int *)this + 22) + 1) & 0x1FFF; /*0x774acd*/
+        *(unsigned char *)(this->q024 + this->u32_58) = *(unsigned char *)(i + (char *)&this->u32_288); /*0x774abf*/
+        this->u32_58 = ((uint16_t)this->u32_58 + 1) & 0x1FFF; /*0x774acd*/
       }
       v16 += NumberOfBytesTransferred; /*0x774ada*/
     }
     cbInQue = 1; /*0x774ae1*/
-    if ( !v13 ) /*0x774ae6*/
+    if ( !v12 ) /*0x774ae6*/
       return v16 != 0; /*0x774ae6*/
   }
   if ( GetLastError() == 997 ) /*0x774af5*/
   {
     v10 = v16 == 0; /*0x774afd*/
-    *((unsigned char *)this + 80) = 1; /*0x774aff*/
+    this->q014 = 1; /*0x774aff*/
     return !v10; /*0x774b0d*/
   }
   ((gamemd::Debug *)this)->Log(); /*0x774b14*/
@@ -163,7 +162,6 @@ int WinModemClass::ReadBytes(unsigned char * a2, int a3)
 }
 } // namespace gamemd
 // 0x774C70
-namespace gamemd {
 int WinModemClass::WriteSerial(LPCVOID lpBuffer, DWORD aP2)
 {
 
@@ -172,7 +170,7 @@ int WinModemClass::WriteSerial(LPCVOID lpBuffer, DWORD aP2)
 
   ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x774c74*/
   result = WriteFile( /*0x774c90*/
-             (HANDLE)*((char *)this + 23),
+             (HANDLE)this->u32_17,
              lpBuffer,
              aP2,
              &NumberOfBytesWritten,
@@ -181,7 +179,7 @@ int WinModemClass::WriteSerial(LPCVOID lpBuffer, DWORD aP2)
   {
     result = GetLastError(); /*0x774c9a*/
     if ( result == 997 ) /*0x774ca5*/
-      *((unsigned char *)this + 81) = 1; /*0x774ca7*/
+      this->u32_51 = 1; /*0x774ca7*/
     else
       return ((gamemd::Debug *)this)->Log(); /*0x774cb7*/
   }
@@ -206,7 +204,7 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
 
   ((gamemd::Debug *)this)->Log(); /*0x774f5e*/
   strcpy(Buffer,(const char *)(aAtd)); /*0x774f83*/
-  if ( *((unsigned int *)this + 24) ) /*0x774f87*/
+  if ( this->u32_18 ) /*0x774f87*/
   {
     ((gamemd::Debug *)this)->Log(); /*0x774fd5*/
     strcat(Buffer, (const char *)aP); /*0x775002*/
@@ -223,11 +221,11 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
   ((gamemd::Debug *)this)->Log(); /*0x775084*/
   v3 = strlen(Buffer) + 1; /*0x775095*/
   ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x77509e*/
-  if ( !WriteFile(*((HANDLE *)this + 23), Buffer, v3 - 1, (LPDWORD)&NumberOfBytesWritten, (LPOVERLAPPED)(unsigned int *)this + 3) ) /*0x7750b6*/
+  if ( !WriteFile(*((HANDLE *)&this->q0083), Buffer, v3 - 1, (LPDWORD)&NumberOfBytesWritten, (LPOVERLAPPED)(unsigned int *)this + 3) ) /*0x7750b6*/
   {
     if ( GetLastError() == 997 ) /*0x7750cb*/
     {
-      *((unsigned char *)this + 81) = 1; /*0x7750cf*/
+      this->u32_51 = 1; /*0x7750cf*/
       return ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x7750df*/
     }
     ((gamemd::Debug *)this)->Log(); /*0x7750e9*/
@@ -248,7 +246,7 @@ namespace gamemd {
 int WinModemClass::ddtor(int a2)
 {
 
-  *((unsigned int *)this + 25) = a2; /*0x7754a4*/
+  this->u32_64 = a2; /*0x7754a4*/
   return a2; /*0x7754a7*/
 
 }
@@ -258,7 +256,7 @@ namespace gamemd {
 int WinModemClass::HangUp(int a2)
 {
 
-  *((unsigned int *)this + 26) = a2; /*0x7754b4*/
+  this->u32_68 = a2; /*0x7754b4*/
   return a2; /*0x7754b7*/
 
 }

@@ -2,1414 +2,707 @@
 // member names (tools/csp_export/backfill_completed.py, mechanical).
 // Reference substrate for RA2MCP step-6 rework; not compiled.
 
-// ==== BACKFILL 0x004101C0  AbstractClass::InitVtables  cls=AbstractClass  sig=csp  renamed_refs=5  residual=- ====
-namespace ra2 { namespace game { void* AbstractClass::InitVtables(int a1) {
-{
-    this->vtable3 = &vt_INoticeSink;
-    this->vtable4 = &vt_INoticeSource;
-    *(void**)this = vt_AbstractClass;
-    this->vtable2 = (unsigned int)vt_AbstractClass;
-    this->vtable3 = (unsigned int)vt_AbstractClass;
-    this->vtable4 = &vt_AbstractClass;
-    return this;
+// ==== BACKFILL 0x004101C0  AbstractClass::InitVtables  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
+void* AbstractClass::InitVtables(int a1) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x4101C0.json */
 }
-} } }
 
-// ==== BACKFILL 0x004101F0  AbstractClass::DTOR  cls=AbstractClass  sig=csp  renamed_refs=3  residual=- ====
-void AbstractClass::DTOR()
+// ==== BACKFILL 0x004101F0  AbstractClass::DTOR  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
+int GScreenClass::DTOR()
 {
-{
-    *(void**)this = vt_AbstractClass;
-    this->vtable2 = (unsigned int)vt_AbstractClass;
-    this->vtable3 = (unsigned int)vt_AbstractClass;
-    this->vtable4 = &vt_AbstractClass;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004101F0.json)
 }
 
 // ==== BACKFILL 0x00410210  INoticeSink::Dispatch  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int INoticeSink::Dispatch(int a1)
+int INoticeSink::Dispatch(int a1, void *a2, void *a3, void *a4, void *a5)
 {
-{
-    return (*(int (__thiscall **)(int))(*(int *)(a1 - 4) + 44))(a1 - 4);
-}
+
+  return (*(int (**)(char *))(*((unsigned int *)a1 - 1) + 44))((char *)a1 - 4); /*0x41021d*/
+
 }
 
 // ==== BACKFILL 0x00410220  AbstractClass::GetVtable3  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::GetVtable3(AbstractClass * aP0)
 {
-{
-    return *(int *)&aP0->__pad_0[12];
-}
+
+  return (int)aP0->vtable3; /*0x410227*/
+
 }
 
 // ==== BACKFILL 0x00410230  AbstractClass::GenerateUniqueID  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass::GenerateUniqueID(int a1)
+int GScreenClass::GenerateUniqueID(int a1)
 {
-{
-    int result;
-    if ( g_ScenarioClass_Instance )
-  {
-    result = AbstractClass::updateAITimer();
-    *(int *)(a1 + 12) = result;
-  }
-    else
-  {
-    *(int *)(a1 + 12) = 0;
-    return 0;
-  }
-    return result;
-}
+    (void)a1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00410230.json)
 }
 
 // ==== BACKFILL 0x00410260  AbstractClass::QueryInterface  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
-  if ( !ppv )
-    return E_POINTER;
-  *ppv = 0;
-  if ( !memcmp(&iid, &IID_IUnknown, 0x10u) )
-    *ppv = this;
-  if ( !memcmp(&iid, &IID_IPersistStream, 0x10u) )
-    *ppv = this;
-  if ( !memcmp(&iid, &IID_IPersist, 0x10u) )
-    *ppv = this;
-  if ( !memcmp(&iid, &IID_IRTTITypeInfo, 0x10u) ) {
-    // MI interface subobject @ +4
-    if ( this )
-      *ppv = (IRTTITypeInfo*)this;
-    else
-      *ppv = 0;
-  }
-  if ( !*ppv )
-    return E_NOINTERFACE;
-  this->COMStub_AddRef();  // vtable[0][1] @0x7E1F54 -> 0x410300 (indirect dispatch)
-  return S_OK;
-
-/* ASM:
-this            = dword ptr  4
-iid             = dword ptr  8
-ppv             = dword ptr  0Ch
-
-mov     eax, [esp+ppv]
-
-AbstractClass__sub_410264:
-push    ebx
-test    eax, eax
-jnz     short loc_410272
-mov     eax, 80004003h
-
-AbstractClass__sub_41026E:
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_410272:                             ; CODE XREF: AbstractClass__QueryInterface+7↑j
-mov     edx, [esp+4+iid]
-push    esi
-push    edi
-mov     ecx, 4
-mov     edi, offset IID_IUnknown
-mov     esi, edx
-xor     ebx, ebx
-mov     dword ptr [eax], 0
-mov     ebx, [esp+0Ch+this]
-repe cmpsd
-jnz     short loc_410296
-
-AbstractClass__sub_410294:
-mov     [eax], ebx
-
-loc_410296:                             ; CODE XREF: AbstractClass__QueryInterface+32↑j
-push    ebp
-mov     ecx, 4
-mov     edi, offset IID_IPersistStream
-mov     esi, edx
-xor     ebp, ebp
-repe cmpsd
-jnz     short loc_4102AB
-mov     [eax], ebx
-
-loc_4102AB:                             ; CODE XREF: AbstractClass__QueryInterface+47↑j
-mov     ecx, 4
-mov     edi, offset IID_IPersist
-mov     esi, edx
-xor     ebp, ebp
-repe cmpsd
-pop     ebp
-jnz     short loc_4102C0
-mov     [eax], ebx
-
-loc_4102C0:                             ; CODE XREF: AbstractClass__QueryInterface+5C↑j
-mov     esi, edx
-
-AbstractClass__sub_4102C2:
-mov     ecx, 4
-mov     edi, offset IID_IRTTITypeInfo
-xor     edx, edx
-repe cmpsd
-pop     edi
-pop     esi
-jnz     short loc_4102E1
-test    ebx, ebx
-
-AbstractClass__sub_4102D6:
-jz      short loc_4102DD
-lea     ecx, [ebx+4]
-jmp     short loc_4102DF
-; ---------------------------------------------------------------------------
-
-loc_4102DD:                             ; CODE XREF: AbstractClass__QueryInterface:AbstractClass__sub_4102D6↑j
-xor     ecx, ecx
-
-loc_4102DF:                             ; CODE XREF: AbstractClass__QueryInterface+7B↑j
-mov     [eax], ecx
-
-loc_4102E1:                             ; CODE XREF: AbstractClass__QueryInterface+72↑j
-cmp     dword ptr [eax], 0
-
-AbstractClass__sub_4102E4:
-jnz     short loc_4102EF
-mov     eax, 80004002h
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_4102EF:                             ; CODE XREF: AbstractClass__QueryInterface:AbstractClass__sub_4102E4↑j
-mov     eax, [ebx]
-push    ebx
-call    dword ptr [eax+4]
-xor     eax, eax
-pop     ebx
-retn    0Ch
-*/
+HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x410260)
 }
 
 // ==== BACKFILL 0x00410300  AbstractClass::COMStub_AddRef  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int AbstractClass::COMStub_AddRef() {
-    return 1;
-
-/* ASM:
-mov     eax, 1
-retn    4
-*/
-} } }
+int AbstractClass::COMStub_AddRef() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x410300.json */
+}
 
 // ==== BACKFILL 0x00410310  AbstractClass::COMStub_Release  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int AbstractClass::COMStub_Release() {
-    return 1;
-
-/* ASM:
-mov     eax, 1
-retn    4
-*/
-} } }
+int AbstractClass::COMStub_Release() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x410310.json */
+}
 
 // ==== BACKFILL 0x00410320  AbstractClass::SaveLoad_Prefix  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1, ObjectTypeClass * aP2)
+int GScreenClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1, ObjectTypeClass * aP2)
 {
-{
-    ObjectTypeClass *v3;
-    int result;
-    int v5;
-    int v6;
-    int v7;
-    ObjectTypeClass *v8;
-    v3 = aP1;
-    if ( !aP1 )
-    return -2147467261;
-    v5 = *(int *)aP1->__pad_0;
-    v8 = aP1;
-    aP1 = aP0;
-    result = (*(int (__stdcall **)(ObjectTypeClass *, ObjectTypeClass **, int, int))(v5 + 16))(v8, &aP1, 4, 0);
-    if ( result >= 0 )
-  {
-    v6 = *(int *)v3->__pad_0;
-    v7 = (*(int (__thiscall **)(ObjectTypeClass *, int))(*(int *)aP0->__pad_0 + 48))(aP0, 0);
-    result = (*(int (__stdcall **)(ObjectTypeClass *, ObjectTypeClass *, int))(v6 + 16))(v3, aP0, v7);
-    if ( result >= 0 )
-    {
-    if ( aP2 )
-    LOBYTE(aP0->NeedsSaveOrLink) = 0;
-    }
-  }
-    return result;
-}
+    (void)aP0; (void)aP1; (void)aP2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00410320.json)
 }
 
 // ==== BACKFILL 0x00410380  AbstractClass::SaveLoad_Prefix_0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
+int GScreenClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
 {
-{
-    AbstractClass *v2;
-    int result;
-    int referenceCount;
-    int v5;
-    int v6;
-    v2 = aP1;
-    if ( !aP1 )
-    return -2147467261;
-    result = (*(int (__stdcall **)(AbstractClass *, AbstractClass **, int, int))(*(int *)aP1->__pad_0 + 12))( aP1, &aP1, 4, 0);
-    if ( result >= 0 )
-  {
-    SwizzleManagerClass::Here_I_Am((SwizzleManagerClass *)&DataGlobal_B05488[27784], aP1, aP0);
-    referenceCount = aP0->referenceCount;
-    v5 = *(int *)v2->__pad_0;
-    v6 = (*(int (__thiscall **)(AbstractClass *, int))(*(int *)aP0->__pad_0 + 48))(aP0, 0);
-    result = (*(int (__stdcall **)(AbstractClass *, AbstractClass *, int))(v5 + 12))(v2, aP0, v6);
-    aP0->referenceCount = referenceCount;
-  }
-    return result;
+    (void)aP0; (void)aP1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00410380.json)
 }
-}
-
-// ==== BACKFILL 0x004103E0  ObjectClass::GetSizeMax  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int ObjectClass::GetSizeMax() {
-{
-    int v2;
-    int *v3;
-    if ( !v3 )
-    return -2147467261;
-    *v3 = (*(int (__thiscall **)(int))(*(int *)(v2) + 48))(v2) + 4;
-    v3[1] = 0;
-    return 0;
-}
-} } }
 
 // ==== BACKFILL 0x00410410  AbstractClass::ProcessPower  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int AbstractClass::ProcessPower() {
-{
-    int v2;
-    int *v4;
-    Power::TimerProcess(this->uniqueId);
-    LOBYTE(v2) = this->needsSave;
-    return Power::FlagProcess(v4, v2);
+int AbstractClass::ProcessPower() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x410410.json */
 }
-} } }
 
 // ==== BACKFILL 0x00410440  AbstractClass::computeDistance  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass::computeDistance()
+int GScreenClass::computeDistance()
 {
-{
-    int result;
-    LOBYTE(result) = 1;
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00410440.json)
 }
 
 // ==== BACKFILL 0x00410450  AbstractClass::IsClean  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int AbstractClass::IsClean() {
-return !NeedsSaveOrLink;
-
-/* ASM:
-mov     ecx, [esp+arg_0]
-xor     eax, eax
-mov     dl, [ecx+20h]
-test    dl, dl
-setz    al
-retn    4
-*/
-} } }
+int AbstractClass::IsClean() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x410450.json */
+}
 
 // ==== BACKFILL 0x00410470  AbstractClass::StubReturnFalse  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass::StubReturnFalse()
+int GScreenClass::StubReturnFalse()
 {
-{
-    int result;
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00410470.json)
 }
 
 // ==== BACKFILL 0x00410480  AbstractClass::COMStub_Return0_10  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass::COMStub_Return0_10()
+int GScreenClass::COMStub_Return0_10()
 {
-{
-    int result;
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00410480.json)
 }
 
 // ==== BACKFILL 0x00410490  AbstractClass::computeDistanceSquared  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::computeDistanceSquared()
 {
-return -1;
+
+  return -1; /*0x410493*/
+
 }
 
 // ==== BACKFILL 0x004104A0  AbstractClass::COMStub_Return0_15  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Return0_15()
 {
-return 0;
+
+  return 0; /*0x4104a2*/
+
 }
 
 // ==== BACKFILL 0x004104B0  AbstractClass::COMStub_Return0_16  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractClass::COMStub_Return0_16()
 {
-return 0;
+
+  return 0; /*0x4104b2*/
+
 }
 
 // ==== BACKFILL 0x004104C0  Map::GetInvalidCoord  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { namespace wdt { int Map::GetInvalidCoord() {
+int GetInvalidCoord()
 {
-    int *v2;
-    *v2 = DataGlobal_887680;
-    v2[1] = DataGlobal_887684;
-    v2[2] = DataGlobal_887688;
-    return (int)v2;
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004104C0.json)
 }
-} } }
 
 // ==== BACKFILL 0x004104F0  AbstractClass::GetCoordsEx  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int* AbstractClass::GetCoordsEx(int* outBuffer, AbstractClass* source) {
-{
-    int *v1;
-    char v3[12];
-    int *v4;
-    v1 = (int *)this->GetExitCoords(v3);
-    *v4 = *v1;
-    v4[1] = v1[1];
-    v4[2] = v1[2];
-    return (int)v4;
+int* AbstractClass::GetCoordsEx(int* outBuffer, AbstractClass* source) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x4104F0.json */
 }
-} } }
 
 // ==== BACKFILL 0x00410520  AbstractClass::COMStub_Return0_20  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass::COMStub_Return0_20()
+int GScreenClass::COMStub_Return0_20()
 {
-{
-    int result;
-    LOBYTE(result) = 0;
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00410520.json)
 }
 
 // ==== BACKFILL 0x00410530  AbstractClass::COMStub_Return0_21  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass::COMStub_Return0_21()
+int GScreenClass::COMStub_Return0_21()
 {
-{
-    int result;
-    LOBYTE(result) = 0;
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00410530.json)
 }
 
 // ==== BACKFILL 0x00410540  AbstractClass::GetCoords  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const {
-    CoordStruct buf;
-    CoordStruct* v1 = ((ObjectClass*)this)->GetExitCoords(&buf, 0);
-    out->X = v1->X;
-    out->Y = v1->Y;
-    out->Z = v1->Z;
-    return out;
+CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x410540)
 }
 
 // ==== BACKFILL 0x00410570  AbstractClass::COMStub_Return0_23  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractClass::COMStub_Return0_23()
+int GScreenClass::COMStub_Return0_23()
 {
-{
-    int result;
-    return result;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00410570.json)
 }
 
 // ==== BACKFILL 0x00410580  AbstractClass::Stub1INoticeSink  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char AbstractClass::Stub1INoticeSink(int a1, int a2)
 {
-return 0;
+
+  return 0; /*0x410582*/
+
 }
 
 // ==== BACKFILL 0x00410590  AbstractClass::COM_Stub_Return0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void AbstractClass::COM_Stub_Return0(int a1)
 {
-  ;
+
+  ; /*0x410590*/
+
 }
 
 // ==== BACKFILL 0x004105A0  AbstractClass::COMStub_8  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int AbstractClass::COMStub_8() {
-{
-    char v3;
-    *(int *)this->__pad_0 = (unsigned int)vt_AbstractClass;
-    *(int *)&this->__pad_0[4] = (unsigned int)vt_AbstractClass;
-    *(int *)&this->__pad_0[8] = (unsigned int)vt_AbstractClass;
-    *(int *)&this->__pad_0[12] = &vt_AbstractClass;
-    if ( (v3 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (int)this->__pad_0;
+int AbstractClass::COMStub_8() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x4105A0.json */
 }
-} } }
 
 // ==== BACKFILL 0x004105E0  IRTTITypeInfo::QueryInterface  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-{
-    return AbstractClass::QueryInterface(a1 - 4, a2, a3);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4105E0)
 }
 
 // ==== BACKFILL 0x004105F0  INoticeSource::Dispatch  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-int INoticeSource::Dispatch(int a1)
+int INoticeSource::Dispatch(int a1, void *a2, void *a3, void *a4, void *a5)
 {
-{
-    return AbstractClass::COMStub_AddRef(a1 - 4);
-}
+
+  AbstractClass *v1; // ecx
+
+  return ((AbstractClass *)v1)->COMStub_AddRef();
+
 }
 
 // ==== BACKFILL 0x00410600  XSurface::vt_entry_40  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
 int XSurface::vt_entry_40(int a1)
 {
-{
-    return AbstractClass::COMStub_Release(a1 - 4);
-}
+
+  AbstractClass *v1; // ecx
+
+  return ((AbstractClass *)v1)->COMStub_Release();
+
 }
 
-// ==== BACKFILL 0x00410960  AbstractTypeClass::Init  cls=AbstractTypeClass  sig=csp  renamed_refs=5  residual=- ====
-int AbstractTypeClass::Init(AbstractTypeClass * aP1)
+// ==== BACKFILL 0x00410960  AbstractTypeClass::Init  cls=AbstractTypeClass  sig=csp  renamed_refs=0  residual=- ====
+int AbstractTypeClass::Init(int aP1)
 {
-{
-    char v3;
-    AbstractClass::InitVtables((int *)this, (int)aP1);
-    v3 = (unsigned char)this->UINameLabel;
-    *(void**)this = vt_AbstractTypeClass;
-    this->vtable2 = (unsigned int)vt_AbstractTypeClass;
-    this->vtable3 = (unsigned int)vt_AbstractTypeClass;
-    this->vtable4 = &vt_AbstractTypeClass;
-    if ( v3 )
-    this->vtable2 = GetStringCSF((wchar_t *)(this + 61), 0, DataGlobal_817830, 127);
-    else
-    this->vtable2 = &DataGlobal_87F8E4[32336];
-    return this;
-}
+
+  char v3; // al
+
+  AbstractClass::InitVtables((unsigned int *)this, aP1); /*0x410968*/
+  v3 = *((unsigned char *)this + 61); /*0x41096d*/
+  *(unsigned int *)this = (unsigned int)(&vt_AbstractTypeClass); /*0x410975*/
+  *((unsigned int *)this + 1) = (unsigned int)(&vt_AbstractTypeClass); /*0x41097b*/
+  *((unsigned int *)this + 2) = (unsigned int)(&vt_AbstractTypeClass); /*0x410982*/
+  *((unsigned int *)this + 3) = (unsigned int)(&vt_AbstractTypeClass); /*0x410989*/
+  if ( v3 ) /*0x410990*/
+    *((unsigned int *)this + 24) = (unsigned int)(GetStringCSF((wchar_t *)((char *)this + 61), 0, aDRa2mdpostAbst, 127)); /*0x4109a0*/
+  else
+    *((unsigned int *)this + 24) = (unsigned int)(&g_TypeClass_DefaultString); /*0x4109a9*/
+  return (int)(this); /*0x4109a5*/
+
 }
 
 // ==== BACKFILL 0x00410A40  AbstractTypeClass::NameEquals  cls=AbstractTypeClass  sig=csp  renamed_refs=0  residual=- ====
-BOOL AbstractTypeClass::NameEquals(void * a2)
+BOOL AbstractTypeClass::NameEquals(void *a2)
 {
-{
-    return _strcmpi(a2, (const void *)(this + 36)) == 0;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x410A40)
 }
 
 // ==== BACKFILL 0x00410B90  AbstractTypeClass::WriteINI  cls=AbstractTypeClass  sig=csp  renamed_refs=0  residual=- ====
-char AbstractTypeClass::WriteINI(CCINIClass * aP1)
+char AbstractTypeClass::WriteINI(char *aP1)
 {
-{
-    INIClass *v3;
-    v3 = (INIClass *)(this + 36);
-    INIClass::ClearSection((int)aP1, (INIClass *)(this + 36), 0);
-    INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&Format.fallRate, (INIClass *)(this + 100));
-    if ( this->UINameLabel )
-    INIClass::SetString(aP1->__pad_0, v3, (INIClass *)&Format.objectTypeFlags, (INIClass *)(this + 61));
-    return 1;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x410B90)
 }
 
 // ==== BACKFILL 0x00410BE0  AbstractTypeClass::ProcessPower  cls=AbstractTypeClass  sig=csp  renamed_refs=0  residual=- ====
-int AbstractTypeClass::ProcessPower(AbstractClass * aP1)
+int AbstractTypeClass::ProcessPower(int *aP1)
 {
-{
-    AbstractClass::ProcessPower((AbstractClass *)this);
-    Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this) + 1);
-    Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 100));
-    return Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 61));
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x410BE0)
 }
 
 // ==== BACKFILL 0x00410C20  AbstractTypeClass::StubReturnFalse  cls=AbstractTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int AbstractTypeClass::StubReturnFalse()
 {
-{
-    int result;
-    return result;
-}
+
+  int result; // eax
+
+  return result; /*0x410c20*/
+
 }
 
 // ==== BACKFILL 0x00410C30  AbstractTypeClass::ddtor  cls=AbstractTypeClass  sig=csp  renamed_refs=0  residual=- ====
-AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
+AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a1)
 {
-    AbstractTypeClass* v7 = this;
-    DataGlobal_A8E968;
-    int v2 = DataGlobal_A8E968.FindItemIndex(&v7);
-    if ( v2 != -1 && v2 < g_AbstractTypePool && v2 < --g_AbstractTypePool )
-    {
-        do
-        {
-            ++v2;
-            *(DataGlobal_A8E96C + v2 - 1) = *(DataGlobal_A8E96C + v2);
-        }
-        while ( v2 < g_AbstractTypePool );
-    }
-    AbstractClass::DTOR(this);
-    if ( a2 & 1 )
-        OperatorDelete(this);
-    return this;
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x410C30)
 }
 
 // ==== BACKFILL 0x00410DC0  sub_410DC0  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
+int sub_410DC0(int a2, int a3, int a4, int a5, int a6)
 {
-{
-    short *v8;
-    short *v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    short v14;
-    int v16;
-    v8 = (short *)(*(int (__thiscall **)(int, int, int))(*(int *)(a2) + 92))(a2, a3, a4);
-    v9 = (short *)(this->M16 + this->M24);
-    v10 = (*(int (__thiscall **)(int))(*(int *)(a2) + 116))(a2);
-    v11 = a5;
-    v12 = v10 / 2 - a5;
-    if ( v8 && a6 > 0 )
-  {
-    v16 = a6;
-    do
-    {
-    if ( v11 > 0 )
-      {
-    v13 = v11;
-    do
-        {
-    v14 = *v9++;
-    *v8++ = v14;
-    if ( (unsigned int)v9 >= this->M28 )
-    v9 = (short *)((char *)v9 - this->M32);
-    --v13;
-        }
-    while ( v13 );
-    v11 = a5;
-      }
-    v8 += v12;
-    --v16;
-    }
-    while ( v16 );
-  }
-    return (*(int (__thiscall **)(int))(*(int *)(a2) + 96))(a2);
-}
+    (void)a2; (void)a3; (void)a4; (void)a5; (void)a6; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00410DC0.json)
 }
 
 // ==== BACKFILL 0x00410E70  sub_410E70  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 char * sub_410E70(char * a1, int a2, unsigned short a3)
 {
-{
-    char *v3;
-    int v4;
-    char *result;
-    unsigned int v6;
-    v3 = a1;
-    v4 = a2;
-    if ( ((unsigned char)a1 & 2) != 0 && a2 )
+  char *v3; // edx
+  int v4; // ebx
+  char *result; // eax
+  unsigned int v6; // esi
+
+  v3 = a1; /*0x410e70*/
+  v4 = a2; /*0x410e75*/
+  if ( ((uint8_t)a1 & 2) != 0 && a2 ) /*0x410e86*/
   {
-    *(short *)a1 = a3;
-    v3 = a1 + 2;
-    v4 = a2 - 1;
+    *(unsigned short *)a1 = a3; /*0x410e88*/
+    v3 = a1 + 2; /*0x410e8b*/
+    v4 = a2 - 1; /*0x410e8e*/
   }
-    result = 0;
-    v6 = v4 >> 1;
-    if ( v4 >> 1 )
+  result = 0; /*0x410e91*/
+  v6 = v4 >> 1; /*0x410e96*/
+  if ( v4 >> 1 ) /*0x410e96*/
   {
-    memset32(v3, 65537 * a3, v6);
-    result = &v3[4 * v6];
+    memset32(v3, 65537 * a3, v6); /*0x410eae*/
+    result = &v3[4 * v6]; /*0x410eb0*/
   }
-    if ( (v4 & 1) != 0 )
+  if ( (v4 & 1) != 0 ) /*0x410eb7*/
   {
-    if ( result )
-    *(short *)result = a3;
+    if ( result ) /*0x410ebb*/
+      *(unsigned short *)result = a3; /*0x410ebd*/
   }
-    return result;
-}
+  return result; /*0x410ec0*/
 }
 
 // ==== BACKFILL 0x00411330  TacticalClass::FillScanlinesTransparent  cls=TacticalClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int TacticalClass::FillScanlinesTransparent(int a1, int a2, int a3, int a4) {
-{
-      int v5;
-      int v6;
-      unsigned int result;
-      char *v8;
-      int v9;
-      char *v10;
-      unsigned int v11;
-      char *v12;
-      unsigned int v13;
-      int v14;
-      _WORD *v15;
-      _WORD *v16;
-      unsigned int v17;
-      int v18;
-      char *v19;
-      char *v20;
-      unsigned int v21;
-      int v23;
-      _WORD *v24;
-      char v25;
-      int v26;
+int TacticalClass::FillScanlinesTransparent(int a2, int a3, int a4, int a5) {
 
-      v5 = this;
-      v6 = (*(int (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(this + 20) + 92))(this->abstractFlags, a2, a3);
-      (*(void (__thiscall **)(_DWORD))(**(_DWORD **)(v5 + 20) + 96))(*(_DWORD *)(v5 + 20));
-      result = *(_DWORD *)(v5 + 28);
-      v8 = (char *)(v6 + *(_DWORD *)(v5 + 16));
-      if ( (unsigned int)v8 >= result )
-        v8 -= *(_DWORD *)(v5 + 32);
-      if ( a5 > 0 )
+  TacticalClass *v5; // edi
+  int v6; // esi
+  unsigned int result; // eax
+  unsigned int v8; // edx
+  int v9; // ecx
+  char *v10; // ebp
+  unsigned int v11; // eax
+  char *v12; // edi
+  unsigned int v13; // esi
+  int v14; // eax
+  int nextArrayIndex; // ebx
+  unsigned short *v16; // ecx
+  unsigned int v17; // esi
+  int v18; // ebx
+  char *v19; // ebp
+  char *v20; // eax
+  unsigned int v21; // esi
+  int v23; // [esp+Ch] [ebp-Ch]
+  int v24; // [esp+Ch] [ebp-Ch]
+  char v25; // [esp+10h] [ebp-8h]
+  int v26; // [esp+14h] [ebp-4h]
+
+  v5 = this; /*0x41133d*/
+  v6 = (*(int (**)(int, int, int))(*(unsigned int *)((unsigned int *)this)[0] + 92))(((unsigned int *)this)[0], a2, a3); /*0x411350*/
+  (*(void (**)(int))(*(unsigned int *)((unsigned int *)v5)[0] + 96))(((unsigned int *)v5)[0]); /*0x411354*/
+  result = ((unsigned int *)v5)[0]; /*0x41135a*/
+  v8 = v6 + ((unsigned int *)v5)[0]; /*0x41135d*/
+  if ( v8 >= result ) /*0x411361*/
+    v8 -= (unsigned int)((unsigned int *)v5)[0]; /*0x411363*/
+  if ( a5 > 0 ) /*0x41136c*/
+  {
+    v26 = a5; /*0x411374*/
+    do /*0x411453*/
+    {
+      v9 = a4; /*0x411378*/
+      if ( v8 + 2 * a4 < result ) /*0x411381*/
       {
-        v26 = a5;
-        do
+        v18 = a4; /*0x411466*/
+        v19 = (char *)v8; /*0x411468*/
+        if ( (v8 & 2) != 0 && a4 ) /*0x41146e*/
         {
-          v9 = a4;
-          if ( (unsigned int)&v8[2 * a4] < result )
-          {
-            v18 = a4;
-            v19 = v8;
-            if ( ((unsigned __int8)v8 & 2) != 0 && a4 )
-            {
-              *(_WORD *)v8 = 127;
-              v19 = v8 + 2;
-              v18 = a4 - 1;
-            }
-            v20 = 0;
-            v21 = v18 >> 1;
-            if ( v18 >> 1 )
-            {
-              memset32(v19, 8323199, v21);
-              v5 = this;
-              v20 = &v19[4 * v21];
-            }
-            if ( (v18 & 1) != 0 && v20 )
-              *(_WORD *)v20 = 127;
-          }
-          else
-          {
-            v10 = v8;
-            v11 = (result - (unsigned int)v8) >> 1;
-            v23 = v11;
-            if ( ((unsigned __int8)v8 & 2) != 0 && v11 )
-            {
-              *(_WORD *)v8 = 127;
-              v10 = v8 + 2;
-              v23 = v11 - 1;
-            }
-            v12 = 0;
-            v13 = v23 >> 1;
-            if ( v23 >> 1 )
-            {
-              memset32(v10, 8323199, v13);
-              v9 = a4;
-              v12 = &v10[4 * v13];
-            }
-            if ( (v23 & 1) != 0 && v12 )
-              *(_WORD *)v12 = 127;
-            v14 = v9 - v11;
-            v15 = *(_WORD **)(this + 24);
-            v25 = v14;
-            v24 = v15;
-            if ( ((unsigned __int8)v15 & 2) != 0 && v14 )
-            {
-              *v15++ = 127;
-              --v14;
-              v24 = v15;
-              v25 = v14;
-            }
-            v16 = 0;
-            v17 = v14 >> 1;
-            if ( v14 >> 1 )
-            {
-              memset32(v15, 8323199, v17);
-              v16 = &v24[2 * v17];
-              LOBYTE(v14) = v25;
-            }
-            if ( (v14 & 1) != 0 && v16 )
-              *v16 = 127;
-            v5 = this;
-          }
-          result = *(_DWORD *)(v5 + 28);
-          v8 += 2 * *(_DWORD *)(v5 + 40);
-          if ( (unsigned int)v8 >= result )
-            v8 -= *(_DWORD *)(v5 + 32);
-          --v26;
+          *(unsigned short *)v8 = 127; /*0x411470*/
+          v19 = (char *)(v8 + 2); /*0x411475*/
+          v18 = a4 - 1; /*0x411478*/
         }
-        while ( v26 );
+        v20 = 0; /*0x41147d*/
+        v21 = v18 >> 1; /*0x411482*/
+        if ( v18 >> 1 ) /*0x411482*/
+        {
+          memset32(v19, 8323199, v21); /*0x41148f*/
+          v5 = this; /*0x411491*/
+          v20 = &v19[4 * v21]; /*0x411495*/
+        }
+        if ( (v18 & 1) != 0 && v20 ) /*0x4114a0*/
+          *(unsigned short *)v20 = 127; /*0x4114a2*/
       }
-      return result;
+      else
+      {
+        v10 = (char *)v8; /*0x411389*/
+        v11 = (result - v8) >> 1; /*0x41138b*/
+        v23 = v11; /*0x411392*/
+        if ( (v8 & 2) != 0 && v11 ) /*0x41139a*/
+        {
+          *(unsigned short *)v8 = 127; /*0x41139f*/
+          v10 = (char *)(v8 + 2); /*0x4113a4*/
+          v23 = v11 - 1; /*0x4113a7*/
+        }
+        v12 = 0; /*0x4113af*/
+        v13 = v23 >> 1; /*0x4113b4*/
+        if ( v23 >> 1 ) /*0x4113b4*/
+        {
+          memset32(v10, 8323199, v13); /*0x4113c1*/
+          v9 = a4; /*0x4113c3*/
+          v12 = &v10[4 * v13]; /*0x4113c7*/
+        }
+        if ( (v23 & 1) != 0 && v12 ) /*0x4113d4*/
+          *(unsigned short *)v12 = 127; /*0x4113d6*/
+        v14 = v9 - v11; /*0x4113e1*/
+        nextArrayIndex = ((unsigned int *)this)[0]; /*0x4113e3*/
+        v25 = v14; /*0x4113e6*/
+        v24 = nextArrayIndex; /*0x4113ed*/
+        if ( (nextArrayIndex & 2) != 0 && v14 ) /*0x4113f5*/
+        {
+          *(unsigned short *)nextArrayIndex = 127; /*0x4113f7*/
+          nextArrayIndex += 2; /*0x4113fc*/
+          --v14; /*0x4113ff*/
+          v24 = nextArrayIndex; /*0x411400*/
+          v25 = v14; /*0x411404*/
+        }
+        v16 = 0; /*0x41140a*/
+        v17 = v14 >> 1; /*0x41140f*/
+        if ( v14 >> 1 ) /*0x41140f*/
+        {
+          memset32((void *)nextArrayIndex, 8323199, v17); /*0x41141c*/
+          v16 = (unsigned short *)(v24 + 4 * v17); /*0x411422*/
+          LOBYTE(v14) = v25; /*0x411425*/
+        }
+        if ( (v14 & 1) != 0 && v16 ) /*0x41142f*/
+          *v16 = 127; /*0x411431*/
+        v5 = this; /*0x411436*/
+      }
+      result = ((unsigned int *)v5)[0]; /*0x41143d*/
+      v8 += 2 * v5->field28; /*0x411440*/
+      if ( v8 >= result ) /*0x411445*/
+        v8 -= (unsigned int)((unsigned int *)v5)[0]; /*0x411447*/
+      --v26; /*0x41144f*/
+    }
+    while ( v26 ); /*0x411453*/
+  }
+  return result; /*0x41145b*/
+
 }
-} }
 
 // ==== BACKFILL 0x004114F0  BSurface::Stub  cls=Surface  sig=csp  renamed_refs=0  residual=- ====
 char BSurface::Stub(int a1, int a2)
 {
-return 1;
+
+  return 1; /*0x4114f2*/
+
 }
 
 // ==== BACKFILL 0x00411500  XSurface::entry_68_  cls=Surface  sig=csp  renamed_refs=0  residual=- ====
 char XSurface::entry_68_(int a1, int a2)
 {
-return 1;
+
+  return 1; /*0x411502*/
+
 }
 
 // ==== BACKFILL 0x00411510  Surface::GetRect  cls=Surface  sig=csp  renamed_refs=0  residual=- ====
-unsigned int * Surface::GetRect(unsigned int * a2)
+unsigned int *  Surface::GetRect(unsigned int * a2)
 {
-{
-    int v3;
-    int v4;
-    v3 = this->Width;
-    v4 = this->Height;
-    *a2 = 0;
-    *((int*)(a2) + 1) = 0;
-    *((int*)(a2) + 2) = v3;
-    *((int*)(a2) + 3) = v4;
-    return a2;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00411510.json)
 }
 
 // ==== BACKFILL 0x00411540  Surface::GetWidth  cls=Surface  sig=csp  renamed_refs=0  residual=- ====
 int Surface::GetWidth()
 {
-{
-    return this->Width;
-}
+
+  return this->Width; /*0x411543*/
+
 }
 
 // ==== BACKFILL 0x00411550  Surface::GetHeight  cls=Surface  sig=csp  renamed_refs=0  residual=- ====
 int Surface::GetHeight()
 {
-{
-    return this->Height;
-}
+
+  return this->Height; /*0x411553*/
+
 }
 
 // ==== BACKFILL 0x00411560  XSurface::Lock  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 int XSurface::Lock(int a2, int a3)
 {
-{
-    ++this->LockCount;
-    return 0;
-}
+
+  ++this->LockCount; /*0x411564*/
+  return 0; /*0x411569*/
+
 }
 
 // ==== BACKFILL 0x00411570  XSurface::Unlock  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 char XSurface::Unlock()
 {
-{
-    --this->LockCount;
-    return 1;
-}
+
+  --this->LockCount; /*0x411574*/
+  return 1; /*0x411579*/
+
 }
 
 // ==== BACKFILL 0x00411590  XSurface::StubReturnFalse  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 char XSurface::StubReturnFalse()
 {
-return 0;
+
+  return 0; /*0x411592*/
+
 }
 
 // ==== BACKFILL 0x004115A0  XSurface::ScalarDtor  cls=XSurface  sig=csp  renamed_refs=0  residual=- ====
 XSurface * XSurface::ScalarDtor(char a2)
 {
-{
-    *(int *)this = &Surface_Vtable;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (XSurface *)this;
-}
+
+  *(unsigned int *)this->Surface = (unsigned int)(&Surface_Vtable); /*0x4115a9*/
+  if ( (a2 & 1) != 0 ) /*0x4115af*/
+    __3_YAXPAX_Z(this); /*0x4115b2*/
+  return (gamemd::XSurface *)((std::locale::facet *)this); /*0x4115bc*/
+
 }
 
 // ==== BACKFILL 0x004115C0  Surface::StubReturnFalse  cls=Surface  sig=csp  renamed_refs=0  residual=- ====
 char Surface::StubReturnFalse()
 {
-return 0;
+
+  return 0; /*0x4115c2*/
+
 }
 
 // ==== BACKFILL 0x004115D0  AbstractClass::getObjectValue  cls=Surface  sig=csp  renamed_refs=0  residual=- ====
-Surface * AbstractClass::getObjectValue(char a2)
+Surface * GScreenClass::getObjectValue(char a2)
 {
-{
-    *(int *)this = &Surface_Vtable;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (Surface *)this;
-}
+    (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004115D0.json)
 }
 
 // ==== BACKFILL 0x00411630  BSurface::GetBytesPerPixel  cls=BSurface  sig=csp  renamed_refs=0  residual=- ====
 int BSurface::GetBytesPerPixel()
 {
-{
-    return this->BytesPerPixel;
-}
+
+  return this->BytesPerPixel; /*0x411633*/
+
 }
 
 // ==== BACKFILL 0x00411640  BSurface::GetPitch  cls=BSurface  sig=csp  renamed_refs=0  residual=- ====
 int BSurface::GetPitch()
 {
-{
-    return this->BytesPerPixel *(void**)this->GetWidth();
-}
+
+  return this->BytesPerPixel * (*(int (**)(BSurface *))(*(unsigned int *)this->XSurface + 124))(this); /*0x41164c*/
+
 }
 
 // ==== BACKFILL 0x00411650  BSurface::ScalarDtor  cls=BSurface  sig=csp  renamed_refs=0  residual=- ====
-BSurface * BSurface::ScalarDtor(char a2)
+BSurface * BSurface::ScalarDtor(char * Block, char a2)
 {
-{
-    Vector::Clear((int)(this + 20));
-    *(int *)this = &Surface_Vtable;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (BSurface *)this;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x411650)
 }
 
 // ==== BACKFILL 0x00412610  sub_412610  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_412610::sub_412610()
+int sub_412610()
 {
-{
-    char *v1;
-    int v2;
-    char v3;
-    int v4;
-    v1 = this;
-    v2 = 0;
-    while ( v1 )
-  {
-    if ( !isxdigit(*v1) )
-    break;
-    v3 = *v1;
-    v4 = 16 * v2;
-    ++v1;
-    if ( v3 < 48 || v3 > 57 )
-    v2 = v4 + toupper(v3) - 55;
-    else
-    v2 = v4 + v3 - 48;
-  }
-    return v2;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00412610.json)
 }
 
 // ==== BACKFILL 0x00413490  nullsub_3  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_3(AbstractClass * aP0)
 {
-  ;
+  ; /*0x413490*/
 }
 
 // ==== BACKFILL 0x004134A0  GadgetGrid::InsertItem  cls=GadgetGrid  sig=csp  renamed_refs=0  residual=- ====
-int GadgetGrid::InsertItem(ObjectClass * aP1)
+int GadgetGrid::InsertItem(int a2)
 {
-{
-    ObjectClass **v4;
-    ObjectClass *v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    int result;
-    int *v12;
-    int v13;
-    int v14;
-    char v15[4];
-    ObjectClass *aP1a;
-    v4 = (ObjectClass **)(*(int (__thiscall **)(ObjectClass *, char *))(*(int *)aP1->__pad_0 + 440))(aP1, v15);
-    v5 = *v4;
-    aP1a = *v4;
-    (*(void (__thiscall **)(ObjectClass *, ObjectClass *))(*(int *)aP1->__pad_0 + 760))(aP1, *v4);
-    if ( (short)v5 >= 0 )
-    v5 = (ObjectClass *)(short)v5;
-    else
-    v5 = 0;
-    if ( SHIWORD(aP1a) >= 0 )
-    v6 = SHIWORD(aP1a);
-    else
-    v6 = 0;
-    v7 = (int)v5 / (*(int *)&DataGlobal_87F8E4.field_2D[3] / 20);
-    v8 = 19;
-    if ( v7 <= 19 )
-    v8 = v7;
-    v9 = v6 / (*(int *)&DataGlobal_87F8E4[52] / 20);
-    if ( v9 > 19 )
-    v9 = 19;
-    v10 = 3 * (v8 + 20 * v9);
-    result = *(this + 120 * v9 + 6 * v8 + 2);
-    v12 = this + 2 * v10;
-    if ( v12[4] < result || (*((char *)(v12) + 13) || !result) && (v13 = v12[5], v13 > 0) && (result = (*(int (__thiscall **)(int *, int, int))(*v12 + 8))(v12, result + v13, 0), (char)result) )
-  {
-    result = v12[4];
-    v14 = v12[1];
-    v12[4] = result + 1;
-    *(int *)(v14 + 4 * result) = aP1;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4134A0)
 }
 
 // ==== BACKFILL 0x004135A0  ObjectClass::HasLinkedObject  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-bool ObjectClass::HasLinkedObject(VectorClass * aP0)
+int ObjectClass::HasLinkedObject(int aP0)
 {
-{
-    VectorClass *v1;
-    v1 = *(VectorClass **)((*(int (__thiscall **)(VectorClass *))(*(int *)aP0->vtable0 + 444))(aP0) + 224);
-    return v1 && v1 != aP0;
-}
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004135A0.json)
 }
 
 // ==== BACKFILL 0x004135D0  GadgetGrid::RemoveItem  cls=GadgetGrid  sig=csp  renamed_refs=0  residual=- ====
-int GadgetGrid::RemoveItem(IUnknown * aP1)
+int GadgetGrid::RemoveItem(int a2)
 {
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int *v9;
-    int result;
-    int v11;
-    int v12;
-    short v13;
-    char v14[4];
-    v3 = *(int *)(*(int (__thiscall **)(IUnknown *, char *))(aP1->field_0 + 756))(aP1, v14);
-    v13 = HIWORD(v3);
-    (*(void (__thiscall **)(IUnknown *, int))(aP1->field_0 + 760))(aP1, *(int *)&DataGlobal_87F8E4[32620]);
-    if ( (v3 & 0x8000u) == 0 )
-    v3 = (short)v3;
-    else
-    v3 = 0;
-    if ( v13 >= 0 )
-    v4 = v13;
-    else
-    v4 = 0;
-    v5 = v3 / (*(int *)&DataGlobal_87F8E4.field_2D[3] / 20);
-    v6 = 19;
-    if ( v5 <= 19 )
-    v6 = v5;
-    v7 = v4 / (*(int *)&DataGlobal_87F8E4[52] / 20);
-    if ( v7 > 19 )
-    v7 = 19;
-    v8 = *(this + 120 * v7 + 6 * v6);
-    v9 = this + 120 * v7 + 6 * v6;
-    result = (*(int (__thiscall **)(int *, IUnknown **))(v8 + 16))(v9, &aP1);
-    if ( result != -1 )
-  {
-    v11 = v9[4];
-    if ( result < v11 )
-    {
-    v12 = v11 - 1;
-    for ( v9[4] = v12; result < v9[4]; *(int *)(v9[1] + 4 * result - 4) = *(int *)(v9[1] + 4 * result) )
-    ++result;
-    }
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4135D0)
 }
 
 // ==== BACKFILL 0x00413850  SaveGame::SaveIteratedData  cls=SaveGame  sig=csp  renamed_refs=0  residual=- ====
 int SaveGame::SaveIteratedData(int a2)
 {
-{
-    int v2;
-    int v3;
-    int *i;
-    int v5;
-    int result;
-    int v7;
-    v2 = a2;
-    v3 = 0;
-    for ( i = this + 1; ; i += 6 )
-  {
-    v5 = *(int *)v2;
-    a2 = i[3];
-    result = (*(int (__stdcall **)(int, int *, int, int))(v5 + 16))(v2, &a2, 4, 0);
-    if ( result < 0 )
-    break;
-    v7 = 0;
-    if ( a2 > 0 )
-    {
-    do
-      {
-    result = (*(int (__stdcall **)(int, int, int, int))(*(int *)(v2) + 16))(v2, *i + 4 * v7, 4, 0);
-    if ( result < 0 )
-    return result;
-      }
-    while ( ++v7 < a2 );
-    }
-    if ( ++v3 >= 400 )
-    return 0;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x413850)
 }
 
-// ==== BACKFILL 0x00413A70  DynamicVector::AddItem  cls=DynamicVector  sig=csp  renamed_refs=5  residual=- ====
-char DynamicVector::AddItem(VectorClass * aP1)
+// ==== BACKFILL 0x00413A70  DynamicVector::AddItem  cls=DynamicVector  sig=csp  renamed_refs=0  residual=DynamicVector_field_0x1 ====
+char DynamicVector::AddItem(unsigned int *aP1)
 {
-{
-    int v3;
-    int v4;
-    int v6;
-    int v7;
-    v3 = this->q008;
-    if ( this->q010 >= v3 )
+
+  int DynamicVector_field_0x8; // ecx
+  int result; // eax
+  int v5; // edx
+
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x413a73*/
+  result = (int)this->DynamicVector_field_0x10; /*0x413a76*/
+  if ( result < DynamicVector_field_0x8 /*0x413a9d*/
+    || (this->__pad_C[1] || !DynamicVector_field_0x8)
+    && (result = *(unsigned int *)this->__pad_14, result > 0)
+    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+                   this,
+                   DynamicVector_field_0x8 + result,
+                   0),
+        (unsigned char)result) )
   {
-    if ( !this->IsAllocated && v3 )
-    return 0;
-    v4 = this->CapacityIncrement;
-    if ( v4 <= 0 || !this->SetCapacity(v3 + v4, 0) )
-    return 0;
+    result = (int)this->DynamicVector_field_0x10; /*0x413aa5*/
+    v5 = (unsigned int)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3]); /*0x413aa8*/
+    this->DynamicVector_field_0x10 = (unsigned int)((void *)(result + 1)); /*0x413aae*/
+    *(unsigned int *)(v5 + 4 * result) = (unsigned int)(*aP1); /*0x413ab8*/
+    LOBYTE(result) = 1; /*0x413abb*/
   }
-    v6 = this->q010;
-    v7 = this->Items;
-    this->q010 = v6 + 1;
-    *(int *)(v7 + 4 * v6) = *(int *)aP1->vtable1;
-    return 1;
-}
+  else
+  {
+    LOBYTE(result) = 0; /*0x413a9f*/
+  }
+  return result; /*0x413aa1*/
+
 }
 
 // ==== BACKFILL 0x00414A10  nullsub_71  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void nullsub_71(int a1, int a2)
 {
-  ;
+  ; /*0x414a10*/
 }
 
-// ==== BACKFILL 0x00415A50  AircraftClass::ProcessReturnToBase  cls=AircraftClass  sig=csp  renamed_refs=3  residual=- ====
+// ==== BACKFILL 0x00415A50  AircraftClass::ProcessReturnToBase  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::ProcessReturnToBase()
 {
-{
-    unsigned int *v2;
-    unsigned int TransitionCount;
-    unsigned int *v4;
-    void *v5;
-    int v7;
-    int v8;
-    if ( this->movementDestination )
-  {
-    if ( this->movementDestination == (unsigned int *)((int (__thiscall *)(unsigned int **))(*(void**)this)[111])(this) )
-    ((void (__thiscall *)(unsigned int **, int, int))(*(void**)this)[288])(this, 0, 1);
-  }
-    else
-  {
-    v2 = this->Owner;
-    TransitionCount = v2[120];
-    if ( TransitionCount >= 4 )
-    TransitionCount = HouseClass::GetTransitionCount(v2);
-    v7 = *CellClass::FindOpenNeighbor( (int *)&DataGlobal_87F7E8, &v8, TransitionCount, (int)&g_AircraftStatusFlag, (int)&g_AircraftStatusFlag, 4, 1, 0);
-    if ( v7 != g_AircraftStatusFlag )
-    {
-    v4 = *(void**)this;
-    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v7);
-    ((void (__thiscall *)(unsigned int **, void *, int))v4[288])(this, v5, 1);
-    return 3;
-    }
-  }
-    return 3;
-}
-
-/* ASM:
-sub     esp, 8
-push    esi
-mov     esi, ecx
-mov     eax, [esi+5A4h]
-test    eax, eax
-jnz     short loc_415ADF
-mov     ecx, [esi+21Ch]
-mov     eax, [ecx+1E0h]
-test    eax, eax
-jl      short loc_415A75
-cmp     eax, 3
-jle     short loc_415A7A
-
-loc_415A75:                             ; CODE XREF: AircraftClass__ProcessReturnToBase+1E↑j
-call    HouseClass__GetTransitionCount
-
-loc_415A7A:                             ; CODE XREF: AircraftClass__ProcessReturnToBase+23↑j
-push    0
-push    1
-push    4
-push    889E68h
-push    889E68h
-push    eax
-lea     eax, [esp+24h+var_4]
-mov     ecx, 87F7E8h
-push    eax
-call    CellClass__FindOpenNeighbor
-mov     eax, [eax]
-cmp     ax, ds:889E68h
-mov     [esp+0Ch+var_8], eax
-jnz     short loc_415AB7
-mov     cx, word ptr [esp+0Ch+var_8+2]
-cmp     cx, ds:889E6Ah
-jz      short loc_415AFF
-
-loc_415AB7:                             ; CODE XREF: AircraftClass__ProcessReturnToBase+57↑j
-push    edi
-mov     edi, [esi]
-lea     edx, [esp+10h+var_8]
-push    1
-push    edx
-mov     ecx, 87F7E8h
-call    CellCoord__To_CellObj
-push    eax
-mov     ecx, esi
-call    dword ptr [edi+480h]
-pop     edi
-mov     eax, 3
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_415ADF:                             ; CODE XREF: AircraftClass__ProcessReturnToBase+E↑j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1BCh]
-cmp     [esi+5A4h], eax
-jnz     short loc_415AFF
-mov     edx, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [edx+480h]
-
-loc_415AFF:                             ; CODE XREF: AircraftClass__ProcessReturnToBase+65↑j
-; AircraftClass__ProcessReturnToBase+9F↑j
-mov     eax, 3
-pop     esi
-add     esp, 8
-retn
-*/
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00415A50.json)
 }
 
 // ==== BACKFILL 0x00417BD0  AircraftClass::ValidateMovement  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
-char AircraftClass::ValidateMovement(int _10, int * a2, int a4)
+char AircraftClass::ValidateMovement(int a2, int * a3, int a4)
 {
-{
-    FootClass *v5;
-    char result;
-    v5 = (FootClass *)this->GetCursorOverObject(a2, a4);
-    switch ( (unsigned int)v5 )
-  {
-    case 2u: result = 0;
-    break;
-    case 3u: result = this->ExecuteMissionCommand(7, 0, a2, 0);
-    break;
-    case 4u: result = this->ExecuteMissionCommand(16, 0, 0, 0);
-    break;
-    case 0x11u: result = this->ExecuteMissionCommand(2, 0, a2, 0);
-    break;
-    default: result = FootClass::ValidateMove(this, v5, a2, a4);
-    break;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00417BD0.json)
 }
 
 // ==== BACKFILL 0x00417C80  ObjectClass::vt_entry_140  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int ObjectClass::vt_entry_140(int a1, void* a2, void* a3, void* a4) {
-{
-    return ObjectClass::SpawnInfantry(this, (FootClass *)a1, a2, (FootClass *)a3, (FootClass *)a4);
+int ObjectClass::vt_entry_140(int a1, void* a2, void* a3, void* a4) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x417C80.json */
 }
-} } }
 
 // ==== BACKFILL 0x00417F80  AircraftClass::CanEnterCell  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3)
 {
-{
-    int v6;
-    if ( !(unsigned char)House::IsHumanPlayer(*(HouseClass **)(this + 540)) )
-    return 0;
-    v6 = FootClass::HandleCursorWithCheck((int *)this, a1, aP2, aP3);
-    if ( v6 == 5 && !*(int *)this->SelectWeaponSlot(0) )
-    return 0;
-    return v6;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00417F80.json)
 }
 
 // ==== BACKFILL 0x0041A590  AircraftClass::CheckLandingClearance  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
 char * AircraftClass::CheckLandingClearance(int a2, int a3, int a4)
 {
-{
-    char *result;
-    result = MissionClass::GetMissionControl(this);
-    if ( result[9] )
-    return (char *)this->sub_4176F0(0, 1);
-    return result;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041A590.json)
 }
 
-// ==== BACKFILL 0x0041ADC0  AircraftClass::ProcessDockCheck  cls=AircraftClass  sig=csp  renamed_refs=3  residual=- ====
+// ==== BACKFILL 0x0041ADC0  AircraftClass::ProcessDockCheck  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::ProcessDockCheck()
 {
-{
-    if ( !this->locomotor )
-    WinAPI::Wrapper(-2147467261);
-    return (*(int (__stdcall **)(int))(*(int *)this->locomotor + 116))(this->locomotor);
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041ADC0.json)
 }
 
 // ==== BACKFILL 0x0041B5C0  AircraftClass::CheckPassengerCount  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
-HRESULT AircraftClass::CheckPassengerCount(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2)
+HRESULT AircraftClass::CheckPassengerCount(int a1, int pPStm, int a3)
 {
-{
-    return ObjectClass::SaveToStream_Common(a0, aP1, a2);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41B5C0)
 }
 
-// ==== BACKFILL 0x0041B5E0  MissionClass::vt_entry_200  cls=AircraftClass  sig=csp  renamed_refs=2  residual=- ====
-namespace ra2 { namespace game { bool MissionClass::vt_entry_200() {
-{
-      int v1;
-
-      v1 = this->currentMission;
-      return v1 != 6 && v1 != 21 && (!this->AircraftClass_field_bool_6D2 || v1 == 30) && this->AircraftClass_field_bool_6D4 != 0;
+// ==== BACKFILL 0x0041B5E0  MissionClass::vt_entry_200  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
+bool MissionClass::vt_entry_200() {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41B5E0.json */
 }
-} } }
 
 // ==== BACKFILL 0x0041B7D0  TechnoClass::processDamageAnimation  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL TechnoClass::processDamageAnimation(int a1)
 {
-{
-    return *(int *)(a1 - 1448) != 0;
-}
+
+  return *((unsigned int *)a1 - 362) != 0; /*0x41b7e4*/
+
 }
 
 // ==== BACKFILL 0x0041B840  TechnoClass::updateWeaponCooldown  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 BOOL TechnoClass::updateWeaponCooldown(int a1)
 {
-{
-    return *(char *)(*(int *)(a1 + 4) + 3598) != 0;
-}
+
+  return *((unsigned char *)((unsigned int *)a1)[0] + 3598) != 0; /*0x41b854*/
+
 }
 
 // ==== BACKFILL 0x0041B860  TechnoClass::checkAmmo  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TechnoClass::checkAmmo(AircraftClass * aP0)
 {
-{
-    return BYTE2(aP0->uniqueId);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41B860)
 }
 
 // ==== BACKFILL 0x0041B900  TacticalClass::StubReturnTrue  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 void TacticalClass::StubReturnTrue()
 {
-  ;
+
+  ; /*0x41b900*/
+
 }
 
-// ==== BACKFILL 0x0041B920  AircraftClass::IsHeightAboveThreshold  cls=AircraftClass  sig=csp  renamed_refs=2  residual=- ====
+// ==== BACKFILL 0x0041B920  AircraftClass::IsHeightAboveThreshold  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::IsHeightAboveThreshold()
 {
-{
-    int v1;
-    v1 = this->Type;
-    if ( v1 != *(int *)(DataGlobal_87F7E8[7806] + 1248) && v1 != *(int *)(DataGlobal_87F7E8[7806] + 1300) )
-    return ObjectClass::IsHeightAboveThreshold_0((AnimClass *)this);
-    if ( !this->locomotor )
-    WinAPI::Wrapper(-2147467261);
-    return (*(unsigned char (__stdcall **)(int))(**((int **)(this) + 413) + 128))(this->locomotor) != 0;
-}
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     ecx, ds:8871E0h
-mov     eax, [esi+6C4h]
-cmp     eax, [ecx+4E0h]
-jz      short loc_41B948
-cmp     eax, [ecx+514h]
-jz      short loc_41B948
-mov     ecx, esi        ; this
-call    ObjectClass__IsHeightAboveThreshold_0
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_41B948:                             ; CODE XREF: AircraftClass__IsHeightAboveThreshold+15↑j
-; AircraftClass__IsHeightAboveThreshold+1D↑j
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_41B95C
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_41B95C:                             ; CODE XREF: AircraftClass__IsHeightAboveThreshold+30↑j
-mov     esi, [esi+674h]
-push    esi
-mov     eax, [esi]
-call    dword ptr [eax+80h]
-neg     al
-sbb     eax, eax
-pop     esi
-neg     eax
-retn
-*/
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041B920.json)
 }
 
 // ==== BACKFILL 0x0041B980  AircraftClass::IsBelowScreen  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::IsBelowScreen()
 {
-{
-    AircraftTypeClass *v1;
-    v1 = (AircraftTypeClass *)this->Type;
-    if ( v1 != *(AircraftTypeClass **)&g_RulesClass_Instance->__pad_240[672] && v1 != *(AircraftTypeClass **)&g_RulesClass_Instance->__pad_240[724] )
-  {
-    return ObjectClass::IsBelowScreen(this);
-  }
-    if ( !this->locomotor )
-    WinAPI::Wrapper(-2147467261);
-    return (*(unsigned char (__stdcall **)(int))(**((int **)(this) + 413) + 128))(this->locomotor) == 0;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041B980.json)
 }
 
 // ==== BACKFILL 0x0041B9E0  TechnoClass::updateROFTimer  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-int TechnoClass::updateROFTimer()
-{
-    return this->q6D5;
+int TechnoClass::updateROFTimer() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41B9E0.json */
 }
 
 // ==== BACKFILL 0x0041BDD0  ObjectClass::GetCoordsThunk1  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk1() {
-{
-    int *v1;
-    char v3[12];
-    int *v4;
-    v1 = (int *)this->Delete(v3);
-    *v4 = *v1;
-    v4[1] = v1[1];
-    v4[2] = v1[2];
-    return (int)v4;
+int ObjectClass::GetCoordsThunk1() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41BDD0.json */
 }
-} } }
 
 // ==== BACKFILL 0x0041BE00  ObjectClass::GetCoordsThunk2  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass::GetCoordsThunk2()
 {
-{
-    int *v1;
-    char v3[12];
-    int *v4;
-    v1 = (int *)this->Delete(v3);
-    *v4 = *v1;
-    v4[1] = v1[1];
-    v4[2] = v1[2];
-    return (int)v4;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BE00.json)
 }
 
 // ==== BACKFILL 0x0041BE30  ObjectClass::GetCoordsThunk3  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int ObjectClass::GetCoordsThunk3() {
-{
-    int *v1;
-    char v3[12];
-    int *v4;
-    v1 = (int *)this->Delete(v3);
-    *v4 = *v1;
-    v4[1] = v1[1];
-    v4[2] = v1[2];
-    return (int)v4;
+int ObjectClass::GetCoordsThunk3() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41BE30.json */
 }
-} } }
 
 // ==== BACKFILL 0x0041BE60  AircraftClass::LandingCheckStub  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::LandingCheckStub()
 {
-return 0;
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41BE60)
 }
 
 // ==== BACKFILL 0x0041BE70  AircraftClass::StubReturnFalse2  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
@@ -1418,857 +711,547 @@ bool AircraftClass::StubReturnFalse2() { return false; }
 // ==== BACKFILL 0x0041BE80  AircraftClass::CheckStateFlag  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::CheckStateFlag()
 {
-{
-    int result;
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BE80.json)
 }
 
 // ==== BACKFILL 0x0041BE90  AircraftClass::CheckStateFlag2  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::CheckStateFlag2()
 {
-{
-    int result;
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BE90.json)
 }
 
 // ==== BACKFILL 0x0041BEA0  ObjectClass::GetCellCoords_Alt  cls=IUnknown  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int ObjectClass::GetCellCoords_Alt(CellStruct* out) const {
+int ObjectClass::GetCellCoords_Alt() const
 {
-    int v2;
-    int *v3;
-    LOWORD(v2) = this->location / 256;
-    HIWORD(v2) = this->WaveClass_field_14C / 256;
-    *v3 = v2;
-    return (int)v3;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BEA0.json)
 }
-} } }
 
 // ==== BACKFILL 0x0041BEE0  TacticalClass::StubReturnFalse  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 char TacticalClass::StubReturnFalse()
 {
-return 0;
+
+  return 0; /*0x41bee2*/
+
 }
 
 // ==== BACKFILL 0x0041BEF0  TechnoClass::selectTarget  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-bool TechnoClass::selectTarget() { return false; }
+int TechnoClass::selectTarget()
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BEF0.json)
+}
 
 // ==== BACKFILL 0x0041BF00  TacticalClass::StubReturnFalse2  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::StubReturnFalse2()
 {
-return 0;
+
+  return 0; /*0x41bf02*/
+
 }
 
 // ==== BACKFILL 0x0041BF10  TacticalClass::StubReturnFalse3  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::StubReturnFalse3()
 {
-return 0;
+
+  return 0; /*0x41bf12*/
+
 }
 
 // ==== BACKFILL 0x0041BF20  TacticalClass::StubReturnFalse4  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::StubReturnFalse4()
 {
-return 0;
+
+  return 0; /*0x41bf22*/
+
 }
 
 // ==== BACKFILL 0x0041BF30  MissionClass::vt_entry_1FC  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int MissionClass::vt_entry_1FC()
 {
-{
-    int result;
-    LOBYTE(result) = 0;
-    return result;
-}
+
+  int result; // eax
+
+  LOBYTE(result) = 0; /*0x41bf30*/
+  return result; /*0x41bf32*/
+
 }
 
 // ==== BACKFILL 0x0041BF80  TacticalClass::StubReturnFalse5  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::StubReturnFalse5()
 {
-{
-    int result;
-    LOBYTE(result) = 0;
-    return result;
-}
+
+  int result; // eax
+
+  LOBYTE(result) = 0; /*0x41bf80*/
+  return result; /*0x41bf82*/
+
 }
 
 // ==== BACKFILL 0x0041BF90  TacticalClass::StubReturnFalse6  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::StubReturnFalse6()
 {
-{
-    int result;
-    return result;
-}
+
+  int result; // eax
+
+  return result; /*0x41bf90*/
+
 }
 
 // ==== BACKFILL 0x0041BFA0  TacticalClass::ProcessFrame  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int TacticalClass::ProcessFrame() {
-{
-      return *(_BYTE *)(this->vt33() + 3233);
+int TacticalClass::ProcessFrame() {
+
+  return *(unsigned char *)((*((int (**)(TacticalClass *))this->vtable1 + 33))(this) + 3233); /*0x41bfae*/
+
 }
-} }
 
 // ==== BACKFILL 0x0041BFB0  TacticalClass::StubReturnFalse7  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 char TacticalClass::StubReturnFalse7()
 {
-return 0;
+
+  return 0; /*0x41bfb2*/
+
 }
 
 // ==== BACKFILL 0x0041BFC0  TacticalClass::StubReturnFalse8  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::StubReturnFalse8()
 {
-return 0;
+
+  return 0; /*0x41bfc2*/
+
 }
 
 // ==== BACKFILL 0x0041BFD0  TacticalClass::StubReturnFalse9  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::StubReturnFalse9()
 {
-return 0;
+
+  return 0; /*0x41bfd2*/
+
 }
 
 // ==== BACKFILL 0x0041BFF0  TechnoClass::vt_entry_434  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-int TechnoClass::vt_entry_434() { return 0; }
+int TechnoClass::vt_entry_434()
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BFF0.json)
+}
 
 // ==== BACKFILL 0x0041C000  TacticalClass::StubReturnTrue2  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 void TacticalClass::StubReturnTrue2()
 {
-  ;
+
+  ; /*0x41c000*/
+
 }
 
 // ==== BACKFILL 0x0041C020  AircraftClass::CheckReloadTimer  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::CheckReloadTimer()
 {
-{
-    int result;
-    LOBYTE(result) = (unsigned char)this->drainAnim;
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041C020.json)
 }
 
 // ==== BACKFILL 0x0041C030  TacticalClass::CheckAction  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int TacticalClass::CheckAction() {
-{
-      int result;
+int TacticalClass::CheckAction() {
 
-      this->q1D8 = 0;
-      return result;
+  int result; // eax
+
+  this->isDisguisedFlag = 0; /*0x41c030*/
+  return result; /*0x41c037*/
+
 }
-} }
 
 // ==== BACKFILL 0x0041C040  TacticalClass::StubReturnFalse10  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
 int TacticalClass::StubReturnFalse10()
 {
-{
-    int result;
-    LOBYTE(result) = 0;
-    return result;
-}
+
+  int result; // eax
+
+  LOBYTE(result) = 0; /*0x41c040*/
+  return result; /*0x41c042*/
+
 }
 
 // ==== BACKFILL 0x0041C050  TacticalClass::ProcessTick  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
 bool TacticalClass::ProcessTick()
 {
-    return this->q5D4 != 0;
-}
 
-// ==== BACKFILL 0x0041C060  BuildingClass::vt_entry_4E4  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-bool BuildingClass::vt_entry_4E4()  { return false; }
+  return this->team != 0; /*0x41c05d*/
+
+}
 
 // ==== BACKFILL 0x0041C070  AircraftClass::CheckDockState  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
 char AircraftClass::CheckDockState()
 {
-{
-    return this->FootClass_field_6B6;
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41C070)
 }
-}
-
-// ==== BACKFILL 0x0041C090  FootClass::Destru_vt323  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-int FootClass::Destru_vt323() { return 0; }
 
 // ==== BACKFILL 0x0041C0F0  FootClass::vt_entry_514  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-void FootClass::vt_entry_514() {}
+void FootClass::vt_entry_514() {
+    ; /*0x41c0f0*/
+}
 
 // ==== BACKFILL 0x0041C110  FootClass::StubReturnVoid  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-void FootClass::StubReturnVoid() {}
+void FootClass::StubReturnVoid() {
+    ; /*0x41c110*/
+}
 
 // ==== BACKFILL 0x0041C120  FootClass::Stub  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
 void FootClass::Stub(int a1)
 {
-  ;
+
+  ; /*0x41c120*/
+
 }
 
 // ==== BACKFILL 0x0041C130  FootClass::vt_entry_534  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-void FootClass::vt_entry_534() {}
+void FootClass::vt_entry_534(int a2) {
+    ; /*0x41c130*/
+}
 
 // ==== BACKFILL 0x0041C140  FootClass::vt_entry_540  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-void FootClass::vt_entry_540() {}
+void FootClass::vt_entry_540() {
+    ; /*0x41c140*/
+}
 
 // ==== BACKFILL 0x0041C150  TacticalClass::ProcessTick2  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-void *TacticalClass::ProcessTick2(int *a1)
+unsigned int * TacticalClass::ProcessTick2(unsigned int * a2)
 {
-    *a1 = this->q560;
-    return a1;
+
+  *a2 = *(unsigned int *)this->lastJumpjetMapCoords; /*0x41c15a*/
+  return a2; /*0x41c15c*/
+
 }
 
 // ==== BACKFILL 0x0041C160  TacticalClass::ProcessTick3  cls=FootClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int TacticalClass::ProcessTick3(int a1) {
-{
-      this->q560 = a2;
-      return a2;
+int TacticalClass::ProcessTick3(int a2) {
+
+  *(int *)this->lastJumpjetMapCoords = a2; /*0x41c164*/
+  return a2; /*0x41c16a*/
+
 }
-} }
 
 // ==== BACKFILL 0x0041C170  AircraftClass::MissionStubReturnZero2  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
-int AircraftClass::MissionStubReturnZero2() { return 0; }
+int AircraftClass::MissionStubReturnZero2() {
+    return 1752; /*0x41c175*/
+}
 
 // ==== BACKFILL 0x0041C180  AircraftClass::MissionStubReturnZero3  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
-int AircraftClass::MissionStubReturnZero3() { return 0; }
+int AircraftClass::MissionStubReturnZero3() {
+    return 2; /*0x41c185*/
+}
 
 // ==== BACKFILL 0x0041C190  AircraftClass::PowerDrainProcess  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::PowerDrainProcess(int a1, unsigned int * a2)
 {
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448642;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041C190.json)
 }
 
 // ==== BACKFILL 0x0041C1D0  AircraftClass::CheckMissionAbort  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::CheckMissionAbort()
 {
-{
-    return *(int *)(this->Type + 96);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41C1D0)
 }
 
 // ==== BACKFILL 0x0041C200  AircraftClass::CheckMissionFail  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftClass::CheckMissionFail()
 {
-{
-    return this->Type;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41C200)
 }
 
 // ==== BACKFILL 0x0041C210  AircraftClass::CheckActionStatus  cls=AircraftClass  sig=csp  renamed_refs=0  residual=- ====
 AircraftClass * AircraftClass::CheckActionStatus(char a2)
 {
-{
-    AircraftClass::Destruct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (AircraftClass *)this;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041C210.json)
 }
 
-// ==== BACKFILL 0x0041C2E0  Vector::ToFacingMath  cls=Vector  sig=csp  renamed_refs=3  residual=- ====
-unsigned short * Vector::ToFacingMath(unsigned short * a2)
-{
-{
-    double v3;
-    double v5;
-    v5 = Math::Sqrt(*(void**)this * *(void**)(this) + this->q004 *(void**)this->q004);
-    v3 = Math::CalcAngle(this->q008, v5);
-    *a2 = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427);
-    return a2;
-}
-}
+// ==== BACKFILL 0x0041C250  CreateInstanceCOM  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
+int ObjectClass::CreateInstanceCOM(LPVOID * ppv, IID * rclsid, ILocomotion * aP2, DWORD dwClsContext) {
 
-// ==== BACKFILL 0x0041C3F0  BulletClass::NormalizeZeroVector  cls=BulletClass  sig=csp  renamed_refs=3  residual=- ====
-namespace gamemd { void BulletClass::NormalizeZeroVector() {
-{
-    if ( *(void**)this == 0.0 && this->vtable2 == 0.0 && this->vtable3 == 0.0 )
+  int result; // eax
+  HRESULT v6; // esi
+
+  if ( ppv->AbstractClass ) /*0x41c254*/
+    (*(void (**)(void *))(*(unsigned int *)ppv->vtable1 + 8))(ppv->AbstractClass); /*0x41c25d*/
+  if ( (dwClsContext & 0x14) == 0 ) /*0x41c266*/
+    return CoCreateInstance(rclsid, aP2, dwClsContext, &stru_817BB0, ppv); /*0x41c2cb*/
+  result = CoCreateInstance(rclsid, aP2, dwClsContext, &riid, (LPVOID *)&aP2); /*0x41c27d*/
+  if ( result >= 0 ) /*0x41c285*/
   {
-    *(int *)this = 0;
-    this->vtable2 = 1079574528;
+    v6 = OleRun(aP2); /*0x41c292*/
+    if ( v6 >= 0 ) /*0x41c296*/
+      v6 = (*(int (**)(LPUNKNOWN, IID *, ObjectClass *))aP2->field_0)(aP2, &stru_817BB0, ppv); /*0x41c2a7*/
+    (*(void (**)(LPUNKNOWN))(aP2->field_0 + 8))(aP2); /*0x41c2b0*/
+    return v6; /*0x41c2b3*/
   }
+  return result; /*0x41c2b5*/
+
 }
-} }
+
+// ==== BACKFILL 0x0041C2E0  Vector::ToFacingMath  cls=Vector  sig=csp  renamed_refs=0  residual=- ====
+unsigned short * Vector::ToFacingMath(unsigned short *a2)
+{
+
+  int v2; // ecx
+  double v3; // st7
+  double v6; // [esp+0h] [ebp-14h]
+  double v7; // [esp+Ch] [ebp-8h]
+
+  _ESI = v2; /*0x41c2e4*/
+  __asm /*0x41c2e9*/
+  {
+//L-fix     fld qword ptr [esi+8]
+//L-fix     fld qword ptr [esi]
+//L-fix     fld st
+//L-fix     fmul st, st(1)
+//L-fix     fld st(2)
+//L-fix     fmul st, st(3)
+    faddp st(1), st
+    fstp [esp+14h+var_14]; double
+    fstp st
+    fstp st
+  }
+  Math::Sqrt(v6); /*0x41c2ff*/
+  __asm { fstp [esp+14h+var_8] } /*0x41c307*/
+  Math::CalcAngle(*(double *)(_ESI + 16), v7); /*0x41c31a*/
+  __asm { fsub ds:dbl_7E2820 } /*0x41c31f*/
+  __asm { fmul ds:dbl_7E2818 }
+  *(unsigned short *)a2 = Math::RoundToInt(v3); /*0x41c338*/
+  return (unsigned short *)((int)a2); /*0x41c337*/
+
+}
 
 // ==== BACKFILL 0x0041C490  AbstractClass::processCleanup  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { void* AbstractClass::processCleanup(int a2) {
-{
-    int v3;
-    int *v4;
-    int v5;
-    int v6;
-    int *v7;
-    int v8;
-    if ( (a2 & 2) != 0 )
-  {
-    v3 = *(this - 1);
-    v4 = this - 1;
-    v5 = 3 * v3;
-    v6 = v3 - 1;
-    v7 = this + v5;
-    if ( v6 >= 0 )
-    {
-    v8 = v6 + 1;
-    do
-      {
-    v7 -= 3;
-    nullsub_84(v7);
-    --v8;
-      }
-    while ( v8 );
-    }
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(v4);
-    return (char *)v4;
-  }
-    else
-  {
-    nullsub_84(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (char *)this;
-  }
-}
-} } }
-
-// ==== BACKFILL 0x0041C500  BuildingTypeClass::Enqueue  cls=BuildingTypeClass  sig=csp  renamed_refs=4  residual=- ====
-char BuildingTypeClass::Enqueue(int a2)
-{
-{
-    char *v3;
-    int i;
-    int v5;
-    int *v6;
-    int v7;
-    if ( a2 < 0 )
-    return 0;
-    v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->vtable3));
-    if ( !v3 )
-    return 0;
-    for ( i = 0; i < this->vtable2; *(int *)&v3[v5 + 4] = v6[1] )
-  {
-    v5 = 8 * i;
-    v6 = (int *)(*(int *)(this) + 8 * i++);
-    *(int *)&v3[v5] = *v6;
-  }
-    __3_YAXPAX_Z(*(void **)this);
-    v7 = a2 + this->vtable3;
-    *(int *)this = v3;
-    this->vtable3 = v7;
-    this->uniqueId = 0;
-    return 1;
-}
+void* AbstractClass::processCleanup(int a2) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41C490.json */
 }
 
-// ==== BACKFILL 0x0041C590  BuildingTypeClass::Dequeue  cls=BuildingTypeClass  sig=csp  renamed_refs=4  residual=- ====
-size_t BuildingTypeClass::Dequeue(BuildingClass * aP1)
+// ==== BACKFILL 0x0041C500  BuildingTypeClass::Enqueue  cls=BuildingTypeClass  sig=csp  renamed_refs=0  residual=- ====
+char BuildingTypeClass::Enqueue(int a2, void *a2_2)
 {
-{
-    size_t result;
-    ObjectClass *v4;
-    ObjectClass *v5;
-    int v6;
-    ObjectClass *v7;
-    result = (size_t)this->vtable2;
-    if ( result )
-  {
-    if ( !(unsigned char)this->vtable4 )
-    {
-    qsort(*(void**)this, result, 8u, CompareFunction);
-    this->uniqueId = 0;
-    this->vtable4 = 1;
-    }
-    v4 = (ObjectClass *)*(void**)this;
-    v5 = *(ObjectClass **)aP1->__pad_0;
-    v6 = (int)this->vtable2;
-    if ( v6 <= 0 )
-    return 0;
-    while ( 1 )
-    {
-    v7 = *(ObjectClass **)&v4->__pad_0[8 * (v6 / 2)];
-    if ( (int)v7 <= (int)v5 )
-      {
-    if ( v7 == v5 )
-    return (size_t)v4 + 8 * (v6 / 2);
-    v4 = (ObjectClass *)((char *)(v4) + 8 * (v6 / 2) + 8);
-    v6 += -1 - v6 / 2;
-      }
-    else
-      {
-    v6 /= 2;
-      }
-    if ( v6 <= 0 )
-    return 0;
-    }
-  }
-    return result;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041C500.json)
 }
+
+// ==== BACKFILL 0x0041C590  BuildingTypeClass::Dequeue  cls=BuildingTypeClass  sig=csp  renamed_refs=0  residual=- ====
+size_t BuildingTypeClass::Dequeue(int *aP1)
+{
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041C590.json)
 }
 
 // ==== BACKFILL 0x0041C640  TechnoClass::processIdleState  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int TechnoClass::processIdleState(int a1, void* a2, void* a3) {
-{
-    return AircraftClass::QueryInterface(this, (AbstractClass *)(a2 - 4), a3, a4);
+int TechnoClass::processIdleState(int a1, void* a2, void* a3) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41C640.json */
 }
-} } }
 
 // ==== BACKFILL 0x0041C650  TechnoClass::processGuardState  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int TechnoClass::processGuardState(int a1) {
-{
-    return AircraftClass::AddRef(this, a2 - 4);
+int TechnoClass::processGuardState(int a1) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41C650.json */
 }
-} } }
 
 // ==== BACKFILL 0x0041C660  TechnoClass::processAttackState  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int TechnoClass::processAttackState(int a1) {
-{
-    return AircraftClass::Release(this, a2 - 4);
+int TechnoClass::processAttackState(int a1) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41C660.json */
 }
-} } }
 
 // ==== BACKFILL 0x0041C670  TechnoClass::processMoveState  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int TechnoClass::processMoveState(int a1, void* a2, void* a3) {
-{
-    return AircraftClass::QueryInterface(this, (AbstractClass *)(a2 - 1728), a3, a4);
+int TechnoClass::processMoveState(int a1, void* a2, void* a3) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41C670.json */
 }
-} } }
 
 // ==== BACKFILL 0x0041C680  TechnoClass::processHarvestState  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int TechnoClass::processHarvestState(int a1) {
-{
-    return AircraftClass::AddRef(this, a2 - 1728);
+int TechnoClass::processHarvestState(int a1) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41C680.json */
 }
-} } }
 
 // ==== BACKFILL 0x0041C690  TechnoClass::processDeployState  cls=TechnoClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int TechnoClass::processDeployState(int a1) {
-{
-    return AircraftClass::Release(this, a2 - 1728);
+int TechnoClass::processDeployState(int a1) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41C690.json */
 }
-} } }
 
 // ==== BACKFILL 0x0041CB20  AircraftTypeClass::ConstructAircraft  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
 {
-{
-    int v3;
-    v3 = __2_YAPAXI_Z(0x6D8u);
-    if ( v3 )
-    return (AircraftClass *)AircraftClass::Construct(v3, this, ppv);
-    else
-    return 0;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041CB20.json)
 }
 
 // ==== BACKFILL 0x0041CB50  TechnoTypeClass::vt_entry_A0  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 char TechnoTypeClass::vt_entry_A0()
 {
-{
-    return 0;
-}
+
+  return 0; /*0x41cb52*/
+
 }
 
 // ==== BACKFILL 0x0041CB60  AircraftTypeClass::StubReturnFalse  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 char AircraftTypeClass::StubReturnFalse()
 {
-return 0;
+
+  return 0; /*0x41cb62*/
+
 }
 
 // ==== BACKFILL 0x0041CB70  AircraftTypeClass::CreateAircraft  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int * AircraftTypeClass::CreateAircraft(int a1)
 {
-{
-    if ( (DataGlobal_889F38 & 1) == 0 )
-  {
-    DataGlobal_889F38 |= 1u;
-    DataGlobal_889F20 = 0;
-    DataGlobal_889F24 = 2147450879;
-    atexit(nullsub_85);
-  }
-    return &DataGlobal_889F20;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041CB70.json)
 }
 
 // ==== BACKFILL 0x0041CBE0  AircraftTypeClass::GetDimensions  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 char AircraftTypeClass::GetDimensions(int a1, int a2)
 {
-return 0;
+
+  return 0; /*0x41cbe2*/
+
 }
 
 // ==== BACKFILL 0x0041CBF0  ObjectTypeClass::vt_entry_7C  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
 {
-{
-    int v1;
-    v1 = 2 * DataGlobal_889F58;
-    *a1 = 256;
-    *((int*)(a1) + 1) = 256;
-    *((int*)(a1) + 2) = v1;
-    return a1;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041CBF0.json)
 }
 
-// ==== BACKFILL 0x0041CDB0  AircraftTypeClass::PowerDrainUpdate  cls=AircraftTypeClass  sig=csp  renamed_refs=5  residual=- ====
+// ==== BACKFILL 0x0041CDB0  AircraftTypeClass::PowerDrainUpdate  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftTypeClass::PowerDrainUpdate(int * a2)
 {
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    v3 = BuildingTypeClass::ProcessPower(this, a2);
-    LOBYTE(v3) = this->qE08;
-    Power::FlagProcess(a2, v3);
-    LOBYTE(v4) = this->qE09;
-    Power::FlagProcess(a2, v4);
-    LOBYTE(v5) = this->qE0A;
-    v6 = Power::FlagProcess(a2, v5);
-    LOBYTE(v6) = this->qE0D;
-    Power::FlagProcess(a2, v6);
-    LOBYTE(v7) = this->qE0E;
-    Power::FlagProcess(a2, v7);
-    return Power::TimerProcess(this->ArrayIndex);
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041CDB0.json)
 }
 
 // ==== BACKFILL 0x0041CE20  AircraftTypeClass::LoadFromINI  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
-int AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
+int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
 {
-{
-    int result;
-    result = TechnoTypeClass::SaveLoad_Prefix(aP0, aP1);
-    if ( result >= 0 )
-  {
-    if ( aP0 )
-    {
-    TechnoTypeClass::Construct((int)aP0, (ObjectTypeClass *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_AircraftTypeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_AircraftTypeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AircraftTypeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_AircraftTypeClass;
-    }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[5].ChargerBarrels[6]);
-    VoxelAnimType::LoadAnim(aP0->__pad_0);
-    ObjectTypeClass::Load2DArt(aP0->__pad_0);
-    return 0;
-  }
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041CE20.json)
 }
 
 // ==== BACKFILL 0x0041CE90  AircraftTypeClass::SaveToINI  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 {
-{
-    int result;
-    result = TechnoTypeClass::SaveLoad_Prefix_0(aP1, a0, aP1, (TechnoTypeClass *)a3);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041CE90.json)
 }
 
 // ==== BACKFILL 0x0041CEB0  AircraftTypeClass::GetClassIdentifier  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-  if ( !a2 )
-    return -2147467261;
-  *a2 = -1366608935;
-  a2[1] = 298976796;
-  a2[2] = 1610654892;
-  a2[3] = -1252326136;
-  return 0;
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041CEB0.json)
 }
 
 // ==== BACKFILL 0x0041CF80  ObjectTypeClass::Copy  cls=ObjectTypeClass  sig=csp  renamed_refs=0  residual=- ====
 unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
 {
-{
-    *a0 = *(int *)aP1->__pad_0;
-    *((int*)(a0) + 1) = *(int *)&aP1->__pad_0[4];
-    *((int*)(a0) + 2) = *(int *)&aP1->__pad_0[8];
-    return a0;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041CF80.json)
 }
 
 // ==== BACKFILL 0x0041CFA0  ObjectClass::GetMember41_2  cls=ObjectTypeClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int ObjectClass::GetMember41_2() {
-    return this->location.Z;
-
-/* ASM:
-mov     eax, [ecx+0A4h]
-retn
-*/
-} } }
+int ObjectClass::GetMember41_2() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41CFA0.json */
+}
 
 // ==== BACKFILL 0x0041CFB0  AircraftTypeClass::GetTypeIdentifier  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftTypeClass::GetTypeIdentifier()
 {
-return 3;
+
+  return 3; /*0x41cfb5*/
+
 }
 
 // ==== BACKFILL 0x0041CFC0  AircraftTypeClass::GetObjectSize  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftTypeClass::GetObjectSize()
 {
-return 3600;
+
+  return 3600; /*0x41cfc5*/
+
 }
 
 // ==== BACKFILL 0x0041CFD0  AircraftTypeClass::GetAuxField  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int AircraftTypeClass::GetAuxField()
 {
-{
-    return this->ArrayIndex;
-}
+
+  return *((unsigned int *)this + 894); /*0x41cfd6*/
+
 }
 
 // ==== BACKFILL 0x0041CFE0  AircraftTypeClass::ddtor  cls=AircraftTypeClass  sig=csp  renamed_refs=0  residual=- ====
-AircraftTypeClass * AircraftTypeClass::ddtor(char a2)
+AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int a0, int a3)
 {
-    AircraftTypeClass* v7 = this;
-    AbstractClass::AnnounceExpiredPointer(this, 1);
-    DataGlobal_A8B218;
-    int v2 = DataGlobal_A8B218.FindItemIndex(&v7);
-    if ( v2 != -1 && v2 < DataGlobal_A8B228 && v2 < --DataGlobal_A8B228 )
-    {
-        do
-        {
-            ++v2;
-            *(DataGlobal_A8B21C + v2 - 1) = *(DataGlobal_A8B21C + v2);
-        }
-        while ( v2 < DataGlobal_A8B228 );
-    }
-    TechnoTypeClass::DTOR(this);
-    if ( a2 & 1 )
-        OperatorDelete(this);
-    return this;
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041CFE0.json)
 }
 
 // ==== BACKFILL 0x0041D300  AbstractClass::Create  cls=AbstractClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { void* AbstractClass::Create() {
-{
-      int v2;
-
-      AbstractClass::Constructor(this);
-      this->__pad_0[0] = (int)0;
-      this->__pad_0[1] = (int)0;
-      this->__pad_0[2] = (int)0;
-      this->__pad_0[3] = (int)&vt_AirstrikeClass;
-      if ( DataGlobal_889FC8 < DataGlobal_889FC0
-        || (DataGlobal_889FC5 || !DataGlobal_889FC0)
-        && DataGlobal_889FCC > 0
-        && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(DataGlobal_889FB8 + 8))(
-             &DataGlobal_889FB8,
-             DataGlobal_889FC0 + DataGlobal_889FCC,
-             0) )
-      {
-        v2 = DataGlobal_889FC8++;
-        *((_DWORD *)DataGlobal_889FBC + v2) = this;
-      }
-      return this;
+void* AbstractClass::Create() {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41D300.json */
 }
-} } }
 
-// ==== BACKFILL 0x0041D380  AirstrikeClass::AirstrikeClass  cls=AirstrikeClass  sig=csp  renamed_refs=3  residual=- ====
-int AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
+// ==== BACKFILL 0x0041D380  AirstrikeClass::AirstrikeClass  cls=AirstrikeClass  sig=csp  renamed_refs=0  residual=- ====
+AirstrikeClass::AirstrikeClass(int a2)
 {
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    int v11;
-    int v12;
-    int v13;
-    int v14;
-    AbstractClass::Constructor((AbstractClass *)this);
-    *(void**)this = vt_AirstrikeClass;
-    this->vtable2 = (unsigned int)vt_AirstrikeClass;
-    this->vtable3 = (unsigned int)vt_AirstrikeClass;
-    this->vtable4 = &vt_AirstrikeClass;
-    if ( *(int *)&DataGlobal_87F8E4[42724] < *(int *)&DataGlobal_87F8E4[42716] || (DataGlobal_87F8E4[42721] || !*(int *)&DataGlobal_87F8E4[42716]) && *(int *)&DataGlobal_87F8E4[42728] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_87F8E4[42708] + 8))( &DataGlobal_87F8E4[42708], *(int *)&DataGlobal_87F8E4[42716] + *(int *)&DataGlobal_87F8E4[42728], 0) )
-  {
-    v3 = (*(int *)&DataGlobal_87F8E4[42724])++;
-    *(int *)(*(int *)&DataGlobal_87F8E4[42712] + 4 * v3) = this;
-  }
-    this->AirstrikeClass_field_3C = 0;
-    this->owner = aP1;
-    this->AirstrikeClass_field_3D = 0;
-    v4 = (*(int (__thiscall **)(TechnoClass *))(*(int *)aP1->__pad_0 + 132))(aP1);
-    v5 = this->owner;
-    this->AirstrikeClass_field_24 = *(int *)(v4 + 1564);
-    v6 = (*(int (__thiscall **)(int))(*(int *)(v5) + 132))(v5);
-    v7 = this->owner;
-    this->AirstrikeClass_field_28 = *(int *)(v6 + 1568);
-    v8 = (*(int (__thiscall **)(int))(*(int *)(v7) + 132))(v7);
-    v9 = this->owner;
-    this->AirstrikeClass_field_44 = *(int *)(v8 + 1580);
-    v10 = (*(int (__thiscall **)(int))(*(int *)(v9) + 132))(v9);
-    v11 = this->owner;
-    this->AirstrikeClass_field_48 = *(int *)(v10 + 1584);
-    v12 = (*(int (__thiscall **)(int))(*(int *)(v11) + 132))(v11);
-    v13 = this->owner;
-    this->AirstrikeClass_field_54 = *(int *)(v12 + 1572);
-    v14 = *(int *)((*(int (__thiscall **)(int))(*(int *)(v13) + 132))(v13) + 1576);
-    this->AirstrikeClass_field_5C = 0;
-    this->AirstrikeClass_field_58 = v14;
-    this->AirstrikeClass_field_50 = 0;
-    return this;
-}
+     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41D380)
 }
 
 // ==== BACKFILL 0x0041D540  ObjectClass::CleanupAirstrikeTarget  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-namespace ra2 { namespace game { int ObjectClass::CleanupAirstrikeTarget(int a1) {
-{
-      int v3;
-      int v4;
-      int v5;
-      _DWORD *v6;
-      AudioController *i;
-      AudioController *j;
-      _DWORD v10[3];
-
-      if ( g_NetworkPlayerBuffer[4964] )
-      {
-        if ( aP1 )
-        {
-          v3 = (aP1->__pad_10[4] & 4) != 0 ? (unsigned int)aP1 : 0;
-          v4 = (*(int (__thiscall **)(AudioController *))(*(_DWORD *)aP1->__pad_0 + 44))(aP1) == 6 ? (unsigned int)aP1 : 0;
-        }
-        else
-        {
-          v3 = 0;
-          v4 = 0;
-        }
-        v5 = this->q04C;
-        if ( aP1 == (AudioController *)v5 )
-        {
-          if ( this->q03D
-            && v5
-            && this->q05C
-            && (unsigned __int8)House::IsHumanPlayer(*(#375 **)(v5 + 540)) )
-          {
-            v6 = (_DWORD *)(this->q05C + 156);
-            v10[0] = *v6;
-            v10[1] = v6[1];
-            v10[2] = v6[2];
-            StartAudioControllerAt(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 604), (int)v10, 0);
-          }
-          WTFMode::ResetUnitFlags(this);
-          for ( i = *(AudioController **)(this + 92); i; i = *(AudioController **)(this + 92) )
-            AirstrikeClass::RemoveAircraft(this, i);
-          v4 = this->customSound_controller;
-          if ( v4 && (*(_BYTE *)(v4 + 20) & 1) != 0 )
-          {
-            v4 = (*(_BYTE *)(v4 + 20) & 1) != 0 ? v4 : 0;
-            *(_DWORD *)(v4 + 660) = 0;
-          }
-          this->customSound_controller = 0;
-        }
-        else if ( v3 && *(_DWORD *)(v3 + 660) == this )
-        {
-          LOBYTE(v4) = AirstrikeClass::RemoveAircraft(this, (AudioController *)v3);
-        }
-        else if ( v4 && *(_DWORD *)(v4 + 660) == this && (*(int *)(v4 + 108) <= 0 || !*(_BYTE *)(v4 + 144)) )
-        {
-          LOBYTE(v4) = WTFMode::ResetUnitFlags(this);
-        }
-      }
-      else
-      {
-        LOBYTE(v4) = (_BYTE)aP1;
-        if ( aP1 == *(AudioController **)(this + 76) )
-        {
-          for ( j = *(AudioController **)(this + 92); j; j = *(AudioController **)&j[7].__pad_94[4] )
-            *(_DWORD *)&j[3].__pad_10[68] = 0;
-        }
-        else if ( aP1 && (aP1->__pad_10[4] & 4) != 0 && *(_DWORD *)&aP1[3].__pad_10[68] == this )
-        {
-          LOBYTE(v4) = AirstrikeClass::RemoveAircraft(this, aP1);
-        }
-      }
-      return v4;
+int ObjectClass::CleanupAirstrikeTarget(int a1) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x41D540.json */
 }
-} } }
 
 // ==== BACKFILL 0x0041D6E0  AirstrikeClass::Stat  cls=AirstrikeClass  sig=csp  renamed_refs=0  residual=- ====
 int AirstrikeClass::Stat(AbstractClass * aP1)
 {
-{
-    return AbstractClass::ProcessPower((#378 *)this);
-}
+
+  return ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x41d6ea*/
+
 }
 
 // ==== BACKFILL 0x0041D6F0  AirstrikeClass::Write  cls=AirstrikeClass  sig=csp  renamed_refs=0  residual=- ====
 int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
 {
-{
-    AbstractClass *Prefix_0;
-    Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( (int)Prefix_0 >= 0 )
+
+  int Prefix_0; // edi
+
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); 
+  if ( Prefix_0 >= 0 ) /*0x41d705*/
   {
-    if ( aP0 )
+    if ( aP0 ) /*0x41d709*/
     {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_AirstrikeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_AirstrikeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_AirstrikeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_AirstrikeClass;
+      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x41d712*/
+      aP0->vtable1 = &vt_AirstrikeClass; /*0x41d717*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d71d*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d724*/
+      ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d72b*/
     }
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[4]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[8]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].__pad_0[12]);
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].uniqueId);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[2].abstractFlags);
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->owner); /*0x41d73b*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AirstrikeClass_field_50)); /*0x41d749*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AirstrikeClass_field_54)); /*0x41d757*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AirstrikeClass_field_58)); /*0x41d765*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AirstrikeClass_field_5C)); /*0x41d773*/
   }
-    return (int)Prefix_0->__pad_0;
-}
+  return Prefix_0; /*0x41d77a*/
+
 }
 
 // ==== BACKFILL 0x0041D780  AirstrikeClass::Seek  cls=AirstrikeClass  sig=csp  renamed_refs=0  residual=- ====
 int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41D780)
 }
 
 // ==== BACKFILL 0x0041D7A0  AirstrikeClass::ddtor  cls=AirstrikeClass  sig=csp  renamed_refs=0  residual=- ====
 int AirstrikeClass::ddtor(int a1, unsigned int * a2)
 {
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1893611809;
-  a2[1] = 299179558;
-  a2[2] = -1610574449;
-  a2[3] = -1672772828;
-  return 0;
+
+  if ( !a2 ) /*0x41d7a6*/
+    return -2147467261; /*0x41d7a8*/
+  *a2 = 1893611809; /*0x41d7b6*/
+  a2[1] = 299179558; /*0x41d7be*/
+  a2[2] = -1610574449; /*0x41d7c7*/
+  a2[3] = unk_7E98EC; /*0x41d7d0*/
+  return 0; /*0x41d7ad*/
+
 }
 
 // ==== BACKFILL 0x0041D830  AirstrikeClass::StartMission  cls=AirstrikeClass  sig=csp  renamed_refs=0  residual=- ====
 char AirstrikeClass::StartMission(int * a2)
 {
-{
-    char result;
-    result = (char)a2;
-    if ( !this->AirstrikeClass_field_3C )
-    return AirstrikeClass::SpawnAircraft(this, a2);
-    if ( a2 != *(int **)(this + 80) )
-    return AirstrikeClass::ReassignTarget(this, (int)a2);
-    return result;
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41D830)
 }
 
 // ==== BACKFILL 0x0041DD10  sub_41DD10  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-char E4Recv_41DD10::sub_41DD10()
+char sub_41DD10()
 {
-{
-    this->M64 = g_CurrentFrame;
-    this->M60 = 0;
-    this->M61 = 0;
-    return 0;
-}
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041DD10.json)
 }
 
 // ==== BACKFILL 0x0041DD30  AirstrikeClass::StubReturn96  cls=AirstrikeClass  sig=csp  renamed_refs=0  residual=- ====
@@ -2280,218 +1263,128 @@ int AirstrikeClass::StubReturn71() const { return 71; }
 // ==== BACKFILL 0x0041F490  CCINIClass::ReadInfantryTypeList  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
 {
-{
-    CCINIClass *KeyCount;
-    CCINIClass *i;
-    unsigned char *StringByIndex;
-    AITriggerTypeClass *result;
-    int j;
-    int *v9;
-    INIClass *v10;
-    int k;
-    int v12;
-    char Destination[32];
-    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes);
-    for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
-  {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, i);
-    INIClass::GetString( (unsigned char ***)a1, (INIClass *)aAitriggertypes, StringByIndex, (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)Destination, 32);
-    INIClass::ClearSection((int)a1, (INIClass *)Destination, 0);
-  }
-    INIClass::ClearSection((int)a1, (INIClass *)aAitriggertypes, 0);
-    result = g_AnimTypeInitQueue;
-    for ( j = 0; j < (int)g_AnimTypeInitQueue; ++j )
-  {
-    v9 = *(int **)&DataGlobal_A8B204->__pad_0[4 * j];
-    if ( v9[39] == a2 )
-    (*(void (__thiscall **)(int *, char *))(*v9 + 104))(v9, a1);
-    result = g_AnimTypeInitQueue;
-  }
-    if ( !a2 )
-  {
-    INIClass::ClearSection((int)a1, (INIClass *)aAitriggertypes_0, 0);
-    result = g_AnimTypeInitQueue;
-    for ( k = 0; k < (int)g_AnimTypeInitQueue; ++k )
-    {
-    v12 = *(int *)&DataGlobal_A8B204->__pad_0[4 * k];
-    LOBYTE(v10) = *(char *)(v12 + 164);
-    INIClass::SetBool(a1, (INIClass *)aAitriggertypes_0, (char *)(v12 + 36), v10);
-    result = g_AnimTypeInitQueue;
-    }
-  }
-    return result;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41F490)
 }
 
 // ==== BACKFILL 0x0041FB10  TriggerTypeClass::SaveToINI  cls=AITriggerTypeClass  sig=csp  renamed_refs=0  residual=- ====
-namespace gamemd { int TriggerTypeClass::SaveToINI(void* a1) {
-{
-      const char *v3;
-      int v4;
-      int v5;
-      int v6;
-      int v7;
-      unsigned int v8;
-      char *v9;
-      bool v10;
-      const char *v12;
-      const char *v13;
-      const char *v14;
-      char Buffer[512];
-      char Source[512];
+char TriggerTypeClass::SaveToINI(char * a2) {
+    void *v3; // ebp
+    int v4; // eax
+    int v5; // eax
+    int v6; // eax
+    int v7; // eax
+    unsigned int v8; // edi
+    char *v9; // ebx
+    bool v10; // zf
+    void *v12; // [esp+10h] [ebp-40Ch]
+    void *v13; // [esp+14h] [ebp-408h]
+    void *v14; // [esp+18h] [ebp-404h]
+    char Buffer[512]; // [esp+1Ch] [ebp-400h] BYREF
+    char Source[512]; // [esp+21Ch] [ebp-200h] BYREF
 
-      v12 = (const char *)off_818114;
-      v13 = (const char *)off_818114;
-      v3 = (const char *)off_818114;
-      v14 = (const char *)off_818114;
-      v4 = this->q0DC;
-      if ( v4 )
-        v12 = (const char *)(v4 + 36);
-      v5 = this->q0E0;
-      if ( v5 )
-        v13 = (const char *)(v5 + 36);
-      if ( this->MustTransfer == 1 )
-      {
-        v6 = this->NextTrigger;
-        if ( v6 != -1 )
-          v3 = (const char *)(*((_DWORD *)g_SuperWeaponTypeCount + v6) + 36);
-      }
-      else if ( this->MustTransfer == 2 )
-      {
-        v3 = (const char *)off_818118;
-      }
-      v7 = this->q0D8;
-      if ( v7 )
-        v14 = (const char *)(v7 + 36);
-      v8 = 0;
-      v9 = Buffer;
-      do
-      {
-        sprintf(v9, DataGlobal_8181B0, *(unsigned __int8 *)(this + v8++ + 228));
-        v9 += 2;
-      }
-      while ( v8 < 0x20 );
-      v10 = this->q0D4 == 0;
-      *v9 = 0;
-      sprintf(
-        Source,
-        stru_818174,
-        (const char *)(this + 100),
-        v12,
-        v3,
-        this->FirstAction,
-        this->ArrayIndex,
-        v14,
-        Buffer,
-        *(long double *)(this + 184),
-        *(long double *)(this + 192),
-        *(long double *)(this + 200),
-        this->q0D0 != 0,
-        0,
-        this->FirstEvent,
-        this->q0D1 != 0,
-        v13,
-        this->q0D2 != 0,
-        this->q0D3 != 0,
-        !v10);
-      return INIClass::SetString(a2, (unsigned __int8 *)aAitriggertypes, (char *)(this + 36), Source);
+    v12 = off_818114; /*0x41fb20*/
+    v13 = off_818114; /*0x41fb24*/
+    v3 = off_818114; /*0x41fb28*/
+    v14 = off_818114; /*0x41fb2a*/
+    v4 = *((unsigned int *)this + 55); /*0x41fb2e*/
+    if ( v4 ) /*0x41fb37*/
+      v12 = (void *)(v4 + 36); /*0x41fb3c*/
+    v5 = *((unsigned int *)this + 56); /*0x41fb40*/
+    if ( v5 ) /*0x41fb48*/
+      v13 = (void *)(v5 + 36); /*0x41fb4d*/
+    if ( *((unsigned int *)this + 40) == 1 ) /*0x41fb58*/
+    {
+      v6 = *((unsigned int *)this + 42); /*0x41fb65*/
+      if ( v6 != -1 ) /*0x41fb6e*/
+        v3 = (void *)(*((unsigned int *)dword_A83C9C + v6) + 36); /*0x41fb79*/
+    }
+    else if ( *((unsigned int *)this + 40) == 2 ) /*0x41fb5b*/
+    {
+      v3 = off_818118; /*0x41fb5d*/
+    }
+    v7 = *((unsigned int *)this + 54); /*0x41fb7c*/
+    if ( v7 ) /*0x41fb84*/
+      v14 = (void *)(v7 + 36); /*0x41fb89*/
+    v8 = 0; /*0x41fb8d*/
+    v9 = Buffer; /*0x41fb8f*/
+    do /*0x41fbb2*/
+    {
+      sprintf(v9, (const char *)a02x_0, *((uint8_t *)this + v8++ + 228)); /*0x41fba3 "%02x"@0x8181B0*/
+      v9 += 2; /*0x41fbac*/
+    }
+    while ( v8 < 0x20 ); /*0x41fbb2*/
+    v10 = *((unsigned char *)this + 212) == 0; /*0x41fbbc*/
+    *v9 = 0; /*0x41fbbe*/
+    sprintf( /*0x41fc64*/
+      Source,
+      (const char *)((char *)&g_INI_Key_Civilian + 16), /*0x41fc60 fmt blob+0x10*/
+      (char *)this + 100,
+      v12,
+      v3,
+      *((unsigned int *)this + 44),
+      *((unsigned int *)this + 38),
+      v14,
+      Buffer,
+      *((unsigned int *)this + 46),
+      *((unsigned int *)this + 47),
+      *((unsigned int *)this + 48),
+      *((unsigned int *)this + 49),
+      *((unsigned int *)this + 50),
+      *((unsigned int *)this + 51),
+      *((unsigned char *)this + 208) != 0,
+      0,
+      *((unsigned int *)this + 43),
+      *((unsigned char *)this + 209) != 0,
+      v13,
+      *((unsigned char *)this + 210) != 0,
+      *((unsigned char *)this + 211) != 0,
+      !v10);
+    return ((INIClass *)/*0x41fc8a*/
+             a2)->SetString((void *)(uint8_t *)aAitriggertypes, (void *)((char *)this + 36), (void *)Source); /*0x41fc88 key=+0x24*/
 }
-} }
 
 // ==== BACKFILL 0x0041FD30  sub_41FD30  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_41FD30::sub_41FD30(int a2)
+int sub_41FD30(int a2)
 {
-{
-    this->M216 = a2;
-    return a2;
-}
+    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041FD30.json)
 }
 
 // ==== BACKFILL 0x0041FD40  sub_41FD40  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_41FD40::sub_41FD40(int a2)
+int sub_41FD40(int a2)
 {
-{
-    this->M220 = a2;
-    return a2;
-}
+    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041FD40.json)
 }
 
 // ==== BACKFILL 0x0041FD50  sub_41FD50  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
-int E4Recv_41FD50::sub_41FD50(int a2)
+int sub_41FD50(int a2)
 {
-{
-    this->M224 = a2;
-    return a2;
-}
+    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041FD50.json)
 }
 
 // ==== BACKFILL 0x0041FEE0  globalHelper_01FEE0  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
 {
-{
-    IUnknown *v3;
-    AbstractClass *v4;
-    ObjectClass *CurrentOption;
-    MouseClass *v6;
-    int v7;
-    MouseClass *v8;
-    MouseClass *TileIndex;
-    v3 = aP0;
-    if ( aP0->__pad_EC[4] )
-  {
-    v4 = (AbstractClass *)a2;
-    if ( a2 )
-    {
-    a2 = *(int **)HouseClass::GetCurrentOption(a1, (IUnknown *)&a1)->__pad_0;
-    CurrentOption = HouseClass::GetCurrentOption(v4, (IUnknown *)&a1);
-    v6 = *(MouseClass **)v3->__pad_EC;
-    aP0 = *(IUnknown **)CurrentOption->__pad_0;
-    if ( !v3->__pad_EC[5] )
-      {
-    TileIndex = (MouseClass *)MapClass::GetTileIndex( &DataGlobal_87C374[13428], (IUnknown *)&aP0, (IUnknown *)v6, 0);
-    return MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&a2, (IUnknown *)v6, 0) == (int)TileIndex;
-      }
-    v7 = MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&aP0, (IUnknown *)v6, 0);
-    if ( MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&a2, (IUnknown *)v6, 0) == v7 )
-    return 0;
-    v8 = (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&aP0, (IUnknown *)5, 0);
-    if ( (MouseClass *)MapClass::GetTileIndex(&DataGlobal_87C374[13428], (IUnknown *)&a2, (IUnknown *)5, 0) != v8 )
-    return 0;
-    }
-  }
-    return 1;
-}
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041FEE0.json)
 }
 
 // ==== BACKFILL 0x0041FFD0  AITriggerTypeClass::GetTypeIdentifier  cls=AITriggerTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int AITriggerTypeClass::GetTypeIdentifier()
 {
-return 59;
+
+  return 59; /*0x41ffd5*/
+
 }
 
 // ==== BACKFILL 0x0041FFE0  AITriggerTypeClass::GetObjectSize  cls=AITriggerTypeClass  sig=csp  renamed_refs=0  residual=- ====
 int AITriggerTypeClass::GetObjectSize()
 {
-return 272;
+
+  return 272; /*0x41ffe5*/
+
 }
 
 // ==== BACKFILL 0x0041FFF0  AITriggerTypeClass::ddtor  cls=AITriggerTypeClass  sig=csp  renamed_refs=0  residual=- ====
-AITriggerTypeClass * AITriggerTypeClass::ddtor(char a2)
+AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
 {
-    AITriggerTypeClass* v7 = this;
-    AITriggerTypeClass_Array;
-    int v2 = AITriggerTypeClass_Array.FindItemIndex(&v7);
-    if ( v2 != -1 && v2 < g_AnimTypeInitQueue && v2 < --g_AnimTypeInitQueue )
-    {
-        do
-        {
-            ++v2;
-            *(DataGlobal_A8B204 + v2 - 1) = *(DataGlobal_A8B204 + v2);
-        }
-        while ( v2 < g_AnimTypeInitQueue );
-    }
-    AbstractTypeClass::Dtor(this);
-    if ( a2 & 1 )
-        OperatorDelete(this);
-    return this;
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41FFF0)
 }

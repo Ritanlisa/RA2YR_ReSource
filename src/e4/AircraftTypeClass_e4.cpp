@@ -141,7 +141,7 @@ namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::GetAuxField()
 {
 
-  return *((unsigned int *)this + 894); /*0x41cfd6*/
+  return this->ArrayIndex; /*0x41cfd6*/
 
 }
 }  // G42.18c ns repair

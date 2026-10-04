@@ -906,7 +906,7 @@ int Crate::FindPlacement(int a1, int a2) {
 namespace gamemd { 
 void CellClass::RadLevel_Increase(double a2) {
 
-  *((unsigned int *)this + 30) = a2 + *((unsigned int *)this + 30); /*0x487cea*/
+  this->cloakedByHouses = a2 + this->cloakedByHouses; /*0x487cea*/
 
 }
 }
@@ -1477,12 +1477,12 @@ int TacticalClass::SetCameraPosition(int a2, int a3, int a4) {
 
   int result; // eax
 
-  result = *((unsigned int *)this + 18); /*0x540d10*/
+  result = this->field48; /*0x540d10*/
   if ( result ) /*0x540d15*/
   {
     *(unsigned int *)(result + 40) = a2; /*0x540d1b*/
-    *(unsigned int *)(*((unsigned int *)this + 18) + 44) = a3; /*0x540d25*/
-    result = *((unsigned int *)this + 18); /*0x540d28*/
+    *(unsigned int *)(this->field48 + 44) = a3; /*0x540d25*/
+    result = this->field48; /*0x540d28*/
     *(unsigned int *)(result + 48) = a4; /*0x540d2f*/
   }
   return result; /*0x540d32*/
@@ -1548,7 +1548,7 @@ int TacticalClass::GetField() {
   result = (int)((unsigned int *)this)[0]; /*0x556b30*/
   if ( result ) /*0x556b37*/
   {
-    *(unsigned int *)(result + 168) = 0; /*0x556b39*/
+    result->TacticalClass_field_A8 = 0; /*0x556b39*/
     ((unsigned int *)this)[0] = 0; /*0x556b3f*/
   }
   return result; /*0x556b42*/
@@ -1967,14 +1967,14 @@ void TacticalClass::ClearVector() {
   void *v2; // eax
 
   v2 = *(void **)((char *)this + 4); /*0x5c0a76*/
-  *((unsigned int *)this + 4) = 0; /*0x5c0a79*/
-  if ( v2 && *((unsigned char *)this + 13) ) /*0x5c0a80*/
+  this->uniqueId = 0; /*0x5c0a79*/
+  if ( v2 && this->q00D ) /*0x5c0a80*/
   {
-    __3_YAXPAX_Z(v2); /*0x5c0a86*/
-    *((unsigned int *)this + 1) = 0; /*0x5c0a8e*/
+    delete v2; /*0x5c0a86*/
+    this->q004 = 0; /*0x5c0a8e*/
   }
-  *((unsigned char *)this + 13) = 0; /*0x5c0a91*/
-  *((unsigned int *)this + 2) = 0; /*0x5c0a94*/
+  this->q00D = 0; /*0x5c0a91*/
+  this->q008 = 0; /*0x5c0a94*/
 
 }
 }
@@ -1982,8 +1982,8 @@ void TacticalClass::ClearVector() {
 namespace gamemd { 
 int TacticalClass::ProbeCalling(int a2) {
 
-  if ( *((unsigned char *)this + 12) ) /*0x5c0aa0*/
-    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x5c0ab5*/
+  if ( this->q00C ) /*0x5c0aa0*/
+    return (unsigned int)(a2 - this->q004) >> 2; /*0x5c0ab5*/
   else
     return 0; /*0x5c0aa7*/
 
@@ -2067,8 +2067,8 @@ int ScenarioClass::AssignStartingPoints(int a1) {
 namespace gamemd { 
 int ScenarioClass::deallocateCells(int a2) {
 
-  if ( *((unsigned char *)this + 12) ) /*0x5d80e0*/
-    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x5d80f5*/
+  if ( this->q00C ) /*0x5d80e0*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x5d80f5*/
   else
     return 0; /*0x5d80e7*/
 
@@ -2081,14 +2081,14 @@ void ScenarioClass::resetScenarioData() {
   void *v2; // eax
 
   v2 = *(void **)((char *)this + 4); /*0x5d8116*/
-  *((unsigned int *)this + 4) = 0; /*0x5d8119*/
-  if ( v2 && *((unsigned char *)this + 13) ) /*0x5d8120*/
+  this->q010 = 0; /*0x5d8119*/
+  if ( v2 && this->IsAllocated ) /*0x5d8120*/
   {
-    __3_YAXPAX_Z(v2); /*0x5d8126*/
-    *((unsigned int *)this + 1) = 0; /*0x5d812e*/
+    delete v2; /*0x5d8126*/
+    this->Items = 0; /*0x5d812e*/
   }
-  *((unsigned char *)this + 13) = 0; /*0x5d8131*/
-  *((unsigned int *)this + 2) = 0; /*0x5d8134*/
+  this->IsAllocated = 0; /*0x5d8131*/
+  this->Capacity = 0; /*0x5d8134*/
 
 }
 }
@@ -2096,8 +2096,8 @@ void ScenarioClass::resetScenarioData() {
 namespace gamemd { 
 int ScenarioClass::validateMap(int a2) {
 
-  if ( *((unsigned char *)this + 12) ) /*0x5d8140*/
-    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x5d8155*/
+  if ( this->q00C ) /*0x5d8140*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x5d8155*/
   else
     return 0; /*0x5d8147*/
 
@@ -2121,8 +2121,8 @@ int ScenarioClass::initLocalVariables(void* a1) {
 namespace gamemd { 
 int ScenarioClass::setGameSpeed(int a2) {
 
-  if ( *((unsigned char *)this + 12) ) /*0x5d86b0*/
-    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x5d86c5*/
+  if ( this->q00C ) /*0x5d86b0*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x5d86c5*/
   else
     return 0; /*0x5d86b7*/
 

@@ -9,10 +9,6 @@
 // ---- IDA atom typedefs (this TU standalone) ----
 #ifndef G22_GAP2_IDA_ATOMS
 #define G22_GAP2_IDA_ATOMS
-typedef unsigned int unsigned int;
-typedef unsigned short unsigned short;
-typedef unsigned char unsigned char;
-typedef unsigned long long unsigned long long;
 typedef unsigned short u_short;
 typedef unsigned long u_long;
 typedef unsigned char u_char;

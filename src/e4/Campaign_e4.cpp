@@ -38,7 +38,7 @@ namespace gamemd {
 BOOL Campaign_WorldDominationTour_24::AddRef(void *a1_1)
 {
 
-  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76570d*/
+  return this->u32_8 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76570d*/
 
 }
 }

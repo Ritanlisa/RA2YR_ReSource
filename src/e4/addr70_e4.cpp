@@ -100,7 +100,7 @@ namespace gamemd {
 int E4Recv_70DE20::sub_70DE20(int a2)
 {
 
-  *((unsigned int *)this + 81) += a2; /*0x70de2c*/
+  this->M324 += a2; /*0x70de2c*/
   return a2; /*0x70de32*/
 
 }
@@ -128,7 +128,7 @@ namespace gamemd {
 int E4Recv_70FE40::sub_70FE40(int a2)
 {
 
-  *((unsigned int *)this + 116) = a2; /*0x70fe44*/
+  this->M464 = a2; /*0x70fe44*/
   return a2; /*0x70fe4a*/
 
 }

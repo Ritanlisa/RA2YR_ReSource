@@ -93,75 +93,55 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * a
 }
 int MapClass::SetScrollMode(int aP1)
 // 0x4AEB30
-namespace gamemd {
 int MapClass::SetScrollMode(int a2, int aP1, int a1, int aP2, int a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004AEB30.json)
 }
-} // namespace gamemd
 // 0x506D50
-namespace gamemd {
 int MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass_flat * aP2, int * a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00506D50.json)
 }
-} // namespace gamemd
 // 0x547020
-namespace gamemd {
 ObjectClass * * MapClass::LoadFileData()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00547020.json)
 }
-} // namespace gamemd
 // 0x554A80
-namespace gamemd {
 int MapClass::ScrollOnce(AbstractClass * aP1)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00554A80.json)
 }
-} // namespace gamemd
 // 0x5652C0
-namespace gamemd {
 void* MapClass::Destruct()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005652C0.json)
 }
-} // namespace gamemd
 // 0x565800
-namespace gamemd {
 VectorClass_flat * * MapClass::Destru_vt05()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00565800.json)
 }
-} // namespace gamemd
 // 0x5659F0
-namespace gamemd {
 void MapClass::Destru_vt07()
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005659F0.json)
 }
-} // namespace gamemd
 // 0x565AA0
-namespace gamemd {
 int MapClass::InitCellVector()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00565AA0.json)
 }
-} // namespace gamemd
 // 0x565BC0
-namespace gamemd {
 unsigned int * MapClass::InitAllCells()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00565BC0.json)
 }
-} // namespace gamemd
 // 0x5673A0
-namespace gamemd {
 int MapClass::RevealArea0(int *a2, int a3, void *a4, char a5, char a6, char a7, char a8, char a9, int aP1, int aP2, int aP3, int aP4, int aP5, int a1)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005673A0.json)
 }
-} // namespace gamemd
 // 0x5683C0
 namespace gamemd {
 void MapClass::FillRevealBuffer(MouseClass * aP1, IUnknown * aP2)

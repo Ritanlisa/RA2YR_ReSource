@@ -86,80 +86,60 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41AA80)
 }
 // 0x41ADF0
-namespace gamemd {
 int AircraftClass::RevealSight(int a2, int a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041ADF0.json)
 }
-}
 // 0x41B430
-namespace gamemd {
 void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041B430.json)
 }
-}
 // 0x41B9F0
-namespace gamemd {
 int AircraftClass::UpdateDocking(int a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041B9F0.json)
 }
-}
 // 0x41BB30
-namespace gamemd {
 int AircraftClass::OverrideMission_SyncLog(int a2, int a3, int a4)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BB30.json)
 }
-}
 // 0x417BD0
-namespace gamemd {
 char AircraftClass::ValidateMovement(int a2, int * a3, int a4)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00417BD0.json)
 }
-} // namespace gamemd
 
 // 0x417F80
-namespace gamemd {
 int AircraftClass::CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3)
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00417F80.json)
 }
-} // namespace gamemd
 
 // 0x41A590
-namespace gamemd {
 char * AircraftClass::CheckLandingClearance(int a2, int a3, int a4)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041A590.json)
 }
-} // namespace gamemd
 
 // 0x41ADC0
-namespace gamemd {
 int AircraftClass::ProcessDockCheck()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041ADC0.json)
 }
-} // namespace gamemd
 
 // 0x41B5C0
-namespace gamemd {
 HRESULT AircraftClass::CheckPassengerCount(int a1, int pPStm, int a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41B5C0)
 }
-} // namespace gamemd
 
 // 0x41B980
-namespace gamemd {
 int AircraftClass::IsBelowScreen()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041B980.json)
 }
-} // namespace gamemd
 
 // 0x41BE60
 namespace gamemd {

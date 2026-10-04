@@ -75,7 +75,7 @@ unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
   int v7; // edi
 
   v2 = MixFileClass::LoadSubFile(); /*0x69e7e0*/
-  if ( v2 && a2 < *(int16_t *)(v2 + 6) && (v3 = (int16_t *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
+  if ( v2 && a2 < v2->nextArrayIndex && (v3 = (int16_t *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
   {
     v4 = *v3; /*0x69e800*/
     v5 = v3[1]; /*0x69e803*/

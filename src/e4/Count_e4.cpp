@@ -19,10 +19,10 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   int result; // eax
   int v3; // edx
 
-  v1 = (int)(*((unsigned int *)this + 7) - 1);
-  *((unsigned int *)this + 7) = v1; /*0x408e76*/
+  v1 = (int)(this->u32_1C - 1);
+  this->u32_1C = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
-    *((unsigned int *)this + 7) = 0; /*0x408e7b*/
+    this->u32_1C = 0; /*0x408e7b*/
   result = (int)(this->m_RefCount); /*0x408e82*/
   v3 = *(unsigned int *)(this->m_RefCount + 152) - 1; /*0x408e8a*/
   *(unsigned int *)(this->m_RefCount + 152) = v3; /*0x408e8d*/
@@ -49,7 +49,7 @@ int32_t Count::GetCountQueue()
 
   int v1; // eax
 
-  v1 = *((unsigned int *)this + 14); /*0x5f1ea0*/
+  v1 = this->u32_38; /*0x5f1ea0*/
   if ( v1 ) /*0x5f1ea5*/
     return *(unsigned int *)(*(unsigned int *)(v1 + 4) + 40); /*0x5f1eaa*/
   else
@@ -62,7 +62,7 @@ namespace gamemd {
 int32_t Count::Get()
 {
 
-  return *((unsigned int *)this + 1); /*0x76f083*/
+  return this->u32_4; /*0x76f083*/
 
 }
 } // namespace gamemd
@@ -71,7 +71,7 @@ namespace gamemd {
 int32_t Count::Release(void *a1)
 {
 
-  ++*((unsigned int *)this + 2); /*0x76f162*/
+  ++this->u32_8; /*0x76f162*/
   return (int32_t)(this->__pad_0); /*0x76f165*/
 
 }
@@ -81,7 +81,7 @@ namespace gamemd {
 int32_t Count::ddtor()
 {
 
-  --*((unsigned int *)this + 2); /*0x76f172*/
+  --this->u32_8; /*0x76f172*/
   return (int32_t)(this->__pad_0); /*0x76f175*/
 
 }

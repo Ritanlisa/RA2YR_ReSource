@@ -721,7 +721,7 @@ void VoxelModel_BuildDrawList_3p(float *a1, int a2, int a3)
 // 0x7564B0
 namespace gamemd {
 int VoxelSection::GetInfo(int a2, int a3) {
-    return *((unsigned int *)this + 5) + 164 * (a3 + *(unsigned int *)(*((unsigned int *)this + 4) + 12 * a2)); /*0x7564cf*/
+    return this->u32_14 + 164 * (a3 + *(unsigned int *)(this->u32_10 + 12 * a2)); /*0x7564cf*/
 }
 } // namespace gamemd
 

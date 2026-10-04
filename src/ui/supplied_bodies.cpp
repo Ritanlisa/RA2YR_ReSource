@@ -278,18 +278,18 @@ int CommandClass::BinarySearchAction(unsigned int *a2) {
     int v6; // ecx
     unsigned int v7; // esi
 
-    result = *((unsigned int *)this + 1); /*0x724fc3*/
+    result = this->u32_4; /*0x724fc3*/
     if ( result ) /*0x724fc8*/
     {
-      if ( !*((unsigned char *)this + 12) ) /*0x724fce*/
+      if ( !this->u32_C ) /*0x724fce*/
       {
         qsort(*(void **)this, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc2Int); /*0x724fe0*/
-        *((unsigned int *)this + 4) = 0; /*0x724fe8*/
-        *((unsigned char *)this + 12) = 1; /*0x724fef*/
+        this->u32_10 = 0; /*0x724fe8*/
+        this->u32_C = 1; /*0x724fef*/
       }
       v4 = *(unsigned int *)this; /*0x724ff9*/
       v5 = *a2; /*0x724ffb*/
-      v6 = *((unsigned int *)this + 1); /*0x724ffd*/
+      v6 = this->u32_4; /*0x724ffd*/
       if ( v6 <= 0 ) /*0x725002*/
         return 0; /*0x72502e*/
       while ( 1 ) /*0x72500b*/
@@ -468,8 +468,6 @@ int FontClass::RenderText(unsigned __int16 *a2, int xLeft, int yTop, int a5, int
 }
 } // namespace gamemd
 
-// 0x4348F0
-namespace gamemd {
 int FontRenderer::InitContext(int * a2) {
     int v3; // edx
     int v4; // eax
@@ -513,9 +511,6 @@ int FontRenderer::InitContext(int * a2) {
 
 // 0x4349B0
 namespace gamemd {
-int FontClass::GetPixelData(unsigned __int16 a2) {
-    unsigned int *FontClass_field_0x04; // ecx
-    int v3; // eax
     uint8_t *v4; // eax
 
     FontClass_field_0x04 = (unsigned int *)this->FontClass_field_0x04; /*0x4349b0*/
@@ -1591,7 +1586,7 @@ int CheckListClass::SetItemData(wchar_t *String2) {
 namespace gamemd {
 unsigned int * ControlClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7, char a8) {
     GadgetClass::Construct((ShpButtonClass *)this, a3, a4, a5, a6, a7, a8); /*0x48e543*/
-    *((unsigned int *)this + 10) = 0; /*0x48e54c*/
+    this->q028 = 0; /*0x48e54c*/
     *((unsigned int *)this + 9) = a2; /*0x48e553*/
     *(unsigned int *)this->__pad_0 = 0; /*0x48e556*/
     return this->__pad_0; /*0x48e55e*/
@@ -1602,7 +1597,7 @@ unsigned int * ControlClass::Construct(int a2, int a3, int a4, int a5, int a6, i
 namespace gamemd {
 unsigned int * ControlClass::CtorFromData(int a2) {
     ControlClass::Constructor(this, a2); /*0x48e579*/
-    *((unsigned int *)this + 9) = *(unsigned int *)(a2 + 36); /*0x48e581*/
+    this->u32_24 = a2->u32_24; /*0x48e581*/
     *((unsigned int *)this + 10) = *(unsigned int *)(a2 + 40); /*0x48e587*/
     *(unsigned int *)this->__pad_0 = 0; /*0x48e58a*/
     return this->__pad_0; /*0x48e592*/
@@ -1638,7 +1633,7 @@ int DropListClass::OnClick() {
       (*(void (__thiscall **)(char *))(*((unsigned int *)this + 44) + 36))((char *)this + 176); /*0x4b4ef6*/
       IDA_LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b4ef9*/
     }
-    (*(void (__thiscall **)(char *))(*((unsigned int *)this + 44) + 32))((char *)this + 176); /*0x4b4f09*/
+    (*(void (__thiscall **)(char *))(this->q02C + 32))((char *)&this->q0446); /*0x4b4f09*/
     (*(void (__thiscall **)(int *))(this->DropListClass_field_0x50 + 32))((int *)&this->DropListClass_field_0x50); /*0x4b4f12*/
     return Hash::Reset((LinkClass *)this); /*0x4b4f1c*/
 }
@@ -1698,13 +1693,13 @@ unsigned int * ControlClass::Constructor(int a2) {
     *(unsigned int *)this->ControlClass_field_0x08 = 0; /*0x4e1347*/
     *(unsigned int *)this->__pad_0 = 0; /*0x4e134e*/
     *(unsigned int *)this->ControlClass_field_0x0C = *(unsigned int *)(a2 + 12); /*0x4e1357*/
-    *((unsigned int *)this + 4) = *(unsigned int *)(a2 + 16); /*0x4e135d*/
-    *((unsigned int *)this + 5) = *(unsigned int *)(a2 + 20); /*0x4e1363*/
-    *((unsigned int *)this + 6) = *(unsigned int *)(a2 + 24); /*0x4e1369*/
-    *((unsigned char *)this + 28) = *(unsigned char *)(a2 + 28); /*0x4e136f*/
-    *((unsigned char *)this + 29) = *(unsigned char *)(a2 + 29); /*0x4e1375*/
-    *((unsigned char *)this + 30) = *(unsigned char *)(a2 + 30); /*0x4e137b*/
-    *((unsigned int *)this + 8) = *(unsigned int *)(a2 + 32); /*0x4e1381*/
+    this->m_Next = *(unsigned int *)(a2 + 16); /*0x4e135d*/
+    this->u32_14 = *(unsigned int *)(a2 + 20); /*0x4e1363*/
+    this->u32_18 = *(unsigned int *)(a2 + 24); /*0x4e1369*/
+    this->u32_1C = *(unsigned char *)(a2 + 28); /*0x4e136f*/
+    this->u32_1D = *(unsigned char *)(a2 + 29); /*0x4e1375*/
+    this->u32_1E = *(unsigned char *)(a2 + 30); /*0x4e137b*/
+    this->m_Prev = *(unsigned int *)(a2 + 32); /*0x4e1381*/
     *(unsigned int *)this->__pad_0 = 0; /*0x4e1384*/
     return this->__pad_0; /*0x4e138a*/
 }
@@ -2040,20 +2035,20 @@ int Keyboard::MapKey(uint16_t a2) {
       {
         v5 = a2 & 0x100; /*0x54f49a*/
         if ( (a2 & 0x100) != 0 ) /*0x54f4a3*/
-          *((unsigned char *)this + 36) = 0x80; /*0x54f4a5*/
+          this->u32_24 = 0x80; /*0x54f4a5*/
         v9 = a2 & 0x200; /*0x54f4b2*/
         if ( (a2 & 0x200) != 0 ) /*0x54f4b6*/
-          *((unsigned char *)this + 37) = 0x80; /*0x54f4b8*/
+          this->u32_25 = 0x80; /*0x54f4b8*/
         if ( (a2 & 0x400) != 0 ) /*0x54f4c6*/
-          *((unsigned char *)this + 38) = 0x80; /*0x54f4c8*/
+          this->u32_26 = 0x80; /*0x54f4c8*/
         v6 = MapVirtualKeyA(a2, 0); /*0x54f4d4*/
         v7 = ToAscii(a2, v6, (const BYTE *)this + 20, Char, 0); /*0x54f4e7*/
         if ( v5 ) /*0x54f4f0*/
-          *((unsigned char *)this + 36) = 0; /*0x54f4f2*/
+          this->u32_24 = 0; /*0x54f4f2*/
         if ( v9 ) /*0x54f4fc*/
-          *((unsigned char *)this + 37) = 0; /*0x54f4fe*/
+          this->u32_25 = 0; /*0x54f4fe*/
         if ( (a2 & 0x400) != 0 ) /*0x54f507*/
-          *((unsigned char *)this + 38) = 0; /*0x54f509*/
+          this->u32_26 = 0; /*0x54f509*/
         IDA_LOBYTE(v7) = v7 != 1; /*0x54f514*/
         return *(unsigned int *)Char & (v7 - 1); /*0x54f519*/
       }
@@ -2070,10 +2065,10 @@ char InputManager::PushInputEvent(int16_t a2) {
 
     v2 = *((unsigned int *)this + 198); /*0x54f670*/
     v3 = (v2 + 1) % 256; /*0x54f687*/
-    if ( v3 == *((unsigned int *)this + 197) ) /*0x54f68e*/
+    if ( v3 == this->u32_314 ) /*0x54f68e*/
       return 0; /*0x54f6a9*/
     *((unsigned short *)this + v2 + 138) = a2; /*0x54f695*/
-    *((unsigned int *)this + 198) = v3; /*0x54f69d*/
+    this->u32_318 = v3; /*0x54f69d*/
     return 1; /*0x54f6a5*/
 }
 } // namespace gamemd
@@ -2118,7 +2113,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         case 0x202u: /*0x54f916*/
           if ( (&stru_A8EB00)[440] ) /*0x54f924*/
             goto LABEL_45; /*0x54f924*/
-          v10 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54f938*/
+          v10 = this->u32_318 - this->u32_314; /*0x54f938*/
           if ( (int)(256 - ((IDA_HIDWORD(v10) ^ v10) - IDA_HIDWORD(v10))) < 3 ) /*0x54f947*/
             goto LABEL_45; /*0x54f947*/
           EventClass::Enqueue((EventClass *)this, 1u, 1); /*0x54f94f*/
@@ -2126,7 +2121,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         case 0x203u: /*0x54f916*/
           if ( (&stru_A8EB00)[440] ) /*0x54f958*/
             goto LABEL_45; /*0x54f958*/
-          v11 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54f971*/
+          v11 = this->u32_318 - this->u32_314; /*0x54f971*/
           if ( (int)(256 - ((IDA_HIDWORD(v11) ^ v11) - IDA_HIDWORD(v11))) >= 3 ) /*0x54f97b*/
           {
             EventClass::Enqueue((EventClass *)this, 1u, 0); /*0x54f983*/
@@ -2138,7 +2133,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
           }
           if ( (&stru_A8EB00)[440] ) /*0x54f9b2*/
             goto LABEL_45; /*0x54f9b2*/
-          v12 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54f9c6*/
+          v12 = this->u32_318 - this->u32_314; /*0x54f9c6*/
           if ( (int)(256 - ((IDA_HIDWORD(v12) ^ v12) - IDA_HIDWORD(v12))) < 3 ) /*0x54f9d5*/
             goto LABEL_45; /*0x54f9d5*/
           EventClass::Enqueue((EventClass *)this, 1u, 1); /*0x54f9e1*/
@@ -2158,7 +2153,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         case 0x207u: /*0x54f916*/
           if ( !(&stru_A8EB00)[440] ) /*0x54fa0d*/
           {
-            v13 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54fa26*/
+            v13 = this->u32_318 - this->u32_314; /*0x54fa26*/
             if ( (int)(256 - ((IDA_HIDWORD(v13) ^ v13) - IDA_HIDWORD(v13))) >= 3 ) /*0x54fa30*/
             {
               EventClass::Enqueue((EventClass *)this, 4u, 0); /*0x54fa3c*/
@@ -2172,7 +2167,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         case 0x209u: /*0x54f916*/
           if ( (&stru_A8EB00)[440] ) /*0x54fa5d*/
             goto LABEL_45; /*0x54fa5d*/
-          v14 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54fa76*/
+          v14 = this->u32_318 - this->u32_314; /*0x54fa76*/
           if ( (int)(256 - ((IDA_HIDWORD(v14) ^ v14) - IDA_HIDWORD(v14))) >= 3 ) /*0x54fa80*/
           {
             EventClass::Enqueue((EventClass *)this, 4u, 0); /*0x54fa88*/
@@ -2184,7 +2179,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
   LABEL_39:
           if ( !(&stru_A8EB00)[440] ) /*0x54faac*/
           {
-            v15 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54fabc*/
+            v15 = this->u32_318 - this->u32_314; /*0x54fabc*/
             if ( (int)(256 - ((IDA_HIDWORD(v15) ^ v15) - IDA_HIDWORD(v15))) >= 3 ) /*0x54facb*/
             {
               EventClass::Enqueue((EventClass *)this, 4u, 1); /*0x54fad3*/
@@ -2215,7 +2210,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
           {
             if ( !(&stru_A8EB00)[440] ) /*0x54f870*/
             {
-              v8 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54f889*/
+              v8 = this->u32_318 - this->u32_314; /*0x54f889*/
               if ( (int)(256 - ((IDA_HIDWORD(v8) ^ v8) - IDA_HIDWORD(v8))) >= 2 ) /*0x54f893*/
               {
                 EventClass::Enqueue((EventClass *)this, 0xAu, 0); /*0x54f89f*/
@@ -2230,7 +2225,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
     }
     if ( !(&stru_A8EB00)[440] ) /*0x54f8c0*/
     {
-      v9 = *((unsigned int *)this + 198) - *((unsigned int *)this + 197); /*0x54f8d9*/
+      v9 = this->u32_318 - this->u32_314; /*0x54f8d9*/
       if ( (int)(256 - ((IDA_HIDWORD(v9) ^ v9) - IDA_HIDWORD(v9))) >= 3 ) /*0x54f8e3*/
       {
         EventClass::Enqueue((EventClass *)this, 1u, 0); /*0x54f8ef*/
@@ -2311,30 +2306,30 @@ int ListClass::Destruct() {
     int v3; // edx
     void *v4; // eax
 
-    v2 = *((unsigned char *)this + 84); /*0x557606*/
+    v2 = this->Enabled; /*0x557606*/
     *(unsigned int *)this->__pad_0 = 0; /*0x557609*/
     if ( v2 ) /*0x557611*/
     {
-      v3 = *((unsigned int *)this + 70); /*0x55761c*/
-      *(unsigned int *)this->ListClass_field_0x14 += *((unsigned int *)this + 75); /*0x557624*/
-      *((unsigned char *)this + 84) = 0; /*0x55762d*/
-      (*(void (__thiscall **)(char *))(v3 + 36))((char *)this + 280); /*0x557630*/
-      (*(void (__thiscall **)(char *))(*((unsigned int *)this + 22) + 36))((char *)this + 88); /*0x557639*/
-      (*(void (__thiscall **)(char *))(*((unsigned int *)this + 46) + 36))((char *)this + 184); /*0x557648*/
+      v3 = this->u32_118; /*0x55761c*/
+      *(unsigned int *)this->ListClass_field_0x14 += this->u32_12C; /*0x557624*/
+      this->Enabled = 0; /*0x55762d*/
+      (*(void (__thiscall **)(char *))(v3 + 36))((char *)&this->u32_1C0); /*0x557630*/
+      (*(void (__thiscall **)(char *))(this->u32_58 + 36))((char *)&this->u32_88); /*0x557639*/
+      (*(void (__thiscall **)(char *))(this->u32_B8 + 36))((char *)this + 184); /*0x557648*/
       (*(void (__thiscall **)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x55764f*/
     }
-    SliderClass::Destructor((SliderClass *)((char *)this + 280)); /*0x557658*/
+    SliderClass::Destructor((SliderClass *)((char *)&this->u32_1C0)); /*0x557658*/
     ShapeButtonClass::Destructor((void *)((int)this + 184)); /*0x557663*/
-    ShapeButtonClass::Destructor((void *)((int)this + 88)); /*0x55766b*/
-    v4 = (void *)*((unsigned int *)this + 14); /*0x557670*/
-    *((unsigned int *)this + 13) = 0; /*0x557673*/
-    if ( v4 && *((unsigned char *)this + 65) ) /*0x55767e*/
+    ShapeButtonClass::Destructor((void *)((int)&this->u32_88)); /*0x55766b*/
+    v4 = (void *)this->u32_38; /*0x557670*/
+    this->u32_D = 0; /*0x557673*/
+    if ( v4 && this->u32_41 ) /*0x55767e*/
     {
       RA2_OPDEL(v4); /*0x557684*/
-      *((unsigned int *)this + 14) = 0; /*0x55768c*/
+      this->u32_38 = 0; /*0x55768c*/
     }
-    *((unsigned char *)this + 65) = 0; /*0x557691*/
-    *((unsigned int *)this + 15) = 0; /*0x557694*/
+    this->u32_41 = 0; /*0x557691*/
+    this->u32_3C = 0; /*0x557694*/
     return GadgetClass::Dtor((ShpButtonClass *)this); /*0x55769c*/
 }
 } // namespace gamemd
@@ -2428,7 +2423,7 @@ unsigned int * ListNode::Alloc(unsigned int *a2) {
     {
       v3 = 0; /*0x5a9a52*/
     }
-    *((unsigned int *)this + 1) = v3; /*0x5a9a58*/
+    this->u32_4 = v3; /*0x5a9a58*/
     *(unsigned int *)v3 = *a2; /*0x5a9a5d*/
     *(unsigned int *)(v3 + 4) = a2[1]; /*0x5a9a62*/
     return (unsigned int *)this; /*0x5a9a67*/
@@ -2963,7 +2958,7 @@ int CheckSum::AccumulateModulo(int16_t a2) {
     if ( v3 > 0 ) /*0x632c55*/
     {
       v5 = 2; /*0x632c5d*/
-      v6 = v3; /*0x632c62*/
+      v3 = v3; /*0x632c62*/
       do /*0x632ca3*/
       {
         *(unsigned short *)&this->__tail_0[v5] += a2; /*0x632c64*/
@@ -2971,10 +2966,10 @@ int CheckSum::AccumulateModulo(int16_t a2) {
           *(unsigned short *)&this->__tail_0[v5] -= i; /*0x632c76*/
         v8 = this->__tail_0[0] || !*(unsigned short *)&this->__tail_0[v5]; /*0x632c98*/
         v5 += 2; /*0x632c9d*/
-        --v6; /*0x632ca0*/
+        --v3; /*0x632ca0*/
         this->__tail_0[0] = v8; /*0x632ca1*/
       }
-      while ( v6 ); /*0x632ca3*/
+      while ( v3 ); /*0x632ca3*/
     }
     return result; /*0x632ca7*/
 }
@@ -2983,7 +2978,7 @@ int CheckSum::AccumulateModulo(int16_t a2) {
 // 0x69DEA0
 namespace gamemd {
 char ButtonClass::SetState(char a2) {
-    *((unsigned char *)this + 92) = a2; /*0x69dea4*/
+    this->u32_5C = a2; /*0x69dea4*/
     return a2; /*0x69dea7*/
 }
 } // namespace gamemd
@@ -3004,8 +2999,8 @@ int TabCameoListClass::AddCameo_ReplaceItAll(int a2, int a3) {
     int v14; // [esp+14h] [ebp-8h]
 
     v4 = 0; /*0x6a8717*/
-    result = *((unsigned int *)this + 21) + 1; /*0x6a871f*/
-    *((unsigned int *)this + 21) = result; /*0x6a8721*/
+    result = this->u32_54 + 1; /*0x6a871f*/
+    this->u32_54 = result; /*0x6a8721*/
     if ( result > 0 ) /*0x6a8726*/
     {
       for ( i = (int *)(this + 22); ; i += 13 ) /*0x6a872c*/
@@ -3013,11 +3008,11 @@ int TabCameoListClass::AddCameo_ReplaceItAll(int a2, int a3) {
         v7 = a2; /*0x6a8734*/
         if ( RadarClass::GetBlip(a2, a3, (unsigned int)i[1], (unsigned int)*i) ) /*0x6a8742*/
           break; /*0x6a8742*/
-        result = *((unsigned int *)this + 21); /*0x6a874b*/
+        result = this->u32_54; /*0x6a874b*/
         if ( ++v4 >= result ) /*0x6a8754*/
           return result; /*0x6a8754*/
       }
-      v8 = *((unsigned int *)this + 21) - 1; /*0x6a8763*/
+      v8 = this->u32_54 - 1; /*0x6a8763*/
       if ( v8 > v4 ) /*0x6a8766*/
       {
         v9 = 13 * v8; /*0x6a876b*/
@@ -3188,13 +3183,13 @@ int SliderClass::Destructor() {
     if ( v2 ) /*0x6b1d0e*/
     {
       (**v2)((unsigned int)v2, 1); /*0x6b1d14*/
-      *((unsigned int *)this + 15) = 0; /*0x6b1d16*/
+      this->u32_3C = 0; /*0x6b1d16*/
     }
-    v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 16); /*0x6b1d1d*/
+    v3 = (void (__thiscall ***)(unsigned int, int))this->q010; /*0x6b1d1d*/
     if ( v3 ) /*0x6b1d22*/
     {
       (**v3)((unsigned int)v3, 1); /*0x6b1d28*/
-      *((unsigned int *)this + 16) = 0; /*0x6b1d2a*/
+      this->q010 = 0; /*0x6b1d2a*/
     }
     return GadgetClass::Dtor((ShpButtonClass *)this); /*0x6b1d38*/
 }
@@ -3243,33 +3238,33 @@ void ToolTipClass::updateString() {
     if ( this->ToolTipClass_field_0x04 ) /*0x7240ca*/
       (*(void (__thiscall **)(ToolTipClass *, int *))(*(unsigned int *)this->__pad_0 + 8))(this, (int *)&this->ToolTipClass_field_0x18); /*0x7240db*/
     RA2_OPDEL(*((void **)this + 147)); /*0x7240e5*/
-    *((unsigned int *)this + 147) = 0; /*0x7240ea*/
-    *((unsigned int *)this + 148) = 0; /*0x7240f0*/
-    *((unsigned int *)this + 149) = 0; /*0x7240f6*/
-    *((unsigned char *)this + 600) = 0; /*0x7240fc*/
-    *((unsigned int *)this + 151) = 0; /*0x724102*/
-    for ( i = 0; i < *((unsigned int *)this + 145); ++i ) /*0x724115*/
+    this->u32_24C = 0; /*0x7240ea*/
+    this->u32_250 = 0; /*0x7240f0*/
+    this->u32_254 = 0; /*0x7240f6*/
+    this->u32_258 = 0; /*0x7240fc*/
+    this->u32_25C = 0; /*0x724102*/
+    for ( i = 0; i < this->q091; ++i ) /*0x724115*/
     {
-      v4 = *((unsigned int *)this + 142); /*0x724117*/
+      v4 = this->q08E; /*0x724117*/
       if ( *(unsigned int *)(v4 + 4 * i) ) /*0x72411d*/
         RA2_OPDEL(*(void **)(v4 + 4 * i)); /*0x724125*/
     }
-    (*(void (__thiscall **)(char *))(*((unsigned int *)this + 141) + 12))((char *)this + 564); /*0x724146*/
+    (*(void (__thiscall **)(char *))(this->q08D + 12))((char *)this + 564); /*0x724146*/
     RA2_OPDEL(*((void **)this + 147)); /*0x724150*/
-    *((unsigned int *)this + 147) = 0; /*0x724155*/
-    *((unsigned int *)this + 148) = 0; /*0x72415b*/
-    *((unsigned int *)this + 149) = 0; /*0x724161*/
-    *((unsigned char *)this + 600) = 0; /*0x724167*/
-    *((unsigned int *)this + 151) = 0; /*0x72416d*/
-    v5 = (void *)*((unsigned int *)this + 142); /*0x724173*/
-    *((unsigned int *)this + 141) = 0; /*0x72417b*/
-    if ( v5 && *((unsigned char *)this + 577) ) /*0x724183*/
+    this->u32_24C = 0; /*0x724155*/
+    this->u32_250 = 0; /*0x72415b*/
+    this->u32_254 = 0; /*0x724161*/
+    this->u32_258 = 0; /*0x724167*/
+    this->u32_25C = 0; /*0x72416d*/
+    v5 = (void *)this->q08E; /*0x724173*/
+    this->q08D = 0; /*0x72417b*/
+    if ( v5 && this->u32_241 ) /*0x724183*/
     {
       RA2_OPDEL(v5); /*0x724189*/
-      *((unsigned int *)this + 142) = 0; /*0x724191*/
+      this->q08E = 0; /*0x724191*/
     }
-    *((unsigned char *)this + 577) = 0; /*0x724194*/
-    *((unsigned int *)this + 143) = 0; /*0x724197*/
+    this->u32_241 = 0; /*0x724194*/
+    this->u32_23C = 0; /*0x724197*/
 }
 } // namespace gamemd
 
@@ -3281,11 +3276,11 @@ int Tooltip::Enable(char a2) {
     IDA_LOBYTE(result) = a2; /*0x7241a0*/
     if ( *((unsigned char *)this + 12) != a2 ) /*0x7241aa*/
     {
-      *((unsigned char *)this + 12) = a2; /*0x7241ae*/
+      this->u32_C = a2; /*0x7241ae*/
       if ( !a2 ) /*0x7241b1*/
       {
         KillTimer(*((HWND *)this + 2), 0x54544950u); /*0x7241bc*/
-        if ( *((unsigned int *)this + 1) ) /*0x7241c2*/
+        if ( this->u32_4 ) /*0x7241c2*/
           (*(void (__thiscall **)(Tooltip *, Tooltip *))(*(unsigned int *)this + 8))(this, this + 6); /*0x7241d1*/
       }
       return Debug::Log(); /*0x7241eb*/
@@ -3311,20 +3306,20 @@ char TooltipClass::GetText(unsigned int a2, void *a3) {
     int v16; // edx
     const void **v17; // esi
 
-    v4 = *((unsigned int *)this + 148); /*0x7248c6*/
+    v4 = this->u32_250; /*0x7248c6*/
     if ( !v4 ) /*0x7248ce*/
       return 0; /*0x7248ce*/
-    v5 = (unsigned int *)*((unsigned int *)this + 151); /*0x7248d0*/
+    v5 = (unsigned int *)this->u32_25C; /*0x7248d0*/
     if ( !v5 || *v5 != a2 ) /*0x7248e0*/
     {
-      if ( !*((unsigned char *)this + 600) ) /*0x7248e2*/
+      if ( !this->u32_258 ) /*0x7248e2*/
       {
         qsort(*((void **)this + 147), v4, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc2Int); /*0x7248fb*/
-        *((unsigned int *)this + 151) = 0; /*0x724903*/
-        *((unsigned char *)this + 600) = 1; /*0x72490d*/
+        this->u32_25C = 0; /*0x724903*/
+        this->u32_258 = 1; /*0x72490d*/
       }
-      v6 = *((unsigned int *)this + 148); /*0x724914*/
-      v7 = *((unsigned int *)this + 147); /*0x72491a*/
+      v6 = this->u32_250; /*0x724914*/
+      v7 = this->u32_24C; /*0x72491a*/
       if ( v6 <= 0 ) /*0x724922*/
         return 0; /*0x724922*/
       while ( 1 ) /*0x72492b*/
@@ -3337,7 +3332,7 @@ char TooltipClass::GetText(unsigned int a2, void *a3) {
           {
             if ( v9 ) /*0x724956*/
             {
-              *((unsigned int *)this + 151) = v9; /*0x724958*/
+              this->u32_25C = v9; /*0x724958*/
               break; /*0x724958*/
             }
             return 0; /*0x724951*/
@@ -3355,24 +3350,24 @@ char TooltipClass::GetText(unsigned int a2, void *a3) {
     }
     if ( !a3 ) /*0x724964*/
       return 1; /*0x724964*/
-    v11 = *((unsigned int *)this + 148); /*0x72496a*/
+    v11 = this->u32_250; /*0x72496a*/
     if ( !v11 ) /*0x724972*/
       goto LABEL_27; /*0x724972*/
-    v12 = (unsigned int *)*((unsigned int *)this + 151); /*0x724978*/
+    v12 = (unsigned int *)this->u32_25C; /*0x724978*/
     if ( v12 && *v12 == a2 ) /*0x724984*/
     {
   LABEL_32:
-      v17 = (const void **)(*((unsigned int *)this + 151) + 4); /*0x724a1e*/
+      v17 = (const void **)(this->u32_25C + 4); /*0x724a1e*/
       goto LABEL_28; /*0x724a27*/
     }
-    if ( !*((unsigned char *)this + 600) ) /*0x72498a*/
+    if ( !this->u32_258 ) /*0x72498a*/
     {
       qsort(*((void **)this + 147), v11, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc2Int); /*0x7249a3*/
-      *((unsigned int *)this + 151) = 0; /*0x7249ab*/
-      *((unsigned char *)this + 600) = 1; /*0x7249b5*/
+      this->u32_25C = 0; /*0x7249ab*/
+      this->u32_258 = 1; /*0x7249b5*/
     }
-    v13 = *((unsigned int *)this + 148); /*0x7249bc*/
-    v14 = *((unsigned int *)this + 147); /*0x7249c2*/
+    v13 = this->u32_250; /*0x7249bc*/
+    v14 = this->u32_24C; /*0x7249c2*/
     if ( v13 <= 0 ) /*0x7249ca*/
       goto LABEL_27; /*0x7249ca*/
     while ( 1 ) /*0x7249d7*/
@@ -3394,7 +3389,7 @@ char TooltipClass::GetText(unsigned int a2, void *a3) {
     }
     if ( v16 ) /*0x724a16*/
     {
-      *((unsigned int *)this + 151) = v16; /*0x724a18*/
+      this->u32_25C = v16; /*0x724a18*/
       goto LABEL_32; /*0x724a18*/
     }
   LABEL_27:

@@ -34,12 +34,12 @@ void * GameOption::SetDigest(char *aP1)
   if ( aP1 ) /*0x69ad89*/
   {
     result = strncpy((char *)((unsigned char *)this + 348), aP1, 0x20u); /*0x69ad95*/
-    *((unsigned char *)this + 379) = 0; /*0x69ad9d*/
+    this->q17B = 0; /*0x69ad9d*/
   }
   else
   {
     result = (char *)(strlen((const char *)(g_Str_No_Digest)) + 1); /*0x69adb3*/
-    qmemcpy((unsigned char *)this + 348, (const void *)g_Str_No_Digest, (unsigned int)result); /*0x69adc8*/
+    qmemcpy((unsigned char *)&this->u32_570, (const void *)g_Str_No_Digest, (unsigned int)result); /*0x69adc8*/
   }
   return result; /*0x69ada4*/
 

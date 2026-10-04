@@ -36,14 +36,14 @@ int LayerClass::CoordinatesLegal(int16_t *aP1)
   int result; // eax
   int v5; // edi
 
-  v2 = (int)(*((unsigned int *)this + 61));
+  v2 = (int)(this->u32_F4);
   v3 = (int)(*aP1);
   result = (int)(aP1[1]);
   v5 = result + v3; /*0x568313*/
   LOBYTE(result) = result + v3 > v2 /*0x56833f*/
                 && v3 - result < v2
                 && (result -= v3, result < v2)
-                && (result = *((unsigned int *)this + 62), v5 <= v2 + 2 * result);
+                && (result = this->u32_F8, v5 <= v2 + 2 * result);
   return result; /*0x568337*/
 
 }
@@ -77,12 +77,12 @@ int LayerClass::CellIteratorReset()
   int v1; // eax
   int result; // eax
 
-  v1 = *((unsigned int *)this + 61); /*0x578350*/
-  *((unsigned int *)this + 67) = 1; /*0x578356*/
-  *((unsigned int *)this + 68) = v1; /*0x578360*/
-  *((unsigned int *)this + 69) = v1 - 1; /*0x578369*/
-  result = (v1 << 11) + *((unsigned int *)this + 79) + 4; /*0x578378*/
-  *((unsigned int *)this + 70) = result; /*0x57837c*/
+  v1 = this->u32_F4; /*0x578350*/
+  this->u32_10C = 1; /*0x578356*/
+  this->u32_110 = v1; /*0x578360*/
+  this->u32_114 = v1 - 1; /*0x578369*/
+  result = (v1 << 11) + this->u32_13C + 4; /*0x578378*/
+  this->u32_118 = result; /*0x57837c*/
   return result; /*0x578382*/
 
 }

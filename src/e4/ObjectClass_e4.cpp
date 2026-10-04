@@ -41,7 +41,7 @@ namespace gamemd {
 int ObjectClass::processPointerInvalid()
 {
 
-  return (*((unsigned int *)this + 80) >> 8) & 1; /*0x48361c*/
+  return (this->customSound_controller >> 8) & 1; /*0x48361c*/
 
 }
 } // namespace gamemd
@@ -409,7 +409,7 @@ namespace gamemd {
 int ObjectClass::GetMember01()
 {
 
-  return *((unsigned int *)this + 1); /*0x6241d3*/
+  return this->vtable2; /*0x6241d3*/
 
 }
 } // namespace gamemd
@@ -428,7 +428,7 @@ int ObjectClass::processDamage()
   {
     result = (int)SearchMIXFile(aDarkenShp, 0); /*0x6a5012*/
     --v1; /*0x6a5017*/
-    dword_B07BC0 = result; /*0x6a5018*/
+    result = result; /*0x6a5018*/
   }
   while ( v1 ); /*0x6a501d*/
   return result; /*0x6a501f*/

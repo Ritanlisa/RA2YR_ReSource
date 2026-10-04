@@ -1237,7 +1237,7 @@ namespace gamemd {
 int E4Recv_5BCC30::sub_5BCC30()
 {
 
-  return *((unsigned int *)this + 2502); /*0x5bcc36*/
+  return this->M10008; /*0x5bcc36*/
 
 }
 } // namespace gamemd
@@ -1255,7 +1255,7 @@ namespace gamemd {
 char E4Recv_5BCCE0::sub_5BCCE0()
 {
 
-  return *((unsigned char *)this + 10036); /*0x5bcce6*/
+  return this->M10036; /*0x5bcce6*/
 
 }
 } // namespace gamemd

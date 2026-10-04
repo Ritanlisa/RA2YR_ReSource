@@ -217,11 +217,9 @@ int InfantryClass::ProcessExitQueue()
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004DA030.json)
 }
 // 0x4F9750
-namespace gamemd { 
 double BuildingClass::checkRepairEligibility(HouseClass* pHouse)
 {
     (void)pHouse; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F9750.json)
-}
 }
 }
 // 0x4FAD20
@@ -1518,18 +1516,14 @@ void BuildingClass::updateFoundation(float a1)
     (void)a1;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AEAF0.json)
 }
 // 0x5AEB20
-namespace gamemd { 
 void BuildingClass::recalcAdjacency(float a1)
 {
     (void)a1;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AEB20.json)
 }
-}
 // 0x63D540
-namespace gamemd { 
 int BuildingClass::updateAnimationState()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0063D540.json)
-}
 }
 // 0x6A60E0
 namespace gamemd { 
@@ -1545,11 +1539,9 @@ int BuildingClass::UpdateSuperWeaponReadyState(int a1)
 }
 }
 // 0x6E2970
-namespace gamemd { 
 int BuildingLightClass::FindAllTargets(int a1, int a2, int a3, int a4)
 {
     (void)a1; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E2970.json)
-}
 }
 // 0x6EFE60
 namespace gamemd { 
@@ -1559,16 +1551,12 @@ void BuildingClass::DispatchTeam(int a1, int a2)
 }
 }
 // 0x70DDC0
-namespace gamemd { 
 int BuildingClass::checkPlacement()
 {
      return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x0070DDC0.json)
 }
-}
 // 0x7353C0
-namespace gamemd { 
 int UnitClass::Construct()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007353C0.json)
-}
 }

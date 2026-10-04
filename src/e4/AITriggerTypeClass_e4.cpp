@@ -56,7 +56,7 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
   v9 = (gamemd::DynamicVector **)(0);
   if ( !a2 ) /*0x41ee9f*/
     return (gamemd::DynamicVector **)(v9); /*0x41efcb*/
-  v4 = *((unsigned int *)this + 54); /*0x41eea6*/
+  v4 = this->u32_D8; /*0x41eea6*/
   if ( v4 ) /*0x41eeae*/
   {
     v5 = (*(int (**)(int))(*(unsigned int *)v4 + 64))(v4); /*0x41eec1*/
@@ -85,25 +85,25 @@ LABEL_8:
   {
     v7 = 0; /*0x41ef39*/
   }
-  switch ( *((unsigned int *)this + 58) ) /*0x41ef4b*/
+  switch ( this->q03A ) /*0x41ef4b*/
   {
     case 0: /*0x41ef4b*/
-      result = v7 < *((unsigned int *)this + 57); /*0x41ef60*/
+      result = v7 < this->u32_E4; /*0x41ef60*/
       break; /*0x41ef65*/
     case 1: /*0x41ef4b*/
-      result = v7 <= *((unsigned int *)this + 57); /*0x41ef76*/
+      result = v7 <= this->u32_E4; /*0x41ef76*/
       break; /*0x41ef7b*/
     case 2: /*0x41ef4b*/
-      result = v7 == *((unsigned int *)this + 57); /*0x41ef8c*/
+      result = v7 == this->u32_E4; /*0x41ef8c*/
       break; /*0x41ef91*/
     case 3: /*0x41ef4b*/
-      result = v7 >= *((unsigned int *)this + 57); /*0x41efa2*/
+      result = v7 >= this->u32_E4; /*0x41efa2*/
       break; /*0x41efa7*/
     case 4: /*0x41ef4b*/
-      result = v7 > *((unsigned int *)this + 57); /*0x41efb8*/
+      result = v7 > this->u32_E4; /*0x41efb8*/
       break; /*0x41efbd*/
     case 5: /*0x41ef4b*/
-      return (gamemd::DynamicVector **)(v7 != *((unsigned int *)this + 57)); /*0x41efc6*/
+      return (gamemd::DynamicVector **)(v7 != this->u32_E4); /*0x41efc6*/
     default:
       return (gamemd::DynamicVector **)(v9);
   }
@@ -210,25 +210,25 @@ int AITriggerTypeClass::HouseCredits(int a2, int a3)
   if ( !a3 ) /*0x41f23c*/
     return v3; /*0x41f2bd*/
   v5 = (*(int (**)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36); /*0x41f245*/
-  switch ( *((unsigned int *)this + 58) ) /*0x41f253*/
+  switch ( this->q03A ) /*0x41f253*/
   {
     case 0: /*0x41f253*/
-      result = v5 < *((unsigned int *)this + 57); /*0x41f266*/
+      result = v5 < this->u32_E4; /*0x41f266*/
       break; /*0x41f269*/
     case 1: /*0x41f253*/
-      result = v5 <= *((unsigned int *)this + 57); /*0x41f278*/
+      result = v5 <= this->u32_E4; /*0x41f278*/
       break; /*0x41f27b*/
     case 2: /*0x41f253*/
-      result = v5 == *((unsigned int *)this + 57); /*0x41f28a*/
+      result = v5 == this->u32_E4; /*0x41f28a*/
       break; /*0x41f28d*/
     case 3: /*0x41f253*/
-      result = v5 >= *((unsigned int *)this + 57); /*0x41f29c*/
+      result = v5 >= this->u32_E4; /*0x41f29c*/
       break; /*0x41f29f*/
     case 4: /*0x41f253*/
-      result = v5 > *((unsigned int *)this + 57); /*0x41f2ae*/
+      result = v5 > this->u32_E4; /*0x41f2ae*/
       break; /*0x41f2b1*/
     case 5: /*0x41f253*/
-      return v5 != *((unsigned int *)this + 57); /*0x41f2ba*/
+      return v5 != this->u32_E4; /*0x41f2ba*/
     default:
       return v3;
   }
@@ -253,29 +253,29 @@ int AITriggerTypeClass::RegisterSuccess()
   double v3; // st7
   int result; // eax
 
-  v1 = *((unsigned int *)this + 66); /*0x41fd61*/
+  v1 = this->u32_108; /*0x41fd61*/
   v2 = 0.0; /*0x41fd67*/
   if ( v1 > 0 ) /*0x41fd73*/
   {
-    v2 = (double)*((int *)this + 66) * ((double)*((int *)this + 65) / (double)*((int *)this + 66) - 0.5); /*0x41fd89*/
+    v2 = (double)this->u32_108 * ((double)this->u32_104 / (double)this->u32_108 - 0.5); /*0x41fd89*/
     if ( v2 < 0.0 ) /*0x41fd96*/
       v2 = 0.0; /*0x41fd9a*/
   }
-  v3 = v2 + *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 192) + *((double *)this + 23); /*0x41fdb1*/
-  *((double *)this + 23) = v3; /*0x41fdb3*/
-  if ( v3 < *((double *)this + 24) ) /*0x41fdc4*/
+  v3 = v2 + *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 192) + this->u32_B8; /*0x41fdb1*/
+  this->u32_B8 = v3; /*0x41fdb3*/
+  if ( v3 < this->q030 ) /*0x41fdc4*/
   {
-    *((unsigned int *)this + 46) = *((unsigned int *)this + 48); /*0x41fdcc*/
-    *((unsigned int *)this + 47) = *((unsigned int *)this + 49); /*0x41fdd8*/
+    this->u32_B8 = this->q030; /*0x41fdcc*/
+    this->u32_BC = this->q031; /*0x41fdd8*/
   }
-  if ( *((double *)this + 23) > *((double *)this + 25) ) /*0x41fdef*/
+  if ( this->u32_B8 > this->u32_C8 ) /*0x41fdef*/
   {
-    *((unsigned int *)this + 46) = *((unsigned int *)this + 50); /*0x41fdf7*/
-    *((unsigned int *)this + 47) = *((unsigned int *)this + 51); /*0x41fe03*/
+    this->u32_B8 = this->u32_C8; /*0x41fdf7*/
+    this->u32_BC = this->alignmentPadding; /*0x41fe03*/
   }
-  result = *((unsigned int *)this + 65) + 1; /*0x41fe0f*/
-  *((unsigned int *)this + 65) = result; /*0x41fe11*/
-  *((unsigned int *)this + 66) = v1 + 1; /*0x41fe17*/
+  result = this->u32_104 + 1; /*0x41fe0f*/
+  this->u32_104 = result; /*0x41fe11*/
+  this->u32_108 = v1 + 1; /*0x41fe17*/
   return result; /*0x41fe1e*/
 
 }
@@ -295,36 +295,36 @@ int AITriggerTypeClass::RegisterFailure()
   char v8; // c2
   bool v9; // c3
 
-  v1 = *((unsigned int *)this + 66); /*0x41fe21*/
+  v1 = this->u32_108; /*0x41fe21*/
   v2 = 0.0; /*0x41fe28*/
   if ( v1 > 0 ) /*0x41fe3a*/
   {
     v2 = (double)v1 /*0x41fe56*/
-       * (((double)*((int *)this + 65) / (double)v1 - 0.5)
+       * (((double)this->u32_104 / (double)v1 - 0.5)
         * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 208));
     if ( v2 > 0.0 ) /*0x41fe63*/
       v2 = 0.0; /*0x41fe67*/
   }
-  v3 = v2 + *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 200) + *((double *)this + 23); /*0x41fe7a*/
-  *((double *)this + 23) = v3; /*0x41fe7c*/
-  if ( v3 < *((double *)this + 24) ) /*0x41fe8d*/
+  v3 = v2 + *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 200) + this->u32_B8; /*0x41fe7a*/
+  this->u32_B8 = v3; /*0x41fe7c*/
+  if ( v3 < this->q030 ) /*0x41fe8d*/
   {
-    *((unsigned int *)this + 46) = *((unsigned int *)this + 48); /*0x41fe95*/
-    result = *((unsigned int *)this + 49); /*0x41fe9b*/
-    *((unsigned int *)this + 47) = result; /*0x41fea1*/
+    this->u32_B8 = this->q030; /*0x41fe95*/
+    result = this->q031; /*0x41fe9b*/
+    this->u32_BC = result; /*0x41fea1*/
   }
-  v6 = *((double *)this + 23); /*0x41fea7*/
-  v7 = v6 < *((double *)this + 25); /*0x41fead*/
+  v6 = this->u32_B8; /*0x41fea7*/
+  v7 = v6 < this->u32_C8; /*0x41fead*/
   v8 = 0; /*0x41fead*/
-  v9 = v6 == *((double *)this + 25); /*0x41fead*/
+  v9 = v6 == this->u32_C8; /*0x41fead*/
   LOWORD(result) = v5; /*0x41feb3*/
-  if ( v6 > *((double *)this + 25) ) /*0x41feb8*/
+  if ( v6 > this->u32_C8 ) /*0x41feb8*/
   {
-    *((unsigned int *)this + 46) = *((unsigned int *)this + 50); /*0x41fec0*/
-    result = *((unsigned int *)this + 51); /*0x41fec6*/
-    *((unsigned int *)this + 47) = result; /*0x41fecc*/
+    this->u32_B8 = this->u32_C8; /*0x41fec0*/
+    result = this->alignmentPadding; /*0x41fec6*/
+    this->u32_BC = result; /*0x41fecc*/
   }
-  *((unsigned int *)this + 66) = v1 + 1; /*0x41fed3*/
+  this->u32_108 = v1 + 1; /*0x41fed3*/
   return result; /*0x41fed9*/
 
 }

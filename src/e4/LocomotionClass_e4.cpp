@@ -99,9 +99,9 @@ int LocomotionClass::GetSpeedMultiplier()
 
   int result; // eax
 
-  result = *((unsigned int *)this + 373); /*0x4dc760*/
+  result = this->u32_5D4; /*0x4dc760*/
   if ( result ) /*0x4dc768*/
-    return *(unsigned int *)(result + 36); /*0x4dc76a*/
+    return result->u32_24; /*0x4dc76a*/
   return result; /*0x4dc77d*/
 
 }

@@ -41,7 +41,7 @@ char TagClass::HasValidHouse()
 
   HouseClass *v1; // esi
 
-  v1 = (HouseClass *)*((unsigned int *)this + 40); /*0x6e6221*/
+  v1 = (HouseClass *)this->firstTrigger; /*0x6e6221*/
   if ( !v1 ) /*0x6e6229*/
     return 0; /*0x6e6240*/
   while ( !HouseClass::FindType15(v1) ) /*0x6e6234*/

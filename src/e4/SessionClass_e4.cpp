@@ -181,8 +181,8 @@ int SessionClass::GetPlayerSide()
   int result; // eax
 
   result = -2; /*0x696f13*/
-  if ( *(int *)((char *)this + 79) != -2 ) /*0x696f1a*/
-    return *(int *)((char *)this + 75); /*0x696f1c*/
+  if ( *(int *)((char *)&this->u32_1C9) != -2 ) /*0x696f1a*/
+    return *(int *)((char *)&this->u32_1C5); /*0x696f1c*/
   return result; /*0x696f1f*/
 
 }
@@ -251,8 +251,6 @@ int SessionClass::SetPlayerOption(int aP1)
 
 }
 } // namespace gamemd
-// 0x696FC0
-namespace gamemd {
 int SessionClass::SetPlayerColor(int a2)
 {
 
@@ -275,8 +273,6 @@ int SessionClass::SetPlayerColor(int a2)
 } // namespace gamemd
 // 0x696FF0
 namespace gamemd {
-int SessionClass::SetOption(int aP1)
-{
 
   int result; // eax
 
@@ -299,7 +295,6 @@ int SessionClass::SetOption(int aP1)
 namespace gamemd {
 int SessionClass::SetOption2(int aP1)
 {
-
   int result; // eax
 
   result = aP1; /*0x697020*/
@@ -322,7 +317,6 @@ namespace gamemd {  // G42.18c ns repair
 SessionClass::SessionClass()
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6970A0)
-}
 }  // G42.18c ns repair
 // 0x697B70
 namespace gamemd {  // G42.18c ns repair

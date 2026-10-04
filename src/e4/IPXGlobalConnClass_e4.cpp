@@ -35,7 +35,6 @@ namespace gamemd {
 void IPXGlobalConnClass::ReceivePacket(int a2)
 {
 
-  IPXGlobalConnClass *v2; // esi
   Terrain *IPXGlobalConnClass_field_0x04; // ecx
   int i; // ebp
   int TileType; // edi
@@ -46,9 +45,8 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
   int v10; // ecx
   unsigned int *v11; // edx
 
-  v2 = this; /*0x540113*/
   ((gamemd::Debug *)this)->Log(); /*0x540132*/
-  IPXGlobalConnClass_field_0x04 = (Terrain *)v2->IPXGlobalConnClass_field_0x04; /*0x540137*/
+  IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x540137*/
   for ( i = 0; i < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38; ++i ) /*0x540144*/
   {
     TileType = ((Terrain *)(IPXGlobalConnClass_field_0x04))->GetTileType(i); /*0x540158*/
@@ -76,10 +74,10 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
           ((gamemd::Timer *)this)->GetTicks(); /*0x5401c0*/
         ((gamemd::Debug *)this)->Log(); /*0x5401eb*/
         v9 = 0; /*0x5401fa*/
-        v10 = *((unsigned int *)this + 53); /*0x5401ff*/
+        v10 = this->u32_D4; /*0x5401ff*/
         if ( v10 > 0 ) /*0x540207*/
         {
-          v11 = (unsigned int *)*((unsigned int *)this + 52); /*0x54020f*/
+          v11 = (unsigned int *)this->q034; /*0x54020f*/
           while ( *v11 != *(unsigned int *)(*(unsigned int *)(TileType + 12) + 4) ) /*0x540213*/
           {
             ++v9; /*0x540215*/
@@ -87,14 +85,13 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
             if ( v9 >= v10 ) /*0x54021b*/
               goto LABEL_14; /*0x54021b*/
           }
-          *(unsigned int *)(*((unsigned int *)this + 52) + 4 * v9) = -1; /*0x54021f*/
+          *(unsigned int *)(this->q034 + 4 * v9) = -1; /*0x54021f*/
         }
 LABEL_14:
         ((PacketQueue *)((PacketQueue *)this->IPXGlobalConnClass_field_0x04))->ReleaseEntry(0, 0, i--, 0, 0); /*0x540226*/
       }
-      v2 = this; /*0x540277*/
     }
-    IPXGlobalConnClass_field_0x04 = (Terrain *)v2->IPXGlobalConnClass_field_0x04; /*0x54027b*/
+    IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x54027b*/
   }
   ((gamemd::Debug *)this)->Log(); /*0x540296*/
 

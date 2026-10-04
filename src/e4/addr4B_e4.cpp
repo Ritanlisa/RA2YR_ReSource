@@ -631,7 +631,7 @@ BOOL E4Recv_4BAFE0::sub_4BAFE0()
   int referenceCount; // eax
 
   referenceCount = ((unsigned int *)this)[0]; /*0x4bafe0*/
-  return referenceCount && (*(int (**)(int))(*(unsigned int *)referenceCount + 96))(referenceCount) == -2005532222; /*0x4baff9*/
+  return referenceCount && (*(int (**)(int))(referenceCount->q060)(referenceCount) == -2005532222; /*0x4baff9*/
 
 }
 } // namespace gamemd

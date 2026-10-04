@@ -20,7 +20,7 @@ int Control::DispatchClick(int aP1)
 
   int v3; // ecx
 
-  v3 = *((unsigned int *)this + 10); /*0x48e623*/
+  v3 = this->u32_28; /*0x48e623*/
   if ( v3 ) /*0x48e628*/
     (*(void (**)(int, unsigned int))(*(unsigned int *)v3 + 108))(v3, 0); /*0x48e62e*/
   return ((GadgetClass *)(ShpButtonClass *)this)->ClearState(aP1); /*0x48e63d*/

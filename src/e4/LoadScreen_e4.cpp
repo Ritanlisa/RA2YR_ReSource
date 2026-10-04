@@ -11,7 +11,7 @@ namespace gamemd {
 int LoadScreen::IsActive()
 {
 
-  return *((unsigned int *)this + 25) != 0; /*0x643e6a*/
+  return this->u32_64 != 0; /*0x643e6a*/
 
 }
 } // namespace gamemd

@@ -51,15 +51,15 @@ int AbstractTypeClass::Init(int aP1)
   char v3; // al
 
   AbstractClass::InitVtables((unsigned int *)this, aP1); /*0x410968*/
-  v3 = *((unsigned char *)this + 61); /*0x41096d*/
+  v3 = this->UINameLabel; /*0x41096d*/
   *(unsigned int *)this = (unsigned int)(&vt_AbstractTypeClass); /*0x410975*/
-  *((unsigned int *)this + 1) = (unsigned int)(&vt_AbstractTypeClass); /*0x41097b*/
-  *((unsigned int *)this + 2) = (unsigned int)(&vt_AbstractTypeClass); /*0x410982*/
-  *((unsigned int *)this + 3) = (unsigned int)(&vt_AbstractTypeClass); /*0x410989*/
+  this->vtable2 = (unsigned int)(&vt_AbstractTypeClass); /*0x41097b*/
+  this->vtable3 = (unsigned int)(&vt_AbstractTypeClass); /*0x410982*/
+  this->vtable4 = (unsigned int)(&vt_AbstractTypeClass); /*0x410989*/
   if ( v3 ) /*0x410990*/
-    *((unsigned int *)this + 24) = (unsigned int)(GetStringCSF((wchar_t *)((char *)this + 61), 0, aDRa2mdpostAbst, 127)); /*0x4109a0*/
+    this->UIName = (unsigned int)(GetStringCSF((wchar_t *)((char *)&this->nextArrayIndex1), 0, aDRa2mdpostAbst, 127)); /*0x4109a0*/
   else
-    *((unsigned int *)this + 24) = (unsigned int)(&g_TypeClass_DefaultString); /*0x4109a9*/
+    this->UIName = (unsigned int)(&g_TypeClass_DefaultString); /*0x4109a9*/
   return (int)(this); /*0x4109a5*/
 
 }

@@ -30,7 +30,7 @@ namespace gamemd {
 int CellClass::EnsureFileLoaded()
 {
 
-  if ( !(&this->sensorsOfHouses)[10] && *((unsigned char *)this + 756) ) /*0x544c8d*/
+  if ( !(&this->sensorsOfHouses)[10] && this->u32_2F4 ) /*0x544c8d*/
     ((MapClass*)(MapClass *)this)->LoadFileData(); /*0x544c97*/
   return (&this->sensorsOfHouses)[10] != 0; /*0x544ca9*/
 

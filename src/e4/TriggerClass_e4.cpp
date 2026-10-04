@@ -41,7 +41,7 @@ namespace gamemd {
 int TriggerClass::GetValue()
 {
 
-  return *((unsigned int *)this + 21); /*0x71fa33*/
+  return this->u32_54; /*0x71fa33*/
 
 }
 }

@@ -37,7 +37,7 @@ using ra2::game::FootClass;
 // 0x40D280
 namespace gamemd {
 int MouseClass::ProcessInput() {
-  return *((unsigned int *)this + 5465); /*0x40d286*/
+  return this->u32_5564; /*0x40d286*/
 }
 }
 // 0x40D290

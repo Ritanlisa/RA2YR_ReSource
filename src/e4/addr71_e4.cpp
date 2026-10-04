@@ -707,15 +707,15 @@ char E4Recv_71C8E0::sub_71C8E0()
   char result; // al
   int v2; // [esp+4h] [ebp-8h]
 
-  result = *((unsigned char *)this + 205); /*0x71c8e0*/
+  result = this->M205; /*0x71c8e0*/
   if ( !result ) /*0x71c8eb*/
   {
-    *((unsigned char *)this + 205) = 1; /*0x71c8ee*/
-    *((unsigned int *)this + 45) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71c905*/
-    *((unsigned int *)this + 48) = 2; /*0x71c90b*/
-    *((unsigned int *)this + 46) = v2; /*0x71c911*/
-    *((unsigned int *)this + 47) = 2; /*0x71c914*/
-    *((unsigned int *)this + 43) = 0; /*0x71c917*/
+    this->M205 = 1; /*0x71c8ee*/
+    this->M180 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71c905*/
+    this->M192 = 2; /*0x71c90b*/
+    this->M184 = v2; /*0x71c911*/
+    this->M188 = 2; /*0x71c914*/
+    this->M172 = 0; /*0x71c917*/
     return v2; /*0x71c907*/
   }
   return result; /*0x71c922*/
@@ -1040,7 +1040,7 @@ namespace gamemd {
 int E4Recv_71FA40::sub_71FA40(int a2)
 {
 
-  *((unsigned int *)this + 21) = a2; /*0x71fa44*/
+  this->M84 = a2; /*0x71fa44*/
   return a2; /*0x71fa47*/
 
 }

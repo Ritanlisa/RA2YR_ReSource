@@ -69,7 +69,7 @@ namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::AddRef(void *a1_1)
 {
 
-  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0fd*/
+  return this->q008 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0fd*/
 
 }
 } // namespace gamemd
@@ -79,7 +79,7 @@ namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::Release(void *a1_1)
 {
 
-  ++*((unsigned int *)this + 2); /*0x76f1a2*/
+  ++this->q008; /*0x76f1a2*/
   return (int)(this->__pad_0); /*0x76f1a5*/
 
 }
@@ -90,7 +90,7 @@ namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::ddtor()
 {
 
-  --*((unsigned int *)this + 2); /*0x76f1b2*/
+  --this->q008; /*0x76f1b2*/
   return (int)(this->__pad_0); /*0x76f1b5*/
 
 }

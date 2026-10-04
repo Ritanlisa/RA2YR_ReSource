@@ -106,7 +106,7 @@ int LinkedList_flat::Remove(unsigned int * a2)
   int result; // eax
   unsigned int *v3; // edx
 
-  result = *((unsigned int *)this + 13); /*0x623460*/
+  result = this->u32_34; /*0x623460*/
   v3 = 0; /*0x623463*/
   if ( result ) /*0x623468*/
   {
@@ -120,7 +120,7 @@ int LinkedList_flat::Remove(unsigned int * a2)
     if ( v3 ) /*0x623484*/
       *v3 = *(unsigned int *)result; /*0x623489*/
     else
-      *((unsigned int *)this + 13) = *(unsigned int *)result; /*0x62349a*/
+      this->u32_34 = *(unsigned int *)result; /*0x62349a*/
     __3_YAXPAX_Z((void *)result); /*0x62348b*/
   }
   return result; /*0x62347a*/
@@ -135,7 +135,7 @@ void LinkedList_flat::RelinkNode(int a2)
   int v3; // ecx
   int v4; // eax
 
-  if ( *((unsigned int *)this + 6) != a2 ) /*0x632d1b*/
+  if ( this->u32_18 != a2 ) /*0x632d1b*/
   {
     if ( a2 ) /*0x632d1f*/
     {
@@ -146,14 +146,14 @@ void LinkedList_flat::RelinkNode(int a2)
         *(unsigned int *)(a2 + 8) = 0; /*0x632d2f*/
       }
     }
-    v4 = *((unsigned int *)this + 6); /*0x632d36*/
+    v4 = this->u32_18; /*0x632d36*/
     if ( v4 ) /*0x632d3b*/
       *(unsigned int *)(v4 + 8) = 0; /*0x632d3d*/
-    *((unsigned int *)this + 6) = a2; /*0x632d46*/
+    this->u32_18 = a2; /*0x632d46*/
     if ( a2 ) /*0x632d49*/
       *(unsigned int *)(a2 + 8) = (unsigned int)((unsigned int *)this + 5); /*0x632d4e*/
-    *((unsigned int *)this + 7) = (unsigned int)(this); /*0x632d54*/
-    *((unsigned int *)this + 1) = (unsigned int)((unsigned int *)this + 5); /*0x632d57*/
+    this->u32_1C = (unsigned int)(this); /*0x632d54*/
+    this->u32_4 = (unsigned int)((unsigned int *)this + 5); /*0x632d57*/
   }
 
 }

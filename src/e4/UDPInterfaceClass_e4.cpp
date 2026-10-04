@@ -37,13 +37,13 @@ int UDPInterfaceClass::connect(void *a1)
 
   char result; // al
 
-  result = *((unsigned char *)this + 258152); /*0x7b1b53*/
+  result = this->u32_3F068; /*0x7b1b53*/
   if ( result ) /*0x7b1b5b*/
   {
     (*(void (**)(UDPInterfaceClass *))(this->Socket + 32))(this); /*0x7b1b5f*/
     (*(void (**)(UDPInterfaceClass *))(this->Socket + 4))(this); /*0x7b1b66*/
     result = WSACleanup(); /*0x7b1b69*/
-    *((unsigned char *)this + 258152) = 0; /*0x7b1b6e*/
+    this->u32_3F068 = 0; /*0x7b1b6e*/
   }
   return result; /*0x7b1b75*/
 
@@ -65,10 +65,10 @@ void UDPInterfaceClass::GetStatistics(unsigned short a2)
   int v3; // eax
   UDPInterfaceClass *v4; // edx
 
-  if ( !a2 || a2 == *(unsigned int *)&hostshort || (v2 = *((unsigned int *)this + 64716), v3 = 0, v2 <= 0) ) /*0x7b33f6*/
+  if ( !a2 || a2 == *(unsigned int *)&hostshort || (v2 = this->u32_3F330, v3 = 0, v2 <= 0) ) /*0x7b33f6*/
   {
 LABEL_7:
-    *((unsigned int *)this + 64717) = -1; /*0x7b340b*/
+    this->u32_3F334 = -1; /*0x7b340b*/
   }
   else
   {
@@ -80,7 +80,7 @@ LABEL_7:
       if ( v3 >= v2 ) /*0x7b3409*/
         goto LABEL_7; /*0x7b3409*/
     }
-    *((unsigned int *)this + 64717) = *((unsigned int *)this + v3 + 64704); /*0x7b3422*/
+    this->u32_3F334 = *((unsigned int *)this + v3 + 64704); /*0x7b3422*/
   }
 
 }
@@ -104,7 +104,7 @@ namespace gamemd {
 int UDPInterfaceClass::Connect(int a2)
 {
 
-  return *(unsigned int *)(*((unsigned int *)this + 64853) + 4 * a2); /*0x7b415d*/
+  return *(unsigned int *)(this->u32_3F554 + 4 * a2); /*0x7b415d*/
 
 }
 } // namespace gamemd
@@ -113,7 +113,7 @@ namespace gamemd {
 int UDPInterfaceClass::Receive()
 {
 
-  return *((unsigned short *)this + 129406); /*0x7b4167*/
+  return this->u32_3F2FC; /*0x7b4167*/
 
 }
 } // namespace gamemd
@@ -230,7 +230,7 @@ void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)
   unsigned int *v7; // edx
   unsigned short *v8; // ecx
 
-  v4 = *((unsigned int *)this + 64858); /*0x7b3926*/
+  v4 = this->u32_3F568; /*0x7b3926*/
   if ( v4 < 16 ) /*0x7b392f*/
   {
     v5 = a3; /*0x7b3939*/
@@ -254,8 +254,8 @@ void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)
       while ( v6 < v4 ); /*0x7b3967*/
     }
     Debug::Log(); /*0x7b398d*/
-    *((unsigned int *)this + *((unsigned int *)this + 64858) + 64859) = *a2; /*0x7b399d*/
-    *((unsigned short *)this + (*((unsigned int *)this + 64858))++ + 129750) = v5; /*0x7b39aa*/
+    *((unsigned int *)this + this->u32_3F568 + 64859) = *a2; /*0x7b399d*/
+    *((unsigned short *)this + (this->u32_3F568)++ + 129750) = v5; /*0x7b39aa*/
   }
 
 }
@@ -265,10 +265,10 @@ namespace gamemd {  // G42.18c ns repair
 int UDPInterfaceClass_Destru::GetStatistics(int a2)
 {
 
-  if ( a2 == *((unsigned int *)this + 64539) || a2 == -1 )
+  if ( a2 == this->u32_3F06C || a2 == -1 )
     return 1140; /*0x7b412e*/
   else
-    return a2 != *((unsigned int *)this + 64540) ? 0 : 0x475;
+    return a2 != this->u32_3F070 ? 0 : 0x475;
 
 }
 }  // G42.18c ns repair
@@ -277,7 +277,7 @@ namespace gamemd {  // G42.18c ns repair
 int UDPInterfaceClass_Destru::COMStub()
 {
 
-  return *((unsigned int *)this + 64856); /*0x7b4146*/
+  return this->u32_3F560; /*0x7b4146*/
 
 }
 }  // G42.18c ns repair

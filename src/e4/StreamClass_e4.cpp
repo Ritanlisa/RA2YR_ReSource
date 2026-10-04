@@ -15,7 +15,7 @@ namespace gamemd {
 int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 {
 
-  return (*(int (**)(unsigned int, char *, unsigned int))(**((unsigned int **)this + 5) + 20))(*((unsigned int *)this + 5), &a3, a2); /*0x411328*/
+  return (*(int (**)(unsigned int, char *, unsigned int))(**((unsigned int **)this + 5) + 20))(this->u32_14, &a3, a2); /*0x411328*/
 
 }
 } // namespace gamemd
@@ -27,11 +27,11 @@ unsigned int StreamClass::ReadAndSeek(int aP1, int aP2)
   int v4; // edi
   int result; // eax
 
-  v4 = (*(int (**)(unsigned int, int, int))(*(unsigned int *)*((char *)this + 5) + 92))(*((char *)this + 5), aP1, aP2); /*0x4114c9*/
-  (*(void (**)(unsigned int))(*(unsigned int *)*((char *)this + 5) + 96))(*((char *)this + 5)); /*0x4114cd*/
-  result = v4 + *((char *)this + 4); /*0x4114d6*/
-  if ( result >= (unsigned int)*((char *)this + 7) ) /*0x4114da*/
-    result -= *((char *)this + 8); /*0x4114dc*/
+  v4 = (*(int (**)(unsigned int, int, int))(*(unsigned int *)this->u32_5 + 92))(this->u32_5, aP1, aP2); /*0x4114c9*/
+  (*(void (**)(unsigned int))(*(unsigned int *)this->u32_5 + 96))(this->u32_5); /*0x4114cd*/
+  result = v4 + this->m_Data; /*0x4114d6*/
+  if ( result >= (unsigned int)this->u32_7 ) /*0x4114da*/
+    result -= this->u32_8; /*0x4114dc*/
   return result; /*0x4114df*/
 
 }

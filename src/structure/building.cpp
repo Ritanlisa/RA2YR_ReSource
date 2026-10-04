@@ -4431,7 +4431,7 @@ void BuildingClass::MarkExitPath()
   IDA_LOWORD(result) = *a3; /*0x4a965a*/
   if ( *a3 != *(unsigned short *)&stru_8A0390_raw.bombVisible || a3[1] != *(unsigned short *)((char *)&stru_8A0390_raw.alignmentPadding69 + 1) ) /*0x4a9672 -- overlay members are scalars*/
   {
-    v6 = *(int16_t **)((unsigned int *)this + 1123); /*0x4a9674 -- truth *((_DWORD*)this+1123) == +4492 (0x118C; no hand-tree member)*/
+    v6 = *(int16_t **)((unsigned int *)&this->airstrikeTintStage3); /*0x4a9674 -- truth this->u32_118C == +4492 (0x118C; no hand-tree member)*/
     v7 = (char)a3; /*0x4a967a*/
     while ( *v6 != 0x7FFF || v6[1] != 0x7FFF ) /*0x4a968b*/
     {
@@ -13457,8 +13457,8 @@ void BuildingClass::ProcessUpgradeTargeting()
 //DUPDEF   health = this->health; /*0x440042*/
 //DUPDEF   if ( health != this->BuildingClass_field_544 ) /*0x44004d*/
 //DUPDEF   {
-//DUPDEF     *(unsigned char *)(this->owner + 22392) = 1; /*0x440055*/
-//DUPDEF     *(unsigned char *)(this->owner + 22393) = 1; /*0x440062*/
+//DUPDEF     this->owner->q5778 = 1; /*0x440055*/
+//DUPDEF     this->owner->u8_5779 = 1; /*0x440062*/
 //DUPDEF     health = this->health; /*0x440069*/
 //DUPDEF     this->BuildingClass_field_544 = health; /*0x44006c*/
 //DUPDEF }
@@ -14700,7 +14700,7 @@ void BuildingClass::ProcessUpgradeTargeting()
 //DUPDEF     *v15 = g_CurrentFrame; /*0x43fd7d*/
 //DUPDEF     this->q6D4 = v75; /*0x43fd83*/
 //DUPDEF     this->q6D8 = v17; /*0x43fd86*/
-//DUPDEF     if ( !*(unsigned char *)(*(unsigned int *)(this->owner + 52) + 422) ) /*0x43fd92*/
+//DUPDEF     if ( !*(unsigned char *)(this->owner->relatedTagsCapacity + 422) ) /*0x43fd92*/
 //DUPDEF     {
 //DUPDEF       if ( (*(uint8_t (**)(void *))(*(unsigned int *)&this->initialOwner8))(this) ) /*0x43fda0*/
 //DUPDEF       {
@@ -14802,8 +14802,8 @@ void BuildingClass::ProcessUpgradeTargeting()
 //DUPDEF   v30 = this->health; /*0x440042*/
 //DUPDEF   if ( v30 != this->BuildingClass_field_544 ) /*0x44004d*/
 //DUPDEF   {
-//DUPDEF     *(unsigned char *)(this->owner + 22392) = 1; /*0x440055*/
-//DUPDEF     *(unsigned char *)(this->owner + 22393) = 1; /*0x440062*/
+//DUPDEF     this->owner->q5778 = 1; /*0x440055*/
+//DUPDEF     this->owner->u8_5779 = 1; /*0x440062*/
 //DUPDEF     v30 = this->health; /*0x440069*/
 //DUPDEF     this->BuildingClass_field_544 = v30; /*0x44006c*/
 //DUPDEF   }
@@ -15122,7 +15122,7 @@ void BuildingClass::ProcessUpgradeTargeting()
 //DUPDEF     *(unsigned int *)v12 = g_CurrentFrame; /*0x43fd7d*/
 //DUPDEF     this->q6D4 = Parachute; /*0x43fd83*/
 //DUPDEF     this->q6D8 = v14; /*0x43fd86*/
-//DUPDEF     if ( !*(unsigned char *)(*(unsigned int *)(this->owner + 52) + 422) ) /*0x43fd92*/
+//DUPDEF     if ( !*(unsigned char *)(this->owner->relatedTagsCapacity + 422) ) /*0x43fd92*/
 //DUPDEF     {
 //DUPDEF       if ( (*(uint8_t (**)(void *))(*(unsigned int *)&this->initialOwner8))(this) ) /*0x43fda0*/
 //DUPDEF       {
@@ -15224,8 +15224,8 @@ void BuildingClass::ProcessUpgradeTargeting()
 //DUPDEF   v27 = this->health; /*0x440042*/
 //DUPDEF   if ( v27 != this->BuildingClass_field_544 ) /*0x44004d*/
 //DUPDEF   {
-//DUPDEF     *(unsigned char *)(this->owner + 22392) = 1; /*0x440055*/
-//DUPDEF     *(unsigned char *)(this->owner + 22393) = 1; /*0x440062*/
+//DUPDEF     this->owner->q5778 = 1; /*0x440055*/
+//DUPDEF     this->owner->u8_5779 = 1; /*0x440062*/
 //DUPDEF     v27 = this->health; /*0x440069*/
 //DUPDEF     this->BuildingClass_field_544 = v27; /*0x44006c*/
 //DUPDEF   }

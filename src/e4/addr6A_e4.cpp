@@ -645,8 +645,8 @@ namespace gamemd {
 int E4Recv_6AACE0::sub_6AACE0(int a2, int a3)
 {
 
-  *((unsigned int *)this + 11) = a2; /*0x6aace8*/
-  *((unsigned int *)this + 12) = a3; /*0x6aaceb*/
+  this->M44 = a2; /*0x6aace8*/
+  this->M48 = a3; /*0x6aaceb*/
   return a2; /*0x6aacee*/
 
 }

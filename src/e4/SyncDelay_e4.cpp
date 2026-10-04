@@ -30,7 +30,7 @@ bool SyncDelay::Check(unsigned int * a2)
 
   unsigned int *v2; // eax
 
-  v2 = (unsigned int *)*((unsigned int *)this + 4); /*0x55f6c0*/
+  v2 = (unsigned int *)this->q010; /*0x55f6c0*/
   return v2 && *v2 == *a2; /*0x55f6d3*/
 
 }

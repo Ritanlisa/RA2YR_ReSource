@@ -175,7 +175,7 @@ int Vector::Find(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = *((unsigned int *)this + 4); /*0x4e0550*/
+  v2 = this->q010; /*0x4e0550*/
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
@@ -193,7 +193,7 @@ namespace gamemd {
 BOOL Vector::HasCapacity()
 {
 
-  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0bd*/
+  return this->q008 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0bd*/
 
 }
 } // namespace gamemd

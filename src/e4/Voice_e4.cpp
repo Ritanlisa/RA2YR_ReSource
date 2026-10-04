@@ -13,18 +13,17 @@ int Voice::Stop()
 {
 
   int v1; // ecx
-  int v2; // esi
   int result; // eax
 
-  v2 = v1; /*0x4025b1*/
+  v1 = v1; /*0x4025b1*/
   (*(void (**)(void))(*(unsigned int *)(v1 + 212) + 40))(); /*0x4025b9*/
-  if ( (*(unsigned char *)(v2 + 164) & 5) != 0 ) /*0x4025c3*/
-    (*(void (**)(int))(*(unsigned int *)(v2 + 212) + 16))(v2); /*0x4025cd*/
-  (*(void (**)(int))(*(unsigned int *)(v2 + 212) + 44))(v2); /*0x4025d8*/
-  result = *(unsigned int *)(v2 + 188); /*0x4025db*/
+  if ( (*(unsigned char *)(v1 + 164) & 5) != 0 ) /*0x4025c3*/
+    (*(void (**)(int))(*(unsigned int *)(v1 + 212) + 16))(v1); /*0x4025cd*/
+  (*(void (**)(int))(*(unsigned int *)(v1 + 212) + 44))(v1); /*0x4025d8*/
+  result = *(unsigned int *)(v1 + 188); /*0x4025db*/
   if ( result ) /*0x4025e3*/
-    result = ((int (*)(int))result)(v2); /*0x4025e7*/
-  *(unsigned int *)(v2 + 360) = 0; /*0x4025e9*/
+    result = result(v1); /*0x4025e7*/
+  *(unsigned int *)(v1 + 360) = 0; /*0x4025e9*/
   return result; /*0x4025f3*/
 
 }

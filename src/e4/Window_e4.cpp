@@ -15,7 +15,7 @@ int Window::IsVisible()
 
   int result; // eax
 
-  LOBYTE(result) = *((unsigned char *)this + 24) && *((unsigned char *)this + 25); /*0x4a511e*/
+  LOBYTE(result) = this->u32_18 && this->u32_19; /*0x4a511e*/
   return result; /*0x4a5120*/
 
 }

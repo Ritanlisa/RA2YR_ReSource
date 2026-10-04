@@ -19,7 +19,7 @@
 
 // 0x432AB0
 namespace gamemd {
-int BinkMovieHandle::RenderFrameClipped(int a2, int a3, void *a3_2)
+int BinkMovieHandle::RenderFrameClipped(int a2, int v11, void *a3_2)
 {
 
   int *v3; // eax
@@ -35,19 +35,18 @@ int BinkMovieHandle::RenderFrameClipped(int a2, int a3, void *a3_2)
   int v13; // edx
   int v14; // esi
   int v16; // [esp+14h] [ebp-20h]
-  int v18; // [esp+20h] [ebp-14h]
   unsigned char v19[16]; // [esp+24h] [ebp-10h] BYREF
   int v20; // [esp+3Ch] [ebp+8h]
 
   v3 = *(int **)((char *)this + 4); /*0x432ab3*/
   v4 = v3[1]; /*0x432ac3*/
   v5 = *v3; /*0x432ac7*/
-  v6 = (int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)((char *)this + 12) + 120))(*((unsigned int *)this + 3), v19); /*0x432ad8*/
+  v6 = (int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)((char *)&this->tempPath2) + 120))(this->width, v19); /*0x432ad8*/
   result = 0; /*0x432ade*/
   v8 = v6[2]; /*0x432ae0*/
   v9 = 0; /*0x432ae3*/
   v16 = a2; /*0x432ae7*/
-  v18 = v4; /*0x432aef*/
+  v4 = v4; /*0x432aef*/
   if ( v8 <= 0 ) /*0x432af3*/
     goto LABEL_18; /*0x432af3*/
   v20 = v6[3]; /*0x432afe*/
@@ -62,20 +61,20 @@ int BinkMovieHandle::RenderFrameClipped(int a2, int a3, void *a3_2)
   if ( v5 < 1 ) /*0x432b33*/
     goto LABEL_18; /*0x432b33*/
   v11 = v6[1]; /*0x432b35*/
-  if ( a3 < v11 ) /*0x432b42*/
+  if ( v11 < v11 ) /*0x432b42*/
   {
-    v18 += a3 - v11; /*0x432b50*/
-    a3 = v11; /*0x432b54*/
+    v4 += v11 - v11; /*0x432b50*/
+    v11 = v11; /*0x432b54*/
   }
-  if ( v18 < 1 ) /*0x432b5d*/
+  if ( v4 < 1 ) /*0x432b5d*/
     goto LABEL_18; /*0x432b5d*/
   if ( v5 + v16 > v8 + v10 ) /*0x432b6a*/
     v5 = v8 + v10 - v16; /*0x432b72*/
   if ( v5 < 1 ) /*0x432b77*/
     goto LABEL_18; /*0x432b77*/
-  v12 = v18; /*0x432b81*/
-  if ( v18 + a3 > v20 + v11 ) /*0x432b90*/
-    v12 = v20 + v11 - a3; /*0x432b94*/
+  v12 = v4; /*0x432b81*/
+  if ( v4 + v11 > v20 + v11 ) /*0x432b90*/
+    v12 = v20 + v11 - v11; /*0x432b94*/
   if ( v12 < 1 ) /*0x432b99*/
   {
 LABEL_18:
@@ -85,14 +84,14 @@ LABEL_18:
   else
   {
     result = v16; /*0x432b9b*/
-    v9 = a3; /*0x432b9f*/
+    v9 = v11; /*0x432b9f*/
     v13 = v5; /*0x432ba1*/
     v14 = v12; /*0x432ba3*/
   }
-  *((unsigned int *)this + 4) = result; /*0x432bb2*/
-  *((unsigned int *)this + 5) = v9; /*0x432bb4*/
-  *((unsigned int *)this + 6) = v13; /*0x432bb7*/
-  *((unsigned int *)this + 7) = v14; /*0x432bba*/
+  this->height = result; /*0x432bb2*/
+  this->currentFrame = v9; /*0x432bb4*/
+  this->totalFrames = v13; /*0x432bb7*/
+  this->throttleCounter = v14; /*0x432bba*/
   return result; /*0x432bbd*/
 
 }

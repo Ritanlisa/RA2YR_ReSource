@@ -116,76 +116,56 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6930A0)
 }
 // 0x6A6610
-namespace gamemd {
 int Tactical::UpdateUIVisibility(void *a1_1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6A6610)
 }
-}
 // 0x6D4E20
-namespace gamemd {
 void Tactical::DisplayTacticalOverlayText(wchar_t * String)
 {
      // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D4E20)
 }
-}
 // 0x6D6070
-namespace gamemd {
 unsigned int Tactical::SetTacticalPosition(int *aP1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D6070)
 }
-}
 // 0x6D6590
-namespace gamemd {
 unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D6590)
 }
-}
 // 0x6DA7D0
-namespace gamemd {
 int Tactical::AddCellToDrawList(int aP1)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6DA7D0)
 }
-}
 // 0x6DB210
-namespace gamemd {
 void* Tactical::DrawTacticalConnectorLines()
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6DB210)
 }
-}
 // 0x6DBB60
-namespace gamemd {
 int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6DBB60)
 }
-}
 // 0x6E4A80
-namespace gamemd {
 int Tactical_42::FindItem(unsigned int * a2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4A80)
 }
-}
 // 0x4A35F0
-namespace gamemd {
 char * Tactical::SetCellTransform(int a2, CoordStruct * aP2, int a4, CoordStruct * aP4, int a6, int a7, void *a7_2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A35F0)
 }
-} // namespace gamemd
 
 // 0x4F4450
-namespace gamemd {
 char Tactical::SelectObject(int a2, void *a2_2)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4F4450)
 }
-} // namespace gamemd
 
 // 0x6DA560
 namespace gamemd {

@@ -1383,7 +1383,7 @@ namespace gamemd {
 unsigned int E4Recv_636D90::_GetExecutionResourceId_irtualProcessor_details_Concurrency__QBEIXZ()
 {
 
-  return *((unsigned int *)this + 35); /*0x636d96*/
+  return this->M140; /*0x636d96*/
 
 }
 } // namespace gamemd
@@ -1401,7 +1401,7 @@ namespace gamemd {
 unsigned int E4Recv_636FC0::_GetMaskId_irtualProcessor_details_Concurrency__QBEIXZ()
 {
 
-  return *((unsigned int *)this + 36); /*0x636fc6*/
+  return this->M144; /*0x636fc6*/
 
 }
 } // namespace gamemd
@@ -1419,7 +1419,7 @@ namespace gamemd {
 bool E4Recv_637020::_WasExplicitlyAttached_ExternalContextBase_details_Concurrency__QBE_NXZ()
 {
 
-  return *((unsigned char *)this + 152); /*0x637026*/
+  return this->M152; /*0x637026*/
 
 }
 } // namespace gamemd

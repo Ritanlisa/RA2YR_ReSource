@@ -320,9 +320,9 @@ unsigned char * AudioQueue::AllocBuffer(char aP1)
   result = 0; /*0x7b20e7*/
   if ( aP1 ) /*0x7b20ed*/
   {
-    if ( *((unsigned int *)this + 64537) == 128 ) /*0x7b219e*/
+    if ( this->u32_3F064 == 128 ) /*0x7b219e*/
     {
-      result = (unsigned char *)__2_YAPAXI_Z(0x2A0u); /*0x7b21a5*/
+      result = (unsigned char *)new unsigned char[0x2A0u]; /*0x7b21a5*/
       result[22] = 1; /*0x7b21af*/
       result[21] = 1; /*0x7b21b2*/
     }
@@ -331,10 +331,10 @@ unsigned char * AudioQueue::AllocBuffer(char aP1)
       v5 = 0; /*0x7b21b7*/
       while ( 1 ) /*0x7b21b9*/
       {
-        v6 = *((unsigned int *)this + 64534); /*0x7b21b9*/
-        *((unsigned int *)this + 64534) = v6 + 1; /*0x7b21c5*/
+        v6 = this->u32_3F058; /*0x7b21b9*/
+        this->u32_3F058 = v6 + 1; /*0x7b21c5*/
         if ( v6 + 1 > 127 ) /*0x7b21cb*/
-          *((unsigned int *)this + 64534) = 0; /*0x7b21cd*/
+          this->u32_3F058 = 0; /*0x7b21cd*/
         if ( !*((unsigned char *)this + 672 * v6 + 172133) ) /*0x7b21e2*/
           break; /*0x7b21e2*/
         if ( ++v5 >= 128 ) /*0x7b21f2*/
@@ -342,7 +342,7 @@ unsigned char * AudioQueue::AllocBuffer(char aP1)
       }
       result = (unsigned char *)((char *)this + 672 * v6 + 172112);
       *((unsigned char *)this + 672 * v6 + 172133) = 1; /*0x7b2212*/
-      ++*((unsigned int *)this + 64537); /*0x7b221c*/
+      ++this->u32_3F064; /*0x7b221c*/
     }
     if ( result ) /*0x7b2224*/
     {
@@ -352,9 +352,9 @@ unsigned char * AudioQueue::AllocBuffer(char aP1)
   }
   else
   {
-    if ( *((unsigned int *)this + 64536) == 128 ) /*0x7b20fd*/
+    if ( this->u32_3F060 == 128 ) /*0x7b20fd*/
     {
-      result = (unsigned char *)__2_YAPAXI_Z(0x2A0u); /*0x7b2104*/
+      result = (unsigned char *)new unsigned char[0x2A0u]; /*0x7b2104*/
       result[22] = 1; /*0x7b210e*/
       result[21] = 1; /*0x7b2111*/
     }
@@ -363,10 +363,10 @@ unsigned char * AudioQueue::AllocBuffer(char aP1)
       v3 = 0; /*0x7b2116*/
       while ( 1 ) /*0x7b2118*/
       {
-        v4 = *((unsigned int *)this + 64533); /*0x7b2118*/
-        *((unsigned int *)this + 64533) = v4 + 1; /*0x7b2124*/
+        v4 = this->u32_3F054; /*0x7b2118*/
+        this->u32_3F054 = v4 + 1; /*0x7b2124*/
         if ( v4 + 1 > 127 ) /*0x7b212a*/
-          *((unsigned int *)this + 64533) = 0; /*0x7b212c*/
+          this->u32_3F054 = 0; /*0x7b212c*/
         if ( !*((unsigned char *)this + 672 * v4 + 86117) ) /*0x7b2141*/
           break; /*0x7b2141*/
         if ( ++v3 >= 128 ) /*0x7b2151*/
@@ -374,7 +374,7 @@ unsigned char * AudioQueue::AllocBuffer(char aP1)
       }
       result = (unsigned char *)((char *)this + 672 * v4 + 86096);
       *((unsigned char *)this + 672 * v4 + 86117) = 1; /*0x7b216f*/
-      ++*((unsigned int *)this + 64536); /*0x7b217a*/
+      ++this->u32_3F060; /*0x7b217a*/
     }
     if ( result ) /*0x7b2182*/
     {

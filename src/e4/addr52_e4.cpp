@@ -74,24 +74,23 @@ int E4Recv_522100::sub_522100()
   int (***v2)(unsigned int, void *, int *); // eax
   int v3; // esi
   int v4; // eax
-  int v5; // edi
   bool v6; // bl
   int v7; // [esp+14h] [ebp-18h] BYREF
   int v8; // [esp+18h] [ebp-14h] BYREF
   unsigned char v9[16]; // [esp+1Ch] [ebp-10h] BYREF
 
-  if ( !*(unsigned char *)(*((unsigned int *)this + 432) + 3476) ) /*0x522109*/
+  if ( !*(unsigned char *)(this->M1728 + 3476) ) /*0x522109*/
     return 0; /*0x522113*/
-  v2 = (int (***)(unsigned int, void *, int *))*((unsigned int *)this + 413); /*0x522119*/
+  v2 = (int (***)(unsigned int, void *, int *))this->M1652; /*0x522119*/
   v7 = 0; /*0x522124*/
   if ( !v2 ) /*0x52212c*/
     goto LABEL_11; /*0x52212c*/
   v3 = (**v2)((unsigned int)v2, &unk_818858, &v8); /*0x52213d*/
   if ( v3 >= 0 ) /*0x522141*/
   {
-    v5 = v8; /*0x522150*/
+    v8 = v8; /*0x522150*/
     ComPtr::Release_Alt((ComPtr *)&v7); /*0x522158*/
-    v4 = v5; /*0x52215d*/
+    v4 = v8; /*0x52215d*/
   }
   else
   {
@@ -274,7 +273,7 @@ namespace gamemd {
 char E4Recv_522540::sub_522540()
 {
 
-  return *(unsigned char *)(*((unsigned int *)this + 432) + 1708); /*0x52254c*/
+  return *(unsigned char *)(this->u32_6C0 + 1708); /*0x52254c*/
 
 }
 } // namespace gamemd

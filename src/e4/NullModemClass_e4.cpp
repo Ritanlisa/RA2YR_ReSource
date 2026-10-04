@@ -26,7 +26,7 @@ namespace gamemd {
 int NullModemClass::COMStub()
 {
 
-  return *((unsigned int *)this + 15); /*0x5f1953*/
+  return this->u32_3C; /*0x5f1953*/
 
 }
 } // namespace gamemd
@@ -37,9 +37,9 @@ int NullModemClass::Flush(int a2)
 
   int result; // eax
 
-  result = *((unsigned int *)this + 14); /*0x5f1f00*/
+  result = this->u32_38; /*0x5f1f00*/
   if ( result ) /*0x5f1f05*/
-    return ((Rect *)*(Rect **)(result + 4))->SetRedraw(1); /*0x5f1f0c*/
+    return ((Rect *)result->vtable2)->SetRedraw(1); /*0x5f1f0c*/
   return result; /*0x5f1f11*/
 
 }
@@ -52,16 +52,16 @@ int NullModemClass::Release(int a2, int a3, int a4, int a5)
 
   int result; // eax
 
-  if ( !*((unsigned int *)this + 15) ) /*0x5f3563*/
+  if ( !this->u32_3C ) /*0x5f3563*/
     return 0; /*0x5f356a*/
-  result = (*(int (**)(unsigned int, int, int, int, unsigned int))(**((unsigned int **)this + 14) + 8))( /*0x5f3586*/
-             *((unsigned int *)this + 14),
+  result = (*(int (**)(unsigned int, int, int, int, unsigned int))(**((unsigned int **)&this->PlayerIndex4) + 8))( /*0x5f3586*/
+             this->u32_38,
              a2,
              a3,
              a4,
              0);
   if ( !result ) /*0x5f358b*/
-    ++*((unsigned int *)this + 26); /*0x5f358d*/
+    ++this->u32_68; /*0x5f358d*/
   return result; /*0x5f356c*/
 
 }
@@ -71,8 +71,8 @@ namespace gamemd {
 int NullModemClass::ddtor(int a2, int a3, int a4)
 {
 
-  if ( *((unsigned int *)this + 15) ) /*0x5f35a0*/
-    return (*(int (**)(unsigned int, int, int))(**((unsigned int **)this + 14) + 16))(*((unsigned int *)this + 14), a2, a3); /*0x5f35bb*/
+  if ( this->u32_3C ) /*0x5f35a0*/
+    return (*(int (**)(unsigned int, int, int))(**((unsigned int **)&this->PlayerIndex4) + 16))(this->u32_38, a2, a3); /*0x5f35bb*/
   else
     return 0; /*0x5f35a7*/
 
@@ -85,9 +85,9 @@ int NullModemClass::Receive()
 
   int v1; // eax
 
-  v1 = *((unsigned int *)this + 14); /*0x5f35d0*/
+  v1 = this->u32_38; /*0x5f35d0*/
   if ( v1 ) /*0x5f35d5*/
-    return *(unsigned int *)(*(unsigned int *)(v1 + 4) + 40); /*0x5f35da*/
+    return *(unsigned int *)(v1->vtable2 + 40); /*0x5f35da*/
   else
     return 0; /*0x5f35de*/
 
@@ -100,9 +100,9 @@ int NullModemClass::CheckStatus()
 
   int v1; // eax
 
-  v1 = *((unsigned int *)this + 14); /*0x5f35f0*/
+  v1 = this->u32_38; /*0x5f35f0*/
   if ( v1 ) /*0x5f35f5*/
-    return *(unsigned int *)(*(unsigned int *)(v1 + 4) + 56); /*0x5f35fa*/
+    return *(unsigned int *)(v1->vtable2 + 56); /*0x5f35fa*/
   else
     return 0; /*0x5f35fe*/
 
@@ -115,9 +115,9 @@ int NullModemClass::GetAddress(int a2)
 
   int v2; // eax
 
-  v2 = *((unsigned int *)this + 14); /*0x5f3610*/
+  v2 = this->u32_38; /*0x5f3610*/
   if ( v2 ) /*0x5f3615*/
-    return *(unsigned int *)(*(unsigned int *)(v2 + 4) + 40); /*0x5f361a*/
+    return *(unsigned int *)(v2->vtable2 + 40); /*0x5f361a*/
   else
     return 0; /*0x5f3620*/
 
@@ -130,9 +130,9 @@ int NullModemClass::SetAddress(int a2)
 
   int v2; // eax
 
-  v2 = *((unsigned int *)this + 14); /*0x5f3630*/
+  v2 = this->u32_38; /*0x5f3630*/
   if ( v2 ) /*0x5f3635*/
-    return *(unsigned int *)(*(unsigned int *)(v2 + 4) + 56); /*0x5f363a*/
+    return *(unsigned int *)(v2->vtable2 + 56); /*0x5f363a*/
   else
     return 0; /*0x5f3640*/
 
@@ -256,7 +256,7 @@ namespace gamemd {
 int NullModemClass::GetMember23()
 {
 
-  return *((unsigned int *)this + 23); /*0x7754c3*/
+  return this->u32_5C; /*0x7754c3*/
 
 }
 } // namespace gamemd

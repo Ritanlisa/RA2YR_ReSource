@@ -304,7 +304,7 @@ namespace gamemd {
 unsigned int E4Recv_5422C0::_GetNumBorrowedCores_SchedulerProxy_details_Concurrency__QBEIXZ()
 {
 
-  return *((unsigned int *)this + 42); /*0x5422c6*/
+  return this->M168; /*0x5422c6*/
 
 }
 } // namespace gamemd
@@ -465,7 +465,7 @@ namespace gamemd {
 int E4Recv_543AF0::nullsub_0_0()
 {
 
-  return *((unsigned int *)this + 43); /*0x543af6*/
+  return this->M172; /*0x543af6*/
 
 }
 } // namespace gamemd

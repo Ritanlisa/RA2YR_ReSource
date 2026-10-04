@@ -11,12 +11,12 @@ namespace gamemd {
 int Menu::Reset(void *a1, void *a2)
 {
 
-  *((unsigned int *)this + 13) = 0; /*0x4c614c*/
-  *((unsigned int *)this + 14) = 0; /*0x4c614f*/
-  *((unsigned int *)this + 15) = 1; /*0x4c6152*/
-  *((unsigned short *)this + 32) = 0; /*0x4c6159*/
+  this->u32_34 = 0; /*0x4c614c*/
+  this->u32_38 = 0; /*0x4c614f*/
+  this->u32_3C = 1; /*0x4c6152*/
+  this->u16_40 = 0; /*0x4c6159*/
   memset(this, 0, 0x30u); /*0x4c615d*/
-  *((unsigned short *)this + 24) = 0; /*0x4c615f*/
+  this->u16_30 = 0; /*0x4c615f*/
   return (int)this; /*0x4c6163*/
 
 }

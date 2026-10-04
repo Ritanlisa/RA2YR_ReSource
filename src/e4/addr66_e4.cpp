@@ -907,9 +907,6 @@ LABEL_11:
 
 }
 }
-// 0x664750
-namespace gamemd {
-int E4Recv_664750::sub_664750(char a2)
 {
 
   char result; // al
@@ -928,9 +925,6 @@ int E4Recv_664750::sub_664750(char a2)
 
 }
 }
-// 0x660AD0
-namespace gamemd {
-int E4Recv_660AD0::sub_660AD0()
 {
 
   return dword_7F099C[4 * (int)this->AbstractClass]; /*0x660adb*/
@@ -968,10 +962,10 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
 
   v2 = 32; /*0x6616b8*/
   this->Straw_field_0x04 = 0; /*0x6616bd*/
-  *((unsigned int *)this + 2) = 0; /*0x6616c0*/
+  this->u32_8 = 0; /*0x6616c0*/
   *(unsigned int *)this->__pad_0 = &vt_Straw; /*0x6616c3*/
-  *((unsigned int *)this + 3) = 0; /*0x6616c9*/
-  *((unsigned int *)this + 4) = 0; /*0x6616cc*/
+  this->u32_C = 0; /*0x6616c9*/
+  this->q004 = 0; /*0x6616cc*/
   v3 = (ObjectClass *)((char *)this + 20); /*0x6616cf*/
   do /*0x6616df*/
   {
@@ -980,8 +974,8 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
     --v2; /*0x6616de*/
   }
   while ( v2 ); /*0x6616df*/
-  *((unsigned int *)this + 3) = 0; /*0x6616e1*/
-  *((unsigned int *)this + 4) = 0; /*0x6616e4*/
+  this->u32_C = 0; /*0x6616e1*/
+  this->q004 = 0; /*0x6616e4*/
   *(unsigned int *)this->__pad_0 = &vt_RandomStraw; /*0x6616f1*/
   memset((char *)this + 20, 0, 0x100u); /*0x6616f7*/
   return this->__pad_0; /*0x6616fb*/

@@ -1173,7 +1173,6 @@ LABEL_99:
 //G42-DUP 
 //G42-DUP }
 }
-// 0x424CB0
 namespace gamemd {
 int AnimClass::InWhichLayer_AttachedObjectLayer()
 {
@@ -1190,7 +1189,6 @@ int AnimClass::InWhichLayer_AttachedObjectLayer()
 
 }
 }
-// 0x4253B0
 namespace gamemd {
 int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {

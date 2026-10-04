@@ -196,9 +196,9 @@ namespace gamemd {
 int CaptureManagerClass::IsOverloading(bool * a2)
 {
 
-  if ( !*((unsigned char *)this + 64) || *((unsigned int *)this + 13) <= *((unsigned int *)this + 15) ) /*0x4726cf*/
+  if ( !this->CaptureManagerClass_field_40 || this->originalOwner <= this->q03C ) /*0x4726cf*/
     return 0; /*0x4726e4*/
-  *a2 = *((unsigned int *)this + 17) > 0; /*0x4726dd*/
+  *a2 = this->overloadLimit > 0; /*0x4726dd*/
   return 1; /*0x4726e1*/
 
 }

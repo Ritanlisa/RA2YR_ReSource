@@ -52,7 +52,7 @@ int AirstrikeClass::ReassignTarget(int a2, void *a2_2)
   int *v12; // esi
   int v13; // edi
 
-  v3 = *((unsigned int *)this + 23); /*0x41da26*/
+  v3 = this->AirstrikeClass_field_5C; /*0x41da26*/
   if ( v3 && (v4 = *(unsigned int *)(v3 + 1496)) != 0 )
   {
     v5 = *(unsigned int *)(v3 + 764); /*0x41da37*/
@@ -67,9 +67,9 @@ int AirstrikeClass::ReassignTarget(int a2, void *a2_2)
   else
   {
 LABEL_6:
-    v6 = *((unsigned int *)this + 20); /*0x41da4f*/
+    v6 = this->u32_50; /*0x41da4f*/
     if ( v6 )
-      v7 = (*(int (**)(unsigned int))(*(unsigned int *)v6 + 44))(*((unsigned int *)this + 20)) == 6 ? (unsigned int *)v6 : 0;
+      v7 = (*(int (**)(unsigned int))(*(unsigned int *)v6 + 44))(this->u32_50) == 6 ? (unsigned int *)v6 : 0;
     else
       v7 = 0; /*0x41da56*/
     if ( a2 )
@@ -83,7 +83,7 @@ LABEL_6:
       (*(void (**)(unsigned int *))(v10 + 344))(v7); /*0x41daae*/
       (*(void (**)(unsigned int *, int))(*v7 + 292))(v7, 2); /*0x41daba*/
     }
-    *((unsigned int *)this + 20) = 0; /*0x41dac2*/
+    this->u32_50 = 0; /*0x41dac2*/
     if ( v9 ) /*0x41dac9*/
     {
       v11 = (unsigned int)(*v9);
@@ -91,10 +91,10 @@ LABEL_6:
       (*(void (**)(unsigned int *, int))(v11 + 348))(v9, 100000); /*0x41dada*/
       (*(void (**)(unsigned int *, int))(*v9 + 292))(v9, 2); /*0x41dae6*/
     }
-    v8 = *((unsigned int *)this + 12); /*0x41daec*/
-    v12 = *(int **)((char *)this + 92); /*0x41daef*/
+    v8 = this->EliteAirstrikeTeamTypeIndex; /*0x41daec*/
+    v12 = *(int **)((char *)&this->AirstrikeClass_field_242); /*0x41daef*/
     v13 = 0; /*0x41daf2*/
-    for ( *((unsigned int *)this + 20) = a2; v13 < v8; ++v13 ) /*0x41daf9*/
+    for ( this->u32_50 = a2; v13 < v8; ++v13 ) /*0x41daf9*/
     {
       if ( v12 ) /*0x41dafd*/
       {
@@ -102,11 +102,11 @@ LABEL_6:
         {
           (*(void (**)(int *, int))(*v12 + 968))(v12, a2); /*0x41db0e*/
           (*(void (**)(int *, int, unsigned int))(*v12 + 488))(v12, 1, 0); /*0x41db1c*/
-          *((unsigned char *)this + 61) = 1; /*0x41db22*/
+          this->AirstrikeClass_field_3D = 1; /*0x41db22*/
         }
         v12 = (int *)v12[374]; /*0x41db26*/
       }
-      v8 = *((unsigned int *)this + 12); /*0x41db2c*/
+      v8 = this->EliteAirstrikeTeamTypeIndex; /*0x41db2c*/
     }
   }
   return v8; /*0x41da61*/

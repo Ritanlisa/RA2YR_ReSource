@@ -14,7 +14,7 @@ int Value::InRange()
 
   int v1; // eax
 
-  v1 = *((unsigned int *)this + 14); /*0x486730*/
+  v1 = this->u32_38; /*0x486730*/
   return v1 >= dword_AA0E20 && v1 < dword_AA0E20 + 14; /*0x486746*/
 
 }

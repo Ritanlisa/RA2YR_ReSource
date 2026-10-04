@@ -241,7 +241,7 @@ namespace gamemd {
 char * E4Recv_681180::sub_681180()
 {
 
-  return (char *)this + 400; /*0x681186*/
+  return (char *)&this->u32_640; /*0x681186*/
 
 }
 } // namespace gamemd

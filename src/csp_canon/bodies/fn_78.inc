@@ -5,135 +5,74 @@
 // ==== BACKFILL 0x00780A00  FormatLocaleStringWOL  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 wchar_t ** WOL_FormatLocaleString(wchar_t ** a1, int a2)
 {
-{
-    char **v3;
-    char *v4;
-    wchar_t *String;
-    void *v7;
-    void *v8;
-    void *v9;
-    v3 = FormatStringInt((char **)&v9, a2, 2);
-    ProcessStringAndCopy((char **)&v8, DataGlobal_84A684, v3);
-    DeleteAndZero(&v9);
-    v4 = String::GetOrEmpty((char **)&v8);
-    String = GetStringCSF((wchar_t *)v4, 0, g_Str_File_wonline_cpp, 2909);
-    WideString::Assign((wchar_t **)&v7, String);
-    WideString::AssignFromPtr(a1, (const wchar_t **)&v7);
-    DeleteAndZero::Alt(&v7);
-    DeleteAndZero(&v8);
-    return a1;
-}
+  char **v3; // eax
+  char *v4; // eax
+  wchar_t *StringCSF; // eax
+  DeleteAndZero v7; // [esp+8h] [ebp-Ch] BYREF
+
+  v3 = (char **)FormatStringInt((char **)&v7.DeleteAndZero_field_0x08, a2, 2); /*0x780a0f*/
+  ProcessStringAndCopy((char **)&v7.DeleteAndZero_field_0x04, aWolLocale, v3); /*0x780a1e*/
+  ((DeleteAndZero *)&v7.DeleteAndZero_field_0x08)->Alt(); /*0x780a27*/
+  v4 = ((String *)((String *)&v7.DeleteAndZero_field_0x04))->GetOrEmpty(); /*0x780a3a*/
+  StringCSF = GetStringCSF((wchar_t *)v4, 0, g_Str_File_wonline_cpp, 2909); /*0x780a43*/
+  ((WideString *)((WideString *)&v7))->Assign(StringCSF); /*0x780a4d*/
+  ((WideString *)((WideString *)a1))->AssignFromPtr((const wchar_t **)&v7); /*0x780a65*/
+  ((DeleteAndZero*)&v7)->Alt(); /*0x780a6e*/
+  ((DeleteAndZero *)&v7.DeleteAndZero_field_0x04)->Alt(); /*0x780a77*/
+  return a1; /*0x780a7e*/
 }
 
 // ==== BACKFILL 0x00781090  WOLobby_Get  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
 {
-{
-    wchar_t *StringCSF;
-    LRESULT v5;
-    char v7[108];
-    if ( wParam == -1 )
-  {
-    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620[19864], 0, g_Str_File_wonline_cpp, 3050);
-  }
-    else
-  {
-    v5 = SendMessageA(a2, 0x199u, wParam, 0);
-    if ( v5 >= 0 && v5 < (int)g_WOL_State )
-    {
-    qmemcpy(v7, &g_WOL_ConnectionFlags[3 * v5], sizeof(v7));
-    FormatWOLPlayerInfo(a1, v7);
-    return (CampaignScore *)a1;
-    }
-    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620[19864], 0, g_Str_File_wonline_cpp, 3055);
-  }
-    WideString::Assign(a1, (CampaignScore *)StringCSF);
-    return (CampaignScore *)a1;
-}
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x781090)
 }
 
 // ==== BACKFILL 0x00786390  LoginFlowWOL_Reset  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int sub_786390()
+int sub_786390(void * a1)
 {
-{
-    HANDLE *v1;
-    BYTE Data[4];
-    HKEY phkResult;
-    DWORD cbData;
-    DWORD Type;
-    CHAR SubKey[256];
-    if ( DataGlobal_B77E75 )
-    return 1;
-    DataGlobal_B77E75 = 1;
-    LoadNetworkShareStrings();
-    Game::ResetFlags();
-    Network::InitPlayerSlots();
-    *(int *)Data = 0;
-    if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven )
-  {
-    if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) )
-    {
-    strcpy(SubKey, g_Str_SOFTWARE_Westwood_Yuri_s_Reven);
-    if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) )
-      {
-    cbData = 4;
-    RegQueryValueExA(phkResult, DataGlobal_84A940, 0, &Type, Data, &cbData);
-    RegCloseKey(phkResult);
-      }
-    }
-  }
-    *(int *)Data = Data[0];
-    DataGlobal_B77E50 = Data[0];
-    g_NetworkRematchState = Data[0] + 10496;
-    ResetSystemWOL();
-    DataGlobal_B77DC0 = 1;
-    v1 = &Handles;
-    do
-    *v1++ = CreateEventA(0, 0, 0, 0);
-    while ( (int)v1 < (int)g_WOL_RequestObject );
-    return InitializeWestwoodOnline(g_hInstance);
-}
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x786390)
 }
 
 // ==== BACKFILL 0x00786E70  sub_786E70  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int E4Recv_786E70::sub_786E70()
 {
-{
-    int v2;
-    int v3;
-    int i;
-    char *v5;
-    char *v6;
-    if ( !String::Length(this) )
-    return -1;
-    v2 = g_WOL_UserList;
-    v3 = 1;
-    if ( g_WOL_UserList <= 1 )
-    return -1;
-    for ( i = 248; ; i += 248 )
+
+  void *vtable0; // ecx
+  int v3; // edi
+  int i; // esi
+  char *v5; // eax
+  char *v6; // eax
+
+  if ( !((String*)((String *)this))->Length() ) /*0x786e75*/
+    return -1; /*0x786e75*/
+  vtable0 = (void *)(unsigned int)(((E4Recv_76AAF0 *)&g_WOL_UserList)->AbstractClass); /*0x786e7e*/
+  v3 = 1; /*0x786e84*/
+  if ( (int)((E4Recv_76AAF0 *)&g_WOL_UserList)->AbstractClass <= 1 ) /*0x786e8b*/
+    return -1; /*0x786ed8*/
+  for ( i = 248; ; i += 248 ) /*0x786e8d*/
   {
-    v5 = 0;
-    if ( i >= 0 && v3 < v2 )
-    v5 = (char *)(DataGlobal_B778E0) + i;
-    v6 = strchr(v5 + 24, 58);
-    if ( v6 )
+    v5 = 0; /*0x786e92*/
+    if ( i >= 0 && v3 < (int)vtable0 ) /*0x786e9a*/
+      v5 = (char *)((char *)&g_WOL_UserList) + i; /*0x786ea1*/
+    v6 = strchr(v5 + 24, 58); /*0x786ea9*/
+    if ( v6 ) /*0x786eb3*/
     {
-    if ( *v6 && String::Equals_Alt(this, v6 + 1) )
-    break;
+      if ( *v6 && (uint8_t)((String *)((String *)this))->Equals_Alt(v6 + 1) ) /*0x786ebe*/
+        break; /*0x786ebe*/
     }
-    v2 = g_WOL_UserList;
-    if ( ++v3 >= g_WOL_UserList )
-    return -1;
+    vtable0 = (void *)(unsigned int)(((E4Recv_76AAF0 *)&g_WOL_UserList)->AbstractClass); /*0x786ec7*/
+    if ( ++v3 >= (int)((E4Recv_76AAF0 *)&g_WOL_UserList)->AbstractClass ) /*0x786ed6*/
+      return -1; /*0x786ed6*/
   }
-    return v3;
-}
+  return v3; /*0x786ed8*/
+
 }
 
 // ==== BACKFILL 0x0078ABF0  ChatMessageWOL  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
 short WOL_ChatMessage(char a1, wchar_t * a2)
 {
-{
-    DataGlobal_B77E40 = a1;
-    return WideString::Reassign(&DataGlobal_B76230, a2);
-}
+  byte_B77E40 = a1; /*0x78abf0*/
+// 0x7b7600
+  return ((WideString *)&unk_B76230)->Reassign(a2, 0); /*0x78ac01*/
 }

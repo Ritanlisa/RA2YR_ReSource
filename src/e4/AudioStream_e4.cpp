@@ -51,74 +51,54 @@ int MouseClass::ReleaseChannel()
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004026F0.json)
 }
 // 0x4033C0
-namespace gamemd {
 void MouseClass::DestroyAll(void * Block)
 {
     (void)Block;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004033C0.json)
 }
-}
 // 0x403820
-namespace gamemd {
 int MouseClass::Reset()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00403820.json)
 }
-}
 // 0x4038A0
-namespace gamemd {
 int MouseClass::ResetChannel(int a2, int a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x004038A0.json)
 }
-}
 // 0x4038C0
-namespace gamemd {
 int MouseClass::ResetChannel2(int a2, int a3)
 {
     (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004038C0.json)
 }
-}
 // 0x404700
-namespace gamemd {
 int MouseClass::SetupPlayback()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00404700.json)
 }
-}
 // 0x4047B0
-namespace gamemd {
 int MouseClass::SelectRandom()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004047B0.json)
 }
-}
 // 0x404E70
-namespace gamemd {
 void MouseClass::CleanupChannels()
 {
       // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00404E70.json)
 }
-}
 // 0x4079C0
-namespace gamemd {
 int MouseClass::ReadStreamAndSyncPosition()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004079C0.json)
 }
-}
 // 0x407A30
-namespace gamemd {
 int MouseClass::SetPlaybackCallback()
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00407A30.json)
 }
-}
 // 0x407A60
-namespace gamemd {
 int MouseClass::ProcessCallback(void *a1_1)
 {
     (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00407A60.json)
-}
 }
 // 0x4084E0
 namespace gamemd {
