@@ -117,14 +117,14 @@ AbstractClass * * sub_731AA0()
 }
 // 0x731EB0
 namespace gamemd {
-unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
+unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int), int a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731EB0)
 }
 }
 // 0x731F70
 namespace gamemd {
-unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, int) a1, int a2)
+unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, int), int a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x731F70)
 }
@@ -145,7 +145,7 @@ int SelectAllOfType()
 }
 // 0x732FF0
 namespace gamemd {
-char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
+char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int), int a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732FF0)
 }
@@ -459,7 +459,7 @@ wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
 
 // 0x732110
 namespace gamemd {
-int sub_732110(int a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
+int sub_732110(int a1, int (__fastcall *a2)(unsigned int, int), int a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732110)
 }
@@ -467,7 +467,7 @@ int sub_732110(int a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
 
 // 0x732140
 namespace gamemd {
-int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int) a2, void (__fastcall *a3)(int, int) a3, int a4, int a5)
+int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int), void (__fastcall *a3)(int, int), int a4, int a5)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732140)
 }
@@ -475,7 +475,7 @@ int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int) a2, void (__fast
 
 // 0x732190
 namespace gamemd {
-char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
+char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int), int a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x732190)
 }
@@ -483,7 +483,7 @@ char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, in
 
 // 0x7321D0
 namespace gamemd {
-char sub_7321D0(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
+char sub_7321D0(int a1, unsigned char (__fastcall *a2)(unsigned int, int), int a3)
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7321D0)
 }
@@ -499,7 +499,7 @@ BOOL E4Recv_7325C0::sub_7325C0()
 
 // 0x732C30
 namespace gamemd {
-char IDTechnoClassMatches(void * a1, int a2)
+char IDTechnoClassMatches(ObjectClass * a1, int a2)
 {
   int v3; // ebp
   int v4; // edi

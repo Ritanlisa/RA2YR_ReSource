@@ -641,7 +641,7 @@ struct Tactical {
     int StubReturn56();  // 0x6DC450
     int StubReturn3608();  // 0x6DC460
     int UpdateUIVisibility(void *a1_1);
-    char * SetCellTransform(int a2, CoordStruct * aP2, int a4, CoordStruct * aP4, int a6, int a7, void *a7_2);
+    char * SetCellTransform(int a2, void * aP2, int a4, void * aP4, int a6, int a7, void *a7_2);
     int Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);
 };
 } // namespace gamemd
