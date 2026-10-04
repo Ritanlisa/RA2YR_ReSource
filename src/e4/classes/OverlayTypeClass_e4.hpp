@@ -284,7 +284,7 @@ struct OverlayTypeClass {
     int ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4);
     int   SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     unsigned int *  Construct(char *aP1);
-    OverlayTypeClass(void * aP1);
+    OverlayTypeClass(char * aP1);  // G42.41j truth 0x5FE250
     unsigned int * vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1);
     void GetLandType(unsigned int * a2, int * a3, unsigned int a4);
 };

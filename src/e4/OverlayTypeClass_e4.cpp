@@ -27,7 +27,7 @@
 
 // 0x5FE250
 namespace gamemd {  // G42.18c ns repair
-OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
+OverlayTypeClass::OverlayTypeClass(char * aP1)  // G42.41j: truth 0x5FE250 = char* Source; hpp synced
 {
     // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005FE250.json)
 }
@@ -165,7 +165,9 @@ int OverlayTypeClass::GetAuxField()
 }
 }  // G42.18c ns repair
 // 0x5FEF30
-OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
+namespace gamemd {  // G42.41j: ns re-open (def had fallen to global scope)
+OverlayTypeClass * OverlayTypeClass::ddtor(char a2)
 {
     return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005FEF30.json)
 }
+} // namespace gamemd  // G42.41j close for :168 re-open
