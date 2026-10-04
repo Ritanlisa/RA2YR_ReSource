@@ -22,7 +22,7 @@ struct FileSystem {
     void* q100;  // 0x100
     unsigned int q114;  // 0x114
     void* q598;  // 0x598
-    unsigned int openFile;
+    const char * openFile(const char * a2);  // G42.41m: was misdeclared as data; truth 0x628110 = __thiscall method
 // --- flat members (END) ---
     int ProcessNextFileExtension();
     void CleanupTrees();

@@ -351,6 +351,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     void FootClass_ImbueLocomotor();  // 0x710000
+    // === G42.41m supplies (ml names; /c-gate) ===
+    uint8_t q1F0[16];  // ml @0x1F0 word-array base (checkTerrainSpeed 0x487154 inc/dec)
     // === FUNCS-MOVE (END) ===
 };
 

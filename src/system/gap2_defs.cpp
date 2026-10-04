@@ -32,9 +32,8 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
 
-// 0x0 (lnk)
-x401980
-namespace gamemd { 
+// 0x401980 (lnk)
+namespace gamemd {  // G42.41m: stray 'x401980' head marker cleaned
 int CCFileClass::Destru_vt08(int a2, int a3) {
   (*(void (**)(CCFileClass *, int))(*(unsigned int *)this + 8))(this, a2); /*0x40198c*/
   return (*(int (**)(CCFileClass *, int))(*(unsigned int *)this + 28))(this, a3); /*0x40199b*/
@@ -2137,15 +2136,15 @@ void FileSystem::FlushTempFiles() {
 
 // 0x628110
 namespace gamemd { 
-void* FileSystem::openFile(int ()
+void * FileSystem::openFile(void * aP1)  // G42.41m: truth 0x628110; decl = file_system.hpp:98
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x628110)
+    (void)aP1; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x628110)
 }
 }
 
 // 0x628170
 namespace gamemd { 
-void* FileSystem::closeFile(int * a2)
+void * FileSystem::closeFile(void * aP1)  // G42.41m: decl = file_system.hpp:99
 {
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x628170)
 }

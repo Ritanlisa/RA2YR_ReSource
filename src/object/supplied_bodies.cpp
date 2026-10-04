@@ -436,7 +436,7 @@ int TechnoClass::CheckState2() const {
 // 0x5F6690
 namespace ra2::game {
 bool ObjectClass::IsActive() const {
-    return *(unsigned char *)((char *)&this->attachedBomb4) == 0; /*0x5f669d 真值 [ecx+90h]*/
+    return *(unsigned char *)((char *)&this->isAliveFlag) == 0; /*0x5f669d 真值 [ecx+90h]*/
 }
 } // namespace ra2::game
 
@@ -513,7 +513,7 @@ int TechnoClass::COMStub_Return0_307()
 // 0x711EB0
 namespace ra2::game {
 int TechnoClass::GetMember388() const {
-    return *(unsigned int *)((char *)&this->gapRadius2); /*0x711eb6 真值 [ecx+610h]*/
+    return *(unsigned int *)((char *)&this->gapRadius); /*0x711eb6 真值 [ecx+610h]*/
 }
 } // namespace ra2::game
 

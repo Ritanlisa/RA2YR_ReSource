@@ -1159,6 +1159,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int checkAmmo(int a1);  // 0x41b860
     void* Update(int a1, int a2);  // 0x6f3f40
     bool GetField();  // 0x731cf0
+    // === G42.41m supplies (ml names; /c-gate) ===
+    uint32_t u32_5D1;  // ml @0x5D1 (vt_entry_4B0 returns)
+    uint32_t u32_6C4;  // ml @0x6C4 (byte-ptr base use 0x746415)
+    uint8_t u32_6E1;  // ml name (0x746400 use)
+    uint8_t u32_6E2;  // ml name (0x746400 use)
     // === FUNCS-MOVE (END) ===
 };
 
