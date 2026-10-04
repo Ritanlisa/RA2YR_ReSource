@@ -150,11 +150,9 @@ extern g_BuildingLoadQueue_Array_flat g_BuildingLoadQueue_Array_t;  // data: 0xB
 #define g_BuildingLoadQueue_Array g_BuildingLoadQueue_Array_t
 // G42.35 波8 站点壳（BuildingLoadQueue/FootClass/ComPtr/DynamicVector）
 // BuildingLoadQueue_site 置于 gamemd（其 FindBuilding def 在 namespace gamemd 块内, C2888 规避）
-namespace gamemd { struct BuildingLoadQueue_site {
     void* __pad_0;   // til 槽词汇 (0x6E7AA9)
     unsigned int BuildingLoadQueue_field_0x04[4];  // til 槽词汇
     int FindBuilding();   // 0x6E7A80 (def 0 参 int; 载体 misc 版无此法)
-}; } // namespace gamemd
 struct FootClass_site {
     static int MoveToWeed(void* self, int a2);               // 0x4DDB90 (载体 foot.hpp 0 参 -- 其域 agent 在途)
     static int MoveToTiberium(void* self, int a2, unsigned int a3); // 0x4DCFE0

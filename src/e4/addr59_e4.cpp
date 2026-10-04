@@ -123,12 +123,10 @@ int j_Options::j_Options_GetValue(const char ** dwNewLong)
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x597D40)
 }
 // 0x598000
-namespace gamemd {
 double sub_598000()
 {
   return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 2.328306437080797e-10; /*0x598023*/
 }
-} // namespace gamemd
 }
 
 // 0x5980A0

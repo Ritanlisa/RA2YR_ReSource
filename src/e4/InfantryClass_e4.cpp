@@ -48,9 +48,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x517D90)
 }
 // 0x7447A0
-namespace gamemd {
 int InfantryClass_ScanTarget_0(void * a1)
 {
   return InfantryClass::ScanTarget((int *)(a1));
 }
-} // namespace gamemd

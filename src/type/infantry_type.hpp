@@ -129,6 +129,7 @@ public:
     int GetGameplayValue();  // 0x524790
     void* ClampToGroundHeight(int a1, int a2);  // 0x5247d0
     // === FUNCS-MOVE (END) ===
+    int Ddtor();  // 0x5239D0 (G42.38 supply)
 };
 
 // G22 E1: InfantryTypes registry (0xA8E348; ctor register / dtor compaction).
