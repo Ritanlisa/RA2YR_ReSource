@@ -311,48 +311,7 @@ unsigned int Tactical_42::InitMap(int a2)
 namespace gamemd {
 char Tactical_42::SetCapacity(int a2, unsigned int * a3)
 {
-
-  unsigned int *v4; // edi
-  int Tactical_field_0x8; // ecx
-  int i; // eax
-  int v7; // eax
-
-  if ( a2 ) /*0x6e49dc*/
-  {
-    LOBYTE(this->Tactical_field_0xC) = 0; /*0x6e49e2*/
-    if ( a3 ) /*0x6e49e8*/
-      v4 = a3; /*0x6e49fe*/
-    else
-      v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x6e49fa*/
-    LOBYTE(this->Tactical_field_0xC) = 1; /*0x6e4a02*/
-    if ( !v4 ) /*0x6e4a06*/
-      return 0; /*0x6e4a7a*/
-    if ( *(unsigned int *)&this->Tactical_field_0x2[2] ) /*0x6e4a08*/
-    {
-      Tactical_field_0x8 = this->Tactical_field_0x8; /*0x6e4a0f*/
-      if ( a2 < Tactical_field_0x8 ) /*0x6e4a14*/
-        Tactical_field_0x8 = a2; /*0x6e4a16*/
-      for ( i = 0; i < Tactical_field_0x8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->Tactical_field_0x2[2] + 4 * i - 4) ) /*0x6e4a1c*/
-        ++i; /*0x6e4a21*/
-      if ( BYTE1(this->Tactical_field_0xC) ) /*0x6e4a2e*/
-      {
-        __3_YAXPAX_Z(*(void **)&this->Tactical_field_0x2[2]); /*0x6e4a39*/
-        *(unsigned int *)&this->Tactical_field_0x2[2] = 0; /*0x6e4a41*/
-      }
-    }
-    *(unsigned int *)&this->Tactical_field_0x2[2] = v4; /*0x6e4a4a*/
-    this->Tactical_field_0x8 = a2; /*0x6e4a52*/
-    BYTE1(this->Tactical_field_0xC) = a3 == 0; /*0x6e4a55*/
-  }
-  else
-  {
-    (*(void (**)(Tactical *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6e4a5e*/
-  }
-  v7 = this->Tactical_field_0x8; /*0x6e4a61*/
-  if ( v7 < *(unsigned int *)this->__pad_10 ) /*0x6e4a69*/
-    *(unsigned int *)this->__pad_10 = v7; /*0x6e4a6b*/
-  return 1; /*0x6e4a6e*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E49D0)
 }
 } // namespace gamemd
 
@@ -360,22 +319,7 @@ char Tactical_42::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 VectorClass_flat * Tactical_42::QueryInterface(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x6e4ab3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6e4ab6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6e4ac0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x6e4ac8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6e4ad0*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x6e4adb*/
-  Block->m_8 = 0; /*0x6e4ae1*/
-  if ( (a2 & 1) != 0 ) /*0x6e4ae8*/
-    __3_YAXPAX_Z(Block); /*0x6e4aeb*/
-  return Block->__pad_0; /*0x6e4af5*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E4AB0)
 }
 } // namespace gamemd
 }  // L-fix: close namespace tail 1

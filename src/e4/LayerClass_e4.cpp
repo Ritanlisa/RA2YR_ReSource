@@ -91,37 +91,7 @@ int LayerClass::CellIteratorReset()
 namespace gamemd {
 int LayerClass::IsWithinUsableArea(int16_t *aP1, char aP2)
 {
-
-  int v3; // esi
-  int v4; // edx
-  int v5; // edi
-  unsigned int v6; // eax
-  int *v7; // eax
-  int result; // eax
-  int v9; // esi
-
-  v3 = 0; /*0x57846b*/
-  v4 = (int)(aP1[1]); /*0x57846d*/
-  v5 = (int)(*aP1); /*0x578472*/
-  if ( aP2 ) /*0x578477*/
-  {
-    v6 = v5 + (v4 << 9); /*0x57847e*/
-    if ( v6 >= 0x40000 || (v7 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v6)) == 0 ) /*0x578494*/
-    {
-      g_MissionQueueFrame.briefing[139] = *(unsigned int *)aP1; /*0x578498*/
-      v7 = &g_MissionQueueFrame.briefing[130]; /*0x57849d*/
-    }
-    v3 = *((char *)v7 + 283); /*0x5784a8*/
-    if ( *((unsigned char *)v7 + 284) && v4 + v5 < v3 + *((unsigned int *)this + 61) + 2 * *((unsigned int *)this + 64) + 4 ) /*0x5784ca*/
-      ++v3; /*0x5784cc*/
-  }
-  result = *((unsigned int *)this + 61); /*0x5784d3*/
-  LOBYTE(result) = v4 + v5 > v3 + result + 2 * *((unsigned int *)this + 64) /*0x578531*/
-                && v4 + v5 <= v3 + result + 2 * (*((unsigned int *)this + 64) + *((unsigned int *)this + 66)) + 2
-                && (v9 = *((unsigned int *)this + 63), v5 - v4 < 2 * (v9 + *((unsigned int *)this + 65)) - result)
-                && (result -= 2 * v9, v4 - v5 < result);
-  return result; /*0x578525*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x578460)
 }
 }
 // 0x581140

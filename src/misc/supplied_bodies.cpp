@@ -832,126 +832,29 @@ char AudioEvent::LoadFromINI(uint8_t ***a2)
 
 // 0x754BE0
 namespace gamemd {
-void * AudioConfig::InitDefault() {
-    qmemcpy(this, &stru_B44318, 0x30u); /*0x754bf0*/
-    return this; /*0x754bf2*/
+void * AudioConfig::InitDefault()
+{
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x754BE0)
 }
 } // namespace gamemd
 
 // 0x756BB0
 namespace gamemd {
-int AudioOcclusion::ComputeBoundingVertices() {
-    unsigned int v2; // ecx
-    int result; // eax
-    int v4; // eax
-    int v5; // ebx
-    float *v6; // edx
-    float v7; // [esp+4h] [ebp-78h]
-    int v8; // [esp+8h] [ebp-74h]
-    float v9; // [esp+8h] [ebp-74h]
-    float v10; // [esp+Ch] [ebp-70h]
-    int v11; // [esp+10h] [ebp-6Ch]
-    int v12; // [esp+14h] [ebp-68h]
-    float v13; // [esp+18h] [ebp-64h]
-    float v14; // [esp+1Ch] [ebp-60h]
-    float v15; // [esp+24h] [ebp-58h]
-
-    v2 = 0; /*0x756bb6*/
-    result = *((unsigned int *)this + 2); /*0x756bb8*/
-    if ( result ) /*0x756bbd*/
-    {
-      result = 0; /*0x756bc4*/
-      v11 = 0; /*0x756bc8*/
-      do /*0x756dc0*/
-      {
-        v4 = *((unsigned int *)this + 5) + result; /*0x756bd1*/
-        v5 = *(uint8_t *)(v4 + 161); /*0x756bdb*/
-        v12 = *(uint8_t *)(v4 + 162); /*0x756bff*/
-        v14 = (double)*(uint8_t *)(v4 + 160) * 0.5; /*0x756c05*/
-        v8 = -*(uint8_t *)(v4 + 160); /*0x756c22*/
-        v13 = (double)v5 * 0.5; /*0x756c29*/
-        *(float *)(v4 + 64) = v14; /*0x756c39*/
-        *(float *)(v4 + 68) = v13; /*0x756c48*/
-        v15 = (double)-v12 * 0.5; /*0x756c4b*/
-        *(float *)(v4 + 72) = v15; /*0x756c5d*/
-        *(float *)(v4 + 76) = v14; /*0x756c64*/
-        v10 = (double)-v5 * 0.5; /*0x756c6c*/
-        *(float *)(v4 + 80) = v10; /*0x756c82*/
-        *(float *)(v4 + 84) = v15; /*0x756c8f*/
-        v7 = (double)v8 * 0.5; /*0x756c92*/
-        *(float *)(v4 + 88) = v7; /*0x756ca2*/
-        *(float *)(v4 + 92) = v10; /*0x756cae*/
-        *(float *)(v4 + 96) = v15; /*0x756cb9*/
-        *(float *)(v4 + 100) = v7; /*0x756cdd*/
-        *(float *)(v4 + 104) = v13; /*0x756ce9*/
-        *(float *)(v4 + 108) = v15; /*0x756cf0*/
-        v9 = (double)v12 * 0.5; /*0x756cfa*/
-        *(float *)(v4 + 112) = v14; /*0x756d02*/
-        *(float *)(v4 + 116) = v13; /*0x756d0c*/
-        *(float *)(v4 + 120) = v9; /*0x756d13*/
-        *(float *)(v4 + 124) = v14; /*0x756d2d*/
-        *(float *)(v4 + 128) = v10; /*0x756d34*/
-        *(float *)(v4 + 132) = v9; /*0x756d3b*/
-        v6 = (float *)(v4 + 136); /*0x756d5a*/
-        v4 += 148; /*0x756d60*/
-        ++v2; /*0x756d65*/
-        *v6 = v7; /*0x756d66*/
-        v6[1] = v10; /*0x756d6c*/
-        v6[2] = v9; /*0x756d73*/
-        *(float *)v4 = v7; /*0x756d98*/
-        *(float *)(v4 + 4) = v13; /*0x756da1*/
-        *(float *)(v4 + 8) = v9; /*0x756dab*/
-        result = v11 + 164; /*0x756db5*/
-        v11 += 164; /*0x756dbc*/
-      }
-      while ( v2 < *((unsigned int *)this + 2) ); /*0x756dc0*/
-    }
-    return result; /*0x756dc9*/
+int AudioOcclusion::ComputeBoundingVertices()
+{
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x756BB0)
 }
 } // namespace gamemd
 
 // 0x75C7F0
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-int WalkLocomotionClass::QueryInterface(const void *a2, int *a3) {
-    int result; // eax
-    char *pad_18; // eax
-
-    result = LocomotionClass::QueryInterface((LocomotionClass *)this, a2, a3); /*0x75c802*/
-    if ( result == -2147467262 ) /*0x75c80c*/
-    {
-      if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x75c81b*/
-      {
-        if ( this ) /*0x75c822*/
-          pad_18 = this->__pad_18; /*0x75c824*/
-        else
-          pad_18 = 0; /*0x75c829*/
-        *a3 = (int)pad_18; /*0x75c82b*/
-      }
-      if ( *a3 ) /*0x75c82e*/
-      {
-        (*(void (__stdcall **)(WalkLocomotionClass *))(*(unsigned int *)this->LocomotionClass + 4))(this); /*0x75c842*/
-        return 0; /*0x75c845*/
-      }
-      else
-      {
-        return -2147467262; /*0x75c836*/
-      }
-    }
-    return result; /*0x75c834*/
-}
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x75CB80
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-LONG WalkLocomotionClass::AddRef() {
-    return COM::AddRef((LocomotionClass *)this); /*0x75cb8a*/
-}
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
 // 0x75CB90
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-LONG WalkLocomotionClass::Release() {
-    return COM::ReleaseRef((LocomotionClass *)this); /*0x75cb9a*/
-}
 } // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 

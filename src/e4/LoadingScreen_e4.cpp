@@ -229,44 +229,7 @@ char LoadingScreen::FreeResources3()
 namespace gamemd {
 char LoadingScreen::CleanupObjects(void *a1)
 {
-
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1048] ) /*0x72f14a*/
-  {
-    __3_YAXPAX_Z(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1048]); /*0x72f14d*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1048] = 0; /*0x72f155*/
-  }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1052] ) /*0x72f163*/
-  {
-    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1052])( /*0x72f169*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1052],
-      1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1052] = 0; /*0x72f16b*/
-  }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1056] ) /*0x72f178*/
-  {
-    __3_YAXPAX_Z(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1056]); /*0x72f17b*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1056] = 0; /*0x72f183*/
-  }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1060] ) /*0x72f191*/
-  {
-    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1060])( /*0x72f197*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1060],
-      1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1060] = 0; /*0x72f199*/
-  }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1064] ) /*0x72f1a6*/
-  {
-    __3_YAXPAX_Z(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1064]); /*0x72f1a9*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1064] = 0; /*0x72f1b1*/
-  }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1068] ) /*0x72f1bf*/
-  {
-    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1068])( /*0x72f1c5*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1068],
-      1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1068] = 0; /*0x72f1c7*/
-  }
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x72F140)
 }
 } // namespace gamemd
 // 0x730400

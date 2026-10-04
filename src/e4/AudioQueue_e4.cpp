@@ -404,33 +404,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
 namespace gamemd {
 int AudioQueue::PreallocateChannels(unsigned int * a1, int a2)
 {
-
-  int v4; // edi
-  int *v5; // eax
-  int v6; // eax
-
-  v4 = 0; /*0x403537*/
-  do /*0x40359e*/
-  {
-    if ( a1[12].AudioController_field_00[0] >= (int)a1[12].AudioController_field_04 ) /*0x403547*/
-      break; /*0x403547*/
-    v5 = ((AudioController *)(a1))->Constructor(); /*0x40354b*/
-    if ( !v5 ) /*0x403552*/
-      break; /*0x403552*/
-    v5[43] = (int)a1; /*0x403554*/
-    ++a1[12].AudioController_field_00[0]; /*0x403561*/
-    ++a1[13].AudioController_field_00[0]; /*0x40356e*/
-    InsertAfterDListNode((int)&a1[12].AudioController_field_08, v5); /*0x40357c*/
-    v6 = a1[13].AudioController_field_00[0] - 1; /*0x403587*/
-    a1[13].AudioController_field_00[0] = v6; /*0x40358a*/
-    if ( v6 < 0 ) /*0x403590*/
-      a1[13].AudioController_field_00[0] = 0; /*0x403592*/
-    ++v4; /*0x40359c*/
-    --a2; /*0x40359d*/
-  }
-  while ( a2 ); /*0x40359e*/
-  return v4; /*0x4035a2*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x403530)
 }
 } // namespace gamemd
 

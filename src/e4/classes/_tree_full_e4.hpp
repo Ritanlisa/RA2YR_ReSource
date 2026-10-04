@@ -707,6 +707,8 @@ struct ObjectClass {
     int setTarget(int a2);
     unsigned int * clearTarget(char a2);
     unsigned int * loc_7A2E70(HWND hWnd, unsigned int a2, int a3, unsigned int a4);
+    char _do_always_noconv_codecvt_base_std__MBE_NXZ_5();
+    void sub_403810(int ()(void));
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

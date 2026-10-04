@@ -124,31 +124,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
 namespace gamemd {
 void * TaskForceClass::ExecuteAction(void ** Block, char a2)
 {
-
-  int v3; // eax
-  TaskForceClass *v5; // [esp+4h] [ebp-4h] BYREF
-
-  *(unsigned int *)Block->__pad_0 = &vt_TaskForceClass; /*0x6e87f6*/
-  Block->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e87fc*/
-  *(unsigned int *)Block->__pad_8 = &vt_TaskForceClass; /*0x6e8803*/
-  *(unsigned int *)&Block->__pad_8[4] = &vt_TaskForceClass; /*0x6e880a*/
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)Block),(int)((gamemd::AbstractClass *)(1))); /*0x6e8811*/
-  v5 = (gamemd::TaskForceClass *)(Block); /*0x6e8826*/
-  v3 = (*(int (**)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))(&dword_A8E8D0, &v5); /*0x6e882a*/
-  if ( v3 != -1 && v3 < dword_A8E8E0 && v3 < --dword_A8E8E0 ) /*0x6e8845*/
-  {
-    do /*0x6e885d*/
-    {
-      ++v3; /*0x6e884d*/
-      *((unsigned int *)dword_A8E8D4 + v3 - 1) = *((unsigned int *)dword_A8E8D4 + v3); /*0x6e8851*/
-    }
-    while ( v3 < dword_A8E8E0 ); /*0x6e885d*/
-  }
-  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x6e8861*/
-  if ( (a2 & 1) != 0 ) /*0x6e886b*/
-    __3_YAXPAX_Z(Block); /*0x6e886e*/
-  return (void **)Block; /*0x6e8878*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E87F0)
 }
 }
 // 0x4C4F90

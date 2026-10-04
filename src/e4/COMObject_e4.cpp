@@ -70,9 +70,7 @@ unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 namespace gamemd {
 int COMObject::GetSpecialValue(int a1)
 {
-
-  return (*(int (**)(int))(*(unsigned int *)a1->field_8 + 1336))(a1->field_8); /*0x55ad1f*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x55AD10)
 }
 } // namespace gamemd
 // 0x5F9970

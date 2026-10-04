@@ -25,11 +25,7 @@ AbstractClass * * sub_777420()
 namespace gamemd {
 int sub_5C09A0()
 {
-  int result; // eax
-
-  if ( g_MissionQueueFrame.localVariables[605] ) /*0x5c09a8*/
-    return (*(int (**)(int))(*(unsigned int *)g_MissionQueueFrame.localVariables[605] + 40))(g_MissionQueueFrame.localVariables[605]); /*0x5c09ac*/
-  return result; /*0x5c09af*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C09A0)
 }
 }
 // 0x5C0980

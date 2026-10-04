@@ -63,25 +63,7 @@ int sub_452000(unsigned int * a1)
 namespace gamemd {
 int sub_452D40()
 {
-  int result; // eax
-  int i; // edi
-  BuildingClass *v3; // esi
-
-  result = stru_A8EB00.ObjectTypeClass[20]; /*0x452d40*/
-  for ( i = 0; i < stru_A8EB00.ObjectTypeClass[20]; ++i ) /*0x452d4a*/
-  {
-    v3 = *(BuildingClass **)(stru_A8EB00.ObjectTypeClass[17] + 4 * i); /*0x452d52*/
-    if ( v3 && v3->Type->LaserFencePost && !dword_A8E7AC && v3->inLimbo && !v3->inLimbo ) /*0x452d7c*/
-    {
-      BuildingClass::DemolishBridge(v3); /*0x452d8a*/
-      BuildingClass::DemolishBridge(v3); /*0x452d93*/
-      BuildingClass::DemolishBridge(v3); /*0x452d9c*/
-      BuildingClass::DemolishBridge(v3); /*0x452da5*/
-      BuildingClass::RepairPlacement(v3, 1); /*0x452dae*/
-    }
-    result = stru_A8EB00.ObjectTypeClass[20]; /*0x452db3*/
-  }
-  return result; /*0x452dbe*/
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x452D40)
 }
 }
 // 0x456980

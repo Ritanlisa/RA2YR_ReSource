@@ -4,6 +4,8 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Constructor_VectorClass_LightSourceClass___;  // G42.36 fwd supply
+class Constructor_VectorClass_LaserDrawClass___;  // G42.36 fwd supply
 class Constructor_VectorClass_IonBlastClass___;  // G42.36 fwd supply
 class InfantryTypeClass;  // G42.36 fwd supply
 class CopyConstructor;  // G42.36 fwd supply
@@ -304,5 +306,8 @@ int Destroy(void *a1);
     VectorClass_flat * Constructor_0(unsigned int * Block, char a2, void *a3_1);
     unsigned int * CopyConstructor(InfantryTypeClass * aP1);
     DynamicVector * Constructor_VectorClass_IonBlastClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_LaserDrawClass___(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_LightSourceClass___(unsigned int * Block, char a2);
+    unsigned int * loc_5AD3E0(unsigned int * Block, char a2);
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

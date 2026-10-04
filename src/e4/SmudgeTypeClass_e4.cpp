@@ -66,41 +66,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
 namespace gamemd {  // G42.18c ns repair
 SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
 {
-
-  SHPStruct *Image; // eax
-  int v4; // eax
-  SmudgeTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
-
-  Image = (gamemd::SHPStruct *)(((unsigned int *)a3)[0]); /*0x6b6164*/
-  a3->vtable1 = &vt_SmudgeTypeClass; /*0x6b616a*/
-  ((unsigned int *)a3)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b6172*/
-  ((unsigned int *)a3)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b6179*/
-  ((unsigned int *)a3)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b6180*/
-  if ( Image ) /*0x6b6187*/
-  {
-    __3_YAXPAX_Z(Image); /*0x6b618a*/
-    ((unsigned int *)a3)[0] = 0; /*0x6b6192*/
-  }
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(a3), 1); /*0x6b61a0*/
-  v6 = (gamemd::SmudgeTypeClass *)(a3); /*0x6b61b5*/
-  v4 = (*(int (**)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 52) + 16))( /*0x6b61b9*/
-         (unsigned char *)(unsigned int *)((char *)&stru_A8EB00 + 52),
-         &v6);
-  if ( v4 != -1 && v4 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68) ) /*0x6b61c9*/
-  {
-    --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 68); /*0x6b61ce*/
-    for ( ; /*0x6b61d4*/
-          v4 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68);
-          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4) )
-    {
-      ++v4; /*0x6b61dc*/
-    }
-  }
-  ((ObjectTypeClass *)((int)a3))->Destruct(); /*0x6b61f0*/
-  if ( (a3 & 1) != 0 ) /*0x6b61fa*/
-    __3_YAXPAX_Z((void *)(a3)); /*0x6b61fd*/
-  return (gamemd::SmudgeTypeClass *)(a3); /*0x6b6207*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6B6160)
 }
 }  // G42.18c ns repair
 // 0x6B5550

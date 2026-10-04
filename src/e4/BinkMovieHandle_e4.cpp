@@ -121,14 +121,7 @@ int BinkMovieHandle::Check(int a2)
 namespace gamemd {
 int BinkMovieHandle::InitFromFile(void *a1, void *a2)
 {
-
-  int result; // eax
-
-  g_MissionQueueFrame.localVariables[605] = (int)this; /*0x5c0550*/
-  result = ((BinkMovie*)(BinkMovie *)this->height)->Play(); /*0x5c0559*/
-  g_MissionQueueFrame.localVariables[605] = 0; /*0x5c055e*/
-  return result; /*0x5c0568*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C0550)
 }
 } // namespace gamemd
 // 0x5C0570

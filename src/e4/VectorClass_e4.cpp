@@ -5588,18 +5588,10 @@ int VectorClass_ptr_MapRegionClass::Get(int a2, void *a2_2)
 
 // 0x5AC5F0
 namespace gamemd {
-int DynamicVector::Destroy(void *a1_1)
-{
-    (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AC5F0.json)
-}
 } // namespace gamemd
 
 // 0x5AC620
 namespace gamemd {
-unsigned int DynamicVector::GetItemIndex(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AC620.json)
-}
 } // namespace gamemd
 
 // 0x5AC640
@@ -5612,18 +5604,10 @@ double VectorClass_N::Clear(int a2)
 
 // 0x5AC6A0
 namespace gamemd {
-char VectorClass_flat::Add(int a2, void *a2_2, void *a3_1)
-{
-    (void)a2; (void)a2_2; (void)a3_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AC6A0.json)
-}
 } // namespace gamemd
 
 // 0x5AC6E0
 namespace gamemd {
-char VectorClass_flat::Release(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AC6E0.json)
-}
 } // namespace gamemd
 
 // 0x5AC790
@@ -5636,50 +5620,26 @@ void VectorClass_flat::Remove()
 
 // 0x5AC7C0
 namespace gamemd {
-int VectorClass_flat::GetSize(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AC7C0.json)
-}
 } // namespace gamemd
 
 // 0x5AC800
 namespace gamemd {
-unsigned int VectorClass_flat::GetCapacity(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AC800.json)
-}
 } // namespace gamemd
 
 // 0x5AC820
 namespace gamemd {
-char VectorClass_flat::SetCapacity(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AC820.json)
-}
 } // namespace gamemd
 
 // 0x5AC8D0
 namespace gamemd {
-int VectorClass_flat::FindItemIndex(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AC8D0.json)
-}
 } // namespace gamemd
 
 // 0x5AD0F0
 namespace gamemd {
-char DynamicVector::AddRef(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AD0F0.json)
-}
 } // namespace gamemd
 
 // 0x5AD130
 namespace gamemd {
-char DynamicVector::Release(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AD130.json)
-}
 } // namespace gamemd
 
 // 0x5AD1F0
@@ -5700,18 +5660,10 @@ int DynamicVector::GetSize(double * a2)
 
 // 0x5AD270
 namespace gamemd {
-unsigned int DynamicVector::GetCapacity(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AD270.json)
-}
 } // namespace gamemd
 
 // 0x5AD290
 namespace gamemd {
-char DynamicVector::SetCapacity(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AD290.json)
-}
 } // namespace gamemd
 
 // 0x5AD350
@@ -5724,10 +5676,6 @@ int DynamicVector::FindItemIndex(double * a2)
 
 // 0x5AD390
 namespace gamemd {
-VectorClass_flat * VectorClass_flat::QueryInterface(unsigned int * Block, char a2)
-{
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AD390.json)
-}
 } // namespace gamemd
 
 // 0x5AD3E0
@@ -5740,10 +5688,6 @@ unsigned int * VectorClass_flat::loc_5AD3E0(unsigned int * Block, char a2)
 
 // 0x5AD5C0
 namespace gamemd {
-VectorClass_flat * DynamicVector::QueryInterface(unsigned int * Block, char a2)
-{
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005AD5C0.json)
-}
 } // namespace gamemd
 
 // 0x5AD610
@@ -5766,9 +5710,7 @@ unsigned int * DynamicVector::Count(unsigned int * a2, int a3)
 namespace gamemd {
 int VectorClass_ptr_MSTextEntry::Get(int a2, void *a2_2)
 {
-
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d066a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D0660)
 }
 } // namespace gamemd
 
@@ -5776,9 +5718,7 @@ int VectorClass_ptr_MSTextEntry::Get(int a2, void *a2_2)
 namespace gamemd {
 int VectorClass_ptr_MapSelection::Get(int a2, void *a2_2)
 {
-
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d06ca*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D06C0)
 }
 } // namespace gamemd
 
@@ -5786,26 +5726,16 @@ int VectorClass_ptr_MapSelection::Get(int a2, void *a2_2)
 namespace gamemd {
 int VectorClass_ptr_MSSfxEntry::Get(int a2, void *a2_2)
 {
-
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d07ea*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D07E0)
 }
 } // namespace gamemd
 
 // 0x5D07F0
 namespace gamemd {
-char DynamicVector::Get(int a2, void *a2_2)
-{
-    (void)a2; (void)a2_2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D07F0.json)
-}
 } // namespace gamemd
 
 // 0x5D0850
 namespace gamemd {
-char DynamicVector::Release(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0850.json)
-}
 } // namespace gamemd
 
 // 0x5D0920
@@ -5818,211 +5748,109 @@ void DynamicVector::Set(void *a1_1, void *a2_1, void *a3_1)
 
 // 0x5D0950
 namespace gamemd {
-int DynamicVector::GetSize(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0950.json)
-}
 } // namespace gamemd
 
 // 0x5D09A0
 namespace gamemd {
-unsigned int DynamicVector::GetCapacity(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D09A0.json)
-}
 } // namespace gamemd
 
 // 0x5D0AE0
 namespace gamemd {
-char VectorClass_flat::Add(int a2, void *a2_2, void *a3_1)
-{
-    (void)a2; (void)a2_2; (void)a3_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0AE0.json)
-}
 } // namespace gamemd
 
 // 0x5D0B20
 namespace gamemd {
-char VectorClass_flat::Release(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0B20.json)
-}
 } // namespace gamemd
 
 // 0x5D0BD0
 namespace gamemd {
-void VectorClass_flat::Remove(void *a1_1)
-{
-    (void)a1_1;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0BD0.json)
-}
 } // namespace gamemd
 
 // 0x5D0C00
 namespace gamemd {
-int VectorClass_flat::GetSize(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0C00.json)
-}
 } // namespace gamemd
 
 // 0x5D0C40
 namespace gamemd {
-unsigned int VectorClass_flat::GetCapacity(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0C40.json)
-}
 } // namespace gamemd
 
 // 0x5D0D40
 namespace gamemd {
-char VectorClass_flat::Add(int a2, void *a2_2, void *a3_1)
-{
-    (void)a2; (void)a2_2; (void)a3_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0D40.json)
-}
 } // namespace gamemd
 
 // 0x5D0D80
 namespace gamemd {
-char VectorClass_flat::Release(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0D80.json)
-}
 } // namespace gamemd
 
 // 0x5D0E30
 namespace gamemd {
-void VectorClass_flat::Remove(void *a1_1)
-{
-    (void)a1_1;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0E30.json)
-}
 } // namespace gamemd
 
 // 0x5D0E60
 namespace gamemd {
-int VectorClass_flat::GetSize(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0E60.json)
-}
 } // namespace gamemd
 
 // 0x5D0EA0
 namespace gamemd {
-unsigned int VectorClass_flat::GetCapacity(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D0EA0.json)
-}
 } // namespace gamemd
 
 // 0x5D1460
 namespace gamemd {
-char VectorClass_flat::Add(int a2, void *a2_2, void *a3_1)
-{
-    (void)a2; (void)a2_2; (void)a3_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D1460.json)
-}
 } // namespace gamemd
 
 // 0x5D14A0
 namespace gamemd {
-char VectorClass_flat::Release(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D14A0.json)
-}
 } // namespace gamemd
 
 // 0x5D1550
 namespace gamemd {
-void VectorClass_flat::Remove(void *a1_1)
-{
-    (void)a1_1;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D1550.json)
-}
 } // namespace gamemd
 
 // 0x5D1580
 namespace gamemd {
-int VectorClass_flat::GetSize(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D1580.json)
-}
 } // namespace gamemd
 
 // 0x5D15C0
 namespace gamemd {
-unsigned int VectorClass_flat::GetCapacity(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D15C0.json)
-}
 } // namespace gamemd
 
 // 0x5D16C0
 namespace gamemd {
-VectorClass_flat * DynamicVector::QueryInterface(unsigned int * Block, char a2)
-{
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D16C0.json)
-}
 } // namespace gamemd
 
 // 0x5D1760
 namespace gamemd {
-VectorClass_flat * VectorClass_flat::QueryInterface(unsigned int * Block, char a2)
-{
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D1760.json)
-}
 } // namespace gamemd
 
 // 0x5D1800
 namespace gamemd {
-VectorClass_flat * VectorClass_flat::QueryInterface(unsigned int * Block, char a2)
-{
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D1800.json)
-}
 } // namespace gamemd
 
 // 0x5D19E0
 namespace gamemd {
-VectorClass_flat * VectorClass_flat::QueryInterface(unsigned int * Block, char a2)
-{
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D19E0.json)
-}
 } // namespace gamemd
 
 // 0x5D2720
 namespace gamemd {
-int VectorClass_flat::Destroy(void *a1_1)
-{
-    (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2720.json)
-}
 } // namespace gamemd
 
 // 0x5D2750
 namespace gamemd {
-unsigned int VectorClass_flat::GetItemIndex(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2750.json)
-}
 } // namespace gamemd
 
 // 0x5D2780
 namespace gamemd {
-int DynamicVector::Destroy(void *a1_1)
-{
-    (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2780.json)
-}
 } // namespace gamemd
 
 // 0x5D27B0
 namespace gamemd {
-unsigned int DynamicVector::GetItemIndex(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D27B0.json)
-}
 } // namespace gamemd
 
 // 0x5D27D0
 namespace gamemd {
 int VectorClass_ptr_MSSfx::Get(int a2, void *a2_2)
 {
-
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d27da*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D27D0)
 }
 } // namespace gamemd
 
@@ -6036,18 +5864,10 @@ char VectorClass_flat::FindItemIndex(int a2)
 
 // 0x5D2820
 namespace gamemd {
-char VectorClass_flat::SetCapacity(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2820.json)
-}
 } // namespace gamemd
 
 // 0x5D28D0
 namespace gamemd {
-void VectorClass_flat::Destroy_0()
-{
-      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D28D0.json)
-}
 } // namespace gamemd
 
 // 0x5D2960
@@ -6060,66 +5880,34 @@ char VectorClass_flat::SetCapacity_0(int a2, unsigned int * a3)
 
 // 0x5D2A10
 namespace gamemd {
-int VectorClass_flat::FindItemIndex_0(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2A10.json)
-}
 } // namespace gamemd
 
 // 0x5D2A40
 namespace gamemd {
-char VectorClass_flat::Add(int a2, void *a2_2, void *a3_1)
-{
-    (void)a2; (void)a2_2; (void)a3_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2A40.json)
-}
 } // namespace gamemd
 
 // 0x5D2A80
 namespace gamemd {
-char VectorClass_flat::Release(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2A80.json)
-}
 } // namespace gamemd
 
 // 0x5D2B30
 namespace gamemd {
-void VectorClass_flat::Remove(void *a1_1)
-{
-    (void)a1_1;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2B30.json)
-}
 } // namespace gamemd
 
 // 0x5D2B60
 namespace gamemd {
-int VectorClass_flat::GetSize(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2B60.json)
-}
 } // namespace gamemd
 
 // 0x5D2BA0
 namespace gamemd {
-unsigned int VectorClass_flat::GetCapacity(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2BA0.json)
-}
 } // namespace gamemd
 
 // 0x5D2BC0
 namespace gamemd {
-char DynamicVector::SetCapacity(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2BC0.json)
-}
 } // namespace gamemd
 
 // 0x5D2C70
 namespace gamemd {
-int DynamicVector::FindItemIndex(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2C70.json)
-}
 } // namespace gamemd
 
 // 0x5D2CF0
@@ -6132,10 +5920,6 @@ DynamicVector * VectorClass_flat::Constructor_VectorClass_MSAnim___(unsigned int
 
 // 0x5D2D40
 namespace gamemd {
-VectorClass_flat * VectorClass_flat::QueryInterface(unsigned int * Block, char a2)
-{
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D2D40.json)
-}
 } // namespace gamemd
 
 // 0x5D2D90
@@ -6156,100 +5940,54 @@ unsigned int * VectorClass_flat::Clear(unsigned int * a2, int a3)
 
 // 0x5D53B0
 namespace gamemd {
-char VectorClass_flat::AddRef(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D53B0.json)
-}
 } // namespace gamemd
 
 // 0x5D5410
 namespace gamemd {
-char VectorClass_flat::Release(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D5410.json)
-}
 } // namespace gamemd
 
 // 0x5D5500
 namespace gamemd {
-wchar_t * VectorClass_flat::ddtor(void *a1_1)
-{
-    (void)a1_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D5500.json)
-}
 } // namespace gamemd
 
 // 0x5D5530
 namespace gamemd {
-int VectorClass_flat::GetSize(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D5530.json)
-}
 } // namespace gamemd
 
 // 0x5D5580
 namespace gamemd {
-unsigned int VectorClass_flat::GetCapacity(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D5580.json)
-}
 } // namespace gamemd
 
 // 0x5D5780
 namespace gamemd {
-VectorClass_flat * VectorClass_flat::QueryInterface(unsigned int * Block, char a2)
-{
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D5780.json)
-}
 } // namespace gamemd
 
 // 0x5D8100
 namespace gamemd {
 int VectorClass_ptr_MultiplayerTeam::Get(int a2, void *a2_2)
 {
-
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d810a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D8100)
 }
 } // namespace gamemd
 
 // 0x5D82F0
 namespace gamemd {
-char VectorClass_flat::Add(int a2, void *a2_2, void *a3_1)
-{
-    (void)a2; (void)a2_2; (void)a3_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D82F0.json)
-}
 } // namespace gamemd
 
 // 0x5D8330
 namespace gamemd {
-char VectorClass_flat::Release(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D8330.json)
-}
 } // namespace gamemd
 
 // 0x5D83E0
 namespace gamemd {
-void VectorClass_flat::Remove(void *a1_1)
-{
-    (void)a1_1;  // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D83E0.json)
-}
 } // namespace gamemd
 
 // 0x5D8410
 namespace gamemd {
-int VectorClass_flat::GetSize(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D8410.json)
-}
 } // namespace gamemd
 
 // 0x5D8450
 namespace gamemd {
-unsigned int VectorClass_flat::GetCapacity(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D8450.json)
-}
 } // namespace gamemd
 
 // 0x5D8640
@@ -6261,44 +5999,26 @@ void VectorClass_flat::ddtor()
 }  // G42.18c ns repair
 // 0x5D8810
 namespace gamemd {
-VectorClass_flat * VectorClass_flat::QueryInterface(unsigned int * Block, char a2)
-{
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D8810.json)
-}
 } // namespace gamemd
 
 // 0x5EEBB0
 namespace gamemd {
-int DynamicVector::Destroy(void *a1_1)
-{
-    (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EEBB0.json)
-}
 } // namespace gamemd
 
 // 0x5EEBE0
 namespace gamemd {
-unsigned int DynamicVector::GetItemIndex(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EEBE0.json)
-}
 } // namespace gamemd
 
 // 0x5EEC00
 namespace gamemd {
 int VectorClass_cptr_MultiMission::Capacity(int a2)
 {
-
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5eec0a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5EEC00)
 }
 } // namespace gamemd
 
 // 0x5EEC10
 namespace gamemd {
-char DynamicVector::AddRef(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EEC10.json)
-}
 } // namespace gamemd
 
 // 0x5EEC50
@@ -6318,34 +6038,18 @@ void VectorClass_flat::Cleanup3()
 }  // G42.18c ns repair
 // 0x5EED30
 namespace gamemd {
-int DynamicVector::GetSize(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EED30.json)
-}
 } // namespace gamemd
 
 // 0x5EED70
 namespace gamemd {
-unsigned int DynamicVector::GetCapacity(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EED70.json)
-}
 } // namespace gamemd
 
 // 0x5EED90
 namespace gamemd {
-char DynamicVector::SetCapacity(int a2, unsigned int * a3)
-{
-    (void)a2; (void)a3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EED90.json)
-}
 } // namespace gamemd
 
 // 0x5EEE90
 namespace gamemd {
-int DynamicVector::FindItemIndex(unsigned int * a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EEE90.json)
-}
 } // namespace gamemd
 
 // 0x5EEEC0
@@ -6358,10 +6062,6 @@ VectorClass_flat * DynamicVector::GetAt(unsigned int * Block, char a2)
 
 // 0x5EEF10
 namespace gamemd {
-DynamicVector * DynamicVector::Constructor(unsigned int * Block, char a2, void *a3_1)
-{
-    (void)Block; (void)a2; (void)a3_1; return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005EEF10.json)
-}
 } // namespace gamemd
 
 // 0x5EF190
@@ -6382,36 +6082,22 @@ unsigned int * DynamicVector::j_vt00(char a2)
 
 // 0x5F9B00
 namespace gamemd {
-int VectorClass_flat::Destroy(void *a1_1)
-{
-    (void)a1_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005F9B00.json)
-}
 } // namespace gamemd
 
 // 0x5F9B30
 namespace gamemd {
-unsigned int VectorClass_flat::GetItemIndex(int a2)
-{
-    (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005F9B30.json)
-}
 } // namespace gamemd
 
 // 0x5F9B50
 namespace gamemd {
 int VectorClass_ptr_ObjectTypeClass::Get(int a2, void *a2_2)
 {
-
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5f9b5a*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5F9B50)
 }
 } // namespace gamemd
 
 // 0x5F9B80
 namespace gamemd {
-char VectorClass_flat::Add(int a2, void *a2_2, void *a3_1)
-{
-    (void)a2; (void)a2_2; (void)a3_1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005F9B80.json)
-}
 } // namespace gamemd
 
 // 0x5F9BC0

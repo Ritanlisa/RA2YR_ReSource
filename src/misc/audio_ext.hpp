@@ -271,6 +271,7 @@ public:
 
     virtual void LoadFromINI(); // 0x752DB0
 
+    char LoadFromINI(uint8_t ***a2);
 };
 // 2 methods in IDA
 // CSP: AudioFile matched via T1

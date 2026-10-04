@@ -288,17 +288,6 @@ std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char 
 namespace gamemd {
 BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned int * Block, char a2)
 {
-
-  void *m_8; // eax
-
-  m_8 = (void *)Block->m_8; /*0x49a428*/
-  *(unsigned int *)Block->__pad_0 = &vt_BlitTransXlatAlphaZRead; /*0x49a42b*/
-  FractalNoise::Dtor(m_8); /*0x49a432*/
-  Block->m_8 = 0; /*0x49a43b*/
-  *(unsigned int *)Block->__pad_0 = &vt_Blitter; /*0x49a444*/
-  if ( (a2 & 1) != 0 ) /*0x49a44a*/
-    __3_YAXPAX_Z(Block); /*0x49a44d*/
-  return Block->__pad_0; /*0x49a457*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x49A420)
 }
 } // namespace gamemd

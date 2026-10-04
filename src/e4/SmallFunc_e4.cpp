@@ -47,45 +47,7 @@
 namespace gamemd {
 TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
 {
-  int result; // eax
-  int v4; // ebp
-  int i; // ebx
-  uint8_t *StringByIndex; // eax
-  int v7; // esi
-  TeamTypeClass *v8; // eax
-  unsigned int *Base; // esi
-  char Source[32]; // [esp+10h] [ebp-20h] BYREF
-
-  result = (int)(INIClass::GetKeyCount(a1->__pad_0, (uint8_t *)((char *)&g_INI_Key_TRUCKA))); /*0x6f19c1*/
-  v4 = result; /*0x6f19c6*/
-  for ( i = 0; i < v4; Base[58] = a2 ) /*0x6f19cc*/
-  {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, (uint8_t *)((char *)&g_INI_Key_TRUCKA), i); /*0x6f19db*/
-    ((INIClass*)(gamemd::INIClass *)(a1))->GetString((uint8_t *)((char *)&g_INI_Key_TRUCKA), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), (char *)(int)(Source), 32); /*0x6f19f4*/
-    if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
-      goto LABEL_10; /*0x6f1a19*/
-    v7 = 0; /*0x6f1a2a*/
-    if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 204) > 0 ) /*0x6f1a2e*/
-    {
-      while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7) + 36), Source) ) /*0x6f1a4c*/
-      {
-        if ( ++v7 >= *(int *)(unsigned int *)((char *)&stru_A8EB00 + 204) ) /*0x6f1a56*/
-          goto LABEL_7; /*0x6f1a56*/
-      }
-      Base = (unsigned int *)((gamemd::TeamTypeClass *)(*(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7)));
-      goto LABEL_11; /*0x6f1a82*/
-    }
-  LABEL_7: v8 = (gamemd::TeamTypeClass *)((gamemd::TeamTypeClass **)((TeamTypeClass *)RA2_OPNEW(0xF8u)));
-    if ( v8 ) /*0x6f1a67*/
-      Base = ((TechnoTypeClass *)(v8))->LoadBase(Source); /*0x6f1a75*/
-    else
-  LABEL_10:
-      Base = 0; /*0x6f1a84*/
-  LABEL_11:
-    result = (*(int (**)(unsigned int *, INIClass *))(*Base + 100))(Base, (INIClass *)a1); /*0x6f1a86*/
-    ++i; /*0x6f1a8e*/
-  }
-  return (gamemd::TeamTypeClass **)(result);
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6F19B0)
 }
 }
 // 0x40D1B0

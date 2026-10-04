@@ -208,22 +208,7 @@ int IsometricTileTypeClass::FindItem(unsigned int * a2)
 namespace gamemd {
 DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x54a763*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x54a766*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x54a770*/
-  {
-    __3_YAXPAX_Z(v3); /*0x54a778*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x54a780*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x54a78b*/
-  Block->m_8 = 0; /*0x54a791*/
-  if ( (a2 & 1) != 0 ) /*0x54a798*/
-    __3_YAXPAX_Z(Block); /*0x54a79b*/
-  return Block->__pad_0; /*0x54a7a5*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x54A760)
 }
 } // namespace gamemd
 // 0x54A850

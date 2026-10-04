@@ -1478,21 +1478,7 @@ int sub_6CE550()
 namespace gamemd {
 int E4Recv_6CE570::sub_6CE570()  // G42.33 b12: truth int index
 {
-
-  int v2; // edi
-  char **v3; // esi
-
-  v2 = 0; /*0x6ce575*/
-  v3 = (char **)&stru_8425A4.Name[7]; /*0x6ce577*/
-  while ( _strcmpi(*v3, (char *)this) ) /*0x6ce58a*/
-  {
-    ++v3; /*0x6ce58c*/
-    ++v2; /*0x6ce58f*/
-    if ( (int)v3 >= (int)stru_8425A4.Type ) /*0x6ce596*/
-      return -1; /*0x6ce59e*/
-  }
-  return v2; /*0x6ce598*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6CE570)
 }
 } // namespace gamemd
 

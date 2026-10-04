@@ -915,22 +915,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(unsigned int * Bl
 namespace gamemd {
 DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = *(void **)&Block->m_1[3]; /*0x5d17b3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d17b6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d17c0*/
-  {
-    __3_YAXPAX_Z(v3); /*0x5d17c8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d17d0*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x5d17db*/
-  Block->m_8 = 0; /*0x5d17e1*/
-  if ( (a2 & 1) != 0 ) /*0x5d17e8*/
-    __3_YAXPAX_Z(Block); /*0x5d17eb*/
-  return Block->__pad_0; /*0x5d17f5*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D17B0)
 }
 } // namespace gamemd
 

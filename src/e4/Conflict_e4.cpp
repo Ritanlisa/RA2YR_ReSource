@@ -241,22 +241,7 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int 
 namespace gamemd {
 DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Block, char a2)
 {
-
-  void (***v3)(unsigned int, int); // ecx
-
-  v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x767083*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x767086*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x767090*/
-  {
-    (**v3)((unsigned int)v3, 3); /*0x76709f*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x7670a1*/
-  }
-  BYTE1(Block->m_C) = 0; /*0x7670ac*/
-  Block->m_8 = 0; /*0x7670b2*/
-  if ( (a2 & 1) != 0 ) /*0x7670b9*/
-    __3_YAXPAX_Z(Block); /*0x7670bc*/
-  return Block->__pad_0; /*0x7670c6*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x767080)
 }
 } // namespace gamemd
 

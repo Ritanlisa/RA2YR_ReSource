@@ -5,6 +5,10 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Count;  // G42.36 fwd supply
+class Constructor_VectorClass_double_;  // G42.36 fwd supply
+class Constructor_1;  // G42.36 fwd supply
+class Constructor_0;  // G42.36 fwd supply
 class LoadTypeData;  // G42.36 fwd supply
 class Constructor_VectorClass_bool_;  // G42.36 fwd supply
 class Constructor_VectorClass_FactoryClass___;  // G42.36 fwd supply
@@ -193,5 +197,9 @@ struct DynamicVector {
     DynamicVector * Constructor_VectorClass_FactoryClass___(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_bool_(unsigned int * Block, char a2);
     unsigned int LoadTypeData(int a2);
+    char * Constructor_0(unsigned int * Block, char a2, void *a3_1);
+    DynamicVector * Constructor_1(unsigned int * Block, char a2);
+    DynamicVector * Constructor_VectorClass_double_(unsigned int * Block, char a2);
+    unsigned int * Count(unsigned int * a2, int a3);
 };
 } // namespace gamemd

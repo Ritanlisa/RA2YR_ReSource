@@ -95,35 +95,7 @@ int TagClass::Unlink()
 namespace gamemd {
 int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
 {
-
-  TriggerClass *firstTrigger; // eax
-  int result; // eax
-
-  if ( this->buildingType == (TagTypeClass *)a2 ) /*0x6e561a*/
-    this->buildingType = 0; /*0x6e561c*/
-  firstTrigger = this->firstTrigger; /*0x6e5623*/
-  if ( firstTrigger == (TriggerClass *)a2 ) /*0x6e5628*/
-    this->firstTrigger = firstTrigger->nextTrigger; /*0x6e562d*/
-  result = (int)this->buildingType; /*0x6e5630*/
-  if ( !result ) /*0x6e5635*/
-  {
-    this->destroyed = 1; /*0x6e5637*/
-    result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x6e563b*/
-    if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x6e5675*/
-      || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
-      && g_BuildingLoadQueue_Array.UnitExitSound > 0
-      && (result = (*(int (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
-                     &g_BuildingLoadQueue_Array.ToTile,
-                     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
-                     0),
-          (unsigned char)result) )
-    {
-      result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e567d*/
-      *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x6e568c*/
-    }
-  }
-  return result; /*0x6e568f*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E5610)
 }
 } // namespace gamemd
 

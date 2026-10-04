@@ -181,17 +181,7 @@ int SaveGame::SaveBlock68(int a2)
 namespace gamemd {
 int SaveGame::WriteObject(int a1, int a2)
 {
-
-  int v2; // ebx
-  int v3; // eax
-  FrameSnapshot v5[3]; // [esp+Ch] [ebp-18h] BYREF
-
-  v2 = StreamClass::ResetPosition((LocomotionClass *)a1, a2); /*0x513cc8*/
-  v3 = (*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 33))(((unsigned int *)a1)[0]); /*0x513ccc*/
-  ((FrameSnapshot *)(v5))->InitMax(2 * *(unsigned int *)(v3 + 1820)); /*0x513cdf*/
-  qmemcpy(&a1->HeadToCoord[2], v5, 0x18u); /*0x513cf2*/
-  return v2; /*0x513cf4*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x513CB0)
 }
 } // namespace gamemd
 

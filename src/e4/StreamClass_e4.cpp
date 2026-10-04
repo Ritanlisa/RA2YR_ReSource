@@ -95,9 +95,7 @@ BOOL StreamClass::IsInactive(IUnknown * aP0)
 namespace gamemd {
 int StreamClass::Vt32Thunk(int a1)
 {
-
-  return (*(int (**)(IUnknown *))(a1->field_0 + 128))(a1); /*0x4b4c5d*/
-
+    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4B4C50)
 }
 } // namespace gamemd
 // 0x55A710

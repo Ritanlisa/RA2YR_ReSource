@@ -307,17 +307,6 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
 namespace gamemd {
 BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block, char a2)
 {
-
-  void *v3; // eax
-
-  v3 = (void *)*((unsigned int *)Block + 2); /*0x49a248*/
-  *(unsigned int *)Block->__pad_0 = &vt_BlitTransXlatAlpha; /*0x49a24b*/
-  FractalNoise::Dtor(v3); /*0x49a252*/
-  *((unsigned int *)Block + 2) = 0; /*0x49a25b*/
-  *(unsigned int *)Block->__pad_0 = &vt_Blitter; /*0x49a264*/
-  if ( (a2 & 1) != 0 ) /*0x49a26a*/
-    __3_YAXPAX_Z(Block); /*0x49a26d*/
-  return Block->__pad_0; /*0x49a277*/
-
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x49A240)
 }
 } // namespace gamemd
