@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <cstring>
+#include "core/guid.hpp"  // G42.55 closure (GUID)
 
 namespace gamemd
 {

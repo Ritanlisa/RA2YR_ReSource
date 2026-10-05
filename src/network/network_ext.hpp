@@ -4,6 +4,8 @@
 #include <windows.h>
 #include "core/enums.hpp"
 #include "network/multiplayer.hpp"
+#include "core/guid.hpp"  // G42.55 closure (GUID)
+#include "network/network_ext.hpp"  // G42.55 closure (Socket)
 
 namespace gamemd
 {

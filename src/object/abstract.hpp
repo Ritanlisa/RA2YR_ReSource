@@ -5,6 +5,7 @@
 
 #include "core/enums.hpp"
 #include "core/math.hpp"
+#include "core/guid.hpp"  // G42.55 closure (GUID)
 
 // IDA: IID_IRTTITypeInfo @ 0x7E9AE0 = {170DAC82-12E4-11D2-8175-006008055BB5}
 // {170DAC82-12E4-11D2-8175-006008055BB5}

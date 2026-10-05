@@ -2,18 +2,11 @@
 #pragma once
 
 #include "e4/classes/_fwd_e4.hpp"
+#include "house/house.hpp"  // G42.55 tree truth
 
 namespace gamemd {
 
-struct CounterClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    unsigned int count;  // 0x4
-    unsigned int items;
-    unsigned int u32_8;
-    unsigned int u32_D;
-// --- flat members (END) ---
-    CounterClass * QueryInterface(unsigned int * Block, char a2);
-};
+// G42.55 absorbed: single truth is CounterClass
+
 
 } // namespace gamemd

@@ -7,6 +7,7 @@
 #include "core/enums.hpp"
 #include "core/interfaces.hpp"
 #include "fundamentals.hpp"
+#include "core/guid.hpp"  // G42.55 closure (GUID)
 
 namespace ra2 { namespace game { class FootClass; } }
 

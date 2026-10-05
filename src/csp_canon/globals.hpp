@@ -1,3 +1,5 @@
+#include "core/utility_ext.hpp"  // G42.55 closure (Count)
+#include "core/guid.hpp"  // G42.55 closure (GUID)
 // GENERATED canonical global declarations (mechanical, from global_types.json).
 #pragma once
 

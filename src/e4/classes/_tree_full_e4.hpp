@@ -4,6 +4,7 @@
 #pragma once
 
 #include "e4/classes/_fwd_e4.hpp"
+#include "core/utility_ext.hpp"  // G42.55 tree truth
 
 namespace gamemd {
 
@@ -699,11 +700,8 @@ struct ObjectClass {
 #endif // GAMEMD_TREE_UNIVERSE
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
-struct ReferenceCounted {
-    void* vfptr;
-    unsigned char __pad_0;  // 0x0
-    int RenderPreview(void *aP0, HWND aP1);
-};
+// G42.55 absorbed: single truth is ReferenceCounted
+
 #endif  // GAMEMD_TREE_UNIVERSE (ReferenceCounted)
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere

@@ -3,19 +3,11 @@
 #include <windows.h>  // G42.36 Win32-type supply (SOCKET)
 
 #include "e4/classes/_fwd_e4.hpp"
+#include "network/network_ext.hpp"  // G42.55 tree truth
 
 namespace gamemd {
 
-struct Socket {
-// --- flat members (BEGIN) ---
-    char m_Socket[4];  // 0x0
-    char m_SendBufSize[4];  // 0x4
-    char m_RecvBufSize[4];  // 0x8
-    unsigned int u32_3F06C;
-    unsigned int Debug;
-// --- flat members (END) ---
-    // G42.40: dup void*/gamemd::SOCKET overloads removed; Socket_e4.cpp def uses winsock SOCKET
-    int ConfigureBuffers(unsigned int aP1);  // G42.40b: bare SOCKET invisible when windows.h lean-guarded; canonical = e4_protos.h typedef unsigned int SOCKET
-};
+// G42.55 absorbed: single truth is Socket
+
 
 } // namespace gamemd

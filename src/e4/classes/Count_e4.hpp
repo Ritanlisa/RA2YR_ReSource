@@ -3,24 +3,11 @@
 
 
 #include "e4/classes/_fwd_e4.hpp"
+#include "core/utility_ext.hpp"  // G42.55 tree truth
 
 namespace gamemd {
 
-struct Count {
-// --- flat members (BEGIN) ---
-    char m_RefCount[4];  // 0x0
-    unsigned int *__pad_0;
-    unsigned int u32_1C;
-    unsigned int u32_38;
-    unsigned int u32_4;
-    unsigned int u32_8;
-// --- flat members (END) ---
-    AbstractClass * * DecrementRefCountsAudio();
-    int32_t ddtor();
-    int32_t Get();
-    int32_t GetCountQueue();
-    int SetupAllCountriesLobby();
-    int32_t Release(void *a1);
-};
+// G42.55 absorbed: single truth is Count
+
 
 } // namespace gamemd

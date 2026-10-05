@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include "core/utility_ext.hpp"  // G42.55 closure (Count)
 
 namespace gamemd
 {

@@ -4,6 +4,7 @@
 #include <windows.h>
 
 #include "fundamentals.hpp"
+#include "network/network_ext.hpp"  // G42.55 closure (Socket)
 
 namespace gamemd
 {

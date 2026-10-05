@@ -1,3 +1,4 @@
+#include "core/guid.hpp"  // G42.55 closure (GUID)
 #pragma once
 
 namespace gamemd {

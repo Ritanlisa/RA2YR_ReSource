@@ -2,6 +2,7 @@
 
 #include "type/abstract_type.hpp"
 #include "core/enums.hpp"
+#include "render/render_ext.hpp"  // G42.55 closure (Camera)
 
 namespace gamemd
 {

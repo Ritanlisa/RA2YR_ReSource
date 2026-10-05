@@ -6,6 +6,7 @@
 #include "core/vector.hpp"
 
 #include <cstdint>
+#include "house/house.hpp"  // G42.55 closure (CounterClass)
 
 namespace gamemd {
 

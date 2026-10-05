@@ -4,6 +4,7 @@
 
 #include <utility>
 #include <algorithm>
+#include "core/utility_ext.hpp"  // G42.55 closure (Count)
 
 namespace gamemd
 {

@@ -2,18 +2,11 @@
 #pragma once
 
 #include "e4/classes/_fwd_e4.hpp"
+#include "ui/command_ext.hpp"  // G42.55 tree truth
 
 namespace gamemd {
 
-struct Commands {
-// --- flat members (BEGIN) ---
-    char m_RefCount[4];  // 0x0
-// --- flat members (END) ---
-    void ** StubReturn8550640();
-    int32_t AddRef(void *a1);
-    int32_t Release(void *a1);
-    int32_t Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7);
-    int32_t ddtor();
-};
+// G42.55 absorbed: single truth is Commands
+
 
 } // namespace gamemd

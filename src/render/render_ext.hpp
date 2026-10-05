@@ -7,6 +7,7 @@
 #include "render/surface.hpp"
 #include "render/display.hpp"
 #include "render/palette.hpp"
+#include "render/render_ext.hpp"  // G42.55 closure (Camera)
 
 namespace gamemd
 {

@@ -3,6 +3,7 @@
 // Each CLSID is a 128-bit GUID (16 bytes) used for COM interop
 #pragma once
 #include <windows.h>
+#include "core/guid.hpp"  // G42.55 closure (GUID)
 
 namespace gamemd {
 

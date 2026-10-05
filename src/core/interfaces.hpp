@@ -5,6 +5,7 @@
 
 #include "enums.hpp"
 #include "math.hpp"
+#include "core/guid.hpp"  // G42.55 closure (GUID)
 
 namespace gamemd
 {

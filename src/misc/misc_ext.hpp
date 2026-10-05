@@ -7,6 +7,7 @@
 #include <objidl.h>   // IClassFactory
 #include "core/enums.hpp"
 #include "core/math.hpp"
+#include "core/guid.hpp"  // G42.55 closure (GUID)
 
 namespace ra2 { namespace game { class AbstractClass; } }  // G42.35: sig-sync 参数前置 (e4 头同源别名)
 namespace gamemd

@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <cstring>
 #include "system/cc_file.hpp"
+#include "system/ini_class.hpp"  // G42.55 closure (INIEntry)
 
 namespace gamemd {
 

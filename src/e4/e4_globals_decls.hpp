@@ -3,6 +3,7 @@
 #pragma once
 #include <cstdint>
 #include "e4/classes/_fwd_tree_e4.hpp"
+#include "core/guid.hpp"  // G42.55 closure (GUID)
 
 extern char DataGlobal_815F54[172];  // data: 0x815F54  (DumpAudioDeviceDebug format blob: Chan TYPE/STATE)
 extern char DataGlobal_8331A8[79016];  // data: 0x8331A8  (GameSettings key blob head: ShowHidden)

@@ -2,20 +2,11 @@
 #pragma once
 
 #include "e4/classes/_fwd_e4.hpp"
+#include "render/render_ext.hpp"  // G42.55 tree truth
 
 namespace gamemd {
 
-struct Camera {
-// --- flat members (BEGIN) ---
-    char m_Position[12];  // 0x0
-    char m_Target[12];  // 0xC
-    char m_Zoom[4];  // 0x18
-    float m_Tilt;  // 0x1C
-// --- flat members (END) ---
-    long long UpdateTilt();
-    void StubReturn();
-    void StubReturnFalse();
-    void StubReturnVoid();
-};
+// G42.55 absorbed: single truth is Camera
+
 
 } // namespace gamemd

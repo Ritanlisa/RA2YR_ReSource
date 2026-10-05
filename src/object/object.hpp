@@ -1,6 +1,7 @@
 #pragma once
 
 #include "abstract.hpp"
+#include "system/ini_class.hpp"  // G42.55 closure (INIEntry)
 
 namespace gamemd { struct ILocomotion; struct RandomStruct; }
 namespace ra2 {

@@ -2,16 +2,11 @@
 #pragma once
 
 #include "e4/classes/_fwd_e4.hpp"
+#include "system/ini_class.hpp"  // G42.55 tree truth
 
 namespace gamemd {
 
-struct INIEntry {
-// --- flat members (BEGIN) ---
-    unsigned int Key;  // 0x0
-    unsigned int Value;  // 0x4
-    INIEntry* Next;  // 0x8
-// --- flat members (END) ---
-    int GetTechnoType(uint8_t *aP1, uint8_t *a2);
-};
+// G42.55 absorbed: single truth is INIEntry
+
 
 } // namespace gamemd

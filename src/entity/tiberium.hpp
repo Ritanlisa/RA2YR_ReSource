@@ -6,6 +6,7 @@
 #include "core/enums.hpp"
 #include "core/vector.hpp"
 #include "object/object.hpp"
+#include "core/utility_ext.hpp"  // G42.55 closure (Count)
 
 namespace gamemd {
 

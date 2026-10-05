@@ -5,6 +5,8 @@
 #pragma once
 #include <cstdint>
 #include <windows.h>
+#include "core/utility_ext.hpp"  // G42.55 closure (Count)
+#include "core/utility_ext.hpp"  // G42.55 closure (ReferenceCounted)
 
 // ---- IDA atom typedefs (this TU standalone) ----
 #ifndef G22_GAP2_IDA_ATOMS
