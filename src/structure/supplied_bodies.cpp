@@ -4872,7 +4872,25 @@ int BuildingClass::StartProduction(int type_index)
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
 CoordStruct *BuildingClass::GetExitCoords(CoordStruct *out, uint32_t unknown) const
 {
-    (void)unknown;
+    BuildingClass *v1; // edi
+    int v2; // esi
+    int FoundationWidth; // eax
+    int v4; // ecx
+    void *vtable1; // edx
+    void *vtable2; // edi
+    int *v8; // [esp+Ch] [ebp+4h]
+
+    v1 = this; /*0x447ac2*/
+    v2 = (BuildingTypeClass::GetFoundationHeight((int *)this->Type, 0) << 7) - 128; /*0x447adc*/
+    FoundationWidth = BuildingTypeClass::GetFoundationWidth(v1->Type); /*0x447ae2*/
+    v1 = (BuildingClass *)((char *)v1 + 156); /*0x447ae7*/
+    v4 = (int)v1->TechnoClass + 128 * FoundationWidth - 128; /*0x447af7*/
+    vtable1 = v1->?; /*0x447afd*/
+    vtable2 = v1->?; /*0x447b04*/
+    *v8 = v4; /*0x447b07*/
+    v8[1] = (int)vtable1 + v2; /*0x447b09*/
+    v8[2] = (int)vtable2; /*0x447b0c*/
+    return (int)v8; /*0x447b0f*/
 }
 } // namespace gamemd
 

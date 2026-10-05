@@ -234,7 +234,70 @@ ObjectClass::ObjectClass() noexcept
 
 // IDA: AudioController
 // 0x405d40
-void AudioController::Stop() { }
+void AudioController::Stop()
+{
+    unsigned int *result; // eax
+    int v2; // esi
+    int v3; // ecx
+    int v4; // ebx
+    RefCount **v5; // edi
+    Voice *v6; // [esp+0h] [ebp-Ch]
+
+    result = this->AudioController_field_00; /*0x405d41*/
+    if ( g_AudioConfigState ) /*0x405d53*/
+    {
+      if ( this->AudioController_field_0C == &dword_87E294 ) /*0x405d60*/
+      {
+        v2 = this->AudioController_field_00[0]; /*0x405d66*/
+        if ( this->AudioController_field_00[0] ) /*0x405d66*/
+        {
+          if ( this->AudioController_field_08 == *(void **)(v2 + 36) /*0x405d93*/
+            && this->AudioController_field_04 == *(void **)(v2 + 312)
+            && (*(unsigned char *)(v2 + 24) & 1) == 0 )
+          {
+            v3 = *(unsigned int *)(v2 + 176); /*0x405d99*/
+            if ( v3 && v2 == *(unsigned int *)(v3 + 192) ) /*0x405da9*/
+            {
+              if ( (*(unsigned char *)(v2 + 24) & 2) != 0 ) /*0x405daf*/
+                Voice::Stop(v6); /*0x405db1*/
+              AudioStream::ReleaseChannel(*(AudioStream **)(v2 + 176)); /*0x405dbc*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 192) = 0; /*0x405dc7*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 188) = 0; /*0x405dd3*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 180) = 0; /*0x405ddf*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 184) = 0; /*0x405deb*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 144) = 0; /*0x405df7*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 152) = 0; /*0x405e03*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 156) = 0; /*0x405e0f*/
+              result = this->AudioController_field_00; /*0x405e15*/
+              *(unsigned int *)(v2 + 176) = 0; /*0x405e19*/
+            }
+            v4 = 0; /*0x405e26*/
+            if ( *(int *)(v2 + 168) > 0 ) /*0x405e2a*/
+            {
+              v5 = (RefCount **)(v2 + 40); /*0x405e2d*/
+              do /*0x405e45*/
+              {
+                RefCount::Decrement(*v5); /*0x405e32*/
+                *v5 = 0; /*0x405e37*/
+                ++v4; /*0x405e3f*/
+                ++v5; /*0x405e40*/
+              }
+              while ( v4 < *(unsigned int *)(v2 + 168) ); /*0x405e45*/
+              result = this->AudioController_field_00; /*0x405e47*/
+            }
+            *(unsigned int *)(v2 + 168) = 0; /*0x405e4c*/
+            *(unsigned int *)(v2 + 28) = 4; /*0x405e52*/
+            *(unsigned int *)(v2 + 312) = 0; /*0x405e59*/
+            *(unsigned int *)(v2 + 632) = 0; /*0x405e5f*/
+            *(unsigned int *)(v2 + 24) |= 1u; /*0x405e6b*/
+          }
+          *result = 0; /*0x405e6f*/
+        }
+      }
+    }
+    result[2] = 0; /*0x405e71*/
+    return result; /*0x405e74*/
+}
 
 } // namespace game
 } // namespace ra2  // G42.35c: file-scope closes

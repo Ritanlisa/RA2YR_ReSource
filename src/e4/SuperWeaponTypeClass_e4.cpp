@@ -742,7 +742,54 @@ int SuperWeaponTypeClass::FindByName()
 namespace gamemd {
 SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
 {
-    (void)aP1;
+    int v3; // eax
+
+    AbstractTypeClass::Constructor(this, Source); /*0x6ce5bb*/
+    *(unsigned int *)(this + 156) = 0; /*0x6ce5cb*/
+    *(unsigned int *)(this + 160) = -1; /*0x6ce5d1*/
+    *(unsigned int *)(this + 164) = -1; /*0x6ce5d7*/
+    *(unsigned int *)(this + 168) = -1; /*0x6ce5dd*/
+    *(unsigned int *)(this + 172) = -1; /*0x6ce5e3*/
+    *(unsigned int *)(this + 176) = 4500; /*0x6ce5e9*/
+    *(unsigned int *)(this + 180) = -1; /*0x6ce5f3*/
+    *(unsigned int *)(this + 184) = 0; /*0x6ce5f9*/
+    *(unsigned int *)(this + 188) = 0; /*0x6ce5ff*/
+    *(unsigned int *)(this + 192) = -1; /*0x6ce605*/
+    *(unsigned int *)(this + 196) = -1; /*0x6ce60b*/
+    *(unsigned int *)(this + 200) = 0; /*0x6ce611*/
+    *(unsigned char *)(this + 204) = 0; /*0x6ce617*/
+    *(unsigned int *)(this + 232) = -1; /*0x6ce619*/
+    *(unsigned int *)(this + 240) = -1; /*0x6ce61f*/
+    *(unsigned char *)(this + 229) = 0; /*0x6ce628*/
+    *(unsigned char *)(this + 230) = 1; /*0x6ce62f*/
+    *(unsigned char *)(this + 231) = 0; /*0x6ce636*/
+    *(unsigned char *)(this + 236) = 0; /*0x6ce63c*/
+    *(unsigned char *)(this + 237) = 0; /*0x6ce642*/
+    *(unsigned char *)(this + 238) = 0; /*0x6ce648*/
+    *(unsigned char *)(this + 244) = 0; /*0x6ce64e*/
+    *(unsigned char *)(this + 245) = 0; /*0x6ce654*/
+    *(unsigned int *)(this + 248) = 0; /*0x6ce65a*/
+    *(unsigned int *)(this + 252) = 0; /*0x6ce660*/
+    *(unsigned int *)this = &SuperWeaponTypeClass::`vftable'; /*0x6ce666*/
+    *(unsigned int *)(this + 4) = &SuperWeaponTypeClass::`vftable'; /*0x6ce66d*/
+    *(unsigned int *)(this + 8) = &SuperWeaponTypeClass::`vftable'; /*0x6ce673*/
+    *(unsigned int *)(this + 12) = &SuperWeaponTypeClass::`vftable'; /*0x6ce67a*/
+    AbstractClass::GenerateUniqueID(this + 4); /*0x6ce681*/
+    *(unsigned int *)(this + 152) = dword_A8E340; /*0x6ce68c*/
+    if ( dword_A8E340 < dword_A8E338 /*0x6ce6c4*/
+      || (byte_A8E33D || !dword_A8E338)
+      && dword_A8E344 > 0
+      && (*(unsigned __int8 (__thiscall **)(int *, int, unsigned int))(dword_A8E330 + 8))(
+           &dword_A8E330,
+           dword_A8E338 + dword_A8E344,
+           0) )
+    {
+      v3 = dword_A8E340++; /*0x6ce6d1*/
+      *((unsigned int *)dword_A8E334 + v3) = this; /*0x6ce6e0*/
+    }
+    if ( this + 36 != this + 204 ) /*0x6ce6e8*/
+      qmemcpy((void *)(this + 204), (const void *)(this + 36), 0x19u); /*0x6ce6ef*/
+    return this; /*0x6ce6f2*/
 }
 } // namespace gamemd
 

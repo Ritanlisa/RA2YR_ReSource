@@ -606,6 +606,44 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
 namespace gamemd {
 int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0, void * a2, void * a4)
 {
+    int v5; // ebx
+    int result; // eax
+    int v7; // edx
+    int i; // ebx
+    int v9; // edx
+    int j; // ebx
+    int v11; // edx
+    int k; // ebx
+
+    result = AbstractClass::SaveLoad_Prefix((int *)this, a2, (int)WarheadTypeClass_field_0x114); /*0x75e2d1*/
+    if ( result >= 0 ) /*0x75e2d8*/
+    {
+      v7 = *a2; /*0x75e2e4*/
+      WarheadTypeClass_field_0x114 = (int *)this->WarheadTypeClass_field_0x114; /*0x75e2f1*/
+      (*(void (__stdcall **)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &WarheadTypeClass_field_0x114, 4, 0, v5); /*0x75e2f5*/
+      for ( i = 0; i < a4; ++i ) /*0x75e300*/
+        (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, this->WarheadTypeClass_field_0x108 + 4 * i, 4, 0); /*0x75e313*/
+      v9 = *a2; /*0x75e323*/
+      a4 = this->unused_1CC[0]; /*0x75e32f*/
+      (*(void (__stdcall **)(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x75e333*/
+      for ( j = 0; j < a4; ++j ) /*0x75e33e*/
+        (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))( /*0x75e351*/
+          a2,
+          this->WarheadTypeClass_field_0x190[0] + 4 * j,
+          4,
+          0);
+      v11 = *a2; /*0x75e361*/
+      a4 = *(unsigned int *)&this->__pad_1B0[8]; /*0x75e36d*/
+      (*(void (__stdcall **)(int *, int *, int))(v11 + 16))(a2, &a4, 4); /*0x75e371*/
+      for ( k = 0; k < (int)WarheadTypeClass_field_0x114; ++k ) /*0x75e37c*/
+        (*(void (__stdcall **)(int *, char *, int, unsigned int))(*a2 + 16))( /*0x75e38f*/
+          a2,
+          (char *)&this->WarheadTypeClass_field_0x1AC->AbstractClass + 4 * k,
+          4,
+          0);
+      return 0; /*0x75e399*/
+    }
+    return result; /*0x75e39c*/
 }
 } // namespace gamemd  // G42.35p: missing close restored
 // 0x75E3B0

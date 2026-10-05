@@ -9613,7 +9613,17 @@ unsigned int * _com_error::sub_7DCE0E(int a2)
 namespace gamemd {
 HLOCAL _com_error::sub_7DCE3B()
 {
-    return nullptr;
+    HLOCAL result; // eax
+    void *v3; // esi
+
+    result = (HLOCAL)*((unsigned int *)this + 2); /*0x7dce3e*/
+    this->vfptr = (int)&_com_error::`vftable'; /*0x7dce41*/
+    if ( result ) /*0x7dce49*/
+      result = (HLOCAL)(*(int (__stdcall **)(HLOCAL))(*(unsigned int *)result + 8))(result); /*0x7dce4e*/
+    v3 = (void *)*((unsigned int *)this + 3); /*0x7dce51*/
+    if ( v3 ) /*0x7dce56*/
+      return LocalFree(v3); /*0x7dce59*/
+    return result; /*0x7dce5f*/
 }
 }
 // 0x7DCFC4

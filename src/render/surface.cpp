@@ -693,11 +693,253 @@ bool DSurface::Blit(
     class Surface* src, const RectangleStruct& dest_rect,
     const RectangleStruct& src_rect, bool option1, bool option2)
 {
-    return BlitCore(
-               (int*)(this),
-               (int*)(&clip_rect), (int*)(&clip_rect2), (void*)(src),
-               (int*)(&dest_rect), (int*)(&src_rect),
-               option1 ? 1 : 0, option2 ? 1 : 0) != 0;
+    int v9; // ecx
+    void **v10; // ebx
+    int v11; // ebx
+    bool v12; // zf
+    char v13; // al
+    int v14; // eax
+    void *DSurface_field_0x0; // edx
+    int v17; // ecx
+    int v18; // edx
+    int v19; // eax
+    int v20; // ecx
+    int v21; // eax
+    int v22; // edx
+    int v23; // ecx
+    int (__thiscall **v24)(void **, unsigned int *); // edx
+    Rect *v25; // eax
+    int Y; // ecx
+    int Width; // edx
+    int v28; // esi
+    int v29; // eax
+    bool v30; // cc
+    int Height; // ebx
+    int X; // eax
+    int (__thiscall **v33)(DSurface *, int *); // edx
+    int *v34; // edi
+    int v35; // eax
+    int v36; // ebx
+    int v37; // ecx
+    int v38; // edx
+    int v39; // esi
+    int v40; // edi
+    int v41; // edx
+    char v42; // [esp+1Bh] [ebp-85h]
+    Rect v43; // [esp+1Ch] [ebp-84h] BYREF
+    void *DSurface_field_0xC; // [esp+2Ch] [ebp-74h]
+    int v45; // [esp+30h] [ebp-70h]
+    int v46; // [esp+34h] [ebp-6Ch]
+    int v47; // [esp+38h] [ebp-68h]
+    DSurface *v48; // [esp+3Ch] [ebp-64h]
+    int v49; // [esp+40h] [ebp-60h] BYREF
+    int v50; // [esp+44h] [ebp-5Ch]
+    int v51; // [esp+48h] [ebp-58h]
+    int v52; // [esp+4Ch] [ebp-54h]
+    unsigned int v53[2]; // [esp+50h] [ebp-50h] BYREF
+    int v54; // [esp+58h] [ebp-48h]
+    int v55; // [esp+5Ch] [ebp-44h]
+    int v56; // [esp+60h] [ebp-40h] BYREF
+    int v57; // [esp+64h] [ebp-3Ch]
+    int v58; // [esp+68h] [ebp-38h]
+    int v59; // [esp+6Ch] [ebp-34h]
+    int v60; // [esp+70h] [ebp-30h] BYREF
+    int v61; // [esp+74h] [ebp-2Ch]
+    int v62; // [esp+78h] [ebp-28h]
+    int v63; // [esp+7Ch] [ebp-24h]
+    int v64; // [esp+80h] [ebp-20h] BYREF
+    int v65; // [esp+84h] [ebp-1Ch]
+    int v66; // [esp+88h] [ebp-18h]
+    int v67; // [esp+8Ch] [ebp-14h]
+    int v68[4]; // [esp+90h] [ebp-10h] BYREF
+
+    v9 = a2[2]; /*0x4bb0e1*/
+    v48 = this; /*0x4bb0e8*/
+    if ( v9 <= 0 || a2[3] <= 0 || a5[2] <= 0 || a5[3] <= 0 || a3[2] <= 0 || a3[3] <= 0 || a6[2] <= 0 || a6[3] <= 0 ) /*0x4bb14e*/
+      return 0; /*0x4bb14e*/
+    v10 = (void **)a4; /*0x4bb154*/
+    v42 = 0; /*0x4bb15b*/
+    if ( !(*(unsigned __int8 (__thiscall **)(unsigned int *))(*a4 + 132))(a4) /*0x4bb19d*/
+      || (*(unsigned __int8 (__thiscall **)(unsigned int *))(*a4 + 108))(a4) == 1
+      || (unsigned char)a7 == 1
+      || (v11 = (*(int (__thiscall **)(unsigned int *))(*a4 + 112))(a4),
+          v12 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this) == v11,
+          v10 = (void **)a4,
+          !v12) )
+    {
+      v42 = 1; /*0x4bb19f*/
+    }
+    if ( IDA_LOBYTE(this->DSurface_field_0x18) == 1 && g_DDraw_Initialized == 1 ) /*0x4bb1b1*/
+      v13 = 0; /*0x4bb1b3*/
+    else
+      v13 = a8; /*0x4bb1b7*/
+    if ( !v42 /*0x4bb1f8*/
+      && v13 == 1
+      && (!IDA_BYTE1(this->DSurface_field_0x18)
+       || (*((unsigned __int8 (__thiscall **)(void **))*v10 + 33))(v10) == 1 && !*((unsigned char *)v10 + 25))
+      && a6[2] == a3[2]
+      && a6[3] == a3[3] )
+    {
+      v42 = 1; /*0x4bb1fa*/
+    }
+    if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bb20f*/
+      return 0; /*0x4bb20f*/
+    v14 = this->DSurface_field_0x1C[0]; /*0x4bb215*/
+    if ( v14 && (*(int (__stdcall **)(int))(*(unsigned int *)v14 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4bb227*/
+    {
+      if ( (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4bb240*/
+        || (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
+      {
+        return 0; /*0x4bb245*/
+      }
+      DSurface_field_0xC = this->DSurface_field_0xC; /*0x4bb250*/
+      if ( (int)DSurface_field_0xC > 0 ) /*0x4bb254*/
+      {
+        DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bb256*/
+        this->DSurface_field_0xC = 0; /*0x4bb25d*/
+        (*((void (__thiscall **)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb264*/
+        ++this->DSurface_field_0xC; /*0x4bb26d*/
+        (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb273*/
+        this->DSurface_field_0xC = DSurface_field_0xC; /*0x4bb27a*/
+      }
+    }
+    if ( v42 == 1 ) /*0x4bb282*/
+      return XSurface::BlitPart((XSurface *)this, (void **)a3, v10, (void **)a6, (void **)a7, 1); /*0x4bb2a2*/
+    v17 = a3[1]; /*0x4bb2a7*/
+    v18 = a3[2]; /*0x4bb2aa*/
+    v49 = *a3; /*0x4bb2ad*/
+    v19 = a3[3]; /*0x4bb2b1*/
+    v50 = v17; /*0x4bb2b4*/
+    v20 = *a6; /*0x4bb2b8*/
+    v52 = v19; /*0x4bb2ba*/
+    v21 = a6[2]; /*0x4bb2be*/
+    v51 = v18; /*0x4bb2c1*/
+    v22 = a6[1]; /*0x4bb2c5*/
+    v56 = v20; /*0x4bb2c8*/
+    v23 = a6[3]; /*0x4bb2cc*/
+    v58 = v21; /*0x4bb2cf*/
+    v57 = v22; /*0x4bb2d3*/
+    v24 = (int (__thiscall **)(void **, unsigned int *))*v10; /*0x4bb2d7*/
+    v59 = v23; /*0x4bb2dd*/
+    v25 = (Rect *)v24[30](v10, v53); /*0x4bb2e4*/
+    Y = 0; /*0x4bb2eb*/
+    Width = 0; /*0x4bb2ed*/
+    v28 = 0; /*0x4bb2f1*/
+    v43 = *v25; /*0x4bb2f3*/
+    v45 = a5[2]; /*0x4bb318*/
+    if ( v45 <= 0 ) /*0x4bb31c*/
+      goto LABEL_53; /*0x4bb31c*/
+    v46 = a5[3]; /*0x4bb327*/
+    if ( v46 <= 0 || v25->Width <= 0 || v25->Height <= 0 ) /*0x4bb341*/
+      goto LABEL_53; /*0x4bb341*/
+    v29 = *a5; /*0x4bb352*/
+    v30 = v43.X < *a5; /*0x4bb354*/
+    v47 = *a5; /*0x4bb356*/
+    if ( v30 ) /*0x4bb35a*/
+    {
+      v43.Width += v43.X - v29; /*0x4bb364*/
+      v43.X = v47; /*0x4bb36c*/
+    }
+    if ( v43.Width < 1 ) /*0x4bb375*/
+      goto LABEL_53; /*0x4bb375*/
+    DSurface_field_0xC = (void *)a5[1]; /*0x4bb38b*/
+    if ( v43.Y < (int)DSurface_field_0xC ) /*0x4bb38f*/
+    {
+      v43.Height += v43.Y - (unsigned int)DSurface_field_0xC; /*0x4bb399*/
+      v43.Y = (int)DSurface_field_0xC; /*0x4bb3a1*/
+    }
+    if ( v43.Height < 1 ) /*0x4bb3aa*/
+      goto LABEL_53; /*0x4bb3aa*/
+    if ( v43.X + v43.Width > v45 + v47 ) /*0x4bb3be*/
+      v43.Width = v45 + v47 - v43.X; /*0x4bb3cc*/
+    if ( v43.Width < 1 ) /*0x4bb3d5*/
+      goto LABEL_53; /*0x4bb3d5*/
+    Height = v43.Height; /*0x4bb3e5*/
+    if ( v43.Height + v43.Y > (int)DSurface_field_0xC + v46 ) /*0x4bb3ed*/
+      Height = (int)DSurface_field_0xC + v46 - v43.Y; /*0x4bb3f3*/
+    if ( Height < 1 ) /*0x4bb3f8*/
+    {
+  LABEL_53:
+      X = 0; /*0x4bb40a*/
+    }
+    else
+    {
+      X = v43.X; /*0x4bb3fa*/
+      Y = v43.Y; /*0x4bb3fe*/
+      Width = v43.Width; /*0x4bb402*/
+      v28 = Height; /*0x4bb406*/
+    }
+    v61 = Y; /*0x4bb40c*/
+    v60 = X; /*0x4bb414*/
+    v62 = Width; /*0x4bb418*/
+    v33 = (int (__thiscall **)(DSurface *, int *))v48->DSurface_field_0x0; /*0x4bb41c*/
+    v63 = v28; /*0x4bb426*/
+    v34 = (int *)v33[30](v48, v68); /*0x4bb439*/
+    Rect::Set(&v43, 0, 0, 0, 0); /*0x4bb43b*/
+    v35 = *v34; /*0x4bb449*/
+    v36 = a2[2]; /*0x4bb44b*/
+    v37 = v34[1]; /*0x4bb450*/
+    v38 = v34[2]; /*0x4bb453*/
+    v54 = v38; /*0x4bb456*/
+    v39 = v34[3]; /*0x4bb45a*/
+    if ( v36 <= 0 ) /*0x4bb45d*/
+      goto LABEL_71; /*0x4bb45d*/
+    v45 = a2[3]; /*0x4bb468*/
+    if ( v45 <= 0 || v34[2] <= 0 || v34[3] <= 0 ) /*0x4bb47a*/
+      goto LABEL_71; /*0x4bb47a*/
+    v40 = *a2; /*0x4bb483*/
+    if ( v35 < *a2 ) /*0x4bb488*/
+    {
+      v38 += v35 - v40; /*0x4bb48c*/
+      v35 = *a2; /*0x4bb48e*/
+      v54 = v38; /*0x4bb490*/
+    }
+    if ( v38 < 1 ) /*0x4bb497*/
+      goto LABEL_71; /*0x4bb497*/
+    v46 = a2[1]; /*0x4bb49e*/
+    if ( v37 < v46 ) /*0x4bb4a2*/
+    {
+      v39 += v37 - v46; /*0x4bb4a6*/
+      v37 = v46; /*0x4bb4a8*/
+    }
+    if ( v39 < 1 ) /*0x4bb4ad*/
+      goto LABEL_71; /*0x4bb4ad*/
+    v41 = v35 + v38 <= v40 + v36 ? v54 : v36 + v40 - v35;
+    if ( v41 < 1 ) /*0x4bb4c7*/
+      goto LABEL_71; /*0x4bb4c7*/
+    if ( v39 + v37 > v46 + v45 ) /*0x4bb4d8*/
+      v39 = v46 + v45 - v37; /*0x4bb4dc*/
+    if ( v39 < 1 ) /*0x4bb4e1*/
+    {
+  LABEL_71:
+      v35 = v43.X; /*0x4bb4e3*/
+      v37 = v43.Y; /*0x4bb4e7*/
+      v41 = v43.Width; /*0x4bb4eb*/
+      v39 = v43.Height; /*0x4bb4ef*/
+    }
+    v65 = v37; /*0x4bb4f3*/
+    v66 = v41; /*0x4bb4f7*/
+    v64 = v35; /*0x4bb513*/
+    v67 = v39; /*0x4bb51a*/
+    if ( (unsigned __int8)IntersectSurfaceRects(&v49, (int)&v64, &v56, (int)&v60) ) /*0x4bb521*/
+    {
+      v53[0] = v64 + v49; /*0x4bb544*/
+      v53[1] = v65 + v50; /*0x4bb552*/
+      v55 = v50 + v65 + v52; /*0x4bb56e*/
+      v54 = v49 + v64 + v51; /*0x4bb576*/
+      v43.X = v60 + v56; /*0x4bb57d*/
+      v43.Y = v61 + v57; /*0x4bb588*/
+      v43.Height = v57 + v61 + v59; /*0x4bb5a0*/
+      v43.Width = v56 + v60 + v58; /*0x4bb5a4*/
+      return (*(int (__stdcall **)(int, unsigned int *, unsigned int, Rect *, int, unsigned int))(*(unsigned int *)v48->DSurface_field_0x1C[0] + 20))( /*0x4bb5d5*/
+               v48->DSurface_field_0x1C[0],
+               v53,
+               a4[7],
+               &v43,
+               0x1000000,
+               0) == 0;
+    }
+    return 0; /*0x4bb298*/
 }
 // BlitTracker — same as Blit but records element info for headless tracking.
 // In the EXE build, RecordBlit is a no-op stub (element_tracker.cpp is hook DLL only).

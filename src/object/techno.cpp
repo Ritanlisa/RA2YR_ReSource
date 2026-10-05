@@ -246,9 +246,21 @@ FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, boo
 // signature; real Fire address pending re-attribution (ledger).
 BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
 {
-    (void)target;
-    (void)weapon_index;
-    return nullptr;
+    BulletClass *result; // eax
+    void *vtable0; // [esp+0h] [ebp-4h]
+
+    result = (BulletClass *)this->RadioClass; /*0x70ece1*/
+    vtable0 = this->RadioClass; /*0x70ece5*/
+    if ( this->RadioClass ) /*0x70ece5*/
+    {
+      result = (BulletClass *)this->?; /*0x70eceb*/
+      this->? = 1; /*0x70ecf5*/
+      this->? = (int)result; /*0x70ecf8*/
+      if ( (int)result < 1 ) /*0x70ecfb*/
+        this->? = 1; /*0x70ecfd*/
+      *(float *)&this->? = (double)(int)vtable0 / (double)this->?; /*0x70ed07*/
+    }
+    return result; /*0x70ed0b*/
 }
 bool TechnoClass::IsCloseEnoughToAttack(AbstractClass* target) const
 {
@@ -350,7 +362,133 @@ void TechnoClass::Uncloak(bool play_sound)
 // pending translation.
 int TechnoClass::SelectWeapon(AbstractClass* target) const
 {
-    (void)target;
+    HouseClass *v2; // eax
+    int result; // eax
+    int v4; // edi
+    int v5; // ebx
+    unsigned char *v6; // ebp
+    int gattlingStage; // esi
+    int v8; // eax
+    int v9; // eax
+    bool v10; // bl
+    unsigned int *v11; // [esp+1Ch] [ebp+4h]
+
+    v2 = (HouseClass *)(*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this); /*0x6f333b*/
+    if ( (unsigned __int8)HouseClass::HasPower(v2)
+      && !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3285) )
+    {
+      return this->currentWeaponSlot != -1 ? this->currentWeaponSlot : 0;
+    }
+    if ( (*((unsigned __int8 (__thiscall **)(TechnoClass *))this->RadioClass + 256))(this) ) /*0x6f337d*/
+      return 0; /*0x6f337d*/
+    v4 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, int))this->RadioClass + 254))(this, 1); /*0x6f3397*/
+    if ( !v4 ) /*0x6f339f*/
+      return 0; /*0x6f339f*/
+    v5 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned int))this->RadioClass + 254))(this, 0); /*0x6f33b1*/
+    if ( !v5 || *(unsigned char *)(v4 + 310) || !v11 ) /*0x6f33d3*/
+      return 0; /*0x6f33d3*/
+    if ( this->? && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3408) != -1 ) /*0x6f33f4*/
+      return *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3408); /*0x6f340d*/
+    v6 = (v11[5] & 1) != 0 ? (unsigned char *)v11 : 0;
+    if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3285) )
+    {
+      if ( *(unsigned char *)(*(unsigned int *)(v4 + 172) + 364) )
+      {
+        if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6
+          && *(unsigned char *)(*((*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6 ? v11 + 328 : (unsigned int *)1312) + 5495) )
+        {
+          v8 = (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11); /*0x6f34c9*/
+          if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*(v8 == 6 ? v11 : 0) + 132))(v8 == 6 ? v11 : 0) + 1517) )
+          {
+            v9 = (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11); /*0x6f34f3*/
+            return !*(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*(v9 == 6 ? v11 : 0) + 132))(v9 == 6 ? v11 : 0) + 1516);
+          }
+          return 1; /*0x6f380a*/
+        }
+      }
+      else
+      {
+        if ( *(unsigned char *)(*(unsigned int *)(v5 + 172) + 347) /*0x6f3547*/
+          && v6
+          && (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 44))(v6) == 6 )
+        {
+          return 1; /*0x6f3555*/
+        }
+        if ( *(unsigned char *)(v4 + 322) /*0x6f3590*/
+          && v6
+          && *(unsigned char *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 132))(v6) + 1519)
+          && !this->drainTarget
+          && !(unsigned __int8)Object::IsAlliedWithObjectHouse((Object *)this->owner, (int)v6) )
+        {
+          return 1; /*0x6f35a5*/
+        }
+        if ( *(unsigned char *)(v4 + 336) && (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 97))(this) == 16 ) /*0x6f35c3*/
+          return 1; /*0x6f35d1*/
+        if ( (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this) == 6 && *((unsigned char *)this + 1633) ) /*0x6f35e0*/
+          return 1; /*0x6f35f6*/
+        if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6 /*0x6f362f*/
+          && (unsigned __int8)Object::IsAlliedWithObjectSimpleHouse((Object *)this->owner, v11)
+          && *(unsigned char *)(*(unsigned int *)(v4 + 172) + 344)
+          && *(unsigned char *)(v11[328] + 5493) )
+        {
+          return 1; /*0x6f3645*/
+        }
+        if ( (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this) == 2 && *((unsigned char *)this + 1738) ) /*0x6f3658*/
+          return 1; /*0x6f366e*/
+        if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 11 /*0x6f36ca*/
+          && (v11[59] != 2 && (*(unsigned __int8 (__thiscall **)(unsigned int *))(*v11 + 80))(v11)
+           || (v11[80] & 0x100) != 0
+           && *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3278))
+          && !(*(unsigned __int8 (__thiscall **)(unsigned int *))(*v11 + 84))(v11)
+          && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 1540) == 2 )
+        {
+          return 1; /*0x6f36d8*/
+        }
+        if ( v6 /*0x6f3710*/
+          && *(double *)(*(unsigned int *)(v4 + 172)
+                       + 8 * *(unsigned int *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 132))(v6) + 156)
+                       + 160) != 0.0 )
+        {
+          if ( *(double *)(*(unsigned int *)(v5 + 172) /*0x6f3743*/
+                         + 8 * *(unsigned int *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 132))(v6) + 156)
+                         + 160) == 0.0 )
+            return 1; /*0x6f3751*/
+          v10 = *(unsigned int *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 444))(v6) + 236) == 2 /*0x6f377f*/
+             || *(unsigned int *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 444))(v6) + 236) == 6;
+          if ( (*(unsigned __int8 (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) ) /*0x6f3786*/
+            v10 = 0; /*0x6f378d*/
+          if ( !v6[140] && v10 ) /*0x6f379b*/
+          {
+            result = (*((int (__thiscall **)(TechnoClass *, unsigned int *))this->RadioClass + 186))(this, v11); /*0x6f37a2*/
+            if ( result != -1 ) /*0x6f37ab*/
+              return result; /*0x6f37ab*/
+            return 0; /*0x6f37ab*/
+          }
+          if ( !(*(unsigned __int8 (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) /*0x6f37d6*/
+            && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 1540) == 2 )
+          {
+            return 1; /*0x6f37e4*/
+          }
+          if ( *(unsigned char *)(*(unsigned int *)(v4 + 160) + 676) /*0x6f3800*/
+            && (*(unsigned __int8 (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) )
+          {
+            return 1; /*0x6f3805*/
+          }
+        }
+      }
+      return 0; /*0x6f37ad*/
+    }
+    gattlingStage = this->gattlingStage; /*0x6f3436*/
+    if ( *(unsigned char *)(*(unsigned int *)(v4 + 160) + 676) /*0x6f3455*/
+      && v6
+      && (*(unsigned __int8 (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) )
+    {
+      return 2 * gattlingStage + 1; /*0x6f345c*/
+    }
+    else
+    {
+      return 2 * gattlingStage; /*0x6f346a*/
+    }
 }
 /* ASM:
 sub     esp, 8

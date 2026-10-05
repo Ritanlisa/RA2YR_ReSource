@@ -334,8 +334,25 @@ namespace gamemd {
 // Evidence: .omo/ida_cache/func_0x434A40.json (FileSize = (void *)this->?; FilePointer = (void **)this->?;).
 // Restore when BitFont layout lands.
 void *** BufferIOFileClass::Constructor_BitFont(char a2) {
-    (void)a2;
-    return (void ***)this;
+    void *FileSize; // eax
+    void **FilePointer; // esi
+
+    FileSize = (void *)this->?; /*0x434a43*/
+    *(unsigned int *)this->RawFileClass = &BitFont::`vftable'; /*0x434a46*/
+    if ( FileSize ) /*0x434a4e*/
+      free(FileSize); /*0x434a51*/
+    FilePointer = (void **)this->?; /*0x434a5a*/
+    if ( FilePointer ) /*0x434a5f*/
+    {
+      if ( FilePointer[6] ) /*0x434a61*/
+        RA2_OPDEL(FilePointer[6]); /*0x434a69*/
+      if ( FilePointer[7] ) /*0x434a71*/
+        RA2_OPDEL(FilePointer[7]); /*0x434a79*/
+      RA2_OPDEL(FilePointer); /*0x434a82*/
+    }
+    if ( (a2 & 1) != 0 ) /*0x434a91*/
+      RA2_OPDEL(this); /*0x434a94*/
+    return (void ***)this; /*0x434a9e*/
 }
 } // namespace gamemd
 
@@ -347,8 +364,17 @@ namespace gamemd {
 // (2) this->RawFileClass member access -- name is the base TYPE, no such member;
 // (3) vftable install sites neutralized anyway. Evidence: .omo/ida_cache/func_0x435560.json.
 unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
-    (void)a2;
-    return (unsigned int *)this;
+    Text *v3; // esi
+
+    *(unsigned int *)this->RawFileClass = &BitText::`vftable'; /*0x435564*/
+    v3 = g_FogOfWarState; /*0x43556a*/
+    if ( g_FogOfWarState ) /*0x435572*/
+      (*(void (__thiscall **)(Text *, int))g_FogOfWarState->Text_field_00)(g_FogOfWarState, 1); /*0x43557a*/
+    if ( v3 == g_FogOfWarState ) /*0x435582*/
+      g_FogOfWarState = 0; /*0x435584*/
+    if ( (a2 & 1) != 0 ) /*0x435593*/
+      RA2_OPDEL(this); /*0x435596*/
+    return this->RawFileClass; /*0x4355a0*/
 }
 } // namespace gamemd
 
