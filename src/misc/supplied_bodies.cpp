@@ -173,9 +173,9 @@ int AudioSample::ResetState() {
       v2 = *((unsigned int *)this + 41); /*0x4024b1*/
       IDA_LOBYTE(v2) = v2 & 0xF7; /*0x4024b7*/
       *((unsigned int *)this + 41) = v2; /*0x4024b9*/
-      *((unsigned int *)this + 87) = 0x4022C0; /*0x4024c1 回调地址真值 AudioController::AdvanceQueue*/
-      *((unsigned int *)this + 88) = 0x402330; /*0x4024cb 回调地址真值 AudioController::UpdatePlayback*/
-      *((unsigned int *)this + 89) = 0x4023F0; /*0x4024d5 回调地址真值 AudioController::CleanupStream*/
+      *((unsigned int *)this + 87) = (unsigned int)AudioController::AdvanceQueue; /*0x4024c1 回调地址真值 AudioController::AdvanceQueue*/
+      *((unsigned int *)this + 88) = (unsigned int)AudioController::UpdatePlayback; /*0x4024cb 回调地址真值 AudioController::UpdatePlayback*/
+      *((unsigned int *)this + 89) = (unsigned int)AudioController::CleanupStream; /*0x4024d5 回调地址真值 AudioController::CleanupStream*/
       *((unsigned int *)this + 44) = 0; /*0x4024df*/
       *((unsigned int *)this + 45) = 0; /*0x4024e5*/
       *((unsigned int *)this + 46) = 0; /*0x4024eb*/
@@ -630,12 +630,12 @@ unsigned int * AudioBuffer::InitializePlayback() {
         if ( v7 ) /*0x409ca2*/
         {
           if ( v7 == 1 ) /*0x409ca5*/
-            this->u32_70 = 0x409DE0; /*0x409ca7 回调地址真值 AudioController::LoadThemeBank*/
+            this->u32_70 = (unsigned int)AudioController::LoadThemeBank; /*0x409ca7 回调地址真值 AudioController::LoadThemeBank*/
         }
         else
         {
-          this->u32_70 = 0x409DE0; /*0x409cb0 回调地址真值 AudioController::LoadThemeBank*/
-          this->u32_B0 = 0x40AA70; /*0x409cb7 回调地址真值 ProcessAudioChannelMovement*/
+          this->u32_70 = (unsigned int)AudioController::LoadThemeBank; /*0x409cb0 回调地址真值 AudioController::LoadThemeBank*/
+          this->u32_B0 = (unsigned int)ProcessAudioChannelMovement; /*0x409cb7 回调地址真值 ProcessAudioChannelMovement*/
           this->u32_8C = v4[6]; /*0x409cc4*/
           this->u32_AC = v4[6]; /*0x409ccd*/
           this->u32_A0 = 4 * *(unsigned int *)&v4[6] + 128; /*0x409cdd*/
@@ -643,7 +643,7 @@ unsigned int * AudioBuffer::InitializePlayback() {
       }
       else
       {
-        this->u32_70 = 0x409D90; /*0x409ce5 回调地址真值 sub_409D90*/
+        this->u32_70 = (unsigned int)sub_409D90; /*0x409ce5 回调地址真值 sub_409D90*/
       }
       if ( this->u32_88 < this->u32_8C ) /*0x409cfa*/
       {
