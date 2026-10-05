@@ -8,6 +8,8 @@
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "misc/misc_ext.hpp"
+#include "ui/power.hpp"  // G42.42d: PowerClass FlagProcess/TimerProcess
+#include "house/house.hpp"  // G42.42d: owner->IsHumanPlayer (CanEnterCell)
 
 namespace gamemd {
 
@@ -91,7 +93,7 @@ int AircraftClass::Mission_Retreat()
 int AircraftClass::Mission_Enter()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004166C0.json)
-}
+} // G42.42d: pending full translation (offsets decoded; queue position 13)
 // 0x419c80
 int AircraftClass::Mission_Transport()
 {
@@ -115,10 +117,17 @@ int AircraftClass::ValidateMovement()
 }
 
 // IDA: 0x417F80 (CanEnterCell, 80B)
-bool AircraftClass::CanEnterCell()
+// G42.42d FULL implementation (truth 0x417F80; disasm-verified):
+//   owner (this+0x21C) must be human; base HandleCursorWithCheck; when the
+//   result is 5 (enter-ok) additionally require SelectWeaponSlot(vt+1016)(0).
+int AircraftClass::CanEnterCell(__int16* a2, char a3, char a4)
 {
-    // Aircraft can enter any cell (fly over)
-    return true;
+    if (owner == nullptr || !owner->IsHumanPlayer())
+        return 0;
+    int v6 = FootClass::HandleCursorWithCheck(a2, a3, a4);
+    if (v6 == 5 && SelectWeaponSlot(0) == 0)
+        return 0;
+    return v6;
 }
 
 // ============================================================
@@ -127,9 +136,37 @@ bool AircraftClass::CanEnterCell()
 
 // IDA: 0x41BA90 (ProcessLanding, 82B)
 // 0x41ba90
-int AircraftClass::ProcessLanding()
+// G42.42d FULL implementation (truth 0x41BA90; disasm-verified):
+//   switch on currentMission (this+0xAC); cases 4/26/27/30/31 check airstrike
+//   (this+0x294); second switch on a2 with same case set; base dispatch
+//   ParticleClass::MissionDispatch == MissionClass::MissionDispatch (0x5B35E0).
+int AircraftClass::ProcessLanding(int a2, int a3)
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041BA90.json)
+    switch (currentMission)
+    {
+    case 4:
+    case 26:
+    case 27:
+    case 30:
+    case 31:
+        if (airstrike != nullptr)
+            break;
+        switch (a2)
+        {
+        case 4:
+        case 26:
+        case 27:
+        case 30:
+        case 31:
+            break;
+        default:
+            return a2 - 4;
+        }
+        break;
+    default:
+        break;
+    }
+    return MissionClass::MissionDispatch(a2, a3);
 }
 // IDA: 0x415B10 (FindLandingCell, 336B)
 int AircraftClass::FindLandingCell()
@@ -233,15 +270,29 @@ int AircraftClass::CheckReloadTimer()
 // ============================================================
 
 // 0x41b610
-int AircraftClass::PowerDrainUpdate(int a2)
+// G42.42d FULL implementation (truth 0x41B610; disasm-verified):
+//   BeginPowerUpdate(this,a2) then FlagProcess(a2, HasPassengers@0x6C9 /
+//   flag@0x6D0 / flag@0x6D1), tail TimerProcess(a2, (signed char)0x6D3).
+int AircraftClass::PowerDrainUpdate(int* a2)
 {
-    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041B610.json)
+    FootClass::BeginPowerUpdate(a2);
+    ((PowerClass *)a2)->FlagProcess(HasPassengers);
+    ((PowerClass *)a2)->FlagProcess(AircraftClass_field_bool_6D0);
+    ((PowerClass *)a2)->FlagProcess(AircraftClass_field_bool_6D1);
+    return ((PowerClass *)a2)->TimerProcess((signed char)AircraftClass_field_char_6D3);
 }
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
 // 0x41b660
-int AircraftClass::HandleTargetDestroyed()
+// G42.42d FULL implementation (truth 0x41B660): base call, then clear
+// AircraftClass_field_6CC / Type when they reference the destroyed object.
+int AircraftClass::HandleTargetDestroyed(int* a2, int* a3)
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041B660.json)
+    FootClass::HandleTargetDestroyed(a2, a3);
+    if ((int *)AircraftClass_field_6CC == a2)
+        AircraftClass_field_6CC = 0;
+    if ((int *)Type == a2)
+        Type = 0;
+    return 0;
 }
 // 0x414a80
 int AircraftClass::ProcessMissionTimeout()

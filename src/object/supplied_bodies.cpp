@@ -1064,9 +1064,9 @@ int TechnoClass::ComputeThreatLevel()
 
 // 0x4D9960
 namespace ra2::game {
-int FootClass::HandleTargetDestroyed()
+int FootClass::HandleTargetDestroyed(int* aP1, int* aP2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004D9960.json)
+    (void)aP1; (void)aP2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004D9960.json)
 }
 } // namespace ra2::game
 
@@ -1184,9 +1184,9 @@ int TechnoClass::SetPositionAnimated()
 
 // 0x4DBAD0
 namespace ra2::game {
-int FootClass::BeginPowerUpdate()
+int FootClass::BeginPowerUpdate(int* aP1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004DBAD0.json)
+    (void)aP1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004DBAD0.json)
 }
 } // namespace ra2::game
 
@@ -1288,9 +1288,9 @@ int FootClass::ValidateTargetCell()
 
 // 0x4DDDE0
 namespace ra2::game {
-int FootClass::HandleCursorWithCheck()
+int FootClass::HandleCursorWithCheck(__int16* aP1, char aP2, char aP3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004DDDE0.json)
+    (void)aP1; (void)aP2; (void)aP3; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004DDDE0.json)
 }
 } // namespace ra2::game
 

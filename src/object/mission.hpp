@@ -95,6 +95,7 @@ public:
     bool        missionQueued;
     uint8_t     alignmentPaddingB9[3];
     int32_t     missionStatus;
+    int MissionDispatch(int a2, int a3);  // 0x5B35E0 base dispatch (G42.42d supply decl)
     int32_t     missionStartTime;
     uint32_t    missionData;
     TimerStruct missionTimer;

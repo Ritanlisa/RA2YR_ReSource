@@ -50,6 +50,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Update(int a1);  // 0x43a5d0 -- Power::Update
     int FinalizeDrain(int a1);  // 0x4a1c10 -- Power::FinalizeDrain
     int FlagProcess(int a1);  // 0x4a1ca0 -- Power::FlagProcess
+    int TimerProcess(int a1);  // 0x4a1d50 -- Power::TimerProcess (G42.42d supply decl)
     void* UpdateAll();  // 0x67c6e0 -- Power::UpdateAll
     int ComputeHousePowerChecksum(int a1);  // 0x68b940 -- Power::ComputeHousePowerChecksum
     int ChangedHouse(int a1);  // 0x750090 -- Power::ChangedHouse

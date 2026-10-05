@@ -88,10 +88,10 @@ public:
     // === Phase 3: Flight Paths ===
     int MoveTo();  // 0x414310
     int ValidateMovement();  // 0x417BD0
-    bool CanEnterCell();  // 0x417F80
+    int CanEnterCell(__int16* a2, char a3, char a4);  // 0x417F80 (G42.42d truth arity)
 
     // === Phase 3: Landing ===
-    int ProcessLanding();  // 0x41BA90
+    int ProcessLanding(int a2, int a3);  // 0x41BA90 (G42.42d truth arity)
     int FindLandingCell();  // 0x415B10
     int ValidateLandingCell();  // 0x4196B0
     int ProcessReturnToBase();  // 0x415A50
@@ -111,8 +111,8 @@ public:
     int CheckReloadTimer();  // 0x41C020
 
     // === Phase 3: Per-Frame & AI ===
-    int PowerDrainUpdate(int a2) override;  // 0x41B610
-    virtual int HandleTargetDestroyed();  // 0x41B660
+    int PowerDrainUpdate(int* a2);  // 0x41B610 (G42.42d truth arity: Power*; override dropped - no base decl)
+    virtual int HandleTargetDestroyed(int* a2, int* a3);  // 0x41B660 (G42.42d truth arity)
     int ProcessMissionTimeout();  // 0x414A80
     int GetMissionTimer();  // 0x41A5C0
     int EvaluateTargetingState();  // 0x41A940
