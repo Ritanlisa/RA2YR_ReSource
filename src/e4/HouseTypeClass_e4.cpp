@@ -32,63 +32,63 @@
 namespace gamemd {
 unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000511650.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00511650.json)
 }
 }
 // 0x5116A0
 namespace gamemd {
 AbstractClass * HouseTypeClass::Dtor(void *a1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005116A0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005116A0.json)
 }
 }
 // 0x511850
 namespace gamemd {
 AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000511850.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00511850.json)
 }
 }
 // 0x512170
 namespace gamemd {
 AbstractClass * * HouseTypeClass::ProcessPower(int * a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512170.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512170.json)
 }
 }
 // 0x512290
 namespace gamemd {
 int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512290.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512290.json)
 }
 }
 // 0x512480
 namespace gamemd {
 void HouseTypeClass_SaveLoad_Prefix_0(HouseTypeClass *aP0)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512480.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512480.json)
 }
 }
 // 0x513370
 namespace gamemd {
 unsigned int * HouseTypeClass::readBaseDefense(VectorClass_flat * aP1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000513370.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00513370.json)
 }
 }
 // 0x67B8F0
 namespace gamemd {
 void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00067B8F0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0067B8F0.json)
 }
 }
 // 0x4756F0
 namespace gamemd {
 int HouseTypeClass::loadCountryData(unsigned char * a2, unsigned char * a3, int a4)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004756F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004756F0.json)
 }
 } // namespace gamemd
 
@@ -106,7 +106,7 @@ int HouseTypeClass::StubReturnFalse(int a1)
 namespace gamemd {
 int HouseTypeClass::LoadHouse(int a1, unsigned int * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512570.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512570.json)
 }
 } // namespace gamemd
 
@@ -114,7 +114,7 @@ int HouseTypeClass::LoadHouse(int a1, unsigned int * a2)
 namespace gamemd {
 int HouseTypeClass::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005125A0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005125A0.json)
 }
 } // namespace gamemd
 
@@ -122,7 +122,7 @@ int HouseTypeClass::QueryInterface(int a1, const void * a2, unsigned int * a3)
 namespace gamemd {
 int HouseTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512640.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512640.json)
 }
 } // namespace gamemd
 
@@ -180,7 +180,7 @@ int HouseTypeClass::Release(int a1)
 namespace gamemd {
 HouseTypeClass * HouseTypeClass::Destructor(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512760.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512760.json)
 }
 } // namespace gamemd
 
@@ -188,7 +188,7 @@ HouseTypeClass * HouseTypeClass::Destructor(char a2)
 namespace gamemd {
 wchar_t * HouseTypeClass_36::ddtor(void *a1_1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512900.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512900.json)
 }
 } // namespace gamemd
 
@@ -196,7 +196,7 @@ wchar_t * HouseTypeClass_36::ddtor(void *a1_1)
 namespace gamemd {
 unsigned int HouseTypeClass_36::Write(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512930.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512930.json)
 }
 } // namespace gamemd
 
@@ -214,7 +214,7 @@ int HouseTypeClass_36::Seek(int a2, void *a2_2, void *a3_1)
 namespace gamemd {
 unsigned int * HouseTypeClass::readStartUnit()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512960.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512960.json)
 }
 } // namespace gamemd
 
@@ -222,7 +222,7 @@ unsigned int * HouseTypeClass::readStartUnit()
 namespace gamemd {
 wchar_t * HouseTypeClass_28::ddtor()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512990.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512990.json)
 }
 } // namespace gamemd
 
@@ -230,7 +230,7 @@ wchar_t * HouseTypeClass_28::ddtor()
 namespace gamemd {
 unsigned int HouseTypeClass_28::Write(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005129C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005129C0.json)
 }
 } // namespace gamemd
 
@@ -248,7 +248,7 @@ int HouseTypeClass_28::Seek(int a2, void *a2_2, void *a3_1)
 namespace gamemd {
 TypeList_flat * HouseTypeClass_36::QueryInterface(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512A40.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512A40.json)
 }
 } // namespace gamemd
 
@@ -256,7 +256,7 @@ TypeList_flat * HouseTypeClass_36::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 TypeList_flat * HouseTypeClass_28::QueryInterface(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512A90.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512A90.json)
 }
 } // namespace gamemd
 
@@ -264,7 +264,7 @@ TypeList_flat * HouseTypeClass_28::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 VectorClass_flat * HouseTypeClass_36::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512B80.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512B80.json)
 }
 } // namespace gamemd
 
@@ -272,7 +272,7 @@ VectorClass_flat * HouseTypeClass_36::Constructor(unsigned int * Block, char a2,
 namespace gamemd {
 unsigned int * HouseTypeClass::readStartInfantry(unsigned int *aP1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000512BD0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00512BD0.json)
 }
 } // namespace gamemd
 
@@ -280,7 +280,7 @@ unsigned int * HouseTypeClass::readStartInfantry(unsigned int *aP1)
 namespace gamemd {
 char HouseTypeClass_36::AddRef(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000513010.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00513010.json)
 }
 } // namespace gamemd
 
@@ -288,7 +288,7 @@ char HouseTypeClass_36::AddRef(int a2)
 namespace gamemd {
 char HouseTypeClass_36::Release(int a2, unsigned int * a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000513240.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00513240.json)
 }
 } // namespace gamemd
 
@@ -296,14 +296,14 @@ char HouseTypeClass_36::Release(int a2, unsigned int * a3)
 namespace gamemd {
 int HouseTypeClass_36::Read(unsigned int * a2, void *a2_2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000513340.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00513340.json)
 }
 }
 // 0x5133E0
 namespace gamemd {
 char HouseTypeClass_28::AddRef(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005133E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005133E0.json)
 }
 } // namespace gamemd
 
@@ -311,7 +311,7 @@ char HouseTypeClass_28::AddRef(int a2)
 namespace gamemd {
 char HouseTypeClass_36::SetCapacity(int a2, unsigned int * a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000513420.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00513420.json)
 }
 } // namespace gamemd
 
@@ -319,7 +319,7 @@ char HouseTypeClass_36::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 int HouseTypeClass_36::IndexOf(unsigned int * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000513500.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00513500.json)
 }
 } // namespace gamemd
 
@@ -327,7 +327,7 @@ int HouseTypeClass_36::IndexOf(unsigned int * a2)
 namespace gamemd {
 unsigned int HouseTypeClass_36::PointerToIndex(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000513540.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00513540.json)
 }
 } // namespace gamemd
 
@@ -335,7 +335,7 @@ unsigned int HouseTypeClass_36::PointerToIndex(int a2)
 namespace gamemd {
 unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000513560.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00513560.json)
 }
 } // namespace gamemd
 
@@ -343,7 +343,7 @@ unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
 namespace gamemd {
 char HouseTypeClass_28::Release(int a2, unsigned int * a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000513610.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00513610.json)
 }
 } // namespace gamemd
 
@@ -351,7 +351,7 @@ char HouseTypeClass_28::Release(int a2, unsigned int * a3)
 namespace gamemd {
 char HouseTypeClass::readPowerPlants(TypeList_flat * aP1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005136C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005136C0.json)
 }
 } // namespace gamemd
 
@@ -359,14 +359,14 @@ char HouseTypeClass::readPowerPlants(TypeList_flat * aP1)
 namespace gamemd {
 int HouseTypeClass_28::Read(unsigned int * a2, void *a2_2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000513710.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00513710.json)
 }
 }
 // 0x5137D0
 namespace gamemd {
 unsigned int * HouseTypeClass::readParaDropTypes(VectorClass_flat * aP1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005137D0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005137D0.json)
 }
 } // namespace gamemd
 
@@ -374,7 +374,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass_flat * aP1)
 namespace gamemd {
 unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000513860.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00513860.json)
 }
 } // namespace gamemd
 
@@ -412,6 +412,6 @@ int HouseTypeClass::readLoadoutData(int a1)
 namespace gamemd {
 int HouseTypeClass::Find()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006A46D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006A46D0.json)
 }
 }

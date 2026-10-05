@@ -1130,6 +1130,10 @@ char FootClass::CanBeControlled() {
       if ( (uint8_t)TechnoClass::IsWaypointHidden((TechnoClass *)team) ) /*0x4da218*/
         return 1; /*0x4da225*/
     }
+    return 0;
+}
+
+} // namespace ra2::game
 
 // 0x4D9C10
 namespace ra2::game {

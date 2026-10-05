@@ -456,11 +456,21 @@ int AudioSample::Destructor() {
 
 // 0x407A90
 namespace gamemd {
-int AudioSample::Destructor()
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x407A90)
-}
-} // namespace gamemd
+int AudioSample::Destructor() {
+    Count *v2; // ecx
+    Count *v3; // ecx
+    AudioSample *v4; // ecx
+    AudioSample *v5; // ecx
+    void (__thiscall ***v6)(unsigned int, int); // ecx
+    int result; // eax
+    Voice *v8; // [esp+0h] [ebp-Ch]
+
+    if ( (AudioSample *)this->AudioSample_field_0x04 != this ) /*0x407aa4*/
+    {
+      EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407aab*/
+      LinkedList_Init((void *)this); /*0x407aaf 0x407450 真形*/
+      LeaveCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407ab9*/
+    }
 
 // 0x4080D0
 namespace gamemd {

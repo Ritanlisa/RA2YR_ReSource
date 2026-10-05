@@ -36,42 +36,42 @@
 namespace gamemd {
 AbstractClass * * SuperWeaponTypeClass::IsAvailable()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004F6540.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004F6540.json)
 }
 }
 // 0x5113F0
 namespace gamemd {
 int SuperWeaponTypeClass::Construct(char *aP1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005113F0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005113F0.json)
 }
 }
 // 0x6CEA20
 namespace gamemd {
 void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006CEA20.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006CEA20.json)
 }
 }
 // 0x6CEEB0
 namespace gamemd {
 int SuperWeaponTypeClass::FindFirstOfAction()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006CEEB0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006CEEB0.json)
 }
 }
 // 0x6CEF80
 namespace gamemd {
 int SuperWeaponTypeClass::SD_vt27(int a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006CEF80.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006CEF80.json)
 }
 }
 // 0x6CEFE0
 namespace gamemd {
 unsigned int * SuperWeaponTypeClass::SDDTOR(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006CEFE0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006CEFE0.json)
 }
 } // namespace gamemd
 
@@ -79,7 +79,7 @@ unsigned int * SuperWeaponTypeClass::SDDTOR(char a2)
 namespace gamemd {
 int SuperWeaponTypeClass::loadSWProperties(uint8_t * a2, uint8_t * a3, int a4)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000474EE0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00474EE0.json)
 }
 } // namespace gamemd
 
@@ -87,7 +87,7 @@ int SuperWeaponTypeClass::loadSWProperties(uint8_t * a2, uint8_t * a3, int a4)
 namespace gamemd {
 int SuperWeaponTypeClass::FindOrCreate(INIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000475540.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00475540.json)
 }
 } // namespace gamemd
 
@@ -95,7 +95,7 @@ int SuperWeaponTypeClass::FindOrCreate(INIClass * aP1, unsigned char * a2, CCINI
 namespace gamemd {
 int SuperWeaponTypeClass::FindByName()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005117D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005117D0.json)
 }
 } // namespace gamemd
 
@@ -104,7 +104,7 @@ namespace gamemd {
 SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
 {
     (void)aP1;
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006CE5B0.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006CE5B0.json)
 }
 } // namespace gamemd
 
@@ -112,7 +112,7 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
 namespace gamemd {
 int SuperWeaponTypeClass::SD_vt03(int a1, unsigned int * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006CE7C0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006CE7C0.json)
 }
 } // namespace gamemd
 
@@ -120,7 +120,7 @@ int SuperWeaponTypeClass::SD_vt03(int a1, unsigned int * a2)
 namespace gamemd {
 int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006CE800.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006CE800.json)
 }
 } // namespace gamemd
 
@@ -128,7 +128,7 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 namespace gamemd {
 int SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006CE8D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006CE8D0.json)
 }
 } // namespace gamemd
 
@@ -156,7 +156,7 @@ int SuperWeaponTypeClass::SD_vt12()
 namespace gamemd {
 int SuperWeaponTypeClass::SD_vt13(int * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006CE910.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006CE910.json)
 }
 } // namespace gamemd
 

@@ -3289,9 +3289,9 @@ void FileSystem::FlushTempFiles() {
 
 // 0x628110
 namespace gamemd { 
-void* FileSystem::openFile(int ()
+void * FileSystem::openFile(void * aP1)  // G42.41m: truth 0x628110; decl = file_system.hpp:98
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x628110)
+    (void)aP1; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x628110)
 }
 }
 // 0x5D87E0
