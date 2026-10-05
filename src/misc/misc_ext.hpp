@@ -5563,4 +5563,9 @@ extern void TechnoClass_CleanupDirection(int aP1);  // 0x4DB260 G42.42k supply
 extern void AbstractClass_AnnounceExpiredPointer(void * aP1, int aP2);  // 0x7258D0 G42.42k supply
 extern int AbstractClass_GetVtable3(void * aP1);  // 0x410220 G42.42k supply
 extern int CompareFunction_41C610(const void * aP1, const void * aP2);  // 0x41C610 G42.42k supply
+extern void RateScaler_Init(void * aP1, double aP2);  // G42.42l supply
+extern void * CCINIClass_GetDB(void * aP1);  // 0x473450 G42.42l supply
+extern int Object_IsAlliedWithObjectHouse(void * aP1, int aP2);  // 0x4F9A90 G42.42l supply
+extern int AbstractClass_IsTechnoType(void * aP1);  // G42.42l supply
+extern void Timer_StartDouble(void * aP1, double aP2);  // 0x4A5240 G42.42l supply
 } // namespace gamemd

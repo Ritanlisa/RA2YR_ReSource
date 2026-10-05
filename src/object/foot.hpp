@@ -153,7 +153,7 @@ virtual void vt_entry_534(int);  // 0x41C130
     virtual void UpdateAI();  // 0x4D85D0
     virtual int OverrideMission_SyncLog(); // 0x4D8F40
     virtual int ConditionalAction();  // 0x4D8F80
-    virtual int MissionDispatch(); // 0x4D8FB0
+    virtual int MissionDispatch(void * a2, int a3, void ** a4);  // 0x4D8FB0 (G42.42l truth arity)
     virtual void ProcessTeamAction();  // 0x4D9290
     virtual int AssignDestination();  // 0x4D94B0
     virtual int DispatchSell();  // 0x4D9720

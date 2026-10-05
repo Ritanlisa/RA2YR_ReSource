@@ -426,9 +426,169 @@ int AircraftClass::Mission_Transport()
     return 1;
 }
 // 0x4190b0
-int AircraftClass::MissionDispatch()
+// G42.42l FULL implementation (truth 0x4190B0; disasm-verified).  Outer
+// gate on currentMission@0xAC (codes 4/26/27/30/31 with no live airstrike
+// return 0); inner dispatch on the requested mission a3 with the aircraft
+// special cases: 8 enter-ok checks (type flag + vt97==2 + archive/dest
+// match), 14 reload (ammo@0x114 vs Type+0x5E0, locomotor stop, rate scaler
+// on Type+0x3C8 double, radio chain vt158/vt159 + team member kick),
+// 15 dock-return arithmetic, 18 building-enter split, 19 stop checks,
+// 21 timer restart + landing handoff, 23 placement, 29/31/33 ammo ladder.
+int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004190B0.json)
+    unsigned int loco;
+    switch (*(int *)((char *)this + 0xAC))
+    {
+    case 4:
+    case 26:
+    case 27:
+    case 30:
+    case 31:
+        if (airstrike != nullptr)
+            break;  // -> inner switch
+        return 0;
+    default:
+        break;      // -> inner switch
+    }
+
+    switch (a3)
+    {
+    case 8:
+        if (*(unsigned char *)((char *)Type + 0xDFC) != 0
+         && (*(int (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 97))(this) == 2
+         && *(unsigned char *)((char *)this + 0x418) != 0
+         && (*(int *)((char *)this + 0x118) == 0
+             ? (void *)movementDestination == a2
+             : CCINIClass_GetDB((void *)((char *)this + 0x114)) == a2))
+        {
+            return 10;
+        }
+        return FootClass::MissionDispatch(a2, a3, a4);
+
+    case 14:
+    {
+        int cap = *(int *)((char *)Type + 0x5E0);
+        if (cap <= 0 || *(int *)((char *)this + 0x114) >= cap)
+            return FootClass::MissionDispatch(a2, a3, a4);
+        FootClass::MissionDispatch(a2, a3, a4);
+        loco = *(unsigned int *)&locomotor;
+        if (loco == 0)
+            WinAPI_Wrapper((int)0x80004003);
+        if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) != 0)
+            return 1;
+        RateScaler_Init((void *)((char *)this + 0x350), *(double *)((char *)Type + 0x3C8));
+        if ((*(int (__thiscall **)(AircraftClass *, int, void *))(*(unsigned int **)this + 158))(this, 19, a2) != 1)
+            return 1;
+        *a4 = this;
+        if ((*(int (__thiscall **)(AircraftClass *, int, void **, void *))(*(unsigned int **)this + 159))(this, 18, a4, a2) == 1)
+        {
+            int member = Team_GetMember((int)this, 0);
+            (*(void (__thiscall **)(int))(*(unsigned int **)(void *)member + 336))(member);
+            return 1;
+        }
+        (*(void (__thiscall **)(AircraftClass *, int, void *))(*(unsigned int **)this + 158))(this, 3, a2);
+        return 1;
+    }
+
+    case 15:
+    {
+        int cap = *(int *)((char *)Type + 0x5E0);
+        if (cap == 0 || a2 == 0
+         || Object_IsAlliedWithObjectHouse(owner, (int)a2) == 0)
+            return FootClass::MissionDispatch(a2, a3, a4);
+        int v16 = (*(int *)((char *)this + 0x114) >= cap) - 1;
+        return (char)(v16 & 0xF7) + 10;
+    }
+
+    case 18:
+    {
+        int baseResult = FootClass::MissionDispatch(a2, a3, a4);
+        void *v8 = *a4;
+        if (*a4 != nullptr && (*(int (__thiscall **)(void *))(*(unsigned int **)v8 + 11))(v8) == 6)
+        {
+            int v10 = AbstractClass_IsTechnoType(v8);
+            if ((*(int (__thiscall **)(AircraftClass *, int, void *))(*(unsigned int **)this + 158))(this, 15, (void *)v10) != 1)
+                return 10;
+            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 7, 0);
+        }
+        else
+        {
+            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 0);
+        }
+        (void)baseResult;
+        (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, v8, 1);
+        (*(void (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 123))(this);
+        return 1;
+    }
+
+    case 19:
+    {
+        int baseResult = FootClass::MissionDispatch(a2, a3, a4);
+        loco = *(unsigned int *)&locomotor;
+        if (loco == 0)
+            WinAPI_Wrapper((int)0x80004003);
+        if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0)
+            return 1;
+        if (movementDestination == nullptr)
+            return 1;
+        if (*(unsigned char *)((char *)Type + 0x13D) != 0
+         && movementDestination != nullptr
+         && (*(int (__thiscall **)(void *))(*(unsigned int **)(void *)movementDestination + 11))(movementDestination) == 11
+         && (void *)*(int *)((char *)this + 0x2B4) == (*(void *(__thiscall **)(AircraftClass *))(*(unsigned int **)this + 111))(this))
+        {
+            return 1;
+        }
+        return 10;
+        (void)baseResult;
+    }
+
+    case 21:
+    {
+        if (*(int *)((char *)this + 0x114) == *(int *)((char *)Type + 0x5E0))
+            Timer_StartDouble((void *)((char *)this + 0x350), *(double *)((char *)Type + 0x3C8));
+        if (a2 != nullptr)
+        {
+            void *v13 = (*(int (__thiscall **)(void *))(*(unsigned int **)(void *)a2 + 44))(a2) == 15 ? a2 : nullptr;
+            if (v13 != nullptr)
+            {
+                if (*(unsigned char *)(*(int *)((char *)v13 + 0x6C0) + 3777) != 0
+                 && *(unsigned char *)((char *)v13 + 1753) == 0)
+                {
+                    (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 242))(this, 0);
+                    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 288))(this, 0, 1);
+                    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 4, 0);
+                }
+            }
+        }
+        return 5;
+    }
+
+    case 23:
+    {
+        (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 0);
+        void *cpc = TechnoClass_FindClosestPlacementCell((int)this);
+        (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, cpc, 1);
+        (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 157))(this, 3);
+        return FootClass::MissionDispatch(a2, a3, a4);
+    }
+
+    case 29:
+        if (*(void **)((char *)this + 0x2B4) != nullptr)
+            return 10;
+        return *(int *)((char *)Type + 0x684) != *(int *)((char *)this + 0x2FC) ? 10 : 1;
+
+    case 31:
+        if (*(int *)((char *)this + 0x2FC) < *(int *)((char *)Type + 0x684) / 2
+         || *(void **)((char *)this + 0x2B4) == nullptr)
+            return FootClass::MissionDispatch(a2, a3, a4);
+        return 1;
+
+    case 33:
+        return *(int *)((char *)Type + 0x684) != *(int *)((char *)this + 0x2FC) ? 10 : 1;
+
+    default:
+        return FootClass::MissionDispatch(a2, a3, a4);
+    }
 }
 // 0x414310
 // G42.42f FULL implementation (truth 0x414310): height-aware dispatch.

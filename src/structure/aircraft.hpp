@@ -83,7 +83,7 @@ public:
     int Mission_Retreat() override;
     int Mission_Enter() override;
     int Mission_Transport();  // 0x419C80
-    int MissionDispatch();  // 0x4190B0
+    int MissionDispatch(void * a2, int a3, void ** a4);  // 0x4190B0 (G42.42l truth arity)
 
     // === Phase 3: Flight Paths ===
     int MoveTo(int* a2, int a3);  // 0x414310 (G42.42f truth arity)
