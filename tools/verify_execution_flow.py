@@ -2074,6 +2074,35 @@ def _pool_verify(task):
 # Main (unchanged from original)
 # ===================================================================
 
+
+def stub_sweep(roots=("src",)):
+    """G42.42n (user order 2026-10-05): any 'TODO stub' body is a FAILURE
+    regardless of signals/completed state.  The completed-only verify path
+    never sees quarantined stubs (they are completed=False or absent from
+    signals.json), so stubs sailed through silently.  This sweep closes that
+    blind spot: it reports every stub body and exits non-zero when any exist.
+    Returns (count, [(file, line, func_or_?)]) ."""
+    func_head = re.compile(r"^[\w:&*<>, ]+?(\w+)::(\w+)\s*\(")
+    hits = []
+    for root in roots:
+        base = Path(PROJECT_ROOT, root)
+        if not base.exists():
+            continue
+        for pf in sorted(base.rglob("*.cpp")):
+            try:
+                lines = pf.read_text(encoding="utf-8", errors="replace").splitlines()
+            except Exception:
+                continue
+            cur = None
+            for i, l in enumerate(lines, 1):
+                m = func_head.match(l.strip())
+                if m:
+                    cur = "{}::{}".format(m.group(1), m.group(2))
+                if "TODO stub" in l:
+                    hits.append((str(pf), i, cur or "?"))
+    return len(hits), hits
+
+
 def main():
     import argparse
     p = argparse.ArgumentParser(description="Verify C++ translation flow against IDA.")
@@ -2096,10 +2125,21 @@ def main():
                    help="(--auto) shard the verify over N worker processes; "
                         "each loads the big maps + cpp source index "
                         "(~400MB RSS measured; keep <= 8, hard cap 12)")
+    p.add_argument("--stub-sweep", action="store_true",
+                   help="G42.42n: FAIL on any 'TODO stub' body anywhere in src/ "
+                        "(closes the completed-only blind spot; exit 1 if any)")
     p.add_argument("--no-cache", action="store_true",
                    help="(--auto) disable the incremental PASS cache "
                         "(full re-verify of every completed function)")
     args = p.parse_args()
+
+    if args.stub_sweep:
+        n, hits = stub_sweep()
+        for f, ln, fn in hits:
+            print("FAIL: {}:{} -- stub-body: {} (G42.42n sweep: TODO stub is "
+                  "a failed translation, not a completed one)".format(f, ln, fn))
+        print("stub-sweep: {} stub bod{} in src/".format(n, 'y' if n == 1 else 'ies'))
+        sys.exit(1 if n else 0)
 
     M = load_all_maps()
 
