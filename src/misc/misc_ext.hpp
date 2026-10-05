@@ -5556,4 +5556,11 @@ extern void FootClass_MissionMoveCarryallLand(int aP1);  // G42.42i supply
 extern void CellClass_AddObject(void * aP1, void * aP2);  // G42.42i supply
 extern void * LinkedList_Pop(void * aP1);  // G42.42i supply
 extern void * Cell_IsBridge(void * aP1);  // G42.42i supply
+extern int HouseClass_CanBuild(void * aP1, int aP2, int aP3, int aP4);  // 0x4F7870 G42.42k supply
+extern void HouseClass_DecrementUnitCount(void * aP1, void * aP2);  // 0x4FF550 G42.42k supply
+extern void TechnoClass_CleanupAll(int aP1, int aP2);  // 0x707CB0 G42.42k supply
+extern void TechnoClass_CleanupDirection(int aP1);  // 0x4DB260 G42.42k supply
+extern void AbstractClass_AnnounceExpiredPointer(void * aP1, int aP2);  // 0x7258D0 G42.42k supply
+extern int AbstractClass_GetVtable3(void * aP1);  // 0x410220 G42.42k supply
+extern int CompareFunction_41C610(const void * aP1, const void * aP2);  // 0x41C610 G42.42k supply
 } // namespace gamemd

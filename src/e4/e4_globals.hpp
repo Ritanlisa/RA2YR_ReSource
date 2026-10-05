@@ -15567,3 +15567,10 @@ extern int dword_B77DC8;  // G42.42a supply
 extern int dword_B77DD0;  // G42.42a supply
 extern int dword_B77DD4;  // G42.42a supply (lobby id)
 extern unsigned int dword_A8ED84;  // G42.42f supply (MoveTo animation seed frame)
+extern unsigned char byte_A8E9A0;  // G42.42k supply (Destruct init-phase guard)
+extern unsigned int dword_A8E390;  // G42.42k supply (aircraft index container)
+extern unsigned int dword_A8E394;  // G42.42k supply (item array)
+extern unsigned int dword_A8E3A0;  // G42.42k supply (count)
+extern unsigned int vt_AircraftClass_0;  // 0x7E22A4 G42.42k supply
+extern unsigned int vt_AircraftClass_1;  // 0x7E2280 G42.42k supply
+extern void * vt_AircraftClass_6;  // 0x7E2250 G42.42k supply (Destruct [this+0x6C0])

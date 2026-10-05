@@ -937,9 +937,118 @@ int AircraftClass::LoadFromStream()
 
 // IDA: 0x414080 (Destruct, 513B)
 // 0x414080
+// G42.42k FULL implementation (truth 0x414080 + disasm): deleting-destructor.
+//   Installs the five AircraftClass sub-vtables, then under the init-phase
+//   guard: tech-tree recheck when the type became unbuildable, full techno
+//   cleanup, team liberation, house unit-count decrement, direction cleanup.
+//   Removes the object from the aircraft index (A8E390 family: index lookup +
+//   shift-compact) and from the building load queue (lazy qsort + binary
+//   search pair-removal), clears 0x6CC, and finishes with FootClass::Destruct.
 void AircraftClass::Destruct()
 {
-      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00414080.json)
+    unsigned int self = (unsigned int)this;
+    *(unsigned int *)(self) = (unsigned int)vt_AircraftClass_5;          // 0x7E22A4
+    *(unsigned int *)(self + 8) = (unsigned int)vt_AircraftClass_3;      // 0x7E2280
+    *(unsigned int *)(self + 0xC) = (unsigned int)vt_AircraftClass_2;    // 0x7E2278
+    *(unsigned int *)(self + 4) = (unsigned int)vt_AircraftClass_4;      // 0x7E2288
+    *(unsigned int *)(self + 0x6C0) = (unsigned int)vt_AircraftClass_6;  // 0x7E2250
+
+    if (byte_A8E9A0 != 0)
+    {
+        if (Type != nullptr)
+        {
+            if (HouseClass_CanBuild(owner, (int)Type, 0, 0) == -1)
+                *(unsigned char *)((char *)owner + 0x2D1) = 1;  // owner->recheckTechTree
+            TechnoClass_CleanupAll((int)this, 0);
+            if (team != nullptr)
+            {
+                ((gamemd::TeamClass *)team)->LiberateMember_Start(this, -1, 0);
+                team = nullptr;
+            }
+            HouseClass_DecrementUnitCount(owner, this);
+            TechnoClass_CleanupDirection((int)this);
+            Type = nullptr;
+        }
+    }
+    AbstractClass_AnnounceExpiredPointer((void *)this, 1);
+
+    // aircraft index removal (A8E390 container: vt+16 lookup, shift-compact)
+    {
+        unsigned int me = self;
+        int idx = (*(int (__thiscall **)(unsigned int *, unsigned int *))(*(unsigned int **)dword_A8E390 + 4))(&dword_A8E390, &me);
+        --dword_A8E3A0;
+        if (idx != -1 && idx < (int)dword_A8E3A0)
+        {
+            do
+            {
+                ++idx;
+                *((unsigned int *)dword_A8E394 + idx - 1) = *((unsigned int *)dword_A8E394 + idx);
+            }
+            while (idx < (int)dword_A8E3A0);
+        }
+    }
+
+    // building load queue removal (lazy qsort + binary search on pairs)
+    {
+        int vtable3 = AbstractClass_GetVtable3((void *)(self + 4));
+        unsigned int queue = (unsigned int)&g_BuildingLoadQueue_Array;
+        unsigned int items = *(unsigned int *)(queue + 4);
+        unsigned int count = *(unsigned int *)(queue + 8);
+        unsigned char sorted = *(unsigned char *)(queue + 12);
+        if (count != 0)
+        {
+            if (sorted == 0)
+            {
+                qsort((void *)items, (unsigned int)count, 8u, CompareFunction_41C610);
+                count = *(unsigned int *)(queue + 8);
+                *(unsigned int *)(queue + 8) = count;
+                *(unsigned char *)(queue + 12) = 1;
+            }
+            unsigned int *arr = (unsigned int *)items;
+            int lo = (int)count;
+            while (lo > 0)
+            {
+                int half = lo / 2;
+                unsigned int cand = arr[2 * half];
+                unsigned int *slot = &arr[2 * half];
+                if ((unsigned int)vtable3 >= cand)
+                {
+                    if (cand == (unsigned int)vtable3)
+                    {
+                        if (slot != nullptr)
+                        {
+                            int pos = (int)(((char *)slot - (char *)items) >> 3);
+                            if (pos != -1)
+                            {
+                                int k = pos + 1;
+                                while (k < (int)count)
+                                {
+                                    unsigned int *dst = (unsigned int *)((char *)items + 8 * k);
+                                    ++k;
+                                    *(dst - 2) = *dst;
+                                    *(dst - 1) = dst[1];
+                                }
+                                --count;
+                                *(unsigned int *)(queue + 8) = (unsigned int)count;
+                                *((unsigned int *)items + 2 * count) = 0;
+                                *((unsigned int *)items + 2 * count + 1) = 0;
+                                *(unsigned char *)(queue + 12) = 0;
+                            }
+                        }
+                        break;
+                    }
+                    arr = (unsigned int *)((char *)slot + 8);
+                    lo += -1 - lo / 2;
+                }
+                else
+                {
+                    lo /= 2;
+                }
+            }
+        }
+    }
+    AircraftClass_field_6CC = 0;
+    this->FootClass::~FootClass();  // G42.42k: base deleting-dtor tail (0x4D3590)
 }
 // IDA: 0x417CC0 (GetCursorOverObject, 692B)
 int AircraftClass::GetActionOnObject()
