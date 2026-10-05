@@ -35,6 +35,10 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/PowerClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Matrix3x3_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Turret_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Transform_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TechnoClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x483610
 namespace gamemd {

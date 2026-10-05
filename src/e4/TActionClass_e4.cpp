@@ -41,6 +41,9 @@
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/Return_e4.hpp"
 #include "e4/classes/SuperClass_e4.hpp"
+#include "e4/classes/RadarClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Process_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4FCDC0
 namespace gamemd {

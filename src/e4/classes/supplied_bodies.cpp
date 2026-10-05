@@ -1180,7 +1180,7 @@ const char * ScriptAction::ParseScriptActionParams()
         }
         else
         {
-          this->ScriptAction_field_0x30 = *(void **)(*(unsigned int *)&stru_A8EB00.?[192] + 4 * v6); /*0x6dd645*/
+          this->ScriptAction_field_0x30 = *(void **)(*(unsigned int * *)((char *)&stru_A8EB00 + 420) + 4 * v6); /*0x6dd645*/
         }
         break; /*0x6dd627*/
       case 2: /*0x6dd60d*/

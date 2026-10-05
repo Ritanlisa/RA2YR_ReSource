@@ -1566,7 +1566,7 @@ int BuildingClass::CreateUnits()
     ProduceCashDelay = Type->ProduceCashDelay; /*0x445fa5*/
     if ( ProduceCashDelay ) /*0x445fad*/
     {
-      *(unsigned int *)&this->__pad_6B8[24] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x445fbb*/
+      *(unsigned int *)&this->__pad_6B8[24] = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x445fbb*/
       *(unsigned int *)&this->__pad_6B8[28] = v130; /*0x445fc5*/
       *(unsigned int *)&this->__pad_6B8[32] = ProduceCashDelay; /*0x445fc8*/
     }
@@ -1705,10 +1705,10 @@ int BuildingClass::CreateUnits()
                 v56 = v54[12]; /*0x446441*/
                 if ( v56 != -1 ) /*0x446446*/
                 {
-                  if ( *(unsigned int *)&stru_A8EB00.?[416] - v56 >= v55 ) /*0x446452*/
+                  if ( *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v56 >= v55 ) /*0x446452*/
                     v55 = 0; /*0x446458*/
                   else
-                    v55 -= *(unsigned int *)&stru_A8EB00.?[416] - v56; /*0x446454*/
+                    v55 -= *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v56; /*0x446454*/
                 }
                 if ( 60 * (v55 / 15) > 4 ) /*0x44647b*/
                 {
@@ -1984,7 +1984,7 @@ int BuildingClass::CreateUnits()
           1,
           dword_A83D4C,
           0);
-        v129 = this->?[0]; /*0x446839*/
+        v129 = *(unsigned int *)((char *)this + 608); /*0x446839*/
         v84 = this->? + 3; /*0x446846*/
         v130 = this->?[1]; /*0x446849*/
         v131 = this->?[2]; /*0x446855*/
@@ -2020,7 +2020,7 @@ int BuildingClass::CreateUnits()
               VoxClass::FindAndPlay((VoxClass *)&stru_818E00.?[5], -1); /*0x446971*/
               break; /*0x446971*/
             case 3: /*0x446948*/
-              VoxClass::FindAndPlay((VoxClass *)&stru_818E00.?[20], -1); /*0x446995*/
+              VoxClass::FindAndPlay((VoxClass * *)((char *)&stru_818E00 + 1312), -1); /*0x446995*/
               break; /*0x446995*/
             case 7: /*0x446948*/
               VoxClass::FindAndPlay((VoxClass *)stru_818E00.?, -1); /*0x44697d*/
@@ -2037,7 +2037,7 @@ int BuildingClass::CreateUnits()
     v89 = this->Type; /*0x44699a*/
     if ( v89->WeaponsFactory ) /*0x4469a0*/
     {
-      if ( v89->?[1] ) /*0x4469ae*/
+      if ( *(unsigned int *)((char *)v89 + 3278) ) /*0x4469ae*/
       {
         if ( !this->? ) /*0x4469bc*/
         {
@@ -2084,7 +2084,7 @@ int BuildingClass::CreateUnits()
       if ( !dword_A8E7AC ) /*0x446ac4*/
       {
         result = v133; /*0x446aca*/
-        if ( !v133 && !stru_A8EB00.?[391] ) /*0x446add*/
+        if ( !v133 && !*(unsigned int *)((char *)&stru_A8EB00 + 619) ) /*0x446add*/
         {
           if ( !(unsigned __int8)House::IsCurrentPlayer((House *)this->?) /*0x446b10*/
             || !this->?
@@ -2111,13 +2111,13 @@ int BuildingClass::CreateUnits()
               IDA_HIDWORD(v127) = 0; /*0x446bea*/
               v129 = this->?[0]; /*0x446bfa*/
               v130 = this->?[1]; /*0x446c08*/
-              v131 = this->?[2]; /*0x446c13*/
+              v131 = *(unsigned int *)((char *)this + 8); /*0x446c13*/
               IDA_LOWORD(v127) = v129 / 256; /*0x446c23*/
               *(unsigned int *)((char *)&v127 + 2) = (unsigned __int16)(v130 / 256); /*0x446c3a*/
               v128 = v127; /*0x446c43*/
-              v129 = this->?[0]; /*0x446c49*/
+              v129 = *(unsigned int *)((char *)this + 4); /*0x446c49*/
               v130 = this->?[1]; /*0x446c50*/
-              v131 = this->?[2]; /*0x446c5b*/
+              v131 = *(unsigned int *)((char *)this + 8); /*0x446c5b*/
               IDA_LOWORD(v127) = v129 / 256; /*0x446c6b*/
               v102 = v99[433]; /*0x446c7d*/
               IDA_WORD1(v127) = v130 / 256; /*0x446c86*/
@@ -2153,13 +2153,13 @@ int BuildingClass::CreateUnits()
               }
               IDA_LODWORD(v127) = 0; /*0x446d36*/
               v129 = *location; /*0x446d44*/
-              v130 = this->?[1]; /*0x446d52*/
-              v131 = this->?[2]; /*0x446d5f*/
+              v130 = *(unsigned int *)((char *)this + 8); /*0x446d52*/
+              v131 = *(unsigned int *)((char *)this + 8); /*0x446d5f*/
               IDA_WORD2(v127) = v129 / 256; /*0x446d6f*/
-              v106 = this->?[1]; /*0x446d81*/
+              v106 = *(unsigned int *)((char *)this + 4); /*0x446d81*/
               IDA_HIWORD(v127) = v130 / 256; /*0x446d87*/
               v130 = v106; /*0x446d90*/
-              v107 = this->?[2]; /*0x446d94*/
+              v107 = *(unsigned int *)((char *)this + 8); /*0x446d94*/
               v128 = IDA_HIDWORD(v127); /*0x446d97*/
               v108 = *location; /*0x446d9b*/
               v131 = v107; /*0x446d9d*/

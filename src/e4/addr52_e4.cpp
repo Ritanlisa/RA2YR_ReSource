@@ -65,6 +65,13 @@
 #include "e4/classes/E4Recv_5176D0_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/BombClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TextBuffer_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/BitTextClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Palette_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x522100
 namespace gamemd {

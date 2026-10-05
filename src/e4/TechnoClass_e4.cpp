@@ -35,6 +35,8 @@
 #include "e4/classes/ThemeClass_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
 #include "e4/classes/AudioFileClass_e4.hpp"
+#include "e4/classes/Delegate_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/FrameSnapshot_e4.hpp"  // G42.36 C2027 supply
 
 // 0x41A9E0
 namespace gamemd {

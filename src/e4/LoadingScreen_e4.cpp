@@ -16,6 +16,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Lobby_e4.hpp"
 #include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x642B60
 namespace gamemd {

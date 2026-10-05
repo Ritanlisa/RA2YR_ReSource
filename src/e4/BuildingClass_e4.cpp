@@ -34,6 +34,7 @@
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/SuperWeapon_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x453E20
 namespace gamemd {
@@ -803,7 +804,7 @@ void* BuildingClass_ProcessSell()
           v25 = (*(int (__thiscall **)(int))(*(unsigned int *)v24 + 700))(v24); /*0x73a14a*/
           HouseClass::AddPower(*(HouseClass **)(v11 + 540), v25); /*0x73a157*/
           v26 = (unsigned int *)(*(unsigned int *)(*(unsigned int *)(_EBP + 1684) + 1692) + 44); /*0x73a172*/
-          *v26 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x73a175*/
+          *v26 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x73a175*/
           v26[1] = v111; /*0x73a17b*/
           v26[2] = 50; /*0x73a17e*/
           BuildingClass::Deploy((BuildingClass *)v107, _EBP, (int)p_ComPtr_field_0x14); /*0x73a18d*/
@@ -1196,7 +1197,7 @@ void* BuildingClass_ProcessSell()
       if ( !*(unsigned int *)(_EBP + 1444) && *(unsigned int *)(_EBP + 1504) == -1 && !*(unsigned char *)(*(unsigned int *)(_EBP + 1732) + 1710) ) /*0x73ade3*/
       {
         v86 = (*(int (__thiscall **)(int, int))(*(unsigned int *)_EBP + 792))(_EBP, 1); /*0x73adf4*/
-        *(unsigned int *)(_EBP + 748) = *(unsigned int *)&stru_A8EB00.?[416]; /*0x73ae0f*/
+        *(unsigned int *)(_EBP + 748) = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x73ae0f*/
         *(unsigned int *)(_EBP + 752) = v111; /*0x73ae15*/
         *(unsigned int *)(_EBP + 756) = v86 / 4; /*0x73ae18*/
       }

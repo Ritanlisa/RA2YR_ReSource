@@ -42,6 +42,9 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Game_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/NukeFlash_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/PsyDom_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x44F820
 namespace gamemd {

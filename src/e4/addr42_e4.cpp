@@ -51,6 +51,10 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/BuildingClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/AnimClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x420140
 namespace gamemd {

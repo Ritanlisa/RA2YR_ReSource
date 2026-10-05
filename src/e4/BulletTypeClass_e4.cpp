@@ -27,6 +27,8 @@
 #include "e4/classes/Checksummer_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/ShipLocomotionClass_e4.hpp"
+#include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/AnimClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x465450
 namespace gamemd {

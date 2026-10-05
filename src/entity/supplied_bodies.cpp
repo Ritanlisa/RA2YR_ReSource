@@ -26,7 +26,7 @@ int AnimClass::SimpleCtor()
     ObjectClass::ctor((ObjectClass *)this); /*0x422724*/
     this->AnimClass_field_0xAC = 0; /*0x422730*/
     this->__pad_B0[0] = 0; /*0x422736*/
-    v2 = *(IUnknown **)&stru_A8EB00.?[416]; /*0x42273c*/
+    v2 = *(IUnknown ** *)((char *)&stru_A8EB00 + 644); /*0x42273c*/
     this->AnimClass_field_0xBC = 0; /*0x422741*/
     this->AnimClass_field_0xB4 = v2; /*0x422747*/
     this->AnimClass_field_0xC0 = 0; /*0x422750*/
@@ -539,9 +539,9 @@ int AnimClass::setLoopCount()
       if ( UnitExitSound != -1 /*0x449b67*/
         || (UnitExitSound = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1736), UnitExitSound != -1) )
       {
-        v9[0] = this->?[0]; /*0x449b75*/
-        v9[1] = this->?[1]; /*0x449b7c*/
-        v9[2] = this->?[2]; /*0x449b8e*/
+        v9[0] = *(unsigned int *)((char *)this + 4); /*0x449b75*/
+        v9[1] = *(unsigned int *)((char *)this + 4); /*0x449b7c*/
+        v9[2] = *(unsigned int *)((char *)this + 8); /*0x449b8e*/
         StartAudioControllerAt(UnitExitSound, v9, (int **)&this->WasOnline); /*0x449b92*/
       }
       this->? = 1; /*0x449b97*/
@@ -551,9 +551,9 @@ int AnimClass::setLoopCount()
     if ( missionStatus != 1 ) /*0x449a67*/
       return 1; /*0x449a67*/
     this->? = 1; /*0x449a79*/
-    v8[0] = this->?[0]; /*0x449a82*/
-    v8[1] = this->?[1]; /*0x449a8d*/
-    v8[2] = this->?[2]; /*0x449a96*/
+    v8[0] = *(unsigned int *)((char *)this + 4); /*0x449a82*/
+    v8[1] = *(unsigned int *)((char *)this + 4); /*0x449a8d*/
+    v8[2] = *(unsigned int *)((char *)this + 8); /*0x449a96*/
     StartAudioController(v8, (int **)&this->WasOnline); /*0x449a9a*/
     if ( !this->BuildingClass_field_bool_6DD ) /*0x449a9f*/
       return 1; /*0x449ba9*/

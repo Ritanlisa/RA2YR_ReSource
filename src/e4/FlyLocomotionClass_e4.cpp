@@ -18,6 +18,7 @@
 #include "e4/classes/FoggedObjectClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/SwizzleManager_e4.hpp"
+#include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x4CC9A0
 namespace gamemd {

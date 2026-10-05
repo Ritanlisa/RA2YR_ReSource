@@ -25,6 +25,9 @@
 #include "e4/classes/LightSourceClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/MessageListClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Return_e4.hpp"  // G42.36 C2027 supply
 
 // 0x539EB0
 namespace gamemd {

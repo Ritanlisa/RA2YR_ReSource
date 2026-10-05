@@ -38,6 +38,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/E4Recv_425670_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Coord2D_e4.hpp"  // G42.36 C2027 supply
 
 // 0x431BC0
 namespace gamemd {

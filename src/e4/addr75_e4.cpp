@@ -72,6 +72,7 @@
 #include "e4/classes/AudioPool_e4.hpp"
 #include "e4/classes/AudioSource_e4.hpp"
 #include "e4/classes/WDTClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x750920
 namespace gamemd {

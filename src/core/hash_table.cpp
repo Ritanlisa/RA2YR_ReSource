@@ -37,14 +37,14 @@ void Hash::InsertOrdered(void* table, const void* entry)
     {
       IDA_LOBYTE(result) = 0; /*0x4f441f*/
     }
-    else if ( *(unsigned int *)&stru_A8EB00.?[880] ) /*0x4f442c*/
+    else if ( *(unsigned int * *)((char *)&stru_A8EB00 + 1108) ) /*0x4f442c*/
     {
-      result = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a2 + 16))(a2, *(unsigned int *)&stru_A8EB00.?[880]); /*0x4f4433*/
+      result = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a2 + 16))(a2, *(unsigned int * *)((char *)&stru_A8EB00 + 1108)); /*0x4f4433*/
       IDA_LOBYTE(result) = 1; /*0x4f4436*/
     }
     else
     {
-      *(unsigned int *)&stru_A8EB00.?[880] = a2; /*0x4f443c*/
+      *(unsigned int * *)((char *)&stru_A8EB00 + 1108) = a2; /*0x4f443c*/
       return 1; /*0x4f4442*/
     }
     return result; /*0x4f4421*/

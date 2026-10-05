@@ -8,6 +8,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
+#include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x691000
 namespace gamemd {

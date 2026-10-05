@@ -66,10 +66,10 @@ bool ObjectClass::Remove()
     if ( (unsigned char)result ) /*0x5f44ac*/
     {
       v4 = this; /*0x5f44be*/
-      v3 = (*(int (__thiscall **)(unsigned char *, IUnknown **))(*(unsigned int *)&stru_A8EB00.?[212] + 16))(&stru_A8EB00.?[212], &v4); /*0x5f44c2*/
-      if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.?[228] ) /*0x5f44d2*/
+      v3 = (*(int (__thiscall **)(unsigned char *, IUnknown **))(*(unsigned int * *)((char *)&stru_A8EB00 + 440) + 16))(((char *)&stru_A8EB00 + 440), &v4); /*0x5f44c2*/
+      if ( v3 != -1 && v3 < *(int * *)((char *)&stru_A8EB00 + 456) ) /*0x5f44d2*/
       {
-        --*(unsigned int *)&stru_A8EB00.?[228]; /*0x5f44d7*/
+        --*(unsigned int * *)((char *)&stru_A8EB00 + 456); /*0x5f44d7*/
         for ( ; /*0x5f44dd*/
               v3 < *(int *)&stru_A8EB00.?[228];
               *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[216] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[216]

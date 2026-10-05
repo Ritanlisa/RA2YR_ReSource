@@ -5,6 +5,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class Bootstrap;  // G42.36 fwd supply
 struct MixHeaderData;  // fix_fwd_type_supply
 
 struct MixFileClass {
@@ -33,6 +34,7 @@ struct MixFileClass {
     unsigned int * FromFile(char *aP1, int a3);  // was C2597 interim stub, := truth 0x0x5b3c20
     static double GetSubFile(...);  // C2597 interim stub
     static double LoadSubFile(...);  // C2597 interim stub
+    if ( ! Bootstrap());
 };
 
 } // namespace gamemd

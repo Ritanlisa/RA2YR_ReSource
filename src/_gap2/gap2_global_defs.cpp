@@ -17,6 +17,7 @@
 #include "e4/classes/CellClass_e4.hpp"  // G42.39a body supply
 #include "e4/classes/TeamClass_e4.hpp"  // G42.39a body supply
 #include "e4/classes/ProgressTimer_e4.hpp"  // G42.39a body supply
+#include "e4/classes/RefCount_e4.hpp"  // G42.36 C2027 supply
 
 // forward declarations for data-global pointer types
 namespace gamemd { class HouseTypeClass; }
@@ -1204,7 +1205,7 @@ char Gap2Recv_42B210::ParsePathDirections(int a2, void* a3)
           }
           else
           {
-            *(unsigned int *)v18 = *(unsigned int *)(*(unsigned int *)(FootClass_Array.?[3] + 4 * v13) + 40); /*0x42b303*/
+            *(unsigned int *)v18 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)((char *)&FootClass_Array + 892) + 4 * v13) + 40); /*0x42b303*/
           }
         }
         else
@@ -3315,9 +3316,9 @@ int Gap2Recv_47BDB0::GetBridgeCellColor(char* a2, char a3)
       attachedBomb = this->attachedBomb; /*0x47bfa8*/
       v14 = (BombClass *)dword_AA10B0; /*0x47bfab*/
       if ( attachedBomb == (BombClass *)0xFFFF ) /*0x47bfbc*/
-        v15 = *(ObjectClass **)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * dword_AA10B0); /*0x47bfc3*/
+        v15 = *(ObjectClass **)(*(unsigned int * *)((char *)&stru_A8EB00 + 556) + 4 * dword_AA10B0); /*0x47bfc3*/
       else
-        v15 = *(ObjectClass **)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * (unsigned int)attachedBomb); /*0x47bfbe*/
+        v15 = *(ObjectClass **)(*(unsigned int * *)((char *)&stru_A8EB00 + 556) + 4 * (unsigned int)attachedBomb); /*0x47bfbe*/
       inited = 0; /*0x47bfc6*/
       if ( attachedBomb == (BombClass *)0xFFFF ) /*0x47bfce*/
       {
@@ -4100,7 +4101,7 @@ int Gap2Recv_4C54E0::ApplyEMPPulseEffect(int a2)
     unsigned int v39[3]; // [esp+40h] [ebp-Ch] BYREF
 
     result = (int)this->nextObject + this->fallRate; /*0x4c54f3*/
-    if ( result > *(int *)&stru_A8EB00.?[416] ) /*0x4c54f9*/
+    if ( result > *(int * *)((char *)&stru_A8EB00 + 644) ) /*0x4c54f9*/
     {
       v34 = this->owningHouseIndex * this->owningHouseIndex; /*0x4c5509*/
       v4 = 0; /*0x4c5513*/

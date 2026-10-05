@@ -148,5 +148,6 @@ struct Dialog {
     HWND RestoreParent();  // 0x777060
     char UpdateGameUI();  // 0x77D820
     HWND CloseAll();  // 0x799D10
+    AbstractClass * * MapControlToAction(HWND hWnd, LPARAM, void * a2);
 };
 } // namespace gamemd

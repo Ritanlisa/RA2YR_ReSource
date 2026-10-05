@@ -6,7 +6,7 @@
 
 namespace gamemd {
 // 0x55a9b0
-HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv)
+HRESULT __stdcall LocomotionClass::QueryInterface(const IID& a2, void** a3)
 {
     char *v4; // ecx
     char *v5; // ecx
@@ -119,7 +119,7 @@ bool LocomotionClass::Process()
     LocomotionClass::Init(this); /*0x69ec53*/
     *((unsigned int *)this + 7) = 0; /*0x69ec5d*/
     *((unsigned int *)this + 8) = 0; /*0x69ec60*/
-    v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x69ec63*/
+    v2 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x69ec63*/
     *((unsigned int *)this + 11) = 0; /*0x69ec69*/
     *((unsigned int *)this + 9) = v2; /*0x69ec6c*/
     *((unsigned int *)this + 12) = 0; /*0x69ec6f*/

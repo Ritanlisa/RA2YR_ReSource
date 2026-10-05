@@ -24,6 +24,7 @@
 #include "e4/classes/INIEntry_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x48ACF0
 namespace gamemd {
@@ -1108,7 +1109,7 @@ int RulesClass::readWarheads()
 }
 }  // G42.18c ns repair
 // 0x67A8E0
-int  RulesClass::readParticleSystems(TechnoTypeClass * aP1)
+int  RulesClass::readParticleSystems(TechnoTypeClass * a2)
 {
 
   int v3; // ecx

@@ -12,6 +12,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Campaign_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x42EE30
 namespace gamemd {

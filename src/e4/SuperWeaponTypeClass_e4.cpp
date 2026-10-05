@@ -31,6 +31,7 @@
 #include "e4/classes/UnitTypeVector_e4.hpp"
 #include "e4/classes/AircraftTypeVector_e4.hpp"
 #include "e4/classes/InfantryTypeClass_e4.hpp"
+#include "e4/classes/HouseTypeClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x4F6540
 namespace gamemd {
@@ -104,7 +105,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
       v32 = 1; /*0x4f65d5*/
     if ( v36 && v33 ) /*0x4f65e8*/
       return 1; /*0x4f65f3*/
-    v11 = (*(int (__stdcall **)(int *))(this->?[0] + 24))(this->?); /*0x4f6603*/
+    v11 = (*(int (__stdcall **)(int *))(*(unsigned int *)((char *)this + 24) + 24))(this->?); /*0x4f6603*/
     v38 = v11; /*0x4f6612*/
     BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4f6616*/
                            (HouseClass *)this,
@@ -573,7 +574,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
     v32 = SearchMIXFile(Buffer, 0); /*0x6cee20*/
     *(unsigned int *)(_EBP + 184) = v32; /*0x6cee26*/
     if ( !v32 ) /*0x6cee2f*/
-      *(unsigned int *)(_EBP + 184) = SearchMIXFile(&stru_820320.?[143], 0); /*0x6cee3d*/
+      *(unsigned int *)(_EBP + 184) = SearchMIXFile(((char *)&stru_820320 + 184), 0); /*0x6cee3d*/
     return 1; /*0x6cee43*/
 }
 }
@@ -786,7 +787,7 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
       v3 = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x6ce89b*/
       this->SidebarImage = v3; /*0x6ce8a2*/
       if ( !v3 ) /*0x6ce8a8*/
-        this->SidebarImage = (SHPStruct *)SearchMIXFile(&stru_820320.?[143], 0); /*0x6ce8b6*/
+        this->SidebarImage = (SHPStruct *)SearchMIXFile(((char *)&stru_820320 + 184), 0); /*0x6ce8b6*/
       return 0; /*0x6ce8bc*/
     }
     return result; /*0x6ce8be*/

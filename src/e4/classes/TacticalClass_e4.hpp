@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class DrawTerrain;  // G42.36 fwd supply
 struct CellClass;  // fix_fwd_type_supply
 
 struct TacticalClass {
@@ -336,6 +337,7 @@ struct TacticalClass {
     int ScrollView(char aP1);  // 0x554af0
     AnimClass * SetObserverView(); // N_fix R5 supply (cache truth)
     void DrawCellOverlay(int a2, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8, int a9, int a10);
+    int DrawTerrain(int *a2, unsigned int *a3, int a4);
 };
 
 } // namespace gamemd

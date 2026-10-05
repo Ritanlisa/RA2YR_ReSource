@@ -25,6 +25,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/WonlineStringDialogControl_28_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x770270
 namespace gamemd {

@@ -30,6 +30,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/TerrainTypeClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x419B00
 namespace gamemd {
@@ -1551,7 +1552,7 @@ LABEL_15:
 }
 // 0x6D2790
 namespace gamemd {
-void* Cell::CreateCrater(IUnknown, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
+void* Cell::CreateCrater(a1, void *a2, void *a3, void *a4, void *a5)
 {
 
   int v5; // ecx

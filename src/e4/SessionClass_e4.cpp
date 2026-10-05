@@ -47,6 +47,7 @@
 #include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Player_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/GameConfig_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x540DC0
 namespace gamemd {

@@ -156,5 +156,6 @@ struct AudioStream {
     int UpdateTimers();  // 0x404FD0
     int UpdateCountdowners();  // 0x405040
     char * Constructor(uint64_t);  // 0x407860
+    char * Constructor(uint64_t, void * a2, void * aAudioStream);
 };
 } // namespace gamemd

@@ -46,6 +46,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/MultiplayerConfig_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x5D6130
 namespace gamemd {

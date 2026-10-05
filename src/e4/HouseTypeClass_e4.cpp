@@ -30,7 +30,7 @@
 
 // 0x511650
 namespace gamemd {
-unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
+unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * a2)
 {
     AbstractTypeClass::Init((int)this, a2); /*0x511658*/
     this->veteranInfantry[0] = (int)&TypeList<InfantryTypeClass const *>::`vftable'; /*0x51165d*/
@@ -507,7 +507,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
       if ( v44 != -1 ) /*0x5120b4*/
       {
         v46 = *(unsigned int *)(_EBX + 184); /*0x5120bc*/
-        v47 = *(unsigned int *)(FootClass_Array.?[0] + 4 * v44); /*0x5120c2*/
+        v47 = *(unsigned int *)(*(unsigned int *)((char *)&FootClass_Array + 889) + 4 * v44); /*0x5120c2*/
         v48 = *(unsigned int *)(v47 + 168); /*0x5120c5*/
         v49 = v47 + 152; /*0x5120cb*/
         if ( v46 < v48 ) /*0x5120d2*/
@@ -841,15 +841,15 @@ int HouseTypeClass::loadCountryData(unsigned char * a2, unsigned char * a3, int 
       else
         v6 = 0; /*0x475748*/
       v7 = 0; /*0x475751*/
-      if ( FootClass_Array.?[0] <= 0 ) /*0x475755*/
+      if ( *(unsigned int *)((char *)&FootClass_Array + 889) <= 0 ) /*0x475755*/
       {
         return -1; /*0x475769*/
       }
       else
       {
-        for ( i = (unsigned int *)FootClass_Array.?[0]; (unsigned int *)*i != v6; ++i ) /*0x475757*/
+        for ( i = (unsigned int *)*(unsigned int *)((char *)&FootClass_Array + 889); (unsigned int *)*i != v6; ++i ) /*0x475757*/
         {
-          if ( ++v7 >= FootClass_Array.?[0] ) /*0x475767*/
+          if ( ++v7 >= *(unsigned int *)((char *)&FootClass_Array + 889) ) /*0x475767*/
             return -1; /*0x475767*/
         }
         return v7; /*0x475776*/
@@ -1706,7 +1706,7 @@ int HouseTypeClass::Find()
     int v1; // esi
 
     v1 = 0; /*0x6a46d6*/
-    if ( FootClass_Array.?[0] <= 0 ) /*0x6a46dd*/
+    if ( *(unsigned int *)((char *)&FootClass_Array + 889) <= 0 ) /*0x6a46dd*/
       return -1; /*0x6a4702*/
     while ( _strcmpi((char *)(*(unsigned int *)(FootClass_Array.?[0] + 4 * v1) + 36), (char *)this) ) /*0x6a46f6*/
     {

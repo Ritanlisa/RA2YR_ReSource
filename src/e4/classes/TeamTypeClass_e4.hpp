@@ -107,6 +107,10 @@ struct TeamTypeClass {
     unsigned int * GetTransportWaypoint(unsigned int * a2);
     unsigned int * CreateScriptType(char *Source);  // G42.35f: ida truth 0x691C00 int* return
     static double vftable(...);  // C2597 interim stub
+    void * CreateScriptType(char *Source, int a2, int a3, int aP1);
+    AbstractClass * * FindOrCreateTaskForce(char *Source, int a2, int a3, int aP1);
+    AbstractClass * * LoadFromINI(unsigned char *** aP1, void *a2, void * aTaskforce, void * aWaypoint);
+    AbstractClass * * GetMaxCount(CCINIClass * aP1, void * aTaskforce, void * aWaypoint);
 };
 
 } // namespace gamemd

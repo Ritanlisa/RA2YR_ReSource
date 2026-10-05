@@ -73,6 +73,10 @@
 #include "e4/classes/AsyncIO_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
 #include "e4/classes/NetworkAddress_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/GenericNode_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x770E70
 namespace gamemd {

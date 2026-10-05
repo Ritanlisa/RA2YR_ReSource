@@ -172,7 +172,7 @@ int UnitClass::Mission_Harvest()
         }
         goto LABEL_9; /*0x415250*/
       case 1:
-        if ( !this->?[0] ) /*0x41542a*/
+        if ( !*(unsigned int *)((char *)this + 1652) ) /*0x41542a*/
           WinAPI::Wrapper(-2147467261); /*0x415439*/
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)this->?[0] + 16))(this->?[0]) ) /*0x415447*/
           this->? = 2; /*0x41544e*/
@@ -180,7 +180,7 @@ int UnitClass::Mission_Harvest()
           this->? = 0; /*0x415471*/
         goto LABEL_9; /*0x41547b*/
       case 2:
-        if ( !this->?[0] ) /*0x415480*/
+        if ( !*(unsigned int *)((char *)this + 1652) ) /*0x415480*/
           WinAPI::Wrapper(-2147467261); /*0x41548f*/
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)this->?[0] + 16))(this->?[0]) ) /*0x41549d*/
           this->? = 3; /*0x4154a4*/
@@ -188,7 +188,7 @@ int UnitClass::Mission_Harvest()
       case 3:
         if ( !this->? ) /*0x4154bb*/
         {
-          if ( this->?[1] ) /*0x4154c9*/
+          if ( *(unsigned int *)((char *)this + 280) ) /*0x4154c9*/
           {
             if ( this->Type[1].TechnoTypeClass[300] ) /*0x4154dd*/
             {
@@ -210,7 +210,7 @@ int UnitClass::Mission_Harvest()
               MapClass::FillRevealBuffer((MapClass *)&stru_87F5F0.__pad_58[416], v28, this); /*0x415565*/
               if ( !*(unsigned char *)(v26 + 1060) && *(unsigned int *)(v26 + 1492) ) /*0x415574*/
                 TeamClass::AddMember((int *)this->?, v26, 0); /*0x415587*/
-              if ( !this->?[1] ) /*0x41558c*/
+              if ( !*(unsigned int *)((char *)this + 280) ) /*0x41558c*/
                 (*((void (__thiscall **)(AircraftClass *, unsigned int, int))this->FootClass + 289))(this, 0, 1); /*0x4155a2*/
             }
           }
@@ -231,7 +231,7 @@ int UnitClass::Mission_Harvest()
     }
 }
 // 0x6b6080
-int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
+int UnitClass::CreateUnloadPlacementCraters(CellStruct* a2)
 {
     int result; // eax
     int i; // ebx
@@ -526,7 +526,7 @@ int UnitClass::Deploy()
       if ( !v4 ) /*0x7197ce*/
       {
         Owner->? = 1; /*0x7197d0*/
-        v2->State = *(unsigned int *)&stru_A8EB00.?[416]; /*0x7197e4*/
+        v2->State = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x7197e4*/
         v2->Timer[0] = v60; /*0x7197ea*/
         v2->Timer[1] = 60; /*0x7197ed*/
         ++*(unsigned int *)&v2->Moving; /*0x7197f4*/
@@ -539,7 +539,7 @@ int UnitClass::Deploy()
       {
         v7 = v2->?; /*0x719375*/
         v8 = &v2->MovingDestination[2]; /*0x719378*/
-        if ( v7->?[0] == v2->MovingDestination[2] && v7->?[1] == v2->LastCoords[0] && v7->?[2] == v2->LastCoords[1] /*0x7193c1*/
+        if ( *(unsigned int *)((char *)v7 + 8) == v2->MovingDestination[2] &&((char *)v7 + 8) == v2->LastCoords[0] &&((char *)v7 + 8) == v2->LastCoords[1] /*0x7193c1*/
           || *v8 == g_BuildingLoadQueue_Array.?
           && v2->LastCoords[0] == g_BuildingLoadQueue_Array.?[0]
           && v2->LastCoords[1] == g_BuildingLoadQueue_Array.?[0] )
@@ -551,9 +551,9 @@ int UnitClass::Deploy()
         else
         {
           AbstractClass::ClearTargetToMeClearManagerTarget((int)v7); /*0x7193c7*/
-          for ( i = *(unsigned int *)&stru_A8EB00.?[364] - 1; i >= 0; --i ) /*0x7193d6*/
+          for ( i = *(unsigned int * *)((char *)&stru_A8EB00 + 592) - 1; i >= 0; --i ) /*0x7193d6*/
           {
-            v10 = *(BulletClass **)(*(unsigned int *)&stru_A8EB00.?[352] + 4 * i); /*0x7193e1*/
+            v10 = *(BulletClass **)(*(unsigned int * *)((char *)&stru_A8EB00 + 580) + 4 * i); /*0x7193e1*/
             if ( v10->BulletClass_field_0x10C == v2->? ) /*0x7193ec*/
               BulletClass::LoseTarget(v10); /*0x7193ee*/
           }
@@ -586,14 +586,14 @@ int UnitClass::Deploy()
           IDA_LOWORD(v18) = Math::RoundToInt(v1); /*0x7194a7*/
           p_State = &v2->State; /*0x7194ac*/
           this = v18; /*0x7194ba*/
-          v2->State = *(unsigned int *)&stru_A8EB00.?[416]; /*0x7194be*/
+          v2->State = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x7194be*/
           v2->Timer[0] = v60; /*0x7194c4*/
           v2->Timer[1] = 0; /*0x7194c7*/
           v20 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x7194ca*/
           if ( *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3064) ) /*0x7194d0*/
           {
             v21 = (int)v18 / *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3060); /*0x7194e3*/
-            *p_State = *(unsigned int *)&stru_A8EB00.?[416]; /*0x7194eb*/
+            *p_State = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x7194eb*/
             v2->Timer[0] = v60; /*0x7194f1*/
             v2->Timer[1] = v21; /*0x7194f4*/
             v20 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x7194f7*/
@@ -602,16 +602,16 @@ int UnitClass::Deploy()
           v23 = v2->Timer[1]; /*0x7194ff*/
           if ( *p_State != -1 ) /*0x719505*/
           {
-            if ( *(unsigned int *)&stru_A8EB00.?[416] - v22 >= v23 ) /*0x719511*/
+            if ( *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v22 >= v23 ) /*0x719511*/
               v23 = 0; /*0x719517*/
             else
-              v23 -= *(unsigned int *)&stru_A8EB00.?[416] - v22; /*0x719513*/
+              v23 -= *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v22; /*0x719513*/
           }
           v24 = *(unsigned int *)(v20 + 3068); /*0x719519*/
           if ( v23 <= v24 ) /*0x719521*/
           {
             v58 = v24; /*0x71952d*/
-            v56 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x719531*/
+            v56 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x719531*/
             v25 = &v56; /*0x719535*/
           }
           else
@@ -625,7 +625,7 @@ int UnitClass::Deploy()
           if ( (int)v26 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3072) ) /*0x71955b*/
           {
             v27 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3068); /*0x719562*/
-            *p_State = *(unsigned int *)&stru_A8EB00.?[416]; /*0x71956a*/
+            *p_State = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x71956a*/
             v2->Timer[0] = v60; /*0x719570*/
             v2->Timer[1] = v27; /*0x719573*/
           }
@@ -633,7 +633,7 @@ int UnitClass::Deploy()
           if ( (*((int (__thiscall **)(FootClass *))v2->?->TechnoClass + 11))(v2->?) == 1 && *((unsigned char *)v2->?[1].? + 3598) ) /*0x719596*/
           {
             v28 = v60; /*0x7195a5*/
-            *p_State = *(unsigned int *)&stru_A8EB00.?[416]; /*0x7195ab*/
+            *p_State = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x7195ab*/
             v2->Timer[0] = v28; /*0x7195ad*/
             v2->Timer[1] = 0; /*0x7195b0*/
             v2->?->? = 0; /*0x7195b6*/
@@ -818,7 +818,7 @@ int UnitClass::Deploy()
     TechnoClass::SetFocus((TechnoClass *)v2->?, 0); /*0x719b00*/
     (*((void (__thiscall **)(FootClass *, unsigned int, int))v2->?->TechnoClass + 288))(v2->?, 0, 1); /*0x719b0d*/
     chronoLockRemaining = v2->?->?; /*0x719b23*/
-    v2->State = *(unsigned int *)&stru_A8EB00.?[416]; /*0x719b29*/
+    v2->State = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x719b29*/
     v2->Timer[0] = v60; /*0x719b2f*/
     v2->Timer[1] = chronoLockRemaining; /*0x719b32*/
     v52 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x719b35*/
@@ -884,7 +884,7 @@ int UnitClass::DeployToBuilding()
     if ( v4 <= 0 ) /*0x738d6e*/
       goto LABEL_7; /*0x738d6e*/
     v5 = *(unsigned int **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2224); /*0x738d76*/
-    while ( *v5 != this->Type->?[0] ) /*0x738d84*/
+    while ( *v5 != this->*(unsigned int *)((char *)Type + 1028) ) /*0x738d84*/
     {
       ++v3; /*0x738d8a*/
       ++v5; /*0x738d8b*/
@@ -969,7 +969,7 @@ int UnitClass::DeployToBuilding()
         v7 = CellStruct::Add((CellStruct *)v28, v31, &g_DDrawSurfaceManager.scenario[89]); /*0x738de9*/
         Type = this->Type; /*0x738df0*/
         v30 = *v7; /*0x738df6*/
-        if ( (*(unsigned __int8 (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)Type->?[0] + 168))(Type->?[0], &v30, 0) ) /*0x738e08*/
+        if ( (*(unsigned __int8 (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)*(unsigned int *)((char *)Type + 168) + 168))(*(unsigned int *)((char *)Type + 168), &v30, 0) ) /*0x738e08*/
         {
           (*((void (__thiscall **)(UnitClass *, int))this->FootClass + 73))(this, 1); /*0x738e1c*/
           return 1; /*0x738e2b*/
@@ -1076,7 +1076,7 @@ int UnitClass::SimpleDeployerDeploy()
             this->? = 1; /*0x739b2c*/
           if ( this->Deploying && (v3 = this->?) != 0 ) /*0x739b44*/
           {
-            if ( this->?[0] >= *(unsigned int *)&v3->AnimClass_field_0xC8[2].__pad_C[52] /*0x739b64*/
+            if ( *(unsigned int *)((char *)this + 248) >= *(unsigned int *)&v3->AnimClass_field_0xC8[2].__pad_C[52] /*0x739b64*/
                              + *(unsigned int *)&v3->AnimClass_field_0xC8[2].__pad_C[40]
                              - 1 )
               *(unsigned short *)&this->Deployed = 1; /*0x739b6a*/
@@ -1090,10 +1090,10 @@ int UnitClass::SimpleDeployerDeploy()
                 v4 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x739bad*/
                 if ( v4 ) /*0x739bb7*/
                 {
-                  v12 = this->?[0]; /*0x739bcb*/
+                  v12 = *(unsigned int *)((char *)this + 4); /*0x739bcb*/
                   v13 = this->?[1]; /*0x739bd4*/
                   v14 = this->?[2]; /*0x739be0*/
-                  v5 = (AnimClass *)AnimClass::ctor(v4, (void *)this->Type->?[0], &v12, 0, 1, (void *)0x600, 0, 0); /*0x739bf3*/
+                  v5 = (AnimClass *)AnimClass::ctor(v4, (void *)this->*(unsigned int *)((char *)Type + 1724), &v12, 0, 1, (void *)0x600, 0, 0); /*0x739bf3*/
                 }
                 else
                 {
@@ -1104,8 +1104,8 @@ int UnitClass::SimpleDeployerDeploy()
                 this->?->AnimClass_field_0xD4 = (IUnknown *)(*((int (__thiscall **)(UnitClass *))this->FootClass + 121))(this); /*0x739c1a*/
               }
               deployAnim = this->?; /*0x739c20*/
-              this->?[0] = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].__pad_C[40]; /*0x739c32*/
-              v7 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x739c3e*/
+              *(unsigned int *)((char *)this + 248) = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].__pad_C[40]; /*0x739c32*/
+              v7 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x739c3e*/
               v8 = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].__pad_C[36]; /*0x739c44*/
               this->?[5] = v8; /*0x739c50*/
               this->?[2] = v7; /*0x739c56*/
@@ -1121,7 +1121,7 @@ int UnitClass::SimpleDeployerDeploy()
           Type = (UnitTypeClass *)(*((int (__thiscall **)(UnitClass *))this->FootClass + 33))(this); /*0x739c74*/
           if ( Type->? != -1 ) /*0x739c84*/
           {
-            v12 = this->?[0]; /*0x739c95*/
+            v12 = *(unsigned int *)((char *)this + 4); /*0x739c95*/
             v13 = this->?[1]; /*0x739c9e*/
             vtable0 = (int (__thiscall **)(UnitClass *))this->FootClass; /*0x739ca2*/
             v14 = this->?[2]; /*0x739ca7*/
@@ -1323,7 +1323,7 @@ int UnitClass::SimpleDeployerUndeploy()
     {
       if ( this->Undeploying && (v3 = this->?) != 0 ) /*0x739cf7*/
       {
-        if ( this->?[0] >= *(unsigned int *)&v3->AnimClass_field_0xC8[2].__pad_C[52] /*0x739d17*/
+        if ( *(unsigned int *)((char *)this + 248) >= *(unsigned int *)&v3->AnimClass_field_0xC8[2].__pad_C[52] /*0x739d17*/
                          + *(unsigned int *)&v3->AnimClass_field_0xC8[2].__pad_C[40]
                          - 2 )
         {
@@ -1346,10 +1346,10 @@ int UnitClass::SimpleDeployerUndeploy()
           v8 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x739d90*/
           if ( v8 ) /*0x739d9a*/
           {
-            v17 = this->?[0]; /*0x739daf*/
+            v17 = *(unsigned int *)((char *)this + 4); /*0x739daf*/
             v18 = this->?[1]; /*0x739db8*/
             v19 = this->?[2]; /*0x739dc4*/
-            v9 = (AnimClass *)AnimClass::ctor(v8, (void *)this->Type->?[0], &v17, 0, 1, (void *)0x600, 0, 1); /*0x739dd7*/
+            v9 = (AnimClass *)AnimClass::ctor(v8, (void *)this->*(unsigned int *)((char *)Type + 1724), &v17, 0, 1, (void *)0x600, 0, 1); /*0x739dd7*/
           }
           else
           {
@@ -1361,7 +1361,7 @@ int UnitClass::SimpleDeployerUndeploy()
         }
         deployAnim = this->?; /*0x739e04*/
         this->?[0] = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].__pad_C[40]; /*0x739e16*/
-        v11 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x739e22*/
+        v11 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x739e22*/
         v12 = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].__pad_C[36]; /*0x739e28*/
         this->?[5] = v12; /*0x739e34*/
         this->?[2] = v11; /*0x739e3a*/
@@ -1378,7 +1378,7 @@ int UnitClass::SimpleDeployerUndeploy()
       v2 = (*((int (__thiscall **)(UnitClass *))this->FootClass + 33))(this); /*0x739e72*/
       if ( *(unsigned int *)(v2 + 1392) != -1 ) /*0x739e7f*/
       {
-        v17 = this->?[0]; /*0x739e8f*/
+        v17 = *(unsigned int *)((char *)this + 4); /*0x739e8f*/
         v18 = this->?[1]; /*0x739e98*/
         v13 = (int (__thiscall **)(UnitClass *))this->FootClass; /*0x739e9c*/
         v19 = this->?[2]; /*0x739ea1*/
@@ -2605,13 +2605,13 @@ int UnitClass::CalcMoveTarget()
     int v80; // [esp+78h] [ebp-8h]
     int v81; // [esp+7Ch] [ebp-4h]
 
-    if ( *(unsigned int *)(*(unsigned int *)(FootClass_Array.?[3] + 4 * this->?) + 4 * this->? + 48) != -1 ) /*0x735a20*/
+    if ( *(unsigned int *)(*(unsigned int *)(*(unsigned int *)((char *)&FootClass_Array + 892) + 4 * this->?) + 4 * this->? + 48) != -1 ) /*0x735a20*/
     {
       v2 = (Vector3 *)(*((int (__thiscall **)(UnitClass *))this->FootClass + 18))(this); /*0x735a2f*/
       unknownCoords568 = this->?; /*0x735a32*/
       v4 = Vector3::Subtract(v2, &ObjectVector_field_0x08, this->?); /*0x735a40*/
       Coord::Length((Coord *)v4); /*0x735a47*/
-      v5 = *(unsigned int **)(FootClass_Array.?[3] + 4 * this->?); /*0x735a5f*/
+      v5 = *(unsigned int **)(*(unsigned int *)((char *)&FootClass_Array + 892) + 4 * this->?); /*0x735a5f*/
       v6 = (int *)(*((int (__thiscall **)(UnitClass *, int *, int *))this->FootClass + 18))( /*0x735a69*/
                     this,
                     &v78.ObjectVector_field_0x14,
@@ -2640,9 +2640,9 @@ int UnitClass::CalcMoveTarget()
       if ( v71 > v65 ) /*0x735b30*/
       {
         v38 = v5[this->? + 12]; /*0x735d42*/
-        v79 = this->?[0]; /*0x735d48*/
+        v79 = *(unsigned int *)((char *)this + 4); /*0x735d48*/
         v80 = this->?[1]; /*0x735d4f*/
-        v39 = this->?[2]; /*0x735d53*/
+        v39 = *(unsigned int *)((char *)this + 8); /*0x735d53*/
         v73[0] = SLOWORD(v73[0]) - 0x3FFF; /*0x735d61*/
         *(double *)v74 = (double)v73[0] * -0.00009587672516830327; /*0x735d6f*/
         v40 = v74[1]; /*0x735d77*/
@@ -2696,12 +2696,12 @@ int UnitClass::CalcMoveTarget()
         *unknownCoords568 = v24; /*0x735bfc*/
         this->?[1] = v25; /*0x735c00*/
         this->?[2] = v26; /*0x735c07*/
-        this->?[2] += v70; /*0x735c16*/
+        *(unsigned int *)((char *)this + 1392) += v70; /*0x735c16*/
         v27 = (int *)(*((int (__thiscall **)(UnitClass *, int *))this->FootClass + 18))(this, &v79); /*0x735c21*/
         v28 = (__int16)*(unsigned int *)Cell::GetHeight((Cell *)v73, v27, this->?); /*0x735c36*/
-        v79 = this->?[0]; /*0x735c3b*/
+        v79 = *(unsigned int *)((char *)this + 4); /*0x735c3b*/
         v80 = this->?[1]; /*0x735c42*/
-        v29 = this->?[2]; /*0x735c4a*/
+        v29 = *(unsigned int *)((char *)this + 8); /*0x735c4a*/
         v73[0] = v65 - v71; /*0x735c5c*/
         *(double *)v74 = (double)(v28 - 0x3FFF) * -0.00009587672516830327; /*0x735c6e*/
         v30 = v74[1]; /*0x735c76*/
@@ -2730,9 +2730,9 @@ int UnitClass::CalcMoveTarget()
         return; /*0x735d34*/
       }
     }
-    v79 = this->?[0]; /*0x735e40*/
-    v80 = this->?[1]; /*0x735e4c*/
-    v81 = this->?[2]; /*0x735e58*/
+    v79 = *(unsigned int *)((char *)this + 4); /*0x735e40*/
+    v80 = *(unsigned int *)((char *)this + 4); /*0x735e4c*/
+    v81 = *(unsigned int *)((char *)this + 8); /*0x735e58*/
     v49 = (AbstractClass *)Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v79); /*0x735e64*/
     vtable3 = v49[6].vtable3; /*0x735e66*/
     if ( vtable3 ) /*0x735e6e*/
@@ -2792,7 +2792,7 @@ int UnitClass::CalcMoveTarget()
       goto LABEL_26; /*0x735edd*/
     }
     v57 = this->?[2]; /*0x735fb4*/
-    v73[0] = *(unsigned int *)(*(unsigned int *)(FootClass_Array.?[3] + 4 * this->?) + 40); /*0x735fba*/
+    v73[0] = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)((char *)&FootClass_Array + 892) + 4 * this->?) + 40); /*0x735fba*/
     v81 = v57; /*0x735fbe*/
     v80 = (IDA_SHIWORD(v73[0]) << 8) + 128; /*0x735fdb*/
     v79 = (SLOWORD(v73[0]) << 8) + 128; /*0x735fe3*/
@@ -6532,7 +6532,7 @@ int UnitClass::UpdateRotation_TurretFacing_EMP()
       }
       else if ( Type->?[0] == 1 && !this->? ) /*0x736a38*/
       {
-        if ( !this->?[0] ) /*0x736a42*/
+        if ( !*(unsigned int *)((char *)this + 1652) ) /*0x736a42*/
           WinAPI::Wrapper(-2147467261); /*0x736a51*/
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)this->?[0] + 16))(this->?[0]) /*0x736a80*/
           && *(unsigned short *)ProgressTimer::GetValue((ProgressTimer *)this->?, &v15) == (unsigned short)v14 )
@@ -6559,7 +6559,7 @@ int UnitClass::UpdateRotation_TurretFacing_EMP()
       }
       else if ( !this->? ) /*0x736b21*/
       {
-        v7 = *(unsigned int *)&stru_A8EB00.?[416] - this->? >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3588) /*0x736b52*/
+        v7 = *(unsigned int * *)((char *)&stru_A8EB00 + 644) - this->? >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3588) /*0x736b52*/
                                                        + 5;
         if ( this->? ) /*0x736b54*/
           v7 = 0; /*0x736b5e*/
@@ -7165,21 +7165,21 @@ int UnitClass::CheckForNearbyEnemies()
     v17 = 0; /*0x7468c6*/
     if ( !(*((unsigned __int8 (__thiscall **)(UnitClass *))this->FootClass + 49))(this) ) /*0x7468cd*/
     {
-      if ( !this->?[0] ) /*0x7468d7*/
+      if ( !*(unsigned int *)((char *)this + 1652) ) /*0x7468d7*/
         WinAPI::Wrapper(-2147467261); /*0x7468e6*/
       if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)this->?[0] + 16))(this->?[0]) && IDA_BYTE2(this->Type->?[0]) ) /*0x746901*/
         v17 = Team::GetMember((Team *)this, 0) == 0; /*0x746918*/
     }
-    if ( !this->?[0] ) /*0x74691d*/
+    if ( !*(unsigned int *)((char *)this + 1652) ) /*0x74691d*/
       WinAPI::Wrapper(-2147467261); /*0x74692c*/
-    if ( (*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)this->?[0] + 16))(this->?[0]) ) /*0x74693d*/
+    if ( (*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)*(unsigned int *)((char *)this + 16) + 16))(*(unsigned int *)((char *)this + 16)) ) /*0x74693d*/
     {
   LABEL_30:
       (*((void (__thiscall **)(UnitClass *))this->FootClass + 284))(this); /*0x746aff*/
       goto LABEL_25; /*0x746b09*/
     }
-    v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x746948*/
-    if ( *(unsigned int *)&stru_A8EB00.?[416] % 8 ) /*0x74695c*/
+    v2 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x746948*/
+    if ( *(unsigned int * *)((char *)&stru_A8EB00 + 644) % 8 ) /*0x74695c*/
     {
       v3 = *(unsigned int *)(*((int (__thiscall **)(UnitClass *, char *))this->FootClass + 110))(this, v20); /*0x746972*/
       v4 = (Cell *)(*((int (__thiscall **)(UnitClass *))this->FootClass + 111))(this); /*0x74697c*/
@@ -7200,12 +7200,12 @@ int UnitClass::CheckForNearbyEnemies()
         }
         if ( ++v5 >= 8 ) /*0x7469ff*/
         {
-          v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x746a01*/
+          v2 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x746a01*/
           goto LABEL_16; /*0x746a01*/
         }
       }
       v16 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4116); /*0x746aed*/
-      this->?[0] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x746af3*/
+      this->?[0] = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x746af3*/
       this->?[1] = v21; /*0x746af9*/
       this->?[2] = v16; /*0x746afc*/
       goto LABEL_30; /*0x746afc*/
@@ -7238,7 +7238,7 @@ int UnitClass::CheckForNearbyEnemies()
       this->? = v13; /*0x746a72*/
       this->? = 0; /*0x746a78*/
       this->? = 1; /*0x746a82*/
-      this->? = *(unsigned int *)&stru_A8EB00.?[416]; /*0x746a90*/
+      this->? = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x746a90*/
       vtable0[295](this); /*0x746a96*/
     }
   LABEL_25:
@@ -8688,7 +8688,7 @@ int UnitClass::ReadINI()
               v15[0] = (v8 << 8) + 128; /*0x6b4d7a*/
               v15[1] = (v10 << 8) + 128; /*0x6b4d7e*/
               v15[2] = 0; /*0x6b4d8e*/
-              UnitClass::Create(v12, *(void **)(*(unsigned int *)&stru_A8EB00.?[56] + 4 * _6B5440), v15, -1); /*0x6b4d9d*/
+              UnitClass::Create(v12, *(void **)(*(unsigned int * *)((char *)&stru_A8EB00 + 284) + 4 * _6B5440), v15, -1); /*0x6b4d9d*/
             }
           }
         }
@@ -8774,7 +8774,7 @@ void UnitClass::Destructor()
           this->? = 0; /*0x735809*/
         }
         HouseClass::DecrementUnitCount(this->?, this); /*0x735816*/
-        if ( !dword_A8E7AC && this->?[1] ) /*0x735823*/
+        if ( !dword_A8E7AC &&((char *)this + 280) ) /*0x735823*/
         {
           do /*0x735845*/
           {
@@ -8782,7 +8782,7 @@ void UnitClass::Destructor()
             if ( v5 ) /*0x73583a*/
               (*(void (__thiscall **)(int, int))(*(unsigned int *)v5 + 32))(v5, 1); /*0x735842*/
           }
-          while ( this->?[1] ); /*0x735845*/
+          while ( *(unsigned int *)((char *)this + 280) ); /*0x735845*/
         }
         if ( (unsigned __int8)TechnoClass::CleanupDirection((FootClass *)this) ) /*0x73584f*/
         {
@@ -8800,10 +8800,10 @@ void UnitClass::Destructor()
     AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x735892*/
     v20 = this; /*0x7358a7*/
     v9 = (*(int (__thiscall **)(float *, UnitClass **))(IDA_LODWORD(FootClass_Array.?) + 16))(&FootClass_Array.?, &v20); /*0x7358ab*/
-    if ( v9 != -1 && v9 < FootClass_Array.?[2] ) /*0x7358bb*/
+    if ( v9 != -1 && v9 < *(unsigned int *)((char *)&FootClass_Array + 891) ) /*0x7358bb*/
     {
-      --FootClass_Array.?[2]; /*0x7358c0*/
-      for ( ; v9 < FootClass_Array.?[2]; *(unsigned int *)(FootClass_Array.? + 4 * v9 - 4) = *(unsigned int *)(FootClass_Array.? /*0x7358c6*/
+      --*(unsigned int *)((char *)&FootClass_Array + 891); /*0x7358c0*/
+      for ( ; v9 < *(unsigned int *)((char *)&FootClass_Array + 891); *(unsigned int *)(FootClass_Array.? + 4 * v9 - 4) = *(unsigned int *)(FootClass_Array.? /*0x7358c6*/
                                                                                                  + 4 * v9) )
         ++v9; /*0x7358ce*/
     }
@@ -9150,7 +9150,7 @@ int UnitClass::LoadFromStream(void* a0, void* aP1)
     result = ObjectClass::LoadFromStream_Common((int)v2, pStm); /*0x7444fe*/
     if ( result >= 0 ) /*0x744505*/
     {
-      v10 = v2->?[0]; /*0x74450b*/
+      v10 = *(unsigned int *)((char *)v2 + 1652); /*0x74450b*/
       if ( v2 ) /*0x744513*/
       {
         FootClass::PostLoadInit((FootClass *)v2, (int)&this); /*0x74451c*/
@@ -9162,7 +9162,7 @@ int UnitClass::LoadFromStream(void* a0, void* aP1)
       v11 = v2->?[0]; /*0x74453c*/
       if ( v11 != v10 ) /*0x744544*/
       {
-        v2->?[0] = v10; /*0x744548*/
+        *(unsigned int *)((char *)v2 + 1652) = v10; /*0x744548*/
         if ( v10 ) /*0x74454e*/
           (*(void (__stdcall **)(int))(*(unsigned int *)v10 + 4))(v10); /*0x744553*/
         if ( v11 ) /*0x744558*/
@@ -9524,7 +9524,7 @@ int UnitClass::ClearTargetRef(int a2)
           *(unsigned int *)(*(unsigned int *)(this->?[0] + 4 * result) + 4) = 7; /*0x6b7d01*/
           nextObject = this->?; /*0x6b7d08*/
           result = *(unsigned int *)(this->?[0] + 4 * result) + 8; /*0x6b7d18*/
-          *(unsigned int *)result = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6b7d1c*/
+          *(unsigned int *)result = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x6b7d1c*/
           *(unsigned int *)(result + 4) = v8; /*0x6b7d22*/
           *(unsigned int *)(result + 8) = nextObject; /*0x6b7d25*/
         }
@@ -9624,7 +9624,7 @@ int UnitClass::ApproachEvaluate()
     switch ( this->? )
     {
       case 0:
-        v78[0] = this->?[0]; /*0x4d42f7*/
+        v78[0] = *(unsigned int *)((char *)this + 4); /*0x4d42f7*/
         vtable0 = this->TechnoClass; /*0x4d42fb*/
         v78[1] = this->?[1]; /*0x4d4300*/
         v78[2] = this->?[2]; /*0x4d430c*/
@@ -10819,6 +10819,15 @@ void UnitClass::DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bound
 } // namespace gamemd
 
 #include "structure/unit.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/InfantryClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ScenarioClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TeamClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/UnitTypeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Math_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
+#include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 namespace gamemd {
 

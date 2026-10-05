@@ -477,5 +477,11 @@ struct CreateTeamCommand {
     int performAction_109();
     int performAction_128();
     int performAction_143();
+    wchar_t * Release(void *a1_1, void * aTxtCreateTeam);
+    wchar_t * Read(void *a1_1, void *a2_1, void * aTxtCreateTeamD);
+    wchar_t * performAction_3(void * aTxtStructureTa);
+    wchar_t * performAction_5(void * aTxtStructureTa_0);
+    wchar_t * performAction_8(void * aTxtDefenseTab);
+    wchar_t * performAction_27(void * aTxtNextObject);
 };
 } // namespace gamemd

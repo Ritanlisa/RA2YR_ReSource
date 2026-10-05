@@ -5176,7 +5176,7 @@ int InfantryClass::GetActionOnObject_EMP(AbstractClass* object, int flags)
         goto LABEL_10; /*0x51e42a*/
       }
     }
-    if ( !(unsigned __int8)Mouse::IsButtonDown(stru_A8EB00.?[28]) /*0x51e421*/
+    if ( !(unsigned __int8)Mouse::IsButtonDown(*(unsigned int *)((char *)&stru_A8EB00 + 256)) /*0x51e421*/
       && !(unsigned __int8)Mouse::IsButtonDown(stru_A8EB00.?[32]) )
     {
       goto LABEL_9; /*0x51e421*/
@@ -5581,7 +5581,7 @@ int InfantryClass::GetActionOnObject_EMP(AbstractClass* object, int flags)
                       v48 = this->Type; /*0x51effa*/
                       IDA_HIWORD(v56) = v46 + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v47 + 82]); /*0x51f000*/
                       v57[0] = v56; /*0x51f009*/
-                      v49 = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], (__int16 *)v57, v48->?[0], 0); /*0x51f01e*/
+                      v49 = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], (__int16 *)v57, *(unsigned int *)((char *)v48 + 1460), 0); /*0x51f01e*/
                       if ( v49 == v57[1] ) /*0x51f027*/
                         break; /*0x51f027*/
                       if ( ++v55 >= 8 ) /*0x51f035*/
@@ -6778,6 +6778,11 @@ void InfantryClass::DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) con
 } // namespace gamemd
 
 #include "structure/infantry.hpp"
+#include "e4/classes/Rules_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ComPtr_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/COMObject_e4.hpp"  // G42.36 C2027 supply
+#include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 namespace gamemd {
 

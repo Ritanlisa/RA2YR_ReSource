@@ -27,6 +27,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x663D60
 namespace gamemd {

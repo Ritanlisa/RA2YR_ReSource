@@ -24,6 +24,7 @@
 #include "e4/classes/AnimTypeVector_e4.hpp"
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x5A0160
 namespace gamemd {

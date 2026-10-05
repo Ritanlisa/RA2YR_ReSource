@@ -334,7 +334,7 @@ void LoadOptions::ClearBuffer() {
   this->m_8 = 0; /*0x55a2c1*/
 }
 // 0x55a2d0
-int LoadOptions::FindItem(FileEntryClass* const* key)
+int LoadOptions::FindItem(FileEntryClass* const* a2)
 {
     int result; // eax
     int m_8; // edx

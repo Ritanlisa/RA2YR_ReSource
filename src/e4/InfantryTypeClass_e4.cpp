@@ -28,6 +28,7 @@
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/VocClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x5236A0
 namespace gamemd {

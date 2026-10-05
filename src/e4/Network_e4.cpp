@@ -44,6 +44,12 @@
 #include "e4/classes/IPXManagerClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/MessageListClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/NetworkID_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/RawFileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4311C0
 namespace gamemd {

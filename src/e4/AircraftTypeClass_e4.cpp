@@ -35,6 +35,7 @@ struct Power;  // fix_tu_missing_types
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x41C8B0
 namespace gamemd {  // G42.18c ns repair

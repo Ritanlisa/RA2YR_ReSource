@@ -51,6 +51,8 @@
 #include "e4/classes/Settings_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
+#include "e4/classes/Compare_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x5D4210
 namespace gamemd {

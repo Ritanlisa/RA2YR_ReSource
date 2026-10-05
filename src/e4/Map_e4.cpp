@@ -71,6 +71,8 @@
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/Rect_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x539760
 namespace gamemd {

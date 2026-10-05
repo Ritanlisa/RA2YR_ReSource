@@ -67,6 +67,7 @@
 #include "e4/classes/FontRenderer_e4.hpp"
 #include "e4/classes/Property_e4.hpp"
 #include "e4/classes/TextGroup_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"  // G42.36 C2027 supply
 
 // 0x4A0190
 namespace gamemd {

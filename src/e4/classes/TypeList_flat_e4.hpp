@@ -20,7 +20,6 @@ struct TypeList_flat {
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
     void* DynamicVectorClass;  // 0x0 (no offset truth)
-    void* CopyFull;  // 0x0 (no offset truth)
     void* unknown_18;  // 0x0 (no offset truth)
 // --- flat members (END) ---
 CCINIClass * BuildingTypeConstructor();
@@ -46,6 +45,7 @@ unsigned int * TechnoTypeConstructor(int a2, int a3);
 unsigned int GetCapacity(int a2);
 void InfantryCleanup();
 void ddtor();
+    int * CopyFull(VectorClass * aP1);
 };
 
 } // namespace gamemd

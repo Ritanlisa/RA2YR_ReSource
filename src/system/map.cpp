@@ -281,7 +281,7 @@ bool MapClass::CoordinatesLegal(const CellStruct& cell) const
 }
 
 // 0x5880a0
-CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const int* start, const int* end, const HouseClass* house) const
+CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const int* a3, const HouseClass* a4) const
 {
     int v4; // ebx
     int v5; // edi

@@ -21,6 +21,8 @@
 #include "e4/classes/Init_e4.hpp"
 #include "misc/misc_ext.hpp"
 #include "render/render_ext.hpp"
+#include "e4/classes/Math_e4.hpp"  // G42.36 C2027 supply
+#include "system/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 namespace gamemd
 {

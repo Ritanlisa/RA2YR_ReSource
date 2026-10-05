@@ -1819,9 +1819,9 @@ int TerrainClass::SetFieldF8(int a1) {
 // 0x4E1100
 namespace gamemd { 
 void* BulletClass::ResetDetonationTimer() {
-    *(unsigned int *)this->__pad_0 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4e1108*/
+    *(unsigned int *)this->__pad_0 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4e1108*/
     this->BulletClass_field_0x8 = 0; /*0x4e110c*/
-    *(unsigned int *)this->__pad_C = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4e1115*/
+    *(unsigned int *)this->__pad_C = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4e1115*/
     *(unsigned int *)&this->__pad_C[8] = 0; /*0x4e1118*/
     this->BulletClass_field_0x18 = 0; /*0x4e111b*/
     *(unsigned int *)this->__pad_1C = 0; /*0x4e111e*/
@@ -1846,10 +1846,10 @@ int BulletClass::InitDetonationTimer(void* a1, void* a2, int a3, int a4) {
     v7 = (void *)a5; /*0x4e113a*/
     if ( a5 <= a4 ) /*0x4e1141*/
       v7 = (void *)a4; /*0x4e1143*/
-    *(unsigned int *)this->__pad_0 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4e114f*/
+    *(unsigned int *)this->__pad_0 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4e114f*/
     this->BulletClass_field_0x4 = v12; /*0x4e1155*/
     this->BulletClass_field_0x8 = v7; /*0x4e1158*/
-    *(unsigned int *)this->__pad_C = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4e1163*/
+    *(unsigned int *)this->__pad_C = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4e1163*/
     *(unsigned int *)&this->__pad_C[4] = v12; /*0x4e116a*/
     *(unsigned int *)&this->__pad_C[8] = a4; /*0x4e1171*/
     this->BulletClass_field_0x18 = (void *)*a3; /*0x4e117b*/
@@ -1906,9 +1906,9 @@ int BulletClass::CheckProximityDetonation(void* a1) {
         return 0; /*0x4e1211*/
       goto LABEL_5; /*0x4e1211*/
     }
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v4 < v5 ) /*0x4e120b*/
+    if ( *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v4 < v5 ) /*0x4e120b*/
     {
-      v5 -= *(unsigned int *)&stru_A8EB00.?[416] - v4; /*0x4e120d*/
+      v5 -= *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v4; /*0x4e120d*/
       goto LABEL_4; /*0x4e120d*/
     }
   LABEL_5:
@@ -4878,7 +4878,7 @@ int TiberiumClass::Grow(void* a1) {
     double v97; // [esp+70h] [ebp-8h]
 
     _EBX = (MapClass *)this; /*0x59c92a*/
-    v4 = this->?[4]; /*0x59c92e*/
+    v4 = *(unsigned int *)((char *)this + 76); /*0x59c92e*/
     inited = 1; /*0x59c937*/
     IDA_LODWORD(v94) = v4; /*0x59c93c*/
     if ( v4 ) /*0x59c940*/
@@ -5982,7 +5982,7 @@ void ParticleClass::UpdateAnimationDrift() {
     float *ParticleClass_field_0xAC; // ebp
     int v10; // [esp+Ch] [ebp-4h]
 
-    if ( (stru_A8EB00.?[416] & 1) != 0 ) /*0x62c54d*/
+    if ( (*(unsigned int *)((char *)&stru_A8EB00 + 644) & 1) != 0 ) /*0x62c54d*/
     {
       if ( (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 3) == 0 ) /*0x62c56a*/
       {
@@ -6423,7 +6423,7 @@ void ParticleSystemClass::CreateBuildingLight(int a1, int a2) {
       v9 = v8; /*0x62e31b*/
       v10 = (ObjectClass *)RA2_OPNEW(0x18u); /*0x62e31d*/
       if ( v10 ) /*0x62e327*/
-        v11 = (BuildingLightQueue *)ObjectClass::RegisterInArray(v10, this->?[0], this->?[1], this->?[2], v9); /*0x62e34c*/
+        v11 = (BuildingLightQueue *)ObjectClass::RegisterInArray(v10, *(unsigned int *)((char *)this + 244), *(unsigned int *)((char *)this + 244), *(unsigned int *)((char *)this + 244), v9); /*0x62e34c*/
       else
         v11 = 0; /*0x62e350*/
       v11[3] = *(BuildingLightQueue *)&this->__pad_E5[15]; /*0x62e35a*/
@@ -6720,10 +6720,10 @@ int ParticleSystemClass::SpawnParticle() {
       Lifetime = this->Lifetime; /*0x62f26c*/
       v5 = this->?[0]; /*0x62f27b*/
       v6 = this->SpawnFrames - v5; /*0x62f27d*/
-      v7 = this->?[1]; /*0x62f27f*/
+      v7 = *(unsigned int *)((char *)this + 4); /*0x62f27f*/
       v76 = this->SpawnFrames - v5; /*0x62f282*/
       v8 = Lifetime - v7; /*0x62f286*/
-      v9 = this->?[2]; /*0x62f288*/
+      v9 = *(unsigned int *)((char *)this + 8); /*0x62f288*/
       v77 = v8; /*0x62f28b*/
       v10 = SparkSpawnFrames - v9; /*0x62f28f*/
       v78 = v10; /*0x62f291*/
@@ -6907,10 +6907,10 @@ int ParticleSystemClass::SpawnParticle() {
             fld [esp+0F0h+var_5C]
             fadd [esp+0F0h+var_90]
           }
-          v24 = this->?[1]; /*0x62f560*/
-          v90[3] = this->?[0]; /*0x62f563*/
+          v24 = *(unsigned int *)((char *)this + 4); /*0x62f560*/
+          v90[3] = *(unsigned int *)((char *)this + 4); /*0x62f563*/
           v90[4] = v24; /*0x62f56a*/
-          v25 = this->?[2]; /*0x62f571*/
+          v25 = *(unsigned int *)((char *)this + 8); /*0x62f571*/
           __asm /*0x62f574*/
           {
             fstp [esp+0F0h+var_90]
@@ -7488,7 +7488,7 @@ int RadSiteClass::Tick() {
     --this->RadTimeLeft; /*0x65b80b*/
     v2 = this->RadLevelTimer[0]; /*0x65b80e*/
     v3 = this->RadLevelTimer[2]; /*0x65b811*/
-    v4 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b814*/
+    v4 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x65b814*/
     if ( v2 == -1 ) /*0x65b81d*/
     {
   LABEL_4:
@@ -7496,18 +7496,18 @@ int RadSiteClass::Tick() {
         goto LABEL_6; /*0x65b82b*/
       goto LABEL_5; /*0x65b82b*/
     }
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v2 < v3 ) /*0x65b825*/
+    if ( *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v2 < v3 ) /*0x65b825*/
     {
-      v3 -= *(unsigned int *)&stru_A8EB00.?[416] - v2; /*0x65b827*/
+      v3 -= *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v2; /*0x65b827*/
       goto LABEL_4; /*0x65b827*/
     }
   LABEL_5:
     RadSiteClass::DecreaseRadiation(this); /*0x65b82d*/
     v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6160); /*0x65b843*/
-    this->RadLevelTimer[0] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b849*/
+    this->RadLevelTimer[0] = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x65b849*/
     this->RadLevelTimer[1] = v11; /*0x65b84c*/
     this->RadLevelTimer[2] = v5; /*0x65b84f*/
-    v4 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b852*/
+    v4 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x65b852*/
   LABEL_6:
     v6 = this->RadLightTimer[0]; /*0x65b858*/
     v7 = this->RadLightTimer[2]; /*0x65b85b*/
@@ -7529,7 +7529,7 @@ int RadSiteClass::Tick() {
       this->RadTimeLeft * this->Tint[2] / this->RadDuration,
       0);
     v9 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6164); /*0x65b8b9*/
-    this->RadLightTimer[0] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b8bf*/
+    this->RadLightTimer[0] = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x65b8bf*/
     this->RadLightTimer[1] = v11; /*0x65b8c2*/
     this->RadLightTimer[2] = v9; /*0x65b8c5*/
   LABEL_11:
@@ -7809,7 +7809,7 @@ void* TerrainClass::Construct(void* a1, void* a2) {
     ObjectClass::ctor((ObjectClass *)this); /*0x71bb99*/
     this->Animation[0] = 0; /*0x71bba4*/
     IDA_LOBYTE(this->Animation[1]) = 0; /*0x71bbaa*/
-    v4 = *(TerrainTypeClass **)&stru_A8EB00.?[416]; /*0x71bbb0*/
+    v4 = *(TerrainTypeClass ** *)((char *)&stru_A8EB00 + 644); /*0x71bbb0*/
     this->height = 0; /*0x71bbb5*/
     this->Type = v4; /*0x71bbbb*/
     *(unsigned int *)this->__pad_C0 = 0; /*0x71bbc1*/
@@ -7827,7 +7827,7 @@ void* TerrainClass::Construct(void* a1, void* a2) {
     this->? = &TerrainClass::`vftable'; /*0x71bc12*/
     AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x71bc19*/
     this->? = *(unsigned int *)(*(unsigned int *)&this->__pad_C0[8] + 160); /*0x71bc2e*/
-    if ( *(unsigned int *)a3 != g_BuildingLoadQueue_Array.?[4] ) /*0x71bc3b*/
+    if ( *(unsigned int *)a3 != *(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 508) ) /*0x71bc3b*/
     {
       v5 = (*a3 << 8) + 128; /*0x71bc61*/
       v14 = (a3[1] << 8) + 128; /*0x71bc66*/
@@ -7836,7 +7836,7 @@ void* TerrainClass::Construct(void* a1, void* a2) {
       if ( !TerrainClass::ProcessSpawnAnim(this, &v13, 0) ) /*0x71bc76*/
         ObjectClass::Destroy((ObjectClass *)this); /*0x71bc81*/
     }
-    v6 = *(TerrainTypeClass **)&stru_A8EB00.?[416]; /*0x71bc86*/
+    v6 = *(TerrainTypeClass ** *)((char *)&stru_A8EB00 + 644); /*0x71bc86*/
     *(unsigned int *)this->__pad_C0 = 0; /*0x71bc93*/
     this->Type = v6; /*0x71bc99*/
     *(unsigned int *)&this->IsBurning = v14; /*0x71bc9f*/
@@ -8248,7 +8248,7 @@ int TerrainClass::ProcessTick() {
           if ( !(unsigned char)health ) /*0x71c6f6*/
           {
             this->__pad_C0[13] = 1; /*0x71c6f8*/
-            health = *(TerrainTypeClass **)&stru_A8EB00.?[416]; /*0x71c6ff*/
+            health = *(TerrainTypeClass ** *)((char *)&stru_A8EB00 + 644); /*0x71c6ff*/
             *(unsigned int *)this->__pad_C0 = 2; /*0x71c70f*/
             this->Type = health; /*0x71c715*/
             *(unsigned int *)&this->IsBurning = v4; /*0x71c71b*/
@@ -8293,7 +8293,7 @@ int TerrainClass::Update() {
         {
           this->Animation[0] = 0; /*0x71c798*/
           v4 = *(unsigned int *)(v3 + 672); /*0x71c79e*/
-          v5 = *(TerrainTypeClass **)&stru_A8EB00.?[416]; /*0x71c7a4*/
+          v5 = *(TerrainTypeClass ** *)((char *)&stru_A8EB00 + 644); /*0x71c7a4*/
           *(unsigned int *)this->__pad_C0 = v4; /*0x71c7b0*/
           this->Type = v5; /*0x71c7b6*/
           *(unsigned int *)&this->IsBurning = v16; /*0x71c7bc*/
@@ -8311,7 +8311,7 @@ int TerrainClass::Update() {
       v7 = *(unsigned int *)&this->__pad_C0[4] + this->Animation[0]; /*0x71c7e9*/
       IDA_LOBYTE(this->Animation[1]) = 1; /*0x71c7eb*/
       this->Animation[0] = v7; /*0x71c7f2*/
-      this->Type = *(TerrainTypeClass **)&stru_A8EB00.?[416]; /*0x71c7fe*/
+      this->Type = *(TerrainTypeClass ** *)((char *)&stru_A8EB00 + 644); /*0x71c7fe*/
       *(unsigned int *)&this->IsBurning = v16; /*0x71c804*/
       this->height = result; /*0x71c807*/
       if ( this->__pad_C0[13] /*0x71c82d*/
@@ -8333,7 +8333,7 @@ int TerrainClass::Update() {
           if ( v10 == result ) /*0x71c87c*/
           {
             this->Animation[0] = 0; /*0x71c87e*/
-            v11 = *(TerrainTypeClass **)&stru_A8EB00.?[416]; /*0x71c884*/
+            v11 = *(TerrainTypeClass ** *)((char *)&stru_A8EB00 + 644); /*0x71c884*/
             p_Type = &this->Type; /*0x71c889*/
             *(unsigned int *)this->__pad_C0 = 0; /*0x71c88f*/
             location = this->?; /*0x71c897*/
@@ -8387,8 +8387,8 @@ int TerrainClass::ApplyCellModifications() {
       }
       while ( v3 < 8 ); /*0x71c9b8*/
       v14[0] = this->?[0]; /*0x71c9c6*/
-      v14[1] = this->?[1]; /*0x71c9d2*/
-      v14[2] = this->?[2]; /*0x71c9de*/
+      v14[1] = *(unsigned int *)((char *)this + 4); /*0x71c9d2*/
+      v14[2] = *(unsigned int *)((char *)this + 8); /*0x71c9de*/
       v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v14); /*0x71c9e2*/
       v7->occupationFlags &= ~0x40u; /*0x71c9f6*/
     }
@@ -8424,7 +8424,7 @@ int TerrainClass::CheckSpawnConditions(void* a1, int a2, int a3) {
     int v19; // [esp+14h] [ebp-14h]
     unsigned int v20[4]; // [esp+18h] [ebp-10h] BYREF
 
-    if ( !stru_A8EB00.?[391] && g_hWnd && (!a3 && !this->? || !this->? || this->?) ) /*0x71cc8c*/
+    if ( !*(unsigned int *)((char *)&stru_A8EB00 + 619) && g_hWnd && (!a3 && !this->? || !this->? || this->?) ) /*0x71cc8c*/
       return 0; /*0x71cc8c*/
     this->? = 0; /*0x71ccad*/
     v5 = ClipRectIntersection(v20, a2, &DSurface_ViewBounds.field_0, 0, 0); /*0x71ccb4*/
@@ -8578,10 +8578,10 @@ void* TerrainClass::Export(void* a1) {
     }
     else
     {
-      *a2 = g_BuildingLoadQueue_Array.?[0]; /*0x71d1a5*/
-      a2[1] = g_BuildingLoadQueue_Array.?[1]; /*0x71d1ad*/
-      a2[2] = g_BuildingLoadQueue_Array.?[2]; /*0x71d1b6*/
-      a2[3] = g_BuildingLoadQueue_Array.?[3]; /*0x71d1bf*/
+      *a2 = *(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 504); /*0x71d1a5*/
+      a2[1] = *(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 505); /*0x71d1ad*/
+      a2[2] = *(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 506); /*0x71d1b6*/
+      a2[3] = *(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 507); /*0x71d1bf*/
       return a2; /*0x71d198*/
     }
 }
@@ -8629,12 +8629,12 @@ int TiberiumClass::CleanupMembers() {
       }
     }
     v11 = this; /*0x721901*/
-    v3 = (*(int (__thiscall **)(int *, int *))(g_BuildingLoadQueue_Array.?[1] + 16))( /*0x721905*/
+    v3 = (*(int (__thiscall **)(int *, int *))(*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 505) + 16))( /*0x721905*/
            &g_BuildingLoadQueue_Array.?[1],
            &v11);
-    if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.?[0] ) /*0x721915*/
+    if ( v3 != -1 && v3 < *(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 504) ) /*0x721915*/
     {
-      --g_BuildingLoadQueue_Array.?[0]; /*0x72191a*/
+      --*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 504); /*0x72191a*/
       for ( ; /*0x721920*/
             v3 < g_BuildingLoadQueue_Array.?[0];
             *(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * v3) )
@@ -8771,7 +8771,7 @@ void* TubeClass::Construct(void* a1, int a2) {
     this->? = &TubeClass::`vftable'; /*0x728010*/
     AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x728017*/
     memset(&this->?, 0xFFu, 0x190u); /*0x728027*/
-    if ( FootClass_Array.?[0] < FootClass_Array.?[4] /*0x72805f*/
+    if ( *(unsigned int *)((char *)&FootClass_Array + 889) < *(unsigned int *)((char *)&FootClass_Array + 893) /*0x72805f*/
       || (IDA_BYTE1(FootClass_Array.?[5]) || !FootClass_Array.?[4])
       && FootClass_Array.?[1] > 0
       && (*(unsigned __int8 (__thiscall **)(int *, int, unsigned int))(FootClass_Array.?[2] + 8))(
@@ -8779,26 +8779,26 @@ void* TubeClass::Construct(void* a1, int a2) {
            FootClass_Array.?[4] + FootClass_Array.?[1],
            0) )
     {
-      v4 = FootClass_Array.?[0]++; /*0x72806c*/
-      *(unsigned int *)(FootClass_Array.?[3] + 4 * v4) = this; /*0x72807b*/
+      v4 = *(unsigned int *)((char *)&FootClass_Array + 889)++; /*0x72806c*/
+      *(unsigned int *)(*(unsigned int *)((char *)&FootClass_Array + 892) + 4 * v4) = this; /*0x72807b*/
     }
     if ( *a2 || a2[1] ) /*0x728084*/
     {
       v5 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x728091*/
       v6 = 0; /*0x72809c*/
-      if ( FootClass_Array.?[0] <= 0 ) /*0x7280a0*/
+      if ( *(unsigned int *)((char *)&FootClass_Array + 889) <= 0 ) /*0x7280a0*/
       {
   LABEL_13:
         IDA_LOWORD(v6) = -1; /*0x7280b4*/
       }
       else
       {
-        v7 = (TubeClass **)FootClass_Array.?[3]; /*0x7280a2*/
+        v7 = (TubeClass **)*(unsigned int *)((char *)&FootClass_Array + 892); /*0x7280a2*/
         while ( *v7 != this ) /*0x7280aa*/
         {
           ++v6; /*0x7280ac*/
           ++v7; /*0x7280ad*/
-          if ( v6 >= FootClass_Array.?[0] ) /*0x7280b2*/
+          if ( v6 >= *(unsigned int *)((char *)&FootClass_Array + 889) ) /*0x7280b2*/
             goto LABEL_13; /*0x7280b2*/
         }
       }
@@ -8848,19 +8848,19 @@ void* TubeClass::ProcessEvent(int a1) {
     if ( v3 ) /*0x728746*/
     {
       v4 = 0; /*0x72874f*/
-      if ( FootClass_Array.?[0] <= 0 ) /*0x728753*/
+      if ( *(unsigned int *)((char *)&FootClass_Array + 889) <= 0 ) /*0x728753*/
       {
   LABEL_6:
         v4 = -1; /*0x728767*/
       }
       else
       {
-        v5 = (TubeClass **)FootClass_Array.?[3]; /*0x728755*/
+        v5 = (TubeClass **)*(unsigned int *)((char *)&FootClass_Array + 892); /*0x728755*/
         while ( *v5 != this ) /*0x72875d*/
         {
           ++v4; /*0x72875f*/
           ++v5; /*0x728760*/
-          if ( v4 >= FootClass_Array.?[0] ) /*0x728765*/
+          if ( v4 >= *(unsigned int *)((char *)&FootClass_Array + 889) ) /*0x728765*/
             goto LABEL_6; /*0x728765*/
         }
       }
@@ -8868,10 +8868,10 @@ void* TubeClass::ProcessEvent(int a1) {
         v3[139] = -1; /*0x728776*/
     }
     v8 = this; /*0x72878f*/
-    v6 = (*(int (__thiscall **)(int *, TubeClass **))(FootClass_Array.?[2] + 16))(&FootClass_Array.?[2], &v8); /*0x728793*/
-    if ( v6 != -1 && v6 < FootClass_Array.?[0] ) /*0x7287a3*/
+    v6 = (*(int (__thiscall **)(int *, TubeClass **))(*(unsigned int *)((char *)&FootClass_Array + 891) + 16))(((char *)&FootClass_Array + 891), &v8); /*0x728793*/
+    if ( v6 != -1 && v6 < *(unsigned int *)((char *)&FootClass_Array + 889) ) /*0x7287a3*/
     {
-      --FootClass_Array.?[0]; /*0x7287a8*/
+      --*(unsigned int *)((char *)&FootClass_Array + 889); /*0x7287a8*/
       for ( ; /*0x7287ae*/
             v6 < FootClass_Array.?[0];
             *(unsigned int *)(FootClass_Array.?[3] + 4 * v6 - 4) = *(unsigned int *)(FootClass_Array.?[3] + 4 * v6) )
@@ -8905,10 +8905,10 @@ void AnimClass::ProcessSequence() {
     v4 = this->AnimClass_field_0x30[0]; /*0x729385*/
     if ( v3 != -1 ) /*0x72938b*/
     {
-      if ( *(unsigned int *)&stru_A8EB00.?[416] - v3 >= v4 ) /*0x729397*/
+      if ( *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v3 >= v4 ) /*0x729397*/
         v4 = 0; /*0x72939d*/
       else
-        v4 -= *(unsigned int *)&stru_A8EB00.?[416] - v3; /*0x729399*/
+        v4 -= *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v3; /*0x729399*/
     }
     if ( (double)(v2 - v4) / (double)*(int *)this->__pad_34 == 1.0 ) /*0x7293b8*/
     {
@@ -9015,7 +9015,7 @@ void* WaveClass::Constructor(void* a1, void* a2, void* a3, void* a4, void* a5) {
     if ( v6 >= 240.0 ) /*0x75ea91*/
     {
       AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x75eaa4*/
-      if ( *(int *)&stru_A8EB00.?[100] < *(int *)&stru_A8EB00.?[92] /*0x75eadd*/
+      if ( *(int * *)((char *)&stru_A8EB00 + 328) < *(int * *)((char *)&stru_A8EB00 + 320) /*0x75eadd*/
         || (stru_A8EB00.?[97] || !*(unsigned int *)&stru_A8EB00.?[92])
         && *(int *)&stru_A8EB00.?[104] > 0
         && (*(unsigned __int8 (__thiscall **)(unsigned char *, int, unsigned int))(*(unsigned int *)&stru_A8EB00.?[84] + 8))(
@@ -9023,8 +9023,8 @@ void* WaveClass::Constructor(void* a1, void* a2, void* a3, void* a4, void* a5) {
              *(unsigned int *)&stru_A8EB00.?[92] + *(unsigned int *)&stru_A8EB00.?[104],
              0) )
       {
-        v10 = (*(unsigned int *)&stru_A8EB00.?[100])++; /*0x75eaea*/
-        *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[88] + 4 * v10) = this; /*0x75eaf9*/
+        v10 = (*(unsigned int * *)((char *)&stru_A8EB00 + 328))++; /*0x75eaea*/
+        *(unsigned int *)(*(unsigned int * *)((char *)&stru_A8EB00 + 316) + 4 * v10) = this; /*0x75eaf9*/
       }
       if ( !byte_B725CC ) /*0x75eb02*/
         Voxel::InitDistanceTable(v16); /*0x75eb04*/
@@ -9075,10 +9075,10 @@ int WaveClass::Destructor() {
     this->? = &off_7F6BC8; /*0x75ed4b*/
     AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x75ed52*/
     v5 = this; /*0x75ed67*/
-    v2 = (*(int (__thiscall **)(unsigned char *, WaveClass **))(*(unsigned int *)&stru_A8EB00.?[84] + 16))(&stru_A8EB00.?[84], &v5); /*0x75ed6b*/
-    if ( v2 != -1 && v2 < *(int *)&stru_A8EB00.?[100] ) /*0x75ed7b*/
+    v2 = (*(int (__thiscall **)(unsigned char *, WaveClass **))(*(unsigned int * *)((char *)&stru_A8EB00 + 312) + 16))(((char *)&stru_A8EB00 + 312), &v5); /*0x75ed6b*/
+    if ( v2 != -1 && v2 < *(int * *)((char *)&stru_A8EB00 + 328) ) /*0x75ed7b*/
     {
-      --*(unsigned int *)&stru_A8EB00.?[100]; /*0x75ed80*/
+      --*(unsigned int * *)((char *)&stru_A8EB00 + 328); /*0x75ed80*/
       for ( ; /*0x75ed86*/
             v2 < *(int *)&stru_A8EB00.?[100];
             *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[88] + 4 * v2 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[88] + 4 * v2) )

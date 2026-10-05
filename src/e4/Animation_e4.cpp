@@ -32,6 +32,7 @@
 #include "e4/classes/StaticString_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4549B0
 namespace gamemd {

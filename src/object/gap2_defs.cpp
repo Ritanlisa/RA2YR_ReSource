@@ -21,6 +21,7 @@
 #include "object/radbeam.hpp"
 #include "object/techno.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x410540
 namespace ra2 { namespace game { 
@@ -820,10 +821,10 @@ int MissionClass::ForceMission()
       this->queuedMission = -1; /*0x5b2fef*/
       this->missionQueued = 0; /*0x5b2ff9*/
       this->missionStatus = 0; /*0x5b2fff*/
-      this->missionStartTime = *(unsigned int *)&stru_A8EB00.?[416]; /*0x5b300a*/
+      this->missionStartTime = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x5b300a*/
       this->missionData = 0; /*0x5b3010*/
       missionTimer = this->missionTimer; /*0x5b301b*/
-      *missionTimer = *(unsigned int *)&stru_A8EB00.?[416]; /*0x5b3021*/
+      *missionTimer = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x5b3021*/
       missionTimer[1] = v3; /*0x5b3027*/
       missionTimer[2] = 0; /*0x5b302a*/
       return v3; /*0x5b3023*/
@@ -866,13 +867,13 @@ int MissionClass::NextMission()
     {
       this->currentMission = result; /*0x5b357f*/
       this->queuedMission = -1; /*0x5b3585*/
-      v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x5b358f*/
+      v2 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x5b358f*/
       this->missionStatus = 0; /*0x5b359c*/
       this->missionTimer[0] = v2; /*0x5b35a2*/
       this->missionTimer[1] = v3; /*0x5b35a8*/
       this->missionTimer[2] = 0; /*0x5b35ab*/
-      result = *(unsigned int *)&stru_A8EB00.?[416]; /*0x5b35ae*/
-      this->missionStartTime = *(unsigned int *)&stru_A8EB00.?[416]; /*0x5b35b3*/
+      result = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x5b35ae*/
+      this->missionStartTime = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x5b35b3*/
       this->missionData = 0; /*0x5b35b9*/
       this->missionQueued = 0; /*0x5b35bf*/
       IDA_LOBYTE(result) = 1; /*0x5b35c5*/
@@ -2398,7 +2399,7 @@ int TechnoClass::DrawPips()
         && IsTechInfiltrated((TechnoClass *)this->owner) )
       {
         v91 = 1; /*0x70a54c*/
-        if ( *(unsigned int *)&stru_A8EB00.?[416] % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 48) <= 5 /*0x70a56c*/
+        if ( *(unsigned int * *)((char *)&stru_A8EB00 + 644) % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 48) <= 5 /*0x70a56c*/
           && this->? < *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 160) )
         {
           v92 = 1; /*0x70a56e*/
@@ -2410,7 +2411,7 @@ int TechnoClass::DrawPips()
         && IsProductionInfiltrated((TechnoClass *)this->owner) )
       {
         v91 = 1; /*0x70a5b8*/
-        if ( *(unsigned int *)&stru_A8EB00.?[416] % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 56) <= 5 /*0x70a5d8*/
+        if ( *(unsigned int * *)((char *)&stru_A8EB00 + 644) % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 56) <= 5 /*0x70a5d8*/
           && this->? < *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 160) )
         {
           v92 = 1; /*0x70a5da*/

@@ -51,6 +51,8 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/SidebarClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/LightningStorm_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TacticalClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x6DD8B0
 namespace gamemd {

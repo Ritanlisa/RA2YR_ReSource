@@ -43,6 +43,11 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/AITriggerTypeClass_e4.hpp"
 #include "e4/classes/TagClass_e4.hpp"
+#include "e4/classes/Vector4_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/CellClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4D9E70
 namespace gamemd {

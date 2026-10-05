@@ -37,6 +37,7 @@
 #include "e4/classes/ShroudClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FacingClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/GadgetGrid_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x43B5E0
 namespace gamemd {

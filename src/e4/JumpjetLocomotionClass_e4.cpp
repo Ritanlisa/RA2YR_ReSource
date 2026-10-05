@@ -44,6 +44,7 @@
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/Function_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x439B00
 namespace gamemd {

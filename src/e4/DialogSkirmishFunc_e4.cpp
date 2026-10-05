@@ -24,6 +24,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x6ACEE0
 namespace gamemd {

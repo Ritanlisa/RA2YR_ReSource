@@ -19,6 +19,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ParticleTypeClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x5A5360
 namespace gamemd {

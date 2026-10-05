@@ -30,5 +30,7 @@ struct Campaign_WorldDominationTour_16 {
     unsigned int Write(int a2);  // 0x7659D0
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
+    rc_ptr * Constructor(char Block);
+    rc_ptr * Constructor_0(char Block);
 };
 } // namespace gamemd

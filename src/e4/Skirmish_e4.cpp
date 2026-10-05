@@ -46,6 +46,7 @@
 #include "e4/classes/IsRandMap_e4.hpp"
 #include "e4/classes/PtrVector_e4.hpp"
 #include "e4/classes/Surface_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x46F600
 namespace gamemd {

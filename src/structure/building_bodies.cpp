@@ -21,6 +21,7 @@ using ra2::game::AbstractClass;
 #include "structure/globals_structure.hpp"
 #include "e4/classes/unknown_e4.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
+#include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 namespace gamemd {
 namespace Math {

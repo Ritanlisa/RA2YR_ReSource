@@ -18,6 +18,7 @@
 #include "e4/classes/IStream_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/VocClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4391C0
 namespace gamemd {

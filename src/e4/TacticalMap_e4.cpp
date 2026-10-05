@@ -39,6 +39,9 @@
 #include "e4/classes/Coord2D_e4.hpp"
 #include "e4/classes/Matrix3x3_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
+#include "e4/classes/Vector2_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/BuildingClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x484680
 namespace gamemd {
@@ -1030,7 +1033,7 @@ int TacticalMap::DrawOccupiedRegion()
 }
 }  // G42.18c ns repair
 // 0x7BCFB0
-unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int aP3, int a5)
+unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int a4, int a5)
 {
 
   TacticalMap *v5; // edi

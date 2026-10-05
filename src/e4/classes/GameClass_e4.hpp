@@ -134,5 +134,7 @@ struct GameClass {
     int loadGameState(int a2);  // 0x632FE0
     int parseGameOptions(int a2);  // 0x633360
     int FindPlayerName(int a1);  // 0x69BC60
+    int initPlayerData(const char **a2, void * aStandard_0);
+    wchar_t * GetDifficultyString(void * aSttPlayerclose, void * aSttPlayerhuman, void * aSttPlayeropen, void * aSttPlayeropeno);
 };
 } // namespace gamemd

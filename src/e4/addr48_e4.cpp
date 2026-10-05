@@ -52,6 +52,7 @@
 #include "e4/classes/CampaignClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CheckListClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ColorListClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4880F0
 namespace gamemd {

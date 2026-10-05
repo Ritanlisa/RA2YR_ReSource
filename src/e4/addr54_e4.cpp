@@ -56,6 +56,12 @@
 #include "e4/classes/LinkedList_flat_e4.hpp"
 #include "e4/classes/GenericNode_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/TerrainTypeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/AnimTypeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/BufferIOFileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TerrainClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/HashTable_flat_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/CellClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x540C50
 namespace gamemd {

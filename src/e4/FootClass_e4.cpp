@@ -35,6 +35,7 @@
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/COMObject_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4D3590
 namespace gamemd {

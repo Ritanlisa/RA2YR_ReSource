@@ -20,6 +20,9 @@
 #include "e4/classes/Bounds_e4.hpp"
 #include "e4/classes/NeuronClass_e4.hpp"
 #include "e4/classes/Vector3_e4.hpp"
+#include "e4/classes/Coord2D_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Vector2_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Function_e4.hpp"  // G42.36 C2027 supply
 
 // 0x5B20F0
 namespace gamemd {

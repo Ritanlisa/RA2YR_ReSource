@@ -164,6 +164,12 @@
 #include "e4/classes/VectorCursor_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/BulletClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/AnimClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TeamClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Byte_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/COMClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Rect_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4137A0
 namespace gamemd {

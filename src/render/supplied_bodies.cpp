@@ -1362,7 +1362,7 @@ unsigned short * FrameSnapshot::Init()
 
     *(unsigned short *)this->__pad_0 = 0; /*0x4c91c4*/
     IDA_LOWORD(this->FrameSnapshot_field_0x04) = 0; /*0x4c91c7*/
-    v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4c91cb*/
+    v2 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4c91cb*/
     *((unsigned int *)this + 4) = 0; /*0x4c91d1*/
     *((unsigned int *)this + 2) = v2; /*0x4c91d4*/
     *((unsigned short *)this + 10) = 0; /*0x4c91d7*/
@@ -1382,7 +1382,7 @@ unsigned short * FrameSnapshot::InitMax(int a2)
     result = this; /*0x4c91e0*/
     *(unsigned short *)this->__pad_0 = 0; /*0x4c91e4*/
     IDA_LOWORD(this->FrameSnapshot_field_0x04) = 0; /*0x4c91e7*/
-    v3 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4c91eb*/
+    v3 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4c91eb*/
     *((unsigned int *)this + 4) = 0; /*0x4c91f1*/
     *((unsigned int *)this + 2) = v3; /*0x4c91f4*/
     *((unsigned short *)this + 10) = 0; /*0x4c91f7*/
@@ -2278,7 +2278,7 @@ unsigned int TacticalMapClass::SetCameraPosition(int *a2)
     v3 = *a2; /*0x6d6012*/
     v8 = a2[1]; /*0x6d6014*/
     v7 = v3; /*0x6d601b*/
-    if ( !ClampCoordMap(&v7) || stru_A8EB00.?[391] ) /*0x6d602f*/
+    if ( !ClampCoordMap(&v7) || *(unsigned int *)((char *)&stru_A8EB00 + 619) ) /*0x6d602f*/
     {
       v4 = *a2; /*0x6d603b*/
       v5 = a2[1]; /*0x6d603d*/
@@ -2443,7 +2443,7 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3)
         v19 = (unsigned __int8)v32[282]; /*0x6d80eb*/
         if ( v18 != 0xFFFF && v18 != 255 ) /*0x6d80f8*/
         {
-          v20 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v18); /*0x6d8104*/
+          v20 = *(unsigned int *)(*(unsigned int * *)((char *)&stru_A8EB00 + 556) + 4 * v18); /*0x6d8104*/
           if ( v20 ) /*0x6d8109*/
           {
             v21 = (unsigned int *)(*(int (__thiscall **)(int))(*(unsigned int *)v20 + 156))(v20); /*0x6d8113*/

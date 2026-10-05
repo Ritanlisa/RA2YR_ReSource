@@ -525,8 +525,6 @@ struct ObjectClass {
     char sub_47A1B0(DWORD BytesReturned);  // A_c2039 R5 static-form sync
     void* Constructor;  // 0x0 (no offset truth)
     void sub_47A080(DWORD a2);  // A_c2039 R5 static-form sync
-    void* nullsub_126;  // 0x0 (no offset truth)
-    void* j_DeleteAndZero;  // 0x0 (no offset truth)
     static int SaveToStream_Common(void *aP0, IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2);  // A_c2039 R5 static-form sync
     static int ProductionCompletionCallback(void *aP0, void * aP1);  // A_c2039 R5 static-form sync
     static int LoadFromStream_Common(void *aP0, FootClass * aP1, LPSTREAM pStm);  // A_c2039 R5 static-form sync
@@ -680,6 +678,8 @@ struct ObjectClass {
     char* BuildResultPacket(char * Destination, char * Source, IUnknown * aP2);  // G42.39 supply
 
     char* TerrainInitMap(char * Destination, RandomStruct * aP1, IUnknown * aP2);  // G42.39 supply
+    void j_DeleteAndZero();
+    void nullsub_126();
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

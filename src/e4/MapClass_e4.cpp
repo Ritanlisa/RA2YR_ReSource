@@ -49,6 +49,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4112D0
 namespace gamemd {

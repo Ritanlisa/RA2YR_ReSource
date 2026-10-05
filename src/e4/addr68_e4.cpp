@@ -88,6 +88,15 @@
 #include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/WarheadTypeClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Render_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ComPtr_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/UnitTypeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/InfantryClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ScriptTypeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TeamTypeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x682640
 namespace gamemd {

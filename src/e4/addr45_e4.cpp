@@ -44,6 +44,7 @@
 #include "e4/classes/ParticleSystemClass_e4.hpp"
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x451400
 namespace gamemd {

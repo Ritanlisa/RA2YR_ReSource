@@ -8,6 +8,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/DialogControl_e4.hpp"
 #include "e4/classes/E4Recv_74F63A_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x74F620
 namespace gamemd {

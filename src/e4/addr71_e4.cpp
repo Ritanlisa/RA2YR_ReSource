@@ -30,6 +30,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/UnitClass_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x710860
 namespace gamemd {

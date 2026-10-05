@@ -18,6 +18,7 @@
 #include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x657DA0
 namespace gamemd {
@@ -294,7 +295,7 @@ LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 } // namespace gamemd
 
 // 0x656580
-char * Diplomacy::GetField(int aP1)
+char * Diplomacy::GetField(int a2)
 {
 
   return (unsigned char *)this + 24 * *(unsigned int *)(aP1 + 3824) + 4728; /*0x656595*/

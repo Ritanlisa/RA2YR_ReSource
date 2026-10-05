@@ -405,7 +405,7 @@ int TerrainTypeClass::GetTileData(int a2, void * a3, signed int * a4, unsigned i
 
 }
 // 0x71DDD0
-bool  TerrainTypeClass::GetHeight(TerrainClass * aP2, int a3)
+bool  TerrainTypeClass::GetHeight(TerrainClass * a2, int a3)
 {
 
   TerrainClass *v4; // eax

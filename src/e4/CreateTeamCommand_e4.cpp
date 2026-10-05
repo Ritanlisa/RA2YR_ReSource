@@ -42,6 +42,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/CommandClass_e4.hpp"
 #include "e4/classes/PlayerClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x535CF0
 namespace gamemd {

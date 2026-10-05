@@ -32,6 +32,7 @@
 #include "e4/classes/OverlayTypeClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/GenericNode_e4.hpp"  // G42.36 C2027 supply
 
 // 0x474810
 namespace gamemd {

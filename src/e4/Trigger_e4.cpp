@@ -39,6 +39,7 @@
 #include "e4/classes/Count_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/PriorityQueue_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x554A60
 namespace gamemd {

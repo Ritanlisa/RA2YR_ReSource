@@ -16,6 +16,7 @@ using ra2::game::AbstractClass;
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "misc/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 namespace gamemd
 {
@@ -1829,7 +1830,7 @@ char MapSeedClass::AddRef( char * Source)
       *(unsigned int *)v25.__pad_0 = &INIClass::`vftable'; /*0x597ac9*/
       if ( FileStraw::Open((FileStraw *)&v25, (int)&v26, 0) ) /*0x597ad1*/
       {
-        StringCSF = GetStringCSF((wchar_t *)stru_82BA00.?, 0, &stru_82BA00.?[11], 5433); /*0x597af8*/
+        StringCSF = GetStringCSF((wchar_t *)stru_82BA00.?, 0, ((char *)&stru_82BA00 + 100), 5433); /*0x597af8*/
         INIClass::ParseValue_Wide( /*0x597b0c*/
           &v25,
           (unsigned __int8 *)&stru_82BA00.?[8],
@@ -4206,7 +4207,7 @@ int ExceptionHandler::GenerateReport()
     v20 = lstrlenA(::Buffer); /*0x4c89ef*/
     if ( lstrlenA(String) + v20 < 0xFFFF ) /*0x4c89fc*/
       lstrcatA(::Buffer, String); /*0x4c8a08*/
-    ModuleInternalVersion = GetModuleInternalVersion((ObjectClass *)&stru_A8EB00.?[252]); /*0x4c8a13*/
+    ModuleInternalVersion = GetModuleInternalVersion((ObjectClass * *)((char *)&stru_A8EB00 + 480)); /*0x4c8a13*/
     wsprintfA(String, "Internal Version %s\r\n", ModuleInternalVersion); /*0x4c8a23*/
     v22 = lstrlenA(::Buffer); /*0x4c8a33*/
     if ( lstrlenA(String) + v22 < 0xFFFF ) /*0x4c8a40*/
@@ -4480,7 +4481,7 @@ int GlobalArray::FindString()
     if ( !_strcmpi((char *)this, g_Str__none_) ) /*0x422b2e*/
       return -1; /*0x422b2e*/
     v2 = 0; /*0x422b3f*/
-    if ( FootClass_Array.?[0] <= 0 ) /*0x422b43*/
+    if ( *(unsigned int *)((char *)&FootClass_Array + 889) <= 0 ) /*0x422b43*/
       return -1; /*0x422b68*/
     while ( _strcmpi((char *)(*(unsigned int *)(FootClass_Array.?[3] + 4 * v2) + 36), (char *)this) ) /*0x422b5c*/
     {
@@ -5841,11 +5842,11 @@ int Performance::Profile()
     if ( dword_825C8C != -1 ) /*0x5355de*/
       return result; /*0x5355de*/
     v20 = v1; /*0x5355e6*/
-    stru_A8EB00.?[1968] = 0; /*0x5355e7*/
-    stru_A8EB00.?[1840] = 0; /*0x5355ee*/
-    stru_A8EB00.?[2236] = 0; /*0x5355f5*/
-    stru_A8EB00.?[2108] = 0; /*0x5355fc*/
-    stru_A8EB00.?[2364] = 0; /*0x535603*/
+    *(unsigned int *)((char *)&stru_A8EB00 + 2196) = 0; /*0x5355e7*/
+    *(unsigned int *)((char *)&stru_A8EB00 + 2068) = 0; /*0x5355ee*/
+    *(unsigned int *)((char *)&stru_A8EB00 + 2464) = 0; /*0x5355f5*/
+    *(unsigned int *)((char *)&stru_A8EB00 + 2336) = 0; /*0x5355fc*/
+    *(unsigned int *)((char *)&stru_A8EB00 + 2592) = 0; /*0x535603*/
     v3 = DetectProcessorType(); /*0x53560f*/
     v4 = Performance::MeasureTicks(v20); /*0x535616*/
     v5 = 5; /*0x53561b*/
@@ -6029,7 +6030,7 @@ int Performance::Profile()
       }
     }
     Debug::Log(); /*0x5359bb*/
-    sprintf(&stru_A8EB00.?[2364], "%d blits per second\n", 2 * i); /*0x5359cb*/
+    sprintf(((char *)&stru_A8EB00 + 2592), "%d blits per second\n", 2 * i); /*0x5359cb*/
     v19 = v23; /*0x5359d0*/
     dword_825C8C = v23; /*0x5359dd*/
     if ( v23 >= v21 ) /*0x5359e3*/

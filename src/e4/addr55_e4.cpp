@@ -48,6 +48,12 @@
 #include "e4/classes/Pipe_e4.hpp"
 #include "e4/classes/SaveLoadDialog_e4.hpp"
 #include "e4/classes/LightConvertClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/CopyProtection_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Tooltip_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/WTFMode_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/NetworkEventQueueClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Process_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Theme_e4.hpp"  // G42.36 C2027 supply
 
 // 0x550080
 namespace gamemd {

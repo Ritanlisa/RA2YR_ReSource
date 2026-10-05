@@ -62,7 +62,6 @@ struct NetworkLobby {
     unsigned int Dialog;
     unsigned int Timer;
     unsigned int Event;
-    void* DlgProc;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int a6);  // 0x5D4210
     int CreateGame();  // 0x5DC350
@@ -82,5 +81,6 @@ struct NetworkLobby {
     char CheckPlayerNameValid();  // 0x5E96A0
     char CheckPlayerNames();  // 0x5E9720
     void UpdateLabels(HWND hDlg);  // 0x5EE6A0
+    int DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lParam, void * a2);
 };
 } // namespace gamemd

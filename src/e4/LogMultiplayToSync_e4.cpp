@@ -14,6 +14,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Time_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x6516F0
 namespace gamemd {

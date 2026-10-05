@@ -24,6 +24,12 @@
 #include "e4/classes/DSurface_e4.hpp"
 #include "e4/classes/ParasiteClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ObjectPtr_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/BufferIOFileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/AbstractTypeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/MixFileClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x5FE250
 namespace gamemd {  // G42.18c ns repair

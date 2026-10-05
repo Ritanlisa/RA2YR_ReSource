@@ -41,6 +41,7 @@
 #include "house/house_type.hpp"
 #include "e4/classes/ScriptAction_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "team/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // G42.33 批 2: e4 命名全局 + 串标签载体 (ida_globals.h 只覆盖裸名; 全局域)
 extern int FootClass_Array;               // data: 0x8B3DC0 (e4_globals 名)

@@ -173,7 +173,7 @@ int GameSettings::Read()
                                aAllowhiresmode,
                                *(unsigned char *)&_ESI[53]);
     Debug::Log(); /*0x5fa96d*/
-    stru_A8EB00.?[383] = INIClass::ReadBool_Overwrite( /*0x5fa990*/
+    *(unsigned int *)((char *)&stru_A8EB00 + 611) = INIClass::ReadBool_Overwrite( /*0x5fa990*/
                            (int *)&DSurface_ViewBounds.__pad_FC[36],
                            g_INI_Key_Video,
                            aAllowmodetoggl,

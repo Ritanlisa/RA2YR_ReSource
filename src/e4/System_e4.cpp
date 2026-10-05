@@ -51,6 +51,8 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 #include "e4/classes/FontClass_e4.hpp"
 #include "e4/classes/MultiplayerConfig_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/DeleteAndZero_e4.hpp"  // G42.36 C2027 supply
 
 // 0x52A9E0
 namespace gamemd {

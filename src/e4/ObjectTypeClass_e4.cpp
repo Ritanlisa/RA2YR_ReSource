@@ -31,6 +31,9 @@
 #include "e4/classes/BulletTypeClass_e4.hpp"
 #include "e4/classes/WaveClass_e4.hpp"
 #include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/classes/COMObject_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/FileExtension_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x46C790
 namespace gamemd {

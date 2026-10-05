@@ -47,6 +47,7 @@
 #include "e4/classes/Player_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/INIClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x5E2820
 namespace gamemd {

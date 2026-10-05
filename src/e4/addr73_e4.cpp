@@ -43,6 +43,8 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/FootClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x730A90
 namespace gamemd {

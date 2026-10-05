@@ -164,5 +164,6 @@ struct Game {
     int SetDword32(int a2);
     int SetDword30(int a2);
     Game * * sub_634B20();
+    HashTable_flat * * StartModemMultiplayer(ObjectClass *a2, char a3);
 };
 } // namespace gamemd

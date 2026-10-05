@@ -35,6 +35,8 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/CreateTeamCommand_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Vector4_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4FA350
 namespace gamemd {

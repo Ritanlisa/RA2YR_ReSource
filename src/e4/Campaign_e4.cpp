@@ -25,6 +25,7 @@
 #include "e4/classes/Conflict_e4.hpp"
 #include "e4/classes/BINK_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x765840
 namespace gamemd {

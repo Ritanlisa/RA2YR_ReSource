@@ -43,6 +43,7 @@
 #include "e4/classes/Pipe_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x472A80
 namespace gamemd {

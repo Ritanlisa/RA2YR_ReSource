@@ -29,6 +29,7 @@
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
 #include "e4/classes/FontClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x530460
 namespace gamemd {
@@ -252,7 +253,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
 }
 // 0x627590
 namespace gamemd {
-unsigned int * MIXFile::Load(ObjectClass * aP1)
+unsigned int * MIXFile::Load(ObjectClass * a2)
 {
 
   MIXFile *v2; // ebp

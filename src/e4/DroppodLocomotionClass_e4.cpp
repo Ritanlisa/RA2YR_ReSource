@@ -30,6 +30,7 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/SwizzleManager_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4B5B70
 namespace gamemd {

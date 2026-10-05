@@ -22,6 +22,7 @@
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/File_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x459F90
 namespace gamemd {

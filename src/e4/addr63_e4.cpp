@@ -115,6 +115,9 @@
 #include "e4/classes/BuildingLoadQueue_e4.hpp"
 #include "e4/classes/PhoneEditor_e4.hpp"
 #include "e4/classes/Function_e4.hpp"
+#include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Rect_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x630310
 namespace gamemd {

@@ -9038,10 +9038,10 @@ int BuildingClass::CleanupOccupation() {
                 v20 = (int *)RA2_OPNEW(0x100u); /*0x454f88*/
                 if ( v20 ) /*0x454f8f*/
                 {
-                  v21 = this->?[1]; /*0x454fa9*/
+                  v21 = *(unsigned int *)((char *)this + 4); /*0x454fa9*/
                   v65[0] = v18 + this->?[0]; /*0x454fac*/
-                  v22 = this->?[2]; /*0x454fb4*/
-                  v67[0] = this->?[0]; /*0x454fbb*/
+                  v22 = *(unsigned int *)((char *)this + 8); /*0x454fb4*/
+                  v67[0] = *(unsigned int *)((char *)this + 4); /*0x454fbb*/
                   v65[1] = v19 + v21; /*0x454fbf*/
                   v23 = this->?[1]; /*0x454fc3*/
                   v24 = this->?[2]; /*0x454fc6*/
@@ -9049,7 +9049,7 @@ int BuildingClass::CleanupOccupation() {
                   v67[1] = v23; /*0x454fd9*/
                   v68 = v24; /*0x454fdd*/
                   v25 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v67); /*0x454fe1*/
-                  v26 = ParticleSystemClass::Constructor(v20, this->Type->?[0], v65, (int)v25, 0, &g_BuildingClassPool, 0); /*0x454fff*/
+                  v26 = ParticleSystemClass::Constructor(v20, this->*(unsigned int *)((char *)Type + 1892), v65, (int)v25, 0, &g_BuildingClassPool, 0); /*0x454fff*/
                   v1 = this; /*0x455004*/
                 }
                 else

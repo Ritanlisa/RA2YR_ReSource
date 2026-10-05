@@ -34,6 +34,7 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x48B390
 namespace gamemd {

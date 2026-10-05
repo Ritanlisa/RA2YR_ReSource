@@ -57,6 +57,8 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/Node_flat_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x58BB30
 namespace gamemd {

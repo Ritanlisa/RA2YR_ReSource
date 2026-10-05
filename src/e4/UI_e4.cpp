@@ -60,6 +60,8 @@
 #include "e4/classes/Property_e4.hpp"
 #include "e4/classes/SafeDelete_e4.hpp"
 #include "e4/classes/TextGroup_e4.hpp"
+#include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x52B6D0
 namespace gamemd {

@@ -55,6 +55,7 @@
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 #include "e4/classes/Rect_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"  // G42.36 C2027 supply
 
 // 0x5C00E0
 namespace gamemd {

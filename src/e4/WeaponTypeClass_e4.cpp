@@ -28,6 +28,9 @@
 #include "e4/classes/BulletTypeClass_e4.hpp"
 #include "e4/classes/WarheadTypeClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/AnimTypeVector_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/INIClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/VocClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x512680
 namespace gamemd {

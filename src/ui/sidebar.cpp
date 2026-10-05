@@ -36,7 +36,7 @@ void SidebarClass::SidebarNeedsRepaint(int mode)
 }
 
 // 0x6a6300
-bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
+bool SidebarClass::AddCameo(AbstractType a2, int32_t a3)
 {
     int result; // eax
     int v5; // eax
@@ -59,7 +59,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
     int v23; // [esp+10h] [ebp-4h]
     int v24; // [esp+18h] [ebp+4h]
 
-    if ( stru_A8EB00.?[391] ) /*0x6a630e*/
+    if ( *(unsigned int *)((char *)&stru_A8EB00 + 619) ) /*0x6a630e*/
       goto LABEL_57; /*0x6a630e*/
     v5 = 0; /*0x6a6314*/
     v6 = (int *)((char *)this + 5528); /*0x6a6316*/

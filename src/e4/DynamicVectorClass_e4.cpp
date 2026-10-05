@@ -29,6 +29,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/EMPulseClass_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x525110
 namespace gamemd {

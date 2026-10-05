@@ -29,6 +29,7 @@
 #include "e4/classes/WinsockInterfaceClass_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"
 #include "e4/classes/IPXInterfaceClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x7B1B50
 namespace gamemd {

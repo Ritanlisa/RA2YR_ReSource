@@ -27,6 +27,7 @@
 #include "e4/classes/Voice_e4.hpp"
 #include "e4/classes/AudioSample_e4.hpp"
 #include "e4/classes/Struct_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x401910
 namespace gamemd {

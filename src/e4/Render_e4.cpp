@@ -55,6 +55,7 @@
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/Coord2D_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x52FF90
 namespace gamemd {

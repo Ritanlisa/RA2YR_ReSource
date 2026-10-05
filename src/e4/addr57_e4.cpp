@@ -28,6 +28,10 @@
 #include "e4/classes/BombClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Rect_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Coord2D_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x574600
 namespace gamemd {

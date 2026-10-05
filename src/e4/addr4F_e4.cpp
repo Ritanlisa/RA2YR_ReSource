@@ -65,6 +65,8 @@
 #include "e4/classes/PriorityQueue_e4.hpp"
 #include "e4/classes/ArtConfig_e4.hpp"
 #include "e4/classes/MSVQAnim_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4F10E0
 namespace gamemd {

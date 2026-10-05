@@ -32,6 +32,7 @@
 #include "e4/classes/Property_e4.hpp"
 #include "e4/classes/TextGroup_e4.hpp"
 #include "e4/classes/Text_e4.hpp"
+#include "D:\RA2YR_ReSource\src\e4\minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x432690
 namespace gamemd {

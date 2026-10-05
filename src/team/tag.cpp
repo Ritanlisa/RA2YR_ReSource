@@ -199,7 +199,7 @@ int TagClass::Destroy()
     return result; /*0x6e528a*/
 }
 // 0x6e55c0
-int TagClass::AddTrigger(TriggerClass* trigger)
+int TagClass::AddTrigger(TriggerClass* a2)
 {
     *(unsigned int *)(a2 + 40) = *(this + 10); /*0x6e55c7*/
     *(this + 10) = a2; /*0x6e55ca*/

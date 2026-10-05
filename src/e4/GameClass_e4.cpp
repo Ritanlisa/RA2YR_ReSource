@@ -41,6 +41,7 @@
 #include "e4/classes/Straw_e4.hpp"
 #include "e4/classes/COMObject_e4.hpp"
 #include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x437FD0
 namespace gamemd {

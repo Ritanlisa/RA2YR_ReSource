@@ -6,6 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+class PerFrameUpdate;  // G42.36 fwd supply
 struct BombClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
@@ -697,6 +698,7 @@ struct InfantryClass {
     AnimClass * FireAtTargetPos(int a2, int a3, int a4);
     bool CanEnterBuilding();
     int FindIdleAITarget();
+    int PerFrameUpdate(int a2);
 };
 
 } // namespace gamemd

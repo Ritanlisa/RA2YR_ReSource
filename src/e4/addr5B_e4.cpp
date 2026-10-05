@@ -79,6 +79,15 @@
 #include "e4/classes/Palette_e4.hpp"
 #include "e4/classes/Pipe_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/Count_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Text_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/AudioController_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/AudioSource_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/AudioFile_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/VocClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TextBuffer_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x5B3B10
 namespace gamemd {
