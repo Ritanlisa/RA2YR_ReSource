@@ -49,6 +49,7 @@ AircraftClass::AircraftClass() noexcept
 // ============================================================
 
 // IDA: 0x417FE0 (Mission_Attack, 3445B)
+int HouseArray_FindHouseByIndex(void *array, void *key);  // 0xA8E390 house-array helper (vt slot 4)
 // 0x417fe0
 // G42.42m FULL implementation (live IDA truth 0x417FE0, til-typed): the
 // aircraft attack state machine (seed/approach/chase/fire/strafe/three
@@ -61,9 +62,8 @@ int AircraftClass::Mission_Attack()
     unsigned char buf2[24];
     int outInts[5];
 
-    unsigned int weaponCtl = *(unsigned int *)((char *)this + 0x6C0);
-    unsigned char elevByte1 = *(unsigned char *)((char *)dword_8871E0 + 0x17E0 + 1);
-    #define AC_VT(idx) (*(unsigned int **)this + (idx))
+    unsigned int weaponCtl = *(unsigned int *)this->vtable5;
+    unsigned char elevByte1 = IDA_BYTE1(((RulesClass *)dword_8871E0)->ElevationIncrement);
 
     switch (missionStatus)
     {
@@ -86,7 +86,7 @@ int AircraftClass::Mission_Attack()
         if (target != nullptr && ammo != 0)
         {
             void *spiral = FindSpiralMoveTarget((int)this, target);
-            (*(void (__thiscall **)(AircraftClass *, void *, int))AC_VT(288))(this, spiral, 1);
+            this->AssignDestination_SyncLog(spiral, 1);
             missionStatus = movementDestination != nullptr ? 3 : 10;
         }
         else
@@ -116,7 +116,7 @@ int AircraftClass::Mission_Attack()
                 missionStatus = 4;
                 return 1;
             }
-            (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(288))(this, (int)target, 1);
+            this->AssignDestination_SyncLog((int)target, 1);
         }
         else
         {
@@ -142,8 +142,8 @@ int AircraftClass::Mission_Attack()
         int v15 = ObjectClass_ComputeDistance((int)this, movementDestination);
         if (v15 >= 512)
         {
-            int *destC = (*(int *(__thiscall **)(void *, void *))(*(unsigned int **)(void *)movementDestination + 72))(movementDestination, buf1);
-            int *myC = (*(int *(__thiscall **)(AircraftClass *, void *, int, int, int, int))AC_VT(176))(this, buf2, 0, 0, 0, 0);
+            int *destC = ((ObjectClass *)movementDestination)->GetCoords(buf1);
+            int *myC = this->GetCostMultiplier(buf2, 0, 0, 0, 0);
             short v102;
             if (myC[0] == destC[0] && myC[1] == destC[1])
                 v102 = 0;
@@ -159,7 +159,7 @@ int AircraftClass::Mission_Attack()
         if (v15 >= 16)
             return 1;
         missionStatus = 4;
-        (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(288))(this, 0, 1);
+        this->AssignDestination_SyncLog(0, 1);
         return 1;
     }
     case 4:
@@ -176,28 +176,28 @@ int AircraftClass::Mission_Attack()
             int *v22 = ObjectClass_CalcTargetFacing((int)this, coords, target);
             FacingClass_Update((void *)&secondaryFacing, v22);
         }
-        int v24 = (*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(185))(this, (int)target, 1);
-        switch ((*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(240))(this, (int)target, v24))
+        int v24 = this->SelectWeapon((int)target, 1);
+        switch (this->CanFireAtTarget((int)target, v24))
         {
         case 0:
         {
             AircraftClass_field_bool_6C8 = true;
             int shots = 0;
-            int v27 = (*(int (__thiscall **)(AircraftClass *, int))AC_VT(185))(this, (int)target);
+            int v27 = this->SelectWeapon((int)target);
             for (;;)
             {
-                int v29 = (*(int (__thiscall **)(AircraftClass *, int))AC_VT(185))(this, (int)target);
-                (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(243))(this, (int)target, v29);
+                int v29 = this->SelectWeapon((int)target);
+                this->FlightUpdate((int)target, v29);
                 ++shots;
-                int v31 = (*(int (__thiscall **)(AircraftClass *, int))AC_VT(185))(this, (int)target);
+                int v31 = this->SelectWeapon((int)target);
                 if (shots >= *(int *)(*(int *)SelectWeaponSlot(v27) + 156))
                     break;
             }
             int loc[3];
-            loc[0] = *(int *)((char *)this + 0x9C);
-            loc[1] = *(int *)((char *)this + 0xA0);
-            loc[2] = *(int *)((char *)this + 0xA4);
-            int *v32 = (*(int *(__thiscall **)(void *, void *, int *))(*(unsigned int **)(void *)target + 72))(target, buf2, loc);
+            loc[0] = *(int *)this->location.X;
+            loc[1] = *(int *)this->location.Y;
+            loc[2] = *(int *)this->location.Z;
+            int *v32 = ((ObjectClass *)target)->GetCoords(buf2, loc);
             void *v33 = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)v32);
             Cell_ApplyDamage(v33, 1, 0, 0, (int)outInts);
             if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) != 0)
@@ -221,7 +221,7 @@ int AircraftClass::Mission_Attack()
                 missionStatus = 10;
                 return 1;
             }
-            if ((*(unsigned char (__thiscall **)(AircraftClass *, int))AC_VT(235))(this, (int)target) == 0
+            if (this->CheckCellPassable2((int)target) == 0
              || (*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) != 0)
                 missionStatus = 1;
             else if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 28))(weaponCtl) != 0)
@@ -234,7 +234,7 @@ int AircraftClass::Mission_Attack()
         case 3:
             return 1;
         case 9:
-            (*(void (__thiscall **)(AircraftClass *, int))AC_VT(279))(this, 0);
+            this->TransitionEffectState(0);
             return 1;
         default:
             if (ammo == 0)
@@ -259,18 +259,18 @@ int AircraftClass::Mission_Attack()
         FacingClass_Update((void *)&primaryFacing, v39);
         int *v40 = ObjectClass_CalcTargetFacing((int)this, coords, target);
         FacingClass_Update((void *)&secondaryFacing, v40);
-        int v42 = (*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(185))(this, (int)target, 1);
-        switch ((*(unsigned int (__thiscall **)(AircraftClass *, int, int))AC_VT(240))(this, (int)target, v42))
+        int v42 = this->SelectWeapon((int)target, 1);
+        switch (this->CanFireAtTarget((int)target, v42))
         {
         case 0u:
         {
-            int v45 = (*(int (__thiscall **)(AircraftClass *, int))AC_VT(185))(this, (int)target);
-            (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(243))(this, (int)target, v45);
+            int v45 = this->SelectWeapon((int)target);
+            this->FlightUpdate((int)target, v45);
             int loc[3];
-            loc[0] = *(int *)((char *)this + 0x9C);
-            loc[1] = *(int *)((char *)this + 0xA0);
-            loc[2] = *(int *)((char *)this + 0xA4);
-            int *v46 = (*(int *(__thiscall **)(void *))(*(unsigned int **)(void *)target + 72))(target);
+            loc[0] = *(int *)this->location.X;
+            loc[1] = *(int *)this->location.Y;
+            loc[2] = *(int *)this->location.Z;
+            int *v46 = ((ObjectClass *)target)->GetCoords();
             void *v47 = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)v46);
             Cell_ApplyDamage(v47, (int)outInts, (int)loc, 1, 0);
             if (ammo == 0)
@@ -287,7 +287,7 @@ int AircraftClass::Mission_Attack()
                 missionStatus = 10;
                 break;
             }
-            if ((*(unsigned char (__thiscall **)(AircraftClass *, int))AC_VT(235))(this, (int)target) == 0
+            if (this->CheckCellPassable2((int)target) == 0
              || (*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) != 0)
                 missionStatus = 1;
             else
@@ -301,7 +301,7 @@ int AircraftClass::Mission_Attack()
         case 3u:
             break;
         case 9u:
-            (*(void (__thiscall **)(AircraftClass *, int))AC_VT(279))(this, 0);
+            this->TransitionEffectState(0);
             break;
         default:
             if (ammo == 0)
@@ -309,7 +309,7 @@ int AircraftClass::Mission_Attack()
                 missionStatus = 10;
                 break;
             }
-            if ((*(unsigned char (__thiscall **)(AircraftClass *, int))AC_VT(235))(this, (int)target) != 0)
+            if (this->CheckCellPassable2((int)target) != 0)
                 missionStatus = elevByte1 != 0 ? 1 : 4;
             else
                 missionStatus = 1;
@@ -328,12 +328,12 @@ int AircraftClass::Mission_Attack()
             missionStatus = 10;
             return 1;
         }
-        int v50 = (*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(185))(this, (int)target, 1);
-        int fireErr = (*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(240))(this, (int)target, v50);
+        int v50 = this->SelectWeapon((int)target, 1);
+        int fireErr = this->CanFireAtTarget((int)target, v50);
         if (fireErr != 0 && fireErr != 2 && fireErr != 9)
         {
             if (fireErr == 8)
-                (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(288))(this, (int)target, 1);
+                this->AssignDestination_SyncLog((int)target, 1);
             else
             {
                 if (ammo == 0)
@@ -344,16 +344,16 @@ int AircraftClass::Mission_Attack()
                 return 1;
             }
         }
-        int v96 = (*(int (__thiscall **)(AircraftClass *, int))AC_VT(185))(this, (int)target);
-        (*(void (__thiscall **)(AircraftClass *))AC_VT(243))(this);
+        int v96 = this->SelectWeapon((int)target);
+        this->FlightUpdate();
         int loc[3];
-        loc[0] = *(int *)((char *)this + 0x9C);
-        loc[1] = *(int *)((char *)this + 0xA0);
-        loc[2] = *(int *)((char *)this + 0xA4);
-        int *v53 = (*(int *(__thiscall **)(void *, void *, int *, int, unsigned int, unsigned int))(*(unsigned int **)(void *)target + 72))(target, buf1, loc, 1, 0, 0);
+        loc[0] = *(int *)this->location.X;
+        loc[1] = *(int *)this->location.Y;
+        loc[2] = *(int *)this->location.Z;
+        int *v53 = ((ObjectClass *)target)->GetCoords(buf1, loc, 1, 0, 0);
         void *v54 = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)v53);
         Cell_ApplyDamage(v54, (int)target, v96, (int)outInts, (int)buf2);
-        (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(288))(this, (int)target, 1);
+        this->AssignDestination_SyncLog((int)target, 1);
         missionStatus = missionStatus == 6 ? 7 : (missionStatus == 7 ? 8 : 9);
         return *(int *)(SelectWeaponSlot(0) + 176);
     }
@@ -364,8 +364,8 @@ int AircraftClass::Mission_Attack()
             missionStatus = 10;
             return 1;
         }
-        int v72 = (*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(185))(this, (int)target, 1);
-        int fireErr = (*(unsigned int (__thiscall **)(AircraftClass *, int, int))AC_VT(240))(this, (int)target, v72);
+        int v72 = this->SelectWeapon((int)target, 1);
+        int fireErr = this->CanFireAtTarget((int)target, v72);
         if (fireErr != 0 && fireErr != 2 && fireErr != 8 && fireErr != 9)
         {
             if (ammo == 0)
@@ -375,17 +375,17 @@ int AircraftClass::Mission_Attack()
             }
             return 1;
         }
-        int v94 = (*(int (__thiscall **)(AircraftClass *))AC_VT(185))(this);
-        (*(void (__thiscall **)(AircraftClass *))AC_VT(243))(this);
+        int v94 = this->SelectWeapon();
+        this->FlightUpdate();
         int loc[3];
-        loc[0] = *(int *)((char *)this + 0x9C);
-        loc[1] = *(int *)((char *)this + 0xA0);
-        loc[2] = *(int *)((char *)this + 0xA4);
-        int *v75 = (*(int *(__thiscall **)(void *, void *, int *, int, unsigned int, unsigned int))(*(unsigned int **)(void *)target + 72))(target, buf2, loc, 1, 0, 0);
+        loc[0] = *(int *)this->location.X;
+        loc[1] = *(int *)this->location.Y;
+        loc[2] = *(int *)this->location.Z;
+        int *v75 = ((ObjectClass *)target)->GetCoords(buf2, loc, 1, 0, 0);
         void *v76 = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)v75);
         Cell_ApplyDamage(v76, (int)target, v94, (int)target, (int)outInts);
         missionStatus = 3;
-        return (*(int *)(SelectWeaponSlot(0) + 180) + 1024) / *(int *)((char *)Type + 0x678);
+        return (*(int *)(SelectWeaponSlot(0) + 180) + 1024) / *(int *)Type->Speed;
     }
     case 10:
     {
@@ -407,10 +407,10 @@ int AircraftClass::Mission_Attack()
         }
         else if (isALoaner || owner->IsCurrentPlayer())
         {
-            (*(void (__thiscall **)(AircraftClass *, int))AC_VT(242))(this, 0);
+            this->CanFireAtTarget(0);
         }
         AircraftClass_field_bool_6D2 = false;
-        int transitionCount = *(int *)((char *)owner + 0x1E0);
+        int transitionCount = *(int *)owner->u32_1E0;
         if (transitionCount < 0 || transitionCount > 3)
             transitionCount = owner->GetTransitionCount();
         __int16 openCell[2];
@@ -419,15 +419,15 @@ int AircraftClass::Mission_Attack()
             (int)&g_AircraftStatusFlag, (int)&g_AircraftStatusFlag,
             4, 1, 0);
         void *v84 = CellCoord::To_CellObj((void *)&dword_87F7E8, (void *)openCell);
-        (*(void (__thiscall **)(AircraftClass *, void *, int))AC_VT(288))(this, v84, 1);
+        this->AssignDestination_SyncLog(v84, 1);
         AircraftClass_field_bool_6D5 = false;
         if (airstrike != nullptr && ammo > 0)
         {
-            (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(122))(this, 4, 0);
+            this->ProcessLanding(4, 0);
             AircraftClass_field_bool_6D5 = true;
             return 1;
         }
-        (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(289))(this, 0, 1);
+        this->HasValidTarget(0, 1);
         AircraftClass_field_bool_6D5 = true;
         return 1;
     }
@@ -507,22 +507,22 @@ int AircraftClass::Mission_Enter()
         if (movementDestination != nullptr)
         {
             void *nearbyCell = AircraftClass_FindNearbyCell((void *)movementDestination);
-            (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, nearbyCell, 1);
+            this->AssignDestination_SyncLog(nearbyCell, 1);
             missionStatus = 1;
         }
         else
         {
-            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+            this->HasValidTarget(0, 1);
         }
         break;
 
     case 1:
         if (movementDestination == nullptr)
         {
-            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+            this->HasValidTarget(0, 1);
             return 1;
         }
-        destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 19))((void *)movementDestination, destCell);
+        destCoords = ((FootClass *)movementDestination)->GetDeployCoords((void *)movementDestination, destCell);
         loco = *(unsigned int *)&locomotor;
         if (loco == 0)
             WinAPI_Wrapper((int)0x80004003);
@@ -531,14 +531,14 @@ int AircraftClass::Mission_Enter()
         return 1;
 
     case 2:
-        if (*(int *)((char *)this + 0x520) != -1)
+        if (*(int *)this->planningPathIdx != -1)
         {
             bool needValidate = false;
             if (movementDestination != nullptr)
             {
-                destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 18))((void *)movementDestination, destCell);
-                ((Coord *)rel)->Subtract(*(int *)((char *)this + 0x9C) - destCoords[0],
-                                         *(int *)((char *)this + 0xA0) - destCoords[1], 0);
+                destCoords = ((ObjectClass *)movementDestination)->GetCoords((void *)movementDestination, destCell);
+                ((Coord *)rel)->Subtract(*(int *)this->location.X - destCoords[0],
+                                         *(int *)this->location.Y - destCoords[1], 0);
                 if (((Coord *)rel)->Length() < 256)
                     needValidate = true;
             }
@@ -548,8 +548,8 @@ int AircraftClass::Mission_Enter()
             }
             if (needValidate)
             {
-                unsigned int dockArr = *(unsigned int *)((char *)&dword_A83D4C + 4 * *(int *)((char *)this + 0x520) + 208);
-                int element = Array_GetElement((void *)dockArr, *(char *)((char *)this + 0x686));
+                unsigned int dockArr = *(unsigned int *)((char *)&dword_A83D4C + 4 * *(int *)this->planningPathIdx + 208);
+                int element = Array_GetElement((void *)dockArr, *(char *)this->waypointIndex);
                 int *entry = VectorClass_GetAtChecked((void *)dockArr, element);
                 BuildingClass_ValidateFoundation_0((int)this, 0, 0, entry, 0, 0);
             }
@@ -564,8 +564,8 @@ int AircraftClass::Mission_Enter()
         }
         if (movementDestination != nullptr)
         {
-            destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 19))((void *)movementDestination, destCell);
-            myCell = (__int16 *)(*(void **(__thiscall **)(AircraftClass *, void *))(*(unsigned int **)this + 110))(this, myCellBuf);
+            destCoords = ((FootClass *)movementDestination)->GetDeployCoords((void *)movementDestination, destCell);
+            myCell = (__int16 *)this->GetCellCoords_Alt(myCellBuf);
             if (destCoords[0] / 256 == myCell[0] && destCoords[1] / 256 == myCell[1])
             {
                 missionStatus = 3;
@@ -574,7 +574,7 @@ int AircraftClass::Mission_Enter()
         }
         if (movementDestination != nullptr)
         {
-            destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 19))((void *)movementDestination, destCell);
+            destCoords = ((FootClass *)movementDestination)->GetDeployCoords((void *)movementDestination, destCell);
             __int16 targetCell[2];
             targetCell[0] = (__int16)(destCoords[0] / 256);
             targetCell[1] = (__int16)(destCoords[1] / 256);
@@ -592,7 +592,7 @@ int AircraftClass::Mission_Enter()
         if (loco == 0)
             WinAPI_Wrapper((int)0x80004003);
         if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0)
-            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+            this->HasValidTarget(0, 1);
         return 1;
 
     case 4:
@@ -601,8 +601,8 @@ int AircraftClass::Mission_Enter()
             WinAPI_Wrapper((int)0x80004003);
         if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0
          || movementDestination != nullptr
-            && (destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 19))((void *)movementDestination, destCell),
-                myCell = (__int16 *)(*(void **(__thiscall **)(AircraftClass *, void *))(*(unsigned int **)this + 110))(this, myCellBuf),
+            && (destCoords = ((FootClass *)movementDestination)->GetDeployCoords(destCell, 0),
+                myCell = (__int16 *)this->GetCellCoords_Alt(myCellBuf),
                 destCoords[0] / 256 == myCell[0] && destCoords[1] / 256 == myCell[1]))
         {
             missionStatus = 3;
@@ -611,7 +611,7 @@ int AircraftClass::Mission_Enter()
         {
             if (movementDestination != nullptr)
             {
-                destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 19))((void *)movementDestination, destCell);
+                destCoords = ((FootClass *)movementDestination)->GetDeployCoords((void *)movementDestination, destCell);
                 __int16 targetCell[2];
                 targetCell[0] = (__int16)(destCoords[0] / 256);
                 targetCell[1] = (__int16)(destCoords[1] / 256);
@@ -640,8 +640,6 @@ int AircraftClass::Mission_Enter()
 // validation split (all-valid: wait locomotor end -> 7, else place/queue
 // fallback); 7 = final delivery (clamp +-5 approach, team member handoff via
 // LinkedList pop + FindClosestPlacementCell fallback).
-#define AC_VT(idx) (*(unsigned int **)this + (idx))
-#define AC_VT_CALL(idx, sig, ...) ((*(sig)AC_VT(idx))(this, ##__VA_ARGS__))
 
 int AircraftClass::Mission_Transport()
 {
@@ -649,7 +647,7 @@ int AircraftClass::Mission_Transport()
     int *coords;
     int coordOut[3];
 
-    void *curCell = (*(void *(__thiscall **)(AircraftClass *))(*(unsigned int **)this + 111))(this);
+    void *curCell = this->GetCellCoords();
     if (GetZAboveGround(0) == 0
      && *(unsigned char *)((char *)Type + 3597) != 0
      && movementDestination != nullptr
@@ -657,11 +655,11 @@ int AircraftClass::Mission_Transport()
     {
         unsigned char *dest = (unsigned char *)movementDestination;
         void *buildingDest = nullptr;
-        if (dest != nullptr && (*(int (__thiscall **)(void *))(*(unsigned int **)dest + 11))(dest) == 6)
+        if (dest != nullptr && ((ObjectClass *)dest)->whatAmI() == 6)
             buildingDest = dest;
         AircraftClass_field_6CC = (unsigned int)buildingDest;
-        (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 157))(this, 3);
-        (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 1);
+        this->ThunkTo159x4(3);
+        this->ProcessLanding(2, 1);
         return 1;
     }
 
@@ -669,18 +667,18 @@ int AircraftClass::Mission_Transport()
     {
         void *v9 = movementDestination;
         if ((void *)AircraftClass_field_6CC != v9 && v9 != nullptr
-         && (*(int (__thiscall **)(void *))(*(unsigned int **)(void *)v9 + 11))(v9) == 6)
+         && ((ObjectClass *)v9)->whatAmI() == 6)
         {
             void *v11 = nullptr;
-            if (v9 != nullptr && (*(int (__thiscall **)(void *))(*(unsigned int **)(void *)v9 + 11))(v9) == 6)
+            if (v9 != nullptr && ((ObjectClass *)v9)->whatAmI() == 6)
                 v11 = v9;
             AircraftClass_field_6CC = (unsigned int)v11;
         }
     }
 
     if (movementDestination != nullptr
-     || (*(int (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 30))(this) == 2
-     || (*(int (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 157))(this, 14) == 1
+     || this->ProcessDockCheck() == 2
+     || this->ThunkTo159x4(14) == 1
      || TechnoClass_PlaceAtCell((int)this) != 0)
     {
         switch (missionStatus)
@@ -699,7 +697,7 @@ int AircraftClass::Mission_Transport()
         case 6:
         {
             if (*(unsigned char *)((char *)Type + 3597) != 0 && GetZAboveGround(0) != 0)
-                (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 157))(this, 14);
+                this->ThunkTo159x4(14);
             if (Team_AllMembersValid((int)this) != 0)
             {
                 loco = *(unsigned int *)&locomotor;
@@ -723,10 +721,10 @@ int AircraftClass::Mission_Transport()
                     missionStatus = 7;
                     AircraftClass_field_bool_6D4 = true;
                 }
-                if (*(int *)((char *)this + 0xB4) == -1)
+                if (*(int *)this->queuedMission == -1)
                 {
-                    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 288))(this, 0, 1);
-                    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+                    this->AssignDestination_SyncLog(0, 1);
+                    this->HasValidTarget(0, 1);
                     AircraftClass_field_bool_6D4 = true;
                     return 1;
                 }
@@ -746,35 +744,35 @@ int AircraftClass::Mission_Transport()
                 if (movementDestination != nullptr)
                 {
                     unsigned char *dest = (unsigned char *)movementDestination;
-                    if ((*(int (__thiscall **)(void *))(*(unsigned int **)dest + 11))(dest) == 6)
-                        coords = (*(int *(__thiscall **)(void *, void *, int *))(*(unsigned int **)dest + 42))(dest, coordOut, (int *)this);
+                    if (((ObjectClass *)dest)->whatAmI() == 6)
+                        coords = (int *)((ObjectClass *)dest)->GetCoords_Alt(coordOut, (int *)this);
                     else
-                        coords = (*(int *(__thiscall **)(void *, void *))(*(unsigned int **)dest + 18))(dest, coordOut);
+                        coords = (int *)((ObjectClass *)dest)->GetCoords(coordOut);
                     int rel[3];
-                    int dx = coords[0] - *(int *)((char *)this + 0x9C);
-                    int dy = coords[1] - *(int *)((char *)this + 0xA0);
+                    int dx = coords[0] - *(int *)this->location.X;
+                    int dy = coords[1] - *(int *)this->location.Y;
                     if (dx > 5) dx = 5; else if (dx < -5) dx = -5;
                     if (dy > 5) dy = 5; else if (dy < -5) dy = -5;
-                    rel[0] = *(int *)((char *)this + 0x9C) + dx;
-                    rel[1] = *(int *)((char *)this + 0xA0) + dy;
-                    rel[2] = *(int *)((char *)this + 0xA4);
-                    (*(void (__thiscall **)(AircraftClass *, int *))(*(unsigned int **)this + 109))(this, rel);
+                    rel[0] = *(int *)this->location.X + dx;
+                    rel[1] = *(int *)this->location.Y + dy;
+                    rel[2] = *(int *)this->location.Z;
+                    this->SetPositionAnimated(rel);
                 }
                 AircraftClass_field_bool_6D4 = true;
                 return 1;
             }
-            int v23 = (*(int (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 157))(this, 21) - 1;
+            int v23 = this->ThunkTo159x4(21) - 1;
             if (v23 != 0)
             {
                 if (v23 == 4)
                 {
-                    (*(void (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 53))(this);
+                    this->CleanupDirection();
                     int member = Team_GetMember((int)this, 0);
                     CellClass_AddObject((void *)(member + 276), (void *)this);
                 }
                 else
                 {
-                    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+                    this->HasValidTarget(0, 1);
                 }
                 return 1;
             }
@@ -782,23 +780,23 @@ int AircraftClass::Mission_Transport()
             {
                 int v25 = Team_GetMember((int)this, 0);
                 void *v26 = LinkedList_Pop((void *)((char *)this + 92));
-                (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 157))(this, 3, 0);
-                if ((*(int (__thiscall **)(void *, int, int))(*(unsigned int **)v26 + 158))(v26, 2, v25) == 1)
+                this->ThunkTo159x4(3, 0);
+                if (((FootClass *)v26)->ThunkTo636(2, v25) == 1)
                 {
                     CellClass_AddObject((void *)((char *)this + 276), v26);
-                    (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 73))(this, 0);
+                    this->UpdateReveal(0);
                     FootClass_MissionMoveCarryallLand((int)this);
-                    (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 73))(this, 1);
+                    this->UpdateReveal(1);
                 }
                 else
                 {
                     void *cpc = TechnoClass_FindClosestPlacementCell((int)this);
-                    (*(void (__thiscall **)(AircraftClass *, void *))(*(unsigned int **)this + 288))(this, cpc);
+                    this->AssignDestination_SyncLog(cpc);
                 }
-                (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 0);
+                this->ProcessLanding(2, 0);
                 return 1;
             }
-            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 5, 0);
+            this->ProcessLanding(5, 0);
             return 1;
         }
 
@@ -806,7 +804,7 @@ int AircraftClass::Mission_Transport()
             return 1;
         }
     }
-    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+    this->HasValidTarget(0, 1);
     return 1;
 }
 // 0x4190b0
@@ -821,7 +819,7 @@ int AircraftClass::Mission_Transport()
 int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
 {
     unsigned int loco;
-    switch (*(int *)((char *)this + 0xAC))
+    switch (*(int *)this->currentMission)
     {
     case 4:
     case 26:
@@ -838,12 +836,12 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
     switch (a3)
     {
     case 8:
-        if (*(unsigned char *)((char *)Type + 0xDFC) != 0
-         && (*(int (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 97))(this) == 2
-         && *(unsigned char *)((char *)this + 0x418) != 0
-         && (*(int *)((char *)this + 0x118) == 0
+        if (*(unsigned char *)Type->u32_DFC != 0
+         && this->GetPrimaryOrFallback() == 2
+         && *(unsigned char *)this->isTether != 0
+         && (*(int *)this->q118 == 0
              ? (void *)movementDestination == a2
-             : CCINIClass_GetDB((void *)((char *)this + 0x114)) == a2))
+             : CCINIClass_GetDB((void *)&this->inAirFlag) == a2))
         {
             return 10;
         }
@@ -851,8 +849,8 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
 
     case 14:
     {
-        int cap = *(int *)((char *)Type + 0x5E0);
-        if (cap <= 0 || *(int *)((char *)this + 0x114) >= cap)
+        int cap = *(int *)Type->Passengers;
+        if (cap <= 0 || *(int *)this->inAirFlag >= cap)
             return FootClass::MissionDispatch(a2, a3, a4);
         FootClass::MissionDispatch(a2, a3, a4);
         loco = *(unsigned int *)&locomotor;
@@ -860,27 +858,27 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
             WinAPI_Wrapper((int)0x80004003);
         if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) != 0)
             return 1;
-        RateScaler_Init((void *)((char *)this + 0x350), *(double *)((char *)Type + 0x3C8));
-        if ((*(int (__thiscall **)(AircraftClass *, int, void *))(*(unsigned int **)this + 158))(this, 19, a2) != 1)
+        RateScaler_Init((void *)&this->storedTiberium, *(double *)Type->DeployTime);
+        if (this->ThunkTo636(19, a2) != 1)
             return 1;
         *a4 = this;
-        if ((*(int (__thiscall **)(AircraftClass *, int, void **, void *))(*(unsigned int **)this + 159))(this, 18, a4, a2) == 1)
+        if (this->RemoveElement(18, a4, a2) == 1)
         {
             int member = Team_GetMember((int)this, 0);
-            (*(void (__thiscall **)(int))(*(unsigned int **)(void *)member + 336))(member);
+            ((FootClass *)member)->vt_entry_540();
             return 1;
         }
-        (*(void (__thiscall **)(AircraftClass *, int, void *))(*(unsigned int **)this + 158))(this, 3, a2);
+        this->ThunkTo636(3, a2);
         return 1;
     }
 
     case 15:
     {
-        int cap = *(int *)((char *)Type + 0x5E0);
+        int cap = *(int *)Type->Passengers;
         if (cap == 0 || a2 == 0
          || Object_IsAlliedWithObjectHouse(owner, (int)a2) == 0)
             return FootClass::MissionDispatch(a2, a3, a4);
-        int v16 = (*(int *)((char *)this + 0x114) >= cap) - 1;
+        int v16 = (*(int *)this->inAirFlag >= cap) - 1;
         return (char)(v16 & 0xF7) + 10;
     }
 
@@ -888,20 +886,20 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
     {
         int baseResult = FootClass::MissionDispatch(a2, a3, a4);
         void *v8 = *a4;
-        if (*a4 != nullptr && (*(int (__thiscall **)(void *))(*(unsigned int **)v8 + 11))(v8) == 6)
+        if (*a4 != nullptr && ((ObjectClass *)v8)->whatAmI() == 6)
         {
             int v10 = AbstractClass_IsTechnoType(v8);
-            if ((*(int (__thiscall **)(AircraftClass *, int, void *))(*(unsigned int **)this + 158))(this, 15, (void *)v10) != 1)
+            if (this->ThunkTo636(15, (void *)v10) != 1)
                 return 10;
-            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 7, 0);
+            this->ProcessLanding(7, 0);
         }
         else
         {
-            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 0);
+            this->ProcessLanding(2, 0);
         }
         (void)baseResult;
-        (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, v8, 1);
-        (*(void (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 123))(this);
+        this->AssignDestination_SyncLog(v8, 1);
+        this->ProcessPassengerEjection();
         return 1;
     }
 
@@ -915,10 +913,10 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
             return 1;
         if (movementDestination == nullptr)
             return 1;
-        if (*(unsigned char *)((char *)Type + 0x13D) != 0
+        if (IDA_BYTE1(Type->ChargerBarrels[14]) != 0
          && movementDestination != nullptr
-         && (*(int (__thiscall **)(void *))(*(unsigned int **)(void *)movementDestination + 11))(movementDestination) == 11
-         && (void *)*(int *)((char *)this + 0x2B4) == (*(void *(__thiscall **)(AircraftClass *))(*(unsigned int **)this + 111))(this))
+         && ((ObjectClass *)movementDestination)->whatAmI() == 11
+         && (void *)*(int *)this->q2B4 == this->GetCellCoords())
         {
             return 1;
         }
@@ -928,19 +926,19 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
 
     case 21:
     {
-        if (*(int *)((char *)this + 0x114) == *(int *)((char *)Type + 0x5E0))
-            Timer_StartDouble((void *)((char *)this + 0x350), *(double *)((char *)Type + 0x3C8));
+        if (*(int *)this->inAirFlag == *(int *)Type->Passengers)
+            Timer_StartDouble((void *)&this->storedTiberium, *(double *)Type->DeployTime);
         if (a2 != nullptr)
         {
-            void *v13 = (*(int (__thiscall **)(void *))(*(unsigned int **)(void *)a2 + 44))(a2) == 15 ? a2 : nullptr;
+            void *v13 = (((ObjectClass *)a2)->whatAmI() == 15 ? a2 : nullptr);
             if (v13 != nullptr)
             {
-                if (*(unsigned char *)(*(int *)((char *)v13 + 0x6C0) + 3777) != 0
+                if (*(unsigned char *)(*(int *)v13->vtable5 + 3777) != 0
                  && *(unsigned char *)((char *)v13 + 1753) == 0)
                 {
-                    (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 242))(this, 0);
-                    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 288))(this, 0, 1);
-                    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 4, 0);
+                    this->AssignTarget_SyncLog(0);
+                    this->AssignDestination_SyncLog(0, 1);
+                    this->ProcessLanding(4, 0);
                 }
             }
         }
@@ -949,26 +947,26 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
 
     case 23:
     {
-        (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 0);
+        this->ProcessLanding(2, 0);
         void *cpc = TechnoClass_FindClosestPlacementCell((int)this);
-        (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, cpc, 1);
-        (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 157))(this, 3);
+        this->AssignDestination_SyncLog(cpc, 1);
+        this->ThunkTo159x4(3);
         return FootClass::MissionDispatch(a2, a3, a4);
     }
 
     case 29:
-        if (*(void **)((char *)this + 0x2B4) != nullptr)
+        if (*(void **)this->q2B4 != nullptr)
             return 10;
-        return *(int *)((char *)Type + 0x684) != *(int *)((char *)this + 0x2FC) ? 10 : 1;
+        return *(int *)Type->Ammo != *(int *)this->pitchAngle ? 10 : 1;
 
     case 31:
-        if (*(int *)((char *)this + 0x2FC) < *(int *)((char *)Type + 0x684) / 2
-         || *(void **)((char *)this + 0x2B4) == nullptr)
+        if (*(int *)this->pitchAngle < *(int *)Type->Ammo / 2
+         || *(void **)this->q2B4 == nullptr)
             return FootClass::MissionDispatch(a2, a3, a4);
         return 1;
 
     case 33:
-        return *(int *)((char *)Type + 0x684) != *(int *)((char *)this + 0x2FC) ? 10 : 1;
+        return *(int *)Type->Ammo != *(int *)this->pitchAngle ? 10 : 1;
 
     default:
         return FootClass::MissionDispatch(a2, a3, a4);
@@ -992,7 +990,7 @@ int AircraftClass::MoveTo(int* a2, int a3)
     if (*(unsigned char *)((char *)Type + 3432) == 0)
     {
         if (isALoaner || !((E4Recv_5785F0 *)&dword_87F7E8)->IsCoordVisibleMap((void *)a2))
-            coord[2] = (*(int (__thiscall **)(AircraftTypeClass *))(*(unsigned int **)Type + 188))(Type)
+            coord[2] = Type->CreateAircraft()
                      + Cell::GetGroundHeight((void *)a2);  // G42.42f: static (Cell_e4.hpp)
         else
             coord[2] = Cell::GetGroundHeight((void *)a2);
@@ -1017,11 +1015,11 @@ int AircraftClass::MoveTo(int* a2, int a3)
         anim[3] = coord[1];
         anim[4] = 1;
         anim[0] = 0;
-        int maxHeight = (*(int (__thiscall **)(AircraftTypeClass *))(*(unsigned int **)Type + 188))(Type);
+        int maxHeight = Type->CreateAircraft();
         if (GetZAboveGround(0) == maxHeight)
-            (*(int (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 1348))(this, 0, 0x3FE00000);
+            this->Destru_vt337(0, 0x3FE00000);
         else
-            (*(int (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 1348))(this, 0, 0);
+            this->Destru_vt337(0, 0);
         return 1;
     }
     return 0;
@@ -1111,14 +1109,14 @@ int AircraftClass::ProcessReturnToBase()
 {
     if (movementDestination != nullptr)
     {
-        void *cur = (*(void ** (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 111))(this);
+        void *cur = this->GetCellCoords();
         if (movementDestination == (AbstractClass *)cur)
-            (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, 0, 1);
+            this->AssignDestination_SyncLog(0, 1);
     }
     else
     {
         HouseClass *own = owner;
-        int transitionCount = *(int *)((char *)own + 0x1E0);
+        int transitionCount = *(int *)own->u32_1E0;
         if (transitionCount < 0 || transitionCount > 3)
             transitionCount = own->GetTransitionCount();
         __int16 foundCell[2];
@@ -1130,7 +1128,7 @@ int AircraftClass::ProcessReturnToBase()
          || foundCell[1] != *((__int16 *)&g_AircraftStatusFlag + 1))
         {
             void *cellObj = CellCoord::To_CellObj((void *)&dword_87F7E8, (void *)foundCell);  // G42.42e: static 2-arg (core/cellcoord.hpp)
-            (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, cellObj, 1);
+            this->AssignDestination_SyncLog(cellObj, 1);
         }
     }
     return 3;
@@ -1169,7 +1167,7 @@ int AircraftClass::LandingCheckStub()
 // 0x41b870
 int AircraftClass::ProcessPassengerEjection()
 {
-  if ( ((unsigned int *)this)[0] != 30 ) /*0x41b877*/
+  if ( this->currentMission != 30 ) /*0x41b877*/
     this->AircraftClass_field_bool_6D2 = 0; /*0x41b879*/
   return this->AdvanceState();
 }
@@ -1255,40 +1253,40 @@ int AircraftClass::ProcessMissionTimeout()
 {
     if (pitchAngle != 0.0f)
     {
-        bool partnerLive = *(void **)((char *)this + 0x2B4) != nullptr;
+        bool partnerLive = *(void **)this->q2B4 != nullptr;
         if (!partnerLive)
         {
             if (dword_A8B238 != 0)
             {
                 int coord[3];
-                coord[0] = *(int *)((char *)this + 0x9C);
-                coord[1] = *(int *)((char *)this + 0xA0);
-                coord[2] = *(int *)((char *)this + 0xA4);
-                int r = (*(int (__thiscall **)(AircraftClass *, int, int *, int))(*(unsigned int **)this + 241))(this, 64, coord, 0);
-                (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 242))(this, r);
+                coord[0] = *(int *)this->location.X;
+                coord[1] = *(int *)this->location.Y;
+                coord[2] = *(int *)this->location.Z;
+                int r = this->SelectAutoTarget_Cloaked(64, coord, 0);
+                this->AssignTarget_SyncLog(r);
             }
-            partnerLive = *(void **)((char *)this + 0x2B4) != nullptr;
+            partnerLive = *(void **)this->q2B4 != nullptr;
             if (!partnerLive)
             {
                 int coord[3];
-                coord[0] = *(int *)((char *)this + 0x9C);
-                coord[1] = *(int *)((char *)this + 0xA0);
-                coord[2] = *(int *)((char *)this + 0xA4);
-                int r = (*(int (__thiscall **)(AircraftClass *, int, int *, int))(*(unsigned int **)this + 241))(this, 0, coord, 0);
-                (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 242))(this, r);
+                coord[0] = *(int *)this->location.X;
+                coord[1] = *(int *)this->location.Y;
+                coord[2] = *(int *)this->location.Z;
+                int r = this->SelectAutoTarget_Cloaked(0, coord, 0);
+                this->AssignTarget_SyncLog(r);
             }
         }
-        if (*(void **)((char *)this + 0x2B4) != nullptr)
+        if (*(void **)this->q2B4 != nullptr)
         {
-            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 1, 0);
+            this->ProcessLanding(1, 0);
             return 1;
         }
-        (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+        this->HasValidTarget(0, 1);
         return 1;
     }
     if (team != nullptr)
         ((gamemd::TeamClass *)team)->LiberateMember_Start(this, -1, 0);  // G42.42e: gamemd carrier (ra2::game fwd-only)
-    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+    this->HasValidTarget(0, 1);
     void *missionControl = GetMissionControl();
     int base = (int)Math::RoundToInt(*((double *)missionControl + 2) * 900.0);
     return base + Random::Range((void *)((char *)&dword_A8B230 + 0x218), 0, 2);
@@ -1306,9 +1304,9 @@ int AircraftClass::ProcessMissionTimeout()
 //   FindMovePosition / mission-control-timeout split.
 int AircraftClass::GetMissionTimer()
 {
-    int maxFlight = (*(int (__thiscall **)(AircraftTypeClass *))(*(unsigned int **)Type + 47))(Type);
-    int ammo = *(int *)((char *)this + 0x2FC);
-    int capacity = *(int *)((char *)Type + 0x684);
+    int maxFlight = Type->CreateAircraft();
+    int ammo = *(int *)this->pitchAngle;
+    int capacity = *(int *)Type->Ammo;
 
     if (GetZAboveGround(0) == maxFlight)
     {
@@ -1316,7 +1314,7 @@ int AircraftClass::GetMissionTimer()
         {
             if (movementDestination != nullptr)
             {
-                (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 0);
+                this->ProcessLanding(2, 0);
                 AircraftClass_field_bool_6D4 = true;
             }
             void *mc = GetMissionControl();
@@ -1332,18 +1330,18 @@ int AircraftClass::GetMissionTimer()
             // slot holds ammo (or absent): guard requeue
             if (team == nullptr)
             {
-                (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+                this->HasValidTarget(0, 1);
                 AircraftClass_field_bool_6D4 = true;
             }
             return 1;
         }
         int coords[3];
-        coords[0] = *(int *)((char *)this + 0x9C);
-        coords[1] = *(int *)((char *)this + 0xA0);
-        coords[2] = *(int *)((char *)this + 0xA4);
+        coords[0] = *(int *)this->location.X;
+        coords[1] = *(int *)this->location.Y;
+        coords[2] = *(int *)this->location.Z;
         void *cell = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)coords);
-        (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, cell, 1);
-        (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 0);
+        this->AssignDestination_SyncLog(cell, 1);
+        this->ProcessLanding(2, 0);
         return 1;
     }
 
@@ -1351,15 +1349,15 @@ int AircraftClass::GetMissionTimer()
     bool goFallback = false;
     if (byte_889ECC != 0)
     {
-        if (ammo != 0 || (*(unsigned char (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 171))(this) != 0)
+        if (ammo != 0 || this->HasActiveParam() != 0)
         {
             if (ammo != -1 && ammo < capacity / 2)
             {
                 if (Team_AllMembersValid((int)this) != 0)
                 {
                     int member = Team_GetMember((int)this, 0);
-                    if ((*(int (__thiscall **)(void *))(*(unsigned int **)(void *)member + 11))((void *)member) == 6
-                     && *(unsigned char *)(*(int *)((char *)member + 0x520) + 0x16AA) != 0)
+                    if (((ObjectClass *)member)->whatAmI() == 6
+                     && *(unsigned char *)(*(int *)member->planningPathIdx + 0x16AA) != 0)
                         return 1;
                 }
             }
@@ -1371,13 +1369,13 @@ int AircraftClass::GetMissionTimer()
     }
     else if (byte_889ECD != 0)
     {
-        if ((*(unsigned char (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 171))(this) != 0
+        if (this->HasActiveParam() != 0
          && ammo < capacity / 2)
             goFallback = true;
     }
     else
     {
-        if ((*(unsigned char (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 171))(this) != 0
+        if (this->HasActiveParam() != 0
          && ammo < capacity)
             goFallback = true;
     }
@@ -1386,41 +1384,41 @@ int AircraftClass::GetMissionTimer()
     {
         if (Team_AllMembersValid((int)this) == 0)
         {
-            void *found = (*(void **(__thiscall **)(AircraftClass *, void *, int, int))(*(unsigned int **)this + 132))(this, (void *)((char *)Type + 0x3E8), 0, 0);
+            void *found = this->Mission_Attack((void *)Type->Dock, 0, 0);
             if (found != nullptr)
             {
-                (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 7, 0);
-                (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, found, 1);
-                (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 242))(this, 0);
+                this->ProcessLanding(7, 0);
+                this->AssignDestination_SyncLog(found, 1);
+                this->AssignTarget_SyncLog(0);
                 return 1;
             }
         }
     }
 
-    if (*(void **)((char *)this + 0x2B4) != nullptr)
+    if (*(void **)this->q2B4 != nullptr)
     {
-        (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 1, 0);
+        this->ProcessLanding(1, 0);
         return 1;
     }
-    if ((*(unsigned char (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 171))(this) == 0)
+    if (this->HasActiveParam() == 0)
         return 45;
     if (GetZAboveGround(0) == 0 && Team_AllMembersValid((int)this) == 0)
         return 45;
     if (owner != nullptr && !owner->IsCurrentPlayer())
     {
         int coords[3];
-        coords[0] = *(int *)((char *)this + 0x9C);
-        coords[1] = *(int *)((char *)this + 0xA0);
-        coords[2] = *(int *)((char *)this + 0xA4);
+        coords[0] = *(int *)this->location.X;
+        coords[1] = *(int *)this->location.Y;
+        coords[2] = *(int *)this->location.Z;
         void *occ = ((CellClass *)&dword_87F7E8)->ScanOccupiers((void *)coords);
         if (occ != nullptr)
         {
-            (*(void (__thiscall **)(AircraftClass *, void *))(*(unsigned int **)this + 242))(this, occ);
-            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 1, 0);
+            this->AssignTarget_SyncLog(occ);
+            this->ProcessLanding(1, 0);
         }
     }
     if (owner == nullptr || !owner->IsCurrentPlayer()
-     || (*(unsigned char (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 21))(this) != 0)
+     || this->IsHeightAboveThreshold() != 0)
         return FootClass::FindMovePosition();
     void *mc = GetMissionControl();
     return (int)Math::RoundToInt(*((double *)mc + 2) * 900.0)
@@ -1502,7 +1500,7 @@ void AircraftClass::Destruct()
         if (Type != nullptr)
         {
             if (HouseClass_CanBuild(owner, (int)Type, 0, 0) == -1)
-                *(unsigned char *)((char *)owner + 0x2D1) = 1;  // owner->recheckTechTree
+                *(unsigned char *)owner->recheckTechTree = 1;  // owner->recheckTechTree
             TechnoClass_CleanupAll((int)this, 0);
             if (team != nullptr)
             {
@@ -1519,7 +1517,7 @@ void AircraftClass::Destruct()
     // aircraft index removal (A8E390 container: vt+16 lookup, shift-compact)
     {
         unsigned int me = self;
-        int idx = (*(int (__thiscall **)(unsigned int *, unsigned int *))(*(unsigned int **)dword_A8E390 + 4))(&dword_A8E390, &me);
+        int idx = HouseArray_FindHouseByIndex(&dword_A8E390, &me);
         --dword_A8E3A0;
         if (idx != -1 && idx < (int)dword_A8E3A0)
         {
@@ -1610,8 +1608,8 @@ int AircraftClass::GetActionOnObject()
 int AircraftClass::IsHeightAboveThreshold()
 {
     unsigned int rules = dword_8871E0;
-    unsigned int special1 = *(unsigned int *)((char *)rules + 0x4E0);
-    unsigned int special2 = *(unsigned int *)((char *)rules + 0x514);
+    unsigned int special1 = *(unsigned int *)rules->u32_4E0;
+    unsigned int special2 = *(unsigned int *)rules->u32_514;
     if ((unsigned int)Type != special1 && (unsigned int)Type != special2)
         return ObjectClass::IsHeightAboveThreshold();
     unsigned int loco = *(unsigned int *)&locomotor;

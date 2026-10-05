@@ -2,6 +2,16 @@
 #pragma once
 
 namespace gamemd {
+class ParticleSystemClass__vt_03_;  // G42.36 fwd supply
+class AbstractClass;  // G42.36 fwd supply
+class ParticleSystemClass__vt_02_;  // G42.36 fwd supply
+class CaptureManagerClass__vt_06_;  // G42.36 fwd supply
+class CaptureManagerClass__vt_03_;  // G42.36 fwd supply
+class StubReturn48;  // G42.36 fwd supply
+class UpdateMovement;  // G42.36 fwd supply
+class BeginMove;  // G42.36 fwd supply
+class ObjectClass;  // G42.36 fwd supply
+class Load;  // G42.36 fwd supply
 struct BinkMo { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {

@@ -517,7 +517,6 @@ struct ObjectClass {
     unsigned char alignmentPadding91;  // 0x91
     unsigned int lastLayer;  // 0x94
     bool isInLogic;  // 0x98
-    void* unknown_libname_74;  // 0x0 (no offset truth)
     void* unknown_libname_27;  // 0x0 (no offset truth)
     static int sub_770E70(void *aP0, ObjectClass * aP1, ObjectClass * aP2, ObjectClass, void * aP3);  // A_c2039 R5 static-form sync
     static int sub_550080(void *aP0, ObjectClass ** Block);  // A_c2039 R5 static-form sync
@@ -531,7 +530,7 @@ struct ObjectClass {
     void* IsCliffWall;  // 0x0 (no offset truth)
     void* IsBelowScreen;  // 0x0 (no offset truth)
     static int HasLinkedObject(int aP0);  // A_c2039 R5 static-form sync
-    static int DrawPowerBarForPlayers(void *aP0, HWND hDlg);  // A_c2039 R5 static-form sync
+    int DrawPowerBarForPlayers(void *aP0, HWND hDlg);  // A_c2039 R5 static-form sync
     static int CreateUnitOnCompletion(void *aP0, void * aP1);  // A_c2039 R5 static-form sync
     bool isVisible;  // 0x99
     unsigned char alignmentPadding99;  // 0x9A
@@ -560,7 +559,7 @@ struct ObjectClass {
     void* AbstractClass;  // 0x0 (no offset truth)
     void* ResizeEx;  // 0x0 (no offset truth)
     bool IsInitialized;  // 0x12
-    static int HouseClass__vt_02_(void *aP0, int a2, unsigned int * a3);  // A_c2039 R5 static-form sync
+    int HouseClass__vt_02_(void *aP0, int a2, unsigned int * a3);  // A_c2039 R5 static-form sync
     void* ClearAndFree3;  // 0x0 (no offset truth)
     int SetPositionXY(int a2, int a3);  // 0x4e1a40
     unsigned int * Init(int a2);  // 0x5f3b50
@@ -680,6 +679,7 @@ struct ObjectClass {
     char* TerrainInitMap(char * Destination, RandomStruct * aP1, IUnknown * aP2);  // G42.39 supply
     void j_DeleteAndZero();
     void nullsub_126();
+    void unknown_libname_74();
 };
 #endif // GAMEMD_TREE_UNIVERSE
 
@@ -753,6 +753,7 @@ struct VectorClass {
     unsigned int * Construct(int a2, int a3);  // 0x477be0
     unsigned int * BuildingConstructor(int a2, int a3);  // 0x510550
     void* vtable1;  // 0x0 (no offset truth)
+    AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3);
 };
 #endif
 

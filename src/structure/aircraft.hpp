@@ -106,6 +106,8 @@ public:
 
     // === Phase 3: Spawn/Dock ===
     int ProcessDockCheck();  // 0x41ADC0
+    int FlightUpdate(int a2 = 0, int a3 = 0);  // 0x415EE0 (IDA 名 BulletClass::FlightUpdate 为误名, 地址在 Aircraft 区)
+    int vt_entry_540();  // 0x41C140 FootClass vt+0x540
     int UpdateDocking();  // 0x41B9F0
     int CheckDockState();  // 0x41C070
     int CheckReloadTimer();  // 0x41C020
@@ -116,7 +118,7 @@ public:
     int ProcessMissionTimeout();  // 0x414A80
     int GetMissionTimer();  // 0x41A5C0
     int EvaluateTargetingState();  // 0x41A940
-    virtual int AssignDestination_SyncLog();  // 0x41AA80
+    virtual int AssignDestination_SyncLog(int a2, int a3);  // 0x41AA80 truth arity (Mission_Enter disasm 0x480h)
     int OverrideMission_SyncLog();  // 0x41BB30
     int RevealSight();  // 0x41ADF0
     int DeployWithAnim();  // 0x4165C0
@@ -178,6 +180,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void* Update(int a1, int a2);  // 0x413f80
     // === FUNCS-MOVE (END) ===
+    int inAirFlag;  // +0x114 (ml flat supply)
+    int q118;  // +0x118 (ml flat supply)
+    int q2B4;  // +0x2B4 (ml flat supply)
+    int pitchAngle;  // +0x2FC (ml flat supply)
+    int storedTiberium;  // +0x350 (ml flat supply)
+    int isTether;  // +0x418 (ml flat supply)
+    int waypointIndex;  // +0x686 (ml flat supply)
 };
 
 } // namespace gamemd

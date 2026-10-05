@@ -41,6 +41,7 @@
 #include "e4/classes/RadarClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ScenarioClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/GameState_e4.hpp"  // G42.36 C2027 supply
 
 // 0x430980
 namespace gamemd {

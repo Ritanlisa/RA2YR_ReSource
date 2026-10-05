@@ -344,7 +344,7 @@ public:
 
     // --- Cell / Coordinate queries ---
     // [165] 0x41BEA0 ObjectClass::GetCellCoords_Alt
-virtual int GetCellCoords_Alt(void) const;
+virtual int GetCellCoords_Alt(int a2 = 0) const;
     // [111] 0x5F6960 ObjectClass::GetCellCoords
     virtual CellClass* GetCell() const = 0;  // 0x5F6A10
     // [112] 0x5F69C0 ObjectClass::CoordToCell
@@ -507,7 +507,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetZ();  // 0x5F5FA0
     int SetAnim(int a1);  // 0x5F6060
     int ComputeDistance(int a1);  // 0x5F6440
-    int GetCoords();  // 0x5F65A0
+    int* GetCoords(void* out = nullptr, int a3 = 0, int a4 = 0, int a5 = 0, int a6 = 0);  // 0x5F65A0
     int DelegateVt69();  // 0x5F65D0
     int SetPosition();  // 0x5F6940
     int GetCellCoords();  // 0x5F6960
@@ -525,8 +525,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ProcessUpdate();  // 0x62BB20
     int SetMember59(int a1);  // 0x6301F0
     int ProcessGroupInput(int a1, int a2, int a3);  // 0x65A820
-    int ThunkTo636();  // 0x65AAA0
-    int ThunkTo159x4();  // 0x65ACB0
+    int ThunkTo636(int a2 = 0, int a3 = 0);  // 0x65AAA0
+    int ThunkTo159x4(int a2 = 0);  // 0x65ACB0
     void* GetSidebarTooltip(int a1);  // 0x6A92E0
     void* GetTooltipText(int a1);  // 0x6AC210
     void* DestructWithRadar(int a1);  // 0x6AC7F0

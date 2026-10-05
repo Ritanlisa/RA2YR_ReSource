@@ -775,6 +775,7 @@ void Update_TogglePower(double);  // 0x4F8440
     int InitAlliances();  // 0x5d74a0
     void FindStartPositions();  // 0x5ee9d0
     // === FUNCS-MOVE (END) ===
+    unsigned int u32_1E0;  // +0x1E0 (ml flat supply)
 };
 
 

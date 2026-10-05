@@ -120,7 +120,7 @@ struct Game {
 // --- flat members (END) ---
     void initScenario(void *a1_1);  // 0x430980
     int SendCampaignOptions();  // 0x46D4A0
-    static AbstractClass * * DestroyAllObjects();  // 0x534450
+    AbstractClass * * DestroyAllObjects();  // 0x534450
     int MakeScreenshot(int a1);  // 0x537BC0
     HashTable_flat * * StartModemMultiplayer(char a2);  // 0x5B7090
     AbstractClass * * BuildGameSetupPacket();  // 0x5BA660

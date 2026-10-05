@@ -132,8 +132,8 @@ virtual void vt_entry_534(int);  // 0x41C130
     virtual void ProcessDeployMission();  // 0x4CD2A0
     virtual void UpdateDeployMovement();  // 0x4CE680
     virtual int PostLoadInit();  // 0x4D3540
-    virtual int Destru_vt337();  // 0x4D3710
-    virtual void UpdateReveal(); // 0x4D3780
+    virtual int Destru_vt337(int a2 = 0, double a3 = 0.0);  // 0x4D3710
+    virtual void UpdateReveal(int a2 = 0); // 0x4D3780
     virtual bool CheckTileSeed(int* coords);  // 0x4D3810
     virtual int MovementStep();  // 0x4D3920
     virtual int Destru_vt139();  // 0x4D4200
@@ -157,7 +157,7 @@ virtual void vt_entry_534(int);  // 0x41C130
     virtual void ProcessTeamAction();  // 0x4D9290
     virtual int AssignDestination();  // 0x4D94B0
     virtual int DispatchSell();  // 0x4D9720
-    virtual int SelectAutoTarget_Cloaked();  // 0x4D9920
+    virtual int SelectAutoTarget_Cloaked(int a2 = 0, int a3 = 0, int a4 = 0);  // 0x4D9920
     virtual int HandleTargetDestroyed(int* a2, int* a3);  // 0x4D9960 (G42.42d truth arity)
     virtual void vt_entry_524();  // 0x4D9C00
     virtual int Destru_vt107();  // 0x4D9C10

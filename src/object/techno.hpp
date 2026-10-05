@@ -453,7 +453,7 @@ public:
     virtual bool ProcessTarget(int a2);  // 0x50CAD0  // G42.35 def-truth sync (def=object/supplied_bodies.cpp:6851 `bool ProcessTarget(int)`; cache: bool __thiscall TechnoClass::ProcessTarget(TechnoClass*,int))
     // wrapper: delegates to TechnoClass::ProcessTarget at 0x50CAD0
     virtual int sub_55224F0();
-    virtual int GetDeployCoords();  // 0x4DBDF0
+    virtual int* GetDeployCoords(int* out = nullptr, int a3 = 0);  // 0x4DBDF0 truth (out, a3)
     virtual int CanBePermaMC() const;  // 0x53C450
     virtual int GarrisonBuilding();  // 0x522910
     virtual int IsMission27to30() const;  // 0x522510
@@ -500,7 +500,7 @@ public:
     virtual int PickAlternateTarget();  // 0x708E00
     virtual int SelectRandomTarget();  // 0x708EB0
     virtual int GetSecondaryTargetOrFallback() const;  // 0x709020
-    virtual int SetPositionAnimated();  // 0x4DB810
+    virtual int SetPositionAnimated(int a2 = 0);  // 0x4DB810
     virtual int GetTargetCellCenter(AbstractClass* target);  // 0x4DBA50
     virtual int ComputeSpeedFactor();  // 0x4DAFC0
     virtual int ComputeSpeedFactorEx();  // 0x4DB1A0
@@ -583,13 +583,13 @@ public:
     virtual int RadarUpdateOff();  // 0x70CCC0
     virtual int RevealOwnCell();  // 0x70CCF0
     virtual int ComputeDamage();  // 0x70CD10
-    virtual int GetCostMultiplier() const;  // 0x708B40
+    virtual int GetCostMultiplier(int a2, int a3, int a4, int a5, int a6) const;  // 0x708B40
     virtual int IsInRange() const; // 0x6F7660
     virtual int GetCrew();  // 0x707D20
     virtual int GetCrew_0();  // 0x740EE0
     virtual int GetCrewCount();  // 0x6F3950
     virtual int CheckCellPassable() const; // 0x6F7930
-    virtual int CheckCellPassable2() const;  // 0x6F7780
+    virtual int CheckCellPassable2(int a2) const;  // 0x6F7780
     virtual int CheckCellPassable3() const;  // 0x6F7970
     virtual int ValidateTarget(TechnoClass* target, int weapon_index) const; // 0x6F77B0 (vt+936; binary: (this, target, weapon))
     virtual int GetBridgeDamageMult() const;  // 0x6F79A0
@@ -615,7 +615,7 @@ public:
     virtual int ScanNeighborCells();  // 0x703E70
     virtual int IsValidBuildingPlacement();  // 0x704000
     virtual int StartEffectAudio();  // 0x703770
-    virtual int TransitionEffectState();  // 0x7036C0
+    virtual int TransitionEffectState(int a2);  // 0x7036C0
     virtual int Vt279Thunk0();  // 0x703850
     virtual int UpdatePowerDrain(); // 0x703860
     virtual gamemd::WeaponTypeClass** GetPoweredWeaponSlot();  // 0x70E1A0 (vtable slot 253: house-power-gated weapon-slot pick via slot 254 SelectWeaponSlot; returns pointer to the WeaponTypeClass* holder)
@@ -1153,7 +1153,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (END) ===
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
-    int CanFireAtTarget(int a1, int a2, int a3, int a4, int a5);  // 0x41a9e0
+    int CanFireAtTarget(int a1, int a2 = 0, int a3 = 0, int a4 = 0, int a5 = 0);  // 0x41a9e0 (vararg call shapes 2..5)
     int processDamageAnimation();  // 0x41b7d0
     int updateWeaponCooldown();  // 0x41b840
     int checkAmmo(int a1);  // 0x41b860

@@ -671,6 +671,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     double GetFiringDistance();  // 0x48acf0
     int LoadTypeList(int a1, int a2, int a3, int a4, int a5);  // 0x67bdd0
     // === FUNCS-MOVE (END) ===
+    unsigned int u32_4E0;  // +0x4E0 (ml flat supply)
+    unsigned int u32_514;  // +0x514 (ml flat supply)
 };
 
 } // namespace gamemd

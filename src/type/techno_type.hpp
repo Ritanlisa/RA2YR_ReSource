@@ -558,6 +558,7 @@ struct TechnoTypesVector_Shim
     int Count;
     int CapacityIncrement;
     int FindItemIndex(TechnoTypeClass** item);
+    unsigned int u32_DFC;  // +0xDFC (ml flat supply)
 };
 extern TechnoTypesVector_Shim g_TechnoTypes;  // data: 0xA8EB00
 

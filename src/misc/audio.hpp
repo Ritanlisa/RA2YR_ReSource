@@ -67,7 +67,7 @@ public:
     // wrapper: delegates to VocClass::FindIndex at 0x7514D0
      VocClass* Find(const char* pName);
     // IDA 0x7514D0 (same address, Find calls FindIndex)
-    static int32_t FindIndex(const char* pName);  // 0x7514D0
+    int32_t FindIndex(const char* pName);  // 0x7514D0
 
     // IDA 0x750920
     // wrapper: delegates to PlayVocClass at 0x750920

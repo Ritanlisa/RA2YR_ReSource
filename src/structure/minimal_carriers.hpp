@@ -2,6 +2,8 @@
 #pragma once
 
 namespace gamemd {
+class AnimClass;  // G42.36 fwd supply
+class CanDeployAtCell;  // G42.36 fwd supply
 struct SuperWeapon { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
