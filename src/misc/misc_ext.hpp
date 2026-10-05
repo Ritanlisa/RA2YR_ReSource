@@ -5548,4 +5548,12 @@ extern int BuildingClass_ValidateFoundation_0(int aP1, int aP2, int aP3, int * a
 extern int Cell_IsOccupied(int aP1, void * aP2, int aP3);  // 0x419B00 G42.42h supply
 extern void * AircraftClass_FindNearbyCell(void * aP1);  // 0x418E20 G42.42h supply (IDA: InfantryClass::FindNearbyCell)
 extern int * VectorClass_GetAtChecked(void * aP1, int aP2);  // 0x763BA0 G42.42h supply
+extern int Team_AllMembersValid(int aP1);  // G42.42i supply (truth receiver=this)
+extern int Team_GetMember(int aP1, int aP2);  // G42.42i supply
+extern int TechnoClass_PlaceAtCell(int aP1);  // G42.42i supply
+extern void * TechnoClass_FindClosestPlacementCell(int aP1);  // G42.42i supply
+extern void FootClass_MissionMoveCarryallLand(int aP1);  // G42.42i supply
+extern void CellClass_AddObject(void * aP1, void * aP2);  // G42.42i supply
+extern void * LinkedList_Pop(void * aP1);  // G42.42i supply
+extern void * Cell_IsBridge(void * aP1);  // G42.42i supply
 } // namespace gamemd

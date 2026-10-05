@@ -248,9 +248,182 @@ int AircraftClass::Mission_Enter()
     return base + Random::Range((void *)((char *)&dword_A8B230 + 0x218), 0, 2);
 } // G42.42d: pending full translation (offsets decoded; queue position 13)
 // 0x419c80
+// G42.42i FULL implementation (truth 0x419C80; overlay decoded): airborne
+// transport mission.  Grounded/bridge-destination case re-targets through
+// field_6CC (building dest) + mission 3 + vt122(2,1).  Airborne path updates
+// the building-destination cache while flying, then runs the state machine on
+// missionStatus (0xBC): 0 -> 6; 1..5 -> set 0x6D4 flag, wait; 6 = team
+// validation split (all-valid: wait locomotor end -> 7, else place/queue
+// fallback); 7 = final delivery (clamp +-5 approach, team member handoff via
+// LinkedList pop + FindClosestPlacementCell fallback).
+#define AC_VT(idx) (*(unsigned int **)this + (idx))
+#define AC_VT_CALL(idx, sig, ...) ((*(sig)AC_VT(idx))(this, ##__VA_ARGS__))
+
 int AircraftClass::Mission_Transport()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00419C80.json)
+    unsigned int loco;
+    int *coords;
+    int coordOut[3];
+
+    void *curCell = (*(void *(__thiscall **)(AircraftClass *))(*(unsigned int **)this + 111))(this);
+    if (GetZAboveGround(0) == 0
+     && *(unsigned char *)((char *)Type + 3597) != 0
+     && movementDestination != nullptr
+     && (void *)movementDestination != Cell_IsBridge(curCell))
+    {
+        unsigned char *dest = (unsigned char *)movementDestination;
+        void *buildingDest = nullptr;
+        if (dest != nullptr && (*(int (__thiscall **)(void *))(*(unsigned int **)dest + 11))(dest) == 6)
+            buildingDest = dest;
+        AircraftClass_field_6CC = (unsigned int)buildingDest;
+        (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 157))(this, 3);
+        (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 1);
+        return 1;
+    }
+
+    if (GetZAboveGround(0) > 0)
+    {
+        void *v9 = movementDestination;
+        if ((void *)AircraftClass_field_6CC != v9 && v9 != nullptr
+         && (*(int (__thiscall **)(void *))(*(unsigned int **)(void *)v9 + 11))(v9) == 6)
+        {
+            void *v11 = nullptr;
+            if (v9 != nullptr && (*(int (__thiscall **)(void *))(*(unsigned int **)(void *)v9 + 11))(v9) == 6)
+                v11 = v9;
+            AircraftClass_field_6CC = (unsigned int)v11;
+        }
+    }
+
+    if (movementDestination != nullptr
+     || (*(int (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 30))(this) == 2
+     || (*(int (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 157))(this, 14) == 1
+     || TechnoClass_PlaceAtCell((int)this) != 0)
+    {
+        switch (missionStatus)
+        {
+        case 0:
+            missionStatus = 6;
+            /* fall through */
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            AircraftClass_field_bool_6D4 = true;
+            return 1;
+
+        case 6:
+        {
+            if (*(unsigned char *)((char *)Type + 3597) != 0 && GetZAboveGround(0) != 0)
+                (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 157))(this, 14);
+            if (Team_AllMembersValid((int)this) != 0)
+            {
+                loco = *(unsigned int *)&locomotor;
+                if (loco == 0)
+                    WinAPI_Wrapper((int)0x80004003);
+                if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)loco + 36))(loco) == 1
+                 || (*(unsigned char *)((char *)Type + 3597) != 0 && GetZAboveGround(0) == 0))
+                {
+                    missionStatus = 7;
+                    AircraftClass_field_bool_6D4 = false;
+                }
+                return 3;
+            }
+            if (TechnoClass_PlaceAtCell((int)this) == 0)
+            {
+                loco = *(unsigned int *)&locomotor;
+                if (loco == 0)
+                    WinAPI_Wrapper((int)0x80004003);
+                if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)loco + 36))(loco) == 1)
+                {
+                    missionStatus = 7;
+                    AircraftClass_field_bool_6D4 = true;
+                }
+                if (*(int *)((char *)this + 0xB4) == -1)
+                {
+                    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 288))(this, 0, 1);
+                    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+                    AircraftClass_field_bool_6D4 = true;
+                    return 1;
+                }
+                AircraftClass_field_bool_6D4 = true;
+            }
+            AircraftClass_field_bool_6D4 = true;
+            return 1;
+        }
+
+        case 7:
+        {
+            loco = *(unsigned int *)&locomotor;
+            if (loco == 0)
+                WinAPI_Wrapper((int)0x80004003);
+            if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)loco + 36))(loco) == 1)
+            {
+                if (movementDestination != nullptr)
+                {
+                    unsigned char *dest = (unsigned char *)movementDestination;
+                    if ((*(int (__thiscall **)(void *))(*(unsigned int **)dest + 11))(dest) == 6)
+                        coords = (*(int *(__thiscall **)(void *, void *, int *))(*(unsigned int **)dest + 42))(dest, coordOut, (int *)this);
+                    else
+                        coords = (*(int *(__thiscall **)(void *, void *))(*(unsigned int **)dest + 18))(dest, coordOut);
+                    int rel[3];
+                    int dx = coords[0] - *(int *)((char *)this + 0x9C);
+                    int dy = coords[1] - *(int *)((char *)this + 0xA0);
+                    if (dx > 5) dx = 5; else if (dx < -5) dx = -5;
+                    if (dy > 5) dy = 5; else if (dy < -5) dy = -5;
+                    rel[0] = *(int *)((char *)this + 0x9C) + dx;
+                    rel[1] = *(int *)((char *)this + 0xA0) + dy;
+                    rel[2] = *(int *)((char *)this + 0xA4);
+                    (*(void (__thiscall **)(AircraftClass *, int *))(*(unsigned int **)this + 109))(this, rel);
+                }
+                AircraftClass_field_bool_6D4 = true;
+                return 1;
+            }
+            int v23 = (*(int (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 157))(this, 21) - 1;
+            if (v23 != 0)
+            {
+                if (v23 == 4)
+                {
+                    (*(void (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 53))(this);
+                    int member = Team_GetMember((int)this, 0);
+                    CellClass_AddObject((void *)(member + 276), (void *)this);
+                }
+                else
+                {
+                    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+                }
+                return 1;
+            }
+            if (*(unsigned char *)((char *)Type + 3580) != 0 && *(int *)((char *)this + 280) != 0)
+            {
+                int v25 = Team_GetMember((int)this, 0);
+                void *v26 = LinkedList_Pop((void *)((char *)this + 92));
+                (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 157))(this, 3, 0);
+                if ((*(int (__thiscall **)(void *, int, int))(*(unsigned int **)v26 + 158))(v26, 2, v25) == 1)
+                {
+                    CellClass_AddObject((void *)((char *)this + 276), v26);
+                    (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 73))(this, 0);
+                    FootClass_MissionMoveCarryallLand((int)this);
+                    (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 73))(this, 1);
+                }
+                else
+                {
+                    void *cpc = TechnoClass_FindClosestPlacementCell((int)this);
+                    (*(void (__thiscall **)(AircraftClass *, void *))(*(unsigned int **)this + 288))(this, cpc);
+                }
+                (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 0);
+                return 1;
+            }
+            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 5, 0);
+            return 1;
+        }
+
+        default:
+            return 1;
+        }
+    }
+    (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+    return 1;
 }
 // 0x4190b0
 int AircraftClass::MissionDispatch()
