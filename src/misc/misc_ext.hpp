@@ -48,6 +48,8 @@ class MultiplayerGameMode;  // G42 fix_fwd_type_supply (AddToList param)
 class PriorityQueue;  // G42.35 ui-session 补: C2061 unblock (0x7681E0 sig-sync 参数, 定义在 3459)
 template <typename T> class VectorClass;  // G42.35: 模板前置 (core/vector.hpp 载体; sig-sync 参数用)
 
+// G42.42e supply decl (truth 0x7DC720; E_POINTER fail-fast helper)
+extern void WinAPI_Wrapper(int aP1);
 } // namespace gamemd (bridge re-own, G42.29h)
 namespace ra2 { namespace game { class ObjectClass; } }
 namespace gamemd {
