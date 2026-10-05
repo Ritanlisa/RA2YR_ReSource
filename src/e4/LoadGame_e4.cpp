@@ -39,9 +39,89 @@
 namespace gamemd {
 int LoadGame::LoadTriggerEvents()
 {
-    // G42.40g: glued-defhead debris removed (11 errors); full body = .omo/ida_cache/func_0x00660840.json (needs stru_B04DA8/word_B04D78/
-    // Team_Load_65FB80 + CRT new/delete protos before it can materialize)
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x660840)
+  // G42.42c: FULL body restored (G42.40g stub reverted); truth = func_0x00660840.json
+  int LoadGame_field_0x10; // edx
+  int v2; // edi
+  int LoadGame_field_0x04; // ecx
+  void *v5; // esi
+  int v6; // eax
+  int v7; // eax
+  int v9; // esi
+  ObjectClass *v10; // eax
+  unsigned int *_65FB80; // eax
+  int v12; // [esp+20h] [ebp-8h] BYREF
+  int v13; // [esp+24h] [ebp-4h] BYREF
+
+  LoadGame_field_0x10 = ((LoadGame *)&stru_B04DA8)->LoadGame_field_0x10; /*0x660840*/
+  v2 = ((LoadGame *)&stru_B04DA8)->LoadGame_field_0x10 - 1; /*0x66084d*/
+  if ( ((LoadGame *)&stru_B04DA8)->LoadGame_field_0x10 - 1 >= 0 ) /*0x660856*/
+  {
+    LoadGame_field_0x04 = ((LoadGame *)&stru_B04DA8)->LoadGame_field_0x04; /*0x660858*/
+    do /*0x6608cb*/
+    {
+      v5 = *(void **)(LoadGame_field_0x04 + 4 * v2); /*0x66085e*/
+      if ( v5 ) /*0x660863*/
+      {
+        v12 = *(int *)(LoadGame_field_0x04 + 4 * v2); /*0x660875*/
+        v6 = (*(int (__thiscall **)(LoadGame *, int *))(*(unsigned int *)((LoadGame *)&stru_B04DA8)->__pad_0 + 16))((LoadGame *)&stru_B04DA8, &v12); /*0x660879*/
+        if ( v6 != -1 ) /*0x66087f*/
+          ((LoadGame *)&stru_B04DA8)->RemoveItem(v6); /*0x660887*/
+        __3_YAXPAX_Z(v5); /*0x66088d*/
+        LoadGame_field_0x04 = ((LoadGame *)&stru_B04DA8)->LoadGame_field_0x04; /*0x660892*/
+        LoadGame_field_0x10 = ((LoadGame *)&stru_B04DA8)->LoadGame_field_0x10; /*0x660898*/
+      }
+      if ( v2 < LoadGame_field_0x10 ) /*0x6608a3*/
+      {
+        --LoadGame_field_0x10; /*0x6608a5*/
+        v7 = v2; /*0x6608a6*/
+        for ( ((LoadGame *)&stru_B04DA8)->LoadGame_field_0x10 = LoadGame_field_0x10; v7 < ((LoadGame *)&stru_B04DA8)->LoadGame_field_0x10; ++v7 ) /*0x6608b0*/
+        {
+          *(int *)(LoadGame_field_0x04 + 4 * v7) = *(int *)(LoadGame_field_0x04 + 4 * v7 + 4); /*0x6608b6*/
+          LoadGame_field_0x10 = ((LoadGame *)&stru_B04DA8)->LoadGame_field_0x10; /*0x6608b9*/
+          LoadGame_field_0x04 = ((LoadGame *)&stru_B04DA8)->LoadGame_field_0x04; /*0x6608bf*/
+        }
+      }
+      --v2; /*0x6608ca*/
+    }
+    while ( v2 >= 0 ); /*0x6608cb*/
+  }
+  if ( (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
+    return 0; /*0x6608e8*/
+  v9 = 0; /*0x6608ed*/
+  if ( v13 > 0 ) /*0x6608f1*/
+  {
+    while ( 1 ) /*0x6608f5*/
+    {
+      v10 = (ObjectClass *)__2_YAPAXI_Z(0x40u); /*0x6608f5*/
+      if ( v10 ) /*0x6608ff*/
+      {
+        v12 = 0; /*0x660901*/
+        _65FB80 = ((E4Recv_65FB80 *)v10)->Team_Load_65FB80(-1, 0); /*0x660914*/
+      }
+      else
+      {
+        _65FB80 = 0; /*0x66091b*/
+      }
+      if ( (*(int (__stdcall **)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x660929*/
+             this,
+             _65FB80,
+             64,
+             0) < 0 )
+        break; /*0x660929*/
+      if ( ++v9 >= v13 ) /*0x660932*/
+        return (*(int (__stdcall **)(LoadGame *, unsigned short *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x660932*/
+                 this,
+                 &word_B04D78,
+                 4,
+                 0) >= 0;
+    }
+    return 0; /*0x660929*/
+  }
+  return (*(int (__stdcall **)(LoadGame *, unsigned short *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x6608df*/
+           this,
+           &word_B04D78,
+           4,
+           0) >= 0;
 }
 } // namespace gamemd
 // 0x660F10
