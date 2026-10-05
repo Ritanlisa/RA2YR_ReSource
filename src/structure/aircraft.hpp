@@ -86,7 +86,7 @@ public:
     int MissionDispatch();  // 0x4190B0
 
     // === Phase 3: Flight Paths ===
-    int MoveTo();  // 0x414310
+    int MoveTo(int* a2, int a3);  // 0x414310 (G42.42f truth arity)
     int ValidateMovement();  // 0x417BD0
     int CanEnterCell(__int16* a2, char a3, char a4);  // 0x417F80 (G42.42d truth arity)
 

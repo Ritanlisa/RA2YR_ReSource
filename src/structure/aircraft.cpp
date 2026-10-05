@@ -13,6 +13,9 @@
 #include "system/cell.hpp"  // G42.42e: CellClass::FindOpenNeighbor (ProcessReturnToBase)
 #include "e4/classes/Random_e4.hpp"  // G42.42e: Random::Range (ProcessMissionTimeout)
 #include "team/team.hpp"  // G42.42e: TeamClass::LiberateMember (ProcessMissionTimeout)
+#include "e4/classes/Cell_e4.hpp"  // G42.42f: CellClass::GetGroundHeight static (MoveTo)
+#include "e4/classes/E4Recv_5785F0_e4.hpp"  // G42.42f: IsCoordVisibleMap (MoveTo)
+#include "misc/locomotion.hpp"  // G42.42f: FacingClass::Set_SyncLog (MoveTo)
 
 namespace gamemd {
 
@@ -108,9 +111,56 @@ int AircraftClass::MissionDispatch()
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004190B0.json)
 }
 // 0x414310
-int AircraftClass::MoveTo()
+// G42.42f FULL implementation (truth 0x414310): height-aware dispatch.
+//   Non-autocarry types (Type+3432 == 0): loaners or invisible-map targets
+//   add the type's max flight altitude (Type vt+188) onto ground height.
+//   FootClass::DispatchInput acceptance drives the acceptance bookkeeping:
+//   loaner re-flag (Type+560/+3594/SelectWeaponSlot rules), passengers flag,
+//   secondary-facing sync (v8<<8), animation seed (dword_A8ED84) + the
+//   destination Y, and the ascent-target compare (GetZAboveGround vs Type
+//   vt+188) selecting the vt1348 float argument (0x3FE00000 = .5f else 0).
+int AircraftClass::MoveTo(int* a2, int a3)
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00414310.json)
+    int coord[3];
+    coord[0] = a2[0];
+    coord[1] = a2[1];
+    coord[2] = a2[2];
+    if (*(unsigned char *)((char *)Type + 3432) == 0)
+    {
+        if (isALoaner || !((E4Recv_5785F0 *)&dword_87F7E8)->IsCoordVisibleMap((void *)a2))
+            coord[2] = (*(int (__thiscall **)(AircraftTypeClass *))(*(unsigned int **)Type + 188))(Type)
+                     + Cell::GetGroundHeight((void *)a2);  // G42.42f: static (Cell_e4.hpp)
+        else
+            coord[2] = Cell::GetGroundHeight((void *)a2);
+    }
+    char v8 = (char)a3;
+    if (FootClass::DispatchInput(coord, a3) != 0)
+    {
+        int slot = SelectWeaponSlot(0);
+        if (*(unsigned char *)((char *)Type + 560) == 0
+         || *(unsigned char *)((char *)Type + 3594) == 0
+         || (slot != 0 && *(unsigned char *)(slot + 327) != 0))
+        {
+            isALoaner = true;
+        }
+        if (((int *)&passengers)[1] != 0)
+            HasPassengers = true;
+        unsigned int facingArg = (unsigned int)((unsigned char)v8 << 8);
+        ((FacingClass *)&secondaryFacing)->Set_SyncLog(&facingArg);
+        unsigned int *anim = (unsigned int *)&animation;
+        anim[2] = dword_A8ED84;
+        anim[5] = 1;
+        anim[3] = coord[1];
+        anim[4] = 1;
+        anim[0] = 0;
+        int maxHeight = (*(int (__thiscall **)(AircraftTypeClass *))(*(unsigned int **)Type + 188))(Type);
+        if (GetZAboveGround(0) == maxHeight)
+            (*(int (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 1348))(this, 0, 0x3FE00000);
+        else
+            (*(int (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 1348))(this, 0, 0);
+        return 1;
+    }
+    return 0;
 }
 // IDA: 0x417BD0 (ValidateMovement, 137B)
 int AircraftClass::ValidateMovement()

@@ -15566,3 +15566,4 @@ extern int dword_B75E50;  // G42.42a supply (territory wide name)
 extern int dword_B77DC8;  // G42.42a supply
 extern int dword_B77DD0;  // G42.42a supply
 extern int dword_B77DD4;  // G42.42a supply (lobby id)
+extern unsigned int dword_A8ED84;  // G42.42f supply (MoveTo animation seed frame)
