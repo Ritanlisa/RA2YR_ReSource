@@ -1559,11 +1559,12 @@ def load_ida_cache(addr):
 # ===================================================================
 
 def _collect_completed_functions(M):
+    # G42.42o (user standing order): the gate IGNORES completed status --
+    # every addr-bearing signals entry joins the verification pool.  The old
+    # completed=true-only filter was the blind spot that hid T9 stubs.
     out = []
     seen = set()
     for name, is_comp in M.name_to_completed.items():
-        if is_comp is not True:
-            continue
         addr = M.name_to_addr.get(name)
         if not addr or addr in seen:
             continue
@@ -2186,7 +2187,7 @@ def main():
                 nm = M.addr_to_name.get(a)
                 completed.append((a, nm))
         if not completed:
-            print("No completed=true functions to verify.", file=sys.stderr)
+            print("No functions in verification pool (signals).", file=sys.stderr)
             sys.exit(0)
         missing = []
         for addr, name in completed:
