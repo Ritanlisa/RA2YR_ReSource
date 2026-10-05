@@ -112,7 +112,7 @@ LABEL_9:
   }
   if ( !v4[692] ) /*0x47f649*/
     goto LABEL_9; /*0x47f649*/
-  v14 = *(TacticalClass **)((char *)this + 64); /*0x47f64b*/
+  v14 = *(TacticalClass **)&this->field40; /*0x47f64b*/
   if ( v14 ) /*0x47f650*/
   {
     if ( TacticalClass::initTacticalMap(v14, (int *)&a2, (int *)&aP1) ) /*0x47f65c*/

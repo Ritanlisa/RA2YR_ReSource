@@ -568,7 +568,7 @@ int Cell::SearchEnemies(IUnknown * aP1)
   unsigned int v16[2]; // [esp+78h] [ebp-14h] BYREF
   unsigned int v17[3]; // [esp+80h] [ebp-Ch] BYREF
 
-  v3 = *(unsigned int **)((char *)this + 228); /*0x487a19*/
+  v3 = *(unsigned int **)&this->q0E4; /*0x487a19*/
   if ( v3 ) /*0x487a21*/
   {
     v4 = (char)(aP1); /*0x487a27*/

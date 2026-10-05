@@ -735,6 +735,10 @@ struct SessionClass {
     unsigned int GetPlayerColorScheme(ObjectClass * aP0);
     TypeList_flat * QueryInterface(unsigned int * Block, char a2);
     VectorClass_flat * validateGame(unsigned int * Block, char a2);
+    unsigned int q_307A;  // +0x307A flat supply (three-ban reform)
+    unsigned int q_307E;  // +0x307E flat supply (three-ban reform)
+    unsigned int q_3082;  // +0x3082 flat supply (three-ban reform)
+    unsigned int q_3086;  // +0x3086 flat supply (three-ban reform)
 };
 
 } // namespace gamemd

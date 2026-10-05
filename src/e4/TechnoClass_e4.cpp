@@ -549,7 +549,7 @@ int TechnoClass::DTOR()
   ObjectClass *v17; // [esp+10h] [ebp-Ch]
   int v18; // [esp+18h] [ebp-4h] BYREF
 
-  v2 = *(Sidebar **)((char *)this + 1300); /*0x6f4507*/
+  v2 = *(Sidebar **)&this->planningToken; /*0x6f4507*/
   *(unsigned int *)this = &vt_TechnoClass; /*0x6f450d*/
   *((unsigned int *)this + 1) = &vt_TechnoClass; /*0x6f4515*/
   *((unsigned int *)this + 2) = &vt_TechnoClass; /*0x6f451c*/
@@ -571,7 +571,7 @@ int TechnoClass::DTOR()
     (*(void (**)(int, int))(*(unsigned int *)v4 + 32))(v4, 1); /*0x6f455c*/
     *((unsigned int *)this + 180) = 0; /*0x6f455f*/
   }
-  v5 = *(TechnoClass **)((char *)this + 728); /*0x6f4565*/
+  v5 = *(TechnoClass **)&this->slaveManager; /*0x6f4565*/
   if ( v5 ) /*0x6f456d*/
   {
     TechnoClass::MutateAll(v5, 0, 0); /*0x6f4571*/
@@ -586,7 +586,7 @@ int TechnoClass::DTOR()
     (*(void (**)(int, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x6f459b*/
     *((unsigned int *)this + 157) = 0; /*0x6f459e*/
   }
-  v8 = *(unsigned int **)((char *)this + 660); /*0x6f45a4*/
+  v8 = *(unsigned int **)&this->airstrike; /*0x6f45a4*/
   if ( v8 && v8[19] == this ) /*0x6f45b1*/
   {
     (*(void (**)(unsigned int *, int))(*v8 + 32))(v8, 1); /*0x6f45bb*/
@@ -625,7 +625,7 @@ int TechnoClass::DTOR()
   }
   *((unsigned int *)this + 284) = &vt_VectorClass; /*0x6f469d*/
   AbstractClassVector::ddtor((char *)this + 1136); /*0x6f46a3*/
-  v13 = *(void **)((char *)this + 1116); /*0x6f46a8*/
+  v13 = *(void **)&this->attackedTargets; /*0x6f46a8*/
   *((unsigned int *)this + 278) = &vt_VectorClass; /*0x6f46ae*/
   if ( v13 && *((unsigned char *)this + 1125) ) /*0x6f46bc*/
   {
@@ -634,7 +634,7 @@ int TechnoClass::DTOR()
   }
   *((unsigned char *)this + 1125) = 0; /*0x6f46d3*/
   *((unsigned int *)this + 280) = 0; /*0x6f46d9*/
-  v14 = *(void **)((char *)this + 1092); /*0x6f46df*/
+  v14 = *(void **)&this->vecInt_Items; /*0x6f46df*/
   *((unsigned int *)this + 272) = &vt_VectorClass; /*0x6f46e5*/
   if ( v14 && *((unsigned char *)this + 1101) ) /*0x6f46f3*/
   {
@@ -648,7 +648,7 @@ int TechnoClass::DTOR()
   *((unsigned int *)this + 1) = &vt_RadioClass; /*0x6f4727*/
   *((unsigned int *)this + 2) = &vt_RadioClass; /*0x6f472e*/
   *((unsigned int *)this + 3) = &vt_RadioClass; /*0x6f4735*/
-  v15 = *(void **)((char *)this + 228); /*0x6f473c*/
+  v15 = *(void **)&this->flashing; /*0x6f473c*/
   *((unsigned int *)this + 56) = &vt_VectorClass; /*0x6f4742*/
   if ( v15 && *((unsigned char *)this + 237) ) /*0x6f4750*/
   {

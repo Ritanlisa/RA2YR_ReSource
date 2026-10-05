@@ -913,11 +913,11 @@ void CellClass::RadLevel_Decrease(double a2) {
 
   double v2; // st7
 
-  v2 = *(double *)((char *)this + 240) - a2; /*0x487d06*/
-  *(double *)((char *)this + 240) = v2; /*0x487d0a*/
+  v2 = *(double *)&this->radLevel - a2; /*0x487d06*/
+  *(double *)&this->radLevel = v2; /*0x487d0a*/
   if ( v2 >= 0.0 ) /*0x487d1d*/
   {
-    *(double *)((char *)this + 240) = v2; /*0x487d38*/
+    *(double *)&this->radLevel = v2; /*0x487d38*/
   }
 
 // 0x4733A0
@@ -1427,11 +1427,11 @@ void CellClass::RadLevel_Decrease(double a2) {
 
   double v2; // st7
 
-  v2 = *(double *)((char *)this + 240) - a2; /*0x487d06*/
-  *(double *)((char *)this + 240) = v2; /*0x487d0a*/
+  v2 = *(double *)&this->radLevel - a2; /*0x487d06*/
+  *(double *)&this->radLevel = v2; /*0x487d0a*/
   if ( v2 >= 0.0 ) /*0x487d1d*/
   {
-    *(double *)((char *)this + 240) = v2; /*0x487d38*/
+    *(double *)&this->radLevel = v2; /*0x487d38*/
   }
   else
   {
@@ -1613,7 +1613,7 @@ namespace gamemd {
 int CellClass::recalcPassability() {
 
   if ( *((unsigned int *)this + 12) == 6 ) /*0x4d2794*/
-    return (*(int (**)(unsigned int, unsigned int))(***(unsigned int ***)((char *)this + 96) + 144))(**(unsigned int **)((char *)this + 96), 0); /*0x4d279f*/
+    return (*(int (**)(unsigned int, unsigned int))(***(unsigned int ***)&this->unknown60 + 144))(**(unsigned int **)&this->unknown60, 0); /*0x4d279f*/
   else
     return 0; /*0x4d27a6*/
 
@@ -2502,7 +2502,7 @@ void TacticalClass::ClearVector() {
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x5c0a76*/
+  v2 = *(void **)&this->q004; /*0x5c0a76*/
   this->uniqueId = 0; /*0x5c0a79*/
   if ( v2 && this->q00D ) /*0x5c0a80*/
   {
@@ -2611,7 +2611,7 @@ void ScenarioClass::resetScenarioData() {
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x5d8116*/
+  v2 = *(void **)&this->Items; /*0x5d8116*/
   this->q010 = 0; /*0x5d8119*/
   if ( v2 && this->IsAllocated ) /*0x5d8120*/
   {
@@ -2709,7 +2709,7 @@ void ScenarioClass::resetScenarioData() {
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x5d8116*/
+  v2 = *(void **)&this->Items; /*0x5d8116*/
   this->q010 = 0; /*0x5d8119*/
   if ( v2 && this->IsAllocated ) /*0x5d8120*/
   {
@@ -2722,7 +2722,7 @@ void ScenarioClass::resetScenarioData() {
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x5d8116*/
+  v2 = *(void **)&this->Items; /*0x5d8116*/
   this->q010 = 0; /*0x5d8119*/
   if ( v2 && this->IsAllocated ) /*0x5d8120*/
   {

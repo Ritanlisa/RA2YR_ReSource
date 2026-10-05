@@ -4784,7 +4784,7 @@ void MapClass::allocateCellArrays()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5894ad*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5894b3*/
+    __3_YAXPAX_Z(*(void **)&this->q004); /*0x5894b3*/
     *((unsigned int *)this + 1) = 0; /*0x5894bb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5894be*/
@@ -4805,7 +4805,7 @@ int  MapClass::FindSubzoneConnectionIndex(unsigned short * a2)
   result = 0; /*0x5894e5*/
   if ( v3 <= 0 ) /*0x5894e9*/
     return -1; /*0x589520*/
-  for ( i = *(unsigned short **)((char *)this + 4); *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 8 ) /*0x5894ef*/
+  for ( i = *(unsigned short **)&this->q004; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 8 ) /*0x5894ef*/
   {
     if ( ++result >= v3 ) /*0x58951e*/
       return -1; /*0x58951e*/
@@ -4905,7 +4905,7 @@ void MapClass::InitCellVe_vt03()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x589d9d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x589da3*/
+    __3_YAXPAX_Z(*(void **)&this->q004); /*0x589da3*/
     *((unsigned int *)this + 1) = 0; /*0x589dab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x589dae*/
@@ -4926,7 +4926,7 @@ int  MapClass::InitCellVe_vt04(unsigned int * a2)
   result = 0; /*0x589dd1*/
   if ( v3 <= 0 ) /*0x589dd5*/
     return -1; /*0x589dec*/
-  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x589ddb*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x589ddb*/
   {
     if ( ++result >= v3 ) /*0x589dea*/
       return -1; /*0x589dea*/
@@ -4974,7 +4974,7 @@ void MapClass::checkCellBounds()
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x5ac5a6*/
+  v2 = *(void **)&this->q004; /*0x5ac5a6*/
   *((unsigned int *)this + 4) = 0; /*0x5ac5a9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5ac5b0*/
   {

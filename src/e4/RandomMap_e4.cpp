@@ -1848,7 +1848,7 @@ int AllocateArea()
           {
             v11 = *(unsigned int *)(*(unsigned int *)(v3 + 4) + 4 * v9); /*0x590678*/
             v12 = v5; /*0x59067b*/
-            while ( *(unsigned int *)(*(unsigned int *)v12 + 8) != v11 ) /*0x590682*/
+            while ( *(unsigned int *)(*(unsigned int * *)&v12->NeedsSaveOrLink != v11 ) /*0x590682*/
             {
               ++v10; /*0x590684*/
               v12 += 4; /*0x590685*/
@@ -1898,7 +1898,7 @@ int AllocateArea()
           {
             v20 = *(unsigned int *)(*(unsigned int *)(v16 + 4) + 4 * v42); /*0x590756*/
             v21 = g_MissionQueueFrame.briefing[339]; /*0x590759*/
-            while ( *(unsigned int *)(*(unsigned int *)v21 + 8) != v20 ) /*0x590760*/
+            while ( *(unsigned int *)(*(unsigned int * *)&v21->q020 != v20 ) /*0x590760*/
             {
               ++v19; /*0x590766*/
               v21 += 4; /*0x590767*/

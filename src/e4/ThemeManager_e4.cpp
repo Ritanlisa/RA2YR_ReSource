@@ -27,7 +27,7 @@ char ThemeManager::ProcessCallback(void *a1)
   v2 = ((gamemd::Audio *)this)->Callback(); /*0x4080fa*/
   LODWORD(v3) = *((unsigned int *)this + 5); /*0x4080fc*/
   v4 = *(unsigned long long *)(v3 + 32) + __PAIR64__(HIDWORD(v3), v2); /*0x408104*/
-  while ( (*(unsigned char *)((unsigned int *)this + 12) & 1) != 0 ) /*0x408107*/
+  while ( (*(unsigned char *)&this->u8_C & 1) != 0 ) /*0x408107*/
   {
     LODWORD(v3) = *((unsigned int *)this + 5); /*0x40810d*/
     if ( *(unsigned int *)(v3 + 20) == *(unsigned int *)(v3 + 24) ) /*0x408118*/

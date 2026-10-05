@@ -416,6 +416,7 @@ struct BulletClass {
     static int16_t LoseTarget(...);  // 0x468430
     unsigned int q740;  // 0x740
     unsigned int q0A43;  // 0xA43
+    unsigned int q_FE0;  // +0xFE0 flat supply (three-ban reform)
 };
 
 } // namespace gamemd

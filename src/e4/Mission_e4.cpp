@@ -458,14 +458,14 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
 
   LOBYTE(v3) = (unsigned char)(aP1); /*0x6ed7e3*/
   v4 = *(unsigned int *)(aP1 + 4); /*0x6ed7e9*/
-  for ( i = *(int **)((char *)this + 84); i; i = (int *)i[374] )
+  for ( i = *(int **)&this->ptr_54; i; i = (int *)i[374] )
   {
     LOBYTE(v3) = *((unsigned char *)i + 144); /*0x6ed801*/
     if ( (unsigned char)v3 )
     {
       if ( i[27] && (dword_A8E7AC || !*((unsigned char *)i + 129)) && !*((unsigned char *)i + 1673) ) /*0x6ed831*/
       {
-        v7 = *((SessionClass *)(*(unsigned int **)((char *)this + 40)))->GetEntry((unsigned int *)(&v19)); /*0x6ed848*/
+        v7 = *((SessionClass *)(*(unsigned int **)&this->ptr_28))->GetEntry((unsigned int *)(&v19)); /*0x6ed848*/
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
           v8 = ((unsigned int *)&(&dword_8871E0)[1])[1]; /*0x6ed867*/
         else
@@ -495,7 +495,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
               if ( !v3 )
               {
                 if ( i[361]
-                  || ((v9 = *((SessionClass *)(*(unsigned int **)((char *)this + 40)))->GetEntry((unsigned int *)(&v20)), v9 == 54) || v9 == 53
+                  || ((v9 = *((SessionClass *)(*(unsigned int **)&this->ptr_28))->GetEntry((unsigned int *)(&v20)), v9 == 54) || v9 == 53
                     ? (v10 = ((unsigned int *)&(&dword_8871E0)[1])[1])
                     : (v10 = ((unsigned int *)&(&dword_8871E0)[1])[0]),
                       ((ObjectClass *)(i))->DistanceTo(*((unsigned int *)this + 13)) <= 2 * v10 || v4 == 11) )
@@ -525,7 +525,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                   (*(void (**)(int *, int, unsigned int))(*i + 488))(i, 2, 0); /*0x6ed97a*/
                   (*(void (**)(int *, unsigned int, int))(*i + 1152))(i, *((unsigned int *)this + 13), 1); /*0x6ed98a*/
                   (*(void (**)(int *, int, unsigned int))(*i + 488))(i, 2, 0); /*0x6ed998*/
-                  v11 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)((char *)this + 52) + 72))( /*0x6ed9a8*/
+                  v11 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)&this->ptr_34 + 72))( /*0x6ed9a8*/
                                     *((unsigned int *)this + 13),
                                     v21);
                   LOWORD(v22) = *v11 / 256; /*0x6ed9bb*/

@@ -418,6 +418,7 @@ int DTOR(); // 0x4101F0
     AbstractClass * * AnnounceExpiredPointer(AbstractClass *a1, int a2, int aP0, int aP1, int aP2);
     void DTOR(void *a1_1);
     int COMStub_Return0_38(void *a1_1);
+    unsigned int q_B;  // +0xB flat supply (three-ban reform)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

@@ -1757,7 +1757,7 @@ void VectorClass_flat::Cleanup5()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40b27d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40b283*/
+    __3_YAXPAX_Z(*(void **)&this->u32_4); /*0x40b283*/
     *((unsigned int *)this + 1) = 0; /*0x40b28b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40b28e*/
@@ -1780,7 +1780,7 @@ int  VectorClass_flat::GetSize(unsigned int * a2)
   result = 0; /*0x40b2b1*/
   if ( v3 <= 0 ) /*0x40b2b5*/
     return -1; /*0x40b2cc*/
-  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; i += 2 ) /*0x40b2bb*/
+  for ( i = *(unsigned int **)&this->u32_4; *i != *a2; i += 2 ) /*0x40b2bb*/
   {
     if ( ++result >= v3 ) /*0x40b2ca*/
       return -1; /*0x40b2ca*/
@@ -2276,7 +2276,7 @@ void VectorClass_ptr_IsometricTileClass::TryFreeAndClear()
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x40cc76*/
+  v2 = *(void **)&this->Items; /*0x40cc76*/
   *((unsigned int *)this + 4) = 0; /*0x40cc79*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x40cc80*/
   {
@@ -3246,7 +3246,7 @@ void VectorClass_flat::Cleanup(void *a1)
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x45a27d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x45a283*/
+    __3_YAXPAX_Z(*(void **)&this->u32_4); /*0x45a283*/
     *((unsigned int *)this + 1) = 0; /*0x45a28b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x45a28e*/
@@ -3905,7 +3905,7 @@ void VectorClass_flat::Destroy(void *a1)
   result = *((unsigned int *)this + 1); /*0x477d26*/
   if ( result && *((unsigned char *)this + 13) ) /*0x477d2d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x477d33*/
+    __3_YAXPAX_Z(*(void **)&this->u32_4); /*0x477d33*/
     *((unsigned int *)this + 1) = 0; /*0x477d3b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x477d3e*/
@@ -4225,7 +4225,7 @@ void VectorClass_flat::ClearAndFree2()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4a10ad*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4a10b3*/
+    __3_YAXPAX_Z(*(void **)&this->u32_4); /*0x4a10b3*/
     *((unsigned int *)this + 1) = 0; /*0x4a10bb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4a10be*/
@@ -4256,7 +4256,7 @@ void VectorClass_flat::CleanupTyped()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4a133d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4a1343*/
+    __3_YAXPAX_Z(*(void **)&this->u32_4); /*0x4a1343*/
     *((unsigned int *)this + 1) = 0; /*0x4a134b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4a134e*/
@@ -6405,7 +6405,7 @@ void VectorClass_flat::Cleanup4()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ed95d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ed963*/
+    __3_YAXPAX_Z(*(void **)&this->u32_4); /*0x4ed963*/
     *((unsigned int *)this + 1) = 0; /*0x4ed96b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ed96e*/
@@ -8226,7 +8226,7 @@ void VectorClass_flat::ClearAndFree3()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x50f83d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x50f843*/
+    __3_YAXPAX_Z(*(void **)&this->u32_4); /*0x50f843*/
     *((unsigned int *)this + 1) = 0; /*0x50f84b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50f84e*/
@@ -8692,7 +8692,7 @@ void VectorClass_flat::ClearAndFree4()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5134dd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5134e3*/
+    __3_YAXPAX_Z(*(void **)&this->u32_4); /*0x5134e3*/
     *((unsigned int *)this + 1) = 0; /*0x5134eb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5134ee*/
@@ -9250,7 +9250,7 @@ void VectorClass_flat::CleanupSubzone()
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x588c96*/
+  v2 = *(void **)&this->u32_4; /*0x588c96*/
   *((unsigned int *)this + 4) = 0; /*0x588c99*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x588ca0*/
   {
@@ -10262,7 +10262,7 @@ void VectorClass_flat::Cleanup3()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5eed0d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5eed13*/
+    __3_YAXPAX_Z(*(void **)&this->u32_4); /*0x5eed13*/
     *((unsigned int *)this + 1) = 0; /*0x5eed1b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5eed1e*/
@@ -10450,7 +10450,7 @@ void VectorClass_flat::Destructor()
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x5fffc6*/
+  v2 = *(void **)&this->u32_4; /*0x5fffc6*/
   *((unsigned int *)this + 4) = 0; /*0x5fffc9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5fffd0*/
   {
@@ -10843,7 +10843,7 @@ void VectorClass_flat::Cleanup2()
   result = *((unsigned int *)this + 1); /*0x63e146*/
   if ( result && *((unsigned char *)this + 13) ) /*0x63e14d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x63e153*/
+    __3_YAXPAX_Z(*(void **)&this->u32_4); /*0x63e153*/
     *((unsigned int *)this + 1) = 0; /*0x63e15b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x63e15e*/
@@ -11395,7 +11395,7 @@ void VectorClass_flat::ClearAndFree()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x67af6d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x67af73*/
+    __3_YAXPAX_Z(*(void **)&this->u32_4); /*0x67af73*/
     *((unsigned int *)this + 1) = 0; /*0x67af7b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x67af7e*/

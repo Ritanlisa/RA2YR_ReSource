@@ -106,6 +106,7 @@ struct Animation {
     ObjectClass * * LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2);
     int GetProgress();
     long long UpdateBobOffset();
+    unsigned int q_D40;  // +0xD40 flat supply (three-ban reform)
 };
 
 } // namespace gamemd

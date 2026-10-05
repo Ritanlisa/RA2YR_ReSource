@@ -2503,23 +2503,23 @@ char * AnimClass::sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6952*/
     *this = 0; /*0x4c6956*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c6961*/
+    *(unsigned int *)&this->u8_3 = dword_A8ED84; /*0x4c6961*/
     return this; /*0x4c695f*/
   }
   else
   {
     *((unsigned char *)this + 2) = a2; /*0x4c6900*/
     *this = 5; /*0x4c6906*/
-    *(unsigned int *)((unsigned char *)this + 7) = a3; /*0x4c6909*/
+    *(unsigned int *)&this->q007 = a3; /*0x4c6909*/
     *((unsigned char *)this + 11) = aP3; /*0x4c690e*/
     *((unsigned char *)this + 12) = aP4; /*0x4c6919*/
-    *(unsigned int *)((unsigned char *)this + 13) = a6; /*0x4c6920*/
+    *(unsigned int *)&this->q00D = a6; /*0x4c6920*/
     *((unsigned char *)this + 17) = a7; /*0x4c6926*/
-    *(unsigned int *)((unsigned char *)this + 18) = a8; /*0x4c6930*/
-    *(unsigned int *)((unsigned char *)this + 27) = a11; /*0x4c6937*/
+    *(unsigned int *)&this->q012 = a8; /*0x4c6930*/
+    *(unsigned int *)&this->u32_1B = a11; /*0x4c6937*/
     *((unsigned char *)this + 22) = a9; /*0x4c693a*/
-    *(unsigned int *)((unsigned char *)this + 23) = a10; /*0x4c6941*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c6949*/
+    *(unsigned int *)&this->q017 = a10; /*0x4c6941*/
+    *(unsigned int *)&this->u8_3 = dword_A8ED84; /*0x4c6949*/
     return this; /*0x4c694c*/
   }
 
@@ -2536,7 +2536,7 @@ char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
   {
     BYTE2(this->AbstractClass) = -1; /*0x4c6a48*/
     LOBYTE(this->AbstractClass) = 0; /*0x4c6a4c*/
-    *(void **)((char *)this + 3) = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6a57*/
+    *(void **)&this->M3 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6a57*/
     return (char *)this; /*0x4c6a55*/
   }
   else
@@ -2548,7 +2548,7 @@ char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
     *(void **)((char *)&((unsigned int *)this)[0] + 3) = 0; /*0x4c6a23*/
     *(unsigned short *)((char *)&((unsigned int *)this)[0] + 3) = *a5; /*0x4c6a2d*/
     *(unsigned short *)((char *)&((unsigned int *)this)[0] + 1) = a5[1]; /*0x4c6a35*/
-    *(void **)((char *)this + 3) = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6a3e*/
+    *(void **)&this->M3 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6a3e*/
     return (char *)this; /*0x4c6a41*/
   }
 
@@ -2565,7 +2565,7 @@ char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short
   {
     BYTE2(this->AbstractClass) = -1; /*0x4c6ac8*/
     LOBYTE(this->AbstractClass) = 0; /*0x4c6acc*/
-    *(void **)((char *)this + 3) = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6ad7*/
+    *(void **)&this->M3 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6ad7*/
     return (char *)this; /*0x4c6ad5*/
   }
   else
@@ -2577,7 +2577,7 @@ char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short
     *(void **)((char *)&((unsigned int *)this)[0] + 3) = 0; /*0x4c6aa3*/
     *(unsigned short *)((char *)&((unsigned int *)this)[0] + 3) = *a6; /*0x4c6aad*/
     *(unsigned short *)((char *)&((unsigned int *)this)[0] + 1) = a6[1]; /*0x4c6ab5*/
-    *(void **)((char *)this + 3) = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6abe*/
+    *(void **)&this->M3 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6abe*/
     return (char *)this; /*0x4c6ac1*/
   }
 
@@ -2602,7 +2602,7 @@ char * E4Recv_4C6BE0::sub_4C6BE0(int a2, char a3, int a4, int a5)
     *(void **)((char *)&((unsigned int *)this)[0] + 3) = (void *)a4; /*0x4c6c19*/
     *(void **)((char *)&((unsigned int *)this)[0] + 3) = (void *)a5; /*0x4c6c1c*/
   }
-  *(void **)((char *)this + 3) = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6c27*/
+  *(void **)&this->M3 = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6c27*/
   return (char *)this; /*0x4c6c2a*/
 
 }

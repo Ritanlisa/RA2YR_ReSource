@@ -3244,7 +3244,7 @@ void MPCooperative::loadGameState()
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x5c5016*/
+  v2 = *(void **)&this->q004; /*0x5c5016*/
   this->q010 = 0; /*0x5c5019*/
   if ( v2 && this->IsAllocated ) /*0x5c5020*/
   {
@@ -3287,7 +3287,7 @@ void MPCooperative::processPlayerInput()
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x5c50d6*/
+  v2 = *(void **)&this->q004; /*0x5c50d6*/
   this->q010 = 0; /*0x5c50d9*/
   if ( v2 && this->IsAllocated ) /*0x5c50e0*/
   {
@@ -3402,7 +3402,7 @@ void MPCooperative::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5c522d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5c5233*/
+    __3_YAXPAX_Z(*(void **)&this->q004); /*0x5c5233*/
     this->Items = 0; /*0x5c523b*/
   }
   this->IsAllocated = 0; /*0x5c523e*/
@@ -3426,7 +3426,7 @@ int MPCooperative::checkTimeout(unsigned int * a2)
   result = 0; /*0x5c5261*/
   if ( v3 <= 0 ) /*0x5c5265*/
     return -1; /*0x5c527c*/
-  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x5c526b*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x5c526b*/
   {
     if ( ++result >= v3 ) /*0x5c527a*/
       return -1; /*0x5c527a*/
@@ -3578,7 +3578,7 @@ void MPCooperative::updateScoreBoard()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5c548d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5c5493*/
+    __3_YAXPAX_Z(*(void **)&this->q004); /*0x5c5493*/
     this->Items = 0; /*0x5c549b*/
   }
   this->IsAllocated = 0; /*0x5c549e*/
@@ -3602,7 +3602,7 @@ int MPCooperative::processAITurn(unsigned int * a2)
   result = 0; /*0x5c54c1*/
   if ( v3 <= 0 ) /*0x5c54c5*/
     return -1; /*0x5c54dc*/
-  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x5c54cb*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x5c54cb*/
   {
     if ( ++result >= v3 ) /*0x5c54da*/
       return -1; /*0x5c54da*/

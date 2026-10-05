@@ -62,7 +62,7 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
   *((unsigned int *)this + 2) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52a7*/
   *((unsigned int *)this + 3) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x6b52b5*/
-  *(unsigned short *)((unsigned char *)this + 559) = 1; /*0x6b52ba*/
+  *(unsigned short *)&this->q_22F = 1; /*0x6b52ba*/
   *((unsigned char *)this + 561) = 0; /*0x6b52c7*/
   *((unsigned char *)this + 562) = 1; /*0x6b52ce*/
   *((unsigned char *)this + 563) = 1; /*0x6b52d4*/

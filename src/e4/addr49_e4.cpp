@@ -240,8 +240,8 @@ int E4Recv_490400::sub_490400()
 
   *(unsigned int *)this = (unsigned int)(&vt_ConvertClass); /*0x490404*/
   COMClass::RegisterAll((unsigned int *)this); /*0x49040a*/
-  __3_YAXPAX_Z(*(void **)((char *)this + 368)); /*0x490416*/
-  v2 = *(void **)((char *)this + 376); /*0x49041b*/
+  __3_YAXPAX_Z(*(void **)&this->M368); /*0x490416*/
+  v2 = *(void **)&this->M376; /*0x49041b*/
   *((unsigned int *)this + 92) = 0; /*0x490421*/
   __3_YAXPAX_Z(v2); /*0x49042c*/
   *((unsigned int *)this + 94) = 0; /*0x490434*/
@@ -2084,7 +2084,7 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
         if ( *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) ) /*0x49cda0*/
           __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x49cda8*/
       }
-      __3_YAXPAX_Z(*(void **)((char *)this + 60)); /*0x49cdbe*/
+      __3_YAXPAX_Z(*(void **)&this->M60); /*0x49cdbe*/
     }
     *((unsigned int *)this + 15) = 0; /*0x49cdc8*/
     *((unsigned int *)this + 16) = 0; /*0x49cdcb*/

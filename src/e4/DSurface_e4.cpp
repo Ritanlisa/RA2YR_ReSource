@@ -51,7 +51,7 @@ AbstractClass * * DSurface::Process(void* aP1, int * a2)
     a2[2],
     a2[3],
     *((char *)this + 283),
-    *(int16_t *)((char *)this + 268),
+    *(int16_t *)&this->q10C,
     1,
     0,
     0,

@@ -97,16 +97,16 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6631*/
     *(unsigned int *)this = 0; /*0x4c6635*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c663d*/
+    *(unsigned int *)&this->u32_3 = dword_A8ED84; /*0x4c663d*/
     return this; /*0x4c6640*/
   }
   else
   {
     *((unsigned char *)this + 2) = (unsigned char)(aP1); /*0x4c6610*/
     *(unsigned int *)this = a3; /*0x4c661a*/
-    *(unsigned int *)((unsigned char *)this + 7) = a4; /*0x4c661c*/
+    *(unsigned int *)&this->q007 = a4; /*0x4c661c*/
     *((unsigned char *)this + 11) = a5; /*0x4c6620*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c6629*/
+    *(unsigned int *)&this->u32_3 = dword_A8ED84; /*0x4c6629*/
     return this; /*0x4c661e*/
   }
 
@@ -122,14 +122,14 @@ int EventClass::AddEvent(int a2, unsigned __int8 a3)
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6701*/
     *(unsigned int *)this = 0; /*0x4c6705*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c670d*/
+    *(unsigned int *)&this->u32_3 = (int)(dword_A8ED84); /*0x4c670d*/
     return (int)(this); /*0x4c6710*/
   }
   else
   {
     *((unsigned char *)this + 2) = a2; /*0x4c66ec*/
     *(unsigned int *)this = a3; /*0x4c66ef*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c66f9*/
+    *(unsigned int *)&this->u32_3 = (int)(dword_A8ED84); /*0x4c66f9*/
     return (int)(this); /*0x4c66f7*/
   }
 
@@ -145,15 +145,15 @@ int EventClass::Add2(int a3, unsigned __int8 aP1, int aP3)
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6767*/
     *(unsigned int *)this = 0; /*0x4c676b*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6776*/
+    *(unsigned int *)&this->u32_3 = (int)(dword_A8ED84); /*0x4c6776*/
     return (int)(this); /*0x4c6774*/
   }
   else
   {
     *((unsigned char *)this + 2) = (unsigned char)(aP1); /*0x4c6750*/
     *(unsigned int *)this = a3; /*0x4c6753*/
-    *(unsigned int *)((unsigned char *)this + 7) = (unsigned int)(aP3); /*0x4c6755*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c675d*/
+    *(unsigned int *)&this->q007 = (unsigned int)(aP3); /*0x4c6755*/
+    *(unsigned int *)&this->u32_3 = (int)(dword_A8ED84); /*0x4c675d*/
     return (int)(this); /*0x4c6760*/
   }
 
@@ -169,17 +169,17 @@ int EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3
   {
     *((unsigned char *)this + 2) = -1; /*0x4c69c6*/
     *(unsigned int *)this = 0; /*0x4c69ca*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c69d2*/
+    *(unsigned int *)&this->u32_3 = (int)(dword_A8ED84); /*0x4c69d2*/
     return (int)(this); /*0x4c69d5*/
   }
   else
   {
     *((unsigned char *)this + 2) = (unsigned char)(aP1); /*0x4c69a4*/
     *(unsigned int *)this = a3; /*0x4c69ab*/
-    *(unsigned int *)((unsigned char *)this + 7) = (unsigned int)(aP3); /*0x4c69ad*/
-    *(unsigned int *)((unsigned char *)this + 11) = (unsigned int)(aP4); /*0x4c69b0*/
-    *(unsigned int *)((unsigned char *)this + 15) = (unsigned int)(aP5); /*0x4c69b3*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c69be*/
+    *(unsigned int *)&this->q007 = (unsigned int)(aP3); /*0x4c69ad*/
+    *(unsigned int *)&this->q00B = (unsigned int)(aP4); /*0x4c69b0*/
+    *(unsigned int *)&this->u32_F = (unsigned int)(aP5); /*0x4c69b3*/
+    *(unsigned int *)&this->u32_3 = (int)(dword_A8ED84); /*0x4c69be*/
     return (int)(this); /*0x4c69bc*/
   }
 
@@ -195,19 +195,19 @@ int EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigne
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6b49*/
     *(unsigned int *)this = 0; /*0x4c6b4d*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6b58*/
+    *(unsigned int *)&this->u32_3 = (int)(dword_A8ED84); /*0x4c6b58*/
     return (int)(this); /*0x4c6b56*/
   }
   else
   {
     *((unsigned char *)this + 2) = (unsigned char)(aP1); /*0x4c6b14*/
-    *(unsigned int *)((unsigned char *)this + 11) = a5; /*0x4c6b1b*/
+    *(unsigned int *)&this->q00B = a5; /*0x4c6b1b*/
     *(unsigned int *)this = a3; /*0x4c6b22*/
-    *(unsigned int *)((unsigned char *)this + 7) = a4; /*0x4c6b24*/
-    *(unsigned int *)((unsigned char *)this + 15) = arg10; /*0x4c6b27*/
-    *(unsigned short *)((unsigned char *)this + 19) = *a6; /*0x4c6b2d*/
-    *(unsigned short *)((unsigned char *)this + 21) = a6[1]; /*0x4c6b35*/
-    *(unsigned int *)((unsigned char *)this + 3) = (int)(dword_A8ED84); /*0x4c6b3f*/
+    *(unsigned int *)&this->q007 = a4; /*0x4c6b24*/
+    *(unsigned int *)&this->u32_F = arg10; /*0x4c6b27*/
+    *(unsigned short *)&this->q013 = *a6; /*0x4c6b2d*/
+    *(unsigned short *)&this->q015 = a6[1]; /*0x4c6b35*/
+    *(unsigned int *)&this->u32_3 = (int)(dword_A8ED84); /*0x4c6b3f*/
     return (int)(this); /*0x4c6b42*/
   }
 

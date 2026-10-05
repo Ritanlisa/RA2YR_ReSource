@@ -1154,7 +1154,7 @@ int _::Read(unsigned int * a2)
   result = 0; /*0x74f4f1*/
   if ( v3 <= 0 ) /*0x74f4f5*/
     return -1; /*0x74f50c*/
-  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x74f4fb*/
+  for ( i = *(unsigned int **)&this->Items; *i != *a2; ++i ) /*0x74f4fb*/
   {
     if ( ++result >= v3 ) /*0x74f50a*/
       return -1; /*0x74f50a*/

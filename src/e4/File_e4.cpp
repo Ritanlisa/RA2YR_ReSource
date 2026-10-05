@@ -271,14 +271,14 @@ AbstractClass * * File::ParseFileHVA(int a2, int aP1, int a3)
   unsigned char v15[48]; // [esp+38h] [ebp-60h] BYREF
 
   if ( *((unsigned int *)this + 3) ) /*0x5bd5c9*/
-    __3_YAXPAX_Z(*(void **)((char *)this + 12)); /*0x5bd5d3*/
+    __3_YAXPAX_Z(*(void **)&this->u32_C); /*0x5bd5d3*/
   v3 = a2; /*0x5bd5db*/
   *((unsigned int *)this + 3) = 0; /*0x5bd5e2*/
   result = (*(int (**)(int, int))(*(unsigned int *)a2 + 28))(a2, 1); /*0x5bd5eb*/
   if ( result ) /*0x5bd5f0*/
   {
     (*(void (**)(int, unsigned char *, int))(*(unsigned int *)a2 + 36))(a2, v12, 24); /*0x5bd607*/
-    v5 = *(void **)((char *)this + 12); /*0x5bd60a*/
+    v5 = *(void **)&this->u32_C; /*0x5bd60a*/
     v6 = v13; /*0x5bd611*/
     *((unsigned int *)this + 1) = v14; /*0x5bd617*/
     *((unsigned int *)this + 2) = v6; /*0x5bd61a*/
@@ -315,7 +315,7 @@ LABEL_14:
         }
         (*(void (**)(int))(*(unsigned int *)v3 + 52))(v3); /*0x5bd704*/
         if ( *((unsigned int *)this + 3) ) /*0x5bd707*/
-          __3_YAXPAX_Z(*(void **)((char *)this + 12)); /*0x5bd70f*/
+          __3_YAXPAX_Z(*(void **)&this->u32_C); /*0x5bd70f*/
         *((unsigned int *)this + 3) = 0; /*0x5bd719*/
         return 0; /*0x5bd721*/
       }

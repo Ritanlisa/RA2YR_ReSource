@@ -1675,7 +1675,7 @@ void ScenarioClass::sub_5D80B0()
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x5d80b6*/
+  v2 = *(void **)&this->Items; /*0x5d80b6*/
   *((unsigned int *)this + 4) = 0; /*0x5d80b9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5d80c0*/
   {

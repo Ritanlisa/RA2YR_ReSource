@@ -38,7 +38,7 @@ int BinkMovieHandle::RenderFrameClipped(int a2, int v11, void *a3_2)
   unsigned char v19[16]; // [esp+24h] [ebp-10h] BYREF
   int v20; // [esp+3Ch] [ebp+8h]
 
-  v3 = *(int **)((char *)this + 4); /*0x432ab3*/
+  v3 = *(int **)&this->tempPath; /*0x432ab3*/
   v4 = v3[1]; /*0x432ac3*/
   v5 = *v3; /*0x432ac7*/
   v6 = (int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)((char *)&this->tempPath2) + 120))(this->width, v19); /*0x432ad8*/

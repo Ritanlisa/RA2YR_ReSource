@@ -71,7 +71,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   v8 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16); /*0x41d907*/
   v15 = v17; /*0x41d916*/
   v14 = (int)v8; /*0x41d919*/
-  v9 = (unsigned int *)(*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 76) + 60))(*((unsigned int *)this + 19)); /*0x41d91f*/
+  v9 = (unsigned int *)(*(int (**)(unsigned int))(**(unsigned int **)&this->owner + 60))(*((unsigned int *)this + 19)); /*0x41d91f*/
   result = PlaceAircraftOnMap(v9, v4, v5, 1, v14, 0, v15, 0,(int)(this)); /*0x41d926*/
   *((unsigned int *)this + 11) = result; /*0x41d92d*/
   *((unsigned int *)this + 12) = result; /*0x41d930*/

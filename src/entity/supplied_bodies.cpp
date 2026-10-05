@@ -539,9 +539,9 @@ int AnimClass::setLoopCount()
       if ( UnitExitSound != -1 /*0x449b67*/
         || (UnitExitSound = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1736), UnitExitSound != -1) )
       {
-        v9[0] = *(unsigned int *)((char *)this + 4); /*0x449b75*/
-        v9[1] = *(unsigned int *)((char *)this + 4); /*0x449b7c*/
-        v9[2] = *(unsigned int *)((char *)this + 8); /*0x449b8e*/
+        v9[0] = *(unsigned int *)&this->vtable2; /*0x449b75*/
+        v9[1] = *(unsigned int *)&this->vtable2; /*0x449b7c*/
+        v9[2] = *(unsigned int *)&this->vtable3; /*0x449b8e*/
         StartAudioControllerAt(UnitExitSound, v9, (int **)&this->WasOnline); /*0x449b92*/
       }
       this->? = 1; /*0x449b97*/
@@ -551,9 +551,9 @@ int AnimClass::setLoopCount()
     if ( missionStatus != 1 ) /*0x449a67*/
       return 1; /*0x449a67*/
     this->? = 1; /*0x449a79*/
-    v8[0] = *(unsigned int *)((char *)this + 4); /*0x449a82*/
-    v8[1] = *(unsigned int *)((char *)this + 4); /*0x449a8d*/
-    v8[2] = *(unsigned int *)((char *)this + 8); /*0x449a96*/
+    v8[0] = *(unsigned int *)&this->vtable2; /*0x449a82*/
+    v8[1] = *(unsigned int *)&this->vtable2; /*0x449a8d*/
+    v8[2] = *(unsigned int *)&this->vtable3; /*0x449a96*/
     StartAudioController(v8, (int **)&this->WasOnline); /*0x449a9a*/
     if ( !this->BuildingClass_field_bool_6DD ) /*0x449a9f*/
       return 1; /*0x449ba9*/

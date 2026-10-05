@@ -5581,7 +5581,7 @@ int InfantryClass::GetActionOnObject_EMP(AbstractClass* object, int flags)
                       v48 = this->Type; /*0x51effa*/
                       IDA_HIWORD(v56) = v46 + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v47 + 82]); /*0x51f000*/
                       v57[0] = v56; /*0x51f009*/
-                      v49 = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], (__int16 *)v57, *(unsigned int *)((char *)v48 + 1460), 0); /*0x51f01e*/
+                      v49 = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], (__int16 *)v57, *(unsigned int *)&v48->q5B4, 0); /*0x51f01e*/
                       if ( v49 == v57[1] ) /*0x51f027*/
                         break; /*0x51f027*/
                       if ( ++v55 >= 8 ) /*0x51f035*/

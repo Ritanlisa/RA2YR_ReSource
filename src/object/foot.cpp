@@ -222,18 +222,18 @@ bool FootClass::MovementAI()
             0);
           if ( this->? == (*((int (__thiscall **)(FootClass *))this->TechnoClass + 114))(this) ) /*0x4da72a*/
           {
-            v13 = *(unsigned int *)((char *)this + 4); /*0x4da750*/
-            v46 = *(unsigned int *)((char *)this + 4); /*0x4da753*/
+            v13 = *(unsigned int *)&this->vtable2; /*0x4da750*/
+            v46 = *(unsigned int *)&this->vtable2; /*0x4da753*/
             v47 = v13; /*0x4da758*/
-            v48 = *(unsigned int *)((char *)this + 8); /*0x4da763*/
+            v48 = *(unsigned int *)&this->vtable3; /*0x4da763*/
             MapClass::RevealArea2((MapClass *)&stru_87F5F0.__pad_58[416], &v46, this->? - 3, this->? + 3, 0); /*0x4da77b*/
           }
           else
           {
-            v10 = *(unsigned int *)((char *)this + 4); /*0x4da72c*/
+            v10 = *(unsigned int *)&this->vtable2; /*0x4da72c*/
             v46 = this->?[0]; /*0x4da72f*/
             lastSightRange = this->?; /*0x4da733*/
-            v12 = *(unsigned int *)((char *)this + 8); /*0x4da73a*/
+            v12 = *(unsigned int *)&this->vtable3; /*0x4da73a*/
             v47 = v10; /*0x4da740*/
             v48 = v12; /*0x4da745*/
             MapClass::RevealArea2((MapClass *)&stru_87F5F0.__pad_58[416], &v46, 0, lastSightRange + 3, 0); /*0x4da74e*/
@@ -354,8 +354,8 @@ bool FootClass::MovementAI()
           AudioController::Stop((AudioController *)this->audioController7); /*0x4daa91*/
           v46 = this->?[0]; /*0x4daaa2*/
           vtable0 = (int (__thiscall **)(FootClass *))this->TechnoClass; /*0x4daaa6*/
-          v47 = *(unsigned int *)((char *)this + 4); /*0x4daaab*/
-          v48 = *(unsigned int *)((char *)this + 8); /*0x4daab2*/
+          v47 = *(unsigned int *)&this->vtable2; /*0x4daaab*/
+          v48 = *(unsigned int *)&this->vtable3; /*0x4daab2*/
           v20 = vtable0[33](this) + 1268; /*0x4daac5*/
           v21 = Random::State(&Randomizer_Global); /*0x4daacb*/
           StartAudioControllerAt( /*0x4daae2*/
@@ -373,10 +373,10 @@ bool FootClass::MovementAI()
           && *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->TechnoClass + 33))(this) + 1356) != -1
           && this->? )
         {
-          v46 = *(unsigned int *)((char *)this + 4); /*0x4dab7c*/
-          v47 = *(unsigned int *)((char *)this + 4); /*0x4dab85*/
+          v46 = *(unsigned int *)&this->vtable2; /*0x4dab7c*/
+          v47 = *(unsigned int *)&this->vtable2; /*0x4dab85*/
           v24 = (int (__thiscall **)(FootClass *))this->TechnoClass; /*0x4dab89*/
-          v48 = *(unsigned int *)((char *)this + 8); /*0x4dab8e*/
+          v48 = *(unsigned int *)&this->vtable3; /*0x4dab8e*/
           v25 = v24[33](this); /*0x4dab92*/
           StartAudioControllerAt(*(unsigned int *)(v25 + 1356), &v46, 0); /*0x4daba0*/
           this->? = this->?; /*0x4dabab*/
@@ -393,10 +393,10 @@ bool FootClass::MovementAI()
         {
           if ( *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->TechnoClass + 33))(this) + 1364) != -1 ) /*0x4dabf3*/
           {
-            v46 = *(unsigned int *)((char *)this + 4); /*0x4dac02*/
-            v47 = *(unsigned int *)((char *)this + 4); /*0x4dac0b*/
+            v46 = *(unsigned int *)&this->vtable2; /*0x4dac02*/
+            v47 = *(unsigned int *)&this->vtable2; /*0x4dac0b*/
             v27 = (int (__thiscall **)(FootClass *))this->TechnoClass; /*0x4dac0f*/
-            v48 = *(unsigned int *)((char *)this + 8); /*0x4dac14*/
+            v48 = *(unsigned int *)&this->vtable3; /*0x4dac14*/
             v28 = v27[33](this); /*0x4dac18*/
             StartAudioControllerAt(*(unsigned int *)(v28 + 1364), &v46, 0); /*0x4dac26*/
           }
@@ -405,8 +405,8 @@ bool FootClass::MovementAI()
             if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 520) != -1 ) /*0x4dac86*/
             {
               v46 = this->?[0]; /*0x4dac94*/
-              v47 = *(unsigned int *)((char *)this + 4); /*0x4dac9b*/
-              v48 = *(unsigned int *)((char *)this + 8); /*0x4daca9*/
+              v47 = *(unsigned int *)&this->vtable2; /*0x4dac9b*/
+              v48 = *(unsigned int *)&this->vtable3; /*0x4daca9*/
               StartAudioControllerAt( /*0x4dacb7*/
                 *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 520),
                 &v46,
@@ -415,10 +415,10 @@ bool FootClass::MovementAI()
           }
           else
           {
-            v46 = *(unsigned int *)((char *)this + 1348); /*0x4dac49*/
-            v47 = *(unsigned int *)((char *)this + 4); /*0x4dac57*/
+            v46 = *(unsigned int *)&this->audioController7; /*0x4dac49*/
+            v47 = *(unsigned int *)&this->vtable2; /*0x4dac57*/
             v29 = (int (__thiscall **)(FootClass *))this->TechnoClass; /*0x4dac5b*/
-            v48 = *(unsigned int *)((char *)this + 8); /*0x4dac60*/
+            v48 = *(unsigned int *)&this->vtable3; /*0x4dac60*/
             v30 = v29[33](this); /*0x4dac66*/
             StartAudioControllerAt(*(unsigned int *)(v30 + 1352), &v46, (int **)this->audioController7); /*0x4dac74*/
           }
@@ -438,19 +438,19 @@ bool FootClass::MovementAI()
           if ( *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->TechnoClass + 33))(this) + 1360) != -1 /*0x4dad1f*/
             && (unsigned __int8)House::IsHumanPlayer((House *)this->?) )
           {
-            v46 = *(unsigned int *)((char *)this + 4); /*0x4dad35*/
-            v47 = *(unsigned int *)((char *)this + 4); /*0x4dad3e*/
+            v46 = *(unsigned int *)&this->vtable2; /*0x4dad35*/
+            v47 = *(unsigned int *)&this->vtable2; /*0x4dad3e*/
             v32 = (int (__thiscall **)(FootClass *))this->TechnoClass; /*0x4dad42*/
-            v48 = *(unsigned int *)((char *)this + 8); /*0x4dad47*/
+            v48 = *(unsigned int *)&this->vtable3; /*0x4dad47*/
             v33 = v32[33](this); /*0x4dad4b*/
             StartAudioControllerAt(*(unsigned int *)(v33 + 1360), &v46, 0); /*0x4dad59*/
           }
           if ( *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->TechnoClass + 33))(this) + 1348) != -1 ) /*0x4dad6f*/
           {
-            v46 = *(unsigned int *)((char *)this + 4); /*0x4dad7e*/
+            v46 = *(unsigned int *)&this->vtable2; /*0x4dad7e*/
             v34 = (int (__thiscall **)(FootClass *))this->TechnoClass; /*0x4dad82*/
-            v47 = *(unsigned int *)((char *)this + 4); /*0x4dad87*/
-            v48 = *(unsigned int *)((char *)this + 8); /*0x4dad8e*/
+            v47 = *(unsigned int *)&this->vtable2; /*0x4dad87*/
+            v48 = *(unsigned int *)&this->vtable3; /*0x4dad8e*/
             v35 = v34[33](this); /*0x4dad94*/
             StartAudioControllerAt(*(unsigned int *)(v35 + 1348), &v46, (int **)this->audioController7); /*0x4dada2*/
           }
@@ -462,8 +462,8 @@ bool FootClass::MovementAI()
         this->? = this->?; /*0x4dadc2*/
       }
       v46 = this->?[0]; /*0x4dadd4*/
-      v47 = *(unsigned int *)((char *)this + 4); /*0x4dade1*/
-      v48 = *(unsigned int *)((char *)this + 8); /*0x4dade8*/
+      v47 = *(unsigned int *)&this->vtable2; /*0x4dade1*/
+      v48 = *(unsigned int *)&this->vtable3; /*0x4dade8*/
       StartAudioController(&v46, (int **)this->audioController7); /*0x4dadf0*/
       if ( (*(unsigned int *)((char *)&stru_A8EB00 + 644) & 0x3F) == 0x3F /*0x4dae37*/
         && !this->movementDestination

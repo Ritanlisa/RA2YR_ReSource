@@ -4123,8 +4123,8 @@ int ExceptionHandler::GenerateReport()
     if ( **(unsigned int **)v55 == -1073741819 ) /*0x4c873b*/
     {
       Debug::Log(); /*0x4c8742*/
-      v7 = *(unsigned int *)(*(unsigned int *)v55 + 24); /*0x4c874f*/
-      v52 = *(unsigned int *)(*(unsigned int *)v55 + 20); /*0x4c8752*/
+      v7 = *(unsigned int *)(*(unsigned int * *)&v55->u32_60; /*0x4c874f*/
+      v52 = *(unsigned int *)(*(unsigned int * *)&v55->customSound_controller; /*0x4c8752*/
       v56 = v7; /*0x4c8756*/
     }
     else
@@ -4749,7 +4749,7 @@ int MIXClass::CopyHeader( IUnknown * aP1)
     }
     v5 = a2; /*0x4a8d9d*/
     v6 = a2 == 0; /*0x4a8da7*/
-    *(int *)((char *)this + 4486) = *(unsigned int *)&stru_8A0390.bombVisible; /*0x4a8da9*/
+    *(int *)&this->u32_1186 = *(unsigned int *)&stru_8A0390.bombVisible; /*0x4a8da9*/
     if ( v6 ) /*0x4a8daf*/
     {
       *(this + 1123) = 0; /*0x4a8e7f*/
@@ -4769,7 +4769,7 @@ int MIXClass::CopyHeader( IUnknown * aP1)
       IDA_LOWORD(a2) = (__int16)(1 - v7) / 2; /*0x4a8e24*/
       IDA_HIWORD(a2) = (__int16)(1 - IDA_HIWORD(v7)) / 2; /*0x4a8e31*/
       v8 = (__int16)a2; /*0x4a8e36*/
-      *(int *)((char *)this + 4486) = (int)a2; /*0x4a8e3a*/
+      *(int *)&this->u32_1186 = (int)a2; /*0x4a8e3a*/
       IDA_LOWORD(v7) = *((unsigned short *)this + 2244) + *((unsigned short *)this + 2242); /*0x4a8e4e*/
       IDA_LOWORD(a2) = v8 + *((unsigned short *)this + 2241); /*0x4a8e58*/
       IDA_HIWORD(a2) = v7; /*0x4a8e5d*/

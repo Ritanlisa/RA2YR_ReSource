@@ -66,7 +66,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
     strcat((char *)v12,(const char *)(asc_815E74)); /*0x7737bc*/
   mbstowcs(Destination, (const char *)v12, 0x104u); /*0x7737d7*/
   wcscat(Destination,(const wchar_t *)(aFr)); /*0x7737e9*/
-  if ( (*(int (**)(unsigned int, wchar_t *, unsigned int, unsigned int))(**(unsigned int **)((char *)this + 8) + 64))( /*0x773808*/
+  if ( (*(int (**)(unsigned int, wchar_t *, unsigned int, unsigned int))(**(unsigned int **)&this->q008 + 64))( /*0x773808*/
          *((unsigned int *)this + 2),
          Destination,
          0,

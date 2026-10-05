@@ -249,10 +249,10 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
   *((unsigned int *)this + 169) = 0; /*0x710b28*/
   *((unsigned int *)this + 170) = 0; /*0x710b2f*/
   *((unsigned short *)this + 342) = 0; /*0x710b36*/
-  *(unsigned int *)((unsigned char *)this + 686) = 0; /*0x710b3d*/
-  *(unsigned int *)((unsigned char *)this + 690) = 0; /*0x710b43*/
-  *(unsigned int *)((unsigned char *)this + 694) = 0; /*0x710b4b*/
-  *(unsigned int *)((unsigned char *)this + 698) = 0; /*0x710b51*/
+  *(unsigned int *)&this->EliteAbilities = 0; /*0x710b3d*/
+  *(unsigned int *)&this->u32_2B2 = 0; /*0x710b43*/
+  *(unsigned int *)&this->u32_2B6 = 0; /*0x710b4b*/
+  *(unsigned int *)&this->u32_2BA = 0; /*0x710b51*/
   *((unsigned short *)this + 351) = 0; /*0x710b57*/
   *((unsigned int *)this + 176) = 0; /*0x710b5e*/
   *((unsigned int *)this + 177) = 0; /*0x710b64*/
@@ -894,13 +894,13 @@ int TechnoTypeClass::DTOR(void *a1)
   *((unsigned int *)this + 3) = &vt_TechnoTypeClass; /*0x711b03*/
   if ( v2 && *((unsigned int *)this + 444) ) /*0x711b0c*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 1776)); /*0x711b17*/
+    __3_YAXPAX_Z(*(void **)&this->Cameo); /*0x711b17*/
     *((unsigned int *)this + 444) = 0; /*0x711b1f*/
     *((unsigned char *)this + 1780) = 0; /*0x711b25*/
   }
   if ( *((unsigned char *)this + 1812) && *((unsigned int *)this + 452) ) /*0x711b33*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 1808)); /*0x711b3e*/
+    __3_YAXPAX_Z(*(void **)&this->AltCameo); /*0x711b3e*/
     *((unsigned int *)this + 452) = 0; /*0x711b46*/
     *((unsigned char *)this + 1812) = 0; /*0x711b4c*/
   }
@@ -930,7 +930,7 @@ int TechnoTypeClass::DTOR(void *a1)
   ((VectorClass *)((char *)this + 1296))->Destroy(); /*0x711c1d*/
   *((unsigned int *)this + 317) = &vt_VectorClass; /*0x711c28*/
   ((VectorClass *)((char *)this + 1268))->Destroy(); /*0x711c2a*/
-  v5 = *(void **)((char *)this + 1244); /*0x711c2f*/
+  v5 = *(void **)&this->VoiceFeedback_Items; /*0x711c2f*/
   *((unsigned int *)this + 310) = &vt_VectorClass; /*0x711c35*/
   if ( v5 && *((unsigned char *)this + 1253) ) /*0x711c3f*/
   {
@@ -939,7 +939,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 1253) = 0; /*0x711c56*/
   *((unsigned int *)this + 312) = 0; /*0x711c5c*/
-  v6 = *(void **)((char *)this + 1216); /*0x711c62*/
+  v6 = *(void **)&this->IntList_H_Items; /*0x711c62*/
   *((unsigned int *)this + 303) = &vt_VectorClass; /*0x711c68*/
   if ( v6 && *((unsigned char *)this + 1225) ) /*0x711c72*/
   {
@@ -948,7 +948,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 1225) = 0; /*0x711c89*/
   *((unsigned int *)this + 305) = 0; /*0x711c8f*/
-  v7 = *(void **)((char *)this + 1188); /*0x711c95*/
+  v7 = *(void **)&this->IntList_G_Items; /*0x711c95*/
   *((unsigned int *)this + 296) = &vt_VectorClass; /*0x711c9b*/
   if ( v7 && *((unsigned char *)this + 1197) ) /*0x711ca5*/
   {
@@ -957,7 +957,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 1197) = 0; /*0x711cbc*/
   *((unsigned int *)this + 298) = 0; /*0x711cc2*/
-  v8 = *(void **)((char *)this + 1160); /*0x711cc8*/
+  v8 = *(void **)&this->IntList_F_Items; /*0x711cc8*/
   *((unsigned int *)this + 289) = &vt_VectorClass; /*0x711cce*/
   if ( v8 && *((unsigned char *)this + 1169) ) /*0x711cd8*/
   {
@@ -966,7 +966,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 1169) = 0; /*0x711cef*/
   *((unsigned int *)this + 291) = 0; /*0x711cf5*/
-  v9 = *(void **)((char *)this + 1132); /*0x711cfb*/
+  v9 = *(void **)&this->IntList_E_Items; /*0x711cfb*/
   *((unsigned int *)this + 282) = &vt_VectorClass; /*0x711d01*/
   if ( v9 && *((unsigned char *)this + 1141) ) /*0x711d0b*/
   {
@@ -975,7 +975,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 1141) = 0; /*0x711d22*/
   *((unsigned int *)this + 284) = 0; /*0x711d28*/
-  v10 = *(void **)((char *)this + 1104); /*0x711d2e*/
+  v10 = *(void **)&this->IntList_D_Items; /*0x711d2e*/
   *((unsigned int *)this + 275) = &vt_VectorClass; /*0x711d34*/
   if ( v10 && *((unsigned char *)this + 1113) ) /*0x711d3e*/
   {
@@ -984,7 +984,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 1113) = 0; /*0x711d55*/
   *((unsigned int *)this + 277) = 0; /*0x711d5b*/
-  v11 = *(void **)((char *)this + 1076); /*0x711d61*/
+  v11 = *(void **)&this->IntList_C_Items; /*0x711d61*/
   *((unsigned int *)this + 268) = &vt_VectorClass; /*0x711d67*/
   if ( v11 && *((unsigned char *)this + 1085) ) /*0x711d71*/
   {
@@ -993,7 +993,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 1085) = 0; /*0x711d88*/
   *((unsigned int *)this + 270) = 0; /*0x711d8e*/
-  v12 = *(void **)((char *)this + 1048); /*0x711d94*/
+  v12 = *(void **)&this->IntList_B_Items; /*0x711d94*/
   *((unsigned int *)this + 261) = &vt_VectorClass; /*0x711d9a*/
   if ( v12 && *((unsigned char *)this + 1057) ) /*0x711da4*/
   {
@@ -1002,7 +1002,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 1057) = 0; /*0x711dbb*/
   *((unsigned int *)this + 263) = 0; /*0x711dc1*/
-  v13 = *(void **)((char *)this + 1004); /*0x711dc7*/
+  v13 = *(void **)&this->BuildingTypeList_Items; /*0x711dc7*/
   *((unsigned int *)this + 250) = &vt_VectorClass; /*0x711dcd*/
   if ( v13 && *((unsigned char *)this + 1013) ) /*0x711ddb*/
   {
@@ -1011,7 +1011,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 1013) = 0; /*0x711df2*/
   *((unsigned int *)this + 252) = 0; /*0x711df8*/
-  v14 = *(void **)((char *)this + 820); /*0x711dfe*/
+  v14 = *(void **)&this->IntList_A_Items; /*0x711dfe*/
   *((unsigned int *)this + 204) = &vt_VectorClass; /*0x711e04*/
   if ( v14 && *((unsigned char *)this + 829) ) /*0x711e0f*/
   {
@@ -1020,7 +1020,7 @@ int TechnoTypeClass::DTOR(void *a1)
   }
   *((unsigned char *)this + 829) = 0; /*0x711e26*/
   *((unsigned int *)this + 206) = 0; /*0x711e2c*/
-  v15 = *(void **)((char *)this + 792); /*0x711e32*/
+  v15 = *(void **)&this->VoxelAnimList_Items; /*0x711e32*/
   *((unsigned int *)this + 197) = &vt_VectorClass; /*0x711e38*/
   if ( v15 && *((unsigned char *)this + 801) ) /*0x711e46*/
   {

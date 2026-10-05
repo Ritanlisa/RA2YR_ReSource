@@ -594,6 +594,9 @@ struct TechnoClass {
     int HasDeployFlags();  // 0x746db0
     char CheckTargetCell();  // 0x703b10
     int __thiscall DrawPips(void *a1);
+    unsigned int q_750;  // +0x750 flat supply (three-ban reform)
+    unsigned int q_A20;  // +0xA20 flat supply (three-ban reform)
+    unsigned int q_FE0;  // +0xFE0 flat supply (three-ban reform)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

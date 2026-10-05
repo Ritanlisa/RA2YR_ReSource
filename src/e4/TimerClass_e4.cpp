@@ -77,11 +77,11 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   this->u32_8 = dword_A8ED84; /*0x54ff13*/
   this->u32_C = a3; /*0x54ff1a*/
   this->q010 = 1; /*0x54ff21*/
-  *(unsigned short *)((unsigned char *)this + 65) = a10; /*0x54ff29*/
+  *(unsigned short *)&this->u32_41 = a10; /*0x54ff29*/
   this->u32_43 = BYTE2(a10); /*0x54ff32*/
   this->u32_44 = a11; /*0x54ff39*/
   this->u32_46 = BYTE2(a11); /*0x54ff42*/
-  *(unsigned short *)((unsigned char *)this + 71) = a12; /*0x54ff49*/
+  *(unsigned short *)&this->u32_47 = a12; /*0x54ff49*/
   this->u32_49 = BYTE2(a12); /*0x54ff4d*/
   if ( dword_ABC888 < dword_ABC880 /*0x54ff85*/
     || (byte_ABC885 || !dword_ABC880)

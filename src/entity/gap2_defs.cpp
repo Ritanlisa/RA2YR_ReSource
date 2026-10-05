@@ -1557,7 +1557,7 @@ int BulletClass::Fire(int a1) {
           if ( !a3 /*0x468f05*/
             && !*(unsigned char *)(v15 + 667)
             && *(int *)(v15 + 732) <= 0
-            && (*((unsigned int *)this + 52) != dword_89DE30 || *(unsigned __int64 *)((char *)this + 212) != qword_89DE34) )
+            && (*((unsigned int *)this + 52) != dword_89DE30 || *(unsigned __int64 *)&this->q0D4 != qword_89DE34) )
           {
             v16 = *((unsigned int *)this + 53); /*0x468f11*/
             v27 = *((unsigned int *)this + 52); /*0x468f14*/
@@ -4878,7 +4878,7 @@ int TiberiumClass::Grow(void* a1) {
     double v97; // [esp+70h] [ebp-8h]
 
     _EBX = (MapClass *)this; /*0x59c92a*/
-    v4 = *(unsigned int *)((char *)this + 76); /*0x59c92e*/
+    v4 = *(unsigned int *)&this->SpreadTimer; /*0x59c92e*/
     inited = 1; /*0x59c937*/
     IDA_LODWORD(v94) = v4; /*0x59c93c*/
     if ( v4 ) /*0x59c940*/
@@ -6423,7 +6423,7 @@ void ParticleSystemClass::CreateBuildingLight(int a1, int a2) {
       v9 = v8; /*0x62e31b*/
       v10 = (ObjectClass *)RA2_OPNEW(0x18u); /*0x62e31d*/
       if ( v10 ) /*0x62e327*/
-        v11 = (BuildingLightQueue *)ObjectClass::RegisterInArray(v10, *(unsigned int *)((char *)this + 244), *(unsigned int *)((char *)this + 244), *(unsigned int *)((char *)this + 244), v9); /*0x62e34c*/
+        v11 = (BuildingLightQueue *)ObjectClass::RegisterInArray(v10, *(unsigned int *)&this->q0F4, *(unsigned int *)&this->q0F4, *(unsigned int *)&this->q0F4, v9); /*0x62e34c*/
       else
         v11 = 0; /*0x62e350*/
       v11[3] = *(BuildingLightQueue *)&this->__pad_E5[15]; /*0x62e35a*/
@@ -6720,10 +6720,10 @@ int ParticleSystemClass::SpawnParticle() {
       Lifetime = this->Lifetime; /*0x62f26c*/
       v5 = this->?[0]; /*0x62f27b*/
       v6 = this->SpawnFrames - v5; /*0x62f27d*/
-      v7 = *(unsigned int *)((char *)this + 4); /*0x62f27f*/
+      v7 = *(unsigned int *)&this->vtable2; /*0x62f27f*/
       v76 = this->SpawnFrames - v5; /*0x62f282*/
       v8 = Lifetime - v7; /*0x62f286*/
-      v9 = *(unsigned int *)((char *)this + 8); /*0x62f288*/
+      v9 = *(unsigned int *)&this->vtable3; /*0x62f288*/
       v77 = v8; /*0x62f28b*/
       v10 = SparkSpawnFrames - v9; /*0x62f28f*/
       v78 = v10; /*0x62f291*/
@@ -6907,10 +6907,10 @@ int ParticleSystemClass::SpawnParticle() {
             fld [esp+0F0h+var_5C]
             fadd [esp+0F0h+var_90]
           }
-          v24 = *(unsigned int *)((char *)this + 4); /*0x62f560*/
-          v90[3] = *(unsigned int *)((char *)this + 4); /*0x62f563*/
+          v24 = *(unsigned int *)&this->vtable2; /*0x62f560*/
+          v90[3] = *(unsigned int *)&this->vtable2; /*0x62f563*/
           v90[4] = v24; /*0x62f56a*/
-          v25 = *(unsigned int *)((char *)this + 8); /*0x62f571*/
+          v25 = *(unsigned int *)&this->vtable3; /*0x62f571*/
           __asm /*0x62f574*/
           {
             fstp [esp+0F0h+var_90]
@@ -8387,8 +8387,8 @@ int TerrainClass::ApplyCellModifications() {
       }
       while ( v3 < 8 ); /*0x71c9b8*/
       v14[0] = this->?[0]; /*0x71c9c6*/
-      v14[1] = *(unsigned int *)((char *)this + 4); /*0x71c9d2*/
-      v14[2] = *(unsigned int *)((char *)this + 8); /*0x71c9de*/
+      v14[1] = *(unsigned int *)&this->vtable2; /*0x71c9d2*/
+      v14[2] = *(unsigned int *)&this->vtable3; /*0x71c9de*/
       v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v14); /*0x71c9e2*/
       v7->occupationFlags &= ~0x40u; /*0x71c9f6*/
     }

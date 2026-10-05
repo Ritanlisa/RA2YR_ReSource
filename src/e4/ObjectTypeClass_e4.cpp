@@ -352,30 +352,30 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   }
   if ( *((unsigned char *)this + 168) && *((unsigned int *)this + 41) ) /*0x5f7476*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 164)); /*0x5f7481*/
+    __3_YAXPAX_Z(*(void **)&this->q0A4); /*0x5f7481*/
     *((unsigned int *)this + 41) = 0; /*0x5f7489*/
     *((unsigned char *)this + 168) = 0; /*0x5f748f*/
   }
   ObjectTypeClass::CleanupWeapons((char *)this); /*0x5f7497*/
-  __3_YAXPAX_Z(*(void **)((char *)this + 640)); /*0x5f74a3*/
+  __3_YAXPAX_Z(*(void **)&this->q280); /*0x5f74a3*/
   *((unsigned int *)this + 160) = 0; /*0x5f74a8*/
   *((unsigned int *)this + 161) = 0; /*0x5f74ae*/
   *((unsigned int *)this + 162) = 0; /*0x5f74b4*/
   *((unsigned char *)this + 652) = 0; /*0x5f74ba*/
   *((unsigned int *)this + 164) = 0; /*0x5f74c0*/
-  __3_YAXPAX_Z(*(void **)((char *)this + 620)); /*0x5f74cd*/
+  __3_YAXPAX_Z(*(void **)&this->q26C); /*0x5f74cd*/
   *((unsigned int *)this + 155) = 0; /*0x5f74d2*/
   *((unsigned int *)this + 156) = 0; /*0x5f74d8*/
   *((unsigned int *)this + 157) = 0; /*0x5f74de*/
   *((unsigned char *)this + 632) = 0; /*0x5f74e4*/
   *((unsigned int *)this + 159) = 0; /*0x5f74ea*/
-  __3_YAXPAX_Z(*(void **)((char *)this + 600)); /*0x5f74f7*/
+  __3_YAXPAX_Z(*(void **)&this->q258); /*0x5f74f7*/
   *((unsigned int *)this + 150) = 0; /*0x5f74fc*/
   *((unsigned int *)this + 151) = 0; /*0x5f7502*/
   *((unsigned int *)this + 152) = 0; /*0x5f7508*/
   *((unsigned char *)this + 612) = 0; /*0x5f750e*/
   *((unsigned int *)this + 154) = 0; /*0x5f7514*/
-  __3_YAXPAX_Z(*(void **)((char *)this + 580)); /*0x5f7521*/
+  __3_YAXPAX_Z(*(void **)&this->VoxelCaches_4); /*0x5f7521*/
   *((unsigned int *)this + 145) = 0; /*0x5f7526*/
   *((unsigned int *)this + 146) = 0; /*0x5f752c*/
   *((unsigned int *)this + 147) = 0; /*0x5f7532*/

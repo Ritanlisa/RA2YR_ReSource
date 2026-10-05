@@ -1060,7 +1060,7 @@ int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractC
     if ( ((int)((HIDWORD(v12) ^ v12) - HIDWORD(v12)) < 2 || v74) && v11 != dword_ABDE8C && v11 != (uint16_t)aP2 ) /*0x56cc34*/
     {
       v13 = (uint16_t)aP2 | ((uint16_t)v11 << 16); /*0x56cc46*/
-      v14 = **(unsigned int **)((char *)this + 20); /*0x56cc5a*/
+      v14 = **(unsigned int **)&this->q014; /*0x56cc5a*/
       v15 = *(unsigned int *)(v14 + 24 * (aP2 & 0xF | (16 * (v11 & 0xF))) + 16); /*0x56cc5c*/
       v16 = v14 + 24 * (aP2 & 0xF | (16 * (v11 & 0xF))); /*0x56cc60*/
       v17 = v15 - 1; /*0x56cc63*/
@@ -1117,7 +1117,7 @@ LABEL_12:
     if ( ((int)((HIDWORD(v26) ^ v26) - HIDWORD(v26)) < 2 || v74) && v25 != dword_ABDE8C && v25 != (uint16_t)aP2 ) /*0x56cd4a*/
     {
       v27 = (uint16_t)aP2 | ((uint16_t)v25 << 16); /*0x56cd5c*/
-      v28 = **(unsigned int **)((char *)this + 20); /*0x56cd70*/
+      v28 = **(unsigned int **)&this->q014; /*0x56cd70*/
       v29 = *(unsigned int *)(v28 + 24 * (aP2 & 0xF | (16 * (v25 & 0xF))) + 16); /*0x56cd72*/
       v30 = v28 + 24 * (aP2 & 0xF | (16 * (v25 & 0xF))); /*0x56cd76*/
       v31 = v29 - 1; /*0x56cd79*/
@@ -1193,7 +1193,7 @@ LABEL_63:
       if ( (int)((HIDWORD(v45) ^ v45) - HIDWORD(v45)) < 2 || v74 ) /*0x56cf0a*/
       {
         v46 = (uint16_t)aP2 | (v42 << 16); /*0x56cf16*/
-        v47 = **(unsigned int **)((char *)this + 20); /*0x56cf2a*/
+        v47 = **(unsigned int **)&this->q014; /*0x56cf2a*/
         v48 = *(unsigned int *)(v47 + 24 * (aP2 & 0xF | (16 * (v42 & 0xF))) + 16); /*0x56cf2c*/
         v49 = v47 + 24 * (aP2 & 0xF | (16 * (v42 & 0xF))); /*0x56cf30*/
         v50 = v48 - 1; /*0x56cf33*/
@@ -1257,7 +1257,7 @@ LABEL_64:
           if ( (int)((HIDWORD(v62) ^ v62) - HIDWORD(v62)) < 2 || v74 ) /*0x56d05e*/
           {
             v63 = (uint16_t)aP2 | (v58 << 16); /*0x56d06a*/
-            v64 = **(unsigned int **)((char *)this + 20); /*0x56d07e*/
+            v64 = **(unsigned int **)&this->q014; /*0x56d07e*/
             v65 = *(unsigned int *)(v64 + 24 * (aP2 & 0xF | (16 * (v58 & 0xF))) + 16); /*0x56d080*/
             v66 = v64 + 24 * (aP2 & 0xF | (16 * (v58 & 0xF))); /*0x56d084*/
             v67 = v65 - 1; /*0x56d087*/

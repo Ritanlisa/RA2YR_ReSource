@@ -736,7 +736,7 @@ void * Network::initConnection(int a2, unsigned int * a3, char a4)
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6c97*/
     *this = 0; /*0x4c6c9b*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c6ca6*/
+    *(unsigned int *)&this->q003 = dword_A8ED84; /*0x4c6ca6*/
     return this; /*0x4c6ca4*/
   }
   else
@@ -748,7 +748,7 @@ void * Network::initConnection(int a2, unsigned int * a3, char a4)
     v6 = a4; /*0x4c6c7b*/
     *((unsigned int *)this + 2) = v8; /*0x4c6c7f*/
     *((unsigned char *)this + 7) = v6; /*0x4c6c82*/
-    *(unsigned int *)((unsigned char *)this + 3) = dword_A8ED84; /*0x4c6c8d*/
+    *(unsigned int *)&this->q003 = dword_A8ED84; /*0x4c6c8d*/
     return this; /*0x4c6c8b*/
   }
 
@@ -1243,7 +1243,7 @@ AbstractClass * * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String
     return 0; /*0x5412b9*/
   if ( a4 && (&v13 == (int *)-12 || ((Network *)(v14))->IsBroadcastAddr()) ) /*0x54130e*/
     v8 = 0; /*0x541317*/
-  v11 = (*(int (**)(unsigned int, int, int, unsigned int *, int, int, unsigned int))(**(unsigned int **)((char *)this + 72) + 44))( /*0x541334*/
+  v11 = (*(int (**)(unsigned int, int, int, unsigned int *, int, int, unsigned int))(**(unsigned int **)&this->q048 + 44))( /*0x541334*/
           *((unsigned int *)this + 18),
           a2,
           a3,
@@ -1284,7 +1284,7 @@ int Network::SendPacketThunk(int a2, int a3, int a4, int a5, int a6, int a7)
 {
 
   if ( *((unsigned char *)this + 4) && *((unsigned char *)this + 5) ) /*0x5413b7*/
-    return (*(int (**)(unsigned int, int, int, int, int, int, int))(**(unsigned int **)((char *)this + 72) + 56))( /*0x5413e1*/
+    return (*(int (**)(unsigned int, int, int, int, int, int, int))(**(unsigned int **)&this->q048 + 56))( /*0x5413e1*/
              *((unsigned int *)this + 18),
              a2,
              a3,
@@ -1309,7 +1309,7 @@ int Network::receiveData(int a2)
   {
     result = *((unsigned char *)this + 5); /*0x5413f7*/
     if ( result ) /*0x5413fc*/
-      return (*(int (**)(unsigned int, int))(**(unsigned int **)((char *)this + 72) + 60))(*((unsigned int *)this + 18), a2); /*0x541408*/
+      return (*(int (**)(unsigned int, int))(**(unsigned int **)&this->q048 + 60))(*((unsigned int *)this + 18), a2); /*0x541408*/
   }
   return result; /*0x54140b*/
 
@@ -3536,9 +3536,9 @@ void Network::Network_UpdateLatencyDisplay( ProgressScreenClass * aP1, ProgressS
   LOWORD(result) = Math::RoundToInt(v6); /*0x643c88*/
   v10 = result; /*0x643c90*/
   v11 = *(double *)((char *)this + 8 * aP1 + 8); /*0x643c94*/
-  v12 = *(double *)((char *)this + 72) * 0.01 * aP2; /*0x643ca1*/
+  v12 = *(double *)&this->q048 * 0.01 * aP2; /*0x643ca1*/
   *(double *)((char *)this + 8 * aP1 + 8) = v12; /*0x643ca4*/
-  if ( v12 > *(double *)((char *)this + 72) ) /*0x643cb0*/
+  if ( v12 > *(double *)&this->q048 ) /*0x643cb0*/
   {
     *(unsigned int *)((char *)this + 8 * aP1 + 8) = *((unsigned int *)this + 18); /*0x643cb5*/
     result = *((unsigned int *)this + 19); /*0x643cb9*/
@@ -3564,11 +3564,11 @@ void Network::Network_UpdateLatencyDisplay( ProgressScreenClass * aP1, ProgressS
     }
     v23[0] = v10; /*0x643cf0*/
     LOWORD(v20) = Math::RoundToInt(v18); /*0x643cff*/
-    v21 = *(void (****)(unsigned int, int, unsigned int *))((char *)this + 4); /*0x643d04*/
+    v21 = *(void (****)(unsigned int, int, unsigned int *))&this->q004; /*0x643d04*/
     v23[1] = v20; /*0x643d07*/
     if ( v21 && *((unsigned char *)this + 96) ) /*0x643d11*/
       (**v21)(v21, 4526, v23); /*0x643d24*/
-    v22 = *(HWND *)((char *)this + 100); /*0x643d26*/
+    v22 = *(HWND *)&this->q064; /*0x643d26*/
     if ( v22 ) /*0x643d2b*/
       return SendMessageA(v22, 0xFu, 0, 0); /*0x643d34*/
     else
@@ -4498,7 +4498,7 @@ AbstractClass * * Network::SyncPlayerList()
       v5 = Player::FindByName((Player *)v4); /*0x792f58*/
       v6 = v5; /*0x792f5d*/
       if ( v5 && (uint8_t)IsKnownPointer((ObjectClass *)v5) ) /*0x792f65*/
-        *(unsigned int *)((char *)v6 + 123) = v16[5]; /*0x792f72*/
+        *(unsigned int *)&v6->q07B = v16[5]; /*0x792f72*/
       v7 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty(); /*0x792f7a*/
       if ( _strcmpi((char *)&v16[9], v7) ) /*0x792f85*/
       {

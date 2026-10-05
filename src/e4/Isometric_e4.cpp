@@ -202,15 +202,15 @@ AbstractClass * Isometric::InitTables(unsigned int *aP1)
   result = Math::RoundToInt((double)(dword_89E7C0 * *((char *)this + 283)) + 0.5); /*0x47bab0*/
   if ( *((unsigned char *)this + 284) ) /*0x47bab5*/
   {
-    v5 = 40 * (*(uint8_t *)((char *)this + 284) - 1); /*0x47baec*/
+    v5 = 40 * (*(uint8_t *)&this->u8_11C - 1); /*0x47baec*/
     v6 = (double)(uint8_t)aP1[1] * *(double *)(v5 + 8505608) * dbl_89E740 /*0x47bb17*/
        + (double)(uint8_t)*aP1 * *(double *)(v5 + 8505600) * dbl_89E740
        + *(double *)(v5 + 8505616)
        + *(double *)(v5 + 8505632);
     if ( v6 < 0.0 ) /*0x47bb28*/
       v6 = 0.0; /*0x47bb2c*/
-    if ( v6 > *(double *)&(&qword_81C918)[5 * *(uint8_t *)((char *)this + 284) - 5] ) /*0x47bb3d*/
-      v6 = *(double *)&(&qword_81C918)[5 * *(uint8_t *)((char *)this + 284) - 5]; /*0x47bb41*/
+    if ( v6 > *(double *)&(&qword_81C918)[5 * *(uint8_t *)&this->u8_11C - 5] ) /*0x47bb3d*/
+      v6 = *(double *)&(&qword_81C918)[5 * *(uint8_t *)&this->u8_11C - 5]; /*0x47bb41*/
     return Math::RoundToInt(v6); /*0x47bb4d*/
   }
   return (gamemd::AbstractClass *)(result);

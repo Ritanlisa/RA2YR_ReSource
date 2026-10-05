@@ -1867,7 +1867,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
   v6 = *((unsigned int *)this + 21); /*0x6eaefb*/
   if ( v6 ) /*0x6eaf00*/
   {
-    if ( *((SessionClass *)(*(unsigned int **)((char *)this + 40)))->GetEntry(&v36) == 10 ) /*0x6eaf16*/
+    if ( *((SessionClass *)(*(unsigned int **)&this->currentScript))->GetEntry(&v36) == 10 ) /*0x6eaf16*/
     {
       v7 = 0; /*0x6eaf22*/
       v8 = -1; /*0x6eaf24*/
@@ -1881,7 +1881,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
           v10 = (char *)*((unsigned int *)dword_8B410C + v9); /*0x6eaf3f*/
           if ( v10 && v10[144] && *((unsigned int *)v10 + 27) && (dword_A8E7AC || !v10[129]) ) /*0x6eaf6c*/
           {
-            if ( (uint8_t)HouseClass::IsAlliedWith(*((void **)v10 + 135), *(void **)((char *)this + 44)) ) /*0x6eaf88*/
+            if ( (uint8_t)HouseClass::IsAlliedWith(*((void **)v10 + 135), *(void **)&this->owner) ) /*0x6eaf88*/
             {
               if ( this != *((unsigned int *)v10 + 373) ) /*0x6eaf97*/
               {
@@ -1915,7 +1915,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
           v15 = (char *)*((unsigned int *)dword_A83DEC + v3); /*0x6eb03a*/
           if ( v15 && v15[144] && *((unsigned int *)v15 + 27) && (dword_A8E7AC || !v15[129]) ) /*0x6eb067*/
           {
-            if ( (uint8_t)HouseClass::IsAlliedWith(*((void **)v15 + 135), *(void **)((char *)this + 44)) ) /*0x6eb083*/
+            if ( (uint8_t)HouseClass::IsAlliedWith(*((void **)v15 + 135), *(void **)&this->owner) ) /*0x6eb083*/
             {
               if ( this != *((unsigned int *)v15 + 373) ) /*0x6eb096*/
               {
@@ -2028,7 +2028,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
         v28 = ((Coord *)(&dword_87F7E8))->To_Cell(&v36); /*0x6eb331*/
         *aP1 = v28; /*0x6eb33c*/
         if ( !v23 ) /*0x6eb33e*/
-          v23 = *(void **)((char *)this + 84); /*0x6eb34b*/
+          v23 = *(void **)&this->firstUnit; /*0x6eb34b*/
         v3 = (*(int (**)(void *, void *, int, int, unsigned int, int))(*(unsigned int *)v23 + 428))( /*0x6eb35a*/
                v23,
                v28,
@@ -2848,7 +2848,7 @@ char TeamClass::SelectMember(AbstractClass * aP1, void *a2)
   v4 = *((unsigned int *)this + 15); /*0x6e9059*/
   if ( aP1 != v4 ) /*0x6e905e*/
   {
-    v5 = *(unsigned int **)((char *)this + 84); /*0x6e9060*/
+    v5 = *(unsigned int **)&this->firstUnit; /*0x6e9060*/
     if ( v4 ) /*0x6e9065*/
     {
       for ( ; v5; v5 = (unsigned int *)v5[374] ) /*0x6e9069*/
@@ -2884,7 +2884,7 @@ char TeamClass::SelectMember(AbstractClass * aP1, void *a2)
       }
       else
       {
-        v10 = *(unsigned int **)((char *)this + 84); /*0x6e9106*/
+        v10 = *(unsigned int **)&this->firstUnit; /*0x6e9106*/
         for ( *((unsigned char *)this + 130) = 1; v10; v10 = (unsigned int *)v10[374] ) /*0x6e9112*/
           LOBYTE(v9) = (*(int (**)(unsigned int *, unsigned int, int))(*v10 + 1152))(v10, 0, 1); /*0x6e911c*/
       }

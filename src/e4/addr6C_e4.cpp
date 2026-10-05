@@ -376,7 +376,7 @@ int ProcessGameResults(char a1)
     do
     {
       eax72 = *(CampaignScore **)v55;
-      if ( *(unsigned char *)(*(unsigned int *)v55 + 492) && eax72 != v57 )
+      if ( *(unsigned char *)(*(unsigned int * *)&v55->q7B0 && eax72 != v57 )
       {
         v60 = aP2;
         *ecx71++ = eax72;

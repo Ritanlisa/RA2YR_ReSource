@@ -134,7 +134,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
   unsigned char v32[36]; // [esp+54h] [ebp-24h] BYREF
 
   v3 = 0; /*0x432759*/
-  v4 = *(void **)((char *)this + 32); /*0x43275b*/
+  v4 = *(void **)&this->q020; /*0x43275b*/
   if ( v4 ) /*0x432760*/
   {
     BinkMovie::FreeSurfaceTracker((void *)(*((unsigned int *)this + 8))); 
@@ -148,7 +148,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
   }
   if ( *((unsigned int *)this + 10) != -1 ) /*0x43278c*/
   {
-    CloseHandle(*(HANDLE *)((char *)this + 40)); /*0x43278f*/
+    CloseHandle(*(HANDLE *)&this->q028); /*0x43278f*/
     *((unsigned int *)this + 10) = -1; /*0x432795*/
   }
   *((unsigned int *)this + 12) = 0; /*0x43279c*/
@@ -191,7 +191,7 @@ LABEL_15:
                            / (unsigned int)(*(unsigned int *)(*((unsigned int *)this + 1) + 20)
                                           / *(unsigned int *)(*((unsigned int *)this + 1) + 24));
     v14 = (unsigned int *)BinkMovie::CreateSurfaceTracker(v6); /*0x4328b8*/
-    v15 = *(int **)((char *)this + 4); /*0x4328bd*/
+    v15 = *(int **)&this->u32_4; /*0x4328bd*/
     *((unsigned int *)this + 8) = (unsigned int)(v14); /*0x4328c0*/
     v16 = 0; /*0x4328c3*/
     v17 = *v15; /*0x4328c5*/
@@ -205,7 +205,7 @@ LABEL_15:
         v20 = g_DSurface_Hidden; /*0x4328e3*/
         *((unsigned int *)this + 3) = g_DSurface_Hidden; /*0x4328e5*/
         v16 = ((*(int (**)(int))(*(unsigned int *)v20 + 124))(v20) - v17) / 2; /*0x4328f9*/
-        v21 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 128))(*((unsigned int *)this + 3)); /*0x4328fb*/
+        v21 = (*(int (**)(unsigned int))(**(unsigned int **)&this->q00C + 128))(*((unsigned int *)this + 3)); /*0x4328fb*/
       }
       else
       {
@@ -216,7 +216,7 @@ LABEL_15:
       }
       v3 = (v21 - v30) / 2; /*0x432943*/
     }
-    FullPath = (LPCSTR *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)((char *)this + 12) + 120))( /*0x43295e*/
+    FullPath = (LPCSTR *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)&this->q00C + 120))( /*0x43295e*/
                            *((unsigned int *)this + 3),
                            v31);
     Rect::Set(0, 0, 0, 0); /*0x432965*/

@@ -392,7 +392,7 @@ LABEL_11:
     --v19; /*0x45e4c3*/
   }
   while ( v19 ); /*0x45e4c4*/
-  v20 = *(unsigned int **)((char *)this + 6024); /*0x45e4c6*/
+  v20 = *(unsigned int **)&this->PreventsPlacementOverlap; /*0x45e4c6*/
   *v20 = 0; /*0x45e4d2*/
   v20[1] = 0; /*0x45e4d6*/
   v20[2] = 0; /*0x45e4d9*/
@@ -694,7 +694,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     v7 = (unsigned char *)((char *)this + 5352); /*0x45f375*/
     if ( *((unsigned char *)this + 5352) && *((unsigned int *)this + 1337) ) /*0x45f37f*/
     {
-      __3_YAXPAX_Z(*(void **)((char *)this + 5348)); /*0x45f38a*/
+      __3_YAXPAX_Z(*(void **)&this->q14E4); /*0x45f38a*/
       *((unsigned int *)this + 1337) = 0; /*0x45f392*/
       *v7 = 0; /*0x45f398*/
     }
@@ -705,7 +705,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)((ObjectTypeClass *)Source))->SetRTTI71(); /*0x45f3b3*/
       if ( *v7 && *((unsigned int *)this + 1337) ) /*0x45f3bc*/
       {
-        __3_YAXPAX_Z(*(void **)((char *)this + 5348)); /*0x45f3c7*/
+        __3_YAXPAX_Z(*(void **)&this->q14E4); /*0x45f3c7*/
         *((unsigned int *)this + 1337) = 0; /*0x45f3cf*/
         *v7 = (unsigned int)(0); /*0x45f3d5*/
       }
@@ -721,7 +721,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     v9 = (unsigned char *)((char *)this + 5376); /*0x45f44d*/
     if ( *((unsigned char *)this + 5376) && *((unsigned int *)this + 1343) ) /*0x45f457*/
     {
-      __3_YAXPAX_Z(*(void **)((char *)this + 5372)); /*0x45f462*/
+      __3_YAXPAX_Z(*(void **)&this->RoofDeployingAnim); /*0x45f462*/
       *((unsigned int *)this + 1343) = 0; /*0x45f46a*/
       *v9 = 0; /*0x45f470*/
     }
@@ -732,7 +732,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)((ObjectTypeClass *)Source))->SetRTTI71(); /*0x45f48b*/
       if ( *v9 && *((unsigned int *)this + 1343) ) /*0x45f494*/
       {
-        __3_YAXPAX_Z(*(void **)((char *)this + 5372)); /*0x45f49f*/
+        __3_YAXPAX_Z(*(void **)&this->RoofDeployingAnim); /*0x45f49f*/
         *((unsigned int *)this + 1343) = 0; /*0x45f4a7*/
         *v9 = (unsigned int)(0); /*0x45f4ad*/
       }
@@ -762,7 +762,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     v12 = (unsigned char *)((char *)this + 5360); /*0x45f5ad*/
     if ( *((unsigned char *)this + 5360) && *((unsigned int *)this + 1339) ) /*0x45f5b7*/
     {
-      __3_YAXPAX_Z(*(void **)((char *)this + 5356)); /*0x45f5c2*/
+      __3_YAXPAX_Z(*(void **)&this->q14EC); /*0x45f5c2*/
       *((unsigned int *)this + 1339) = 0; /*0x45f5ca*/
       *v12 = 0; /*0x45f5d0*/
     }
@@ -773,7 +773,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)((ObjectTypeClass *)Source))->SetRTTI71(); /*0x45f5eb*/
       if ( *v12 && *((unsigned int *)this + 1339) ) /*0x45f5f4*/
       {
-        __3_YAXPAX_Z(*(void **)((char *)this + 5356)); /*0x45f5ff*/
+        __3_YAXPAX_Z(*(void **)&this->q14EC); /*0x45f5ff*/
         *((unsigned int *)this + 1339) = 0; /*0x45f607*/
         *v12 = (unsigned int)(0); /*0x45f60d*/
       }
@@ -783,7 +783,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   v14 = (unsigned char *)((char *)this + 5368); /*0x45f626*/
   if ( *((unsigned char *)this + 5368) && *((unsigned int *)this + 1341) ) /*0x45f630*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 5364)); /*0x45f63b*/
+    __3_YAXPAX_Z(*(void **)&this->q14F4); /*0x45f63b*/
     *((unsigned int *)this + 1341) = 0; /*0x45f643*/
     *v14 = 0; /*0x45f649*/
   }
@@ -800,7 +800,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)((ObjectTypeClass *)Source))->SetRTTI71(); /*0x45f6bf*/
       if ( *v14 && *((unsigned int *)this + 1341) ) /*0x45f6c8*/
       {
-        __3_YAXPAX_Z(*(void **)((char *)this + 5364)); /*0x45f6d3*/
+        __3_YAXPAX_Z(*(void **)&this->q14F4); /*0x45f6d3*/
         *((unsigned int *)this + 1341) = 0; /*0x45f6db*/
         *v14 = 0; /*0x45f6e1*/
       }
@@ -816,7 +816,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     v16 = (unsigned char *)((char *)this + 5384); /*0x45f759*/
     if ( *((unsigned char *)this + 5384) && *((unsigned int *)this + 1345) ) /*0x45f763*/
     {
-      __3_YAXPAX_Z(*(void **)((char *)this + 5380)); /*0x45f76e*/
+      __3_YAXPAX_Z(*(void **)&this->UnderRoofDoorAnim); /*0x45f76e*/
       *((unsigned int *)this + 1345) = 0; /*0x45f776*/
       *v16 = 0; /*0x45f77c*/
     }
@@ -827,7 +827,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)((ObjectTypeClass *)Source))->SetRTTI71(); /*0x45f797*/
       if ( *v16 && *((unsigned int *)this + 1345) ) /*0x45f7a0*/
       {
-        __3_YAXPAX_Z(*(void **)((char *)this + 5380)); /*0x45f7ab*/
+        __3_YAXPAX_Z(*(void **)&this->UnderRoofDoorAnim); /*0x45f7ab*/
         *((unsigned int *)this + 1345) = 0; /*0x45f7b3*/
         *v16 = 0; /*0x45f7b9*/
       }
@@ -857,7 +857,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     v19 = (unsigned char *)((char *)this + 5404); /*0x45f8b5*/
     if ( *((unsigned char *)this + 5404) && *((unsigned int *)this + 1350) ) /*0x45f8bf*/
     {
-      __3_YAXPAX_Z(*(void **)((char *)this + 5400)); /*0x45f8ca*/
+      __3_YAXPAX_Z(*(void **)&this->BibShape); /*0x45f8ca*/
       *((unsigned int *)this + 1350) = 0; /*0x45f8d2*/
       *v19 = (unsigned int)(0); /*0x45f8d8*/
     }
@@ -868,7 +868,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)((ObjectTypeClass *)Source))->SetRTTI71(); /*0x45f8f3*/
       if ( *v19 && *((unsigned int *)this + 1350) ) /*0x45f8fc*/
       {
-        __3_YAXPAX_Z(*(void **)((char *)this + 5400)); /*0x45f907*/
+        __3_YAXPAX_Z(*(void **)&this->BibShape); /*0x45f907*/
         *((unsigned int *)this + 1350) = (unsigned int)(0); /*0x45f90f*/
         *v19 = (unsigned int)(0); /*0x45f915*/
       }

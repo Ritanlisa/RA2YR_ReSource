@@ -776,7 +776,7 @@ int AircraftClass::Mission_Transport()
                 }
                 return 1;
             }
-            if (*(unsigned char *)((char *)Type + 3580) != 0 && *(int *)((char *)this + 280) != 0)
+            if (*(unsigned char *)((char *)Type + 3580) != 0 && *(int *)&this->q118 != 0)
             {
                 int v25 = Team_GetMember((int)this, 0);
                 void *v26 = LinkedList_Pop((void *)((char *)this + 92));

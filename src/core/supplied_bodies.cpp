@@ -681,8 +681,8 @@ bool FrameTimer::HasRemaining() const { /*G42.33 b3: 载体签名 (cache this=Te
     int v1; // edx
     int result; // eax
 
-    v1 = *(unsigned int *)((char *)this + 0x18C); /*0x41bf40*/
-    result = *(unsigned int *)((char *)this + 0x190); /*0x41bf46 ironCurtainTimer[1]*/
+    v1 = *(unsigned int *)&this->q18C; /*0x41bf40*/
+    result = *(unsigned int *)&this->q190; /*0x41bf46 ironCurtainTimer[1]*/
     if ( v1 != -1 ) /*0x41bf4f*/
     {
       if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v1 < result ) /*0x41bf5b*/
@@ -4697,7 +4697,7 @@ int HashMap::Shrink2() {
           {
             do /*0x7adffd*/
             {
-              v11 = (*(int (__thiscall **)(int))((unsigned int *)this + 6))(v10) & ((1 << *(unsigned int *)&this->HashMap_field_0x0C) - 1); /*0x7adfe7 G42.35 C9 槽形*/
+              v11 = (*(int (__thiscall **)(int))&this->q006)(v10) & ((1 << *(unsigned int *)&this->HashMap_field_0x0C) - 1); /*0x7adfe7 G42.35 C9 槽形*/
               v12 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11); /*0x7adfeb*/
               *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11) = v10; /*0x7adff1*/
               v13 = *(unsigned int *)(v10 + 112); /*0x7adff3*/
@@ -4766,7 +4766,7 @@ int HashMap::Shrink() {
           {
             do /*0x7ae4ed*/
             {
-              v11 = (*(int (__thiscall **)(int))((unsigned int *)this + 6))(v10) & ((1 << *(unsigned int *)&this->HashMap_field_0x0C) - 1); /*0x7ae4d7 G42.35 C9 槽形*/
+              v11 = (*(int (__thiscall **)(int))&this->q006)(v10) & ((1 << *(unsigned int *)&this->HashMap_field_0x0C) - 1); /*0x7ae4d7 G42.35 C9 槽形*/
               v12 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11); /*0x7ae4db*/
               *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11) = v10; /*0x7ae4e1*/
               v13 = *(unsigned int *)(v10 + 8); /*0x7ae4e3*/

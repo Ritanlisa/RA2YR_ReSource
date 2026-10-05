@@ -346,7 +346,7 @@ int Conflict_WorldDominationTour_12::ddtor()
   int (***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (****)(unsigned int, int))((char *)this + 4); /*0x766d36*/
+  v2 = *(int (****)(unsigned int, int))&this->q004; /*0x766d36*/
   if ( v2 && this->IsAllocated ) /*0x766d3d*/
   {
     result = (**v2)((unsigned int)v2, 3); /*0x766d4a*/

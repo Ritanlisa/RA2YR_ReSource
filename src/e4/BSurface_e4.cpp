@@ -118,9 +118,9 @@ bool BSurface::CreateTripleBuffer()
     v2 = *((unsigned int *)this + 17); /*0x7b8c6f*/
     if ( v2 /*0x7b8c9a*/
       && (*(int16_t *)(*((unsigned int *)this + 1) + 2) > (*(int (**)(int))(*(unsigned int *)v2 + 124))(v2)
-       || *(int16_t *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 68) + 128))(*((unsigned int *)this + 17))) )
+       || *(int16_t *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)&this->q044 + 128))(*((unsigned int *)this + 17))) )
     {
-      v3 = *(void (****)(unsigned int, int))((char *)this + 68); /*0x7b8c9c*/
+      v3 = *(void (****)(unsigned int, int))&this->q044; /*0x7b8c9c*/
       if ( v3 ) /*0x7b8ca1*/
         (**v        ((unsigned int)(**v3))(v3, 1); 
       *((unsigned int *)this + 17) = 0; /*0x7b8ca9*/
@@ -128,9 +128,9 @@ bool BSurface::CreateTripleBuffer()
     v4 = *((unsigned int *)this + 22); /*0x7b8cac*/
     if ( v4 /*0x7b8cd7*/
       && (*(int16_t *)(*((unsigned int *)this + 1) + 2) > (*(int (**)(int))(*(unsigned int *)v4 + 124))(v4)
-       || *(int16_t *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 88) + 128))(*((unsigned int *)this + 22))) )
+       || *(int16_t *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)&this->q058 + 128))(*((unsigned int *)this + 22))) )
     {
-      v5 = *(void (****)(unsigned int, int))((char *)this + 88); /*0x7b8cd9*/
+      v5 = *(void (****)(unsigned int, int))&this->q058; /*0x7b8cd9*/
       if ( v5 ) /*0x7b8cde*/
         (**v        ((unsigned int)(**v5))(v5, 1); 
       *((unsigned int *)this + 22) = 0; /*0x7b8ce6*/
@@ -138,9 +138,9 @@ bool BSurface::CreateTripleBuffer()
     v6 = *((unsigned int *)this + 27); /*0x7b8ce9*/
     if ( v6 /*0x7b8d14*/
       && (*(int16_t *)(*((unsigned int *)this + 1) + 2) > (*(int (**)(int))(*(unsigned int *)v6 + 124))(v6)
-       || *(int16_t *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 108) + 128))(*((unsigned int *)this + 27))) )
+       || *(int16_t *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)&this->u32_6C + 128))(*((unsigned int *)this + 27))) )
     {
-      v7 = *(void (****)(unsigned int, int))((char *)this + 108); /*0x7b8d16*/
+      v7 = *(void (****)(unsigned int, int))&this->u32_6C; /*0x7b8d16*/
       if ( v7 ) /*0x7b8d1b*/
         (**v        ((unsigned int)(**v7))(v7, 1); 
       *((unsigned int *)this + 27) = 0; /*0x7b8d23*/
@@ -155,7 +155,7 @@ bool BSurface::CreateTripleBuffer()
           v9 = *((unsigned int *)this + 1); /*0x7b8d4b*/
           v10 = *(int16_t *)(v9 + 4); /*0x7b8d50*/
           v11 = *(int16_t *)(v9 + 2); /*0x7b8d54*/
-          v12 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 112))(*((unsigned int *)this + 9)); /*0x7b8d58*/
+          v12 = (*(int (**)(unsigned int))(**(unsigned int **)&this->u32_24 + 112))(*((unsigned int *)this + 9)); /*0x7b8d58*/
           v8[4] = v12; /*0x7b8d5b*/
           v8[1] = v11; /*0x7b8d6a*/
           v8[2] = v10; /*0x7b8d6d*/
@@ -178,7 +178,7 @@ bool BSurface::CreateTripleBuffer()
           v14 = *((unsigned int *)this + 1); /*0x7b8da6*/
           v15 = *(int16_t *)(v14 + 4); /*0x7b8dac*/
           v16 = *(int16_t *)(v14 + 2); /*0x7b8db0*/
-          v17 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 112))(*((unsigned int *)this + 9)); /*0x7b8db6*/
+          v17 = (*(int (**)(unsigned int))(**(unsigned int **)&this->u32_24 + 112))(*((unsigned int *)this + 9)); /*0x7b8db6*/
           v13[4] = v17; /*0x7b8db9*/
           v13[1] = v16; /*0x7b8dc8*/
           v13[2] = v15; /*0x7b8dcb*/
@@ -201,7 +201,7 @@ bool BSurface::CreateTripleBuffer()
           v19 = *((unsigned int *)this + 1); /*0x7b8e07*/
           v20 = *(int16_t *)(v19 + 4); /*0x7b8e0c*/
           v21 = *(int16_t *)(v19 + 2); /*0x7b8e10*/
-          v22 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 112))(*((unsigned int *)this + 9)); /*0x7b8e14*/
+          v22 = (*(int (**)(unsigned int))(**(unsigned int **)&this->u32_24 + 112))(*((unsigned int *)this + 9)); /*0x7b8e14*/
           v18[4] = v22; /*0x7b8e17*/
           v18[1] = v21; /*0x7b8e26*/
           v18[2] = v20; /*0x7b8e29*/

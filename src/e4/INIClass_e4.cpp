@@ -57,12 +57,12 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
   v16 = v3; /*0x526850*/
   if ( !v4 ) /*0x526854*/
     return 0; /*0x526854*/
-  v6 = *(unsigned int **)((char *)this + 56); /*0x52685a*/
+  v6 = *(unsigned int **)&this->unknown38; /*0x52685a*/
   if ( v6 && *v6 == v5 ) /*0x526863*/
     goto LABEL_9; /*0x526863*/
   if ( !*((unsigned char *)this + 52) ) /*0x526865*/
   {
-    qsort(*(void **)((char *)this + 40), v4, 8u, CompareFunc4Int); /*0x526876*/
+    qsort(*(void **)&this->q028, v4, 8u, CompareFunc4Int); /*0x526876*/
     *((unsigned int *)this + 14) = 0; /*0x52687e*/
     *((unsigned char *)this + 52) = 1; /*0x526881*/
   }
@@ -75,12 +75,12 @@ LABEL_9:
   v8 = *((unsigned int *)this + 11); /*0x5268a4*/
   if ( !v8 ) /*0x5268aa*/
     return (gamemd::ObjectClass **)(unk_B7882C); /*0x5268aa*/
-  v9 = *(unsigned int **)((char *)this + 56); /*0x5268ac*/
+  v9 = *(unsigned int **)&this->unknown38; /*0x5268ac*/
   if ( v9 && *v9 == v5 ) /*0x5268b5*/
     return (gamemd::ObjectClass **)(*(unsigned int *)(*((unsigned int *)this + 14) + 4)); /*0x526933*/
   if ( !*((unsigned char *)this + 52) ) /*0x5268b7*/
   {
-    qsort(*(void **)((char *)this + 40), v8, 8u, CompareFunc4Int); /*0x5268c8*/
+    qsort(*(void **)&this->q028, v8, 8u, CompareFunc4Int); /*0x5268c8*/
     *((unsigned int *)this + 14) = 0; /*0x5268d0*/
     *((unsigned char *)this + 52) = 1; /*0x5268d3*/
   }

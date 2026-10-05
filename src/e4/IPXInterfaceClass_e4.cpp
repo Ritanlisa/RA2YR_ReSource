@@ -41,7 +41,7 @@ int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a
   *((unsigned int *)this + 64703) = -1; /*0x7b0dad*/
   *((unsigned int *)this + 64704) = -1; /*0x7b0db3*/
   *((unsigned short *)this + 129410) = -1; /*0x7b0db8*/
-  *(unsigned int *)((char *)this + 258822) = -1; /*0x7b0dc2*/
+  *(unsigned int *)&this->q_3F306 = -1; /*0x7b0dc2*/
   *((unsigned short *)this + 129413) = -1; /*0x7b0dc8*/
   return (int)(&this->Socket); /*0x7b0dce*/
 

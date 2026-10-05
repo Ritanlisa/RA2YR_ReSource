@@ -383,8 +383,8 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
   if ( v2 > 0 ) /*0x5f66bc*/
   {
     v7 = *(unsigned int *)(a2 + 4); /*0x5f66c2*/
-    v3 = *(unsigned int *)(*(unsigned int *)v7 + 156); /*0x5f66d0*/
-    v4 = *(unsigned int *)(*(unsigned int *)v7 + 160); /*0x5f66d9*/
+    v3 = *(unsigned int *)(*(unsigned int * *)&v7->isBeingWarpedOut; /*0x5f66d0*/
+    v4 = *(unsigned int *)(*(unsigned int * *)&v7->owningHouseIndex0; /*0x5f66d9*/
     if ( v2 - 1 < 0 ) /*0x5f66f5*/
     {
       v5 = 0; /*0x5f6762*/

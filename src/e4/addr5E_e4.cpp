@@ -947,7 +947,7 @@ LABEL_102:
              || v37 == (wchar_t *)*(&g_MatrixTransformState + 2277)
              || v37 == (wchar_t *)*(&g_MatrixTransformState + 2278)
              || v37 == (wchar_t *)*(&g_MatrixTransformState + 2279)
-             || *(unsigned int *)((char *)v37 + 107) != -1) )
+             || *(unsigned int *)&v37->q_6B != -1) )
           {
   int v39; // eax
             ResourceID2CSF = GetResourceID2CSF(*(void **)&(&stru_830620)[4228]);
@@ -3207,8 +3207,8 @@ void Player_AssignSide(HWND hDlg, int nIDDlgItem)
   int result; // eax
 
   result = -2; /*0x696f53*/
-  if ( *(int *)((char *)this + 95) != -2 || *(int *)((char *)this + 91) != -1 ) /*0x696f60*/
-    return *(int *)((char *)this + 91); /*0x696f62*/
+  if ( *(int *)&this->q_5B != -2 || *(int *)&this->q_5B != -1 ) /*0x696f60*/
+    return *(int *)&this->q_5B; /*0x696f62*/
   return result; /*0x696f65*/
 
 }
@@ -4524,7 +4524,7 @@ AbstractClass * * PlayerSkirmishSlotHandler()
            && String != (wchar_t *)g_Lobby_PlayerTeam
            && String != (wchar_t *)g_Lobby_PlayerSide
            && String != (wchar_t *)g_Lobby_PlayerColor
-           && *(unsigned int *)((char *)String + 107) == -1;
+           && *(unsigned int *)&String->q_6B == -1;
         v23 = v23; /*0x5ecef7*/
         if ( v22 )
         {
@@ -5184,8 +5184,8 @@ int SetupMultiplayerLobbyPlayers(HWND hDlg, int a2)
   int result; // eax
 
   result = -2; /*0x696f53*/
-  if ( *(int *)((char *)this + 95) != -2 || *(int *)((char *)this + 91) != -1 ) /*0x696f60*/
-    return *(int *)((char *)this + 91); /*0x696f62*/
+  if ( *(int *)&this->q_5B != -2 || *(int *)&this->q_5B != -1 ) /*0x696f60*/
+    return *(int *)&this->q_5B; /*0x696f62*/
   return result; /*0x696f65*/
 
 }

@@ -1975,7 +1975,7 @@ void NetworkLobby::SetupPlayers(wchar_t * Source)
          || v12 == (wchar_t *)g_Lobby_PlayerTeam
          || v12 == (wchar_t *)g_Lobby_PlayerSide
          || v12 == (wchar_t *)g_Lobby_PlayerColor
-         || *(unsigned int *)((char *)v12 + 107) != -1) )
+         || *(unsigned int *)&v12->q_6B != -1) )
       {
         v13 = (HWND)((Dialog*)((Dialog *)0xC2))->FindByHandle(); /*0x5e9017*/
         if ( !v13 ) /*0x5e901b*/

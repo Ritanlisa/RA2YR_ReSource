@@ -88,7 +88,7 @@ char SuperClass::RemoveFromPointerArray(int a2) {
       do /*0x6ce344*/
       {
         ++a2; /*0x6ce337*/
-        *((unsigned int *)*(unsigned int *)((char *)this + 4) + a2 - 1) = *((unsigned int *)*(unsigned int *)((char *)this + 4) + a2); /*0x6ce33b 真值 [ecx+4] arr*/
+        *((unsigned int *)*(unsigned int *)&this->vtable2 + a2 - 1) = *((unsigned int *)*(unsigned int *)&this->vtable2 + a2); /*0x6ce33b 真值 [ecx+4] arr*/
       }
       while ( a2 < (int)*(unsigned int *)((char *)&this->vtable26) ); /*0x6ce344 +0x10*/
     }
@@ -98,11 +98,11 @@ namespace gamemd {
 char SuperClass::Get(int a2, int a3, int a4, int a5) {
     int Status; // eax
 
-    ((SuperClass *)*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *(unsigned int *)((char *)this + 144)))->StartTimer(0, 0, 0); /*0x6e1c5d 真值 [esi+90h]*/
+    ((SuperClass *)*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *(unsigned int *)&this->q090))->StartTimer(0, 0, 0); /*0x6e1c5d 真值 [esi+90h]*/
     *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *(unsigned int *)&this->__pad_80[16]) + 96) = 0; /*0x6e1c71*/
     if ( (Object *)dword_A83D4C == (Object *)(unsigned int)a2 ) /*0x6e1c7c*/
     {
-      ((SidebarClass *)((char *)&stru_87F5F0 + 600))->AddCameo((AbstractType)31, *(unsigned int *)((char *)this + 144)); /*0x6e1c8c 真值 this=0x87F7E8*/
+      ((SidebarClass *)((char *)&stru_87F5F0 + 600))->AddCameo((AbstractType)31, *(unsigned int *)&this->q090); /*0x6e1c8c 真值 this=0x87F7E8*/
       Status = HouseClass::GetStatus((HouseClass *)0x1F, 0); /*0x6e1c9e e4 静态 varargs*/
       ((Sidebar *)((char *)&stru_87F5F0 + 600))->ActivateTab(Status); /*0x6e1ca9*/
     }
@@ -181,7 +181,7 @@ int AudioSample::ResetState() {
       *((unsigned int *)this + 46) = 0; /*0x4024eb*/
       *((unsigned int *)this + 47) = 0; /*0x4024f1*/
       *((unsigned int *)this + 48) = 0; /*0x4024f7*/
-      *(unsigned int *)((char *)this + 12) = 1; /*0x4024fd +0xC*/
+      *(unsigned int *)&this->q00C = 1; /*0x4024fd +0xC*/
       *((unsigned int *)this + 42) = 0; /*0x402504*/
       *((unsigned int *)this + 41) = 0; /*0x40250a*/
       *((unsigned int *)this + 40) = 0; /*0x402510*/
@@ -365,7 +365,7 @@ unsigned int * AudioFileClass::Release() {
     result =(unsigned int *)this; /*0x405c01*/
     if ( g_AudioConfigState ) /*0x405c13*/
     {
-      if ( *(int **)((char *)this + 12) == (int *)&dword_87E294 ) /*0x405c20*/
+      if ( *(int **)&this->vtable4 == (int *)&dword_87E294 ) /*0x405c20*/
       {
         v2 = *(unsigned int *)this; /*0x405c26*/
         if ( v2 ) /*0x405c26*/
@@ -420,7 +420,7 @@ namespace gamemd {
 int * AudioSource::Get() {
     int *result; // eax
 
-    if ( !g_AudioConfigState || *(int **)((char *)this + 12) != (int *)&dword_87E294 ) /*0x406140*/
+    if ( !g_AudioConfigState || *(int **)&this->vtable4 != (int *)&dword_87E294 ) /*0x406140*/
       return 0; /*0x406166*/
     result = *(int **)this; /*0x406142*/
     if ( *(unsigned int *)this && (this->u32_8 != (unsigned int)result[9] || this->u32_4 != (unsigned int)result[78]) ) /*0x40615e*/
@@ -475,7 +475,7 @@ int AudioSample::Destructor() {
 // 0x4080D0
 namespace gamemd {
 int AudioSample::IsBuffering() {
-    return (*(unsigned int *)((char *)this + 12) & 1) != 0 /*0x4080e8 +0xC*/
+    return (*(unsigned int *)&this->q00C & 1) != 0 /*0x4080e8 +0xC*/
         && *(unsigned int *)(*((unsigned int *)this + 5) + 20) != *(unsigned int *)(*((unsigned int *)this + 5) + 24);
 }
 } // namespace gamemd
@@ -508,7 +508,7 @@ void AudioSample::InitLinkedList() {
     int *v13; // esi
 
     v1 = this; /*0x408843*/
-    AudioSample_field_0x04 = *(int *)((char *)this + 4); /*0x40884b +4 链指针*/
+    AudioSample_field_0x04 = *(int *)&this->q004; /*0x40884b +4 链指针*/
     p_AudioSample_field_0x04 = (int *)((char *)this + 4); /*0x40884e +4 链头*/
     if ( (int *)AudioSample_field_0x04 != (int *)((char *)this + 4) ) /*0x408853*/
     {
@@ -580,18 +580,18 @@ namespace gamemd {
 int AudioSample::SetField() {
     int result; // eax
 
-    *(unsigned int *)((char *)this + 12) = result; /*0x40893a +0xC*/
+    *(unsigned int *)&this->q00C = result; /*0x40893a +0xC*/
     if ( result ) /*0x40893d*/
     {
       result = *(unsigned int *)(result + 8 * *((unsigned int *)this + 5) + 32); /*0x408943*/
-    *(unsigned int *)((char *)this + 4) = result; /*0x408948 +4*/
+    *(unsigned int *)&this->q004 = result; /*0x408948 +4*/
     }
     else
     {
-    *(unsigned int *)((char *)this + 4) = 0; /*0x408958 +4*/
+    *(unsigned int *)&this->q004 = 0; /*0x408958 +4*/
     }
-    *(unsigned int *)((char *)this + 8) = 0; /*0x40894b +8*/
-    *(unsigned int *)((char *)this + 16) &= ~1u; /*0x408954 +0x10*/
+    *(unsigned int *)&this->q008 = 0; /*0x40894b +8*/
+    *(unsigned int *)&this->q010 &= ~1u; /*0x408954 +0x10*/
     return result; /*0x408957*/
 }
 } // namespace gamemd

@@ -145,7 +145,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
   v4 = dword_B0C000; /*0x6cafcb*/
   *((unsigned int *)this + 30) = -1; /*0x6cafd1*/
   *((unsigned int *)this + 31) = -1; /*0x6cafd4*/
-  *(unsigned int *)((char *)this + 98) = v4; /*0x6cafda*/
+  *(unsigned int *)&this->ChronoMapCoords = v4; /*0x6cafda*/
   *((unsigned int *)this + 26) = 0; /*0x6cafde*/
   *((unsigned char *)this + 108) = 0; /*0x6cafe1*/
   *((unsigned char *)this + 109) = 0; /*0x6cafe4*/
@@ -554,12 +554,12 @@ int SuperClass::ClickFire(int a2, short * a3)
   v4 = *((unsigned int *)this + 10); /*0x6cb92a*/
   if ( *(unsigned char *)(v4 + 229) ) /*0x6cb92d*/
   {
-    if ( (uint8_t)((House *)(*(void **)((char *)this + 44)))->IsCurrentPlayer() ) /*0x6cb93c*/
+    if ( (uint8_t)((House *)(*(void **)&this->q02C))->IsCurrentPlayer() ) /*0x6cb93c*/
     {
       v5 = *((unsigned int *)this + 31); /*0x6cb949*/
       if ( v5 == 2 ) /*0x6cb94f*/
       {
-        v6 = *(int16_t **)((char *)this + 36); /*0x6cb951*/
+        v6 = *(int16_t **)&this->q024; /*0x6cb951*/
         *((unsigned int *)this + 31) = 1; /*0x6cb954*/
         if ( v6 == (int16_t *)-1 ) /*0x6cb95e*/
           a3 = *(int16_t **)(*((unsigned int *)this + 10) + 176); /*0x6cb96f*/

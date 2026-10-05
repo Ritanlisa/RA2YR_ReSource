@@ -724,24 +724,24 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
   else
   {
     v5 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)(*((unsigned int *)this + 9) + 1372)); /*0x62aa11*/
-    v6 = **(unsigned int **)((char *)this + 36); /*0x62aa1f*/
+    v6 = **(unsigned int **)&this->creationFrame; /*0x62aa1f*/
     v7 = (*(int (**)(void *, int *, unsigned int))(*(unsigned int *)v5 + 72))(v5, &v15, 0); /*0x62aa25*/
     v8 = (*(int (**)(unsigned int, int))(v6 + 216))(*((unsigned int *)this + 9), v7); /*0x62aa2c*/
     v9 = *((unsigned int *)this + 9); /*0x62aa32*/
     if ( v8 ) /*0x62aa37*/
     {
       (*(void (**)(int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v9 + 1164))(v9, 0, 0, 0, 0); /*0x62aa51*/
-      v11 = *(int **)((char *)this + 36); /*0x62aa57*/
+      v11 = *(int **)&this->creationFrame; /*0x62aa57*/
       v15 = v11[39]; /*0x62aa67*/
       v16 = v11[40]; /*0x62aa6e*/
       v17 = v11[41]; /*0x62aa75*/
       ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->RevealArea2(&v15, v11[152] - 3, v11[152] + 2, 0); /*0x62aa91*/
-      if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 1196))(*((unsigned int *)this + 9)) ) /*0x62aa9b*/
+      if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&this->creationFrame + 1196))(*((unsigned int *)this + 9)) ) /*0x62aa9b*/
       {
-        (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)((char *)this + 36) + 968))(*((unsigned int *)this + 9), 0); /*0x62aaab*/
-        (*(void (**)(unsigned int, unsigned int, int))(**(unsigned int **)((char *)this + 36) + 1152))(*((unsigned int *)this + 9), 0, 1); /*0x62aab9*/
+        (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&this->creationFrame + 968))(*((unsigned int *)this + 9), 0); /*0x62aaab*/
+        (*(void (**)(unsigned int, unsigned int, int))(**(unsigned int **)&this->creationFrame + 1152))(*((unsigned int *)this + 9), 0, 1); /*0x62aab9*/
       }
-      return (*(int (**)(unsigned int, unsigned int, int))(**(unsigned int **)((char *)this + 36) + 1156))( /*0x62aac9*/
+      return (*(int (**)(unsigned int, unsigned int, int))(**(unsigned int **)&this->creationFrame + 1156))( /*0x62aac9*/
                *((unsigned int *)this + 9),
                0,
                1);

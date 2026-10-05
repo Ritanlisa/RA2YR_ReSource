@@ -65,7 +65,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int aP1, int a1)
   result = (int)dword_A83D4C; /*0x655c50*/
   if ( !dword_A83D4C ) /*0x655c62*/
     return (gamemd::MapClass **)(result); /*0x655c62*/
-  result = (*(int (**)(unsigned int, char *))(**(unsigned int **)((char *)this + 4636) + 120))(*((unsigned int *)this + 1159), v40); /*0x655c75*/
+  result = (*(int (**)(unsigned int, char *))(**(unsigned int **)&this->u32_121C + 120))(*((unsigned int *)this + 1159), v40); /*0x655c75*/
   v5 = (int)(*aP1); /*0x655c7e*/
   v41 = (int)(*aP1); /*0x655c82*/
   if ( v41 < *(unsigned int *)result ) /*0x655c86*/
@@ -79,7 +79,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int aP1, int a1)
   result = v7 + *(unsigned int *)(result + 12); /*0x655cae*/
   if ( v6 >= result ) /*0x655cb2*/
     return (gamemd::MapClass **)(result); /*0x655cb2*/
-  v8 = (double)v41 / *(float *)((char *)this + 5256) - (double)*((int *)this + 1316); /*0x655cc2*/
+  v8 = (double)v41 / *(float *)&this->u32_1488 - (double)*((int *)this + 1316); /*0x655cc2*/
   v37[0] = ((int16_t)Math::RoundToInt(v8) << 8) + 128; /*0x655d1b*/
   v37[1] = ((int16_t)Math::RoundToInt(v8) << 8) + 128; /*0x655d2b*/
   GroundHeight = 0; /*0x655d2f*/
@@ -89,7 +89,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int aP1, int a1)
   if ( !g_hWnd || (v34 = 1, !(uint8_t)FogOfWar_Get((gamemd::IUnknown *)(v37))) ) /*0x655d74*/
     v34 = 0; /*0x655d82*/
   v35 = 0; /*0x655d8a*/
-  v9 = **(unsigned int **)((char *)this + 4696) + 24 * (uint8_t)(*aP1 - 5 * aP1[1]); /*0x655da7*/
+  v9 = **(unsigned int **)&this->ptr_1258 + 24 * (uint8_t)(*aP1 - 5 * aP1[1]); /*0x655da7*/
   v10 = *(unsigned int *)(v9 + 16); /*0x655daa*/
   v11 = *(unsigned int *)(v9 + 4); /*0x655dae*/
   v36 = v10; /*0x655db3*/
@@ -127,8 +127,8 @@ LABEL_25:
 LABEL_26:
     if ( v34 ) /*0x655e84*/
     {
-      v15 = (*(int (**)(unsigned int, int *))(**(unsigned int **)((char *)this + 4640) + 40))(*((unsigned int *)this + 1160), (int *)aP1); /*0x655e93*/
-      (*(void (**)(unsigned int, int *, unsigned int))(**(unsigned int **)((char *)this + 4636) + 36))( /*0x655f40*/
+      v15 = (*(int (**)(unsigned int, int *))(**(unsigned int **)&this->ptr_1220 + 40))(*((unsigned int *)this + 1160), (int *)aP1); /*0x655e93*/
+      (*(void (**)(unsigned int, int *, unsigned int))(**(unsigned int **)&this->u32_121C + 36))( /*0x655f40*/
         *((unsigned int *)this + 1159),
         (int *)aP1,
         ((unsigned int)((uint8_t)((uint8_t)(v15 >> g_BitShift_Red) << g_BitShift_Green_0) >> 1) >> g_BitShift_Green_0 << g_BitShift_Red)
@@ -137,12 +137,12 @@ LABEL_26:
     }
     else if ( v42 ) /*0x65605e*/
     {
-      (*(void (**)(int *, unsigned int))(**(unsigned int **)((char *)this + 4636) + 36))((int *)aP1, 0); /*0x65608c*/
+      (*(void (**)(int *, unsigned int))(**(unsigned int **)&this->u32_121C + 36))((int *)aP1, 0); /*0x65608c*/
     }
     else
     {
-      v20 = **(unsigned int **)((char *)this + 4636); /*0x65606f*/
-      v21 = (*(int (**)(unsigned int, int *))(**(unsigned int **)((char *)this + 4640) + 40))(*((unsigned int *)this + 1160), (int *)aP1); /*0x656071*/
+      v20 = **(unsigned int **)&this->u32_121C; /*0x65606f*/
+      v21 = (*(int (**)(unsigned int, int *))(**(unsigned int **)&this->ptr_1220 + 40))(*((unsigned int *)this + 1160), (int *)aP1); /*0x656071*/
       (*(void (**)(unsigned int, int *, int))(v20 + 36))(*((unsigned int *)this + 1159), (int *)aP1, v21); /*0x65607c*/
     }
     goto LABEL_45; /*0x655f43*/
@@ -167,7 +167,7 @@ LABEL_26:
 LABEL_37:
     if ( v19 <= 0 || (v19 - 1) / *((unsigned int *)dword_8871E0 + 34) % 2 != 1 || *(void **)(v13 + 540) != dword_A83D4C ) /*0x65603a*/
       goto LABEL_41; /*0x65603a*/
-    (*(void (**)(unsigned int, int *, int))(**(unsigned int **)((char *)this + 4636) + 36))(*((unsigned int *)this + 1159), (int *)aP1, ~v17); /*0x656048*/
+    (*(void (**)(unsigned int, int *, int))(**(unsigned int **)&this->u32_121C + 36))(*((unsigned int *)this + 1159), (int *)aP1, ~v17); /*0x656048*/
   }
   else
   {
@@ -177,7 +177,7 @@ LABEL_37:
       goto LABEL_37; /*0x656008*/
     }
 LABEL_41:
-    (*(void (**)(int *, int))(**(unsigned int **)((char *)this + 4636) + 36))((int *)aP1, v17); /*0x65604d*/
+    (*(void (**)(int *, int))(**(unsigned int **)&this->u32_121C + 36))((int *)aP1, v17); /*0x65604d*/
   }
 LABEL_45:
   v22 = *((unsigned int *)this + 1319); /*0x65608f*/
@@ -339,11 +339,11 @@ AbstractClass * FogOfWar::RevealCell(IUnknown * aP1)
   int v9; // edx
 
   if ( (int)*aP1 >= 0 /*0x656310*/
-    && *aP1 < (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 4636) + 124))(*((unsigned int *)this + 1159))
+    && *aP1 < (*(int (**)(unsigned int))(**(unsigned int **)&this->u32_121C + 124))(*((unsigned int *)this + 1159))
     && (int)aP1[1] >= 0
-    && aP1[1] < (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 4636) + 128))(*((unsigned int *)this + 1159)) )
+    && aP1[1] < (*(int (**)(unsigned int))(**(unsigned int **)&this->u32_121C + 128))(*((unsigned int *)this + 1159)) )
   {
-    v3 = *aP1 + aP1[1] * (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 4636) + 124))(*((unsigned int *)this + 1159)); /*0x656329*/
+    v3 = *aP1 + aP1[1] * (*(int (**)(unsigned int))(**(unsigned int **)&this->u32_121C + 124))(*((unsigned int *)this + 1159)); /*0x656329*/
     v4 = 1 << (v3 & 7); /*0x656333*/
     v5 = (unsigned char *)(*((unsigned int *)this + 1181) + (v3 >> 3)); /*0x65633e*/
     if ( (*v5 & (uint8_t)v4) == 0 ) /*0x656344*/

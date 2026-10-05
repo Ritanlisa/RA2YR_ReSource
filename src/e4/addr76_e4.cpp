@@ -297,8 +297,8 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   unsigned int v14[22]; // [esp+58h] [ebp-B0h] BYREF
   unsigned int v15[22]; // [esp+B0h] [ebp-58h] BYREF
 
-  *((unsigned int *)this + 12) = ((WDTObject *)(*(unsigned int **)((char *)this + 12)))->GetSize(); /*0x76501b*/
-  *(unsigned int *)((char *)this + 4 * (unsigned int)aP1 + 52) = ((Conflict *)(*(unsigned int **)((char *)this + 12)))->GetOwnerHouse(); /*0x76502c*/
+  *((unsigned int *)this + 12) = ((WDTObject *)(*(unsigned int **)&this->u32_C))->GetSize(); /*0x76501b*/
+  *(unsigned int *)((char *)this + 4 * (unsigned int)aP1 + 52) = ((Conflict *)(*(unsigned int **)&this->u32_C))->GetOwnerHouse(); /*0x76502c*/
   v8[1] = 0; /*0x765030*/
   v8[2] = 0; /*0x765034*/
   ((GenericNode *)(v9))->Constructor(); /*0x765038*/

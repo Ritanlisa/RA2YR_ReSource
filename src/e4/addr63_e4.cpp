@@ -2162,7 +2162,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
         {
           v23 = *(unsigned int *)(*(unsigned int *)(v24 + 4) + 4 * j); /*0x6399f4*/
           v27 = *(unsigned int *)v23; /*0x6399f7*/
-          IDA_LOBYTE(v23) = *(unsigned char *)(*(unsigned int *)v23 + 131); /*0x6399f9*/
+          IDA_LOBYTE(v23) = *(unsigned char *)(*(unsigned int * *)&v23->q20C; /*0x6399f9*/
           if ( !(unsigned char)v23 ) /*0x639a01*/
             IDA_LOBYTE(v23) = (*(int (**)(int))(*(unsigned int *)v27 + 332))(v27); /*0x639a05*/
         }

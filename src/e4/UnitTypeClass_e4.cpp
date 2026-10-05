@@ -355,7 +355,7 @@ char UnitTypeClass_LoadFromINI()
     v4->?[4] = 15; /*0x747790*/
     *(unsigned int *)&v4[1].__pad_6B8[16] = v15; /*0x74779a*/
     if ( v4[1].__pad_6B8[22] || v4[1].__pad_6B8[23] ) /*0x7477a7*/
-      *(unsigned int *)((char *)v4 + 920) = 10; /*0x7477b1*/
+      *(unsigned int *)&v4->isSpawned = 10; /*0x7477b1*/
     v16 = INIClass::ReadBool_Overwrite( /*0x7477d3*/
             (int *)&DSurface_ViewBounds.__pad_FC[228],
             (unsigned __int8 *)&v4->?,

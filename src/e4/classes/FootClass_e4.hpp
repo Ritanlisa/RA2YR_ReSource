@@ -705,6 +705,8 @@ struct FootClass {
     int CreateWakes(int a2, int a3, int a4);  // 0x629e90
     int ClearPathIndex();  // 0x4df0d0
     unsigned int * PostLoadInit(int a2);  // 0x4d3540
+    unsigned int q_B;  // +0xB flat supply (three-ban reform)
+    unsigned int q_AB0;  // +0xAB0 flat supply (three-ban reform)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

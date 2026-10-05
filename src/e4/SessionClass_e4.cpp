@@ -899,8 +899,8 @@ int SessionClass::GetOption()
   int result; // eax
 
   result = -2; /*0x696f53*/
-  if ( *(int *)((char *)this + 95) != -2 || *(int *)((char *)this + 91) != -1 ) /*0x696f60*/
-    return *(int *)((char *)this + 91); /*0x696f62*/
+  if ( *(int *)&this->u32_5B != -2 || *(int *)&this->u32_5B != -1 ) /*0x696f60*/
+    return *(int *)&this->u32_5B; /*0x696f62*/
   return result; /*0x696f65*/
 
 }
@@ -929,13 +929,13 @@ int SessionClass::SetPlayerOption(int aP1)
   result = aP1; /*0x696f90*/
   if ( aP1 == -2 ) /*0x696f97*/
   {
-    *(int *)((char *)this + 75) = 0; /*0x696f99*/
-    *(int *)((char *)this + 79) = -2; /*0x696fa0*/
+    *(int *)&this->u32_4B = 0; /*0x696f99*/
+    *(int *)&this->u32_4F = -2; /*0x696fa0*/
   }
   else
   {
-    *(int *)((char *)this + 75) = aP1; /*0x696fa6*/
-    *(int *)((char *)this + 79) = -1; /*0x696fa9*/
+    *(int *)&this->u32_4B = aP1; /*0x696fa6*/
+    *(int *)&this->u32_4F = -1; /*0x696fa9*/
   }
   return result; /*0x696fa3*/
 
@@ -950,13 +950,13 @@ int SessionClass::SetPlayerColor(int a2)
   result = a2; /*0x696fc0*/
   if ( a2 == -2 ) /*0x696fc7*/
   {
-    *(int *)((char *)this + 83) = -1; /*0x696fc9*/
-    *(int *)((char *)this + 87) = -2; /*0x696fd0*/
+    *(int *)&this->ptr_53 = -1; /*0x696fc9*/
+    *(int *)&this->q057 = -2; /*0x696fd0*/
   }
   else
   {
-    *(int *)((char *)this + 83) = a2; /*0x696fd6*/
-    *(int *)((char *)this + 87) = -1; /*0x696fd9*/
+    *(int *)&this->ptr_53 = a2; /*0x696fd6*/
+    *(int *)&this->q057 = -1; /*0x696fd9*/
   }
   return result; /*0x696fd3*/
 
@@ -971,13 +971,13 @@ int SessionClass::SetOption(int aP1)
   result = aP1; /*0x696ff0*/
   if ( aP1 == -2 ) /*0x696ff7*/
   {
-    *(int *)((char *)this + 91) = -1; /*0x696ff9*/
-    *(int *)((char *)this + 95) = -2; /*0x697000*/
+    *(int *)&this->u32_5B = -1; /*0x696ff9*/
+    *(int *)&this->u32_5F = -2; /*0x697000*/
   }
   else
   {
-    *(int *)((char *)this + 91) = aP1; /*0x697006*/
-    *(int *)((char *)this + 95) = -1; /*0x697009*/
+    *(int *)&this->u32_5B = aP1; /*0x697006*/
+    *(int *)&this->u32_5F = -1; /*0x697009*/
   }
   return result; /*0x697003*/
 }
@@ -991,13 +991,13 @@ int SessionClass::SetOption2(int aP1)
   result = aP1; /*0x697020*/
   if ( aP1 == -2 ) /*0x697027*/
   {
-    *(int *)((char *)this + 99) = -1; /*0x697029*/
-    *(int *)((char *)this + 103) = -2; /*0x697030*/
+    *(int *)&this->ptr_63 = -1; /*0x697029*/
+    *(int *)&this->ptr_67 = -2; /*0x697030*/
   }
   else
   {
-    *(int *)((char *)this + 99) = aP1; /*0x697036*/
-    *(int *)((char *)this + 103) = -1; /*0x697039*/
+    *(int *)&this->ptr_63 = aP1; /*0x697036*/
+    *(int *)&this->ptr_67 = -1; /*0x697039*/
   }
   return result; /*0x697033*/
 
@@ -1217,10 +1217,10 @@ SessionClass::SessionClass()
   *((unsigned char *)this + 7896) = 1; /*0x6974aa*/
   *((unsigned char *)this + 8129) = 1; /*0x6974b1*/
   *((unsigned char *)this + 8128) = 1; /*0x6974ba*/
-  *(unsigned int *)((unsigned char *)this + 12410) = 0; /*0x6974c1*/
-  *(unsigned int *)((unsigned char *)this + 12414) = 0; /*0x6974c9*/
-  *(unsigned int *)((unsigned char *)this + 12418) = 0; /*0x6974d4*/
-  *(unsigned int *)((unsigned char *)this + 12422) = 0; /*0x6974da*/
+  *(unsigned int *)&this->q_307A = 0; /*0x6974c1*/
+  *(unsigned int *)&this->q_307E = 0; /*0x6974c9*/
+  *(unsigned int *)&this->q_3082 = 0; /*0x6974d4*/
+  *(unsigned int *)&this->q_3086 = 0; /*0x6974da*/
   *((unsigned char *)this + 12408) = 0; /*0x6974e0*/
   *((unsigned char *)this + 12396) = 0; /*0x6974e6*/
   *((unsigned short *)this + 6199) = 0; /*0x6974ec*/

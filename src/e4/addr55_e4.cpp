@@ -365,7 +365,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
   }
   else
   {
-    v60 = *(unsigned short *)((char *)v1 + 65); /*0x550cb4*/
+    v60 = *(unsigned short *)&v1->q041; /*0x550cb4*/
     v13 = *((unsigned char *)v1 + 66); /*0x550cb9*/
     v61 = *((unsigned char *)v1 + 67); /*0x550cbf*/
     v14 = *((unsigned char *)v1 + 67); /*0x550cc3*/
@@ -484,7 +484,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
         }
         if ( *((unsigned char *)v1 + 33) && v70 == 1 )
         {
-          v54 = *(unsigned short *)((char *)v1 + 65); /*0x550f5c*/
+          v54 = *(unsigned short *)&v1->q041; /*0x550f5c*/
           IDA_LOBYTE(v11) = *((unsigned char *)v1 + 67); /*0x550f61*/
           v55 = v11; /*0x550f64*/
         }

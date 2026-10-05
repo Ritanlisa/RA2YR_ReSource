@@ -81,20 +81,20 @@ AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
               v12 = *(unsigned int *)(v5 + 4); /*0x4b0b89*/
               if ( !v6 ) /*0x4b0b8c*/
               {
-                v13 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 464))(*((unsigned int *)this + 3)); /*0x4b0b93*/
+                v13 = (*(int (**)(unsigned int))(**(unsigned int **)&this->q00C + 464))(*((unsigned int *)this + 3)); /*0x4b0b93*/
                 v14 = *((unsigned int *)this + 3); /*0x4b0b99*/
                 v19 = v11; /*0x4b0b9c*/
                 v20 = v12; /*0x4b0ba0*/
                 v21 = v13; /*0x4b0ba4*/
                 (*(void (**)(int, int *))(*(unsigned int *)v14 + 244))(v14, &v19); /*0x4b0baf*/
-                LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x4b0bbf*/
+                LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)&this->q00C + 244))( /*0x4b0bbf*/
                                *((unsigned int *)this + 3),
                                (unsigned int *)aP1);
                 return (gamemd::AbstractClass *)(v5);
               }
               if ( v6 == 1 || v6 == 3 ) /*0x4b0bd7*/
               {
-                v15 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 464))(*((unsigned int *)this + 3)); /*0x4b0bde*/
+                v15 = (*(int (**)(unsigned int))(**(unsigned int **)&this->q00C + 464))(*((unsigned int *)this + 3)); /*0x4b0bde*/
                 v16 = *((unsigned int *)this + 3); /*0x4b0be4*/
                 v21 = v15; /*0x4b0be7*/
                 v19 = v11; /*0x4b0beb*/
@@ -110,13 +110,13 @@ AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
     if ( v6 ) /*0x4b0c06*/
     {
       if ( v6 == 1 || v6 == 3 ) /*0x4b0c26*/
-        LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)((char *)this + 12) + 240))( /*0x4b0c2e*/
+        LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)&this->q00C + 240))( /*0x4b0c2e*/
                        *((unsigned int *)this + 3),
                        v3);
     }
     else
     {
-      LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x4b0c0e*/
+      LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)&this->q00C + 244))( /*0x4b0c0e*/
                      *((unsigned int *)this + 3),
                      v3);
     }

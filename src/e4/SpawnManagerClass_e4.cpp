@@ -62,8 +62,8 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
     v9 = dword_A8ED84; /*0x6b6d31*/
     v8[4] = 0; /*0x6b6d36*/
     v8[2] = (int)v9; /*0x6b6d39*/
-    v10 = **(unsigned int **)((char *)this + 40); /*0x6b6d44*/
-    v11 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 60))(*((unsigned int *)this + 9)); /*0x6b6d46*/
+    v10 = **(unsigned int **)&this->owningHouseIndex; /*0x6b6d44*/
+    v11 = (*(int (**)(unsigned int))(**(unsigned int **)&this->objectTypeFlags + 60))(*((unsigned int *)this + 9)); /*0x6b6d46*/
     v12 = (*(int (**)(unsigned int, int))(v10 + 140))(*((unsigned int *)this + 10), v11); /*0x6b6d4d*/
     *v8 = v12; /*0x6b6d55*/
     if ( v12 ) /*0x6b6d5a*/

@@ -136,7 +136,7 @@ namespace gamemd {
 AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4, void *a5)
 {
 
-  **(unsigned short **)((char *)this + 32) = *((unsigned short *)this + 18); /*0x48bf4b*/
+  **(unsigned short **)&this->q020 = *((unsigned short *)this + 18); /*0x48bf4b*/
   if ( aP3 ) /*0x48bf54*/
   {
     *(unsigned char *)(*((unsigned int *)this + 8) + 2) = 0; /*0x48bf59*/

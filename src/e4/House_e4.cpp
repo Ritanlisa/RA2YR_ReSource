@@ -125,7 +125,7 @@ int House::AnnounceUpgrade(int aP1)
       v10 = *((unsigned int *)this + 14); /*0x47d333*/
       if ( v10 != 0xFFFF && v10 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 340) ) /*0x47d343*/
         *((unsigned char *)this + 284) = ((HouseClass*)/*0x47d35e*/
-                                   *(HouseClass **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v10))->GetCameoTypeIndex(/*0x47d35e*/ *(uint8_t *)((char *)this + 282));
+                                   *(HouseClass **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v10))->GetCameoTypeIndex(/*0x47d35e*/ *(uint8_t *)&this->u32_11A);
       if ( *((unsigned char *)this + 284) && *(unsigned char *)(v8 + 681) ) /*0x47d36e*/
       {
         *((unsigned int *)this + 17) = -1; /*0x47d378*/
@@ -192,7 +192,7 @@ LABEL_19:
   if ( v18 != 0xFFFF ) /*0x47d595*/
   {
     v19 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v18); /*0x47d5ab*/
-    v54 = *(uint8_t *)((char *)this + 282); /*0x47d5ae*/
+    v54 = *(uint8_t *)&this->u32_11A; /*0x47d5ae*/
     *(unsigned int *)v55 = v19; /*0x47d5b1*/
     MapFileData = ((House *)((House *)v19))->LoadMapFileData(v54, 0); /*0x47d5b5*/
     if ( *((unsigned char *)this + 284) ) /*0x47d5ba*/
@@ -200,7 +200,7 @@ LABEL_19:
       if ( MapFileData ) /*0x47d5c6*/
       {
 LABEL_40:
-        *((unsigned char *)this + 284) = ((HouseClass *)((int)((HouseClass *)v19)))->GetCameoTypeIndex((int)((void *)(*(uint8_t *)((char *)this + 282)))); /*0x47d7fb*/
+        *((unsigned char *)this + 284) = ((HouseClass *)((int)((HouseClass *)v19)))->GetCameoTypeIndex((int)((void *)(*(uint8_t *)&this->u32_11A))); /*0x47d7fb*/
         CellClass::DetermineTileType((CellClass *)this); /*0x47d813*/
         v27 = *((unsigned int *)this + 17); /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
@@ -214,7 +214,7 @@ LABEL_40:
           }
           else
           {
-            *((unsigned int *)this + 59) = House::LookupObject((int)((House *)v19),(void *)(*(uint8_t *)((char *)this + 282))); /*0x47d843*/
+            *((unsigned int *)this + 59) = House::LookupObject((int)((House *)v19),(void *)(*(uint8_t *)&this->u32_11A)); /*0x47d843*/
             *((unsigned int *)this + 17) = -1; /*0x47d849*/
             *((unsigned char *)this + 286) = 0; /*0x47d850*/
           }
@@ -222,7 +222,7 @@ LABEL_40:
         }
         if ( !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * *((unsigned int *)this + 17)) + 684) ) /*0x47d885*/
 LABEL_47:
-          *((unsigned int *)this + 59) = House::LookupObject((int)((House *)v19),(void *)(*(uint8_t *)((char *)this + 282))); /*0x47d8aa*/
+          *((unsigned int *)this + 59) = House::LookupObject((int)((House *)v19),(void *)(*(uint8_t *)&this->u32_11A)); /*0x47d8aa*/
 LABEL_48:
         if ( *((unsigned int *)this + 59) == 10 ) /*0x47d8b7*/
         {
@@ -246,15 +246,15 @@ LABEL_48:
         }
         if ( aP1 != (IUnknown *)(-1) ) /*0x47d94c*/
           *((unsigned char *)this + 283) = (unsigned char)(aP1); /*0x47d94e*/
-        TechnoClass::GetTileAnimationData((TechnoClass *)v19, *(uint8_t *)((char *)this + 282), v59, &v58); /*0x47d969*/
+        TechnoClass::GetTileAnimationData((TechnoClass *)v19, *(uint8_t *)&this->u32_11A, v59, &v58); /*0x47d969*/
         v33 = *((unsigned int *)this + 80); /*0x47d988*/
         *((unsigned char *)this + 285) = (v58 - 30) / 15; /*0x47d993*/
         if ( (v33 & 0x20000) == 0 /*0x47d9bc*/
           && *(unsigned int *)(v19 + 712) != -1
-          && *(unsigned int *)(v19 + 724) == *(uint8_t *)((char *)this + 282) )
+          && *(unsigned int *)(v19 + 724) == *(uint8_t *)&this->u32_11A )
         {
           v34 = *v4; /*0x47d9d0*/
-          v35 = *(int16_t *)((char *)this + 38); /*0x47d9d3*/
+          v35 = *(int16_t *)&this->u16_26; /*0x47d9d3*/
           v61 = dword_89E7C0 * *((char *)this + 283); /*0x47d9e1*/
           v36 = Matrix3x4::TransformCell((float *)g_TacticalClass_Instance, v62, (int *)(*(unsigned int *)v55 + 716)); /*0x47da03*/
           v37 = v36[1]; /*0x47da0a*/
@@ -294,7 +294,7 @@ LABEL_48:
         }
         goto LABEL_82; /*0x47dacf*/
       }
-      MapFileData = ((House *)((House *)v19))->LoadMapFileData(*(uint8_t *)((char *)this + 282), 1); /*0x47d5d9*/
+      MapFileData = ((House *)((House *)v19))->LoadMapFileData(*(uint8_t *)&this->u32_11A, 1); /*0x47d5d9*/
     }
     if ( !MapFileData ) /*0x47d5e0*/
     {

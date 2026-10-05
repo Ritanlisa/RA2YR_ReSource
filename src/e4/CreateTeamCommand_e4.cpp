@@ -3087,7 +3087,7 @@ void CreateTeamCommand::performAction_239()
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x5384c6*/
+  v2 = *(void **)&this->q004; /*0x5384c6*/
   *((unsigned int *)this + 4) = 0; /*0x5384c9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5384d0*/
   {

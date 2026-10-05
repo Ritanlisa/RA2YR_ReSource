@@ -221,7 +221,7 @@ int AudioStream::SelectRandom()
   int v10; // ecx
   int v12; // eax
 
-  v2 = *(unsigned int **)((char *)this + 36); /*0x4047b3*/
+  v2 = *(unsigned int **)&this->q024; /*0x4047b3*/
   v3 = v2[4]; /*0x4047b9*/
   if ( v2[22] >= 0x21u && (*((unsigned char *)this + 24) & 0x20) == 0 ) /*0x4047c5*/
     return 0; /*0x4047c5*/

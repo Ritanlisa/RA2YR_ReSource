@@ -2716,7 +2716,7 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
   {
     v20 = (unsigned int *)((char *)this + 56); /*0x5cd81e*/
     v21 = WideString::GetOrEmpty((wchar_t **)((char *)this + 28)); /*0x5cd825*/
-    result = sub_5D30C0(*(size_t **)((char *)this + 52), v21, (unsigned int *)((char *)this + 56)); /*0x5cd82e*/
+    result = sub_5D30C0(*(size_t **)&this->M52, v21, (unsigned int *)((char *)this + 56)); /*0x5cd82e*/
     v22 = *((unsigned int *)this + 2); /*0x5cd836*/
     *v20 = *((unsigned int *)this + 1); /*0x5cd839*/
     *((unsigned int *)this + 15) = v22; /*0x5cd83b*/
@@ -2726,7 +2726,7 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
     v4 = (int *)((char *)this + 56); /*0x5cd6b2*/
     v23 = (unsigned int *)((char *)this + 56); /*0x5cd6b6*/
     v5 = WideString::GetOrEmpty((wchar_t **)((char *)this + 28)); /*0x5cd6ba*/
-    sub_5D30C0(*(size_t **)((char *)this + 52), v5, v23); /*0x5cd6c3*/
+    sub_5D30C0(*(size_t **)&this->M52, v5, v23); /*0x5cd6c3*/
     v6 = *((unsigned int *)this + 13); /*0x5cd6dc*/
     *((unsigned int *)this + 1) += (a2[2] - *((unsigned int *)this + 16)) / 2; /*0x5cd6df*/
     v7 = a2[3] % *(unsigned int *)(v6 + 8) / 2 + *((unsigned int *)this + 2); /*0x5cd706*/

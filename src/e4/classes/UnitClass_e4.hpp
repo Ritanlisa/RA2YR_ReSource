@@ -779,6 +779,14 @@ struct UnitClass {
     int ProcessIdleOrders();
 int Construct(...);  // C2597 interim stub
     void ** Create(void *a2, _DWORD *a3, int a4); // N_fix R5 supply (cache truth)
+    unsigned int q_750;  // +0x750 flat supply (three-ban reform)
+    unsigned int q_9F0;  // +0x9F0 flat supply (three-ban reform)
+    unsigned int q_A30;  // +0xA30 flat supply (three-ban reform)
+    unsigned int q_AB0;  // +0xAB0 flat supply (three-ban reform)
+    unsigned int q_B90;  // +0xB90 flat supply (three-ban reform)
+    unsigned int q_C30;  // +0xC30 flat supply (three-ban reform)
+    unsigned int q_C80;  // +0xC80 flat supply (three-ban reform)
+    unsigned int q_FE0;  // +0xFE0 flat supply (three-ban reform)
 };
 
 } // namespace gamemd

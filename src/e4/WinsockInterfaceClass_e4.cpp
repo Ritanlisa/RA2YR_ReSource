@@ -36,7 +36,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
     WSACleanup(); /*0x7b1ad3*/
     *((unsigned char *)this + 258152) = 0; /*0x7b1ad8*/
   }
-  v3 = *(void **)((char *)this + 60); /*0x7b1ade*/
+  v3 = *(void **)&this->ambientSoundController; /*0x7b1ade*/
   *((unsigned int *)this + 14) = (unsigned int)(&vt_VectorClass); /*0x7b1ae1*/
   if ( v3 && *((unsigned char *)this + 69) ) /*0x7b1aec*/
   {
@@ -45,7 +45,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   }
   *((unsigned char *)this + 69) = 0; /*0x7b1afd*/
   *((unsigned int *)this + 16) = 0; /*0x7b1b00*/
-  v4 = *(void **)((char *)this + 36); /*0x7b1b03*/
+  v4 = *(void **)&this->objectTypeFlags; /*0x7b1b03*/
   *((unsigned int *)this + 8) = (unsigned int)(&vt_VectorClass); /*0x7b1b06*/
   if ( v4 && *((unsigned char *)this + 45) ) /*0x7b1b11*/
   {
@@ -54,7 +54,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   }
   *((unsigned char *)this + 45) = 0; /*0x7b1b22*/
   *((unsigned int *)this + 10) = 0; /*0x7b1b25*/
-  v5 = *(void **)((char *)this + 12); /*0x7b1b28*/
+  v5 = *(void **)&this->vtable4; /*0x7b1b28*/
   *((unsigned int *)this + 2) = (unsigned int)(&vt_VectorClass); /*0x7b1b2b*/
   if ( v5 && *((unsigned char *)this + 21) ) /*0x7b1b36*/
   {

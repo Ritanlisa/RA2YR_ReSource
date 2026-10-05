@@ -105,7 +105,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
       v32 = 1; /*0x4f65d5*/
     if ( v36 && v33 ) /*0x4f65e8*/
       return 1; /*0x4f65f3*/
-    v11 = (*(int (__stdcall **)(int *))(*(unsigned int *)((char *)this + 24) + 24))(this->?); /*0x4f6603*/
+    v11 = (*(int (__stdcall **)(int *))(*(unsigned int *)&this->nextArrayIndex + 24))(this->?); /*0x4f6603*/
     v38 = v11; /*0x4f6612*/
     BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4f6616*/
                            (HouseClass *)this,

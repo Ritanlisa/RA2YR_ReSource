@@ -1511,7 +1511,7 @@ int E4Recv_7BEFE0::sub_7BEFE0()
     {
       if ( (*((unsigned char *)this + 340) & 1) != 0 ) /*0x7bf00a*/
       {
-        v6 = *(char **)((char *)this + 1776); /*0x7bf00c*/
+        v6 = *(char **)&this->u32_6F0; /*0x7bf00c*/
         LOBYTE(v5) = v5 | 4; /*0x7bf012*/
         *(unsigned int *)(v4 + 12) = v5; /*0x7bf014*/
       }
@@ -1542,7 +1542,7 @@ int E4Recv_7BEFE0::sub_7BEFE0()
     {
       if ( (*((unsigned char *)this + 340) & 2) != 0 ) /*0x7bf076*/
       {
-        v9 = *(char **)((char *)this + 1768); /*0x7bf078*/
+        v9 = *(char **)&this->u32_6E8; /*0x7bf078*/
         LOBYTE(v3) = v3 | 0x40; /*0x7bf07e*/
         *(unsigned int *)(v2 + 20) = v3; /*0x7bf080*/
       }

@@ -1984,7 +1984,7 @@ int BuildingClass::CreateUnits()
           1,
           dword_A83D4C,
           0);
-        v129 = *(unsigned int *)((char *)this + 608); /*0x446839*/
+        v129 = *(unsigned int *)&this->lastSightRange; /*0x446839*/
         v84 = this->? + 3; /*0x446846*/
         v130 = this->?[1]; /*0x446849*/
         v131 = this->?[2]; /*0x446855*/
@@ -2037,7 +2037,7 @@ int BuildingClass::CreateUnits()
     v89 = this->Type; /*0x44699a*/
     if ( v89->WeaponsFactory ) /*0x4469a0*/
     {
-      if ( *(unsigned int *)((char *)v89 + 3278) ) /*0x4469ae*/
+      if ( *(unsigned int *)&v89->Naval ) /*0x4469ae*/
       {
         if ( !this->? ) /*0x4469bc*/
         {
@@ -2111,13 +2111,13 @@ int BuildingClass::CreateUnits()
               IDA_HIDWORD(v127) = 0; /*0x446bea*/
               v129 = this->?[0]; /*0x446bfa*/
               v130 = this->?[1]; /*0x446c08*/
-              v131 = *(unsigned int *)((char *)this + 8); /*0x446c13*/
+              v131 = *(unsigned int *)&this->vtable3; /*0x446c13*/
               IDA_LOWORD(v127) = v129 / 256; /*0x446c23*/
               *(unsigned int *)((char *)&v127 + 2) = (unsigned __int16)(v130 / 256); /*0x446c3a*/
               v128 = v127; /*0x446c43*/
-              v129 = *(unsigned int *)((char *)this + 4); /*0x446c49*/
+              v129 = *(unsigned int *)&this->vtable2; /*0x446c49*/
               v130 = this->?[1]; /*0x446c50*/
-              v131 = *(unsigned int *)((char *)this + 8); /*0x446c5b*/
+              v131 = *(unsigned int *)&this->vtable3; /*0x446c5b*/
               IDA_LOWORD(v127) = v129 / 256; /*0x446c6b*/
               v102 = v99[433]; /*0x446c7d*/
               IDA_WORD1(v127) = v130 / 256; /*0x446c86*/
@@ -2153,13 +2153,13 @@ int BuildingClass::CreateUnits()
               }
               IDA_LODWORD(v127) = 0; /*0x446d36*/
               v129 = *location; /*0x446d44*/
-              v130 = *(unsigned int *)((char *)this + 8); /*0x446d52*/
-              v131 = *(unsigned int *)((char *)this + 8); /*0x446d5f*/
+              v130 = *(unsigned int *)&this->vtable3; /*0x446d52*/
+              v131 = *(unsigned int *)&this->vtable3; /*0x446d5f*/
               IDA_WORD2(v127) = v129 / 256; /*0x446d6f*/
-              v106 = *(unsigned int *)((char *)this + 4); /*0x446d81*/
+              v106 = *(unsigned int *)&this->vtable2; /*0x446d81*/
               IDA_HIWORD(v127) = v130 / 256; /*0x446d87*/
               v130 = v106; /*0x446d90*/
-              v107 = *(unsigned int *)((char *)this + 8); /*0x446d94*/
+              v107 = *(unsigned int *)&this->vtable3; /*0x446d94*/
               v128 = IDA_HIDWORD(v127); /*0x446d97*/
               v108 = *location; /*0x446d9b*/
               v131 = v107; /*0x446d9d*/

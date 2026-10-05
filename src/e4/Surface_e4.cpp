@@ -1586,7 +1586,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
           v80 = v13; /*0x760455*/
           v14 = (unsigned short *)(v74 + 2 * v61 * v13); /*0x760459*/
           v15 = v61; /*0x76045c*/
-          v16 = *(unsigned int **)((char *)this + 424); /*0x760460*/
+          v16 = *(unsigned int **)&this->u32_1A8; /*0x760460*/
           v89 = v16; /*0x760468*/
           for ( k = v61; v15 <= v9; k = v15 ) /*0x760470*/
           {
@@ -1637,7 +1637,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
     (*(void (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 96))(g_DSurface_Hidden_2); /*0x7609a7*/
     if ( *((unsigned int *)this + 106) ) /*0x7609aa*/
     {
-      __3_YAXPAX_Z(*(void **)((char *)this + 424)); /*0x7609b7*/
+      __3_YAXPAX_Z(*(void **)&this->u32_1A8); /*0x7609b7*/
       *((unsigned int *)this + 106) = 0; /*0x7609bf*/
     }
   }
@@ -1742,12 +1742,12 @@ int Surface::CommitSurfaceBuffersAudio()
   v4 = *((unsigned char *)this + 264); /*0x7bd6da*/
   if ( v4 == 1 || v4 == 4 ) /*0x7bd6e8*/
     *((unsigned int *)this + 477) = 2 * v3; /*0x7bd6ec*/
-  v5 = *(unsigned int *)((char *)this + 266); /*0x7bd6f2*/
+  v5 = *(unsigned int *)&this->u32_10A; /*0x7bd6f2*/
   v6 = *((unsigned int *)this + 477); /*0x7bd6f8*/
   if ( v5 > v6 ) /*0x7bd700*/
     return -3; /*0x7bd70e*/
   if ( !v5 ) /*0x7bd711*/
-    *(unsigned int *)((char *)this + 266) = v6; /*0x7bd713*/
+    *(unsigned int *)&this->u32_10A = v6; /*0x7bd713*/
   if ( *((int *)this + 35) > 0 ) /*0x7bd721*/
     goto LABEL_57; /*0x7bd721*/
   if ( *((unsigned short *)this + 934) ) /*0x7bd727*/
@@ -1876,7 +1876,7 @@ LABEL_57:
   v49 = *((unsigned int *)this + 477); /*0x7bd8ff*/
   *((unsigned int *)this + 85) |= 1u; /*0x7bd90f*/
   v21 = 0; /*0x7bd91b*/
-  *((unsigned int *)this + 474) = (*(unsigned int *)((char *)this + 266) + 16) & 0xFFFFFFFC; /*0x7bd927*/
+  *((unsigned int *)this + 474) = (*(unsigned int *)&this->u32_10A + 16) & 0xFFFFFFFC; /*0x7bd927*/
   v22 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v49); /*0x7bd92d*/
   *((unsigned int *)this + 444) = v22; /*0x7bd935*/
   if ( !v22 ) /*0x7bd93b*/

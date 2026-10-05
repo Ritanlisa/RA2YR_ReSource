@@ -113,8 +113,8 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
     {
       v9 = 0; /*0x6af23f*/
     }
-    v10 = **(unsigned int **)((char *)this + 40); /*0x6af249*/
-    v11 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 60))(*((unsigned int *)this + 9)); /*0x6af24b*/
+    v10 = **(unsigned int **)&this->house; /*0x6af249*/
+    v11 = (*(int (**)(unsigned int))(**(unsigned int **)&this->master + 60))(*((unsigned int *)this + 9)); /*0x6af24b*/
     v12 = (*(int (**)(unsigned int, int))(v10 + 140))(*((unsigned int *)this + 10), v11); /*0x6af252*/
     *v9 = v12; /*0x6af25a*/
     if ( v12 ) /*0x6af25f*/
@@ -246,7 +246,7 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
     }
     while ( v4 < dword_B0B600 ); /*0x6af53d*/
   }
-  v5 = *(void **)((char *)this + 60); /*0x6af53f*/
+  v5 = *(void **)&this->slaveVectorCount; /*0x6af53f*/
   *((unsigned int *)this + 14) = (unsigned int)(&vt_VectorClass); /*0x6af542*/
   if ( v5 && *((unsigned char *)this + 69) ) /*0x6af54c*/
   {

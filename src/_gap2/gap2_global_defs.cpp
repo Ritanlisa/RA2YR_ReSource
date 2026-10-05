@@ -19330,7 +19330,7 @@ long long Gap2Recv_659FF0::Weapon_Update_Update_659FF0() {
   double v13; // [esp+20h] [ebp-8h]
 
   v2 = Math::SinCos(dbl_839530 * ((double)*((int *)this + 34) / (double)*((int *)this + 35) * 180.0)) /*0x65a02c*/
-     * *(double *)((char *)this + 128);
+     * *(double *)&this->u64_80;
   v3 = Math::RoundToInt(v2); /*0x65a036*/
   v4 = v3 * *((unsigned int *)this + 37) + *((unsigned int *)this + 10); /*0x65a05e*/
   v5 = v3 * *((unsigned int *)this + 38) + *((unsigned int *)this + 11); /*0x65a063*/
@@ -19339,7 +19339,7 @@ long long Gap2Recv_659FF0::Weapon_Update_Update_659FF0() {
   *((unsigned int *)this + 41) = v5; /*0x65a074*/
   *((unsigned int *)this + 41) = Math::RoundToInt(v2); /*0x65a084*/
   v6 = Math::SinCos(dbl_839530 * ((double)(*((unsigned int *)this + 34) + 1) / (double)*((int *)this + 35) * 180.0)) /*0x65a0c1*/
-     * *(double *)((char *)this + 128);
+     * *(double *)&this->u64_80;
   v7 = Math::RoundToInt(v6); /*0x65a0ce*/
   v8 = v7 * *((unsigned int *)this + 37) + *((unsigned int *)this + 10); /*0x65a0f6*/
   v9 = v7 * *((unsigned int *)this + 38) + *((unsigned int *)this + 11); /*0x65a0fb*/
@@ -19347,10 +19347,10 @@ long long Gap2Recv_659FF0::Weapon_Update_Update_659FF0() {
   *((unsigned int *)this + 43) = v8; /*0x65a109*/
   *((unsigned int *)this + 44) = v9; /*0x65a10c*/
   *((unsigned int *)this + 44) = Math::RoundToInt(v6); /*0x65a11c*/
-  v10 = (double)(int)abs32(Math::RoundToInt(v6)) * 0.5 / *(double *)((char *)this + 64) + 0.5; /*0x65a146*/
-  *(double *)((char *)this + 184) = v10; /*0x65a14c*/
-  v12 = (double)*(uint8_t *)((char *)this + 33) * v10; /*0x65a166*/
-  v13 = (double)*(uint8_t *)((char *)this + 34) * v10; /*0x65a174*/
+  v10 = (double)(int)abs32(Math::RoundToInt(v6)) * 0.5 / *(double *)&this->u64_40 + 0.5; /*0x65a146*/
+  *(double *)&this->u64_B8 = v10; /*0x65a14c*/
+  v12 = (double)*(uint8_t *)&this->u32_21 * v10; /*0x65a166*/
+  v13 = (double)*(uint8_t *)&this->u32_22 * v10; /*0x65a174*/
   *((unsigned char *)this + 192) = Math::RoundToInt(v10); /*0x65a189*/
   *((unsigned char *)this + 193) = Math::RoundToInt(v12); /*0x65a198*/
   result = Math::RoundToInt(v13); /*0x65a19e*/
@@ -22541,7 +22541,7 @@ int Gap2Recv_68C860::LoadTheaterClassMIX_Load(BlowStraw * aP1, int a3, int a4, i
   void (***v7)(unsigned int, int); // ecx
   int result; // eax
 
-  v7 = *(void (****)(unsigned int, int))((char *)this + 780); /*0x68c863*/
+  v7 = *(void (****)(unsigned int, int))&this->M780; /*0x68c863*/
   if ( v7 ) /*0x68c86b*/
   {
     (**v7)(v7, 1); /*0x68c871*/
@@ -22643,7 +22643,7 @@ int Gap2Recv_68FBB0::RenderScoreTypeText(int a2, int a3, ScoreScreen * aP3) {
         if ( v11 < 32 ) /*0x68fdfe*/
           goto LABEL_46; /*0x68fdfe*/
         v13 = a2; /*0x68fe0f*/
-        v15 = (*(int (**)(unsigned int, int))(**(unsigned int **)((char *)this + 12) + 4))(*((unsigned int *)this + 3), v11); /*0x68fe1d*/
+        v15 = (*(int (**)(unsigned int, int))(**(unsigned int **)&this->u32_C + 4))(*((unsigned int *)this + 3), v11); /*0x68fe1d*/
         goto LABEL_27; /*0x68fe1d*/
       }
       v13 = a2; /*0x68fcb2*/
@@ -22655,7 +22655,7 @@ int Gap2Recv_68FBB0::RenderScoreTypeText(int a2, int a3, ScoreScreen * aP3) {
           if ( (unsigned char)v12 != 32 ) /*0x68fcc1*/
           {
             LOWORD(v12) = (char)v12; /*0x68fcc6*/
-            v36[2] = (*(int (**)(unsigned int, int))(**(unsigned int **)((char *)this + 12) + 4))(*((unsigned int *)this + 3), v12) /*0x68fcd5*/
+            v36[2] = (*(int (**)(unsigned int, int))(**(unsigned int **)&this->u32_C + 4))(*((unsigned int *)this + 3), v12) /*0x68fcd5*/
                    + 1;
             v14 = *((unsigned int *)this + 2); /*0x68fce3*/
             v36[1] = aP3 + 1; /*0x68fce6*/
@@ -22678,9 +22678,9 @@ int Gap2Recv_68FBB0::RenderScoreTypeText(int a2, int a3, ScoreScreen * aP3) {
               0,
               1);
             v34 = 32; /*0x68fd24*/
-            v15 = (*(int (**)(unsigned int, int))(**(unsigned int **)((char *)this + 12) + 4))(*((unsigned int *)this + 3), 32); /*0x68fd2c*/
+            v15 = (*(int (**)(unsigned int, int))(**(unsigned int **)&this->u32_C + 4))(*((unsigned int *)this + 3), 32); /*0x68fd2c*/
 LABEL_27:
-            v19 = *(unsigned int **)((char *)this + 12); /*0x68fe20*/
+            v19 = *(unsigned int **)&this->u32_C; /*0x68fe20*/
             v20 = v15 + 1; /*0x68fe27*/
             if ( v4 + v19[1] <= a3 + 90 ) /*0x68fe2f*/
             {
@@ -22762,7 +22762,7 @@ LABEL_27:
               if ( v4 < a3 + 87 ) /*0x68ff8d*/
               {
                 ++v33; /*0x68ff9e*/
-                v4 += (*(int (**)(unsigned int, int))(**(unsigned int **)((char *)this + 12) + 4))(*((unsigned int *)this + 3), v34) /*0x68ffa5*/
+                v4 += (*(int (**)(unsigned int, int))(**(unsigned int **)&this->u32_C + 4))(*((unsigned int *)this + 3), v34) /*0x68ffa5*/
                     + 1;
               }
             }
@@ -22775,7 +22775,7 @@ LABEL_27:
         LOBYTE(v12) = *(unsigned char *)(v33 + a2 - 1); /*0x68fd39*/
         --v33; /*0x68fd43*/
         LOWORD(v12) = (char)v12; /*0x68fd47*/
-        v16 = (*(int (**)(unsigned int, int))(**(unsigned int **)((char *)this + 12) + 4))(*((unsigned int *)this + 3), v12) + 1; /*0x68fd53*/
+        v16 = (*(int (**)(unsigned int, int))(**(unsigned int **)&this->u32_C + 4))(*((unsigned int *)this + 3), v12) + 1; /*0x68fd53*/
         v4 -= v16; /*0x68fd54*/
         v37[2] = v16; /*0x68fd56*/
         v17 = *((unsigned int *)this + 2); /*0x68fd64*/
@@ -28275,18 +28275,18 @@ bool Gap2Recv_7087C0::ValidateAttackTarget(TechnoClass * aP1, int a3) {
   {
     return 0; /*0x708817*/
   }
-  v4 = *(CaptureManagerClass **)((char *)this + 700); /*0x708825*/
+  v4 = *(CaptureManagerClass **)&this->M700; /*0x708825*/
   if ( v4 ) /*0x70882d*/
   {
     if ( CaptureManagerClass::CannotControlAnyMore(v4) ) /*0x70882f*/
       return 0; /*0x70882f*/
   }
   if ( *((unsigned int *)this + 180) /*0x708859*/
-    || (uint8_t)House::IsCurrentPlayer(*(House **)((char *)this + 540)) && *((unsigned int *)this + 173) )
+    || (uint8_t)House::IsCurrentPlayer(*(House **)&this->M540) && *((unsigned int *)this + 173) )
   {
     return 0; /*0x708859*/
     return 0; /*0x70886e*/
-  if ( (uint8_t)Object::IsAlliedWithObjectHouse(*(Object **)((char *)this + 540), (int)aP1) ) /*0x708880*/
+  if ( (uint8_t)Object::IsAlliedWithObjectHouse(*(Object **)&this->M540, (int)aP1) ) /*0x708880*/
     return 0; /*0x708880*/
   if ( (*(uint8_t (**)(int *, unsigned int))(*aP1 + 200))(aP1, this->owner) ) /*0x708899*/
     return 0; /*0x708899*/
@@ -28364,7 +28364,7 @@ bool Gap2Recv_7087C0::ValidateAttackTarget(TechnoClass * aP1, int a3) {
       }
     }
   }
-  if ( this && (*((unsigned char *)this + 20) & 4) != 0 && aP1 == *(int **)((char *)this + 1684) ) /*0x708ac3*/
+  if ( this && (*((unsigned char *)this + 20) & 4) != 0 && aP1 == *(int **)&this->u32_694 ) /*0x708ac3*/
     return 0; /*0x708ac3*/
   v13 = *(unsigned int *)(*(int (**)(int, int))(*(unsigned int *)this + 1016))(this, v6); /*0x708ad0*/
   return !v13 /*0x708b1a*/
@@ -29320,11 +29320,11 @@ void Gap2Recv_724200::HandleToolTipMessage(int a2) {
       case 0x113: /*0x72422f*/
         if ( *(unsigned int *)(a2 + 8) == 1414809936 ) /*0x724339*/
         {
-          KillTimer(*(HWND *)((char *)this + 8), 0x54544950u); /*0x724348*/
+          KillTimer(*(HWND *)&this->M8, 0x54544950u); /*0x724348*/
           if ( this->vtable2 ) /*0x72434e*/
             goto LABEL_8; /*0x724353*/
           GetCursorPos((LPPOINT)((char *)&this->vtable26)); /*0x72435d*/
-          ScreenToClient(*(HWND *)((char *)this + 8), (LPPOINT)((char *)&this->vtable26)); /*0x724368*/
+          ScreenToClient(*(HWND *)&this->M8, (LPPOINT)((char *)&this->vtable26)); /*0x724368*/
           v16 = 0; /*0x724374*/
           if ( this->alignmentPadding91 <= 0 ) /*0x72437e*/
           {
@@ -29359,12 +29359,12 @@ LABEL_29:
       case 0x200: /*0x72422f*/
         if ( this->q08A && !LOBYTE(stru_A8EB00.__pad_CD4[1]) ) /*0x724258*/
         {
-          KillTimer(*(HWND *)((char *)this + 8), 0x54544950u); /*0x724263*/
-          SetTimer(*(HWND *)((char *)this + 8), 0x54544950u, this->q08A, 0); /*0x72427b*/
+          KillTimer(*(HWND *)&this->M8, 0x54544950u); /*0x724263*/
+          SetTimer(*(HWND *)&this->M8, 0x54544950u, this->q08A, 0); /*0x72427b*/
           goto LABEL_7; /*0x72427b*/
         }
         GetCursorPos((LPPOINT)((char *)&this->vtable26)); /*0x7242a2*/
-        ScreenToClient(*(HWND *)((char *)this + 8), (LPPOINT)((char *)&this->vtable26)); /*0x7242ad*/
+        ScreenToClient(*(HWND *)&this->M8, (LPPOINT)((char *)&this->vtable26)); /*0x7242ad*/
         v15 = 0; /*0x7242b9*/
         if ( this->alignmentPadding91 <= 0 ) /*0x7242c3*/
         {
@@ -29394,7 +29394,7 @@ LABEL_16:
         this->vtable2 = v8; /*0x72430e*/
         if ( (uint8_t)ToolTipClass::initString((ToolTipClass *)this) ) /*0x724311*/
 LABEL_31:
-          SetTimer(*(HWND *)((char *)this + 8), 0x54544950u, this->onBridge, 0); /*0x7243d5*/
+          SetTimer(*(HWND *)&this->M8, 0x54544950u, this->onBridge, 0); /*0x7243d5*/
         break; /*0x7243e7*/
       case 0x201: /*0x72422f*/
       case 0x202: /*0x72422f*/
@@ -29402,7 +29402,7 @@ LABEL_31:
       case 0x205: /*0x72422f*/
       case 0x207: /*0x72422f*/
       case 0x208: /*0x72422f*/
-        KillTimer(*(HWND *)((char *)this + 8), 0x54544950u); /*0x72423f*/
+        KillTimer(*(HWND *)&this->M8, 0x54544950u); /*0x72423f*/
 LABEL_7:
         if ( this->vtable2 ) /*0x724281*/
 LABEL_8:
@@ -32095,7 +32095,7 @@ char* Gap2Recv_765410::Team_Start_765410(INIClass * aP1) {
   unsigned int v12[22]; // [esp+A0h] [ebp-58h] BYREF
 
   result = aP1; /*0x765410*/
-  if ( *(char **)((char *)this + 68) != aP1 ) /*0x765420*/
+  if ( *(char **)&this->M68 != aP1 ) /*0x765420*/
   {
     this->q044 = aP1; /*0x76542d*/
     v5[1] = 0; /*0x765430*/
@@ -33214,22 +33214,22 @@ void Gap2Recv_76C6E0::SelectionInitializeWOL() {
     }
     while ( (*(uint8_t (**)(void *))(*(unsigned int *)v13.__pad_0 + 4))(&v13) ); /*0x76c87d*/
   }
-  v8 = *(void (****)(unsigned int, int))((char *)this + 1132); /*0x76c884*/
+  v8 = *(void (****)(unsigned int, int))&this->u32_46C; /*0x76c884*/
   if ( v8 ) /*0x76c88c*/
     (**v8)(v8, 1); /*0x76c892*/
-  v9 = *(void **)((char *)this + 1136); /*0x76c894*/
+  v9 = *(void **)&this->ptr_470; /*0x76c894*/
   if ( v9 ) /*0x76c89c*/
   {
-    DeleteAndZero(*(ObjectClass **)((char *)this + 1136)); /*0x76c8a0*/
+    DeleteAndZero(*(ObjectClass **)&this->ptr_470); /*0x76c8a0*/
     delete v9; /*0x76c8a6*/
   }
-  v10 = *(void **)((char *)this + 1140); /*0x76c8ae*/
+  v10 = *(void **)&this->ptr_474; /*0x76c8ae*/
   if ( v10 ) /*0x76c8b6*/
   {
-    DeleteAndZero(*(ObjectClass **)((char *)this + 1140)); /*0x76c8ba*/
+    DeleteAndZero(*(ObjectClass **)&this->ptr_474); /*0x76c8ba*/
     delete v10; /*0x76c8c0*/
   }
-  v11 = *(void (****)(unsigned int, int))((char *)this + 1156); /*0x76c8c8*/
+  v11 = *(void (****)(unsigned int, int))&this->q484; /*0x76c8c8*/
   if ( v11 ) /*0x76c8d0*/
     (**v11)(v11, 1); /*0x76c8d6*/
   Property::Set((Property *)g_FogOfWarState, this->u32_4AC); /*0x76c8e6*/

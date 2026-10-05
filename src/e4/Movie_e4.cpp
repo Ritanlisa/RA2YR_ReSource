@@ -78,7 +78,7 @@ AbstractClass * * Movie::SetupScreen(int aP1)
         if ( *(unsigned int *)(v8 + 4 * i) ) /*0x49cb77*/
           __3_YAXPAX_Z(*(void **)(v8 + 4 * i)); /*0x49cb7f*/
       }
-      __3_YAXPAX_Z(*(void **)((char *)this + 60)); /*0x49cb93*/
+      __3_YAXPAX_Z(*(void **)&this->q03C); /*0x49cb93*/
     }
     *((unsigned int *)this + 15) = 0; /*0x49cb9b*/
     *((unsigned int *)this + 16) = 0; /*0x49cb9e*/

@@ -193,7 +193,7 @@ int FactoryClass::DemandProduction(int a2, #375 *a3, char a4)
     return *((unsigned int *)this + 22) != 0; /*0x4c9dfc*/
   }
   else if ( *((unsigned int *)this + 20) >= dword_8871E0->BaseUnderAttackSound /*0x4c9cea*/
-         || HouseClass::ShouldDisableCameo(*(unsigned int **)((char *)this + 108), a2) )
+         || HouseClass::ShouldDisableCameo(*(unsigned int **)&this->owner, a2) )
   {
     if ( (uint8_t)House::IsHumanPlayer(a3) ) /*0x4c9d3f*/
       PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x4c9d5f*/
