@@ -50,9 +50,393 @@ AircraftClass::AircraftClass() noexcept
 
 // IDA: 0x417FE0 (Mission_Attack, 3445B)
 // 0x417fe0
+// G42.42m FULL implementation (live IDA truth 0x417FE0, til-typed): the
+// aircraft attack state machine (seed/approach/chase/fire/strafe/three
+// bombing passes/release/return + timeout default).
 int AircraftClass::Mission_Attack()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00417FE0.json)
+    int coords[3];
+    int myCoords[3];
+    unsigned char buf1[24];
+    unsigned char buf2[24];
+    int outInts[5];
+
+    unsigned int weaponCtl = *(unsigned int *)((char *)this + 0x6C0);
+    unsigned char elevByte1 = *(unsigned char *)((char *)dword_8871E0 + 0x17E0 + 1);
+    #define AC_VT(idx) (*(unsigned int **)this + (idx))
+
+    switch (missionStatus)
+    {
+    case 0:
+    {
+        int v4 = -(target != nullptr);
+        AircraftClass_field_bool_6D2 = false;
+        missionStatus = (char)(v4 & 0xF7) + 10;
+        return 1;
+    }
+    case 1:
+    {
+        bool v6 = AircraftClass_field_bool_6C8;
+        AircraftClass_field_bool_6D2 = false;
+        if (v6)
+        {
+            AircraftClass_field_bool_6C8 = false;
+            ammo = ammo - 1;
+        }
+        if (target != nullptr && ammo != 0)
+        {
+            void *spiral = FindSpiralMoveTarget((int)this, target);
+            (*(void (__thiscall **)(AircraftClass *, void *, int))AC_VT(288))(this, spiral, 1);
+            missionStatus = movementDestination != nullptr ? 3 : 10;
+        }
+        else
+        {
+            missionStatus = 10;
+        }
+        break;  // -> timeout
+    }
+    case 3:
+    {
+        if (AircraftClass_field_bool_6C8)
+        {
+            AircraftClass_field_bool_6C8 = false;
+            ammo = ammo - 1;
+        }
+        AircraftClass_field_bool_6D2 = false;
+        if (target == nullptr || ammo == 0)
+        {
+            missionStatus = 10;
+            return 1;
+        }
+        if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) != 0)
+        {
+            int v14 = SelectWeaponSlot(0);
+            if (ObjectClass_ComputeDistance((int)this, target) < *(int *)(v14 + 180))
+            {
+                missionStatus = 4;
+                return 1;
+            }
+            (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(288))(this, (int)target, 1);
+        }
+        else
+        {
+            if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 28))(weaponCtl) != 0)
+            {
+                missionStatus = 4;
+                return 1;
+            }
+            unsigned int loco = *(unsigned int *)&locomotor;
+            if (loco == 0)
+                WinAPI_Wrapper((int)0x80004003);
+            if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 128))(loco) == 0)
+            {
+                missionStatus = 4;
+                return 1;
+            }
+        }
+        if (movementDestination == nullptr)
+        {
+            missionStatus = 1;
+            return 1;
+        }
+        int v15 = ObjectClass_ComputeDistance((int)this, movementDestination);
+        if (v15 >= 512)
+        {
+            int *destC = (*(int *(__thiscall **)(void *, void *))(*(unsigned int **)(void *)movementDestination + 72))(movementDestination, buf1);
+            int *myC = (*(int *(__thiscall **)(AircraftClass *, void *, int, int, int, int))AC_VT(176))(this, buf2, 0, 0, 0, 0);
+            short v102;
+            if (myC[0] == destC[0] && myC[1] == destC[1])
+                v102 = 0;
+            else
+                v102 = (short)Math::RoundToInt(Math_CalcAngle((double)myC[1] - (double)destC[1],
+                                                              (double)destC[0] - (double)myC[0]) * 65536.0 / 360.0 - 8192.0);
+            FacingClass_Update((void *)&secondaryFacing, (void *)&v102);
+            (void)myCoords;
+            return 1;
+        }
+        int *v16 = ObjectClass_CalcTargetFacing((int)this, myCoords, target);
+        FacingClass_Update((void *)&secondaryFacing, v16);
+        if (v15 >= 16)
+            return 1;
+        missionStatus = 4;
+        (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(288))(this, 0, 1);
+        return 1;
+    }
+    case 4:
+    {
+        if (target == nullptr || ammo == 0)
+        {
+            missionStatus = 10;
+            return 1;
+        }
+        if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) == 0)
+        {
+            int *v21 = ObjectClass_CalcTargetFacing((int)this, myCoords, target);
+            FacingClass_Update((void *)&primaryFacing, v21);
+            int *v22 = ObjectClass_CalcTargetFacing((int)this, coords, target);
+            FacingClass_Update((void *)&secondaryFacing, v22);
+        }
+        int v24 = (*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(185))(this, (int)target, 1);
+        switch ((*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(240))(this, (int)target, v24))
+        {
+        case 0:
+        {
+            AircraftClass_field_bool_6C8 = true;
+            int shots = 0;
+            int v27 = (*(int (__thiscall **)(AircraftClass *, int))AC_VT(185))(this, (int)target);
+            for (;;)
+            {
+                int v29 = (*(int (__thiscall **)(AircraftClass *, int))AC_VT(185))(this, (int)target);
+                (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(243))(this, (int)target, v29);
+                ++shots;
+                int v31 = (*(int (__thiscall **)(AircraftClass *, int))AC_VT(185))(this, (int)target);
+                if (shots >= *(int *)(*(int *)SelectWeaponSlot(v27) + 156))
+                    break;
+            }
+            int loc[3];
+            loc[0] = *(int *)((char *)this + 0x9C);
+            loc[1] = *(int *)((char *)this + 0xA0);
+            loc[2] = *(int *)((char *)this + 0xA4);
+            int *v32 = (*(int *(__thiscall **)(void *, void *, int *))(*(unsigned int **)(void *)target + 72))(target, buf2, loc);
+            void *v33 = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)v32);
+            Cell_ApplyDamage(v33, 1, 0, 0, (int)outInts);
+            if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) != 0)
+            {
+                missionStatus = 6;
+                AircraftClass_field_bool_6D2 = true;
+                return *(int *)(SelectWeaponSlot(0) + 176);
+            }
+            if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 28))(weaponCtl) == 0)
+            {
+                missionStatus = 5;
+                return 1;
+            }
+            AircraftClass_field_bool_6D2 = true;
+            missionStatus = ammo > 0 ? 1 : 10;
+            return *(int *)(SelectWeaponSlot(0) + 176);
+        }
+        case 2:
+            if (ammo == 0)
+            {
+                missionStatus = 10;
+                return 1;
+            }
+            if ((*(unsigned char (__thiscall **)(AircraftClass *, int))AC_VT(235))(this, (int)target) == 0
+             || (*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) != 0)
+                missionStatus = 1;
+            else if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 28))(weaponCtl) != 0)
+                missionStatus = 4;
+            else
+                missionStatus = elevByte1 != 0 ? 1 : 4;
+            if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) == 0)
+                return 1;
+            return 45;
+        case 3:
+            return 1;
+        case 9:
+            (*(void (__thiscall **)(AircraftClass *, int))AC_VT(279))(this, 0);
+            return 1;
+        default:
+            if (ammo == 0)
+            {
+                missionStatus = 10;
+                return 1;
+            }
+            if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) != 0)
+                return 1;
+            missionStatus = 5;
+            return 1;
+        }
+    }
+    case 5:
+    {
+        if (target == nullptr)
+        {
+            missionStatus = 10;
+            return 1;
+        }
+        int *v39 = ObjectClass_CalcTargetFacing((int)this, myCoords, target);
+        FacingClass_Update((void *)&primaryFacing, v39);
+        int *v40 = ObjectClass_CalcTargetFacing((int)this, coords, target);
+        FacingClass_Update((void *)&secondaryFacing, v40);
+        int v42 = (*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(185))(this, (int)target, 1);
+        switch ((*(unsigned int (__thiscall **)(AircraftClass *, int, int))AC_VT(240))(this, (int)target, v42))
+        {
+        case 0u:
+        {
+            int v45 = (*(int (__thiscall **)(AircraftClass *, int))AC_VT(185))(this, (int)target);
+            (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(243))(this, (int)target, v45);
+            int loc[3];
+            loc[0] = *(int *)((char *)this + 0x9C);
+            loc[1] = *(int *)((char *)this + 0xA0);
+            loc[2] = *(int *)((char *)this + 0xA4);
+            int *v46 = (*(int *(__thiscall **)(void *))(*(unsigned int **)(void *)target + 72))(target);
+            void *v47 = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)v46);
+            Cell_ApplyDamage(v47, (int)outInts, (int)loc, 1, 0);
+            if (ammo == 0)
+            {
+                missionStatus = 10;
+                break;
+            }
+            missionStatus = elevByte1 != 0 ? 1 : 4;
+            break;
+        }
+        case 2u:
+            if (ammo == 0)
+            {
+                missionStatus = 10;
+                break;
+            }
+            if ((*(unsigned char (__thiscall **)(AircraftClass *, int))AC_VT(235))(this, (int)target) == 0
+             || (*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) != 0)
+                missionStatus = 1;
+            else
+            {
+                int v43 = -(elevByte1 != 0);
+                missionStatus = (char)(v43 & 0xFD) + 4;
+            }
+            if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) != 0)
+                return 45;
+            break;
+        case 3u:
+            break;
+        case 9u:
+            (*(void (__thiscall **)(AircraftClass *, int))AC_VT(279))(this, 0);
+            break;
+        default:
+            if (ammo == 0)
+            {
+                missionStatus = 10;
+                break;
+            }
+            if ((*(unsigned char (__thiscall **)(AircraftClass *, int))AC_VT(235))(this, (int)target) != 0)
+                missionStatus = elevByte1 != 0 ? 1 : 4;
+            else
+                missionStatus = 1;
+            break;
+        }
+        break;  // -> timeout
+    }
+    case 6:
+    case 7:
+    case 8:
+    {
+        // bombing passes 6->7->8: fire-error gate (0/2/9 pass, 8 requeue),
+        // single shot + ApplyDamage, advance to next pass.
+        if (target == nullptr)
+        {
+            missionStatus = 10;
+            return 1;
+        }
+        int v50 = (*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(185))(this, (int)target, 1);
+        int fireErr = (*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(240))(this, (int)target, v50);
+        if (fireErr != 0 && fireErr != 2 && fireErr != 9)
+        {
+            if (fireErr == 8)
+                (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(288))(this, (int)target, 1);
+            else
+            {
+                if (ammo == 0)
+                {
+                    missionStatus = 10;
+                    AircraftClass_field_bool_6D2 = false;
+                }
+                return 1;
+            }
+        }
+        int v96 = (*(int (__thiscall **)(AircraftClass *, int))AC_VT(185))(this, (int)target);
+        (*(void (__thiscall **)(AircraftClass *))AC_VT(243))(this);
+        int loc[3];
+        loc[0] = *(int *)((char *)this + 0x9C);
+        loc[1] = *(int *)((char *)this + 0xA0);
+        loc[2] = *(int *)((char *)this + 0xA4);
+        int *v53 = (*(int *(__thiscall **)(void *, void *, int *, int, unsigned int, unsigned int))(*(unsigned int **)(void *)target + 72))(target, buf1, loc, 1, 0, 0);
+        void *v54 = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)v53);
+        Cell_ApplyDamage(v54, (int)target, v96, (int)outInts, (int)buf2);
+        (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(288))(this, (int)target, 1);
+        missionStatus = missionStatus == 6 ? 7 : (missionStatus == 7 ? 8 : 9);
+        return *(int *)(SelectWeaponSlot(0) + 176);
+    }
+    case 9:
+    {
+        if (target == nullptr)
+        {
+            missionStatus = 10;
+            return 1;
+        }
+        int v72 = (*(int (__thiscall **)(AircraftClass *, int, int))AC_VT(185))(this, (int)target, 1);
+        int fireErr = (*(unsigned int (__thiscall **)(AircraftClass *, int, int))AC_VT(240))(this, (int)target, v72);
+        if (fireErr != 0 && fireErr != 2 && fireErr != 8 && fireErr != 9)
+        {
+            if (ammo == 0)
+            {
+                missionStatus = 10;
+                AircraftClass_field_bool_6D2 = false;
+            }
+            return 1;
+        }
+        int v94 = (*(int (__thiscall **)(AircraftClass *))AC_VT(185))(this);
+        (*(void (__thiscall **)(AircraftClass *))AC_VT(243))(this);
+        int loc[3];
+        loc[0] = *(int *)((char *)this + 0x9C);
+        loc[1] = *(int *)((char *)this + 0xA0);
+        loc[2] = *(int *)((char *)this + 0xA4);
+        int *v75 = (*(int *(__thiscall **)(void *, void *, int *, int, unsigned int, unsigned int))(*(unsigned int **)(void *)target + 72))(target, buf2, loc, 1, 0, 0);
+        void *v76 = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)v75);
+        Cell_ApplyDamage(v76, (int)target, v94, (int)target, (int)outInts);
+        missionStatus = 3;
+        return (*(int *)(SelectWeaponSlot(0) + 180) + 1024) / *(int *)((char *)Type + 0x678);
+    }
+    case 10:
+    {
+        bool v78 = AircraftClass_field_bool_6C8;
+        AircraftClass_field_bool_6D2 = false;
+        if (v78)
+        {
+            AircraftClass_field_bool_6C8 = false;
+            if (ammo > 0)
+                ammo = ammo - 1;
+        }
+        if (ammo != 0)
+        {
+            if (target != nullptr)
+            {
+                missionStatus = 1;
+                return 1;
+            }
+        }
+        else if (isALoaner || owner->IsCurrentPlayer())
+        {
+            (*(void (__thiscall **)(AircraftClass *, int))AC_VT(242))(this, 0);
+        }
+        AircraftClass_field_bool_6D2 = false;
+        int transitionCount = *(int *)((char *)owner + 0x1E0);
+        if (transitionCount < 0 || transitionCount > 3)
+            transitionCount = owner->GetTransitionCount();
+        __int16 openCell[2];
+        ((CellClass *)&dword_87F7E8)->FindOpenNeighbor(
+            (void *)openCell, transitionCount,
+            (int)&g_AircraftStatusFlag, (int)&g_AircraftStatusFlag,
+            4, 1, 0);
+        void *v84 = CellCoord::To_CellObj((void *)&dword_87F7E8, (void *)openCell);
+        (*(void (__thiscall **)(AircraftClass *, void *, int))AC_VT(288))(this, v84, 1);
+        AircraftClass_field_bool_6D5 = false;
+        if (airstrike != nullptr && ammo > 0)
+        {
+            (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(122))(this, 4, 0);
+            AircraftClass_field_bool_6D5 = true;
+            return 1;
+        }
+        (*(void (__thiscall **)(AircraftClass *, int, int))AC_VT(289))(this, 0, 1);
+        AircraftClass_field_bool_6D5 = true;
+        return 1;
+    }
+    default:
+        break;
+    }
+    void *mc = GetMissionControl();
+    return (int)Math::RoundToInt(*((double *)mc + 2) * 900.0)
+         + Random::Range((void *)((char *)&dword_A8B230 + 0x218), 0, 2);
 }
 
 

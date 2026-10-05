@@ -5568,4 +5568,10 @@ extern void * CCINIClass_GetDB(void * aP1);  // 0x473450 G42.42l supply
 extern int Object_IsAlliedWithObjectHouse(void * aP1, int aP2);  // 0x4F9A90 G42.42l supply
 extern int AbstractClass_IsTechnoType(void * aP1);  // G42.42l supply
 extern void Timer_StartDouble(void * aP1, double aP2);  // 0x4A5240 G42.42l supply
+extern void * FindSpiralMoveTarget(int aP1, void * aP2);  // 0x4197C0 G42.42m supply
+extern int ObjectClass_ComputeDistance(int aP1, void * aP2);  // 0x5F6440 G42.42m supply
+extern double Math_CalcAngle(double aP1, double aP2);  // 0x4CAE30 G42.42m supply
+extern int * ObjectClass_CalcTargetFacing(int aP1, void * aP2, void * aP3);  // 0x5F3DB0 G42.42m supply
+extern void Cell_ApplyDamage(void * aP1, int aP2, int aP3, int aP4, int aP5);  // 0x481670 G42.42m supply
+extern void FacingClass_Update(void * aP1, void * aP2);  // 0x4C9220 G42.42m supply
 } // namespace gamemd
