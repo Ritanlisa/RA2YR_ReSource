@@ -36,6 +36,11 @@
 #include "e4/classes/E4Recv_7BE4A0_e4.hpp"
 #include "e4/classes/Surface_e4.hpp"
 #include "e4/classes/AllocCallback_e4.hpp"
+extern double dbl_7F98B4;  // data: 0x7F98B4
+extern double dbl_7F98BC;  // data: 0x7F98BC
+extern double dbl_7F98C4;  // data: 0x7F98C4
+extern double dbl_7F98CC;  // data: 0x7F98CC
+extern double dbl_7F98D4;  // data: 0x7F98D4
 // G42.33 b3 TU-local fwd decls / supplies (use-before-def in this TU)
 // G42.33 b7: Exception minimal carrier (fwd-only elsewhere)
 // G42.33 b7: Exception minimal carrier (fwd-only elsewhere)
@@ -8827,7 +8832,68 @@ double __twoToTOS(double a1)  // G42.33 b23: truth long double@st0 (b20 void* wr
 namespace gamemd {
 void* __check_range_exit()
 {
-// (no pseudocode — ASM-only function)
+    /* disasm-true body 0x7CF479-0x7CF51A (CRT FPU range-check trampoline).
+       fst stores ST0's double bits to a scratch slot; the hi-dword exponent
+       mask 0x7FF00000 drives three paths (underflow / overflow / in-range),
+       in-range re-arms the caller's FPU control word and returns. */
+    unsigned long long bits;
+    unsigned int hi;
+    unsigned short cw;
+    __asm { fst qword ptr bits }                       /*0x7cf47c*/
+    hi = (unsigned int)(bits >> 32);                   /*0x7cf47f*/
+    if ((hi & 0x7FF00000u) == 0)                       /*0x7cf486*/
+    {
+        /* haveunderflow: ST0 < 2^-1022 -- scale up then error(3) */
+        __asm { fld  qword ptr dbl_7F98C4 }            /*0x7cf4f3*/
+        __asm { fxch st(1) }
+        __asm { fscale }
+        __asm { fstp st(1) }
+        __asm { fld st }
+        __asm { fabs }
+        __asm { fcomp qword ptr dbl_7F98B4 }
+        __asm { fstsw ax }
+        __asm { sahf }
+        if (0)                                         /*jbe have_error*/
+            goto have_error_3;
+        __asm { fmul qword ptr dbl_7F98D4 }
+        goto have_error_3;
+    }
+    if ((hi & 0x7FF00000u) == 0x7FF00000u)             /*0x7cf48d*/
+    {
+        /* haveoverflow: exponent all ones -- error(4) */
+        __asm { fld  qword ptr dbl_7F98CC }            /*0x7cf4ca*/
+        __asm { fxch st(1) }
+        __asm { fscale }
+        __asm { fstp st(1) }
+        __asm { fld st }
+        __asm { fabs }
+        __asm { fcomp qword ptr dbl_7F98BC }
+        __asm { fstsw ax }
+        __asm { sahf }
+        goto have_error_4;                             /*jnb have_error*/
+    }
+    /* in-range: restore caller control word, watch denormal/precision */
+    cw = *(unsigned short *)&bits;                     /*0x7cf494 mov ax,[esp]*/
+    if (cw == 0x27F)                                   /*0x7cf498*/
+        return 0;                                      /*0x7cf4c8 retn*/
+    if (cw & 0x20)                                     /*0x7cf49e*/
+        goto rearm;                                    /*0x7cf4c5*/
+    __asm { fstsw ax }                                 /*0x7cf4a4*/
+    if (!(cw & 0x20))                                  /*jz rearm*/
+        goto rearm;
+    /* denormal exception pending: two-arg CRT error entry */
+    __startTwoArgErrorHandling();                      /*0x7cf4be*/
+    return 0;
+rearm:
+    *(unsigned short *)&bits = cw;
+    __asm { fldcw word ptr bits }                      /*0x7cf4c5*/
+    return 0;
+have_error_3:
+    __startTwoArgErrorHandling();
+    return 0;
+have_error_4:
+    __startTwoArgErrorHandling();
+    return 0;
 } // namespace gamemd
 }
 

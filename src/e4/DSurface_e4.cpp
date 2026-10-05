@@ -3921,11 +3921,32 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a2, unsigned int * a3, 
 }  // G42.18c ns repair
 // 0x4C1AC0
 namespace gamemd {  // G42.18c ns repair
-void * DSurface::loc_4C1AC0(std::codecvt_base *a1) 
+void * DSurface::loc_4C1AC0(unsigned char a1)
 {
-
-  return 1; /*0x4c1ab2*/
-
+    /* disasm-true body 0x4C1AC0-0x4C1B42 (dtor free_self, retn 4) */
+    unsigned char keepClipper = this->q018;                    /*0x4c1ac3*/
+    *(void **)this = (void *)&DSurface_Vtable;                 /*0x4c1ac6*/
+    if ( keepClipper && this->u32_1C && g_DDraw_Clipper )      /*0x4c1acc*/
+    {
+        g_DDraw_Clipper->lpVtbl->SetHWnd(                      /*0x4c1ae6*/
+            (struct IDirectDrawClipper *)g_DDraw_Clipper, 0,
+            (struct HWND *)this->u32_1C);
+        g_DDraw_Clipper->lpVtbl->Release(g_DDraw_Clipper);     /*0x4c1af1*/
+        g_DDraw_Clipper = 0;                                   /*0x4c1af4*/
+    }
+    RA2_OPDEL((void *)this->q020);                             /*0x4c1b02*/
+    if ( this->u32_1C )                                        /*0x4c1b07*/
+    {
+        /* COM Release on the surface holder at +0x1C */
+        IDirectDrawSurface7 *s = (IDirectDrawSurface7 *)this->u32_1C;
+        s->lpVtbl->Release(s);                                 /*0x4c1b1b*/
+    }
+    this->q020 = 0;                                            /*0x4c1b0f*/
+    this->u32_1C = 0;                                          /*0x4c1b22*/
+    *(void **)this = (void *)&Surface_Vtable;                  /*0x4c1b2b*/
+    if ( a1 & 1 )                                              /*0x4c1b29*/
+        RA2_OPDEL(this);                                       /*0x4c1b34*/
+    return this;                                               /*0x4c1b3c*/
 }
 }  // G42.18c ns repair
 
