@@ -362,7 +362,7 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
         goto LABEL_5; /*0x6ac613*/
     }
   }
-  result = (unsigned int)((unsigned int *)(*(int (**)(void))(*(unsigned int *)a2 + 44))()); /*0x6ac677*/
+  result = (unsigned int)((unsigned int *)(*(int (**)(void))(*(unsigned int *)&a2->q_B0)()); /*0x6ac677*/
   if ( result == (unsigned int)((unsigned int *))15 || result == (unsigned int *)16 ) /*0x6ac682*/
   {
     v7 = 2; /*0x6ac6d4*/
@@ -465,7 +465,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
       {
         if ( v15 ) /*0x6e0c39*/
         {
-          if ( (*(int (**)(unsigned int))(*(unsigned int *)v15 + 44))(*(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14)) == 6 ) /*0x6e0c45*/
+          if ( (*(int (**)(unsigned int))(*(unsigned int *)&v15->q_B0)(*(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v14)) == 6 ) /*0x6e0c45*/
           {
             v16 = *(unsigned int *)(v15 + 1312); /*0x6e0c47*/
             if ( v16 ) /*0x6e0c4f*/

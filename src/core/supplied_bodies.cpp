@@ -1090,7 +1090,7 @@ int Text::Layout(uint16_t *a2, int *a3, unsigned int *a4, int a5) {
 // 0x434990
 namespace gamemd {
 int BufferIO::Cleanup(int a2) {
-    (*(void (__thiscall **)(int))(*(unsigned int *)a2 + 96))(a2); /*0x434999*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)&a2->q_180)(a2); /*0x434999*/
     *((unsigned int *)this + 3) = 0; /*0x43499e*/
     *((unsigned int *)this + 4) = 0; /*0x4349a1*/
     return 0; /*0x4349a4*/
@@ -2860,7 +2860,7 @@ int GraphicMenuImageItem::Load(char a2) {
     }
     v7 = *((unsigned int *)this + 11); /*0x4f36da*/
     if ( v7 ) /*0x4f36df*/
-      (*(void (__thiscall **)(int, bool))(*(unsigned int *)v7 + 4))(v7, IDA_BYTE1(this->GraphicMenuImageItem_field_0x08) == 0); /*0x4f36ec*/
+      (*(void (__thiscall **)(int, bool))(*(unsigned int *)&v7->q_10)(v7, IDA_BYTE1(this->GraphicMenuImageItem_field_0x08) == 0); /*0x4f36ec*/
     Team_ReleaseAll((void *)this->GraphicMenuImageItem_field_0x10, (int)(this + 1)); /*0x4f36f6 G42.34 C5 自由形*/
     result = DSurface_Flip2(); /*0x4f36fe G42.34 C5 自由形*/
     if ( a2 ) /*0x4f3705*/
@@ -2895,7 +2895,7 @@ int GraphicMenuImageItem::Draw(char a2) {
     }
     v7 = *((unsigned int *)this + 11); /*0x4f376a*/
     if ( v7 ) /*0x4f376f*/
-      (*(void (__thiscall **)(int, bool))(*(unsigned int *)v7 + 4))(v7, a2 == 0); /*0x4f3779*/
+      (*(void (__thiscall **)(int, bool))(*(unsigned int *)&v7->q_10)(v7, a2 == 0); /*0x4f3779*/
     Team_ReleaseAll((void *)this->GraphicMenuImageItem_field_0x10, (int)(this + 1)); /*0x4f3783 G42.35 C6 自由形*/
     return DSurface_Flip2(); /*0x4f3790 G42.35 C6 自由形*/
 }

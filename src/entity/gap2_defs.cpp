@@ -211,7 +211,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         if ( *(unsigned int *)(*(unsigned int *)(v8 + 172) + 732) == 1 ) /*0x4160c9*/
         {
           v24 = (unsigned int *)(*(int (__thiscall **)(Class_7E22A4 *, unsigned char *))(*(unsigned int *)this + 72))(this, v67); /*0x4160dd*/
-          v25 = (unsigned int *)(*(int (__thiscall **)(int, double *))(*(unsigned int *)v6 + 72))(v6, &v70); /*0x4160e6*/
+          v25 = (unsigned int *)(*(int (__thiscall **)(int, double *))(*(unsigned int *)&v6->turretChargeTimer)(v6, &v70); /*0x4160e6*/
           v26 = Coord::Subtract((Coord *)&v71[1], *v25 - *v24, v25[1] - v24[1], v25[2] - v24[2]); /*0x416106*/
           IDA_LODWORD(v68) = *v26; /*0x41610d*/
           v27 = v26[1]; /*0x416111*/
@@ -1521,14 +1521,14 @@ int BulletClass::Fire(int a1) {
     v8 = location[2]; /*0x468da5*/
     v28 = v7; /*0x468da8*/
     v29 = v8; /*0x468dac*/
-    if ( v6 && (*(unsigned __int8 (__thiscall **)(int))(*(unsigned int *)v6 + 84))(v6) ) /*0x468db4*/
+    if ( v6 && (*(unsigned __int8 (__thiscall **)(int))(*(unsigned int *)&v6->q_150)(v6) ) /*0x468db4*/
       v4 = *((unsigned int *)this + 67); /*0x468dbb*/
     if ( !*(unsigned char *)(*((unsigned int *)this + 43) + 674) ) /*0x468dc7*/
     {
       v9 = *((unsigned int *)this + 67); /*0x468dd5*/
       if ( v9 ) /*0x468ddd*/
       {
-        v10 = (unsigned int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)v9 + 72))(v9, v33); /*0x468dea*/
+        v10 = (unsigned int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)&v9->q_120)(v9, v33); /*0x468dea*/
         v11 = Coord::Subtract((Coord *)v34, v27 - *v10, v28 - v10[1], v29 - v10[2]); /*0x468e0e*/
         v30 = *v11; /*0x468e18*/
         v31 = v11[1]; /*0x468e1f*/
@@ -1565,11 +1565,11 @@ int BulletClass::Fire(int a1) {
             v28 = v16; /*0x468f1b*/
             v29 = v17; /*0x468f1f*/
           }
-          if ( v4 && (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 120))(v4) != 2 ) /*0x468f31*/
+          if ( v4 && (*(int (__thiscall **)(int))(*(unsigned int *)&v4->q_1E0)(v4) != 2 ) /*0x468f31*/
           {
             if ( ObjectClass::DistanceTo(this, *((unsigned int *)this + 67)) >= 128 ) /*0x468f46*/
               goto LABEL_30; /*0x468f46*/
-            v18 = (int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)v4 + 164))(v4, v34); /*0x468f55*/
+            v18 = (int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)&v4->__pad_290)(v4, v34); /*0x468f55*/
             goto LABEL_29; /*0x468f5b*/
           }
           if ( *((unsigned int *)this + 67) ) /*0x468f60*/
@@ -1584,7 +1584,7 @@ int BulletClass::Fire(int a1) {
               v20 = *((unsigned int *)this + 67); /*0x468f91*/
               v28 = v19[1]; /*0x468f9a*/
               v29 = v19[2]; /*0x468fa1*/
-              if ( (*(int (__thiscall **)(int))(*(unsigned int *)v20 + 44))(v20) == 6 ) /*0x468fad*/
+              if ( (*(int (__thiscall **)(int))(*(unsigned int *)&v20->u32_B0)(v20) == 6 ) /*0x468fad*/
               {
                 v21 = (unsigned int *)*((unsigned int *)this + 67); /*0x468faf*/
                 if ( *(unsigned int *)(v21[328] + 3772) || *(unsigned int *)(v21[328] + 3776) || *(unsigned int *)(v21[328] + 3780) ) /*0x468fcc*/
@@ -6308,7 +6308,7 @@ int ParticleSystemClass::Constructor(int a2, int *a3, int a4, void *a5, unsigned
       v16 = *(this + 39); /*0x62de7f*/
       v17 = *(this + 40); /*0x62de81*/
       v18 = *(this + 41); /*0x62de84*/
-      v19 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v15 + 72))(v15, v24); /*0x62de8c*/
+      v19 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)&v15->q_120)(v15, v24); /*0x62de8c*/
       v20 = v19[2]; /*0x62de96*/
       v21 = v17 - v19[1]; /*0x62de99*/
       *(this + 44) = v16 - *v19; /*0x62de9d*/

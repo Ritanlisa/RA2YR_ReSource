@@ -2346,7 +2346,7 @@ int SuperWeapon::CreateNukePayload() {
   unsigned long long v30[3]; // [esp+58h] [ebp-18h] BYREF
 
   v7 = this->q10C; /*0x46b323*/
-  v8 = (unsigned int *)(*(int (**)(int, double *))(*(unsigned int *)v7 + 72))(v7, v29); /*0x46b32e*/
+  v8 = (unsigned int *)(*(int (**)(int, double *))(*(unsigned int *)&v7->q_120)(v7, v29); /*0x46b32e*/
   IDA_LOWORD(ppv) = *v8 / 256; /*0x46b341*/
   IDA_HIWORD(ppv) = v8[1] / 256; /*0x46b35a*/
   *(unsigned int *)ppv = ppv; /*0x46b367*/
@@ -2433,7 +2433,7 @@ int SuperWeapon::CreateNukePayload() {
   unsigned long long v30[3]; // [esp+58h] [ebp-18h] BYREF
 
   v7 = this->q10C; /*0x46b323*/
-  v8 = (unsigned int *)(*(int (**)(int, double *))(*(unsigned int *)v7 + 72))(v7, v29); /*0x46b32e*/
+  v8 = (unsigned int *)(*(int (**)(int, double *))(*(unsigned int *)&v7->q_120)(v7, v29); /*0x46b32e*/
   IDA_LOWORD(ppv) = *v8 / 256; /*0x46b341*/
   IDA_HIWORD(ppv) = v8[1] / 256; /*0x46b35a*/
   *(unsigned int *)ppv = ppv; /*0x46b367*/
@@ -2514,7 +2514,7 @@ int SuperWeapon::CreateNukePayload() {
   unsigned long long v30[3]; // [esp+58h] [ebp-18h] BYREF
 
   v7 = this->q10C; /*0x46b323*/
-  v8 = (unsigned int *)(*(int (**)(int, double *))(*(unsigned int *)v7 + 72))(v7, v29); /*0x46b32e*/
+  v8 = (unsigned int *)(*(int (**)(int, double *))(*(unsigned int *)&v7->q_120)(v7, v29); /*0x46b32e*/
   IDA_LOWORD(ppv) = *v8 / 256; /*0x46b341*/
   IDA_HIWORD(ppv) = v8[1] / 256; /*0x46b35a*/
   *(unsigned int *)ppv = ppv; /*0x46b367*/
@@ -3700,7 +3700,7 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
           this->vtable0 = 1; /*0x517fef*/
       }
     }
-    if ( a4 && *(unsigned int *)(a4 + 288) == 9 && (*(int (__thiscall **)(int))(*(unsigned int *)v11 + 456))(v11) > 0 ) /*0x51800e*/
+    if ( a4 && *(unsigned int *)(a4 + 288) == 9 && (*(int (__thiscall **)(int))(*(unsigned int *)&v11->q_720)(v11) > 0 ) /*0x51800e*/
       this->vtable0 = 0; /*0x518010*/
     result = FootClass::ProcessDeploy( /*0x518042*/
                (FootClass *)v11,
@@ -3738,12 +3738,12 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
             v19 = 0; /*0x5180c9*/
           (*(void (__thiscall **)(int, int))(*(unsigned int *)v19 + 1240))(v19, v11); /*0x5180e2*/
         }
-        (*(void (__thiscall **)(int, int))(*(unsigned int *)v11 + 952))(v11, a5); /*0x5180f4*/
-        (*(void (__thiscall **)(int))(*(unsigned int *)v11 + 1280))(v11); /*0x5180fe*/
-        (*(void (__thiscall **)(int))(*(unsigned int *)v11 + 928))(v11); /*0x518108*/
-        (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)v11 + 488))(v11, -1, 0); /*0x518116*/
-        (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)v11 + 488))(v11, 5, 0); /*0x518124*/
-        (*(void (__thiscall **)(int))(*(unsigned int *)v11 + 492))(v11); /*0x51812e*/
+        (*(void (__thiscall **)(int, int))(*(unsigned int *)&v11->q_EE0)(v11, a5); /*0x5180f4*/
+        (*(void (__thiscall **)(int))(*(unsigned int *)&v11->q_1400)(v11); /*0x5180fe*/
+        (*(void (__thiscall **)(int))(*(unsigned int *)&v11->q_E80)(v11); /*0x518108*/
+        (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)&v11->q7A0)(v11, -1, 0); /*0x518116*/
+        (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)&v11->q7A0)(v11, 5, 0); /*0x518124*/
+        (*(void (__thiscall **)(int))(*(unsigned int *)&v11->q_7B0)(v11); /*0x51812e*/
         TechnoClass::CleanupAll((TechnoClass *)v11, a5); /*0x518137*/
         v76 = 0; /*0x51813e*/
         if ( (unsigned char)a6 ) /*0x518143*/
@@ -3764,7 +3764,7 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
             }
           }
         }
-        if ( (*(int (__thiscall **)(int))(*(unsigned int *)v11 + 456))(v11) <= 10 ) /*0x5181c2*/
+        if ( (*(int (__thiscall **)(int))(*(unsigned int *)&v11->q_720)(v11) <= 10 ) /*0x5181c2*/
         {
           v21 = (int *)(v11 + 156); /*0x5181c8*/
           v78 = *(unsigned int *)(v11 + 156); /*0x5181d2*/
@@ -4229,7 +4229,7 @@ void* InfantryClass::checkBridgeClearance(int a2) {
   {
     this->FootClass = (void *)a2; /*0x523380*/
     if ( a2 ) /*0x523382*/
-      (*(void (**)(int))(*(unsigned int *)a2 + 4))(a2); /*0x523387*/
+      (*(void (**)(int))(*(unsigned int *)&a2->q_10)(a2); /*0x523387*/
     if ( vtable0 ) /*0x52338c*/
       (*(void (**)(void *))(*(unsigned int *)vtable0 + 8))(vtable0); /*0x523391*/
   }

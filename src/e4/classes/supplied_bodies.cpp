@@ -1087,7 +1087,7 @@ int ScriptAction::DrawPlacementMarker()
     v4 = Viewport[3]; /*0x63ce6b*/
     v5 = this->ScriptAction_field_0x4[0]; /*0x63ce6e*/
     v12[3] = v4; /*0x63ce71*/
-    ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(unsigned char **)(*(unsigned int *)v5 + 4)); /*0x63ce7e*/
+    ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(unsigned char **)(*(unsigned int *)&v5->q_10); /*0x63ce7e*/
     v9[0] = *ScenarioClassActionCoords; /*0x63ce85*/
     v9[1] = ScenarioClassActionCoords[1]; /*0x63ce8c*/
     v9[2] = ScenarioClassActionCoords[2]; /*0x63cea3*/

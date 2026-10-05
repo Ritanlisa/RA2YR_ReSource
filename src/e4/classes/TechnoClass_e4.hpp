@@ -597,6 +597,9 @@ struct TechnoClass {
     unsigned int q_750;  // +0x750 flat supply (three-ban reform)
     unsigned int q_A20;  // +0xA20 flat supply (three-ban reform)
     unsigned int q_FE0;  // +0xFE0 flat supply (three-ban reform)
+    unsigned int q_120;  // +0x120 flat supply (CSP-fed)
+    unsigned int q_130;  // +0x130 flat supply (CSP-fed)
+    unsigned int q_F20;  // +0xF20 flat supply (CSP-fed)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

@@ -343,7 +343,7 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
   v3 = -1; /*0x4b6a0b*/
 LABEL_11:
   *(&((unsigned int *)this)[0] + ((unsigned int *)this)[0]++) = a2; /*0x4b6a55*/
-  this->owningHouseIndex += (*(int (**)(int))(*(unsigned int *)a2 + 172))(a2); /*0x4b6a74*/
+  this->owningHouseIndex += (*(int (**)(int))(*(unsigned int *)&a2->q_2B0)(a2); /*0x4b6a74*/
   if ( v3 != -1 ) /*0x4b6a77*/
     ++*((unsigned int *)((unsigned int *)(dword_A8B230))[377].vtable3 + v3); /*0x4b6a8b*/
   return 1; /*0x4b6a8d*/

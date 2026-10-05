@@ -397,7 +397,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       ((unsigned int *)v2)[0] = &vt_SpawnManagerClass; /*0x6b7f6c*/
       ((unsigned int *)v2)[0] = &vt_SpawnManagerClass; /*0x6b7f73*/
     }
-    Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &v16, 4, 0); /*0x6b7f88*/
+    Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&v3->u32_30)(v3, &v16, 4, 0); /*0x6b7f88*/
     if ( Prefix_0 >= 0 ) /*0x6b7f8c*/
     {
       spawns = v2->spawns; /*0x6b7f92*/

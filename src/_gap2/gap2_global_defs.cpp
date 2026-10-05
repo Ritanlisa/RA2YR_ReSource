@@ -764,7 +764,7 @@ void* Gap2Recv_4197C0::FindSpiralMoveTarget(ObjectClass * aP1) {
   if ( (*(int (**)(char *))(*((unsigned int *)this + 432) + 24))((char *)this + 1728) ) /*0x4197ea*/
     return (void *)aP1; /*0x4197f9*/
   v5 = (*(int (**)(TechnoClass *, unsigned int))(this->vtable0 + 360))(this, 0); /*0x41980c*/
-  v6 = (*(int (**)(int, int *))(*(unsigned int *)aP1 + 72))(aP1, &v40); /*0x419813*/
+  v6 = (*(int (**)(int, int *))(*(unsigned int *)&aP1->q_120)(aP1, &v40); /*0x419813*/
   v38 = *(double *)v6; /*0x419818*/
   v7 = *(unsigned int *)(v6 + 8); /*0x419829*/
   *(unsigned int *)v26 = g_AircraftStatusFlag; /*0x419831*/
@@ -2271,7 +2271,7 @@ void Gap2Recv_4500F0::ProcessAutoProduction()
       BuildingClass::AbandonProduction(*((unsigned int *)this + 329)); /*0x45022c*/
       v13 = *((unsigned int *)this + 329); /*0x450231*/
       if ( v13 ) /*0x450239*/
-        (*(void (__thiscall **)(int, int))(*(unsigned int *)v13 + 32))(v13, 1); /*0x45023f*/
+        (*(void (__thiscall **)(int, int))(*(unsigned int *)&v13->q_80)(v13, 1); /*0x45023f*/
       goto LABEL_18; /*0x45023f*/
     }
     v7 = v6 - 1; /*0x450163*/
@@ -2288,7 +2288,7 @@ void Gap2Recv_4500F0::ProcessAutoProduction()
         ProductionQueue::CompleteOrCancel(*((ProductionQueue **)this + 329)); /*0x4501af*/
         v9 = *((unsigned int *)this + 329); /*0x4501b4*/
         if ( v9 ) /*0x4501bc*/
-          (*(void (__thiscall **)(int, int))(*(unsigned int *)v9 + 32))(v9, 1); /*0x4501c6*/
+          (*(void (__thiscall **)(int, int))(*(unsigned int *)&v9->q_80)(v9, 1); /*0x4501c6*/
   LABEL_18:
         *((unsigned int *)this + 329) = 0; /*0x450242*/
       }
@@ -4576,7 +4576,7 @@ char Gap2Recv_4DC340::DrawFootTargetLine()
       v7 = *(unsigned int *)(*((unsigned int *)this + 355) + 4 * v6 - 4); /*0x4dc406*/
     else
       v7 = *((unsigned int *)this + 361); /*0x4dc3f2*/
-    v8 = (int *)(*(int (__stdcall **)(__int16 *))(*(unsigned int *)v7 + 72))(v19); /*0x4dc411*/
+    v8 = (int *)(*(int (__stdcall **)(__int16 *))(*(unsigned int *)&v7->q_120)(v19); /*0x4dc411*/
     v21 = *v8; /*0x4dc418*/
     v22 = v8[1]; /*0x4dc41f*/
     v23 = v8[2]; /*0x4dc426*/
@@ -5913,7 +5913,7 @@ char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
   v2 = *((unsigned int *)this + 361); /*0x52030d*/
   if ( !v2 ) /*0x520315*/
     return 0; /*0x520315*/
-  if ( (*(int (**)(int))(*(unsigned int *)v2 + 44))(v2) != 1 ) /*0x520323*/
+  if ( (*(int (**)(int))(*(unsigned int *)&v2->suspendedMission)(v2) != 1 ) /*0x520323*/
     return 0; /*0x520323*/
   v3 = (ObjectClass *)*((unsigned int *)this + 361); /*0x520329*/
   if ( (uint8_t)Object::IsAlliedWithObjectHouse((Object *)this->owner, (int)v3) ) /*0x520336*/
@@ -6805,7 +6805,7 @@ int Gap2Recv_5430C0::StartGameWOL_Start(int a2) {
 
   v2 = this->ambientSoundController[3]; /*0x5430c0*/
   if ( v2 ) /*0x5430c5*/
-    return (*(int (**)(int, int))(*(unsigned int *)v2 + 68))(v2, a2); /*0x5430ce*/
+    return (*(int (**)(int, int))(*(unsigned int *)&v2->q110)(v2, a2); /*0x5430ce*/
   return result; /*0x5430d1*/
 
 }
@@ -8714,7 +8714,7 @@ void* Gap2Recv_580BC0::FindMapSpawnCell(FootClass * aP1) {
   unsigned int v60[2]; // [esp+84h] [ebp-6Ch] BYREF
   unsigned short v61[50]; // [esp+8Ch] [ebp-64h] BYREF
 
-  v3 = (int *)(*(int (**)(int, int *))(*(unsigned int *)aP1 + 72))(aP1, &v51); /*0x580bd8*/
+  v3 = (int *)(*(int (**)(int, int *))(*(unsigned int *)&aP1->q_120)(aP1, &v51); /*0x580bd8*/
   v38 = 32; /*0x580bdd*/
   v4 = *v3; /*0x580bf0*/
   v5 = v3[1]; /*0x580bf2*/
@@ -13936,7 +13936,7 @@ void* Gap2Recv_5CE4A0::UI_Load(char* a2, int a3, char a4) {
         *((unsigned int *)this + 13) = v8[2]; /*0x5ce59e*/
         v9 = *((unsigned int *)this + 7); /*0x5ce5a4*/
         *((unsigned int *)this + 14) = v8[3]; /*0x5ce5a7*/
-        v10 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v9 + 120))(v9, v22); /*0x5ce5b4*/
+        v10 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)&v9->__pad_1E0)(v9, v22); /*0x5ce5b4*/
         v11 = *((unsigned int *)this + 14); /*0x5ce5b9*/
         v18[0] = *v10; /*0x5ce5be*/
         v12 = *((unsigned int *)this + 13); /*0x5ce5c2*/
@@ -16760,7 +16760,7 @@ char Gap2Recv_62F9A0::UpdateBuildingDamageParticles() {
       v20 = v52; /*0x62fb7b*/
       *((unsigned int *)this + 54) = v18; /*0x62fb7f*/
       *((unsigned int *)this + 55) = v20; /*0x62fb84*/
-      v21 = (*(int (**)(unsigned char *, int *, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v7 + 176))( /*0x62fb9b*/
+      v21 = (*(int (**)(unsigned char *, int *, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)&v7->q_2C0)( /*0x62fb9b*/
               v7,
               &v50,
               0,
@@ -19620,10 +19620,10 @@ LABEL_17:
         goto LABEL_35; /*0x65def5*/
       if ( v26 ) /*0x65df05*/
       {
-        if ( (*(int (**)(int))(*(unsigned int *)v17 + 44))(v17) != 2 ) /*0x65df15*/
+        if ( (*(int (**)(int))(*(unsigned int *)&v17->suspendedMission)(v17) != 2 ) /*0x65df15*/
           goto LABEL_35; /*0x65df15*/
       }
-      else if ( (*(int (**)(int))(*(unsigned int *)v17 + 44))(v17) != 1 ) /*0x65dfbc*/
+      else if ( (*(int (**)(int))(*(unsigned int *)&v17->suspendedMission)(v17) != 1 ) /*0x65dfbc*/
       {
         goto LABEL_35; /*0x65dfbc*/
       }
@@ -25277,7 +25277,7 @@ int Gap2Recv_6C9F10::ParseMovieSubtitles(char* Source) {
           this->vtable2 = 0; /*0x6ca01a*/
           do /*0x6ca050*/
           {
-            if ( (*(int (**)(int, int16_t *, int))(*(unsigned int *)v9 + 8))(v9, &v23, 2) != 2 || v23 == 10 ) /*0x6ca03b*/
+            if ( (*(int (**)(int, int16_t *, int))(*(unsigned int *)&v9->q_20)(v9, &v23, 2) != 2 || v23 == 10 ) /*0x6ca03b*/
               break; /*0x6ca03b*/
             if ( v23 != 13 ) /*0x6ca041*/
             {
@@ -27105,9 +27105,9 @@ LABEL_17:
             }
             else if ( !*(unsigned int *)(v13 + 1444) ) /*0x6ed399*/
             {
-              (*(void (**)(int, int, unsigned int))(*(unsigned int *)v13 + 488))(v13, 2, 0); /*0x6ed3ab*/
-              (*(void (**)(int, unsigned int))(*(unsigned int *)v13 + 968))(v13, 0); /*0x6ed3b7*/
-              (*(void (**)(int, unsigned int, int))(*(unsigned int *)v13 + 1152))(v13, *(unsigned int *)(v11 + 52), 1); /*0x6ed3c7*/
+              (*(void (**)(int, int, unsigned int))(*(unsigned int *)&v13->q7A0)(v13, 2, 0); /*0x6ed3ab*/
+              (*(void (**)(int, unsigned int))(*(unsigned int *)&v13->q_F20)(v13, 0); /*0x6ed3b7*/
+              (*(void (**)(int, unsigned int, int))(*(unsigned int *)&v13->q_1200)(v13, *(unsigned int *)(v11 + 52), 1); /*0x6ed3c7*/
             }
           }
           LOBYTE(v3) = *(unsigned char *)(v13 + 144); /*0x6ed3d6*/
@@ -27119,18 +27119,18 @@ LABEL_17:
               if ( dword_A8E7AC || (v3 = *(uint8_t *)(v13 + 129), !(unsigned char)v3) ) /*0x6ed3f8*/
               {
                 LOBYTE(v3) = *(unsigned char *)(v13 + 1673); /*0x6ed3fa*/
-                if ( (unsigned char)v3 || (v3 = (*(int (**)(int))(*(unsigned int *)v13 + 44))(v13), v3 == 2) ) /*0x6ed40e*/
+                if ( (unsigned char)v3 || (v3 = (*(int (**)(int))(*(unsigned int *)&v13->q_B0)(v13), v3 == 2) ) /*0x6ed40e*/
                 {
                   v20 = v20; /*0x6ed410*/
                   if ( (TechnoClass *)v13 != v20 ) /*0x6ed416*/
                   {
                     v12 = 0; /*0x6ed41c*/
-                    v3 = (*(int (**)(int))(*(unsigned int *)v13 + 388))(v13); /*0x6ed41e*/
+                    v3 = (*(int (**)(int))(*(unsigned int *)&v13->q_610)(v13); /*0x6ed41e*/
                     if ( v3 != 7 ) /*0x6ed427*/
                     {
-                      (*(void (**)(int, int, unsigned int))(*(unsigned int *)v13 + 488))(v13, 7, 0); /*0x6ed49a*/
-                      (*(void (**)(int, unsigned int))(*(unsigned int *)v13 + 968))(v13, 0); /*0x6ed4a6*/
-                      LOBYTE(v3) = (*(char (**)(int, TechnoClass *, int))(*(unsigned int *)v13 + 1152))( /*0x6ed4b3*/
+                      (*(void (**)(int, int, unsigned int))(*(unsigned int *)&v13->q7A0)(v13, 7, 0); /*0x6ed49a*/
+                      (*(void (**)(int, unsigned int))(*(unsigned int *)&v13->q_F20)(v13, 0); /*0x6ed4a6*/
+                      LOBYTE(v3) = (*(char (**)(int, TechnoClass *, int))(*(unsigned int *)&v13->q_1200)( /*0x6ed4b3*/
                                      v13,
                                      v20,
                                      1);
@@ -27444,9 +27444,9 @@ char Gap2Recv_6EF110::DispatchTeamOrders(int a2, int a3) {
         }
         else if ( !*(unsigned int *)(v4 + 1444) ) /*0x6ef1b7*/
         {
-          (*(void (**)(int, int, unsigned int))(*(unsigned int *)v4 + 488))(v4, 2, 0); /*0x6ef1c9*/
-          (*(void (**)(int, unsigned int))(*(unsigned int *)v4 + 968))(v4, 0); /*0x6ef1d5*/
-          (*(void (**)(int, TagClass *, int))(*(unsigned int *)v4 + 1152))(v4, v3->attachedTag, 1); /*0x6ef1e5*/
+          (*(void (**)(int, int, unsigned int))(*(unsigned int *)&v4->q7A0)(v4, 2, 0); /*0x6ef1c9*/
+          (*(void (**)(int, unsigned int))(*(unsigned int *)&v4->q_F20)(v4, 0); /*0x6ef1d5*/
+          (*(void (**)(int, TagClass *, int))(*(unsigned int *)&v4->q_1200)(v4, v3->attachedTag, 1); /*0x6ef1e5*/
         }
       }
       if ( *(unsigned char *)(v4 + 144) /*0x6ef238*/
@@ -27457,13 +27457,13 @@ char Gap2Recv_6EF110::DispatchTeamOrders(int a2, int a3) {
         if ( *(unsigned int *)(v4 + 280) ) /*0x6ef23a*/
         {
           v18 = 0; /*0x6ef24d*/
-          v8 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v4 + 72))(v4, v21); /*0x6ef252*/
+          v8 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)&v4->q_120)(v4, v21); /*0x6ef252*/
           v9 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v8); /*0x6ef25b*/
-          if ( !Cell::IsBridge((Cell *)v9) && (*(int (**)(int))(*(unsigned int *)v4 + 388))(v4) != 16 ) /*0x6ef278*/
+          if ( !Cell::IsBridge((Cell *)v9) && (*(int (**)(int))(*(unsigned int *)&v4->q_610)(v4) != 16 ) /*0x6ef278*/
           {
-            (*(void (**)(int, unsigned int, int))(*(unsigned int *)v4 + 1152))(v4, 0, 1); /*0x6ef282*/
-            (*(void (**)(int, unsigned int))(*(unsigned int *)v4 + 968))(v4, 0); /*0x6ef28e*/
-            (*(void (**)(int, int, unsigned int))(*(unsigned int *)v4 + 488))(v4, 16, 0); /*0x6ef29c*/
+            (*(void (**)(int, unsigned int, int))(*(unsigned int *)&v4->q_1200)(v4, 0, 1); /*0x6ef282*/
+            (*(void (**)(int, unsigned int))(*(unsigned int *)&v4->q_F20)(v4, 0); /*0x6ef28e*/
+            (*(void (**)(int, int, unsigned int))(*(unsigned int *)&v4->q7A0)(v4, 16, 0); /*0x6ef29c*/
             v18 = 0; /*0x6ef2a2*/
           }
         }
@@ -30200,9 +30200,9 @@ LABEL_10:
       v10 = (const char *)(*(unsigned int *)(v2 + 1732) + 36); /*0x7437fb*/
       v11 = (const char *)(*(unsigned int *)(v2 + 540) + 90100); /*0x7437fe*/
       FootClass::GetField((float *)(v2 + 336)); /*0x743804*/
-      v13 = (*(int (**)(int, char *, int))(*(unsigned int *)v2 + 388))(v2, v34, v12); /*0x743813*/
+      v13 = (*(int (**)(int, char *, int))(*(unsigned int *)&v2->q_610)(v2, v34, v12); /*0x743813*/
       v14 = FromNameIndex(v13); /*0x74381b*/
-      v15 = (*(int (**)(int, unsigned char *, int, char *, int, int, int, int, int))(*(unsigned int *)v2 + 440))( /*0x74382b*/
+      v15 = (*(int (**)(int, unsigned char *, int, char *, int, int, int, int, int))(*(unsigned int *)&v2->NoCrew)( /*0x74382b*/
               v2,
               v40,
               v9,
@@ -30212,7 +30212,7 @@ LABEL_10:
               v33,
               v29,
               v31);
-      v18 = *(int16_t *)(*(int (**)(int, unsigned char *, unsigned int))(*(unsigned int *)v2 + 440))( /*0x743848*/
+      v18 = *(int16_t *)(*(int (**)(int, unsigned char *, unsigned int))(*(unsigned int *)&v2->NoCrew)( /*0x743848*/
                           v2,
                           v38,
                           *(int16_t *)(v15 + 2));

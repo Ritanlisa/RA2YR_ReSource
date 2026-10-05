@@ -1083,9 +1083,9 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
   int16_t v14; // dx
   int v16; // [esp+14h] [ebp+4h]
 
-  v8 = (unsigned short *)(*(int (**)(int, int, int))(*(unsigned int *)a2 + 92))(a2, a3, a4); /*0x410de2*/
+  v8 = (unsigned short *)(*(int (**)(int, int, int))(*(unsigned int *)&a2->q_170)(a2, a3, a4); /*0x410de2*/
   v9 = (int16_t *)(((unsigned int *)this)[0] + ((unsigned int *)this)[0]); /*0x410de9*/
-  v10 = (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2); /*0x410deb*/
+  v10 = (*(int (**)(int))(*(unsigned int *)&a2->q_1D0)(a2); /*0x410deb*/
   v11 = a5; /*0x410df1*/
   v12 = v10 / 2 - a5; /*0x410df7*/
   if ( v8 && a6 > 0 ) /*0x410e03*/
@@ -1112,7 +1112,7 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
     }
     while ( v16 ); /*0x410e38*/
   }
-  return (*(int (**)(int))(*(unsigned int *)a2 + 96))(a2); /*0x410e42*/
+  return (*(int (**)(int))(*(unsigned int *)&a2->q_180)(a2); /*0x410e42*/
 
 }
 } // namespace gamemd

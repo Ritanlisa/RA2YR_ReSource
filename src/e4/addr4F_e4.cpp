@@ -2267,7 +2267,7 @@ int E4Recv_4FFD50::sub_4FFD50(int a2)
 
     if ( !a2 ) /*0x4ffd5c*/
       return -1; /*0x4ffd5e*/
-    v4 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)a2 + 72))(a2, v5); /*0x4ffd6f*/
+    v4 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)&a2->q_120)(a2, v5); /*0x4ffd6f*/
     return PathfindingClass::FindPath((PathfindingClass *)this, v4); /*0x4ffd61*/
 }
 } // namespace gamemd

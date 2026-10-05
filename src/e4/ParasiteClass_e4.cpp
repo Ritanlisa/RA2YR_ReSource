@@ -373,7 +373,7 @@ LABEL_20:
             v26 = (*(int (**)(unsigned int))(**(unsigned int **)_ESI->__pad_28 + 132))(*(unsigned int *)_ESI->__pad_28); /*0x629c16*/
             v27 = (*(int (**)(int))(*(unsigned int *)_ESI->creationFrame + 132))(_ESI->creationFrame); /*0x629c23*/
             v42 = *(unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 540); /*0x629c2f*/
-            v28 = (*(int (**)(int))(*(unsigned int *)v26 + 132))(v26); /*0x629c30*/
+            v28 = (*(int (**)(int))(*(unsigned int *)&v26->q_210)(v26); /*0x629c30*/
             v29 = (*(int (**)(int, unsigned int, int))(*(unsigned int *)v27 + 132))( /*0x629c46*/
                     v27,
                     *(unsigned int *)(_ESI->creationFrame + 540),
@@ -423,7 +423,7 @@ LABEL_20:
         {
           v35 = *(unsigned int *)_ESI->__pad_28; /*0x629d27*/
           v49 = *(unsigned int *)(v48[1] + 164); /*0x629d2a*/
-          (*(void (**)(int, int *, unsigned int, unsigned int, int, unsigned int, int, unsigned int))(*(unsigned int *)v35 + 364))( /*0x629d3b*/
+          (*(void (**)(int, int *, unsigned int, unsigned int, int, unsigned int, int, unsigned int))(*(unsigned int *)&v35->q_5B0)( /*0x629d3b*/
             v35,
             &v49,
             0,
@@ -481,7 +481,7 @@ LABEL_47:
               v38 = *(unsigned int *)_ESI->__pad_28; /*0x629da3*/
               if ( v38 ) /*0x629da8*/
               {
-                v39 = (*(int (**)(int))(*(unsigned int *)v38 + 444))(v38); /*0x629db8*/
+                v39 = (*(int (**)(int))(*(unsigned int *)&v38->q_6F0)(v38); /*0x629db8*/
                 if ( *(unsigned int *)_ESI->__pad_28 != ((unsigned int *)v37)[1] ) /*0x629dbf*/
                 {
                   BuildingClass::AimTurret(v37, *(unsigned char **)_ESI->__pad_28); /*0x629dc4*/
@@ -825,7 +825,7 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
   *((unsigned int *)Block + 18) = 0; /*0x62af9d*/
   if ( v3 ) /*0x62afa0*/
   {
-    (*(void (**)(int))(*(unsigned int *)v3 + 248))(v3); /*0x62afa4*/
+    (*(void (**)(int))(*(unsigned int *)&v3->q_3E0)(v3); /*0x62afa4*/
     *((unsigned int *)Block + 17) = 0; /*0x62afaa*/
   }
   if ( *((unsigned char *)Block + 84) ) /*0x62afad*/

@@ -29,9 +29,9 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   unsigned int v9[4]; // [esp+Ch] [ebp-10h] BYREF
 
   v3 = 0; /*0x758a42*/
-  if ( !(*(int (**)(int, int))(*(unsigned int *)a2 + 28))(a2, 1) ) /*0x758a44*/
+  if ( !(*(int (**)(int, int))(*(unsigned int *)&a2->q_70)(a2, 1) ) /*0x758a44*/
     goto LABEL_5; /*0x758a44*/
-  if ( (*(int (**)(int, unsigned int *, int))(*(unsigned int *)a2 + 36))(a2, v9, 16) != 16 ) /*0x758a5c*/
+  if ( (*(int (**)(int, unsigned int *, int))(*(unsigned int *)&a2->q_90)(a2, v9, 16) != 16 ) /*0x758a5c*/
     goto LABEL_5; /*0x758a5c*/
   v4 = v9[2]; /*0x758a62*/
   v5 = v9[1]; /*0x758a66*/
@@ -41,7 +41,7 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   v7 = *((unsigned int *)this + 4); /*0x758a73*/
   *((unsigned int *)this + 1) = v5; /*0x758a76*/
   *((unsigned int *)this + 3) = v6; /*0x758a79*/
-  if ( (*(int (**)(int, int, int))(*(unsigned int *)a2 + 36))(a2, v7, 768) != 768 /*0x758aaa*/
+  if ( (*(int (**)(int, int, int))(*(unsigned int *)&a2->q_90)(a2, v7, 768) != 768 /*0x758aaa*/
     || (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a2 + 36))(
          a2,
          *((unsigned int *)this + 5),
@@ -50,7 +50,7 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
 LABEL_5:
     v3 = 1; /*0x758aac*/
   }
-  (*(void (**)(int))(*(unsigned int *)a2 + 52))(a2); /*0x758ab5*/
+  (*(void (**)(int))(*(unsigned int *)&a2->q_D0)(a2); /*0x758ab5*/
   return v3; /*0x758ab8*/
 
 }

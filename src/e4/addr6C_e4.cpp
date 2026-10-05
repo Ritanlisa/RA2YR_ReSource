@@ -2025,7 +2025,7 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
   *((unsigned int *)vtable2 + 2) = ((unsigned int *)this)[0]; /*0x6c8b70*/
   v8 = CellStruct::Copy((CellStruct *)a3, &v13); /*0x6c8b73*/
   v9 = a2; /*0x6c8b7a*/
-  v14 = (unsigned char *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a2 + 92))(a2, *v8, v8[1]); /*0x6c8b92*/
+  v14 = (unsigned char *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)&a2->q_170)(a2, *v8, v8[1]); /*0x6c8b92*/
   v15 = 0; /*0x6c8b9b*/
   if ( *(int *)(a3 + 12) > 0 ) /*0x6c8ba3*/
   {
@@ -2040,7 +2040,7 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
       }
       qmemcpy(v11, (char *)&g_SidebarButtonState + 128, v10); /*0x6c8be0 G42.33 b9 truth: +0x80*/
       ++v15; /*0x6c8bf4*/
-      v14 += (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2); /*0x6c8c06*/
+      v14 += (*(int (**)(int))(*(unsigned int *)&a2->q_1D0)(a2); /*0x6c8c06*/
       if ( v15 >= *(unsigned int *)(a3 + 12) ) /*0x6c8c0a*/
         break; /*0x6c8c0a*/
       v9 = a2; /*0x6c8c0c*/

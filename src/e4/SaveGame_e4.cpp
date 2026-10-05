@@ -611,7 +611,7 @@ namespace gamemd {
 int SaveGame::SaveBlock68(int a2)
 {
 
-  return (*(int (**)(int, SaveGame *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, this, 68, 0); /*0x4c634f*/
+  return (*(int (**)(int, SaveGame *, int, unsigned int))(*(unsigned int *)&a2->q_40)(a2, this, 68, 0); /*0x4c634f*/
 
 }
 } // namespace gamemd
@@ -2349,9 +2349,9 @@ int SaveGame::VtableDispatch(int a2)
 
   int result; // eax
 
-  result = (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, (char *)&this->__pad_0[4], 4, 0); /*0x721023*/
+  result = (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)&a2->q_40)(a2, (char *)&this->__pad_0[4], 4, 0); /*0x721023*/
   if ( result >= 0 ) /*0x721028*/
-    return (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, (char *)&this->__pad_0[8], 4, 0); /*0x721035*/
+    return (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)&a2->q_40)(a2, (char *)&this->__pad_0[8], 4, 0); /*0x721035*/
   return result; /*0x721038*/
 
 }

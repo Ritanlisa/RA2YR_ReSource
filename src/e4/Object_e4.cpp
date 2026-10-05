@@ -152,7 +152,7 @@ int Object::IsAlliedWithObjectHouse(int aP1)
 
   if ( !aP1 ) /*0x4f9a99*/
     goto LABEL_9; /*0x4f9a99*/
-  result = (*(int (**)(int))(*(unsigned int *)aP1 + 60))(aP1); /*0x4f9a9d*/
+  result = (*(int (**)(int))(*(unsigned int *)&aP1->q_F0)(aP1); /*0x4f9a9d*/
   if ( !result ) /*0x4f9aa2*/
     goto LABEL_9; /*0x4f9aa2*/
   if ( (Object *)result == this ) /*0x4f9aa6*/
@@ -193,7 +193,7 @@ int Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
     goto LABEL_10; /*0x4f9af9*/
   if ( (a2[20] & 2) == 0 ) /*0x4f9aff*/
     goto LABEL_10; /*0x4f9aff*/
-  result = (*(int (**)(void))(*(unsigned int *)a2 + 60))(); /*0x4f9b03*/
+  result = (*(int (**)(void))(*(unsigned int *)&a2->q_F0)(); /*0x4f9b03*/
   if ( !result ) /*0x4f9b08*/
     goto LABEL_10; /*0x4f9b08*/
   if ( (Object *)result == this ) /*0x4f9b0c*/

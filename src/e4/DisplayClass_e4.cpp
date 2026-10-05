@@ -800,7 +800,7 @@ int DisplayClass::checkScreenBounds(int a2)
 
   int v3; // edi
 
-  v3 = (*(int (**)(int))(*(unsigned int *)a2 + 184))(a2); /*0x5f6234*/
+  v3 = (*(int (**)(int))(*(unsigned int *)&a2->q_2E0)(a2); /*0x5f6234*/
   return (*((int (**)(DisplayClass *))this->DisplayClass_field_0x0 + 46))(this) > v3; /*0x5f623e*/
 
 }

@@ -1197,7 +1197,7 @@ int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   int v4; // eax
   int v5; // ecx
 
-  AnimClass_field_0xD4 = *(IUnknown **)((char *)aP0 + 0xD4); /*0x4253b6*/
+  AnimClass_field_0xD4 = *(IUnknown **)&aP0->AnimClass_field_0xD4; /*0x4253b6*/
   if ( AnimClass_field_0xD4 && (v4 = *(unsigned int *)((char *)&stru_B054D0 + 0x10) - 1, *(unsigned int *)((char *)&stru_B054D0 + 0x10) - 1 >= 0) ) /*0x4253c8*/
   {
     v5 = *(unsigned int *)((char *)&stru_B054D0 + 0x4) + 4 * v4; /*0x4253d0*/
@@ -1208,12 +1208,12 @@ int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
       if ( v4 < 0 ) /*0x4253e3*/
         goto LABEL_6; /*0x4253e3*/
     }
-    *(unsigned int *)((char *)aP0 + 0xD8) = v4; /*0x425404*/
+    *(unsigned int *)&aP0->q0D8 = v4; /*0x425404*/
   }
   else
   {
 LABEL_6:
-    *(unsigned int *)((char *)aP0 + 0xD8) = -1; /*0x4253e5*/
+    *(unsigned int *)&aP0->q0D8 = -1; /*0x4253e5*/
   }
   return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x4253ff*/
 

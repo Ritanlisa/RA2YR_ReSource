@@ -599,10 +599,10 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
         InfantryTypeVector::Construct((InfantryTypeVector *)veteranInfantry, 0, 0); /*0x5122f7*/
         *veteranInfantry = (int)&TypeList<InfantryTypeClass const *>::`vftable'; /*0x5122fc*/
       }
-      (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x51230e*/
+      (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &a2, 4, 0); /*0x51230e*/
       for ( this = 0; (int)this < a2; this = (HouseTypeClass *)((char *)this + 1) ) /*0x51231f*/
       {
-        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &v11, 4, 0); /*0x51232d*/
+        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &v11, 4, 0); /*0x51232d*/
         InfantryTypeVector::Add((InfantryTypeVector *)veteranInfantry, &v11); /*0x512337*/
       }
       if ( v2 != (HouseTypeClass *)-360 ) /*0x51234f*/
@@ -610,18 +610,18 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
         UnitTypeVector::Construct((UnitTypeVector *)&v2->prefix, 0, 0); /*0x512357*/
         *(unsigned int *)&v2->prefix = &TypeList<UnitTypeClass const *>::`vftable'; /*0x51235c*/
       }
-      (*(void (__stdcall **)(int, HouseTypeClass **, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &this, 4, 0); /*0x51236f*/
+      (*(void (__stdcall **)(int, HouseTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &this, 4, 0); /*0x51236f*/
       for ( i = 0; i < (int)this; ++i ) /*0x51237a*/
       {
-        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x512388*/
+        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &a2, 4, 0); /*0x512388*/
         VectorClass::PushBack((VectorClass *)&v2->prefix, &a2); /*0x512392*/
       }
       if ( v2 != (HouseTypeClass *)-388 ) /*0x5123a6*/
         HouseTypeClass::readStartUnit((HouseTypeClass *)&v2->__pad_16D[23]); /*0x5123aa*/
-      (*(void (__stdcall **)(int, HouseTypeClass **, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &this, 4, 0); /*0x5123bb*/
+      (*(void (__stdcall **)(int, HouseTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &this, 4, 0); /*0x5123bb*/
       for ( j = 0; j < (int)this; ++j ) /*0x5123c6*/
       {
-        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x5123d4*/
+        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &a2, 4, 0); /*0x5123d4*/
         HouseTypeClass::readPowerPlants((HouseTypeClass *)&v2->__pad_16D[23], &a2); /*0x5123de*/
       }
       for ( k = 0; k < v2->veteranAircraft[0]; ++k ) /*0x5123f4*/

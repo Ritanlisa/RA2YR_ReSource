@@ -558,7 +558,7 @@ int TechnoClass::GetTargetCellCenter(AbstractClass *a2)
     unsigned int v9[3]; // [esp+8h] [ebp-18h] BYREF
     unsigned char v10[12]; // [esp+14h] [ebp-Ch] BYREF
 
-    v3 = (int *)(*(int (__thiscall **)(int, unsigned char *, TechnoClass *))(*(unsigned int *)a2 + 76))(a2, v10, this); /*0x4dba66*/
+    v3 = (int *)(*(int (__thiscall **)(int, unsigned char *, TechnoClass *))(*(unsigned int *)&a2->q_130)(a2, v10, this); /*0x4dba66*/
     v4 = *v3; /*0x4dba73*/
     v5 = v3[1]; /*0x4dba75*/
     v9[2] = 0; /*0x4dba82*/
@@ -1294,7 +1294,7 @@ int TechnoClass::FindNearbyBuildCell(int a2, int16_t *a3)
       if ( (int)++v5 >= (int)&IFlyControl `RTTI Type Descriptor' ) /*0x419692*/
         return 0; /*0x419692*/
     }
-    v9 = (int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)a2 + 72))(a2, v15); /*0x419631*/
+    v9 = (int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)&a2->q_120)(a2, v15); /*0x419631*/
     v10 = *v9; /*0x419641*/
     v11 = v9[1] / 256; /*0x419652*/
     if ( (unsigned __int16)(v10 / 256) != *a3 || (unsigned short)v11 != a3[1] ) /*0x41965e*/
@@ -6667,9 +6667,9 @@ int FootClass::Destru_vt322()
     {
       this->locomotor[0] = (int)ppv; /*0x4df9c0*/
       if ( v10 ) /*0x4df9c6*/
-        (*(void (__stdcall **)(LPVOID))(*(unsigned int *)v10 + 4))(v10); /*0x4df9cb*/
+        (*(void (__stdcall **)(LPVOID))(*(unsigned int *)&v10->q_10)(v10); /*0x4df9cb*/
       if ( v9 ) /*0x4df9d0*/
-        (*(void (__stdcall **)(LPVOID))(*(unsigned int *)v9 + 8))(v9); /*0x4df9d5*/
+        (*(void (__stdcall **)(LPVOID))(*(unsigned int *)&v9->q_20)(v9); /*0x4df9d5*/
     }
     v11 = a2; /*0x4df9d8*/
     v12 = a3; /*0x4df9dc*/
@@ -6840,7 +6840,7 @@ int TechnoClass::FindClosestBuilding()
       do /*0x4e002d*/
       {
         v5 = *(unsigned int *)(this->owner->unitsSelfHeal + 4 * v4); /*0x4dff94*/
-        v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v5 + 72))(v5, v14); /*0x4dffa0*/
+        v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)&v5->q_120)(v5, v14); /*0x4dffa0*/
         v7 = (unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned char *))this->RadioClass + 18))(this, v15); /*0x4dffa9*/
         v12 = v7[1] - v6[1]; /*0x4dffc7*/
         v13 = v7[2] - v6[2]; /*0x4dffd1*/
@@ -8133,7 +8133,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
                   v71 += 2; /*0x5fcfa4*/
                 }
                 while ( v70 < 3 ); /*0x5fcfaa*/
-                v74 = *(unsigned short *)(*(unsigned int *)v99 + 2); /*0x5fcfb5*/
+                v74 = *(unsigned short *)(*(unsigned int *)&v99->q_8; /*0x5fcfb5*/
                 IDA_LOWORD(v97) = **(unsigned short **)v99 + a2; /*0x5fcfc1*/
                 IDA_HIWORD(v97) = IDA_HIWORD(a2) + v74; /*0x5fcfc6*/
                 a2 = v97; /*0x5fcfcf*/
@@ -13021,7 +13021,7 @@ int TechnoClass::AssignTarget_SyncLog(int a2)
         v6 = (int *)(a2 + 740); /*0x6fce5f*/
         if ( result ) /*0x6fce67*/
         {
-          result = (*(int (__thiscall **)(int))(*(unsigned int *)a2 + 44))(a2); /*0x6fce6d*/
+          result = (*(int (__thiscall **)(int))(*(unsigned int *)&a2->suspendedMission)(a2); /*0x6fce6d*/
           if ( result != 6 ) /*0x6fce73*/
           {
             if ( this->temporalUsing ) /*0x6fce75*/

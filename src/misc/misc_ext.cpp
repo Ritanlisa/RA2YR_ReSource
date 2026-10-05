@@ -283,9 +283,9 @@ int AnimFile::ddtor(int a2)
       v5 = (*(int (__thiscall **)(unsigned int, unsigned int, unsigned int))(**((unsigned int **)this + 899) + 92))(*((unsigned int *)this + 899), 0, 0); /*0x426b19*/
       v6 = *((unsigned int *)this + 899); /*0x426b1c*/
       v36 = (char *)v5; /*0x426b22*/
-      v7 = (*(int (__thiscall **)(int))(*(unsigned int *)v6 + 128))(v6); /*0x426b34*/
-      v8 = (*(int (__thiscall **)(int))(*(unsigned int *)v6 + 124))(v6) * v7; /*0x426b39*/
-      v9 = (*(int (__thiscall **)(int))(*(unsigned int *)v6 + 112))(v6) * v8; /*0x426b43*/
+      v7 = (*(int (__thiscall **)(int))(*(unsigned int *)&v6->q_200)(v6); /*0x426b34*/
+      v8 = (*(int (__thiscall **)(int))(*(unsigned int *)&v6->q_1F0)(v6) * v7; /*0x426b39*/
+      v9 = (*(int (__thiscall **)(int))(*(unsigned int *)&v6->q_1C0)(v6) * v8; /*0x426b43*/
       v10 = *((unsigned int *)this + 901); /*0x426b46*/
       for ( i = v9; v10 != a2; v10 = *((unsigned int *)this + 901) ) /*0x426b52*/
       {
@@ -2272,13 +2272,13 @@ void ScoreBoard::Render()
     v87 = 0; /*0x542674*/
     v88 = 402; /*0x542678*/
     v3 = FindBuildingAnimByName(aGrey, 1); /*0x542680*/
-    v4 = (unsigned int *)(*(int (__thiscall **)(int, int *, int *, int))(*(unsigned int *)v2 + 120))(v2, &v107, &v87, v3); /*0x542697*/
+    v4 = (unsigned int *)(*(int (__thiscall **)(int, int *, int *, int))(*(unsigned int *)&v2->__pad_1E0)(v2, &v107, &v87, v3); /*0x542697*/
     TextRenderer::DrawText((int *)&v91, (size_t)&v131, v2, v4, 0, 25, v64, v74); /*0x5426a9*/
     swprintf(&v131, (const size_t)&off_82887C, (const wchar_t *const)(1000 * *((unsigned int *)v1 + 24) / 0x3Cu)); /*0x5426d5*/
     v89 = 0; /*0x5426e7*/
     v90 = 412; /*0x5426ee*/
     v5 = FindBuildingAnimByName(aGrey, 1); /*0x5426f6*/
-    v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned int *, int *, int, unsigned int, int))(*(unsigned int *)v2 + 120))( /*0x54270d*/
+    v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned int *, int *, int, unsigned int, int))(*(unsigned int *)&v2->__pad_1E0)( /*0x54270d*/
                      v2,
                      v109,
                      &v89,
@@ -2290,7 +2290,7 @@ void ScoreBoard::Render()
     v88 = 0; /*0x542749*/
     v89 = 422; /*0x542750*/
     v7 = FindBuildingAnimByName(aGrey, 1); /*0x542758*/
-    v8 = (unsigned int *)(*(int (__thiscall **)(int, char *, int *, int, unsigned int, int))(*(unsigned int *)v2 + 120))( /*0x54276f*/
+    v8 = (unsigned int *)(*(int (__thiscall **)(int, char *, int *, int, unsigned int, int))(*(unsigned int *)&v2->__pad_1E0)( /*0x54276f*/
                      v2,
                      v108,
                      &v88,
@@ -2305,7 +2305,7 @@ void ScoreBoard::Render()
       v87 = 0; /*0x542805*/
       v88 = 432; /*0x54280c*/
       v40 = FindBuildingAnimByName(aGrey, 1); /*0x54281b*/
-      v10 = (unsigned int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)v2 + 120))(v2, &v107); /*0x54282b*/
+      v10 = (unsigned int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)&v2->__pad_1E0)(v2, &v107); /*0x54282b*/
       TextRenderer::DrawText(&v89, (size_t)&Buffer, v2, v10, (int)&v87, v40, 0, 25); /*0x54283d*/
       if ( ((unsigned __int8)dword_A8ED84 & 0x7F) == 0x7F ) /*0x54284f*/
       {
@@ -2324,7 +2324,7 @@ void ScoreBoard::Render()
       v87 = 0; /*0x5428d4*/
       v88 = 442; /*0x5428db*/
       v41 = FindBuildingAnimByName(aGrey, 1); /*0x5428ea*/
-      v12 = (unsigned int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)v2 + 120))(v2, &v107); /*0x5428fa*/
+      v12 = (unsigned int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)&v2->__pad_1E0)(v2, &v107); /*0x5428fa*/
       TextRenderer::DrawText(&v89, (size_t)&Buffer, v2, v12, (int)&v87, v41, 0, 25); /*0x54290c*/
     }
     result = *((unsigned int *)v1 + 17); /*0x542914*/
@@ -2344,7 +2344,7 @@ void ScoreBoard::Render()
           swprintf(v135, (const size_t)&off_8240B4, (const wchar_t *const)(*v15 + 104)); /*0x542977*/
           v105 = v14; /*0x542985*/
           v106 = 302; /*0x542989*/
-          v18 = (unsigned int *)(*(int (__thiscall **)(int, char *, int *, unsigned int, unsigned int, int, int))(*(unsigned int *)v2 + 120))( /*0x5429b0*/
+          v18 = (unsigned int *)(*(int (__thiscall **)(int, char *, int *, unsigned int, unsigned int, int, int))(*(unsigned int *)&v2->__pad_1E0)( /*0x5429b0*/
                             v2,
                             v125,
                             &v105,
@@ -5073,7 +5073,7 @@ short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
             v11 = *Building::GetFoundationSize(v18, 3 * v9 + 2); /*0x5d33cb*/
             v17[1] = a5; /*0x5d33e2*/
             v17[0] = v16 - v11; /*0x5d33e7*/
-            v12 = (int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)a2 + 120))(a2, v19); /*0x5d33fa*/
+            v12 = (int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)&a2->q_1E0)(a2, v19); /*0x5d33fa*/
             v8 = DrawToSurfaceSHP( /*0x5d3413*/
                    a2,
                    *((unsigned int *)this + 6),
@@ -7370,7 +7370,7 @@ int TClassFactory_BulletTypeClass::GetClassIdentifier()
       return -2147024882; /*0x6c2e5d*/
     v8 = (**(int (__stdcall ***)(unsigned char *, unsigned int *, unsigned int *))v6)(v6, a4, v9); /*0x6c2e71*/
     if ( v8 < 0 ) /*0x6c2e75*/
-      (*(void (__thiscall **)(unsigned char *, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x6c2e7d*/
+      (*(void (__thiscall **)(unsigned char *, int))(*(unsigned int *)&v7->q_80)(v7, 1); /*0x6c2e7d*/
     return v8; /*0x6c2e1a*/
 }
 // 0x6c2e90
@@ -7901,7 +7901,7 @@ int TClassFactory_HouseTypeClass::GetClassIdentifier()
       return -2147024882; /*0x6c3d5d*/
     v8 = (**(int (__stdcall ***)(unsigned char *, unsigned int *, unsigned int *))v6)(v6, a4, v9); /*0x6c3d71*/
     if ( v8 < 0 ) /*0x6c3d75*/
-      (*(void (__thiscall **)(unsigned char *, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x6c3d7d*/
+      (*(void (__thiscall **)(unsigned char *, int))(*(unsigned int *)&v7->currentSpeed_infantry_mult)(v7, 1); /*0x6c3d7d*/
     return v8; /*0x6c3d1a*/
 }
 // 0x6c3d90

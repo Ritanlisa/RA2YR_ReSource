@@ -2143,7 +2143,7 @@ void ScriptTypeClass::GetAction(int a2, int a3) {
 
     if ( a2 ) /*0x691e3c*/
     {
-      if ( (*(int (__thiscall **)(int))(*(unsigned int *)a2 + 44))(a2) == 35 ) /*0x691e49*/
+      if ( (*(int (__thiscall **)(int))(*(unsigned int *)&a2->q_B0)(a2) == 35 ) /*0x691e49*/
       {
         v4 = -1; /*0x691e51*/
         v5 = 0; /*0x691e54*/

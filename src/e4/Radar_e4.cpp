@@ -1946,7 +1946,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
     {
       v6 = aP0; /*0x69264d*/
       v7 = FindRadarClosestEnemy((int16_t *)aP0, 0); /*0x692655*/
-      return (*(int (**)(int, int, int, unsigned int))(*(unsigned int *)v7 + 112))(v7, v6, aP3_4, 0); /*0x692666*/
+      return (*(int (**)(int, int, int, unsigned int))(*(unsigned int *)&v7->q_1C0)(v7, v6, aP3_4, 0); /*0x692666*/
     }
   }
   v8 = aP1; /*0x692673*/
@@ -2010,16 +2010,16 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
     v30 = 34; /*0x692820*/
     if ( v8 ) /*0x692828*/
     {
-      if ( (*(int (**)(unsigned char *))(*(unsigned int *)v8 + 60))(v8) ) /*0x69282e*/
+      if ( (*(int (**)(unsigned char *))(*(unsigned int *)&v8->__pad_0F0)(v8) ) /*0x69282e*/
       {
-        v19 = (void *)(*(int (**)(unsigned char *))(*(unsigned int *)v8 + 60))(v8); /*0x692839*/
+        v19 = (void *)(*(int (**)(unsigned char *))(*(unsigned int *)&v8->__pad_0F0)(v8); /*0x692839*/
         if ( (uint8_t)House::IsHumanPlayer(v19) ) /*0x69283e*/
         {
-          if ( (*(int (**)(unsigned char *))(*(unsigned int *)v8 + 44))(v8) == 6 ) /*0x692851*/
+          if ( (*(int (**)(unsigned char *))(*(unsigned int *)&v8->q_B0)(v8) == 6 ) /*0x692851*/
           {
-            if ( (*(uint8_t (**)(unsigned char *))(*(unsigned int *)v8 + 312))(v8) ) /*0x692857*/
+            if ( (*(uint8_t (**)(unsigned char *))(*(unsigned int *)&v8->q_4E0)(v8) ) /*0x692857*/
             {
-              if ( !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)v8 + 128))(v8) ) /*0x692865*/
+              if ( !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)&v8->q_200)(v8) ) /*0x692865*/
               {
                 v20 = *((unsigned int *)v8 + 328); /*0x69286f*/
                 if ( *(unsigned char *)(v20 + 5450) ) /*0x692875*/

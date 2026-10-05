@@ -812,7 +812,7 @@ namespace gamemd {  // G42.18c ns repair
 int RulesClass::readGeneralSection(TechnoTypeClass * aP1)
 {
 
-  return (*(int (**)(int, RulesClass *, int, unsigned int))(*(unsigned int *)aP1 + 16))(aP1, this, 3, 0); /*0x6614ff*/
+  return (*(int (**)(int, RulesClass *, int, unsigned int))(*(unsigned int *)&aP1->FreeMCV)(aP1, this, 3, 0); /*0x6614ff*/
 
 }
 }  // G42.18c ns repair
@@ -821,7 +821,7 @@ namespace gamemd {  // G42.18c ns repair
 int RulesClass::readCombatDamage(int a2)
 {
 
-  return (*(int (**)(int, RulesClass *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, this, 3, 0); /*0x66151f*/
+  return (*(int (**)(int, RulesClass *, int, unsigned int))(*(unsigned int *)&a2->SelfHealInfantryFrames)(a2, this, 3, 0); /*0x66151f*/
 
 }
 }  // G42.18c ns repair

@@ -438,13 +438,13 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->NumImages); /*0x721fee*/
     if ( v2 != (TiberiumClass *)-196 ) /*0x721ff5*/
       AnimTypeList::Constructor((AnimTypeList *)&(&v2->GrowthPercentage)[1]); /*0x721ff9*/
-    (*(void (**)(int, TiberiumClass **, int, unsigned int))(*(unsigned int *)v11 + 12))(v11, &a1, 4, 0); /*0x722009*/
+    (*(void (**)(int, TiberiumClass **, int, unsigned int))(*(unsigned int *)&v11->u32_30)(v11, &a1, 4, 0); /*0x722009*/
     result = 0; /*0x72200c*/
     if ( (int)a1 > 0 ) /*0x722012*/
     {
       do /*0x722037*/
       {
-        (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v11 + 12))(v11, &a2, 4, 0); /*0x722023*/
+        (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)&v11->u32_30)(v11, &a2, 4, 0); /*0x722023*/
         ((DynamicVector *)((DynamicVector *)&(&v2->GrowthPercentage)[1]))->Add_Alt4(&a2); /*0x72202d*/
         ++v3; /*0x722032*/
       }

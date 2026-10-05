@@ -2670,7 +2670,7 @@ MapClass * * MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
   int result; // eax
 
   v3 = aP1; /*0x577922*/
-  if ( (*(int (**)(int))(*(unsigned int *)aP1 + 44))(aP1) == 44 ) /*0x577932*/
+  if ( (*(int (**)(int))(*(unsigned int *)&aP1->q0B0)(aP1) == 44 ) /*0x577932*/
   {
     for ( i = 0; i < (int)this->MapClass_field_0x116C; ++i ) /*0x577943*/
     {

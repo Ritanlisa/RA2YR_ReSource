@@ -927,7 +927,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
   v7 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1052); /*0x50db31*/
   if ( aP1 && *(unsigned char *)(aP1 + 979) && *(unsigned int *)(*(unsigned int *)(aP1 + 1312) + 3768) == 7 ) /*0x50db4c*/
   {
-    v8 = (int *)(*(int (**)(unsigned int *))(*(unsigned int *)aP1 + 72))(v39); /*0x50db58*/
+    v8 = (int *)(*(int (**)(unsigned int *))(*(unsigned int *)&aP1->q_120)(v39); /*0x50db58*/
     v9 = *v8; /*0x50db5a*/
     v40 = *v8; /*0x50db5c*/
     v41 = v8[1]; /*0x50db63*/
@@ -1376,11 +1376,11 @@ void House_Play_6D1660()
     v5 = &stru_B0C1C0; /*0x6d1675*/
     do /*0x6d168b*/
     {
-      (*(void (**)(unsigned char *, ShapeButtonClass *))(*(unsigned int *)v3 + 52))(v3, v5); /*0x6d167f*/
+      (*(void (**)(unsigned char *, ShapeButtonClass *))(*(unsigned int *)&v3->q0D0)(v3, v5); /*0x6d167f*/
       v5 += 8; /*0x6d1682*/
     }
     while ( (int)v5 < (int)&dword_B0CB20 ); /*0x6d168b*/
-    (*(void (**)(unsigned char *, GadgetClass *, int))(*(unsigned int *)v3 + 52))(v3, &stru_B0CCB0, a2); /*0x6d1696*/
+    (*(void (**)(unsigned char *, GadgetClass *, int))(*(unsigned int *)&v3->q0D0)(v3, &stru_B0CCB0, a2); /*0x6d1696*/
     v6 = g_ObjectTrackingPool; /*0x6d1699*/
     do /*0x6d16d0*/
     {

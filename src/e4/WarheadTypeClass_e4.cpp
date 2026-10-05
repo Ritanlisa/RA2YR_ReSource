@@ -566,26 +566,26 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v2->__pad_104, 0, 0); /*0x75e169*/
         *(unsigned int *)v2->__pad_104 = &TypeList<AnimTypeClass const *>::`vftable'; /*0x75e16e*/
       }
-      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &this, 4, 0); /*0x75e180*/
+      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &this, 4, 0); /*0x75e180*/
       for ( i = 0; i < (int)this; ++i ) /*0x75e18b*/
       {
-        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x75e199*/
+        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &a2, 4, 0); /*0x75e199*/
         DynamicVector::Add_Alt4((DynamicVector *)v2->__pad_104, &a2); /*0x75e1a7*/
       }
       if ( DebrisTypes ) /*0x75e1b5*/
         TypeList::VoxelAnimConstructor((TypeList *)DebrisTypes); /*0x75e1b9*/
-      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &this, 4, 0); /*0x75e1ca*/
+      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &this, 4, 0); /*0x75e1ca*/
       for ( j = 0; j < (int)this; ++j ) /*0x75e1d5*/
       {
-        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x75e1e3*/
+        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &a2, 4, 0); /*0x75e1e3*/
         DynamicVector::Add2((DynamicVector *)DebrisTypes, &a2); /*0x75e1ed*/
       }
       if ( v2 != (WarheadTypeClass *)-424 ) /*0x75e201*/
         TypeList::Construct((TypeList *)&v2->__pad_1A0[8]); /*0x75e205*/
-      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &this, 4, 0); /*0x75e216*/
+      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &this, 4, 0); /*0x75e216*/
       for ( k = 0; k < (int)this; ++k ) /*0x75e221*/
       {
-        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x75e22f*/
+        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &a2, 4, 0); /*0x75e22f*/
         DynamicVector::Add_Alt((DynamicVector *)&v2->__pad_1A0[8], &a2); /*0x75e239*/
       }
       for ( m = 0; m < v2->WarheadTypeClass_field_0x114; ++m ) /*0x75e24f*/

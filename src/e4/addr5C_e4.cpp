@@ -3012,7 +3012,7 @@ LABEL_5:
     return 1; /*0x5ce149*/
   }
   if ( LOBYTE(this->nextObject) == 1 && this->customSound_controller[3] > 0 && this->customSound_controller[4] > 0 ) /*0x5ce15f*/
-    (*(void (**)(int, int *, DSurface *, int *, unsigned int, int))(*(unsigned int *)a2 + 8))( /*0x5ce173*/
+    (*(void (**)(int, int *, DSurface *, int *, unsigned int, int))(*(unsigned int *)&a2->q_20)( /*0x5ce173*/
       a2,
       &this->customSound_controller[1],
       DSurface_Alternate,
@@ -4799,7 +4799,7 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
         vtable2 = (int *)((char *)vtable2 + (unsigned int)this->((unsigned int *)attachedTag)[0]); /*0x5ce41e*/
         v14 = this->((unsigned int *)attachedTag)[0]; /*0x5ce420*/
         v18 = vtable2; /*0x5ce426*/
-        result = (*(int (**)(int))(*(unsigned int *)a2 + 128))(a2); /*0x5ce42a*/
+        result = (*(int (**)(int))(*(unsigned int *)&a2->q_200)(a2); /*0x5ce42a*/
         if ( (int)v14 + (int)vtable2 >= result ) /*0x5ce438*/
           return result; /*0x5ce438*/
       }

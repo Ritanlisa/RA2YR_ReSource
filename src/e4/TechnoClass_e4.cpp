@@ -583,7 +583,7 @@ int TechnoClass::DTOR()
   v7 = *((unsigned int *)this + 157); /*0x6f458d*/
   if ( v7 ) /*0x6f4595*/
   {
-    (*(void (**)(int, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x6f459b*/
+    (*(void (**)(int, int))(*(unsigned int *)&v7->q_80)(v7, 1); /*0x6f459b*/
     *((unsigned int *)this + 157) = 0; /*0x6f459e*/
   }
   v8 = *(unsigned int **)&this->airstrike; /*0x6f45a4*/
@@ -2004,7 +2004,7 @@ namespace gamemd {
 void TechnoClass::updateSightRange(IUnknown * aP1, int a3)
 {
 
-  if ( aP1 && (*(int (**)(unsigned char *))(*(unsigned int *)aP1 + 44))(aP1) == 1 && aP1[144] && !aP1[129] ) /*0x4c2bf2*/
+  if ( aP1 && (*(int (**)(unsigned char *))(*(unsigned int *)&aP1->suspendedMission)(aP1) == 1 && aP1[144] && !aP1[129] ) /*0x4c2bf2*/
   {
     ((unsigned int *)this)[0] = aP1; /*0x4c2c00*/
     ((unsigned int *)this)[0] = a3; /*0x4c2c03*/

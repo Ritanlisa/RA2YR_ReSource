@@ -799,6 +799,7 @@ static int GetSHPFrame(...);  // C2597 interim stub
     void* UpdateTargetRedrawState(void* a1);
     int UpdateSuperWeaponReadyState(int a1);
     void DispatchTeam(int a1, int a2);
+    unsigned int q_610;  // +0x610 flat supply (CSP-fed)
 };
 
 } // namespace gamemd

@@ -581,9 +581,9 @@ AnimClass * InfantryClass::CreateDeployLocomotor()
   {
     ((unsigned int *)this)[0] = (int)ppv; /*0x523197*/
     if ( v10 ) /*0x52319d*/
-      (*(void (**)(LPVOID))(*(unsigned int *)v10 + 4))(v10); /*0x5231a2*/
+      (*(void (**)(LPVOID))(*(unsigned int *)&v10->q_10)(v10); /*0x5231a2*/
     if ( v9 ) /*0x5231a7*/
-      (*(void (**)(LPVOID))(*(unsigned int *)v9 + 8))(v9); /*0x5231ac*/
+      (*(void (**)(LPVOID))(*(unsigned int *)&v9->q_20)(v9); /*0x5231ac*/
   }
   v11 = a2; /*0x5231af*/
   v12 = a3; /*0x5231b3*/

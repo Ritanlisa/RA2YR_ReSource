@@ -56,7 +56,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
   unsigned int *vtable1; // edx
   unsigned int v12[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  if ( aP1 && (*(int (**)(void *))(*(unsigned int *)aP1 + 44))(aP1) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
+  if ( aP1 && (*(int (**)(void *))(*(unsigned int *)&aP1->u32_B0)(aP1) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
   {
     v4 = (AbstractClass *)__2_YAPAXI_Z(0x5Cu); /*0x438eaf*/
     v5 = v4; /*0x438eb4*/
@@ -89,7 +89,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       v5 = 0; /*0x438f58*/
     }
-    v5[1].vtable1 = (void *)(*(int (**)(void *))(*(unsigned int *)aP1 + 60))(aP1); /*0x438f62*/
+    v5[1].vtable1 = (void *)(*(int (**)(void *))(*(unsigned int *)&aP1->q0F0)(aP1); /*0x438f62*/
     v5[1].vtable0 = (unsigned int)(aP1); /*0x438f69*/
     v5[1].vtable2 = aP2; /*0x438f6c*/
     v5[1].uniqueId = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x438f75*/

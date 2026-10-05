@@ -1003,7 +1003,7 @@ void* BuildingClass_ProcessSell()
       v59 = v58 == 0; /*0x73a834*/
       if ( v58 ) /*0x73a839*/
       {
-        if ( (*(int (__thiscall **)(int))(*(unsigned int *)v58 + 44))(v58) == 11 ) /*0x73a843*/
+        if ( (*(int (__thiscall **)(int))(*(unsigned int *)&v58->q0B0)(v58) == 11 ) /*0x73a843*/
         {
           v60 = *(unsigned int *)(_EBP + 156); /*0x73a84d*/
           v61 = *(unsigned int *)(_EBP + 160); /*0x73a84f*/

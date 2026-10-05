@@ -292,7 +292,7 @@ void* COMObject::SwapReference(int a2) {
   {
     *(unsigned int *)this->__pad_0 = a2; /*0x5233b0*/
     if ( a2 ) /*0x5233b2*/
-      (*(void (**)(int))(*(unsigned int *)a2 + 4))(a2); /*0x5233b7*/
+      (*(void (**)(int))(*(unsigned int *)&a2->COMObject_field_0x10)(a2); /*0x5233b7*/
     if ( v3 ) /*0x5233bc*/
       (*(void (**)(int))(*(unsigned int *)v3 + 8))(v3); /*0x5233c1*/
   }

@@ -138,7 +138,7 @@ int Delegate::Set(int aP1)
       v4 = *(unsigned int *)(aP1 + 8); /*0x6c98a1*/
       if ( v4 ) /*0x6c98a6*/
       {
-        (*(void (**)(int, unsigned int))(*(unsigned int *)v4 + 4))(v4, 0); /*0x6c98ac*/
+        (*(void (**)(int, unsigned int))(*(unsigned int *)&v4->__pad_010)(v4, 0); /*0x6c98ac*/
         *(unsigned int *)(aP1 + 8) = 0; /*0x6c98af*/
       }
     }

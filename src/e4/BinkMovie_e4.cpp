@@ -204,7 +204,7 @@ LABEL_15:
       {
         v20 = g_DSurface_Hidden; /*0x4328e3*/
         *((unsigned int *)this + 3) = g_DSurface_Hidden; /*0x4328e5*/
-        v16 = ((*(int (**)(int))(*(unsigned int *)v20 + 124))(v20) - v17) / 2; /*0x4328f9*/
+        v16 = ((*(int (**)(int))(*(unsigned int *)&v20->q_1F0)(v20) - v17) / 2; /*0x4328f9*/
         v21 = (*(int (**)(unsigned int))(**(unsigned int **)&this->q00C + 128))(*((unsigned int *)this + 3)); /*0x4328fb*/
       }
       else
@@ -571,7 +571,7 @@ unsigned int * BinkMovie::BlitToTarget(int aP1)
         v12 = (&this->BinkMovie_field_0x14)[0]; /*0x43330b*/
         v15[0] = (&this->BinkMovie_field_0x10)[0] + v10; /*0x43330e*/
         v15[1] = v12 + v11; /*0x43331c*/
-        return (unsigned int *)(*(int (**)(int, unsigned int *, int, int *, int, int))(*(unsigned int *)aP1 + 8))( /*0x433323*/
+        return (unsigned int *)(*(int (**)(int, unsigned int *, int, int *, int, int))(*(unsigned int *)&aP1->q_20)( /*0x433323*/
                            aP1,
                            v15,
                            v5,
@@ -626,7 +626,7 @@ int BinkMovie::AdjustSurfaceFormat(int aP1)
         v8 = *(unsigned int *)&this->__pad_18[4] - v6 + v10; /*0x4333b0*/
         v9 += (&this->BinkMovie_field_0x10)[0] + (((int)v7 - HIDWORD(v7)) >> 1); /*0x4333bb*/
         v10 = (&this->BinkMovie_field_0x14)[0] + v8; /*0x4333c5*/
-        return (*(int (**)(int, int *, unsigned int))(*(unsigned int *)aP1 + 20))(aP1, &v9, 0); /*0x4333cf*/
+        return (*(int (**)(int, int *, unsigned int))(*(unsigned int *)&aP1->q_50)(aP1, &v9, 0); /*0x4333cf*/
       }
     }
   }

@@ -2758,7 +2758,7 @@ int HouseClass::ClearLowPowerTargets() {
       v6 = *(TriggerClass **)(v4 + 632); /*0x4fc738*/
       if ( v6 ) /*0x4fc740*/
         TriggerClass::UnlinkTags(v6); /*0x4fc742*/
-      result = (*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)v4 + 364))( /*0x4fc766*/
+      result = (*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)&v4->q_5B0)( /*0x4fc766*/
                  v4,
                  &v8,
                  0,
@@ -2831,7 +2831,7 @@ int HouseClass::ClearLowPowerTargets() {
       v6 = *(TriggerClass **)(v4 + 632); /*0x4fc738*/
       if ( v6 ) /*0x4fc740*/
         TriggerClass::UnlinkTags(v6); /*0x4fc742*/
-      result = (*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)v4 + 364))( /*0x4fc766*/
+      result = (*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)&v4->q_5B0)( /*0x4fc766*/
                  v4,
                  &v8,
                  0,
@@ -3596,33 +3596,33 @@ int HouseClass::DecrementUnitCount(void* a1) {
   result = (*(int (**)(unsigned char *))(v3 + 132))(a1); /*0x4ff563*/
   if ( !*(unsigned char *)(result + 562) ) /*0x4ff569*/
   {
-    result = (*(int (**)(unsigned char *))(*(unsigned int *)a1 + 132))(a1); /*0x4ff57b*/
+    result = (*(int (**)(unsigned char *))(*(unsigned int *)&a1->planningPaths)(a1); /*0x4ff57b*/
     if ( !*(unsigned char *)(result + 3231) ) /*0x4ff581*/
     {
-      result = (*(int (**)(unsigned char *))(*(unsigned int *)a1 + 44))(a1) - 1; /*0x4ff596*/
+      result = (*(int (**)(unsigned char *))(*(unsigned int *)&a1->productionFactory_plants)(a1) - 1; /*0x4ff596*/
       switch ( result ) /*0x4ff5a8*/
       {
         case 0: /*0x4ff5a8*/
           --this->ownedUnits; /*0x4ff67f*/
-          v12 = (*(int (**)(unsigned char *))(*(unsigned int *)a1 + 132))(a1); /*0x4ff687*/
+          v12 = (*(int (**)(unsigned char *))(*(unsigned int *)&a1->planningPaths)(a1); /*0x4ff687*/
           v13 = (*(int (**)(int))(v12->q040)(v12); /*0x4ff691*/
           CounterClass::Decrement((CounterClass *)&this->ownedInfantryTypes[1], v13); /*0x4ff69b*/
-          result = (*(int (**)(unsigned char *))(*(unsigned int *)a1 + 132))(a1); /*0x4ff6a4*/
+          result = (*(int (**)(unsigned char *))(*(unsigned int *)&a1->planningPaths)(a1); /*0x4ff6a4*/
           if ( *(unsigned char *)(result + 3278) ) /*0x4ff6aa*/
           {
-            result = (*(int (**)(unsigned char *))(*(unsigned int *)a1 + 132))(a1); /*0x4ff6b8*/
+            result = (*(int (**)(unsigned char *))(*(unsigned int *)&a1->planningPaths)(a1); /*0x4ff6b8*/
             if ( !*(unsigned int *)(result + 1504) ) /*0x4ff6be*/
               --this->ownedNavy; /*0x4ff6c8*/
           }
           break; /*0x4ff6c8*/
         case 1: /*0x4ff5a8*/
           --this->ownedAircraft; /*0x4ff610*/
-          v8 = (*(int (**)(unsigned char *))(*(unsigned int *)a1 + 132))(a1); /*0x4ff618*/
+          v8 = (*(int (**)(unsigned char *))(*(unsigned int *)&a1->planningPaths)(a1); /*0x4ff618*/
           v9 = (*(int (**)(int))(*(unsigned int *)v8 + 64))(v8); /*0x4ff622*/
           result = CounterClass::Decrement((CounterClass *)&this->ownedAircraftTypes1[1], v9); /*0x4ff62c*/
           break; /*0x4ff633*/
         case 5: /*0x4ff5a8*/
-          if ( (*(uint8_t (**)(unsigned char *))(*(unsigned int *)a1 + 128))(a1) /*0x4ff5cd*/
+          if ( (*(uint8_t (**)(unsigned char *))(*(unsigned int *)&a1->q_200)(a1) /*0x4ff5cd*/
             || (v5 = *(unsigned int *)(*((unsigned int *)a1 + 328) + 1032)) != 0 && *(unsigned char *)(v5 + 1516) )
           {
             --this->ownedUnits; /*0x4ff5df*/
@@ -3631,7 +3631,7 @@ int HouseClass::DecrementUnitCount(void* a1) {
           {
             --this->ownedBuildings; /*0x4ff5d7*/
           }
-          v6 = (*(int (**)(unsigned char *))(*(unsigned int *)a1 + 132))(a1); /*0x4ff5e9*/
+          v6 = (*(int (**)(unsigned char *))(*(unsigned int *)&a1->planningPaths)(a1); /*0x4ff5e9*/
           v7 = (*(int (**)(int))(*(unsigned int *)v6 + 64))(v6); /*0x4ff5f3*/
           result = CounterClass::Decrement((CounterClass *)this->ownedBuildingTypes, v7); /*0x4ff5fd*/
           break; /*0x4ff604*/
@@ -3641,7 +3641,7 @@ int HouseClass::DecrementUnitCount(void* a1) {
             --this->ownedInfantry; /*0x4ff647*/
             a1[1080] = 0; /*0x4ff64d*/
           }
-          v10 = (*(int (**)(unsigned char *))(*(unsigned int *)a1 + 132))(a1); /*0x4ff658*/
+          v10 = (*(int (**)(unsigned char *))(*(unsigned int *)&a1->planningPaths)(a1); /*0x4ff658*/
           v11 = (*(int (**)(int))(*(unsigned int *)v10 + 64))(v10); /*0x4ff662*/
           result = CounterClass::Decrement((CounterClass *)this->ownedUnitTypes1, v11); /*0x4ff66c*/
           break; /*0x4ff673*/
@@ -6122,7 +6122,7 @@ int HouseClass::ShouldDisableCameo(int a1) {
         primaryForShips = 0; /*0x50b472*/
         break; /*0x50b474*/
     }
-    switch ( (*(int (**)(int))(*(unsigned int *)a1 + 44))(a1) ) /*0x50b3ec*/
+    switch ( (*(int (**)(int))(*(unsigned int *)&a1->productionFactory_plants)(a1) ) /*0x50b3ec*/
     {
       case 3: /*0x50b3ec*/
         if ( *(unsigned char *)(a1 + 3597) ) /*0x50b570*/

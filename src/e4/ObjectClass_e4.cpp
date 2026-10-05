@@ -1423,7 +1423,7 @@ AbstractClass * * ObjectClass::Deploy()
   v24 = v27[2]; /*0x5f4f78*/
   if ( v6 ) /*0x5f4f7c*/
   {
-    v7 = (int *)(*(int (**)(int, unsigned int *, int *))(*(unsigned int *)v6 + 108))(v6, v25, v27); /*0x5f4f88*/
+    v7 = (int *)(*(int (**)(int, unsigned int *, int *))(*(unsigned int *)&v6->q1B0)(v6, v25, v27); /*0x5f4f88*/
     v22 = *v7; /*0x5f4f8d*/
     v23 = v7[1]; /*0x5f4f94*/
     v24 = v7[2]; /*0x5f4f9b*/
@@ -1585,7 +1585,7 @@ int ObjectClass::UpdateProductionDisplay()
         if ( result ) /*0x5f58bf*/
         {
           (*(void (**)(int))(*(unsigned int *)result + 704))(result); /*0x5f58c5*/
-          (*(void (**)(int))(*(unsigned int *)v4 + 56))(v4); /*0x5f58cf*/
+          (*(void (**)(int))(*(unsigned int *)&v4->q_E0)(v4); /*0x5f58cf*/
           result = (*(int (**)(TechnoClass *, int *))(this->vtable1 + 440))(this, &v6); /*0x5f58db*/
         }
       }
@@ -1826,18 +1826,18 @@ unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP
   if ( !*(unsigned char *)(v7 + 21413) ) /*0x6a7de3*/
   {
     AsyncIO::Shutdown((AsyncIO *)a4); /*0x6a7fc3*/
-    (*(void (**)(int, ShapeButtonClass *, int, int, int))(*(unsigned int *)v7 + 52))(v7, &stru_B07DF8, v21, a3, a2); /*0x6a7fd1*/
-    (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)v7 + 52))(v7, &stru_B0B3A0); /*0x6a7fdd*/
-    (*(void (**)(int, GadgetClass *))(*(unsigned int *)v7 + 52))(v7, &stru_B07E58); /*0x6a7fe9*/
+    (*(void (**)(int, ShapeButtonClass *, int, int, int))(*(unsigned int *)&v7->u32_D0)(v7, &stru_B07DF8, v21, a3, a2); /*0x6a7fd1*/
+    (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)&v7->u32_D0)(v7, &stru_B0B3A0); /*0x6a7fdd*/
+    (*(void (**)(int, GadgetClass *))(*(unsigned int *)&v7->u32_D0)(v7, &stru_B07E58); /*0x6a7fe9*/
     v18 = &stru_B07C48; /*0x6a7fec*/
     do /*0x6a8002*/
     {
-      (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)v7 + 52))(v7, v18); /*0x6a7ff6*/
+      (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)&v7->u32_D0)(v7, v18); /*0x6a7ff6*/
       v18 += 8; /*0x6a7ff9*/
     }
     while ( (int)v18 < (int)&dword_B07DC8 ); /*0x6a8002*/
-    (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)v7 + 52))(v7, &stru_B0B328); /*0x6a800d*/
-    (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)v7 + 52))(v7, &g_SidebarFlag); /*0x6a8019*/
+    (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)&v7->u32_D0)(v7, &stru_B0B328); /*0x6a800d*/
+    (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)&v7->u32_D0)(v7, &g_SidebarFlag); /*0x6a8019*/
     v19 = 0; /*0x6a8029*/
     v20 = v7 + 3988 * *(unsigned int *)(v7 + 21404) + 5444; /*0x6a8031*/
     do /*0x6a805f*/
@@ -1848,22 +1848,22 @@ unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP
       ++v19; /*0x6a805b*/
     }
     while ( v19 < 60 ); /*0x6a805f*/
-    (*(void (**)(int, GadgetClass *))(*(unsigned int *)v7 + 52))(v7, &stru_B04A10); /*0x6a806a*/
-    (*(void (**)(int, int))(*(unsigned int *)v7 + 56))(v7, 2); /*0x6a8073*/
+    (*(void (**)(int, GadgetClass *))(*(unsigned int *)&v7->u32_D0)(v7, &stru_B04A10); /*0x6a806a*/
+    (*(void (**)(int, int))(*(unsigned int *)&v7->__pad_0E0)(v7, 2); /*0x6a8073*/
     return v10; /*0x6a8073*/
   }
-  (*(void (**)(int, int, int, int))(*(unsigned int *)v7 + 136))(v7, a4, a3, a2); /*0x6a7ded*/
+  (*(void (**)(int, int, int, int))(*(unsigned int *)&v7->q_220)(v7, a4, a3, a2); /*0x6a7ded*/
   *(unsigned char *)(v7 + 21414) = 1; /*0x6a7df8*/
   Hash::Reset((LinkClass *)&stru_B07DF8); /*0x6a7dff*/
-  (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)v7 + 48))(v7, &stru_B07DF8); /*0x6a7e0d*/
+  (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)&v7->__pad_0C0)(v7, &stru_B07DF8); /*0x6a7e0d*/
   Hash::Reset((LinkClass *)&stru_B0B3A0); /*0x6a7e15*/
-  (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)v7 + 48))(v7, &stru_B0B3A0); /*0x6a7e23*/
+  (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)&v7->__pad_0C0)(v7, &stru_B0B3A0); /*0x6a7e23*/
   v11 = &stru_B07C48; /*0x6a7e26*/
   do /*0x6a7e47*/
   {
     Hash::Reset((LinkClass *)v11); /*0x6a7e2d*/
     LOBYTE(v11[3].ShapeButtonClass_field_0x08) = 0; /*0x6a7e32*/
-    (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)v7 + 48))(v7, v11); /*0x6a7e3b*/
+    (*(void (**)(int, ShapeButtonClass *))(*(unsigned int *)&v7->__pad_0C0)(v7, v11); /*0x6a7e3b*/
     v11 += 8; /*0x6a7e3e*/
   }
   while ( (int)v11 < (int)&dword_B07DC8 ); /*0x6a7e47*/
@@ -1872,9 +1872,9 @@ unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP
   Hash::Reset((LinkClass *)&g_SidebarFlag); /*0x6a7e67*/
   Hash::InsertOrdered((GScreenClass *)&stru_87F5F0.__pad_58[416], (int)&g_SidebarFlag); /*0x6a7e76*/
   Hash::Reset((LinkClass *)&stru_B07E58); /*0x6a7e80*/
-  (*(void (**)(int, GadgetClass *))(*(unsigned int *)v7 + 48))(v7, &stru_B07E58); /*0x6a7e8e*/
+  (*(void (**)(int, GadgetClass *))(*(unsigned int *)&v7->__pad_0C0)(v7, &stru_B07E58); /*0x6a7e8e*/
   Hash::Reset((LinkClass *)&stru_B04A10); /*0x6a7e96*/
-  (*(void (**)(int, GadgetClass *))(*(unsigned int *)v7 + 48))(v7, &stru_B04A10); /*0x6a7ea4*/
+  (*(void (**)(int, GadgetClass *))(*(unsigned int *)&v7->__pad_0C0)(v7, &stru_B04A10); /*0x6a7ea4*/
   v12 = (GadgetClass *)&stru_B07C48; /*0x6a7ea7*/
   v13 = (int *)(v7 + 5528); /*0x6a7eac*/
   do /*0x6a7ed5*/
@@ -1908,7 +1908,7 @@ unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP
   }
   g_CameoRenderFlag = 1; /*0x6a7fa1*/
   Tactical::UpdateUIVisibility((Tactical *)v7); /*0x6a7fa8*/
-  (*(void (**)(int, int))(*(unsigned int *)v7 + 56))(v7, 2); /*0x6a7fb7*/
+  (*(void (**)(int, int))(*(unsigned int *)&v7->__pad_0E0)(v7, 2); /*0x6a7fb7*/
   return a4; /*0x6a7fbf*/
 
 }

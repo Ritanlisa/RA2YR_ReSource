@@ -6490,7 +6490,7 @@ void BuildingClass::ClearFactoryBib()
                     if ( m_Position ) /*0x44e11f*/
                       (*(void (__stdcall **)(int))(*(unsigned int *)m_Position + 4))(m_Position); /*0x44e124*/
                     if ( v68 ) /*0x44e129*/
-                      (*(void (__stdcall **)(int))(*(unsigned int *)v68 + 8))(v68); /*0x44e12e*/
+                      (*(void (__stdcall **)(int))(*(unsigned int *)&v68->q_20)(v68); /*0x44e12e*/
                   }
                   if ( !*v51 ) /*0x44e131*/
                     WinAPI::Wrapper(-2147467261); /*0x44e13b*/
@@ -7065,7 +7065,7 @@ void BuildingClass::Disappear_PrismForward()
                     0,
                     this->?) )
             {
-              v13 = (*(int (__thiscall **)(int))(*(unsigned int *)v11 + 132))(v11); /*0x44ec9a*/
+              v13 = (*(int (__thiscall **)(int))(*(unsigned int *)&v11->q210)(v11); /*0x44ec9a*/
               v14 = (*(int (__thiscall **)(int))(*(unsigned int *)v13 + 64))(v13); /*0x44eca8*/
               HouseClass::CancelProduction(this->?, (void *)this->Type->Factory[0], v14, 0, 0); /*0x44ecbf*/
             }
@@ -7089,7 +7089,7 @@ void BuildingClass::Disappear_PrismForward()
                     0,
                     this->?) )
             {
-              v20 = (*(int (__thiscall **)(int))(*(unsigned int *)v18 + 132))(v18); /*0x44ed1b*/
+              v20 = (*(int (__thiscall **)(int))(*(unsigned int *)&v18->q210)(v18); /*0x44ed1b*/
               v21 = (*(int (__thiscall **)(int))(*(unsigned int *)v20 + 64))(v20); /*0x44ed29*/
               HouseClass::CancelProduction(this->?, (void *)this->Type->Factory[0], v21, 0, 0); /*0x44ed40*/
             }
@@ -7113,7 +7113,7 @@ void BuildingClass::Disappear_PrismForward()
                     0,
                     this->?) )
             {
-              v27 = (*(int (__thiscall **)(int))(*(unsigned int *)v25 + 132))(v25); /*0x44ed9c*/
+              v27 = (*(int (__thiscall **)(int))(*(unsigned int *)&v25->q210)(v25); /*0x44ed9c*/
               v28 = (*(int (__thiscall **)(int))(*(unsigned int *)v27 + 64))(v27); /*0x44edaa*/
               HouseClass::CancelProduction(this->?, (void *)this->Type->Factory[0], v28, 0, 0); /*0x44edc1*/
             }
@@ -7137,7 +7137,7 @@ void BuildingClass::Disappear_PrismForward()
                     0,
                     this->?) )
             {
-              v34 = (*(int (__thiscall **)(int))(*(unsigned int *)v32 + 132))(v32); /*0x44ee1d*/
+              v34 = (*(int (__thiscall **)(int))(*(unsigned int *)&v32->q210)(v32); /*0x44ee1d*/
               v35 = (*(int (__thiscall **)(int))(*(unsigned int *)v34 + 64))(v34); /*0x44ee2b*/
               HouseClass::CancelProduction(this->?, (void *)this->Type->Factory[0], v35, 0, 0); /*0x44ee42*/
             }
@@ -7175,7 +7175,7 @@ void BuildingClass::Disappear_PrismForward()
       v40 = (*(int (__thiscall **)(int, int))(*(unsigned int *)v37 + 132))(v37, v48); /*0x44ee79*/
       if ( !(*(int (__thiscall **)(int, int, unsigned int, unsigned int))(*(unsigned int *)v40 + 148))(v40, 1, 0, 0) ) /*0x44ee90*/
       {
-        v41 = (*(int (__thiscall **)(int))(*(unsigned int *)v39 + 132))(v39); /*0x44ee9e*/
+        v41 = (*(int (__thiscall **)(int))(*(unsigned int *)&v39->__pad_210)(v39); /*0x44ee9e*/
         v42 = (*(int (__thiscall **)(int))(*(unsigned int *)v41 + 64))(v41); /*0x44eeac*/
         HouseClass::CancelProduction(this->?, (void *)this->Type->Factory[0], v42, 0, 0); /*0x44eec3*/
       }
@@ -8189,7 +8189,7 @@ void BuildingClass::DemolishBridgeAnim()
           IDA_LOBYTE(result) = *(unsigned char *)(*(unsigned int *)(result + 1312) + 5823); /*0x453153*/
           if ( !(unsigned char)result ) /*0x45315b*/
             return result; /*0x45315b*/
-          v12 = (*(int (__thiscall **)(int))(*(unsigned int *)v11 + 56))(v11); /*0x453168*/
+          v12 = (*(int (__thiscall **)(int))(*(unsigned int *)&v11->q_E0)(v11); /*0x453168*/
           result = (*((int (__thiscall **)(BuildingClass *))v3->TechnoClass + 14))(v3); /*0x45316e*/
           if ( result != v12 ) /*0x453173*/
             return result; /*0x453173*/
@@ -8200,11 +8200,11 @@ void BuildingClass::DemolishBridgeAnim()
           {
             v13 = *(unsigned int *)(v11 + 108); /*0x4531ab*/
             v14 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x4531b1*/
-            v15 = (int *)(*(int (__thiscall **)(int, unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v11 + 72))(v11, v25, 0, 0); /*0x4531c2*/
+            v15 = (int *)(*(int (__thiscall **)(int, unsigned char *, unsigned int, unsigned int))(*(unsigned int *)&v11->q_120)(v11, v25, 0, 0); /*0x4531c2*/
             CreateSmokeEffectAt(v13, v14, *v15, v15[1], v15[2], v16, v17); /*0x4531de*/
             v17 = 0; /*0x4531ea*/
             v16 = 1; /*0x4531ec*/
-            (*(void (__thiscall **)(int, int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)v11 + 364))( /*0x4531fe*/
+            (*(void (__thiscall **)(int, int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)&v11->q_5B0)( /*0x4531fe*/
               v11,
               v11 + 108,
               0,
@@ -8217,7 +8217,7 @@ void BuildingClass::DemolishBridgeAnim()
           }
           else
           {
-            (*(void (__thiscall **)(int))(*(unsigned int *)v11 + 248))(v11); /*0x453216*/
+            (*(void (__thiscall **)(int))(*(unsigned int *)&v11->q_3E0)(v11); /*0x453216*/
             v5 = v18; /*0x45321c*/
           }
         }
@@ -9684,14 +9684,14 @@ void BuildingClass::UnloadUnits()
       for ( i = v35; v36 >= 0; --v36 ) /*0x4580a3*/
       {
         v37 = *(unsigned int *)(this->Audio7[4] + 4 * v36); /*0x4580b1*/
-        if ( (*(unsigned __int8 (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)v37 + 216))(v37, &v50, 0) ) /*0x4580bd*/
+        if ( (*(unsigned __int8 (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)&v37->tiberiumCollectionState)(v37, &v50, 0) ) /*0x4580bd*/
         {
           if ( *(unsigned char *)(*(unsigned int *)(v37 + 540) + 492) ) /*0x4580d1*/
           {
             *(unsigned char *)(v37 + 1681) = 0; /*0x4580db*/
             *(unsigned char *)(v37 + 1680) = 0; /*0x4580e2*/
           }
-          (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)v37 + 968))(v37, 0); /*0x4580ef*/
+          (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)&v37->q_F20)(v37, 0); /*0x4580ef*/
           v38 = *(unsigned int *)v37; /*0x4580f7*/
           v39 = (*((int (__thiscall **)(BuildingClass *, unsigned char *, int, int))this->TechnoClass + 18))(this, v53, 1, 1); /*0x458104*/
           (*(void (__thiscall **)(int, int))(v38 + 372))(v37, v39); /*0x45810a*/
@@ -10308,11 +10308,11 @@ void BuildingClass::ApplyFoundationDamage()
         v9 = v7[57]; /*0x45ef2c*/
         if ( v9 ) /*0x45ef34*/
         {
-          if ( (*(int (__thiscall **)(int))(*(unsigned int *)v9 + 44))(v9) == 36 ) /*0x45ef44*/
+          if ( (*(int (__thiscall **)(int))(*(unsigned int *)&v9->suspendedMission)(v9) == 36 ) /*0x45ef44*/
             return 2; /*0x45ef44*/
           if ( (*(unsigned char *)(v9 + 20) & 1) != 0 ) /*0x45ef4e*/
           {
-            if ( (*(int (__thiscall **)(int))(*(unsigned int *)v9 + 44))(v9) == 6 ) /*0x45ef5e*/
+            if ( (*(int (__thiscall **)(int))(*(unsigned int *)&v9->suspendedMission)(v9) == 6 ) /*0x45ef5e*/
             {
               if ( !(unsigned __int8)BuildingClass::CanAcceptType((bool *)v9, (int)this, (int)other) ) /*0x45ef6f*/
                 return 2; /*0x45ef6f*/
@@ -10426,7 +10426,7 @@ void BuildingClass::Draw_0(Point2D* screen_pos, RectangleStruct* bounds) const
       v27[0] = v6 - *a3; /*0x47f728*/
       if ( !v11 ) /*0x47f72c*/
         TacticalClass::SetView((int *)this, 0, 0x10000, 0, 1000, 1000, 1000); /*0x47f748*/
-      result = (*(int (__thiscall **)(int))(*(unsigned int *)v26 + 156))(v26); /*0x47f755*/
+      result = (*(int (__thiscall **)(int))(*(unsigned int *)&v26->q_270)(v26); /*0x47f755*/
       if ( *(char *)(this + 320) >= 0 )
       {
         if ( *(unsigned char *)(v26 + 681) )
@@ -13502,7 +13502,7 @@ int UnitClass::ProcessExitQueue()
                                                                             || spawnOwner == *(HouseClass **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1300)
                                                                             || spawnOwner == *(HouseClass **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1352);
               v59 = **(unsigned int **)(this->spawnVectorCount + 4 * v5); /*0x6b7932*/
-              (*(void (__thiscall **)(int))(*(unsigned int *)v59 + 212))(v59); /*0x6b7936*/
+              (*(void (__thiscall **)(int))(*(unsigned int *)&v59->q_350)(v59); /*0x6b7936*/
               *(unsigned int *)(**(unsigned int **)(this->spawnVectorCount + 4 * v5) + 724) = this->owner; /*0x6b7947*/
               *(unsigned int *)(*(unsigned int *)(this->spawnVectorCount + 4 * v5) + 4) = 0; /*0x6b7953*/
             }

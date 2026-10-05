@@ -219,9 +219,9 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
         || v10 != *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1696)
         || v11 != *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1700) )
       {
-        return (*(char (**)(int, unsigned int *, int))(*(unsigned int *)v6 + 216))(v6, v14, 64); /*0x523c0b*/
+        return (*(char (**)(int, unsigned int *, int))(*(unsigned int *)&v6->q_360)(v6, v14, 64); /*0x523c0b*/
       }
-      (*(void (**)(int, int))(*(unsigned int *)v6 + 32))(v6, 1); /*0x523c14*/
+      (*(void (**)(int, int))(*(unsigned int *)&v6->needsRedraw)(v6, 1); /*0x523c14*/
     }
   }
   return 0; /*0x523c07*/

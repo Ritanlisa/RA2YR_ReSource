@@ -77,5 +77,7 @@ int IsAtEnd(); // def-aligned
     void Play(void *a1_1);
     int RenderFrameToSurface(void *a1_1);
     int InitKeyframeTracking(char * Source, void * aSubtitlemdTxt);
+    unsigned int q_20;  // +0x20 flat supply (CSP-fed)
+    unsigned int q_50;  // +0x50 flat supply (CSP-fed)
 };
 } // namespace gamemd

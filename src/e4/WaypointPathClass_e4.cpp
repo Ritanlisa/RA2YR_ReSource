@@ -125,7 +125,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       v2->vtable2 = &vt_WaypointPathClass; /*0x763cb4*/
       v2->vtable3 = &vt_WaypointPathClass; /*0x763cbb*/
     }
-    result = (*(int (**)(int, WaypointPathClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, (WaypointPathClass **)&a1, 4, 0); /*0x763ccd*/
+    result = (*(int (**)(int, WaypointPathClass **, int, unsigned int))(*(unsigned int *)&v3->u32_30)(v3, (WaypointPathClass **)&a1, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
     {
       p_vtable1 = (WaypointPathClass *)&v2[1].vtable1; /*0x763cd8*/

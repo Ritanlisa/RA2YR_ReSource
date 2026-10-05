@@ -233,7 +233,7 @@ AbstractClass * * DSurface::CreatePrimary()
     {
       v8 = *v6; /*0x4ba8bf*/
       v28 = 4; /*0x4ba8ca*/
-      if ( !(*(int (**)(int, int *, int *))(*(unsigned int *)v8 + 48))(v8, &v28, &v29) ) /*0x4ba8d6*/
+      if ( !(*(int (**)(int, int *, int *))(*(unsigned int *)&v8->q_C0)(v8, &v28, &v29) ) /*0x4ba8d6*/
       {
         v9 = (gamemd::DSurface *)((unsigned int)((DSurface *)__2_YAPAXI_Z(0x24u)));
         if ( v9 ) /*0x4ba8e9*/
@@ -895,7 +895,7 @@ void DSurface_FillRectWithFlags(DSurface *aP0)
     return 0; /*0x4bb847*/
   if ( (int)aP0->DSurface_field_0x8 <= 0 || (int)aP0->DSurface_field_0xC <= 0 ) /*0x4bb863*/
     return 0; /*0x4bb865*/
-  v8 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v6 + 120))(v6, v38); /*0x4bb87a*/
+  v8 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)&v6->q_1E0)(v6, v38); /*0x4bb87a*/
   v9 = (unsigned int *)(ClipRectIntersection((RectangleStruct *)(v42),(const RectangleStruct *)(v8),(const RectangleStruct *)((int *)aP0), 0, 0)); /*0x4bb888*/
   v39[0] = *v9; /*0x4bb891*/
   v39[1] = v9[1]; /*0x4bb898*/
@@ -910,7 +910,7 @@ void DSurface_FillRectWithFlags(DSurface *aP0)
   v30 = v12; /*0x4bb908*/
   v34 = 0xFFu >> g_BitMask_Red << g_BitShift_Blue; /*0x4bb917*/
   v13 = CellStruct::Copy((CellStruct *)v39, v38); /*0x4bb91b*/
-  v35 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)v6 + 92))(v6, *v13, v13[1]); /*0x4bb938*/
+  v35 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)&v6->q_170)(v6, *v13, v13[1]); /*0x4bb938*/
   if ( !v35 ) /*0x4bb93c*/
     return 0; /*0x4bb93e*/
   v14 = (int)a4; /*0x4bb94a*/

@@ -1023,7 +1023,7 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
   v5 = *v4; /*0x4528b5*/
   v6 = v4[1]; /*0x4528bb*/
   v7 = v4[2]; /*0x4528c0*/
-  v8 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)a2 + 72))(a2, &v13); /*0x4528c8*/
+  v8 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)&a2->q_120)(a2, &v13); /*0x4528c8*/
   v9 = v5 - *v8; /*0x4528d2*/
   v10 = v8[2]; /*0x4528d9*/
   v14 = v6 - v8[1]; /*0x4528dc*/

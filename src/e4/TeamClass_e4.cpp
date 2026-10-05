@@ -1731,7 +1731,7 @@ TeamTypeClass * * TeamClass::RecruitMember(int a2)
         while ( v34 < *((unsigned int *)((char *)&FootClass_Array + 2)) ); /*0x6eadc8*/
         if ( v3 ) /*0x6eadd0*/
         {
-          (*(void (**)(int, unsigned int))(*(unsigned int *)v3 + 968))(v3, 0); /*0x6eadd8*/
+          (*(void (**)(int, unsigned int))(*(unsigned int *)&v3->q_F20)(v3, 0); /*0x6eadd8*/
           ((TeamClass *)((int *)v2))->AddMember(v3, 0); /*0x6eade3*/
           v30 = 1; /*0x6eadee*/
           DB = CCINIClass::GetDB((CCINIClass *)(v3 + 276)); /*0x6eadfb*/
@@ -1808,7 +1808,7 @@ TeamTypeClass * * TeamClass::RecruitMember(int a2)
     default:
       return v30;
   }
-  (*(void (**)(int, unsigned int))(*(unsigned int *)v3 + 968))(v3, 0); /*0x6eac2b*/
+  (*(void (**)(int, unsigned int))(*(unsigned int *)&v3->q_F20)(v3, 0); /*0x6eac2b*/
   ((TeamClass *)((int *)v2))->AddMember(v3, 0); /*0x6eac36*/
   return 1; /*0x6eac3b*/
 
@@ -2989,7 +2989,7 @@ bool TeamClass::ValidateMember(TechnoClass * aP1, int * a2, char a4)
     goto LABEL_39; /*0x6ea66c*/
   if ( (uint8_t)Team::AllMembersValid((Team *)aP1) ) /*0x6ea674*/
   {
-    result = (*(int (**)(int))(*(unsigned int *)aP1 + 44))(aP1); /*0x6ea681*/
+    result = (*(int (**)(int))(*(unsigned int *)&aP1->__pad_0B0)(aP1); /*0x6ea681*/
     if ( result != 2 ) /*0x6ea687*/
       goto LABEL_39; /*0x6ea687*/
     result = *(unsigned int *)(aP1 + 1732); /*0x6ea68d*/
@@ -3002,7 +3002,7 @@ bool TeamClass::ValidateMember(TechnoClass * aP1, int * a2, char a4)
     do /*0x6ea6f0*/
     {
       v6 = *a2; /*0x6ea6c0*/
-      if ( *(unsigned int *)(*(unsigned int *)&this->buildingType[1].TeamTypeClass_field_70 + 8 * v6 + 168) == (*(int (**)(int))(*(unsigned int *)aP1 + 136))(aP1) ) /*0x6ea6da*/
+      if ( *(unsigned int *)(*(unsigned int *)&this->buildingType[1].TeamTypeClass_field_70 + 8 * v6 + 168) == (*(int (**)(int))(*(unsigned int *)&aP1->q_220)(aP1) ) /*0x6ea6da*/
         break; /*0x6ea6da*/
       *a2 = v6 + 1; /*0x6ea6df*/
     }
@@ -3011,9 +3011,9 @@ bool TeamClass::ValidateMember(TechnoClass * aP1, int * a2, char a4)
   result = (int)this->buildingType; /*0x6ea6f2*/
   if ( *a2 == *(unsigned int *)(*(unsigned int *)(result + 228) + 156) && !a4 ) /*0x6ea70b*/
     goto LABEL_39; /*0x6ea70b*/
-  if ( (*(int (**)(int))(*(unsigned int *)aP1 + 388))(aP1) != -1 ) /*0x6ea71e*/
+  if ( (*(int (**)(int))(*(unsigned int *)&aP1->q_610)(aP1) != -1 ) /*0x6ea71e*/
   {
-    v7 = (*(int (**)(int))(*(unsigned int *)aP1 + 388))(aP1); /*0x6ea724*/
+    v7 = (*(int (**)(int))(*(unsigned int *)&aP1->q_610)(aP1); /*0x6ea724*/
     if ( !IPersistStream::SetField(v7) ) /*0x6ea72c*/
       goto LABEL_39; /*0x6ea72c*/
   }
@@ -3027,7 +3027,7 @@ bool TeamClass::ValidateMember(TechnoClass * aP1, int * a2, char a4)
   v9 = 0; /*0x6ea757*/
   if ( currentScript ) /*0x6ea75b*/
     v9 = *((SessionClass *)((SessionClass *)currentScript))->GetEntry(&v12) == 8; /*0x6ea76c*/
-  result = (*(int (**)(int))(*(unsigned int *)aP1 + 44))(aP1); /*0x6ea772*/
+  result = (*(int (**)(int))(*(unsigned int *)&aP1->__pad_0B0)(aP1); /*0x6ea772*/
   if ( result == 2 ) /*0x6ea778*/
     v9 = 1; /*0x6ea77a*/
   if ( !*(unsigned char *)(aP1 + 1058) && BYTE1(this->buildingType[1].TeamTypeClass_field_34) && !v9 ) /*0x6ea795*/

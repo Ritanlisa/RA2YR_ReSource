@@ -3130,7 +3130,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
       v15 = *((unsigned int *)this + 16); /*0x6b1c04*/
       if ( v15 ) /*0x6b1c09*/
       {
-        (*(void (__thiscall **)(int, SliderClass *))(*(unsigned int *)v15 + 132))(v15, this); /*0x6b1c0e*/
+        (*(void (__thiscall **)(int, SliderClass *))(*(unsigned int *)&v15->q210)(v15, this); /*0x6b1c0e*/
         (*(void (__thiscall **)(unsigned int, SliderClass *))(**((unsigned int **)this + 16) + 12))(*((unsigned int *)this + 16), this); /*0x6b1c1a*/
         (*(void (__thiscall **)(unsigned int))(**((unsigned int **)this + 16) + 72))(*((unsigned int *)this + 16)); /*0x6b1c22*/
       }

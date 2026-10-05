@@ -62,6 +62,7 @@ struct BombClass {
     int AbstractClass();  // 0x4385d0
     BombClass * * sub_56AF40(int a2);
     BombClass * * sub_56B250(int a2);
+    unsigned int q_80;  // +0x80 flat supply (CSP-fed)
 };
 
 } // namespace gamemd

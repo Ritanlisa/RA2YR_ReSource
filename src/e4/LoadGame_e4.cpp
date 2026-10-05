@@ -226,7 +226,7 @@ int LoadGame::LoadBlock300(int a2)
   result = 0; /*0x69b5f3*/
   if ( a2 ) /*0x69b5ba*/
   {
-    if ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &a2, 4, 0) >= 0 && a2 == 300 ) /*0x69b5d7*/
+    if ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->__pad_030)(a2, &a2, 4, 0) >= 0 && a2 == 300 ) /*0x69b5d7*/
     {
       v4 = (*(int (**)(int, LoadGame *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, this, 300, 0); /*0x69b5e4*/
       this->LoadGame_field_0x04 = -1; /*0x69b5e9*/
@@ -403,14 +403,14 @@ int LoadGame::LoadPointArray(int a2)
   int v13; // [esp+34h] [ebp+4h]
 
   v12 = this; /*0x54e7ba*/
-  v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &v11, 4, 0); /*0x54e7cf*/
+  v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->__pad_030)(a2, &v11, 4, 0); /*0x54e7cf*/
   if ( v3 >= 0 ) /*0x54e7d3*/
   {
     v13 = 0; /*0x54e7dd*/
     while ( v13 < v11 ) /*0x54e7e7*/
     {
       v4 = (int *)__2_YAPAXI_Z(8u); /*0x54e7fa*/
-      v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, v4, 8, 0); /*0x54e805*/
+      v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->__pad_030)(a2, v4, 8, 0); /*0x54e805*/
       if ( v3 < 0 ) /*0x54e809*/
         break; /*0x54e809*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4); /*0x54e811*/

@@ -85,7 +85,7 @@ AbstractClass * FootClass::Destruct()
   AudioFileClass::Release((AudioFileClass *)this->audioController7); /*0x4d367e*/
   v7 = (&this->locomotor)[0]; /*0x4d3683*/
   if ( v7 ) /*0x4d368b*/
-    (*(void (**)(int))(*(unsigned int *)v7 + 8))((&this->locomotor)[0]); /*0x4d3690*/
+    (*(void (**)(int))(*(unsigned int *)&v7->q_20)((&this->locomotor)[0]); /*0x4d3690*/
   v8 = *(void **)this->__pad_5B0; /*0x4d3693*/
   (&this->FootClass_field_abstract_array_5AC)[0] = (int)&vt_VectorClass; /*0x4d36a0*/
   if ( v8 && this->__pad_5B0[9] ) /*0x4d36a8*/

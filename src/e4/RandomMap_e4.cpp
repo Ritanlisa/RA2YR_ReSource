@@ -1806,7 +1806,7 @@ int AllocateArea()
           else
           {
             v8 = v5; /*0x590625*/
-            while ( *(unsigned int *)(*(unsigned int *)v8 + 8) != *(unsigned int *)(*(unsigned int *)(v3 + 4) + *(unsigned int *)v41) ) /*0x59062c*/
+            while ( *(unsigned int *)(*(unsigned int *)&v8->needsSave != *(unsigned int *)(*(unsigned int *)(v3 + 4) + *(unsigned int *)v41) ) /*0x59062c*/
             {
               ++v7; /*0x59062e*/
               v8 += 4; /*0x59062f*/
@@ -1951,7 +1951,7 @@ int AllocateArea()
             else
             {
               v30 = g_MissionQueueFrame.briefing[339]; /*0x590839*/
-              while ( *(void **)(*(unsigned int *)v30 + 8) != RandomMap_field_0x8 ) /*0x590840*/
+              while ( *(void **)(*(unsigned int *)&v30->needsSave != RandomMap_field_0x8 ) /*0x590840*/
               {
                 ++v29; /*0x590846*/
                 v30 += 4; /*0x590847*/
@@ -6129,7 +6129,7 @@ int SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, short * a4, c
       while ( 1 ) /*0x5a0a83*/
       {
         v21 = *v16; /*0x5a0a83*/
-        v94 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)v90 + 4) + 4 * v92); /*0x5a0a88*/
+        v94 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v90->q010 + 4 * v92); /*0x5a0a88*/
         v22 = IDA_SHIWORD(v94); /*0x5a0a8c*/
         v23 = (__int16)v94; /*0x5a0a91*/
         if ( (__int16)v94 >= v21 ) /*0x5a0a96*/

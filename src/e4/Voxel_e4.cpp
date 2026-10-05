@@ -977,7 +977,7 @@ LABEL_63:
     {
 LABEL_71:
       *((unsigned int *)this + 6) = 0; /*0x756479*/
-      (*(void (**)(int))(*(unsigned int *)v7 + 52))(v7); /*0x756480*/
+      (*(void (**)(int))(*(unsigned int *)&v7->u32_D0)(v7); /*0x756480*/
       return 0; /*0x756486*/
     }
 LABEL_70:
@@ -3495,7 +3495,7 @@ LABEL_13:
     {
       v19 = *((unsigned int *)this + 117); /*0x762cd7*/
       v20 = (*(int (**)(unsigned int))(**(unsigned int **)&this->u32_AC + 88))(*((unsigned int *)this + 43)); /*0x762ce8*/
-      v21 = (int *)(*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)v19 + 176))( /*0x762d05*/
+      v21 = (int *)(*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)&v19->locomotorTarget)( /*0x762d05*/
                      v19,
                      &v81,
                      0,
@@ -3510,7 +3510,7 @@ LABEL_13:
 LABEL_21:
       v22 = *((unsigned int *)this + 117); /*0x762d1b*/
       v23 = (*(int (**)(unsigned int))(**(unsigned int **)&this->u32_AC + 88))(*((unsigned int *)this + 43)); /*0x762d2c*/
-      v24 = (int *)(*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)v22 + 176))( /*0x762d49*/
+      v24 = (int *)(*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)&v22->locomotorTarget)( /*0x762d49*/
                      v22,
                      &v81,
                      0,

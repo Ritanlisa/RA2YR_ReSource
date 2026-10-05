@@ -852,7 +852,7 @@ void UDPInterfaceClass_Destru_Connect()
       *((unsigned int *)v9 + 3) = 0; /*0x7b378a*/
       *((unsigned int *)v9 + 1) = **(unsigned int **)(*(unsigned int *)(v7 + 258876) + 4 * v24); /*0x7b379c*/
       *((unsigned short *)v9 + 13) = *v23; /*0x7b37a2*/
-      (*(void (**)(int, unsigned char *, int))(*(unsigned int *)v7 + 84))(v7, v9, a2); /*0x7b37aa*/
+      (*(void (**)(int, unsigned char *, int))(*(unsigned int *)&v7->q_150)(v7, v9, a2); /*0x7b37aa*/
       if ( a5 ) /*0x7b37b3*/
       {
         v11 = *(unsigned int *)(v7 + 64); /*0x7b37b5*/
@@ -885,7 +885,7 @@ void UDPInterfaceClass_Destru_Connect()
       }
       a2 = 2; /*0x7b3841*/
       v21 = v15; /*0x7b3845*/
-      v20 = (*(int (**)(int))(*(unsigned int *)v7 + 56))(v7); /*0x7b3848*/
+      v20 = (*(int (**)(int))(*(unsigned int *)&v7->q_E0)(v7); /*0x7b3848*/
       SendMessageA((HWND)g_hWnd, v20, v21, 0); /*0x7b3852*/
       MessageLoop(); /*0x7b3858*/
       result = *(unsigned int *)(v7 + 258888); /*0x7b3861*/

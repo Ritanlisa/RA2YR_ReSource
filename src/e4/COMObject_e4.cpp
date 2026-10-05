@@ -141,7 +141,7 @@ int COMObject::QueryInterface2(const void * a2, unsigned int * a3)
     *v4 = a2; /*0x6c0096*/
   if ( !*v4 ) /*0x6c0098*/
     return -2147467262; /*0x6c00a0*/
-  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c00ac*/
+  (*(void (**)(const void *))(*(unsigned int *)&a2->q_10)(a2); /*0x6c00ac*/
   return 0; /*0x6c005e*/
 
 }

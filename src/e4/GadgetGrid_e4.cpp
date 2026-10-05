@@ -28,10 +28,10 @@ int GadgetGrid::InsertItem(int a2)
   char v15[4]; // [esp+Ch] [ebp-4h] BYREF
   int v16; // [esp+14h] [ebp+4h]
 
-  v4 = (int *)(*(int (**)(int, char *))(*(unsigned int *)a2 + 440))(a2, v15); /*0x4134b3*/
+  v4 = (int *)(*(int (**)(int, char *))(*(unsigned int *)&a2->q_6E0)(a2, v15); /*0x4134b3*/
   v5 = *v4; /*0x4134b9*/
   v16 = *v4; /*0x4134c0*/
-  (*(void (**)(int, int))(*(unsigned int *)a2 + 760))(a2, *v4); /*0x4134c4*/
+  (*(void (**)(int, int))(*(unsigned int *)&a2->q_BE0)(a2, *v4); /*0x4134c4*/
   if ( (v5 & 0x8000u) == 0 ) /*0x4134cd*/
     v5 = (int16_t)v5; /*0x4134d3*/
   else
@@ -85,7 +85,7 @@ int GadgetGrid::RemoveItem(int a2)
 
   v3 = (gamemd::GadgetGrid *)((int)((gamemd::GadgetGrid *)(*(unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)a2 + 756))(a2, v14))));
   v13 = (gamemd::GadgetGrid *)((int16_t)((gamemd::GadgetGrid *)(HIWORD(v3))));
-  (*(void (**)(int, int))(*(unsigned int *)a2 + 760))(a2, dword_887850); /*0x4135fb*/
+  (*(void (**)(int, int))(*(unsigned int *)&a2->q_BE0)(a2, dword_887850); /*0x4135fb*/
   if ( ((unsigned int)(v3)& 0x8000u) == 0 ) /*0x413604*/
     v3 = (gamemd::GadgetGrid *)((int16_t)v3); /*0x41360a*/
   else

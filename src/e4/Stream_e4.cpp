@@ -56,7 +56,7 @@ int Stream::ReadIntArray(int a2)
   int v6; // ebx
 
   v2 = a2; /*0x49fb72*/
-  result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))( /*0x49fb84*/
+  result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->q_40)( /*0x49fb84*/
              a2,
              (int *)&this->Stream_field_10,
              4,

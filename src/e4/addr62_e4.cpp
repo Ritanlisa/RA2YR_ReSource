@@ -2225,7 +2225,7 @@ void E4Recv_629530::sub_629530()
   this->ambientSoundController[3] = 0; /*0x629542*/
   if ( v2 ) /*0x629545*/
   {
-    (*(void (**)(int))(*(unsigned int *)v2 + 248))(v2); /*0x629549*/
+    (*(void (**)(int))(*(unsigned int *)&v2->q_3E0)(v2); /*0x629549*/
     this->ambientSoundController[2] = 0; /*0x62954f*/
   }
   if ( LOBYTE(this->customSound_controller[1]) ) /*0x629552*/

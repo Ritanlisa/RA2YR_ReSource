@@ -1973,7 +1973,7 @@ char Tactical::SelectObject(int a2, void *a2_2)
   result = (*(int (**)(GScreenClass *, int))(this->vfptr[0] + 44))(this, a2); /*0x4f4458*/
   if ( (unsigned char)result ) /*0x4f445d*/
   {
-    result = (*(int (**)(int))(*(unsigned int *)a2 + 36))(a2); /*0x4f4467*/
+    result = (*(int (**)(int))(*(unsigned int *)&a2->q_90)(a2); /*0x4f4467*/
     *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 880) = result; /*0x4f446a*/
     LOBYTE(result) = 1; /*0x4f446f*/
   }

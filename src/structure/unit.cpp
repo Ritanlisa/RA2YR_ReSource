@@ -6517,7 +6517,7 @@ int UnitClass::UpdateRotation_TurretFacing_EMP()
       if ( Type->? ) /*0x7369cc*/
       {
         v5 = (*((int (__thiscall **)(UnitClass *))this->FootClass + 253))(this); /*0x7369e0*/
-        if ( (unsigned __int8)IsNonNullPtr((unsigned int *)v5) && !*(unsigned char *)(*(unsigned int *)v5 + 299) ) /*0x7369f4*/
+        if ( (unsigned __int8)IsNonNullPtr((unsigned int *)v5) && !*(unsigned char *)(*(unsigned int *)&v5->MovementZone ) /*0x7369f4*/
         {
           if ( *(unsigned char *)(v5 + 24) ) /*0x736a02*/
           {
@@ -8233,7 +8233,7 @@ int UnitClass::EvaluateTarget(int a2, int a3, int a4, int a5, char a6)
               if ( v34 ) /*0x73f53f*/
               {
                 v35 = (unsigned short *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)v34 + 440))(v34, &v82); /*0x73f550*/
-                v36 = (unsigned short *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)v32 + 440))(v32, &v83); /*0x73f559*/
+                v36 = (unsigned short *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)&v32->Deployed)(v32, &v83); /*0x73f559*/
                 if ( *v36 == *v35 && v36[1] == v35[1] ) /*0x73f56f*/
                   return 0; /*0x73f56f*/
                 v28 = IDA_LODWORD(a2); /*0x73f575*/
@@ -8251,7 +8251,7 @@ int UnitClass::EvaluateTarget(int a2, int a3, int a4, int a5, char a6)
             {
               return 0; /*0x73f5d9*/
             }
-            if ( (*(int (__thiscall **)(int))(*(unsigned int *)v32 + 44))(v32) == 6 ) /*0x73f5e9*/
+            if ( (*(int (__thiscall **)(int))(*(unsigned int *)&v32->suspendedMission)(v32) == 6 ) /*0x73f5e9*/
             {
               if ( (*(int (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)this + 388))(this) == 7 /*0x73f653*/
                 && v32 == *((unsigned int *)this + 361)

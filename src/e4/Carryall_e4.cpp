@@ -120,7 +120,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass
       v11 = *((unsigned int *)this + 361); /*0x416f29*/
       if ( v11 ) /*0x416f31*/
       {
-        v12 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v11 + 72))(v11, v29); /*0x416f54*/
+        v12 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)&v11->q_120)(v11, v29); /*0x416f54*/
         if ( !*((unsigned int *)this + 413) ) /*0x416f5f*/
           WinAPI::Wrapper(-2147467261); /*0x416f6e*/
         (*(void (**)(unsigned int, unsigned int, unsigned int, unsigned int))(**((unsigned int **)this + 413) + 68))( /*0x416f89*/

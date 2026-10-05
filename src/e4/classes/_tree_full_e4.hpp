@@ -417,6 +417,7 @@ struct MSShapeAnim {
     unsigned int * processTrigger(int a2, int a3);
     unsigned int * checkCondition(int aP1, int aP2);
     int executeActions(int a2, void *a2_2);
+    unsigned int q_10;  // +0x10 flat supply (CSP-fed)
 };
 #endif  // GAMEMD_TREE_UNIVERSE (MSShapeAnim)
 
@@ -680,6 +681,20 @@ struct ObjectClass {
     void j_DeleteAndZero();
     void nullsub_126();
     void unknown_libname_74();
+    unsigned int q_20;  // +0x20 flat supply (CSP-fed)
+    unsigned int q_B0;  // +0xB0 flat supply (CSP-fed)
+    unsigned int q_120;  // +0x120 flat supply (CSP-fed)
+    unsigned int q_170;  // +0x170 flat supply (CSP-fed)
+    unsigned int q_180;  // +0x180 flat supply (CSP-fed)
+    unsigned int q_1C0;  // +0x1C0 flat supply (CSP-fed)
+    unsigned int q_1D0;  // +0x1D0 flat supply (CSP-fed)
+    unsigned int q_1F0;  // +0x1F0 flat supply (CSP-fed)
+    unsigned int q_200;  // +0x200 flat supply (CSP-fed)
+    unsigned int q_2B0;  // +0x2B0 flat supply (CSP-fed)
+    unsigned int q_5B0;  // +0x5B0 flat supply (CSP-fed)
+    unsigned int q_610;  // +0x610 flat supply (CSP-fed)
+    unsigned int q_F20;  // +0xF20 flat supply (CSP-fed)
+    unsigned int q_1200;  // +0x1200 flat supply (CSP-fed)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

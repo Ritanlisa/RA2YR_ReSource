@@ -292,7 +292,7 @@ unsigned int * LinkedList_flat::Attach(int a2)
   LinkClass *v3; // eax
 
   (*(void (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x5566d5*/
-  v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)a2 + 24))(a2); /*0x5566de*/
+  v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)&a2->q_60)(a2); /*0x5566de*/
   v3->m_Prev = this; /*0x5566e1*/
   this->m_Next = v3; /*0x5566e4*/
   this->m_Prev = 0; /*0x5566e7*/
@@ -309,7 +309,7 @@ LinkClass * * LinkedList_flat::Append(int a2, void *a2_2)
   int v4; // eax
 
   (*(void (**))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x556705*/
-  v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)a2 + 28))(a2); /*0x55670e*/
+  v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)&a2->q_70)(a2); /*0x55670e*/
   v3->m_Next = (gamemd::LinkClass *)(this); /*0x556711*/
   this->m_Prev = (unsigned int)(v3); /*0x556714*/
   v4 = *(unsigned int *)this->__pad_0; /*0x556717*/

@@ -992,7 +992,7 @@ int HouseClass::DestroyAllBuildings()
       v6 = *(TriggerClass **)(v5 + 632); /*0x4fc7d8*/
       if ( v6 ) /*0x4fc7e0*/
         TriggerClass::UnlinkTags(v6); /*0x4fc7e2*/
-      LOBYTE(PriorityTarget) = (*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)v5 + 364))( /*0x4fc806*/
+      LOBYTE(PriorityTarget) = (*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)&v5->q_5B0)( /*0x4fc806*/
                                  v5,
                                  &v8,
                                  0,
@@ -1041,7 +1041,7 @@ int HouseClass::DestroyAllNonBuildingsNonNaval()
       v6 = *(TriggerClass **)(v5 + 632); /*0x4fc880*/
       if ( v6 ) /*0x4fc888*/
         TriggerClass::UnlinkTags(v6); /*0x4fc88a*/
-      LOBYTE(PriorityTarget) = (*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)v5 + 364))( /*0x4fc8ae*/
+      LOBYTE(PriorityTarget) = (*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)&v5->q_5B0)( /*0x4fc8ae*/
                                  v5,
                                  &v8,
                                  0,
@@ -1090,7 +1090,7 @@ int HouseClass::DestroyAllNonBuildingsNaval()
       v6 = *(TriggerClass **)(v5 + 632); /*0x4fc930*/
       if ( v6 ) /*0x4fc938*/
         TriggerClass::UnlinkTags(v6); /*0x4fc93a*/
-      LOBYTE(PriorityTarget) = (*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)v5 + 364))( /*0x4fc95e*/
+      LOBYTE(PriorityTarget) = (*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)&v5->q_5B0)( /*0x4fc95e*/
                                  v5,
                                  &v8,
                                  0,

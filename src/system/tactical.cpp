@@ -1083,7 +1083,7 @@ void* TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
                 v17 = *(unsigned int *)(v4 + 96); /*0x4d1c61*/
                 v18 = *(unsigned char **)(v17 + 16 * j); /*0x4d1c6b*/
                 v69 = *(unsigned int *)(v17 + 16 * j + 4); /*0x4d1c79*/
-                v66 = (*(int (**)(unsigned char *))(*(unsigned int *)v18 + 156))(v18); /*0x4d1c86*/
+                v66 = (*(int (**)(unsigned char *))(*(unsigned int *)&v18->q_270)(v18); /*0x4d1c86*/
                 v70 = *(unsigned char *)(*(unsigned int *)(v4 + 96) + 16 * j + 8); /*0x4d1c97*/
                 v64 = *(int **)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] /*0x4d1cb0*/
                                           + 4 * *(unsigned int *)(*(unsigned int *)(v4 + 40) + 90196))
@@ -2673,7 +2673,7 @@ int TacticalClass::ProcessMouseClick(int x, int y)
                       else
                       {
                         v10 = FindRadarClosestEnemy((int16_t *)&v27, 0); /*0x653c8e*/
-                        v9 = (*(int (**)(int, int *, unsigned int, unsigned int))(*(unsigned int *)v10 + 112))(v10, &v27, 0, 0); /*0x653c9e*/
+                        v9 = (*(int (**)(int, int *, unsigned int, unsigned int))(*(unsigned int *)&v10->q_1C0)(v10, &v27, 0, 0); /*0x653c9e*/
                       }
                       v7 = v9; /*0x653ca1*/
                     }

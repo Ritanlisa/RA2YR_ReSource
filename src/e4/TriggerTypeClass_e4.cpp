@@ -195,7 +195,7 @@ LABEL_52:
     if ( !*((aP2[20] & 4) != 0 ? (unsigned int *)(aP2 + 1652) : (unsigned int *)1652) )
       WinAPI::Wrapper(-2147467261); /*0x6fc4cf*/
     v37 = *((aP2[20] & 4) != 0 ? (unsigned int *)(aP2 + 1652) : (unsigned int *)1652);
-    if ( (*(uint8_t (**)(int))(*(unsigned int *)v37 + 128))(v37) ) /*0x6fc4dd*/
+    if ( (*(uint8_t (**)(int))(*(unsigned int *)&v37->isTargetedByChrono)(v37) ) /*0x6fc4dd*/
       return (gamemd::TechnoClass **)(5); /*0x6fc4dd*/
   }
   v18 = *(unsigned int *)(v12 + 172); /*0x6fc4ef*/
