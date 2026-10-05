@@ -96,9 +96,156 @@ int AircraftClass::Mission_Retreat()
 
 // IDA: 0x4166C0 (Mission_Enter, 1037B)
 // 0x4166c0
+// G42.42h FULL implementation (truth 0x4166C0; offsets disasm-decoded):
+//   carryall-family types (Type+3580) use the dedicated state machine; the
+//   generic enter is a 5-state machine on missionStatus (0xBC): 0 = pick the
+//   approach (nearby cell of the destination, or bail to mission 289), 1 =
+//   hand the destination coords to the locomotor (vt+68), 2 = proximity
+//   check (dist<256 -> dock validation through the Rules dock array),
+//   arrival/cell-occupied transitions, 3 = wait for locomotor stop, 4 =
+//   final arrival checks.  Unmatched/default -> mission-control timeout
+//   (RoundToInt(sec*900) + Random 0..2).
 int AircraftClass::Mission_Enter()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004166C0.json)
+    if (*(unsigned char *)((char *)Type + 3580) != 0)
+        return AircraftClass_MissionStateMachine();
+
+    unsigned int loco;
+    int *destCoords;
+    int destCell[3];
+    __int16 myCellBuf[4];
+    __int16 *myCell;
+    int rel[3];
+
+    switch (missionStatus)
+    {
+    case 0:
+        if (movementDestination != nullptr)
+        {
+            void *nearbyCell = AircraftClass_FindNearbyCell((void *)movementDestination);
+            (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, nearbyCell, 1);
+            missionStatus = 1;
+        }
+        else
+        {
+            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+        }
+        break;
+
+    case 1:
+        if (movementDestination == nullptr)
+        {
+            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+            return 1;
+        }
+        destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 19))((void *)movementDestination, destCell);
+        loco = *(unsigned int *)&locomotor;
+        if (loco == 0)
+            WinAPI_Wrapper((int)0x80004003);
+        (*(void (__cdecl **)(unsigned int, int))(*(unsigned int *)loco + 68))(loco, *destCoords);
+        missionStatus = 2;
+        return 1;
+
+    case 2:
+        if (*(int *)((char *)this + 0x520) != -1)
+        {
+            bool needValidate = false;
+            if (movementDestination != nullptr)
+            {
+                destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 18))((void *)movementDestination, destCell);
+                ((Coord *)rel)->Subtract(*(int *)((char *)this + 0x9C) - destCoords[0],
+                                         *(int *)((char *)this + 0xA0) - destCoords[1], 0);
+                if (((Coord *)rel)->Length() < 256)
+                    needValidate = true;
+            }
+            else
+            {
+                needValidate = true;
+            }
+            if (needValidate)
+            {
+                unsigned int dockArr = *(unsigned int *)((char *)&dword_A83D4C + 4 * *(int *)((char *)this + 0x520) + 208);
+                int element = Array_GetElement((void *)dockArr, *(char *)((char *)this + 0x686));
+                int *entry = VectorClass_GetAtChecked((void *)dockArr, element);
+                BuildingClass_ValidateFoundation_0((int)this, 0, 0, entry, 0, 0);
+            }
+        }
+        loco = *(unsigned int *)&locomotor;
+        if (loco == 0)
+            WinAPI_Wrapper((int)0x80004003);
+        if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0)
+        {
+            missionStatus = 3;
+            return 1;
+        }
+        if (movementDestination != nullptr)
+        {
+            destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 19))((void *)movementDestination, destCell);
+            myCell = (__int16 *)(*(void **(__thiscall **)(AircraftClass *, void *))(*(unsigned int **)this + 110))(this, myCellBuf);
+            if (destCoords[0] / 256 == myCell[0] && destCoords[1] / 256 == myCell[1])
+            {
+                missionStatus = 3;
+                return 1;
+            }
+        }
+        if (movementDestination != nullptr)
+        {
+            destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 19))((void *)movementDestination, destCell);
+            __int16 targetCell[2];
+            targetCell[0] = (__int16)(destCoords[0] / 256);
+            targetCell[1] = (__int16)(destCoords[1] / 256);
+            if (Cell_IsOccupied((int)this, (void *)targetCell, 1) == 0)
+            {
+                missionStatus = 0;
+                return 1;
+            }
+        }
+        missionStatus = 4;
+        return 1;
+
+    case 3:
+        loco = *(unsigned int *)&locomotor;
+        if (loco == 0)
+            WinAPI_Wrapper((int)0x80004003);
+        if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0)
+            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+        return 1;
+
+    case 4:
+        loco = *(unsigned int *)&locomotor;
+        if (loco == 0)
+            WinAPI_Wrapper((int)0x80004003);
+        if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0
+         || movementDestination != nullptr
+            && (destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 19))((void *)movementDestination, destCell),
+                myCell = (__int16 *)(*(void **(__thiscall **)(AircraftClass *, void *))(*(unsigned int **)this + 110))(this, myCellBuf),
+                destCoords[0] / 256 == myCell[0] && destCoords[1] / 256 == myCell[1]))
+        {
+            missionStatus = 3;
+        }
+        else
+        {
+            if (movementDestination != nullptr)
+            {
+                destCoords = (*(int *(__thiscall **)(void *, int *))(*(unsigned int **)(void *)movementDestination + 19))((void *)movementDestination, destCell);
+                __int16 targetCell[2];
+                targetCell[0] = (__int16)(destCoords[0] / 256);
+                targetCell[1] = (__int16)(destCoords[1] / 256);
+                if (Cell_IsOccupied((int)this, (void *)targetCell, 1) == 0)
+                {
+                    missionStatus = 0;
+                    return 1;
+                }
+            }
+        }
+        return 1;
+
+    default:
+        break;
+    }
+    void *mc = GetMissionControl();
+    int base = (int)Math::RoundToInt(*((double *)mc + 2) * 900.0);
+    return base + Random::Range((void *)((char *)&dword_A8B230 + 0x218), 0, 2);
 } // G42.42d: pending full translation (offsets decoded; queue position 13)
 // 0x419c80
 int AircraftClass::Mission_Transport()
