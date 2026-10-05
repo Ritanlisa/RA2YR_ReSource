@@ -142,7 +142,39 @@ int NullModemClass::SetAddress(int a2)
 namespace gamemd {
 void * NullModemClass::QueryInterface(char a2, int a1, int a3, int a4, int a5)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5F3650)
+
+  void **v3; // edi
+
+  v3 = (void **)*((unsigned int *)this + 13); /*0x5f3654*/
+  *(unsigned int *)Block->ConnectionClass = &vt_NullModemClass; /*0x5f3657*/
+  if ( v3 ) /*0x5f365f*/
+  {
+    FileFind::Close(v3); /*0x5f3663*/
+    __3_YAXPAX_Z(v3); /*0x5f3669*/
+  }
+  ((ObjectClass *)((ObjectClass *)this))->FreeResources(); /*0x5f3673*/
+  if ( *((unsigned int *)this + 16) != -1 ) /*0x5f3680*/
+  {
+    if ( !g_ClipboardBuffer ) /*0x5f368a*/
+      goto LABEL_10; /*0x5f368a*/
+    ((SerialPort*)(SerialPort *)g_ClipboardBuffer)->Close(); /*0x5f368c*/
+    if ( g_ClipboardBuffer ) /*0x5f3699*/
+      (**(void (***)(HWND, int))g_ClipboardBuffer)((HWND)g_ClipboardBuffer, 1); /*0x5f369f*/
+    g_ClipboardBuffer = 0; /*0x5f36a1*/
+    *((unsigned int *)Block + 16) = -1; /*0x5f36ad*/
+    ((ObjectClass *)((ObjectClass *)this))->FreeResources(); /*0x5f36b0*/
+  }
+  if ( g_ClipboardBuffer ) /*0x5f36bd*/
+  {
+    (**(void (***)(HWND, int))g_ClipboardBuffer)((HWND)g_ClipboardBuffer, 1); /*0x5f36c3*/
+    g_ClipboardBuffer = 0; /*0x5f36c5*/
+  }
+LABEL_10:
+  *(unsigned int *)Block->ConnectionClass = &vt_ConnManClass; /*0x5f36cf*/
+  if ( (a2 & 1) != 0 ) /*0x5f36db*/
+    __3_YAXPAX_Z(this); /*0x5f36de*/
+return (void *)this->ConnectionClass; /*0x5f36e8*/
+
 }
 } // namespace gamemd
 // 0x774670

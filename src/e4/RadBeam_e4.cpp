@@ -10,7 +10,30 @@
 namespace gamemd {
 void * RadBeam::Create()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x659110)
+
+  RadBeam *v2; // eax
+  double *inited; // edi
+  int v4; // eax
+
+  v2 = (RadBeam *)__2_YAPAXI_Z(0xC8u); /*0x65911a*/
+  if ( v2 ) /*0x659124*/
+    inited = (double *)((RadBeam *)(v2))->InitState((int)this); /*0x65912e*/
+  else
+    inited = 0; /*0x659132*/
+  if ( dword_B04A70 < dword_B04A68 /*0x65916a*/
+    || (byte_B04A6D || !dword_B04A68)
+    && dword_B04A74 > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(RadBeam_Array + 8))(
+         &RadBeam_Array,
+         dword_B04A68 + dword_B04A74,
+         0) )
+  {
+    v4 = (unsigned int)(dword_B04A70++);
+    *((unsigned int *)dword_B04A64 + v4) = inited; /*0x659186*/
+  }
+  inited[3] = (double)(this != (RadBeam *)1 ? 20 : 10);
+  return (void *)((int)inited);
+
 }
 } // namespace ra2
 

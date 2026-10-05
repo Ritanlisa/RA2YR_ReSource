@@ -23,7 +23,32 @@
 namespace gamemd {
 int GameSetup::LookupDialogHash()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x60D320)
+
+  GameSetup **v1; // eax
+  unsigned int *v3; // eax
+  GameSetup *v4; // [esp+0h] [ebp-4h] BYREF
+
+  v4 = this; /*0x60d326*/
+  if ( !*(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x60d32c*/
+    return 0; /*0x60d32c*/
+  v1 = *(GameSetup ***)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60d34d*/
+                      + 4
+                      * ((*(int (**)(GameSetup **))&g_DialogPool.__pad_208[80])(&v4)
+                       & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+  if ( !v1 ) /*0x60d352*/
+    return 0; /*0x60d352*/
+  while ( *v1 != v4 ) /*0x60d35a*/
+  {
+    v1 = (GameSetup **)v1[129]; /*0x60d35c*/
+    if ( !v1 ) /*0x60d364*/
+      return 0; /*0x60d364*/
+  }
+  v3 = (unsigned int *)(v1 + 1);
+  if ( v3 ) /*0x60d373*/
+    return v3[27]; /*0x60d375*/
+  else
+    return 0; /*0x60d366*/
+
 }
 } // namespace gamemd
 // 0x698F90

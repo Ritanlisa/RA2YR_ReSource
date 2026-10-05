@@ -38,32 +38,456 @@ int IsNonNullPtr(int* ptr) {
 }
 // 0x402F60
 namespace gamemd { 
-int Gap2Recv_402F60::ProcessAudioMixerFrame()
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x402F60)
-}
-}
+int Gap2Recv_402F60::ProcessAudioMixerFrame() {
+
+  int64_t v3; // rax
+  uint64_t v4; // kr00_8
+  char *p_bombVisible; // ebx
+  char *v6; // ecx
+  AudioChannel *v7; // ecx
+  ObjectClass *v8; // edi
+  ObjectClass *vtable0; // ebx
+  AudioChannel *lastLayer; // ecx
+  AudioChannel *v11; // ecx
+  AudioChannel *v12; // ecx
+  AudioChannel *v13; // ecx
+  ObjectClass *v14; // esi
+  int IsActive; // [esp+10h] [ebp-Ch]
+
+  if ( *((unsigned int *)this + 65) ) /*0x402f69*/
+    return -2146304000; /*0x402f76*/
+  LODWORD(v3) = Audio::Callback(); /*0x402f80*/
+  if ( (uint64_t)(v3 - *((unsigned long long *)this + 39)) >= *((unsigned long long *)this + 34) ) /*0x402fb1*/
+  {
+    v4 = v3 - *((unsigned long long *)this + 39); /*0x402fc5*/
+    *((unsigned long long *)this + 36) = v4; /*0x402fcb*/
+    ++*((unsigned int *)this + 86); /*0x402fde*/
+    if ( *((unsigned long long *)this + 37) > *((unsigned long long *)this + 38) ) /*0x403008*/
+    {
+      *((unsigned int *)this + 74) = 0; /*0x40300c*/
+      *((unsigned int *)this + 75) = 0; /*0x403012*/
+    }
+    if ( v4 > *((unsigned long long *)this + 37) ) /*0x40302c*/
+      *((unsigned long long *)this + 37) = v4; /*0x40302e*/
+    if ( v4 > *((unsigned long long *)this + 35) ) /*0x40304e*/
+      ++*((unsigned int *)this + 87); /*0x403057*/
+    if ( v4 > *((unsigned long long *)this + 40) ) /*0x403071*/
+      *((unsigned long long *)this + 40) = v4; /*0x403073*/
+    *((unsigned long long *)this + 39) = v3; /*0x40307f*/
+    p_bombVisible = &this->bombVisible; /*0x40308b*/
+    Audio::InitChannels(&this->bombVisible); /*0x403094*/
+    v6 = (char *)*((unsigned int *)this + 58); /*0x403099*/
+    if ( v6 ) /*0x4030a1*/
+      ((Audio*)v6)->InitChannels(); /*0x4030a3*/
+    v7 = (AudioChannel *)*((unsigned int *)this + 58); /*0x4030a8*/
+    if ( !v7 || (IsActive = AudioChannel::IsActive(v7)) == 0 ) /*0x4030bd*/
+      IsActive = AudioChannel::IsActive((AudioChannel *)&this->bombVisible); /*0x4030c6*/
+    v8 = (unsigned int)((ObjectClass *)*((unsigned int *)this + 62)); /*0x4030ca*/
+    if ( v8 != (unsigned int)((ObjectClass *))((char *)this + 248) ) /*0x4030d8*/
+    {
+      do /*0x40317d*/
+      {
+        vtable0 = (ObjectClass *)v8->AbstractClass; /*0x4030de*/
+        if ( (v8->location[2] & 1) != 0 && ((unsigned int *)(v8))[2] ) /*0x4030ee*/
+        {
+          if ( (((Audio*)(char *)&((unsigned int *)v8)[0])->InitChannels(), IsActive) /*0x403158*/
+            || AudioChannel::IsActive((AudioChannel *)&((unsigned int *)v8)[0])
+            || (lastLayer = (AudioChannel *)v8->lastLayer) != 0 && AudioChannel::IsActive(lastLayer)
+            || (v11 = *(AudioChannel **)&v8->isInLogic) != 0 && AudioChannel::IsActive(v11)
+            || (v12 = (AudioChannel *)v8->location[0]) != 0 && AudioChannel::IsActive(v12)
+            || (v13 = *(AudioChannel **)&v8->isAliveFlag) != 0 && AudioChannel::IsActive(v13) )
+          {
+            ObjectClass::Cleanup(v8); /*0x403163*/
+            (*(void (**)(ObjectClass *))(((unsigned int *)(v8))[1].owningHouseIndex + 32))(v8); /*0x403170*/
+          }
+        }
+        v8 = (unsigned int)(vtable0);
+      }
+      while ( vtable0 != (ObjectClass *)((char *)this + 248) ); /*0x40317d*/
+      p_bombVisible = &this->bombVisible; /*0x403183*/
+    }
+    v14 = (ObjectClass *)*((unsigned int *)this + 58); /*0x403187*/
+    if ( v14 ) /*0x40318f*/
+      ObjectClass::ClearFlags2(v14); /*0x403193*/
+    ObjectClass::ClearFlags2((ObjectClass *)p_bombVisible); /*0x40319a*/
+  }
 // 0x403A80
-namespace ra2 { namespace game { 
+namespace gamemd { 
 int ObjectClass::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1)
-{
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect corrupted; truth = .omo/ida_cache/func_0x00403A80.json)
-}
-} }
+
+  void (*v4)(char *); // edi
+  int Next; // esi
+  int v6; // ebp
+  const char *v7; // ebx
+  int v8; // eax
+  const char *v9; // edi
+  int v10; // eax
+  char Buffer[200]; // [esp+10h] [ebp-2BCh] BYREF
+  char v14[100]; // [esp+D8h] [ebp-1F4h] BYREF
+  char v15[200]; // [esp+13Ch] [ebp-190h] BYREF
+  char v16[200]; // [esp+204h] [ebp-C8h] BYREF
+
+  v4 = (void (__cdecl *)(a2); /*0x403a8b*/
+  a2(aAudioDeviceDum); /*0x403a96*/
+  sprintf(Buffer, "%s (%d)\n", **(const char ***)(a1->nextArrayIndex + 12), a1->radioLinks[3]); /*0x403ab2*/
+  v4(Buffer); /*0x403abe*/
+  sub_4039C0((int)&a1->idleActionTimer[2], v14); /*0x403acd*/
+  sprintf(Buffer, "mixer:%s", v14); /*0x403ae4*/
+  v4(Buffer); /*0x403af0*/
+  sub_4039C0((int)&a1->animation[6], v14); /*0x403aff*/
+  sprintf(Buffer, "level:%s", v14); /*0x403b16*/
+  v4(Buffer); /*0x403b22*/
+  sprintf(
+    Buffer,
+    "Frames: %d Oversamp: %d Lag: %d",
+    *(unsigned int *)a1->isDisguisedFlag,
+    a1->disguiseCreationFrame,
+    a1->infantryBlinkTimer[0]);
+  v4(Buffer); /*0x403b4f*/
+  if ( a3 ) /*0x403b5a*/
+    sprintf(Buffer, aChanTypeStateF); /*0x403b66*/
+  else
+    sprintf(Buffer, aChanTypeStateF_0); /*0x403b72*/
+  v4(Buffer); /*0x403b7e*/
+  Next = AudioQueue::GetNext((AudioQueue *)a1->animation); /*0x403b8b*/
+  v6 = 0; /*0x403b8d*/
+  if ( Next )
+  {
+    do
+    {
+      if ( (*(unsigned char *)(Next + 164) & 1) != 0 ) /*0x403b9f*/
+      {
+        v7 = aPlaying_0; /*0x403ba1*/
+      }
+      else
+      {
+        v7 = aPaused; /*0x403bae*/
+        if ( (*(unsigned char *)(Next + 164) & 4) == 0 ) /*0x403bb5*/
+          v7 = aFree; /*0x403bb7*/
+      }
+      v8 = *(unsigned int *)(Next + 12); /*0x403bbc*/
+      if ( v8 < 4096 ) /*0x403bc4*/
+      {
+        v9 = aStd; /*0x403bd0*/
+        if ( v8 != 1 ) /*0x403bd5*/
+          v9 = (const char *)(asc_815F24); /*0x403bd7*/
+      }
+      else
+      {
+        v9 = aUser; /*0x403bc6*/
+      }
+      v15[0] = 0; /*0x403bdc*/
+      if ( *(unsigned int *)(Next + 384) ) /*0x403be4*/
+        v10 = 4; /*0x403bf9*/
+      else
+        v10 = 8 * *(unsigned int *)(Next + 396); /*0x403bf4*/
+      sprintf(
+        v16,
+        "%02d-%2d-%c%c%c",
+        *(unsigned int *)(Next + 388) / 1000,
+        v10,
+        *(unsigned int *)(Next + 392) != 1 ? 83 : 77,
+        *(unsigned int *)(Next + 412) != 0 ? 42 : 32,
+        *(unsigned int *)(Next + 416) != 0 ? 43 : 32);
+      sprintf( /*0x403ca0*/
+        Buffer,
+        "#%2d :%s:%s:%s:%4d:%3d:%.10s\n",
+        v6,
+        v9,
+        v7,
+        v16,
+        *(unsigned int *)(Next + 160),
+        (unsigned int)(100 * HIWORD(*(unsigned int *)(Next + 220))) >> 14,
+        v15);
+      a2(Buffer); /*0x403cac*/
+      ++v6; /*0x403cb0*/
+      if ( !Next ) /*0x403cb3*/
+        break; /*0x403cb3*/
+      Next = AudioQueue::GetNextAlt((AudioQueue *)Next); /*0x403cbc*/
+    }
+    while ( Next );
+    v4 = (void (__cdecl *)(a2); /*0x403cc6*/
+  }
 // 0x4048B0
 namespace gamemd { 
-int Gap2Recv_4048B0::PrefetchAudioSamples()
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4048B0)
-}
-}
+int Gap2Recv_4048B0::PrefetchAudioSamples() {
+
+  int result; // eax
+  unsigned int *occupant; // edi
+  int v4; // ebp
+  int *p_owningHouseIndex; // ebx
+  int v6; // eax
+  int v7; // eax
+  Concurrency::details::ContextBase *v8; // ecx
+  int v9; // ebx
+  int v10; // ebp
+  Concurrency::details::ContextBase *v11; // ecx
+  int v12; // eax
+  Concurrency::details::ContextBase *v13; // ecx
+  int v14; // ecx
+  int v15; // edx
+  Concurrency::details::ContextBase *v16; // ecx
+  int v17; // eax
+  int v18; // ebx
+  Concurrency::details::ContextBase *v19; // ecx
+  Concurrency::details::ContextBase *v20; // ecx
+
+  result = this->lineTrailer; /*0x4048b6*/
+  occupant = (unsigned int *)this->occupant; /*0x4048bc*/
+  if ( result ) /*0x4048c1*/
+  {
+    if ( occupant[22] < 0x21u ) /*0x4048c7*/
+      return result; /*0x4048c7*/
+    v4 = 0; /*0x4048cd*/
+    if ( result > 0 ) /*0x4048d1*/
+    {
+      p_owningHouseIndex = &this->owningHouseIndex; /*0x4048d3*/
+      do /*0x4048ef*/
+      {
+        RefCount::Decrement((RefCount *)*p_owningHouseIndex); /*0x4048d8*/
+        *p_owningHouseIndex = 0; /*0x4048dd*/
+        ++v4; /*0x4048e9*/
+        ++p_owningHouseIndex; /*0x4048ea*/
+      }
+      while ( v4 < this->lineTrailer ); /*0x4048ef*/
+    }
+    this->lineTrailer = 0; /*0x4048f1*/
+  }
 // 0x4055C0
 namespace gamemd { 
-int Gap2Recv_4055C0::UpdateVoicePlayback()
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4055C0)
-}
-}
+int Gap2Recv_4055C0::UpdateVoicePlayback() {
+
+  uint64_t v2; // rax
+  unsigned int *occupant; // edi
+  int alignmentPadding154; // ecx
+  int v5; // eax
+  ObjectClass *suspendedMission; // ecx
+  bool v7; // zf
+  int v8; // eax
+  int64_t v9; // kr00_8
+  int64_t v10; // rax
+  TechnoClass *v11; // ecx
+  int v12; // ebp
+  int *p_owningHouseIndex; // edi
+  AudioStream *v14; // ebx
+  int v15; // ebp
+  int *v16; // edi
+  int nextArrayIndex; // eax
+  int v18; // ebp
+  int *v19; // edi
+  Voice *v21; // [esp+0h] [ebp-10h]
+
+  if ( !dword_816108 ) /*0x4055cf*/
+    this->referenceCount = 4; /*0x4055d1*/
+  LODWORD(v2) = this->referenceCount; /*0x4055d8*/
+  while ( 2 ) /*0x4055e4*/
+  {
+    switch ( (int)v2 ) /*0x4055e4*/
+    {
+      case 0: /*0x4055e4*/
+        occupant = (unsigned int *)this->occupant; /*0x405639*/
+        if ( occupant[77] /*0x405671*/
+          && occupant[3]
+          && (alignmentPadding154 = this->alignmentPadding154,
+              this->infantryBlinkTimer[1] = 0,
+              LODWORD(v2) = sub_405B50(occupant[16] + alignmentPadding154, 0),
+              (this->suspendedMission = v2) != 0) )
+        {
+          this->initialOwner = Random::Range(&Randomizer_Global, occupant[24], occupant[25]) + 100; /*0x405691*/
+          v5 = Random::Range(&Randomizer_Global, 0, occupant[26]); /*0x40569c*/
+          suspendedMission = (ObjectClass *)this->suspendedMission; /*0x4056a1*/
+          this->veterancy = v5; /*0x4056a7*/
+          sub_4026C0(suspendedMission); /*0x4056ad*/
+          *(unsigned int *)(this->suspendedMission + 192) = this; /*0x4056bd*/
+          *(unsigned int *)(this->suspendedMission + 180) = sub_405AC0; /*0x4056c9*/
+          *(unsigned int *)(this->suspendedMission + 184) = sub_405A00; /*0x4056d9*/
+          *(unsigned int *)(this->suspendedMission + 188) = sub_4059F0; /*0x4056e9*/
+          this->referenceCount = 1; /*0x4056f3*/
+          *(unsigned int *)(this->suspendedMission + 144) = this->missionQueued; /*0x405702*/
+          *(unsigned int *)(this->suspendedMission + 152) = &stru_87E1B8; /*0x40570e*/
+          *(unsigned int *)(this->suspendedMission + 156) = g_MixerState; /*0x405723*/
+          LODWORD(v2) = occupant[4]; /*0x405729*/
+          if ( (v2 & 0x88) != 0 ) /*0x40572e*/
+          {
+            v7 = (v2 & 0x80u) == 0LL; /*0x405734*/
+            v8 = 33; /*0x405736*/
+            if ( v7 ) /*0x40573b*/
+              v8 = occupant[22]; /*0x40573d*/
+            LODWORD(v2) = Random::Range(&Randomizer_Global, v8, occupant[23]); /*0x40574a*/
+            if ( (int)v2 >= 33 ) /*0x405752*/
+            {
+              v9 = (int)v2; /*0x40575b*/
+              this->NeedsSaveOrLink = 1; /*0x40575d*/
+              LODWORD(v2) = this->armorMultiplier[0]; /*0x405760*/
+              if ( (unsigned int)v2 ) /*0x405768*/
+              {
+                *(unsigned long long *)&this->gattlingStage = v9; /*0x40576a*/
+              }
+              else
+              {
+                LODWORD(v10) = Audio::Callback(); /*0x405782*/
+                v2 = v9 + v10; /*0x405789*/
+                *(unsigned long long *)&this->gattlingStage = v2; /*0x40578b*/
+              }
+              this->referenceCount = 2; /*0x405776*/
+            }
+          }
+        }
+        else if ( (this->nextArrayIndex & 1) == 0 ) /*0x4057a7*/
+        {
+          Voice::DetachChannel((Voice *)this); /*0x4057af*/
+          LODWORD(v2) = Audio::ReleaseChannelRefs((Audio *)this); /*0x4057b6*/
+          this->referenceCount = 4; /*0x4057bb*/
+          this->currentWeaponSlot = 0; /*0x4057c2*/
+          this->temporalTargetingMe = 0; /*0x4057c8*/
+          this->nextArrayIndex |= 1u; /*0x4057d4*/
+        }
+        break; /*0x405781*/
+      case 2: /*0x4055e4*/
+        if ( (this->nextArrayIndex & 0x40) != 0 ) /*0x4055ef*/
+          goto LABEL_41; /*0x4055ef*/
+        LODWORD(v2) = this->armorMultiplier[0]; /*0x4055f5*/
+        if ( !(unsigned int)v2 ) /*0x4055fd*/
+        {
+          LODWORD(v2) = Audio::Callback(); /*0x405603*/
+          if ( v2 > *(unsigned long long *)&this->gattlingStage ) /*0x405620*/
+          {
+            this->referenceCount = this->NeedsSaveOrLink; /*0x405629*/
+            LODWORD(v2) = this->referenceCount; /*0x40562c*/
+            if ( (unsigned int)v2 <= 4 ) /*0x405632*/
+              continue; /*0x405632*/
+          }
+        }
+        break; /*0x405632*/
+      case 3: /*0x4055e4*/
+        LODWORD(v2) = this->occupant; /*0x4057dc*/
+        if ( (*(unsigned char *)(v2 + 16) & 1) != 0 && !*(unsigned int *)(v2 + 76) && (this->nextArrayIndex & 0x20) == 0 ) /*0x4057f6*/
+        {
+          LODWORD(v2) = this->temporalTargetingMe; /*0x4057fc*/
+          if ( !(unsigned int)v2 ) /*0x405804*/
+            goto LABEL_35; /*0x405804*/
+          if ( g_AudioConfigState && *(int **)(v2 + 12) == &dword_87E294 ) /*0x405815*/
+          {
+            v11 = *(TechnoClass **)v2; /*0x405817*/
+            if ( *(unsigned int *)v2 /*0x405832*/
+              && (*(unsigned int *)(v2 + 8) != v11->occupant || *(unsigned int *)(v2 + 4) != v11->currentWeaponSlot) )
+            {
+              v11 = 0; /*0x405834*/
+              *(unsigned int *)v2 = 0; /*0x405836*/
+            }
+          }
+          else
+          {
+            v11 = 0; /*0x40583a*/
+          }
+          if ( v11 != this ) /*0x40583e*/
+          {
+LABEL_35:
+            if ( (this->nextArrayIndex & 1) == 0 ) /*0x405844*/
+            {
+              Voice::DetachChannel((Voice *)this); /*0x405848*/
+              v12 = 0; /*0x405853*/
+              if ( this->lineTrailer > 0 ) /*0x405857*/
+              {
+                p_owningHouseIndex = &this->owningHouseIndex; /*0x405859*/
+                do /*0x405871*/
+                {
+                  RefCount::Decrement((RefCount *)*p_owningHouseIndex); /*0x40585e*/
+                  *p_owningHouseIndex = 0; /*0x405863*/
+                  ++v12; /*0x40586b*/
+                  ++p_owningHouseIndex; /*0x40586c*/
+                }
+                while ( v12 < this->lineTrailer ); /*0x405871*/
+              }
+              this->lineTrailer = 0; /*0x405873*/
+              this->referenceCount = 4; /*0x405879*/
+              this->currentWeaponSlot = 0; /*0x405880*/
+              this->temporalTargetingMe = 0; /*0x405886*/
+              LODWORD(v2) = this->nextArrayIndex; /*0x40588c*/
+              LOBYTE(v2) = v2 | 1; /*0x40588f*/
+              this->nextArrayIndex = v2; /*0x405891*/
+            }
+          }
+        }
+        if ( (this->nextArrayIndex & 0x40) != 0 ) /*0x405898*/
+        {
+LABEL_41:
+          v14 = (AudioStream *)this->suspendedMission; /*0x40589e*/
+          v15 = 0; /*0x4058a4*/
+          if ( v14 ) /*0x4058a8*/
+          {
+            AudioFile::GetCallback((AudioFile *)this->suspendedMission); /*0x4058b0*/
+            this->nextArrayIndex &= ~0x40u; /*0x4058bb*/
+            Voice::Stop(v21); /*0x4058c4*/
+            if ( (*(unsigned char *)(this->occupant + 16) & 0x40) != 0 && (this->nextArrayIndex & 0x10) == 0 ) /*0x4058da*/
+            {
+              this->referenceCount = 1; /*0x4058dc*/
+              this->ammoReloadTimer = AudioStream::SelectRandom((int)this); /*0x4058ea*/
+              if ( !this->armorMultiplier[0] /*0x405909*/
+                && !Audio::UpdatePlaybackPosition((Audio *)this)
+                && (this->nextArrayIndex & 1) == 0 )
+              {
+                Voice::DetachChannel((Voice *)this); /*0x40590d*/
+                if ( this->lineTrailer > 0 ) /*0x405918*/
+                {
+                  v16 = &this->owningHouseIndex; /*0x40591a*/
+                  do /*0x405936*/
+                  {
+                    RefCount::Decrement((RefCount *)*v16); /*0x40591f*/
+                    *v16 = 0; /*0x405924*/
+                    ++v15; /*0x405930*/
+                    ++v16; /*0x405931*/
+                  }
+                  while ( v15 < this->lineTrailer ); /*0x405936*/
+                }
+                this->lineTrailer = 0; /*0x40593a*/
+                this->referenceCount = 4; /*0x405940*/
+                this->currentWeaponSlot = 0; /*0x405947*/
+                this->temporalTargetingMe = 0; /*0x40594d*/
+                nextArrayIndex = this->nextArrayIndex; /*0x405953*/
+                LOBYTE(nextArrayIndex) = nextArrayIndex | 1; /*0x405956*/
+                this->nextArrayIndex = nextArrayIndex; /*0x405958*/
+              }
+            }
+            LODWORD(v2) = AudioStream::Stop(v14); /*0x405961*/
+          }
+          else
+          {
+            this->nextArrayIndex &= ~0x40u; /*0x40596c*/
+          }
+        }
+        break; /*0x405961*/
+      case 4: /*0x4055e4*/
+        if ( (this->nextArrayIndex & 1) == 0 ) /*0x405978*/
+        {
+          Voice::DetachChannel((Voice *)this); /*0x40597c*/
+          LODWORD(v2) = this->lineTrailer; /*0x405981*/
+          v18 = 0; /*0x405987*/
+          if ( (int)v2 > 0 ) /*0x40598b*/
+          {
+            v19 = &this->owningHouseIndex; /*0x40598d*/
+            do /*0x4059a5*/
+            {
+              RefCount::Decrement((RefCount *)*v19); /*0x405992*/
+              *v19 = 0; /*0x405997*/
+              LODWORD(v2) = this->lineTrailer; /*0x405999*/
+              ++v18; /*0x40599f*/
+              ++v19; /*0x4059a0*/
+            }
+            while ( v18 < (int)v2 ); /*0x4059a5*/
+          }
+          this->lineTrailer = 0; /*0x4059a7*/
+          this->referenceCount = 4; /*0x4059ad*/
+          this->currentWeaponSlot = 0; /*0x4059b4*/
+          this->temporalTargetingMe = 0; /*0x4059ba*/
+          this->nextArrayIndex |= 1u; /*0x4059c6*/
+        }
+        break; /*0x4059c6*/
+      default:
+        return v2;
+    }
+    return v2; /*0x405634*/
+  }
 // 0x40AA70
 namespace gamemd { 
 bool Gap2Recv_40AA70::ProcessAudioChannelMovement() {
@@ -209,11 +633,77 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction()
 } // namespace gamemd
 // 0x4197C0
 namespace gamemd { 
-void * Gap2Recv_4197C0::FindSpiralMoveTarget(ra2::game::ObjectClass * aP1)
-{
-    return nullptr; // TODO stub - quarantined G42 T9 (inline-asm body ICE; truth = .omo/ida_cache/func_0x004197C0.json)
-}
-}
+void* Gap2Recv_4197C0::FindSpiralMoveTarget(ObjectClass * aP1) {
+
+  double v2; // st7
+  int v5; // edi
+  int v6; // eax
+  int v7; // edx
+  int v8; // ecx
+  int *v9; // eax
+  int16_t v10; // cx
+  unsigned int v11; // edi
+  unsigned int v12; // ebx
+  int v13; // eax
+  int v14; // esi
+  int v15; // eax
+  int v16; // edi
+  Cell *v17; // ebx
+  double v18; // rdi
+  int *v19; // eax
+  int v20; // ecx
+  int v21; // eax
+  int v22; // ecx
+  double v23; // [esp+14h] [ebp-90h]
+  int16_t v24[2]; // [esp+28h] [ebp-7Ch] BYREF
+  int v25; // [esp+2Ch] [ebp-78h]
+  int16_t v26[2]; // [esp+30h] [ebp-74h] BYREF
+  int v27; // [esp+34h] [ebp-70h]
+  int v28; // [esp+38h] [ebp-6Ch]
+  int16_t v29[4]; // [esp+3Ch] [ebp-68h] BYREF
+  Cell *v30; // [esp+44h] [ebp-60h]
+  int v31; // [esp+48h] [ebp-5Ch]
+  double v32; // [esp+4Ch] [ebp-58h]
+  double v33; // [esp+54h] [ebp-50h]
+  int v34; // [esp+5Ch] [ebp-48h]
+  int v35; // [esp+60h] [ebp-44h]
+  double v37[2]; // [esp+6Ch] [ebp-38h] BYREF
+  double v38; // [esp+7Ch] [ebp-28h]
+  int v39; // [esp+84h] [ebp-20h]
+  int v40; // [esp+8Ch] [ebp-18h] BYREF
+  int v41; // [esp+90h] [ebp-14h]
+  int v42; // [esp+94h] [ebp-10h]
+  char v43[12]; // [esp+98h] [ebp-Ch] BYREF
+
+  v30 = (Cell *)this; /*0x4197d3*/
+  if ( !aP1 ) /*0x4197d7*/
+    return 0; /*0x4197d7*/
+  if ( (*(int (**)(char *))(*((unsigned int *)this + 432) + 24))((char *)this + 1728) ) /*0x4197ea*/
+    return (void *)aP1; /*0x4197f9*/
+  v5 = (*(int (**)(TechnoClass *, unsigned int))(this->vtable0 + 360))(this, 0); /*0x41980c*/
+  v6 = (*(int (**)(int, int *))(*(unsigned int *)aP1 + 72))(aP1, &v40); /*0x419813*/
+  v38 = *(double *)v6; /*0x419818*/
+  v7 = *(unsigned int *)(v6 + 8); /*0x419829*/
+  *(unsigned int *)v26 = g_AircraftStatusFlag; /*0x419831*/
+  *(unsigned int *)v29 = g_AircraftStatusFlag; /*0x419835*/
+  v39 = v7; /*0x41983c*/
+  v25 = -1; /*0x419846*/
+  v31 = -1; /*0x41984a*/
+  v40 = dword_889E88; /*0x419853*/
+  LOBYTE(v6) = *(unsigned char *)(aP1 + 20); /*0x419857*/
+  v41 = dword_889E8C; /*0x41985c*/
+  v42 = dword_889E90; /*0x419860*/
+  if ( (v6 & 4) != 0 ) /*0x419864*/
+  {
+    v8 = *(unsigned int *)(aP1 + 1444); /*0x419866*/
+    if ( v8 ) /*0x41986e*/
+    {
+      v9 = (int *)(*(int (**)(int, double *))(*(unsigned int *)v8 + 72))(v8, v37); /*0x419877*/
+      v40 = *v9; /*0x41987c*/
+      v41 = v9[1]; /*0x419883*/
+      v42 = v9[2]; /*0x41988a*/
+    }
+  }
 namespace ra2 { namespace game {
 int ObjectClass::CreateInstanceCOM(LPVOID * ppv, IID * rclsid, ILocomotion * aP2, DWORD dwClsContext)
 {

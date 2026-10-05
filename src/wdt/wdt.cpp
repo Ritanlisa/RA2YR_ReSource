@@ -86,7 +86,12 @@ void Map::Release() noexcept
 // 0x552c90
 WDTError Map::Load()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00552C90.json)
+  int result; // eax
+
+  result = -1; /*0x552c96*/
+  if ( ((unsigned int *)(dword_A8B238))[0] )
+    return (gamemd::wdt::WDTError)(g_DisplayWidth != 640 ? 406 : 326);
+  return (gamemd::wdt::WDTError)(result);
 }
 WDTError Map::Draw()
 {

@@ -226,6 +226,7 @@
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "D:\RA2YR_ReSource\src\e4\classes\addr49_carriers_e4.hpp"  // G42.42q minimal carriers
 
 // 0x490400
 namespace gamemd {

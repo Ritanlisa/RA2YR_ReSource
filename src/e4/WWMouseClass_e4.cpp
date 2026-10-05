@@ -137,7 +137,87 @@ int WWMouseClass::hideCursor()
 namespace gamemd {
 void* WWMouseClass::captureMouse()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B9A60)
+
+  int v2; // edx
+  int *FoundationSize; // eax
+  int v4; // edi
+  int v5; // edx
+  int v6; // edi
+  int X; // eax
+  int Y; // ecx
+  int Width; // edx
+  int Height; // edi
+  char *v11; // ebp
+  char * WWMouseClass_field_0x44;
+  int v13; // ebp
+  unsigned int *v14; // eax
+  int WWMouseClass_field_0x24; // [esp-1Ch] [ebp-50h]
+  Rect v16; // [esp+4h] [ebp-30h] BYREF
+  unsigned int v17[4]; // [esp+14h] [ebp-20h] BYREF
+  Rect v18; // [esp+24h] [ebp-10h] BYREF
+
+  if ( this && !(*(uint8_t (**)(WWMouseClass *))(*(unsigned int *)this->__pad_0 + 28))(this) ) /*0x7b9a70*/
+  {
+    ((gamemd::Debug *)this)->Log(); /*0x7b9a82*/
+    if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9aa3*/
+      ((gamemd::Debug *)this)->Log(); /*0x7b9ab4*/
+    v2 = *(unsigned int *)this->__pad_0; /*0x7b9abc*/
+    LOBYTE(this->WWMouseClass_field_0x10) = 1; /*0x7b9ac0*/
+    if ( !(*(uint8_t (**)(WWMouseClass *))(v2 + 8))(this) ) /*0x7b9ac4*/
+    {
+      if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9ae7*/
+        ((gamemd::Debug *)this)->Log(); /*0x7b9af8*/
+      if ( (uint8_t)((BSurface *)((int)this))->CreateTripleBuffer() && this->WWMouseClass_field_0x24 ) /*0x7b9b0f*/
+      {
+        ((Rect *)(&v16))->Set(0, 0, 0, 0); /*0x7b9b26*/
+        if ( this->WWMouseClass_field_0x4 ) /*0x7b9b2b*/
+        {
+          UI_Helper_7BA2C0(); /*0x7b9b32*/
+          FoundationSize = (int *)(Building::GetFoundationSize((unsigned int *)(&v18), (unsigned int)this->WWMouseClass_field_0x8)); /*0x7b9b43*/
+          v16.X = *FoundationSize; /*0x7b9b4c*/
+          v16.Y = FoundationSize[1]; /*0x7b9b53*/
+          v16.Width = FoundationSize[2]; /*0x7b9b5a*/
+          v4 = *(unsigned int *)this->__pad_3C; /*0x7b9b5e*/
+          v16.Height = FoundationSize[3]; /*0x7b9b64*/
+          v5 = *(unsigned int *)this->__pad_14 - v4; /*0x7b9b6b*/
+          v6 = *(unsigned int *)&this->__pad_3C[4]; /*0x7b9b6d*/
+          v16.X += v5; /*0x7b9b72*/
+          v16.Y += *(unsigned int *)&this->__pad_14[4] - v6; /*0x7b9b7d*/
+          ReleaseMutex((HANDLE)(hMutex)); /*0x7b9b88*/
+        }
+        X = (unsigned int)(v16.X);
+        Y = (unsigned int)(v16.Y);
+        Width = (unsigned int)(v16.Width);
+        Height = (unsigned int)(v16.Height);
+        v17[0] = (unsigned int)(v16.X);
+        *(unsigned int *)this->__pad_48 = (unsigned int)(v16.X); /*0x7b9ba4*/
+        v17[2] = Width; /*0x7b9ba7*/
+        v17[3] = Height; /*0x7b9bab*/
+        *(unsigned int *)&this->__pad_48[4] = Y; /*0x7b9bb1*/
+        *(unsigned int *)&this->__pad_48[8] = Width; /*0x7b9bb6*/
+        *(unsigned int *)&this->__pad_48[12] = Height; /*0x7b9bb9*/
+        v11 = (char *)this->WWMouseClass_field_0x2C + X; /*0x7b9bbf*/
+        WWMouseClass_field_0x44 = (char *)((int *)this->WWMouseClass_field_0x44); /*0x7b9bc1*/
+        v17[0] = (unsigned int)(v11); /*0x7b9bc4*/
+        v17[1] = (unsigned int)((char *)this->WWMouseClass_field_0x30 + Y); /*0x7b9bcd*/
+        v13 = *WWMouseClass_field_0x44; /*0x7b9bd1*/
+        WWMouseClass_field_0x24 = this->WWMouseClass_field_0x24; /*0x7b9bdb*/
+        v14 = ((Rect *)(&v18))->Set(0, 0, Width, Height); /*0x7b9be6*/
+        (*(void (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(v13 + 8))( /*0x7b9bef*/
+          this->WWMouseClass_field_0x44,
+          v14,
+          WWMouseClass_field_0x24,
+          v17,
+          0,
+          1);
+      }
+      ((Mouse *)((Mouse *)this))->DrawCursor((int *)this->WWMouseClass_field_0x24, 0, 0); /*0x7b9bfd*/
+      ReleaseMutex((HANDLE)(hMutex)); /*0x7b9c09*/
+    }
+    ShowCursor(0); /*0x7b9c0d*/
+    ReleaseMutex((HANDLE)(hMutex)); /*0x7b9c19*/
+  }
+
 }
 } // namespace gamemd
 // 0x7B9C30
@@ -252,7 +332,12 @@ int WWMouseClass::checkVisible()
 namespace gamemd {
 MouseClass * WWMouseClass::updateHotspot(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BA300)
+
+  *(unsigned int *)Block->__pad_0 = &vt_Mouse; /*0x7ba309*/
+  if ( (a2 & 1) != 0 ) /*0x7ba30f*/
+    __3_YAXPAX_Z(Block); /*0x7ba312*/
+  return Block->__pad_0; /*0x7ba31c*/
+
 }
 } // namespace gamemd
 // 0x7BA330

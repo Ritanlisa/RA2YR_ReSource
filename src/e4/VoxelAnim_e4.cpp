@@ -113,6 +113,55 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
 namespace gamemd {
 int VoxelAnim::Draw(unsigned int * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x75AEC0)
+
+  unsigned int *v3; // ebx
+  unsigned int *v4; // esi
+  unsigned int *v5; // ecx
+  int v6; // edx
+  int v7; // eax
+  unsigned int *v8; // edi
+  int v9; // eax
+  int v10; // eax
+  int v11; // ecx
+  int v12; // ecx
+  unsigned int *v13; // eax
+  int *v14; // eax
+  unsigned char *v15; // ecx
+  int v16; // eax
+  int v17; // ecx
+  unsigned char *v18; // ecx
+  unsigned int *v19; // eax
+  unsigned int *v20; // edx
+  unsigned int *v21; // esi
+  int v22; // edx
+  int v23; // eax
+  int v24; // eax
+  int v25; // ecx
+  unsigned int *v26; // eax
+  int v27; // ecx
+  unsigned int *v28; // eax
+  unsigned int *v29; // edx
+  unsigned int *v30; // esi
+  int v31; // edx
+  int v32; // eax
+  int v33; // eax
+  unsigned int *v34; // eax
+  int *v35; // eax
+  int v36; // eax
+  int v37; // ecx
+  unsigned int *v38; // edx
+  int v39; // ecx
+  int v40; // eax
+  unsigned int *v41; // eax
+  int v42; // edx
+  int v43; // edx
+  int v44; // esi
+  int v45; // edi
+  unsigned int *v46; // eax
+  int v47; // ecx
+  unsigned int *v48; // esi
+  int v49; // edx
+  int v50; // eax
+  unsigned int *v5... [35635 chars total]
 }
 } // namespace gamemd

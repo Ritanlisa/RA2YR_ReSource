@@ -8,8 +8,19 @@
 
 // 0x753580
 namespace gamemd {
+// R-fix: removed stray public:
+public:
     int ChronoScreenEffect::DecrementCounter(void *a1, void *a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x753580)
+  int result; // eax
+
+  result = dword_B1D3D8; /*0x753580*/
+  if ( dword_B1D3D8 ) /*0x753587*/
+  {
+    result = --dword_B1D3D8; /*0x75358e*/
+    if ( dword_B1D3D8 < 0 ) /*0x753594*/
+      dword_B1D3D8 = 0; /*0x753596*/
+  }
+  return result; /*0x7535a0*/
 }
 } // namespace gamemd

@@ -26,7 +26,24 @@ ScriptActionNode* ScriptClass::GetCurrentAction(
 // 0x691540
 ScriptActionNode* ScriptClass::GetNextAction(
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x691540)
+  ScriptTypeClass *buildingType; // edx
+  int idxCurrentLine; // ecx
+  unsigned int *result; // eax
+
+  buildingType = this->buildingType; /*0x691540*/
+  idxCurrentLine = this->idxCurrentLine; /*0x691543*/
+  result = a2; /*0x691554*/
+  if ( idxCurrentLine + 1 < buildingType->scriptActions[28] ) /*0x691552*/
+  {
+    *a2 = buildingType->scriptActions[2 * idxCurrentLine + 31]; /*0x691571*/
+    a2[1] = buildingType->scriptActions[2 * idxCurrentLine + 32]; /*0x69157a*/
+  }
+  else
+  {
+    *a2 = -1; /*0x69155e*/
+    a2[1] = 0; /*0x691560*/
+  }
+  return result; /*0x69155d*/
 }
 namespace gamemd {
 bool ScriptClass::HasNextAction() const

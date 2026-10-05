@@ -21,7 +21,11 @@ unsigned int IRTTITypeInfo::GetOffset()
 namespace gamemd {
 int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4105E0)
+
+  AbstractClass *v3; // ecx
+
+  return ((AbstractClass *)v3)->QueryInterface();
+
 }
 } // namespace gamemd
 

@@ -13,15 +13,26 @@
 
 // 0x47A9D0
 namespace gamemd {
-int Constructor(char *Source)
+int BufferIOFile::Constructor(char *Source)
 {
-    (void)Source; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x0047A9D0.json)
+
+  ((BufferIOFileClass*)(gamemd::BufferIOFileClass *)this)->Constructor(); /*0x47a9d3*/
+  LOBYTE(this->m_54) = 0; /*0x47a9df*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&off_7E1668); /*0x47a9e3*/
+  ((FileClass *)(CDFileClass *)this)->OpenWithCDSearch(Source); /*0x47a9e9*/
+  return (int)(this->__pad_0); /*0x47a9f0*/
+
 }
 }
 // 0x47AA30
 namespace gamemd {
-int Init()
+int BufferIOFile::Init()
 {
-     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x0047AA30.json)
+
+  ((BufferIOFileClass*)(gamemd::BufferIOFileClass *)this)->Constructor(); /*0x47aa33*/
+  LOBYTE(this->m_54) = 0; /*0x47aa38*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&off_7E1668); /*0x47aa3c*/
+  return (int)(this->__pad_0); /*0x47aa44*/
+
 }
 }

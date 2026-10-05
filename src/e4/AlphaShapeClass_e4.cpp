@@ -25,7 +25,13 @@
 namespace gamemd {
 int AlphaShapeClass::SD_vt13(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x420DA0)
+
+  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x420da9*/
+  Power::TimerProcess((int)((void *)(*((unsigned int *)this + 10)))); 
+  Power::TimerProcess((int)((void *)(*((unsigned int *)this + 11)))); 
+  Power::TimerProcess((int)((void *)(*((unsigned int *)this + 12)))); 
+  return Pow  return Power::TimerProcess((int)((void *)(*((unsigned int *)this + 13)))); 
+
 }
 } // namespace gamemd
 // 0x420E40
@@ -58,7 +64,46 @@ int AlphaShapeClass::SD_vt10(int a2, int a3)
 namespace gamemd {
 AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x421730)
+
+  int v3; // eax
+  int v4; // eax
+  AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
+
+  *(unsigned int *)Block->__pad_0 = &vt_AlphaShapeClass; /*0x42173d*/
+  this->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x421743*/
+  this->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x42174a*/
+  this->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x421751*/
+  v6 = (gamemd::AlphaShapeClass *)(this); /*0x42175f*/
+  v3 = ((int *)(*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16)))(&dword_88A0F0, &v6); 
+  if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
+  {
+    do /*0x421796*/
+    {
+      ++v3; /*0x421786*/
+      *((unsigned int *)dword_88A0F4 + v3 - 1) = *((unsigned int *)dword_88A0F4 + v3); /*0x42178a*/
+    }
+    while ( v3 < g_AlphaShapeLimit ); /*0x421796*/
+  }
+  v6 = (gamemd::AlphaShapeClass *)(this);
+  v4 = (*(int (**)(int *, AlphaShapeClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4217ac*/
+         &g_BuildingLoadQueue_Array.PowerBonus,
+         &v6);
+  if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.Foundation[0] ) /*0x4217bc*/
+  {
+    --g_BuildingLoadQueue_Array.Foundation[0]; /*0x4217c1*/
+    for ( ; /*0x4217c7*/
+          v4 < g_BuildingLoadQueue_Array.Foundation[0];
+          *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain
+                                                                                     + 4 * v4) )
+    {
+      ++v4; /*0x4217cf*/
+    }
+  }
+  ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x4217e3*/
+  if ( (a2 & 1) != 0 ) /*0x4217ed*/
+    __3_YAXPAX_Z(this); /*0x4217f0*/
+return (gamemd::AlphaShapeClass *)this->__pad_0; /*0x4217fa*/
+
 }
 } // namespace gamemd
 namespace gamemd {

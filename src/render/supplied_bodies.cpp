@@ -238,7 +238,7 @@ void DisplayClass::vt_entry_B0() {
 namespace gamemd {
 void FoggedObject_DrawVector::ddtor()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004D2B20.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D2B20.json)
 }
 } // namespace gamemd
 
@@ -281,7 +281,7 @@ void ScreenEffect::Stub1() {
 namespace gamemd {
 int BuildingQueue::IsCellSuitable(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0042E780.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00042E780.json)
 }
 } // namespace gamemd
 
@@ -289,7 +289,7 @@ int BuildingQueue::IsCellSuitable(int a2)
 namespace gamemd {
 int BuildingQueue::AllocSlot(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0042EB20.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00042EB20.json)
 }
 } // namespace gamemd
 
@@ -297,7 +297,7 @@ int BuildingQueue::AllocSlot(int a2)
 namespace gamemd {
 int BuildingQueue::FindFreeSlot(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0042EB50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00042EB50.json)
 }
 } // namespace gamemd
 
@@ -305,7 +305,7 @@ int BuildingQueue::FindFreeSlot(int a2)
 namespace gamemd {
 char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3, char a4)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0047EC90.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00047EC90.json)
 }
 } // namespace gamemd
 
@@ -313,7 +313,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
 namespace gamemd {
 int BuildingPlacement::ValidateType(int a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00480510.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000480510.json)
 }
 } // namespace gamemd
 
@@ -321,7 +321,7 @@ int BuildingPlacement::ValidateType(int a2, int a3)
 namespace gamemd {
 bool BuildingPlacement::IsPlacementFlagSet(unsigned int a2, char a3)
 {
-    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00481130.json)
+    return false; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000481130.json)
 }
 } // namespace gamemd
 
@@ -329,7 +329,7 @@ bool BuildingPlacement::IsPlacementFlagSet(unsigned int a2, char a3)
 namespace gamemd {
 int ColorListClass::GetIndex(int a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00488850.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000488850.json)
 }
 } // namespace gamemd
 
@@ -337,7 +337,7 @@ int ColorListClass::GetIndex(int a2, int a3)
 namespace gamemd {
 int ColorListClass::AddColor(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004888B0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004888B0.json)
 }
 } // namespace gamemd
 
@@ -345,7 +345,7 @@ int ColorListClass::AddColor(int a2)
 namespace gamemd {
 void ColorListClass::GetCount(signed int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00488910.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000488910.json)
 }
 } // namespace gamemd
 
@@ -353,7 +353,7 @@ void ColorListClass::GetCount(signed int a2)
 namespace gamemd {
 int ColorListClass::SetIndex(int a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00488960.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000488960.json)
 }
 } // namespace gamemd
 
@@ -361,7 +361,7 @@ int ColorListClass::SetIndex(int a2, int a3)
 namespace gamemd {
 unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int a6)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00488980.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000488980.json)
 }
 } // namespace gamemd
 
@@ -369,7 +369,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
 namespace gamemd {
 unsigned int * BlitPlainXlatAlpha_ushort::QueryInterface(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A200.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A200.json)
 }
 } // namespace gamemd
 
@@ -377,7 +377,7 @@ unsigned int * BlitPlainXlatAlpha_ushort::QueryInterface(char a2)
 namespace gamemd {
 unsigned int * BlitTransZRemapXlatAlpha_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A280.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A280.json)
 }
 } // namespace gamemd
 
@@ -385,7 +385,7 @@ unsigned int * BlitTransZRemapXlatAlpha_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransLucent75Alpha_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A2C0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A2C0.json)
 }
 } // namespace gamemd
 
@@ -393,7 +393,7 @@ unsigned int * BlitTransLucent75Alpha_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransLucent50Alpha_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A300.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A300.json)
 }
 } // namespace gamemd
 
@@ -401,7 +401,7 @@ unsigned int * BlitTransLucent50Alpha_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransZRemapXlatAlphaZRead_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A460.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A460.json)
 }
 } // namespace gamemd
 
@@ -409,7 +409,7 @@ unsigned int * BlitTransZRemapXlatAlphaZRead_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransLucent75AlphaZRead_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A4A0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A4A0.json)
 }
 } // namespace gamemd
 
@@ -417,7 +417,7 @@ unsigned int * BlitTransLucent75AlphaZRead_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransLucent50AlphaZRead_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A4E0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A4E0.json)
 }
 } // namespace gamemd
 
@@ -425,7 +425,7 @@ unsigned int * BlitTransLucent50AlphaZRead_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransLucent25AlphaZRead_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A520.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A520.json)
 }
 } // namespace gamemd
 
@@ -433,7 +433,7 @@ unsigned int * BlitTransLucent25AlphaZRead_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransLucent75AlphaZReadWarp_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A560.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A560.json)
 }
 } // namespace gamemd
 
@@ -441,7 +441,7 @@ unsigned int * BlitTransLucent75AlphaZReadWarp_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransLucent50AlphaZReadWarp_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A5A0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A5A0.json)
 }
 } // namespace gamemd
 
@@ -449,7 +449,7 @@ unsigned int * BlitTransLucent50AlphaZReadWarp_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransLucent25AlphaZReadWarp_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A5E0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A5E0.json)
 }
 } // namespace gamemd
 
@@ -457,7 +457,7 @@ unsigned int * BlitTransLucent25AlphaZReadWarp_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransXlatAlphaZReadWrite_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A620.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A620.json)
 }
 } // namespace gamemd
 
@@ -465,7 +465,7 @@ unsigned int * BlitTransXlatAlphaZReadWrite_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransLucent75AlphaZReadWrite_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A6A0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A6A0.json)
 }
 } // namespace gamemd
 
@@ -473,7 +473,7 @@ unsigned int * BlitTransLucent75AlphaZReadWrite_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * BlitTransLucent50AlphaZReadWrite_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049A6E0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049A6E0.json)
 }
 } // namespace gamemd
 
@@ -481,7 +481,7 @@ unsigned int * BlitTransLucent50AlphaZReadWrite_ushort::Blit(char a2)
 namespace gamemd {
 unsigned int * RLEBlitTransXlatAlpha_ushort::QueryInterface(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049AA00.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049AA00.json)
 }
 } // namespace gamemd
 
@@ -489,7 +489,7 @@ unsigned int * RLEBlitTransXlatAlpha_ushort::QueryInterface(char a2)
 namespace gamemd {
 unsigned int * RLEBlitTransLucent75Alpha_ushort::QueryInterface(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049AA80.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049AA80.json)
 }
 } // namespace gamemd
 
@@ -497,7 +497,7 @@ unsigned int * RLEBlitTransLucent75Alpha_ushort::QueryInterface(char a2)
 namespace gamemd {
 unsigned int * RLEBlitTransLucent50Alpha_ushort::QueryInterface(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049AAC0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049AAC0.json)
 }
 } // namespace gamemd
 
@@ -505,7 +505,7 @@ unsigned int * RLEBlitTransLucent50Alpha_ushort::QueryInterface(char a2)
 namespace gamemd {
 unsigned int * RLEBlitTransLucent25Alpha_ushort::QueryInterface(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049AB00.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049AB00.json)
 }
 } // namespace gamemd
 
@@ -513,7 +513,7 @@ unsigned int * RLEBlitTransLucent25Alpha_ushort::QueryInterface(char a2)
 namespace gamemd {
 unsigned int * RLEBlitTransXlatAlphaZRead_ushort::QueryInterface(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0049AB40.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00049AB40.json)
 }
 } // namespace gamemd
 
@@ -528,7 +528,7 @@ int DSurface::GetPitch() const { /*G42.35: const 对齐载体 override 链（语
 namespace gamemd {
 unsigned short * FrameSnapshot::Init()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004C91C0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004C91C0.json)
 }
 } // namespace gamemd
 
@@ -536,7 +536,7 @@ unsigned short * FrameSnapshot::Init()
 namespace gamemd {
 unsigned short * FrameSnapshot::InitMax(int a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004C91E0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004C91E0.json)
 }
 } // namespace gamemd
 
@@ -544,7 +544,7 @@ unsigned short * FrameSnapshot::InitMax(int a2)
 namespace gamemd {
 int FoggedObject_DrawVector::Seek(int a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004D2980.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D2980.json)
 }
 } // namespace gamemd
 
@@ -552,7 +552,7 @@ int FoggedObject_DrawVector::Seek(int a2, int a3)
 namespace gamemd {
 char FoggedObject_DrawVector::Release(int a2, char *a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004D2A10.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D2A10.json)
 }
 } // namespace gamemd
 
@@ -560,7 +560,7 @@ char FoggedObject_DrawVector::Release(int a2, char *a3)
 namespace gamemd {
 int FoggedObject_DrawVector::Read(unsigned int *a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004D2B50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D2B50.json)
 }
 } // namespace gamemd
 
@@ -568,7 +568,7 @@ int FoggedObject_DrawVector::Read(unsigned int *a2)
 namespace gamemd {
 unsigned int FoggedObject_DrawVector::Write(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004D2BA0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D2BA0.json)
 }
 } // namespace gamemd
 
@@ -576,7 +576,7 @@ unsigned int FoggedObject_DrawVector::Write(int a2)
 namespace gamemd {
 int BuildingPlacementClass::Draw(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004E2B50.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004E2B50.json)
 }
 } // namespace gamemd
 
@@ -584,7 +584,7 @@ int BuildingPlacementClass::Draw(int a2)
 namespace gamemd {
 unsigned int * PaletteClass::Load()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005CB590.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005CB590.json)
 }
 } // namespace gamemd
 
@@ -592,7 +592,7 @@ unsigned int * PaletteClass::Load()
 namespace gamemd {
 int ScrollingText::AddLine(wchar_t *String, int a3, wchar_t *Source, int a5)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005D3FC0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005D3FC0.json)
 }
 } // namespace gamemd
 
@@ -600,7 +600,7 @@ int ScrollingText::AddLine(wchar_t *String, int a3, wchar_t *Source, int a5)
 namespace gamemd {
 int BuildingLightQueue::RemoveEntry()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005FF2D0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005FF2D0.json)
 }
 } // namespace gamemd
 
@@ -608,7 +608,7 @@ int BuildingLightQueue::RemoveEntry()
 namespace gamemd {
 int ColorSchemeClass::LoadAllSchemes(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00627B20.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000627B20.json)
 }
 } // namespace gamemd
 
@@ -616,7 +616,7 @@ int ColorSchemeClass::LoadAllSchemes(int a2)
 namespace gamemd {
 int BuildingDebris::Init(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00631D40.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000631D40.json)
 }
 } // namespace gamemd
 
@@ -624,7 +624,7 @@ int BuildingDebris::Init(int a2)
 namespace gamemd {
 unsigned int * VoxelAnimTypeVector::Constructor(int a2, int a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0067C310.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00067C310.json)
 }
 } // namespace gamemd
 
@@ -632,7 +632,7 @@ unsigned int * VoxelAnimTypeVector::Constructor(int a2, int a3)
 namespace gamemd {
 unsigned int TacticalMapClass::SetCameraPosition(int *a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006D6000.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006D6000.json)
 }
 } // namespace gamemd
 
@@ -640,15 +640,98 @@ unsigned int TacticalMapClass::SetCameraPosition(int *a2)
 namespace gamemd {
 int TacticalMapClass::ProcessCell(int16_t *a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006D7F20.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006D7F20.json)
 }
 } // namespace gamemd
 
-// 0x6E7A80
+    int FindBuilding();   // 0x6E7A80 (def 0 参 int; 载体 misc 版无此法)
+}; } // namespace gamemd
+struct FootClass_site {
+    static int MoveToWeed(void* self, int a2);               // 0x4DDB90 (载体 foot.hpp 0 参 -- 其域 agent 在途)
+    static int MoveToTiberium(void* self, int a2, unsigned int a3); // 0x4DCFE0
+    static int ClearPathIndex(void* self);                   // 0x73EB55
+};
+struct ComPtr_site {
+    int ComPtr_field_0x04;  // til 槽词汇 (Validate int* 对齐)
+    int ComPtr_field_0x08;
+    int ComPtr_field_0x0C;
+    int ComPtr_field_0x10;
+    int ComPtr_field_0x14;
+    int ComPtr_field_0x18;
+    int ComPtr_field_0x20;
+    unsigned int* __pad_0;           // vfn 槽 (0x73E871)
+    static void Release_Alt(void* self);  // 0x73E7DA
+};
+struct DynamicVector_site {
+    unsigned int* __pad_0;                    // vfn 槽 (0x75E7xx)
+    unsigned char __pad_1[0x1C - 4];
+    unsigned char DynamicVector_field_0x1C[8];
+    static int GetOrGrow(void* self, int a2);      // 0x73E6A2
+    static void Add_Alt4(void* self, void* a2);    // 0x75D6CC
+    static void Constructor_VoxelAnim(void* self, int a2, int a3);  // 0x75DB12
+};
+#define BuildingLoadQueue BuildingLoadQueue_site  // G42.35: 语料名桥接（def 1 + misc 版缺法）
+#define FootClass FootClass_site                  // G42.35: 同上（5 站点全静态形）
+#define ComPtr ComPtr_site                        // G42.35: 同上（v66 局部 + 2 站点）
+#define DynamicVector DynamicVector_site          // G42.35: 同上（v86 局部 + 3 站点）
+// stru_B054D0 宿主（ida_globals 裸标量; 语料 .m_1[3] 访问）
+struct stru_B054D0_flat { unsigned char __pad_0[4]; void* m_1[16]; };
+extern stru_B054D0_flat stru_B054D0_t;  // data: 0xB054D0
+#define stru_B054D0 stru_B054D0_t
+// G42.35 波9: Math 站点壳（gamemd::Math 仅 fwd; Sqrt/RoundToInt 静态形）
+struct Math_site {
+    static double Sqrt(double a1);     // 0x73EE2D 区
+    static int RoundToInt(double a1);  // 0x73EE35 区
+};
+#define Math Math_site  // G42.35: 语料名桥接（8 站点全 Math:: 静态形）
+// dword_8871E0 宿主（ida_globals 裸 uint; 语料 ->CollapseChance/MutateExplosion/ChronoHarvTooFarDistance/__pad_* 访问）
+struct dword_8871E0_v {
+    unsigned char __pad_0[0xC3C];
+    unsigned char __pad_C3C[8];
+    unsigned int CollapseChance;
+    unsigned int MutateExplosion;
+    unsigned int ChronoHarvTooFarDistance;
+    unsigned char __pad_13BC[8];
+};
+extern dword_8871E0_v* dword_8871E0_t;  // data: 0x8871E0 (Rules 实例指针, object TU 注释同款)
+#define dword_8871E0 dword_8871E0_t
+// g_DSurface_Hidden_2 宿主（e4_globals_decls 裸 int; 语料 ->__pad_0 + (int) 双视图 + AudioStream* 裸传参）
+struct g_DSurface_Hidden_2_v : gamemd::AudioStream {
+    unsigned int* __pad_0;   // vfn 槽 (0x488A9B 等 23 站点)
+};
+extern g_DSurface_Hidden_2_v* g_DSurface_Hidden_2_t;  // data: 0x887314
+#define g_DSurface_Hidden_2 g_DSurface_Hidden_2_t
+// G42.35 波10: dword_A8B230 宿主（ida_globals 裸 uint; 语料 [14].NeedsSaveOrLink 访问）+ flt 数组宿主
+struct dword_A8B230_e { unsigned int NeedsSaveOrLink; };
+extern dword_A8B230_e dword_A8B230_t[32];  // data: 0xA8B230
+#define dword_A8B230 dword_A8B230_t
+extern float flt_B444A0_t[0x200];  // data: 0xB444A0 (ida_globals 裸 float 标量)
+#define flt_B444A0 flt_B444A0_t
+extern float flt_8467E4_t[0x40];   // data: 0x8467E4
+#define flt_8467E4 flt_8467E4_t
+// G42.35 波11: WinAPI 站点壳（全树载体 _tree_full_e4.hpp 未纳入本 TU; 同款 static Wrapper）
+struct WinAPI_site { static int Wrapper(int a2); };  // 0x73E7F2 区 (consensus 350+ 1-arg 站点)
+#define WinAPI WinAPI_site  // G42.35: 语料名桥接（2 站点）
+
+// 0x40D250
 namespace gamemd {
-int BuildingLoadQueue::FindBuilding()
+void DisplayClass::vt_entry_AC() {
+    ; /*0x40d250*/
+}
+} // namespace gamemd
+
+// 0x4AAD20
+namespace gamemd {
+void DisplayClass::vt_entry_B0() {
+    ; /*0x4aad20*/
+}
+} // namespace gamemd
+
+// 0x4D2B20
+namespace gamemd {
+void FoggedObject_DrawVector::ddtor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006E7A80.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D2B20.json)
 }
 } // namespace gamemd
 
@@ -656,7 +739,7 @@ int BuildingLoadQueue::FindBuilding()
 namespace gamemd {
 int PaletteManager::Load(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0072B530.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00072B530.json)
 }
 } // namespace gamemd
 
@@ -664,7 +747,7 @@ int PaletteManager::Load(int a2)
 namespace gamemd {
 int VoxelTypeClass::ReadINI(double a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0073E5E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00073E5E0.json)
 }
 } // namespace gamemd
 
@@ -672,7 +755,7 @@ int VoxelTypeClass::ReadINI(double a2)
 namespace gamemd {
 void VoxClass_Vector::getItem()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00753650.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000753650.json)
 }
 } // namespace gamemd
 
@@ -680,7 +763,7 @@ void VoxClass_Vector::getItem()
 namespace gamemd {
 unsigned int VoxClass_Vector::getItemAt(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00753680.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000753680.json)
 }
 } // namespace gamemd
 
@@ -688,7 +771,7 @@ unsigned int VoxClass_Vector::getItemAt(int a2)
 namespace gamemd {
 char VoxClass_Vector::removeItem(int a2, unsigned int *a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00753830.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000753830.json)
 }
 } // namespace gamemd
 
@@ -696,7 +779,7 @@ char VoxClass_Vector::removeItem(int a2, unsigned int *a3)
 namespace gamemd {
 int VoxClass_Vector::getItemWithIndex(unsigned int *a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007538E0.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007538E0.json)
 }
 } // namespace gamemd
 
@@ -704,7 +787,7 @@ int VoxClass_Vector::getItemWithIndex(unsigned int *a2)
 namespace gamemd {
 unsigned int * VoxClass_Vector::findItem(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00753960.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000753960.json)
 }
 } // namespace gamemd
 
@@ -712,15 +795,22 @@ unsigned int * VoxClass_Vector::findItem(char a2)
 namespace gamemd {
 void VoxelModel_BuildDrawList_3p(float *a1, int a2, int a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00755B30.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000755B30.json)
 }
 } // namespace gamemd
 
 // 0x7564B0
 namespace gamemd {
-int VoxelSection::GetInfo(int a2, int a3)
+int VoxelSection::GetInfo(int a2, int a3) {
+    return this->u32_14 + 164 * (a3 + *(unsigned int *)(this->u32_10 + 12 * a2)); /*0x7564cf*/
+}
+} // namespace gamemd
+
+// 0x758950
+namespace gamemd {
+unsigned int * VoxelPalette::Init(int a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7564B0)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000758950.json)
 }
 } // namespace gamemd
 
@@ -736,7 +826,7 @@ unsigned int * VoxelPalette::Init(int a2, int a3)
 namespace gamemd {
 void VoxelPalette::Reset()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007589C0.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007589C0.json)
 }
 } // namespace gamemd
 
@@ -744,7 +834,7 @@ void VoxelPalette::Reset()
 namespace gamemd {
 void Voxel_Section::Draw()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0075D3A0.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00075D3A0.json)
 }
 } // namespace gamemd
 
@@ -752,7 +842,7 @@ void Voxel_Section::Draw()
 namespace gamemd {
 void Voxel_Section::Constructor()
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0075E6B0.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00075E6B0.json)
 }
 } // namespace gamemd
 
@@ -760,7 +850,7 @@ void Voxel_Section::Constructor()
 namespace gamemd {
 void XSurface_DrawLineEx_raw(int a2, unsigned int *a3, unsigned int *a4, int16_t a5)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007BA610.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007BA610.json)
 }
 } // namespace gamemd
 

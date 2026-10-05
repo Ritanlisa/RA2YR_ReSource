@@ -35,20 +35,20 @@ int GameSettings::Read()
 namespace gamemd {
 void * GameSettings::ParseNetworkAddress()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005FB050.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005FB050.json)
 }
 } // namespace gamemd
 // 0x721290
 namespace gamemd {
 void GameSettings::SetScoreVolume(int volume, void *a2, void *a3)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00721290.json)
+    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000721290.json)
 }
 } // namespace gamemd
 // 0x7931A0
 namespace gamemd {
 char * GameSettings::FindFlagged()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007931A0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007931A0.json)
 }
 } // namespace gamemd

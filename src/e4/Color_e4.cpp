@@ -147,6 +147,24 @@ unsigned char Color::Lerp(uint8_t aP1, uint8_t *a2)
 namespace gamemd {
 int Color::RGBFromFloat(IUnknown * aP1, float a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x75F540)
+
+  double v3; // st7
+  int v5; // eax
+  int v6; // ebp
+  int v7; // eax
+  int v8; // eax
+  int v10; // [esp+4h] [ebp-8h]
+
+  v3 = (int)(1.0 - a3);
+  LOWORD(v5) = Math::RoundToInt(v3); /*0x75f565*/
+  v6 = v5; /*0x75f56d*/
+  LOWORD(v7) = Math::RoundToInt(v3); /*0x75f57a*/
+  v10 = v7; /*0x75f582*/
+  LOWORD(v8) = Math::RoundToInt(v3); /*0x75f591*/
+  this->Color_field_00 = v6; /*0x75f59e*/
+  *((unsigned int *)this + 1) = v10; /*0x75f5a0*/
+  *((unsigned int *)this + 2) = v8; /*0x75f5a3*/
+  return (int)(&this->Color_field_00); /*0x75f5ac*/
+
 }
 } // namespace gamemd

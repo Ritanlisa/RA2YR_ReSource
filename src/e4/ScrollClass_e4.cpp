@@ -28,8 +28,25 @@ int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 } // namespace gamemd
 // 0x6938F0
 namespace gamemd {
-short ScrollClass::Read(char * Block, char a2)
+char * ScrollClass::Read(char * Block, char a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6938F0)
+
+  int *v3; // esi
+  int v4; // edi
+
+  v3 = (int *)Block + 5371; /*0x6938f5*/
+  v4 = 4; /*0x6938fb*/
+  do /*0x693916*/
+  {
+    v3 -= 997; /*0x693905*/
+    Array::ForEachReverse((gamemd::ObjectClass *)v3, 52, 75, (int (*)(int))nullsub_56); /*0x693910*/
+    --v4; /*0x693915*/
+  }
+  while ( v4 ); /*0x693916*/
+  ((RadarClass *)((RadarClass *)Block))->Destruct(); /*0x69391a*/
+  if ( (a2 & 1) != 0 ) /*0x693924*/
+    __3_YAXPAX_Z(Block); /*0x693927*/
+  return (char *)Block; /*0x69392f*/
+
 }
 } // namespace gamemd

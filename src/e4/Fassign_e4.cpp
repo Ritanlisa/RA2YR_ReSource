@@ -35,7 +35,10 @@ int sub_7D7C31(int a1, int a2)
 namespace gamemd {
 int sub_7D7CC1(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7D7CC1)
+  unsigned char v3[12]; // [esp+0h] [ebp-Ch] BYREF
+
+  __strgtold12(v3, &a2, a2, 0, 0, 0, 0); /*0x7d7cd8*/
+  return Fltin2_Helper((int)v3, a1); /*0x7d7cec*/
 }
 } // namespace gamemd
 
@@ -43,6 +46,9 @@ int sub_7D7CC1(int a1, int a2)
 namespace gamemd {
 int sub_7D7D1C(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7D7D1C)
+  unsigned char v3[12]; // [esp+0h] [ebp-Ch] BYREF
+
+  __strgtold12(v3, &a2, a2, 0, 0, 0, 0); /*0x7d7d33*/
+  return Fassign_Helper_7D7D1C_Helper((int)v3, a1); /*0x7d7d47*/
 }
 } // namespace gamemd

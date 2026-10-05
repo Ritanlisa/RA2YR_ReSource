@@ -20,7 +20,7 @@
 namespace gamemd {
 void DeleteCommandClass_Undo()
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x537F90)
+  return UI_Delete(); /*0x537f95*/
 }
 }
 // 0x537F10
@@ -321,9 +321,24 @@ int DeleteCommandClass_28::FindItem(unsigned int * a2)
 }
 // 0x53C780
 namespace gamemd {
-VectorClass_flat * DynamicVector::QueryInterface(unsigned int * Block, char a2)
+VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, char a2)
 {
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x0053C780.json)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x53c783*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x53c786*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x53c790*/
+  {
+    __3_YAXPAX_Z(v3); /*0x53c798*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x53c7a0*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x53c7ab*/
+  Block->m_8 = 0; /*0x53c7b1*/
+  if ( (a2 & 1) != 0 ) /*0x53c7b8*/
+    __3_YAXPAX_Z(Block); /*0x53c7bb*/
+  return Block->__pad_0; /*0x53c7c5*/
+
 }
 } // namespace gamemd
 
@@ -331,6 +346,21 @@ VectorClass_flat * DynamicVector::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x53C7D0)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x53c7d3*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x53c7d6*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x53c7e0*/
+  {
+    __3_YAXPAX_Z(v3); /*0x53c7e8*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x53c7f0*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x53c7fb*/
+  Block->m_8 = 0; /*0x53c801*/
+  if ( (a2 & 1) != 0 ) /*0x53c808*/
+    __3_YAXPAX_Z(Block); /*0x53c80b*/
+  return Block->__pad_0; /*0x53c815*/
+
 }
 } // namespace gamemd

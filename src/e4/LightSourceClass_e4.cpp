@@ -18,14 +18,75 @@
 namespace gamemd {
 _DWORD * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x554760)
+
+  int v10; // eax
+
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x554763*/
+  this->LightTint[0] = a7; /*0x554774*/
+  this->LightIntensity = a6; /*0x554777*/
+  this->LightTint[1] = a8; /*0x55477e*/
+  this->LightTint[2] = a9; /*0x554788*/
+  this->DetailLevel = 2; /*0x55478f*/
+  this->Location[0] = a2; /*0x554796*/
+  this->Activated = 0; /*0x55479c*/
+  this->vtable1 = &vt_LightSourceClass; /*0x5547a0*/
+  this->Location[1] = a3; /*0x5547a6*/
+  this->LightVisibility = a5; /*0x5547ad*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5547b0*/
+  this->Location[2] = a4; /*0x5547b7*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5547ba*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5547c1*/
+  if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5547fd*/
+    || (BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
+    && g_MissionQueueFrame.random[134] > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))(
+         &g_MissionQueueFrame.random[129],
+         g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
+         0) )
+  {
+    v10 = g_MissionQueueFrame.random[133]++; /*0x55480a*/
+    *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v10) = this; /*0x554819*/
+  }
+  return (_DWORD *)(this); /*0x55481e*/
+
 }
 } // namespace gamemd
 // 0x554830
 namespace gamemd {
 int LightSourceClass::Constructor()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x554830)
+
+  int v2; // edx
+  int v3; // eax
+
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x554833*/
+  this->LightIntensity = 0; /*0x55483d*/
+  this->LightTint[0] = 0; /*0x554840*/
+  this->LightTint[1] = 0; /*0x554843*/
+  this->LightTint[2] = 0; /*0x554846*/
+  this->Location[0] = g_MissionQueueFrame.random[125]; /*0x55484f*/
+  this->Location[1] = g_MissionQueueFrame.random[126]; /*0x554857*/
+  v2 = g_MissionQueueFrame.random[127]; /*0x55485a*/
+  this->LightVisibility = 0; /*0x554860*/
+  this->Activated = 0; /*0x554863*/
+  this->Location[2] = v2; /*0x554866*/
+  this->vtable1 = &vt_LightSourceClass; /*0x554869*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55486f*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x554876*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55487d*/
+  if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5548b6*/
+    || (BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
+    && g_MissionQueueFrame.random[134] > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))(
+         &g_MissionQueueFrame.random[129],
+         g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
+         0) )
+  {
+    v3 = g_MissionQueueFrame.random[133]++; /*0x5548c3*/
+    *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3) = this; /*0x5548d2*/
+  }
+  return (int)this; /*0x5548d7*/
+
 }
 } // namespace gamemd
 // 0x555070
@@ -112,6 +173,39 @@ int LightSourceClass::StubReturn54()
 namespace gamemd {
 LightSourceClass * LightSourceClass::CopyTo(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x555150)
+
+  int v3; // eax
+  LightSourceClass *v5; // [esp+4h] [ebp-4h] BYREF
+
+  this->vtable1 = &vt_LightSourceClass; /*0x555156*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55515c*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x555163*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55516a*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(this), 1); /*0x555171*/
+  v5 = (gamemd::LightSourceClass *)(this); /*0x555186*/
+  v3 = (*(int (**)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/
+         &g_MissionQueueFrame.random[129],
+         &v5);
+  if ( v3 != -1 && v3 < g_MissionQueueFrame.random[133] ) /*0x55519a*/
+  {
+    --g_MissionQueueFrame.random[133]; /*0x55519f*/
+    for ( ; /*0x5551a5*/
+          v3 < g_MissionQueueFrame.random[133];
+          *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3 - 4) = *(unsigned int *)(g_MissionQueueFrame.random[130]
+                                                                                + 4 * v3) )
+    {
+      ++v3; /*0x5551ad*/
+    }
+  }
+  if ( this->Activated ) /*0x5551bf*/
+  {
+    this->Activated = 0; /*0x5551ca*/
+    ((TacticalClass *)((TacticalClass *)this))->ScrollView(0); /*0x5551ce*/
+  }
+  ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x5551d5*/
+  if ( (a2 & 1) != 0 ) /*0x5551df*/
+    __3_YAXPAX_Z(this); /*0x5551e2*/
+  return this; /*0x5551ec*/
+
 }
 } // namespace gamemd

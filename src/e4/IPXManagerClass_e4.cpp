@@ -40,7 +40,22 @@ int IPXManagerClass::sendPacket(int a2, int a3, int a4)
 namespace gamemd {
 int IPXManagerClass::send(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x541040)
+
+  IPXManagerClass * v2;
+  IPXManagerClass * result;
+  IPXManagerClass *i; // ecx
+
+  v2 = (gamemd::IPXManagerClass *)((int)((gamemd::IPXManagerClass *)(*((unsigned int *)this + 17))));
+  result = (gamemd::IPXManagerClass *)((int)((gamemd::IPXManagerClass *)(0)));
+  if ( v2 <= 0 ) /*0x541049*/
+    return -1; /*0x541061*/
+  for ( i = (unsigned int *)this + 5; *(unsigned int *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
+  {
+    if ( ++result >= (gamemd::IPXManagerClass *)(int)(v2) ) /*0x54105f*/
+      return -1; /*0x54105f*/
+  }
+  return (int)(result);
+
 }
 } // namespace gamemd
 // 0x541070
@@ -145,6 +160,11 @@ void IPXManagerClass::StubReturnFalse(int a1, int a2)
 namespace gamemd {
 IPXManagerClass * IPXManagerClass::QueryInterface(char * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5430E0)
+
+  IPXManagerClass::processPacket((char *)Block); /*0x5430e3*/
+  if ( (a2 & 1) != 0 ) /*0x5430ed*/
+    __3_YAXPAX_Z(Block); /*0x5430f0*/
+  return (gamemd::IPXManagerClass *)((char *)Block); /*0x5430fa*/
+
 }
 } // namespace gamemd

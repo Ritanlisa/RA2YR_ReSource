@@ -15,7 +15,45 @@
 namespace gamemd {
 unsigned int * DynamicVector::Copy(VectorClass_flat * aP1, void *a2_1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5AC430)
+
+  int v3; // eax
+  int v4; // eax
+  int DynamicVector_field_0x8; // ecx
+  int v6; // eax
+
+  if ( this == (DynamicVector *)aP1 ) /*0x5ac43a*/
+    goto LABEL_8; /*0x5ac43a*/
+  (*(void (**)(DynamicVector *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5ac43e*/
+  v3 = ((int *)aP1)[2]; /*0x5ac441*/
+  this->DynamicVector_field_0x8 = v3; /*0x5ac446*/
+  if ( !v3 ) /*0x5ac449*/
+  {
+    *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] = 0; /*0x5ac496*/
+    this->__pad_C[1] = 0; /*0x5ac49d*/
+LABEL_8:
+    this->DynamicVector_field_0x10 = (void *)((unsigned int)((void *)aP1[4])); /*0x5ac4a1*/
+    *(unsigned int *)this->__pad_14 = ((unsigned int *)aP1)[5]; /*0x5ac4aa*/
+    return this->__pad_0; /*0x5ac4ad*/
+  }
+  v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x5ac453*/
+  *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] = v4; /*0x5ac45b*/
+  if ( !v4 ) /*0x5ac460*/
+    goto LABEL_8; /*0x5ac460*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x5ac462*/
+  v6 = 0; /*0x5ac465*/
+  this->__pad_C[1] = 1; /*0x5ac469*/
+  if ( DynamicVector_field_0x8 <= 0 ) /*0x5ac46d*/
+    goto LABEL_8; /*0x5ac46d*/
+  do /*0x5ac481*/
+  {
+    *(unsigned int *)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3] + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x5ac478*/
+    ++v6; /*0x5ac47e*/
+  }
+  while ( v6 < this->DynamicVector_field_0x8 ); /*0x5ac481*/
+  this->DynamicVector_field_0x10 = (void *)((unsigned int)((void *)aP1[4])); /*0x5ac486*/
+  *(unsigned int *)this->__pad_14 = ((unsigned int *)aP1)[5]; /*0x5ac48c*/
+  return this->__pad_0; /*0x5ac491*/
+
 }
 }
 // 0x413A70
@@ -57,7 +95,34 @@ char DynamicVector::AddItem(unsigned int *aP1)
 namespace gamemd {
 unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2, void *a3_1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x42F670)
+
+  int v4; // eax
+
+  *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] = (unsigned int)(0); /*0x42f67a*/
+  this->DynamicVector_field_0x8 = (unsigned int)(aP1); /*0x42f681*/
+  this->__pad_C[0] = 1; /*0x42f684*/
+  this->__pad_C[1] = (unsigned int)(0); /*0x42f688*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x42f68c*/
+  if ( aP1 ) /*0x42f692*/
+  {
+    if ( aP2 ) /*0x42f69a*/
+    {
+      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] =(unsigned int)aP2; /*0x42f69d*/
+    }
+    else
+    {
+      v4 = __2_YAPAXI_Z(4 * aP1); /*0x42f6ae*/
+      if ( !v4 ) /*0x42f6b8*/
+        v4 = 0; /*0x42f6c1*/
+      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] = v4; /*0x42f6c3*/
+      this->__pad_C[1] = 1; /*0x42f6c6*/
+    }
+  }
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_DynamicVectorClass); /*0x42f6ca*/
+  *(unsigned int *)this->__pad_14 = 10; /*0x42f6d0*/
+  this->DynamicVector_field_0x10 = 0; /*0x42f6d7*/
+  return this->__pad_0; /*0x42f6e0*/
+
 }
 } // namespace gamemd
 
@@ -300,7 +365,27 @@ char DynamicVector::GrowCapacity()
 namespace gamemd {
 int DynamicVector::Read(TechnoTypeClass * aP1, void *a2_1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67A520)
+
+  int v3; // ecx
+  int result; // eax
+  int i; // esi
+  void *DynamicVector_field_0x10; // [esp+20h] [ebp-4h] BYREF
+
+  v3 = (void *)(*aP1); /*0x67a52c*/
+  DynamicVector_field_0x10 = (void *)(this->DynamicVector_field_0x10); /*0x67a539*/
+  (*(void (**)(int *, void **, int, unsigned int))(v3 + 16))((int *)aP1, &DynamicVector_field_0x10, 4, 0); /*0x67a53d*/
+  result = (int)DynamicVector_field_0x10; /*0x67a540*/
+  for ( i = 0; i < (int)DynamicVector_field_0x10; ++i ) /*0x67a548*/
+  {
+    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))( /*0x67a558*/
+      aP1,
+      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] + 4 * i,
+      4,
+      0);
+    result = (int)DynamicVector_field_0x10; /*0x67a55b*/
+  }
+  return result; /*0x67a564*/
+
 }
 } // namespace gamemd
 
@@ -308,7 +393,27 @@ int DynamicVector::Read(TechnoTypeClass * aP1, void *a2_1)
 namespace gamemd {
 int DynamicVector::Read_Alt(TechnoTypeClass * aP1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x67A6E0)
+
+  int v3; // ecx
+  int result; // eax
+  int i; // esi
+  void *DynamicVector_field_0x10; // [esp+20h] [ebp-4h] BYREF
+
+  v3 = (void *)(*aP1); /*0x67a6ec*/
+  DynamicVector_field_0x10 = (void *)(this->DynamicVector_field_0x10); /*0x67a6f9*/
+  (*(void (**)(int *, void **, int, unsigned int))(v3 + 16))((int *)aP1, &DynamicVector_field_0x10, 4, 0); /*0x67a6fd*/
+  result = (int)DynamicVector_field_0x10; /*0x67a700*/
+  for ( i = 0; i < (int)DynamicVector_field_0x10; ++i ) /*0x67a708*/
+  {
+    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))( /*0x67a718*/
+      aP1,
+      *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] + 4 * i,
+      4,
+      0);
+    result = (int)DynamicVector_field_0x10; /*0x67a71b*/
+  }
+  return result; /*0x67a724*/
+
 }
 } // namespace gamemd
 

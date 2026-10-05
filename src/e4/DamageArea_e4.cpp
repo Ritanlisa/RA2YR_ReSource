@@ -171,6 +171,30 @@ LABEL_24:
 namespace gamemd {
 unsigned int * DamageArea::CalcScatterOffset(unsigned int * a2, int16_t * a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x565660)
+
+  int v3; // ebx
+  int v4; // ebp
+  int v5; // esi
+  int16_t v6; // di
+  int v7; // eax
+  int v8; // ecx
+  int v9; // ecx
+  int16_t *v11; // [esp+20h] [ebp+8h]
+
+  v3 = this->u32_F4; /*0x565668*/
+  v4 = this->u32_FC; /*0x56566f*/
+  v5 = a3[1]; /*0x565676*/
+  v6 = *a3; /*0x56567b*/
+  v7 = this->u32_100; /*0x56567e*/
+  v8 = *a3; /*0x565684*/
+  if ( (v3 & 1) != 0 ) /*0x56568d*/
+    v9 = v8 - v5 + 1; /*0x565691*/
+  else
+    v9 = v8 - v5; /*0x565694*/
+  LOWORD(v11) = v3 / 2 + (v9 >> 1) - v4; /*0x5656b1*/
+  HIWORD(v11) = v6 + v5 - v3 - v7; /*0x5656b6*/
+  *a2 = (unsigned int)(v11); /*0x5656c2*/
+  return a2; /*0x5656bf*/
+
 }
 } // namespace gamemd

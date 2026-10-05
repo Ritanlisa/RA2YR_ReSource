@@ -88,14 +88,75 @@ LABEL_14:
 namespace gamemd {
 int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x504790)
+  IUnknown * v4;
+  IUnknown * v5;
+  int v6; // ecx
+  int v7; // ebp
+  int v8; // ecx
+  unsigned int *v9; // edi
+  int v10; // ecx
+  int v12; // [esp+14h] [ebp+4h]
+  int v13; // [esp+18h] [ebp+8h]
+
+  v4 = 0; /*0x504793*/
+  v5 = aP0; /*0x50479c*/
+  if ( *(int *)(aP0 + 22036) > 0 ) /*0x5047a2*/
+  {
+    do /*0x5047c8*/
+    {
+      v6 = *(unsigned int *)(v5 + 22024); /*0x5047ac*/
+      v7 = *(unsigned int *)(v6 + 8 * IDA_HIDWORD(v5)); /*0x5047b2*/
+      v8 = v6 + 8 * IDA_HIDWORD(v5); /*0x5047b5*/
+      if ( v7 == a4 ) /*0x5047ba*/
+        *(unsigned int *)(v8 + 4) += a3; /*0x5047bc*/
+      ++IDA_HIDWORD(v5); /*0x5047c5*/
+    }
+    while ( IDA_SHIDWORD(v5) < *(unsigned int *)(v5 + 22036) ); /*0x5047c8*/
+  }
+  v12 = 0; /*0x5047d0*/
+  if ( *(int *)(v5 + 22036) <= 0 ) /*0x5047d6*/
+    goto LABEL_18; /*0x5047d6*/
+  v9 = *(unsigned int **)(v5 + 22024); /*0x5047d8*/
+  v13 = *(unsigned int *)(v5 + 22036); /*0x5047de*/
+  do /*0x504832*/
+  {
+    IDA_HIDWORD(v5) = *v9; /*0x5047e5*/
+    if ( v9[1] > (unsigned int)(v4) && !*(unsigned char *)(IDA_HIDWORD(v5) + 501) ) /*0x5047eb*/
+    {
+      if ( !IDA_HIDWORD(v5) /*0x50481e*/
+        || IDA_HIDWORD(v5) != (unsigned int)v5
+        && (v10 = *(unsigned int *)(IDA_HIDWORD(v5) + 48), v10 != *(unsigned int *)(v5 + 48))
+        && (v10 == -1 || ((1 << v10) & *(unsigned int *)(v5 + 22408)) == 0) )
+      {
+        v4 = (IUnknown *)(v9[1]);
+        v12 = *v9; /*0x504822*/
+      }
+    }
+    v9 += 2; /*0x50482a*/
+    --v13; /*0x50482e*/
+  }
+  while ( v13 ); /*0x504832*/
+  if ( v12 ) /*0x50483a*/
+    *(unsigned int *)(v5 + 22016) = *(unsigned int *)(v12 + 48); /*0x504842*/
+  else
+  LABEL_18:
+    *(unsigned int *)(v5 + 22016) = -1; /*0x50484f*/
+  return (int)(v5); /*0x50483f*/
 }
 }
 // 0x5004E0
 namespace gamemd {
 int House_GetTechLevel(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5004E0)
+  int v4; // eax
+
+  if ( a2 < 0 ) /*0x5004e5*/
+    return 0; /*0x5004e7*/
+  v4 = (int)(((TechnoTypeClass *)(a1))->GetByTypeAndIndex(a2)); /*0x5004ed*/
+  if ( a1 == 6 || a1 == 7 ) /*0x5004fa*/
+    return v4->qE08; /*0x500500*/
+  else
+    return 0; /*0x5004fc*/
 }
 } // namespace gamemd
 

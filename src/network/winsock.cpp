@@ -197,9 +197,89 @@ void IPXInterfaceClass::CloseSocket()
 }
 
 // 0x7b10c0
-bool IPXInterfaceClass::Bind(uint32_t network, const uint8_t node[6], uint16_t socket)
+bool IPXInterfaceClass::Bind(uint32_t network, const uint8_t node[6], uint16_t sock)
 {
-    (void)network; (void)node; (void)socket; return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x007B10C0.json)
+  char result; // al
+  int v4; // eax
+  int16_t v5; // dx
+  char v6[4]; // [esp+4h] [ebp-18h] BYREF
+  char optval[4]; // [esp+8h] [ebp-14h] BYREF
+  struct sockaddr name; // [esp+Ch] [ebp-10h] BYREF
+
+  if ( *((unsigned char *)network + 258152) ) /*0x7b10c6*/
+  {
+    if ( *((unsigned int *)network + 64539) != -1 ) /*0x7b10e7*/
+      return 0; /*0x7b10ef*/
+  }
+  else
+  {
+    result = ((WinsockInterface*)(WinsockInterface *)network)->Init(); /*0x7b10d0*/
+    if ( !result ) /*0x7b10d7*/
+      return result; /*0x7b10d7*/
+  }
+  *((unsigned int *)network + 64707) = sock; /*0x7b10fd*/
+  Debug::Log(); /*0x7b1103*/
+  *(unsigned int *)&name.sa_data[4] = -1; /*0x7b110e*/
+  name.sa_family = 6; /*0x7b1112*/
+  *(unsigned int *)name.sa_data = 0; /*0x7b111a*/
+  *(unsigned short *)&name.sa_data[8] = -1; /*0x7b1122*/
+  *(unsigned short *)&name.sa_data[10] = htons(sock); /*0x7b1131*/
+  Debug::Log(); /*0x7b1136*/
+  v4 = socket(6, 2, 1000); /*0x7b1147*/
+  *((unsigned int *)network + 64539) = v4; /*0x7b114f*/
+  if ( v4 == -1 ) /*0x7b1156*/
+  {
+    WSAGetLastError(); /*0x7b1158*/
+    Debug::Log(); /*0x7b1163*/
+    closesocket(*((unsigned int *)network + 64539)); /*0x7b1172*/
+    return 0; /*0x7b1177*/
+  }
+  else
+  {
+    Debug::Log(); /*0x7b1185*/
+    if ( ((IPXInterfaceClass*)network)->initSocket(*((unsigned int *)network + 64702), (int)&name) ) /*0x7b119b*/
+    {
+      Debug::Log(); /*0x7b1236*/
+      v5 = *(unsigned short *)&name.sa_data[8]; /*0x7b123f*/
+      *(unsigned int *)((char *)network + 258822) = *(unsigned int *)&name.sa_data[4]; /*0x7b124f*/
+      *((unsigned short *)network + 129413) = v5; /*0x7b1251*/
+      Debug::Log(); /*0x7b1255*/
+      if ( bind(*((unsigned int *)network + 64539), &name, 16) == -1 ) /*0x7b1273*/
+      {
+        WSAGetLastError(); /*0x7b1275*/
+        Debug::Log(); /*0x7b1280*/
+        closesocket(*((unsigned int *)network + 64539)); /*0x7b128f*/
+        return 0; /*0x7b1294*/
+      }
+      else
+      {
+        Debug::Log(); /*0x7b12a2*/
+        *(unsigned int *)optval = 1; /*0x7b12ac*/
+        *(unsigned int *)v6 = 4; /*0x7b12b4*/
+        Debug::Log(); /*0x7b12bc*/
+        if ( setsockopt(*((unsigned int *)network + 64539), 0xFFFF, 32, optval, 4) == -1 ) /*0x7b12e1*/
+          WSAGetLastError(); /*0x7b12e3*/
+        Debug::Log(); /*0x7b12ee*/
+        Debug::Log(); /*0x7b130a*/
+        if ( setsockopt(*((unsigned int *)network + 64539), 1000, 0x4000, v6, 4) == -1 ) /*0x7b1332*/
+          WSAGetLastError(); /*0x7b1334*/
+        Debug::Log(); /*0x7b133f*/
+        Debug::Log(); /*0x7b135b*/
+        if ( setsockopt(*((unsigned int *)network + 64539), 1000, 16385, v6, 4) == -1 ) /*0x7b1383*/
+          WSAGetLastError(); /*0x7b1385*/
+        Debug::Log(); /*0x7b1390*/
+        ((Socket*)(WinsockInterfaceClass *)network)->ConfigureBuffers(0xFFFFFFFF); /*0x7b13ab*/
+        Debug::Log(); /*0x7b13b5*/
+        return 1; /*0x7b13bd*/
+      }
+    }
+    else
+    {
+      Debug::Log(); /*0x7b11a9*/
+      closesocket(*((unsigned int *)network + 64539)); /*0x7b11b8*/
+      return 0; /*0x7b11bd*/
+    }
+  }
 }
 bool IPXInterfaceClass::SendTo(uint32_t destNetwork, const uint8_t destNode[6], uint16_t destSocket,
                                 const uint8_t* data, int32_t length)

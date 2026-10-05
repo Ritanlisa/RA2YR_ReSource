@@ -11,13 +11,18 @@
 namespace gamemd {
 int Function::Function_643E80(void * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x643E80)
+
+  this->Function_field_0x04 = a2; /*0x643e84*/
+  return (int)(a2); /*0x643e87*/
+
 }
 }
 // 0x645D00
 namespace gamemd {
 int Function::sub_645D00(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x645D00)
+
+  return (unsigned char *)this + 4 * a2; /*0x645d07*/
+
 }
 } // namespace gamemd

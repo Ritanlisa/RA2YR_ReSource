@@ -283,7 +283,7 @@ bool MapClass::CoordinatesLegal(const CellStruct& cell) const
 // 0x5880a0
 CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const int* start, const int* end, const HouseClass* house) const
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005880A0.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0005880A0.json)
 }
 // 0x5678e0
 int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, CellStruct arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8)

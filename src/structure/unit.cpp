@@ -55,16 +55,15 @@ int UnitClass::Mission_Harvest()
 {
     return 0; // TODO stub - quarantined G42 T9 (raw harvest state machine; truth = .omo/ida_cache/func_0x4151E0.json)
 }
-// IDA: 0x6B6080 (CreateUnloadPlacementCraters, 167B)
 // 0x6b6080
 int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
 {
-    return 0; (void)cell; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006B6080.json)
+    return 0; (void)cell; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B6080.json)
 }
 // 0x54e3b0
 int UnitClass::GetExitCell(AbstractClass* aP1, AbstractClass* aP2)
 {
-    return 0; (void)aP1; (void)aP2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0054E3B0.json)
+    return 0; (void)aP1; (void)aP2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00054E3B0.json)
 }
 /* ASM:
 sub     esp, 0Ch
@@ -192,21 +191,20 @@ retn    8
 // Phase 3: Deploy
 // ============================================================
 
-// IDA: 0x7192F0 (Deploy, 2302B)
 // 0x7192f0
 int UnitClass::Deploy()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007192F0.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007192F0.json)
 }
 // 0x738d30
 int UnitClass::DeployToBuilding()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00738D30.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000738D30.json)
 }
 // 0x739ac0
 int UnitClass::SimpleDeployerDeploy()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00739AC0.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000739AC0.json)
 }
 /* ASM:
 sub     esp, 0Ch
@@ -372,11 +370,10 @@ add     esp, 0Ch
 retn
 */
 
-// IDA: 0x739CD0 (SimpleDeployerUndeploy, 494B)
 // 0x739cd0
 int UnitClass::SimpleDeployerUndeploy()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00739CD0.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000739CD0.json)
 }
 /* ASM:
 sub     esp, 10h
@@ -535,11 +532,10 @@ add     esp, 10h
 retn
 */
 
-// IDA: 0x737430 (MissionDispatch, 1826B)
 // 0x737430
 int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
 {
-    return 0; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00737430.json)
+    return 0; (void)a2; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000737430.json)
 }
 /* ASM:
 sub     esp, 24h
@@ -1273,16 +1269,15 @@ retn    0Ch
 // Phase 3: Movement
 // ============================================================
 
-// IDA: 0x7359F0 (CalcMoveTarget, 1730B)
 // 0x7359f0
 int UnitClass::CalcMoveTarget()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007359F0.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007359F0.json)
 }
 // 0x741970
 int UnitClass::AssignDestination_SyncLog(int64_t a2)
 {
-    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00741970.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000741970.json)
 }
 
 /* ASM:
@@ -3608,11 +3603,10 @@ add     esp, 80h
 retn    8
 */
 
-// IDA: 0x7414E0 (ApproachTarget_DisallowMoving, 435B)
 // 0x7414e0
 int UnitClass::ApproachTarget_DisallowMoving(char a2)
 {
-    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007414E0.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007414E0.json)
 }
 /* ASM:
 push    esi
@@ -3787,11 +3781,10 @@ pop     esi
 retn    4
 */
 
-// IDA: 0x736990 (UpdateRotation_TurretFacing_EMP, 639B)
 // 0x736990
 int UnitClass::UpdateRotation_TurretFacing_EMP()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00736990.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000736990.json)
 }
 /* ASM:
 sub     esp, 8
@@ -4032,21 +4025,20 @@ add     esp, 8
 retn
 */
 
-// IDA: 0x743A50 (Scatter, 1622B)
 // 0x743a50
 int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
 {
-    return 0; (void)threatPos; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00743A50.json)
+    return 0; (void)threatPos; (void)a3; (void)a4; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000743A50.json)
 }
 // 0x458a00
 int UnitClass::IsCellBlockedByBridge(void* aP1)
 {
-    return 0; (void)aP1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00458A00.json)
+    return 0; (void)aP1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000458A00.json)
 }
 // 0x4d03d0
 int UnitClass::CompareCoordinateMagnitude(short* a2)
 {
-    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004D03D0.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D03D0.json)
 }
 // IDA: 0x7178B0 (processEnterTarget, 14B)
 // 0x7178b0
@@ -4054,11 +4046,10 @@ int UnitClass::processEnterTarget(int a2)
 {
   return this->ToolTipText[a2 + 75]; /*0x7178bb*/
 }
-// IDA: 0x7468C0 (CheckForNearbyEnemies, 606B)
 // 0x7468c0
 int UnitClass::CheckForNearbyEnemies()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007468C0.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007468C0.json)
 }
 /* ASM:
 sub     esp, 1Ch
@@ -4274,31 +4265,29 @@ add     esp, 1Ch
 retn
 */
 
-// IDA: 0x737C90 (OnUnderAttack, 2540B)
 // 0x737c90
 int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, CellStruct* sourceCell, int a8, bool a9, void* a10)
 {
-    return 0; (void)attacker; (void)damage; (void)weaponIdx; (void)sourceCell; (void)a8; (void)a9; (void)a10; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00737C90.json)
+    return 0; (void)attacker; (void)damage; (void)weaponIdx; (void)sourceCell; (void)a8; (void)a9; (void)a10; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000737C90.json)
 }
 // ============================================================
 // Phase 3: Weapon Switching
 // ============================================================
 
-// IDA: 0x70DC70 (SetTurret, 110B)
 // 0x70dc70
 int UnitClass::SetTurret(unsigned int a2)
 {
-    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0070DC70.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00070DC70.json)
 }
 // 0x73f0a0
 int UnitClass::EvaluateTarget(int a2, int a3, int a4, int a5, char a6)
 {
-    return 0; (void)a2; (void)a3; (void)a4; (void)a5; (void)a6; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0073F0A0.json)
+    return 0; (void)a2; (void)a3; (void)a4; (void)a5; (void)a6; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00073F0A0.json)
 }
 // 0x47c520
 unsigned int *Cell::IsBridge()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (orphan fragment; truth = .omo/ida_cache/func_0x0047C520.json)
+    return nullptr; // TODO stub - quarantined G42 T9 (orphan fragment; truth = .omo/ida_cache/func_0x00047C520.json)
 }
 // 0x70fbd0
 bool UnitClass::IsDeactivated()
@@ -4309,26 +4298,25 @@ bool UnitClass::IsDeactivated()
 // Phase 3: Construction & Destruct
 // ============================================================
 
-// IDA: 0x6B4A50 (Create, 234B static)
 // 0x6b4a50
 int UnitClass::Create(void* aP0, void* aP1, int aP2)
 {
-    return 0; (void)aP0; (void)aP1; (void)aP2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006B4A50.json)
+    return 0; (void)aP0; (void)aP1; (void)aP2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B4A50.json)
 }
 // 0x6b4c80
 int UnitClass::ReadINI()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006B4C80.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B4C80.json)
 }
 // 0x6b4fa0
 int UnitClass::DestroySmudge(char a2)
 {
-    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006B4FA0.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B4FA0.json)
 }
 // 0x735780
 void UnitClass::Destructor()
 {
-      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00735780.json)
+      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000735780.json)
 }
 /* ASM:
 push    ecx
@@ -4567,11 +4555,10 @@ retn
 // Phase 3: Stream & Save
 // ============================================================
 
-// IDA: 0x744470 (LoadFromStream, 391B)
 // 0x744470
 int UnitClass::LoadFromStream(void* a0, void* aP1)
 {
-    return 0; (void)a0; (void)aP1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00744470.json)
+    return 0; (void)a0; (void)aP1; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744470.json)
 }
 /* ASM:
 pStm            = dword ptr  8
@@ -4720,54 +4707,51 @@ pop     ebx
 retn    8
 */
 
-// IDA: 0x6B4EA0 (SaveLoadData, 90B)
 // 0x6b4ea0
 int UnitClass::SaveLoadData(ObjectClass* aP1, int aP1a)
 {
-    return 0; (void)aP1; (void)aP1a; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006B4EA0.json)
+    return 0; (void)aP1; (void)aP1a; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B4EA0.json)
 }
 // 0x6b4f00
 int UnitClass::SaveState(void* aP0, void* a1, void* aP2)
 {
     (void)aP0; (void)a1; (void)aP2;
-    return 0; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x006B4F00.json)
+    return 0; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x0006B4F00.json)
 }
 // 0x744640
 int UnitClass::PowerDrainUpdate(int a2)
 {
-    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00744640.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000744640.json)
 }
-// IDA: 0x746810 (PerFrameUpdate, 167B)
 // 0x746810
 int UnitClass::PerFrameUpdate()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x00746810.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x000746810.json)
 }
 // 0x7446e0
 int UnitClass::HandleTargetDestroyed(void* a1, void* aP2)
 {
-    return 0; (void)a1; (void)aP2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007446E0.json)
+    return 0; (void)a1; (void)aP2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0007446E0.json)
 }
 // 0x6b4f20
 int UnitClass::CheckStatus()
 {
   return (int)this->Type; /*0x6b4f26*/
 }
-// IDA: 0x6B7C60 (ClearTargetRef, 206B)
 // 0x6b7c60
 int UnitClass::ClearTargetRef(int a2)
 {
-    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006B7C60.json)
+    return 0; (void)a2; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B7C60.json)
 }
 // 0x4d4280
 int UnitClass::ApproachEvaluate()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x004D4280.json)
+     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0004D4280.json)
 }
 // 0x5f5c60
 double BuildingClass::GetHealthRatio() const
 {
-    return 0.0; // TODO stub - quarantined G42 T9 (orphan fragment; truth = .omo/ida_cache/func_0x005F5C60.json)
+    return 0.0; // TODO stub - quarantined G42 T9 (orphan fragment; truth = .omo/ida_cache/func_0x0005F5C60.json)
 }
 
 /* ASM:
@@ -5625,7 +5609,7 @@ namespace gamemd {
 // 0x6b4f50
 HRESULT __stdcall UnitClass::GetClassID(CLSID* pClassID)
 {
-    return 0; (void)pClassID; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x006B4F50.json)
+    return 0; (void)pClassID; return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0006B4F50.json)
 }
 /* ASM:
 mov     eax, [esp+arg_4]

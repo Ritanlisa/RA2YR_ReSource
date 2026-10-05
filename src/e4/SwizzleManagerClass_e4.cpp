@@ -19,16 +19,216 @@
 
 // 0x6CF5A0
 namespace gamemd {
-AbstractClass * * DynamicVector::Release(int a2, unsigned int * a3)
+int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
 {
-    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x006CF5A0.json)
+
+  int v3; // ebp
+  unsigned int *v5; // esi
+  int v6; // eax
+  unsigned int *v7; // ecx
+  int v8; // edx
+  unsigned int *v9; // eax
+  int v10; // ecx
+  int m_8; // edx
+  int v13; // ecx
+  int v14; // eax
+  unsigned int *v15; // ebx
+
+  v3 = a2; /*0x6cf5a2*/
+  if ( a2 ) /*0x6cf5ae*/
+  {
+    v5 = a3; /*0x6cf5b4*/
+    LOBYTE(this->m_C) = 0; /*0x6cf5b8*/
+    if ( a3 ) /*0x6cf5bd*/
+    {
+      v9 = a3; /*0x6cf5f3*/
+      if ( a2 - 1 >= 0 ) /*0x6cf5f7*/
+      {
+        v10 = a2; /*0x6cf5f9*/
+        do /*0x6cf603*/
+        {
+          *v9 = 0; /*0x6cf5fa*/
+          v9[1] = 0; /*0x6cf5fc*/
+          v9 += 2; /*0x6cf5ff*/
+          --v10; /*0x6cf602*/
+        }
+        while ( v10 ); /*0x6cf603*/
+      }
+    }
+    else
+    {
+      v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x6cf5c7*/
+      if ( v6 ) /*0x6cf5d1*/
+      {
+        v7 = (unsigned int *)v6; /*0x6cf5d6*/
+        if ( a2 - 1 >= 0 ) /*0x6cf5da*/
+        {
+          v8 = a2; /*0x6cf5dc*/
+          do /*0x6cf5e6*/
+          {
+            *v7 = 0; /*0x6cf5dd*/
+            v7[1] = 0; /*0x6cf5df*/
+            v7 += 2; /*0x6cf5e2*/
+            --v8; /*0x6cf5e5*/
+          }
+          while ( v8 ); /*0x6cf5e6*/
+        }
+        v5 = (unsigned int *)v6; /*0x6cf5e8*/
+      }
+      else
+      {
+        v5 = 0; /*0x6cf5ec*/
+      }
+    }
+    LOBYTE(this->m_C) = 1; /*0x6cf607*/
+    if ( v5 ) /*0x6cf60b*/
+    {
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x6cf616*/
+      {
+        m_8 = this->m_8; /*0x6cf61b*/
+        if ( a2 < m_8 ) /*0x6cf620*/
+          m_8 = a2; /*0x6cf622*/
+        v13 = 0; /*0x6cf624*/
+        if ( m_8 > 0 ) /*0x6cf628*/
+        {
+          do /*0x6cf647*/
+          {
+            v14 = 2 * v13; /*0x6cf62d*/
+            v15 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * v13++); /*0x6cf636*/
+            v5[v14] = *v15; /*0x6cf63d*/
+            v5[v14 + 1] = v15[1]; /*0x6cf643*/
+          }
+          while ( v13 < m_8 ); /*0x6cf647*/
+          v3 = a2; /*0x6cf649*/
+        }
+        if ( BYTE1(this->m_C) ) /*0x6cf64f*/
+        {
+          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x6cf658*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x6cf660*/
+        }
+      }
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x6cf66b*/
+      this->m_8 = v3; /*0x6cf671*/
+      BYTE1(this->m_C) = a3 == 0; /*0x6cf674*/
+      return 1; /*0x6cf67a*/
+    }
+    else
+    {
+      return 0; /*0x6cf610*/
+    }
+  }
+  else
+  {
+    (*(void (**)(_VectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6cf684*/
+    return 1; /*0x6cf68a*/
+  }
+
 }
 }
 // 0x6CF720
 namespace gamemd {
-AbstractClass * * DynamicVector::SetCapacity(int a2, unsigned int * a3)
+AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
 {
-    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x006CF720.json)
+
+  int v3; // ebp
+  unsigned int *v5; // edi
+  int v6; // eax
+  unsigned int *v7; // ecx
+  int v8; // edx
+  unsigned int *v9; // eax
+  int v10; // ecx
+  int m_8; // edx
+  int v12; // ecx
+  int v13; // eax
+  unsigned int *v14; // ebx
+  int v15; // eax
+
+  v3 = a2; /*0x6cf722*/
+  if ( a2 ) /*0x6cf72e*/
+  {
+    v5 = a3; /*0x6cf734*/
+    LOBYTE(this->m_C) = 0; /*0x6cf738*/
+    if ( a3 ) /*0x6cf73d*/
+    {
+      v9 = a3; /*0x6cf773*/
+      if ( a2 - 1 >= 0 ) /*0x6cf777*/
+      {
+        v10 = a2; /*0x6cf779*/
+        do /*0x6cf783*/
+        {
+          *v9 = 0; /*0x6cf77a*/
+          v9[1] = 0; /*0x6cf77c*/
+          v9 += 2; /*0x6cf77f*/
+          --v10; /*0x6cf782*/
+        }
+        while ( v10 ); /*0x6cf783*/
+      }
+    }
+    else
+    {
+      v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x6cf747*/
+      if ( v6 ) /*0x6cf751*/
+      {
+        v7 = (unsigned int *)v6; /*0x6cf756*/
+        if ( a2 - 1 >= 0 ) /*0x6cf75a*/
+        {
+          v8 = a2; /*0x6cf75c*/
+          do /*0x6cf766*/
+          {
+            *v7 = 0; /*0x6cf75d*/
+            v7[1] = 0; /*0x6cf75f*/
+            v7 += 2; /*0x6cf762*/
+            --v8; /*0x6cf765*/
+          }
+          while ( v8 ); /*0x6cf766*/
+        }
+        v5 = (unsigned int *)v6; /*0x6cf768*/
+      }
+      else
+      {
+        v5 = 0; /*0x6cf76c*/
+      }
+    }
+    LOBYTE(this->m_C) = 1; /*0x6cf787*/
+    if ( !v5 ) /*0x6cf78b*/
+      return 0; /*0x6cf814*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x6cf791*/
+    {
+      m_8 = this->m_8; /*0x6cf796*/
+      if ( a2 < m_8 ) /*0x6cf79b*/
+        m_8 = a2; /*0x6cf79d*/
+      v12 = 0; /*0x6cf79f*/
+      if ( m_8 > 0 ) /*0x6cf7a3*/
+      {
+        do /*0x6cf7c2*/
+        {
+          v13 = 2 * v12; /*0x6cf7a8*/
+          v14 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * v12++); /*0x6cf7b1*/
+          v5[v13] = *v14; /*0x6cf7b8*/
+          v5[v13 + 1] = v14[1]; /*0x6cf7be*/
+        }
+        while ( v12 < m_8 ); /*0x6cf7c2*/
+        v3 = a2; /*0x6cf7c4*/
+      }
+      if ( BYTE1(this->m_C) ) /*0x6cf7ca*/
+      {
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x6cf7d3*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x6cf7db*/
+      }
+    }
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x6cf7e6*/
+    this->m_8 = v3; /*0x6cf7ec*/
+    BYTE1(this->m_C) = a3 == 0; /*0x6cf7ef*/
+  }
+  else
+  {
+    (*(void (**)(_DynamicVectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6cf7f8*/
+  }
+  v15 = this->m_8; /*0x6cf7fb*/
+  if ( v15 < this->m_10 ) /*0x6cf803*/
+    this->m_10 = v15; /*0x6cf805*/
+  return (gamemd::AbstractClass **)(1); /*0x6cf808*/
+
 }
 }
 // 0x6CF490
@@ -238,7 +438,22 @@ int SwizzleManagerClass_19::FindItem(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6CF850)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x6cf853*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6cf856*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x6cf860*/
+  {
+    __3_YAXPAX_Z(v3); /*0x6cf868*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x6cf870*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x6cf87b*/
+  Block->m_8 = 0; /*0x6cf881*/
+  if ( (a2 & 1) != 0 ) /*0x6cf888*/
+    __3_YAXPAX_Z(Block); /*0x6cf88b*/
+  return Block->__pad_0; /*0x6cf895*/
+
 }
 } // namespace gamemd
 
@@ -246,6 +461,21 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, 
 namespace gamemd {
 DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerClass_(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6CF8A0)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x6cf8a3*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6cf8a6*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x6cf8b0*/
+  {
+    __3_YAXPAX_Z(v3); /*0x6cf8b8*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x6cf8c0*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x6cf8cb*/
+  Block->m_8 = 0; /*0x6cf8d1*/
+  if ( (a2 & 1) != 0 ) /*0x6cf8d8*/
+    __3_YAXPAX_Z(Block); /*0x6cf8db*/
+  return Block->__pad_0; /*0x6cf8e5*/
+
 }
 } // namespace gamemd

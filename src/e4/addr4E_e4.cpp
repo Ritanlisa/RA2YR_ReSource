@@ -49,112 +49,1660 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a1, unsigned int * a2)
 namespace gamemd {
 int GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E1FE0)
+  int result; // eax
+  HWND DlgItem; // eax
+  HWND v6; // eax
+  HWND v7; // eax
+  HWND v8; // eax
+  HWND v9; // eax
+  HWND v10; // eax
+  HWND v11; // eax
+  HWND v12; // eax
+  HWND v13; // eax
+  HWND v14; // eax
+  HWND v15; // ebp
+  HWND v16; // eax
+  HWND v17; // ebp
+  HWND v18; // eax
+  HWND v19; // eax
+  HWND v20; // eax
+  HWND v21; // esi
+  BOOL IsSoundEnabled; // eax
+  HWND v23; // eax
+  HWND v24; // esi
+  unsigned int v25; // edi
+  wchar_t *v26; // edi
+  HWND v27; // eax
+  HWND v28; // esi
+  wchar_t *String; // eax
+  unsigned int v30; // ebx
+  unsigned int *WindowLongA; // eax
+  HWND hWnda; // [esp+20h] [ebp+10h]
+
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hDlg), a2, a3, (unsigned int)hWnd));
+  if ( !result ) /*0x4e2001*/
+  {
+    if ( a2 == 273 ) /*0x4e200d*/
+    {
+      v30 = IDA_HIWORD(a3); /*0x4e233f*/
+      WindowLongA = (unsigned int *)GetWindowLongA(hDlg, 8); /*0x4e2342*/
+      switch ( (uint16_t)a3 ) /*0x4e2354*/
+      {
+        case 0x52Cu: /*0x4e2354*/
+          if ( !v30 && byte_A8E9A0 == 1 ) /*0x4e23a1*/
+          {
+            dword_A8EDA0 = 4; /*0x4e23a3*/
+            *WindowLongA = 1; /*0x4e23ad*/
+          }
+          break;
+        case 0x52Du: /*0x4e2354*/
+          if ( !v30 && byte_A8E9A0 == 1 ) /*0x4e237b*/
+          {
+            dword_A8EDA0 = 6; /*0x4e237e*/
+            *WindowLongA = 1; /*0x4e2389*/
+            return 0; /*0x4e2393*/
+          }
+          break;
+        case 0x686u: /*0x4e2354*/
+          *WindowLongA = 1; /*0x4e2363*/
+          return 0; /*0x4e236d*/
+      }
+      return 0; /*0x4e235f*/
+    }
+    if ( a2 != 276 ) /*0x4e2016*/
+    {
+      if ( a2 == 1175 ) /*0x4e2022*/
+      {
+        DlgItem = GetDlgItem(hDlg, 1321); /*0x4e2034*/
+        hWnda = DlgItem; /*0x4e2048*/
+        if ( ((unsigned int *)(dword_A8B238))[0] || byte_A8EDDC ) /*0x4e2058*/
+        {
+          if ( DlgItem ) /*0x4e207d*/
+          {
+            SendMessageA(DlgItem, 0x4ACu, 0, 0); /*0x4e2089*/
+            SendMessageA(hWnda, 0x406u, 1u, 393216); /*0x4e209c*/
+            SendMessageA(hWnda, 0x405u, 1u, 6 - *(unsigned int *)dword_A8EB60); /*0x4e20b8*/
+          }
+        }
+        else
+        {
+          ShowWindow(DlgItem, 0); /*0x4e205d*/
+          v6 = GetDlgItem(hDlg, 1812); /*0x4e2065*/
+          ShowWindow(v6, 0); /*0x4e206a*/
+          v7 = GetDlgItem(hDlg, 1649); /*0x4e2072*/
+          ShowWindow(v7, 0); /*0x4e2077*/
+        }
+        if ( dword_A8B538 ) /*0x4e20c1*/
+        {
+          v8 = GetDlgItem(hDlg, 1321); /*0x4e20c9*/
+          ShowWindow(v8, 0); /*0x4e20ce*/
+          v9 = GetDlgItem(hDlg, 1812); /*0x4e20d6*/
+          ShowWindow(v9, 0); /*0x4e20db*/
+          v10 = GetDlgItem(hDlg, 1649); /*0x4e20e3*/
+          ShowWindow(v10, 0); /*0x4e20e8*/
+          if ( dword_A8B538 ) /*0x4e20f1*/
+          {
+            v11 = GetDlgItem(hDlg, 1321); /*0x4e20f9*/
+            ShowWindow(v11, 0); /*0x4e20fe*/
+            v12 = GetDlgItem(hDlg, 1812); /*0x4e2106*/
+            ShowWindow(v12, 0); /*0x4e210b*/
+            v13 = GetDlgItem(hDlg, 1649); /*0x4e2113*/
+            ShowWindow(v13, 0); /*0x4e2118*/
+          }
+        }
+        v14 = GetDlgItem(hDlg, 1322); /*0x4e2120*/
+        v15 = v14; /*0x4e2122*/
+        if ( v14 ) /*0x4e2126*/
+        {
+          SendMessageA(v14, 0x4ACu, 0, 0); /*0x4e2132*/
+          SendMessageA(v15, 0x406u, 1u, 393216); /*0x4e2141*/
+          SendMessageA(v15, 0x405u, 1u, 6 - dword_A8EB70); /*0x4e2159*/
+        }
+        v16 = GetDlgItem(hDlg, 1323); /*0x4e2161*/
+        v17 = v16; /*0x4e2163*/
+        if ( v16 ) /*0x4e2167*/
+        {
+          SendMessageA(v16, 0x4ACu, 0, 0); /*0x4e2173*/
+          SendMessageA(v17, 0x406u, 1u, 0x20000); /*0x4e2182*/
+          SendMessageA(v17, 0x405u, 1u, dword_A8EB78); /*0x4e2193*/
+        }
+        v18 = GetDlgItem(hDlg, 1537); /*0x4e219b*/
+        if ( v18 ) /*0x4e219f*/
+          SendMessageA(v18, 0xF1u, byte_A8EB7E != 0, 0); /*0x4e21b7*/
+        v19 = GetDlgItem(hDlg, 1540); /*0x4e21bf*/
+        if ( v19 ) /*0x4e21c3*/
+          SendMessageA(v19, 0xF1u, byte_A8EB7F != 0, 0); /*0x4e21db*/
+        v20 = GetDlgItem(hDlg, 1538); /*0x4e21e3*/
+        if ( v20 ) /*0x4e21e7*/
+          SendMessageA(v20, 0xF1u, byte_A8EB80 != 0, 0); /*0x4e21ff*/
+        if ( byte_A8E9A0 == 1 ) /*0x4e2208*/
+        {
+          v21 = GetDlgItem(hDlg, 1325); /*0x4e2212*/
+          if ( v21 ) /*0x4e2216*/
+          {
+                        IsSoundEnabled = ((Audio *)this)->IsSoundEnabled();
+            EnableWindow(v21, IsSoundEnabled); /*0x4e2223*/
+            return 0; /*0x4e222f*/
+          }
+        }
+        else
+        {
+          v23 = GetDlgItem(hDlg, 1295); /*0x4e2238*/
+          v24 = v23; /*0x4e223a*/
+          if ( v23 ) /*0x4e223e*/
+          {
+            SendMessageA(v23, 0x4ACu, 0, 0); /*0x4e224e*/
+            SendMessageA(v24, 0x406u, 1u, 0x20000); /*0x4e225d*/
+            SendMessageA(v24, 0x405u, 1u, dword_A8EB64); /*0x4e226d*/
+            return 0; /*0x4e2275*/
+          }
+        }
+      }
+      return 0; /*0x4e2216*/
+    }
+    if ( (unsigned short)a3 == 5 ) /*0x4e227c*/
+    {
+      v25 = IDA_HIWORD(a3); /*0x4e228e*/
+      if ( hWnd == GetDlgItem(hDlg, 1321) ) /*0x4e2295*/
+      {
+        v26 = (wchar_t *)((&off_822730)[v25]);
+        v27 = GetDlgItem(hDlg, 1649); /*0x4e22a3*/
+        goto LABEL_38; /*0x4e22a3*/
+      }
+      if ( hWnd == GetDlgItem(hDlg, 1322) ) /*0x4e22af*/
+      {
+        v26 = (wchar_t *)off_82274C[v25]; /*0x4e22b1*/
+        v27 = GetDlgItem(hDlg, 1650); /*0x4e22bd*/
+        goto LABEL_38; /*0x4e22bd*/
+      }
+      if ( hWnd == GetDlgItem(hDlg, 1323) ) /*0x4e22c9*/
+      {
+        v26 = (wchar_t *)off_822768[v25]; /*0x4e22cb*/
+        v27 = GetDlgItem(hDlg, 1651); /*0x4e22d7*/
+        goto LABEL_38; /*0x4e22d7*/
+      }
+      if ( !byte_A8E9A0 && hWnd == GetDlgItem(hDlg, 1295) ) /*0x4e22f0*/
+      {
+        v26 = (wchar_t *)((&off_822774)[v25]);
+        v27 = GetDlgItem(hDlg, 1648); /*0x4e2303*/
+  LABEL_38:
+        v28 = v27; /*0x4e2305*/
+        if ( v27 ) /*0x4e2309*/
+        {
+          String = (wchar_t *)(GetStringCSF(v26, 0,(const char *)(aDRa2mdpostGame), 434));
+          SendMessageA(v28, 0x4B2u, 0, (LPARAM)String); /*0x4e232b*/
+          return 0; /*0x4e2337*/
+        }
+      }
+    }
+    return 0; /*0x4e23b3*/
+  }
+  return result; /*0x4e2229*/
 }
 }
 // 0x4E34A0
 namespace gamemd {
 void * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E34A0)
+  int v3; // edx
+  HWND DlgItem; // esi
+  HWND *result; // eax
+
+  if ( a2 )
+  {
+    switch ( a2 )
+    {
+      case 1:
+        v3 = 1877; /*0x4e34b0*/
+        break;
+      case 2:
+        v3 = 1878; /*0x4e34bc*/
+        break;
+      case 3:
+        v3 = 1879; /*0x4e34c8*/
+        break;
+      case 4:
+        v3 = 1880; /*0x4e34d4*/
+        break;
+      case 5:
+        v3 = 1881; /*0x4e34e0*/
+        break;
+      case 6:
+        v3 = 1882; /*0x4e34ec*/
+        break;
+      default:
+        v3 = a2 != 7 ? -1 : 1883;
+        break;
+    }
+  }
+  else
+  {
+    v3 = 1876; /*0x4e34a4*/
+  }
+  DlgItem = GetDlgItem(hDlg, v3); /*0x4e350f*/
+  result = 0; /*0x4e3511*/
+  if ( a3 ) /*0x4e3519*/
+  {
+    if ( a3 == 1 ) /*0x4e3527*/
+    {
+      result = (HWND *)HashTable::Find((void *)g_DialogHashTable, off_844B1C[0], 0); /*0x4e3532*/
+    }
+    else if ( a3 == 2 ) /*0x4e3537*/
+    {
+      result = (HWND *)HashTable::Find((void *)g_DialogHashTable, off_844B20[0], 0); /*0x4e3547*/
+    }
+  }
+  else
+  {
+    result = (HWND *)HashTable::Find((void *)g_DialogHashTable, off_844B18[0], 0); /*0x4e3522*/
+  }
+  if ( DlgItem != HWND_MESSAGE|0x2 ) /*0x4e354f*/
+    return CacheDialogInvalidate(DlgItem, (HWND)result); /*0x4e3555*/
+  return result; /*0x4e355b*/
 }
 }
 // 0x4E3690
 namespace gamemd {
 void * sub_4E3690(HWND hDlg, int a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E3690)
+  int v4; // eax
+  HWND DlgItem; // ebp
+  int v6; // esi
+  LRESULT v7; // eax
+  LRESULT v8; // eax
+  HWND Default; // eax
+
+  if ( a2 )
+  {
+    switch ( a2 )
+    {
+      case 1:
+        v4 = 1755; /*0x4e36a8*/
+        break;
+      case 2:
+        v4 = 1756; /*0x4e36b4*/
+        break;
+      case 3:
+        v4 = 1757; /*0x4e36c0*/
+        break;
+      case 4:
+        v4 = 1758; /*0x4e36cc*/
+        break;
+      case 5:
+        v4 = 1759; /*0x4e36d8*/
+        break;
+      case 6:
+        v4 = 1760; /*0x4e36e4*/
+        break;
+      default:
+        v4 = a2 != 7 ? -1 : 1761;
+        break;
+    }
+  }
+  else
+  {
+    v4 = 1754; /*0x4e369c*/
+  }
+  DlgItem = GetDlgItem(hDlg, v4); /*0x4e3708*/
+  if ( a2 )
+  {
+    switch ( a2 )
+    {
+      case 1:
+        v6 = 1296; /*0x4e3718*/
+        break;
+      case 2:
+        v6 = 1299; /*0x4e3724*/
+        break;
+      case 3:
+        v6 = 1310; /*0x4e3730*/
+        break;
+      case 4:
+        v6 = 1300; /*0x4e373c*/
+        break;
+      case 5:
+        v6 = 1311; /*0x4e3748*/
+        break;
+      case 6:
+        v6 = 1312; /*0x4e3754*/
+        break;
+      default:
+        v6 = a2 != 7 ? -1 : 1313;
+        break;
+    }
+  }
+  else
+  {
+    v6 = 1697; /*0x4e370c*/
+  }
+  v7 = SendDlgItemMessageA(hDlg, v6, 0x147u, 0, 0); /*0x4e377f*/
+  v8 = SendDlgItemMessageA(hDlg, v6, 0x150u, v7, 0); /*0x4e378b*/
+  if ( v8 < -3 || v8 > 9 ) /*0x4e3795*/
+  {
+    if ( dword_A8B23C ) /*0x4e379f*/
+      v8 = (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 40))(dword_A8B23C); /*0x4e37a3*/
+    else
+      v8 = -2; /*0x4e37a8*/
+  }
+  Default = (HWND)((BuildingType*)(void *)v8)->FindDefault(); /*0x4e37af*/
+  return CacheDialogInvalidate(DlgItem, Default); /*0x4e37b8*/
 }
 }
 // 0x4E3CE0
 namespace gamemd {
 void * SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E3CE0)
+  int v3; // esi
+  HWND DlgItem; // ebx
+  LRESULT v5; // ebp
+  WPARAM v6; // edi
+  HWND v7; // ebp
+  int v8; // esi
+  int v9; // eax
+  HWND v10; // edi
+  int v11; // esi
+  LRESULT v12; // eax
+  LRESULT v13; // eax
+  HWND Default; // eax
+  bool v16; // [esp+7h] [ebp-9h]
+  int v18; // [esp+Ch] [ebp-4h]
+
+  v18 = dword_A8B3BC; /*0x4e3ce9*/
+  if ( dword_A8B3C0 == -2 ) /*0x4e3cfb*/
+  {
+    v18 = -2; /*0x4e3cfd*/
+  }
+  else if ( dword_A8B3C0 == -3 ) /*0x4e3d06*/
+  {
+    v18 = -3; /*0x4e3d08*/
+  }
+  if ( a2 )
+  {
+    switch ( a2 )
+    {
+      case 1:
+        v3 = 1296; /*0x4e3d1f*/
+        break;
+      case 2:
+        v3 = 1299; /*0x4e3d2b*/
+        break;
+      case 3:
+        v3 = 1310; /*0x4e3d37*/
+        break;
+      case 4:
+        v3 = 1300; /*0x4e3d43*/
+        break;
+      case 5:
+        v3 = 1311; /*0x4e3d4f*/
+        break;
+      case 6:
+        v3 = 1312; /*0x4e3d5b*/
+        break;
+      default:
+        v3 = a2 != 7 ? -1 : 1313;
+        break;
+    }
+  }
+  else
+  {
+    v3 = 1697; /*0x4e3d13*/
+  }
+  DlgItem = GetDlgItem(hDlg, v3); /*0x4e3d7f*/
+  v16 = !ShowWindow(DlgItem, 0); /*0x4e3d97*/
+  v5 = SendDlgItemMessageA(hDlg, v3, 0x146u, 0, 0); /*0x4e3da2*/
+  v6 = 0; /*0x4e3da4*/
+  if ( v5 <= 0 ) /*0x4e3da8*/
+  {
+  LABEL_23:
+    v7 = hDlg; /*0x4e3dc9*/
+  }
+  else
+  {
+    while ( SendDlgItemMessageA(hDlg, v3, 0x150u, v6, 0) != v18 ) /*0x4e3dc2*/
+    {
+      if ( (int)++v6 >= v5 ) /*0x4e3dc7*/
+        goto LABEL_23; /*0x4e3dc7*/
+    }
+    v7 = hDlg; /*0x4e3df2*/
+    SendDlgItemMessageA(hDlg, v3, 0x14Eu, v6, 0); /*0x4e3e00*/
+  }
+  if ( !v16 ) /*0x4e3dd3*/
+    ShowWindow(DlgItem, 5); /*0x4e3dd8*/
+  switch ( v3 ) /*0x4e3de4*/
+  {
+    case 1697: /*0x4e3de4*/
+      v8 = 0; /*0x4e3de6*/
+      v9 = 1754; /*0x4e3de8*/
+      break;
+    case 1296: /*0x4e3de4*/
+      v8 = 1; /*0x4e3e10*/
+      v9 = 1755; /*0x4e3e15*/
+      break;
+    case 1299: /*0x4e3de4*/
+      v8 = 2; /*0x4e3e24*/
+      v9 = 1756; /*0x4e3e29*/
+      break;
+    case 1310: /*0x4e3de4*/
+      v8 = 3; /*0x4e3e38*/
+      v9 = 1757; /*0x4e3e3d*/
+      break;
+    case 1300: /*0x4e3de4*/
+      v8 = 4; /*0x4e3e4c*/
+      v9 = 1758; /*0x4e3e51*/
+      break;
+    case 1311: /*0x4e3de4*/
+      v8 = 5; /*0x4e3e60*/
+      v9 = 1759; /*0x4e3e65*/
+      break;
+    case 1312: /*0x4e3de4*/
+      v8 = 6; /*0x4e3e74*/
+      v9 = 1760; /*0x4e3e79*/
+      break;
+    case 1313: /*0x4e3de4*/
+      v8 = 7; /*0x4e3e88*/
+      v9 = 1761; /*0x4e3e8d*/
+      break;
+    default:
+      v8 = -1; /*0x4e3e94*/
+      v9 = -1; /*0x4e3e97*/
+      break;
+  }
+  v10 = GetDlgItem(v7, v9); /*0x4e3ea4*/
+  if ( v8 )
+  {
+    switch ( v8 )
+    {
+      case 1:
+        v11 = 1296; /*0x4e3eb4*/
+        break;
+      case 2:
+        v11 = 1299; /*0x4e3ec0*/
+        break;
+      case 3:
+        v11 = 1310; /*0x4e3ecc*/
+        break;
+      case 4:
+        v11 = 1300; /*0x4e3ed8*/
+        break;
+      case 5:
+        v11 = 1311; /*0x4e3ee4*/
+        break;
+      case 6:
+        v11 = 1312; /*0x4e3ef0*/
+        break;
+      default:
+        v11 = v8 != 7 ? -1 : 1313;
+        break;
+    }
+  }
+  else
+  {
+    v11 = 1697; /*0x4e3ea8*/
+  }
+  v12 = SendDlgItemMessageA(v7, v11, 0x147u, 0, 0); /*0x4e3f1b*/
+  v13 = SendDlgItemMessageA(v7, v11, 0x150u, v12, 0); /*0x4e3f27*/
+  if ( v13 < -3 || v13 > 9 ) /*0x4e3f34*/
+  {
+    if ( dword_A8B23C ) /*0x4e3f3e*/
+      v13 = (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 40))(dword_A8B23C); /*0x4e3f42*/
+    else
+      v13 = -2; /*0x4e3f47*/
+  }
+  Default = (HWND)((BuildingType*)(void *)v13)->FindDefault(); /*0x4e3f4e*/
+  return CacheDialogInvalidate(v10, Default); /*0x4e3f5c*/
 }
 }
 // 0x4E3F70
 namespace gamemd {
 HWND * SetupLobbyCountryCombo(HWND aP0, int nIDDlgItem, int a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E3F70)
+  LRESULT v5; // ebx
+  WPARAM v6; // edi
+  int v7; // esi
+  int v8; // eax
+  HWND DlgItem; // edi
+  int v10; // esi
+  LRESULT v11; // eax
+  LRESULT v12; // eax
+  HWND Default; // eax
+  bool v15; // [esp+13h] [ebp-5h]
+  HWND hWnd; // [esp+14h] [ebp-4h]
+
+  hWnd = GetDlgItem(aP0, nIDDlgItem); /*0x4e3f86*/
+  v15 = !ShowWindow(hWnd, 0); /*0x4e3f9d*/
+  v5 = SendDlgItemMessageA(aP0, nIDDlgItem, 0x146u, 0, 0); /*0x4e3fa8*/
+  v6 = 0; /*0x4e3faa*/
+  if ( v5 > 0 ) /*0x4e3fae*/
+  {
+    while ( SendDlgItemMessageA(aP0, nIDDlgItem, 0x150u, v6, 0) != a3 ) /*0x4e3fc4*/
+    {
+      if ( (int)++v6 >= v5 ) /*0x4e3fc9*/
+        goto LABEL_6; /*0x4e3fc9*/
+    }
+    SendDlgItemMessageA(aP0, nIDDlgItem, 0x14Eu, v6, 0); /*0x4e3fd7*/
+  }
+  LABEL_6:
+  if ( !v15 ) /*0x4e3fe3*/
+    ShowWindow(hWnd, 5); /*0x4e3fec*/
+  switch ( nIDDlgItem ) /*0x4e3ff8*/
+  {
+    case 1697: /*0x4e3ff8*/
+      v7 = 0; /*0x4e3ffa*/
+      v8 = 1754; /*0x4e3ffc*/
+      break;
+    case 1296: /*0x4e3ff8*/
+      v7 = 1; /*0x4e400e*/
+      v8 = 1755; /*0x4e4013*/
+      break;
+    case 1299: /*0x4e3ff8*/
+      v7 = 2; /*0x4e4022*/
+      v8 = 1756; /*0x4e4027*/
+      break;
+    case 1310: /*0x4e3ff8*/
+      v7 = 3; /*0x4e4036*/
+      v8 = 1757; /*0x4e403b*/
+      break;
+    case 1300: /*0x4e3ff8*/
+      v7 = 4; /*0x4e404a*/
+      v8 = 1758; /*0x4e404f*/
+      break;
+    case 1311: /*0x4e3ff8*/
+      v7 = 5; /*0x4e405e*/
+      v8 = 1759; /*0x4e4063*/
+      break;
+    case 1312: /*0x4e3ff8*/
+      v7 = 6; /*0x4e4072*/
+      v8 = 1760; /*0x4e4077*/
+      break;
+    case 1313: /*0x4e3ff8*/
+      v7 = 7; /*0x4e4086*/
+      v8 = 1761; /*0x4e408b*/
+      break;
+    default:
+      v7 = -1; /*0x4e4092*/
+      v8 = -1; /*0x4e4095*/
+      break;
+  }
+  DlgItem = GetDlgItem(aP0, v8); /*0x4e40a2*/
+  if ( v7 )
+  {
+    switch ( v7 )
+    {
+      case 1:
+        v10 = 1296; /*0x4e40b2*/
+        break;
+      case 2:
+        v10 = 1299; /*0x4e40be*/
+        break;
+      case 3:
+        v10 = 1310; /*0x4e40ca*/
+        break;
+      case 4:
+        v10 = 1300; /*0x4e40d6*/
+        break;
+      case 5:
+        v10 = 1311; /*0x4e40e2*/
+        break;
+      case 6:
+        v10 = 1312; /*0x4e40ee*/
+        break;
+      default:
+        v10 = v7 != 7 ? -1 : 1313;
+        break;
+    }
+  }
+  else
+  {
+    v10 = 1697; /*0x4e40a6*/
+  }
+  v11 = SendDlgItemMessageA(aP0, v10, 0x147u, 0, 0); /*0x4e4119*/
+  v12 = SendDlgItemMessageA(aP0, v10, 0x150u, v11, 0); /*0x4e4125*/
+  if ( v12 < -3 || v12 > 9 ) /*0x4e412f*/
+  {
+    if ( dword_A8B23C ) /*0x4e4139*/
+      v12 = (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 40))(dword_A8B23C); /*0x4e413d*/
+    else
+      v12 = -2; /*0x4e4142*/
+  }
+  Default =(HWND)(HWND *)((HWND)((BuildingType*)(void *)v12)->FindDefault()); /*0x4e4149*/
+  return (HWND *)(CacheDialogInvalidate(DlgItem, Default)); /*0x4e4157*/
 }
 }
 // 0x4E45A0
 namespace gamemd {
 bool FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E45A0)
+  wchar_t * DlgItem;
+  wchar_t *StringCSF; // eax
+  LRESULT v5; // ebx
+  unsigned int v6;
+  LRESULT v7; // ebp
+  int result; // eax
+  bool v9; // [esp+12h] [ebp-Eh]
+  bool v10; // [esp+13h] [ebp-Dh]
+  int v11; // [esp+14h] [ebp-Ch]
+  LPARAM lParam; // [esp+18h] [ebp-8h]
+  WPARAM wParam; // [esp+1Ch] [ebp-4h]
+
+  DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem))));
+  v10 = (wchar_t *)(!ShowWindow((HWND)(DlgItem), 0));
+  SendMessageA((HWND)(DlgItem), 0x14Bu, 0, 0); /*0x4e45d3*/
+  SendMessageA((HWND)(DlgItem), 0x4DDu, 0, 1); /*0x4e45df*/
+  SendMessageA((HWND)(DlgItem), 0x4DEu, 0, 9); /*0x4e45eb*/
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 522)); /*0x4e45fe*/
+  v5 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e460e*/
+  SendMessageA((HWND)(DlgItem), 0x151u, v5, -2); /*0x4e4619*/
+  SendMessageA((HWND)(DlgItem), 0x498u, v5, -1); /*0x4e4624*/
+  switch ( nIDDlgItem )
+  {
+    case 1698:
+      v11 = 0; /*0x4e462e*/
+      break;
+    case 1314:
+      v11 = 1; /*0x4e4643*/
+      break;
+    case 1315:
+      v11 = 2; /*0x4e4655*/
+      break;
+    case 1316:
+      v11 = 3; /*0x4e4667*/
+      break;
+    case 1317:
+      v11 = 4; /*0x4e4679*/
+      break;
+    case 1318:
+      v11 = 5; /*0x4e468b*/
+      break;
+    case 1319:
+      v11 = 6; /*0x4e469d*/
+      break;
+    default:
+      v11 = nIDDlgItem != 1320 ? -1 : 7;
+      break;
+  }
+  v6 = dword_8B4040; /*0x4e46bd*/
+  wParam = 0; /*0x4e46c2*/
+  lParam = 0; /*0x4e46c6*/
+  do /*0x4e472c*/
+  {
+    v9 = *(unsigned int *)(v6) == v11; /*0x4e46d7*/
+    if ( *(unsigned int *)(v6) == v11 || *(unsigned int *)(v6) == -1 ) /*0x4e46e0*/
+    {
+      v7 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, (LPARAM)aAb); /*0x4e46f1*/
+      SendMessageA((HWND)(DlgItem), 0x498u, v7, *(unsigned int *)((v6 - 1))); /*0x4e46fe*/
+      SendMessageA((HWND)(DlgItem), 0x151u, v7, lParam); /*0x4e470c*/
+      if ( v9 ) /*0x4e4714*/
+        wParam = v7; /*0x4e4716*/
+    }
+    v6 += 3; /*0x4e471e*/
+    ++lParam; /*0x4e4728*/
+  }
+  while ( (int)v6 < (int)&dbl_8B40A0 ); /*0x4e472c*/
+  SendMessageA((HWND)(DlgItem), 0x14Eu, wParam, 0); /*0x4e473b*/
+  result = SendMessageA((HWND)(DlgItem), 0x4F1u, 0, 0); /*0x4e4747*/
+  IDA_LOBYTE(result) = v10; /*0x4e4749*/
+  if ( !v10 ) /*0x4e474f*/
+    return ShowWindow((HWND)(DlgItem), 5); /*0x4e4754*/
+  return result; /*0x4e475a*/
 }
 }
 // 0x4E48E0
 namespace gamemd {
 int SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E48E0)
+  int v2; // edi
+  int v3; // eax
+  int v4; // edx
+
+  v2 = dword_A8B3B4; /*0x4e48e7*/
+  if ( dword_A8B3B8 == -2 ) /*0x4e48f0*/
+    v2 = -2; /*0x4e48f2*/
+  if ( a2 )
+  {
+    switch ( a2 )
+    {
+      case 1:
+        v3 = 1314; /*0x4e4907*/
+        break;
+      case 2:
+        v3 = 1315; /*0x4e4913*/
+        break;
+      case 3:
+        v3 = 1316; /*0x4e491f*/
+        break;
+      case 4:
+        v3 = 1317; /*0x4e492b*/
+        break;
+      case 5:
+        v3 = 1318; /*0x4e4937*/
+        break;
+      case 6:
+        v3 = 1319; /*0x4e4943*/
+        break;
+      default:
+        v3 = a2 != 7 ? -1 : 1320;
+        break;
+    }
+  }
+  else
+  {
+    v3 = 1698; /*0x4e48fb*/
+  }
+  if ( dword_A8B238 == 3 || dword_A8B238 == 4 ) /*0x4e496b*/
+  {
+    v4 = *(&dword_A8DA90 + a2); /*0x4e496d*/
+    if ( v4 == g_Lobby_MaxPlayers && *(unsigned int *)(v4 + 107) == -1 ) /*0x4e4982*/
+      v2 = 8; /*0x4e4984*/
+  }
+  return SetupSkirmishSpawnLocations(a1, v3, v2); /*0x4e4991*/
 }
 }
 // 0x4E49A0
 namespace gamemd {
 int SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E49A0)
+  HWND v4; // ebp
+  int v5; // eax
+  int v6; // eax
+  int v7; // edx
+  unsigned int v8;
+  WPARAM v9; // edi
+  LRESULT v10; // ebp
+  int v11; // esi
+  int i; // esi
+  int v13; // edx
+  int v14; // eax
+  int result; // eax
+  bool v16; // [esp+Bh] [ebp-Dh]
+  LRESULT v18; // [esp+10h] [ebp-8h]
+  HWND hWnd; // [esp+14h] [ebp-4h]
+
+  v4 = hDlg; /*0x4e49a7*/
+  hWnd = GetDlgItem(hDlg, nIDDlgItem); /*0x4e49b8*/
+  v16 = !ShowWindow(hWnd, 0); /*0x4e49c4*/
+  switch ( nIDDlgItem ) /*0x4e49cf*/
+  {
+    case 1698: /*0x4e49cf*/
+      v5 = 0; /*0x4e49d1*/
+      break;
+    case 1314: /*0x4e49cf*/
+      v5 = 1; /*0x4e49dd*/
+      break;
+    case 1315: /*0x4e49cf*/
+      v5 = 2; /*0x4e49ec*/
+      break;
+    case 1316: /*0x4e49cf*/
+      v5 = 3; /*0x4e49fb*/
+      break;
+    case 1317: /*0x4e49cf*/
+      v5 = 4; /*0x4e4a0a*/
+      break;
+    case 1318: /*0x4e49cf*/
+      v5 = 5; /*0x4e4a19*/
+      break;
+    case 1319: /*0x4e49cf*/
+      v5 = 6; /*0x4e4a28*/
+      break;
+    default:
+      v6 = -(nIDDlgItem != 1320); /*0x4e4a38*/
+      IDA_LOBYTE(v6) = v6 & 0xF8; /*0x4e4a3a*/
+      v5 = v6 + 7; /*0x4e4a3c*/
+      break;
+  }
+  v7 = 0; /*(unsigned int *)(0x4e4a41)*/
+  v8 = dword_8B4040; /*0x4e4a43*/
+  while ( *(unsigned int *)(v8) != v5 ) /*0x4e4a4a*/
+  {
+    v8 += 3; /*0x4e4a4c*/
+    ++v7; /*0x4e4a4f*/
+    if ( (int)v8 >= (int)&dword_8B40AC ) /*0x4e4a56*/
+      goto LABEL_22; /*0x4e4a56*/
+  }
+  if ( v7 != -1 ) /*0x4e4a5d*/
+    (&dword_8B4040)[3 * v7] = -1; /*0x4e4a62*/
+  LABEL_22:
+  v9 = 0; /*0x4e4a6d*/
+  v18 = SendDlgItemMessageA(v4, nIDDlgItem, 0x146u, 0, 0); /*0x4e4a84*/
+  if ( v18 > 0 )
+  {
+    while ( 1 ) /*0x4e4a9a*/
+    {
+      v10 = SendDlgItemMessageA(v4, nIDDlgItem, 0x150u, v9, 0); /*0x4e4a9a*/
+      if ( v10 == a3 ) /*0x4e4aa0*/
+        break; /*0x4e4aa0*/
+      v4 = hDlg; /*0x4e4aa6*/
+      if ( (int)++v9 >= v18 ) /*0x4e4aad*/
+        goto LABEL_44; /*0x4e4aad*/
+    }
+    SendDlgItemMessageA(hDlg, nIDDlgItem, 0x14Eu, v9, 0); /*0x4e4ac2*/
+    if ( v10 != -2 )
+    {
+      switch ( nIDDlgItem )
+      {
+        case 1698:
+          v11 = 0; /*0x4e4ad5*/
+          break;
+        case 1314:
+          v11 = 1; /*0x4e4ae1*/
+          break;
+        case 1315:
+          v11 = 2; /*0x4e4af0*/
+          break;
+        case 1316:
+          v11 = 3; /*0x4e4aff*/
+          break;
+        case 1317:
+          v11 = 4; /*0x4e4b0e*/
+          break;
+        case 1318:
+          v11 = 5; /*0x4e4b1d*/
+          break;
+        case 1319:
+          v11 = 6; /*0x4e4b2c*/
+          break;
+        default:
+          v11 = nIDDlgItem != 1320 ? -1 : 7;
+          break;
+      }
+      (&dword_8B4040)[3 * v10] = v11; /*0x4e4b47*/
+    }
+    v4 = hDlg; /*0x4e4b4e*/
+  }
+  LABEL_44:
+  if ( !v16 ) /*0x4e4b5a*/
+    ShowWindow(hWnd, 5); /*0x4e4b63*/
+  for ( i = 0; i < 8; ++i )
+  {
+    if ( i )
+    {
+      switch ( i )
+      {
+        case 1:
+          v13 = 1314; /*0x4e4b7b*/
+          break;
+        case 2:
+          v13 = 1315; /*0x4e4b87*/
+          break;
+        case 3:
+          v13 = 1316; /*0x4e4b93*/
+          break;
+        case 4:
+          v13 = 1317; /*0x4e4b9f*/
+          break;
+        case 5:
+          v13 = 1318; /*0x4e4bab*/
+          break;
+        case 6:
+          v13 = 1319; /*0x4e4bb7*/
+          break;
+        default:
+          v13 = i != 7 ? -1 : 1320;
+          break;
+      }
+    }
+    else
+    {
+      v13 = 1698; /*0x4e4b6f*/
+    }
+    if ( (((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4) /*0x4e4bf7*/
+      && ((v14 = *(&dword_A8DA90 + i), v14 == g_Lobby_MaxPlayers) || *(unsigned int *)(v14 + 107) == -1) )
+    {
+      result = FillListBox(v4, v13); /*0x4e4c04*/
+    }
+    else
+    {
+      result = (int)(FillComboBoxFactions(v4, v13));
+    }
+  }
+  return result; /*0x4e4c13*/
 }
 }
 // 0x4E4C20
 namespace gamemd {
 char FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4C20)
+  int v4; // eax
+  int v5; // eax
+  int v6; // edx
+  unsigned int v7;
+  LRESULT v8; // eax
+  LRESULT v9; // eax
+  int v10; // esi
+  int i; // esi
+  int v12; // edx
+  int v13; // eax
+  int result; // eax
+
+  switch ( nIDDlgItem ) /*0x4e4c2c*/
+  {
+    case 1698: /*0x4e4c2c*/
+      v4 = 0; /*0x4e4c2e*/
+      break;
+    case 1314: /*0x4e4c2c*/
+      v4 = 1; /*0x4e4c3a*/
+      break;
+    case 1315: /*0x4e4c2c*/
+      v4 = 2; /*0x4e4c49*/
+      break;
+    case 1316: /*0x4e4c2c*/
+      v4 = 3; /*0x4e4c58*/
+      break;
+    case 1317: /*0x4e4c2c*/
+      v4 = 4; /*0x4e4c67*/
+      break;
+    case 1318: /*0x4e4c2c*/
+      v4 = 5; /*0x4e4c76*/
+      break;
+    case 1319: /*0x4e4c2c*/
+      v4 = 6; /*0x4e4c85*/
+      break;
+    default:
+      v5 = -(nIDDlgItem != 1320); /*0x4e4c95*/
+      IDA_LOBYTE(v5) = v5 & 0xF8; /*0x4e4c97*/
+      v4 = v5 + 7; /*0x4e4c99*/
+      break;
+  }
+  v6 = 0; /*(unsigned int *)(0x4e4c9d)*/
+  v7 = dword_8B4040; /*0x4e4c9f*/
+  while ( *(unsigned int *)(v7) != v4 ) /*0x4e4ca6*/
+  {
+    v7 += 3; /*0x4e4ca8*/
+    ++v6; /*0x4e4cab*/
+    if ( (int)v7 >= (int)&dword_8B40AC ) /*0x4e4cb2*/
+      goto LABEL_22; /*0x4e4cb2*/
+  }
+  if ( v6 != -1 ) /*0x4e4cb9*/
+    (&dword_8B4040)[3 * v6] = -1; /*0x4e4cbe*/
+  LABEL_22:
+  v8 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147u, 0, 0); /*0x4e4cc9*/
+  v9 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v8, 0); /*0x4e4ce6*/
+  switch ( nIDDlgItem )
+  {
+    case 1698:
+      v10 = 0; /*0x4e4cf1*/
+      break;
+    case 1314:
+      v10 = 1; /*0x4e4cfd*/
+      break;
+    case 1315:
+      v10 = 2; /*0x4e4d0c*/
+      break;
+    case 1316:
+      v10 = 3; /*0x4e4d1b*/
+      break;
+    case 1317:
+      v10 = 4; /*0x4e4d2a*/
+      break;
+    case 1318:
+      v10 = 5; /*0x4e4d39*/
+      break;
+    case 1319:
+      v10 = 6; /*0x4e4d48*/
+      break;
+    default:
+      v10 = nIDDlgItem != 1320 ? -1 : 7;
+      break;
+  }
+  if ( v9 != -2 ) /*0x4e4d62*/
+    (&dword_8B4040)[3 * v9] = v10; /*0x4e4d67*/
+  for ( i = 0; i < 8; ++i )
+  {
+    if ( i )
+    {
+      switch ( i )
+      {
+        case 1:
+          v12 = 1314; /*0x4e4d80*/
+          break;
+        case 2:
+          v12 = 1315; /*0x4e4d8c*/
+          break;
+        case 3:
+          v12 = 1316; /*0x4e4d98*/
+          break;
+        case 4:
+          v12 = 1317; /*0x4e4da4*/
+          break;
+        case 5:
+          v12 = 1318; /*0x4e4db0*/
+          break;
+        case 6:
+          v12 = 1319; /*0x4e4dbc*/
+          break;
+        default:
+          v12 = i != 7 ? -1 : 1320;
+          break;
+      }
+    }
+    else
+    {
+      v12 = 1698; /*0x4e4d74*/
+    }
+    if ( (((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4) /*0x4e4dfc*/
+      && ((v13 = *(&dword_A8DA90 + i), v13 == g_Lobby_MaxPlayers) || *(unsigned int *)(v13 + 107) == -1) )
+    {
+      result = FillListBox(hDlg, v12); /*0x4e4e09*/
+    }
+    else
+    {
+      result = (int)(FillComboBoxFactions(hDlg, v12));
+    }
+  }
+  return result; /*0x4e4e18*/
 }
 }
 // 0x4E50C0
 namespace gamemd {
 bool FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E50C0)
+  wchar_t * DlgItem;
+  wchar_t *StringCSF; // eax
+  LRESULT v5; // eax
+  unsigned int v6;
+  LRESULT v7; // ebx
+  int result; // eax
+  bool v9; // [esp+12h] [ebp-Eh]
+  bool v10; // [esp+13h] [ebp-Dh]
+  int v11; // [esp+14h] [ebp-Ch]
+  LPARAM lParam; // [esp+18h] [ebp-8h]
+  WPARAM wParam; // [esp+1Ch] [ebp-4h]
+
+  DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem))));
+  v10 = (wchar_t *)(!ShowWindow((HWND)(DlgItem), 0));
+  SendMessageA((HWND)(DlgItem), 0x14Bu, 0, 0); /*0x4e50f2*/
+  SendMessageA((HWND)(DlgItem), 0x4DDu, 0, 1); /*0x4e50fd*/
+  SendMessageA((HWND)(DlgItem), 0x4DEu, 0, 9); /*0x4e5108*/
+  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 833)); /*0x4e511b*/
+  v5 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5128*/
+  SendMessageA((HWND)(DlgItem), 0x151u, v5, -2); /*0x4e5133*/
+  switch ( nIDDlgItem )
+  {
+    case 1699:
+      v11 = 0; /*0x4e513d*/
+      break;
+    case 1700:
+      v11 = 1; /*0x4e514e*/
+      break;
+    case 1701:
+      v11 = 2; /*0x4e5160*/
+      break;
+    case 1702:
+      v11 = 3; /*0x4e5172*/
+      break;
+    case 1703:
+      v11 = 4; /*0x4e5184*/
+      break;
+    case 1704:
+      v11 = 5; /*0x4e5196*/
+      break;
+    case 1706:
+      v11 = 6; /*0x4e51a8*/
+      break;
+    default:
+      v11 = nIDDlgItem != 1707 ? -1 : 7;
+      break;
+  }
+  wParam = 0; /*0x4e51c6*/
+  lParam = 0; /*0x4e51ca*/
+  v6 = dword_8B3F38; /*0x4e51ce*/
+  do /*0x4e5228*/
+  {
+    v9 = *(unsigned int *)(v6) == v11; /*0x4e51e1*/
+    if ( *(unsigned int *)(v6) == v11 || *(unsigned int *)(v6) == -1 ) /*0x4e51ea*/
+    {
+      v7 = SendMessageA((HWND)(DlgItem), 0x4C2u, 0, *(unsigned int *)((v6 - 2))); /*0x4e51fa*/
+      SendMessageA((HWND)(DlgItem), 0x151u, v7, lParam); /*0x4e5208*/
+      if ( v9 ) /*0x4e5210*/
+        wParam = v7; /*0x4e5212*/
+    }
+    v6 += 3; /*0x4e521a*/
+    ++lParam; /*0x4e5224*/
+  }
+  while ( (int)v6 < (int)&dword_8B3F98 ); /*0x4e5228*/
+  SendMessageA((HWND)(DlgItem), 0x14Eu, wParam, 0); /*0x4e5237*/
+  result = SendMessageA((HWND)(DlgItem), 0x4F1u, 0, 0); /*0x4e5243*/
+  IDA_LOBYTE(result) = v10; /*0x4e5245*/
+  if ( !v10 ) /*0x4e524b*/
+    return ShowWindow((HWND)(DlgItem), 5); /*0x4e5250*/
+  return result; /*0x4e5256*/
 }
 }
 // 0x4E53D0
 namespace gamemd {
 int Lobby_FillFactionComboBox(HWND a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E53D0)
+  int v2; // edi
+  int v3; // eax
+  int v4; // edx
+
+  v2 = -2; /*0x4e53d4*/
+  if ( a2 )
+  {
+    switch ( a2 )
+    {
+      case 1:
+        v3 = 1700; /*0x4e53e7*/
+        break;
+      case 2:
+        v3 = 1701; /*0x4e53f3*/
+        break;
+      case 3:
+        v3 = 1702; /*0x4e53ff*/
+        break;
+      case 4:
+        v3 = 1703; /*0x4e540b*/
+        break;
+      case 5:
+        v3 = 1704; /*0x4e5417*/
+        break;
+      case 6:
+        v3 = 1706; /*0x4e5423*/
+        break;
+      default:
+        v3 = a2 != 7 ? -1 : 1707;
+        break;
+    }
+  }
+  else
+  {
+    v3 = 1699; /*0x4e53db*/
+  }
+  if ( dword_A8B238 == 3 || dword_A8B238 == 4 ) /*0x4e544b*/
+  {
+    v4 = *(&dword_A8DA90 + a2); /*0x4e544d*/
+    if ( v4 == g_Lobby_MaxPlayers && *(unsigned int *)(v4 + 107) == -1 ) /*0x4e5462*/
+      v2 = 8; /*0x4e5464*/
+  }
+  return SetupLobbyFactionSlots(a1, v3, v2); /*0x4e5471*/
 }
 }
 // 0x4E5480
 namespace gamemd {
 int SetupLobbyFactionSlots(HWND aP0, int nIDDlgItem, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5480)
+  SessionClass * v4;
+  int v5; // eax
+  int v6; // eax
+  int v7; // edx
+  unsigned int v8;
+  WPARAM v9; // edi
+  LRESULT v10; // ebp
+  int v11; // esi
+  int i; // esi
+  int v13; // edx
+  int v14; // eax
+  int result; // eax
+  bool v16; // [esp+Bh] [ebp-Dh]
+  LRESULT v18; // [esp+10h] [ebp-8h]
+  HWND hWnd; // [esp+14h] [ebp-4h]
+
+  v4 = (gamemd::SessionClass *)(aP0); /*0x4e5487*/
+  hWnd = GetDlgItem(aP0, nIDDlgItem); /*0x4e5498*/
+  v16 = !ShowWindow(hWnd, 0); /*0x4e54a4*/
+  switch ( nIDDlgItem ) /*0x4e54af*/
+  {
+    case 1699: /*0x4e54af*/
+      v5 = 0; /*0x4e54b1*/
+      break;
+    case 1700: /*0x4e54af*/
+      v5 = 1; /*0x4e54bd*/
+      break;
+    case 1701: /*0x4e54af*/
+      v5 = 2; /*0x4e54cc*/
+      break;
+    case 1702: /*0x4e54af*/
+      v5 = 3; /*0x4e54db*/
+      break;
+    case 1703: /*0x4e54af*/
+      v5 = 4; /*0x4e54ea*/
+      break;
+    case 1704: /*0x4e54af*/
+      v5 = 5; /*0x4e54f9*/
+      break;
+    case 1706: /*0x4e54af*/
+      v5 = 6; /*0x4e5508*/
+      break;
+    default:
+      v6 = -(nIDDlgItem != 1707); /*0x4e5518*/
+      IDA_LOBYTE(v6) = v6 & 0xF8; /*0x4e551a*/
+      v5 = v6 + 7; /*0x4e551c*/
+      break;
+  }
+  v7 = 0; /*(unsigned int *)(0x4e5521)*/
+  v8 = dword_8B3F38; /*0x4e5523*/
+  while ( *(unsigned int *)(v8) != v5 ) /*0x4e552a*/
+  {
+    v8 += 3; /*0x4e552c*/
+    ++v7; /*0x4e552f*/
+    if ( (int)v8 >= (int)&unk_8B3FA4 ) /*0x4e5536*/
+      goto LABEL_22; /*0x4e5536*/
+  }
+  if ( v7 != -1 ) /*0x4e553d*/
+    (&dword_8B3F38)[3 * v7] = -1; /*0x4e5542*/
+  LABEL_22:
+  v9 = 0; /*0x4e554d*/
+  v18 = SendDlgItemMessageA((HWND)(v4), nIDDlgItem, 0x146u, 0, 0); /*0x4e5564*/
+  if ( v18 > 0 )
+  {
+    while ( 1 ) /*0x4e557a*/
+    {
+      v10 = SendDlgItemMessageA((HWND)(v4), nIDDlgItem, 0x150u, v9, 0); /*0x4e557a*/
+      if ( v10 == a3 ) /*0x4e5580*/
+        break; /*0x4e5580*/
+      v4 = (gamemd::SessionClass *)(aP0); /*0x4e5586*/
+      if ( (int)++v9 >= v18 ) /*0x4e558d*/
+        goto LABEL_44; /*0x4e558d*/
+    }
+    SendDlgItemMessageA(aP0, nIDDlgItem, 0x14Eu, v9, 0); /*0x4e55a2*/
+    if ( v10 != -2 )
+    {
+      switch ( nIDDlgItem )
+      {
+        case 1699:
+          v11 = 0; /*0x4e55b5*/
+          break;
+        case 1700:
+          v11 = 1; /*0x4e55c1*/
+          break;
+        case 1701:
+          v11 = 2; /*0x4e55d0*/
+          break;
+        case 1702:
+          v11 = 3; /*0x4e55df*/
+          break;
+        case 1703:
+          v11 = 4; /*0x4e55ee*/
+          break;
+        case 1704:
+          v11 = 5; /*0x4e55fd*/
+          break;
+        case 1706:
+          v11 = 6; /*0x4e560c*/
+          break;
+        default:
+          v11 = nIDDlgItem != 1707 ? -1 : 7;
+          break;
+      }
+      (&dword_8B3F38)[3 * v10] = v11; /*0x4e5627*/
+    }
+    v4 = (gamemd::SessionClass *)(aP0); /*0x4e562e*/
+  }
+  LABEL_44:
+  if ( !v16 ) /*0x4e563a*/
+    ShowWindow(hWnd, 5); /*0x4e5643*/
+  for ( i = 0; i < 8; ++i )
+  {
+    if ( i )
+    {
+      switch ( i )
+      {
+        case 1:
+          v13 = 1700; /*0x4e565b*/
+          break;
+        case 2:
+          v13 = 1701; /*0x4e5667*/
+          break;
+        case 3:
+          v13 = 1702; /*0x4e5673*/
+          break;
+        case 4:
+          v13 = 1703; /*0x4e567f*/
+          break;
+        case 5:
+          v13 = 1704; /*0x4e568b*/
+          break;
+        case 6:
+          v13 = 1706; /*0x4e5697*/
+          break;
+        default:
+          v13 = i != 7 ? -1 : 1707;
+          break;
+      }
+    }
+    else
+    {
+      v13 = 1699; /*0x4e564f*/
+    }
+    if ( (((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4) /*0x4e56d7*/
+      && ((v14 = *(&dword_A8DA90 + i), v14 == g_Lobby_MaxPlayers) || *(unsigned int *)(v14 + 107) == -1) )
+    {
+      result = SetupComboBoxRandomAlliance((HWND)(v4), v13); /*0x4e56e4*/
+    }
+    else
+    {
+      result = (int)(FillComboBoxAllianceSlots((HWND)(v4), v13));
+    }
+  }
+  return result; /*0x4e56f3*/
 }
 }
 // 0x4E5700
 namespace gamemd {
 char FillComboBoxSides(HWND hDlg, int nIDDlgItem)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5700)
+  int v4; // eax
+  int v5; // eax
+  int v6; // edx
+  unsigned int v7;
+  LRESULT v8; // eax
+  LRESULT v9; // eax
+  int v10; // esi
+  int i; // esi
+  int v12; // edx
+  int v13; // eax
+  int result; // eax
+
+  switch ( nIDDlgItem ) /*0x4e570c*/
+  {
+    case 1699: /*0x4e570c*/
+      v4 = 0; /*0x4e570e*/
+      break;
+    case 1700: /*0x4e570c*/
+      v4 = 1; /*0x4e571a*/
+      break;
+    case 1701: /*0x4e570c*/
+      v4 = 2; /*0x4e5729*/
+      break;
+    case 1702: /*0x4e570c*/
+      v4 = 3; /*0x4e5738*/
+      break;
+    case 1703: /*0x4e570c*/
+      v4 = 4; /*0x4e5747*/
+      break;
+    case 1704: /*0x4e570c*/
+      v4 = 5; /*0x4e5756*/
+      break;
+    case 1706: /*0x4e570c*/
+      v4 = 6; /*0x4e5765*/
+      break;
+    default:
+      v5 = -(nIDDlgItem != 1707); /*0x4e5775*/
+      IDA_LOBYTE(v5) = v5 & 0xF8; /*0x4e5777*/
+      v4 = v5 + 7; /*0x4e5779*/
+      break;
+  }
+  v6 = (int)((int *)(0));
+  v7 = dword_8B3F38; /*0x4e577f*/
+  while ( *v7 != v4 ) /*0x4e5786*/
+  {
+    v7 += 3; /*0x4e5788*/
+    ++v6; /*0x4e578b*/
+    if ( (int)v7 >= (int)&unk_8B3FA4 ) /*0x4e5792*/
+      goto LABEL_22; /*0x4e5792*/
+  }
+  if ( v6 != -1 ) /*0x4e5799*/
+    (&dword_8B3F38)[3 * v6] = -1; /*0x4e579e*/
+  LABEL_22:
+  v8 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147u, 0, 0); /*0x4e57a9*/
+  v9 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v8, 0); /*0x4e57c6*/
+  switch ( nIDDlgItem )
+  {
+    case 1699:
+      v10 = 0; /*0x4e57d1*/
+      break;
+    case 1700:
+      v10 = 1; /*0x4e57dd*/
+      break;
+    case 1701:
+      v10 = 2; /*0x4e57ec*/
+      break;
+    case 1702:
+      v10 = 3; /*0x4e57fb*/
+      break;
+    case 1703:
+      v10 = 4; /*0x4e580a*/
+      break;
+    case 1704:
+      v10 = 5; /*0x4e5819*/
+      break;
+    case 1706:
+      v10 = 6; /*0x4e5828*/
+      break;
+    default:
+      v10 = nIDDlgItem != 1707 ? -1 : 7;
+      break;
+  }
+  if ( v9 != -2 ) /*0x4e5842*/
+    (&dword_8B3F38)[3 * v9] = v10; /*0x4e5847*/
+  for ( i = 0; i < 8; ++i )
+  {
+    if ( i )
+    {
+      switch ( i )
+      {
+        case 1:
+          v12 = 1700; /*0x4e5860*/
+          break;
+        case 2:
+          v12 = 1701; /*0x4e586c*/
+          break;
+        case 3:
+          v12 = 1702; /*0x4e5878*/
+          break;
+        case 4:
+          v12 = 1703; /*0x4e5884*/
+          break;
+        case 5:
+          v12 = 1704; /*0x4e5890*/
+          break;
+        case 6:
+          v12 = 1706; /*0x4e589c*/
+          break;
+        default:
+          v12 = i != 7 ? -1 : 1707;
+          break;
+      }
+    }
+    else
+    {
+      v12 = 1699; /*0x4e5854*/
+    }
+    if ( ((&dword_A8B238)[0] == 3 || (&dword_A8B238)[0] == 4) /*0x4e58dc*/
+      && ((v13 = *(&dword_A8DA90 + i), v13 == g_Lobby_MaxPlayers) || *(unsigned int *)(v13 + 107) == -1) )
+    {
+      result = SetupComboBoxRandomAlliance(hDlg, v12); /*0x4e58e9*/
+    }
+    else
+    {
+      result = FillComboBoxAllianceSlots(hDlg, v12); /*0x4e58e0*/
+    }
+  }
+  return result; /*0x4e58f8*/
 }
 }
 // 0x4E5B60
 namespace gamemd {
 bool FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5B60)
+  HWND DlgItem; // esi
+  int v3; // eax
+  wchar_t *StringCSF; // eax
+  LRESULT v5; // eax
+  LPARAM v6; // ebx
+  LPARAM *v7; // ebp
+  LRESULT v8; // eax
+  int result; // eax
+  HWND v10; // eax
+  bool v11; // [esp+Bh] [ebp-5h]
+
+  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e5b71*/
+  v11 = !ShowWindow(DlgItem, 0); /*0x4e5b8e*/
+  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e5b93*/
+  SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5b9f*/
+  SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5bab*/
+  if ( (&dword_A8B238)[0] == 3 || (&dword_A8B238)[0] == 4 ) /*0x4e5bba*/
+  {
+    if ( dword_A8B23C && (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 44))(dword_A8B23C) < 0 ) /*0x4e5be8*/
+    {
+      StringCSF = GetStringCSF((wchar_t *)(aGuiNoneassymbo), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 1110); /*0x4e5bfb*/
+      goto LABEL_9; /*0x4e5bfb*/
+    }
+  }
+  else
+  {
+    v3 = Skirmish_Setup(); /*0x4e5bbc*/
+    if ( v3 && (*(int (**)(int))(*(unsigned int *)v3 + 44))(v3) < 0 ) /*0x4e5bce*/
+    {
+      StringCSF = GetStringCSF((wchar_t *)(aGuiNoneassymbo), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 1119); /*0x4e5bd5*/
+  LABEL_9:
+      v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5c00*/
+      SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5c14*/
+    }
+  }
+  v6 = 0; /*0x4e5c16*/
+  v7 = (LPARAM *)(&dword_8B3FC0); /*0x4e5c1a*/
+  do /*0x4e5c41*/
+  {
+    v8 = SendMessageA(DlgItem, 0x4C2u, 0, *v7); /*0x4e5c2b*/
+    SendMessageA(DlgItem, 0x151u, v8, v6); /*0x4e5c35*/
+    v7 += 3; /*0x4e5c37*/
+    ++v6; /*0x4e5c3a*/
+  }
+  while ( (int)v7 < (int)&dword_8B3FF0 ); /*0x4e5c41*/
+  SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e5c4d*/
+  SendMessageA(DlgItem, 0x4F1u, 0, 0); /*0x4e5c59*/
+  result = (&dword_A8B238)[0]; /*0x4e5c5b*/
+  if ( (&dword_A8B238)[0] == 4 && Network::IsLobbyFeature() ) /*0x4e5c67*/
+  {
+    ShowWindow(DlgItem, 0); /*0x4e5c79*/
+    v10 = GetDlgItem(hDlg, 1940); /*0x4e5c85*/
+    return ShowWindow(v10, 0); /*0x4e5c8e*/
+  }
+  else
+  {
+    IDA_LOBYTE(result) = v11; /*0x4e5c96*/
+    if ( !v11 ) /*0x4e5c9c*/
+      return ShowWindow(DlgItem, 5); /*0x4e5ca1*/
+  }
+  return result; /*0x4e5c90*/
 }
 }
 // 0x4E5E20
 namespace gamemd {
 void Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5E20)
+  int v2; // edi
+  int v3; // eax
+  int v4; // edx
+
+  v2 = -1; /*0x4e5e22*/
+  if ( a2 )
+  {
+    switch ( a2 )
+    {
+      case 1:
+        v3 = 1902; /*0x4e5e35*/
+        break;
+      case 2:
+        v3 = 1903; /*0x4e5e41*/
+        break;
+      case 3:
+        v3 = 1904; /*0x4e5e4d*/
+        break;
+      case 4:
+        v3 = 1905; /*0x4e5e59*/
+        break;
+      case 5:
+        v3 = 1906; /*0x4e5e65*/
+        break;
+      case 6:
+        v3 = 1907; /*0x4e5e71*/
+        break;
+      default:
+        v3 = a2 != 7 ? -1 : 1908;
+        break;
+    }
+  }
+  else
+  {
+    v3 = 1901; /*0x4e5e29*/
+  }
+  if ( (&dword_A8B238)[0] == 3 || (&dword_A8B238)[0] == 4 ) /*0x4e5e99*/
+  {
+    v4 = *(&dword_A8DA90 + a2); /*0x4e5e9b*/
+    if ( v4 == g_Lobby_MaxPlayers && *(unsigned int *)(v4 + 107) == -1 ) /*0x4e5eaf*/
+      v2 = 4; /*0x4e5eb1*/
+  }
+  return SetupLobbyPlayerSlots((gamemd::SessionClass *)(a1), v3, v2); /*0x4e5ebe*/
 }
 }
 // 0x4E5ED0
 namespace gamemd {
 bool SetupLobbyPlayerSlots(SessionClass * aP0, int nIDDlgItem, int a3)
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5ED0)
+  int result; // eax
+  WPARAM v6; // ebp
+  LRESULT v7; // ebx
+  int v8; // esi
+  HWND DlgItem; // eax
+  bool v10; // [esp+13h] [ebp-9h]
+  HWND hWnd; // [esp+14h] [ebp-8h]
+  int v12; // [esp+18h] [ebp-4h]
+
+  hWnd = GetDlgItem((HWND)(aP0), nIDDlgItem); /*0x4e5ee6*/
+  v10 = !ShowWindow(hWnd, 0); /*0x4e5efd*/
+  result = SendDlgItemMessageA((HWND)(aP0), nIDDlgItem, 0x146u, 0, 0); /*0x4e5f02*/
+  v6 = 0; /*0x4e5f08*/
+  v12 = result; /*0x4e5f0c*/
+  if ( result > 0 )
+  {
+    while ( 1 ) /*0x4e5f26*/
+    {
+      v7 = SendDlgItemMessageA((HWND)(aP0), nIDDlgItem, 0x150u, v6, 0); /*0x4e5f26*/
+      if ( v7 == a3 ) /*0x4e5f2c*/
+        break; /*0x4e5f2c*/
+      result = v12; /*0x4e5f2e*/
+      if ( (int)++v6 >= v12 ) /*0x4e5f35*/
+        goto LABEL_22; /*0x4e5f35*/
+    }
+    result = SendDlgItemMessageA((HWND)(aP0), nIDDlgItem, 0x14Eu, v6, 0); /*0x4e5f46*/
+    if ( v7 != -2 )
+    {
+      switch ( nIDDlgItem )
+      {
+        case 1901:
+          v8 = 0; /*0x4e5f5d*/
+          break;
+        case 1902:
+          v8 = 1; /*0x4e5f69*/
+          break;
+        case 1903:
+          v8 = 2; /*0x4e5f78*/
+          break;
+        case 1904:
+          v8 = 3; /*0x4e5f87*/
+          break;
+        case 1905:
+          v8 = 4; /*0x4e5f96*/
+          break;
+        case 1906:
+          v8 = 5; /*0x4e5fa5*/
+          break;
+        case 1907:
+          v8 = 6; /*0x4e5fb4*/
+          break;
+        default:
+          v8 = nIDDlgItem != 1908 ? -1 : 7;
+          break;
+      }
+      result = 3 * v7; /*0x4e5fcb*/
+      (&dword_8B3FC8)[3 * v7] = v8; /*0x4e5fce*/
+    }
+  }
+  LABEL_22:
+  if ( (&dword_A8B238)[0] == 4 && Network::IsLobbyFeature() ) /*0x4e5fde*/
+  {
+    ShowWindow(hWnd, 0); /*0x4e5ff4*/
+    DlgItem = GetDlgItem((HWND)(aP0), 1940); /*0x4e5ffc*/
+    return ShowWindow(DlgItem, 0); /*0x4e6005*/
+  }
+  else
+  {
+    IDA_LOBYTE(result) = v10; /*0x4e6011*/
+    if ( !v10 ) /*0x4e6017*/
+      return ShowWindow(hWnd, 5); /*0x4e6020*/
+  }
+  return result; /*0x4e6007*/
 }
 }
 // 0x4E6860
@@ -281,28 +1829,149 @@ char * * sub_4E7EA0()
 namespace gamemd {
 void unknown_libname_18()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8090)
+  void *v0; // edi
+
+  v0 = (void *)((unsigned char)((void *)unk_A8EAA4)); /*0x5f1654*/
+  unk_A8EA70 = (unsigned char)((void*)&NullModemClass_vftable); /*0x5f1657*/
+  if ( unk_A8EAA4 ) /*0x5f165f*/
+  {
+    FileFind::Close(); /*0x5f1663*/
+    RA2_OPDEL(v0); /*0x5f1669*/
+  }
+  ((ObjectClass *)((int)&unk_A8EA70))->FreeResources(); /*0x5f1673*/
+  if ( unk_A8EAB0 != -1 ) /*0x5f1680*/
+  {
+    if ( !g_ClipboardBuffer ) /*0x5f168a*/
+      goto LABEL_10; /*0x5f168a*/
+    ((SerialPort*)(HANDLE *)g_ClipboardBuffer)->Close(); /*0x5f168c*/
+    if ( g_ClipboardBuffer ) /*0x5f1699*/
+      (**(void (***)(HWND, int))g_ClipboardBuffer)((HWND)g_ClipboardBuffer, 1); /*0x5f169f*/
+    g_ClipboardBuffer = 0; /*0x5f16a1*/
+    unk_A8EAB0 = -1; /*0x5f16ad*/
+    ((ObjectClass *)((int)&unk_A8EA70))->FreeResources(); /*0x5f16b0*/
+  }
+  if ( g_ClipboardBuffer ) /*0x5f16bd*/
+  {
+    (**(void (***)(HWND, int))g_ClipboardBuffer)((HWND)g_ClipboardBuffer, 1); /*0x5f16c3*/
+    g_ClipboardBuffer = 0; /*0x5f16c5*/
+  }
+  LABEL_10:
+  unk_A8EA70 = (unsigned char)((void*)&ConnManClass_vftable); /*0x5f16cf*/
 }
 }
 // 0x4E9240
 namespace gamemd {
-AbstractClass * * HouseClass__vt_02__free(int a2, unsigned int * a3)
+AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E9240)
+
+  unsigned int *v4; // edi
+  int v6; // ecx
+  int i; // eax
+
+  if ( a2 ) /*0x4e924c*/
+  {
+    *((unsigned char *)this + 12) = 0; /*0x4e9256*/
+    if ( a3 ) /*0x4e925c*/
+      v4 = a3; /*0x4e9272*/
+    else
+      v4 = (unsigned int *)(__2_YAPAXI_Z(4 * a2)); /*0x4e926e*/
+    *((unsigned char *)this + 12) = 1; /*0x4e9276*/
+    if ( v4 ) /*0x4e927a*/
+    {
+      if ( *((unsigned int *)this + 1) ) /*0x4e9285*/
+      {
+        v6 = *((unsigned int *)this + 2); /*0x4e928c*/
+        if ( a2 < v6 ) /*0x4e9291*/
+          v6 = a2; /*0x4e9293*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) ) /*0x4e9299*/
+          ++i; /*0x4e929e*/
+        if ( *((unsigned char *)this + 13) ) /*0x4e92ab*/
+        {
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e92b6*/
+          *((unsigned int *)this + 1) = 0; /*0x4e92be*/
+        }
+      }
+      *((unsigned int *)this + 1) = v4; /*0x4e92c7*/
+      *((unsigned int *)this + 2) = a2; /*0x4e92cf*/
+      *((unsigned char *)this + 13) = a3 == 0; /*0x4e92d2*/
+      return (gamemd::AbstractClass **)(1); /*0x4e92d8*/
+    }
+    else
+    {
+      return 0; /*0x4e927f*/
+    }
+  }
+  else
+  {
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e92e2*/
+    return (gamemd::AbstractClass **)(1); /*0x4e92e8*/
+  }
+
 }
 }
 // 0x4E9E20
 namespace gamemd {
-AbstractClass * * ParticleSystemClass__vt_02__free(int a2, unsigned int * a3)
+AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E9E20)
+
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
+
+  if ( a2 ) /*0x4e9e2c*/
+  {
+    LOBYTE(this->m_C) = 0; /*0x4e9e36*/
+    if ( a3 ) /*0x4e9e3c*/
+      v4 = a3; /*0x4e9e52*/
+    else
+      v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4e9e4e*/
+    LOBYTE(this->m_C) = 1; /*0x4e9e56*/
+    if ( v4 ) /*0x4e9e5a*/
+    {
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x4e9e65*/
+      {
+        m_8 = this->m_8; /*0x4e9e6c*/
+        if ( a2 < m_8 ) /*0x4e9e71*/
+          m_8 = a2; /*0x4e9e73*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4e9e79*/
+          ++i; /*0x4e9e7e*/
+        if ( BYTE1(this->m_C) ) /*0x4e9e8b*/
+        {
+          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4e9e96*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x4e9e9e*/
+        }
+      }
+      *(unsigned int *)&this->m_1[3] = v4; /*0x4e9ea7*/
+      this->m_8 = a2; /*0x4e9eaf*/
+      BYTE1(this->m_C) = a3 == 0; /*0x4e9eb2*/
+      return (gamemd::AbstractClass **)(1); /*0x4e9eb8*/
+    }
+    else
+    {
+      return 0; /*0x4e9e5f*/
+    }
+  }
+  else
+  {
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e9ec2*/
+    return (gamemd::AbstractClass **)(1); /*0x4e9ec8*/
+  }
+
 }
 }
 // 0x4E9ED0
 namespace gamemd {
-void ParticleSystemClass__vt_03__free()
+void _VectorClass_PAVParticleClass::ParticleSystemClass__vt_03_()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E9ED0)
+
+  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4e9edd*/
+  {
+    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4e9ee3*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4e9eeb*/
+  }
+  BYTE1(this->m_C) = 0; /*0x4e9eee*/
+  this->m_8 = 0; /*0x4e9ef1*/
+
 }
 }
 // 0x4E0C30
@@ -623,7 +2292,35 @@ int sub_4E24E0()
 namespace gamemd {
 int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass * aP4, int aP5)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E2A50)
+
+  int v7; // ecx
+  int v8; // eax
+
+  ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
+  v7 = *((unsigned int *)this + 12); /*0x4e2a79*/
+  *(unsigned int *)this->vfptr =(unsigned int)(&vt_GaugeClass); /*0x4e2a83*/
+  if ( v7 != 255 ) /*0x4e2a89*/
+  {
+    *((unsigned int *)this + 12) = 255; /*0x4e2a8d*/
+    ((VectorClass_ptr_ConvertClass*)(GadgetClass *)this)->MarkDirty(); /*0x4e2a90*/
+  }
+  v8 = 0; /*0x4e2a99*/
+  if ( *((int *)this + 12) < 0 ) /*0x4e2a9d*/
+    v8 = *((unsigned int *)this + 12); /*0x4e2a9f*/
+  if ( v8 != *((unsigned int *)this + 13) ) /*0x4e2aa4*/
+  {
+    *((unsigned int *)this + 13) = v8; /*0x4e2aa6*/
+    (*(void (**)(GaugeClass *))(*(unsigned int *)this->vfptr + 72))((GaugeClass *)this); /*0x4e2aad*/
+  }
+  *((unsigned char *)this + 45) = 1; /*0x4e2ab2*/
+  *((unsigned char *)this + 46) = aP4 > aP5; /*0x4e2ab9*/
+  *((unsigned char *)this + 44) = 1; /*0x4e2abc*/
+  *((unsigned int *)this + 14) = 0; /*0x4e2ac0*/
+  *((unsigned int *)this + 15) = 0; /*0x4e2ac7*/
+  *((unsigned int *)this + 16) = 0; /*0x4e2ace*/
+  *(unsigned int *)this->vfptr =(unsigned int)(&vt_TriColorGaugeClass); /*0x4e2ad5*/
+  return (int)this->vfptr; /*0x4e2add*/
+
 }
 } // namespace gamemd
 
@@ -768,7 +2465,50 @@ int sub_4E3300()
 namespace gamemd {
 bool FillComboBoxRandomOnly(HWND hDlg, int nIDDlgItem)
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E3A00)
+  HWND DlgItem; // esi
+  wchar_t *StringCSF; // eax
+  LRESULT v4; // eax
+  int v5; // ecx
+  int v6; // ebx
+  int v7; // ebp
+  int v8; // eax
+  LRESULT v9; // eax
+  int result; // eax
+  bool v11; // [esp+Fh] [ebp-5h]
+  int i; // [esp+10h] [ebp-4h]
+
+  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e3a0e*/
+  v11 = !ShowWindow(DlgItem, 0); /*0x4e3a2b*/
+  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e3a30*/
+  SendMessageA(DlgItem, 0x4DEu, 0, 7); /*0x4e3a3c*/
+  StringCSF = GetStringCSF((wchar_t *)aGuiRandomex, 0, (const char *)g_Str_File_GDlgSupp_cpp, 276); /*0x4e3a4f*/
+  v4 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e3a5d*/
+  SendMessageA(DlgItem, 0x151u, v4, -2); /*0x4e3a68*/
+  v5 = dword_A83CA8; /*0x4e3a6a*/
+  v6 = 0; /*0x4e3a70*/
+  for ( i = dword_A83CA8; v6 < v5; ++v6 ) /*0x4e3a78*/
+  {
+    v7 = *((unsigned int *)dword_A83C9C + v6); /*0x4e3a80*/
+    if ( v7 ) /*0x4e3a85*/
+    {
+      if ( *(unsigned char *)(v7 + 421) ) /*0x4e3a87*/
+      {
+        v8 = *(unsigned int *)(v7 + 184); /*0x4e3a91*/
+        if ( v8 > -3 && v8 <= 9 && **(unsigned short **)(v7 + 96) ) /*0x4e3aa4*/
+        {
+          v9 = SendMessageA(DlgItem, 0x4C2u, 0, *(unsigned int *)(v7 + 96)); /*0x4e3ab3*/
+          SendMessageA(DlgItem, 0x151u, v9, *(unsigned int *)(v7 + 184)); /*0x4e3ac3*/
+          v5 = i; /*0x4e3ac5*/
+        }
+      }
+    }
+  }
+  SendMessageA(DlgItem, 0x4F1u, 0, 0); /*0x4e3ad9*/
+  result = SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e3ae5*/
+  IDA_LOBYTE(result) = v11; /*0x4e3ae7*/
+  if ( !v11 ) /*0x4e3aed*/
+    return ShowWindow(DlgItem, 5); /*0x4e3af2*/
+  return result; /*0x4e3af8*/
 }
 } // namespace gamemd
 
@@ -776,7 +2516,24 @@ bool FillComboBoxRandomOnly(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 LRESULT SetupComboBoxObserver(HWND hDlg, int nIDDlgItem)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E3B00)
+  HWND DlgItem; // esi
+  bool v3; // bl
+  wchar_t *StringCSF; // eax
+  LRESULT v5; // eax
+  int result; // eax
+
+  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e3b12*/
+  v3 = !ShowWindow(DlgItem, 0); /*0x4e3b2b*/
+  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e3b2e*/
+  SendMessageA(DlgItem, 0x4DEu, 0, 7); /*0x4e3b3a*/
+  StringCSF = GetStringCSF((wchar_t *)aGuiObserver, 0, (const char *)g_Str_File_GDlgSupp_cpp, 309); /*0x4e3b4d*/
+  v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e3b5b*/
+  SendMessageA(DlgItem, 0x151u, v5, -3); /*0x4e3b66*/
+  SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e3b72*/
+  result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e3b7e*/
+  if ( !v3 ) /*0x4e3b82*/
+    return ShowWindow(DlgItem, 5); /*0x4e3b87*/
+  return result; /*0x4e3b89*/
 }
 } // namespace gamemd
 
@@ -784,7 +2541,21 @@ LRESULT SetupComboBoxObserver(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 int GetComboBoxSelected(HWND aP0, int nIDDlgItem, LRESULT wParam)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4170)
+  LRESULT v3; // eax
+  int result; // eax
+
+  v3 = wParam; /*0x4e4170*/
+  if ( wParam == -1 ) /*0x4e4184*/
+    v3 = SendDlgItemMessageA(aP0, nIDDlgItem, 0x147u, 0, 0); /*0x4e4191*/
+  result = SendDlgItemMessageA(aP0, nIDDlgItem, 0x150u, v3, 0); /*0x4e419d*/
+  if ( result < -3 || result > 9 ) /*0x4e41aa*/
+  {
+    if ( dword_A8B23C ) /*0x4e41b4*/
+      return (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 40))(dword_A8B23C); /*0x4e41b8*/
+    else
+      return -2; /*0x4e41be*/
+  }
+  return result; /*0x4e41a2*/
 }
 } // namespace gamemd
 
@@ -792,7 +2563,30 @@ int GetComboBoxSelected(HWND aP0, int nIDDlgItem, LRESULT wParam)
 namespace gamemd {
 LPARAM * InitGameDropdownColors()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E43C0)
+  int *p_owningHouseIndex0; // ecx
+  LPARAM *result; // eax
+  int v3; // edx
+
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TemporalClass *)GetStringCSF((wchar_t *)aGuiGoldabbrev, 0, (const char *)g_Str_File_GDlgSupp_cpp, 475); /*0x4e43e7*/
+  ((unsigned int *)&FootClass_Array)[0] = ((wchar_t *)int)GetStringCSF(aGuiRedabbrev, 0, g_Str_File_GDlgSupp_cpp, 476); /*0x4e4402*/
+  *((unsigned int *)((char *)&FootClass_Array + 2)) = ((wchar_t *)int)GetStringCSF(aGuiBlueabbrev, 0, g_Str_File_GDlgSupp_cpp, 477); /*0x4e441d*/
+  ((unsigned int *)&FootClass_Array)[0] = ((wchar_t *)int)GetStringCSF(aGuiGreenabbrev, 0, g_Str_File_GDlgSupp_cpp, 478); /*0x4e4438*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(FootClass *)GetStringCSF((wchar_t *)aGuiOrangeabbre, 0, (const char *)g_Str_File_GDlgSupp_cpp, 479); /*0x4e4453*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(AbstractClass *)GetStringCSF((wchar_t *)aGuiSkyblueabbr, 0, (const char *)g_Str_File_GDlgSupp_cpp, 480); /*0x4e446e*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(TechnoClass *)GetStringCSF((wchar_t *)aGuiPurpleabbre, 0, (const char *)g_Str_File_GDlgSupp_cpp, 481); /*0x4e4489*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(HouseClass *)GetStringCSF((wchar_t *)aGuiPinkabbrev, 0, (const char *)g_Str_File_GDlgSupp_cpp, 482); /*0x4e44a4*/
+  ((unsigned int *)&FootClass_Array)[0] =(unsigned int)(SlaveManagerClass *)GetStringCSF((wchar_t *)aGuiGrayabbrev, 0, (const char *)g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
+  p_owningHouseIndex0 =(int *)&((char *)&FootClass_Array); /*0x4e44b3*/
+  result =(LPARAM *)dword_8316A8; /*0x4e44b8*/
+  do /*0x4e44d3*/
+  {
+    v3 = *result++; /*0x4e44bd*/
+    *(p_owningHouseIndex0 - 1) = v3; /*0x4e44c2*/
+    *p_owningHouseIndex0 = -1; /*0x4e44c5*/
+    p_owningHouseIndex0 += 3; /*0x4e44cb*/
+  }
+  while ( (int)result < (int)&off_8316CC ); /*0x4e44d3*/
+  return result; /*0x4e44d5*/
 }
 } // namespace gamemd
 
@@ -800,7 +2594,7 @@ LPARAM * InitGameDropdownColors()
 namespace gamemd {
 bool IsAvailableColorhWnd(int a1)
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4580)
+  return dword_8B4040[3 * a1] != -1; /*0x4e4592*/
 }
 } // namespace gamemd
 
@@ -808,7 +2602,26 @@ bool IsAvailableColorhWnd(int a1)
 namespace gamemd {
 LRESULT FillListBox(HWND hDlg, int nIDDlgItem)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4770)
+  HWND DlgItem; // esi
+  bool v3; // bl
+  wchar_t *StringCSF; // eax
+  LRESULT v5; // ebp
+  int result; // eax
+
+  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e477c*/
+  v3 = !ShowWindow(DlgItem, 0); /*0x4e4799*/
+  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e479c*/
+  SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e47a8*/
+  SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e47b4*/
+  StringCSF = GetStringCSF((wchar_t *)g_Str_GUI_RandomAsSymbols, 0, (const char *)g_Str_File_GDlgSupp_cpp, 567); /*0x4e47c7*/
+  v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e47d7*/
+  SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e47e2*/
+  SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e47ed*/
+  SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e47f9*/
+  result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e4805*/
+  if ( !v3 ) /*0x4e4809*/
+    return ShowWindow(DlgItem, 5); /*0x4e480e*/
+  return result; /*0x4e4814*/
 }
 } // namespace gamemd
 
@@ -816,7 +2629,12 @@ LRESULT FillListBox(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 int GetComboBoxSelectedRaw(HWND aP0, int nIDDlgItem, LRESULT wParam)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4E20)
+  LRESULT v3; // eax
+
+  v3 = wParam; /*0x4e4e20*/
+  if ( wParam == -1 ) /*0x4e4e34*/
+    v3 = SendDlgItemMessageA(aP0, nIDDlgItem, 0x147u, 0, 0); /*0x4e4e41*/
+  return SendDlgItemMessageA(aP0, nIDDlgItem, 0x150u, v3, 0); /*0x4e4e4f*/
 }
 } // namespace gamemd
 
@@ -832,7 +2650,25 @@ wchar_t * sub_4E4F30()
 namespace gamemd {
 int * _cfltcvt_init()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E4F50)
+  int *result; // eax
+
+  dword_8B3F30 = (int)a1_2; /*0x4e4f50*/
+  dword_8B3F3C = (int)a2; /*0x4e4f5a*/
+  dword_8B3F48 = (int)a3; /*0x4e4f64*/
+  dword_8B3F54 = (int)a4; /*0x4e4f6e*/
+  dword_8B3F60 = (int)a5; /*0x4e4f78*/
+  dword_8B3F6C = (int)a6; /*0x4e4f82*/
+  dword_8B3F78 = (int)a7; /*0x4e4f8c*/
+  dword_8B3F84 = (int)a8; /*0x4e4f96*/
+  dword_8B3F90 = (int)a0_0; /*0x4e4fa0*/
+  result =(int *)dword_8B3F38; /*0x4e4faa*/
+  do /*0x4e4fbd*/
+  {
+    *result = -1; /*0x4e4faf*/
+    result += 3; /*0x4e4fb5*/
+  }
+  while ( (int)result < (int)&unk_8B3FA4 ); /*0x4e4fbd*/
+  return result; /*0x4e4fbf*/
 }
 }
 // 0x4E4FC0
@@ -872,7 +2708,7 @@ void Lobby_ResetFactionTable(int a1)
 namespace gamemd {
 bool sub_4E50A0(int a1)
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E50A0)
+  return dword_8B3F38[3 * a1] != -1; /*0x4e50b2*/
 }
 } // namespace gamemd
 
@@ -880,7 +2716,26 @@ bool sub_4E50A0(int a1)
 namespace gamemd {
 int SetupComboBoxRandomAlliance(HWND hDlg, int nIDDlgItem)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5260)
+  HWND DlgItem; // esi
+  bool v3; // bl
+  wchar_t *StringCSF; // eax
+  LRESULT v5; // ebp
+  int result; // eax
+
+  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e526c*/
+  v3 = !ShowWindow(DlgItem, 0); /*0x4e5289*/
+  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e528c*/
+  SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5298*/
+  SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e52a4*/
+  StringCSF = GetStringCSF((wchar_t *)g_Str_GUI_RandomAsSymbols, 0, (const char *)g_Str_File_GDlgSupp_cpp, 876); /*0x4e52b7*/
+  v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e52c7*/
+  SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e52d2*/
+  SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e52dd*/
+  SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e52e9*/
+  result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e52f5*/
+  if ( !v3 ) /*0x4e52f9*/
+    return ShowWindow(DlgItem, 5); /*0x4e52fe*/
+  return result; /*0x4e5304*/
 }
 } // namespace gamemd
 
@@ -888,7 +2743,12 @@ int SetupComboBoxRandomAlliance(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 LRESULT SetComboBoxSelection(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5900)
+  LRESULT v3; // eax
+
+  v3 = wParam; /*0x4e5900*/
+  if ( wParam == -1 ) /*0x4e5914*/
+    v3 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147u, 0, 0); /*0x4e5921*/
+  return SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v3, 0); /*0x4e592f*/
 }
 } // namespace gamemd
 
@@ -896,7 +2756,26 @@ LRESULT SetComboBoxSelection(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 namespace gamemd {
 LRESULT InitComboBoxNone(HWND hDlg, int nIDDlgItem)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E5CB0)
+  HWND DlgItem; // esi
+  bool v3; // bl
+  wchar_t *StringCSF; // eax
+  LRESULT v5; // ebp
+  int result; // eax
+
+  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e5cbc*/
+  v3 = !ShowWindow(DlgItem, 0); /*0x4e5cd9*/
+  SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e5cdc*/
+  SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5ce8*/
+  SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5cf4*/
+  StringCSF = GetStringCSF((wchar_t *)aGuiNoneassymbo, 0, (const char *)g_Str_File_GDlgSupp_cpp, 1165); /*0x4e5d07*/
+  v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5d17*/
+  SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5d22*/
+  SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e5d2d*/
+  SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e5d39*/
+  result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e5d45*/
+  if ( !v3 ) /*0x4e5d49*/
+    return ShowWindow(DlgItem, 5); /*0x4e5d4e*/
+  return result; /*0x4e5d54*/
 }
 } // namespace gamemd
 
@@ -904,7 +2783,12 @@ LRESULT InitComboBoxNone(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 LRESULT GetComboBoxSelectedRaw2(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6030)
+  LRESULT v3; // eax
+
+  v3 = wParam; /*0x4e6030*/
+  if ( wParam == -1 ) /*0x4e6044*/
+    v3 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147u, 0, 0); /*0x4e6051*/
+  return SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150u, v3, 0); /*0x4e605f*/
 }
 } // namespace gamemd
 
@@ -953,7 +2837,47 @@ char * Version_GetString(unsigned int * a1, unsigned char * a2, char * Destinati
 namespace gamemd {
 int sub_4E6190()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6190)
+  int v0; // esi
+  int result; // eax
+  int v2; // [esp+0h] [ebp-44h] BYREF
+  char Destination[64]; // [esp+4h] [ebp-40h] BYREF
+
+  Event_Process_7C5F3D(); /*0x4e6194*/
+  Event_Process_7C5FFF(); /*0x4e6199*/
+  v0 = byte_84E863; /*0x4e619e*/
+  if ( &v2 != (int *)-4 ) /*0x4e61ab*/
+    strncpy(Destination, (const char *)Source, 0x40u); /*0x4e61b9*/
+  if ( !v0 || !byte_84E864 ) /*0x4e61d0*/
+    return -1; /*0x4e627c*/
+  if ( !_strcmpi(Destination, aAuthenticamd) ) /*0x4e61e0*/
+    return 7; /*0x4e61ec*/
+  if ( !_strcmpi(Destination, aCyrixinstead) ) /*0x4e6200*/
+    return 8; /*0x4e620c*/
+  if ( v0 == 4 ) /*0x4e621b*/
+    return 0; /*0x4e6275*/
+  if ( v0 == 5 ) /*0x4e621e*/
+    return 1; /*0x4e626b*/
+  if ( v0 != 6 ) /*0x4e6221*/
+    return 6; /*0x4e6223*/
+  switch ( byte_84E864 ) /*0x4e623c*/
+  {
+    case 3: /*0x4e623c*/
+    case 5: /*0x4e623c*/
+      result = 3; /*0x4e6243*/
+      break; /*0x4e624c*/
+    case 6: /*0x4e623c*/
+      result = 5; /*0x4e624d*/
+      break; /*0x4e6256*/
+    case 7: /*0x4e623c*/
+    case 8: /*0x4e623c*/
+    case 10: /*0x4e623c*/
+      result = 4; /*0x4e6257*/
+      break; /*0x4e6260*/
+    default:
+      result = 2; /*0x4e6261*/
+      break; /*0x4e626a*/
+  }
+  return result; /*0x4e61f1*/
 }
 } // namespace gamemd
 
@@ -1413,7 +3337,14 @@ void sub_4E6A20()
 namespace gamemd {
 int sub_4E6A60()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6A60)
+  dword_A8E98C = 0; /*0x4e6a67*/
+  dword_A8E990 = 0; /*0x4e6a6c*/
+  byte_A8E994 = 1; /*0x4e6a71*/
+  byte_A8E995 = 0; /*0x4e6a78*/
+  dword_A8E988 = (int)&DynamicVectorClass_TerrainClass___vftable; /*0x4e6a7d*/
+  dword_A8E99C = 10; /*0x4e6a87*/
+  dword_A8E998 = 0; /*0x4e6a91*/
+  return atexit(sub_4E6AA0); /*0x4e6a9c*/
 }
 } // namespace gamemd
 
@@ -1436,7 +3367,14 @@ void sub_4E6AA0()
 namespace gamemd {
 int sub_4E6AE0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6AE0)
+  dword_A83DEC = 0; /*0x4e6ae7*/
+  dword_A83DF0 = 0; /*0x4e6aec*/
+  byte_A83DF4 = 1; /*0x4e6af1*/
+  byte_A83DF5 = 0; /*0x4e6af8*/
+  dword_A83DE8 = (int)&DynamicVectorClass_InfantryClass___vftable; /*0x4e6afd*/
+  dword_A83DFC = 10; /*0x4e6b07*/
+  dword_A83DF8 = 0; /*0x4e6b11*/
+  return atexit(sub_4E6B20); /*0x4e6b1c*/
 }
 } // namespace gamemd
 
@@ -1459,7 +3397,14 @@ void sub_4E6B20()
 namespace gamemd {
 int sub_4E6B60()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6B60)
+  dword_A8EB44 = 0; /*0x4e6b67*/
+  dword_A8EB48 = 0; /*0x4e6b6c*/
+  byte_A8EB4C = 1; /*0x4e6b71*/
+  byte_A8EB4D = 0; /*0x4e6b78*/
+  dword_A8EB40 = (int)&DynamicVectorClass_BuildingClass___vftable; /*0x4e6b7d*/
+  dword_A8EB54 = 10; /*0x4e6b87*/
+  dword_A8EB50 = 0; /*0x4e6b91*/
+  return atexit(sub_4E6BA0); /*0x4e6b9c*/
 }
 } // namespace gamemd
 
@@ -1482,7 +3427,14 @@ void sub_4E6BA0()
 namespace gamemd {
 int sub_4E6BE0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6BE0)
+  dword_A8E394 = 0; /*0x4e6be7*/
+  dword_A8E398 = 0; /*0x4e6bec*/
+  byte_A8E39C = 1; /*0x4e6bf1*/
+  byte_A8E39D = 0; /*0x4e6bf8*/
+  dword_A8E390 = (int)&DynamicVectorClass_AircraftClass___vftable; /*0x4e6bfd*/
+  dword_A8E3A4 = 10; /*0x4e6c07*/
+  dword_A8E3A0 = 0; /*0x4e6c11*/
+  return atexit(sub_4E6C20); /*0x4e6c1c*/
 }
 } // namespace gamemd
 
@@ -1505,7 +3457,14 @@ void sub_4E6C20()
 namespace gamemd {
 int sub_4E6C60()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6C60)
+  dword_8B410C = 0; /*0x4e6c67*/
+  dword_8B4110 = 0; /*0x4e6c6c*/
+  byte_8B4114 = 1; /*0x4e6c71*/
+  byte_8B4115 = 0; /*0x4e6c78*/
+  dword_8B4108 = (int)&DynamicVectorClass_UnitClass___vftable; /*0x4e6c7d*/
+  dword_8B411C = 10; /*0x4e6c87*/
+  dword_8B4118 = 0; /*0x4e6c91*/
+  return atexit(sub_4E6CA0); /*0x4e6c9c*/
 }
 } // namespace gamemd
 
@@ -1528,7 +3487,14 @@ void sub_4E6CA0()
 namespace gamemd {
 int sub_4E6D60()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6D60)
+  dword_A8E9AC = 0; /*0x4e6d67*/
+  dword_A8E9B0 = 0; /*0x4e6d6c*/
+  byte_A8E9B4 = 1; /*0x4e6d71*/
+  byte_A8E9B5 = 0; /*0x4e6d78*/
+  dword_A8E9A8 = (int)&DynamicVectorClass_AnimClass___vftable; /*0x4e6d7d*/
+  dword_A8E9BC = 10; /*0x4e6d87*/
+  dword_A8E9B8 = 0; /*0x4e6d91*/
+  return atexit(sub_4E6DA0); /*0x4e6d9c*/
 }
 } // namespace gamemd
 
@@ -1551,7 +3517,14 @@ void sub_4E6DA0()
 namespace gamemd {
 int sub_4E6DE0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6DE0)
+  dword_8B40EC = 0; /*0x4e6de7*/
+  dword_8B40F0 = 0; /*0x4e6dec*/
+  byte_8B40F4 = 1; /*0x4e6df1*/
+  byte_8B40F5 = 0; /*0x4e6df8*/
+  dword_8B40E8 = (int)&DynamicVectorClass_TeamClass___vftable; /*0x4e6dfd*/
+  dword_8B40FC = 10; /*0x4e6e07*/
+  dword_8B40F8 = 0; /*0x4e6e11*/
+  return atexit(sub_4E6E20); /*0x4e6e1c*/
 }
 } // namespace gamemd
 
@@ -1574,7 +3547,14 @@ void sub_4E6E20()
 namespace gamemd {
 int sub_4E6E60()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6E60)
+  dword_A83E34 = 0; /*0x4e6e67*/
+  dword_A83E38 = 0; /*0x4e6e6c*/
+  byte_A83E3C = 1; /*0x4e6e71*/
+  byte_A83E3D = 0; /*0x4e6e78*/
+  dword_A83E30 = (int)&DynamicVectorClass_FactoryClass___vftable; /*0x4e6e7d*/
+  dword_A83E44 = 10; /*0x4e6e87*/
+  dword_A83E40 = 0; /*0x4e6e91*/
+  return atexit(sub_4E6EA0); /*0x4e6e9c*/
 }
 } // namespace gamemd
 
@@ -1597,7 +3577,14 @@ void sub_4E6EA0()
 namespace gamemd {
 int sub_4E6EE0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6EE0)
+  dword_A83CFC = 0; /*0x4e6ee7*/
+  dword_A83D00 = 0; /*0x4e6eec*/
+  byte_A83D04 = 1; /*0x4e6ef1*/
+  byte_A83D05 = 0; /*0x4e6ef8*/
+  dword_A83CF8 = (int)&DynamicVectorClass_CampaignClass___vftable; /*0x4e6efd*/
+  dword_A83D0C = 10; /*0x4e6f07*/
+  dword_A83D08 = 0; /*0x4e6f11*/
+  return atexit(sub_4E6F20); /*0x4e6f1c*/
 }
 } // namespace gamemd
 
@@ -1620,7 +3607,14 @@ void sub_4E6F20()
 namespace gamemd {
 int sub_4E6F60()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6F60)
+  dword_8B4124 = 0; /*0x4e6f67*/
+  dword_8B4128 = 0; /*0x4e6f6c*/
+  byte_8B412C = 1; /*0x4e6f71*/
+  byte_8B412D = 0; /*0x4e6f78*/
+  dword_8B4120 = (int)&DynamicVectorClass_SideClass___vftable; /*0x4e6f7d*/
+  dword_8B4134 = 10; /*0x4e6f87*/
+  dword_8B4130 = 0; /*0x4e6f91*/
+  return atexit(sub_4E6FA0); /*0x4e6f9c*/
 }
 } // namespace gamemd
 
@@ -1643,7 +3637,14 @@ void sub_4E6FA0()
 namespace gamemd {
 int sub_4E6FE0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E6FE0)
+  dword_A83C9C = 0; /*0x4e6fe7*/
+  dword_A83CA0 = 0; /*0x4e6fec*/
+  byte_A83CA4 = 1; /*0x4e6ff1*/
+  byte_A83CA5 = 0; /*0x4e6ff8*/
+  dword_A83C98 = (int)&DynamicVectorClass_HouseTypeClass___vftable; /*0x4e6ffd*/
+  dword_A83CAC = 10; /*0x4e7007*/
+  dword_A83CA8 = 0; /*0x4e7011*/
+  return atexit(sub_4E7020); /*0x4e701c*/
 }
 } // namespace gamemd
 
@@ -1666,7 +3667,14 @@ void sub_4E7020()
 namespace gamemd {
 int sub_4E7060()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7060)
+  dword_A8E8D4 = 0; /*0x4e7067*/
+  dword_A8E8D8 = 0; /*0x4e706c*/
+  byte_A8E8DC = 1; /*0x4e7071*/
+  byte_A8E8DD = 0; /*0x4e7078*/
+  dword_A8E8D0 = (int)&DynamicVectorClass_TaskForceClass___vftable; /*0x4e707d*/
+  dword_A8E8E4 = 10; /*0x4e7087*/
+  dword_A8E8E0 = 0; /*0x4e7091*/
+  return atexit(sub_4E70A0); /*0x4e709c*/
 }
 } // namespace gamemd
 
@@ -1689,7 +3697,14 @@ void sub_4E70A0()
 namespace gamemd {
 int sub_4E70E0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E70E0)
+  dword_A8ECA4 = 0; /*0x4e70e7*/
+  dword_A8ECA8 = 0; /*0x4e70ec*/
+  byte_A8ECAC = 1; /*0x4e70f1*/
+  byte_A8ECAD = 0; /*0x4e70f8*/
+  dword_A8ECA0 = (int)&DynamicVectorClass_TeamTypeClass___vftable; /*0x4e70fd*/
+  dword_A8ECB4 = 10; /*0x4e7107*/
+  dword_A8ECB0 = 0; /*0x4e7111*/
+  return atexit(sub_4E7120); /*0x4e711c*/
 }
 } // namespace gamemd
 
@@ -1712,7 +3727,14 @@ void sub_4E7120()
 namespace gamemd {
 int sub_4E7160()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7160)
+  dword_8B41CC = 0; /*0x4e7167*/
+  dword_8B41D0 = 0; /*0x4e716c*/
+  byte_8B41D4 = 1; /*0x4e7171*/
+  byte_8B41D5 = 0; /*0x4e7178*/
+  dword_8B41C8 = (int)&DynamicVectorClass_ScriptTypeClass___vftable; /*0x4e717d*/
+  dword_8B41DC = 10; /*0x4e7187*/
+  dword_8B41D8 = 0; /*0x4e7191*/
+  return atexit(sub_4E71A0); /*0x4e719c*/
 }
 } // namespace gamemd
 
@@ -1735,7 +3757,14 @@ void sub_4E71A0()
 namespace gamemd {
 int sub_4E71E0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E71E0)
+  dword_A83D84 = 0; /*0x4e71e7*/
+  dword_A83D88 = 0; /*0x4e71ec*/
+  byte_A83D8C = 1; /*0x4e71f1*/
+  byte_A83D8D = 0; /*0x4e71f8*/
+  dword_A83D80 = (int)&DynamicVectorClass_OverlayTypeClass___vftable; /*0x4e71fd*/
+  dword_A83D94 = 10; /*0x4e7207*/
+  dword_A83D90 = 0; /*0x4e7211*/
+  return atexit(sub_4E7220); /*0x4e721c*/
 }
 } // namespace gamemd
 
@@ -1758,7 +3787,14 @@ void sub_4E7220()
 namespace gamemd {
 int sub_4E7260()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7260)
+  dword_A8EC1C = 0; /*0x4e7267*/
+  dword_A8EC20 = 0; /*0x4e726c*/
+  byte_A8EC24 = 1; /*0x4e7271*/
+  byte_A8EC25 = 0; /*0x4e7278*/
+  dword_A8EC18 = (int)&DynamicVectorClass_SmudgeTypeClass___vftable; /*0x4e727d*/
+  dword_A8EC2C = 10; /*0x4e7287*/
+  dword_A8EC28 = 0; /*0x4e7291*/
+  return atexit(sub_4E72A0); /*0x4e729c*/
 }
 } // namespace gamemd
 
@@ -1781,7 +3817,14 @@ void sub_4E72A0()
 namespace gamemd {
 int sub_4E72E0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E72E0)
+  dword_A8E31C = 0; /*0x4e72e7*/
+  dword_A8E320 = 0; /*0x4e72ec*/
+  byte_A8E324 = 1; /*0x4e72f1*/
+  byte_A8E325 = 0; /*0x4e72f8*/
+  dword_A8E318 = (int)&DynamicVectorClass_TerrainTypeClass___vftable; /*0x4e72fd*/
+  dword_A8E32C = 10; /*0x4e7307*/
+  dword_A8E328 = 0; /*0x4e7311*/
+  return atexit(sub_4E7320); /*0x4e731c*/
 }
 } // namespace gamemd
 
@@ -1804,7 +3847,14 @@ void sub_4E7320()
 namespace gamemd {
 int sub_4E7360()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7360)
+  dword_A83C6C = 0; /*0x4e7367*/
+  dword_A83C70 = 0; /*0x4e736c*/
+  byte_A83C74 = 1; /*0x4e7371*/
+  byte_A83C75 = 0; /*0x4e7378*/
+  dword_A83C68 = (int)&DynamicVectorClass_BuildingTypeClass___vftable; /*0x4e737d*/
+  dword_A83C7C = 10; /*0x4e7387*/
+  dword_A83C78 = 0; /*0x4e7391*/
+  return atexit(sub_4E73A0); /*0x4e739c*/
 }
 } // namespace gamemd
 
@@ -1827,7 +3877,14 @@ void sub_4E73A0()
 namespace gamemd {
 int sub_4E73E0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E73E0)
+  dword_A8B21C = 0; /*0x4e73e7*/
+  dword_A8B220 = 0; /*0x4e73ec*/
+  byte_A8B224 = 1; /*0x4e73f1*/
+  byte_A8B225 = 0; /*0x4e73f8*/
+  dword_A8B218 = (int)&DynamicVectorClass_AircraftTypeClass___vftable; /*0x4e73fd*/
+  dword_A8B22C = 10; /*0x4e7407*/
+  dword_A8B228 = 0; /*0x4e7411*/
+  return atexit(sub_4E7420); /*0x4e741c*/
 }
 } // namespace gamemd
 
@@ -1850,7 +3907,14 @@ void sub_4E7420()
 namespace gamemd {
 int sub_4E74E0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E74E0)
+  dword_8B4154 = 0; /*0x4e74e7*/
+  dword_8B4158 = 0; /*0x4e74ec*/
+  byte_8B415C = 1; /*0x4e74f1*/
+  byte_8B415D = 0; /*0x4e74f8*/
+  dword_8B4150 = (int)&DynamicVectorClass_AnimTypeClass___vftable; /*0x4e74fd*/
+  dword_8B4164 = 10; /*0x4e7507*/
+  dword_8B4160 = 0; /*0x4e7511*/
+  return atexit(sub_4E7520); /*0x4e751c*/
 }
 } // namespace gamemd
 
@@ -1873,7 +3937,14 @@ void sub_4E7520()
 namespace gamemd {
 int sub_4E7560()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7560)
+  dword_A8E34C = 0; /*0x4e7567*/
+  dword_A8E350 = 0; /*0x4e756c*/
+  byte_A8E354 = 1; /*0x4e7571*/
+  byte_A8E355 = 0; /*0x4e7578*/
+  dword_A8E348 = (int)&DynamicVectorClass_InfantryTypeClass___vftable; /*0x4e757d*/
+  dword_A8E35C = 10; /*0x4e7587*/
+  dword_A8E358 = 0; /*0x4e7591*/
+  return atexit(sub_4E75A0); /*0x4e759c*/
 }
 } // namespace gamemd
 
@@ -1896,7 +3967,14 @@ void sub_4E75A0()
 namespace gamemd {
 int sub_4E7660()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7660)
+  dword_A8EB2C = 0; /*0x4e7667*/
+  dword_A8EB30 = 0; /*0x4e766c*/
+  byte_A8EB34 = 1; /*0x4e7671*/
+  byte_A8EB35 = 0; /*0x4e7678*/
+  dword_A8EB28 = (int)&DynamicVectorClass_VoxelAnimTypeClass___vftable; /*0x4e767d*/
+  dword_A8EB3C = 10; /*0x4e7687*/
+  dword_A8EB38 = 0; /*0x4e7691*/
+  return atexit(sub_4E76A0); /*0x4e769c*/
 }
 } // namespace gamemd
 
@@ -1919,7 +3997,14 @@ void sub_4E76A0()
 namespace gamemd {
 int sub_4E76E0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E76E0)
+  dword_A8ED2C = 0; /*0x4e76e7*/
+  dword_A8ED30 = 0; /*0x4e76ec*/
+  byte_A8ED34 = 1; /*0x4e76f1*/
+  byte_A8ED35 = 0; /*0x4e76f8*/
+  dword_A8ED28 = (int)&DynamicVectorClass_IsometricTileTypeClass___vftable; /*0x4e76fd*/
+  dword_A8ED3C = 10; /*0x4e7707*/
+  dword_A8ED38 = 0; /*0x4e7711*/
+  return atexit(sub_4E7720); /*0x4e771c*/
 }
 } // namespace gamemd
 
@@ -1942,7 +4027,14 @@ void sub_4E7720()
 namespace gamemd {
 int sub_4E7760()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7760)
+  dword_A83D9C = 0; /*0x4e7767*/
+  dword_A83DA0 = 0; /*0x4e776c*/
+  byte_A83DA4 = 1; /*0x4e7771*/
+  byte_A83DA5 = 0; /*0x4e7778*/
+  dword_A83D98 = (int)&DynamicVectorClass_ParticleTypeClass___vftable; /*0x4e777d*/
+  dword_A83DAC = 10; /*0x4e7787*/
+  dword_A83DA8 = 0; /*0x4e7791*/
+  return atexit(sub_4E77A0); /*0x4e779c*/
 }
 } // namespace gamemd
 
@@ -1965,7 +4057,14 @@ void sub_4E77A0()
 namespace gamemd {
 int sub_4E77E0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E77E0)
+  dword_A83D6C = 0; /*0x4e77e7*/
+  dword_A83D70 = 0; /*0x4e77ec*/
+  byte_A83D74 = 1; /*0x4e77f1*/
+  byte_A83D75 = 0; /*0x4e77f8*/
+  dword_A83D68 = (int)&DynamicVectorClass_ParticleSystemTypeClass___vftable; /*0x4e77fd*/
+  dword_A83D7C = 10; /*0x4e7807*/
+  dword_A83D78 = 0; /*0x4e7811*/
+  return atexit(sub_4E7820); /*0x4e781c*/
 }
 } // namespace gamemd
 
@@ -1988,7 +4087,14 @@ void sub_4E7820()
 namespace gamemd {
 int sub_4E7860()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7860)
+  dword_A8E334 = 0; /*0x4e7867*/
+  dword_A8E338 = 0; /*0x4e786c*/
+  byte_A8E33C = 1; /*0x4e7871*/
+  byte_A8E33D = 0; /*0x4e7878*/
+  dword_A8E330 = (int)&DynamicVectorClass_SuperWeaponTypeClass___vftable; /*0x4e787d*/
+  dword_A8E344 = 10; /*0x4e7887*/
+  dword_A8E340 = 0; /*0x4e7891*/
+  return atexit(sub_4E78A0); /*0x4e789c*/
 }
 } // namespace gamemd
 
@@ -2011,7 +4117,14 @@ void sub_4E78A0()
 namespace gamemd {
 int sub_4E78E0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E78E0)
+  dword_A83CBC = 0; /*0x4e78e7*/
+  dword_A83CC0 = 0; /*0x4e78ec*/
+  byte_A83CC4 = 1; /*0x4e78f1*/
+  byte_A83CC5 = 0; /*0x4e78f8*/
+  dword_A83CB8 = (int)&DynamicVectorClass_SuperClass___vftable; /*0x4e78fd*/
+  dword_A83CCC = 10; /*0x4e7907*/
+  dword_A83CC8 = 0; /*0x4e7911*/
+  return atexit(sub_4E7920); /*0x4e791c*/
 }
 } // namespace gamemd
 
@@ -2034,7 +4147,14 @@ void sub_4E7920()
 namespace gamemd {
 int sub_4E7960()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7960)
+  dword_A83D54 = 0; /*0x4e7967*/
+  dword_A83D58 = 0; /*0x4e796c*/
+  byte_A83D5C = 1; /*0x4e7971*/
+  byte_A83D5D = 0; /*0x4e7978*/
+  stru_A83D50 = (int)&DynamicVectorClass_SuperClass___vftable; /*0x4e797d*/
+  dword_A83D64 = 10; /*0x4e7987*/
+  dword_A83D60 = 0; /*0x4e7991*/
+  return atexit(sub_4E79A0); /*0x4e799c*/
 }
 } // namespace gamemd
 
@@ -2057,7 +4177,14 @@ void sub_4E79A0()
 namespace gamemd {
 int sub_4E79E0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E79E0)
+  dword_A8EC7C = 0; /*0x4e79e7*/
+  dword_A8EC80 = 0; /*0x4e79ec*/
+  byte_A8EC84 = 1; /*0x4e79f1*/
+  byte_A8EC85 = 0; /*0x4e79f8*/
+  dword_A8EC78 = (TechnoClass *)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x4e79fd*/
+  dword_A8EC8C = 10; /*0x4e7a07*/
+  dword_A8EC88 = 0; /*0x4e7a11*/
+  return atexit(sub_4E7A20); /*0x4e7a1c*/
 }
 } // namespace gamemd
 
@@ -2065,7 +4192,14 @@ int sub_4E79E0()
 namespace gamemd {
 void sub_4E7A20()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7A20)
+  dword_A8EC78 = (TechnoClass *)(void*)&VectorClass_TechnoClass___vftable; /*0x4e7a28*/
+  if ( dword_A8EC7C && byte_A8EC85 ) /*0x4e7a3c*/
+  {
+    RA2_OPDEL(dword_A8EC7C); /*0x4e7a3f*/
+    dword_A8EC7C = 0; /*0x4e7a47*/
+  }
+  byte_A8EC85 = 0; /*0x4e7a4d*/
+  dword_A8EC80 = 0; /*0x4e7a53*/
 }
 } // namespace gamemd
 
@@ -2073,7 +4207,14 @@ void sub_4E7A20()
 namespace gamemd {
 int sub_4E7A60()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7A60)
+  dword_A8EB04 = 0; /*0x4e7a67*/
+  dword_A8EB08 = 0; /*0x4e7a6c*/
+  byte_A8EB0C = 1; /*0x4e7a71*/
+  byte_A8EB0D = 0; /*0x4e7a78*/
+  stru_A8EB00 = (int)&DynamicVectorClass_TechnoTypeClass___vftable; /*0x4e7a7d*/
+  dword_A8EB14 = 10; /*0x4e7a87*/
+  dword_A8EB10 = 0; /*0x4e7a91*/
+  return atexit(sub_4E7AA0); /*0x4e7a9c*/
 }
 } // namespace gamemd
 
@@ -2096,7 +4237,14 @@ void sub_4E7AA0()
 namespace gamemd {
 int sub_4E7AE0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7AE0)
+  dword_A8E364 = 0; /*0x4e7ae7*/
+  dword_A8E368 = 0; /*0x4e7aec*/
+  byte_A8E36C = 1; /*0x4e7af1*/
+  byte_A8E36D = 0; /*0x4e7af8*/
+  dword_A8E360 = (int)&DynamicVectorClass_ObjectClass___vftable; /*0x4e7afd*/
+  dword_A8E374 = 10; /*0x4e7b07*/
+  dword_A8E370 = 0; /*0x4e7b11*/
+  return atexit(sub_4E7B20); /*0x4e7b1c*/
 }
 } // namespace gamemd
 
@@ -2104,7 +4252,14 @@ int sub_4E7AE0()
 namespace gamemd {
 void sub_4E7B20()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7B20)
+  dword_A8E360 = (int)&VectorClass_ObjectClass___vftable; /*0x4e7b28*/
+  if ( dword_A8E364 && byte_A8E36D ) /*0x4e7b3c*/
+  {
+    RA2_OPDEL(dword_A8E364); /*0x4e7b3f*/
+    dword_A8E364 = 0; /*0x4e7b47*/
+  }
+  byte_A8E36D = 0; /*0x4e7b4d*/
+  dword_A8E368 = 0; /*0x4e7b53*/
 }
 } // namespace gamemd
 
@@ -2112,7 +4267,14 @@ void sub_4E7B20()
 namespace gamemd {
 int sub_4E7B60()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7B60)
+  dword_A8E96C = 0; /*0x4e7b67*/
+  dword_A8E970 = 0; /*0x4e7b6c*/
+  byte_A8E974 = 1; /*0x4e7b71*/
+  byte_A8E975 = 0; /*0x4e7b78*/
+  dword_A8E968 = (int)&DynamicVectorClass_AbstractTypeClass___vftable; /*0x4e7b7d*/
+  dword_A8E97C = 10; /*0x4e7b87*/
+  dword_A8E978 = 0; /*0x4e7b91*/
+  return atexit(sub_4E7BA0); /*0x4e7b9c*/
 }
 } // namespace gamemd
 
@@ -2135,7 +4297,14 @@ void sub_4E7BA0()
 namespace gamemd {
 int sub_4E7BE0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7BE0)
+  dword_8B41E4 = 0; /*0x4e7be7*/
+  dword_8B41E8 = 0; /*0x4e7bec*/
+  byte_8B41EC = 1; /*0x4e7bf1*/
+  byte_8B41ED = 0; /*0x4e7bf8*/
+  dword_8B41E0 = (int)&DynamicVectorClass_BuildingClass___vftable; /*0x4e7bfd*/
+  dword_8B41F4 = 10; /*0x4e7c07*/
+  dword_8B41F0 = 0; /*0x4e7c11*/
+  return atexit(sub_4E7C20); /*0x4e7c1c*/
 }
 } // namespace gamemd
 
@@ -2158,7 +4327,14 @@ void sub_4E7C20()
 namespace gamemd {
 int sub_4E7C60()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7C60)
+  dword_A83E04 = 0; /*0x4e7c67*/
+  dword_A83E08 = 0; /*0x4e7c6c*/
+  byte_A83E0C = 1; /*0x4e7c71*/
+  byte_A83E0D = 0; /*0x4e7c78*/
+  dword_A83E00 = (int)&DynamicVectorClass_AnimClass___vftable; /*0x4e7c7d*/
+  dword_A83E14 = 10; /*0x4e7c87*/
+  dword_A83E10 = 0; /*0x4e7c91*/
+  return atexit(sub_4E7CA0); /*0x4e7c9c*/
 }
 } // namespace gamemd
 
@@ -2189,7 +4365,8 @@ void sub_4E7CE0()
 namespace gamemd {
 int sub_4E7D10()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7D10)
+  sub_6616B0(stru_A8E7B0); /*0x4e7d15*/
+  return atexit(unknown_libname_13); /*0x4e7d25*/
 }
 } // namespace gamemd
 
@@ -2197,7 +4374,11 @@ int sub_4E7D10()
 namespace gamemd {
 int unknown_libname_13()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7D30)
+  stru_A8E7B0[0] = (void*)&RandomStraw_vftable; /*0x66170d*/
+  stru_A8E7B0[3] = 0; /*0x661713*/
+  stru_A8E7B0[4] = 0; /*0x661716*/
+  memset(&stru_A8E7B0[5], 0, 0x100u); /*0x661719*/
+  Straw::Dtor(stru_A8E7B0); /*0x66171d*/
 }
 } // namespace gamemd
 
@@ -2205,7 +4386,14 @@ int unknown_libname_13()
 namespace gamemd {
 int sub_4E7D40()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7D40)
+  dword_A8ECBC = 0; /*0x4e7d47*/
+  dword_A8ECC0 = 0; /*0x4e7d4c*/
+  byte_A8ECC4 = 1; /*0x4e7d51*/
+  byte_A8ECC5 = 0; /*0x4e7d58*/
+  dword_A8ECB8 = (ObjectClass *)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4e7d5d*/
+  dword_A8ECCC = 10; /*0x4e7d67*/
+  dword_A8ECC8 = 0; /*0x4e7d71*/
+  return atexit(sub_4E7D80); /*0x4e7d7c*/
 }
 } // namespace gamemd
 
@@ -2213,7 +4401,14 @@ int sub_4E7D40()
 namespace gamemd {
 void sub_4E7D80()
 {
-    // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7D80)
+  dword_A8ECB8 = (ObjectClass *)(void*)&VectorClass_ObjectClass___vftable; /*0x4e7d88*/
+  if ( dword_A8ECBC && byte_A8ECC5 ) /*0x4e7d9c*/
+  {
+    RA2_OPDEL(dword_A8ECBC); /*0x4e7d9f*/
+    dword_A8ECBC = 0; /*0x4e7da7*/
+  }
+  byte_A8ECC5 = 0; /*0x4e7dad*/
+  dword_A8ECC0 = 0; /*0x4e7db3*/
 }
 } // namespace gamemd
 
@@ -2221,7 +4416,8 @@ void sub_4E7D80()
 namespace gamemd {
 int sub_4E7DC0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7DC0)
+  sub_74F730(&dword_A8ECE0); /*0x4e7dc5*/
+  return atexit(sub_4E7DE0); /*0x4e7dd5*/
 }
 } // namespace gamemd
 
@@ -2237,7 +4433,9 @@ void sub_4E7DE0()
 namespace gamemd {
 int sub_4E7DF0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7DF0)
+  dword_A8ECD8 = 0; /*0x4e7df7*/
+  dword_A8ECDC = 0; /*0x4e7dfc*/
+  return atexit(unknown_libname_14); /*0x4e7e07*/
 }
 } // namespace gamemd
 
@@ -2245,7 +4443,7 @@ int sub_4E7DF0()
 namespace gamemd {
 int unknown_libname_14()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E10)
+  ObjectTypeClass::ReleaseWaveAndString(&dword_A8ECD8); /*0x4e7e15*/
 }
 } // namespace gamemd
 
@@ -2253,7 +4451,44 @@ int unknown_libname_14()
 namespace gamemd {
 int unknown_libname_15()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E20)
+  *(unsigned int *)dword_A8EB60 = 3; /*0x5fa35a*/
+  dword_A8EB64 = 1; /*0x5fa360*/
+  *(unsigned int *)unk_A8EB6C = 0; /*0x5fa363*/
+  dword_A8EB70 = 3; /*0x5fa366*/
+  unk_A8EB74[0] = 1; /*0x5fa36d*/
+  dword_A8EB78 = 2; /*0x5fa370*/
+  byte_A8EB7C = 1; /*0x5fa377*/
+  unk_A8EB7D = 1; /*0x5fa37a*/
+  byte_A8EB7E = 1; /*0x5fa37d*/
+  byte_A8EB80 = 1; /*0x5fa380*/
+  byte_A8EBA5 = 1; /*0x5fa383*/
+  *(unsigned int *)&dword_A8EBF8 = 18; /*0x5fa38b*/
+  *(unsigned int *)&dword_A8EBFC = 18; /*0x5fa391*/
+  *(unsigned int *)&dword_A8EC00 = 17; /*0x5fa39f*/
+  *(unsigned int *)&dword_A8EC04 = 17; /*0x5fa3a5*/
+  dword_A8EB84 = -1; /*0x5fa3b0*/
+  *(unsigned int *)&dword_A8EC08 = 16; /*0x5fa3b3*/
+  *(unsigned int *)dword_A8EC0C = 16; /*0x5fa3b9*/
+  dword_A8EB88 = -1; /*0x5fa3c4*/
+  unk_A8EBAC = -1; /*0x5fa3c7*/
+  unk_A8EBB0 = -1; /*0x5fa3ca*/
+  byte_A8EB7F = 0; /*0x5fa3cd*/
+  dword_A8EB8C = 800; /*0x5fa3d0*/
+  dword_A8EB90 = 600; /*0x5fa3d7*/
+  byte_A8EB94 = 0; /*0x5fa3de*/
+  byte_A8EB95 = 0; /*0x5fa3e1*/
+  byte_A8EB96 = 0; /*0x5fa3e4*/
+  flt_A8EB98 = 0.69999999; /*0x5fa3e7*/
+  flt_A8EB9C = 1060320051; /*0x5fa3ee*/
+  flt_A8EBA0 = 0.40000001; /*0x5fa3f5*/
+  byte_A8EBA4 = 0; /*0x5fa3fc*/
+  byte_A8EBA6 = 0; /*0x5fa3ff*/
+  unk_A8EBA8 = -65527; /*0x5fa402*/
+  dword_A8EBB4 = 0; /*0x5fa40e*/
+  unk_A8EC10 = 81; /*0x5fa411*/
+  unk_A8EC14 = 81; /*0x5fa417*/
+  unk_A8EBB8[0] = 0; /*0x5fa41d*/
+  return dword_A8EB60; /*0x5fa421*/
 }
 } // namespace gamemd
 
@@ -2261,7 +4496,8 @@ int unknown_libname_15()
 namespace gamemd {
 int sub_4E7E30()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E30)
+  sub_720960(&unk_A83D10); /*0x4e7e35*/
+  return atexit(sub_4E7E50); /*0x4e7e45*/
 }
 } // namespace gamemd
 
@@ -2284,7 +4520,7 @@ void sub_4E7E50()
 namespace gamemd {
 int unknown_libname_16()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7E90)
+  return TabClass::initStripClass(unk_A83E18);
 }
 } // namespace gamemd
 
@@ -2292,7 +4528,22 @@ int unknown_libname_16()
 namespace gamemd {
 char * sub_4E7ED0()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7ED0)
+  char *result; // eax
+  int v1; // ecx
+
+  result = byte_8B4204; /*0x4e7ed0*/
+  v1 = 0x4000; /*0x4e7ed5*/
+  do /*0x4e7ee2*/
+  {
+    *result = 0; /*0x4e7edc*/
+    result += 111; /*0x4e7ede*/
+    --v1; /*0x4e7ee1*/
+  }
+  while ( v1 ); /*0x4e7ee2*/
+  dword_8B41F8 = 0; /*0x4e7ee4*/
+  dword_8B41FC = 0; /*0x4e7eea*/
+  dword_8B4200 = 0; /*0x4e7ef0*/
+  return result; /*0x4e7ef6*/
 }
 } // namespace gamemd
 
@@ -2323,7 +4574,14 @@ unsigned char * sub_4E7F00()
 namespace gamemd {
 int sub_4E7F30()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7F30)
+  dword_8B41AC = 0; /*0x4e7f37*/
+  dword_8B41B0 = 0; /*0x4e7f3c*/
+  byte_8B41B4 = 1; /*0x4e7f41*/
+  byte_8B41B5 = 0; /*0x4e7f48*/
+  dword_8B41A8 = (int)&DynamicVectorClass_TagClass___vftable; /*0x4e7f4d*/
+  dword_8B41BC = 10; /*0x4e7f57*/
+  dword_8B41B8 = 0; /*0x4e7f61*/
+  return atexit(sub_4E7F70); /*0x4e7f6c*/
 }
 } // namespace gamemd
 
@@ -2346,7 +4604,14 @@ void sub_4E7F70()
 namespace gamemd {
 int sub_4E7FB0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E7FB0)
+  dword_8B40CC = 0; /*0x4e7fb7*/
+  dword_8B40D0 = 0; /*0x4e7fbc*/
+  byte_8B40D4 = 1; /*0x4e7fc1*/
+  byte_8B40D5 = 0; /*0x4e7fc8*/
+  dword_8B40C8 = (int)&DynamicVectorClass_TagClass___vftable; /*0x4e7fcd*/
+  dword_8B40DC = 10; /*0x4e7fd7*/
+  dword_8B40D8 = 0; /*0x4e7fe1*/
+  return atexit(sub_4E7FF0); /*0x4e7fec*/
 }
 } // namespace gamemd
 
@@ -2369,7 +4634,8 @@ void sub_4E7FF0()
 namespace gamemd {
 int sub_4E8030()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8030)
+  SessionClass::SessionClass((char *)dword_A8B238); /*0x4e8035*/
+  return atexit(unknown_libname_17); /*0x4e8045*/
 }
 } // namespace gamemd
 
@@ -2377,7 +4643,7 @@ int sub_4E8030()
 namespace gamemd {
 int unknown_libname_17()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8050)
+  ObjectManager::CleanupArrays((int)dword_A8B238); /*0x4e8055*/
 }
 } // namespace gamemd
 
@@ -2385,7 +4651,8 @@ int unknown_libname_17()
 namespace gamemd {
 int sub_4E8060()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E8060)
+  sub_5F15C0(&unk_A8EA70, 16, 16, 236, 4660); /*0x4e8073*/
+  return atexit(unknown_libname_18); /*0x4e8083*/
 }
 } // namespace gamemd
 
@@ -2393,7 +4660,8 @@ int sub_4E8060()
 namespace gamemd {
 int sub_4E80A0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E80A0)
+  sub_5408F0((char *)unk_A8E9C0, 455, 558, 160, 32, 34835, 43524); /*0x4e80c0*/
+  return atexit(unknown_libname_19); /*0x4e80d0*/
 }
 } // namespace gamemd
 
@@ -2401,7 +4669,7 @@ int sub_4E80A0()
 namespace gamemd {
 int unknown_libname_19()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E80E0)
+  IPXManagerClass::processPacket((char *)unk_A8E9C0); /*0x4e80e5*/
 }
 } // namespace gamemd
 
@@ -2409,7 +4677,8 @@ int unknown_libname_19()
 namespace gamemd {
 int sub_4E80F0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4E80F0)
+  sub_4E6070((int)dword_A8E8E8); /*0x4e80f5*/
+  return atexit(unknown_libname_20); /*0x4e8105*/
 }
 } // namespace gamemd
 
@@ -2418,7 +4687,7 @@ namespace gamemd {
 int unknown_libname_20()
 {
   nullsub_54(); /*0x4e8115*/
-    return 0; // TODO stub - quarantined G42 T9 (raw body; truth = 0x4E8110)
+}
 } // namespace gamemd
 
 // 0x4E8120
@@ -2530,15 +4799,49 @@ unsigned int ParticleSystemClass_vt_05_free_(int a2)
 }
 
 // 0x4EF4E0
-VectorClass_flat * HouseClass_vt_00__free(unsigned int * Block, char a2)
+namespace gamemd {
+VectorClass_flat * HouseClass::vt_00_(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EF4E0)
+
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1); /*0x4ef4e3*/
+  *Block = &vt_VectorClass; /*0x4ef4e6*/
+  if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef4f0*/
+  {
+    __3_YAXPAX_Z(v3); /*0x4ef4f8*/
+    *(Block + 1) = 0; /*0x4ef500*/
+  }
+  *((unsigned char *)Block + 13) = 0; /*0x4ef50b*/
+  *(Block + 2) = 0; /*0x4ef511*/
+  if ( (a2 & 1) != 0 ) /*0x4ef518*/
+    __3_YAXPAX_Z(Block); /*0x4ef51b*/
+  return Block; /*0x4ef525*/
+
 }
+} // namespace gamemd
 
 // 0x4EF800
-VectorClass_flat * ParticleSystemClass_vt_00__free(unsigned int * Block, char a2)
+namespace gamemd {
+VectorClass_flat * ParticleSystemClass::vt_00_(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EF800)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x4ef803*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef806*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x4ef810*/
+  {
+    __3_YAXPAX_Z(v3); /*0x4ef818*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x4ef820*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x4ef82b*/
+  Block->m_8 = 0; /*0x4ef831*/
+  if ( (a2 & 1) != 0 ) /*0x4ef838*/
+    __3_YAXPAX_Z(Block); /*0x4ef83b*/
+  return Block->__pad_0; /*0x4ef845*/
+
 }
+} // namespace gamemd
 
 } // namespace gamemd  // G42.35p: EOF close restored (depth was 1)

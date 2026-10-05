@@ -30,6 +30,32 @@ int EMPulseClass::StubReturn55()
 namespace gamemd {
 EMPulseClass * EMPulseClass::CopyTo(void * a2, char a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4C5AC0)
+
+  int v3; // eax
+  unsigned int v5;
+
+  *(unsigned int *)a3->__pad_0 = &vt_EMPulseClass; /*0x4c5ac4*/
+  a3->EMPulseClass_field_0x04 = (int)&vt_EMPulseClass; /*0x4c5aca*/
+  a3->EMPulseClass_field_0x08 = (int)&vt_EMPulseClass; /*0x4c5ad1*/
+  a3->EMPulseClass_field_0x0C = (int)&vt_EMPulseClass; /*0x4c5ad8*/
+  if ( byte_A8E9A0 ) /*0x4c5ae6*/
+    EMPulseClass::IterateCellsInRadius(a3); /*0x4c5ae8*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)a3),(int)((gamemd::AbstractClass *)(1))); /*0x4c5af1*/
+  v5 = a3; /*0x4c5b06*/
+  v3 = (*(int (**)(int *, EMPulseClass **))(dword_8A3870 + 16))((int *)&dword_8A3870, (EMPulseClass **)&v5); /*0x4c5b0a*/
+  if ( v3 != -1 && v3 < dword_8A3880 && v3 < --dword_8A3880 ) /*0x4c5b25*/
+  {
+    do /*0x4c5b3d*/
+    {
+      ++v3; /*0x4c5b2d*/
+      *((unsigned int *)dword_8A3874 + v3 - 1) = *((unsigned int *)dword_8A3874 + v3); /*0x4c5b31*/
+    }
+    while ( v3 < dword_8A3880 ); /*0x4c5b3d*/
+  }
+  ((AbstractClass*)(AbstractClass *)a3)->DTOR(); /*0x4c5b41*/
+  if ( (a3 & 1) != 0 ) /*0x4c5b4b*/
+    __3_YAXPAX_Z((void *)(a3)); /*0x4c5b4e*/
+  return (gamemd::EMPulseClass *)((void **)a3); /*0x4c5b58*/
+
 }
 } // namespace gamemd

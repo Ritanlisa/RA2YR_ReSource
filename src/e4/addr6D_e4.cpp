@@ -42,7 +42,24 @@
 namespace gamemd {
 int sub_6D1130()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D1130)
+  unsigned int v0;
+
+  dword_B0CCD4 = 240; /*0x6d1149*/
+  dword_B0CD00 = dword_87F6CC; /*0x6d1153*/
+  byte_B0CCDD = 0; /*0x6d1158*/
+  dword_B0CCE0 = 0; /*0x6d115e*/
+  dword_B0CCD0 = 5; /*0x6d1164*/
+  v0 = dword_B0FA90; /*0x6d116c*/
+  Rect_Point::Set(stru_B0CCB0, *(unsigned int *)dword_B0FC60,(void *)(*((unsigned int *)dword_B0FC60 + 1))); /*0x6d118a*/
+  ((ShapeButton *)((int)stru_B0CCB0))->SetShape((int)v0, 0, 0); /*0x6d1197*/
+  dword_B0CC64 = 241; /*0x6d11a7*/
+  dword_B0CC90 = dword_87F6CC; /*0x6d11b1*/
+  byte_B0CC6D = 0; /*0x6d11b6*/
+  dword_B0CC70 = 0; /*0x6d11bc*/
+  dword_B0CC60 = 5; /*0x6d11c2*/
+  Rect_Point::Set(stru_B0CC40, *(unsigned int *)dword_B0FC64,(void *)(*((unsigned int *)dword_B0FC64 + 1))); /*0x6d11e2*/
+// 0x69de00
+  return ((ShapeButton *)((int)stru_B0CC40))->SetShape((int)v0, 0, 0); /*0x6d11f4*/
 }
 }
 // 0x6D6BB0
@@ -184,7 +201,26 @@ int sub_6D0FB0(int a1, int a2, int a3)
 namespace gamemd {
 char E4Recv_6D1570::sub_6D1570()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D1570)
+
+  char result; // al
+  int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
+  char v3; // [esp+1Ch] [ebp-4h]
+
+  result = (*((int (**)(ObjectClass *, GadgetClass *))this->vtable1 + 12))((gamemd::ObjectClass *)this, &stru_B0CC40); /*0x6d157a*/
+  if ( &stru_B0CC40 ) /*0x6d1584*/
+  {
+    v2[2] = stru_B0CC40.Height; /*0x6d1597*/
+    v2[1] = stru_B0CC40.Width; /*0x6d15a1*/
+    v2[4] = stru_B0CC40.ID; /*0x6d15ab*/
+    v3 = 0; /*0x6d15b6*/
+    v2[0] = dword_B0CC64; /*0x6d15bb*/
+    v2[5] = (int)g_Str_Tip_ThumbClosed; /*0x6d15bf*/
+    v2[3] = *(unsigned int *)&stru_B0CC40.Visible; /*0x6d15c7*/
+    HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], dword_B0CC64); /*0x6d15cb*/
+    return CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)v2); /*0x6d15db*/
+  }
+  return result; /*0x6d15e0*/
+
 }
 } // namespace gamemd
 
@@ -432,7 +468,14 @@ void sub_6D1BF0()
 namespace gamemd {
 void E4Recv_6D1E80::sub_6D1E80()
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D1E80)
+
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_Tactical); /*0x6d1e80*/
+  *(unsigned int *)&this->Tactical_field_0x2[2] = (unsigned int)(&vt_Tactical); /*0x6d1e86*/
+  this->Tactical_field_0x8[0] = (int)&vt_Tactical; /*0x6d1e8d*/
+  this->Tactical_field_0xC[0] = (int)&vt_Tactical; /*0x6d1e94*/
+  g_TacticalClass_Instance = 0; /*0x6d1e9b*/
+  ((AbstractClass*)(gamemd::AbstractClass *)this)->DTOR(); /*0x6d1ea5*/
+
 }
 } // namespace gamemd
 
@@ -440,7 +483,10 @@ void E4Recv_6D1E80::sub_6D1E80()
 namespace gamemd {
 int ZCoordToScreenY(int aP0)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D20E0)
+  int result; // eax
+
+  IDA_LOWORD(result) = Math::RoundToInt((double)aP0 * dbl_B0CD48 + (double)(aP0 >= (IUnknown *)(728)) + 0.5); /*0x6d2113*/
+  return result; /*0x6d2118*/
 }
 } // namespace gamemd
 
@@ -482,7 +528,16 @@ int sub_6D61C0(int a1, int a2, int * a3, int * a4)
 namespace gamemd {
 long long sub_6D6A90(unsigned int * a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D6A90)
+  void *v1; // eax
+  int v2; // edx
+  unsigned int v4[2]; // [esp+4h] [ebp-8h] BYREF
+
+  v1 = ((Coord *)(&dword_87F7E8))->To_Cell(a1); /*0x6d6a9e*/
+  v2 = a1[1]; /*0x6d6aa5*/
+  v4[0] = *a1; /*0x6d6aa8*/
+  v4[1] = v2; /*0x6d6ab3*/
+// 0x47b3a0
+  return ((Isometric*)(gamemd::IUnknown *)((int)v1))->InitTables(v4); /*0x6d6abc*/
 }
 } // namespace gamemd
 
@@ -526,7 +581,49 @@ void nullsub_41()
 namespace gamemd {
 char ClampCoordMap(AbstractClass * aP0)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D8640)
+  int v1; // edi
+  int v2; // esi
+  int v3; // ecx
+  int v4; // edx
+  char v5; // bl
+  int v6; // eax
+
+  v1 = (int)(dword_886FA8 / 2 + 30 * (2 * dword_87F8E4 - dword_87F8DC));
+  v2 = (int)(v1 + 60 * dword_87F8EC - dword_886FA8);
+  v3 = (int)(dword_886FAC / 2 + 15 * (dword_87F8DC + 2 * dword_87F8E8 - 5));
+  v4 = ((int *)aP0)[1];
+  v5 = 0; /*0x6d86ba*/
+  v6 = v3 + (60 * dword_87F8F0 + 270) / 2 - dword_886FAC; /*0x6d86bc*/
+  if ( v4 >= v3 ) /*0x6d86c0*/
+  {
+    if ( v4 > v6 ) /*0x6d86cb*/
+    {
+      aP0[1] = v6; /*0x6d86cd*/
+      v5 = 1; /*0x6d86d0*/
+    }
+  }
+  else
+  {
+    v5 = 1; /*0x6d86c2*/
+    aP0[1] = v3; /*0x6d86c4*/
+  }
+  if ( *aP0 >= v1 ) /*0x6d86d7*/
+  {
+    if ( *aP0 <= v2 ) /*0x6d86e7*/
+    {
+      return v5; /*0x6d86f7*/
+    }
+    else
+    {
+      *(unsigned int *)aP0 = v2; /*0x6d86e9*/
+      return 1; /*0x6d86ef*/
+    }
+  }
+  else
+  {
+    *(unsigned int *)aP0 = v1; /*0x6d86d9*/
+    return 1; /*0x6d86df*/
+  }
 }
 } // namespace gamemd
 
@@ -534,7 +631,40 @@ char ClampCoordMap(AbstractClass * aP0)
 namespace gamemd {
 int sub_6D8C60(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D8C60)
+  unsigned int *v3; // eax
+  int v4; // edi
+  int v5; // esi
+  int v6; // eax
+  int result; // eax
+  int v8; // edi
+  int v9; // esi
+  int v10; // [esp+18h] [ebp-1Ch]
+  int v12; // [esp+20h] [ebp-14h] BYREF
+  int v13; // [esp+24h] [ebp-10h]
+  unsigned char v14[12]; // [esp+28h] [ebp-Ch] BYREF
+
+  v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)a1 + 72))(a1, v14); /*0x6d8c77*/
+  v10 = v3[1]; /*0x6d8c89*/
+  v4 = (-60 * v10 / 2 + 60 * *v3 / 2) / 256; /*0x6d8cf7*/
+  v5 = (30 * v10 / 2 + 30 * *v3 / 2) / 256; /*0x6d8cfa*/
+  v6 = Math::RoundToInt((double)(int)v3[2] * dbl_B0CD48 + (double)(v3[2] >= 728) + 0.5); /*0x6d8d21*/
+  v12 = v4; /*0x6d8d2d*/
+  v13 = v5 - v6; /*0x6d8d31*/
+  result = (int)((unsigned int *)(g_TacticalClass_Instance))[45].__tail_0; /*0x6d8d3b*/
+  v8 = v4 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[44].__tail_0; /*0x6d8d41*/
+  v9 = v13 - result; /*0x6d8d43*/
+  v12 = v8; /*0x6d8d4b*/
+  v13 -= result; /*0x6d8d4f*/
+  if ( v8 >= -360 ) /*0x6d8d53*/
+  {
+    result = dword_B0CE30 + 360; /*0x6d8d5a*/
+    if ( v8 <= dword_B0CE30 + 360 && v9 >= -180 && v9 <= dword_B0CE34 + 180 ) /*0x6d8d79*/
+    {
+      (*(void (**)(int, int *, int))(*(unsigned int *)a1 + 268))(a1, &v12, a2); /*0x6d8d8a*/
+      return (*(int (**)(int, int *, int))(*(unsigned int *)a1 + 272))(a1, &v12, a2); /*0x6d8d9b*/
+    }
+  }
+  return result; /*0x6d8da1*/
 }
 } // namespace gamemd
 

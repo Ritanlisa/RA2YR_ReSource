@@ -22,14 +22,28 @@
 namespace gamemd {
 int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x473AE0)
+
+  FileClass v4; // edi
+  int v5; // eax
+
+  if ( *((unsigned int *)this + 22) ) /*0x473ae3*/
+  {
+    v4 = this->FileClass; /*0x473aeb*/
+    v5 = (*(int (**)(CCFileClass *))(*(unsigned int *)&this->FileClass + 4))(this); /*0x473aed*/
+    (*(void (**)(CCFileClass *, int, unsigned int, int))(*(unsigned int *)&v4 + 64))((CCFileClass *)this, 13, 0, v5); /*0x473af7*/
+  }
+  return FileClass::BufferedWriter(int a1,(char *) aP1, nNumberOfBytesToWrite); /*0x473b0c*/
+
 }
 } // namespace gamemd
 // 0x473FC0
 namespace gamemd {
 const char* FileClass::SetFileName(char *aP1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x473FC0)
+
+  *((unsigned int *)this + 26) = 0; /*0x473fc4*/
+  return FileClass::OpenWithCDSearch((CDFileClass *)this, aP1); /*0x473fd1*/
+
 }
 } // namespace gamemd
 // 0x65CBF0
@@ -43,21 +57,274 @@ int FileClass::Open(int a2)
 namespace gamemd {
 int FileClass::Read(char *aP1, signed int aP2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CCE0)
+
+  DWORD v4; // ebx
+  int result; // eax
+  int v6; // eax
+  char *v7; // edi
+  int v9; // ebx
+  DWORD LastError; // eax
+  void *v11; // [esp-1Ch] [ebp-2Ch]
+  int v12; // [esp-Ch] [ebp-1Ch]
+  DWORD NumberOfBytesRead; // [esp+8h] [ebp-8h] BYREF
+  int v14; // [esp+Ch] [ebp-4h]
+  DWORD nNumberOfBytesToReada; // [esp+18h] [ebp+8h]
+
+  v4 = 0; /*0x65cce7*/
+  NumberOfBytesRead = 0; /*0x65cce9*/
+  v14 = 0; /*0x65cced*/
+  if ( !(*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65ccf3*/
+  {
+    result = (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 1); /*0x65cd00*/
+    if ( !result ) /*0x65cd05*/
+      return result; /*0x65cd05*/
+    v14 = 1; /*0x65cd0f*/
+  }
+  if ( this->FileName == (void *)-1 ) /*0x65cd1e*/
+  {
+    v7 = (char *)aP2; /*0x65cd3b*/
+  }
+  else
+  {
+    v6 = (*(int (**)(RawFileClass *, unsigned int, int))(*(unsigned int *)this->FileClass + 40))(this, 0, 1); /*0x65cd27*/
+    v7 = (char *)aP2; /*0x65cd2d*/
+    if ( aP2 >= (int)this->FileName - v6 ) /*0x65cd35*/
+      v7 = (char *)this->FileName - v6; /*0x65cd37*/
+  }
+  while ( (int)v7 > 0 ) /*0x65cd41*/
+  {
+    v11 = *(void **)this->FileTimeDateLo; /*0x65cd54*/
+    NumberOfBytesRead = 0; /*0x65cd55*/
+    if ( ReadFile(v11, aP1, (DWORD)v7, &NumberOfBytesRead, 0) ) /*0x65cd5d*/
+    {
+      aP1 += NumberOfBytesRead; /*0x65cd98*/
+      v7 -= NumberOfBytesRead; /*0x65cd9a*/
+      v4 += NumberOfBytesRead; /*0x65cd9c*/
+      if ( !NumberOfBytesRead ) /*0x65cda0*/
+        break; /*0x65cda0*/
+    }
+    else
+    {
+      aP1 += NumberOfBytesRead; /*0x65cd6b*/
+      v7 -= NumberOfBytesRead; /*0x65cd6d*/
+      v4 += NumberOfBytesRead; /*0x65cd6f*/
+      nNumberOfBytesToReada = v4; /*0x65cd78*/
+      if ( byte_B04BEC ) /*0x65cd7c*/
+        break; /*0x65cd7c*/
+      v9 = *(unsigned int *)this->FileClass; /*0x65cd81*/
+      v12 = *(unsigned int *)&this->FileNameAllocated; /*0x65cd83*/
+      LastError = GetLastError(); /*0x65cd86*/
+      (*(void (**)(RawFileClass *, DWORD, int, int))(v9 + 64))(this, LastError, 1, v12); /*0x65cd8f*/
+      v4 = nNumberOfBytesToReada; /*0x65cd92*/
+    }
+  }
+  NumberOfBytesRead = v4; /*0x65cda7*/
+  byte_B04BEC = 0; /*0x65cdb1*/
+  if ( v14 ) /*0x65cdb9*/
+    (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65cdbf*/
+  return NumberOfBytesRead; /*0x65cd07*/
+
 }
 } // namespace gamemd
 // 0x65CF00
 namespace gamemd {
 int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CF00)
+
+  char *FileName; // ecx
+  DWORD v5; // edi
+  char *v6; // ebx
+  LONG v7; // ebx
+  DWORD v8; // eax
+  int v9; // edi
+  DWORD v10; // eax
+  void *Handle; // edi
+  void * result;
+  DWORD v13; // eax
+  int v14; // edi
+  DWORD v15; // eax
+  void *v16; // ecx
+  LONG v17; // edi
+  DWORD v18; // eax
+  int v19; // edi
+  DWORD LastError; // eax
+  DWORD v21; // edi
+  int v22; // edi
+  DWORD v23; // eax
+  int v24; // [esp-Ch] [ebp-14h]
+  int v25; // [esp-Ch] [ebp-14h]
+  int v26; // [esp-Ch] [ebp-14h]
+  int v27; // [esp-4h] [ebp-Ch]
+
+  FileName = (char *)this->FileName; /*0x65cf04*/
+  if ( FileName != (char *)-1 ) /*0x65cf0a*/
+  {
+    v5 = dwMoveMethod; /*0x65cf10*/
+    if ( dwMoveMethod ) /*0x65cf1b*/
+    {
+      if ( dwMoveMethod == 2 ) /*0x65cf20*/
+      {
+        v5 = 0; /*0x65cf2b*/
+        v6 = &FileName[(unsigned int)this->Handle + lDistanceToMove]; /*0x65cf2d*/
+      }
+      else
+      {
+        v6 = (char *)lDistanceToMove; /*0x65cf40*/
+      }
+    }
+    else
+    {
+      v7 = lDistanceToMove; /*0x65cf31*/
+      if ( lDistanceToMove > (int)FileName ) /*0x65cf37*/
+        v7 = (LONG)FileName; /*0x65cf39*/
+      v6 = (char *)this->Handle + v7; /*0x65cf3b*/
+    }
+    if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65cf48*/
+    {
+      if ( v5 ) /*0x65cf6b*/
+      {
+        if ( v5 == 1 ) /*0x65cf6e*/
+        {
+          v5 = 1; /*0x65cf7a*/
+        }
+        else if ( v5 == 2 ) /*0x65cf71*/
+        {
+          v5 = 2; /*0x65cf73*/
+        }
+      }
+      else
+      {
+        v5 = 0; /*0x65cf81*/
+      }
+      v8 = SetFilePointer(*(HANDLE *)this->FileTimeDateLo, (LONG)v6, 0, v5); /*0x65cf8b*/
+      if ( v8 != -1 ) /*0x65cf90*/
+      {
+LABEL_20: Handle = (void *)(this->Handle);
+        result = (void *)(v8 - (unsigned int)Handle);
+        if ( result >= 0 ) /*0x65cfad*/
+          goto LABEL_27; /*0x65cfad*/
+        if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65cfb3*/
+        {
+          v13 = SetFilePointer(*(HANDLE *)this->FileTimeDateLo, (LONG)Handle, 0, 0); /*0x65cfd4*/
+          if ( v13 != -1 ) /*0x65cfd9*/
+          {
+LABEL_26: Handle = (void *)(this->Handle);
+            result = (void *)((int)((void *)(v13 - (unsigned int)Handle)));
+LABEL_27: v16 = (void *)(this->FileName);
+            if ( result > (void *)(int)v16 ) /*0x65cffb*/
+            {
+              v17 = (LONG)Handle + (unsigned int)v16; /*0x65cfff*/
+              if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d003*/
+              {
+                v18 = SetFilePointer(*(HANDLE *)this->FileTimeDateLo, v17, 0, 0); /*0x65d030*/
+                if ( v18 == -1 ) /*0x65d035*/
+                {
+                  v19 = *(unsigned int *)this->FileClass; /*0x65d03a*/
+                  v26 = *(unsigned int *)&this->FileNameAllocated; /*0x65d03c*/
+                  LastError = GetLastError(); /*0x65d03f*/
+                  (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v19 + 64))((RawFileClass *)this, LastError, 0, v26); /*0x65d048*/
+                  v18 = 0; /*0x65d04b*/
+                }
+                return v18 - (unsigned int)this->Handle; /*0x65d04d*/
+              }
+              else
+              {
+                (*(void (**)(RawFileClass *, int, unsigned int, unsigned int))(*(unsigned int *)this->FileClass + 64))( /*0x65d016*/
+                  this,
+                  9,
+                  0,
+                  *(unsigned int *)&this->FileNameAllocated);
+                return -(int)this->Handle; /*0x65d021*/
+              }
+            }
+            return (int)(result);
+          }
+          v14 = *(unsigned int *)this->FileClass; /*0x65cfde*/
+          v25 = *(unsigned int *)&this->FileNameAllocated; /*0x65cfe0*/
+          v15 = GetLastError(); /*0x65cfe3*/
+          (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v14 + 64))((RawFileClass *)this, v15, 0, v25); /*0x65cfec*/
+        }
+        else
+        {
+          (*(void (**)(RawFileClass *, int, unsigned int, unsigned int))(*(unsigned int *)this->FileClass + 64))( /*0x65cfc6*/
+            this,
+            9,
+            0,
+            *(unsigned int *)&this->FileNameAllocated);
+        }
+        v13 = 0; /*0x65cfef*/
+        goto LABEL_26; /*0x65cfef*/
+      }
+      v9 = *(unsigned int *)this->FileClass; /*0x65cf95*/
+      v24 = *(unsigned int *)&this->FileNameAllocated; /*0x65cf97*/
+      v10 = GetLastError(); /*0x65cf9a*/
+      (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v9 + 64))((RawFileClass *)this, v10, 0, v24); /*0x65cfa3*/
+    }
+    else
+    {
+      (*(void (**)(RawFileClass *, int, unsigned int, unsigned int))(*(unsigned int *)this->FileClass + 64))( /*0x65cf61*/
+        this,
+        9,
+        0,
+        *(unsigned int *)&this->FileNameAllocated);
+    }
+    v8 = 0; /*0x65cfa6*/
+    goto LABEL_20; /*0x65cfa6*/
+  }
+  v21 = dwMoveMethod; /*0x65d059*/
+  if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d05f*/
+  {
+    if ( dwMoveMethod ) /*0x65d081*/
+    {
+      if ( dwMoveMethod == 1 ) /*0x65d084*/
+      {
+        v21 = 1; /*0x65d090*/
+      }
+      else if ( dwMoveMethod == 2 ) /*0x65d087*/
+      {
+        v21 = 2; /*0x65d089*/
+      }
+    }
+    else
+    {
+      v21 = 0; /*0x65d097*/
+    }
+    result = (void *)(SetFilePointer(*(HANDLE *)this->FileTimeDateLo, lDistanceToMove, 0, v21));
+    if ( result == (void *)(-1) ) /*0x65d0ae*/
+    {
+      v22 = *(unsigned int *)this->FileClass; /*0x65d0b3*/
+      v27 = *(unsigned int *)&this->FileNameAllocated; /*0x65d0b5*/
+      v23 = GetLastError(); /*0x65d0b8*/
+      (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v22 + 64))((RawFileClass *)this, v23, 0, v27); /*0x65d0c1*/
+      return 0; /*0x65d0c4*/
+    }
+  }
+  else
+  {
+    (*(void (**)(RawFileClass *, int, unsigned int, unsigned int))(*(unsigned int *)this->FileClass + 64))( /*0x65d072*/
+      this,
+      9,
+      0,
+      *(unsigned int *)&this->FileNameAllocated);
+    return 0; /*0x65d076*/
+  }
+  return (int)(result);
+
 }
 } // namespace gamemd
 // 0x65D150
 namespace gamemd {
 int FileClass::Close()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65D150)
+
+  (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d155*/
+  if ( !(*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 2) ) /*0x65d15e*/
+    return 0; /*0x65d184*/
+  if ( this->FileName != (unsigned int)(void *)-1 ) /*0x65d169*/
+    (*(void (**)(RawFileClass *, unsigned int, unsigned int))(*(unsigned int *)this->FileClass + 40))(this, 0, 0); /*0x65d173*/
+  (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d17a*/
+  return 1; /*0x65d182*/
+
 }
 } // namespace gamemd
 // 0x401950

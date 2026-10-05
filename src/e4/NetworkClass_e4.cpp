@@ -28,20 +28,107 @@
 namespace gamemd {
 int NetworkClass::ExecutePlanningModeCmd()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x639FD0)
+
+  char v1; // al
+  wchar_t *StringCSF; // eax
+  wchar_t *v3; // eax
+
+  v1 = (char)(*this);
+  if ( *this == 9 ) /*0x639fd4*/
+  {
+    if ( !byte_AC4C08 ) /*0x639fdd*/
+    {
+      byte_AC4C08 = (unsigned char)((wchar_t *)(1));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233));
+LABEL_10:
+      AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
+      PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a09e*/
+    }
+  }
+  else if ( v1 == 6 ) /*0x639fff*/
+  {
+    if ( !byte_AC4C08 ) /*0x63a008*/
+    {
+      byte_AC4C08 = (unsigned char)((wchar_t *)(1));
+      v3 =(wchar_t *)(unsigned int)(GetStringCSF((wchar_t *)(g_Str_MSG_PlanningModeNoStop), 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233));
+      AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
+      PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a04f*/
+    }
+  }
+  else if ( v1 == 7 && !byte_AC4C08 ) /*0x63a05c*/
+  {
+    byte_AC4C08 = (unsigned char)((wchar_t *)(1));
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_PlanningModeNoScatter), 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233));
+    goto LABEL_10; /*0x63a076*/
+  }
+  return PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a0c0*/
+
 }
 }
 // 0x6FFE00
 namespace gamemd {
 AbstractClass * * NetworkClass::RecordEvent()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6FFE00)
+
+  unsigned char *WaypointCoords; // eax
+  int (__thiscall NetworkClass::* )(void) result;
+  char *v3; // edi
+  unsigned char v4[8]; // [esp+8h] [ebp-78h] BYREF
+  char v5[108]; // [esp+10h] [ebp-70h] BYREF
+  int16_t v6; // [esp+7Ch] [ebp-4h]
+  char v7; // [esp+7Eh] [ebp-2h]
+  uint8_t v8; // [esp+84h] [ebp+4h]
+
+  WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v4, this); /*0x6ffe0a*/
+  EventClass::Add((gamemd::AbstractClass *)(v5), (int)dword_A83D4C->Object_field_0x30, v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
+  result = FactoryClass::GetFlag(); /*0x6ffe39*/
+  if ( (unsigned char)result ) /*0x6ffe40*/
+  {
+    result = (int)(((NetworkClass*)v5)->ExecutePlanningModeCmd());
+    LOBYTE(result) = 0; /*0x6ffe4b*/
+  }
+  else
+  {
+    if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ffe5f*/
+    {
+      v3 = (char *)&byte_A802D4 + 111 * dword_A802D0; /*0x6ffe75*/
+      qmemcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
+      v3 += 108; /*0x6ffe7c*/
+      *(unsigned short *)v3 = v6; /*0x6ffe7e*/
+      v3[2] = v7; /*0x6ffe80*/
+      (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ffe8d*/
+      dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ffe9d*/
+      result = (int)++stru_A80220.lineTrailer; /*0x6ffea7*/
+    }
+    LOBYTE(result) = 1; /*0x6ffeae*/
+  }
+  return result; /*0x6ffe4d*/
+
 }
 }
 // 0x7B1C50
 namespace gamemd {
 AnimClass * * NetworkClass::UnregisterAsync()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B1C50)
+
+  HWND v2; // ecx
+  SOCKET v3; // eax
+  SOCKET result; // eax
+
+  v2 = (HWND)(g_hWnd);
+  v3 = *((unsigned int *)this + 64539); /*0x7b1c59*/
+  if ( v3 != -1 && g_hWnd ) /*0x7b1c66*/
+  {
+    WSAAsyncSelect(v3, g_hWnd, 0, 0); /*0x7b1c6e*/
+    v2 = (HWND)(g_hWnd); /*0x7b1c73*/
+  }
+  result = *((unsigned int *)this + 64540); /*0x7b1c79*/
+  if ( result != -1 ) /*0x7b1c83*/
+  {
+    if ( v2 ) /*0x7b1c87*/
+      return WSAAsyncSelect(result, v2, 0, 0); /*0x7b1c8f*/
+  }
+  return (gamemd::AnimClass **)(result); /*0x7b1c7f*/
+
 }
 }

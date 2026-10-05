@@ -26,7 +26,45 @@
 namespace gamemd {
 char MouseClass::ToggleContextGadget(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6D1770)
+
+  unsigned int v2; // eax
+  ShapeButtonClass *v3; // ecx
+  unsigned int v5; // eax
+  ShapeButtonClass *v6; // ecx
+
+  if ( a1 == 4551 ) /*0x6d1779*/
+  {
+    v2 = (&g_ObjectTrackingPool)[dword_B0CC1C]; /*0x6d1780*/
+    if ( v2 <= 0x18 ) /*0x6d1789*/
+    {
+      v3 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v2);
+      if ( v3 ) /*0x6d179e*/
+      {
+        if ( !BYTE1(v3[3].ShapeButtonClass_field_0x08) ) /*0x6d17a0*/
+          ((GadgetClass *)((GadgetClass *)v3))->Show(); /*0x6d17a7*/
+      }
+    }
+    return 1; /*0x6d17ac*/
+  }
+  else if ( a1 == 4552 ) /*0x6d17b6*/
+  {
+    v5 = (&g_ObjectTrackingPool)[dword_B0CC1C]; /*0x6d17be*/
+    if ( v5 <= 0x18 ) /*0x6d17c7*/
+    {
+      v6 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v5);
+      if ( v6 ) /*0x6d17dc*/
+      {
+        if ( BYTE1(v6[3].ShapeButtonClass_field_0x08) ) /*0x6d17de*/
+          GadgetClass::Hide((GadgetClass *)v6); /*0x6d17e5*/
+      }
+    }
+    return 1; /*0x6d17ea*/
+  }
+  else
+  {
+    return 0; /*0x6d17ef*/
+  }
+
 }
 } // namespace gamemd
 // 0x72DDB0

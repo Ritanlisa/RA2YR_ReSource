@@ -36,14 +36,163 @@
 namespace gamemd {
 void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4D1650)
+  int v2; // eax
+  void * v3;
+  int v4; // esi
+  int v5; // eax
+  int v6; // eax
+  signed int v7; // ecx
+  size_t i; // eax
+  unsigned int *v9; // eax
+  unsigned int *v10; // eax
+  unsigned int *v11; // eax
+  unsigned int *v12; // ecx
+  int v13; // edx
+  void *v14; // eax
+  int16_t v16[4]; // [esp+10h] [ebp-Ch] BYREF
+  int v17; // [esp+18h] [ebp-4h] BYREF
+
+  *(unsigned int *)v16 = (unsigned int)(aP0); /*0x4d1684*/
+  v2 = (*(int (**)(int *, int16_t *))(dword_8B3D10 + 16))((int *)&dword_8B3D10, v16); /*0x4d1688*/
+  if ( v2 != -1 && v2 < g_FootClassConfig && v2 < --g_FootClassConfig ) /*0x4d16a3*/
+  {
+    do /*0x4d16bb*/
+    {
+      ++v2; /*0x4d16ab*/
+      *((unsigned int *)dword_8B3D14 + v2 - 1) = *((unsigned int *)dword_8B3D14 + v2); /*0x4d16af*/
+    }
+    while ( v2 < g_FootClassConfig ); /*0x4d16bb*/
+  }
+  v3 = (void *)(aP0->q038);
+  v16[0] = (unsigned int)(aP0)->q034 / 256; /*0x4d16df*/
+  v16[1] = (unsigned int)(v3)/ 256; /*0x4d16e4*/
+  v17 = *(unsigned int *)v16; /*0x4d16f3*/
+  v4 = 74 * (v16[1] - ((v16[0] + v16[1]) << 9) - v16[0]) - aP0->q030 + 0x7FFFFFFF; /*0x4d1714*/
+  if ( g_MissionState ) /*0x4d171c*/
+  {
+    if ( !byte_8B3CCC ) /*0x4d1728*/
+    {
+      qsort((void *)(g_MissionPool), g_MissionState, 8u, globalHelper_0D2ED0); /*0x4d1739*/
+      dword_8B3CD0 = 0; /*0x4d1747*/
+      byte_8B3CCC = 1; /*0x4d174d*/
+    }
+    *(unsigned int *)v16 = v4; /*0x4d175f*/
+    v5 = sub_4D2F00(v16); /*0x4d1763*/
+    if ( v5 ) /*0x4d176a*/
+    {
+      v6 = (v5 - (int)g_MissionPool) >> 3; /*0x4d1772*/
+      if ( v6 != -1 ) /*0x4d1778*/
+      {
+        v7 = v6 + 1; /*0x4d177a*/
+        for ( i = g_MissionState; v7 < (int)g_MissionState; i = g_MissionState ) /*0x4d1784*/
+        {
+          v9 = (unsigned int *)((char *)g_MissionPool + 8 * v7++);
+          *(v9 - 2) = *v9; /*0x4d1792*/
+          *(v9 - 1) = v9[1]; /*0x4d1798*/
+        }
+        g_MissionState = i - 1; /*0x4d17ad*/
+        *((unsigned int *)g_MissionPool + 2 * g_MissionState) = 0; /*0x4d17b2*/
+        *((unsigned int *)g_MissionPool + 2 * g_MissionState + 1) = 0; /*0x4d17c2*/
+        dword_8B3CD0 = 0; /*0x4d17c6*/
+      }
+    }
+  }
+  if ( aP0->q030 == 6 ) /*0x4d17d0*/
+  {
+    v10 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v17); /*0x4d17dc*/
+    v11 = ((Cell *)(v10))->IsBridge(); /*0x4d17e3*/
+    if ( v11 ) /*0x4d17ea*/
+    {
+      *((unsigned char *)v11 + 1767) = 0; /*0x4d17ec*/
+      v12 = v11 + 343; /*0x4d17f2*/
+      v13 = 21; /*0x4d17f8*/
+      do /*0x4d180d*/
+      {
+        if ( *v12 ) /*0x4d17fd*/
+          *(unsigned char *)(*v12 + 409) = 0; /*0x4d1803*/
+        ++v12; /*0x4d1809*/
+        --v13; /*0x4d180c*/
+      }
+      while ( v13 ); /*0x4d180d*/
+    }
+  }
+  if ( g_TacticalClass_Instance ) /*0x4d1817*/
+    Cell::CreateCrater( /*0x4d184b*/
+      aP0->q040 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[44].lpVtbl,
+      aP0->q044 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[45].lpVtbl,
+      aP0->q048,
+      aP0->q04C,
+      0);
+  v14 = (void *)(aP0->q060);
+  if ( v14 && aP0->u8_69 ) /*0x4d1860*/
+  {
+    RA2_OPDEL(v14); /*0x4d1866*/
+    aP0->q060 = 0; /*0x4d186e*/
+  }
+  aP0->u8_69 = 0; /*0x4d1873*/
+  aP0->q064 = 0; /*0x4d1876*/
+// 0x4101f0
+return (void *)((AbstractClass*)aP0)->DTOR(); /*0x4d187e*/
 }
 }
 // 0x4D2370
 namespace gamemd {
 int sub_4D2370()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4D2370)
+  int result; // eax
+  int v2; // esi
+  int v3; // edi
+  unsigned short *v4; // esi
+  int v5; // edi
+  unsigned int *v6; // eax
+  CellClass * v7;
+  CellClass *v8; // eax
+  int v9; // [esp+8h] [ebp-1Ch]
+  int i; // [esp+Ch] [ebp-18h]
+  int v11; // [esp+10h] [ebp-14h] BYREF
+  unsigned char v12[4]; // [esp+14h] [ebp-10h] BYREF
+  unsigned int v13[3]; // [esp+18h] [ebp-Ch] BYREF
+
+  result = g_FootClassConfig; /*0x4d2373*/
+  v2 = 0; /*0x4d2379*/
+  for ( i = 0; v2 < g_FootClassConfig; i = v2 ) /*0x4d2381*/
+  {
+    v3 = *((unsigned int *)dword_8B3D14 + v2); /*0x4d2399*/
+    if ( *(unsigned int *)(v3 + 48) == 6 /*0x4d23ae*/
+      && (*(int (**)(unsigned int, unsigned int))(***(unsigned int ***)(v3 + 96) + 144))(**(unsigned int **)(v3 + 96), 0) )
+    {
+      if ( *(unsigned int *)(v3 + 48) == 6 ) /*0x4d23bf*/
+        v4 = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(***(unsigned int ***)(v3 + 96) + 144))( /*0x4d23d0*/
+                        **(unsigned int **)(v3 + 96),
+                        0);
+      else
+        v4 = 0; /*0x4d23d4*/
+      v5 = *(unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v3 + 96))(v3, v12); /*0x4d23e2*/
+      v11 = v5; /*0x4d23e4*/
+      while ( *v4 != 0x7FFF || v4[1] != 0x7FFF ) /*0x4d23f9*/
+      {
+        IDA_LOWORD(v9) = v5 + *v4; /*0x4d2408*/
+        IDA_HIWORD(v9) = IDA_HIWORD(v5) + v4[1]; /*0x4d240d*/
+        v11 = v9; /*0x4d241c*/
+        v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v11); /*0x4d2420*/
+        v4 += 2; /*0x4d2436*/
+        v6[80] |= 0x400000u; /*0x4d2439*/
+      }
+      v2 = i; /*0x4d2478*/
+    }
+    else
+    {
+      v7 = (gamemd::CellClass *)((unsigned int)((gamemd::CellClass *)((unsigned int *)(v3 + 52))));
+      v13[0] = (gamemd::CellClass *)(*v7);
+      v13[1] = (gamemd::CellClass *)(v7[1]);
+      v13[2] = (gamemd::CellClass *)(v7[2]);
+      v8 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v13));
+      v8->flags[0] |= 0x400000u; /*0x4d2474*/
+    }
+    result = g_FootClassConfig; /*0x4d247c*/
+    ++v2; /*0x4d2481*/
+  }
+  return result; /*0x4d2491*/
 }
 }
 // 0x4D2ED0
@@ -523,7 +672,41 @@ void sub_4D31A0()
 namespace gamemd {
 unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4D4FC0)
+
+  int v2; // ebx
+  unsigned short *v3; // eax
+  Cell *v4; // eax
+  unsigned int *v5; // eax
+  unsigned int *v6; // esi
+  int v7; // ebp
+  int v9; // [esp+10h] [ebp-Ch]
+  int16_t v10[2]; // [esp+14h] [ebp-8h] BYREF
+  char v11[4]; // [esp+18h] [ebp-4h] BYREF
+
+  v2 = 0; /*0x4d4fc9*/
+  while ( 1 ) /*0x4d4fd4*/
+  {
+    v3 = (unsigned short *)(*((int (**)(ObjectClass *, char *))this->vtable1 + 110))((gamemd::ObjectClass *)this, v11); /*0x4d4fd4*/
+    LOWORD(v9) = LOWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]) + *v3; /*0x4d4ff8*/
+    HIWORD(v9) = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
+    *(unsigned int *)v10 = v9; /*0x4d500c*/
+    v4 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v10); /*0x4d5010*/
+    v5 = ((Cell *)(v4))->IsBridge(); /*0x4d5017*/
+    v6 = v5; /*0x4d501c*/
+    if ( v5 ) /*0x4d5020*/
+    {
+      if ( *(unsigned char *)(v5[328] + 5493) ) /*0x4d5028*/
+      {
+        v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x4d5039*/
+        if ( v7 == (*((int (**))this->vtable1 + 15))(this) ) /*0x4d5044*/
+          break; /*0x4d5044*/
+      }
+    }
+    if ( ++v2 >= 8 ) /*0x4d504a*/
+      return 0; /*0x4d5059*/
+  }
+  return v6; /*0x4d5050*/
+
 }
 } // namespace gamemd
 

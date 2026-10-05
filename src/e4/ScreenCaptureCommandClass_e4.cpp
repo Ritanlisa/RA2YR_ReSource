@@ -37,9 +37,11 @@ wchar_t * ScreenCaptureCommandClass::ddtor()
 } // namespace gamemd
 // 0x537B80
 namespace gamemd {
-int * ScreenCaptureCommandClass::Release(void *a1)
+wchar_t * ScreenCaptureCommandClass::Release(void *a1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x537B80)
+
+  return GetStringCSF((wchar_t *)(aTxtScrncap), 0,(const char *)(g_Str_File_Init_CPP), 8072); /*0x537b96*/
+
 }
 } // namespace gamemd
 // 0x537BA0

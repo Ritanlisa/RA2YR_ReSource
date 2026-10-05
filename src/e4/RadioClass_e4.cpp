@@ -57,7 +57,32 @@ int RadioClass::ProcessCmd()
 namespace gamemd {
 int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65AB10)
+
+  int result; // eax
+  int i; // edi
+  int v5; // eax
+  int v6; // eax
+  int v7; // ecx
+  int v8; // eax
+
+  AbstractClass::COMStub_13((void *)((int)this), aP1); /*0x65ab1a*/
+  Power::TimerProcess((&this->radioLinks)[2]); /*0x65ab28*/
+  result = (&this->radioLinks)[2]; /*0x65ab2d*/
+  for ( i = 0; i < result; ++i ) /*0x65ab37*/
+  {
+    v5 = *(unsigned int *)((&this->radioLinks)[1] + 4 * i); /*0x65ab3f*/
+    if ( v5 ) /*0x65ab44*/
+    {
+      v6 = (*(int (**)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x65ab4d*/
+      Power::TimerProcess(v6); /*0x65ab53*/
+      v7 = *(unsigned int *)((&this->radioLinks)[1] + 4 * i); /*0x65ab5e*/
+      v8 = (*(int (**)(int))(*(unsigned int *)v7 + 44))(v7); /*0x65ab63*/
+      Power::TimerProcess(v8); /*0x65ab69*/
+    }
+    result = (&this->radioLinks)[2]; /*0x65ab6e*/
+  }
+  return result; /*0x65ab79*/
+
 }
 } // namespace ra2
 
@@ -65,7 +90,66 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 namespace gamemd {
 int RadioClass::LoadState(int aP1, int aP2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65AB80)
+
+  ObjectClass * v3;
+  ObjectClass * v4;
+  int result; // eax
+  ObjectClass * v6;
+  int v7; // esi
+  ObjectClass * v8;
+  int v9; // esi
+
+  v3 = (gamemd::ObjectClass *)((int)(aP1));
+  v4 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(aP2))));
+  result = ((BuildingClass *)((ObjectClass *)this))->SaveLoad_Register(); /*0x65ab8d*/
+  if ( result >= 0 ) /*0x65ab94*/
+  {
+    v6 = (gamemd::ObjectClass *)((int)(v3 + 224));
+    if ( v3 != (gamemd::ObjectClass *)(-224) ) /*0x65aba2*/
+    {
+      *(unsigned int *)(v3 + 228) = 0; /*0x65aba4*/
+      *(unsigned int *)(v3 + 232) = 0; /*0x65abab*/
+      *(unsigned char *)(v3 + 236) = 1; /*0x65abb2*/
+      *(unsigned char *)(v3 + 237) = 0; /*0x65abb6*/
+      *(unsigned int *)v6 = (unsigned int)(&vt_VectorClass); /*0x65abba*/
+    }
+    result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))((int)v4, &aP2, 4, 0); /*0x65abcc*/
+    if ( result >= 0 ) /*0x65abd1*/
+    {
+      (*(void (**)(int, int, unsigned int))(*(unsigned int *)v6 + 8))((int)v3 + 224, aP2, 0); /*0x65abde*/
+      v7 = (int)((gamemd::ObjectClass *)(0)); /*0x65abe1*/
+      v8 = (gamemd::ObjectClass *)(aP2); /*0x65abe3*/
+      if ( aP2 <= 0 ) /*0x65abe9*/
+      {
+LABEL_8:
+        v9 = 0; /*0x65ac14*/
+        if ( v8 > 0 ) /*0x65ac18*/
+        {
+          do /*0x65ac33*/
+            ObjectPtr::RegisterForTracking( /*0x65ac29*/
+              (int)&SwizzleManagerClass_Instance,
+              (int *)(*(unsigned int *)(v3 + 228) + 4 * v9++));
+          while ( v9 < (int)(aP2) ); /*0x65ac33*/
+        }
+        return 0; /*0x65ac35*/
+      }
+      else
+      {
+        while ( 1 ) /*0x65abf7*/
+        {
+          result = (unsigned int)((*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))((int)v4, &aP1, 4, 0));
+          if ( result < 0 ) /*0x65abfc*/
+            break; /*0x65abfc*/
+          *(unsigned int *)(*(unsigned int *)(v3 + 228) + 4 * v7) = (unsigned int)((gamemd::ObjectClass *)((unsigned int)(aP1))); /*0x65ac08*/
+          v8 = (gamemd::ObjectClass *)(aP2); /*0x65ac0b*/
+          if ( ++(int)(v7) >= (int)(aP2) ) /*0x65ac12*/
+            goto LABEL_8; /*0x65ac12*/
+        }
+      }
+    }
+  }
+  return result; /*0x65ac37*/
+
 }
 } // namespace ra2
 
@@ -175,6 +259,38 @@ int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
 namespace gamemd {
 int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65AC40)
+
+  int result; // eax
+  int v4; // edx
+  int v5; // ebx
+
+  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a0),(gamemd::ObjectTypeClass *)(aP1),(gamemd::ObjectTypeClass *)(aP2)); /*0x65ac52*/
+  if ( result >= 0 ) /*0x65ac59*/
+  {
+    v4 = *(int *)aP1;
+    aP2 = a0->radioLinks[2]; /*0x65ac6d*/
+    result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))((int *)aP1, &aP2, 4, 0); /*0x65ac71*/
+    if ( result >= 0 ) /*0x65ac76*/
+    {
+      v5 = 0; /*0x65ac7c*/
+      if ( aP2 <= 0 ) /*0x65ac80*/
+      {
+        return 0; /*0x65aca3*/
+      }
+      else
+      {
+        while ( 1 ) /*0x65ac93*/
+        {
+          result = (*(int (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, a0->radioLinks[1] + 4 * v5, 4, 0); /*0x65ac93*/
+          if ( result < 0 ) /*0x65ac98*/
+            break; /*0x65ac98*/
+          if ( ++v5 >= aP2 ) /*0x65aca1*/
+            return 0; /*0x65aca1*/
+        }
+      }
+    }
+  }
+  return result; /*0x65aca5*/
+
 }
 } // namespace gamemd

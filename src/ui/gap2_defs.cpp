@@ -36,11 +36,29 @@ using ra2::game::FootClass;
 
 // 0x40D280
 namespace gamemd {
-int MouseClass::ProcessInput()
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x40D280)
+int MouseClass::ProcessInput() {
+  return this->u32_5564; /*0x40d286*/
 }
 }
+// 0x40D290
+namespace gamemd { 
+void* MouseClass::InitMouse(int a1) {
+  return nullptr;  /* G42.33b2 restub: mis-spliced body (ProcessInput pseudocode); truth func_0x0040D290.json */
+}
+}
+
+// 0x40D540
+namespace gamemd { 
+void MouseClass::initCursor() {
+  void *v2; // eax
+
+  v2 = *(void **)&this->m_1[3]; /*0x40d546*/
+  this->q010 = 0; /*0x40d549*/
+  if ( v2 && ((unsigned char*)&this->m_C)[1] ) /*0x40d550*/
+  {
+    RA2_OPDEL(v2); /*0x40d556*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40d55e*/
+  }
 // 0x40D290
 namespace gamemd { 
 void* MouseClass::InitMouse(int a1) {
@@ -1192,7 +1210,7 @@ int WWMouseClass::UpdateCursorMovement() {
 namespace gamemd {
 bool WWMouseClass::IsRefCountNegative()
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BA320)
+  return (int)this->WWMouseClass_field_0xC < 0; /*0x7ba32a*/
 }
 }
 // 0x7BA380

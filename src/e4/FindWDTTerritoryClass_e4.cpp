@@ -12,9 +12,33 @@
 
 // 0x765380
 namespace gamemd {
-unsigned int * sub_765380(unsigned int * a2, int a3)
+unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
 {
-    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00765380.json)
+
+  int v4; // edx
+  void **v5; // [esp+4h] [ebp-Ch] BYREF
+  char *v6; // [esp+8h] [ebp-8h]
+  int v7; // [esp+Ch] [ebp-4h]
+
+  v6 = (char *)((unsigned char *)this + 24);
+  v7 = 0; /*0x76538f*/
+  v5 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x765397*/
+  if ( Campaign_WorldDominationTour_24::AddRef(&v5) ) /*0x76539f*/
+  {
+    do /*0x7653db*/
+    {
+      if ( FindWDTTerritoryClass_Find_Find(*(unsigned int **)(*((unsigned int *)v6 + 1) + 8 * v7 + 4)) == a3 ) /*0x7653c6*/
+        break; /*0x7653c6*/
+      ((void (*)(void ***))v5[2])(&v5); /*0x7653d0*/
+    }
+    while ( ((uint8_t (*)(void ***))v5[1])(&v5) ); /*0x7653db*/
+  }
+  v4 = (unsigned int)(v7);
+  a2[1] = (unsigned int)(v6);
+  a2[2] = v4; /*0x7653f2*/
+  *a2 = (unsigned int)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x7653f5*/
+  return a2; /*0x7653ee*/
+
 }
 } // namespace gamemd
 

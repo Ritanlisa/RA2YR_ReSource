@@ -23,7 +23,43 @@
 namespace gamemd {
 char AsyncIO::Shutdown()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5BF450)
+
+  unsigned int * v1;
+  unsigned int i;
+  void (***v3)(unsigned int, int); // ecx
+  char result; // al
+
+  v1 = (unsigned int *)((int)((unsigned int *)(0)));
+  for ( i = AsyncIO_Instance; v1 < (unsigned int *)(g_AsyncIOState); ++v1 ) /*0x5bf462*/
+  {
+    v3 = (void (***)(unsigned int, int))((unsigned int *)(i))[v1]; /*0x5bf464*/
+    if ( v3 ) /*0x5bf469*/
+    {
+      (**v3)      ((unsigned int)(**v3))(v3, 1); 
+      i = AsyncIO_Instance; /*0x5bf475*/
+    }
+  }
+  g_AsyncIOState = 0; /*0x5bf487*/
+  if ( i && byte_B45B65 ) /*0x5bf495*/
+  {
+    __3_YAXPAX_Z((void *)(i)); 
+    AsyncIO_Instance = 0; /*0x5bf4a0*/
+  }
+  result = g_MissionQueueFrame.localVariables[566]; /*0x5bf4a6*/
+  byte_B45B65 = 0; /*0x5bf4ab*/
+  dword_B45B60 = 0; /*0x5bf4b3*/
+  if ( LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bf4b9*/
+  {
+    AudioTimer::DecrementAll(); /*0x5bf4bb*/
+    ProcessAudioTimer(); /*0x5bf4c0*/
+    ((Mixer *)this)->RequestAllBuffers(); /*0x5bf4c5*/
+    RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerState), 0x4000); 
+    RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)g_MixerChannel_Ambient), 0x4000); 
+    result = ((AudioMixer *)this)->Pump(); /*0x5bf4ea*/
+    LOBYTE(g_MissionQueueFrame.localVariables[566]) = 0; /*0x5bf4ef*/
+  }
+  return result; /*0x5bf4f5*/
+
 }
 } // namespace gamemd
 // 0x774BC0

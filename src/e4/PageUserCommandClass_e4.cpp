@@ -25,7 +25,10 @@
 namespace gamemd {  // G42.18c ns repair
 PageUserCommandClass::PageUserCommandClass()
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x537DD0)
+
+  *(unsigned int *)this->CommandClass =(unsigned int)(&vt_PageUserCommandClass); /*0x537dd2*/
+  return this->CommandClass; /*0x537dd8*/
+
 }
 }  // G42.18c ns repair
 // 0x537DE0
@@ -65,9 +68,13 @@ wchar_t * PageUserCommandClass::Read(void *a1, void *a2)
 }
 }  // G42.18c ns repair
 // 0x537E50
-namespace gamemd {
 char PageUserCommandClass::Do(int a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x537E50)
-}
+
+  char result; // al
+
+  if ( ((unsigned int *)(g_GameMode_Current))[0] == 4 ) /*0x537e57*/
+    return UI_Add(); /*0x537e59*/
+  return result; /*0x537e5e*/
+
 }

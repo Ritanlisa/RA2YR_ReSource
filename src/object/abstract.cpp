@@ -27,12 +27,30 @@ AbstractClass::AbstractClass() noexcept
 
 // IDA: 0x410260 -- vtable[0][0], AbstractClass::QueryInterface
 REVERSE(0x410260, "AbstractClass::QueryInterface: IDA verified", "None")
-// Checks IUnknown / IPersistStream / IPersist / IRTTITypeInfo IIDs
 // 0x410260
-HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x410260)
-}
+HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
+  void **p_vtable1; // ecx
+  AbstractClass *thisa; // [esp+8h] [ebp+4h]
+  const void *iid; // [esp+Ch] [ebp+8h]
+  void **ppv; // [esp+10h] [ebp+Ch]
+
+  if ( !ppv ) /*0x410267*/
+    return -2147467261; /*0x410269*/
+  *ppv = 0; /*0x410286*/
+  if ( !memcmp((const void *)(iid), &IID_IUnknown, 0x10u) ) /*0x410290*/
+    *ppv = thisa; /*0x410294*/
+  if ( !memcmp((const void *)(iid), &IID_IPersistStream, 0x10u) ) /*0x4102a5*/
+    *ppv = thisa; /*0x4102a9*/
+  if ( !memcmp((const void *)(iid), &IID_IPersist, 0x10u) ) /*0x4102b9*/
+    *ppv = thisa; /*0x4102be*/
+  if ( !memcmp((const void *)(iid), &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
+  {
+    if ( thisa ) /*0x4102d6*/
+      p_vtable1 = &thisa->vtable1; /*0x4102d8*/
+    else
+      p_vtable1 = 0; /*0x4102dd*/
+    *ppv = p_vtable1; /*0x4102df*/
+  }
 // IDA: 0x410300 -- vtable[0][1] (COMStub_AddRef)
 ULONG AbstractClass::AddRef() {
     return 1;  // IDA: returns 1 (stub, not tracking ref count)

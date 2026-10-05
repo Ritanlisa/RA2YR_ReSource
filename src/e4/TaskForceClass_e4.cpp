@@ -117,14 +117,94 @@ int TaskForceClass::Construct(char *aP1)
 namespace gamemd {
 AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E8220)
+
+  int result; // eax
+  int v5; // esi
+  int v6; // ebx
+  uint8_t *StringByIndex; // eax
+  int v8; // esi
+  TaskForceClass *v9; // eax
+  unsigned int *v10; // esi
+  int v11; // eax
+  int v12; // [esp+10h] [ebp-1Ch]
+  char Source[24]; // [esp+14h] [ebp-18h] BYREF
+
+  result = (int)(INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces));
+  v5 = result; /*0x6e8235*/
+  v6 = 0; /*0x6e8237*/
+  v12 = result; /*0x6e823b*/
+  if ( result > 0 ) /*0x6e823f*/
+  {
+    while ( 1 ) /*0x6e824d*/
+    {
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, v6); /*0x6e824d*/
+      result = ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 24); /*0x6e8266*/
+      if ( result > 0 ) /*0x6e826d*/
+        break; /*0x6e826d*/
+LABEL_13:
+      if ( ++v6 >= v5 ) /*0x6e832a*/
+        return (gamemd::AbstractClass **)(result); /*0x6e832a*/
+    }
+    if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6e8293*/
+      goto LABEL_11; /*0x6e8293*/
+    v8 = 0; /*0x6e82a4*/
+    if ( dword_A8E8E0 > 0 ) /*0x6e82a8*/
+    {
+      while ( _strcmpi((char *)(*((unsigned int *)dword_A8E8D4 + v8) + 36), Source) ) /*0x6e82c6*/
+      {
+        if ( ++v8 >= dword_A8E8E0 ) /*0x6e82d0*/
+          goto LABEL_8; /*0x6e82d0*/
+      }
+      v10 = (unsigned int *)*((unsigned int *)dword_A8E8D4 + v8); /*0x6e82f9*/
+      goto LABEL_12; /*0x6e82fc*/
+    }
+LABEL_8: v9 = (gamemd::TaskForceClass *)((unsigned int *)((TaskForceClass *)__2_YAPAXI_Z(0xD4u)));
+    if ( v9 ) /*0x6e82e1*/
+      v10 = (unsigned int *)(((TaskForceClass *)(v9))->Construct(Source)); /*0x6e82ef*/
+    else
+LABEL_11:
+      v10 = 0; /*0x6e82fe*/
+LABEL_12:
+    v11 = sub_412610(Source); /*0x6e8300*/
+    SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, v11, (int)v10); /*0x6e8310*/
+    result = (*(int (**)(unsigned int *, INIClass *))(*v10 + 100))(v10, (INIClass *)a1); /*0x6e831a*/
+    v10[40] = a2; /*0x6e831d*/
+    v5 = v12; /*0x6e8323*/
+    goto LABEL_13; /*0x6e8323*/
+  }
+  return (gamemd::AbstractClass **)(result); /*0x6e8330*/
+
 }
 }
 // 0x6E87F0
 namespace gamemd {
 void * TaskForceClass::ExecuteAction(void ** Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E87F0)
+
+  int v3; // eax
+  TaskForceClass *v5; // [esp+4h] [ebp-4h] BYREF
+
+  *(unsigned int *)Block->__pad_0 = &vt_TaskForceClass; /*0x6e87f6*/
+  Block->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e87fc*/
+  *(unsigned int *)Block->__pad_8 = &vt_TaskForceClass; /*0x6e8803*/
+  *(unsigned int *)&Block->__pad_8[4] = &vt_TaskForceClass; /*0x6e880a*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)Block),(int)((gamemd::AbstractClass *)(1))); /*0x6e8811*/
+  v5 = (gamemd::TaskForceClass *)(Block); /*0x6e8826*/
+  v3 = (*(int (**)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))(&dword_A8E8D0, &v5); /*0x6e882a*/
+  if ( v3 != -1 && v3 < dword_A8E8E0 && v3 < --dword_A8E8E0 ) /*0x6e8845*/
+  {
+    do /*0x6e885d*/
+    {
+      ++v3; /*0x6e884d*/
+      *((unsigned int *)dword_A8E8D4 + v3 - 1) = *((unsigned int *)dword_A8E8D4 + v3); /*0x6e8851*/
+    }
+    while ( v3 < dword_A8E8E0 ); /*0x6e885d*/
+  }
+  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x6e8861*/
+  if ( (a2 & 1) != 0 ) /*0x6e886b*/
+    __3_YAXPAX_Z(Block); /*0x6e886e*/
+  return (void **)Block; /*0x6e8878*/
+
 }
 }
 // 0x4C4F90
@@ -142,7 +222,42 @@ int TaskForceClass::Check()
 namespace gamemd {
 char TaskForceClass::GetUnitCount(unsigned char *** aP1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E8420)
+
+  int v3; // edi
+  unsigned int *v4; // eax
+  int v5; // ecx
+  int v6; // eax
+  TaskForceClass v8; // [esp+8h] [ebp-A8h] BYREF
+
+  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x6e8433*/
+  if ( !(uint8_t)((AbstractTypeClass*)((AbstractTypeClass *)this))->LoadFromINI(aP1) ) /*0x6e843b*/
+    return 0; /*0x6e84f7*/
+  v3 = 0; /*0x6e844a*/
+  this->TaskForceClass_field_0x9C[0] = 0; /*0x6e844f*/
+  do /*0x6e84cb*/
+  {
+    sprintf((char *const )(v8.__pad_8), "%d", v3); /*0x6e8460*/
+    if ( ((INIClass*)/*0x6e8486*/
+           (INIClass *)aP1)->GetString(/*0x6e8486*/ (uint8_t *)&this->TaskForceClass_field_0x24, (uint8_t *)v8.__pad_8, &g_INI_DefaultBuffer, v8.__pad_28, 128) > 0 )
+    {
+      v4 = ((TaskForceClass *)(&v8))->ParseUnitCountAndType((char *)(v8.__pad_28)); /*0x6e8491*/
+      v5 = this->TaskForceClass_field_0x9C[0]; /*0x6e8496*/
+      *(unsigned int *)&this->__pad_A0[8 * v5 + 4] = *v4; /*0x6e849e*/
+      *((unsigned int *)this + 2 * v5 + 42) = v4[1]; /*0x6e84a8*/
+      v6 = this->TaskForceClass_field_0x9C[0]; /*0x6e84af*/
+      if ( *((unsigned int *)this + 2 * v6 + 42) ) /*0x6e84b5*/
+        this->TaskForceClass_field_0x9C[0] = v6 + 1; /*0x6e84c1*/
+    }
+    ++v3; /*0x6e84c7*/
+  }
+  while ( v3 < 6 ); /*0x6e84cb*/
+  this->TaskForceClass_field_0x98 =(unsigned int)(AbstractClass *)INIClass::ReadInt_Overwrite( /*0x6e84e2*/
+                                                       (bool *)aP1,
+                                                       (uint8_t *)&this->TaskForceClass_field_0x24,
+                                                       (uint8_t *)g_INI_Key_Group,
+                                                       (int)this->TaskForceClass_field_0x98);
+  return 1; /*0x6e84e9*/
+
 }
 } // namespace gamemd
 
@@ -150,7 +265,40 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
 namespace gamemd {
 char TaskForceClass::GetUnitType(char * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E8510)
+
+  int v3; // esi
+  ObjectTypeClass **p_TaskForceClass_field_0xA4; // ebx
+  char *v5; // eax
+  char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
+
+  if ( !((AbstractTypeClass *)((AbstractTypeClass *)this))->WriteINI(a2) ) /*0x6e851c*/
+    return 0; /*0x6e85a5*/
+  v3 = 0; /*0x6e8527*/
+  p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->TaskForceClass_field_0xA4); /*0x6e8529*/
+  do /*0x6e857d*/
+  {
+    sprintf(Buffer, "%d", v3); /*0x6e853a*/
+    if ( v3 >= this->TaskForceClass_field_0x9C[0] ) /*0x6e854a*/
+    {
+      INIClass::ClearSection((int *)a2, (int)&this->TaskForceClass_field_0x24, (uint8_t *)Buffer); /*0x6e8571*/
+    }
+    else
+    {
+      v5 = (char *)(((TaskForceClass *)((TaskForceClass *)p_TaskForceClass_field_0xA4))->Check()); /*0x6e854e*/
+      INIClass::SetString(a2, (uint8_t *)&this->TaskForceClass_field_0x24, Buffer, v5); /*0x6e855f*/
+    }
+    ++v3; /*0x6e8576*/
+    p_TaskForceClass_field_0xA4 += 2; /*0x6e8577*/
+  }
+  while ( v3 < 6 ); /*0x6e857d*/
+  INIClass::SetInt( /*0x6e8593*/
+    a2,
+    (uint8_t *)&this->TaskForceClass_field_0x24,
+    g_INI_Key_Group,
+    (int)this->TaskForceClass_field_0x98,
+    0);
+  return 1; /*0x6e859a*/
+
 }
 } // namespace gamemd
 

@@ -15,9 +15,17 @@
 
 // 0x7AC630
 namespace gamemd {
-void * DynamicVector::Constructor_WonlineStringDialogControl(DialogControl_OwnerDraw * Block, char a2)
+void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(DialogControl_OwnerDraw * Block, char a2)
 {
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x007AC630.json)
+
+  Block->m_0 = (int)&vt_WonlineStringDialogControl; /*0x7ac636*/
+  DeleteAndZero((ObjectClass *)&Block->__pad_9[3]); /*0x7ac63c*/
+  Block->m_0 = (int)&off_7F7624; /*0x7ac643*/
+  ((OwnerDrawControl *)((OwnerDrawControl *)Block))->InitVtable(); /*0x7ac649*/
+  if ( (a2 & 1) != 0 ) /*0x7ac653*/
+    __3_YAXPAX_Z(Block); /*0x7ac656*/
+  return (void **)Block; /*0x7ac660*/
+
 }
 }
 // 0x7AD690
@@ -325,7 +333,22 @@ int WonlineStringDialogControl_12::FindItem(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7AD370)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x7ad373*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x7ad376*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x7ad380*/
+  {
+    __3_YAXPAX_Z(v3); /*0x7ad388*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x7ad390*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x7ad39b*/
+  Block->m_8 = 0; /*0x7ad3a1*/
+  if ( (a2 & 1) != 0 ) /*0x7ad3a8*/
+    __3_YAXPAX_Z(Block); /*0x7ad3ab*/
+  return Block->__pad_0; /*0x7ad3b5*/
+
 }
 } // namespace gamemd
 
@@ -333,7 +356,22 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(unsigned int * 
 namespace gamemd {
 DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfoStruct___(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7AD3C0)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x7ad3c3*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x7ad3c6*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x7ad3d0*/
+  {
+    __3_YAXPAX_Z(v3); /*0x7ad3d8*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x7ad3e0*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x7ad3eb*/
+  Block->m_8 = 0; /*0x7ad3f1*/
+  if ( (a2 & 1) != 0 ) /*0x7ad3f8*/
+    __3_YAXPAX_Z(Block); /*0x7ad3fb*/
+  return Block->__pad_0; /*0x7ad405*/
+
 }
 } // namespace gamemd
 
@@ -355,7 +393,14 @@ int WonlineStringDialogControl_28::ddtor(int a1)
 namespace gamemd {
 int WonlineStringDialogControl_28::Read(int a1, LPARAM lParam)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7AD460)
+
+  HWND Current; // eax
+  LPARAM lParama; // [esp+8h] [ebp+8h]
+
+  Current = (HWND)((gamemd::Dialog *)this)->GetCurrent(); /*0x7ad46c*/
+  SendMessageA(Current, 0x5F5u, 0, lParama); /*0x7ad472*/
+  return 0; /*0x7ad47a*/
+
 }
 } // namespace gamemd
 
@@ -363,7 +408,37 @@ int WonlineStringDialogControl_28::Read(int a1, LPARAM lParam)
 namespace gamemd {
 int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int a3, int a4, int a5)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7AD480)
+
+  HWND Current; // eax
+  wchar_t *v6; // eax
+  wchar_t *StringCSF; // eax
+  HWND v8; // eax
+  HWND DlgItem; // eax
+  wchar_t Buffer[200]; // [esp+8h] [ebp-190h] BYREF
+  int v12; // [esp+1ACh] [ebp+14h]
+
+  Buffer[0] = 0; /*0x7ad49d*/
+  Current = (HWND)((gamemd::Dialog *)this)->GetCurrent(); /*0x7ad4b7*/
+  SendDlgItemMessageA(Current, 1478, 0x402u, 100 * a3 / a4, 0); /*0x7ad4bd*/
+  if ( v12 <= 0 ) /*0x7ad4cc*/
+  {
+    StringCSF = GetStringCSF((wchar_t *)(aTxtBytesWoTime), 0,(const char *)(g_Str_File_wonline_cpp), 5172); /*0x7ad50a*/
+    swprintf(Buffer, (const size_t)StringCSF, (const wchar_t *const)a3, a4); /*0x7ad515*/
+  }
+  else
+  {
+    v6 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtBytesWTime), 0,(const char *)(g_Str_File_wonline_cpp), 5167));
+    swprintf(Buffer, (const size_t)v6, (const wchar_t *const)a3, a4, v12); /*0x7ad4ed*/
+  }
+  if ( time(0) != dword_B77EA8 ) /*0x7ad52d*/
+  {
+    v8 = (HWND)((gamemd::Dialog *)this)->GetCurrent(); /*0x7ad538*/
+    DlgItem = GetDlgItem(v8, 1480); /*0x7ad53e*/
+    SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad551*/
+    dword_B77EA8 = time(0); /*0x7ad561*/
+  }
+  return 0; /*0x7ad52f*/
+
 }
 } // namespace gamemd
 
@@ -371,7 +446,30 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
 namespace gamemd {
 int WonlineStringDialogControl_28::Draw(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7AD580)
+
+  HWND Current; // eax
+  HWND DlgItem; // eax
+  wchar_t *v5; // [esp-4h] [ebp-194h]
+  wchar_t *StringCSF; // [esp-4h] [ebp-194h]
+  wchar_t Buffer[200]; // [esp+0h] [ebp-190h] BYREF
+  int v8; // [esp+198h] [ebp+8h]
+
+  Buffer[0] = 0; /*0x7ad58d*/
+  if ( v8 == 2 ) /*0x7ad597*/
+  {
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtConnecting), 0,(const char *)(g_Str_File_wonline_cpp), 5191));
+    swprintf(Buffer, (const size_t)StringCSF, *(const wchar_t *const *)Buffer); /*0x7ad5d8*/
+  }
+  else if ( v8 == 4 ) /*0x7ad59c*/
+  {
+    v5 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtFindingPatc), 0,(const char *)(g_Str_File_wonline_cpp), 5195)); /*0x7ad5b4*/
+    swprintf(Buffer, (const size_t)v5, *(const wchar_t *const *)Buffer); /*0x7ad5ba*/
+  }
+  Current = (HWND)Dialog::GetCurrent(); /*0x7ad5e5*/
+  DlgItem = GetDlgItem(Current, 1480); /*0x7ad5eb*/
+  SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad5fe*/
+  return 0; /*0x7ad606*/
+
 }
 } // namespace gamemd
 
@@ -389,14 +487,32 @@ int WonlineStringDialogControl_28::StubReturnFalse(int a1)
 namespace gamemd {
 LONG WonlineStringDialogControl_28::AddRef(int a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7AD620)
+
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x7ad62e*/
+
 }
 } // namespace gamemd
 
 // 0x7AD640
 namespace gamemd {
-LONG Release(char * Block)
+LONG WonlineStringDialogControl_28::Release(char * Block)
 {
-    (void)Block; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x007AD640.json)
+
+  LONG v1; // ebx
+  char *Block; // [esp+14h] [ebp+4h]
+
+  v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ad654*/
+  if ( !v1 && Block ) /*0x7ad65c*/
+  {
+    *(unsigned int *)Block = (unsigned int)(&vt_ATLCComObject); /*0x7ad663*/
+    *((unsigned int *)Block + 1) = 1; /*0x7ad669*/
+    InterlockedDecrement(&Addend); /*0x7ad66f*/
+    DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ad675*/
+    __3_YAXPAX_Z(Block); /*0x7ad67c*/
+  }
+  return v1; /*0x7ad684*/
+
 }
 } // namespace gamemd

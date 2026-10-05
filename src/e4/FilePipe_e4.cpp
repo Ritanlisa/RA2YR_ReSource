@@ -13,9 +13,114 @@
 
 // 0x478340
 namespace gamemd {
-char * VectorClass_flat::Release(int a2, char * a3)
+AbstractClass * * FilePipe_38::Release(int a2, char * a3)
 {
-    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00478340.json)
+
+  int v3; // ebp
+  char *v5; // edi
+  int v6; // eax
+  unsigned char *v7; // ecx
+  int v8; // edx
+  char *v9; // eax
+  int v10; // ecx
+  int m_8; // ecx
+  int v13; // eax
+  int v14; // edx
+  char *v15; // ebx
+
+  v3 = a2; /*0x478342*/
+  if ( a2 ) /*0x47834e*/
+  {
+    v5 = a3; /*0x478354*/
+    LOBYTE(this->m_C) = 0; /*0x478358*/
+    if ( a3 ) /*0x47835d*/
+    {
+      if ( a2 - 1 >= 0 ) /*0x478396*/
+      {
+        v9 = a3 + 2; /*0x478398*/
+        v10 = a2; /*0x47839b*/
+        do /*0x4783a8*/
+        {
+          *(v9 - 2) = 0; /*0x47839c*/
+          *(v9 - 1) = 0; /*0x47839f*/
+          *v9 = 0; /*0x4783a2*/
+          v9 += 3; /*0x4783a4*/
+          --v10; /*0x4783a7*/
+        }
+        while ( v10 ); /*0x4783a8*/
+      }
+    }
+    else
+    {
+      v6 = (int)(__2_YAPAXI_Z(3 * a2)); /*0x478364*/
+      if ( v6 ) /*0x47836e*/
+      {
+        if ( a2 - 1 >= 0 ) /*0x478375*/
+        {
+          v7 = (unsigned char *)(v6 + 2); /*0x478377*/
+          v8 = a2; /*0x47837a*/
+          do /*0x478387*/
+          {
+            *(v7 - 2) = 0; /*0x47837b*/
+            *(v7 - 1) = 0; /*0x47837e*/
+            *v7 = 0; /*0x478381*/
+            v7 += 3; /*0x478383*/
+            --v8; /*0x478386*/
+          }
+          while ( v8 ); /*0x478387*/
+        }
+        v5 = (char *)v6; /*0x478389*/
+      }
+      else
+      {
+        v5 = 0; /*0x47838d*/
+      }
+    }
+    LOBYTE(this->m_C) = 1; /*0x4783ac*/
+    if ( v5 ) /*0x4783b0*/
+    {
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x4783bb*/
+      {
+        m_8 = this->m_8; /*0x4783c0*/
+        if ( a2 < m_8 ) /*0x4783c5*/
+          m_8 = a2; /*0x4783c7*/
+        if ( m_8 > 0 ) /*0x4783cb*/
+        {
+          v13 = 0; /*0x4783cd*/
+          do /*0x4783e9*/
+          {
+            v14 = *(unsigned int *)&this->m_1[3] + v13; /*0x4783d4*/
+            v15 = &v5[v13]; /*0x4783d6*/
+            v13 += 3; /*0x4783d9*/
+            --m_8; /*0x4783dc*/
+            *(unsigned short *)v15 = *(unsigned short *)v14; /*0x4783e0*/
+            v15[2] = *(unsigned char *)(v14 + 2); /*0x4783e6*/
+          }
+          while ( m_8 ); /*0x4783e9*/
+          v3 = a2; /*0x4783eb*/
+        }
+        if ( BYTE1(this->m_C) ) /*0x4783f1*/
+        {
+          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4783fa*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x478402*/
+        }
+      }
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v5); /*0x47840d*/
+      this->m_8 = v3; /*0x478413*/
+      BYTE1(this->m_C) = a3 == 0; /*0x478416*/
+      return (gamemd::AbstractClass **)(1); /*0x47841c*/
+    }
+    else
+    {
+      return 0; /*0x4783b5*/
+    }
+  }
+  else
+  {
+    (*(void (**)(_VectorClass_VRGBClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x478426*/
+    return (gamemd::AbstractClass **)(1); /*0x47842c*/
+  }
+
 }
 }
 // 0x4778A0

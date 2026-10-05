@@ -401,11 +401,524 @@ int TacticalClass::initTacticalMap(void* a1, void* a2) {
 
 // 0x4722C0
 namespace gamemd { 
-bool CellClass::HasContent()
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4722C0)
+BOOL CellClass::HasContent() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x4722C0.json */
 }
 }
+
+// 0x4733A0
+namespace gamemd { 
+void CellClass::AddObject(void* aP1) {
+}
+}
+
+// 0x4739F0
+namespace gamemd { 
+void* RawFileClass::Construct(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x473A30
+namespace gamemd { 
+void* CCFileClass::Construct2(void* a1) {
+  return nullptr;  /* G42.33b2 restub: R2 param splice; truth func_0x00473A30.json */
+}
+}
+
+// 0x473A80
+namespace gamemd { 
+int CCFileClass::Construct3() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 6 errs): wrong-universe gap2 body; truth func_0x473A80.json */
+}
+}
+
+// 0x473AB0
+namespace gamemd { 
+int CCFileClass::Destru_vt16(int a2, int a3, int a4) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x473AB0.json */
+}
+}
+
+// 0x473B10
+namespace gamemd { 
+int CCFileClass::Read() {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x473BA0
+namespace gamemd { 
+int BufferIOFileClass::Seek() {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x473C00
+namespace gamemd { 
+int CCFileClass::GetSize() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x473C00.json */
+}
+}
+
+// 0x473CD0
+namespace gamemd { 
+bool CCFileClass::Destru_vt06() {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x473CD0.json */
+}
+}
+
+// 0x473D10
+namespace gamemd { 
+int ScenarioClass::Load(int a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x473E50
+namespace gamemd { 
+int CCFileClass::Destru_vt14() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 9 errs): wrong-universe gap2 body; truth func_0x473E50.json */
+}
+}
+
+// 0x473F00
+namespace gamemd { 
+int CCFileClass::Destru_vt15(int wFatTime) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 6 errs): wrong-universe gap2 body; truth func_0x473F00.json */
+}
+}
+
+// 0x474320
+namespace gamemd { 
+int CCINIClass::LoadAndVerifyDigest(int a1, int a2, int a3) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x474430
+namespace gamemd { 
+int INIClass::WriteDigest(int a1, int a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x4748A0
+namespace gamemd { 
+int INIClass::GetPipIdx(void* a1, void* a2, int a3) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x474B50
+namespace gamemd { 
+int INIClass::GetCoord(int a1, void* a2, void* a3, void* a4) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x474C20
+namespace gamemd { 
+int INIEntry::Write3Bytes(void* a1, void* a2, void* a3) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x474C70
+namespace gamemd { 
+int INIEntry::ReadColor(int a1, void* a2, void* a3, void* a4) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x474DA0
+namespace gamemd { 
+int INIClass::LookupEnum(void* a1, void* a2, int a3) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x4750D0
+namespace gamemd { 
+int INIClass::ParseFlagList(void* a1, void* a2, int a3) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x475610
+namespace gamemd { 
+int INIClass::SetHouseName(void* aP1, void* a2, void* aP3) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x475610.json */
+}
+}
+
+// 0x475820
+namespace gamemd { 
+int INIClass::SetStringByIndex(void* a1, void* a2, int a3) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x475870
+namespace gamemd { 
+int ScenarioClass::ReadAndParseString(void* a1, void* a2, int a3) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x475950
+namespace gamemd { 
+int ScenarioClass::loadMapData(void* a1, void* a2, int a3) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x4759F0
+namespace gamemd { 
+int INIClass::ReadStringValue(void* a1, void* a2, int a3) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x475D70
+namespace gamemd { 
+int INIClass::ReadIntList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x475F30
+namespace gamemd { 
+int ScenarioClass::SaveIntListToINI(void* a1, void* a2, int a3) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x476020
+namespace gamemd { 
+int INIClass::ReadExitCellList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x476420
+namespace gamemd { 
+void* INIClass::GetCoord2(void* a1, void* a2, void* a3, void* a4) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x4764F0
+namespace gamemd { 
+int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x4766F0
+namespace gamemd { 
+int ScenarioClass::SaveTypeNameListToINI(void* a1, void* a2, int a3) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x4767C0
+namespace gamemd { 
+void* INIClass::ReadSuperWeaponTypeList(void* a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x476A20
+namespace gamemd { 
+int INIClass::WriteSuperWeaponList(void* a2, void* a3, int a4, void* Block, int a6, int a7, int a8, int a9, int a10) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 4 errs): wrong-universe gap2 body; truth func_0x476A20.json */
+}
+}
+
+// 0x476B20
+namespace gamemd { 
+int INIClass::ReadRGBColorList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x477640
+namespace gamemd { 
+int INIEntry::ReadAbilities(int a1, void* a2, void* a3, int a4) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x4787E0
+namespace gamemd { 
+void* INIClass::writeSection(void* a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x4790E0
+namespace gamemd { 
+int CD::AlwaysAvailable(int a2) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x4790E0.json */
+}
+}
+
+// 0x479110
+namespace gamemd { 
+bool CD::NeverAsk(int a2) {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 13 errs): wrong-universe gap2 body; truth func_0x479110.json */
+}
+}
+
+// 0x47AAB0
+namespace gamemd { 
+bool FileClass::OpenFileBufferIO() {
+  return false;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x47ADA0
+namespace gamemd { 
+int CD::SetCurrentInstance() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x47ADA0.json */
+}
+}
+
+// 0x47AE10
+namespace gamemd { 
+int FileClass::OpenWithCDSearch(void* a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x47AF10
+namespace gamemd { 
+int CCFileClass::Reopen(void* a1, int a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x47AF70
+namespace gamemd { 
+int FileClass::FindFirstWithCD() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 8 errs): wrong-universe gap2 body; truth func_0x47AF70.json */
+}
+}
+
+// 0x47BB60
+namespace gamemd { 
+void CellClass::DTOR() {
+}
+}
+
+// 0x47BBF0
+namespace gamemd { 
+void* CellClass::Construct() {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 16 errs): wrong-universe gap2 body; truth func_0x47BBF0.json */
+}
+}
+
+// 0x47C550
+namespace gamemd { 
+void* CellClass::FindInfantry(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x47C620
+namespace gamemd { 
+int CellClass::IsPassable(int aP1, int aP2, int aP3) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 16 errs): wrong-universe gap2 body; truth func_0x47C620.json */
+}
+}
+
+// 0x47CA80
+namespace gamemd { 
+bool CellClass::DetermineTileType() {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 18 errs): wrong-universe gap2 body; truth func_0x47CA80.json */
+}
+}
+
+// 0x47DD70
+namespace gamemd { 
+void CellClass::UpdateAnimations() {
+}
+}
+
+// 0x47EBA0
+namespace gamemd { 
+void* CellClass::FindBuilding(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x480A30
+namespace gamemd { 
+void* CellClass::GetCoords(void* a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x4814F0
+namespace gamemd { 
+int CellClass::InitRandomOffsets(int a1, int a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x481870
+namespace gamemd { 
+int CellClass::SetThreatBounds(int aP1, int a3) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 10 errs): wrong-universe gap2 body; truth func_0x481870.json */
+}
+}
+
+// 0x483480
+namespace gamemd { 
+int CellClass::DamageAllObjects() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x483480.json */
+}
+}
+
+// 0x483780
+namespace gamemd { 
+int CellClass::SpawnTiberiumTree(int a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x4839F0
+namespace gamemd { 
+int CellClass::SaveLoad_Prefix() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x4839F0.json */
+}
+}
+
+// 0x483C10
+namespace gamemd { 
+int CellClass::SaveLoad_Prefix_0() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x483C10.json */
+}
+}
+
+// 0x485200
+namespace gamemd { 
+int CellClass::ddtor() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x485200.json */
+}
+}
+
+// 0x485390
+namespace gamemd { 
+int CellClass::GetBridgeBitfield() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x485390.json */
+}
+}
+
+// 0x485590
+namespace gamemd { 
+void CellClass::ProcessBridgeRepair() {
+}
+}
+
+// 0x4865B0
+namespace gamemd { 
+bool CellClass::IsTerrainType() {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x4865B0.json */
+}
+}
+
+// 0x486650
+namespace gamemd { 
+bool CellClass::InMapDataRange() {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x486650.json */
+}
+}
+
+// 0x486670
+namespace gamemd { 
+bool CellClass::InBounds() {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x486670.json */
+}
+}
+
+// 0x4867E0
+namespace gamemd { 
+int CellClass::GetCellType() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x4867E0.json */
+}
+}
+
+// 0x486840
+namespace gamemd { 
+int CellClass::GetOccupier() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x486840.json */
+}
+}
+
+// 0x486890
+namespace gamemd { 
+int CellClass::CheckProperty() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x486890.json */
+}
+}
+
+// 0x486900
+namespace gamemd { 
+bool CellClass::IsActiveOrNext() {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x486900.json */
+}
+}
+
+// 0x486A70
+namespace gamemd { 
+int CellClass::CreateFoggedObjects() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 12 errs): wrong-universe gap2 body; truth func_0x486A70.json */
+}
+}
+
+// 0x486BF0
+namespace gamemd { 
+void* CellClass::UpdateZone() {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x486BF0.json */
+}
+}
+
+// 0x486C50
+namespace gamemd { 
+int CellClass::ClearCellContents() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x486C50.json */
+}
+}
+
+// 0x487190
+namespace gamemd { 
+int Crate::FindPlacement(int a1, int a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x487CE0
+namespace gamemd { 
+void CellClass::RadLevel_Increase(double a2) {
+
+  *((unsigned int *)this + 30) = a2 + *((unsigned int *)this + 30); /*0x487cea*/
+
+}
+}
+// 0x487D00
+namespace gamemd { 
+void CellClass::RadLevel_Decrease(double a2) {
+
+  double v2; // st7
+
+  v2 = *(double *)((char *)this + 240) - a2; /*0x487d06*/
+  *(double *)((char *)this + 240) = v2; /*0x487d0a*/
+  if ( v2 >= 0.0 ) /*0x487d1d*/
+  {
+    *(double *)((char *)this + 240) = v2; /*0x487d38*/
+  }
 
 // 0x4733A0
 namespace gamemd { 
@@ -1510,9 +2023,8 @@ int LayerClass::Save(void* a1) {
 
 // 0x551B90
 namespace gamemd { 
-int LayerClass::Load(unsigned int * a2)
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x551B90)
+int LayerClass::Load(unsigned int * a2) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 13 errs): wrong-universe gap2 body; truth func_0x551B90.json */
 }
 }
 
@@ -1539,11 +2051,50 @@ int LightConvertClass::Constructor(int a1, int a2, int a3, int a4, int a5, int a
 
 // 0x556B30
 namespace gamemd { 
-int TacticalClass::GetField()
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x556B30)
+int TacticalClass::GetField() {
+
+  int result; // eax
+
+  result = (int)((unsigned int *)this)[0]; /*0x556b30*/
+  if ( result ) /*0x556b37*/
+  {
+    *(unsigned int *)(result + 168) = 0; /*0x556b39*/
+    ((unsigned int *)this)[0] = 0; /*0x556b3f*/
+  }
+
+// 0x554AA0
+namespace gamemd { 
+int TacticalClass::UpdateScrollTarget(int a1, int a2, int a3, int a4, int a5) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
 }
 }
+
+// 0x554AF0
+namespace gamemd { 
+int TacticalClass::ScrollView(int a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x555DA0
+namespace gamemd { 
+int LightConvertClass::Constructor(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x556B30
+namespace gamemd { 
+int TacticalClass::GetField() {
+
+  int result; // eax
+
+  result = (int)((unsigned int *)this)[0]; /*0x556b30*/
+  if ( result ) /*0x556b37*/
+  {
+    result->TacticalClass_field_A8 = 0; /*0x556b39*/
+    ((unsigned int *)this)[0] = 0; /*0x556b3f*/
+  }
 // 0x55AF40
 namespace gamemd { 
 void RadarClass::SetGlobal() {
@@ -1947,16 +2498,26 @@ int CellClass::SetOccupancy() {
 
 // 0x5C0A70
 namespace gamemd { 
-void TacticalClass::ClearVector()
-{
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C0A70)
-}
-}
+void TacticalClass::ClearVector() {
+
+  void *v2; // eax
+
+  v2 = *(void **)((char *)this + 4); /*0x5c0a76*/
+  this->uniqueId = 0; /*0x5c0a79*/
+  if ( v2 && this->q00D ) /*0x5c0a80*/
+  {
+    delete v2; /*0x5c0a86*/
+    this->q004 = 0; /*0x5c0a8e*/
+  }
 // 0x5C0AA0
 namespace gamemd { 
-int TacticalClass::ProbeCalling(int a2)
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C0AA0)
+int TacticalClass::ProbeCalling(int a2) {
+
+  if ( this->q00C ) /*0x5c0aa0*/
+    return (unsigned int)(a2 - this->q004) >> 2; /*0x5c0ab5*/
+  else
+    return 0; /*0x5c0aa7*/
+
 }
 }
 // 0x5C0C50
@@ -2035,23 +2596,148 @@ int ScenarioClass::AssignStartingPoints(int a1) {
 
 // 0x5D80E0
 namespace gamemd { 
-int ScenarioClass::deallocateCells(int a2)
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D80E0)
+int ScenarioClass::deallocateCells(int a2) {
+
+  if ( this->q00C ) /*0x5d80e0*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x5d80f5*/
+  else
+    return 0; /*0x5d80e7*/
+
 }
 }
 // 0x5D8110
 namespace gamemd { 
-void ScenarioClass::resetScenarioData()
-{
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D8110)
+void ScenarioClass::resetScenarioData() {
+
+  void *v2; // eax
+
+  v2 = *(void **)((char *)this + 4); /*0x5d8116*/
+  this->q010 = 0; /*0x5d8119*/
+  if ( v2 && this->IsAllocated ) /*0x5d8120*/
+  {
+    delete v2; /*0x5d8126*/
+    this->Items = 0; /*0x5d812e*/
+  }
+// 0x5C0C50
+namespace gamemd { 
+int TacticalClass::ReallocVector(int a1, void* a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
 }
 }
+
+// 0x5C0D00
+namespace gamemd { 
+int TacticalClass::FindInVector(void* a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x5C5E40
+namespace gamemd { 
+void* ScenarioClass::executeTriggerActions(int a2) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x5C5E40.json */
+}
+}
+
+// 0x5CBDA0
+namespace gamemd { 
+int ScenarioClass::AdvanceSHPAnimationFrame(void* a1, void* a2) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x5CBDA0.json */
+}
+}
+
+// 0x5CC110
+namespace gamemd { 
+void ScenarioClass::DrawConstructionFrame(int a1, void* a2) {
+}
+}
+
+// 0x5CC550
+namespace gamemd { 
+void ScenarioClass::DrawPlacementPreview(int a1, void* a2) {
+}
+}
+
+// 0x5CC6C0
+namespace gamemd { 
+void ScenarioClass::DrawSHPFrameToSurface(int a2) {
+}
+}
+
+// 0x5CC740
+namespace gamemd { 
+bool ScenarioClass::updateTiberiumGrowth() {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x5CC740.json */
+}
+}
+
+// 0x5CEC20
+namespace gamemd { 
+void* ScenarioClass::processCrates(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x5D4AD0
+namespace gamemd { 
+int TacticalClass::processInput(int a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x5D6C70
+namespace gamemd { 
+int ScenarioClass::AssignStartingPoints(int a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x5D80E0
+namespace gamemd { 
+int ScenarioClass::deallocateCells(int a2) {
+
+  if ( this->q00C ) /*0x5d80e0*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x5d80f5*/
+  else
+    return 0; /*0x5d80e7*/
+
+}
+}
+// 0x5D8110
+namespace gamemd { 
+void ScenarioClass::resetScenarioData() {
+
+  void *v2; // eax
+
+  v2 = *(void **)((char *)this + 4); /*0x5d8116*/
+  this->q010 = 0; /*0x5d8119*/
+  if ( v2 && this->IsAllocated ) /*0x5d8120*/
+  {
+    delete v2; /*0x5d8126*/
+    this->Items = 0; /*0x5d812e*/
+  }
+// 0x5D8110
+namespace gamemd { 
+void ScenarioClass::resetScenarioData() {
+
+  void *v2; // eax
+
+  v2 = *(void **)((char *)this + 4); /*0x5d8116*/
+  this->q010 = 0; /*0x5d8119*/
+  if ( v2 && this->IsAllocated ) /*0x5d8120*/
+  {
+    delete v2; /*0x5d8126*/
+    this->Items = 0; /*0x5d812e*/
+  }
 // 0x5D8140
 namespace gamemd { 
-int ScenarioClass::validateMap(int a2)
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D8140)
+int ScenarioClass::validateMap(int a2) {
+
+  if ( this->q00C ) /*0x5d8140*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x5d8155*/
+  else
+    return 0; /*0x5d8147*/
+
 }
 }
 // 0x5D8550
@@ -2070,9 +2756,542 @@ int ScenarioClass::initLocalVariables(void* a1) {
 
 // 0x5D86B0
 namespace gamemd { 
-int ScenarioClass::setGameSpeed(int a2)
+int ScenarioClass::setGameSpeed(int a2) {
+
+  if ( this->q00C ) /*0x5d86b0*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x5d86c5*/
+  else
+    return 0; /*0x5d86b7*/
+
+}
+}
+// 0x5D87E0
+namespace gamemd { 
+int ScenarioClass::distributeStartingUnits(void* a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x5D8FD0
+namespace gamemd { 
+void CCFileClass::WriteINIString() {
+}
+}
+
+// 0x5F1EE0
+namespace gamemd { 
+int CellClass::GetBridgeIndexThunk() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x5F1EE0.json */
+}
+}
+
+// 0x5FAD10
+namespace gamemd { 
+int ScenarioClass::SaveGameOptions() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 34 errs): wrong-universe gap2 body; truth func_0x5FAD10.json */
+}
+}
+
+// 0x623CD0
+namespace gamemd { 
+bool CD::CreateDialog() {
+  return false;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x626370
+namespace gamemd { 
+void FileSystem::mountDrive() {
+}
+}
+
+// 0x6267A0
+namespace gamemd { 
+void FileSystem::InitExtensionState() {
+}
+}
+
+// 0x627170
+namespace gamemd { 
+void* FileSystem::findFile() {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 8 errs): wrong-universe gap2 body; truth func_0x627170.json */
+}
+}
+
+// 0x6272A0
+namespace gamemd { 
+void FileSystem::FlushTempFiles() {
+}
+}
+
+// 0x628110
+namespace gamemd { 
+void* FileSystem::openFile(int () {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 22 errs): wrong-universe gap2 body; truth func_0x628110.json */
+}
+}
+
+// 0x628170
+namespace gamemd { 
+void* FileSystem::closeFile(int * a2) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x628170.json */
+}
+}
+
+// 0x628740
+namespace gamemd { 
+int FileSystem::readFile() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x628740.json */
+}
+}
+
+// 0x628ED0
+namespace gamemd { 
+void* FileSystem::writeFile(int a1, void* a2) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x62E650
+namespace gamemd { 
+void ScenarioClass::DestroyAndClearVector() {
+}
+}
+
+// 0x631E30
+namespace gamemd { 
+void* TacticalClass::saveConfig(int a2) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x631E30.json */
+}
+}
+
+// 0x633B90
+namespace gamemd { 
+void* ScenarioClass::GetActionCoordsCopy(void* a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x635120
+namespace gamemd { 
+int FactoryClass::ClearObjects() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x635120.json */
+}
+}
+
+// 0x635350
+namespace gamemd { 
+int ScenarioClass::RenderAction(int a2) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x635350.json */
+}
+}
+
+// 0x635F80
+namespace gamemd { 
+void FactoryClass::FindAvailable() {
+}
+}
+
+// 0x636590
+namespace gamemd { 
+int FactoryClass::CompleteCurrentItem(int a2) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 17 errs): wrong-universe gap2 body; truth func_0x636590.json */
+}
+}
+
+// 0x63D9C0
+namespace gamemd { 
+void* FactoryClass::RemoveFromArrays(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x63DFD0
+namespace gamemd { 
+int FactoryClass::RemoveItemAt(int a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x63F000
+namespace gamemd { 
+int FactoryClass::RemoveItem(int a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x63F6B0
+namespace gamemd { 
+int RadarClass::Create() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x63F6B0.json */
+}
+}
+
+// 0x652960
+namespace gamemd { 
+void* RadarClass::Construct() {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 32 errs): wrong-universe gap2 body; truth func_0x652960.json */
+}
+}
+
+// 0x652CF0
+namespace gamemd { 
+int RadarClass::Destru_vt05() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 15 errs): wrong-universe gap2 body; truth func_0x652CF0.json */
+}
+}
+
+// 0x652DE0
+namespace gamemd { 
+void RadarClass::Destru_vt07() {
+}
+}
+
+// 0x652E90
+namespace gamemd { 
+int RadarClass::Destru_vt53() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 14 errs): wrong-universe gap2 body; truth func_0x652E90.json */
+}
+}
+
+// 0x653100
+namespace gamemd { 
+int RadarClass::Destru_vt16(int a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x654320
+namespace gamemd { 
+int RadarClass::Destru_vt34() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 26 errs): wrong-universe gap2 body; truth func_0x654320.json */
+}
+}
+
+// 0x654EA0
+namespace gamemd { 
+int RadarClass::UpdateBlips(int a1, void* a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x655990
+namespace gamemd { 
+int RadarClass::Process() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 19 errs): wrong-universe gap2 body; truth func_0x655990.json */
+}
+}
+
+// 0x655A90
+namespace gamemd { 
+void TacticalClass::FreeResources() {
+}
+}
+
+// 0x655B20
+namespace gamemd { 
+void RadarClass::InitializeHashTable() {
+}
+}
+
+// 0x6563B0
+namespace gamemd { 
+int RadarClass::UpdateFoundationShapesCustom() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 9 errs): wrong-universe gap2 body; truth func_0x6563B0.json */
+}
+}
+
+// 0x6565A0
+namespace gamemd { 
+void CellClass::RevealFogRect(void* a1) {
+}
+}
+
+// 0x656BE0
+namespace gamemd { 
+void RadarClass::Toggle(int a1, int a2) {
+}
+}
+
+// 0x656CB0
+namespace gamemd { 
+int RadarClass::SetViewMode(int a1, int a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x656E50
+namespace gamemd { 
+int RadarClass::IsActiveMode() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x656E50.json */
+}
+}
+
+// 0x656E90
+namespace gamemd { 
+bool RadarClass::SetFlag() {
+  return false;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x6578F0
+namespace gamemd { 
+void TacticalClass::ProcessChronoEffect() {
+}
+}
+
+// 0x658770
+namespace gamemd { 
+void* RadarClass::Destru_vt33(int a2) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x658770.json */
+}
+}
+
+// 0x6587A0
+namespace gamemd { 
+void* RadarClass::Destru_vt04(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x65ACE0
+namespace gamemd { 
+int TacticalClass::UpdateObjects() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x65ACE0.json */
+}
+}
+
+// 0x65CA80
+namespace gamemd { 
+void* RawFileClass::Construct(RawFileClass * aP1) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 14 errs): wrong-universe gap2 body; truth func_0x65CA80.json */
+}
+}
+
+// 0x65CAC0
+namespace gamemd { 
+void* FileClass::SetName(char * Source) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 11 errs): wrong-universe gap2 body; truth func_0x65CAC0.json */
+}
+}
+
+// 0x65CB50
+namespace gamemd { 
+int FileClass::Open2(const CHAR *a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x65CCA0
+namespace gamemd { 
+int FileClass::CloseHandle() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x65CCA0.json */
+}
+}
+
+// 0x65CDD0
+namespace gamemd { 
+int FileClass::Write2(LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x65D1F0
+namespace gamemd { 
+int FileClass::GetDosTimestamp() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x65D1F0.json */
+}
+}
+
+// 0x65D240
+namespace gamemd { 
+bool FileClass::SetTime(int wFatTime) {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x65D240.json */
+}
+}
+
+// 0x65D2B0
+namespace gamemd { 
+void FileClass::GetFileSizeOp(int a1, int a2) {
+}
+}
+
+// 0x65D3A0
+namespace gamemd { 
+void* RawFileClass::QueryInterface(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x65D420
+namespace gamemd { 
+bool RawFileClass::Write() {
+
+  return *(unsigned int *)this->FileTimeDateLo != -1; /*0x65d42b*/
+
+}
+}
+// 0x65F520
+namespace gamemd { 
+int ScenarioClass::ShowMissionBriefing() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 34 errs): wrong-universe gap2 body; truth func_0x65F520.json */
+}
+}
+
+// 0x66D270
+namespace gamemd { 
+int INIClass::ReadDifficultyModifiers() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 22 errs): wrong-universe gap2 body; truth func_0x66D270.json */
+}
+}
+
+// 0x672360
+namespace gamemd { 
+int CCINIClass::LoadBuildingTypes() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x672360.json */
+}
+}
+
+// 0x6726D0
+namespace gamemd { 
+int CCINIClass::LoadTypeList() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x6726D0.json */
+}
+}
+
+// 0x6727D0
+namespace gamemd { 
+int FactoryClass::LoadType() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 6 errs): wrong-universe gap2 body; truth func_0x6727D0.json */
+}
+}
+
+// 0x672920
+namespace gamemd { 
+int CCINIClass::LoadUnitTypes() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x672920.json */
+}
+}
+
+// 0x672A70
+namespace gamemd { 
+int CCINIClass::ReadBuildingSettings() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x672A70.json */
+}
+}
+
+// 0x679F40
+namespace gamemd { 
+bool INIEntry::Exists() {
+  return false;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x683000
+namespace gamemd { 
+void* ScenarioClass::LookupMethod() {
+
+  int v1; // edx
+  ScenarioClass **v2; // eax
+
+  v1 = 0; /*0x683000*/
+  v2 = (ScenarioClass **)&unk_83D658; /*0x683002*/
+  while ( *v2 != this ) /*0x683009*/
+  {
+    v2 += 2; /*0x68300b*/
+    ++v1; /*0x68300e*/
+    if ( (int)v2 >= (int)g_INI_Key_GameType ) /*0x683014*/
+      return 0; /*0x683018*/
+  }
+// 0x5D8550
+namespace gamemd { 
+int ScenarioClass::assignHouses(int a2) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x5D8550.json */
+}
+}
+
+// 0x5D8670
+namespace gamemd { 
+int ScenarioClass::initLocalVariables(void* a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x5D86B0
+namespace gamemd { 
+int ScenarioClass::setGameSpeed(int a2) {
+
+  if ( this->q00C ) /*0x5d86b0*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x5d86c5*/
+  else
+    return 0; /*0x5d86b7*/
+
+}
+}
+// 0x5D87E0
+namespace gamemd { 
+int ScenarioClass::distributeStartingUnits(void* a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x5D8FD0
+namespace gamemd { 
+void CCFileClass::WriteINIString() {
+}
+}
+
+// 0x5F1EE0
+namespace gamemd { 
+int CellClass::GetBridgeIndexThunk() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x5F1EE0.json */
+}
+}
+
+// 0x5FAD10
+namespace gamemd { 
+int ScenarioClass::SaveGameOptions() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 34 errs): wrong-universe gap2 body; truth func_0x5FAD10.json */
+}
+}
+
+// 0x623CD0
+namespace gamemd { 
+bool CD::CreateDialog() {
+  return false;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x626370
+namespace gamemd { 
+void FileSystem::mountDrive() {
+}
+}
+
+// 0x6267A0
+namespace gamemd { 
+void FileSystem::InitExtensionState() {
+}
+}
+
+// 0x627170
+namespace gamemd { 
+void* FileSystem::findFile() {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 8 errs): wrong-universe gap2 body; truth func_0x627170.json */
+}
+}
+
+// 0x6272A0
+namespace gamemd { 
+void FileSystem::FlushTempFiles() {
+}
+}
+
+// 0x628110
+namespace gamemd { 
+void* FileSystem::openFile(int ()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5D86B0)
+    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x628110)
 }
 }
 // 0x5D87E0
@@ -2144,11 +3363,376 @@ void * FileSystem::openFile(void * aP1)  // G42.41m: truth 0x628110; decl = file
 
 // 0x628170
 namespace gamemd { 
-void * FileSystem::closeFile(void * aP1)  // G42.41m: decl = file_system.hpp:99
-{
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x628170)
+void* FileSystem::closeFile(int * a2) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x628170.json */
 }
 }
+
+// 0x628740
+namespace gamemd { 
+int FileSystem::readFile() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x628740.json */
+}
+}
+
+// 0x628ED0
+namespace gamemd { 
+void* FileSystem::writeFile(int a1, void* a2) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x62E650
+namespace gamemd { 
+void ScenarioClass::DestroyAndClearVector() {
+}
+}
+
+// 0x631E30
+namespace gamemd { 
+void* TacticalClass::saveConfig(int a2) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x631E30.json */
+}
+}
+
+// 0x633B90
+namespace gamemd { 
+void* ScenarioClass::GetActionCoordsCopy(void* a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x635120
+namespace gamemd { 
+int FactoryClass::ClearObjects() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x635120.json */
+}
+}
+
+// 0x635350
+namespace gamemd { 
+int ScenarioClass::RenderAction(int a2) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x635350.json */
+}
+}
+
+// 0x635F80
+namespace gamemd { 
+void FactoryClass::FindAvailable() {
+}
+}
+
+// 0x636590
+namespace gamemd { 
+int FactoryClass::CompleteCurrentItem(int a2) {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 17 errs): wrong-universe gap2 body; truth func_0x636590.json */
+}
+}
+
+// 0x63D9C0
+namespace gamemd { 
+void* FactoryClass::RemoveFromArrays(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x63DFD0
+namespace gamemd { 
+int FactoryClass::RemoveItemAt(int a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x63F000
+namespace gamemd { 
+int FactoryClass::RemoveItem(int a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x63F6B0
+namespace gamemd { 
+int RadarClass::Create() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x63F6B0.json */
+}
+}
+
+// 0x652960
+namespace gamemd { 
+void* RadarClass::Construct() {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 32 errs): wrong-universe gap2 body; truth func_0x652960.json */
+}
+}
+
+// 0x652CF0
+namespace gamemd { 
+int RadarClass::Destru_vt05() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 15 errs): wrong-universe gap2 body; truth func_0x652CF0.json */
+}
+}
+
+// 0x652DE0
+namespace gamemd { 
+void RadarClass::Destru_vt07() {
+}
+}
+
+// 0x652E90
+namespace gamemd { 
+int RadarClass::Destru_vt53() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 14 errs): wrong-universe gap2 body; truth func_0x652E90.json */
+}
+}
+
+// 0x653100
+namespace gamemd { 
+int RadarClass::Destru_vt16(int a1) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x654320
+namespace gamemd { 
+int RadarClass::Destru_vt34() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 26 errs): wrong-universe gap2 body; truth func_0x654320.json */
+}
+}
+
+// 0x654EA0
+namespace gamemd { 
+int RadarClass::UpdateBlips(int a1, void* a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x655990
+namespace gamemd { 
+int RadarClass::Process() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 19 errs): wrong-universe gap2 body; truth func_0x655990.json */
+}
+}
+
+// 0x655A90
+namespace gamemd { 
+void TacticalClass::FreeResources() {
+}
+}
+
+// 0x655B20
+namespace gamemd { 
+void RadarClass::InitializeHashTable() {
+}
+}
+
+// 0x6563B0
+namespace gamemd { 
+int RadarClass::UpdateFoundationShapesCustom() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 9 errs): wrong-universe gap2 body; truth func_0x6563B0.json */
+}
+}
+
+// 0x6565A0
+namespace gamemd { 
+void CellClass::RevealFogRect(void* a1) {
+}
+}
+
+// 0x656BE0
+namespace gamemd { 
+void RadarClass::Toggle(int a1, int a2) {
+}
+}
+
+// 0x656CB0
+namespace gamemd { 
+int RadarClass::SetViewMode(int a1, int a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x656E50
+namespace gamemd { 
+int RadarClass::IsActiveMode() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 2 errs): wrong-universe gap2 body; truth func_0x656E50.json */
+}
+}
+
+// 0x656E90
+namespace gamemd { 
+bool RadarClass::SetFlag() {
+  return false;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x6578F0
+namespace gamemd { 
+void TacticalClass::ProcessChronoEffect() {
+}
+}
+
+// 0x658770
+namespace gamemd { 
+void* RadarClass::Destru_vt33(int a2) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x658770.json */
+}
+}
+
+// 0x6587A0
+namespace gamemd { 
+void* RadarClass::Destru_vt04(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x65ACE0
+namespace gamemd { 
+int TacticalClass::UpdateObjects() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 5 errs): wrong-universe gap2 body; truth func_0x65ACE0.json */
+}
+}
+
+// 0x65CA80
+namespace gamemd { 
+void* RawFileClass::Construct(RawFileClass * aP1) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 14 errs): wrong-universe gap2 body; truth func_0x65CA80.json */
+}
+}
+
+// 0x65CAC0
+namespace gamemd { 
+void* FileClass::SetName(char * Source) {
+  return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 11 errs): wrong-universe gap2 body; truth func_0x65CAC0.json */
+}
+}
+
+// 0x65CB50
+namespace gamemd { 
+int FileClass::Open2(const CHAR *a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x65CCA0
+namespace gamemd { 
+int FileClass::CloseHandle() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x65CCA0.json */
+}
+}
+
+// 0x65CDD0
+namespace gamemd { 
+int FileClass::Write2(LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x65D1F0
+namespace gamemd { 
+int FileClass::GetDosTimestamp() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x65D1F0.json */
+}
+}
+
+// 0x65D240
+namespace gamemd { 
+bool FileClass::SetTime(int wFatTime) {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x65D240.json */
+}
+}
+
+// 0x65D2B0
+namespace gamemd { 
+void FileClass::GetFileSizeOp(int a1, int a2) {
+}
+}
+
+// 0x65D3A0
+namespace gamemd { 
+void* RawFileClass::QueryInterface(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x65D420
+namespace gamemd { 
+bool RawFileClass::Write() {
+
+  return *(unsigned int *)this->FileTimeDateLo != -1; /*0x65d42b*/
+
+}
+}
+// 0x65F520
+namespace gamemd { 
+int ScenarioClass::ShowMissionBriefing() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 34 errs): wrong-universe gap2 body; truth func_0x65F520.json */
+}
+}
+
+// 0x66D270
+namespace gamemd { 
+int INIClass::ReadDifficultyModifiers() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 22 errs): wrong-universe gap2 body; truth func_0x66D270.json */
+}
+}
+
+// 0x672360
+namespace gamemd { 
+int CCINIClass::LoadBuildingTypes() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x672360.json */
+}
+}
+
+// 0x6726D0
+namespace gamemd { 
+int CCINIClass::LoadTypeList() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x6726D0.json */
+}
+}
+
+// 0x6727D0
+namespace gamemd { 
+int FactoryClass::LoadType() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 6 errs): wrong-universe gap2 body; truth func_0x6727D0.json */
+}
+}
+
+// 0x672920
+namespace gamemd { 
+int CCINIClass::LoadUnitTypes() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x672920.json */
+}
+}
+
+// 0x672A70
+namespace gamemd { 
+int CCINIClass::ReadBuildingSettings() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x672A70.json */
+}
+}
+
+// 0x679F40
+namespace gamemd { 
+bool INIEntry::Exists() {
+  return false;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x683000
+namespace gamemd { 
+void* ScenarioClass::LookupMethod() {
+
+  int v1; // edx
+  ScenarioClass **v2; // eax
+
+  v1 = 0; /*0x683000*/
+  v2 = (ScenarioClass **)&unk_83D658; /*0x683002*/
+  while ( *v2 != this ) /*0x683009*/
+  {
+    v2 += 2; /*0x68300b*/
+    ++v1; /*0x68300e*/
+    if ( (int)v2 >= (int)g_INI_Key_GameType ) /*0x683014*/
+      return 0; /*0x683018*/
+  }
 
 // 0x628740
 namespace gamemd { 
@@ -2383,11 +3967,132 @@ namespace gamemd {
 
 // 0x65CB50
 namespace gamemd { 
-bool FileClass::Open2(const CHAR *a2)
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x65CB50)
+int FileClass::Open2(const CHAR *a2) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
 }
 }
+
+// 0x65CCA0
+namespace gamemd { 
+int FileClass::CloseHandle() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x65CCA0.json */
+}
+}
+
+// 0x65CDD0
+namespace gamemd { 
+int FileClass::Write2(LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite) {
+  return 0;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x65D1F0
+namespace gamemd { 
+int FileClass::GetDosTimestamp() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 1 errs): wrong-universe gap2 body; truth func_0x65D1F0.json */
+}
+}
+
+// 0x65D240
+namespace gamemd { 
+bool FileClass::SetTime(int wFatTime) {
+  return false;  /* G42.33b2 restub: auto restub (pass4+, 3 errs): wrong-universe gap2 body; truth func_0x65D240.json */
+}
+}
+
+// 0x65D2B0
+namespace gamemd { 
+void FileClass::GetFileSizeOp(int a1, int a2) {
+}
+}
+
+// 0x65D3A0
+namespace gamemd { 
+void* RawFileClass::QueryInterface(int a1) {
+  return nullptr;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x65D420
+namespace gamemd { 
+bool RawFileClass::Write() {
+
+  return *(unsigned int *)this->FileTimeDateLo != -1; /*0x65d42b*/
+
+}
+}
+// 0x65F520
+namespace gamemd { 
+int ScenarioClass::ShowMissionBriefing() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 34 errs): wrong-universe gap2 body; truth func_0x65F520.json */
+}
+}
+
+// 0x66D270
+namespace gamemd { 
+int INIClass::ReadDifficultyModifiers() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 22 errs): wrong-universe gap2 body; truth func_0x66D270.json */
+}
+}
+
+// 0x672360
+namespace gamemd { 
+int CCINIClass::LoadBuildingTypes() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x672360.json */
+}
+}
+
+// 0x6726D0
+namespace gamemd { 
+int CCINIClass::LoadTypeList() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x6726D0.json */
+}
+}
+
+// 0x6727D0
+namespace gamemd { 
+int FactoryClass::LoadType() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 6 errs): wrong-universe gap2 body; truth func_0x6727D0.json */
+}
+}
+
+// 0x672920
+namespace gamemd { 
+int CCINIClass::LoadUnitTypes() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x672920.json */
+}
+}
+
+// 0x672A70
+namespace gamemd { 
+int CCINIClass::ReadBuildingSettings() {
+  return 0;  /* G42.33b2 restub: auto restub (pass4+, 7 errs): wrong-universe gap2 body; truth func_0x672A70.json */
+}
+}
+
+// 0x679F40
+namespace gamemd { 
+bool INIEntry::Exists() {
+  return false;  /* G42.33b2 restub: R2 def-header normalised from hpp decl */
+}
+}
+
+// 0x683000
+namespace gamemd { 
+void* ScenarioClass::LookupMethod() {
+
+  int v1; // edx
+  ScenarioClass **v2; // eax
+
+  v1 = 0; /*0x683000*/
+  v2 = (ScenarioClass **)&unk_83D658; /*0x683002*/
+  while ( *v2 != this ) /*0x683009*/
+  {
+    v2 += 2; /*0x68300b*/
+    ++v1; /*0x68300e*/
+    if ( (int)v2 >= (int)g_INI_Key_GameType ) /*0x683014*/
+      return 0; /*0x683018*/
+  }
 
 // 0x65CCA0
 namespace gamemd { 

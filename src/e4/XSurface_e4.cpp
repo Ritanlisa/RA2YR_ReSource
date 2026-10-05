@@ -212,16 +212,400 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
 } // namespace gamemd
 // 0x7BAB90
 namespace gamemd {
-void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5_len, int a6, int a7, int a8, int a9, int a10)
+void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5, int a6, int a7, int a8, int a9, int a10)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BAB90)
+
+  int v5; // eax
+  int *v6; // eax
+  int *v7; // eax
+  int v8; // ecx
+  int v9; // eax
+  char result; // al
+  int v11; // ecx
+  int v12; // edi
+  int v13; // esi
+  int v14; // ebp
+  int v15; // edi
+  int v16; // ebp
+  int v17; // ebx
+  int v18; // edi
+  int v19; // ebx
+  int v20; // esi
+  int v21; // eax
+  int v22; // esi
+  int i; // ebx
+  int v24; // esi
+  int v25; // edi
+  int v26; // [esp+4h] [ebp-44h] BYREF
+  int v27; // [esp+8h] [ebp-40h]
+  XSurface *v28; // [esp+14h] [ebp-34h]
+  int v29; // [esp+18h] [ebp-30h] BYREF
+  int v30; // [esp+1Ch] [ebp-2Ch]
+  int v31; // [esp+20h] [ebp-28h] BYREF
+  int v32; // [esp+24h] [ebp-24h]
+  int v33; // [esp+28h] [ebp-20h] BYREF
+  int v34; // [esp+2Ch] [ebp-1Ch]
+  int v35; // [esp+38h] [ebp-10h] BYREF
+  int v36; // [esp+3Ch] [ebp-Ch]
+  int v37; // [esp+40h] [ebp-8h]
+  int v38; // [esp+44h] [ebp-4h]
+  int v39; // [esp+4Ch] [ebp+4h]
+  int v40; // [esp+50h] [ebp+8h]
+  int v41; // [esp+54h] [ebp+Ch]
+
+  v5 =(int)(int *)(*(unsigned int *)this->Surface);
+  v28 =(gamemd::XSurface *)(int *)(this);
+  v6 = (int *)(*(int (**)(int *))(v5 + 120))(&v33); /*0x7bab9f*/
+  v7 = (int *)(ClipRectIntersection((RectangleStruct *)(&v26),(const RectangleStruct *)((int *)a2),(const RectangleStruct *)(v6), 0, 0)); /*0x7babaf*/
+  v35 = *v7; /*0x7babb6*/
+  v36 = v7[1]; /*0x7babbd*/
+  v37 = v7[2]; /*0x7babc4*/
+  v38 = v7[3]; /*0x7babcf*/
+  v8 = v36 + a3[1]; /*0x7babda*/
+  v29 = v35 + *a3; /*0x7babdc*/
+  v30 = v8; /*0x7babe0*/
+  v9 = v35 + *a4; /*0x7babef*/
+  v32 = v36 + a4[1]; /*0x7babf1*/
+  v31 = v9; /*0x7bac02*/
+  result = ClipLine(&v29, &v31, &v35); /*0x7bac06*/
+  if ( result ) /*0x7bac0d*/
+  {
+    v11 = v29; /*0x7bac16*/
+    v12 = v31; /*0x7bac1d*/
+    if ( v29 <= v31 ) /*0x7bac23*/
+    {
+      v14 = v30; /*0x7bac45*/
+      v13 = v32; /*0x7bac49*/
+    }
+    else
+    {
+      v13 = v30; /*0x7bac25*/
+      v14 = v32; /*0x7bac29*/
+      v11 = v31; /*0x7bac2f*/
+      v12 = v29; /*0x7bac31*/
+      v29 = v31; /*0x7bac33*/
+      v30 = v32; /*0x7bac37*/
+      v31 = v12; /*0x7bac3b*/
+      v32 = v13; /*0x7bac3f*/
+    }
+    if ( v14 == v13 ) /*0x7bac4f*/
+    {
+      v15 = v12 - v11; /*0x7bac51*/
+      v16 = 0; /*0x7bac53*/
+      if ( v15 >= 0 ) /*0x7bac58*/
+      {
+        while ( 1 ) /*0x7bac73*/
+        {
+          v26 = v11 + v16; /*0x7bac73*/
+          v27 = v13; /*0x7bac77*/
+          a5(&v26); /*0x7bac7b*/
+          if ( ++v16 > v15 ) /*0x7bac80*/
+            break; /*0x7bac80*/
+          v11 = v29; /*0x7bac64*/
+          v13 = v32; /*0x7bac68*/
+        }
+      }
+    }
+    else if ( v11 == v12 ) /*0x7bac89*/
+    {
+      v17 = abs32(v14 - v13); /*0x7bac94*/
+      if ( v14 <= v13 ) /*0x7bac98*/
+        v13 = v14; /*0x7bac9a*/
+      v18 = 0; /*0x7bac9c*/
+      if ( v17 >= 0 ) /*0x7baca0*/
+      {
+        while ( 1 ) /*0x7bacb0*/
+        {
+          v26 = v11; /*0x7bacb0*/
+          v27 = v18 + v13; /*0x7bacbb*/
+          a5(&v26); /*0x7bacbf*/
+          if ( ++v18 > v17 ) /*0x7bacc4*/
+            break; /*0x7bacc4*/
+          v11 = v29; /*0x7bacac*/
+        }
+      }
+    }
+    else
+    {
+      v39 = v11; /*0x7baccd*/
+      v19 = v12 - v11; /*0x7bacd1*/
+      v20 = v13 - v14; /*0x7bacd3*/
+      v41 = 1; /*0x7bacd7*/
+      if ( v20 < 0 ) /*0x7bacdf*/
+        v41 = -1; /*0x7bace1*/
+      v21 = abs32(v20); /*0x7bacec*/
+      v40 = 2 * v19; /*0x7bacf3*/
+      v26 = 2 * v21; /*0x7bacfa*/
+      if ( v19 <= v21 ) /*0x7bacfe*/
+      {
+        v24 = v40 - v21; /*0x7bad39*/
+        if ( v21 >= 0 ) /*0x7bad3d*/
+        {
+          v25 = v21 + 1; /*0x7bad43*/
+          do /*0x7bad78*/
+          {
+            v33 = v39; /*0x7bad4e*/
+            v34 = v14; /*0x7bad52*/
+            a5(&v33); /*0x7bad56*/
+            if ( v24 > 0 ) /*0x7bad5a*/
+            {
+              v24 -= v26; /*0x7bad65*/
+              ++v39; /*0x7bad67*/
+            }
+            v24 += v40; /*0x7bad73*/
+            v14 += v41; /*0x7bad75*/
+            --v25; /*0x7bad77*/
+          }
+          while ( v25 ); /*0x7bad78*/
+        }
+      }
+      else
+      {
+        v22 = 2 * v21 - v19; /*0x7bad00*/
+        for ( i = v11; i <= v12; ++i ) /*0x7bad06*/
+        {
+          v33 = i; /*0x7bad0c*/
+          v34 = v14; /*0x7bad10*/
+          a5(&v33); /*0x7bad14*/
+          if ( v22 > 0 ) /*0x7bad1a*/
+          {
+            v22 -= v40; /*0x7bad24*/
+            v14 += v41; /*0x7bad26*/
+          }
+          v22 += v26; /*0x7bad2c*/
+        }
+      }
+    }
+    (*(void (**)(XSurface *))(*(unsigned int *)v28->Surface + 96))(v28); /*0x7bad80*/
+return (void *)1; /*0x7bad86*/
+  }
+  return result; /*0x7bac0f*/
+
 }
 } // namespace gamemd
 // 0x7BB050
 namespace gamemd {
 XSurface * * XSurface::FillRectEx(unsigned int *a2, int *a3, int a4)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BB050)
+
+  XSurface *v4; // edi
+  int * v5;
+  int *v6; // eax
+  int *v7; // eax
+  int v8; // ecx
+  int v9; // edx
+  int v10; // ebx
+  int v11; // ecx
+  int v12; // edx
+  int *v13; // eax
+  unsigned int *v14; // eax
+  int v15; // ebx
+  int v16; // eax
+  unsigned int *v17; // eax
+  int v18; // esi
+  int v19; // edx
+  char v20; // dl
+  int v21; // eax
+  unsigned int v22; // ecx
+  unsigned short *v24; // edi
+  int i; // ecx
+  unsigned int *v26; // eax
+  int v27; // ebx
+  char v28; // dl
+  int16_t v29; // bx
+  int v30; // edx
+  signed int v31; // ecx
+  char *v32; // edi
+  unsigned short *v33; // eax
+  char v34; // dl
+  int16_t v35; // bx
+  int v36; // edx
+  signed int v37; // ecx
+  char *v38; // edi
+  unsigned short *v39; // eax
+  bool v40; // zf
+  XSurface *v41; // [esp-4h] [ebp-7Ch]
+  XSurface *v42; // [esp-4h] [ebp-7Ch]
+  int v43[4]; // [esp+Ch] [ebp-6Ch] BYREF
+  Rect v44; // [esp+1Ch] [ebp-5Ch] BYREF
+  int v45[4]; // [esp+2Ch] [ebp-4Ch] BYREF
+  int v46[4]; // [esp+3Ch] [ebp-3Ch] BYREF
+  unsigned int v47[2]; // [esp+4Ch] [ebp-2Ch] BYREF
+  unsigned int v48; // [esp+54h] [ebp-24h]
+  int v49; // [esp+58h] [ebp-20h]
+  int v50; // [esp+5Ch] [ebp-1Ch] BYREF
+  int v51; // [esp+64h] [ebp-14h] BYREF
+  int v52; // [esp+68h] [ebp-10h]
+  char *v53; // [esp+6Ch] [ebp-Ch]
+  signed int v54; // [esp+70h] [ebp-8h]
+  XSurface *v55; // [esp+74h] [ebp-4h]
+  unsigned int *v56; // [esp+80h] [ebp+8h]
+  unsigned int *v57; // [esp+80h] [ebp+8h]
+  int *v58; // [esp+84h] [ebp+Ch]
+  int v59; // [esp+88h] [ebp+10h]
+  int v60; // [esp+88h] [ebp+10h]
+
+  v4 = (gamemd::XSurface *)((int *)(this));
+  v5 = (int *)(a3[2]);
+  v55 = (gamemd::XSurface *)((int *)(this));
+  if ( v5 <= 0 ) /*0x7bb066*/
+    return 0; /*0x7bb066*/
+  if ( a3[3] <= 0 ) /*0x7bb071*/
+    return 0; /*0x7bb071*/
+  v6 = (int *)(*(int (**)(XSurface *, int *))(*(unsigned int *)this->Surface + 120))(this, v45); /*0x7bb07f*/
+  v7 = (int *)(ClipRectIntersection((RectangleStruct *)(&v50),(const RectangleStruct *)(a2),(const RectangleStruct *)(v6), 0, 0)); /*0x7bb08f*/
+  v46[0] = *v7; /*0x7bb096*/
+  v46[1] = v7[1]; /*0x7bb09c*/
+  v8 = *a3; /*0x7bb09f*/
+  v46[2] = v7[2]; /*0x7bb0a4*/
+  v9 = a3[1]; /*0x7bb0a7*/
+  v46[3] = v7[3]; /*0x7bb0ad*/
+  v10 = a2[1]; /*0x7bb0b2*/
+  v51 = v8 + *a2; /*0x7bb0b7*/
+  v11 = v9 + v10; /*0x7bb0bd*/
+  v12 = a3[2]; /*0x7bb0c0*/
+  v52 = v11; /*0x7bb0c3*/
+  v13 = (int *)(((Rect*)&v44)->Construct(&v51, v12, a3[3])); /*0x7bb0cf*/
+  v45[0] = *v13; /*0x7bb0d8*/
+  v45[1] = v13[1]; /*0x7bb0e0*/
+  v45[2] = v13[2]; /*0x7bb0e6*/
+  v45[3] = v13[3]; /*0x7bb0f2*/
+  v14 = (unsigned int *)(ClipRectIntersection((RectangleStruct *)(v43),(const RectangleStruct *)(v46),(const RectangleStruct *)(v45), 0, 0)); /*0x7bb0f9*/
+  v47[0] = *v14; /*0x7bb100*/
+  v47[1] = v14[1]; /*0x7bb106*/
+  v15 = v14[2]; /*0x7bb109*/
+  v48 = v15; /*0x7bb10c*/
+  v16 = v14[3]; /*0x7bb10f*/
+  v49 = v16; /*0x7bb114*/
+  if ( v15 <= 0 ) /*0x7bb117*/
+    return 0; /*0x7bb117*/
+  if ( v16 <= 0 ) /*0x7bb11f*/
+    return 0; /*0x7bb11f*/
+  v56 = (unsigned int *)v16; /*0x7bb125*/
+  v58 = (int *)(*(int (**)(XSurface *))(*(unsigned int *)v4->Surface + 116))(v4); /*0x7bb132*/
+  v17 = CellStruct::Copy((CellStruct *)v47, &v51); /*0x7bb139*/
+  v18 = (*(int (**)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)v4->Surface + 92))(v4, *v17, v17[1]); /*0x7bb154*/
+  v53 = (char *)v18; /*0x7bb158*/
+  if ( !v18 ) /*0x7bb15b*/
+    return 0; /*0x7bb333*/
+  if ( (*(int (**)(XSurface *))(*(unsigned int *)v4->Surface + 112))(v4) == 1 ) /*0x7bb16b*/
+  {
+    v57 = 0; /*0x7bb170*/
+    if ( v49 > 0 ) /*0x7bb179*/
+    {
+      do /*0x7bb1b2*/
+      {
+        LOBYTE(v15) = a4; /*0x7bb185*/
+        v20 = v48; /*0x7bb187*/
+        BYTE1(v15) = a4; /*0x7bb189*/
+        v21 = v15 << 16; /*0x7bb18f*/
+        LOWORD(v21) = v15; /*0x7bb192*/
+        v22 = v48 >> 2; /*0x7bb195*/
+        memset32((void *)v18, v21, v48 >> 2); /*0x7bb198*/
+        memset((void *)(v18 + 4 * v22), a4, v20 & 3); /*0x7bb19f*/
+        v18 += (int)v58; /*0x7bb1aa*/
+        v57 = (unsigned int *)((char *)v57 + 1); /*0x7bb1af*/
+      }
+      while ( (int)v57 < v49 ); /*0x7bb1b2*/
+LABEL_9:
+      (*(void (**)(XSurface *))(*(unsigned int *)v55->Surface + 96))(v55); /*0x7bb1b4*/
+      return (gamemd::XSurface **)(1); /*0x7bb1c6*/
+    }
+  }
+  else if ( (v18 & 3) != 0 ) /*0x7bb1d1*/
+  {
+    if ( (v18 & 3) == 2 ) /*0x7bb1da*/
+    {
+      if ( v15 > 1 ) /*0x7bb22f*/
+      {
+        v27 = v15 - 1; /*0x7bb262*/
+        v28 = v27; /*0x7bb263*/
+        v54 = v27 >> 1; /*0x7bb267*/
+        v29 = a4; /*0x7bb26a*/
+        v30 = v28 & 1; /*0x7bb26f*/
+        v53 = (char *)(a4 | (a4 << 16)); /*0x7bb277*/
+        v59 = (int)v56; /*0x7bb285*/
+        do /*0x7bb2b8*/
+        {
+          *(unsigned short *)v18 = v29; /*0x7bb28b*/
+          v41 = v4; /*0x7bb291*/
+          v31 = v54; /*0x7bb292*/
+          v32 = (char *)(v18 + 2); /*0x7bb295*/
+          if ( v54 > 0 ) /*0x7bb29b*/
+          {
+            memset32(v32, (int)v53, v54); /*0x7bb2a0*/
+            v32 += 4 * v31; /*0x7bb2a0*/
+          }
+          v33 = (unsigned short *)(v32);
+          v4 = v41; /*0x7bb2a4*/
+          if ( v30 ) /*0x7bb2a7*/
+            *v33 = v29; /*0x7bb2a9*/
+          v18 += (int)v58; /*0x7bb2b2*/
+          --v59; /*0x7bb2b5*/
+        }
+        while ( v59 ); /*0x7bb2b8*/
+        goto LABEL_9; /*0x7bb2b8*/
+      }
+      v26 = v56; /*0x7bb237*/
+      do /*0x7bb24e*/
+      {
+        *(unsigned short *)v18 = a4; /*0x7bb248*/
+        v18 += (int)v58; /*0x7bb24b*/
+        v26 = (unsigned int *)((char *)v26 - 1); /*0x7bb24d*/
+      }
+      while ( v26 ); /*0x7bb24e*/
+    }
+    else
+    {
+      do /*0x7bb218*/
+      {
+        LOWORD(v19) = a4; /*0x7bb1f3*/
+        v19 <<= 16; /*0x7bb1f8*/
+        LOWORD(v19) = a4; /*0x7bb1fb*/
+        memset32((void *)v18, v19, (unsigned int)v15 >> 1); /*0x7bb202*/
+        v24 = (unsigned short *)(v18 + 4 * ((unsigned int)v15 >> 1)); /*0x7bb202*/
+        for ( i = v15 & 1; i; --i ) /*0x7bb204*/
+          *v24++ = a4; /*0x7bb206*/
+        v4 = v55; /*0x7bb209*/
+        v18 += (int)v58; /*0x7bb212*/
+        v56 = (unsigned int *)((char *)v56 - 1); /*0x7bb215*/
+      }
+      while ( v56 ); /*0x7bb218*/
+    }
+  }
+  else
+  {
+    v34 = v15; /*0x7bb2cf*/
+    v54 = v15 >> 1; /*0x7bb2d3*/
+    v35 = a4; /*0x7bb2d6*/
+    v36 = v34 & 1; /*0x7bb2db*/
+    v52 = a4 | (a4 << 16); /*0x7bb2e3*/
+    v60 = (int)v56; /*0x7bb2ed*/
+    do /*0x7bb31a*/
+    {
+      v42 = v4; /*0x7bb2f0*/
+      v37 = v54; /*0x7bb2f1*/
+      v38 = v53; /*0x7bb2f4*/
+      if ( v54 > 0 ) /*0x7bb2fa*/
+      {
+        memset32(v53, v52, v54); /*0x7bb2ff*/
+        v38 += 4 * v37; /*0x7bb2ff*/
+      }
+      v39 = (unsigned short *)(v38);
+      v4 = v42; /*0x7bb303*/
+      if ( v36 ) /*0x7bb306*/
+        *v39 = v35; /*0x7bb308*/
+      v18 += (int)v58; /*0x7bb311*/
+      v40 = v60 == 1; /*0x7bb313*/
+      v53 = (char *)v18; /*0x7bb314*/
+      --v60; /*0x7bb317*/
+    }
+    while ( !v40 ); /*0x7bb31a*/
+    v4 = v55; /*0x7bb31c*/
+  }
+  (*(void (**)(XSurface *))(*(unsigned int *)v4->Surface + 96))(v4); /*0x7bb21e*/
+  return (gamemd::XSurface **)(1); /*0x7bb1c0*/
+
 }
 } // namespace gamemd
 // 0x7BB350
@@ -731,9 +1115,9 @@ char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
 }
 }  // G42.18c ns repair
 // 0x7BB340
-namespace gamemd {
 char XSurface::entry_1C_(int a1, int a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BB340)
-}
+
+  return 0; /*0x7bb342*/
+
 }

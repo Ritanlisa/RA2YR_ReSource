@@ -15,6 +15,12 @@
 namespace gamemd {
 MultiplayerManBattle * MultiplayerManBattle::QueryInterface(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5C61A0)
+
+  Block->MultiplayerManBattle_field_00 = (int)&vt_MultiplayerManBattle; /*0x5c61a3*/
+  ((MultiplayerGameMode *)((MultiplayerGameMode *)Block))->Dtor(); /*0x5c61a9*/
+  if ( (a2 & 1) != 0 ) /*0x5c61b3*/
+    __3_YAXPAX_Z(Block); /*0x5c61b6*/
+  return &Block->MultiplayerManBattle_field_00; /*0x5c61c0*/
+
 }
 } // namespace gamemd

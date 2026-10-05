@@ -20,6 +20,21 @@
 namespace gamemd {
 int Socket::ConfigureBuffers(SOCKET aP1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B2630)
+
+  AnimClass * v2;
+  int result; // eax
+
+  v2 =(gamemd::AnimClass *)(unsigned int)(aP1);
+  if ( aP1 == (gamemd::AnimClass *)(-1) ) /*0x7b2638*/
+    v2 = *((unsigned int *)this + 64539); /*0x7b263a*/
+  if ( setsockopt(v2, 0xFFFF, 4098, optval, 4) == -1 ) /*0x7b265a*/
+    WSAGetLastError(); /*0x7b265c*/
+  ((gamemd::Debug *)this)->Log(); /*0x7b2667*/
+  if ( setsockopt(v2, 0xFFFF, 4097, byte_84DD9C, 4) == -1 ) /*0x7b2699*/
+    WSAGetLastError(); /*0x7b269b*/
+  result = ((gamemd::Debug *)this)->Log(); /*0x7b26a6*/
+  LOBYTE(result) = 1; /*0x7b26ae*/
+  return result; /*0x7b26b0*/
+
 }
 } // namespace gamemd

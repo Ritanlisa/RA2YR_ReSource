@@ -28,7 +28,99 @@
 namespace gamemd {
 int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41F2E0)
+
+  CCINIClass * v2;
+  int result; // eax
+  int v5; // ebp
+  char *StringByIndex; // esi
+  unsigned int *v7; // esi
+  int v8; // edi
+  unsigned int *v9; // eax
+  int v10; // ebp
+  char *v11; // edi
+  int v12; // esi
+  int v13; // esi
+  int v14; // [esp+10h] [ebp-8h]
+  int i; // [esp+10h] [ebp-8h]
+
+  v2 = (gamemd::CCINIClass *)((int)(a2));
+  result = (int)(INIClass::GetKeyCount((gamemd::INIClass *)(a1), (uint8_t *)aAitriggertypes));
+  v5 = 0; /*0x41f2fa*/
+  v14 = result; /*0x41f2fe*/
+  while ( v5 < v14 ) /*0x41f302*/
+  {
+    StringByIndex = (char *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(a1),(gamemd::CCINIClass *)((uint8_t *)aAitriggertypes),(void *)(v5)); /*0x41f317*/
+    if ( _strcmpi((const char *)(g_Str__none_), StringByIndex) ) /*0x41f31f*/
+    {
+      if ( _strcmpi((const char *)(g_Str_none), StringByIndex) ) /*0x41f335*/
+      {
+        v8 = 0; /*0x41f34a*/
+        if ( dword_A8B210 > 0 ) /*0x41f34e*/
+        {
+          while ( _strcmpi((char *)(*((unsigned int *)dword_A8B204 + v8) + 36), StringByIndex) ) /*0x41f368*/
+          {
+            if ( ++v8 >= dword_A8B210 ) /*0x41f376*/
+              goto LABEL_9; /*0x41f376*/
+          }
+          v7 = (unsigned int *)*((unsigned int *)dword_A8B204 + v8); /*0x41f431*/
+          goto LABEL_11; /*0x41f434*/
+        }
+LABEL_9:
+        v9 = (unsigned int *)__2_YAPAXI_Z(0x110u); /*0x41f378*/
+        if ( v9 ) /*0x41f387*/
+        {
+          v7 = ((AnimTypeClass *)(v9))->Construct2(StringByIndex); /*0x41f391*/
+LABEL_11:
+          if ( v7 ) /*0x41f395*/
+          {
+            (*(void (**)(unsigned int *, char *))(*v7 + 100))(v7, a1); /*0x41f39c*/
+            v7[39] = (unsigned int)(a2); /*0x41f3a3*/
+          }
+          goto LABEL_13; /*0x41f3a3*/
+        }
+      }
+      v7 = 0; /*0x41f341*/
+    }
+    else
+    {
+      v7 = 0; /*0x41f32b*/
+    }
+LABEL_13: v2 = (gamemd::CCINIClass *)((int)(a2));
+    if ( a2 == (gamemd::CCINIClass *)(1) ) /*0x41f3b0*/
+      *(gamemd::CCINIClass *)(((unsigned char *)v7 + 164)) = 1; /*0x41f3b2*/
+    result = v14; /*0x41f3b9*/
+    ++v5; /*0x41f3bd*/
+  }
+  if ( !v2 ) /*0x41f3c8*/
+  {
+    result = (int)(INIClass::GetKeyCount((gamemd::INIClass *)(a1), (uint8_t *)aAitriggertypes_0));
+    v10 = 0; /*0x41f3dc*/
+    for ( i = result; v10 < i; ++v10 ) /*0x41f3e4*/
+    {
+      v11 = (char *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(a1),(gamemd::CCINIClass *)((uint8_t *)aAitriggertypes_0),(void *)(v10)); /*0x41f3f9*/
+      v12 = 0; /*0x41f400*/
+      if ( dword_A8B210 > 0 ) /*0x41f404*/
+      {
+        while ( _strcmpi((char *)(*((unsigned int *)dword_A8B204 + v12) + 36), v11) ) /*0x41f41d*/
+        {
+          if ( ++v12 >= dword_A8B210 ) /*0x41f427*/
+            goto LABEL_28; /*0x41f427*/
+        }
+        v13 = *((unsigned int *)dword_A8B204 + v12); /*0x41f43f*/
+        if ( v13 ) /*0x41f444*/
+          *(unsigned char *)(v13 + 164) = (uint8_t)INIClass::ReadBool_Overwrite( /*0x41f46c*/
+                                                     (int *)a1,
+                                                     (uint8_t *)aAitriggertypes_0,
+                                                     (uint8_t *)v11,
+                                                     0)
+                               || ((unsigned int *)(dword_A8B238))[0];
+      }
+LABEL_28:
+      result = i; /*0x41f473*/
+    }
+  }
+  return result; /*0x41f480*/
+
 }
 }
 // 0x473450
@@ -107,14 +199,108 @@ LABEL_8:
 namespace gamemd {
 CCINIClass::CCINIClass()
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x535B30)
+
+  unsigned int *result; // eax
+  int *sectionHead; // esi
+  int *p_sectionCount; // ecx
+  int v4; // ebx
+  int v5; // edi
+  int v6; // edi
+  int v7; // edi
+
+  result = (unsigned int *)(this->INIClass);
+  sectionHead = (int *)(((unsigned int *)this)[0]); /*0x535b36*/
+  p_sectionCount = (int *)(&((unsigned int *)this)[0]); /*0x535b39*/
+  result[1] = 0; /*0x535b3c*/
+  result[2] = 0; /*0x535b3f*/
+  sectionHead[1] = 0; /*0x535b42*/
+  sectionHead[2] = 0; /*0x535b45*/
+  *sectionHead = (int)&vt_GenericNode; /*0x535b48*/
+  p_sectionCount[1] = 0; /*0x535b4e*/
+  p_sectionCount[2] = 0; /*0x535b51*/
+  *p_sectionCount = (int)&vt_GenericNode; /*0x535b54*/
+  result[3] = (unsigned int)(&vt_GenericList); /*0x535b5d*/
+  if ( p_sectionCount ) /*0x535b64*/
+  {
+    v4 = p_sectionCount[1]; /*0x535b66*/
+    if ( v4 ) /*0x535b6b*/
+    {
+      v5 = p_sectionCount[2]; /*0x535b6d*/
+      if ( v5 ) /*0x535b72*/
+      {
+        *(unsigned int *)(v5 + 4) = v4; /*0x535b74*/
+        *(unsigned int *)(p_sectionCount[1] + 8) = p_sectionCount[2]; /*0x535b7d*/
+        p_sectionCount[2] = 0; /*0x535b80*/
+        p_sectionCount[1] = 0; /*0x535b83*/
+      }
+    }
+  }
+  v6 = (unsigned int)(sectionHead[1]);
+  p_sectionCount[2] = (unsigned int)((int)sectionHead);
+  p_sectionCount[1] = (unsigned int)(v6);
+  v7 = (unsigned int)(sectionHead[1]);
+  if ( v7 ) /*0x535b94*/
+    *(unsigned int *)(v7 + 8) = (unsigned int)(p_sectionCount); /*0x535b96*/
+  sectionHead[1] = (unsigned int)((int)p_sectionCount); /*0x535b99*/
+  result[3] = (unsigned int)(&vt_List); /*0x535b9c*/
+  result[10] = 0; /*0x535ba4*/
+  result[11] = 0; /*0x535ba7*/
+  result[12] = 0; /*0x535baa*/
+  *((unsigned char *)result + 52) = 0; /*0x535bad*/
+  result[14] = 0; /*0x535bb0*/
+  result[15] = 0; /*0x535bb4*/
+  *((unsigned char *)result + 64) = 0; /*0x535bb7*/
+  *result = (unsigned int)(&CCINIClass_Vtable); /*0x535bba*/
+  return result; /*0x535ba3*/
+
 }
 }
 // 0x41F490
 namespace gamemd {
 AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x41F490)
+
+  int KeyCount; // ebx
+  int i; // edi
+  uint8_t *StringByIndex; // eax
+  int result; // eax
+  int j; // edi
+  unsigned int *v9; // ecx
+  int k; // edi
+  char Destination[32]; // [esp+10h] [ebp-20h] BYREF
+
+  KeyCount = (int)(INIClass::GetKeyCount(a1->__pad_0, (uint8_t *)aAitriggertypes));
+  for ( i = 0; i < KeyCount; ++i ) /*0x41f4ac*/
+  {
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, (uint8_t *)aAitriggertypes, i); /*0x41f4b8*/
+    ((INIClass*)(gamemd::INIClass *)(a1))->GetString((uint8_t *)aAitriggertypes, (gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 32); /*0x41f4d2*/
+    INIClass::ClearSection((int *)a1->__pad_0, (int)Destination, 0); /*0x41f4e0*/
+  }
+  INIClass::ClearSection((int *)a1->__pad_0, (int)aAitriggertypes, 0); /*0x41f4f5*/
+  result = dword_A8B210; /*0x41f4fa*/
+  for ( j = 0; j < dword_A8B210; ++j ) /*0x41f503*/
+  {
+    v9 = (unsigned int *)*((unsigned int *)dword_A8B204 + j); /*0x41f50a*/
+    if ( v9[39] == a2 ) /*0x41f513*/
+      (*(void (**)(unsigned int *, INIClass *))(*v9 + 104))(v9, a1); /*0x41f518*/
+    result = dword_A8B210; /*0x41f51b*/
+  }
+  if ( !a2 ) /*0x41f527*/
+  {
+    INIClass::ClearSection((int *)a1->__pad_0, (int)aAitriggertypes_0, 0); /*0x41f532*/
+    result = dword_A8B210; /*0x41f537*/
+    for ( k = 0; k < dword_A8B210; ++k ) /*0x41f540*/
+    {
+      INIClass::SetBool( /*0x41f55e*/
+        a1->__pad_0,
+        (uint8_t *)aAitriggertypes_0,
+        (char *)(*((unsigned int *)dword_A8B204 + k) + 36),
+        *(unsigned char *)(*((unsigned int *)dword_A8B204 + k) + 164));
+      result = dword_A8B210; /*0x41f563*/
+    }
+  }
+  return (gamemd::AITriggerTypeClass *)(result);
+
 }
 } // namespace gamemd
 
@@ -122,6 +308,34 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
 namespace gamemd {
 IUnknown * CCINIClass::WriteHouses()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x501160)
+
+  int result; // eax
+  int i; // ebx
+  int v4; // esi
+  char Source[32]; // [esp+Ch] [ebp-40h] BYREF
+  char Buffer[32]; // [esp+2Ch] [ebp-20h] BYREF
+
+  INIClass::ClearSection((int)this, (int)g_INI_Key_Houses, 0); /*0x50116f*/
+  result = dword_A80238; /*0x501174*/
+  for ( i = 0; i < dword_A80238; ++i ) /*0x50117d*/
+  {
+    strcpy(Source, (const char *)(*(unsigned int *)(&dword_A8022C)[4 * i] + 90100)); /*0x5011ac*/
+    sprintf(Buffer,(const char *const )(g_Str_Trace), i); /*0x5011ba*/
+    ((INIClass *)this)->SetString((uint8_t *)g_INI_Key_Houses, Buffer, Source); /*0x5011d3*/
+    result = dword_A80238; /*0x5011d8*/
+  }
+  v4 = 0; /*0x5011e3*/
+  if ( result > 0 ) /*0x5011e7*/
+  {
+    do /*0x501200*/
+    {
+      ((HouseClass *)*(unsigned int *)(&dword_A8022C)[4 * v4])->SaveToINI((char *)this); /*0x5011f3*/
+      result = dword_A80238; /*0x5011f8*/
+      ++v4; /*0x5011fd*/
+    }
+    while ( v4 < dword_A80238 ); /*0x501200*/
+  }
+  return (IUnknown *)(result); /*0x501202*/
+
 }
 } // namespace gamemd

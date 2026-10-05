@@ -18,14 +18,128 @@
 namespace gamemd {
 int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, int a1, int a2, int a3, int a5, int a6)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A2CD0)
+
+  IStream *v4; // ebp
+  size_t v5; // edi
+  signed int v6; // ebx
+  int result; // eax
+  int CStreamClass_field_0x14; // ecx
+  int v9; // eax
+  ULONG v10; // [esp+0h] [ebp-10h]
+
+  v4 = Src; /*0x4a2cd2*/
+  v5 = Size; /*0x4a2cd8*/
+  v6 = Size; /*0x4a2cde*/
+  if ( !Src ) /*0x4a2ce0*/
+    return -2147467261; /*0x4a2ceb*/
+  if ( Size < 0 ) /*0x4a2cf0*/
+    return -2147024809; /*0x4a2cfb*/
+  if ( !a1->CStreamClass_field_0x08 ) /*0x4a2d02*/
+    return -2147467259; /*0x4a2d12*/
+  if ( LOBYTE(a1->CStreamClass_field_0x10) ) /*0x4a2d15*/
+    return -2147467259; /*0x4a2d25*/
+  BYTE1(a1->CStreamClass_field_0x10) = 1; /*0x4a2d2a*/
+  if ( !Size ) /*0x4a2d2e*/
+    return 0; /*0x4a2d2e*/
+  if ( a4 ) /*0x4a2d3a*/
+    *a4 = 0; /*0x4a2d3c*/
+  CStreamClass_field_0x14 = a1->CStreamClass_field_0x14; /*0x4a2d42*/
+  if ( CStreamClass_field_0x14 > 0 ) /*0x4a2d47*/
+  {
+    if ( Size >= 0x10000 - CStreamClass_field_0x14 ) /*0x4a2d52*/
+      v5 = 0x10000 - CStreamClass_field_0x14; /*0x4a2d54*/
+    memcpy((void *)(a1->CStreamClass_field_0x18 + a1->CStreamClass_field_0x14), Src, v5); /*0x4a2d61*/
+    v9 = v5 + a1->CStreamClass_field_0x14; /*0x4a2d72*/
+    v4 = (IStream *)((char *)Src + v5); /*0x4a2d74*/
+    v6 = Size - v5; /*0x4a2d76*/
+    a1->CStreamClass_field_0x14 = v9; /*0x4a2d7d*/
+    if ( v9 == 0x10000 ) /*0x4a2d80*/
+    {
+      result = IStream::Read((IStream *)a1->CStreamClass_field_0x18, (void *)0x10000, v10); /*0x4a2d8d*/
+      if ( result < 0 ) /*0x4a2d94*/
+        return result; /*0x4a2d94*/
+      a1->CStreamClass_field_0x14 = 0; /*0x4a2d96*/
+    }
+    v5 = Size; /*0x4a2d9d*/
+  }
+  if ( v6 < 0x10000 ) /*0x4a2da7*/
+  {
+LABEL_23:
+    if ( v6 > 0 ) /*0x4a2dd4*/
+    {
+      memcpy((void *)a1->CStreamClass_field_0x18, v4, v6); /*0x4a2ddc*/
+      v5 = Size; /*0x4a2de1*/
+      a1->CStreamClass_field_0x14 = v6; /*0x4a2de8*/
+    }
+    if ( a4 ) /*0x4a2df1*/
+      *a4 = v5; /*0x4a2df3*/
+    return 0; /*0x4a2df5*/
+  }
+  while ( 1 ) /*0x4a2db1*/
+  {
+    result = ((IStream *)(v4))->Read((void *)0x10000, v10); /*0x4a2db1*/
+    if ( result < 0 ) /*0x4a2db8*/
+      return result; /*0x4a2ce2*/
+    v6 -= 0x10000; /*0x4a2dba*/
+    v4 += 0x2000; /*0x4a2dc0*/
+    if ( v6 < 0x10000 ) /*0x4a2dcc*/
+    {
+      v5 = Size; /*0x4a2dce*/
+      goto LABEL_23; /*0x4a2dce*/
+    }
+  }
+
 }
 } // namespace gamemd
 // 0x4A3110
 namespace gamemd {
 CStreamClass * CStreamClass::ddtor(int a2, char a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A3110)
+
+  int v3; // ecx
+  int v4; // esi
+  int v5; // eax
+  void *v6; // ecx
+  void *v7; // edx
+  int v8; // eax
+
+  v4 = v3; /*0x4a3112*/
+  v5 = *(unsigned int *)(v3 + 8); /*0x4a3116*/
+  *(unsigned int *)v3 = (unsigned int)(&vt_CStreamClass); /*0x4a3119*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_CStreamClass); /*0x4a3121*/
+  if ( v5 ) /*0x4a3128*/
+  {
+    if ( *(unsigned char *)(v3 + 17) /*0x4a314b*/
+      && *(int *)(v3 + 20) > 0
+      && !CStreamClass::IsEmpty((CStreamClass *)(v3 + 8), 0)
+      && *(int *)(v4 + 20) > 0 )
+    {
+      ((IStream *)(*(IStream **)(v4 + 24)))->Read(*(void **)(v4 + 20), a2); /*0x4a3154*/
+    }
+    if ( *(unsigned int *)(v4 + 8) /*0x4a317b*/
+      && (*(int (**)(unsigned int, unsigned int))(**(unsigned int **)(v4 + 8) + 32))(*(unsigned int *)(v4 + 8), 0) >= 0 )
+    {
+      if ( !*(unsigned int *)(v4 + 8) ) /*0x4a317d*/
+        WinAPI::Wrapper(-2147467261); /*0x4a3187*/
+      (*(void (**)(unsigned int))(**(unsigned int **)(v4 + 8) + 8))(*(unsigned int *)(v4 + 8)); /*0x4a3192*/
+      *(unsigned int *)(v4 + 8) = 0; /*0x4a3195*/
+    }
+  }
+  __3_YAXPAX_Z(*(void **)(v4 + 32)); /*0x4a319c*/
+  v6 = *(void **)(v4 + 24); /*0x4a31a1*/
+  *(unsigned int *)(v4 + 32) = 0; /*0x4a31a4*/
+  __3_YAXPAX_Z(v6); /*0x4a31a8*/
+  v7 = *(void **)(v4 + 28); /*0x4a31ad*/
+  *(unsigned int *)(v4 + 24) = 0; /*0x4a31b0*/
+  __3_YAXPAX_Z(v7); /*0x4a31b4*/
+  *(unsigned int *)(v4 + 28) = 0; /*0x4a31b9*/
+  v8 = *(unsigned int *)(v4 + 8); /*0x4a31bc*/
+  if ( v8 ) /*0x4a31c4*/
+    (*(void (**)(unsigned int))(*(unsigned int *)v8 + 8))(*(unsigned int *)(v4 + 8)); /*0x4a31c9*/
+  if ( ((uint8_t)a2 & 1) != 0 ) /*0x4a31d1*/
+    __3_YAXPAX_Z((void *)v4); /*0x4a31d4*/
+  return (gamemd::CStreamClass *)((void *)v4); /*0x4a31de*/
+
 }
 } // namespace gamemd
 
@@ -169,21 +283,27 @@ int CStreamClass::Stat(int a1, int a2)
 namespace gamemd {  // G42.18c ns repair
 int CStreamClass::IStreamQueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A3220)
+
+  return CStreamClass::QueryInterface((CStreamClass *)((char *)a1 - 4), a2, a3);
+
 }
 }  // G42.18c ns repair
 // 0x4A3230
 namespace gamemd {  // G42.18c ns repair
 LONG CStreamClass::IStreamAddRef(int a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A3230)
+
+  return CStreamClass::AddRef((CStreamClass *)((char *)a1 - 4));
+
 }
 }  // G42.18c ns repair
 // 0x4A3240
 namespace gamemd {  // G42.18c ns repair
 LONG CStreamClass::IStreamRelease(int a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A3240)
+
+  return CStreamClass::Release((CStreamClass *)((char *)a1 - 4));
+
 }
 }  // G42.18c ns repair
 // 0x4A4B20

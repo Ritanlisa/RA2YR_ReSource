@@ -95,7 +95,32 @@ int ScriptTypeClass::GetObjectSize()
 namespace gamemd {
 ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x691FA0)
+
+  int v3; // eax
+  ScriptTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
+
+  Block->vtable1 = &vt_ScriptTypeClass; /*0x691fa6*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fac*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fb3*/
+  ((unsigned int *)Block)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691fba*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(Block), 1); /*0x691fc1*/
+  v5 = (gamemd::ScriptTypeClass *)(Block); /*0x691fd6*/
+  v3 = (*(int (**)(int *, ScriptTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 16))((int *)&(unsigned int *)((char *)&FootClass_Array + 4), &v5); /*0x691fda*/
+  if ( v3 != -1 && v3 < *(int *)((char *)&FootClass_Array) ) /*0x691fea*/
+  {
+    --*(unsigned int *)((char *)&FootClass_Array); /*0x691fef*/
+    for ( ; /*0x691ff5*/
+          v3 < *(int *)((char *)&FootClass_Array);
+          *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * v3 - 4) = *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * v3) )
+    {
+      ++v3; /*0x691ffd*/
+    }
+  }
+  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x692011*/
+  if ( (a2 & 1) != 0 ) /*0x69201b*/
+    __3_YAXPAX_Z(Block); /*0x69201e*/
+  return Block; /*0x692028*/
+
 }
 } // namespace gamemd
 
@@ -103,6 +128,41 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
 namespace gamemd {
 TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6E8340)
+
+  int KeyCount; // ebx
+  int i; // edi
+  uint8_t *StringByIndex; // eax
+  int result; // eax
+  int v7; // ebx
+  int j; // ebp
+  int v9; // edi
+  int v10; // [esp-4h] [ebp-38h]
+  char Buffer[32]; // [esp+14h] [ebp-20h] BYREF
+
+  KeyCount = (int)(INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces)); /*0x6e8357*/
+  for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
+  {
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, i); /*0x6e8367*/
+    ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), Buffer, 32); /*0x6e8380*/
+    INIClass::ClearSection((int *)a1->__pad_0, (int)Buffer, 0); /*0x6e838e*/
+  }
+  INIClass::ClearSection((int *)a1->__pad_0, (int)g_INI_Key_TaskForces, 0); /*0x6e83a1*/
+  result = dword_A8E8E0; /*0x6e83a6*/
+  v7 = 0; /*0x6e83ab*/
+  for ( j = 0; j < dword_A8E8E0; ++j ) /*0x6e83b1*/
+  {
+    v9 = *((unsigned int *)dword_A8E8D4 + j); /*0x6e83bc*/
+    if ( *(unsigned int *)(v9 + 160) == a2 ) /*0x6e83c5*/
+    {
+      v10 = v7++; /*0x6e83cd*/
+      sprintf(Buffer, "%d", v10); /*0x6e83d5*/
+      ((String*)Buffer)->Trim(); /*0x6e83e1*/
+      INIClass::SetString(a1->__pad_0, g_INI_Key_TaskForces, Buffer, (char *)(v9 + 36)); /*0x6e83f6*/
+      (*(void (**)(int, INIClass *))(*(unsigned int *)v9 + 104))(v9, (INIClass *)a1); /*0x6e8400*/
+    }
+    result = dword_A8E8E0; /*0x6e8403*/
+  }
+  return (gamemd::TaskForceClass *)(result); /*0x6e840d*/
+
 }
 } // namespace gamemd

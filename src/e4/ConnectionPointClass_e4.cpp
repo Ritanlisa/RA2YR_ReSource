@@ -18,14 +18,97 @@
 namespace gamemd {
 int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A0760)
+
+  int v3; // edi
+  int v4; // eax
+  int v5; // eax
+  int v6; // eax
+  int v7; // ecx
+  unsigned int *v8; // edx
+  unsigned int *v9; // eax
+  int i; // esi
+  int v11; // [esp-Ch] [ebp-14h]
+
+  if ( !a2 ) /*0x4a076a*/
+    return -2147467261; /*0x4a076d*/
+  v3 = (int)(__2_YAPAXI_Z(0x24u)); /*0x4a077d*/
+  if ( !v3 ) /*0x4a0784*/
+    return -2147024882; /*0x4a0864*/
+  *(unsigned int *)(v3 + 8) = 0; /*0x4a0798*/
+  *(unsigned int *)(v3 + 12) = 0; /*0x4a079b*/
+  *(unsigned char *)(v3 + 16) = 1; /*0x4a079e*/
+  *(unsigned char *)(v3 + 17) = 0; /*0x4a07a2*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_VectorClass); /*0x4a07a5*/
+  if ( (int *)(v3 + 4) != &a1->ConnectionPointClass_field_0x1C ) /*0x4a07ab*/
+  {
+    VectorClass::ClearAndFree2(v3 + 4); /*0x4a07af*/
+    v4 = *((unsigned int *)a1 + 9); /*0x4a07b5*/
+    *(unsigned int *)(v3 + 12) = v4; /*0x4a07ba*/
+    if ( v4 ) /*0x4a07bd*/
+    {
+      v5 = (int)(__2_YAPAXI_Z(8 * v4)); /*0x4a07c7*/
+      *(unsigned int *)(v3 + 8) = v5; /*0x4a07d1*/
+      if ( v5 ) /*0x4a07d4*/
+      {
+        v6 = *(unsigned int *)(v3 + 12); /*0x4a07d6*/
+        v7 = 0; /*0x4a07d9*/
+        *(unsigned char *)(v3 + 17) = 1; /*0x4a07dd*/
+        if ( v6 > 0 ) /*0x4a07e1*/
+        {
+          do /*0x4a0806*/
+          {
+            v8 = (unsigned int *)(a1->ConnectionPointClass_field_0x20 + 8 * v7); /*0x4a07ef*/
+            v9 = (unsigned int *)(*(unsigned int *)(v3 + 8) + 8 * v7++); /*0x4a07f4*/
+            *v9 = *v8; /*0x4a07f9*/
+            v9[1] = v8[1]; /*0x4a07fe*/
+          }
+          while ( v7 < *(unsigned int *)(v3 + 12) ); /*0x4a0806*/
+        }
+      }
+    }
+    else
+    {
+      *(unsigned int *)(v3 + 8) = 0; /*0x4a080c*/
+      *(unsigned char *)(v3 + 17) = 0; /*0x4a080f*/
+    }
+  }
+  *(unsigned int *)(v3 + 20) = *((unsigned int *)a1 + 11); /*0x4a0815*/
+  *(unsigned int *)(v3 + 24) = *((unsigned int *)a1 + 12); /*0x4a081b*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_DynamicVectorClass); /*0x4a081e*/
+  *(unsigned int *)(v3 + 28) = 0; /*0x4a0824*/
+  *(unsigned int *)(v3 + 32) = 0; /*0x4a0827*/
+  *(unsigned int *)v3 = (unsigned int)(&vt_EnumConnectionsClass); /*0x4a082a*/
+  for ( i = 0; i < *(unsigned int *)(v3 + 20); ++i ) /*0x4a0837*/
+  {
+    v11 = *(unsigned int *)(*(unsigned int *)(v3 + 8) + 8 * i); /*0x4a083f*/
+    (*(void (**)(int))(*(unsigned int *)v11 + 4))(v11); /*0x4a0842*/
+  }
+  return (**(int (***)(int, void *, int))v3)(v3, &unk_7F7CB0, a2); /*0x4a076c*/
+
 }
 } // namespace gamemd
 // 0x4A0870
 namespace gamemd {
 unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPointClass * aP2, void *a3, void *a4, void *a5, void *a6)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A0870)
+
+  this->ConnectionPointClass_field_0x04 = *a1; /*0x4a087c*/
+  this->ConnectionPointClass_field_0x08 = a1[1]; /*0x4a0881*/
+  this->ConnectionPointClass_field_0x0C = a1[2]; /*0x4a0887*/
+  this->ConnectionPointClass_field_0x10 = a1[3]; /*0x4a088d*/
+  this->ConnectionPointClass_field_0x18 = (unsigned int)(aP2); /*0x4a0896*/
+  this->ConnectionPointClass_field_0x14 = 0; /*0x4a0899*/
+  this->ConnectionPointClass_field_0x20 = 0; /*0x4a089c*/
+  this->u32_24 = 0; /*0x4a089f*/
+  this->u32_28 = 1; /*0x4a08a2*/
+  this->u32_29 = 0; /*0x4a08a6*/
+  this->ConnectionPointClass_field_0x1C = (int)&vt_DynamicVectorClass; /*0x4a08a9*/
+  this->q00C = 10; /*0x4a08b0*/
+  this->q00B = 0; /*0x4a08b7*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ConnectionPointClass); /*0x4a08ba*/
+  (*(void (**)(int))(aP2->q004)((int)aP2); /*0x4a08c3*/
+  return this->__pad_0; /*0x4a08c8*/
+
 }
 } // namespace gamemd
 // 0x4A1280
@@ -80,9 +163,44 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 }
 // 0x4A0630
 namespace gamemd {  // G42.18c ns repair
-int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *), int * updated)  // G42.41b: fnptr trailing-name dropped (truth 0x4A0630)
+int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *) a2, int * updated)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4A0630)
+
+  int v4; // ecx
+  int v5; // eax
+  int v6; // eax
+  int ConnectionPointClass_field_0x20; // edx
+  int v8; // [esp+14h] [ebp-8h] BYREF
+  int updated; // [esp+18h] [ebp-4h]
+
+  if ( !a2 || !a3 ) /*0x4a0648*/
+    return -2147467261; /*0x4a06ec*/
+  updated = AbstractClass::updateAITimer(dword_A8B230); /*0x4a0661*/
+  if ( (**a2)(a2, (int)&a1->ConnectionPointClass_field_0x04, &v8) < 0 ) /*0x4a0671*/
+    return -2147220990; /*0x4a0675*/
+  v4 = *((unsigned int *)a1 + 9); /*0x4a0681*/
+  if ( *((unsigned int *)a1 + 11) >= v4 ) /*0x4a068c*/
+  {
+    if ( !*((unsigned char *)a1 + 41) && v4 ) /*0x4a0697*/
+      return -2147220991; /*0x4a0697*/
+    v5 = *((unsigned int *)a1 + 12); /*0x4a0699*/
+    if ( v5 <= 0 /*0x4a06a9*/
+      || !(*(uint8_t (**)(int *, int, unsigned int))(a1->ConnectionPointClass_field_0x1C + 8))(
+            &a1->ConnectionPointClass_field_0x1C,
+            v4 + v5,
+            0) )
+    {
+      return -2147220991; /*0x4a06de*/
+    }
+  }
+  v6 = *((unsigned int *)a1 + 11); /*0x4a06b0*/
+  ConnectionPointClass_field_0x20 = a1->ConnectionPointClass_field_0x20; /*0x4a06b3*/
+  *((unsigned int *)a1 + 11) = v6 + 1; /*0x4a06ba*/
+  *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v6) = v8; /*0x4a06c1*/
+  *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v6 + 4) = updated; /*0x4a06c9*/
+  *a3 = updated; /*0x4a06d1*/
+  return 0; /*0x4a0673*/
+
 }
 }  // G42.18c ns repair
 // 0x4A0700

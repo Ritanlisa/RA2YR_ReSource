@@ -19,7 +19,712 @@
 namespace gamemd {
 int DSP_AudioMixBuffers(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BF740)
+  DSurface *v11; // esi
+  DSurface * result;
+  uint16_t *v14; // edx
+  int16_t v48; // cx
+  int16_t v49; // ax
+  uint16_t *v108; // edx
+  int v117; // [esp+20h] [ebp-10h]
+  int16_t v118; // [esp+24h] [ebp-Ch] BYREF
+  int16_t v120; // [esp+2Ah] [ebp-6h]
+  int v3 = *(unsigned int *)(a1 + 132);
+  unsigned int * v4 = *(unsigned int **)(a1 + 368);
+  char v114[4]; // [esp+14h] [ebp-1Ch]
+  *(unsigned int *)v114 = a2;
+  int v116 = 0;
+  char a5 = 0;
+  unsigned int * v115 = v4;
+  if ( (v3 & 0x20) != 0 )
+  {
+    int v5 = *(unsigned int *)(a1 + 292);
+    if ( v5 > 0 || v5 == -1 )
+    {
+      int v6 = *(unsigned int *)(a1 + 384);
+      v117 = *(unsigned int *)(a1 + 300);
+      if ( v6 > v117 )
+      {
+        unsigned int * v8 = *(unsigned int **)(a1 + 284);
+        v116 = *(unsigned int *)(a1 + 304);
+        int v7 = v116;
+        v115 = v8;
+        if ( v116 != -1 )
+        {
+          *(unsigned int *)(a1 + 300) = v116;
+          *(unsigned int *)(a1 + 304) = -1;
+          *(unsigned int *)(a1 + 284) = v7;
+        }
+        int v9 = *(unsigned int *)(a1 + 296);
+        if ( *(unsigned int *)(a1 + 384) == v9 )
+        {
+          result = (gamemd::DSurface *)(-1);
+          goto LABEL_34;
+        }
+        *(unsigned int *)(a1 + 384) = v9;
+        int v10 = *(unsigned int *)(a1 + 368);
+        v11 = *(DSurface **)(a1 + 296);
+        a5 = 0;
+        if ( (*(unsigned char *)(v10 + 20) & 1) != 0 )
+        {
+          result = (gamemd::DSurface *)(-9);
+LABEL_32:
+          int v17 = v117;
+          unsigned int * v18 = v115;
+          *(unsigned int *)(a1 + 300) = v117;
+          *(unsigned int *)(a1 + 304) = v7;
+          *(unsigned int *)(a1 + 284) = (unsigned int)(v18);
+          *(unsigned int *)(a1 + 384) = v17 + 1;
+          return (int)(result);
+        }
+        if ( (int)v11 >= *(unsigned int *)(a1 + 284)
+          || !*(unsigned int *)(a1 + 1892)
+          || (*(unsigned char *)(a1 + 132) & 1) != 0 && (*(unsigned char *)(a1 + 234) & 8) == 0 )
+        {
+          result = (gamemd::DSurface *)(-6);
+          goto LABEL_32;
+        }
+        if ( !*(unsigned char *)(a1 + 264) && v11 )
+        {
+          int v13 = *(uint16_t *)(a1 + 1812);
+          if ( (unsigned short)v13 && (*(unsigned char *)(a1 + 1814) & 3) != 0 )
+          {
+            v14 = *(uint16_t **)(a1 + 1820);
+            int v15 = 0;
+            while ( v11 != (DSurface *)*v14 )
+            {
+              ++v15;
+              v14 += 2;
+              if ( v15 >= v13 )
+              {
+                v7 = v116;
+                goto LABEL_23;
+              }
+            }
+            v7 = v116;
+          }
+          else
+          {
+LABEL_23: result = (gamemd::DSurface *)(Audio_Process_7C0530(a1, (int)v11, 1));
+            if ( result != (gamemd::DSurface *)(-1) )
+              goto LABEL_27;
+          }
+        }
+        result = (unsigned int)((int)(ProcessAudioStreamPlayback(a1, v11, *(uint8_t *)(a1 + 245), 0, 0, &a5)));
+LABEL_27:
+        *(unsigned int *)(a1 + 384) = (unsigned int)(v11);
+        if ( result != (gamemd::DSurface *)(-1) )
+          goto LABEL_31;
+        int v16 = 32;
+        if ( a5 )
+          v16 = 48;
+        result = (gamemd::DSurface *)(FillAudioStreamBuffer(a1, v16));
+        if ( result != (gamemd::DSurface *)(-1) )
+        {
+LABEL_31:
+          if ( result != (gamemd::DSurface *)(-11) )
+            goto LABEL_32;
+        }
+LABEL_34:
+        int v19 = *(unsigned int *)(a1 + 336);
+        IDA_LOBYTE(v19) = v19 | 0x80;
+        *(unsigned int *)(a1 + 336) = v19;
+        if ( v7 == -1 )
+        {
+          v4[5] |= 0x100u;
+          int v20 = *(unsigned int *)(a1 + 292);
+          if ( v20 != -1 )
+            *(unsigned int *)(a1 + 292) = v20 - 1;
+        }
+        else
+        {
+          int v21 = v4[5];
+          int v22 = v117;
+          IDA_BYTE1(v21) |= 2u;
+          v4[5] = v21;
+          int v23 = *(unsigned int *)(a1 + 308);
+          *(unsigned int *)(a1 + 320) = v22;
+          int v24 = *(unsigned int *)(a1 + 336);
+          IDA_BYTE1(v24) |= 1u;
+          *(unsigned int *)(a1 + 292) = v23;
+          *(unsigned int *)(a1 + 308) = -1;
+          *(unsigned int *)(a1 + 336) = v24;
+        }
+        return (int)(result);
+      }
+    }
+  }
+  if ( *(unsigned int *)(a1 + 384) <= *(unsigned int *)(a1 + 284) )
+  {
+    int v27 = v4[5];
+    if ( (v27 & 1) != 0 && (v27 & 0x800) == 0 )
+    {
+      ++*(unsigned int *)(a1 + 392);
+      return -9;
+    }
+    if ( (*(unsigned char *)(a1 + 336) & 1) == 0 )
+    {
+      *(unsigned int *)(a1 + 400) = 0;
+      v4[1] = *(unsigned int *)(a1 + 360);
+    }
+LABEL_51:
+    unsigned int * v28 = v115;
+    while ( 1 )
+    {
+  bool v36; // zf
+  int v35; // eax
+  int v30; // ecx
+  unsigned int v29; // eax
+      while ( 1 )
+      {
+        if ( (*(unsigned char *)(a1 + 336) & 1) == 0 )
+        {
+          if ( (*(int (**)(int, int, int, int))(a1 + 64))(a1, 5, a1 + 408, 8) )
+            return -2;
+          g_AudioDSPState = ((*(unsigned int *)(a1 + 412) & 0xFF00 | (*(unsigned int *)(a1 + 412) << 16)) << 8)
+                          | ((IDA_HIWORD(*(unsigned int *)(a1 + 412)) | *(unsigned int *)(a1 + 412) & 0xFF0000u) >> 8);
+          *(unsigned int *)(a1 + 400) += g_AudioDSPState;
+        }
+        v29 = *(unsigned int *)(a1 + 408);
+        v30 = 1;
+        if ( v29 <= 0x4B465156 )
+          break;
+        if ( v29 > 0x5A464243 )
+        {
+  int v67; // edx
+  unsigned int *v66; // eax
+          if ( v29 > 0x5A504243 )
+          {
+            if ( v29 == 1515343958 )
+            {
+              if ( (v114[0] & 4) != 0 )
+                goto LABEL_199;
+              unsigned int * v98 = *(unsigned int **)(a1 + 368);
+              int v99 = *(unsigned int *)(a1 + 1900);
+              v117 = g_AudioDSPState;
+              int v100 = g_AudioDSPState + 1;
+              IDA_LOBYTE(v100) = (g_AudioDSPState + 1) & 0xFE;
+              int v101 = v99 - v100;
+              int v102 = v101 + *v98;
+              if ( (*(int (**)(int, int, int, int))(a1 + 64))(a1, 5, v102, v100) )
+                return -4;
+              int v103 = v98[5];
+              v98[8] = v101;
+              v98[5] = v103 | 0x10;
+              if ( *(unsigned short *)(a1 + 232) < 3u )
+                *(unsigned char *)(v102 + v117 + 1) = 0x80;
+              v66 = v115;
+              v30 = 0;
+              v67 = v115[5] | 0x20;
+LABEL_197:
+              v66[5] = v67;
+              goto LABEL_198;
+            }
+            if ( v29 == 1515475030 )
+            {
+LABEL_187:
+              if ( (v114[0] & 4) == 0 )
+              {
+                unsigned int * v92 = *(unsigned int **)(a1 + 368);
+                int v93 = *(unsigned int *)(a1 + 1900);
+                v117 = g_AudioDSPState;
+                int v94 = g_AudioDSPState + 1;
+                IDA_LOBYTE(v94) = (g_AudioDSPState + 1) & 0xFE;
+                int v95 = v93 - v94;
+                int v96 = v95 + *v92;
+                if ( (*(int (**)(int, int, int, int))(a1 + 64))(a1, 5, v96, v94) )
+                  return -4;
+                int v97 = v92[5];
+                v92[8] = v95;
+                v92[5] = v97 | 0x10;
+                if ( *(unsigned short *)(a1 + 232) < 3u )
+                  *(unsigned char *)(v96 + v117 + 1) = 0x80;
+                v30 = 0;
+LABEL_198:
+                v28 = v115;
+              }
+LABEL_199:
+              v116 = 1;
+              if ( v30 != 1 )
+                goto LABEL_206;
+              goto LABEL_200;
+            }
+            goto LABEL_170;
+          }
+          switch ( v29 )
+          {
+            case 0x5A504243u:
+              if ( (v114[0] & 8) != 0 )
+                goto LABEL_200;
+              v35 = Audio_Helper_7C1F30(a1, g_AudioDSPState);
+              goto LABEL_72;
+            case 0x5A4B5056u:
+              if ( (v114[0] & 4) != 0 )
+                goto LABEL_199;
+              int v60 = *(unsigned int *)(a1 + 1900);
+              unsigned int * v61 = *(unsigned int **)(a1 + 368);
+              v117 = g_AudioDSPState;
+              int v62 = g_AudioDSPState + 1;
+              IDA_LOBYTE(v62) = (g_AudioDSPState + 1) & 0xFE;
+              int v63 = v60 - v62;
+              int v64 = *v61 + v63;
+              if ( (*(int (**)(int, int, int, int))(a1 + 64))(a1, 5, v64, v62) )
+                return -4;
+              int v65 = v61[5];
+              v61[8] = v63;
+              v61[5] = v65 | 0x10;
+              if ( *(unsigned short *)(a1 + 232) < 3u )
+                *(unsigned char *)(v64 + v117 + 1) = 0x80;
+              v66 = v115;
+              v30 = 0;
+              v67 = v115[5] | 2;
+              goto LABEL_197;
+            case 0x5A4C5043u:
+              if ( (v114[0] & 1) != 0 )
+                goto LABEL_200;
+              if ( Audio_Helper_7C20B0(a1, g_AudioDSPState) != -1 )
+                return -4;
+              int v59 = v28[5];
+              IDA_LOBYTE(v59) = v59 | 4;
+              v28[5] = v59;
+              break;
+            default:
+LABEL_170:
+              unsigned int v68 = *(unsigned int *)(a1 + 1828);
+              unsigned int * v69 = *(unsigned int **)(a1 + 1844);
+              int v70 = 0;
+              if ( !v68 )
+                goto LABEL_173;
+              while ( v29 != *v69 )
+              {
+                ++v70;
+                v69 += 4;
+                if ( v70 >= v68 )
+                  goto LABEL_173;
+              }
+              if ( v70 >= 0 )
+              {
+                int v74 = *(unsigned int *)(a1 + 1848);
+                int v75 = 3 * v70;
+                int v76 = *(unsigned int *)(v74 + 4 * v75 + 4);
+                unsigned int * v77 = (unsigned int *)(v74 + 4 * v75);
+                unsigned int v78 = (g_AudioDSPState + 1) & 0xFFFFFFFE;
+                int v79 = 12 * v76;
+                int * v80 = (int *)(12 * v76 + v77[2]);
+                unsigned int v81 = v76 + 1;
+                v117 = *v80;
+                v80[1] = g_AudioDSPState;
+                *(unsigned int *)(v77[2] + v79 + 8) = *(unsigned int *)(a1 + 384);
+                if ( v81 >= *v77 )
+                  v81 = 0;
+                v77[1] = v81;
+                if ( (*(int (**)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v117, v78) )
+                  return -4;
+                int v82 = *(unsigned int *)(a1 + 368);
+                v28 = v115;
+                int v83 = *(unsigned int *)(v82 + 20);
+                IDA_BYTE1(v83) |= 4u;
+                *(unsigned int *)(v82 + 20) = v83;
+              }
+              else
+              {
+LABEL_173:
+                unsigned int v71 = *(unsigned int *)(a1 + 1852);
+                unsigned int * v72 = *(unsigned int **)(a1 + 1860);
+                int v73 = 0;
+                if ( v71 )
+                {
+                  while ( v29 != *v72 )
+                  {
+                    ++v73;
+                    v72 += 4;
+                    if ( v73 >= v71 )
+                      goto LABEL_200;
+                  }
+                  if ( v73 >= 0 )
+                  {
+                    unsigned int * v84 = (unsigned int *)(*(unsigned int *)(a1 + 1864) + 12 * v73);
+                    unsigned int v85 = (g_AudioDSPState + 1) & 0xFFFFFFFE;
+                    unsigned int v86 = v84[1];
+                    int v87 = 12 * v86;
+                    int * v88 = (int *)(12 * v86 + v84[2]);
+                    unsigned int v89 = v86 + 1;
+                    v117 = *v88;
+                    v88[1] = g_AudioDSPState;
+                    *(unsigned int *)(v84[2] + v87 + 8) = *(unsigned int *)(a1 + 384);
+                    if ( v89 >= *v84 )
+                      v89 = 0;
+                    int v112 = v117;
+                    v84[1] = v89;
+                    if ( !(*(int (**)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v112, v85) )
+                    {
+                      int v90 = *(unsigned int *)(a1 + 368);
+                      int v91 = *(unsigned int *)(v90 + 20);
+                      IDA_BYTE1(v91) |= 4u;
+                      *(unsigned int *)(v90 + 20) = v91;
+                      goto LABEL_51;
+                    }
+                    return -4;
+                  }
+                }
+LABEL_200:
+                if ( (*(int (**)(int, int, int, unsigned int))(a1 + 64))(
+                       a1,
+                       7,
+                       1,
+                       (g_AudioDSPState + 1) & 0xFFFFFFFE) )
+                {
+                  return -6;
+                }
+                if ( v116 )
+                  goto LABEL_206;
+              }
+              break;
+          }
+        }
+        else
+        {
+          if ( v29 == 1514553923 )
+          {
+            if ( (v114[0] & 0x10) != 0 )
+              goto LABEL_200;
+            v35 = Audio_Helper_7C1D90(a1, g_AudioDSPState);
+            goto LABEL_72;
+          }
+          if ( v29 > 0x52465156 )
+          {
+            if ( v29 == 1381257302 )
+            {
+              if ( (v114[0] & 4) == 0 )
+              {
+                unsigned int * v56 = *(unsigned int **)(a1 + 368);
+                int v57 = g_AudioDSPState + 1;
+                IDA_LOBYTE(v57) = (g_AudioDSPState + 1) & 0xFE;
+                if ( (*(int (**)(int, int, unsigned int, int))(a1 + 64))(a1, 5, *v56, v57) )
+                  return -4;
+                v56[5] &= ~0x10u;
+                v30 = 0;
+                v56[8] = 0;
+                int v58 = v28[5];
+                IDA_LOBYTE(v58) = v58 | 0x20;
+                v28[5] = v58;
+              }
+              goto LABEL_199;
+            }
+            if ( v29 == 1514426454 )
+              goto LABEL_187;
+            goto LABEL_170;
+          }
+          if ( v29 == 1380340054 )
+          {
+            if ( (v114[0] & 0x1D) != 0x1D )
+            {
+              if ( DSP_AudioProcess((AudioStream *)a1, g_AudioDSPState, v114[0]) != -1 )
+                return -4;
+              v30 = 0;
+            }
+            goto LABEL_199;
+          }
+          if ( v29 == 1263816790 )
+          {
+            if ( (v114[0] & 4) == 0 )
+            {
+              unsigned int * v54 = *(unsigned int **)(a1 + 368);
+              if ( (*(int (**)(int, int, unsigned int, unsigned int))(a1 + 64))(
+                     a1,
+                     5,
+                     *v54,
+                     (g_AudioDSPState + 1) & 0xFFFFFFFE) )
+              {
+                return -4;
+              }
+              v54[5] &= ~0x10u;
+              v30 = 0;
+              v54[8] = 0;
+              int v55 = v28[5];
+              IDA_LOBYTE(v55) = v55 | 2;
+              v28[5] = v55;
+            }
+            goto LABEL_199;
+          }
+          if ( v29 != 1279676758 )
+            goto LABEL_170;
+          if ( (v114[0] & 0x20) != 0 )
+            goto LABEL_200;
+          if ( DSP_AudioProcess((AudioStream *)a1, g_AudioDSPState, v114[0]) != -1 )
+            return -4;
+          char v53 = *(unsigned char *)(a1 + 234);
+          a5 = 1;
+          if ( (v53 & 0x10) != 0 && (v114[0] & 4) != 0 )
+          {
+LABEL_206:
+            int v104 = *(unsigned int *)(a1 + 384);
+            bool v105 = v104 == 0;
+            if ( v104 > 0 )
+            {
+              int v106 = *(unsigned int *)(a1 + 400);
+              if ( v106 > *(unsigned int *)(a1 + 404) )
+                *(unsigned int *)(a1 + 404) = v106;
+              v105 = v104 == 0;
+            }
+            if ( v105 )
+              goto LABEL_217;
+            int v107 = *(uint16_t *)(a1 + 1812);
+            if ( (unsigned short)v107 && (*(unsigned char *)(a1 + 1814) & 3) != 0 )
+            {
+              v108 = *(uint16_t **)(a1 + 1820);
+              int v109 = 0;
+              while ( v104 != *v108 )
+              {
+                ++v109;
+                v108 += 2;
+                if ( v109 >= v107 )
+                  goto LABEL_220;
+              }
+LABEL_217:
+              if ( (v114[0] & 0x20) == 0 && !a5 )
+              {
+                int v110 = *(unsigned int *)(*(unsigned int *)(a1 + 356) + 8);
+                *(unsigned int *)(a1 + 360) = v110;
+                v28[1] = v110;
+              }
+            }
+LABEL_220:
+            if ( (v114[0] & 4) == 0 )
+            {
+              v28[7] = *(unsigned int *)(a1 + 384);
+              *(unsigned int *)(a1 + 388) = *(unsigned int *)(a1 + 384);
+              *(unsigned int *)(a1 + 364) = v28[1];
+              int v111 = v28[3];
+              v28[5] |= 1u;
+              *(unsigned int *)(a1 + 368) = v111;
+            }
+            ++*(unsigned int *)(a1 + 384);
+            return -1;
+          }
+        }
+      }
+      if ( v29 == 1262899542 )
+      {
+        if ( (v114[0] & 0x1D) != 0x1D )
+        {
+          if ( DSP_AudioProcess((AudioStream *)a1, g_AudioDSPState, v114[0]) != -1 )
+            return -4;
+          int v52 = v28[5];
+          IDA_LOBYTE(v52) = v52 | 2;
+          v30 = 0;
+          v28[5] = v52;
+        }
+        goto LABEL_199;
+      }
+      if ( v29 > 0x31414E53 )
+      {
+        if ( v29 <= 0x32444E53 )
+        {
+          switch ( v29 )
+          {
+            case 0x32444E53u:
+              if ( (v114[0] & 2) != 0 )
+                goto LABEL_200;
+              int v45 = *(unsigned int *)(a1 + 132);
+              if ( (v45 & 1) == 0 || (v45 & 0x40) != 0 )
+                goto LABEL_200;
+              goto LABEL_109;
+            case 0x31444E53u:
+              if ( (v114[0] & 2) != 0 )
+                goto LABEL_200;
+              int v44 = *(unsigned int *)(a1 + 132);
+              if ( (v44 & 1) == 0 || (v44 & 0x40) != 0 )
+                goto LABEL_200;
+              goto LABEL_104;
+            case 0x32414E53u:
+              if ( (v114[0] & 2) != 0 )
+                goto LABEL_200;
+              int v43 = *(unsigned int *)(a1 + 132);
+              if ( (v43 & 1) == 0 || (v43 & 0x40) == 0 )
+                goto LABEL_200;
+LABEL_109:
+              if ( ((AudioStream *)(a1))->CalcReadPos() == -11 )
+              {
+LABEL_203:
+                *(unsigned int *)(a1 + 336) |= 1u;
+                return -11;
+              }
+              *(unsigned int *)(a1 + 336) &= ~1u;
+              v35 = Audio_Render_7C2410(a1, g_AudioDSPState);
+              goto LABEL_72;
+          }
+          goto LABEL_170;
+        }
+        if ( v29 == 1146376278 )
+        {
+LABEL_123:
+          if ( (v114[0] & 4) == 0 )
+          {
+            unsigned int * v50 = *(unsigned int **)(a1 + 368);
+            if ( (*(int (**)(int, int, unsigned int, unsigned int))(a1 + 64))(
+                   a1,
+                   5,
+                   *v50,
+                   (g_AudioDSPState + 1) & 0xFFFFFFFE) )
+            {
+              return -4;
+            }
+            int v51 = v50[5];
+            IDA_LOBYTE(v51) = v51 & 0xEF;
+            v30 = 0;
+            v50[5] = v51;
+            v50[8] = 0;
+          }
+          goto LABEL_199;
+        }
+        if ( v29 != 1244810835 )
+          goto LABEL_170;
+        if ( (v114[0] & 2) != 0 )
+          goto LABEL_200;
+        int v46 = *(unsigned int *)(a1 + 132);
+        if ( (v46 & 1) == 0 || (v46 & 0x40) != 0 )
+          goto LABEL_200;
+        unsigned int v47 = g_AudioDSPState + 1;
+        IDA_LOBYTE(v47) = (g_AudioDSPState + 1) & 0xFE;
+        if ( (*(unsigned char *)(a1 + 132) & 1) == 0 || !*(unsigned int *)(a1 + 1932) )
+        {
+          v36 = (*(int (**)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, v47) == 0;
+          goto LABEL_73;
+        }
+        if ( v47 > 0xC || (*(int (**)(int, int, int16_t *, unsigned int))(a1 + 64))(a1, 5, &v118, v47) )
+          return -4;
+        v48 = v118;
+  int v119; // [esp+26h] [ebp-Ah]
+        *(unsigned int *)(a1 + 2000) = v119;
+        *(unsigned short *)(a1 + 2004) = v48;
+        if ( *(unsigned char *)(a1 + 62) == 2 )
+        {
+          v49 = v120;
+  int v121; // [esp+2Ch] [ebp-4h]
+          *(unsigned int *)(a1 + 2006) = v121;
+          *(unsigned short *)(a1 + 2010) = v49;
+        }
+      }
+      else
+      {
+        if ( v29 == 826363475 )
+        {
+          if ( (v114[0] & 2) != 0 )
+            goto LABEL_200;
+          int v42 = *(unsigned int *)(a1 + 132);
+          if ( (v42 & 1) == 0 || (v42 & 0x40) == 0 )
+            goto LABEL_200;
+LABEL_104:
+          if ( ((AudioStream *)(a1))->CalcReadPos() == -11 )
+            goto LABEL_203;
+          *(unsigned int *)(a1 + 336) &= ~1u;
+          v35 = Audio_Helper_7C2250(a1, g_AudioDSPState);
+          goto LABEL_72;
+        }
+        if ( v29 > 0x304C5043 )
+        {
+          if ( v29 == 810566211 )
+          {
+            if ( (v114[0] & 8) != 0 )
+              goto LABEL_200;
+            v35 = Audio_Helper_7C1E10(a1, g_AudioDSPState);
+            goto LABEL_72;
+          }
+          if ( v29 == 810831958 )
+            goto LABEL_123;
+          goto LABEL_170;
+        }
+        switch ( v29 )
+        {
+          case 0x304C5043u:
+            if ( (v114[0] & 1) != 0 )
+              goto LABEL_200;
+            unsigned int v38 = g_AudioDSPState;
+            int v39 = *(unsigned int *)(a1 + 368);
+            if ( (*(int (**)(int, int, unsigned int, unsigned int))(a1 + 64))(
+                   a1,
+                   5,
+                   *(unsigned int *)(v39 + 8),
+                   (g_AudioDSPState + 1) & 0xFFFFFFFE) )
+            {
+              return -4;
+            }
+            int v40 = *(unsigned int *)(v39 + 20);
+            *(unsigned int *)(v39 + 36) = 0;
+            *(unsigned int *)(v39 + 40) = v38;
+            *(unsigned int *)(v39 + 20) = v40 & 0xFFFFFFF7;
+            if ( *(unsigned short *)(a1 + 1880) == 1 )
+            {
+              qmemcpy((void *)(a1 + 452), *(const void **)(v39 + 8), v38);
+              *(unsigned int *)(a1 + 448) = *(unsigned int *)(v39 + 40);
+              int v41 = *(unsigned int *)(a1 + 420);
+              IDA_LOBYTE(v41) = v41 | 1;
+              *(unsigned int *)(a1 + 420) = v41;
+            }
+            v28 = v115;
+            v115[5] |= 4u;
+            break;
+          case 0x30414E53u:
+            if ( (v114[0] & 2) != 0 )
+              goto LABEL_200;
+            int v37 = *(unsigned int *)(a1 + 132);
+            if ( (v37 & 1) == 0 || (v37 & 0x40) == 0 )
+              goto LABEL_200;
+            goto LABEL_70;
+          case 0x30444E53u:
+            if ( (v114[0] & 2) != 0 )
+              goto LABEL_200;
+            int v34 = *(unsigned int *)(a1 + 132);
+            if ( (v34 & 1) == 0 || (v34 & 0x40) != 0 )
+              goto LABEL_200;
+LABEL_70:
+            if ( ((AudioStream *)(a1))->CalcReadPos() == -11 )
+              goto LABEL_203;
+            *(unsigned int *)(a1 + 336) &= ~1u;
+            v35 = Audio_Helper_7C2180(a1, g_AudioDSPState);
+LABEL_72:
+            v36 = v35 == -1;
+LABEL_73:
+            if ( !v36 )
+              return -4;
+            break;
+          case 0x30464243u:
+            if ( (v114[0] & 0x10) != 0 )
+              goto LABEL_200;
+            unsigned int * v31 = *(unsigned int **)(a1 + 356);
+            int v32 = g_AudioDSPState;
+            int v33 = g_AudioDSPState + 1;
+            IDA_LOBYTE(v33) = (g_AudioDSPState + 1) & 0xFE;
+            if ( (*(int (**)(int, int, unsigned int, int))(a1 + 64))(a1, 5, *v31, v33) )
+              return -4;
+            *(unsigned int *)(a1 + 372) = 0;
+            v31[4] = 0;
+            v31[5] = (unsigned int)(v32);
+            v31[3] = (unsigned int)(8);
+            *(unsigned int *)(a1 + 360) = (unsigned int)(v31);
+            *(unsigned int *)(a1 + 356) = v31[1];
+            break;
+          default:
+            goto LABEL_170;
+        }
+      }
+    }
+  }
+  if ( (a2 & 2) == 0 && (v3 & 1) != 0 && (v3 & 0x40) == 0 )
+  {
+    if ( ((AudioStream *)(a1))->CalcReadPos() == -11 )
+    {
+      int v25 = *(unsigned int *)(a1 + 336);
+      IDA_LOBYTE(v25) = v25 | 1;
+      *(unsigned int *)(a1 + 336) = v25;
+      return -11;
+    }
+    int v26 = *(unsigned int *)(a1 + 1980);
+    IDA_BYTE1(v26) |= 1u;
+    *(unsigned int *)(a1 + 336) &= ~1u;
+    *(unsigned int *)(a1 + 1980) = v26;
+  }
+  return -2;
 }
 } // namespace gamemd
 
@@ -27,6 +732,278 @@ int DSP_AudioMixBuffers(int a1, int a2)
 namespace gamemd {
 void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7C0C80)
+  int v4; // edi
+  unsigned int *v5; // ebx
+  unsigned int v6; // esi
+  unsigned int v7; // eax
+  unsigned int v8; // ecx
+  unsigned int v9; // edx
+  int v10; // ebx
+  int v11; // edx
+  unsigned int *v12; // ebx
+  unsigned int *v13; // esi
+  int v14; // edx
+  unsigned int *v15; // esi
+  int v16; // edx
+  unsigned int *v17; // esi
+  int v18; // eax
+  unsigned int *v19; // edi
+  unsigned int v20; // ebx
+  int v21; // ecx
+  unsigned int *v22; // edi
+  unsigned int v23; // ebx
+  int v24; // ecx
+  unsigned int *v25; // edi
+  unsigned int v26; // ebx
+  int v27; // ecx
+  int v29; // [esp+10h] [ebp-10h]
+  unsigned int v30; // [esp+14h] [ebp-Ch]
+  unsigned int v31; // [esp+18h] [ebp-8h]
+  unsigned int v32; // [esp+18h] [ebp-8h]
+  unsigned int v33; // [esp+18h] [ebp-8h]
+  unsigned int v34; // [esp+1Ch] [ebp-4h]
+
+  v4 = 0; /*0x7c0c89*/
+  v29 = aP0->u32_170; /*0x7c0c91*/
+  v34 = (a2 + 1) & 0xFFFFFFFE; /*0x7c0c9b*/
+  if ( v34 ) /*0x7c0c9f*/
+  {
+    while ( 1 ) /*0x7c0ca5*/
+    {
+      v5 = (unsigned int *)(aP0 + 408); /*0x7c0ca5*/
+      if ( (*(int (**)(int, int, int, int))(aP0 + 64))(aP0, 5, aP0 + 408, 8) ) /*0x7c0cb1*/
+        return -2; /*0x7c10fe*/
+      v6 = ((aP0->u32_19C & 0xFF00 | (aP0->u32_19C << 16)) << 8) /*0x7c0ce3*/
+         | ((((uint64_t)aP0->u32_19C >> 16) | aP0->u32_19C & 0xFF0000) >> 8);
+      v7 = v6 + 1; /*0x7c0ce5*/
+      v8 = (v6 + 1) & 0xFFFFFFFE; /*0x7c0cea*/
+      v30 = v4 + v8 + 8; /*0x7c0cf1*/
+      v9 = *v5; /*0x7c0cf5*/
+      if ( *v5 > 0x5A445056 ) /*0x7c0cfd*/
+      {
+        if ( v9 > 0x5A504243 ) /*0x7c0f13*/
+        {
+          if ( v9 != 1515343958 ) /*0x7c1015*/
+          {
+            if ( v9 != 1515475030 ) /*0x7c101d*/
+              return -4; /*0x7c101d*/
+  LABEL_54:
+            if ( (a3 & 4) == 0 ) /*0x7c1028*/
+            {
+              v22 = aP0->u32_170; /*0x7c102e*/
+              v23 = *(unsigned int *)(aP0 + 1900) - v8; /*0x7c103a*/
+              v32 = v23 + *v22; /*0x7c1045*/
+              if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))( /*0x7c1049*/
+                     aP0,
+                     5,
+                     v32,
+                     (v6 + 1) & 0xFFFFFFFE) )
+              {
+                return -4; /*0x7c1051*/
+              }
+              v24 = v22[5]; /*0x7c1057*/
+              v22[8] = v23; /*0x7c105a*/
+              v22[5] = v24 | 0x10; /*0x7c1060*/
+              if ( aP0->u16_E8 < 3u ) /*0x7c106b*/
+                *(unsigned char *)(v32 + v6 + 1) = 0x80; /*0x7c1071*/
+              goto LABEL_64; /*0x7c1076*/
+            }
+            goto LABEL_63; /*0x7c1028*/
+          }
+          if ( (a3 & 4) == 0 ) /*0x7c107d*/
+          {
+            v25 = aP0->u32_170; /*0x7c107f*/
+            v26 = *(unsigned int *)(aP0 + 1900) - v8; /*0x7c108b*/
+            v33 = v26 + *v25; /*0x7c1096*/
+            if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, v33, (v6 + 1) & 0xFFFFFFFE) ) /*0x7c109a*/
+              return -4; /*0x7c110d*/
+            v27 = v25[5]; /*0x7c10a4*/
+            v25[8] = v26; /*0x7c10a7*/
+            v25[5] = v27 | 0x10; /*0x7c10ad*/
+            if ( aP0->u16_E8 < 3u ) /*0x7c10b8*/
+              *(unsigned char *)(v33 + v6 + 1) = 0x80; /*0x7c10be*/
+            *(unsigned int *)(v29 + 20) |= 0x20u; /*0x7c10c7*/
+            goto LABEL_64; /*0x7c10cb*/
+          }
+        }
+        else
+        {
+          switch ( v9 ) /*0x7c0f19*/
+          {
+            case 0x5A504243u: /*0x7c0f19*/
+              if ( (a3 & 8) == 0 ) /*0x7c0ff2*/
+              {
+                if ( Audio_Helper_7C1F30(aP0, v6) != -1 ) /*0x7c1004*/
+                  return -4; /*0x7c1004*/
+                goto LABEL_64; /*0x7c1004*/
+              }
+              break;
+            case 0x5A464243u: /*0x7c0f19*/
+              if ( (a3 & 0x10) == 0 ) /*0x7c0fd0*/
+              {
+                if ( Audio_Helper_7C1D90(aP0, v6) != -1 ) /*0x7c0fe2*/
+                  return -4; /*0x7c0fe2*/
+                goto LABEL_64; /*0x7c0fe2*/
+              }
+              break;
+            case 0x5A4B5056u: /*0x7c0f19*/
+              if ( (a3 & 4) == 0 ) /*0x7c0f6e*/
+              {
+                v19 = aP0->u32_170; /*0x7c0f7a*/
+                v20 = *(unsigned int *)(aP0 + 1900) - v8; /*0x7c0f80*/
+                v31 = *v19 + v20; /*0x7c0f8d*/
+                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))( /*0x7c0f91*/
+                       aP0,
+                       5,
+                       v31,
+                       (v6 + 1) & 0xFFFFFFFE) )
+                {
+                  return -4; /*0x7c0f99*/
+                }
+                v21 = v19[5]; /*0x7c0f9f*/
+                v19[8] = v20; /*0x7c0fa2*/
+                v19[5] = v21 | 0x10; /*0x7c0fa8*/
+                if ( aP0->u16_E8 < 3u ) /*0x7c0fb3*/
+                  *(unsigned char *)(v31 + v6 + 1) = 0x80; /*0x7c0fb9*/
+                *(unsigned int *)(v29 + 20) |= 2u; /*0x7c0fc2*/
+                goto LABEL_64; /*0x7c0fc6*/
+              }
+              break;
+            case 0x5A4C5043u: /*0x7c0f19*/
+              if ( (a3 & 1) == 0 ) /*0x7c0f44*/
+              {
+                if ( Audio_Helper_7C20B0(aP0, v6) != -1 ) /*0x7c0f56*/
+                  return -4; /*0x7c0f56*/
+                *(unsigned int *)(v29 + 20) |= 4u; /*0x7c0f60*/
+                goto LABEL_64; /*0x7c0f64*/
+              }
+              break;
+            default:
+              return -4; /*0x7c0f39*/
+          }
+        }
+      }
+      else
+      {
+        if ( *v5 == 1514426454 ) /*0x7c0d03*/
+          goto LABEL_54; /*0x7c0d03*/
+        if ( v9 > 0x30545056 ) /*0x7c0d0f*/
+        {
+          switch ( v9 ) /*0x7c0e35*/
+          {
+            case 0x44545056u: /*0x7c0e35*/
+  LABEL_30:
+              if ( (a3 & 4) == 0 ) /*0x7c0ed6*/
+              {
+                v17 = aP0->u32_170; /*0x7c0edc*/
+                IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c0ee2*/
+                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v17, v7) ) /*0x7c0eeb*/
+                  return -4; /*0x7c0ef3*/
+                v18 = v17[5]; /*0x7c0ef9*/
+                v17[8] = 0; /*0x7c0efc*/
+                IDA_LOBYTE(v18) = v18 & 0xEF; /*0x7c0f03*/
+                v17[5] = v18; /*0x7c0f05*/
+                goto LABEL_64; /*0x7c0f08*/
+              }
+              break; /*0x7c0ed6*/
+            case 0x4B545056u: /*0x7c0e35*/
+              if ( (a3 & 4) == 0 ) /*0x7c0e95*/
+              {
+                v15 = aP0->u32_170; /*0x7c0e9b*/
+                IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c0ea1*/
+                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v15, v7) ) /*0x7c0eaa*/
+                  return -4; /*0x7c0eb2*/
+                v16 = v15[5]; /*0x7c0eb8*/
+                v15[8] = 0; /*0x7c0ebb*/
+                v15[5] = v16 & 0xFFFFFFEF; /*0x7c0ec5*/
+                *(unsigned int *)(v29 + 20) |= 2u; /*0x7c0ec8*/
+                goto LABEL_64; /*0x7c0ecc*/
+              }
+              break;
+            case 0x52545056u: /*0x7c0e35*/
+              if ( (a3 & 4) == 0 ) /*0x7c0e54*/
+              {
+                v13 = aP0->u32_170; /*0x7c0e5a*/
+                IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c0e60*/
+                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v13, v7) ) /*0x7c0e69*/
+                  return -4; /*0x7c0e71*/
+                v14 = v13[5]; /*0x7c0e77*/
+                v13[8] = 0; /*0x7c0e7a*/
+                v13[5] = v14 & 0xFFFFFFEF; /*0x7c0e84*/
+                *(unsigned int *)(v29 + 20) |= 0x20u; /*0x7c0e87*/
+                goto LABEL_64; /*0x7c0e8b*/
+              }
+              break;
+            default:
+              return -4; /*0x7c0e49*/
+          }
+        }
+        else
+        {
+          switch ( v9 ) /*0x7c0d15*/
+          {
+            case 0x30545056u: /*0x7c0d15*/
+              goto LABEL_30; /*0x7c0d15*/
+            case 0x30464243u: /*0x7c0d15*/
+              if ( (a3 & 0x10) == 0 ) /*0x7c0de5*/
+              {
+                v12 = aP0->q164; /*0x7c0deb*/
+                IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c0df1*/
+                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v12, v7) ) /*0x7c0dfa*/
+                  return -4; /*0x7c0e02*/
+                aP0->u32_174 = 0; /*0x7c0e08*/
+                v12[4] = 0; /*0x7c0e0e*/
+                v12[5] = v6; /*0x7c0e11*/
+                v12[3] = 8; /*0x7c0e14*/
+                aP0->q168 = v12; /*0x7c0e1b*/
+                aP0->q164 = v12[1]; /*0x7c0e24*/
+                goto LABEL_64; /*0x7c0e2a*/
+              }
+              break;
+            case 0x304C5043u: /*0x7c0d15*/
+              if ( (a3 & 1) == 0 ) /*0x7c0d62*/
+              {
+                v10 = aP0->u32_170; /*0x7c0d68*/
+                IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c0d6e*/
+                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *(unsigned int *)(v10 + 8), v7) ) /*0x7c0d78*/
+                  return -4; /*0x7c0d80*/
+                v11 = *(unsigned int *)(v10 + 20); /*0x7c0d86*/
+                *(unsigned int *)(v10 + 36) = 0; /*0x7c0d89*/
+                *(unsigned int *)(v10 + 20) = v11 & 0xFFFFFFF7; /*0x7c0d94*/
+                *(unsigned int *)(v10 + 40) = v6; /*0x7c0d97*/
+                if ( *(unsigned short *)(aP0 + 1880) == 1 ) /*0x7c0da1*/
+                {
+                  qmemcpy((void *)(aP0 + 452), *(const void **)(v10 + 8), v6); /*0x7c0db3*/
+                  aP0->u32_1C0 = *(unsigned int *)(v10 + 40); /*0x7c0dbf*/
+                  aP0->u8_1A4 |= 1u; /*0x7c0dcd*/
+                }
+                *(unsigned int *)(v29 + 20) |= 4u; /*0x7c0dd7*/
+                goto LABEL_64; /*0x7c0ddb*/
+              }
+              break;
+            case 0x30504243u: /*0x7c0d15*/
+              if ( (a3 & 8) == 0 ) /*0x7c0d40*/
+              {
+                if ( Audio_Helper_7C1E10(aP0, v6) != -1 ) /*0x7c0d52*/
+                  return -4; /*0x7c0d52*/
+                goto LABEL_64; /*0x7c0d52*/
+              }
+              break;
+            default:
+              return -4; /*0x7c0d35*/
+          }
+        }
+      }
+  LABEL_63:
+      IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c10cd*/
+      if ( (*(int (**)(int, int, int, unsigned int))(aP0 + 64))(aP0, 7, 1, v7) ) /*0x7c10d5*/
+        return -6; /*0x7c111c*/
+  LABEL_64:
+      if ( v30 >= v34 ) /*0x7c10e9*/
+        return -1; /*0x7c10e9*/
+      v4 = v30; /*0x7c10eb*/
+    }
+  }
+  return -1; /*0x7c10f2*/
 }
 }

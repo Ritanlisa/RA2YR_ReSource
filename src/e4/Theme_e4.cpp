@@ -24,20 +24,110 @@
 namespace gamemd {
 int Theme::QueueSong(int aP1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x720B20)
+
+  int IsSoundEnabled; // eax
+
+  LOBYTE(IsSoundEnabled) = byte_A8EC74; /*0x720b20*/
+  if ( byte_A8EC74 ) /*0x720b2a*/
+  {
+    IsSoundEnabled = ((gamemd::Audio *)this)->IsSoundEnabled(); /*0x720b2c*/
+    if ( IsSoundEnabled ) /*0x720b33*/
+    {
+      LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720b35*/
+      if ( !byte_A8ED64 ) /*0x720b3c*/
+      {
+        LOBYTE(IsSoundEnabled) = (unsigned char)(aP1); /*0x720b3e*/
+        *((unsigned int *)this + 2) = (unsigned int)(aP1); /*0x720b45*/
+        if ( aP1 != (IUnknown *)(-1) && aP1 != (IUnknown *)(-2) && aP1 != *((unsigned int *)this + 1) ) /*0x720b52*/
+        {
+          LOBYTE(IsSoundEnabled) = Debug::Log("Theme::QueueSong(%d)\n", aP1); /*0x720b5a*/
+          if ( *((unsigned int *)this + 11) ) /*0x720b5f*/
+          {
+            if ( *((unsigned char *)this + 17) && !AudioSample::IsBuffering() ) /*0x720b70*/
+              ((gamemd::Audio *)(*((unsigned int *)this + 11)))->Release(); /*0x720b7c*/
+            LOBYTE(IsSoundEnabled) = ((gamemd::Audio *)(*((unsigned int *)this + 11)))->IsSoundPlaying() != 0; /*0x720b8b*/
+            if ( (unsigned char)IsSoundEnabled == 1 ) /*0x720b90*/
+            {
+              if ( *((unsigned int *)this + 11) ) /*0x720b92*/
+                LOBYTE(IsSoundEnabled) = ((gamemd::ThemeClass *)this)->RequestBuffer(); /*0x720b99*/
+              *((unsigned char *)this + 17) = 1; /*0x720b9e*/
+            }
+          }
+        }
+      }
+    }
+  }
+  return IsSoundEnabled; /*0x720ba2*/
+
 }
 } // namespace gamemd
 // 0x720EA0
 namespace gamemd {
 int Theme::Stop(char aP1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x720EA0)
+
+  int result; // eax
+  AudioSample *v4; // ecx
+  ThemeClass *v5; // ecx
+  Audio *v6; // ecx
+
+  LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 144)); /*0x720ea0*/
+  if ( *((unsigned int *)((char *)&stru_A8EB00 + 144)) ) /*0x720eaa*/
+  {
+    result = ((gamemd::Audio *)this)->IsSoundEnabled(); /*0x720eb0*/
+    if ( result ) /*0x720eb7*/
+    {
+      LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 384)); /*0x720ebd*/
+      if ( !((unsigned int *)&stru_A8EB00)[384] && *(unsigned int *)this != -1 ) /*0x720ecd*/
+      {
+        if ( !aP1 ) /*0x720ed9*/
+          goto LABEL_14; /*0x720ed9*/
+        v4 = (AudioSample *)*((unsigned int *)this + 11); /*0x720edb*/
+        if ( !v4 ) /*0x720ee0*/
+          goto LABEL_14; /*0x720ee0*/
+        if ( *((unsigned char *)this + 17) && !((AudioSample *)(v4))->IsBuffering() ) /*0x720ee9*/
+          ((gamemd::Audio *)(*((Audio **)this + 11)))->Release(); /*0x720ef5*/
+        if ( ((gamemd::Audio *)(*((Audio **)this + 11)))->IsSoundPlaying() != 0 ) /*0x720f04*/
+        {
+          result = ((Debug *)this)->Log(); /*0x720f14*/
+          v5 = (ThemeClass *)*((unsigned int *)this + 11); /*0x720f19*/
+          if ( v5 ) /*0x720f21*/
+            result = ((gamemd::ThemeClass *)(v5))->RequestBuffer(); /*0x720f23*/
+          *((unsigned char *)this + 17) = 1; /*0x720f28*/
+        }
+        else
+        {
+LABEL_14: result = (int)(((Debug *)this)->Log());
+          v6 = (int)((gamemd::Audio *)*((unsigned int *)this + 11));
+          if ( v6 ) /*0x720f44*/
+            result = ((gamemd::Audio *)(v6))->Release(); /*0x720f46*/
+        }
+        *(unsigned int *)this = -1; /*0x720f4b*/
+        *((unsigned int *)this + 1) = -1; /*0x720f51*/
+        *((unsigned int *)this + 2) = -1; /*0x720f58*/
+      }
+    }
+  }
+  return result; /*0x720f5f*/
+
 }
 } // namespace gamemd
 // 0x720FD0
 namespace gamemd {
 bool Theme::IsPlaying()
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x720FD0)
+
+  AudioSample *v2; // ecx
+
+  v2 = (AudioSample *)*((unsigned int *)this + 11); /*0x720fd3*/
+  if ( !v2 ) /*0x720fd8*/
+    return 0; /*0x721002*/
+  if ( *((unsigned char *)this + 17) ) /*0x720fda*/
+  {
+    if ( !((AudioSample *)(v2))->IsBuffering() ) /*0x720fe1*/
+      ((gamemd::Audio *)(*((Audio **)this + 11)))->Release(); /*0x720fed*/
+  }
+  return ((gamemd::Audio *)(*((Audio **)this + 11)))->IsSoundPlaying() != 0; /*0x720ffe*/
+
 }
 } // namespace gamemd

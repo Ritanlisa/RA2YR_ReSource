@@ -17,6 +17,12 @@
 namespace gamemd {
 CCToolTip * CCToolTip::QueryInterface(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7784A0)
+
+  *(unsigned int *)Block->__pad_0 = &vt_CCToolTip; /*0x7784a3*/
+  ((ToolTipClass *)((ToolTipClass *)Block))->updateString(); /*0x7784a9*/
+  if ( (a2 & 1) != 0 ) /*0x7784b3*/
+    __3_YAXPAX_Z(Block); /*0x7784b6*/
+  return Block->__pad_0; /*0x7784c0*/
+
 }
 } // namespace gamemd

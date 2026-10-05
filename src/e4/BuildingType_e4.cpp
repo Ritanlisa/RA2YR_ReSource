@@ -62,9 +62,49 @@ int BuildingType::FindDefault()
 
 // 0x510ED0
 namespace gamemd {
-int FindOwnerHouse()
+int BuildingType::FindOwnerHouse()
 {
-     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x00510ED0.json)
+
+  int v1; // eax
+
+  if ( this == (BuildingType *)4475 ) /*0x510ed6*/
+  {
+    v1 = ((BuildingType *)((BuildingType *)dword_A8B230))->Init(0); /*0x510eda*/
+  }
+  else if ( this == (BuildingType *)4476 ) /*0x510ee2*/
+  {
+    v1 = ((BuildingType *)((BuildingType *)dword_A8B230))->Init(1u); /*0x510ee6*/
+  }
+  else if ( this == (BuildingType *)4477 ) /*0x510eee*/
+  {
+    v1 = ((BuildingType *)((BuildingType *)dword_A8B230))->Init(2u); /*0x510ef2*/
+  }
+  else if ( this == (BuildingType *)4478 ) /*0x510efa*/
+  {
+    v1 = ((BuildingType *)((BuildingType *)dword_A8B230))->Init(3u); /*0x510efe*/
+  }
+  else if ( this == (BuildingType *)4479 ) /*0x510f06*/
+  {
+    v1 = ((BuildingType *)((BuildingType *)dword_A8B230))->Init(4u); /*0x510f0a*/
+  }
+  else if ( this == (BuildingType *)4480 ) /*0x510f12*/
+  {
+    v1 = ((BuildingType *)((BuildingType *)dword_A8B230))->Init(5u); /*0x510f16*/
+  }
+  else if ( this == (BuildingType *)4481 ) /*0x510f1e*/
+  {
+    v1 = ((BuildingType *)((BuildingType *)dword_A8B230))->Init(6u); /*0x510f22*/
+  }
+  else
+  {
+    if ( this != (BuildingType *)4482 ) /*0x510f2a*/
+      return 0; /*0x510f2a*/
+    v1 = ((BuildingType *)((BuildingType *)dword_A8B230))->Init(7u); /*0x510f34*/
+  }
+  if ( v1 >= 0 && v1 < dword_A80238 ) /*0x510f43*/
+    return *(&dword_A8022C->vtable1 + v1); /*0x510f4e*/
+  return 0; /*0x510f4e*/
+
 }
 } // namespace gamemd
 

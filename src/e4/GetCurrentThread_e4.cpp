@@ -9,6 +9,6 @@
 namespace gamemd {
 int GetCurrentThread_0()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7DCEE0)
+  return (int)(GetCurrentThread());
 }
 }

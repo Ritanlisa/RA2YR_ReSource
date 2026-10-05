@@ -14,14 +14,190 @@
 namespace gamemd {
 int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x766C10)
+
+  int m_8; // ebp
+  int *v5; // eax
+  ComPtr *v6; // esi
+  int v7; // ebx
+  ComPtr *v8; // ebx
+  int v9; // ebx
+  int i; // esi
+  void (***v12)(unsigned int, int); // ecx
+  ComPtr *v13; // [esp+10h] [ebp-4h]
+
+  m_8 = a2; /*0x766c13*/
+  if ( !a2 ) /*0x766c1d*/
+  {
+    (*(void (**)(_VectorClass_V_rc_ptr_VGameOption_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x766d1d*/
+    return 1; /*0x766d23*/
+  }
+  LOBYTE(this->m_C) = 0; /*0x766c27*/
+  if ( a3 ) /*0x766c2d*/
+  {
+    *a3 = a2; /*0x766c73*/
+    v6 = (ComPtr *)(a3 + 1); /*0x766c75*/
+    if ( a2 - 1 >= 0 ) /*0x766c81*/
+    {
+      v9 = a2; /*0x766c83*/
+      do /*0x766c97*/
+      {
+        ((ComPtr *)(v6))->Constructor(); /*0x766c88*/
+        *(unsigned int *)v6->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x766c8d*/
+        v6 = (ComPtr *)((char *)v6 + 8); /*0x766c93*/
+        --v9; /*0x766c96*/
+      }
+      while ( v9 ); /*0x766c97*/
+      v6 = (ComPtr *)(a3 + 1); /*0x766c99*/
+    }
+  }
+  else
+  {
+    v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x766c37*/
+    if ( !v5 ) /*0x766c41*/
+    {
+      v8 = 0; /*0x766c6f*/
+      goto LABEL_14; /*0x766c71*/
+    }
+    *v5 = a2; /*0x766c43*/
+    v6 = (ComPtr *)(v5 + 1); /*0x766c45*/
+    v13 = (ComPtr *)(v5 + 1); /*0x766c4b*/
+    if ( a2 - 1 >= 0 ) /*0x766c51*/
+    {
+      v7 = a2; /*0x766c53*/
+      do /*0x766c67*/
+      {
+        ((ComPtr *)(v6))->Constructor(); /*0x766c58*/
+        *(unsigned int *)v6->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x766c5d*/
+        v6 = (ComPtr *)((char *)v6 + 8); /*0x766c63*/
+        --v7; /*0x766c66*/
+      }
+      while ( v7 ); /*0x766c67*/
+      v6 = v13; /*0x766c69*/
+    }
+  }
+  v8 = v6; /*0x766c9d*/
+LABEL_14:
+  LOBYTE(this->m_C) = 1; /*0x766c9f*/
+  if ( !v8 ) /*0x766ca5*/
+    return 0; /*0x766caa*/
+  if ( *(unsigned int *)&this->m_1[3] ) /*0x766cb1*/
+  {
+    if ( a2 >= this->m_8 ) /*0x766cbd*/
+      m_8 = this->m_8; /*0x766cbf*/
+    for ( i = 0; i < m_8; ++i ) /*0x766cc5*/
+      ((ComPtr *)((ComPtr *)((char *)v8 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x766cd2*/
+    if ( BYTE1(this->m_C) ) /*0x766cdc*/
+    {
+      v12 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x766ce3*/
+      if ( v12 ) /*0x766ce8*/
+        (**v12)((unsigned int)v12, 3); /*0x766cee*/
+      *(unsigned int *)&this->m_1[3] = 0; /*0x766cf0*/
+    }
+    m_8 = a2; /*0x766cf7*/
+  }
+  *(unsigned int *)&this->m_1[3] = (unsigned int)(v8); /*0x766d06*/
+  this->m_8 = m_8; /*0x766d09*/
+  BYTE1(this->m_C) = a3 == 0; /*0x766d0c*/
+  return 1; /*0x766ca7*/
+
 }
 }
 // 0x766DC0
 namespace gamemd {
 AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x766DC0)
+
+  int m_8; // ebp
+  int *v5; // eax
+  ComPtr *v6; // ebx
+  Conflict_WorldDominationTour *v7; // esi
+  ComPtr *v8; // esi
+  int v9; // ebx
+  int i; // esi
+  void (***v11)(unsigned int, int); // ecx
+  int v12; // eax
+  int v14; // [esp+10h] [ebp-4h]
+
+  m_8 = a2; /*0x766dc3*/
+  if ( a2 ) /*0x766dcd*/
+  {
+    LOBYTE(this->m_C) = 0; /*0x766dd7*/
+    if ( a3 ) /*0x766ddd*/
+    {
+      *a3 = a2; /*0x766e21*/
+      v8 = (ComPtr *)(a3 + 1); /*0x766e23*/
+      if ( a2 - 1 >= 0 ) /*0x766e2f*/
+      {
+        v9 = a2; /*0x766e31*/
+        do /*0x766e45*/
+        {
+          ((ComPtr *)(v8))->Constructor(); /*0x766e36*/
+          *(unsigned int *)v8->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x766e3b*/
+          v8 = (ComPtr *)((char *)v8 + 8); /*0x766e41*/
+          --v9; /*0x766e44*/
+        }
+        while ( v9 ); /*0x766e45*/
+        v8 = (ComPtr *)(a3 + 1); /*0x766e47*/
+      }
+      v6 = v8; /*0x766e4b*/
+    }
+    else
+    {
+      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x766de7*/
+      if ( v5 ) /*0x766df1*/
+      {
+        *v5 = a2; /*0x766df3*/
+        v6 = (ComPtr *)(v5 + 1); /*0x766df5*/
+        v7 = (Conflict_WorldDominationTour *)(v5 + 1); /*0x766dfb*/
+        if ( a2 - 1 >= 0 ) /*0x766dff*/
+        {
+          v14 = a2; /*0x766e02*/
+          do /*0x766e19*/
+          {
+            Conflict_WorldDominationTour_12::Constructor_3(v7); /*0x766e08*/
+            (unsigned int)(v7)+= 2; /*0x766e11*/
+            --v14; /*0x766e15*/
+          }
+          while ( v14 ); /*0x766e19*/
+        }
+      }
+      else
+      {
+        v6 = 0; /*0x766e1d*/
+      }
+    }
+    LOBYTE(this->m_C) = 1; /*0x766e4f*/
+    if ( !v6 ) /*0x766e53*/
+      return 0; /*0x766ed6*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x766e55*/
+    {
+      if ( a2 >= this->m_8 ) /*0x766e61*/
+        m_8 = this->m_8; /*0x766e63*/
+      for ( i = 0; i < m_8; ++i ) /*0x766e69*/
+        ((ComPtr *)((ComPtr *)((char *)v6 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x766e76*/
+      if ( BYTE1(this->m_C) ) /*0x766e80*/
+      {
+        v11 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x766e87*/
+        if ( v11 ) /*0x766e8c*/
+          (**v11)((unsigned int)v11, 3); /*0x766e92*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x766e94*/
+      }
+      m_8 = a2; /*0x766e9b*/
+    }
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x766eaa*/
+    this->m_8 = m_8; /*0x766ead*/
+    BYTE1(this->m_C) = a3 == 0; /*0x766eb0*/
+  }
+  else
+  {
+    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour *))(*(unsigned int *)this->__pad_0 /*0x766eb9*/
+                                                                                           + 12))(this);
+  }
+  v12 = this->m_8; /*0x766ebc*/
+  if ( v12 < this->m_10 ) /*0x766ec4*/
+    this->m_10 = v12; /*0x766ec6*/
+  return (gamemd::AbstractClass **)(1); /*0x766ec9*/
+
 }
 }
 // 0x766800
@@ -107,7 +283,13 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, 
 namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Constructor(char Block)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x766960)
+
+  *Block = (Conflict_WorldDominationTour)&vt_rc_ptrWorldDominationTourValueGameOption; /*0x766963*/
+  ((ComPtr *)((ComPtr *)Block))->Release(); /*0x766969*/
+  if ( (a2 & 1) != 0 ) /*0x766973*/
+    __3_YAXPAX_Z(Block); /*0x766976*/
+  return Block; /*0x766980*/
+
 }
 } // namespace gamemd
 
@@ -115,7 +297,13 @@ unsigned int * Conflict_WorldDominationTour_12::Constructor(char Block)
 namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Constructor_0(char Block)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x766990)
+
+  *Block = (Conflict_WorldDominationTour)&vt_rc_ptr; /*0x766993*/
+  ((ComPtr *)((ComPtr *)Block))->Release(); /*0x766999*/
+  if ( (a2 & 1) != 0 ) /*0x7669a3*/
+    __3_YAXPAX_Z(Block); /*0x7669a6*/
+  return Block; /*0x7669b0*/
+
 }
 } // namespace gamemd
 
@@ -233,7 +421,22 @@ int Conflict_WorldDominationTour_12::IndexOf(int a2)
 namespace gamemd {
 VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x766FC0)
+
+  void (***v3)(unsigned int, int); // ecx
+
+  v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x766fc3*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x766fc6*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x766fd0*/
+  {
+    (**v3)((unsigned int)v3, 3); /*0x766fdf*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x766fe1*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x766fec*/
+  Block->m_8 = 0; /*0x766ff2*/
+  if ( (a2 & 1) != 0 ) /*0x766ff9*/
+    __3_YAXPAX_Z(Block); /*0x766ffc*/
+  return Block->__pad_0; /*0x767006*/
+
 }
 } // namespace gamemd
 
@@ -241,7 +444,22 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int 
 namespace gamemd {
 DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x767080)
+
+  void (***v3)(unsigned int, int); // ecx
+
+  v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x767083*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x767086*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x767090*/
+  {
+    (**v3)((unsigned int)v3, 3); /*0x76709f*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x7670a1*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x7670ac*/
+  Block->m_8 = 0; /*0x7670b2*/
+  if ( (a2 & 1) != 0 ) /*0x7670b9*/
+    __3_YAXPAX_Z(Block); /*0x7670bc*/
+  return Block->__pad_0; /*0x7670c6*/
+
 }
 } // namespace gamemd
 
@@ -249,6 +467,10 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Bl
 namespace gamemd {
 int Conflict_WorldDominationTour_12::Constructor_3(void *a1_1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7670D0)
+
+  ((ComPtr *)((ComPtr *)this))->Constructor(); /*0x7670d3*/
+  *this = (Conflict_WorldDominationTour)&vt_rc_ptr; /*0x7670d8*/
+  return (int)(this); /*0x7670e0*/
+
 }
 } // namespace gamemd

@@ -231,7 +231,18 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4,
 namespace gamemd {
 BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x49A340)
+
+  void *m_8; // eax
+
+  m_8 = (void *)this->m_8; /*0x49a348*/
+  *(unsigned int *)Block->__pad_0 = &vt_BlitTransLucent25Alpha; /*0x49a34b*/
+  FractalNoise::Dtor(m_8); /*0x49a352*/
+  this->m_8 = 0; /*0x49a35b*/
+  *(unsigned int *)Block->__pad_0 = &vt_Blitter; /*0x49a364*/
+  if ( (a2 & 1) != 0 ) /*0x49a36a*/
+    __3_YAXPAX_Z(this); /*0x49a36d*/
+return (gamemd::BlitTransLucent25Alpha_ushort *)this->__pad_0; /*0x49a377*/
+
 }
 } // namespace gamemd
 // 0x49A380
@@ -250,7 +261,18 @@ std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
 namespace gamemd {
 BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushort::Blit(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x49A720)
+
+  void *m_8; // eax
+
+  m_8 = (void *)Block->m_8; /*0x49a728*/
+  *(unsigned int *)Block->__pad_0 = &vt_BlitTransLucent25AlphaZReadWrite; /*0x49a72b*/
+  FractalNoise::Dtor(m_8); /*0x49a732*/
+  Block->m_8 = 0; /*0x49a73b*/
+  *(unsigned int *)Block->__pad_0 = &vt_Blitter; /*0x49a744*/
+  if ( (a2 & 1) != 0 ) /*0x49a74a*/
+    __3_YAXPAX_Z(Block); /*0x49a74d*/
+  return Block->__pad_0; /*0x49a757*/
+
 }
 } // namespace gamemd
 // 0x49A760

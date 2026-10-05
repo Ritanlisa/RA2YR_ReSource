@@ -105,12 +105,26 @@ LoadOptions::~LoadOptions() {
     Cleanup();
 }
 
-// IDA 0x558790: LoadOptions::Cleanup
 // 0x558790
-int LoadOptions::Cleanup()
-{
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x558790)
-}
+int LoadOptions::Cleanup() {
+  int v2; // edi
+  int v3; // edx
+  char *p_is_active; // esi
+  int result; // eax
+
+  v2 = (unsigned int)(0);
+  for ( this->extension = (const char *)(void *)&LoadOptionsClass_vftable; v2 < this->capacity; ++v2 ) /*0x5587a4*/
+    RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)(this) + 0x22)[2] + 4 * v2)); /*0x5587ad*/
+  v3 = *(unsigned int *)&this->is_active; /*0x5587bd*/
+  p_is_active = (char *)(&this->is_active); /*0x5587c0*/
+  (*(void (**)(char *))(v3 + 12))(p_is_active); /*0x5587c5*/
+  result = *((unsigned int *)p_is_active + 1); /*0x5587c8*/
+  *(unsigned int *)p_is_active = (unsigned int)((void *)&VectorClass_FileEntryClass___vftable); /*0x5587cb*/
+  if ( result && p_is_active[13] ) /*0x5587d5*/
+  {
+    RA2_OPDEL((void *)result); /*0x5587db*/
+    *((unsigned int *)p_is_active + 1) = 0; /*0x5587e3*/
+  }
 // IDA 0x55A0D0: VT00_Destroy (QueryInterface destructor)
 void LoadOptions::VT00_Destroy(char free_self) {
     Cleanup();

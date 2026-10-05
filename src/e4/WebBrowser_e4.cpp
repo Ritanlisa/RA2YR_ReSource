@@ -27,21 +27,168 @@
 namespace gamemd {
 int WebBrowser::LoadURLFromRegistry(const char * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x773600)
+
+  LSTATUS v3; // esi
+  LSTATUS v4; // esi
+  char *v5; // edx
+  int v6; // eax
+  HKEY phkResult; // [esp+10h] [ebp-558h] BYREF
+  DWORD cbData; // [esp+14h] [ebp-554h] BYREF
+  DWORD Type; // [esp+18h] [ebp-550h] BYREF
+  CHAR ValueName[64]; // [esp+1Ch] [ebp-54Ch] BYREF
+  BYTE v12[260]; // [esp+5Ch] [ebp-50Ch] BYREF
+  BYTE Data[512]; // [esp+160h] [ebp-408h] BYREF
+  wchar_t Destination[260]; // [esp+360h] [ebp-208h] BYREF
+
+  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE,(LPCSTR)(g_Str_WOL_URL_RegKey), 0, 0x20019u, &phkResult) ) /*0x773628*/
+    return (int)((char *)(0));
+  strcpy(ValueName, a2); /*0x77364f*/
+  if ( !*((unsigned int *)this + 2) ) /*0x773653*/
+    strcat(ValueName,(const char *)(asc_84968C)); /*0x773684*/
+  cbData = 512; /*0x7736b1*/
+  v3 = RegQueryValueExA(phkResult, ValueName, 0, &Type, Data, &cbData); /*0x7736bf*/
+  RegCloseKey(phkResult); /*0x7736c2*/
+  if ( v3 ) /*0x7736ca*/
+    return 0; /*0x7736ca*/
+  ((gamemd::Debug *)this)->Log(); /*0x7736e5*/
+  if ( !*((unsigned int *)this + 2) ) /*0x7736f2*/
+    return WebBrowser::OpenURL(Data); /*0x773843*/
+  mbstowcs((wchar_t *)((char *)this + 12), (const char *)Data, 0x200u); /*0x773709*/
+  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE,(LPCSTR)(g_Str_Software_Westwood_Yuri_s_Reven), 0, 0x20019u, &phkResult) ) /*0x773726*/
+    return 0; /*0x773726*/
+  cbData = 260; /*0x77374a*/
+  v4 = RegQueryValueExA(phkResult,(LPCSTR)(g_INI_Key_HTMLPath), 0, &Type, v12, &cbData); /*0x773754*/
+  RegCloseKey(phkResult); /*0x77375b*/
+  if ( v4 ) /*0x773763*/
+    return 0; /*0x773763*/
+  v5 = (char *)(strrchr((const char *)v12, 92)); /*0x773775*/
+  if ( !v5 || strlen((const char *)v12) > v5 - (char *)v12 + 1 ) /*0x773795*/
+    strcat((char *)v12,(const char *)(asc_815E74)); /*0x7737bc*/
+  mbstowcs(Destination, (const char *)v12, 0x104u); /*0x7737d7*/
+  wcscat(Destination,(const wchar_t *)(aFr)); /*0x7737e9*/
+  if ( (*(int (**)(unsigned int, wchar_t *, unsigned int, unsigned int))(**(unsigned int **)((char *)this + 8) + 64))( /*0x773808*/
+         *((unsigned int *)this + 2),
+         Destination,
+         0,
+         0) < 0 )
+    return 0; /*0x773849*/
+  v6 = *((unsigned int *)this + 2); /*0x77380a*/
+  if ( v6 ) /*0x77380f*/
+  {
+    (*(void (**)(unsigned int))(*(unsigned int *)v6 + 28))(*((unsigned int *)this + 2)); /*0x773814*/
+    *((unsigned char *)this + 1036) = 1; /*0x773817*/
+  }
+  return 1; /*0x77381e*/
+
 }
 }
 // 0x773E90
 namespace gamemd {
 int WebBrowser::ShowDialog()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x773E90)
+
+  const char *v1; // ebp
+  HWND result; // eax
+  HWND v3; // edi
+  int v4; // edx
+  unsigned int *v5; // eax
+  int v6; // esi
+  unsigned int *v7; // ebp
+  LONG dwNewLong; // [esp+1Ch] [ebp-28h] BYREF
+  const char *v9; // [esp+20h] [ebp-24h]
+  struct tagRECT Rect; // [esp+24h] [ebp-20h] BYREF
+  int v11; // [esp+34h] [ebp-10h] BYREF
+  int v12; // [esp+38h] [ebp-Ch]
+  int v13; // [esp+3Ch] [ebp-8h]
+  int v14; // [esp+40h] [ebp-4h]
+
+  v1 = (const char *)(this);
+  v9 = (const char *)(this);
+  if ( !this || !strlen((const char *)(this)) ) /*0x773eaa*/
+    return (int)((HWND)((Debug*)aDowebpagedialo)->Log()); /*0x774060*/
+  Debug::Log("Creating WebBrowser Dialog for %s.\n", v1); /*0x773ebb*/
+  result = (HWND)CreateDialog(0x131u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_773E30, 0); /*0x773ecf*/
+  v3 = result; /*0x773ed4*/
+  if ( result ) /*0x773ed8*/
+  {
+    dwNewLong = (LONG)((unsigned int *)(0));
+    SetWindowLongA(result, 8, (LONG)&dwNewLong); /*0x773eef*/
+    LOBYTE(v4) = 1; /*0x773ef5*/
+    SetDialogActiveFlag((int)(v3), v4); /*0x773ef9*/
+    ((gamemd::Dialog *)(v3))->Show(); /*0x773f00*/
+    GetClientRect(v3, &Rect); /*0x773f0b*/
+    v11 = Rect.left + (Rect.right - Rect.left - 800) / 2; /*0x773f30*/
+    v13 = v11 + 800; /*0x773f39*/
+    v12 = Rect.top + (Rect.bottom - Rect.top - 600) / 2; /*0x773f4f*/
+    v14 = v12 + 600; /*0x773f58*/
+    v5 = (unsigned int *)(__2_YAPAXI_Z(0x414u)); /*0x773f5c*/
+    v6 = (int)v5; /*0x773f61*/
+    if ( v5 ) /*0x773f68*/
+    {
+      v7 = (unsigned int *)((unsigned int)(v5 + 2));
+      v5[1] = (unsigned int)(1);
+      v5[2] = (unsigned int)(0);
+      *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
+      v5[260] = 0; /*0x773f8b*/
+      *v5 = (unsigned int)(&vt_WebBrowser); /*0x773f95*/
+      Debug::Log(g_Str_Instantiating_embedded_WebBrow); /*0x773f9b*/
+      *(unsigned int *)(v6 + 1040) = (unsigned int)(v3); /*0x773fa3*/
+      Debug::Log(g_Str_Creating_WOLBrowser_component_); /*0x773fae*/
+      if ( CoCreateInstance(*(const IID *)&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
+      {
+        Debug::Log(g_Str_Starting_up_WOLBrowser); /*0x773fd4*/
+        (*(void (**)(unsigned int, int))(*(unsigned int *)*v7 + 20))(*v7, v6); /*0x773fe3*/
+        (*(void (**)(unsigned int, HWND, int *))(*(unsigned int *)*v7 + 12))(*v7, v3, &v11); /*0x773ff2*/
+        (*(void (**)(unsigned int, int))(*(unsigned int *)*v7 + 60))(*v7, 1); /*0x773ffe*/
+      }
+      v1 = v9; /*0x774001*/
+    }
+    else
+    {
+      v6 = 0; /*0x774057*/
+    }
+    dword_B72D0C = v6; /*0x774007*/
+    if ( v6 ) /*0x77400d*/
+    {
+      if ( (uint8_t)WebBrowser::LoadURLFromRegistry(v1) && !dwNewLong ) /*0x774021*/
+      {
+        while ( !((gamemd::Dialog *)this)->PumpMessages() && !dwNewLong ) /*0x774032*/
+          ; /*0x774023*/
+      }
+      (*(void (**)(int))(*(unsigned int *)dword_B72D0C + 8))(dword_B72D0C); /*0x77403c*/
+      dword_B72D0C = 0; /*0x77403f*/
+    }
+    return ((Dialog*)v3)->Destroy(); /*0x77404b*/
+  }
+  return (int)(result); /*0x774051*/
+
 }
 }
 // 0x7740A0
 namespace gamemd {
 int WebBrowser::GoForward()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7740A0)
+
+  void *WebBrowser_field_0x8; // eax
+  char v4; // [esp+10h] [ebp+4h]
+
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_WebBrowser); /*0x7740a8*/
+  ((gamemd::Debug *)this)->Log(); /*0x7740ae*/
+  if ( this->WebBrowser_field_0x8 ) /*0x7740b3*/
+  {
+    ((gamemd::Debug *)this)->Log(); /*0x7740c2*/
+    (*(void (**)(void *, WebBrowser *))(*(unsigned int *)this->WebBrowser_field_0x8 + 24))( /*0x7740d1*/
+      (void *)this->WebBrowser_field_0x8,
+      this);
+    (*(void (**))(*(unsigned int *)this->WebBrowser_field_0x8 + 16))(this->WebBrowser_field_0x8); /*0x7740da*/
+  }
+  WebBrowser_field_0x8 = (void *)(this->WebBrowser_field_0x8);
+  if ( WebBrowser_field_0x8 ) /*0x7740e2*/
+    (*(void (**))(*(unsigned int *)WebBrowser_field_0x8 + 8))(this->WebBrowser_field_0x8); /*0x7740e7*/
+  if ( (v4 & 1) != 0 ) /*0x7740ef*/
+    __3_YAXPAX_Z(this); /*0x7740f2*/
+  return (int)this->__pad_0; /*0x7740fc*/
+
 }
 }
 // 0x551630
@@ -251,7 +398,37 @@ int WebBrowser::Stat()
 namespace gamemd {
 int WebBrowser::Clone()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x773BC0)
+
+  LSTATUS v1; // esi
+  char *v2; // edx
+  HKEY phkResult; // [esp+4h] [ebp-318h] BYREF
+  DWORD cbData; // [esp+8h] [ebp-314h] BYREF
+  DWORD Type; // [esp+Ch] [ebp-310h] BYREF
+  BYTE Data[260]; // [esp+10h] [ebp-30Ch] BYREF
+  wchar_t Dest[260]; // [esp+114h] [ebp-208h] BYREF
+  int v9; // [esp+320h] [ebp+4h]
+
+  ((gamemd::Debug *)this)->Log(); /*0x773bcc*/
+  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE,(LPCSTR)(g_Str_Software_Westwood_Yuri_s_Reven), 0, 0x20019u, &phkResult) ) /*0x773bea*/
+    return 0; /*0x773bea*/
+  cbData = 260; /*0x773c13*/
+  v1 = RegQueryValueExA(phkResult,(LPCSTR)(g_INI_Key_HTMLPath), 0, &Type, Data, &cbData); /*0x773c21*/
+  RegCloseKey(phkResult); /*0x773c28*/
+  if ( v1 ) /*0x773c30*/
+    return 0; /*0x773d06*/
+  v2 = (char *)(strrchr((const char *)Data, 92)); /*0x773c43*/
+  if ( !v2 || strlen((const char *)Data) > v2 - (char *)Data + 1 ) /*0x773c63*/
+    strcat((char *)Data,(const char *)(asc_815E74)); /*0x773c8b*/
+  mbstowcs((wchar_t *)(v9 + 12), (const char *)Data, 0x104u); /*0x773caa*/
+  wcscat((wchar_t *)(v9 + 12), L"BadPage.htm"); /*0x773cb5*/
+  mbstowcs(Dest, (const char *)Data, 0x104u); /*0x773ccc*/
+  wcscat(Dest,(const wchar_t *)(aFr)); /*0x773cde*/
+  return (*(int (**)(unsigned int, wchar_t *, unsigned int, unsigned int))(**(unsigned int **)(v9 + 8) + 64))( /*0x773cfc*/
+           *(unsigned int *)(v9 + 8),
+           Dest,
+           0,
+           0);
+
 }
 } // namespace gamemd
 
@@ -270,6 +447,33 @@ int WebBrowser::Navigate()
 namespace gamemd {
 int WebBrowser::GoBack()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x773D40)
+
+  String v2; // [esp+0h] [ebp-94h] BYREF
+  int v3; // [esp+8h] [ebp-8Ch]
+  Flag v4[6]; // [esp+Ch] [ebp-88h] BYREF
+  char v5[64]; // [esp+54h] [ebp-40h] BYREF
+  wchar_t *Source; // [esp+9Ch] [ebp+8h]
+  wchar_t *v7; // [esp+A0h] [ebp+Ch]
+
+  wcstombs((char *)&((unsigned int *)(v4))[0].Flag_field_0x08, Source, 0x40u); /*0x773d55*/
+  wcstombs(v5, v7, 0x40u); /*0x773d69*/
+  ((String *)(&v2))->Assign((const char *)&((unsigned int *)(v4))[0].Flag_field_0x08); /*0x773d7a*/
+  ((gamemd::Debug *)this)->Log(); /*0x773d8e*/
+  LoadPlayerProfile((gamemd::ObjectClass *)(&((unsigned int *)(v2.m_3))[1]), (const char **)&v2); /*0x773d9e*/
+  *(unsigned int *)((unsigned int *)(v4))[0].__pad_0 = 0; /*0x773da9*/
+  LOBYTE(v4[0].Flag_field_0x04) = 0; /*0x773dad*/
+  ReadRegistryOptionsWOL((ObjectClass *)v4); /*0x773db1*/
+  if ( (uint8_t)((Flag *)(v4))->IsNot2() ) /*0x773dba*/
+  {
+    FindChannelWOL((const char *)&((unsigned int *)(v4))[0].Flag_field_0x08, (int)v5, 1u, *(unsigned int *)(v3 + 16)); /*0x773dd5*/
+    SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x773ddf*/
+  }
+  ((String *)((String *)&g_WindowManager.__pad_EC[684]))->Assign_Alt((const char *)&((unsigned int *)(v4))[0].Flag_field_0x08); /*0x773dee*/
+  ((String *)((String *)&g_WebBrowserConfig))->Assign_Alt(v5); /*0x773dfd*/
+  *(unsigned int *)&v2.m_3[1] = (unsigned int)(&vt_rc_ptr); /*0x773e06*/
+  ((ComPtr *)((ComPtr *)&v2.m_3[1]))->Release(); /*0x773e0e*/
+  j_DeleteAndZero((ObjectClass *)&v2); /*0x773e17*/
+  return 0; /*0x773e1e*/
+
 }
 } // namespace gamemd

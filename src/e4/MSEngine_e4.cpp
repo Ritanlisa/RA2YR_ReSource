@@ -19,23 +19,203 @@
 
 // 0x5ACD30
 namespace gamemd {
-AbstractClass * * DynamicVector::Release(int a2, char * a3)
+AbstractClass * * MSEngine::Release(int a2, char * a3)
 {
-    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005ACD30.json)
+
+  int v3; // ebx
+  char *v5; // ebp
+  int v6; // eax
+  char *v7; // edi
+  int m_8; // ecx
+  int v10; // eax
+  char *v11; // ebx
+  unsigned int *v12; // edx
+
+  v3 = a2; /*0x5acd32*/
+  if ( a2 ) /*0x5acd3d*/
+  {
+    v5 = a3; /*0x5acd43*/
+    LOBYTE(this->m_C) = 0; /*0x5acd47*/
+    if ( a3 ) /*0x5acd4d*/
+    {
+      v7 = a3; /*0x5acd73*/
+    }
+    else
+    {
+      v6 = (int)(__2_YAPAXI_Z(16 * a2)); /*0x5acd55*/
+      if ( v6 ) /*0x5acd5f*/
+        v7 = (char *)v6; /*0x5acd64*/
+      else
+        v7 = 0; /*0x5acd6c*/
+    }
+    LOBYTE(this->m_C) = 1; /*0x5acd7b*/
+    if ( v7 ) /*0x5acd7f*/
+    {
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x5acd8b*/
+      {
+        m_8 = this->m_8; /*0x5acd92*/
+        if ( a2 < m_8 ) /*0x5acd97*/
+          m_8 = a2; /*0x5acd99*/
+        if ( m_8 > 0 ) /*0x5acd9d*/
+        {
+          v10 = 0; /*0x5acd9f*/
+          do /*0x5acdc3*/
+          {
+            v11 = &v7[v10]; /*0x5acda4*/
+            v12 = (unsigned int *)(v10 + *(unsigned int *)&this->m_1[3]); /*0x5acda7*/
+            v10 += 16; /*0x5acda9*/
+            --m_8; /*0x5acdac*/
+            *(unsigned int *)v11 = *v12; /*0x5acdaf*/
+            *((unsigned int *)v11 + 1) = v12[1]; /*0x5acdb4*/
+            *((unsigned int *)v11 + 2) = v12[2]; /*0x5acdba*/
+            *((unsigned int *)v11 + 3) = v12[3]; /*0x5acdc0*/
+          }
+          while ( m_8 ); /*0x5acdc3*/
+          v5 = a3; /*0x5acdc5*/
+          v3 = a2; /*0x5acdc9*/
+        }
+        if ( BYTE1(this->m_C) ) /*0x5acdcd*/
+        {
+          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5acdd8*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x5acde0*/
+        }
+      }
+      *(unsigned int *)&this->m_1[3] = (unsigned int)(v7); /*0x5acde9*/
+      this->m_8 = v3; /*0x5acdf1*/
+      BYTE1(this->m_C) = (unsigned char)((gamemd::AbstractClass **)(v5 == 0)); /*0x5acdf4*/
+      return (gamemd::AbstractClass **)(1); /*0x5acdfa*/
+    }
+    else
+    {
+      return 0; /*0x5acd84*/
+    }
+  }
+  else
+  {
+    (*(void (**)(_VectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5ace05*/
+    return (gamemd::AbstractClass **)(1); /*0x5ace0b*/
+  }
+
 }
 }
 // 0x5ACED0
 namespace gamemd {
-AbstractClass * * DynamicVector::SetCapacity(int a2, char * a3)
+AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 {
-    (void)a2; (void)a3; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005ACED0.json)
+
+  int v3; // ebx
+  char *v5; // ebp
+  int v6; // eax
+  char *v7; // edi
+  int m_8; // ecx
+  int v9; // eax
+  char *v10; // ebx
+  unsigned int *v11; // edx
+  int v12; // eax
+
+  v3 = a2; /*0x5aced2*/
+  if ( a2 ) /*0x5acedd*/
+  {
+    v5 = a3; /*0x5acee3*/
+    LOBYTE(this->m_C) = 0; /*0x5acee7*/
+    if ( a3 ) /*0x5aceed*/
+    {
+      v7 = a3; /*0x5acf13*/
+    }
+    else
+    {
+      v6 = (int)(__2_YAPAXI_Z(16 * a2)); /*0x5acef5*/
+      if ( v6 ) /*0x5aceff*/
+        v7 = (char *)v6; /*0x5acf04*/
+      else
+        v7 = 0; /*0x5acf0c*/
+    }
+    LOBYTE(this->m_C) = 1; /*0x5acf1b*/
+    if ( !v7 ) /*0x5acf1f*/
+      return 0; /*0x5acfb4*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x5acf25*/
+    {
+      m_8 = this->m_8; /*0x5acf2c*/
+      if ( a2 < m_8 ) /*0x5acf31*/
+        m_8 = a2; /*0x5acf33*/
+      if ( m_8 > 0 ) /*0x5acf37*/
+      {
+        v9 = 0; /*0x5acf39*/
+        do /*0x5acf5d*/
+        {
+          v10 = &v7[v9]; /*0x5acf3e*/
+          v11 = (unsigned int *)(v9 + *(unsigned int *)&this->m_1[3]); /*0x5acf41*/
+          v9 += 16; /*0x5acf43*/
+          --m_8; /*0x5acf46*/
+          *(unsigned int *)v10 = *v11; /*0x5acf49*/
+          *((unsigned int *)v10 + 1) = v11[1]; /*0x5acf4e*/
+          *((unsigned int *)v10 + 2) = v11[2]; /*0x5acf54*/
+          *((unsigned int *)v10 + 3) = v11[3]; /*0x5acf5a*/
+        }
+        while ( m_8 ); /*0x5acf5d*/
+        v3 = a2; /*0x5acf5f*/
+        v5 = a3; /*0x5acf63*/
+      }
+      if ( BYTE1(this->m_C) ) /*0x5acf67*/
+      {
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x5acf72*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x5acf7a*/
+      }
+    }
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(v7); /*0x5acf83*/
+    this->m_8 = v3; /*0x5acf8b*/
+    BYTE1(this->m_C) = v5 == 0; /*0x5acf8e*/
+  }
+  else
+  {
+    (*(void (**)(_DynamicVectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5acf97*/
+  }
+  v12 = this->m_8; /*0x5acf9a*/
+  if ( v12 < this->m_10 ) /*0x5acfa2*/
+    this->m_10 = (unsigned int)((gamemd::AbstractClass **)(v12)); /*0x5acfa4*/
+  return (gamemd::AbstractClass **)(1); /*0x5acfa7*/
+
 }
 }
 // 0x5CEE60
 namespace gamemd {
-CampaignClass * DynamicVector::Destructor()
+CampaignClass * MSEngine::Destructor()
 {
-     return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x005CEE60.json)
+
+  void *v2; // eax
+  void *v3; // eax
+  void *MSEngine_field_0x4; // eax
+
+  ((gamemd::SessionClass *)((SessionClass *)this))->Destruct(); /*0x5cee64*/
+  v2 = (void *)*((unsigned int *)this + 18); /*0x5cee69*/
+  *((unsigned int *)this + 17) = (unsigned int)(&vt_VectorClass); /*0x5cee70*/
+  if ( v2 && *((unsigned char *)this + 81) ) /*0x5cee79*/
+  {
+    __3_YAXPAX_Z(v2); /*0x5cee7f*/
+    *((unsigned int *)this + 18) = 0; /*0x5cee87*/
+  }
+  *((unsigned char *)this + 81) = 0; /*0x5cee8a*/
+  *((unsigned int *)this + 19) = 0; /*0x5cee8d*/
+  v3 = (void *)*((unsigned int *)this + 12); /*0x5cee90*/
+  *((unsigned int *)this + 11) = (unsigned int)(&vt_VectorClass); /*0x5cee93*/
+  if ( v3 && *((unsigned char *)this + 57) ) /*0x5cee9e*/
+  {
+    __3_YAXPAX_Z(v3); /*0x5ceea4*/
+    *((unsigned int *)this + 12) = 0; /*0x5ceeac*/
+  }
+  *((unsigned char *)this + 57) = 0; /*0x5ceeb2*/
+  *((unsigned int *)this + 13) = 0; /*0x5ceeb5*/
+  j_DeleteAndZero((ObjectClass *)((unsigned int *)this + 2)); /*0x5ceeb8*/
+  MSEngine_field_0x4 = (void *)(this->MSEngine_field_0x4); /*0x5ceebd*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5ceec0*/
+  if ( MSEngine_field_0x4 && BYTE1(this->MSEngine_field_0xC[0]) ) /*0x5ceeca*/
+  {
+    __3_YAXPAX_Z(MSEngine_field_0x4); /*0x5ceed0*/
+    this->MSEngine_field_0x4 = 0; /*0x5ceed8*/
+  }
+  BYTE1(this->MSEngine_field_0xC[0]) = 0; /*0x5ceedb*/
+  this->MSEngine_field_0x8 = 0; /*0x5ceede*/
+
 }
 }
 // 0x5D1AA0

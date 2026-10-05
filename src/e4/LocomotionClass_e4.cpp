@@ -89,7 +89,35 @@ void * LocomotionClass::UpdateAll()
 namespace gamemd {
 int LocomotionClass::CheckBridgeBlock()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4CFA70)
+
+  int vtable1; // eax
+  FootClass *LinkedTo; // edi
+  Cell *v4; // eax
+  unsigned int *v5; // eax
+
+  if ( (*((int (**)(FootClass *))this->LinkedTo->vtable1 + 97))(this->LinkedTo) == 7 /*0x4cfa8e*/
+    || (LOBYTE(vtable1) = BuildingClass::GetType_Thunk(&this->LinkedTo->TechnoClass), !(unsigned char)vtable1) )
+  {
+    vtable1 = (*((int (**)(FootClass *))this->LinkedTo->vtable1 + 11))(this->LinkedTo); /*0x4cfa95*/
+    if ( vtable1 == 2 /*0x4cfacc*/
+      && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1], *(unsigned char *)(vtable1 + 3597))
+      && (v4 = (Cell *)(*((int (**)(FootClass *))LinkedTo->vtable1 + 111))(this->LinkedTo),
+          v5 = ((Cell *)(v4))->IsBridge(),
+          LOBYTE(vtable1) = ((Array *)((Array *)this->LinkedTo))->Contains((int)v5),
+          !(unsigned char)vtable1) )
+    {
+      LOBYTE(vtable1) = (*((char (**)(FootClass *, unsigned int, int))LinkedTo->vtable1 + 289))(LinkedTo, 0, 1); /*0x4cfad6*/
+    }
+    else
+    {
+      *((unsigned char *)this + 80) = 0; /*0x4cfadf*/
+      *((unsigned char *)this + 81) = 1; /*0x4cfae3*/
+      *((unsigned char *)this + 82) = 0; /*0x4cfae7*/
+      *((unsigned int *)this + 14) = 0; /*0x4cfaeb*/
+    }
+  }
+  return vtable1; /*0x4cfadc*/
+
 }
 } // namespace gamemd
 // 0x4DC760
@@ -140,14 +168,54 @@ int LocomotionClass::ProcessData()
 namespace gamemd {
 int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x54AC40)
+
+  int v2; // ecx
+  int v4; // [esp+Ch] [ebp-4h] BYREF
+
+  ((LocomotionClass*)(LocomotionClass *)this)->Init(); /*0x54ac46*/
+  (&this->DestinationCoords)[0] = dword_ABC5A8; /*0x54ac59*/
+  (&this->DestinationCoords)[1] = dword_ABC5AC; /*0x54ac61*/
+  v2 = dword_ABC5B0; /*0x54ac64*/
+  this->IsMoving = 0; /*0x54ac6a*/
+  *(unsigned int *)this->__pad_50 = 0; /*0x54ac6d*/
+  (&this->DestinationCoords)[2] = v2; /*0x54ac70*/
+  ((FrameSnapshot*)/*0x54ac82*/
+    (FrameSnapshot *)&this->__pad_50[4])->InitMax(/*0x54ac82*/ *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1036));
+  this->CurrentHeight = 0; /*0x54ac87*/
+  *(unsigned int *)&this->__pad_74[4] = 0; /*0x54ac8a*/
+  *(unsigned int *)&this->DestinationReached = 0; /*0x54ac8d*/
+  *(unsigned int *)this->__pad_74 = 0; /*0x54ac93*/
+  *(unsigned int *)&this->__pad_74[8] = 0; /*0x54ac96*/
+  *(unsigned int *)&this->__pad_74[12] = 0; /*0x54ac99*/
+  *(unsigned int *)&this->__pad_89[3] = 0; /*0x54ac9f*/
+  this->__pad_89[7] = 0; /*0x54aca5*/
+  this->unknown_91 = 0; /*0x54acab*/
+  this->Piggybackee = 0; /*0x54acb5*/
+  this->LocomotionClass[0] = (int)&vt_JumpjetLocomotionClass; /*0x54acc3*/
+  this->LocomotionClass[1] = (int)&vt_JumpjetLocomotionClass; /*0x54acc9*/
+  this->TurnRate = (int)&vt_JumpjetLocomotionClass; /*0x54acd0*/
+  LOWORD(v4) = 0x4000; /*0x54acd7*/
+  FacingClass::Update((unsigned short *)(&this->__pad_50[4]), &v4); /*0x54acdc*/
+  LOWORD(v4) = 0x4000; /*0x54ace8*/
+  ((FacingClass*)&this->__pad_50[4])->Set_SyncLog(&v4); /*0x54aced*/
+  return (int)this->LocomotionClass; /*0x54acf4*/
+
 }
 } // namespace gamemd
 // 0x55A6C0
 namespace gamemd {
 int LocomotionClass::Init()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x55A6C0)
+
+  this->Owner = 0; /*0x55a6c6*/
+  this->LinkedTo = 0; /*0x55a6c9*/
+  this->Powered = 1; /*0x55a6cc*/
+  this->Dirty = 1; /*0x55a6cf*/
+  this->RefCount = 0; /*0x55a6d2*/
+  *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_LocomotionClass); /*0x55a6d5*/
+  *(unsigned int *)&this->ILocomotion[4] = &vt_LocomotionClass; /*0x55a6db*/
+  return this->ILocomotion; /*0x55a6e2*/
+
 }
 } // namespace gamemd
 // 0x55A6F0
@@ -165,6 +233,11 @@ void LocomotionClass::Construct()
 namespace gamemd {
 LocomotionClass * LocomotionClass::ProcessMove(char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5172F0)
+
+  LocomotionClass::Construct(Block); /*0x5172f3*/
+  if ( (a2 & 1) != 0 ) /*0x5172fd*/
+    __3_YAXPAX_Z(Block); /*0x517300*/
+  return Block->ILocomotion; /*0x51730a*/
+
 }
 } // namespace gamemd

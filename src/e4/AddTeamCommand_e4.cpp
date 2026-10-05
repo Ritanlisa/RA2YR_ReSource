@@ -48,6 +48,8 @@ wchar_t * AddTeamCommand::Release()
 namespace gamemd {
 wchar_t * AddTeamCommand::ddtor()
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x536120)
+
+  return Get  return GetStringCSF((wchar_t *)((const wchar_t *)(g_Str_TXT_TEAM)), 0,(const char *)(g_Str_File_Init_CPP), 6328); 
+
 }
 } // namespace gamemd

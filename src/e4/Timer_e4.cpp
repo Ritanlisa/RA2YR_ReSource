@@ -106,7 +106,19 @@ DWORD * Timer::PumpMessages()
 namespace gamemd {
 int Timer::GetHighPrecision()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5B1E40)
+
+  int result; // eax
+  unsigned int v3; // [esp+4h] [ebp-Ch] BYREF
+  int64_t v4; // [esp+8h] [ebp-8h]
+
+  if ( dword_82C24C == -1 ) /*0x5b1e4e*/
+    GetVersionString(&dword_82C24C,(unsigned char *)(unk_ABEED4), 0, 0); /*0x5b1e5e*/
+  if ( !*this && *((char *)this + 1) == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
+    return timeGetTime(); /*0x5b1eba*/
+  result = Timer::ReadTSC(&v3); /*0x5b1e7f*/
+  v4 = v3; /*0x5b1e9b*/
+  return result; /*0x5b1eb5*/
+
 }
 }
 // 0x5F1390
@@ -165,7 +177,9 @@ int Timer::UpdateDelta()
 namespace gamemd {
 DWORD TimerGetTicks()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6C8C40)
+
+  return timeGetTime() >> 4; /*0x6c8c49*/
+
 }
 } // namespace gamemd
 
@@ -190,6 +204,12 @@ char Timer::SetFlag(char a2)
 namespace gamemd {
 unsigned long long Timer::ReadTSC(unsigned int * a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7C6064)
+
+  uint64_t result; // rax
+
+  result = __rdtsc(); /*0x7c6068*/
+  *a1 = HIDWORD(result); /*0x7c606d*/
+  return result; /*0x7c606f*/
+
 }
 } // namespace gamemd

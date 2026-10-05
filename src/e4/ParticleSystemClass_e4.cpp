@@ -704,9 +704,24 @@ int ParticleSystemClass_32_::FindElementByValue(unsigned int * a2)
 
 // 0x4EF5D0
 namespace gamemd {
-DynamicVector * VectorClass_flat::Constructor_VectorClass_BuildingClass___(unsigned int * Block, char a2)
+DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___(unsigned int * Block, char a2)
 {
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x004EF5D0.json)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x4ef5d3*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef5d6*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x4ef5e0*/
+  {
+    __3_YAXPAX_Z(v3); /*0x4ef5e8*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x4ef5f0*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x4ef5fb*/
+  Block->m_8 = 0; /*0x4ef601*/
+  if ( (a2 & 1) != 0 ) /*0x4ef608*/
+    __3_YAXPAX_Z(Block); /*0x4ef60b*/
+  return Block->__pad_0; /*0x4ef615*/
+
 }
 } // namespace gamemd
 
@@ -714,7 +729,22 @@ DynamicVector * VectorClass_flat::Constructor_VectorClass_BuildingClass___(unsig
 namespace gamemd {
 VectorClass_flat * ParticleSystemClass_16::QueryInterface(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EFD50)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x4efd53*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efd56*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x4efd60*/
+  {
+    __3_YAXPAX_Z(v3); /*0x4efd68*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x4efd70*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x4efd7b*/
+  Block->m_8 = 0; /*0x4efd81*/
+  if ( (a2 & 1) != 0 ) /*0x4efd88*/
+    __3_YAXPAX_Z(Block); /*0x4efd8b*/
+  return Block->__pad_0; /*0x4efd95*/
+
 }
 } // namespace gamemd
 
@@ -722,7 +752,22 @@ VectorClass_flat * ParticleSystemClass_16::QueryInterface(unsigned int * Block, 
 namespace gamemd {
 VectorClass_flat * ParticleSystemClass_32::QueryInterface(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EFDF0)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x4efdf3*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efdf6*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x4efe00*/
+  {
+    __3_YAXPAX_Z(v3); /*0x4efe08*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x4efe10*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x4efe1b*/
+  Block->m_8 = 0; /*0x4efe21*/
+  if ( (a2 & 1) != 0 ) /*0x4efe28*/
+    __3_YAXPAX_Z(Block); /*0x4efe2b*/
+  return Block->__pad_0; /*0x4efe35*/
+
 }
 } // namespace gamemd
 
@@ -730,15 +775,45 @@ VectorClass_flat * ParticleSystemClass_32::QueryInterface(unsigned int * Block, 
 namespace gamemd {
 DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4EFE40)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x4efe43*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efe46*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x4efe50*/
+  {
+    __3_YAXPAX_Z(v3); /*0x4efe58*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x4efe60*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x4efe6b*/
+  Block->m_8 = 0; /*0x4efe71*/
+  if ( (a2 & 1) != 0 ) /*0x4efe78*/
+    __3_YAXPAX_Z(Block); /*0x4efe7b*/
+  return Block->__pad_0; /*0x4efe85*/
+
 }
 } // namespace gamemd
 
 // 0x4EFEE0
 namespace gamemd {
-DynamicVector * VectorClass_flat::Constructor_VectorClass_AircraftClass___(unsigned int * Block, char a2)
+DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___(unsigned int * Block, char a2)
 {
-    (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x004EFEE0.json)
+
+  void *v3; // eax
+
+  v3 = *(void **)&Block->m_1[3]; /*0x4efee3*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efee6*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x4efef0*/
+  {
+    __3_YAXPAX_Z(v3); /*0x4efef8*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x4eff00*/
+  }
+  BYTE1(Block->m_C) = 0; /*0x4eff0b*/
+  Block->m_8 = 0; /*0x4eff11*/
+  if ( (a2 & 1) != 0 ) /*0x4eff18*/
+    __3_YAXPAX_Z(Block); /*0x4eff1b*/
+  return Block->__pad_0; /*0x4eff25*/
+
 }
 } // namespace gamemd
 

@@ -33,7 +33,75 @@
 namespace gamemd {
 char TriggerClass::FindByEventType(char a1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x610950)
+
+  unsigned int *v2; // esi
+  int v3; // eax
+  int v4; // ecx
+  int v5; // ecx
+  int v6; // esi
+  size_t v7; // eax
+  __int128 v8; // [esp+28h] [ebp-20h] BYREF
+  unsigned int v9[2]; // [esp+38h] [ebp-10h] BYREF
+  int64_t v10; // [esp+40h] [ebp-8h]
+
+  if ( !dword_AC1DCC ) /*0x61095d*/
+    return 0; /*0x61095f*/
+  if ( a1 ) /*0x61096a*/
+  {
+    if ( dword_AC1CC8 ) /*0x610978*/
+      (**(void (***)(int, int))dword_AC1CC8)(dword_AC1CC8, 1); /*0x61097e*/
+    dword_AC1CC8 = 0; /*0x610982*/
+    v2 = (unsigned int *)(__2_YAPAXI_Z(0x20u)); /*0x61098d*/
+    if ( v2 ) /*0x610994*/
+    {
+      v4 = (unsigned int)(HIDWORD(dword_AC1CB8));
+      v3 = (unsigned int)(DWORD2(dword_AC1CB8));
+      v2[1] = (unsigned int)(DWORD2(dword_AC1CB8));
+      v2[2] = (unsigned int)(v4);
+      v2[3] = (unsigned int)(0);
+      *v2 = (unsigned int)(&XSurface_Vtable); /*0x6109b4*/
+      v2[4] = 2; /*0x6109ba*/
+      ((Buffer*)v2 + 5)->Init(0, 2 * v4 * v3); /*0x6109c1*/
+      *v2 = (unsigned int)(&BSurface_Vtable); /*0x6109c6*/
+      v5 = (int)v2; /*0x6109cc*/
+    }
+    else
+    {
+      v5 = 0; /*0x6109d0*/
+    }
+    dword_AC1CC8 = v5; /*0x6109ef*/
+    v9[0] = 0; /*0x6109f5*/
+    v9[1] = 0; /*0x6109f9*/
+    v10 = *((unsigned long long *)&dword_AC1CB8 + 1); /*0x6109fd*/
+    (*(void (**)(int, unsigned int *, int, __int128 *, unsigned int, int))(*(unsigned int *)v5 + 8))( /*0x610a08*/
+      v5,
+      v9,
+      g_DSurface_Primary,
+      &dword_AC1CB8,
+      0,
+      1);
+  }
+  v8 = dword_AC1CB8; /*0x610a25*/
+  dword_AC1DD0 = 0; /*0x610a32*/
+  if ( dword_AC48B0 == -1 ) /*0x610a40*/
+    v6 = -1; /*0x610a42*/
+  else
+    v6 = ((int)(uint8_t)dword_AC48B0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x610a8d*/
+       | (BYTE1(dword_AC48B0) >> g_BitMask_Blue << g_BitMask_Green)
+       | (BYTE2(dword_AC48B0) >> g_BitMask_Red << g_BitShift_Blue);
+  (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0); /*0x610a9d*/
+  (*(void (**)(int, __int128 *, int))(*(unsigned int *)g_DSurface_Primary + 20))(g_DSurface_Primary, &v8, v6); /*0x610aae*/
+  (*(void (**)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
+  Team_Find((int *)&v8, g_DSurface_Primary, 8, 4); /*0x610aca*/
+  v7 = wcslen((const wchar_t *)(word_AC1CCC)); /*0x610ae0*/
+  DrawTextRendererTextAligned(dword_AC18A4, 0,(gamemd::ObjectClass *)((int *)&v8),(unsigned short *)(word_AC1CCC), v7, 1, 1,(int *)(g_DSurface_Primary), 0); /*0x610afb*/
+  HIDWORD(v8) -= 2; /*0x610b1e*/
+  LODWORD(v8) = v8 + 1; /*0x610b2a*/
+  ++DWORD1(v8); /*0x610b2e*/
+  DWORD2(v8) -= 2; /*0x610b32*/
+  DrawDialogGradient((int *)g_DSurface_Primary, (int *)&v8, 1, -1); /*0x610b36*/
+  return 1; /*0x610961*/
+
 }
 }
 // 0x71FA30

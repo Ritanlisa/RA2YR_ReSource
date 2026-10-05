@@ -48,21 +48,164 @@
 namespace gamemd {
 void _DynamicVectorClass_PAUControlNode::CaptureManagerClass__vt_03_()
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x472A80)
+
+  void *v2; // eax
+
+  v2 = *(void **)&this->m_1[3]; /*0x472a86*/
+  this->m_10 = 0; /*0x472a89*/
+  if ( v2 && BYTE1(this->m_C) ) /*0x472a90*/
+  {
+    __3_YAXPAX_Z(v2); /*0x472a96*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x472a9e*/
+  }
+  BYTE1(this->m_C) = 0; /*0x472aa1*/
+  this->m_8 = 0; /*0x472aa4*/
+
 }
 }
 // 0x472AD0
 namespace gamemd {
 void _VectorClass_PAUControlNode::CaptureManagerClass__vt_06_(int a2)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x472AD0)
+
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x472ada*/
+
 }
 }
 // 0x4770E0
 namespace gamemd {
 VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned char *** edx0, INIClass * a3, unsigned char * a2, VectorClass, int a6, int a7, int a8, void * a4, void * a5)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4770E0)
+  char *i; // esi
+  char v13; // bl
+  int v14; // eax
+  int v15; // eax
+  int v16; // eax
+  int v17; // eax
+  int v18; // eax
+  int v19; // eax
+  DynamicVector v21; // [esp+2Ch] [ebp-A0h] BYREF
+
+  if ( ((INIClass*)(INIClass *)a2)->GetString((unsigned char *)(a3), (gamemd::INIClass *)(a4), &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
+  {
+    ((DynamicVectorClass *)((DynamicVectorClass *)&v21))->Construct(0, 0); /*0x477121*/
+    *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&TypeList_int_vftable); /*0x47712a*/
+    for ( i = strtok(v21.__pad_20, Str); i; i = strtok(0, Str) ) /*0x477144*/
+    {
+      if ( !*i ) /*0x47714a*/
+        break; /*0x47714d*/
+      v13 = 0; /*0x477159*/
+      if ( !_strcmpi(i,(const char *)(aPower)) ) /*0x47715b*/
+      {
+        if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x477194*/
+          || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
+          && *(int *)v21.__pad_14 > 0
+          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+               &v21,
+               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
+               0) )
+        {
+          v14 = v21.DynamicVector_field_0x10++; /*0x47719f*/
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v14) = -1; /*0x4771aa*/
+        }
+        v13 = 1; /*0x4771b1*/
+      }
+      if ( !_strcmpi(i,(const char *)(aFactory)) ) /*0x4771b9*/
+      {
+        if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x4771f2*/
+          || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
+          && *(int *)v21.__pad_14 > 0
+          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+               &v21,
+               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
+               0) )
+        {
+          v15 = v21.DynamicVector_field_0x10++; /*0x4771fd*/
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v15) = -2; /*0x477208*/
+        }
+        v13 = 1; /*0x47720f*/
+      }
+      if ( !_strcmpi(i, aBarracks) ) /*0x477217*/
+      {
+        if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x477250*/
+          || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
+          && *(int *)v21.__pad_14 > 0
+          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+               &v21,
+               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
+               0) )
+        {
+          v16 = v21.DynamicVector_field_0x10++; /*0x47725b*/
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v16) = -3; /*0x477266*/
+        }
+        v13 = 1; /*0x47726d*/
+      }
+      if ( !_strcmpi(i, aRadar) ) /*0x477275*/
+      {
+        if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x4772ae*/
+          || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
+          && *(int *)v21.__pad_14 > 0
+          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+               &v21,
+               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
+               0) )
+        {
+          v17 = v21.DynamicVector_field_0x10++; /*0x4772b9*/
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v17) = -4; /*0x4772c4*/
+        }
+        v13 = 1; /*0x4772cb*/
+      }
+      if ( !_strcmpi(i,(const char *)(aTech)) ) /*0x4772d3*/
+      {
+        if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x47730c*/
+          || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
+          && *(int *)v21.__pad_14 > 0
+          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+               &v21,
+               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
+               0) )
+        {
+          v18 = v21.DynamicVector_field_0x10++; /*0x477317*/
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v18) = -5; /*0x477322*/
+        }
+        v13 = 1; /*0x477329*/
+      }
+      if ( _strcmpi(i,(const char *)(aProc)) ) /*0x477331*/
+      {
+        if ( !v13 ) /*0x47738b*/
+        {
+          v21.DynamicVector_field_0x1C = ((BuildingTypeClass *)((BuildingTypeClass *)i))->FindIndexByName(); /*0x477397*/
+          if ( v21.DynamicVector_field_0x1C != -1 ) /*0x47739b*/
+            ((DynamicVector *)(&v21))->Add_Alt(&v21.DynamicVector_field_0x1C); /*0x4773a6*/
+        }
+      }
+      else if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x47736a*/
+             || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
+             && *(int *)v21.__pad_14 > 0
+             && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+                  &v21,
+                  v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
+                  0) )
+      {
+        v19 = v21.DynamicVector_field_0x10++; /*0x477375*/
+        *(unsigned int *)(*(unsigned int *)&(&v21.DynamicVector_field_0x1)[3] + 4 * v19) = -6; /*0x477380*/
+      }
+    }
+    ((DynamicVectorClass *)(a1))->Copy((unsigned int *)(&v21)); /*0x4773cb*/
+    a1->vtable1 = (int)&TypeList_int_vftable; /*0x4773d9*/
+    *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&VectorClass_int_vftable); /*0x4773df*/
+    ((VectorClass *)((int)&v21))->Destroy(); /*0x4773e3*/
+    a5 = (void*)&VectorClass_int_vftable; /*0x4773ef*/
+    ((VectorClass *)((int, unsigned int a5)&a5))->Destroy(); /*0x4773f6*/
+    return (gamemd::VectorClass_flat **)(a1); /*0x4773fb*/
+  }
+  else
+  {
+    ((VectorClass *)(a1))->Copy((unsigned int *)(&a5)); /*0x477413*/
+    a5 = (void*)&VectorClass_int_vftable; /*0x47741f*/
+    ((VectorClass *)((int)&a5))->Destroy(); /*0x47742a*/
+    return (gamemd::VectorClass_flat **)(a1); /*0x47742f*/
+  }
 }
 }
 // 0x4790B0
@@ -88,7 +231,60 @@ int SoundWarning_Set(int a1)
 namespace gamemd {
 AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x479740)
+
+  int v2; // esi
+  UINT v3; // eax
+  DWORD v4; // edi
+  HANDLE FileA; // edi
+  int v6; // esi
+  DWORD Buffer[2]; // [esp+8h] [ebp-10h] BYREF
+  CHAR FileName[8]; // [esp+10h] [ebp-8h] BYREF
+
+  if ( stru_887598.onBridge ) /*0x47974c*/
+  {
+    sub_47A080(this, BytesReturned); /*0x479753*/
+    return; /*0x47975d*/
+  }
+  v2 = (char)BytesReturned + 65; /*0x479769*/
+  sprintf((char *const)Buffer, "%c:\\", v2); /*0x479773*/
+  v3 = GetDriveTypeA((LPCSTR)Buffer) - 2; /*0x479786*/
+  if ( v3 ) /*0x479789*/
+  {
+    if ( v3 != 3 ) /*0x47978e*/
+    {
+LABEL_5:
+      Debug::Log(); /*0x479790*/
+      return; /*0x4797a2*/
+    }
+    v4 = 0x80000000; /*0x4797a5*/
+  }
+  else
+  {
+    v4 = -1073741824; /*0x4797ac*/
+  }
+  sprintf(FileName, "\\\\.\\%c:", v2); /*0x4797bc*/
+  FileA = CreateFileA(FileName, v4, 3u, 0, 3u, 0, 0); /*0x4797da*/
+  if ( FileA == (HANDLE)-1 ) /*0x4797df*/
+    goto LABEL_5; /*0x4797df*/
+  v6 = 0; /*0x479805*/
+  while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479822*/
+  {
+    GetLastError(); /*0x479824*/
+    Debug::Log(); /*0x47982c*/
+    Sleep(0x1F4u); /*0x479839*/
+    if ( ++v6 >= 20 ) /*0x479843*/
+      goto LABEL_18; /*0x479843*/
+  }
+  if ( !DeviceIoControl(FileA, 0x90020u, 0, 0, 0, 0, &BytesReturned, 0) /*0x4798c7*/
+    || (LOBYTE(BytesReturned) = 0, !DeviceIoControl(FileA, 0x2D4804u, &BytesReturned, 1u, 0, 0, Buffer, 0))
+    || !DeviceIoControl(FileA, 0x2D4808u, 0, 0, 0, 0, &BytesReturned, 0) )
+  {
+    GetLastError(); /*0x4798d4*/
+    Debug::Log(); /*0x4798dc*/
+  }
+LABEL_18:
+  CloseHandle(FileA); /*0x4798e4*/
+
 }
 }
 // 0x479BA0
@@ -279,7 +475,44 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
 namespace gamemd {
 void ObjectClass::sub_47A080(DWORD a2)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x47A080)
+
+  char v2; // bl
+  HANDLE FileA; // esi
+  DWORD BytesReturned; // [esp+10h] [ebp-20h] BYREF
+  unsigned int InBuffer[7]; // [esp+14h] [ebp-1Ch] BYREF
+
+  v2 = a2 + 1; /*0x47a098*/
+  LOBYTE(a2) = a2 + 1; /*0x47a0a3*/
+  FileA = CreateFileA((LPCSTR)(g_Str_____vwin32), 0, 0, 0, 0, 0x4000000u, 0); /*0x47a0b3*/
+  if ( !(uint8_t)CDROM::LockVolume((int)this, FileA, a2, 0, 0) ) /*0x47a0ba*/
+  {
+    Debug::Log(); /*0x47a0cf*/
+    return; /*0x47a0de*/
+  }
+  if ( !CDROM::DeviceIoControl(FileA, a2) ) /*0x47a0e5*/
+  {
+    Debug::Log(); /*0x47a0fa*/
+    DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, a2); /*0x47a105*/
+    return; /*0x47a111*/
+  }
+  memset(&InBuffer[1], 0, 0x18u); /*0x47a123*/
+  InBuffer[3] = 17421; /*0x47a13b*/
+  InBuffer[0] = v2; /*0x47a143*/
+  InBuffer[2] = 2121; /*0x47a147*/
+  if ( !DeviceIoControl(FileA, 1u, InBuffer, 0x1Cu, InBuffer, 0x1Cu, &BytesReturned, 0) ) /*0x47a14f*/
+  {
+    GetLastError(); /*0x47a160*/
+    Debug::Log(); /*0x47a16c*/
+LABEL_8:
+    Debug::Log(); /*0x47a17d*/
+    goto LABEL_9; /*0x47a186*/
+  }
+  if ( (InBuffer[6] & 1) != 0 ) /*0x47a17b*/
+    goto LABEL_8; /*0x47a17b*/
+LABEL_9:
+  DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, a2); /*0x47a18e*/
+  CloseHandle(FileA); /*0x47a19b*/
+
 }
 } // namespace ra2
 
@@ -767,7 +1000,169 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
 namespace gamemd {
 void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x47EFE0)
+  int *FoundationSize; // eax
+  int v5; // esi
+  signed int v6; // ecx
+  unsigned int result; // eax
+  int v8; // edx
+  int v9; // ebx
+  int v10; // esi
+  signed int v11; // ecx
+  int v12; // edi
+  int v13; // ecx
+  int v14; // edx
+  unsigned int *v15; // esi
+  int v16; // edi
+  uint8_t v17; // dl
+  uint8_t *v19; // esi
+  char **v20; // edi
+  int v21; // edx
+  int v22; // ebx
+  int v23; // ecx
+  bool v24; // cc
+  int v25[4]; // [esp+0h] [ebp-34h] BYREF
+  int v26; // [esp+10h] [ebp-24h]
+  int v27; // [esp+14h] [ebp-20h]
+  int v28; // [esp+18h] [ebp-1Ch]
+  signed int v29; // [esp+20h] [ebp-14h]
+  signed int v30; // [esp+24h] [ebp-10h]
+  signed int v31; // [esp+28h] [ebp-Ch]
+  signed int v32; // [esp+2Ch] [ebp-8h]
+  char **v33; // [esp+30h] [ebp-4h]
+  int v34; // [esp+3Ch] [ebp+8h]
+  int v35; // [esp+3Ch] [ebp+8h]
+  int v36; // [esp+3Ch] [ebp+8h]
+  int v37; // [esp+3Ch] [ebp+8h]
+  signed int v38; // [esp+40h] [ebp+Ch]
+  int v39; // [esp+40h] [ebp+Ch]
+  int SubFile; // [esp+44h] [ebp+10h]
+  uint8_t *v41; // [esp+44h] [ebp+10h]
+
+  if ( !byte_89E7C5 ) /*0x47efed*/
+  {
+    byte_89E7C5 = 1; /*0x47eff6*/
+    dword_89E794 = (unsigned int)(SearchMIXFile((char *)(aShroudShp), 0)); /*0x47f009*/
+    dword_89E790 = (unsigned int)(SearchMIXFile((char *)(aFogShp), 0)); /*0x47f013*/
+  }
+  if ( (*(unsigned int *)dword_A8B230 & 0x1000) != 0 ) /*0x47f022*/
+    v33 = (char **)dword_89E790; /*0x47f02a*/
+  else
+    v33 = (char **)dword_89E794; /*0x47f035*/
+  FoundationSize = (int *)(Building::GetFoundationSize((unsigned int *)(v25), a3)); /*0x47f046*/
+  v26 = *FoundationSize; /*0x47f053*/
+  v5 = a2[1]; /*0x47f059*/
+  v27 = FoundationSize[1]; /*0x47f05c*/
+  v28 = FoundationSize[2]; /*0x47f062*/
+  v6 = a1[1]; /*0x47f065*/
+  result = v27 + v6 + FoundationSize[3]; /*0x47f06d*/
+  v30 = result; /*0x47f074*/
+  if ( (int)result >= v5 + 1 ) /*0x47f077*/
+  {
+    v38 = v5 + a2[3]; /*0x47f084*/
+    result = v38; /*0x47f080*/
+    if ( v6 < v38 ) /*0x47f087*/
+    {
+      result = *a1; /*0x47f08d*/
+      v8 = v26 + *a1 + v28; /*0x47f097*/
+      v34 = *a2; /*0x47f09b*/
+      v29 = v8; /*0x47f0a1*/
+      if ( v8 >= v34 + 1 ) /*0x47f0a4*/
+      {
+        v9 = v34; /*0x47f0ad*/
+        v31 = v34 + a2[2]; /*0x47f0b4*/
+        if ( (int)result < v31 ) /*0x47f0b7*/
+        {
+          v35 = v5; /*0x47f0c0*/
+          if ( v5 <= v6 + v27 ) /*0x47f0c8*/
+            v35 = v6 + v27; /*0x47f0ca*/
+          v10 = v35 - v6 - v27; /*0x47f0d5*/
+          v32 = v38; /*0x47f0dc*/
+          if ( v38 >= v30 ) /*0x47f0df*/
+            v32 = v30; /*0x47f0e1*/
+          if ( v9 <= (int)(result + v26) ) /*0x47f0ec*/
+            v9 = result + v26; /*0x47f0ee*/
+          v11 = v31; /*0x47f0f0*/
+          v12 = v9 - result - v26; /*0x47f0f7*/
+          if ( v31 >= v29 ) /*0x47f0fe*/
+          {
+            v39 = v29; /*0x47f105*/
+            v11 = v29; /*0x47f108*/
+          }
+          else
+          {
+            v39 = v31; /*0x47f100*/
+          }
+          v31 = v28 + v9 - v11; /*0x47f118*/
+          v30 = v9 + *((unsigned int *)dword_87E8A4 + 10) - v11; /*0x47f12e*/
+          SubFile = MixFileClass::GetSubFile(v33, a3); /*0x47f142*/
+          result = ((StreamClass *)((int)dword_87E8A4))->ReadAndSeek(v9, v35 - dword_886FA4); /*0x47f14c*/
+          v13 = v32 - v35; /*0x47f15b*/
+          v14 = (v32 - v35) * *((unsigned int *)dword_87E8A4 + 10); /*0x47f16d*/
+          v41 = (uint8_t *)(v12 + v28 * v10 + SubFile); /*0x47f172*/
+          v33 = (char **)result; /*0x47f178*/
+          v15 = (unsigned int *)(dword_87E8A4); /*0x47f18a*/
+          if ( result + 2 * (v14 + v39 + 0x7FFFFFFF * v9) + 4 < *((unsigned int *)dword_87E8A4 + 7) ) /*0x47f193*/
+          {
+            v29 = v32 - v35; /*0x47f20d*/
+            v37 = v39 - v9; /*0x47f212*/
+            v19 = v41; /*0x47f215*/
+            v20 = v33; /*0x47f218*/
+            v21 = v13; /*0x47f21b*/
+            v22 = 2 * v30; /*0x47f221*/
+            do /*0x47f242*/
+            {
+              v23 = v37; /*0x47f223*/
+              do /*0x47f23a*/
+              {
+                result = *v19++; /*0x47f228*/
+                if ( result != 254 ) /*0x47f231*/
+                  *(unsigned short *)v20 = result; /*0x47f233*/
+                v20 = (char **)((char *)v20 + 2); /*0x47f236*/
+                v24 = v23-- <= 1; /*0x47f239*/
+              }
+              while ( !v24 ); /*0x47f23a*/
+              v19 += v31; /*0x47f23c*/
+              v20 = (char **)((char *)v20 + v22); /*0x47f23f*/
+              v24 = v21-- <= 1; /*0x47f241*/
+            }
+            while ( !v24 ); /*0x47f242*/
+          }
+          else if ( v35 < v32 ) /*0x47f19d*/
+          {
+            v36 = v32 - v35; /*0x47f1a3*/
+            do /*0x47f1ff*/
+            {
+              if ( v9 < v39 ) /*0x47f1ab*/
+              {
+                v16 = v39 - v9; /*0x47f1af*/
+                do /*0x47f1db*/
+                {
+                  v17 = *v41; /*0x47f1b4*/
+                  if ( *v41++ != 0xFE ) /*0x47f1b7*/
+                  {
+                    *(unsigned short *)result = v17; /*0x47f1c4*/
+                    v15 = (unsigned int *)(dword_87E8A4); /*0x47f1c7*/
+                  }
+                  result += 2; /*0x47f1d0*/
+                  if ( result >= v15[7] ) /*0x47f1d5*/
+                    result -= v15[8]; /*0x47f1d7*/
+                  --v16; /*0x47f1da*/
+                }
+                while ( v16 ); /*0x47f1db*/
+              }
+              result += 2 * v30; /*0x47f1e6*/
+              v41 += v31; /*0x47f1f0*/
+              if ( result >= v15[7] ) /*0x47f1f3*/
+                result -= v15[8]; /*0x47f1f5*/
+              --v36; /*0x47f1fc*/
+            }
+            while ( v36 ); /*0x47f1ff*/
+          }
+        }
+      }
+    }
+  }
+  return result; /*0x47f204*/
 }
 }
 // 0x47F250
@@ -962,7 +1357,12 @@ void E4Recv_470C30::sub_470C30()
 namespace gamemd {
 LRESULT sub_470C40(CampaignScore * aP0, int nIDDlgItem, wchar_t * Format)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x470C40)
+  HWND DlgItem; // eax
+  wchar_t Buffer[32]; // [esp+8h] [ebp-40h] BYREF
+
+  swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, Format); /*0x470c58*/
+  DlgItem = GetDlgItem((HWND)(aP0), nIDDlgItem); /*0x470c62*/
+  return SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x470c7b*/
 }
 } // namespace gamemd
 
@@ -1403,7 +1803,38 @@ int sub_473730()
 namespace gamemd {
 unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x473750)
+
+  CarryoverClass *v3; // edi
+  int v4; // eax
+  int v5; // eax
+  int v6; // eax
+  int v7; // eax
+
+  v3 = (CarryoverClass *)a2; /*0x473754*/
+  *((unsigned int *)this + 1) = 0; /*0x47375a*/
+  *((unsigned int *)this + 2) = 0; /*0x47375d*/
+  *((unsigned int *)this + 3) = 0; /*0x473760*/
+  *((unsigned short *)this + 10) = 0; /*0x473763*/
+  *((unsigned short *)this + 11) = 0; /*0x473767*/
+  *((unsigned int *)this + 6) = 0; /*0x47376d*/
+  *((unsigned int *)this + 7) = -1; /*0x473770*/
+  *this = (CarryoverClass)&vt_CarryoverClass; /*0x473777*/
+  if ( v3 ) /*0x47377d*/
+  {
+    v4 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 44))(v3); /*0x473783*/
+    *((unsigned int *)this + 3) = v4; /*0x473786*/
+    v5 = v4 - 1; /*0x473789*/
+    if ( !v5 || (v6 = v5 - 5) == 0 || v6 == 9 ) /*0x473794*/
+    {
+      v7 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 132))(v3); /*0x4737a6*/
+      *((unsigned int *)this + 4) = (*(int (**)(int))(*(unsigned int *)v7 + 64))(v7); /*0x4737b3*/
+    }
+    *((unsigned int *)this + 7) = *(CarryoverClass *)(*(unsigned int *)(*(unsigned int *)&v3[135] + 52) + 184); /*0x4737c7*/
+    *((unsigned int *)this + 6) = v3[27]; /*0x4737cd*/
+    *((unsigned int *)this + 5) = *(CarryoverClass *)(*(int (**)(CarryoverClass *, unsigned int **))(*(unsigned int *)v3 + 440))(v3, &a2); /*0x4737df*/
+  }
+  return (unsigned int *)(this); /*0x4737e4*/
+
 }
 } // namespace gamemd
 
@@ -1411,7 +1842,10 @@ unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
 namespace gamemd {
 char * sub_473960(unsigned int a1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x473960)
+  if ( a1 >= 0xB ) /*0x473963*/
+    return (char *)(g_Str__none_); /*0x47396d*/
+  else
+    return off_81B7CC[2 * a1]; /*0x473965*/
 }
 } // namespace gamemd
 
@@ -1568,7 +2002,42 @@ int sub_4741D0()
 namespace gamemd {
 CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x474540)
+
+  int v5; // edi
+  SHA1 v6; // [esp+8h] [ebp-80h] BYREF
+  int v7; // [esp+2Ch] [ebp-5Ch]
+  int v8; // [esp+30h] [ebp-58h]
+  int v9; // [esp+34h] [ebp-54h]
+  int v10; // [esp+38h] [ebp-50h]
+  int v11; // [esp+3Ch] [ebp-4Ch]
+  int v12; // [esp+40h] [ebp-48h]
+  int v13; // [esp+44h] [ebp-44h]
+
+  if ( !a3 ) /*0x474552*/
+    return INIClass::WriteToString((INIClass *)this, aP1); /*0x47455c*/
+  INIClass::ClearSection((int *)this, (int)g_INI_Key_Digest, 0); /*0x474575*/
+  memset(&v6.SHA1_field_0x04, 0, 9); /*0x47457e*/
+  v12 = 0; /*0x47458d*/
+  v13 = 0; /*0x474591*/
+  v7 = 1732584193; /*0x474595*/
+  v8 = -271733879; /*0x47459d*/
+  v9 = -1732584194; /*0x4745a5*/
+  v10 = 271733878; /*0x4745ad*/
+  v11 = -1009589776; /*0x4745b5*/
+  *(unsigned int *)v6.__pad_0 = &vt_SHAPipe; /*0x4745bd*/
+  INIClass::WriteToString((INIClass *)this, (int)&v6); /*0x4745c5*/
+  ((SHA1 *)(&v6))->ComputeThunk((char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
+  LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
+  Pipe::Dtor((Pipe *)&v6); /*0x4745df*/
+  INIClass::ReadBase64Data( /*0x4745ee*/
+    (char *)this,
+    (uint8_t *)g_INI_Key_Digest,
+    (int)&this->ambientSoundController[1] + 1,
+    20);
+  v5 = INIClass::WriteToString((INIClass *)this, aP1); /*0x47460a*/
+  INIClass::ClearSection((int *)this, (int)g_INI_Key_Digest, 0); /*0x47460c*/
+  return (gamemd::CCINIClass *)(v5); /*0x474561*/
+
 }
 } // namespace gamemd
 
@@ -1586,7 +2055,30 @@ char E4Recv_474660::sub_474660(unsigned char * Block, char * a3, int a4)
 namespace gamemd {
 int E4Recv_476E20::sub_476E20()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x476E20)
+
+  SHA1 v3; // [esp+4h] [ebp-80h] BYREF
+  int v4; // [esp+28h] [ebp-5Ch]
+  int v5; // [esp+2Ch] [ebp-58h]
+  int v6; // [esp+30h] [ebp-54h]
+  int v7; // [esp+34h] [ebp-50h]
+  int v8; // [esp+38h] [ebp-4Ch]
+  int v9; // [esp+3Ch] [ebp-48h]
+  int v10; // [esp+40h] [ebp-44h]
+
+  memset(&v3.SHA1_field_0x04, 0, 9); /*0x476e29*/
+  v9 = 0; /*0x476e35*/
+  v10 = 0; /*0x476e39*/
+  v4 = 1732584193; /*0x476e44*/
+  v5 = -271733879; /*0x476e4c*/
+  v6 = -1732584194; /*0x476e54*/
+  v7 = 271733878; /*0x476e5c*/
+  v8 = -1009589776; /*0x476e64*/
+  *(unsigned int *)v3.__pad_0 = &vt_SHAPipe; /*0x476e6c*/
+  INIClass::WriteToString((INIClass *)this, (int)&v3); /*0x476e74*/
+  ((SHA1 *)(&v3))->ComputeThunk((char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
+  LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/
+  return Pipe::Dtor((Pipe *)&v3); /*0x476e93*/
+
 }
 } // namespace gamemd
 
@@ -1594,7 +2086,9 @@ int E4Recv_476E20::sub_476E20()
 namespace gamemd {
 void E4Recv_476EA0::sub_476EA0()
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x476EA0)
+
+  LOBYTE(this->ambientSoundController[1]) = 0; /*0x476ea0*/
+
 }
 } // namespace gamemd
 
@@ -1851,7 +2345,40 @@ char sub_479A40(HANDLE hDevice)
 namespace gamemd {
 char ObjectClass::sub_47A1B0(DWORD BytesReturned)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x47A1B0)
+
+  HANDLE FileA; // esi
+  char v5; // bl
+
+  Debug::Log(); /*0x47a1bc*/
+  Debug::Log(); /*0x47a1d6*/
+  LOBYTE(BytesReturned) = BytesReturned + 1; /*0x47a1e0*/
+  FileA = CreateFileA((LPCSTR)(g_Str_____vwin32), 0, 0, 0, 0, 0x4000000u, 0); /*0x47a203*/
+  Debug::Log(); /*0x47a205*/
+  if ( (uint8_t)CDROM::LockVolume((int)this, FileA, BytesReturned, 0, 0) ) /*0x47a218*/
+  {
+    Debug::Log(); /*0x47a244*/
+    Debug::Log(); /*0x47a24e*/
+    if ( sub_47A560(FileA, BytesReturned) ) /*0x47a25a*/
+    {
+      Debug::Log(); /*0x47a280*/
+      v5 = 1; /*0x47a285*/
+    }
+    else
+    {
+      Debug::Log(); /*0x47a26f*/
+      v5 = 0; /*0x47a277*/
+    }
+    DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, BytesReturned); /*0x47a28f*/
+    CloseHandle(FileA); /*0x47a295*/
+    Debug::Log(); /*0x47a2af*/
+    return v5; /*0x47a2b7*/
+  }
+  else
+  {
+    Debug::Log(); /*0x47a22d*/
+    return 0; /*0x47a235*/
+  }
+
 }
 } // namespace gamemd
 
@@ -1859,7 +2386,40 @@ char ObjectClass::sub_47A1B0(DWORD BytesReturned)
 namespace gamemd {
 char ObjectClass::sub_47A2D0(DWORD BytesReturned)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x47A2D0)
+
+  HANDLE FileA; // esi
+  char v5; // bl
+
+  Debug::Log(); /*0x47a2dc*/
+  Debug::Log(); /*0x47a2f6*/
+  LOBYTE(BytesReturned) = BytesReturned + 1; /*0x47a300*/
+  FileA = CreateFileA((LPCSTR)(g_Str_____vwin32), 0, 0, 0, 0, 0x4000000u, 0); /*0x47a323*/
+  Debug::Log(); /*0x47a325*/
+  if ( (uint8_t)CDROM::LockVolume((int)this, FileA, BytesReturned, 0, 0) ) /*0x47a338*/
+  {
+    Debug::Log(); /*0x47a364*/
+    Debug::Log(); /*0x47a36e*/
+    if ( CDROM::DeviceIoControl(FileA, BytesReturned) ) /*0x47a37a*/
+    {
+      Debug::Log(); /*0x47a3a0*/
+      v5 = 1; /*0x47a3a5*/
+    }
+    else
+    {
+      Debug::Log(); /*0x47a38f*/
+      v5 = 0; /*0x47a397*/
+    }
+    DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, BytesReturned); /*0x47a3af*/
+    CloseHandle(FileA); /*0x47a3b5*/
+    Debug::Log(); /*0x47a3cf*/
+    return v5; /*0x47a3d7*/
+  }
+  else
+  {
+    Debug::Log(); /*0x47a34d*/
+    return 0; /*0x47a355*/
+  }
+
 }
 } // namespace gamemd
 
@@ -1867,7 +2427,26 @@ char ObjectClass::sub_47A2D0(DWORD BytesReturned)
 namespace gamemd {
 bool sub_47A560(HANDLE hDevice, DWORD BytesReturned)
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x47A560)
+  char v2; // bl
+  unsigned char v4[2]; // [esp+Eh] [ebp-1Eh] BYREF
+  unsigned int InBuffer[7]; // [esp+10h] [ebp-1Ch] BYREF
+
+  v2 = BytesReturned; /*0x47a564*/
+  memset(&InBuffer[1], 0, 0x18u); /*0x47a583*/
+  v4[1] = 0; /*0x47a58d*/
+  CDROM::DeviceIoControl(hDevice, BytesReturned); /*0x47a591*/
+  InBuffer[0] = v2; /*0x47a59d*/
+  InBuffer[1] =(unsigned int)v4; /*0x47a5ac*/
+  v4[0] = 0; /*0x47a5bd*/
+  InBuffer[3] = 17421; /*0x47a5c2*/
+  InBuffer[2] = 2120; /*0x47a5ca*/
+  if ( !DeviceIoControl(hDevice, 1u, InBuffer, 0x1Cu, InBuffer, 0x1Cu, &BytesReturned, 0) ) /*0x47a5d2*/
+  {
+    GetLastError(); /*0x47a5e6*/
+    Debug::Log(); /*0x47a5f2*/
+    return 0; /*0x47a5ff*/
+  }
+  return (InBuffer[6] & 1) == 0; /*0x47a607*/
 }
 } // namespace gamemd
 
@@ -1895,7 +2474,16 @@ bool sub_47A620(HANDLE hDevice, DWORD BytesReturned)
 namespace gamemd {
 CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x47AA00)
+
+  char *v3; // eax
+
+  BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47aa03*/
+  *((unsigned char *)this + 84) = 0; /*0x47aa0c*/
+  *(unsigned int *)this->BufferIOFileClass =(unsigned int)(&off_7E1668); /*0x47aa10*/
+  v3 = ((String *)((String *)a2))->GetOrEmpty_Alt(); /*0x47aa16*/
+  ((FileClass*)this)->OpenWithCDSearch(v3); /*0x47aa1e*/
+return (gamemd::CDFileClass *)this->BufferIOFileClass; /*0x47aa25*/
+
 }
 } // namespace gamemd
 
@@ -1903,7 +2491,25 @@ CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
 namespace gamemd {
 bool sub_47AAC0()
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x47AAC0)
+  void **v0; // esi
+  void **v1; // edi
+
+  v0 = (void **)CmdLine_NoCD; /*0x47aac1*/
+  if ( CmdLine_NoCD ) /*0x47aac9*/
+  {
+    do /*0x47aaeb*/
+    {
+      v1 = (void **)*v0; /*0x47aacf*/
+      if ( v0[1] ) /*0x47aacc*/
+        free(v0[1]); /*0x47aad6*/
+      RA2_OPDEL(v0); /*0x47aadf*/
+      v0 = v1; /*0x47aae7*/
+    }
+    while ( v1 ); /*0x47aaeb*/
+  }
+  CmdLine_NoCD = 0; /*0x47aaee*/
+// 0x47ab10
+  return Game::FindGameDirectoryCD(byte_89E41C); /*0x47aafd*/
 }
 } // namespace gamemd
 

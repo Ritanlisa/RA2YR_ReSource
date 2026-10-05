@@ -10,8 +10,41 @@
 
 // 0x7B2050
 namespace gamemd {
-char VerifyCRC(int a1)
+char Winsock::VerifyCRC(int a1)
 {
-    (void)a1; return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = .omo/ida_cache/func_0x007B2050.json)
+
+  WinsockInterfaceClass *v1; // ebx
+  int v2; // eax
+  int v3; // edi
+  int *v4; // esi
+  int v5; // edx
+  int v6; // eax
+
+  v1 = (gamemd::WinsockInterfaceClass *)(a1);
+  v2 = *((unsigned int *)a1 + 4); /*0x7b2055*/
+  if ( v2 < 640 ) /*0x7b205d*/
+  {
+    v3 = 0; /*0x7b206a*/
+    v4 = (int *)((char *)a1 + 32); /*0x7b206c*/
+    a1 = 0; /*0x7b2071*/
+    if ( v2 / 4 > 0 ) /*0x7b2075*/
+    {
+      do /*0x7b2094*/
+      {
+        v5 = *v4++; /*0x7b2077*/
+        ComputeHash((unsigned int *)(&a1), v5); /*0x7b2080*/
+        ++v3; /*0x7b2088*/
+      }
+      while ( v3 < *(unsigned int *)&v1[1].Initialized / 4 ); /*0x7b2094*/
+    }
+    v6 = *(unsigned int *)&v1[1].Initialized & 3; /*0x7b2099*/
+    if ( v6 ) /*0x7b209c*/
+      ComputeHash((unsigned int *)(&a1), *v4 & (0xFFFFFFFF >> (32 - 8 * v6))); /*0x7b20b5*/
+    if ( a1 == *(WinsockInterfaceClass **)&v1[2].Initialized ) /*0x7b20c5*/
+      return 1; /*0x7b20ca*/
+    ((gamemd::Debug *)this)->Log(); /*0x7b20d2*/
+  }
+  return 0; /*0x7b20c9*/
+
 }
 } // namespace gamemd
