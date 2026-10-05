@@ -15557,3 +15557,12 @@ extern int HouseClass_Count;  // data: 0xA80238
 extern char * aDarkenShp;  // G42.41l supply (processDamage 0x6A5012)
 extern int dword_B07BC0;  // G42.41l supply (0xB07BC0)
 extern unsigned int stru_B1D290;  // G42.41l supply (processDeath 0x74CD60; til '?'-member blob)
+extern int dword_886980;  // G42.42a supply (WOL_FindLobbyID FromFile arg2)
+extern int dword_A8B240;  // G42.42a supply (territory idx)
+extern int dword_B73E10;  // G42.42a supply (lobby count)
+extern int dword_B73E18;  // G42.42a supply (lobby record base)
+extern int dword_B73E1C;  // G42.42a supply (lobby name array)
+extern int dword_B75E50;  // G42.42a supply (territory wide name)
+extern int dword_B77DC8;  // G42.42a supply
+extern int dword_B77DD0;  // G42.42a supply
+extern int dword_B77DD4;  // G42.42a supply (lobby id)
