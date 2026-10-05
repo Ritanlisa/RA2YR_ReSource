@@ -129,7 +129,7 @@ int GameClass::loadScenarioFiles(int aP1)
     ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5d228f*/
     v4 = (gamemd::ObjectClass *)(aP1); /*0x5d229b*/
     if ( stru_887598.lineTrailer ) /*0x5d22a1*/
-      (*(void (**)(void *, int, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x5d22a8*/
+      (*(void (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0)( /*0x5d22a8*/
         stru_887598.lineTrailer,
         aP1,
         0);
@@ -164,7 +164,7 @@ int GameClass::loadScenarioFiles(int aP1)
     }
     this->GameClass_field_0x4[0] = 0; /*0x5d2320*/
     if ( stru_887598.lineTrailer ) /*0x5d2330*/
-      return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x5d2337*/
+      return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100)( /*0x5d2337*/
                stru_887598.lineTrailer,
                v4,
                0);
@@ -483,7 +483,7 @@ ObjectClass * * GameClass::Shutdown(void *a1_1)
   OleUninitialize(); /*0x6becc7*/
   if ( stru_887598.lineTrailer ) /*0x6becd5*/
   {
-    (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 20))(stru_887598.lineTrailer); /*0x6becd9*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->u32_50)(stru_887598.lineTrailer); /*0x6becd9*/
     if ( stru_887598.lineTrailer ) /*0x6bece4*/
       (**(void (***)(void *, int))stru_887598.lineTrailer)(stru_887598.lineTrailer, 1); /*0x6bece9*/
   }

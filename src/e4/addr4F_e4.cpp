@@ -529,11 +529,11 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
     DSurface::Flip2(); /*0x4f239b*/
     do /*0x4f25fd*/
     {
-      (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x4f23a8*/
+      (*(void (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x4f23a8*/
       DDraw::HandleSuspend((DDraw *)(this + 4)); /*0x4f23ad*/
-      (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4f23ba*/
-      v7 = (*(int (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 48))(stru_887598.lineTrailer); /*0x4f23ce*/
-      v18[0] = (*(int (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 44))(stru_887598.lineTrailer); /*0x4f23db*/
+      (*(void (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x4f23ba*/
+      v7 = (*(int (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0C0)(stru_887598.lineTrailer); /*0x4f23ce*/
+      v18[0] = (*(int (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q0B0)(stru_887598.lineTrailer); /*0x4f23db*/
       v18[1] = v7; /*0x4f23df*/
       if ( EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]) ) /*0x4f23e3*/
       {

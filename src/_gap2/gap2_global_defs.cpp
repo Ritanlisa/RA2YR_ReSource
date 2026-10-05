@@ -1548,7 +1548,7 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
     int v33; // [esp+1Ch] [ebp-14h]
     Rect v34; // [esp+20h] [ebp-10h] BYREF
 
-    (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x42e1d1*/
+    (*(void (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x42e1d1*/
     nextArrayIndex = this->?; /*0x42e1d4*/
     if ( nextArrayIndex ) /*0x42e1d9*/
     {
@@ -1660,7 +1660,7 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
         (*(void (__stdcall **)(Rect *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))(&v34, v23); /*0x42e397*/
       }
     }
-    (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x42e3f4*/
+    (*(void (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x42e3f4*/
     result = (int)this->?; /*0x42e3f7*/
     occupant = this->occupant; /*0x42e3fa*/
     this->owningHouseIndex = result; /*0x42e3fd*/
@@ -33170,12 +33170,12 @@ void Gap2Recv_76C6E0::SelectionInitializeWOL() {
   int v17; // [esp+24h] [ebp-4h]
 
   *(unsigned int *)this = &WorldDominationTour::vt_Selection; /*0x76c6e9*/
-  (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x76c6f7*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x76c6f7*/
   Theme::QueueSong((int)&unk_A83D10, -3); /*0x76c701*/
   (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x76c710*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x76c71d*/
-  while ( (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) < 0 ) /*0x76c72d*/
-    (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x76c737*/
+  while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0)(stru_887598.lineTrailer) < 0 ) /*0x76c72d*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x76c737*/
   ComPtr::Set((ComPtr *)((char *)this + 1124), 0); /*0x76c753*/
   VectorCursor::Construct((VectorCursor *)&v15, this->u32_45C + 44, 0); /*0x76c768*/
   while ( (*(uint8_t (**)(int *))(v15 + 4))(&v15) ) /*0x76c775*/

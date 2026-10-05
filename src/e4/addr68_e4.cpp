@@ -560,8 +560,8 @@ void * * ScenarioClass_SetTimer(int a1)
     if ( !byte_B054CC ) /*0x684120*/
     {
       ((Mouse *)(&dword_87F7E8))->ReleaseCapture(); /*0x684127*/
-      if ( !(*(int (**)(int))(*(unsigned int *)dword_887640 + 40))(dword_887640) ) /*0x684134*/
-        (*(void (**)(int))(*(unsigned int *)dword_887640 + 12))(dword_887640); /*0x684143*/
+      if ( !(*(int (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0)(dword_887640) ) /*0x684134*/
+        (*(void (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30)(dword_887640); /*0x684143*/
       *((unsigned char *)dword_A8B230 + 13730) = (unsigned char)((void **)(1)); /*0x68414c*/
       byte_A8ED9C = 1; /*0x684159*/
       ((Timer*)(HWND *)dword_87F770)->PumpMessages(); /*0x684160*/
@@ -580,11 +580,11 @@ ScenarioClass * * Mouse_Update()
   int result; // eax
 
   if ( IDA_BYTE2((&dword_A8B230)[381].vtable3) == 1 /*0x6842a6*/
-    && (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) )
+    && (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0)(stru_887598.lineTrailer) )
   {
     do /*0x6842c0*/
-      (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x6842b5*/
-    while ( (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) ); /*0x6842c0*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x6842b5*/
+    while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0)(stru_887598.lineTrailer) ); /*0x6842c0*/
   }
   IDA_BYTE2((&dword_A8B230)[381].vtable3) = 0; /*0x6842cc*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = (unsigned int)((gamemd::ScenarioClass **)(0)); /*0x6842d9*/

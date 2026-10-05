@@ -113,7 +113,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
   v6[2] = 640; /*0x690467*/
   v5[2] = 640; /*0x69046b*/
   if ( stru_887598.lineTrailer ) /*0x69046f*/
-    (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x69047c*/
+    (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0)( /*0x69047c*/
       stru_887598.lineTrailer,
       g_DSurface_Hidden,
       0);
@@ -126,7 +126,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
              0,
              1);
   if ( stru_887598.lineTrailer ) /*0x6904a7*/
-    return (*(int (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x6904b4*/
+    return (*(int (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100)( /*0x6904b4*/
              stru_887598.lineTrailer,
              g_DSurface_Hidden,
              0);

@@ -65,6 +65,9 @@ struct TacticalMap {
     void* RenderCell(char arg0, AbstractClass * aP2, int a4, int a2);
      double Render(...);  // C2597 interim stub
     AbstractClass * * TacticalMap_Render(int a2);
+    unsigned int q_80;  // +0x80 flat supply (P5 provenance)
+    unsigned int q_A0;  // +0xA0 flat supply (P5 provenance)
+    unsigned int q_170;  // +0x170 flat supply (P5 provenance)
 };
 
 } // namespace gamemd

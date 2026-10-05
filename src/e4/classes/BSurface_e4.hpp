@@ -29,5 +29,6 @@ struct BSurface {
     int GetPitch();  // 0x411640
     BSurface * ScalarDtor(char * Block, char a2);  // 0x411650
     char Stub(int a1, int a2);
+    unsigned int q_4;  // +0x4 flat supply (P5 provenance)
 };
 } // namespace gamemd

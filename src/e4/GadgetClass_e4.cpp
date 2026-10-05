@@ -79,7 +79,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 
   if ( !((GadgetClass*)((GadgetClass *)this))->ClearState(aP1) ) /*0x55792e*/
     return 0; /*0x557a0b*/
-  (*(void (**)(void *, int, int, int, int))(*(unsigned int *)stru_887598.lineTrailer + 32))( /*0x557965*/
+  (*(void (**)(void *, int, int, int, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_80)( /*0x557965*/
     stru_887598.lineTrailer,
     this->ListClass_field_0x0C,
     this->ListClass_field_0x10,
@@ -108,7 +108,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
           v7 == *((unsigned int *)this + 91));
     }
   }
-  (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x5579f6*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q090)(stru_887598.lineTrailer); /*0x5579f6*/
   return 1; /*0x5579fe*/
 
 }

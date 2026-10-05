@@ -353,7 +353,7 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
           result[1] = *((unsigned int *)this + 1137); /*0x4ac7ef*/
           result[2] = *((unsigned int *)this + 1138); /*0x4ac7f5*/
           *((unsigned int *)this + 1135) = 0; /*0x4ac7f8*/
-          return (*(unsigned int *(**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4ac80a*/
+          return (*(unsigned int *(**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x4ac80a*/
         }
       }
     }

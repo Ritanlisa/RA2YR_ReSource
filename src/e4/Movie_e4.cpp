@@ -185,7 +185,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
               }
             }
           }
-          (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5bf03b*/
+          (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x5bf03b*/
           if ( a7 ) /*0x5bf045*/
           {
             (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5bf050*/
@@ -223,7 +223,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
             (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5bf13b*/
             Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)v10, (void *)v9, 0, (void *)v19, (void *)v20, v21); /*0x5bf147*/
           }
-          (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5bf154*/
+          (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x5bf154*/
           MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x5bf15e*/
           ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x5bf169*/
         }
@@ -238,7 +238,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
     else
     {
       ((gamemd::Debug *)this)->Log(); /*0x5bedad*/
-      (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5bedbd*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x5bedbd*/
       if ( a7 ) /*0x5bedc7*/
       {
         (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5bedd2*/
@@ -277,7 +277,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
         Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)a2, (void *)a3, 0, (void *)v18, (void *)v20, v21); /*0x5beec8*/
       }
       ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x5beed3*/
-      (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5beee0*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x5beee0*/
       MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x5beeea*/
       ((BinkMovie *)(&v23))->Stop(); /*0x5beef3*/
     }

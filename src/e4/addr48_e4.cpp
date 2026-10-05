@@ -77,7 +77,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
 
   if ( !((Control *)((ControlClass *)this))->DispatchClick(a2) ) /*0x4880fb*/
     return 0; /*0x488204*/
-  (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x488110*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x488110*/
   uniqueId = ((unsigned int *)this)[0]; /*0x488116*/
   abstractFlags = ((unsigned int *)this)[0]; /*0x488119*/
   vtable3 = (void *)(((unsigned int *)this)[0]); /*0x48811c*/
@@ -119,7 +119,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
       &vtable3,
       v10);
   }
-  (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4881f5*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x4881f5*/
   return (gamemd::ConvertClass **)(1); /*0x4881fd*/
 
 }
@@ -1186,9 +1186,9 @@ AbstractClass * * Main_Game_Frame()
   }
   LABEL_9:
   ScenarioClass::CleanupTemporary(v10); /*0x48c918*/
-  (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 20))(stru_887598.lineTrailer); /*0x48c925*/
-  while ( (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) ) /*0x48c930*/
-    (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x48c93f*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->u32_50)(stru_887598.lineTrailer); /*0x48c925*/
+  while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0)(stru_887598.lineTrailer) ) /*0x48c930*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x48c93f*/
   v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 444); /*0x48c951*/
   v9 = v1; /*0x48c959*/
   if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 444) ) /*0x48c95a*/
@@ -1311,8 +1311,8 @@ AbstractClass * * Main_Game_Frame()
   LABEL_45:
   UpdateWindow(g_hWnd); /*0x48cc37*/
   if ( IDA_BYTE2(dword_A8B230[381].vtable3) ) /*0x48cc4b*/
-    (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x48cc5d*/
-  (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 24))(stru_887598.lineTrailer); /*0x48cc68*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x48cc5d*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_60)(stru_887598.lineTrailer); /*0x48cc68*/
   WTFMode::Init((WTFMode *)&dword_A8B238); /*0x48cc70*/
   return PostFrameCleanup(v11); /*0x48c990*/
 }

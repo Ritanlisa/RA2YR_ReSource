@@ -1183,6 +1183,14 @@ struct MouseClass {
     int UpdateTimers();
     int UpdateCountdowners();
     char * Constructor(uint64_t);
+    unsigned int q_80;  // +0x80 flat supply (P5 provenance)
+    unsigned int q_10;  // +0x10 flat supply (P5 provenance)
+    unsigned int q_A0;  // +0xA0 flat supply (P5 provenance)
+    unsigned int q_D0;  // +0xD0 flat supply (P5 provenance)
+    unsigned int q_100;  // +0x100 flat supply (P5 provenance)
+    unsigned int q_30;  // +0x30 flat supply (P5 provenance)
+    unsigned int q_40;  // +0x40 flat supply (P5 provenance)
+    unsigned int q_60;  // +0x60 flat supply (P5 provenance)
 };
 
 } // namespace gamemd

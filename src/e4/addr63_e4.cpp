@@ -1709,8 +1709,8 @@ AbstractClass * * sub_638E60()
 
   if ( !stru_AC4B30.__pad_EC[148] ) /*0x638e6b*/
   {
-    v1 = (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 44))(stru_887598.lineTrailer); /*0x638e85*/
-    v2 = (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 48))(stru_887598.lineTrailer); /*0x638e8c*/
+    v1 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q0B0)(stru_887598.lineTrailer); /*0x638e85*/
+    v2 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0C0)(stru_887598.lineTrailer); /*0x638e8c*/
     v3 = 0; /*0x638e93*/
     v7 = *(unsigned int *)&stru_AC4B30.__pad_EC[12]; /*0x638e95*/
     if ( *(int *)&stru_AC4B30.__pad_EC[12] <= 0 ) /*0x638e9b*/

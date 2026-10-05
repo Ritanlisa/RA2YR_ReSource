@@ -502,7 +502,7 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2)
   aP2 = (unsigned int *)*aP2; /*0x4a91c6*/
   if ( v4 && HIWORD(aP2) == *(unsigned short *)&stru_8A0390.alignmentPadding69[1] ) /*0x4a91dc*/
   {
-    v6 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)stru_887598.lineTrailer + 52))( /*0x4a91ef*/
+    v6 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_D0)( /*0x4a91ef*/
                   stru_887598.lineTrailer,
                   &v29);
     v7 = DSurface_ViewBounds.field_0; /*0x4a91f2*/
@@ -515,7 +515,7 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2)
       || v11 < (int)DSurface_ViewBounds.field_4
       || v11 >= (int)DSurface_ViewBounds.field_4 + *(unsigned int *)&DSurface_ViewBounds.__pad_8[4] )
     {
-      v14 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)stru_887598.lineTrailer + 52))( /*0x4a9284*/
+      v14 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_D0)( /*0x4a9284*/
                         stru_887598.lineTrailer,
                         v31);
       v15 = v14[1]; /*0x4a9292*/
@@ -525,7 +525,7 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2)
     }
     else
     {
-      v12 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)stru_887598.lineTrailer + 52))( /*0x4a9232*/
+      v12 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_D0)( /*0x4a9232*/
                      stru_887598.lineTrailer,
                      v31);
       v29 = *v12; /*0x4a9237*/
@@ -1153,7 +1153,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                       dword_884D38 = v12; /*0x69332d*/
                       dword_884D3C = v13; /*0x693339*/
                       byte_884D40 = 0; /*0x69333f*/
-                      (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x693347*/
+                      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x693347*/
                     }
                     LOBYTE(v5) = (uint8_t)SetCapture(g_hWnd); /*0x693351*/
                     *((unsigned char *)this + 21850) = 1; /*0x693357*/

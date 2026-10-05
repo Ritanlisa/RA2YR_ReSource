@@ -2857,7 +2857,7 @@ void sub_52FFD0(char a1)
 {
   int result; // eax
   Frame *v3; // ecx
-  result = (*(int (**)(int, unsigned int))(*(unsigned int *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x52ffdd*/
+  result = (*(int (**)(int, unsigned int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_60)(g_DSurface_Hidden, 0); /*0x52ffdd*/
   if ( a1 ) /*0x52ffe3*/
   {
     IDA_LOBYTE(v3) = 1; /*0x52ffed*/

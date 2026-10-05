@@ -517,7 +517,7 @@ int Screen::TransitionLoop(int a2)
     v17[3] = 400; /*0x6901e3*/
     ((Rect *)(&v19))->Set(v3, v4, 640, 400); /*0x6901eb*/
     if ( stru_887598.lineTrailer ) /*0x6901f8*/
-      (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x690205*/
+      (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0)( /*0x690205*/
         stru_887598.lineTrailer,
         g_DSurface_Hidden,
         0);
@@ -530,7 +530,7 @@ int Screen::TransitionLoop(int a2)
       0,
       1);
     if ( stru_887598.lineTrailer ) /*0x690230*/
-      (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x69023d*/
+      (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100)( /*0x69023d*/
         stru_887598.lineTrailer,
         g_DSurface_Hidden,
         0);

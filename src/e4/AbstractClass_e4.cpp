@@ -620,7 +620,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       nullsub_3((int)aP0); /*0x7259aa*/
     ((AbstractClass *)(aP0))->processRadarEvent(); /*0x7259b1*/
     if ( g_TacticalClass_Instance ) /*0x7259be*/
-      (*(void (**)(LPPERSISTSTREAM, AbstractClass *, int))(*(unsigned int *)g_TacticalClass_Instance + 40))( /*0x7259c5*/
+      (*(void (**)(LPPERSISTSTREAM, AbstractClass *, int))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_A0)( /*0x7259c5*/
         g_TacticalClass_Instance,
         aP0,
         1);

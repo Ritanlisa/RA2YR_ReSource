@@ -743,7 +743,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     || *(unsigned int *)&stru_87F5F0.__pad_E12[1534] != dword_B07DD4 )
   {
 LABEL_13:
-    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x6a7241*/
+    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0)( /*0x6a7241*/
       stru_887598.lineTrailer,
       DSurface_Sidebar,
       1);
@@ -838,7 +838,7 @@ LABEL_13:
   }
   if ( *((unsigned char *)this + 21416) )
   {
-    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x6a71c7*/
+    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0)( /*0x6a71c7*/
       stru_887598.lineTrailer,
       DSurface_Sidebar,
       1);

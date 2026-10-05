@@ -1489,7 +1489,7 @@ void Movie_RenderFrame(int a1, char a2, int a3, char a4)
       }
     }
     if ( a2 ) /*0x5bffe2*/
-      (*(void (**)(int))(*(unsigned int *)dword_887640 + 12))(dword_887640); /*0x5bffec*/
+      (*(void (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30)(dword_887640); /*0x5bffec*/
     if ( a3 != -1 ) /*0x5bfff6*/
       Theme::QueueSong(a3); /*0x5bfffe*/
     do /*0x5c0049*/
@@ -1509,7 +1509,7 @@ void Movie_RenderFrame(int a1, char a2, int a3, char a4)
     while ( !v9 ); /*0x5c0049*/
     result = a2; /*0x5c004b*/
     if ( a2 ) /*0x5c0054*/
-      result = (*(int (**)(int))(*(unsigned int *)dword_887640 + 16))(dword_887640); /*0x5c005e*/
+      result = (*(int (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40)(dword_887640); /*0x5c005e*/
     dword_ABF3F4 = 0; /*0x5c0061*/
   }
   return result; /*0x5c006b*/

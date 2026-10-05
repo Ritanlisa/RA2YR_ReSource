@@ -139,7 +139,7 @@ int Mouse::SetCursor(int aP1, char aP2)
       v8 = *((int16_t *)dword_ABF294 + 2); /*0x5bdd74*/
     v14 = v8; /*0x5bdd7c*/
     v13 = v11; /*0x5bdd87*/
-    (*(void (**)(int, int *, void *, int))(*(unsigned int *)dword_887640 + 4))( /*0x5bdd93*/
+    (*(void (**)(int, int *, void *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10)( /*0x5bdd93*/
       dword_887640,
       &v13,
       (void *)dword_ABF294,

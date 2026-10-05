@@ -308,6 +308,10 @@ struct DSurface {
     void* FillRectEx(int a2, int a3, int a4);
     static double Lock(...);  // C2597 interim stub
     int FillRectWithColor(int * a0, ObjectClass * aP1, int16_t a3, uint8_t a4);
+    unsigned int q_1E0;  // +0x1E0 flat supply (P5 provenance)
+    unsigned int q_1F0;  // +0x1F0 flat supply (P5 provenance)
+    unsigned int q_200;  // +0x200 flat supply (P5 provenance)
+    unsigned int q_60;  // +0x60 flat supply (P5 provenance)
 };
 
 } // namespace gamemd

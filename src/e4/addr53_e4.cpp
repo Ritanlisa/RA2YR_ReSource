@@ -3361,7 +3361,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
     {
       GetCursorPos(&Point); /*0x53e7a2*/
       dword_AA0434 = (int64_t)Point; /*0x53e7b0*/
-      (*(void (**)(int, int64_t *, char *))(*(unsigned int *)dword_887640 + 68))( /*0x53e7ce*/
+      (*(void (**)(int, int64_t *, char *))(*(unsigned int *)&((MouseClass *)dword_887640)->CellIterator_NextY)( /*0x53e7ce*/
         dword_887640,
         &dword_AA0434,
         (char *)&dword_AA0434 + 4);
@@ -3372,7 +3372,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
         v21 = dword_AA0430; /*0x53e809*/
         v20 = dword_A8ED84; /*0x53e80d*/
         EnterCriticalSection(&unk_AA0400); /*0x53e811*/
-        (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)dword_887640 + 56))( /*0x53e827*/
+        (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0E0)( /*0x53e827*/
           dword_887640,
           dword_AA0434,
           IDA_HIDWORD(dword_AA0434));
@@ -3424,7 +3424,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
                   v6(&unk_AA0400); /*0x53e9e3*/
                   dword_AA0434 = (int64_t)Point; /*0x53e9f5*/
                   if ( dword_887640 ) /*0x53ea00*/
-                    (*(void (**)(int, LONG, LONG))(*(unsigned int *)dword_887640 + 56))( /*0x53ea06*/
+                    (*(void (**)(int, LONG, LONG))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0E0)( /*0x53ea06*/
                       dword_887640,
                       Point.x,
                       Point.y);

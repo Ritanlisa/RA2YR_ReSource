@@ -657,7 +657,7 @@ void * DisplayClass::Draw(int a2)
   }
   v3 = (int)((void *)(DSurface_ViewBounds.field_0)); /*0x4ae524*/
   v4 = (void *)(DSurface_ViewBounds.field_4); /*0x4ae531*/
-  v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)stru_887598.lineTrailer + 52))( /*0x4ae538*/
+  v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_D0)( /*0x4ae538*/
                    stru_887598.lineTrailer,
                    v18);
   v6 = v5[1]; /*0x4ae54a*/

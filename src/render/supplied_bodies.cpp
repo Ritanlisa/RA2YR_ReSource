@@ -1621,7 +1621,7 @@ int BuildingPlacementClass::Draw(int a2)
 
     if ( !BuildingPlacement::HandleClick((GaugeClass *)this, a2) ) /*0x4e2b5e*/
       return 0; /*0x4e3097*/
-    (*(void (__thiscall **)(void *, int, int, unsigned int, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 32))( /*0x4e2b95*/
+    (*(void (__thiscall **)(void *, int, int, unsigned int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_80)( /*0x4e2b95*/
       stru_887598.lineTrailer,
       this->m_C,
       this->m_10,
@@ -1849,7 +1849,7 @@ int BuildingPlacementClass::Draw(int a2)
     }
     if ( this->m_2D[0] ) /*0x4e3069*/
       (*(void (__thiscall **)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 156))(this); /*0x4e3074*/
-    (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x4e3082*/
+    (*(void (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q090)(stru_887598.lineTrailer); /*0x4e3082*/
     return 1; /*0x4e308a*/
 }
 } // namespace gamemd

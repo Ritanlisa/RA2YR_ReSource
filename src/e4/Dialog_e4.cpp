@@ -164,7 +164,7 @@ int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned sho
 
   dwNewLong = -1; /*0x5d349a*/
   v7 = 0; /*0x5d34a6*/
-  v8 = (*(int (**)(int))(*(unsigned int *)dword_887640 + 40))(dword_887640); /*0x5d34ab*/
+  v8 = (*(int (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0)(dword_887640); /*0x5d34ab*/
   v24 = v8; /*0x5d34b3*/
   if ( !a2 || (v21 = 1, !*(unsigned short *)a2) ) /*0x5d34b9*/
     v21 = 0; /*0x5d34c3*/
@@ -219,8 +219,8 @@ int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned sho
     }
     else
     {
-      while ( (*(int (**)(int))(*(unsigned int *)dword_887640 + 40))(dword_887640) ) /*0x5d3607*/
-        (*(void (**)(int))(*(unsigned int *)dword_887640 + 16))(dword_887640); /*0x5d3616*/
+      while ( (*(int (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0)(dword_887640) ) /*0x5d3607*/
+        (*(void (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40)(dword_887640); /*0x5d3616*/
       while ( dwNewLong < 0 ) /*0x5d362e*/
       {
         if ( (uint8_t)Dialog::PumpMessages() ) /*0x5d3630*/
@@ -235,8 +235,8 @@ int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned sho
     Dialog::Destroy(v11); /*0x5d365d*/
     v8 = v24; /*0x5d3662*/
   }
-  while ( v8 < (*(int (**)(int))(*(unsigned int *)dword_887640 + 40))(dword_887640) ) /*0x5d3673*/
-    (*(void (**)(int))(*(unsigned int *)dword_887640 + 12))(dword_887640); /*0x5d367d*/
+  while ( v8 < (*(int (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0)(dword_887640) ) /*0x5d3673*/
+    (*(void (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30)(dword_887640); /*0x5d367d*/
   return dwNewLong; /*0x5d3693*/
 
 }

@@ -421,7 +421,7 @@ AbstractClass * * Game::DestroyAllObjects()
   }
   ProcessExpiredPointers(v37); /*0x534970*/
   if ( g_TacticalClass_Instance ) /*0x53497d*/
-    (*(void (**)(LPPERSISTSTREAM, int))(*(unsigned int *)g_TacticalClass_Instance + 32))( /*0x534983*/
+    (*(void (**)(LPPERSISTSTREAM, int))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_80)( /*0x534983*/
       g_TacticalClass_Instance,
       1);
   g_TacticalClass_Instance = 0; /*0x53498b*/
@@ -481,7 +481,7 @@ int Game::MakeScreenshot(int a1)
         v3 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))(g_DSurface_Hidden); /*0x537c7c*/
         if ( v12 >= v3 ) /*0x537c86*/
           v12 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))(g_DSurface_Hidden); /*0x537c96*/
-        (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x537ca4*/
+        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x537ca4*/
         v4 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 31))(g_DSurface_Hidden); /*0x537cb8*/
         v5 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))(g_DSurface_Hidden); /*0x537cbc*/
         v15[0] = 0; /*0x537cd8*/
@@ -496,7 +496,7 @@ int Game::MakeScreenshot(int a1)
           &v10,
           0,
           1);
-        (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x537cfb*/
+        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x537cfb*/
         v6 = -1; /*0x537cfe*/
         do /*0x537d6d*/
         {

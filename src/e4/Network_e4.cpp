@@ -828,7 +828,7 @@ AbstractClass * * Network::Init()
   Network::SetConnectionParams(30, -1, 600, 1); /*0x52f489*/
   Debug::Log(aAboutToInitial); /*0x52f493*/
   v4 = Network_Init_5DA6C0(); /*0x52f4a6*/
-  (*(void (**)(int))(*(unsigned int *)dword_887628 + 28))(dword_887628); /*0x52f4ac*/
+  (*(void (**)(int))(*(unsigned int *)&((IPXInterfaceClass *)dword_887628)->q_70)(dword_887628); /*0x52f4ac*/
   dword_A8E2B2 = 0; /*0x52f4b3*/
   dword_A8E2B6 = 0; /*0x52f4be*/
   byte_A8E2B0 = 0; /*0x52f4c4*/
@@ -1009,7 +1009,7 @@ void sub_53F5B0()
 namespace gamemd {
 int sub_53F830(int a1, int a2)
 {
-  (*(void (**)(int, int, int, unsigned int))(*(unsigned int *)dword_887628 + 16))(dword_887628, a1, a2, 0); /*0x53f83f*/
+  (*(void (**)(int, int, int, unsigned int))(*(unsigned int *)&((IPXInterfaceClass *)dword_887628)->q_40)(dword_887628, a1, a2, 0); /*0x53f83f*/
   return 1; /*0x53f847*/
 }
 }
@@ -5003,7 +5003,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
     ((Network *)((uint16_t *)a4))->FormatAddress(0); /*0x541704*/
     Debug::Log(); /*0x54170f*/
     IDA_LOWORD(v5) = dword_841F3C; /*0x541714*/
-    (*(void (**)(int, int, int, void *, int, unsigned int, int, int))(*(unsigned int *)dword_887628 + 12))( /*0x54173c*/
+    (*(void (**)(int, int, int, void *, int, unsigned int, int, int))(*(unsigned int *)&((IPXInterfaceClass *)dword_887628)->q_30)( /*0x54173c*/
       dword_887628,
       aP1,
       a3,
@@ -5034,7 +5034,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
   *v7 = 0; /*0x5417d4*/
   ((Network *)(v11))->FormatAddress(0); /*0x5417da*/
   Debug::Log(); /*0x5417e5*/
-  (*(void (**)(int, int, int, uint16_t *, int, unsigned int, int, int16_t))(*(unsigned int *)dword_887628 + 12))( /*0x54180b*/
+  (*(void (**)(int, int, int, uint16_t *, int, unsigned int, int, int16_t))(*(unsigned int *)&((IPXInterfaceClass *)dword_887628)->q_30)( /*0x54180b*/
     dword_887628,
     aP1,
     a3,

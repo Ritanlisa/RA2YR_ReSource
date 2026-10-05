@@ -343,8 +343,8 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       v15 = 0; /*0x422e18*/
     }
     v16 = (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 116))(this); /*0x422e2d*/
-    v17 = *(unsigned short *)((char *)g_ZBufferDescriptor + 4) /*0x422e87*/
-        + *(unsigned short *)((char *)g_ZBufferDescriptor + 0x24)
+    v17 = *(unsigned short *)&((BSurface *)g_ZBufferDescriptor)->q_4 /*0x422e87*/
+        + *(unsigned short *)&((BSurface *)g_ZBufferDescriptor)->u32_24
         - *((unsigned short *)a2 + 2)
         - LOWORD(DSurface_ViewBounds.field_4)
         + this->AnimClass_field_0x100

@@ -149,7 +149,7 @@ int TacticalMap::Redraw()
 
   v1 = (gamemd::AudioStream *)(g_DSurface_Hidden_2);
   g_DSurface_Hidden_2 = DSurface_Composite; /*0x4f4492*/
-  (*(void (**)(void *, AudioStream *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x4f44a2*/
+  (*(void (**)(void *, AudioStream *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100)( /*0x4f44a2*/
     stru_887598.lineTrailer,
     DSurface_Composite,
     0);
@@ -166,7 +166,7 @@ int TacticalMap::Redraw()
   }
   if ( byte_B0B519 && !((unsigned int *)&stru_A8EB00)[391] ) /*0x4f452b*/
   {
-    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x4f453d*/
+    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100)( /*0x4f453d*/
       stru_887598.lineTrailer,
       DSurface_Sidebar,
       1);
@@ -181,7 +181,7 @@ int TacticalMap::Redraw()
       0);
   if ( byte_A8B8B4 ) /*0x4f457a*/
     DrawHUD(v5); /*0x4f457e*/
-  (*(void (**)(void *, AudioStream *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x4f4593*/
+  (*(void (**)(void *, AudioStream *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0)( /*0x4f4593*/
     stru_887598.lineTrailer,
     DSurface_Composite,
     0);
@@ -229,7 +229,7 @@ char TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
   result = BYTE1(this->m_TintFactor); /*0x5d49b4*/
   if ( result ) /*0x5d49b9*/
   {
-    (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5d49c8*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x5d49c8*/
     (*(void (**)(unsigned int, int))(**((unsigned int **)this + 9) + 108))(*((unsigned int *)this + 9), 1); /*0x5d49d2*/
     ((TextRenderer *)this)->GetInstance(); /*0x5d49db*/
     v3 = Text::MeasureWidth(*(unsigned int *)(*((unsigned int *)this + 9) + 48), 0); /*0x5d49f8*/
@@ -249,7 +249,7 @@ char TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
                        v12);
       TextRenderer::DrawText(&v11, (size_t)&v9, (int)g_DSurface_Hidden_2, v6, (int)v10, v7, 0, v8); /*0x5d4a79*/
     }
-    result = (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5d4a89*/
+    result = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x5d4a89*/
   }
   if ( this->TacticalMap_field_00 ) /*0x5d4a8d*/
     return (*(char (**)(int, int))(*(unsigned int *)this->TacticalMap_field_00 + 44))( /*0x5d4a98*/

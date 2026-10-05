@@ -1983,8 +1983,8 @@ int InputManager_ProcessEvents::Vtable(unsigned int *a2, unsigned int *a3, unsig
     int v8; // eax
     unsigned int v10[2]; // [esp+Ch] [ebp-8h] BYREF
 
-    *a3 = (*(int (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 44))(stru_887598.lineTrailer); /*0x4f4337*/
-    *a4 = (*(int (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 48))(stru_887598.lineTrailer); /*0x4f4349*/
+    *a3 = (*(int (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q0B0)(stru_887598.lineTrailer); /*0x4f4337*/
+    *a4 = (*(int (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0C0)(stru_887598.lineTrailer); /*0x4f4349*/
     if ( *(unsigned int *)&(&stru_A8EB00)[880] ) /*0x4f4353*/
     {
       if ( (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&(&stru_A8EB00)[880] + 92))(*(unsigned int *)&(&stru_A8EB00)[880]) ) /*0x4f4357*/
@@ -2103,7 +2103,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
     *(unsigned int *)v17 = Point.y; /*0x54f7d4*/
     if ( stru_887598.lineTrailer ) /*0x54f7d8*/
     {
-      (*(void (__thiscall **)(void *, int16_t *, int16_t *))(*(unsigned int *)stru_887598.lineTrailer + 68))( /*0x54f7e6*/
+      (*(void (__thiscall **)(void *, int16_t *, int16_t *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->CellIterator_NextY)( /*0x54f7e6*/
         stru_887598.lineTrailer,
         v18,
         v17);

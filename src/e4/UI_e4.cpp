@@ -141,8 +141,8 @@ int sub_622610()
   }
   if ( v2 && stru_887598.lineTrailer ) /*0x62262b*/
   {
-    if ( !(*(uint8_t (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 28))(stru_887598.lineTrailer) ) /*0x62262f*/
-      (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 24))(stru_887598.lineTrailer); /*0x62263e*/
+    if ( !(*(uint8_t (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->MouseClass_field_0x70)(stru_887598.lineTrailer) ) /*0x62262f*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_60)(stru_887598.lineTrailer); /*0x62263e*/
     return dword_AC48EC; /*0x622641*/
   }
   return result; /*0x622646*/

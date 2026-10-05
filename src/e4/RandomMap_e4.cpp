@@ -4246,7 +4246,7 @@ AbstractClass * * SetupTheater(char a2)
       CellClass::DrawWrapper((RadarClass *)&stru_87F5F0.__pad_58[416], v79, 1, 0, 1); /*0x599d48*/
       Shroud::ProcessCellVisibility((RadarClass *)&stru_87F5F0.__pad_58[416], v76); /*0x599d57*/
       if ( g_TacticalClass_Instance ) /*0x599d64*/
-        (*(void (__thiscall **)(LPPERSISTSTREAM, int))(*(unsigned int *)g_TacticalClass_Instance + 32))( /*0x599d6a*/
+        (*(void (__thiscall **)(LPPERSISTSTREAM, int))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_80)( /*0x599d6a*/
           g_TacticalClass_Instance,
           1);
       v29 = (Tactical *)RA2_OPNEW(0xE18u); /*0x599d72*/

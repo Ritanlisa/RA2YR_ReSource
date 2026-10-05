@@ -167,7 +167,7 @@ int sub_5D2350(int a1, int * a2)
       GetClientRect((HWND)(g_hWnd), &Rect); /*0x5d237b*/
       ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5d238c*/
       if ( dword_887640 ) /*0x5d239e*/
-        (*(void (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 60))(dword_887640, a1, 0); /*0x5d23a5*/
+        (*(void (**)(int, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0)(dword_887640, a1, 0); /*0x5d23a5*/
       v3 = *a2; /*0x5d23af*/
       v4 = a2[1]; /*0x5d23b3*/
       v5[2] = a2[2]; /*0x5d23b9*/
@@ -182,7 +182,7 @@ int sub_5D2350(int a1, int * a2)
                  0,
                  1);
       if ( dword_887640 ) /*0x5d23f1*/
-        return (*(int (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 64))(dword_887640, a1, 0); /*0x5d23f8*/
+        return (*(int (**)(int, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100)(dword_887640, a1, 0); /*0x5d23f8*/
     }
   }
   return result; /*0x5d23fb*/

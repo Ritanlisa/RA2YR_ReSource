@@ -109,6 +109,9 @@ struct IPXInterfaceClass {
     void StubReturnFalse(int a1, int a2);
     void getSocketCount();
     // G42.40f: duplicate removed - unqualified SOCKET inside gamemd == gamemd::SOCKET (same as decl above)
+    unsigned int q_70;  // +0x70 flat supply (P5 provenance)
+    unsigned int q_30;  // +0x30 flat supply (P5 provenance)
+    unsigned int q_40;  // +0x40 flat supply (P5 provenance)
 };
 
 } // namespace gamemd

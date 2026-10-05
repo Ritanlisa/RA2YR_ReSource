@@ -3774,7 +3774,7 @@ int Dial8Class::GetValue()
     BuildingAnim::GetType(); /*0x4a57b6*/
     if ( !Control::DispatchClick(v6, (int)this) ) /*0x4a57c6*/
       return 0; /*0x4a5944*/
-    (*(void (__thiscall **)(void *, int, int, int))(*(unsigned int *)stru_887598.lineTrailer + 12))( /*0x4a57de*/
+    (*(void (__thiscall **)(void *, int, int, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)( /*0x4a57de*/
       stru_887598.lineTrailer,
       a4,
       a3,
@@ -3831,7 +3831,7 @@ int Dial8Class::GetValue()
       &v24,
       &ControlClass_field_0x0C,
       v19);
-    (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4a5935*/
+    (*(void (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x4a5935*/
     return 1; /*0x4a593d*/
 }
 // 0x4a59a0

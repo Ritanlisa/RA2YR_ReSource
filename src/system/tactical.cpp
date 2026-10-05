@@ -1991,7 +1991,7 @@ AbstractClass * * TacticalClass::SetViewDimensions(int width, int height)
   if ( g_TacticalClass_Instance ) /*0x4a89b2*/
   {
     TacticalClass::SetViewportPosition((int)g_TacticalClass_Instance, &DSurface_ViewBounds.field_0); /*0x4a89bd*/
-    (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x4a89ca*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x4a89ca*/
     if ( g_ZBufferDescriptor ) /*0x4a89d3*/
     {
       Debug::Log(); /*0x4a89da*/
@@ -2038,7 +2038,7 @@ AbstractClass * * TacticalClass::SetViewDimensions(int width, int height)
     else
       *(unsigned int *)&stru_87E790.__pad_D8[60] = 0; /*0x4a8ae3*/
     Debug::Log(); /*0x4a8afb*/
-    (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4a8b0b*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x4a8b0b*/
   }
   SidebarClass::LoadResources(v9); /*0x4a8b13*/
   v6 = DSurface_ViewBounds.field_0; /*0x4a8b1e*/
@@ -2467,8 +2467,8 @@ int TacticalClass::ProcessMouseClick(int x, int y)
     }
     else
     {
-      v4 = (*(int (**)(int))(*(unsigned int *)dword_887640 + 44))(dword_887640); /*0x653a32*/
-      v5 = (*(int (**)(int))(*(unsigned int *)dword_887640 + 48))(dword_887640); /*0x653a36*/
+      v4 = (*(int (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0B0)(dword_887640); /*0x653a32*/
+      v5 = (*(int (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0C0)(dword_887640); /*0x653a36*/
     }
     v6 = v4 - (byte_A8EB7C != 0 ? dword_886FA8 : 0);
     if ( v6 >= dword_880C84 /*0x653a83*/

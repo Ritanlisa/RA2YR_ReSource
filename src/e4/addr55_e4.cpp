@@ -2409,7 +2409,7 @@ void GameFrameLoop()
     MessageLoop(); /*0x55d830*/
     Event::Dispatch(); /*0x55d835*/
     UpdateChronosphereEffect(); /*0x55d83a*/
-    (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x55d847*/
+    (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_170)(g_TacticalClass_Instance); /*0x55d847*/
     ((TacticalMap*)((GScreenClass *)&dword_87F7E8))->Redraw(); /*0x55d84f*/
     SyncDelay::Start((SyncDelay *)v43); /*0x55d854*/
     byte_ABCD58 = 0; /*0x55d866*/
@@ -2706,7 +2706,7 @@ BitFont * * DrawHUD()
     if ( *(unsigned int *)&dword_A8B238 > 2u ) /*0x55f293*/
     {
       v3 = DSurface_Composite; /*0x55f2b1*/
-      (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x55f2b9*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x55f2b9*/
       v4 = *(unsigned int *)v3->__pad_0; /*0x55f2bc*/
       *(unsigned int *)v57 = 0; /*0x55f2c6*/
       wcscpy(v58, L"?"); /*0x55f2ca*/
