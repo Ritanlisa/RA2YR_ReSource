@@ -125,6 +125,7 @@ int LoadOptions::Cleanup() {
     RA2_OPDEL((void *)result); /*0x5587db*/
     *((unsigned int *)p_is_active + 1) = 0; /*0x5587e3*/
   }
+  }
 // IDA 0x55A0D0: VT00_Destroy (QueryInterface destructor)
 void LoadOptions::VT00_Destroy(char free_self) {
     Cleanup();

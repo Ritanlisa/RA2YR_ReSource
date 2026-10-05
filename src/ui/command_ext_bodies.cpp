@@ -1,6 +1,10 @@
 // 自动生成 by tools/move_hpp_bodies.py — 函数体自 src/ui/command_ext.hpp 迁出
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "command_ext.hpp"
+#include "core/ida_vtables.h"  // gC_vftable3
+
+// gC supply: extern declarations from src/e4/e4_globals_decls.hpp
+extern unsigned int stru_A8EB00;
 
 namespace gamemd {
 // 0x6d1800
@@ -43,8 +47,8 @@ void ScreenCapture::Frame()
     int v24[3]; // [esp+DCh] [ebp-14h] BYREF
     int v25; // [esp+E8h] [ebp-8h]
 
-    IDA_LOBYTE(v1) = stru_A8EB00.?[381]; /*0x55cc20*/
-    if ( stru_A8EB00.?[381] ) /*0x55cc33*/
+    IDA_LOBYTE(v1) = *(unsigned int *)((char *)&stru_A8EB00 + 381); /*0x55cc20*/
+    if ( *(unsigned int *)((char *)&stru_A8EB00 + 381) ) /*0x55cc33*/
     {
       if ( (g_MissionQueueFrame.waypoints[382] & 1) == 0 ) /*0x55cc40*/
       {
@@ -57,7 +61,7 @@ void ScreenCapture::Frame()
         *(unsigned int *)&g_MissionQueueFrame.waypoints[482] = RA2_OPNEW(4 * *(unsigned int *)&g_MissionQueueFrame.waypoints[430]); /*0x55cc89*/
         memset(*(void **)&g_MissionQueueFrame.waypoints[482], 0, 4 * *(unsigned int *)&g_MissionQueueFrame.waypoints[430]); /*0x55cc8f*/
         if ( !*(unsigned int *)&g_MissionQueueFrame.waypoints[482] ) /*0x55cc9b*/
-          stru_A8EB00.?[381] = 0; /*0x55cc9d*/
+          *(unsigned int *)((char *)&stru_A8EB00 + 381) = 0; /*0x55cc9d*/
       }
       GetClientRect(g_hWnd, &Rect); /*0x55ccaf*/
       Point.x = Rect.left; /*0x55ccc7*/
@@ -110,7 +114,7 @@ void ScreenCapture::Frame()
           v5 = *(unsigned int *)&g_MissionQueueFrame.waypoints[486]; /*0x55cd68*/
           if ( *(int *)&g_MissionQueueFrame.waypoints[486] >= *(int *)&g_MissionQueueFrame.waypoints[430] ) /*0x55cd75*/
           {
-            stru_A8EB00.?[381] = 0; /*0x55ce3e*/
+            *(unsigned int *)((char *)&stru_A8EB00 + 381) = 0; /*0x55ce3e*/
             DSurface::Construct(v22[0].Surface, right, bottom, 0, 0); /*0x55ce44*/
             for ( i = 0; i < *(int *)&g_MissionQueueFrame.waypoints[486]; ++i ) /*0x55ce52*/
             {
@@ -118,7 +122,7 @@ void ScreenCapture::Frame()
               CCFileClass::Construct(&v23, Buffer); /*0x55ce81*/
               XSurface::BlitWhole(v22, *(int **)(*(unsigned int *)&g_MissionQueueFrame.waypoints[482] + 4 * i), 0, 1); /*0x55ce97*/
               CompressScreenshot((int *)v23.CDFileClass, (int *)v22[0].Surface, &FileSystem_TEMPERAT_PAL); /*0x55ceac*/
-              *(unsigned int *)v23.CDFileClass = &CCFileClass::`vftable'; /*0x55ceb8*/
+              *(unsigned int *)v23.CDFileClass = (unsigned int)(void *)&CCFileClass_vftable; /*0x55ceb8*/
               v25 = 0; /*0x55cebf*/
               Vector::Clear((int)v24); /*0x55cec6*/
               *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x55ced2*/
@@ -181,6 +185,5 @@ void ScreenCapture::Frame()
       }
     }
     return v1; /*0x55ce25*/
-}
 
 } // namespace gamemd

@@ -359,5 +359,4 @@ uint32_t CRC32::Compute(const void* data, uint32_t size)
       while ( v6 ); /*0x4a1fde*/
     }
     return ~v5; /*0x4a1fe3*/
-}
 }  // L-fix: close namespace tail 1

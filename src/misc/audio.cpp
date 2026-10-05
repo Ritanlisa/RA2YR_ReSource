@@ -225,7 +225,7 @@ namespace gamemd {
 
 // --- AudioEventHandle ---
 
-bool AudioEventHandle::IsPlaying() const { return false; }
+bool AudioEventHandle::IsPlaying() const { return false; 
 void AudioEventHandle::Stop() {
 
 } // namespace gamemd

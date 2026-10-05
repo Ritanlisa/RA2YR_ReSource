@@ -34,5 +34,4 @@ void Audio3D::ComputeRotation()
     }
     qmemcpy(a2, v9, 0x30u); /*0x55a8b4*/
     return a2; /*0x55a8b6*/
-}
 } // namespace gamemd

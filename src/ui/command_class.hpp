@@ -7,7 +7,7 @@
 #include "core/math.hpp"
 #include "core/vector.hpp"
 #include "object/abstract.hpp"
-#include "ui/command_ext.hpp"  // G42.55 closure (Commands)
+// gC: cycle-break -- base header must not include derived (command_ext.hpp)
 
 namespace gamemd
 {

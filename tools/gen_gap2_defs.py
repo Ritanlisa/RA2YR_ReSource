@@ -40,6 +40,75 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 OMO = ROOT / ".omo"
 
+# ---------------------------------------------------------------- post-fixups
+# Script supremacy: direct campaign fixes on generated gap2 outputs are
+# captured in tools/gap2_post_fixups.json ({file: {pairs, ops}}) and re-
+# applied after every write, so `--apply` regen reproduces the working tree
+# byte-identically. Built/verified by .omo/g265_extract_fixups.py
+# (REPROD: HEAD+pairs+ops == current; FWD: idempotent on current).
+POST_FIXUPS_PATH = ROOT / "tools" / "gap2_post_fixups.json"
+_POST_FIXUPS = None
+
+
+def _load_post_fixups():
+    global _POST_FIXUPS
+    if _POST_FIXUPS is None:
+        try:
+            _POST_FIXUPS = json.loads(
+                POST_FIXUPS_PATH.read_text(encoding="utf-8"))
+        except Exception:
+            _POST_FIXUPS = {}
+    return _POST_FIXUPS
+
+
+def _fx_find_block(lines, block, start=0):
+    if not block:
+        return None
+    first = block[0]
+    for j in range(start, len(lines) - len(block) + 1):
+        if lines[j] == first and lines[j:j + len(block)] == block:
+            return j
+    return None
+
+
+def _fx_apply_ops(lines, ops):
+    out = list(lines)
+    for op in sorted(ops, key=lambda o: o["at"], reverse=True):
+        at, find, new = op["at"], op["find"], op["replace"]
+        if len(find) >= len(new):
+            first, second = find, new
+            first_is_find = True
+        else:
+            first, second = new, find
+            first_is_find = False
+        if out[at:at + len(first)] == first:
+            if not first_is_find:
+                continue  # already applied
+            out[at:at + len(find)] = new
+        elif new and out[at:at + len(second)] == second and second is find:
+            out[at:at + len(find)] = new
+    return out
+
+
+def apply_post_fixups(path, text):
+    """path: Path of the file being written. Returns the fixed-up text
+    (pairs then ops), or the original text when no table entry exists."""
+    try:
+        rel = str(Path(path).resolve().relative_to(ROOT)).replace("\\", "/")
+    except Exception:
+        return text
+    spec = _load_post_fixups().get(rel)
+    if not spec:
+        return text
+    for old, new in spec.get("pairs", []):
+        text = text.replace(old, new)
+    fixed = "\n".join(_fx_apply_ops(text.split("\n"), spec.get("ops", [])))
+    if fixed != text:
+        print(f"    post-fixups applied: {rel} "
+              f"(pairs={len(spec.get('pairs', []))}, "
+              f"ops={len(spec.get('ops', []))})")
+    return fixed
+
 CLASSIFICATION = OMO / "unannotated_classification.json"
 IDA_ADDR_INDEX = OMO / "ida_addr_index.json"
 FUNCTIONS_JSON = ROOT / "injectFunctionTest" / "functions.json"
@@ -644,7 +713,7 @@ def insert_hpp_decls(path, class_to_decls):
             block.append(f"    {d}")
         block.append(f"    {HPP_MARK_END}")
         raw[body_end:body_end] = block
-    Path(path).write_text("\n".join(raw) + "\n", encoding="utf-8")
+    Path(path).write_text(apply_post_fixups(path, "\n".join(raw) + "\n"), encoding="utf-8")
     return sum(len(d) for d in class_to_decls.values())
 
 
@@ -715,7 +784,7 @@ def write_module_grouped(module, entries, conflict_map):
         lines.append("")
         for d in group_defs[gi]:
             lines.append(d)
-        out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        out.write_text(apply_post_fixups(out, "\n".join(lines) + "\n"), encoding="utf-8")
         written.append((str(out.relative_to(ROOT)), len(group_defs[gi])))
     return written
 
@@ -740,7 +809,7 @@ def write_module_cpp(module, includes, defs):
     lines.append("")
     for d in defs:
         lines.append(d)
-    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    out.write_text(apply_post_fixups(out, "\n".join(lines) + "\n"), encoding="utf-8")
     return out
 
 
@@ -759,7 +828,7 @@ def write_global_files(global_decls, global_defs, forward_decls):
     ]
     for d in global_decls:
         hlines.append(d)
-    hdr.write_text("\n".join(hlines) + "\n", encoding="utf-8")
+    hdr.write_text(apply_post_fixups(hdr, "\n".join(hlines) + "\n"), encoding="utf-8")
 
     cpp = outdir / "gap2_global_defs.cpp"
     clines = [
@@ -775,7 +844,7 @@ def write_global_files(global_decls, global_defs, forward_decls):
     clines.append("")
     for d in global_defs:
         clines.append(d)
-    cpp.write_text("\n".join(clines) + "\n", encoding="utf-8")
+    cpp.write_text(apply_post_fixups(cpp, "\n".join(clines) + "\n"), encoding="utf-8")
     return hdr, cpp
 
 

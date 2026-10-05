@@ -8,6 +8,9 @@
 #include "core/reverse_marker.hpp"
 #include "app/cmdline.hpp"
 
+// gC supply: extern declarations from src/e4/e4_globals_decls.hpp
+extern unsigned int stru_A8EB00;
+
 // g_ZBufferDescriptor (IDA: 0x887644) — Z-buffer descriptor pointer
 // Null in standalone build (no DDraw Z-buffer available)
 
@@ -782,7 +785,7 @@ bool DSurface::Blit(
     {
       v42 = 1; /*0x4bb1fa*/
     }
-    if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bb20f*/
+    if ( !g_DDraw_Initialized && !*(unsigned int *)((char *)&stru_A8EB00 + 412) ) /*0x4bb20f*/
       return 0; /*0x4bb20f*/
     v14 = this->DSurface_field_0x1C[0]; /*0x4bb215*/
     if ( v14 && (*(int (__stdcall **)(int))(*(unsigned int *)v14 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4bb227*/
@@ -2203,6 +2206,5 @@ bool DSurface::DrawLineFaded(
     RectangleStruct clip;
     ::gamemd::Surface::GetRect(&clip);
     return DrawLineEx(clip, start, end, 0);
-}
 
 } // namespace gamemd

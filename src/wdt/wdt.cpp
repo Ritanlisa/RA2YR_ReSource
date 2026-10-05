@@ -223,11 +223,9 @@ WDTError Campaign::Load(const char* filename)
 
 History::History()
 {
-}
 
 History::~History()
 {
-}
 
 void History::Record(const char* event)
 {

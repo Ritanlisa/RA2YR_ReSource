@@ -39,5 +39,5 @@ void BlitPlainXlatAlpha_ushort::AddRef()
     return result; /*0x493d56*/
 }
 // 0x493d90
-void BlitPlainXlatAlpha_ushort::Release() {}
+void BlitPlainXlatAlpha_ushort::Release() {
 } // namespace gamemd

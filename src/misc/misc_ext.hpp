@@ -5411,6 +5411,8 @@ public:
 
 };
 // 1 methods in IDA
+#ifndef GAMEMD_TREE_WINAPI  // gC: shared guard -- tree-side supply also in core/stream_ext.hpp
+#define GAMEMD_TREE_WINAPI
 class WinAPI
 {
 public:
@@ -5422,6 +5424,7 @@ public:
     static int Wrapper(int a2); // 0x7DC720 (G42 sig-sync: def; static-form restored -- e4 corpus addr4*_e4.cpp has 350+ instance-less call sites)
 
 };
+#endif  // GAMEMD_TREE_WINAPI
 // 15 methods in IDA
 // CSP: WinModemClass matched via T1
 class WinModemClass

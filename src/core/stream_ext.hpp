@@ -5,6 +5,16 @@
 
 namespace gamemd
 {
+// gC W3: WinAPI tree-side supply (e4 _tree_full suppressed under GAMEMD_TREE_UNIVERSE;
+// def in misc/misc_ext.cpp @0x7DC720 pass-through)
+#ifndef GAMEMD_TREE_WINAPI
+#define GAMEMD_TREE_WINAPI
+class WinAPI
+{
+public:
+    static int Wrapper(int a2); // 0x7DC720 (G42 sig-sync: def in misc_ext.cpp)
+};
+#endif  // GAMEMD_TREE_WINAPI
 
 // ============================================================================
 // StreamClass — generic I/O stream base (10 methods)

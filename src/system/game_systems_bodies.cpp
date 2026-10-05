@@ -1,6 +1,10 @@
 // 自动生成 by tools/move_hpp_bodies.py — 函数体自 src/system/game_systems.hpp 迁出
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "game_systems.hpp"
+#include "core/ida_vtables.h"  // gC_vftable3
+
+// gC supply: extern declarations from src/e4/e4_globals_decls.hpp
+extern unsigned int stru_A8EB00;
 
 namespace gamemd {
 // 0x5d86d0
@@ -10,7 +14,7 @@ void GameInit::InitMultiplayerModes()
     *((unsigned int *)this + 2) = a2; /*0x5d86e0*/
     *((unsigned char *)this + 12) = 1; /*0x5d86e3*/
     *((unsigned char *)this + 13) = 0; /*0x5d86e7*/
-    *this = (GameInit)&VectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d86eb*/
+    *this = (GameInit)(void *)&VectorClass_MultiplayerGameMode___vftable; /*0x5d86eb*/
     if ( a2 ) /*0x5d86f1*/
     {
       if ( a3 ) /*0x5d86f9*/
@@ -23,7 +27,7 @@ void GameInit::InitMultiplayerModes()
         *((unsigned char *)this + 13) = 1; /*0x5d870f*/
       }
     }
-    *this = (GameInit)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d8713*/
+    *this = (GameInit)(void *)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d8713*/
     *((unsigned int *)this + 5) = 10; /*0x5d8719*/
     *((unsigned int *)this + 4) = 0; /*0x5d8720*/
     return this; /*0x5d8729*/
@@ -966,13 +970,13 @@ void GameResult::CalcScore()
         return result; /*0x4c6307*/
       }
       p_vtable3 = &dword_A8B230[127].vtable3; /*0x4c62b6*/
-      dword_A8B230[127].vtable3 = *(void **)&stru_A8EB00.?[416]; /*0x4c62bb*/
+      dword_A8B230[127].vtable3 = *(void **)((char *)&stru_A8EB00 + 416); /*0x4c62bb*/
       p_vtable3[1] = (void *)IDA_HIDWORD(nextArrayIndex); /*0x4c62c1*/
       p_vtable3[2] = (void *)v7; /*0x4c62c4*/
       result = dword_A8B230; /*0x4c62c7*/
       if ( dword_A8B230[127].vtable3 == (void *)-1 ) /*0x4c62d3*/
       {
-        dword_A8B230[127].vtable3 = *(void **)&stru_A8EB00.?[416]; /*0x4c62db*/
+        dword_A8B230[127].vtable3 = *(void **)((char *)&stru_A8EB00 + 416); /*0x4c62db*/
         result = dword_A8B230; /*0x4c62e1*/
         IDA_LOWORD(dword_A8B230[381].vtable3) = *((unsigned short *)this + 32); /*0x4c62eb*/
         return result; /*0x4c62f6*/
@@ -2979,8 +2983,8 @@ void LoadGame::CleanupArray()
       &this->LoadGame_field_0x0C,
       LoadGame_field_0x14,
       0);
-    result = *(wchar_t **)&stru_A8EB00.?[416]; /*0x54e728*/
-    *(unsigned int *)this->__pad_0 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x54e736*/
+    result = *(wchar_t **)((char *)&stru_A8EB00 + 416); /*0x54e728*/
+    *(unsigned int *)this->__pad_0 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e736*/
     this->LoadGame_field_0x04 = v5; /*0x54e738*/
     this->LoadGame_field_0x08 = 1; /*0x54e73b*/
     return result; /*0x54e73e*/
@@ -2997,7 +3001,7 @@ void LoadProgressMgr::GetInstance()
       result = RA2_OPNEW(0x64u); /*0x552a4e*/
       if ( result ) /*0x552a58*/
       {
-        *result = &LoadProgressMgr::`vftable'; /*0x552a5a*/
+        *result = (unsigned int)(void *)&LoadProgressMgr_vftable; /*0x552a5a*/
         result[1] = 0; /*0x552a60*/
         result[2] = 0; /*0x552a63*/
         result[15] = 0; /*0x552a66*/
@@ -3726,7 +3730,7 @@ void LoadScreen::RenderLoop()
       v5 = CCFileClass::GetSize(&v382); /*0x4b6ca9*/
       CCFileClass::Read(&v382, v4, v5); /*0x4b6cb7*/
       v380[v2] = (int)v4; /*0x4b6cc3*/
-      *(unsigned int *)v382.CDFileClass = &CCFileClass::`vftable'; /*0x4b6cca*/
+      *(unsigned int *)v382.CDFileClass = (unsigned int)(void *)&CCFileClass_vftable; /*0x4b6cca*/
       v384 = 0; /*0x4b6cd1*/
       Vector::Clear((int)v383); /*0x4b6cdc*/
       *(unsigned int *)v382.CDFileClass = &off_7E1668; /*0x4b6ce8*/
@@ -3735,8 +3739,8 @@ void LoadScreen::RenderLoop()
     }
     while ( v2 < 4 ); /*0x4b6cfa*/
     v343 = SearchMIXFile(stru_820320.?, 0); /*0x4b6d13*/
-    v331 = SearchMIXFile(&stru_820320.?[155], 0); /*0x4b6d26*/
-    v339 = SearchMIXFile(&stru_820320.?[143], 0); /*0x4b6d32*/
+    v331 = SearchMIXFile(((char *)&stru_820320 + 155), 0); /*0x4b6d26*/
+    v339 = SearchMIXFile(((char *)&stru_820320 + 143), 0); /*0x4b6d32*/
     CCFileClass::Construct(&v385, *((char **)&stru_820320.? + abstractFlags)); /*0x4b6d4c*/
     v6 = CCFileClass::GetSize(&v385); /*0x4b6d58*/
     v7 = RA2_OPNEW(v6); /*0x4b6d63*/
@@ -3776,7 +3780,7 @@ void LoadScreen::RenderLoop()
       --v16; /*0x4b6e43*/
     }
     while ( v16 ); /*0x4b6e44*/
-    v17 = (const void *)SearchMIXFile(&stru_820320.?[127], 0); /*0x4b6e52*/
+    v17 = (const void *)SearchMIXFile(((char *)&stru_820320 + 127), 0); /*0x4b6e52*/
     memcpy(v388, v17, sizeof(v388)); /*0x4b6e60*/
     for ( i = 0; i < 256; ++i ) /*0x4b6e68*/
     {
@@ -3813,7 +3817,7 @@ void LoadScreen::RenderLoop()
     else
       v25 = 0; /*0x4b6f2c*/
     SubFile = (int)v25; /*0x4b6f3a*/
-    v26 = (const void *)SearchMIXFile(&stru_820320.?[115], 0); /*0x4b6f41*/
+    v26 = (const void *)SearchMIXFile(((char *)&stru_820320 + 115), 0); /*0x4b6f41*/
     memcpy(v388, v26, sizeof(v388)); /*0x4b6f4f*/
     for ( j = 0; j < 256; ++j ) /*0x4b6f57*/
     {
@@ -3845,7 +3849,7 @@ void LoadScreen::RenderLoop()
     TypeList::TechnoTypeConstructor(&v311, 0, 0); /*0x4b702f*/
     v33 = dword_A83CF0 + dword_A8E358; /*0x4b7048*/
     v34 = 0; /*0x4b704b*/
-    v311.DynamicVectorClass = &DynamicVectorClass<TechnoTypeClass *>::`vftable'; /*0x4b704f*/
+    v311.DynamicVectorClass = (unsigned int)(void *)&DynamicVectorClass_TechnoTypeClass___vftable; /*0x4b704f*/
     v311.? = 10; /*0x4b7057*/
     v311.? = 0; /*0x4b7062*/
     if ( dword_A83CA8 <= 0 ) /*0x4b706d*/
@@ -3967,7 +3971,7 @@ void LoadScreen::RenderLoop()
     v52 = (ShapeButtonClass *)RA2_OPNEW(0x60u); /*0x4b731e*/
     if ( v52 ) /*0x4b7325*/
     {
-      v53 = SearchMIXFile(&stru_820320.?[103], 0); /*0x4b7349*/
+      v53 = SearchMIXFile(((char *)&stru_820320 + 103), 0); /*0x4b7349*/
       v54 = ShapeButtonClass::Constructor(v52, v48, v53, v305 + 527, v272 + 229, 0, 0, 0); /*0x4b7352*/
     }
     else
@@ -3982,7 +3986,7 @@ void LoadScreen::RenderLoop()
     v56 = (ShapeButtonClass *)RA2_OPNEW(0x60u); /*0x4b737d*/
     if ( v56 ) /*0x4b7384*/
     {
-      v57 = SearchMIXFile(&stru_820320.?[87], 0); /*0x4b73a8*/
+      v57 = SearchMIXFile(((char *)&stru_820320 + 87), 0); /*0x4b73a8*/
       v58 = ShapeButtonClass::Constructor(v56, v55, v57, v305 + 557, v272 + 229, 0, 0, 0); /*0x4b73b1*/
     }
     else
@@ -4051,7 +4055,7 @@ void LoadScreen::RenderLoop()
     v354 = 0; /*0x4b74f8*/
     v263 = 0; /*0x4b74ff*/
     LoadScreen::InitVtable(&v321, 0, 0); /*0x4b7504*/
-    *(unsigned int *)v321.__pad_0 = &DynamicVectorClass<ButtonFadeEffect *>::`vftable'; /*0x4b750e*/
+    *(unsigned int *)v321.__pad_0 = (unsigned int)(void *)&DynamicVectorClass_ButtonFadeEffect_vftable; /*0x4b750e*/
     v321.LoadScreen_field_0x14 = 10; /*0x4b7519*/
     v321.LoadScreen_field_0x10 = 0; /*0x4b7520*/
     Time = timeGetTime(); /*0x4b7534*/
@@ -4063,7 +4067,7 @@ void LoadScreen::RenderLoop()
     v325 = 5; /*0x4b7569*/
     v332 = 0; /*0x4b7574*/
     LoadScreen::Constructor((LoadScreen *)&v311.unknown_18, 0, 0); /*0x4b757b*/
-    v311.unknown_18 = (int)&DynamicVectorClass<CrossDissolveEffect *>::`vftable'; /*0x4b7587*/
+    v311.unknown_18 = (int)(void *)&DynamicVectorClass_CrossDissolveEffect_vftable; /*0x4b7587*/
     v316 = 10; /*0x4b7594*/
     kk = 0; /*0x4b759b*/
     v295 = 0; /*0x4b75a2*/
@@ -4071,7 +4075,7 @@ void LoadScreen::RenderLoop()
     v319 = -1; /*0x4b75ae*/
     v309 = 0; /*0x4b75b5*/
     TypeList::TechnoTypeConstructor(&v323, 0, 0); /*0x4b75b9*/
-    v323.DynamicVectorClass = &DynamicVectorClass<TechnoTypeClass *>::`vftable'; /*0x4b75c4*/
+    v323.DynamicVectorClass = (unsigned int)(void *)&DynamicVectorClass_TechnoTypeClass___vftable; /*0x4b75c4*/
     v323.? = 10; /*0x4b75cf*/
     v323.? = 0; /*0x4b75d6*/
     v333 = **(unsigned int **)&stru_87E790.__pad_D8[60]; /*0x4b75df*/
@@ -5058,7 +5062,7 @@ void LoadScreen::RenderLoop()
       v355[0] = v305 + 500; /*0x4b8c41*/
       v355[1] = v272 + 385; /*0x4b8c55*/
       IDA_LODWORD(v336) = v198; /*0x4b8c6d*/
-      StringCSF = GetStringCSF((wchar_t *)&stru_820320.?[39], 0, &stru_820320.?[59], 873); /*0x4b8c74*/
+      StringCSF = GetStringCSF((wchar_t *)((char *)&stru_820320 + 39), 0, ((char *)&stru_820320 + 59), 873); /*0x4b8c74*/
       TextRenderer::RenderCentered(v194, v198, v304, v355, StringCSF, 0, (int)v278, (int)v250, v251); /*0x4b8c8b*/
       v254 = 1; /*0x4b8c90*/
       v329 = v193; /*0x4b8c95*/
@@ -5389,7 +5393,7 @@ void LoadScreen::RenderLoop()
     else
       g_ZBufferDescriptor = 0; /*0x4b9558*/
     (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4b9566*/
-    v323.DynamicVectorClass = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x4b9577*/
+    v323.DynamicVectorClass = (unsigned int)(void *)&VectorClass_TechnoTypeClass___vftable; /*0x4b9577*/
     if ( v323.? && v323.? ) /*0x4b9589*/
     {
       RA2_OPDEL(v323.?); /*0x4b958c*/
@@ -5397,7 +5401,7 @@ void LoadScreen::RenderLoop()
     }
     v323.? = 0; /*0x4b95a2*/
     v323.? = 0; /*0x4b95ac*/
-    v311.unknown_18 = (int)&VectorClass<CrossDissolveEffect *>::`vftable'; /*0x4b95b3*/
+    v311.unknown_18 = (int)(void *)&VectorClass_CrossDissolveEffect___vftable; /*0x4b95b3*/
     if ( v312 && IDA_BYTE1(v314) ) /*0x4b95c9*/
     {
       RA2_OPDEL(v312); /*0x4b95cc*/
@@ -5413,7 +5417,7 @@ void LoadScreen::RenderLoop()
     }
     IDA_BYTE1(v321.LoadScreen_field_0x0C) = 0; /*0x4b961f*/
     v321.LoadScreen_field_0x08 = 0; /*0x4b9629*/
-    v311.DynamicVectorClass = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x4b9630*/
+    v311.DynamicVectorClass = (unsigned int)(void *)&VectorClass_TechnoTypeClass___vftable; /*0x4b9630*/
     if ( v311.? && v311.? ) /*0x4b963c*/
     {
       RA2_OPDEL(v311.?); /*0x4b963f*/
@@ -5421,7 +5425,7 @@ void LoadScreen::RenderLoop()
     }
     v311.? = 0; /*0x4b9652*/
     v311.? = 0; /*0x4b9657*/
-    *(unsigned int *)v385.CDFileClass = &CCFileClass::`vftable'; /*0x4b965b*/
+    *(unsigned int *)v385.CDFileClass = (unsigned int)(void *)&CCFileClass_vftable; /*0x4b965b*/
     v387 = 0; /*0x4b9666*/
     Vector::Clear((int)v386); /*0x4b966d*/
     *(unsigned int *)v385.CDFileClass = &off_7E1668; /*0x4b9679*/
@@ -5456,7 +5460,7 @@ void LoadScreen::Constructor()
     this->LoadScreen_field_0x08 = a2; /*0x4ba34e*/
     IDA_LOBYTE(this->LoadScreen_field_0x0C) = 1; /*0x4ba351*/
     IDA_BYTE1(this->LoadScreen_field_0x0C) = 0; /*0x4ba355*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<CrossDissolveEffect *>::`vftable'; /*0x4ba358*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&VectorClass_CrossDissolveEffect___vftable; /*0x4ba358*/
     if ( a2 ) /*0x4ba35e*/
     {
       if ( a3 ) /*0x4ba366*/
@@ -5842,10 +5846,10 @@ void LoadingScreen::Render()
           v30 = Render_Render_72B500(); /*0x5534ec*/
         }
         *((unsigned int *)this + 18) = LoadFileSHP(Buffer, (bool *)this + 81); /*0x553504*/
-        v88.?[0] = 0; /*0x553507*/
-        v88.?[1] = 0; /*0x55350e*/
-        INISectionList::Constructor((INISectionList *)&v88.?[2]); /*0x553515*/
-        Node::Init((Node *)&v88.?[8]); /*0x553521*/
+        *(unsigned int *)((char *)&v88 + 0) = 0; /*0x553507*/
+        *(unsigned int *)((char *)&v88 + 1) = 0; /*0x55350e*/
+        INISectionList::Constructor((INISectionList *)((char *)&v88 + 2)); /*0x553515*/
+        Node::Init((Node *)((char *)&v88 + 8)); /*0x553521*/
         v88.? = 0; /*0x553532*/
         v88.ownsFile = 0; /*0x553539*/
         *(unsigned int *)v88.INIClass = &CCINIClass_Vtable; /*0x553541*/
@@ -6198,7 +6202,7 @@ void LoadingScreen::Render()
         v83 = v61[1]; /*0x55407f*/
         Render_Render_5541C0(v59, *((unsigned int *)this + 24), *v61, v61[1], v81.LoadingScreen_field_0x38, 0, 0); /*0x554092*/
         Render_Render_554280(v59, *((unsigned int *)this + 24), &v81.LoadingScreen_field_0x30, v81.LoadingScreen_field_0x18, 0); /*0x5540a8*/
-        *(unsigned int *)v89.CDFileClass = &CCFileClass::`vftable'; /*0x5540b4*/
+        *(unsigned int *)v89.CDFileClass = (unsigned int)(void *)&CCFileClass_vftable; /*0x5540b4*/
         v90[3] = 0; /*0x5540bf*/
         Vector::Clear((int)v90); /*0x5540ca*/
         BufferIOFileClass::Destruct((BufferIOFileClass *)&v89); /*0x5540d6*/
@@ -6453,7 +6457,7 @@ void MultiplayerGameMode::Construct()
     this->MultiplayerGameMode_field_0x10 = 0; /*0x5d5b76*/
     IDA_LOBYTE(this->MultiplayerGameMode_field_0x14) = 1; /*0x5d5b79*/
     IDA_BYTE1(this->MultiplayerGameMode_field_0x14) = 0; /*0x5d5b7d*/
-    this->MultiplayerGameMode_field_0x08 = (int)&DynamicVectorClass<MultiplayerTeam *>::`vftable'; /*0x5d5b80*/
+    this->MultiplayerGameMode_field_0x08 = (int)(void *)&DynamicVectorClass_MultiplayerTeam_vftable; /*0x5d5b80*/
     *((unsigned int *)this + 7) = 10; /*0x5d5b87*/
     this->MultiplayerGameMode_field_0x18 = 0; /*0x5d5b8e*/
     WideString::AssignFromPtr((wchar_t **)this + 8, a2); /*0x5d5b91*/
@@ -6463,7 +6467,7 @@ void MultiplayerGameMode::Construct()
     String::AssignFromPtr((String *)this + 6, a5); /*0x5d5bcd*/
     *((unsigned char *)this + 52) = a6; /*0x5d5bdb*/
     *((unsigned int *)this + 14) = 0; /*0x5d5bde*/
-    *(unsigned int *)this->__pad_0 = &MultiplayerGameMode::`vftable'; /*0x5d5be1*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&MultiplayerGameMode_vftable; /*0x5d5be1*/
     IDA_LOBYTE(this->MultiplayerGameMode_field_0x04) = 0; /*0x5d5be7*/
     *((unsigned int *)this + 15) = 65793; /*0x5d5bea*/
     v8 = (INISectionList *)RA2_OPNEW(0x58u); /*0x5d5bf9*/
@@ -6486,7 +6490,7 @@ void MultiplayerGameMode::Construct()
     CCFileClass::Construct2(&v18, (char **)this + 11); /*0x5d5c35*/
     if ( (unsigned __int8)CCFileClass::Open(&v18, 0) ) /*0x5d5c3f*/
       CCINIClass::Load(*((CCINIClass **)this + 14), (int)&v18, 0, 0); /*0x5d5c52*/
-    *(unsigned int *)v18.CDFileClass = &CCFileClass::`vftable'; /*0x5d5c5b*/
+    *(unsigned int *)v18.CDFileClass = (unsigned int)(void *)&CCFileClass_vftable; /*0x5d5c5b*/
     v20 = 0; /*0x5d5c63*/
     Vector::Clear((int)v19); /*0x5d5c67*/
     *(unsigned int *)v18.CDFileClass = &off_7E1668; /*0x5d5c70*/
@@ -6537,7 +6541,7 @@ void MultiplayerGameMode::Dtor()
     void *MultiplayerGameMode_field_0x0C; // eax
 
     v2 = 0; /*0x5d5d27*/
-    for ( *(unsigned int *)this->__pad_0 = &MultiplayerGameMode::`vftable'; v2 < this->MultiplayerGameMode_field_0x18; ++v2 ) /*0x5d5d34*/
+    for ( *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&MultiplayerGameMode_vftable; v2 < this->MultiplayerGameMode_field_0x18; ++v2 ) /*0x5d5d34*/
     {
       v3 = *(void (__thiscall ****)(unsigned int, int))(this->MultiplayerGameMode_field_0x0C + 4 * v2); /*0x5d5d39*/
       if ( v3 ) /*0x5d5d3e*/
@@ -6552,7 +6556,7 @@ void MultiplayerGameMode::Dtor()
     DeleteAndZero::Alt((DeleteAndZero *)this + 3); /*0x5d5d79*/
     DeleteAndZero::Alt((DeleteAndZero *)((char *)this + 32)); /*0x5d5d81*/
     MultiplayerGameMode_field_0x0C = (void *)this->MultiplayerGameMode_field_0x0C; /*0x5d5d86*/
-    this->MultiplayerGameMode_field_0x08 = (int)&VectorClass<MultiplayerTeam *>::`vftable'; /*0x5d5d89*/
+    this->MultiplayerGameMode_field_0x08 = (int)(void *)&VectorClass_MultiplayerTeam___vftable; /*0x5d5d89*/
     if ( MultiplayerGameMode_field_0x0C && IDA_BYTE1(this->MultiplayerGameMode_field_0x14) ) /*0x5d5d93*/
     {
       RA2_OPDEL(MultiplayerGameMode_field_0x0C); /*0x5d5d99*/
@@ -6572,7 +6576,7 @@ void MultiplayerGameMode::GetFirst()
       dword_ABFDA8 = 0; /*0x5d5e32*/
       byte_ABFDAC = 1; /*0x5d5e38*/
       byte_ABFDAD = 0; /*0x5d5e3f*/
-      g_MultiplayerModeConfig = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d5e45*/
+      g_MultiplayerModeConfig = (int)(void *)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d5e45*/
       dword_ABFDB4 = 10; /*0x5d5e4f*/
       dword_ABFDB0 = 0; /*0x5d5e59*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d5e5f*/
@@ -6586,7 +6590,7 @@ void MultiplayerGameMode::GetFirst()
       dword_ABFDA8 = 0; /*0x5d5e92*/
       byte_ABFDAC = 1; /*0x5d5e98*/
       byte_ABFDAD = 0; /*0x5d5e9f*/
-      g_MultiplayerModeConfig = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d5ea5*/
+      g_MultiplayerModeConfig = (int)(void *)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d5ea5*/
       dword_ABFDB4 = 10; /*0x5d5eaf*/
       dword_ABFDB0 = 0; /*0x5d5eb9*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d5ebf*/
@@ -6604,7 +6608,7 @@ void MultiplayerGameMode::ListGet()
       dword_ABFDA8 = 0; /*0x5d5ef1*/
       byte_ABFDAC = 1; /*0x5d5ef6*/
       byte_ABFDAD = 0; /*0x5d5efc*/
-      g_MultiplayerModeConfig = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d5f01*/
+      g_MultiplayerModeConfig = (int)(void *)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d5f01*/
       dword_ABFDB4 = 10; /*0x5d5f0b*/
       dword_ABFDB0 = 0; /*0x5d5f15*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d5f1a*/
@@ -6624,7 +6628,7 @@ void MultiplayerGameMode::Find()
       {
         g_MultiplayerMode |= 1u; /*0x5d5f57*/
         MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d5f62*/
-        *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = &DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d5f67*/
+        *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = (unsigned int)(void *)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d5f67*/
         g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d5f6d*/
         g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d5f78*/
         atexit(MultiplayerConfig::Cleanup); /*0x5d5f7e*/
@@ -6637,7 +6641,7 @@ void MultiplayerGameMode::Find()
         g_MultiplayerMode |= 1u; /*0x5d5fa7*/
         g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d5fad*/
         IDA_LOWORD(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C) = 1; /*0x5d5fb3*/
-        *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = &DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d5fc0*/
+        *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = (unsigned int)(void *)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d5fc0*/
         g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d5fc6*/
         g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d5fcc*/
         atexit(MultiplayerConfig::Cleanup); /*0x5d5fd2*/
@@ -6900,7 +6904,7 @@ void SaveLoadDialog::DlgProc()
                 FileClass::SetFileName(&v59, Buffer); /*0x5592d7*/
               }
               while ( (unsigned __int8)CCFileClass::Open(&v59, 0) == 1 ); /*0x5592e9*/
-              *(unsigned int *)v59.CDFileClass = &CCFileClass::`vftable'; /*0x5592f2*/
+              *(unsigned int *)v59.CDFileClass = (unsigned int)(void *)&CCFileClass_vftable; /*0x5592f2*/
               v61 = 0; /*0x5592fa*/
               Vector::Clear((int)v60); /*0x559305*/
               *(unsigned int *)v59.CDFileClass = &off_7E1668; /*0x55930e*/
@@ -7761,7 +7765,7 @@ void SyncDelayClass::ProcessNetworkSync()
     }
   LABEL_24:
     if ( !v7 /*0x55dffc*/
-      || stru_A8EB00.?[440]
+      || *(unsigned int *)((char *)&stru_A8EB00 + 440)
       && (v9 = (const wchar_t *)(*(int (__thiscall **)(int))(*(unsigned int *)v7 + 12))(v7),
           (v2 = _wcsicmp(v9, g_INI_Key_De)) != 0) )
     {
@@ -7829,6 +7833,5 @@ void SyncDelayClass::ProcessNetworkSync()
       }
     }
     return v2; /*0x55e072*/
-}
 
 } // namespace gamemd

@@ -259,7 +259,6 @@ int ScenarioClass::UpdateLighting()
                1000 * *((unsigned int *)dword_A8B230 + 3426) / 100,
                1);
     }
-}
 void ScenarioClass::RecalcLighting(int r, int g, int b, uint32_t unk)
 {
     // TODO: recalculate all lighting converts

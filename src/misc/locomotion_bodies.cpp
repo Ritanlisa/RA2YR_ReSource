@@ -3,6 +3,7 @@
 #include "locomotion.hpp"
 #include "object/foot.hpp"  // full FootClass for locomotor member access
 #include "structure/globals_structure.hpp"  // g_CurrentFrame (Frame @ 0xA8ED84)
+#include "core/ida_vtables.h"  // gC_vftable3
 
 namespace gamemd {
 // 0x55a9b0
@@ -141,9 +142,8 @@ bool LocomotionClass::Process()
     *((unsigned char *)this + 100) = 0; /*0x69ecc8*/
     *((unsigned char *)this + 101) = 1; /*0x69eccb*/
     *((unsigned int *)this + 26) = 0; /*0x69eccf*/
-    *(unsigned int *)this->ILocomotion = &ShipLocomotionClass::`vftable'; /*0x69ecd2*/
-    *(unsigned int *)&this->ILocomotion[4] = &ShipLocomotionClass::`vftable'; /*0x69ecd8*/
+    *(unsigned int *)this->ILocomotion = (unsigned int)(void *)&ShipLocomotionClass_vftable; /*0x69ecd2*/
+    *(unsigned int *)&this->ILocomotion[4] = (unsigned int)(void *)&ShipLocomotionClass_vftable; /*0x69ecd8*/
     *((unsigned int *)this + 6) = &off_7F2D68; /*0x69ecdf*/
     return (int)this->ILocomotion; /*0x69ece8*/
-}
 } // namespace gamemd

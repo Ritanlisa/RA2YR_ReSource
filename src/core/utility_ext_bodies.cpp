@@ -1,6 +1,7 @@
 // 自动生成 by tools/move_hpp_bodies.py — 函数体自 src/core/utility_ext.hpp 迁出
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "utility_ext.hpp"
+#include "core/ida_vtables.h"  // gC_vftable3
 
 namespace gamemd {
 // 0x7be5d0
@@ -37,7 +38,7 @@ void GraphicMenuImageItem::QueryInterface()
     ObjectClass *v3; // edi
 
     v3 = (ObjectClass *)*((unsigned int *)this + 12); /*0x4f3844*/
-    *(unsigned int *)this->__pad_0 = &GraphicMenuImageItem::`vftable'; /*0x4f3847*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&GraphicMenuImageItem_vftable; /*0x4f3847*/
     if ( v3 ) /*0x4f384f*/
     {
       j_DeleteAndZero(v3); /*0x4f3853*/
@@ -68,5 +69,4 @@ void StringVector::Add()
         return -1; /*0x49ef6a*/
     }
     return result; /*0x49ef4a*/
-}
 } // namespace gamemd

@@ -35,6 +35,10 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.35: Coord::To_ScreenRaw 静态站点载体（0x6D7F8E/0x6D843B 同款 e4 TU）
 #include "e4/classes/AudioStream_e4.hpp"  // G42.35: g_DSurface_Hidden_2 宿主基类（完整 AudioStream）
+#include "core/ida_vtables.h"  // gC_vftable3
+
+// gC supply: extern declarations from src/e4/e4_globals_decls.hpp
+extern int g_INI_Key_Special;
 
 // ============================================================================
 // G42.35 TU 本地载体块（stream_ext 摘除后所需 + C3861 原型供给 + 站点桥）
@@ -1031,10 +1035,10 @@ unsigned int * BlitPlainXlatAlpha_ushort::QueryInterface(char a2)
     void *v3; // eax
 
     v3 = (void *)*((unsigned int *)this + 2); /*0x49a208*/
-    *(unsigned int *)this->__pad_0 = &BlitPlainXlatAlpha<unsigned short>::`vftable'; /*0x49a20b*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitPlainXlatAlpha_unsigned_short_vftable; /*0x49a20b*/
     FractalNoise::Dtor(v3); /*0x49a212*/
     *((unsigned int *)this + 2) = 0; /*0x49a21b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a224*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a224*/
     if ( (a2 & 1) != 0 ) /*0x49a22a*/
       RA2_OPDEL(this); /*0x49a22d*/
     return this->__pad_0; /*0x49a237*/
@@ -1048,10 +1052,10 @@ unsigned int * BlitTransZRemapXlatAlpha_ushort::Blit(char a2)
     void *m_C; // eax
 
     m_C = (void *)this->m_C; /*0x49a288*/
-    *(unsigned int *)this->__pad_0 = &BlitTransZRemapXlatAlpha<unsigned short>::`vftable'; /*0x49a28b*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransZRemapXlatAlpha_unsigned_short_vftable; /*0x49a28b*/
     FractalNoise::Dtor(m_C); /*0x49a292*/
     this->m_C = 0; /*0x49a29b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a2a4*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a2a4*/
     if ( (a2 & 1) != 0 ) /*0x49a2aa*/
       RA2_OPDEL(this); /*0x49a2ad*/
     return this->__pad_0; /*0x49a2b7*/
@@ -1065,10 +1069,10 @@ unsigned int * BlitTransLucent75Alpha_ushort::Blit(char a2)
     void *m_8; // eax
 
     m_8 = (void *)this->m_8; /*0x49a2c8*/
-    *(unsigned int *)this->__pad_0 = &BlitTransLucent75Alpha<unsigned short>::`vftable'; /*0x49a2cb*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransLucent75Alpha_unsigned_short_vftable; /*0x49a2cb*/
     FractalNoise::Dtor(m_8); /*0x49a2d2*/
     this->m_8 = 0; /*0x49a2db*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a2e4*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a2e4*/
     if ( (a2 & 1) != 0 ) /*0x49a2ea*/
       RA2_OPDEL(this); /*0x49a2ed*/
     return this->__pad_0; /*0x49a2f7*/
@@ -1082,10 +1086,10 @@ unsigned int * BlitTransLucent50Alpha_ushort::Blit(char a2)
     void *m_8; // eax
 
     m_8 = (void *)this->m_8; /*0x49a308*/
-    *(unsigned int *)this->__pad_0 = &BlitTransLucent50Alpha<unsigned short>::`vftable'; /*0x49a30b*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransLucent50Alpha_unsigned_short_vftable; /*0x49a30b*/
     FractalNoise::Dtor(m_8); /*0x49a312*/
     this->m_8 = 0; /*0x49a31b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a324*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a324*/
     if ( (a2 & 1) != 0 ) /*0x49a32a*/
       RA2_OPDEL(this); /*0x49a32d*/
     return this->__pad_0; /*0x49a337*/
@@ -1099,10 +1103,10 @@ unsigned int * BlitTransZRemapXlatAlphaZRead_ushort::Blit(char a2)
     void *m_C; // eax
 
     m_C = (void *)this->m_C; /*0x49a468*/
-    *(unsigned int *)this->__pad_0 = &BlitTransZRemapXlatAlphaZRead<unsigned short>::`vftable'; /*0x49a46b*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransZRemapXlatAlphaZRead_unsigned_short_vftable; /*0x49a46b*/
     FractalNoise::Dtor(m_C); /*0x49a472*/
     this->m_C = 0; /*0x49a47b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a484*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a484*/
     if ( (a2 & 1) != 0 ) /*0x49a48a*/
       RA2_OPDEL(this); /*0x49a48d*/
     return this->__pad_0; /*0x49a497*/
@@ -1116,10 +1120,10 @@ unsigned int * BlitTransLucent75AlphaZRead_ushort::Blit(char a2)
     void *m_8; // eax
 
     m_8 = (void *)this->m_8; /*0x49a4a8*/
-    *(unsigned int *)this->__pad_0 = &BlitTransLucent75AlphaZRead<unsigned short>::`vftable'; /*0x49a4ab*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransLucent75AlphaZRead_unsigned_short_vftable; /*0x49a4ab*/
     FractalNoise::Dtor(m_8); /*0x49a4b2*/
     this->m_8 = 0; /*0x49a4bb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a4c4*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a4c4*/
     if ( (a2 & 1) != 0 ) /*0x49a4ca*/
       RA2_OPDEL(this); /*0x49a4cd*/
     return this->__pad_0; /*0x49a4d7*/
@@ -1133,10 +1137,10 @@ unsigned int * BlitTransLucent50AlphaZRead_ushort::Blit(char a2)
     void *v3; // eax
 
     v3 = (void *)*((unsigned int *)this + 2); /*0x49a4e8*/
-    *(unsigned int *)this->__pad_0 = &BlitTransLucent50AlphaZRead<unsigned short>::`vftable'; /*0x49a4eb*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransLucent50AlphaZRead_unsigned_short_vftable; /*0x49a4eb*/
     FractalNoise::Dtor(v3); /*0x49a4f2*/
     *((unsigned int *)this + 2) = 0; /*0x49a4fb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a504*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a504*/
     if ( (a2 & 1) != 0 ) /*0x49a50a*/
       RA2_OPDEL(this); /*0x49a50d*/
     return this->__pad_0; /*0x49a517*/
@@ -1150,10 +1154,10 @@ unsigned int * BlitTransLucent25AlphaZRead_ushort::Blit(char a2)
     void *m_8; // eax
 
     m_8 = (void *)this->m_8; /*0x49a528*/
-    *(unsigned int *)this->__pad_0 = &BlitTransLucent25AlphaZRead<unsigned short>::`vftable'; /*0x49a52b*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransLucent25AlphaZRead_unsigned_short_vftable; /*0x49a52b*/
     FractalNoise::Dtor(m_8); /*0x49a532*/
     this->m_8 = 0; /*0x49a53b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a544*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a544*/
     if ( (a2 & 1) != 0 ) /*0x49a54a*/
       RA2_OPDEL(this); /*0x49a54d*/
     return this->__pad_0; /*0x49a557*/
@@ -1167,10 +1171,10 @@ unsigned int * BlitTransLucent75AlphaZReadWarp_ushort::Blit(char a2)
     void *m_8; // eax
 
     m_8 = (void *)this->m_8; /*0x49a568*/
-    *(unsigned int *)this->__pad_0 = &BlitTransLucent75AlphaZReadWarp<unsigned short>::`vftable'; /*0x49a56b*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransLucent75AlphaZReadWarp_unsigned_short_vftable; /*0x49a56b*/
     FractalNoise::Dtor(m_8); /*0x49a572*/
     this->m_8 = 0; /*0x49a57b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a584*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a584*/
     if ( (a2 & 1) != 0 ) /*0x49a58a*/
       RA2_OPDEL(this); /*0x49a58d*/
     return this->__pad_0; /*0x49a597*/
@@ -1184,10 +1188,10 @@ unsigned int * BlitTransLucent50AlphaZReadWarp_ushort::Blit(char a2)
     void *m_8; // eax
 
     m_8 = (void *)this->m_8; /*0x49a5a8*/
-    *(unsigned int *)this->__pad_0 = &BlitTransLucent50AlphaZReadWarp<unsigned short>::`vftable'; /*0x49a5ab*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransLucent50AlphaZReadWarp_unsigned_short_vftable; /*0x49a5ab*/
     FractalNoise::Dtor(m_8); /*0x49a5b2*/
     this->m_8 = 0; /*0x49a5bb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a5c4*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a5c4*/
     if ( (a2 & 1) != 0 ) /*0x49a5ca*/
       RA2_OPDEL(this); /*0x49a5cd*/
     return this->__pad_0; /*0x49a5d7*/
@@ -1201,10 +1205,10 @@ unsigned int * BlitTransLucent25AlphaZReadWarp_ushort::Blit(char a2)
     void *m_8; // eax
 
     m_8 = (void *)this->m_8; /*0x49a5e8*/
-    *(unsigned int *)this->__pad_0 = &BlitTransLucent25AlphaZReadWarp<unsigned short>::`vftable'; /*0x49a5eb*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransLucent25AlphaZReadWarp_unsigned_short_vftable; /*0x49a5eb*/
     FractalNoise::Dtor(m_8); /*0x49a5f2*/
     this->m_8 = 0; /*0x49a5fb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a604*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a604*/
     if ( (a2 & 1) != 0 ) /*0x49a60a*/
       RA2_OPDEL(this); /*0x49a60d*/
     return this->__pad_0; /*0x49a617*/
@@ -1218,10 +1222,10 @@ unsigned int * BlitTransXlatAlphaZReadWrite_ushort::Blit(char a2)
     void *v3; // eax
 
     v3 = (void *)*((unsigned int *)this + 2); /*0x49a628*/
-    *(unsigned int *)this->__pad_0 = &BlitTransXlatAlphaZReadWrite<unsigned short>::`vftable'; /*0x49a62b*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransXlatAlphaZReadWrite_unsigned_short_vftable; /*0x49a62b*/
     FractalNoise::Dtor(v3); /*0x49a632*/
     *((unsigned int *)this + 2) = 0; /*0x49a63b*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a644*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a644*/
     if ( (a2 & 1) != 0 ) /*0x49a64a*/
       RA2_OPDEL(this); /*0x49a64d*/
     return this->__pad_0; /*0x49a657*/
@@ -1235,10 +1239,10 @@ unsigned int * BlitTransLucent75AlphaZReadWrite_ushort::Blit(char a2)
     void *m_8; // eax
 
     m_8 = (void *)this->m_8; /*0x49a6a8*/
-    *(unsigned int *)this->__pad_0 = &BlitTransLucent75AlphaZReadWrite<unsigned short>::`vftable'; /*0x49a6ab*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransLucent75AlphaZReadWrite_unsigned_short_vftable; /*0x49a6ab*/
     FractalNoise::Dtor(m_8); /*0x49a6b2*/
     this->m_8 = 0; /*0x49a6bb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a6c4*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a6c4*/
     if ( (a2 & 1) != 0 ) /*0x49a6ca*/
       RA2_OPDEL(this); /*0x49a6cd*/
     return this->__pad_0; /*0x49a6d7*/
@@ -1252,10 +1256,10 @@ unsigned int * BlitTransLucent50AlphaZReadWrite_ushort::Blit(char a2)
     void *m_8; // eax
 
     m_8 = (void *)this->m_8; /*0x49a6e8*/
-    *(unsigned int *)this->__pad_0 = &BlitTransLucent50AlphaZReadWrite<unsigned short>::`vftable'; /*0x49a6eb*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&BlitTransLucent50AlphaZReadWrite_unsigned_short_vftable; /*0x49a6eb*/
     FractalNoise::Dtor(m_8); /*0x49a6f2*/
     this->m_8 = 0; /*0x49a6fb*/
-    *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a704*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a704*/
     if ( (a2 & 1) != 0 ) /*0x49a70a*/
       RA2_OPDEL(this); /*0x49a70d*/
     return this->__pad_0; /*0x49a717*/
@@ -1269,10 +1273,10 @@ unsigned int * RLEBlitTransXlatAlpha_ushort::QueryInterface(char a2)
     void *v3; // eax
 
     v3 = (void *)*((unsigned int *)this + 2); /*0x49aa08*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitTransXlatAlpha<unsigned short>::`vftable'; /*0x49aa0b*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitTransXlatAlpha_unsigned_short_vftable; /*0x49aa0b*/
     FractalNoise::Dtor(v3); /*0x49aa12*/
     *((unsigned int *)this + 2) = 0; /*0x49aa1b*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49aa24*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitter_vftable; /*0x49aa24*/
     if ( (a2 & 1) != 0 ) /*0x49aa2a*/
       RA2_OPDEL(this); /*0x49aa2d*/
     return this->__pad_0; /*0x49aa37*/
@@ -1286,10 +1290,10 @@ unsigned int * RLEBlitTransLucent75Alpha_ushort::QueryInterface(char a2)
     void *v3; // eax
 
     v3 = (void *)*((unsigned int *)this + 2); /*0x49aa88*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitTransLucent75Alpha<unsigned short>::`vftable'; /*0x49aa8b*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitTransLucent75Alpha_unsigned_short_vftable; /*0x49aa8b*/
     FractalNoise::Dtor(v3); /*0x49aa92*/
     *((unsigned int *)this + 2) = 0; /*0x49aa9b*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49aaa4*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitter_vftable; /*0x49aaa4*/
     if ( (a2 & 1) != 0 ) /*0x49aaaa*/
       RA2_OPDEL(this); /*0x49aaad*/
     return this->__pad_0; /*0x49aab7*/
@@ -1303,10 +1307,10 @@ unsigned int * RLEBlitTransLucent50Alpha_ushort::QueryInterface(char a2)
     void *m_8; // eax
 
     m_8 = (void *)this->m_8; /*0x49aac8*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitTransLucent50Alpha<unsigned short>::`vftable'; /*0x49aacb*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitTransLucent50Alpha_unsigned_short_vftable; /*0x49aacb*/
     FractalNoise::Dtor(m_8); /*0x49aad2*/
     this->m_8 = 0; /*0x49aadb*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49aae4*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitter_vftable; /*0x49aae4*/
     if ( (a2 & 1) != 0 ) /*0x49aaea*/
       RA2_OPDEL(this); /*0x49aaed*/
     return this->__pad_0; /*0x49aaf7*/
@@ -1320,10 +1324,10 @@ unsigned int * RLEBlitTransLucent25Alpha_ushort::QueryInterface(char a2)
     void *v3; // eax
 
     v3 = (void *)*((unsigned int *)this + 2); /*0x49ab08*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitTransLucent25Alpha<unsigned short>::`vftable'; /*0x49ab0b*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitTransLucent25Alpha_unsigned_short_vftable; /*0x49ab0b*/
     FractalNoise::Dtor(v3); /*0x49ab12*/
     *((unsigned int *)this + 2) = 0; /*0x49ab1b*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49ab24*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitter_vftable; /*0x49ab24*/
     if ( (a2 & 1) != 0 ) /*0x49ab2a*/
       RA2_OPDEL(this); /*0x49ab2d*/
     return this->__pad_0; /*0x49ab37*/
@@ -1337,10 +1341,10 @@ unsigned int * RLEBlitTransXlatAlphaZRead_ushort::QueryInterface(char a2)
     void *v3; // eax
 
     v3 = (void *)*((unsigned int *)this + 2); /*0x49ab48*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitTransXlatAlphaZRead<unsigned short>::`vftable'; /*0x49ab4b*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitTransXlatAlphaZRead_unsigned_short_vftable; /*0x49ab4b*/
     FractalNoise::Dtor(v3); /*0x49ab52*/
     *((unsigned int *)this + 2) = 0; /*0x49ab5b*/
-    *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49ab64*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitter_vftable; /*0x49ab64*/
     if ( (a2 & 1) != 0 ) /*0x49ab6a*/
       RA2_OPDEL(this); /*0x49ab6d*/
     return this->__pad_0; /*0x49ab77*/
@@ -1875,7 +1879,7 @@ unsigned int * PaletteClass::Load()
     CCFileClass::Construct2(&v11, (char **)this); /*0x5cb5a6*/
     if ( !(unsigned __int8)CCFileClass::Open(&v11, 0) || (v2 = (char *)CCFileClass::ReadEntireFile(&v11)) == 0 ) /*0x5cb5c5*/
     {
-      *(unsigned int *)v11.CDFileClass = &CCFileClass::`vftable'; /*0x5cb5cb*/
+      *(unsigned int *)v11.CDFileClass = (unsigned int)(void *)&CCFileClass_vftable; /*0x5cb5cb*/
       v13 = 0; /*0x5cb5d3*/
       Vector::Clear((int)v12); /*0x5cb5db*/
       *(unsigned int *)v11.CDFileClass = &off_7E1668; /*0x5cb5e4*/
@@ -1902,7 +1906,7 @@ unsigned int * PaletteClass::Load()
       v9 = ConvertClass::Construct(v8, (int)&stru_886080, (int)&stru_886080, (int)g_DSurface_Primary, 1, 0); /*0x5cb67d*/
     else
       v9 = 0; /*0x5cb681*/
-    *(unsigned int *)v11.CDFileClass = &CCFileClass::`vftable'; /*0x5cb687*/
+    *(unsigned int *)v11.CDFileClass = (unsigned int)(void *)&CCFileClass_vftable; /*0x5cb687*/
     v13 = 0; /*0x5cb68f*/
     Vector::Clear((int)v12); /*0x5cb697*/
     *(unsigned int *)v11.CDFileClass = &off_7E1668; /*0x5cb6a0*/
@@ -2249,7 +2253,7 @@ unsigned int * VoxelAnimTypeVector::Constructor(int a2, int a3)
     *((unsigned int *)this + 2) = a2; /*0x67c31e*/
     *((unsigned char *)this + 12) = 1; /*0x67c321*/
     *((unsigned char *)this + 13) = 0; /*0x67c325*/
-    *this = (VoxelAnimTypeVector)&VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67c328*/
+    *this = (VoxelAnimTypeVector)(void *)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67c328*/
     if ( a2 ) /*0x67c32e*/
     {
       if ( a3 ) /*0x67c336*/
@@ -2469,10 +2473,8 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3)
       ++v33; /*0x6d823c*/
       ++v34; /*0x6d8240*/
       v31 += 2; /*0x6d8244*/
-    }
     while ( v30 ); /*0x6d8248*/
     return result; /*0x6d824e*/
-}
 } // namespace gamemd
 
     int FindBuilding();   // 0x6E7A80 (def 0 参 int; 载体 misc 版无此法)
@@ -3295,7 +3297,7 @@ unsigned int * VoxClass_Vector::findItem(char a2)
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x753963*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<VoxClass *>::`vftable'; /*0x753966*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&VectorClass_VoxClass___vftable; /*0x753966*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x753970*/
     {
       RA2_OPDEL(v3); /*0x753978*/
@@ -3552,7 +3554,7 @@ void Voxel_Section::Draw()
     if ( INIClass::GetString( /*0x75d4be*/
            (INIClass *)a2,
            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
-           (unsigned __int8 *)&g_INI_Key_Special.?[8],
+           (unsigned __int8 *)((char *)&g_INI_Key_Special + 8),
            &g_INI_DefaultBuffer,
            (char *)&v86.DynamicVector_field_0x1C,
            128) )
@@ -3648,7 +3650,7 @@ void Voxel_Section::Draw()
            128) )
     {
       DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v86, 0, 0); /*0x75d68c*/
-      *(unsigned int *)v86.__pad_0 = &TypeList<AnimTypeClass const *>::`vftable'; /*0x75d69b*/
+      *(unsigned int *)v86.__pad_0 = (unsigned int)(void *)&TypeList_AnimTypeClass_const___vftable; /*0x75d69b*/
       for ( i = strtok((char *)&v86.DynamicVector_field_0x1C, Str); i; i = strtok(0, Str) ) /*0x75d6ad*/
       {
         if ( !*i ) /*0x75d6af*/
@@ -3658,7 +3660,7 @@ void Voxel_Section::Draw()
           DynamicVector::Add_Alt4(&v86, &v84); /*0x75d6cc*/
       }
       TypeList::AnimTypeCopy(&v85, &v86); /*0x75d6ed*/
-      *(unsigned int *)v86.__pad_0 = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x75d6f6*/
+      *(unsigned int *)v86.__pad_0 = (unsigned int)(void *)&VectorClass_AnimTypeClass_const___vftable; /*0x75d6f6*/
       DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v86); /*0x75d6fe*/
     }
     else
@@ -3672,7 +3674,7 @@ void Voxel_Section::Draw()
     Items = v85.?; /*0x75d736*/
     *(unsigned int *)_ESI->__pad_118 = CapacityIncrement; /*0x75d73a*/
     *(unsigned int *)&_ESI->__pad_118[4] = unknown_18; /*0x75d73f*/
-    v85.DynamicVectorClass = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x75d742*/
+    v85.DynamicVectorClass = (unsigned int)(void *)&VectorClass_AnimTypeClass_const___vftable; /*0x75d742*/
     if ( Items && v85.? ) /*0x75d752*/
       RA2_OPDEL(Items); /*0x75d755*/
     _ESI->WarheadTypeClass_field_0x120 = INIClass::ReadInt_Overwrite( /*0x75d771*/
@@ -3900,7 +3902,7 @@ void Voxel_Section::Draw()
            128) )
     {
       DynamicVector::Constructor_VoxelAnim(&v86, 0, 0); /*0x75db12*/
-      *(unsigned int *)v86.__pad_0 = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x75db21*/
+      *(unsigned int *)v86.__pad_0 = (unsigned int)(void *)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x75db21*/
       for ( j = strtok((char *)&v86.DynamicVector_field_0x1C, Str); j; j = strtok(0, Str) ) /*0x75db33*/
       {
         if ( !*j ) /*0x75db35*/
@@ -3920,14 +3922,14 @@ void Voxel_Section::Draw()
         }
       }
       Voxel_Section::Constructor((Voxel_Section *)&v85, &v86); /*0x75dba9*/
-      v85.DynamicVectorClass = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x75dbb2*/
-      *(unsigned int *)v86.__pad_0 = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x75dbba*/
+      v85.DynamicVectorClass = (unsigned int)(void *)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x75dbb2*/
+      *(unsigned int *)v86.__pad_0 = (unsigned int)(void *)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75dbba*/
       Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)&v86); /*0x75dbc2*/
     }
     else
     {
       Voxel_Section::Constructor((Voxel_Section *)&v85, _ESI->DebrisTypes); /*0x75dbd4*/
-      v85.DynamicVectorClass = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x75dbd9*/
+      v85.DynamicVectorClass = (unsigned int)(void *)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x75dbd9*/
     }
     if ( _ESI->DebrisTypes != (int *)&v85 ) /*0x75dbed*/
     {
@@ -3967,13 +3969,13 @@ void Voxel_Section::Draw()
     v60 = v85.?; /*0x75dc52*/
     *(unsigned int *)_ESI->__pad_1A0 = v58; /*0x75dc56*/
     *(unsigned int *)&_ESI->__pad_1A0[4] = v59; /*0x75dc5b*/
-    v85.DynamicVectorClass = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x75dc5e*/
+    v85.DynamicVectorClass = (unsigned int)(void *)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75dc5e*/
     if ( v60 && v85.? ) /*0x75dc6e*/
       RA2_OPDEL(v60); /*0x75dc71*/
     v79 = 0; /*0x75dc88*/
     v80 = 0; /*0x75dc8b*/
     v81 = 1; /*0x75dc8e*/
-    v78 = &VectorClass<int>::`vftable'; /*0x75dc95*/
+    v78 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x75dc95*/
     if ( &v78 != (void ***)&_ESI->__pad_1A0[8] ) /*0x75dc9b*/
     {
       VectorClass::Destroy((int)&v78); /*0x75dc9f*/
@@ -3996,7 +3998,7 @@ void Voxel_Section::Draw()
     }
     p_WarheadTypeClass_field_0x24 = *(unsigned __int8 **)&_ESI->__pad_1B0[8]; /*0x75dd01*/
     IDA_LODWORD(v83) = _ESI->WarheadTypeClass_field_0x1BC[0]; /*0x75dd0c*/
-    v78 = &TypeList<int>::`vftable'; /*0x75dd0f*/
+    v78 = (unsigned int)(void *)&TypeList_int_vftable; /*0x75dd0f*/
     inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4((Iostream_init *)&_ESI->WarheadTypeClass_field_0x24); /*0x75dd15*/
     IntList = (char *)INIClass::ReadIntList( /*0x75dd22*/
                         (INIClass *)a2,
@@ -4048,7 +4050,7 @@ void Voxel_Section::Draw()
     v68 = *((unsigned int *)IntList + 6); /*0x75dda5*/
     v69 = v85.?; /*0x75dda8*/
     *(unsigned int *)_ESI->__pad_1C0 = v68; /*0x75ddac*/
-    v85.DynamicVectorClass = &VectorClass<int>::`vftable'; /*0x75ddb1*/
+    v85.DynamicVectorClass = (unsigned int)(void *)&VectorClass_int_vftable; /*0x75ddb1*/
     if ( v69 && v85.? ) /*0x75ddc1*/
       RA2_OPDEL(v69); /*0x75ddc4*/
     if ( INIClass::GetString( /*0x75dde6*/
@@ -4129,7 +4131,7 @@ void Voxel_Section::Constructor()
     *((unsigned int *)this + 2) = 0; /*0x75e6c0*/
     *((unsigned char *)this + 12) = 1; /*0x75e6c3*/
     *((unsigned char *)this + 13) = 0; /*0x75e6c7*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x75e6ca*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75e6ca*/
     if ( this != (Voxel_Section *)a2 ) /*0x75e6d0*/
     {
       Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)this); /*0x75e6d2*/
@@ -4163,7 +4165,7 @@ void Voxel_Section::Constructor()
     }
     *((unsigned int *)this + 4) = a2[4]; /*0x75e721*/
     *((unsigned int *)this + 5) = a2[5]; /*0x75e727*/
-    *(unsigned int *)this->__pad_0 = &DynamicVectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x75e72a*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&DynamicVectorClass_VoxelAnimTypeClass_const___vftable; /*0x75e72a*/
     return this->__pad_0; /*0x75e732*/
 }
 } // namespace gamemd

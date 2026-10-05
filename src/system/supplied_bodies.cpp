@@ -37,6 +37,7 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "core/ida_vtables.h"  // gC_vftable3
 // G42.34 T11: Isometric_e4.hpp NOT included -- misc_ext.hpp:233 tree `class Isometric`
 // (0-arg InitTables) is the first-wins def; e4 1-arg form arrives via shadow below.
 
@@ -338,7 +339,7 @@ void *** BufferIOFileClass::Constructor_BitFont(char a2) {
     void **FilePointer; // esi
 
     FileSize = (void *)this->?; /*0x434a43*/
-    *(unsigned int *)this->RawFileClass = &BitFont::`vftable'; /*0x434a46*/
+    *(unsigned int *)this->RawFileClass = (unsigned int)(void *)&BitFont_vftable; /*0x434a46*/
     if ( FileSize ) /*0x434a4e*/
       free(FileSize); /*0x434a51*/
     FilePointer = (void **)this->?; /*0x434a5a*/
@@ -366,7 +367,7 @@ namespace gamemd {
 unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
     Text *v3; // esi
 
-    *(unsigned int *)this->RawFileClass = &BitText::`vftable'; /*0x435564*/
+    *(unsigned int *)this->RawFileClass = (unsigned int)(void *)&BitText_vftable; /*0x435564*/
     v3 = g_FogOfWarState; /*0x43556a*/
     if ( g_FogOfWarState ) /*0x435572*/
       (*(void (__thiscall **)(Text *, int))g_FogOfWarState->Text_field_00)(g_FogOfWarState, 1); /*0x43557a*/

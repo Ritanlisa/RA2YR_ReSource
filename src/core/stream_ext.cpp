@@ -122,5 +122,4 @@ void Buffer::CreateDirectSound()
     }
     Debug::Log(); /*0x40a475*/
     return -2147221504; /*0x40a482*/
-}
 } // namespace gamemd

@@ -16,6 +16,7 @@
 #include "core/math.hpp"
 #include "core/stream_ext.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "core/ida_vtables.h"  // gC_vftable3
 
 // 0x41DB40
 namespace gamemd { 
@@ -141,18 +142,6 @@ void CStreamClass::ClearBuffer() {
     RA2_OPDEL(v2); /*0x4a4ae6*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x4a4aee*/
   }
-// 0x4A4AD0
-namespace gamemd { 
-void CStreamClass::ClearBuffer() {
-  void *v2; // eax
-
-  v2 = *(void **)&this->m_1[3]; /*0x4a4ad6*/
-  *(unsigned int *)&this->CStreamClass_field_0x10 = 0; /*0x4a4ad9*/
-  if ( v2 && IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) ) /*0x4a4ae0*/
-  {
-    RA2_OPDEL(v2); /*0x4a4ae6*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4a4aee*/
-  }
   IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) = 0; /*0x4a4af1*/
   *(unsigned int *)&this->CStreamClass_field_0x08 = 0; /*0x4a4af4*/
 }
@@ -227,6 +216,8 @@ int CStreamClass::FindItem(unsigned int * a2) {
     if ( ++result >= m_10 ) /*0x4a4d7d*/
       return -1; /*0x4a4d7d*/
   }
+  }
+  }
 // 0x4A4DE0
 namespace gamemd { 
 void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
@@ -238,6 +229,8 @@ void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
   {
     RA2_OPDEL(v3); /*0x4a4df8*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x4a4e00*/
+  }
+  }
   }
 // 0x55A150
 namespace gamemd { 
@@ -363,6 +356,8 @@ int Stream::ReadPacket() {
     if ( ++v4 > (int)(v3 - 2) ) /*0x5f1cc8*/
       goto LABEL_11; /*0x5f1cc8*/
   }
+  }
+  }
 // 0x5AF080
 namespace gamemd { 
 void Matrix3D::RotateZ(float a1) {
@@ -447,6 +442,8 @@ int Stream::ReadPacket() {
     if ( ++v4 > (int)(v3 - 2) ) /*0x5f1cc8*/
       goto LABEL_11; /*0x5f1cc8*/
   }
+  }
+  }
 // 0x5F1BF0
 namespace gamemd { 
 int Stream::WriteBlock(int a1, int a2, int a3) {
@@ -501,6 +498,8 @@ int Stream::ReadPacket() {
     if ( ++v4 > (int)(v3 - 2) ) /*0x5f1cc8*/
       goto LABEL_11; /*0x5f1cc8*/
   }
+  }
+  }
 // 0x5F1C60
 namespace gamemd { 
 int Stream::ReadPacket() {
@@ -537,6 +536,8 @@ int Stream::ReadPacket() {
     if ( ++v4 > (int)(v3 - 2) ) /*0x5f1cc8*/
       goto LABEL_11; /*0x5f1cc8*/
   }
+  }
+  }
 // 0x67C690
 namespace gamemd { 
 int Stream::ReadOLEObjects() {
@@ -565,6 +566,8 @@ int Stream::ReadOLEObjects() {
       }
     }
   }
+  }
+  }
 // 0x7B0440
 namespace gamemd { 
 void* StreamWrapper::QueryInterface(int a2)
@@ -574,7 +577,7 @@ void* StreamWrapper::QueryInterface(int a2)
     void (__thiscall ***v5)(unsigned int, int); // ecx
 
     v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 4); /*0x7b0443*/
-    *(unsigned int *)this->__pad_0 = &WorldDominationTour::FactionSelectDialogControl::`vftable'; /*0x7b0446*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7b0446*/
     if ( v3 ) /*0x7b044e*/
       (**v3)(v3, 1); /*0x7b0454*/
     v4 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 5); /*0x7b0456*/

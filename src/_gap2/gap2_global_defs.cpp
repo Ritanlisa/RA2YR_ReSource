@@ -18,6 +18,10 @@
 #include "e4/classes/TeamClass_e4.hpp"  // G42.39a body supply
 #include "e4/classes/ProgressTimer_e4.hpp"  // G42.39a body supply
 #include "e4/classes/RefCount_e4.hpp"  // G42.36 C2027 supply
+#include "core/ida_vtables.h"  // gC_vftable3
+
+// gC supply: extern declarations from src/e4/e4_globals_decls.hpp
+extern unsigned int stru_A8EB00;
 
 // forward declarations for data-global pointer types
 namespace gamemd { class HouseTypeClass; }
@@ -89,13 +93,13 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
       do /*0x40317d*/
       {
         vtable0 = (ObjectClass *)v8->AbstractClass; /*0x4030de*/
-        if ( (v8->location[2] & 1) != 0 && ((unsigned int *)(v8))[2] ) /*0x4030ee*/
+        if ( (v8->location.Z & 1) != 0 && ((unsigned int *)(v8))[2] ) /*0x4030ee*/
         {
           if ( (((Audio*)(char *)&((unsigned int *)v8)[0])->InitChannels(), IsActive) /*0x403158*/
             || AudioChannel::IsActive((AudioChannel *)&((unsigned int *)v8)[0])
             || (lastLayer = (AudioChannel *)v8->lastLayer) != 0 && AudioChannel::IsActive(lastLayer)
             || (v11 = *(AudioChannel **)&v8->isInLogic) != 0 && AudioChannel::IsActive(v11)
-            || (v12 = (AudioChannel *)v8->location[0]) != 0 && AudioChannel::IsActive(v12)
+            || (v12 = (AudioChannel *)v8->location.X) != 0 && AudioChannel::IsActive(v12)
             || (v13 = *(AudioChannel **)&v8->isAliveFlag) != 0 && AudioChannel::IsActive(v13) )
           {
             ObjectClass::Cleanup(v8); /*0x403163*/
@@ -1707,7 +1711,7 @@ char Gap2Recv_430250::RenderBuildingTag(int a2, int a3, int a4, int a5, int a6)
         a2,
         *(unsigned int *)(v19 + 780),
         dword_89C474,
-        *(unsigned int *)&stru_A8EB00.?[416] % (g_VisibilitySystem.health / 2)
+        *(unsigned int *)((char *)&stru_A8EB00 + 416) % (g_VisibilitySystem.health / 2)
       + ((*(unsigned char *)(this + 12) & 2) != 0 ? g_VisibilitySystem.health / 2 : 0),
         v24,
         &a3,
@@ -3234,13 +3238,13 @@ int Gap2Recv_471890::SmallFunc_471890()
     this->controlNodeCapacity = 0; /*0x4718a2*/
     IDA_LOBYTE(this->owner) = 1; /*0x4718a5*/
     IDA_BYTE1(this->owner) = 0; /*0x4718a8*/
-    this->controlNodes[0] = (int)&DynamicVectorClass<ControlNode *>::`vftable'; /*0x4718ab*/
+    this->controlNodes[0] = (int)(void *)&DynamicVectorClass_ControlNode___vftable; /*0x4718ab*/
     *(unsigned int *)&this->CaptureManagerClass_field_30 = 10; /*0x4718b2*/
     this->originalOwner = 0; /*0x4718b9*/
-    this->AbstractClass = &CaptureManagerClass::`vftable'; /*0x4718bc*/
-    this->? = &CaptureManagerClass::`vftable'; /*0x4718c2*/
-    this->? = &CaptureManagerClass::`vftable'; /*0x4718c9*/
-    this->? = &CaptureManagerClass::`vftable'; /*0x4718d0*/
+    this->AbstractClass = (unsigned int)(void *)&CaptureManagerClass_vftable; /*0x4718bc*/
+    this->? = (unsigned int)(void *)&CaptureManagerClass_vftable; /*0x4718c2*/
+    this->? = (unsigned int)(void *)&CaptureManagerClass_vftable; /*0x4718c9*/
+    this->? = (unsigned int)(void *)&CaptureManagerClass_vftable; /*0x4718d0*/
     this->overloadCount = 0; /*0x4718d7*/
     *(unsigned int *)this->__pad_3C = 1; /*0x4718da*/
     this->CaptureManagerClass_field_40 = 0; /*0x4718dd*/
@@ -4035,9 +4039,9 @@ int Gap2Recv_4B5AB0::SmallFunc_4B5AB0()
     this->DestinationCoords[1] = dword_8A0824; /*0x4b5ace*/
     this->DestinationCoords[2] = dword_8A0828; /*0x4b5ad7*/
     this->Piggybackee = 0; /*0x4b5ada*/
-    *(unsigned int *)this->LocomotionClass = &DropPodLocomotionClass::`vftable'; /*0x4b5add*/
-    *(unsigned int *)&this->LocomotionClass[4] = &DropPodLocomotionClass::`vftable'; /*0x4b5ae3*/
-    *(unsigned int *)this->__pad_18 = &DropPodLocomotionClass::`vftable'; /*0x4b5aea*/
+    *(unsigned int *)this->LocomotionClass = (unsigned int)(void *)&DropPodLocomotionClass_vftable; /*0x4b5add*/
+    *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)(void *)&DropPodLocomotionClass_vftable; /*0x4b5ae3*/
+    *(unsigned int *)this->__pad_18 = (unsigned int)(void *)&DropPodLocomotionClass_vftable; /*0x4b5aea*/
     return (int)this->LocomotionClass; /*0x4b5af3*/
 }
 } // namespace gamemd
@@ -4048,14 +4052,14 @@ int Gap2Recv_4C5370::Helper_4C5370()
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4c5373*/
     v2 = dword_8A3838; /*0x4c5378*/
-    *(unsigned int *)this->__pad_0 = &EMPulseClass::`vftable'; /*0x4c537d*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&EMPulseClass_vftable; /*0x4c537d*/
     *((unsigned int *)this + 9) = v2; /*0x4c5383*/
     *((unsigned int *)this + 10) = 0; /*0x4c5388*/
     *((unsigned int *)this + 11) = 0; /*0x4c538b*/
     *((unsigned int *)this + 12) = 0; /*0x4c538e*/
-    this->EMPulseClass_field_0x04 = (int)&EMPulseClass::`vftable'; /*0x4c5391*/
-    this->EMPulseClass_field_0x08 = (int)&EMPulseClass::`vftable'; /*0x4c5398*/
-    this->EMPulseClass_field_0x0C = (int)&EMPulseClass::`vftable'; /*0x4c539f*/
+    this->EMPulseClass_field_0x04 = (int)(void *)&EMPulseClass_vftable; /*0x4c5391*/
+    this->EMPulseClass_field_0x08 = (int)(void *)&EMPulseClass_vftable; /*0x4c5398*/
+    this->EMPulseClass_field_0x0C = (int)(void *)&EMPulseClass_vftable; /*0x4c539f*/
     return (int)this->__pad_0; /*0x4c53a8*/
 }
 } // namespace gamemd

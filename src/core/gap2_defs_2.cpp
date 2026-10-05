@@ -158,7 +158,6 @@ int EnumConnectionPointsClass::FindItem(unsigned int *a2)
   }
   return result; /*0x4a1492*/
 }
-}
 // 0x4E1530
 namespace gamemd { 
 int COMObject::ActivateThunk(int a1, int a2, int a3) {
@@ -697,7 +696,6 @@ int PlayerClass::ProcessOccupancyUpdate(void (__thiscall *a2)(unsigned char *))
     return 0; /*0x6da05f*/
   }
   return result; /*0x6da071*/
-}
 }
 // 0x6DA080
 namespace gamemd { 

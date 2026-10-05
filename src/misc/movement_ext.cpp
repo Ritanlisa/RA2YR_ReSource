@@ -21,5 +21,4 @@ void MoveFeedback::ClearBuffer()
     }
     IDA_BYTE1(this->m_C) = 0; /*0x40b661*/
     this->m_8 = 0; /*0x40b664*/
-}
 } // namespace gamemd
