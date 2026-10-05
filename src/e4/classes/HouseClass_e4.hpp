@@ -1949,6 +1949,7 @@ struct HouseClass {
     unsigned int * ClearStatArray();  // 0x748fd0
     int SaveToINI(char *a2); // N_fix R5 supply (cache truth)
     double GiveTiberium_Storage(float aP1, int aP2);
+    unsigned int q_1B30;  // +0x1B30 flat supply (final pass)
 };
 
 } // namespace gamemd

@@ -1263,7 +1263,7 @@ AbstractClass * * SessionClass_AssignHouses()
   for ( v29.DeleteAndZero_field_0x08 = dword_A8DA84; v2 < DeleteAndZero_field_0x08; ++v2 ) /*0x687f23*/
   {
     v3 = (int *)dword_A8DA78[v2]; /*0x687f2a*/
-    if ( *(int *)((char *)v3 + 75) == -3 ) /*0x687f31*/
+    if ( *(int *)&v3->q_4B == -3 ) /*0x687f31*/
       ((SessionClass *)(v3))->SetPlayerOption(0); /*0x687f35*/
   }
   v31[0] = 0; /*0x687f42*/

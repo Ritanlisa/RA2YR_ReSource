@@ -787,6 +787,7 @@ int Construct(...);  // C2597 interim stub
     unsigned int q_C30;  // +0xC30 flat supply (three-ban reform)
     unsigned int q_C80;  // +0xC80 flat supply (three-ban reform)
     unsigned int q_FE0;  // +0xFE0 flat supply (three-ban reform)
+    unsigned int q_AD0;  // +0xAD0 flat supply (final pass)
 };
 
 } // namespace gamemd

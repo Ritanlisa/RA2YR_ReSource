@@ -185,7 +185,7 @@ LABEL_36:
             if ( !v26 ) /*0x626fd2*/
               break; /*0x626fd2*/
           }
-          while ( *(unsigned int *)(*(unsigned int *)v26 + 256) ); /*0x626fd6*/
+          while ( *(unsigned int *)(*(unsigned int *)&v26->q_400 ); /*0x626fd6*/
         }
       }
     }

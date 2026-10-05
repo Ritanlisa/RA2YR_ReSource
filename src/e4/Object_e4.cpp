@@ -604,7 +604,7 @@ LABEL_20:
     v27 = *(int16_t *)((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v32)->CellClass_field_10C; /*0x5fdb7c*/
     DrawToSurfaceSHP( /*0x5fdb9a*/
       (int)g_DSurface_Hidden_2,
-      *(unsigned int *)(*(unsigned int *)v20 + 780),
+      *(unsigned int *)(*(unsigned int *)&v20->q_C30,
       v5,
       0,
       &v30,

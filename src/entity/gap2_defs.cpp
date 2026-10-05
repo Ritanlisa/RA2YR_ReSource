@@ -436,7 +436,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         }
       }
       if ( *((unsigned char *)this + 1738) ) /*0x41659e*/
-        return ((double (__thiscall *)(Class_7E22A4 *))*(unsigned int *)(*(unsigned int *)this + 248))(this); /*0x4165ac*/
+        return ((double (__thiscall *)(Class_7E22A4 *))*(unsigned int *)(*(unsigned int *)&this->q_3E0)(this); /*0x4165ac*/
     }
     return result; /*0x415eff*/
 }

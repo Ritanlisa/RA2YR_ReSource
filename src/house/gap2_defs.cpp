@@ -3242,7 +3242,7 @@ int HouseClass::AIUnitProduction() {
       goto LABEL_6; /*0x4feaa6*/
     v6 = *(unsigned int *)(v2 + 4); /*0x4feaa8*/
     v7 = v6; /*0x4feaab*/
-    while ( (v3 & *(unsigned int *)(*(unsigned int *)v7 + 1740)) == 0 ) /*0x4feab5*/
+    while ( (v3 & *(unsigned int *)(*(unsigned int *)&v7->q_1B30) == 0 ) /*0x4feab5*/
     {
       ++v5; /*0x4feab7*/
       v7 += 4; /*0x4feab8*/

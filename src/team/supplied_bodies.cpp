@@ -3332,7 +3332,7 @@ int TriggerClass::Create() {
       return 0; /*0x726668*/
     }
     v3 = (char *)dword_A8EAEC; /*0x72664b*/
-    while ( this != *(TriggerClass **)(*(unsigned int *)v3 + 36) ) /*0x726652*/
+    while ( this != *(TriggerClass **)(*(unsigned int *)&v3->__pad_090 ) /*0x726652*/
     {
       ++v2; /*0x726654*/
       v3 += 4; /*0x726655*/

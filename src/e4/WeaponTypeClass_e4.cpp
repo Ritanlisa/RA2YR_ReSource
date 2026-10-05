@@ -538,7 +538,7 @@ char WeaponTypeClass::ReadTrajectoryData(uint8_t * Block, char * a3, int a4)
       {
         if ( Source[0] ) /*0x475bd2*/
           strcat(Source, Str); /*0x475bf9*/
-        strcat(Source, (const char *)(*(unsigned int *)v6 + 36)); /*0x475c27*/
+        strcat(Source, (const char *)(*(unsigned int *)&v6->q_90); /*0x475c27*/
         v4 = v8; /*0x475c29*/
       }
       ++v5; /*0x475c34*/

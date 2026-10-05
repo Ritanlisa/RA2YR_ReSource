@@ -442,7 +442,7 @@ unsigned int * TechnoClass::Update(int a2)
       {
         LOBYTE(v13) = *(unsigned char *)(*(unsigned int *)(*((int (**)(TechnoClass *))v3->vtable1 + 254))(v3) + 320); /*0x6f40cc*/
         v14 = (*((int (**)(TechnoClass *, unsigned int, int))v3->vtable1 + 254))(v3, 0, v13); /*0x6f40d7*/
-        v15 = CaptureManagerClass::CaptureManagerClass(v12, (int)v3, *(unsigned int *)(*(unsigned int *)v14 + 164), 0); /*0x6f40e9*/
+        v15 = CaptureManagerClass::CaptureManagerClass(v12, (int)v3, *(unsigned int *)(*(unsigned int *)&v14->__pad_290, 0); /*0x6f40e9*/
       }
       else
       {

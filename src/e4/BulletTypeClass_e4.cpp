@@ -52,8 +52,8 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
     v2 = (char *)dword_A83C6C; /*0x465464*/
     do /*0x46547d*/
     {
-      if ( v1 <= *(char *)(*(unsigned int *)v2 + 5895) ) /*0x465475*/
-        v1 = *(char *)(*(unsigned int *)v2 + 5895); /*0x465477*/
+      if ( v1 <= *(char *)(*(unsigned int *)&v2->q_5C1C ) /*0x465475*/
+        v1 = *(char *)(*(unsigned int *)&v2->q_5C1C; /*0x465477*/
       v2 += 4; /*0x465479*/
       --v0; /*0x46547c*/
     }

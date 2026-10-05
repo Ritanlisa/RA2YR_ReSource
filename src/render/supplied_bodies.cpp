@@ -2870,7 +2870,7 @@ int VoxelTypeClass::ReadINI(double a2)
       {
         case 0: /*0x73e6ea*/
           if ( !*(unsigned char *)(v9 + 3599) /*0x73e711*/
-            && ((double (__thiscall *)(Class_7F5C70 *))*(unsigned int *)(*(unsigned int *)this + 692))(this) >= 1.0 )
+            && ((double (__thiscall *)(Class_7F5C70 *))*(unsigned int *)(*(unsigned int *)&this->q_AD0)(this) >= 1.0 )
           {
             *((unsigned int *)this + 47) = 2; /*0x73e714*/
             return 1; /*0x73e729*/
@@ -2968,7 +2968,7 @@ int VoxelTypeClass::ReadINI(double a2)
           v24 = *((unsigned int *)this + 433); /*0x73e994*/
           *((unsigned char *)this + 1746) = 0; /*0x73e99a*/
           if ( *(unsigned char *)(v24 + 3598) /*0x73e9c4*/
-            && ((double (__thiscall *)(Class_7F5C70 *))*(unsigned int *)(*(unsigned int *)this + 692))(this) == 1.0 )
+            && ((double (__thiscall *)(Class_7F5C70 *))*(unsigned int *)(*(unsigned int *)&this->q_AD0)(this) == 1.0 )
           {
             v25 = *((unsigned int *)this + 433); /*0x73e9ca*/
             *((unsigned int *)this + 47) = 2; /*0x73e9d0*/

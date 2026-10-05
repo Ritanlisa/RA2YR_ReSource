@@ -419,6 +419,8 @@ int DTOR(); // 0x4101F0
     void DTOR(void *a1_1);
     int COMStub_Return0_38(void *a1_1);
     unsigned int q_B;  // +0xB flat supply (three-ban reform)
+    unsigned int q_4B;  // +0x4B flat supply (final pass)
+    unsigned int q_5C1C;  // +0x5C1C flat supply (final pass)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

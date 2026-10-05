@@ -2153,7 +2153,7 @@ int CStreamClass::StreamRead(unsigned int *a2) {
 
     v2 = (char *)this - 4; /*0x4a2ab8*/
     if ( IDA_BYTE1(this->CStreamClass_field_0x0C) && *((int *)v2 + 5) > 0 && *((unsigned int *)v2 + 2) ) /*0x4a2ac6*/
-      (*(IStream **)((char *)v2 + 24))->Read(*((void **)(char *)v2 + 20), (uint32_t)*((unsigned int *)((char *)v2 + 20)), (uint32_t *)v4); /*0x4a2ad2 G42.33 b4 C3 实例形*/
+      (*(IStream **)&v2->q_18)->Read(*((void **)(char *)v2 + 20), (uint32_t)*((unsigned int *)((char *)v2 + 20)), (uint32_t *)v4); /*0x4a2ad2 G42.33 b4 C3 实例形*/
     if ( !this->CStreamClass_field_0x04 ) /*0x4a2ad7*/
       return -2147467259; /*0x4a2ade*/
     if ( a2 ) /*0x4a2aee*/

@@ -116,7 +116,7 @@ void sub_5B3B10()
         if ( v3 ) /*0x5b3b61*/
         {
           *(unsigned int *)(v3 + 4) = v1; /*0x5b3b63*/
-          *(unsigned int *)(*(unsigned int *)v2 + 8) = *v4; /*0x5b3b6a*/
+          *(unsigned int *)(*(unsigned int *)&v2->q_20 = *v4; /*0x5b3b6a*/
           *v4 = 0; /*0x5b3b6d*/
           *(unsigned int *)v2 = 0; /*0x5b3b6f*/
           goto LABEL_3; /*0x5b3b71*/

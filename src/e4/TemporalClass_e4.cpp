@@ -205,7 +205,7 @@ LABEL_10:
       v18 = (*(int (**)(int, unsigned int))(*(unsigned int *)v16 + 740))(v16, 0); /*0x71a866*/
       v19 = (*(int (**)(int, int))(v17 + 1016))((int)this->creationFrame, v18); /*0x71a870*/
       v20 = *((unsigned int *)this + 18); /*0x71a878*/
-      v21 = *(unsigned int *)(*(unsigned int *)v19 + 164); /*0x71a87b*/
+      v21 = *(unsigned int *)(*(unsigned int *)&v19->q_290; /*0x71a87b*/
       *((unsigned int *)this + 19) = v21; /*0x71a881*/
       result = (void **)(v20 - (WarpPerStep + v21)); /*0x71a888*/
       *((unsigned int *)this + 18) = (unsigned int)(result); /*0x71a88a*/

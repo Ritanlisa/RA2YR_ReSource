@@ -189,5 +189,6 @@ struct Cell {
     static int GetGroundHeight(...);  // 0x578080
     static int IsPassable(unsigned int *a1);  // 0x586360
     unsigned int * IsBridge();  // 0x47c520
+    unsigned int q_4C4;  // +0x4C4 flat supply (final pass)
 };
 } // namespace gamemd

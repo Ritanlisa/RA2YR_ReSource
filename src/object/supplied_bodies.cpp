@@ -962,7 +962,7 @@ int TechnoClass::ApplyIronCurtain()
             0,
             0,
             0,
-            *(unsigned int *)(*(unsigned int *)v6 + 164));
+            *(unsigned int *)(*(unsigned int *)&v6->q_290);
           v18 = *(unsigned int *)&this->lastSightRange; /*0x4156a9*/
           v7 = this->lastSightRange + 3; /*0x4156b6*/
           v19 = this->?[1]; /*0x4156b9*/

@@ -75,7 +75,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
         v4 = (char *)dword_A8E9AC; /*0x422930*/
         do /*0x42294a*/
         {
-          if ( *(AnimClass **)v4 != a2 && *(unsigned char **)(*(unsigned int *)v4 + 204) == AnimClass_field_0xCC ) /*0x422942*/
+          if ( *(AnimClass **)v4 != a2 && *(unsigned char **)(*(unsigned int *)&v4->q_330 == AnimClass_field_0xCC ) /*0x422942*/
             break; /*0x422942*/
           ++v3; /*0x422944*/
           v4 += 4; /*0x422945*/
@@ -1201,7 +1201,7 @@ int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   if ( AnimClass_field_0xD4 && (v4 = *(unsigned int *)((char *)&stru_B054D0 + 0x10) - 1, *(unsigned int *)((char *)&stru_B054D0 + 0x10) - 1 >= 0) ) /*0x4253c8*/
   {
     v5 = *(unsigned int *)((char *)&stru_B054D0 + 0x4) + 4 * v4; /*0x4253d0*/
-    while ( AnimClass_field_0xD4 != *(IUnknown **)(*(unsigned int *)v5 + 780) ) /*0x4253db*/
+    while ( AnimClass_field_0xD4 != *(IUnknown **)(*(unsigned int *)&v5->q_C30 ) /*0x4253db*/
     {
       --v4; /*0x4253dd*/
       v5 -= 4; /*0x4253de*/

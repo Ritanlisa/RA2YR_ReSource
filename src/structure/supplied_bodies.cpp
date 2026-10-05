@@ -1263,7 +1263,7 @@ void BuildingClass::AimTurret()
         v6 = (char *)dword_A8E9AC; /*0x424b85*/
         do /*0x424ba5*/
         {
-          if ( *(BuildingClass **)v6 != this && *(unsigned int *)(*(unsigned int *)v6 + 204) == *(unsigned int *)&this->q0CC ) /*0x424b9d*/
+          if ( *(BuildingClass **)v6 != this && *(unsigned int *)(*(unsigned int *)&v6->q_330 == *(unsigned int *)&this->q0CC ) /*0x424b9d*/
             break; /*0x424b9d*/
           ++v5; /*0x424b9f*/
           v6 += 4; /*0x424ba0*/
@@ -13257,7 +13257,7 @@ int UnitClass::ProcessExitQueue()
                       v86 = 0; /*0x6b741c*/
                       v87 = 0; /*0x6b7420*/
                       v88 = 0; /*0x6b7424*/
-                      v19 = *(unsigned char *)(*(unsigned int *)v18 + 305) == 0; /*0x6b7436*/
+                      v19 = *(unsigned char *)(*(unsigned int *)&v18->q_4C4 == 0; /*0x6b7436*/
                       v20 = this->owner; /*0x6b743b*/
                       if ( v20->currentBurstIndex ) /*0x6b743e*/
                       {
