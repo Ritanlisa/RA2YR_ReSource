@@ -12,10 +12,6 @@ struct VectorCursor_uint_DynamicVectorClass_uint {
     unsigned int q018;  // 0x18
     unsigned int q024;  // 0x24
     unsigned int q054;  // 0x54
-    unsigned int q084;  // 0x84
-    unsigned int q774;  // 0x774
-    unsigned int q1908;  // 0x1908
-    unsigned int q6408;  // 0x6408
     unsigned int *__pad_0;  // G42.33 b3 flat-carrier vocab
     unsigned int m_1[4];  // G42.33 b3 flat-carrier vocab
     void Remove();  // 0x4F42D0

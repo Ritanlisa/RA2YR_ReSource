@@ -10,7 +10,6 @@ struct unknown {
     void* m_Data;  // 0x0
     char m_Position[4];  // 0x4
     char m_Size[4];  // 0x8
-    char unknown_field_0C[4];  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int *m_1;
     unsigned int m_8;
@@ -22,7 +21,6 @@ struct unknown {
     unsigned int Write(int a2);
     wchar_t * ddtor(void *a1);
     unsigned int m_10;  // 0x10
-    unsigned char m_pad_1[64];  // pad compile-supply (G41.47; renamed G42.36, canon m_1 exists above)
 };
 
 } // namespace gamemd

@@ -16,15 +16,10 @@ struct VeinholeMonsterClass {
     bool IsAllocated;  // 0x13
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
-    unsigned int q01A;  // 0x1A
     unsigned char q01C;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned int q01E;  // 0x1E
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
-    unsigned int q027;  // 0x27
     unsigned char q028;  // 0x28
-    unsigned int u32_2A;  // 0x2A
     bool q02B;  // 0x2B
 // --- flat members (END) ---
     VeinholeMonsterClass * SpreadTiberium(char a2);

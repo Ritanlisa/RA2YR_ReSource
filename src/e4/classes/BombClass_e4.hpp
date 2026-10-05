@@ -16,9 +16,7 @@ struct BombClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     int q024;  // 0x24
     char BombClass_field_28[4];  // 0x28
@@ -30,24 +28,15 @@ struct BombClass {
     unsigned int u32_34;  // 0x34
     void* q038;  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     unsigned int q03C;  // 0x3C
-    unsigned int q03D;  // 0x3D
     char q040[4];  // 0x40
-    bool q042;  // 0x42
-    char soundIndex[4];  // 0x44
     unsigned int q048;  // 0x48
     unsigned char __pad_48[13];  // 0x48
-    bool q04A;  // 0x4A
     unsigned int q04C;  // 0x4C
-    unsigned char q04F;  // 0x4F
     unsigned int q050;  // 0x50
     char BombClass_field_54[4];  // 0x54
     bool BombClass_field_58;  // 0x58
-    unsigned char pad_59;  // 0x59
     unsigned int *__pad_24;
-    unsigned int vtable22;
-    unsigned int vtable23;
     unsigned int DTOR;
 // --- flat members (END) ---
     BombClass * CopyTo(char a2);

@@ -10,7 +10,6 @@ struct Screen {
     unsigned int u32_4;  // 0x4
     void* q008;  // 0x8
     unsigned int u32_C;  // 0xC
-    unsigned int q00E;  // 0xE
     unsigned int q011;  // 0x11
     unsigned int q014;  // 0x14
     unsigned int q018;  // 0x18

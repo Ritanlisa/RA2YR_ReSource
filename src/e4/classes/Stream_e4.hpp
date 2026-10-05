@@ -13,42 +13,13 @@ struct Stream {
     StreamClass* m_Stream;  // 0x0
     char Stream_field_04[4];  // 0x4
     unsigned int Stream_field_08;  // 0x8 (G42.42q: truth dword compare @0x491cae; was char[4] mis-type)
-    bool q00A;  // 0xA
     unsigned int Stream_field_0C;  // 0xC
     unsigned int u32_10;  // 0x10
-    unsigned int Stream_178;
     unsigned int Stream_field_10;
-    unsigned int q070;
-    unsigned int q1365;
-    unsigned int q1B8;
-    unsigned int q508;
-    unsigned int q518;
-    unsigned int q52C;
-    unsigned int u32_178;
-    unsigned int u32_17C;
-    unsigned int u32_184;
-    unsigned int u32_188;
-    unsigned int u32_190;
-    unsigned int u32_194;
-    unsigned int u32_198;
     unsigned int u32_19C;
     unsigned int u32_1A4;
     unsigned int u32_1A8;
-    unsigned int u32_1AC;
-    unsigned int u32_1BC;
-    unsigned int u32_1C4;
     unsigned int u32_1D4;
-    unsigned int u32_1E4;
-    unsigned int u32_1FC;
-    unsigned int u32_504;
-    unsigned int u32_510;
-    unsigned int u32_51C;
-    unsigned int u32_520;
-    unsigned int u32_524;
-    unsigned int u32_540;
-    unsigned int u32_544;
-    unsigned int u32_548;
-    unsigned int u32_54C;
 
     void* a2;  // 0x0 (no offset truth)
 // --- flat members (END) ---

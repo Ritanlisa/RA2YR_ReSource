@@ -14,14 +14,11 @@ struct AbstractTypeClass {
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     unsigned int uniqueId;  // 0x10
-    unsigned char alignmentPadding_3;  // 0x11
     char referenceCount[4];  // 0x12
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     char q01C[4];  // 0x1C
-    bool q01D;  // 0x1D
     bool NeedsSaveOrLink;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int u32_28;  // 0x28
@@ -33,43 +30,27 @@ struct AbstractTypeClass {
     unsigned char q034;  // 0x34
     unsigned int q038;  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
-    unsigned char zero_3C;  // 0x3C
     char UINameLabel;  // 0x3D
     unsigned int q040;  // 0x40
-    bool q042;  // 0x42
     unsigned int q044;  // 0x44
     unsigned int q048;  // 0x48
-    bool q04A;  // 0x4A
     unsigned int q04C;  // 0x4C
-    unsigned char q04F;  // 0x4F
     unsigned int q050;  // 0x50
     unsigned int q054;  // 0x54
     unsigned char q058;  // 0x58
     unsigned char q05C;  // 0x5C
-    unsigned char q05D;  // 0x5D
-    void *q60;  // 0x60
     char Name;  // 0x64
     unsigned int q068;  // 0x68
     ObjectClass* q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    bool q074;  // 0x74
     unsigned char q078;  // 0x78
     void* q07C;  // 0x7C
     unsigned int q080;  // 0x80
-    unsigned int q084;  // 0x84
-    void* q088;  // 0x88
     void* q08C;  // 0x8C
     unsigned char q090;  // 0x90
-    unsigned int q094;  // 0x94
-    unsigned char tail_95;  // 0x95
     unsigned int TaskForceClass_field_0x4;
     unsigned int *__pad_0;
     unsigned int *__pad_24;
     unsigned int nextArrayIndex1;
-    unsigned int vtable34;
-    unsigned int vtable35;
-    unsigned int vtable46;
     unsigned int *__pad_8;
     unsigned int UIName;
     void* houseTypes;  // 0x0 (no offset truth)

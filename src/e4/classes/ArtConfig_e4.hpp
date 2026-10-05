@@ -16,7 +16,6 @@ struct ArtConfig {
     unsigned int u32_18;
     unsigned int u32_1C;
     unsigned int u32_28;
-    unsigned int u32_C2;
 // --- flat members (END) ---
     int validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3);
     unsigned int * loadConfig(char **aP1, int aP2, int aP3, int *aP4, char aP5);  // 0x5cc760

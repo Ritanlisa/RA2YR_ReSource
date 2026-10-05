@@ -10,10 +10,7 @@ struct IPXManagerClass {
     void* vtable1;  // 0x0
     bool Initialized;  // 0x4
     bool Active;  // 0x5
-    unsigned short tail_6;  // 0x6
-    unsigned int Initialized9;
     unsigned int Socket;
-    unsigned int curConnIndex;
     unsigned int processPacket;
     unsigned int q0080;
     unsigned int q010;
@@ -25,7 +22,6 @@ struct IPXManagerClass {
     unsigned int u32_4C;
     unsigned int u32_50;
     unsigned int u32_54;  // G42.40f supply (truth 0x5415F0: *((_DWORD*)this+21), cursor index)
-    unsigned int connTable;
 // --- flat members (END) ---
     IPXManagerClass * QueryInterface(char * Block, char a2);
     int ddtor(int a2, int a3, unsigned int * a4);
@@ -41,7 +37,6 @@ struct IPXManagerClass {
     unsigned int q050;  // 0x50
     unsigned int q04C;  // 0x4C
     unsigned int q028;  // 0x28
-    unsigned int u32_A0;  // 0xA0
 };
 
 } // namespace gamemd

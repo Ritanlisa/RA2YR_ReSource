@@ -8,8 +8,6 @@ namespace gamemd {
 struct SelectTeamCommand {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    void* p4;  // regen name
-    char SelectTeamCommand_field_04[4];  // 0x8
     unsigned int CommandClass;
     unsigned int *m_1;
     unsigned int SelectTeamCommand_field_00;

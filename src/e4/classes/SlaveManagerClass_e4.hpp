@@ -17,41 +17,25 @@ struct SlaveManagerClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    unsigned int q24;  // 0x24
-    unsigned int q28;  // 0x28
     bool q02B;  // 0x2B
-    unsigned int q2C;  // 0x2C
     unsigned int slaveType;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     unsigned int slaveCount;  // 0x34
-    void *q38;  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     unsigned int slaveVectorCount;  // 0x3C
-    unsigned int q03D;  // 0x3D
     unsigned int slaveVectorCapacity;  // 0x40
-    bool q042;  // 0x42
     unsigned int creationFrame;  // 0x44
     unsigned char u8_45;  // 0x45
     void* q048;  // 0x48
-    bool q04A;  // 0x4A
     unsigned int q04C;  // 0x4C
-    unsigned char q04F;  // 0x4F
-    unsigned int q50;  // 0x50
     unsigned int SlaveManagerClass_field_54;  // 0x54
     unsigned int SlaveManagerClass_field_58;  // 0x58
     unsigned int SlaveManagerClass_field_5C;  // 0x5C
     unsigned int SlaveManagerClass_field_60;  // 0x60
     unsigned int *__pad_48;
-    unsigned int abstractFlags6;
-    unsigned int nextArrayIndex0;
-    unsigned int uniqueId0;
-    unsigned int vtable46;
     unsigned int house;
     unsigned int q050;
     unsigned int slaveOwner;

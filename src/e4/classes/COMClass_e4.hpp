@@ -44,25 +44,6 @@ struct COMClass {
     unsigned int m_10;  // G42.33 b3 flat-carrier vocab
     unsigned int m_8;  // G42.35 C9 flat-carrier vocab (0x7656a5)
     unsigned int field_18;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x08;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x0C;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x10;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x14;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x18;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x1C;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x20;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x24;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x28;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x2C;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x30;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x34;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x38;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x3C;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x40;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x44;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x48;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x4C;  // G42.33 b3 flat-carrier vocab
-    unsigned int COMClass_field_0x50;  // G42.33 b3 flat-carrier vocab
     int RegisterAll();  // G42.33 b3 supplied-body sync (member form)
     unsigned int * releaseInterface();  // 0x765C70 G42.33 b3 supplied-body sync
     unsigned int * marshalInterface(char a2);  // 0x767C50 G42.33 b3 supplied-body sync
@@ -90,7 +71,6 @@ struct COMClass {
 
     unsigned int u32_7C;  // G42.39 data supply
 
-    unsigned int u32_8C;  // G42.39 data supply
 
     unsigned int u32_84;  // G42.39 data supply
 
@@ -98,17 +78,12 @@ struct COMClass {
 
     unsigned int u32_94;  // G42.39 data supply
 
-    unsigned int u32_98;  // G42.39 data supply
 
-    unsigned int u32_9C;  // G42.39 data supply
 
-    unsigned int u32_A4;  // G42.39 data supply
 
-    unsigned int u32_A8;  // G42.39 data supply
 
     unsigned int u32_AC;  // G42.39 data supply
 
-    unsigned int u32_B4;  // G42.39 data supply
 
     unsigned int u32_B8;  // G42.39 data supply
 
@@ -118,19 +93,15 @@ struct COMClass {
 
     unsigned int u32_C8;  // G42.39 data supply
 
-    unsigned int u32_CC;  // G42.39 data supply
 
     unsigned int u32_D4;  // G42.39 data supply
 
     unsigned int u32_D8;  // G42.39 data supply
 
-    unsigned int u32_DC;  // G42.39 data supply
 
     unsigned int u32_E4;  // G42.39 data supply
 
-    unsigned int u32_E8;  // G42.39 data supply
 
-    unsigned int u32_EC;  // G42.39 data supply
 
     unsigned int u32_F4;  // G42.39 data supply
 
@@ -148,39 +119,25 @@ struct COMClass {
 
     unsigned int u32_118;  // G42.39 data supply
 
-    unsigned int u32_11C;  // G42.39 data supply
 
-    unsigned int u32_124;  // G42.39 data supply
 
-    unsigned int u32_128;  // G42.39 data supply
 
-    unsigned int u32_12C;  // G42.39 data supply
 
-    unsigned int u32_134;  // G42.39 data supply
 
-    unsigned int u32_138;  // G42.39 data supply
 
     unsigned int u32_13C;  // G42.39 data supply
 
-    unsigned int u32_144;  // G42.39 data supply
 
     unsigned int u32_148;  // G42.39 data supply
 
     unsigned int u32_14C;  // G42.39 data supply
 
-    unsigned int u32_150;  // G42.39 data supply
 
-    unsigned int u32_154;  // G42.39 data supply
 
-    unsigned int u32_158;  // G42.39 data supply
 
-    unsigned int u32_15C;  // G42.39 data supply
 
-    unsigned int u32_160;  // G42.39 data supply
 
-    unsigned int u32_164;  // G42.39 data supply
 
-    unsigned int u32_168;  // G42.39 data supply
 
     unsigned int u32_4;  // G42.39 data supply
 };

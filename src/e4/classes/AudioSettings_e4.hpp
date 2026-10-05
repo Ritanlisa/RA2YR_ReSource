@@ -8,11 +8,6 @@ namespace gamemd {
 
 struct AudioSettings {
 // --- flat members (BEGIN) ---
-    bool m_Flag68;  // 0x0
-    bool m_Flag70;  // 0x1
-    unsigned char pad_02;  // 0x2
-    char AudioSettings_field_04[4];  // 0x4
-    char AudioSettings_field_08[4];  // 0x8
     unsigned int Check;
     unsigned int ComputeTransform;
     unsigned int u32_44;

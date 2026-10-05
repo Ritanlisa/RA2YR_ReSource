@@ -1,10 +1,10 @@
+#include "ui/ui_ext.hpp"  // G42.55 tree truth
 // GENERATED minimal flat class (fix_c2039_methods)
 #pragma once
 
 namespace gamemd {
 
-struct TabCameoListClass {
-    int AddCameo_ReplaceItAll(int a2, int a3);
-};
+// G42.55 absorbed: single truth is TabCameoListClass
+
 
 } // namespace gamemd

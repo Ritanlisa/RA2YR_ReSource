@@ -17,8 +17,6 @@ struct GaugeClass {
     char Enabled;  // 0x15
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned int q01E;  // 0x1E
     unsigned int *__pad_0;
     unsigned int u32_2D;
 // --- flat members (END) ---

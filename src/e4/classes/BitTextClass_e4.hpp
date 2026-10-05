@@ -10,15 +10,12 @@ struct CampaignClass;  // fix_fwd_type_supply
 struct BitTextClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int m_CharWidth;  // 0x4
     CampaignClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC
-    unsigned int m_CharWidth8;
     unsigned int m_FontBitmap;
     unsigned int u32_18;
     unsigned int u32_1C;
     unsigned int u32_24;
-    unsigned int u32_26;
     unsigned int u32_28;
     unsigned int u32_2C;
     unsigned int u32_40;

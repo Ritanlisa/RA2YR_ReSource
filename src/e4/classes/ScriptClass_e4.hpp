@@ -18,14 +18,10 @@ struct ScriptClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     ScriptTypeClass* buildingType;  // 0x24
-    char field28[4];  // 0x28
     bool q02B;  // 0x2B
-    char idxCurrentLine[4];  // 0x2C
 // --- flat members (END) ---
     int LoadState(AbstractClass * aP0, int aP1);
     int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);

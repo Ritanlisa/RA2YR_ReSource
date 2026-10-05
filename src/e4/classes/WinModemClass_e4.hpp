@@ -24,7 +24,6 @@ struct WinModemClass {
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
     unsigned char q038;  // 0x38
-    unsigned int u32_39;  // 0x39
     unsigned int q0080;
     unsigned int q0146;
     unsigned int q0242;
@@ -41,8 +40,6 @@ struct WinModemClass {
     unsigned int WinModemClass_field_0x10;
     unsigned int WinModemClass_field_0x14;
     unsigned int WinModemClass_field_0x18;
-    unsigned int q0085;
-    unsigned int q0086;
     unsigned int q05C;
     unsigned int AsyncIO;
     unsigned int Debug;

@@ -18,35 +18,21 @@ struct LoadOptions {
     void* Capacity;  // 0x8
     unsigned int q00C;  // 0xC
     void* IsAllocated;  // 0xD
-    unsigned int max_entries;  // 0x10
     bool IsInitialized;  // 0x12
     unsigned int q014;  // 0x14
-    FileEntryClass** entries;  // 0x18
     unsigned int count;  // 0x1C
-    unsigned char is_active;  // 0x20
-    unsigned char owns_memory;  // 0x21
     unsigned int q024;  // 0x24
-    void* p28;  // regen name
     unsigned char q02C;  // 0x2C
-    void* p2D;  // regen name
-    unsigned char pad_2E;  // 0x2E
-    unsigned int capacity;  // 0x30
-    unsigned int grow_step;  // 0x34
     unsigned int GetFlag252;
     unsigned int GetFlag98;
     unsigned int GetFlag99;
     unsigned int *__pad_0;
-    unsigned int __pad_22;
     unsigned int __pad_4;
     unsigned int m_0;
     unsigned int *m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;
-    unsigned int u32_420;
-    unsigned int u32_188;
-    unsigned int u32_18C;
-    unsigned int u32_3F0;
     unsigned int q028;
     unsigned int u32_2D;
 // --- flat members (END) ---

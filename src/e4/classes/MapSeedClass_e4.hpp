@@ -15,15 +15,12 @@ struct MapSeedClass {
     bool IsAllocated;  // 0xD
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
-    unsigned int M16;  // 0x16
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
-    char owns_memory;  // 0x21
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
     unsigned char q02C;  // 0x2C
-    unsigned int pad_2E;  // 0x2E
     unsigned int MapSeedClass_field_0x04;
     unsigned int MapSeedClass_field_0x08;
     unsigned int MapSeedClass_field_0x0C;

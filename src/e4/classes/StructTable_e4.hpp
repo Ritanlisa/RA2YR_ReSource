@@ -1,10 +1,10 @@
+#include "core/utility_ext.hpp"  // G42.55 tree truth
 // GENERATED minimal flat class (fix_c2039_methods)
 #pragma once
 
 namespace gamemd {
 
-struct StructTable {
-    int Append(const void *a2);
-};
+// G42.55 absorbed: single truth is StructTable
+
 
 } // namespace gamemd

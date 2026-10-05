@@ -23,9 +23,7 @@ struct CaptureManagerClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     unsigned int controlNodes;  // 0x24
     unsigned int controlNodeCount;  // 0x28
@@ -36,20 +34,12 @@ struct CaptureManagerClass {
     unsigned int alignmentPadding;  // 0x33
     HouseClass* originalOwner;  // 0x34
     bool CaptureManagerClass_field_30;  // 0x38
-    bool CaptureManagerClass_field_31;  // 0x39
-    unsigned char pad_32;  // 0x3A
-    unsigned int q03B;  // 0x3B
     void* q03C;  // 0x3C
-    unsigned int q03D;  // 0x3D
     bool CaptureManagerClass_field_40;  // 0x40
     bool CaptureManagerClass_field_41;  // 0x41
-    unsigned char pad_42;  // 0x42
     unsigned int overloadLimit;  // 0x44
     unsigned int overloadCount;  // 0x48
-    bool q04A;  // 0x4A
     unsigned int linkCount;  // 0x4C
-    unsigned char q04F;  // 0x4F
-    char CaptureManagerClass_field_2C[4];  // 0x50
     unsigned int *__pad_3C;
 // --- flat members (END) ---
     void DecideUnitFate(int aP1);

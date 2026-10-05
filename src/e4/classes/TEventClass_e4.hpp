@@ -18,9 +18,7 @@ struct TEventClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     char eventType[4];  // 0x24
     char TEventClass_field_28[4];  // 0x28
@@ -32,20 +30,10 @@ struct TEventClass {
     char TEventClass_field_34[4];  // 0x34
     char TEventClass_field_38;  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     unsigned int q03C;  // 0x3C
-    unsigned int q03D;  // 0x3D
     char q040[4];  // 0x40
-    bool q042;  // 0x42
     unsigned int q044;  // 0x44
-    char TEventClass_field_48[4];  // 0x48
-    bool q04A;  // 0x4A
-    char TEventClass_field_4C[4];  // 0x4C
-    unsigned char q04F;  // 0x4F
-    char TEventClass_field_50[4];  // 0x50
     unsigned int TEventClass_field_54;  // 0x54
-    char TEventClass_field_58[4];  // 0x58
-    char TEventClass_field_5C[4];  // 0x5C
 // --- flat members (END) ---
     DynamicVector * Execute(int a2, int a3, int a4, int *a5, int a6, int a7);
     int CheckConditions(int a2, int a3);

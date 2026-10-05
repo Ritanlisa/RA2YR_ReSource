@@ -16,9 +16,7 @@ struct TemporalClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     char creationFrame[4];  // 0x24
     int q028;  // 0x28
@@ -29,12 +27,9 @@ struct TemporalClass {
     unsigned int alignmentPadding;  // 0x33
     unsigned int TemporalClass_field_34;  // 0x34
     unsigned int *__pad_28;
-    unsigned int u32_308;
     unsigned int u32_38;
     unsigned int u32_3C;
     unsigned int u32_48;
-    unsigned int u32_4A8;
-    unsigned int u32_A6;
 // --- flat members (END) ---
     char CanWarpTarget(unsigned int * a1);
     int Constructor();

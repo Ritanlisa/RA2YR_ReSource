@@ -9,12 +9,9 @@ struct VoxClass {
 // --- flat members (BEGIN) ---
     char Name;  // 0x0
     float Volume;  // 0x28
-    char YuriVoice;  // 0x2C
     char RussianVoice;  // 0x35
-    char AlliedVoice;  // 0x3E
     float q040;  // 0x40
     char q044;  // 0x44
-    unsigned char q047;  // 0x47
     char Priority[4];  // 0x48
     char Type[4];  // 0x4C
     char voiceIndex[4];  // 0x50

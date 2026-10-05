@@ -1,10 +1,10 @@
+#include "misc/audio_ext.hpp"  // G42.55 tree truth
 // GENERATED minimal flat class (fix_c2039_methods)
 #pragma once
 
 namespace gamemd {
 
-struct AudioPool {
-    int * ProcessQueue();
-};
+// G42.55 absorbed: single truth is AudioPool
+
 
 } // namespace gamemd

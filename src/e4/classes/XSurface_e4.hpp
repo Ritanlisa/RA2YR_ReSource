@@ -10,7 +10,6 @@ struct XSurface {
     void* vtable1;  // 0x0
     void* Width;  // 0x4
     void* Height;  // 0x8
-    bool q00A;  // 0xA
     int LockCount;  // 0xC
     unsigned int Surface;
     unsigned int *__pad_0;

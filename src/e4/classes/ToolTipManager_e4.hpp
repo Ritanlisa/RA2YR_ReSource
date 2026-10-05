@@ -24,12 +24,8 @@ struct ToolTipManager {
     unsigned int q054;  // 0x54
     unsigned int q064;  // 0x64
     unsigned int q080;  // 0x80
-    unsigned int q084;  // 0x84
     unsigned int q08A;  // 0x8A
     unsigned int q08B;  // 0x8B
-    bool q08D;  // 0x8D
-    bool q08E;  // 0x8E
-    unsigned char q091;  // 0x91
     unsigned int q100;  // 0x100
     unsigned int q128;  // 0x128
     int q130;  // 0x130

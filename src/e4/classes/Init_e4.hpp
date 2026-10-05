@@ -2,14 +2,11 @@
 #pragma once
 
 #include "e4/classes/_fwd_e4.hpp"
+#include "core/utility_ext.hpp"  // G42.55 tree truth
 
 namespace gamemd {
 
-struct Init {
-// --- flat members (BEGIN) ---
-    char Init_field_00[4];  // 0x0
-// --- flat members (END) ---
-    void StubPlaceholder();
-};
+// G42.55 absorbed: single truth is Init
+
 
 } // namespace gamemd

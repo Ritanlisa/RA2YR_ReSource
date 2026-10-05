@@ -7,7 +7,6 @@ namespace gamemd {
 
 struct Helper {
 // --- flat members (BEGIN) ---
-    char Helper_field_00[4];  // 0x0
 // --- flat members (END) ---
     char ProcessData(void ** a1, int a2, int * a3);
 };

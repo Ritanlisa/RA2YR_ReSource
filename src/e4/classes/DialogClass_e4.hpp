@@ -17,11 +17,8 @@ struct DialogClass {
     unsigned int q080;  // 0x80
     unsigned int u32_D0;  // 0xD0
     unsigned int q100;  // 0x100
-    unsigned int u32_120;  // 0x120
     unsigned int q128;  // 0x128
     void* q130;  // 0x130
-    unsigned int q208;  // 0x208
-    void* q304;  // 0x304
     unsigned int q520;  // 0x520
 // --- flat members (END) ---
     static ATOM RegisterWinClasses();  // 0x60D450 G42.33 b3 static-form sync (broken ATOMRegisterWinClasses decl; RegisterWinClasses field vocab removed: name collision, zero field uses)

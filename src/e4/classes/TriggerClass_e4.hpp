@@ -20,28 +20,18 @@ struct TriggerClass {
     int abstractFlags;  // 0x14
     bool q017;  // 0x17
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     TriggerTypeClass* buildingType;  // 0x24
     TriggerClass* nextTrigger;  // 0x28
     bool q02B;  // 0x2B
     HouseClass* house;  // 0x2C
     bool destroyed;  // 0x30
-    unsigned char align31;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char timer[12];  // 0x34
     TriggerClass* q038;  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     AbstractClass* q03C;  // 0x3C
-    unsigned int q03D;  // 0x3D
-    unsigned int occuredEvents;  // 0x40
-    bool q042;  // 0x42
-    bool enabled;  // 0x44
-    unsigned char align45;  // 0x45
-    unsigned int abstractFlags2;
     unsigned int u32_54;
 // --- flat members (END) ---
     static char FindByEventType(char a1);

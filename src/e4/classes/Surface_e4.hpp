@@ -12,7 +12,6 @@ struct Surface {
     unsigned char __pad_0[87];  // 0x0
     int Width;  // 0x4
     int Height;  // 0x8
-    unsigned int u32_B;  // 0xB
     unsigned int LockCount;
     unsigned int q00C;
     void* BytesPerPixel;  // 0x0 (no offset truth)

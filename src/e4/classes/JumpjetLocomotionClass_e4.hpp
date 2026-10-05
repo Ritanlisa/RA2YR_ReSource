@@ -22,7 +22,6 @@ struct JumpjetLocomotionClass {
     void* RefCount;  // 0x14
     void* vtable3;  // 0x18
     char Speed[4];  // 0x1C
-    bool q01D;  // 0x1D
     char Climb[4];  // 0x20
     float Crash;  // 0x24
     float Height;  // 0x28
@@ -30,53 +29,28 @@ struct JumpjetLocomotionClass {
     char Accel[4];  // 0x2C
     float Wobbles;  // 0x30
     unsigned char q031;  // 0x31
-    unsigned int q033;  // 0x33
     float Deviation;  // 0x34
-    bool q037;  // 0x37
     char NoWobbles[1];  // 0x38
-    char q039[4];  // 0x39
     unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     bool q03C;  // 0x3C
-    unsigned char unknown_3D;  // 0x3D
-    unsigned char unknown_3E;  // 0x3E
-    unsigned char unknown_3F;  // 0x3F
     char DestinationCoords[12];  // 0x40
-    bool q042;  // 0x42
     unsigned int q044;  // 0x44
-    ILocomotion * ptr_48;  // 0x48
-    bool q04A;  // 0x4A
     bool IsMoving;  // 0x4C
     unsigned char unknown_4D;  // 0x4D
-    unsigned char unknown_4E;  // 0x4E
-    unsigned char unknown_4F;  // 0x4F
     char CurrentState[4];  // 0x50
-    unsigned char u8_53;  // 0x53
     unsigned char q054;  // 0x54
     unsigned int q058;  // 0x58
     unsigned int q05C;  // 0x5C
     unsigned char q060;  // 0x60
     unsigned char q064;  // 0x64
     unsigned int q068;  // 0x68
-    void* unknown_6C;  // 0x6C
-    unsigned char unknown_6D;  // 0x6D
-    unsigned char unknown_6E;  // 0x6E
-    unsigned char unknown_6F;  // 0x6F
     int CurrentHeight;  // 0x70
-    unsigned char q074;  // 0x74
     unsigned int q078;  // 0x78
     unsigned int u32_7C;  // 0x7C
     unsigned char q080;  // 0x80
-    unsigned char unknown_84;  // 0x84
-    unsigned char unknown_85;  // 0x85
-    unsigned char unknown_86;  // 0x86
-    unsigned char unknown_87;  // 0x87
     char DestinationReached[1];  // 0x88
     void* q08C;  // 0x8C
-    unsigned int u32_90;  // 0x90
     unsigned char unknown_91;  // 0x91
-    unsigned char unknown_92;  // 0x92
-    unsigned char unknown_93;  // 0x93
     ILocomotion* Piggybackee;  // 0x94
 // --- flat members (END) ---
     AbstractClass * * FindClosestOccupiableCell();

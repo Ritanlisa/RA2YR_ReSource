@@ -14,10 +14,6 @@ struct DDraw {
     unsigned int u32_70;  // 0x70
     unsigned int u32_74;  // 0x74
     unsigned int q100;  // 0x100
-    unsigned int q274;  // 0x274
-    unsigned int q278;  // 0x278
-    unsigned int q628;  // 0x628
-    unsigned int u32_2664;  // 0x2664
     unsigned int q18000;
     unsigned int Debug;
 // --- flat members (END) ---

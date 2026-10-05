@@ -13,8 +13,6 @@ struct ScoreScreen {
     bool q00B;  // 0xB
     unsigned char q00C;  // 0xC
     unsigned int q00D;  // 0xD
-    bool q00E;  // 0xE
-    bool q00F;  // 0xF
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
@@ -28,16 +26,6 @@ struct ScoreScreen {
     unsigned int ScoreScreen_field_0x14;
     unsigned int ScoreScreen_field_0x18;
     unsigned int *__pad_0;
-    unsigned int u32_3AC;
-    unsigned int u32_3B0;
-    unsigned int u32_3B4;
-    unsigned int u32_3B8;
-    unsigned int u32_3BC;
-    unsigned int u32_3C4;
-    unsigned int u32_3C8;
-    unsigned int u32_3CD;
-    unsigned int u32_3D0;
-    unsigned int u32_3D4;
     unsigned int Audio;
     unsigned int Debug;
     unsigned int Timer;

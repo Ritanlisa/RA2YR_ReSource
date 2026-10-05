@@ -18,25 +18,16 @@ struct ParasiteClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     unsigned int creationFrame;  // 0x24
     int q028;  // 0x28
     bool q02B;  // 0x2B
     void* q02C;  // 0x2C
-    unsigned int ParasiteClass_field_30;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     unsigned int ParasiteClass_field_34;  // 0x34
-    void *q38;  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
-    void *q3C;  // 0x3C
-    unsigned int q03D;  // 0x3D
-    void *q40;  // 0x40
-    bool q042;  // 0x42
     unsigned int ParasiteClass_field_38;
     unsigned int *__pad_28;
     unsigned int q044;
@@ -46,14 +37,9 @@ struct ParasiteClass {
     unsigned int u32_48;
     unsigned int u32_50;
     unsigned int u32_54;
-    unsigned int uniqueId0;
-    unsigned int vtable46;
-    unsigned int nextArrayIndex8;
     unsigned int ParasiteClass_field_3C;
     unsigned int ParasiteClass_field_40;
     unsigned int u32_38;
-    unsigned int q110;
-    unsigned int q120;
     unsigned int q130;
     unsigned int q140;
     unsigned int q0E0;

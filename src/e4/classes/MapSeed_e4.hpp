@@ -18,7 +18,6 @@ struct MapSeed {
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
     unsigned int *__pad_0;
-    unsigned int q00C0;
     unsigned char MapSeed_field_0x04;  // 0x4
     unsigned char MapSeed_field_0x08;  // 0x8
     unsigned char MapSeed_field_0x0C;  // 0xC

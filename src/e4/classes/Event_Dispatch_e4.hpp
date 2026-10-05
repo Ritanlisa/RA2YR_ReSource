@@ -7,7 +7,6 @@ namespace gamemd {
 
 struct Event_Dispatch {
 // --- flat members (BEGIN) ---
-    char Event_Dispatch_field_00[4];  // 0x0
 // --- flat members (END) ---
     char Return0();
 };

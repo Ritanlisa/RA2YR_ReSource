@@ -14,7 +14,6 @@ struct LoadGame {
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
-    unsigned char u8_19;  // 0x19
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24

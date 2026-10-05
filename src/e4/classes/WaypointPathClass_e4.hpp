@@ -15,34 +15,21 @@ struct WaypointPathClass {
     unsigned int q011;  // 0x11
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     unsigned char NeedsSaveOrLink;  // 0x20
     unsigned int idxArray;  // 0x24
-    void *q28;  // 0x28
     bool q02B;  // 0x2B
     unsigned int u32_2C;  // 0x2C
     unsigned int u32_30;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     unsigned char q034;  // 0x34
-    void* p35;  // regen name
     unsigned int q038;  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     unsigned int q03C;  // 0x3C
-    unsigned int q03D;  // 0x3D
-    char waypointCount[4];  // 0x40
-    bool q042;  // 0x42
-    char waypointCapacity[4];  // 0x44
-    unsigned char WaypointClass_field_34;  // 0x48
-    unsigned char WaypointClass_field_35;  // 0x49
-    unsigned char pad_36;  // 0x4A
     unsigned int AbstractClass;
     unsigned int waypoints;
     unsigned int u32_28;
-    unsigned int u32_35;
 // --- flat members (END) ---
     WaypointPathClass * ProcessEvent(char a2);
     _DWORD * Construct(unsigned int aP1);

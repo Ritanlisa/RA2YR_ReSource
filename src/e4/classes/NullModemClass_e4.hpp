@@ -9,16 +9,11 @@ struct NullModemClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     int PlayerIndex;  // 0x4
-    unsigned int q8;  // 0x8
-    bool q00A;  // 0xA
     bool q00B;  // 0xB
     void* LastPacketTime;  // 0xC
-    unsigned int q10;  // 0x10
     void* PacketsReceived;  // 0x14
-    unsigned int Active3;
     unsigned int ConnectionClass;
     unsigned int PlayerIndex4;
-    unsigned int PlayerIndex9;
     unsigned int u32_1C;
     unsigned int u32_34;
     unsigned int u32_38;

@@ -21,7 +21,6 @@ struct Text {
 
     unsigned int u32_2C;  // G42.39 data supply
 
-    unsigned int u32_2714;  // G42.39 data supply
 };
 
 } // namespace gamemd

@@ -23,17 +23,12 @@ struct FoggedObjectClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
     unsigned char m_1[4];  // 0x1
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     int m_8;  // 0x8
-    void *q24;  // 0x24
-    unsigned int q28;  // 0x28
     bool q02B;  // 0x2B
     char Cell[4];  // 0x2C
-    unsigned int LastSight2;
     unsigned int q030;
     unsigned int q034;
     unsigned int q038;
@@ -55,7 +50,6 @@ struct FoggedObjectClass {
     unsigned int vtable4;
     unsigned int LastSight;
     unsigned int u32_64;
-    unsigned int u32_69;
     unsigned char __pad_0;  // 0x0
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);

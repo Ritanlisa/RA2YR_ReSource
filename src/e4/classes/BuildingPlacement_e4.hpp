@@ -27,13 +27,10 @@ struct BuildingPlacement {
     unsigned int *__pad_0;
     unsigned int q0046;
     unsigned int q054;
-    unsigned int u32_184;
-    unsigned int u32_204;
     unsigned int u32_2C;
     unsigned int u32_44;
     unsigned int u32_48;
     unsigned int u32_4C;
-    unsigned int u32_90;
 // --- flat members (END) ---
     VectorClass_flat * * ProcessBuildingPlacementAction();
     unsigned int * FindPosition(int * a0, IUnknown * aP1, IUnknown);

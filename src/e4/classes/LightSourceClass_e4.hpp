@@ -18,9 +18,7 @@ struct LightSourceClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     unsigned int LightIntensity;  // 0x24
     char LightTint[12];  // 0x28
@@ -32,15 +30,10 @@ struct LightSourceClass {
     char DetailLevel[4];  // 0x34
     char Location[12];  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     unsigned int q03C;  // 0x3C
-    unsigned int q03D;  // 0x3D
     unsigned int q040;  // 0x40
-    bool q042;  // 0x42
     char LightVisibility[4];  // 0x44
     bool Activated;  // 0x48
-    bool tail_49;  // 0x49
-    bool q04A;  // 0x4A
 // --- flat members (END) ---
     LightSourceClass * CopyTo(char a2);
     int Constructor();

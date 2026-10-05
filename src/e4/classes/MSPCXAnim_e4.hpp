@@ -13,7 +13,6 @@ struct MSPCXAnim {
     bool q00B;  // 0xB
     unsigned char q00C;  // 0xC
     bool q00D;  // 0xD
-    bool q00E;  // 0xE
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18

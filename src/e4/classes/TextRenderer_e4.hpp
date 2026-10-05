@@ -24,10 +24,7 @@ struct TextRenderer {
     void* q054;  // 0x54
     unsigned int u32_61;
     unsigned int u32_70;
-    unsigned int u32_71;
     unsigned int u32_80;
-    unsigned int u32_86;
-    unsigned int u32_87;
     unsigned int *__pad_4C;
 // --- flat members (END) ---
     TriggerTypeClass * Destructor(char a2);

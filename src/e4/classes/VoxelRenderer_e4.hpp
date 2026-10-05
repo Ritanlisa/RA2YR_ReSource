@@ -19,7 +19,6 @@ struct VoxelRenderer {
     unsigned int *__pad_0;
     unsigned int q028;
     unsigned int q02C;
-    unsigned int q070;
 // --- flat members (END) ---
     int InitializeBuffers(int a2, unsigned int * a3, int a4);
     int ProjectVertex(float a2, float a3, float a4, char a5);

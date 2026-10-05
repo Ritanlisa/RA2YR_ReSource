@@ -16,9 +16,7 @@ struct AlphaShapeClass {
     bool IsAllocated;  // 0x13
     unsigned int u32_14;  // 0x14
     unsigned char q018;  // 0x18
-    unsigned int q01A;  // 0x1A
     unsigned char q01C;  // 0x1C
-    bool q01D;  // 0x1D
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
     unsigned int AlphaShapeClass_field_0x04;

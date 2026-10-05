@@ -19,16 +19,11 @@ struct CheckListClass {
     char Enabled;  // 0x15
     int Count;  // 0x16
     unsigned char q018;  // 0x18
-    unsigned int q01A;  // 0x1A
-    bool q01B;  // 0x1B
     unsigned char q01C;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned int q01E;  // 0x1E
     unsigned int u32_20;  // 0x20
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
     unsigned char q02C;  // 0x2C
-    unsigned int q02D;  // 0x2D
     unsigned char q030;  // 0x30
     unsigned char q031;  // 0x31
     unsigned char q034;  // 0x34
@@ -37,7 +32,6 @@ struct CheckListClass {
     unsigned char q040;  // 0x40
     unsigned char q044;  // 0x44
     unsigned int u32_48;  // 0x48
-    bool q04A;  // 0x4A
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
 // --- flat members (END) ---

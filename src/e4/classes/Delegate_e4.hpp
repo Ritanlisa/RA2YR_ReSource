@@ -11,15 +11,8 @@ struct Delegate {
 // --- flat members (BEGIN) ---
     void* m_items;  // 0x0
     void *q4;  // 0x4
-    void* p8;  // regen name
     bool m_allocated;  // 0xC
     unsigned char q00D;  // 0xD
-    char Delegate_field_10[4];  // 0x10
-    char Delegate_field_14[4];  // 0x14
-    void* m_straw;  // 0x18
-    void* m_pipe;  // 0x1C
-    char Delegate_field_20[4];  // 0x20
-    char Delegate_field_24[4];  // 0x24
     unsigned int Blowfish;
     unsigned int Previous;
     unsigned int Straw_field_0x04;

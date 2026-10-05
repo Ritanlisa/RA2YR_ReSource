@@ -7,7 +7,6 @@ namespace gamemd {
 
 struct Float {
 // --- flat members (BEGIN) ---
-    char Float_field_00[4];  // 0x0
 // --- flat members (END) ---
     float SubtractClamped(BuildingTypeClass * aP1, IUnknown * aP2);
     float Accumulate(float value, int index);

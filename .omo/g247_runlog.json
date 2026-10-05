@@ -1,0 +1,58 @@
+[
+ {
+  "range": [
+   0,
+   20
+  ],
+  "absorbed": [
+   "AudioList",
+   "AudioPool",
+   "AudioSource",
+   "BitmapClass",
+   "BuildingLightQueue",
+   "CDTimerClass",
+   "CampaignScore",
+   "CampaignSelect",
+   "CountdownTimer"
+  ],
+  "probe_tus": 20,
+  "delta_sent": 0,
+  "rolled_back_post_census": []
+ },
+ {
+  "range": [
+   20,
+   40
+  ],
+  "absorbed": [
+   "Init",
+   "ModemGame",
+   "NetworkEventQueueClass",
+   "Performance",
+   "PhoneEditor",
+   "SHPClass"
+  ],
+  "probe_tus": 53,
+  "delta_sent": -1,
+  "rolled_back_post_census": []
+ },
+ {
+  "range": [
+   40,
+   55
+  ],
+  "absorbed": [
+   "StructTable",
+   "TabCameoListClass",
+   "TheatreClass",
+   "TimerPool",
+   "Tree",
+   "TypeClass",
+   "Vector4",
+   "VectorClassUInt"
+  ],
+  "probe_tus": 23,
+  "delta_sent": 0,
+  "rolled_back_post_census": []
+ }
+]

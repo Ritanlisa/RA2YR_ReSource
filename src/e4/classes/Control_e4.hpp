@@ -7,7 +7,6 @@ namespace gamemd {
 
 struct Control {
 // --- flat members (BEGIN) ---
-    char Control_field_00[4];  // 0x0
 // --- flat members (END) ---
     int CheckControlTypeDialog();
     int DispatchClick(int aP1);

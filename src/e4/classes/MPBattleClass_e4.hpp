@@ -9,10 +9,8 @@ struct MPBattleClass {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    bool q00A;  // 0xA
     bool q00B;  // 0xB
     bool q00D;  // 0xD
-    bool q00E;  // 0xE
     bool q010;  // 0x10
     bool q014;  // 0x14
     unsigned char q015;  // 0x15

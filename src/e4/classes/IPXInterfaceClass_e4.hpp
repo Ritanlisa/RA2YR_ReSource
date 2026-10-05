@@ -15,32 +15,15 @@ struct IPXInterfaceClass {
     unsigned char __pad_0[87];  // 0x0
     unsigned char m_1[4];  // 0x1
     bool Initialized;  // 0x4
-    unsigned short BoundSocket;  // 0x6
     unsigned int LocalNetwork;  // 0x8
-    unsigned int u16_A;  // 0xA
     unsigned char LocalNode;  // 0xC
     bool IsAllocated;  // 0xD
     void* Count;  // 0x10
-    unsigned short tail_12;  // 0x12
     unsigned int Socket;
-    unsigned int q3F060;
-    unsigned int q3F06C;
-    unsigned int q3F074;
-    unsigned int q3F2FC;
-    unsigned int q3F300;
     unsigned int u32_18;
     unsigned int u32_24;
     unsigned int u32_3F2FC;
-    unsigned int u32_3F300;
-    unsigned int u32_3F304;
     unsigned short m_10;  // 0x10
-    unsigned int u32_3F30A;
-    unsigned int u32_7E0F0;
-    unsigned int u32_7E60C;
-    unsigned int u32_CA340;
-    unsigned int u32_CA344;
-    unsigned int u32_FC1D0;
-    unsigned int BoundPort;
     unsigned int u32_1C;
     unsigned int u32_28;
     unsigned int u32_4;
@@ -48,10 +31,7 @@ struct IPXInterfaceClass {
     unsigned int u32_45;
     unsigned int u32_8;
     unsigned int u32_80;
-    unsigned int u32_81;
     unsigned int u32_C;
-    unsigned int BoundPort8;
-    unsigned int BoundPort9;
     unsigned int u32_30;
     unsigned int u32_34;
     unsigned int u32_38;
@@ -66,20 +46,10 @@ struct IPXInterfaceClass {
     unsigned int u32_3F05C;
     unsigned int u32_3F060;
     unsigned int u32_3F064;
-    unsigned int u32_FC1A0;
     unsigned int Destru_vt14;
-    unsigned int LocalNode6;
     unsigned int q018;
-    unsigned int q0208;
-    unsigned int q3F070;
     unsigned int u32_42;
-    unsigned int q3F050;
-    unsigned int q3F05C;
-    unsigned int __pad_09A;
-    unsigned int u32_2A0;
-    unsigned int __pad_04C;
     unsigned int q048;
-    unsigned int u32_204;
     unsigned int m_C;  // 0xC
     unsigned int m_8;  // 0x8
 // --- flat members (END) ---

@@ -14,14 +14,10 @@ struct TagClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    void* p10;  // regen name
-    void* p11;  // regen name
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     TagTypeClass* buildingType;  // 0x24
     TriggerClass* firstTrigger;  // 0x28
@@ -31,13 +27,8 @@ struct TagClass {
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     bool destroyed;  // 0x34
-    bool isExecuting;  // 0x35
-    unsigned char align36;  // 0x36
     unsigned int u32_38;
     unsigned int u32_3C;
-    unsigned int vtable20;
-    unsigned int vtable26;
-    unsigned int vtable27;
     unsigned int q011;
     unsigned int uniqueId;
 // --- flat members (END) ---

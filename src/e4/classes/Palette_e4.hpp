@@ -10,7 +10,6 @@ struct Palette {
     unsigned int m_Colors;  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
-    char Palette_field_400[4];  // 0x400
     unsigned int Palette_6BitTo16Bit;
 // --- flat members (END) ---
     int CalcColorDistance(unsigned char * a2, void *a2_2);

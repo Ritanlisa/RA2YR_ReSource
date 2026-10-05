@@ -29,9 +29,7 @@ struct CCINIClass {
     unsigned int q03C;  // 0x3C
     bool ownsFile;  // 0x40
     unsigned int q044;  // 0x44
-    unsigned char padding45;  // 0x45
     unsigned char q048;  // 0x48
-    char CCINIClass_field_4C[4];  // 0x4C
     char unknown50[4];  // 0x50
     char unknown54[4];  // 0x54
     unsigned int INIClass;

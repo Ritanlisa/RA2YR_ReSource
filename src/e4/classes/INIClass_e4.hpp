@@ -26,9 +26,6 @@ struct INIClass {
     VoxelStruct * q028;  // 0x28
     char INIClass_field_2C[4];  // 0x2C
     char unknown30[4];  // 0x30
-    bool needsSave_flag;  // 0x34
-    unsigned char q035;  // 0x35
-    void *q38;  // 0x38
     unsigned int INIClass_field_3C;  // 0x3C
     unsigned int Capacity;
     unsigned int IsAllocated;
@@ -37,7 +34,6 @@ struct INIClass {
     unsigned int *__pad_0;
     unsigned int *__pad_20;
     unsigned int q0146;
-    unsigned int sectionHead0;
     unsigned int vtable0;
 
     unsigned int unknown38;
@@ -49,7 +45,6 @@ struct INIClass {
 
     void* LookupEnum;  // 0x0 (no offset truth)
 
-    void* vt_INISection;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __int8 *a4, int a5, int aP2, int aP1, int aP3);
     ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);

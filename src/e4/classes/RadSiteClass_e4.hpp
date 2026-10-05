@@ -18,9 +18,7 @@ struct RadSiteClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     LightSourceClass* LightSource;  // 0x24
     char RadLevelTimer[12];  // 0x28
@@ -32,19 +30,13 @@ struct RadSiteClass {
     char RadLightTimer[12];  // 0x34
     unsigned int q038;  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     LightSourceClass* q03C;  // 0x3C
-    unsigned int q03D;  // 0x3D
     char BaseCell[4];  // 0x40
-    void* ptr_42;  // 0x42
     unsigned int Spread;  // 0x44
     unsigned int SpreadInLeptons;  // 0x48
-    bool q04A;  // 0x4A
     unsigned int RadLevel;  // 0x4C
-    unsigned char q04F;  // 0x4F
     unsigned int LevelSteps;  // 0x50
     unsigned int Intensity;  // 0x54
-    char Tint[12];  // 0x58
     char IntensityDecrement[4];  // 0x5C
     char q060[4];  // 0x60
     int q064;  // 0x64

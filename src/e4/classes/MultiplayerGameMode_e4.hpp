@@ -11,7 +11,6 @@ struct MultiplayerGameMode {
     unsigned char q004;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char q00C;  // 0xC
-    unsigned char u8_D;  // 0xD
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
@@ -22,9 +21,7 @@ struct MultiplayerGameMode {
     unsigned int MultiplayerGameMode_field_0x14;
     unsigned int MultiplayerGameMode_field_0x18;
     unsigned int *__pad_0;
-    unsigned int q00C2;
     unsigned int q0104;
-    unsigned int q0108;
     unsigned int u32_38;
     void* vt_InitializerBase;  // 0x0 (no offset truth)
     void* GetFirst;  // 0x0 (no offset truth)

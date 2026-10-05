@@ -20,30 +20,21 @@ struct TeleportLocomotionClass {
     void* vtable3;  // 0x18
     unsigned char __pad_18[121];  // 0x18
     char MovingDestination[12];  // 0x1C
-    bool q01D;  // 0x1D
     ILocomotion * q020;  // 0x20
     unsigned int u32_24;  // 0x24
     char LastCoords[12];  // 0x28
     bool q02B;  // 0x2B
     unsigned int u32_2C;  // 0x2C
-    ObjectClass * ptr_30;  // 0x30
     unsigned char q031;  // 0x31
-    ILocomotion * ptr_20;  // 0x32
-    unsigned int q033;  // 0x33
     bool Moving;  // 0x34
     bool TeleportLocomotionClass_field_bool_35;  // 0x35
     bool TeleportLocomotionClass_field_bool_36;  // 0x36
-    bool q037;  // 0x37
     unsigned int State;  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     char Timer[12];  // 0x3C
-    unsigned int q03D;  // 0x3D
     char q040[4];  // 0x40
-    bool q042;  // 0x42
     unsigned int q044;  // 0x44
     ILocomotion* Piggybackee;  // 0x48
-    bool q04A;  // 0x4A
 // --- flat members (END) ---
 TeleportLocomotionClass();
 };

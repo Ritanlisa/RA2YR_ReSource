@@ -112,8 +112,6 @@ struct AbstractClass {
     unsigned int nextArrayIndex;  // 0x18
     unsigned char u8_1A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned char u8_1E;  // 0x1E
     unsigned char needsSave;  // 0x20
     unsigned int alignmentPadding;  // 0x21
     unsigned int AirstrikeClass_field_50;
@@ -149,12 +147,10 @@ struct AbstractClass {
     unsigned int parent_gap;
     unsigned int q028;
     unsigned int q034;
-    unsigned int qAA4;
     unsigned int u32_1C;
     unsigned int u32_24;
     unsigned int u32_2C;
     unsigned int vtable0;
-    unsigned int vtable22;
     unsigned int *__pad_28;
     unsigned int creationFrame;
     unsigned int TEventClass_field_28;
@@ -166,22 +162,10 @@ struct AbstractClass {
     unsigned int *__pad_48;
     unsigned int spawnVectorCount;
     unsigned int DiskLaserClass_field_0x28;  // 0x28
-    unsigned int q3D4;  // 0x3D4
     unsigned int q090;  // 0x90
-    unsigned int q0C0;  // 0xC0
-    unsigned int q2E0;  // 0x2E0
-    unsigned int q2F0;  // 0x2F0
     unsigned int q300;  // 0x300
-    unsigned int q310;  // 0x310
-    unsigned int qF50;  // 0xF50
     unsigned char __pad_F70[1453];  // 0xF70
     unsigned char __pad_1714[126];  // 0x1714
-    unsigned int q1EE0;  // 0x1EE0
-    unsigned int q22F;  // 0x22F
-    unsigned int q235;  // 0x235
-    unsigned int q7E0;  // 0x7E0
-    unsigned int q614;  // 0x614
-    unsigned int q231;  // 0x231
     unsigned int q008;  // 0x8
     unsigned int q098;  // 0x98
     unsigned int q0A0;  // 0xA0
@@ -418,7 +402,6 @@ int DTOR(); // 0x4101F0
     AbstractClass * * AnnounceExpiredPointer(AbstractClass *a1, int a2, int aP0, int aP1, int aP2);
     void DTOR(void *a1_1);
     int COMStub_Return0_38(void *a1_1);
-    unsigned int q_B;  // +0xB flat supply (three-ban reform)
     unsigned int q_4B;  // +0x4B flat supply (final pass)
     unsigned int q_5C1C;  // +0x5C1C flat supply (final pass)
 };

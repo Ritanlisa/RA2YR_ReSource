@@ -8,12 +8,7 @@ namespace gamemd {
 struct ScrollClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char m_ScrollY[4];  // 0x4
-    char m_MaxX[4];  // 0x8
-    char m_MaxY[4];  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int m_ScrollX;
-    unsigned int u32_14FB0;
 // --- flat members (END) ---
     short Read(char * Block, char a2);
     int Scroll(int * a1, MouseClass * aP2);

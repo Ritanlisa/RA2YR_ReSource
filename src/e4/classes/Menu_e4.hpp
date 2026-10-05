@@ -24,7 +24,6 @@ struct Menu {
     unsigned int q064;  // 0x64
     unsigned int q100;  // 0x100
     unsigned int q114;  // 0x114
-    unsigned int q134;  // 0x134
     unsigned int q150;  // 0x150
 // --- flat members (END) ---
     int Reset(void *a1, void *a2);

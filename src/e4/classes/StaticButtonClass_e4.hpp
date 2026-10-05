@@ -15,7 +15,6 @@ struct StaticButtonClass {
     unsigned char q014;  // 0x14
     char Enabled;  // 0x15
     unsigned int *__pad_0;
-    unsigned int q00C6;
 // --- flat members (END) ---
     StaticButtonClass * QueryInterface(char a2);
     static void Draw(void * aP0, wchar_t * aP1, int aP2);  // G42.33 b9 static-form (call site 0x6c658e)

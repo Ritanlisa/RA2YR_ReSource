@@ -17,16 +17,11 @@ struct MechLocomotionClass {
     unsigned char Dirty;  // 0x11
     unsigned int RefCount;  // 0x14
     char MovingDestination[12];  // 0x18
-    unsigned int q01A;  // 0x1A
-    bool q01D;  // 0x1D
     ILocomotion * q020;  // 0x20
     char HeadToCoord[12];  // 0x24
     unsigned int q028;  // 0x28
     bool q02B;  // 0x2B
     bool IsMoving;  // 0x30
-    unsigned char tail_31;  // 0x31
-    ILocomotion * ptr_20;  // 0x32
-    unsigned int q033;  // 0x33
     unsigned int LocomotionClass;
 // --- flat members (END) ---
     MechLocomotionClass * ProcessMove(unsigned int * Block, char a2);

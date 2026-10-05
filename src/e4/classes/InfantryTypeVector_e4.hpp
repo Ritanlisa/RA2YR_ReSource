@@ -11,7 +11,6 @@ struct InfantryTypeVector {
     unsigned int u32_4;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
-    unsigned char u8_D;  // 0xD
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18

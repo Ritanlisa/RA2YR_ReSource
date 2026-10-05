@@ -16,9 +16,7 @@ struct EMPulseClass {
     bool IsAllocated;  // 0x13
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
-    unsigned int q01A;  // 0x1A
     unsigned char q01C;  // 0x1C
-    bool q01D;  // 0x1D
     unsigned int IterateCellsInRadius;
 // --- flat members (END) ---
     EMPulseClass * CopyTo(void * a2, char a3);

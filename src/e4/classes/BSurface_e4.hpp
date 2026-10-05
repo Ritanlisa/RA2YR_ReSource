@@ -9,13 +9,11 @@ struct BSurface {
     void* vtable1;  // 0x0
     void* Width;  // 0x4
     int Height;  // 0x8
-    bool q00A;  // 0xA
     bool q00B;  // 0xB
     int LockCount;  // 0xC
     int BytesPerPixel;  // 0x10
     unsigned char* Buffer;  // 0x14
     unsigned int XSurface;
-    unsigned int q0188;
     unsigned int q044;
     unsigned int u32_18;
     unsigned int u32_1C;

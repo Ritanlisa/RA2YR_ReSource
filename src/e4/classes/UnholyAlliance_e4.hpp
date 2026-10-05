@@ -8,7 +8,6 @@ namespace gamemd {
 struct UnholyAlliance {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char UnholyAlliance_field_04[4];  // 0x4
 // --- flat members (END) ---
     BOOL Write(void * aP0);
     UnholyAlliance * QueryInterface(unsigned int * Block, char a2);

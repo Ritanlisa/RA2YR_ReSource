@@ -14,10 +14,6 @@ struct Campaign {
     void* q080;  // 0x80
     void* q128;  // 0x128
     unsigned int q33C;  // 0x33C
-    unsigned int q828;  // 0x828
-    void* q1634;  // 0x1634
-    unsigned int q2088;  // 0x2088
-    void* q5684;  // 0x5684
 // --- flat members (END) ---
     LONG Screen(char a1);
 };
