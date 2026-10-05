@@ -574,7 +574,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindClosestObjectCell(_DWORD *a2, char a3, int a4);
     int FindObjectCell(int a1, int a2);  // 0x47c5a0 -- Object::FindObjectCell
     int IsAlliedWithObjectHouse(int a2);
-    bool IsAlliedWithObjectSimpleHouse(int a1);  // 0x4f9af0 -- Object::IsAlliedWithObjectSimpleHouse
+    bool IsAlliedWithObjectSimpleHouse(void *a1);  // 0x4f9af0 gB truth: _BYTE* a2 -- Object::IsAlliedWithObjectSimpleHouse
     void* RemoveObjectArray();  // 0x53e420 -- Object::RemoveObjectArray
     void* FindNearestObjectAtCell(int a1);  // 0x56c210 -- Object::FindNearestObjectAtCell
     int Unlink();  // 0x5f5230 -- Object::Unlink
@@ -634,6 +634,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int QueueTechnoVoiceLine( TechnoClass * aP1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, TechnoClass * aP5, TechnoClass * aP6, TechnoClass * aP7, TechnoClass * aP8, TechnoClass * aP9, TechnoClass * aP10, TechnoClass * aP11);  // G42.39 supply
 
     void* RenderTechnoOverlaySHP( TechnoClass * aP1, int a3, TechnoClass * aP3, int a5, TechnoClass * aP5, TechnoClass * aP6, int a8, char a9, TechnoClass * aP9, TechnoClass * aP10, int a12);  // G42.39 supply
+    void* vtable1;  // 0x0 (ml truth)  gB vtable supply
+    void* vtable3;  // 0x8 (ml truth)  gB vtable supply
 };
 
 } // namespace game

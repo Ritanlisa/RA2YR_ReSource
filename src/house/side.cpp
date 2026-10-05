@@ -18,7 +18,6 @@ SideClass::SideClass() noexcept
 
 } // namespace gamemd
 
-#include "house/side.hpp"
 
 namespace gamemd {
 

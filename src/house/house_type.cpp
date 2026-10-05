@@ -104,7 +104,6 @@ int HouseTypeClass::FindIndexOfName(const char* name)
 
 } // namespace gamemd
 
-#include "house/house_type.hpp"
 
 namespace gamemd {
 

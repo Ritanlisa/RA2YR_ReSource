@@ -26,7 +26,6 @@ int CampaignClass::FindIndex(const char* name)
 
 } // namespace gamemd
 
-#include "team/campaign.hpp"
 
 namespace gamemd {
 

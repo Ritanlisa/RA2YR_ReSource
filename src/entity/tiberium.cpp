@@ -53,7 +53,6 @@ TiberiumClass::TiberiumClass(const CellStruct& cell,
 
 } // namespace gamemd
 
-#include "entity/tiberium.hpp"
 
 namespace gamemd {
 

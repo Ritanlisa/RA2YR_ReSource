@@ -134,7 +134,6 @@ void UpdateDeferredLightSurfaces(void* surface)
 
 } // namespace gamemd
 
-#include "entity/particle.hpp"
 
 namespace gamemd {
 

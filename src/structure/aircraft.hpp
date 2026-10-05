@@ -187,6 +187,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int storedTiberium;  // +0x350 (ml flat supply)
     int isTether;  // +0x418 (ml flat supply)
     int waypointIndex;  // +0x686 (ml flat supply)
+    unsigned int FootClass_field_680; // 0x680  gB member supply
+    void* vtable2;  // 0x4 (ml truth)  gB vtable supply
+    void* vtable3;  // 0x8 (ml truth)  gB vtable supply
+    void* vtable4;  // 0xC (ml truth)  gB vtable supply
 };
 
 } // namespace gamemd

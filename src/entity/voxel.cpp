@@ -237,7 +237,6 @@ constexpr float TSNormals[36][3] = {
 
 } // namespace gamemd
 
-#include "entity/voxel.hpp"
 
 namespace gamemd {
 

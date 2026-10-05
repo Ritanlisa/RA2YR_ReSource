@@ -144,7 +144,6 @@ void AnimClass::FreeRenderBuffer()
 
 } // namespace gamemd
 
-#include "entity/anim.hpp"
 
 namespace gamemd {
 

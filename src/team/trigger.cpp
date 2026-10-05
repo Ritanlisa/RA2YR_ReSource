@@ -362,7 +362,6 @@ bool TriggerTypeClass::RemoveEvent(TEventClass* event)
 
 } // namespace gamemd
 
-#include "team/trigger.hpp"
 
 namespace gamemd {
 

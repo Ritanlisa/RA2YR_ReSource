@@ -18,7 +18,7 @@ ScriptActionNode* ScriptClass::GetCurrentAction(
         return buffer;
     }
 
-    if (buffer)
+    if (unsigned int a1, unsigned int a2)
         *buffer = buildingType->scriptActions[idxCurrentLine];
     return buffer;
 }
@@ -72,7 +72,6 @@ bool ScriptTypeClass::LoadFromINIList(CCINIClass* ini, bool is_global)
 
 } // namespace gamemd
 
-#include "team/script.hpp"
 
 namespace gamemd {
 

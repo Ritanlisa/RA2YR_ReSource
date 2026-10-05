@@ -21,7 +21,6 @@ SmudgeClass::SmudgeClass(SmudgeTypeClass* pType, const CellStruct& cell,
 
 } // namespace gamemd
 
-#include "entity/smudge.hpp"
 
 namespace gamemd {
 

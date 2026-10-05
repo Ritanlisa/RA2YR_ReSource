@@ -70,6 +70,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int PowerDrainUpdate(int a1);  // 0x6914E0
     void* ProcessEvent(int a1);  // 0x691EE0
     // --- gap2 auto-generated stub declarations (END) ---
+    void* vtable4;  // 0xC (ml truth)  gB vtable supply
 };
 
 // --- ScriptTypeClass ---
@@ -118,6 +119,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadTypeData(int a1, int a2);  // 0x691d90
     int ReadINI(int a1, int a2);  // 0x6e8340
     // === FUNCS-MOVE (END) ===
+    void* vtable2;  // 0x4 (ml truth)  gB vtable supply
 };
 
 } // namespace gamemd

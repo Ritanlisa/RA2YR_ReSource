@@ -261,7 +261,6 @@ int CampaignClass::Stat(int *a2) {
 // 0x49E4F0
 namespace gamemd {
 int CampaignClass::GetValue(unsigned int *result) {
-    int result; // eax
 
     if ( !this->q060 ) /*0x49e4f3*/
       this->LoadFromINI(); /*0x49e4fa*/
@@ -416,7 +415,7 @@ int CampaignClass::DeleteAndZero(const char **a2) {
 
 namespace gamemd {
 int CampaignClass::Check(int a2) {
-    if ( *(int *)((char *)&this->vtable26) > a2 ) /*0x5cf81e +10 count*/
+    if ( *(int *)((char *)&this->q01A) > a2 ) /*0x5cf81e +10 count*/
       return *((unsigned int *)(*(unsigned int *)&this->vtable2) + a2); /*0x5cf828 +4 items*/
     else
       return 0; /*0x5cf820*/
@@ -1522,7 +1521,7 @@ int TriggerClass::EvaluateCondition(void *a2, int a3, int a4) {
         goto LABEL_36; /*0x41e840*/
       goto LABEL_34; /*0x41e840*/
     }
-    vtable0 = *(void **)dword_A8B230_arr[43].vtable0; /*0x41e7f4*/
+    vtable0 = *(void **)dword_A8B230_arr[43].vtable1; /*0x41e7f4*/
     if ( !vtable0 ) /*0x41e7fc*/
     {
   LABEL_34:
@@ -2422,8 +2421,8 @@ int TeamClass::SelectWaypointTarget(int a2, int a3) {
 // 0x6ECA70
 namespace gamemd {
 int TeamClass::SelectAttackTarget(int a2, int a3) {
-    Object *CellFromArray; // eax
-    Object *v5; // esi
+    ObjectClass *CellFromArray; // eax
+    ObjectClass *v5; // esi
     char v6; // al
     int ObjectCell; // eax
     int v8; // esi
@@ -2433,10 +2432,10 @@ int TeamClass::SelectAttackTarget(int a2, int a3) {
 
     if ( a3 ) /*0x6eca7d*/
     {
-      CellFromArray = (Object *)((ScenarioClass *)dword_A8B230)->GetCellFromArray(*(unsigned int *)(a2 + 4)); /*0x6eca8d*/
+      CellFromArray = (ObjectClass *)((ScenarioClass *)dword_A8B230)->GetCellFromArray(*(unsigned int *)(a2 + 4)); /*0x6eca8d*/
       v5 = CellFromArray; /*0x6eca92*/
       if ( !CellFromArray /*0x6ecadc*/
-        || (*(int (__thiscall **)(Object *))(*(void * *)&CellFromArray->fallRate)(CellFromArray) != 11
+        || (*(int (__thiscall **)(ObjectClass *))(*(void * *)&CellFromArray->fallRate)(CellFromArray) != 11
         || (v6 = IDA_BYTE1(*(unsigned int *)&v5->q140) & 1,
             v11[0] = 0,
             v11[1] = 0,
@@ -2474,7 +2473,7 @@ int TeamClass::AssignMemberToCoordinator(int a2, int a3) {
     void *CellFromArray; // eax
     AbstractClass *queuedFocus; // ecx
     AbstractClass *v6; // esi
-    Object *v7; // eax
+    ObjectClass *v7; // eax
     int ObjectCell; // eax
     unsigned int v10[2]; // [esp+4h] [ebp-8h] BYREF
 
@@ -2488,7 +2487,7 @@ int TeamClass::AssignMemberToCoordinator(int a2, int a3) {
     {
       v6 = this->queuedFocus; /*0x6ece9b*/
       if ( v6 )
-        v7 = (*((int (__thiscall **)(AbstractClass *))*(void * *)&v6->q_B)(this->queuedFocus) == 11 ? (Object *)v6 : 0;
+        v7 = (*((int (__thiscall **)(AbstractClass *))*(void * *)&v6->q_B)(this->queuedFocus) == 11 ? (ObjectClass *)v6 : 0;
       else
         v7 = 0; /*0x6ecea2*/
       v10[0] = 0; /*0x6ecec1*/
@@ -3302,7 +3301,7 @@ int TriggerClass::Construct(int a2) {
     if ( *(unsigned int *)(this + 36) ) /*0x7260e0*/
     {
       if ( (((BuildingClass *)this)->ProcessUpgradeEffects(), v7 = *(unsigned char **)(this + 36), !v7[159]) /*0x726121*/
-        || (vtable0 = (void *)dword_A8B230_arr[43].vtable0) == 0 && !v7[156]
+        || (vtable0 = (void *)dword_A8B230_arr[43].vtable1) == 0 && !v7[156]
         || vtable0 == (void *)1 && !v7[157]
         || vtable0 == (void *)2 && !v7[158] )
       {

@@ -16,6 +16,8 @@
 #include "e4/classes/Cell_e4.hpp"  // G42.42f: CellClass::GetGroundHeight static (MoveTo)
 #include "e4/classes/E4Recv_5785F0_e4.hpp"  // G42.42f: IsCoordVisibleMap (MoveTo)
 #include "misc/locomotion.hpp"  // G42.42f: FacingClass::Set_SyncLog (MoveTo)
+#include "e4/classes/AircraftTypeClass_e4.hpp"  // gB C2027 supply
+#include "e4/classes/RulesClass_e4.hpp"  // gB C2027 supply
 
 namespace gamemd {
 

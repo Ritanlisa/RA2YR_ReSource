@@ -67,7 +67,6 @@ MPManBattleClass::MPManBattleClass() noexcept
 
 } // namespace gamemd
 
-#include "network/multiplayer.hpp"
 
 namespace gamemd {
 

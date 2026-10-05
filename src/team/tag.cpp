@@ -370,8 +370,6 @@ void TagTypeClass::SaveToINIList(CCINIClass* ini)
 
 } // namespace gamemd
 
-#include "team/tag.hpp"
-#include "e4/e4_globals_decls.hpp"
 #include "e4/e4_globals_decls.hpp"
 
 namespace gamemd {

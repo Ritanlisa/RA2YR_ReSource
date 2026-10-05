@@ -104,7 +104,6 @@ WaveClass::WaveClass(TechnoClass* pTarget, WaveType waveType,
 
 } // namespace gamemd
 
-#include "entity/wave.hpp"
 
 namespace gamemd {
 

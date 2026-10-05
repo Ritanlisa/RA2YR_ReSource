@@ -50,7 +50,6 @@ SessionClass::~SessionClass()
 
 } // namespace gamemd
 
-#include "network/session.hpp"
 
 namespace gamemd {
 

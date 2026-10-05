@@ -6,6 +6,7 @@
 #include "network/multiplayer.hpp"
 #include "core/guid.hpp"  // G42.55 closure (GUID)
 #include "network/network_ext.hpp"  // G42.55 closure (Socket)
+#include "e4/classes/NetworkID_e4.hpp"  // gB dedup: NetworkID single-source (C2011 vs local def)
 
 namespace gamemd
 {
@@ -439,19 +440,6 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
-// CSP: NetworkID matched via T1
-class NetworkID
-{
-public:
-    // design: default destructor (compiler-generated), no callgraph reference
-    virtual ~NetworkID() = default;
-
-    virtual __int16 Assign(_DWORD *a2, int a3, __int16);
-    virtual int Compare(int a2);
-
-    uint8_t NetworkID_field_0x04[4];
-};
-// 2 methods in IDA
 // CSP: NetworkManager matched via T1
 class NetworkManager
 {
@@ -498,6 +486,7 @@ public:
     virtual void IsPlayerInGame(); // 0x69B600
 
     uint8_t NetworkSession_field_0x04[4];
+    unsigned int __pad_0; // 0x0  gB member supply
 };
 // 1 methods in IDA
 class NetworkSettings

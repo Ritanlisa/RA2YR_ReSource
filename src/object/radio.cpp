@@ -91,13 +91,13 @@ void RadioClass::sendToEachLink(RadioCommand command)
 
 // ============================================================
 // ExecuteAction (IDA: 0x65aac0, vt10)
-// IDA: Object::Unlink(this) — removes from global object table
+// IDA: ObjectClass::Unlink(this) — removes from global object table
 // Then iterates radioLinks to match and clear obj.
 // Called from ObjectClass::NotifyExpired @ 7077C0.
 // ============================================================
 void RadioClass::ExecuteAction(TechnoClass* obj, bool clear)
 {
-    // IDA: Object::Unlink(this) — sub_5F5230
+    // IDA: ObjectClass::Unlink(this) — sub_5F5230
     // Removes this object from the global linked list. Deferred to ObjectClass implementation.
 
     int count = radioLinks.Capacity;
@@ -306,7 +306,6 @@ void RadioClass::SetLinkCount(int count)
 } // namespace game
 } // namespace ra2
 
-#include "object/radio.hpp"
 
 namespace ra2 { namespace game {
 

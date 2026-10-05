@@ -15,6 +15,11 @@
 #include "ui/message_list.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "core/init_stubs.hpp"  // G42.32 S R3: TimerGetTicks (init_stubs carrier)
+#include "e4/classes/Audio_e4.hpp"  // gB C2027 supply
+#include "e4/classes/Event_e4.hpp"  // gB C2027 supply
+#include "e4/classes/Object_e4.hpp"  // gB C2027 supply
+#include "e4/classes/Timer_e4.hpp"  // gB C2027 supply
+#include "e4/e4_globals_decls.hpp"  // gB globals supply
 
 // 0x42F490
 namespace gamemd {
@@ -78,11 +83,11 @@ int HouseClass::createStartingUnits(int a2)
     {
       result = 3 * a2; /*0x431421*/
       v4 = 0; /*0x431424*/
-      v5 = &this->AbstractClass + 3 * a2; /*0x431426*/
+      v5 = this + 3 * a2; /*0x431426*/
       do /*0x43143f*/
       {
         if ( *v5 ) /*0x43142a*/
-          result = Network::SendBeaconDelete((Network *)this, a2, v4); /*0x431433*/
+          result = ((Network *)this)->SendBeaconDelete(a2, v4); /*0x431433*/
         ++v4; /*0x431438*/
         ++v5; /*0x431439*/
       }
@@ -130,7 +135,7 @@ namespace gamemd {
 void HouseClass::Update_TogglePower(double a2)
 {
     int v2; // ecx
-    Object *v3; // esi
+    ObjectClass *v3; // esi
     int v4; // ecx
     int v5; // eax
     int v6; // ecx
@@ -157,7 +162,7 @@ void HouseClass::Update_TogglePower(double a2)
     int v27; // ecx
     int *v28; // eax
     int v29; // eax
-    Object *v30; // eax
+    ObjectClass *v30; // eax
     int ClosestObjectCell; // eax
     int v32; // edi
     int v33; // ebx
@@ -249,7 +254,7 @@ void HouseClass::Update_TogglePower(double a2)
     int v124; // [esp+54h] [ebp-28h]
     void **v125[7]; // [esp+60h] [ebp-1Ch] BYREF
 
-    v3 = (Object *)v2; /*0x4f8446*/
+    v3 = (ObjectClass *)v2; /*0x4f8446*/
     v4 = *(unsigned int *)(v2 + 676); /*0x4f844b*/
     v5 = *(unsigned int *)v3[1].__pad_C; /*0x4f8451*/
     if ( v4 != -1 ) /*0x4f8460*/
@@ -362,8 +367,8 @@ void HouseClass::Update_TogglePower(double a2)
         {
           if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x4f86c0*/
             && dword_A8B23C
-            && (*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable0 + 4))(dword_A8B23C)
-            && (*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable0 + 8))(dword_A8B23C) )
+            && (*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C)
+            && (*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable1 + 8))(dword_A8B23C) )
           {
             v20 = v3->__pad_140[172]; /*0x4f86ce*/
             if ( !*(unsigned int *)&dword_A8B238 ) /*0x4f86d4*/
@@ -466,7 +471,7 @@ void HouseClass::Update_TogglePower(double a2)
     if ( dword_A83D4C->Object_field_0x30 == v3->Object_field_0x30
       && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4)
       && dword_A8B23C
-      && !(*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable0 + 4))(dword_A8B23C) )
+      && !(*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C) )
     {
       if ( (byte_A8F03C & 1) == 0 ) /*0x4f8873*/
       {
@@ -490,8 +495,8 @@ void HouseClass::Update_TogglePower(double a2)
     {
       Ticks = 0; /*0x4f8956*/
       v119 = 0; /*0x4f895a*/
-      v30 = (Object *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v3[31].__pad_140[320]); /*0x4f895e*/
-      ClosestObjectCell = Object::FindClosestObjectCell(v30, &Ticks, 0, 0); /*0x4f8965*/
+      v30 = (ObjectClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v3[31].__pad_140[320]); /*0x4f895e*/
+      ClosestObjectCell = ObjectClass::FindClosestObjectCell(v30, &Ticks, 0, 0); /*0x4f8965*/
       v32 = ClosestObjectCell; /*0x4f896a*/
       if ( ClosestObjectCell ) /*0x4f896e*/
       {
@@ -640,15 +645,10 @@ void HouseClass::Update_TogglePower(double a2)
               if ( (_AX & 0x100) != 0 ) /*0x4f8c91*/
               {
   LABEL_160:
-                if ( DynamicVector::GetOrGrow( /*0x4f8cfc*/
-                       (DynamicVector *)&v3[32].__pad_140[16],
-                       *(unsigned int *)(*(unsigned int *)dword_8871E0->IvanDamage + 3576)) > 0
-                  || DynamicVector::GetOrGrow(
-                       (DynamicVector *)&v3[32].__pad_140[16],
-                       *(unsigned int *)(*(unsigned int *)(dword_8871E0->IvanDamage + 4) + 3576)) > 0
-                  || DynamicVector::GetOrGrow(
-                       (DynamicVector *)&v3[32].__pad_140[16],
-                       *(unsigned int *)(*(unsigned int *)(dword_8871E0->IvanDamage + 8) + 3576)) > 0 )
+                if ( (/*0x4f8cfc*/
+                       (DynamicVector *)&v3[32].__pad_140[16])->GetOrGrow(*(unsigned int *)(*(unsigned int *)dword_8871E0->IvanDamage + 3576)) > 0
+                  || ((DynamicVector *)&v3[32].__pad_140[16])->GetOrGrow(*(unsigned int *)(*(unsigned int *)(dword_8871E0->IvanDamage + 4) + 3576)) > 0
+                  || ((DynamicVector *)&v3[32].__pad_140[16])->GetOrGrow(*(unsigned int *)(*(unsigned int *)(dword_8871E0->IvanDamage + 8) + 3576)) > 0 )
                 {
                   if ( !dword_A8F040 ) /*0x4f8d08*/
                   {
@@ -743,7 +743,7 @@ void HouseClass::Update_TogglePower(double a2)
       {
         (*(void (__thiscall **)(unsigned int))(**(unsigned int **)(v71 + 40) + 64))(*(unsigned int *)(v71 + 40)); /*0x4f8e60*/
         Status = HouseClass::GetStatus((HouseClass *)0x39, 0); /*0x4f8e6b*/
-        Sidebar::ActivateTab(&dword_87F7E8.field_0, Status); /*0x4f8e76*/
+        (&dword_87F7E8.field_0)->ActivateTab(Status); /*0x4f8e76*/
       }
     }
     if ( *(unsigned int *)&dword_A8B238 /*0x4f8eaf*/
@@ -754,9 +754,9 @@ void HouseClass::Update_TogglePower(double a2)
       if ( stru_A8B250.__pad_0[18] ) /*0x4f8ec4*/
       {
         v73 = (unsigned int *)dword_8871E0->ReloadRate[0]; /*0x4f8ed2*/
-        v74 = DynamicVector::GetOrGrow((DynamicVector *)&v3[32].__pad_EC[40], *(unsigned int *)(v73[1] + 3576)); /*0x4f8eec*/
-        v75 = DynamicVector::GetOrGrow((DynamicVector *)&v3[32].__pad_EC[40], *(unsigned int *)(v73[2] + 3576)) + v74; /*0x4f8efc*/
-        v76 = DynamicVector::GetOrGrow((DynamicVector *)&v3[32].__pad_EC[40], *(unsigned int *)(*v73 + 3576)) + v75; /*0x4f8f0f*/
+        v74 = ((DynamicVector *)&v3[32].__pad_EC[40])->GetOrGrow(*(unsigned int *)(v73[1] + 3576)); /*0x4f8eec*/
+        v75 = ((DynamicVector *)&v3[32].__pad_EC[40])->GetOrGrow(*(unsigned int *)(v73[2] + 3576)) + v74; /*0x4f8efc*/
+        v76 = ((DynamicVector *)&v3[32].__pad_EC[40])->GetOrGrow(*(unsigned int *)(*v73 + 3576)) + v75; /*0x4f8f0f*/
         if ( *(int *)&v3[1].__pad_38[24] <= 0 && v76 <= 0 ) /*0x4f8f1d*/
         {
   LABEL_190:
@@ -772,7 +772,7 @@ void HouseClass::Update_TogglePower(double a2)
         v80 = VectorClass::GetCount((VectorClass *)&v3[32].__pad_140[76]) + v79; /*0x4f8f52*/
         v81 = *(unsigned int *)(dword_8871E0->V3Rocket[5] + 8); /*0x4f8f5a*/
         if ( v81 ) /*0x4f8f5f*/
-          v80 += DynamicVector::GetOrGrow((DynamicVector *)&v3[32].__pad_140[16], *(unsigned int *)(v81 + 3576)); /*0x4f8f73*/
+          v80 += ((DynamicVector *)&v3[32].__pad_140[16])->GetOrGrow(*(unsigned int *)(v81 + 3576)); /*0x4f8f73*/
         if ( !v80 ) /*0x4f8f77*/
           goto LABEL_190; /*0x4f8f77*/
       }
@@ -939,7 +939,7 @@ void HouseClass::Update_TogglePower(double a2)
           && *(int *)(v110 + 108) > 0
           && (*(int (__thiscall **)(int))(*(unsigned int *)v110 + 388))(v110) != 19
           && *(unsigned int *)(v110 + 180) != 19
-          && dword_A83D4C == *(Object **)(v110 + 540) )
+          && dword_A83D4C == *(ObjectClass **)(v110 + 540) )
         {
           (*(void (__thiscall **)(int))(*(unsigned int *)v110 + 1248))(v110); /*0x4f92d2*/
         }

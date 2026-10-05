@@ -55,7 +55,6 @@ BulletClass::BulletClass(BulletTypeClass* pType) noexcept
 
 } // namespace gamemd
 
-#include "entity/bullet.hpp"
 
 namespace gamemd {
 

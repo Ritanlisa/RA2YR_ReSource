@@ -249,16 +249,16 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
     BulletClass *result; // eax
     void *vtable0; // [esp+0h] [ebp-4h]
 
-    result = (BulletClass *)this->RadioClass; /*0x70ece1*/
-    vtable0 = this->RadioClass; /*0x70ece5*/
-    if ( this->RadioClass ) /*0x70ece5*/
+    result = (BulletClass *)this; /*0x70ece1*/
+    vtable0 = this; /*0x70ece5*/
+    if ( this ) /*0x70ece5*/
     {
-      result = (BulletClass *)this->?; /*0x70eceb*/
-      this->? = 1; /*0x70ecf5*/
-      this->? = (int)result; /*0x70ecf8*/
+      result = (BulletClass *)((unsigned int *)this)[0]; /*0x70eceb*/
+      ((unsigned int *)this)[0] = 1; /*0x70ecf5*/
+      ((unsigned int *)this)[0] = (int)result; /*0x70ecf8*/
       if ( (int)result < 1 ) /*0x70ecfb*/
-        this->? = 1; /*0x70ecfd*/
-      *(float *)&this->? = (double)(int)vtable0 / (double)this->?; /*0x70ed07*/
+        ((unsigned int *)this)[0] = 1; /*0x70ecfd*/
+      *(float *)&((unsigned int *)this)[0] = (double)(int)vtable0 / (double)((unsigned int *)this)[0]; /*0x70ed07*/
     }
     return result; /*0x70ed0b*/
 }
@@ -356,11 +356,11 @@ void TechnoClass::Uncloak(bool play_sound)
 // 0x6f3330
 // G42.34 T6: region consolidated -- three corrupted remnants of this function
 // were spliced together (raw body v1 + a 0x4F9AF0
-// Object::IsAlliedWithObjectSimpleHouse fragment + an older duplicate body
+// ObjectClass::IsAlliedWithObjectSimpleHouse fragment + an older duplicate body
 // with this->fallRate-style vtable-slot-as-member garbage) ahead of the ASM
 // quarantine below. Single def restored; ASM quarantine kept verbatim for the
 // pending translation.
-int TechnoClass::SelectWeapon(AbstractClass* target) const
+int TechnoClass::SelectWeapon()
 {
     HouseClass *v2; // eax
     int result; // eax
@@ -373,24 +373,24 @@ int TechnoClass::SelectWeapon(AbstractClass* target) const
     bool v10; // bl
     unsigned int *v11; // [esp+1Ch] [ebp+4h]
 
-    v2 = (HouseClass *)(*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this); /*0x6f333b*/
-    if ( (unsigned __int8)HouseClass::HasPower(v2)
-      && !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3285) )
+    v2 = (HouseClass *)(*((int (__thiscall **)(TechnoClass *))this->vtable1 + 33))(this); /*0x6f333b*/
+    if ( (unsigned __int8)v2->HasPower()
+      && !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->vtable1 + 33))(this) + 3285) )
     {
       return this->currentWeaponSlot != -1 ? this->currentWeaponSlot : 0;
     }
-    if ( (*((unsigned __int8 (__thiscall **)(TechnoClass *))this->RadioClass + 256))(this) ) /*0x6f337d*/
+    if ( (*((unsigned __int8 (__thiscall **)(TechnoClass *))this->vtable1 + 256))(this) ) /*0x6f337d*/
       return 0; /*0x6f337d*/
-    v4 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, int))this->RadioClass + 254))(this, 1); /*0x6f3397*/
+    v4 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, int))this->vtable1 + 254))(this, 1); /*0x6f3397*/
     if ( !v4 ) /*0x6f339f*/
       return 0; /*0x6f339f*/
-    v5 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned int))this->RadioClass + 254))(this, 0); /*0x6f33b1*/
+    v5 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned int))this->vtable1 + 254))(this, 0); /*0x6f33b1*/
     if ( !v5 || *(unsigned char *)(v4 + 310) || !v11 ) /*0x6f33d3*/
       return 0; /*0x6f33d3*/
-    if ( this->? && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3408) != -1 ) /*0x6f33f4*/
-      return *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3408); /*0x6f340d*/
+    if ( ((unsigned int *)this)[0] && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->vtable1 + 33))(this) + 3408) != -1 ) /*0x6f33f4*/
+      return *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->vtable1 + 33))(this) + 3408); /*0x6f340d*/
     v6 = (v11[5] & 1) != 0 ? (unsigned char *)v11 : 0;
-    if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3285) )
+    if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->vtable1 + 33))(this) + 3285) )
     {
       if ( *(unsigned char *)(*(unsigned int *)(v4 + 172) + 364) )
       {
@@ -418,29 +418,29 @@ int TechnoClass::SelectWeapon(AbstractClass* target) const
           && v6
           && *(unsigned char *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 132))(v6) + 1519)
           && !this->drainTarget
-          && !(unsigned __int8)Object::IsAlliedWithObjectHouse((Object *)this->owner, (int)v6) )
+          && !(unsigned __int8)((ObjectClass *)this->owner)->IsAlliedWithObjectHouse((int)v6) )
         {
           return 1; /*0x6f35a5*/
         }
-        if ( *(unsigned char *)(v4 + 336) && (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 97))(this) == 16 ) /*0x6f35c3*/
+        if ( *(unsigned char *)(v4 + 336) && (*((int (__thiscall **)(TechnoClass *))this->vtable1 + 97))(this) == 16 ) /*0x6f35c3*/
           return 1; /*0x6f35d1*/
-        if ( (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this) == 6 && *((unsigned char *)this + 1633) ) /*0x6f35e0*/
+        if ( (*((int (__thiscall **)(TechnoClass *))this->vtable1 + 11))(this) == 6 && *((unsigned char *)this + 1633) ) /*0x6f35e0*/
           return 1; /*0x6f35f6*/
         if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6 /*0x6f362f*/
-          && (unsigned __int8)Object::IsAlliedWithObjectSimpleHouse((Object *)this->owner, v11)
+          && (unsigned __int8)((ObjectClass *)this->owner)->IsAlliedWithObjectSimpleHouse(v11)
           && *(unsigned char *)(*(unsigned int *)(v4 + 172) + 344)
           && *(unsigned char *)(v11[328] + 5493) )
         {
           return 1; /*0x6f3645*/
         }
-        if ( (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this) == 2 && *((unsigned char *)this + 1738) ) /*0x6f3658*/
+        if ( (*((int (__thiscall **)(TechnoClass *))this->vtable1 + 11))(this) == 2 && *((unsigned char *)this + 1738) ) /*0x6f3658*/
           return 1; /*0x6f366e*/
         if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 11 /*0x6f36ca*/
           && (v11[59] != 2 && (*(unsigned __int8 (__thiscall **)(unsigned int *))(*v11 + 80))(v11)
            || (v11[80] & 0x100) != 0
-           && *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3278))
+           && *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->vtable1 + 33))(this) + 3278))
           && !(*(unsigned __int8 (__thiscall **)(unsigned int *))(*v11 + 84))(v11)
-          && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 1540) == 2 )
+          && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->vtable1 + 33))(this) + 1540) == 2 )
         {
           return 1; /*0x6f36d8*/
         }
@@ -459,13 +459,13 @@ int TechnoClass::SelectWeapon(AbstractClass* target) const
             v10 = 0; /*0x6f378d*/
           if ( !v6[140] && v10 ) /*0x6f379b*/
           {
-            result = (*((int (__thiscall **)(TechnoClass *, unsigned int *))this->RadioClass + 186))(this, v11); /*0x6f37a2*/
+            result = (*((int (__thiscall **)(TechnoClass *, unsigned int *))this->vtable1 + 186))(this, v11); /*0x6f37a2*/
             if ( result != -1 ) /*0x6f37ab*/
               return result; /*0x6f37ab*/
             return 0; /*0x6f37ab*/
           }
           if ( !(*(unsigned __int8 (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) /*0x6f37d6*/
-            && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 1540) == 2 )
+            && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->vtable1 + 33))(this) + 1540) == 2 )
           {
             return 1; /*0x6f37e4*/
           }
@@ -1136,7 +1136,7 @@ bool TechnoClass::CreateUnit()
     unsigned int *v3; // eax
     unsigned int *v4; // eax
     CellClass *v5; // eax
-    Building *v6; // eax
+    BuildingClass *v6; // eax
     int AnimClass_field_0x0; // eax
     int v8; // eax
     int *p_AnimClass_field_0x9C; // edi
@@ -1179,8 +1179,8 @@ bool TechnoClass::CreateUnit()
     int v48; // eax
     int v49; // eax
     int v50; // edx
-    House *v51; // edi
-    Object *v52; // ebx
+    HouseClass *v51; // edi
+    ObjectClass *v52; // ebx
     int v53; // eax
     int *StartCoords; // edx
     int v55; // eax
@@ -1300,8 +1300,8 @@ bool TechnoClass::CreateUnit()
     }
     if ( *(unsigned char *)(_ESI->AnimClass_field_0xC8 + 857) ) /*0x423b95*/
     {
-      v6 = (Building *)(*(int (__thiscall **)(AnimClass *))(_ESI->AnimClass_field_0x0 + 444))(_ESI); /*0x423ba3*/
-      _ESI->__pad_194[9] = !v6 || !Building::GetNthOfType(v6); /*0x423bb8*/
+      v6 = (BuildingClass *)(*(int (__thiscall **)(AnimClass *))(_ESI->AnimClass_field_0x0 + 444))(_ESI); /*0x423ba3*/
+      _ESI->__pad_194[9] = !v6 || !BuildingClass::GetNthOfType(v6); /*0x423bb8*/
     }
     if ( *(unsigned int *)(_ESI->AnimClass_field_0xC8 + 844) != -1 ) /*0x423bd4*/
     {
@@ -1504,26 +1504,26 @@ bool TechnoClass::CreateUnit()
                     v132[0] = AnimClass_field_0x9C / 256 + IDA_LOWORD(dword_89F688[v50]); /*0x424099*/
                     v132[1] = v137 / 256 + IDA_HIWORD(dword_89F688[v50]); /*0x4240a8*/
                     *(unsigned int *)&v132[2] = *(unsigned int *)v132; /*0x4240b7*/
-                    v51 = (House *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &v132[2]); /*0x4240c0*/
+                    v51 = (HouseClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &v132[2]); /*0x4240c0*/
                     if ( (unsigned __int8)IsCoordValidMap((int)v51, 0) ) /*0x4240c6*/
                     {
                       if ( *(unsigned int *)(_ESI->AnimClass_field_0xC8 + 824) ) /*0x4240d9*/
                       {
-                        v52 = (Object *)RA2_OPNEW(0xB0u); /*0x4240f1*/
+                        v52 = (ObjectClass *)RA2_OPNEW(0xB0u); /*0x4240f1*/
                         if ( v52 ) /*0x4240f8*/
                         {
                           *(unsigned int *)v133 = *(unsigned int *)&v51->__pad_C[24]; /*0x42410c*/
                           v53 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 3); /*0x424110*/
-                          Object::SpawnAtCell( /*0x42413b*/
+                          ObjectClass::SpawnAtCell( /*0x42413b*/
                             v52,
-                            *(&dword_A83D84->vtable0
+                            *(&dword_A83D84->vtable1
                             + v53
                             + *(unsigned int *)(*(unsigned int *)(_ESI->AnimClass_field_0xC8 + 824) + 660)),
                             v133,
                             -1);
                         }
                         v51->__pad_7C[162] = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x424155*/
-                        StartCoords = House::GetStartCoords(v51, v146); /*0x424167*/
+                        StartCoords = HouseClass::GetStartCoords(v51, v146); /*0x424167*/
                         v55 = *StartCoords; /*0x42416f*/
                         v56 = StartCoords[1] - dword_886FA4; /*0x424174*/
                         v57 = StartCoords[2]; /*0x424176*/
@@ -1648,7 +1648,7 @@ bool TechnoClass::CreateUnit()
         v137 = v72 - 384; /*0x4243fa*/
         AnimClass_field_0xA4 = v73; /*0x4243fe*/
         v74 = *(unsigned int *)&Coord::To_Cell((Coord *)&dword_87F7E8, &AnimClass_field_0x9C)->__pad_28[28]; /*0x424407*/
-        if ( v74 == -1 || *(unsigned int *)(*(&dword_A83D84->vtable0 + v74) + 668) != _ESI->AnimClass_field_0xC8 ) /*0x424425*/
+        if ( v74 == -1 || *(unsigned int *)(*(&dword_A83D84->vtable1 + v74) + 668) != _ESI->AnimClass_field_0xC8 ) /*0x424425*/
           _ESI->__pad_194[7] = 1; /*0x424427*/
       }
       v75 = (unsigned int *)_ESI->AnimClass_field_0xC8; /*0x42442e*/
@@ -1874,14 +1874,14 @@ bool TechnoClass::CreateUnit()
                   if ( v109 > 0 ) /*0x4249b0*/
                   {
                     v112 = dword_A8022C; /*0x4249b2*/
-                    while ( *(unsigned int *)(*(unsigned int *)(v112->vtable0 + 52) + 188) != v110 ) /*0x4249c3*/
+                    while ( *(unsigned int *)(*(unsigned int *)(v112->vtable1 + 52) + 188) != v110 ) /*0x4249c3*/
                     {
                       ++v111; /*0x4249c5*/
                       v112 = (HouseClass *)((char *)v112 + 4); /*0x4249c6*/
                       if ( v111 >= v109 ) /*0x4249cb*/
                         goto LABEL_176; /*0x4249cb*/
                     }
-                    _ESI->AnimClass_field_0x180 = *(&dword_A8022C->vtable0 + v111); /*0x4249d8*/
+                    _ESI->AnimClass_field_0x180 = *(&dword_A8022C->vtable1 + v111); /*0x4249d8*/
                   }
                 }
   LABEL_176:
@@ -3454,7 +3454,7 @@ bool ProductionCompletionCallback(TechnoClass* techno)
 //
 // Sections from IDA:
 //  1. Get cell coordinates from building position
-//  2. Foundation size offsets (type+668/672 via Building::GetFoundationSize)
+//  2. Foundation size offsets (type+668/672 via BuildingClass::GetFoundationSize)
 //  3. Super weapon fire effects (type+716 → SW_CreateFireAt)
 //  4. Construction delay check (vt_entry_456)
 //  5. Branch: CreateUnitAtCoords_Timed or _Standard
@@ -3473,7 +3473,7 @@ bool CreateUnitOnCompletion(TechnoClass* techno)
 
     // IDA: Section 2: Foundation size offsets via vt_entry_108
     // if (vt_entry_108(this)):
-    //   foundation_width = Building::GetFoundationSize(coords, type+664)[2/3]
+    //   foundation_width = BuildingClass::GetFoundationSize(coords, type+664)[2/3]
     //   type+668 = foundation_width if -1
     //   type+672 = foundation_height if -1
     //   build_time = type+672
@@ -3511,7 +3511,7 @@ bool CreateUnitOnCompletion(TechnoClass* techno)
 // Key IDA logic:
 //  1. Not production-blocked → start production timer
 //  2. Compare current vs target position
-//  3. Invalid target → Building::ComputePosition to calculate new target
+//  3. Invalid target → BuildingClass::ComputePosition to calculate new target
 //  4. Within range (distance <= 18): snap to target, check cell type
 //  5. Out of range: angle calculation → vt_entry_436 adjust position
 //  6. Cell walkability check at 3 neighbor cells
@@ -3534,7 +3534,7 @@ void ConstructionPositionTracker(TechnoClass* techno)
     // IDA: Section 2-3: Target position management
     // Compare current location with target coords (&this->q840 region).
     // If target matches Map_InvalidCoord or ProductionBlocked:
-    //   Building::ComputePosition → compute new target
+    //   BuildingClass::ComputePosition → compute new target
     //   If still invalid: mark ProductionBlocked, set ProductionSpeed=1
 
     // IDA: Section 4: Distance check
@@ -3618,7 +3618,6 @@ static bool CreateUnitAtCoordsTimed(CoordStruct* coords, int time, bool special)
 } // namespace game
 } // namespace ra2
 
-#include "object/techno.hpp"
 
 namespace ra2 { namespace game {
 

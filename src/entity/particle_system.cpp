@@ -37,7 +37,6 @@ ParticleSystemClass::ParticleSystemClass(ParticleSystemTypeClass* pType) noexcep
 
 } // namespace gamemd
 
-#include "entity/particle_system.hpp"
 
 namespace gamemd {
 

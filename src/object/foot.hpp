@@ -354,6 +354,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === G42.41m supplies (ml names; /c-gate) ===
     uint8_t q1F0[16];  // ml @0x1F0 word-array base (checkTerrainSpeed 0x487154 inc/dec)
     // === FUNCS-MOVE (END) ===
+    unsigned int q021; // 0x21  gB member supply
+    unsigned int q0A0; // 0xA0  gB member supply
+    unsigned int q0A4; // 0xA4  gB member supply
+    void* vtable1;  // 0x0 (ml truth)  gB vtable supply
+    void* vtable2;  // 0x4 (ml truth)  gB vtable supply
+    void* vtable3;  // 0x8 (ml truth)  gB vtable supply
 };
 
 } // namespace game

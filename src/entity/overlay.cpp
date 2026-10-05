@@ -21,7 +21,6 @@ OverlayClass::OverlayClass(OverlayTypeClass* pType, const CellStruct& cell,
 
 } // namespace gamemd
 
-#include "entity/overlay.hpp"
 
 namespace gamemd {
 

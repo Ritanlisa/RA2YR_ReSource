@@ -155,6 +155,8 @@ protected:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Construct();  // 0x7353C0
     // --- gap2 auto-generated stub declarations (END) ---
+    void* Locomotor; // 0x674  gB member supply
+    void* q118; // 0x118  gB member supply
 };
 
 } // namespace gamemd

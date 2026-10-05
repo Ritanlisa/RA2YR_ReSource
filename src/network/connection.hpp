@@ -60,6 +60,8 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     int GetSpeed();  // 0x5422f0 -- Connection::GetSpeed
     // === SYMBOL-ANCHOR (END) ===
+    unsigned int __pad_0; // 0x0  gB member supply
+    void dtor();  // gB sig supply @cache
 };
 
 // CSP: IPXConnClass matched via T1+T3
@@ -81,6 +83,7 @@ virtual unsigned int * QueryInterface(char,int,int,int);  // 0x53F850
     uint32_t  RemoteAddress[3];
     uint16_t  RemoteSocket;
     uint8_t   padding[2];
+    unsigned int __pad_0; // 0x0  gB member supply
 };
 
 // CSP: IPXManagerClass matched via T1
@@ -121,6 +124,7 @@ int release(int,int,int,int);  // 0x5414C0
     int ddtor(int a1, int a2, int a3);  // 0x5415f0 -- IPXManagerClass::ddtor
     void* QueryInterface(int a1);  // 0x5430e0 -- IPXManagerClass::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
+    unsigned int u32_20; // 0x20  gB member supply
 };
 
 class ModemConnectionClass : public ConnectionClass

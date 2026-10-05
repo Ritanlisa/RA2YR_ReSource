@@ -50,7 +50,6 @@ void TeamClass::LiberateMember(FootClass* foot, int idx,
 
 } // namespace gamemd
 
-#include "team/team.hpp"
 
 namespace gamemd {
 

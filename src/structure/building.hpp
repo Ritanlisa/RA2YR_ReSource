@@ -615,6 +615,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int UpdateSuperWeaponReadyState(int a1);  // G42.39 supply (gap2_defs site)
 
     void DispatchTeam(int a1, int a2);  // G42.39 supply (gap2_defs site)
+    unsigned int q044; // 0x44  gB member supply
 };
 
 // External globals

@@ -70,7 +70,6 @@ bool MissionClass::revertMission()
 } // namespace game
 } // namespace ra2
 
-#include "object/mission.hpp"
 
 namespace ra2 { namespace game {
 

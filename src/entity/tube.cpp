@@ -25,7 +25,6 @@ TubeClass::TubeClass() noexcept
 
 } // namespace gamemd
 
-#include "entity/tube.hpp"
 
 namespace gamemd {
 

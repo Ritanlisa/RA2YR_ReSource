@@ -29,7 +29,6 @@ TerrainClass::TerrainClass(TerrainTypeClass* pType, const CellStruct& cell,
 
 } // namespace gamemd
 
-#include "entity/terrain.hpp"
 
 namespace gamemd {
 

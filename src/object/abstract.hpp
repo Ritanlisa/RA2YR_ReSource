@@ -47,7 +47,7 @@ class FootClass;
 class Checksummer;
 
 // CSP: IPersistStream matched via T1
-class IPersistStream : IUnknown {
+class IPersistStream : public IUnknown {
 public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;
     virtual HRESULT __stdcall IsDirty() = 0;  // 0x7099D0
@@ -337,6 +337,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void AnnounceExpiredPointer(int a1, int a2);  // 0x7258d0
     void* RemoveObjectFromHouse(int a1, int a2, int a3, int a4, int a5);  // 0x4fb9b0
     // === FUNCS-MOVE (END) ===
+    void* vtable1;  // 0x0 (ml truth)  gB vtable supply
+    void* vtable2;  // 0x4 (ml truth)  gB vtable supply
+    void* vtable3;  // 0x8 (ml truth)  gB vtable supply
+    int GetType();  // gB sig supply @cache
 };
 
 } // namespace game

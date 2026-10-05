@@ -70,6 +70,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     int LoadFromINIList();  // 0x46ce10 -- CampaignClass::LoadFromINIList
     // === SYMBOL-ANCHOR (END) ===
+    unsigned int q00D; // 0xD  gB member supply
+    unsigned int q05C; // 0x5C  gB member supply
+    unsigned int q060; // 0x60  gB member supply
+    void* vtable2;  // 0x4 (ml truth)  gB vtable supply
+    unsigned int q01A; // 0x1A (ml truth: q01A@0x1A)  gB member supply
+    void* vtable3;  // 0x8 (ml truth)  gB vtable supply
+    void* vtable4;  // 0xC (ml truth)  gB vtable supply
 };
 
 } // namespace gamemd

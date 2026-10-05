@@ -166,6 +166,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int MissionStubReturnZero2(int a1, int a2);  // 0x426540
     int GetAnimation(int a1, int a2);  // 0x7298f0
     // === FUNCS-MOVE (END) ===
+    unsigned int AnimClass_field_0x190; // 0x190  gB member supply
 };
 
 } // namespace gamemd

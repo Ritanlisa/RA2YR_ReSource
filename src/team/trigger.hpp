@@ -143,6 +143,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int FindByEventType(int a1);  // 0x610950
     // === FUNCS-MOVE (END) ===
+    unsigned int q03C; // 0x3C  gB member supply
+    void* q184; // 0x184  gB member supply
+    void* q1E8; // 0x1E8  gB member supply
+    bool q278; // 0x278  gB member supply
+    unsigned char u8_270; // 0x270  gB member supply
 };
 
 // --- TriggerTypeClass ---
@@ -226,6 +231,29 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadTypeData(int a1, int a2);  // 0x727bf0
     int Write(int a1, int a2, int a3);  // 0x727c80
     // === FUNCS-MOVE (END) ===
+    unsigned int ArrayIndex; // 0x98  gB member supply
+    unsigned int FirstAction; // 0xB0  gB member supply
+    unsigned int FirstEvent; // 0xAC  gB member supply
+    unsigned int MustTransfer; // 0xA0  gB member supply
+    unsigned int Name; // 0x64  gB member supply
+    unsigned int NextTrigger; // 0xA8  gB member supply
+    unsigned int alignmentPadding; // 0x33  gB member supply
+    unsigned int q030; // 0x30  gB member supply
+    unsigned char q031[4]; // 0x31  gB member supply
+    unsigned int q034; // 0x34  gB member supply
+    unsigned int q038; // 0x38  gB member supply
+    unsigned char q090[4]; // 0x90  gB member supply
+    unsigned int u32_B8; // 0xB8  gB member supply
+    unsigned int u32_BC; // 0xBC  gB member supply
+    unsigned int u32_C8; // 0xC8  gB member supply
+    unsigned int u32_D1; // 0xD1  gB member supply
+    unsigned int u32_D2; // 0xD2  gB member supply
+    unsigned int u32_D3; // 0xD3  gB member supply
+    unsigned int u32_D4; // 0xD4  gB member supply
+    unsigned int u32_D8; // 0xD8  gB member supply
+    unsigned int u32_DC; // 0xDC  gB member supply
+    void* vtable4;  // 0xC (ml truth)  gB vtable supply
+    void* vtable46;  // 0x0 (no offset truth)  gB vtable supply
 };
 
 } // namespace gamemd

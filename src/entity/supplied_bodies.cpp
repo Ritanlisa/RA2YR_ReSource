@@ -15,6 +15,7 @@
 #include "structure/building.hpp"
 #include "system/cell.hpp"
 #include "system/tactical.hpp"
+#include "e4/e4_globals_decls.hpp"  // gB globals supply
 
 // 0x422720
 namespace gamemd {
@@ -51,8 +52,8 @@ int AnimClass::SimpleCtor()
     *(unsigned int *)&this->__pad_120[12] = 0; /*0x4227d3*/
     *(unsigned int *)&this->__pad_120[20] = 0; /*0x4227d9*/
     *(unsigned int *)&this->__pad_120[28] = 0; /*0x4227df*/
-    Int4::Set((Int4 *)&this->__pad_120[56], 0, 0, 0, 1065353216); /*0x4227e5*/
-    Int4::Set((Int4 *)&this->__pad_120[72], 0, 0, 0, 1065353216); /*0x4227f8*/
+    ((Int4 *)((Int4 *)&this->__pad_120[56]))->Set(0, 0, 0, 1065353216); /*0x4227e5*/
+    ((Int4 *)((Int4 *)&this->__pad_120[72]))->Set(0, 0, 0, 1065353216); /*0x4227f8*/
     this->AnimClass_field_0x188 = 0; /*0x4227fd*/
     this->__pad_178[1] = 0; /*0x422803*/
     this->AnimClass_field_0x184 = 0; /*0x422809*/
@@ -65,9 +66,9 @@ int AnimClass::SimpleCtor()
     this->__pad_194[8] = 1; /*0x422834*/
     this->__pad_194[9] = 0; /*0x42283b*/
     this->__pad_194[10] = 0; /*0x422841*/
-    this->AnimClass_field_0x0 = &AnimClass::`vftable'; /*0x422847*/
-    this->AnimClass_field_0x4 = &AnimClass::`vftable'; /*0x42284d*/
-    this->AnimClass_field_0x8 = &AnimClass::`vftable'; /*0x422854*/
+    this->AnimClass_field_0x0 = &vt_AnimClass; /*0x422847*/
+    this->AnimClass_field_0x4 = &vt_AnimClass; /*0x42284d*/
+    this->AnimClass_field_0x8 = &vt_AnimClass; /*0x422854*/
     *(unsigned int *)this->__pad_C = &off_7E3328; /*0x42285b*/
     if ( dword_A8E9B8 < dword_A8E9B0 /*0x422896*/
       || (byte_A8E9B5 || !dword_A8E9B0)
@@ -332,7 +333,7 @@ int AnimClass::UpdateProjectileTrajectory()
       {
         do /*0x423a88*/
         {
-          v10 = (unsigned int *)(*((int (__thiscall **)(ObjectClass *, char *))firstObject->AbstractClass + 18))( /*0x423a08*/
+          v10 = (unsigned int *)(*((int (__thiscall **)(ObjectClass *, char *))firstObject->vtable1 + 18))( /*0x423a08*/
                             firstObject,
                             v27);
           v11 = (unsigned int *)Coord::GetCoords(v28, v21); /*0x423a11*/
@@ -379,11 +380,11 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
     {
       if ( a2 ) /*0x42529d*/
       {
-        ObjectClass::Init((ObjectClass *)a2, (int)&a3); /*0x4252a6*/
+        ((ObjectClass *)a2)->Init((int)&a3); /*0x4252a6*/
         __4type_info_AAEAAV0_ABV0__Z((void *)(a2 + 180), (int)&a3); /*0x4252b6*/
-        *(unsigned int *)a2 = &AnimClass::`vftable'; /*0x4252bb*/
-        *(unsigned int *)(a2 + 4) = &AnimClass::`vftable'; /*0x4252c1*/
-        *(unsigned int *)(a2 + 8) = &AnimClass::`vftable'; /*0x4252c8*/
+        *(unsigned int *)a2 = &vt_AnimClass; /*0x4252bb*/
+        *(unsigned int *)(a2 + 4) = &vt_AnimClass; /*0x4252c1*/
+        *(unsigned int *)(a2 + 8) = &vt_AnimClass; /*0x4252c8*/
         *(unsigned int *)(a2 + 12) = &off_7E3328; /*0x4252cf*/
       }
       AudioController::Init((AudioController *)(a2 + 416)); /*0x4252dc*/
@@ -470,9 +471,9 @@ int AnimClass::resetAnimation()
     int v2; // eax
     int v3; // edi
     unsigned short *v4; // eax
-    Object *v5; // ebp
+    ObjectClass *v5; // ebp
     int ClosestObjectCell; // eax
-    Object *NeighbourContent; // edi
+    ObjectClass *NeighbourContent; // edi
     int v8; // eax
     unsigned int v10; // [esp+10h] [ebp-20h]
     int i; // [esp+10h] [ebp-20h]
@@ -492,10 +493,10 @@ int AnimClass::resetAnimation()
     *(unsigned int *)v12 = v10; /*0x4495c2*/
     v15[0] = ((__int16)v10 << 8) + 128; /*0x4495cc*/
     v15[2] = 0; /*0x4495d6*/
-    v5 = (Object *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v12); /*0x4495e4*/
+    v5 = (ObjectClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v12); /*0x4495e4*/
     v13 = 0; /*0x4495ea*/
     v14 = 0; /*0x4495ee*/
-    ClosestObjectCell = Object::FindClosestObjectCell(v5, &v13, 0, (int)this); /*0x4495f2*/
+    ClosestObjectCell = ObjectClass::FindClosestObjectCell(v5, &v13, 0, (int)this); /*0x4495f2*/
     if ( !ClosestObjectCell ) /*0x4495f9*/
       return 0; /*0x44969e*/
     (*(void (__thiscall **)(int))(*(unsigned int *)ClosestObjectCell + 132))(ClosestObjectCell); /*0x449603*/
@@ -503,10 +504,10 @@ int AnimClass::resetAnimation()
     Cell::ApplyDamage((Cell *)v5, (int)&g_BuildingClassPool, 1, 1, 0); /*0x449626*/
     for ( i = 0; i < 8; ++i ) /*0x44962b*/
     {
-      NeighbourContent = (Object *)Cell::GetNeighbourContent((Cell *)v5, i); /*0x449640*/
+      NeighbourContent = (ObjectClass *)((Cell *)v5)->GetNeighbourContent(i); /*0x449640*/
       v13 = 0; /*0x449646*/
       v14 = 0; /*0x44964a*/
-      v8 = Object::FindClosestObjectCell(NeighbourContent, &v13, 0, (int)this); /*0x44964e*/
+      v8 = ObjectClass::FindClosestObjectCell(NeighbourContent, &v13, 0, (int)this); /*0x44964e*/
       if ( v8 ) /*0x449655*/
       {
         (*(void (__thiscall **)(int))(*(unsigned int *)v8 + 132))(v8); /*0x44965b*/
@@ -530,11 +531,11 @@ int AnimClass::setLoopCount()
     unsigned int v8[3]; // [esp+18h] [ebp-18h] BYREF
     unsigned int v9[3]; // [esp+24h] [ebp-Ch] BYREF
 
-    missionStatus = this->?; /*0x449a57*/
+    missionStatus = ((unsigned int *)this)[0]; /*0x449a57*/
     if ( !missionStatus ) /*0x449a60*/
     {
       BuildingClass::StartProduction(this, 0); /*0x449b36*/
-      (*((void (__thiscall **)(BuildingClass *, int))this->TechnoClass + 157))(this, 11); /*0x449b41*/
+      (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 11); /*0x449b41*/
       UnitExitSound = this->Type->UnitExitSound; /*0x449b4d*/
       if ( UnitExitSound != -1 /*0x449b67*/
         || (UnitExitSound = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1736), UnitExitSound != -1) )
@@ -544,31 +545,31 @@ int AnimClass::setLoopCount()
         v9[2] = *(unsigned int *)&this->vtable3; /*0x449b8e*/
         StartAudioControllerAt(UnitExitSound, v9, (int **)&this->WasOnline); /*0x449b92*/
       }
-      this->? = 1; /*0x449b97*/
-      this->? = 1; /*0x449b9e*/
+      ((unsigned int *)this)[0] = 1; /*0x449b97*/
+      ((unsigned int *)this)[0] = 1; /*0x449b9e*/
       return 1; /*0x449b9e*/
     }
     if ( missionStatus != 1 ) /*0x449a67*/
       return 1; /*0x449a67*/
-    this->? = 1; /*0x449a79*/
+    ((unsigned int *)this)[0] = 1; /*0x449a79*/
     v8[0] = *(unsigned int *)&this->vtable2; /*0x449a82*/
     v8[1] = *(unsigned int *)&this->vtable2; /*0x449a8d*/
     v8[2] = *(unsigned int *)&this->vtable3; /*0x449a96*/
     StartAudioController(v8, (int **)&this->WasOnline); /*0x449a9a*/
     if ( !this->BuildingClass_field_bool_6DD ) /*0x449a9f*/
       return 1; /*0x449ba9*/
-    (*((void (__thiscall **)(BuildingClass *, int))this->TechnoClass + 157))(this, 12); /*0x449ab3*/
-    (*((void (__thiscall **)(BuildingClass *, int))this->TechnoClass + 157))(this, 3); /*0x449abf*/
+    (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 12); /*0x449ab3*/
+    (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x449abf*/
     BuildingClass::StartProduction(this, 1); /*0x449ac9*/
-    (*((void (__thiscall **)(BuildingClass *, unsigned int))this->TechnoClass + 311))(this, 0); /*0x449ad4*/
-    (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->TechnoClass + 122))(this, 5, 0); /*0x449ae2*/
+    (*((void (__thiscall **)(BuildingClass *, unsigned int))this->vtable1 + 311))(this, 0); /*0x449ad4*/
+    (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x449ae2*/
     Type = this->Type; /*0x449ae8*/
     if ( !Type->LaserFence ) /*0x449aee*/
     {
       IDA_LOBYTE(v4) = 0; /*0x449af8*/
       IDA_HIBYTE(v4) = Type->unknown___2; /*0x449afe*/
       IDA_LOWORD(v7) = v4; /*0x449b05*/
-      FacingClass::Set_SyncLog((char *)this->?, &v7); /*0x449b10*/
+      ((char *)((unsigned int *)this)[0])->Set_SyncLog(&v7); /*0x449b10*/
     }
     BuildingTypeClass::IsPowered(this->Type); /*0x449b1b*/
     Mixer::ReleaseChannel((Mixer *)&this->WasOnline); /*0x449b22*/
@@ -693,8 +694,8 @@ void ** AnimClass::ctor(void *a2, int *a3, void *a4, int a5, void *a6, void *a7,
     *(unsigned int *)&this->__pad_120[12] = 0; /*0x421f7d*/
     *(unsigned int *)&this->__pad_120[20] = 0; /*0x421f80*/
     *(unsigned int *)&this->__pad_120[28] = 0; /*0x421f83*/
-    Int4::Set((Int4 *)&this->__pad_120[56], 0, 0, 0, 1065353216); /*0x421f86*/
-    Int4::Set((Int4 *)&this->__pad_120[72], 0, 0, 0, 1065353216); /*0x421f96*/
+    ((Int4 *)((Int4 *)&this->__pad_120[56]))->Set(0, 0, 0, 1065353216); /*0x421f86*/
+    ((Int4 *)((Int4 *)&this->__pad_120[72]))->Set(0, 0, 0, 1065353216); /*0x421f96*/
     this->AnimClass_field_0x188 = 0; /*0x421fa4*/
     this->__pad_178[0] = 0; /*0x421faa*/
     this->__pad_178[1] = 0; /*0x421fb0*/
@@ -844,8 +845,8 @@ void ** AnimClass::ctor(void *a2, int *a3, void *a4, int a5, void *a6, void *a7,
     *(unsigned int *)&this->__pad_120[12] = 0; /*0x421f7d*/
     *(unsigned int *)&this->__pad_120[20] = 0; /*0x421f80*/
     *(unsigned int *)&this->__pad_120[28] = 0; /*0x421f83*/
-    Int4::Set((Int4 *)&this->__pad_120[56], 0, 0, 0, 1065353216); /*0x421f86*/
-    Int4::Set((Int4 *)&this->__pad_120[72], 0, 0, 0, 1065353216); /*0x421f96*/
+    ((Int4 *)((Int4 *)&this->__pad_120[56]))->Set(0, 0, 0, 1065353216); /*0x421f86*/
+    ((Int4 *)((Int4 *)&this->__pad_120[72]))->Set(0, 0, 0, 1065353216); /*0x421f96*/
     this->AnimClass_field_0x188 = 0; /*0x421fa4*/
     this->__pad_178[0] = 0; /*0x421faa*/
     this->__pad_178[1] = 0; /*0x421fb0*/
@@ -989,8 +990,8 @@ void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, 
     *(unsigned int *)&this->__pad_120[12] = 0; /*0x421f7d*/
     *(unsigned int *)&this->__pad_120[20] = 0; /*0x421f80*/
     *(unsigned int *)&this->__pad_120[28] = 0; /*0x421f83*/
-    Int4::Set((Int4 *)&this->__pad_120[56], 0, 0, 0, 1065353216); /*0x421f86*/
-    Int4::Set((Int4 *)&this->__pad_120[72], 0, 0, 0, 1065353216); /*0x421f96*/
+    ((Int4 *)((Int4 *)&this->__pad_120[56]))->Set(0, 0, 0, 1065353216); /*0x421f86*/
+    ((Int4 *)((Int4 *)&this->__pad_120[72]))->Set(0, 0, 0, 1065353216); /*0x421f96*/
     this->AnimClass_field_0x188 = 0; /*0x421fa4*/
     this->__pad_178[0] = 0; /*0x421faa*/
     this->__pad_178[1] = 0; /*0x421fb0*/
@@ -1010,9 +1011,9 @@ void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, 
     this->__pad_194[8] = 1; /*0x422009*/
     this->__pad_194[9] = 0; /*0x422010*/
     this->__pad_194[10] = 0; /*0x422016*/
-    this->AnimClass_field_0x0 = (int)&AnimClass::`vftable'; /*0x42201c*/
-    this->AnimClass_field_0x4 = (int)&AnimClass::`vftable'; /*0x422022*/
-    this->AnimClass_field_0x8 = (int)&AnimClass::`vftable'; /*0x422028*/
+    this->AnimClass_field_0x0 = (int)&vt_AnimClass; /*0x42201c*/
+    this->AnimClass_field_0x4 = (int)&vt_AnimClass; /*0x422022*/
+    this->AnimClass_field_0x8 = (int)&vt_AnimClass; /*0x422028*/
     *(unsigned int *)this->__pad_C = &off_7E3328; /*0x422030*/
     this->__pad_D8[4] = 0; /*0x422037*/
     AbstractClass::GenerateUniqueID((AbstractClass *)&this->AnimClass_field_0x4); /*0x42203d*/
@@ -1114,7 +1115,7 @@ void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, 
             v35 = (unsigned int *)(*(int (__thiscall **)(int, CoordStruct *))(*(unsigned int *)this->AnimClass_field_0xCC + 72))( /*0x42245d*/
                               this->AnimClass_field_0xCC,
                               &v75);
-            v72.vfptr = (void *)(*v35 + *Coords); /*0x422468*/
+            v72.X = (*v35 + *Coords); /*0x422468*/
             v36 = Coords[1] + v35[1]; /*0x422472*/
             v37 = Coords[2] + v35[2]; /*0x422475*/
             vfptr = (int)v72.vfptr; /*0x42247c*/
@@ -1269,7 +1270,7 @@ int AnimClass::ClearTargetReferences(int a2, int a3)
     int (__thiscall **v6)(AnimClass *); // edx
     int (__thiscall **v7)(AnimClass *); // eax
 
-    Object::Unlink((ObjectClass *)this); /*0x42515f*/
+    ObjectClass::Unlink((ObjectClass *)this); /*0x42515f*/
     result = (int)this->AnimClass_field_0xCC; /*0x425164*/
     if ( result == a2 && a2 ) /*0x425172*/
     {

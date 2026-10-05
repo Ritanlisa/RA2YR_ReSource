@@ -25,7 +25,7 @@ const HvaMatrix* HvaFile::GetTransform(int frame, int limb) const {  // 0x55A730
 
     Matrix3x4::Identity(&v8); /*0x55a739*/
     v3 = this; /*0x55a73e*/
-    this = (LocomotionClass *)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)this->Owner->?, &v7) >> 10) + 1) >> 1) /*0x55a763*/
+    this = (LocomotionClass *)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)this->((unsigned int *)Owner)[0], &v7) >> 10) + 1) >> 1) /*0x55a763*/
                               & 0x1F)
                              - 8);
     v6 = (double)(int)this * -0.1963495408493621; /*0x55a776*/
@@ -34,7 +34,7 @@ const HvaMatrix* HvaFile::GetTransform(int frame, int limb) const {  // 0x55A730
     if ( a3 && *a3 != -1 ) /*0x55a78b*/
     {
       *a3 *= 32; /*0x55a790*/
-      *v4 |= ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)v3->Owner->?, &this) >> 10) + 1) >> 1) & 0x1F; /*0x55a7b4*/
+      *v4 |= ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)v3->((unsigned int *)Owner)[0], &this) >> 10) + 1) >> 1) & 0x1F; /*0x55a7b4*/
     }
     result = a2; /*0x55a7b6*/
     qmemcpy(a2, &v8, 0x30u); /*0x55a7c5*/

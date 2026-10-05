@@ -1,6 +1,7 @@
 // G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
 #define GAMEMD_TREE_UNIVERSE 1
 // G42.32 S: guard-order tree-bridge -- ra2::game full defs precede e4 leaf headers
+#include "system/map.hpp"  // gB MapClass tree truth
 #include "object/abstract.hpp"
 #include "misc/audio.hpp"
 #include "object/techno.hpp"
@@ -14,7 +15,6 @@ using ra2::game::TechnoClass;
 #endif
 #include "object/object.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
-#include "e4/classes/MapClass_e4.hpp"
 #include "type/object_type.hpp"
 #include "system/cell.hpp"
 #include "system/tactical.hpp"
@@ -62,26 +62,26 @@ bool ObjectClass::Remove()
     int v3; // eax
     IUnknown *v4; // [esp+4h] [ebp-4h] BYREF
 
-    IDA_LOBYTE(result) = this->__pad_74[15]; /*0x5f44a4*/
+    IDA_LOBYTE(result) = this->isSelected; /*0x5f44a4*/
     if ( (unsigned char)result ) /*0x5f44ac*/
     {
-      v4 = this; /*0x5f44be*/
-      v3 = (*(int (__thiscall **)(unsigned char *, IUnknown **))(*(unsigned int * *)((char *)&stru_A8EB00 + 440) + 16))(((char *)&stru_A8EB00 + 440), &v4); /*0x5f44c2*/
+      v4 = (IUnknown *)(IPersistStream *)this; /*0x5f44be*/
+      v3 = (*(int (__thiscall **)(unsigned char *, IUnknown **))(*(unsigned int * *)((char *)&stru_A8EB00 + 440) + 16))((unsigned char *)((char *)&stru_A8EB00 + 440), &v4); /*0x5f44c2*/
       if ( v3 != -1 && v3 < *(int * *)((char *)&stru_A8EB00 + 456) ) /*0x5f44d2*/
       {
         --*(unsigned int * *)((char *)&stru_A8EB00 + 456); /*0x5f44d7*/
         for ( ; /*0x5f44dd*/
-              v3 < *(int *)&stru_A8EB00.?[228];
-              *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[216] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[216]
+              v3 < *(int *)&((unsigned int *)&stru_A8EB00)[228];
+              *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[216] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[216]
                                                                                    + 4 * v3) )
         {
           ++v3; /*0x5f44e5*/
         }
       }
-      this->__pad_74[15] = 0; /*0x5f44fc*/
-      result = MapClass::GetScrollMode((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x5f4503*/
-      if ( (IUnknown *)result == this ) /*0x5f450a*/
-        return MapClass::SetScrollMode((int)&stru_87F5F0.__pad_58[416], 0); /*0x5f4513*/
+      this->isSelected = 0; /*0x5f44fc*/
+      result = ((gamemd::MapClass *)&stru_87F5F0.__pad_58[416])->GetScrollMode(); /*0x5f4503*/
+      if ( (IUnknown *)result == (IUnknown *)(IPersistStream *)this ) /*0x5f450a*/
+        return ((gamemd::MapClass *)&stru_87F5F0.__pad_58[416])->SetScrollMode(0); /*0x5f4513*/
     }
     return result; /*0x5f4518*/
 }
@@ -94,10 +94,10 @@ int ObjectClass::Destroy()
     attachedBomb = (ObjectClass *)this->attachedBomb; /*0x5f65f3*/
     if ( attachedBomb ) /*0x5f65f8*/
       ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f65fa*/
-    if ( this && (this->? & 1) != 0 ) /*0x5f6607*/
-      TechnoClass::CleanupAll((TechnoClass *)this, 0); /*0x5f660d*/
-    AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x5f6616*/
-    (*((void (__thiscall **)(ObjectClass *))this->AbstractClass + 53))(this); /*0x5f661f*/
+    if ( this && (((unsigned int *)this)[0] & 1) != 0 ) /*0x5f6607*/
+      ((TechnoClass *)this)->CleanupAll(0); /*0x5f660d*/
+    AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5f6616*/
+    (*((void (__thiscall **)(ObjectClass *))this->vtable1 + 53))(this); /*0x5f661f*/
     this->isAliveFlag = 0; /*0x5f6625*/
     result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x5f662c*/
     if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x5f6666*/
@@ -132,11 +132,11 @@ int ObjectClass::MarkForRedraw()
 {
     int result; // eax
 
-    IDA_LOBYTE(result) = this->__pad_74[12]; /*0x5f4d10*/
+    IDA_LOBYTE(result) = this->needsRedraw; /*0x5f4d10*/
     if ( !(unsigned char)result ) /*0x5f4d18*/
     {
-      this->__pad_74[12] = 1; /*0x5f4d1a*/
-      return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x5f4d28*/
+      this->needsRedraw = 1; /*0x5f4d1a*/
+      return ((gamemd::MapClass *)&stru_87F5F0.__pad_58[416])->MarkForRedraw(0); /*0x5f4d28*/
     }
     return result; /*0x5f4d2d*/
 }
