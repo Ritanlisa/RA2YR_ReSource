@@ -750,9 +750,137 @@ int AircraftClass::ProcessMissionTimeout()
     return base + Random::Range((void *)((char *)&dword_A8B230 + 0x218), 0, 2);
 }
 // 0x41a5c0
+// G42.42j FULL implementation (truth 0x41A5C0; disasm 41A5C0-41A92B):
+//   At flight ceiling (GetZAboveGround == Type max flight): with a team wait
+//   for the dock timer (mission-control seconds * 900); teamless routes to
+//   the weapon-slot check (ammo in slot -> guard requeue with 0x6D4 flag,
+//   else To_Cell dispatch of current location + mission 2).  Below ceiling:
+//   the ammo/threshold ladder (byte_889ECC/ECD mode split on Type+0x684 and
+//   its half) can trigger the fallback landing search (vt528 at Type+0x3E8,
+//   mission 7 + dispatch + radio release).  Common tail: radio-partner check,
+//   team/hunt validation, non-current-player occupier scan, and the
+//   FindMovePosition / mission-control-timeout split.
 int AircraftClass::GetMissionTimer()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0041A5C0.json)
+    int maxFlight = (*(int (__thiscall **)(AircraftTypeClass *))(*(unsigned int **)Type + 47))(Type);
+    int ammo = *(int *)((char *)this + 0x2FC);
+    int capacity = *(int *)((char *)Type + 0x684);
+
+    if (GetZAboveGround(0) == maxFlight)
+    {
+        if (team != nullptr)
+        {
+            if (movementDestination != nullptr)
+            {
+                (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 0);
+                AircraftClass_field_bool_6D4 = true;
+            }
+            void *mc = GetMissionControl();
+            return (int)Math::RoundToInt(*((double *)mc + 2) * 900.0);
+        }
+        int slot = SelectWeaponSlot(0);
+        if (slot != 0 && *(int *)slot == 0)
+        {
+            slot = SelectWeaponSlot(0);
+        }
+        if (*(int *)(slot = SelectWeaponSlot(0)) != 0 || slot == 0)
+        {
+            // slot holds ammo (or absent): guard requeue
+            if (team == nullptr)
+            {
+                (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 289))(this, 0, 1);
+                AircraftClass_field_bool_6D4 = true;
+            }
+            return 1;
+        }
+        int coords[3];
+        coords[0] = *(int *)((char *)this + 0x9C);
+        coords[1] = *(int *)((char *)this + 0xA0);
+        coords[2] = *(int *)((char *)this + 0xA4);
+        void *cell = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)coords);
+        (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, cell, 1);
+        (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 2, 0);
+        return 1;
+    }
+
+    // below ceiling
+    bool goFallback = false;
+    if (byte_889ECC != 0)
+    {
+        if (ammo != 0 || (*(unsigned char (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 171))(this) != 0)
+        {
+            if (ammo != -1 && ammo < capacity / 2)
+            {
+                if (Team_AllMembersValid((int)this) != 0)
+                {
+                    int member = Team_GetMember((int)this, 0);
+                    if ((*(int (__thiscall **)(void *))(*(unsigned int **)(void *)member + 11))((void *)member) == 6
+                     && *(unsigned char *)(*(int *)((char *)member + 0x520) + 0x16AA) != 0)
+                        return 1;
+                }
+            }
+        }
+        else
+        {
+            goFallback = true;
+        }
+    }
+    else if (byte_889ECD != 0)
+    {
+        if ((*(unsigned char (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 171))(this) != 0
+         && ammo < capacity / 2)
+            goFallback = true;
+    }
+    else
+    {
+        if ((*(unsigned char (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 171))(this) != 0
+         && ammo < capacity)
+            goFallback = true;
+    }
+
+    if (goFallback)
+    {
+        if (Team_AllMembersValid((int)this) == 0)
+        {
+            void *found = (*(void **(__thiscall **)(AircraftClass *, void *, int, int))(*(unsigned int **)this + 132))(this, (void *)((char *)Type + 0x3E8), 0, 0);
+            if (found != nullptr)
+            {
+                (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 7, 0);
+                (*(void (__thiscall **)(AircraftClass *, void *, int))(*(unsigned int **)this + 288))(this, found, 1);
+                (*(void (__thiscall **)(AircraftClass *, int))(*(unsigned int **)this + 242))(this, 0);
+                return 1;
+            }
+        }
+    }
+
+    if (*(void **)((char *)this + 0x2B4) != nullptr)
+    {
+        (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 1, 0);
+        return 1;
+    }
+    if ((*(unsigned char (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 171))(this) == 0)
+        return 45;
+    if (GetZAboveGround(0) == 0 && Team_AllMembersValid((int)this) == 0)
+        return 45;
+    if (owner != nullptr && !owner->IsCurrentPlayer())
+    {
+        int coords[3];
+        coords[0] = *(int *)((char *)this + 0x9C);
+        coords[1] = *(int *)((char *)this + 0xA0);
+        coords[2] = *(int *)((char *)this + 0xA4);
+        void *occ = ((CellClass *)&dword_87F7E8)->ScanOccupiers((void *)coords);
+        if (occ != nullptr)
+        {
+            (*(void (__thiscall **)(AircraftClass *, void *))(*(unsigned int **)this + 242))(this, occ);
+            (*(void (__thiscall **)(AircraftClass *, int, int))(*(unsigned int **)this + 122))(this, 1, 0);
+        }
+    }
+    if (owner == nullptr || !owner->IsCurrentPlayer()
+     || (*(unsigned char (__thiscall **)(AircraftClass *))(*(unsigned int **)this + 21))(this) != 0)
+        return FootClass::FindMovePosition();
+    void *mc = GetMissionControl();
+    return (int)Math::RoundToInt(*((double *)mc + 2) * 900.0)
+         + Random::Range((void *)((char *)&dword_A8B230 + 0x218), 0, 2);
 }
 // IDA: 0x41A940 (EvaluateTargetingState, 157B)
 int AircraftClass::EvaluateTargetingState()
