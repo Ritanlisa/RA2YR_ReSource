@@ -3291,7 +3291,24 @@ void FileSystem::FlushTempFiles() {
 namespace gamemd { 
 void * FileSystem::openFile(void * aP1)  // G42.41m: truth 0x628110; decl = file_system.hpp:98
 {
-    (void)aP1; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x628110)
+    int v2; // ebp
+    int v3; // edi
+    int i; // ebx
+    const char *v5; // esi
+
+    v2 = *(unsigned int *)this + 24 * ((*((int (__thiscall **)(const char *))this + 1))(a2) % *((unsigned int *)this + 2)); /*0x62812a*/
+    v3 = *(unsigned int *)(v2 + 16) - 1; /*0x62812d*/
+    if ( v3 < 0 ) /*0x62812e*/
+      return 0; /*0x62815a*/
+    for ( i = 260 * v3; ; i -= 260 ) /*0x628137*/
+    {
+      v5 = (const char *)(i + *(unsigned int *)(v2 + 4)); /*0x628141*/
+      if ( (unsigned __int8)String::Equals(v5, a2) ) /*0x628146*/
+        break; /*0x628146*/
+      if ( --v3 < 0 ) /*0x628158*/
+        return 0; /*0x628158*/
+    }
+    return v5 + 256; /*0x62815a*/
 }
 }
 // 0x5D87E0
@@ -3357,7 +3374,24 @@ void FileSystem::FlushTempFiles() {
 namespace gamemd { 
 void * FileSystem::openFile(void * aP1)  // G42.41m: truth 0x628110; decl = file_system.hpp:98
 {
-    (void)aP1; return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x628110)
+    int v2; // ebp
+    int v3; // edi
+    int i; // ebx
+    const char *v5; // esi
+
+    v2 = *(unsigned int *)this + 24 * ((*((int (__thiscall **)(const char *))this + 1))(a2) % *((unsigned int *)this + 2)); /*0x62812a*/
+    v3 = *(unsigned int *)(v2 + 16) - 1; /*0x62812d*/
+    if ( v3 < 0 ) /*0x62812e*/
+      return 0; /*0x62815a*/
+    for ( i = 260 * v3; ; i -= 260 ) /*0x628137*/
+    {
+      v5 = (const char *)(i + *(unsigned int *)(v2 + 4)); /*0x628141*/
+      if ( (unsigned __int8)String::Equals(v5, a2) ) /*0x628146*/
+        break; /*0x628146*/
+      if ( --v3 < 0 ) /*0x628158*/
+        return 0; /*0x628158*/
+    }
+    return v5 + 256; /*0x62815a*/
 }
 }
 
@@ -4674,7 +4708,7 @@ int INIEntry::LookupByName() {
 namespace gamemd { 
 bool VeterancyStruct::IsRookie()
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x74ffc0)
+    return *this >= 0.0 && *this < 1.0; /*0x74ffe3*/
 }
 }
 

@@ -569,7 +569,24 @@ int Stream::ReadOLEObjects() {
 namespace gamemd { 
 void* StreamWrapper::QueryInterface(int a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7B0440)
+    void (__thiscall ***v3)(unsigned int, int); // ecx
+    void (__thiscall ***v4)(unsigned int, int); // ecx
+    void (__thiscall ***v5)(unsigned int, int); // ecx
+
+    v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 4); /*0x7b0443*/
+    *(unsigned int *)this->__pad_0 = &WorldDominationTour::FactionSelectDialogControl::`vftable'; /*0x7b0446*/
+    if ( v3 ) /*0x7b044e*/
+      (**v3)(v3, 1); /*0x7b0454*/
+    v4 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 5); /*0x7b0456*/
+    if ( v4 ) /*0x7b045b*/
+      (**v4)(v4, 1); /*0x7b0461*/
+    v5 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 6); /*0x7b0463*/
+    if ( v5 ) /*0x7b0468*/
+      (**v5)(v5, 1); /*0x7b046e*/
+    OwnerDrawControl::InitVtable((OwnerDrawControl *)this); /*0x7b0472*/
+    if ( (a2 & 1) != 0 ) /*0x7b047c*/
+      RA2_OPDEL(this); /*0x7b047f*/
+    return this->__pad_0; /*0x7b0489*/
 }
 }
 // 0x7BCAE0

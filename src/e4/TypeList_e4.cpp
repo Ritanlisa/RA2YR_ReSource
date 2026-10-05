@@ -1976,7 +1976,20 @@ VectorClass_flat * TypeList_VoxelAnim::Constructor(unsigned int * Block, char a2
 namespace gamemd {
 DynamicVector * TypeList_VoxelAnim::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = ida_cache)
+    void *v3; // eax
+
+    v3 = *(void **)&this->m_1[3]; /*0x67c103*/
+    *(unsigned int *)this->__pad_0 = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67c106*/
+    if ( v3 && IDA_BYTE1(this->m_C) ) /*0x67c110*/
+    {
+      RA2_OPDEL(v3); /*0x67c118*/
+      *(unsigned int *)&this->m_1[3] = 0; /*0x67c120*/
+    }
+    IDA_BYTE1(this->m_C) = 0; /*0x67c12b*/
+    this->m_8 = 0; /*0x67c131*/
+    if ( (a2 & 1) != 0 ) /*0x67c138*/
+      RA2_OPDEL(this); /*0x67c13b*/
+    return this->__pad_0; /*0x67c145*/
 }
 } // namespace gamemd
 
@@ -1984,7 +1997,20 @@ DynamicVector * TypeList_VoxelAnim::Constructor_0(unsigned int * Block, char a2,
 namespace gamemd {
 VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw body)
+    void *v3; // eax
+
+    v3 = *(void **)&this->m_1[3]; /*0x67c153*/
+    *(unsigned int *)this->__pad_0 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67c156*/
+    if ( v3 && IDA_BYTE1(this->m_C) ) /*0x67c160*/
+    {
+      RA2_OPDEL(v3); /*0x67c168*/
+      *(unsigned int *)&this->m_1[3] = 0; /*0x67c170*/
+    }
+    IDA_BYTE1(this->m_C) = 0; /*0x67c17b*/
+    this->m_8 = 0; /*0x67c181*/
+    if ( (a2 & 1) != 0 ) /*0x67c188*/
+      RA2_OPDEL(this); /*0x67c18b*/
+    return this->__pad_0; /*0x67c195*/
 }
 } // namespace gamemd
 
@@ -1992,7 +2018,20 @@ VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(unsigned int * Bl
 namespace gamemd {
 DynamicVector * TypeList_VoxelAnim::Constructor_1(unsigned int * Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (raw body)
+    void *v3; // eax
+
+    v3 = *(void **)&this->m_1[3]; /*0x67c1a3*/
+    *(unsigned int *)this->__pad_0 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67c1a6*/
+    if ( v3 && IDA_BYTE1(this->m_C) ) /*0x67c1b0*/
+    {
+      RA2_OPDEL(v3); /*0x67c1b8*/
+      *(unsigned int *)&this->m_1[3] = 0; /*0x67c1c0*/
+    }
+    IDA_BYTE1(this->m_C) = 0; /*0x67c1cb*/
+    this->m_8 = 0; /*0x67c1d1*/
+    if ( (a2 & 1) != 0 ) /*0x67c1d8*/
+      RA2_OPDEL(this); /*0x67c1db*/
+    return this->__pad_0; /*0x67c1e5*/
 }
 } // namespace gamemd
 
@@ -2105,6 +2144,30 @@ return (unsigned int *)&this->DynamicVectorClass; /*0x717cc9*/
 namespace gamemd {
 char TypeList_PushBack_free(void * aP1)
 {
-    return 0; // TODO stub - quarantined G42 T9 (truth = .omo/ida_cache/func_0x717CD0.json)
+    int Capacity; // ecx
+    int CapacityIncrement; // eax
+    int Count; // eax
+    unsigned int *Items; // edx
+
+    Capacity = this->?; /*0x717cd3*/
+    if ( this->? >= Capacity ) /*0x717cdb*/
+    {
+      if ( !this->? && Capacity ) /*0x717ce6*/
+        return 0; /*0x717ce6*/
+      CapacityIncrement = this->?; /*0x717ce8*/
+      if ( CapacityIncrement <= 0 /*0x717cf8*/
+        || !(*((unsigned __int8 (__thiscall **)(TypeList *, int, unsigned int))this->DynamicVectorClass + 2))(
+              this,
+              Capacity + CapacityIncrement,
+              0) )
+      {
+        return 0; /*0x717cff*/
+      }
+    }
+    Count = this->?; /*0x717d05*/
+    Items = this->?; /*0x717d08*/
+    this->? = Count + 1; /*0x717d0e*/
+    Items[Count] = *a2; /*0x717d18*/
+    return 1; /*0x717d01*/
 }
 } // namespace gamemd

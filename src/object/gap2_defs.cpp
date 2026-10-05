@@ -808,7 +808,27 @@ int RadioClass::Constructor() {
 namespace ra2 { namespace game { 
 int MissionClass::ForceMission()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5b2fd0)
+    int result; // eax
+    int *missionTimer; // ecx
+    int v3; // [esp+4h] [ebp-8h]
+    int v4; // [esp+10h] [ebp+4h]
+
+    result = v4; /*0x5b2fdc*/
+    if ( this->currentMission != 28 || v4 != 5 ) /*0x5b2fe5*/
+    {
+      this->currentMission = v4; /*0x5b2fe9*/
+      this->queuedMission = -1; /*0x5b2fef*/
+      this->missionQueued = 0; /*0x5b2ff9*/
+      this->missionStatus = 0; /*0x5b2fff*/
+      this->missionStartTime = *(unsigned int *)&stru_A8EB00.?[416]; /*0x5b300a*/
+      this->missionData = 0; /*0x5b3010*/
+      missionTimer = this->missionTimer; /*0x5b301b*/
+      *missionTimer = *(unsigned int *)&stru_A8EB00.?[416]; /*0x5b3021*/
+      missionTimer[1] = v3; /*0x5b3027*/
+      missionTimer[2] = 0; /*0x5b302a*/
+      return v3; /*0x5b3023*/
+    }
+    return result; /*0x5b302d*/
 }
 }
 }
@@ -833,7 +853,31 @@ int ObjectClass::ProcessCloaking() {
 namespace ra2 { namespace game { 
 int MissionClass::NextMission()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5b3570)
+    int result; // eax
+    int v2; // eax
+    int v3; // [esp+4h] [ebp-8h]
+
+    result = this->queuedMission; /*0x5b3570*/
+    if ( result == -1 ) /*0x5b357c*/
+    {
+      IDA_LOBYTE(result) = 0; /*0x5b35cc*/
+    }
+    else
+    {
+      this->currentMission = result; /*0x5b357f*/
+      this->queuedMission = -1; /*0x5b3585*/
+      v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x5b358f*/
+      this->missionStatus = 0; /*0x5b359c*/
+      this->missionTimer[0] = v2; /*0x5b35a2*/
+      this->missionTimer[1] = v3; /*0x5b35a8*/
+      this->missionTimer[2] = 0; /*0x5b35ab*/
+      result = *(unsigned int *)&stru_A8EB00.?[416]; /*0x5b35ae*/
+      this->missionStartTime = *(unsigned int *)&stru_A8EB00.?[416]; /*0x5b35b3*/
+      this->missionData = 0; /*0x5b35b9*/
+      this->missionQueued = 0; /*0x5b35bf*/
+      IDA_LOBYTE(result) = 1; /*0x5b35c5*/
+    }
+    return result; /*0x5b35c8*/
 }
 }
 }
@@ -1708,7 +1752,811 @@ bool FootClass::CanEnterBuilding() {
 namespace ra2 { namespace game { 
 int TechnoClass::DrawPips()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x709a90)
+    double v1; // st4
+    double v2; // st5
+    double v3; // st6
+    double v4; // st7
+    int v6; // esi
+    int v7; // ecx
+    void (__thiscall **vtable0)(TechnoClass *); // eax
+    void (__thiscall **v9)(TechnoClass *); // edx
+    void (__thiscall **v10)(TechnoClass *); // edx
+    int v11; // ebx
+    int (__thiscall **v12)(TechnoClass *); // eax
+    int v13; // eax
+    int v14; // eax
+    int result; // eax
+    int v16; // edi
+    int v17; // ebx
+    int (__thiscall **v18)(TechnoClass *); // edx
+    void *v19; // ebx
+    int v20; // edi
+    int v21; // ebx
+    int v22; // eax
+    int (__thiscall **v23)(TechnoClass *); // edx
+    int v24; // eax
+    signed int v25; // ebx
+    void (__thiscall **v26)(TechnoClass *); // eax
+    void *v27; // edi
+    int v28; // edi
+    int v29; // eax
+    unsigned int *DB; // edi
+    unsigned int *v31; // ebx
+    int v32; // eax
+    unsigned int *v33; // ebx
+    int v34; // eax
+    int v35; // eax
+    unsigned int *v36; // ecx
+    int v37; // eax
+    int v38; // eax
+    unsigned int *v39; // ecx
+    int (__thiscall **v40)(TechnoClass *); // edx
+    signed int v41; // edi
+    unsigned int v42; // edi
+    unsigned int v43; // ebx
+    unsigned int v44; // ecx
+    bool v45; // zf
+    int v46; // eax
+    void *v47; // ebx
+    int (__thiscall **v48)(TechnoClass *); // eax
+    int v49; // edi
+    int v50; // ebx
+    CaptureManagerClass *captureManager; // ecx
+    int (__thiscall **v52)(TechnoClass *); // eax
+    int v53; // eax
+    unsigned int v54; // eax
+    int (__thiscall **v55)(TechnoClass *); // edx
+    int v56; // eax
+    unsigned int v57; // eax
+    int v58; // ebx
+    int v59; // edi
+    unsigned int v60; // edx
+    int v61; // ebx
+    int v62; // eax
+    int v63; // ecx
+    unsigned int v64; // edi
+    int v65; // edi
+    unsigned int v66; // edx
+    int v67; // ecx
+    int v68; // eax
+    int (__thiscall **v69)(TechnoClass *); // edx
+    unsigned int v70; // ebx
+    int v71; // edi
+    int v72; // esi
+    int v73; // ecx
+    int (__thiscall **v74)(TechnoClass *, int *, unsigned int *, int *); // edx
+    unsigned int controlGroup; // edi
+    int v76; // edi
+    int v77; // esi
+    int *TextBoundingRect; // eax
+    int v79; // ebx
+    int v80; // ecx
+    int v81; // edx
+    int v82; // ebx
+    int v83; // eax
+    int v84; // edx
+    int v85; // esi
+    int v86; // esi
+    int v87; // ecx
+    char *v88; // edx
+    int v89; // esi
+    int v90; // [esp-10h] [ebp-84h]
+    char v91; // [esp+12h] [ebp-62h]
+    bool v92; // [esp+13h] [ebp-61h] BYREF
+    void *Block[2]; // [esp+14h] [ebp-60h] BYREF
+    int v94; // [esp+1Ch] [ebp-58h]
+    float v95; // [esp+20h] [ebp-54h]
+    unsigned int v96; // [esp+24h] [ebp-50h]
+    unsigned int v97; // [esp+28h] [ebp-4Ch]
+    int v98[2]; // [esp+2Ch] [ebp-48h] BYREF
+    int v99; // [esp+34h] [ebp-40h]
+    int v100; // [esp+38h] [ebp-3Ch]
+    int v101; // [esp+3Ch] [ebp-38h]
+    int v102[2]; // [esp+40h] [ebp-34h] BYREF
+    int v103; // [esp+48h] [ebp-2Ch]
+    int v104; // [esp+4Ch] [ebp-28h]
+    int v105; // [esp+50h] [ebp-24h] BYREF
+    int v106; // [esp+54h] [ebp-20h]
+    int v107; // [esp+58h] [ebp-1Ch] BYREF
+    int v108; // [esp+5Ch] [ebp-18h]
+    wchar_t Buffer[10]; // [esp+60h] [ebp-14h] BYREF
+    int *v110; // [esp+78h] [ebp+4h]
+    int *v111; // [esp+80h] [ebp+Ch]
+
+    v107 = 4; /*0x709a9d*/
+    v6 = 2; /*0x709aa5*/
+    v7 = v110[1] - 1; /*0x709ab2*/
+    v105 = *v110 + 6; /*0x709ab3*/
+    vtable0 = (void (__thiscall **)(TechnoClass *))this->RadioClass; /*0x709ab7*/
+    v106 = v7; /*0x709aba*/
+    vtable0[34](this); /*0x709ac0*/
+    v9 = (void (__thiscall **)(TechnoClass *))this->RadioClass; /*0x709acc*/
+    v94 = FileSystem_PIPS_SHP; /*0x709acf*/
+    v9[34](this); /*0x709ad5*/
+    v10 = (void (__thiscall **)(TechnoClass *))this->RadioClass; /*0x709ae0*/
+    v101 = FileSystem_PIPS_SHP; /*0x709ae5*/
+    v10[34](this); /*0x709ae9*/
+    v11 = FileSystem_PIPS2_SHP; /*0x709aef*/
+    v12 = (int (__thiscall **)(TechnoClass *))this->RadioClass; /*0x709af5*/
+    v98[0] = FileSystem_PIPS2_SHP; /*0x709afa*/
+    v13 = v12[11](this); /*0x709afe*/
+    v92 = v13 == 6; /*0x709b09*/
+    if ( v13 != 6 ) /*0x709b0d*/
+    {
+      v14 = *v110; /*0x709b0f*/
+      v106 = v110[1]; /*0x709b17*/
+      v105 = v14 - 5; /*0x709b1b*/
+      v6 = 0; /*0x709b24*/
+      v107 = 4; /*0x709b26*/
+      v94 = v11; /*0x709b2a*/
+    }
+    if ( (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this) == 15 ) /*0x709b39*/
+      v105 += 11; /*0x709b4a*/
+    if ( !v92
+      || (result = (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this), *(unsigned int *)(result + 980) != 2) )
+    {
+      v95 = *(float *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3420); /*0x709b81*/
+      if ( IDA_SLODWORD(v95) > 0 ) /*0x709b85*/
+      {
+        v16 = 0; /*0x709b96*/
+        *(float *)&v97 = COERCE_FLOAT(SpawnManagerClass::CountDockedSpawns(this->spawnManager)); /*0x709b98*/
+        v17 = 0; /*0x709ba4*/
+        *(float *)&v96 = 0.0; /*0x709ba6*/
+        do /*0x709c25*/
+        {
+          Block[0] = (void *)(v17 + v105); /*0x709bc0*/
+          v102[1] = v96 + v106; /*0x709bce*/
+          v102[0] = v17 + v105; /*0x709be8*/
+          DrawToSurfaceSHP( /*0x709c09*/
+            (int)g_DSurface_Hidden_2,
+            *(int *)&stru_87F5F0.__pad_58[124],
+            v94,
+            v16++ < (int)v97,
+            v102,
+            v111,
+            1536,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0);
+          v17 += v107; /*0x709c1b*/
+          v96 += v6; /*0x709c21*/
+        }
+        while ( v16 < IDA_SLODWORD(v95) ); /*0x709c25*/
+      }
+      if ( v92 ) /*0x709c2d*/
+      {
+        v18 = (int (__thiscall **)(TechnoClass *))this->RadioClass; /*0x709c39*/
+        v19 = *(void **)(*((unsigned int *)this + 328) + 5504); /*0x709c3c*/
+        Block[0] = v19; /*0x709c44*/
+        v95 = COERCE_FLOAT(v18[258](this)); /*0x709c4e*/
+        if ( *(unsigned char *)(*((unsigned int *)this + 328) + 5508) ) /*0x709c58*/
+        {
+          if ( (int)v19 > 0 ) /*0x709c68*/
+          {
+            v20 = 0; /*0x709c6e*/
+            v21 = 0; /*0x709c78*/
+            *(float *)&v96 = 0.0; /*0x709c7a*/
+            do /*0x709d17*/
+            {
+              if ( v20 < IDA_SLODWORD(v95) && (v22 = *(unsigned int *)(*((unsigned int *)this + 418) + 4 * v20)) != 0 ) /*0x709c8f*/
+                v97 = *(unsigned int *)(*(unsigned int *)(v22 + 1728) + 3584); /*0x709c9d*/
+              else
+                v97 = 6; /*0x709ca3*/
+              v102[0] = v21 + v105; /*0x709cba*/
+              v102[1] = v106 + v96; /*0x709cd6*/
+              DrawToSurfaceSHP( /*0x709cfb*/
+                (int)g_DSurface_Hidden_2,
+                *(int *)&stru_87F5F0.__pad_58[124],
+                v94,
+                v97,
+                v102,
+                v111,
+                1536,
+                0,
+                0,
+                0,
+                1000,
+                0,
+                0,
+                0,
+                0,
+                0);
+              ++v20; /*0x709d0c*/
+              v21 += v107; /*0x709d0d*/
+              v96 += v6; /*0x709d13*/
+            }
+            while ( v20 < (int)Block[0] ); /*0x709d17*/
+          }
+        }
+      }
+      if ( *(int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 1504) <= 0 )
+      {
+        v95 = COERCE_FLOAT((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 174))(this)); /*0x70a08e*/
+        v46 = (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this); /*0x70a097*/
+        v47 = (void *)(*(int (__thiscall **)(int))(*(unsigned int *)v46 + 116))(v46); /*0x70a0a4*/
+        v48 = (int (__thiscall **)(TechnoClass *))this->RadioClass; /*0x70a0a6*/
+        Block[0] = v47; /*0x70a0ab*/
+        if ( *(unsigned int *)(v48[33](this) + 980) == 5 ) /*0x70a0bc*/
+        {
+          v49 = 0; /*0x70a0c2*/
+          if ( (int)v47 > 0 ) /*0x70a0c6*/
+          {
+            v50 = 0; /*0x70a0cc*/
+            *(float *)&v97 = 0.0; /*0x70a0ce*/
+            do /*0x70a156*/
+            {
+              v96 = v49 < IDA_SLODWORD(v95); /*0x70a0e2*/
+              v102[0] = v50 + v105; /*0x70a0f9*/
+              v102[1] = v106 + v97; /*0x70a115*/
+              DrawToSurfaceSHP( /*0x70a13a*/
+                (int)g_DSurface_Hidden_2,
+                *(int *)&stru_87F5F0.__pad_58[124],
+                v94,
+                v96,
+                v102,
+                v111,
+                1536,
+                0,
+                0,
+                0,
+                1000,
+                0,
+                0,
+                0,
+                0,
+                0);
+              ++v49; /*0x70a14b*/
+              v50 += v107; /*0x70a14c*/
+              v97 += v6; /*0x70a152*/
+            }
+            while ( v49 < (int)Block[0] ); /*0x70a156*/
+          }
+          captureManager = this->captureManager; /*0x70a15c*/
+          v92 = 0; /*0x70a162*/
+          if ( captureManager && CaptureManagerClass::IsOverloading((int)captureManager, &v92) ) /*0x70a170*/
+          {
+            v102[0] = v105 + v107 * v49; /*0x70a197*/
+            v102[1] = v106 + v49 * v6; /*0x70a1ac*/
+            DrawToSurfaceSHP( /*0x70a1d9*/
+              (int)g_DSurface_Hidden_2,
+              *(int *)&stru_87F5F0.__pad_58[124],
+              v94,
+              4 - v92,
+              v102,
+              v111,
+              1536,
+              0,
+              0,
+              0,
+              1000,
+              0,
+              0,
+              0,
+              0,
+              0);
+          }
+        }
+        if ( *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 980) == 2 ) /*0x70a1f0*/
+        {
+          FloatArray::Get((int *)&this->tiltSidewaysAngle, 0); /*0x70a200*/
+          *(float *)&v96 = v1; /*0x70a205*/
+          FloatArray::Get((int *)&this->tiltSidewaysAngle, 2); /*0x70a20d*/
+          *(float *)&v97 = v2; /*0x70a212*/
+          FloatArray::Get((int *)&this->tiltSidewaysAngle, 3); /*0x70a21a*/
+          *(float *)v98 = v3; /*0x70a21f*/
+          FloatArray::Get((int *)&this->tiltSidewaysAngle, 1); /*0x70a227*/
+          v95 = v4; /*0x70a22c*/
+          v52 = (int (__thiscall **)(TechnoClass *))this->RadioClass; /*0x70a234*/
+          *(double *)v102 = (double)(int)Block[0]; /*0x70a239*/
+          *(double *)v98 = *(float *)v98 + *(float *)&v97 + *(float *)&v96; /*0x70a249*/
+          v53 = v52[33](this); /*0x70a24d*/
+          IDA_LOWORD(v54) = Math::RoundToInt(*(double *)v98 / (double)*(int *)(v53 + 2048) * *(double *)v102 + 0.5); /*0x70a267*/
+          v55 = (int (__thiscall **)(TechnoClass *))this->RadioClass; /*0x70a270*/
+          *(double *)v98 = v95; /*0x70a275*/
+          v96 = v54; /*0x70a279*/
+          v56 = v55[33](this); /*0x70a27d*/
+          IDA_LOWORD(v57) = Math::RoundToInt(*(double *)v98 / (double)*(int *)(v56 + 2048) * *(double *)v102 + 0.5); /*0x70a297*/
+          v97 = v57; /*0x70a29c*/
+          if ( (int)Block[0] > 0 ) /*0x70a2a6*/
+          {
+            v58 = 0; /*0x70a2ac*/
+            v59 = 0; /*0x70a2ae*/
+            v95 = *(float *)Block; /*0x70a2b0*/
+            do /*0x70a33a*/
+            {
+              v60 = 0; /*0x70a2b8*/
+              if ( (int)v97 <= 0 ) /*0x70a2bc*/
+              {
+                if ( (int)v96 > 0 ) /*0x70a2d0*/
+                {
+                  v60 = 2; /*0x70a2d3*/
+                  --v96; /*0x70a2d8*/
+                }
+              }
+              else
+              {
+                v60 = 5; /*0x70a2bf*/
+                --v97; /*0x70a2c4*/
+              }
+              v102[0] = v59 + v105; /*0x70a2e7*/
+              v102[1] = v58 + v106; /*0x70a303*/
+              DrawToSurfaceSHP( /*0x70a324*/
+                (int)g_DSurface_Hidden_2,
+                *(int *)&stru_87F5F0.__pad_58[124],
+                v94,
+                v60,
+                v102,
+                v111,
+                1536,
+                0,
+                0,
+                0,
+                1000,
+                0,
+                0,
+                0,
+                0,
+                0);
+              v59 += v107; /*0x70a331*/
+              v58 += v6; /*0x70a333*/
+              --IDA_LODWORD(v95); /*0x70a336*/
+            }
+            while ( v95 != 0.0 ); /*0x70a33a*/
+          }
+        }
+        else if ( *(unsigned int *)((*((int (__usercall **)@<eax>(TechnoClass *@<ecx>))this->RadioClass + 33))(this) + 980) == 1 ) /*0x70a357*/
+        {
+          v102[0] = *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 996); /*0x70a370*/
+          v61 = v102[0]; /*0x70a368*/
+          if ( v102[0] ) /*0x70a374*/
+          {
+            v65 = 0; /*0x70a425*/
+            if ( v102[0] > 0 ) /*0x70a42c*/
+            {
+              v66 = 0; /*0x70a433*/
+              IDA_LODWORD(v95) = (int)Block[0] / v102[0] - 1; /*0x70a435*/
+              *(float *)&v96 = 0.0; /*0x70a439*/
+              do /*0x70a4e6*/
+              {
+                v67 = IDA_LODWORD(v95); /*0x70a43d*/
+                v97 = 14; /*0x70a441*/
+                if ( v95 >= 0.0 ) /*0x70a44b*/
+                {
+                  v94 = -v61; /*0x70a451*/
+                  v68 = v65 + v61 * IDA_LODWORD(v95); /*0x70a45a*/
+                  while ( v68 >= this->ammo ) /*0x70a462*/
+                  {
+                    --v67; /*0x70a468*/
+                    v68 += v94; /*0x70a469*/
+                    if ( v67 < 0 ) /*0x70a46d*/
+                      goto LABEL_87; /*0x70a46d*/
+                  }
+                  v97 = v67 + 15; /*0x70a474*/
+                }
+  LABEL_87:
+                Block[0] = (void *)(v105 + v66); /*0x70a478*/
+                Block[1] = (void *)(v106 + v65 * v6 - 3); /*0x70a495*/
+                DrawToSurfaceSHP( /*0x70a4cc*/
+                  (int)g_DSurface_Hidden_2,
+                  *(int *)&stru_87F5F0.__pad_58[124],
+                  v98[0],
+                  v97,
+                  (int *)Block,
+                  v111,
+                  1536,
+                  0,
+                  0,
+                  0,
+                  1000,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0);
+                v61 = v102[0]; /*0x70a4d9*/
+                ++v65; /*0x70a4dd*/
+                v66 = v107 + v96; /*0x70a4de*/
+                v96 += v107; /*0x70a4e2*/
+              }
+              while ( v65 < v102[0] ); /*0x70a4e6*/
+            }
+          }
+          else
+          {
+            v62 = IDA_LODWORD(v95); /*0x70a37e*/
+            v63 = 0; /*0x70a382*/
+            *(float *)&v97 = 0.0; /*0x70a386*/
+            if ( (int)Block[0] > 0 ) /*0x70a38a*/
+            {
+              v64 = 0; /*0x70a390*/
+              *(float *)&v96 = 0.0; /*0x70a392*/
+              do /*0x70a416*/
+              {
+                if ( v62 > 0 ) /*0x70a398*/
+                {
+                  IDA_LODWORD(v95) = v62 - 1; /*0x70a39f*/
+                  v102[1] = v106 + v63 * v6 - 3; /*0x70a3c1*/
+                  v102[0] = v105 + v64; /*0x70a3ec*/
+                  DrawToSurfaceSHP( /*0x70a3f0*/
+                    (int)g_DSurface_Hidden_2,
+                    *(int *)&stru_87F5F0.__pad_58[124],
+                    v98[0],
+                    0xDu,
+                    v102,
+                    v111,
+                    1536,
+                    0,
+                    0,
+                    0,
+                    1000,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0);
+                  v63 = v97; /*0x70a3f5*/
+                  v62 = IDA_LODWORD(v95); /*0x70a3f9*/
+                  v64 = v96; /*0x70a3fd*/
+                }
+                ++v63; /*0x70a409*/
+                v64 += v107; /*0x70a40a*/
+                v97 = v63; /*0x70a40e*/
+                v96 = v64; /*0x70a412*/
+              }
+              while ( v63 < (int)Block[0] ); /*0x70a416*/
+            }
+          }
+        }
+      }
+      else
+      {
+        v23 = (int (__thiscall **)(TechnoClass *))this->RadioClass; /*0x709d38*/
+        v102[0] = 0; /*0x709d3b*/
+        v102[1] = 0; /*0x709d3f*/
+        v24 = v23[34](this); /*0x709d45*/
+        v25 = (*(int (__thiscall **)(int))(*(unsigned int *)v24 + 116))(v24); /*0x709d52*/
+        v26 = (void (__thiscall **)(TechnoClass *))this->RadioClass; /*0x709d54*/
+        v97 = v25; /*0x709d59*/
+        v26[33](this); /*0x709d5d*/
+        v27 = (void *)RA2_OPNEW(4 * v25); /*0x709d73*/
+        Block[0] = v27; /*0x709d77*/
+        if ( v25 > 0 ) /*0x709d7b*/
+          memset(v27, 0, 4 * v25); /*0x709d81*/
+        v96 = this->passengers[0]; /*0x709d91*/
+        v28 = HouseClass::SumPowerDrain((HouseClass *)this->passengers) - 1; /*0x709d9c*/
+        if ( this
+          && (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this) == 6
+          && (v29 = (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this),
+              InfantryClass::updateDeployAnimation(v29 == 6 ? (InfantryClass *)this : 0)) )
+        {
+          DB = (unsigned int *)CCINIClass::GetDB((CCINIClass *)this->passengers); /*0x709ddb*/
+          v95 = 0.0; /*0x709de3*/
+          if ( (int)v96 > 0 ) /*0x709deb*/
+          {
+            v31 = Block[0]; /*0x709df1*/
+            do /*0x709e41*/
+            {
+              if ( !DB ) /*0x709df7*/
+                break; /*0x709df7*/
+              if ( (*(int (__thiscall **)(unsigned int *))(*DB + 44))(DB) == 15 ) /*0x709e07*/
+              {
+                *v31 = *(unsigned int *)(DB[432] + 3580); /*0x709e15*/
+              }
+              else
+              {
+                v32 = -((*(int (__thiscall **)(unsigned int *))(*DB + 44))(DB) != 1); /*0x709e23*/
+                IDA_LOBYTE(v32) = v32 & 0xFD; /*0x709e25*/
+                *v31 = v32 + 4; /*0x709e2a*/
+              }
+              DB = (unsigned int *)DB[12]; /*0x709e34*/
+              ++v31; /*0x709e38*/
+              ++IDA_LODWORD(v95); /*0x709e3d*/
+            }
+            while ( IDA_SLODWORD(v95) < (int)v96 ); /*0x709e41*/
+          }
+        }
+        else
+        {
+          if ( v28 >= (int)v97 ) /*0x709e4c*/
+          {
+            RA2_OPDEL(Block[0]); /*0x709e53*/
+            return result; /*0x709e62*/
+          }
+          v33 = (unsigned int *)CCINIClass::GetDB((CCINIClass *)this->passengers); /*0x709e6c*/
+          v95 = 0.0; /*0x709e74*/
+          if ( (int)v96 > 0 ) /*0x709e7c*/
+          {
+            do /*0x709f4a*/
+            {
+              if ( !v33 ) /*0x709e84*/
+                break; /*0x709e84*/
+              if ( (*(int (__thiscall **)(unsigned int *))(*v33 + 44))(v33) == 15 ) /*0x709e94*/
+              {
+                v34 = (*(int (__thiscall **)(unsigned int *))(*v33 + 132))(v33); /*0x709e9a*/
+                IDA_LOWORD(v35) = Math::RoundToInt(*(double *)(v34 + 896) - 1.0); /*0x709eac*/
+                if ( v35 > 0 ) /*0x709eb3*/
+                {
+                  v36 = (char *)Block[0] + 4 * v28; /*0x709eb9*/
+                  v28 -= v35; /*0x709ebc*/
+                  do /*0x709ec8*/
+                  {
+                    *v36-- = 3; /*0x709ebe*/
+                    --v35; /*0x709ec7*/
+                  }
+                  while ( v35 ); /*0x709ec8*/
+                }
+                *((unsigned int *)Block[0] + v28) = *(unsigned int *)(v33[432] + 3580); /*0x709eda*/
+              }
+              else if ( (*(int (__thiscall **)(unsigned int *))(*v33 + 44))(v33) == 1 ) /*0x709ee9*/
+              {
+                v37 = (*(int (__thiscall **)(unsigned int *))(*v33 + 132))(v33); /*0x709eef*/
+                IDA_LOWORD(v38) = Math::RoundToInt(*(double *)(v37 + 896) - 1.0); /*0x709f01*/
+                if ( v38 > 0 ) /*0x709f08*/
+                {
+                  v39 = (char *)Block[0] + 4 * v28; /*0x709f0e*/
+                  v28 -= v38; /*0x709f11*/
+                  do /*0x709f1d*/
+                  {
+                    *v39-- = 3; /*0x709f13*/
+                    --v38; /*0x709f1c*/
+                  }
+                  while ( v38 ); /*0x709f1d*/
+                }
+                *((unsigned int *)Block[0] + v28) = 5; /*0x709f23*/
+              }
+              else
+              {
+                *((unsigned int *)Block[0] + v28) = 1; /*0x709f30*/
+              }
+              v33 = (unsigned int *)v33[12]; /*0x709f3f*/
+              --v28; /*0x709f42*/
+              ++IDA_LODWORD(v95); /*0x709f46*/
+            }
+            while ( IDA_SLODWORD(v95) < (int)v96 ); /*0x709f4a*/
+          }
+        }
+        v40 = (int (__thiscall **)(TechnoClass *))this->RadioClass; /*0x709f50*/
+        v41 = 0; /*0x709f53*/
+        *(float *)&v96 = 0.0; /*0x709f57*/
+        if ( *(unsigned char *)(v40[33](this) + 2053) ) /*0x709f61*/
+        {
+          DrawToSurfaceSHP( /*0x709fa6*/
+            (int)g_DSurface_Hidden_2,
+            *(int *)&stru_87F5F0.__pad_58[124],
+            v94,
+            *(unsigned int *)Block[0],
+            &v105,
+            v111,
+            1536,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0);
+          v41 = 1; /*0x709faf*/
+          v96 = 1; /*0x709fb7*/
+          v102[1] = 2 * v6; /*0x709fbe*/
+          v102[0] = 2 * v107; /*0x709fc2*/
+        }
+        if ( v41 < (int)v97 ) /*0x709fca*/
+        {
+          v42 = v107 * v96; /*0x709fdc*/
+          v43 = v96 * v6; /*0x709fe1*/
+          v44 = v97 - v96; /*0x709feb*/
+          v96 = (unsigned int)Block[0] + 4 * v96; /*0x709fed*/
+          v97 = v44; /*0x709ff1*/
+          do /*0x70a06f*/
+          {
+            v98[0] = v42 + v102[0] + v105; /*0x70a009*/
+            v98[1] = v43 + v106 + v102[1]; /*0x70a025*/
+            DrawToSurfaceSHP( /*0x70a04e*/
+              (int)g_DSurface_Hidden_2,
+              *(int *)&stru_87F5F0.__pad_58[124],
+              v94,
+              *(unsigned int *)v96,
+              v98,
+              v111,
+              1536,
+              0,
+              0,
+              0,
+              1000,
+              0,
+              0,
+              0,
+              0,
+              0);
+            v42 += v107; /*0x70a05b*/
+            v43 += v6; /*0x70a061*/
+            v45 = v97 == 1; /*0x70a066*/
+            v96 += 4; /*0x70a067*/
+            --v97; /*0x70a06b*/
+          }
+          while ( !v45 ); /*0x70a06f*/
+        }
+        RA2_OPDEL(Block[0]); /*0x70a076*/
+      }
+      v69 = (int (__thiscall **)(TechnoClass *))this->RadioClass; /*0x70a4ec*/
+      v91 = 0; /*0x70a4f1*/
+      v92 = 0; /*0x70a4f6*/
+      v70 = 13; /*0x70a4fb*/
+      v71 = 0; /*0x70a500*/
+      v72 = 0; /*0x70a502*/
+      if ( (v69[11](this) == 15 /*0x70a534*/
+         || (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this) == 1
+         && *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3479))
+        && IsTechInfiltrated((TechnoClass *)this->owner) )
+      {
+        v91 = 1; /*0x70a54c*/
+        if ( *(unsigned int *)&stru_A8EB00.?[416] % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 48) <= 5 /*0x70a56c*/
+          && this->? < *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 160) )
+        {
+          v92 = 1; /*0x70a56e*/
+        }
+        v70 = 13; /*0x70a573*/
+      }
+      if ( (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this) == 1 /*0x70a5a0*/
+        && !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3479)
+        && IsProductionInfiltrated((TechnoClass *)this->owner) )
+      {
+        v91 = 1; /*0x70a5b8*/
+        if ( *(unsigned int *)&stru_A8EB00.?[416] % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 56) <= 5 /*0x70a5d8*/
+          && this->? < *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 160) )
+        {
+          v92 = 1; /*0x70a5da*/
+        }
+        v70 = 20; /*0x70a5df*/
+      }
+      if ( (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this) == 1 ) /*0x70a5ef*/
+      {
+        v71 = 38; /*0x70a5f1*/
+        v72 = -32; /*0x70a5f6*/
+      }
+      else if ( (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this) == 15 ) /*0x70a608*/
+      {
+        v71 = 19; /*0x70a60a*/
+        v72 = -35; /*0x70a60f*/
+      }
+      if ( v91 ) /*0x70a61a*/
+      {
+        v107 = v105 + v71; /*0x70a651*/
+        v108 = v72 + v106; /*0x70a658*/
+        if ( v92 ) /*0x70a626*/
+          DrawToSurfaceSHP( /*0x70a667*/
+            (int)g_DSurface_Hidden_2,
+            *(int *)&stru_87F5F0.__pad_58[124],
+            v101,
+            v70,
+            &v107,
+            v111,
+            1537,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0);
+        else
+          DrawToSurfaceSHP( /*0x70a6bb*/
+            (int)g_DSurface_Hidden_2,
+            *(int *)&stru_87F5F0.__pad_58[124],
+            v101,
+            v70,
+            &v107,
+            v111,
+            1536,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0);
+      }
+      result = (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this); /*0x70a6c5*/
+      if ( result != 6 ) /*0x70a6cf*/
+      {
+        v73 = v110[1]; /*0x70a6d3*/
+        v74 = (int (__thiscall **)(TechnoClass *, int *, unsigned int *, int *))this->RadioClass; /*0x70a6d6*/
+        v107 = *v110 - 10; /*0x70a6df*/
+        v108 = v73 + 10; /*0x70a6ea*/
+        result = v74[278](this, &v107, v110, v111); /*0x70a6f7*/
+      }
+      controlGroup = this->controlGroup; /*0x70a6fd*/
+      if ( controlGroup <= 9 )
+      {
+        v76 = controlGroup + 1; /*0x70a714*/
+        if ( v76 == 10 ) /*0x70a718*/
+          v76 = 0; /*0x70a71a*/
+        v77 = (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this) != 15 ? -33 : -36;
+        swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, v76 >= 10 ? 0 : (const wchar_t *const)v76);
+        v90 = v110[1] + v77 - 3; /*0x70a764*/
+        v107 = *v110 - 4; /*0x70a76e*/
+        v108 = v90; /*0x70a772*/
+        TextBoundingRect = GetTextBoundingRect(v102, (int)Buffer, v107, v90, 73, 2, -2); /*0x70a776*/
+        v98[0] = *TextBoundingRect; /*0x70a784*/
+        v79 = *v111; /*0x70a78d*/
+        v98[1] = TextBoundingRect[1]; /*0x70a78f*/
+        v80 = TextBoundingRect[2]; /*0x70a793*/
+        v99 = v80; /*0x70a796*/
+        v81 = TextBoundingRect[3]; /*0x70a79a*/
+        v102[0] = v79; /*0x70a79d*/
+        v82 = v111[1]; /*0x70a7a1*/
+        v100 = v81; /*0x70a7a4*/
+        v102[1] = v82; /*0x70a7a8*/
+        v83 = 0; /*0x70a7ac*/
+        v84 = 0; /*0x70a7b1*/
+        v85 = v111[3]; /*0x70a7b5*/
+        v103 = v111[2]; /*0x70a7b8*/
+        v104 = v85; /*0x70a7bc*/
+        if ( v80 <= 0 || v100 <= 0 || v111[2] <= 0 || v111[3] <= 0 ) /*0x70a7e9*/
+          goto LABEL_134; /*0x70a7e9*/
+        if ( v102[0] < v98[0] ) /*0x70a7f9*/
+        {
+          v103 += v102[0] - v98[0]; /*0x70a807*/
+          v102[0] = v98[0]; /*0x70a80b*/
+        }
+        if ( v103 < 1 ) /*0x70a814*/
+          goto LABEL_134; /*0x70a814*/
+        if ( v102[1] < v98[1] ) /*0x70a824*/
+        {
+          v104 += v102[1] - v98[1]; /*0x70a832*/
+          v102[1] = v98[1]; /*0x70a836*/
+        }
+        if ( v104 < 1 ) /*0x70a83f*/
+          goto LABEL_134; /*0x70a83f*/
+        if ( v102[0] + v103 > v80 + v98[0] ) /*0x70a853*/
+          v103 = v98[0] + v80 - v102[0]; /*0x70a861*/
+        if ( v103 < 1 || (v104 + v102[1] <= v98[1] + v100 ? (v86 = v104) : (v86 = v100 + v98[1] - v102[1]), v86 < 1) )
+        {
+  LABEL_134:
+          v87 = 0; /*0x70a8ab*/
+          v86 = 0; /*0x70a8ad*/
+        }
+        else
+        {
+          v83 = v102[0]; /*0x70a89d*/
+          v87 = v102[1]; /*0x70a8a1*/
+          v84 = v103; /*0x70a8a5*/
+        }
+        v98[0] = v83; /*0x70a8af*/
+        v98[1] = v87; /*0x70a8b5*/
+        v99 = v84 + 1; /*0x70a8b9*/
+        v88 = (char *)&this->owner->base[4] + 1; /*0x70a8c3*/
+        v100 = v86; /*0x70a8c9*/
+        v98[0] = v83 - 1; /*0x70a8cd*/
+        IDA_LOWORD(v102[0]) = *(unsigned short *)v88; /*0x70a8d6*/
+        IDA_BYTE2(v102[0]) = v88[2]; /*0x70a8de*/
+        v89 = (IDA_LOBYTE(v102[0]) >> g_BitShift_Green_0 << g_BitShift_Red) /*0x70a939*/
+            | (IDA_BYTE1(v102[0]) >> g_BitMask_Blue << g_BitMask_Green)
+            | (IDA_BYTE2(v102[0]) >> g_BitMask_Red << g_BitShift_Blue);
+        (*(void (__thiscall **)(AudioStream *, int *, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x70a940*/
+          g_DSurface_Hidden_2,
+          v98,
+          0);
+        (*(void (__thiscall **)(AudioStream *, int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 88))( /*0x70a951*/
+          g_DSurface_Hidden_2,
+          v98,
+          v89);
+        return (int)globalHelper_0A66D0(v102, (int)Buffer, (int)g_DSurface_Hidden_2, v111, (int)&v107, v89, 0, 73, -1, 1); /*0x70a97b*/
+      }
+    }
+    return result; /*0x709e5b*/
 }
 }
 }

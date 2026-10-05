@@ -423,5 +423,118 @@ REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", "None")
 // 0x5301a0
 char MixFileClass::Bootstrap()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x5301a0)
+    int i; // edi
+    unsigned int *v2; // eax
+    char v3; // bl
+    MixFileClass *v4; // eax
+    unsigned int *v5; // esi
+    int v6; // eax
+    MixFileClass *v7; // eax
+    MixFileClass *v8; // eax
+    unsigned int *v9; // eax
+    MixFileClass *v11; // eax
+    MixFileClass *v12; // eax
+    unsigned int *v13; // eax
+    MixFileClass *v14; // eax
+    MixFileClass *v15; // eax
+    unsigned int *v16; // eax
+    int v17; // [esp+10h] [ebp-68h]
+    RawFileClass v18; // [esp+14h] [ebp-64h] BYREF
+    char Buffer[64]; // [esp+38h] [ebp-40h] BYREF
+
+    v17 = dword_81C1D0; /*0x5301b1*/
+    SetSoundWarning(-2); /*0x5301b5*/
+    for ( i = 99; i >= 0; --i ) /*0x5301ba*/
+    {
+      sprintf(Buffer, "EXPANDMD%02d.MIX", i); /*0x5301ca*/
+      v2 = RawFileClass::Construct(&v18, (int)Buffer); /*0x5301db*/
+      v3 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v2 + 20))(v2, 0); /*0x5301ee*/
+      RawFileClass::Dtor(&v18); /*0x5301f0*/
+      if ( v3 ) /*0x5301f7*/
+      {
+        v4 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5301ff*/
+        if ( v4 ) /*0x530209*/
+        {
+          v5 = MixFileClass::FromFile(v4, Buffer, (int)dword_886980); /*0x53021c*/
+          if ( v5 ) /*0x530220*/
+          {
+            if ( g_MixFilePool_Count < g_MixFilePool_Capacity /*0x530258*/
+              || (g_MixFilePool_Flag || !g_MixFilePool_Capacity)
+              && g_MixFilePool_GrowSize > 0
+              && (*(unsigned __int8 (__thiscall **)(int *, int, unsigned int))(g_MixFileArray + 8))(
+                   &g_MixFileArray,
+                   g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
+                   0) )
+            {
+              v6 = g_MixFilePool_Count++; /*0x530265*/
+              *((unsigned int *)g_MixFilePool + v6) = v5; /*0x530274*/
+            }
+            Debug::Log_0(); /*0x530281*/
+          }
+        }
+      }
+    }
+    v7 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x530292*/
+    if ( !v7 ) /*0x53029c*/
+    {
+      g_MixFile_RA2MD = 0; /*0x5302de*/
+      return 0; /*0x5302de*/
+    }
+    g_MixFile_RA2MD = (int)MixFileClass::FromFile(v7, aRa2mdMix, (int)dword_886980); /*0x5302b1*/
+    if ( !g_MixFile_RA2MD ) /*0x5302b6*/
+      return 0; /*0x5302b6*/
+    v8 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5302ba*/
+    if ( !v8 ) /*0x5302c4*/
+    {
+      g_MixFile_RA2 = 0; /*0x5302ef*/
+      return 0; /*0x5302fd*/
+    }
+    v9 = MixFileClass::FromFile(v8, aRa2Mix, (int)dword_886980); /*0x5302d2*/
+    g_MixFile_RA2 = (int)v9; /*0x5302d7*/
+    if ( !v9 ) /*0x530300*/
+      return 0; /*0x530300*/
+    Debug::Log_0(); /*0x530307*/
+    v11 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x53030e*/
+    if ( !v11 ) /*0x530318*/
+    {
+      g_MixFile_CACHEMD = 0; /*0x530375*/
+      return 0; /*0x530383*/
+    }
+    g_MixFile_CACHEMD = (int)MixFileClass::FromFile(v11, aCachemdMix, (int)dword_886980); /*0x53032d*/
+    if ( !g_MixFile_CACHEMD || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((std::codecvt_base *)aCachemdMix) ) /*0x53033b*/
+      return 0; /*0x53033b*/
+    Debug::Log_0(); /*0x530349*/
+    v12 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x530350*/
+    if ( !v12 ) /*0x53035a*/
+    {
+      g_MixFile_CACHE = 0; /*0x530385*/
+      return 0; /*0x530393*/
+    }
+    v13 = MixFileClass::FromFile(v12, aCacheMix_0, (int)dword_886980); /*0x530368*/
+    g_MixFile_CACHE = (int)v13; /*0x53036d*/
+    if ( !v13 || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((std::codecvt_base *)aCacheMix_0) ) /*0x5303a3*/
+      return 0; /*0x5303a3*/
+    Debug::Log_0(); /*0x5303b5*/
+    v14 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5303bc*/
+    if ( !v14 ) /*0x5303c6*/
+    {
+      g_MixFile_LOCALMD = 0; /*0x53040d*/
+      return 0; /*0x53041b*/
+    }
+    g_MixFile_LOCALMD = (int)MixFileClass::FromFile(v14, aLocalmdMix, (int)dword_886980); /*0x5303db*/
+    if ( !g_MixFile_LOCALMD ) /*0x5303e0*/
+      return 0; /*0x5303e0*/
+    v15 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5303e8*/
+    if ( !v15 ) /*0x5303f2*/
+    {
+      g_MixFile_LOCAL = 0; /*0x53041d*/
+      return 0; /*0x53042b*/
+    }
+    v16 = MixFileClass::FromFile(v15, aLocalMix, (int)dword_886980); /*0x530400*/
+    g_MixFile_LOCAL = (int)v16; /*0x530405*/
+    if ( !v16 ) /*0x53042e*/
+      return 0; /*0x5302ed*/
+    Debug::Log_0(); /*0x530439*/
+    SetSoundWarning(v17); /*0x530445*/
+    return 1; /*0x5302e4*/
 }

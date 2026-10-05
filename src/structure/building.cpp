@@ -5391,7 +5391,27 @@ void BuildingClass::HandleSellOrRepair()
 // IDA 0x44f450: repair mission
 int BuildingClass::Mission_Repair()
 {
-  return 20; // TODO stub - retranslate via C-line pipeline (raw dup of 0x701410 body removed, G42.33c2)
+    double v1; // st7
+    int v3; // eax
+    int result; // eax
+    int v5; // edx
+    unsigned int *v6; // eax
+    unsigned char v7[12]; // [esp+8h] [ebp-Ch] BYREF
+
+    (*((void (__thiscall **)(TechnoClass *, int))this->RadioClass + 73))(this, 2); /*0x70141a*/
+    v3 = *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 160); /*0x70142a*/
+    this->? = v3; /*0x701432*/
+    this->? = v3; /*0x701435*/
+    result = (*((int (__thiscall **)(TechnoClass *))this->RadioClass + 11))(this); /*0x70143a*/
+    if ( result == 6 ) /*0x701440*/
+    {
+      (*((void (__thiscall **)(TechnoClass *, unsigned int))this->RadioClass + 103))(this, 0); /*0x701448*/
+      BuildingClass::GetHealthRatio((BuildingClass *)this); /*0x701450*/
+      globalHelper_051EE0((int)this, v5, v1 <= *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5888)); /*0x701473*/
+      v6 = (unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned char *))this->RadioClass + 18))(this, v7); /*0x701483*/
+      return (int)StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 452), v6, 0); /*0x701494*/
+    }
+    return result; /*0x701499*/
 }
 
 // 0x44b780
@@ -5515,1052 +5535,69 @@ add     esp, 0Ch
 retn    4
 */
 }
-// 0x446ff0
-void BuildingClass::ToggleRepairMode() { IsBeingRepaired = !IsBeingRepaired; }
-//DUPDEF   int result; // eax
-//DUPDEF   int v3; // edi
-//DUPDEF   HouseClass *owner; // ecx
-//DUPDEF   int *location; // esi
-//DUPDEF   unsigned int v6[3]; // [esp+8h] [ebp-Ch] BYREF
-//DUPDEF   int v7; // [esp+18h] [ebp+4h]
+// 0x446FF0
+int BuildingClass::ToggleRepairMode(int aP1) {
+    int result; // eax
+    int v3; // edi
+    HouseClass *owner; // ecx
+    int *location; // esi
+    unsigned int v6[3]; // [esp+8h] [ebp-Ch] BYREF
+    int v7; // [esp+18h] [ebp+4h]
 
-//DUPDEF   result = v7; /*0x446ff0*/
-//DUPDEF   if ( v7 == -1 ) /*0x446ffe*/
-//DUPDEF   {
-//DUPDEF     this->IsBeingRepaired = this->IsBeingRepaired == 0; /*0x447042*/
-//DUPDEF   }
-//DUPDEF   else if ( v7 ) /*0x447002*/
-//DUPDEF   {
-//DUPDEF     if ( v7 == 1 ) /*0x447007*/
-//DUPDEF     {
-//DUPDEF       IDA_LOBYTE(result) = this->IsBeingRepaired; /*0x447009*/
-//DUPDEF       if ( (unsigned char)result ) /*0x447011*/
-//DUPDEF         return result; /*0x447011*/
-//DUPDEF       this->IsBeingRepaired = 1; /*0x447017*/
-//DUPDEF     }
-//DUPDEF   }
-//DUPDEF   else
-//DUPDEF   {
-//DUPDEF     result = (uint8_t)this->IsBeingRepaired; /*0x447020*/
-//DUPDEF     if ( !(unsigned char)result ) /*0x447028*/
-//DUPDEF       return result; /*0x447028*/
-//DUPDEF     this->IsBeingRepaired = 0; /*0x44702e*/
-//DUPDEF   }
-//DUPDEF   if ( this->IsBeingRepaired ) /*0x447048*/
-//DUPDEF   {
-//DUPDEF     if ( ((unsigned int *)this)[0] == this->((unsigned int *)Type)[0] ) /*0x447061*/
-//DUPDEF     {
-//DUPDEF       v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1792); /*0x447068*/
-//DUPDEF     }
-//DUPDEF     else
-//DUPDEF     {
-//DUPDEF       v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1804); /*0x447076*/
-//DUPDEF       if ( (uint8_t)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x447082*/
-//DUPDEF         (*((void (**)(BuildingClass *, int))this->vtable1 + 82))(this, 7); /*0x447091*/
-//DUPDEF       owner = ((unsigned int *)this)[0]; /*0x447097*/
-//DUPDEF       this->NeedsRepairs = 1; /*0x44709d*/
-//DUPDEF       if ( (uint8_t)House::IsHumanPlayer((House *)owner) ) /*0x4470a4*/
-//DUPDEF         ((VoxClass *)&((unsigned int *)&stru_818E00)[5])->FindAndPlay(-1); /*0x4470b7*/
-//DUPDEF     }
-//DUPDEF   }
-//DUPDEF   else
-//DUPDEF   {
-//DUPDEF     v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1804); /*0x4470c3*/
-//DUPDEF   }
-//DUPDEF   result = House::IsHumanPlayer((House *)((unsigned int *)this)[0]); /*0x4470cf*/
-//DUPDEF   if ( (unsigned char)result ) /*0x4470d6*/
-//DUPDEF   {
-//DUPDEF     location = ((unsigned int *)this)[0]; /*0x4470d8*/
-//DUPDEF     v6[0] = *location; /*0x4470e2*/
-//DUPDEF     v6[1] = location[1]; /*0x4470eb*/
-//DUPDEF     v6[2] = location[2]; /*0x4470f6*/
-//DUPDEF     return (int)StartAudioControllerAt(v3, v6, 0); /*0x4470fa*/
-//DUPDEF   }
-//DUPDEF   return result; /*0x4470ff*/
-//DUPDEF }
-//DUPDEF   else if ( v7 ) /*0x447002*/
-//DUPDEF   {
-//DUPDEF     if ( v7 == 1 ) /*0x447007*/
-//DUPDEF     {
-//DUPDEF       IDA_LOBYTE(result) = this->IsBeingRepaired; /*0x447009*/
-//DUPDEF       if ( (unsigned char)result ) /*0x447011*/
-//DUPDEF         return result; /*0x447011*/
-//DUPDEF       this->IsBeingRepaired = 1; /*0x447017*/
-//DUPDEF     }
-//DUPDEF   }
-//DUPDEF   else
-//DUPDEF   {
-//DUPDEF     result = (uint8_t)this->IsBeingRepaired; /*0x447020*/
-//DUPDEF     if ( !(unsigned char)result ) /*0x447028*/
-//DUPDEF       return result; /*0x447028*/
-//DUPDEF     this->IsBeingRepaired = 0; /*0x44702e*/
-//DUPDEF   }
-//DUPDEF   if ( this->IsBeingRepaired ) /*0x447048*/
-//DUPDEF   {
-//DUPDEF     if ( this->health == this->Type->Strength ) /*0x447061*/
-//DUPDEF     {
-//DUPDEF       v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1792); /*0x447068*/
-//DUPDEF     }
-//DUPDEF     else
-//DUPDEF     {
-//DUPDEF       v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1804); /*0x447076*/
-//DUPDEF       if ( (uint8_t)House::IsHumanPlayer((House *)this->owner) ) /*0x447082*/
-//DUPDEF         (*((void (**)(BuildingClass *, int))this->vtable1 + 82))(this, 7); /*0x447091*/
-//DUPDEF       owner = this->owner; /*0x447097*/
-//DUPDEF       this->NeedsRepairs = 1; /*0x44709d*/
-//DUPDEF       if ( (uint8_t)House::IsHumanPlayer((House *)owner) ) /*0x4470a4*/
-//DUPDEF         ((VoxClass *)&stru_818E00_raw.ChargerBarrels[5])->FindAndPlay(-1); /*0x4470b7*/
-//DUPDEF     }
-//DUPDEF   }
-//DUPDEF   else
-//DUPDEF   {
-//DUPDEF     v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1804); /*0x4470c3*/
-//DUPDEF }
-//DUPDEF   result = House::IsHumanPlayer((House *)this->owner); /*0x4470cf*/
-//DUPDEF   if ( (unsigned char)result ) /*0x4470d6*/
-//DUPDEF   {
-//DUPDEF     location = this->location; /*0x4470d8*/
-//DUPDEF     v6[0] = *location; /*0x4470e2*/
-//DUPDEF     v6[1] = location[1]; /*0x4470eb*/
-//DUPDEF     v6[2] = location[2]; /*0x4470f6*/
-//DUPDEF     return (int)StartAudioControllerAt(v3, v6, 0); /*0x4470fa*/
-//DUPDEF }
-//DUPDEF   return result; /*0x4470ff*/
-//DUPDEF }
-//DUPDEF   else if ( v7 ) /*0x447002*/
-//DUPDEF   {
-//DUPDEF     if ( v7 == 1 ) /*0x447007*/
-//DUPDEF     {
-//DUPDEF       IDA_LOBYTE(result) = this->IsBeingRepaired; /*0x447009*/
-//DUPDEF       if ( (unsigned char)result ) /*0x447011*/
-//DUPDEF         return result; /*0x447011*/
-//DUPDEF       this->IsBeingRepaired = 1; /*0x447017*/
-//DUPDEF }
-//DUPDEF   }
-//DUPDEF   else
-//DUPDEF   {
-//DUPDEF     result = (uint8_t)this->IsBeingRepaired; /*0x447020*/
-//DUPDEF     if ( !(unsigned char)result ) /*0x447028*/
-//DUPDEF       return result; /*0x447028*/
-//DUPDEF     this->IsBeingRepaired = 0; /*0x44702e*/
-//DUPDEF   }
-//DUPDEF   if ( this->IsBeingRepaired ) /*0x447048*/
-//DUPDEF   {
-//DUPDEF     if ( this->health == this->Type->Strength ) /*0x447061*/
-//DUPDEF     {
-//DUPDEF       v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1792); /*0x447068*/
-//DUPDEF     }
-//DUPDEF     else
-//DUPDEF     {
-//DUPDEF       v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1804); /*0x447076*/
-//DUPDEF       if ( (uint8_t)House::IsHumanPlayer((House *)this->owner) ) /*0x447082*/
-//DUPDEF         (*((void (**)(BuildingClass *, int))this->vtable1 + 82))(this, 7); /*0x447091*/
-//DUPDEF       owner = this->owner; /*0x447097*/
-//DUPDEF       this->NeedsRepairs = 1; /*0x44709d*/
-//DUPDEF       if ( (uint8_t)House::IsHumanPlayer((House *)owner) ) /*0x4470a4*/
-//DUPDEF         ((VoxClass *)&stru_818E00_raw.ChargerBarrels[5])->FindAndPlay(-1); /*0x4470b7*/
-//DUPDEF     }
-//DUPDEF   }
-//DUPDEF   else
-//DUPDEF   {
-//DUPDEF     v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1804); /*0x4470c3*/
-//DUPDEF }
-//DUPDEF   result = House::IsHumanPlayer((House *)this->owner); /*0x4470cf*/
-//DUPDEF   if ( (unsigned char)result ) /*0x4470d6*/
-//DUPDEF   {
-//DUPDEF     location = this->location; /*0x4470d8*/
-//DUPDEF     v6[0] = *location; /*0x4470e2*/
-//DUPDEF     v6[1] = location[1]; /*0x4470eb*/
-//DUPDEF     v6[2] = location[2]; /*0x4470f6*/
-//DUPDEF     return (int)StartAudioControllerAt(v3, v6, 0); /*0x4470fa*/
-//DUPDEF }
-//DUPDEF   return result; /*0x4470ff*/
-//DUPDEF }
-//DUPDEF   else if ( v7 ) /*0x447002*/
-//DUPDEF   {
-//DUPDEF     if ( v7 == 1 ) /*0x447007*/
-//DUPDEF     {
-//DUPDEF       IDA_LOBYTE(result) = this->IsBeingRepaired; /*0x447009*/
-//DUPDEF       if ( (unsigned char)result ) /*0x447011*/
-//DUPDEF         return result; /*0x447011*/
-//DUPDEF       this->IsBeingRepaired = 1; /*0x447017*/
-//DUPDEF }
-//DUPDEF   }
-//DUPDEF   else
-//DUPDEF   {
-//DUPDEF     result = *((uint8_t *)&this->mindControlledBy8); /*0x447020*/
-//DUPDEF     if ( !(unsigned char)result ) /*0x447028*/
-//DUPDEF       return result; /*0x447028*/
-//DUPDEF     this->IsBeingRepaired = 0; /*0x44702e*/
-//DUPDEF   }
-//DUPDEF   if ( this->IsBeingRepaired ) /*0x447048*/
-//DUPDEF   {
-//DUPDEF     if ( this->health == this->Type->Strength ) /*0x447061*/
-//DUPDEF     {
-//DUPDEF       v3 = ((unsigned int *)g_RulesClass_Instance)[3]; /*0x447068*/
-//DUPDEF     }
-//DUPDEF     else
-//DUPDEF     {
-//DUPDEF       v3 = g_RulesClass_Instance->__pad_704[2]; /*0x447076*/
-//DUPDEF       if ( (uint8_t)House::IsHumanPlayer(*((void **)&this->attachedTag5)) ) /*0x447082*/
-//DUPDEF         (*(void (**)(void *, int))(*(unsigned int *)&this->needsRedraw8))(this, 7); /*0x447091*/
-//DUPDEF       v4 = (void *)this->owner; /*0x447097*/
-//DUPDEF       this->NeedsRepairs = 1; /*0x44709d*/
-//DUPDEF       if ( (uint8_t)House::IsHumanPlayer(v4) ) /*0x4470a4*/
-//DUPDEF         VoxClass::FindAndPlay(aEvaRepairing, -1); /*0x4470b7*/
-//DUPDEF     }
-//DUPDEF   }
-//DUPDEF   else
-//DUPDEF   {
-//DUPDEF     v3 = g_RulesClass_Instance->__pad_704[2]; /*0x4470c3*/
-//DUPDEF }
-//DUPDEF   result = House::IsHumanPlayer(*((void **)&this->attachedTag5)); /*0x4470cf*/
-//DUPDEF   if ( (unsigned char)result ) /*0x4470d6*/
-//DUPDEF   {
-//DUPDEF     v5 = (unsigned int *)((char *)&this->ambientSoundController6); /*0x4470d8*/
-//DUPDEF     v6[0] = *v5; /*0x4470e2*/
-//DUPDEF     v6[1] = v5[1]; /*0x4470eb*/
-//DUPDEF     v6[2] = v5[2]; /*0x4470f6*/
-//DUPDEF     return StartAudioControllerAt(v3, (int)v6, 0); /*0x4470fa*/
-//DUPDEF }
-//DUPDEF   return result; /*0x4470ff*/
-//DUPDEF }
-//DUPDEF   else if ( v7 ) /*0x447002*/
-//DUPDEF   {
-//DUPDEF     if ( v7 == 1 ) /*0x447007*/
-//DUPDEF     {
-//DUPDEF       IDA_LOBYTE(result) = this->IsBeingRepaired; /*0x447009*/
-//DUPDEF       if ( (unsigned char)result ) /*0x447011*/
-//DUPDEF         return result; /*0x447011*/
-//DUPDEF       this->IsBeingRepaired = 1; /*0x447017*/
-//DUPDEF }
-//DUPDEF   }
-//DUPDEF   else
-//DUPDEF   {
-//DUPDEF     result = *((uint8_t *)&this->mindControlledBy8); /*0x447020*/
-//DUPDEF     if ( !(unsigned char)result ) /*0x447028*/
-//DUPDEF       return result; /*0x447028*/
-//DUPDEF     this->IsBeingRepaired = 0; /*0x44702e*/
-//DUPDEF   }
-//DUPDEF   if ( this->IsBeingRepaired ) /*0x447048*/
-//DUPDEF   {
-//DUPDEF     if ( this->health == this->Type->Strength ) /*0x447061*/
-//DUPDEF     {
-//DUPDEF       v3 = g_RulesClass_Instance->Scorches1[3]; /*0x447068*/
-//DUPDEF     }
-//DUPDEF     else
-//DUPDEF     {
-//DUPDEF       v3 = g_RulesClass_Instance->Scorches2[2]; /*0x447076*/
-//DUPDEF       if ( (uint8_t)House::IsHumanPlayer(*((void **)&this->attachedTag5)) ) /*0x447082*/
-//DUPDEF         (*(void (**)(void *, int))(*(unsigned int *)&this->needsRedraw8))(this, 7); /*0x447091*/
-//DUPDEF       v4 = (void *)this->owner; /*0x447097*/
-//DUPDEF       this->NeedsRepairs = 1; /*0x44709d*/
-//DUPDEF       if ( (uint8_t)House::IsHumanPlayer(v4) ) /*0x4470a4*/
-//DUPDEF         VoxClass::FindAndPlay(aEvaRepairing, -1); /*0x4470b7*/
-//DUPDEF   else
-//DUPDEF   {
-//DUPDEF     v3 = g_RulesClass_Instance->Scorches2[2]; /*0x4470c3*/
-//DUPDEF   result = House::IsHumanPlayer(*((void **)&this->attachedTag5)); /*0x4470cf*/
-//DUPDEF   if ( (unsigned char)result ) /*0x4470d6*/
-//DUPDEF   {
-//DUPDEF     v5 = (unsigned int *)((char *)&this->ambientSoundController6); /*0x4470d8*/
-//DUPDEF     v6[0] = *v5; /*0x4470e2*/
-//DUPDEF     v6[1] = v5[1]; /*0x4470eb*/
-//DUPDEF     v6[2] = v5[2]; /*0x4470f6*/
-//DUPDEF     return StartAudioControllerAt(v3, (int)v6, 0); /*0x4470fa*/
-//DUPDEF   return result; /*0x4470ff*/
-//DUPDEF // IDA 0x459ed0: missile building mission
-//DUPDEF int BuildingClass::Mission_Missile()
-//DUPDEF {
-//DUPDEF {
-//DUPDEF     return this->locomotorTarget || this->locomotorSource;
-//DUPDEF }
-//DUPDEF     return {}; // TODO stub - retranslate via C-line pipeline
-//DUPDEF }
-//DUPDEF 
-//DUPDEF // 0x44c980
-//DUPDEF void BuildingClass::ProcessSuperWeaponEffects() {}
-//DUPDEF   int v2; // ecx
-//DUPDEF   void *v3; // eax
-//DUPDEF   int v4; // ebp
-//DUPDEF   void *v5; // edi
-//DUPDEF   void *v6; // ebx
-//DUPDEF   int *v7; // eax
-//DUPDEF   void **v8; // eax
-//DUPDEF   void **v9; // edi
-//DUPDEF   void *v10; // eax
-//DUPDEF   int *v11; // ebx
-//DUPDEF   unsigned int *UIObject; // eax
-//DUPDEF   int v13; // edi
-//DUPDEF   unsigned int *v14; // ecx
-//DUPDEF   int *v15; // eax
-//DUPDEF   double v16; // st7
-//DUPDEF   int result; // eax
-//DUPDEF   void **v18; // eax
-//DUPDEF   void **v19; // eax
-//DUPDEF   void (__thiscall **vfptr0)(void *, void *, unsigned int); // edi
-//DUPDEF   void *v21; // eax
-//DUPDEF   int (__thiscall **v22)(void *, unsigned char *, void *); // edi
-//DUPDEF   void *v23; // eax
-//DUPDEF   void **v24; // eax
-//DUPDEF   int (__thiscall **v25)(void *, unsigned char *, void *); // edi
-//DUPDEF   void *v26; // eax
-//DUPDEF   int *v27; // eax
-//DUPDEF   int v28; // ebp
-//DUPDEF   void *v29; // ebx
-//DUPDEF   unsigned short *v30; // eax
-//DUPDEF   int v31; // eax
-//DUPDEF   int v32; // edx
-//DUPDEF   int16_t *v33; // eax
-//DUPDEF   double v34; // st7
-//DUPDEF   void *v35; // eax
-//DUPDEF   int v36; // eax
-//DUPDEF   char v37; // cl
-//DUPDEF   double v39; // st7
-//DUPDEF   double v40; // st7
-//DUPDEF   double v41; // st7
-//DUPDEF   int (__thiscall **v42)(unsigned int, unsigned int, unsigned int); // edx
-//DUPDEF   int *v43; // eax
-//DUPDEF   unsigned int *v44; // eax
-//DUPDEF   int v45; // ebx
-//DUPDEF   double v46; // st7
-//DUPDEF   char IsCloseEnoughToBuilding; // al
-//DUPDEF   double v48; // st7
-//DUPDEF   char v49; // al
-//DUPDEF   double v50; // st7
-//DUPDEF   unsigned int v51; // edi
-//DUPDEF   unsigned int v52; // ebx
-//DUPDEF   double v53; // st7
-//DUPDEF   double v54; // st7
-//DUPDEF   double v55; // st7
-//DUPDEF   int v57; // ebp
-//DUPDEF   int v58; // eax
-//DUPDEF   char *MissionControl; // eax
-//DUPDEF   int v60; // [esp+34h] [ebp-FCh]
-//DUPDEF   int v61; // [esp+34h] [ebp-FCh]
-//DUPDEF   double v62; // [esp+3Ch] [ebp-F4h]
-//DUPDEF   double v63; // [esp+3Ch] [ebp-F4h]
-//DUPDEF   int64_t v64; // [esp+40h] [ebp-F0h]
-//DUPDEF   double v65; // [esp+40h] [ebp-F0h]
-//DUPDEF   int16_t *v66; // [esp+44h] [ebp-ECh]
-//DUPDEF   void **v67; // [esp+5Ch] [ebp-D4h] BYREF
-//DUPDEF   double v68; // [esp+60h] [ebp-D0h] BYREF
-//DUPDEF   double v69; // [esp+68h] [ebp-C8h]
-//DUPDEF   double v70; // [esp+70h] [ebp-C0h]
-//DUPDEF   double v71; // [esp+78h] [ebp-B8h] BYREF
-//DUPDEF   void **v72; // [esp+8Ch] [ebp-A4h] BYREF
-//DUPDEF   double v73; // [esp+90h] [ebp-A0h]
-//DUPDEF   int v74; // [esp+98h] [ebp-98h]
-//DUPDEF   int v75[2]; // [esp+A4h] [ebp-8Ch] BYREF
-//DUPDEF   int v76; // [esp+ACh] [ebp-84h]
-//DUPDEF   double v77; // [esp+B0h] [ebp-80h] BYREF
-//DUPDEF   double v78; // [esp+C0h] [ebp-70h] BYREF
-//DUPDEF   double v80[2]; // [esp+D0h] [ebp-60h] BYREF
-//DUPDEF   int16_t v81; // [esp+E0h] [ebp-50h] BYREF
-//DUPDEF   unsigned int v82[3]; // [esp+E4h] [ebp-4Ch] BYREF
-//DUPDEF   int v83; // [esp+F0h] [ebp-40h] BYREF
-//DUPDEF   unsigned char v84[4]; // [esp+F4h] [ebp-3Ch] BYREF
-//DUPDEF   unsigned char v85[4]; // [esp+F8h] [ebp-38h] BYREF
-//DUPDEF   int v86; // [esp+FCh] [ebp-34h] BYREF
-//DUPDEF   unsigned char v87[12]; // [esp+100h] [ebp-30h] BYREF
-//DUPDEF   unsigned char v88[12]; // [esp+10Ch] [ebp-24h] BYREF
-//DUPDEF   unsigned char v89[12]; // [esp+118h] [ebp-18h] BYREF
-//DUPDEF   unsigned char v90[12]; // [esp+124h] [ebp-Ch] BYREF
-//DUPDEF 
-//DUPDEF   if ( this->Type->NukeSilo ) /*0x44c998*/
-//DUPDEF   {
-//DUPDEF     switch ( this->missionStatus ) /*0x44c9b5*/
-//DUPDEF     {
-//DUPDEF       case 0: /*0x44c9b5*/
-//DUPDEF         this->BuildingClass_field_bool_6DD = 0; /*0x44c9c0*/
-//DUPDEF         BuildingClass::StartProduction((int *)this, 2); /*0x44c9c7*/
-//DUPDEF         v2 = this->owner; /*0x44c9cc*/
-//DUPDEF         this->missionStatus = 1; /*0x44c9d2*/
-//DUPDEF         v3 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)(v2 + 22404)); /*0x44c9e8*/
-//DUPDEF         v4 = this->owner; /*0x44c9ed*/
-//DUPDEF         v5 = v3; /*0x44c9f8*/
-//DUPDEF         v6 = (void *)*((unsigned int *)g_AnimTypeCount + AnimTypeClass::FindIndex(aPsiwarn)); /*0x44ca0f*/
-//DUPDEF         v7 = (int *)(*(int (**)(void *, unsigned int *))(*(unsigned int *)v5 + 72))(v5, v82); /*0x44ca14*/
-//DUPDEF         v75[0] = *v7; /*0x44ca1e*/
-//DUPDEF         v75[1] = v7[1]; /*0x44ca25*/
-//DUPDEF         v76 = v7[2]; /*0x44ca2c*/
-//DUPDEF         v8 = (void **)RA2_OPNEW(0x1C8u); /*0x44ca30*/
-//DUPDEF         if ( v8 ) /*0x44ca3a*/
-//DUPDEF           v9 = AnimClass::ctor(v8, v6, v75, 0, 1, (void *)0x600, 0, 0); /*0x44ca56*/
-//DUPDEF         else
-//DUPDEF           v9 = 0; /*0x44ca5a*/
-//DUPDEF         BuildingClass::SetField95(v9, 0); /*0x44ca60*/
-//DUPDEF         Function::Method_424CA0(v9, v4); /*0x44ca68*/
-//DUPDEF         *((unsigned char *)v9 + 413) = 1; /*0x44ca6d*/
-//DUPDEF         this->PsiWarnAnim = v9; /*0x44ca74*/
-//DUPDEF         goto LABEL_7; /*0x44ca74*/
-//DUPDEF       case 1: /*0x44c9b5*/
-//DUPDEF   LABEL_7:
-//DUPDEF         if ( this->BuildingClass_field_bool_6DD ) /*0x44ca7a*/
-//DUPDEF         {
-//DUPDEF           BuildingClass::StartProduction((int *)this, 4); /*0x44ca88*/
-//DUPDEF           this->missionStatus = 2; /*0x44ca8d*/
-//DUPDEF         }
-//DUPDEF         goto LABEL_9; /*0x44ca8d*/
-//DUPDEF       case 2: /*0x44c9b5*/
-//DUPDEF   LABEL_9:
-//DUPDEF         (*(void (**)(void *, double *))(((unsigned int)(this->referenceCount2))))(this, &v71); /*0x44ca97*/
-//DUPDEF         v10 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)(this->owner + 22404)); /*0x44cab5*/
-//DUPDEF         v11 = *(int **)(*((unsigned int *)g_SuperWeaponPool + this->FiringSWType) + 156); /*0x44cad0*/
-//DUPDEF         UIObject = CreateUIObjectCOM(v11[40], (int)v10, (int)this, v11[41], v11[43], 255, 1); /*0x44caed*/
-//DUPDEF         v13 = (int)UIObject; /*0x44caf2*/
-//DUPDEF         if ( !UIObject ) /*0x44caf6*/
-//DUPDEF           goto LABEL_18; /*0x44caf6*/
-//DUPDEF         Function::Method_46B260(UIObject, (int)v11); /*0x44caff*/
-//DUPDEF         v14 = (unsigned int *)this->PsiWarnAnim; /*0x44cb04*/
-//DUPDEF         if ( v14 ) /*0x44cb0c*/
-//DUPDEF         {
-//DUPDEF           BuildingClass::SetField95(v14, v13); /*0x44cb0f*/
-//DUPDEF           this->PsiWarnAnim = 0; /*0x44cb14*/
-//DUPDEF         }
-//DUPDEF         (*(void (**)(int))(v13->u32_D4)(v13); /*0x44cb22*/
-//DUPDEF         v15 = (int *)(*(int (**)(void *, double *, unsigned int, unsigned int, unsigned int, unsigned int))(((unsigned int)(this->q0446))))( /*0x44cb46*/
-//DUPDEF         //DUPDEF                this,
-//DUPDEF                        &v77,
-//DUPDEF                        0,
-//DUPDEF                        0,
-//DUPDEF                        0,
-//DUPDEF                        0);
-//DUPDEF         v75[0] = *v15; /*0x44cb53*/
-//DUPDEF         v75[1] = v15[1]; /*0x44cb5f*/
-//DUPDEF         v76 = v15[2]; /*0x44cb66*/
-//DUPDEF         v73 = Math::SinCos(1.570748388432313); /*0x44cb6f*/
-//DUPDEF         v78 = Math::ArcTan2(1.570748388432313) * v73 * 10.0; /*0x44cb96*/
-//DUPDEF         v73 = Math::ArcTan2(1.570748388432313); /*0x44cba2*/
-//DUPDEF         v16 = Math::ArcTan2(1.570748388432313); /*0x44cbb0*/
-//DUPDEF         v80[1] = v78; /*0x44cbc7*/
-//DUPDEF         v69 = v78; /*0x44cbec*/
-//DUPDEF         v80[0] = v16 * v73 * 10.0; /*0x44cbf0*/
-//DUPDEF         v68 = v80[0]; /*0x44cc05*/
-//DUPDEF         v70 = Math::SinCos(1.570748388432313) * 10.0; /*0x44cc30*/
-//DUPDEF         if ( (*(uint8_t (**)(int, int *, double *))(v13->u32_1F0)(v13, v75, &v68) ) /*0x44cc38*/
-//DUPDEF         {
-//DUPDEF           v18 = (void **)RA2_OPNEW(0x1C8u); /*0x44cc67*/
-//DUPDEF           if ( v18 ) /*0x44cc71*/
-//DUPDEF             v19 = AnimClass::ctor(v18, (void *)g_RulesClass_Instance->InfantryHeadPop, v75, 0, 1, (void *)0x600, 0, 0); /*0x44cc94*/
-//DUPDEF           else
-//DUPDEF             v19 = 0; /*0x44cc9b*/
-//DUPDEF           v19[64] = (void *)-100; /*0x44cc9d*/
-//DUPDEF           this->missionStatus = 3; /*0x44cca7*/
-//DUPDEF   LABEL_18:
-//DUPDEF           result = 1; /*0x44ccb1*/
-//DUPDEF         }
-//DUPDEF         else
-//DUPDEF         {
-//DUPDEF           (*(void (**)(int, int))(v13->q080)(v13, 1); /*0x44cc48*/
-//DUPDEF           this->missionStatus = 3; /*0x44cc4b*/
-//DUPDEF           result = 1; /*0x44cc55*/
-//DUPDEF         }
-//DUPDEF         break; /*0x44cc61*/
-//DUPDEF       case 3: /*0x44c9b5*/
-//DUPDEF         BuildingClass::StartProduction((int *)this, 5); /*0x44ccc2*/
-//DUPDEF         this->missionStatus = 4; /*0x44ccc7*/
-//DUPDEF         return 6; /*0x44ccdd*/
-//DUPDEF       case 4: /*0x44c9b5*/
-//DUPDEF   LABEL_54:
-//DUPDEF         BuildingClass::StartProduction((int *)this, 1); /*0x44d53c*/
-//DUPDEF         (*(void (**)(void *, int, unsigned int))(*(unsigned int *)&this->missionStartTime8))(this, 5, 0); /*0x44d54d*/
-//DUPDEF         return 60; /*0x44d55f*/
-//DUPDEF       default:
-//DUPDEF         goto LABEL_20;
-//DUPDEF     }
-//DUPDEF   }
-//DUPDEF   else
-//DUPDEF   {
-//DUPDEF   LABEL_20:
-//DUPDEF     if ( this->FiringSWType != -1 ) /*0x44cce5*/
-//DUPDEF     {
-//DUPDEF       vfptr0 = *(void (***)(void *, void *, unsigned int))this; /*0x44cced*/
-//DUPDEF       v64 = (unsigned int)(this->owner + 22404); /*0x44ccf6*/
-//DUPDEF       v21 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)v64); /*0x44ccfc*/
-//DUPDEF       vfptr0[243](this, v21, IDA_HIDWORD(v64)); /*0x44cd04*/
-//DUPDEF       (*(void (**)(void *, int, unsigned int))(*(unsigned int *)&this->missionStartTime8))(this, 5, 0); /*0x44cd12*/
-//DUPDEF     }
-//DUPDEF     if ( this->Type->EMPulseCannon ) /*0x44cd1e*/
-//DUPDEF     {
-//DUPDEF       switch ( this->missionStatus ) /*0x44cd3b*/
-//DUPDEF       {
-//DUPDEF         case 0: /*0x44cd3b*/
-//DUPDEF           v22 = *(int (***)(void *, unsigned char *, void *))this; /*0x44cd48*/
-//DUPDEF           v23 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)(this->owner + 22400)); /*0x44cd56*/
-//DUPDEF           v24 = *(void ***)v22[314](this, v85, v23); /*0x44cd72*/
-//DUPDEF           v25 = *(int (***)(void *, unsigned char *, void *))this; /*0x44cd74*/
-//DUPDEF           v66 = (int16_t *)(this->owner + 22400); /*0x44cd7c*/
-//DUPDEF           v67 = v24; /*0x44cd82*/
-//DUPDEF           v26 = CellCoord::To_CellObj(&MapClass_Instance, v66); /*0x44cd86*/
-//DUPDEF           v72 = *(void ***)v25[178](this, v84, v26); /*0x44cdae*/
-//DUPDEF           if ( abs16(*(unsigned short *)ProgressTimer::GetValue((unsigned short *)&this->u32_710, &v86) - (unsigned short)v67) ) /*0x44cdce*/
-//DUPDEF           {
-//DUPDEF             FacingClass::Update((char *)&this->primaryFacing, &v67); /*0x44cddb*/
-//DUPDEF             return 1; /*0x44cde0*/
-//DUPDEF           }
-//DUPDEF           else
-//DUPDEF           {
-//DUPDEF             if ( abs16(*(unsigned short *)ProgressTimer::GetValue((unsigned short *)&this->NoCrew, &v83) - (unsigned short)v72) ) /*0x44ce10*/
-//DUPDEF               FacingClass::Update((char *)&this->barrelFacing, &v72); /*0x44ce1d*/
-//DUPDEF             else
-//DUPDEF               this->missionStatus = 1; /*0x44ce2f*/
-//DUPDEF             return 1; /*0x44ce22*/
-//DUPDEF           }
-//DUPDEF         case 1: /*0x44cd3b*/
-//DUPDEF           v67 = (void **)RA2_OPNEW(0x1C8u); /*0x44ce53*/
-//DUPDEF           if ( v67 ) /*0x44ce59*/
-//DUPDEF           {
-//DUPDEF             v72 = (void **)((char *)g_AnimTypeCount + 4 * GlobalArray::FindString(aPulsball)); /*0x44ce81*/
-//DUPDEF             v27 = (int *)(*(int (**)(void *, unsigned char *, unsigned int, unsigned int, unsigned int, unsigned int))(((unsigned int)(this->q0446))))( /*0x44ce9c*/
-//DUPDEF                            this,
-//DUPDEF                            v90,
-//DUPDEF                            0,
-//DUPDEF                            0,
-//DUPDEF                            0,
-//DUPDEF                            0);
-//DUPDEF             AnimClass::ctor(v67, *v72, v27, 0, 1, (void *)0x600, 0, 0); /*0x44ceae*/
-//DUPDEF           }
-//DUPDEF           this->missionStatus = 2; /*0x44ceb3*/
-//DUPDEF           return 32; /*0x44cec9*/
-//DUPDEF         case 2: /*0x44cd3b*/
-//DUPDEF           v28 = *(unsigned int *)(*(int (**)(void *, unsigned int))(*(unsigned int *)&this->q1946))(this, 0); /*0x44cefe*/
-//DUPDEF           v29 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)(this->owner + 22400)); /*0x44cf22*/
-//DUPDEF           IDA_LODWORD(v71) = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)(this->owner + 22400)); /*0x44cf2a*/
-//DUPDEF           if ( g_ArmageddonMode || *(unsigned int *)(this->owner + 22400) == g_TerrainTypeTable ) /*0x44cf50*/
-//DUPDEF           {
-//DUPDEF             BuildingClass::StartProduction((int *)this, 1); /*0x44d564*/
-//DUPDEF             (*(void (**)(void *, int, unsigned int))(*(unsigned int *)&this->missionStartTime8))(this, 5, 0); /*0x44d571*/
-//DUPDEF             result = 60; /*0x44d577*/
-//DUPDEF           }
-//DUPDEF           else
-//DUPDEF           {
-//DUPDEF             v30 = (unsigned short *)(*(int (**)(void *, double *, void *))(((unsigned int)(this->q11C2))))(this, &v78, v29); /*0x44cf6d*/
-//DUPDEF             FacingClass::Update((char *)&this->barrelFacing, v30); /*0x44cf7a*/
-//DUPDEF             v31 = (*(int (**)(void *, unsigned char *, unsigned int, unsigned int, unsigned int, unsigned int))(((unsigned int)(this->q0446))))( /*0x44cf9d*/
-//DUPDEF                     this,
-//DUPDEF                     v88,
-//DUPDEF                     0,
-//DUPDEF                     0,
-//DUPDEF                     0,
-//DUPDEF                     0);
-//DUPDEF             v73 = *(double *)v31; /*0x44cfa5*/
-//DUPDEF             v74 = *(unsigned int *)(v31 + 8); /*0x44cfb3*/
-//DUPDEF             v32 = (*(int16_t *)(this->owner + 22400) << 8) + 128; /*0x44cfdc*/
-//DUPDEF             v82[1] = (*(int16_t *)(this->owner + 22402) << 8) + 128; /*0x44cfe2*/
-//DUPDEF             v82[0] = v32; /*0x44cfef*/
-//DUPDEF             v82[2] = 0; /*0x44cff6*/
-//DUPDEF             Cell::GetGroundHeight(v82); /*0x44d001*/
-//DUPDEF             v33 = (int16_t *)(this->owner + 22400); /*0x44d00f*/
-//DUPDEF             IDA_LODWORD(v77) = (*v33 << 8) + 128; /*0x44d023*/
-//DUPDEF             IDA_HIDWORD(v77) = (v33[1] << 8) + 128; /*0x44d03c*/
-//DUPDEF             v34 = Math::CalcAngle( /*0x44d04f*/
-//DUPDEF                     (double)IDA_SHIDWORD(v73) - (double)IDA_SHIDWORD(v77),
-//DUPDEF                     (double)IDA_SLODWORD(v77) - (double)IDA_SLODWORD(v73));
-//DUPDEF             IDA_LOWORD(v77) = Math::RoundToInt((v34 - 1.570796326794897) * -10430.06004058427); /*0x44d065*/
-//DUPDEF             v65 = (double)g_RulesClass_Instance[1].WeatherConBoltExplosion; /*0x44d07a*/
-//DUPDEF             v35 = (void *)ObjectClass::DistanceTo(this, (int)v29); /*0x44d07e*/
-//DUPDEF             v36 = TechnoClass::ComputeScanRange(v35, v65); /*0x44d085*/
-//DUPDEF             v37 = *(unsigned char *)(v28 + 303); /*0x44d08a*/
-//DUPDEF             v36 = v36; /*0x44d090*/
-//DUPDEF             v36 = v36; /*0x44d092*/
-//DUPDEF             v72 = (void **)CreateUIObjectCOM( /*0x44d0ca*/
-//DUPDEF                              *(unsigned int *)(v28 + 160),
-//DUPDEF                              (int)v29,
-//DUPDEF                              (int)this,
-//DUPDEF                              *(unsigned int *)(v28 + 164),
-//DUPDEF                              *(unsigned int *)(v28 + 172),
-//DUPDEF                              3 * v36 / 4,
-//DUPDEF                              v37);
-//DUPDEF             v70 = 0.0; /*0x44d0de*/
-//DUPDEF             v73 = Math::Sqrt(10000.0); /*0x44d108*/
-//DUPDEF             v77 = (double)(SLOWORD(v77) - 0x3FFF) * -0.00009587672516830327; /*0x44d120*/
-//DUPDEF             v68 = Math::ArcTan2(v77) * v73; /*0x44d13d*/
-//DUPDEF             v39 = -(Math::SinCos(v77) * v73); /*0x44d14d*/
-//DUPDEF             v69 = v39; /*0x44d14f*/
-//DUPDEF             if ( v68 == 0.0 && v39 == 0.0 && v70 == 0.0 ) /*0x44d180*/
-//DUPDEF               v68 = 100.0; /*0x44d182*/
-//DUPDEF             v73 = (double)v36; /*0x44d1a0*/
-//DUPDEF             v40 = Math::Sqrt(v68 * v68 + v70 * v70 + v39 * v39); /*0x44d1bf*/
-//DUPDEF             v41 = v73 / v40; /*0x44d1c4*/
-//DUPDEF             v42 = *(int (***)(unsigned int, unsigned int, unsigned int))this; /*0x44d1c8*/
-//DUPDEF             v68 = v41 * v68; /*0x44d1df*/
-//DUPDEF             v69 = v69 * v41; /*0x44d1e9*/
-//DUPDEF             v70 = v70 * v41; /*0x44d1f3*/
-//DUPDEF             v43 = (int *)((int (**)(void *, unsigned char *, unsigned int))v42)[192](this, v87, 0); /*0x44d1f9*/
-//DUPDEF             v75[0] = *v43; /*0x44d201*/
-//DUPDEF             v75[1] = v43[1]; /*0x44d20c*/
-//DUPDEF             v76 = v43[2]; /*0x44d213*/
-//DUPDEF             v44 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(*(unsigned int *)IDA_LODWORD(v71) + 72))(IDA_LODWORD(v71), v89); /*0x44d221*/
-//DUPDEF             v45 = v44[2] - v76; /*0x44d23c*/
-//DUPDEF             IDA_LODWORD(v71) = (*v44 - v75[0]) * (*v44 - v75[0]) + (v44[1] - v75[1]) * (v44[1] - v75[1]); /*0x44d250*/
-//DUPDEF             v71 = (double)IDA_SLODWORD(v71); /*0x44d260*/
-//DUPDEF             v62 = (double)g_RulesClass_Instance[1].WeatherConBoltExplosion; /*0x44d272*/
-//DUPDEF             v46 = Math::Sqrt(v71); /*0x44d278*/
-//DUPDEF             v60 = Math::RoundToInt(v46); /*0x44d285*/
-//DUPDEF             IsCloseEnoughToBuilding = TechnoClass::IsCloseEnoughToBuilding(this, 0); /*0x44d28a*/
-//DUPDEF             if ( !ComputeMathFacingAngle(IsCloseEnoughToBuilding, v36, v60, v45, v62, &v67) ) /*0x44d293*/
-//DUPDEF             {
-//DUPDEF               v63 = (double)g_RulesClass_Instance[1].WeatherConBoltExplosion; /*0x44d2bc*/
-//DUPDEF               v48 = Math::Sqrt(v71); /*0x44d2c2*/
-//DUPDEF               v61 = Math::RoundToInt(v48); /*0x44d2cf*/
-//DUPDEF               v49 = TechnoClass::IsCloseEnoughToBuilding(this, 0); /*0x44d2e4*/
-//DUPDEF               if ( !ComputeMathFacingAngle(v49, 10 * v36 / 8, v61, v45, v63, &v67) ) /*0x44d2ed*/
-//DUPDEF               {
-//DUPDEF                 IDA_LOWORD(v71) = -1536; /*0x44d2fa*/
-//DUPDEF                 v67 = (void **)IDA_LODWORD(v71); /*0x44d305*/
-//DUPDEF               }
-//DUPDEF             }
-//DUPDEF             v73 = Math::Sqrt(v69 * v69 + v68 * v68); /*0x44d32f*/
-//DUPDEF             v50 = Math::CalcAngle(v70, v73); /*0x44d343*/
-//DUPDEF             IDA_LODWORD(v71) = (int16_t)Math::RoundToInt((v50 - 1.570796326794897) * -10430.06004058427) - 0x3FFF; /*0x44d365*/
-//DUPDEF             v71 = (double)IDA_SLODWORD(v71) * -0.00009587672516830327; /*0x44d373*/
-//DUPDEF             v73 = Math::Sqrt(v69 * v69 + v70 * v70 + v68 * v68); /*0x44d39b*/
-//DUPDEF             if ( v71 != 0.0 ) /*0x44d3b1*/
-//DUPDEF             {
-//DUPDEF               v51 = IDA_HIDWORD(v71); /*0x44d3b3*/
-//DUPDEF               v52 = IDA_LODWORD(v71); /*0x44d3b7*/
-//DUPDEF               v68 = v68 / Math::ArcTan2(v71); /*0x44d3c8*/
-//DUPDEF               v69 = v69 / Math::ArcTan2(COERCE_DOUBLE(IDA___PAIR64__(v51, v52))); /*0x44d3d8*/
-//DUPDEF             }
-//DUPDEF             IDA_LODWORD(v71) = (int16_t)v67 - 0x3FFF; /*0x44d3ea*/
-//DUPDEF             v53 = Math::ArcTan2((double)IDA_SLODWORD(v71) * -0.00009587672516830327); /*0x44d3fb*/
-//DUPDEF             v68 = v53 * v68; /*0x44d409*/
-//DUPDEF             IDA_LODWORD(v71) = (int16_t)v67 - 0x3FFF; /*0x44d412*/
-//DUPDEF             v54 = Math::ArcTan2((double)IDA_SLODWORD(v71) * -0.00009587672516830327); /*0x44d423*/
-//DUPDEF             v69 = v54 * v69; /*0x44d431*/
-//DUPDEF             IDA_LODWORD(v71) = (int16_t)v67 - 0x3FFF; /*0x44d43b*/
-//DUPDEF             v55 = Math::SinCos((double)IDA_SLODWORD(v71) * -0.00009587672516830327); /*0x44d44c*/
-//DUPDEF             v72 = v72; /*0x44d459*/
-//DUPDEF             v70 = v55 * v73; /*0x44d462*/
-//DUPDEF             if ( !(*((uint8_t (**)(void **, int *, double *))*v72 + 124))(v72, v75, &v68) ) /*0x44d482*/
-//DUPDEF             {
-//DUPDEF               (*((void (**)(void **))*v72 + 2))(v72); /*0x44d539*/
-//DUPDEF               goto LABEL_54; /*0x44d539*/
-//DUPDEF             }
-//DUPDEF             if ( (*(uint8_t (**)(void *))(((unsigned int)(this->q1980))))(this) /*0x44d4a0*/
-//DUPDEF               && *(unsigned char *)((*(int (**)(void *))(((unsigned int)(this->attachedTag2))))(this) + 3234) )
-//DUPDEF             {
-//DUPDEF               TechnoClass::Fire((int *)&this->q0606); /*0x44d4b0*/
-//DUPDEF               TechnoClass::Fire((int *)&this->customSound4); /*0x44d4bb*/
-//DUPDEF             }
-//DUPDEF             if ( !*(unsigned char *)((*(int (**)(void *))(((unsigned int)(this->attachedTag2))))(this) + 3285) ) /*0x44d4ca*/
-//DUPDEF             {
-//DUPDEF               v57 = *(unsigned int *)(*(unsigned int *)(v28 + 192) /*0x44d4fb*/
-//DUPDEF                               + 4 * ((unsigned int)Random::State(Randomizer_Global) % *(unsigned int *)(v28 + 204)));
-//DUPDEF               v58 = (*(int (**)(void *, double *, unsigned int, unsigned int, unsigned int, unsigned int))(((unsigned int)(this->q0446))))( /*0x44d510*/
-//DUPDEF                       this,
-//DUPDEF                       v80,
-//DUPDEF                       0,
-//DUPDEF                       0,
-//DUPDEF                       0,
-//DUPDEF                       0);
-//DUPDEF               StartAudioControllerAt(v57, v58, 0); /*0x44d51a*/
-//DUPDEF             }
-//DUPDEF             this->missionStatus = 3; /*0x44d51f*/
-//DUPDEF             result = 1; /*0x44d529*/
-//DUPDEF           }
-//DUPDEF           break; /*0x44d535*/
-//DUPDEF         case 3: /*0x44cd3b*/
-//DUPDEF           v81 = 0x4000; /*0x44ced1*/
-//DUPDEF           FacingClass::Update((char *)&this->barrelFacing, &v81); /*0x44cee2*/
-//DUPDEF           goto LABEL_54; /*0x44cee7*/
-//DUPDEF         default:
-//DUPDEF           goto LABEL_56;
-//DUPDEF       }
-//DUPDEF     }
-//DUPDEF     else
-//DUPDEF     {
-//DUPDEF   LABEL_56:
-//DUPDEF       MissionControl = this->GetMissionControl(); /*0x44d584*/
-//DUPDEF // 0x7c5f00
-//DUPDEF       return Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x44d594*/
-//DUPDEF     }
-//DUPDEF   }
-//DUPDEF   return result; /*0x44cc5a*/
-//DUPDEF // IDA 0x505310: find building by SuperWeapon type
-//DUPDEF // 0x505310
-//DUPDEF BuildingClass* BuildingClass::FindBySWType(int sw_type)
-//DUPDEF {
-//DUPDEF   char v2; // cl
-//DUPDEF   int v3; // eax
-//DUPDEF   int v4; // edx
-//DUPDEF   int v5; // ecx
-//DUPDEF   int i; // esi
-//DUPDEF 
-//DUPDEF   v2 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)&((unsigned int *)this)[2].firstTrigger); /*0x50532a*/
-//DUPDEF   v3 = 0; /*0x50532c*/
-//DUPDEF   v4 = 1 << v2; /*0x50532e*/
-//DUPDEF   v5 = *(unsigned int *)(sw_type + 16); /*0x505330*/
-//DUPDEF   if ( v5 <= 0 ) /*0x505335*/
-//DUPDEF     return 0; /*0x50534e*/
-//DUPDEF   for ( i = *(unsigned int *)(sw_type + 4); (v4 & *(unsigned int *)(*(unsigned int *)i + 1740)) == 0; i += 4 ) /*0x50533a*/
-//DUPDEF   {
-//DUPDEF     if ( ++v3 >= v5 ) /*0x50534c*/
-//DUPDEF       return 0; /*0x50534c*/
-//DUPDEF   }
-//DUPDEF   return *(unsigned int *)(*(unsigned int *)(sw_type + 4) + 4 * v3); /*0x50534e*/
-//DUPDEF }
-//DUPDEF // GOLDEN: 0x451690
-//DUPDEF // BuildingClass::ClearSuperWeaponAnim — pop the most-recently-added upgrade
-//DUPDEF // (which may grant a super weapon), clear its anim slot, and (if it granted a
-//DUPDEF // super weapon) refresh the owning house's super-weapon collection.
-//DUPDEF // Faithful 1:1 with IDA: count read, if/else on the upgrade's flags, dense
-//DUPDEF // ordered member WRITES, two direct calls, multiple returns, no loop.
-//DUPDEF char BuildingClass::ClearSuperWeaponAnim()
-//DUPDEF {
-//DUPDEF // 0x505310
-//DUPDEF {
-//DUPDEF   int uniqueId; // ecx
-//DUPDEF   int i; // esi
-//DUPDEF 
-//DUPDEF   char v2 = SuperWeaponTypeClass::FindByName((void *)(this->attachedTag + 152)); /*0x50532a*/
-//DUPDEF   {
-//DUPDEF     char v2; // cl
-//DUPDEF     int v3; // eax
-//DUPDEF     int v4; // edx
-//DUPDEF     int v5; // ecx
-//DUPDEF     int i; // esi
-//DUPDEF 
-//DUPDEF     v2 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)&((unsigned int *)this)[2].firstTrigger); /*0x50532a*/
-//DUPDEF     v3 = 0; /*0x50532c*/
-//DUPDEF     v4 = 1 << v2; /*0x50532e*/
-//DUPDEF     v5 = *(unsigned int *)(a2 + 16); /*0x505330*/
-//DUPDEF     if ( v5 <= 0 ) /*0x505335*/
-//DUPDEF       return 0; /*0x50534e*/
-//DUPDEF     for ( i = *(unsigned int *)(a2 + 4); (v4 & *(unsigned int *)(*(unsigned int *)i + 1740)) == 0; i += 4 ) /*0x50533a*/
-//DUPDEF     {
-//DUPDEF       if ( ++v3 >= v5 ) /*0x50534c*/
-//DUPDEF         return 0; /*0x50534c*/
-//DUPDEF     }
-//DUPDEF     return *(unsigned int *)(*(unsigned int *)(a2 + 4) + 4 * v3); /*0x50534e*/
-//DUPDEF   }
-//DUPDEF   return *(unsigned int *)(*(unsigned int *)&((unsigned char *)(aP1) + 0x0)[4] + 4 * v3); /*0x50534e*/
-//DUPDEF }
-//DUPDEF     return {}; // TODO stub - retranslate via C-line pipeline
-//DUPDEF     }
-//DUPDEF 
-//DUPDEF // 0x4503f0
-//DUPDEF void BuildingClass::UpdatePrism() {}
-//DUPDEF   int64_t v2; // rax
-//DUPDEF   int v3; // ecx
-//DUPDEF   int v4; // eax
-//DUPDEF   int v5; // ecx
-//DUPDEF 
-//DUPDEF   IDA_LODWORD(v2) = this->PrismStage[0]; /*0x4503f3*/
-//DUPDEF   if ( (unsigned int)v2 ) /*0x4503fb*/
-//DUPDEF   {
-//DUPDEF     v3 = this->DelayBeforeFiring - 1; /*0x450408*/
-//DUPDEF     this->DelayBeforeFiring = v3; /*0x45040a*/
-//DUPDEF     if ( v3 <= 0 ) /*0x450412*/
-//DUPDEF     {
-//DUPDEF       v4 = v2 - 1; /*0x450418*/
-//DUPDEF       this->DelayBeforeFiring = 0; /*0x450419*/
-//DUPDEF       if ( v4 ) /*0x450423*/
-//DUPDEF       {
-//DUPDEF         IDA_LODWORD(v2) = v4 - 1; /*0x450425*/
-//DUPDEF         if ( !(unsigned int)v2 ) /*0x450426*/
-//DUPDEF         {
-//DUPDEF           IDA_LODWORD(v2) = BuildingClass::FireLaser( /*0x45044d*/
-//DUPDEF                           this,
-//DUPDEF                           this->PrismTargetCoords[0],
-//DUPDEF                           this->PrismTargetCoords[1],
-//DUPDEF                           this->PrismTargetCoords[2]);
-//DUPDEF           this->PrismStage[0] = 0; /*0x450452*/
-//DUPDEF           return v2; /*0x45045d*/
-//DUPDEF         }
-//DUPDEF       }
-//DUPDEF       else
-//DUPDEF       {
-//DUPDEF         IDA_LODWORD(v2) = ((unsigned int *)this)[0]; /*0x45045e*/
-//DUPDEF         if ( (unsigned int)v2 ) /*0x450466*/
-//DUPDEF         {
-//DUPDEF           IDA_LODWORD(v2) = (*((int (**)(BuildingClass *, unsigned int, int, int))this->vtable1 + 240))( /*0x450476*/
-//DUPDEF                           this,
-//DUPDEF                           v2,
-//DUPDEF                           this->PrismTargetCoords[0],
-//DUPDEF                           1);
-//DUPDEF           if ( !(unsigned int)v2 ) /*0x45047e*/
-//DUPDEF           {
-//DUPDEF             IDA_LODWORD(v2) = (*((int (**)(BuildingClass *, AbstractClass *, int))this->vtable1 + 243))( /*0x450492*/
-//DUPDEF                             this,
-//DUPDEF                             ((unsigned int *)this)[0],
-//DUPDEF                             this->PrismTargetCoords[0]);
-//DUPDEF             v5 = v2; /*0x450498*/
-//DUPDEF             if ( (unsigned int)v2 ) /*0x45049c*/
-//DUPDEF             {
-//DUPDEF               IDA_LODWORD(v2) = this->SupportingPrisms; /*0x45049e*/
-//DUPDEF               if ( (unsigned int)v2 ) /*0x4504a6*/
-//DUPDEF               {
-//DUPDEF                 v2 = 1374389535LL /*0x4504c2*/
-//DUPDEF                    * (unsigned int)(((unsigned int)v2 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1180) + 100) << 8);
-//DUPDEF                 v5->q054 = IDA_HIDWORD(v2) >> 5; /*0x4504c7*/
-//DUPDEF                 this->SupportingPrisms = 0; /*0x4504cd*/
-//DUPDEF               }
-//DUPDEF             }
-//DUPDEF           }
-//DUPDEF         }
-//DUPDEF       }
-//DUPDEF       this->PrismStage[0] = 0; /*0x4504d7*/
-//DUPDEF     }
-//DUPDEF   }
-//DUPDEF   return v2; /*0x45045c*/
-//DUPDEF }
-//DUPDEF   return v2; /*0x45045c*/
-//DUPDEF }
-//DUPDEF   return v2; /*0x45045c*/
-//DUPDEF }
-//DUPDEF   return v2; /*0x45045c*/
-//DUPDEF }
-//DUPDEF   return v2; /*0x45045c*/
-//DUPDEF }
-//DUPDEF       int v14 = this->gattlingValue;
-//DUPDEF       if ( !*(unsigned char *)(v14 + 5825) && !*(unsigned char *)(v14 + 5826) )
-//DUPDEF       {
-//DUPDEF         if ( !Array::Contains((int *)this, v53) && Array::ContainsValue((int *)this, v53) )
-//DUPDEF         {
-//DUPDEF           (*(void (**)(void *, int, int))(this->temporalTargetingMe)(this, 2, v53);
-//DUPDEF           Array::Contains((int *)this, v53);
-//DUPDEF }
-//DUPDEF         char v54 = 0;
-//DUPDEF         if ( Array::Contains((int *)this, (int)v13) )
-//DUPDEF         {
-//DUPDEF           int v15 = this->gattlingValue;
-//DUPDEF           if ( *(unsigned char *)(v15 + 5811) || *(unsigned char *)(v15 + 5820) )
-//DUPDEF           {
-//DUPDEF             unsigned int v16 = v13 ? ((v13[20] & 4) != 0 ? (unsigned int)v13 : 0) : 0;
-//DUPDEF   unsigned int *v17; // eax
-//DUPDEF             v17 = (unsigned int *)(*(int (**)(void *, char *, unsigned int))(this->lineTrailer)(
-//DUPDEF                               this,
-//DUPDEF   char v50[12]; // [esp+4Ch] [ebp-24h] BYREF
-//DUPDEF                               v50,
-//DUPDEF                               v16);
-//DUPDEF             void * v18 = RawCoord::To_Cell(DataGlobal_87F7E8, v17);
-//DUPDEF             void * v19 = *(void **)(v16 + 1444);
-//DUPDEF             if ( v19 )
-//DUPDEF             {
-//DUPDEF               if ( v18 != v19 )
-//DUPDEF                 v54 = 1;
-//DUPDEF }
-//DUPDEF           }
-//DUPDEF         }
-//DUPDEF         if ( Team::GetMember(this, 0) )
-//DUPDEF         {
-//DUPDEF           int v20 = this->gattlingValue;
-//DUPDEF           if ( *(unsigned char *)(v20 + 5801) || *(unsigned char *)(v20 + 5803) )
-//DUPDEF           {
-//DUPDEF             Member = Team::GetMember(this, 0);
-//DUPDEF             unsigned int * v22 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)Member + 72))(Member, v51);
-//DUPDEF             unsigned int * v23 = (unsigned int *)(*(int (**)(void *, unsigned char *))(((unsigned char *)(this) + 0x048))(this, v52);
-//DUPDEF             int v24 = *v23 - *v22;
-//DUPDEF             int v25 = v23[1];
-//DUPDEF             int v26 = v23[2];
-//DUPDEF             v24 = v24;
-//DUPDEF             int v27 = v22[2];
-//DUPDEF             v47 = v25 - v22[1];
-//DUPDEF             v48 = v26 - v27;
-//DUPDEF             double v28 = Math::Sqrt((double)v24 * (double)v24 + (double)(v26 - v27) * (double)(v26 - v27) + (double)v47 * (double)v47);
-//DUPDEF             if ( (int)Math::RoundToInt(v28) > 128 )
-//DUPDEF               v54 = 1;
-//DUPDEF           }
-//DUPDEF         }
-//DUPDEF         if ( (*(int (**)(void *, int, unsigned char *))(this->temporalTargetingMe)(this, 19, v13) == 1 || v54 )
-//DUPDEF         {
-//DUPDEF           *v12 = this;
-//DUPDEF           unsigned char * v29 = (unsigned char *)this->gattlingValue;
-//DUPDEF           if ( v29[5811] || v29[5820] )
-//DUPDEF           {
-//DUPDEF   int v45; // [esp+30h] [ebp-40h] BYREF
-//DUPDEF             unsigned short * v30 = (unsigned short *)(*(int (**)(void *, int *))(this->airstrikeTintTimer)(this, &v45);
-//DUPDEF             IDA_LOWORD(v55) = *v30 + 3;
-//DUPDEF             IDA_HIWORD(v55) = v30[1] + 1;
-//DUPDEF             v55 = v55;
-//DUPDEF             *v12 = CellCoord::To_CellObj(DataGlobal_87F7E8, (int16_t *)&v55);
-//DUPDEF             if ( (*(int (**)(void *, int, unsigned int *, unsigned char *))(this->isImmobilized)(this, 18, v12, v13) == 20 )
-//DUPDEF             {
-//DUPDEF               (*(void (**)(void *, int, unsigned char *))(this->temporalTargetingMe)(this, 24, v13);
-//DUPDEF               if ( (*(int (**)(void *, int, unsigned char *))(this->temporalTargetingMe)(this, 22, v13) != 1 )
-//DUPDEF               {
-//DUPDEF                 (*(void (**)(unsigned char *, unsigned int *, int, int))(*(unsigned int *)v13 + 372))(
-//DUPDEF                   v13,
-//DUPDEF                   &DataGlobal_87F7E8[29720],
-//DUPDEF                   1,
-//DUPDEF                   1);
-//DUPDEF                 return 1;
-//DUPDEF               }
-//DUPDEF             }
-//DUPDEF           }
-//DUPDEF           else if ( v29[5835] )
-//DUPDEF           {
-//DUPDEF             *v12 = this;
-//DUPDEF             if ( (*(int (**)(void *, int, unsigned int *, unsigned char *))(this->isImmobilized)(this, 18, v12, v13) == 20 )
-//DUPDEF             {
-//DUPDEF               (*(void (**)(void *, int))(this->temporalUsing)(this, 24);
-//DUPDEF               return 1;
-//DUPDEF             }
-//DUPDEF           }
-//DUPDEF         }
-//DUPDEF         return 1;
-//DUPDEF       }
-//DUPDEF       if ( Array::ContainsValue((int *)this, v53) )
-//DUPDEF       {
-//DUPDEF   unsigned int v49[3]; // [esp+40h] [ebp-30h] BYREF
-//DUPDEF         v49[0] = ((unsigned char *)(this) + 0x027);
-//DUPDEF         v49[1] = this->owningHouseIndex;
-//DUPDEF         v49[2] = ((unsigned char *)(this) + 0x029);
-//DUPDEF         *v12 = RawCoord::To_Cell(DataGlobal_87F7E8, v49);
-//DUPDEF         (*(void (**)(void *, int, unsigned int *, int))(this->isImmobilized)(this, 18, v12, v53);
-//DUPDEF         return 1;
-//DUPDEF       }
-//DUPDEF       for ( i = 0; i < this->q03A; ++i )
-//DUPDEF       {
-//DUPDEF         int v32 = Team::GetMember(this, i);
-//DUPDEF         if ( (*(int (**)(void *, int, int))(this->temporalTargetingMe)(this, 34, v32) == 10 )
-//DUPDEF           (*(void (**)(void *, int, int))(this->temporalTargetingMe)(this, 23, v32);
-//DUPDEF       }
-//DUPDEF       if ( !Array::ContainsValue((int *)this, v53) )
-//DUPDEF         return 10;
-//DUPDEF       return 1;
-//DUPDEF     case 15:
-//DUPDEF       TechnoClass::Mission_RepairDispatch((int *)this, v55, v53, v55, v57);
-//DUPDEF       if ( !Object::IsAlliedWithObjectHouse(this->owner, v53) )
-//DUPDEF         return 0;
-//DUPDEF       if ( (*(int (**)(void *))(this->q184)(this) == 18 )
-//DUPDEF         return 10;
-//DUPDEF       if ( (*(int (**)(void *))(this->q184)(this) == 19 )
-//DUPDEF         return 10;
-//DUPDEF       if ( !this->BuildingClass_field_int_534 )
-//DUPDEF         return 10;
-//DUPDEF       if ( !DataGlobal_87F7E8[539633] && !Array::ContainsValue((int *)this, v53) )
-//DUPDEF       {
-//DUPDEF         int v4 = this->gattlingValue;
-//DUPDEF         if ( !*(unsigned char *)(v4 + 5806) && !*(unsigned char *)(v4 + 5807) )
-//DUPDEF           return 10;
-//DUPDEF       }
-//DUPDEF       if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)v53 + 132))(v53) + 1460) != 5
-//DUPDEF         && (*(unsigned char *)((*(int (**)(void *))(this->hasParachute)(this) + 3278)
-//DUPDEF          && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v53 + 132))(v53) + 3278)
-//DUPDEF          || !*(unsigned char *)((*(int (**)(void *))(this->hasParachute)(this) + 3278)
-//DUPDEF          && *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v53 + 132))(v53) + 3278)) )
-//DUPDEF       {
-//DUPDEF         return 10;
-//DUPDEF       }
-//DUPDEF       if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v53 + 132))(v53) + 3434) )
-//DUPDEF         return 10;
-//DUPDEF       if ( !this->HasPower )
-//DUPDEF         return 10;
-//DUPDEF       int v5 = this->gattlingValue;
-//DUPDEF       if ( !*(unsigned char *)(v5 + 5806) && !*(unsigned char *)(v5 + 5807) )
-//DUPDEF         goto LABEL_33;
-//DUPDEF       if ( (*(int (**)(int))(*(unsigned int *)v53 + 44))(v53) == 1 && !*(unsigned char *)(this->gattlingValue + 5806)
-//DUPDEF         || (*(int (**)(int))(*(unsigned int *)v53 + 44))(v53) == 15 && !*(unsigned char *)(this->gattlingValue + 5807) )
-//DUPDEF       {
-//DUPDEF         return 10;
-//DUPDEF       }
-//DUPDEF       if ( *(unsigned int *)(v53 + 700) && (uint8_t)CellClass::HasContent() )
-//DUPDEF         return 10;
-//DUPDEF       v5 = this->gattlingValue;
-//DUPDEF       if ( this->inAirFlag + 1 <= this->ProductionFrame
-//DUPDEF         && *(double *)((*(int (**)(int))(*(unsigned int *)v53 + 132))(v53) + 896) <= this->q4D0 )
-//DUPDEF       {
-//DUPDEF         return 1;
-//DUPDEF       }
-//DUPDEF LABEL_33:
-//DUPDEF       if ( this->u32_17F5 )
-//DUPDEF         return 1;
-//DUPDEF       if ( this->u32_17F3 )
-//DUPDEF       {
-//DUPDEF         if ( TechnoClass::CanSelfRepair((unsigned char *)v53)
-//DUPDEF           && (*(int (**)(void *, int, int))(this->temporalTargetingMe)(this, 35, v53) != 1 )
-//DUPDEF         {
-//DUPDEF           return 1;
-//DUPDEF         }
-//DUPDEF         return 10;
-//DUPDEF       }
-//DUPDEF       if ( this->u32_17F1 )
-//DUPDEF       {
-//DUPDEF         if ( ((*(int (**)(int))(*(unsigned int *)v53 + 44))(v53) == 1
-//DUPDEF            || (*(int (**)(int))(*(unsigned int *)v53 + 44))(v53) == 2)
-//DUPDEF           && (*(int (**)(void *, int, int))(this->temporalTargetingMe)(this, 35, v53) != 1 )
-//DUPDEF         {
-//DUPDEF           return 1;
-//DUPDEF         }
-//DUPDEF         return 10;
-//DUPDEF       }
-//DUPDEF       if ( !this->q6028 && !this->q6024
-//DUPDEF         || (*(int (**)(int))(*(unsigned int *)v53 + 44))(v53) != 15 )
-//DUPDEF       {
-//DUPDEF         int v8 = this->gattlingValue;
-//DUPDEF         if ( *(unsigned char *)(v8 + 5835) )
-//DUPDEF           return (*(int (**)(int))(*(unsigned int *)(v53 + 4) + 12))(v53 + 4) != 2 ? 10 : 1;
-//DUPDEF         if ( !*(unsigned char *)(v8 + 5811)
-//DUPDEF           || (*(int (**)(int))(*(unsigned int *)v53 + 44))(v53) != 1
-//DUPDEF           || !*(unsigned char *)(*(unsigned int *)(v53 + 1732) + 3598)
-//DUPDEF           || !DataGlobal_87F7E8[539633] && this->q118 )
-//DUPDEF         {
-//DUPDEF           if ( !*(unsigned char *)(this->gattlingValue + 5820)
-//DUPDEF             || (*(int (**)(int))(*(unsigned int *)v53 + 44))(v53) != 1
-//DUPDEF             || !*(unsigned char *)(*(unsigned int *)(v53 + 1732) + 3599) )
-//DUPDEF           {
-//DUPDEF             return 0;
-//DUPDEF           }
-//DUPDEF           if ( !DataGlobal_87F7E8[539633] )
-//DUPDEF             return !this->q118;
-//DUPDEF         }
-//DUPDEF         return 1;
-//DUPDEF       }
-//DUPDEF       if ( v53 )
-//DUPDEF         int v6 = (*(int (**)(int))(*(unsigned int *)v53 + 44))(v53) == 15 ? v53 : 0;
-//DUPDEF       else
-//DUPDEF         v6 = 0;
-//DUPDEF       if ( *(unsigned int *)(v6 + 700) && (uint8_t)CellClass::HasContent() )
-//DUPDEF         return 10;
-//DUPDEF       if ( (uint8_t)BuildingClass::IsBeingRepairedOrCaptured(v6) )
-//DUPDEF         return 10;
-//DUPDEF       int v7 = -(((unsigned char *)(this) + 0x0BF) != 0);
-//DUPDEF       IDA_LOBYTE(v7) = v7 & 0xF7;
-//DUPDEF       return v7 + 10;
-//DUPDEF     case 16:
-//DUPDEF       if ( this->q118
-//DUPDEF         || !Array::ContainsValue((int *)this, v53)
-//DUPDEF         || this->inLimbo
-//DUPDEF         || this->owner != (*(int (**)(int))(*(unsigned int *)v53 + 60))(v53) )
-//DUPDEF       {
-//DUPDEF         return 10;
-//DUPDEF       unsigned char * v33 = (unsigned char *)this->gattlingValue;
-//DUPDEF       if ( v33[5819] || v33[5801] )
-//DUPDEF         return 1;
-//DUPDEF       if ( !v33[5820] )
-//DUPDEF         return 10;
-//DUPDEF       return 1;
-//DUPDEF     case 21:
-//DUPDEF       if ( (*(int (**)(void *))(this->q184)(this) == 19 )
-//DUPDEF         return 10;
-//DUPDEF       unsigned char * v9 = (unsigned char *)this->gattlingValue;
-//DUPDEF       if ( v9[5806] || v9[5807] )
-//DUPDEF         return 1;
-//DUPDEF       if ( v9[5801] || v9[5802] || v9[5825] || v9[5826] )
-//DUPDEF       {
-//DUPDEF         int v11 = *(unsigned int *)this;
-//DUPDEF         this->BuildingClass_field_bool_6DD = 1;
-//DUPDEF         (*(void (**)(void *, int, unsigned int))(v11 + 488))(this, 20, 0);
-//DUPDEF         (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v53 + 488))(v53, 0, 0);
-//DUPDEF         return 1;
-//DUPDEF       else if ( v9[5803] )
-//DUPDEF       {
-//DUPDEF         int v10 = *(unsigned int *)this;
-//DUPDEF         this->BuildingClass_field_bool_6DD = 1;
-//DUPDEF         (*(void (**)(void *, int, unsigned int))(v10 + 488))(this, 20, 0);
-//DUPDEF         return 1;
-//DUPDEF       else if ( v9[5811] )
-//DUPDEF       {
-//DUPDEF         (*(void (**)(int, int, unsigned int))(*(unsigned int *)v53 + 488))(v53, 16, 0);
-//DUPDEF         return 1;
-//DUPDEF       else
-//DUPDEF       {
-//DUPDEF         return TechnoClass::Mission_RepairDispatch((int *)this, v1, v53, v1, v57);
-//DUPDEF     default:
-//DUPDEF       return TechnoClass::Mission_RepairDispatch((int *)this, v1, v53, v1, v57);
+    result = v7; /*0x446ff0*/
+    if ( v7 == -1 ) /*0x446ffe*/
+    {
+      this->IsBeingRepaired = this->IsBeingRepaired == 0; /*0x447042*/
+    }
+    else if ( v7 ) /*0x447002*/
+    {
+      if ( v7 == 1 ) /*0x447007*/
+      {
+        IDA_LOBYTE(result) = this->IsBeingRepaired; /*0x447009*/
+        if ( (unsigned char)result ) /*0x447011*/
+          return result; /*0x447011*/
+        this->IsBeingRepaired = 1; /*0x447017*/
+      }
+    }
+    else
+    {
+      result = (unsigned __int8)this->IsBeingRepaired; /*0x447020*/
+      if ( !(unsigned char)result ) /*0x447028*/
+        return result; /*0x447028*/
+      this->IsBeingRepaired = 0; /*0x44702e*/
+    }
+    if ( this->IsBeingRepaired ) /*0x447048*/
+    {
+      if ( this->? == this->Type->? ) /*0x447061*/
+      {
+        v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1792); /*0x447068*/
+      }
+      else
+      {
+        v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1804); /*0x447076*/
+        if ( (unsigned __int8)House::IsHumanPlayer((House *)this->?) ) /*0x447082*/
+          (*((void (__thiscall **)(BuildingClass *, int))this->TechnoClass + 82))(this, 7); /*0x447091*/
+        owner = this->?; /*0x447097*/
+        this->NeedsRepairs = 1; /*0x44709d*/
+        if ( (unsigned __int8)House::IsHumanPlayer((House *)owner) ) /*0x4470a4*/
+          VoxClass::FindAndPlay((VoxClass *)&stru_818E00.?[5], -1); /*0x4470b7*/
+      }
+    }
+    else
+    {
+      v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1804); /*0x4470c3*/
+    }
+    result = House::IsHumanPlayer((House *)this->?); /*0x4470cf*/
+    if ( (unsigned char)result ) /*0x4470d6*/
+    {
+      location = this->?; /*0x4470d8*/
+      v6[0] = *location; /*0x4470e2*/
+      v6[1] = location[1]; /*0x4470eb*/
+      v6[2] = location[2]; /*0x4470f6*/
+      return (int)StartAudioControllerAt(v3, v6, 0); /*0x4470fa*/
+    }
+    return result; /*0x4470ff*/
+}
 
 /* ASM:
 sub     esp, 40h
@@ -9408,19 +8445,68 @@ void BuildingClass::Infiltrate()
 //DUPDEF   }
 //DUPDEF }
 // 0x458200
-//DUPDEF } // G42.33c11 stub close (raw body preserved above)
-//DUPDEF } // G42.33c11 stub close (raw body preserved above)
-//DUPDEF } // G42.33c11 stub close (raw body preserved above)
-//DUPDEF } // G42.33c11 stub close (raw body preserved above)
-} // G42.33c11 stub close (raw body preserved above)
-void BuildingClass::ProcessStructureAbandoned() {}
-//DUPDEF   int result; // eax
-//DUPDEF   int v3; // edi
-//DUPDEF   House *v4; // ebx
-//DUPDEF   int v5; // eax
-//DUPDEF   int v6; // ecx
-//DUPDEF   HouseClass *v7; // edx
-//DUPDEF   House *owner; // ecx
+int BuildingClass::ProcessStructureAbandoned() {
+    int result; // eax
+    int v3; // edi
+    House *v4; // ebx
+    int v5; // eax
+    int v6; // ecx
+    HouseClass *v7; // edx
+    House *owner; // ecx
+    __int64 v9; // rax
+    unsigned char v10[4]; // [esp+8h] [ebp-4h] BYREF
+
+    result = this->Type; /*0x458205*/
+    if ( *(unsigned int *)(result + 1588) == -1 ) /*0x458212*/
+    {
+      if ( (unsigned __int8)BuildingClass::IsHealthLow(this) ) /*0x45821a*/
+        BuildingClass::UnloadUnits(this, 0, 0); /*0x458229*/
+      v3 = dword_A80238; /*0x458230*/
+      v4 = 0; /*0x45823b*/
+      v5 = HouseTypeClass::Find(&g_INI_Key_Civilian); /*0x45823d*/
+      v6 = 0; /*0x458242*/
+      if ( v3 > 0 ) /*0x458246*/
+      {
+        v7 = dword_A8022C; /*0x458248*/
+        while ( *(unsigned int *)(*(unsigned int *)(v7->vtable0 + 52) + 188) != v5 ) /*0x458259*/
+        {
+          ++v6; /*0x45825b*/
+          v7 = (HouseClass *)((char *)v7 + 4); /*0x45825c*/
+          if ( v6 >= v3 ) /*0x458261*/
+            goto LABEL_10; /*0x458261*/
+        }
+        v4 = (House *)*(&dword_A8022C->vtable0 + v6); /*0x45826b*/
+      }
+  LABEL_10:
+      if ( !(*(int (__thiscall **)(BuildingClass *))(this->vtable0 + 1032))(this) ) /*0x458272*/
+      {
+        owner = (House *)this->owner; /*0x45827e*/
+        if ( owner != v4 ) /*0x458286*/
+        {
+          if ( (unsigned __int8)House::IsHumanPlayer(owner) ) /*0x458288*/
+          {
+            PlayVocClass(dword_8871E0->GeneticMutatorActivateSound, 0x2000, 1.0, 0); /*0x4582a9*/
+            v9 = ((__int64 (__thiscall *)(BuildingClass *, unsigned char *))*(unsigned int *)(this->vtable0 + 440))(this, v10); /*0x4582b7*/
+            if ( (unsigned __int8)CreateTriggerClassIfFarEnough(15, IDA_SHIDWORD(v9), *(unsigned int *)v9) ) /*0x4582c5*/
+              VoxClass::FindAndPlay(&stru_81926C, -1); /*0x4582d8*/
+          }
+          PlayHealthDependentBuildingAnim(this); /*0x4582df*/
+          (*(void (__thiscall **)(BuildingClass *, House *, unsigned int))(this->vtable0 + 980))(this, v4, 0); /*0x4582eb*/
+        }
+      }
+      result = (*(int (__thiscall **)(BuildingClass *))(this->vtable0 + 1032))(this); /*0x4582f5*/
+      if ( result > 0 && (House *)this->owner == v4 ) /*0x458305*/
+      {
+        PlayHealthDependentBuildingAnim(this); /*0x458309*/
+        return (*(int (__thiscall **)(BuildingClass *, unsigned int, unsigned int))(this->vtable0 + 980))( /*0x458323*/
+                 this,
+                 *(unsigned int *)(*(unsigned int *)this->Audio7[4] + 540),
+                 0);
+      }
+    }
+    return result; /*0x458329*/
+}
+
   int64_t v9; // rax
   unsigned char v10[4]; // [esp+8h] [ebp-4h] BYREF
 
@@ -9496,7 +8582,6 @@ void BuildingClass::ProcessStructureAbandoned() {}
 //DUPDEF   {
 //DUPDEF     return ((unsigned int *)g_RulesClass_Instance)[0]; /*0x44eb4c*/
 //DUPDEF   }
-//DUPDEF     return {}; // TODO stub - retranslate via C-line pipeline
 
 // IDA 0x451330: get crew count
 // 0x451330
@@ -9796,772 +8881,396 @@ void BuildingClass::EjectCrew()
 //DUPDEF-G42.33c5-surplus-close   }
 //DUPDEF   return v7; /*0x4433f9*/
 //DUPDEF }
-// 0x454db0
-//DUPDEF } // G42.33c11 stub close (raw body preserved above)
-//DUPDEF } // G42.33c11 stub close (raw body preserved above)
-//DUPDEF } // G42.33c11 stub close (raw body preserved above)
-//DUPDEF } // G42.33c11 stub close (raw body preserved above)
-} // G42.33c11 stub close (raw body preserved above)
-void BuildingClass::CleanupOccupation() {}
-//DUPDEF   BuildingClass *v1; // esi
-//DUPDEF   int result; // eax
-//DUPDEF   unsigned int *v3; // eax
-//DUPDEF   int cloakState; // eax
-//DUPDEF   char Translucency; // al
-//DUPDEF   char v6; // al
-//DUPDEF   char v7; // bl
-//DUPDEF   int *Anims; // ecx
-//DUPDEF   int v9; // edi
-//DUPDEF   ParticleSystemClass *ambientParticles; // ecx
-//DUPDEF   char v11; // al
-//DUPDEF   char v12; // al
-//DUPDEF   char v13; // bl
-//DUPDEF   int *v14; // ecx
-//DUPDEF   int v15; // edi
-//DUPDEF   ParticleSystemClass *v16; // eax
-//DUPDEF   int *NaturalParticleSystemLocation; // eax
-//DUPDEF   int v18; // ebp
-//DUPDEF   int v19; // ebx
-//DUPDEF   int *v20; // edi
-//DUPDEF   int v21; // edx
-//DUPDEF   int v22; // esi
-//DUPDEF   int v23; // edx
-//DUPDEF   int v24; // eax
-//DUPDEF   CellClass *v25; // eax
-//DUPDEF   int v26; // eax
-//DUPDEF   int Draw_field_00; // eax
-//DUPDEF   int v30; // ebp
-//DUPDEF   int v31; // edi
-//DUPDEF   int *v32; // eax
-//DUPDEF   int v33; // ebp
-//DUPDEF   int k; // ebx
-//DUPDEF   bool v35; // zf
-//DUPDEF   BuildingClass *v36; // edi
-//DUPDEF   unsigned int *m; // esi
-//DUPDEF   int v38; // eax
-//DUPDEF   unsigned int *v39; // eax
-//DUPDEF   unsigned int *v40; // eax
-//DUPDEF   int *v41; // eax
-//DUPDEF   int *v42; // eax
-//DUPDEF   int v43; // ebp
-//DUPDEF   int v44; // ebx
-//DUPDEF   BuildingClass *v45; // edi
-//DUPDEF   unsigned int *i; // esi
-//DUPDEF   int v47; // eax
-//DUPDEF   unsigned int *v48; // eax
-//DUPDEF   int *v49; // eax
-//DUPDEF   int v50; // kr1C_4
-//DUPDEF   int v51; // eax
-//DUPDEF   int j; // edi
-//DUPDEF   BuildingClass *v53; // esi
-//DUPDEF   unsigned int *v54; // eax
-//DUPDEF   int v55; // edx
-//DUPDEF   BuildingTypeClass *Type; // eax
-//DUPDEF   char CloakRadius; // dl
-//DUPDEF   char v58; // al
-//DUPDEF   int v59; // [esp+1Ch] [ebp-54h]
-//DUPDEF   char v62[4]; // [esp+34h] [ebp-3Ch] BYREF
-//DUPDEF   unsigned char *v63; // [esp+38h] [ebp-38h]
-//DUPDEF   unsigned char *v64; // [esp+3Ch] [ebp-34h]
-//DUPDEF   int v65[3]; // [esp+40h] [ebp-30h] BYREF
-//DUPDEF   int v66; // [esp+4Ch] [ebp-24h]
-//DUPDEF   unsigned int v67[2]; // [esp+54h] [ebp-1Ch] BYREF
-//DUPDEF   int v69[2]; // [esp+60h] [ebp-10h] BYREF
-//DUPDEF   int v70; // [esp+68h] [ebp-8h]
+// 0x454DB0
+int BuildingClass::CleanupOccupation() {
+    BuildingClass *v1; // esi
+    int result; // eax
+    unsigned int *v3; // eax
+    int cloakState; // eax
+    char Translucency; // al
+    char v6; // al
+    char v7; // bl
+    int *Anims; // ecx
+    int v9; // edi
+    ParticleSystemClass *ambientParticles; // ecx
+    char v11; // al
+    char v12; // al
+    char v13; // bl
+    int *v14; // ecx
+    int v15; // edi
+    ParticleSystemClass *v16; // eax
+    int *NaturalParticleSystemLocation; // eax
+    int v18; // ebp
+    int v19; // ebx
+    int *v20; // edi
+    int v21; // edx
+    int v22; // esi
+    int v23; // edx
+    int v24; // eax
+    CellClass *v25; // eax
+    int v26; // eax
+    BuildingClass *v27; // ebx
+    Draw *v28; // esi
+    int Draw_field_00; // eax
+    int v30; // ebp
+    int v31; // edi
+    int *v32; // eax
+    int v33; // ebp
+    int k; // ebx
+    bool v35; // zf
+    BuildingClass *v36; // edi
+    unsigned int *m; // esi
+    int v38; // eax
+    unsigned int *v39; // eax
+    unsigned int *v40; // eax
+    int *v41; // eax
+    int *v42; // eax
+    int v43; // ebp
+    int v44; // ebx
+    BuildingClass *v45; // edi
+    unsigned int *i; // esi
+    int v47; // eax
+    unsigned int *v48; // eax
+    int *v49; // eax
+    int v50; // kr1C_4
+    int v51; // eax
+    int j; // edi
+    BuildingClass *v53; // esi
+    unsigned int *v54; // eax
+    int v55; // edx
+    BuildingTypeClass *Type; // eax
+    char CloakRadius; // dl
+    char v58; // al
+    int v59; // [esp+1Ch] [ebp-54h]
+    int v61; // [esp+30h] [ebp-40h]
+    char v62[4]; // [esp+34h] [ebp-3Ch] BYREF
+    unsigned char *v63; // [esp+38h] [ebp-38h]
+    unsigned char *v64; // [esp+3Ch] [ebp-34h]
+    int v65[3]; // [esp+40h] [ebp-30h] BYREF
+    int v66; // [esp+4Ch] [ebp-24h]
+    unsigned int v67[2]; // [esp+54h] [ebp-1Ch] BYREF
+    int v68; // [esp+5Ch] [ebp-14h] BYREF
+    int v69[2]; // [esp+60h] [ebp-10h] BYREF
+    int v70; // [esp+68h] [ebp-8h]
+    unsigned char *v71; // [esp+74h] [ebp+4h] BYREF
 
-//DUPDEF   result = (int)this->Type; /*0x454dbb*/
-//DUPDEF   if ( result ) /*0x454dc7*/
-//DUPDEF   {
-//DUPDEF     v3 = (unsigned int *)(*((int (**)(BuildingClass *, int *))this->vtable1 + 18))(this, v69); /*0x454dd6*/
-//DUPDEF     IDA_LOWORD(v66) = *v3 / 256; /*0x454de9*/
-//DUPDEF     IDA_HIWORD(v66) = v3[1] / 256; /*0x454dfd*/
-//DUPDEF     cloakState = ((unsigned int *)this)[0]; /*0x454e02*/
-//DUPDEF     if ( cloakState == 1 ) /*0x454e0b*/
-//DUPDEF     {
-//DUPDEF       Translucency = this->Translucency; /*0x454e11*/
-//DUPDEF       if ( Translucency < 15 ) /*0x454e19*/
-//DUPDEF       {
-//DUPDEF         v6 = Translucency + 1; /*0x454e1f*/
-//DUPDEF         this->Translucency = v6; /*0x454e23*/
-//DUPDEF         if ( v6 == 1 || v6 == 6 || v6 == 11 ) /*0x454e31*/
-//DUPDEF           ((unsigned int *)this)[0] = 1; /*0x454e33*/
-//DUPDEF         v7 = v6; /*0x454e3a*/
-//DUPDEF         if ( v6 == 15 && (*((int (**)(BuildingClass *, unsigned int, unsigned int))this->vtable1 + 26))(this, 0, 0) == 5 ) /*0x454e4e*/
-//DUPDEF           v7 = 16; /*0x454e50*/
-//DUPDEF         Anims = this->Anims; /*0x454e55*/
-//DUPDEF         v9 = 21; /*0x454e5b*/
-//DUPDEF         do /*0x454e70*/
-//DUPDEF         {
-//DUPDEF           if ( *Anims ) /*0x454e60*/
-//DUPDEF             *(unsigned char *)(*Anims + 376) = v7; /*0x454e66*/
-//DUPDEF           ++Anims; /*0x454e6c*/
-//DUPDEF           --v9; /*0x454e6f*/
-//DUPDEF }
-//DUPDEF         while ( v9 ); /*0x454e70*/
-//DUPDEF         if ( this->Translucency == 15 ) /*0x454e79*/
-//DUPDEF         {
-//DUPDEF           ambientParticles = ((unsigned int *)this)[0]; /*0x454e7f*/
-//DUPDEF           ((unsigned int *)this)[0] = 2; /*0x454e85*/
-//DUPDEF           if ( ambientParticles ) /*0x454e91*/
-//DUPDEF           {
-//DUPDEF             (*((void (**)(ParticleSystemClass *, int))ambientParticles->vtable1 + 8))( /*0x454e9b*/
-//DUPDEF               ambientParticles,
-//DUPDEF               1);
-//DUPDEF             ((unsigned int *)this)[0] = 0; /*0x454e9e*/
-//DUPDEF }
-//DUPDEF         }
-//DUPDEF       }
-//DUPDEF     }
-//DUPDEF     else if ( cloakState == 3 ) /*0x454eac*/
-//DUPDEF     {
-//DUPDEF       v11 = this->Translucency; /*0x454eb2*/
-//DUPDEF       if ( v11 >= 0 ) /*0x454eba*/
-//DUPDEF       {
-//DUPDEF         if ( v11 > 0 ) /*0x454ec0*/
-//DUPDEF           this->Translucency = v11 - 1; /*0x454ec4*/
-//DUPDEF         v12 = this->Translucency; /*0x454eca*/
-//DUPDEF         if ( !v12 || v12 == 5 || v12 == 10 ) /*0x454eda*/
-//DUPDEF           ((unsigned int *)this)[0] = 1; /*0x454edc*/
-//DUPDEF         v13 = v12; /*0x454ee3*/
-//DUPDEF         if ( v12 == 15 && (*((int (**)(BuildingClass *, unsigned int, unsigned int))this->vtable1 + 26))(this, 0, 0) == 5 ) /*0x454ef7*/
-//DUPDEF           v13 = 16; /*0x454ef9*/
-//DUPDEF         v14 = this->Anims; /*0x454efe*/
-//DUPDEF         v15 = 21; /*0x454f04*/
-//DUPDEF         do /*0x454f19*/
-//DUPDEF         {
-//DUPDEF           if ( *v14 ) /*0x454f09*/
-//DUPDEF             *(unsigned char *)(*v14 + 376) = v13; /*0x454f0f*/
-//DUPDEF           ++v14; /*0x454f15*/
-//DUPDEF           --v15; /*0x454f18*/
-//DUPDEF         }
-//DUPDEF         while ( v15 ); /*0x454f19*/
-//DUPDEF         if ( !this->Translucency ) /*0x454f1b*/
-//DUPDEF         {
-//DUPDEF           v16 = ((unsigned int *)this)[0]; /*0x454f29*/
-//DUPDEF           ((unsigned int *)this)[0] = 0; /*0x454f2f*/
-//DUPDEF           if ( !v16 ) /*0x454f37*/
-//DUPDEF           {
-//DUPDEF             NaturalParticleSystemLocation = this->((unsigned int *)Type)[0]; /*0x454f49*/
-//DUPDEF             if ( *NaturalParticleSystemLocation != g_BuildingClassPool /*0x454f6c*/
-//DUPDEF               || this->((unsigned int *)Type)[1] != dword_89C84C
-//DUPDEF               || this->((unsigned int *)Type)[2] != dword_89C850 )
-//DUPDEF             {
-//DUPDEF               v18 = *NaturalParticleSystemLocation; /*0x454f75*/
-//DUPDEF               v19 = this->((unsigned int *)Type)[1]; /*0x454f77*/
-//DUPDEF               v70 = this->((unsigned int *)Type)[2]; /*0x454f7f*/
-//DUPDEF               v20 = (int *)RA2_OPNEW(0x100u); /*0x454f88*/
-//DUPDEF               if ( v20 ) /*0x454f8f*/
-//DUPDEF               {
-//DUPDEF                 v21 = ((unsigned int *)this)[1]; /*0x454fa9*/
-//DUPDEF                 v65[0] = v18 + ((unsigned int *)this)[0]; /*0x454fac*/
-//DUPDEF                 v22 = ((unsigned int *)this)[2]; /*0x454fb4*/
-//DUPDEF                 v67[0] = ((unsigned int *)this)[0]; /*0x454fbb*/
-//DUPDEF                 v65[1] = v19 + v21; /*0x454fbf*/
-//DUPDEF                 v23 = ((unsigned int *)this)[1]; /*0x454fc3*/
-//DUPDEF                 v24 = ((unsigned int *)this)[2]; /*0x454fc6*/
-//DUPDEF                 v65[2] = v70 + v22; /*0x454fd5*/
-//DUPDEF                 v67[1] = v23; /*0x454fd9*/
-//DUPDEF                 v24 = v24; /*0x454fdd*/
-//DUPDEF                 v25 = RawCoord::To_Cell((void *)&stru_87F5F0_raw.__pad_58[416], v67); /*0x454fe1*/
-//DUPDEF                 v26 = ParticleSystemClass::Constructor(v20, this->((unsigned int *)Type)[0], v65, (int)v25, 0, &g_BuildingClassPool, 0); /*0x454fff*/
-//DUPDEF }
-//DUPDEF               else
-//DUPDEF               {
-//DUPDEF                 v26 = 0; /*0x45500a*/
-//DUPDEF }
-//DUPDEF               ((unsigned int *)this)[0] = (ParticleSystemClass *)v26; /*0x45500c*/
-//DUPDEF             }
-//DUPDEF           }
-//DUPDEF         }
-//DUPDEF       }
-//DUPDEF     }
-//DUPDEF     if ( ((unsigned int *)this)[0] == 2 && (*((uint8_t (**)(BuildingClass *))this->vtable1 + 169))(this) ) /*0x45501f*/
-//DUPDEF       (*((void (**)(BuildingClass *, unsigned int))this->vtable1 + 279))(this, 0); /*0x45502f*/
-//DUPDEF     result = ((unsigned int *)this)[0]; /*0x455035*/
-//DUPDEF     if ( !result ) /*0x45503d*/
-//DUPDEF     {
-//DUPDEF       result = (*((int (**)(BuildingClass *))this->vtable1 + 168))(this); /*0x455043*/
-//DUPDEF       if ( (unsigned char)result ) /*0x45504b*/
-//DUPDEF         result = (*((int (**)(BuildingClass *, unsigned int))this->vtable1 + 280))(this, 0); /*0x455053*/
-//DUPDEF     }
-//DUPDEF     IDA_LOBYTE(result) = this->HasCloakingData; /*0x455059*/
-//DUPDEF     if ( (unsigned char)result ) /*0x455061*/
-//DUPDEF     {
-//DUPDEF       result = (int)this->Type; /*0x455067*/
-//DUPDEF       if ( result->CloakGenerator ) /*0x45506d*/
-//DUPDEF       {
-//DUPDEF         dword_89DDC0 = dword_89DDC0; /*0x45507f*/
-//DUPDEF         Draw_field_00 = dword_89DDC0->Draw_field_00; /*0x45508b*/
-//DUPDEF         *(unsigned int *)v62 = ((unsigned int *)this)[0]->relatedTagsCount; /*0x455092*/
-//DUPDEF         v30 = (*(int (**)(Draw *))(Draw_field_00 + 124))(dword_89DDC0); /*0x455099*/
-//DUPDEF         result = v30 - (v30 >> 31); /*0x45509c*/
-//DUPDEF         v30 = v30; /*0x45509e*/
-//DUPDEF         v31 = v30 / 2; /*0x4550aa*/
-//DUPDEF         IDA_LOBYTE(result) = this->CloakRadius; /*0x4550ae*/
-//DUPDEF         if ( this->HasCloakingData <= 0 ) /*0x4550b4*/
-//DUPDEF         {
-//DUPDEF           if ( (unsigned char)result ) /*0x455275*/
-//DUPDEF           {
-//DUPDEF             this->CloakRadius = result - 1; /*0x45528b*/
-//DUPDEF             (*(void (**)(Draw *))(dword_89DDC0->Draw_field_00 + 24))(dword_89DDC0); /*0x455295*/
-//DUPDEF             v41 = (int *)(*(int (**)(Draw *, int *, unsigned int))(dword_89DDC0->Draw_field_00 + 120))(dword_89DDC0, &v24, 0); /*0x4552a3*/
-//DUPDEF             Draw::Ellipse(dword_89DDC0, v31, v31, this->Type->CloakRadiusInCells, *v41, v41[1], v41[2], v41[3], 2); /*0x4552d3*/
-//DUPDEF             if ( this->CloakRadius ) /*0x4552d8*/
-//DUPDEF             {
-//DUPDEF               v42 = (int *)(*(int (**)(Draw *, int *))(dword_89DDC0->Draw_field_00 + 120))(dword_89DDC0, v69); /*0x4552ed*/
-//DUPDEF               Draw::Ellipse(dword_89DDC0, v31, v31, this->CloakRadius, *v42, v42[1], v42[2], v42[3], 1); /*0x455317*/
-//DUPDEF             }
-//DUPDEF             v64 = (unsigned char *)(*(int (**)(Draw *, unsigned int, unsigned int))(dword_89DDC0->Draw_field_00 + 92))(dword_89DDC0, 0, 0); /*0x45532d*/
-//DUPDEF             result = v66 - v31; /*0x455337*/
-//DUPDEF             IDA_HIWORD(v67[0]) = IDA_HIWORD(v66) - v31; /*0x455339*/
-//DUPDEF             IDA_LOWORD(v67[0]) = v66 - v31; /*0x455340*/
-//DUPDEF             v63 = 0; /*0x455345*/
-//DUPDEF             if ( v30 > 0 ) /*0x45534d*/
-//DUPDEF             {
-//DUPDEF               v43 = *(unsigned int *)v62; /*0x455353*/
-//DUPDEF               while ( 2 ) /*0x455357*/
-//DUPDEF               {
-//DUPDEF                 v44 = 0; /*0x455357*/
-//DUPDEF                 do /*0x45544d*/
-//DUPDEF                 {
-//DUPDEF                   v35 = *v64++ == 0; /*0x455360*/
-//DUPDEF                   if ( v35 ) /*0x455366*/
-//DUPDEF                   {
-//DUPDEF                     IDA_LOWORD(v65[0]) = v44 + IDA_LOWORD(v67[0]); /*0x45537d*/
-//DUPDEF                     IDA_HIWORD(v65[0]) = (unsigned short)v63 + IDA_HIWORD(v67[0]); /*0x455382*/
-//DUPDEF                     *(unsigned int *)v62 = v65[0]; /*0x45538f*/
-//DUPDEF                     v45 = (BuildingClass *)CellCoord::To_CellObj( /*0x45539e*/
-//DUPDEF                                              (CellCoord *)&stru_87F5F0_raw.__pad_58[416],
-//DUPDEF                                              (int16_t *)v62);
-//DUPDEF                     if ( (uint8_t)Cell::HasOccupierBit((Cell *)v45, v43) ) /*0x4553a3*/
-//DUPDEF                     {
-//DUPDEF                       BuildingClass::updateOccupiedState(v45, v43); /*0x4553b3*/
-//DUPDEF                       for ( i = (unsigned int *)((unsigned int *)v45)[1]; i; i = (unsigned int *)i[12] ) /*0x4553c0*/
-//DUPDEF                       {
-//DUPDEF                         v47 = (*(int (**)(unsigned int *))(*i + 44))(i); /*0x4553c6*/
-//DUPDEF                         if ( v47 == 1 || v47 == 15 || v47 == 2 ) /*0x4553d6*/
-//DUPDEF                           (*(void (**)(unsigned int *))(*i + 1056))(i); /*0x4553dc*/
-//DUPDEF }
-//DUPDEF                       v48 = Cell::IsBridge((Cell *)v45); /*0x4553eb*/
-//DUPDEF                       if ( v48 ) /*0x4553f2*/
-//DUPDEF                       {
-//DUPDEF                         if ( *(unsigned int *)(v48[135] + 48) == v43 ) /*0x4553fd*/
-//DUPDEF                         {
-//DUPDEF                           v49 = (int *)(*(int (**)(unsigned int *, int *))(*v48 + 72))(v48, v69); /*0x455408*/
-//DUPDEF                           v50 = *v49; /*0x455418*/
-//DUPDEF                           v51 = v49[1] / 256; /*0x455429*/
-//DUPDEF                           if ( (uint16_t)(v50 / 256) == *(unsigned short *)v62 /*0x455440*/
-//DUPDEF                             && (unsigned short)v51 == *(unsigned short *)&v62[2]
-//DUPDEF                             && !(unsigned char)v64 )
-//DUPDEF                           {
-//DUPDEF                             ++this->CloakRadius; /*0x4555c0*/
-//DUPDEF                             return (int)this; /*0x4555b0*/
-//DUPDEF }
-//DUPDEF                         }
-//DUPDEF                       }
-//DUPDEF                     }
-//DUPDEF                   }
-//DUPDEF                   ++v44; /*0x45544a*/
-//DUPDEF                 }
-//DUPDEF                 while ( v44 < v30 ); /*0x45544d*/
-//DUPDEF                 result = (int)++v63; /*0x45545b*/
-//DUPDEF                 if ( (int)v63 < v30 ) /*0x455462*/
-//DUPDEF                   continue; /*0x455462*/
-//DUPDEF                 break;
-//DUPDEF               }
-//DUPDEF             }
-//DUPDEF             IDA_LOBYTE(result) = this->CloakRadius; /*0x45546c*/
-//DUPDEF             if ( !(unsigned char)result ) /*0x455474*/
-//DUPDEF             {
-//DUPDEF               result = stru_A8EB00_raw.ObjectTypeClass[20]; /*0x45547a*/
-//DUPDEF               for ( j = 0; j < stru_A8EB00_raw.ObjectTypeClass[20]; ++j ) /*0x455483*/
-//DUPDEF               {
-//DUPDEF                 v53 = *(BuildingClass **)(stru_A8EB00_raw.ObjectTypeClass[17] + 4 * j); /*0x45548f*/
-//DUPDEF                 if ( ((unsigned int *)v53)[0] ) /*0x455492*/
-//DUPDEF                 {
-//DUPDEF                   if ( v53 != this ) /*0x4554a2*/
-//DUPDEF                   {
-//DUPDEF                     if ( v53->Type->CloakGenerator ) /*0x4554ae*/
-//DUPDEF                     {
-//DUPDEF                       if ( (*((uint8_t (**)(unsigned int))v53->vtable1 + 212))(*(unsigned int *)(stru_A8EB00_raw.ObjectTypeClass[17] + 4 * j)) ) /*0x4554c0*/
-//DUPDEF                       {
-//DUPDEF                         if ( !v53->HasCloakingData ) /*0x4554ce*/
-//DUPDEF                         {
-//DUPDEF                           v54 = (unsigned int *)(*((int (**)(BuildingClass *, int *))v53->vtable1 + 18))( /*0x4554e5*/
-//DUPDEF                                             v53,
-//DUPDEF                                             v69);
-//DUPDEF                           IDA_LOWORD(v67[0]) = *v54 / 256; /*0x4554f8*/
-//DUPDEF                           IDA_HIWORD(v67[0]) = v54[1] / 256; /*0x455510*/
-//DUPDEF                           v55 = this->Type->CloakRadiusInCells + 2; /*0x45553a*/
-//DUPDEF                           if ( (int16_t)(IDA_HIWORD(v66) - IDA_HIWORD(v67[0])) * (int16_t)(IDA_HIWORD(v66) - IDA_HIWORD(v67[0])) /*0x455551*/
-//DUPDEF                              + (int16_t)(v66 - IDA_LOWORD(v67[0])) * (int16_t)(v66 - IDA_LOWORD(v67[0])) < 4 * v55 * v55 )
-//DUPDEF                           {
-//DUPDEF                             Type = v53->Type; /*0x455553*/
-//DUPDEF                             if ( Type->CloakGenerator ) /*0x455559*/
-//DUPDEF                             {
-//DUPDEF                               CloakRadius = v53->CloakRadius; /*0x455563*/
-//DUPDEF                               v53->HasCloakingData = 1; /*0x455569*/
-//DUPDEF                               if ( CloakRadius == Type->CloakRadiusInCells ) /*0x455576*/
-//DUPDEF                                 v53->CloakRadius = 0; /*0x455578*/
-//DUPDEF                               ((unsigned int *)v53)[0] = 1; /*0x45557f*/
-//DUPDEF }
-//DUPDEF                             v58 = v53->CloakRadius; /*0x455586*/
-//DUPDEF                             if ( v58 ) /*0x45558e*/
-//DUPDEF                               v53->CloakRadius = v58 - 1; /*0x455592*/
-//DUPDEF }
-//DUPDEF                         }
-//DUPDEF                       }
-//DUPDEF                     }
-//DUPDEF                   }
-//DUPDEF                 }
-//DUPDEF                 result = stru_A8EB00_raw.ObjectTypeClass[20]; /*0x455598*/
-//DUPDEF               }
-//DUPDEF             }
-//DUPDEF           }
-//DUPDEF           else
-//DUPDEF           {
-//DUPDEF             this->HasCloakingData = 0; /*0x455277*/
-//DUPDEF           }
-//DUPDEF         }
-//DUPDEF         else if ( (unsigned char)result == this->Type->CloakRadiusInCells ) /*0x4550c6*/
-//DUPDEF         {
-//DUPDEF           this->HasCloakingData = 0; /*0x4550c8*/
-//DUPDEF         }
-//DUPDEF         else
-//DUPDEF         {
-//DUPDEF           this->CloakRadius = result + 1; /*0x4550dd*/
-//DUPDEF           (*(void (**)(Draw *, unsigned int))(dword_89DDC0->Draw_field_00 + 24))(dword_89DDC0, 0); /*0x4550e7*/
-//DUPDEF           v32 = (int *)(*(int (**)(Draw *, int *, int))(dword_89DDC0->Draw_field_00 + 120))(dword_89DDC0, v69, 1); /*0x4550f5*/
-//DUPDEF           Draw::Ellipse(dword_89DDC0, v31, v31, this->CloakRadius, *v32, v32[1], v32[2], v32[3], v59); /*0x45511f*/
-//DUPDEF           v63 = (unsigned char *)(*(int (**)(Draw *, unsigned int))(dword_89DDC0->Draw_field_00 + 92))(dword_89DDC0, 0); /*0x455135*/
-//DUPDEF           v33 = 0; /*0x455141*/
-//DUPDEF           IDA_LOWORD(v65[0]) = v66 - v31; /*0x455143*/
-//DUPDEF           result = v30; /*0x455148*/
-//DUPDEF           for ( IDA_HIWORD(v65[0]) = IDA_HIWORD(v66) - v31; v33 < v30; ++v33 ) /*0x455153*/
-//DUPDEF           {
-//DUPDEF             for ( k = 0; k < v30; ++k ) /*0x455159*/
-//DUPDEF             {
-//DUPDEF               v35 = *v63++ == 0; /*0x455162*/
-//DUPDEF               if ( !v35 ) /*0x455168*/
-//DUPDEF               {
-//DUPDEF                 IDA_HIWORD(v64) = v33 + IDA_HIWORD(v65[0]); /*0x45517b*/
-//DUPDEF                 IDA_LOWORD(v64) = k + IDA_LOWORD(v65[0]); /*0x455180*/
-//DUPDEF                 v64 = v64; /*0x45518d*/
-//DUPDEF                 v36 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0_raw.__pad_58[416], (int16_t *)&v64); /*0x4551a0*/
-//DUPDEF                 if ( !(uint8_t)Cell::HasOccupierBit((Cell *)v36, v62[0]) ) /*0x4551a5*/
-//DUPDEF                 {
-//DUPDEF                   BuildingClass::checkOccupant(v36, v62[0]); /*0x4551b9*/
-//DUPDEF                   for ( m = (unsigned int *)((unsigned int *)v36)[1]; m; m = (unsigned int *)m[12] ) /*0x4551c6*/
-//DUPDEF                   {
-//DUPDEF                     v38 = (*(int (**)(unsigned int *))(*m + 44))(m); /*0x4551cc*/
-//DUPDEF                     if ( v38 == 1 || v38 == 15 || v38 == 2 ) /*0x4551dc*/
-//DUPDEF                       (*(void (**)(unsigned int *))(*m + 1056))(m); /*0x4551e2*/
-//DUPDEF                   }
-//DUPDEF                   v39 = Cell::IsBridge((Cell *)v36); /*0x4551f1*/
-//DUPDEF                   if ( v39 ) /*0x4551f8*/
-//DUPDEF                   {
-//DUPDEF                     if ( *(unsigned int *)(v39[135] + 48) == *(unsigned int *)v62 ) /*0x455207*/
-//DUPDEF                     {
-//DUPDEF                       v40 = (unsigned int *)(*(int (**)(unsigned int *, int *))(*v39 + 72))(v39, v69); /*0x455212*/
-//DUPDEF                       if ( (unsigned char *)IDA___PAIR32__(v40[1] / 256, *v40 / 256) == v64 ) /*0x45523b*/
-//DUPDEF                       {
-//DUPDEF                         --this->CloakRadius; /*0x455263*/
-//DUPDEF                         return (int)this; /*0x455270*/
-//DUPDEF                       }
-//DUPDEF                     }
-//DUPDEF                   }
-//DUPDEF                 }
-//DUPDEF               }
-//DUPDEF               result = v30; /*0x455244*/
-//DUPDEF             }
-//DUPDEF           }
-//DUPDEF         }
-//DUPDEF       }
-//DUPDEF     }
-//DUPDEF   }
-//DUPDEF   return result; /*0x4550cf*/
-//DUPDEF   return result; /*0x4550cf*/
-//DUPDEF   return result; /*0x4550cf*/
-//DUPDEF   return result; /*0x4550cf*/
-//DUPDEF   return result; /*0x4550cf*/
-// 0x44abd0
-//DUPDEF void BuildingClass::FireLaser() {}
-//DUPDEF   int *v5; // eax
-//DUPDEF   char *v6; // eax
-//DUPDEF   int v7; // eax
-//DUPDEF   int v8; // ecx
-//DUPDEF   int v10; // [esp-20h] [ebp-44h]
-//DUPDEF   int v11; // [esp-14h] [ebp-38h]
-//DUPDEF   char *v12; // [esp+14h] [ebp-10h]
-//DUPDEF   unsigned int v13[3]; // [esp+18h] [ebp-Ch] BYREF
+    v1 = this; /*0x454db6*/
+    result = (int)this->Type; /*0x454dbb*/
+    if ( result ) /*0x454dc7*/
+    {
+      v3 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *, int *))this->TechnoClass + 18))(this, v69); /*0x454dd6*/
+      IDA_LOWORD(v66) = *v3 / 256; /*0x454de9*/
+      IDA_HIWORD(v66) = v3[1] / 256; /*0x454dfd*/
+      cloakState = v1->?; /*0x454e02*/
+      if ( cloakState == 1 ) /*0x454e0b*/
+      {
+        Translucency = v1->Translucency; /*0x454e11*/
+        if ( Translucency < 15 ) /*0x454e19*/
+        {
+          v6 = Translucency + 1; /*0x454e1f*/
+          v1->Translucency = v6; /*0x454e23*/
+          if ( v6 == 1 || v6 == 6 || v6 == 11 ) /*0x454e31*/
+            v1->? = 1; /*0x454e33*/
+          v7 = v6; /*0x454e3a*/
+          if ( v6 == 15 && (*((int (__thiscall **)(BuildingClass *, unsigned int, unsigned int))v1->TechnoClass + 26))(v1, 0, 0) == 5 ) /*0x454e4e*/
+            v7 = 16; /*0x454e50*/
+          Anims = v1->Anims; /*0x454e55*/
+          v9 = 21; /*0x454e5b*/
+          do /*0x454e70*/
+          {
+            if ( *Anims ) /*0x454e60*/
+              *(unsigned char *)(*Anims + 376) = v7; /*0x454e66*/
+            ++Anims; /*0x454e6c*/
+            --v9; /*0x454e6f*/
+          }
+          while ( v9 ); /*0x454e70*/
+          if ( v1->Translucency == 15 ) /*0x454e79*/
+          {
+            ambientParticles = v1->?; /*0x454e7f*/
+            v1->? = 2; /*0x454e85*/
+            if ( ambientParticles ) /*0x454e91*/
+            {
+              (*((void (__thiscall **)(ParticleSystemClass *, int))ambientParticles->ObjectClass + 8))( /*0x454e9b*/
+                ambientParticles,
+                1);
+              v1->? = 0; /*0x454e9e*/
+            }
+          }
+        }
+      }
+      else if ( cloakState == 3 ) /*0x454eac*/
+      {
+        v11 = v1->Translucency; /*0x454eb2*/
+        if ( v11 >= 0 ) /*0x454eba*/
+        {
+          if ( v11 > 0 ) /*0x454ec0*/
+            v1->Translucency = v11 - 1; /*0x454ec4*/
+          v12 = v1->Translucency; /*0x454eca*/
+          if ( !v12 || v12 == 5 || v12 == 10 ) /*0x454eda*/
+            v1->? = 1; /*0x454edc*/
+          v13 = v12; /*0x454ee3*/
+          if ( v12 == 15 && (*((int (__thiscall **)(BuildingClass *, unsigned int, unsigned int))v1->TechnoClass + 26))(v1, 0, 0) == 5 ) /*0x454ef7*/
+            v13 = 16; /*0x454ef9*/
+          v14 = v1->Anims; /*0x454efe*/
+          v15 = 21; /*0x454f04*/
+          do /*0x454f19*/
+          {
+            if ( *v14 ) /*0x454f09*/
+              *(unsigned char *)(*v14 + 376) = v13; /*0x454f0f*/
+            ++v14; /*0x454f15*/
+            --v15; /*0x454f18*/
+          }
+          while ( v15 ); /*0x454f19*/
+          if ( !v1->Translucency ) /*0x454f1b*/
+          {
+            v16 = v1->?; /*0x454f29*/
+            v1->? = 0; /*0x454f2f*/
+            if ( !v16 ) /*0x454f37*/
+            {
+              NaturalParticleSystemLocation = v1->Type->?; /*0x454f49*/
+              if ( *NaturalParticleSystemLocation != g_BuildingClassPool /*0x454f6c*/
+                || v1->Type->?[1] != dword_89C84C
+                || v1->Type->?[2] != dword_89C850 )
+              {
+                v18 = *NaturalParticleSystemLocation; /*0x454f75*/
+                v19 = v1->Type->?[1]; /*0x454f77*/
+                v70 = v1->Type->?[2]; /*0x454f7f*/
+                v20 = (int *)RA2_OPNEW(0x100u); /*0x454f88*/
+                if ( v20 ) /*0x454f8f*/
+                {
+                  v21 = this->?[1]; /*0x454fa9*/
+                  v65[0] = v18 + this->?[0]; /*0x454fac*/
+                  v22 = this->?[2]; /*0x454fb4*/
+                  v67[0] = this->?[0]; /*0x454fbb*/
+                  v65[1] = v19 + v21; /*0x454fbf*/
+                  v23 = this->?[1]; /*0x454fc3*/
+                  v24 = this->?[2]; /*0x454fc6*/
+                  v65[2] = v70 + v22; /*0x454fd5*/
+                  v67[1] = v23; /*0x454fd9*/
+                  v68 = v24; /*0x454fdd*/
+                  v25 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v67); /*0x454fe1*/
+                  v26 = ParticleSystemClass::Constructor(v20, this->Type->?[0], v65, (int)v25, 0, &g_BuildingClassPool, 0); /*0x454fff*/
+                  v1 = this; /*0x455004*/
+                }
+                else
+                {
+                  v26 = 0; /*0x45500a*/
+                }
+                v1->? = (ParticleSystemClass *)v26; /*0x45500c*/
+              }
+            }
+          }
+        }
+      }
+      if ( v1->? == 2 && (*((unsigned __int8 (__thiscall **)(BuildingClass *))v1->TechnoClass + 169))(v1) ) /*0x45501f*/
+        (*((void (__thiscall **)(BuildingClass *, unsigned int))v1->TechnoClass + 279))(v1, 0); /*0x45502f*/
+      result = v1->?; /*0x455035*/
+      if ( !result ) /*0x45503d*/
+      {
+        result = (*((int (__thiscall **)(BuildingClass *))v1->TechnoClass + 168))(v1); /*0x455043*/
+        if ( (unsigned char)result ) /*0x45504b*/
+          result = (*((int (__thiscall **)(BuildingClass *, unsigned int))v1->TechnoClass + 280))(v1, 0); /*0x455053*/
+      }
+      IDA_LOBYTE(result) = v1->HasCloakingData; /*0x455059*/
+      if ( (unsigned char)result ) /*0x455061*/
+      {
+        result = (int)v1->Type; /*0x455067*/
+        if ( *(unsigned char *)(result + 5831) ) /*0x45506d*/
+        {
+          v27 = this; /*0x45507b*/
+          v28 = dword_89DDC0; /*0x45507f*/
+          Draw_field_00 = dword_89DDC0->Draw_field_00; /*0x45508b*/
+          *(unsigned int *)v62 = this->?->relatedTagsCount; /*0x455092*/
+          v30 = (*(int (__thiscall **)(Draw *))(Draw_field_00 + 124))(dword_89DDC0); /*0x455099*/
+          result = v30 - (v30 >> 31); /*0x45509c*/
+          v61 = v30; /*0x45509e*/
+          v31 = v30 / 2; /*0x4550aa*/
+          IDA_LOBYTE(result) = this->CloakRadius; /*0x4550ae*/
+          if ( this->HasCloakingData <= 0 ) /*0x4550b4*/
+          {
+            if ( (unsigned char)result ) /*0x455275*/
+            {
+              this->CloakRadius = result - 1; /*0x45528b*/
+              (*(void (__thiscall **)(Draw *))(v28->Draw_field_00 + 24))(v28); /*0x455295*/
+              v41 = (int *)(*(int (__thiscall **)(Draw *, int *, unsigned int))(v28->Draw_field_00 + 120))(v28, &v68, 0); /*0x4552a3*/
+              Draw::Ellipse(v28, v31, v31, this->Type->CloakRadiusInCells, *v41, v41[1], v41[2], v41[3], 2); /*0x4552d3*/
+              if ( this->CloakRadius ) /*0x4552d8*/
+              {
+                v42 = (int *)(*(int (__thiscall **)(Draw *, int *))(v28->Draw_field_00 + 120))(v28, v69); /*0x4552ed*/
+                Draw::Ellipse(v28, v31, v31, this->CloakRadius, *v42, v42[1], v42[2], v42[3], 1); /*0x455317*/
+              }
+              v64 = (unsigned char *)(*(int (__thiscall **)(Draw *, unsigned int, unsigned int))(v28->Draw_field_00 + 92))(v28, 0, 0); /*0x45532d*/
+              result = v66 - v31; /*0x455337*/
+              IDA_HIWORD(v67[0]) = IDA_HIWORD(v66) - v31; /*0x455339*/
+              IDA_LOWORD(v67[0]) = v66 - v31; /*0x455340*/
+              v63 = 0; /*0x455345*/
+              if ( v30 > 0 ) /*0x45534d*/
+              {
+                v43 = *(unsigned int *)v62; /*0x455353*/
+                while ( 2 ) /*0x455357*/
+                {
+                  v44 = 0; /*0x455357*/
+                  do /*0x45544d*/
+                  {
+                    v35 = *v64++ == 0; /*0x455360*/
+                    if ( v35 ) /*0x455366*/
+                    {
+                      IDA_LOWORD(v65[0]) = v44 + IDA_LOWORD(v67[0]); /*0x45537d*/
+                      IDA_HIWORD(v65[0]) = (unsigned short)v63 + IDA_HIWORD(v67[0]); /*0x455382*/
+                      *(unsigned int *)v62 = v65[0]; /*0x45538f*/
+                      v45 = (BuildingClass *)CellCoord::To_CellObj( /*0x45539e*/
+                                               (CellCoord *)&stru_87F5F0.__pad_58[416],
+                                               (__int16 *)v62);
+                      if ( (unsigned __int8)Cell::HasOccupierBit((Cell *)v45, v43) ) /*0x4553a3*/
+                      {
+                        BuildingClass::updateOccupiedState(v45, v43); /*0x4553b3*/
+                        for ( i = (unsigned int *)v45->?[1]; i; i = (unsigned int *)i[12] ) /*0x4553c0*/
+                        {
+                          v47 = (*(int (__thiscall **)(unsigned int *))(*i + 44))(i); /*0x4553c6*/
+                          if ( v47 == 1 || v47 == 15 || v47 == 2 ) /*0x4553d6*/
+                            (*(void (__thiscall **)(unsigned int *))(*i + 1056))(i); /*0x4553dc*/
+                        }
+                        v48 = Cell::IsBridge((Cell *)v45); /*0x4553eb*/
+                        if ( v48 ) /*0x4553f2*/
+                        {
+                          if ( *(unsigned int *)(v48[135] + 48) == v43 ) /*0x4553fd*/
+                          {
+                            v49 = (int *)(*(int (__thiscall **)(unsigned int *, int *))(*v48 + 72))(v48, v69); /*0x455408*/
+                            v50 = *v49; /*0x455418*/
+                            v51 = v49[1] / 256; /*0x455429*/
+                            if ( (unsigned __int16)(v50 / 256) == *(unsigned short *)v62 /*0x455440*/
+                              && (unsigned short)v51 == *(unsigned short *)&v62[2]
+                              && !(unsigned char)v71 )
+                            {
+                              ++this->CloakRadius; /*0x4555c0*/
+                              return (int)this; /*0x4555b0*/
+                            }
+                          }
+                        }
+                      }
+                    }
+                    ++v44; /*0x45544a*/
+                  }
+                  while ( v44 < v61 ); /*0x45544d*/
+                  result = (int)++v63; /*0x45545b*/
+                  if ( (int)v63 < v61 ) /*0x455462*/
+                    continue; /*0x455462*/
+                  break;
+                }
+                v27 = this; /*0x455468*/
+              }
+              IDA_LOBYTE(result) = v27->CloakRadius; /*0x45546c*/
+              if ( !(unsigned char)result ) /*0x455474*/
+              {
+                result = stru_A8EB00.ObjectTypeClass[20]; /*0x45547a*/
+                for ( j = 0; j < stru_A8EB00.ObjectTypeClass[20]; ++j ) /*0x455483*/
+                {
+                  v53 = *(BuildingClass **)(stru_A8EB00.ObjectTypeClass[17] + 4 * j); /*0x45548f*/
+                  if ( v53->? ) /*0x455492*/
+                  {
+                    if ( v53 != v27 ) /*0x4554a2*/
+                    {
+                      if ( v53->Type->CloakGenerator ) /*0x4554ae*/
+                      {
+                        if ( (*((unsigned __int8 (__thiscall **)(unsigned int))v53->TechnoClass + 212))(*(unsigned int *)(stru_A8EB00.ObjectTypeClass[17] + 4 * j)) ) /*0x4554c0*/
+                        {
+                          if ( !v53->HasCloakingData ) /*0x4554ce*/
+                          {
+                            v54 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *, int *))v53->TechnoClass + 18))( /*0x4554e5*/
+                                              v53,
+                                              v69);
+                            IDA_LOWORD(v67[0]) = *v54 / 256; /*0x4554f8*/
+                            IDA_HIWORD(v67[0]) = v54[1] / 256; /*0x455510*/
+                            v55 = v27->Type->CloakRadiusInCells + 2; /*0x45553a*/
+                            if ( (__int16)(IDA_HIWORD(v66) - IDA_HIWORD(v67[0])) * (__int16)(IDA_HIWORD(v66) - IDA_HIWORD(v67[0])) /*0x455551*/
+                               + (__int16)(v66 - IDA_LOWORD(v67[0])) * (__int16)(v66 - IDA_LOWORD(v67[0])) < 4 * v55 * v55 )
+                            {
+                              Type = v53->Type; /*0x455553*/
+                              if ( Type->CloakGenerator ) /*0x455559*/
+                              {
+                                CloakRadius = v53->CloakRadius; /*0x455563*/
+                                v53->HasCloakingData = 1; /*0x455569*/
+                                if ( CloakRadius == Type->CloakRadiusInCells ) /*0x455576*/
+                                  v53->CloakRadius = 0; /*0x455578*/
+                                v53->? = 1; /*0x45557f*/
+                              }
+                              v58 = v53->CloakRadius; /*0x455586*/
+                              if ( v58 ) /*0x45558e*/
+                                v53->CloakRadius = v58 - 1; /*0x455592*/
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  result = stru_A8EB00.ObjectTypeClass[20]; /*0x455598*/
+                }
+              }
+            }
+            else
+            {
+              this->HasCloakingData = 0; /*0x455277*/
+            }
+          }
+          else if ( (unsigned char)result == this->Type->CloakRadiusInCells ) /*0x4550c6*/
+          {
+            this->HasCloakingData = 0; /*0x4550c8*/
+          }
+          else
+          {
+            this->CloakRadius = result + 1; /*0x4550dd*/
+            (*(void (__thiscall **)(Draw *, unsigned int))(v28->Draw_field_00 + 24))(v28, 0); /*0x4550e7*/
+            v32 = (int *)(*(int (__thiscall **)(Draw *, int *, int))(v28->Draw_field_00 + 120))(v28, v69, 1); /*0x4550f5*/
+            Draw::Ellipse(v28, v31, v31, this->CloakRadius, *v32, v32[1], v32[2], v32[3], v59); /*0x45511f*/
+            v63 = (unsigned char *)(*(int (__thiscall **)(Draw *, unsigned int))(v28->Draw_field_00 + 92))(v28, 0); /*0x455135*/
+            v33 = 0; /*0x455141*/
+            IDA_LOWORD(v65[0]) = v66 - v31; /*0x455143*/
+            result = v61; /*0x455148*/
+            for ( IDA_HIWORD(v65[0]) = IDA_HIWORD(v66) - v31; v33 < v61; ++v33 ) /*0x455153*/
+            {
+              for ( k = 0; k < v61; ++k ) /*0x455159*/
+              {
+                v35 = *v63++ == 0; /*0x455162*/
+                if ( !v35 ) /*0x455168*/
+                {
+                  IDA_HIWORD(v64) = v33 + IDA_HIWORD(v65[0]); /*0x45517b*/
+                  IDA_LOWORD(v64) = k + IDA_LOWORD(v65[0]); /*0x455180*/
+                  v71 = v64; /*0x45518d*/
+                  v36 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&v71); /*0x4551a0*/
+                  if ( !(unsigned __int8)Cell::HasOccupierBit((Cell *)v36, v62[0]) ) /*0x4551a5*/
+                  {
+                    BuildingClass::checkOccupant(v36, v62[0]); /*0x4551b9*/
+                    for ( m = (unsigned int *)v36->?[1]; m; m = (unsigned int *)m[12] ) /*0x4551c6*/
+                    {
+                      v38 = (*(int (__thiscall **)(unsigned int *))(*m + 44))(m); /*0x4551cc*/
+                      if ( v38 == 1 || v38 == 15 || v38 == 2 ) /*0x4551dc*/
+                        (*(void (__thiscall **)(unsigned int *))(*m + 1056))(m); /*0x4551e2*/
+                    }
+                    v39 = Cell::IsBridge((Cell *)v36); /*0x4551f1*/
+                    if ( v39 ) /*0x4551f8*/
+                    {
+                      if ( *(unsigned int *)(v39[135] + 48) == *(unsigned int *)v62 ) /*0x455207*/
+                      {
+                        v40 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, int *))(*v39 + 72))(v39, v69); /*0x455212*/
+                        if ( (unsigned char *)IDA___PAIR32__(v40[1] / 256, *v40 / 256) == v71 ) /*0x45523b*/
+                        {
+                          --this->CloakRadius; /*0x455263*/
+                          return (int)this; /*0x455270*/
+                        }
+                      }
+                    }
+                  }
+                }
+                result = v61; /*0x455244*/
+              }
+            }
+          }
+        }
+      }
+    }
+    return result; /*0x4550cf*/
+}
 
-//DUPDEF   v12 = (char *)RA2_OPNEW(0x5Cu); /*0x44abef*/
-//DUPDEF   if ( v12 ) /*0x44abf3*/
-//DUPDEF   {
-//DUPDEF     v11 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1192); /*0x44ac10*/
-//DUPDEF     IDA_LOWORD(v10) = ((unsigned int *)this)[0]->base[5]; /*0x44ac42*/
-//DUPDEF     IDA_HIWORD(v10) = IDA_BYTE2(((unsigned int *)this)[0]->base[5]); /*0x44ac4c*/
-//DUPDEF     v5 = (int *)(*((int (**)(BuildingClass *, unsigned int *, unsigned int, unsigned int, unsigned int, unsigned int))this->vtable1 + 44))( /*0x44ac7f*/
-//DUPDEF                   this,
-//DUPDEF                   v13,
-//DUPDEF                   0,
-//DUPDEF                   0,
-//DUPDEF                   0,
-//DUPDEF                   0);
-//DUPDEF     v6 = TimerClass::Construct(v12, *v5, v5[1], v5[2], a2, a3, a4, 0, 1, v10, 0, 0, v11, 0, 1, 1065353216, 0); /*0x44ac9e*/
-//DUPDEF     if ( v6 ) /*0x44aca5*/
-//DUPDEF     {
-//DUPDEF       v6[32] = 1; /*0x44aca7*/
-//DUPDEF       *((unsigned int *)v6 + 7) = 3; /*0x44acab*/
-//DUPDEF     }
-//DUPDEF   }
-//DUPDEF   v7 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44acb8*/
-//DUPDEF   v8 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1188); /*0x44acc4*/
-//DUPDEF   this->SupportingPrisms = 0; /*0x44acca*/
-//DUPDEF   ((unsigned int *)this)[0] = v7; /*0x44acd0*/
-//DUPDEF   ((unsigned int *)this)[1] = a3; /*0x44acd8*/
-//DUPDEF   ((unsigned int *)this)[2] = v8; /*0x44acdc*/
-//DUPDEF   return a3; /*0x44acc3*/
-//DUPDEF   v7 = *(unsigned int *)&stru_A8EB00_raw.gapE4[416]; /*0x44acb8*/
-//DUPDEF   v8 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1188); /*0x44acc4*/
-//DUPDEF   this->SupportingPrisms = 0; /*0x44acca*/
-//DUPDEF   this->diskLaserTimer[0] = v7; /*0x44acd0*/
-//DUPDEF   this->diskLaserTimer[1] = a3; /*0x44acd8*/
-//DUPDEF   this->diskLaserTimer[2] = v8; /*0x44acdc*/
-//DUPDEF   return a3; /*0x44acc3*/
-//DUPDEF   v7 = *(unsigned int *)&stru_A8EB00_raw.gapE4[416]; /*0x44acb8*/
-//DUPDEF   v8 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1188); /*0x44acc4*/
-//DUPDEF   this->SupportingPrisms = 0; /*0x44acca*/
-//DUPDEF   this->diskLaserTimer[0] = v7; /*0x44acd0*/
-//DUPDEF   this->diskLaserTimer[1] = a3; /*0x44acd8*/
-//DUPDEF   this->diskLaserTimer[2] = v8; /*0x44acdc*/
-//DUPDEF   return a3; /*0x44acc3*/
-//DUPDEF   v7 = g_CurrentFrame; /*0x44acb8*/
-//DUPDEF   ConditionRedSparkingProbability_high = IDA_HIDWORD(((unsigned int *)g_RulesClass_Instance)[0]); /*0x44acc4*/
-//DUPDEF   this->u32_664 = 0; /*0x44acca*/
-//DUPDEF   *(&this->q0487) = v7; /*0x44acd0*/
-//DUPDEF   *(&this->q0488) = a3; /*0x44acd8*/
-//DUPDEF   *(&this->q0489) = ConditionRedSparkingProbability_high; /*0x44acdc*/
-//DUPDEF   return a3; /*0x44acc3*/
-//DUPDEF   v7 = g_CurrentFrame; /*0x44acb8*/
-//DUPDEF   ConditionRedSparkingProbability_high = IDA_HIDWORD(g_RulesClass_Instance->ConditionRedSparkingProbability); /*0x44acc4*/
-//DUPDEF   *(&this->q0A09) = 0; /*0x44acca*/
-//DUPDEF   *(&this->q0487) = v7; /*0x44acd0*/
-//DUPDEF   *(&this->q0488) = a3; /*0x44acd8*/
-//DUPDEF   *(&this->q0489) = ConditionRedSparkingProbability_high; /*0x44acdc*/
-//DUPDEF   return a3; /*0x44acc3*/
-// 0x456e00
-//DUPDEF void BuildingClass::AcquireTarget() {}
-//DUPDEF   int v2; // eax
-//DUPDEF   int v3; // edi
-//DUPDEF   BuildingClass *v4; // eax
-//DUPDEF   unsigned int *v5; // eax
-//DUPDEF   int v6; // ecx
-//DUPDEF   int Translucency; // ebx
-//DUPDEF   int *v8; // ecx
-//DUPDEF   int v9; // ebp
-//DUPDEF   bool v10; // zf
-//DUPDEF   int v11; // ebx
-//DUPDEF   int *v12; // ecx
-//DUPDEF   int v13; // esi
-//DUPDEF   int result; // eax
-//DUPDEF   int v15; // [esp+10h] [ebp-Ch]
-//DUPDEF   int v16; // [esp+14h] [ebp-8h]
-//DUPDEF   int v17; // [esp+20h] [ebp+4h]
-//DUPDEF   int *Anims; // [esp+20h] [ebp+4h]
-
-//DUPDEF   if ( v17 ) /*0x456e0f*/
-//DUPDEF     ((unsigned int *)this)[0] = 1; /*0x456e11*/
-//DUPDEF   TechnoClass::SetTargetIfAllowed((TechnoClass *)this, v17); /*0x456e1b*/
-//DUPDEF   v16 = (*((int (**)(BuildingClass *))this->vtable1 + 121))(this); /*0x456e2e*/
-//DUPDEF   v2 = (*((int (**)(BuildingClass *))this->vtable1 + 111))(this); /*0x456e32*/
-//DUPDEF   v3 = (*((int (**)(BuildingClass *, unsigned int))this->vtable1 + 281))(this, *(int16_t *)(v2 + 266)); /*0x456e4a*/
-//DUPDEF   if ( (*((uint8_t (**)(BuildingClass *))this->vtable1 + 88))(this)
-//DUPDEF     || ((unsigned int *)this)[0]
-//DUPDEF     && (this ? (v4 = (*((int (**)(BuildingClass *))this->vtable1 + 11))(this) == 6 ? this : 0) : (v4 = 0),
-//DUPDEF         (BuildingClass *)((unsigned int *)this)[0]->AirstrikeClass_field_50 == v4) )
-//DUPDEF   {
-//DUPDEF     IDA_LOWORD(v3) = Techno::StartInvulnerability(v3); /*0x456e91*/
-//DUPDEF   }
-//DUPDEF   *(unsigned short *)this->BuildingClass_field_short_700 = v3; /*0x456e93*/
-//DUPDEF   Anims = this->Anims; /*0x456eaa*/
-//DUPDEF   v15 = 21; /*0x456eae*/
-//DUPDEF   do /*0x456f36*/
-//DUPDEF   {
-//DUPDEF     v5 = (unsigned int *)*Anims; /*0x456eba*/
-//DUPDEF     if ( *Anims ) /*0x456eba*/
-//DUPDEF     {
-//DUPDEF       v6 = v5[50]; /*0x456ec0*/
-//DUPDEF       if ( v6 && *(unsigned char *)(v6 + 860) ) /*0x456eca*/
-//DUPDEF       {
-//DUPDEF         v5[53] = v16; /*0x456edc*/
-//DUPDEF         v5[63] = (uint16_t)v3; /*0x456ee2*/
-//DUPDEF }
-//DUPDEF       Translucency = this->Translucency; /*0x456ee8*/
-//DUPDEF       if ( Translucency == 15 /*0x456f02*/
-//DUPDEF         && (*((int (**)(BuildingClass *, unsigned int, unsigned int))this->vtable1 + 26))(this, 0, 0) == 5 )
-//DUPDEF       {
-//DUPDEF         IDA_LOBYTE(Translucency) = 16; /*0x456f04*/
-//DUPDEF       }
-//DUPDEF       v8 = this->Anims; /*0x456f09*/
-//DUPDEF       v9 = 21; /*0x456f0b*/
-//DUPDEF       do /*0x456f20*/
-//DUPDEF       {
-//DUPDEF         if ( *v8 ) /*0x456f10*/
-//DUPDEF           *(unsigned char *)(this->q6D4 = Translucency; /*0x456f16*/
-//DUPDEF         ++v8; /*0x456f1c*/
-//DUPDEF         --v9; /*0x456f1f*/
-//DUPDEF       }
-//DUPDEF       while ( v9 ); /*0x456f20*/
-//DUPDEF     }
-//DUPDEF     v10 = v15 == 1; /*0x456f2d*/
-//DUPDEF     ++Anims; /*0x456f2e*/
-//DUPDEF     --v15; /*0x456f32*/
-//DUPDEF   }
-//DUPDEF   while ( !v10 ); /*0x456f36*/
-//DUPDEF   v11 = this->Translucency; /*0x456f3c*/
-//DUPDEF   if ( v11 == 15 && (*((int (**)(BuildingClass *, unsigned int, unsigned int))this->vtable1 + 26))(this, 0, 0) == 5 ) /*0x456f56*/
-//DUPDEF     IDA_LOBYTE(v11) = 16; /*0x456f58*/
-//DUPDEF   v12 = this->Anims; /*0x456f5d*/
-//DUPDEF   v13 = 21; /*0x456f5f*/
-//DUPDEF   do /*0x456f74*/
-//DUPDEF   {
-//DUPDEF     result = *v12; /*0x456f64*/
-//DUPDEF     if ( *v12 ) /*0x456f64*/
-//DUPDEF       result->q178 = v11; /*0x456f6a*/
-//DUPDEF     ++v12; /*0x456f70*/
-//DUPDEF     --v13; /*0x456f73*/
-//DUPDEF   }
-//DUPDEF   while ( v13 ); /*0x456f74*/
-//DUPDEF   return result; /*0x456f76*/
-//DUPDEF }
-//DUPDEF   *(unsigned short *)this->BuildingClass_field_short_700 = v3; /*0x456e93*/
-//DUPDEF   Anims = this->Anims; /*0x456eaa*/
-//DUPDEF   v15 = 21; /*0x456eae*/
-//DUPDEF   do /*0x456f36*/
-//DUPDEF   {
-//DUPDEF     v5 = (unsigned int *)*Anims; /*0x456eba*/
-//DUPDEF     if ( *Anims ) /*0x456eba*/
-//DUPDEF     {
-//DUPDEF       v6 = v5[50]; /*0x456ec0*/
-//DUPDEF       if ( v6 && *(unsigned char *)(v6 + 860) ) /*0x456eca*/
-//DUPDEF       {
-//DUPDEF         v5[53] = v16; /*0x456edc*/
-//DUPDEF         v5[63] = (uint16_t)v3; /*0x456ee2*/
-//DUPDEF }
-//DUPDEF       Translucency = this->Translucency; /*0x456ee8*/
-//DUPDEF       if ( Translucency == 15 /*0x456f02*/
-//DUPDEF         && (*((int (**)(BuildingClass *, unsigned int, unsigned int))this->vtable1 + 26))(this, 0, 0) == 5 )
-//DUPDEF       {
-//DUPDEF         IDA_LOBYTE(Translucency) = 16; /*0x456f04*/
-//DUPDEF }
-//DUPDEF       v8 = this->Anims; /*0x456f09*/
-//DUPDEF       v9 = 21; /*0x456f0b*/
-//DUPDEF       do /*0x456f20*/
-//DUPDEF       {
-//DUPDEF         if ( *v8 ) /*0x456f10*/
-//DUPDEF           *(unsigned char *)(this->q6D4 = Translucency; /*0x456f16*/
-//DUPDEF         ++v8; /*0x456f1c*/
-//DUPDEF         --v9; /*0x456f1f*/
-//DUPDEF       }
-//DUPDEF       while ( v9 ); /*0x456f20*/
-//DUPDEF     }
-//DUPDEF     v10 = v15 == 1; /*0x456f2d*/
-//DUPDEF     ++Anims; /*0x456f2e*/
-//DUPDEF     --v15; /*0x456f32*/
-//DUPDEF   }
-//DUPDEF   while ( !v10 ); /*0x456f36*/
-//DUPDEF   v11 = this->Translucency; /*0x456f3c*/
-//DUPDEF   if ( v11 == 15 && (*((int (**)(BuildingClass *, unsigned int, unsigned int))this->vtable1 + 26))(this, 0, 0) == 5 ) /*0x456f56*/
-//DUPDEF     IDA_LOBYTE(v11) = 16; /*0x456f58*/
-//DUPDEF   v12 = this->Anims; /*0x456f5d*/
-//DUPDEF   v13 = 21; /*0x456f5f*/
-//DUPDEF   do /*0x456f74*/
-//DUPDEF   {
-//DUPDEF     result = *v12; /*0x456f64*/
-//DUPDEF     if ( *v12 ) /*0x456f64*/
-//DUPDEF       result->q178 = v11; /*0x456f6a*/
-//DUPDEF     ++v12; /*0x456f70*/
-//DUPDEF     --v13; /*0x456f73*/
-//DUPDEF }
-//DUPDEF   while ( v13 ); /*0x456f74*/
-//DUPDEF   return result; /*0x456f76*/
-//DUPDEF }
-//DUPDEF   *(unsigned short *)this->BuildingClass_field_short_700 = v3; /*0x456e93*/
-//DUPDEF   Anims = this->Anims; /*0x456eaa*/
-//DUPDEF   v15 = 21; /*0x456eae*/
-//DUPDEF   do /*0x456f36*/
-//DUPDEF   {
-//DUPDEF     v5 = (unsigned int *)*Anims; /*0x456eba*/
-//DUPDEF     if ( *Anims ) /*0x456eba*/
-//DUPDEF     {
-//DUPDEF       v6 = v5[50]; /*0x456ec0*/
-//DUPDEF       if ( v6 && *(unsigned char *)(v6 + 860) ) /*0x456eca*/
-//DUPDEF       {
-//DUPDEF         v5[53] = v16; /*0x456edc*/
-//DUPDEF         v5[63] = (uint16_t)v3; /*0x456ee2*/
-//DUPDEF }
-//DUPDEF       Translucency = this->Translucency; /*0x456ee8*/
-//DUPDEF       if ( Translucency == 15 /*0x456f02*/
-//DUPDEF         && (*((int (**)(BuildingClass *, unsigned int, unsigned int))this->vtable1 + 26))(this, 0, 0) == 5 )
-//DUPDEF       {
-//DUPDEF         IDA_LOBYTE(Translucency) = 16; /*0x456f04*/
-//DUPDEF }
-//DUPDEF       v8 = this->Anims; /*0x456f09*/
-//DUPDEF       v9 = 21; /*0x456f0b*/
-//DUPDEF       do /*0x456f20*/
-//DUPDEF       {
-//DUPDEF         if ( *v8 ) /*0x456f10*/
-//DUPDEF           *(unsigned char *)(this->q6D4 = Translucency; /*0x456f16*/
-//DUPDEF         ++v8; /*0x456f1c*/
-//DUPDEF         --v9; /*0x456f1f*/
-//DUPDEF       }
-//DUPDEF       while ( v9 ); /*0x456f20*/
-//DUPDEF     }
-//DUPDEF     v10 = v15 == 1; /*0x456f2d*/
-//DUPDEF     ++Anims; /*0x456f2e*/
-//DUPDEF     --v15; /*0x456f32*/
-//DUPDEF   }
-//DUPDEF   while ( !v10 ); /*0x456f36*/
-//DUPDEF   v11 = this->Translucency; /*0x456f3c*/
-//DUPDEF   if ( v11 == 15 && (*((int (**)(BuildingClass *, unsigned int, unsigned int))this->vtable1 + 26))(this, 0, 0) == 5 ) /*0x456f56*/
-//DUPDEF     IDA_LOBYTE(v11) = 16; /*0x456f58*/
-//DUPDEF   v12 = this->Anims; /*0x456f5d*/
-//DUPDEF   v13 = 21; /*0x456f5f*/
-//DUPDEF   do /*0x456f74*/
-//DUPDEF   {
-//DUPDEF     result = *v12; /*0x456f64*/
-//DUPDEF     if ( *v12 ) /*0x456f64*/
-//DUPDEF       result->q178 = v11; /*0x456f6a*/
-//DUPDEF     ++v12; /*0x456f70*/
-//DUPDEF     --v13; /*0x456f73*/
-//DUPDEF   }
-//DUPDEF   while ( v13 ); /*0x456f74*/
-//DUPDEF   return result; /*0x456f76*/
-//DUPDEF }
-//DUPDEF   this->BuildingClass_field_short_700 = v3; /*0x456e93*/
-//DUPDEF   v18 = (unsigned int *)((char *)&this->cloakState2); /*0x456eaa*/
-//DUPDEF   v15 = 21; /*0x456eae*/
-//DUPDEF   do /*0x456f36*/
-//DUPDEF   {
-//DUPDEF     v5 = (unsigned int *)*v18; /*0x456eba*/
-//DUPDEF     if ( *v18 ) /*0x456eba*/
-//DUPDEF     {
-//DUPDEF       v6 = v5[50]; /*0x456ec0*/
-//DUPDEF       if ( v6 && *(unsigned char *)(v6 + 860) ) /*0x456eca*/
-//DUPDEF       {
-//DUPDEF         v5[53] = v16; /*0x456edc*/
-//DUPDEF         v5[63] = (uint16_t)v3; /*0x456ee2*/
-//DUPDEF }
-//DUPDEF       v7 = this->Translucency; /*0x456ee8*/
-//DUPDEF       if ( v7 == 15 && (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)&this->owningHouseIndex4))(this, 0, 0) == 5 ) /*0x456f02*/
-//DUPDEF         IDA_LOBYTE(v7) = 16; /*0x456f04*/
-//DUPDEF       v8 = (char *)&this->Anims; /*0x456f09*/
-//DUPDEF       v9 = 21; /*0x456f0b*/
-//DUPDEF       do /*0x456f20*/
-//DUPDEF       {
-//DUPDEF         if ( *(unsigned int *)v8 ) /*0x456f10*/
-//DUPDEF           *(unsigned char *)(v8->q178 = v7; /*0x456f16*/
-//DUPDEF         v8 += 4; /*0x456f1c*/
-//DUPDEF         --v9; /*0x456f1f*/
-//DUPDEF       }
-//DUPDEF       while ( v9 ); /*0x456f20*/
-//DUPDEF     }
-//DUPDEF     v10 = v15 == 1; /*0x456f2d*/
-//DUPDEF     ++v18; /*0x456f2e*/
-//DUPDEF     --v15; /*0x456f32*/
-//DUPDEF   }
-//DUPDEF   while ( !v10 ); /*0x456f36*/
-//DUPDEF   v11 = this->Translucency; /*0x456f3c*/
-//DUPDEF   if ( v11 == 15 && (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)&this->owningHouseIndex4))(this, 0, 0) == 5 ) /*0x456f56*/
-//DUPDEF     IDA_LOBYTE(v11) = 16; /*0x456f58*/
-//DUPDEF   v12 = (int *)((char *)&this->cloakState2); /*0x456f5d*/
-//DUPDEF   v13 = 21; /*0x456f5f*/
-//DUPDEF   do /*0x456f74*/
-//DUPDEF   {
-//DUPDEF     result = *v12; /*0x456f64*/
-//DUPDEF     if ( *v12 ) /*0x456f64*/
-//DUPDEF       result->q178 = v11; /*0x456f6a*/
-//DUPDEF     ++v12; /*0x456f70*/
-//DUPDEF     --v13; /*0x456f73*/
-//DUPDEF   }
-//DUPDEF   while ( v13 ); /*0x456f74*/
-//DUPDEF   return result; /*0x456f76*/
-//DUPDEF }
-//DUPDEF   this->BuildingClass_field_short_700 = v3; /*0x456e93*/
-//DUPDEF   v18 = (unsigned int *)((char *)&this->cloakState2); /*0x456eaa*/
-//DUPDEF   v15 = 21; /*0x456eae*/
-//DUPDEF   do /*0x456f36*/
-//DUPDEF   {
-//DUPDEF     v5 = (unsigned int *)*v18; /*0x456eba*/
-//DUPDEF     if ( *v18 ) /*0x456eba*/
-//DUPDEF     {
-//DUPDEF       v6 = v5[50]; /*0x456ec0*/
-//DUPDEF       if ( v6 && *(unsigned char *)(v6 + 860) ) /*0x456eca*/
-//DUPDEF       {
-//DUPDEF         v5[53] = v16; /*0x456edc*/
-//DUPDEF         v5[63] = (uint16_t)v3; /*0x456ee2*/
-//DUPDEF }
-//DUPDEF       v7 = this->Translucency; /*0x456ee8*/
-//DUPDEF       if ( v7 == 15 && (*(int (**)(void *, unsigned int, unsigned int))(((unsigned int)(this->owningHouseIndex4))))(this, 0, 0) == 5 ) /*0x456f02*/
-//DUPDEF         IDA_LOBYTE(v7) = 16; /*0x456f04*/
-//DUPDEF       v8 = (char *)&this->u32_1570; /*0x456f09*/
-//DUPDEF       v9 = 21; /*0x456f0b*/
-//DUPDEF       do /*0x456f20*/
-//DUPDEF       {
-//DUPDEF         if ( *(unsigned int *)v8 ) /*0x456f10*/
-//DUPDEF           *(unsigned char *)(v8->q178 = v7; /*0x456f16*/
-//DUPDEF         v8 += 4; /*0x456f1c*/
-//DUPDEF         --v9; /*0x456f1f*/
-//DUPDEF       while ( v9 ); /*0x456f20*/
-//DUPDEF     v10 = v15 == 1; /*0x456f2d*/
-//DUPDEF     ++v18; /*0x456f2e*/
-//DUPDEF     --v15; /*0x456f32*/
-//DUPDEF   while ( !v10 ); /*0x456f36*/
-//DUPDEF   v11 = this->Translucency; /*0x456f3c*/
-//DUPDEF   if ( v11 == 15 && (*(int (**)(void *, unsigned int, unsigned int))(((unsigned int)(this->owningHouseIndex4))))(this, 0, 0) == 5 ) /*0x456f56*/
-//DUPDEF     IDA_LOBYTE(v11) = 16; /*0x456f58*/
-//DUPDEF   v12 = (int *)((char *)&this->cloakState2); /*0x456f5d*/
-//DUPDEF   v13 = 21; /*0x456f5f*/
-//DUPDEF   do /*0x456f74*/
-//DUPDEF   {
-//DUPDEF     result = *v12; /*0x456f64*/
-//DUPDEF     if ( *v12 ) /*0x456f64*/
-//DUPDEF       result->v11 = v11; /*0x456f6a*/
-//DUPDEF     ++v12; /*0x456f70*/
-//DUPDEF     --v13; /*0x456f73*/
-//DUPDEF   while ( v13 ); /*0x456f74*/
-//DUPDEF   return result; /*0x456f76*/
-// 0x465d40
-//DUPDEF bool BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable()
-//DUPDEF {
-//DUPDEF   int v1; // eax
-//DUPDEF   bool result; // al
-
-//DUPDEF   result = 0; /*0x465d68*/
-//DUPDEF   if ( ((unsigned int *)this)[4] ) /*0x465d40*/
-//DUPDEF   {
-//DUPDEF     v1 = this->targetLaserTimer; /*0x465d55*/
-//DUPDEF     if ( stru_81926C_raw.Type[v1] == 1 && dword_819310[v1] == 1 ) /*0x465d66*/
-//DUPDEF       return 1; /*0x465d48*/
-//DUPDEF   }
-//DUPDEF   return result; /*0x465d6a*/
-//DUPDEF }
-// 0x465d40
-//DUPDEF     bool BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable()
-//DUPDEF     {
-//DUPDEF       int v1; // eax
-//DUPDEF       bool result; // al
-
-//DUPDEF       result = 0; /*0x465d68*/
-//DUPDEF       if ( ((unsigned int *)this)[4] ) /*0x465d40*/
-//DUPDEF       {
-//DUPDEF         v1 = this->u32_EF0; /*0x465d55*/
-//DUPDEF         if ( stru_81926C_raw.Type[v1] == 1 && dword_819310[v1] == 1 ) /*0x465d66*/
-//DUPDEF           return 1; /*0x465d48*/
-//DUPDEF       }
-//DUPDEF       return result; /*0x465d6a*/
-//DUPDEF     }
 /* ASM:
 mov     eax, [ecx+408h]
 test    eax, eax
@@ -12631,7 +11340,6 @@ retn
 //DUPDEF   return result; /*0x43d688*/
 //DUPDEF   return result; /*0x43d688*/
 //DUPDEF   return result; /*0x43d688*/
-//DUPDEF     return {}; // TODO stub - retranslate via C-line pipeline
 
 // IDA 0x449410: get bounding size extension
 // 0x449410
@@ -12659,7 +11367,6 @@ sub     ecx, edx
 add     eax, ecx
 retn
 */
-//DUPDEF     return {}; // TODO stub - translate quarantined IDA block above
 //DUPDEF }
 
 // ============================================================

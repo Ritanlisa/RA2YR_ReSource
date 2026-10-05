@@ -8036,6 +8036,25 @@ int HouseClass::NetworkConvert() {
 namespace gamemd { 
 void VeterancyStruct::Accumulate(int a1, int a2)
 {
-    // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0074FF50.json)
+    double v3; // st7
+    __int16 v4; // fps
+    double v5; // st5
+    bool v6; // c0
+    char v7; // c2
+    bool v8; // c3
+    int result; // eax
+
+    IDA_HIWORD(result) = IDA_HIWORD(dword_8871E0); /*0x74ff58*/
+    v3 = (double)a3 / ((double)a2 * *(double *)&dword_8871E0->SystemError) + *(float *)this; /*0x74ff65*/
+    *(float *)this = v3; /*0x74ff67*/
+    v5 = *(double *)&dword_8871E0->CreditTicks[5]; /*0x74ff71*/
+    v6 = v5 < v3; /*0x74ff77*/
+    v7 = 0; /*0x74ff77*/
+    v8 = v5 == v3; /*0x74ff77*/
+    IDA_LOWORD(result) = v4; /*0x74ff79*/
+    if ( v5 <= v3 ) /*0x74ff7e*/
+      v3 = *(double *)&dword_8871E0->CreditTicks[5]; /*0x74ff82*/
+    *(float *)this = v3; /*0x74ff88*/
+    return result; /*0x74ff8a*/
 }
 }

@@ -2035,6 +2035,23 @@ LABEL_13:
 namespace gamemd {
 unsigned int * Cell::GetWorldCoords(unsigned int *a2, int a3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw body; truth = ida_cache)
+    unsigned int *v3; // esi
+    int *v4; // eax
+    int v5; // edx
+    int v6; // edi
+    int v7; // ecx
+    unsigned char v9[12]; // [esp+8h] [ebp-Ch] BYREF
+
+    v3 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)this + 2 * a3 + 793); /*0x68bd1b*/
+    v4 = (int *)(*(int (__thiscall **)(unsigned int *, unsigned char *))(*v3 + 72))(v3, v9); /*0x68bd26*/
+    v5 = *v4; /*0x68bd29*/
+    v6 = v4[1]; /*0x68bd2b*/
+    v7 = v4[2]; /*0x68bd2e*/
+    if ( (v3[80] & 0x500) != 0 ) /*0x68bd3a*/
+      v7 += dword_B054BC; /*0x68bd3c*/
+    *a2 = v5; /*0x68bd48*/
+    a2[1] = v6; /*0x68bd4a*/
+    a2[2] = v7; /*0x68bd4e*/
+    return a2; /*0x68bd4d*/
 }
 } // namespace gamemd

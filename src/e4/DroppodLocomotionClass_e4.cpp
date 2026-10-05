@@ -350,6 +350,17 @@ int DropPodLocomotionClass::StubReturn48()
 namespace gamemd {
 void * DroppodLocomotionClass::ProcessMove(void ** Block, char a2)
 {
-    return nullptr; // TODO stub - quarantined G42 (raw dialect; truth = ida_cache)
+    ILocomotion *Piggybackee; // eax
+
+    *(unsigned int *)this->LocomotionClass = &DropPodLocomotionClass::`vftable'; /*0x4b66f3*/
+    *(unsigned int *)&this->LocomotionClass[4] = &DropPodLocomotionClass::`vftable'; /*0x4b66f9*/
+    *(unsigned int *)this->__pad_18 = &DropPodLocomotionClass::`vftable'; /*0x4b6700*/
+    Piggybackee = this->Piggybackee; /*0x4b6707*/
+    if ( Piggybackee ) /*0x4b670c*/
+      (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b6711*/
+    LocomotionClass::Construct((LocomotionClass *)this); /*0x4b6716*/
+    if ( (a2 & 1) != 0 ) /*0x4b6720*/
+      RA2_OPDEL(this); /*0x4b6723*/
+    return this->LocomotionClass; /*0x4b672d*/
 }
 } // namespace gamemd

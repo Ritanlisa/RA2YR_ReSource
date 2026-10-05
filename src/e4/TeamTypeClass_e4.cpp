@@ -1362,7 +1362,20 @@ int TeamTypeClass_28::FindItem(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * TeamTypeClass_28::QueryInterface(unsigned int * Block, char a2)
 {
-    return nullptr; (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x6F2680.json)
+    int v3; // eax
+
+    v3 = *(unsigned int *)&this->m_1[3]; /*0x6f2683*/
+    *(unsigned int *)this->__pad_0 = &VectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f2686*/
+    if ( v3 && IDA_BYTE1(this->m_C) ) /*0x6f2690*/
+    {
+      RA2_OPDEL((void *)(v3 - 4)); /*0x6f26a3*/
+      *(unsigned int *)&this->m_1[3] = 0; /*0x6f26ab*/
+    }
+    IDA_BYTE1(this->m_C) = 0; /*0x6f26b6*/
+    this->m_8 = 0; /*0x6f26bc*/
+    if ( (a2 & 1) != 0 ) /*0x6f26c3*/
+      RA2_OPDEL(this); /*0x6f26c6*/
+    return this->__pad_0; /*0x6f26d0*/
 }
 } // namespace gamemd
 
@@ -1370,6 +1383,19 @@ VectorClass_flat * TeamTypeClass_28::QueryInterface(unsigned int * Block, char a
 namespace gamemd {
 DynamicVector * TeamTypeClass_28::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
-    return nullptr; (void)Block; (void)a2; (void)a3_1; return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x6F2720.json)
+    int v3; // eax
+
+    v3 = *(unsigned int *)&this->m_1[3]; /*0x6f2723*/
+    *(unsigned int *)this->__pad_0 = &VectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f2726*/
+    if ( v3 && IDA_BYTE1(this->m_C) ) /*0x6f2730*/
+    {
+      RA2_OPDEL((void *)(v3 - 4)); /*0x6f2743*/
+      *(unsigned int *)&this->m_1[3] = 0; /*0x6f274b*/
+    }
+    IDA_BYTE1(this->m_C) = 0; /*0x6f2756*/
+    this->m_8 = 0; /*0x6f275c*/
+    if ( (a2 & 1) != 0 ) /*0x6f2763*/
+      RA2_OPDEL(this); /*0x6f2766*/
+    return this->__pad_0; /*0x6f2770*/
 }
 } // namespace gamemd

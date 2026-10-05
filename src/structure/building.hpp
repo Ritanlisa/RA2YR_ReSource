@@ -151,7 +151,7 @@ int CanAcceptType(int,int);  // 0x452670
     virtual int Mission_Repair() override;
     void ProcessRepair();  // 0x44B780
     bool CanRepair(TechnoClass* repairer);  // 0x457CE0
-    void ToggleRepairMode();  // 0x446FF0
+    int ToggleRepairMode(int aP1);  // 0x446FF0
     int CheckHealthForRepair();  // 0x452630
     bool IsBeingRepairedOrCaptured();  // 0x7105E0
 
@@ -210,14 +210,14 @@ int CanAcceptType(int,int);  // 0x452670
     void Capture();  // 0x4FCE80
     void DisableTemporal();  // 0x4521C0
     void Infiltrate();  // 0x4571E0
-    void ProcessStructureAbandoned();  // 0x458200
+    int ProcessStructureAbandoned();  // 0x458200
     void ProcessEnterUnit();  // 0x6B0DB0
     void ProcessOccupancy();  // 0x6DA5C0
     bool IsIdleWithNoCaptives();  // 0x63BE10
     int GetCrew();  // 0x44EB10
     int GetCrewCount();  // 0x451330
     void EjectCrew();  // 0x442D90
-    void CleanupOccupation();  // 0x454DB0
+    int CleanupOccupation();  // 0x454DB0
     void AddOccupancy();  // 0x722AF0
     void ClearOccupancyData();  // 0x722D00
     void RebuildOccupancyTracking();  // 0x722770

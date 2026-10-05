@@ -184,7 +184,13 @@ void Campaign::SetupMovie() {
 namespace gamemd { namespace wdt { 
 int GetOwnerHouse()
 {
-     return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0076BFE0.json)
+    int Outcome; // eax
+
+    Outcome = this->Outcome; /*0x76bfe0*/
+    if ( Outcome ) /*0x76bfe5*/
+      return *(unsigned int *)(Outcome + 36) - 1; /*0x76bfea*/
+    else
+      return 0; /*0x76bfec*/
 }
 }
 }

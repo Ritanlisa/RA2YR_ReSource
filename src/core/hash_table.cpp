@@ -30,22 +30,232 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 // 0x4f4410
 void Hash::InsertOrdered(void* table, const void* entry)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4f4410)
+    int result; // eax
+
+    result = (*(int (__thiscall **)(GScreenClass *, int))(this->vfptr[0] + 44))(this, a2); /*0x4f4418*/
+    if ( (unsigned char)result ) /*0x4f441d*/
+    {
+      IDA_LOBYTE(result) = 0; /*0x4f441f*/
+    }
+    else if ( *(unsigned int *)&stru_A8EB00.?[880] ) /*0x4f442c*/
+    {
+      result = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a2 + 16))(a2, *(unsigned int *)&stru_A8EB00.?[880]); /*0x4f4433*/
+      IDA_LOBYTE(result) = 1; /*0x4f4436*/
+    }
+    else
+    {
+      *(unsigned int *)&stru_A8EB00.?[880] = a2; /*0x4f443c*/
+      return 1; /*0x4f4442*/
+    }
+    return result; /*0x4f4421*/
 }
 // 0x69d960
 EditClass * * SHA1::Process(const void* data, uint32_t size)
 {
-    return nullptr; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69d960)
+    int result; // eax
+    int *v5; // edi
+    int v6; // ebx
+
+    this->__pad_0[0] = 0; /*0x69d96f*/
+    SHA1::ProcessBlock(this, (const void **)&a2, &a3); /*0x69d972*/
+    result = a3; /*0x69d977*/
+    if ( a3 ) /*0x69d97d*/
+    {
+      v5 = (int *)a2; /*0x69d984*/
+      if ( a3 / 64 > 0 ) /*0x69d98f*/
+      {
+        v6 = a3 / 64; /*0x69d996*/
+        do /*0x69d9bb*/
+        {
+          SHA1::Transform(v5, (unsigned int *)this + 6); /*0x69d99c*/
+          v5 += 16; /*0x69d9ab*/
+          *((unsigned int *)this + 11) += 64; /*0x69d9ad*/
+          --v6; /*0x69d9b6*/
+          a3 -= 64; /*0x69d9b7*/
+        }
+        while ( v6 ); /*0x69d9bb*/
+      }
+      a2 = (int)v5; /*0x69d9cb*/
+      return (int)SHA1::ProcessBlock(this, (const void **)&a2, &a3); /*0x69d9cf*/
+    }
+    return result; /*0x69d9d5*/
 }
 // 0x69d9e0
 void SHA1::Compute(char *a2, int a1)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69d9e0)
+    int v3; // edx
+    int v4; // ebx
+    unsigned int v5; // ebx
+    int v6; // edx
+    unsigned __int16 v7; // cx
+    int *p_SHA1_field_0x04; // ecx
+    int v9; // esi
+    unsigned int v10; // eax
+    unsigned int v12[5]; // [esp+14h] [ebp-54h] BYREF
+    int v13[16]; // [esp+28h] [ebp-40h] BYREF
+
+    if ( this->__pad_0[0] ) /*0x69d9e9*/
+      qmemcpy(a2, &this->SHA1_field_0x04, 0x14u); /*0x69d9fb*/
+    v3 = *((unsigned int *)this + 12); /*0x69d9fd*/
+    v4 = *((unsigned int *)this + 11); /*0x69da00*/
+    qmemcpy(v13, (char *)this + 52, sizeof(v13)); /*0x69da14*/
+    v5 = v3 + v4; /*0x69da18*/
+    *((unsigned char *)v13 + v3) = 0x80; /*0x69da29*/
+    qmemcpy(v12, this + 1, sizeof(v12)); /*0x69da2e*/
+    if ( 64 - v3 >= 9 ) /*0x69da30*/
+    {
+      v6 = v3 + 1; /*0x69da6a*/
+    }
+    else
+    {
+      if ( v3 + 1 < 64 ) /*0x69da38*/
+        memset((char *)v13 + v3 + 1, 0, 63 - v3); /*0x69da4c*/
+      SHA1::Transform(v13, v12); /*0x69da61*/
+      v6 = 0; /*0x69da66*/
+    }
+    memset((char *)v13 + v6, 0, 64 - v6); /*0x69da7d*/
+    IDA_LOBYTE(v7) = (8 * v5) >> 24; /*0x69da99*/
+    IDA_HIBYTE(v7) = v5 >> 13; /*0x69da9e*/
+    v13[15] = (v5 << 27) | (v5 << 11) & 0xFF0000 | v7; /*0x69dab8*/
+    SHA1::Transform(v13, v12); /*0x69dac3*/
+    qmemcpy(&this->SHA1_field_0x04, v12, 0x14u); /*0x69dad6*/
+    p_SHA1_field_0x04 = &this->SHA1_field_0x04; /*0x69dad8*/
+    v9 = 5; /*0x69dada*/
+    do /*0x69db0b*/
+    {
+      v10 = *p_SHA1_field_0x04++; /*0x69dadf*/
+      --v9; /*0x69db07*/
+      *(p_SHA1_field_0x04 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
+    }
+    while ( v9 ); /*0x69db0b*/
+    this->__pad_0[0] = 1; /*0x69db18*/
+    qmemcpy(a2, &this->SHA1_field_0x04, 0x14u); /*0x69db1c*/
+    return 20; /*0x69db1e*/
 }
 // 0x69db30
 void SHA1::Transform(int *a1, unsigned int *a2)
 {
-     // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x69db30)
+    int *v2; // ecx
+    int v3; // esi
+    int v4; // eax
+    int v5; // edi
+    int *v6; // ecx
+    int v7; // edx
+    int v8; // esi
+    int v9; // ebp
+    int v10; // eax
+    int v11; // ebx
+    unsigned int v12; // edx
+    int v13; // edi
+    int v14; // esi
+    unsigned int v15; // ebp
+    int v16; // ecx
+    int v17; // ecx
+    int v18; // ebx
+    int v19; // eax
+    unsigned int v20; // eax
+    bool v21; // cf
+    unsigned int v22; // ebp
+    unsigned int v23; // edx
+    unsigned int v24; // ebx
+    unsigned int v25; // eax
+    unsigned int v26; // ebx
+    int v27; // edx
+    int result; // eax
+    unsigned int *v29; // [esp+10h] [ebp-160h]
+    int v30; // [esp+14h] [ebp-15Ch]
+    int v31; // [esp+18h] [ebp-158h]
+    unsigned int v32[5]; // [esp+1Ch] [ebp-154h] BYREF
+    unsigned char v33[8]; // [esp+30h] [ebp-140h] BYREF
+    char v34; // [esp+38h] [ebp-138h] BYREF
+
+    v2 = a1; /*0x69db30*/
+    v3 = 16; /*0x69db44*/
+    do /*0x69db76*/
+    {
+      v4 = *v2++; /*0x69db49*/
+      v5 = IDA_HIBYTE(v4) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
+      IDA_LOBYTE(v4) = 0; /*0x69db69*/
+      IDA_BYTE1(v4) = IDA_BYTE2(v4); /*0x69db6b*/
+      --v3; /*0x69db71*/
+      *(int *)((char *)v2 + v33 - (unsigned char *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/
+    }
+    while ( v3 ); /*0x69db76*/
+    v6 = (int *)&v34; /*0x69db78*/
+    v7 = 64; /*0x69db7c*/
+    do /*0x69dba2*/
+    {
+      v8 = *(v6 - 2); /*0x69db87*/
+      v9 = *v6; /*0x69db8a*/
+      v10 = v6[6] ^ v6[11]; /*0x69db8c*/
+      ++v6; /*0x69db8e*/
+      --v7; /*0x69db9e*/
+      v6[13] = (2 * (v9 ^ v8 ^ v10)) | ((v9 ^ v8 ^ (unsigned int)v10) >> 31); /*0x69db9f*/
+    }
+    while ( v7 ); /*0x69dba2*/
+    v11 = 0; /*0x69dbb4*/
+    qmemcpy(v32, a2, sizeof(v32)); /*0x69dbb6*/
+    v12 = v32[1]; /*0x69dbb8*/
+    v13 = v32[2]; /*0x69dbbc*/
+    v14 = v32[3]; /*0x69dbc0*/
+    v15 = v32[0]; /*0x69dbc4*/
+    v31 = 0; /*0x69dbcc*/
+    v29 = v33; /*0x69dbd0*/
+    do
+    {
+      if ( v11 >= 20 ) /*0x69dbd7*/
+      {
+        if ( v11 >= 40 && v11 < 60 ) /*0x69dbe9*/
+        {
+          v17 = v13 & v12 | v14 & (v13 | v12); /*0x69dbf5*/
+          goto LABEL_13; /*0x69dbf7*/
+        }
+        v16 = v13 ^ v12; /*0x69dbfb*/
+      }
+      else
+      {
+        v16 = v12 & (v14 ^ v13); /*0x69dbdd*/
+      }
+      v17 = v14 ^ v16; /*0x69dbfd*/
+  LABEL_13:
+      if ( v11 >= 20 )
+      {
+        if ( v11 >= 40 )
+          v30 = v11 >= 60 ? -899497514 : -1894007588;
+        else
+          v30 = 1859775393; /*0x69dc13*/
+      }
+      else
+      {
+        v30 = 1518500249; /*0x69dc04*/
+      }
+      v18 = v32[4]; /*0x69dc4c*/
+      v19 = v17 + v30 + *v29 + ((32 * v15) | (v15 >> 27)); /*0x69dc50*/
+      v32[4] = v14; /*0x69dc5a*/
+      v20 = v18 + v19; /*0x69dc60*/
+      v14 = v13; /*0x69dc66*/
+      v13 = (v12 >> 2) | (v12 << 30); /*0x69dc68*/
+      v11 = v31 + 1; /*0x69dc6e*/
+      v12 = v15; /*0x69dc72*/
+      v21 = (unsigned int)(v31 + 1) < 0x50; /*0x69dc74*/
+      v15 = v20; /*0x69dc77*/
+      ++v31; /*0x69dc79*/
+      ++v29; /*0x69dc7d*/
+    }
+    while ( v21 );
+    v22 = v12 + a2[1]; /*0x69dc93*/
+    v23 = a2[3]; /*0x69dc95*/
+    v24 = v20 + *a2; /*0x69dc98*/
+    v25 = a2[4]; /*0x69dc9a*/
+    *a2 = v24; /*0x69dc9d*/
+    v26 = v13 + a2[2]; /*0x69dca4*/
+    a2[3] = v14 + v23; /*0x69dca6*/
+    v27 = v32[4]; /*0x69dca9*/
+    a2[1] = v22; /*0x69dcae*/
+    result = v27 + v25; /*0x69dcb1*/
+    a2[2] = v26; /*0x69dcb4*/
+    a2[4] = result; /*0x69dcb8*/
+    return result; /*0x69dcad*/
 }
 // PadMessage: append padding + length
 void SHA1::PadMessage()
@@ -132,6 +342,22 @@ static const uint32_t crc32_table[256] = {
 // 0x4a1fb0
 uint32_t CRC32::Compute(const void* data, uint32_t size)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x4a1fb0)
+    int v4; // edx
+    unsigned int v5; // eax
+    int v6; // esi
+
+    v4 = a2 - 1; /*0x4a1fb7*/
+    v5 = ~a3; /*0x4a1fba*/
+    if ( a2 ) /*0x4a1fbc*/
+    {
+      v6 = v4 + 1; /*0x4a1fbf*/
+      do /*0x4a1fde*/
+      {
+        v5 = CRC32_Table[*a1++ ^ (unsigned __int8)v5] ^ (v5 >> 8); /*0x4a1fda*/
+        --v6; /*0x4a1fdd*/
+      }
+      while ( v6 ); /*0x4a1fde*/
+    }
+    return ~v5; /*0x4a1fe3*/
 }
 }  // L-fix: close namespace tail 1

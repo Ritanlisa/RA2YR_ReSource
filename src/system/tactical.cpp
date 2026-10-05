@@ -2267,7 +2267,29 @@ AbstractClass * * TacticalClass::ScrollViewport(int dx, int dy)
 // 0x5090a0
 void TacticalClass::updateVisibility()
 {
-      // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x005090A0.json)
+    int v1; // esi
+    int *i; // edi
+    int v3; // eax
+    WaypointPathClass *v4; // eax
+
+    v1 = 0; /*0x5090a2*/
+    for ( i = &this->visibleCells[75]; ; ++i ) /*0x5090a4*/
+    {
+      v3 = *i; /*0x5090aa*/
+      if ( !*i ) /*0x5090aa*/
+      {
+        v4 = (WaypointPathClass *)RA2_OPNEW(0x40u); /*0x5090b2*/
+        if ( v4 ) /*0x5090bc*/
+          v3 = WaypointPathClass::Init(v4); /*0x5090c0*/
+        else
+          v3 = 0; /*0x5090c7*/
+      }
+      if ( !*(unsigned int *)(v3 + 56) ) /*0x5090c9*/
+        break; /*0x5090c9*/
+      if ( ++v1 >= 12 ) /*0x5090d7*/
+        return -1; /*0x5090de*/
+    }
+    return v1; /*0x5090d9*/
 }
 // 0x6d9ef0
 int TacticalClass::AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y)

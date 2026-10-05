@@ -104,7 +104,20 @@ void TagClass::LocalChanged(int idx_local)
 // 0x6e5850
 bool TagClass::IsOnlyInstanceOfType() const
 {
-    return false; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6e5850)
+    int v1; // edx
+    char *i; // esi
+
+    v1 = 0; /*0x6e5859*/
+    if ( g_GameObjectCleanup <= 0 ) /*0x6e585d*/
+      return 1; /*0x6e587d*/
+    for ( i = (char *)g_TagClassCount; /*0x6e585f*/
+          *(TagClass **)i == this || *(TagTypeClass **)(*(unsigned int *)i + 36) != this->buildingType;
+          i += 4 )
+    {
+      if ( ++v1 >= g_GameObjectCleanup ) /*0x6e587b*/
+        return 1; /*0x6e587b*/
+    }
+    return 0; /*0x6e587d*/
 }
 bool TagClass::RaiseEvent(int event, ObjectClass* tag_owner,
                            CellStruct location, bool force_all,
@@ -167,12 +180,30 @@ bool TagClass::ShouldReplace() const
 // 0x6e5230
 int TagClass::Destroy()
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6e5230)
+    int result; // eax
+
+    this->destroyed = 1; /*0x6e5233*/
+    result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x6e5237*/
+    if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x6e5270*/
+      || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
+      && g_BuildingLoadQueue_Array.UnitExitSound > 0
+      && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
+                     &g_BuildingLoadQueue_Array.ToTile,
+                     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
+                     0),
+          (unsigned char)result) )
+    {
+      result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e5278*/
+      *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x6e5287*/
+    }
+    return result; /*0x6e528a*/
 }
 // 0x6e55c0
 int TagClass::AddTrigger(TriggerClass* trigger)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6e55c0)
+    *(unsigned int *)(a2 + 40) = *(this + 10); /*0x6e55c7*/
+    *(this + 10) = a2; /*0x6e55ca*/
+    return a2; /*0x6e55cd*/
 }
 bool TagClass::RemoveTrigger(TriggerClass* trigger)
 {

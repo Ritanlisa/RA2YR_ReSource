@@ -1217,6 +1217,8 @@ bool WWMouseClass::IsRefCountNegative()
 namespace gamemd { 
 int WWMouseClass::checkHotspot(int a1, int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x7BA380)
+    this->WWMouseClass_field_0x1C = (void *)a2; /*0x7ba388*/
+    this->WWMouseClass_field_0x20 = (void *)a3; /*0x7ba38b*/
+    return a2; /*0x7ba38e*/
 }
 }

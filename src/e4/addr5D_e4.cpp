@@ -1018,7 +1018,35 @@ void GameInit_Complete()
 namespace gamemd {
 int E4Recv_5D9060::sub_5D9060(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x5D9060.json)
+    int v2; // ebx
+    int v4; // ebp
+    int v5; // edx
+    __int16 v6; // di
+
+    v2 = a2; /*0x5d9061*/
+    if ( !a2 ) /*0x5d906c*/
+      v2 = 1; /*0x5d906e*/
+    v4 = 255; /*0x5d9073*/
+    while ( 1 ) /*0x5d907b*/
+    {
+      v5 = v2 + this->?; /*0x5d907b*/
+      this->? = v5; /*0x5d907f*/
+      v6 = v5; /*0x5d9087*/
+      if ( v5 > 0xFFFF ) /*0x5d908a*/
+        this->? = 2048; /*0x5d908c*/
+      if ( !*(unsigned int *)&stru_887598.isAliveFlag || *(unsigned int *)&dword_A8B238 != 4 ) /*0x5d90a4*/
+        break; /*0x5d90a4*/
+      if ( (*(unsigned __int8 (__stdcall **)(unsigned short))(**(unsigned int **)&stru_887598.isAliveFlag + 104))(v5) ) /*0x5d90a9*/
+      {
+        (*(void (__thiscall **)(unsigned int, __int16))(**(unsigned int **)&stru_887598.isAliveFlag + 108))( /*0x5d90ca*/
+          *(unsigned int *)&stru_887598.isAliveFlag,
+          v6);
+        return v6; /*0x5d90ca*/
+      }
+      if ( !v4-- ) /*0x5d90b0*/
+        return v6; /*0x5d90be*/
+    }
+    return v6; /*0x5d90ba*/
 }
 }
 // 0x5D9DB0

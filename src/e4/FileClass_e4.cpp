@@ -50,7 +50,57 @@ const char* FileClass::SetFileName(char *aP1)
 namespace gamemd {
 int FileClass::Open(int a2)
 {
-    return 0; // TODO stub - quarantined G42 (orphan body; truth = ida_cache)
+    int result; // eax
+    int v4; // edi
+    DWORD LastError; // eax
+    int v6; // [esp-4h] [ebp-Ch]
+
+    result = *(unsigned int *)&this->FileNameAllocated; /*0x65cbf4*/
+    if ( !result ) /*0x65cbf9*/
+    {
+      IDA_LOBYTE(result) = 0; /*0x65cbfc*/
+      return result; /*0x65cbff*/
+    }
+    result = (*(int (__thiscall **)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this); /*0x65cc06*/
+    if ( (unsigned char)result ) /*0x65cc0b*/
+      goto LABEL_14; /*0x65cc0b*/
+    if ( !a2 ) /*0x65cc17*/
+    {
+      result = (int)CreateFileA(*(LPCSTR *)&this->FileNameAllocated, 0x80000000, 1u, 0, 3u, 0x80u, 0); /*0x65cc59*/
+      *(unsigned int *)this->FileTimeDateLo = result; /*0x65cc62*/
+      if ( result == -1 ) /*0x65cc65*/
+      {
+        IDA_LOBYTE(result) = 0; /*0x65cc68*/
+        return result; /*0x65cc6b*/
+      }
+      result = CloseHandle((HANDLE)result); /*0x65cc6f*/
+      if ( result ) /*0x65cc77*/
+        goto LABEL_13; /*0x65cc77*/
+      v4 = *(unsigned int *)this->FileClass; /*0x65cc7c*/
+      v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65cc7e*/
+      goto LABEL_12; /*0x65cc7e*/
+    }
+    FileClass::Open2(this, (const CHAR *)1); /*0x65cc1d*/
+    result = (*(int (__thiscall **)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this); /*0x65cc26*/
+    if ( (unsigned char)result ) /*0x65cc2b*/
+    {
+      result = CloseHandle(*(HANDLE *)this->FileTimeDateLo); /*0x65cc31*/
+      if ( result ) /*0x65cc39*/
+      {
+  LABEL_13:
+        *(unsigned int *)this->FileTimeDateLo = -1; /*0x65cc8d*/
+        goto LABEL_14; /*0x65cc8d*/
+      }
+      v4 = *(unsigned int *)this->FileClass; /*0x65cc3e*/
+      v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65cc40*/
+  LABEL_12:
+      LastError = GetLastError(); /*0x65cc7f*/
+      result = (*(int (__thiscall **)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65cc8a*/
+      goto LABEL_13; /*0x65cc8a*/
+    }
+  LABEL_14:
+    IDA_LOBYTE(result) = 1; /*0x65cc94*/
+    return result; /*0x65cbfb*/
 }
 } // namespace gamemd
 // 0x65CCE0

@@ -58,12 +58,61 @@ bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
 // 0x5f44a0
 bool ObjectClass::Remove()
 {
-    return false; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x5F44A0.json)
+    int result; // eax
+    int v3; // eax
+    IUnknown *v4; // [esp+4h] [ebp-4h] BYREF
+
+    IDA_LOBYTE(result) = this->__pad_74[15]; /*0x5f44a4*/
+    if ( (unsigned char)result ) /*0x5f44ac*/
+    {
+      v4 = this; /*0x5f44be*/
+      v3 = (*(int (__thiscall **)(unsigned char *, IUnknown **))(*(unsigned int *)&stru_A8EB00.?[212] + 16))(&stru_A8EB00.?[212], &v4); /*0x5f44c2*/
+      if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.?[228] ) /*0x5f44d2*/
+      {
+        --*(unsigned int *)&stru_A8EB00.?[228]; /*0x5f44d7*/
+        for ( ; /*0x5f44dd*/
+              v3 < *(int *)&stru_A8EB00.?[228];
+              *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[216] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[216]
+                                                                                   + 4 * v3) )
+        {
+          ++v3; /*0x5f44e5*/
+        }
+      }
+      this->__pad_74[15] = 0; /*0x5f44fc*/
+      result = MapClass::GetScrollMode((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x5f4503*/
+      if ( (IUnknown *)result == this ) /*0x5f450a*/
+        return MapClass::SetScrollMode((int)&stru_87F5F0.__pad_58[416], 0); /*0x5f4513*/
+    }
+    return result; /*0x5f4518*/
 }
 // 0x5f65f0
 int ObjectClass::Destroy()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x5F65F0.json)
+    ObjectClass *attachedBomb; // ecx
+    int result; // eax
+
+    attachedBomb = (ObjectClass *)this->attachedBomb; /*0x5f65f3*/
+    if ( attachedBomb ) /*0x5f65f8*/
+      ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f65fa*/
+    if ( this && (this->? & 1) != 0 ) /*0x5f6607*/
+      TechnoClass::CleanupAll((TechnoClass *)this, 0); /*0x5f660d*/
+    AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x5f6616*/
+    (*((void (__thiscall **)(ObjectClass *))this->AbstractClass + 53))(this); /*0x5f661f*/
+    this->isAliveFlag = 0; /*0x5f6625*/
+    result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x5f662c*/
+    if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x5f6666*/
+      || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
+      && g_BuildingLoadQueue_Array.UnitExitSound > 0
+      && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
+                     &g_BuildingLoadQueue_Array.ToTile,
+                     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
+                     0),
+          (unsigned char)result) )
+    {
+      result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x5f666e*/
+      *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x5f667d*/
+    }
+    return result; /*0x5f6680*/
 }
 
 void ObjectClass::Flash(int duration)
@@ -81,7 +130,15 @@ bool ObjectClass::DiscoveredBy(HouseClass* house)
 // 0x5f4d10
 int ObjectClass::MarkForRedraw()
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x5F4D10.json)
+    int result; // eax
+
+    IDA_LOBYTE(result) = this->__pad_74[12]; /*0x5f4d10*/
+    if ( !(unsigned char)result ) /*0x5f4d18*/
+    {
+      this->__pad_74[12] = 1; /*0x5f4d1a*/
+      return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x5f4d28*/
+    }
+    return result; /*0x5f4d2d*/
 }
 
 // ObjectClass vtable[67]: DrawBehind (IDA 0x426440)

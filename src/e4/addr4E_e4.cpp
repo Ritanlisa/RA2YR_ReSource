@@ -42,7 +42,71 @@
 namespace gamemd {
 unsigned int * E4Recv_4E0A00::sub_4E0A00(int a1, unsigned int * a2)
 {
-    return nullptr; // TODO stub - quarantined G42 (raw dialect; truth = ida_cache)
+    unsigned int *v4; // eax
+    int v5; // ecx
+    int *v6; // eax
+    unsigned int *v7; // edx
+    unsigned int *v8; // eax
+    int v9; // ecx
+    void *v10; // eax
+
+    this->Items = 0; /*0x4e0a0a*/
+    this->Capacity = a2; /*0x4e0a11*/
+    this->IsInitialized = 1; /*0x4e0a14*/
+    this->IsAllocated = 0; /*0x4e0a18*/
+    this->vtable0 = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a1c*/
+    if ( a2 ) /*0x4e0a22*/
+    {
+      if ( a3 ) /*0x4e0a2a*/
+      {
+        *a3 = a2; /*0x4e0a2f*/
+        if ( a2 - 1 >= 0 ) /*0x4e0a36*/
+        {
+          v4 = a3 + 2; /*0x4e0a38*/
+          v5 = a2; /*0x4e0a3b*/
+          do /*0x4e0a46*/
+          {
+            *v4 = 0; /*0x4e0a3c*/
+            v4 += 2; /*0x4e0a42*/
+            --v5; /*0x4e0a45*/
+          }
+          while ( v5 ); /*0x4e0a46*/
+        }
+        this->Items = a3 + 1; /*0x4e0a48*/
+      }
+      else
+      {
+        v6 = (int *)RA2_OPNEW(8 * a2 + 4); /*0x4e0a55*/
+        if ( v6 ) /*0x4e0a5f*/
+        {
+          *v6 = a2; /*0x4e0a64*/
+          v7 = v6 + 1; /*0x4e0a68*/
+          if ( a2 - 1 >= 0 ) /*0x4e0a6b*/
+          {
+            v8 = v6 + 2; /*0x4e0a6d*/
+            v9 = a2; /*0x4e0a70*/
+            do /*0x4e0a7b*/
+            {
+              *v8 = 0; /*0x4e0a71*/
+              v8 += 2; /*0x4e0a77*/
+              --v9; /*0x4e0a7a*/
+            }
+            while ( v9 ); /*0x4e0a7b*/
+          }
+          v10 = v7; /*0x4e0a7d*/
+        }
+        else
+        {
+          v10 = 0; /*0x4e0a81*/
+        }
+        this->Items = v10; /*0x4e0a83*/
+        this->IsAllocated = 1; /*0x4e0a86*/
+      }
+    }
+    this->vtable0 = &DynamicVectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a8a*/
+    *((unsigned int *)this + 5) = 10; /*0x4e0a90*/
+    *((unsigned int *)this + 4) = 0; /*0x4e0a97*/
+    return &this->vtable0; /*0x4e0aa0*/
 }
 } // namespace gamemd
 // 0x4E1FE0
@@ -1986,7 +2050,20 @@ void nullsub_138()
 namespace gamemd {
 unsigned int * FoggedObjectClass_42::loc_4E0D30(unsigned int * Block, char a2)
 {
-    return nullptr; (void)Block; (void)a2; return nullptr; // TODO stub - quarantined G42 T9 (raw body; truth = .omo/ida_cache/func_0x4E0D30.json)
+    void *v3; // eax
+
+    v3 = (void *)*(Block + 1); /*0x4e0d33*/
+    *Block = &VectorClass<FootClass *>::`vftable'; /*0x4e0d36*/
+    if ( v3 && *((unsigned char *)Block + 13) ) /*0x4e0d40*/
+    {
+      RA2_OPDEL(v3); /*0x4e0d48*/
+      *(Block + 1) = 0; /*0x4e0d50*/
+    }
+    *((unsigned char *)Block + 13) = 0; /*0x4e0d5b*/
+    *(Block + 2) = 0; /*0x4e0d61*/
+    if ( (a2 & 1) != 0 ) /*0x4e0d68*/
+      RA2_OPDEL(Block); /*0x4e0d6b*/
+    return Block; /*0x4e0d75*/
 }
 } // namespace gamemd
 
@@ -4357,7 +4434,7 @@ void sub_4E7CA0()
 namespace gamemd {
 void sub_4E7CE0()
 {
-    // TODO stub - quarantined G42 T9 (raw vtable install on int global; truth = .omo/ida_cache/func_0x4E7CE0.json)
+    dword_A8E8C8.field_0 = (struct IUnknownVtbl *)&TiberianSunClassFactory::`vftable'; /*0x4e7ce0*/
 }
 } // namespace gamemd
 
@@ -4771,31 +4848,73 @@ char sub_4E8220()
 // 0x4E92F0
 void HouseClass_vt_03_free_()
 {
-     // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
+    if ( *(unsigned int *)(this + 4) && *(unsigned char *)(this + 13) ) /*0x4e92fd*/
+    {
+      RA2_OPDEL(*(void **)(this + 4)); /*0x4e9303*/
+      *(unsigned int *)(this + 4) = 0; /*0x4e930b*/
+    }
+    *(unsigned char *)(this + 13) = 0; /*0x4e930e*/
+    *(unsigned int *)(this + 8) = 0; /*0x4e9311*/
 }
 
 // 0x4E9320
 int HouseClass_vt_04_free_(int * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
+    int result; // eax
+    int v3; // edx
+    unsigned int *i; // ecx
+
+    if ( !*(unsigned char *)(this + 12) ) /*0x4e9320*/
+      return 0; /*0x4e9328*/
+    v3 = *(unsigned int *)(this + 8); /*0x4e932e*/
+    result = 0; /*0x4e9331*/
+    if ( v3 <= 0 ) /*0x4e9335*/
+      return -1; /*0x4e934c*/
+    for ( i = *(unsigned int **)(this + 4); *i != *a2; ++i ) /*0x4e933b*/
+    {
+      if ( ++result >= v3 ) /*0x4e934a*/
+        return -1; /*0x4e934a*/
+    }
+    return result; /*0x4e932a*/
 }
 
 // 0x4E9360
 unsigned int HouseClass_vt_05_free_(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
+    if ( *(unsigned char *)(this + 12) ) /*0x4e9360*/
+      return (unsigned int)(a2 - *(unsigned int *)(this + 4)) >> 2; /*0x4e9375*/
+    else
+      return 0; /*0x4e9367*/
 }
 
 // 0x4E9F00
 int ParticleSystemClass_vt_04_free_(int * a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
+    int result; // eax
+    int m_8; // edx
+    unsigned int *i; // ecx
+
+    if ( !IDA_LOBYTE(this->m_C) ) /*0x4e9f00*/
+      return 0; /*0x4e9f08*/
+    m_8 = this->m_8; /*0x4e9f0e*/
+    result = 0; /*0x4e9f11*/
+    if ( m_8 <= 0 ) /*0x4e9f15*/
+      return -1; /*0x4e9f2c*/
+    for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e9f1b*/
+    {
+      if ( ++result >= m_8 ) /*0x4e9f2a*/
+        return -1; /*0x4e9f2a*/
+    }
+    return result; /*0x4e9f0a*/
 }
 
 // 0x4E9F40
 unsigned int ParticleSystemClass_vt_05_free_(int a2)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw this-body; truth = .omo/ida_cache/)
+    if ( IDA_LOBYTE(this->m_C) ) /*0x4e9f40*/
+      return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4e9f55*/
+    else
+      return 0; /*0x4e9f47*/
 }
 
 // 0x4EF4E0
