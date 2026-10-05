@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"  // G42.42b supply (Random::Range)
 #include "e4/e4_globals.hpp"
 #include "e4/classes/CommBufferClass_e4.hpp"
 #include "e4/classes/E4Recv_483710_e4.hpp"
@@ -334,7 +335,42 @@ void CellChainReact()
 // 0x48A4F0
 int GetWarheadVersusMultiplier(int aP0, int aP1, int aP2, BulletClass * aP3)
 {
-    return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x0048A4F0.json)
+  // G42.42b: FULL body restored (G42.40h stub reverted); truth = func_0x0048A4F0.json
+  int v4; // edi
+  int v6; // ecx
+  int v7; // ecx
+  int v9; // eax
+  int v10; // eax
+
+  v4 = aP0; /*0x48a4f3*/
+  if ( !aP0 || !aP1 ) /*0x48a501*/
+    return 0; /*0x48a501*/
+  if ( aP2 == 2 /*0x48a54f*/
+    && *(unsigned char *)(aP1 + 333)
+    && (*((unsigned int *)Coord::To_Cell(&dword_87F7E8, aP3) + 80) & 0x100) == 0
+    && ((unsigned int *)aP3)[2] < Cell::GetGroundHeight(aP3) + 2 * dword_89E870 )
+  {
+    v6 = *((unsigned int *)dword_8871E0 + 756); /*0x48a557*/
+    if ( v6 ) /*0x48a55f*/
+    {
+      v7 = 35 * v6 - 1; /*0x48a56e*/
+      if ( v4 < v7 ) /*0x48a574*/
+        v7 = v4; /*0x48a576*/
+      return *(unsigned int *)(*((unsigned int *)dword_8871E0 + 753) + 4 * (v7 / 35)); /*0x48a597*/
+    }
+    return 0; /*0x48a61a*/
+  }
+  if ( aP1 == *((unsigned int *)dword_8871E0 + 1517) ) /*0x48a5a5*/
+    return *((unsigned int *)dword_8871E0 + 189); /*0x48a5b0*/
+  v9 = *(unsigned int *)(aP1 + 276); /*0x48a5b3*/
+  if ( !v9 ) /*0x48a5bb*/
+    return 0; /*0x48a5bb*/
+  if ( *(unsigned char *)(aP1 + 340) ) /*0x48a5bd*/
+    return *(unsigned int *)(*(unsigned int *)(aP1 + 264) + 4 * Random::Range((unsigned int *)dword_A8B230 + 134, 0, v9 - 1)); /*0x48a5e4*/
+  v10 = 25 * v9 - 1; /*0x48a5ee*/
+  if ( v4 >= v10 ) /*0x48a5f4*/
+    v4 = v10; /*0x48a5f6*/
+  return *(unsigned int *)(*(unsigned int *)(aP1 + 264) + 4 * (v4 / 25)); /*0x48a57d*/
 }
     // G42.40h: glued body-tail debris removed (11 errors); full truth = .omo/ida_cache/func_0x0048A4F0.json
 } // namespace gamemd
