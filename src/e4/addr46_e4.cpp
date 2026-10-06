@@ -141,7 +141,7 @@ char sub_46D8B0()
   v3 = (const wchar_t **)dword_A8DA90; /*0x46d8b7*/
   while ( 1 ) /*0x46d8c1*/
   {
-    v4 = CharToWideString(&stru_A8D600.__pad_34[8]); /*0x46d8c1*/
+    v4 = CharToWideString( (unsigned char *)(&stru_A8D600.__pad_34[8])); /*0x46d8c1*/
     if ( !wcscmp((const wchar_t *)v4, *v3) ) /*0x46d8ca*/
       break; /*0x46d8ca*/
     ++v3; /*0x46d8d6*/
@@ -371,7 +371,7 @@ void * EnableGameModeControls(HWND hDlg, bool a2)
       return (HWND)InvalidateRect(v13, 0, 0); /*0x46de0a*/
     }
   }
-  return result; /*0x46de10*/
+  return (void *)result; /*0x46de10*/
 }
 }
 // 0x46DE20
@@ -476,7 +476,7 @@ void * sub_46DE20(HWND hDlg, int nCmdShow)
   result = GetDlgItem(hDlg, 1128); /*0x46dfb7*/
   if ( result ) /*0x46dfbb*/
     return (HWND)ShowWindow(result, nCmdShow); /*0x46dfbf*/
-  return result; /*0x46dfc1*/
+  return (void *)result; /*0x46dfc1*/
 }
 }
 // 0x465CB0
@@ -642,7 +642,7 @@ int sub_4662E0()
   dword_89DE20 = 0; /*0x4662ec*/
   byte_89DE24 = 1; /*0x4662f1*/
   byte_89DE25 = 0; /*0x4662f8*/
-  dword_89DE18 = (int)&off_7E4678; /*0x4662fd*/
+  dword_89DE18 = (unsigned int)(int)&off_7E4678;
   dword_89DE2C = 10; /*0x466307*/
   dword_89DE28 = 0; /*0x466311*/
   return atexit((void (__cdecl *)(void))sub_466320); /*0x46631c*/
@@ -1133,7 +1133,7 @@ int sub_46D810()
   result = dword_A8DA90; /*0x46d878*/
   if ( dword_A8DA90 ) /*0x46d881*/
   {
-    Network::SendToPlayer((int)&unk_A8E9C0, (int)&v2, 455,(wchar_t *)(1), (wchar_t *)dword_A8DA90); /*0x46d895*/
+    Network::SendToPlayer( (int)&unk_A8E9C0, (int)&v2, 455, (wchar_t *)(1), (void)((wchar_t *)dword_A8DA90)); /*0x46d895*/
 // 0x541820
     return (int)(((Network *)(&unk_A8E9C0))->ReceiveLoop()); /*0x46d89f*/
   }

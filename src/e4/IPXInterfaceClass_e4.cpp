@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
@@ -36,7 +37,7 @@ namespace gamemd {
 int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
-  IPXInterfaceClass::bindSocket((char *)this); /*0x7b0d93*/
+  IPXInterfaceClass::bindSocket( (void)((char *)this)); /*0x7b0d93*/
   this->Socket = (int)&vt_IPXInterfaceClass; /*0x7b0da4*/
   *((unsigned int *)this + 64703) = -1; /*0x7b0dad*/
   *((unsigned int *)this + 64704) = -1; /*0x7b0db3*/
@@ -66,7 +67,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
     return 0; /*0x7b0df5*/
   memset(name.sa_data, 0, 12); /*0x7b0dfe*/
   name.sa_family = 6; /*0x7b0e13*/
-  if ( bind(v4, &name, 14) == -1 ) /*0x7b0e22*/
+  if ( bind( (void *)(v4), &name, 14) == -1 ) /*0x7b0e22*/
   {
     closesocket((void *)(v4)); /*0x7b0e25*/
     return 0; /*0x7b0e32*/
@@ -77,7 +78,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   {
     ((Debug *)this)->Log(); /*0x7b0eae*/
   }
-  else if ( getsockopt((void *)(v4),(void *)(1000),(void *)(16397), optval, &optlen) ) /*0x7b0e7a*/
+  else if ( getsockopt( (void *)(v4), (void *)(1000), (void *)(16397), (void *)(optval), &optlen) ) /*0x7b0e7a*/
   {
     WSAGetLastError(); /*0x7b0e94*/
     ((Debug *)this)->Log(); /*0x7b0e9f*/
@@ -213,7 +214,7 @@ LABEL_6:
   }
   v11 = *((unsigned int *)this + 64539); /*0x7b1577*/
   fromlen = 14; /*0x7b157d*/
-  v12 = recvfrom(v11, (char *)this + 258164, 640, 0, &to, (int *)&fromlen); /*0x7b1586*/
+  v12 = recvfrom( (void *)(v11), (char *)this + 258164, 640, 0, &to, (int *)&fromlen); /*0x7b1586*/
   v26 = v12; /*0x7b158e*/
   if ( v12 == -1 ) /*0x7b1592*/
   {
@@ -665,10 +666,10 @@ namespace gamemd {
 IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2, int a1, int a3, int a4, int aP1)
 {
 
-  WinsockInterfaceClass::WinsockInterfaceClass((int)Block); /*0x7b1793*/
+  WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b1793*/
   if ( (a2 & 1) != 0 ) /*0x7b179d*/
-    __3_YAXPAX_Z(Block); /*0x7b17a0*/
-  return Block; /*0x7b17aa*/
+    __3_YAXPAX_Z(this); /*0x7b17a0*/
+  return this; /*0x7b17aa*/
 
 }
 } // namespace gamemd
@@ -805,11 +806,11 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x7b2b53*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x7b2b56*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
   if ( v3 && BYTE1(this->m_C) ) /*0x7b2b60*/
   {
     __3_YAXPAX_Z(v3); /*0x7b2b68*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x7b2b70*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x7b2b70*/
   }
   BYTE1(this->m_C) = 0; /*0x7b2b7b*/
   this->m_8 = 0; /*0x7b2b81*/

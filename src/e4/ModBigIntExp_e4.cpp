@@ -42,7 +42,7 @@ int sub_5C7EC0(const void * a1, int a2)
 
   v2 = (int *)(a2);
   v3 = (int *)(a2);
-  qmemcpy(&dword_ABF5B4, a1, (unsigned int)(v3)* 4); /*0x5c7eda*/
+  qmemcpy( &dword_ABF5B4, (const void *)(a1), (unsigned int)(v3)* 4); /*0x5c7eda*/
   v4 = &((unsigned int *)(dword_ABF5B0))[v3]; /*0x5c7ee3*/
   v5 = v2; /*0x5c7ee9*/
   v6 = &((unsigned int *)(dword_ABF5B0))[v3]; /*0x5c7eeb*/
@@ -119,7 +119,7 @@ int sub_5C7EC0(const void * a1, int a2)
   }
   ((unsigned int *)(dword_ABF8C4))[0] = (unsigned int)((int *)(v17 - 32));
   RotateBitBufferRight(&dword_ABF8C8, v17 - 32, 2); /*0x5c7fb7*/
-  DivideBigInteger(&dword_ABF5A4, (char *)&dword_ABF8C8, 2); /*0x5c7fc8*/
+  DivideBigInteger( (unsigned int *)(&dword_ABF5A4), (char *)&dword_ABF8C8, 2); /*0x5c7fc8*/
   RotateBitBufferRight(&dword_ABF5A4, 1, 2); /*0x5c7fd9*/
   v21 = 2; /*0x5c7ff5*/
   ((unsigned int *)(dword_ABF8C4))[0] = (((unsigned int *)(dword_ABF8C4))[0] + 15) % 16 + 1; /*0x5c7ffa*/

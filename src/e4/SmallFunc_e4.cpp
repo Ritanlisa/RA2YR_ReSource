@@ -56,11 +56,11 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   unsigned int *Base; // esi
   char Source[32]; // [esp+10h] [ebp-20h] BYREF
 
-  result = (int)(INIClass::GetKeyCount(a1->__pad_0, (uint8_t *)((char *)&g_INI_Key_TRUCKA))); /*0x6f19c1*/
+  result = (int)(INIClass::GetKeyCount(a1->__pad_0, (void)((uint8_t *)((char *)&g_INI_Key_TRUCKA)))); /*0x6f19c1*/
   v4 = result; /*0x6f19c6*/
   for ( i = 0; i < v4; Base[58] = a2 ) /*0x6f19cc*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, (uint8_t *)((char *)&g_INI_Key_TRUCKA), i); /*0x6f19db*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex( a1->__pad_0, (CCINIClass *)((uint8_t *)((char *)&g_INI_Key_TRUCKA)), i); /*0x6f19db*/
     ((INIClass*)(gamemd::INIClass *)(a1))->GetString((uint8_t *)((char *)&g_INI_Key_TRUCKA), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), (char *)(int)(Source), 32); /*0x6f19f4*/
     if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
@@ -82,7 +82,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   LABEL_10:
       Base = 0; /*0x6f1a84*/
   LABEL_11:
-    result = (*(int (**)(unsigned int *, INIClass *))(*Base + 100))(Base, (INIClass *)a1); /*0x6f1a86*/
+    result = (*(int (**)(unsigned int *, INIClass *))(*Base + 100))( (unsigned int *)(Base), (INIClass *)a1); /*0x6f1a86*/
     ++i; /*0x6f1a8e*/
   }
   return (gamemd::TeamTypeClass **)(result);

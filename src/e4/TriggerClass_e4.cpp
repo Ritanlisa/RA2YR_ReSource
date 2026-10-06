@@ -90,7 +90,7 @@ char TriggerClass::FindByEventType(char a1)
        | (BYTE1(dword_AC48B0) >> g_BitMask_Blue << g_BitMask_Green)
        | (BYTE2(dword_AC48B0) >> g_BitMask_Red << g_BitShift_Blue);
   (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0); /*0x610a9d*/
-  (*(void (**)(int, __int128 *, int))(*(unsigned int *)g_DSurface_Primary + 20))(g_DSurface_Primary, &v8, v6); /*0x610aae*/
+  (*(void (**)(int, __int128 *, int))(*(unsigned int *)g_DSurface_Primary + 20))( g_DSurface_Primary, (__int128 *)(&v8), v6); /*0x610aae*/
   (*(void (**)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
   Team_Find((int *)&v8, g_DSurface_Primary, 8, 4); /*0x610aca*/
   v7 = wcslen((const wchar_t *)(word_AC1CCC)); /*0x610ae0*/
@@ -142,7 +142,7 @@ int TriggerClass::RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP
     {
       if ( ((TriggerClass*)v8)->GetValue() ) /*0x726551*/
         *((unsigned int *)this + 11) = (unsigned int)(((TriggerClass*)v8)->GetValue()); /*0x726561*/
-      if ( a5 && TEventClass::GetStateA((TEventClass *)v8) && TEventClass::GetStateB_SpyEvent((TEventClass *)v8) ) /*0x726579*/
+      if ( a5 && TEventClass::GetStateA( (TEventClass *)v8) && TEventClass::GetStateB_SpyEvent( (TEventClass *)v8) ) /*0x726579*/
         *((unsigned int *)this + 16) |= 1 << v7; /*0x726582*/
     }
     else
@@ -186,12 +186,12 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x72686b*/
+  result = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(aP0), (gamemd::AbstractClass *)(aP1)); /*0x72686b*/
   if ( result >= 0 ) /*0x726872*/
   {
     if ( aP0 ) /*0x726876*/
     {
-      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x72687f*/
+      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x72687f*/
       aP0->vtable1 = &vt_TriggerClass; /*0x726884*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerClass); /*0x72688a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerClass); /*0x726891*/

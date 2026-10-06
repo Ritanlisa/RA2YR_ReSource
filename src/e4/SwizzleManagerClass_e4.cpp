@@ -441,18 +441,18 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, 
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x6cf853*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6cf856*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6cf860*/
+  v3 = *(void **)&this->m_1[3]; /*0x6cf853*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x6cf860*/
   {
     __3_YAXPAX_Z(v3); /*0x6cf868*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6cf870*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6cf870*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6cf87b*/
-  Block->m_8 = 0; /*0x6cf881*/
+  BYTE1(this->m_C) = 0; /*0x6cf87b*/
+  this->m_8 = 0; /*0x6cf881*/
   if ( (a2 & 1) != 0 ) /*0x6cf888*/
-    __3_YAXPAX_Z(Block); /*0x6cf88b*/
-  return Block->__pad_0; /*0x6cf895*/
+    __3_YAXPAX_Z(this); /*0x6cf88b*/
+  return this->__pad_0; /*0x6cf895*/
 
 }
 } // namespace gamemd
@@ -464,18 +464,18 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x6cf8a3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6cf8a6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6cf8b0*/
+  v3 = *(void **)&this->m_1[3]; /*0x6cf8a3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x6cf8b0*/
   {
     __3_YAXPAX_Z(v3); /*0x6cf8b8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6cf8c0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6cf8c0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6cf8cb*/
-  Block->m_8 = 0; /*0x6cf8d1*/
+  BYTE1(this->m_C) = 0; /*0x6cf8cb*/
+  this->m_8 = 0; /*0x6cf8d1*/
   if ( (a2 & 1) != 0 ) /*0x6cf8d8*/
-    __3_YAXPAX_Z(Block); /*0x6cf8db*/
-  return Block->__pad_0; /*0x6cf8e5*/
+    __3_YAXPAX_Z(this); /*0x6cf8db*/
+  return this->__pad_0; /*0x6cf8e5*/
 
 }
 } // namespace gamemd

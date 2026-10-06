@@ -178,18 +178,18 @@ TypeList_flat * FilePipe_30::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*((unsigned int *)Block + 1); /*0x477a73*/
-  Block->vfptr = &vt_VectorClass; /*0x477a76*/
-  if ( v3 && *((unsigned char *)Block + 13) ) /*0x477a80*/
+  v3 = (void *)*((unsigned int *)this + 1); /*0x477a73*/
+  this->vfptr = &vt_VectorClass; /*0x477a76*/
+  if ( v3 && *((unsigned char *)this + 13) ) /*0x477a80*/
   {
     __3_YAXPAX_Z(v3); /*0x477a88*/
-    *((unsigned int *)Block + 1) = 0; /*0x477a90*/
+    *((unsigned int *)this + 1) = 0; /*0x477a90*/
   }
-  *((unsigned char *)Block + 13) = 0; /*0x477a9b*/
-  *((unsigned int *)Block + 2) = 0; /*0x477aa1*/
+  *((unsigned char *)this + 13) = 0; /*0x477a9b*/
+  *((unsigned int *)this + 2) = 0; /*0x477aa1*/
   if ( (a2 & 1) != 0 ) /*0x477aa8*/
-    __3_YAXPAX_Z(Block); /*0x477aab*/
-  return &Block->vfptr; /*0x477ab5*/
+    __3_YAXPAX_Z(this); /*0x477aab*/
+  return &this->vfptr; /*0x477ab5*/
 
 }
 } // namespace gamemd
@@ -362,18 +362,18 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4786d3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4786d6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4786e0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4786d3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4786e0*/
   {
     __3_YAXPAX_Z(v3); /*0x4786e8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4786f0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4786f0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4786fb*/
-  Block->m_8 = 0; /*0x478701*/
+  BYTE1(this->m_C) = 0; /*0x4786fb*/
+  this->m_8 = 0; /*0x478701*/
   if ( (a2 & 1) != 0 ) /*0x478708*/
-    __3_YAXPAX_Z(Block); /*0x47870b*/
-  return Block->__pad_0; /*0x478715*/
+    __3_YAXPAX_Z(this); /*0x47870b*/
+  return this->__pad_0; /*0x478715*/
 
 }
 } // namespace gamemd
@@ -594,18 +594,18 @@ DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4ba163*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ba166*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4ba170*/
+  v3 = *(void **)&this->m_1[3]; /*0x4ba163*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4ba170*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba178*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4ba180*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4ba180*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4ba18b*/
-  Block->m_8 = 0; /*0x4ba191*/
+  BYTE1(this->m_C) = 0; /*0x4ba18b*/
+  this->m_8 = 0; /*0x4ba191*/
   if ( (a2 & 1) != 0 ) /*0x4ba198*/
-    __3_YAXPAX_Z(Block); /*0x4ba19b*/
-  return Block->__pad_0; /*0x4ba1a5*/
+    __3_YAXPAX_Z(this); /*0x4ba19b*/
+  return this->__pad_0; /*0x4ba1a5*/
 
 }
 } // namespace gamemd
@@ -617,18 +617,18 @@ DynamicVector * FilePipe_30::Destructor_0(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4ba203*/
-  *(unsigned int *)Block->__pad_0 = &off_7E8500; /*0x4ba206*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4ba210*/
+  v3 = *(void **)&this->m_1[3]; /*0x4ba203*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&off_7E8500;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4ba210*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba218*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4ba220*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4ba220*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4ba22b*/
-  Block->m_8 = 0; /*0x4ba231*/
+  BYTE1(this->m_C) = 0; /*0x4ba22b*/
+  this->m_8 = 0; /*0x4ba231*/
   if ( (a2 & 1) != 0 ) /*0x4ba238*/
-    __3_YAXPAX_Z(Block); /*0x4ba23b*/
-  return Block->__pad_0; /*0x4ba245*/
+    __3_YAXPAX_Z(this); /*0x4ba23b*/
+  return this->__pad_0; /*0x4ba245*/
 
 }
 } // namespace gamemd
@@ -640,18 +640,18 @@ DynamicVector * FilePipe_30::Destructor_1(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4ba2a3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ba2a6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4ba2b0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4ba2a3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4ba2b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba2b8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4ba2c0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4ba2c0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4ba2cb*/
-  Block->m_8 = 0; /*0x4ba2d1*/
+  BYTE1(this->m_C) = 0; /*0x4ba2cb*/
+  this->m_8 = 0; /*0x4ba2d1*/
   if ( (a2 & 1) != 0 ) /*0x4ba2d8*/
-    __3_YAXPAX_Z(Block); /*0x4ba2db*/
-  return Block->__pad_0; /*0x4ba2e5*/
+    __3_YAXPAX_Z(this); /*0x4ba2db*/
+  return this->__pad_0; /*0x4ba2e5*/
 
 }
 } // namespace gamemd

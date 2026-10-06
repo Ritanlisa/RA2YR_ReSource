@@ -189,7 +189,7 @@ int VectorClass_flat::RemoveObjectById()
   v2 = (unsigned int *)this + 600; /*0x4137b6*/
   v3 = *((unsigned int *)this + 2400); /*0x4137c3*/
   v7 = (VectorClass *)**((unsigned int **)this + 2401); /*0x4137c7*/
-  v4 = (*(int (**)(VectorClass *, VectorClass **))(v3 + 16))((unsigned int *)this + 600, &v7); /*0x4137cb*/
+  v4 = (*(int (**)(VectorClass *, VectorClass **))(v3 + 16))( (VectorClass *)((unsigned int *)this + 600), (VectorClass **)(&v7)); /*0x4137cb*/
   if ( v4 != -1 ) /*0x4137d1*/
   {
     vtable0 = (char *)v2[1].vtable0; /*0x4137d3*/
@@ -257,7 +257,7 @@ int VectorClass_flat::RemoveElement()
   {
 LABEL_9:
     v9 = *v1; /*0x65a9c9*/
-    v10 = AbstractClass::IsTechnoType((AbstractClass *)this); /*0x65a9d3*/
+    v10 = AbstractClass::IsTechnoType( (AbstractClass *)this); /*0x65a9d3*/
     return (*(int (**)(int *, void *, int, int))(v9 + 404))(v1, v10, v17, v18); /*0x65a9e5*/
   }
   v11 = (&this->radioLinks)[2]; /*0x65a9ed*/
@@ -289,7 +289,7 @@ LABEL_9:
   v12 = 0; /*0x65aa34*/
 LABEL_20:
   v15 = *v1; /*0x65aa36*/
-  v16 = AbstractClass::IsTechnoType((AbstractClass *)this); /*0x65aa41*/
+  v16 = AbstractClass::IsTechnoType( (AbstractClass *)this); /*0x65aa41*/
   if ( (*(int (**)(int *, void *, int, int))(v15 + 404))(v1, v16, 2, v18) == 1 ) /*0x65aa52*/
   {
     *(unsigned int *)((&this->radioLinks)[1] + 4 * v12) = v1; /*0x65aa5a*/
@@ -306,7 +306,7 @@ int VectorClass_flat::GetAtChecked(IUnknown * aP1)
 
   int v3; // eax
 
-  v3 = (*(int (**)(char *, int))(*((unsigned int *)this + 10) + 20))((char *)this + 40, aP1) + 1; /*0x763bb4*/
+  v3 = (*(int (**)(char *, int))(*((unsigned int *)this + 10) + 20))( (char *)this + 40, (int)(aP1)) + 1; /*0x763bb4*/
   if ( *((unsigned int *)this + 9) != -1 && v3 == *((unsigned int *)this + 14) ) /*0x763bbd*/
     v3 = *((unsigned int *)this + 9); /*0x763bbf*/
   if ( v3 < 0 || v3 >= *((unsigned int *)this + 14) ) /*0x763bc8*/
@@ -1136,7 +1136,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
         v8 = aP1; /*0x628967*/
         do /*0x628978*/
         {
-          Byte::Zero(v5); /*0x62896c*/
+          ((Byte *)v5)->Zero(); /*0x62896c*/
           v5 += 65; /*0x628971*/
           --v8; /*0x628977*/
         }
@@ -1146,7 +1146,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
     }
     else
     {
-      v6 = __2_YAPAXI_Z(260 * aP1); /*0x628921*/
+      v6 = (unsigned int)__2_YAPAXI_Z(260 * aP1); /*0x628921*/
       if ( v6 ) /*0x628928*/
       {
         v7 = (Byte *)v6; /*0x62892d*/
@@ -1155,7 +1155,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
           v14 = aP1; /*0x628934*/
           do /*0x62894e*/
           {
-            Byte::Zero(v7); /*0x62893a*/
+            ((Byte *)v7)->Zero(); /*0x62893a*/
             v7 += 65; /*0x628943*/
             --v14; /*0x62894a*/
           }
@@ -1184,7 +1184,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
           do /*0x6289e4*/
           {
             v13 = v11 + *(unsigned int *)&this->m_1[3]; /*0x6289bb*/
-            String::CopyChecked(v12, (const char *)v13); /*0x6289be*/
+            ((String *)v12)->CopyChecked( (const char *)v13); /*0x6289be*/
             *((unsigned int *)v12 + 64) = *(unsigned int *)(v13 + 256); /*0x6289cd*/
             v11 += 260; /*0x6289d3*/
             v12 += 260; /*0x6289d9*/
@@ -1226,15 +1226,15 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(void ** Block, cha
   int v4; // eax
   VectorClass_ptr_ConvertClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block->__pad_0 = &vt_ConvertClass; /*0x491214*/
-  COMClass::RegisterAll((COMClass *)Block); /*0x49121a*/
-  __3_YAXPAX_Z(*((void **)Block + 92)); /*0x491226*/
-  v3 = (void *)*((unsigned int *)Block + 94); /*0x49122b*/
-  *((unsigned int *)Block + 92) = 0; /*0x491231*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ConvertClass;
+  ((COMClass *)(COMClass *)this)->RegisterAll(); /*0x49121a*/
+  __3_YAXPAX_Z(*((void **)this + 92)); /*0x491226*/
+  v3 = (void *)*((unsigned int *)this + 94); /*0x49122b*/
+  *((unsigned int *)this + 92) = 0; /*0x491231*/
   __3_YAXPAX_Z(v3); /*0x49123c*/
-  *((unsigned int *)Block + 94) = 0; /*0x491244*/
-  v6 = Block; /*0x49125d*/
-  v4 = (*(int (**)(int *, VectorClass_ptr_ConvertClass **))(dword_89ECF8 + 16))(&dword_89ECF8, &v6); /*0x491261*/
+  *((unsigned int *)this + 94) = 0; /*0x491244*/
+  v6 = this; /*0x49125d*/
+  v4 = (*(int (**)(int *, VectorClass_ptr_ConvertClass **))(dword_89ECF8 + 16))( (int *)(&dword_89ECF8), (VectorClass_ptr_ConvertClass **)(&v6)); /*0x491261*/
   if ( v4 != -1 && v4 < dword_89ED08 && v4 < --dword_89ED08 ) /*0x49127c*/
   {
     do /*0x491294*/
@@ -1245,8 +1245,8 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(void ** Block, cha
     while ( v4 < dword_89ED08 ); /*0x491294*/
   }
   if ( (a2 & 1) != 0 ) /*0x49129b*/
-    __3_YAXPAX_Z(Block); /*0x49129e*/
-  return (void **)Block; /*0x4912a8*/
+    __3_YAXPAX_Z(this); /*0x49129e*/
+  return (void **)this; /*0x4912a8*/
 
 }
 }
@@ -1596,7 +1596,7 @@ LABEL_26:
 }
 // 0x40B120
 namespace gamemd {  // G42.18c ns repair
-int VectorClass_flat::Clear(int a2, int a3)
+int ((VectorClass_flat *)this)->Clear( int a3)
 {
 
   int v3; // eax
@@ -1809,7 +1809,7 @@ VectorClass_flat *  VectorClass_flat::QueryInterface(unsigned int * Block, char 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40b303*/
-  *Block = &vt_VectorClass; /*0x40b306*/
+  *Block = (unsigned int)&vt_VectorClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40b310*/
   {
     __3_YAXPAX_Z(v3); /*0x40b318*/
@@ -2144,18 +2144,18 @@ DynamicVector * VectorClass_ptr_LightConvertClass::Constructor_VectorClass_Light
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40c543*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40c546*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x40c550*/
+  v3 = *(void **)&this->m_1[3]; /*0x40c543*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x40c550*/
   {
     __3_YAXPAX_Z(v3); /*0x40c558*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40c560*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40c560*/
   }
-  BYTE1(Block->m_C) = 0; /*0x40c56b*/
-  Block->m_8 = 0; /*0x40c571*/
+  BYTE1(this->m_C) = 0; /*0x40c56b*/
+  this->m_8 = 0; /*0x40c571*/
   if ( (a2 & 1) != 0 ) /*0x40c578*/
-    __3_YAXPAX_Z(Block); /*0x40c57b*/
-  return Block->__pad_0; /*0x40c585*/
+    __3_YAXPAX_Z(this); /*0x40c57b*/
+  return this->__pad_0; /*0x40c585*/
 
 }
 } // namespace gamemd
@@ -2220,18 +2220,18 @@ DynamicVector * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_Isom
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40cb33*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40cb36*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x40cb40*/
+  v3 = *(void **)&this->m_1[3]; /*0x40cb33*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x40cb40*/
   {
     __3_YAXPAX_Z(v3); /*0x40cb48*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40cb50*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40cb50*/
   }
-  BYTE1(Block->m_C) = 0; /*0x40cb5b*/
-  Block->m_8 = 0; /*0x40cb61*/
+  BYTE1(this->m_C) = 0; /*0x40cb5b*/
+  this->m_8 = 0; /*0x40cb61*/
   if ( (a2 & 1) != 0 ) /*0x40cb68*/
-    __3_YAXPAX_Z(Block); /*0x40cb6b*/
-  return Block->__pad_0; /*0x40cb75*/
+    __3_YAXPAX_Z(this); /*0x40cb6b*/
+  return this->__pad_0; /*0x40cb75*/
 
 }
 } // namespace gamemd
@@ -2253,18 +2253,18 @@ LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectC
 
   void *count; // eax
 
-  count = (void *)((unsigned int *)Block)[0]; /*0x40cc23*/
-  Block->LayerClass[0] = (int)&vt_VectorClass; /*0x40cc26*/
-  if ( count && *((unsigned char *)Block + 13) ) /*0x40cc30*/
+  count = (void *)((unsigned int *)this)[0]; /*0x40cc23*/
+  this->LayerClass[0] = (int)&vt_VectorClass; /*0x40cc26*/
+  if ( count && *((unsigned char *)this + 13) ) /*0x40cc30*/
   {
     __3_YAXPAX_Z(count); /*0x40cc38*/
-    ((unsigned int *)Block)[0] = 0; /*0x40cc40*/
+    ((unsigned int *)this)[0] = 0; /*0x40cc40*/
   }
-  *((unsigned char *)Block + 13) = 0; /*0x40cc4b*/
-  ((unsigned int *)Block)[0] = 0; /*0x40cc51*/
+  *((unsigned char *)this + 13) = 0; /*0x40cc4b*/
+  ((unsigned int *)this)[0] = 0; /*0x40cc51*/
   if ( (a2 & 1) != 0 ) /*0x40cc58*/
-    __3_YAXPAX_Z(Block); /*0x40cc5b*/
-  return Block->LayerClass; /*0x40cc65*/
+    __3_YAXPAX_Z(this); /*0x40cc5b*/
+  return this->LayerClass; /*0x40cc65*/
 
 }
 } // namespace gamemd
@@ -2528,18 +2528,18 @@ VectorClass_flat * VectorClass_ptr_ScriptClass::QueryInterface(unsigned int * Bl
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40eab3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40eab6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x40eac0*/
+  v3 = *(void **)&this->m_1[3]; /*0x40eab3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x40eac0*/
   {
     __3_YAXPAX_Z(v3); /*0x40eac8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40ead0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40ead0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x40eadb*/
-  Block->m_8 = 0; /*0x40eae1*/
+  BYTE1(this->m_C) = 0; /*0x40eadb*/
+  this->m_8 = 0; /*0x40eae1*/
   if ( (a2 & 1) != 0 ) /*0x40eae8*/
-    __3_YAXPAX_Z(Block); /*0x40eaeb*/
-  return Block->__pad_0; /*0x40eaf5*/
+    __3_YAXPAX_Z(this); /*0x40eaeb*/
+  return this->__pad_0; /*0x40eaf5*/
 
 }
 } // namespace gamemd
@@ -2551,18 +2551,18 @@ DynamicVector * VectorClass_ptr_ScriptClass::Constructor_VectorClass_ScriptClass
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40eb03*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40eb06*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x40eb10*/
+  v3 = *(void **)&this->m_1[3]; /*0x40eb03*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x40eb10*/
   {
     __3_YAXPAX_Z(v3); /*0x40eb18*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40eb20*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40eb20*/
   }
-  BYTE1(Block->m_C) = 0; /*0x40eb2b*/
-  Block->m_8 = 0; /*0x40eb31*/
+  BYTE1(this->m_C) = 0; /*0x40eb2b*/
+  this->m_8 = 0; /*0x40eb31*/
   if ( (a2 & 1) != 0 ) /*0x40eb38*/
-    __3_YAXPAX_Z(Block); /*0x40eb3b*/
-  return Block->__pad_0; /*0x40eb45*/
+    __3_YAXPAX_Z(this); /*0x40eb3b*/
+  return this->__pad_0; /*0x40eb45*/
 
 }
 } // namespace gamemd
@@ -2618,18 +2618,18 @@ DynamicVector * VectorClass_ptr_VoxelAnimClass::Constructor_VectorClass_VoxelAni
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40f1d3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40f1d6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x40f1e0*/
+  v3 = *(void **)&this->m_1[3]; /*0x40f1d3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x40f1e0*/
   {
     __3_YAXPAX_Z(v3); /*0x40f1e8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40f1f0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40f1f0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x40f1fb*/
-  Block->m_8 = 0; /*0x40f201*/
+  BYTE1(this->m_C) = 0; /*0x40f1fb*/
+  this->m_8 = 0; /*0x40f201*/
   if ( (a2 & 1) != 0 ) /*0x40f208*/
-    __3_YAXPAX_Z(Block); /*0x40f20b*/
-  return Block->__pad_0; /*0x40f215*/
+    __3_YAXPAX_Z(this); /*0x40f20b*/
+  return this->__pad_0; /*0x40f215*/
 
 }
 } // namespace gamemd
@@ -2700,18 +2700,18 @@ DynamicVector * VectorClass_ptr_WarheadTypeClass::Constructor_VectorClass_Warhea
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40f8f3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40f8f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x40f900*/
+  v3 = *(void **)&this->m_1[3]; /*0x40f8f3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x40f900*/
   {
     __3_YAXPAX_Z(v3); /*0x40f908*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40f910*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40f910*/
   }
-  BYTE1(Block->m_C) = 0; /*0x40f91b*/
-  Block->m_8 = 0; /*0x40f921*/
+  BYTE1(this->m_C) = 0; /*0x40f91b*/
+  this->m_8 = 0; /*0x40f921*/
   if ( (a2 & 1) != 0 ) /*0x40f928*/
-    __3_YAXPAX_Z(Block); /*0x40f92b*/
-  return Block->__pad_0; /*0x40f935*/
+    __3_YAXPAX_Z(this); /*0x40f92b*/
+  return this->__pad_0; /*0x40f935*/
 
 }
 } // namespace gamemd
@@ -2773,18 +2773,18 @@ DynamicVector * VectorClass_ptr_WeaponTypeClass::Constructor_VectorClass_WeaponT
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40fec3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40fec6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x40fed0*/
+  v3 = *(void **)&this->m_1[3]; /*0x40fec3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x40fed0*/
   {
     __3_YAXPAX_Z(v3); /*0x40fed8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40fee0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40fee0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x40feeb*/
-  Block->m_8 = 0; /*0x40fef1*/
+  BYTE1(this->m_C) = 0; /*0x40feeb*/
+  this->m_8 = 0; /*0x40fef1*/
   if ( (a2 & 1) != 0 ) /*0x40fef8*/
-    __3_YAXPAX_Z(Block); /*0x40fefb*/
-  return Block->__pad_0; /*0x40ff05*/
+    __3_YAXPAX_Z(this); /*0x40fefb*/
+  return this->__pad_0; /*0x40ff05*/
 
 }
 } // namespace gamemd
@@ -2846,18 +2846,18 @@ DynamicVector * VectorClass_ptr_AirstrikeClass::Constructor_VectorClass_Airstrik
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x41e0f3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x41e0f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x41e100*/
+  v3 = *(void **)&this->m_1[3]; /*0x41e0f3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x41e100*/
   {
     __3_YAXPAX_Z(v3); /*0x41e108*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x41e110*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x41e110*/
   }
-  BYTE1(Block->m_C) = 0; /*0x41e11b*/
-  Block->m_8 = 0; /*0x41e121*/
+  BYTE1(this->m_C) = 0; /*0x41e11b*/
+  this->m_8 = 0; /*0x41e121*/
   if ( (a2 & 1) != 0 ) /*0x41e128*/
-    __3_YAXPAX_Z(Block); /*0x41e12b*/
-  return Block->__pad_0; /*0x41e135*/
+    __3_YAXPAX_Z(this); /*0x41e12b*/
+  return this->__pad_0; /*0x41e135*/
 
 }
 } // namespace gamemd
@@ -2920,7 +2920,7 @@ unsigned int * VectorClass_ptr_AlphaShapeClass::loc_421B10(unsigned int * Block,
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x421b13*/
-  *Block = &vt_VectorClass_AlphaShapeClass; /*0x421b16*/
+  *Block = (unsigned int)&vt_VectorClass_AlphaShapeClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x421b20*/
   {
     __3_YAXPAX_Z(v3); /*0x421b28*/
@@ -3062,18 +3062,18 @@ VectorClass_ushort * VectorClass_ushort::Add(unsigned int * Block, char a2, void
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x42dbb3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x42dbb6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x42dbc0*/
+  v3 = *(void **)&this->m_1[3]; /*0x42dbb3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x42dbc0*/
   {
     __3_YAXPAX_Z(v3); /*0x42dbc8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x42dbd0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x42dbd0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x42dbdb*/
-  Block->m_8 = 0; /*0x42dbe1*/
+  BYTE1(this->m_C) = 0; /*0x42dbdb*/
+  this->m_8 = 0; /*0x42dbe1*/
   if ( (a2 & 1) != 0 ) /*0x42dbe8*/
-    __3_YAXPAX_Z(Block); /*0x42dbeb*/
-  return Block->__pad_0; /*0x42dbf5*/
+    __3_YAXPAX_Z(this); /*0x42dbeb*/
+  return this->__pad_0; /*0x42dbf5*/
 
 }
 } // namespace gamemd
@@ -3085,18 +3085,18 @@ DynamicVector * VectorClass_ushort::Constructor(unsigned int * Block, char a2, v
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x42dc03*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x42dc06*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x42dc10*/
+  v3 = *(void **)&this->m_1[3]; /*0x42dc03*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x42dc10*/
   {
     __3_YAXPAX_Z(v3); /*0x42dc18*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x42dc20*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x42dc20*/
   }
-  BYTE1(Block->m_C) = 0; /*0x42dc2b*/
-  Block->m_8 = 0; /*0x42dc31*/
+  BYTE1(this->m_C) = 0; /*0x42dc2b*/
+  this->m_8 = 0; /*0x42dc31*/
   if ( (a2 & 1) != 0 ) /*0x42dc38*/
-    __3_YAXPAX_Z(Block); /*0x42dc3b*/
-  return Block->__pad_0; /*0x42dc45*/
+    __3_YAXPAX_Z(this); /*0x42dc3b*/
+  return this->__pad_0; /*0x42dc45*/
 
 }
 } // namespace gamemd
@@ -3364,18 +3364,18 @@ DynamicVector * VectorClass_ptr_Reestablish::Constructor(unsigned int * Block, c
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x45aa13*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x45aa16*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x45aa20*/
+  v3 = *(void **)&this->m_1[3]; /*0x45aa13*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x45aa20*/
   {
     __3_YAXPAX_Z(v3); /*0x45aa28*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x45aa30*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x45aa30*/
   }
-  BYTE1(Block->m_C) = 0; /*0x45aa3b*/
-  Block->m_8 = 0; /*0x45aa41*/
+  BYTE1(this->m_C) = 0; /*0x45aa3b*/
+  this->m_8 = 0; /*0x45aa41*/
   if ( (a2 & 1) != 0 ) /*0x45aa48*/
-    __3_YAXPAX_Z(Block); /*0x45aa4b*/
-  return Block->__pad_0; /*0x45aa55*/
+    __3_YAXPAX_Z(this); /*0x45aa4b*/
+  return this->__pad_0; /*0x45aa55*/
 
 }
 } // namespace gamemd
@@ -3387,18 +3387,18 @@ DynamicVector * VectorClass_InfantryPtr::Destruct(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*((unsigned int *)Block + 1); /*0x45aab3*/
-  *(unsigned int *)Block = &vt_VectorClass; /*0x45aab6*/
-  if ( v3 && *((unsigned char *)Block + 13) ) /*0x45aac0*/
+  v3 = (void *)*((unsigned int *)this + 1); /*0x45aab3*/
+  *(unsigned int *)this = (unsigned int)&vt_VectorClass;
+  if ( v3 && *((unsigned char *)this + 13) ) /*0x45aac0*/
   {
     __3_YAXPAX_Z(v3); /*0x45aac8*/
-    *((unsigned int *)Block + 1) = 0; /*0x45aad0*/
+    *((unsigned int *)this + 1) = 0; /*0x45aad0*/
   }
-  *((unsigned char *)Block + 13) = 0; /*0x45aadb*/
-  *((unsigned int *)Block + 2) = 0; /*0x45aae1*/
+  *((unsigned char *)this + 13) = 0; /*0x45aadb*/
+  *((unsigned int *)this + 2) = 0; /*0x45aae1*/
   if ( (a2 & 1) != 0 ) /*0x45aae8*/
-    __3_YAXPAX_Z(Block); /*0x45aaeb*/
-  return Block; /*0x45aaf5*/
+    __3_YAXPAX_Z(this); /*0x45aaeb*/
+  return this; /*0x45aaf5*/
 
 }
 } // namespace gamemd
@@ -3410,18 +3410,18 @@ DynamicVector * VectorClass_ptr_FoggedObjectClass::Constructor_VectorClass_Fogge
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x45ab03*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x45ab06*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x45ab10*/
+  v3 = *(void **)&this->m_1[3]; /*0x45ab03*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x45ab10*/
   {
     __3_YAXPAX_Z(v3); /*0x45ab18*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x45ab20*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x45ab20*/
   }
-  BYTE1(Block->m_C) = 0; /*0x45ab2b*/
-  Block->m_8 = 0; /*0x45ab31*/
+  BYTE1(this->m_C) = 0; /*0x45ab2b*/
+  this->m_8 = 0; /*0x45ab31*/
   if ( (a2 & 1) != 0 ) /*0x45ab38*/
-    __3_YAXPAX_Z(Block); /*0x45ab3b*/
-  return Block->__pad_0; /*0x45ab45*/
+    __3_YAXPAX_Z(this); /*0x45ab3b*/
+  return this->__pad_0; /*0x45ab45*/
 
 }
 } // namespace gamemd
@@ -3453,18 +3453,18 @@ VectorClass_flat * VectorClass_ptr_Reestablish::Add(unsigned int * Block, char a
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x45ace3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x45ace6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x45acf0*/
+  v3 = *(void **)&this->m_1[3]; /*0x45ace3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x45acf0*/
   {
     __3_YAXPAX_Z(v3); /*0x45acf8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x45ad00*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x45ad00*/
   }
-  BYTE1(Block->m_C) = 0; /*0x45ad0b*/
-  Block->m_8 = 0; /*0x45ad11*/
+  BYTE1(this->m_C) = 0; /*0x45ad0b*/
+  this->m_8 = 0; /*0x45ad11*/
   if ( (a2 & 1) != 0 ) /*0x45ad18*/
-    __3_YAXPAX_Z(Block); /*0x45ad1b*/
-  return Block->__pad_0; /*0x45ad25*/
+    __3_YAXPAX_Z(this); /*0x45ad1b*/
+  return this->__pad_0; /*0x45ad25*/
 
 }
 } // namespace gamemd
@@ -3476,18 +3476,18 @@ DynamicVector * VectorClass_ptr_Reestablish::Constructor_VectorClass_Reestablish
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x45ad33*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x45ad36*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x45ad40*/
+  v3 = *(void **)&this->m_1[3]; /*0x45ad33*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x45ad40*/
   {
     __3_YAXPAX_Z(v3); /*0x45ad48*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x45ad50*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x45ad50*/
   }
-  BYTE1(Block->m_C) = 0; /*0x45ad5b*/
-  Block->m_8 = 0; /*0x45ad61*/
+  BYTE1(this->m_C) = 0; /*0x45ad5b*/
+  this->m_8 = 0; /*0x45ad61*/
   if ( (a2 & 1) != 0 ) /*0x45ad68*/
-    __3_YAXPAX_Z(Block); /*0x45ad6b*/
-  return Block->__pad_0; /*0x45ad75*/
+    __3_YAXPAX_Z(this); /*0x45ad6b*/
+  return this->__pad_0; /*0x45ad75*/
 
 }
 } // namespace gamemd
@@ -3525,7 +3525,7 @@ unsigned int * VectorClass_ReestablishPtr::Construct(BuildingClass * aP1, Buildi
   *(unsigned int *)&this->__pad_5[3] = aP1; /*0x45ae5e*/
   LOBYTE(this->m_C) = 1; /*0x45ae61*/
   BYTE1(this->m_C) = 0; /*0x45ae65*/
-  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x45ae68*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
   if ( aP1 ) /*0x45ae6e*/
   {
     if ( aP2 ) /*0x45ae76*/
@@ -3639,7 +3639,7 @@ unsigned int * VectorClass_ptr_BulletClass::loc_46B910(unsigned int * Block, cha
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x46b913*/
-  *Block = &vt_VectorClass_BulletClass; /*0x46b916*/
+  *Block = (unsigned int)&vt_VectorClass_BulletClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x46b920*/
   {
     __3_YAXPAX_Z(v3); /*0x46b928*/
@@ -3731,18 +3731,18 @@ DynamicVector * VectorClass_ptr_CaptureManagerClass::Constructor_VectorClass_Cap
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4730f3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4730f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x473100*/
+  v3 = *(void **)&this->m_1[3]; /*0x4730f3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x473100*/
   {
     __3_YAXPAX_Z(v3); /*0x473108*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x473110*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x473110*/
   }
-  BYTE1(Block->m_C) = 0; /*0x47311b*/
-  Block->m_8 = 0; /*0x473121*/
+  BYTE1(this->m_C) = 0; /*0x47311b*/
+  this->m_8 = 0; /*0x473121*/
   if ( (a2 & 1) != 0 ) /*0x473128*/
-    __3_YAXPAX_Z(Block); /*0x47312b*/
-  return Block->__pad_0; /*0x473135*/
+    __3_YAXPAX_Z(this); /*0x47312b*/
+  return this->__pad_0; /*0x473135*/
 
 }
 } // namespace gamemd
@@ -3752,7 +3752,7 @@ namespace gamemd {  // G42.18c ns repair
 int * VectorClass_flat::ScalarDtor(char a2)
 {
 
-  Pipe::Dtor((Pipe *)this); /*0x477753*/
+  Pipe::Dtor( (void *a1 =)((Pipe *)this)); /*0x477753*/
   if ( (a2 & 1) != 0 ) /*0x47775d*/
     __3_YAXPAX_Z(this); /*0x477760*/
   return (int *)this->__pad_0; /*0x47776a*/
@@ -3781,7 +3781,7 @@ unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1, void *a2)
     this->Capacity = v3; /*0x4777dd*/
     if ( v3 ) /*0x4777e0*/
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x4777e6*/
+      v4 = (unsigned int)__2_YAPAXI_Z(4 * v3); /*0x4777e6*/
       this->Items = v4; /*0x4777f0*/
       if ( v4 ) /*0x4777f3*/
       {
@@ -4006,7 +4006,7 @@ VectorClass_flat *  VectorClass_flat::vt00(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x478633*/
-  *Block = &vt_VectorClass; /*0x478636*/
+  *Block = (unsigned int)&vt_VectorClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x478640*/
   {
     __3_YAXPAX_Z(v3); /*0x478648*/
@@ -4077,18 +4077,18 @@ DynamicVector * VectorClass_ptr_DamageGroup::Constructor_VectorClass_DamageGroup
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x48b023*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x48b026*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x48b030*/
+  v3 = *(void **)&this->m_1[3]; /*0x48b023*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x48b030*/
   {
     __3_YAXPAX_Z(v3); /*0x48b038*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x48b040*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x48b040*/
   }
-  BYTE1(Block->m_C) = 0; /*0x48b04b*/
-  Block->m_8 = 0; /*0x48b051*/
+  BYTE1(this->m_C) = 0; /*0x48b04b*/
+  this->m_8 = 0; /*0x48b051*/
   if ( (a2 & 1) != 0 ) /*0x48b058*/
-    __3_YAXPAX_Z(Block); /*0x48b05b*/
-  return Block->__pad_0; /*0x48b065*/
+    __3_YAXPAX_Z(this); /*0x48b05b*/
+  return this->__pad_0; /*0x48b065*/
 
 }
 } // namespace gamemd
@@ -4150,18 +4150,18 @@ DynamicVector * VectorClass_ptr_ConvertClass::Constructor_VectorClass_ConvertCla
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x49b133*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x49b136*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x49b140*/
+  v3 = *(void **)&this->m_1[3]; /*0x49b133*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x49b140*/
   {
     __3_YAXPAX_Z(v3); /*0x49b148*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x49b150*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x49b150*/
   }
-  BYTE1(Block->m_C) = 0; /*0x49b15b*/
-  Block->m_8 = 0; /*0x49b161*/
+  BYTE1(this->m_C) = 0; /*0x49b15b*/
+  this->m_8 = 0; /*0x49b161*/
   if ( (a2 & 1) != 0 ) /*0x49b168*/
-    __3_YAXPAX_Z(Block); /*0x49b16b*/
-  return Block->__pad_0; /*0x49b175*/
+    __3_YAXPAX_Z(this); /*0x49b16b*/
+  return this->__pad_0; /*0x49b175*/
 
 }
 } // namespace gamemd
@@ -4182,18 +4182,18 @@ DynamicVector *  VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECT
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4a0e13*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4a0e16*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4a0e20*/
+  v3 = *(void **)&this->m_1[3]; /*0x4a0e13*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4a0e20*/
   {
     __3_YAXPAX_Z(v3); /*0x4a0e28*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4a0e30*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4a0e30*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4a0e3b*/
-  Block->m_8 = 0; /*0x4a0e41*/
+  BYTE1(this->m_C) = 0; /*0x4a0e3b*/
+  this->m_8 = 0; /*0x4a0e41*/
   if ( (a2 & 1) != 0 ) /*0x4a0e48*/
-    __3_YAXPAX_Z(Block); /*0x4a0e4b*/
-  return Block->__pad_0; /*0x4a0e55*/
+    __3_YAXPAX_Z(this); /*0x4a0e4b*/
+  return this->__pad_0; /*0x4a0e55*/
 
 }
 } // namespace gamemd
@@ -4391,7 +4391,7 @@ unsigned int * VectorClass_ptr_CrossDissolveEffect::loc_4BA1B0(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ba1b3*/
-  *Block = &off_7E8500; /*0x4ba1b6*/
+  *Block = (unsigned int)&off_7E8500;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ba1c0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba1c8*/
@@ -4467,18 +4467,18 @@ DynamicVector * VectorClass_ptr_EBolt::Constructor_VectorClass_EBolt___(unsigned
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4c2f53*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4c2f56*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4c2f60*/
+  v3 = *(void **)&this->m_1[3]; /*0x4c2f53*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4c2f60*/
   {
     __3_YAXPAX_Z(v3); /*0x4c2f68*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4c2f70*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4c2f70*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4c2f7b*/
-  Block->m_8 = 0; /*0x4c2f81*/
+  BYTE1(this->m_C) = 0; /*0x4c2f7b*/
+  this->m_8 = 0; /*0x4c2f81*/
   if ( (a2 & 1) != 0 ) /*0x4c2f88*/
-    __3_YAXPAX_Z(Block); /*0x4c2f8b*/
-  return Block->__pad_0; /*0x4c2f95*/
+    __3_YAXPAX_Z(this); /*0x4c2f8b*/
+  return this->__pad_0; /*0x4c2f95*/
 
 }
 } // namespace gamemd
@@ -4540,18 +4540,18 @@ DynamicVector * VectorClass_ptr_EgoClass::Constructor_VectorClass_EgoClass___(un
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4c4cb3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4c4cb6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4c4cc0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4c4cb3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4c4cc0*/
   {
     __3_YAXPAX_Z(v3); /*0x4c4cc8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4c4cd0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4c4cd0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4c4cdb*/
-  Block->m_8 = 0; /*0x4c4ce1*/
+  BYTE1(this->m_C) = 0; /*0x4c4cdb*/
+  this->m_8 = 0; /*0x4c4ce1*/
   if ( (a2 & 1) != 0 ) /*0x4c4ce8*/
-    __3_YAXPAX_Z(Block); /*0x4c4ceb*/
-  return Block->__pad_0; /*0x4c4cf5*/
+    __3_YAXPAX_Z(this); /*0x4c4ceb*/
+  return this->__pad_0; /*0x4c4cf5*/
 
 }
 } // namespace gamemd
@@ -4613,18 +4613,18 @@ DynamicVector * VectorClass_ptr_EMPulseClass::Constructor_VectorClass_EMPulseCla
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4c5e73*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4c5e76*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4c5e80*/
+  v3 = *(void **)&this->m_1[3]; /*0x4c5e73*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4c5e80*/
   {
     __3_YAXPAX_Z(v3); /*0x4c5e88*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4c5e90*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4c5e90*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4c5e9b*/
-  Block->m_8 = 0; /*0x4c5ea1*/
+  BYTE1(this->m_C) = 0; /*0x4c5e9b*/
+  this->m_8 = 0; /*0x4c5ea1*/
   if ( (a2 & 1) != 0 ) /*0x4c5ea8*/
-    __3_YAXPAX_Z(Block); /*0x4c5eab*/
-  return Block->__pad_0; /*0x4c5eb5*/
+    __3_YAXPAX_Z(this); /*0x4c5eab*/
+  return this->__pad_0; /*0x4c5eb5*/
 
 }
 } // namespace gamemd
@@ -6761,18 +6761,18 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_SuperClass__
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4ef673*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef676*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4ef680*/
+  v3 = *(void **)&this->m_1[3]; /*0x4ef673*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4ef680*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef688*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4ef690*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4ef690*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4ef69b*/
-  Block->m_8 = 0; /*0x4ef6a1*/
+  BYTE1(this->m_C) = 0; /*0x4ef69b*/
+  this->m_8 = 0; /*0x4ef6a1*/
   if ( (a2 & 1) != 0 ) /*0x4ef6a8*/
-    __3_YAXPAX_Z(Block); /*0x4ef6ab*/
-  return Block->__pad_0; /*0x4ef6b5*/
+    __3_YAXPAX_Z(this); /*0x4ef6ab*/
+  return this->__pad_0; /*0x4ef6b5*/
 
 }
 } // namespace gamemd
@@ -6788,18 +6788,18 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITr
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4ef713*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef716*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4ef720*/
+  v3 = *(void **)&this->m_1[3]; /*0x4ef713*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4ef720*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef728*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4ef730*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4ef730*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4ef73b*/
-  Block->m_8 = 0; /*0x4ef741*/
+  BYTE1(this->m_C) = 0; /*0x4ef73b*/
+  this->m_8 = 0; /*0x4ef741*/
   if ( (a2 & 1) != 0 ) /*0x4ef748*/
-    __3_YAXPAX_Z(Block); /*0x4ef74b*/
-  return Block->__pad_0; /*0x4ef755*/
+    __3_YAXPAX_Z(this); /*0x4ef74b*/
+  return this->__pad_0; /*0x4ef755*/
 
 }
 } // namespace gamemd
@@ -6815,18 +6815,18 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Buil
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4ef7b3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef7b6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4ef7c0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4ef7b3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4ef7c0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef7c8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4ef7d0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4ef7d0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4ef7db*/
-  Block->m_8 = 0; /*0x4ef7e1*/
+  BYTE1(this->m_C) = 0; /*0x4ef7db*/
+  this->m_8 = 0; /*0x4ef7e1*/
   if ( (a2 & 1) != 0 ) /*0x4ef7e8*/
-    __3_YAXPAX_Z(Block); /*0x4ef7eb*/
-  return Block->__pad_0; /*0x4ef7f5*/
+    __3_YAXPAX_Z(this); /*0x4ef7eb*/
+  return this->__pad_0; /*0x4ef7f5*/
 
 }
 } // namespace gamemd
@@ -6842,18 +6842,18 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_TeamClass___(
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4ef8f3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef8f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4ef900*/
+  v3 = *(void **)&this->m_1[3]; /*0x4ef8f3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4ef900*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef908*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4ef910*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4ef910*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4ef91b*/
-  Block->m_8 = 0; /*0x4ef921*/
+  BYTE1(this->m_C) = 0; /*0x4ef91b*/
+  this->m_8 = 0; /*0x4ef921*/
   if ( (a2 & 1) != 0 ) /*0x4ef928*/
-    __3_YAXPAX_Z(Block); /*0x4ef92b*/
-  return Block->__pad_0; /*0x4ef935*/
+    __3_YAXPAX_Z(this); /*0x4ef92b*/
+  return this->__pad_0; /*0x4ef935*/
 
 }
 } // namespace gamemd
@@ -6873,18 +6873,18 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4ef9e3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef9e6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4ef9f0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4ef9e3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4ef9f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef9f8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4efa00*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4efa00*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4efa0b*/
-  Block->m_8 = 0; /*0x4efa11*/
+  BYTE1(this->m_C) = 0; /*0x4efa0b*/
+  this->m_8 = 0; /*0x4efa11*/
   if ( (a2 & 1) != 0 ) /*0x4efa18*/
-    __3_YAXPAX_Z(Block); /*0x4efa1b*/
-  return Block->__pad_0; /*0x4efa25*/
+    __3_YAXPAX_Z(this); /*0x4efa1b*/
+  return this->__pad_0; /*0x4efa25*/
 
 }
 } // namespace gamemd
@@ -6900,18 +6900,18 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4efa83*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efa86*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4efa90*/
+  v3 = *(void **)&this->m_1[3]; /*0x4efa83*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4efa90*/
   {
     __3_YAXPAX_Z(v3); /*0x4efa98*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4efaa0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4efaa0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4efaab*/
-  Block->m_8 = 0; /*0x4efab1*/
+  BYTE1(this->m_C) = 0; /*0x4efaab*/
+  this->m_8 = 0; /*0x4efab1*/
   if ( (a2 & 1) != 0 ) /*0x4efab8*/
-    __3_YAXPAX_Z(Block); /*0x4efabb*/
-  return Block->__pad_0; /*0x4efac5*/
+    __3_YAXPAX_Z(this); /*0x4efabb*/
+  return this->__pad_0; /*0x4efac5*/
 
 }
 } // namespace gamemd
@@ -6927,18 +6927,18 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_TubeClass___(
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4efb23*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efb26*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4efb30*/
+  v3 = *(void **)&this->m_1[3]; /*0x4efb23*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4efb30*/
   {
     __3_YAXPAX_Z(v3); /*0x4efb38*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4efb40*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4efb40*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4efb4b*/
-  Block->m_8 = 0; /*0x4efb51*/
+  BYTE1(this->m_C) = 0; /*0x4efb4b*/
+  this->m_8 = 0; /*0x4efb51*/
   if ( (a2 & 1) != 0 ) /*0x4efb58*/
-    __3_YAXPAX_Z(Block); /*0x4efb5b*/
-  return Block->__pad_0; /*0x4efb65*/
+    __3_YAXPAX_Z(this); /*0x4efb5b*/
+  return this->__pad_0; /*0x4efb65*/
 
 }
 } // namespace gamemd
@@ -6954,18 +6954,18 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Part
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4efbc3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efbc6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4efbd0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4efbc3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4efbd0*/
   {
     __3_YAXPAX_Z(v3); /*0x4efbd8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4efbe0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4efbe0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4efbeb*/
-  Block->m_8 = 0; /*0x4efbf1*/
+  BYTE1(this->m_C) = 0; /*0x4efbeb*/
+  this->m_8 = 0; /*0x4efbf1*/
   if ( (a2 & 1) != 0 ) /*0x4efbf8*/
-    __3_YAXPAX_Z(Block); /*0x4efbfb*/
-  return Block->__pad_0; /*0x4efc05*/
+    __3_YAXPAX_Z(this); /*0x4efbfb*/
+  return this->__pad_0; /*0x4efc05*/
 
 }
 } // namespace gamemd
@@ -6981,18 +6981,18 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_WaveClass___(
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4efc63*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efc66*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4efc70*/
+  v3 = *(void **)&this->m_1[3]; /*0x4efc63*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4efc70*/
   {
     __3_YAXPAX_Z(v3); /*0x4efc78*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4efc80*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4efc80*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4efc8b*/
-  Block->m_8 = 0; /*0x4efc91*/
+  BYTE1(this->m_C) = 0; /*0x4efc8b*/
+  this->m_8 = 0; /*0x4efc91*/
   if ( (a2 & 1) != 0 ) /*0x4efc98*/
-    __3_YAXPAX_Z(Block); /*0x4efc9b*/
-  return Block->__pad_0; /*0x4efca5*/
+    __3_YAXPAX_Z(this); /*0x4efc9b*/
+  return this->__pad_0; /*0x4efca5*/
 
 }
 } // namespace gamemd
@@ -7008,18 +7008,18 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_OverlayClass_
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4efd03*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4efd06*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4efd10*/
+  v3 = *(void **)&this->m_1[3]; /*0x4efd03*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4efd10*/
   {
     __3_YAXPAX_Z(v3); /*0x4efd18*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4efd20*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4efd20*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4efd2b*/
-  Block->m_8 = 0; /*0x4efd31*/
+  BYTE1(this->m_C) = 0; /*0x4efd2b*/
+  this->m_8 = 0; /*0x4efd31*/
   if ( (a2 & 1) != 0 ) /*0x4efd38*/
-    __3_YAXPAX_Z(Block); /*0x4efd3b*/
-  return Block->__pad_0; /*0x4efd45*/
+    __3_YAXPAX_Z(this); /*0x4efd3b*/
+  return this->__pad_0; /*0x4efd45*/
 
 }
 } // namespace gamemd
@@ -7039,18 +7039,18 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_UnitClass___(
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4eff83*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4eff86*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4eff90*/
+  v3 = *(void **)&this->m_1[3]; /*0x4eff83*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4eff90*/
   {
     __3_YAXPAX_Z(v3); /*0x4eff98*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4effa0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4effa0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4effab*/
-  Block->m_8 = 0; /*0x4effb1*/
+  BYTE1(this->m_C) = 0; /*0x4effab*/
+  this->m_8 = 0; /*0x4effb1*/
   if ( (a2 & 1) != 0 ) /*0x4effb8*/
-    __3_YAXPAX_Z(Block); /*0x4effbb*/
-  return Block->__pad_0; /*0x4effc5*/
+    __3_YAXPAX_Z(this); /*0x4effbb*/
+  return this->__pad_0; /*0x4effc5*/
 
 }
 } // namespace gamemd
@@ -7066,18 +7066,18 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_HouseClass___
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0023*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0026*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0030*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0023*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0030*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0038*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0040*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0040*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f004b*/
-  Block->m_8 = 0; /*0x4f0051*/
+  BYTE1(this->m_C) = 0; /*0x4f004b*/
+  this->m_8 = 0; /*0x4f0051*/
   if ( (a2 & 1) != 0 ) /*0x4f0058*/
-    __3_YAXPAX_Z(Block); /*0x4f005b*/
-  return Block->__pad_0; /*0x4f0065*/
+    __3_YAXPAX_Z(this); /*0x4f005b*/
+  return this->__pad_0; /*0x4f0065*/
 
 }
 } // namespace gamemd
@@ -7093,18 +7093,18 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_AnimClass___(
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f00c3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f00c6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f00d0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f00c3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f00d0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f00d8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f00e0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f00e0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f00eb*/
-  Block->m_8 = 0; /*0x4f00f1*/
+  BYTE1(this->m_C) = 0; /*0x4f00eb*/
+  this->m_8 = 0; /*0x4f00f1*/
   if ( (a2 & 1) != 0 ) /*0x4f00f8*/
-    __3_YAXPAX_Z(Block); /*0x4f00fb*/
-  return Block->__pad_0; /*0x4f0105*/
+    __3_YAXPAX_Z(this); /*0x4f00fb*/
+  return this->__pad_0; /*0x4f0105*/
 
 }
 } // namespace gamemd
@@ -7120,18 +7120,18 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_FactoryClass_
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0163*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0166*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0170*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0163*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0170*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0178*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0180*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0180*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f018b*/
-  Block->m_8 = 0; /*0x4f0191*/
+  BYTE1(this->m_C) = 0; /*0x4f018b*/
+  this->m_8 = 0; /*0x4f0191*/
   if ( (a2 & 1) != 0 ) /*0x4f0198*/
-    __3_YAXPAX_Z(Block); /*0x4f019b*/
-  return Block->__pad_0; /*0x4f01a5*/
+    __3_YAXPAX_Z(this); /*0x4f019b*/
+  return this->__pad_0; /*0x4f01a5*/
 
 }
 } // namespace gamemd
@@ -7147,18 +7147,18 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignC
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0203*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0206*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0210*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0203*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0210*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0218*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0220*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0220*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f022b*/
-  Block->m_8 = 0; /*0x4f0231*/
+  BYTE1(this->m_C) = 0; /*0x4f022b*/
+  this->m_8 = 0; /*0x4f0231*/
   if ( (a2 & 1) != 0 ) /*0x4f0238*/
-    __3_YAXPAX_Z(Block); /*0x4f023b*/
-  return Block->__pad_0; /*0x4f0245*/
+    __3_YAXPAX_Z(this); /*0x4f023b*/
+  return this->__pad_0; /*0x4f0245*/
 
 }
 } // namespace gamemd
@@ -7174,18 +7174,18 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_SideClass
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f02a3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f02a6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f02b0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f02a3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f02b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f02b8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f02c0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f02c0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f02cb*/
-  Block->m_8 = 0; /*0x4f02d1*/
+  BYTE1(this->m_C) = 0; /*0x4f02cb*/
+  this->m_8 = 0; /*0x4f02d1*/
   if ( (a2 & 1) != 0 ) /*0x4f02d8*/
-    __3_YAXPAX_Z(Block); /*0x4f02db*/
-  return Block->__pad_0; /*0x4f02e5*/
+    __3_YAXPAX_Z(this); /*0x4f02db*/
+  return this->__pad_0; /*0x4f02e5*/
 
 }
 } // namespace gamemd
@@ -7201,18 +7201,18 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_HouseTyp
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0343*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0346*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0350*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0343*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0350*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0358*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0360*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0360*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f036b*/
-  Block->m_8 = 0; /*0x4f0371*/
+  BYTE1(this->m_C) = 0; /*0x4f036b*/
+  this->m_8 = 0; /*0x4f0371*/
   if ( (a2 & 1) != 0 ) /*0x4f0378*/
-    __3_YAXPAX_Z(Block); /*0x4f037b*/
-  return Block->__pad_0; /*0x4f0385*/
+    __3_YAXPAX_Z(this); /*0x4f037b*/
+  return this->__pad_0; /*0x4f0385*/
 
 }
 } // namespace gamemd
@@ -7228,18 +7228,18 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TaskForc
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f03e3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f03e6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f03f0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f03e3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f03f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f03f8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0400*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0400*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f040b*/
-  Block->m_8 = 0; /*0x4f0411*/
+  BYTE1(this->m_C) = 0; /*0x4f040b*/
+  this->m_8 = 0; /*0x4f0411*/
   if ( (a2 & 1) != 0 ) /*0x4f0418*/
-    __3_YAXPAX_Z(Block); /*0x4f041b*/
-  return Block->__pad_0; /*0x4f0425*/
+    __3_YAXPAX_Z(this); /*0x4f041b*/
+  return this->__pad_0; /*0x4f0425*/
 
 }
 } // namespace gamemd
@@ -7255,18 +7255,18 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TeamType
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0483*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0486*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0490*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0483*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0490*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0498*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f04a0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f04a0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f04ab*/
-  Block->m_8 = 0; /*0x4f04b1*/
+  BYTE1(this->m_C) = 0; /*0x4f04ab*/
+  this->m_8 = 0; /*0x4f04b1*/
   if ( (a2 & 1) != 0 ) /*0x4f04b8*/
-    __3_YAXPAX_Z(Block); /*0x4f04bb*/
-  return Block->__pad_0; /*0x4f04c5*/
+    __3_YAXPAX_Z(this); /*0x4f04bb*/
+  return this->__pad_0; /*0x4f04c5*/
 
 }
 } // namespace gamemd
@@ -7282,18 +7282,18 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptT
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0523*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0526*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0530*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0523*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0530*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0538*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0540*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0540*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f054b*/
-  Block->m_8 = 0; /*0x4f0551*/
+  BYTE1(this->m_C) = 0; /*0x4f054b*/
+  this->m_8 = 0; /*0x4f0551*/
   if ( (a2 & 1) != 0 ) /*0x4f0558*/
-    __3_YAXPAX_Z(Block); /*0x4f055b*/
-  return Block->__pad_0; /*0x4f0565*/
+    __3_YAXPAX_Z(this); /*0x4f055b*/
+  return this->__pad_0; /*0x4f0565*/
 
 }
 } // namespace gamemd
@@ -7309,18 +7309,18 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_Overlay
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f05c3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f05c6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f05d0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f05c3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f05d0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f05d8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f05e0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f05e0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f05eb*/
-  Block->m_8 = 0; /*0x4f05f1*/
+  BYTE1(this->m_C) = 0; /*0x4f05eb*/
+  this->m_8 = 0; /*0x4f05f1*/
   if ( (a2 & 1) != 0 ) /*0x4f05f8*/
-    __3_YAXPAX_Z(Block); /*0x4f05fb*/
-  return Block->__pad_0; /*0x4f0605*/
+    __3_YAXPAX_Z(this); /*0x4f05fb*/
+  return this->__pad_0; /*0x4f0605*/
 
 }
 } // namespace gamemd
@@ -7336,18 +7336,18 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeT
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0663*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0666*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0670*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0663*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0670*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0678*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0680*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0680*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f068b*/
-  Block->m_8 = 0; /*0x4f0691*/
+  BYTE1(this->m_C) = 0; /*0x4f068b*/
+  this->m_8 = 0; /*0x4f0691*/
   if ( (a2 & 1) != 0 ) /*0x4f0698*/
-    __3_YAXPAX_Z(Block); /*0x4f069b*/
-  return Block->__pad_0; /*0x4f06a5*/
+    __3_YAXPAX_Z(this); /*0x4f069b*/
+  return this->__pad_0; /*0x4f06a5*/
 
 }
 } // namespace gamemd
@@ -7363,18 +7363,18 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Terrain
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0703*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0706*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0710*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0703*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0710*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0718*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0720*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0720*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f072b*/
-  Block->m_8 = 0; /*0x4f0731*/
+  BYTE1(this->m_C) = 0; /*0x4f072b*/
+  this->m_8 = 0; /*0x4f0731*/
   if ( (a2 & 1) != 0 ) /*0x4f0738*/
-    __3_YAXPAX_Z(Block); /*0x4f073b*/
-  return Block->__pad_0; /*0x4f0745*/
+    __3_YAXPAX_Z(this); /*0x4f073b*/
+  return this->__pad_0; /*0x4f0745*/
 
 }
 } // namespace gamemd
@@ -7390,18 +7390,18 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Buildin
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f07a3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f07a6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f07b0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f07a3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f07b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f07b8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f07c0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f07c0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f07cb*/
-  Block->m_8 = 0; /*0x4f07d1*/
+  BYTE1(this->m_C) = 0; /*0x4f07cb*/
+  this->m_8 = 0; /*0x4f07d1*/
   if ( (a2 & 1) != 0 ) /*0x4f07d8*/
-    __3_YAXPAX_Z(Block); /*0x4f07db*/
-  return Block->__pad_0; /*0x4f07e5*/
+    __3_YAXPAX_Z(this); /*0x4f07db*/
+  return this->__pad_0; /*0x4f07e5*/
 
 }
 } // namespace gamemd
@@ -7417,18 +7417,18 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_Aircr
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0843*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0846*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0850*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0843*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0850*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0858*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0860*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0860*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f086b*/
-  Block->m_8 = 0; /*0x4f0871*/
+  BYTE1(this->m_C) = 0; /*0x4f086b*/
+  this->m_8 = 0; /*0x4f0871*/
   if ( (a2 & 1) != 0 ) /*0x4f0878*/
-    __3_YAXPAX_Z(Block); /*0x4f087b*/
-  return Block->__pad_0; /*0x4f0885*/
+    __3_YAXPAX_Z(this); /*0x4f087b*/
+  return this->__pad_0; /*0x4f0885*/
 
 }
 } // namespace gamemd
@@ -7444,18 +7444,18 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitT
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f08e3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f08e6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f08f0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f08e3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f08f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f08f8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0900*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0900*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f090b*/
-  Block->m_8 = 0; /*0x4f0911*/
+  BYTE1(this->m_C) = 0; /*0x4f090b*/
+  this->m_8 = 0; /*0x4f0911*/
   if ( (a2 & 1) != 0 ) /*0x4f0918*/
-    __3_YAXPAX_Z(Block); /*0x4f091b*/
-  return Block->__pad_0; /*0x4f0925*/
+    __3_YAXPAX_Z(this); /*0x4f091b*/
+  return this->__pad_0; /*0x4f0925*/
 
 }
 } // namespace gamemd
@@ -7471,18 +7471,18 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeC
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0983*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0986*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0990*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0983*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0990*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0998*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f09a0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f09a0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f09ab*/
-  Block->m_8 = 0; /*0x4f09b1*/
+  BYTE1(this->m_C) = 0; /*0x4f09ab*/
+  this->m_8 = 0; /*0x4f09b1*/
   if ( (a2 & 1) != 0 ) /*0x4f09b8*/
-    __3_YAXPAX_Z(Block); /*0x4f09bb*/
-  return Block->__pad_0; /*0x4f09c5*/
+    __3_YAXPAX_Z(this); /*0x4f09bb*/
+  return this->__pad_0; /*0x4f09c5*/
 
 }
 } // namespace gamemd
@@ -7498,18 +7498,18 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryT
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0a23*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0a26*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0a30*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0a23*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0a30*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0a38*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0a40*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0a40*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f0a4b*/
-  Block->m_8 = 0; /*0x4f0a51*/
+  BYTE1(this->m_C) = 0; /*0x4f0a4b*/
+  this->m_8 = 0; /*0x4f0a51*/
   if ( (a2 & 1) != 0 ) /*0x4f0a58*/
-    __3_YAXPAX_Z(Block); /*0x4f0a5b*/
-  return Block->__pad_0; /*0x4f0a65*/
+    __3_YAXPAX_Z(this); /*0x4f0a5b*/
+  return this->__pad_0; /*0x4f0a65*/
 
 }
 } // namespace gamemd
@@ -7525,18 +7525,18 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTyp
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0ac3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0ac6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0ad0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0ac3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0ad8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0ae0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0ae0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f0aeb*/
-  Block->m_8 = 0; /*0x4f0af1*/
+  BYTE1(this->m_C) = 0; /*0x4f0aeb*/
+  this->m_8 = 0; /*0x4f0af1*/
   if ( (a2 & 1) != 0 ) /*0x4f0af8*/
-    __3_YAXPAX_Z(Block); /*0x4f0afb*/
-  return Block->__pad_0; /*0x4f0b05*/
+    __3_YAXPAX_Z(this); /*0x4f0afb*/
+  return this->__pad_0; /*0x4f0b05*/
 
 }
 } // namespace gamemd
@@ -7552,18 +7552,18 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Voxe
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0b63*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0b66*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0b70*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0b63*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0b70*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0b78*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0b80*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0b80*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f0b8b*/
-  Block->m_8 = 0; /*0x4f0b91*/
+  BYTE1(this->m_C) = 0; /*0x4f0b8b*/
+  this->m_8 = 0; /*0x4f0b91*/
   if ( (a2 & 1) != 0 ) /*0x4f0b98*/
-    __3_YAXPAX_Z(Block); /*0x4f0b9b*/
-  return Block->__pad_0; /*0x4f0ba5*/
+    __3_YAXPAX_Z(this); /*0x4f0b9b*/
+  return this->__pad_0; /*0x4f0ba5*/
 
 }
 } // namespace gamemd
@@ -7579,18 +7579,18 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Isom
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0c03*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0c06*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0c10*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0c03*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0c10*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0c18*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0c20*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0c20*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f0c2b*/
-  Block->m_8 = 0; /*0x4f0c31*/
+  BYTE1(this->m_C) = 0; /*0x4f0c2b*/
+  this->m_8 = 0; /*0x4f0c31*/
   if ( (a2 & 1) != 0 ) /*0x4f0c38*/
-    __3_YAXPAX_Z(Block); /*0x4f0c3b*/
-  return Block->__pad_0; /*0x4f0c45*/
+    __3_YAXPAX_Z(this); /*0x4f0c3b*/
+  return this->__pad_0; /*0x4f0c45*/
 
 }
 } // namespace gamemd
@@ -7606,18 +7606,18 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0ca3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0ca6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0cb0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0ca3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0cb0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0cb8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0cc0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0cc0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f0ccb*/
-  Block->m_8 = 0; /*0x4f0cd1*/
+  BYTE1(this->m_C) = 0; /*0x4f0ccb*/
+  this->m_8 = 0; /*0x4f0cd1*/
   if ( (a2 & 1) != 0 ) /*0x4f0cd8*/
-    __3_YAXPAX_Z(Block); /*0x4f0cdb*/
-  return Block->__pad_0; /*0x4f0ce5*/
+    __3_YAXPAX_Z(this); /*0x4f0cdb*/
+  return this->__pad_0; /*0x4f0ce5*/
 
 }
 } // namespace gamemd
@@ -7633,18 +7633,18 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0d43*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0d46*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0d50*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0d43*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0d50*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0d58*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0d60*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0d60*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f0d6b*/
-  Block->m_8 = 0; /*0x4f0d71*/
+  BYTE1(this->m_C) = 0; /*0x4f0d6b*/
+  this->m_8 = 0; /*0x4f0d71*/
   if ( (a2 & 1) != 0 ) /*0x4f0d78*/
-    __3_YAXPAX_Z(Block); /*0x4f0d7b*/
-  return Block->__pad_0; /*0x4f0d85*/
+    __3_YAXPAX_Z(this); /*0x4f0d7b*/
+  return this->__pad_0; /*0x4f0d85*/
 
 }
 } // namespace gamemd
@@ -7660,18 +7660,18 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Super
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0de3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0de6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0df0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0de3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0df0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0df8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0e00*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0e00*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f0e0b*/
-  Block->m_8 = 0; /*0x4f0e11*/
+  BYTE1(this->m_C) = 0; /*0x4f0e0b*/
+  this->m_8 = 0; /*0x4f0e11*/
   if ( (a2 & 1) != 0 ) /*0x4f0e18*/
-    __3_YAXPAX_Z(Block); /*0x4f0e1b*/
-  return Block->__pad_0; /*0x4f0e25*/
+    __3_YAXPAX_Z(this); /*0x4f0e1b*/
+  return this->__pad_0; /*0x4f0e25*/
 
 }
 } // namespace gamemd
@@ -7687,18 +7687,18 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_AbstractType
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4f0e83*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4f0e86*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4f0e90*/
+  v3 = *(void **)&this->m_1[3]; /*0x4f0e83*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4f0e90*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0e98*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4f0ea0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4f0ea0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4f0eab*/
-  Block->m_8 = 0; /*0x4f0eb1*/
+  BYTE1(this->m_C) = 0; /*0x4f0eab*/
+  this->m_8 = 0; /*0x4f0eb1*/
   if ( (a2 & 1) != 0 ) /*0x4f0eb8*/
-    __3_YAXPAX_Z(Block); /*0x4f0ebb*/
-  return Block->__pad_0; /*0x4f0ec5*/
+    __3_YAXPAX_Z(this); /*0x4f0ebb*/
+  return this->__pad_0; /*0x4f0ec5*/
 
 }
 } // namespace gamemd
@@ -8310,18 +8310,18 @@ VectorClass_flat * VectorClass_BuildingType::Get(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x50fff3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x50fff6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x510000*/
+  v3 = *(void **)&this->m_1[3]; /*0x50fff3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x510000*/
   {
     __3_YAXPAX_Z(v3); /*0x510008*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x510010*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x510010*/
   }
-  BYTE1(Block->m_C) = 0; /*0x51001b*/
-  Block->m_8 = 0; /*0x510021*/
+  BYTE1(this->m_C) = 0; /*0x51001b*/
+  this->m_8 = 0; /*0x510021*/
   if ( (a2 & 1) != 0 ) /*0x510028*/
-    __3_YAXPAX_Z(Block); /*0x51002b*/
-  return Block->__pad_0; /*0x510035*/
+    __3_YAXPAX_Z(this); /*0x51002b*/
+  return this->__pad_0; /*0x510035*/
 
 }
 } // namespace gamemd
@@ -8349,18 +8349,18 @@ DynamicVector * VectorClass_UAngerStruct::Constructor_VectorClass_AngerStruct_(u
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x510183*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x510186*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x510190*/
+  v3 = *(void **)&this->m_1[3]; /*0x510183*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x510190*/
   {
     __3_YAXPAX_Z(v3); /*0x510198*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5101a0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5101a0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5101ab*/
-  Block->m_8 = 0; /*0x5101b1*/
+  BYTE1(this->m_C) = 0; /*0x5101ab*/
+  this->m_8 = 0; /*0x5101b1*/
   if ( (a2 & 1) != 0 ) /*0x5101b8*/
-    __3_YAXPAX_Z(Block); /*0x5101bb*/
-  return Block->__pad_0; /*0x5101c5*/
+    __3_YAXPAX_Z(this); /*0x5101bb*/
+  return this->__pad_0; /*0x5101c5*/
 
 }
 } // namespace gamemd
@@ -8381,7 +8381,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::loc_5102C0(unsign
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5102c3*/
-  *Block = &vt_VectorClass_HouseClass_BuildChoiceClass; /*0x5102c6*/
+  *Block = (unsigned int)&vt_VectorClass_HouseClass_BuildChoiceClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5102d0*/
   {
     __3_YAXPAX_Z(v3); /*0x5102d8*/
@@ -8403,18 +8403,18 @@ VectorClass_flat * VectorClass_BuildingType::Constructor_0(unsigned int * Block,
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x510313*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x510316*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x510320*/
+  v3 = *(void **)&this->m_1[3]; /*0x510313*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x510320*/
   {
     __3_YAXPAX_Z(v3); /*0x510328*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x510330*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x510330*/
   }
-  BYTE1(Block->m_C) = 0; /*0x51033b*/
-  Block->m_8 = 0; /*0x510341*/
+  BYTE1(this->m_C) = 0; /*0x51033b*/
+  this->m_8 = 0; /*0x510341*/
   if ( (a2 & 1) != 0 ) /*0x510348*/
-    __3_YAXPAX_Z(Block); /*0x51034b*/
-  return Block->__pad_0; /*0x510355*/
+    __3_YAXPAX_Z(this); /*0x51034b*/
+  return this->__pad_0; /*0x510355*/
 
 }
 } // namespace gamemd
@@ -8430,18 +8430,18 @@ DynamicVector * VectorClass__N::Constructor_VectorClass_bool_(unsigned int * Blo
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5103b3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5103b6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5103c0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5103b3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5103c0*/
   {
     __3_YAXPAX_Z(v3); /*0x5103c8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5103d0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5103d0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5103db*/
-  Block->m_8 = 0; /*0x5103e1*/
+  BYTE1(this->m_C) = 0; /*0x5103db*/
+  this->m_8 = 0; /*0x5103e1*/
   if ( (a2 & 1) != 0 ) /*0x5103e8*/
-    __3_YAXPAX_Z(Block); /*0x5103eb*/
-  return Block->__pad_0; /*0x5103f5*/
+    __3_YAXPAX_Z(this); /*0x5103eb*/
+  return this->__pad_0; /*0x5103f5*/
 
 }
 } // namespace gamemd
@@ -8507,7 +8507,7 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2(int a1, const void * a2, unsigned int * a3)
 {
 
-  return HouseClass::QueryInterface(a1 - 36, a2, a3);
+  return HouseClass::QueryInterface( a1 - 36, (const void *)(a2), (unsigned int *)(a3));
 
 }
 } // namespace gamemd
@@ -8537,7 +8537,7 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5(int a1, const void * a2, unsigned int * a3)
 {
 
-  return HouseClass::QueryInterface(a1 - 40, a2, a3);
+  return HouseClass::QueryInterface( a1 - 40, (const void *)(a2), (unsigned int *)(a3));
 
 }
 } // namespace gamemd
@@ -8587,7 +8587,7 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10(int a1, const void * a2, unsigned int * a3)
 {
 
-  return HouseClass::QueryInterface(a1 - 44, a2, a3);
+  return HouseClass::QueryInterface( a1 - 44, (const void *)(a2), (unsigned int *)(a3));
 
 }
 } // namespace gamemd
@@ -8831,18 +8831,18 @@ DynamicVector * VectorClass_ptr_IonBlastClass::Constructor_VectorClass_IonBlastC
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x53dd53*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x53dd56*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x53dd60*/
+  v3 = *(void **)&this->m_1[3]; /*0x53dd53*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x53dd60*/
   {
     __3_YAXPAX_Z(v3); /*0x53dd68*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x53dd70*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x53dd70*/
   }
-  BYTE1(Block->m_C) = 0; /*0x53dd7b*/
-  Block->m_8 = 0; /*0x53dd81*/
+  BYTE1(this->m_C) = 0; /*0x53dd7b*/
+  this->m_8 = 0; /*0x53dd81*/
   if ( (a2 & 1) != 0 ) /*0x53dd88*/
-    __3_YAXPAX_Z(Block); /*0x53dd8b*/
-  return Block->__pad_0; /*0x53dd95*/
+    __3_YAXPAX_Z(this); /*0x53dd8b*/
+  return this->__pad_0; /*0x53dd95*/
 
 }
 } // namespace gamemd
@@ -9001,18 +9001,18 @@ DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDra
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5515e3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5515e6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5515f0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5515e3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5515f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5515f8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x551600*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x551600*/
   }
-  BYTE1(Block->m_C) = 0; /*0x55160b*/
-  Block->m_8 = 0; /*0x551611*/
+  BYTE1(this->m_C) = 0; /*0x55160b*/
+  this->m_8 = 0; /*0x551611*/
   if ( (a2 & 1) != 0 ) /*0x551618*/
-    __3_YAXPAX_Z(Block); /*0x55161b*/
-  return Block->__pad_0; /*0x551625*/
+    __3_YAXPAX_Z(this); /*0x55161b*/
+  return this->__pad_0; /*0x551625*/
 
 }
 } // namespace gamemd
@@ -9120,18 +9120,18 @@ DynamicVector * VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightS
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5557d3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5557d6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5557e0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5557d3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5557e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5557e8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5557f0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5557f0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5557fb*/
-  Block->m_8 = 0; /*0x555801*/
+  BYTE1(this->m_C) = 0; /*0x5557fb*/
+  this->m_8 = 0; /*0x555801*/
   if ( (a2 & 1) != 0 ) /*0x555808*/
-    __3_YAXPAX_Z(Block); /*0x55580b*/
-  return Block->__pad_0; /*0x555815*/
+    __3_YAXPAX_Z(this); /*0x55580b*/
+  return this->__pad_0; /*0x555815*/
 
 }
 } // namespace gamemd
@@ -9225,7 +9225,7 @@ int VectorClass_flat::RemoveItem(ObjectClass * aP1, void *a2)
   result = aP1; /*0x55bae0*/
   if ( *(unsigned char *)(aP1 + 152) ) /*0x55bae7*/
   {
-    v4 = (*(int (**)(DynamicVectorClass *, int *))(this->vtable1 + 16))(this, &aP1); /*0x55bafa*/
+    v4 = (*(int (**)(DynamicVectorClass *, int *))(this->vtable1 + 16))( this, (int *)(&aP1)); /*0x55bafa*/
     if ( v4 != -1 ) /*0x55bb00*/
     {
       Count = this->Count; /*0x55bb02*/
@@ -9413,7 +9413,7 @@ char VectorClass_W4PassabilityType::SetCapacity_1(int a2, char * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(12 * a2); /*0x58a2c7*/
+      v6 = (unsigned int)__2_YAPAXI_Z(12 * a2); /*0x58a2c7*/
       if ( v6 ) /*0x58a2d1*/
       {
         if ( a2 - 1 >= 0 ) /*0x58a2d8*/
@@ -9526,11 +9526,11 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
 
   if ( (a2 & 2) != 0 ) /*0x58a84a*/
   {
-    v3 = *((unsigned int *)Block - 1); /*0x58a84c*/
-    v4 = (char *)Block - 4; /*0x58a850*/
+    v3 = *((unsigned int *)this - 1); /*0x58a84c*/
+    v4 = (char *)this - 4; /*0x58a850*/
     v5 = 3 * v3; /*0x58a853*/
     v6 = v3 - 1; /*0x58a856*/
-    v7 = &Block->__pad_0[8 * v5]; /*0x58a857*/
+    v7 = &this->__pad_0[8 * v5]; /*0x58a857*/
     if ( v6 >= 0 ) /*0x58a85a*/
     {
       v8 = v6 + 1; /*0x58a85d*/
@@ -9538,7 +9538,7 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
       {
         v9 = (void *)*((unsigned int *)v7 - 5); /*0x58a862*/
         v7 -= 24; /*0x58a865*/
-        *(unsigned int *)v7 = &vt_VectorClassHashObject; /*0x58a86a*/
+        *(unsigned int *)v7 = (unsigned int)&vt_VectorClassHashObject;
         if ( v9 && v7[13] ) /*0x58a872*/
         {
           __3_YAXPAX_Z(v9); /*0x58a878*/
@@ -9556,18 +9556,18 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
   }
   else
   {
-    v11 = *(void **)&Block->m_1[3]; /*0x58a8a5*/
-    *(unsigned int *)Block->__pad_0 = &vt_VectorClassHashObject; /*0x58a8ac*/
-    if ( v11 && BYTE1(Block->m_C) ) /*0x58a8b4*/
+    v11 = *(void **)&this->m_1[3]; /*0x58a8a5*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassHashObject;
+    if ( v11 && BYTE1(this->m_C) ) /*0x58a8b4*/
     {
       __3_YAXPAX_Z(v11); /*0x58a8ba*/
-      *(unsigned int *)&Block->m_1[3] = 0; /*0x58a8c2*/
+      *(unsigned int *)&this->m_1[3] = 0; /*0x58a8c2*/
     }
-    BYTE1(Block->m_C) = 0; /*0x58a8c9*/
-    Block->m_8 = 0; /*0x58a8ce*/
+    BYTE1(this->m_C) = 0; /*0x58a8c9*/
+    this->m_8 = 0; /*0x58a8ce*/
     if ( (a2 & 1) != 0 ) /*0x58a8d1*/
-      __3_YAXPAX_Z(Block); /*0x58a8d4*/
-    return Block->__pad_0; /*0x58a8dc*/
+      __3_YAXPAX_Z(this); /*0x58a8d4*/
+    return this->__pad_0; /*0x58a8dc*/
   }
 
 }
@@ -9600,18 +9600,18 @@ DynamicVector * VectorClass_W4PassabilityType::Constructor_1(unsigned int * Bloc
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x58aae3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x58aae6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x58aaf0*/
+  v3 = *(void **)&this->m_1[3]; /*0x58aae3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x58aaf0*/
   {
     __3_YAXPAX_Z(v3); /*0x58aaf8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x58ab00*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x58ab00*/
   }
-  BYTE1(Block->m_C) = 0; /*0x58ab0b*/
-  Block->m_8 = 0; /*0x58ab11*/
+  BYTE1(this->m_C) = 0; /*0x58ab0b*/
+  this->m_8 = 0; /*0x58ab11*/
   if ( (a2 & 1) != 0 ) /*0x58ab18*/
-    __3_YAXPAX_Z(Block); /*0x58ab1b*/
-  return Block->__pad_0; /*0x58ab25*/
+    __3_YAXPAX_Z(this); /*0x58ab1b*/
+  return this->__pad_0; /*0x58ab25*/
 
 }
 } // namespace gamemd
@@ -9798,7 +9798,7 @@ unsigned int * VectorClass_ptr_MapRegionClass::loc_5AD3E0(unsigned int * Block, 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5ad3e3*/
-  *Block = &vt_VectorClass_MapRegionClass; /*0x5ad3e6*/
+  *Block = (unsigned int)&vt_VectorClass_MapRegionClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad3f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad3f8*/
@@ -9824,18 +9824,18 @@ DynamicVector * VectorClass_N::Constructor_VectorClass_double_(unsigned int * Bl
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5ad613*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5ad616*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5ad620*/
+  v3 = *(void **)&this->m_1[3]; /*0x5ad613*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5ad620*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad628*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5ad630*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5ad630*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5ad63b*/
-  Block->m_8 = 0; /*0x5ad641*/
+  BYTE1(this->m_C) = 0; /*0x5ad63b*/
+  this->m_8 = 0; /*0x5ad641*/
   if ( (a2 & 1) != 0 ) /*0x5ad648*/
-    __3_YAXPAX_Z(Block); /*0x5ad64b*/
-  return Block->__pad_0; /*0x5ad655*/
+    __3_YAXPAX_Z(this); /*0x5ad64b*/
+  return this->__pad_0; /*0x5ad655*/
 
 }
 } // namespace gamemd
@@ -10074,18 +10074,18 @@ DynamicVector * VectorClass_ptr_MSSfx::Constructor_VectorClass_MSAnim___(unsigne
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d2cf3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d2cf6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d2d00*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d2cf3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d2d00*/
   {
     __3_YAXPAX_Z(v3); /*0x5d2d08*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d2d10*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d2d10*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d2d1b*/
-  Block->m_8 = 0; /*0x5d2d21*/
+  BYTE1(this->m_C) = 0; /*0x5d2d1b*/
+  this->m_8 = 0; /*0x5d2d21*/
   if ( (a2 & 1) != 0 ) /*0x5d2d28*/
-    __3_YAXPAX_Z(Block); /*0x5d2d2b*/
-  return Block->__pad_0; /*0x5d2d35*/
+    __3_YAXPAX_Z(this); /*0x5d2d2b*/
+  return this->__pad_0; /*0x5d2d35*/
 
 }
 } // namespace gamemd
@@ -10101,18 +10101,18 @@ DynamicVector * VectorClass_Point2D::Constructor_VectorClass_MSSfx___(unsigned i
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d2d93*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d2d96*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d2da0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d2d93*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d2da0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d2da8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d2db0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d2db0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d2dbb*/
-  Block->m_8 = 0; /*0x5d2dc1*/
+  BYTE1(this->m_C) = 0; /*0x5d2dbb*/
+  this->m_8 = 0; /*0x5d2dc1*/
   if ( (a2 & 1) != 0 ) /*0x5d2dc8*/
-    __3_YAXPAX_Z(Block); /*0x5d2dcb*/
-  return Block->__pad_0; /*0x5d2dd5*/
+    __3_YAXPAX_Z(this); /*0x5d2dcb*/
+  return this->__pad_0; /*0x5d2dd5*/
 
 }
 } // namespace gamemd
@@ -10293,18 +10293,18 @@ VectorClass_flat * VectorClass_cptr_MultiMission::GetAt(unsigned int * Block, ch
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5eeec3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5eeec6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5eeed0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5eeec3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5eeed0*/
   {
     __3_YAXPAX_Z(v3); /*0x5eeed8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5eeee0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5eeee0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5eeeeb*/
-  Block->m_8 = 0; /*0x5eeef1*/
+  BYTE1(this->m_C) = 0; /*0x5eeeeb*/
+  this->m_8 = 0; /*0x5eeef1*/
   if ( (a2 & 1) != 0 ) /*0x5eeef8*/
-    __3_YAXPAX_Z(Block); /*0x5eeefb*/
-  return Block->__pad_0; /*0x5eef05*/
+    __3_YAXPAX_Z(this); /*0x5eeefb*/
+  return this->__pad_0; /*0x5eef05*/
 
 }
 } // namespace gamemd
@@ -10330,7 +10330,7 @@ int VectorClass_cptr_MultiMission::j_vt09(unsigned char * a1, signed int a3, int
   *v8 = -9539; /*0x5ef1af*/
   v8[1] = a3; /*0x5ef1b4*/
   v8[2] = -8529; /*0x5ef1b8*/
-  qmemcpy((void *)(this->field_50 + 6), a1, a3); /*0x5ef1cb*/
+  qmemcpy( (void *)(this->field_50 + 6), (const void *)(a1), a3); /*0x5ef1cb*/
   v9 = 0; /*0x5ef1dc*/
   v10 = (unsigned int *)(this->field_50 + a3 + 6); /*0x5ef1de*/
   v11 = 0; /*0x5ef1e0*/
@@ -10360,7 +10360,7 @@ unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
   void *v3; // eax
 
   v3 = (void *)this->field_50; /*0x5ef293*/
-  *(unsigned int *)this->__pad_0 = &vt_NullModemConnClass; /*0x5ef296*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_NullModemConnClass;
   __3_YAXPAX_Z(v3); /*0x5ef29d*/
   ((ConnectionClass *)((ConnectionClass *)this))->dtor(); /*0x5ef2a7*/
   if ( (a2 & 1) != 0 ) /*0x5ef2b1*/
@@ -10427,18 +10427,18 @@ DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectT
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5f9e33*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5f9e36*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5f9e40*/
+  v3 = *(void **)&this->m_1[3]; /*0x5f9e33*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5f9e40*/
   {
     __3_YAXPAX_Z(v3); /*0x5f9e48*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5f9e50*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5f9e50*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5f9e5b*/
-  Block->m_8 = 0; /*0x5f9e61*/
+  BYTE1(this->m_C) = 0; /*0x5f9e5b*/
+  this->m_8 = 0; /*0x5f9e61*/
   if ( (a2 & 1) != 0 ) /*0x5f9e68*/
-    __3_YAXPAX_Z(Block); /*0x5f9e6b*/
-  return Block->__pad_0; /*0x5f9e75*/
+    __3_YAXPAX_Z(this); /*0x5f9e6b*/
+  return this->__pad_0; /*0x5f9e75*/
 
 }
 } // namespace gamemd
@@ -10509,18 +10509,18 @@ DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLigh
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x6002d3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6002d6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6002e0*/
+  v3 = *(void **)&this->m_1[3]; /*0x6002d3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x6002e0*/
   {
     __3_YAXPAX_Z(v3); /*0x6002e8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6002f0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6002f0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6002fb*/
-  *(unsigned int *)&Block->__pad_5[3] = 0; /*0x600301*/
+  BYTE1(this->m_C) = 0; /*0x6002fb*/
+  *(unsigned int *)&this->__pad_5[3] = 0; /*0x600301*/
   if ( (a2 & 1) != 0 ) /*0x600308*/
-    __3_YAXPAX_Z(Block); /*0x60030b*/
-  return Block->__pad_0; /*0x600315*/
+    __3_YAXPAX_Z(this); /*0x60030b*/
+  return this->__pad_0; /*0x600315*/
 
 }
 } // namespace gamemd
@@ -10576,18 +10576,18 @@ VectorClass_flat * VectorClass_ptr_ColorScheme::Constructor_VectorClass_HSVClass
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x628763*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x628766*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x628770*/
+  v3 = *(void **)&this->m_1[3]; /*0x628763*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x628770*/
   {
     __3_YAXPAX_Z(v3); /*0x628778*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x628780*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x628780*/
   }
-  BYTE1(Block->m_C) = 0; /*0x62878b*/
-  Block->m_8 = 0; /*0x628791*/
+  BYTE1(this->m_C) = 0; /*0x62878b*/
+  this->m_8 = 0; /*0x628791*/
   if ( (a2 & 1) != 0 ) /*0x628798*/
-    __3_YAXPAX_Z(Block); /*0x62879b*/
-  return Block->__pad_0; /*0x6287a5*/
+    __3_YAXPAX_Z(this); /*0x62879b*/
+  return this->__pad_0; /*0x6287a5*/
 
 }
 } // namespace gamemd
@@ -10626,7 +10626,7 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
     return &this->vtable1; /*0x628e70*/
   if ( !a3 ) /*0x628e18*/
   {
-    v8 = __2_YAPAXI_Z(3 * a2); /*0x628e42*/
+    v8 = (unsigned int)__2_YAPAXI_Z(3 * a2); /*0x628e42*/
     if ( v8 ) /*0x628e4c*/
     {
       if ( a2 - 1 >= 0 ) /*0x628e53*/
@@ -10723,18 +10723,18 @@ DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteC
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x62b383*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x62b386*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x62b390*/
+  v3 = *(void **)&this->m_1[3]; /*0x62b383*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x62b390*/
   {
     __3_YAXPAX_Z(v3); /*0x62b398*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x62b3a0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x62b3a0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x62b3ab*/
-  Block->m_8 = 0; /*0x62b3b1*/
+  BYTE1(this->m_C) = 0; /*0x62b3ab*/
+  this->m_8 = 0; /*0x62b3b1*/
   if ( (a2 & 1) != 0 ) /*0x62b3b8*/
-    __3_YAXPAX_Z(Block); /*0x62b3bb*/
-  return Block->__pad_0; /*0x62b3c5*/
+    __3_YAXPAX_Z(this); /*0x62b3bb*/
+  return this->__pad_0; /*0x62b3c5*/
 
 }
 } // namespace gamemd
@@ -10911,7 +10911,7 @@ char VectorClass_flat::EraseAt(IUnknown * aP1)
   int Count; // ecx
   int v5; // ecx
 
-  result = (*(int (**)(DynamicVectorClass *, int))(this->vtable1 + 16))(this, aP1); /*0x63e90c*/
+  result = (*(int (**)(DynamicVectorClass *, int))(this->vtable1 + 16))( this, (int)(aP1)); /*0x63e90c*/
   if ( result == -1 || (Count = this->Count, result >= Count) ) /*0x63e919*/
   {
     LOBYTE(result) = 0; /*0x63e93b*/
@@ -10962,18 +10962,18 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x63eca3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x63eca6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x63ecb0*/
+  v3 = *(void **)&this->m_1[3]; /*0x63eca3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x63ecb0*/
   {
     __3_YAXPAX_Z(v3); /*0x63ecb8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x63ecc0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x63ecc0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x63eccb*/
-  Block->m_8 = 0; /*0x63ecd1*/
+  BYTE1(this->m_C) = 0; /*0x63eccb*/
+  this->m_8 = 0; /*0x63ecd1*/
   if ( (a2 & 1) != 0 ) /*0x63ecd8*/
-    __3_YAXPAX_Z(Block); /*0x63ecdb*/
-  return Block->__pad_0; /*0x63ece5*/
+    __3_YAXPAX_Z(this); /*0x63ecdb*/
+  return this->__pad_0; /*0x63ece5*/
 
 }
 } // namespace gamemd
@@ -10989,18 +10989,18 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x63ed43*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x63ed46*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x63ed50*/
+  v3 = *(void **)&this->m_1[3]; /*0x63ed43*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x63ed50*/
   {
     __3_YAXPAX_Z(v3); /*0x63ed58*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x63ed60*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x63ed60*/
   }
-  BYTE1(Block->m_C) = 0; /*0x63ed6b*/
-  Block->m_8 = 0; /*0x63ed71*/
+  BYTE1(this->m_C) = 0; /*0x63ed6b*/
+  this->m_8 = 0; /*0x63ed71*/
   if ( (a2 & 1) != 0 ) /*0x63ed78*/
-    __3_YAXPAX_Z(Block); /*0x63ed7b*/
-  return Block->__pad_0; /*0x63ed85*/
+    __3_YAXPAX_Z(this); /*0x63ed7b*/
+  return this->__pad_0; /*0x63ed85*/
 
 }
 } // namespace gamemd
@@ -11093,18 +11093,18 @@ DynamicVector * VectorClass_ptr_RadBeam::Constructor_VectorClass_RadBeam___(unsi
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x65a4f3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x65a4f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x65a500*/
+  v3 = *(void **)&this->m_1[3]; /*0x65a4f3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x65a500*/
   {
     __3_YAXPAX_Z(v3); /*0x65a508*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x65a510*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x65a510*/
   }
-  BYTE1(Block->m_C) = 0; /*0x65a51b*/
-  Block->m_8 = 0; /*0x65a521*/
+  BYTE1(this->m_C) = 0; /*0x65a51b*/
+  this->m_8 = 0; /*0x65a521*/
   if ( (a2 & 1) != 0 ) /*0x65a528*/
-    __3_YAXPAX_Z(Block); /*0x65a52b*/
-  return Block->__pad_0; /*0x65a535*/
+    __3_YAXPAX_Z(this); /*0x65a52b*/
+  return this->__pad_0; /*0x65a535*/
 
 }
 } // namespace gamemd
@@ -11160,18 +11160,18 @@ DynamicVector * VectorClass_ptr_RadSiteClass::Constructor_VectorClass_RadSiteCla
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x65c203*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x65c206*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x65c210*/
+  v3 = *(void **)&this->m_1[3]; /*0x65c203*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x65c210*/
   {
     __3_YAXPAX_Z(v3); /*0x65c218*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x65c220*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x65c220*/
   }
-  BYTE1(Block->m_C) = 0; /*0x65c22b*/
-  Block->m_8 = 0; /*0x65c231*/
+  BYTE1(this->m_C) = 0; /*0x65c22b*/
+  this->m_8 = 0; /*0x65c231*/
   if ( (a2 & 1) != 0 ) /*0x65c238*/
-    __3_YAXPAX_Z(Block); /*0x65c23b*/
-  return Block->__pad_0; /*0x65c245*/
+    __3_YAXPAX_Z(this); /*0x65c23b*/
+  return this->__pad_0; /*0x65c245*/
 
 }
 } // namespace gamemd
@@ -11228,7 +11228,7 @@ unsigned int * VectorClass_ptr_RadarEventClass::loc_660FD0(unsigned int * Block,
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x660fd3*/
-  *Block = &vt_VectorClass_RadarEventClass; /*0x660fd6*/
+  *Block = (unsigned int)&vt_VectorClass_RadarEventClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x660fe0*/
   {
     __3_YAXPAX_Z(v3); /*0x660fe8*/
@@ -11272,13 +11272,13 @@ int  VectorClass_flat::LoadStream(TechnoTypeClass * aP1)
   int i; // esi
   int Count; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *aP1; /*0x67a63c*/
+  v3 = *(unsigned int *)aP1;
   Count = this->Count; /*0x67a649*/
-  (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &Count, 4, 0); /*0x67a64d*/
+  (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))( (int *)(aP1), (int *)(&Count), 4, 0); /*0x67a64d*/
   result = Count; /*0x67a650*/
   for ( i = 0; i < Count; ++i ) /*0x67a658*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->Items + 4 * i, 4, 0); /*0x67a668*/
+    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))( (int *)(aP1), this->Items + 4 * i, 4, 0); /*0x67a668*/
     result = Count; /*0x67a66b*/
   }
   return result; /*0x67a674*/
@@ -11295,13 +11295,13 @@ int VectorClass_flat::SaveLoad(TechnoTypeClass * aP1)
   int i; // esi
   int Count; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *aP1; /*0x67a85c*/
+  v3 = *(unsigned int *)aP1;
   Count = this->Count; /*0x67a869*/
-  (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &Count, 4, 0); /*0x67a86d*/
+  (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))( (int *)(aP1), (int *)(&Count), 4, 0); /*0x67a86d*/
   result = Count; /*0x67a870*/
   for ( i = 0; i < Count; ++i ) /*0x67a878*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->Items + 4 * i, 4, 0); /*0x67a888*/
+    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))( (int *)(aP1), this->Items + 4 * i, 4, 0); /*0x67a888*/
     result = Count; /*0x67a88b*/
   }
   return result; /*0x67a894*/
@@ -11660,18 +11660,18 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_MultiM
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x69d5e3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x69d5e6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x69d5f0*/
+  v3 = *(void **)&this->m_1[3]; /*0x69d5e3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x69d5f0*/
   {
     __3_YAXPAX_Z(v3); /*0x69d5f8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x69d600*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x69d600*/
   }
-  BYTE1(Block->m_C) = 0; /*0x69d60b*/
-  Block->m_8 = 0; /*0x69d611*/
+  BYTE1(this->m_C) = 0; /*0x69d60b*/
+  this->m_8 = 0; /*0x69d611*/
   if ( (a2 & 1) != 0 ) /*0x69d618*/
-    __3_YAXPAX_Z(Block); /*0x69d61b*/
-  return Block->__pad_0; /*0x69d625*/
+    __3_YAXPAX_Z(this); /*0x69d61b*/
+  return this->__pad_0; /*0x69d625*/
 
 }
 } // namespace gamemd
@@ -11687,18 +11687,18 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_Global
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x69d683*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x69d686*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x69d690*/
+  v3 = *(void **)&this->m_1[3]; /*0x69d683*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x69d690*/
   {
     __3_YAXPAX_Z(v3); /*0x69d698*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x69d6a0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x69d6a0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x69d6ab*/
-  Block->m_8 = 0; /*0x69d6b1*/
+  BYTE1(this->m_C) = 0; /*0x69d6ab*/
+  this->m_8 = 0; /*0x69d6b1*/
   if ( (a2 & 1) != 0 ) /*0x69d6b8*/
-    __3_YAXPAX_Z(Block); /*0x69d6bb*/
-  return Block->__pad_0; /*0x69d6c5*/
+    __3_YAXPAX_Z(this); /*0x69d6bb*/
+  return this->__pad_0; /*0x69d6c5*/
 
 }
 } // namespace gamemd
@@ -11715,7 +11715,7 @@ unsigned int * VectorClass_ptr_GlobalPacketType::loc_69D720(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x69d723*/
-  *Block = &vt_VectorClass_PhoneEntryClass; /*0x69d726*/
+  *Block = (unsigned int)&vt_VectorClass_PhoneEntryClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d730*/
   {
     __3_YAXPAX_Z(v3); /*0x69d738*/
@@ -11800,7 +11800,7 @@ int VectorClass_flat::Check(Pipe * aP1, int aP2, void *a3)
 {
 
   SHA1::Process((SHA1 *)((char *)this + 12), aP1, aP2); /*0x69e9c2*/
-  return Delegate::Dispatch((Pipe *)this, aP1, aP2); /*0x69e9d0*/
+  return ((Delegate *)(Pipe *)this)->Dispatch( aP1, aP2); /*0x69e9d0*/
 
 }
 }  // G42.18c ns repair
@@ -11861,18 +11861,18 @@ DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_Slave
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x6b1a23*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6b1a26*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6b1a30*/
+  v3 = *(void **)&this->m_1[3]; /*0x6b1a23*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x6b1a30*/
   {
     __3_YAXPAX_Z(v3); /*0x6b1a38*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6b1a40*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6b1a40*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6b1a4b*/
-  Block->m_8 = 0; /*0x6b1a51*/
+  BYTE1(this->m_C) = 0; /*0x6b1a4b*/
+  this->m_8 = 0; /*0x6b1a51*/
   if ( (a2 & 1) != 0 ) /*0x6b1a58*/
-    __3_YAXPAX_Z(Block); /*0x6b1a5b*/
-  return Block->__pad_0; /*0x6b1a65*/
+    __3_YAXPAX_Z(this); /*0x6b1a5b*/
+  return this->__pad_0; /*0x6b1a65*/
 
 }
 } // namespace gamemd
@@ -11920,18 +11920,18 @@ DynamicVector * VectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStr
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x6b47f3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6b47f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6b4800*/
+  v3 = *(void **)&this->m_1[3]; /*0x6b47f3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x6b4800*/
   {
     __3_YAXPAX_Z(v3); /*0x6b4808*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6b4810*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6b4810*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6b481b*/
-  Block->m_8 = 0; /*0x6b4821*/
+  BYTE1(this->m_C) = 0; /*0x6b481b*/
+  this->m_8 = 0; /*0x6b4821*/
   if ( (a2 & 1) != 0 ) /*0x6b4828*/
-    __3_YAXPAX_Z(Block); /*0x6b482b*/
-  return Block->__pad_0; /*0x6b4835*/
+    __3_YAXPAX_Z(this); /*0x6b482b*/
+  return this->__pad_0; /*0x6b4835*/
 
 }
 } // namespace gamemd
@@ -11993,18 +11993,18 @@ DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_Spawn
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x6b8833*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6b8836*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6b8840*/
+  v3 = *(void **)&this->m_1[3]; /*0x6b8833*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x6b8840*/
   {
     __3_YAXPAX_Z(v3); /*0x6b8848*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6b8850*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6b8850*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6b885b*/
-  Block->m_8 = 0; /*0x6b8861*/
+  BYTE1(this->m_C) = 0; /*0x6b885b*/
+  this->m_8 = 0; /*0x6b8861*/
   if ( (a2 & 1) != 0 ) /*0x6b8868*/
-    __3_YAXPAX_Z(Block); /*0x6b886b*/
-  return Block->__pad_0; /*0x6b8875*/
+    __3_YAXPAX_Z(this); /*0x6b886b*/
+  return this->__pad_0; /*0x6b8875*/
 
 }
 } // namespace gamemd
@@ -12041,7 +12041,7 @@ int VectorClass_K_8::QueryInterface(int a1, const void * a2, unsigned int * a3)
     *v4 = a2; /*0x6bee96*/
   if ( !*v4 ) /*0x6bee98*/
     return -2147467262; /*0x6beea0*/
-  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6beeac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))( (const void *)(a2)); /*0x6beeac*/
   return 0; /*0x6bee5e*/
 
 }
@@ -12367,18 +12367,18 @@ DynamicVector * VectorClass_ptr_SubTitle::Constructor_VectorClass_SubTitle___(un
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x6ca9c3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6ca9c6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6ca9d0*/
+  v3 = *(void **)&this->m_1[3]; /*0x6ca9c3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x6ca9d0*/
   {
     __3_YAXPAX_Z(v3); /*0x6ca9d8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6ca9e0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6ca9e0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6ca9eb*/
-  Block->m_8 = 0; /*0x6ca9f1*/
+  BYTE1(this->m_C) = 0; /*0x6ca9eb*/
+  this->m_8 = 0; /*0x6ca9f1*/
   if ( (a2 & 1) != 0 ) /*0x6ca9f8*/
-    __3_YAXPAX_Z(Block); /*0x6ca9fb*/
-  return Block->__pad_0; /*0x6caa05*/
+    __3_YAXPAX_Z(this); /*0x6ca9fb*/
+  return this->__pad_0; /*0x6caa05*/
 
 }
 } // namespace gamemd
@@ -12578,7 +12578,7 @@ unsigned int * VectorClass_UDirtyAreaStruct::loc_6DCC80(unsigned int * Block, ch
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6dcc83*/
-  *Block = &vt_VectorClass_DirtyAreaStruct; /*0x6dcc86*/
+  *Block = (unsigned int)&vt_VectorClass_DirtyAreaStruct;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6dcc90*/
   {
     __3_YAXPAX_Z(v3); /*0x6dcc98*/
@@ -12604,18 +12604,18 @@ DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowCont
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x6dcd23*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6dcd26*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6dcd30*/
+  v3 = *(void **)&this->m_1[3]; /*0x6dcd23*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x6dcd30*/
   {
     __3_YAXPAX_Z(v3); /*0x6dcd38*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6dcd40*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6dcd40*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6dcd4b*/
-  Block->m_8 = 0; /*0x6dcd51*/
+  BYTE1(this->m_C) = 0; /*0x6dcd4b*/
+  this->m_8 = 0; /*0x6dcd51*/
   if ( (a2 & 1) != 0 ) /*0x6dcd58*/
-    __3_YAXPAX_Z(Block); /*0x6dcd5b*/
-  return Block->__pad_0; /*0x6dcd65*/
+    __3_YAXPAX_Z(this); /*0x6dcd5b*/
+  return this->__pad_0; /*0x6dcd65*/
 
 }
 } // namespace gamemd
@@ -12677,18 +12677,18 @@ DynamicVector * VectorClass_ptr_TagTypeClass::Constructor_VectorClass_TagTypeCla
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x6e67f3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6e67f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6e6800*/
+  v3 = *(void **)&this->m_1[3]; /*0x6e67f3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x6e6800*/
   {
     __3_YAXPAX_Z(v3); /*0x6e6808*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6e6810*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6e6810*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6e681b*/
-  Block->m_8 = 0; /*0x6e6821*/
+  BYTE1(this->m_C) = 0; /*0x6e681b*/
+  this->m_8 = 0; /*0x6e6821*/
   if ( (a2 & 1) != 0 ) /*0x6e6828*/
-    __3_YAXPAX_Z(Block); /*0x6e682b*/
-  return Block->__pad_0; /*0x6e6835*/
+    __3_YAXPAX_Z(this); /*0x6e682b*/
+  return this->__pad_0; /*0x6e6835*/
 
 }
 } // namespace gamemd
@@ -12715,7 +12715,7 @@ unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
     this->Capacity = v3; /*0x717d4d*/
     if ( v3 ) /*0x717d50*/
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x717d56*/
+      v4 = (unsigned int)__2_YAPAXI_Z(4 * v3); /*0x717d56*/
       this->Items = v4; /*0x717d60*/
       if ( v4 ) /*0x717d63*/
       {
@@ -12803,18 +12803,18 @@ DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalC
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x71b553*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x71b556*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x71b560*/
+  v3 = *(void **)&this->m_1[3]; /*0x71b553*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x71b560*/
   {
     __3_YAXPAX_Z(v3); /*0x71b568*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x71b570*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x71b570*/
   }
-  BYTE1(Block->m_C) = 0; /*0x71b57b*/
-  Block->m_8 = 0; /*0x71b581*/
+  BYTE1(this->m_C) = 0; /*0x71b57b*/
+  this->m_8 = 0; /*0x71b581*/
   if ( (a2 & 1) != 0 ) /*0x71b588*/
-    __3_YAXPAX_Z(Block); /*0x71b58b*/
-  return Block->__pad_0; /*0x71b595*/
+    __3_YAXPAX_Z(this); /*0x71b58b*/
+  return this->__pad_0; /*0x71b595*/
 
 }
 } // namespace gamemd
@@ -12876,18 +12876,18 @@ DynamicVector * VectorClass_ptr_TEventClass::Constructor_VectorClass_TEventClass
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x71feb3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x71feb6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x71fec0*/
+  v3 = *(void **)&this->m_1[3]; /*0x71feb3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x71fec0*/
   {
     __3_YAXPAX_Z(v3); /*0x71fec8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x71fed0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x71fed0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x71fedb*/
-  Block->m_8 = 0; /*0x71fee1*/
+  BYTE1(this->m_C) = 0; /*0x71fedb*/
+  this->m_8 = 0; /*0x71fee1*/
   if ( (a2 & 1) != 0 ) /*0x71fee8*/
-    __3_YAXPAX_Z(Block); /*0x71feeb*/
-  return Block->__pad_0; /*0x71fef5*/
+    __3_YAXPAX_Z(this); /*0x71feeb*/
+  return this->__pad_0; /*0x71fef5*/
 
 }
 } // namespace gamemd
@@ -12915,18 +12915,18 @@ DynamicVector * VectorClass_ptr_ThemeControl::Constructor_VectorClass_ThemeContr
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x7213e3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x7213e6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x7213f0*/
+  v3 = *(void **)&this->m_1[3]; /*0x7213e3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x7213f0*/
   {
     __3_YAXPAX_Z(v3); /*0x7213f8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x721400*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x721400*/
   }
-  BYTE1(Block->m_C) = 0; /*0x72140b*/
-  Block->m_8 = 0; /*0x721411*/
+  BYTE1(this->m_C) = 0; /*0x72140b*/
+  this->m_8 = 0; /*0x721411*/
   if ( (a2 & 1) != 0 ) /*0x721418*/
-    __3_YAXPAX_Z(Block); /*0x72141b*/
-  return Block->__pad_0; /*0x721425*/
+    __3_YAXPAX_Z(this); /*0x72141b*/
+  return this->__pad_0; /*0x721425*/
 
 }
 } // namespace gamemd
@@ -12988,18 +12988,18 @@ DynamicVector * VectorClass_ptr_TiberiumClass::Constructor_VectorClass_TiberiumC
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x723a43*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x723a46*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x723a50*/
+  v3 = *(void **)&this->m_1[3]; /*0x723a43*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x723a50*/
   {
     __3_YAXPAX_Z(v3); /*0x723a58*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x723a60*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x723a60*/
   }
-  BYTE1(Block->m_C) = 0; /*0x723a6b*/
-  Block->m_8 = 0; /*0x723a71*/
+  BYTE1(this->m_C) = 0; /*0x723a6b*/
+  this->m_8 = 0; /*0x723a71*/
   if ( (a2 & 1) != 0 ) /*0x723a78*/
-    __3_YAXPAX_Z(Block); /*0x723a7b*/
-  return Block->__pad_0; /*0x723a85*/
+    __3_YAXPAX_Z(this); /*0x723a7b*/
+  return this->__pad_0; /*0x723a85*/
 
 }
 } // namespace gamemd
@@ -13021,18 +13021,18 @@ VectorClass_flat * VectorClass_E::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x74bfa3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x74bfa6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x74bfb0*/
+  v3 = *(void **)&this->m_1[3]; /*0x74bfa3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x74bfb0*/
   {
     __3_YAXPAX_Z(v3); /*0x74bfb8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x74bfc0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x74bfc0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x74bfcb*/
-  Block->m_8 = 0; /*0x74bfd1*/
+  BYTE1(this->m_C) = 0; /*0x74bfcb*/
+  this->m_8 = 0; /*0x74bfd1*/
   if ( (a2 & 1) != 0 ) /*0x74bfd8*/
-    __3_YAXPAX_Z(Block); /*0x74bfdb*/
-  return Block->__pad_0; /*0x74bfe5*/
+    __3_YAXPAX_Z(this); /*0x74bfdb*/
+  return this->__pad_0; /*0x74bfe5*/
 
 }
 } // namespace gamemd
@@ -13225,18 +13225,18 @@ DynamicVector * VectorClass_ptr_VocClass::Constructor_VectorClass_VocClass___(un
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x751be3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x751be6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x751bf0*/
+  v3 = *(void **)&this->m_1[3]; /*0x751be3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x751bf0*/
   {
     __3_YAXPAX_Z(v3); /*0x751bf8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x751c00*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x751c00*/
   }
-  BYTE1(Block->m_C) = 0; /*0x751c0b*/
-  Block->m_8 = 0; /*0x751c11*/
+  BYTE1(this->m_C) = 0; /*0x751c0b*/
+  this->m_8 = 0; /*0x751c11*/
   if ( (a2 & 1) != 0 ) /*0x751c18*/
-    __3_YAXPAX_Z(Block); /*0x751c1b*/
-  return Block->__pad_0; /*0x751c25*/
+    __3_YAXPAX_Z(this); /*0x751c1b*/
+  return this->__pad_0; /*0x751c25*/
 
 }
 } // namespace gamemd
@@ -13332,18 +13332,18 @@ DynamicVector * VectorClass_ptr_MovieHandle::Constructor_VectorClass_MovieHandle
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x75a743*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x75a746*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x75a750*/
+  v3 = *(void **)&this->m_1[3]; /*0x75a743*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x75a750*/
   {
     __3_YAXPAX_Z(v3); /*0x75a758*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x75a760*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x75a760*/
   }
-  BYTE1(Block->m_C) = 0; /*0x75a76b*/
-  Block->m_8 = 0; /*0x75a771*/
+  BYTE1(this->m_C) = 0; /*0x75a76b*/
+  this->m_8 = 0; /*0x75a771*/
   if ( (a2 & 1) != 0 ) /*0x75a778*/
-    __3_YAXPAX_Z(Block); /*0x75a77b*/
-  return Block->__pad_0; /*0x75a785*/
+    __3_YAXPAX_Z(this); /*0x75a77b*/
+  return this->__pad_0; /*0x75a785*/
 
 }
 } // namespace gamemd
@@ -13405,18 +13405,18 @@ DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_Waypo
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x764713*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x764716*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x764720*/
+  v3 = *(void **)&this->m_1[3]; /*0x764713*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x764720*/
   {
     __3_YAXPAX_Z(v3); /*0x764728*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x764730*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x764730*/
   }
-  BYTE1(Block->m_C) = 0; /*0x76473b*/
-  Block->m_8 = 0; /*0x764741*/
+  BYTE1(this->m_C) = 0; /*0x76473b*/
+  this->m_8 = 0; /*0x764741*/
   if ( (a2 & 1) != 0 ) /*0x764748*/
-    __3_YAXPAX_Z(Block); /*0x76474b*/
-  return Block->__pad_0; /*0x764755*/
+    __3_YAXPAX_Z(this); /*0x76474b*/
+  return this->__pad_0; /*0x764755*/
 
 }
 } // namespace gamemd
@@ -13724,7 +13724,7 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(WDTState * aP1, int a
       if ( *((unsigned int *)this + 15) < v74 /*0x76b66c*/
         || (*((unsigned char *)this + 57) || !v74)
         && (v75 = *((unsigned int *)this + 16), v75 > 0)
-        && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 11) + 8))((char *)this + 44, v75 + v74, 0) )
+        && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 11) + 8))( (int)((char *)this + 44), v75 + v74, 0) )
       {
         v76 = *((unsigned int *)this + 15); /*0x76b673*/
         v78 = v80; /*0x76b67a*/
@@ -13754,7 +13754,7 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::Clear(unsigned int * a2, int a3)
 
   v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x76b76d*/
   ((ComPtr *)((ComPtr *)a2))->Constructor(); /*0x76b772*/
-  *a2 = &vt_rc_ptr; /*0x76b777*/
+  *a2 = (unsigned int)&vt_rc_ptr;
   ((ComPtr *)((ComPtr *)a2))->Set(*(unsigned int *)(v3 + 4)); /*0x76b783*/
   return a2; /*0x76b78a*/
 

@@ -324,7 +324,7 @@ LABEL_7:
       *(unsigned int *)(a1 + 68) = 0;
       *(unsigned int *)(a1 + 72) = 0;
       int v5 = *(unsigned int *)(*(unsigned int *)(a1 + 8) + 724);
-      bool v6 = v5 && VeterancyStruct::IsElite((float *)(v5 + 336));
+      bool v6 = v5 && ((VeterancyStruct *)(float *)(v5 + 336))->IsElite();
       *(unsigned char *)(a1 + 77) = v6;
       if ( *(unsigned int *)(v4 + 48) != *(unsigned int *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1352) )
       {
@@ -393,7 +393,7 @@ LABEL_17:
       *(unsigned int *)(a1 + 68) = 0;
       *(unsigned int *)(a1 + 72) = 0;
       int v36 = *(unsigned int *)(*(unsigned int *)(a1 + 8) + 724);
-      bool v37 = v36 && VeterancyStruct::IsElite((float *)(v36 + 336));
+      bool v37 = v36 && ((VeterancyStruct *)(float *)(v36 + 336))->IsElite();
       *(unsigned char *)(a1 + 77) = v37;
       IDA_LODWORD(var84_4) = *(unsigned int *)(a1 + 44);
       if ( !IDA_LODWORD(var84_4) )
@@ -474,11 +474,11 @@ LABEL_63:
         *(unsigned int *)(a1 + 60) = 4;
         int v50 = *(unsigned int *)(a1 + 20);
         ebx82 = *(unsigned int *)(a1 + 24);
-        unsigned int * v52 = (unsigned int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)(a1 + 8) + 72))(*(unsigned int *)(a1 + 8), &v125);
+        unsigned int * v52 = (unsigned int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)(a1 + 8) + 72))( *(unsigned int *)(a1 + 8), (int *)(&v125));
         int v53 = *v52 - v50;
         v57 = (BuildingTypeClass *)(v52[1] - ebx82);
         desiredFacing_4 = COERCE_DOUBLE(IDA___PAIR64__((unsigned int)v57, v53));
-        double v55 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)v57 * (double)(int)v57 + (double)v53 * (double)v53));
+        double v55 = Math::Sqrt( (AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)v57 * (double)(int)v57 + (double)v53 * (double)v53));
         *(unsigned int *)(a1 + 84) = Math::RoundToInt(v55);
       }
       goto LABEL_111;
@@ -503,7 +503,7 @@ LABEL_63:
         v60 = (unsigned int *)(a1 + 20);
         IDA_HIDWORD(desiredFacing_4) = *(unsigned int *)(a1 + 24);
         IDA_LODWORD(desiredFacing_4) = v59;
-        eax91a = (int *)(*(int (**)(ObjectClass *, int *))(*(unsigned int *)v61->__pad_0 + 72))(v61, &v125);
+        eax91a = (int *)(*(int (**)(ObjectClass *, int *))(*(unsigned int *)v61->__pad_0 + 72))( v61, (int *)(&v125));
         int v62 = *eax91a;
         int v63 = eax91a[1];
         IDA_LODWORD(var84_4) = v62 - IDA_LODWORD(desiredFacing_4);
@@ -525,7 +525,7 @@ LABEL_63:
         var84_4 = v65;
         var74_4 = 1.0 - v65;
         IDA_LODWORD(desiredFacing_4) = v69 * v69 + v68 * v68;
-        double v70 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)IDA_SLODWORD(desiredFacing_4)));
+        double v70 = Math::Sqrt( (AbstractClass *)COERCE_UNSIGNED_INT64((double)IDA_SLODWORD(desiredFacing_4)));
         if ( v70 <= 0.0 )
           double v71 = -1.570796326794897;
         else
@@ -553,7 +553,7 @@ LABEL_63:
         IDA_HIDWORD(var84_4) = v75->location[1];
         int v76 = *(unsigned int *)v75->__pad_0;
         v121 = (IUnknown *)v77;
-        eax98 = (*(int (**)(ObjectClass *, int *))(v76 + 72))(v75, &v125);
+        eax98 = (*(int (**)(ObjectClass *, int *))(v76 + 72))( v75, (int *)(&v125));
         int v78 = *(unsigned int *)eax98 - IDA_LODWORD(var74_4);
         int v79 = *(unsigned int *)(eax98 + 4);
         v82 = *(ObjectClass **)(eax98 + 8);
@@ -568,17 +568,17 @@ LABEL_63:
         if ( (int)Math::RoundToInt(v81) <= v74 )
           *(unsigned int *)(a1 + 60) = 5;
       }
-      eax100 = (int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)(a1 + 8) + 72))(*(unsigned int *)(a1 + 8), &v125);
+      eax100 = (int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)(a1 + 8) + 72))( *(unsigned int *)(a1 + 8), (int *)(&v125));
       int v83 = *eax100;
       IDA_LODWORD(desiredFacing_4) = *v60;
       IDA_LODWORD(var84_4) = v83;
       *((double *)&_8 + 1) = (double)IDA_SLODWORD(desiredFacing_4) - (double)v83;
       *(double *)&_8 = (double)eax100[1] - (double)(int)v60[1];
-      double v84 = Math::CalcAngle((AbstractClass *)_8, *(double *)((char *)&_8 + 4));
+      double v84 = ((Math *)(AbstractClass *)_8)->CalcAngle( *(double *)((char *)&_8 + 4));
       IDA_LOWORD(desiredFacing_4) = Math::RoundToInt((v84 - 1.570796326794897) * -10430.06004058427);
       int v85 = *(unsigned int *)(a1 + 8);
       desiredFacing = (ObjectClass *)IDA_LODWORD(desiredFacing_4);
-      FacingClass::Update((unsigned short *)((FacingClass *)(v85 + 904)), (DirStruct *)&desiredFacing);
+      ((FacingClass *)(unsigned short *)((FacingClass *)(v85 + 904)))->Update( (DirStruct *)&desiredFacing);
 LABEL_111:
       if ( !(*(uint8_t (**)(int))(*(unsigned int *)a1 + 128))(a1) )
         goto LABEL_119;
@@ -617,7 +617,7 @@ LABEL_119:
         v103 = *(ObjectClass **)(v99 + 8);
         IDA_HIDWORD(var84_4) = v101;
         v121 = (IUnknown *)v103;
-        st7_120a = Math::ArcTan2((IUnknown *)IDA_LODWORD(aP0));
+        st7_120a = Math::ArcTan2( (IUnknown *)IDA_LODWORD(aP0));
         IDA_LODWORD(var64_4) = Math::RoundToInt(st7_120a * desiredFacing_4);
         desiredFacing = (ObjectClass *)(*(int16_t *)((ProgressTimer*)(unsigned short *)(*(unsigned int *)(a1 - 4 + 12) + 904))->GetValue((IUnknown *)v128)
                                       - 0x3FFF);
@@ -631,7 +631,7 @@ LABEL_119:
         aP0_4 = *(float *)(a1 - 4 + 84);
         v129.Y = (int)desiredFacing;
         v129.Z = (int)v121;
-        double v107 = Math::SinCos((IUnknown *)IDA_LODWORD(aP0_4));
+        double v107 = Math::SinCos( (IUnknown *)IDA_LODWORD(aP0_4));
         v124.Z = Math::RoundToInt(v107 * desiredFacing_4 + (double)(int)v121);
         v124.X = v106;
         v124.Y = v129.Y;
@@ -639,7 +639,7 @@ LABEL_119:
         IDA_HIWORD(v116) = v129.Y / 256;
         desiredFacing = v116;
         if ( ((LayerClass *)(&(&stru_87C374)[13428]))->CoordinatesLegal((IUnknown *)&desiredFacing) )
-          (*(void (**)(unsigned int, CoordStruct *))(**(unsigned int **)(a1 + 8) + 436))(*(unsigned int *)(a1 + 8), &v124);
+          (*(void (**)(unsigned int, CoordStruct *))(**(unsigned int **)(a1 + 8) + 436))( *(unsigned int *)(a1 + 8), (CoordStruct *)(&v124));
         v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 440))(
                                  *(unsigned int *)(a1 + 8),
                                  v128);
@@ -668,7 +668,7 @@ LABEL_119:
       ecx102 = v86[7] - *(unsigned int *)(v86[3] + 160);
       v127 = v86[8] - *(unsigned int *)(v86[3] + 164);
       IDA_LODWORD(desiredFacing_4) = (unsigned int)v88 * (unsigned int)v88 + ecx102 * ecx102;
-      double v89 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)IDA_SLODWORD(desiredFacing_4)));
+      double v89 = Math::Sqrt( (AbstractClass *)COERCE_UNSIGNED_INT64((double)IDA_SLODWORD(desiredFacing_4)));
       if ( v89 <= 0.0 )
         double v90 = -1.570796326794897;
       else
@@ -693,7 +693,7 @@ LABEL_119:
       goto LABEL_111;
     case 6:
       objectTypeFlags = v1[4].objectTypeFlags;
-      bool v19 = objectTypeFlags && VeterancyStruct::IsElite((float *)(objectTypeFlags + 336));
+      bool v19 = objectTypeFlags && ((VeterancyStruct *)(float *)(objectTypeFlags + 336))->IsElite();
       v21 = (IUnknown *)(a1 + 48);
       *(unsigned char *)(a1 + 77) = v19;
       v22 = *(IUnknown **)&(&HouseClass_Player)[45112];
@@ -733,7 +733,7 @@ LABEL_38:
       int v30 = *(unsigned int *)(a1 + 40);
       if ( v31 != (IUnknown *)-1 )
       {
-        edi43 = (char *)v22 - (char *)v31;
+        edi43 = (unsigned int)(char *)v22 - (char *)v31;
         if ( edi43 >= v30 )
           v30 = 0;
         else
@@ -747,7 +747,7 @@ LABEL_38:
         IDA_HIWORD(v115) = IDA_SHIDWORD(var74_4) / 256;
         IDA_LODWORD(var64_4) = (unsigned int)(v115);
         if ( ((LayerClass *)(&(&stru_87C374)[13428]))->CoordinatesLegal((IUnknown *)&var64_4) )
-          (*(void (**)(unsigned int, double *))(**(unsigned int **)(a1 + 8) + 436))(*(unsigned int *)(a1 + 8), &var74_4);
+          (*(void (**)(unsigned int, double *))(**(unsigned int **)(a1 + 8) + 436))( *(unsigned int *)(a1 + 8), (double *)(&var74_4));
       }
       else
       {
@@ -814,7 +814,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
   ((Waypoint*)&v23)->InitInvalid(); /*0x663dd2*/
   Debug::Log(); /*0x663ddc*/
   GetStartupInfoA((LPSTARTUPINFOA)&v23.__pad_0[28]); /*0x663de9*/
-  if ( !(*(int (**)(unsigned int *))(*dword_887628 + 72))(dword_887628) ) /*0x663df7*/
+  if ( !(*(int (**)(unsigned int *))(*dword_887628 + 72))( (unsigned int *)(dword_887628)) ) /*0x663df7*/
     return 0; /*0x663e07*/
   if ( a2 ) /*0x663e15*/
   {
@@ -838,7 +838,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
   }
   if ( !dword_A8DA84 ) /*0x663e22*/
   {
-    v4 = (uint8_t *)(*(int (**)(unsigned int *, unsigned int))(*dword_887628 + 76))(dword_887628, 0); /*0x663e2d*/
+    v4 = (uint8_t *)(*(int (**)(unsigned int *, unsigned int))(*dword_887628 + 76))( (unsigned int *)(dword_887628), 0); /*0x663e2d*/
     sprintf(CommandLine, "mphmd.exe %d.%d.%d.%d", *v4, v4[1], v4[2], v4[3]); /*0x663e54*/
     goto LABEL_11; /*0x663e5c*/
   }
@@ -887,7 +887,7 @@ LABEL_11:
       if ( !v9 ) /*0x664083*/
         break; /*0x664083*/
       Event::Dispatch(); /*0x664085*/
-      if ( Network::SendPacketThunk2((Network *)&unk_A8E9C0, (int)v25, (int)v22, (int)&v23, (int)v21) && v25[0] == 4 ) /*0x6640b7*/
+      if ( ((Network *)(Network *)&unk_A8E9C0)->SendPacketThunk2( (int)v25, (int)v22, (int)&v23, (int)v21) && v25[0] == 4 ) /*0x6640b7*/
       {
         v10 = 1; /*0x6640be*/
         Debug::Log(); /*0x6640c3*/
@@ -963,7 +963,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   v2 = 32; /*0x6616b8*/
   this->Straw_field_0x04 = 0; /*0x6616bd*/
   this->u32_8 = 0; /*0x6616c0*/
-  *(unsigned int *)this->__pad_0 = &vt_Straw; /*0x6616c3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Straw;
   this->u32_C = 0; /*0x6616c9*/
   this->q004 = 0; /*0x6616cc*/
   v3 = (ObjectClass *)((char *)this + 20); /*0x6616cf*/
@@ -976,7 +976,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   while ( v2 ); /*0x6616df*/
   this->u32_C = 0; /*0x6616e1*/
   this->q004 = 0; /*0x6616e4*/
-  *(unsigned int *)this->__pad_0 = &vt_RandomStraw; /*0x6616f1*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_RandomStraw;
   memset((char *)this + 20, 0, 0x100u); /*0x6616f7*/
   return this->__pad_0; /*0x6616fb*/
 
@@ -1034,7 +1034,7 @@ int E4Recv_661960::sub_661960(short a2)
         v7 = 256 - v5; /*0x661a12*/
         if ( 256 - v5 > 0x14 ) /*0x661a17*/
           v7 = 20; /*0x661a19*/
-        memcpy(p_abstractFlags, Src, v7); /*0x661a25*/
+        memcpy( p_abstractFlags, (const void *)(Src), v7); /*0x661a25*/
         ++v5; /*0x661a2d*/
         p_abstractFlags = (int *)((char *)p_abstractFlags + 1); /*0x661a2e*/
       }
@@ -1101,7 +1101,7 @@ int E4Recv_661A60::sub_661A60(int a2)
         v7 = 256 - v5; /*0x661b12*/
         if ( 256 - v5 > 0x14 ) /*0x661b17*/
           v7 = 20; /*0x661b19*/
-        memcpy(p_abstractFlags, Src, v7); /*0x661b25*/
+        memcpy( p_abstractFlags, (const void *)(Src), v7); /*0x661b25*/
         ++v5; /*0x661b2d*/
         p_abstractFlags = (int *)((char *)p_abstractFlags + 1); /*0x661b2e*/
       }
@@ -1156,7 +1156,7 @@ void * E4Recv_661B70::sub_661B70()
     v4 = 256 - v2; /*0x661bd8*/
     if ( 256 - v2 > 0x14 ) /*0x661bdd*/
       v4 = 20; /*0x661bdf*/
-    result = memcpy(v3, Src, v4); /*0x661beb*/
+    result = memcpy( v3, (const void *)(Src), v4); /*0x661beb*/
     ++v2; /*0x661bf3*/
     v3 = (int *)((char *)v3 + 1); /*0x661bf4*/
   }
@@ -1294,9 +1294,9 @@ namespace gamemd {
 void E4Recv_661F30::sub_661F30()
 {
 
-  *(unsigned int *)this->LocomotionClass = &vt_RocketLocomotionClass; /*0x661f30*/
-  *(unsigned int *)&this->LocomotionClass[4] = &vt_RocketLocomotionClass; /*0x661f36*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x661f3d*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_RocketLocomotionClass;
+  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_RocketLocomotionClass;
+  ((LocomotionClass *)(LocomotionClass *)this)->Construct(); /*0x661f3d*/
 
 }
 } // namespace gamemd

@@ -99,7 +99,7 @@ int sub_785EA0()
       {
         v4 = v3; /*0x785edd*/
         v3 = (ObjectClass *)v3->vtable3; /*0x785edf*/
-        DeleteAndZero(v4); /*0x785ee8*/
+        j_DeleteAndZero(v4); /*0x785ee8*/
         RA2_OPDEL(v4); /*0x785eee*/
       }
       ++i; /*0x785f00*/
@@ -124,7 +124,7 @@ int sub_785EA0()
     do /*0x785f6e*/
       ResetEvent(*v6++); /*0x785f63*/
     while ( (int)v6 < (int)g_WOL_RequestObject ); /*0x785f6e*/
-    Game::ProcessIdle(v7); /*0x785f70*/
+    ((Game *)v7)->ProcessIdle(); /*0x785f70*/
     if ( !(*(int (**)(LPVOID))(*(unsigned int *)ppv + 52))(ppv) ) /*0x785f7d*/
     {
       StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtWolLoggingO), 0,(const char *)(g_Str_File_wonline_cpp), 9527));
@@ -137,7 +137,7 @@ int sub_785EA0()
               k == 258;
               k = WaitForMultipleObjects(0x12u,(const HANDLE *)(&Handles), 0, 0x64u) )
         {
-          Game::ProcessIdle(v10); /*0x785fe1*/
+          ((Game *)v10)->ProcessIdle(); /*0x785fe1*/
         }
         ResetEvent((HANDLE)(*(&Handles + k))); /*0x786005*/
         if ( !k ) /*0x786009*/
@@ -183,7 +183,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
   *(unsigned int *)v12.__pad_0 = 0; /*0x798de9*/
   IDA_LOBYTE(v12.Flag_field_0x04) = 0; /*0x798df1*/
   ReadRegistryOptionsWOL((ObjectClass *)&v12); /*0x798df6*/
-  Screen::Capture(1, 0, v2, a2); /*0x798dff*/
+  Screen::Capture( 1, 0, v2, (int)(a2)); /*0x798dff*/
   if ( g_UIPointerTable && strlen(stru_B76188.__pad_20) && ((String*)((String *)&g_WindowManager.__pad_EC[684]))->Length() ) /*0x798e27*/
   {
     v3 = *(unsigned int *)g_UIPointerTable; /*0x798e3f*/
@@ -246,7 +246,7 @@ char sub_72C7E0()
   {
     if ( g_DisplayWidth == 800 ) /*0x72c7f3*/
       dword_B0F9E8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D84),(gamemd::ConvertClass *)((bool *)&byte_B0FCFC))); /*0x72c805*/
-    result = LoadPaletteSimple((char *)(off_844D88),(int *)(&dword_B0FD00), &dword_B0FD04); /*0x72c81a*/
+    result = LoadPaletteSimple( (char *)(off_844D88), (int *)(&dword_B0FD00), (unsigned int *)(&dword_B0FD04)); /*0x72c81a*/
     byte_B0FCFD = 1; /*0x72c81f*/
   }
   return result; /*0x72c826*/

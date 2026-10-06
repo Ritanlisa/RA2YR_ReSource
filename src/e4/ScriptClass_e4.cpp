@@ -33,12 +33,12 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x69163b*/
+  result = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(aP0), (gamemd::AbstractClass *)(aP1)); /*0x69163b*/
   if ( result >= 0 ) /*0x691642*/
   {
     if ( aP0 ) /*0x691646*/
     {
-      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x69164f*/
+      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x69164f*/
       aP0->vtable1 = &vt_ScriptClass; /*0x691654*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptClass); /*0x69165a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptClass); /*0x691661*/

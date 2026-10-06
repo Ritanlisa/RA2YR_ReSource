@@ -135,7 +135,7 @@ LABEL_151:
           v60 = *(CCINIClass **)&((unsigned int *)(HouseClass_Player))[29960];
           strcpy((char *)Destination,(const char *)(&((unsigned int *)(HouseClass_Player))[31636]));
           wcscpy(Destination, (const wchar_t *)&((unsigned int *)(HouseClass_Player))[30166]);
-          Dialog::IdleProcess(hWnd);
+          Dialog::IdleProcess( (ObjectClass)(hWnd));
           ShowWindow((HWND)hWnd, 0);
           if ( SkirmishDialog::Show(g_hWnd, (int)v60, (int)hWnd) == (double)((SkirmishDialog *))2 )
           {
@@ -155,7 +155,7 @@ LABEL_151:
               }
               unsigned int * v62 = (unsigned int *)operator new(4u);
               if ( v62 )
-                v63 = (ObjectClass *)unknown_libname_27(v62);
+                v63 = (ObjectClass *)unknown_libname_27( (void *)(v62));
               ObjectClass *v63 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
               *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v63);
               ((Surface *)((char **)v63))->LoadToSurfaceSHP((char *)(((unsigned int *)(stru_829ABC))[0]));
@@ -173,8 +173,8 @@ LABEL_151:
           else
           {
             PlayerCountMap = ReadPlayerCountMap(*(int *)&((unsigned int *)(HouseClass_Player))[29960]);
-            if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&((unsigned int *)(HouseClass_Player))[29936] + 4))(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29936])
   int v65; // ecx
+            if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&((unsigned int *)(HouseClass_Player))[29936] + 4))(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29936])
               || (v65 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4580), v65 > PlayerCountMap) )
             {
               v65 = PlayerCountMap;
@@ -200,7 +200,7 @@ LABEL_151:
                   RA2_OPDEL(v67);
                   unsigned int * v68 = (unsigned int *)operator new(4u);
                   if ( v68 )
-                    v69 = (ObjectClass *)unknown_libname_27(v68);
+                    v69 = (ObjectClass *)unknown_libname_27( (void *)(v68));
                   ObjectClass *v69 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
                   *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v69);
                   ((Surface *)((char **)v69))->LoadToSurfaceSHP((char *)(((unsigned int *)(stru_829ABC))[0]));
@@ -233,7 +233,7 @@ LABEL_151:
               DlgItem = GetDlgItem((HWND)hWnd, 1559);
               EnableWindow(DlgItem, 0);
             }
-            Format = (VectorClass_flat *)ReadPlayerCountMap(*(int *)&((unsigned int *)(HouseClass_Player))[29960]);
+            Format = (unsigned int)(VectorClass_flat *)ReadPlayerCountMap(*(int *)&((unsigned int *)(HouseClass_Player))[29960]);
             v75 = 0;
             do
             {
@@ -364,7 +364,7 @@ LABEL_151:
                 v83 = (VectorClass_flat *)&stru_82083C;
                 v71 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1129));
                 v26 = ((WideString*)&v82)->GetOrEmpty();
-                Dialog::ShowMessageBox((int)v26, v71, 0, 0, 0, (int)v72);
+                ((Dialog *)(int)v26)->ShowMessageBox( v71, 0, 0, 0, (int)v72);
                 v27 = GetDlgItem((HWND)hWnd, 1559);
                 EnableWindow(v27, 1);
                 ((DeleteAndZero*)(void **)&v82)->Alt();
@@ -428,14 +428,14 @@ LABEL_151:
                                                                              0x150u,
                                                                              v35,
                                                                              0);
-                *(unsigned int *)&HouseClass_Player[((unsigned int *)(21864]))[4 * v31 + 8168] = GetComboBoxSelected(
-                                                                             (ReferenceCounted *)hWnd,
-                                                                             ResourceID2CSF,
-                                                                             0xFFFFFFFF);
-                *(unsigned int *)&HouseClass_Player[((unsigned int *)(21864]))[4 * v31 + 8200] = GetComboBoxSelectedRaw(
-                                                                             (ReferenceCounted *)hWnd,
-                                                                             (int)Formata,
-                                                                             0xFFFFFFFF);
+*(unsigned int *)&HouseClass_Player[((unsigned int *)(21864]))[4 * v31 + 8168] = GetComboBoxSelected( (HWND)((ReferenceCounted *)hWnd), ResourceID2CSF, 0xFFFFFFFF);
+
+
+
+*(unsigned int *)&HouseClass_Player[((unsigned int *)(21864]))[4 * v31 + 8200] = GetComboBoxSelectedRaw( (HWND)((ReferenceCounted *)hWnd), (int)Formata, 0xFFFFFFFF);
+
+
+
                 *(unsigned int *)&HouseClass_Player[((unsigned int *)(21864]))[4 * v31 + 8232] = SetComboBoxSelection(
                                                                              (HWND)hWnd,
                                                                              (int)ResourceID3,

@@ -47,7 +47,13 @@ BLOCKLIST = json.load(open(BL_PATH, encoding='utf-8')) if BL_PATH.exists() else 
 GEN = re.compile(r'^(u\d+_|u32_|u8_|q_|field_)')
 SENTINELS = ['src/e4/Mouse_e4.cpp', 'src/e4/TacticalMap_e4.cpp',
              'src/e4/VectorClass_e4.cpp', 'src/e4/DSurface_e4.cpp',
-             'src/e4/addr42_e4.cpp', 'src/misc/misc_ext.cpp']
+             'src/e4/addr42_e4.cpp', 'src/misc/misc_ext.cpp',
+             # G57a2: mixed-universe sentinels -- tree-truth bridges pull
+             # core/vector.hpp into TUs that still carry flat vector decls
+             # (_tree_full_e4.hpp / e4_protos.h). C2989/C2990 cascade if
+             # the bridge reaches a TU without GAMEMD_E4_VECTOR_TREE_TRUTH.
+             'src/e4/Commands_e4.cpp', 'src/e4/HouseClass_e4.cpp',
+             'src/e4/addr5B_e4.cpp']
 MAX_PROBE_TUS = 48
 DELTA_GATE = 5
 

@@ -63,21 +63,21 @@ int DDraw::CapabilityCheck()
   int v7[9]; // [esp+28h] [ebp-24h] BYREF
 
   ((DSurface*)((char *)v7))->Construct(64, 64, 0, 0); /*0x4a3e51*/
-  Debug::Log(aCheckingHardwa); /*0x4a3e5b*/
+  ((Debug *)aCheckingHardwa)->Log(); /*0x4a3e5b*/
   byte_8205D4 = 1; /*0x4a3e67*/
-  XSurface::Fill(v7, 0); /*0x4a3e6f*/
+  ((XSurface *)v7)->Fill( 0); /*0x4a3e6f*/
   v2 = 5; /*0x4a3e82*/
   v3 = 5; /*0x4a3e86*/
-  if ( XSurface::GetPixel(v7, &v2) ) /*0x4a3e8a*/
+  if ( ((XSurface *)v7)->GetPixel( &v2) ) /*0x4a3e8a*/
   {
     byte_8205D4 = 0; /*0x4a3e93*/
   }
   else
   {
-    XSurface::Fill(v7, 1); /*0x4a3ea1*/
+    ((XSurface *)v7)->Fill( 1); /*0x4a3ea1*/
     v2 = 5; /*0x4a3eaf*/
     v3 = 5; /*0x4a3eb3*/
-    if ( XSurface::GetPixel(v7, &v2) == 1 ) /*0x4a3ebf*/
+    if ( ((XSurface *)v7)->GetPixel( &v2) == 1 ) /*0x4a3ebf*/
     {
       v0 = (const char *)(g_INI_Key_OK);
       if ( byte_8205D4 ) /*0x4a3ed5*/
@@ -90,10 +90,10 @@ int DDraw::CapabilityCheck()
   }
   v0 = aFailed_1; /*0x4a3ed7*/
 LABEL_7:
-  Debug::Log_0((void *)("%s\n"),(void *)(v0)); /*0x4a3edc*/
-  Debug::Log(aCheckingOverla); /*0x4a3eec*/
+  Debug::Log_0( (void)((void *)("%s\n")), (void)((void *)(v0))); /*0x4a3edc*/
+  ((Debug *)aCheckingOverla)->Log(); /*0x4a3eec*/
   byte_8205D5 = 1; /*0x4a3ef8*/
-  XSurface::Fill(v7, 0); /*0x4a3f00*/
+  ((XSurface *)v7)->Fill( 0); /*0x4a3f00*/
   v2 = 0; /*0x4a3f13*/
   v3 = 0; /*0x4a3f17*/
   XSurface::SetPixel(v7, &v2, 255); /*0x4a3f1b*/
@@ -108,7 +108,7 @@ LABEL_7:
   ((DSurface *)(v7))->BlitPart((int)v6, (int)v7, (int)&v2, 0, 0); /*0x4a3f66*/
   v2 = 0; /*0x4a3f74*/
   v3 = 5; /*0x4a3f78*/
-  if ( XSurface::GetPixel(v7, &v2) ) /*0x4a3f7c*/
+  if ( ((XSurface *)v7)->GetPixel( &v2) ) /*0x4a3f7c*/
   {
     Debug::Log_0(aFailed_2); /*0x4a3f8a*/
     byte_8205D5 = 0; /*0x4a3f96*/

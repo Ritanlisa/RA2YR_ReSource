@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_Buffer 1  // G57a3: e4 flat-carrier opt-in (suppress core utility_ext/stream_ext twin)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
@@ -118,7 +119,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
         v54 = 0; /*0x7bcc79*/
         v19 = this->Buffer_field_14; /*0x7bcc7d*/
         v56 = v18; /*0x7bcc82*/
-        (*(void (**)(int, int *, unsigned int))(*(unsigned int *)v19 + 20))(v19, &v53, a4); /*0x7bcc94*/
+        (*(void (**)(int, int *, unsigned int))(*(unsigned int *)v19 + 20))( v19, (int *)(&v53), a4); /*0x7bcc94*/
         v20 = v8 - *((unsigned int *)this + 10); /*0x7bcc9e*/
         v21 = *((unsigned int *)this + 11); /*0x7bcca0*/
         v54 = 0; /*0x7bcca3*/
@@ -127,7 +128,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
         v55 = v20; /*0x7bccae*/
         v56 = v21; /*0x7bccb2*/
       }
-      result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)v22 + 20))(v22, &v53, a4); /*0x7bccbe*/
+      result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)v22 + 20))( v22, (int *)(&v53), a4); /*0x7bccbe*/
     }
     else if ( v8 >= 0 ) /*0x7bcbcf*/
     {
@@ -148,7 +149,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
       v54 = 0; /*0x7bcbe4*/
       v13 = this->Buffer_field_14; /*0x7bcbe8*/
       v56 = v12; /*0x7bcbed*/
-      (*(void (**)(int, int *, unsigned int))(*(unsigned int *)v13 + 20))(v13, &v53, a4); /*0x7bcbff*/
+      (*(void (**)(int, int *, unsigned int))(*(unsigned int *)v13 + 20))( v13, (int *)(&v53), a4); /*0x7bcbff*/
       v14 = *((unsigned int *)this + 10); /*0x7bcc02*/
       v15 = *((unsigned int *)this + 11); /*0x7bcc05*/
       v16 = v14 + v8; /*0x7bcc08*/
@@ -157,7 +158,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
       v55 = v14 - v16; /*0x7bcc15*/
       v53 = v16; /*0x7bcc19*/
       v56 = v15; /*0x7bcc1d*/
-      result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)v17 + 20))(v17, &v53, a4); /*0x7bcc29*/
+      result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)v17 + 20))( v17, (int *)(&v53), a4); /*0x7bcc29*/
     }
   }
   if ( aP2 ) /*0x7bccf8*/
@@ -438,18 +439,18 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2, int a3, 
 
   void *v3; // eax
 
-  v3 = (void *)*((unsigned int *)Block + 1); /*0x488033*/
-  *(unsigned int *)Block = (unsigned int)(&vt_VectorClass); /*0x488036*/
-  if ( v3 && *((unsigned char *)Block + 13) ) /*0x488040*/
+  v3 = (void *)*((unsigned int *)this + 1); /*0x488033*/
+  *(unsigned int *)this = (unsigned int)(&vt_VectorClass); /*0x488036*/
+  if ( v3 && *((unsigned char *)this + 13) ) /*0x488040*/
   {
     __3_YAXPAX_Z(v3); /*0x488048*/
-    *((unsigned int *)Block + 1) = 0; /*0x488050*/
+    *((unsigned int *)this + 1) = 0; /*0x488050*/
   }
-  *((unsigned char *)Block + 13) = 0; /*0x48805b*/
-  *((unsigned int *)Block + 2) = 0; /*0x488061*/
+  *((unsigned char *)this + 13) = 0; /*0x48805b*/
+  *((unsigned int *)this + 2) = 0; /*0x488061*/
   if ( (a2 & 1) != 0 ) /*0x488068*/
-    __3_YAXPAX_Z(Block); /*0x48806b*/
-  return Block; /*0x488075*/
+    __3_YAXPAX_Z(this); /*0x48806b*/
+  return this; /*0x488075*/
 
 }
 } // namespace gamemd
@@ -462,7 +463,7 @@ int * Buffer::RotateBufferCrypto(int * a2, int a3)
 
   qmemcpy(v4, this, sizeof(v4)); /*0x632b8c*/
   RotateBitBufferLeft(v4, a3, 64); /*0x632b92*/
-  qmemcpy(a2, v4, 0x100u); /*0x632ba9*/
+  qmemcpy( (void *)(a2), v4, 0x100u); /*0x632ba9*/
   return a2; /*0x632bab*/
 
 }
@@ -498,7 +499,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   *(unsigned int *)(Buffer_field_08 + 8) = this->Buffer_field_08; /*0x6c8a3f*/
   v7 = CellStruct::Copy((CellStruct *)(a3 + 8), &v14); /*0x6c8a42*/
   v8 = (int *)(aP1); /*0x6c8a49*/
-  v16 = (unsigned char *)(*(int (**)(int *, unsigned int, unsigned int))(*aP1 + 92))(aP1, *v7, v7[1]); /*0x6c8a61*/
+  v16 = (unsigned char *)(*(int (**)(int *, unsigned int, unsigned int))(*aP1 + 92))( (int *)(aP1), *v7, v7[1]); /*0x6c8a61*/
   v9 = *(unsigned int *)(a3 + 20); /*0x6c8a65*/
   v14 = 0; /*0x6c8a6a*/
   if ( v9 > 0 ) /*0x6c8a72*/
@@ -516,7 +517,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
       qmemcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8ab0*/
       v13 = *(int *)aP1; /*0x6c8ac2*/
       v12 = ++v14; /*0x6c8ac1*/
-      v16 += (*(int (**))(v13 + 116))(aP1); /*0x6c8ad6*/
+      v16 += (*(int (**)(void *))(v13 + 116))( (void *)(aP1)); /*0x6c8ad6*/
       if ( v12 >= *(unsigned int *)(a3 + 20) ) /*0x6c8ada*/
         break; /*0x6c8ada*/
       v8 = (int *)(aP1); /*0x6c8adc*/

@@ -35,7 +35,7 @@ void sub_7A19E0()
   ((String *)((const char **)&stru_B76AC4))->ToLowerCopy((char **)&v12); /*0x7a1a19*/
   if ( dword_B77D84 ) /*0x7a1a25*/
   {
-    for ( i = *((unsigned int *)stru_B77D80 + (dword_B77D98(&v12) & ((1 << dword_B77D8C) - 1))); i; i = *(unsigned int *)(i + 112) ) /*0x7a1a4b*/
+    for ( i = *((unsigned int *)stru_B77D80 + ((*(unsigned int (*)(void *))&dword_B77D98)(&v12) & ((1 << dword_B77D8C) - 1))); i; i = *(unsigned int *)(i + 112) ) /*0x7a1a4b*/
     {
       if ( ((String *)((const char **)i))->Compare((const char **)&v12) ) /*0x7a1a54*/
         break; /*0x7a1a5b*/
@@ -81,13 +81,13 @@ void sub_7A19E0()
     if ( v14[6] ) /*0x7a1b15*/
     {
       v13 = -1; /*0x7a1b27*/
-      (*(void (**)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))((LPVOID)g_UIPointerTable, v14[6], &v13); /*0x7a1b34*/
+      (*(void (**)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))( (LPVOID)g_UIPointerTable, v14[6], (int *)(&v13)); /*0x7a1b34*/
       if ( v13 != -1 ) /*0x7a1b3e*/
       {
         v11 = (wchar_t *)((void *)v13);
         v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchoppone), 0,(const char *)(g_Str_File_wonline_cpp), 28800));
         Dialog::ShowMessage((gamemd::ObjectClass *)(12648447),(gamemd::CampaignScore *)((size_t)v9), v11); /*0x7a1b5d*/
-        DeleteAndZero(&v12); /*0x7a1b69*/
+        j_DeleteAndZero(&v12); /*0x7a1b69*/
         return; /*0x7a1b73*/
       }
       v8 = (wchar_t *)(GetStringCSF((wchar_t *)(aWolMatchoppone_0), 0,(const char *)(g_Str_File_wonline_cpp), 28802));
@@ -98,6 +98,6 @@ void sub_7A19E0()
     }
   }
   Dialog::ShowMessage(12648447, (size_t)v8); /*0x7a1b90*/
-  DeleteAndZero(&v12); /*0x7a1b9c*/
+  j_DeleteAndZero(&v12); /*0x7a1b9c*/
 }
 }

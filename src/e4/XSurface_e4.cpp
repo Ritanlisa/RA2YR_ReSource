@@ -212,7 +212,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
 } // namespace gamemd
 // 0x7BAB90
 namespace gamemd {
-void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5, int a6, int a7, int a8, int a9, int a10)
+void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (*a5)(int *), int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
   int v5; // eax
@@ -255,7 +255,7 @@ void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thi
 
   v5 =(int)(int *)(*(unsigned int *)this->Surface);
   v28 =(gamemd::XSurface *)(int *)(this);
-  v6 = (int *)(*(int (**)(int *))(v5 + 120))(&v33); /*0x7bab9f*/
+  v6 = (int *)(*(int (**)(int *))(v5 + 120))( (int *)(&v33)); /*0x7bab9f*/
   v7 = (int *)(ClipRectIntersection((RectangleStruct *)(&v26),(const RectangleStruct *)((int *)a2),(const RectangleStruct *)(v6), 0, 0)); /*0x7babaf*/
   v35 = *v7; /*0x7babb6*/
   v36 = v7[1]; /*0x7babbd*/
@@ -267,7 +267,7 @@ void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thi
   v9 = v35 + *a4; /*0x7babef*/
   v32 = v36 + a4[1]; /*0x7babf1*/
   v31 = v9; /*0x7bac02*/
-  result = ClipLine(&v29, &v31, &v35); /*0x7bac06*/
+  result = ClipLine( (int)(&v29), (int)(&v31), (int)(&v35)); /*0x7bac06*/
   if ( result ) /*0x7bac0d*/
   {
     v11 = v29; /*0x7bac16*/
@@ -379,7 +379,7 @@ void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thi
     (*(void (**)(XSurface *))(*(unsigned int *)v28->Surface + 96))(v28); /*0x7bad80*/
 return (void *)1; /*0x7bad86*/
   }
-  return result; /*0x7bac0f*/
+  return (void*)result; /*0x7bac0f*/
 
 }
 } // namespace gamemd
@@ -673,7 +673,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
     v58 = v12; /*0x7bb3a3*/
     v13 = *(unsigned int *)this->Surface; /*0x7bb3a7*/
     v57 = a2; /*0x7bb3b1*/
-    (*(void (**)(XSurface *, int *, int))(v13 + 36))(this, &v57, a10); /*0x7bb3b5*/
+    (*(void (**)(XSurface *, int *, int))(v13 + 36))( this, (int *)(&v57), a10); /*0x7bb3b5*/
   }
   v14 = a3 - a5; /*0x7bb3bc*/
   v51 = a3 - a5; /*0x7bb3c0*/
@@ -682,7 +682,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
     v58 = a3 - a5; /*0x7bb3e6*/
     v15 = *(unsigned int *)this->Surface; /*0x7bb3ea*/
     v57 = a2; /*0x7bb3f4*/
-    (*(void (**)(XSurface *, int *, int))(v15 + 36))(this, &v57, a10); /*0x7bb3f8*/
+    (*(void (**)(XSurface *, int *, int))(v15 + 36))( this, (int *)(&v57), a10); /*0x7bb3f8*/
   }
   v53 = a5 * a5; /*0x7bb409*/
   v17 = a5 * a4 * a4; /*0x7bb40f*/
@@ -763,7 +763,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
       {
         v59 = a2 + a4; /*0x7bb699*/
         v60 = a3; /*0x7bb6a1*/
-        (*(void (**)(XSurface *, int *, int))(*(unsigned int *)this->Surface + 36))(this, &v59, a10); /*0x7bb6ad*/
+        (*(void (**)(XSurface *, int *, int))(*(unsigned int *)this->Surface + 36))( this, (int *)(&v59), a10); /*0x7bb6ad*/
       }
       v27 = a6; /*0x7bb6b0*/
     }
@@ -773,7 +773,7 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
     v59 = a2 - a4; /*0x7bb6e5*/
     v29 = *(unsigned int *)this->Surface; /*0x7bb6e9*/
     v60 = v28; /*0x7bb6f0*/
-    (*(void (**)(XSurface *, int *, int))(v29 + 36))(this, &v59, a10); /*0x7bb6f4*/
+    (*(void (**)(XSurface *, int *, int))(v29 + 36))( this, (int *)(&v59), a10); /*0x7bb6f4*/
   }
   v58 = 0; /*0x7bb700*/
   v47 = 0; /*0x7bb704*/

@@ -102,7 +102,7 @@ unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char *
   v6 = (unsigned int *)(RA2_OPNEW(0x40u));
   if ( v6 ) /*0x5d81bc*/
 // 0x5c6150
-    return MPBattleClass::MPManBattleClass((const wchar_t **)(v6),(gamemd::MultiplayerManBattle *)(a1),(const char **)(a2),(gamemd::MultiplayerManBattle *)(a3),(char)(a4), a5, a6); /*0x5d81de*/
+    return MPBattleClass::MPManBattleClass( (const wchar_t **)(v6), (gamemd::MultiplayerManBattle *)(a1), (const char **)(a2), (gamemd::MultiplayerManBattle *)(a3), (char)(a4), (MultiplayerManBattle *)(a5), a6); /*0x5d81de*/
   else
     return 0; /*0x5d81e6*/
 }

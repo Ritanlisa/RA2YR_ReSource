@@ -22,9 +22,9 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
   int v7; // ecx
   int v8; // ebp
 
-  v3 = *(unsigned int *)&Block->m_1[3]; /*0x69d523*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x69d526*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x69d530*/
+  v3 = *(unsigned int *)&this->m_1[3]; /*0x69d523*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x69d530*/
   {
     v4 = *(unsigned int *)(v3 - 4); /*0x69d53b*/
     v5 = (void *)(v3 - 4); /*0x69d53f*/
@@ -36,19 +36,19 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
       do /*0x69d558*/
       {
         v6 = (ObjectClass *)((char *)v6 - 4); /*0x69d54d*/
-        DeleteAndZero(v6); /*0x69d552*/
+        j_DeleteAndZero(v6); /*0x69d552*/
         --v8; /*0x69d557*/
       }
       while ( v8 ); /*0x69d558*/
     }
     __3_YAXPAX_Z(v5); /*0x69d55c*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x69d566*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x69d566*/
   }
-  BYTE1(Block->m_C) = 0; /*0x69d571*/
-  Block->m_8 = 0; /*0x69d577*/
+  BYTE1(this->m_C) = 0; /*0x69d571*/
+  this->m_8 = 0; /*0x69d577*/
   if ( (a2 & 1) != 0 ) /*0x69d57e*/
-    __3_YAXPAX_Z(Block); /*0x69d581*/
-  return Block->__pad_0; /*0x69d58b*/
+    __3_YAXPAX_Z(this); /*0x69d581*/
+  return this->__pad_0; /*0x69d58b*/
 
 }
 } // namespace gamemd

@@ -18,13 +18,13 @@ namespace gamemd {
 void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(DialogControl_OwnerDraw * Block, char a2)
 {
 
-  Block->m_0 = (int)&vt_WonlineStringDialogControl; /*0x7ac636*/
-  DeleteAndZero((ObjectClass *)&Block->__pad_9[3]); /*0x7ac63c*/
-  Block->m_0 = (int)&off_7F7624; /*0x7ac643*/
-  ((OwnerDrawControl *)((OwnerDrawControl *)Block))->InitVtable(); /*0x7ac649*/
+  this->m_0 = (int)&vt_WonlineStringDialogControl; /*0x7ac636*/
+  j_DeleteAndZero((ObjectClass *)&(&this->__pad_9)[3]); /*0x7ac63c*/
+  this->m_0 = (int)&off_7F7624; /*0x7ac643*/
+  ((OwnerDrawControl *)((OwnerDrawControl *)this))->InitVtable(); /*0x7ac649*/
   if ( (a2 & 1) != 0 ) /*0x7ac653*/
-    __3_YAXPAX_Z(Block); /*0x7ac656*/
-  return (void **)Block; /*0x7ac660*/
+    __3_YAXPAX_Z(this); /*0x7ac656*/
+  return (void **)this; /*0x7ac660*/
 
 }
 }
@@ -48,7 +48,7 @@ int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, 
   *v10 = 0; /*0x7ad6b1*/
   if ( !*a3 && !a3[1] && a3[2] == (char *)192 && a3[3] == (char *)1174405120 ) /*0x7ad6d3*/
   {
-    (*(void (**)(unsigned int *))(*a2 + 4))(a2); /*0x7ad6e6*/
+    (*(void (**)(unsigned int *))(*a2 + 4))( (unsigned int *)(a2)); /*0x7ad6e6*/
     *v10 = (unsigned int)(a2); /*0x7ad6e9*/
     return 0; /*0x7ad6f1*/
   }
@@ -336,18 +336,18 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(unsigned int * 
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x7ad373*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x7ad376*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x7ad380*/
+  v3 = *(void **)&this->m_1[3]; /*0x7ad373*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x7ad380*/
   {
     __3_YAXPAX_Z(v3); /*0x7ad388*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x7ad390*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x7ad390*/
   }
-  BYTE1(Block->m_C) = 0; /*0x7ad39b*/
-  Block->m_8 = 0; /*0x7ad3a1*/
+  BYTE1(this->m_C) = 0; /*0x7ad39b*/
+  this->m_8 = 0; /*0x7ad3a1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3a8*/
-    __3_YAXPAX_Z(Block); /*0x7ad3ab*/
-  return Block->__pad_0; /*0x7ad3b5*/
+    __3_YAXPAX_Z(this); /*0x7ad3ab*/
+  return this->__pad_0; /*0x7ad3b5*/
 
 }
 } // namespace gamemd
@@ -359,18 +359,18 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x7ad3c3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x7ad3c6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x7ad3d0*/
+  v3 = *(void **)&this->m_1[3]; /*0x7ad3c3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x7ad3d0*/
   {
     __3_YAXPAX_Z(v3); /*0x7ad3d8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x7ad3e0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x7ad3e0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x7ad3eb*/
-  Block->m_8 = 0; /*0x7ad3f1*/
+  BYTE1(this->m_C) = 0; /*0x7ad3eb*/
+  this->m_8 = 0; /*0x7ad3f1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3f8*/
-    __3_YAXPAX_Z(Block); /*0x7ad3fb*/
-  return Block->__pad_0; /*0x7ad405*/
+    __3_YAXPAX_Z(this); /*0x7ad3fb*/
+  return this->__pad_0; /*0x7ad405*/
 
 }
 } // namespace gamemd

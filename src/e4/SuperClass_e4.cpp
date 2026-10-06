@@ -219,14 +219,14 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     *(unsigned char *)(v2 + 405) = 0; /*0x6cb146*/
     *((unsigned int *)this + 26) = 0; /*0x6cb14d*/
     v9 = (int)(this); /*0x6cb164*/
-    v3 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb168*/
+    v3 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( ((char *)&g_BuildingLoadQueue_Array), (int *)(&v9)); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
       ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v3); /*0x6cb176*/
   }
   if ( *((unsigned char *)this + 108) ) /*0x6cb17b*/
   {
     v9 = (int)(this); /*0x6cb192*/
-    v4 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))(((char *)&g_BuildingLoadQueue_Array), &v9); /*0x6cb196*/
+    v4 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( ((char *)&g_BuildingLoadQueue_Array), (int *)(&v9)); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
       ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v4); /*0x6cb1a4*/
     *((unsigned char *)this + 108) = 0; /*0x6cb1a9*/
@@ -244,7 +244,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     }
   }
   v9 = (int)(this); /*0x6cb206*/
-  v6 = (*(int (**)(unsigned int *, int *))(dword_A83CB8 + 16))(&dword_A83CB8, &v9); /*0x6cb20a*/
+  v6 = (*(int (**)(unsigned int *, int *))(dword_A83CB8 + 16))( (unsigned int *)(&dword_A83CB8), (int *)(&v9)); /*0x6cb20a*/
   if ( v6 != -1 && v6 < dword_A83CC8 && v6 < --dword_A83CC8 ) /*0x6cb225*/
   {
     do /*0x6cb23d*/
@@ -486,14 +486,14 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
     *(unsigned char *)(v3 + 405) = 0; /*0x6cb840*/
     *((unsigned int *)this + 26) = 0; /*0x6cb846*/
     v8[0] = (unsigned int)(this); /*0x6cb859*/
-    v4 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
+    v4 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))( (int *)(&stru_B0F5B8), v8); /*0x6cb85d*/
     if ( v4 != -1 ) /*0x6cb863*/
       ((DynamicVector *)(&stru_B0F5B8))->RemoveItem(v4); /*0x6cb86b*/
   }
   if ( *((unsigned char *)this + 108) ) /*0x6cb870*/
   {
     v8[0] = (unsigned int)(this); /*0x6cb885*/
-    v5 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
+    v5 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))( (int *)(&stru_B0F5B8), v8); /*0x6cb889*/
     if ( v5 != -1 ) /*0x6cb88f*/
       ((DynamicVector *)(&stru_B0F5B8))->RemoveItem(v5); /*0x6cb897*/
     *((unsigned char *)this + 108) = 0; /*0x6cb89c*/
@@ -607,13 +607,13 @@ LABEL_11:
         *((unsigned int *)this + 12) = (unsigned int)(v16); /*0x6cba30*/
         *((unsigned int *)this + 13) = (unsigned int)(v30); /*0x6cba33*/
         *((unsigned int *)this + 14) = v17; /*0x6cba36*/
-        SuperClass::Launch((int)(this), v18, a3, v18); /*0x6cba41*/
+        SuperClass::Launch( (int)(this), v18, (short *)(a3), v18); /*0x6cba41*/
         return 0; /*0x6cba4f*/
       }
     }
     else if ( !*(unsigned char *)(*((unsigned int *)this + 11) + 506) ) /*0x6cba55*/
     {
-      SuperClass::Launch((int)(this), a2, a3, a2); /*0x6cba6d*/
+      SuperClass::Launch( (int)(this), a2, (short *)(a3), a2); /*0x6cba6d*/
       return 0; /*0x6cba7a*/
     }
     return 0; /*0x6cbc96*/
@@ -639,7 +639,7 @@ LABEL_11:
     }
     return 0; /*0x6cbae3*/
   }
-  SuperClass::Launch((int)(this), a2, a3, a2); /*0x6cbb05*/
+  SuperClass::Launch( (int)(this), a2, (short *)(a3), a2); /*0x6cbb05*/
   v20 = *((unsigned int *)this + 10); /*0x6cbb0a*/
   if ( !*(unsigned char *)(v20 + 238) ) /*0x6cbb0d*/
     *((unsigned char *)this + 111) = 0; /*0x6cbb15*/
@@ -715,7 +715,7 @@ LABEL_11:
   *((unsigned char *)this + 111) = 0; /*0x6cbb2f*/
   *((unsigned char *)this + 109) = 0; /*0x6cbb32*/
   a2 = (int)(this); /*0x6cbb41*/
-  v22 = (*(int (**)(int *, int *))(stru_A83D50 + 16))(&stru_A83D50, &a2); /*0x6cbb45*/
+  v22 = (*(int (**)(int *, int *))(stru_A83D50 + 16))( (int *)(&stru_A83D50), (int *)(&a2)); /*0x6cbb45*/
   if ( v22 != -1 ) /*0x6cbb4b*/
     ((SuperClass *)(&stru_A83D50))->RemoveFromPointerArray(v22); /*0x6cbb53*/
   return 1; /*0x6cb9bc*/
@@ -1109,7 +1109,7 @@ wchar_t * SuperClass::NameReadiness(void * aTxtHold)
   char *v2; // ecx
 
   if ( LOBYTE(this->SuperClass_field_0x70) ) /*0x6cc2b0*/
-    return GetStringCSF(aTxtHold, 0, (const char *)&g_Str_EVA_ChronosphereReady.SampleIndex[1], 950); /*0x6cc34d*/
+    return GetStringCSF( (wchar_t *)(aTxtHold), 0, (const char *)&g_Str_EVA_ChronosphereReady.SampleIndex[1], 950); /*0x6cc34d*/
   if ( *((unsigned char *)this->SuperClass_field_0x28 + 229) ) /*0x6cc2be*/
   {
     SuperClass_field_0x7C = (char *)this->SuperClass_field_0x7C; /*0x6cc2c8*/
@@ -1198,7 +1198,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
   int result; // eax
   int v3; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x6cdefb*/
+  result = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(aP0), (gamemd::AbstractClass *)(aP1)); /*0x6cdefb*/
   if ( result >= 0 ) /*0x6cdf02*/
   {
     if ( aP0 ) /*0x6cdf0a*/
@@ -1240,7 +1240,7 @@ int SuperClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x6cdfdf*/
+  result = AbstractClass::SaveLoad_Prefix( (gamemd::ObjectTypeClass *)((int *)aP0), (ObjectTypeClass *)(a1), (ObjectTypeClass *)(aP2)); /*0x6cdfdf*/
   if ( result >= 0 ) /*0x6cdfe6*/
     return 0; /*0x6cdfe8*/
   return result; /*0x6cdfea*/
@@ -1283,7 +1283,7 @@ int SuperClass::PowerDrainUpdate(int * a2)
   int result; // eax
   int v9; // eax
 
-  v3 = AbstractClass::ProcessPower((AbstractClass *)this); /*0x6ce029*/
+  v3 = ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x6ce029*/
   LOBYTE(v3) = BYTE1(this->SuperClass_field_0x6C); /*0x6ce02e*/
   ((Power *)((Power *)a2))->FlagProcess(v3); /*0x6ce034*/
   LOBYTE(v4) = BYTE2(this->SuperClass_field_0x6C); /*0x6ce039*/

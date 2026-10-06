@@ -43,13 +43,13 @@ void * WarheadTypeClass::loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4)
 
     Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)this, a2, a3, -1); /*0x47481c*/
     if ( Int_Overwrite == -1 ) /*0x474824*/
-      return a4; /*0x474826*/
+      return (void *)a4; /*0x474826*/
     if ( Int_Overwrite >= 100 ) /*0x474830*/
       Int_Overwrite = 100; /*0x474832*/
     result = ((Int_Overwrite <= 0 ? 0 : Int_Overwrite) << 8) / 100;
     if ( result >= 255 ) /*0x47485c*/
       return 255; /*0x47485e*/
-    return result; /*0x47482a*/
+    return (void *)result; /*0x47482a*/
 }
 } // namespace gamemd
 // 0x525300
@@ -90,7 +90,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
     }
     else
     {
-      (*(void (__thiscall **)(_DynamicVectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x52538e*/
+      (*(void (**)(_DynamicVectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x52538e*/
     }
     v7 = this->m_8; /*0x525391*/
     if ( v7 < this->m_10 ) /*0x525399*/
@@ -116,7 +116,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
     int v13; // ecx
 
     v2 = (void *)*((unsigned int *)this + 3); /*0x52ab84*/
-    *(unsigned int *)this = &INIClass::INISection::`vftable'; /*0x52ab87*/
+    *(unsigned int *)this = (void*)&INIClass_INISection_vftable; /*0x52ab87*/
     free(v2); /*0x52ab8e*/
     *((unsigned int *)this + 3) = 0; /*0x52ab98*/
     while ( 1 ) /*0x52ab9b*/
@@ -124,7 +124,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       v3 = *((unsigned int *)this + 6); /*0x52ab9b*/
       if ( !v3 || !*(unsigned int *)(v3 + 4) || !*(unsigned int *)(v3 + 8) ) /*0x52aba7*/
         break; /*0x52aba7*/
-      (**(void (__thiscall ***)(int, int))v3)(v3, 1); /*0x52abb4*/
+      (**(void (***)(int, int))v3)(v3, 1); /*0x52abb4*/
     }
     RA2_OPDEL(*((void **)this + 11)); /*0x52abbc*/
     *((unsigned int *)this + 11) = 0; /*0x52abc1*/
@@ -149,7 +149,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
     *((unsigned int *)this + 13) = 0; /*0x52ac0e*/
     *(this + 56) = 0; /*0x52ac11*/
     *((unsigned int *)this + 15) = 0; /*0x52ac14*/
-    *((unsigned int *)this + 4) = &GenericList::`vftable'; /*0x52ac1a*/
+    *((unsigned int *)this + 4) = (void*)&GenericList_vftable; /*0x52ac1a*/
     while ( 1 ) /*0x52ac21*/
     {
       v5 = *((unsigned int *)this + 6); /*0x52ac21*/
@@ -169,7 +169,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
         *(unsigned int *)(v5 + 4) = 0; /*0x52ac52*/
       }
     }
-    *((unsigned int *)this + 8) = &GenericNode::`vftable'; /*0x52ac5c*/
+    *((unsigned int *)this + 8) = (void*)&GenericNode_vftable; /*0x52ac5c*/
     if ( this != (char *)-32 ) /*0x52ac62*/
     {
       v8 = *((unsigned int *)this + 9); /*0x52ac64*/
@@ -186,7 +186,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       }
     }
     result = this + 20; /*0x52ac84*/
-    *((unsigned int *)this + 5) = &GenericNode::`vftable'; /*0x52ac89*/
+    *((unsigned int *)this + 5) = (void*)&GenericNode_vftable; /*0x52ac89*/
     if ( this != (char *)-20 ) /*0x52ac8f*/
     {
       v11 = *((unsigned int *)this + 6); /*0x52ac91*/
@@ -202,7 +202,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
         }
       }
     }
-    *(unsigned int *)this = &GenericNode::`vftable'; /*0x52acb3*/
+    *(unsigned int *)this = (void*)&GenericNode_vftable; /*0x52acb3*/
     if ( this ) /*0x52acb9*/
     {
       v13 = *((unsigned int *)this + 1); /*0x52acbb*/
@@ -234,7 +234,7 @@ void * WarheadTypeClass::ReadParticleSystems(char a2, int aP1, int a3, int a4, i
     void *v8; // edx
     unsigned int *WarheadTypeClass_field_0xC; // ecx
 
-    this->Deform = &GenericList::`vftable'; /*0x52afc6*/
+    this->Deform = (void*)&GenericList_vftable; /*0x52afc6*/
     while ( 1 ) /*0x52afcc*/
     {
       WarheadTypeClass_field_0x8 = this->WarheadTypeClass_field_0x8; /*0x52afcc*/
@@ -254,23 +254,23 @@ void * WarheadTypeClass::ReadParticleSystems(char a2, int aP1, int a3, int a4, i
         WarheadTypeClass_field_0x8[1] = 0; /*0x52affd*/
       }
     }
-    this->WarheadTypeClass_field_0x10 = &GenericNode::`vftable'; /*0x52b007*/
+    this->WarheadTypeClass_field_0x10 = (void*)&GenericNode_vftable; /*0x52b007*/
     if ( this != (WarheadTypeClass *)-16 ) /*0x52b00d*/
     {
-      v6 = this->AnimList[0]; /*0x52b00f*/
+      v6 = (&this->AnimList)[0]; /*0x52b00f*/
       if ( v6 ) /*0x52b014*/
       {
         v7 = this->InfDeath[0]; /*0x52b016*/
         if ( v7 ) /*0x52b01b*/
         {
           *(unsigned int *)(v7 + 4) = v6; /*0x52b01d*/
-          *(unsigned int *)(this->AnimList[0] + 8) = this->InfDeath[0]; /*0x52b026*/
+          *(unsigned int *)((&this->AnimList)[0] + 8) = ((unsigned int *)&this->InfDeath)[0]; /*0x52b026*/
           this->InfDeath[0] = 0; /*0x52b029*/
-          this->AnimList[0] = 0; /*0x52b02c*/
+          (&this->AnimList)[0] = 0; /*0x52b02c*/
         }
       }
     }
-    this->WarheadTypeClass_field_0x4 = &GenericNode::`vftable'; /*0x52b034*/
+    this->WarheadTypeClass_field_0x4 = (void*)&GenericNode_vftable; /*0x52b034*/
     if ( this != (WarheadTypeClass *)-4 ) /*0x52b03a*/
     {
       v8 = this->WarheadTypeClass_field_0x8; /*0x52b03c*/
@@ -301,7 +301,7 @@ ParticleSystemTypeClass * * WarheadTypeClass::applyDamage(char *Source, int aP1,
     int v6; // ecx
     unsigned int *i; // edx
 
-    if ( !_strcmpi(Source, g_Str__none_) || !strlen(Source) ) /*0x644649*/
+    if ( !_strcmpi(Source, g_Str__none_) || !strlen( (const char *)(Source)) ) /*0x644649*/
       return -1; /*0x644653*/
     v2 = 0; /*0x64465a*/
     if ( (int)stru_A83D50.SuperClass_field_0x28 <= 0 ) /*0x64465e*/
@@ -309,7 +309,7 @@ ParticleSystemTypeClass * * WarheadTypeClass::applyDamage(char *Source, int aP1,
   LABEL_6:
       v3 = (OverlayTypeClass *)RA2_OPNEW(0x310u); /*0x644683*/
       if ( v3 ) /*0x644692*/
-        v4 = OverlayTypeClass::Construct(v3, Source); /*0x644697*/
+        v4 = ((OverlayTypeClass *)v3)->Construct( Source); /*0x644697*/
       else
         v4 = 0; /*0x6446a4*/
       v6 = 0; /*0x6446ac*/
@@ -320,7 +320,7 @@ ParticleSystemTypeClass * * WarheadTypeClass::applyDamage(char *Source, int aP1,
           if ( ++v6 >= (int)stru_A83D50.SuperClass_field_0x28 ) /*0x6446c2*/
             return -1; /*0x6446c2*/
         }
-        return v6; /*0x6446cd*/
+        return (ParticleSystemTypeClass * *)v6; /*0x6446cd*/
       }
       return -1; /*0x6446ca*/
     }
@@ -329,7 +329,7 @@ ParticleSystemTypeClass * * WarheadTypeClass::applyDamage(char *Source, int aP1,
       if ( ++v2 >= (int)stru_A83D50.SuperClass_field_0x28 ) /*0x644681*/
         goto LABEL_6; /*0x644681*/
     }
-    return v2; /*0x6446a0*/
+    return (ParticleSystemTypeClass * *)v2; /*0x6446a0*/
 }
 } // namespace gamemd
 // 0x75CEC0
@@ -339,16 +339,16 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
     int v3; // eax
     int v4; // eax
 
-    AbstractTypeClass::Constructor(this, Source); /*0x75cecb*/
+    ((AbstractTypeClass *)this)->Constructor( Source); /*0x75cecb*/
     *(unsigned int *)(this + 152) = 0; /*0x75ced8*/
     *(unsigned int *)(this + 156) = 0; /*0x75cede*/
     *(unsigned int *)(this + 248) = 0; /*0x75cee4*/
     *(unsigned int *)(this + 252) = 1072693248; /*0x75ceeb*/
     *(unsigned int *)(this + 256) = 0; /*0x75cef8*/
-    AnimTypeVector::Constructor((unsigned int *)(this + 260), 0, 0); /*0x75cefe*/
+    AnimTypeVector::Constructor( (int)((unsigned int *)(this + 260)), 0, 0); /*0x75cefe*/
     *(unsigned int *)(this + 276) = 0; /*0x75cf08*/
     *(unsigned int *)(this + 280) = 10; /*0x75cf0b*/
-    *(unsigned int *)(this + 260) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x75cf0e*/
+    *(unsigned int *)(this + 260) = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x75cf0e*/
     *(unsigned int *)(this + 288) = 0; /*0x75cf14*/
     *(unsigned int *)(this + 292) = 0; /*0x75cf1a*/
     *(unsigned int *)(this + 296) = 0; /*0x75cf25*/
@@ -408,44 +408,44 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
     *(unsigned char *)(this + 409) = 0; /*0x75d083*/
     *(unsigned int *)(this + 416) = 10; /*0x75d086*/
     *(unsigned int *)(this + 412) = 0; /*0x75d089*/
-    *(unsigned int *)(this + 396) = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x75d08c*/
+    *(unsigned int *)(this + 396) = (void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x75d08c*/
     *(unsigned char *)(this + 436) = 1; /*0x75d092*/
     *(unsigned int *)(this + 428) = 0; /*0x75d098*/
     *(unsigned int *)(this + 432) = 0; /*0x75d09b*/
     *(unsigned char *)(this + 437) = 0; /*0x75d09e*/
     *(unsigned int *)(this + 444) = 10; /*0x75d0a1*/
     *(unsigned int *)(this + 440) = 0; /*0x75d0a4*/
-    *(unsigned int *)(this + 424) = &TypeList<int>::`vftable'; /*0x75d0a7*/
+    *(unsigned int *)(this + 424) = (void*)&TypeList_int_vftable; /*0x75d0a7*/
     *(unsigned int *)(this + 452) = 0; /*0x75d0ae*/
     *(unsigned int *)(this + 456) = 0; /*0x75d0b4*/
-    *(unsigned int *)this = &WarheadTypeClass::`vftable'; /*0x75d0ba*/
-    *(unsigned int *)(this + 4) = &WarheadTypeClass::`vftable'; /*0x75d0c1*/
-    *(unsigned int *)(this + 8) = &WarheadTypeClass::`vftable'; /*0x75d0c7*/
-    *(unsigned int *)(this + 12) = &WarheadTypeClass::`vftable'; /*0x75d0ce*/
+    *(unsigned int *)this = (void*)&WarheadTypeClass_vftable; /*0x75d0ba*/
+    *(unsigned int *)(this + 4) = (void*)&WarheadTypeClass_vftable; /*0x75d0c1*/
+    *(unsigned int *)(this + 8) = (void*)&WarheadTypeClass_vftable; /*0x75d0c7*/
+    *(unsigned int *)(this + 12) = (void*)&WarheadTypeClass_vftable; /*0x75d0ce*/
     AbstractClass::GenerateUniqueID(this + 4); /*0x75d0d5*/
-    (*(void (__thiscall **)(int))(*(unsigned int *)(this + 396) + 12))(this + 396); /*0x75d0de*/
-    (*(void (__thiscall **)(int))(*(unsigned int *)(this + 424) + 12))(this + 424); /*0x75d0e5*/
+    (*(void (**)(int))(*(unsigned int *)(this + 396) + 12))(this + 396); /*0x75d0de*/
+    (*(void (**)(int))(*(unsigned int *)(this + 424) + 12))(this + 424); /*0x75d0e5*/
     if ( g_WarheadTypePool < dword_8874C8 /*0x75d11c*/
       || (byte_8874CD || !dword_8874C8)
       && dword_8874D4 > 0
-      && (*(unsigned __int8 (__thiscall **)(int *, int, unsigned int))(WarheadTypeClass_Array + 8))(
+      && (*(unsigned __int8 (**)(int *, int, unsigned int))(WarheadTypeClass_Array + 8))(
            &WarheadTypeClass_Array,
            dword_8874C8 + dword_8874D4,
            0) )
     {
       v3 = g_WarheadTypePool++; /*0x75d129*/
-      *((unsigned int *)dword_8874C4 + v3) = this; /*0x75d138*/
+      *((unsigned int *)dword_8874C4 + v3) = (unsigned int)this;
     }
     if ( dword_B0F680 < dword_B0F678 /*0x75d16f*/
       || (byte_B0F67D || !dword_B0F678)
       && dword_B0F684 > 0
-      && (*(unsigned __int8 (__thiscall **)(int *, int, unsigned int))(dword_B0F670 + 8))(
+      && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_B0F670 + 8))(
            &dword_B0F670,
            dword_B0F678 + dword_B0F684,
            0) )
     {
       v4 = dword_B0F680++; /*0x75d17c*/
-      *((unsigned int *)dword_B0F674 + v4) = this; /*0x75d18b*/
+      *((unsigned int *)dword_B0F674 + v4) = (unsigned int)this;
     }
     *(unsigned int *)(this + 160) = 0; /*0x75d19b*/
     *(unsigned int *)(this + 164) = 1072693248; /*0x75d1a0*/
@@ -475,7 +475,7 @@ void* WarheadTypeClass::ProcessPower(int * a2, void *a2_2)
     int *v18; // ebx
     int v20; // [esp+Ch] [ebp-4h]
 
-    v3 = AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x75ded0*/
+    v3 = ((AbstractTypeClass *)(AbstractTypeClass *)this)->ProcessPower( a2); /*0x75ded0*/
     IDA_LOBYTE(v3) = this->__pad_144[0]; /*0x75ded5*/
     Power::FlagProcess((Power *)a2, v3); /*0x75dede*/
     IDA_LOBYTE(v4) = this->__pad_144[3]; /*0x75dee3*/
@@ -504,21 +504,21 @@ void* WarheadTypeClass::ProcessPower(int * a2, void *a2_2)
     Power::FlagProcess((Power *)a2, v15); /*0x75df86*/
     IDA_LOBYTE(v16) = this->CLDisableRed[2]; /*0x75df8b*/
     Power::FlagProcess((Power *)a2, v16); /*0x75df94*/
-    Checksummer::Add_double((Checksummer *)a2, *(unsigned int *)&this->__pad_44[84], *(unsigned int *)&this->__pad_44[88]); /*0x75dfa9*/
+    ((Checksummer *)(Checksummer *)a2)->Add_double( *(unsigned int *)&this->__pad_44[84], *(unsigned int *)&this->__pad_44[88]); /*0x75dfa9*/
     Power::TimerProcess(this->WarheadTypeClass_field_0x100); /*0x75dfb7*/
-    Checksummer::Add_double((Checksummer *)a2, (int)this->WarheadTypeClass_field_0xF8, *(unsigned int *)this->__pad_FC); /*0x75dfcc*/
+    ((Checksummer *)(Checksummer *)a2)->Add_double( (int)this->WarheadTypeClass_field_0xF8, *(unsigned int *)this->__pad_FC); /*0x75dfcc*/
     IDA_LOBYTE(v17) = IDA_HIBYTE(this->PsychicDamage); /*0x75dfd1*/
     Power::FlagProcess((Power *)a2, v17); /*0x75dfda*/
     Power::TimerProcess(this->WarheadTypeClass_field_0x17C); /*0x75dfe8*/
     Power::TimerProcess(this->WarheadTypeClass_field_0x180); /*0x75dff6*/
     Power::TimerProcess(this->WarheadTypeClass_field_0x184); /*0x75e004*/
     Power::TimerProcess(this->WarheadTypeClass_field_0x188); /*0x75e012*/
-    Checksummer::Add_Buffer((Checksummer *)a2, (unsigned __int8 *)&this->Parasite[3], 16); /*0x75e022*/
+    Checksummer::Add_Buffer( (void)((Checksummer *)a2), (unsigned char)((unsigned __int8 *)&this->Parasite[3]), 16); /*0x75e022*/
     v18 = (int *)&this->__pad_44[92]; /*0x75e027*/
     v20 = 11; /*0x75e02d*/
     do /*0x75e04f*/
     {
-      Checksummer::Add_double((Checksummer *)a2, *v18, v18[1]); /*0x75e03e*/
+      ((Checksummer *)(Checksummer *)a2)->Add_double( *v18, v18[1]); /*0x75e03e*/
       v18 += 2; /*0x75e047*/
       --v20; /*0x75e04b*/
     }
@@ -543,50 +543,50 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
 
     v2 = this; /*0x75e0c4*/
     DebrisTypes = this->DebrisTypes; /*0x75e0ce*/
-    (*(void (__thiscall **)(int *))(this->DebrisTypes[0] + 12))(this->DebrisTypes); /*0x75e0d6*/
-    (*(void (__thiscall **)(char *))(*(unsigned int *)&v2->__pad_1A0[8] + 12))(&v2->__pad_1A0[8]); /*0x75e0e7*/
+    (*(void (**)(int *))(this->DebrisTypes[0] + 12))( (int *)(this->DebrisTypes)); /*0x75e0d6*/
+    (*(void (**)(char *))(*(unsigned int *)&v2->__pad_1A0[8] + 12))( (char *)(&v2->__pad_1A0[8])); /*0x75e0e7*/
     v4 = a2; /*0x75e0ea*/
-    result = AbstractClass::SaveLoad_Prefix_0(v2, a2); /*0x75e0f0*/
+    result = AbstractClass::SaveLoad_Prefix_0(v2, (AbstractClass *)(a2)); /*0x75e0f0*/
     if ( result >= 0 ) /*0x75e0f7*/
     {
       if ( v2 ) /*0x75e0ff*/
       {
-        AbstractTypeClass::Init((int)v2, (int)&this); /*0x75e108*/
-        DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v2->__pad_104, 0, 0); /*0x75e117*/
-        *(unsigned int *)v2->__pad_104 = &TypeList<AnimTypeClass const *>::`vftable'; /*0x75e120*/
-        WarheadTypeClass::checkImmunity((WarheadTypeClass *)DebrisTypes, (int)&this); /*0x75e12d*/
-        WarheadTypeClass::calculateDamage((WarheadTypeClass *)&v2->__pad_1A0[8], (int)&this); /*0x75e139*/
-        v2->Deform = &WarheadTypeClass::`vftable'; /*0x75e13e*/
-        v2->WarheadTypeClass_field_0x4 = &WarheadTypeClass::`vftable'; /*0x75e144*/
-        v2->WarheadTypeClass_field_0x8 = &WarheadTypeClass::`vftable'; /*0x75e14b*/
-        v2->WarheadTypeClass_field_0xC = &WarheadTypeClass::`vftable'; /*0x75e152*/
+        ((AbstractTypeClass *)(int)v2)->Init( (int)&this); /*0x75e108*/
+        ((DynamicVectorClass *)(DynamicVectorClass *)v2->__pad_104)->AnimTypeConstructor( 0, 0); /*0x75e117*/
+        *(unsigned int *)v2->__pad_104 = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x75e120*/
+        ((WarheadTypeClass *)(WarheadTypeClass *)DebrisTypes)->checkImmunity( (int)&this); /*0x75e12d*/
+        ((WarheadTypeClass *)(WarheadTypeClass *)&v2->__pad_1A0[8])->calculateDamage( (int)&this); /*0x75e139*/
+        v2->Deform = (void*)&WarheadTypeClass_vftable; /*0x75e13e*/
+        v2->WarheadTypeClass_field_0x4 = (void*)&WarheadTypeClass_vftable; /*0x75e144*/
+        v2->WarheadTypeClass_field_0x8 = (void*)&WarheadTypeClass_vftable; /*0x75e14b*/
+        v2->WarheadTypeClass_field_0xC = (void*)&WarheadTypeClass_vftable; /*0x75e152*/
       }
       if ( v2 != (WarheadTypeClass *)-260 ) /*0x75e161*/
       {
-        DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v2->__pad_104, 0, 0); /*0x75e169*/
-        *(unsigned int *)v2->__pad_104 = &TypeList<AnimTypeClass const *>::`vftable'; /*0x75e16e*/
+        ((DynamicVectorClass *)(DynamicVectorClass *)v2->__pad_104)->AnimTypeConstructor( 0, 0); /*0x75e169*/
+        *(unsigned int *)v2->__pad_104 = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x75e16e*/
       }
-      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &this, 4, 0); /*0x75e180*/
+      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30))(v4, &this, 4, 0);  /*0x75e180*/
       for ( i = 0; i < (int)this; ++i ) /*0x75e18b*/
       {
-        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &a2, 4, 0); /*0x75e199*/
-        DynamicVector::Add_Alt4((DynamicVector *)v2->__pad_104, &a2); /*0x75e1a7*/
+        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30))(v4, &a2, 4, 0);  /*0x75e199*/
+        ((DynamicVector *)(DynamicVector *)v2->__pad_104)->Add_Alt4( &a2); /*0x75e1a7*/
       }
       if ( DebrisTypes ) /*0x75e1b5*/
         TypeList::VoxelAnimConstructor((TypeList *)DebrisTypes); /*0x75e1b9*/
-      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &this, 4, 0); /*0x75e1ca*/
+      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30))(v4, &this, 4, 0);  /*0x75e1ca*/
       for ( j = 0; j < (int)this; ++j ) /*0x75e1d5*/
       {
-        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &a2, 4, 0); /*0x75e1e3*/
-        DynamicVector::Add2((DynamicVector *)DebrisTypes, &a2); /*0x75e1ed*/
+        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30))(v4, &a2, 4, 0);  /*0x75e1e3*/
+        ((DynamicVector *)(DynamicVector *)DebrisTypes)->Add2( &a2); /*0x75e1ed*/
       }
       if ( v2 != (WarheadTypeClass *)-424 ) /*0x75e201*/
         TypeList::Construct((TypeList *)&v2->__pad_1A0[8]); /*0x75e205*/
-      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &this, 4, 0); /*0x75e216*/
+      (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30))(v4, &this, 4, 0);  /*0x75e216*/
       for ( k = 0; k < (int)this; ++k ) /*0x75e221*/
       {
-        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30)(v4, &a2, 4, 0); /*0x75e22f*/
-        DynamicVector::Add_Alt((DynamicVector *)&v2->__pad_1A0[8], &a2); /*0x75e239*/
+        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30))(v4, &a2, 4, 0);  /*0x75e22f*/
+        ((DynamicVector *)(DynamicVector *)&v2->__pad_1A0[8])->Add_Alt( &a2); /*0x75e239*/
       }
       for ( m = 0; m < v2->WarheadTypeClass_field_0x114; ++m ) /*0x75e24f*/
         ObjectPtr::RegisterForTracking( /*0x75e260*/
@@ -615,7 +615,7 @@ int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0, void * a2, void * 
     int v11; // edx
     int k; // ebx
 
-    result = AbstractClass::SaveLoad_Prefix((int *)this, a2, (int)WarheadTypeClass_field_0x114); /*0x75e2d1*/
+    result = AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)this), (ObjectTypeClass *)(a2), (int)WarheadTypeClass_field_0x114); /*0x75e2d1*/
     if ( result >= 0 ) /*0x75e2d8*/
     {
       v7 = *a2; /*0x75e2e4*/
@@ -685,7 +685,7 @@ int WarheadTypeClass::GetDamage(int a2, int a3)
       this->WarheadTypeClass_field_0x140 = 0; /*0x75e44e*/
     pad_104 = this->__pad_104; /*0x75e459*/
     a2 = v3; /*0x75e463*/
-    result = (*(int (__thiscall **)(char *, int *))(*(unsigned int *)this->__pad_104 + 16))(this->__pad_104, &a2); /*0x75e46c*/
+    result = (*(int (**)(char *, int *))(*(unsigned int *)this->__pad_104 + 16))( (char *)(this->__pad_104), (int *)(&a2)); /*0x75e46c*/
     if ( result != -1 ) /*0x75e472*/
     {
       v6 = *((unsigned int *)pad_104 + 4); /*0x75e474*/
@@ -714,13 +714,13 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
     void *WarheadTypeClass_field_0x108; // eax
     WarheadTypeClass *v9; // [esp+4h] [ebp-4h] BYREF
 
-    this->Deform = &WarheadTypeClass::`vftable'; /*0x75e516*/
-    this->WarheadTypeClass_field_0x4 = &WarheadTypeClass::`vftable'; /*0x75e51c*/
-    this->WarheadTypeClass_field_0x8 = &WarheadTypeClass::`vftable'; /*0x75e523*/
-    this->WarheadTypeClass_field_0xC = &WarheadTypeClass::`vftable'; /*0x75e52a*/
+    this->Deform = (void*)&WarheadTypeClass_vftable; /*0x75e516*/
+    this->WarheadTypeClass_field_0x4 = (void*)&WarheadTypeClass_vftable; /*0x75e51c*/
+    this->WarheadTypeClass_field_0x8 = (void*)&WarheadTypeClass_vftable; /*0x75e523*/
+    this->WarheadTypeClass_field_0xC = (void*)&WarheadTypeClass_vftable; /*0x75e52a*/
     AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x75e531*/
     v9 = this; /*0x75e546*/
-    v3 = ((int (__thiscall *)(WarheadTypeClass **, WarheadTypeClass **))WarheadTypeClass_Array->WarheadTypeClass_field_0x10)( /*0x75e54a*/
+    v3 = ((int (*)(WarheadTypeClass **, WarheadTypeClass **))WarheadTypeClass_Array->WarheadTypeClass_field_0x10)( /*0x75e54a*/
            &WarheadTypeClass_Array,
            &v9);
     if ( v3 != -1 && v3 < g_WarheadTypePool && v3 < --g_WarheadTypePool ) /*0x75e565*/
@@ -733,7 +733,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
       while ( v3 < g_WarheadTypePool ); /*0x75e57d*/
     }
     v9 = this; /*0x75e58f*/
-    v4 = (*(int (__thiscall **)(int *, WarheadTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x75e593*/
+    v4 = (*(int (**)(int *, WarheadTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x75e593*/
            &g_BuildingLoadQueue_Array.LightVisibility,
            &v9);
     if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x75e5a3*/
@@ -748,7 +748,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
       }
     }
     WarheadTypeClass_field_0x1AC = this->WarheadTypeClass_field_0x1AC; /*0x75e5c8*/
-    *(unsigned int *)&this->__pad_1A0[8] = &VectorClass<int>::`vftable'; /*0x75e5d1*/
+    *(unsigned int *)&this->__pad_1A0[8] = (void*)&VectorClass_int_vftable; /*0x75e5d1*/
     if ( WarheadTypeClass_field_0x1AC && this->__pad_1B0[5] ) /*0x75e5df*/
     {
       RA2_OPDEL(WarheadTypeClass_field_0x1AC); /*0x75e5e8*/
@@ -757,7 +757,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
     this->__pad_1B0[5] = 0; /*0x75e5f6*/
     *(unsigned int *)this->__pad_1B0 = 0; /*0x75e5fc*/
     v6 = (void *)this->WarheadTypeClass_field_0x190[0]; /*0x75e602*/
-    this->DebrisTypes[0] = (int)&VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x75e608*/
+    this->DebrisTypes[0] = (int)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75e608*/
     if ( v6 && IDA_BYTE1(this->MinDebris) ) /*0x75e616*/
     {
       RA2_OPDEL(v6); /*0x75e61f*/
@@ -766,7 +766,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
     IDA_BYTE1(this->MinDebris) = 0; /*0x75e62d*/
     this->MaxDebris = 0; /*0x75e633*/
     WarheadTypeClass_field_0x108 = (void *)this->WarheadTypeClass_field_0x108; /*0x75e639*/
-    *(unsigned int *)this->__pad_104 = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x75e63f*/
+    *(unsigned int *)this->__pad_104 = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x75e63f*/
     if ( WarheadTypeClass_field_0x108 && this->__pad_10C[5] ) /*0x75e64d*/
     {
       RA2_OPDEL(WarheadTypeClass_field_0x108); /*0x75e656*/
@@ -774,7 +774,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
     }
     this->__pad_10C[5] = 0; /*0x75e666*/
     *(unsigned int *)this->__pad_10C = 0; /*0x75e66c*/
-    AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x75e672*/
+    ((AbstractTypeClass *)(AbstractTypeClass *)this)->Dtor(); /*0x75e672*/
     if ( (a2 & 1) != 0 ) /*0x75e67e*/
       RA2_OPDEL(this); /*0x75e681*/
     return &this->Deform; /*0x75e68b*/
@@ -853,8 +853,8 @@ void* WarheadTypeClass_ReadINI()
     char String[128]; // [esp+60h] [ebp-80h] BYREF
 
     v4 = v3; /*0x772091*/
-    INIClass::ResetSection((INIClass *)this); /*0x772095*/
-    if ( !INIClass::BinarySearchSection((int)this, (unsigned __int8 *)(v4 + 36)) ) /*0x7720a0*/
+    INIClass::ResetSection( (INIClass *)this); /*0x772095*/
+    if ( !INIClass::BinarySearchSection( (int)this, (void)((unsigned __int8 *)(v4 + 36))) ) /*0x7720a0*/
       return 0; /*0x7729d9*/
     *(unsigned int *)(v4 + 152) = INIClass::ReadInt_Overwrite( /*0x7720c6*/
                               (bool *)this,
@@ -986,9 +986,9 @@ void* WarheadTypeClass_ReadINI()
     v5 = (unsigned int *)INIClassIntList; /*0x77236b*/
     *(unsigned int *)(INIClassIntList + 16) = *(unsigned int *)(v4 + 204); /*0x772377*/
     v5[5] = *(unsigned int *)(v4 + 208); /*0x77237d*/
-    *v5 = &TypeList<int>::`vftable'; /*0x772382*/
+    *v5 = (void*)&TypeList_int_vftable; /*0x772382*/
     inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36)); /*0x772388*/
-    INIClassIntList = GetINIClassIntList( /*0x77239c*/
+    INIClassIntList = (unsigned int)GetINIClassIntList( /*0x77239c*/
                         (int)&v65,
                         (unsigned __int8 ***)this,
                         inited,
@@ -1007,7 +1007,7 @@ void* WarheadTypeClass_ReadINI()
     v8 = *(unsigned int *)(v7 + 24); /*0x7723b5*/
     v9 = *(void **)&v65.DynamicVector_field_0x1[3]; /*0x7723b8*/
     *(unsigned int *)(v4 + 212) = v8; /*0x7723bc*/
-    *(unsigned int *)v65.__pad_0 = &VectorClass<int>::`vftable'; /*0x7723c1*/
+    *(unsigned int *)v65.__pad_0 = (void*)&VectorClass_int_vftable; /*0x7723c1*/
     if ( v9 && v65.__pad_C[1] ) /*0x7723d1*/
       RA2_OPDEL(v9); /*0x7723d4*/
     INIClassIntList = (int)&v58; /*0x7723e8*/
@@ -1015,9 +1015,9 @@ void* WarheadTypeClass_ReadINI()
     v10 = (unsigned int *)INIClassIntList; /*0x7723f1*/
     *(unsigned int *)(INIClassIntList + 16) = *(unsigned int *)(v4 + 232); /*0x7723fd*/
     v10[5] = *(unsigned int *)(v4 + 236); /*0x772405*/
-    *v10 = &TypeList<int>::`vftable'; /*0x772408*/
+    *v10 = (void*)&TypeList_int_vftable; /*0x772408*/
     v11 = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36)); /*0x77240e*/
-    INIClassIntList = GetINIClassIntList( /*0x772422*/
+    INIClassIntList = (unsigned int)GetINIClassIntList( /*0x772422*/
                         (int)&v65,
                         (unsigned __int8 ***)this,
                         v11,
@@ -1034,7 +1034,7 @@ void* WarheadTypeClass_ReadINI()
     *(unsigned int *)(v4 + 232) = *(unsigned int *)(INIClassIntList + 16); /*0x772432*/
     *(unsigned int *)(v4 + 236) = *(unsigned int *)(v12 + 20); /*0x772438*/
     *(unsigned int *)(v4 + 240) = *(unsigned int *)(v12 + 24); /*0x77243e*/
-    *(unsigned int *)v65.__pad_0 = &VectorClass<int>::`vftable'; /*0x772447*/
+    *(unsigned int *)v65.__pad_0 = (void*)&VectorClass_int_vftable; /*0x772447*/
     if ( *(unsigned int *)&v65.DynamicVector_field_0x1[3] && v65.__pad_C[1] ) /*0x772457*/
       RA2_OPDEL(*(void **)&v65.DynamicVector_field_0x1[3]); /*0x77245a*/
     if ( INIClass::GetString( /*0x772479*/
@@ -1045,32 +1045,32 @@ void* WarheadTypeClass_ReadINI()
            String,
            128) )
     {
-      DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v65, 0, 0); /*0x77248e*/
-      *(unsigned int *)v65.__pad_0 = &TypeList<AnimTypeClass const *>::`vftable'; /*0x77249d*/
-      for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x7724af*/
+      ((DynamicVectorClass *)(DynamicVectorClass *)&v65)->AnimTypeConstructor( 0, 0); /*0x77248e*/
+      *(unsigned int *)v65.__pad_0 = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x77249d*/
+      for ( i = strtok(String, (char *)&::Delimiter); i; i = strtok(0, (char *)&::Delimiter) ) /*0x7724af*/
       {
         if ( !*i ) /*0x7724b1*/
           break; /*0x7724b4*/
         INIClassIntList = (int)AnimTypeClass::FindOrCreate(i); /*0x7724bf*/
         if ( INIClassIntList ) /*0x7724c3*/
-          DynamicVector::Add_Alt4(&v65, &INIClassIntList); /*0x7724ce*/
+          ((DynamicVector *)&v65)->Add_Alt4( &INIClassIntList); /*0x7724ce*/
       }
       TypeList::AnimTypeCopy((TypeList *)&v65.DynamicVector_field_0x1C, &v65); /*0x7724ef*/
-      *(unsigned int *)v65.__pad_0 = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x7724f8*/
-      DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v65); /*0x772500*/
+      *(unsigned int *)v65.__pad_0 = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x7724f8*/
+      DynamicVectorClass::Destroy_Alt( (void)((_VectorClass_PBVAnimTypeClass *)&v65)); /*0x772500*/
     }
     else
     {
       TypeList::AnimTypeCopy((TypeList *)&v65.DynamicVector_field_0x1C, (unsigned int *)(v4 + 244)); /*0x772512*/
     }
-    VectorClass::CopyDefault((VectorClass *)(v4 + 244), &v65.DynamicVector_field_0x1C); /*0x772524*/
+    ((VectorClass *)(VectorClass *)(v4 + 244))->CopyDefault( &v65.DynamicVector_field_0x1C); /*0x772524*/
     v14 = v66; /*0x77252d*/
     v15 = v67; /*0x772531*/
     *(unsigned int *)(v4 + 268) = v68; /*0x772535*/
     v16 = *(void **)v65.__pad_20; /*0x772538*/
     *(unsigned int *)(v4 + 260) = v14; /*0x77253c*/
     *(unsigned int *)(v4 + 264) = v15; /*0x772541*/
-    v65.DynamicVector_field_0x1C = (int)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x772544*/
+    v65.DynamicVector_field_0x1C = (int)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x772544*/
     if ( v16 && IDA_BYTE1(v65.DynamicVector_field_0x28) ) /*0x772554*/
       RA2_OPDEL(v16); /*0x772557*/
     v17 = *(unsigned int **)(v4 + 276); /*0x77255f*/
@@ -1244,7 +1244,7 @@ void* WarheadTypeClass_ReadINI()
            String,
            128) )
     {
-      v55 = WarheadTypeClass::FindOrCreate(String); /*0x77296c*/
+      v55 = WarheadTypeClass::FindOrCreate( (ObjectClass *)(String)); /*0x77296c*/
     }
     else
     {
@@ -1258,7 +1258,7 @@ void* WarheadTypeClass_ReadINI()
     v59 = (unsigned __int8 *)(v4 + 36); /*0x77298f*/
     *(unsigned int *)(v4 + 172) = v55; /*0x772992*/
     if ( INIClass::GetString((INIClass *)this, v59, p_INIClassIntList, v61, (char *)v62, v63) ) /*0x772998*/
-      *(unsigned int *)(v4 + 160) = ObjectTypeClass::FindOrCreate(String); /*0x7729aa*/
+      *(unsigned int *)(v4 + 160) = ObjectTypeClass::FindOrCreate( (ObjectClass *)(String)); /*0x7729aa*/
     else
       *(unsigned int *)(v4 + 160) = v56; /*0x7729c1*/
     return 1; /*0x7729b2*/
@@ -1307,7 +1307,7 @@ TypeList_flat * WarheadTypeClass::QueryInterface(unsigned int * Block, char a2)
     void *v3; // eax
 
     v3 = (void *)*(Block + 1); /*0x524fc3*/
-    *Block = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x524fc6*/
+    *Block = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x524fc6*/
     if ( v3 && *((unsigned char *)Block + 13) ) /*0x524fd0*/
     {
       RA2_OPDEL(v3); /*0x524fd8*/
@@ -1380,7 +1380,7 @@ void * WarheadTypeClass::parseModifiers(char a2)
     void *WarheadTypeClass_field_0x10; // [esp-8h] [ebp-10h]
 
     WarheadTypeClass_field_0xC = this->WarheadTypeClass_field_0xC; /*0x52ad54*/
-    this->Deform = &INIClass::INIEntry::`vftable'; /*0x52ad57*/
+    this->Deform = (void*)&INIClass_INIEntry_vftable; /*0x52ad57*/
     free(WarheadTypeClass_field_0xC); /*0x52ad5e*/
     WarheadTypeClass_field_0x10 = this->WarheadTypeClass_field_0x10; /*0x52ad68*/
     this->WarheadTypeClass_field_0xC = 0; /*0x52ad69*/
@@ -1400,7 +1400,7 @@ void * WarheadTypeClass::parseModifiers(char a2)
     }
     free((void *)this->InfDeath[0]); /*0x52ada7*/
     this->InfDeath[0] = 0; /*0x52adb1*/
-    this->Deform = &GenericNode::`vftable'; /*0x52adb4*/
+    this->Deform = (void*)&GenericNode_vftable; /*0x52adb4*/
     if ( this ) /*0x52adba*/
     {
       WarheadTypeClass_field_0x4 = this->WarheadTypeClass_field_0x4; /*0x52adbc*/
@@ -1429,7 +1429,7 @@ WarheadTypeClass * WarheadTypeClass::parseAnimations(char * Block, char a2)
     WarheadTypeClass *v3; // esi
 
     v3 = (WarheadTypeClass *)v2; /*0x52ae01*/
-    WarheadTypeClass::parseVerses(v2); /*0x52ae03*/
+    ((WarheadTypeClass *)v2)->parseVerses(); /*0x52ae03*/
     if ( ((unsigned __int8)this & 1) != 0 ) /*0x52ae0d*/
       RA2_OPDEL(v3); /*0x52ae10*/
     return v3; /*0x52ae1a*/
@@ -1448,9 +1448,9 @@ int WarheadTypeClass::LoadType()
     KeyCount = INIClass::GetKeyCount(v6->__pad_0, g_INI_Key_Warheads); /*0x6729a6*/
     for ( i = 0; i < KeyCount; ++i ) /*0x6729ac*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6->__pad_0, g_INI_Key_Warheads, i); /*0x6729c2*/
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex( v6->__pad_0, (CCINIClass *)(g_INI_Key_Warheads), i); /*0x6729c2*/
       if ( INIClass::GetString(v6, g_INI_Key_Warheads, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x6729cf*/
-        WarheadTypeClass::FindOrCreate(Destination); /*0x6729dc*/
+        WarheadTypeClass::FindOrCreate( (ObjectClass *)(Destination)); /*0x6729dc*/
     }
     return KeyCount > 0; /*0x6729e8*/
 }
@@ -1477,7 +1477,7 @@ int WarheadTypeClass::GetTypeIdentifier()
 namespace gamemd {  // G42.18c ns repair
 CCINIClass * WarheadTypeClass::checkImmunity(int aP1)
 {
-    this->Deform = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x75e692*/
+    this->Deform = (void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x75e692*/
     return &this->Deform; /*0x75e698*/
 }
 }  // G42.18c ns repair
@@ -1485,7 +1485,7 @@ CCINIClass * WarheadTypeClass::checkImmunity(int aP1)
 namespace gamemd {  // G42.35f: def was outside namespace (pre-existing damage)
 DynamicVector * WarheadTypeClass::calculateDamage(int aP1)
 {
-    this->Deform = &TypeList<int>::`vftable'; /*0x75e6a2*/
+    this->Deform = (void*)&TypeList_int_vftable; /*0x75e6a2*/
     return &this->Deform; /*0x75e6a8*/
 }
 } // namespace gamemd

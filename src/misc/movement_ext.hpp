@@ -65,9 +65,9 @@ public:
     unsigned int q024;  // 0x24
     void* Cell_9;  // 0x0 (no offset truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    int MainFootClass(int a1);  // 0x514F70
+    int MainFootClass(int a1, char a2);  // 0x514F70
     int MarkOccupiedPathCell();  // 0x5163B0
-    int StepFootClass(int a1);  // 0x5164D0
+    int StepFootClass(int a1, int a2);  // 0x5164D0
     int Begin();  // 0x6F9E50
     // --- gap2 auto-generated stub declarations (END) ---
     unsigned int q01C;  // 0x1C

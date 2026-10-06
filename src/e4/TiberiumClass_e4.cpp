@@ -294,7 +294,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v25))->AnimTypeConstructor(0, 0); /*0x721b6c*/
     *(unsigned int *)v25.__pad_0 = (unsigned int)(&vt_TypeList); /*0x721b7b*/
-    for ( i = strtok((char *)&v25.DynamicVector_field_0x1C, Str); i; i = strtok(0, Str) ) /*0x721b8d*/
+    for ( i = strtok((char *)&v25.DynamicVector_field_0x1C, (char *)&::Delimiter); i; i = strtok(0, (char *)&::Delimiter) ) /*0x721b8d*/
     {
       if ( !*i ) /*0x721b8f*/
         break; /*0x721b92*/
@@ -304,7 +304,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
     }
     TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
     *(unsigned int *)v25.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x721bd6*/
-    DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v25); /*0x721bde*/
+    DynamicVectorClass::Destroy_Alt( (void)((_VectorClass_PBVAnimTypeClass *)&v25)); /*0x721bde*/
   }
   else
   {
@@ -318,7 +318,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   *(unsigned int *)(v5 + 216) = CapacityIncrement; /*0x721c1b*/
   *(unsigned int *)(v5 + 220) = unknown_18; /*0x721c1e*/
   v24.DynamicVectorClass = &vt_VectorClass; /*0x721c21*/
-  if ( Items && ((char *)&v24) ) /*0x721c34*/
+  if ( Items &(char *)&v24 ) /*0x721c34*/
     __3_YAXPAX_Z(Items); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite( /*0x721c55*/
              (bool *)aP1,
@@ -418,9 +418,9 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
   }
   v10 = (&v2->GrowthPercentage)[1]; /*0x721f66*/
   v2->TiberiumClass_field_10C = 0; /*0x721f74*/
-  (*(void (**)(int *))(v10 + 12))(&(&v2->GrowthPercentage)[1]); /*0x721f7a*/
+  (*(void (**)(int *))(v10 + 12))( (int *)(&(&v2->GrowthPercentage)[1])); /*0x721f7a*/
   v11 = a2; /*0x721f7d*/
-  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(v2), a2); /*0x721f83*/
+  result = AbstractClass::SaveLoad_Prefix_0( (gamemd::AbstractClass *)(v2), (AbstractClass *)(a2)); /*0x721f83*/
   if ( result >= 0 ) /*0x721f8a*/
   {
     if ( v2 ) /*0x721f92*/
@@ -438,13 +438,13 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->NumImages); /*0x721fee*/
     if ( v2 != (TiberiumClass *)-196 ) /*0x721ff5*/
       AnimTypeList::Constructor((AnimTypeList *)&(&v2->GrowthPercentage)[1]); /*0x721ff9*/
-    (*(void (**)(int, TiberiumClass **, int, unsigned int))(*(unsigned int *)&v11->u32_30)(v11, &a1, 4, 0); /*0x722009*/
+    (*(void (**)(int, TiberiumClass **, int, unsigned int))(*(unsigned int *)&v11->u32_30))( v11, (TiberiumClass **)(&a1), 4, 0);  /*0x722009*/
     result = 0; /*0x72200c*/
     if ( (int)a1 > 0 ) /*0x722012*/
     {
       do /*0x722037*/
       {
-        (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)&v11->u32_30)(v11, &a2, 4, 0); /*0x722023*/
+        (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)&v11->u32_30))( v11, (int *)(&a2), 4, 0);  /*0x722023*/
         ((DynamicVector *)((DynamicVector *)&(&v2->GrowthPercentage)[1]))->Add_Alt4(&a2); /*0x72202d*/
         ++v3; /*0x722032*/
       }
@@ -495,14 +495,14 @@ int TiberiumClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   int v4; // edx
   int i; // esi
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0), a1, aP2); /*0x7220e1*/
+  result = AbstractClass::SaveLoad_Prefix( (gamemd::ObjectTypeClass *)((int *)aP0), (ObjectTypeClass *)(a1), (ObjectTypeClass *)(aP2)); /*0x7220e1*/
   if ( result >= 0 ) /*0x7220e8*/
   {
     v4 = *a1; /*0x7220f0*/
     aP2 = aP0->Debris[0]; /*0x7220fd*/
-    (*(void (**)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x722101*/
+    (*(void (**)(int *, int *, int, unsigned int))(v4 + 16))( (int *)(a1), (int *)(&aP2), 4, 0); /*0x722101*/
     for ( i = 0; i < aP2; ++i ) /*0x72210c*/
-      (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, aP0->Value + 4 * i, 4, 0); /*0x72211f*/
+      (*(void (**)(int *, int, int, unsigned int))(*(char *)a1 +6))( (int *)(a1), aP0->(char *)Value + * i, 4, 0); /*0x72211f*/
     return 0; /*0x722129*/
   }
   return result; /*0x72212c*/

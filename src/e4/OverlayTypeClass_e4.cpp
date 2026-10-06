@@ -246,7 +246,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
   int result; // eax
   char v3[513]; // [esp+7h] [ebp-201h] BYREF
 
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)a1, a2); /*0x5feb04*/
+  result = ObjectTypeClass::LoadCleanup( (IUnknown *)((ObjectTypeClass *)a1), (ObjectTypeClass *)(a2)); /*0x5feb04*/
   if ( result >= 0 ) /*0x5feb0b*/
   {
     if ( a1 ) /*0x5feb13*/
@@ -264,19 +264,19 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       if ( ((unsigned int *)a1)[0] ) /*0x5feb69*/
       {
-        _makepath(&v3[1], 0, 0, ((unsigned int *)a1)[0], (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5feba1*/
+        _makepath(&v3[1], 0, 0, ((unsigned int *)a1)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x5feba1*/
       }
       else
       {
         _makepath(&v3[1], 0, 0, ((unsigned int *)a1)[0], Ext); /*0x5febc0*/
-        TheaterObjectTypeClassSpecificID(&v3[1], dword_A8B230[130].uniqueId); /*0x5febd7*/
+        TheaterObjectTypeClassSpecificID( (char *)(&v3[1]), (&dword_A8B230)[130].uniqueId); /*0x5febd7*/
       }
       if ( !((unsigned int *)a1)[0] ) /*0x5febdc*/
-        ((unsigned int *)a1)[0] = (SHPStruct *)SearchMIXFile(&v3[1], 1); /*0x5febf1*/
+        ((unsigned int *)a1)[0] = (SHPStruct *)SearchMIXFile( (char *)(&v3[1]), 1); /*0x5febf1*/
     }
     return 0; /*0x5febf7*/
   }
-  return result; /*0x5febf9*/
+  return (ScenarioClass * *)result; /*0x5febf9*/
 
 }
 }  // G42.18c ns repair
@@ -298,22 +298,22 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     Debug::Log(); /*0x5fee0e*/
     if ( ((unsigned int *)this)[0] ) /*0x5fee13*/
     {
-      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5fee4f*/
+      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x5fee4f*/
     }
     else if ( ((unsigned int *)this)[0] ) /*0x5fee59*/
     {
       _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], Ext); /*0x5fee78*/
-      TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x5fee90*/
+      TheaterObjectTypeClassSpecificID(Buffer, (&dword_A8B230)[130].uniqueId); /*0x5fee90*/
     }
     ((CCFileClass*)&v4)->Construct(Buffer); /*0x5fee9f*/
     v3 = (SHPStruct *)((CCFileClass *)(&v4))->ReadEntireFile(); /*0x5feead*/
     ((unsigned int *)this)[0] = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       ((unsigned int *)this)[0] = 1; /*0x5feeb9*/
-    *(unsigned int *)v4.CDFileClass = &vt_CCFileClass; /*0x5feec4*/
+    *(unsigned int *)v4.CDFileClass = (unsigned int)&vt_CCFileClass;
     v6 = 0; /*0x5feecc*/
     ((Vector *)((int)v5))->Clear(); /*0x5feed4*/
-    *(unsigned int *)v4.CDFileClass = &off_7E1668; /*0x5feedd*/
+    *(unsigned int *)v4.CDFileClass = (unsigned int)&off_7E1668;
     ((BufferIOFileClass *)((BufferIOFileClass *)&v4))->Dtor(); /*0x5feee5*/
     return v3; /*0x5feeea*/
   }
@@ -367,7 +367,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
   ((unsigned int *)this)[0] = &vt_ParticleSystemTypeClass; /*0x6441a2*/
   ((unsigned int *)this)[0] = &vt_ParticleSystemTypeClass; /*0x6441a8*/
   ((unsigned int *)this)[0] = &vt_ParticleSystemTypeClass; /*0x6441af*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x6441b6*/
+  AbstractClass::GenerateUniqueID( (int)((AbstractClass *)&((unsigned int *)this)[0])); /*0x6441b6*/
   if ( (int)stru_A83D50.SuperClass_field_0x28 < *(int *)&stru_A83D50.__pad_14[12] /*0x6441ef*/
     || (BYTE1(stru_A83D50.SuperClass_field_0x24) || !*(unsigned int *)&stru_A83D50.__pad_14[12])
     && (int)stru_A83D50.SuperClass_field_0x2C > 0
@@ -377,7 +377,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
          0) )
   {
     v3 = stru_A83D50.SuperClass_field_0x28++; /*0x6441fc*/
-    *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * (unsigned int)v3) = this; /*0x64420b*/
+    *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * (unsigned int)v3) = (unsigned int)this;
   }
   ((unsigned int *)this)[0] = 1; /*0x64420e*/
   return this; /*0x644217*/
@@ -394,7 +394,7 @@ int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4)
 
   v5 = sub_48DFD0(a4); /*0x4754cd*/
   if ( ((INIClass*)((INIClass *)this))->GetString(a2, a3, v5, Destination, 128) ) /*0x4754e5*/
-    return OverlayTypeClass::LookupByName((OverlayTypeClass *)Destination); /*0x4754f2*/
+    return ((OverlayTypeClass *)(OverlayTypeClass *)Destination)->LookupByName(); /*0x4754f2*/
   else
     return a4; /*0x475502*/
 
@@ -549,7 +549,7 @@ int   OverlayTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x5fec1f*/
+  result = AbstractClass::SaveLoad_PrefixWrapper( (TechnoTypeClass *)((AbstractClass *)aP0), (ObjectTypeClass *)(aP1), (TechnoTypeClass *)(aP2)); /*0x5fec1f*/
   if ( result >= 0 ) /*0x5fec26*/
     return 0; /*0x5fec28*/
   return result; /*0x5fec2a*/
@@ -652,12 +652,12 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable1 = &vt_OverlayTypeClass; /*0x5fef36*/
-  ((unsigned int *)Block)[0] = &vt_OverlayTypeClass; /*0x5fef3c*/
-  ((unsigned int *)Block)[0] = &vt_OverlayTypeClass; /*0x5fef43*/
-  ((unsigned int *)Block)[0] = &vt_OverlayTypeClass; /*0x5fef4a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x5fef51*/
-  v5 = Block; /*0x5fef66*/
+  this->vtable1 = &vt_OverlayTypeClass; /*0x5fef36*/
+  ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fef3c*/
+  ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fef43*/
+  ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fef4a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5fef51*/
+  v5 = this; /*0x5fef66*/
   v3 = (*((int (**)(void **, OverlayTypeClass **))stru_A83D50.SuperClass_field_0x30 + 4))( /*0x5fef6a*/
          &stru_A83D50.SuperClass_field_0x30,
          &v5);
@@ -672,9 +672,9 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
       ++v3; /*0x5fef8d*/
     }
   }
-  ((ObjectTypeClass *)((int)Block))->Destruct(); /*0x5fefa1*/
+  ((ObjectTypeClass *)((int)this))->Destruct(); /*0x5fefa1*/
   if ( (a2 & 1) != 0 ) /*0x5fefab*/
-    __3_YAXPAX_Z(Block); /*0x5fefae*/
-  return Block; /*0x5fefb8*/
+    __3_YAXPAX_Z(this); /*0x5fefae*/
+  return this; /*0x5fefb8*/
 
 }

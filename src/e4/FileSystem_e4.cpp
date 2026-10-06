@@ -139,7 +139,7 @@ LABEL_19:
         for ( j = 260 * v17; ; v18 = j ) /*0x626ef9*/
         {
           v19 = (const char *)(*(unsigned int *)(v16 + 4) + v18); /*0x626f0b*/
-          if ( (uint8_t)String::Equals(v19, v12->__pad_0) ) /*0x626f0f*/
+          if ( (uint8_t)((String *)v19)->Equals( v12->__pad_0) ) /*0x626f0f*/
             break; /*0x626f0f*/
           --v17; /*0x626f1c*/
           j -= 260; /*0x626f25*/
@@ -181,7 +181,7 @@ LABEL_36:
             }
             if ( !v25 ) /*0x626fc0*/
               break; /*0x626fc0*/
-            v26 = FileSystem::openFile(*(FileSystem **)&(&g_FileExtensionState)[12], v25->__pad_0); /*0x626fcb*/
+            v26 = ((FileSystem *)*(FileSystem **)&(&g_FileExtensionState)[12])->openFile( v25->__pad_0); /*0x626fcb*/
             if ( !v26 ) /*0x626fd2*/
               break; /*0x626fd2*/
           }

@@ -17,8 +17,29 @@
 #include "e4/classes/CellClass_e4.hpp"  // G42.39a body supply
 #include "e4/classes/TeamClass_e4.hpp"  // G42.39a body supply
 #include "e4/classes/ProgressTimer_e4.hpp"  // G42.39a body supply
-#include "e4/classes/RefCount_e4.hpp"  // G42.36 C2027 supply
 #include "core/ida_vtables.h"  // gC_vftable3
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
+extern int ContextBase;  // 词表 (canon 无条目, int 兜底) L253
+extern int aAudioDeviceDum;  // 词表 (canon 无条目, int 兜底) L150
+extern int sub_4059F0;  // 词表 (canon 无条目, int 兜底) L326
+extern int sub_405A00;  // 词表 (canon 无条目, int 兜底) L325
+extern int sub_405AC0;  // 词表 (canon 无条目, int 兜底) L324
+// ---- g57b5 W6 end ----
+// ---- g57b5 W5: qualified-call free-form vocab ----
+namespace gamemd {
+int Audio_ReleaseChannelRefs(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Voice_DetachChannel(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Audio_InitChannels(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int AudioChannel_IsActive(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int AudioQueue_GetNext(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ObjectClass_Cleanup(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ObjectClass_ClearFlags2(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int RefCount_Decrement(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Range(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int sub_4026C0(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int sub_405B50(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+} // namespace gamemd
+// ---- g57b5 W5 end ----
 
 // gC supply: extern declarations from src/e4/e4_globals_decls.hpp
 extern unsigned int stru_A8EB00;
@@ -80,13 +101,13 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
       *((unsigned long long *)this + 40) = v4; /*0x403073*/
     *((unsigned long long *)this + 39) = v3; /*0x40307f*/
     p_bombVisible = &this->bombVisible; /*0x40308b*/
-    Audio::InitChannels(&this->bombVisible); /*0x403094*/
+    Audio_InitChannels(&this->bombVisible); /*0x403094*/
     v6 = (char *)*((unsigned int *)this + 58); /*0x403099*/
     if ( v6 ) /*0x4030a1*/
       ((Audio*)v6)->InitChannels(); /*0x4030a3*/
     v7 = (AudioChannel *)*((unsigned int *)this + 58); /*0x4030a8*/
-    if ( !v7 || (IsActive = AudioChannel::IsActive(v7)) == 0 ) /*0x4030bd*/
-      IsActive = AudioChannel::IsActive((AudioChannel *)&this->bombVisible); /*0x4030c6*/
+    if ( !v7 || (IsActive = AudioChannel_IsActive(v7)) == 0 ) /*0x4030bd*/
+      IsActive = AudioChannel_IsActive((void *)&this->bombVisible); /*0x4030c6*/
     v8 = (unsigned int)((ObjectClass *)*((unsigned int *)this + 62)); /*0x4030ca*/
     if ( v8 != (unsigned int)((ObjectClass *))((char *)this + 248) ) /*0x4030d8*/
     {
@@ -96,13 +117,13 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
         if ( (v8->location.Z & 1) != 0 && ((unsigned int *)(v8))[2] ) /*0x4030ee*/
         {
           if ( (((Audio*)(char *)&((unsigned int *)v8)[0])->InitChannels(), IsActive) /*0x403158*/
-            || AudioChannel::IsActive((AudioChannel *)&((unsigned int *)v8)[0])
-            || (lastLayer = (AudioChannel *)v8->lastLayer) != 0 && AudioChannel::IsActive(lastLayer)
-            || (v11 = *(AudioChannel **)&v8->isInLogic) != 0 && AudioChannel::IsActive(v11)
-            || (v12 = (AudioChannel *)v8->location.X) != 0 && AudioChannel::IsActive(v12)
-            || (v13 = *(AudioChannel **)&v8->isAliveFlag) != 0 && AudioChannel::IsActive(v13) )
+            || AudioChannel_IsActive((void *)&((unsigned int *)v8)[0])
+            || (lastLayer = (AudioChannel *)v8->lastLayer) != 0 && AudioChannel_IsActive(lastLayer)
+            || (v11 = *(AudioChannel **)&v8->isInLogic) != 0 && AudioChannel_IsActive(v11)
+            || (v12 = (AudioChannel *)v8->location.X) != 0 && AudioChannel_IsActive(v12)
+            || (v13 = *(AudioChannel **)&v8->isAliveFlag) != 0 && AudioChannel_IsActive(v13) )
           {
-            ObjectClass::Cleanup(v8); /*0x403163*/
+            ObjectClass_Cleanup(v8); /*0x403163*/
             (*(void (**)(ObjectClass *))(((unsigned int *)(v8))[1].owningHouseIndex + 32))(v8); /*0x403170*/
           }
         }
@@ -113,12 +134,14 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     }
     v14 = (ObjectClass *)*((unsigned int *)this + 58); /*0x403187*/
     if ( v14 ) /*0x40318f*/
-      ObjectClass::ClearFlags2(v14); /*0x403193*/
-    ObjectClass::ClearFlags2((ObjectClass *)p_bombVisible); /*0x40319a*/
+      ObjectClass_ClearFlags2(v14); /*0x403193*/
+    ObjectClass_ClearFlags2((void *)p_bombVisible); /*0x40319a*/
   }
+}
+}
 // 0x403A80
 namespace gamemd { 
-int ObjectClass::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1)
+int ObjectClass::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1, int a3)  // g57b5 W4: raw 真值补参 (a3)
 
   void (*v4)(char *); // edi
   int Next; // esi
@@ -154,7 +177,7 @@ int ObjectClass::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1)
   else
     sprintf(Buffer, aChanTypeStateF_0); /*0x403b72*/
   v4(Buffer); /*0x403b7e*/
-  Next = AudioQueue::GetNext((AudioQueue *)a1->animation); /*0x403b8b*/
+  Next = AudioQueue_GetNext((void *)a1->animation); /*0x403b8b*/
   v6 = 0; /*0x403b8d*/
   if ( Next )
   {
@@ -213,6 +236,7 @@ int ObjectClass::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1)
     while ( Next );
     v4 = (void (__cdecl *)(a2); /*0x403cc6*/
   }
+}
 // 0x4048B0
 namespace gamemd { 
 int Gap2Recv_4048B0::PrefetchAudioSamples() {
@@ -249,7 +273,7 @@ int Gap2Recv_4048B0::PrefetchAudioSamples() {
       p_owningHouseIndex = &this->owningHouseIndex; /*0x4048d3*/
       do /*0x4048ef*/
       {
-        RefCount::Decrement((RefCount *)*p_owningHouseIndex); /*0x4048d8*/
+        RefCount_Decrement((void *)*p_owningHouseIndex); /*0x4048d8*/
         *p_owningHouseIndex = 0; /*0x4048dd*/
         ++v4; /*0x4048e9*/
         ++p_owningHouseIndex; /*0x4048ea*/
@@ -258,6 +282,8 @@ int Gap2Recv_4048B0::PrefetchAudioSamples() {
     }
     this->lineTrailer = 0; /*0x4048f1*/
   }
+}
+}
 // 0x4055C0
 namespace gamemd { 
 int Gap2Recv_4055C0::UpdateVoicePlayback() {
@@ -340,8 +366,8 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
         }
         else if ( (this->nextArrayIndex & 1) == 0 ) /*0x4057a7*/
         {
-          Voice::DetachChannel((Voice *)this); /*0x4057af*/
-          LODWORD(v2) = Audio::ReleaseChannelRefs((Audio *)this); /*0x4057b6*/
+          Voice_DetachChannel((void *)this); /*0x4057af*/
+          LODWORD(v2) = Audio_ReleaseChannelRefs((void *)this); /*0x4057b6*/
           this->referenceCount = 4; /*0x4057bb*/
           this->currentWeaponSlot = 0; /*0x4057c2*/
           this->temporalTargetingMe = 0; /*0x4057c8*/
@@ -390,14 +416,14 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
 LABEL_35:
             if ( (this->nextArrayIndex & 1) == 0 ) /*0x405844*/
             {
-              Voice::DetachChannel((Voice *)this); /*0x405848*/
+              Voice_DetachChannel((void *)this); /*0x405848*/
               v12 = 0; /*0x405853*/
               if ( this->lineTrailer > 0 ) /*0x405857*/
               {
                 p_owningHouseIndex = &this->owningHouseIndex; /*0x405859*/
                 do /*0x405871*/
                 {
-                  RefCount::Decrement((RefCount *)*p_owningHouseIndex); /*0x40585e*/
+                  RefCount_Decrement((void *)*p_owningHouseIndex); /*0x40585e*/
                   *p_owningHouseIndex = 0; /*0x405863*/
                   ++v12; /*0x40586b*/
                   ++p_owningHouseIndex; /*0x40586c*/
@@ -432,13 +458,13 @@ LABEL_41:
                 && !Audio::UpdatePlaybackPosition((Audio *)this)
                 && (this->nextArrayIndex & 1) == 0 )
               {
-                Voice::DetachChannel((Voice *)this); /*0x40590d*/
+                Voice_DetachChannel((void *)this); /*0x40590d*/
                 if ( this->lineTrailer > 0 ) /*0x405918*/
                 {
                   v16 = &this->owningHouseIndex; /*0x40591a*/
                   do /*0x405936*/
                   {
-                    RefCount::Decrement((RefCount *)*v16); /*0x40591f*/
+                    RefCount_Decrement((void *)*v16); /*0x40591f*/
                     *v16 = 0; /*0x405924*/
                     ++v15; /*0x405930*/
                     ++v16; /*0x405931*/
@@ -465,7 +491,7 @@ LABEL_41:
       case 4: /*0x4055e4*/
         if ( (this->nextArrayIndex & 1) == 0 ) /*0x405978*/
         {
-          Voice::DetachChannel((Voice *)this); /*0x40597c*/
+          Voice_DetachChannel((void *)this); /*0x40597c*/
           LODWORD(v2) = this->lineTrailer; /*0x405981*/
           v18 = 0; /*0x405987*/
           if ( (int)v2 > 0 ) /*0x40598b*/
@@ -473,7 +499,7 @@ LABEL_41:
             v19 = &this->owningHouseIndex; /*0x40598d*/
             do /*0x4059a5*/
             {
-              RefCount::Decrement((RefCount *)*v19); /*0x405992*/
+              RefCount_Decrement((void *)*v19); /*0x405992*/
               *v19 = 0; /*0x405997*/
               LODWORD(v2) = this->lineTrailer; /*0x405999*/
               ++v18; /*0x40599f*/
@@ -493,6 +519,8 @@ LABEL_41:
     }
     return v2; /*0x405634*/
   }
+}
+}
 // 0x40AA70
 namespace gamemd { 
 bool Gap2Recv_40AA70::ProcessAudioChannelMovement() {
@@ -4664,6 +4692,8 @@ char Gap2Recv_4DC340::DrawFootTargetLine()
     return target; /*0x4dc74a*/
 }
 } // namespace gamemd
+}
+}
 // 0x4E3320
 namespace gamemd { 
 int Gap2Recv_4E3320::GetResourceIDHardcodedCSF() {
@@ -5342,6 +5372,7 @@ LABEL_23:
       goto LABEL_23; /*0x50d926*/
   }
 
+}
 }
 }
 // 0x50DA10
@@ -16823,6 +16854,7 @@ LABEL_13:
 
 }
 }
+}
 // 0x630EA0
 namespace gamemd { 
 char Gap2Recv_630EA0::UI_Get_630EA0() {
@@ -21962,6 +21994,7 @@ namespace gamemd { int Gap2Recv_678850::InitInterfaceStubsCOM() {
 
 }
 
+}
 // 0x67BFA0
 namespace gamemd { 
 void* Gap2Recv_67BFA0::System_Load_67BFA0(void* a2) {
@@ -22823,6 +22856,7 @@ LABEL_46:
   while ( v34 != 13 ); /*0x68ffc4*/
   return result; /*0x68ffca*/
 
+}
 }
 // 0x68FFE0
 namespace gamemd { 
@@ -25551,6 +25585,7 @@ int Gap2Recv_6D3290::DrawBuildingAnimFrame(AbstractClass * aP1, int * a2, char a
   return result; /*0x6d345f*/
 
 }
+}
 // 0x6D3470
 namespace gamemd { 
 int Gap2Recv_6D3470::DrawBuildingShadow(IUnknown * aP1, AbstractClass * aP2, char a4) {
@@ -25647,6 +25682,7 @@ LABEL_9:
   }
   return result; /*0x6d3649*/
 
+}
 }
 }
 // 0x6D5730
@@ -28375,6 +28411,7 @@ bool Gap2Recv_7087C0::ValidateAttackTarget(TechnoClass * aP1, int a3) {
       || !*(unsigned int *)(v13 + 172)
       || *(double *)(*(unsigned int *)(v13 + 172) + 8 * *(unsigned int *)((*(int (**)(int *))(*aP1 + 132))(aP1) + 156) + 160) > 0.0099999998;
 
+}
 }
 }
 // 0x70E5A0
@@ -32358,6 +32395,7 @@ void* Gap2Recv_766A10::System_Init_766A10(int a2, int arg4, void * a3, ObjectCla
   DeleteAndZero(&a3); /*0x766a4c*/
   return this; /*0x766a53*/
 
+}
 }
 // 0x766EE0
 namespace gamemd { 

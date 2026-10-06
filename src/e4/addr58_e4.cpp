@@ -193,9 +193,9 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   *(unsigned int *)&stru_87F5F0.__pad_58[704] = *(unsigned int *)&stru_87F5F0.__pad_58[672] /*0x583b22*/
                                         + *(unsigned int *)&stru_87F5F0.__pad_58[660]
                                         - *(unsigned int *)&stru_87F5F0.__pad_58[668];
-  for ( i = (int16_t *)MapClass::SpiralSearch((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x583b2f*/
+  for ( i = (int16_t *)MapClass::SpiralSearch( (void)((MapClass *)&stru_87F5F0.__pad_58[416])); /*0x583b2f*/
         i;
-        i = (int16_t *)MapClass::SpiralSearch((MapClass *)&stru_87F5F0.__pad_58[416]) )
+        i = (int16_t *)MapClass::SpiralSearch( (void)((MapClass *)&stru_87F5F0.__pad_58[416])) )
   {
     if ( *((unsigned int *)i + 19) == 4 ) /*0x583b39*/
     {
@@ -436,7 +436,7 @@ int MarkCliffEdgePassability(int a1)
         if ( *(unsigned short *)v3 == v4 )
         {
           v5 = (unsigned short *)((int)((unsigned short *)(4 * (*(unsigned short *)(v3 + 2) >= *(unsigned short *)(v3 + 6) ? 0 : 4) + 9041544)));
-          for ( i = *(void *)CellStruct::Add((unsigned short *)v3, &v29, v5); i != *(unsigned int *)(v3 + 4); i = v23 ) /*0x586c71*/
+          for ( i = *(void *)((CellStruct *)(unsigned short *)v3)->Add( &v29, v5); i != *(unsigned int *)(v3 + 4); i = v23 ) /*0x586c71*/
           {
             v7 = (unsigned int)(IDA_SHIWORD(i) << 9);
             v8 = v7 + (int16_t)i; /*0x586c95*/
@@ -471,7 +471,7 @@ int MarkCliffEdgePassability(int a1)
         else
         {
           v13 = (unsigned short *)((int)((unsigned short *)(4 * ((*(unsigned short *)v3 >= v4 ? 6 : 2) & 7) + 9041544)));
-          for ( j = *(void *)CellStruct::Add((unsigned short *)v3, &v30, v13); ; j = v25 ) /*0x586d69*/
+          for ( j = *(void *)((CellStruct *)(unsigned short *)v3)->Add( &v30, v13); ; j = v25 ) /*0x586d69*/
           {
             v15 = (unsigned short)j == *(unsigned short *)(v3 + 4); /*0x586d6b*/
             v31 = j; /*0x586d6f*/
@@ -600,7 +600,7 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
         v19 = aP0->u16_2 + v6[1]; /*0x5886b4*/
         while ( 1 ) /*0x5886ca*/
         {
-          v14 = (int *)(*(int (**)(int, int))(v4->q08C)(v4, aP1); /*0x5886ca*/
+          v14 = (int *)(*(int (**)(int, int))(v4->q08C))( (int)(v4), (int)(aP1));  /*0x5886ca*/
           v23[1] = (v19 << 8) + 128; /*0x5886ef*/
           v23[0] = (v13 << 8) + 128; /*0x5886f7*/
           v15 = *v14; /*0x5886fb*/
@@ -710,7 +710,7 @@ int ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseCl
       v20 = *((unsigned short *)aP0 + 1) + v7[1]; /*0x5888bf*/
       do /*0x588933*/
       {
-        v15 = (*(int (**)(int *, int))(*v3 + 140))(v3, aP1); /*0x5888ce*/
+        v15 = (*(int (**)(int *, int))(*v3 + 140))( v3, (int)(aP1)); /*0x5888ce*/
         v23[2] = 0; /*0x5888ea*/
         v23[0] = (v14 << 8) + 128; /*0x5888f5*/
         v23[1] = (v20 << 8) + 128; /*0x588903*/
@@ -882,8 +882,8 @@ ScenarioClass * * ComputeMapCameraBounds()
     {
       if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea(j + 18, 1) ) /*0x58b953*/
       {
-        v15 = (*(int (**)(int16_t *))(j->u32_48)(j); /*0x58b973*/
-        v16 = (int *)(*(int (**)(int16_t *, char *, unsigned int))(j->u32_48)( /*0x58b983*/
+        v15 = (*(int (**)(int16_t *))(j->u32_48))(j);  /*0x58b973*/
+        v16 = (int *)(*(int (**)(int16_t *, char *, unsigned int))(j->u32_48))(  /*0x58b983*/
                        j,
                        v28,
                        *(unsigned int *)(v15 + 4));
@@ -949,7 +949,7 @@ ScenarioClass * * ComputeMapCameraBounds()
 }
 // 0x58EBC0
 namespace gamemd {
-AbstractClass * * BuildRandomMapTiles()
+AbstractClass * * BuildRandomMapTiles(ObjectClass *self)
 {
   int i; // esi
   unsigned int *v2; // ecx
@@ -1215,7 +1215,7 @@ AbstractClass * * sub_58EF10()
       {
         v17[0] = 0; /*0x58eff2*/
         v17[1] = 0; /*0x58eff8*/
-        if ( (uint8_t)Coord::Compare2D((Coord *)(v7 + g_MissionQueueFrame.localVariables[163]), v17) ) /*0x58effd*/
+        if ( (uint8_t)Coord::Compare2D( (unsigned short *)((Coord *)(v7 + g_MissionQueueFrame.localVariables[163])), v17) ) /*0x58effd*/
         {
           v9 = (RandomMap *)/*0x58f014*/
                               ((CellCoord*)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(/*0x58f014*/ (int16_t *)(v7 + g_MissionQueueFrame.localVariables[163]));
@@ -1785,7 +1785,7 @@ int sub_58BC30()
   dword_ABDF98 = 0; /*0x58bc3c*/
   byte_ABDF9C = 1; /*0x58bc41*/
   byte_ABDF9D = 0; /*0x58bc48*/
-  dword_ABDF90 = (int)&off_7ED858; /*0x58bc4d*/
+  dword_ABDF90 = (unsigned int)(int)&off_7ED858;
   dword_ABDFA4 = 10; /*0x58bc57*/
   dword_ABDFA0 = 0; /*0x58bc61*/
   return atexit(sub_58BC70); /*0x58bc6c*/

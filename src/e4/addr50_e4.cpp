@@ -52,8 +52,8 @@ int E4Recv_501750::sub_501750(int a2)
     if ( !dword_A8E7AC && v5 != result ) /*0x5017ae*/
     {
       (*(void (**)(ObjectClass *, void *, int *))this->AbstractClass)((gamemd::ObjectClass *)this, &unk_7F7CD0, &v9); /*0x5017c1*/
-      (*(void (**)(int, int *))(*(unsigned int *)v9 + 12))(v9, &v8); /*0x5017cf*/
-      if ( (*(int (**)(int, int, int *, unsigned int))(*(unsigned int *)v8 + 12))(v8, 1, &v6, 0) >= 0 ) /*0x5017e7*/
+      (*(void (**)(int, int *))(*(unsigned int *)v9 + 12))( v9, (int *)(&v8)); /*0x5017cf*/
+      if ( (*(int (**)(int, int, int *, unsigned int))(*(unsigned int *)v8 + 12))( v8, 1, (int *)(&v6), 0) >= 0 ) /*0x5017e7*/
       {
         while ( 1 ) /*0x5017f7*/
         {
@@ -61,10 +61,10 @@ int E4Recv_501750::sub_501750(int a2)
           if ( !memcmp(v11,(const void *)(dword_7E9550), 0x10u) ) /*0x501810*/
             break; /*0x501810*/
           (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x501817*/
-          if ( (*(int (**)(int, int, int *, unsigned int))(*(unsigned int *)v8 + 12))(v8, 1, &v6, 0) < 0 ) /*0x50182f*/
+          if ( (*(int (**)(int, int, int *, unsigned int))(*(unsigned int *)v8 + 12))( v8, 1, (int *)(&v6), 0) < 0 ) /*0x50182f*/
             goto LABEL_14; /*0x50182f*/
         }
-        (*(void (**)(int, int *))(*(unsigned int *)v6 + 28))(v6, &v7); /*0x50183b*/
+        (*(void (**)(int, int *))(*(unsigned int *)v6 + 28))( v6, (int *)(&v7)); /*0x50183b*/
         while ( (*(int (**)(int, int, unsigned int *, unsigned int))(*(unsigned int *)v7 + 12))(v7, 1, v10, 0) >= 0 ) /*0x501853*/
         {
           if ( result ) /*0x50185f*/
@@ -218,7 +218,7 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4, void * a5)
       fild [esp+1Ch+arg_4]
     }
     __asm { fstp [esp+24h+var_24]; double }
-    Math::CalcAngle(v12, v13); /*0x50603c*/
+    ((Math *)v12)->CalcAngle( v13); /*0x50603c*/
     __asm { fsub ds:dbl_7E2820 } /*0x506041*/
     __asm { fmul ds:dbl_7E2818 }
     IDA_LOWORD(v15) = Math::RoundToInt(a3); /*0x506055*/
@@ -276,7 +276,7 @@ int HouseClass::sub_5092F0(int a2)
         MapClass::RevealArea0((MapClass *)&dword_87F7E8, v8, *(unsigned int *)(v7 + 1512), this, 0, 0, 0, 1, 1); /*0x50938e*/
       }
     }
-    return MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x5093a4*/
+    return MapClass::MarkForRedraw( (int)((GScreenClass *)&dword_87F7E8), 2); /*0x5093a4*/
   }
   return result; /*0x5093a9*/
 

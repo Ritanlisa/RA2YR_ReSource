@@ -299,10 +299,10 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
   v3 = *(unsigned int *)this->__pad_0; /*0x6275a0*/
   if ( *(unsigned int *)this->__pad_0 == -1 ) /*0x6275a6*/
     return 0; /*0x6275ab*/
-  strcpy(String,(const char *)(aP1)); /*0x6275d6*/
-  strcat(String, (const char *)&off_7E1BC6 + 112 * v3); /*0x627611*/
-  strcat(String,(const char *)(asc_826598)); /*0x62763d*/
-  strcat(String, (const char *)off_836464); /*0x62766a*/
+  strcpy( (char *)(String), (const char *)(aP1)); /*0x6275d6*/
+  strcat( (char *)(String), (const char *)&off_7E1BC6 + 112 * v3); /*0x627611*/
+  strcat( (char *)(String), (const char *)(asc_826598)); /*0x62763d*/
+  strcat( (char *)(String), (const char *)off_836464); /*0x62766a*/
   _strupr(String); /*0x627678*/
   v5 = v39; /*0x627680*/
   v6 = 256; /*0x627687*/
@@ -313,7 +313,7 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
     --v6; /*0x627696*/
   }
   while ( v6 ); /*0x627697*/
-  v7 = SearchMIXFile(String, 0); /*0x62769f*/
+  v7 = SearchMIXFile( (char *)(String), 0); /*0x62769f*/
   v8 = 0; /*0x6276a4*/
   if ( !v7 ) /*0x6276a8*/
     return 0; /*0x6276ad*/

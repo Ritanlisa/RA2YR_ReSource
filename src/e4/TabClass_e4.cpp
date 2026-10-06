@@ -79,7 +79,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     }
     else if ( *((unsigned char *)other + 501) ) /*0x6583a8*/
     {
-      BuildingAnimByName = (Color *)FindBuildingAnimByName(aGrey, 1); /*0x6583bc*/
+      BuildingAnimByName = (Color *)FindBuildingAnimByName( (AbstractClass *)(aGrey), 1); /*0x6583bc*/
     }
     else
     {
@@ -99,7 +99,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     Default = (HWND)((BuildingType*)*(BuildingType **)(v10 + 180))->FindDefault(); /*0x658473*/
     if ( other == (void *)HouseClass_Observer ) /*0x65847e*/
       Default = (HWND)((BuildingType*)(BuildingType *)0xFFFFFFFD)->FindDefault(); /*0x658485*/
-    CacheDialogInvalidate(hWnd, Default); /*0x658490*/
+    CacheDialogInvalidate( (void *)(hWnd), (void *)(Default)); /*0x658490*/
     if ( *(&dword_83923C + (unsigned int)v29) != -1 ) /*0x65849f*/
     {
       v12 = GetDlgItem((HWND)a1, *(&dword_83923C + (unsigned int)v29)); /*0x6584ae*/

@@ -44,12 +44,12 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1)
   }
   else
   {
-    strncpy(Destination,(const char *)((unsigned char *)this + 36), 0x30u); /*0x6e5bba*/
+    strncpy( (char *)(Destination), (const char *)((unsigned char *)this + 36), 0x30u); /*0x6e5bba*/
     v7 = 0; /*0x6e5bc2*/
   }
   if ( Destination != (char [48])(unsigned char *)this + 100 ) /*0x6e5bd0*/
   {
-    qmemcpy((unsigned char *)this + 100, Destination, 0x30u); /*0x6e5bdc*/
+    qmemcpy( (unsigned char *)this + 100, (const void *)(Destination), 0x30u); /*0x6e5bdc*/
     *((unsigned char *)this + 148) = v7; /*0x6e5bde*/
   }
   *((unsigned int *)this + 38) = g_MultiplayerCleanup; /*0x6e5be6*/
@@ -148,7 +148,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
   }
   v10 = (gamemd::AbstractTypeClass *)(this);
-  v8 = (*(int (**)(int *, AbstractTypeClass **))(dword_B0E780 + 16))((int *)&dword_B0E780, &v10); /*0x6e5d8d*/
+  v8 = (*(int (**)(int *, AbstractTypeClass **))(dword_B0E780 + 16))( (int *)&dword_B0E780, (AbstractTypeClass **)(&v10)); /*0x6e5d8d*/
   if ( v8 != -1 && v8 < g_MultiplayerCleanup && v8 < --g_MultiplayerCleanup ) /*0x6e5da8*/
   {
     do /*0x6e5dc0*/
@@ -158,7 +158,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
     while ( v8 < g_MultiplayerCleanup ); /*0x6e5dc0*/
   }
-  return (gamemd::AbstractClass **)(((AbstractTypeClass *)(int a1))->Dtor()); /*0x6e5dc9*/
+  return (gamemd::AbstractClass **)((( AbstractTypeClass *)this)->Dtor()); /*0x6e5dc9*/
 
 }
 }
@@ -194,12 +194,12 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   if ( !/*0x6e60b4*/
           ((INIClass*)((INIClass *)a2))->GetString(/*0x6e60b4*/ (uint8_t *)&stru_842C2C.SuperWeaponClass_field_0x10, (uint8_t *)&this->arrayIndex, &g_INI_DefaultBuffer, String, 128) )
     return 0; /*0x6e6151*/
-  strtok(String, Str); /*0x6e60cb*/
+  strtok(String, (char *)&::Delimiter); /*0x6e60cb*/
   *((unsigned int *)this + 39) = atoi(String); /*0x6e60e1*/
-  v3 = strtok(0, Str); /*0x6e60e7*/
+  v3 = strtok(0, (char *)&::Delimiter); /*0x6e60e7*/
   if ( v3 ) /*0x6e60f1*/
   {
-    strncpy(Destination, v3, 0x30u); /*0x6e6101*/
+    strncpy( (char *)(Destination), v3, 0x30u); /*0x6e6101*/
     v7 = 0; /*0x6e6109*/
   }
   else
@@ -208,10 +208,10 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   }
   if ( Destination != (char *)this + 100 ) /*0x6e6118*/
   {
-    qmemcpy((char *)this + 100, Destination, 0x30u); /*0x6e6123*/
+    qmemcpy( (char *)this + 100, (const void *)(Destination), 0x30u); /*0x6e6123*/
     *((unsigned char *)this + 148) = v7; /*0x6e6125*/
   }
-  v4 = (void *)(strtok(0, Str));
+  v4 = (void *)(strtok(0, (char *)&::Delimiter));
   *((unsigned int *)this + 40) = (unsigned int)(TagTypeClass::FindOrCreateTriggerType(v4)); /*0x6e613d*/
   return (void *)(1); /*0x6e6143*/
 
@@ -255,7 +255,7 @@ AbstractTypeClass * TagTypeClass::FindOrCreate(ObjectClass * Source)
 LABEL_6:
     v3 = (char *)__2_YAPAXI_Z(0xA4u); /*0x6e6366*/
     if ( v3 ) /*0x6e6375*/
-      return TagTypeClass::Construct(v3, Source); /*0x6e6381*/
+      return ((TagTypeClass *)v3)->Construct( Source); /*0x6e6381*/
     return 0; /*0x6e6375*/
   }
   while ( _strcmpi((const char *)((const void *)(*((unsigned int *)dword_B0E784 + v2) + 36)),(const char *)(Source)) ) /*0x6e635a*/
@@ -396,10 +396,10 @@ namespace gamemd {
 TagTypeClass * TagTypeClass::ddtor(char a2)
 {
 
-  TagTypeClass::CleanupMembers((AbstractTypeClass *)Block); /*0x6e64c3*/
+  TagTypeClass::CleanupMembers( (void)((AbstractTypeClass *)this)); /*0x6e64c3*/
   if ( (a2 & 1) != 0 ) /*0x6e64cd*/
-    __3_YAXPAX_Z(Block); /*0x6e64d0*/
-  return Block; /*0x6e64da*/
+    __3_YAXPAX_Z(this); /*0x6e64d0*/
+  return this; /*0x6e64da*/
 
 }
 } // namespace gamemd

@@ -22,6 +22,8 @@ struct SHPStruct;
 
 #ifndef GAMEMD_DEF_GScreenClass
 #define GAMEMD_DEF_GScreenClass
+#ifndef GAMEMD_G2_GScreenClass_DEF  // g57a5 W2d: twin-definition guard (display GScreenClass)
+#define GAMEMD_G2_GScreenClass_DEF 1
 class GScreenClass
 {
 public:
@@ -42,6 +44,8 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
 };
+#endif  // GAMEMD_G2_GScreenClass_DEF
+
 #endif
 
 #ifndef GAMEMD_DEF_MapClass

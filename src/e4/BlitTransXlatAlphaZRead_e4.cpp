@@ -421,14 +421,14 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned i
 
   void *m_8; // eax
 
-  m_8 = (void *)Block->m_8; /*0x49a428*/
-  *(unsigned int *)Block->__pad_0 = &vt_BlitTransXlatAlphaZRead; /*0x49a42b*/
+  m_8 = (void *)this->m_8; /*0x49a428*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransXlatAlphaZRead;
   FractalNoise::Dtor(m_8); /*0x49a432*/
-  Block->m_8 = 0; /*0x49a43b*/
-  *(unsigned int *)Block->__pad_0 = &vt_Blitter; /*0x49a444*/
+  this->m_8 = 0; /*0x49a43b*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x49a44a*/
-    __3_YAXPAX_Z(Block); /*0x49a44d*/
-  return Block->__pad_0; /*0x49a457*/
+    __3_YAXPAX_Z(this); /*0x49a44d*/
+  return this->__pad_0; /*0x49a457*/
 
 }
 } // namespace gamemd

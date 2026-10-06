@@ -646,7 +646,7 @@ int sub_4D3160()
   dword_8B3DC8 = 0; /*0x4d316c*/
   byte_8B3DCC = 1; /*0x4d3171*/
   byte_8B3DCD = 0; /*0x4d3178*/
-  FootClass_Array = (int)&off_7E8C28; /*0x4d317d*/
+  FootClass_Array = (unsigned int)(int)&off_7E8C28;
   dword_8B3DD4 = 10; /*0x4d3187*/
   dword_8B3DD0 = 0; /*0x4d3191*/
   return atexit((void (__cdecl *)(void))sub_4D31A0); /*0x4d319c*/
@@ -698,7 +698,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
       if ( *(unsigned char *)(v5[328] + 5493) ) /*0x4d5028*/
       {
         v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x4d5039*/
-        if ( v7 == (*((int (**))this->vtable1 + 15))(this) ) /*0x4d5044*/
+        if ( v7 == (*((int (**)(void *))this->vtable1 + 15))(this) ) /*0x4d5044*/
           break; /*0x4d5044*/
       }
     }

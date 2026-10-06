@@ -352,9 +352,9 @@ int SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
     {
       v11 = GetResourceID4CSF((int)(i)); /*0x6adcef*/
       if ( dword_A8B23C && *(unsigned char *)(dword_A8B23C + 60) ) /*0x6adcfe*/
-        SetupLobbyPlayerSlots(hDlg, v11, 3); /*0x6add07*/
+        SetupLobbyPlayerSlots( (SessionClass *)(hDlg), v11, 3); /*0x6add07*/
       else
-        SetupLobbyPlayerSlots(hDlg, v11, -2); /*0x6add0f*/
+        SetupLobbyPlayerSlots( (SessionClass *)(hDlg), v11, -2); /*0x6add0f*/
     }
     ResourceIDCSF = v19; /*0x6add19*/
   }
@@ -562,7 +562,7 @@ bool ShowSkirmishSetupScreen(void * a1, void * a2)
   CleanupFileTree(v10); /*0x6ae3b0*/
   SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x6ae3ba*/
   if ( dwNewLong == 1472 ) /*0x6ae3c9*/
-    Screen::Capture(1, 0, v2, a2); /*0x6ae3cf*/
+    Screen::Capture( 1, 0, v2, (int)(a2)); /*0x6ae3cf*/
   return dwNewLong == 1559; /*0x6ae3e0*/
 }
 }
@@ -809,7 +809,7 @@ int TechnoClass::ProcessDeployAction()
           {
             *(unsigned char *)(this->occupant + 1272) = 1; /*0x6b01c4*/
             v24 = (*(int (**)(int))(*(unsigned int *)this->occupant + 444))(this->occupant); /*0x6b01d0*/
-            TechnoClass::SetFocus((TechnoClass *)this->occupant, v24); /*0x6b01da*/
+            ((TechnoClass *)(TechnoClass *)this->occupant)->SetFocus( v24); /*0x6b01da*/
             LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))( /*0x6b01e8*/
                            this->occupant,
                            19,
@@ -1164,7 +1164,7 @@ int sub_6A4BF0()
 namespace gamemd {
 int sub_6A4C10()
 {
-  GadgetClass::Construct(&stru_B07E58, 0, 0, 1, 1, 8, 0); /*0x6a4c21*/
+  GadgetClass::Construct( (void)(&stru_B07E58), 0, 0, 1, 1, 8, 0); /*0x6a4c21*/
   stru_B07E58 = (int)&SidebarClass_SBGadgetClass_vftable; /*0x6a4c2b*/
   return atexit(sub_6A4C40); /*0x6a4c3b*/
 }
@@ -1396,7 +1396,7 @@ char E4Recv_6ABA60::sub_6ABA60(int a2, int a3, int a4)
   this->customSound_controller[13 * v5 + 5] = a2; /*0x6aba9e*/
   BYTE1(this->ambientSoundController[0]) = 1; /*0x6abaa2*/
   LOBYTE(this->ambientSoundController[0]) = 1; /*0x6abaa5*/
-  MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6abaad*/
+  MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 0); /*0x6abaad*/
   return 1; /*0x6aba88*/
 
 }
@@ -1579,9 +1579,9 @@ void sub_6ACE80(SessionClass * hDlg, int a2)
     {
       ResourceID4CSF = GetResourceID4CSF(i); /*0x6aceb6*/
       if ( dword_A8B23C && *(unsigned char *)(dword_A8B23C + 60) ) /*0x6acec1*/
-        SetupLobbyPlayerSlots(hDlg, ResourceID4CSF, 3); /*0x6aceca*/
+        SetupLobbyPlayerSlots( (SessionClass *)(hDlg), ResourceID4CSF, 3); /*0x6aceca*/
       else
-        SetupLobbyPlayerSlots(hDlg, ResourceID4CSF, -2); /*0x6aced0*/
+        SetupLobbyPlayerSlots( (SessionClass *)(hDlg), ResourceID4CSF, -2); /*0x6aced0*/
     }
   }
 }

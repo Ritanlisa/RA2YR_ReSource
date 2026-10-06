@@ -18,6 +18,62 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Init_e4.hpp"
 #include "misc/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "core/ida_vtables.h"  // gC_vftable3
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
+extern int dword_ABD4C8;  // 词表 (canon 无条目, int 兜底) L1076
+extern int dword_ABD4CC;  // 词表 (canon 无条目, int 兜底) L1077
+extern int dword_ABD4D0;  // 词表 (canon 无条目, int 兜底) L1078
+extern int dword_ABD4D4;  // 词表 (canon 无条目, int 兜底) L1079
+extern int dword_ABD4D8;  // 词表 (canon 无条目, int 兜底) L1080
+extern int dword_ABD4B4;  // 词表 (canon 无条目, int 兜底) L1066
+extern int dword_ABD4B8;  // 词表 (canon 无条目, int 兜底) L1067
+extern int dword_ABD4BC;  // 词表 (canon 无条目, int 兜底) L1069
+extern int dword_ABD4C0;  // 词表 (canon 无条目, int 兜底) L1068
+extern int dword_ABD4C4;  // 词表 (canon 无条目, int 兜底) L1070
+extern int aCsf;  // 词表 (canon 无条目, int 兜底) L725
+extern int aE;  // 词表 (canon 无条目, int 兜底) L549
+extern int aN;  // 词表 (canon 无条目, int 兜底) L541
+extern int aNe;  // 词表 (canon 无条目, int 兜底) L545
+extern int aNw;  // 词表 (canon 无条目, int 兜底) L569
+extern int aS_5;  // 词表 (canon 无条目, int 兜底) L557
+extern int aSe;  // 词表 (canon 无条目, int 兜底) L553
+extern int aSequence;  // 词表 (canon 无条目, int 兜底) L512
+extern int aSw;  // 词表 (canon 无条目, int 兜底) L561
+extern int dword_ABD494;  // 词表 (canon 无条目, int 兜底) L1039
+extern int dword_ABD498;  // 词表 (canon 无条目, int 兜底) L1040
+extern int dword_ABD49C;  // 词表 (canon 无条目, int 兜底) L1041
+extern int dword_ABD4A0;  // 词表 (canon 无条目, int 兜底) L1042
+extern int dword_ABD4A4;  // 词表 (canon 无条目, int 兜底) L1043
+extern int dword_ABD4A8;  // 词表 (canon 无条目, int 兜底) L1045
+extern int dword_ABD4AC;  // 词表 (canon 无条目, int 兜底) L1046
+extern int dword_ABD4B0;  // 词表 (canon 无条目, int 兜底) L1044
+// ---- g57b5 W6 end ----
+// ---- g57b5 W5: qualified-call free-form vocab ----
+namespace gamemd {
+int AbstractClass_SaveLoad_Prefix_0(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int AbstractTypeClass_Init(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int AbstractTypeClass_ProcessPower(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int AnimFile_Check(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int CSFClass_CopyString(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int CSFClass_LoadMissingStrings(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Checksummer_Add_double(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ObjectPtr_RegisterForTracking(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Power_FlagProcess(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Clear(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Construct(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int FindIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Open(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int ParseCSFString(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Read(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int sub_4267F0(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int sub_4270D0(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+} // namespace gamemd
+// ---- g57b5 W5 end ----
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    int INIClass_GetString(void *a1, ...);             // raw 0x523d26 INIClass::GetString (变参兜底);
+    void BufferIOFileClass_Dtor(void *a1);           // raw 0x734942;
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 // gC supply: extern declarations from src/e4/e4_globals_decls.hpp
 extern int FootClass_Array;
@@ -56,20 +112,20 @@ int AITriggerTypeClass::LoadTypeData(int a2)
 {
     int result; // eax
 
-    result = AbstractClass::SaveLoad_Prefix_0(this, a2); /*0x41e54b*/
+    result = AbstractClass_SaveLoad_Prefix_0(this, a2); /*0x41e54b*/
     if ( result >= 0 ) /*0x41e552*/
     {
       if ( this ) /*0x41e556*/
       {
-        AbstractTypeClass::Init((int)this, (int)&a2); /*0x41e55f*/
+        AbstractTypeClass_Init((int)this, (int)&a2); /*0x41e55f*/
         *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&AITriggerTypeClass_vftable; /*0x41e564*/
         this->AITriggerTypeClass_field_0x04 = (int)(void *)&AITriggerTypeClass_vftable; /*0x41e56a*/
         this->AITriggerTypeClass_field_0x08 = (int)(void *)&AITriggerTypeClass_vftable; /*0x41e571*/
         this->AITriggerTypeClass_field_0x0C = (int)(void *)&AITriggerTypeClass_vftable; /*0x41e578*/
       }
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 54); /*0x41e58b*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 55); /*0x41e59c*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 56); /*0x41e5ad*/
+      ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 54); /*0x41e58b*/
+      ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 55); /*0x41e59c*/
+      ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 56); /*0x41e5ad*/
       return 0; /*0x41e5b2*/
     }
     return result; /*0x41e5b4*/
@@ -96,7 +152,7 @@ int AITriggerTypeClass::ProcessPower(int * a2)
     int v6; // ecx
     int v7; // eax
 
-    AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x41e5e9*/
+    AbstractTypeClass_ProcessPower((void *)this, a2); /*0x41e5e9*/
     Power::TimerProcess(*((unsigned int *)this + 38)); /*0x41e5f7*/
     Power::TimerProcess(*((unsigned int *)this + 39)); /*0x41e605*/
     Power::TimerProcess(*((unsigned int *)this + 40)); /*0x41e613*/
@@ -114,17 +170,17 @@ int AITriggerTypeClass::ProcessPower(int * a2)
       default:
         break;
     }
-    Checksummer::Add_double((Checksummer *)a2, *((unsigned int *)this + 46), *((unsigned int *)this + 47)); /*0x41e662*/
-    Checksummer::Add_double((Checksummer *)a2, *((unsigned int *)this + 48), *((unsigned int *)this + 49)); /*0x41e687*/
-    Checksummer::Add_double((Checksummer *)a2, *((unsigned int *)this + 50), *((unsigned int *)this + 51)); /*0x41e69c*/
+    Checksummer_Add_double((void *)a2, *((unsigned int *)this + 46), *((unsigned int *)this + 47)); /*0x41e662*/
+    Checksummer_Add_double((void *)a2, *((unsigned int *)this + 48), *((unsigned int *)this + 49)); /*0x41e687*/
+    Checksummer_Add_double((void *)a2, *((unsigned int *)this + 50), *((unsigned int *)this + 51)); /*0x41e69c*/
     IDA_LOBYTE(v3) = *((unsigned char *)this + 208); /*0x41e6a1*/
-    Power::FlagProcess((Power *)a2, v3); /*0x41e6aa*/
+    Power_FlagProcess((void *)a2, v3); /*0x41e6aa*/
     IDA_LOBYTE(v4) = *((unsigned char *)this + 210); /*0x41e6af*/
-    v5 = Power::FlagProcess((Power *)a2, v4); /*0x41e6b8*/
+    v5 = Power_FlagProcess((void *)a2, v4); /*0x41e6b8*/
     IDA_LOBYTE(v5) = *((unsigned char *)this + 211); /*0x41e6bd*/
-    Power::FlagProcess((Power *)a2, v5); /*0x41e6c6*/
+    Power_FlagProcess((void *)a2, v5); /*0x41e6c6*/
     IDA_LOBYTE(v6) = *((unsigned char *)this + 212); /*0x41e6cb*/
-    Power::FlagProcess((Power *)a2, v6); /*0x41e6d4*/
+    Power_FlagProcess((void *)a2, v6); /*0x41e6d4*/
     v7 = Power::TimerProcess(*((unsigned int *)this + 43)); /*0x41e6e2*/
     IDA_LOBYTE(v7) = *((unsigned char *)this + 209); /*0x41e6e7*/
     return Power::FlagProcess((Power *)a2, v7); /*0x41e6f5*/
@@ -408,7 +464,7 @@ int AnimFile::ddtor(int a2)
                           *((unsigned __int16 *)this + 3 * v26 + 1032)
                         + 2 * *((unsigned __int16 *)this + 3 * v26 + 1031)
                         + 8);
-                        AnimFile::Check(this, v26); /*0x426d2e*/
+                        AnimFile_Check(this, v26); /*0x426d2e*/
                         v25 = 0; /*0x426d33*/
                         v24 = v34; /*0x426d37*/
                       }
@@ -479,7 +535,7 @@ void AnimSequence::Parse()
     char Destination[32]; // [esp+3Ch] [ebp-E8h] BYREF
     char v24[200]; // [esp+5Ch] [ebp-C8h] BYREF
 
-    result = (unsigned __int8 **)INIClass::GetString( /*0x523d26*/
+    result = (unsigned __int8 **)INIClass_GetString( /*0x523d26*/
                                    (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
                                    (unsigned __int8 *)this + 504,
                                    aSequence,
@@ -502,7 +558,7 @@ void AnimSequence::Parse()
         v16 = 0; /*0x523d65*/
         v17 = 0; /*0x523d6d*/
         v18 = 0; /*0x523d73*/
-        if ( INIClass::GetString( /*0x523d8f*/
+        if ( INIClass_GetString( /*0x523d8f*/
                (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
                (unsigned __int8 *)Destination,
                v6,
@@ -545,7 +601,7 @@ void AnimSequence::Parse()
           }
         }
         sprintf(v24, "%sSounds", (const char *)*v19); /*0x523fca*/
-        if ( INIClass::GetString( /*0x523ff4*/
+        if ( INIClass_GetString( /*0x523ff4*/
                (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
                (unsigned __int8 *)Destination,
                (unsigned __int8 *)v24,
@@ -704,7 +760,7 @@ void CSFClass::LoadFile()
       v12 = 0; /*0x734926*/
       Vector::Clear((int)v11); /*0x734931*/
       v10[0] = (int)&off_7E1668; /*0x73493a*/
-      BufferIOFileClass::Dtor(v10); /*0x734942*/
+      BufferIOFileClass_Dtor(v10); /*0x734942*/
       return 0; /*0x734951*/
     }
     if ( CCFileClass::Read(v10, Buffer, 24) == 24 && Buffer[0] == 1129530912 )
@@ -718,7 +774,7 @@ void CSFClass::LoadFile()
     v12 = 0; /*0x7347e0*/
     Vector::Clear((int)v11); /*0x7347eb*/
     v10[0] = (int)&off_7E1668; /*0x7347f4*/
-    BufferIOFileClass::Dtor(v10); /*0x7347fc*/
+    BufferIOFileClass_Dtor(v10); /*0x7347fc*/
     if ( !v3 ) /*0x734803*/
       return 0; /*0x734803*/
     if ( !dword_B1CF70 ) /*0x734810*/
@@ -751,8 +807,8 @@ void CSFClass::LoadFile()
       v7 = i[4]; /*0x73490d*/
     }
     Debug::Log(); /*0x734966*/
-    CSFClass::LoadMissingStrings(dword_A8B238); /*0x734973*/
-    CSFClass::CopyString(&byte_ABDFD8); /*0x73497d*/
+    CSFClass_LoadMissingStrings(dword_A8B238); /*0x734973*/
+    CSFClass_CopyString(&byte_ABDFD8); /*0x73497d*/
     return 1; /*0x7346b1*/
 }
 // 0x472140
@@ -1668,7 +1724,7 @@ int EMPulseClass::Write(int a2)
 {
     int result; // eax
 
-    result = AbstractClass::SaveLoad_Prefix_0(this, a2); /*0x4c5a3b*/
+    result = AbstractClass_SaveLoad_Prefix_0(this, a2); /*0x4c5a3b*/
     if ( result >= 0 ) /*0x4c5a42*/
     {
       if ( this ) /*0x4c5a46*/
@@ -5053,7 +5109,7 @@ void MapFile::LoadDescription(wchar_t * String_v, uint8_t *** a2, INIClass * aP1
       }
       if ( v8 ) /*0x69a509*/
       {
-        INIClass::GetString((INIClass *)v7, v6, g_INI_Key_DescriptionText, &g_INI_DefaultBuffer, (char *)&v24.?, 44); /*0x69a51d*/
+        INIClass_GetString((INIClass *)v7, v6, g_INI_Key_DescriptionText, &g_INI_DefaultBuffer, (char *)&v24.?, 44); /*0x69a51d*/
         BulkCharToWide(this, (unsigned __int8 *)&v24.?, -1); /*0x69a52a*/
       }
       else
@@ -5064,7 +5120,7 @@ void MapFile::LoadDescription(wchar_t * String_v, uint8_t *** a2, INIClass * aP1
       v10 = *((unsigned int *)this + 97); /*0x69a553*/
       *((unsigned int *)this + 96) = Int_Overwrite; /*0x69a559*/
       *((unsigned int *)this + 97) = INIClass::ReadInt_Overwrite((bool *)v7, v6, aMaxplayers, v10); /*0x69a587*/
-      if ( INIClass::GetString( /*0x69a58d*/
+      if ( INIClass_GetString( /*0x69a58d*/
              (INIClass *)v7,
              v6,
              (unsigned __int8 *)((char *)&stru_81AF8C + 1),
@@ -5170,7 +5226,7 @@ void MapFile::LoadDescription(wchar_t * String_v, uint8_t *** a2, INIClass * aP1
             v24.fallRate = 0; /*0x69a88f*/
             v24.? = (int)(void *)&BufferStraw_vftable; /*0x69a893*/
             CCINIClass::LoadAndVerifyDigest((int *)v25.__pad_0, (int)&v24.?, 0, 0); /*0x69a89b*/
-            INIClass::GetString(&v25, (unsigned __int8 *)g_INI_Key_Digest, a1, 0, Source, 128); /*0x69a8bf*/
+            INIClass_GetString(&v25, (unsigned __int8 *)g_INI_Key_Digest, a1, 0, Source, 128); /*0x69a8bf*/
             if ( &v23 == (int *)-276 ) /*0x69a8cd*/
             {
               strcpy((char *)this + 348, g_Str_No_Digest); /*0x69a90e*/
@@ -5194,7 +5250,7 @@ void MapFile::LoadDescription(wchar_t * String_v, uint8_t *** a2, INIClass * aP1
       v24.location[2] = 0; /*0x69a946*/
       Vector::Clear((int)&v24.isInLogic); /*0x69a94d*/
       v24.ambientSoundController[1] = (int)&off_7E1668; /*0x69a956*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v24.ambientSoundController[1]); /*0x69a95e*/
+      BufferIOFileClass_Dtor((BufferIOFileClass *)&v24.ambientSoundController[1]); /*0x69a95e*/
       DeleteAndZero((ObjectClass *)&v24.?); /*0x69a967*/
     }
     return (wchar_t *)this; /*0x69a96c*/
@@ -6843,7 +6899,7 @@ void MapSeedClass::Release( char * a2, wchar_t * Source)
     v8 = 0; /*0x5979cb*/
     Vector::Clear((int)v7); /*0x5979d2*/
     *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x5979db*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x5979e3*/
+    BufferIOFileClass_Dtor((BufferIOFileClass *)&v6); /*0x5979e3*/
     return 1; /*0x5979e9*/
 }
 // 0x597a30
@@ -7008,7 +7064,7 @@ char MapSeedClass::AddRef( char * Source)
         v28 = 0; /*0x597cc9*/
         Vector::Clear((int)v27); /*0x597cd0*/
         *(unsigned int *)v26.CDFileClass = &off_7E1668; /*0x597cd9*/
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v26); /*0x597ce1*/
+        BufferIOFileClass_Dtor((BufferIOFileClass *)&v26); /*0x597ce1*/
         return 1; /*0x597cf1*/
       }
       HashTable::DestroyHashTableINIClass(&v25); /*0x597cf8*/
@@ -7016,7 +7072,7 @@ char MapSeedClass::AddRef( char * Source)
       v28 = 0; /*0x597d0c*/
       Vector::Clear((int)v27); /*0x597d13*/
       *(unsigned int *)v26.CDFileClass = &off_7E1668; /*0x597d1c*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v26); /*0x597d24*/
+      BufferIOFileClass_Dtor((BufferIOFileClass *)&v26); /*0x597d24*/
     }
     return 0; /*0x597ce6*/
 }
@@ -10195,7 +10251,7 @@ void ScoreScreen::Display()
     v305 = 0; /*0x68eb66*/
     Vector::Clear((int)v304); /*0x68eb6d*/
     *(unsigned int *)v303.CDFileClass = &off_7E1668; /*0x68eb76*/
-    return BufferIOFileClass::Dtor((BufferIOFileClass *)&v303); /*0x68eb83*/
+    return BufferIOFileClass_Dtor((BufferIOFileClass *)&v303); /*0x68eb83*/
 }
 
 // 0x68ec00
@@ -10377,7 +10433,7 @@ void ScoreScreen::LoadAudio()
       v3 = 0; /*0x69077c*/
       Vector::Clear((int)v2); /*0x690784*/
       v1[0] = &off_7E1668; /*0x69078d*/
-      return BufferIOFileClass::Dtor(v1); /*0x690795*/
+      return BufferIOFileClass_Dtor(v1); /*0x690795*/
     }
     return result; /*0x69079a*/
 }
@@ -10407,7 +10463,7 @@ void ScoreScreenClass::ProcessFrame(char * a1, int a2)
       while ( 1 ) /*0x6919a1*/
       {
         StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_ScriptTypes, v5); /*0x6919a1*/
-        result = INIClass::GetString(a1, g_INI_Key_ScriptTypes, StringByIndex, &g_INI_DefaultBuffer, Source, 24); /*0x6919ba*/
+        result = INIClass_GetString(a1, g_INI_Key_ScriptTypes, StringByIndex, &g_INI_DefaultBuffer, Source, 24); /*0x6919ba*/
         if ( result > 0 ) /*0x6919c1*/
           break; /*0x6919c1*/
   LABEL_24:
@@ -10462,7 +10518,7 @@ void ScoreScreenClass::ProcessFrame(char * a1, int a2)
         }
         else
         {
-          v13 = (int **)*(unsigned int *)((char *)&FootClass_Array + 5); /*0x691ad7*/
+          v13 = (int **)(unsigned int *)((char *)&FootClass_Array + 5); /*0x691ad7*/
           while ( *v13 != v9 ) /*0x691adf*/
           {
             ++v12; /*0x691ae1*/
@@ -12855,7 +12911,7 @@ void ArtConfig::ReadLayout( INIClass * a2, PriorityQueue * a3, int a4)
     v75 = 0; /*0x768efe*/
     Vector::Clear((int)v74); /*0x768f09*/
     v73.customSound_controller[2] = (int)&off_7E1668; /*0x768f12*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v73.customSound_controller[2]); /*0x768f1a*/
+    BufferIOFileClass_Dtor((BufferIOFileClass *)&v73.customSound_controller[2]); /*0x768f1a*/
     DeleteAndZero((ObjectClass *)&v73.?); /*0x768f23*/
     DeleteAndZero((ObjectClass *)&v73.?); /*0x768f2c*/
     DeleteAndZero((ObjectClass *)&v73.?); /*0x768f35*/
@@ -12927,7 +12983,7 @@ void ArtConfig::ParseLayoutEntry( unsigned int * a1, ObjectClass * aP2, char ** 
     v28 = 0; /*0x7690fc*/
     Vector::Clear((int)v27); /*0x769107*/
     *(unsigned int *)&v26.m_3[1] = &off_7E1668; /*0x769110*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v26.m_3[1]); /*0x769118*/
+    BufferIOFileClass_Dtor((BufferIOFileClass *)&v26.m_3[1]); /*0x769118*/
     if ( !v23 || !v17 ) /*0x769127*/
     {
   LABEL_16:
@@ -13040,7 +13096,7 @@ void ArtConfig::resetConfig( unsigned int * a1, int a3, Selection_WorldDominatio
     v13 = 0; /*0x76fc27*/
     Vector::Clear((int)v12); /*0x76fc2f*/
     v11[0] = &off_7E1668; /*0x76fc38*/
-    return BufferIOFileClass::Dtor(v11); /*0x76fc45*/
+    return BufferIOFileClass_Dtor(v11); /*0x76fc45*/
 }
 // 0x534e50
 int AssetClass::ReleaseAndReload()
@@ -20402,7 +20458,7 @@ void CrateClass::ProcessPickup(int aP1)
                 if ( v64 ) /*0x4827c1*/
                   AnimClass::ctor( /*0x4827e3*/
                     v64,
-                    *(void **)*(unsigned int *)((char *)&FootClass_Array + 3),
+                    *(void **)(unsigned int *)((char *)&FootClass_Array + 3),
                     (int *)&v122.__pad_C[52],
                     0,
                     1,
@@ -26090,7 +26146,7 @@ void MSPCXAnim::Construct( ObjectClass * aP1, MSAnim * aP2, unsigned int * a3, c
       v16 = 0; /*0x5ce770*/
       Vector::Clear((int)v15); /*0x5ce777*/
       *(unsigned int *)v14.CDFileClass = &off_7E1668; /*0x5ce780*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x5ce788*/
+      BufferIOFileClass_Dtor((BufferIOFileClass *)&v14); /*0x5ce788*/
       DeleteAndZero((ObjectClass *)&v12); /*0x5ce791*/
     }
     return this->__pad_0; /*0x5ce798*/
@@ -26758,7 +26814,7 @@ void MSVQAnim::Construct( char ** a2, int a3, int a4, unsigned int * a5, char a6
       v29 = 0; /*0x5ccbeb*/
       Vector::Clear((int)v28); /*0x5ccbf3*/
       *(unsigned int *)v27.CDFileClass = &off_7E1668; /*0x5ccbfc*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v27); /*0x5ccc04*/
+      BufferIOFileClass_Dtor((BufferIOFileClass *)&v27); /*0x5ccc04*/
       DeleteAndZero((ObjectClass *)&a6); /*0x5ccc10*/
     }
     return this->__pad_0; /*0x5ccc17*/
@@ -26841,7 +26897,7 @@ void MSVQAnim::ConstructMSVQAnimHidden(char **aP1, int *aP2, int aP3, char aP3a)
       v26 = 0; /*0x5cce00*/
       Vector::Clear((int)v25); /*0x5cce08*/
       *(unsigned int *)v24.CDFileClass = &off_7E1668; /*0x5cce11*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v24); /*0x5cce19*/
+      BufferIOFileClass_Dtor((BufferIOFileClass *)&v24); /*0x5cce19*/
       DeleteAndZero((ObjectClass *)&a5); /*0x5cce25*/
     }
     return this->__pad_0; /*0x5cce2c*/
@@ -29878,7 +29934,7 @@ void NeuronClass::Fire(AbstractClass * aP0, int aP1)
 {
     int result; // eax
 
-    result = AbstractClass::SaveLoad_Prefix_0(this, a2); /*0x43a54b*/
+    result = AbstractClass_SaveLoad_Prefix_0(this, a2); /*0x43a54b*/
     if ( result >= 0 ) /*0x43a552*/
     {
       if ( this ) /*0x43a556*/
@@ -29889,9 +29945,9 @@ void NeuronClass::Fire(AbstractClass * aP0, int aP1)
         this->NeuronClass_field_0x08 = (int)(void *)&NeuronClass_vftable; /*0x43a571*/
         this->NeuronClass_field_0x0C = (int)(void *)&NeuronClass_vftable; /*0x43a578*/
       }
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 10); /*0x43a588*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 9); /*0x43a596*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 11); /*0x43a5a4*/
+      ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 10); /*0x43a588*/
+      ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 9); /*0x43a596*/
+      ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this + 11); /*0x43a5a4*/
       return 0; /*0x43a5a9*/
     }
     return result; /*0x43a5ab*/
@@ -30027,7 +30083,7 @@ void ObjectManager::CleanupArrays()
     *((unsigned int *)this + 2286) = 0; /*0x697a3d*/
     Vector::Clear((int)this + 9132); /*0x697a40*/
     *((unsigned int *)this + 2261) = &off_7E1668; /*0x697a47*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)this + 119); /*0x697a4d*/
+    BufferIOFileClass_Dtor((BufferIOFileClass *)this + 119); /*0x697a4d*/
     ObjectManager::InitMessageList(this + 325); /*0x697a58*/
     v14 = (void *)*((unsigned int *)this + 573); /*0x697a5d*/
     *((unsigned int *)this + 572) = (unsigned int)(void *)&VectorClass_GlobalPacketType___vftable; /*0x697a63*/
@@ -31499,7 +31555,7 @@ void PreviewClass::ReadPreview(char *Source)
       v14 = 0; /*0x6420f4*/
       Vector::Clear((int)v13); /*0x6420fb*/
       v12.Buffer_field_10 = (int)&off_7E1668; /*0x642104*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v12.Buffer_field_10); /*0x64210c*/
+      BufferIOFileClass_Dtor((BufferIOFileClass *)&v12.Buffer_field_10); /*0x64210c*/
       return v8; /*0x642111*/
     }
     else
@@ -31509,7 +31565,7 @@ void PreviewClass::ReadPreview(char *Source)
       v14 = 0; /*0x642014*/
       Vector::Clear((int)v13); /*0x64201b*/
       v12.Buffer_field_10 = (int)&off_7E1668; /*0x642024*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v12.Buffer_field_10); /*0x64202c*/
+      BufferIOFileClass_Dtor((BufferIOFileClass *)&v12.Buffer_field_10); /*0x64202c*/
       return 0; /*0x642034*/
     }
 }
@@ -34105,8 +34161,8 @@ void SwizzleManager::SaveLoad(int * a1, int * a2)
       v6 = (*(int (__thiscall **)(int *, unsigned int))(*a1 + 36))(a1, 0); /*0x55ab07*/
       v7 = (*(int (__stdcall **)(int *, int *, int))(v5 + 12))(v2, a1, v6); /*0x55ab13*/
       a1[5] = v4; /*0x55ab1b*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 3); /*0x55ab1e*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 2); /*0x55ab2c*/
+      ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 3); /*0x55ab1e*/
+      ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 2); /*0x55ab2c*/
       return v7; /*0x55ab33*/
     }
     return result; /*0x55aace*/
@@ -42187,3 +42243,6 @@ NeuronClass::NeuronClass() {}
 
 WorldDominationTour::WorldDominationTour() {
 }  // L-fix: close namespace tail 1
+}
+
+

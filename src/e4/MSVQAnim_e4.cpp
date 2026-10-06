@@ -63,25 +63,25 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   MovieContext *MSVQAnim_field_0x1C; // ecx
   void *v5; // edi
 
-  v3 = (void (***)(unsigned int, int))*((unsigned int *)Block + 10); /*0x5cecb3*/
-  *(unsigned int *)Block->__pad_0 = &vt_MSVQAnim; /*0x5cecb6*/
+  v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 10); /*0x5cecb3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSVQAnim;
   if ( v3 ) /*0x5cecbe*/
     (**v3)((unsigned int)v3, 1); /*0x5cecc4*/
-  MSVQAnim_field_0x1C = (MovieContext *)Block->MSVQAnim_field_0x1C; /*0x5cecc6*/
+  MSVQAnim_field_0x1C = (MovieContext *)this->MSVQAnim_field_0x1C; /*0x5cecc6*/
   if ( MSVQAnim_field_0x1C ) /*0x5ceccc*/
   {
     ((MovieContext*)MSVQAnim_field_0x1C)->Cleanup(); /*0x5cecce*/
-    v5 = (void *)Block->MSVQAnim_field_0x1C; /*0x5cecd3*/
+    v5 = (void *)this->MSVQAnim_field_0x1C; /*0x5cecd3*/
     if ( v5 ) /*0x5cecd8*/
     {
-      BinkMovie::Cleanup((BinkMovie *)Block->MSVQAnim_field_0x1C); /*0x5cecdc*/
+      BinkMovie::Cleanup( (void)((BinkMovie *)this->MSVQAnim_field_0x1C)); /*0x5cecdc*/
       __3_YAXPAX_Z(v5); /*0x5cece2*/
     }
   }
-  *(unsigned int *)Block->__pad_0 = &vt_MSAnim; /*0x5cecee*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSAnim;
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
-    __3_YAXPAX_Z(Block); /*0x5cecfa*/
-  return Block->__pad_0; /*0x5ced04*/
+    __3_YAXPAX_Z(this); /*0x5cecfa*/
+  return this->__pad_0; /*0x5ced04*/
 
 }
 } // namespace gamemd

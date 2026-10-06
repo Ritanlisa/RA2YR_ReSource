@@ -73,7 +73,7 @@ char * VocClass::GetSampleNameByIndex(int a1)
     return (char *)(g_Str__none_); /*0x7515b5*/
   v1 = (char *)**((unsigned int **)g_VocAudioConfig + a1); /*0x7515a4*/
   if ( v1 ) /*0x7515a8*/
-    return VocClass::GetSampleName(v1); /*0x7515aa*/
+    return ((VocClass *)v1)->GetSampleName(); /*0x7515aa*/
   else
     return (char *)(g_Str_Invalid_Voc); /*0x7515af*/
 

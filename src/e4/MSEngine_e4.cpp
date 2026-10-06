@@ -342,7 +342,7 @@ int MSEngine::ProcessEvents(char aP1, int a3)
   v4 = a3; /*0x5d1e01*/
   while ( 1 ) /*0x5d1e19*/
   {
-    result = (*(int (**)(char *, char *))(*((unsigned int *)this + 6) + 16))((char *)this + 24, &aP1); /*0x5d1e19*/
+    result = (*(int (**)(char *, char *))(*((unsigned int *)this + 6) + 16))( (char *)this + 24, (char *)(&aP1)); /*0x5d1e19*/
     if ( result == -1 ) /*0x5d1e1f*/
       break; /*0x5d1e1f*/
     v6 = *(unsigned int *)(*((unsigned int *)this + 7) + 4 * result); /*0x5d1e24*/
@@ -523,18 +523,18 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5ad4d3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClassTRect; /*0x5ad4d6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5ad4e0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5ad4d3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassTRect;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5ad4e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad4e8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5ad4f0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5ad4f0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5ad4fb*/
-  Block->m_8 = 0; /*0x5ad501*/
+  BYTE1(this->m_C) = 0; /*0x5ad4fb*/
+  this->m_8 = 0; /*0x5ad501*/
   if ( (a2 & 1) != 0 ) /*0x5ad508*/
-    __3_YAXPAX_Z(Block); /*0x5ad50b*/
-  return Block->__pad_0; /*0x5ad515*/
+    __3_YAXPAX_Z(this); /*0x5ad50b*/
+  return this->__pad_0; /*0x5ad515*/
 
 }
 } // namespace gamemd
@@ -546,18 +546,18 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5ad523*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClassTRect; /*0x5ad526*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5ad530*/
+  v3 = *(void **)&this->m_1[3]; /*0x5ad523*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassTRect;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5ad530*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad538*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5ad540*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5ad540*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5ad54b*/
-  Block->m_8 = 0; /*0x5ad551*/
+  BYTE1(this->m_C) = 0; /*0x5ad54b*/
+  this->m_8 = 0; /*0x5ad551*/
   if ( (a2 & 1) != 0 ) /*0x5ad558*/
-    __3_YAXPAX_Z(Block); /*0x5ad55b*/
-  return Block->__pad_0; /*0x5ad565*/
+    __3_YAXPAX_Z(this); /*0x5ad55b*/
+  return this->__pad_0; /*0x5ad565*/
 
 }
 } // namespace gamemd

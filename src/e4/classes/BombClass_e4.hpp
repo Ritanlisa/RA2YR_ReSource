@@ -1,5 +1,8 @@
 // GENERATED flat e4 class (mechanical, supply_e4_class_decls)
 #pragma once
+#ifndef GAMEMD_E4_FLAT_BombClass
+#define GAMEMD_E4_FLAT_BombClass 1  // G57c2: suppress minimal_carriers.hpp twin
+#endif
 
 #include "e4/classes/_fwd_e4.hpp"
 

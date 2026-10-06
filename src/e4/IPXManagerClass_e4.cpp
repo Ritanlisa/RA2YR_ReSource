@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/IPXManagerClass_e4.hpp"
@@ -161,10 +162,10 @@ namespace gamemd {
 IPXManagerClass * IPXManagerClass::QueryInterface(char * Block, char a2)
 {
 
-  IPXManagerClass::processPacket((char *)Block); /*0x5430e3*/
+  IPXManagerClass::processPacket((char *)this); /*0x5430e3*/
   if ( (a2 & 1) != 0 ) /*0x5430ed*/
-    __3_YAXPAX_Z(Block); /*0x5430f0*/
-  return (gamemd::IPXManagerClass *)((char *)Block); /*0x5430fa*/
+    __3_YAXPAX_Z(this); /*0x5430f0*/
+  return (gamemd::IPXManagerClass *)((char *)this); /*0x5430fa*/
 
 }
 } // namespace gamemd

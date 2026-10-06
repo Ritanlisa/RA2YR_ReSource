@@ -61,7 +61,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
   v5 = a3; /*0x4fb86b*/
   if ( !a3 ) /*0x4fb871*/
     return 0; /*0x4fb919*/
-  MapClass::UnselectAll_ClearLimboLaunchers(v10); /*0x4fb877*/
+  ((MapClass *)v10)->UnselectAll_ClearLimboLaunchers(); /*0x4fb877*/
   ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower2(0); /*0x4fb883*/
   ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower(0); /*0x4fb88f*/
   stru_87F5F0.__pad_E12[1432] = 0; /*0x4fb894*/
@@ -74,7 +74,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
   *(unsigned int *)&stru_87F5F0.__pad_E12[1426] = this->Object_field_0x30; /*0x4fb8c7*/
   v7 = (const void *)(*(int (**)(unsigned int *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
   ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetBounds(v7); /*0x4fb8df*/
-  v8 = (unsigned int *)((void *)((unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v4 + 440))(v4, &a2))); /*0x4fb8ed*/
+  v8 = (unsigned int *)((void *)((*(int (**)(int, int *))(*(unsigned int *)v4 + 440))( v4, (int *)(&a2)))); /*0x4fb8ed*/
   ((Tactical *)((Tactical *)&stru_87F5F0.__pad_58[416]))->MouseMove(&a3, v8); /*0x4fb8fe*/
   (*(void (**)(int, int))(*(unsigned int *)v4 + 292))(v4, 2); /*0x4fb909*/
   return (void *)(1); /*0x4fb90f*/
@@ -163,7 +163,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
       else
       {
         v13 = (CellClass *)(*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c624*/
-        CellClass::AttachObject(v13, v45); /*0x54c62c*/
+        ((CellClass *)v13)->AttachObject( v45); /*0x54c62c*/
         v14 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c631*/
         v15 = v14[116]; /*0x54c638*/
         LOBYTE(v12) = (*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)v14 + 292))(v14, 0); /*0x54c63b*/
@@ -200,7 +200,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         || (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell((unsigned int *)this + 16)->flags[0] & 0x100) == 0
         && (v47 > 2 || v47 == 2 && !*((unsigned char *)this + 144)) )
       {
-        LOBYTE(v12) = (*(char (**))(this->BuildingPlacement_field_0x04 + 72))(&this->BuildingPlacement_field_0x04); /*0x54ca43*/
+        LOBYTE(v12) = (*(char (**)(void *))(this->BuildingPlacement_field_0x04 + 72))( (void *)(&this->BuildingPlacement_field_0x04)); /*0x54ca43*/
         return (gamemd::VectorClass_flat **)((char)v12); /*0x54ca4d*/
       }
       if ( !*((unsigned char *)this + 144) ) /*0x54c71a*/
@@ -229,7 +229,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
             LOBYTE(v24) = 0; /*0x54c78d*/
             HIBYTE(v24) = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 72); /*0x54c793*/
             LOWORD(v47) = v24; /*0x54c799*/
-            FacingClass::Update((unsigned short *)((char *)this + 84), &v47); /*0x54c79e*/
+            ((FacingClass *)(unsigned short *)((char *)this + 84))->Update( &v47); /*0x54c79e*/
           }
         }
       }
@@ -272,7 +272,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
     v48 = *v29; /*0x54c858*/
     v49 = v29[1]; /*0x54c863*/
     v50 = v29[2]; /*0x54c870*/
-    if ( v30 > Cell::GetGroundHeight((unsigned int *)(&v48)) ) /*0x54c87b*/
+    if ( v30 > Cell::GetGroundHeight( (unsigned int *)(&v48)) ) /*0x54c87b*/
     {
       v31 = (int *)(this->BuildingPlacement_field_0x0C + 156); /*0x54c880*/
       v48 = *v31; /*0x54c888*/
@@ -332,7 +332,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
           if ( *(unsigned int *)((*(int (**)(void))(*(unsigned int *)v47 + 444))() + 224) == v36 ) /*0x54c9be*/
           {
             v37 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v36 + 444))(v36); /*0x54c9c6*/
-            CellClass::AttachObject(v37, 0); /*0x54c9ce*/
+            ((CellClass *)v37)->AttachObject( 0); /*0x54c9ce*/
           }
           ((GadgetGrid *)((int)((GadgetGrid *)&g_CellClassManager)))->RemoveItem(this->BuildingPlacement_field_0x0C); /*0x54c9dc*/
           v38 = this->BuildingPlacement_field_0x0C; /*0x54c9e1*/

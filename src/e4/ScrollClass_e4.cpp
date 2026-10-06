@@ -21,7 +21,7 @@ namespace gamemd {
 int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 {
 
-  TacticalClass::ProcessView((TacticalClass *)this); /*0x6922e3*/
+  TacticalClass::ProcessView( (TacticalClass *)this); /*0x6922e3*/
   return ((BlowStraw_29 *)((TabClass *)this))->Seek(a1,(unsigned int *)(aP2)); /*0x6922f9*/
 
 }
@@ -34,7 +34,7 @@ char * ScrollClass::Read(char * Block, char a2)
   int *v3; // esi
   int v4; // edi
 
-  v3 = (int *)Block + 5371; /*0x6938f5*/
+  v3 = (int *)this + 5371; /*0x6938f5*/
   v4 = 4; /*0x6938fb*/
   do /*0x693916*/
   {
@@ -43,10 +43,10 @@ char * ScrollClass::Read(char * Block, char a2)
     --v4; /*0x693915*/
   }
   while ( v4 ); /*0x693916*/
-  ((RadarClass *)((RadarClass *)Block))->Destruct(); /*0x69391a*/
+  ((RadarClass *)((RadarClass *)this))->Destruct(); /*0x69391a*/
   if ( (a2 & 1) != 0 ) /*0x693924*/
-    __3_YAXPAX_Z(Block); /*0x693927*/
-  return (char *)Block; /*0x69392f*/
+    __3_YAXPAX_Z(this); /*0x693927*/
+  return (char *)this; /*0x69392f*/
 
 }
 } // namespace gamemd

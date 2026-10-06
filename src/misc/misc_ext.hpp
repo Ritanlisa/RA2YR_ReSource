@@ -363,10 +363,10 @@ public:
 
     // IClassFactory
     // wrapper: delegates to TClassFactory_MechLocomotionClass::ddtor at 0x6C4D90
-    virtual HRESULT __stdcall CreateInstance(IUnknown* pUnkOuter, const GUID& riid, void** ppv) override;
+    virtual HRESULT __stdcall CreateInstance(IUnknown* pUnkOuter, const ::GUID& riid, void** ppv) override;  // g57b5 W1a: gamemd::GUID shadow -> ::GUID (==REFIID, objidl base)
     virtual HRESULT __stdcall LockServer(BOOL fLock) override;  // 0x767010
     // IUnknown
-    virtual HRESULT __stdcall QueryInterface(const GUID& riid, void** ppv) override;  // 0x55A9B0
+    virtual HRESULT __stdcall QueryInterface(const ::GUID& riid, void** ppv) override;  // 0x55A9B0  // g57b5 W1a
     virtual ULONG __stdcall AddRef() override;  // 0x6C4D40
     // wrapper: delegates to TClassFactory_MechLocomotionClass::AddRef at 0x6C4D40
     virtual ULONG __stdcall Release() override;
@@ -382,6 +382,8 @@ public:
 // BuildingLoadQueue — building load queue (4 methods)
 // IDA: GetNext, Find, FindObject
 // ============================================================================
+#ifndef GAMEMD_G2_BuildingLoadQueue_DEF  // g57b5: twin-definition guard (misc_ext x render_ext)
+#define GAMEMD_G2_BuildingLoadQueue_DEF 1
 class BuildingLoadQueue
 {
 public:
@@ -401,6 +403,8 @@ public:
     int32_t     m_Count;        // 0x04
     int32_t     m_Capacity;     // 0x08
 };
+#endif  // GAMEMD_G2_BuildingLoadQueue_DEF
+
 
 // ============================================================================
 // Matrix3x4 — 3x4 transformation matrix (3 methods)

@@ -37,8 +37,8 @@ CampaignClass * RadarClass::Destruct()
   int result; // eax
 
   this->RadarClass_field_0x0 = (unsigned int)((gamemd::MapClass **)(&vt_RadarClass));
-  AudioFileClass::Release((AudioFileClass *)&this->RadarClass_field_0x14C0); /*0x652c12*/
-  TacticalClass::FreeResources((TacticalClass *)this); /*0x652c19*/
+  AudioFileClass::Release( (AudioFileClass *)&this->RadarClass_field_0x14C0); /*0x652c12*/
+  TacticalClass::FreeResources( (TacticalClass *)this); /*0x652c19*/
   p_RadarClass_field_0x1488 = (gamemd::MapClass **)(&this->RadarClass_field_0x1488); /*0x652c1e*/
   v3 = 22; /*0x652c24*/
   do /*0x652c53*/
@@ -129,7 +129,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
     v7 = (*(int (**)(unsigned int, int))(**((unsigned int **)v3 + 1160) + 124))(*((unsigned int *)v3 + 1160), (int)a2); /*0x6546e0*/
     v8 = *((unsigned int *)v3 + 1160); /*0x6546e3*/
     *((unsigned int *)v3 + 1321) = v7; /*0x6546e9*/
-    v9 = (*(int (**)(int))(v8->q080)(v8); /*0x6546f1*/
+    v9 = (*(int (**)(int))(v8->q080))(v8);  /*0x6546f1*/
     v10 = *((unsigned int *)v3 + 1321); /*0x6546f7*/
     v11 = *((unsigned int *)v3 + 1148); /*0x6546fd*/
     *((unsigned int *)v3 + 1322) = v9; /*0x65470b*/
@@ -152,7 +152,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
       v19[0] = (int)v3[1160]; /*0x65477d*/
       v15 = v19[0]; /*0x654777*/
       v18 = (*(int (**)(int))(*(unsigned int *)v19[0] + 128))(v19[0]); /*0x654789*/
-      v16 = (*(int (**)(int))(v15->u32_7C)(v15); /*0x65478e*/
+      v16 = (*(int (**)(int))(v15->u32_7C))(v15);  /*0x65478e*/
       v17 = (char *)(((DSurface*)v14)->Construct(v16, v18, 1, 0)); /*0x654794*/
     }
     else
@@ -160,7 +160,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
       v17 = (char *)((unsigned int)(0));
     }
     *((unsigned int *)v3 + 1159) = (unsigned int)(v17); /*0x65479d*/
-    (*(void (**)(char *, unsigned int))(v17->nextArrayIndex)(v17, 0); /*0x6547a8*/
+    (*(void (**)(char *, unsigned int))(v17->nextArrayIndex))(v17, 0);  /*0x6547a8*/
     IDA_LOBYTE(result) = RadarClass::UpdateFoundationShapesCustom(v3); /*0x6547ad*/
   }
   return (int)(result); /*0x6547b3*/

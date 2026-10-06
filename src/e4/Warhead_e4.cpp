@@ -51,7 +51,7 @@ int Warhead::GetWarheadSound(int a2)
 
   int v3; // eax
 
-  if ( (uint8_t)Audio::IsLoud((int *)(this->q130 + 336)) ) /*0x41d7ec*/
+  if ( (uint8_t)Audio::IsLoud( (int *)((char *)this->q130 + 336)) ) /*0x41d7ec*/
     v3 = this->q048; /*0x41d7f5*/
   else
     v3 = this->q044; /*0x41d7fa*/
@@ -73,7 +73,7 @@ int Warhead::RemoveFromDamageList(int a2)
   int v8; // edx
 
   v2 = (gamemd::Warhead *)((unsigned int *)this + 1644);
-  v3 = (*(int (**)(Warhead *, int *))(*((unsigned int *)this + 411) + 16))((Warhead *)(unsigned int *)this + 1644, &a2); /*0x452834*/
+  v3 = (*(int (**)(Warhead *, int *))(*((unsigned int *)this + 411) + 16))( (Warhead *)(unsigned int *)this + 1644, (int *)(&a2)); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/
   {
     v4 = *(unsigned int *)&v2[16]; /*0x45283c*/

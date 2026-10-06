@@ -180,7 +180,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   if ( a8 ) /*0x704dae*/
   {
     v27 = (0x7FFFFFFF - (int)dword_A8ED84) % 15; /*0x704dc9*/
-    result = ClipLine(&v31, &v29, v38); /*0x704dd4*/
+    result = ClipLine( (int)(&v31), (int)(&v29), v38); /*0x704dd4*/
     if ( result ) /*0x704ddb*/
       return (*(int (**)(int, int *, int *, int, void *, int, unsigned int))(*(unsigned int *)DSurface_Composite + 76))( /*0x704df8*/
                DSurface_Composite,
@@ -193,7 +193,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   }
   else
   {
-    result = ClipLine(&v31, &v29, v38); /*0x704e14*/
+    result = ClipLine( (int)(&v31), (int)(&v29), v38); /*0x704e14*/
     if ( result ) /*0x704e1b*/
       return (*(int (**)(int, int *, int *, int))(*(unsigned int *)DSurface_Composite + 48))( /*0x704e30*/
                DSurface_Composite,
@@ -272,7 +272,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v31 = v9[1]; /*0x704f68*/
   v32 = (void *)(v9[2]);
   v33 = (int *)(v9[3]);
-  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v30, v7); /*0x704f88*/
+  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))( DSurface_Composite, (int *)(&v30), v7); /*0x704f88*/
   v29 = v22 - 2; /*0x704f9f*/
   v28 = v21 - 2; /*0x704fad*/
   v10 = (int *)(((Rect*)v46)->Construct(&v28, 3, 3)); /*0x704fb1*/
@@ -285,7 +285,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v35 = (unsigned int)(v11[1]);
   v36 = (int *)((unsigned int)(v11[2]));
   v37 = (int *)((unsigned int)(v11[3]));
-  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v34, v7); /*0x705014*/
+  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))( DSurface_Composite, (int *)(&v34), v7); /*0x705014*/
   v44[0] = (int)(DSurface_ViewBounds); /*0x705028*/
   v44[1] = dword_886FA4; /*0x705031*/
   v44[2] = dword_886FA8; /*0x705035*/
@@ -302,7 +302,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v28 = 8 * ((unsigned int)(Time)>> 4); /*0x70507d*/
   while ( 1 ) /*0x7050b0*/
   {
-    v38 = (void *)((v15 * v13 + v14 * a4) / 32);
+    v38 = (unsigned int)(void *)((v15 * v13 + v14 * a4) / 32);
     v39 = (v14 * a5 + v15 * a2) / 32; /*0x7050d3*/
     v17 = ((double)v23 - 16.0) * 0.0625; /*0x7050f2*/
     v23 = (v14 * a6 + v15 * a3) / 32; /*0x7050f8*/
@@ -311,7 +311,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
     ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&v38), &v21); /*0x705144*/
     v25 += dword_886FA4; /*0x705158*/
     v22 += dword_886FA4; /*0x70516b*/
-    if ( ClipLine(&v24, &v21, v44) ) /*0x70516f*/
+    if ( ClipLine( (int)(&v24), (int)(&v21), v44) ) /*0x70516f*/
     {
       v20 = (void *)((int16_t)(IDA_BYTE2(a7)));
       v19 = (void *)((unsigned int)(a7));
@@ -386,10 +386,10 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   float v52[12]; // [esp+DCh] [ebp-60h] BYREF
   float v53[12]; // [esp+10Ch] [ebp-30h] BYREF
 
-  qmemcpy(v50, a5, sizeof(v50)); /*0x706eeb*/
+  qmemcpy( v50, (const void *)(a5), sizeof(v50)); /*0x706eeb*/
   v12 = *a1; /*0x706ef4*/
-  qmemcpy(v51, a5, sizeof(v51)); /*0x706efe*/
-  if ( *(unsigned char *)((*(int (**)(int *))(v12 + 132))(a1) + 3500) ) /*0x706f08*/
+  qmemcpy( v51, (const void *)(a5), sizeof(v51)); /*0x706efe*/
+  if ( *(unsigned char *)((*(int (**)(int *))(v12 + 132))( (int *)(a1)) + 3500) ) /*0x706f08*/
     dword_B43180 = 1; /*0x706f12*/
   v14 = (unsigned int *)a4[1]; /*0x706f36*/
   v47 = (unsigned int *)*a4; /*0x706f45*/
@@ -417,12 +417,12 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   v17 = ((Voxel*)v49)->RenderFrame(); /*0x706fef*/
   v18 = *a1; /*0x706ff4*/
   qmemcpy(v48, v17, sizeof(v48)); /*0x707002*/
-  if ( (*(uint8_t (**)(int *))(v18 + 468))(a1)
-    || (*(uint8_t (**)(int *))(*a1 + 472))(a1) )
+  if ( (*(uint8_t (**)(int *))(v18 + 468))( (int *)(a1))
+    || (*(uint8_t (**)(int *))(*a1 + 472))( (int *)(a1)) )
   {
     if ( a1
-      && (*(int (**)(int *))(*a1 + 44))(a1) == 6
-      && *(unsigned char *)(*((*(int (**)(int *))(*a1 + 44))(a1) == 6 ? a1 + 328 : (int *)1312) + 5809) )
+      && (*(int (**)(int *))(*a1 + 44))( (int *)(a1)) == 6
+      && *(unsigned char *)(*((*(int (**)(int *))(*a1 + 44))( (int *)(a1)) == 6 ? a1 + 328 : (int *)1312) + 5809) )
     {
       v19 = a9 | 6; /*0x70705a*/
     }
@@ -436,9 +436,9 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     v19 = a9; /*0x70706b*/
   }
   if ( (uint8_t)((House*)(House *)a1[135])->IsHumanPlayer() /*0x707086*/
-    && (*(uint8_t (**)(int *))(*a1 + 196))(a1) )
+    && (*(uint8_t (**)(int *))(*a1 + 196))( (int *)(a1)) )
   {
-    v19 = (*(int (**)(int *, int))(*a1 + 1084))(a1, v19); /*0x70709c*/
+    v19 = (*(int (**)(int *, int))(*a1 + 1084))( (int *)(a1), v19); /*0x70709c*/
   }
   v20 = (unsigned int *)a6; /*0x7070a5*/
   v43 = *a7; /*0x7070ae*/
@@ -458,12 +458,12 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     }
     else
     {
-      v22 = (int *)(((unsigned int *)(g_TacticalClass_Instance))[45]);
+      v22 = (unsigned int)(int *)(((unsigned int *)(g_TacticalClass_Instance))[45]);
       v39 = (int *)(0);
       v42 = (int *)(v21 - *(unsigned int *)&v22);
       v40 = (int *)(0);
-      v41 = (int)((int *)(*(unsigned int *)DSurface_ViewBounds.__pad_8));
-      v23 = (int *)(ClipRectIntersection(v49, &v43, &v39, 0, 0));
+      v41 = (int)((*(unsigned int *)DSurface_ViewBounds.__pad_8));
+      v23 = (int *)(ClipRectIntersection( v49, (const RectangleStruct*)(&v43), (const RectangleStruct*)(&v39), 0, 0));
       v43 = *v23; /*0x707125*/
       v44 = v23[1]; /*0x70712c*/
       v45 = v23[2]; /*0x707133*/
@@ -471,10 +471,10 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     }
   }
   v24 = (gamemd::BuildingClass *)((unsigned int)((gamemd::BuildingClass *)(v19 & 0xFFFFFFEF)));
-  if ( (*(int (**)(int *))(*a1 + 44))(a1) == 1 && *((unsigned char *)a1 + 1747) ) /*0x70717d*/
+  if ( (*(int (**)(int *))(*a1 + 44))( (int *)(a1)) == 1 && *((unsigned char *)a1 + 1747) ) /*0x70717d*/
     v25 = (gamemd::BuildingClass *)(dword_B1D140); /*0x707187*/
   else
-    v25 = (BuildingClass *)(*(int (**)(int *))(*a1 + 484))(a1); /*0x70719a*/
+    v25 = (BuildingClass *)(*(int (**)(int *))(*a1 + 484))( (int *)(a1)); /*0x70719a*/
   v26 = 0; /*0x70719c*/
   if ( ((unsigned int)(v24)& 8) != 0 ) /*0x7071a1*/
   {
@@ -489,9 +489,9 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   v39 = (int *)(v48[0] + *v20);
   v31 = (int *)(*a1);
   v40 = (int *)(v48[1] + v30);
-  v36 = (*(int (**)(int *))(v31 + 752))(a1); /*0x707200*/
-  v35 = (*(int (**)(int *))(*a1 + 748))(a1); /*0x70720c*/
-  SHPFrame = (int *)BuildingClass::GetSHPFrame(v25, v24); /*0x707215*/
+  v36 = (*(int (**)(int *))(v31 + 752))( (int *)(a1)); /*0x707200*/
+  v35 = (*(int (**)(int *))(*a1 + 748))( (int *)(a1)); /*0x70720c*/
+  SHPFrame = (int *)((BuildingClass *)v25)->GetSHPFrame( v24); /*0x707215*/
   v32 = Miles_DriverGet(); /*0x707227*/
   BlitterDrawSHP( /*0x707235*/
     (int *)g_DSurface_Hidden_2->__pad_0,
@@ -507,9 +507,9 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     a10,
     a11,
     v37);
-  if ( *(unsigned char *)((*(int (**)(int *))(*a1 + 132))(a1) + 3500) ) /*0x707245*/
+  if ( *(unsigned char *)((*(int (**)(int *))(*a1 + 132))( (int *)(a1)) + 3500) ) /*0x707245*/
     dword_B43180 = 0; /*0x70724f*/
-  qmemcpy(a3, v48, 0x18u); /*0x70726b*/
+  qmemcpy( (void *)(a3), v48, 0x18u); /*0x70726b*/
   return a3; /*0x70726d*/
 }
 }
@@ -620,15 +620,15 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int * a1, int a2)
             }
             v18 = (unsigned int *)(v13 + v3[273]); /*0x7096bd*/
             if ( v31 < v30.Capacity /*0x7096e4*/
-              || (v30.IsAllocated[0] || !v30.Capacity)
+              || (((unsigned int *)&v30.IsAllocated)[0] || !v30.Capacity)
               && v32 > 0
-              && (*(uint8_t (**)(VectorClass *, int, unsigned int))(v30.vtable0 + 8))(
+              && (*(uint8_t (**)(VectorClass *, int, unsigned int))(v30.(char *)vtable0 +))(
                    &v30,
                    v32 + v30.Capacity,
                    0) )
             {
               v19 = v31++; /*0x7096f3*/
-              *(unsigned int *)(v30.Items + 4 * v19) = *v18; /*0x7096fc*/
+              *(unsigned int *)(v30.(char *)Items + * v19) = *v18; /*0x7096fc*/
             }
             break; /*0x7096fc*/
           }
@@ -642,10 +642,10 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int * a1, int a2)
       v25 = 0; /*0x709767*/
       for ( k = 0; k < v37; ++k ) /*0x70976d*/
       {
-        if ( *(unsigned int *)(v30.Items + 4 * k) > v24 ) /*0x70977c*/
+        if ( *(unsigned int *)(v30.(char *)Items + * k) > v24 ) /*0x70977c*/
         {
           v25 = *((unsigned int *)v34 + k); /*0x70977e*/
-          v24 = *(unsigned int *)(v30.Items + 4 * k); /*0x709782*/
+          v24 = *(unsigned int *)(v30.(char *)Items + * k); /*0x709782*/
         }
       }
       (*(void (**)(unsigned int *, int))(*v3 + 968))(v3, v25); /*0x709792*/
@@ -670,13 +670,13 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int * a1, int a2)
       (*(void (**)(unsigned int *))(*v3 + 968))(v3); /*0x70975d*/
     }
     v30.vtable0 =(void *)(int)&VectorClass_int_vftable; /*0x7097a0*/
-    if ( v30.Items && v30.IsAllocated[0] ) /*0x7097b0*/
+    if ( v30.Items &(unsigned int *)&v30.IsAllocated[0] ) /*0x7097b0*/
     {
       RA2_OPDEL((void *)v30.Items); /*0x7097b3*/
       v30.Items = 0; /*0x7097bb*/
     }
     v30.Capacity = 0; /*0x7097c3*/
-    v30.IsAllocated[0] = 0; /*0x7097ca*/
+    ((unsigned int *)&v30.IsAllocated)[0] = 0; /*0x7097ca*/
     v33 = (void*)&VectorClass_AbstractClass___vftable; /*0x7097cf*/
     if ( v34 ) /*0x7097d8*/
     {
@@ -716,9 +716,9 @@ void UpdateTimedStateMachine(int * a1)
   int v21; // [esp+Ch] [ebp-8h]
 
   if ( a1
-    && (*(int (**)(int *))(*a1 + 44))(a1) == 6
+    && (*(int (**)(int *))(*a1 + 44))( (int *)(a1)) == 6
     && a1[165]
-    && *(unsigned int *)(a1[165] + 80) == ((*(int (**)(int *))(*a1 + 44))(a1) == 6 ? (unsigned int)a1 : 0) )
+    && *(unsigned int *)(a1[165] + 80) == ((*(int (**)(int *))(*a1 + 44))( (int *)(a1)) == 6 ? (unsigned int)a1 : 0) )
   {
     switch ( a1[112] ) /*0x70e97d*/
     {
@@ -1042,7 +1042,7 @@ int E4Recv_70FE50::sub_70FE50()
   if ( result ) /*0x70fe77*/
   {
     *(unsigned int *)(result + 464) = 0; /*0x70fe79*/
-    result = *(unsigned int *)(this->drainTarget + 540); /*0x70fe89*/
+    result = *(unsigned int *)((char *)this->drainTarget + 540); /*0x70fe89*/
     if ( result ) /*0x70fe91*/
       *(unsigned char *)(result + 22392) = 1; /*0x70fe93*/
     this->drainTarget = 0; /*0x70fe9a*/

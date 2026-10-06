@@ -109,7 +109,7 @@ LABEL_23: result = (gamemd::DSurface *)(Audio_Process_7C0530(a1, (int)v11, 1));
               goto LABEL_27;
           }
         }
-        result = (unsigned int)((int)(ProcessAudioStreamPlayback(a1, v11, *(uint8_t *)(a1 + 245), 0, 0, &a5)));
+        result = (unsigned int)((int)(ProcessAudioStreamPlayback( a1, v11, *(uint8_t *)(a1 + 245), 0, 0, (char *)(&a5))));
 LABEL_27:
         *(unsigned int *)(a1 + 384) = (unsigned int)(v11);
         if ( result != (gamemd::DSurface *)(-1) )
@@ -591,7 +591,7 @@ LABEL_123:
           v36 = (*(int (**)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, v47) == 0;
           goto LABEL_73;
         }
-        if ( v47 > 0xC || (*(int (**)(int, int, int16_t *, unsigned int))(a1 + 64))(a1, 5, &v118, v47) )
+        if ( v47 > 0xC || (*(int (**)(int, int, int16_t *, unsigned int))(a1 + 64))( a1, 5, (int16_t *)(&v118), v47) )
           return -4;
         v48 = v118;
   int v119; // [esp+26h] [ebp-Ah]
@@ -771,7 +771,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
     while ( 1 ) /*0x7c0ca5*/
     {
       v5 = (unsigned int *)(aP0 + 408); /*0x7c0ca5*/
-      if ( (*(int (**)(int, int, int, int))(aP0 + 64))(aP0, 5, aP0 + 408, 8) ) /*0x7c0cb1*/
+      if ( (*(int (**)(int, int, int, int))(aP0 + 64))( (int)(aP0), 5, aP0 + 408, 8) ) /*0x7c0cb1*/
         return -2; /*0x7c10fe*/
       v6 = ((aP0->u32_19C & 0xFF00 | (aP0->u32_19C << 16)) << 8) /*0x7c0ce3*/
          | ((((uint64_t)aP0->u32_19C >> 16) | aP0->u32_19C & 0xFF0000) >> 8);
@@ -815,7 +815,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
             v25 = aP0->u32_170; /*0x7c107f*/
             v26 = *(unsigned int *)(aP0 + 1900) - v8; /*0x7c108b*/
             v33 = v26 + *v25; /*0x7c1096*/
-            if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, v33, (v6 + 1) & 0xFFFFFFFE) ) /*0x7c109a*/
+            if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))( (int)(aP0), 5, v33, (v6 + 1) & 0xFFFFFFFE) ) /*0x7c109a*/
               return -4; /*0x7c110d*/
             v27 = v25[5]; /*0x7c10a4*/
             v25[8] = v26; /*0x7c10a7*/
@@ -833,7 +833,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
             case 0x5A504243u: /*0x7c0f19*/
               if ( (a3 & 8) == 0 ) /*0x7c0ff2*/
               {
-                if ( Audio_Helper_7C1F30(aP0, v6) != -1 ) /*0x7c1004*/
+                if ( Audio_Helper_7C1F30( (int)(aP0), v6) != -1 ) /*0x7c1004*/
                   return -4; /*0x7c1004*/
                 goto LABEL_64; /*0x7c1004*/
               }
@@ -841,7 +841,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
             case 0x5A464243u: /*0x7c0f19*/
               if ( (a3 & 0x10) == 0 ) /*0x7c0fd0*/
               {
-                if ( Audio_Helper_7C1D90(aP0, v6) != -1 ) /*0x7c0fe2*/
+                if ( Audio_Helper_7C1D90( (int)(aP0), v6) != -1 ) /*0x7c0fe2*/
                   return -4; /*0x7c0fe2*/
                 goto LABEL_64; /*0x7c0fe2*/
               }
@@ -872,7 +872,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
             case 0x5A4C5043u: /*0x7c0f19*/
               if ( (a3 & 1) == 0 ) /*0x7c0f44*/
               {
-                if ( Audio_Helper_7C20B0(aP0, v6) != -1 ) /*0x7c0f56*/
+                if ( Audio_Helper_7C20B0( (int)(aP0), v6) != -1 ) /*0x7c0f56*/
                   return -4; /*0x7c0f56*/
                 *(unsigned int *)(v29 + 20) |= 4u; /*0x7c0f60*/
                 goto LABEL_64; /*0x7c0f64*/
@@ -897,7 +897,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
               {
                 v17 = aP0->u32_170; /*0x7c0edc*/
                 IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c0ee2*/
-                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v17, v7) ) /*0x7c0eeb*/
+                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))( (int)(aP0), 5, *v17, v7) ) /*0x7c0eeb*/
                   return -4; /*0x7c0ef3*/
                 v18 = v17[5]; /*0x7c0ef9*/
                 v17[8] = 0; /*0x7c0efc*/
@@ -911,7 +911,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
               {
                 v15 = aP0->u32_170; /*0x7c0e9b*/
                 IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c0ea1*/
-                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v15, v7) ) /*0x7c0eaa*/
+                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))( (int)(aP0), 5, *v15, v7) ) /*0x7c0eaa*/
                   return -4; /*0x7c0eb2*/
                 v16 = v15[5]; /*0x7c0eb8*/
                 v15[8] = 0; /*0x7c0ebb*/
@@ -925,7 +925,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
               {
                 v13 = aP0->u32_170; /*0x7c0e5a*/
                 IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c0e60*/
-                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v13, v7) ) /*0x7c0e69*/
+                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))( (int)(aP0), 5, *v13, v7) ) /*0x7c0e69*/
                   return -4; /*0x7c0e71*/
                 v14 = v13[5]; /*0x7c0e77*/
                 v13[8] = 0; /*0x7c0e7a*/
@@ -949,7 +949,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
               {
                 v12 = aP0->q164; /*0x7c0deb*/
                 IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c0df1*/
-                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v12, v7) ) /*0x7c0dfa*/
+                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))( (int)(aP0), 5, *v12, v7) ) /*0x7c0dfa*/
                   return -4; /*0x7c0e02*/
                 aP0->u32_174 = 0; /*0x7c0e08*/
                 v12[4] = 0; /*0x7c0e0e*/
@@ -965,7 +965,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
               {
                 v10 = aP0->u32_170; /*0x7c0d68*/
                 IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c0d6e*/
-                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *(unsigned int *)(v10 + 8), v7) ) /*0x7c0d78*/
+                if ( (*(int (**)(int, int, unsigned int, unsigned int))(aP0 + 64))( (int)(aP0), 5, *(unsigned int *)(v10 + 8), v7) ) /*0x7c0d78*/
                   return -4; /*0x7c0d80*/
                 v11 = *(unsigned int *)(v10 + 20); /*0x7c0d86*/
                 *(unsigned int *)(v10 + 36) = 0; /*0x7c0d89*/
@@ -984,7 +984,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
             case 0x30504243u: /*0x7c0d15*/
               if ( (a3 & 8) == 0 ) /*0x7c0d40*/
               {
-                if ( Audio_Helper_7C1E10(aP0, v6) != -1 ) /*0x7c0d52*/
+                if ( Audio_Helper_7C1E10( (int)(aP0), v6) != -1 ) /*0x7c0d52*/
                   return -4; /*0x7c0d52*/
                 goto LABEL_64; /*0x7c0d52*/
               }
@@ -996,7 +996,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
       }
   LABEL_63:
       IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7c10cd*/
-      if ( (*(int (**)(int, int, int, unsigned int))(aP0 + 64))(aP0, 7, 1, v7) ) /*0x7c10d5*/
+      if ( (*(int (**)(int, int, int, unsigned int))(aP0 + 64))( (int)(aP0), 7, 1, v7) ) /*0x7c10d5*/
         return -6; /*0x7c111c*/
   LABEL_64:
       if ( v30 >= v34 ) /*0x7c10e9*/

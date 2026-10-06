@@ -27,7 +27,7 @@ int FlyLocomotionClass::LocomotionClass()
 
   int v2; // edx
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x4cc9a3*/
+  ((LocomotionClass *)(LocomotionClass *)this)->Init(); /*0x4cc9a3*/
   this->AirportBound = 0; /*0x4cc9ad*/
   this->MovingDestination[0] = dword_8B3C78; /*0x4cc9b6*/
   this->MovingDestination[1] = dword_8B3C7C; /*0x4cc9be*/
@@ -48,8 +48,8 @@ int FlyLocomotionClass::LocomotionClass()
   this->FlyLocomotionClass_field_54 = 0; /*0x4cca03*/
   this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
   this->IsElevating = 0; /*0x4cca09*/
-  *(unsigned int *)this->LocomotionClass = &vt_FlyLocomotionClass; /*0x4cca0c*/
-  *(unsigned int *)&this->LocomotionClass[4] = &vt_FlyLocomotionClass; /*0x4cca12*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_FlyLocomotionClass;
+  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_FlyLocomotionClass;
   this->XYZ2[2] = v2; /*0x4cca1b*/
   return (int)this->LocomotionClass; /*0x4cca1e*/
 
@@ -78,7 +78,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   *(unsigned int *)v11.__pad_0 = (unsigned int)(&vt_DynamicVectorClass); /*0x4cfeb7*/
   v11.ObjectVector_field_0x14 = 10; /*0x4cfebb*/
   v11.ObjectVector_field_0x10 = 0; /*0x4cfebf*/
-  ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
+  ((ObjectVector *)&v10)->Construct( 0, 0); /*0x4cfec3*/
   *(unsigned int *)v10.__pad_0 = (unsigned int)(&vt_DynamicVectorClass); /*0x4cfecd*/
   v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
   v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/
@@ -96,7 +96,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
       if ( *(unsigned int *)(v4 + 540) != *((unsigned int *)((char *)&stru_A80220) + ((unsigned int *)a1)[0]->enemyHouseIndex) ) /*0x4cff5e*/
         continue; /*0x4cff5e*/
     }
-    else if ( (uint8_t)HouseClass::IsAlliedWith((void *)((unsigned int *)a1)[0], *(void **)(v4 + 540)) ) /*0x4cff32*/
+    else if ( (uint8_t)(((HouseClass *)((void *)((unsigned int *)a1)[0]))->IsAlliedWith(*(void **)(v4 + 540))) ) /*0x4cff32*/
     {
       continue; /*0x4cff39*/
     }
@@ -154,13 +154,13 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
       goto LABEL_45; /*0x4d00f8*/
     v7 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v11.ObjectVector_field_0x10 - 1); /*0x4d0109*/
     v8 = v11.ObjectVector_field_0x04; /*0x4d0111*/
-    vtable0 = (void (**)(unsigned int))((unsigned int *)a1)[0]->TechnoClass; /*0x4d0115*/
+    vtable0 = (void (**)(unsigned int))((unsigned int)((unsigned int *)a1))[0]->TechnoClass; /*0x4d0115*/
   }
   else
   {
     v7 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v10.ObjectVector_field_0x10 - 1); /*0x4d00e2*/
     v8 = v10.ObjectVector_field_0x04; /*0x4d00ea*/
-    vtable0 = (void (**)(unsigned int))((unsigned int *)a1)[0]->TechnoClass; /*0x4d00ee*/
+    vtable0 = (void (**)(unsigned int))((unsigned int)((unsigned int *)a1))[0]->TechnoClass; /*0x4d00ee*/
   }
   vtable0[242](*(unsigned int *)(v8 + 4 * v7)); /*0x4d011b*/
 LABEL_45:
@@ -206,8 +206,8 @@ int FlyLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x4cfcd6*/
     {
-      *(unsigned int *)a1->LocomotionClass = &vt_FlyLocomotionClass; /*0x4cfcd8*/
-      *(unsigned int *)&a1->LocomotionClass[4] = &vt_FlyLocomotionClass; /*0x4cfcde*/
+      *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_FlyLocomotionClass;
+      *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_FlyLocomotionClass;
     }
   }
   return result; /*0x4cfce5*/
@@ -228,8 +228,8 @@ namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
 
-  *(unsigned int *)Block->LocomotionClass = &vt_FlyLocomotionClass; /*0x4d03a3*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &vt_FlyLocomotionClass; /*0x4d03a9*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_FlyLocomotionClass;
+  *(unsigned int *)(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_FlyLocomotionClass;
   ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     __3_YAXPAX_Z(this); /*0x4d03bd*/

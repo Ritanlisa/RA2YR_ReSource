@@ -144,7 +144,7 @@ protected:
     unsigned int q010;  // 0x10
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ProcessInput();  // 0x40D280
-    void* InitMouse(int a1);  // 0x40D290
+    void* InitMouse(int a1, char a2);  // 0x40D290
     void initCursor();  // 0x40D540
     int updateCursorState(int a1);  // 0x40D570
     char selectCursor(int a2, _DWORD *a3);

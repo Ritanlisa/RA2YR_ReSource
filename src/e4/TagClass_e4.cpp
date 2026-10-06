@@ -213,7 +213,7 @@ LABEL_45:
     }
   }
   v22[0] = (unsigned int)(a1);
-  v20 = (*(int (**)(int *, unsigned int *))(TagClass_Array + 16))(&TagClass_Array, v22); /*0x6e51d9*/
+  v20 = (*(int (**)(int *, unsigned int *))(TagClass_Array + 16))( (int *)(&TagClass_Array), v22); /*0x6e51d9*/
   if ( v20 != -1 && v20 < g_GameObjectCleanup && v20 < --g_GameObjectCleanup ) /*0x6e51f4*/
   {
     do /*0x6e520c*/
@@ -224,7 +224,7 @@ LABEL_45:
     while ( v20 < g_GameObjectCleanup ); /*0x6e520c*/
   }
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)a1, 1); /*0x6e5212*/
-  return AbstractClass::DTOR((AbstractClass *)a1); /*0x6e521e*/
+  return AbstractClass::DTOR( (void)((AbstractClass *)a1)); /*0x6e521e*/
 
 }
 }
@@ -313,7 +313,7 @@ int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
           (unsigned char)result) )
     {
       result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e567d*/
-      *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x6e568c*/
+      *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = (unsigned int)this;
     }
   }
   return result; /*0x6e568f*/
@@ -368,12 +368,12 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x6e573b*/
+  result = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(aP0), (gamemd::AbstractClass *)(aP1)); /*0x6e573b*/
   if ( result >= 0 ) /*0x6e5742*/
   {
     if ( aP0 ) /*0x6e5746*/
     {
-      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e574f*/
+      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x6e574f*/
       aP0->vtable1 = &vt_TagClass; /*0x6e5754*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e575a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5761*/
@@ -428,10 +428,10 @@ namespace gamemd {
 TagClass * TagClass::ProcessTrigger(char a2)
 {
 
-  ((TagClass *)(Block))->Destructor(); /*0x6e58b3*/
+  ((TagClass *)(this))->Destructor(); /*0x6e58b3*/
   if ( (a2 & 1) != 0 ) /*0x6e58bd*/
-    __3_YAXPAX_Z(Block); /*0x6e58c0*/
-  return Block; /*0x6e58ca*/
+    __3_YAXPAX_Z(this); /*0x6e58c0*/
+  return this; /*0x6e58ca*/
 
 }
 } // namespace gamemd

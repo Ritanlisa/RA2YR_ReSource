@@ -6,7 +6,7 @@ namespace gamemd {
 // --- IPXGlobalConnClass ---
 
 // 0x53fbd0
-void IPXGlobalConnClass::Flush()
+void IPXGlobalConnClass::Flush(const void *a2, unsigned int a3, unsigned int a4, int a5, short a6, int a7)  // g57b5 W4: raw 真值补参 (a2,a3,a4,a5,a6,a7)
 {
     int v8; // eax
     int v9; // ecx
@@ -40,7 +40,7 @@ void IPXGlobalConnClass::Flush()
              a6);
 }
 // 0x7b0f50
-void NetworkOptions::ApplySettings()
+void NetworkOptions::ApplySettings(int a2, char a3, int a4)  // g57b5 W4: raw 真值补参 (a2,a3,a4)
 {
     int v5; // eax
     int v6; // ebx

@@ -240,7 +240,7 @@ LABEL_18:
                   PlaceMapSeedClassBuildings(dword_AA0E20 + 3,(gamemd::ObjectClass *)(v23), -1, -1); /*0x5a61af*/
                   v21 = 0; /*0x5a61b4*/
                 }
-                if ( MapSeedClass::ValidateRectBounds(&v52) ) /*0x5a61c0*/
+                if ( MapSeedClass::ValidateRectBounds( (void)(&v52)) ) /*0x5a61c0*/
                 {
                   v16 = SHIWORD(v28); /*0x5a61cd*/
                   if ( SHIWORD(v28) - SWORD1(v20) < 4 ) /*0x5a61de*/
@@ -339,7 +339,7 @@ LABEL_18:
             else
             {
 LABEL_79:
-              if ( MapSeedClass::ValidateRectBounds((MapSeedClass *)v55) ) /*0x5a5fff*/
+              if ( MapSeedClass::ValidateRectBounds( (void)((MapSeedClass *)v55)) ) /*0x5a5fff*/
               {
                 v31 = v20 - 196608; /*0x5a6019*/
                 *(unsigned int *)v23 = v20 - 196608; /*0x5a6027*/
@@ -540,10 +540,10 @@ namespace gamemd {
 MapSeedClass * MapSeedClass::QueryInterface(char a2, int a3)
 {
 
-  LoadOptions::Cleanup((LoadOptions *)Block); /*0x5ac273*/
+  LoadOptions::Cleanup( (LoadOptions *)this); /*0x5ac273*/
   if ( (a2 & 1) != 0 ) /*0x5ac27d*/
-    __3_YAXPAX_Z(Block); /*0x5ac280*/
-  return Block->__pad_0; /*0x5ac28a*/
+    __3_YAXPAX_Z(this); /*0x5ac280*/
+  return this->__pad_0; /*0x5ac28a*/
 
 }
 } // namespace gamemd
@@ -803,18 +803,18 @@ VectorClass_flat * MapSeedClass_18::QueryInterface(unsigned int * Block, char a2
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5ad433*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5ad436*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5ad440*/
+  v3 = *(void **)&this->m_1[3]; /*0x5ad433*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5ad440*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad448*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5ad450*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5ad450*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5ad45b*/
-  Block->m_8 = 0; /*0x5ad461*/
+  BYTE1(this->m_C) = 0; /*0x5ad45b*/
+  this->m_8 = 0; /*0x5ad461*/
   if ( (a2 & 1) != 0 ) /*0x5ad468*/
-    __3_YAXPAX_Z(Block); /*0x5ad46b*/
-  return Block->__pad_0; /*0x5ad475*/
+    __3_YAXPAX_Z(this); /*0x5ad46b*/
+  return this->__pad_0; /*0x5ad475*/
 
 }
 } // namespace gamemd
@@ -826,18 +826,18 @@ DynamicVector * MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___(un
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5ad483*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5ad486*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5ad490*/
+  v3 = *(void **)&this->m_1[3]; /*0x5ad483*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5ad490*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad498*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5ad4a0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5ad4a0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5ad4ab*/
-  Block->m_8 = 0; /*0x5ad4b1*/
+  BYTE1(this->m_C) = 0; /*0x5ad4ab*/
+  this->m_8 = 0; /*0x5ad4b1*/
   if ( (a2 & 1) != 0 ) /*0x5ad4b8*/
-    __3_YAXPAX_Z(Block); /*0x5ad4bb*/
-  return Block->__pad_0; /*0x5ad4c5*/
+    __3_YAXPAX_Z(this); /*0x5ad4bb*/
+  return this->__pad_0; /*0x5ad4c5*/
 
 }
 } // namespace gamemd

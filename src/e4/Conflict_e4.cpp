@@ -282,28 +282,28 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, 
 
 // 0x766960
 namespace gamemd {
-unsigned int * Conflict_WorldDominationTour_12::Constructor(char Block)
+unsigned int * Conflict_WorldDominationTour_12::Constructor(char a2)
 {
 
   *Block = (Conflict_WorldDominationTour)&vt_rc_ptrWorldDominationTourValueGameOption; /*0x766963*/
   ((ComPtr *)((ComPtr *)Block))->Release(); /*0x766969*/
   if ( (a2 & 1) != 0 ) /*0x766973*/
     __3_YAXPAX_Z(Block); /*0x766976*/
-  return Block; /*0x766980*/
+  return (unsigned int *)Block; /*0x766980*/
 
 }
 } // namespace gamemd
 
 // 0x766990
 namespace gamemd {
-unsigned int * Conflict_WorldDominationTour_12::Constructor_0(char Block)
+unsigned int * Conflict_WorldDominationTour_12::Constructor_0(char a2)
 {
 
   *Block = (Conflict_WorldDominationTour)&vt_rc_ptr; /*0x766993*/
   ((ComPtr *)((ComPtr *)Block))->Release(); /*0x766999*/
   if ( (a2 & 1) != 0 ) /*0x7669a3*/
     __3_YAXPAX_Z(Block); /*0x7669a6*/
-  return Block; /*0x7669b0*/
+  return (unsigned int *)Block; /*0x7669b0*/
 
 }
 } // namespace gamemd
@@ -425,18 +425,18 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int 
 
   void (***v3)(unsigned int, int); // ecx
 
-  v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x766fc3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x766fc6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x766fd0*/
+  v3 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x766fc3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr;
+  if ( v3 && BYTE1(this->m_C) ) /*0x766fd0*/
   {
     (**v3)((unsigned int)v3, 3); /*0x766fdf*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x766fe1*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x766fe1*/
   }
-  BYTE1(Block->m_C) = 0; /*0x766fec*/
-  Block->m_8 = 0; /*0x766ff2*/
+  BYTE1(this->m_C) = 0; /*0x766fec*/
+  this->m_8 = 0; /*0x766ff2*/
   if ( (a2 & 1) != 0 ) /*0x766ff9*/
-    __3_YAXPAX_Z(Block); /*0x766ffc*/
-  return Block->__pad_0; /*0x767006*/
+    __3_YAXPAX_Z(this); /*0x766ffc*/
+  return this->__pad_0; /*0x767006*/
 
 }
 } // namespace gamemd
@@ -448,18 +448,18 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Bl
 
   void (***v3)(unsigned int, int); // ecx
 
-  v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x767083*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x767086*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x767090*/
+  v3 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x767083*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr;
+  if ( v3 && BYTE1(this->m_C) ) /*0x767090*/
   {
     (**v3)((unsigned int)v3, 3); /*0x76709f*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x7670a1*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x7670a1*/
   }
-  BYTE1(Block->m_C) = 0; /*0x7670ac*/
-  Block->m_8 = 0; /*0x7670b2*/
+  BYTE1(this->m_C) = 0; /*0x7670ac*/
+  this->m_8 = 0; /*0x7670b2*/
   if ( (a2 & 1) != 0 ) /*0x7670b9*/
-    __3_YAXPAX_Z(Block); /*0x7670bc*/
-  return Block->__pad_0; /*0x7670c6*/
+    __3_YAXPAX_Z(this); /*0x7670bc*/
+  return this->__pad_0; /*0x7670c6*/
 
 }
 } // namespace gamemd

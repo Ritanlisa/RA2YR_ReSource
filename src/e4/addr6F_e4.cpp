@@ -174,7 +174,7 @@ v3 = (void ***)((int)((void ***)(0)));
       v66 = 10; /*0x6f0c13*/
       v65 = 0; /*0x6f0c1b*/
       v67 = 0; /*0x6f0c1f*/
-      TeamTypeClass_28::ClearBuffer(&v62); /*0x6f0c23*/
+      TeamTypeClass_28::ClearBuffer( (void)(&v62)); /*0x6f0c23*/
       v51 = 0; /*0x6f0c2e*/
       if ( dword_A8B210 > 0 ) /*0x6f0c34*/
       {
@@ -442,7 +442,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
     v15 = v14; /*0x6f8a34*/
     if ( ((TechnoClass *)(a1))->GetValue(-1) >= 0 ) /*0x6f8a3d*/
       break; /*0x6f8a3d*/
-    BuildingClass::GetHealthRatio((BuildingClass *)v14); /*0x6f8a41*/
+    BuildingClass::GetHealthRatio( (BuildingClass *)v14); /*0x6f8a41*/
     _ECX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x6f8a46*/
     __asm /*0x6f8a4c*/
     {
@@ -469,7 +469,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
         goto LABEL_33; /*0x6f8aec*/
       if ( *(unsigned short *)&a1->q0AC != 11 ) /*0x6f8afd*/
         goto LABEL_33; /*0x6f8afd*/
-      BuildingClass::GetHealthRatio((BuildingClass *)v14); /*0x6f8b01*/
+      BuildingClass::GetHealthRatio( (BuildingClass *)v14); /*0x6f8b01*/
       _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x6f8b06*/
       __asm /*0x6f8b0c*/
       {

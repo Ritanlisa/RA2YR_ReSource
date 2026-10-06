@@ -405,7 +405,7 @@ AbstractClass * * EventClass::validateEventType()
       while ( v7 < *(unsigned int *)this->__pad_10 ); /*0x6644a7*/
     }
   }
-  if ( SessionClass::IsValidHouse((int)&dword_A8B238, 0) /*0x6644d2*/
+  if ( ((SessionClass *)(int)&dword_A8B238)->IsValidHouse( 0) /*0x6644d2*/
     || v1 == -1
     || v1 != dword_A83D4C->Object_field_0x30
     || dword_A8DA84 <= 2 )
@@ -660,18 +660,18 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40bc13*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40bc16*/
-  if ( v3 && BYTE1(Block->q00C) ) /*0x40bc20*/
+  v3 = *(void **)&this->m_1[3]; /*0x40bc13*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->q00C) ) /*0x40bc20*/
   {
     __3_YAXPAX_Z(v3); /*0x40bc28*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40bc30*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40bc30*/
   }
-  BYTE1(Block->q00C) = 0; /*0x40bc3b*/
-  Block->q008 = 0; /*0x40bc41*/
+  BYTE1(this->q00C) = 0; /*0x40bc3b*/
+  this->q008 = 0; /*0x40bc41*/
   if ( (a2 & 1) != 0 ) /*0x40bc48*/
-    __3_YAXPAX_Z(Block); /*0x40bc4b*/
-  return Block->__pad_0; /*0x40bc55*/
+    __3_YAXPAX_Z(this); /*0x40bc4b*/
+  return this->__pad_0; /*0x40bc55*/
 
 }
 } // namespace gamemd
@@ -706,7 +706,7 @@ namespace gamemd {
 void EventClass::finalizeEvent()
 {
 
-  dword_87F658 = (int)&vt_VectorClass; /*0x40be18*/
+  dword_87F658 = (unsigned int)(int)&vt_VectorClass;
   if ( dword_87F65C && byte_87F665 ) /*0x40be2c*/
   {
     __3_YAXPAX_Z((void *)(dword_87F65C)); /*0x40be2f*/
@@ -725,18 +725,18 @@ VectorClass_flat * EventClass::queueEvent(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40c113*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40c116*/
-  if ( v3 && BYTE1(Block->q00C) ) /*0x40c120*/
+  v3 = *(void **)&this->m_1[3]; /*0x40c113*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->q00C) ) /*0x40c120*/
   {
     __3_YAXPAX_Z(v3); /*0x40c128*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40c130*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40c130*/
   }
-  BYTE1(Block->q00C) = 0; /*0x40c13b*/
-  Block->q008 = 0; /*0x40c141*/
+  BYTE1(this->q00C) = 0; /*0x40c13b*/
+  this->q008 = 0; /*0x40c141*/
   if ( (a2 & 1) != 0 ) /*0x40c148*/
-    __3_YAXPAX_Z(Block); /*0x40c14b*/
-  return Block->__pad_0; /*0x40c155*/
+    __3_YAXPAX_Z(this); /*0x40c14b*/
+  return this->__pad_0; /*0x40c155*/
 
 }
 } // namespace gamemd

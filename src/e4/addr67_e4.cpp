@@ -106,7 +106,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     v19 = 10; /*0x67b59a*/
     v18 = 0; /*0x67b5a8*/
     v17.vtable0 = (void*)&TypeList_BuildingTypeClass_const___vftable; /*0x67b5ac*/
-    for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67b5be*/
+    for ( i = strtok(String, (char *)&::Delimiter); i; i = strtok(0, (char *)&::Delimiter) ) /*0x67b5be*/
     {
       if ( !*i ) /*0x67b5c0*/
         break; /*0x67b5c2*/
@@ -211,7 +211,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     v17.InfantryTypeVector_field_0x14 = 10; /*0x67bb5a*/
     v17.InfantryTypeVector_field_0x10 = 0; /*0x67bb68*/
     *(unsigned int *)v17.__pad_0 = (unsigned int)((void*)&TypeList_InfantryTypeClass_const___vftable); /*0x67bb6c*/
-    for ( i = strtok((char *)&v17.q01C, Str); i; i = strtok(0, Str) ) /*0x67bb7e*/
+    for ( i = strtok((char *)&v17.q01C, (char *)&::Delimiter); i; i = strtok(0, (char *)&::Delimiter) ) /*0x67bb7e*/
     {
       if ( !*i ) /*0x67bb80*/
         break; /*0x67bb82*/

@@ -28,18 +28,18 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(unsigned int * Block, char
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5c5943*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5c5946*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5c5950*/
+  v3 = *(void **)&this->m_1[3]; /*0x5c5943*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5c5950*/
   {
     __3_YAXPAX_Z(v3); /*0x5c5958*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5c5960*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5c5960*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5c596b*/
-  Block->m_8 = 0; /*0x5c5971*/
+  BYTE1(this->m_C) = 0; /*0x5c596b*/
+  this->m_8 = 0; /*0x5c5971*/
   if ( (a2 & 1) != 0 ) /*0x5c5978*/
-    __3_YAXPAX_Z(Block); /*0x5c597b*/
-  return Block->__pad_0; /*0x5c5985*/
+    __3_YAXPAX_Z(this); /*0x5c597b*/
+  return this->__pad_0; /*0x5c5985*/
 
 }
 } // namespace gamemd

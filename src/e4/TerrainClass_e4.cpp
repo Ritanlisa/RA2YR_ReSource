@@ -164,7 +164,7 @@ LABEL_162:
         return 0;
       return DeployScriptActionPlane(v78, -1);
     case 8:
-      return TActionClass::executeRetreatAction((int *)a1, aP1, (int)v9, (int)a5, aP4);
+      return ((TActionClass *)(int *)a1)->executeRetreatAction( aP1, (int)v9, (int)a5, aP4);
     case 9:
       int v74 = ObjectClass_FindOwner((_DWORD *)(a5), *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !v74 )
@@ -224,7 +224,7 @@ LABEL_162:
       *(unsigned char *)(v75 + 495) = 1;
       return 1;
     case 0xE:
-      return TActionClass::executeEnterAction((unsigned int *)a1, (int)aP1, (int)v9, a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeEnterAction( (int)aP1, (int)v9, a5, (IUnknown *)aP4);
     case 0x10:
       if ( *(unsigned char *)(HouseClass_Player.field_0 + 576) )
         return 1;
@@ -234,14 +234,14 @@ LABEL_162:
             i;
             i = ((LayerClass *)(&((unsigned int *)(stru_87C374))[13428]))->CellIteratorNext() )
       {
-        Conditions::CheckResult(i + 36, (IUnknown *, unsigned int a1, unsigned int a5)HouseClass_Player.field_0);
+        ((Conditions *)i + 36)->CheckResult( (IUnknown *, unsigned int a1, unsigned int a5)HouseClass_Player.field_0);
       }
-      MapClass::MarkForRedraw((int)(&((unsigned int *)(stru_87C374))[13428]),(void *)(1));
+      MapClass::MarkForRedraw( (int)(&((unsigned int *)(stru_87C374))[13428]), (void)((void *)(1)));
       return 1;
     case 0x11:
-      return TActionClass::RevealWaypointArea((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->RevealWaypointArea( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x12:
-      return TActionClass::RevealTileTypeAtWaypoint((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->RevealTileTypeAtWaypoint( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x13:
       PlayVocClass(*(unsigned int *)((unsigned int)(a1)+ 144), 0x2000, 1.0, 0);
       return 1;
@@ -276,13 +276,13 @@ LABEL_162:
       v54 = (TerrainTypeClass *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584);
       if ( *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) == -1 )
         return 1;
-      *(unsigned int *)&v54->__pad_0[8] = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924]
+      *(unsigned int *)&v54->__pad_0[8] = CDTimerClass::TimeRemaining((*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924]
                                                                       + 4584));
       *(unsigned int *)v54->__pad_0 = -1;
       ((ObjectClass *)(&((unsigned int *)(stru_87C374))[13428]))->PreDraw();
       return 1;
     case 0x19:
-      int v57 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4584));
+      int v57 = CDTimerClass::TimeRemaining((*(unsigned int *)&(&HouseClass_Player)[29924] + 4584));
       ((Timer *)(&v131))->Start((int)((DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144) + v57)));
       int v58 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
       *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v131);
@@ -293,9 +293,9 @@ LABEL_162:
       ((ObjectClass *)(&((unsigned int *)(stru_87C374))[13428]))->PreDraw();
       return 1;
     case 0x1A:
-      if ( CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4584)) > 15 * *(unsigned int *)((unsigned int)(a1)+ 144) )
+      if ( CDTimerClass::TimeRemaining((*(unsigned int *)&(&HouseClass_Player)[29924] + 4584)) > 15 * *(unsigned int *)((unsigned int)(a1)+ 144) )
       {
-        int v60 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4584));
+        int v60 = CDTimerClass::TimeRemaining((*(unsigned int *)&(&HouseClass_Player)[29924] + 4584));
         ((Timer *)(&v113))->Start((int)((DynamicVector *)(v60 - 15 * *(unsigned int *)((unsigned int)(a1)+ 144))));
         ecx134 = (gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584)))))));
         *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v113);
@@ -326,16 +326,16 @@ LABEL_162:
         v61 = *(ScenarioClass **)&((unsigned int *)(HouseClass_Player))[29924];
       }
       v61->missionTimer_text_csf = &(&stru_87C374)[46016];
-      ScriptAction::CopyStringField(Destination,(char *)(&((unsigned int *)(stru_87C374))[56304]));
+      ScriptAction::CopyStringField( (char *)(Destination), (char *)(&((unsigned int *)(stru_87C374))[56304]));
   char v137[32]; // [esp+60h] [ebp-1F0h] BYREF
-      ((ScriptAction *)((void *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4600)))->CopyStructField(v137, Destination);
+      ((ScriptAction *)((*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4600)))->CopyStructField(v137, Destination);
       ((ObjectClass *)(&(&stru_87C374)[13428]))->PreDraw();
       return 1;
     case 0x1C:
-      ((ScenarioClass *)(*(unsigned char **)&(&HouseClass_Player)[29924]))->SetGlobalToByID(*(unsigned int *)(a1 + 144), 1);
+      ((ScenarioClass *)(*(unsigned char **)&(&HouseClass_Player)[29924]))->SetGlobalToByID(*(unsigned int *)((char *)a1 +44), 1);
       return 1;
     case 0x1D:
-      ((ScenarioClass *)(*(unsigned char **)&(&HouseClass_Player)[29924]))->SetGlobalToByID(*(unsigned int *)(a1 + 144), 0);
+      ((ScenarioClass *)(*(unsigned char **)&(&HouseClass_Player)[29924]))->SetGlobalToByID(*(unsigned int *)((char *)a1 +44), 0);
       return 1;
     case 0x1E:
       if ( !*(unsigned char *)((unsigned int)(a1)+ 144) )
@@ -363,31 +363,31 @@ LABEL_162:
       ((MapClass *)(&(&stru_87C374)[13428]))->ProcessVisibilityFlags();
       return 1;
     case 0x20:
-      return globalHelper_0E2050((int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return globalHelper_0E2050( (int)aP1, (int)v9, (int)a5, (int16_t *)((IUnknown *)aP4));
     case 0x21:
-      ((SuperClass *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)(a1 + 144))))->StartTimer((IUnknown *)1, 0, 0);
+      ((SuperClass *)(*(unsigned int *)(aP1[16].(char *)nextArrayIndex + * *(unsigned int *)((char *)a1 +44))))->StartTimer((IUnknown *)1, 0, 0);
       if ( (AbstractClass *)HouseClass_Player.field_0 == aP1 )
         goto LABEL_157;
       return 1;
     case 0x22:
-      ((SuperClass *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)(a1 + 144))))->StartTimer(0, 0, 0);
-      *(unsigned char *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)(a1 + 144)) + 96) = 0;
+      ((SuperClass *)(*(unsigned int *)(aP1[16].(char *)nextArrayIndex + * *(unsigned int *)((char *)a1 +44))))->StartTimer(0, 0, 0);
+      *(unsigned char *)(*(unsigned int *)(aP1[16].(char *)nextArrayIndex + * *(unsigned int *)((char *)a1 +44)) + 96) = 0;
       if ( (AbstractClass *)HouseClass_Player.field_0 != aP1 )
         return 1;
 LABEL_157:
-      ((SidebarClass *)((int *)&(&stru_87C374)[13428]))->AddCameo(31, *(AnimClass **)(a1 + 144));
+      ((SidebarClass *)((int *)&(&stru_87C374)[13428]))->AddCameo(31, *(AnimClass **)((char *)a1 +44));
       Status = (IUnknown *)((HouseClass *)((IUnknown *)0x1F))->GetStatus(0);
       ((Sidebar *)((int)&(&stru_87C374)[13428]))->ActivateTab(Status);
       return 1;
     case 0x23:
       if ( !aP1 )
         return 1;
-      aP1[603].NeedsSaveOrLink = *(void **)(a1 + 144);
+      aP1[603].NeedsSaveOrLink = *(void **)((char *)a1 +44);
       return 1;
     case 0x24:
-      return TActionClass::ConvertHouseUnits((unsigned int *)a1, (int)aP1, (int)v9, a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->ConvertHouseUnits( (int)aP1, (int)v9, a5, (IUnknown *)aP4);
     case 0x25:
-      v48 = (HouseClass *)ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      v48 = (HouseClass *)ObjectClass::FindOwner( (unsigned int *)(a5), *(AnimClass **)((char *)a1 +44));
       int v49 = (int)v48;
       if ( !v48 )
         return 0;
@@ -395,7 +395,7 @@ LABEL_157:
       ((HouseClass *)(v49))->HandleAlliance((HouseClass *)aP1, 0);
       return 1;
     case 0x26:
-      eax105 = (IUnknown *)ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      eax105 = (IUnknown *)ObjectClass::FindOwner( (unsigned int *)(a5), *(AnimClass **)((char *)a1 +44));
       int v51 = (int)eax105;
       if ( !eax105 )
         return 0;
@@ -407,20 +407,20 @@ LABEL_157:
     case 0x5D:
       return 1;
     case 0x28:
-      return TActionClass::executeFollowAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeFollowAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x29:
-      return TActionClass::executeEscortAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeEscortAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x2A:
-      return TActionClass::CreateWeaponImpactAtWaypoint((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->CreateWeaponImpactAtWaypoint( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x2B:
-      return TActionClass::executeLoadAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeLoadAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x2C:
       if ( LightningStorm::IsActive() )
         return 0;
       LightningStorm::Start(
-        *(unsigned int *)(a1 + 144),
-        *(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 6036),
-        *(int *)&stru_B05488[37368],
+        *(unsigned int *)((char *)a1 +44),
+        *(unsigned int *)(*(unsigned int *)&(&stru_87C374)[44652 + 6036),
+        *(int *)&(&stru_B05488)[37368,
         0);
       return 1;
     case 0x2D:
@@ -430,29 +430,29 @@ LABEL_157:
         LightningStorm::End();
         return 1;
       }
-      return result;
+      return (AbstractClass * *)result;
     case 0x2E:
-      *(unsigned int *)&stru_87C374[17944] = 0;
-      *(unsigned int *)&stru_87C374[17948] = 0;
-      *(unsigned int *)&stru_87C374[17952] = -1;
-      ((Mouse *)((int)&stru_87C374[13428]))->SetBounds(0);
-      ((BuildingClass *)(&stru_87C374[13428]))->TogglePower2(0);
-      ((BuildingClass *)(&stru_87C374[13428]))->TogglePower(0);
-      stru_87C374[17958] = 0;
-      stru_87C374[17959] = 0;
-      stru_87C374[17960] = 0;
+      *(unsigned int *)&(&stru_87C374)[17944 = 0;
+      *(unsigned int *)&(&stru_87C374)[17948 = 0;
+      *(unsigned int *)&(&stru_87C374)[17952 = -1;
+      ((Mouse *)((int)&(&stru_87C374)[13428))->SetBounds(0);
+      ((BuildingClass *)(&(&stru_87C374)[13428))->TogglePower2(0);
+      ((BuildingClass *)(&(&stru_87C374)[13428))->TogglePower(0);
+      (&stru_87C374)[17958] = 0;
+      (&stru_87C374)[17959] = 0;
+      (&stru_87C374)[17960] = 0;
       Scenario::ClearScreen();
       return 1;
     case 0x2F:
       UpdateMouse();
       return 1;
     case 0x30:
-      v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 68));
-      v82 = (CellStruct **)CoordStruct::Set2(&v131, (IUnknown *)&v112, 0);
+      v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&(&HouseClass_Player)[29924))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 68));
+      v82 = (CellStruct **)((CoordStruct *)&v131)->Set2( (IUnknown *)&v112, 0);
       v113 = *v82;
       v128 = v82[1];
       GroundHeight = v82[2];
-      GroundHeight = (CellStruct *)Cell::GetGroundHeight((IUnknown *)&v113);
+      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (IUnknown *)&v113);
       if ( (*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x100) != 0
         || (*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x400) != 0 )
       {
@@ -472,7 +472,7 @@ LABEL_157:
       ((Timer*)(*(HWND **)&stru_87C374[13308]))->PumpMessages();
       (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 12))(*(unsigned int *)&stru_87C374[45772]);
       ((Mouse *)(&stru_87C374[13428]))->ReleaseCapture();
-      MapClass::MarkForRedraw(&stru_87C374[13428], 0);
+      MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 0);
       ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       Sleep(0x3E8u);
       return 1;
@@ -482,11 +482,11 @@ LABEL_157:
       ((Timer*)(*(HWND **)&stru_87C374[13308]))->PumpMessages();
       HouseClass_Player[45136] = *(unsigned char *)(*(unsigned int *)&HouseClass_Player[29924] + 13730);
       (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 16))(*(unsigned int *)&stru_87C374[45772]);
-      MapClass::MarkForRedraw(&stru_87C374[13428], 0);
+      MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 0);
       ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       return 1;
     case 0x33:
-      TActionClass::executeRepairAction(&stru_87C374[13428], (int)aP1);
+      ((TActionClass *)&stru_87C374[13428])->executeRepairAction( (int)aP1);
       return 1;
     case 0x34:
       char v84 = 0;
@@ -510,7 +510,7 @@ LABEL_157:
                       ecx213 = *(unsigned int **)(v85 + 52);
                       if ( ecx213 )
                       {
-                        if ( LinkedList_flat::Contains(ecx213, a5) )
+                        if ( ((LinkedList_flat *)ecx213)->Contains( a5) )
                         {
                           ((BuildingLightClass *)(*(unsigned int **)(v85 + 1536)))->FindTarget(*(CCINIClass **)(a1 + 144));
                           v84 = 1;
@@ -526,9 +526,9 @@ LABEL_157:
         }
         while ( v10 < *(int *)&HouseClass_Player[44548] );
       }
-      return v84;
+      return (AbstractClass * *)v84;
     case 0x35:
-      return TActionClass::executeUnloadAction((unsigned int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeUnloadAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x36:
       if ( !*(unsigned int *)(a1 + 80) )
         return 1;
@@ -539,7 +539,7 @@ LABEL_157:
       {
         int v96 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[44448] + 4 * v95);
         if ( *(unsigned int *)(v96 + 36) == *(unsigned int *)(a1 + 80) )
-          TActionClass::executeDetonateAction((unsigned char *)v96);
+          ((TActionClass *)(unsigned char *)v96)->executeDetonateAction();
         ++v95;
       }
       while ( v95 < *(int *)&HouseClass_Player[44460] );
@@ -556,7 +556,7 @@ LABEL_157:
       ScenarioClass::SetLocalToByID(*(unsigned char **)&HouseClass_Player[29924], *(unsigned int *)(a1 + 144), 0);
       return 1;
     case 0x3A:
-      return TActionClass::SpawnMeteorShower((int *)a1, aP1, (int)v9, (int)a5, aP4);
+      return ((TActionClass *)(int *)a1)->SpawnMeteorShower( aP1, (int)v9, (int)a5, aP4);
     case 0x3B:
       v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 144));
       MapClass::TriggerEVA((IUnknown *)&v112);
@@ -575,7 +575,7 @@ LABEL_157:
               unsigned int * v34 = *(unsigned int **)(v33 + 52);
               if ( v34 )
               {
-                if ( LinkedList_flat::Contains(v34, a5) )
+                if ( ((LinkedList_flat *)v34)->Contains( a5) )
                 {
                   (*(void (**)(int, int))(*(unsigned int *)v33 + 416))(v33, 1);
                   v31 = 1;
@@ -585,7 +585,7 @@ LABEL_157:
           }
         }
       }
-      return v31;
+      return (AbstractClass * *)v31;
     case 0x3D:
       bl75 = 0;
       for ( k = 0; k < *(int *)&HouseClass_Player[44548]; ++k )
@@ -600,7 +600,7 @@ LABEL_157:
               attachedTag = v35->attachedTag;
               if ( attachedTag )
               {
-                if ( LinkedList_flat::Contains(attachedTag, a5) && v35->HasPower )
+                if ( ((LinkedList_flat *)attachedTag)->Contains( a5) && v35->HasPower )
                 {
                   BuildingClass::PowerOff((int)v35);
                   bl75 = 1;
@@ -610,7 +610,7 @@ LABEL_157:
           }
         }
       }
-      return bl75;
+      return (AbstractClass * *)bl75;
     case 0x3E:
       bl85 = 0;
       for ( m = 0; m < *(int *)&HouseClass_Player[44548]; ++m )
@@ -625,7 +625,7 @@ LABEL_157:
               unsigned int * v42 = v39->attachedTag;
               if ( v42 )
               {
-                if ( LinkedList_flat::Contains(v42, a5) && !v39->HasPower )
+                if ( ((LinkedList_flat *)v42)->Contains( a5) && !v39->HasPower )
                 {
                   BuildingClass::AnnounceReady((int)v39);
                   bl85 = 1;
@@ -635,7 +635,7 @@ LABEL_157:
           }
         }
       }
-      return bl85;
+      return (AbstractClass * *)bl85;
     case 0x3F:
       return PlayWaypointEffect((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x40:
@@ -663,7 +663,7 @@ LABEL_60:
       HouseClass::CheckDefeat((int)v22, v122);
       return 1;
     case 0x45:
-      TActionClass::executeBuildAction(HouseClass_Player.field_0);
+      ((TActionClass *)HouseClass_Player.field_0)->executeBuildAction();
       return 1;
     case 0x46:
       if ( !*(unsigned int *)(a1 + 76) )
@@ -703,13 +703,13 @@ LABEL_60:
                                                                                       + 13608);
       return 1;
     case 0x4A:
-      int v99 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      int v99 = ObjectClass::FindOwner( (unsigned int *)(a5), *(AnimClass **)(a1 + 144));
       if ( !v99 )
         return 0;
       *(unsigned char *)(v99 + 498) = 1;
       return 1;
     case 0x4B:
-      int v100 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      int v100 = ObjectClass::FindOwner( (unsigned int *)(a5), *(AnimClass **)(a1 + 144));
       if ( !v100 )
         return 0;
       *(unsigned char *)(v100 + 498) = 0;
@@ -794,13 +794,13 @@ LABEL_60:
         if ( v23[133] == *(unsigned int *)(a1 + 144)
           && (!(*(int (**)(unsigned int))(*v23 + 388))(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[44848]
                                                                       + 4 * ebx47))
-           || (*(int (**)(unsigned int *))(*v23 + 388))(v23) == 23)
+           || (*(int (**)(unsigned int *))(*v23 + 388))( (unsigned int *)(v23)) == 23)
           && (int)v23[27] > 0
           && *((unsigned char *)v23 + 144)
           && *((unsigned char *)v23 + 116)
           && !*((unsigned char *)v23 + 129) )
         {
-          (*(void (**)(unsigned int *, int, unsigned int))(*v23 + 488))(v23, 5, 0);
+          (*(void (**)(unsigned int *, int, unsigned int))(*v23 + 488))( (unsigned int *)(v23), 5, 0);
         }
         ++ebx47;
       }
@@ -818,12 +818,12 @@ LABEL_60:
     case 0x58:
       v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 68));
   unsigned int v135[3]; // [esp+34h] [ebp-21Ch] BYREF
-      v101 = (CellStruct **)CoordStruct::Set2(v135, (IUnknown *)&v112, 0);
+      v101 = (CellStruct **)((CoordStruct *)v135)->Set2( (IUnknown *)&v112, 0);
       v113 = *v101;
       v128 = v101[1];
       GroundHeight = v101[2];
-      CoordStruct::Set2(&v131, (IUnknown *)&v112, 0);
-      GroundHeight = (CellStruct *)Cell::GetGroundHeight((IUnknown *)&v131);
+      ((CoordStruct *)&v131)->Set2( (IUnknown *)&v112, 0);
+      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (IUnknown *)&v131);
       int v102 = operator new(0x100u);
       if ( !v102 )
         return 1;
@@ -846,9 +846,9 @@ LABEL_60:
         unsigned char * v104 = *(unsigned char **)&dword_A8020C->__pad_0[4 * v103];
         if ( v104[144] )
         {
-          unsigned short * v105 = (unsigned short *)(*(int (**)(unsigned char *, char *))(*(unsigned int *)v104 + 440))(v104, v134);
-          if ( CellStruct::Equals(v105, &v112) )
-            (*(void (**)(unsigned char *))(*(unsigned int *)v104 + 248))(v104);
+          unsigned short * v105 = (unsigned short *)(*(int (**)(unsigned char *, char *))(*(unsigned int *)v104 + 440))( (unsigned char *)(v104), v134);
+          if ( CellStruct::Equals( (unsigned short *)(v105), (void)(&v112)) )
+            (*(void (**)(unsigned char *))(*(unsigned int *)v104 + 248))( (unsigned char *)(v104));
         }
         ++v103;
       }
@@ -872,7 +872,7 @@ LABEL_60:
               unsigned int * v17 = *(unsigned int **)(v16 + 52);
               if ( v17 )
               {
-                if ( LinkedList_flat::Contains(v17, a5) )
+                if ( ((LinkedList_flat *)v17)->Contains( a5) )
                 {
                   (*(void (**)(int))(*(unsigned int *)v16 + 1300))(v16);
                   v14 = 1;
@@ -882,7 +882,7 @@ LABEL_60:
           }
         }
       }
-      return v14;
+      return (AbstractClass * *)v14;
     case 0x5E:
   unsigned int *v11; // eax
       v11 = ((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 68));
@@ -890,14 +890,14 @@ LABEL_60:
       v113 = v131;
       v128 = (CellStruct *)v132;
       GroundHeight = (CellStruct *)v133;
-      GroundHeight = (CellStruct *)Cell::GetGroundHeight((IUnknown *)&v113);
+      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (IUnknown *)&v113);
       unsigned int * v12 = (unsigned int *)operator new(0x14u);
       if ( !v12 )
         return 1;
       ((ActionQueue *)(v12))->PushEntry((int)v113, (int)v128, (int)GroundHeight);
       return 1;
     case 0x5F:
-      return TActionClass::CreateNukeEffect((int *)a1, aP1, (int)v9, (int)a5, aP4);
+      return ((TActionClass *)(int *)a1)->CreateNukeEffect( aP1, (int)v9, (int)a5, aP4);
     case 0x60:
       return SuperWeaponClass::CreateChemLauncher((unsigned int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x61:
@@ -922,8 +922,8 @@ LABEL_60:
         ++v66;
       }
       while ( v66 < 702 );
-      int v68 = Random::Range((unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)(v65 - 1));
-      unsigned int * v69 = CoordStruct::Set2(&v131, (IUnknown *)((char *)aP0 + 4 * v68), 0);
+      int v68 = Random::Range((*(unsigned int *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)(v65 - 1));
+      unsigned int * v69 = ((CoordStruct *)&v131)->Set2( (IUnknown *)((char *)aP0 + 4 * v68), 0);
       PlayAudioAt2(*(IUnknown **)(a1 + 144), v69, 0);
       return 1;
     case 0x63:
@@ -934,7 +934,7 @@ LABEL_60:
       v113 = *v70;
       v128 = v70[1];
       GroundHeight = v70[2];
-      unsigned int * v71 = ScriptAction::ReadParameter(&v113);
+      unsigned int * v71 = ((ScriptAction *)&v113)->ReadParameter();
       if ( v71 )
         ObjectClass::CheckFlagD0(v71, *(IUnknown **)(a1 + 144));
       else
@@ -944,17 +944,17 @@ LABEL_60:
       EnqueueAsyncIOMovie(*(unsigned int *)(a1 + 144), 0);
       return 1;
     case 0x65:
-      return TActionClass::executeScatterAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeScatterAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x66:
       v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(&v130, *(unsigned int *)(a1 + 68));
       ((Coord *)(&v131))->Subtract((IUnknown *)(((int16_t)v112 << 8) + 128), (IUnknown *)((IDA_SHIWORD(v112) << 8) + 128), 0);
       v113 = v131;
       v128 = (CellStruct *)v132;
       GroundHeight = (CellStruct *)v133;
-      GroundHeight = (CellStruct *)Cell::GetGroundHeight((IUnknown *)&v113);
+      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (IUnknown *)&v113);
       if ( (*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x100) != 0 )
         GroundHeight = (CellStruct *)((char *)GroundHeight + *(unsigned int *)&stru_B05488[37452]);
-      int v13 = *Coord::ToCell(&v113, (IUnknown *)&v130);
+      int v13 = *((Coord *)&v113)->ToCell( (IUnknown *)&v130);
       if ( LightningStorm::IsActive() )
         return 0;
       LightningStorm::Start(
@@ -965,14 +965,14 @@ LABEL_60:
       return 1;
     case 0x67:
       char * v64 = *(unsigned char *)(a1 + 109) != 0 ? (char *)(a1 + 109) : 0;
-      ScriptAction::CopyStringField(Destination, v64);
+      ScriptAction::CopyStringField( (char *)(Destination), (char *)(v64));
       if ( v64 )
       {
-        *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4596) = GetStringCSF(
-                                                                               (wchar_t *)v64,
-                                                                               0,
-                                                                               &stru_830620[75224],
-                                                                               2242);
+*(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4596) = (unsigned int)GetStringCSF( (wchar_t *)v64, 0, (const char *)(&stru_830620[75224]), 2242);
+
+
+
+
         ScriptAction::CopyStructField(
           (void *)(*(unsigned int *)&HouseClass_Player[29924] + 4600),
   char v138[32]; // [esp+80h] [ebp-1D0h] BYREF
@@ -982,9 +982,9 @@ LABEL_60:
       else
       {
         *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4596) = &stru_87C374[46016];
-        ScriptAction::CopyStringField(v137, &stru_87C374[56304]);
+        ScriptAction::CopyStringField( v137, (char *)(&stru_87C374[56304]));
   char v139[32]; // [esp+A0h] [ebp-1B0h] BYREF
-        ((ScriptAction *)((void *)(*(unsigned int *)&HouseClass_Player[29924] + 4600)))->CopyStructField(v139, v137);
+        ((ScriptAction *)((*(unsigned int *)&HouseClass_Player[29924] + 4600)))->CopyStructField(v139, v137);
       }
       ((ObjectClass *)(&stru_87C374[13428]))->PreDraw();
       return 1;
@@ -992,13 +992,13 @@ LABEL_60:
       void * v107 = *(void **)(a1 + 48);
       if ( !v107 )
         return 1;
-      TeamTypeClass::FlashAllInstances(v107, *(AnimClass **)(a1 + 144));
+      ((TeamTypeClass *)v107)->FlashAllInstances( *(AnimClass **)(a1 + 144));
       return 1;
     case 0x69:
       void * v108 = *(void **)(a1 + 48);
       if ( v108 )
       {
-        FirstInstance = TeamTypeClass::FindFirstInstance(v108);
+        FirstInstance = ((TeamTypeClass *)v108)->FindFirstInstance();
         if ( !FirstInstance )
           return 1;
         RevealTechnoClassRadarEvent(*(unsigned int *)(FirstInstance + 84), *(unsigned int *)(a1 + 144));
@@ -1045,7 +1045,7 @@ LABEL_290:
       v114 = (IUnknown **)((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(v134, *(unsigned int *)(a1 + 68));
       return BuildingClass::SearchPlacement(&stru_87C374[13428], *v114, *(MouseClass **)(a1 + 144));
     case 0x6D:
-      return TActionClass::executeParadropAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeParadropAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x6E:
       SetScenarioClassTimer(*(unsigned int *)(a1 + 144));
       return 1;
@@ -1053,15 +1053,15 @@ LABEL_290:
       char v115 = 0;
       v116 = 0;
       if ( *(int *)&HouseClass_Player[44548] <= 0 )
-        return v115;
+        return (AbstractClass * *)v115;
       break;
     case 0x70:
       v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&HouseClass_Player[29924]))->Get_Waypoint_Location(v134, *(unsigned int *)(a1 + 68));
-      v119 = (CellStruct **)CoordStruct::Set2(v135, (IUnknown *)&v112, 0);
+      v119 = (CellStruct **)((CoordStruct *)v135)->Set2( (IUnknown *)&v112, 0);
       v113 = *v119;
       v128 = v119[1];
       GroundHeight = v119[2];
-      GroundHeight = (CellStruct *)Cell::GetGroundHeight((IUnknown *)&v113);
+      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (IUnknown *)&v113);
       if ( (*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x100) != 0
         || (*((unsigned int *)((CellCoord *)(&stru_87C374[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x400) != 0 )
       {
@@ -1070,7 +1070,7 @@ LABEL_290:
       ((Tactical *)(*(int *)&stru_87C374[44976]))->SetTacticalPosition((IUnknown *)&v113);
       return 1;
     case 0x71:
-      v120 = (AnimClass *)ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      v120 = (AnimClass *)ObjectClass::FindOwner( (unsigned int *)(a5), *(AnimClass **)(a1 + 144));
       if ( !v120 )
         return 0;
       HouseClass::NotifyImpactWater(v120);
@@ -1084,28 +1084,28 @@ LABEL_290:
                (int)a5,
                (IUnknown *)aP4);
     case 0x73:
-      return TActionClass::executeGeneticMutatorAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeGeneticMutatorAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x74:
-      return TActionClass::executeGuardAreaAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeGuardAreaAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x75:
       EnqueueAsyncIOMovie(*(unsigned int *)(a1 + 144), 1);
       return 1;
     case 0x76:
       return globalHelper_0E2C20((int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x77:
-      return TActionClass::executePlaceBeaconAction((unsigned int *)a1, (int)aP1, (int)v9, a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executePlaceBeaconAction( (int)aP1, (int)v9, a5, (IUnknown *)aP4);
     case 0x78:
-      return TActionClass::executeJumpjetAction((unsigned int *)a1, (int)aP1, (int)v9, a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeJumpjetAction( (int)aP1, (int)v9, a5, (IUnknown *)aP4);
     case 0x79:
-      return TActionClass::executeOpenGateAction((unsigned int *)a1, (int)aP1, (int)v9, a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeOpenGateAction( (int)aP1, (int)v9, a5, (IUnknown *)aP4);
     case 0x7A:
-      return TActionClass::executeCloseGateAction((unsigned int *)a1, (int)aP1, (int)v9, a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeCloseGateAction( (int)aP1, (int)v9, a5, (IUnknown *)aP4);
     case 0x7B:
-      return TActionClass::executeCaptureAction((unsigned int *)a1, aP1, (int)v9, a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeCaptureAction( aP1, (int)v9, a5, (IUnknown *)aP4);
     case 0x7C:
-      return TActionClass::executeSabotageAction((unsigned int *)a1, aP1, (int)v9, a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeSabotageAction( aP1, (int)v9, a5, (IUnknown *)aP4);
     case 0x7D:
-      return TActionClass::executeForceShieldAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeForceShieldAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x7E:
   int v123; // [esp+0h] [ebp-250h]
   unsigned int *v124; // [esp+4h] [ebp-24Ch]
@@ -1115,39 +1115,39 @@ LABEL_290:
       globalHelper_03B460(*(unsigned int *)(a1 + 144));
       return 1;
     case 0x80:
-      return TActionClass::executePatrolAction((int *)a1, aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executePatrolAction( aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x81:
-      return TActionClass::executeIronCurtainAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeIronCurtainAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x82:
       return SmallFunc_6E3120((int)aP1, v9, a5, (IUnknown *)aP4, v123, v124, v125);
     case 0x83:
-      return TActionClass::executeEMPulseAction(a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)a1)->executeEMPulseAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x84:
-      return TActionClass::executeNukeAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeNukeAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x85:
-      return TActionClass::executeSpyPlaneAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeSpyPlaneAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x86:
-      return TActionClass::executeChronoSphereAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeChronoSphereAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x87:
-      return TActionClass::executeWeatherStormAction((int *)a1, aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeWeatherStormAction( aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x88:
       return globalHelper_0E4440(aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x89:
-      return TActionClass::executeRevealAction((int *)a1, aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeRevealAction( aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x8A:
       return globalHelper_0E4540(aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x8B:
-      return TActionClass::executeLightningAction((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeLightningAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x8C:
-      return TActionClass::executeDominatorAction((int *)a1, aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeDominatorAction( aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x8D:
       return globalHelper_0E44C0(aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x8E:
-      return TActionClass::executeSelfDestructAction((unsigned int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeSelfDestructAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x8F:
-      return TActionClass::executeExplodeAction((unsigned int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeExplodeAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     default:
-      return result;
+      return (AbstractClass * *)result;
   }
   while ( 1 )
   {
@@ -1161,7 +1161,7 @@ LABEL_290:
           unsigned int * v118 = *(unsigned int **)(v117 + 52);
           if ( v118 )
           {
-            if ( LinkedList_flat::Contains(v118, a5) )
+            if ( ((LinkedList_flat *)v118)->Contains( a5) )
               break;
           }
         }
@@ -1216,7 +1216,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
       LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 1; /*0x71cdf4*/
     }
     v17 = v7; /*0x71ce06*/
-    v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, &v17); /*0x71ce0a*/
+    v8 = BinaryArraySearch( (int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, (int *)(&v17)); /*0x71ce0a*/
     if ( v8 ) /*0x71ce11*/
     {
       v9 = (signed int)(v8 - (unsigned int)g_BuildingLoadQueue_Array.TechnoTypeClass) >> 3; /*0x71ce19*/
@@ -1266,7 +1266,7 @@ LABEL_16:
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2[1]); /*0x71cf1e*/
   }
-  return Register; /*0x71cf25*/
+  return (void*)Register; /*0x71cf25*/
 
 }
 }
@@ -1287,7 +1287,7 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
   char v14[12]; // [esp+8h] [ebp-Ch] BYREF
 
   v3 = a1; /*0x71d008*/
-  if ( !(uint8_t)ObjectClass::Deploy((ObjectClass *)this) ) /*0x71d012*/
+  if ( !(uint8_t)((ObjectClass *)(ObjectClass *)this)->Deploy() ) /*0x71d012*/
     return 0; /*0x71d13e*/
   v4 = *v3 / 256; /*0x71d03e*/
   v5 = v3[1] / 256; /*0x71d041*/
@@ -1325,7 +1325,7 @@ namespace gamemd {
 int TerrainClass::CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x71cf44*/
+  return AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)aP0), (ObjectTypeClass *)(a1), (ObjectTypeClass *)(aP2)); /*0x71cf44*/
 
 }
 } // namespace gamemd

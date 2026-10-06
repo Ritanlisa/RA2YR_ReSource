@@ -73,7 +73,7 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
     case 2: /*0x759fc6*/
       goto LABEL_13;
     case 3: /*0x759fc6*/
-      v6 = (*(int (**)(int, unsigned int *, int))(*((unsigned int *)this + 1) + 32))((int)(char *)this + 4, a3, 1) != 0; /*0x759fdf*/
+      v6 = (*(int (**)(int, unsigned int *, int))(*((unsigned int *)this + 1) + 32))( (int)(char *)this + 4, (unsigned int *)(a3), 1) != 0; /*0x759fdf*/
       *((unsigned char *)this + 112) = v6; /*0x759fe4*/
       result = !v6; /*0x759fec*/
       break; /*0x759fef*/
@@ -84,22 +84,22 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
       break; /*0x75a0d2*/
     case 5: /*0x759fc6*/
       v7 = a4; /*0x759ffc*/
-      result = (*(int (**)(int, unsigned int *, int))(*((unsigned int *)this + 1) + 36))((int)(char *)this + 4, a3, a4) != v7; /*0x75a00c*/
+      result = (*(int (**)(int, unsigned int *, int))(*((unsigned int *)this + 1) + 36))( (int)(char *)this + 4, (unsigned int *)(a3), a4) != v7; /*0x75a00c*/
       break; /*0x75a00f*/
     case 6: /*0x759fc6*/
       result = 1; /*0x75a012*/
       break; /*0x75a018*/
     case 7: /*0x759fc6*/
-      result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))((int)(char *)this + 4, a4, a3) == 0; /*0x75a033*/
+      result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))( (int)(char *)this + 4, a4, (unsigned int *)(a3)) == 0; /*0x75a033*/
       break; /*0x75a034*/
     case 8: /*0x759fc6*/
       if ( a4 <= 0 ) /*0x75a03d*/
       {
         v9 = (char *)((int)((char *)((int)((char *)((int)((char *)this + 4))))));
-        result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))((int)(char *)this + 4, a4, a3) == 0; /*0x75a086*/
+        result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))( (int)(char *)this + 4, a4, (unsigned int *)(a3)) == 0; /*0x75a086*/
         if ( !result ) /*0x75a087*/
         {
-          result = (*(int (**)(int, int *, int))(*(unsigned int *)v9 + 36))((int)v9, &a4, 1) != 1; /*0x75a09c*/
+          result = (*(int (**)(int, int *, int))(*(unsigned int *)v9 + 36))( (int)v9, (int *)(&a4), 1) != 1; /*0x75a09c*/
           if ( !result ) /*0x75a09e*/
             result = (*(int (**)(int, int, int))(*(unsigned int *)v9 + 40))((int)v9, -1, 1) == 0; /*0x75a0b0*/
         }
@@ -107,9 +107,9 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
       else
       {
         v8 = (char *)((int)((char *)((int)((char *)((int)((char *)this + 4))))));
-        result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))((int)(char *)this + 4, a4 - 1, a3) == 0; /*0x75a055*/
+        result = (*(int (**)(int, int, unsigned int *))(*((unsigned int *)this + 1) + 40))( (int)(char *)this + 4, a4 - 1, (unsigned int *)(a3)) == 0; /*0x75a055*/
         if ( !result ) /*0x75a056*/
-          result = (*(int (**)(int, int *, int))(*(unsigned int *)v8 + 36))((int)v8, &a4, 1) != 1; /*0x75a06c*/
+          result = (*(int (**)(int, int *, int))(*(unsigned int *)v8 + 36))( (int)v8, (int *)(&a4), 1) != 1; /*0x75a06c*/
       }
       break; /*0x75a06e*/
     case 9: /*0x759fc6*/

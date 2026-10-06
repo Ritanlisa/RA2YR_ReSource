@@ -222,7 +222,7 @@ public:
     std::vector<rc_ptr<Territory>> territories;
     std::vector<rc_ptr<Conflict>>  conflicts;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void SetupMovie();  // 0x5C2500
+    void SetupMovie(HWND hDlg);  // 0x5C2500
     // --- gap2 auto-generated stub declarations (END) ---
     unsigned int q33C;  // 0x33C
 };

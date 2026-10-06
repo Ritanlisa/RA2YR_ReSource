@@ -421,7 +421,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
     v1 = 400.0; /*0x594b95*/
   IDA_LOWORD(v2) = Math::RoundToInt(v1); /*0x594b9b*/
   v2 = v2; /*0x594ba5*/
-  v3 = Terrain::ConnectivityGraph((Terrain *)&stru_87F5F0.__pad_58[416]); /*0x594ba9*/
+  v3 = Terrain::ConnectivityGraph( (void)((Terrain *)&stru_87F5F0.__pad_58[416])); /*0x594ba9*/
   IDA_HIWORD(v5) = 0; /*0x594bb4*/
   v4 = v44[g_MissionQueueFrame.briefing[371]]; /*0x594bb6*/
   IDA_LOWORD(v5) = *(unsigned short *)(*(unsigned int *)&stru_87F5F0.__pad_58[4 * v4 + 440] + 2 * v3); /*0x594bc1*/
@@ -465,7 +465,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
     while ( v8 >= 0 ); /*0x594c81*/
   }
   TileSystem::Constructor((TileSystem *)&v45, 0, 0); /*0x594c89*/
-  *(unsigned int *)v45.__pad_0 = &off_7ED858; /*0x594c92*/
+  *(unsigned int *)v45.__pad_0 = (unsigned int)&off_7ED858;
   v46 = 10; /*0x594c9a*/
   Base = 0; /*0x594ca2*/
   NumOfElements = 0; /*0x594ca6*/
@@ -783,8 +783,8 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   if ( v17.q004 ) /*0x596016*/
     g_MissionQueueFrame.briefing[376] = 4; /*0x596018*/
   v5 = GameConfig::ComputeCRC(); /*0x596023*/
-  memset(Destination, 0, sizeof(Destination)); /*0x596033*/
-  strncpy(Destination, (const char *)(unsigned int *)((char *)&stru_82BA00 + 13), 0x80u); /*0x596047*/
+  memset( (void *)(Destination), 0, sizeof(Destination)); /*0x596033*/
+  strncpy( (char *)(Destination), (const char *)(unsigned int *)((char *)&stru_82BA00 + 13), 0x80u); /*0x596047*/
   strncat(Destination, v5, 0x80u); /*0x59605a*/
   RA2_OPDEL(v5); /*0x596060*/
   strncat(Destination, (const char *)(unsigned int *)((char *)&stru_82BA00 + 11), 0x80u); /*0x596077*/
@@ -804,11 +804,11 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     if ( ((Surface *)(v6))->LoadToSurfaceSHP(Destination) ) /*0x5960d5*/
     {
       ((RawFileClass*)((RawFileClass *)&v17.q010))->Construct((int)ExistingFileName); /*0x5960e7*/
-      CompressScreenshot(&v17.q010, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x5960fc*/
+      CompressScreenshot( (int *)(&v17.q010), *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x5960fc*/
       v8 = (void *)g_MissionQueueFrame.briefing[451]; /*0x596101*/
       if ( g_MissionQueueFrame.briefing[451] ) /*0x596109*/
       {
-        ComPtr::Dtor((ComPtr *)g_MissionQueueFrame.briefing[451]); /*0x59610d*/
+        ComPtr::Dtor( (void)((ComPtr *)g_MissionQueueFrame.briefing[451])); /*0x59610d*/
         RA2_OPDEL(v8); /*0x596113*/
       }
       g_MissionQueueFrame.briefing[451] = 0; /*0x59611f*/
@@ -818,7 +818,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     v9 = (void *)g_MissionQueueFrame.briefing[451]; /*0x59612f*/
     if ( g_MissionQueueFrame.briefing[451] ) /*0x596137*/
     {
-      ComPtr::Dtor((ComPtr *)g_MissionQueueFrame.briefing[451]); /*0x59613b*/
+      ComPtr::Dtor( (void)((ComPtr *)g_MissionQueueFrame.briefing[451])); /*0x59613b*/
       RA2_OPDEL(v9); /*0x596141*/
     }
     g_MissionQueueFrame.briefing[451] = 0; /*0x596149*/
@@ -840,7 +840,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     v11 = 0; /*0x5961d9*/
   g_MissionQueueFrame.briefing[450] = (int)v11; /*0x5961e7*/
   qmemcpy(v11, &g_MissionQueueFrame.briefing[356], 0x178u); /*0x5961ec*/
-  ScenarioClass::SetFileName((char *)dword_A8B230, (char *)(unsigned int *)((char *)&stru_82BA00 + 8)); /*0x5961f9*/
+  ((ScenarioClass *)(char *)dword_A8B230)->SetFileName( (char *)(unsigned int *)((char *)&stru_82BA00 + 8)); /*0x5961f9*/
   IDA_LOBYTE(v12) = 0; /*0x5961fe*/
   ScreenSaver::Process(v12, v15); /*0x596200*/
   v13 = (ComPtr *)g_MissionQueueFrame.briefing[451]; /*0x596205*/
@@ -849,9 +849,9 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     if ( *(unsigned int *)g_MissionQueueFrame.briefing[451] ) /*0x596215*/
     {
       ((RawFileClass*)((RawFileClass *)&v17.q010))->Construct((int)ExistingFileName); /*0x596222*/
-      CompressScreenshot(&v17.q010, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x596237*/
-      if ( FindFirstFileA((LPCSTR)&(unsigned int *)((char *)&stru_82BA00 + 6), &FindFileData) == (HANDLE)-1 ) /*0x596252*/
-        CreateDirectoryA((LPCSTR)&(unsigned int *)((char *)&stru_82BA00 + 6), 0); /*0x59625a*/
+      CompressScreenshot( (int *)(&v17.q010), *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x596237*/
+      if ( FindFirstFileA((LPCSTR)((char *)&stru_82BA00 + 6), &FindFileData) == (HANDLE)-1 ) /*0x596252*/
+        CreateDirectoryA((LPCSTR)((char *)&stru_82BA00 + 6), 0); /*0x59625a*/
       CopyFileA(ExistingFileName, Destination, 0); /*0x59626e*/
       CleanupRandomMapCache(v16); /*0x596274*/
       ((RawFileClass *)((RawFileClass *)&v17.ComPtr_field_0x10))->Dtor(); /*0x59627d*/
@@ -873,7 +873,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   *(unsigned int *)v18.CDFileClass = (void*)&CCFileClass_vftable; /*0x5962b8*/
   v20 = 0; /*0x5962c7*/
   ((Vector *)((int)v19))->Clear(); /*0x5962ce*/
-  *(unsigned int *)v18.CDFileClass = &off_7E1668; /*0x5962d7*/
+  *(unsigned int *)v18.CDFileClass = (unsigned int)&off_7E1668;
   ((BufferIOFileClass *)((BufferIOFileClass *)&v18))->Dtor(); /*0x5962df*/
   *(unsigned int *)v17.__pad_0 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x5962e8*/
 // 0x65d460
@@ -975,7 +975,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
   v8 = v5 * v6 - a2; /*0x59a9db*/
   v9 = 0; /*0x59a9dd*/
   v34 = aP2[1]; /*0x59a9df*/
-  v33 = *aP2; /*0x59a9e9*/
+  v33 = *(unsigned int *)aP2;
   ((VectorClass *)(&v43))->Construct(0, 0); /*0x59a9ed*/
   v43 = (void*)&DynamicVectorClass_int_vftable; /*0x59a9f8*/
   v48 = 10; /*0x59aa00*/
@@ -1171,7 +1171,7 @@ int sub_59C630()
           v8 = *((unsigned int *)dword_ABED10 + 20 * *(int16_t *)(i + 36) + 20 * g_MapCellWidth * *(int16_t *)(i + 38) + 14); /*0x59c786*/
         else
           v8 = -1; /*0x59c76b*/
-        PlaceMapSeedClassBuildings(v7 + g_CellPassabilityLUT, (unsigned short *)(i + 36), v8, -1); /*0x59c795*/
+        PlaceMapSeedClassBuildings( v7 + g_CellPassabilityLUT, (ObjectClass *)((unsigned short *)(i + 36)), v8, -1); /*0x59c795*/
       }
     }
     result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x59c7e2*/
@@ -1247,7 +1247,7 @@ namespace gamemd {
 int j_Options::j_Options_GetValue(const char ** dwNewLong)
 {
 
-  return Options::PrepareSaveLoadDlg((Options *)dwNewLong);
+  return Options::PrepareSaveLoadDlg( (const char **)((Options *)dwNewLong));
 
 }
 // 0x598000

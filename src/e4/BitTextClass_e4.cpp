@@ -74,7 +74,7 @@ _DWORD * BitTextClass::LoadFont()
   v2 = (int)(__2_YAPAXI_Z(0x44u)); /*0x434adb*/
   if ( v2 ) /*0x434ae5*/
   {
-    g_FogOfWarState = ((char *)(int))((Text *)BitTextClass::ParseFontData(v2, aGameFnt));
+    g_FogOfWarState = ((char *)(int))((Text *)BitTextClass::ParseFontData( (char *)(v2), (void)(aGameFnt)));
     return &this->m_FontBitmap; /*0x434af8*/
   }
   else

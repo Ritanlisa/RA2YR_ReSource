@@ -26,7 +26,7 @@ struct MixFileClass {
     unsigned int * FromFile(char *aP1, int a3);  // was C2597 interim stub, := truth 0x0x5b3c20
     static double GetSubFile(...);  // C2597 interim stub
     static double LoadSubFile(...);  // C2597 interim stub
-    if ( ! Bootstrap());
+// G57c4 stray-statement sweep: dropped 'if ( ! Bootstrap());' (pseudocode line leaked into class body)
 };
 
 } // namespace gamemd

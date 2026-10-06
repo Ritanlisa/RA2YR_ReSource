@@ -98,16 +98,16 @@ int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, 
   v34[2] = 15; /*0x4b97a4*/
   v32 = 15; /*0x4b97a8*/
   v16 = (*(int (**)(int *))(v15 + 124))((int *)aP2); /*0x4b97b5*/
-  v17 = (int)((*(int (**)(int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_1F0)(g_DSurface_Hidden)); /*0x4b97b9*/
+  v17 = (int)((*(int (**)(int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_1F0))(g_DSurface_Hidden));  /*0x4b97b9*/
   v18 = *(int *)aP2; /*0x4b97c5*/
   v30 += (v17 - v16) / -2; /*0x4b97cd*/
   v19 = (*(int (**)(int *))(v18 + 128))((int *)aP2); /*0x4b97df*/
-  v31 += ((*(int (**)(int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_200)(g_DSurface_Hidden) - v19) / -2; /*0x4b97fc*/
+  v31 += ((*(int (**)(int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_200))(g_DSurface_Hidden) - v19) / -2;  /*0x4b97fc*/
   v28 = 0; /*0x4b982a*/
   v29 = 0; /*0x4b982e*/
   BlitterDrawSHP((int *)g_DSurface_Hidden, _6C, aP2, &v30, &v28, v34, 0, a8, 0, 0, 1000, 0, 0); /*0x4b9832*/
   v20 = FindBuildingAnimByName((gamemd::AbstractClass *)aYellow, 1); /*0x4b9847*/
-  v21 = (unsigned int *)(*(int (**)(int, char *, wchar_t *, int, unsigned int, int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_1E0)( /*0x4b985f*/
+  v21 = (unsigned int *)(*(int (**)(int, char *, wchar_t *, int, unsigned int, int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_1E0))(  /*0x4b985f*/
                     g_DSurface_Hidden,
                     v35,
                     Format,
@@ -240,7 +240,7 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
   v19 = 15; /*0x642f62*/
   do /*0x642f86*/
   {
-    *(unsigned int *)(v10)++ = *(unsigned short *, unsigned int a1, unsigned int a2, unsigned int a3)CharToWideString(g_Str_W); /*0x642f7b*/
+    *(unsigned int *)(v10)++ = *(unsigned short *, unsigned int a1, unsigned int a2, unsigned int a3)CharToWideString( (unsigned char *)(g_Str_W)); /*0x642f7b*/
     --v19; /*0x642f82*/
   }
   while ( v19 ); /*0x642f86*/
@@ -298,10 +298,10 @@ namespace gamemd {
 TriggerTypeClass * TextRenderer::Destructor(char a2)
 {
 
-  ((TriggerClass *)((AbstractClass *)Block))->ProcessEvents(); /*0x727cd3*/
+  ((TriggerClass *)((AbstractClass *)this))->ProcessEvents(); /*0x727cd3*/
   if ( (a2 & 1) != 0 ) /*0x727cdd*/
-    __3_YAXPAX_Z(Block); /*0x727ce0*/
-  return Block; /*0x727cea*/
+    __3_YAXPAX_Z(this); /*0x727ce0*/
+  return this; /*0x727cea*/
 
 }
 } // namespace gamemd

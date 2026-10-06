@@ -26,7 +26,7 @@ int DialogQueue::PushEntry(void *a1)
         (unsigned char)result) )
   {
     result = g_MissionQueueFrame.ls640BkgdName[11]++; /*0x5d4eb4*/
-    *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8] + 4 * result) = this; /*0x5d4ec3*/
+    *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8] + 4 * result) = (unsigned int)this;
   }
   return result; /*0x5d4ec6*/
 

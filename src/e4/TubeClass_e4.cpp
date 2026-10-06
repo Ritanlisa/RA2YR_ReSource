@@ -17,7 +17,7 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x7281ab*/
+  result = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(aP0), (gamemd::AbstractClass *)(aP1)); /*0x7281ab*/
   if ( result >= 0 ) /*0x7281b2*/
   {
     if ( aP0 ) /*0x7281b6*/

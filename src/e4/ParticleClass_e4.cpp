@@ -206,7 +206,7 @@ int ParticleClass::AdjustHeight()
 
   v2 = *(unsigned int *)(*((char *)this + 43) + 788); /*0x62d5ec*/
   if ( !v2 ) /*0x62d5f5*/
-    return BuildingClass::UpdateFloatPosition((BuildingClass *)this); /*0x62d6db*/
+    return BuildingClass::UpdateFloatPosition( (BuildingClass *)this); /*0x62d6db*/
   v3 = v2 - 1; /*0x62d5fb*/
   if ( v3 ) /*0x62d5fc*/
   {
@@ -232,13 +232,13 @@ int ParticleClass::AdjustHeight()
       if ( *((float *)this + 57) > 0.0 ) /*0x62d683*/
       {
         GroundHeight = ((Cell *)(v13))->GetGroundHeight(); /*0x62d69e*/
-        if ( (int)Cell::GetGroundHeight((unsigned int *)(&v10)) > GroundHeight ) /*0x62d6a7*/
+        if ( (int)Cell::GetGroundHeight( (unsigned int *)(&v10)) > GroundHeight ) /*0x62d6a7*/
         {
           *((unsigned char *)this + 301) = 1; /*0x62d6ab*/
           *((unsigned char *)this + 305) = 1; /*0x62d6b1*/
         }
       }
-      return (*(int (**)(int *, int *))(*(unsigned int *)this + 436))((int *)this, &v10); /*0x62d6c0*/
+      return (*(int (**)(int *, int *))(*(unsigned int *)this + 436))( (int *)this, (int *)(&v10)); /*0x62d6c0*/
     }
   }
   else

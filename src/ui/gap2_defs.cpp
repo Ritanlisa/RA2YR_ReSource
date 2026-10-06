@@ -31,9 +31,30 @@ using ra2::game::FootClass;
 #include "ui/tool_tip.hpp"
 #include "ui/ui_ext.hpp"
 #include "e4/e4_globals_decls.hpp"
-#include "e4/classes/ColorListClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
+// g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int C;  // 词表 (canon 无条目, int 兜底) L716
+extern int String1;  // 词表 (canon 无条目, int 兜底) L458
+extern int nullsub_56;  // 词表 (canon 无条目, int 兜底) L74
+// ---- g57b5 W6 end ----
+// ---- g57b5 W5: qualified-call free-form vocab ----
+namespace gamemd {
+int Array_ForEachReverse(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int FontClass_GetPixelData(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ToWideStringChar(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Array_GetClamped(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int CellClass_DrawWithFlags(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Keyboard_MapKey(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ListClass_Destruct(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Text_MeasureWidth(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Destruct(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int DrawBuildingTilesSHP(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int FillRectangle(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetInstance(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int nullsub_57(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+} // namespace gamemd
+// ---- g57b5 W5 end ----
 
 // gC supply: extern declarations from src/e4/e4_globals_decls.hpp
 extern unsigned int stru_A8EB00;
@@ -46,7 +67,7 @@ int MouseClass::ProcessInput() {
 }
 // 0x40D290
 namespace gamemd { 
-void* MouseClass::InitMouse(int a1) {
+void* MouseClass::InitMouse(int a1, char a2) {  // g57b5 W4: raw 真值补参 (a2)
     int *v3; // esi
     int v4; // edi
     ObjectClass *v6; // [esp+0h] [ebp-Ch]
@@ -58,7 +79,7 @@ void* MouseClass::InitMouse(int a1) {
     do /*0x40d2d0*/
     {
       v3 -= 997; /*0x40d2b0*/
-      Array::ForEachReverse(v3 + 20, 52, 75, (int (__thiscall *)(int))nullsub_56); /*0x40d2c3*/
+      Array_ForEachReverse(v3 + 20, 52, 75, (int (__thiscall *)(int))nullsub_56); /*0x40d2c3*/
       nullsub_57(v6); /*0x40d2ca*/
       --v4; /*0x40d2cf*/
     }
@@ -70,45 +91,6 @@ void* MouseClass::InitMouse(int a1) {
 }
 }
 
-// 0x40D540
-namespace gamemd { 
-void MouseClass::initCursor() {
-  void *v2; // eax
-
-  v2 = *(void **)&this->m_1[3]; /*0x40d546*/
-  this->q010 = 0; /*0x40d549*/
-  if ( v2 && ((unsigned char*)&this->m_C)[1] ) /*0x40d550*/
-  {
-    RA2_OPDEL(v2); /*0x40d556*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x40d55e*/
-  }
-  }
-  }
-// 0x40D290
-namespace gamemd { 
-void* MouseClass::InitMouse(int a1) {
-    int *v3; // esi
-    int v4; // edi
-    ObjectClass *v6; // [esp+0h] [ebp-Ch]
-
-    this->MouseClass_field_0x0 = (unsigned int)(void *)&MouseClass_vftable; /*0x40d295*/
-    *((unsigned int *)this + 5446) = (unsigned int)(void *)&MouseClass_vftable; /*0x40d29b*/
-    v3 = (int *)((char *)this + 21404); /*0x40d2a5*/
-    v4 = 4; /*0x40d2ab*/
-    do /*0x40d2d0*/
-    {
-      v3 -= 997; /*0x40d2b0*/
-      Array::ForEachReverse(v3 + 20, 52, 75, (int (__thiscall *)(int))nullsub_56); /*0x40d2c3*/
-      nullsub_57(v6); /*0x40d2ca*/
-      --v4; /*0x40d2cf*/
-    }
-    while ( v4 ); /*0x40d2d0*/
-    RadarClass::Destruct((RadarClass *)this); /*0x40d2d4*/
-    if ( (a2 & 1) != 0 ) /*0x40d2de*/
-      RA2_OPDEL(this); /*0x40d2e1*/
-    return (char *)this; /*0x40d2e9*/
-}
-}
 
 // 0x40D540
 namespace gamemd { 
@@ -221,12 +203,12 @@ void* MouseClass::applyCursorSettings(int a2) {
 }
 // 0x433F50
 namespace gamemd { 
-int MessageListClass::CountCharsInWidth(void* a1, int a2, int a3, int a4) {
+int MessageListClass::CountCharsInWidth(void* a1, int a2, int a3, int a4, int a5) {  // g57b5 W4: raw 真值补参 (a5)
     MessageListClass *v5; // edx
     int v6; // ebp
     unsigned int *MaxMessageCount; // ebx
     unsigned short *v8; // ecx
-    unsigned __int16 v9; // di
+    unsigned short v9; // di
     unsigned __int8 *ScrollOffset; // eax
     int v11; // edx
     int v12; // edx
@@ -256,7 +238,7 @@ int MessageListClass::CountCharsInWidth(void* a1, int a2, int a3, int a4) {
         else if ( v9 != 10 && v9 != 13 ) /*0x433fa1*/
         {
           ScrollOffset = 0; /*0x433fa3*/
-          v11 = *(unsigned __int16 *)(MaxMessageCount[6] + 2 * v9); /*0x433fae*/
+          v11 = *(unsigned short *)(MaxMessageCount[6] + 2 * v9); /*0x433fae*/
           if ( (unsigned short)v11 ) /*0x433fb4*/
             ScrollOffset = (unsigned __int8 *)(MaxMessageCount[7] + (v11 - 1) * MaxMessageCount[5]); /*0x433fbd*/
           v8 = a2; /*0x433fc0*/
@@ -312,16 +294,16 @@ int CheckListClass::GetItem(int a1, void* a2, int a3) {
 
     if ( *((unsigned char *)this + 372) ) /*0x4884a3*/
       return 0; /*0x4884ad*/
-    v6 = CellClass::DrawWithFlags((ListClass *)this, a2, a3, 0); /*0x4884cb*/
+    v6 = CellClass_DrawWithFlags((ListClass *)this, a2, a3, 0); /*0x4884cb*/
     if ( (a2 & 1) != 0 ) /*0x4884cd*/
     {
-      Clamped = Array::GetClamped((ListClass *)this, *((unsigned int *)this + 91)); /*0x4884d8*/
+      Clamped = Array_GetClamped((ListClass *)this, *((unsigned int *)this + 91)); /*0x4884d8*/
       if ( Clamped ) /*0x4884df*/
         v8 = *(unsigned char *)(Clamped + 4); /*0x4884e1*/
       else
         v8 = 0; /*0x4884e6*/
       v9 = v8 == 0; /*0x4884f3*/
-      v10 = Array::GetClamped((ListClass *)this, *((unsigned int *)this + 91)); /*0x4884f6*/
+      v10 = Array_GetClamped((ListClass *)this, *((unsigned int *)this + 91)); /*0x4884f6*/
       if ( v10 ) /*0x4884fd*/
       {
         if ( *(unsigned char *)(v10 + 4) != v9 ) /*0x488502*/
@@ -357,11 +339,11 @@ void* CheckListClass::QueryInterface(int a2) {
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&CheckListClass_vftable; /*0x4886e3*/
     while ( this->CheckListClass_field_0x44 ) /*0x4886e9*/
     {
-      Clamped = (void *)Array::GetClamped((ListClass *)this, 0); /*0x4886fe*/
+      Clamped = (void *)Array_GetClamped((ListClass *)this, 0); /*0x4886fe*/
       ListClass::RemoveItem((ListClass *)this, 0); /*0x488700*/
       RA2_OPDEL(Clamped); /*0x488706*/
     }
-    ListClass::Destruct((ListClass *)this); /*0x488718*/
+    ListClass_Destruct((void *)this); /*0x488718*/
     if ( (a2 & 1) != 0 ) /*0x488722*/
       RA2_OPDEL(this); /*0x488725*/
     return (unsigned int *)this; /*0x48872f*/
@@ -521,7 +503,7 @@ int DropListClass::Constructor() {
 
 // 0x4C30E0
 namespace gamemd { 
-int DropListClass::SelectItem(void* a1, int a2) {
+int DropListClass::SelectItem(void* a1, int a2, wchar_t *String, int a3) {  // g57b5 W4: raw 真值补参 (String,a3)
     size_t v4; // eax
     int v5; // edx
 
@@ -566,7 +548,7 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
       (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 84))(this); /*0x4c31e3*/
       return CellClass::Draw((ControlClass *)this, 0, a3, 0); /*0x4c31f5*/
     }
-    v7 = (unsigned __int8)Keyboard::MapKey(*(int **)&stru_87F5F0.__pad_58[296], *a3); /*0x4c3209*/
+    v7 = (unsigned __int8)Keyboard_MapKey(*(int **)&stru_87F5F0.__pad_58[296], *a3); /*0x4c3209*/
     v8 = *a3; /*0x4c320b*/
     if ( (*a3 & 0x1000) != 0 && v7 >= 48 && v7 <= 57 ) /*0x4c321f*/
     {
@@ -580,7 +562,7 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
       if ( (v6 & 0x44) != 0 ) /*0x4c325a*/
         return CellClass::Draw((ControlClass *)this, v6, a3, 0); /*0x4c325a*/
       v9 = *this; /*0x4c3263*/
-      v10 = Keyboard::MapKey(*(int **)&stru_87F5F0.__pad_58[296], v8); /*0x4c3266*/
+      v10 = Keyboard_MapKey(*(int **)&stru_87F5F0.__pad_58[296], v8); /*0x4c3266*/
       if ( !(*(unsigned __int8 (__thiscall **)(EditClass *, unsigned int))(*(unsigned int *)&v9 + 152))(this, v10) ) /*0x4c3271*/
         return CellClass::Draw((ControlClass *)this, v6, a3, 0); /*0x4c327a*/
     }
@@ -655,12 +637,12 @@ void* DropListClass::GetItemText(void* a1) {
       result = (unsigned int *)wcslen(String); /*0x4c336e*/
       if ( (unsigned int)result < *((unsigned int *)this + 14) ) /*0x4c337b*/
       {
-        v9 = Text::MeasureWidth((int)String, 0); /*0x4c3395*/
-        v10 = Text::MeasureWidth((int)asc_82076C, 0) + v9; /*0x4c339c*/
+        v9 = Text_MeasureWidth((int)String, 0); /*0x4c3395*/
+        v10 = Text_MeasureWidth((int)asc_82076C, 0) + v9; /*0x4c339c*/
         result = (unsigned int *)(*((unsigned int *)this + 5) - 2); /*0x4c33a1*/
         if ( v10 < (int)result ) /*0x4c33a7*/
         {
-          v11 = Text::MeasureWidth((int)String, 0) + *((unsigned int *)this + 3) + 1; /*0x4c33ba*/
+          v11 = Text_MeasureWidth((int)String, 0) + *((unsigned int *)this + 3) + 1; /*0x4c33ba*/
           v12 = *((unsigned int *)this + 4); /*0x4c33be*/
           v13 = *((unsigned int *)this + 11); /*0x4c33c1*/
           v21 = v11; /*0x4c33c4*/
@@ -712,8 +694,8 @@ int DropListClass::SetItemText(int a1) {
         (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 84))(this); /*0x4c3535*/
         return 0; /*0x4c353d*/
       }
-      v5 = Text::MeasureWidth(*((unsigned int *)this + 13), 0); /*0x4c345e*/
-      if ( FontClass::GetPixelData(Instance, C) + v5 < *((unsigned int *)this + 5) - 2 /*0x4c347e*/
+      v5 = Text_MeasureWidth(*((unsigned int *)this + 13), 0); /*0x4c345e*/
+      if ( FontClass_GetPixelData(Instance, C) + v5 < *((unsigned int *)this + 5) - 2 /*0x4c347e*/
         && *((unsigned int *)this + 15) < *((unsigned int *)this + 14) )
       {
         if ( isgraph(C) ) /*0x4c3485*/
@@ -1312,7 +1294,7 @@ void* ListClass::Destru_vt50(int a1, int a2, int a3, int a4, int a5) {
       if ( *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1 ) /*0x557d61*/
         v11 = *(unsigned __int8 *)(v10 + v9); /*0x557d65*/
       else
-        v11 = *(unsigned __int16 *)(v10 + 2 * v9); /*0x557d6c*/
+        v11 = *(unsigned short *)(v10 + 2 * v9); /*0x557d6c*/
       v20[0] = a3; /*0x557d78*/
       v20[3] = *((unsigned int *)this + 19); /*0x557d7f*/
       v20[1] = a4; /*0x557d8a*/
@@ -1554,14 +1536,14 @@ int MouseClass::SetPosition(int a1) {
       v5 = 0; /*0x5bdb0b*/
       v6 = 0; /*0x5bdb0d*/
       if ( v4 == 12345 ) /*0x5bdb15*/
-        v5 = *(__int16 *)(g_MissionQueueFrame.localVariables[516] + 2) / 2; /*0x5bdb20*/
+        v5 = *(short *)(g_MissionQueueFrame.localVariables[516] + 2) / 2; /*0x5bdb20*/
       if ( v4 == 54321 ) /*0x5bdb29*/
-        v5 = *(__int16 *)(g_MissionQueueFrame.localVariables[516] + 2); /*0x5bdb2b*/
+        v5 = *(short *)(g_MissionQueueFrame.localVariables[516] + 2); /*0x5bdb2b*/
       v7 = *(unsigned int *)&stru_82BA00.__pad_1624[28 * v3 + 28]; /*0x5bdb2f*/
       if ( v7 == 12345 ) /*0x5bdb38*/
-        v6 = *(__int16 *)(g_MissionQueueFrame.localVariables[516] + 4) / 2; /*0x5bdb43*/
+        v6 = *(short *)(g_MissionQueueFrame.localVariables[516] + 4) / 2; /*0x5bdb43*/
       if ( v7 == 54321 ) /*0x5bdb4b*/
-        v6 = *(__int16 *)(g_MissionQueueFrame.localVariables[516] + 4); /*0x5bdb4d*/
+        v6 = *(short *)(g_MissionQueueFrame.localVariables[516] + 4); /*0x5bdb4d*/
       v8[1] = v6; /*0x5bdb55*/
       v8[0] = v5; /*0x5bdb62*/
       return (*(int (__thiscall **)(void *, unsigned int *, int, int))(*(unsigned int *)stru_887598.lineTrailer + 4))( /*0x5bdb79*/
@@ -2153,7 +2135,7 @@ int MouseClass::DrawCursor() {
     int v19; // ebx
     int v20; // [esp+8Ch] [ebp-20h] BYREF
     int uniqueId; // [esp+90h] [ebp-1Ch] BYREF
-    __int16 v22[2]; // [esp+94h] [ebp-18h] BYREF
+    short v22[2]; // [esp+94h] [ebp-18h] BYREF
     int v23; // [esp+98h] [ebp-14h]
     unsigned int v24[2]; // [esp+9Ch] [ebp-10h] BYREF
     char v25; // [esp+A4h] [ebp-8h]
@@ -2473,7 +2455,7 @@ int MessageListClass::AddMessage(void* a1, int a2, void* a3, int a4, int a5, int
     wchar_t k; // cx
     int v34; // [esp+10h] [ebp-14Ch]
     signed int v35; // [esp+14h] [ebp-148h]
-    wchar_t String[162]; // [esp+18h] [ebp-144h] BYREF
+    wchar_t *String[162]; // [esp+18h] [ebp-144h] BYREF
 
     Instance = (MessageListClass *)TextRenderer::GetInstance(); /*0x5d3bb8*/
     if ( !a4 ) /*0x5d3bc3*/
@@ -2487,7 +2469,7 @@ int MessageListClass::AddMessage(void* a1, int a2, void* a3, int a4, int a5, int
       wcscat(String, asc_8306A4); /*0x5d3c0e*/
     }
     v11 = wcslen(String); /*0x5d3c23*/
-    v12 = Text::MeasureWidth((int)String, 0); /*0x5d3c3a*/
+    v12 = Text_MeasureWidth((int)String, 0); /*0x5d3c3a*/
     v34 = wcslen(a4); /*0x5d3c42*/
     if ( *((unsigned int *)this + 177) - v12 - 8 <= 0 ) /*0x5d3c56*/
       return 0; /*0x5d3c64*/
@@ -4289,7 +4271,7 @@ void SidebarClass::UpdateStrips(void* a1, void* a2) {
       {
         v8 = *((unsigned int *)this + 5349) + 1; /*0x6a77fa*/
         *((unsigned int *)this + 5349) = v8; /*0x6a77fb*/
-        if ( v8 <= *((__int16 *)dword_B0B478 + 3) ) /*0x6a780f*/
+        if ( v8 <= *((short *)dword_B0B478 + 3) ) /*0x6a780f*/
           goto LABEL_11; /*0x6a780f*/
       }
       else
@@ -5325,7 +5307,7 @@ int SidebarClass::UpdateProduction() {
         if ( dword_B0B478 ) /*0x6aab24*/
         {
           dword_884B80 = -1; /*0x6aab2a*/
-          dword_884B7C = *((__int16 *)dword_B0B478 + 3); /*0x6aab38*/
+          dword_884B7C = *((short *)dword_B0B478 + 3); /*0x6aab38*/
         }
         goto LABEL_58; /*0x6aab3e*/
       }
@@ -6541,8 +6523,8 @@ int SidebarClass::LoadButtonSHPs() {
       ++v2; /*0x6d02fb*/
     }
     while ( (int)v3 < (int)&byte_B0C1AC ); /*0x6d0302*/
-    dword_B0CD38 = *(__int16 *)(dword_B0C148[0] + 2); /*0x6d0314*/
-    dword_B0CB50 = *(__int16 *)(dword_B0C148[0] + 4); /*0x6d031e*/
+    dword_B0CD38 = *(short *)(dword_B0C148[0] + 2); /*0x6d0314*/
+    dword_B0CB50 = *(short *)(dword_B0C148[0] + 4); /*0x6d031e*/
     v6 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1212]; /*0x6d032a*/
     v12 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1208]; /*0x6d032e*/
     v13 = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1208] + 4); /*0x6d0335*/

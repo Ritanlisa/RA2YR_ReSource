@@ -106,7 +106,7 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   this->q00C = 10; /*0x4a08b0*/
   this->q00B = 0; /*0x4a08b7*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ConnectionPointClass); /*0x4a08ba*/
-  (*(void (**)(int))(aP2->q004)((int)aP2); /*0x4a08c3*/
+  (*(void (**)(int))(aP2->q004))((int)aP2); /*0x4a08c3*/
   return this->__pad_0; /*0x4a08c8*/
 
 }
@@ -175,7 +175,7 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, i
 
   if ( !a2 || !a3 ) /*0x4a0648*/
     return -2147467261; /*0x4a06ec*/
-  updated = AbstractClass::updateAITimer(dword_A8B230); /*0x4a0661*/
+  updated = ((AbstractClass *)dword_A8B230)->updateAITimer(); /*0x4a0661*/
   if ( (**a2)(a2, (int)&a1->ConnectionPointClass_field_0x04, &v8) < 0 ) /*0x4a0671*/
     return -2147220990; /*0x4a0675*/
   v4 = *((unsigned int *)a1 + 9); /*0x4a0681*/

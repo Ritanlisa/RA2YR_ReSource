@@ -213,6 +213,8 @@ public:
 
 // 11 methods in IDA
 #ifndef GAMEMD_E4_Buffer  // G42.33 b3: e4 flat carrier wins in opt-in TUs
+#ifndef GAMEMD_G2_Buffer_DEF  // g57a5 W2d: twin-definition guard (stream_ext Buffer)
+#define GAMEMD_G2_Buffer_DEF 1
 class Buffer
 {
 public:
@@ -249,6 +251,8 @@ public:
 
     unsigned int u32_748;  // G42.39 data supply
 };
+#endif  // GAMEMD_G2_Buffer_DEF
+
 #endif  // GAMEMD_E4_Buffer
 // 1 methods in IDA
 class BufferClass

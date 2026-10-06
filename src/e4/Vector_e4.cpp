@@ -130,7 +130,7 @@ unsigned short * Vector::ToFacingMath(unsigned short *a2)
   }
   Math::Sqrt(v6); /*0x41c2ff*/
   __asm { fstp [esp+14h+var_8] } /*0x41c307*/
-  Math::CalcAngle(*(double *)(_ESI + 16), v7); /*0x41c31a*/
+  ((Math *)*(double *)(_ESI + 16))->CalcAngle( v7); /*0x41c31a*/
   __asm { fsub ds:dbl_7E2820 } /*0x41c31f*/
   __asm { fmul ds:dbl_7E2818 }
   *(unsigned short *)a2 = Math::RoundToInt(v3); /*0x41c338*/
@@ -280,7 +280,7 @@ char Vector::Grow()
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
   if ( this->Vector_field_0x8 ) /*0x7aef13*/
   {
-    qmemcpy(v5, this->Vector_field_0x8, 4 * *(unsigned int *)this->__pad_0); /*0x7aef28*/
+    qmemcpy( v5, (const void *)(this->Vector_field_0x8), 4 * *(unsigned int *)this->__pad_0); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
   __3_YAXPAX_Z((void *)(this->Vector_field_0x8)); /*0x7aef39*/

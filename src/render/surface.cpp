@@ -7,6 +7,12 @@
 #include "core/ddraw_init.hpp"
 #include "core/reverse_marker.hpp"
 #include "app/cmdline.hpp"
+// ---- g57b5 W5: qualified-call free-form vocab ----
+namespace gamemd {
+int Rect_Set(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int XSurface_BlitPart(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+} // namespace gamemd
+// ---- g57b5 W5 end ----
 
 // gC supply: extern declarations from src/e4/e4_globals_decls.hpp
 extern unsigned int stru_A8EB00;
@@ -544,7 +550,7 @@ char DSurface::BlitCore(
     {
         RectangleStruct dest_r = { a3[0], a3[1], a3[2], a3[3] };
         RectangleStruct src_r  = { a6[0], a6[1], a6[2], a6[3] };
-        return dst->XSurface::BlitPart(
+        return dst->XSurface_BlitPart(
                     dest_r, const_cast<class Surface*>(src),
                     src_r, a7 != 0, true) ? 1 : 0;
     }
@@ -691,10 +697,7 @@ hw_fail_dst:
 // DSurface::BlitCore (same body, raw-int ABI shared with the REPLACE hook);
 // the virtual forwards its typed rectangle arguments positionally.
 // 0x4bb0d0
-bool DSurface::Blit(
-    const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2,
-    class Surface* src, const RectangleStruct& dest_rect,
-    const RectangleStruct& src_rect, bool option1, bool option2)
+bool DSurface::Blit(const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2, class Surface* src, const RectangleStruct& dest_rect, const RectangleStruct& src_rect, bool option1, bool option2, int a2, int a3, unsigned int *a4, int a5, int a6, int a7, char a8)  // g57b5 W4: raw 真值补参 (a2,a3,a4,a5,a6,a7,a8)
 {
     int v9; // ecx
     void **v10; // ebx
@@ -878,7 +881,7 @@ bool DSurface::Blit(
     v33 = (int (__thiscall **)(DSurface *, int *))v48->DSurface_field_0x0; /*0x4bb41c*/
     v63 = v28; /*0x4bb426*/
     v34 = (int *)v33[30](v48, v68); /*0x4bb439*/
-    Rect::Set(&v43, 0, 0, 0, 0); /*0x4bb43b*/
+    Rect_Set(&v43, 0, 0, 0, 0); /*0x4bb43b*/
     v35 = *v34; /*0x4bb449*/
     v36 = a2[2]; /*0x4bb44b*/
     v37 = v34[1]; /*0x4bb450*/
@@ -2208,3 +2211,4 @@ bool DSurface::DrawLineFaded(
     return DrawLineEx(clip, start, end, 0);
 
 } // namespace gamemd
+}

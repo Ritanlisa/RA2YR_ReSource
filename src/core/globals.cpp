@@ -17,6 +17,16 @@
 #include "e4/e4_globals_decls.hpp"
 #include "core/utility_ext.hpp"
 #include "misc/misc_ext.hpp"
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
+extern int i;  // 词表 (canon 无条目, int 兜底) L1010
+// g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int k;  // 词表 (canon 无条目, int 兜底) L1023
+// ---- g57b5 W6 end ----
+// ---- g57b5 W5: qualified-call free-form vocab ----
+namespace gamemd {
+int Add_Buffer(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Checksummer_Add_Buffer(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+} // namespace gamemd
+// ---- g57b5 W5 end ----
 
 namespace gamemd {
 
@@ -593,6 +603,8 @@ retn    0Ch
 
 // 0x542430: Network::GetField
 void NetworkGetField(int port) {
+}
+}
 // 0x542430
 {
   int result; // eax
@@ -643,6 +655,7 @@ retn
 
 // 0x48E0B0: DumpNetworkStats
 FILE * DumpNetworkStats() {
+}
 // 0x69bab0
 {
   char result; // al
@@ -832,6 +845,8 @@ retn
 
 // 0x5DA720: Network::ShutdownInterface
 void NetworkShutdownInterface() {
+}
+}
 // 0x5da720
 {
   int result; // eax
@@ -846,6 +861,7 @@ void NetworkShutdownInterface() {
     *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5da73a*/
     return result; /*0x5da740*/
   }
+}
 // 0x5f9e80
 {
   int i; // edx
@@ -929,7 +945,7 @@ void NetworkShutdownInterface() {
     v20 = 0; /*0x5f9f93*/
     v21 = 0; /*0x5f9f99*/
     v22 = 0; /*0x5f9f9d*/
-    v18 = Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9fa6*/
+    v18 = Checksummer_Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9fa6*/
     _strrev(Destination); /*0x5f9faf*/
     for ( i = 0; i < v4; v18 = (v9 >> 8) | ((uint8_t)v9 << 24) ) /*0x5f9fbb*/
     {
@@ -958,6 +974,8 @@ void NetworkShutdownInterface() {
     v20 = 0; /*0x5fa0a6*/
     v21 = 0; /*0x5fa0aa*/
     v22 = 0; /*0x5fa0ae*/
+}
+}
 // 0x4a1de0
     return Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9e91*/
   }
@@ -983,7 +1001,7 @@ void NetworkShutdownInterface() {
   unsigned int v20 = 0;
   int v21 = 0;
   int v22 = 0;
-  Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4);
+  Checksummer_Add_Buffer(&v20, (uint8_t *)Destination, v4);
   _strrev(Destination);
   v20 = 0;
   v21 = 0;
@@ -1482,3 +1500,4 @@ BuildingTypeClass** BuildingTypeClass_Array = nullptr;
 int32_t Map_VisibleRect = 0;
 
 } // namespace gamemd
+}

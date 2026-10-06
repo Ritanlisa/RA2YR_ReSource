@@ -80,7 +80,7 @@ int Construct(int,int);  // 0x43B740
     bool ValidateCell(int cell_x, int cell_y);  // 0x4DD9F0
     bool ValidatePlacementEx();  // 0x4DEE80
     void FindPlacementCells();  // 0x7447B0
-    void FindPlacementCells2(int* outCell, int inCell);  // 0x6B0300
+    void FindPlacementCells2(int* outCell, int inCell, unsigned int *a2, int a3);  // 0x6B0300  // g57b5 W4
     int SearchPlacement(int a2, int a3);  // 0x56BEC0
     void VisualizePlacement();  // 0x485AF0
     int GetPlacementCoords(int* out, unsigned int* a3);  // 0x45F160
@@ -352,7 +352,7 @@ int CanAcceptType(int,int);  // 0x452670
     bool IsHealthLow();  // 0x5F5CD0
 
     // Misc
-    int SquaredDistanceTo(ObjectClass* target) const;  // 0x5F6500
+    int SquaredDistanceTo(ObjectClass* target, int a2) const;  // 0x5F6500
     void SaveLoad_Register();  // 0x5F5E80
     void CopyTypeDataForRender();  // 0x634310
     ra2::game::PlanningTokenClass* GetPlanningToken();  // 0x705D20 (accessor for TechnoClass::planningToken@+0x514, NOT Type)

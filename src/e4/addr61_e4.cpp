@@ -136,7 +136,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
   LABEL_29:
       if ( *(float *)&v14 <= dbl_AC18E0 ) /*0x61073d*/
   LABEL_30:
-        HashTable::Shrink2(&g_DialogPool); /*0x61073f*/
+        HashTable::Shrink2( (void)(&g_DialogPool)); /*0x61073f*/
     }
   }
   LABEL_31: WindowLongA = (gamemd::AbstractClass **)((void *)GetWindowLongA(hWnd, -21));
@@ -323,7 +323,7 @@ void sub_612930()
           {
             do /*0x612a1c*/
             {
-              v10 = dword_AC1870(v9) & ((1 << dword_AC1864) - 1); /*0x612a05*/
+              v10 = (*(unsigned int (*)(unsigned int))&dword_AC1870)(v9) & ((1 << dword_AC1864) - 1); /*0x612a05*/
               v11 = *((unsigned int *)stru_AC1858 + v10); /*0x612a0c*/
               *((unsigned int *)stru_AC1858 + v10) = v9; /*0x612a0f*/
               v12 = *(unsigned int *)(v9 + 12); /*0x612a12*/
@@ -379,7 +379,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
     v6 = hWnd; /*0x612ab5*/
   }
   LABEL_10:
-  ScreenDialogToClient(v6, &v12); /*0x612ab9*/
+  ScreenDialogToClient( (void *)(v6), &v12); /*0x612ab9*/
   GetClientRect(hWnd, &Rect); /*0x612acc*/
   if ( dword_AC1B04 && (v8 = *((unsigned int *)dword_AC1B00 + (((unsigned int (__cdecl *)(void *))dword_AC1B18)(&hWnd) & ((1 << dword_AC1B0C) - 1)))) != 0 ) /*0x612aff*/
   {

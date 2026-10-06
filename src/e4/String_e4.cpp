@@ -107,22 +107,22 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   *((unsigned int *)this + 2) = 0; /*0x5d0395*/
   *((unsigned int *)this + 3) = 0; /*0x5d0398*/
   unknown_libname_73(&v10); /*0x5d039b*/
-  v3 = String::Tokenize(aP1, 0, Str, (void **)&v10); /*0x5d03ba*/
+  v3 = ((String *)aP1)->Tokenize( 0, (char *)&::Delimiter, (void **)&v10); /*0x5d03ba*/
   if ( ((String*)((String *)&v10))->Length() ) /*0x5d03bc*/
     ((String *)((String *)this))->Reassign((const char **)&v10); /*0x5d03cc*/
-  v4 = String::Tokenize(aP1, v3, Str, (void **)&v10); /*0x5d03e7*/
+  v4 = ((String *)aP1)->Tokenize( v3, (char *)&::Delimiter, (void **)&v10); /*0x5d03e7*/
   if ( ((String*)((String *)&v10))->Length() ) /*0x5d03e9*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d03f6*/
     *((unsigned int *)this + 1) = v5; /*0x5d03fb*/
   }
-  v6 = String::Tokenize(aP1, v4, Str, (void **)&v10); /*0x5d0414*/
+  v6 = ((String *)aP1)->Tokenize( v4, (char *)&::Delimiter, (void **)&v10); /*0x5d0414*/
   if ( ((String*)((String *)&v10))->Length() ) /*0x5d0416*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d0423*/
     *((unsigned int *)this + 2) = v7; /*0x5d0428*/
   }
-  String::Tokenize(aP1, v6, Str, (void **)&v10); /*0x5d0438*/
+  ((String *)aP1)->Tokenize( v6, (char *)&::Delimiter, (void **)&v10); /*0x5d0438*/
   if ( ((String*)((String *)&v10))->Length() ) /*0x5d0441*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d044e*/
@@ -217,7 +217,7 @@ int String::TrimLeft(const char **a2, int aP1, int a1, int a3, int aP2, int aP3,
       break; /*0x7b5212*/
   }
   if ( i > 0 ) /*0x7b5219*/
-    return ((String *)(int a1))->Erase(0, i) ; /*0x7b5220*/
+    return (( String *)this)->Erase(0, i) ; /*0x7b5220*/
   return result; /*0x7b5225*/
 
 }
@@ -322,7 +322,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
     if ( a3 ) /*0x7b5862*/
     {
       v12 = v4; /*0x7b586f*/
-      v13 = strlen(a3) + 1; /*0x7b5871*/
+      v13 = strlen( (const char *)(a3)) + 1; /*0x7b5871*/
       v14 = v13; /*0x7b5878*/
       if ( v4 ) /*0x7b587b*/
         v14 = strlen(v4) + v13; /*0x7b5887*/
@@ -341,7 +341,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
       if ( v12 ) /*0x7b58e9*/
         __3_YAXPAX_Z(v12); /*0x7b58ec*/
     }
-    v5 = &v27[strlen(SubStr)]; /*0x7b5908*/
+    v5 = &v27[strlen( (const char *)(SubStr))]; /*0x7b5908*/
     if ( !v5 ) /*0x7b590a*/
       break; /*0x7b590a*/
   }
@@ -639,7 +639,7 @@ namespace gamemd {
 char * String::CopyUpper(char * String, ObjectClass * aP1)
 {
 
-  strcpy(String,(const char *)(aP1)); /*0x4f4c4e*/
+  strcpy( (char *)(String), (const char *)(aP1)); /*0x4f4c4e*/
   _strupr(String); /*0x4f4c57*/
   return String; /*0x4f4c61*/
 
@@ -651,7 +651,7 @@ namespace gamemd {
 char * String::Copy(const char * a2, void *a2_2)
 {
 
-  strcpy((char *)(this), a2); /*0x4f4c8c*/
+  strcpy( (char *)(this), (const char *)(a2)); /*0x4f4c8c*/
   return (char *)(this); /*0x4f4c97*/
 
 }
@@ -662,7 +662,7 @@ namespace gamemd {
 char * String::CopyChecked(const char *a2)
 {
 
-  strcpy((char *)this, a2); /*0x4f4ccc*/
+  strcpy( (char *)this, (const char *)(a2)); /*0x4f4ccc*/
 return (char *)this; /*0x4f4cd7*/
 
 }
@@ -670,7 +670,7 @@ return (char *)this; /*0x4f4cd7*/
 
 // 0x4F4CE0
 namespace gamemd {
-bool String::Equals(ObjectClass * aP1, void *a2_1)
+bool ((String *)ObjectClass * aP1)->Equals( void *a2_1)
 {
 
   int result; // eax
@@ -759,7 +759,7 @@ namespace gamemd {
 ObjectClass * String::CopyConstant(char * Destination)
 {
 
-  strncpy(Destination,(const char *)(g_Str_gsmallwoo), 0x20u); /*0x777b6b*/
+  strncpy( (char *)(Destination), (const char *)(g_Str_gsmallwoo), 0x20u); /*0x777b6b*/
   return (gamemd::ObjectClass *)(Destination); /*0x777b75*/
 
 }
@@ -775,14 +775,14 @@ char ** String::Assign(const char *a2)
 
   *(unsigned int *)this->__pad_0 = 0; /*0x7b463b*/
   if ( a2 ) /*0x7b4641*/
-    v3 = strlen(a2) + 1; /*0x7b464a*/
+    v3 = strlen( (const char *)(a2)) + 1; /*0x7b464a*/
   else
     v3 = 1; /*0x7b4650*/
   v4 = (unsigned char *)__2_YAPAXI_Z(v3); /*0x7b4656*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(v4); /*0x7b465e*/
   *v4 = 0; /*0x7b4662*/
   if ( a2 ) /*0x7b4665*/
-    strcpy(*(char **)this->__pad_0, a2); /*0x7b467d*/
+    strcpy( *(char **)this->__pad_0, (const char *)(a2)); /*0x7b467d*/
   return (char **)this; /*0x7b4686*/
 
 }
@@ -913,14 +913,14 @@ void ** String::Assign_Alt(const char *aP1)
     __3_YAXPAX_Z(*(void **)this->__pad_0); /*0x7b48dc*/
   *(unsigned int *)this->__pad_0 = 0; /*0x7b48e8*/
   if ( aP1 ) /*0x7b48f0*/
-    v3 = strlen(aP1) + 1; /*0x7b48f9*/
+    v3 = strlen( (const char *)(aP1)) + 1; /*0x7b48f9*/
   else
     v3 = 1; /*0x7b48ff*/
   v4 = (unsigned char *)__2_YAPAXI_Z(v3); /*0x7b4905*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(v4); /*0x7b490d*/
   *v4 = 0; /*0x7b4911*/
   if ( aP1 ) /*0x7b4914*/
-    strcpy(*(char **)this->__pad_0, aP1); /*0x7b492c*/
+    strcpy( *(char **)this->__pad_0, (const char *)(aP1)); /*0x7b492c*/
   return (void **)this; /*0x7b4935*/
 
 }
@@ -974,7 +974,7 @@ const char ** String::Append(const char *aP1)
   v2 = aP1; /*0x7b4c23*/
   if ( aP1 ) /*0x7b4c2b*/
   {
-    v4 = strlen(aP1) + 1; /*0x7b4c39*/
+    v4 = strlen( (const char *)(aP1)) + 1; /*0x7b4c39*/
     v5 = *(char **)this->__pad_0; /*0x7b4c3b*/
     v6 = v4; /*0x7b4c43*/
     if ( *(unsigned int *)this->__pad_0 ) /*0x7b4c3b*/
@@ -1073,7 +1073,7 @@ char ** String::Concat2(char **a2, const char *a3)
   if ( a3 ) /*0x7b4de7*/
   {
     v6 = v4; /*0x7b4df4*/
-    v7 = strlen(a3) + 1; /*0x7b4df6*/
+    v7 = strlen( (const char *)(a3)) + 1; /*0x7b4df6*/
     v8 = v7; /*0x7b4dfd*/
     if ( v4 ) /*0x7b4e00*/
       v8 = strlen(v4) + v7; /*0x7b4e0c*/
@@ -1323,7 +1323,7 @@ char String::Assign_Bool(const char *a2)
     __3_YAXPAX_Z(*(void **)this->__pad_0); /*0x7b5a4c*/
   *(unsigned int *)this->__pad_0 = 0; /*0x7b5a58*/
   if ( a2 ) /*0x7b5a60*/
-    v3 = strlen(a2) + 1; /*0x7b5a69*/
+    v3 = strlen( (const char *)(a2)) + 1; /*0x7b5a69*/
   else
     v3 = 1; /*0x7b5a6f*/
   result = (int)(__2_YAPAXI_Z(v3)); /*0x7b5a75*/
@@ -1331,8 +1331,8 @@ char String::Assign_Bool(const char *a2)
   *(unsigned char *)result = 0; /*0x7b5a81*/
   if ( a2 ) /*0x7b5a84*/
   {
-    result = strlen(a2) + 1; /*0x7b5a8d*/
-    qmemcpy(*(void **)this->__pad_0, a2, result); /*0x7b5a9c*/
+    result = strlen( (const char *)(a2)) + 1; /*0x7b5a8d*/
+    qmemcpy( *(void **)this->__pad_0, (const void *)(a2), result); /*0x7b5a9c*/
   }
   LOBYTE(result) = 1; /*0x7b5aa7*/
   return result; /*0x7b5aa5*/

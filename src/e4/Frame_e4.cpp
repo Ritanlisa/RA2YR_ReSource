@@ -69,7 +69,7 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
 
   if ( !a5 ) /*0x4f4790*/
   {
-    v9 = (int *)(*(int (**)(int, int *))(*(unsigned int *)a1 + 120))((int)a1, &v46); /*0x4f479b*/
+    v9 = (int *)(*(int (**)(int, int *))(*(unsigned int *)a1 + 120))( (int)a1, (int *)(&v46)); /*0x4f479b*/
     v39 = *v9; /*0x4f47a0*/
     v40 = v9[1]; /*0x4f47a7*/
     v41 = v9[2]; /*0x4f47b6*/
@@ -232,7 +232,7 @@ LABEL_51:
                 (*(void (**)(int, int))(v35 + 16))(g_DSurface_Primary, v36); /*0x4f4b3d*/
               }
               if ( v37 && dword_887640 ) /*0x4f4b50*/
-                (*(void (**)(int, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0)(dword_887640, (int)a1, 0); /*0x4f4b57*/
+                (*(void (**)(int, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))(dword_887640, (int)a1, 0); /*0x4f4b57*/
               result = (*(int (**)(int, int *, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x4f4b7b*/
                          g_DSurface_Primary,
                          &v45,
@@ -243,7 +243,7 @@ LABEL_51:
                 if ( dword_887640 ) /*0x4f4b8c*/
                 {
                   Sleep(0x32u); /*0x4f4b90*/
-return (gamemd::TechnoTypeClass *)(*(int (**)(int, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100)(dword_887640, (int)a1, 0); /*0x4f4ba1*/
+return (gamemd::TechnoTypeClass *)(*(int (**)(int, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))(dword_887640, (int)a1, 0); /*0x4f4ba1*/
                 }
               }
               return (gamemd::TechnoTypeClass *)(result);

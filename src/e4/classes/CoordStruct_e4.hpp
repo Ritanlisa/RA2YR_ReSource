@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
+#ifndef GAMEMD_E4_MATH_ALIASES  // G57a1: alias bridge TUs use Vector3D<int>
 struct CoordStruct {
 // --- flat members (BEGIN) ---
     int X;  // 0x0
@@ -13,4 +14,5 @@ struct CoordStruct {
 // --- flat members (END) ---
     unsigned int * Set2(void* aP1, AbstractClass * aP2);  // 0x642740
 };
+#endif  // GAMEMD_E4_MATH_ALIASES (CoordStruct)
 } // namespace gamemd

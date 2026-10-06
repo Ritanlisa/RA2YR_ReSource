@@ -28,7 +28,7 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 // IDA 0x4F4410: Hash::InsertOrdered (stub).
 // NOTE: previous annotation pointed at Int_CompareFunc4 (a different function).
 // 0x4f4410
-void Hash::InsertOrdered(void* table, const void* entry)
+void Hash::InsertOrdered(void* table, const void* entry, int a2)  // g57b5 W4: raw 真值补参 (a2)
 {
     int result; // eax
 
@@ -360,3 +360,4 @@ uint32_t CRC32::Compute(const void* data, uint32_t size)
     }
     return ~v5; /*0x4a1fe3*/
 }  // L-fix: close namespace tail 1
+}

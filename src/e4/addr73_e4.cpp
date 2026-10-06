@@ -142,7 +142,7 @@ AbstractClass * * ProcessSelectionExperience()
       v6 = (TechnoClass *)*((unsigned int *)dword_A8ECBC + v5); /*0x730b95*/
       if ( v6 ) /*0x730b9a*/
       {
-        if ( (*(int (**)(unsigned int))(v6->vtable1 + 44))(*((unsigned int *)dword_A8ECBC + v5)) == 15 /*0x730baa*/
+        if ( (*(int (**)(unsigned int))((char *)v6->vtable1 + 44))(*((unsigned int *)dword_A8ECBC + v5)) == 15 /*0x730baa*/
 // 0x5224e0
           && TechnoClass::GetTypeFlag() )
         {
@@ -155,7 +155,7 @@ AbstractClass * * ProcessSelectionExperience()
         }
         else
         {
-          v1 = (*(int (**)(TechnoClass *))(v6->vtable1 + 44))(v6); /*0x730be0*/
+          v1 = (*(int (**)(TechnoClass *))((char *)v6->vtable1 + 44))(v6); /*0x730be0*/
           if ( v1 == 1 ) /*0x730be6*/
           {
             IDA_LOBYTE(v1) = *(unsigned char *)(v6[1].ironTintTimer[2] + 3603); /*0x730bee*/
@@ -681,7 +681,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
       do /*0x73309e*/
       {
         v7 = *((unsigned int *)dword_A8EC7C + v5); /*0x733052*/
-        IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(v7, a1); /*0x733057*/
+        IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman( v7, (void *)(a1)); /*0x733057*/
         if ( (unsigned char)HeightMap ) /*0x73305e*/
         {
           v8 = v4[2]; /*0x733060*/
@@ -727,7 +727,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
         if ( (*(unsigned char *)(HeightMap + 20) & 1) != 0 ) /*0x733103*/
         {
           v17 = HeightMap; /*0x73310b*/
-          IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(HeightMap, a1); /*0x73310f*/
+          IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman( HeightMap, (void *)(a1)); /*0x73310f*/
           if ( (unsigned char)HeightMap ) /*0x733116*/
             IDA_LOBYTE(HeightMap) = ((DynamicVector *)(v4))->AddItem(&v17); /*0x73311f*/
         }
@@ -1029,7 +1029,7 @@ LABEL_42:
     FillUnitTooltipUI(Destination, StringCSF); /*0x73356f*/
     v16 = 3; /*0x73357a*/
     if ( dword_A83D4C ) /*0x733584*/
-      v16 = *(unsigned int *)&(&dword_A83D4C[134].__pad_90)[4]; /*0x733586*/
+      v16 = *(unsigned int *)&(&(&dword_A83D4C)[134.__pad_90)[4]; /*0x733586*/
     MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, Destination, v16, 16454, 240, 1); /*0x7335a7*/
     dword_845560 = v18; /*0x7335b6*/
     result = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] + 16); /*0x7335bc*/
@@ -1044,7 +1044,7 @@ LABEL_42:
 }
 // 0x7336C0
 namespace gamemd {
-int E4Recv_7336C0::DrawUnitExperiencePopup()
+int ((E4Recv_7336C0 *)char a1)->DrawUnitExperiencePopup()
 {
 
   int result; // eax
@@ -1068,9 +1068,9 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
   int v19; // [esp+10h] [ebp-204h] BYREF
   wchar_t Destination[256]; // [esp+14h] [ebp-200h] BYREF
 
-  result = dword_A8B538[0]; /*0x7336c0*/
+  result = (&dword_A8B538)[0]; /*0x7336c0*/
   v2 = 0; /*0x7336cc*/
-  if ( !dword_A8B538[0] ) /*0x7336d0*/
+  if ( !(&dword_A8B538)[0] ) /*0x7336d0*/
   {
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] == 4 ) /*0x7336dd*/
     {
@@ -1153,15 +1153,15 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
       v11 = (DynamicVector *)((DynamicVector *)(v10))->Constructor_Techno(0, 0); /*0x73382b*/
     else
       v11 = 0; /*0x73382f*/
-    v12 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x733831*/
-    if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) > 0 ) /*0x733839*/
+    v12 = *(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x733831*/
+    if ( *(int *)((char *)&stru_A8EB00 + 228) > 0 ) /*0x733839*/
     {
       do /*0x733866*/
       {
-        v13 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x733840*/
+        v13 = *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x733840*/
         if ( v13 && (*(unsigned char *)(v13 + 20) & 1) != 0 ) /*0x733851*/
         {
-          v19 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x73385a*/
+          v19 = *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v2); /*0x73385a*/
           ((DynamicVector *)(v11))->AddItem(&v19); /*0x73385e*/
         }
         ++v2; /*0x733863*/
@@ -1172,7 +1172,7 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
     v15 = 0; /*0x73386b*/
     if ( DynamicVector_field_0x10 > 0 ) /*0x73386f*/
     {
-      while ( FootClass::CheckAccelLimit((int *)(*(unsigned int *)(*(unsigned int *)&v11->DynamicVector_field_0x1[3] + 4 * v15) + 336)) == v18 ) /*0x733886*/
+      while ( FootClass::CheckAccelLimit((*(unsigned int *)(*(unsigned int *)&(&v11->DynamicVector_field_0x1)[3] + 4 * v15) + 336)) == v18 ) /*0x733886*/
       {
         if ( ++v15 >= DynamicVector_field_0x10 ) /*0x73388b*/
           goto LABEL_42; /*0x73388b*/
@@ -1185,7 +1185,7 @@ LABEL_42:
     FillUnitTooltipUI(Destination, StringCSF); /*0x7338b9*/
     v16 = 3; /*0x7338c4*/
     if ( dword_A83D4C ) /*0x7338ce*/
-      v16 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x7338d0*/
+      v16 = *(unsigned int *)&(&dword_A83D4C)[((unsigned int *)&134.__pad_90)[4]; /*0x7338d0*/
     MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, Destination, v16, 16454, 240, 1); /*0x7338f1*/
     dword_845564 = v18; /*0x733900*/
     result = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] + 16); /*0x733906*/
@@ -1223,9 +1223,9 @@ int SelectUnitsByTheme(char a1)
   int v21; // [esp+14h] [ebp-204h] BYREF
   wchar_t Destination[256]; // [esp+18h] [ebp-200h] BYREF
 
-  result = (void *)dword_A8B538[0]; /*0x7339b0*/
+  result = (void *)(&dword_A8B538)[0]; /*0x7339b0*/
   v2 = 0; /*0x7339bd*/
-  if ( !dword_A8B538[0] ) /*0x7339c3*/
+  if ( !(&dword_A8B538)[0] ) /*0x7339c3*/
   {
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] == 5 ) /*0x7339d0*/
     {
@@ -1280,10 +1280,10 @@ int SelectUnitsByTheme(char a1)
       v10 = (DynamicVector *)((DynamicVector *)(v9))->Constructor_Techno(0, 0); /*0x733b08*/
     else
       v10 = 0; /*0x733b0c*/
-    v11 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x733b0e*/
+    v11 = *(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x733b0e*/
     for ( i = 0; i < v11; ++i ) /*0x733b18*/
     {
-      v13 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * i); /*0x733b1f*/
+      v13 = *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * i); /*0x733b1f*/
       if ( v13 ) /*0x733b24*/
       {
         if ( *(unsigned char *)(v13 + 20) & 1 ) /*0x733b2c*/
@@ -1302,12 +1302,12 @@ int SelectUnitsByTheme(char a1)
       if ( ++v15 >= DynamicVector_field_0x10 ) /*0x733b66*/
         goto LABEL_31; /*0x733b66*/
     }
-    StringCSF = GetStringCSF(g_Str_MSG_Mixed, 0, g_Str_File_UICmnds_cpp, 1731); /*0x733b80*/
+    StringCSF = GetStringCSF( (wchar_t *)(g_Str_MSG_Mixed), 0, (const char *)(g_Str_File_UICmnds_cpp), 1731); /*0x733b80*/
     if ( !StringCSF ) /*0x733b84*/
     {
   LABEL_31:
-      if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) > 0 ) /*0x733b8d*/
-        StringCSF = *(wchar_t **)((*(int (**)(unsigned int))(***(unsigned int ***)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 136))(**(unsigned int **)&(unsigned int *)((char *)&stru_A8EB00 + 216)) /*0x733b9f*/
+      if ( *(int *)((char *)&stru_A8EB00 + 228) > 0 ) /*0x733b8d*/
+        StringCSF = *(wchar_t **)((*(int (**)(unsigned int))(***(unsigned int ***)((char *)&stru_A8EB00 + 216) + 136))(**(unsigned int **)((char *)&stru_A8EB00 + 216)) /*0x733b9f*/
                                 + 96);
     }
     FillUnitTooltipUI(Destination, StringCSF); /*0x733ba8*/
@@ -1316,7 +1316,7 @@ int SelectUnitsByTheme(char a1)
       v16 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x733bbc*/
     MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, Destination, v16, 16454, 240, 1); /*0x733bdd*/
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[12] = v21; /*0x733bec*/
-    strcpy(&g_BuildingLoadQueue_Array.__pad_F70[1472], Block); /*0x733c09*/
+    strcpy( (char *)(&g_BuildingLoadQueue_Array.__pad_F70[1472]), (const char *)(Block)); /*0x733c09*/
     if ( Block ) /*0x733c16*/
       RA2_OPDEL(Block); /*0x733c19*/
     result = v10->DynamicVector_field_0x10; /*0x733c21*/
@@ -1353,14 +1353,14 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
   int uniqueId; // [esp+1Ch] [ebp-4h]
 
   v1 = this; /*0x733cd6*/
-  v2 = __2_YAPAXI_Z(0x18u); /*0x733cde*/
+  v2 = (unsigned int)__2_YAPAXI_Z(0x18u); /*0x733cde*/
   if ( v2 ) /*0x733cea*/
   {
     *(unsigned int *)(v2 + 4) = 0; /*0x733cec*/
     *(unsigned int *)(v2 + 8) = 0; /*0x733cef*/
     *(unsigned char *)(v2 + 12) = 1; /*0x733cf2*/
     *(unsigned char *)(v2 + 13) = 0; /*0x733cf6*/
-    *(unsigned int *)v2 = &vt_DynamicVectorClass; /*0x733cf9*/
+    *(unsigned int *)v2 = (unsigned int)&vt_DynamicVectorClass;
     *(unsigned int *)(v2 + 20) = 10; /*0x733cff*/
     *(unsigned int *)(v2 + 16) = 0; /*0x733d06*/
     v3 = v2; /*0x733d09*/
@@ -1984,18 +1984,18 @@ wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
         }
         while ( v7 < (int)v3 ); /*0x731e4b*/
       }
-      String = GetStringCSF(aMsgUnitsworth, 0, g_Str_File_UICmnds_cpp, 1052); /*0x731e65*/
+      String = (unsigned int)GetStringCSF( aMsgUnitsworth, 0, (const char *)(g_Str_File_UICmnds_cpp), 1052); /*0x731e65*/
       return (wchar_t *)swprintf(v2, (const size_t)String, v3, Destinationa, v6); /*0x731e6c*/
     }
     else
     {
-      v4 = GetStringCSF(aMsgNounitssel, 0, g_Str_File_UICmnds_cpp, 1032); /*0x731dee*/
+      v4 = GetStringCSF( aMsgNounitssel, 0, (const char *)(g_Str_File_UICmnds_cpp), 1032); /*0x731dee*/
       return (wchar_t *)swprintf(v2, (const size_t)v4, Destinationa); /*0x731df5*/
     }
   }
   else
   {
-    v12 = GetStringCSF(aMsgNavempty, 0, g_Str_File_UICmnds_cpp, 1022); /*0x731e90*/
+    v12 = GetStringCSF( aMsgNavempty, 0, (const char *)(g_Str_File_UICmnds_cpp), 1022); /*0x731e90*/
     return wcscpy(v2, v12); /*0x731e97*/
   }
 }
@@ -2478,7 +2478,7 @@ char E4Recv_736C10::sub_736C10()
   v4[0] = this->location[0]; /*0x736c2f*/
   v4[1] = this->location[1]; /*0x736c3b*/
   v4[2] = this->location[2]; /*0x736c42*/
-  if ( (uint8_t)Tactical::IsCellVisible((Tactical *)&dword_87F7E8, v4) || !this->isInPlayfield[0] ) /*0x736c54*/
+  if ( (uint8_t)((Tactical *)(Tactical *)&dword_87F7E8)->IsCellVisible( v4) || !this->isInPlayfield[0] ) /*0x736c54*/
     return 0; /*0x736c8a*/
   v2 = *((unsigned int *)this + 373); /*0x736c5e*/
   if ( v2 ) /*0x736c66*/

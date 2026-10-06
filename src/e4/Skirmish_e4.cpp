@@ -272,7 +272,7 @@ int Skirmish::ReadSettings(HWND hDlg)
   v14 = (void *)g_MissionQueueFrame.briefing[451]; /*0x596e0d*/
   if ( g_MissionQueueFrame.briefing[451] ) /*0x596e15*/
   {
-    ComPtr::Dtor((ComPtr *)g_MissionQueueFrame.briefing[451]); /*0x596e19*/
+    ComPtr::Dtor( (void)((ComPtr *)g_MissionQueueFrame.briefing[451])); /*0x596e19*/
     __3_YAXPAX_Z(v14); /*0x596e1f*/
   }
   g_MissionQueueFrame.briefing[451] = 0; /*0x596e27*/
@@ -384,7 +384,7 @@ int Skirmish::RenderPreview(HWND aP1)
   if ( *(unsigned int *)this ) /*0x64072c*/
   {
     DlgItem = GetDlgItem(aP1, 1128); /*0x64073f*/
-    ScreenDialogToClient(DlgItem, &Rect); /*0x640749*/
+    ScreenDialogToClient( (void *)(DlgItem), &Rect); /*0x640749*/
     left = Rect.left; /*0x64075a*/
     top = Rect.top; /*0x640764*/
     v5 = *(unsigned int *)this; /*0x64076a*/
@@ -412,7 +412,7 @@ int Skirmish::RenderPreview(HWND aP1)
       &left,
       0);
     DSurface_field_0x0 = (void (**)(DSurface *, int *, unsigned int, int))DSurface_Alternate->DSurface_field_0x0; /*0x64086c*/
-    v13 = (*(int (**)(unsigned int, int *, unsigned int, unsigned int))(**(unsigned int * *)&this->infantryBlinkTimer)(*(unsigned int *)this, v27, 0, 0); /*0x640875*/
+    v13 = (*(int (**)(unsigned int, int *, unsigned int, unsigned int))(**(unsigned int * *)&this->infantryBlinkTimer))(*(unsigned int *)this, v27, 0, 0); /*0x640875*/
     DSurface_field_0x0[2](DSurface_Alternate, &v34, *(unsigned int *)this, v13); /*0x640887*/
     HIBYTE(v23) = 0; /*0x640896*/
     if ( (stru_AC4B30.__pad_EC[628] & 1) == 0 ) /*0x64089b*/
@@ -816,11 +816,11 @@ AbstractClass * * Skirmish::SetupGame(int hWnd)
     SendMessageA(v9, 0x151u, v17, 0); /*0x6ae858*/
     SendMessageA(v9, 0x14Eu, 0, 0); /*0x6ae864*/
   }
-  SkirmishDialog::FillComboBoxes((SkirmishDialog *)hWnd); /*0x6ae872*/
+  SkirmishDialog::FillComboBoxes( (SkirmishDialog *)hWnd); /*0x6ae872*/
   InitGameDropdownColors(v51); /*0x6ae877*/
   ((Lobby *)((Lobby *)hWnd))->FillPlayerFactions(); /*0x6ae87e*/
   _cfltcvt_init(); /*0x6ae883*/
-  Lobby::InvalidateFactionCombos((Lobby *)hWnd); /*0x6ae88a*/
+  Lobby::InvalidateFactionCombos( (Lobby *)hWnd); /*0x6ae88a*/
   GDlg::LoadLetterStrings(); /*0x6ae88f*/
   ((Lobby*)(HWND)((Lobby *)hWnd))->InvalidatePlayerSlots(); /*0x6ae896*/
   SetupSkirmishDialogPlayerSlot((HWND)hWnd, 0); /*0x6ae89f*/
@@ -968,7 +968,7 @@ LABEL_44:
     vtable2 = (void *)PlayerCountMap; /*0x6aec09*/
   }
   ResetLobbyFactionTable((int)vtable2); /*0x6aec0b*/
-  Lobby::InvalidateFactionCombos((Lobby *)hWnd); /*0x6aec12*/
+  Lobby::InvalidateFactionCombos( (Lobby *)hWnd); /*0x6aec12*/
   ((Lobby*)(HWND)((Lobby *)hWnd))->InvalidatePlayerSlots(); /*0x6aec19*/
   if ( hWnd && dword_A8B23C ) /*0x6aec29*/
   {
@@ -1212,9 +1212,9 @@ void sub_6ADDF0(HWND a1, int a2, int a3)
     {
       ResourceID4CSF = GetResourceID4CSF((int)((void *)i)); /*0x6adec8*/
       if ( dword_A8B23C && *(unsigned char *)(dword_A8B23C + 60) ) /*0x6aded3*/
-        SetupLobbyPlayerSlots(v8, ResourceID4CSF, 3); /*0x6adedc*/
+        SetupLobbyPlayerSlots( (SessionClass *)(v8), ResourceID4CSF, 3); /*0x6adedc*/
       else
-        SetupLobbyPlayerSlots(v8, ResourceID4CSF, -2); /*0x6adee2*/
+        SetupLobbyPlayerSlots( (SessionClass *)(v8), ResourceID4CSF, -2); /*0x6adee2*/
     }
   }
 }

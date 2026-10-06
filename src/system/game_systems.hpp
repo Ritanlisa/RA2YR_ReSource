@@ -186,6 +186,8 @@ public:
 // Queue — generic queue (1 method)
 // IDA: GetNext
 // ============================================================================
+#ifndef GAMEMD_G2_Queue_DEF  // g57a5 W2d: twin-definition guard (game_systems Queue)
+#define GAMEMD_G2_Queue_DEF 1
 class Queue
 {
 public:
@@ -195,12 +197,16 @@ public:
     static void*   s_Head;         // 0x00
     static void*   s_Tail;         // 0x04
 };
+#endif  // GAMEMD_G2_Queue_DEF
+
 
 // ============================================================================
 // Random — random number generation (4 methods)
 // IDA: Gaussian, State, Range
 // ============================================================================
 #ifndef GAMEMD_TREE_Random  // G42.35h: utility_ext Random carrier wins in tree TUs
+#ifndef GAMEMD_G2_Random_DEF  // g57a5 W2d: twin-definition guard (game_systems Random)
+#define GAMEMD_G2_Random_DEF 1
 class Random
 {
 public:
@@ -217,6 +223,8 @@ public:
     static uint32_t s_Seed;         // 0x00
     static uint32_t s_State[4];     // 0x04
 };
+#endif  // GAMEMD_G2_Random_DEF
+
 
 #endif  // GAMEMD_TREE_Random
 
@@ -229,7 +237,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameInit() = default;
 
-    virtual void InitMultiplayerModes(); // 0x5D86D0
+    virtual void InitMultiplayerModes(int a2, int a3); // 0x5D86D0
 
 };
 // 1 methods in IDA
@@ -239,7 +247,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameLobby() = default;
 
-    virtual void DlgProc(); // 0x5E1CA0
+    virtual void DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6); // 0x5E1CA0  // g57b5 W4: raw 真值补参
 
 };
 // 2 methods in IDA
@@ -343,6 +351,8 @@ public:
 };
 // 12 methods in IDA
 #ifndef GAMEMD_TREE_LoadGame  // G42.35h: e4 flat carrier wins in opt-in TUs
+#ifndef GAMEMD_G2_LoadGame_DEF  // g57a5 W2d: twin-definition guard (game_systems LoadGame)
+#define GAMEMD_G2_LoadGame_DEF 1
 class LoadGame
 {
 public:
@@ -368,6 +378,8 @@ public:
     uint8_t LoadGame_field_0x28[4];
     uint8_t LoadGame_field_0x2C[4];
 };
+#endif  // GAMEMD_G2_LoadGame_DEF
+
 #endif  // GAMEMD_TREE_LoadGame
 // 3 methods in IDA
 // CSP: LoadProgressMgr matched via T1

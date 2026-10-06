@@ -19,7 +19,7 @@ int E4Recv_7AF540::sub_7AF540(HWND hWnd, int * a3)
   int v9; // edx
   int v10; // ecx
 
-  result = (*((int (**))this->vtable1 + 2))(this); /*0x7af546*/
+  result = (*((int (**)(void *))this->vtable1 + 2))(this); /*0x7af546*/
   if ( !(unsigned char)result ) /*0x7af54b*/
   {
     v5 = 0; /*0x7af554*/

@@ -230,3 +230,4 @@ void AudioEventHandle::Stop() {
 
 } // namespace gamemd
 }  // L-fix: close namespace tail 1
+}

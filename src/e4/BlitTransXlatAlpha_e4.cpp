@@ -438,14 +438,14 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block
 
   void *v3; // eax
 
-  v3 = (void *)*((unsigned int *)Block + 2); /*0x49a248*/
-  *(unsigned int *)Block->__pad_0 = &vt_BlitTransXlatAlpha; /*0x49a24b*/
+  v3 = (void *)*((unsigned int *)this + 2); /*0x49a248*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransXlatAlpha;
   FractalNoise::Dtor(v3); /*0x49a252*/
-  *((unsigned int *)Block + 2) = 0; /*0x49a25b*/
-  *(unsigned int *)Block->__pad_0 = &vt_Blitter; /*0x49a264*/
+  *((unsigned int *)this + 2) = 0; /*0x49a25b*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x49a26a*/
-    __3_YAXPAX_Z(Block); /*0x49a26d*/
-  return Block->__pad_0; /*0x49a277*/
+    __3_YAXPAX_Z(this); /*0x49a26d*/
+  return this->__pad_0; /*0x49a277*/
 
 }
 } // namespace gamemd

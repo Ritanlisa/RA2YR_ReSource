@@ -26,6 +26,63 @@ namespace gamemd { using ra2::game::AbstractClass;
 #endif
 #include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AnimClass_e4.hpp"  // gB C2027 supply
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
+extern int AudioConfig;  // 词表 (canon 无条目, int 兜底) L1062
+extern int Matrix3x4;  // 词表 (canon 无条目, int 兜底) L1059
+extern int dword_889FB8;  // 词表 (canon 无条目, int 兜底) L587
+extern int BufferIOFileClass;  // 词表 (canon 无条目, int 兜底) L717
+extern int BuildingTypeClass;  // 词表 (canon 无条目, int 兜底) L957
+extern int House;  // 词表 (canon 无条目, int 兜底) L614
+extern int RawFileClass;  // 词表 (canon 无条目, int 兜底) L707
+// g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int Type;  // 词表 (canon 无条目, int 兜底) L953
+extern int byte_889FC5;  // 词表 (canon 无条目, int 兜底) L570
+extern int dword_889FBC;  // 词表 (canon 无条目, int 兜底) L578
+extern int dword_889FC0;  // 词表 (canon 无条目, int 兜底) L570
+extern int dword_889FC8;  // 词表 (canon 无条目, int 兜底) L577
+extern int dword_889FCC;  // 词表 (canon 无条目, int 兜底) L571
+// g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int dword_A8B230;  // 词表 (canon 无条目, int 兜底) L361
+extern int stru_817BD0;  // 词表 (canon 无条目, int 兜底) L369
+// ---- g57b5 W6 end ----
+// ---- g57b5 W5: qualified-call free-form vocab ----
+namespace gamemd {
+int AnimTypeClass_FindIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int AudioFile_Stop(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int BufferIO_Flush(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int FootClass_MovementAI(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int LayerClass_CoordinatesLegal(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int LayerClass_IsWithinUsableArea(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int WTFMode_ResetUnitFlags(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int WinAPI_Wrapper(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int nullsub_84(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int AbstractClass_Constructor(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int AnimTypeClass_FindIndex(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int AudioFile_Stop(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int BufferIO_Flush(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int FileClass_SetName(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int FootClass_MovementAI(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int House_IsHumanPlayer(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int LayerClass_CoordinatesLegal(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int LayerClass_IsWithinUsableArea(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ObjectClass_ctor(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int WTFMode_ResetUnitFlags(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int WinAPI_Wrapper(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int CCINIClass_GetDB(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int FindIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetHealthRatio(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Random_Range(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int RemoveAircraft(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int StartAudioControllerAt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Wrapper(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int nullsub_84(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+} // namespace gamemd
+// ---- g57b5 W5 end ----
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    int Random_Range(void *a1, int a2, int a3);        // raw 0x6e17e3 Random::Range;
+    void *CCINIClass_GetDB(void *a1);                  // raw 0x415168 CCINIClass::GetDB;
+    void nullsub_84(void);                             // raw 0x41c4b6;
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 // 0x410540
 namespace ra2 { namespace game { 
@@ -124,7 +181,7 @@ int AbstractClass::COMStub_8() {
 
 // 0x414BB0
 namespace ra2 { namespace game { 
-int TechnoClass::SmokeUpdate() {
+int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
     int v2; // ecx
     int *v3; // esi
     int v4; // ecx
@@ -206,7 +263,7 @@ int TechnoClass::SmokeUpdate() {
       goto LABEL_70; /*0x414c94*/
     }
     if ( !v3[413] ) /*0x414c9e*/
-      WinAPI::Wrapper(-2147467261); /*0x414cad*/
+      WinAPI_Wrapper(-2147467261); /*0x414cad*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v3[413] + 64))(v3[413]); /*0x414cbb*/
     IDA_LOBYTE(v6) = *((unsigned char *)v3 + 144); /*0x414cbe*/
     if ( (unsigned char)v6 )
@@ -236,7 +293,7 @@ int TechnoClass::SmokeUpdate() {
             (*(void (__thiscall **)(int *, unsigned int))(*v3 + 968))(v3, 0); /*0x414d9b*/
           }
         }
-        FootClass::MovementAI((FootClass *)v3); /*0x414da3*/
+        FootClass_MovementAI((void *)v3); /*0x414da3*/
         IDA_LOBYTE(v6) = *((unsigned char *)v3 + 144); /*0x414da8*/
         if ( (unsigned char)v6 )
         {
@@ -258,8 +315,8 @@ int TechnoClass::SmokeUpdate() {
             }
             if ( (((unsigned int *)&stru_A8EB00)[416] & 3) == 0 ) /*0x414e34*/
             {
-              v11 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -170, 170); /*0x414e6a*/
-              v12 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -170, 170); /*0x414e75*/
+              v11 = Random_Range((void *)&dword_A8B230[14].NeedsSaveOrLink, -170, 170); /*0x414e6a*/
+              v12 = Random_Range((void *)&dword_A8B230[14].NeedsSaveOrLink, -170, 170); /*0x414e75*/
               v13 = (*(int (__thiscall **)(int *))(*v3 + 456))(v3); /*0x414e77*/
               v14 = v3[41]; /*0x414e82*/
               v15 = v11 + v3[40]; /*0x414e89*/
@@ -296,10 +353,10 @@ int TechnoClass::SmokeUpdate() {
           if ( (*(unsigned char *)(v19 + 3595)
              || *(unsigned char *)(v19 + 3596)
              || (v20 = (__int16 *)(*(int (__thiscall **)(int *, int *))(*v3 + 440))(v3, &v30),
-                 (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], v20, 1))
+                 (unsigned __int8)LayerClass_IsWithinUsableArea((void *)&stru_87F5F0.__pad_58[416], v20, 1))
              || !(*(unsigned __int8 (__thiscall **)(int *))(*v3 + 1244))(v3))
             && ((v21 = (__int16 *)(*(int (__thiscall **)(int *, int *))(*v3 + 440))(v3, &v30),
-                 (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], v21))
+                 (unsigned __int8)LayerClass_CoordinatesLegal((void *)&stru_87F5F0.__pad_58[416], v21))
              || !(*(unsigned __int8 (__thiscall **)(int *))(*v3 + 1244))(v3)) )
           {
             if ( (int *)v3[361] == &g_MissionQueueFrame.briefing[130] ) /*0x414fec*/
@@ -327,7 +384,7 @@ int TechnoClass::SmokeUpdate() {
               && (*(int (__thiscall **)(int *))(*v3 + 456))(v3) > 0 )
             {
               v23 = v3[27] != 0 ? 10 : 80;
-              if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v23 ) /*0x4150d4*/
+              if ( Random_Range((void *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v23 ) /*0x4150d4*/
               {
                 v24 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x4150e0*/
                 if ( v24 ) /*0x4150e7*/
@@ -335,7 +392,7 @@ int TechnoClass::SmokeUpdate() {
                   v34 = v3[39]; /*0x4150eb*/
                   v35 = v3[40]; /*0x4150f7*/
                   v36 = v3[41]; /*0x4150fe*/
-                  Index = AnimTypeClass::FindIndex(&stru_817BD0); /*0x415102*/
+                  Index = AnimTypeClass_FindIndex(&stru_817BD0); /*0x415102*/
                   AnimClass::ctor(v24, *(void **)(((unsigned int *)&FootClass_Array)[3] + 4 * Index), &v34, 0, 1, (void *)0x600, 0, 0); /*0x415127*/
                 }
               }
@@ -346,14 +403,14 @@ int TechnoClass::SmokeUpdate() {
               IDA_LOBYTE(v6) = *(unsigned char *)(v3[433] + 3580); /*0x41513c*/
               if ( (unsigned char)v6 ) /*0x415144*/
               {
-                qmemcpy((void *)(CCINIClass::GetDB((CCINIClass *)(v3 + 69)) + 904), v3 + 232, 0x18u); /*0x415168*/
-                qmemcpy((void *)(CCINIClass::GetDB((CCINIClass *)(v3 + 69)) + 928), v3 + 232, 0x18u); /*0x415184*/
+                qmemcpy((void *)(CCINIClass_GetDB((void *)(v3 + 69)) + 904), v3 + 232, 0x18u); /*0x415168*/
+                qmemcpy((void *)(CCINIClass_GetDB((void *)(v3 + 69)) + 928), v3 + 232, 0x18u); /*0x415184*/
                 v26 = v3[40]; /*0x415188*/
                 v34 = v3[39]; /*0x41518b*/
                 v27 = v3[41]; /*0x41518f*/
                 v35 = v26; /*0x415192*/
                 v36 = v27; /*0x415198*/
-                DB = CCINIClass::GetDB((CCINIClass *)(v3 + 69)); /*0x41519c*/
+                DB = CCINIClass_GetDB((void *)(v3 + 69)); /*0x41519c*/
                 IDA_LOBYTE(v6) = (*(char (__thiscall **)(int, int *))(*(unsigned int *)DB + 436))(DB, &v34); /*0x4151aa*/
               }
             }
@@ -530,7 +587,7 @@ namespace ra2 { namespace game {
 void* AbstractClass::Create() {
     int v2; // eax
 
-    AbstractClass::Constructor(this); /*0x41d303*/
+    AbstractClass_Constructor(this); /*0x41d303*/
     this->vtable1 = &vt_AirstrikeClass; /*0x41d308*/
     this->vtable1 = &vt_AirstrikeClass; /*0x41d30e*/
     this->vtable2 = &vt_AirstrikeClass; /*0x41d315*/
@@ -553,7 +610,7 @@ void* AbstractClass::Create() {
 
 // 0x41D540
 namespace ra2 { namespace game { 
-int ObjectClass::CleanupAirstrikeTarget(int a1) {
+int ObjectClass::CleanupAirstrikeTarget(int a1, int a2) {  // g57b5 W4: raw 真值补参 (a2)
     int v3; // ebp
     int v4; // eax
     int v5; // ecx
@@ -588,7 +645,7 @@ int ObjectClass::CleanupAirstrikeTarget(int a1) {
           v10[2] = v6[2]; /*0x41d5d1*/
           StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 604), v10, 0); /*0x41d5db*/
         }
-        WTFMode::ResetUnitFlags((WTFMode *)this); /*0x41d5e2*/
+        WTFMode_ResetUnitFlags((void *)this); /*0x41d5e2*/
         for ( i = *(unsigned int *)(this + 92); i; i = *(unsigned int *)(this + 92) ) /*0x41d5ec*/
           AirstrikeClass::RemoveAircraft((int *)this, i); /*0x41d5f1*/
         v4 = *(unsigned int *)(this + 80); /*0x41d5fd*/
@@ -605,7 +662,7 @@ int ObjectClass::CleanupAirstrikeTarget(int a1) {
       }
       else if ( v4 && *(unsigned int *)(v4 + 660) == this && (*(int *)(v4 + 108) <= 0 || !*(unsigned char *)(v4 + 144)) ) /*0x41d66e*/
       {
-        IDA_LOBYTE(v4) = WTFMode::ResetUnitFlags((WTFMode *)this); /*0x41d678*/
+        IDA_LOBYTE(v4) = WTFMode_ResetUnitFlags((void *)this); /*0x41d678*/
       }
     }
     else
@@ -680,10 +737,10 @@ int ObjectClass::Set(void* a1) {
         (*(void (__thiscall **)(ObjectClass *))((char *)this->vtable1 + 4))(this); /*0x431ae6*/
         return (int)this; /*0x431aed*/
       }
-      BufferIO::Flush((BufferIO *)this); /*0x431af2*/
+      BufferIO_Flush((void *)this); /*0x431af2*/
       IDA_HIBYTE(this->occupant) = 0; /*0x431af7*/
     }
-    FileClass::SetName((BufferIOFileClass *)this, Source); /*0x431b01*/
+    FileClass_SetName((BufferIOFileClass *)this, Source); /*0x431b01*/
     (*(void (__thiscall **)(ObjectClass *))((char *)this->vtable1 + 4))(this); /*0x431b0a*/
     return (int)this; /*0x431aeb*/
 }
@@ -706,7 +763,7 @@ int ObjectClass::CleanupAudioAndRefs() {
     this->occupant = 0; /*0x4389cd*/
     this->fallRate = 0; /*0x4389d0*/
     this->owningHouseIndex = 0; /*0x4389d3*/
-    result = AudioFile::Stop((AudioFile *)this->ambientSoundController); /*0x4389d6*/
+    result = AudioFile_Stop((void *)this->ambientSoundController); /*0x4389d6*/
     this->customSound_controller[1] = 0; /*0x4389db*/
     return result; /*0x4389de*/
 }
@@ -822,7 +879,7 @@ int AbstractClass::Construct(void* a1) {
           v7 = v6; /*0x43a833*/
           if ( !v6 ) /*0x43a83a*/
             break; /*0x43a83a*/
-          AbstractClass::Constructor(v6); /*0x43a842*/
+          AbstractClass_Constructor(v6); /*0x43a842*/
           v7[1].vtable1 = 0; /*0x43a847*/
           v7[1].vtable1 = 0; /*0x43a84a*/
           v7[1].vtable2 = 0; /*0x43a84d*/
@@ -2458,7 +2515,7 @@ namespace ra2 { namespace game {
 void* ObjectClass::Construct() {
     int v2; // eax
 
-    AbstractClass::Constructor((AbstractClass *)this); /*0x4d08b3*/
+    AbstractClass_Constructor((void *)this); /*0x4d08b3*/
     this->occupant = -1; /*0x4d08bd*/
     this->owningHouseIndex = 0; /*0x4d08c0*/
     this->fallRate = 0; /*0x4d08c3*/
@@ -3225,7 +3282,7 @@ int AbstractClass::ModifyCellTiles(int a1) {
           IDA_LOWORD(v31) = *v7 + v6; /*0x5433b0*/
           IDA_HIWORD(v31) = v27 + v7[1]; /*0x5433b9*/
           *(unsigned int *)v32 = v31; /*0x5433c8*/
-          if ( !(unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v32) ) /*0x5433cc*/
+          if ( !(unsigned __int8)LayerClass_CoordinatesLegal((void *)&dword_87F7E8, v32) ) /*0x5433cc*/
             goto LABEL_44; /*0x5433cc*/
           v8 = (unsigned __int8 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v32); /*0x5433e8*/
           v9 = v2[4].referenceCount; /*0x5433ea*/
@@ -3544,7 +3601,7 @@ namespace ra2 { namespace game {
 int RadioClass::Constructor() {
     wchar_t *v2; // ecx
 
-    ObjectClass::ctor((unsigned int *)this); /*0x5b2da3*/
+    ObjectClass_ctor((unsigned int *)this); /*0x5b2da3*/
     *(unsigned int *)(this + 172) = -1; /*0x5b2dab*/
     *(unsigned int *)(this + 176) = -1; /*0x5b2db1*/
     *(unsigned int *)(this + 180) = -1; /*0x5b2db7*/
@@ -5483,7 +5540,7 @@ namespace ra2 { namespace game {
 int ObjectClass::ProcessUpdate() {
     int v2; // eax
 
-    ObjectClass::ctor(this); /*0x62bb23*/
+    ObjectClass_ctor(this); /*0x62bb23*/
     *((unsigned int *)this + 43) = 0; /*0x62bb30*/
     *((unsigned char *)this + 176) = 0; /*0x62bb36*/
     *((unsigned char *)this + 177) = 0; /*0x62bb3c*/
@@ -6267,7 +6324,7 @@ int MissionClass::Construct(int a1, int a2, int a3) {
     __int16 *WaypointCoords; // eax
     int v16; // eax
 
-    AbstractClass::Constructor((AbstractClass *)this); /*0x6e8a94*/
+    AbstractClass_Constructor((void *)this); /*0x6e8a94*/
     v5 = a3; /*0x6e8a9d*/
     v6 = a4; /*0x6e8aa1*/
     *(unsigned int *)(this + 36) = a2; /*0x6e8aa7*/
@@ -6626,14 +6683,14 @@ int TechnoClass::ExecuteMoveCommand() {
     TeamClass *attachedTag; // ecx
 
     if ( (this->isDiscoveredByCurrentPlayer /*0x6fbfce*/
-       || (unsigned __int8)House::IsHumanPlayer((House *)this->owner)
+       || (unsigned __int8)House_IsHumanPlayer((void *)this->owner)
        || (result = (int)g_hWnd) == 0)
       && (result = ObjectClass::HandleSelection((ObjectClass *)this), (unsigned char)result) )
     {
       attachedTag = (TeamClass *)((unsigned int *)this)[0]; /*0x6fbfd0*/
       if ( attachedTag ) /*0x6fbfd5*/
         TeamClass::Update_0(attachedTag, 33, (int)this, *(int *)&((unsigned int *)&g_BuildingLoadQueue_Array)[24], 0, 0); /*0x6fbfe4*/
-      if ( (unsigned __int8)House::IsHumanPlayer((House *)this->owner) /*0x6fc001*/
+      if ( (unsigned __int8)House_IsHumanPlayer((void *)this->owner) /*0x6fc001*/
         || *(unsigned char *)(this->owner->relatedTagsCapacity + 422) )
       {
         if ( g_MoveFeedback ) /*0x6fc012*/
@@ -7182,7 +7239,7 @@ int ObjectClass::NotifyExpired(void* a1, void* a2) {
       }
       if ( v16 > 10 && !dword_A8E7AC ) /*0x7079fb*/
       {
-        v17 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 4, 8); /*0x707a0d*/
+        v17 = Random_Range((void *)&dword_A8B230[14].NeedsSaveOrLink, 4, 8); /*0x707a0d*/
         v18 = v43[1]; /*0x707a18*/
         this->targetingTimer[0] = (int)dword_A8ED84; /*0x707a1c*/
         this->targetingTimer[1] = v18; /*0x707a22*/
@@ -7345,7 +7402,7 @@ int TechnoClass::CleanupAll(int a1) {
 
     for ( result = this->passengers[1]; result; result = this->passengers[1] ) /*0x707cbb*/
     {
-      DB = CCINIClass::GetDB((CCINIClass *)this->passengers); /*0x707ccc*/
+      DB = CCINIClass_GetDB((void *)this->passengers); /*0x707ccc*/
       v5 = *(int **)(DB + 1492); /*0x707cd1*/
       if ( v5 ) /*0x707cd9*/
         TeamClass::LiberateMember_Start(v5, DB, 0xFFFFFFFF, 0); /*0x707ce0*/
@@ -7888,7 +7945,7 @@ int TechnoClass::DrawPips()
           && (v29 = (*((int (__thiscall **)(TechnoClass *))this->vtable1 + 11))(this),
               InfantryClass::updateDeployAnimation(v29 == 6 ? (InfantryClass *)this : 0)) )
         {
-          DB = (unsigned int *)CCINIClass::GetDB((CCINIClass *)this->passengers); /*0x709ddb*/
+          DB = (unsigned int *)CCINIClass_GetDB((void *)this->passengers); /*0x709ddb*/
           v95 = 0.0; /*0x709de3*/
           if ( (int)v96 > 0 ) /*0x709deb*/
           {
@@ -7921,7 +7978,7 @@ int TechnoClass::DrawPips()
             RA2_OPDEL(Block[0]); /*0x709e53*/
             return result; /*0x709e62*/
           }
-          v33 = (unsigned int *)CCINIClass::GetDB((CCINIClass *)this->passengers); /*0x709e6c*/
+          v33 = (unsigned int *)CCINIClass_GetDB((void *)this->passengers); /*0x709e6c*/
           v95 = 0.0; /*0x709e74*/
           if ( (int)v96 > 0 ) /*0x709e7c*/
           {
@@ -8701,7 +8758,7 @@ int ObjectClass::ProcessFoggedState() {
     unsigned int *v7; // ecx
     int Vtable3; // [esp+14h] [ebp-4h]
 
-    ObjectClass::ctor(this); /*0x71bdf9*/
+    ObjectClass_ctor(this); /*0x71bdf9*/
     *((unsigned int *)this + 43) = 0; /*0x71be03*/
     *((unsigned char *)this + 176) = 0; /*0x71be09*/
     v2 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x71be0f*/
@@ -9247,7 +9304,7 @@ int TechnoClass::Draw(void* a1, void* a2) {
     if ( !*(unsigned char *)(v19 + 3598) || !IDA_BYTE2(v5[1].airstrikeTimer[1]) ) /*0x73d0e9*/
       goto LABEL_39; /*0x73d0e9*/
     if ( !v5[1].alignmentPadding154[0] ) /*0x73d0f7*/
-      WinAPI::Wrapper(-2147467261); /*0x73d106*/
+      WinAPI_Wrapper(-2147467261); /*0x73d106*/
     if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)v5[1].alignmentPadding154[0] + 128))(v5[1].alignmentPadding154[0]) ) /*0x73d114*/
     {
       v20 = (unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)v5->primaryFacing, &v39) >> 12) + 1) >> 1 << 13; /*0x73d145*/
@@ -9478,7 +9535,7 @@ namespace ra2 { namespace game {
 int ObjectClass::Initialize() {
     int v2; // eax
 
-    ObjectClass::ctor(this); /*0x7498d4*/
+    ObjectClass_ctor(this); /*0x7498d4*/
     *((unsigned int *)this + 44) = 0; /*0x7498e2*/
     *((unsigned int *)this + 46) = 0; /*0x7498e8*/
     *((unsigned int *)this + 48) = 0; /*0x7498ee*/
@@ -9836,3 +9893,4 @@ void* AbstractClass::fireSuperWeapon(void* a1, int a2) { return nullptr; } } } {
 }
 }
 }
+

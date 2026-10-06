@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/NetworkClass_e4.hpp"
@@ -71,7 +72,7 @@ AbstractClass * * NetworkClass::RecordEvent()
 {
 
   unsigned char *WaypointCoords; // eax
-  int (__thiscall NetworkClass::* )(void) result;
+  int (NetworkClass::*)(void) result;
   char *v3; // edi
   unsigned char v4[8]; // [esp+8h] [ebp-78h] BYREF
   char v5[108]; // [esp+10h] [ebp-70h] BYREF
@@ -80,7 +81,7 @@ AbstractClass * * NetworkClass::RecordEvent()
   uint8_t v8; // [esp+84h] [ebp+4h]
 
   WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v4, this); /*0x6ffe0a*/
-  EventClass::Add((gamemd::AbstractClass *)(v5), (int)dword_A83D4C->Object_field_0x30, v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
+  ((EventClass *)(gamemd::AbstractClass *)(v5))->Add( (int)dword_A83D4C->Object_field_0x30, v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
   result = FactoryClass::GetFlag(); /*0x6ffe39*/
   if ( (unsigned char)result ) /*0x6ffe40*/
   {

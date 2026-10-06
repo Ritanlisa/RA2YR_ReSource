@@ -25,6 +25,8 @@ struct RectangleStruct;
 
 #ifndef GAMEMD_DEF_GScreenClass
 #define GAMEMD_DEF_GScreenClass
+#ifndef GAMEMD_G2_GScreenClass_DEF  // g57a5 W2d: twin-definition guard (g_screen GScreenClass)
+#define GAMEMD_G2_GScreenClass_DEF 1
 class GScreenClass
 {
 public:
@@ -78,6 +80,8 @@ public:
 protected:
     GScreenClass() = default;
 };
+#endif  // GAMEMD_G2_GScreenClass_DEF
+
 #endif
 
 class DisplayClass;

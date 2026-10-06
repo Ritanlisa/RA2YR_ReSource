@@ -11,6 +11,43 @@
 using ra2::game::AbstractClass;
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
+extern int AudioSource;  // 词表 (canon 无条目, int 兜底) L1306
+extern int Coord;  // 词表 (canon 无条目, int 兜底) L1352
+extern int byte_A8EB7F;  // 词表 (canon 无条目, int 兜底) L1323
+// g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int dword_8871E0;  // 词表 (canon 无条目, int 兜底) L1321
+// ---- g57b5 W6 end ----
+// ---- g57b5 W5: qualified-call free-form vocab ----
+namespace gamemd {
+int Cell_GetGroundHeight(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Coord_GetCoords(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int CreateSmokeEffectAt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int ObjectClass_DetectCloaked(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Cell_GetGroundHeight(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Coord_GetCoords(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ObjectClass_DetectCloaked(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Cell_CanPlaceBuilding(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int ConstructionPositionTracker(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetGroundHeight(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetNthOfType(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Math_RoundToInt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int PlaySoundEffectAt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+} // namespace gamemd
+// ---- g57b5 W5 end ----
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    int Math_RoundToInt(double a1);                    // raw fn_49 Math::RoundToInt 家族 (16 处跨 TU);
+    void *Coord_To_Cell(void *a1, void *a2);           // raw Coord::To_Cell 家族 (fn_42:3240);
+    int Cell_CanPlaceBuilding(void *a1, void *a2);    // raw 0x423b5c Cell::CanPlaceBuilding;
+    int ZCoordToScreenY(int a1);                       // raw 0x423a6c;
+    int StartAudioControllerAt(int aP0, unsigned int *a2, int **a1);  // 0x7509E0 真形;
+    struct stru_87F5F0_host {                      // 0x87F5F0 宿主 (object/supplied_bodies:106 同款)
+        unsigned char __pad_0[0x58];
+        unsigned char __pad_58[0x280 - 0x58];      // 覆盖 __pad_58[416] = +0x1F8
+    };
+    extern stru_87F5F0_host stru_87F5F0;          // data: 0x87F5F0
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 namespace ra2 {
 namespace game {
@@ -1281,15 +1318,15 @@ bool TechnoClass::CreateUnit()
     if ( *(unsigned char *)(_ESI->AnimClass_field_0xC8 + 852) ) /*0x423b0b*/
     {
       ConstructionPositionTracker((TechnoClass *)_ESI); /*0x423b17*/
-      ObjectClass::DetectCloaked((TechnoClass *)_ESI); /*0x423b1e*/
+      ObjectClass_DetectCloaked((TechnoClass *)_ESI); /*0x423b1e*/
     }
     if ( *(unsigned char *)(_ESI->AnimClass_field_0xC8 + 883) ) /*0x423b29*/
     {
       v4 = (unsigned int *)(*(int (__thiscall **)(AnimClass *, int *))(_ESI->AnimClass_field_0x0 + 72))( /*0x423b3c*/
                        _ESI,
                        &AnimClass_field_0x9C);
-      v5 = Coord::To_Cell((Coord *)&dword_87F7E8, v4); /*0x423b45*/
-      _ESI->__pad_194[9] = Cell::CanPlaceBuilding((void *)_ESI->AnimClass_field_0x180, v5) == 0; /*0x423b5c*/
+      v5 = Coord_To_Cell((Coord *)&dword_87F7E8, v4); /*0x423b45*/
+      _ESI->__pad_194[9] = Cell_CanPlaceBuilding((void *)_ESI->AnimClass_field_0x180, v5) == 0; /*0x423b5c*/
     }
     if ( _ESI->AnimClass_field_0xC8 == *(unsigned int *)&dword_8871E0->__pad_A0[24] ) /*0x423b74*/
     {
@@ -1322,7 +1359,7 @@ bool TechnoClass::CreateUnit()
         AnimClass_field_0x9C = _ESI->AnimClass_field_0x9C; /*0x423c54*/
         v137 = *(unsigned int *)_ESI->__pad_A0; /*0x423c60*/
         AnimClass_field_0xA4 = _ESI->AnimClass_field_0xA4; /*0x423c67*/
-        landType = Coord::To_Cell((Coord *)&dword_87F7E8, &AnimClass_field_0x9C)->landType; /*0x423c75*/
+        landType = Coord_To_Cell((Coord *)&dword_87F7E8, &AnimClass_field_0x9C)->landType; /*0x423c75*/
         AnimClass_field_0x9C = _ESI->AnimClass_field_0x9C; /*0x423c82*/
         v137 = *(unsigned int *)_ESI->__pad_A0; /*0x423c89*/
         v11 = _ESI->AnimClass_field_0xA4; /*0x423c8d*/
@@ -1330,7 +1367,7 @@ bool TechnoClass::CreateUnit()
         v137 = *(unsigned int *)_ESI->__pad_A0; /*0x423ca3*/
         v12 = landType == 2; /*0x423caa*/
         AnimClass_field_0xA4 = _ESI->AnimClass_field_0xA4; /*0x423cad*/
-        v13 = v11 >= (int)(Map_MaxHeight + Cell::GetGroundHeight(&AnimClass_field_0x9C)); /*0x423cbe*/
+        v13 = v11 >= (int)(Map_MaxHeight + Cell_GetGroundHeight(&AnimClass_field_0x9C)); /*0x423cbe*/
         v129 = v13; /*0x423cc3*/
         if ( !v12 || v13 ) /*0x423ccf*/
         {
@@ -1342,13 +1379,13 @@ bool TechnoClass::CreateUnit()
             if ( v23 ) /*0x423e26*/
             {
               __asm { fld [esp+88h+var_60] } /*0x423e28*/
-              IDA_LOWORD(v24) = Math::RoundToInt(v1); /*0x423e2c*/
+              IDA_LOWORD(v24) = Math_RoundToInt(v1); /*0x423e2c*/
               __asm { fld [esp+88h+var_5C] } /*0x423e31*/
               AnimClass_field_0x9C = v24; /*0x423e35*/
-              IDA_LOWORD(v25) = Math::RoundToInt(v1); /*0x423e39*/
+              IDA_LOWORD(v25) = Math_RoundToInt(v1); /*0x423e39*/
               __asm { fld [esp+88h+var_58] } /*0x423e3e*/
               v137 = v25; /*0x423e42*/
-              IDA_LOWORD(v26) = Math::RoundToInt(v1); /*0x423e46*/
+              IDA_LOWORD(v26) = Math_RoundToInt(v1); /*0x423e46*/
               AnimClass_field_0xC8 = _ESI->AnimClass_field_0xC8; /*0x423e4b*/
               AnimClass_field_0xA4 = v26; /*0x423e5a*/
               AnimClass::ctor( /*0x423e70*/
@@ -1364,17 +1401,17 @@ bool TechnoClass::CreateUnit()
             _EAX = _ESI->AnimClass_field_0xC8; /*0x423e75*/
             __asm { fld qword ptr [eax+2A8h] } /*0x423e8b*/
             v124 = *(unsigned int *)(_EAX + 816); /*0x423e91*/
-            IDA_LOWORD(v29) = Math::RoundToInt(v1); /*0x423e94*/
+            IDA_LOWORD(v29) = Math_RoundToInt(v1); /*0x423e94*/
             v30 = v29; /*0x423ea0*/
-            Coords = (unsigned int *)Coord::GetCoords(&AnimClass_field_0x9C, 0); /*0x423ea2*/
+            Coords = (unsigned int *)Coord_GetCoords(&AnimClass_field_0x9C, 0); /*0x423ea2*/
             PlaySoundEffectAt(Coords, v30, v123, v124, 1, 0); /*0x423eab*/
             _EAX = _ESI->AnimClass_field_0xC8; /*0x423eb0*/
             __asm { fld qword ptr [eax+2A8h] } /*0x423eba*/
             v33 = *(unsigned int *)(_EAX + 816); /*0x423ec0*/
-            IDA_LOWORD(v34) = Math::RoundToInt(v1); /*0x423ec6*/
+            IDA_LOWORD(v34) = Math_RoundToInt(v1); /*0x423ec6*/
             *(unsigned int *)v132 = v33; /*0x423ecb*/
             v35 = v34; /*0x423ecf*/
-            v36 = (int *)Coord::GetCoords(&AnimClass_field_0x9C, 0); /*0x423ed8*/
+            v36 = (int *)Coord_GetCoords(&AnimClass_field_0x9C, 0); /*0x423ed8*/
             CreateSmokeEffectAt(v35, *(int *)v132, *v36, v36[1], v36[2], v126, 0); /*0x423ef8*/
           }
         }
@@ -1424,7 +1461,7 @@ bool TechnoClass::CreateUnit()
         }
         if ( !v12 || v129 ) /*0x423f07*/
         {
-          v37 = (int *)Coord::GetCoords((int *)&v134, v128); /*0x423f18*/
+          v37 = (int *)Coord_GetCoords((int *)&v134, v128); /*0x423f18*/
           AnimClass_field_0x9C = *v37; /*0x423f1f*/
           v137 = v37[1]; /*0x423f26*/
           AnimClass_field_0xA4 = v37[2]; /*0x423f2d*/
@@ -1497,7 +1534,7 @@ bool TechnoClass::CreateUnit()
                     fstp st
                   }
                   Math::Sqrt(v127); /*0x42403e*/
-                  IDA_LOWORD(v49) = Math::RoundToInt(v1); /*0x424046*/
+                  IDA_LOWORD(v49) = Math_RoundToInt(v1); /*0x424046*/
                   if ( v49 <= *(unsigned int *)(_ESI->AnimClass_field_0xC8 + 828) ) /*0x424057*/
                   {
                     v50 = i & 7; /*0x42407d*/
@@ -1613,7 +1650,7 @@ bool TechnoClass::CreateUnit()
       v67 = (unsigned int *)(*(int (__thiscall **)(AnimClass *, int *))(_ESI->AnimClass_field_0x0 + 72))( /*0x42433f*/
                         _ESI,
                         &AnimClass_field_0x9C);
-      v68 = Coord::To_Cell((Coord *)&dword_87F7E8, v67); /*0x424348*/
+      v68 = Coord_To_Cell((Coord *)&dword_87F7E8, v67); /*0x424348*/
       result = (int)Cell::IsBridge((Cell *)v68); /*0x42434f*/
       if ( result ) /*0x424356*/
         _ESI->__pad_194[7] = 1; /*0x424358*/
@@ -1647,7 +1684,7 @@ bool TechnoClass::CreateUnit()
         AnimClass_field_0x9C = v71 - 384; /*0x4243e6*/
         v137 = v72 - 384; /*0x4243fa*/
         AnimClass_field_0xA4 = v73; /*0x4243fe*/
-        v74 = *(unsigned int *)&Coord::To_Cell((Coord *)&dword_87F7E8, &AnimClass_field_0x9C)->__pad_28[28]; /*0x424407*/
+        v74 = *(unsigned int *)&Coord_To_Cell((Coord *)&dword_87F7E8, &AnimClass_field_0x9C)->__pad_28[28]; /*0x424407*/
         if ( v74 == -1 || *(unsigned int *)(*(&dword_A83D84->vtable1 + v74) + 668) != _ESI->AnimClass_field_0xC8 ) /*0x424425*/
           _ESI->__pad_194[7] = 1; /*0x424427*/
       }
@@ -1724,7 +1761,7 @@ bool TechnoClass::CreateUnit()
           if ( (_AX & 0x100) != 0 || _ESI->__pad_194[4] ) /*0x42459e*/
             goto LABEL_120; /*0x42459e*/
           __asm { fld qword ptr [esi+188h] } /*0x4245ac*/
-          IDA_LOWORD(v87) = Math::RoundToInt(v1); /*0x4245b2*/
+          IDA_LOWORD(v87) = Math_RoundToInt(v1); /*0x4245b2*/
           v88 = v87; /*0x4245b7*/
           v89 = _ESI->AnimClass_field_0xC8; /*0x4245b9*/
           *(unsigned int *)v133 = v88; /*0x4245bf*/
@@ -3437,7 +3474,7 @@ bool ProductionCompletionCallback(TechnoClass* techno)
     {
         if (type->ICBMLauncher || type->SpySat || type->NukeSilo)
         {
-            // IDA: cell = Coord::To_Cell(fetchCoordinatesHere())
+            // IDA: cell = Coord_To_Cell(fetchCoordinatesHere())
             // IDA: building_idx = BuildingClass::FindByCellHash(cell) — sub_485010
             // IDA: if valid: EVA_Announce, optional launch animation (1-in-3 chance),
             //      PlaySoundEffectAt(coords, Rules[346]), House_AnnounceUpgrade,
@@ -3550,7 +3587,7 @@ void ConstructionPositionTracker(TechnoClass* techno)
     // IDA: Section 6: Angle calculation and timer update
     // if (!ProductionBlocked && current != target):
     //   Math::CalcAngle(Y_delta, X_delta) → direction
-    //   Math::RoundToInt(angle) → rotation steps
+    //   Math_RoundToInt(angle) → rotation steps
     //   rotation_steps = type+848 * calculated_steps
     //   CurrentMission = steps + (CurrentFrame/3 % type+848)
     //

@@ -65,7 +65,7 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
   int v7; // ecx
   int v8; // eax
 
-  AbstractClass::COMStub_13((void *)((int)this), aP1); /*0x65ab1a*/
+  AbstractClass::COMStub_13( (void *)((int)this), (void *a1 =)(aP1)); /*0x65ab1a*/
   Power::TimerProcess((&this->radioLinks)[2]); /*0x65ab28*/
   result = (&this->radioLinks)[2]; /*0x65ab2d*/
   for ( i = 0; i < result; ++i ) /*0x65ab37*/
@@ -113,7 +113,7 @@ int RadioClass::LoadState(int aP1, int aP2)
       *(unsigned char *)(v3 + 237) = 0; /*0x65abb6*/
       *(unsigned int *)v6 = (unsigned int)(&vt_VectorClass); /*0x65abba*/
     }
-    result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))((int)v4, &aP2, 4, 0); /*0x65abcc*/
+    result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))( (int)v4, (int *)(&aP2), 4, 0); /*0x65abcc*/
     if ( result >= 0 ) /*0x65abd1*/
     {
       (*(void (**)(int, int, unsigned int))(*(unsigned int *)v6 + 8))((int)v3 + 224, aP2, 0); /*0x65abde*/
@@ -137,7 +137,7 @@ LABEL_8:
       {
         while ( 1 ) /*0x65abf7*/
         {
-          result = (unsigned int)((*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))((int)v4, &aP1, 4, 0));
+          result = (unsigned int)((*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))( (int)v4, (int *)(&aP1), 4, 0));
           if ( result < 0 ) /*0x65abfc*/
             break; /*0x65abfc*/
           *(unsigned int *)(*(unsigned int *)(v3 + 228) + 4 * v7) = (unsigned int)((gamemd::ObjectClass *)((unsigned int)(aP1))); /*0x65ac08*/
@@ -269,7 +269,7 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
   {
     v4 = *(int *)aP1;
     aP2 = a0->radioLinks[2]; /*0x65ac6d*/
-    result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))((int *)aP1, &aP2, 4, 0); /*0x65ac71*/
+    result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))( (int *)aP1, (int *)(&aP2), 4, 0); /*0x65ac71*/
     if ( result >= 0 ) /*0x65ac76*/
     {
       v5 = 0; /*0x65ac7c*/
@@ -281,7 +281,7 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
       {
         while ( 1 ) /*0x65ac93*/
         {
-          result = (*(int (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, a0->radioLinks[1] + 4 * v5, 4, 0); /*0x65ac93*/
+          result = (*(int (**)(int *, int, int, unsigned int))(*aP1 + 16))( (int *)(aP1), a0->radioLinks[1] + 4 * v5, 4, 0); /*0x65ac93*/
           if ( result < 0 ) /*0x65ac98*/
             break; /*0x65ac98*/
           if ( ++v5 >= aP2 ) /*0x65aca1*/

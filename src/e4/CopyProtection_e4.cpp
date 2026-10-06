@@ -38,7 +38,7 @@ char CopyProtection::NotifyLauncher()
   DWORD v2; // esi
   struct tagMSG Msg; // [esp+10h] [ebp-1Ch] BYREF
 
-  Debug::Log(aCopyprotection_1); /*0x49f62c*/
+  ((Debug *)aCopyprotection_1)->Log(); /*0x49f62c*/
   PeekMessageA(&Msg, 0, 0x400u, 0x400u, 0); /*0x49f647*/
   v0 = timeGetTime() + 60000; /*0x49f657*/
   if ( timeGetTime() < v0 ) /*0x49f661*/
@@ -52,10 +52,10 @@ char CopyProtection::NotifyLauncher()
       if ( timeGetTime() >= v0 ) /*0x49f689*/
         goto LABEL_9; /*0x49f689*/
     }
-    SetEvent(v1); /*0x49f690*/
+    SetEvent( (void *)(v1)); /*0x49f690*/
     CloseHandle(v1); /*0x49f697*/
-    Debug::Log(aLauncherNotifi); /*0x49f6a2*/
-    Debug::Log(aWaitingForMess); /*0x49f6ac*/
+    ((Debug *)aLauncherNotifi)->Log(); /*0x49f6a2*/
+    ((Debug *)aWaitingForMess)->Log(); /*0x49f6ac*/
     v2 = timeGetTime() + 10000; /*0x49f6b8*/
     if ( timeGetTime() <= v2 ) /*0x49f6c2*/
     {
@@ -71,7 +71,7 @@ char CopyProtection::NotifyLauncher()
     }
   }
 LABEL_9:
-  Debug::Log(aFailedToNotify); /*0x49f6f2*/
+  ((Debug *)aFailedToNotify)->Log(); /*0x49f6f2*/
   return 0; /*0x49f701*/
 
 }

@@ -310,7 +310,7 @@ void InitializeRadialGradientTexture()
               v5 = (ObjectClass *)RA2_OPNEW(0x78u); /*0x4c17cc*/
               if ( v5 ) /*0x4c17d6*/
               {
-                dword_8A0E04 = (AudioStream *)sub_4A3270(v5, 256, 256, 0); /*0x4c17ec*/
+                dword_8A0E04 = (unsigned int)(AudioStream *)sub_4A3270(v5, 256, 256, 0); /*0x4c17ec*/
                 if ( dword_8A0E04 ) /*0x4c17f1*/
                 {
                   v6 = (unsigned short *)(malloc(0x20000u));
@@ -356,7 +356,7 @@ void InitializeRadialGradientTexture()
                     v21 = v7; /*0x4c18cb*/
                   }
                   while ( v7 + 128 < 256 ); /*0x4c18db*/
-                  if ( AudioStream::ReadSamples(dword_8A0E04, v20) ) /*0x4c18ec*/
+                  if ( AudioStream::ReadSamples( (const void *)(dword_8A0E04), v20) ) /*0x4c18ec*/
                     return 3; /*0x4c18f5*/
                   memset(v25, 0, sizeof(v25)); /*0x4c1911*/
                   v25[0] = 108; /*0x4c1919*/
@@ -365,7 +365,7 @@ void InitializeRadialGradientTexture()
                   {
                     v13 = (gamemd::ObjectClass *)((unsigned int)((ObjectClass *)RA2_OPNEW(0x78u)));
                     if ( v13 ) /*0x4c193a*/
-                      dword_8A0E08 = (DDraw *)sub_4A3270(v13, v25[3], v25[2], 1); /*0x4c194f*/
+                      dword_8A0E08 = (unsigned int)(DDraw *)sub_4A3270(v13, v25[3], v25[2], 1); /*0x4c194f*/
                     else
                       dword_8A0E08 = 0; /*0x4c1956*/
                     v14 = (ObjectClass *)RA2_OPNEW(0x18004u); /*0x4c1965*/
@@ -441,7 +441,7 @@ int E4Recv_4C2790::sub_4C2790()
   {
     ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(this, v4); /*0x4c27aa*/
     ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&((unsigned int *)this)[0], v3); /*0x4c27be*/
-    if ( (uint8_t)ClipLine(v4, v3, &DSurface_ViewBounds.field_0) )
+    if ( (uint8_t)ClipLine( v4, v3, (int)(&DSurface_ViewBounds.field_0)) )
       Lightning::Draw(
         (Lightning *)this,
         (int)this->AbstractClass,
@@ -511,18 +511,18 @@ void sub_4C2830()
     {
       ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v2, v19); /*0x4c28ce*/
       ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v10 + 3, v18); /*0x4c28e2*/
-      if ( (uint8_t)ClipLine(v19, v18, &DSurface_ViewBounds.field_0) ) /*0x4c28f4*/
+      if ( (uint8_t)ClipLine( v19, v18, (int)(&DSurface_ViewBounds.field_0)) ) /*0x4c28f4*/
       {
         v11 = -(*((unsigned char *)v10 + 44) != 0); /*0x4c2904*/
         IDA_LOBYTE(v11) = v11 & 0xFB; /*0x4c2906*/
-        Lightning::Draw((Lightning *)v10, *v10, v10[1], v10[2], v10[3], v10[4], v10[5], v11 + 10); /*0x4c2938*/
+        ((Lightning *)(Lightning *)v10)->Draw( *v10, v10[1], v10[2], v10[3], v10[4], v10[5], v11 + 10); /*0x4c2938*/
       }
       ++v10[7]; /*0x4c293d*/
     }
     *v9 >>= 1; /*0x4c2944*/
     if ( !*((unsigned int *)Block + 10) ) /*0x4c294a*/
     {
-      v12 = (*(int (**)(int *, void **))(dword_8A0E88 + 16))(&dword_8A0E88, &Block); /*0x4c2960*/
+      v12 = (*(int (**)(int *, void **))(dword_8A0E88 + 16))( (int *)(&dword_8A0E88), (void **)(&Block)); /*0x4c2960*/
       if ( v12 != -1 && v12 < dword_8A0E98 && v12 < --dword_8A0E98 ) /*0x4c297b*/
       {
         do /*0x4c2993*/
@@ -677,12 +677,12 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
 }
 // 0x4C83E0
 namespace gamemd {
-void DialogFunc(HWND hDlg, UINT, WPARAM, LPARAM)
+void DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
 {
   if ( a2 > 0x111 ) /*0x4c83ea*/
   {
     if ( a2 == 534 ) /*0x4c84bc*/
-      return (uint8_t)Window::ClampToScreen(a4); /*0x4c84d6*/
+      return (uint8_t)Window::ClampToScreen( (int *)(a4)); /*0x4c84d6*/
     return 0; /*0x4c84bc*/
   }
   if ( a2 == 273 ) /*0x4c83f0*/
@@ -707,7 +707,7 @@ void DialogFunc(HWND hDlg, UINT, WPARAM, LPARAM)
   }
   if ( a2 != 272 ) /*0x4c83fc*/
     return 0; /*0x4c84c1*/
-  Debug::Log(aWmInitdialog); /*0x4c8407*/
+  ((Debug *)aWmInitdialog)->Log(); /*0x4c8407*/
   SetDlgItemTextA(hDlg, 1156, Buffer); /*0x4c841e*/
   SetFocus(hDlg); /*0x4c8425*/
   if ( g_hWnd ) /*0x4c8433*/
@@ -838,7 +838,7 @@ AbstractClass * * E4Recv_4CB580::sub_4CB580(char * Destination, char * Source, i
   unsigned int vtable1_high; // edx
   char *v6; // edi
 
-  strncpy((char *)Destination, Source, 4u); /*0x4cb58d*/
+  strncpy( (char *)Destination, (const char *)(Source), 4u); /*0x4cb58d*/
   LOWORD(((unsigned int *)Destination)[0]) = 1; /*0x4cb598*/
   HIWORD(((unsigned int *)Destination)[0]) = 1; /*0x4cb59c*/
   v4 = (char *)__2_YAPAXI_Z(1u); /*0x4cb5a0*/
@@ -861,7 +861,7 @@ void * E4Recv_4CB640::sub_4CB640(char * Destination, RandomStruct * aP1, int a3)
   unsigned int vtable1_high; // edx
   char *v6; // edi
 
-  strncpy((char *)Destination, aP1, 4u); /*0x4cb64d*/
+  strncpy( (char *)Destination, (const char *)(aP1), 4u); /*0x4cb64d*/
   LOWORD(((unsigned int *)Destination)[0]) = 3; /*0x4cb654*/
   HIWORD(((unsigned int *)Destination)[0]) = 2; /*0x4cb65a*/
   v4 = (char *)__2_YAPAXI_Z(2u); /*0x4cb660*/
@@ -884,7 +884,7 @@ void * E4Recv_4CB6A0::sub_4CB6A0(char * Destination, RandomStruct * aP1, int a3)
   unsigned int vtable1_high; // edx
   char *v6; // edi
 
-  strncpy((char *)Destination, aP1, 4u); /*0x4cb6ad*/
+  strncpy( (char *)Destination, (const char *)(aP1), 4u); /*0x4cb6ad*/
   LOWORD(((unsigned int *)Destination)[0]) = 4; /*0x4cb6b4*/
   HIWORD(((unsigned int *)Destination)[0]) = 2; /*0x4cb6ba*/
   v4 = (char *)__2_YAPAXI_Z(2u); /*0x4cb6c0*/
@@ -959,15 +959,15 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
 
   v6 = (int **)(a1 + 12); /*0x4cefb6*/
   v59 = a1; /*0x4cefb9*/
-  (*(void (**)(unsigned int, float *))(**(unsigned int **)(a1 + 12) + 440))(*(unsigned int *)(a1 + 12), &v58); /*0x4cefc7*/
+  (*(void (**)(unsigned int, float *))(**(unsigned int **)(a1 + 12) + 440))( *(unsigned int *)(a1 + 12), (float *)(&v58)); /*0x4cefc7*/
   v7 = *v6; /*0x4cefcd*/
   v55 = 0; /*0x4cefcf*/
   if ( v7 ) /*0x4cefd9*/
   {
-    v8 = ComPtr::ReleaseAndSet(&v55, v6); /*0x4cefe0*/
+    v8 = ComPtr::ReleaseAndSet( (void)(&v55), v6); /*0x4cefe0*/
     if ( v8 < 0 && v8 != -2147467262 ) /*0x4cefee*/
       WinAPI::Wrapper(v8); /*0x4ceff1*/
-    if ( v55 && (*v6)[173] && (*v6)[191] && (*(int (**)(int))(v55->q018)(v55) ) /*0x4cf017*/
+    if ( v55 && (*v6)[173] && (*v6)[191] && (*(int (**)(int))(v55->q018))(v55) ) /*0x4cf017*/
       a3 = 0; /*0x4cf01e*/
   }
   if ( *v6 && (*(int (**)(int *))(**v6 + 44))(*v6) == 2 )
@@ -1029,10 +1029,10 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   v21 = v19[1] - v12; /*0x4cf171*/
   IDA_LODWORD(a4) = v20 - v11; /*0x4cf173*/
   v61 = v21; /*0x4cf17b*/
-  Vector::TwoDMagnitudeMath((int *)&a4); /*0x4cf17f*/
+  Vector::TwoDMagnitudeMath( (int *)&a4); /*0x4cf17f*/
   v23 = (int)v22; /*0x4cf184*/
   v56 = v22; /*0x4cf18c*/
-  if ( !v55 || !(*(int (**)(int))(v55->q020)(v55) ) /*0x4cf197*/
+  if ( !v55 || !(*(int (**)(int))(v55->q020))(v55) ) /*0x4cf197*/
   {
     v24 = IDA_LODWORD(a4); /*0x4cf1a2*/
     a5 = a5; /*0x4cf1a6*/
@@ -1044,14 +1044,14 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     v28 = *(unsigned int *)((Cell *)(&v58))->GetHeight(v27, (int *)&a4); /*0x4cf1d5*/
     if ( !v55 ) /*0x4cf1dd*/
       goto LABEL_32; /*0x4cf1dd*/
-    if ( !(*(int (**)(int))(v55->q018)(v55) ) /*0x4cf1e2*/
+    if ( !(*(int (**)(int))(v55->q018))(v55) ) /*0x4cf1e2*/
       goto LABEL_32; /*0x4cf1e2*/
     v29 = (int *)(*(int (**)(int *, int *))(**v6 + 72))(*v6, v63); /*0x4cf1f2*/
     v30 = *v29; /*0x4cf1f5*/
     v31 = v29[1] - a5; /*0x4cf1fc*/
     IDA_LODWORD(a4) = v30 - v24; /*0x4cf1fe*/
     v61 = v31; /*0x4cf206*/
-    Vector::TwoDMagnitudeMath((int *)&a4); /*0x4cf20a*/
+    Vector::TwoDMagnitudeMath( (int *)&a4); /*0x4cf20a*/
     if ( v32 > 768 /*0x4cf248*/
       || (IDA_LOWORD(v58) = 0x2000,
           IDA_LOWORD(a4) = v28 - *(unsigned short *)((ProgressTimer *)((unsigned short *)*v6 + 452))->GetValue(&a4),
@@ -1066,17 +1066,17 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
       Height = (float *)((Cell *)(&a4))->GetHeight(v34, v63); /*0x4cf277*/
       v36 = (char *)(*v6 + 226); /*0x4cf285*/
       v58 = *Height; /*0x4cf28b*/
-      FacingClass::Update(v36, &v58); /*0x4cf28f*/
+      ((FacingClass *)v36)->Update( &v58); /*0x4cf28f*/
     }
     v23 = (int)v56; /*0x4cf294*/
   }
   if ( v23 >= 256 || !a3 || *(unsigned char *)((*(int (**)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf2bc*/
   {
-    if ( !v55 || !(*(int (**)(int))(v55->q020)(v55) ) /*0x4cf363*/
+    if ( !v55 || !(*(int (**)(int))(v55->q020))(v55) ) /*0x4cf363*/
     {
       v38 = (*(int (**)(int *, unsigned int *))(**v6 + 72))(*v6, v64); /*0x4cf373*/
       v58 = *(float *)v38; /*0x4cf37f*/
-      v39 = Math::CalcAngle((double)*(int *)(v38 + 4) - (double)a5, (double)IDA_SLODWORD(a4) - (double)IDA_SLODWORD(v58)); /*0x4cf398*/
+      v39 = ((Math *)(double)*(int *)(v38 + 4) - (double)a5)->CalcAngle( (double)IDA_SLODWORD(a4) - (double)IDA_SLODWORD(v58)); /*0x4cf398*/
       IDA_LOWORD(a4) = Math::RoundToInt((v39 - 1.570796326794897) * -10430.06004058427); /*0x4cf3b1*/
       a4 = a4; /*0x4cf3ba*/
       v37 = (int *)&a4; /*0x4cf3be*/
@@ -1092,12 +1092,12 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   LABEL_43:
       v37 = ((ObjectClass *)(*v6))->CalcTargetFacing((int *)&a4, (*v6)[173]); /*0x4cf304*/
   LABEL_51:
-      FacingClass::Update((char *)*v6 + 928, v37); /*0x4cf3c2*/
+      ((FacingClass *)(char *)*v6 + 928)->Update( v37); /*0x4cf3c2*/
       goto LABEL_52; /*0x4cf3cb*/
     }
-    if ( !(*(int (**)(int))(v55->q018)(v55) ) /*0x4cf2e7*/
+    if ( !(*(int (**)(int))(v55->q018))(v55) ) /*0x4cf2e7*/
     {
-      if ( !v55 || !(*(int (**)(int))(v55->q020)(v55) ) /*0x4cf2f9*/
+      if ( !v55 || !(*(int (**)(int))(v55->q020))(v55) ) /*0x4cf2f9*/
         goto LABEL_43; /*0x4cf2fe*/
     }
     else
@@ -1105,10 +1105,10 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   LABEL_44:
       IDA_LOWORD(a4) = 0; /*0x4cf320*/
       if ( !v55 /*0x4cf34a*/
-        || (IDA_LOWORD(a4) = (*(uint16_t (**)(int))(v55->u32_10)(v55) << 13, !v55)
+        || (IDA_LOWORD(a4) = (*(uint16_t (**)(int))(v55->u32_10))(v55) << 13, !v55)
         || !(*(int (**)(int))(v55->q020)(v55) )
       {
-        FacingClass::Update((char *)*v6 + 928, &a4); /*0x4cf356*/
+        ((FacingClass *)(char *)*v6 + 928)->Update( &a4); /*0x4cf356*/
       }
     }
   }
@@ -1146,10 +1146,10 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     *(unsigned int *)(v59 + 56) = (*(int (**)(int))(*(unsigned int *)v51 + 188))(v51); /*0x4cf4cf*/
     goto LABEL_60; /*0x4cf4cf*/
   }
-  *(unsigned int *)(v59 + 56) = *(unsigned int *)(v59 + 36) - Cell::GetGroundHeight((unsigned int *)(v59 + 28)); /*0x4cf3f6*/
+  *(unsigned int *)(v59 + 56) = *(unsigned int *)(v59 + 36) - Cell::GetGroundHeight( (unsigned int *)(v59 + 28)); /*0x4cf3f6*/
   LABEL_60:
   if ( !*(unsigned char *)((*(int (**)(int *))(**v6 + 132))(*v6) + 3367) /*0x4cf4e8*/
-    && (uint8_t)DamageArea::CheckOccupancyEligibility(v59) )
+    && (uint8_t)((DamageArea *)v59)->CheckOccupancyEligibility() )
   {
     if ( v23 >= 128 ) /*0x4cf4f7*/
     {
@@ -1175,18 +1175,18 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
         *(unsigned int *)(v59 + 68) = 0; /*0x4cf504*/
       }
       if ( !*(unsigned char *)(v59 + 92) && *(double *)(v59 + 72) < 0.05 ) /*0x4cf51c*/
-        LocomotionClass::CheckBridgeBlock(v59); /*0x4cf520*/
+        ((LocomotionClass *)v59)->CheckBridgeBlock(); /*0x4cf520*/
     }
   }
   if ( *((unsigned char *)*v6 + 131) ) /*0x4cf55f*/
   {
-    if ( !(uint8_t)House::IsHumanPlayer((void *)(*v6)[135]) ) /*0x4cf573*/
+    if ( !(uint8_t)((House *)(void *)(*v6)[135])->IsHumanPlayer() ) /*0x4cf573*/
     {
       v52 = (int)(*v6 + 39); /*0x4cf57e*/
       a4 = *(float *)v52; /*0x4cf586*/
       a5 = *(unsigned int *)(v52 + 4); /*0x4cf592*/
       a6 = *(unsigned int *)(v52 + 8); /*0x4cf599*/
-      if ( Cell::IsPassable(&a4) /*0x4cf5dd*/
+      if ( Cell::IsPassable( (unsigned int)(&a4)) /*0x4cf5dd*/
         || (*(unsigned int *)dword_A8B230 & 0x1000) != 0
         && (v53 = (int)(*v6 + 39),
             a4 = *(float *)v53,
@@ -1199,7 +1199,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     }
   }
   if ( v55 ) /*0x4cf5f8*/
-    (*(void (**)(int))(v55->q008)(v55); /*0x4cf5fd*/
+    (*(void (**)(int))(v55->q008))(v55);  /*0x4cf5fd*/
   return v23; /*0x4cf600*/
 }
 }
@@ -1653,7 +1653,7 @@ unsigned char * sub_4C37D0(int a1, unsigned char * a2, int a3, unsigned char a4)
       v8 = 0; /*0x4c384d*/
       for ( i = 240; i < 255; ++i ) /*0x4c384f*/
       {
-        v10 = Palette::CalcColorDistance((uint8_t *)(a1 + 2 * (i % 256) + i % 256), (uint8_t *)&v13); /*0x4c3870*/
+        v10 = Palette::CalcColorDistance( (unsigned char *)((uint8_t *)(a1 + 2 * (i % 256) + i % 256)), (void)((uint8_t *)&v13)); /*0x4c3870*/
         if ( v7 == -1 || v10 < v8 ) /*0x4c387c*/
         {
           v7 = i; /*0x4c387e*/
@@ -3059,7 +3059,7 @@ u_short E4Recv_4CB8B0::sub_4CB8B0()
   v2 = htons((u_short)((unsigned int *)this)[0]); /*0x4cb8ec*/
   vtable1_high = HIWORD(((unsigned int *)this)[0]); /*0x4cb8f6*/
   LOWORD(((unsigned int *)this)[0]) = v2; /*0x4cb8fa*/
-  result = htons(vtable1_high); /*0x4cb8ff*/
+  result = htons( (void *)(vtable1_high)); /*0x4cb8ff*/
   HIWORD(((unsigned int *)this)[0]) = result; /*0x4cb904*/
   return result; /*0x4cb908*/
 
@@ -3512,9 +3512,9 @@ namespace gamemd {
 void E4Recv_4CCA70::sub_4CCA70()
 {
 
-  *(unsigned int *)this->LocomotionClass = &vt_FlyLocomotionClass; /*0x4cca70*/
-  *(unsigned int *)&this->LocomotionClass[4] = &vt_FlyLocomotionClass; /*0x4cca76*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x4cca7d*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_FlyLocomotionClass;
+  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_FlyLocomotionClass;
+  ((LocomotionClass *)(LocomotionClass *)this)->Construct(); /*0x4cca7d*/
 
 }
 } // namespace gamemd

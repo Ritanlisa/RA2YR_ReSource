@@ -36,7 +36,7 @@
 
 // 0x5D1D80
 namespace gamemd {
-int Session::RemoveTeam(int (__thiscall ***aP1)(unsigned int, int))
+int Session::RemoveTeam(int (***aP1)(unsigned int, int))
 {
 
   int result; // eax
@@ -108,7 +108,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
     case 2: /*0x5e7521*/
       if ( FindAndValidateMap((gamemd::ObjectClass *)(byte_A8B8E0), dword_A8BB04,(const char *)(&byte_A8BAE2), dword_A8BB08, 0) ) /*0x5e774c*/
         goto LABEL_42; /*0x5e7753*/
-      memset(Str, 0, 250); /*0x5e7764*/
+      memset( (void *)(Str), 0, 250); /*0x5e7764*/
       *(unsigned int *)Str = 119; /*0x5e776c*/
       result = (void **)(((gamemd::Timer *)this)->GetTicks()); /*0x5e7774*/
       v9 = 1800; /*0x5e7779*/
@@ -153,7 +153,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
         goto LABEL_42; /*0x5e7557*/
       }
       InvalidateRect((HWND)hWnd, 0, 0); /*0x5e7560*/
-      memset(Str, 0, sizeof(Str)); /*0x5e7571*/
+      memset( (void *)(Str), 0, sizeof(Str)); /*0x5e7571*/
       v20 = 0; /*0x5e7573*/
       v21 = 0; /*0x5e7575*/
       *(unsigned int *)Str = 27; /*0x5e7576*/
@@ -234,7 +234,7 @@ LABEL_44:
   {
     if ( *(unsigned int *)&dword_A8B238 == 3 ) /*0x5e7584*/
     {
-      v3 = Network::SendMessage(&unk_A8E9C0.Socket, (int)Str, 47, 1, (int)&stru_A8BB1C, 0, 0); /*0x5e759d*/
+      v3 = ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)Str, 47, 1, (int)&stru_A8BB1C, 0, 0); /*0x5e759d*/
     }
     else
     {
@@ -242,7 +242,7 @@ LABEL_44:
       if ( !Flagged ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
       v5 = (char *)(CharToWideString((unsigned char *)(Flagged + 36))); /*0x5e75b0*/
-      v3 = (int)(Network::SendToPlayer((int)&unk_A8E9C0, (int)Str, 47,(wchar_t *)(1), (wchar_t *)v5)); /*0x5e75c4*/
+      v3 = (int)(Network::SendToPlayer( (int)&unk_A8E9C0, (int)Str, 47, (wchar_t *)(1), (void)((wchar_t *)v5))); /*0x5e75c4*/
     }
     if ( v3 ) /*0x5e75cb*/
     {

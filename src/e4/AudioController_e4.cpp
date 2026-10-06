@@ -79,7 +79,7 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
           v13 = v18; /*0x409ef1*/
         if ( v13 ) /*0x409ef5*/
         {
-          qmemcpy(a2, (const void *)(*(unsigned int *)(a1 + 144) + *(unsigned int *)(a1 + 148) - v11), v13); /*0x409f16*/
+          qmemcpy( (void *)(a2), (const void *)(*(unsigned int *)(a1 + 144) + *(unsigned int *)(a1 + 148) - v11), v13); /*0x409f16*/
           v21 += v13; /*0x409f39*/
           a2 += v13; /*0x409f3d*/
           v18 -= v13; /*0x409f41*/

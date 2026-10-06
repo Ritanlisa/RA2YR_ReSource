@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_Selection 1  // G57b: e4 flat-carrier opt-in (suppress core/aux twin)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Selection_e4.hpp"
@@ -17,7 +18,7 @@ int Selection::SetCurrent()
 
   int result; // eax
 
-  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = this; /*0x731d00*/
+  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = (unsigned int)this;
   LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 0; /*0x731d06*/
   return result; /*0x731d0d*/
 
@@ -25,7 +26,7 @@ int Selection::SetCurrent()
 } // namespace gamemd
 // 0x732D00
 namespace gamemd {
-bool Selection::GetFlag(void *a1)
+bool ((Selection *)void *a1)->GetFlag()
 {
 
   return byte_B0FE65; /*0x732d05*/

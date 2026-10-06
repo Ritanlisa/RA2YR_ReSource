@@ -91,7 +91,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v21))->Construct(0, 0); /*0x477121*/
     *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&TypeList_int_vftable); /*0x47712a*/
-    for ( i = strtok(v21.__pad_20, Str); i; i = strtok(0, Str) ) /*0x477144*/
+    for ( i = strtok(v21.__pad_20, (char *)&::Delimiter); i; i = strtok(0, (char *)&::Delimiter) ) /*0x477144*/
     {
       if ( !*i ) /*0x47714a*/
         break; /*0x47714d*/
@@ -564,7 +564,7 @@ int sub_47AA50(char a1)
   CHAR FileName[8]; // [esp+0h] [ebp-148h] BYREF
   struct _WIN32_FIND_DATAA FindFileData; // [esp+8h] [ebp-140h] BYREF
 
-  strcpy(FileName, "?:\\*.*"); /*0x47aa65*/
+  strcpy( (char *)(FileName), "?:\\*.*"); /*0x47aa65*/
   FileName[0] = a1 + 65; /*0x47aa6e*/
   FirstFileA = FindFirstFileA(FileName, &FindFileData); /*0x47aa85*/
   if ( FirstFileA == (HANDLE)-1 ) /*0x47aa8e*/
@@ -653,10 +653,10 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   else
   {
     *(unsigned char *)(a1 + 286) = 0; /*0x47e10d*/
-    CellClass::UpdateAnimations((CellClass *)a1); /*0x47e114*/
+    CellClass::UpdateAnimations( (CellClass *)a1); /*0x47e114*/
   }
   p_smudgeTypeIndex = &v4->smudgeTypeIndex; /*0x47e122*/
-  BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)&v4->smudgeTypeIndex); /*0x47e126*/
+  ((BuildingClass *)(int *)&stru_87F5F0.__pad_58[416])->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e126*/
   if ( a3 < 8 ) /*0x47e132*/
   {
     IDA_LOWORD(v41) = *p_smudgeTypeIndex + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e157*/
@@ -686,7 +686,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     v4->powerup = 0; /*0x47e1e8*/
     CellClass::UpdateAnimations(v4); /*0x47e1ef*/
   }
-  BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)&v4->smudgeTypeIndex); /*0x47e201*/
+  ((BuildingClass *)(int *)&stru_87F5F0.__pad_58[416])->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e201*/
   v18 = a3; /*0x47e206*/
   if ( a3 < 8 ) /*0x47e20d*/
   {
@@ -717,7 +717,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     v4->powerup = 0; /*0x47e2ae*/
     CellClass::UpdateAnimations(v4); /*0x47e2b5*/
   }
-  BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)&v4->smudgeTypeIndex); /*0x47e2c7*/
+  ((BuildingClass *)(int *)&stru_87F5F0.__pad_58[416])->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e2c7*/
   v24 = a3; /*0x47e2cc*/
   if ( a3 < 8 ) /*0x47e2d3*/
   {
@@ -768,10 +768,10 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   else
   {
     *(unsigned char *)(v28 + 286) = 0; /*0x47e3e5*/
-    CellClass::UpdateAnimations((CellClass *)v28); /*0x47e3ec*/
+    CellClass::UpdateAnimations( (CellClass *)v28); /*0x47e3ec*/
   }
   v35 = (int *)(v28 + 36); /*0x47e3f1*/
-  result = BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)v35); /*0x47e3fa*/
+  result = ((BuildingClass *)(int *)&stru_87F5F0.__pad_58[416])->AddUpgrade( (int)v35); /*0x47e3fa*/
   if ( a3 == 6 ) /*0x47e404*/
   {
     a4 = *v35; /*0x47e40e*/
@@ -865,10 +865,10 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   else
   {
     *(unsigned char *)(a1 + 286) = 0; /*0x47e53d*/
-    CellClass::UpdateAnimations((CellClass *)a1); /*0x47e544*/
+    CellClass::UpdateAnimations( (CellClass *)a1); /*0x47e544*/
   }
   p_smudgeTypeIndex = &v4->smudgeTypeIndex; /*0x47e552*/
-  BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)&v4->smudgeTypeIndex); /*0x47e556*/
+  ((BuildingClass *)(int *)&stru_87F5F0.__pad_58[416])->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e556*/
   if ( a3 < 8 ) /*0x47e562*/
   {
     IDA_LOWORD(v41) = *p_smudgeTypeIndex + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e587*/
@@ -898,7 +898,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     v4->powerup = 0; /*0x47e618*/
     CellClass::UpdateAnimations(v4); /*0x47e61f*/
   }
-  BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)&v4->smudgeTypeIndex); /*0x47e631*/
+  ((BuildingClass *)(int *)&stru_87F5F0.__pad_58[416])->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e631*/
   v18 = a3; /*0x47e636*/
   if ( a3 < 8 ) /*0x47e63d*/
   {
@@ -929,7 +929,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     v4->powerup = 0; /*0x47e6de*/
     CellClass::UpdateAnimations(v4); /*0x47e6e5*/
   }
-  BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)&v4->smudgeTypeIndex); /*0x47e6f7*/
+  ((BuildingClass *)(int *)&stru_87F5F0.__pad_58[416])->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e6f7*/
   v24 = a3; /*0x47e6fc*/
   if ( a3 < 8 ) /*0x47e703*/
   {
@@ -980,10 +980,10 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   else
   {
     *(unsigned char *)(v28 + 286) = 0; /*0x47e815*/
-    CellClass::UpdateAnimations((CellClass *)v28); /*0x47e81c*/
+    CellClass::UpdateAnimations( (CellClass *)v28); /*0x47e81c*/
   }
   v35 = (int *)(v28 + 36); /*0x47e821*/
-  result = BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)v35); /*0x47e82a*/
+  result = ((BuildingClass *)(int *)&stru_87F5F0.__pad_58[416])->AddUpgrade( (int)v35); /*0x47e82a*/
   if ( a3 == 6 ) /*0x47e834*/
   {
     a4 = *v35; /*0x47e83e*/
@@ -1095,7 +1095,7 @@ void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
           }
           v31 = v28 + v9 - v11; /*0x47f118*/
           v30 = v9 + *((unsigned int *)dword_87E8A4 + 10) - v11; /*0x47f12e*/
-          SubFile = MixFileClass::GetSubFile(v33, a3); /*0x47f142*/
+          SubFile = ((MixFileClass *)v33)->GetSubFile( a3); /*0x47f142*/
           result = ((StreamClass *)((int)dword_87E8A4))->ReadAndSeek(v9, v35 - dword_886FA4); /*0x47f14c*/
           v13 = v32 - v35; /*0x47f15b*/
           v14 = (v32 - v35) * *((unsigned int *)dword_87E8A4 + 10); /*0x47f16d*/
@@ -1254,7 +1254,7 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
           v39 = v9; /*0x47f350*/
           v28 = v32 + v14 - v9; /*0x47f362*/
           v30 = v14 + *((unsigned int *)dword_87E8A4 + 10) - v9; /*0x47f373*/
-          SubFileMixFileClass = MixFileClass::GetSubFile((char **)dword_89E760, a3); /*0x47f38d*/
+          SubFileMixFileClass = ((MixFileClass *)(char **)dword_89E760)->GetSubFile( a3); /*0x47f38d*/
           result = (unsigned short *)((unsigned int *)((unsigned short *)((StreamClass *)((int)dword_87E8A4))->ReadAndSeek(v14, v12 - dword_886FA4))); /*0x47f397*/
           v16 = (unsigned int *)(dword_87E8A4); /*0x47f3a5*/
           v41 = (uint8_t *)(v15 + v32 * v13 + SubFileMixFileClass); /*0x47f3b4*/
@@ -1832,7 +1832,7 @@ unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
     }
     *((unsigned int *)this + 7) = *(CarryoverClass *)(*(unsigned int *)(*(unsigned int *)&v3[135] + 52) + 184); /*0x4737c7*/
     *((unsigned int *)this + 6) = v3[27]; /*0x4737cd*/
-    *((unsigned int *)this + 5) = *(CarryoverClass *)(*(int (**)(CarryoverClass *, unsigned int **))(*(unsigned int *)v3 + 440))(v3, &a2); /*0x4737df*/
+    *((unsigned int *)this + 5) = *(CarryoverClass *)(*(int (**)(CarryoverClass *, unsigned int **))(*(unsigned int *)v3 + 440))( v3, (unsigned int **)(&a2)); /*0x4737df*/
   }
   return (unsigned int *)(this); /*0x4737e4*/
 
@@ -2015,7 +2015,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   int v13; // [esp+44h] [ebp-44h]
 
   if ( !a3 ) /*0x474552*/
-    return INIClass::WriteToString((INIClass *)this, aP1); /*0x47455c*/
+    return ((INIClass *)(INIClass *)this)->WriteToString( aP1); /*0x47455c*/
   INIClass::ClearSection((int *)this, (int)g_INI_Key_Digest, 0); /*0x474575*/
   memset(&v6.SHA1_field_0x04, 0, 9); /*0x47457e*/
   v12 = 0; /*0x47458d*/
@@ -2025,17 +2025,17 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   v9 = -1732584194; /*0x4745a5*/
   v10 = 271733878; /*0x4745ad*/
   v11 = -1009589776; /*0x4745b5*/
-  *(unsigned int *)v6.__pad_0 = &vt_SHAPipe; /*0x4745bd*/
-  INIClass::WriteToString((INIClass *)this, (int)&v6); /*0x4745c5*/
+  *(unsigned int *)v6.__pad_0 = (unsigned int)&vt_SHAPipe;
+  ((INIClass *)(INIClass *)this)->WriteToString( (int)&v6); /*0x4745c5*/
   ((SHA1 *)(&v6))->ComputeThunk((char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
-  Pipe::Dtor((Pipe *)&v6); /*0x4745df*/
+  Pipe::Dtor( (void *a1 =)((Pipe *)&v6)); /*0x4745df*/
   INIClass::ReadBase64Data( /*0x4745ee*/
     (char *)this,
     (uint8_t *)g_INI_Key_Digest,
     (int)&this->ambientSoundController[1] + 1,
     20);
-  v5 = INIClass::WriteToString((INIClass *)this, aP1); /*0x47460a*/
+  v5 = ((INIClass *)(INIClass *)this)->WriteToString( aP1); /*0x47460a*/
   INIClass::ClearSection((int *)this, (int)g_INI_Key_Digest, 0); /*0x47460c*/
   return (gamemd::CCINIClass *)(v5); /*0x474561*/
 
@@ -2047,7 +2047,7 @@ namespace gamemd {
 char E4Recv_474660::sub_474660(unsigned char * Block, char * a3, int a4)
 {
 
-  return ((INIClass *)(char *)this)->SetDouble(Block, a3, (double)a4 * 0.00390625); /*0x47467f*/
+  return ((INIClass *)(char *)this)->SetDouble(this, a3, (double)a4 * 0.00390625); /*0x47467f*/
 
 }
 } // namespace gamemd
@@ -2074,11 +2074,11 @@ int E4Recv_476E20::sub_476E20()
   v6 = -1732584194; /*0x476e54*/
   v7 = 271733878; /*0x476e5c*/
   v8 = -1009589776; /*0x476e64*/
-  *(unsigned int *)v3.__pad_0 = &vt_SHAPipe; /*0x476e6c*/
-  INIClass::WriteToString((INIClass *)this, (int)&v3); /*0x476e74*/
+  *(unsigned int *)v3.__pad_0 = (unsigned int)&vt_SHAPipe;
+  ((INIClass *)(INIClass *)this)->WriteToString( (int)&v3); /*0x476e74*/
   ((SHA1 *)(&v3))->ComputeThunk((char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/
-  return Pipe::Dtor((Pipe *)&v3); /*0x476e93*/
+  return Pipe::Dtor( (void *a1 =)((Pipe *)&v3)); /*0x476e93*/
 
 }
 } // namespace gamemd
@@ -2478,7 +2478,7 @@ CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
 
   char *v3; // eax
 
-  BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47aa03*/
+  BufferIOFileClass::Constructor( (BufferIOFileClass *)this); /*0x47aa03*/
   *((unsigned char *)this + 84) = 0; /*0x47aa0c*/
   *(unsigned int *)this->BufferIOFileClass =(unsigned int)(&off_7E1668); /*0x47aa10*/
   v3 = ((String *)((String *)a2))->GetOrEmpty_Alt(); /*0x47aa16*/

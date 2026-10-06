@@ -86,7 +86,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
     LOBYTE(v5) = (unsigned char)(((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v3, v47)); /*0x5ff88b*/
     if ( (unsigned char)v5 ) /*0x5ff892*/
     {
-      if ( ((int)dword_A8B230->vtable1 & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3((IUnknown *)((int)v3)), !(unsigned char)v5) ) /*0x5ff8b2*/
+      if ( ((int)dword_A8B230->vtable1 & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3( (int)((IUnknown *)((int)v3))), !(unsigned char)v5) ) /*0x5ff8b2*/
       {
         v52[0] = (int)((gamemd::AudioStream *)(v47[0] - 128));
         v53[0] = DSurface_ViewBounds.field_0; /*0x5ff8d9*/
@@ -103,7 +103,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
           v7 = v7 * v3[4] / 64; /*0x5ff93d*/
         v8 = *(unsigned int *)g_DSurface_Hidden_2->__pad_0; /*0x5ff946*/
         v40 = ((unsigned int *)(dword_AC1698))[v7]; /*0x5ff94a*/
-        v9 = (*(int (**))(v8 + 116))(g_DSurface_Hidden_2); /*0x5ff951*/
+        v9 = (*(int (**)(void *))(v8 + 116))( (void *)(g_DSurface_Hidden_2)); /*0x5ff951*/
         v48[0] = 0; /*0x5ff95a*/
         v48[1] = 0; /*0x5ff95e*/
         v51[0] = 0; /*0x5ff962*/
@@ -296,7 +296,7 @@ LABEL_23:
                 goto LABEL_23;
             }
           }
-          (*(void (**)(AudioStream *))(*(unsigned int *)v39->__pad_0 + 96))(v39); /*0x5fff6b*/
+          (*(void (**)(AudioStream *))(*(unsigned int *)v39->__pad_0 + 96))( (AudioStream *)(v39)); /*0x5fff6b*/
           LOBYTE(v5) = (*(char (**)(int))(*(unsigned int *)v40 + 96))(v40); /*0x5fff74*/
         }
       }

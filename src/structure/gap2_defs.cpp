@@ -137,6 +137,8 @@ int AircraftClass::Construct(int a1, void* a2) {
       WinAPI::Wrapper(-2147467261); /*0x413e1e*/
     (*(void (**)(unsigned int, int))(*(unsigned int *)this->FootClass_field_680)(*v5, this); /*0x413e29*/
   }
+}
+}
 // 0x435820
 namespace gamemd { 
 void* BuildingLightClass::CTOR(int a1) {
@@ -208,6 +210,8 @@ void* BuildingLightClass::CTOR(int a1) {
     v4 = dword_8B41A0++; /*0x43590d*/
     *((unsigned int *)dword_8B4194 + v4) = this; /*0x43591c*/
   }
+}
+}
 // 0x435BE0
 namespace gamemd { 
 int BuildingLightClass::Draw_Start(int a1, int a2) {
@@ -585,6 +589,8 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
       }
     }
   }
+}
+}
 // 0x4361D0
 namespace gamemd { 
 int BuildingLightClass::SD_vt23() {
@@ -680,6 +686,8 @@ int BuildingLightClass::SD_vt23() {
     IDA_LOBYTE(v44) = ((int (*)(int **))(*this)[62])(this); /*0x4368e5*/
     return v44; /*0x4368e5*/
   }
+}
+}
 // 0x436950
 namespace gamemd { 
 int BuildingLightClass::SD_vt05(void* a1, int a2) {
@@ -699,6 +707,8 @@ int BuildingLightClass::SD_vt05(void* a1, int a2) {
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 57); /*0x43699e*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 56); /*0x4369af*/
   }
+}
+}
 // 0x436A00
 namespace gamemd { 
 int BuildingLightClass::SD_vt10(int a1, int a2) {
@@ -769,6 +779,8 @@ int BuildingLightClass::SD_vt13(void* a1) {
     v5 = (*(int (**)(int))(result->Prev + 16))(result + 4); /*0x436ff9*/
     result = Power::TimerProcess(v5); /*0x436fff*/
   }
+}
+}
 // 0x436E80
 namespace gamemd { 
 int BuildingLightClass::CalculateDistanceIntensity() {
@@ -825,6 +837,8 @@ int BuildingLightClass::SD_vt13(void* a1) {
     v5 = (*(int (**)(int))(result->Prev + 16))(result + 4); /*0x436ff9*/
     result = Power::TimerProcess(v5); /*0x436fff*/
   }
+}
+}
 // 0x436F40
 namespace gamemd { 
 int BuildingLightClass::SD_vt13(void* a1) {
@@ -852,6 +866,8 @@ int BuildingLightClass::SD_vt13(void* a1) {
     v5 = (*(int (**)(int))(result->Prev + 16))(result + 4); /*0x436ff9*/
     result = Power::TimerProcess(v5); /*0x436fff*/
   }
+}
+}
 // 0x437030
 namespace gamemd { 
 int BuildingLightClass::SD_vt53() {
@@ -1019,6 +1035,8 @@ int BuildingClass::HandleFactoryCommand() {
     default:
       goto LABEL_25; /*0x44361b*/
   }
+}
+}
 // 0x437050
 namespace gamemd { 
 int BuildingLightClass::SD_vt54(int a1, int a2) {
@@ -1177,6 +1195,8 @@ int BuildingClass::HandleFactoryCommand() {
     default:
       goto LABEL_25; /*0x44361b*/
   }
+}
+}
 // 0x43B680
 namespace gamemd { 
 void* BuildingClass::ctor(int a1) {
@@ -1326,6 +1346,8 @@ int BuildingClass::HandleFactoryCommand() {
     default:
       goto LABEL_25; /*0x44361b*/
   }
+}
+}
 // 0x443410
 namespace gamemd { 
 int BuildingClass::HandleFactoryCommand() {
@@ -1441,6 +1463,8 @@ int BuildingClass::HandleFactoryCommand() {
     default:
       goto LABEL_25; /*0x44361b*/
   }
+}
+}
 // 0x445F80
 namespace gamemd {
 int BuildingClass::CreateUnits()
@@ -2283,6 +2307,10 @@ int BuildingClass::PushScriptAction() {
       *(unsigned short *)v7.__tail_0 = *v3 / 256; /*0x44d79b*/
       *(unsigned short *)&v7.__tail_0[2] = v3[1] / 256; /*0x44d7b3*/
       v7 = v7; /*0x44d7bc*/
+}
+}
+}
+}
 // 0x660b80
       return ScriptActionQueue::PushNext(&v7); /*0x44d7c0*/
     }
@@ -2395,6 +2423,8 @@ int SuperWeapon::CreateNukePayload() {
       return ppv->vt_slot_496(v27, v30); /*0x46b52f*/
     }
   }
+}
+}
 // 0x465D70
 namespace gamemd { 
 int BuildingClass::processPowerState() {
@@ -2482,6 +2512,8 @@ int SuperWeapon::CreateNukePayload() {
       return ppv->vt_slot_496(v27, v30); /*0x46b52f*/
     }
   }
+}
+}
 // 0x46B310
 namespace gamemd { 
 int SuperWeapon::CreateNukePayload() {
@@ -2563,6 +2595,8 @@ int SuperWeapon::CreateNukePayload() {
       return ppv->vt_slot_496(v27, v30); /*0x46b52f*/
     }
   }
+}
+}
 // 0x484F20
 namespace gamemd { 
 int InfantryClass::GetType() {
@@ -2649,6 +2683,8 @@ int BuildingClass::CheckAdjacentCells() {
       }
     }
   }
+}
+}
 // 0x485460
 namespace gamemd { 
 int BuildingClass::CheckAdjacentCells() {
@@ -2723,6 +2759,8 @@ int BuildingClass::CheckAdjacentCells() {
       }
     }
   }
+}
+}
 // 0x487110
 namespace gamemd { 
 void* BuildingClass::checkOccupant(int a2) {
@@ -2757,6 +2795,8 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
   ObjectClass *v3; // eax
 
   v3 = (ObjectClass *)CellCoord::To_CellObj((CellCoord *)this, aP1); /*0x4aa29c*/
+}
+}
 // 0x47c5a0
   return ObjectClass::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
 }
@@ -2844,6 +2884,8 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
   ObjectClass *v3; // eax
 
   v3 = (ObjectClass *)CellCoord::To_CellObj((CellCoord *)this, aP1); /*0x4aa29c*/
+}
+}
 // 0x47c5a0
   return ObjectClass::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
 }
@@ -2924,6 +2966,8 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
   ObjectClass *v3; // eax
 
   v3 = (ObjectClass *)CellCoord::To_CellObj((CellCoord *)this, aP1); /*0x4aa29c*/
+}
+}
 // 0x47c5a0
   return ObjectClass::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
 }
@@ -2997,6 +3041,8 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
   ObjectClass *v3; // eax
 
   v3 = (ObjectClass *)CellCoord::To_CellObj((CellCoord *)this, aP1); /*0x4aa29c*/
+}
+}
 // 0x47c5a0
   return ObjectClass::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
 }
@@ -3063,6 +3109,8 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
   ObjectClass *v3; // eax
 
   v3 = (ObjectClass *)CellCoord::To_CellObj((CellCoord *)this, aP1); /*0x4aa29c*/
+}
+}
 // 0x47c5a0
   return ObjectClass::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
 }
@@ -3179,6 +3227,8 @@ int InfantryClass::ProcessExitQueue() {
       }
     }
   }
+}
+}
 // 0x4F9750
 namespace gamemd { 
 double BuildingClass::checkRepairEligibility(HouseClass* pHouse) {
@@ -3188,6 +3238,8 @@ double BuildingClass::checkRepairEligibility(HouseClass* pHouse) {
   if ( Float4::Sum(pHouse + 197) == 0.0 ) /*0x4f9769*/
     return 0.0; /*0x4f976b*/
   else
+}
+}
 // 0x6c9650
     return Float4::Sum(v1) / ((unsigned int *)&(double)dword_8871E0[1])[1]; /*0x4f9780*/
 }
@@ -3305,6 +3357,7 @@ int SuperWeapon::SelectSuperWeaponTarget(int a1) {
       IDA_LOBYTE(v5) = SuperWeapon::FireSuperWeaponHouseClass(this, a1, (int)&v13); /*0x4fae3f*/
     }
   }
+}
 // 0x4FAE50
 namespace gamemd { 
 int SuperWeapon::FireSuperWeaponHouseClass(int a1, int a2) {
@@ -3325,6 +3378,8 @@ int SuperWeapon::FireSuperWeaponHouseClass(int a1, int a2) {
     if ( v5 ) /*0x4fae7d*/
       *(unsigned int *)(v6 + 98) = *(unsigned int *)(v5 + 98); /*0x4fae82*/
   }
+}
+}
 // 0x4FAF00
 namespace gamemd { 
 int SuperWeapon::EvaluateAITarget(int a1, void* a2) {
@@ -3411,6 +3466,8 @@ int SuperWeapon::EvaluateAITarget(int a1, void* a2) {
       }
     }
   }
+}
+}
 // 0x50B1D0
 namespace gamemd { 
 int SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass() {
@@ -3491,6 +3548,8 @@ int SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass() {
       v2 = this->q264; /*0x50b358*/
     }
   }
+}
+}
 // 0x5176A0
 namespace gamemd { 
 bool InfantryClass::SetField6() {
@@ -3543,6 +3602,8 @@ int InfantryClass::Construct(int a1, void* a2) {
     v5 = (*(unsigned int *)&stru_A83D50.__pad_80[40])++; /*0x517b2b*/
     *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * v5) = this; /*0x517b3a*/
   }
+}
+}
 // 0x517A50
 namespace gamemd { 
 int InfantryClass::Construct(int a1, void* a2) {
@@ -3589,6 +3650,8 @@ int InfantryClass::Construct(int a1, void* a2) {
     v5 = (*(unsigned int *)&stru_A83D50.__pad_80[40])++; /*0x517b2b*/
     *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * v5) = this; /*0x517b3a*/
   }
+}
+}
 // 0x517FA0
 namespace gamemd {
 int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5, int a6, int a7)
@@ -4219,6 +4282,8 @@ int InfantryClass::Update() {
     IDA_LOBYTE(movementDestination) = (*((char (**)(InfantryClass *, unsigned int))this->vtable1 + 296))(this, 0); /*0x51bacd*/
     return (char)movementDestination; /*0x51bad9*/
   }
+}
+}
 // 0x523370
 namespace gamemd { 
 void* InfantryClass::checkBridgeClearance(int a2) {
@@ -4233,6 +4298,8 @@ void* InfantryClass::checkBridgeClearance(int a2) {
     if ( vtable0 ) /*0x52338c*/
       (*(void (**)(void *))(*(unsigned int *)vtable0 + 8))(vtable0); /*0x523391*/
   }
+}
+}
 // 0x5233D0
 namespace gamemd { 
 void* InfantryClass::updateOccupiedBuilding(void* aP1) {
@@ -4263,6 +4330,8 @@ void* InfantryClass::updateOccupiedBuilding(void* aP1) {
     if ( v5 < 0 && v5 != -2147467262 ) /*0x52342b*/
       WinAPI::Wrapper(v5); /*0x52342e*/
   }
+}
+}
 // 0x539AE0
 namespace gamemd { 
 int SuperWeapon::SerializeSuperWeaponState() {
@@ -4553,6 +4622,8 @@ int SuperWeapon::SerializeSuperWeaponState() {
       }
     }
   }
+}
+}
 // 0x5AEAD0
 namespace gamemd { 
 void BuildingClass::processBaseExpansion(float a2) {
@@ -4568,6 +4639,7 @@ void BuildingClass::updateFoundation(float a2) {
   this->u32_14 = a2 * this->u32_14; /*0x5aeb01*/
   *(this + 9) = a2 * *(this + 9); /*0x5aeb0b*/
 }
+}
 // 0x5AEB20
 namespace gamemd { 
 void BuildingClass::recalcAdjacency(float a2) {
@@ -4583,6 +4655,8 @@ int BuildingClass::updateAnimationState() {
 
   v1 = *(this + 12); /*0x63d540*/
   if ( v1 == 11 ) /*0x63d547*/
+}
+}
 // 0x731ce0
     return Memory::Alloc76(); /*0x63d549*/
   if ( v1 == 29 ) /*0x63d551*/
@@ -4616,6 +4690,7 @@ void BuildingClass::updateFoundation(float a2) {
   this->u32_14 = a2 * this->u32_14; /*0x5aeb01*/
   *(this + 9) = a2 * *(this + 9); /*0x5aeb0b*/
 }
+}
 // 0x5AEB20
 namespace gamemd { 
 void BuildingClass::recalcAdjacency(float a2) {
@@ -4631,6 +4706,8 @@ int BuildingClass::updateAnimationState() {
 
   v1 = *(this + 12); /*0x63d540*/
   if ( v1 == 11 ) /*0x63d547*/
+}
+}
 // 0x731ce0
     return Memory::Alloc76(); /*0x63d549*/
   if ( v1 == 29 ) /*0x63d551*/
@@ -4672,6 +4749,8 @@ int BuildingClass::updateAnimationState() {
 
   v1 = *(this + 12); /*0x63d540*/
   if ( v1 == 11 ) /*0x63d547*/
+}
+}
 // 0x731ce0
     return Memory::Alloc76(); /*0x63d549*/
   if ( v1 == 29 ) /*0x63d551*/
@@ -4705,6 +4784,8 @@ int BuildingClass::updateAnimationState() {
 
   v1 = *(this + 12); /*0x63d540*/
   if ( v1 == 11 ) /*0x63d547*/
+}
+}
 // 0x731ce0
     return Memory::Alloc76(); /*0x63d549*/
   if ( v1 == 29 ) /*0x63d551*/
@@ -4749,6 +4830,8 @@ void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
       this->q53A0 = *(unsigned int *)&stru_A8EB00.gapE4[416] + 2; /*0x6a612b*/
     }
   }
+}
+}
 // 0x6CBCA0
 namespace gamemd { 
 int SuperWeapon::UpdateSuperWeaponReadyState(int a1) {
@@ -4770,6 +4853,8 @@ int SuperWeapon::UpdateSuperWeaponReadyState(int a1) {
     this->u32_14 = -1; /*0x6cbcbd*/
     StartAudioControllerAt(*(unsigned int *)(v4 + 192), &this->q150, 0); /*0x6cbccf*/
   }
+}
+}
 // 0x6E2970
 namespace gamemd { 
 int BuildingLightClass::FindAllTargets(int a1, int a2, int a3, int a4) {
@@ -4814,6 +4899,8 @@ int BuildingLightClass::FindAllTargets(int a1, int a2, int a3, int a4) {
     }
     ++v6; /*0x6e29f9*/
   }
+}
+}
 // 0x6EFE60
 namespace gamemd { 
 void SuperWeapon::DispatchTeam(int a1, int a2) {
@@ -4866,6 +4953,8 @@ void SuperWeapon::DispatchTeam(int a1, int a2) {
     while ( v5 ); /*0x6efec0*/
     v6 = (unsigned int *)v23; /*0x6efec2*/
   }
+}
+}
 // 0x70DDC0
 namespace gamemd { 
 int BuildingClass::checkPlacement() {
@@ -4933,6 +5022,8 @@ int UnitClass::Construct() {
     v4 = ((unsigned int *)&FootClass_Array)[2]++; /*0x73549c*/
     *(unsigned int *)(((char *)&FootClass_Array) + 4 * v4) = this; /*0x7354ab*/
   }
+}
+}
 // 0x7353C0
 namespace gamemd { 
 int UnitClass::Construct() {
@@ -4996,3 +5087,4 @@ int UnitClass::Construct() {
   }
 
 } // namespace gamemd
+}

@@ -67,7 +67,7 @@ public:
     int UnloadPassengers(int placementType);  // 0x6B4BE0
     int ProcessExitQueue();  // 0x6B7230
     int CreateUnloadPlacementCraters(CellStruct* cell);  // 0x6B6080
-    int GetExitCell(AbstractClass* aP1, AbstractClass* aP2);  // 0x54E3B0
+    int GetExitCell(AbstractClass* aP1, AbstractClass* aP2, unsigned int *a2, unsigned int *a3);  // 0x54E3B0  // g57b5 W4
 
     // === Phase 3: Deploy ===
     int Deploy();  // 0x7192F0

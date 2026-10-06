@@ -101,3 +101,4 @@ int CCFileClass::Reset()
     IDA_LOBYTE(result) = CCFileClass::Close(this); /*0x473cfc*/
     return result; /*0x473d01*/
 }  // L-fix: close namespace tail 1
+}

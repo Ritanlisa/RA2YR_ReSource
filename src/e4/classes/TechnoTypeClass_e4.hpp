@@ -1,5 +1,8 @@
 // GENERATED flat e4 class (mechanical, supply_e4_class_decls)
 #pragma once
+#ifndef GAMEMD_E4_FLAT_TechnoTypeClass
+#define GAMEMD_E4_FLAT_TechnoTypeClass 1  // G57a1: suppress minimal_carriers.hpp twin
+#endif
 #include "e4/classes/DynamicVectorClass_flat_e4.hpp"
 
 

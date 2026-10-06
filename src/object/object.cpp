@@ -23,6 +23,11 @@ using ra2::game::TechnoClass;
 #include <cmath>
 #include "core/reverse_marker.hpp"
 #include "e4/e4_globals_decls.hpp"
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    void AudioStream_ReleaseChannel(void *a1);   // raw 0x405dbc;
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 namespace ra2 {
 namespace game {
@@ -260,7 +265,7 @@ void AudioController::Stop()
             {
               if ( (*(unsigned char *)(v2 + 24) & 2) != 0 ) /*0x405daf*/
                 Voice::Stop(v6); /*0x405db1*/
-              AudioStream::ReleaseChannel(*(AudioStream **)(v2 + 176)); /*0x405dbc*/
+              AudioStream_ReleaseChannel(*(AudioStream **)(v2 + 176)); /*0x405dbc*/
               *(unsigned int *)(*(unsigned int *)(v2 + 176) + 192) = 0; /*0x405dc7*/
               *(unsigned int *)(*(unsigned int *)(v2 + 176) + 188) = 0; /*0x405dd3*/
               *(unsigned int *)(*(unsigned int *)(v2 + 176) + 180) = 0; /*0x405ddf*/

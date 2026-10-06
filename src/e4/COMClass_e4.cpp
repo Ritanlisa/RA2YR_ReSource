@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_COMClass 1  // G57a3: e4 flat-carrier opt-in (suppress core utility_ext/stream_ext twin)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/COMClass_e4.hpp"
@@ -29,9 +30,9 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
 
   if ( (a2 & 2) != 0 ) /*0x76701b*/
   {
-    v3 = *((unsigned int *)Block - 1); /*0x76701d*/
-    v4 = (char *)Block - 4; /*0x767021*/
-    v5 = (ComPtr *)((char *)Block + 8 * v3); /*0x767024*/
+    v3 = *((unsigned int *)this - 1); /*0x76701d*/
+    v4 = (char *)this - 4; /*0x767021*/
+    v5 = (ComPtr *)((char *)this + 8 * v3); /*0x767024*/
     v6 = v3 - 1; /*0x767027*/
     if ( v6 >= 0 ) /*0x767028*/
     {
@@ -51,11 +52,11 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
   }
   else
   {
-    *(unsigned int *)Block->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76705a*/
-    ((ComPtr *)((ComPtr *)Block))->Release(); /*0x767060*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76705a*/
+    ((ComPtr *)((ComPtr *)this))->Release(); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
-      __3_YAXPAX_Z(Block); /*0x76706b*/
-    return Block->__pad_0; /*0x767073*/
+      __3_YAXPAX_Z(this); /*0x76706b*/
+    return this->__pad_0; /*0x767073*/
   }
 
 }
@@ -65,10 +66,10 @@ namespace gamemd {
 VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->__pad_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x7669f9*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr;
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
-    __3_YAXPAX_Z(Block); /*0x766a02*/
-  return Block->__pad_0; /*0x766a0c*/
+    __3_YAXPAX_Z(this); /*0x766a02*/
+  return this->__pad_0; /*0x766a0c*/
 
 }
 } // namespace gamemd

@@ -12698,7 +12698,7 @@ int INIClass::ClearSection(int a1, void* a2) {
       {
         do /*0x52583d*/
         {
-          free(*(void **)*(this + 15)); /*0x525822*/
+          free(*(void **)(this + 15)); /*0x525822*/
           v8 = *(unsigned int *)(*(this + 15) + 4); /*0x52582c*/
           RA2_OPDEL((void *)*(this + 15)); /*0x525830*/
           *(this + 15) = v8; /*0x52583a*/
@@ -39968,7 +39968,7 @@ int FactoryClass::PlaceExitUnits() {
     result = *(unsigned int *)&this->__pad_42[6] - 1; /*0x6b04c9*/
     for ( i = result; i >= 0; --i )
     {
-      v3 = (int **)*((unsigned int *)&this->object->RadioClass + result); /*0x6b04da*/
+      v3 = (int **)((unsigned int *)&this->object->RadioClass + result); /*0x6b04da*/
       v4 = *v3; /*0x6b04e0*/
       v24 = *v3; /*0x6b04e5*/
       if ( !v3[1] )

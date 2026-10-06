@@ -88,7 +88,7 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
                 v19 = v11; /*0x6a026c*/
                 v20 = v12; /*0x6a0270*/
                 v21 = v13; /*0x6a0274*/
-                (*(void (**)(int, int *))(*(unsigned int *)v14 + 244))(v14, &v19); /*0x6a027f*/
+                (*(void (**)(int, int *))(*(unsigned int *)v14 + 244))( v14, (int *)(&v19)); /*0x6a027f*/
                 LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)&this->q00C + 244))( /*0x6a028f*/
                                *((unsigned int *)this + 3),
                                aP1);
@@ -101,7 +101,7 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
                 v21 = v15; /*0x6a02b7*/
                 v19 = v11; /*0x6a02bb*/
                 v20 = v12; /*0x6a02bf*/
-                LOBYTE(v5) = (*(int (**)(int, int *))(*(unsigned int *)v16 + 240))(v16, &v19); /*0x6a02ca*/
+                LOBYTE(v5) = (*(int (**)(int, int *))(*(unsigned int *)v16 + 240))( v16, (int *)(&v19)); /*0x6a02ca*/
               }
               v3 = (unsigned int *)(aP1);
             }

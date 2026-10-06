@@ -27,7 +27,7 @@ void DialogControl::Show(void *a1, void *a2)
 
   BYTE2(this->Image) = 1; /*0x4e1462*/
   LOBYTE(this->Image) = 1; /*0x4e1465*/
-  return (*(int (**))(*(unsigned int *)this->__pad_0 + 84))(this);
+  return (*(int (**)(void *))(*(unsigned int *)this->__pad_0 + 84))(this);
 
 }
 } // namespace gamemd

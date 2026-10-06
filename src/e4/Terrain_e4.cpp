@@ -153,7 +153,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
   ((VectorClass *)((VectorClass *)&v81))->CellConstructor(0, 0); /*0x568ea5*/
   v7 = g_TerrainSoundTable2; /*0x568eae*/
   v8 = g_TerrainSoundConfig; /*0x568eb4*/
-  *(unsigned int *)v81.__pad_0 = &vt_DynamicVectorClass; /*0x568ebd*/
+  *(unsigned int *)v81.__pad_0 = (unsigned int)&vt_DynamicVectorClass;
   v82 = 10; /*0x568ec5*/
   *(unsigned int *)v81.__tail_10 = 0; /*0x568ed4*/
   for ( i = 1; i < 30; ++i ) /*0x568edc*/
@@ -349,7 +349,7 @@ LABEL_44:
   }
   if ( i == 30 ) /*0x569473*/
   {
-    *(unsigned int *)v81.__pad_0 = &vt_VectorClass; /*0x569479*/
+    *(unsigned int *)v81.__pad_0 = (unsigned int)&vt_VectorClass;
     ((Buffer *)(&v81))->Cleanup(); /*0x569481*/
   }
   else
@@ -456,7 +456,7 @@ LABEL_44:
       Terrain::ConnectivityGraph(this); /*0x56970c*/
     if ( *(int *)v81.__tail_10 > 0 ) /*0x569717*/
       ((LayerClass *)((LayerClass *)this))->Update_Pathfinding_2((int)&v81); /*0x569722*/
-    *(unsigned int *)v81.__pad_0 = &vt_VectorClass; /*0x56972b*/
+    *(unsigned int *)v81.__pad_0 = (unsigned int)&vt_VectorClass;
     if ( *(unsigned int *)&v81.m_1[3] ) /*0x569735*/
     {
       if ( BYTE1(v81.m_C) ) /*0x56973d*/
@@ -641,7 +641,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
       else
       {
         g_MissionQueueFrame.briefing[273] = 0; /*0x56c640*/
-        v15 = Terrain::FloodFillConnectivity((unsigned char *)((int)v1),(IUnknown *)(v12),(gamemd::AbstractClass *)(v10), &v92); /*0x56c64a*/
+        v15 = ((Terrain *)(unsigned char *)((int)v1))->FloodFillConnectivity((IUnknown *)(v12),(gamemd::AbstractClass *)(v10), &v92); /*0x56c64a*/
         if ( v15 > v13 ) /*0x56c651*/
         {
           v13 = v15; /*0x56c655*/
@@ -814,7 +814,7 @@ LABEL_48:
     if ( v54 > 0 ) /*0x56c8da*/
     {
       v90 = (char *)v54; /*0x56c8df*/
-      Block = (int *)(*(unsigned int *)(v55 + 4) + 4); /*0x56c8e6*/
+      Block = (unsigned int)(int *)(*(unsigned int *)(v55 + 4) + 4); /*0x56c8e6*/
       do /*0x56c940*/
       {
         v56 = *Block; /*0x56c8f4*/
@@ -947,7 +947,7 @@ LABEL_48:
 }
 // 0x56CB90
 namespace gamemd {
-int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3, void *a4_1)
+int ((Terrain *)unsigned char * a1)->FloodFillConnectivity( IUnknown * aP2, AbstractClass * aP3, void *a4_1)
 {
 
   uint8_t *v4; // ebx
@@ -1769,7 +1769,7 @@ LABEL_101:
           v76[1] = v81[1]; /*0x570717*/
           v76[0] = v32 - 2; /*0x57071c*/
           *(unsigned int *)v77 = *(unsigned int *)v76; /*0x570729*/
-          Terrain::ProcessCellModification(this, v77); /*0x570730*/
+          ((Terrain *)this)->ProcessCellModification( v77); /*0x570730*/
           v54 = v81[0] + (v81[1] << 9); /*0x570744*/
           if ( v54 >= 0x40000 || (v55 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v54)) == 0 ) /*0x57075a*/
           {
@@ -2060,7 +2060,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
             g_MissionQueueFrame.briefing[139] = *(unsigned int *)v87; /*0x573a52*/
             v46 = &g_MissionQueueFrame.briefing[130]; /*0x573a58*/
           }
-          Terrain::PlaceCliffs(this, (int)v46, 2, &v88); /*0x573a64*/
+          ((Terrain *)this)->PlaceCliffs( (int)v46, 2, &v88); /*0x573a64*/
           goto LABEL_111; /*0x573a64*/
         }
         if ( (v44 == g_TerrainSoundTable2 /*0x573984*/
@@ -2077,14 +2077,14 @@ LABEL_103:
             v85[0] = v38 - 2; /*0x573c32*/
             v85[1] = v87[1]; /*0x573c3f*/
             v86 = *(unsigned int *)v85; /*0x573c4c*/
-            Terrain::RecursiveModify(v47, (int)&v86); /*0x573c53*/
+            ((Terrain *)v47)->RecursiveModify( (int)&v86); /*0x573c53*/
             v62 = v87[0] + (v87[1] << 9); /*0x573c67*/
             if ( v62 >= 0x40000 || (v63 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v62)) == 0 ) /*0x573c7d*/
             {
               g_MissionQueueFrame.briefing[139] = *(unsigned int *)v87; /*0x573c7f*/
               v63 = &g_MissionQueueFrame.briefing[130]; /*0x573c85*/
             }
-            Terrain::PlaceCliffs(v47, (int)v63, 2, &v88); /*0x573c94*/
+            ((Terrain *)v47)->PlaceCliffs( (int)v63, 2, &v88); /*0x573c94*/
             Cell::CreateCrater(v88, v89, v90, v91, 0); /*0x573cc1*/
             goto LABEL_139; /*0x573cc6*/
           }
@@ -2170,7 +2170,7 @@ LABEL_98:
             g_MissionQueueFrame.briefing[139] = *(unsigned int *)v87; /*0x573d06*/
             v65 = &g_MissionQueueFrame.briefing[130]; /*0x573d0c*/
           }
-          Terrain::PlaceCliffs(this, (int)v65, 4, &v88); /*0x573d1b*/
+          ((Terrain *)this)->PlaceCliffs( (int)v65, 4, &v88); /*0x573d1b*/
 LABEL_111:
           Cell::CreateCrater(v88, v89, v90, v91, 0); /*0x573d20*/
           goto LABEL_141; /*0x573d4d*/
@@ -2256,14 +2256,14 @@ LABEL_135:
           v85[0] = v38; /*0x573f10*/
           v85[1] = v87[1] - 2; /*0x573f20*/
           v86 = *(unsigned int *)v85; /*0x573f29*/
-          Terrain::RecursiveModify(v66, (int)&v86); /*0x573f30*/
+          ((Terrain *)v66)->RecursiveModify( (int)&v86); /*0x573f30*/
           v80 = v87[0] + (v87[1] << 9); /*0x573f44*/
           if ( v80 >= 0x40000 || (v81 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v80)) == 0 ) /*0x573f5a*/
           {
             g_MissionQueueFrame.briefing[139] = *(unsigned int *)v87; /*0x573f5c*/
             v81 = &g_MissionQueueFrame.briefing[130]; /*0x573f62*/
           }
-          Terrain::PlaceCliffs(v66, (int)v81, 4, &v88); /*0x573f71*/
+          ((Terrain *)v66)->PlaceCliffs( (int)v81, 4, &v88); /*0x573f71*/
           Cell::CreateCrater(v88, v89, v90, v91, 0); /*0x573f9e*/
           v47 = this; /*0x573fa3*/
 LABEL_139:
@@ -2545,7 +2545,7 @@ VectorClass_flat * * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
   v2 = Range_RandomInt(0, 5u); /*0x579630*/
   v3 = aP0; /*0x579635*/
   v36 = v2; /*0x57963c*/
-  AdjacencyFlags = Cell::GetAdjacencyFlags(aP0); /*0x579645*/
+  AdjacencyFlags = Cell::GetAdjacencyFlags( (MouseClass *)(aP0)); /*0x579645*/
   v38 = AdjacencyFlags; /*0x57964e*/
   if ( (AdjacencyFlags & 0xA0) == 0xA0 ) /*0x579652*/
   {
@@ -2742,7 +2742,7 @@ LABEL_82:
   ((Tactical *)((int)&dword_87F7E8))->MouseMove(&v37, &v38); /*0x579b1b*/
   v35 = *(unsigned char *)(v3 + 283); /*0x579b33*/
   LOBYTE(aP0) = 1; /*0x579b3a*/
-  return GenerateTerrainMap(0, 0, v35, aP1, &aP0, 0) || (unsigned char)aP0; /*0x579b4e*/
+  return GenerateTerrainMap( 0, 0, (MouseClass *)(v35), (MouseClass *)(aP1), (MouseClass *)(&aP0), 0) || (unsigned char)aP0; /*0x579b4e*/
 
 }
 }

@@ -142,10 +142,10 @@ class IPXGlobalConnClass
 public:
     virtual ~IPXGlobalConnClass() = default;  // 0x540630
 
-    virtual void Flush(); // 0x53FBD0
+    virtual void Flush(const void *a2, unsigned int a3, unsigned int a4, int a5, short a6, int a7); // 0x53FBD0
 virtual int GetQueueSize(unsigned short *,int,int *,int);  // 0x53FCB0
     virtual void ConnectToHost(); // 0x53FF10
-virtual unsigned int * Disconnect(int,int);  // 0x540030
+virtual unsigned int * Disconnect(int, int, int a2);  // 0x540030
     virtual void GetAddress(); // 0x540050
     // +9 more virtual methods
 
@@ -460,8 +460,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~NetworkOptions() = default;
 
-    virtual void DlgProc(); // 0x560480
-    virtual void ApplySettings(); // 0x7B0F50
+    virtual void DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl); // 0x560480  // g57b5 W4: raw 真值补参
+    virtual void ApplySettings(int a2, char a3, int a4); // 0x7B0F50
 
     uint8_t NetworkOptions_field_0x04[4];
 };

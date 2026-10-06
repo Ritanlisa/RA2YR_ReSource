@@ -101,7 +101,7 @@ LABEL_44:
           goto LABEL_139; /*0x71ec51*/
       }
       LOBYTE(v18) = 1; /*0x71ec5a*/
-      return v18; /*0x71ec60*/
+      return (DynamicVector *)v18; /*0x71ec60*/
     case 14: /*0x71e964*/
       if ( ((unsigned int *)(dword_A8B230))[127].vtable3 == (void *)-1 ) /*0x71ebf6*/
         goto LABEL_139; /*0x71ebf6*/
@@ -116,31 +116,31 @@ LABEL_39:
       if ( abstractFlags ) /*0x71ec21*/
         goto LABEL_139; /*0x71ec21*/
       LOBYTE(v18) = 1; /*0x71ec2a*/
-      return v18; /*0x71ec30*/
+      return (DynamicVector *)v18; /*0x71ec30*/
     case 27: /*0x71e964*/
       ScenarioClass::GetGlobalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71eb62*/
       LOBYTE(v18) = a6; /*0x71eb67*/
-      return v18; /*0x71eb72*/
+      return (DynamicVector *)v18; /*0x71eb72*/
     case 28: /*0x71e964*/
       ScenarioClass::GetGlobalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71eb84*/
       LOBYTE(v18) = (unsigned char)a6 == 0; /*0x71eb95*/
-      return v18; /*0x71eb9b*/
+      return (DynamicVector *)v18; /*0x71eb9b*/
     case 36: /*0x71e964*/
       ScenarioClass::GetLocalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71ebad*/
       LOBYTE(v18) = a6; /*0x71ebb2*/
-      return v18; /*0x71ebbd*/
+      return (DynamicVector *)v18; /*0x71ebbd*/
     case 37: /*0x71e964*/
       ScenarioClass::GetLocalStateByID((ScenarioClass *)dword_A8B230, this->TEventClass_field_34, &a6); /*0x71ebcf*/
       LOBYTE(v18) = (unsigned char)a6 == 0; /*0x71ebe0*/
-      return v18; /*0x71ebe6*/
+      return (DynamicVector *)v18; /*0x71ebe6*/
     case 45: /*0x71e964*/
       return (int)((unsigned int *)(dword_A8B230))[378].vtable1 <= this->TEventClass_field_34; /*0x71eb03*/
     case 46: /*0x71e964*/
       LOBYTE(v18) = (int)((unsigned int *)(dword_A8B230))[378].vtable1 >= this->TEventClass_field_34; /*0x71eb1f*/
-      return v18; /*0x71eb25*/
+      return (DynamicVector *)v18; /*0x71eb25*/
     case 47: /*0x71e964*/
       LOBYTE(v18) = this->TEventClass_field_34 <= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) / 15; /*0x71eb49*/
-      return v18; /*0x71eb50*/
+      return (DynamicVector *)v18; /*0x71eb50*/
     case 60: /*0x71e964*/
       v10 = -1; /*0x71e971*/
       v11 = stru_A8EB00.ObjectTypeClass[4] - 1; /*0x71e974*/
@@ -180,7 +180,7 @@ LABEL_8:
         if ( --v17 < 0 ) /*0x71ea22*/
         {
           LOBYTE(v18) = 0; /*0x71ea27*/
-          return v18; /*0x71ea2d*/
+          return (DynamicVector *)v18; /*0x71ea2d*/
         }
       }
       goto LABEL_153; /*0x71ea1b*/
@@ -215,7 +215,7 @@ LABEL_22:
         if ( --v24 < 0 ) /*0x71ead9*/
         {
           LOBYTE(v18) = 1; /*0x71eade*/
-          return v18; /*0x71eae4*/
+          return (DynamicVector *)v18; /*0x71eae4*/
         }
       }
       goto LABEL_139; /*0x71ead2*/
@@ -292,14 +292,14 @@ LABEL_22:
                   this->TEventClass_field_54 = (*(int (**)(int))(*(unsigned int *)a4 + 60))(a4); /*0x71f209*/
 LABEL_153:
                   LOBYTE(v18) = 1; /*0x71f20c*/
-                  return v18; /*0x71f20f*/
+                  return (DynamicVector *)v18; /*0x71f20f*/
                 }
               }
             }
           }
 LABEL_139:
           LOBYTE(v18) = 0; /*0x71f163*/
-          return v18; /*0x71f16c*/
+          return (DynamicVector *)v18; /*0x71f16c*/
         case 53: /*0x71ecd6*/
           if ( a2 == 53 ) /*0x71ece3*/
           {
@@ -318,7 +318,7 @@ LABEL_139:
                     {
                       *(unsigned char *)a6 = 1; /*0x71ed4d*/
                       LOBYTE(v18) = 1; /*0x71ed50*/
-                      return v18; /*0x71ed56*/
+                      return (DynamicVector *)v18; /*0x71ed56*/
                     }
                   }
                 }
@@ -338,7 +338,7 @@ LABEL_139:
               {
                 *(unsigned char *)a6 = 1; /*0x71edaf*/
                 LOBYTE(v18) = 1; /*0x71edb2*/
-                return v18; /*0x71edb8*/
+                return (DynamicVector *)v18; /*0x71edb8*/
               }
             }
           }
@@ -378,7 +378,7 @@ LABEL_139:
             Math::Sqrt(v57); /*0x71ee38*/
             LOWORD(v18) = Math::RoundToInt(v7); /*0x71ee40*/
             LOBYTE(v18) = v18 <= 1280; /*0x71ee4d*/
-            return v18; /*0x71ee54*/
+            return (DynamicVector *)v18; /*0x71ee54*/
           }
           goto LABEL_139; /*0x71edc6*/
       }
@@ -395,12 +395,12 @@ LABEL_139:
             if ( (*(int (**)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) >= (int)(this->TEventClass_field_34) ) /*0x71ef0e*/
               goto LABEL_122; /*0x71ef0e*/
             LOBYTE(v18) = 0; /*0x71ef17*/
-            return v18; /*0x71ef1d*/
+            return (DynamicVector *)v18; /*0x71ef1d*/
           case 15: /*0x71eea2*/
             if ( *(unsigned int *)(a3 + 21640) >= (unsigned int)(this->TEventClass_field_34) ) /*0x71f04a*/
               goto LABEL_122; /*0x71f04a*/
             LOBYTE(v18) = 0; /*0x71f04f*/
-            return v18; /*0x71f055*/
+            return (DynamicVector *)v18; /*0x71f055*/
           case 16: /*0x71eea2*/
             if ( *(unsigned int *)(a3 + 21556) >= (unsigned int)(this->TEventClass_field_34) ) /*0x71f063*/
               goto LABEL_122; /*0x71f063*/
@@ -430,7 +430,7 @@ LABEL_139:
             if ( *(unsigned char *)(a3 + 505) ) /*0x71ef8e*/
               goto LABEL_122; /*0x71ef96*/
             LOBYTE(v18) = 0; /*0x71ef9f*/
-            return v18; /*0x71efa5*/
+            return (DynamicVector *)v18; /*0x71efa5*/
           case 19: /*0x71eea2*/
             v48 = *(unsigned int *)(a3 + 620); /*0x71efeb*/
             goto LABEL_112; /*0x71efeb*/
@@ -467,7 +467,7 @@ LABEL_112:
             if ( (*(int (**)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) <= (int)(this->TEventClass_field_34) ) /*0x71ef2d*/
               goto LABEL_122; /*0x71ef2d*/
             LOBYTE(v18) = 0; /*0x71ef36*/
-            return v18; /*0x71ef3c*/
+            return (DynamicVector *)v18; /*0x71ef3c*/
           case 57: /*0x71eea2*/
             if ( ((DynamicVector *)((DynamicVector *)(a3 + 21840)))->GetOrGrow(this->TEventClass_field_34) ) /*0x71efd5*/
               goto LABEL_139; /*0x71efdc*/
@@ -496,7 +496,7 @@ LABEL_91:
         if ( (WaveClass *)v41 == waveEffect ) /*0x71eeef*/
         {
           LOBYTE(v18) = 0; /*0x71eef8*/
-          return v18; /*0x71eefe*/
+          return (DynamicVector *)v18; /*0x71eefe*/
         }
       }
 LABEL_122:
@@ -509,24 +509,24 @@ LABEL_122:
             if ( *(unsigned char *)(Owner + 580) ) /*0x71f0e1*/
               break; /*0x71f0e9*/
             LOBYTE(v18) = 0; /*0x71f0f2*/
-            return v18; /*0x71f0f8*/
+            return (DynamicVector *)v18; /*0x71f0f8*/
           case 5: /*0x71f092*/
             if ( *(unsigned char *)(Owner + 500) ) /*0x71f0fb*/
               break; /*0x71f103*/
             LOBYTE(v18) = 0; /*0x71f10c*/
-            return v18; /*0x71f112*/
+            return (DynamicVector *)v18; /*0x71f112*/
           case 9: /*0x71f092*/
             if ( ((VectorClass *)((VectorClass *)(Owner + 21860)))->GetCount() > 0 ) /*0x71f13c*/
               goto LABEL_139; /*0x71f13c*/
             if ( ((VectorClass *)((VectorClass *)(Owner + 21880)))->GetCount() <= 0 ) /*0x71f14b*/
               break; /*0x71f14b*/
             LOBYTE(v18) = 0; /*0x71f150*/
-            return v18; /*0x71f156*/
+            return (DynamicVector *)v18; /*0x71f156*/
           case 0xA: /*0x71f092*/
             if ( *(int *)(Owner + 752) <= 0 ) /*0x71f11d*/
               break; /*0x71f11d*/
             LOBYTE(v18) = 0; /*0x71f126*/
-            return v18; /*0x71f12c*/
+            return (DynamicVector *)v18; /*0x71f12c*/
           case 0xB: /*0x71f092*/
             if ( *(int *)(Owner + 752) <= 0 /*0x71f1af*/
               && ((VectorClass *)((VectorClass *)(Owner + 21860)))->GetCount() <= 0
@@ -536,7 +536,7 @@ LABEL_122:
             }
             goto LABEL_139; /*0x71f1af*/
           case 0x1E: /*0x71f092*/
-            HouseClass::GetPowerRatio((HouseClass *)Owner); /*0x71f09b*/
+            HouseClass::GetPowerRatio( (HouseClass *)Owner); /*0x71f09b*/
             __asm /*0x71f0a0*/
             {
               fcomp ds:dbl_7E1718
@@ -545,7 +545,7 @@ LABEL_122:
             if ( (_AX & 0x100) != 0 ) /*0x71f0ab*/
               break; /*0x71f0ab*/
             LOBYTE(v18) = 0; /*0x71f0b4*/
-            return v18; /*0x71f0ba*/
+            return (DynamicVector *)v18; /*0x71f0ba*/
           case 0x37: /*0x71f092*/
             v52 = *(unsigned int *)(Owner + 748); /*0x71f159*/
             goto LABEL_138; /*0x71f159*/
@@ -558,7 +558,7 @@ LABEL_138:
               goto LABEL_139; /*0x71f161*/
             break; /*0x71f161*/
           case 0x3A: /*0x71f092*/
-            HouseClass::GetPowerRatio((HouseClass *)Owner); /*0x71f0bf*/
+            HouseClass::GetPowerRatio( (HouseClass *)Owner); /*0x71f0bf*/
             __asm /*0x71f0c4*/
             {
               fcomp ds:dbl_7E1718
@@ -567,13 +567,13 @@ LABEL_138:
             if ( (_AX & 0x100) == 0 ) /*0x71f0cf*/
               break; /*0x71f0cf*/
             LOBYTE(v18) = 0; /*0x71f0d8*/
-            return v18; /*0x71f0de*/
+            return (DynamicVector *)v18; /*0x71f0de*/
           default:
             break;
         }
       }
       LOBYTE(v18) = 1; /*0x71f1b1*/
-      return v18;
+      return (DynamicVector *)v18;
   }
 
 }
@@ -672,7 +672,7 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   {
     if ( v3 == 43 ) /*0x71f416*/
       return wsprintfA( /*0x71f443*/
-               (LPSTR)&a2[strlen(a2)],
+               (LPSTR)&a2[strlen( (const char *)(a2))],
                aDDDS,
                TEventClass_field_2C,
                2,
@@ -683,7 +683,7 @@ int TEventClass::PrepareSaveToINI(const char * a2)
     v7 = this->TEventClass_field_2C; /*0x71f449*/
     v6 = g_Str_Trace__d__d; /*0x71f44a*/
   }
-  return wsprintfA((LPSTR)&a2[strlen(a2)], v6, v7, v8, TEventClass_field_34); /*0x71f441*/
+  return wsprintfA((LPSTR)&a2[strlen( (const char *)(a2))], v6, v7, v8, TEventClass_field_34); /*0x71f441*/
 
 }
 }
@@ -716,12 +716,12 @@ void * TEventClass::Fire(void ** Block, char a2)
   int v5; // eax
   TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  Block->vtable1 = &vt_TEventClass; /*0x71fa86*/
-  ((unsigned int *)Block)[0] = &vt_TEventClass; /*0x71fa8c*/
-  ((unsigned int *)Block)[0] = &vt_TEventClass; /*0x71fa93*/
-  ((unsigned int *)Block)[0] = &vt_TEventClass; /*0x71fa9a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x71faa1*/
-  v7 = Block; /*0x71fab6*/
+  this->vtable1 = &vt_TEventClass; /*0x71fa86*/
+  ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71fa8c*/
+  ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71fa93*/
+  ((unsigned int *)this)[0] = &vt_TEventClass; /*0x71fa9a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x71faa1*/
+  v7 = this; /*0x71fab6*/
   v3 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 16))( /*0x71faba*/
          g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
          &v7);
@@ -735,7 +735,7 @@ void * TEventClass::Fire(void ** Block, char a2)
       ++v3; /*0x71fadd*/
     }
   }
-  v7 = Block; /*0x71faff*/
+  v7 = this; /*0x71faff*/
   v4 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x71fb03*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v7);
@@ -750,7 +750,7 @@ void * TEventClass::Fire(void ** Block, char a2)
       ++v4; /*0x71fb26*/
     }
   }
-  v7 = Block; /*0x71fb48*/
+  v7 = this; /*0x71fb48*/
   v5 = (*(int (**)(int *, TEventClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 50)) + 16))( /*0x71fb4c*/
          &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 50),
          &v7);
@@ -765,10 +765,10 @@ void * TEventClass::Fire(void ** Block, char a2)
       ++v5; /*0x71fb6f*/
     }
   }
-  ((AbstractClass*)((AbstractClass *)Block))->DTOR(); /*0x71fb83*/
+  ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x71fb83*/
   if ( (a2 & 1) != 0 ) /*0x71fb8d*/
-    __3_YAXPAX_Z(Block); /*0x71fb90*/
-  return Block; /*0x71fb9a*/
+    __3_YAXPAX_Z(this); /*0x71fb90*/
+  return this; /*0x71fb9a*/
 
 }
 }
@@ -782,7 +782,7 @@ int TEventClass::ProcessEvent(int a2)
   int TEventClass_field_30; // eax
   int v6; // eax
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x71f829*/
+  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x71f829*/
   TEventClass_field_28 = this->TEventClass_field_28; /*0x71f82e*/
   if ( TEventClass_field_28 ) /*0x71f833*/
   {
@@ -824,12 +824,12 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x71f8cb*/
+  result = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(aP0), (AbstractClass *)(aP1)); /*0x71f8cb*/
   if ( result >= 0 ) /*0x71f8d2*/
   {
     if ( aP0 ) /*0x71f8d6*/
     {
-      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71f8df*/
+      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x71f8df*/
       aP0->vtable1 = &vt_TEventClass; /*0x71f8e4*/
       ((unsigned int *)aP0)[0] = &vt_TEventClass; /*0x71f8ea*/
       ((unsigned int *)aP0)[0] = &vt_TEventClass; /*0x71f8f1*/
@@ -852,7 +852,7 @@ int TEventClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x71f93f*/
+  result = AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)aP0), (ObjectTypeClass *)(a1), (ObjectTypeClass *)(aP2)); /*0x71f93f*/
   if ( result >= 0 ) /*0x71f946*/
     return 0; /*0x71f948*/
   return result; /*0x71f94a*/

@@ -176,7 +176,7 @@ void GameConfig::Constructor()
       *(unsigned int *)(v2 + 16) = (unsigned int)(&vt_GenericNode); /*0x5d67ec*/
       ((GenericNode *)((GenericNode *)(v2 + 28)))->Constructor(); /*0x5d67f2*/
       *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_GenericList); /*0x5d67fa*/
-      LinkedList::Prepend((LinkedList *)(v3 + 16), v3 + 28); /*0x5d6801*/
+      ((LinkedList *)(LinkedList *)(v3 + 16))->Prepend( v3 + 28); /*0x5d6801*/
       v1 = (gamemd::GameConfig *)((unsigned int)(this)); /*0x5d6806*/
       *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_List); /*0x5d680a*/
       *(unsigned int *)(v3 + 40) = 0; /*0x5d6811*/
@@ -234,7 +234,7 @@ int  GameConfig::BuildChecksum(char * Buffer)
     while ( v2 ); /*0x77e7c0*/
   }
   v4 = CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash; /*0x77e7db*/
-  v5 = GameOption::CheckDuplicate(&byte_A8B8E0); /*0x77e7dd*/
+  v5 = GameOption::CheckDuplicate( &byte_A8B8E0); /*0x77e7dd*/
   v6 = Hash_Check_5E9580(v5 == 0); /*0x77e7e8*/
   v9 = Hash_Check_5E94D0(v6); /*0x77e7f8*/
   Entry = GameOptions::GetEntry(); /*0x77e7fa*/

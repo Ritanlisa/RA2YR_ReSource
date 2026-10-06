@@ -63,7 +63,7 @@ int Render_Load(void * a1, void * a2, void * a3)
 {
   int result; // eax
   Frame *v6; // ecx
-  (*(void (**)(int, unsigned int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_60)(g_DSurface_Hidden, 0); /*0x52ffa0*/
+  (*(void (**)(int, unsigned int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_60))(g_DSurface_Hidden, 0);  /*0x52ffa0*/
   int v8; // [esp+4h] [ebp-4h]
   int v7; // [esp+0h] [ebp-8h]
   result = ScoreScreen::DrawSHPBackground(Source, (int *)g_DSurface_Hidden, a2, a3, (int)&DataGlobal_886080, v7, v8); /*0x52ffb0*/
@@ -315,12 +315,12 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v40 = v12[1]; /*0x705405*/
     v41 = v12[2]; /*0x70540c*/
     v42 = v12[3]; /*0x70541e*/
-    v13 = (int *)(ClipRectIntersection((RectangleStruct *)(v54), &DSurface_ViewBounds, &v39, 0, 0)); /*0x705428*/
+    v13 = (int *)(ClipRectIntersection( (RectangleStruct *)(v54), (const RectangleStruct*)(&DSurface_ViewBounds), (const RectangleStruct*)(&v39), 0, 0)); /*0x705428*/
     v35 = *v13; /*0x705430*/
     v36 = v13[1]; /*0x705437*/
     v37 = v13[2]; /*0x70543e*/
     v38 = v13[3]; /*0x70544b*/
-    (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v35, v8); /*0x705456*/
+    (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))( DSurface_Composite, (int *)(&v35), v8); /*0x705456*/
     v27 = -2; /*0x705462*/
     v28 = -2; /*0x705466*/
     v14 = ((Coord2D *)(&v27))->Add(v52, v44); /*0x70547d*/
@@ -329,12 +329,12 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v36 = v15[1]; /*0x70549c*/
     v37 = v15[2]; /*0x7054a8*/
     v38 = v15[3]; /*0x7054bb*/
-    v16 = (int *)(ClipRectIntersection((RectangleStruct *)(v53), &DSurface_ViewBounds, &v35, 0, 0)); /*0x7054bf*/
+    v16 = (int *)(ClipRectIntersection( (RectangleStruct *)(v53), (const RectangleStruct*)(&DSurface_ViewBounds), (const RectangleStruct*)(&v35), 0, 0)); /*0x7054bf*/
     v39 = *v16; /*0x7054c6*/
     v40 = v16[1]; /*0x7054cd*/
     v41 = v16[2]; /*0x7054d4*/
     v42 = v16[3]; /*0x7054e1*/
-    (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7054ed*/
+    (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))( DSurface_Composite, (int *)(&v39), v9); /*0x7054ed*/
   }
   v51[0] = (int)(DSurface_ViewBounds); /*0x705501*/
   v51[1] = dword_886FA4; /*0x70550b*/
@@ -359,12 +359,12 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   v36 = v18[1]; /*0x7055a9*/
   v37 = v18[2]; /*0x7055b0*/
   v38 = v18[3]; /*0x7055c2*/
-  v19 = (int *)(ClipRectIntersection((RectangleStruct *)(v53), &DSurface_ViewBounds, &v35, 0, 0)); /*0x7055cc*/
+  v19 = (int *)(ClipRectIntersection( (RectangleStruct *)(v53), (const RectangleStruct*)(&DSurface_ViewBounds), (const RectangleStruct*)(&v35), 0, 0)); /*0x7055cc*/
   v39 = *v19; /*0x7055d4*/
   v40 = v19[1]; /*0x7055db*/
   v41 = v19[2]; /*0x7055e2*/
   v42 = v19[3]; /*0x7055ef*/
-  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7055fa*/
+  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))( DSurface_Composite, (int *)(&v39), v9); /*0x7055fa*/
   v28 = v34 - 2; /*0x705611*/
   v27 = v33 - 2; /*0x70561f*/
   v20 = (int *)(((Rect*)v54)->Construct(&v27, 3, 3)); /*0x705623*/
@@ -372,12 +372,12 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   v36 = v20[1]; /*0x705635*/
   v37 = v20[2]; /*0x70563c*/
   v38 = v20[3]; /*0x70564e*/
-  v21 = (int *)(ClipRectIntersection((RectangleStruct *)(v53), &DSurface_ViewBounds, &v35, 0, 0)); /*0x705658*/
+  v21 = (int *)(ClipRectIntersection( (RectangleStruct *)(v53), (const RectangleStruct*)(&DSurface_ViewBounds), (const RectangleStruct*)(&v35), 0, 0)); /*0x705658*/
   v39 = *v21; /*0x705660*/
   v40 = v21[1]; /*0x705667*/
   v41 = v21[2]; /*0x70566e*/
   v42 = v21[3]; /*0x70567b*/
-  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v8); /*0x705686*/
+  (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))( DSurface_Composite, (int *)(&v39), v8); /*0x705686*/
   v45 = a1; /*0x70569e*/
   v46 = a2; /*0x7056a2*/
   v47 = a3; /*0x7056a6*/
@@ -393,7 +393,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&v48), &v33); /*0x705747*/
     v30 += dword_886FA4; /*0x705761*/
     v34 += dword_886FA4; /*0x70576e*/
-    if ( ClipLine(&v29, &v33, v51) ) /*0x705772*/
+    if ( ClipLine( (int)(&v29), (int)(&v33), v51) ) /*0x705772*/
     {
       v31 = a7; /*0x705794*/
       v32 = BYTE2(a7); /*0x705799*/
@@ -1357,7 +1357,7 @@ char sub_6CA940(int a1, unsigned short * a2, int a3)
   else
   {
     v5 = a2; /*0x6ca95e*/
-    while ( (*(int (**)(int, int16_t *, int))(*(unsigned int *)a1 + 8))(a1, &v7, 2) == 2 ) /*0x6ca975*/
+    while ( (*(int (**)(int, int16_t *, int))(*(unsigned int *)a1 + 8))( a1, (int16_t *)(&v7), 2) == 2 ) /*0x6ca975*/
     {
       if ( v7 == 10 ) /*0x6ca980*/
         goto LABEL_9; /*0x6ca980*/
@@ -1388,16 +1388,16 @@ char sub_53D850()
   int i; // esi
   int v7; // [esp+4h] [ebp-8h] BYREF
 
-  if ( (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) != dword_AA0150 ) /*0x53d865*/
+  if ( (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))( (AudioStream *)(g_DSurface_Hidden_2)) != dword_AA0150 ) /*0x53d865*/
   {
-    v1 = (unsigned int *)((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2));
+    v1 = (unsigned int *)((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))( (AudioStream *)(g_DSurface_Hidden_2)));
     ((unsigned int *)(dword_A9FAE8))[0] = 0; /*0x53d876*/
     dword_AA0150 = v1; /*0x53d880*/
     v2 = 1; /*0x53d886*/
     v3 = (unsigned int *)(&unk_A9FAEC); /*0x53d88b*/
     do /*0x53d8b2*/
     {
-      v4 = ComputeSpiralOffset(&v7, v2); /*0x53d896*/
+      v4 = ComputeSpiralOffset( (int *)(&v7), v2); /*0x53d896*/
       ++v3; /*0x53d89d*/
       ++v2; /*0x53d8a8*/
       *(v3 - 1) = *v4 + v1 * v4[1]; /*0x53d8a9*/
@@ -1445,7 +1445,7 @@ CampaignScore * * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClas
   {
     v14[0] = (unsigned int)(aP4)+ aP2 - v8; /*0x554245*/
   }
-  Rect::Inflate(v10, v11, dy); /*0x554252*/
+  Rect::Inflate( v10, v11, (int)(dy)); /*0x554252*/
 // 0x621b80
   return DSurface::FillRectWithColor(v14,(int)((gamemd::ObjectClass *)(a2)), 0, 0x9Fu); /*0x554269*/
 }
@@ -1504,14 +1504,14 @@ AbstractClass * * sub_63B0A0()
   for ( *(unsigned int *)&stru_AC4B30.__pad_EC[4] = 0; v2 < (int)Array_field_0x10; ++v2 ) /*0x63b0e2*/
   {
     v3 = *((unsigned int *)stru_AC4B30.Array_field_0x4 + v2); /*0x63b0e9*/
-    if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(**v3->vtable2 + 540), (void *)dword_A83D4C) ) /*0x63b100*/
+    if ( (uint8_t)(((HouseClass *)(*(void **)(**v3->vtable2 + 540)))->IsAlliedWith((void *)dword_A83D4C)) ) /*0x63b100*/
       RenderScenarioActionLines((ObjectClass *)v3); /*0x63b10b*/
   }
   v4 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x63b115*/
   for ( i = 0; i < v4; ++i ) /*0x63b11f*/
   {
     v6 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x63b12d*/
-    if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(v6 + 540), (void *)dword_A83D4C) ) /*0x63b136*/
+    if ( (uint8_t)(((HouseClass *)(*(void **)(v6 + 540)))->IsAlliedWith((void *)dword_A83D4C)) ) /*0x63b136*/
       ((ScriptAction *)((ScriptAction *)v6))->ProcessIdleAction(); /*0x63b141*/
   }
 }
@@ -1604,7 +1604,7 @@ void sub_6603B0()
           if ( v6 ) /*0x6603f6*/
           {
             v8 = *(unsigned int *)(LoadGame_field_0x04 + 4 * v1); /*0x660408*/
-            v7 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v8); /*0x66040c*/
+            v7 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))( (LoadGame *)(&stru_B04DA8), (int *)(&v8)); /*0x66040c*/
             if ( v7 != -1 && v7 < stru_B04DA8.LoadGame_field_0x10 ) /*0x66041c*/
             {
               --stru_B04DA8.LoadGame_field_0x10; /*0x660421*/
@@ -1658,7 +1658,7 @@ void * Render_Render_7760B0(HDC hdc, const char * a2, LONG, LONG, char a5, void 
   lf.lfQuality = 0; /*0x77616c*/
   lf.lfItalic = (a5 & 2) != 0; /*0x776176*/
   lf.lfPitchAndFamily = 0; /*0x776187*/
-  strcpy(lf.lfFaceName, a2); /*0x77618b*/
+  strcpy( lf.lfFaceName, (const char *)(a2)); /*0x77618b*/
   v7 = CreateFontIndirectA(&lf); /*0x77619f*/
   v8 = v7; /*0x7761a1*/
   if ( a3 ) /*0x7761aa*/
@@ -1671,7 +1671,7 @@ void * Render_Render_7760B0(HDC hdc, const char * a2, LONG, LONG, char a5, void 
     v8 = CreateFontIndirectA(&lf); /*0x7761f7*/
   }
   RestoreDC(hdc, -1); /*0x7761fc*/
-  return v8; /*0x776204*/
+  return (void *)v8; /*0x776204*/
 }
 }
 // 0x556D40
@@ -1745,7 +1745,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   int v13; // [esp+78h] [ebp-D0h]
   char Source[200]; // [esp+80h] [ebp-C8h] BYREF
 
-  v3 = strcpy(Source, a1); /*0x5c0672*/
+  v3 = strcpy( (char *)(Source), (const char *)(a1)); /*0x5c0672*/
   for ( i = Source[0]; i; i = *++v3 ) /*0x5c0684*/
   {
     if ( i == 46 ) /*0x5c0688*/
@@ -1775,7 +1775,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
       return 0; /*0x5c07be*/
   }
   if ( a2 ) /*0x5c0786*/
-    strcpy(a2, Source); /*0x5c07a3*/
+    strcpy( (char *)(a2), (const char *)(Source)); /*0x5c07a3*/
   return 1; /*0x5c07ac*/
 }
 } // namespace gamemd
@@ -1815,7 +1815,7 @@ unsigned int * sub_63CA80(unsigned int * a1, unsigned char * a2, int a3)
   int *v8; // ecx
   unsigned int v10[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  ScenarioClassActionCoords = (int *)(GetScenarioClassActionCoords(v10, a2)); /*0x63ca90*/
+  ScenarioClassActionCoords = (int *)(GetScenarioClassActionCoords( v10, (unsigned char *)(a2))); /*0x63ca90*/
   v5 = *ScenarioClassActionCoords; /*0x63ca92*/
   v6 = ScenarioClassActionCoords[1]; /*0x63ca97*/
   v7 = ScenarioClassActionCoords[2]; /*0x63ca9a*/
@@ -1867,8 +1867,8 @@ int Render_Get(ScoreScreen * aP0)
     do /*0x68ee21*/
     {
       v4 = *(unsigned int *)(&dword_A8022C)[4 * v10]; /*0x68edad*/
-      if ( (uint8_t)HouseClass::IsAlliedWith(aP0, (void *)v4) /*0x68edca*/
-        && (uint8_t)HouseClass::IsAlliedWith((void *)v4, aP0)
+      if ( (uint8_t)(((HouseClass *)(aP0))->IsAlliedWith((void *)v4)) /*0x68edca*/
+        && (uint8_t)(((HouseClass *)((void *)v4))->IsAlliedWith(aP0))
         || aP0 == (void *)v4 )
       {
         v5 = ((VectorClass *)((unsigned int *)(v4 + 21840)))->GetCount() + v2; /*0x68eddd*/
@@ -1975,7 +1975,7 @@ ObjectClass * Render_Render_72B520()
 namespace gamemd {
 void Render_Draw(int a1, int *a2, char a3)
 {
-  RenderScoreScreen((gamemd::ConvertClass *)(a1), a2, a3); /*0x72e82b*/
+  RenderScoreScreen( (gamemd::ConvertClass *)(a1), (int *)(a2), a3); /*0x72e82b*/
   UI_Draw_72E730(a1, a2, dword_B0FBCC, (int)dword_B0FB50, (int)dword_B0FA04); /*0x72e848*/
 }
 } // namespace gamemd
@@ -1986,16 +1986,16 @@ void * sub_72EB50()
 {
   void *result; // eax
 
-  dword_B0FAC4 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CD4), (bool *)&byte_B0FC95)); /*0x72eb6b*/
-  dword_B0F9DC = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CD8), (bool *)&byte_B0FC96)); /*0x72eb80*/
-  dword_B0FAC0 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CDC), (bool *)&byte_B0FC97)); /*0x72eb95*/
-  dword_B0FB50 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CE0), (bool *)&byte_B0FC98)); /*0x72ebaa*/
-  dword_B0FA04 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CE4), (bool *)&byte_B0FC99)); /*0x72ebbf*/
-  dword_B0FAF8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CE8), (bool *)&byte_B0FC9A)); /*0x72ebd4*/
-  dword_B0FA74 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844CEC), (bool *)&byte_B0FC9B)); /*0x72ebe9*/
-  dword_B0FA38 = LoadFileSHP((gamemd::ConvertClass *)(off_844CF0), (bool *)&byte_B0FC9C); /*0x72ebfe*/
-  dword_B0FAE8 = LoadFileSHP(off_844CF4, (bool *)&byte_B0FC9D); /*0x72ec13*/
-  result = LoadFileSHP(off_844CF8, (bool *)&byte_B0FC9E); /*0x72ec18*/
+  dword_B0FAC4 = (unsigned int)(LoadFileSHP( (gamemd::ConvertClass *)(off_844CD4), (ConvertClass *)((bool *)&byte_B0FC95))); /*0x72eb6b*/
+  dword_B0F9DC = (unsigned int)(LoadFileSHP( (gamemd::ConvertClass *)(off_844CD8), (ConvertClass *)((bool *)&byte_B0FC96))); /*0x72eb80*/
+  dword_B0FAC0 = (unsigned int)(LoadFileSHP( (gamemd::ConvertClass *)(off_844CDC), (ConvertClass *)((bool *)&byte_B0FC97))); /*0x72eb95*/
+  dword_B0FB50 = (unsigned int)(LoadFileSHP( (gamemd::ConvertClass *)(off_844CE0), (ConvertClass *)((bool *)&byte_B0FC98))); /*0x72ebaa*/
+  dword_B0FA04 = (unsigned int)(LoadFileSHP( (gamemd::ConvertClass *)(off_844CE4), (ConvertClass *)((bool *)&byte_B0FC99))); /*0x72ebbf*/
+  dword_B0FAF8 = (unsigned int)(LoadFileSHP( (gamemd::ConvertClass *)(off_844CE8), (ConvertClass *)((bool *)&byte_B0FC9A))); /*0x72ebd4*/
+  dword_B0FA74 = (unsigned int)(LoadFileSHP( (gamemd::ConvertClass *)(off_844CEC), (ConvertClass *)((bool *)&byte_B0FC9B))); /*0x72ebe9*/
+  dword_B0FA38 = (unsigned int)LoadFileSHP( (gamemd::ConvertClass *)(off_844CF0), (ConvertClass *)((bool *)&byte_B0FC9C)); /*0x72ebfe*/
+  dword_B0FAE8 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CF4), (ConvertClass *)((bool *)&byte_B0FC9D)); /*0x72ec13*/
+  result = LoadFileSHP( (ConvertClass *)(off_844CF8), (ConvertClass *)((bool *)&byte_B0FC9E)); /*0x72ec18*/
   dword_B0FA54 = result; /*0x72ec1d*/
   return result; /*0x72ec22*/
 }

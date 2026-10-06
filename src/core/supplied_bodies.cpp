@@ -3083,7 +3083,7 @@ int HashTableSection::FindSection(uint8_t *a2, uint8_t *a3) {
     a2 = v16; /*0x526c33*/
     if ( !*((unsigned int *)this + 11) ) /*0x526c37 G42.35 C6*/
       goto LABEL_29; /*0x526c37*/
-    v17 = (uint8_t **)*((unsigned int *)this + 14); /*0x526c3e G42.35 C6*/
+    v17 = (uint8_t **)((unsigned int *)this + 14); /*0x526c3e G42.35 C6*/
     if ( v17 && *v17 == v16 ) /*0x526c47*/
       goto LABEL_24; /*0x526c47*/
     v18 = ((SortedArray *)((char *)this + 40))->BinarySearch((int *)&a2); /*0x526c50 G42.35 C6 实例形*/

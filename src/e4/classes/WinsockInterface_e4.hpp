@@ -1,5 +1,8 @@
 // E2 minimal declaration (auto-generated, full layout via member_lookup/til)
 #pragma once
+#ifndef GAMEMD_E4_FLAT_WinsockInterface
+#define GAMEMD_E4_FLAT_WinsockInterface 1  // G57c2: suppress minimal_carriers.hpp twin
+#endif
 
 #include "e4/classes/_fwd_e4.hpp"
 

@@ -1,4 +1,9 @@
 #include "core/stream_ext.hpp"
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    void Debug_Log(void);                              // raw 0x449612 Debug::Log;
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 namespace gamemd {
 
@@ -73,7 +78,7 @@ void Buffer::CreateDirectSound()
     v21[0] = 20; /*0x40a52e*/
     v21[1] = 232; /*0x40a53d*/
     v1[27] = ((int)(8 * (3 * v11 / 0x64u) + 1023) / 1024) << 10; /*0x40a55a*/
-    Debug::Log(); /*0x40a55d*/
+    Debug_Log(); /*0x40a55d*/
     v12 = v1[27]; /*0x40a562*/
     v24 = v15; /*0x40a56c*/
     v22 = 4 * v12; /*0x40a578*/
@@ -84,11 +89,11 @@ void Buffer::CreateDirectSound()
            0) )
     {
       *v3 = 0; /*0x40a593*/
-      Debug::Log(); /*0x40a59a*/
+      Debug_Log(); /*0x40a59a*/
       return -2147221504; /*0x40a5ae*/
     }
     v1[26] = v22; /*0x40a5b9*/
-    Debug::Log(); /*0x40a5bc*/
+    Debug_Log(); /*0x40a5bc*/
   LABEL_8:
     v1[11] = 0; /*0x40a3b2*/
     v1[2] = 0; /*0x40a3b5*/
@@ -120,6 +125,7 @@ void Buffer::CreateDirectSound()
       if ( !(*(int (__stdcall **)(unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)*v3 + 48))(*v3, 0, 0, 1) ) /*0x40a5df*/
         return 0; /*0x40a603*/
     }
-    Debug::Log(); /*0x40a475*/
+    Debug_Log(); /*0x40a475*/
     return -2147221504; /*0x40a482*/
 } // namespace gamemd
+}

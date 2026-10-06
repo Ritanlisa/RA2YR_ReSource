@@ -125,7 +125,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
         {
           v55 = v14; /*0x64220b*/
           v56[0] = v42; /*0x64220f*/
-          Pixel = XSurface::GetPixel(&v61, &v55); /*0x642213*/
+          Pixel = ((XSurface *)&v61)->GetPixel( &v55); /*0x642213*/
           v54[0] = v14; /*0x64222c*/
           v16 = ((uint8_t)(Pixel >> g_BitShift_Red) << g_BitShift_Green_0) & 0xF0; /*0x642248*/
           v17 = ((uint8_t)(Pixel >> g_BitMask_Green) << g_BitMask_Blue) & 0xF0; /*0x64225c*/
@@ -207,7 +207,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
     {
       v57 = v28; /*0x6423c1*/
       v58 = v44; /*0x6423cd*/
-      v29 = XSurface::GetPixel(&v61, &v57); /*0x6423d6*/
+      v29 = ((XSurface *)&v61)->GetPixel( &v57); /*0x6423d6*/
       v30 = 0; /*0x6423ed*/
       v46 = -1; /*0x6423ef*/
       v50 = 0xFFFF; /*0x6423f7*/

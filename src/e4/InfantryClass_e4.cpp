@@ -57,7 +57,7 @@ int InfantryClass::ScanTarget(int * a1)
     && !(*((int (**)(FootClass *))a1->vtable1 + 114))(a1) )
   {
     vtable0 = (void (**)(FootClass *, void *, int))a1->TechnoClass; /*0x4d4de8*/
-    PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt((gamemd::IUnknown *)((char *)a1),(gamemd::IUnknown *)(&v17),(void *)((int)a1)); /*0x4d4df4*/
+    PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt( (gamemd::IUnknown *)((char *)a1), (gamemd::IUnknown *)(&v17), (void)((void *)((int)a1))); /*0x4d4df4*/
     v4 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(PlacementCellsAlt); /*0x4d4dff*/
     vtable0[288]((gamemd::FootClass *)a1, v4, 1); /*0x4d4e07*/
   }
@@ -78,7 +78,7 @@ int InfantryClass::ScanTarget(int * a1)
     (*((void (**)(FootClass *, unsigned int))a1->vtable1 + 335))(a1, 0); /*0x4d4e6a*/
   else
     (*((void (**)(FootClass *, unsigned int, int))a1->vtable1 + 289))(a1, 0, 1); /*0x4d4e7a*/
-  v7 = *((double *)MissionClass::GetMissionControl((MissionClass *)a1) + 2) * 900.0; /*0x4d4e8a*/
+  v7 = *((double *)MissionClass::GetMissionControl( (MissionClass *)a1) + 2) * 900.0; /*0x4d4e8a*/
   LOWORD(v8) = Math::RoundToInt(v7); /*0x4d4e90*/
   v9 = v8 + Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 2); /*0x4d4eb3*/
   if ( !((unsigned int *)a1)[0]
@@ -145,7 +145,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
     else
     {
       *(unsigned int *)v13 = g_FootClass_Pool; /*0x4d5510*/
-      *(unsigned int *)v13 = *HouseClass::GetCurrentOption((HouseClass *)dword_A83D4C, &v14); /*0x4d5529*/
+      *(unsigned int *)v13 = *((HouseClass *)(HouseClass *)dword_A83D4C)->GetCurrentOption( &v14); /*0x4d5529*/
       if ( *(unsigned int *)v13 != g_FootClass_Pool ) /*0x4d552d*/
       {
         slaveManager = (FactoryClass *)((unsigned int *)a1)[0]; /*0x4d553d*/
@@ -167,7 +167,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
     goto LABEL_25; /*0x4d54e9*/
   }
   v5 = (v3 == 15 ? a1 + 1 : (FootClass *)1728)->TechnoClass;
-  if ( v5[3779] && !v5[3778] && !(uint8_t)TechnoTypeClass::HasVoiceResponse(v4, 14) ) /*0x4d53df*/
+  if ( v5[3779] && !v5[3778] && !(uint8_t)((TechnoTypeClass *)v4)->HasVoiceResponse( 14) ) /*0x4d53df*/
   {
 LABEL_14:
     (*((void (**)(FootClass *, AbstractClass *, int))a1->vtable1 + 288))(a1, ((unsigned int *)a1)[0], 1); /*0x4d547c*/
@@ -176,7 +176,7 @@ LABEL_14:
       goto LABEL_25; /*0x4d54a9*/
     goto LABEL_12; /*0x4d54a9*/
   }
-  if ( !*(unsigned char *)(v4[432] + 3778) && !(uint8_t)TechnoTypeClass::HasVoiceResponse(v4, 14) /*0x4d5428*/
+  if ( !*(unsigned char *)(v4[432] + 3778) && !(uint8_t)((TechnoTypeClass *)v4)->HasVoiceResponse( 14) /*0x4d5428*/
     || (target = ((unsigned int *)a1)[0]) == 0
     || (*((int (**)(AbstractClass *))target->vtable1 + 11))(target) != 6 )
   {
@@ -194,7 +194,7 @@ LABEL_14:
 LABEL_12:
     (*((void (**)(FootClass *))a1->vtable1 + 123))(a1); /*0x4d545d*/
 LABEL_25:
-  MissionControl = MissionClass::GetMissionControl((MissionClass *)a1); /*0x4d5582*/
+  MissionControl = MissionClass::GetMissionControl( (MissionClass *)a1); /*0x4d5582*/
   LOWORD(v11) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d5592*/
   return (gamemd::AbstractClass **)(v11 + Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 2)); /*0x4d55b0*/
 

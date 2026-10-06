@@ -31,12 +31,12 @@ int ConnectionClass::allocPacketSlot(const void *a2, signed int a3, const void *
   signed int v15; // [esp+14h] [ebp+8h]
 
   v6 = *(unsigned int *)this->Active; /*0x48b755*/
-  if ( this->PhoneNumber[8] == v6 || a3 > this->LastPacketTime ) /*0x48b768*/
+  if ( (&this->PhoneNumber)[8] == v6 || a3 > this->LastPacketTime ) /*0x48b768*/
     return 0; /*0x48b768*/
   v8 = 0; /*0x48b76a*/
   if ( v6 <= 0 ) /*0x48b772*/
     goto LABEL_9; /*0x48b772*/
-  v9 = this->PhoneNumber[7]; /*0x48b774*/
+  v9 = (&this->PhoneNumber)[7]; /*0x48b774*/
   v10 = (unsigned char *)v9; /*0x48b777*/
   while ( (*v10 & 1) != 0 ) /*0x48b77c*/
   {
@@ -54,27 +54,27 @@ LABEL_9:
   }
   v12 = 24 * v8; /*0x48b7ae*/
   *(unsigned int *)(v9 + v12) |= 1u; /*0x48b7b7*/
-  *(unsigned int *)(v12 + this->PhoneNumber[7]) &= ~2u; /*0x48b7c4*/
-  *(unsigned int *)(this->PhoneNumber[7] + v12) &= ~4u; /*0x48b7d2*/
+  *(unsigned int *)(v12 + (&this->PhoneNumber)[7]) &= ~2u; /*0x48b7c4*/
+  *(unsigned int *)((&this->PhoneNumber)[7] + v12) &= ~4u; /*0x48b7d2*/
   v13 = dword_887340; /*0x48b7d9*/
   if ( dword_887338 != -1 ) /*0x48b7e2*/
     v13 += ((gamemd::Timer *)this)->GetTicks() - dword_887338; /*0x48b7f4*/
-  *(unsigned int *)(this->PhoneNumber[7] + v12 + 4) = v13; /*0x48b7fb*/
-  *(unsigned int *)(this->PhoneNumber[7] + v12 + 8) = a3; /*0x48b806*/
-  qmemcpy(*(void **)(this->PhoneNumber[7] + v12 + 12), a2, a3); /*0x48b816*/
+  *(unsigned int *)((&this->PhoneNumber)[7] + v12 + 4) = v13; /*0x48b7fb*/
+  *(unsigned int *)((&this->PhoneNumber)[7] + v12 + 8) = a3; /*0x48b806*/
+  qmemcpy( *(void **)((&this->PhoneNumber)[7] + v12 + 12), (const void *)(a2), a3); /*0x48b816*/
   if ( a4 && a5 > 0 && a5 <= this->PacketsSent ) /*0x48b832*/
   {
-    qmemcpy(*(void **)(this->PhoneNumber[7] + v12 + 20), a4, a5); /*0x48b842*/
-    *(unsigned int *)(this->PhoneNumber[7] + v12 + 16) = a5; /*0x48b84e*/
+    qmemcpy( *(void **)((&this->PhoneNumber)[7] + v12 + 20), (const void *)(a4), a5); /*0x48b842*/
+    *(unsigned int *)((&this->PhoneNumber)[7] + v12 + 16) = a5; /*0x48b84e*/
   }
   else
   {
-    *(unsigned int *)(this->PhoneNumber[7] + v12 + 16) = 0; /*0x48b857*/
+    *(unsigned int *)((&this->PhoneNumber)[7] + v12 + 16) = 0; /*0x48b857*/
   }
-  *(unsigned int *)(this->PhoneNumber[10] + 4 * this->PhoneNumber[8]) = v15; /*0x48b86a*/
-  v14 = this->PhoneNumber[9] + 1; /*0x48b874*/
-  ++this->PhoneNumber[8]; /*0x48b875*/
-  this->PhoneNumber[9] = v14; /*0x48b878*/
+  *(unsigned int *)((&this->PhoneNumber)[10] + 4 * (&this->PhoneNumber)[8]) = v15; /*0x48b86a*/
+  v14 = (&this->PhoneNumber)[9] + 1; /*0x48b874*/
+  ++(&this->PhoneNumber)[8]; /*0x48b875*/
+  (&this->PhoneNumber)[9] = v14; /*0x48b878*/
   return 1; /*0x48b7a2*/
 
 }
@@ -156,7 +156,7 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
     ((gamemd::Debug *)this)->Log(); /*0x48bfc1*/
     return 0; /*0x48bfcd*/
   }
-  qmemcpy((void *)(*((unsigned int *)this + 8) + 14), aP1, (size_t)aP2); /*0x48bfe5*/
+  qmemcpy( (void *)(*((unsigned int *)this + 8) + 14), (const void *)(aP1), (size_t)aP2); /*0x48bfe5*/
   if ( !ConnectionClass::queueSendPacket(*((unsigned int *)this + 8), aP2 + 14, 0, 0, 0) ) /*0x48c006*/
     return 0; /*0x48c006*/
   if ( aP3 ) /*0x48c00e*/
@@ -380,7 +380,7 @@ LABEL_10:
   v11 = *(unsigned int *)(TileType + 8) == 14; /*0x48c37e*/
   *(unsigned int *)TileType |= 2u; /*0x48c380*/
   if ( v10 >= 0 && !v11 ) /*0x48c382*/
-    qmemcpy(a2, (const void *)(*(unsigned int *)(TileType + 12) + 14), v10); /*0x48c395*/
+    qmemcpy( (void *)(a2), (const void *)(*(unsigned int *)(TileType + 12) + 14), v10); /*0x48c395*/
   *a3 = v10; /*0x48c3a5*/
   return 1; /*0x48c364*/
 

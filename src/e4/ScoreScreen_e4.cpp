@@ -54,7 +54,7 @@ _DWORD * ScoreScreen::LoadScoreFont(int aP1)
     ((CCFileClass*)&v5)->Construct((char *)(void *)(g_Str_File_FULLFNT3_SHP)); /*0x690a62*/
     this->ScoreScreen_field_0x0C = (int)((CCFileClass *)(&v5))->ReadEntireFile(); /*0x690a74*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690a77*/
-    CCFileClass::Reset(&v5); /*0x690a7b*/
+    CCFileClass::Reset( &v5); /*0x690a7b*/
     ((gamemd::Debug *)this)->Log(); /*0x690a85*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x690a91*/
     v7 = 0; /*0x690a99*/
@@ -95,7 +95,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     ((CCFileClass*)&v5)->Construct((char *)(void *)(aBigfontShp)); /*0x690b32*/
     this->ScoreScreen_field_0x0C = (int)((CCFileClass *)(&v5))->ReadEntireFile(); /*0x690b44*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690b47*/
-    CCFileClass::Reset(&v5); /*0x690b4b*/
+    CCFileClass::Reset( &v5); /*0x690b4b*/
     ((gamemd::Debug *)this)->Log(); /*0x690b55*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x690b61*/
     v7 = 0; /*0x690b69*/
@@ -272,8 +272,8 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   v8 = (int *)(DecodeFrameSHP((int)&v38,(int)(a5), 0, 0)); /*0x778238*/
   if ( v8 ) /*0x77823c*/
   {
-    v28 = (*(int (**)(int *, int, int))(*(void *)(((unsigned int)(void)*))(a2) + 124))(a2, a4, a3); /*0x778251*/
-    v9 = (*(int (**)(int *))(*(void *)(((unsigned int)(void)*))(a2) + 128))(a2); /*0x77825b*/
+    v28 = (*(int (**)(int *, int, int))(*(void *)(((unsigned int)(void)*))(a2) + 124))( (int *)(a2), (int)(a4), (int)(a3)); /*0x778251*/
+    v9 = (*(int (**)(int *))(*(void *)(((unsigned int)(void)*))(a2) + 128))( (int *)(a2)); /*0x77825b*/
     v33 = 0; /*0x778261*/
     v34 = 0; /*0x778265*/
     v35 = v28; /*0x778269*/
@@ -294,14 +294,14 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v10 = 0; /*0x7782b5*/
     }
     Render_Draw((int)(v10),(int *)(&v33), 0); /*0x7782bf*/
-    (*(void (**)(int *, int, unsigned int, int))(*(void *)(((unsigned int)(void)*))(a2) + 4))(a2, v10, 0, 1); /*0x7782cd*/
+    (*(void (**)(int *, int, unsigned int, int))(*(void *)(((unsigned int)(void)*))(a2) + 4))( (int *)(a2), (int)(v10), 0, 1); /*0x7782cd*/
     if ( v10 ) /*0x7782d2*/
       (**(void (**)(int, int))v10)((int)v10, 1); /*0x7782da*/
     v11 = 0; /*0x7782e0*/
     v12 = 0; /*0x7782e2*/
     v29 = (*(int (**)(int *))(*v8 + 124))(v8); /*0x7782eb*/
     v30[0] = (*(int (**)(int *))(*v8 + 128))(v8); /*0x7782f5*/
-    if ( (*(int (**)(int *))(*(void *)(((unsigned int)(void)*))(a2) + 124))(a2) > 1024 ) /*0x778306*/
+    if ( (*(int (**)(int *))(*(void *)(((unsigned int)(void)*))(a2) + 124))( (int *)(a2)) > 1024 ) /*0x778306*/
     {
       Viewport =(int *)((Display*)v37)->GetViewport(); /*0x77830c*/
       v31[0] = *Viewport; /*0x778319*/
@@ -328,16 +328,16 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v17 = (void *)((int)((void *)((*(int (**)(int *))(*v8 + 124))(v8))));
       v18 = (void *)((int)((void *)(*v8)));
       v31[0] = (int)((void *)(v17));
-      v19 = (void *)((*(int (**)((unsigned int)(int)*))(v18 + 128))(v8));
+      v19 = (unsigned int)(void *)((*(int (**)((unsigned int)(int)*))(v18 + 128))(v8));
       v20 = (void *)((int)((void *)(*v8)));
       v34 = (void *)((int)((void *)(v19)));
       v33 = (void *)((int)((void *)(v31[0])));
       v32[0] = (unsigned int)((void *)(v11));
       v21 = (void *)(*(unsigned int *)(a2)); /*0x778418*/
       v32[1] = v12; /*0x77841d*/
-      v22 = (*(int (**)(int *, CCFileClass *, unsigned int, int))((unsigned int)(v20)+ 120))(v8, &v38, 0, 1); /*0x778421*/
+      v22 = (*(int (**)(int *, CCFileClass *, unsigned int, int))((unsigned int)(v20)+ 120))( v8, (CCFileClass *)(&v38), 0, 1); /*0x778421*/
       v23 = (*(int (**)(int *, unsigned char *, int))(*v8 + 120))(v8, v41, v22); /*0x778431*/
-      v24 = (*(int (**)(int *, void **, unsigned int *, int *, int))(*(unsigned int *)(a2) + 120))((int *)a2, &retaddr, v32, v8, v23); /*0x778447*/
+      v24 = (*(int (**)(int *, void **, unsigned int *, int *, int))(*(unsigned int *)(a2) + 120))( (int *)a2, (void **)(&retaddr), v32, v8, v23); /*0x778447*/
       (*(void (**)(int *, int))((unsigned int)(v21)+ 12))((int *)a2, v24); /*0x77844d*/
     }
     (*(void (**)(int *, int))*v8)(v8, 1); /*0x778456*/

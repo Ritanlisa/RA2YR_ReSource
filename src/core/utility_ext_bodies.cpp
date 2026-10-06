@@ -51,7 +51,7 @@ void GraphicMenuImageItem::QueryInterface()
     return this; /*0x4f3882*/
 }
 // 0x49ef40
-void StringVector::Add()
+void StringVector::Add(unsigned int a2)  // g57b5 W4: raw 真值补参 (a2)
 {
     int result; // eax
     int m_8; // edx
@@ -70,3 +70,4 @@ void StringVector::Add()
     }
     return result; /*0x49ef4a*/
 } // namespace gamemd
+}

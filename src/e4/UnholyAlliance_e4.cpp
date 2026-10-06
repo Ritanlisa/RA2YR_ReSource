@@ -52,7 +52,7 @@ AbstractClass * * UnholyAlliance_GetResult()
         v6 = operator new(0x8E8u); /*0x5cb47e*/
         if ( v6 && (v7 = (int *)((UnitClass *)((int)v6))->Construct(v5, v4)) != 0 ) /*0x5cb497*/
         {
-          CurrentOption = (unsigned short *)(HouseClass::GetCurrentOption(v4, &ppv));
+          CurrentOption = (unsigned short *)(((HouseClass *)v4)->GetCurrentOption( &ppv));
           v9 = *CurrentOption + 3; /*0x5cb4b0*/
           v10 = CurrentOption[1] + 3; /*0x5cb4b4*/
           if ( v3 /*0x5cb4ea*/
@@ -63,7 +63,7 @@ AbstractClass * * UnholyAlliance_GetResult()
                 v16[2] = 0,
                 !(*(uint8_t (**)(int *, unsigned int *, unsigned int))(v12 + 216))(v7, v16, 0)) )
           {
-            v13 = (int16_t *)HouseClass::GetCurrentOption(v4, &v15); /*0x5cb4fd*/
+            v13 = (int16_t *)((HouseClass *)v4)->GetCurrentOption( &v15); /*0x5cb4fd*/
             if ( !FindInfantryDeployPosition(v7,(gamemd::RadarClass *)(v13), 3) ) /*0x5cb506*/
             {
               v2 = 1; /*0x5cb515*/
@@ -92,11 +92,11 @@ namespace gamemd {  // G42.18c ns repair
 UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)&Block->m_Enabled = &vt_UnholyAlliance; /*0x5cb543*/
-  ((MultiplayerGameMode*)(MultiplayerGameMode *)Block)->Dtor(); /*0x5cb549*/
+  *(unsigned int *)&this->m_Enabled = (unsigned int)&vt_UnholyAlliance;
+  ((MultiplayerGameMode*)(MultiplayerGameMode *)this)->Dtor(); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
-    __3_YAXPAX_Z(Block); /*0x5cb556*/
-  return &Block->m_Enabled; /*0x5cb560*/
+    __3_YAXPAX_Z(this); /*0x5cb556*/
+  return &this->m_Enabled; /*0x5cb560*/
 
 }
 }  // G42.18c ns repair

@@ -66,7 +66,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   lpPrevWndFunc = 0; /*0x6141a7*/
   if ( dword_AC1B4C ) /*0x6141ab*/
   {
-    v5 = *((unsigned int *)dword_AC1B48 + (dword_AC1B60(&hWnd) & ((1 << dword_AC1B54) - 1))); /*0x6141cf*/
+    v5 = *((unsigned int *)dword_AC1B48 + ((*(unsigned int (*)(void *))&dword_AC1B60)(&hWnd) & ((1 << dword_AC1B54) - 1))); /*0x6141cf*/
     if ( v5 ) /*0x6141d4*/
     {
       while ( *(HWND *)v5 != hWnd ) /*0x6141df*/
@@ -87,7 +87,7 @@ LABEL_8:
   v40 = hWnd; /*0x6141fb*/
   if ( !dword_AC1B04 ) /*0x61420d*/
     return CallWindowProcA((WNDPROC)(v4), hWnd, Msg, wParam, (LPARAM)lParam); /*0x61420d*/
-  v7 = (HWND *)*((unsigned int *)dword_AC1B00 + (dword_AC1B18(&v40) & ((1 << dword_AC1B0C) - 1))); /*0x61422e*/
+  v7 = (HWND *)*((unsigned int *)dword_AC1B00 + ((*(unsigned int (*)(void *))&dword_AC1B18)(&v40) & ((1 << dword_AC1B0C) - 1))); /*0x61422e*/
   if ( !v7 ) /*0x614233*/
     return CallWindowProcA((WNDPROC)(v4), hWnd, Msg, wParam, (LPARAM)lParam); /*0x614233*/
   while ( *v7 != v40 ) /*0x61423b*/
@@ -199,7 +199,7 @@ LABEL_70:
       }
       if ( Msg == 15 || Msg == 20 ) /*0x6145c4*/
       {
-        ScreenDialogToClient(hWnd, &v42); /*0x6145d5*/
+        ScreenDialogToClient( (void *)(hWnd), &v42); /*0x6145d5*/
         v24 = GetParent(hWnd); /*0x6145e9*/
         GetClassNameA(v24, ClassName, 16); /*0x6145f0*/
         v25 = strcmp(ClassName,(const char *)(g_INI_Key_ComboBox)) == 0; /*0x61462e*/

@@ -1,7 +1,174 @@
 // E1: pseudo-body referenced globals missing from src (auto-generated)#pragma once
+// G57a1: e4-universe marker battery -- gap2 twins in core/utility_ext.hpp
+// (math.hpp type aliases CellStruct/Point2D/CoordStruct, the ra2::game::
+// ObjectClass using-bridge, and the HashTable/ComPtr/Random/Compare/Flag/
+// Buffer/StringVector/VectorCursor_uint_DynamicVectorClass_uint class
+// twins) are suppressed; the e4 flat carriers in src/e4/classes/ are the
+// single truth in e4 TUs. gap2 TUs never include this header (verified),
+// so their utility_ext.hpp view is unchanged.
+#ifndef GAMEMD_E4_UNIVERSE
+#define GAMEMD_E4_UNIVERSE 1
+#endif
+#ifndef GAMEMD_E4_HashTable
+#define GAMEMD_E4_HashTable 1
+#endif
+#ifndef GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint
+#define GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint 1
+#endif
+#ifndef GAMEMD_E4_Buffer
+#define GAMEMD_E4_Buffer 1
+#endif
+#ifndef GAMEMD_E4_ComPtr
+#define GAMEMD_E4_ComPtr 1
+#endif
+#ifndef GAMEMD_E4_Random
+#define GAMEMD_E4_Random 1
+#endif
+#ifndef GAMEMD_E4_Compare
+#define GAMEMD_E4_Compare 1
+#endif
+#ifndef GAMEMD_E4_Flag
+#define GAMEMD_E4_Flag 1
+#endif
+#ifndef GAMEMD_E4_StringVector
+#define GAMEMD_E4_StringVector 1
+#endif
+
+// G57c1: battery extension -- utility_ext twins that collide with e4 flat carriers / TU-local defs (C2011 family)
+#ifndef GAMEMD_E4_AllocCallback
+#define GAMEMD_E4_AllocCallback 1
+#endif
+#ifndef GAMEMD_E4_COM
+#define GAMEMD_E4_COM 1
+#endif
+#ifndef GAMEMD_E4_COMClass
+#define GAMEMD_E4_COMClass 1
+#endif
+#ifndef GAMEMD_E4_COMObject
+#define GAMEMD_E4_COMObject 1
+#endif
+#ifndef GAMEMD_E4_Config
+#define GAMEMD_E4_Config 1
+#endif
+#ifndef GAMEMD_E4_Delegate
+#define GAMEMD_E4_Delegate 1
+#endif
+#ifndef GAMEMD_E4_EnumConnectionPointsClass
+#define GAMEMD_E4_EnumConnectionPointsClass 1
+#endif
+#ifndef GAMEMD_E4_EnumConnectionsClass
+#define GAMEMD_E4_EnumConnectionsClass 1
+#endif
+#ifndef GAMEMD_E4_EventQueue
+#define GAMEMD_E4_EventQueue 1
+#endif
+#ifndef GAMEMD_E4_Event_Dispatch
+#define GAMEMD_E4_Event_Dispatch 1
+#endif
+#ifndef GAMEMD_E4_Float
+#define GAMEMD_E4_Float 1
+#endif
+#ifndef GAMEMD_E4_Float4
+#define GAMEMD_E4_Float4 1
+#endif
+#ifndef GAMEMD_E4_GraphicMenuAnimItem
+#define GAMEMD_E4_GraphicMenuAnimItem 1
+#endif
+#ifndef GAMEMD_E4_GraphicMenuItem
+#define GAMEMD_E4_GraphicMenuItem 1
+#endif
+#ifndef GAMEMD_E4_Hash
+#define GAMEMD_E4_Hash 1
+#endif
+#ifndef GAMEMD_E4_Helper
+#define GAMEMD_E4_Helper 1
+#endif
+#ifndef GAMEMD_E4_LoadGame
+#define GAMEMD_E4_LoadGame 1
+#endif
+#ifndef GAMEMD_E4_Main
+#define GAMEMD_E4_Main 1
+#endif
+#ifndef GAMEMD_E4_MoveFeedback
+#define GAMEMD_E4_MoveFeedback 1
+#endif
+#ifndef GAMEMD_E4_Player
+#define GAMEMD_E4_Player 1
+#endif
+#ifndef GAMEMD_E4_PlayerClass
+#define GAMEMD_E4_PlayerClass 1
+#endif
+#ifndef GAMEMD_E4_Process
+#define GAMEMD_E4_Process 1
+#endif
+#ifndef GAMEMD_E4_PtrVector
+#define GAMEMD_E4_PtrVector 1
+#endif
+#ifndef GAMEMD_E4_Queue
+#define GAMEMD_E4_Queue 1
+#endif
+#ifndef GAMEMD_E4_Rect
+#define GAMEMD_E4_Rect 1
+#endif
+#ifndef GAMEMD_E4_Rect_Point
+#define GAMEMD_E4_Rect_Point 1
+#endif
+#ifndef GAMEMD_E4_RefCount
+#define GAMEMD_E4_RefCount 1
+#endif
+#ifndef GAMEMD_E4_Return
+#define GAMEMD_E4_Return 1
+#endif
+#ifndef GAMEMD_E4_SHA1
+#define GAMEMD_E4_SHA1 1
+#endif
+#ifndef GAMEMD_E4_Selection
+#define GAMEMD_E4_Selection 1
+#endif
+#ifndef GAMEMD_E4_Settings
+#define GAMEMD_E4_Settings 1
+#endif
+#ifndef GAMEMD_E4_StringList
+#define GAMEMD_E4_StringList 1
+#endif
+#ifndef GAMEMD_E4_Struct
+#define GAMEMD_E4_Struct 1
+#endif
+#ifndef GAMEMD_E4_Time
+#define GAMEMD_E4_Time 1
+#endif
+#ifndef GAMEMD_E4_Type
+#define GAMEMD_E4_Type 1
+#endif
+#ifndef GAMEMD_E4_Value
+#define GAMEMD_E4_Value 1
+#endif
+#ifndef GAMEMD_E4_Vector2
+#define GAMEMD_E4_Vector2 1
+#endif
+#ifndef GAMEMD_E4_Vector3
+#define GAMEMD_E4_Vector3 1
+#endif
+#ifndef GAMEMD_E4_VectorCursor
+#define GAMEMD_E4_VectorCursor 1
+#endif
+#ifndef GAMEMD_E4_WinMain
+#define GAMEMD_E4_WinMain 1
+#endif
+#ifndef GAMEMD_E4_unknown
+#define GAMEMD_E4_unknown 1
+#endif
+
+
+
 #include <cstdint>
 #include "e4/e4_abs_decls.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"  // G57a1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/ComPtr_e4.hpp"  // G57a1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Random_e4.hpp"  // G57a1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Flag_e4.hpp"  // G57a1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/StringVector_e4.hpp"  // G57a1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
 #include "e4/classes/_fwd_tree_e4.hpp"
 #include "core/guid.hpp"  // G42.55 closure (GUID)
 

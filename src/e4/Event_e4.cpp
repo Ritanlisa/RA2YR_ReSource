@@ -57,7 +57,7 @@ int Event::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
   if ( result == 2 ) /*0x48d0cb*/
   {
 LABEL_11:
-    Stream::ReadPacket((int)&unk_A8EA70); /*0x48d0e0*/
+    ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x48d0e0*/
     if ( ((unsigned int *)(dword_A8B230))[13720] && ((ObjectTypeClass *)((int)&unk_A8EA70))->CreateInstance((int)v2, (int)v1) > 0 ) /*0x48d10f*/
     {
       do /*0x48d15f*/
@@ -235,8 +235,8 @@ void sub_796960()
         }
         if ( &g_WebBrowserConfig != (int *)((ObjectClass *))-36 ) /*0x796ae4*/
         {
-          v7 = CharToWideString(&g_WebBrowserConfig.ambientSoundController[3]); /*0x796aeb*/
-          Network::SendToPlayer((int)&unk_A8E9C0, (int)v10, 455,(wchar_t *)(1), (wchar_t *)v7); /*0x796b04*/
+          v7 = CharToWideString( (unsigned char *)(&g_WebBrowserConfig.ambientSoundController[3])); /*0x796aeb*/
+          Network::SendToPlayer( (int)&unk_A8E9C0, (int)v10, 455, (wchar_t *)(1), (void)((wchar_t *)v7)); /*0x796b04*/
         }
       }
   LABEL_24:
@@ -281,10 +281,10 @@ int sub_7A0F40()
       {
         if ( v2 >= 0 && v1 < (int)dword_B77900 ) /*0x7a0f96*/
           qmemcpy(v11, (char *)dword_B77908 + v2, sizeof(v11)); /*0x7a0faa*/
-        (*(void (**)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v11[6], &v9); /*0x7a0fbe*/
+        (*(void (**)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))( g_UIPointerTable, v11[6], (int *)(&v9)); /*0x7a0fbe*/
         sprintf(Buffer, ",%s,%d", (const char *)&v11[9], v9); /*0x7a0fd8*/
         v3 = strlen(Buffer) + 1; /*0x7a0ffd*/
-        v4 = &Source[strlen(Source)]; /*0x7a1006*/
+        v4 = &Source[strlen( (const char *)(Source))]; /*0x7a1006*/
         qmemcpy(v4, Buffer, 4 * (v3 >> 2)); /*0x7a100a*/
         v6 = &Buffer[4 * (v3 >> 2)]; /*0x7a100a*/
         v5 = &v4[4 * (v3 >> 2)]; /*0x7a100a*/
@@ -319,7 +319,7 @@ void sub_786270()
   {
     if ( strlen((const char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven)) ) /*0x78628e*/
     {
-      strcpy(SubKey, g_Str_SOFTWARE_Westwood_Yuri_s_Reven); /*0x7862b6*/
+      strcpy( (char *)(SubKey), (const char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven)); /*0x7862b6*/
       if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) ) /*0x7862d5*/
       {
         cbData = 4; /*0x7862fb*/

@@ -97,7 +97,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
     }
   }
   v8 = (aP2[20] & 1) != 0 ? (void **)aP2 : 0;
-  v9 = (unsigned int *)((gamemd::CellClass *)((unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)aP2 + 72))(aP2, &v39)));
+  v9 = (unsigned int *)((gamemd::CellClass *)((unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)aP2 + 72))( (unsigned char *)(aP2), (int *)(&v39))));
   v10 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v9));
   if ( a0 ) /*0x6fc1a0*/
   {
@@ -117,9 +117,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
     }
     if ( (*((int (**)(void **, int, HouseClass *))*v8 + 26))(v8, 1, a0->owner) == 5 /*0x6fc296*/
       && !(uint8_t)((Cell *)((Cell *)v10))->IsPassableOffset(a0->owner->relatedTagsCount)
-      && (TechnoClass::GetValue(a0, -1) > 0 || !(uint8_t)HouseClass::IsAlliedWith(
-                                                                     v8[135],
-                                                                     (void *)a0->owner)) )
+      && (((TechnoClass *)a0)->GetValue( -1) > 0 || !(uint8_t)(((HouseClass *)(v8[135]))->IsAlliedWith((void *)a0->owner))) )
     {
       return (gamemd::TechnoClass **)(6); /*0x6fc29d*/
     }
@@ -178,9 +176,9 @@ LABEL_52:
       return (gamemd::TechnoClass **)(5); /*0x6fc43d*/
     if ( *(unsigned char *)(v15 + 347) )
     {
-      if ( (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1 )
+      if ( (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))( (unsigned char *)(aP2)) == 1 )
       {
-        v16 = (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2); /*0x6fc469*/
+        v16 = (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))( (unsigned char *)(aP2)); /*0x6fc469*/
         if ( (uint8_t)((TechnoClass *)(v16 == 1 ? (TechnoClass *)aP2 : 0))->HasDeployFlags() )
           return (gamemd::TechnoClass **)(5); /*0x6fc477*/
       }
@@ -190,24 +188,24 @@ LABEL_52:
   if ( v17
     && *(unsigned char *)(v17 + 347)
     && (aP2[20] & 4) != 0
-    && *(unsigned char *)((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 132))(aP2) + 3476) )
+    && *(unsigned char *)((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 132))( (unsigned char *)(aP2)) + 3476) )
   {
     if ( !*((aP2[20] & 4) != 0 ? (unsigned int *)(aP2 + 1652) : (unsigned int *)1652) )
       WinAPI::Wrapper(-2147467261); /*0x6fc4cf*/
     v37 = *((aP2[20] & 4) != 0 ? (unsigned int *)(aP2 + 1652) : (unsigned int *)1652);
-    if ( (*(uint8_t (**)(int))(*(unsigned int *)&v37->isTargetedByChrono)(v37) ) /*0x6fc4dd*/
+    if ( (*(uint8_t (**)(int))(*(unsigned int *)&v37->isTargetedByChrono))(v37) ) /*0x6fc4dd*/
       return (gamemd::TechnoClass **)(5); /*0x6fc4dd*/
   }
   v18 = *(unsigned int *)(v12 + 172); /*0x6fc4ef*/
   if ( v18 )
   {
     if ( *(unsigned char *)(v18 + 347)
-      && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1
-      && *(unsigned char *)(*((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1
+      && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))( (unsigned char *)(aP2)) == 1
+      && *(unsigned char *)(*((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))( (unsigned char *)(aP2)) == 1
                     ? (unsigned int *)(aP2 + 1732)
                     : (unsigned int *)1732)
                   + 3603)
-      && *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1 ? (unsigned int *)(aP2 + 172) : (unsigned int *)172) == 16 )
+      && *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))( (unsigned char *)(aP2)) == 1 ? (unsigned int *)(aP2 + 172) : (unsigned int *)172) == 16 )
     {
       return (gamemd::TechnoClass **)(5); /*0x6fc546*/
     }
@@ -273,13 +271,13 @@ LABEL_98:
   {
     return (gamemd::TechnoClass **)(6); /*0x6fc6ff*/
   }
-  if ( (*(uint8_t (**)(unsigned char *))(*(unsigned int *)aP2 + 84))(aP2)
+  if ( (*(uint8_t (**)(unsigned char *))(*(unsigned int *)aP2 + 84))( (unsigned char *)(aP2))
     && !*(unsigned char *)(*(unsigned int *)(v12 + 160) + 676) )
   {
     return aP2 != (unsigned char *)a0->locomotorTarget ? 5 : 3;
   }
   if ( (aP2[20] & 4) != 0 /*0x6fc75c*/
-    && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 120))(aP2) != 2
+    && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 120))( (unsigned char *)(aP2)) != 2
     && !*(unsigned char *)(*(unsigned int *)(v12 + 160) + 676) )
   {
     return (gamemd::TechnoClass **)(5); /*0x6fc75c*/
@@ -298,19 +296,19 @@ LABEL_98:
     {
       return (gamemd::TechnoClass **)(5); /*0x6fc7ca*/
     }
-    if ( !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)aP2 + 80))(aP2) || v23 ) /*0x6fc7e3*/
+    if ( !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)aP2 + 80))( (unsigned char *)(aP2)) || v23 ) /*0x6fc7e3*/
       goto LABEL_139; /*0x6fc7e3*/
   }
   else
   {
-    if ( !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)aP2 + 84))(aP2) /*0x6fc7fc*/
+    if ( !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)aP2 + 84))( (unsigned char *)(aP2)) /*0x6fc7fc*/
       && !*(unsigned char *)(*(unsigned int *)(v12 + 160) + 677) )
     {
       return (gamemd::TechnoClass **)(5); /*0x6fc812*/
     }
-    if ( (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) != 11
-      || *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 11 ? (unsigned int *)(aP2 + 236) : (unsigned int *)236) == 2
-      || *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 11 ? (unsigned int *)(aP2 + 236) : (unsigned int *)236) == 6 )
+    if ( (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))( (unsigned char *)(aP2)) != 11
+      || *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))( (unsigned char *)(aP2)) == 11 ? (unsigned int *)(aP2 + 236) : (unsigned int *)236) == 2
+      || *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))( (unsigned char *)(aP2)) == 11 ? (unsigned int *)(aP2 + 236) : (unsigned int *)236) == 6 )
     {
       goto LABEL_139; /*0x6fc855*/
     }
@@ -325,7 +323,7 @@ LABEL_139:
     if ( locomotorTarget /*0x6fc8ad*/
       && locomotorTarget != (FootClass *)aP2
       && a0->damageParticles_2
-      && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) != 6 )
+      && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))( (unsigned char *)(aP2)) != 6 )
     {
       return (gamemd::TechnoClass **)(3); /*0x6fc8bb*/
     }
@@ -466,7 +464,7 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x727bfb*/
+  result = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(aP0), (AbstractClass *)(aP1)); /*0x727bfb*/
   if ( result >= 0 ) /*0x727c02*/
   {
     if ( aP0 ) /*0x727c06*/
@@ -495,7 +493,7 @@ int TriggerTypeClass::Write(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x727c8f*/
+  result = AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)aP0), (ObjectTypeClass *)(a1), (ObjectTypeClass *)(aP2)); /*0x727c8f*/
   if ( result >= 0 ) /*0x727c96*/
     return 0; /*0x727c98*/
   return result; /*0x727c9a*/

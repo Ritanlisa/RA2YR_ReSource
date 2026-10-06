@@ -30,7 +30,7 @@ struct AbstractTypeClass {
     unsigned char q034;  // 0x34
     unsigned int q038;  // 0x38
     unsigned char q03A;  // 0x3A
-    char UINameLabel;  // 0x3D
+    char UINameLabel[32];  // 0x3D char[32] ml g7-til-merge (G57w4)
     unsigned int q040;  // 0x40
     unsigned int q044;  // 0x44
     unsigned int q048;  // 0x48
@@ -39,7 +39,7 @@ struct AbstractTypeClass {
     unsigned int q054;  // 0x54
     unsigned char q058;  // 0x58
     unsigned char q05C;  // 0x5C
-    char Name;  // 0x64
+    char Name[49];  // 0x64 char[49] ml g7-til-merge (G57w4)
     unsigned int q068;  // 0x68
     ObjectClass* q06C;  // 0x6C
     unsigned char q078;  // 0x78

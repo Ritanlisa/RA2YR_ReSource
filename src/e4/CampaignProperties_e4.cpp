@@ -63,18 +63,18 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(uns
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d2ca3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d2ca6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d2cb0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d2ca3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d2cb0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d2cb8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d2cc0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d2cc0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d2ccb*/
-  Block->m_8 = 0; /*0x5d2cd1*/
+  BYTE1(this->m_C) = 0; /*0x5d2ccb*/
+  this->m_8 = 0; /*0x5d2cd1*/
   if ( (a2 & 1) != 0 ) /*0x5d2cd8*/
-    __3_YAXPAX_Z(Block); /*0x5d2cdb*/
-  return Block->__pad_0; /*0x5d2ce5*/
+    __3_YAXPAX_Z(this); /*0x5d2cdb*/
+  return this->__pad_0; /*0x5d2ce5*/
 
 }
 } // namespace gamemd

@@ -46,7 +46,7 @@ int TextBuffer::Init()
   }
   while ( v1 < (gamemd::TextBuffer *)(25) ); /*0x5bccbe*/
   *((unsigned char *)this + 10036) = 1; /*0x5bccc8*/
-  return Text::DrawRepeated((Text *)this, 0, 0, 80, 25); /*0x5bccd4*/
+  return ((Text *)(Text *)this)->DrawRepeated( 0, 0, 80, 25); /*0x5bccd4*/
 
 }
 } // namespace gamemd

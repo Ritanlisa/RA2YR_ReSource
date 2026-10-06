@@ -30,14 +30,14 @@ int IStream::Read(IStream * pstm, void * pv, ULONG cb)
   v4[9] = (unsigned int)(v5); /*0x4a3059*/
   if ( !v4[2] ) /*0x4a305b*/
     WinAPI::Wrapper(-2147467261); /*0x4a3067*/
-  result = (*(int (**)(unsigned int, unsigned int *, int, void **))(*(unsigned int *)v4[2] + 16))(v4[2], v4 + 9, 8, &pv); /*0x4a307a*/
+  result = (*(int (**)(unsigned int, unsigned int *, int, void **))(*(unsigned int *)v4[2] + 16))( v4[2], v4 + 9, 8, (void **)(&pv)); /*0x4a307a*/
   if ( result >= 0 )
   {
     if ( pv == (void *)8 )
     {
       if ( !v4[2] ) /*0x4a3093*/
         WinAPI::Wrapper(-2147467261); /*0x4a309f*/
-      result = (*(int (**)(unsigned int, unsigned int, void *, void **))(*(unsigned int *)v4[2] + 16))(v4[2], v4[7], v7, &pv); /*0x4a30b8*/
+      result = (*(int (**)(unsigned int, unsigned int, void *, void **))(*(unsigned int *)v4[2] + 16))( v4[2], v4[7], v7, (void **)(&pv)); /*0x4a30b8*/
       if ( result >= 0 )
         return v7 != pv ? 0x80004005 : 0;
     }

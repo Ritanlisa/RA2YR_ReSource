@@ -549,8 +549,8 @@ int Lobby::BuildPlayerList()
     }
     v5 = ((String *)((String *)&v7))->GetOrEmpty(); /*0x77dc35*/
     strncat((char *)((char *)&v7), v5, 0x100u); /*0x77dc40*/
-    strncat((char *)((char *)&v7), Str, 0x100u); /*0x77dc54*/
-    DeleteAndZero(&v7); /*0x77dc60*/
+    strncat((char *)((char *)&v7), (char *)&::Delimiter, 0x100u); /*0x77dc54*/
+    j_DeleteAndZero(&v7); /*0x77dc60*/
     ++v1; /*0x77dc65*/
   }
   while ( (int)v1 < (int)&dword_A8DAB0 ); /*0x77dc6e*/

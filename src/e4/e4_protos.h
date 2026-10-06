@@ -5,307 +5,307 @@
 #include "e4/classes/_fwd_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 
-struct ZCoordToScreenY;
-struct WriteCompressionBlock;
-struct WriteAudioStreamToFile;
-struct Weapon_Update;
-struct WSAStartup;
-struct WSAGetLastError;
-struct WSACleanup;
-struct WSAAsyncSelect;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct UpdateWOLLobbyPings;
-struct UpdateSurfaceAnimations;
-struct UpdateMultiplayerLobbySlots;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct UpdateLobbyGraphicsWOL;
-struct UpdateHouseClassAnger;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct UI_Move;
 struct UI_Load_72F4E0;
 struct UI_Load_72F4A0;
-struct UI_Helper_6217E0;
-struct UI_Draw;
-struct UI_Assign_623F60;
-struct TransformVoxelVertex;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct TransformMatrix3x4Point;
 struct ToWideStringChar;
 struct ToCoordPixel;
 struct ThreadAudioMixerMain;
-struct TheaterObjectTypeClassSpecificID;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct TextLabelResult;
 struct TerrainInitMap;
 struct Team_Helper_6F26E0;
-struct System_Search;
-struct Surface_Render;
-struct SubmitDirectSoundBufferData;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct StartAudioControllerAt;
 struct StartAudioController;
 struct Source;
 struct SkirmishSetup_Setup_5E8590;
-struct SkirmishSetup_Setup_5E70D0;
-struct SkirmishSetup_Setup;
-struct ShowUIMessage;
-struct ShowSaveLoadDialog;
-struct ShowPlayerName;
-struct ShowHotkeyOptionsDialog;
-struct ShowDialogConfirm;
-struct Show;
-struct SetupSkirmishSpawnLocations;
-struct SetupSkirmishPlayerSlots;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct SetupSkirmishDialogPlayerSlot;
-struct SetupSampleAudioMixer;
-struct SetupMultiplayerLobbyScreen;
-struct SetupMultiplayerLobbyPlayers;
-struct SetupLobbyPlayerSlots;
-struct SetupLobbyFactionSlots;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct SetupLobbyCountryCombo;
-struct SetupDialogRenderBuffer;
-struct SetupDialog;
-struct SetupComboBoxRandomAlliance;
-struct SetSoundWarning;
-struct SetRateMixerSample;
-struct SetGameSetupPlayerState;
-struct SetEvent;
-struct SetDialogPlayerName;
-struct SetDialogParent;
-struct SetDialogActiveFlag;
-struct SetComboBoxSelection;
-struct SetAudioSource;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct SetAudioFileName;
-struct SelectAllOfType;
-struct SeekAudioStream;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct SearchMIXFile;
-struct ScreenDialogToClient;
-struct SaveScenarioClassGame_AdjustMPSaveFileName;
-struct SaveGame_Start_680AF0;
-struct SaveGame_Start_680A70;
-struct SaveGame_Start_6809F0;
-struct SaveGame_Start_680970;
-struct SaveGame_Start_6808F0;
-struct SaveGame_Start_680870;
-struct SaveGame_Start_6807F0;
-struct SaveGame_Start_680770;
-struct SaveGame_Start_6806F0;
-struct SaveGame_Start_680670;
-struct SaveGame_Start_6805F0;
-struct SaveGame_Start_680570;
-struct SaveGame_Start_6804F0;
-struct SaveGame_Start_680470;
-struct SaveGame_Start_6803F0;
-struct SaveGame_Start_680370;
-struct SaveGame_Start_6802F0;
-struct SaveGame_Start_680270;
-struct SaveGame_Start_6801F0;
-struct SaveGame_Start_680170;
-struct SaveGame_Start_6800F0;
-struct SaveGame_Start_680070;
-struct SaveGame_Start_67FFF0;
-struct SaveGame_Start_67FF70;
-struct SaveGame_Start_67FEF0;
-struct SaveGame_Start_67FE70;
-struct SaveGame_Start;
-struct RunDialog;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct RoundToInt;
-struct RotateBitBufferLeft;
-struct RevokeActiveObject;
-struct ReturnTrue;
-struct ReturnFalse2;
-struct ResizeDialogAndEnum;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct Resize;
-struct RequestBufferMixer;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct Render_Render_7760B0;
 struct Render_Format;
-struct Render_Draw_778030;
-struct Render_Draw;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct RenderTextLabel;
 struct RenderScoreScreen;
 struct RenderFogOfWarOverlay;
-struct RenderFogOfWar;
-struct RemoveTarget;
-struct ReleaseLoadingResources;
-struct Release3COM;
-struct RefreshLobbyAll;
-struct RefreshDialogsGame;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct RectangleStruct;
-struct ReceiveNetworkFile;
-struct ReadPointerFromECX3;
-struct ReadAudioStream;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct RandomCoordScatter;
 struct QuaternionMathMultiply;
 struct PumpMessages;
 struct ProcessSelectionExperience;
-struct ProcessGameResults;
-struct ProcessDataBuildingTypeClass;
-struct ProcessAudioStreamPlayback;
-struct PrintFontLayout;
-struct PopulateWOLLobbyListBox;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct PlayerSkirmishSlotHandler;
-struct PlayVocClass;
-struct PlaySoundEffectAt;
-struct PlaceMapSeedClassBuildings;
-struct PlaceAircraftOnMap;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct ParseStringCommaInts;
-struct PackRGB565;
-struct OpenURLWOL;
-struct OleSaveToStream;
-struct OleRun;
-struct OleLoadFromStream;
-struct Object_Calc_7DF640;
-struct Object_Calc_7DF500;
-struct Object_Calc_7DF3C2;
-struct Object_Calc_7DF280;
-struct Object_Calc_7DF191;
-struct Object_Calc_7DF0B4;
-struct Object_Calc_7DEFD7;
-struct Object_Calc;
-struct Network_Start;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct MultiplyMatrix3x4;
 struct Msg;
-struct MessageLoop;
-struct Memory_Helper_6149B0;
-struct Map_Process_76FD40;
-struct MapSkirmishDialogPlayerToControl;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct LoadVQMovie;
 struct LoadToSurfaceSHP;
-struct LoadScenarioClassByIndex;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct LoadSHPFile;
-struct LoadPaletteFromFile;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct LoadNetworkShareStrings;
 struct LoadFileSHP;
 struct LaunchMultiplayerHost;
-struct IsSpecialTemplate;
-struct IsMessageDialog;
-struct IsDialogControlVisible;
-struct IsAvailableColorhWnd;
-struct IsAreaClearMap;
-struct IntersectSurfaceRects;
-struct InsertIntoHashTree;
-struct InsertGameSettings;
-struct InsertBuddyList;
-struct InitializeSoundBufferPlayback;
-struct InitializeDDraw;
-struct InitializeAudioOcclusion;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct InitSkirmishDialogControls;
-struct InitRandomSeed;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct InitGameDropdownColors;
-struct InitComboBoxNone;
-struct ImageList_DragShowNolock;
-struct IDTechnoClassMatches;
-struct HitDialogTest;
-struct Hash_Check_5E9580;
-struct Hash_Check_5E94D0;
-struct HandleNetworkPlayerDisconnect;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct HandleMultiplayerMapSelection;
-struct GetWarheadVersusMultiplier;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct GetStringCSF;
-struct GetResourceIDCSF;
-struct GetResourceID4CSF;
-struct GetResourceID3CSF;
-struct GetResourceID2CSF;
-struct GetModuleInternalVersion;
-struct GetListBoxItemText;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct GetINIClassIntList;
 struct GetField;
-struct GetDialogDefaultButton;
-struct GetComboBoxSelectedRaw2;
-struct GetComboBoxSelectedRaw;
-struct GetComboBoxSelected;
-struct GetBuildingPlacement;
-struct GetBitShift_Red;
-struct GetBitShift_Green;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct GetBitShift_Blue;
-struct GetBitMask_Red;
-struct GetBitMask_Green;
-struct GetBitMask_Blue;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct GenerateTerrainMap;
 struct GenerateRangeRingTextures;
-struct GenerateLightningStormGlow;
-struct GameOptions_GetEntry;
-struct GameLoopMessagePump;
-struct GameFrameLoop;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct FromStringInt;
 struct FormatWideStringPrefix;
 struct FormatWideString;
 struct FormatWOLPlayerInfo;
-struct FormatHotkeyDisplayString;
-struct FogOfWar_Get;
-struct FloodFillRandomMapTerrain;
-struct FindInfantryDeployPosition;
-struct FindExecutableA;
-struct FindClosestColor;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct FindClearPlacementCell;
 struct FindBuildingByTiberiumType;
-struct FindBuildingAnimByName;
-struct FindBuddyList;
-struct FindAndValidateMap;
-struct FillScoreScreenStats;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct FillRectangle;
-struct FillLobbyPlayerSlot;
-struct FillListBox;
-struct FillComboBoxSides;
-struct EnumProtocolsA;
-struct EndBufferMixer;
-struct EncodeBitmapRGB;
-struct DriveControlCD;
-struct DrawToSurfaceSHP;
-struct DrawTextRendererTextAligned;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct DrawTextRendererMultiline;
 struct DrawTacticalLaserLine;
-struct DrawPowerBarForPlayers;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct DrawHUD;
-struct DrawDialogText;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct DlgSkirmishMenuProc;
-struct DivideBigInteger;
-struct DisableCampaignSlots;
-struct Diplomacy_Helper;
-struct DialogSkirmishFunc_UpdateMultiEngineer;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct DestructParticleSystemClass;
 struct DestroyHashTableINIClass;
 struct DestroyDialog;
 struct Destroy;
 struct Destination;
-struct DeployScriptActionPlane;
-struct DecodeBlockLCW;
-struct DecodeBitmapRGB;
-struct Debug_Helper;
-struct DSP_AudioProcess;
-struct CreateUnitOnCompletion;
-struct CreateTriggerClassIfFarEnough;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct CreateSmokeEffectAt;
 struct CreateMessageBox;
-struct CreateInstanceCOM;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct ConcatStringAlloc;
 struct ComputeSpiralOffset;
-struct ComputeNetworkFrameCRC;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct ComputeMapCameraBounds;
-struct ComputeHash;
-struct ComputeDistortionVariant;
-struct ComputeChronosphereDistortion;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct ComputeBounds;
-struct CloseDialog;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct ClipRectIntersection;
-struct ClipLine;
-struct CleanupVeinholeSystem;
-struct ClampCoordMap;
-struct CheckNetworkGameTimeout;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct CharToWideString;
 struct CharStringToWide;
-struct ChangeVideoMode;
-struct CellChainReact;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct CalcSurfaceBlitRects;
 struct CacheDialogInvalidate;
 struct BytesReturned;
 struct BuildResultPacket;
-struct BuildNetworkEventPacket;
-struct BlitterCopySimpleSHP;
-struct BinaryArraySearch;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct BaseDialogProc;
-struct Audio_Render_7C3430;
-struct Audio_Render;
-struct Audio_Process_7C19F0;
-struct Audio_Process_7C0530;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct AssignWOLPlayerSide;
-struct AlwaysFindYRCD;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct AllocateSurfaceScreenSurfaces;
-struct AddMessageListPlayerMessage;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 namespace gamemd {
 
 extern int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, int16_t a5);
@@ -610,7 +610,7 @@ extern void Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned sh
 extern void Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
 extern void Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
 extern int OpenURLWOL(INIClass * a1, int a2);
-extern void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
+extern unsigned int PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // G57w4: raw 0x41d926 uses retval
 extern int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4);
 extern int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, char a5, int aP6);
 extern int PlayVocClass(int a1, int a2, float a3 = 0, int a4 = 0);
@@ -689,27 +689,35 @@ namespace gamemd {
 // G41.46 C2065 supply: class forward declarations for names the
 // cache-typed bodies reference but the TU closure never declared.
 // Idempotent with full definitions included later in any TU.
+#ifndef GAMEMD_E4_VECTOR_TREE_TRUTH
 class VectorClass;
+#endif // GAMEMD_E4_VECTOR_TREE_TRUTH (G57a2: tree template truth)
 class HashTable;
+#ifndef GAMEMD_E4_VECTOR_TREE_TRUTH
 class DynamicVectorClass;
+#endif // GAMEMD_E4_VECTOR_TREE_TRUTH (G57a2: tree template truth)
 struct Terrain;
 struct Base64Straw;
 struct Object;
 struct IsoCoord;
 struct TEventClass;
 struct Type;
-#ifndef GAMEMD_TREE_UNIVERSE
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_MATH_ALIASES)  // G57a1: math-alias bridge TUs use Vector2D<short>
 struct CellStruct;
-#endif // GAMEMD_TREE_UNIVERSE
+#endif // GAMEMD_TREE_UNIVERSE / GAMEMD_E4_MATH_ALIASES (CellStruct)
 struct ScriptAction;
 struct AudioQueue;
 struct MapClass_Instance;
+#ifndef GAMEMD_E4_MATH_ALIASES  // G57a1: alias TUs get Point2D from core/math.hpp
 class Point2D;
+#endif
 struct TeleportLocomotionClass;
 struct ILocomotion;
 struct LocomotionClass;
 struct ObjectTypeClass;
+#ifndef GAMEMD_E4_MATH_ALIASES  // G57a1: alias TUs get CoordStruct from core/math.hpp
 struct CoordStruct;
+#endif
 struct Power;
 struct Queue;
 struct GadgetClass;

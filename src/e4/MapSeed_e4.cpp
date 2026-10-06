@@ -177,10 +177,10 @@ AbstractClass * * MapSeed::InsertName()
     }
     if ( v6 < v5 ) /*0x79c72f*/
     {
-      memcpy( /*0x79c74c*/
-        &stru_B76900.parachute->AnimClass_field_0x4 + v6,
-        &stru_B76900.parachute->AnimClass_field_0x0 + v6,
-        4 * (v5 + 0x3FFFFFFF * v6));
+memcpy( /*0x79c74c*/ (void *)(&stru_B76900.parachute->AnimClass_field_0x4 + v6), (const void *)(&stru_B76900.parachute->AnimClass_field_0x0 + v6), 4 * (v5 + 0x3FFFFFFF * v6));
+
+
+
       v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c751*/
     }
     v7 = (String *)(&stru_B76900.parachute->AnimClass_field_0x0 + v6); /*0x79c75f*/
@@ -236,7 +236,7 @@ LABEL_33:
       }
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x79c864*/
       memset(v12, 0, sizeof(v12)); /*0x79c874*/
-      strcpy(&v12[36], ((String *)((String *)&g_WindowManager.__pad_14[16]))->GetOrEmpty()); /*0x79c8a1*/
+      strcpy( (char *)(&v12[36]), ((String *)((String *)&g_WindowManager.__pad_14[16]))->GetOrEmpty()); /*0x79c8a1*/
       (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))((LPVOID)ppv, v12); /*0x79c8b3*/
     }
     goto LABEL_33; /*0x79c8b3*/

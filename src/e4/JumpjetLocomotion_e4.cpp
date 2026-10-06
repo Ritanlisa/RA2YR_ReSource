@@ -86,7 +86,7 @@ AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
                 v19 = v11; /*0x4b0b9c*/
                 v20 = v12; /*0x4b0ba0*/
                 v21 = v13; /*0x4b0ba4*/
-                (*(void (**)(int, int *))(*(unsigned int *)v14 + 244))(v14, &v19); /*0x4b0baf*/
+                (*(void (**)(int, int *))(*(unsigned int *)v14 + 244))( v14, (int *)(&v19)); /*0x4b0baf*/
                 LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)&this->q00C + 244))( /*0x4b0bbf*/
                                *((unsigned int *)this + 3),
                                (unsigned int *)aP1);
@@ -99,7 +99,7 @@ AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
                 v21 = v15; /*0x4b0be7*/
                 v19 = v11; /*0x4b0beb*/
                 v20 = v12; /*0x4b0bef*/
-                LOBYTE(v5) = (*(int (**)(int, int *))(*(unsigned int *)v16 + 240))(v16, &v19); /*0x4b0bfa*/
+                LOBYTE(v5) = (*(int (**)(int, int *))(*(unsigned int *)v16 + 240))( v16, (int *)(&v19)); /*0x4b0bfa*/
               }
               v3 = (unsigned int *)(aP1);
             }
@@ -361,9 +361,9 @@ void* JumpjetLocomotion::Land()
     LOWORD(v9) = Math::RoundToInt((double)v53 - *(float *)&this->__pad_C[28]); /*0x54cb05*/
     v53 = v9; /*0x54cb0a*/
     v49[0] = *(unsigned short *)((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue((unsigned int *)(v50)) + 11520; /*0x54cb2a*/
-    FacingClass::Update((unsigned short *)(&this->__pad_48[12]), v49); /*0x54cb39*/
+    ((FacingClass *)(unsigned short *)(&this->__pad_48[12]))->Update( v49); /*0x54cb39*/
   }
-  v10 = dword_ABC5DC + Cell::GetGroundHeight((unsigned int *)(&v51)); /*0x54cb5e*/
+  v10 = dword_ABC5DC + Cell::GetGroundHeight( (unsigned int *)(&v51)); /*0x54cb5e*/
   if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v51)->flags[0] & 0x100) == 0 /*0x54cb7f*/
     || v3 < v10
     || (v45 = 1, v53 >= v10) )
@@ -376,7 +376,7 @@ void* JumpjetLocomotion::Land()
   {
     RemoveTarget(*(unsigned int *)this->__pad_C); /*0x54cbd4*/
     (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)this->__pad_C + 292))(*(unsigned int *)this->__pad_C, 0); /*0x54cbe1*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)this->__pad_C + 436))(*(unsigned int *)this->__pad_C, &v51); /*0x54cbf1*/
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)this->__pad_C + 436))( *(unsigned int *)this->__pad_C, (int *)(&v51)); /*0x54cbf1*/
     (*(void (**)(unsigned int, int))(**(unsigned int **)this->__pad_C + 292))(*(unsigned int *)this->__pad_C, 1); /*0x54cbfe*/
     Targeting::Readd(*(unsigned int **)this->__pad_C); /*0x54cc0d*/
   }
@@ -387,7 +387,7 @@ void* JumpjetLocomotion::Land()
   if ( !v11[1063] ) /*0x54cc39*/
     goto LABEL_74; /*0x54cc41*/
   v47 = 0; /*0x54cc4e*/
-  v12 = (unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)&v11->q_120)(v11, (int *)&v54); /*0x54cc53*/
+  v12 = (unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)&v11->q_120))(v11, (int *)&v54); /*0x54cc53*/
   v49[0] = *v12 / 256; /*0x54cc66*/
   v49[1] = v12[1] / 256; /*0x54cc7f*/
   *(unsigned int *)v50 = *(unsigned int *)v49; /*0x54cc8d*/
@@ -477,7 +477,7 @@ void* JumpjetLocomotion::Land()
     }
   }
   v47 = (gamemd::CellClass *)((char)((gamemd::CellClass *)(1)));
-  v23 = (int *)((gamemd::CellClass *)((int *)(*(unsigned int *)this->__pad_C + 156)));
+  v23 = (int *)((gamemd::CellClass *)((*(unsigned int *)this->__pad_C + 156)));
   v54 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(*v23)));
   v55 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(v23[1])));
   v56 = (int)((gamemd::CellClass *)(v23[2]));
@@ -539,14 +539,14 @@ void* JumpjetLocomotion::Land()
       || v48 && !v26 )
     {
       v35 = *(unsigned int *)this->__pad_C; /*0x54cf77*/
-      if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)&v35->q_6F0)(v35) + 224) == v35 ) /*0x54cf8a*/
+      if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)&v35->q_6F0))(v35) + 224) == v35 ) /*0x54cf8a*/
       {
-        v36 = (CellClass *)(*(int (**)(int))(*(unsigned int *)&v35->q_6F0)(v35); /*0x54cf92*/
-        CellClass::AttachObject(v36, 0); /*0x54cf9a*/
+        v36 = (CellClass *)(*(int (**)(int))(*(unsigned int *)&v35->q_6F0))(v35);  /*0x54cf92*/
+        ((CellClass *)v36)->AttachObject( 0); /*0x54cf9a*/
       }
       v37 = *(unsigned int *)this->__pad_C; /*0x54cf9f*/
       *(unsigned int *)&this->__pad_48[8] = 4; /*0x54cfa2*/
-      (*(void (**)(int, unsigned int, int))(*(unsigned int *)&v37->q_1200)(v37, 0, 1); /*0x54cfaf*/
+      (*(void (**)(int, unsigned int, int))(*(unsigned int *)&v37->q_1200))(v37, 0, 1);  /*0x54cfaf*/
       goto LABEL_65; /*0x54cfb5*/
     }
   }
@@ -554,7 +554,7 @@ LABEL_64:
   v46 = 1; /*0x54cfb7*/
 LABEL_65:
   v38 = *(unsigned int *)this->__pad_C; /*0x54cfbc*/
-  if ( v38 && (*(int (**)(int))(*(unsigned int *)&v38->q_720)(v38) > 0 ) /*0x54cfcf*/
+  if ( v38 && (*(int (**)(int))(*(unsigned int *)&v38->q_720))(v38) > 0 ) /*0x54cfcf*/
   {
     if ( !v45 ) /*0x54cfd7*/
     {
@@ -579,10 +579,10 @@ LABEL_74:
     && (!*(unsigned char *)(*(unsigned int *)this->__pad_C + 1709) || (LOBYTE(v40) = v46) != 0) )
   {
     v41 = *(unsigned int *)this->__pad_C; /*0x54d045*/
-    if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)&v41->q_6F0)(v41) + 224) == v41 ) /*0x54d058*/
+    if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)&v41->q_6F0))(v41) + 224) == v41 ) /*0x54d058*/
     {
-      v42 = (CellClass *)(*(int (**)(int))(*(unsigned int *)&v41->q_6F0)(v41); /*0x54d05f*/
-      CellClass::AttachObject(v42, 0); /*0x54d067*/
+      v42 = (CellClass *)(*(int (**)(int))(*(unsigned int *)&v41->q_6F0))(v41);  /*0x54d05f*/
+      ((CellClass *)v42)->AttachObject( 0); /*0x54d067*/
     }
     ((GadgetGrid *)((int)((GadgetGrid *)&g_CellClassManager)))->RemoveItem(*(unsigned int *)this->__pad_C); /*0x54d075*/
     v43 = *(unsigned int *)this->__pad_C; /*0x54d07a*/
@@ -729,12 +729,12 @@ void* JumpjetLocomotion::UpdateFacing()
   LOWORD(v15) = v17; /*0x54d259*/
   v18 = *(unsigned int *)this->__pad_C; /*0x54d25e*/
   LODWORD(v60) = v15; /*0x54d261*/
-  v19 = (*(int (__fastcall **)(int, int))(*(unsigned int *)&v18->q_740)(v18, v16); /*0x54d270*/
+  v19 = (*(int (__fastcall **)(int, int))(*(unsigned int *)&v18->q_740))(v18, v16);  /*0x54d270*/
   v20 = *(unsigned int *)this->__pad_C + 156; /*0x54d272*/
   v59 = v19; /*0x54d278*/
   v62 = *(double *)v20; /*0x54d27e*/
   v63 = *(unsigned int *)(v20 + 8); /*0x54d291*/
-  GroundHeight = Cell::GetGroundHeight(&v62); /*0x54d29f*/
+  GroundHeight = Cell::GetGroundHeight( &v62); /*0x54d29f*/
   v22 = *(unsigned int *)this->__pad_C + 156; /*0x54d2a4*/
   v62 = *(double *)v22; /*0x54d2ab*/
   v63 = *(unsigned int *)(v22 + 8); /*0x54d2c3*/
@@ -780,7 +780,7 @@ void* JumpjetLocomotion::UpdateFacing()
         v31 = v30[2]; /*0x54d3ce*/
         v62 = *(double *)v30; /*0x54d3d3*/
         v63 = v30[2]; /*0x54d3eb*/
-        if ( v31 >= dword_ABC5DC + Cell::GetGroundHeight(&v62) ) /*0x54d3ff*/
+        if ( v31 >= dword_ABC5DC + Cell::GetGroundHeight( &v62) ) /*0x54d3ff*/
           v27 -= dword_ABC5DC; /*0x54d401*/
       }
     }
@@ -789,7 +789,7 @@ void* JumpjetLocomotion::UpdateFacing()
       v32 = *(unsigned int *)this->__pad_C; /*0x54d407*/
       v62 = *(double *)(v32 + 156); /*0x54d416*/
       v63 = *(unsigned int *)(v32 + 164); /*0x54d424*/
-      (*(void (**)(int, double *))(*(unsigned int *)&v32->q_3D0)(v32, &v62); /*0x54d42f*/
+      (*(void (**)(int, double *))(*(unsigned int *)&v32->q_3D0))( v32, (double *)(&v62));  /*0x54d42f*/
       *(unsigned char *)(*(unsigned int *)this->__pad_C + 140) = 0; /*0x54d438*/
     }
     v14 = (double)SLODWORD(v61) + *(float *)&this->__pad_C[24]; /*0x54d443*/
@@ -874,7 +874,7 @@ LABEL_50:
   v66[1] = LODWORD(v61); /*0x54d5f4*/
   v66[0] = v46; /*0x54d5f8*/
   v66[2] = v41; /*0x54d5fc*/
-  (*(void (**)(int, unsigned int *))(*(unsigned int *)&v47->q_6D0)(v47, v66); /*0x54d607*/
+  (*(void (**)(int, unsigned int *))(*(unsigned int *)&v47->q_6D0))(v47, v66);  /*0x54d607*/
   v48 = *(unsigned char **)this->__pad_C; /*0x54d60d*/
   if ( !v48[1709] )
   {
@@ -893,7 +893,7 @@ LABEL_50:
     else
     {
       Value = (unsigned int *)(((ProgressTimer *)((ProgressTimer *)&this->__pad_48[12]))->GetValue(&v61)); /*0x54d68b*/
-      ((FacingClass*)((char *)(*(unsigned int *)this->__pad_C + 904)))->Set_SyncLog(Value); /*0x54d692*/
+      ((FacingClass*)((*(unsigned int *)this->__pad_C + 904)))->Set_SyncLog(Value); /*0x54d692*/
     }
   }
   if ( v55 ) /*0x54d69d*/

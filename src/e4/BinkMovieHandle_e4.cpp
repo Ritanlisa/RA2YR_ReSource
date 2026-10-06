@@ -217,7 +217,7 @@ namespace gamemd {
 int BinkMovieHandle::Pause(int a2, int a3)
 {
 
-  return Bin  return BinkMovieHandle::RenderFrameClipped(this->height, a2,(void *)(a3)); 
+  return Bin  return BinkMovieHandle::RenderFrameClipped( this->height, a2, (void)((void *)(a3))); 
 
 }
 } // namespace gamemd
@@ -235,7 +235,7 @@ namespace gamemd {
 int BinkMovieHandle::AdjustSurfaceFormat(int a2, void *a2_2)
 {
 
-  return BinkMovieHandle::Check((BinkMovieHandle *)this->height, a2); /*0x5c05dd*/
+  return ((BinkMovieHandle *)(BinkMovieHandle *)this->height)->Check( a2); /*0x5c05dd*/
 
 }
 } // namespace gamemd
@@ -254,7 +254,7 @@ namespace gamemd {
 unsigned int * BinkMovieHandle::Close(void *a1, void *a2)
 {
 
-  return BinkMovieHandle::CopyFrameToSurface((BinkMovieHandle *)this->height);
+  return ((BinkMovieHandle *)(BinkMovieHandle *)this->height)->CopyFrameToSurface();
 
 }
 } // namespace gamemd
@@ -266,13 +266,13 @@ BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
   BinkMovie *height; // edi
 
   height = (BinkMovie *)this->height; /*0x5c0a34*/
-  *(unsigned int *)Block->MovieHandle = &vt_BinkMovieHandle; /*0x5c0a37*/
+  *(unsigned int *)this->MovieHandle = (unsigned int)&vt_BinkMovieHandle;
   if ( height ) /*0x5c0a3f*/
   {
     ((BinkMovie *)(height))->Stop(); /*0x5c0a43*/
     __3_YAXPAX_Z(height); /*0x5c0a49*/
   }
-  *(unsigned int *)Block->MovieHandle = &vt_MovieHandle; /*0x5c0a55*/
+  *(unsigned int *)this->MovieHandle = (unsigned int)&vt_MovieHandle;
   if ( (a2 & 1) != 0 ) /*0x5c0a5d*/
     __3_YAXPAX_Z(this); /*0x5c0a60*/
 return (gamemd::BinkMovieHandle *)this->MovieHandle; /*0x5c0a6a*/

@@ -407,7 +407,7 @@ public:
     virtual void AddRef(); // 0x493CC0
     virtual void ddtor();  // 0x493D60
     virtual void Release(); // 0x493D90
-    virtual void Blit(); // 0x493DC0
+    virtual void Blit(const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2, class Surface* src, const RectangleStruct& dest_rect, const RectangleStruct& src_rect, bool option1, bool option2, int a2, int a3, unsigned int *a4, int a5, int a6, int a7, char a8); // 0x493DC0  // g57b5 W4
     virtual unsigned int* QueryInterface(char a2); // 0x49A200
 
     uint8_t BlitPlainXlatAlpha_ushort_field_0x04[4];
@@ -829,6 +829,8 @@ public:
 };
 // 4 methods in IDA
 // CSP: BuildingLoadQueue matched via T1
+#ifndef GAMEMD_G2_BuildingLoadQueue_DEF  // g57b5: twin-definition guard (render_ext copy)
+#define GAMEMD_G2_BuildingLoadQueue_DEF 1
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: misc_ext 版树宇宙抑制 (双守卫; 已应用态)
 #ifndef GAMEMD_E4_BuildingLoadQueue  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class BuildingLoadQueue
@@ -846,6 +848,8 @@ public:
     uint8_t BuildingLoadQueue_field_0x08[4];
     uint8_t BuildingLoadQueue_field_0x0C[4];
 };
+#endif  // GAMEMD_G2_BuildingLoadQueue_DEF
+
 #endif  // GAMEMD_E4_BuildingLoadQueue
 #endif  // GAMEMD_TREE_UNIVERSE (BuildingLoadQueue)
 // 9 methods in IDA
@@ -1008,6 +1012,8 @@ public:
 // 2 methods in IDA
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制
 #ifndef GAMEMD_E4_FrameTimer  // G42.33 b3: e4 flat carrier wins in opt-in TUs
+#ifndef GAMEMD_G2_FrameTimer_DEF  // g57a5 W2d: twin-definition guard (render_ext FrameTimer)
+#define GAMEMD_G2_FrameTimer_DEF 1
 class FrameTimer
 {
 public:
@@ -1019,6 +1025,8 @@ public:
 
     uint8_t FrameTimer_field_0x04[4];
 };
+#endif  // GAMEMD_G2_FrameTimer_DEF
+
 #endif  // GAMEMD_E4_FrameTimer
 #endif  // GAMEMD_TREE_UNIVERSE (FrameTimer)
 // 1 methods in IDA

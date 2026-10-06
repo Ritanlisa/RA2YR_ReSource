@@ -137,7 +137,14 @@ if APPLY and emitted:
             if tok not in _known and not tok.isupper():
                 _need.add(tok)
     for tok in sorted(_need):
-        lines.insert(6, 'struct %s;' % tok)
+        # G57a1: math.hpp alias names -- yield in bridge TUs that see the
+        # core/math.hpp using-aliases (struct X; after a using-alias = C2371)
+        if tok in ('CellStruct', 'CoordStruct', 'Point2D', 'RGBClass'):
+            lines.insert(6, '#ifndef GAMEMD_E4_MATH_ALIASES  // G57a1')
+            lines.insert(7, 'struct %s;' % tok)
+            lines.insert(8, '#endif')
+        else:
+            lines.insert(6, 'struct %s;' % tok)
     PROTO_H.write_text('\n'.join(lines), encoding='utf-8')
     # NOTE: e4_protos.h must NEVER be hooked into ida_compat.h — the /FI
     # forced include would drag e4 universe decls into every tree TU and

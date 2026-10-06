@@ -96,7 +96,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
          0) )
   {
     v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x544924*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x544933*/
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = (unsigned int)this;
   }
   if ( !a6 /*0x544970*/
     && (*(int *)(unsigned int *)((char *)&stru_A8EB00 + 340) < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 332)
@@ -112,7 +112,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   }
   if ( aP4 ) /*0x544991*/
   {
-    strncpy(Destination,(const char *)(aP4), 0x30u); /*0x5449a1*/
+    strncpy( (char *)(Destination), (const char *)(aP4), 0x30u); /*0x5449a1*/
     v11 = 0; /*0x5449a9*/
   }
   else
@@ -121,7 +121,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   }
   if ( Destination != ((unsigned int *)this)[0] ) /*0x5449b6*/
   {
-    qmemcpy(((unsigned int *)this)[0], Destination, 0x30u); /*0x5449c1*/
+    qmemcpy( ((unsigned int *)this)[0], (const void *)(Destination), 0x30u); /*0x5449c1*/
     ((unsigned int *)this)[48] = v11; /*0x5449c3*/
   }
   *((unsigned char *)this + 757) = 0; /*0x5449c5*/
@@ -329,7 +329,7 @@ LABEL_6:
       return TerrainTypeClass::TerrainTypeClass(v3, Source); /*0x71e311*/
     return 0; /*0x71e305*/
   }
-  while ( _strcmpi((char *)(*((unsigned int *)dword_A8E31C + v2) + 36), Source) ) /*0x71e2ea*/
+  while ( _strcmpi((*((unsigned int *)dword_A8E31C + v2) + 36), Source) ) /*0x71e2ea*/
   {
     if ( ++v2 >= dword_A8E328 ) /*0x71e2f4*/
       goto LABEL_6; /*0x71e2f4*/
@@ -411,7 +411,7 @@ bool  TerrainTypeClass::GetHeight(TerrainClass * a2, int a3)
   TerrainClass *v4; // eax
 
   v4 = (TerrainClass *)__2_YAPAXI_Z(0xE0u); /*0x71ddd8*/
-  return v4 && ((TerrainClass *)(v4))->Construct(this, aP2); /*0x71ddf7*/
+  return v4 && ((TerrainClass *)(v4))->Construct(this, this); /*0x71ddf7*/
 
 }
 // 0x71DE10
@@ -422,7 +422,7 @@ TerrainClass * TerrainTypeClass::GetTileIndex(int a2, void *a2_2, void *a3, void
 
   v3 = (TerrainClass *)__2_YAPAXI_Z(0xE0u); /*0x71de18*/
   if ( v3 ) /*0x71de22*/
-    return ((TerrainClass *)(v3))->Construct(this, (int16_t *)&((char *)&g_BuildingLoadQueue_Array)); /*0x71de2c*/
+    return ((TerrainClass *)(v3))->Construct(this, (int16_t *)(char *)&g_BuildingLoadQueue_Array); /*0x71de2c*/
   else
     return 0; /*0x71de35*/
 

@@ -20,12 +20,18 @@ using ra2::game::ObjectClass;
 #endif
 #include "object/abstract.hpp"
 #include "house/base.hpp"
-#include "e4/classes/INIClass_e4.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "core/checksummer.hpp"
 #include "render/render_ext.hpp"
 #include "structure/building.hpp"
 #include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    int Power_TimerProcess(unsigned int a1);           // raw 0x425435 Power::TimerProcess;
+    int Power_FlagProcess(void *a1, unsigned int a2);  // raw 0x4254ac Power::FlagProcess;
+    void VectorClass_CellConstructor(void *a1, int a2, int a3);  // raw 0x42e71d;
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 // 0x42E6F0
 namespace gamemd { 
@@ -38,11 +44,11 @@ void* BaseClass::Constructor() {
   p_baseNodeCount[5] = 10; /*0x42e709*/
   p_baseNodeCount[4] = 0; /*0x42e710*/
   this->cells38 = 0; /*0x42e71a*/
-  VectorClass::CellConstructor((VectorClass *)&this->cells38Count, 0, 0); /*0x42e71d*/
+  VectorClass_CellConstructor((void *)&this->cells38Count, 0, 0); /*0x42e71d*/
   this->cells38Count = (int)(void *)&DynamicVectorClass_Cell_vftable; /*0x42e722*/
   this->unknown54[2] = 10; /*0x42e728*/
   this->unknown54[1] = 0; /*0x42e72f*/
-  VectorClass::CellConstructor((VectorClass *)&this->unknown54[3], 0, 0); /*0x42e739*/
+  VectorClass_CellConstructor((void *)&this->unknown54[3], 0, 0); /*0x42e739*/
   this->unknown54[3] = (int)(void *)&DynamicVectorClass_Cell_vftable; /*0x42e73e*/
   this->owner = (HouseClass *)10; /*0x42e744*/
   this->unknown54[7] = 0; /*0x42e74b*/
@@ -99,6 +105,8 @@ int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
     }
     while ( v5 < result ); /*0x42ee1a*/
   }
+}
+}
 // 0x42ED60
 namespace gamemd { 
 int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
@@ -137,6 +145,8 @@ int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
     }
     while ( v5 < result ); /*0x42ee1a*/
   }
+}
+}
 // 0x42F180
 namespace gamemd { 
 int BaseClass::ProcessPowerTimer(unsigned int *a2, int aP1, int a1, int a3, int a4, int a5, int a6) {
@@ -144,7 +154,7 @@ int BaseClass::ProcessPowerTimer(unsigned int *a2, int aP1, int a1, int a3, int 
   int v4; // ebp
   int v5; // edi
 
-  Power::TimerProcess(this->cells24Count); /*0x42f18f*/
+  Power_TimerProcess(this->cells24Count); /*0x42f18f*/
   result = this->cells24Count; /*0x42f194*/
   v4 = 0; /*0x42f197*/
   if ( result > 0 ) /*0x42f19b*/
@@ -152,7 +162,7 @@ int BaseClass::ProcessPowerTimer(unsigned int *a2, int aP1, int a1, int a3, int 
     v5 = 0; /*0x42f19e*/
     do /*0x42f1d7*/
     {
-      Power::TimerProcess(*(unsigned int *)(this->baseNodeCapacity + v5)); /*0x42f1a9*/
+      Power_TimerProcess(*(unsigned int *)(this->baseNodeCapacity + v5)); /*0x42f1a9*/
       Checksummer::Add_WORD((Checksummer *)aP1, *(unsigned short *)(this->baseNodeCapacity + v5 + 4)); /*0x42f1b9*/
       Checksummer::Add_WORD((Checksummer *)aP1, *(unsigned short *)(this->baseNodeCapacity + v5 + 6)); /*0x42f1c9*/
       result = this->cells24Count; /*0x42f1ce*/
@@ -161,6 +171,8 @@ int BaseClass::ProcessPowerTimer(unsigned int *a2, int aP1, int a1, int a3, int 
     }
     while ( v4 < result ); /*0x42f1d7*/
   }
+}
+}
 // 0x42F1E0
 namespace gamemd { 
 void* BaseClass::Construct(int a1) {
@@ -171,11 +183,11 @@ void* BaseClass::Construct(int a1) {
   *p_baseNodeCount = (int)(void *)&DynamicVectorClass_BaseNodeClass_vftable; /*0x42f1f2*/
   p_baseNodeCount[5] = 10; /*0x42f1f8*/
   p_baseNodeCount[4] = 0; /*0x42f1ff*/
-  VectorClass::CellConstructor((VectorClass *)&this->cells38Count, 0, 0); /*0x42f20f*/
+  VectorClass_CellConstructor((void *)&this->cells38Count, 0, 0); /*0x42f20f*/
   this->cells38Count = (int)(void *)&DynamicVectorClass_Cell_vftable; /*0x42f214*/
   this->unknown54[2] = 10; /*0x42f21a*/
   this->unknown54[1] = 0; /*0x42f221*/
-  VectorClass::CellConstructor((VectorClass *)&this->unknown54[3], 0, 0); /*0x42f231*/
+  VectorClass_CellConstructor((void *)&this->unknown54[3], 0, 0); /*0x42f231*/
   this->unknown54[3] = (int)(void *)&DynamicVectorClass_Cell_vftable; /*0x42f236*/
   this->owner = (HouseClass *)10; /*0x42f23c*/
   this->unknown54[7] = 0; /*0x42f243*/
@@ -195,6 +207,8 @@ void BaseClass::ddtor() {
     RA2_OPDEL(v2); /*0x42f3b6*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x42f3be*/
   }
+}
+}
 // 0x42F3A0
 namespace gamemd { 
 void BaseClass::ddtor() {
@@ -207,6 +221,8 @@ void BaseClass::ddtor() {
     RA2_OPDEL(v2); /*0x42f3b6*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x42f3be*/
   }
+}
+}
 // 0x42F3D0
 namespace gamemd { 
 int BaseClass::Write(int a1) {
@@ -282,6 +298,8 @@ int BaseClass::Release(int a1, void* a2) {
     this->baseNodeCapacity = v3; /*0x42f5ab*/
     IDA_BYTE1(this->percentBuilt) = v5 == 0; /*0x42f5ae*/
   }
+}
+}
 // 0x42F4F0
 namespace gamemd { 
 int BaseClass::Release(int a1, void* a2) {
@@ -348,6 +366,8 @@ int BaseClass::Release(int a1, void* a2) {
     this->baseNodeCapacity = v3; /*0x42f5ab*/
     IDA_BYTE1(this->percentBuilt) = v5 == 0; /*0x42f5ae*/
   }
+}
+}
 // 0x42F5E0
 namespace gamemd { 
 int BaseClass::Read(int a2) {
@@ -368,6 +388,8 @@ int BaseClass::Read(int a2) {
     if ( ++result >= m_10 ) /*0x42f613*/
       return -1; /*0x42f613*/
   }
+}
+}
 // 0x42F970
 namespace gamemd { 
 void* BaseClass::QueryInterface(int a1) {
@@ -380,6 +402,8 @@ void* BaseClass::QueryInterface(int a1) {
     RA2_OPDEL(v3); /*0x42f988*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x42f990*/
   }
+}
+}
 // 0x42FC40
 namespace gamemd { 
 void* BaseNodeClass::Vector_Constructor(int a1, int a2) {
@@ -407,6 +431,8 @@ void* BaseNodeClass::Vector_Constructor(int a1, int a2) {
     IDA_BYTE1(this->attempts) = 1; /*0x42fca2*/
     this->mapCoords[0] = 0; /*0x42fca6*/
   }
+}
+}
 // 0x431700
 namespace gamemd { 
 int HouseClass::Render(int a2, int a3, int a4, int a5, int a6) {
@@ -433,6 +459,12 @@ int HouseClass::Render(int a2, int a3, int a4, int a5, int a6) {
           v8 = *v7; /*0x431745*/
           if ( *v7 /*0x431794*/
             && (*(unsigned char *)(v8 + 12) & 1) != 0
+}
+}
+}
+}
+}
+}
 // 0x4f9a10
             && ((HouseClass*)HouseClass_Player)->IsAllied(*(unsigned int *)(v8 + 272))
             && (uint8_t)HouseClass::IsAlliedWith(
@@ -532,6 +564,10 @@ int HouseClass::Process() {
     {
       v4 = *(unsigned int *)(this->builtInfantryTypes[126] + 5468); /*0x4587a0*/
       if ( v4 <= 0 ) /*0x4587a8*/
+}
+}
+}
+}
 // 0x4f9790
         return ((HouseClass*)(int *)this->planningPaths[3])->ProcessPowerDrain(-v4); /*0x4587c4*/
       else
@@ -588,9 +624,13 @@ int HouseClass::SumPowerDrain() {
       ++i; /*0x47349f*/
     }
   }
+}
+}
 // 0x474B20
 namespace gamemd { 
 int HouseClass::WriteBuildingTypeNameToINI(void* aP1, void* a2, int a4) {
+}
+}
 // 0x528660
   return INIClass::SetString(int a1,aP1,a2,*(char **) (*((unsigned int *)dword_B054D4 + a4) + 772)); /*0x474b43*/
 }
@@ -619,6 +659,8 @@ int HouseClass::ReadHouseNamesToBitmask(void* a1, void* a2, int a3) {
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x4752a9*/
       a3 |= 1 << HouseClass::FindByName(i); /*0x4752c2*/
   }
+}
+}
 // 0x4752E0
 namespace gamemd { 
 int HouseClass::WriteHouseListToINI(void* aP1, void* a2, int a4) {
@@ -647,12 +689,16 @@ int HouseClass::WriteHouseListToINI(void* aP1, void* a2, int a4) {
     v5 = (HouseClass *)((char *)v5 + 4); /*0x47539b*/
     --v8; /*0x47539f*/
   }
+}
+}
 // 0x475980
 namespace gamemd { 
 int HouseClass::ReadIntFromINI(void* a1, void* a2, int a3) {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
   if ( INIClass::GetString((INIClass *)this, a1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x4759a2*/
+}
+}
 // 0x48db80
     return HouseClass::FindHouseIndexByName((HouseClass *)Destination); /*0x4759af*/
   else
@@ -720,6 +766,8 @@ int HouseClass::FindHouseIndexByName() {
 // 0x4759D0
 namespace gamemd { 
 int HouseClass::updateBuildingProduction(void* a1, void* a2, int a3) {
+}
+}
 // 0x528660
   return INIClass::SetString(int a1,a1,a2,(&off_7E1B60) [a3]); /*0x4759eb*/
 }
@@ -826,6 +874,8 @@ int HouseClass::FindHouseIndexByName() {
     if ( (int)v3 >= (int)&dword_7E1B74 ) /*0x48dbaa*/
       return -1; /*0x48dbaa*/
   }
+}
+}
 // 0x483460
 namespace gamemd { 
 int HouseClass::checkAutoProduction() {
@@ -863,6 +913,8 @@ int HouseClass::FindHouseIndexByName() {
     if ( (int)v3 >= (int)&dword_7E1B74 ) /*0x48dbaa*/
       return -1; /*0x48dbaa*/
   }
+}
+}
 // 0x4870F0
 namespace gamemd { 
 bool HouseClass::HasType() {
@@ -886,6 +938,8 @@ int HouseClass::FindHouseIndexByName() {
     if ( (int)v3 >= (int)&dword_7E1B74 ) /*0x48dbaa*/
       return -1; /*0x48dbaa*/
   }
+}
+}
 // 0x48db80
     return HouseClass::FindHouseIndexByName((HouseClass *)Destination); /*0x4759af*/
   else
@@ -977,6 +1031,8 @@ int CounterClass::Decrement(int a1) {
     --this->count; /*0x49fac1*/
     return *(unsigned int *)(count + 4 * a1); /*0x49fac9*/
   }
+}
+}
 // 0x49FA70
 namespace gamemd { 
 int CounterClass::Decrement(int a1) {
@@ -992,6 +1048,8 @@ int CounterClass::Decrement(int a1) {
     --this->count; /*0x49fac1*/
     return *(unsigned int *)(count + 4 * a1); /*0x49fac9*/
   }
+}
+}
 // 0x49FB40
 namespace gamemd { 
 int CounterClass::ddtor() {
@@ -1018,6 +1076,8 @@ int CounterClass::Load(int a1) {
     this->items = (void *)&CounterClass_vftable; /*0x49fbf9*/
     this->count = 0; /*0x49fbff*/
   }
+}
+}
 // 0x49FBE0
 namespace gamemd { 
 int CounterClass::Load(int a1) {
@@ -1033,6 +1093,8 @@ int CounterClass::Load(int a1) {
     this->items = (void *)&CounterClass_vftable; /*0x49fbf9*/
     this->count = 0; /*0x49fbff*/
   }
+}
+}
 // 0x49FCE0
 namespace gamemd { 
 void* CounterClass::QueryInterface(int a2) {
@@ -1045,6 +1107,8 @@ void* CounterClass::QueryInterface(int a2) {
     RA2_OPDEL(count); /*0x49fcf8*/
     this->count = 0; /*0x49fd00*/
   }
+}
+}
 // 0x4B69B0
 namespace gamemd { 
 void* HouseClass::initDropshipData() {
@@ -1077,6 +1141,8 @@ int HouseClass::RegisterForSwizzleTracking() {
     }
     while ( v2 < result ); /*0x4b6bd5*/
   }
+}
+}
 // 0x4B6BB0
 namespace gamemd { 
 int HouseClass::RegisterForSwizzleTracking() {
@@ -1098,6 +1164,8 @@ int HouseClass::RegisterForSwizzleTracking() {
     }
     while ( v2 < result ); /*0x4b6bd5*/
   }
+}
+}
 // 0x4CA6E0
 namespace gamemd { 
 int HouseClass::UpdateTeamProductionSpeed() {
@@ -1133,6 +1201,8 @@ int HouseClass::UpdateTeamProductionSpeed() {
     }
     result = *(unsigned int *)&stru_A83D50.__pad_C8[40]; /*0x4ca73f*/
   }
+}
+}
 // 0x4E8290
 namespace gamemd { 
 void HouseClass::COMStub_3() {
@@ -1145,6 +1215,8 @@ void HouseClass::COMStub_3() {
     RA2_OPDEL(v2); /*0x4e82a6*/
     this->Items = 0; /*0x4e82ae*/
   }
+}
+}
 // 0x4E82C0
 namespace gamemd { 
 int HouseClass::COMStub_5(int a1) {
@@ -1184,6 +1256,8 @@ int HouseClass::COMStub_1(int a1) {
         return 1; /*0x4e922c*/
     }
   }
+}
+}
 // 0x4E82E0
 namespace gamemd { 
 int HouseClass::COMStub_6(int a1) {
@@ -1214,6 +1288,8 @@ int HouseClass::COMStub_1(int a1) {
         return 1; /*0x4e922c*/
     }
   }
+}
+}
 // 0x4E9200
 namespace gamemd { 
 int HouseClass::COMStub_1(int a1) {
@@ -1238,6 +1314,8 @@ int HouseClass::COMStub_1(int a1) {
         return 1; /*0x4e922c*/
     }
   }
+}
+}
 // 0x4E9380
 namespace gamemd { 
 int HouseClass::COMStub_2(int a1, void* a2) {
@@ -1273,6 +1351,8 @@ int HouseClass::COMStub_2(int a1, void* a2) {
     this->q008 = a1; /*0x4e9402*/
     this->IsAllocated = a2 == 0; /*0x4e9405*/
   }
+}
+}
 // 0x4E9430
 namespace gamemd { 
 int HouseClass::COMStub_4(void* a1) {
@@ -1289,6 +1369,8 @@ int HouseClass::COMStub_4(void* a1) {
     if ( ++result >= v2 ) /*0x4e944d*/
       return -1; /*0x4e944d*/
   }
+}
+}
 // 0x4EF530
 namespace gamemd { 
 void* HouseClass::COMStub_0(int a2) {
@@ -1301,6 +1383,8 @@ void* HouseClass::COMStub_0(int a2) {
     RA2_OPDEL(v3); /*0x4ef548*/
     this->Items = 0; /*0x4ef550*/
   }
+}
+}
 // 0x4F21A0
 namespace gamemd { 
 void HouseClass::processTargetSelection() {
@@ -1327,6 +1411,8 @@ void HouseClass::processTargetSelection() {
     }
     while ( ((uint8_t (*)(void ***))v5[1])(&v5) ); /*0x4f21fc*/
   }
+}
+}
 // 0x4F2810
 namespace gamemd { 
 void* HouseClass::vt_placeholder_03(int a2) {
@@ -1357,6 +1443,8 @@ void HouseClass::vt_placeholder_05() {
     RA2_OPDEL(v2); /*0x4f2866*/
     this->Items = 0; /*0x4f286e*/
   }
+}
+}
 // 0x4F2830
 namespace gamemd { 
 void* HouseClass::vt_placeholder_04(int a2) {
@@ -1378,6 +1466,8 @@ void HouseClass::vt_placeholder_05() {
     RA2_OPDEL(v2); /*0x4f2866*/
     this->Items = 0; /*0x4f286e*/
   }
+}
+}
 // 0x4F2850
 namespace gamemd { 
 void HouseClass::vt_placeholder_05() {
@@ -1390,6 +1480,8 @@ void HouseClass::vt_placeholder_05() {
     RA2_OPDEL(v2); /*0x4f2866*/
     this->Items = 0; /*0x4f286e*/
   }
+}
+}
 // 0x4F2880
 namespace gamemd { 
 int HouseClass::vt_placeholder_06(int a1) {
@@ -1434,6 +1526,8 @@ int HouseClass::processWaypointPlanning(int a1, void* a2) {
     this->q008 = a1; /*0x4f2ae2*/
     this->IsAllocated = a2 == 0; /*0x4f2ae5*/
   }
+}
+}
 // 0x4F2A60
 namespace gamemd { 
 int HouseClass::processWaypointPlanning(int a1, void* a2) {
@@ -1469,6 +1563,8 @@ int HouseClass::processWaypointPlanning(int a1, void* a2) {
     this->q008 = a1; /*0x4f2ae2*/
     this->IsAllocated = a2 == 0; /*0x4f2ae5*/
   }
+}
+}
 // 0x4F2B10
 namespace gamemd { 
 int HouseClass::vt_placeholder_08(void* a1) {
@@ -1485,6 +1581,8 @@ int HouseClass::vt_placeholder_08(void* a1) {
     if ( ++result >= v2 ) /*0x4f2b2d*/
       return -1; /*0x4f2b2d*/
   }
+}
+}
 // 0x4F2BB0
 namespace gamemd { 
 void* HouseClass::vt_placeholder_11(int a2) {
@@ -1497,6 +1595,8 @@ void* HouseClass::vt_placeholder_11(int a2) {
     RA2_OPDEL(v3); /*0x4f2bc8*/
     this->Items = 0; /*0x4f2bd0*/
   }
+}
+}
 // 0x4F5190
 namespace gamemd { 
 int HouseClass::Constructor(int a1) {
@@ -1590,6 +1690,8 @@ int HouseClass::Constructor(int a1) {
     v3 += 44; /*0x4f540e*/
     --v5; /*0x4f5412*/
   }
+}
+}
 // 0x4F6EC0
 namespace gamemd { 
 int HouseClass::SetCombatPower(int a1) {
@@ -1631,6 +1733,8 @@ int HouseClass::SetCombatPower(int a1) {
     this->u32_1CC = v4[1]; /*0x4f6fcb*/
     v5 = *(double *)&dword_8871E0->__pad_C3C[80 * a1 + 2348] * *(double *)&dword_8871E0->__pad_C3C[2012] * v2[31]; /*0x4f6fe3*/
   }
+}
+}
 // 0x4F7140
 namespace gamemd { 
 int HouseClass::Destruct() {
@@ -1690,6 +1794,8 @@ int HouseClass::Destruct() {
     *v2++ = 0; /*0x4f719b*/
     --v3; /*0x4f71a0*/
   }
+}
+}
 // 0x4F7870
 namespace gamemd { 
 int HouseClass::CanBuild(int a1, int a2, int a3) {
@@ -2096,6 +2202,8 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
   LABEL_134:
       RA2_OPDEL(v8); /*0x4f7f95*/
   }
+}
+}
 // 0x4F9370
 namespace gamemd { 
 int HouseClass::Update() {
@@ -2125,6 +2233,8 @@ int HouseClass::Update() {
     }
     while ( v2 < result ); /*0x4f93d2*/
   }
+}
+}
 // 0x4F93E0
 namespace gamemd { 
 int HouseClass::NotifyUnderAttack(void* a1) {
@@ -2151,6 +2261,8 @@ int HouseClass::NotifyUnderAttack(void* a1) {
     if ( (unsigned char)result ) /*0x4f93fb*/
       return result; /*0x4f93fb*/
   }
+}
+}
 // 0x4f9790
         return ((HouseClass*)(int *)this->planningPaths[3])->ProcessPowerDrain(-v4); /*0x4587c4*/
       else
@@ -2488,6 +2600,8 @@ int HouseClass::SetThreat_Bounds(int a1, int a2) {
   {
     v5 = 0; /*0x4fa2f7*/
   }
+}
+}
 // 0x4FA910
 namespace gamemd { 
 int HouseClass::StartFactoryProduction(void* a1, int a2, int a3) {
@@ -2540,6 +2654,8 @@ int HouseClass::StartFactoryProduction(void* a1, int a2, int a3) {
       result = 3; /*0x4fa998*/
       break; /*0x4fa9a0*/
   }
+}
+}
 // 0x4FAA10
 namespace gamemd { 
 int HouseClass::CancelProduction(void* a1, int a2, int a3, int a4) {
@@ -2565,6 +2681,8 @@ int HouseClass::CancelProduction(void* a1, int a2, int a3, int a4) {
       v18 = 0; /*0x4faa44*/
     v8 = v18; /*0x4faa58*/
   }
+}
+}
 // 0x4FB0E0
 namespace gamemd { 
 int HouseClass::CompleteProduction(void* a1, int a2, int a3, int a4) {
@@ -2605,6 +2723,8 @@ int HouseClass::CompleteProduction(void* a1, int a2, int a3, int a4) {
     else
       v7 = 0; /*0x4fb113*/
   }
+}
+}
 // 0x4FB6B0
 namespace gamemd { 
 int HouseClass::ProcessPromotionSound(void* a1) {
@@ -2666,6 +2786,8 @@ int HouseClass::ProcessPromotionSound(void* a1) {
     default:
       break;
   }
+}
+}
 // 0x4FC0B0
 namespace gamemd { 
 int HouseClass::DefeatPlayer() {
@@ -2723,6 +2845,8 @@ int HouseClass::DefeatPlayer() {
     if ( !v3 && IDA_LOBYTE(dword_8871E0->ElevationIncrement) && *(unsigned int *)&dword_A8B238 ) /*0x4fc10b*/
       HouseClass::CanDetect(v39); /*0x4fc10d*/
   }
+}
+}
 // 0x4FC6D0
 namespace gamemd { 
 int HouseClass::ClearLowPowerTargets() {
@@ -2770,6 +2894,8 @@ int HouseClass::ClearLowPowerTargets() {
       v4 = v4; /*0x4fc76c*/
     }
   }
+}
+}
 // 0x4fc9e0
       return HouseClass::CheckWinCondition((HouseClass *)dword_A83D4C, 0); /*0x4fc6b7*/
     }
@@ -3188,6 +3314,8 @@ int HouseClass::AutoBuild() {
     v80 = (int *)BuildingQueue::AllocSlot(-1); /*0x4fe4a0*/
     v3 = v80; /*0x4fe4a4*/
   }
+}
+}
 // 0x4FEA60
 namespace gamemd { 
 int HouseClass::AIUnitProduction() {
@@ -3408,6 +3536,8 @@ int HouseClass::AIUnitProduction() {
     if ( v26 ) /*0x4feea7*/
       v1->ratioTeamBuildings = v43[Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v26 - 1) + 100]; /*0x4feec5*/
   }
+}
+}
 // 0x4FEEE0
 namespace gamemd { 
 int HouseClass::AIInfantryProduction() {
@@ -3492,6 +3622,8 @@ int HouseClass::AIInfantryProduction() {
     }
     ++v3; /*0x4ff038*/
   }
+}
+}
 // 0x4FF210
 namespace gamemd { 
 int HouseClass::AIAircraftProduction() {
@@ -3576,6 +3708,8 @@ int HouseClass::AIAircraftProduction() {
     }
     ++v3; /*0x4ff368*/
   }
+}
+}
 // 0x4FF550
 namespace gamemd { 
 int HouseClass::DecrementUnitCount(void* a1) {
@@ -3650,6 +3784,8 @@ int HouseClass::DecrementUnitCount(void* a1) {
       }
     }
   }
+}
+}
 // 0x500510
 namespace gamemd { 
 int HouseClass::GetBuildLimit(int a1, int a2, int a3) {
@@ -3683,9 +3819,12 @@ int HouseClass::GetBuildLimit(int a1, int a2, int a3) {
       result = 0; /*0x50056e*/
       break; /*0x50056e*/
   }
+}
+}
 // 0x500910
 namespace gamemd
 {
+}
 // 0x500910
 int HouseClass::GetFactoryCount(int a1, int a2)
 {
@@ -3783,6 +3922,7 @@ int HouseClass::LoadTypeList() {
     }
     while ( v3 < KeyCount ); /*0x500a83*/
   }
+}
 // 0x500B40
 namespace gamemd { 
 int HouseClass::ReadFromINI(void* a1) {
@@ -3832,6 +3972,8 @@ int HouseClass::ReadFromINI(void* a1) {
                               (uint8_t *)g_INI_Key_TechLevel,
                               *((unsigned int *)dword_A8B230 + 1173));
   this->u32_1DC = 100 /*0x500bd0*/
+}
+}
 // 0x5276d0
                           * INIClass::ReadInt_Overwrite(
                               (bool *)a1,
@@ -3893,6 +4035,8 @@ int HouseClass::SaveToINI(void* a1) {
     }
     while ( v9 ); /*0x50134a*/
   }
+}
+}
 // 0x5018C0
 namespace gamemd { 
 int HouseClass::NotifyPowerStateChange(int a2) {
@@ -3944,6 +4088,8 @@ int HouseClass::NotifyPowerStateChange(int a2) {
     (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x5019f9*/
     return (*(char (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x501a0a*/
   }
+}
+}
 // 0x501AC0
 namespace gamemd { 
 void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
@@ -4002,6 +4148,8 @@ void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
   {
     unknown5498 = 2048; /*0x501b10*/
   }
+}
+}
 // 0x5025F0
 namespace gamemd { 
 void* HouseClass::RegisterGain(int a1, int a2) {
@@ -4093,6 +4241,8 @@ void* HouseClass::RegisterGain(int a1, int a2) {
       }
     }
   }
+}
+}
 // 0x502A80
 namespace gamemd { 
 int HouseClass::RegisterGain_0(void* a1, int a2) {
@@ -4197,6 +4347,8 @@ int HouseClass::RegisterGain_0(void* a1, int a2) {
     default:
       return v4;
   }
+}
+}
 // 0x502D30
 namespace gamemd { 
 int HouseClass::FindOwner() {
@@ -4215,6 +4367,8 @@ int HouseClass::FindOwner() {
     if ( ++v1 >= ((char *)&stru_A80220) ) /*0x502d58*/
       return 0; /*0x502d58*/
   }
+}
+}
 // 0x502D60
 namespace gamemd { 
 int HouseClass::UpdatePowerTimers(void* a1) {
@@ -4232,8 +4386,8 @@ int HouseClass::UpdatePowerTimers(void* a1) {
   int v14; // ecx
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x502d69*/
-  Power::TimerProcess(*(unsigned int *)&this->__pad_13C[72]); /*0x502d77*/
-  Power::TimerProcess(*(unsigned int *)(this->relatedTagsCapacity + 184)); /*0x502d88*/
+  Power_TimerProcess(*(unsigned int *)&this->__pad_13C[72]); /*0x502d77*/
+  Power_TimerProcess(*(unsigned int *)(this->relatedTagsCapacity + 184)); /*0x502d88*/
   Checksummer::Add_double((Checksummer *)a1, *(unsigned int *)&this->__pad_13C[76], *(unsigned int *)&this->__pad_13C[80]); /*0x502d9d*/
   Checksummer::Add_double((Checksummer *)a1, *(unsigned int *)&this->__pad_13C[84], *(unsigned int *)&this->__pad_13C[88]); /*0x502db2*/
   Checksummer::Add_double((Checksummer *)a1, *(unsigned int *)&this->__pad_13C[92], *(unsigned int *)&this->__pad_13C[96]); /*0x502dc7*/
@@ -4244,18 +4398,18 @@ int HouseClass::UpdatePowerTimers(void* a1) {
   Checksummer::Add_double((Checksummer *)a1, *(unsigned int *)&this->__pad_13C[132], *(unsigned int *)&this->__pad_13C[136]); /*0x502e30*/
   v3 = Checksummer::Add_double((Checksummer *)a1, *(unsigned int *)&this->__pad_13C[140], *(unsigned int *)&this->__pad_13C[144]); /*0x502e45*/
   IDA_LOBYTE(v3) = this->currentPlayer; /*0x502e4a*/
-  Power::FlagProcess((Power *)a1, v3); /*0x502e53*/
+  Power_FlagProcess((void *)a1, v3); /*0x502e53*/
   IDA_LOBYTE(v4) = this->production; /*0x502e58*/
-  Power::FlagProcess((Power *)a1, v4); /*0x502e61*/
+  Power_FlagProcess((void *)a1, v4); /*0x502e61*/
   IDA_LOBYTE(v5) = this->autocreateAllowed; /*0x502e66*/
-  v6 = Power::FlagProcess((Power *)a1, v5); /*0x502e6f*/
+  v6 = Power_FlagProcess((void *)a1, v5); /*0x502e6f*/
   IDA_LOBYTE(v6) = this->aiTriggersActive; /*0x502e74*/
-  Power::FlagProcess((Power *)a1, v6); /*0x502e7d*/
+  Power_FlagProcess((void *)a1, v6); /*0x502e7d*/
   IDA_LOBYTE(v7) = this->defeated; /*0x502e82*/
-  Power::FlagProcess((Power *)a1, v7); /*0x502e8b*/
-  Power::TimerProcess(this->iqLevel2); /*0x502e99*/
-  Power::TimerProcess(this->aiMode); /*0x502ea7*/
-  Power::TimerProcess(this->repairTimer[2]); /*0x502eb5*/
+  Power_FlagProcess((void *)a1, v7); /*0x502e8b*/
+  Power_TimerProcess(this->iqLevel2); /*0x502e99*/
+  Power_TimerProcess(this->aiMode); /*0x502ea7*/
+  Power_TimerProcess(this->repairTimer[2]); /*0x502eb5*/
   v8 = *(unsigned int *)this->__pad_280; /*0x502eba*/
   v9 = *(unsigned int *)&this->__pad_280[8]; /*0x502ec0*/
   if ( v8 != -1 ) /*0x502ec9*/
@@ -4265,6 +4419,8 @@ int HouseClass::UpdatePowerTimers(void* a1) {
     else
       v9 -= *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v8; /*0x502ed7*/
   }
+}
+}
 // 0x504740
 namespace gamemd { 
 int HouseClass::EnsurePlanningPathExists(int a1) {
@@ -4286,6 +4442,8 @@ int HouseClass::EnsurePlanningPathExists(int a1) {
       return 0; /*0x504775*/
     }
   }
+}
+}
 // 0x5051E0
 namespace gamemd { 
 void* HouseClass::FirstBuildableFromArray(int a1) {
@@ -4335,6 +4493,8 @@ void* HouseClass::FirstBuildableFromArray(int a1) {
     if ( ++v16 >= v4 ) /*0x5052e7*/
       return 0; /*0x5052f1*/
   }
+}
+}
 // 0x5054B0
 namespace gamemd { 
 void HouseClass::GenerateAIBuildListEnsureSanity() {
@@ -4527,6 +4687,8 @@ void HouseClass::GenerateAIBuildListEnsureSanity() {
       }
     }
   }
+}
+}
 // 0x5060B0
 namespace gamemd { 
 void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
@@ -4632,6 +4794,8 @@ void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
     *a2 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[948]; /*0x5060d7*/
     return a2; /*0x5060df*/
   }
+}
+}
 // 0x506B90
 namespace gamemd { 
 void* HouseClass::FindBestProductionBuilding(void* a2, int a3) {
@@ -4653,6 +4817,8 @@ void* HouseClass::FindBestProductionBuilding(void* a2, int a3) {
     *a2 = 0; /*0x506bc6*/
     return a2; /*0x506bcc*/
   }
+}
+}
 // 0x507D70
 namespace gamemd { 
 int HouseClass::CollectInfantryBuildCandidates(int a1, int a2) {
@@ -4697,6 +4863,8 @@ int HouseClass::CollectInfantryBuildCandidates(int a1, int a2) {
     else
       v8 = (unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2444); /*0x507dea*/
   }
+}
+}
 // 0x507F60
 namespace gamemd { 
 int HouseClass::CollectAircraftBuildCandidates(int a1, int a2) {
@@ -4741,6 +4909,8 @@ int HouseClass::CollectAircraftBuildCandidates(int a1, int a2) {
     else
       v8 = (unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2444); /*0x507fda*/
   }
+}
+}
 // 0x508150
 namespace gamemd { 
 int HouseClass::ComputePowerDistribution() {
@@ -4780,6 +4950,8 @@ int HouseClass::ComputePowerDistribution() {
     *(&this->u32_23407) = 0.33000001; /*0x50827d*/
     return 1051260355; /*0x50826c*/
   }
+}
+}
 // 0x5082C0
 namespace gamemd { 
 void HouseClass::FindAutoBuildLocation() {
@@ -5177,6 +5349,8 @@ void HouseClass::FindAutoBuildLocation() {
       while ( v44 < v87 ); /*0x508a90*/
     }
   }
+}
+}
 // 0x508F60
 namespace gamemd { 
 int HouseClass::ToggleGapGeneratorReveal() {
@@ -5203,6 +5377,8 @@ int HouseClass::ToggleGapGeneratorReveal() {
     }
     return result; /*0x50903f*/
   }
+}
+}
 // 0x509140
 namespace gamemd { 
 int HouseClass::UpdateProduction(int a1, int a2, int a3) {
@@ -5299,6 +5475,8 @@ int HouseClass::UpdateProduction(int a1, int a2, int a3) {
     default:
       return result;
   }
+}
+}
 // 0x509400
 namespace gamemd { 
 int HouseClass::UpdateFogVisibility() {
@@ -5400,6 +5578,8 @@ int HouseClass::UpdateFogVisibility() {
     }
     result = i - 1; /*0x5095ba*/
   }
+}
+}
 // 0x509700
 namespace gamemd { 
 int HouseClass::UpdateBuildState(int a1) {
@@ -5451,6 +5631,8 @@ int HouseClass::UpdateBuildState(int a1) {
     default:
       return v3;
   }
+}
+}
 // 0x509B20
 namespace gamemd { 
 void HouseClass::Find(int a1) {
@@ -5485,6 +5667,7 @@ void HouseClass::Find(int a1) {
     }
   }
 }
+}
 // 0x509C10
 namespace gamemd { 
 void HouseClass::FireStoredSW(int a1) {
@@ -5518,6 +5701,7 @@ void HouseClass::FireStoredSW(int a1) {
       SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)this, v6, (int)&v7); /*0x509cab*/
     }
   }
+}
 }
 // 0x509CD0
 namespace gamemd { 
@@ -5583,6 +5767,8 @@ int HouseClass::Fire_ParaDrop(int a2) {
     }
     v4 = *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948]; /*0x509db4*/
   }
+}
+}
 // 0x509E00
 namespace gamemd { 
 int HouseClass::Fire_LightningStorm(int a1) {
@@ -5616,6 +5802,10 @@ int HouseClass::Fire_LightningStorm(int a1) {
       || (result = ((unsigned int *)&stru_A8EB00)[950], IDA_HIWORD(v8) != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950]) )
     {
       v7 = (*(int (**)(int, char *))(this->supers + 16))(&this->u32_950, &a1); /*0x509ea2*/
+}
+}
+}
+}
 // 0x4fae50
       return SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)this, v7, (int)&v8); /*0x509ea8*/
     }
@@ -5793,6 +5983,16 @@ int HouseClass::Fire_PsyDom(int a1) {
                       continue; /*0x50a276*/
                   }
                   if ( !(*((uint8_t (**)(TechnoClass *))v11->vtable1 + 21))(v11) /*0x50a285*/
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
 // 0x53c450
                     && TechnoClass::CanBePermaMC(v11) )
                   {
@@ -6240,6 +6440,8 @@ int HouseClass::GetColor() {
     this->startingCell = 5; /*0x50b883*/
     v2 = *((unsigned int *)dword_B054D4 + 5); /*0x50b895*/
   }
+}
+}
 // 0x50BF60
 namespace gamemd { 
 int HouseClass::CalculateCostMultipliers() {
@@ -6265,6 +6467,8 @@ int HouseClass::CalculateCostMultipliers() {
     this->u32_539C = *(float *)(*(unsigned int *)(*(unsigned int *)(this->u32_144 + 4 * result - 4) + 1312) + 5852) /*0x50c016*/
                    * this->u32_539C;
   }
+}
+}
 // 0x50C0A0
 namespace gamemd { 
 double HouseClass::GetBuildingDamageMultiplier(void* a2) {
@@ -6291,6 +6495,8 @@ double HouseClass::GetBuildingDamageMultiplier(void* a2) {
       result = 1.0; /*0x50c115*/
       break; /*0x50c115*/
   }
+}
+}
 // 0x50C170
 namespace gamemd { 
 int HouseClass::FindByName() {
@@ -6309,6 +6515,8 @@ int HouseClass::FindByName() {
     if ( ++v1 >= dword_A80238 ) /*0x50c1f6*/
       return -1; /*0x50c1f6*/
   }
+}
+}
 // 0x50C210
 namespace gamemd { 
 void HouseClass::SetPrimaryTechBuilding() {
@@ -6372,6 +6580,7 @@ void HouseClass::SetPrimaryTechBuilding() {
     }
   }
 }
+}
 // 0x50c340
       && HouseClass::FindBuildLocation(this, v25) )
     {
@@ -6416,6 +6625,8 @@ int HouseClass::NotifyImpactWater() {
     if ( v4 && v4[135] == this ) /*0x50c8e3*/
       ((void (*)(HouseClass **, unsigned int))(*v4)->builtInfantryTypes[24])(v4, 0); /*0x50c8e9*/
   }
+}
+}
 // 0x50CBF0
 namespace gamemd { 
 void* HouseClass::FindSWBuilding(void* a1) {
@@ -6686,6 +6897,8 @@ void* HouseClass::FindSWBuilding(void* a1) {
       }
     }
   }
+}
+}
 // 0x50D170
 namespace gamemd { 
 void* HouseClass::FindSWTarget(void* aP1, int aP2) {
@@ -6714,6 +6927,8 @@ void* HouseClass::FindSWTarget(void* aP1, int aP2) {
     ++v5; /*0x50d1a0*/
     auxParticles1 = (ParticleSystemClass *)((char *)auxParticles1 + 4); /*0x50d1a1*/
   }
+}
+}
 // 0x50DA80
 namespace gamemd { 
 int HouseClass::GetTransitionCount() {
@@ -6734,6 +6949,8 @@ void* HouseClass::GetCurrentOption(void* aP1) {
     *aP1 = this->baseSpawnCell[0]; /*0x50df1a*/
     return aP1; /*0x50df10*/
   }
+}
+}
 // 0x50DEF0
 namespace gamemd { 
 void* HouseClass::GetCurrentOption(void* aP1) {
@@ -6743,6 +6960,8 @@ void* HouseClass::GetCurrentOption(void* aP1) {
     *aP1 = this->baseSpawnCell[0]; /*0x50df1a*/
     return aP1; /*0x50df10*/
   }
+}
+}
 // 0x50DF30
 namespace gamemd { 
 void* HouseClass::GetStartCoords(void* aP1) {
@@ -6757,6 +6976,8 @@ void* HouseClass::GetStartCoords(void* aP1) {
   {
     v2 = this->baseSpawnCell[0]; /*0x50df51*/
   }
+}
+}
 // 0x50E000
 namespace gamemd { 
 int HouseClass::SetMapSeed(int a1) {
@@ -6808,6 +7029,7 @@ void HouseClass::ReactivateTechnos(int a1) {
     }
   }
 }
+}
 // 0x50E280
 namespace gamemd { 
 void HouseClass::ReactivateTechnos(int a1) {
@@ -6852,6 +7074,7 @@ void HouseClass::ReactivateTechnos(int a1) {
     }
   }
 }
+}
 // 0x50E430
 namespace gamemd { 
 int HouseClass::processRadar(int a1, int a2, int a3) {
@@ -6884,6 +7107,8 @@ int HouseClass::AddCoordTrackingEntry(void* a1) {
       return 0; /*0x50ff7f*/
     }
   }
+}
+}
 // 0x50FF50
 namespace gamemd { 
 int HouseClass::AddCoordTrackingEntry(void* a1) {
@@ -6907,6 +7132,8 @@ int HouseClass::AddCoordTrackingEntry(void* a1) {
       return 0; /*0x50ff7f*/
     }
   }
+}
+}
 // 0x510460
 namespace gamemd { 
 void* HouseClass::updatePowerState(int a2) {
@@ -6922,6 +7149,8 @@ void* HouseClass::updatePowerState(int a2) {
       return v2; /*0x510484*/
     }
   }
+}
+}
 // 0x510820
 namespace gamemd { 
 int HouseClass::processAIEvents(int a1) {
@@ -6944,6 +7173,8 @@ int HouseClass::processAIEvents(int a1) {
     }
     while ( v3 < ((unsigned int *)this)[0] ); /*0x510844*/
   }
+}
+}
 // 0x542310
 namespace gamemd { 
 int HouseClass::GetUpgradeValue() {
@@ -6987,6 +7218,8 @@ void* HouseClass::ClampToUsableCell(void* a1, void* a2) {
       v3 += v10; /*0x586ec5*/
     }
   }
+}
+}
 // 0x586E50
 namespace gamemd { 
 void* HouseClass::ClampToUsableCell(void* a1, void* a2) {
@@ -7019,6 +7252,8 @@ void* HouseClass::ClampToUsableCell(void* a1, void* a2) {
       v3 += v10; /*0x586ec5*/
     }
   }
+}
+}
 // 0x5F6250
 namespace gamemd { 
 int HouseClass::ProcessPower() {
@@ -7042,8 +7277,10 @@ int HouseClass::ProcessPower() {
   if ( nextObject ) /*0x5f6263*/
   {
     v3 = (*((int (**)(void **))((unsigned int *)nextObject)[0] + 4))(&((unsigned int *)nextObject)[0]); /*0x5f626c*/
-    Power::TimerProcess(v3); /*0x5f6272*/
+    Power_TimerProcess(v3); /*0x5f6272*/
   }
+}
+}
 // 0x656DE0
 namespace gamemd { 
 int HouseClass::updateAlliedStatus() {
@@ -7063,6 +7300,7 @@ void HouseClass::SetRadarVisibility(int a1) {
       RadarClass::SetViewMode((int *)this, 1, 1); /*0x656e40*/
   }
 }
+}
 // 0x656DF0
 namespace gamemd { 
 void HouseClass::SetRadarVisibility(int a1) {
@@ -7075,6 +7313,7 @@ void HouseClass::SetRadarVisibility(int a1) {
     else
       RadarClass::SetViewMode((int *)this, 1, 1); /*0x656e40*/
   }
+}
 }
 // 0x664D20
 namespace gamemd { 
@@ -7307,6 +7546,8 @@ int HouseClass::InitSubsystems() {
     p_SidebarClass_field_0x1544 += 997; /*0x6a5062*/
     --v3; /*0x6a5068*/
   }
+}
+}
 // 0x6A5030
 namespace gamemd { 
 int HouseClass::InitSubsystems() {
@@ -7326,6 +7567,8 @@ int HouseClass::InitSubsystems() {
     p_SidebarClass_field_0x1544 += 997; /*0x6a5062*/
     --v3; /*0x6a5068*/
   }
+}
+}
 // 0x6A7D20
 namespace gamemd { 
 int HouseClass::UpdateAllProductionTabs() {
@@ -7349,6 +7592,8 @@ int HouseClass::UpdateAllProductionTabs() {
     ++v3; /*0x6a7d49*/
     v4 += 3988; /*0x6a7d4a*/
   }
+}
+}
 // 0x6A81B0
 namespace gamemd { 
 void* HouseClass::ClearProductionQueue() {
@@ -7385,6 +7630,8 @@ void* HouseClass::ClearProductionQueue() {
     *(result - 18) = 0; /*0x6a8206*/
     *(result - 11) = 0; /*0x6a8209*/
   }
+}
+}
 // 0x6ABAD0
 namespace gamemd { 
 int HouseClass::RouteFactoryRemoval(int a1, int a2, void* a3) {
@@ -7415,6 +7662,8 @@ int HouseClass::RouteFactoryRemoval(int a1, int a2, void* a3) {
       v5 = -1; /*0x6abb0e*/
       break;
   }
+}
+}
 // 0x6abb60
   return HouseClass::RemoveFromProductionQueue((int)&this->builtAircraftTypes[997 * v5 + 131], a3); /*0x6abb59*/
 }
@@ -7486,6 +7735,8 @@ int HouseClass::InitDefeatState() {
     IDA_BYTE1(this->ownedBuildingTypes2[1]) = 1; /*0x6d164b*/
     return vtable0[14](this, 0); /*0x6d1652*/
   }
+}
+}
 // 0x6D1610
 namespace gamemd { 
 int HouseClass::InitDefeatState() {
@@ -7503,6 +7754,8 @@ int HouseClass::InitDefeatState() {
     IDA_BYTE1(this->ownedBuildingTypes2[1]) = 1; /*0x6d164b*/
     return vtable0[14](this, 0); /*0x6d1652*/
   }
+}
+}
 // 0x6D4DB0
 namespace gamemd { 
 void* HouseClass::SetOwnerName(void* a1, int a2) {
@@ -7513,6 +7766,8 @@ void* HouseClass::SetOwnerName(void* a1, int a2) {
     result = wcscpy((wchar_t *)&this->arrayIndex, a1); /*0x6d4ddc*/
     this->psychicDetectionBuildings[0] = a2; /*0x6d4de8*/
   }
+}
+}
 // 0x6E0EF0
 namespace gamemd { 
 int HouseClass::UpdateTechBuildings(int a1, int a2, int a3, int a4) {
@@ -7534,6 +7789,8 @@ int HouseClass::UpdateTechBuildings(int a1, int a2, int a3, int a4) {
       return 1; /*0x6e0f78*/
     }
   }
+}
+}
 // 0x6E57F0
 namespace gamemd { 
 int HouseClass::UpdateAllTypes() {
@@ -7546,6 +7803,8 @@ int HouseClass::UpdateAllTypes() {
     TriggerClass::NotifyGlobalChanged(*(TriggerClass **)(*((unsigned int *)g_TagClassCount + i) + 40), (int)this); /*0x6e580b*/
     result = g_GameObjectCleanup; /*0x6e5810*/
   }
+}
+}
 // 0x6E8780
 namespace gamemd { 
 int HouseClass::GetMaxBuildLevel() {
@@ -7579,6 +7838,8 @@ int HouseClass::GetMaxBuildLevel() {
     }
     while ( v1 ); /*0x6e87bc*/
   }
+}
+}
 // 0x6EB870
 namespace gamemd { 
 int HouseClass::EvaluateTarget() {
@@ -7675,6 +7936,8 @@ int HouseClass::EvaluateTarget() {
     }
     repairStationsCount = *(unsigned int *)(repairStationsCount + 1496); /*0x6ebaae*/
   }
+}
+}
 // 0x6EC3D0
 namespace gamemd { 
 void* HouseClass::FindBestBuildingToRepair() {
@@ -7703,6 +7966,8 @@ void* HouseClass::FindBestBuildingToRepair() {
     }
     repairStationsCount = (unsigned int *)repairStationsCount[374]; /*0x6ec436*/
   }
+}
+}
 // 0x6ED770
 namespace gamemd { 
 int HouseClass::CheckDefeated(int v7, int a2) {
@@ -7718,6 +7983,8 @@ int HouseClass::CheckDefeated(int v7, int a2) {
     this->grinders[0] = v7; /*0x6ed797*/
     this->grindersCount = 15 * v4; /*0x6ed79d*/
   }
+}
+}
 // 0x6EF4D0
 namespace gamemd { 
 int HouseClass::UpdateProductionQueue(int v7) {
@@ -7768,6 +8035,8 @@ int HouseClass::UpdateProductionQueue(int v7) {
     }
     while ( v4 < *(unsigned int *)(result + 156) ); /*0x6ef55b*/
   }
+}
+}
 // 0x6F47A0
 namespace gamemd { 
 int HouseClass::CalcProductionSpeed() {
@@ -7819,6 +8088,8 @@ int HouseClass::CalcProductionSpeed() {
     if ( v10 ) /*0x6f48b0*/
       v19 = *(unsigned char *)(v10 + 3278); /*0x6f48b8*/
   }
+}
+}
 // 0x717880
 namespace gamemd { 
 bool HouseClass::HasPower() {
@@ -7843,6 +8114,8 @@ int HouseClass::HasType26Building() {
     }
     IDA_LOBYTE(result) = 1; /*0x726f6e*/
   }
+}
+}
 // 0x726F50
 namespace gamemd { 
 int HouseClass::HasType26Building() {
@@ -7861,6 +8134,8 @@ int HouseClass::HasType26Building() {
     }
     IDA_LOBYTE(result) = 1; /*0x726f6e*/
   }
+}
+}
 // 0x726F80
 namespace gamemd { 
 int HouseClass::HasType25Building() {
@@ -7879,6 +8154,8 @@ int HouseClass::HasType25Building() {
     }
     IDA_LOBYTE(result) = 1; /*0x726f9e*/
   }
+}
+}
 // 0x726FB0
 namespace gamemd { 
 bool HouseClass::FindType24() {
@@ -7895,6 +8172,8 @@ bool HouseClass::FindType24() {
     if ( !psychicDetectionCapacity ) /*0x726fcb*/
       return result; /*0x726fcb*/
   }
+}
+}
 // 0x726FE0
 namespace gamemd { 
 int HouseClass::FindType15() {
@@ -7913,6 +8192,8 @@ int HouseClass::FindType15() {
     }
     return 1; /*0x726ffe*/
   }
+}
+}
 // 0x727010
 namespace gamemd { 
 int HouseClass::FindType2728(int a2) {
@@ -7935,6 +8216,8 @@ int HouseClass::FindType2728(int a2) {
     }
     return 1; /*0x72703e*/
   }
+}
+}
 // 0x740E20
 namespace gamemd { 
 int HouseClass::ClearPrimaryFactory() {
@@ -7962,6 +8245,8 @@ void* HouseClass::ClearStatArray() {
     ++v2; /*0x748fed*/
     ++v3; /*0x748fee*/
   }
+}
+}
 // 0x748FD0
 namespace gamemd { 
 void* HouseClass::ClearStatArray() {
@@ -7979,6 +8264,8 @@ void* HouseClass::ClearStatArray() {
     ++v2; /*0x748fed*/
     ++v3; /*0x748fee*/
   }
+}
+}
 // 0x749020
 namespace gamemd { 
 int HouseClass::IncrementStat(int a1) {
@@ -8005,6 +8292,8 @@ int HouseClass::InitStatArray(int a1) {
     ++v2; /*0x74907b*/
     v3 = (HouseClass *)((char *)v3 + 4); /*0x74907c*/
   }
+}
+}
 // 0x749060
 namespace gamemd { 
 int HouseClass::InitStatArray(int a1) {
@@ -8020,6 +8309,8 @@ int HouseClass::InitStatArray(int a1) {
     ++v2; /*0x74907b*/
     v3 = (HouseClass *)((char *)v3 + 4); /*0x74907c*/
   }
+}
+}
 // 0x749100
 namespace gamemd { 
 int HouseClass::NetworkConvert() {
@@ -8032,6 +8323,8 @@ int HouseClass::NetworkConvert() {
   {
     this->builtInfantryTypes[311] = 1; /*0x749143*/
   }
+}
+}
 // 0x74FF50
 namespace gamemd { 
 void VeterancyStruct::Accumulate(int a1, int a2)

@@ -143,7 +143,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   unsigned int v106[24]; // [esp+194h] [ebp-60h] BYREF
 
   v17 = (gamemd::MapClass *)((IUnknown *)((MapClass *)aP0));
-  v18 = (IUnknown *)(*aP3);
+  v18 = (unsigned int)(IUnknown *)(*aP3);
   v19 = (gamemd::Type *)((IUnknown *)((Type *)aP3[1]));
   v81 = (gamemd::Type *)((IUnknown *)(aP0));
   v78 = (int)((IUnknown *)(0));
@@ -546,7 +546,7 @@ void * LayerClass::Reveal(int a2)
 LABEL_8:
   if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 /*0x577df4*/
     || !dword_A8B23C
-    || (v8 = 1, (*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C)) )
+    || (v8 = 1, (*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable1 + 4))( (ObjectClass *)(dword_A8B23C))) )
   {
     v8 = 0; /*0x577dff*/
   }
@@ -593,7 +593,7 @@ LABEL_23:
 LABEL_25:
     ((Radar *)(0))->UpdateReveal(0); /*0x577efc*/
     ((FogOfWar *)((FogOfWar *)&dword_87F7E8))->Render(); /*0x577f0d*/
-    return (void *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x577f19*/
+    return (void *)MapClass::MarkForRedraw( (int)((GScreenClass *)&dword_87F7E8), 2); /*0x577f19*/
   }
   return result; /*0x577f1e*/
 

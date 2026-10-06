@@ -33,6 +33,13 @@ struct ComPtr {
      int Set(int a2);  // was C2597 interim stub, := truth 0x0x65d480
     unsigned int * Release();  // 0x65d460
     int ReleaseSimple(); // N_fix R5 supply (cache truth)
+    static unsigned int * Constructor(void *aP0);  // G57a1 static-form sync (CComObject 0x7aba14)
+    static int Release(void *aP0);  // G57a1 static-form sync (CComObject 0x7aba52)
+    static int ReleaseAndSet(void *aP0, unsigned int *aP1);  // G57a1 static-form sync (Jumpjet 0x4ccd7e+)
+    static void * Territory_Dtor(void *aP0);  // G57a1 static-form sync (addr76 0x76d3ea)
+    static int DestroyWrapper(void *aP0, void *aP1);  // G57a1 static-form mirror
+    static int Set(void *aP0, int aP2);  // G57a1 static-form mirror
+    static int ReleaseSimple(void *aP0);  // G57a1 static-form mirror
 };
 
 } // namespace gamemd

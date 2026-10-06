@@ -14,7 +14,8 @@ namespace ra2 { namespace game { class AbstractClass; } }
 namespace gamemd {
 #ifndef GAMEMD_USING_AbstractClass
 #define GAMEMD_USING_AbstractClass
-using ::ra2::game::AbstractClass;
+// G57c4: using-bridge dropped -- native flat gamemd::AbstractClass
+// carrier is the truth in e4 TUs (C2874).
 #endif
 } // namespace gamemd
 #endif // GAMEMD_TREE_UNIVERSE

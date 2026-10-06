@@ -67,7 +67,7 @@ char Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a
       v29[0] = v9 + v15; /*0x62065f*/
       v28 = v16 - v9 + v17 - 1; /*0x620670*/
       v29[1] = v28; /*0x620674*/
-      DrawSurfaceLineAlpha((int)(aP0), v29, &v27, v10, a8); /*0x620680*/
+      DrawSurfaceLineAlpha( (int)(aP0), v29, (int *)(&v27), v10, a8); /*0x620680*/
       v18 = a1[3]; /*0x620687*/
       v19 = a1[1]; /*0x62068d*/
       v30[0] = *a1 + v9; /*0x620692*/

@@ -219,9 +219,9 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
         || v10 != *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1696)
         || v11 != *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1700) )
       {
-        return (*(char (**)(int, unsigned int *, int))(*(unsigned int *)&v6->q_360)(v6, v14, 64); /*0x523c0b*/
+        return (*(char (**)(int, unsigned int *, int))(*(unsigned int *)&v6->q_360))(v6, v14, 64);  /*0x523c0b*/
       }
-      (*(void (**)(int, int))(*(unsigned int *)&v6->needsRedraw)(v6, 1); /*0x523c14*/
+      (*(void (**)(int, int))(*(unsigned int *)&v6->needsRedraw))(v6, 1);  /*0x523c14*/
     }
   }
   return 0; /*0x523c07*/
@@ -287,7 +287,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x5240b5*/
   v45 = (int)a2; /*0x5240ba*/
   *(unsigned char *)(v4 + 3215) = 0; /*0x5240bd*/
-  if ( !(uint8_t)ObjectTypeClass::LoadExtras((gamemd::CCINIClass *)((TechnoTypeClass *)v45), a2, v46) ) /*0x5240c4*/
+  if ( !(uint8_t)ObjectTypeClass::LoadExtras( (gamemd::CCINIClass *)((TechnoTypeClass *)v45), (double)(a2), v46) ) /*0x5240c4*/
     return 0; /*0x524751*/
   *(unsigned int *)(v4 + 3580) = INIClass::GetPipIdx( /*0x5240e8*/
                              (INIClass *)a2,
@@ -325,7 +325,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3616) = v9; /*0x52417f*/
   INIClassIntList = (DynamicVectorClass *)(&v44); /*0x524186*/
   ((DynamicVectorClass *)(&v44))->Copy((unsigned int *)(v4 + 3720)); /*0x52418a*/
-  *(unsigned int *)INIClassIntList->vtable1 = &vt_TypeList; /*0x524198*/
+  *(unsigned int *)INIClassIntList->vtable1 = (unsigned int)&vt_TypeList;
   inited = (uint8_t *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36)); /*0x5241a0*/
   INIClassIntList = (DynamicVectorClass *)GetINIClassIntList( /*0x5241b4*/
                                             (int)&v48,
@@ -351,7 +351,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v48))->AnimTypeConstructor(0, 0); /*0x524210*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_TypeList); /*0x52421f*/
-    for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x524231*/
+    for ( i = strtok(String, (char *)&::Delimiter); i; i = strtok(0, (char *)&::Delimiter) ) /*0x524231*/
     {
       if ( !*i ) /*0x524233*/
         break; /*0x524236*/
@@ -361,7 +361,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x524271*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x52427a*/
-    DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524282*/
+    DynamicVectorClass::Destroy_Alt( (void)((_VectorClass_PBVAnimTypeClass *)&v48)); /*0x524282*/
   }
   else
   {
@@ -374,13 +374,13 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3684) = v13; /*0x5242ba*/
   *(unsigned int *)(v4 + 3688) = v14; /*0x5242bd*/
   v48.DynamicVector_field_0x1C = (unsigned int)((AbstractClass *)&vt_VectorClass); /*0x5242c9*/
-  DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5242cd*/
+  DynamicVectorClass::Destroy_Alt( (void)((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C)); /*0x5242cd*/
   if ( /*0x5242e9*/
          ((INIClass*)((INIClass *)a2))->GetString(/*0x5242e9*/ (uint8_t *)(v4 + 36), aDeathanims, &g_INI_DefaultBuffer, String, 128) )
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v48))->AnimTypeConstructor(0, 0); /*0x5242fa*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_TypeList); /*0x524309*/
-    for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x52431b*/
+    for ( j = strtok(String, (char *)&::Delimiter); j; j = strtok(0, (char *)&::Delimiter) ) /*0x52431b*/
     {
       if ( !*j ) /*0x52431d*/
         break; /*0x524320*/
@@ -390,7 +390,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x52435b*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x524364*/
-    DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524368*/
+    DynamicVectorClass::Destroy_Alt( (void)((_VectorClass_PBVAnimTypeClass *)&v48)); /*0x524368*/
   }
   else
   {
@@ -399,7 +399,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   ((InfantryTypeClass *)((InfantryTypeClass *)(v4 + 3692)))->CopyDataArray(&v48.DynamicVector_field_0x1C); /*0x52438c*/
   *(unsigned int *)(v4 + 3716) = v51; /*0x524399*/
   v48.DynamicVector_field_0x1C = (unsigned int)((AbstractClass *)&vt_VectorClass); /*0x52439c*/
-  DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5243a4*/
+  DynamicVectorClass::Destroy_Alt( (void)((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C)); /*0x5243a4*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5243b8*/
                      (int *)a2,
                      (uint8_t *)(v4 + 36),
@@ -419,7 +419,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v17 = *(unsigned int *)(v4 + 3748); /*0x5243ee*/
   if ( !((INIClass*)/*0x524420*/
           (INIClass *)a2)->GetString(/*0x524420*/ (uint8_t *)(v4 + 36), aEnterwatersoun, &g_INI_DefaultBuffer, String, 128)
-    || (Index = VocClass::FindIndex((VocClass *)String), Index == -1) )
+    || (Index = VocClass::FindIndex( (VocClass *)String), Index == -1) )
   {
     Index = v17; /*0x524422*/
   }
@@ -432,7 +432,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3748) = Index; /*0x524441*/
   if ( !/*0x52445c*/
           ((INIClass*)((INIClass *)a2))->GetString(/*0x52445c*/ *(uint8_t **)(unsigned int *)((char *)&v44 + 3), (uint8_t *)((char *)&v44), (char *)v44.Count, (char *)v44.CapacityIncrement, v45)
-    || (v20 = VocClass::FindIndex((VocClass *)String), v20 == -1) )
+    || (v20 = VocClass::FindIndex( (VocClass *)String), v20 == -1) )
   {
     v20 = v19; /*0x52445e*/
   }
@@ -602,7 +602,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
     v5->Sequence[0] = 0; /*0x52497d*/
   }
   v7 = a2; /*0x524983*/
-  result = TechnoTypeClass::SaveLoad_Prefix((TechnoTypeClass *)v5, a2); /*0x524989*/
+  result = TechnoTypeClass::SaveLoad_Prefix( (ObjectTypeClass *)((TechnoTypeClass *)v5), (int)(a2)); /*0x524989*/
   v14 = result; /*0x524990*/
   if ( result >= 0 ) /*0x524994*/
   {
@@ -615,12 +615,12 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
       ((DynamicVectorClass *)((DynamicVectorClass *)v5->VoiceComment))->Construct(0, 0); /*0x5249c7*/
       (&v5->VoiceComment)[0] = (int)&TypeList_int_vftable; /*0x5249cc*/
     }
-    (*(void (**)(int, InfantryTypeClass **, int, unsigned int, int))(*(unsigned int *)v7 + 12))(v7, &aP0, 4, 0, v4); /*0x5249de*/
+    (*(void (**)(int, InfantryTypeClass **, int, unsigned int, int))(*(unsigned int *)v7 + 12))( v7, (InfantryTypeClass **)(&aP0), 4, 0, v4); /*0x5249de*/
     if ( a2 > 0 ) /*0x5249e7*/
     {
       do /*0x524a09*/
       {
-        (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a3, 4, 0); /*0x5249f5*/
+        (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))( v7, (int *)(&a3), 4, 0); /*0x5249f5*/
         ((DynamicVector *)((DynamicVector *)v5->VoiceComment))->Add_Alt(&a3); /*0x5249ff*/
         ++v6; /*0x524a04*/
       }
@@ -631,10 +631,10 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
       ((DynamicVectorClass *)((DynamicVectorClass *)v5->DeadBodies))->AnimTypeConstructor(0, 0); /*0x524a1b*/
       (&v5->DeadBodies)[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x524a20*/
     }
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a2, 4, 0); /*0x524a33*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))( v7, (int *)(&a2), 4, 0); /*0x524a33*/
     for ( i = 0; i < a2; ++i ) /*0x524a3e*/
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a3, 4, 0); /*0x524a4c*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))( v7, (int *)(&a3), 4, 0); /*0x524a4c*/
       ((DynamicVector *)((DynamicVector *)v5->DeadBodies))->Add_Alt4(&a3); /*0x524a56*/
     }
     for ( j = 0; j < (&v5->DeadBodies)[4]; ++j ) /*0x524a6c*/
@@ -642,29 +642,29 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
     if ( v5 != (InfantryTypeClass *)-3692 ) /*0x524a95*/
     {
       ((DynamicVectorClass *)((DynamicVectorClass *)v5->DeathAnims))->AnimTypeConstructor(0, 0); /*0x524a9d*/
-      v5->DeathAnims[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x524aa2*/
+      (&v5->DeathAnims)[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x524aa2*/
     }
-    (*(void (**)(int, int *, int))(*(unsigned int *)v7 + 12))(v7, &a2, 4); /*0x524ab5*/
+    (*(void (**)(int, int *, int))(*(unsigned int *)v7 + 12))( v7, (int *)(&a2), 4); /*0x524ab5*/
     for ( k = 0; k < (int)aP0; ++k ) /*0x524ac0*/
     {
-      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a2, 4, 0); /*0x524ace*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))( v7, (int *)(&a2), 4, 0); /*0x524ace*/
       ((DynamicVector *)((DynamicVector *)v5->DeathAnims))->Add_Alt4(&a2); /*0x524ad8*/
     }
-    for ( m = 0; m < v5->DeathAnims[4]; ++m ) /*0x524aef*/
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v5->DeathAnims[1] + 4 * m)); /*0x524b00*/
+    for ( m = 0; m < (&v5->DeathAnims)[4]; ++m ) /*0x524aef*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)((&v5->DeathAnims)[1] + 4 * m)); /*0x524b00*/
     v13 = RA2_OPNEW(0x5E8u); /*0x524b15*/
     v5->Sequence[0] = v13; /*0x524b1d*/
     (*(void (**)(int, int, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, v13, 1512, 0); /*0x524b2e*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v5->OccupyWeapon); /*0x524b3d*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v5->EliteOccupyWeapon); /*0x524b4e*/
-    return v14; /*0x524b53*/
+    return (ObjectTypeClass * *)v14; /*0x524b53*/
   }
-  return result; /*0x524b57*/
+  return (ObjectTypeClass * *)result; /*0x524b57*/
 }
 }
 // 0x524B60
 namespace gamemd {
-TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix(InfantryTypeClass *aP0)
+TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix(InfantryTypeClass *aP0, unsigned int * a2, int * a3, int a4, int a5)
 {
   int v5; // ebx
   int result; // eax
@@ -683,24 +683,24 @@ TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix(InfantryTypeClass *aP0)
   if ( result >= 0 ) /*0x524b7b*/
   {
     v8 = *a2; /*0x524b87*/
-    a3 = (int *)aP0->VoiceComment[4]; /*0x524b94*/
-    (*(void (**)(unsigned int *, int **, int, unsigned int, int))(v8 + 16))(a2, &a3, 4, 0, v5); /*0x524b98*/
+    a3 = ((int *)&aP0->VoiceComment)[4]; /*0x524b94*/
+    (*(void (**)(unsigned int *, int **, int, unsigned int, int))(v8 + 16))( (unsigned int *)(a2), (int **)(&a3), 4, 0, v5); /*0x524b98*/
     for ( i = 0; i < a4; ++i ) /*0x524ba3*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->VoiceComment[1] + 4 * i, 4, 0); /*0x524bb6*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), (&aP0->VoiceComment)[1] + 4 * i, 4, 0); /*0x524bb6*/
     v10 = *a2; /*0x524bc6*/
-    a4 = aP0->DeadBodies[4]; /*0x524bd2*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v10 + 16))(a2, &a4, 4, 0); /*0x524bd6*/
+    a4 = (&aP0->DeadBodies)[4]; /*0x524bd2*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v10 + 16))( (unsigned int *)(a2), (int *)(&a4), 4, 0); /*0x524bd6*/
     for ( j = 0; j < a4; ++j ) /*0x524be1*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->DeadBodies[1] + 4 * j, 4, 0); /*0x524bf4*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), (&aP0->DeadBodies)[1] + 4 * j, 4, 0); /*0x524bf4*/
     v12 = *a2; /*0x524c04*/
-    a4 = aP0->DeathAnims[4]; /*0x524c10*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v12 + 16))(a2, &a4, 4, 0); /*0x524c14*/
+    a4 = (&aP0->DeathAnims)[4]; /*0x524c10*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v12 + 16))( (unsigned int *)(a2), (int *)(&a4), 4, 0); /*0x524c14*/
     for ( k = 0; k < a4; ++k ) /*0x524c1f*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->DeathAnims[1] + 4 * k, 4, 0); /*0x524c32*/
-    (*(void (**)(unsigned int *, int, int))(*a2 + 16))(a2, aP0->Sequence[0], 1512); /*0x524c4d*/
-    return v7; /*0x524c52*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), (&aP0->DeathAnims)[1] + 4 * k, 4, 0); /*0x524c32*/
+    (*(void (**)(unsigned int *, int, int))(*a2 + 16))( (unsigned int *)(a2), aP0->Sequence[0], 1512); /*0x524c4d*/
+    return (TechnoTypeClass * *)v7; /*0x524c52*/
   }
-  return result; /*0x524c51*/
+  return (TechnoTypeClass * *)result; /*0x524c51*/
 }
 }
 // 0x524D70
@@ -714,13 +714,13 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   void *v6; // eax
   InfantryTypeClass *v8; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable1 = &vt_InfantryTypeClass; /*0x524d76*/
-  ((unsigned int *)Block)[0] = &vt_InfantryTypeClass; /*0x524d7c*/
-  ((unsigned int *)Block)[0] = &vt_InfantryTypeClass; /*0x524d83*/
-  ((unsigned int *)Block)[0] = &vt_InfantryTypeClass; /*0x524d8a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x524d91*/
-  v8 = Block; /*0x524da6*/
-  v3 = (*(int (**)(unsigned int *, InfantryTypeClass **))(dword_A8E348 + 16))(&dword_A8E348, &v8); /*0x524daa*/
+  this->vtable1 = &vt_InfantryTypeClass; /*0x524d76*/
+  ((unsigned int *)this)[0] = &vt_InfantryTypeClass; /*0x524d7c*/
+  ((unsigned int *)this)[0] = &vt_InfantryTypeClass; /*0x524d83*/
+  ((unsigned int *)this)[0] = &vt_InfantryTypeClass; /*0x524d8a*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x524d91*/
+  v8 = this; /*0x524da6*/
+  v3 = (*(int (**)(unsigned int *, InfantryTypeClass **))(dword_A8E348 + 16))( (unsigned int *)(&dword_A8E348), (InfantryTypeClass **)(&v8)); /*0x524daa*/
   if ( v3 != -1 && v3 < dword_A8E358 && v3 < --dword_A8E358 ) /*0x524dc5*/
   {
     do /*0x524ddd*/
@@ -730,39 +730,39 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
     }
     while ( v3 < dword_A8E358 ); /*0x524ddd*/
   }
-  __3_YAXPAX_Z((void *)Block->Sequence[0]); /*0x524de7*/
-  Block->Sequence[0] = 0; /*0x524df1*/
-  v4 = (void *)Block->VoiceComment[1]; /*0x524df7*/
-  Block->VoiceComment[0] = (int)&vt_VectorClass; /*0x524dff*/
-  if ( v4 && BYTE1(Block->VoiceComment[3]) ) /*0x524e0b*/
+  __3_YAXPAX_Z((void *)this->Sequence[0]); /*0x524de7*/
+  this->Sequence[0] = 0; /*0x524df1*/
+  v4 = (void *)this->VoiceComment[1]; /*0x524df7*/
+  this->VoiceComment[0] = (int)&vt_VectorClass; /*0x524dff*/
+  if ( v4 && BYTE1(this->VoiceComment[3]) ) /*0x524e0b*/
   {
     __3_YAXPAX_Z(v4); /*0x524e14*/
-    Block->VoiceComment[1] = 0; /*0x524e1c*/
+    this->VoiceComment[1] = 0; /*0x524e1c*/
   }
-  BYTE1(Block->VoiceComment[3]) = 0; /*0x524e22*/
-  Block->VoiceComment[2] = 0; /*0x524e28*/
-  v5 = (void *)Block->DeathAnims[1]; /*0x524e2e*/
-  Block->DeathAnims[0] = (int)&vt_VectorClass; /*0x524e34*/
-  if ( v5 && BYTE1(Block->DeathAnims[3]) ) /*0x524e42*/
+  BYTE1(this->VoiceComment[3]) = 0; /*0x524e22*/
+  this->VoiceComment[2] = 0; /*0x524e28*/
+  v5 = (void *)this->DeathAnims[1]; /*0x524e2e*/
+  this->DeathAnims[0] = (int)&vt_VectorClass; /*0x524e34*/
+  if ( v5 && BYTE1(this->DeathAnims[3]) ) /*0x524e42*/
   {
     __3_YAXPAX_Z(v5); /*0x524e4b*/
-    Block->DeathAnims[1] = 0; /*0x524e53*/
+    this->DeathAnims[1] = 0; /*0x524e53*/
   }
-  BYTE1(Block->DeathAnims[3]) = 0; /*0x524e59*/
-  Block->DeathAnims[2] = 0; /*0x524e5f*/
-  v6 = (void *)Block->DeadBodies[1]; /*0x524e65*/
-  Block->DeadBodies[0] = (int)&vt_VectorClass; /*0x524e6b*/
-  if ( v6 && BYTE1(Block->DeadBodies[3]) ) /*0x524e79*/
+  BYTE1(this->DeathAnims[3]) = 0; /*0x524e59*/
+  this->DeathAnims[2] = 0; /*0x524e5f*/
+  v6 = (void *)this->DeadBodies[1]; /*0x524e65*/
+  this->DeadBodies[0] = (int)&vt_VectorClass; /*0x524e6b*/
+  if ( v6 && BYTE1(this->DeadBodies[3]) ) /*0x524e79*/
   {
     __3_YAXPAX_Z(v6); /*0x524e82*/
-    Block->DeadBodies[1] = 0; /*0x524e8a*/
+    this->DeadBodies[1] = 0; /*0x524e8a*/
   }
-  BYTE1(Block->DeadBodies[3]) = 0; /*0x524e92*/
-  Block->DeadBodies[2] = 0; /*0x524e98*/
-  TechnoTypeClass::DTOR((int)Block); /*0x524e9e*/
+  BYTE1(this->DeadBodies[3]) = 0; /*0x524e92*/
+  this->DeadBodies[2] = 0; /*0x524e98*/
+  TechnoTypeClass::DTOR((int)this); /*0x524e9e*/
   if ( (a2 & 1) != 0 ) /*0x524eaa*/
-    __3_YAXPAX_Z(Block); /*0x524ead*/
-  return (int)Block; /*0x524eb7*/
+    __3_YAXPAX_Z(this); /*0x524ead*/
+  return (int)this; /*0x524eb7*/
 
 }
 }  // G42.18c ns repair
@@ -830,7 +830,7 @@ LABEL_6:
       return WeaponTypeClass::Constructor(v3, Source); /*0x773011*/
     return 0; /*0x773005*/
   }
-  while ( _strcmpi((char *)(*((unsigned int *)g_WeaponTypeConfig + v2) + 36), Source) ) /*0x772fea*/
+  while ( _strcmpi((*((unsigned int *)g_WeaponTypeConfig + v2) + 36), Source) ) /*0x772fea*/
   {
     if ( ++v2 >= g_WeaponTypePool ) /*0x772ff4*/
       goto LABEL_6; /*0x772ff4*/
@@ -847,7 +847,7 @@ InfantryClass *  InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
   int v2; // edi
   int v4; // eax
 
-  v4 = __2_YAPAXI_Z(0x6F0u); /*0x523b18*/
+  v4 = (unsigned int)__2_YAPAXI_Z(0x6F0u); /*0x523b18*/
   if ( v4 ) /*0x523b22*/
     return (InfantryClass *)InfantryClass::Construct(v4, v2, (int)this, ppv); /*0x523b2c*/
   else
@@ -863,11 +863,11 @@ int * InfantryTypeClass::GetDimensions(int a1)
   if ( (*((unsigned int *)((char *)&stru_A8EB00 + 1764)) & 1) == 0 ) /*0x523c2b*/
   {
     *((unsigned int *)((char *)&stru_A8EB00 + 1764)) |= 1u; /*0x523c46*/
-    *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1704) = 0; /*0x523c4c*/
-    *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1708) = 2147450879; /*0x523c64*/
+    *(unsigned int *)((char *)&stru_A8EB00 + 1704) = 0; /*0x523c4c*/
+    *(unsigned int *)((char *)&stru_A8EB00 + 1708) = 2147450879; /*0x523c64*/
     atexit(nullsub_147); /*0x523c6a*/
   }
-  return (int *)&(unsigned int *)((char *)&stru_A8EB00 + 1704); /*0x523c78*/
+  return (int *)((char *)&stru_A8EB00 + 1704); /*0x523c78*/
 
 }
 }  // G42.18c ns repair
@@ -878,7 +878,7 @@ unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
 
   void *v1; // esi
 
-  v1 = (void *)(2 * *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1768)); /*0x52476c*/
+  v1 = (void *)(2 * *(unsigned int *)((char *)&stru_A8EB00 + 1768)); /*0x52476c*/
   a1->TechnoTypeClass = (void *)85; /*0x524777*/
   ((unsigned int *)a1)[0] = (void *)85; /*0x524779*/
   ((unsigned int *)a1)[0] = v1; /*0x52477c*/
@@ -918,10 +918,10 @@ unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a
   v5 = (void *)*a2; /*0x5247d9*/
   v6 = (void *)a2[1]; /*0x5247ea*/
   v7 = a2[2]; /*0x5247f1*/
-  GroundHeight = Cell::GetGroundHeight(&v5); /*0x5247f5*/
+  GroundHeight = Cell::GetGroundHeight( &v5); /*0x5247f5*/
   v3 = (void *)v7; /*0x5247fa*/
   if ( v7 < GroundHeight ) /*0x524800*/
-    v3 = (void *)Cell::GetGroundHeight(&v5); /*0x524811*/
+    v3 = (void *)Cell::GetGroundHeight( &v5); /*0x524811*/
   a1->TechnoTypeClass = v5; /*0x52481e*/
   ((unsigned int *)a1)[0] = v6; /*0x524824*/
   ((unsigned int *)a1)[0] = v3; /*0x524828*/
@@ -946,7 +946,7 @@ int InfantryTypeClass::PowerDrainUpdate(int * a2)
   int v12; // ecx
   int v13; // edx
 
-  BuildingTypeClass::ProcessPower((int)this, a2); /*0x524849*/
+  ((BuildingTypeClass *)(int)this)->ProcessPower( a2); /*0x524849*/
   Power::TimerProcess(this->Pip[0]); /*0x524857*/
   ((Checksummer*)((Checksummer *)a2))->Add_Buffer((uint8_t *)this->Sequence[0], 1512); /*0x52486a*/
   Power::TimerProcess(this->FireUp); /*0x524878*/

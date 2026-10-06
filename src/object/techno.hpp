@@ -1095,7 +1095,7 @@ protected:
     unsigned int u32_5C8;  // 0x5C8 (member_lookup)
     unsigned int u32_608;  // 0x608
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    int SmokeUpdate();  // 0x414BB0
+    int SmokeUpdate(double a2);  // 0x414BB0
     int updateROFTimer();  // 0x41B9E0
     int processIdleState(int a1, void* a2, void* a3);  // 0x41C640
     int processGuardState(int a1);  // 0x41C650

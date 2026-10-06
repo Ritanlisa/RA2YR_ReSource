@@ -56,7 +56,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
   unsigned int *vtable1; // edx
   unsigned int v12[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  if ( aP1 && (*(int (**)(void *))(*(unsigned int *)&aP1->u32_B0)(aP1) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
+  if ( aP1 && (*(int (**)(void *))(*(unsigned int *)&aP1->u32_B0))( (void *)(aP1)) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
   {
     v4 = (AbstractClass *)__2_YAPAXI_Z(0x5Cu); /*0x438eaf*/
     v5 = v4; /*0x438eb4*/
@@ -89,7 +89,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       v5 = 0; /*0x438f58*/
     }
-    v5[1].vtable1 = (void *)(*(int (**)(void *))(*(unsigned int *)&aP1->q0F0)(aP1); /*0x438f62*/
+    v5[1].vtable1 = (void *)(*(int (**)(void *))(*(unsigned int *)&aP1->q0F0))( (void *)(aP1));  /*0x438f62*/
     v5[1].vtable0 = (unsigned int)(aP1); /*0x438f69*/
     v5[1].vtable2 = aP2; /*0x438f6c*/
     v5[1].uniqueId = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x438f75*/
@@ -133,7 +133,7 @@ int AbstractClass::AbstractClass_COMStub_133()
 
   MissionClass *v2; // [esp+4h] [ebp+4h]
 
-  return IPersistStream::StubReturn450(v2);
+  return ((IPersistStream *)v2)->StubReturn450();
 
 }
 } // namespace gamemd
@@ -221,7 +221,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
                             0);
   if ( this ) /*0x4fb9e5*/
   {
-    v8 = (*(int (**)(int, AbstractClass **))(*(unsigned int *)(v7 + 56) + 16))(v7 + 56, &this); /*0x4fb9f4*/
+    v8 = (*(int (**)(int, AbstractClass **))(*(unsigned int *)(v7 + 56) + 16))( v7 + 56, (AbstractClass **)(&this)); /*0x4fb9f4*/
     if ( v8 != -1 ) /*0x4fb9fa*/
     {
       v9 = *(unsigned int *)(v7 + 72); /*0x4fb9fc*/
@@ -241,7 +241,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
   {
     v11 = *(unsigned int *)(v7 + 80); /*0x4fba38*/
     p_vtable0 = &v6->vtable1; /*0x4fba45*/
-    v12 = (*(int (**)(int, void ***, int))(v11 + 16))(v7 + 80, &p_vtable0, a2); /*0x4fba49*/
+    v12 = (*(int (**)(int, void ***, int))(v11 + 16))( v7 + 80, (void ***)(&p_vtable0), (int)(a2)); /*0x4fba49*/
     if ( v12 != -1 ) /*0x4fba4f*/
       ((Vector *)((gamemd::AbstractClass *)((Vector *)(v7 + 80))))->RemoveAt(v12); 
     v13 = *(unsigned int *)(v7 + 128); /*0x4fba59*/
@@ -406,7 +406,7 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
   if ( g_MissionQueueFrame.localVariables[604] ) /*0x5c03da*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x5c03ea*/
-    Frame::Present((void *)((int)DSurface_Alternate),(void *)(v3), a2, a3, 0,(void *)(v8), v9, v10); /*0x5c03f7*/
+    Frame::Present( (void *)((int)DSurface_Alternate), (void *)(v3), (void *)(a2), (void *)(a3), 0, (void *)(v8), (void *)(v9), v10); /*0x5c03f7*/
     result = TestBitArray(15); /*0x5c0401*/
     if ( !result ) /*0x5c0408*/
     {
@@ -620,7 +620,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       nullsub_3((int)aP0); /*0x7259aa*/
     ((AbstractClass *)(aP0))->processRadarEvent(); /*0x7259b1*/
     if ( g_TacticalClass_Instance ) /*0x7259be*/
-      (*(void (**)(LPPERSISTSTREAM, AbstractClass *, int))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_A0)( /*0x7259c5*/
+      (*(void (**)(LPPERSISTSTREAM, AbstractClass *, int))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_A0))(  /*0x7259c5*/
         g_TacticalClass_Instance,
         aP0,
         1);
@@ -656,7 +656,7 @@ LABEL_20:
             *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.BuildupLoaded + 4 * n),
             aP0,
             aP1);
-        MapClass::RemoveTriggerRef((MapClass *)&stru_87F5F0.__pad_58[416], (int)aP0, 1); /*0x725b57*/
+        ((MapClass *)(MapClass *)&stru_87F5F0.__pad_58[416])->RemoveTriggerRef( (int)aP0, 1); /*0x725b57*/
         break; /*0x725b61*/
       case 34: /*0x725ab1*/
         for ( ii = 0; ii < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)); ++ii ) /*0x725bc3*/
@@ -683,7 +683,7 @@ LABEL_20:
             *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 20) + 4 * kk),
             aP0,
             aP1);
-        MapClass::RemoveTriggerRef((MapClass *)&stru_87F5F0.__pad_58[416], (int)aP0, 1); /*0x725ae5*/
+        ((MapClass *)(MapClass *)&stru_87F5F0.__pad_58[416])->RemoveTriggerRef( (int)aP0, 1); /*0x725ae5*/
         Array::RemoveItemByValue((int)aP0, aP1); /*0x725af1*/
         break; /*0x725afb*/
       case 47: /*0x725ab1*/
@@ -795,15 +795,15 @@ int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1,
   v3 = aP1; /*0x410321*/
   if ( !aP1 ) /*0x410328*/
     return -2147467261; /*0x41032b*/
-  v5 = *aP1; /*0x410338*/
+  v5 = *(unsigned int *)aP1;
   v8 = aP1; /*0x410343*/
   aP1 = aP0; /*0x410344*/
-  result = (*(int (**)(int *, int **, int, unsigned int))(v5 + 16))(v8, &aP1, 4, 0); /*0x410348*/
+  result = (*(int (**)(int *, int **, int, unsigned int))(v5 + 16))( v8, (int **)(&aP1), 4, 0); /*0x410348*/
   if ( result >= 0 ) /*0x41034d*/
   {
     v6 = *v3; /*0x410352*/
-    v7 = (*(int (**)(int *, unsigned int))(*aP0 + 48))(aP0, 0); /*0x410358*/
-    result = (*(int (**)(int *, int *, int))(v6 + 16))(v3, aP0, v7); /*0x41035e*/
+    v7 = (*(int (**)(int *, unsigned int))(*aP0 + 48))( (int *)(aP0), 0); /*0x410358*/
+    result = (*(int (**)(int *, int *, int))(v6 + 16))( v3, (int *)(aP0), v7); /*0x41035e*/
     if ( result >= 0 ) /*0x410364*/
     {
       if ( aP2 ) /*0x41036c*/
@@ -829,14 +829,14 @@ int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
   v2 = (int *)aP1; /*0x410381*/
   if ( !aP1 ) /*0x410387*/
     return -2147467261; /*0x410389*/
-  result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))(aP1, (int *)&aP1, 4, 0); /*0x41039e*/
+  result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( (int)(aP1), (int *)&aP1, 4, 0); /*0x41039e*/
   if ( result >= 0 ) /*0x4103a3*/
   {
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, aP1, (int)aP0); /*0x4103b7*/
     v4 = aP0[7]; /*0x4103be*/
     v5 = *v2; /*0x4103c1*/
-    v6 = (*(int (**)(unsigned int *, unsigned int))(*aP0 + 48))(aP0, 0); /*0x4103c7*/
-    result = (*(int (**)(int *, unsigned int *, int))(v5 + 12))(v2, aP0, v6); /*0x4103cd*/
+    v6 = (*(int (**)(unsigned int *, unsigned int))(*aP0 + 48))( (unsigned int *)(aP0), 0); /*0x4103c7*/
+    result = (*(int (**)(int *, unsigned int *, int))(v5 + 12))( v2, (unsigned int *)(aP0), v6); /*0x4103cd*/
     aP0[7] = v4; /*0x4103d0*/
   }
   return result; /*0x41038e*/
@@ -1327,7 +1327,7 @@ int AbstractClass::COMStub_Return0_270()
 
 // 0x464A70
 namespace gamemd {
-void AbstractClass_queryInterface(AbstractClass *aP0)
+void AbstractClass_queryInterface(AbstractClass *aP0, unsigned int * a2, int * a3)
 {
   void *v3; // esi
   void *GroundHeight; // eax
@@ -1338,7 +1338,7 @@ void AbstractClass_queryInterface(AbstractClass *aP0)
   v6 = *a2; /*0x464a7a*/
   v7 = (void *)a2[1]; /*0x464a8b*/
   v8 = a2[2]; /*0x464a92*/
-  GroundHeight = (void *)Cell::GetGroundHeight(&v6); /*0x464a96*/
+  GroundHeight = (void *)Cell::GetGroundHeight( &v6); /*0x464a96*/
   aP0->vtable1 = v3; /*0x464aa5*/
   aP0->vtable1 = v7; /*0x464aab*/
   aP0->vtable2 = GroundHeight; /*0x464aaf*/
@@ -1380,7 +1380,7 @@ namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
 {
 
-  *(unsigned int *)this->BlitterCore = &vt_Blitter; /*0x499cc9*/
+  *(unsigned int *)this->BlitterCore = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
     __3_YAXPAX_Z(this); /*0x499cd2*/
   return (std::locale::facet *)this; /*0x499cdc*/
@@ -1432,7 +1432,7 @@ namespace gamemd {
 RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
 
-  *(unsigned int *)this->RLEBlitterCore = &vt_RLEBlitter; /*0x499da9*/
+  *(unsigned int *)this->RLEBlitterCore = (unsigned int)&vt_RLEBlitter;
   if ( (a2 & 1) != 0 ) /*0x499daf*/
     __3_YAXPAX_Z(this); /*0x499db2*/
   return (std::locale::facet *)this; /*0x499dbc*/
@@ -1538,7 +1538,7 @@ namespace gamemd {
 int AbstractClass::saveToStream(int a1, const void * a2, unsigned int * a3)
 {
 
-  return HouseClass::QueryInterface(a1 - 4, a2, a3);
+  return HouseClass::QueryInterface( a1 - 4, (const void *)(a2), (unsigned int *)(a3));
 
 }
 } // namespace gamemd
@@ -1570,7 +1570,7 @@ int AbstractClass::COMStub_6(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x5439ff*/
+  result = AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)aP0), (ObjectTypeClass *)(a1), (ObjectTypeClass *)(aP2)); /*0x5439ff*/
   if ( result >= 0 ) /*0x543a06*/
     return 0; /*0x543a08*/
   return result; /*0x543a0a*/
@@ -1673,14 +1673,14 @@ namespace gamemd {
 MissionClass * AbstractClass::getWeaponRange(unsigned int * Block, char a2)
 {
 
-  Block->vtable1 = &vt_MissionClass; /*0x5b3a63*/
-  Block->vtable1 = &vt_MissionClass; /*0x5b3a69*/
-  Block->vtable2 = &vt_MissionClass; /*0x5b3a70*/
-  Block->vtable3 = &vt_MissionClass; /*0x5b3a77*/
-  ((ObjectClass *)((ObjectClass *)Block))->Dtor(); /*0x5b3a7e*/
+  this->vtable1 = &vt_MissionClass; /*0x5b3a63*/
+  this->vtable1 = &vt_MissionClass; /*0x5b3a69*/
+  this->vtable2 = &vt_MissionClass; /*0x5b3a70*/
+  this->vtable3 = &vt_MissionClass; /*0x5b3a77*/
+  ((ObjectClass *)((ObjectClass *)this))->Dtor(); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
-    __3_YAXPAX_Z(Block); /*0x5b3a8b*/
-  return &Block->vtable1; /*0x5b3a95*/
+    __3_YAXPAX_Z(this); /*0x5b3a8b*/
+  return &this->vtable1; /*0x5b3a95*/
 
 }
 } // namespace gamemd
@@ -1724,7 +1724,7 @@ unsigned int * AbstractClass::processRevealArea(const wchar_t ** a1, const wchar
 
   v6 = __2_YAPAXI_Z(0x40u); /*0x5d81f2*/
   if ( v6 ) /*0x5d81fc*/
-    return MPBattleClass::MPSiegeClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d821e*/
+    return ((MPBattleClass *)v6)->MPSiegeClass( a1, a2, a3, a4, a5, a6); /*0x5d821e*/
   else
     return 0; /*0x5d8226*/
 
@@ -1740,7 +1740,7 @@ unsigned int * AbstractClass::computeRevealRadius(const wchar_t ** a1, const wch
 
   v6 = __2_YAPAXI_Z(0x40u); /*0x5d8232*/
   if ( v6 ) /*0x5d823c*/
-    return MPBattleClass::MPUnholyAllianceClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d825e*/
+    return ((MPBattleClass *)v6)->MPUnholyAllianceClass( a1, a2, a3, a4, a5, a6); /*0x5d825e*/
   else
     return 0; /*0x5d8266*/
 
@@ -1756,7 +1756,7 @@ unsigned int * AbstractClass::applyRevealToCell(const wchar_t ** a1, const wchar
 
   v6 = __2_YAPAXI_Z(0x40u); /*0x5d8272*/
   if ( v6 ) /*0x5d827c*/
-    return MPBattleClass::MPFreeForAllClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d829e*/
+    return ((MPBattleClass *)v6)->MPFreeForAllClass( a1, a2, a3, a4, a5, a6); /*0x5d829e*/
   else
     return 0; /*0x5d82a6*/
 
@@ -1772,7 +1772,7 @@ unsigned int * AbstractClass::checkRevealCell(const wchar_t ** a1, const wchar_t
 
   v6 = __2_YAPAXI_Z(0x344u); /*0x5d82b5*/
   if ( v6 ) /*0x5d82bf*/
-    return MPCooperative::ctor(v6, a1, a2, a3, a4, a5, a6); /*0x5d82e1*/
+    return MPCooperative::ctor( v6, (int)(a1), (void)(a2), (int)(a3), (void)(a4), a5, a6); /*0x5d82e1*/
   else
     return 0; /*0x5d82e9*/
 
@@ -2065,7 +2065,7 @@ int AbstractClass::SaveLoad_PrefixWrapper(TechnoTypeClass * aP0, ObjectTypeClass
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, (int *)aP1, aP2); /*0x5f995f*/
+  result = AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)aP0), (ObjectTypeClass *)((int *)aP1), (ObjectTypeClass *)(aP2)); /*0x5f995f*/
   if ( result >= 0 ) /*0x5f9966*/
     return 0; /*0x5f9968*/
   return result; /*0x5f996a*/
@@ -2118,7 +2118,7 @@ namespace gamemd {
 FileClass * AbstractClass::processAITrigger(unsigned int * Block, char a2)
 {
 
-  *Block = (FileClass)&vt_FileClass; /*0x65c619*/
+  *Block = (unsigned int)&vt_FileClass;
   if ( (a2 & 1) != 0 ) /*0x65c61f*/
     __3_YAXPAX_Z(Block); /*0x65c622*/
   return Block; /*0x65c62c*/

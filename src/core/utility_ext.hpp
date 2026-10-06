@@ -7,7 +7,9 @@
 #undef CreateDialog
 #endif
 #include "core/enums.hpp"
+#ifndef GAMEMD_E4_UNIVERSE  // G57a1: e4 TUs -- math.hpp CellStruct/Point2D/CoordStruct using-aliases clash with the e4 flat structs (C2371)
 #include "core/math.hpp"
+#endif  // GAMEMD_E4_UNIVERSE (math.hpp)
 #include "core/utility_ext.hpp"  // G42.55 closure (Count)
 #include "core/guid.hpp"  // G42.55 closure (GUID)
 #include "core/utility_ext.hpp"  // G42.55 closure (ReferenceCounted)
@@ -18,12 +20,16 @@ namespace gamemd
 
 class DSurface;
 } // namespace gamemd (bridge re-own, G42.29h)
+#ifndef GAMEMD_E4_UNIVERSE  // G57a1: e4 TUs have native gamemd::ObjectClass (fwd + flat); the using-bridge double-declares (C2874)
 namespace ra2 { namespace game { class ObjectClass; } }
 namespace gamemd {
 #ifndef GAMEMD_USING_ObjectClass
 #define GAMEMD_USING_ObjectClass
 using ::ra2::game::ObjectClass;
 #endif
+#else
+namespace gamemd {
+#endif  // GAMEMD_E4_UNIVERSE (ObjectClass bridge)
 class HouseClass;
 class UnitClass;
 
@@ -87,6 +93,9 @@ public:
 // LoadGame — save/load game state management (12 methods)
 // IDA: Start 0x67E730, LoadIteratedData 0x4136C0
 // ============================================================================
+#ifndef GAMEMD_G2_LoadGame_DEF  // g57a5 W2d: twin-definition guard (utility_ext LoadGame)
+#define GAMEMD_G2_LoadGame_DEF 1
+#ifndef GAMEMD_E4_LoadGame  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs LoadGame_e4.hpp)
 class LoadGame
 {
 public:
@@ -119,12 +128,18 @@ public:
     static uint32_t s_LoadVersion;      // 0x04
     static uint32_t s_BlockIndex;       // 0x08
 };
+#endif  // GAMEMD_E4_LoadGame
+
+#endif  // GAMEMD_G2_LoadGame_DEF
+
 
 // ============================================================================
 // Buffer — DirectSound audio buffer wrapper (11 methods)
 // IDA: CreateDirectSound 0x40A340
 // ============================================================================
 #ifndef GAMEMD_E4_Buffer  // G42.33 b3: e4 flat carrier wins in opt-in TUs
+#ifndef GAMEMD_G2_Buffer_DEF  // g57a5 W2d: twin-definition guard (utility_ext Buffer)
+#define GAMEMD_G2_Buffer_DEF 1
 class Buffer
 {
 public:
@@ -165,6 +180,8 @@ public:
     uint32_t    Buffer_field_20;           // 0x20
     uint32_t    Buffer_field_24;           // 0x24
 };
+#endif  // GAMEMD_G2_Buffer_DEF
+
 #endif  // GAMEMD_E4_Buffer
 
 // ============================================================================
@@ -221,6 +238,7 @@ public:
 // Struct — memory initialization & zero-fill utilities (10 methods)
 // IDA: ZeroInit32 0x48B2A0, Zero3 0x4B9BD0
 // ============================================================================
+#ifndef GAMEMD_E4_Struct  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Struct_e4.hpp)
 class Struct
 {
 public:
@@ -263,6 +281,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* InitTriple256(int a1);  // 0x5f75e0
     // === FUNCS-MOVE (END) ===
 };
+#endif  // GAMEMD_E4_Struct
+
 
 // ============================================================================
 // Count — reference counting utilities (6 methods)
@@ -295,6 +315,7 @@ public:
 // Rect — rectangle operations (6 methods)
 // IDA: Set, Construct, Union
 // ============================================================================
+#ifndef GAMEMD_E4_Rect  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Rect_e4.hpp)
 class Rect
 {
 public:
@@ -331,11 +352,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int *u32_18;  // supplied (C2039)
     unsigned int *u32_1C;  // supplied (C2039)
 };
+#endif  // GAMEMD_E4_Rect
+
 
 // ============================================================================
 // COM — COM helper utilities (3 methods)
 // IDA: GetClassID, AddRef, ReleaseRef
 // ============================================================================
+#ifndef GAMEMD_E4_COM  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs COM_e4.hpp)
 class COM
 {
 public:
@@ -348,12 +372,15 @@ public:
 
     int32_t     COM_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_COM
+
 
 // ============================================================================
 // RefCount — shared reference counting (2 methods)
 // IDA: Decrement, Increment
 // ============================================================================
 // CSP: RefCount matched via T1
+#ifndef GAMEMD_E4_RefCount  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs RefCount_e4.hpp)
 class RefCount
 {
 public:
@@ -365,11 +392,14 @@ public:
     int32_t     m_RefCount;     // 0x00
     int32_t     RefCount_field_04;       // 0x04
 };
+#endif  // GAMEMD_E4_RefCount
+
 
 // ============================================================================
 // Helper — utility helper functions (1 method)
 // IDA: ProcessData
 // ============================================================================
+#ifndef GAMEMD_E4_Helper  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Helper_e4.hpp)
 class Helper
 {
 public:
@@ -378,11 +408,14 @@ public:
 
     int32_t     Helper_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Helper
+
 
 // ============================================================================
 // Compare — comparison utilities (1 method)
 // IDA: Field96
 // ============================================================================
+#ifndef GAMEMD_E4_Compare  // G57a1: e4 flat carrier wins in e4 TUs
 class Compare
 {
 public:
@@ -392,10 +425,13 @@ public:
     int32_t     Compare_field_00;       // 0x00
 };
 
+
+#endif  // GAMEMD_E4_Compare
 // ============================================================================
 // Value — value range utilities (1 method)
 // IDA: InRange
 // ============================================================================
+#ifndef GAMEMD_E4_Value  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Value_e4.hpp)
 class Value
 {
 public:
@@ -404,11 +440,14 @@ public:
 
     int32_t     Value_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Value
+
 
 // ============================================================================
 // Return — HRESULT return wrapper (1 method)
 // IDA: HRESULT_Fail
 // ============================================================================
+#ifndef GAMEMD_E4_Return  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Return_e4.hpp)
 class Return
 {
 public:
@@ -417,20 +456,23 @@ public:
 
     int32_t     Return_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Return
+
 
 // ============================================================================
 // EventQueue — per-frame event pump (4 methods)
 // IDA: Process 0x54F000
 // ============================================================================
+#ifndef GAMEMD_E4_EventQueue  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs EventQueue_e4.hpp)
 class EventQueue
 {
 public:
     // IDA 0x54F000
-     __int16 Process(void* bink_player);  // 0x54F000
+     short Process(void* bink_player);  // 0x54F000
     static short Process(EventQueue *aP0);  // 0x54F000 G42.35 static-form sync (truth 0-arg thiscall; ui/supplied site 0x4E167C)
     // IDA 0x54F000 area
      void Read();  // 0x54F050
-    static unsigned short Read(void *aP0);  // 0x54F050 G42.35 static-form sync (truth __int16 0-arg thiscall; ui/supplied site 0x4E1692)
+    static unsigned short Read(void *aP0);  // 0x54F050 G42.35 static-form sync (truth short 0-arg thiscall; ui/supplied site 0x4E1692)
     // IDA 0x54F000 area
      bool Check();  // 0x54F650
     // IDA 0x54F000 area
@@ -446,11 +488,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     static int CheckPosition(EventQueue *aP0);  // 0x54F6B0 G42.35 static-form sync (truth 0-arg thiscall; ui/supplied sites 0x54F98A)
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_E4_EventQueue
+
 
 // ============================================================================
 // Event_Dispatch — single event dispatcher (1 method)
 // IDA: Return0
 // ============================================================================
+#ifndef GAMEMD_E4_Event_Dispatch  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Event_Dispatch_e4.hpp)
 class Event_Dispatch
 {
 public:
@@ -459,11 +504,14 @@ public:
 
     int32_t     Event_Dispatch_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Event_Dispatch
+
 
 // ============================================================================
 // Selection — selection state manager (3 methods)
 // IDA: SetCurrent, GetFlag, ClearGlobals
 // ============================================================================
+#ifndef GAMEMD_E4_Selection  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Selection_e4.hpp)
 class Selection
 {
 
@@ -479,11 +527,14 @@ public:
     bool        m_Flag;         // 0x04
     uint8_t     _pad_05[3];     // 0x05
 };
+#endif  // GAMEMD_E4_Selection
+
 
 // ============================================================================
 // Player — player state management (4 methods)
 // IDA: FindByName, BuildListString, IsObserver
 // ============================================================================
+#ifndef GAMEMD_E4_Player  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Player_e4.hpp)
 class Player
 {
 public:
@@ -503,11 +554,15 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void RandomAssign();  // 0x69B8C0
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_E4_Player
+
 
 // ============================================================================
 // FrameTimer — frame-based timer (2 methods)
 // IDA: HasRemaining, Init25
 // ============================================================================
+#ifndef GAMEMD_G2_FrameTimer_DEF  // g57a5 W2d: twin-definition guard (utility_ext FrameTimer)
+#define GAMEMD_G2_FrameTimer_DEF 1
 class FrameTimer
 {
 public:
@@ -519,11 +574,14 @@ public:
     int32_t     m_StartFrame;   // 0x00
     int32_t     m_Duration;     // 0x04
 };
+#endif  // GAMEMD_G2_FrameTimer_DEF
+
 
 // ============================================================================
 // Time — time utilities (2 methods)
 // IDA: GetElapsedMS, FormatDate
 // ============================================================================
+#ifndef GAMEMD_E4_Time  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Time_e4.hpp)
 class Time
 {
 public:
@@ -534,11 +592,14 @@ public:
 
     int32_t     Time_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Time
+
 
 // ============================================================================
 // Float — floating point utilities (2 methods)
 // IDA: Accumulate, SubtractClamped
 // ============================================================================
+#ifndef GAMEMD_E4_Float  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Float_e4.hpp)
 class Float
 {
 public:
@@ -549,11 +610,14 @@ public:
 
     int32_t     Float_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Float
+
 
 // ============================================================================
 // Config — configuration utilities (1 method)
 // IDA: SaveObserverMode
 // ============================================================================
+#ifndef GAMEMD_E4_Config  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Config_e4.hpp)
 class Config
 {
 public:
@@ -562,6 +626,8 @@ public:
 
     int32_t     Config_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Config
+
 
 // ============================================================================
 // Settings — settings utilities (1 method)
@@ -595,6 +661,7 @@ public:
 // Process — process utilities (1 method)
 // IDA: WaitForExit
 // ============================================================================
+#ifndef GAMEMD_E4_Process  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Process_e4.hpp)
 class Process
 {
 public:
@@ -603,11 +670,16 @@ public:
 
     int32_t     Process_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Process
+
 
 // ============================================================================
 // Main — main entry point helpers (1 method)
 // IDA: CreateDialog
 // ============================================================================
+#ifndef GAMEMD_G2_Main_DEF  // g57a5 W2d: twin-definition guard (utility_ext Main)
+#define GAMEMD_G2_Main_DEF 1
+#ifndef GAMEMD_E4_Main  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Main_e4.hpp)
 class Main
 {
 public:
@@ -615,6 +687,10 @@ public:
 
     int32_t     Main_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Main
+
+#endif  // GAMEMD_G2_Main_DEF
+
 
 // ============================================================================
 // Stub — stub functions (1 method)
@@ -632,6 +708,7 @@ public:
 // Type — type checking utility (1 method)
 // IDA: CheckAmbiguity
 // ============================================================================
+#ifndef GAMEMD_E4_Type  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Type_e4.hpp)
 class Type
 {
 public:
@@ -640,11 +717,14 @@ public:
 
     int32_t     Type_field_00;       // 0x00
 };
+#endif  // GAMEMD_E4_Type
+
 
 // ============================================================================
 // unknown — misc utility class (8 methods)
 // IDA: ddtor, Write, Seek
 // ============================================================================
+#ifndef GAMEMD_E4_unknown  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs unknown_e4.hpp)
 class unknown
 {
 public:
@@ -687,11 +767,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int * QueryInterface(char a2);  // 0x58A420 G42.35 C7 体签名
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_E4_unknown
+
 
 // ============================================================================
 // WinMain — game entry point utilities (3 methods)
 // IDA: CleanupResource, Constructor_VectorClass_Wstring_, ShutdownCleanup
 // ============================================================================
+#ifndef GAMEMD_E4_WinMain  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs WinMain_e4.hpp)
 class WinMain
 {
 public:
@@ -702,11 +785,14 @@ public:
     static HWND    s_hWnd;        // 0x00
     static HINSTANCE s_hInstance; // 0x04
 };
+#endif  // GAMEMD_E4_WinMain
+
 
 
 // === Batch-generated MISSING class stubs ===
 
 // 1 methods in IDA
+#ifndef GAMEMD_E4_AllocCallback  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs AllocCallback_e4.hpp)
 class AllocCallback
 {
 public:
@@ -716,6 +802,8 @@ public:
     virtual int Dispatch(); // 0x7BE5D0
 
 };
+#endif  // GAMEMD_E4_AllocCallback
+
 // 22 methods in IDA
 // CSP: COMClass matched via T1
 #ifndef GAMEMD_E4_COMClass  // G42.33 b3: e4 flat carrier wins in opt-in TUs
@@ -924,6 +1012,7 @@ public:
 };
 // 27 methods in IDA
 // CSP: COMObject matched via T1
+#ifndef GAMEMD_E4_COMObject  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs COMObject_e4.hpp)
 class COMObject
 {
 public:
@@ -996,6 +1085,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
     unsigned char __pad_009;  // G42.39 data supply
 };
+#endif  // GAMEMD_E4_COMObject
+
 // 1 methods in IDA
 #ifndef GAMEMD_E4_CRC32  // G42.35h: e4 flat carrier wins in opt-in TUs (Hash/SHA1 pattern)
 class CRC32
@@ -1008,6 +1099,7 @@ public:
 
 };
 #endif  // GAMEMD_E4_CRC32
+#ifndef GAMEMD_E4_ComPtr  // G57a1: e4 flat carrier wins in e4 TUs
 // 9 methods in IDA
 class ComPtr
 {
@@ -1042,6 +1134,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int DestroyWrapper(int a1, int a2);  // 0x76f000
     // === FUNCS-MOVE (END) ===
 };
+
+#endif  // GAMEMD_E4_ComPtr
 // 1 methods in IDA
 class CountdownTimer
 {
@@ -1064,6 +1158,7 @@ public:
 
 };
 // 11 methods in IDA
+#ifndef GAMEMD_E4_EnumConnectionPointsClass  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs EnumConnectionPointsClass_e4.hpp)
 class EnumConnectionPointsClass
 {
 public:
@@ -1103,7 +1198,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int *m_8;  // supplied (C2039)
     unsigned int *m_C;  // supplied (C2039)
 };
+#endif  // GAMEMD_E4_EnumConnectionPointsClass
+
 // 6 methods in IDA
+#ifndef GAMEMD_E4_EnumConnectionsClass  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs EnumConnectionsClass_e4.hpp)
 class EnumConnectionsClass
 {
 public:
@@ -1128,6 +1226,8 @@ public:
 
     unsigned int u32_1C;  // G42.39 data supply
 };
+#endif  // GAMEMD_E4_EnumConnectionsClass
+
 // 1 methods in IDA
 class EventBuffer
 {
@@ -1144,6 +1244,7 @@ public:
     unsigned int u32_314;  // G42.39 data supply
 };
 // 3 methods in IDA
+#ifndef GAMEMD_E4_Flag  // G57a1: e4 flat carrier wins in e4 TUs
 class Flag
 {
 public:
@@ -1162,6 +1263,8 @@ public:
 
     unsigned int u32_18;  // G42.39 data supply
 };
+
+#endif  // GAMEMD_E4_Flag
 // 1 methods in IDA
 class FlagSystem
 {
@@ -1178,6 +1281,7 @@ public:
 };
 // 2 methods in IDA
 // CSP: Float4 matched via T1
+#ifndef GAMEMD_E4_Float4  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Float4_e4.hpp)
 class Float4
 {
 public:
@@ -1189,6 +1293,8 @@ public:
 
     uint8_t Float4_field_0x04[4];
 };
+#endif  // GAMEMD_E4_Float4
+
 // 1 methods in IDA
 // CSP: FloatArray matched via T1
 class FloatArray
@@ -1201,6 +1307,7 @@ public:
 
 };
 // 6 methods in IDA
+#ifndef GAMEMD_E4_GraphicMenuAnimItem  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs GraphicMenuAnimItem_e4.hpp)
 class GraphicMenuAnimItem
 {
 public:
@@ -1224,6 +1331,8 @@ public:
 
     unsigned int u32_1C;  // G42.39 data supply
 };
+#endif  // GAMEMD_E4_GraphicMenuAnimItem
+
 // 5 methods in IDA
 class GraphicMenuImageItem
 {
@@ -1251,6 +1360,7 @@ virtual unsigned int * ddtor(unsigned int *);  // 0x4F37A0
 };
 // 2 methods in IDA
 // CSP: GraphicMenuItem matched via T1
+#ifndef GAMEMD_E4_GraphicMenuItem  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs GraphicMenuItem_e4.hpp)
 class GraphicMenuItem
 {
 public:
@@ -1268,6 +1378,8 @@ public:
 
     unsigned int u32_C;  // G42.39 data supply
 };
+#endif  // GAMEMD_E4_GraphicMenuItem
+
 // 2 methods in IDA
 class GraphicMenuItem_Destru
 {
@@ -1340,6 +1452,7 @@ public:
     unsigned int u32_18;  // G42.39 data supply
 };
 // 27 methods in IDA
+#ifndef GAMEMD_E4_HashTable  // G57a1: e4 flat carrier wins in e4 TUs
 class HashTable
 {
 public:
@@ -1383,6 +1496,8 @@ public:
     unsigned int u32_10;  // G42.39 data supply
 };
 // 1 methods in IDA
+
+#endif  // GAMEMD_E4_HashTable
 // CSP: HashTableSection matched via T1
 class HashTableSection
 {
@@ -1434,6 +1549,7 @@ public:
 };
 // 12 methods in IDA
 // CSP: PlayerClass matched via T1
+#ifndef GAMEMD_E4_PlayerClass  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs PlayerClass_e4.hpp)
 class PlayerClass
 {
 public:
@@ -1491,6 +1607,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
     unsigned int u32_81;  // G42.39 data supply
 };
+#endif  // GAMEMD_E4_PlayerClass
+
 // 1 methods in IDA
 class PlayerProfile
 {
@@ -1528,6 +1646,7 @@ public:
 };
 // 1 methods in IDA
 // CSP: PtrVector matched via T1
+#ifndef GAMEMD_E4_PtrVector  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs PtrVector_e4.hpp)
 class PtrVector
 {
 public:
@@ -1537,9 +1656,13 @@ public:
     virtual void Destroy(); // 0x5C6120
 
 };
+#endif  // GAMEMD_E4_PtrVector
+
 // 1 methods in IDA
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: e4 Queue_e4(audio DList) 树宇宙抑制
 #ifndef GAMEMD_E4_Queue  // G42.33 b3: e4 flat carrier wins in opt-in TUs
+#ifndef GAMEMD_G2_Queue_DEF  // g57a5 W2d: twin-definition guard (utility_ext Queue)
+#define GAMEMD_G2_Queue_DEF 1
 class Queue
 {
 public:
@@ -1549,9 +1672,14 @@ public:
     virtual void GetNext(); // 0x407470
 
 };
+#endif  // GAMEMD_G2_Queue_DEF
+
 #endif  // GAMEMD_E4_Queue
 #endif  // GAMEMD_TREE_UNIVERSE (Queue)
 // 4 methods in IDA
+#ifndef GAMEMD_E4_Random  // G57a1: e4 flat carrier wins in e4 TUs
+#ifndef GAMEMD_G2_Random_DEF  // g57a5 W2d: twin-definition guard (utility_ext Random)
+#define GAMEMD_G2_Random_DEF 1
 class Random
 {
 public:
@@ -1568,6 +1696,10 @@ public:
     uint8_t Random_field_0x0C[4];
     unsigned int *__pad_0;  // G42.35 C8 体词汇 (0x65c780 指针解引用)
 };
+#endif  // GAMEMD_G2_Random_DEF
+
+
+#endif  // GAMEMD_E4_Random
 // 3 methods in IDA
 class RandomStraw
 {
@@ -1585,6 +1717,7 @@ public:
 };
 // 1 methods in IDA
 // CSP: Rect_Point matched via T1
+#ifndef GAMEMD_E4_Rect_Point  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs Rect_Point_e4.hpp)
 class Rect_Point
 {
 public:
@@ -1596,6 +1729,8 @@ public:
     int Width;   // G42.34 C5: Set 体词汇 (0x4e1a28)
     int Height;  // G42.34 C5: Set 体词汇 (0x4e1a2b)
 };
+#endif  // GAMEMD_E4_Rect_Point
+
 // 1 methods in IDA
 // CSP: ReferenceCounted matched via T1
 class ReferenceCounted
@@ -1617,7 +1752,7 @@ public:
     virtual ~SHA1() = default;
 
     virtual void ProcessBlock(); // 0x69D8C0
-    virtual __int16 Process(); // 0x69D960
+    virtual short Process(); // 0x69D960
     virtual void Compute(); // 0x69D9E0
     virtual void Transform(); // 0x69DB30
     virtual void Reset(); // 0x69DFF0
@@ -1683,6 +1818,7 @@ public:
     unsigned int u32_14;  // G42.39 data supply
 };
 // 1 methods in IDA
+#ifndef GAMEMD_E4_StringList  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs (TU-local addr6C_e4.cpp))
 class StringList
 {
 public:
@@ -1696,6 +1832,8 @@ public:
 
     unsigned int u32_18;  // G42.39 data supply
 };
+#endif  // GAMEMD_E4_StringList
+
 // 2 methods in IDA
 #ifndef GAMEMD_E4_StringTable  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class StringTable
@@ -1719,7 +1857,7 @@ public:
 
     virtual void Release(); // 0x49EE60
     virtual void ddtor(); // 0x49EF10
-    virtual void Add(); // 0x49EF40
+    virtual void Add(_DWORD a2); // 0x49EF40
     virtual void Remove(); // 0x49EF80
     virtual void QueryInterface(); // 0x49EFA0
     // +2 more virtual methods
@@ -1872,6 +2010,7 @@ public:
     int IsAllocated;  // G42.39 data supply
 };
 // 7 methods in IDA
+#ifndef GAMEMD_E4_VectorCursor  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs VectorCursor_e4.hpp)
 class VectorCursor
 {
 public:
@@ -1892,6 +2031,8 @@ public:
     uint8_t VectorCursor_field_0x14[4];
     uint8_t VectorCursor_field_0x18[4];
 };
+#endif  // GAMEMD_E4_VectorCursor
+
 // 3 methods in IDA
 #ifndef GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint  // G42.33 b3: e4 flat carrier wins in opt-in TUs
 class VectorCursor_uint_DynamicVectorClass_uint

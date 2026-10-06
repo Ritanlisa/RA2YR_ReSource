@@ -70,7 +70,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5ba9fb*/
     v3 = (char *)(CharToWideString((unsigned char *)(unk_A8B380))); /*0x5baa05*/
     v4 = dword_A8B394; /*0x5baa0d*/
-    Format = (wchar_t *)v3; /*0x5baa19*/
+    Format = (unsigned int)(wchar_t *)v3; /*0x5baa19*/
     DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1343); /*0x5baa23*/
     if ( DlgItem ) /*0x5baa27*/
     {
@@ -90,10 +90,10 @@ namespace gamemd {
 unsigned int * NetworkGameSetup::DeleteComPtr(unsigned int * Block, char a2)
 {
 
-  ((ComPtr *)((ComPtr *)Block))->Dtor(); /*0x5bb563*/
+  ((ComPtr *)((ComPtr *)this))->Dtor(); /*0x5bb563*/
   if ( (a2 & 1) != 0 ) /*0x5bb56d*/
-    __3_YAXPAX_Z(Block); /*0x5bb570*/
-  return Block->__pad_0; /*0x5bb57a*/
+    __3_YAXPAX_Z(this); /*0x5bb570*/
+  return this->__pad_0; /*0x5bb57a*/
 
 }
 } // namespace gamemd

@@ -256,13 +256,13 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   void *houseTypesCount; // eax
   SideClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable1 = &vt_SideClass; /*0x6a4936*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a493c*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a4943*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_SideClass); /*0x6a494a*/
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(Block), 1); /*0x6a4951*/
-  v6 = (gamemd::SideClass *)(Block); /*0x6a4966*/
-  v3 = (*(int (**)(int *, SideClass **))(((char *)&FootClass_Array) + 16))((int *)&((char *)&FootClass_Array), &v6); /*0x6a496a*/
+  this->vtable1 = &vt_SideClass; /*0x6a4936*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a493c*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a4943*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_SideClass); /*0x6a494a*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(this), 1); /*0x6a4951*/
+  v6 = (gamemd::SideClass *)(this); /*0x6a4966*/
+  v3 = (*(int (**)(int *, SideClass **))(((char *)&FootClass_Array) + 16))( (int *)(char *)&FootClass_Array, (SideClass **)(&v6)); /*0x6a496a*/
   if ( v3 != -1 && v3 < *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x6a497a*/
   {
     --((unsigned int *)&FootClass_Array)[0]; /*0x6a497f*/
@@ -273,19 +273,19 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
       ++v3; /*0x6a498d*/
     }
   }
-  houseTypesCount = (void *)Block->houseTypesCount; /*0x6a499f*/
-  Block->houseTypes = &vt_VectorClass; /*0x6a49a5*/
-  if ( houseTypesCount && *((unsigned char *)Block + 165) ) /*0x6a49b3*/
+  houseTypesCount = (void *)this->houseTypesCount; /*0x6a499f*/
+  this->houseTypes = &vt_VectorClass; /*0x6a49a5*/
+  if ( houseTypesCount && *((unsigned char *)this + 165) ) /*0x6a49b3*/
   {
     __3_YAXPAX_Z(houseTypesCount); /*0x6a49be*/
-    Block->houseTypesCount = 0; /*0x6a49c6*/
+    this->houseTypesCount = 0; /*0x6a49c6*/
   }
-  *((unsigned char *)Block + 165) = 0; /*0x6a49d2*/
-  *((unsigned int *)Block + 40) = 0; /*0x6a49d9*/
-  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x6a49e3*/
+  *((unsigned char *)this + 165) = 0; /*0x6a49d2*/
+  *((unsigned int *)this + 40) = 0; /*0x6a49d9*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->Dtor(); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
-    __3_YAXPAX_Z(Block); /*0x6a49f0*/
-  return Block; /*0x6a49fa*/
+    __3_YAXPAX_Z(this); /*0x6a49f0*/
+  return this; /*0x6a49fa*/
 
 }
 }
@@ -381,9 +381,9 @@ int SideClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   {
     v4 = *a1; /*0x6a48c0*/
     aP2 = *((unsigned int *)aP0 + 42); /*0x6a48cd*/
-    (*(void (**)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x6a48d1*/
+    (*(void (**)(int *, int *, int, unsigned int))(v4 + 16))( (int *)(a1), (int *)(&aP2), 4, 0); /*0x6a48d1*/
     for ( i = 0; i < aP2; ++i ) /*0x6a48dc*/
-      (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, (int)aP0->houseTypesCount + 4 * i, 4, 0); /*0x6a48ef*/
+      (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))( (int *)(a1), (int)aP0->houseTypesCount + 4 * i, 4, 0); /*0x6a48ef*/
     return 0; /*0x6a48f9*/
   }
   return result; /*0x6a48fc*/

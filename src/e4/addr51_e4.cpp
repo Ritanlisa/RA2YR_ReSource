@@ -151,7 +151,7 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
       BuildingClass::GetHealthRatio(v6); /*0x52004b*/
       v4 = v4 * 256.0; /*0x520050*/
       IDA_LOWORD(v14) = Math::RoundToInt(v4); /*0x520056*/
-      sprintf(Source,(const char *const )((const char *const)stru_825538.Type), &owner->plainName[4], v9, v14, v15); /*0x520068*/
+      sprintf(Source,(const char *const )((const char *const)stru_825538.Type), &(&owner->plainName)[4], v9, v14, v15); /*0x520068*/
       ((INIClass *)queuedMission)->SetString((uint8_t *)&g_INI_Key_Special.SidebarImage, Buffer, Source); /*0x520085*/
       result = i; /*0x52008a*/
     }
@@ -341,7 +341,7 @@ unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
       break;
   }
   result = strlen((const char *)(v4)) + 1; /*0x510ea7*/
-  qmemcpy(a2, v4, result); /*0x510eb6*/
+  qmemcpy( (void *)(a2), (const void *)(v4), result); /*0x510eb6*/
   return result; /*0x510ebf*/
 }
 } // namespace gamemd
@@ -694,7 +694,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   CHAR SubKey[128]; // [esp+2Ch] [ebp-100h] BYREF
   CHAR v13[128]; // [esp+ACh] [ebp-80h] BYREF
 
-  strcpy(SubKey,(const char *)(g_Str_SOFTWARE_Westwood_WOLAPI_)); /*0x5176ff*/
+  strcpy( (char *)(SubKey), (const char *)(g_Str_SOFTWARE_Westwood_WOLAPI_)); /*0x5176ff*/
   v5 = 0; /*0x51770a*/
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0xF003Fu, &phkResult) /*0x51774a*/
     && RegCreateKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0, 0, 0xF003Fu, 0, &phkResult, &dwDisposition) )

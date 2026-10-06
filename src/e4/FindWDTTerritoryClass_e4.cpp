@@ -23,7 +23,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
   v6 = (char *)((unsigned char *)this + 24);
   v7 = 0; /*0x76538f*/
   v5 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x765397*/
-  if ( Campaign_WorldDominationTour_24::AddRef(&v5) ) /*0x76539f*/
+  if ( Campaign_WorldDominationTour_24::AddRef( (void)(&v5)) ) /*0x76539f*/
   {
     do /*0x7653db*/
     {

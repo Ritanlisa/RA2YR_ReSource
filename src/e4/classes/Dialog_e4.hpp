@@ -11,8 +11,8 @@ namespace ra2 { namespace game { class AbstractClass; class ObjectClass; } }
 namespace gamemd {
 #ifndef GAMEMD_USING_AbstractClass_Dialog
 #define GAMEMD_USING_AbstractClass_Dialog
-using ::ra2::game::AbstractClass;
-using ::ra2::game::ObjectClass;
+// G57c4: using-bridges dropped -- native flat gamemd::AbstractClass/
+// ObjectClass carriers are the truth in e4 TUs (C2874).
 #endif
 } // namespace gamemd
 #endif

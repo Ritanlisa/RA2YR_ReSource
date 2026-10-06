@@ -20,7 +20,7 @@ int COMObject::FindNextActive(unsigned char * a1)
     return 0; /*0x4e1a16*/
   while ( !LOBYTE(a1->Image) ) /*0x4e1a09*/
   {
-    a1 = (ShpButtonClass *)(*(int (**)(ShpButtonClass *))(*(unsigned int *)a1->__pad_0 + 4))(a1); /*0x4e1a10*/
+    a1 = (ShpButtonClass *)(*(int (**)(ShpButtonClass *))(*(unsigned int *)a1->__pad_0 + 4))( (ShpButtonClass *)(a1)); /*0x4e1a10*/
     if ( !a1 ) /*0x4e1a14*/
       return 0; /*0x4e1a14*/
   }
@@ -47,7 +47,7 @@ int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
   if ( memcmp(a2, &IID_IUnknown, 0x10u) && memcmp(a2, &unk_7EA6E8, 0x10u) ) /*0x4f427a*/
     return -2147467262; /*0x4f427f*/
   *a3 = a1; /*0x4f428c*/
-  (*(void (**)(GScreenClass *))(a1->vfptr[0] + 4))(a1); /*0x4f4291*/
+  (*(void (**)(GScreenClass *))(a1->vfptr[0] + 4))( (GScreenClass *)(a1)); /*0x4f4291*/
   return 0; /*0x4f424a*/
 
 }
@@ -57,7 +57,7 @@ namespace gamemd {
 bool COMObject::IsSameType(GScreenClass * aP0)
 {
 
-  return *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 880) == (*(int (**)(GScreenClass *))(aP0->vfptr[0] + 24))(aP0); /*0x4f4408*/
+  return *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 880) == (*(int (**)(GScreenClass *))(aP0->vfptr[0] + 24))( (GScreenClass *)(aP0)); /*0x4f4408*/
 
 }
 } // namespace gamemd
@@ -68,7 +68,7 @@ int COMObject::GetStringValue(int a1, unsigned int * a2)
 
   if ( !a2 ) /*0x55ab47*/
     return -2147467261; /*0x55ab49*/
-  *a2 = (*(int (**)(IUnknown *))(a1->field_0 + 36))(a1) + 4; /*0x55ab5e*/
+  *a2 = (*(int (**)(IUnknown *))(a1->field_0 + 36))( (IUnknown *)(a1)) + 4; /*0x55ab5e*/
   a2[1] = 0; /*0x55ab60*/
   return 0; /*0x55ab4e*/
 
@@ -141,7 +141,7 @@ int COMObject::QueryInterface2(const void * a2, unsigned int * a3)
     *v4 = a2; /*0x6c0096*/
   if ( !*v4 ) /*0x6c0098*/
     return -2147467262; /*0x6c00a0*/
-  (*(void (**)(const void *))(*(unsigned int *)&a2->q_10)(a2); /*0x6c00ac*/
+  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))( (const void *)(a2));  /*0x6c00ac*/
   return 0; /*0x6c005e*/
 
 }

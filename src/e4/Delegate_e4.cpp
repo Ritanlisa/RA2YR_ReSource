@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_Delegate 1  // G57a3: e4 flat-carrier opt-in (suppress core utility_ext/stream_ext twin)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/GameClass_e4.hpp"
@@ -138,7 +139,7 @@ int Delegate::Set(int aP1)
       v4 = *(unsigned int *)(aP1 + 8); /*0x6c98a1*/
       if ( v4 ) /*0x6c98a6*/
       {
-        (*(void (**)(int, unsigned int))(*(unsigned int *)&v4->__pad_010)(v4, 0); /*0x6c98ac*/
+        (*(void (**)(int, unsigned int))(*(unsigned int *)&v4->__pad_010))(v4, 0);  /*0x6c98ac*/
         *(unsigned int *)(aP1 + 8) = 0; /*0x6c98af*/
       }
     }
@@ -262,7 +263,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   int Previous; // ecx
   int v4; // eax
 
-  *(unsigned int *)Block->__pad_0 = &vt_GenericNode; /*0x52ae27*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_GenericNode;
   if ( this ) /*0x52ae2d*/
   {
     Previous = this->Previous; /*0x52ae2f*/
@@ -272,8 +273,8 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
       if ( v4 ) /*0x52ae3b*/
       {
         *(unsigned int *)(v4 + 4) = Previous; /*0x52ae3d*/
-        *(unsigned int *)(Block->Previous + 8) = *(unsigned int *)Block->Blowfish; /*0x52ae46*/
-        *(unsigned int *)Block->Blowfish = 0; /*0x52ae49*/
+        *(unsigned int *)(this->Previous + 8) = *(unsigned int *)this->Blowfish; /*0x52ae46*/
+        *(unsigned int *)this->Blowfish = 0; /*0x52ae49*/
         this->Previous = 0; /*0x52ae4c*/
       }
     }

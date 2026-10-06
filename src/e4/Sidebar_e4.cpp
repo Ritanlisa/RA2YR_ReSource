@@ -212,7 +212,7 @@ LABEL_55:
               *(unsigned int *)(v10 + 36) = v18; /*0x4fa68f*/
           }
           if ( dword_A83D4C == (Object *)this ) /*0x4fa698*/
-            Sidebar::FindProductionType((Sidebar *)&stru_87F5F0.__pad_58[416], v10, (int)a1, aP2); /*0x4fa6aa*/
+            Sidebar::FindProductionType( (FactoryClass *)((Sidebar *)&stru_87F5F0.__pad_58[416]), (MouseClass *)(v10), (int)a1, aP2); /*0x4fa6aa*/
           return 0; /*0x4fa6b2*/
         }
         else
@@ -224,7 +224,7 @@ LABEL_55:
       }
     }
   }
-  if ( FactoryClass::DemandProduction(v10, v9, (void *)this, a5) ) /*0x4fa5d1*/
+  if ( ((FactoryClass *)v10)->DemandProduction( v9, (void *)this, a5) ) /*0x4fa5d1*/
     goto LABEL_55; /*0x4fa5df*/
   Debug::Log(); /*0x4fa6c4*/
   if ( *(unsigned int *)(v10 + 80) || *(unsigned int *)(v10 + 88) ) /*0x4fa6d9*/
@@ -386,7 +386,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     {
       ((FactoryClass*)(int *)v4->__pad_0)->FinishProduction((int)v6); /*0x636353*/
       __3_YAXPAX_Z(*((void **)Block + 1)); /*0x636360*/
-      v7 = (*(int (**)(Array *, void **))(*(unsigned int *)v4->__pad_0 + 16))(v4, &Block); /*0x636371*/
+      v7 = (*(int (**)(Array *, void **))(*(unsigned int *)v4->__pad_0 + 16))( v4, (void **)(&Block)); /*0x636371*/
       if ( v7 != -1 ) /*0x636377*/
         Vector4::EraseAt_Copy((Vector4 *)v4, v7); /*0x63637c*/
       __3_YAXPAX_Z(Block); /*0x636386*/
@@ -423,7 +423,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
               &stru_AC4B30.__pad_EC[92],
               &Block);
       if ( v11 != -1 ) /*0x636454*/
-        Sidebar::RemoveItem((Sidebar *)&stru_AC4B30.__pad_EC[92], v11); /*0x63645c*/
+        Sidebar::RemoveItem( (int)((Sidebar *)&stru_AC4B30.__pad_EC[92]), v11); /*0x63645c*/
     }
     v12 = *(unsigned int *)Block->__pad_14; /*0x636461*/
     for ( j = 0; j < v12; ++j ) /*0x63646f*/
@@ -697,7 +697,7 @@ int Sidebar::ActivateTab(int aP1)
   {
     *((unsigned char *)this + 21414) = 1; /*0x6a60b8*/
     *((unsigned char *)this + 3988 * aP1 + 5504) = 1; /*0x6a60c6*/
-    return (int)MapClass::MarkForRedraw(&dword_87F7E8, 0, v2); /*0x6a60d2*/
+    return (int)((MapClass *)&dword_87F7E8)->MarkForRedraw( 0, v2); /*0x6a60d2*/
   }
   return result; /*0x6a60d8*/
 
@@ -743,7 +743,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     || *(unsigned int *)&stru_87F5F0.__pad_E12[1534] != dword_B07DD4 )
   {
 LABEL_13:
-    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0)( /*0x6a7241*/
+    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))(  /*0x6a7241*/
       stru_887598.lineTrailer,
       DSurface_Sidebar,
       1);
@@ -838,7 +838,7 @@ LABEL_13:
   }
   if ( *((unsigned char *)this + 21416) )
   {
-    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0)( /*0x6a71c7*/
+    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))(  /*0x6a71c7*/
       stru_887598.lineTrailer,
       DSurface_Sidebar,
       1);
@@ -913,15 +913,15 @@ void Sidebar_UpdateProductionDisplay(void * a1, void * a3)
   CampaignScore Buffer[14]; // [esp+28Ah] [ebp-200h] BYREF
 
   int v84 = a1;
-  result = *(unsigned char *)(a1 + 28);
+  result = *(unsigned char *)((char *)a1 +8);
   if ( result )
   {
-    if ( *(unsigned char *)(a1 + 60) || (result = a3) != 0 )
+    if ( *(unsigned char *)((char *)a1 +0) || (result = a3) != 0 )
     {
   int v86; // [esp+2Ah] [ebp-460h]
   int v82; // [esp+1Ah] [ebp-470h] BYREF
       v70 = a2;
-      *(unsigned char *)(a1 + 60) = 0;
+      *(unsigned char *)((char *)a1 +0) = 0;
       (&stru_B05488)[24720] = 1;
       *(unsigned int *)aP3[0] = 0;
       *(unsigned int *)&(&aP3.field_2)[2] = 0;
@@ -933,11 +933,11 @@ void Sidebar_UpdateProductionDisplay(void * a1, void * a3)
       int v8 = 0;
       char v79 = 0;
       if ( (CoordStruct *)HouseClass_Player.field_0 == *(&g_MatrixTransformState + 2274) )
-        v8 = *(unsigned int *)(a1 + 84);
-      int v9 = *(unsigned int *)(a1 + 84);
+        v8 = *(unsigned int *)((char *)a1 +4);
+      int v9 = *(unsigned int *)((char *)a1 +4);
       if ( v8 < v9 )
       {
-        unsigned int * v10 = (unsigned int *)(a1 + 4 * (v8 + 4 * (3 * v8 + 6) + 2));
+        unsigned int * v10 = (unsigned int *)((char *)a1 + * (v8 + 4 * (3 * v8 + 6) + 2));
         while ( *v10 != 1 && *v10 != 2 )
         {
           ++v8;
@@ -953,7 +953,7 @@ LABEL_13:
         v11 = 18;
       int v85 = 0;
   int v12; // eax
-      v12 = (*(unsigned char *)(a1 + 63) != 0)
+      v12 = (*(unsigned char *)((char *)a1 +3) != 0)
           + (*(unsigned int *)&(&stru_87C374)[44072]
            - *(unsigned int *)&(&stru_B05488)[24688]
            - v11
@@ -1043,7 +1043,7 @@ LABEL_13:
                       || (v86 = TechnoTypeClass::GetByTypeAndIndex(v87[23], v87[22]),
   bool v74; // [esp+10h] [ebp-47Ah]
                           v74 = ((HouseClass *)(((gamemd::TechnoTypeClass*)HouseClass_Player).field_0))->CanBuild((IUnknown *)v86, 0, 0) == -1,
-                          ShouldDisableCameo = HouseClass::ShouldDisableCameo(((gamemd::HouseClass*)HouseClass_Player).field_0, v86),
+                          ShouldDisableCameo = ((HouseClass *)((gamemd::HouseClass*)HouseClass_Player).field_0)->ShouldDisableCameo( v86),
                           v74)
                       || ShouldDisableCameo )
                     {
@@ -1095,13 +1095,13 @@ LABEL_13:
                     IDA_LOBYTE(v73) = 1;
                     IsCliffWall = ObjectClass::IsCliffWall((unsigned int *)v86);
                     if ( IsCliffWall )
-                      BufferCount = (size_t)GetStringCSF((wchar_t *)(g_Str_TXT_READY), 0, &(&stru_830620)[62628], 3411);
+                      BufferCount = (size_t)GetStringCSF( (wchar_t *)(g_Str_TXT_READY), 0, (const char *)(&(&stru_830620)[62628]), 3411);
                     else
                       v78 = 1;
                     Member09 = 0;
                     unsigned int * v26 = (unsigned int *)v87[25];
                     if ( v26 )
-                      Member09 = ObjectClass::GetMember09(v26);
+                      Member09 = ((ObjectClass *)v26)->GetMember09();
                     if ( *(unsigned int *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2)) == 1 )
                     {
                       v27 = v87[27];
@@ -1157,18 +1157,18 @@ LABEL_59:
                     *(unsigned int *)&(&stru_87C374)[44940],
                     &aP3[88],
                     &aP3[152],
-                    ((uint8_t)stru_B05488[42388] >> stru_89E138[11420] << stru_89E138[11416])
-                  | ((uint8_t)stru_B05488[42389] >> stru_89E138[11436] << stru_89E138[11432])
-                  | ((uint8_t)stru_B05488[42390] >> stru_89E138[11428] << stru_89E138[11424]));
+                    ((uint8_t)(&stru_B05488)[42388] >> (&stru_89E138)[11420] << (&stru_89E138)[11416])
+                  | ((uint8_t)(&stru_B05488)[42389] >> (&stru_89E138)[11436] << (&stru_89E138)[11432])
+                  | ((uint8_t)(&stru_B05488)[42390] >> (&stru_89E138)[11428] << (&stru_89E138)[11424]));
                 }
                 if ( v16 )
                 {
                   *(unsigned int *)&aP3[144] = v15;
                   *(unsigned int *)&aP3[148] = v17;
                   DrawToSurfaceSHP(
-                    *(int *)&stru_87C374[44940],
-                    *(int *)&stru_87C374[13144],
-                    *(ConvertClass **)&stru_B05488[10040],
+                    *(int *)&(&stru_87C374)[44940,
+                    *(int *)&(&stru_87C374)[13144,
+                    *(ConvertClass **)&(&stru_B05488)[10040,
                     0,
                     (ConvertClass *)&aP3[144],
                     (ConvertClass *)&aP3[88],
@@ -1226,11 +1226,11 @@ LABEL_59:
                   BuildLimit = (int *)HouseClass::GetBuildLimit(HouseClass_Player.field_0, v36, v69, 0);
                   if ( BuildLimit )
                   {
-                    eax73 = FactoryClass::CountType(BuildLimit, aP1);
+                    eax73 = ((FactoryClass *)BuildLimit)->CountType( aP1);
                     v37 = (CampaignScore *)eax73;
+  int v39; // ecx
                     if ( eax73 > 1
                       || eax73 > 0
-  int v39; // ecx
                       && ((v39 = BuildLimit[22]) == 0
                        || (*(int (**)(int))(*(unsigned int *)v39 + 132))(v39)
                        && (IUnknown *)(*(int (**)(int))(*(unsigned int *)BuildLimit[22] + 132))(BuildLimit[22]) != aP1) )
@@ -1322,11 +1322,11 @@ LABEL_59:
                       && (!*(unsigned int *)(v86 + 56) || *(unsigned char *)(v86 + 112))
                       || *(unsigned int *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2)) == 2 )
                     {
-                      StringCSF = GetStringCSF(
-                                    (wchar_t *)&stru_830620[62732],
-                                    0,
-                                    &stru_830620[62628],
-                                    3636);
+StringCSF = GetStringCSF( (wchar_t *)&stru_830620[62732], 0, (const char *)(&stru_830620[62628]), 3636);
+
+
+
+
                       if ( v75 )
                       {
                         *(unsigned int *)&aP3[24] = v15 + 2;
@@ -1604,12 +1604,12 @@ LABEL_121:
             v83 += 17;
             if ( v63 >= 1 )
             {
-              v65 = GetStringCSF((wchar_t *)&stru_830620[62704], 0, &stru_830620[62628], 3785);
+              v65 = GetStringCSF( (wchar_t *)&stru_830620[62704], 0, (const char *)(&stru_830620[62628]), 3785);
               swprintf((wchar_t *const)&aP3[216], (const size_t)v65, Format, v70);
             }
             else
             {
-              v64 = GetStringCSF((wchar_t *)&stru_830620[62716], 0, &stru_830620[62628], 3781);
+              v64 = GetStringCSF( (wchar_t *)&stru_830620[62716], 0, (const char *)(&stru_830620[62628]), 3781);
               wcscpy((wchar_t *)&aP3[216], v64);
             }
             TextRenderer::DrawText(
@@ -1623,7 +1623,7 @@ LABEL_121:
               66);
           }
           v83 += 17;
-          v66 = GetStringCSF((wchar_t *)&stru_830620[62688], 0, &stru_830620[62628], 3807);
+          v66 = GetStringCSF( (wchar_t *)&stru_830620[62688], 0, (const char *)(&stru_830620[62628]), 3807);
           swprintf((wchar_t *const)&aP3[216], (const size_t)v66, v98, v70);
           TextRenderer::DrawText(
             (int *)&aP3[200],
@@ -1635,7 +1635,7 @@ LABEL_121:
             0,
             66);
           v83 += 17;
-          v67 = GetStringCSF((wchar_t *)&stru_830620[62672], 0, &stru_830620[62628], 3822);
+          v67 = GetStringCSF( (wchar_t *)&stru_830620[62672], 0, (const char *)(&stru_830620[62628]), 3822);
           swprintf((wchar_t *const)&aP3[216], (const size_t)v67, v101, v71);
           TextRenderer::DrawText(
             (int *)&aP3[184],
@@ -1647,7 +1647,7 @@ LABEL_121:
             0,
             66);
           v83 += 17;
-          v68 = GetStringCSF((wchar_t *)&stru_830620[62656], 0, &stru_830620[62628], 3835);
+          v68 = GetStringCSF( (wchar_t *)&stru_830620[62656], 0, (const char *)(&stru_830620[62628]), 3835);
           swprintf((wchar_t *const)&aP3[216], (const size_t)v68, v99, v72);
           TextRenderer::DrawText(
             (int *)&aP3[104],
@@ -1695,7 +1695,7 @@ char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, v
       break;
     case 6: /*0x6a6155*/
     case 7: /*0x6a6155*/
-      v5 = GetHouseTechLevel(aP2, a4) == 5; /*0x6a61a1*/
+      v5 = GetHouseTechLevel( (int)(aP2), a4) == 5; /*0x6a61a1*/
       break;
     case 57: /*0x6a6155*/
     case 32: /*0x6a6155*/
@@ -1720,7 +1720,7 @@ char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, v
   *(unsigned int *)&v8[52 * v7 + 100] = aP1; /*0x6a61fa*/
   v8[61] = 1; /*0x6a61fe*/
   v8[60] = 1; /*0x6a6202*/
-  MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6a620b*/
+  MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 0); /*0x6a620b*/
   return 1; /*0x6a61e6*/
 
 }

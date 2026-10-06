@@ -4,7 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-#ifndef GAMEMD_TREE_UNIVERSE
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_MATH_ALIASES)  // G57a1
 struct CellStruct {
 // --- flat members (BEGIN) ---
     short X;  // 0x0

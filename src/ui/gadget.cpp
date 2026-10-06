@@ -721,3 +721,4 @@ int DialogClass::GetResult() const { return result; }
 std::vector<GadgetClass*>& DialogClass::Gadgets() { return gadgets; 
 
 } // namespace gamemd
+}

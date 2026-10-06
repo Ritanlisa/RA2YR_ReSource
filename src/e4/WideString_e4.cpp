@@ -71,7 +71,7 @@ LABEL_17: v9 = (gamemd::CampaignScore *)(a3);
 LABEL_18:
   if ( a0 ) /*0x5d4b9f*/
   {
-    qmemcpy(a0, aP1, 2 * v9); /*0x5d4baf*/
+    qmemcpy( (void *)(a0), (const void *)(aP1), 2 * v9); /*0x5d4baf*/
     v6 = (wchar_t *)(aP1); /*0x5d4bb3*/
     a0[v9] = 0; /*0x5d4bbc*/
   }
@@ -137,7 +137,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
       }
       break; /*0x7b7576*/
     }
-    v7 = (char *)v6 - (char *)v4; /*0x7b7438*/
+    v7 = (unsigned int)(char *)v6 - (char *)v4; /*0x7b7438*/
     if ( v6 != v4 ) /*0x7b743a*/
     {
       v8 = v5; /*0x7b743f*/

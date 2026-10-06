@@ -331,12 +331,12 @@ char Mission::ProcessUnitMissionAI()
     if ( v13 >= 0 ) /*0x5211aa*/
     {
       v15 = *(unsigned int *)v24; /*0x5211b9*/
-      ComPtr::Release_Alt((ComPtr *)&v22); /*0x5211c1*/
+      ComPtr::Release_Alt( (ComPtr *)&v22); /*0x5211c1*/
       v14 = v15; /*0x5211c6*/
     }
     else
     {
-      ComPtr::Release_Alt((ComPtr *)&v22); /*0x5211b0*/
+      ComPtr::Release_Alt( (ComPtr *)&v22); /*0x5211b0*/
       v14 = 0; /*0x5211b5*/
     }
     v22 = v14; /*0x5211ca*/
@@ -511,7 +511,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                       {
                         if ( v4 != 5 || (v3 = (*(int (**)(int *))(*i + 388))(i), v3 != 16) ) /*0x6eda45*/
                         {
-                          TechnoClass::SetFocus(i, 0); /*0x6eda4b*/
+                          ((TechnoClass *)i)->SetFocus( 0); /*0x6eda4b*/
                           (*(void (**)(int *, int, unsigned int))(*i + 488))(i, v4, 0); /*0x6eda57*/
                           (*(void (**)(int *, unsigned int))(*i + 968))(i, 0); /*0x6eda63*/
                           LOBYTE(v3) = (*(int (**)(int *, unsigned int, int))(*i + 1152))(i, 0, 1); /*0x6eda71*/

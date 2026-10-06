@@ -234,3 +234,4 @@ bool DisplayClass::vt_entry_90(const CellStruct& cell, HouseClass* house) { retu
 // 0x4a9ca0
 bool DisplayClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) { return false; 
 } // namespace gamemd
+}

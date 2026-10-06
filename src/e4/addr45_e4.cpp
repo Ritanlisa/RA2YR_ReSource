@@ -142,7 +142,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       v17 = 0; /*0x451519*/
     if ( v17 != SuperWeaponToken && !v15->TurretAnimIsVoxel ) /*0x451523*/
     {
-      BuildingClass::ClearAnims(a1, 9); /*0x451535*/
+      ((BuildingClass *)a1)->ClearAnims( 9); /*0x451535*/
       if ( v17 != -1 ) /*0x45153d*/
       {
     unsigned int v21 = 0;  /* G37 hoist */
@@ -210,12 +210,12 @@ int sub_452000(unsigned int * a1)
   int v16; // [esp+14h] [ebp-Ch]
   int v17; // [esp+18h] [ebp-8h]
 
-  v17 = (*(int (**)(unsigned int *))(*a1 + 484))(a1); /*0x452015*/
-  v2 = (*(int (**)(unsigned int *))(*a1 + 444))(a1); /*0x452019*/
-  v3 = (*(int (**)(unsigned int *, unsigned int))(*a1 + 1124))(a1, *(int16_t *)(v2 + 266)); /*0x452031*/
-  if ( (*(uint8_t (**)(unsigned int *))(*a1 + 352))(a1)
+  v17 = (*(int (**)(unsigned int *))(*a1 + 484))( (unsigned int *)(a1)); /*0x452015*/
+  v2 = (*(int (**)(unsigned int *))(*a1 + 444))( (unsigned int *)(a1)); /*0x452019*/
+  v3 = (*(int (**)(unsigned int *, unsigned int))(*a1 + 1124))( (unsigned int *)(a1), *(int16_t *)(v2 + 266)); /*0x452031*/
+  if ( (*(uint8_t (**)(unsigned int *))(*a1 + 352))( (unsigned int *)(a1))
     || a1[165]
-    && (a1 ? (v4 = (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 6 ? a1 : 0) : (v4 = 0),
+    && (a1 ? (v4 = (*(int (**)(unsigned int *))(*a1 + 44))( (unsigned int *)(a1)) == 6 ? a1 : 0) : (v4 = 0),
         *(unsigned int **)(a1[165] + 80) == v4) )
   {
     IDA_LOWORD((int)v3) = (unsigned short)(Techno::StartInvulnerability((gamemd::BuildingTypeClass *)(v3))); /*0x452078*/
@@ -235,7 +235,7 @@ int sub_452000(unsigned int * a1)
         v5[63] = (uint16_t)v3; /*0x4520c9*/
       }
       v7 = *((char *)a1 + 1773); /*0x4520cf*/
-      if ( v7 == 15 && (*(int (**)(unsigned int *, unsigned int, unsigned int))(*a1 + 104))(a1, 0, 0) == 5 ) /*0x4520e9*/
+      if ( v7 == 15 && (*(int (**)(unsigned int *, unsigned int, unsigned int))(*a1 + 104))( (unsigned int *)(a1), 0, 0) == 5 ) /*0x4520e9*/
         IDA_LOBYTE(v7) = 16; /*0x4520eb*/
       v8 = a1 + 343; /*0x4520f0*/
       v9 = 21; /*0x4520f2*/
@@ -254,7 +254,7 @@ int sub_452000(unsigned int * a1)
   }
   while ( !v10 ); /*0x45211d*/
   v11 = *((char *)a1 + 1773); /*0x452123*/
-  if ( v11 == 15 && (*(int (**)(unsigned int *, unsigned int, unsigned int))(*a1 + 104))(a1, 0, 0) == 5 ) /*0x45213d*/
+  if ( v11 == 15 && (*(int (**)(unsigned int *, unsigned int, unsigned int))(*a1 + 104))( (unsigned int *)(a1), 0, 0) == 5 ) /*0x45213d*/
     IDA_LOBYTE(v11) = 16; /*0x45213f*/
   v12 = (int *)(a1 + 343); /*0x452144*/
   v13 = 21; /*0x452146*/
@@ -288,7 +288,7 @@ int sub_452D40()
       BuildingClass::DemolishBridge(v3); /*0x452d93*/
       BuildingClass::DemolishBridge(v3); /*0x452d9c*/
       BuildingClass::DemolishBridge(v3); /*0x452da5*/
-      BuildingClass::RepairPlacement(v3, 1); /*0x452dae*/
+      ((BuildingClass *)v3)->RepairPlacement( 1); /*0x452dae*/
     }
     result = stru_A8EB00.ObjectTypeClass[20]; /*0x452db3*/
   }
@@ -347,8 +347,8 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
   }
   else
   {
-    v48 = (double *)(v9 + 0.5);
-    v11 = (double *)(Math::Sqrt(2.0));
+    v48 = (unsigned int)(double *)(v9 + 0.5);
+    v11 = (unsigned int)(double *)(Math::Sqrt(2.0));
     v10 = (double *)(Math::RoundToInt(v48 / v11 * 60.0));
   }
   v12 = (double *)((int)((double *)(v10)));
@@ -371,7 +371,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
     v35 = 0; /*0x456aa6*/
     v38 = a6; /*0x456aab*/
     if ( aP1 ) /*0x456ab0*/
-      Color::Lerp(50,(uint8_t *)(&v34)); /*0x456abd*/
+      Color::Lerp( 50, (uint8_t)((uint8_t *)(&v34))); /*0x456abd*/
     (*(void (**)(int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)g_DSurface_Hidden_2 + 32))( /*0x456b57*/
       g_DSurface_Hidden_2,
       v40,
@@ -437,7 +437,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
         {
           v18 = (double)(-v42);
         }
-        v19 = Math::RoundToInt(v18); /*0x456c73*/
+        v19 = Math::RoundToInt( v18); /*0x456c73*/
         v20 = v41; /*0x456c78*/
         v21 = v40; /*0x456c7c*/
         v22 = v41 + v19; /*0x456c80*/
@@ -478,12 +478,12 @@ BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
   int v4; // edi
   unsigned int *v5; // eax
 
-  v4 = (*(int (**)(unsigned int *, int))(*a1 + 1124))(a1, a3); /*0x456fc7*/
-  if ( (*(uint8_t (**)(unsigned int *))(*a1 + 352))(a1) ) /*0x456fc9*/
+  v4 = (*(int (**)(unsigned int *, int))(*a1 + 1124))( (unsigned int *)(a1), a3); /*0x456fc7*/
+  if ( (*(uint8_t (**)(unsigned int *))(*a1 + 352))( (unsigned int *)(a1)) ) /*0x456fc9*/
 // 0x70e360
     return Techno::StartInvulnerability((int)(gamemd::BuildingTypeClass *)(v4)); /*0x456fc9*/
   if ( a1[165]
-    && (a1 ? (v5 = (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 6 ? a1 : 0) : (v5 = 0),
+    && (a1 ? (v5 = (*(int (**)(unsigned int *))(*a1 + 44))( (unsigned int *)(a1)) == 6 ? a1 : 0) : (v5 = 0),
         *(unsigned int **)(a1[165] + 80) == v5) )
   {
     return (gamemd::BuildingTypeClass **)(Techno::StartInvulnerability((gamemd::BuildingTypeClass *)(v4)));
@@ -918,7 +918,7 @@ int E4Recv_4517D0::sub_4517D0()
   unsigned int v16[3]; // [esp+20h] [ebp-18h] BYREF
   unsigned int v17[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
-  v2 = (int *)(*(int (**)(TechnoClass *, unsigned int *))(this->vtable1 + 172))((TechnoClass *)this, v16); /*0x4517e2*/
+  v2 = (int *)(*(int (**)(TechnoClass *, unsigned int *))((char *)this->vtable1 + 172))((TechnoClass *)this, v16); /*0x4517e2*/
   v3 = 0; /*0x4517ea*/
   v13 = *v2; /*0x4517ec*/
   v14 = v2[1]; /*0x4517f3*/
@@ -1019,11 +1019,11 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
   int v14; // [esp+24h] [ebp-8h]
   int v15; // [esp+28h] [ebp-4h]
 
-  v4 = (int *)(*(int (**)(TechnoClass *, int *))(this->vtable1 + 72))((TechnoClass *)this, &v13); /*0x4528b2*/
+  v4 = (int *)(*(int (**)(TechnoClass *, int *))((char *)this->vtable1 + 172))( (TechnoClass *)this, (int *)(&v13)); /*0x4528b2*/
   v5 = *v4; /*0x4528b5*/
   v6 = v4[1]; /*0x4528bb*/
   v7 = v4[2]; /*0x4528c0*/
-  v8 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)&a2->q_120)(a2, &v13); /*0x4528c8*/
+  v8 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)&a2->q_120))( a2, (int *)(&v13));  /*0x4528c8*/
   v9 = v5 - *v8; /*0x4528d2*/
   v10 = v8[2]; /*0x4528d9*/
   v14 = v6 - v8[1]; /*0x4528dc*/
@@ -1122,7 +1122,7 @@ char E4Recv_457A10::sub_457A10()
   int v5; // [esp+Ch] [ebp-8h]
   int16_t v6[2]; // [esp+10h] [ebp-4h] BYREF
 
-  v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int16_t *))(this->vtable1 + 440))((TechnoClass *)this, v6); /*0x457a2d*/
+  v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int16_t *))((char *)this->vtable1 + 440))((TechnoClass *)this, v6); /*0x457a2d*/
   for ( i = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(**((unsigned int **)this + 328) + 144))( /*0x457a42*/
                        *((unsigned int *)this + 328),
                        0); *i != 0x7FFF || i[1] != 0x7FFF; i += 2 )
@@ -1333,7 +1333,7 @@ char sub_45E8F0()
   {
     dword_89DDBC = (unsigned int)((void *)SearchMIXFile((char *)(aBuildngzSha), 0)); /*0x45e90d*/
     Building::GetFoundationSize(v6, 0); /*0x45e917*/
-    SubFile = MixFileClass::GetSubFile((char **)dword_89DDBC, 0); /*0x45e924*/
+    SubFile = ((MixFileClass *)(char **)dword_89DDBC)->GetSubFile( 0); /*0x45e924*/
     v1 = *((int16_t *)dword_89DDBC + 1); /*0x45e92f*/
     if ( *((int16_t *)dword_89DDBC + 2) > 0 ) /*0x45e939*/
     {

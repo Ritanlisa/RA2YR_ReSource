@@ -465,7 +465,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetCoordsThunk1();  // 0x41BDD0
     int GetCoordsThunk3();  // 0x41BE30
     int GetMember41_2();  // 0x41CFA0
-    int CleanupAirstrikeTarget(int a1);  // 0x41D540
+    int CleanupAirstrikeTarget(int a1, int a2);  // 0x41D540
     int GetDrawPosition();  // 0x4263D0
     int Set(void* a1);  // 0x431A30
     int CleanupAudioAndRefs();  // 0x4389B0
@@ -600,7 +600,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindOwner(int a1, int a2);  // 0x6e45e0
     // === FUNCS-MOVE (END) ===
 
-    int DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1);  // 0x403A80 (G42.39a supply)
+    int DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a1, int a3);  // 0x403A80 (G42.39a supply)
 
 
 

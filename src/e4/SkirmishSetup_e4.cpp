@@ -194,7 +194,7 @@ LABEL_5:
           return 0; /*0x5e6b75*/
         case 0x583u: /*0x5e69cd*/
           v9 = (Session *)aP0; /*0x5e69fd*/
-          Dialog::IdleProcess(v45, (ObjectClass *)aP0); /*0x5e6a03*/
+          ((Dialog *)v45)->IdleProcess( (ObjectClass *)aP0); /*0x5e6a03*/
           ShowWindow((HWND)v9, 0); /*0x5e6a0b*/
           v10 = (int)(SkirmishSetup_Setup_5E8590(v46)); /*0x5e6a16*/
           _3C = v10; /*0x5e6a1b*/
@@ -209,7 +209,7 @@ LABEL_5:
               MultiMissionVector::Constructor((MultiMissionVector *)&v47, 0, 0); /*0x5e6a67*/
               a2 = dword_A8B8D8; /*0x5e6a6c*/
               v13 = 0; /*0x5e6a72*/
-              v47 = (SkirmishVector)&vt_DynamicVectorClass; /*0x5e6a76*/
+              v47 = (unsigned int)&vt_DynamicVectorClass;
               v49 = 10; /*0x5e6a7e*/
               for ( i = 0; v13 < a2; ++v13 ) /*0x5e6a8e*/
               {
@@ -223,7 +223,7 @@ LABEL_5:
                 DlgItem,
                 &v47,
                 0);
-              v47 = (SkirmishVector)&vt_VectorClass; /*0x5e6adb*/
+              v47 = (unsigned int)&vt_VectorClass;
               VectorClass::Cleanup3((int)&v47); /*0x5e6ae3*/
               v10 = _3C; /*0x5e6ae8*/
             }
@@ -266,11 +266,11 @@ LABEL_28:
           if ( v19 ) /*0x5e6bfc*/
           {
             unknown_libname_74(&aP0); /*0x5e6c06*/
-            if ( (*(uint8_t (**)(char *, SkirmishSetup **))(*(unsigned int *)v19 + 12))(v19, &aP0) ) /*0x5e6c14*/
+            if ( (*(uint8_t (**)(char *, SkirmishSetup **))(*(unsigned int *)v19 + 12))( v19, (SkirmishSetup **)(&aP0)) ) /*0x5e6c14*/
             {
               (*(void (**)(char *))(*(unsigned int *)v19 + 16))(v19); /*0x5e6c23*/
               MultiMissionVector::Constructor((MultiMissionVector *)&v47, 0, 0); /*0x5e6c2c*/
-              v47 = (SkirmishVector)&vt_DynamicVectorClass; /*0x5e6c36*/
+              v47 = (unsigned int)&vt_DynamicVectorClass;
               v49 = 10; /*0x5e6c40*/
               i = 0; /*0x5e6c48*/
               hWnd = (HWND)dword_A8B8D8; /*0x5e6c4c*/
@@ -286,8 +286,8 @@ LABEL_28:
                 while ( v16 < (int)hWnd ); /*0x5e6c7f*/
               }
               v20 = GetDlgItem((HWND)v15, 1363); /*0x5e6c8d*/
-              (*(void (**)(char *, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)v19 + 76))(v19, v20, &v47, 0); /*0x5e6c9b*/
-              v47 = (SkirmishVector)&vt_VectorClass; /*0x5e6ca2*/
+              (*(void (**)(char *, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)v19 + 76))( v19, v20, (SkirmishVector *)(&v47), 0); /*0x5e6c9b*/
+              v47 = (unsigned int)&vt_VectorClass;
               VectorClass::Cleanup3((int)&v47); /*0x5e6caa*/
               LOBYTE(_3C) = (*(int (**)(char *))(*(unsigned int *)v19 + 60))(v19); /*0x5e6cbc*/
               v21 = GetDlgItem((HWND)v15, 1411); /*0x5e6cc0*/
@@ -359,7 +359,7 @@ LABEL_28:
     if ( First ) /*0x5e6ee5*/
     {
       MultiMissionVector::Constructor((MultiMissionVector *)&v47, 0, 0); /*0x5e6ef1*/
-      v47 = (SkirmishVector)&vt_DynamicVectorClass; /*0x5e6efb*/
+      v47 = (unsigned int)&vt_DynamicVectorClass;
       v49 = 10; /*0x5e6f05*/
       i = 0; /*0x5e6f0d*/
       _3C = dword_A8B8D8; /*0x5e6f11*/
@@ -375,8 +375,8 @@ LABEL_28:
         while ( v36 < (int)_3C ); /*0x5e6f45*/
       }
       v39 = GetDlgItem((HWND)v37, 1363); /*0x5e6f4d*/
-      (*(void (**)(int, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)First + 76))(First, v39, &v47, 0); /*0x5e6f5b*/
-      v47 = (SkirmishVector)&vt_VectorClass; /*0x5e6f62*/
+      (*(void (**)(int, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)First + 76))( First, v39, (SkirmishVector *)(&v47), 0); /*0x5e6f5b*/
+      v47 = (unsigned int)&vt_VectorClass;
       VectorClass::Cleanup3((int)&v47); /*0x5e6f6a*/
     }
     LOBYTE(aP0) = (*(int (**)(int))(*(unsigned int *)First + 60))(First); /*0x5e6f7c*/
@@ -550,7 +550,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
     v7 = GameConfig::ComputeCRC(); /*0x5e8655*/
     v8 = (SessionClass *)RA2_OPNEW(0x1BCu); /*0x5e8662*/
     if ( v8 ) /*0x5e866c*/
-      v9 = (wchar_t *)(((SessionClass*)v8)->ParseGameInfo(aRandmapSed, &unk_ABE050, v7, 1, 0, 2, 4)); /*0x5e8688*/
+      v9 = (wchar_t *)(((SessionClass*)v8)->ParseGameInfo( (char *)(aRandmapSed), (CampaignScore *)(&unk_ABE050), v7, 1, 0, 2, 4)); /*0x5e8688*/
     else
       v9 = 0; /*0x5e868c*/
     if ( dword_A8B8D8 < dword_A8B8D0 /*0x5e86c5*/

@@ -20,6 +20,25 @@
 #include "e4/classes/Object_e4.hpp"  // gB C2027 supply
 #include "e4/classes/Timer_e4.hpp"  // gB C2027 supply
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
+extern int vftable;  // 词表 (canon 无条目, int 兜底) L579
+// ---- g57b5 W6 end ----
+// ---- g57b5 W5: qualified-call free-form vocab ----
+namespace gamemd {
+int TeamClass_CreateOneOf(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ClearAndFree3(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int CellCoord_To_CellObj(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int HouseClass_CanTogglePower(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int HouseClass_ClearLowPowerTargets(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int HouseClass_ToggleGapGeneratorReveal(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int HouseClass_UpdatePower(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ObjectClass_FindClosestObjectCell(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Random_Range(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int TeamTypeVector_CopyConstruct(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Timer_GetTicks(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 词表 (纯变参兜底)
+int AISelectTeamHouseClass(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+} // namespace gamemd
+// ---- g57b5 W5 end ----
 
 // 0x42F490
 namespace gamemd {
@@ -291,14 +310,14 @@ void HouseClass::Update_TogglePower(double a2)
   LABEL_11:
     if ( v3[33].__pad_B0[40] ) /*0x4f84d9*/
     {
-      HouseClass::UpdatePower(v116, a2); /*0x4f84e5*/
+      HouseClass_UpdatePower(v116, a2); /*0x4f84e5*/
       v3[33].__pad_B0[41] = 1; /*0x4f84ea*/
     }
     if ( v3[33].__pad_B0[41] ) /*0x4f84f1*/
     {
       if ( !dword_A8B538[0] ) /*0x4f8501*/
-        HouseClass::CanTogglePower((HouseClass *)v3); /*0x4f8505*/
-      HouseClass::ToggleGapGeneratorReveal((HouseClass *)v3); /*0x4f850c*/
+        HouseClass_CanTogglePower((void *)v3); /*0x4f8505*/
+      HouseClass_ToggleGapGeneratorReveal((void *)v3); /*0x4f850c*/
     }
     v10 = (int)dword_A8ED84 % 100; /*0x4f851c*/
     if ( !((int)dword_A8ED84 % 100) && *(int *)&v3[32].__pad_140[212] > 0 ) /*0x4f8528*/
@@ -344,14 +363,14 @@ void HouseClass::Update_TogglePower(double a2)
   LABEL_38:
     if ( *(unsigned int *)&dword_A8B238 || *(int *)&v3->__pad_140[316] <= 0 ) /*0x4f8605*/
     {
-      Ticks = Timer::GetTicks(); /*0x4f8614*/
+      Ticks = Timer_GetTicks(); /*0x4f8614*/
       v120 = 120; /*0x4f8618*/
       while ( (unsigned __int8)Audio::IsPlaying() ) /*0x4f861c*/
       {
         v18 = v120; /*0x4f8629*/
         if ( Ticks != -1 ) /*0x4f8630*/
         {
-          v19 = Timer::GetTicks() - Ticks; /*0x4f863b*/
+          v19 = Timer_GetTicks() - Ticks; /*0x4f863b*/
           if ( v19 >= v18 ) /*0x4f8641*/
             break; /*0x4f8641*/
           v18 -= v19; /*0x4f8643*/
@@ -409,14 +428,14 @@ void HouseClass::Update_TogglePower(double a2)
     if ( v22 ) /*0x4f872c*/
       goto LABEL_83; /*0x4f872c*/
   LABEL_70:
-    Ticks = Timer::GetTicks(); /*0x4f8732*/
+    Ticks = Timer_GetTicks(); /*0x4f8732*/
     v120 = 120; /*0x4f873f*/
     while ( (unsigned __int8)Audio::IsPlaying() ) /*0x4f8743*/
     {
       v23 = v120; /*0x4f8753*/
       if ( Ticks != -1 ) /*0x4f8759*/
       {
-        v24 = Timer::GetTicks() - Ticks; /*0x4f8764*/
+        v24 = Timer_GetTicks() - Ticks; /*0x4f8764*/
         if ( v24 >= v23 ) /*0x4f876a*/
           break; /*0x4f876a*/
         v23 -= v24; /*0x4f876c*/
@@ -464,7 +483,7 @@ void HouseClass::Update_TogglePower(double a2)
     }
   LABEL_88:
     v3->__pad_140[182] = 0; /*0x4f87f1*/
-    HouseClass::ClearLowPowerTargets((HouseClass *)v3); /*0x4f87fa*/
+    HouseClass_ClearLowPowerTargets((void *)v3); /*0x4f87fa*/
   LABEL_89:
     *(unsigned int *)&v3[31].__pad_140[260] &= (*(unsigned int *)&v3[31].__pad_140[260] <= 0) - 1; /*0x4f87ff*/
     *(unsigned int *)&v3[31].__pad_140[264] &= (*(unsigned int *)&v3[31].__pad_140[264] <= 0) - 1; /*0x4f8825*/
@@ -476,9 +495,9 @@ void HouseClass::Update_TogglePower(double a2)
       if ( (byte_A8F03C & 1) == 0 ) /*0x4f8873*/
       {
         byte_A8F03C |= 1u; /*0x4f8882*/
-        dword_A8EFE8 = Random::Range(&Randomizer_Global, 0, 1); /*0x4f888d*/
+        dword_A8EFE8 = Random_Range(&Randomizer_Global, 0, 1); /*0x4f888d*/
       }
-      if ( !Random::Range(&Randomizer_Global, 0, 2) )
+      if ( !Random_Range(&Randomizer_Global, 0, 2) )
       {
         v28 = (int *)(dword_A8EFE8
                     ? (dword_87F8DC << 11) + dword_87F924 + 22580
@@ -487,7 +506,7 @@ void HouseClass::Update_TogglePower(double a2)
         if ( v29 ) /*0x4f88e6*/
         {
           if ( *(unsigned int *)(v29 + 304) != 1 || (*(unsigned char *)(v29 + 300) & 0x18) != 0 ) /*0x4f88f8*/
-            Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4f8908*/
+            Random_Range((void *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4f8908*/
         }
       }
     }
@@ -495,8 +514,8 @@ void HouseClass::Update_TogglePower(double a2)
     {
       Ticks = 0; /*0x4f8956*/
       v119 = 0; /*0x4f895a*/
-      v30 = (ObjectClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v3[31].__pad_140[320]); /*0x4f895e*/
-      ClosestObjectCell = ObjectClass::FindClosestObjectCell(v30, &Ticks, 0, 0); /*0x4f8965*/
+      v30 = (ObjectClass *)CellCoord_To_CellObj((void *)&dword_87F7E8, (__int16 *)&v3[31].__pad_140[320]); /*0x4f895e*/
+      ClosestObjectCell = ObjectClass_FindClosestObjectCell(v30, &Ticks, 0, 0); /*0x4f8965*/
       v32 = ClosestObjectCell; /*0x4f896a*/
       if ( ClosestObjectCell ) /*0x4f896e*/
       {
@@ -560,14 +579,14 @@ void HouseClass::Update_TogglePower(double a2)
     if ( !v40 && !*(unsigned char *)(v3->Object_field_0x34 + 422) ) /*0x4f8a55*/
     {
       AISelectTeamHouseClass(v125, (int)v3, 0); /*0x4f8a6a*/
-      TeamTypeVector::CopyConstruct(&v121, v125); /*0x4f8a78*/
+      TeamTypeVector_CopyConstruct(&v121, v125); /*0x4f8a78*/
       v121 = (TeamTypeVector)&TypeList<TeamTypeClass const *>::`vftable'; /*0x4f8a86*/
       v125[0] = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x4f8a8e*/
       VectorClass::ClearAndFree3((int)v125); /*0x4f8a92*/
       if ( v124 > 0 ) /*0x4f8a9d*/
       {
         for ( i = 0; i < v124; ++i ) /*0x4f8a9f*/
-          TeamClass::CreateOneOf(*((unsigned int *)Block + i), (TeamClass *)v3); /*0x4f8aad*/
+          TeamClass_CreateOneOf(*((unsigned int *)Block + i), (TeamClass *)v3); /*0x4f8aad*/
       }
       v42 = *(unsigned int *)(*(unsigned int *)&dword_8871E0->__pad_FFC[352] + 4 * *(unsigned int *)&v3->__pad_140[68]); /*0x4f8ad2*/
       v43 = v119; /*0x4f8ad5*/
@@ -760,7 +779,7 @@ void HouseClass::Update_TogglePower(double a2)
         if ( *(int *)&v3[1].__pad_38[24] <= 0 && v76 <= 0 ) /*0x4f8f1d*/
         {
   LABEL_190:
-          HouseClass::ClearLowPowerTargets((HouseClass *)v3); /*0x4f8f79*/
+          HouseClass_ClearLowPowerTargets((void *)v3); /*0x4f8f79*/
           HouseClass::DefeatPlayer((HouseClass *)v3); /*0x4f8f82*/
         }
       }
@@ -985,4 +1004,3 @@ void HouseClass::Update_TogglePower(double a2)
     }
 }
 } // namespace gamemd
-

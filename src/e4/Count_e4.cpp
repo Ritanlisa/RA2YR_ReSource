@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_Count 1  // G57a3: e4 flat-carrier opt-in (suppress core utility_ext/stream_ext twin)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Count_e4.hpp"

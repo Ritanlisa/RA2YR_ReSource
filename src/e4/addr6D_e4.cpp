@@ -50,14 +50,14 @@ int sub_6D1130()
   dword_B0CCE0 = 0; /*0x6d115e*/
   dword_B0CCD0 = 5; /*0x6d1164*/
   v0 = dword_B0FA90; /*0x6d116c*/
-  Rect_Point::Set(stru_B0CCB0, *(unsigned int *)dword_B0FC60,(void *)(*((unsigned int *)dword_B0FC60 + 1))); /*0x6d118a*/
+  Rect_Point::Set( stru_B0CCB0, *(unsigned int *)dword_B0FC60, (void *a1 =)((void *)(*((unsigned int *)dword_B0FC60 + 1)))); /*0x6d118a*/
   ((ShapeButton *)((int)stru_B0CCB0))->SetShape((int)v0, 0, 0); /*0x6d1197*/
   dword_B0CC64 = 241; /*0x6d11a7*/
   dword_B0CC90 = dword_87F6CC; /*0x6d11b1*/
   byte_B0CC6D = 0; /*0x6d11b6*/
   dword_B0CC70 = 0; /*0x6d11bc*/
   dword_B0CC60 = 5; /*0x6d11c2*/
-  Rect_Point::Set(stru_B0CC40, *(unsigned int *)dword_B0FC64,(void *)(*((unsigned int *)dword_B0FC64 + 1))); /*0x6d11e2*/
+  Rect_Point::Set( stru_B0CC40, *(unsigned int *)dword_B0FC64, (void *a1 =)((void *)(*((unsigned int *)dword_B0FC64 + 1)))); /*0x6d11e2*/
 // 0x69de00
   return ((ShapeButton *)((int)stru_B0CC40))->SetShape((int)v0, 0, 0); /*0x6d11f4*/
 }
@@ -381,7 +381,7 @@ int sub_6D1A60()
   dword_B0CE80 = 0; /*0x6d1a6c*/
   byte_B0CE84 = 1; /*0x6d1a71*/
   byte_B0CE85 = 0; /*0x6d1a78*/
-  dword_B0CE78 = (int)&off_7F429C; /*0x6d1a7d*/
+  dword_B0CE78 = (unsigned int)(int)&off_7F429C;
   dword_B0CE8C = 10; /*0x6d1a87*/
   g_CraterCreationState = 0; /*0x6d1a91*/
   return atexit((void (__cdecl *)(void))sub_6D1AA0); /*0x6d1a9c*/
@@ -660,8 +660,8 @@ int sub_6D8C60(int a1, int a2)
     result = dword_B0CE30 + 360; /*0x6d8d5a*/
     if ( v8 <= dword_B0CE30 + 360 && v9 >= -180 && v9 <= dword_B0CE34 + 180 ) /*0x6d8d79*/
     {
-      (*(void (**)(int, int *, int))(*(unsigned int *)a1 + 268))(a1, &v12, a2); /*0x6d8d8a*/
-      return (*(int (**)(int, int *, int))(*(unsigned int *)a1 + 272))(a1, &v12, a2); /*0x6d8d9b*/
+      (*(void (**)(int, int *, int))(*(unsigned int *)a1 + 268))( a1, (int *)(&v12), a2); /*0x6d8d8a*/
+      return (*(int (**)(int, int *, int))(*(unsigned int *)a1 + 272))( a1, (int *)(&v12), a2); /*0x6d8d9b*/
     }
   }
   return result; /*0x6d8da1*/
@@ -852,7 +852,7 @@ int sub_6DCF80()
   dword_B0E660 = 0; /*0x6dcf8c*/
   byte_B0E664 = 1; /*0x6dcf91*/
   byte_B0E665 = 0; /*0x6dcf98*/
-  dword_B0E658 = (int)&off_7F43D0; /*0x6dcf9d*/
+  dword_B0E658 = (unsigned int)(int)&off_7F43D0;
   dword_B0E66C = 10; /*0x6dcfa7*/
   dword_B0E668 = 0; /*0x6dcfb1*/
   return atexit((void (__cdecl *)(void))sub_6DCFC0); /*0x6dcfbc*/

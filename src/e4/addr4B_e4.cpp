@@ -79,7 +79,7 @@ char JumpjetLocomotionClass_Process(int a1)
 
   v1 = a1; /*0x4b0506*/
   v2 = (char *)a1 - 4; /*0x4b0518*/
-  v3 = *(uint8_t *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 111))(((unsigned int *)a1)[0]) + 284); /*0x4b0521*/
+  v3 = *(uint8_t *)((*((int (**)(FootClass *))((FootClass *)((unsigned int *)a1))[0]->vtable1 + 111))(((unsigned int *)a1)[0]) + 284); /*0x4b0521*/
   v4 = *((unsigned int *)v2 + 7); /*0x4b0523*/
   if ( v3 != v4 ) /*0x4b0528*/
   {
@@ -131,13 +131,13 @@ char JumpjetLocomotionClass_Process(int a1)
           if ( !*(unsigned int *)&v22->isFallingDown || *(unsigned int *)&v22->isFallingDown || *(unsigned int *)&v22->isFallingDown ) /*0x4b08bd*/
             return 0; /*0x4b08ce*/
         }
-        if ( (*((int (**)(FootClass *))((unsigned int *)v1)[0]->vtable1 + 97))(((unsigned int *)v1)[0]) == 5 /*0x4b08fd*/
-          && !(*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
-          || (*((int (**)(FootClass *))((unsigned int *)v1)[0]->vtable1 + 97))(((unsigned int *)v1)[0]) == 16 )
+        if ( (*((int (**)(FootClass *))((FootClass *)((unsigned int *)v1))[0]->vtable1 + 97))(((unsigned int *)v1)[0]) == 5 /*0x4b08fd*/
+          && !(*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))( (DriveLocomotionClass *)(v1))
+          || (*((int (**)(FootClass *))((FootClass *)((unsigned int *)v1))[0]->vtable1 + 97))(((unsigned int *)v1)[0]) == 16 )
         {
           goto LABEL_39; /*0x4b08fd*/
         }
-        if ( !(*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1) ) /*0x4b0906*/
+        if ( !(*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))( (DriveLocomotionClass *)(v1)) ) /*0x4b0906*/
         {
           v23 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b0911*/
           if ( v23->pathDirections[0] == -1 ) /*0x4b091b*/
@@ -176,7 +176,7 @@ char JumpjetLocomotionClass_Process(int a1)
         v26 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b09ab*/
         if ( ((unsigned int *)v26)[0] /*0x4b09e2*/
           && (*((int (**)(FootClass *))v26->vtable1 + 97))(v26) != 7
-          && (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
+          && (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))( (DriveLocomotionClass *)(v1))
           && !(*((uint8_t (**)(FootClass *, int *))((unsigned int *)v1)[0]->vtable1 + 179))(
                 ((unsigned int *)v1)[0],
                 &v1->SlopeTimer[3]) )
@@ -206,7 +206,7 @@ char JumpjetLocomotionClass_Process(int a1)
           goto LABEL_39; /*0x4b0a3f*/
         }
         IDA_LOBYTE(a1) = 0; /*0x4b0a75*/
-        JumpjetLocomotion::Update((int)&((unsigned int *)(v1))[-1].Piggybackee, &a1, 1, 0); /*0x4b0a79*/
+        JumpjetLocomotion::Update( (int)&((unsigned int *)(v1))[-1].Piggybackee, (int)(&a1), 1, 0); /*0x4b0a79*/
         if ( (unsigned char)a1 ) /*0x4b0a82*/
           return 0; /*0x4b0a8d*/
         if ( !((unsigned int *)v1)[0] ) /*0x4b0a93*/
@@ -229,9 +229,9 @@ char JumpjetLocomotionClass_Process(int a1)
   if ( JumpjetLocomotion::ProcessCollision((int)&((unsigned int *)(v1))[-1].Piggybackee, 0) || !((unsigned int *)v1)[0] ) /*0x4b0586*/
     return 0; /*0x4b058c*/
   if ( v1->MovementSpeed[1] == -1 /*0x4b05c4*/
-    && ((*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
+    && ((*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))( (DriveLocomotionClass *)(v1))
      || ((unsigned int *)v1)[0]->pathDirections[0] != -1)
-    && ((*((int (**)(FootClass *))((unsigned int *)v1)[0]->vtable1 + 11))(((unsigned int *)v1)[0]) != 1 || !IDA_BYTE1(((unsigned int *)v1)[1])) )
+    && ((*((int (**)(FootClass *))((FootClass *)((unsigned int *)v1))[0]->vtable1 + 11))(((unsigned int *)v1)[0]) != 1 || !IDA_BYTE1(((unsigned int *)v1)[1])) )
   {
     v5 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b05d0*/
     IDA_LOBYTE(a1) = 0; /*0x4b05d3*/
@@ -259,7 +259,7 @@ char JumpjetLocomotionClass_Process(int a1)
         }
       }
     }
-    JumpjetLocomotion::Update((int)&((unsigned int *)(v1))[-1].Piggybackee, &a1, 1, 0); /*0x4b0647*/
+    JumpjetLocomotion::Update( (int)&((unsigned int *)(v1))[-1].Piggybackee, (int)(&a1), 1, 0); /*0x4b0647*/
     if ( (unsigned char)a1 || !((unsigned int *)v1)[0] ) /*0x4b0659*/
       return 0; /*0x4b065f*/
     v29 = 1; /*0x4b0665*/
@@ -270,7 +270,7 @@ char JumpjetLocomotionClass_Process(int a1)
       return 0; /*0x4b0ac5*/
   }
   LABEL_39:
-  if ( (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))(v1) ) /*0x4b078f*/
+  if ( (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))( (DriveLocomotionClass *)(v1)) ) /*0x4b078f*/
   {
     if ( !(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) % 10) ) /*0x4b07a8*/
     {
@@ -302,7 +302,7 @@ char JumpjetLocomotionClass_Process(int a1)
     if ( v21->pathDirections[0] == -1 && *(double *)v21->currentSpeed_percentage > 0.0 ) /*0x4b087a*/
       (*((void (**)(FootClass *, unsigned int, unsigned int))v21->vtable1 + 337))(v21, 0, 0); /*0x4b0880*/
   }
-  return (*(char (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1); /*0x4b06cb*/
+  return (*(char (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))( (DriveLocomotionClass *)(v1)); /*0x4b06cb*/
 }
 }
 // 0x4B69E0
@@ -343,7 +343,7 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
   v3 = -1; /*0x4b6a0b*/
 LABEL_11:
   *(&((unsigned int *)this)[0] + ((unsigned int *)this)[0]++) = a2; /*0x4b6a55*/
-  this->owningHouseIndex += (*(int (**)(int))(*(unsigned int *)&a2->q_2B0)(a2); /*0x4b6a74*/
+  this->owningHouseIndex += (*(int (**)(int))(*(unsigned int *)&a2->q_2B0))(a2);  /*0x4b6a74*/
   if ( v3 != -1 ) /*0x4b6a77*/
     ++*((unsigned int *)((unsigned int *)(dword_A8B230))[377].vtable3 + v3); /*0x4b6a8b*/
   return 1; /*0x4b6a8d*/
@@ -489,9 +489,9 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   v45[1] = 300; /*0x4b98b8*/
   v45[2] = 190; /*0x4b98be*/
   v45[3] = 80; /*0x4b98c2*/
-  v7 = (*(int (**))(v6 + 128))(a1); /*0x4b98d2*/
+  v7 = (*(int (**)(void *))(v6 + 128))( (void *)(a1)); /*0x4b98d2*/
   v8 = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))(g_DSurface_Hidden) - v7) / 2; /*0x4b98e7*/
-  v9 = (*(int (**))(*a1 + 124))(a1); /*0x4b98f2*/
+  v9 = (*(int (**)(void *))(*a1 + 124))( (void *)(a1)); /*0x4b98f2*/
   v10 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 31))(g_DSurface_Hidden); /*0x4b98f6*/
   v44.Coord2D_field_0x04 = 300; /*0x4b9903*/
   v40 = (v10 - v9) / 2; /*0x4b9909*/
@@ -505,7 +505,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   v46[3] = v12[3]; /*0x4b9963*/
   v38 = 0; /*0x4b9967*/
   v39 = 0; /*0x4b996b*/
-  SHPFrame = (int *)BuildingClass::GetSHPFrame(a2, 0); /*0x4b996f*/
+  SHPFrame = (int *)((BuildingClass *)a2)->GetSHPFrame( 0); /*0x4b996f*/
   result = (int *)BlitterDrawSHP((int *)g_DSurface_Hidden, (int)a2, a1, v45, &v38, v46, 0, SHPFrame, 0, 0, 1000, 0, 0); /*0x4b998e*/
   if ( a3 ) /*0x4b999c*/
   {
@@ -665,8 +665,8 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int a
   if ( *aP1 != v2 || *(unsigned long long *)(aP1 + 1) != qword_8A0794 ) /*0x4b0e50*/
   {
     *v4 = (int)(*aP1); /*0x4b0e65*/
-    this->ambientSoundController[2] = (int)(aP1[1]); /*0x4b0e6a*/
-    v6 = (int)(aP1[2]); /*0x4b0e6d*/
+    ((unsigned int *)&this->ambientSoundController)[2] = (int)((&aP1)[1]); /*0x4b0e6a*/
+    v6 = (int)((&aP1)[2]); /*0x4b0e6d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x4b0e70*/
     this->ambientSoundController[3] = v6; /*0x4b0e74*/
     vtable3 =(void *)((unsigned int *)this)[0]; /*0x4b0e7a*/
@@ -785,7 +785,7 @@ namespace gamemd {
 int E4Recv_4B56E0::sub_4B56E0(int a2)
 {
 
-  LinkedList::MoveNode((void *)this, (void *)a2); /*0x4b56e9*/
+  ((LinkedList *)(void *)this)->MoveNode( (void *)a2); /*0x4b56e9*/
   *((unsigned int *)this + 3) = *(unsigned int *)(a2 + 12); /*0x4b56f1*/
   *((unsigned int *)this + 4) = *(unsigned int *)(a2 + 16); /*0x4b56f7*/
   *((unsigned int *)this + 5) = *(unsigned int *)(a2 + 20); /*0x4b56fd*/
@@ -818,7 +818,7 @@ namespace gamemd {
 int E4Recv_4B5780::sub_4B5780(int a2)
 {
 
-  LinkedList::MoveNode((void *)this, (void *)a2); /*0x4b5789*/
+  ((LinkedList *)(void *)this)->MoveNode( (void *)a2); /*0x4b5789*/
   *((unsigned int *)this + 3) = *(unsigned int *)(a2 + 12); /*0x4b5791*/
   *((unsigned int *)this + 4) = *(unsigned int *)(a2 + 16); /*0x4b5797*/
   *((unsigned int *)this + 5) = *(unsigned int *)(a2 + 20); /*0x4b579d*/
@@ -1324,7 +1324,7 @@ BOOL E4Recv_4BAFE0::sub_4BAFE0()
   int referenceCount; // eax
 
   referenceCount = ((unsigned int *)this)[0]; /*0x4bafe0*/
-  return referenceCount && (*(int (**)(int))(referenceCount->q060)(referenceCount) == -2005532222; /*0x4baff9*/
+  return referenceCount && (*(int (**)(int))(referenceCount->q060))(referenceCount) == -2005532222;  /*0x4baff9*/
 
 }
 } // namespace gamemd

@@ -12,7 +12,7 @@ int Connection::GetSpeed()
 {
 
   if ( this->Initialized && this->Active ) /*0x5422f7*/
-    return *(unsigned int *)(*(unsigned int *)(this->q048 + 4) + 56); /*0x542304*/
+    return *(unsigned int *)(*(unsigned int *)(this->(char *)q048 +) + 56); /*0x542304*/
   else
     return 0; /*0x542308*/
 

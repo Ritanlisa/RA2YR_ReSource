@@ -109,9 +109,9 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           else
           {
             Diplomacy_Helper(v9); /*0x657eff*/
-            IsAlliedWith = HouseClass::IsAlliedWith(dword_A83D4C, hDlga); /*0x657f16*/
+            IsAlliedWith = (((HouseClass *)(dword_A83D4C))->IsAlliedWith((HouseClass *)hDlga)); /*0x657f16*/
             SendMessageA(v9, 0xF1u, IsAlliedWith, 0); /*0x657f2b*/
-            HouseClass::IsAlliedWith(hDlga, dword_A83D4C); /*0x657f3c*/
+            (((HouseClass *)(hDlga))->IsAlliedWith((HouseClass *)dword_A83D4C)); /*0x657f3c*/
             globalHelper_003DD0(v9); /*0x657f45*/
             v40 = 1; /*0x657f4f*/
             if ( dword_A8B538 || !(uint8_t)((House *)(hDlga))->IsCurrentPlayer() ) /*0x657f5c*/
@@ -298,6 +298,6 @@ LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 char * Diplomacy::GetField(int a2)
 {
 
-  return (unsigned char *)this + 24 * *(unsigned int *)(aP1 + 3824) + 4728; /*0x656595*/
+  return (unsigned char *)this + 24 * *(unsigned int *)(this + 3824) + 4728; /*0x656595*/
 
 }

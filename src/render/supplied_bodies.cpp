@@ -154,9 +154,13 @@ extern g_BuildingLoadQueue_Array_flat g_BuildingLoadQueue_Array_t;  // data: 0xB
 #define g_BuildingLoadQueue_Array g_BuildingLoadQueue_Array_t
 // G42.35 波8 站点壳（BuildingLoadQueue/FootClass/ComPtr/DynamicVector）
 // BuildingLoadQueue_site 置于 gamemd（其 FindBuilding def 在 namespace gamemd 块内, C2888 规避）
+namespace gamemd {                       // g57a5 W2a: 修复漂浮成员（缺失 opener, C2447/C2143 家族）
+struct BuildingLoadQueue_site {
     void* __pad_0;   // til 槽词汇 (0x6E7AA9)
     unsigned int BuildingLoadQueue_field_0x04[4];  // til 槽词汇
     int FindBuilding();   // 0x6E7A80 (def 0 参 int; 载体 misc 版无此法)
+};
+} // namespace gamemd
 struct FootClass_site {
     static int MoveToWeed(void* self, int a2);               // 0x4DDB90 (载体 foot.hpp 0 参 -- 其域 agent 在途)
     static int MoveToTiberium(void* self, int a2, unsigned int a3); // 0x4DCFE0
@@ -2477,103 +2481,9 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3)
     return result; /*0x6d824e*/
 } // namespace gamemd
 
-    int FindBuilding();   // 0x6E7A80 (def 0 参 int; 载体 misc 版无此法)
-}; } // namespace gamemd
-struct FootClass_site {
-    static int MoveToWeed(void* self, int a2);               // 0x4DDB90 (载体 foot.hpp 0 参 -- 其域 agent 在途)
-    static int MoveToTiberium(void* self, int a2, unsigned int a3); // 0x4DCFE0
-    static int ClearPathIndex(void* self);                   // 0x73EB55
-};
-struct ComPtr_site {
-    int ComPtr_field_0x04;  // til 槽词汇 (Validate int* 对齐)
-    int ComPtr_field_0x08;
-    int ComPtr_field_0x0C;
-    int ComPtr_field_0x10;
-    int ComPtr_field_0x14;
-    int ComPtr_field_0x18;
-    int ComPtr_field_0x20;
-    unsigned int* __pad_0;           // vfn 槽 (0x73E871)
-    static void Release_Alt(void* self);  // 0x73E7DA
-};
-struct DynamicVector_site {
-    unsigned int* __pad_0;                    // vfn 槽 (0x75E7xx)
-    unsigned char __pad_1[0x1C - 4];
-    unsigned char DynamicVector_field_0x1C[8];
-    static int GetOrGrow(void* self, int a2);      // 0x73E6A2
-    static void Add_Alt4(void* self, void* a2);    // 0x75D6CC
-    static void Constructor_VoxelAnim(void* self, int a2, int a3);  // 0x75DB12
-};
-#define BuildingLoadQueue BuildingLoadQueue_site  // G42.35: 语料名桥接（def 1 + misc 版缺法）
-#define FootClass FootClass_site                  // G42.35: 同上（5 站点全静态形）
-#define ComPtr ComPtr_site                        // G42.35: 同上（v66 局部 + 2 站点）
-#define DynamicVector DynamicVector_site          // G42.35: 同上（v86 局部 + 3 站点）
-// stru_B054D0 宿主（ida_globals 裸标量; 语料 .m_1[3] 访问）
-struct stru_B054D0_flat { unsigned char __pad_0[4]; void* m_1[16]; };
-extern stru_B054D0_flat stru_B054D0_t;  // data: 0xB054D0
-#define stru_B054D0 stru_B054D0_t
-// G42.35 波9: Math 站点壳（gamemd::Math 仅 fwd; Sqrt/RoundToInt 静态形）
-struct Math_site {
-    static double Sqrt(double a1);     // 0x73EE2D 区
-    static int RoundToInt(double a1);  // 0x73EE35 区
-};
-#define Math Math_site  // G42.35: 语料名桥接（8 站点全 Math:: 静态形）
-// dword_8871E0 宿主（ida_globals 裸 uint; 语料 ->CollapseChance/MutateExplosion/ChronoHarvTooFarDistance/__pad_* 访问）
-struct dword_8871E0_v {
-    unsigned char __pad_0[0xC3C];
-    unsigned char __pad_C3C[8];
-    unsigned int CollapseChance;
-    unsigned int MutateExplosion;
-    unsigned int ChronoHarvTooFarDistance;
-    unsigned char __pad_13BC[8];
-};
-extern dword_8871E0_v* dword_8871E0_t;  // data: 0x8871E0 (Rules 实例指针, object TU 注释同款)
-#define dword_8871E0 dword_8871E0_t
-// g_DSurface_Hidden_2 宿主（e4_globals_decls 裸 int; 语料 ->__pad_0 + (int) 双视图 + AudioStream* 裸传参）
-struct g_DSurface_Hidden_2_v : gamemd::AudioStream {
-    unsigned int* __pad_0;   // vfn 槽 (0x488A9B 等 23 站点)
-};
-extern g_DSurface_Hidden_2_v* g_DSurface_Hidden_2_t;  // data: 0x887314
-#define g_DSurface_Hidden_2 g_DSurface_Hidden_2_t
-// G42.35 波10: dword_A8B230 宿主（ida_globals 裸 uint; 语料 [14].NeedsSaveOrLink 访问）+ flt 数组宿主
-struct dword_A8B230_e { unsigned int NeedsSaveOrLink; };
-extern dword_A8B230_e dword_A8B230_t[32];  // data: 0xA8B230
-#define dword_A8B230 dword_A8B230_t
-extern float flt_B444A0_t[0x200];  // data: 0xB444A0 (ida_globals 裸 float 标量)
-#define flt_B444A0 flt_B444A0_t
-extern float flt_8467E4_t[0x40];   // data: 0x8467E4
-#define flt_8467E4 flt_8467E4_t
-// G42.35 波11: WinAPI 站点壳（全树载体 _tree_full_e4.hpp 未纳入本 TU; 同款 static Wrapper）
-struct WinAPI_site { static int Wrapper(int a2); };  // 0x73E7F2 区 (consensus 350+ 1-arg 站点)
-#define WinAPI WinAPI_site  // G42.35: 语料名桥接（2 站点）
-
-// 0x40D250
-namespace gamemd {
-void DisplayClass::vt_entry_AC() {
-    ; /*0x40d250*/
-}
 } // namespace gamemd
 
-// 0x4AAD20
-namespace gamemd {
-void DisplayClass::vt_entry_B0() {
-    ; /*0x4aad20*/
 }
-} // namespace gamemd
-
-// 0x4D2B20
-namespace gamemd {
-void FoggedObject_DrawVector::ddtor()
-{
-    if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x4d2b2d*/
-    {
-      RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4d2b33*/
-      *(unsigned int *)&this->m_1[3] = 0; /*0x4d2b3b*/
-    }
-    IDA_BYTE1(this->m_C) = 0; /*0x4d2b3e*/
-    this->m_8 = 0; /*0x4d2b41*/
-}
-} // namespace gamemd
-
 // 0x72B530
 namespace gamemd {
 int PaletteManager::Load(int a2)
@@ -4364,4 +4274,3 @@ void XSurface_DrawLineEx_raw(int a2, unsigned int *a3, unsigned int *a4, int16_t
     return 1; /*0x7ba723*/
 }
 } // namespace gamemd
-

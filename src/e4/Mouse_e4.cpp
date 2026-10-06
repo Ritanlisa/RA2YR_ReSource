@@ -139,7 +139,7 @@ int Mouse::SetCursor(int aP1, char aP2)
       v8 = *((int16_t *)dword_ABF294 + 2); /*0x5bdd74*/
     v14 = v8; /*0x5bdd7c*/
     v13 = v11; /*0x5bdd87*/
-    (*(void (**)(int, int *, void *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10)( /*0x5bdd93*/
+    (*(void (**)(int, int *, void *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10))(  /*0x5bdd93*/
       dword_887640,
       &v13,
       (void *)dword_ABF294,
@@ -200,7 +200,7 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
     v7 = (gamemd::WWMouseClass *)((int)((gamemd::WWMouseClass *)(*((unsigned int *)this + 21))));
     v8 = (gamemd::WWMouseClass *)((unsigned int)(aP2)+ *((unsigned int *)this + 18));
     v9 = (int)(a4 + *((unsigned int *)this + 19));
-    SubFile = (int)(MixFileClass::GetSubFile(v5, *(unsigned int *)&this->__pad_5[3]));
+    SubFile = (int)(((MixFileClass *)v5)->GetSubFile( *(unsigned int *)&this->__pad_5[3]));
     v20[1] = v6; /*0x7b9447*/
     v20[2] = (int)(v7); /*0x7b9454*/
     v20[3] = 0; /*0x7b9458*/
@@ -226,7 +226,7 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
       v14 = v9; /*0x7b94ea*/
       v17 = v6; /*0x7b94ee*/
       v18 = v7; /*0x7b94f2*/
-      v12 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v11 + 120))(aP1, v19); /*0x7b94f9*/
+      v12 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v11 + 120))( (int *)(aP1), v19); /*0x7b94f9*/
     }
     BlitterDrawSHP(aP1, *(int *)&stru_87F5F0.__pad_58[128], v20, &v15, &v13, v12, 0, 0, 0, 0, 1000, 0, 0); /*0x7b94c8*/
     ((Vector *)((int)v21))->Clear(); /*0x7b951f*/

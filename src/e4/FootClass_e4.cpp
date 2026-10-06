@@ -62,7 +62,7 @@ AbstractClass * FootClass::Destruct()
   v11 = this; /*0x4d35dd*/
   v3 = (*((int (**)(FootClass *, FootClass **))FootClass_Array.TechnoClass + 4))(&FootClass_Array, &v11); /*0x4d35e1*/
   if ( v3 != -1 ) /*0x4d35e7*/
-    FootClass::RemoveFromPointerArray(&FootClass_Array, v3); /*0x4d35ef*/
+    ((FootClass *)&FootClass_Array)->RemoveFromPointerArray( v3); /*0x4d35ef*/
   v11 = this; /*0x4d3604*/
   v4 = (*(int (**)(char *, FootClass **))(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x4d3608*/
          (char *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
@@ -82,10 +82,10 @@ AbstractClass * FootClass::Destruct()
       v6[56] = 0; /*0x4d3668*/
   }
   ((Mixer*)(Mixer *)this->audioController7)->ReleaseChannel(); /*0x4d3677*/
-  AudioFileClass::Release((AudioFileClass *)this->audioController7); /*0x4d367e*/
+  AudioFileClass::Release( (AudioFileClass *)this->audioController7); /*0x4d367e*/
   v7 = (&this->locomotor)[0]; /*0x4d3683*/
   if ( v7 ) /*0x4d368b*/
-    (*(void (**)(int))(*(unsigned int *)&v7->q_20)((&this->locomotor)[0]); /*0x4d3690*/
+    (*(void (**)(int))(*(unsigned int *)&v7->q_20))((&this->locomotor)[0]); /*0x4d3690*/
   v8 = *(void **)this->__pad_5B0; /*0x4d3693*/
   (&this->FootClass_field_abstract_array_5AC)[0] = (int)&vt_VectorClass; /*0x4d36a0*/
   if ( v8 && this->__pad_5B0[9] ) /*0x4d36a8*/
@@ -278,9 +278,9 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       {
         m_Size = (int)(v28.m_Size); /*0x710297*/
         if ( *(unsigned int *)(v28.m_Size + 684) ) /*0x71029b*/
-          TechnoClass::EjectPassengers((TechnoClass *)v28.m_Size, 0); /*0x7102a6*/
+          ((TechnoClass *)(TechnoClass *)v28.m_Size)->EjectPassengers( 0); /*0x7102a6*/
         if ( v6[171] ) /*0x7102ab*/
-          TechnoClass::EjectPassengers((TechnoClass *)v6, 1); /*0x7102b7*/
+          ((TechnoClass *)(TechnoClass *)v6)->EjectPassengers( 1); /*0x7102b7*/
         if ( !v28.m_Data ) /*0x7102c4*/
           WinAPI::Wrapper(-2147467261); /*0x7102cb*/
         (*(void (**)(int, int))(*(unsigned int *)v28.m_Data + 12))((int)v28.m_Data, *v10); /*0x7102d8*/

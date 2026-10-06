@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_VectorCursor 1  // G57b: e4 flat-carrier opt-in (suppress core/aux twin)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint____13_e4.hpp"

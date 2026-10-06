@@ -172,7 +172,7 @@ struct HouseClass {
     static int GetStatus(...);
     int GetUnitSelfHealStep();
     int InitAlliances();
-    int IsAlliedWith();
+    int IsAlliedWith(HouseClass *other);  // G57w4: raw fn_4F.c other@[ebp+4]
     int IsCellOccupied(IUnknown * aP1, char a3);
     int MakeAlly(int a2, char a3);
     int PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * aP1, TechnoTypeClass * aP2);

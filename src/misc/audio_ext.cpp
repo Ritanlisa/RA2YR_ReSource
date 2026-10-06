@@ -1,11 +1,21 @@
 #include "misc/audio_ext.hpp"
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    void *Coord_To_Cell(void *a1, void *a2);           // raw Coord::To_Cell 家族 (fn_42:3240);
+    struct stru_87F5F0_host {                      // 0x87F5F0 宿主 (object/supplied_bodies:106 同款)
+        unsigned char __pad_0[0x58];
+        unsigned char __pad_58[0x280 - 0x58];      // 覆盖 __pad_58[416] = +0x1F8
+    };
+    extern stru_87F5F0_host stru_87F5F0;          // data: 0x87F5F0
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 namespace gamemd {
 
 // --- Audio3D ---
 
 // 0x55a7d0
-void Audio3D::ComputeRotation()
+void Audio3D::ComputeRotation(float *a2, unsigned int a3)  // g57b5 W4: raw 真值补参 (a2,a3)
 {
     unsigned int *v3; // eax
     int slopeIndex; // ebp
@@ -19,7 +29,7 @@ void Audio3D::ComputeRotation()
     v8[0] = *v3; /*0x55a7e5*/
     v8[1] = v3[1]; /*0x55a7f1*/
     v8[2] = v3[2]; /*0x55a7fd*/
-    slopeIndex = (unsigned __int8)Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v8)->slopeIndex; /*0x55a812*/
+    slopeIndex = (unsigned __int8)Coord_To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v8)->slopeIndex; /*0x55a812*/
     qmemcpy(v9, CopyAudioData(v10, slopeIndex), sizeof(v9)); /*0x55a828*/
     v6 = (double)(int)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(this->field_8 + 904), &v7) >> 10) + 1) >> 1) /*0x55a85a*/
                       & 0x1F)
@@ -35,3 +45,4 @@ void Audio3D::ComputeRotation()
     qmemcpy(a2, v9, 0x30u); /*0x55a8b4*/
     return a2; /*0x55a8b6*/
 } // namespace gamemd
+}

@@ -28,7 +28,7 @@ AudioController * * CCFileClass::Close(void * a1)
   AudioController ** v3;
 
   if ( !BYTE1(this->BufferSize) ) /*0x4325c3*/
-    return ((gamemd::FileClass *)(int a1))->CloseHandle() ; /*0x432607*/
+    return (( gamemd::FileClass *)this)->CloseHandle() ; /*0x432607*/
   ((BufferIO *)((BufferIO *)a1))->Flush(); /*0x4325ca*/
   result = BYTE2(a1->BufferOffset); /*0x4325cf*/
   if ( result ) /*0x4325d4*/
@@ -37,7 +37,7 @@ AudioController * * CCFileClass::Close(void * a1)
     {
       v3 = (unsigned int)((gamemd::AudioController **)(a1->FileClass));
       BYTE1(a1->BufferSize) = 0; /*0x4325e1*/
-      result = (*(int (**))(*(unsigned int *)&v3 + 52))(a1); /*0x4325e5*/
+      result = (*(int (**)(void *))(*(unsigned int *)&v3 + 52))( (void *)(a1)); /*0x4325e5*/
       BYTE1(a1->BufferSize) = 1; /*0x4325e8*/
       BYTE2(a1->BufferOffset) = 0; /*0x4325ec*/
       BYTE1(a1->BufferOffset) = (gamemd::AudioController **)(0); /*0x4325f0*/
@@ -95,8 +95,8 @@ int CCFileClass::GetFileSize(void *a1, void *a2)
     }
     else if ( (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))((RawFileClass *)this, 1) ) /*0x65d122*/
     {
-      FileSize = (*(int (**))(*(unsigned int *)this->FileClass + 44))(this); /*0x65d130*/
-      (*(void (**))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d136*/
+      FileSize = (*(int (**)(void *))(*(unsigned int *)this->FileClass + 44))(this); /*0x65d130*/
+      (*(void (**)(void *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d136*/
     }
     result = FileSize - (unsigned int)this->Handle; /*0x65d13e*/
     this->FileName = (void *)result; /*0x65d140*/
@@ -168,7 +168,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
         v8 = (unsigned int *)((void *)*((unsigned int *)dword_B077B4 + 3));
         v9 = (unsigned int *)((char *)dword_B077B4 + 12);
         if ( v8 ) /*0x69e3c5*/
-          MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/
+          ((MixFileClass *)v8)->CacheNode_Dtor( 1); /*0x69e3c9*/
         *v9 = 0; /*0x69e3ce*/
         *v7 = 0; /*0x69e3d0*/
       }

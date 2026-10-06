@@ -9,3 +9,4 @@ bool WaypointClass::IsCoordinateUsed(const CellStruct&) const { return false; }
 // 0x502460
 bool WaypointClass::FindOrCreate(int, unsigned int*, unsigned char*) { return false; 
 } // namespace gamemd
+}

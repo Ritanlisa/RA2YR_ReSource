@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
@@ -52,14 +53,14 @@ int ComStreamClass::Write(int a2, unsigned __int8 *a3, const char *lParam, const
     goto LABEL_16; /*0x7a3dbf*/
   ((String *)((String *)v22))->Assign(lParama); /*0x7a3dd3*/
   LoadPlayerProfile((ObjectClass *)&v22[0].vtable1, (const char **)v22); /*0x7a3de0*/
-  DeleteAndZero(v22); /*0x7a3de9*/
+  j_DeleteAndZero(v22); /*0x7a3de9*/
   v22[0].vtable0 = 0; /*0x7a3df2*/
   v22[0].uniqueId = 0; /*0x7a3df6*/
   LOBYTE(v22[0].abstractFlags) = 0; /*0x7a3dfa*/
   ReadRegistryOptionsWOL((ObjectClass *)&v22[0].uniqueId); /*0x7a3dfe*/
   if ( (uint8_t)((Flag *)((Flag *)&v22[0].uniqueId))->IsNot2() ) /*0x7a3e07*/
   {
-    v22[0].vtable0 = FindChannelWOL(lParama, (int)v23, 1u, *(unsigned int *)(v22[0].vtable2 + 16)); /*0x7a3e2d*/
+    v22[0].vtable0 = FindChannelWOL( (const char *)(lParama), (int)v23, 1u, *(unsigned int *)(v22[0].vtable2 + 16)); /*0x7a3e2d*/
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x7a3e31*/
   }
   v21 = (unsigned int)(1);
@@ -102,7 +103,7 @@ LABEL_14:
         v10(v15, 1); /*0x7a3fa4*/
         ((String *)((String *)v22))->Assign(lParama); /*0x7a3fb2*/
         FillPersonaInfoWOL(v22[0].vtable2, v5, (char **)v22, (wchar_t **)1); /*0x7a3fc3*/
-        DeleteAndZero(v22); /*0x7a3fcc*/
+        j_DeleteAndZero(v22); /*0x7a3fcc*/
       }
     }
     else
@@ -121,12 +122,12 @@ LABEL_14:
 LABEL_16:
   if ( lParam ) /*0x7a3fed*/
   {
-    BulkCharToWide(&v22[0].nextArrayIndex, (uint8_t *)lParam, -1); /*0x7a3ff5*/
+    BulkCharToWide( (unsigned short *)(&v22[0].nextArrayIndex), (uint8_t *)lParam, -1); /*0x7a3ff5*/
     ShowDialogConfirm((wchar_t *)&v22[0].nextArrayIndex, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x7a4007*/
   }
   else
   {
-    ShowDialogConfirm(aUnknownStatus, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x7a4017*/
+    ShowDialogConfirm( (void *)(aUnknownStatus), 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x7a4017*/
   }
   v16 = (HWND)((Dialog*)(Dialog *)0xC4)->FindByHandle(); /*0x7a4021*/
   if ( v16 ) /*0x7a4028*/
@@ -184,7 +185,7 @@ int ComStreamClass::QueryInterface(unsigned int *a2, char **a3, int a4, int a1, 
   *v10 = 0; /*0x7ac891*/
   if ( !*(unsigned (unsigned int)(int)*)(a3) && !a3[1] && a3[2] == (char *)192 && a3[3] == (char *)1174405120 ) /*0x7ac8b3*/
   {
-    (*(void (**)(unsigned int *))(*a2 + 4))(a2); /*0x7ac8c6*/
+    (*(void (**)(unsigned int *))(*a2 + 4))( (unsigned int *)(a2)); /*0x7ac8c6*/
     *v10 = (unsigned int)(a2); /*0x7ac8c9*/
     return 0; /*0x7ac8d1*/
   }
@@ -353,9 +354,9 @@ unsigned int * ComStreamClass::seekToPosition()
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b0249*/
   ((ComPtr *)(&stru_B77F68))->Set(v3[1]); /*0x7b0257*/
-  *(unsigned int *)v5 = &vt_rc_ptr; /*0x7b0260*/
+  *(unsigned int *)v5 = (unsigned int)&vt_rc_ptr;
   ((ComPtr *)((ComPtr *)v5))->Release(); /*0x7b0268*/
-  *(unsigned int *)v6 = &vt_rc_ptr; /*0x7b0271*/
+  *(unsigned int *)v6 = (unsigned int)&vt_rc_ptr;
   return ((ComPtr *)((ComPtr *)v6))->Release(); /*0x7b027e*/
 
 }
@@ -374,9 +375,9 @@ unsigned int * ComStreamClass::getStreamSize()
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b02c9*/
   ((ComPtr *)((ComPtr *)&stru_B77F68.ComPtr_field_0x10))->Set(v3[1]); /*0x7b02d7*/
-  *(unsigned int *)v5 = &vt_rc_ptr; /*0x7b02e0*/
+  *(unsigned int *)v5 = (unsigned int)&vt_rc_ptr;
   ((ComPtr *)((ComPtr *)v5))->Release(); /*0x7b02e8*/
-  *(unsigned int *)v6 = &vt_rc_ptr; /*0x7b02f1*/
+  *(unsigned int *)v6 = (unsigned int)&vt_rc_ptr;
   return ((ComPtr *)((ComPtr *)v6))->Release(); /*0x7b02fe*/
 
 }
@@ -459,7 +460,7 @@ namespace gamemd {
 void ** ComStreamClass::writeData(char a2)
 {
 
-  DeleteAndZero((ObjectClass *)this); /*0x7aed23*/
+  j_DeleteAndZero((ObjectClass *)this); /*0x7aed23*/
   if ( (a2 & 1) != 0 ) /*0x7aed2d*/
     __3_YAXPAX_Z(this); /*0x7aed30*/
   return (void **)this; /*0x7aed3a*/

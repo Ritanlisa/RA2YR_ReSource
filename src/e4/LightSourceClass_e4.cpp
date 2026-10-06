@@ -45,7 +45,7 @@ _DWORD * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a6, int
          0) )
   {
     v10 = g_MissionQueueFrame.random[133]++; /*0x55480a*/
-    *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v10) = this; /*0x554819*/
+    *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v10) = (unsigned int)this;
   }
   return (_DWORD *)(this); /*0x55481e*/
 
@@ -83,7 +83,7 @@ int LightSourceClass::Constructor()
          0) )
   {
     v3 = g_MissionQueueFrame.random[133]++; /*0x5548c3*/
-    *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3) = this; /*0x5548d2*/
+    *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3) = (unsigned int)this;
   }
   return (int)this; /*0x5548d7*/
 
@@ -120,12 +120,12 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x5550cb*/
+  result = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(aP0), (gamemd::AbstractClass *)(aP1)); /*0x5550cb*/
   if ( result >= 0 ) /*0x5550d2*/
   {
     if ( aP0 ) /*0x5550d6*/
     {
-      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x5550df*/
+      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x5550df*/
       aP0->vtable1 = &vt_LightSourceClass; /*0x5550e4*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5550ea*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5550f1*/

@@ -5,6 +5,16 @@
 
 #include <cstring>
 #include "e4/classes/HouseClass_e4.hpp"
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    struct BLQ_B0E840_c {                            // 0xB0E840 宿主词汇 (BuildingTypeClass 槽词表)
+        unsigned char __pad_E5C[0x14];               // 0xE5C
+        int UnitExitSound;                           // 0xE70 (csp_canon BuildingTypeClass ANCHORED)
+        void *ToTile;                               // raw 0x6e5270 词表 (偏移未锚定)
+    };
+    extern BLQ_B0E840_c g_BuildingLoadQueue_Array;   // data: 0xB0E840 (csp_canon/globals.hpp:1219)
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 namespace gamemd
 {

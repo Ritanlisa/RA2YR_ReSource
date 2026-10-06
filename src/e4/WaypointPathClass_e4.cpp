@@ -25,7 +25,7 @@ int WaypointPathClass::Init()
 
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x763733*/
+  AbstractClass::Constructor( (AbstractClass *)this); /*0x763733*/
   this->idxArray = -1; /*0x76373a*/
   (&this->waypoints)[1] = 0; /*0x763741*/
   (&this->waypoints)[2] = 0; /*0x763744*/
@@ -60,7 +60,7 @@ int WaypointPathClass::Construct(unsigned int aP1)
 
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x763813*/
+  AbstractClass::Constructor( (AbstractClass *)this); /*0x763813*/
   *((unsigned int *)this + 9) = -1; /*0x76381e*/
   *((unsigned int *)this + 11) = 0; /*0x763825*/
   *((unsigned int *)this + 12) = 0; /*0x763828*/
@@ -118,14 +118,14 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
   {
     if ( v2 ) /*0x763c92*/
     {
-      AbstractClass::InitVtables(v2, (int)&a2); /*0x763c9b*/
+      ((AbstractClass *)v2)->InitVtables( (int)&a2); /*0x763c9b*/
       v2[1].vtable1 = &vt_DynamicVectorClass; /*0x763ca0*/
       v2->vtable1 = &vt_WaypointPathClass; /*0x763ca7*/
       v2->vtable1 = &vt_WaypointPathClass; /*0x763cad*/
       v2->vtable2 = &vt_WaypointPathClass; /*0x763cb4*/
       v2->vtable3 = &vt_WaypointPathClass; /*0x763cbb*/
     }
-    result = (*(int (**)(int, WaypointPathClass **, int, unsigned int))(*(unsigned int *)&v3->u32_30)(v3, (WaypointPathClass **)&a1, 4, 0); /*0x763ccd*/
+    result = (*(int (**)(int, WaypointPathClass **, int, unsigned int))(*(unsigned int *)&v3->u32_30))(v3, (WaypointPathClass **)&a1, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
     {
       p_vtable1 = (WaypointPathClass *)&v2[1].vtable1; /*0x763cd8*/
@@ -149,7 +149,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
           v15 = 0; /*0x763d0d*/
           v16 = 0; /*0x763d11*/
           v17 = 0; /*0x763d15*/
-          result = (*(int (**)(int, int *, int, unsigned int))(v7 + 12))(v3, &v15, 12, 0); /*0x763d19*/
+          result = (*(int (**)(int, int *, int, unsigned int))(v7 + 12))( v3, (int *)(&v15), 12, 0); /*0x763d19*/
           if ( result < 0 ) /*0x763d1e*/
             break; /*0x763d1e*/
           vtable2 = (void *)(((unsigned int *)p_vtable1)[0]); /*0x763d20*/
@@ -296,7 +296,7 @@ int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
   {
     v4 = *a1; /*0x763daf*/
     aP2 = aP0->waypoints[4]; /*0x763dbb*/
-    result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x763dbf*/
+    result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))( (int *)(a1), (int *)(&aP2), 4, 0); /*0x763dbf*/
     if ( result >= 0 ) /*0x763dc4*/
     {
       v5 = 0; /*0x763dca*/
@@ -308,7 +308,7 @@ int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
       {
         for ( i = 0; ; i += 12 ) /*0x763dd0*/
         {
-          result = (*(int (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, aP0->waypoints[1] + i, 12, 0); /*0x763de1*/
+          result = (*(int (**)(int *, int, int, unsigned int))(*a1 + 16))( (int *)(a1), aP0->waypoints[1] + i, 12, 0); /*0x763de1*/
           if ( result < 0 ) /*0x763de6*/
             break; /*0x763de6*/
           if ( ++v5 >= aP2 ) /*0x763df2*/
@@ -351,13 +351,13 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   int v4; // eax
   WaypointPathClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable1 = &vt_WaypointPathClass; /*0x763e26*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e2c*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e33*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e3a*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x763e41*/
-  v6 = (gamemd::WaypointPathClass *)(Block); /*0x763e56*/
-  v3 = (*(int (**)(int *, WaypointPathClass **))(dword_B72608 + 16))((int *)&dword_B72608, &v6); /*0x763e5a*/
+  this->vtable1 = &vt_WaypointPathClass; /*0x763e26*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e2c*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e33*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e3a*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x763e41*/
+  v6 = (gamemd::WaypointPathClass *)(this); /*0x763e56*/
+  v3 = (*(int (**)(int *, WaypointPathClass **))(dword_B72608 + 16))( (int *)&dword_B72608, (WaypointPathClass **)(&v6)); /*0x763e5a*/
   if ( v3 != -1 && v3 < dword_B72618 && v3 < --dword_B72618 ) /*0x763e75*/
   {
     do /*0x763e8d*/
@@ -367,19 +367,19 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
     }
     while ( v3 < dword_B72618 ); /*0x763e8d*/
   }
-  v4 = Block->waypoints[1]; /*0x763e8f*/
-  Block->waypoints[0] = (int)&vt_VectorClass; /*0x763e92*/
-  if ( v4 && BYTE1(Block->waypoints[3]) ) /*0x763e9d*/
+  v4 = this->waypoints[1]; /*0x763e8f*/
+  this->waypoints[0] = (int)&vt_VectorClass; /*0x763e92*/
+  if ( v4 && BYTE1(this->waypoints[3]) ) /*0x763e9d*/
   {
     __3_YAXPAX_Z((void *)(v4 - 4)); /*0x763eb0*/
-    Block->waypoints[1] = 0; /*0x763eb8*/
+    this->waypoints[1] = 0; /*0x763eb8*/
   }
-  BYTE1(Block->waypoints[3]) = 0; /*0x763ec1*/
-  Block->waypoints[2] = 0; /*0x763ec5*/
-  ((AbstractClass*)((AbstractClass *)Block))->DTOR(); /*0x763ecc*/
+  BYTE1(this->waypoints[3]) = 0; /*0x763ec1*/
+  this->waypoints[2] = 0; /*0x763ec5*/
+  ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x763ecc*/
   if ( (a2 & 1) != 0 ) /*0x763ed6*/
-    __3_YAXPAX_Z(Block); /*0x763ed9*/
-  return Block; /*0x763ee3*/
+    __3_YAXPAX_Z(this); /*0x763ed9*/
+  return this; /*0x763ee3*/
 
 }
 } // namespace gamemd

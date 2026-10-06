@@ -51,7 +51,7 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
   if ( !aP1 ) /*0x526820*/
     return 0; /*0x526820*/
   memset(v15, 0, sizeof(v15)); /*0x52682d*/
-  v3 = ((Checksummer*)v15)->Add_Buffer((uint8_t *)aP1, strlen((const char *)aP1)); /*0x526844*/
+  v3 = ((Checksummer*)v15)->Add_Buffer( (unsigned char)((uint8_t *)aP1), strlen((const char *)aP1)); /*0x526844*/
   v4 = *((unsigned int *)this + 11); /*0x526849*/
   v5 = v3; /*0x52684c*/
   v16 = v3; /*0x526850*/
@@ -134,14 +134,14 @@ VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1, void *a2)
     return 0; /*0x52696d*/
   memset(v12, 0, sizeof(v12)); /*0x52697a*/
   v2 = (char *)((unsigned char *)this + 40); /*0x5269a2*/
-  v3 = ((Checksummer*)v12)->Add_Buffer((uint8_t *)aP1, strlen((const char *)aP1)); /*0x5269a5*/
+  v3 = ((Checksummer*)v12)->Add_Buffer( (unsigned char)((uint8_t *)aP1), strlen((const char *)aP1)); /*0x5269a5*/
   aP1 = (gamemd::INIClass *)((uint8_t *)v3); /*0x5269a7*/
   if ( !*((unsigned int *)v2 + 1) ) /*0x5269ab*/
     return 0; /*0x5269b0*/
   v4 = (unsigned int *)*((unsigned int *)v2 + 4); /*0x5269b2*/
   if ( !v4 || *v4 != v3 ) /*0x5269bb*/
   {
-    v5 = SortedArray::BinarySearch((int *)(&aP1)); /*0x5269c4*/
+    v5 = SortedArray::BinarySearch( (int)((int *)(&aP1))); /*0x5269c4*/
     if ( !v5 ) /*0x5269cb*/
       return 0; /*0x5269cb*/
     *((unsigned int *)v2 + 4) = v5; /*0x5269cd*/
@@ -153,7 +153,7 @@ VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1, void *a2)
     v7 = (unsigned int *)*((unsigned int *)v2 + 4); /*0x5269db*/
     if ( v7 && *v7 == v3 ) /*0x5269e4*/
       goto LABEL_12; /*0x5269e4*/
-    v8 = SortedArray::BinarySearch((int *)(&aP1)); /*0x5269ed*/
+    v8 = SortedArray::BinarySearch( (int)((int *)(&aP1))); /*0x5269ed*/
     if ( v8 ) /*0x5269f4*/
     {
       *((unsigned int *)v2 + 4) = v8; /*0x5269f6*/
@@ -417,19 +417,19 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
     return 0; /*0x526ccd*/
   memset(v10, 0, sizeof(v10)); /*0x526cda*/
   v3 = (char *)((unsigned char *)this + 40); /*0x526d02*/
-  v4 = ((Checksummer*)v10)->Add_Buffer((uint8_t *)aP1, strlen((const char *)aP1)); /*0x526d05*/
+  v4 = ((Checksummer*)v10)->Add_Buffer( (unsigned char)((uint8_t *)aP1), strlen((const char *)aP1)); /*0x526d05*/
   aP1 = (gamemd::CCINIClass *)((uint8_t *)v4); /*0x526d07*/
   if ( !*((unsigned int *)v3 + 1) ) /*0x526d0b*/
     return 0; /*0x526d10*/
-  if ( !(uint8_t)SortedArray::CheckCache(&aP1) ) /*0x526d19*/
+  if ( !(uint8_t)SortedArray::CheckCache( &aP1) ) /*0x526d19*/
   {
-    v5 = SortedArray::BinarySearch((int *)(&aP1)); /*0x526d29*/
+    v5 = SortedArray::BinarySearch( (int)((int *)(&aP1))); /*0x526d29*/
     if ( !v5 ) /*0x526d30*/
       return 0; /*0x526d30*/
     *((unsigned int *)v3 + 4) = v5; /*0x526d32*/
   }
   aP1 = (gamemd::CCINIClass *)((uint8_t *)v4); /*0x526d3c*/
-  v6 = *(unsigned int *)SortedArray::FindValue(&aP1); /*0x526d45*/
+  v6 = *(unsigned int *)SortedArray::FindValue( &aP1); /*0x526d45*/
   if ( v6 ) /*0x526d49*/
   {
     v7 = (int)(aP2); /*0x526d4b*/
@@ -463,7 +463,7 @@ int INIClass::ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, 
 
   v7 = (uint8_t *)((String *)(aP2))->GetOrEmpty_Alt(); /*0x527905*/
   v5 = (uint8_t *)((String *)(aP1))->GetOrEmpty_Alt(); /*0x527906*/
-  return ((INIClass *)(int a1))->ReadInt_Overwrite(v5, v7, aP3) ; /*0x527913*/
+  return (( INIClass *)this)->ReadInt_Overwrite(v5, v7, aP3) ; /*0x527913*/
 
 }
 } // namespace gamemd
@@ -480,7 +480,7 @@ char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
   v5 = ((String *)(a3))->GetOrEmpty_Alt(); /*0x529835*/
   v6 = (uint8_t *)((String *)(a2))->GetOrEmpty_Alt(); /*0x52983c*/
   sprintf(Buffer, "%d,%d", *a4, a4[1]); /*0x529853*/
-  return INIClass::SetString(int a1,v6,v5,Buffer) ; /*0x529869*/
+  return ((INIClass *)this)->SetString(v6,v5,Buffer) ; /*0x529869*/
 
 }
 } // namespace gamemd

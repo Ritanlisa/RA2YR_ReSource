@@ -141,8 +141,8 @@ int sub_622610()
   }
   if ( v2 && stru_887598.lineTrailer ) /*0x62262b*/
   {
-    if ( !(*(uint8_t (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->MouseClass_field_0x70)(stru_887598.lineTrailer) ) /*0x62262f*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_60)(stru_887598.lineTrailer); /*0x62263e*/
+    if ( !(*(uint8_t (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->MouseClass_field_0x70))(stru_887598.lineTrailer) ) /*0x62262f*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_60))(stru_887598.lineTrailer);  /*0x62263e*/
     return dword_AC48EC; /*0x622641*/
   }
   return result; /*0x622646*/
@@ -161,7 +161,7 @@ char sub_647040()
     return 0; /*0x647056*/
   if ( dword_A83D4C->__pad_140[182] ) /*0x647060*/
     return 0; /*0x647060*/
-  v1 = (char *)(EventClass::AddEvent(v3, (int)dword_A83D4C->Object_field_0x30, 0xCu)); /*0x647074*/
+  v1 = (char *)(((EventClass *)v3)->AddEvent( (int)dword_A83D4C->Object_field_0x30, 0xCu)); /*0x647074*/
   if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647083*/
     return 0; /*0x6470dc*/
   qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v1, 0x6Fu); /*0x6470a1*/
@@ -184,7 +184,7 @@ char sub_6470F0()
     return 0; /*0x647106*/
   if ( dword_A83D4C->__pad_140[182] ) /*0x647110*/
     return 0; /*0x647110*/
-  v1 = (char *)(EventClass::AddEvent(v3, (int)dword_A83D4C->Object_field_0x30, 0x22u)); /*0x647124*/
+  v1 = (char *)(((EventClass *)v3)->AddEvent( (int)dword_A83D4C->Object_field_0x30, 0x22u)); /*0x647124*/
   if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647133*/
     return 0; /*0x64718c*/
   qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v1, 0x6Fu); /*0x647151*/
@@ -299,7 +299,7 @@ void * sub_730F30()
     result = *(wchar_t **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x730f51*/
     if ( dword_84555C + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1408) < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x730f5a*/
     {
-      v2 = (char *)(EventClass::AddEvent(v3, (int)dword_A83D4C->Object_field_0x30, 0x2Du)); /*0x730f6c*/
+      v2 = (char *)(((EventClass *)v3)->AddEvent( (int)dword_A83D4C->Object_field_0x30, 0x2Du)); /*0x730f6c*/
       if ( (int)stru_A80220.lineTrailer < 128 ) /*0x730f7b*/
       {
         qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v2, 0x6Fu); /*0x730f99*/
@@ -476,7 +476,7 @@ int UI_Get_60B1D0(HWND hWnd, HWND a2)
   v13 = hWnd; /*0x60b29e*/
   if ( dword_AC1B04 ) /*0x60b2a4*/
   {
-    v9 = (HWND *)*((unsigned int *)dword_AC1B00 + (dword_AC1B18(&v13) & ((1 << dword_AC1B0C) - 1))); /*0x60b2c5*/
+    v9 = (HWND *)*((unsigned int *)dword_AC1B00 + ((*(unsigned int (*)(void *))&dword_AC1B18)(&v13) & ((1 << dword_AC1B0C) - 1))); /*0x60b2c5*/
     if ( v9 ) /*0x60b2ca*/
     {
       while ( *v9 != v13 ) /*0x60b2d2*/
@@ -518,7 +518,7 @@ bool UI_Helper_602B90(int a1, HWND a2)
   v8 = a1; /*0x602b9c*/
   if ( !dword_AC1B04 ) /*0x602ba0*/
     goto LABEL_5; /*0x602ba0*/
-  v3 = (unsigned int *)*((unsigned int *)dword_AC1B00 + (dword_AC1B18(&v8) & ((1 << dword_AC1B0C) - 1))); /*0x602bc1*/
+  v3 = (unsigned int *)*((unsigned int *)dword_AC1B00 + ((*(unsigned int (*)(void *))&dword_AC1B18)(&v8) & ((1 << dword_AC1B0C) - 1))); /*0x602bc1*/
   if ( !v3 ) /*0x602bc6*/
     goto LABEL_5; /*0x602bc6*/
   while ( *v3 != v8 ) /*0x602bce*/
@@ -577,7 +577,7 @@ int UI_Helper_603240(int a1, HWND a2)
   v8 = a1; /*0x60324c*/
   if ( !dword_AC1B04 ) /*0x603250*/
     goto LABEL_5; /*0x603250*/
-  v3 = (unsigned int *)*((unsigned int *)dword_AC1B00 + (dword_AC1B18(&v8) & ((1 << dword_AC1B0C) - 1))); /*0x603271*/
+  v3 = (unsigned int *)*((unsigned int *)dword_AC1B00 + ((*(unsigned int (*)(void *))&dword_AC1B18)(&v8) & ((1 << dword_AC1B0C) - 1))); /*0x603271*/
   if ( !v3 ) /*0x603276*/
     goto LABEL_5; /*0x603276*/
   while ( *v3 != v8 ) /*0x60327e*/
@@ -637,7 +637,7 @@ unsigned int * sub_60D2C0(int a1, int a2)
   v4 = a1; /*0x60d2cb*/
   if ( dword_AC1B04 ) /*0x60d2cf*/
   {
-    result = (unsigned int *)*((unsigned int *)dword_AC1B00 + (dword_AC1B18(&v4) & ((1 << dword_AC1B0C) - 1))); /*0x60d2f0*/
+    result = (unsigned int *)*((unsigned int *)dword_AC1B00 + ((*(unsigned int (*)(void *))&dword_AC1B18)(&v4) & ((1 << dword_AC1B0C) - 1))); /*0x60d2f0*/
     if ( result ) /*0x60d2f5*/
     {
       while ( *result != v4 ) /*0x60d2fd*/
@@ -692,7 +692,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
       v6 = 1; /*0x621813*/
       v20 = 1; /*0x621818*/
     }
-    v24 = (*(int (**)(int, unsigned int, unsigned int))(aP1->q05C)(aP1, 0, 0); /*0x62182c*/
+    v24 = (*(int (**)(int, unsigned int, unsigned int))(aP1->q05C))( (int)(aP1), 0, 0);  /*0x62182c*/
     if ( v24 ) /*0x621830*/
     {
       v28 = 0; /*0x621839*/
@@ -701,7 +701,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
         v7 = a3; /*0x62184a*/
         do /*0x6219b1*/
         {
-          v8 = *v4 + (v28 + v4[1]) * ((*(int (**)(int))(v5->isOnMap)(v5) / 2); /*0x62186b*/
+          v8 = *v4 + (v28 + v4[1]) * ((*(int (**)(int))(v5->isOnMap))( (int)(v5)) / 2);  /*0x62186b*/
           v9 = v4[3] / 4; /*0x621876*/
           if ( v28 == 3 * v9 ) /*0x621880*/
             v19 = 1; /*0x621882*/
@@ -756,7 +756,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
         }
         while ( v28 < v4[3] ); /*0x6219b1*/
       }
-      (*(void (**)(int))(v5->q060)(v5); /*0x6219bd*/
+      (*(void (**)(int))(v5->q060))( (int)(v5));  /*0x6219bd*/
     }
   }
 }
@@ -922,12 +922,12 @@ void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
   {
     if ( v8 - (int)a2 < 0 ) /*0x5ebe9c*/
       DisableCampaignSlots((HWND)aP0, v8); /*0x5ebea0*/
-    Lobby::SetupPlayerWidgets(aP0); /*0x5ebea7*/
+    Lobby::SetupPlayerWidgets( (HWND)(aP0)); /*0x5ebea7*/
   }
   else
   {
     UpdateMultiplayerLobbySlots((HWND)aP0,(gamemd::ObjectClass *)(a2), v8 - (unsigned int)a2); /*0x5ebe8b*/
-    Lobby::SetupPlayerWidgets(aP0); /*0x5ebe92*/
+    Lobby::SetupPlayerWidgets( (HWND)(aP0)); /*0x5ebe92*/
   }
 }
 }
@@ -1011,7 +1011,7 @@ HWND sub_5E2340(void * aGuiHostgamesta_0)
   if ( result != (HWND)1 ) /*0x5e235e*/
   {
     SendMessageA(DlgItem, 0x4DCu, 0, 1); /*0x5e236a*/
-    StringCSF = GetStringCSF(aGuiHostgamesta_0, 0, g_Str_File_netdlg2_cpp, 5300); /*0x5e2381*/
+    StringCSF = GetStringCSF( (wchar_t *)(aGuiHostgamesta_0), 0, (const char *)(g_Str_File_netdlg2_cpp), 5300); /*0x5e2381*/
 // 0x5e2700
     return Dialog::ShowMessage(-1, (size_t)StringCSF); /*0x5e2389*/
   }
@@ -1059,7 +1059,7 @@ LRESULT UI_Draw(HWND hWnd, wchar_t *Source, size_t Count, LPARAM lParam)
 
 // 0x603F00
 namespace gamemd {
-wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM, LPARAM)
+wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM a3, LPARAM a4)
 {
   LPARAM lParam[2]; // [esp+8h] [ebp-Ch] BYREF
   wchar_t *v8; // [esp+10h] [ebp-4h] BYREF
@@ -1385,7 +1385,7 @@ void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
       v5 = a2[1]; /*0x6ac49f*/
       v6 = g_FogOfWarState; /*0x6ac4a5*/
       v20 = *a2; /*0x6ac4b5*/
-      BuildingAnimByName = FindBuildingAnimByName(aDarkred, 1); /*0x6ac4b9*/
+      BuildingAnimByName = FindBuildingAnimByName( (AbstractClass *)(aDarkred), 1); /*0x6ac4b9*/
       v8 = ((Color *)((uint8_t *)(BuildingAnimByName + 776)))->ConvertToRGB((int)v14); /*0x6ac4c9*/
       v18 = *(unsigned short *)v8; /*0x6ac4d7*/
       v19 = *(unsigned char *)(v8 + 2); /*0x6ac4e1*/
@@ -1415,7 +1415,7 @@ void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
 namespace gamemd {
 char sub_6BA120(int a1, int a2, char * Source)
 {
-  return LoadPaletteFromFile(a1, a2, Source, 1, 1); /*0x6ba12e*/
+  return LoadPaletteFromFile( a1, a2, (char *)(Source), 1, 1); /*0x6ba12e*/
 }
 } // namespace gamemd
 
@@ -1574,8 +1574,8 @@ char sub_72D120()
   if ( !byte_B0FCCE ) /*0x72d127*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72d133*/
-      dword_B0FAB8 = LoadFileSHP(off_844D64, (bool *)&byte_B0FCCD); /*0x72d145*/
-    result = LoadPaletteSimple(off_844D68, &dword_B0FCD0, &dword_B0FCD4); /*0x72d15a*/
+      dword_B0FAB8 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844D64), (ConvertClass *)((bool *)&byte_B0FCCD)); /*0x72d145*/
+    result = LoadPaletteSimple( (char *)(off_844D68), (int *)(&dword_B0FCD0), (unsigned int *)(&dword_B0FCD4)); /*0x72d15a*/
     byte_B0FCCE = 1; /*0x72d15f*/
   }
   return result; /*0x72d166*/
@@ -1734,7 +1734,7 @@ char sub_72F430()
 namespace gamemd {
 CCINIClass * UI_Load_72F4A0()
 {
-  return dword_B0FBE4; /*0x72f4a5*/
+  return (CCINIClass *)dword_B0FBE4; /*0x72f4a5*/
 }
 } // namespace gamemd
 
@@ -1758,7 +1758,7 @@ int sub_72F4D0()
 namespace gamemd {
 CCINIClass * UI_Load_72F4E0()
 {
-  return dword_B0FBFC; /*0x72f4e5*/
+  return (CCINIClass *)dword_B0FBFC; /*0x72f4e5*/
 }
 } // namespace gamemd
 
@@ -1786,7 +1786,7 @@ int sub_731A30()
   result = dword_A8B538; /*0x731a30*/
   if ( !dword_A8B538 ) /*0x731a37*/
 // 0x4ac960
-    return MapClass::ToggleZoom((int *)&dword_87F7E8, -1); /*0x731a40*/
+    return ((MapClass *)(int *)&dword_87F7E8)->ToggleZoom( -1); /*0x731a40*/
   return result; /*0x731a45*/
 }
 } // namespace gamemd
@@ -1853,7 +1853,7 @@ char sub_732CC0()
     if ( v0 <= 500 ) /*0x732ce6*/
     {
       SelectAllOfType(); /*0x732ce8*/
-      IDA_LOBYTE(v0) = MapClass::MarkForRedraw(&dword_87F7E8, 1); /*0x732cf4*/
+      IDA_LOBYTE(v0) = MapClass::MarkForRedraw( (int)(&dword_87F7E8), 1); /*0x732cf4*/
     }
   }
   return v0; /*0x732cf9*/
@@ -1970,10 +1970,10 @@ ObjectClass * UI_Setup_793A10(void * a1, short a2)
     ++v5; /*0x793a4a*/
     ++v4; /*0x793a4d*/
     if ( (int)v5 >= (int)&dword_A8DAB0 ) /*0x793a54*/
-      return result; /*0x793a54*/
+      return (ObjectClass *)result; /*0x793a54*/
   }
   *((unsigned short *)&dword_A8E050 + v4) = a2; /*0x793a5b*/
-  return result; /*0x793a56*/
+  return (ObjectClass *)result; /*0x793a56*/
 }
 } // namespace gamemd
 
@@ -1991,11 +1991,11 @@ void sub_7A2750()
   DlgItem = GetDlgItem(Current, 1439); /*0x7a2768*/
   ((String *)((char **)&v4))->Assign(0); /*0x7a276c*/
   v2 = SendMultiplayerStartSignal_Start_77EBA0((const char **)&v4) != 1; /*0x7a2781*/
-  DeleteAndZero(&v4); /*0x7a2784*/
+  j_DeleteAndZero(&v4); /*0x7a2784*/
   if ( v2 ) /*0x7a278b*/
   {
     SendMessageA(DlgItem, 0x4DCu, 0, 1); /*0x7a2797*/
-    StringCSF = GetStringCSF(aGuiHostgamesta_0, 0, g_Str_File_wonline_cpp, 29202); /*0x7a27ae*/
+    StringCSF = GetStringCSF( aGuiHostgamesta_0, 0, (const char *)(g_Str_File_wonline_cpp), 29202); /*0x7a27ae*/
     Dialog::ShowMessage(-1, (size_t)StringCSF); /*0x7a27b6*/
   }
 }

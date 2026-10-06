@@ -164,14 +164,14 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
 
   void *m_C; // eax
 
-  m_C = (void *)Block->m_C; /*0x49aa48*/
-  *(unsigned int *)Block->__pad_0 = &vt_RLEBlitTransZRemapXlatAlpha; /*0x49aa4b*/
+  m_C = (void *)this->m_C; /*0x49aa48*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_RLEBlitTransZRemapXlatAlpha;
   FractalNoise::Dtor(m_C); /*0x49aa52*/
-  Block->m_C = 0; /*0x49aa5b*/
-  *(unsigned int *)Block->__pad_0 = &vt_RLEBlitter; /*0x49aa64*/
+  this->m_C = 0; /*0x49aa5b*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_RLEBlitter;
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
-    __3_YAXPAX_Z(Block); /*0x49aa6d*/
-  return Block->__pad_0; /*0x49aa77*/
+    __3_YAXPAX_Z(this); /*0x49aa6d*/
+  return this->__pad_0; /*0x49aa77*/
 
 }
 } // namespace gamemd

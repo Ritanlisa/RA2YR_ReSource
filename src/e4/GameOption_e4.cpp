@@ -48,7 +48,7 @@ void * GameOption::SetDigest(char *aP1)
 
   if ( aP1 ) /*0x69ad89*/
   {
-    result = strncpy((char *)((unsigned char *)this + 348), aP1, 0x20u); /*0x69ad95*/
+    result = strncpy( (char *)((unsigned char *)this + 348), (const char *)(aP1), 0x20u); /*0x69ad95*/
     this->q17B = 0; /*0x69ad9d*/
   }
   else

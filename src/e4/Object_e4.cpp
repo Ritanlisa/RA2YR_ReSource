@@ -152,7 +152,7 @@ int Object::IsAlliedWithObjectHouse(int aP1)
 
   if ( !aP1 ) /*0x4f9a99*/
     goto LABEL_9; /*0x4f9a99*/
-  result = (*(int (**)(int))(*(unsigned int *)&aP1->q_F0)(aP1); /*0x4f9a9d*/
+  result = (*(int (**)(int))(*(unsigned int *)&aP1->q_F0))(aP1);  /*0x4f9a9d*/
   if ( !result ) /*0x4f9aa2*/
     goto LABEL_9; /*0x4f9aa2*/
   if ( (Object *)result == this ) /*0x4f9aa6*/
@@ -193,7 +193,7 @@ int Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
     goto LABEL_10; /*0x4f9af9*/
   if ( (a2[20] & 2) == 0 ) /*0x4f9aff*/
     goto LABEL_10; /*0x4f9aff*/
-  result = (*(int (**)(void))(*(unsigned int *)&a2->q_F0)(); /*0x4f9b03*/
+  result = (*(int (**)(void))(*(unsigned int *)&a2->q_F0))();  /*0x4f9b03*/
   if ( !result ) /*0x4f9b08*/
     goto LABEL_10; /*0x4f9b08*/
   if ( (Object *)result == this ) /*0x4f9b0c*/
@@ -515,7 +515,7 @@ void* Object::HandleAction(int * a2, int * a3)
   v32 = *location; /*0x5fd993*/
   v33 = ((unsigned int *)this)[1]; /*0x5fd99f*/
   v34 = ((unsigned int *)this)[2]; /*0x5fd9a6*/
-  GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v32)); /*0x5fd9af*/
+  GroundHeight = Cell::GetGroundHeight( (unsigned int *)(&v32)); /*0x5fd9af*/
   v29 = ZCoordToScreenY(GroundHeight); /*0x5fd9c1*/
   v7 = 0; /*0x5fd9c5*/
   if ( *(int *)&stru_A83D50.__pad_3C[4] <= 0 ) /*0x5fd9c9*/
@@ -600,7 +600,7 @@ LABEL_20:
     v32 = *location; /*0x5fdb2b*/
     v33 = ((unsigned int *)this)[1]; /*0x5fdb32*/
     v34 = ((unsigned int *)this)[2]; /*0x5fdb41*/
-    v20 = *(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x5fdb60*/
+    v20 = *(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)&(&dword_A83D4C)[((unsigned int *)&134.__pad_90)[4]; /*0x5fdb60*/
     v27 = *(int16_t *)((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v32)->CellClass_field_10C; /*0x5fdb7c*/
     DrawToSurfaceSHP( /*0x5fdb9a*/
       (int)g_DSurface_Hidden_2,
@@ -689,13 +689,13 @@ void * Object::DrawObject(void ** Block, char a2)
   int v3; // eax
   OverlayClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable1 = &vt_OverlayClass; /*0x5fdf76*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf7c*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf83*/
-  ((unsigned int *)Block)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf8a*/
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(Block), 1); /*0x5fdf91*/
-  v5 = (gamemd::OverlayClass *)(Block); /*0x5fdfa6*/
-  v3 = (*(int (**)(unsigned char *, OverlayClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 108) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 108), &v5); /*0x5fdfaa*/
+  this->vtable1 = &vt_OverlayClass; /*0x5fdf76*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf7c*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf83*/
+  ((unsigned int *)this)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf8a*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(this), 1); /*0x5fdf91*/
+  v5 = (gamemd::OverlayClass *)(this); /*0x5fdfa6*/
+  v3 = (*(int (**)(unsigned char *, OverlayClass **))(*(unsigned int *)((char *)&stru_A8EB00 + 108) + 16))( ((char *)&stru_A8EB00 + 108), (OverlayClass **)(&v5)); /*0x5fdfaa*/
   if ( v3 != -1 && v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 124) ) /*0x5fdfba*/
   {
     --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 124); /*0x5fdfbf*/
@@ -707,12 +707,12 @@ void * Object::DrawObject(void ** Block, char a2)
     }
   }
   if ( byte_A8E9A0 ) /*0x5fdfe6*/
-    ((ObjectClass *)((ObjectClass *)Block))->Undeploy(); /*0x5fdfea*/
-  Block->Type = 0; /*0x5fdff1*/
-  ((ObjectClass *)((ObjectClass *)Block))->Dtor(); /*0x5fdffb*/
+    ((ObjectClass *)((ObjectClass *)this))->Undeploy(); /*0x5fdfea*/
+  this->Type = 0; /*0x5fdff1*/
+  ((ObjectClass *)((ObjectClass *)this))->Dtor(); /*0x5fdffb*/
   if ( (a2 & 1) != 0 ) /*0x5fe005*/
-    __3_YAXPAX_Z(Block); /*0x5fe008*/
-  return Block; /*0x5fe012*/
+    __3_YAXPAX_Z(this); /*0x5fe008*/
+  return this; /*0x5fe012*/
 
 }
 }
@@ -1275,7 +1275,7 @@ char Object_Calc_7DF191(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
 }
 // 0x7DF280
 namespace gamemd {
-char Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
+char Object_Calc_7DF280(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8)
 {
   unsigned char *v8; // esi
   unsigned short *v9; // edi
@@ -1347,7 +1347,7 @@ char Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a
 }
 // 0x7DF3C2
 namespace gamemd {
-void Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
+void Object_Calc_7DF3C2(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8)
 {
   unsigned char *v8; // esi
   unsigned short *v9; // edi
@@ -1419,7 +1419,7 @@ void Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a
 }
 // 0x7DF500
 namespace gamemd {
-void Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
+void Object_Calc_7DF500(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8)
 {
   unsigned char *v8; // esi
   unsigned short *v9; // edi
@@ -1491,7 +1491,7 @@ void Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a
 }
 // 0x7DF640
 namespace gamemd {
-void Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
+void Object_Calc_7DF640(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8)
 {
   unsigned char *v8; // esi
   unsigned short *v9; // edi
@@ -1749,7 +1749,7 @@ char Object::CheckState(IUnknown * aP1, int a3)
   if ( ((CellClass *)(v5))->FindInfantry(0) ) /*0x5fd2ba*/
     return 0; /*0x5fd2c4*/
   else
-    return ObjectClass::Deploy((ObjectClass *)this); /*0x5fd2d2*/
+    return ((ObjectClass *)(ObjectClass *)this)->Deploy(); /*0x5fd2d2*/
 
 }
 } // namespace gamemd
@@ -1784,7 +1784,7 @@ namespace gamemd {
 int Object::SaveObject(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x5fd964*/
+  return AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)aP0), (ObjectTypeClass *)(a1), (ObjectTypeClass *)(aP2)); /*0x5fd964*/
 
 }
 } // namespace gamemd
@@ -1890,10 +1890,10 @@ namespace gamemd {
 SessionClass * Object::DtorWithDelete(void ** Block, char a2)
 {
 
-  DeleteAndZero((ObjectClass *)Block); /*0x7ad333*/
+  j_DeleteAndZero((ObjectClass *)this); /*0x7ad333*/
   if ( (a2 & 1) != 0 ) /*0x7ad33d*/
-    __3_YAXPAX_Z(Block); /*0x7ad340*/
-  return (void **)Block; /*0x7ad34a*/
+    __3_YAXPAX_Z(this); /*0x7ad340*/
+  return (void **)this; /*0x7ad34a*/
 
 }
 } // namespace gamemd

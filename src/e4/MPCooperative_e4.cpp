@@ -192,7 +192,7 @@ int MPCooperative::WriteCoopSaveINI()
   v15.ownsFile = 0; /*0x49bea1*/
   *(unsigned int *)v15.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x49bea5*/
   ((CCINIClass *)((int)(&v15)))->Load((int)&v19, 0, 0); /*0x49bead*/
-  CCFileClass::Reset(&v19); /*0x49beb9*/
+  CCFileClass::Reset( &v19); /*0x49beb9*/
   v3 = 0; /*0x49bec0*/
   if ( *v1 )
   {
@@ -254,11 +254,11 @@ int MPCooperative::WriteCoopSaveINI()
   ((unsigned int *)(g_IsWindowed))[v9] = (unsigned int)(0);
   strcat(v22,(const char *)(g_IsWindowed)); /*0x49bff9*/
   CCFileClass::Construct3((int)&v16); /*0x49c006*/
-  (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v16.CDFileClass + 8))(&v16, g_Str_File_coopsave_ini); /*0x49c018*/
-  (*(void (**)(CCFileClass *, int))(*(unsigned int *)v16.CDFileClass + 28))(&v16, 2); /*0x49c025*/
+  (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v16.CDFileClass + 8))( (CCFileClass *)(&v16), (char *)(g_Str_File_coopsave_ini)); /*0x49c018*/
+  (*(void (**)(CCFileClass *, int))(*(unsigned int *)v16.CDFileClass + 28))( (CCFileClass *)(&v16), 2); /*0x49c025*/
   INIClass::ClearSection((int *)v15.INIClass, (int)v22, 0); /*0x49c035*/
   INIClass::WriteDigest((INIClass *)&v15, (int)&v16, 0); /*0x49c044*/
-  CCFileClass::Reset(&v16); /*0x49c04d*/
+  CCFileClass::Reset( &v16); /*0x49c04d*/
   *(unsigned int *)v16.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x49c05e*/
   v18 = 0; /*0x49c062*/
   ((Vector *)((int)v17))->Clear(); /*0x49c069*/
@@ -412,7 +412,7 @@ int MPCooperative::ReadCoopSaveINI()
   }
   ((unsigned int *)(g_IsWindowed))[v10] = 0; /*0x49d30c*/
   strcat(v23,(const char *)(g_IsWindowed)); /*0x49d331*/
-  v15 = INIClass::BinarySearchSection((gamemd::INIClass *)((int)v19), (uint8_t *)v23) != 0; /*0x49d354*/
+  v15 = ((INIClass *)(gamemd::INIClass *)((int)v19))->BinarySearchSection( (uint8_t *)v23) != 0; /*0x49d354*/
   ((HashTable *)(v19))->DestroyHashTableINIClass(); /*0x49d357*/
   v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d360*/
   v18 = 0; /*0x49d368*/
@@ -687,7 +687,7 @@ int MPCooperative::Read(void *a1_1, void *a2_1)
   }
   v5 = *(unsigned int *)&this->__pad_328[4]; /*0x5c18d5*/
   p_MPCooperative_field_0x324 = &this->q324; /*0x5c18db*/
-  (*(void (**)(int *))(this->q324 + 12))(&this->q324); /*0x5c18e3*/
+  (*(void (**)(int *))(this->q324 + 12))( (int *)(&this->q324)); /*0x5c18e3*/
   (*(void (**)(int *, int, unsigned int))(this->q324 + 8))( /*0x5c18ed*/
     &this->q324,
     v5,
@@ -810,19 +810,19 @@ LABEL_30:
       if ( _strnicmp( /*0x5c1c0e*/
              (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88),
              String2,
-             strlen(String2)) )
+             strlen( (const char *)(String2))) )
       {
         v15 = v8 == 0; /*0x5c1c21*/
         do /*0x5c1c6f*/
         {
-          Movie::SetupScreen((int)this->MPCooperative_field_0x40, v15); /*0x5c1c2d*/
-          Movie::SetupScreen((int)this->MPCooperative_field_0x40, (int)v8); /*0x5c1c36*/
-          Array::GetElementAt((int *)this->MPCooperative_field_0x40, &String2, 0); /*0x5c1c45*/
+          ((Movie *)(int)this->MPCooperative_field_0x40)->SetupScreen( v15); /*0x5c1c2d*/
+          ((Movie *)(int)this->MPCooperative_field_0x40)->SetupScreen( (int)v8); /*0x5c1c36*/
+          ((Array *)(int *)this->MPCooperative_field_0x40)->GetElementAt( &String2, 0); /*0x5c1c45*/
         }
         while ( _strnicmp( /*0x5c1c6f*/
                   (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88),
                   String2,
-                  strlen(String2)) );
+                  strlen( (const char *)(String2))) );
       }
     }
     else
@@ -830,11 +830,11 @@ LABEL_30:
       v9 = (int *)this->MPCooperative_field_0x40; /*0x5c1b23*/
       this->q33C = 0; /*0x5c1b26*/
       String2 = 0; /*0x5c1b2c*/
-      Array::GetElementAt(v9, &String2, 0); /*0x5c1b30*/
+      ((Array *)v9)->GetElementAt( &String2, 0); /*0x5c1b30*/
       v10 = 0; /*0x5c1b3a*/
       if ( dword_A8B8D8 > 0 ) /*0x5c1b3e*/
       {
-        while ( _strnicmp((const char *)(*(unsigned int *)(dword_A8B8CC + 4 * v10) + 88), String2, strlen(String2)) ) /*0x5c1b69*/
+        while ( _strnicmp((const char *)(*(unsigned int *)(dword_A8B8CC + 4 * v10) + 88), String2, strlen( (const char *)(String2))) ) /*0x5c1b69*/
         {
           if ( ++v10 >= dword_A8B8D8 ) /*0x5c1b73*/
             goto LABEL_25; /*0x5c1b73*/
@@ -898,7 +898,7 @@ LABEL_10:
     (*((void (**)(MPCooperative *))this->MPCooperative_field_0x0 + 4))(this); /*0x5c1d5d*/
     return -1; /*0x5c1d6f*/
   }
-  while ( _strnicmp((const char *)(*(unsigned int *)(dword_A8B8CC + 4 * v2) + 88), String2, strlen(String2)) ) /*0x5c1d51*/
+  while ( _strnicmp((const char *)(*(unsigned int *)(dword_A8B8CC + 4 * v2) + 88), String2, strlen( (const char *)(String2))) ) /*0x5c1d51*/
   {
     if ( ++v2 >= dword_A8B8D8 ) /*0x5c1d5b*/
       goto LABEL_10; /*0x5c1d5b*/
@@ -942,7 +942,7 @@ CampaignClass * * MPCooperative::Seek(void *a1_1, void *a2_1, void *a3_1)
       MPCooperative_field_0x40 = (void *)(this->MPCooperative_field_0x40); /*0x5c1e36*/
       if ( MPCooperative_field_0x40 ) /*0x5c1e3b*/
       {
-        Array::Cleanup((Array *)this->MPCooperative_field_0x40); /*0x5c1e3f*/
+        ((Array *)(Array *)this->MPCooperative_field_0x40)->Cleanup(); /*0x5c1e3f*/
         __3_YAXPAX_Z(MPCooperative_field_0x40); /*0x5c1e45*/
       }
       this->MPCooperative_field_0x40 = (unsigned int)(*(void **)(*(unsigned int *)this->__pad_328 + 4 * v3)); /*0x5c1e58*/
@@ -1023,7 +1023,7 @@ LABEL_16:
       return 0; /*0x5c1ed3*/
     }
   }
-  return result; /*0x5c1dcf*/
+  return (CampaignClass * *)result; /*0x5c1dcf*/
 
 }
 }
@@ -1040,7 +1040,7 @@ int MPCooperative::Revert()
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v7 = 0; /*0x5c1faa*/
-  Movie::GetSection((int)&g_DDrawSurfaceManager, (int)this->q33C, &v8); /*0x5c1fbf*/
+  ((Movie *)(int)&g_DDrawSurfaceManager)->GetSection( (int)this->q33C, &v8); /*0x5c1fbf*/
   if ( !v8 ) /*0x5c1fca*/
     return -2; /*0x5c1fcc*/
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c1fd6*/
@@ -1283,7 +1283,7 @@ int MPCooperative::SyncState()
 
   MPCooperative_field_0x33C = this->MPCooperative_field_0x33C; /*0x5c2727*/
   v36 = this; /*0x5c272d*/
-  Movie::GetSection((int)&g_DDrawSurfaceManager, (int)MPCooperative_field_0x33C, &v35); /*0x5c2731*/
+  ((Movie *)(int)&g_DDrawSurfaceManager)->GetSection( (int)MPCooperative_field_0x33C, &v35); /*0x5c2731*/
   sprintf(Buffer, "C1,%d", *(char *)(v35 + 8)); /*0x5c2749*/
   MPCooperative_field_0x1A4 = this->MPCooperative_field_0x1A4; /*0x5c2751*/
   v3 = 8; /*0x5c2757*/
@@ -1312,7 +1312,7 @@ int MPCooperative::SyncState()
     {
       do /*0x5c27ec*/
       {
-        g_MissionQueueFrame.localVariables[v6 + 631] = MPCooperative::finalizeSession((MPCooperative *)dword_A8DA78[v6]); /*0x5c27e2*/
+        g_MissionQueueFrame.localVariables[v6 + 631] = ((MPCooperative *)(MPCooperative *)dword_A8DA78[v6])->finalizeSession(); /*0x5c27e2*/
         ++v6; /*0x5c27e9*/
       }
       while ( v6 < v7 ); /*0x5c27ec*/
@@ -1798,7 +1798,7 @@ LABEL_17:
       }
     }
   }
-  *(unsigned int *)v17 = &vt_VectorClass; /*0x5c308d*/
+  *(unsigned int *)v17 = (unsigned int)&vt_VectorClass;
   if ( Block && v19 ) /*0x5c30a0*/
     __3_YAXPAX_Z(Block); /*0x5c30a3*/
   return 1; /*0x5c30ad*/
@@ -1828,7 +1828,7 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
   MPCooperative_field_0x33C = this->MPCooperative_field_0x33C; /*0x5c3105*/
   v10 = 0; /*0x5c310f*/
   v9 = 0; /*0x5c311a*/
-  Movie::GetSection((int)&g_DDrawSurfaceManager, (int)MPCooperative_field_0x33C, &v11); /*0x5c311e*/
+  ((Movie *)(int)&g_DDrawSurfaceManager)->GetSection( (int)MPCooperative_field_0x33C, &v11); /*0x5c311e*/
   if ( !v11 ) /*0x5c3129*/
     return 0; /*0x5c312e*/
   if ( !*(unsigned int *)(v11 + 56) ) /*0x5c3135*/
@@ -1904,7 +1904,7 @@ AbstractClass * * MPCooperative::GetMapData()
     do /*0x5c337f*/
     {
       v2 = *(unsigned int *)((char *)((char *)&stru_A80220) + v9); /*0x5c325b*/
-      ToWideStringChar((char *)(v2 + 90154)); /*0x5c3264*/
+      ToWideStringChar( (IUnknown *)((char *)(v2 + 90154))); /*0x5c3264*/
       Debug::Log(); /*0x5c3276*/
       if ( *(unsigned char *)(*(unsigned int *)(v2 + 52) + 422) || !*(unsigned char *)(v2 + 492) ) /*0x5c328f*/
       {
@@ -1919,12 +1919,12 @@ AbstractClass * * MPCooperative::GetMapData()
           do /*0x5c3360*/
           {
             v4 = *((unsigned int *)((char *)&stru_A80220) + v1); /*0x5c32b4*/
-            ToWideStringChar((char *)(v4 + 90154)); /*0x5c32bf*/
+            ToWideStringChar( (IUnknown *)((char *)(v4 + 90154))); /*0x5c32bf*/
             Debug::Log(); /*0x5c32ca*/
             if ( !*(unsigned char *)(*(unsigned int *)(v4 + 52) + 422) && *(unsigned char *)(v4 + 492) ) /*0x5c32df*/
             {
-              ToWideStringChar((char *)(v4 + 90154)); /*0x5c32eb*/
-              ToWideStringChar((char *)(v2 + 90154)); /*0x5c32f8*/
+              ToWideStringChar( (IUnknown *)((char *)(v4 + 90154))); /*0x5c32eb*/
+              ToWideStringChar( (IUnknown *)((char *)(v2 + 90154))); /*0x5c32f8*/
               Debug::Log(); /*0x5c3334*/
               ((HouseClass *)((int *)v2))->HandleAlliance(v4, 0); /*0x5c3341*/
               ((HouseClass *)((int *)v4))->HandleAlliance(v2, 0); /*0x5c334b*/
@@ -1950,7 +1950,7 @@ AbstractClass * * MPCooperative::GetMapData()
       do /*0x5c34d1*/
       {
         v6 = *(unsigned int *)((char *)((char *)&stru_A80220) + v10); /*0x5c33a8*/
-        ToWideStringChar((char *)(v6 + 90154)); /*0x5c33b1*/
+        ToWideStringChar( (IUnknown *)((char *)(v6 + 90154))); /*0x5c33b1*/
         Debug::Log(); /*0x5c33c3*/
         if ( !*(unsigned char *)(*(unsigned int *)(v6 + 52) + 422) && !*(unsigned char *)(v6 + 492) ) /*0x5c33dc*/
         {
@@ -1960,12 +1960,12 @@ AbstractClass * * MPCooperative::GetMapData()
             do /*0x5c34ac*/
             {
               v7 = *((unsigned int *)((char *)&stru_A80220) + v5); /*0x5c3400*/
-              ToWideStringChar((char *)(v7 + 90154)); /*0x5c340b*/
+              ToWideStringChar( (IUnknown *)((char *)(v7 + 90154))); /*0x5c340b*/
               Debug::Log(); /*0x5c3416*/
               if ( !*(unsigned char *)(*(unsigned int *)(v7 + 52) + 422) && !*(unsigned char *)(v7 + 492) ) /*0x5c342b*/
               {
-                ToWideStringChar((char *)(v7 + 90154)); /*0x5c3437*/
-                ToWideStringChar((char *)(v6 + 90154)); /*0x5c3444*/
+                ToWideStringChar( (IUnknown *)((char *)(v7 + 90154))); /*0x5c3437*/
+                ToWideStringChar( (IUnknown *)((char *)(v6 + 90154))); /*0x5c3444*/
                 Debug::Log(); /*0x5c3480*/
                 ((HouseClass *)((int *)v6))->HandleAlliance(v7, 0); /*0x5c348d*/
                 ((HouseClass *)((int *)v7))->HandleAlliance(v6, 0); /*0x5c3497*/
@@ -2011,7 +2011,7 @@ int MPCooperative::ReceiveMessage()
   v13 = 0; /*0x5c350b*/
   ((Movie *)(MPCooperative_field_0x40))->GetSectionID(&v13); /*0x5c350f*/
   v11 = 0; /*0x5c3523*/
-  Movie::GetSection((int)&g_DDrawSurfaceManager, v13, &v12); /*0x5c3527*/
+  ((Movie *)(int)&g_DDrawSurfaceManager)->GetSection( v13, &v12); /*0x5c3527*/
   if ( !v12 ) /*0x5c3530*/
     return 0; /*0x5c3535*/
   v6 = (int *)this->MPCooperative_field_0x40; /*0x5c353c*/
@@ -2067,7 +2067,7 @@ int MPCooperative::HandleEvent()
   v13 = 0; /*0x5c360b*/
   ((Movie *)(MPCooperative_field_0x40))->GetSectionID(&v13); /*0x5c360f*/
   v11 = 0; /*0x5c3623*/
-  Movie::GetSection((int)&g_DDrawSurfaceManager, v13, &v12); /*0x5c3627*/
+  ((Movie *)(int)&g_DDrawSurfaceManager)->GetSection( v13, &v12); /*0x5c3627*/
   if ( !v12 ) /*0x5c3630*/
     return 0; /*0x5c3635*/
   v6 = (int *)this->MPCooperative_field_0x40; /*0x5c363c*/
@@ -2139,7 +2139,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
   {
     v6 = (MPCooperative *)__2_YAPAXI_Z(8u); /*0x5c3b2d*/
     if ( v6 ) /*0x5c3b37*/
-      inited = (MultiplayerGameMode *)MPCooperative::initGame(v6); /*0x5c3b3b*/
+      inited = (MultiplayerGameMode *)((MPCooperative *)v6)->initGame(); /*0x5c3b3b*/
     else
       inited = 0; /*0x5c3b42*/
     v4->MPCooperative_field_0x50 = inited; /*0x5c3b44*/
@@ -2157,7 +2157,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
   }
   else if ( dword_A8DA84 == 2 ) /*0x5c3b71*/
   {
-    v9 = __2_YAPAXI_Z(0x70u); /*0x5c3b75*/
+    v9 = (unsigned int)__2_YAPAXI_Z(0x70u); /*0x5c3b75*/
     if ( v9 ) /*0x5c3b7f*/
       v4->MPCooperative_field_0x40 = (void *)MPCooperative::processTurn( /*0x5c3b95*/
                                                v9,
@@ -2176,7 +2176,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
         v12 = ((MissionClass *)(v11))->Init(); /*0x5c3bf7*/
       else
         v12 = 0; /*0x5c3bfb*/
-      Movie::SetupScreen((int)v12, i); /*0x5c3c00*/
+      ((Movie *)(int)v12)->SetupScreen( i); /*0x5c3c00*/
       v13 = *(unsigned int *)&v4->__pad_328[4]; /*0x5c3c05*/
       if ( *(unsigned int *)&v4->__pad_328[12] >= v13 ) /*0x5c3c0d*/
       {
@@ -2200,7 +2200,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
   }
   v17 = 0; /*0x5c3c49*/
   ((IsometricTileTypeClass *)(&v27))->Constructor_0(0, 0); /*0x5c3c51*/
-  *(unsigned int *)v27.__pad_0 = &vt_DynamicVectorClass; /*0x5c3c60*/
+  *(unsigned int *)v27.__pad_0 = (unsigned int)&vt_DynamicVectorClass;
   v27.IsometricTileTypeClass_field_0x14 = 10; /*0x5c3c68*/
   v27.IsometricTileTypeClass_field_0x10 = 0; /*0x5c3c70*/
   SmallFunc_49E740((int)&g_DDrawSurfaceManager, &v27); /*0x5c3c74*/
@@ -2211,7 +2211,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
     {
       if ( *(unsigned int *)(v27.IsometricTileTypeClass_field_0x04 + 4 * v17) ) /*0x5c3c94*/
       {
-        Array::GetElementAt(*(int **)(*(unsigned int *)v4->__pad_328 + 4 * v17), &v27.IsometricTileTypeClass_field_0x18, -1); /*0x5c3cae*/
+        ((Array *)*(int **)(*(unsigned int *)v4->__pad_328 + 4 * v17))->GetElementAt( &v27.IsometricTileTypeClass_field_0x18, -1); /*0x5c3cae*/
         v24 = *(unsigned int *)(a3 + 16); /*0x5c3cc5*/
         v18 = 0; /*0x5c3cc9*/
         sprintf( /*0x5c3ccb*/
@@ -2257,10 +2257,10 @@ LABEL_34:
   v20 = (char *)v4->MPCooperative_field_0x40; /*0x5c3d9c*/
   if ( v20 ) /*0x5c3da1*/
   {
-    if ( MPCooperative::ReadCoopSaveINI(v20) && !BYTE1(v4->MPCooperative_field_0x48) ) /*0x5c3db4*/
+    if ( ((MPCooperative *)v20)->ReadCoopSaveINI() && !BYTE1(v4->MPCooperative_field_0x48) ) /*0x5c3db4*/
     {
       LoadCoopCampaignSave((char *)v4->MPCooperative_field_0x40, (char *)&v27.IsometricTileTypeClass_field_0x1C); /*0x5c3dc7*/
-      strcat((char *)&v27.IsometricTileTypeClass_field_0x1C, g_Str_File__MAP); /*0x5c3df1*/
+      strcat( (char *)&v27.IsometricTileTypeClass_field_0x1C, (const char *)(g_Str_File__MAP)); /*0x5c3df1*/
       IsometricTileTypeClass_field_0x08 = *(unsigned int *)(a3 + 16); /*0x5c3dfb*/
       v21 = 0; /*0x5c3e01*/
       v22 = 0; /*0x5c3e03*/
@@ -2279,7 +2279,7 @@ LABEL_34:
             break; /*0x5c3e39*/
           }
         }
-        StringCSF = GetStringCSF(aTxtCoopUseSave, 0, g_Str_File_MPCoop_cpp, 1726); /*0x5c3e3b*/
+        StringCSF = GetStringCSF( aTxtCoopUseSave, 0, (const char *)(g_Str_File_MPCoop_cpp), 1726); /*0x5c3e3b*/
         SendMessageA(hWnd, 0x4CDu, 0, (LPARAM)StringCSF); /*0x5c3e67*/
         SendMessageA(hWnd, 0x19Au, v17, v21); /*0x5c3e71*/
         BYTE1(v26->MPCooperative_field_0x48) = 1; /*0x5c3e77*/
@@ -2288,7 +2288,7 @@ LABEL_34:
   }
 LABEL_47:
   SendMessageA(hWnd, 0x186u, 0, 0); /*0x5c3e7b*/
-  *(unsigned int *)v27.__pad_0 = &vt_VectorClass; /*0x5c3e9b*/
+  *(unsigned int *)v27.__pad_0 = (unsigned int)&vt_VectorClass;
   if ( v27.IsometricTileTypeClass_field_0x04 ) /*0x5c3ea4*/
   {
     if ( BYTE1(v27.IsometricTileTypeClass_field_0x0C) ) /*0x5c3eac*/
@@ -2320,11 +2320,11 @@ void MPCooperative::SetGameMode()
     if ( MPCooperative_field_0x40 && LOBYTE(this->MPCooperative_field_0x48) ) /*0x5c401e*/
     {
       if ( this->MPCooperative_field_0x4C ) /*0x5c4029*/
-        Movie::SetupScreen((int)MPCooperative_field_0x40, 0); /*0x5c4032*/
+        ((Movie *)(int)MPCooperative_field_0x40)->SetupScreen( 0); /*0x5c4032*/
       else
-        Movie::SetupScreen((int)MPCooperative_field_0x40, 1); /*0x5c403f*/
-      Movie::SetupScreen((int)this->MPCooperative_field_0x40, (int)this->MPCooperative_field_0x4C); /*0x5c403b*/
-      Array::GetElementAt((int *)this->MPCooperative_field_0x40, &v11, -1); /*0x5c405a*/
+        ((Movie *)(int)MPCooperative_field_0x40)->SetupScreen( 1); /*0x5c403f*/
+      ((Movie *)(int)this->MPCooperative_field_0x40)->SetupScreen( (int)this->MPCooperative_field_0x4C); /*0x5c403b*/
+      ((Array *)(int *)this->MPCooperative_field_0x40)->GetElementAt( &v11, -1); /*0x5c405a*/
       v7 = dword_A8B8D8; /*0x5c4063*/
       sprintf(Buffer, "%s.MAP", v11); /*0x5c4074*/
       for ( i = 0; i < v7; ++i ) /*0x5c4080*/
@@ -2342,7 +2342,7 @@ void MPCooperative::SetGameMode()
     {
       SetDialogPlayerName(GameUI, (int)this); /*0x5c40cd*/
       Dialog::ShowPlayerName(v10); /*0x5c40d4*/
-      Session::PrepareGame((Session *)v10); /*0x5c40db*/
+      Session::PrepareGame( (HWND)((Session *)v10)); /*0x5c40db*/
     }
     CheckGameSettingsChanged(1, 1); /*0x5c40e4*/
 LABEL_21:
@@ -2401,7 +2401,7 @@ AbstractClass * * MPCooperative::ProcessChat()
     else
       v4 = 0; /*0x5c413e*/
     this->MPCooperative_field_0x40 = v4; /*0x5c4144*/
-    LOBYTE(MPCooperative_field_0x40) = Movie::SetupScreen((int)v4, 0); /*0x5c4147*/
+    LOBYTE(MPCooperative_field_0x40) = ((Movie *)(int)v4)->SetupScreen( 0); /*0x5c4147*/
   }
   v5 = (char *)this->MPCooperative_field_0x40; /*0x5c414c*/
   if ( v5 ) /*0x5c4151*/
@@ -2409,7 +2409,7 @@ AbstractClass * * MPCooperative::ProcessChat()
     if ( dword_A8DA84 == 2 ) /*0x5c415e*/
       ((String *)(v5))->AssignWideToChar((char *)*dword_A8DA78, (char *)dword_A8DA78[1]); /*0x5c416c*/
     (*((void (**)(MPCooperative *))this->MPCooperative_field_0x0 + 24))(this); /*0x5c4175*/
-    LOBYTE(MPCooperative_field_0x40) = MPCooperative::ReadCoopSaveINI((char *)this->MPCooperative_field_0x40); /*0x5c417b*/
+    LOBYTE(MPCooperative_field_0x40) = ((MPCooperative *)(char *)this->MPCooperative_field_0x40)->ReadCoopSaveINI(); /*0x5c417b*/
     if ( (unsigned char)MPCooperative_field_0x40 ) /*0x5c4182*/
     {
       if ( Dialog::GetCurrentType() == 107 ) /*0x5c4190*/
@@ -2420,7 +2420,7 @@ AbstractClass * * MPCooperative::ProcessChat()
           LoadCoopCampaignSave((char *)this->MPCooperative_field_0x40, Destination); /*0x5c41a9*/
           LOBYTE(MPCooperative_field_0x40) = 0; /*0x5c41b6*/
           v6 = 0; /*0x5c41c2*/
-          strcat(Destination, g_Str_File__MAP); /*0x5c41d5*/
+          strcat( (char *)(Destination), (const char *)(g_Str_File__MAP)); /*0x5c41d5*/
           v7 = dword_A8B8D8; /*0x5c41de*/
           v8 = 0; /*0x5c41e4*/
           if ( dword_A8B8D8 > 0 ) /*0x5c41e8*/
@@ -2445,7 +2445,7 @@ AbstractClass * * MPCooperative::ProcessChat()
             v12 = (WPARAM)MPCooperative_field_0x40; /*0x5c4249*/
             if ( MPCooperative_field_0x40 != (unsigned int *)-1 ) /*0x5c424e*/
             {
-              StringCSF = GetStringCSF(aTxtCoopUseSave, 0, g_Str_File_MPCoop_cpp, 1914); /*0x5c4261*/
+              StringCSF = GetStringCSF( aTxtCoopUseSave, 0, (const char *)(g_Str_File_MPCoop_cpp), 1914); /*0x5c4261*/
               SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)StringCSF); /*0x5c426f*/
               LOBYTE(MPCooperative_field_0x40) = SendMessageA(DlgItem, 0x19Au, v12, v6); /*0x5c4279*/
               BYTE1(this->MPCooperative_field_0x48) = 1; /*0x5c4282*/
@@ -2455,7 +2455,7 @@ AbstractClass * * MPCooperative::ProcessChat()
       }
       else
       {
-        v14 = GetStringCSF(aTxtSaveCampAva, 0, g_Str_File_MPCoop_cpp, 1920); /*0x5c429f*/
+        v14 = GetStringCSF( (wchar_t *)(aTxtSaveCampAva), 0, (const char *)(g_Str_File_MPCoop_cpp), 1920); /*0x5c429f*/
         LOBYTE(MPCooperative_field_0x40) = Dialog::ShowMessage(-1, (size_t)v14); /*0x5c42a7*/
       }
     }
@@ -2505,26 +2505,26 @@ int MPCooperative::UpdateMovieScore()
   {
     v2 = (MPCooperative *)__2_YAPAXI_Z(8u); /*0x5c42e2*/
     if ( v2 ) /*0x5c42ec*/
-      inited = (MultiplayerGameMode *)MPCooperative::initGame(v2); /*0x5c42f0*/
+      inited = (MultiplayerGameMode *)((MPCooperative *)v2)->initGame(); /*0x5c42f0*/
     else
       inited = 0; /*0x5c42f7*/
     this->MPCooperative_field_0x50 = inited; /*0x5c42f9*/
   }
   if ( !this->MPCooperative_field_0x40 ) /*0x5c42fc*/
     return 0; /*0x5c4301*/
-  MPCooperative::applyVoteResult((MPCooperative *)&v29, 0, 0); /*0x5c4311*/
+  ((MPCooperative *)(MPCooperative *)&v29)->applyVoteResult( 0, 0); /*0x5c4311*/
   v23 = (wchar_t *)&v28; /*0x5c431e*/
   v22 = &v29; /*0x5c431f*/
   MPCooperative_field_0x40 = this->MPCooperative_field_0x40; /*0x5c4320*/
   v29 = &vt_DynamicVectorClass; /*0x5c4323*/
   v33 = 10; /*0x5c432b*/
   v32 = 0; /*0x5c4333*/
-  MPCooperative::BuildScoreEntries((int)MPCooperative_field_0x40, (int)&v29, &v28); /*0x5c4337*/
+  ((MPCooperative *)(int)MPCooperative_field_0x40)->BuildScoreEntries( (int)&v29, &v28); /*0x5c4337*/
   v6 = (int *)this->MPCooperative_field_0x40; /*0x5c433c*/
   v25 = 0; /*0x5c4344*/
   if ( (uint8_t)((Movie *)(v6))->GetSectionID(&v24) ) /*0x5c4348*/
   {
-    Movie::GetSection((int)&g_DDrawSurfaceManager, v24, &v25); /*0x5c4369*/
+    ((Movie *)(int)&g_DDrawSurfaceManager)->GetSection( v24, &v25); /*0x5c4369*/
     v7 = v24; /*0x5c436e*/
   }
   else
@@ -2545,7 +2545,7 @@ int MPCooperative::UpdateMovieScore()
   {
     v8 = 2; /*0x5c438d*/
   }
-  MPCooperative::GetMovieScore((int *)this->MPCooperative_field_0x40, &v27); /*0x5c43a5*/
+  ((MPCooperative *)(int *)this->MPCooperative_field_0x40)->GetMovieScore( &v27); /*0x5c43a5*/
   ((Movie *)((int *)this->MPCooperative_field_0x40))->GetState(&v26); /*0x5c43b2*/
   if ( v25 ) /*0x5c43bb*/
   {
@@ -2575,7 +2575,7 @@ int MPCooperative::UpdateMovieScore()
   LOBYTE(v14) = v26 < v27; /*0x5c4432*/
   v21 = v14; /*0x5c4435*/
   v20 = uniqueId; /*0x5c4436*/
-  MPCooperative::processTurnEnd((MPCooperative *)v19, &v29); /*0x5c4441*/
+  ((MPCooperative *)(MPCooperative *)v19)->processTurnEnd( &v29); /*0x5c4441*/
   (*(void (**)(MultiplayerGameMode *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int, void ***, wchar_t *))(v11 + 4))( /*0x5c4449*/
     this->MPCooperative_field_0x50,
     v19[0],
@@ -2662,7 +2662,7 @@ void MPCooperative::ShowScoreScreen(int a2)
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c44e7*/
   if ( MPCooperative_field_0x40 ) /*0x5c44ec*/
   {
-    MPCooperative::GetMovieScore(MPCooperative_field_0x40, &v19); /*0x5c44f7*/
+    ((MPCooperative *)MPCooperative_field_0x40)->GetMovieScore( &v19); /*0x5c44f7*/
     ((Movie *)((int *)this->MPCooperative_field_0x40))->GetState(&v18); /*0x5c4504*/
     if ( (unsigned char)a2 ) /*0x5c450f*/
     {
@@ -2671,21 +2671,21 @@ void MPCooperative::ShowScoreScreen(int a2)
         v4 = (MPCooperative *)__2_YAPAXI_Z(4u); /*0x5c4527*/
         if ( v4 ) /*0x5c4531*/
         {
-          started = MPCooperative::startGame(v4); /*0x5c453e*/
+          started = ((MPCooperative *)v4)->startGame(); /*0x5c453e*/
           if ( started ) /*0x5c4542*/
           {
-            MPCooperative::applyVoteResult((MPCooperative *)&v21, 0, 0); /*0x5c4550*/
+            ((MPCooperative *)(MPCooperative *)&v21)->applyVoteResult( 0, 0); /*0x5c4550*/
             v16 = &v20; /*0x5c455d*/
             v15 = &v21; /*0x5c455e*/
             v6 = this->MPCooperative_field_0x40; /*0x5c455f*/
             v21 = &vt_DynamicVectorClass; /*0x5c4562*/
             v25 = 10; /*0x5c456a*/
             v24 = 0; /*0x5c4572*/
-            MPCooperative::BuildScoreEntries((int)v6, (int)&v21, &v20); /*0x5c457a*/
+            ((MPCooperative *)(int)v6)->BuildScoreEntries( (int)&v21, &v20); /*0x5c457a*/
             v7 = (int *)this->MPCooperative_field_0x40; /*0x5c457f*/
             v17 = 0; /*0x5c4587*/
             if ( (uint8_t)((Movie *)(v7))->GetSectionID(&a2) ) /*0x5c458f*/
-              Movie::GetSection((int)&g_DDrawSurfaceManager, a2, &v17); /*0x5c45b1*/
+              ((Movie *)(int)&g_DDrawSurfaceManager)->GetSection( a2, &v17); /*0x5c45b1*/
             else
               a2 = -1; /*0x5c4598*/
             v8 = (void (**)(unsigned int *, int))*started; /*0x5c45bf*/
@@ -2693,7 +2693,7 @@ void MPCooperative::ShowScoreScreen(int a2)
             v15 = (void ***)(a2 + 1); /*0x5c45cf*/
             v14 = stru_A8EB00.ObjectTypeClass[26]; /*0x5c45d0*/
             v13 = v20; /*0x5c45d1*/
-            MPCooperative::processTurnEnd((MPCooperative *)v12, &v21); /*0x5c45dc*/
+            ((MPCooperative *)(MPCooperative *)v12)->processTurnEnd( &v21); /*0x5c45dc*/
             ((void (*)(unsigned int *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int, void ***, int *))v8[1])( /*0x5c45e3*/
               started,
               v12[0],
@@ -2767,7 +2767,7 @@ IPXInterfaceClass * * MPCooperative::InitializePlayers()
   int v10; // [esp+10h] [ebp-Ch] BYREF
   int v11[2]; // [esp+14h] [ebp-8h] BYREF
 
-  PtrVector::Destroy(&stru_A8DA74); /*0x5c4cac*/
+  PtrVector::Destroy( (void)(&stru_A8DA74)); /*0x5c4cac*/
   v2 = 0; /*0x5c4cb1*/
   dword_A8B54C = 0; /*0x5c4cb3*/
   result = (int)this->MPCooperative_field_0x68; /*0x5c4cb9*/
@@ -2786,7 +2786,7 @@ IPXInterfaceClass * * MPCooperative::InitializePlayers()
             goto LABEL_16; /*0x5c4cff*/
         }
         *(unsigned int *)(*((unsigned int *)this->MPCooperative_field_0x5C + v2) + 111) = v4; /*0x5c4d11*/
-        v5 = __2_YAPAXI_Z(0x85u); /*0x5c4d14*/
+        v5 = (unsigned int)__2_YAPAXI_Z(0x85u); /*0x5c4d14*/
         v6 = v5; /*0x5c4d19*/
         if ( v5 ) /*0x5c4d20*/
         {
@@ -2830,13 +2830,13 @@ LABEL_16:
     }
     while ( v2 < result ); /*0x5c4e7b*/
   }
-  return result; /*0x5c4e83*/
+  return (IPXInterfaceClass * *)result; /*0x5c4e83*/
 
 }
 }
 // 0x5C4F10
 namespace gamemd {
-void MPCooperative_QueryInterface()
+void MPCooperative_QueryInterface(int a2, char a3)
 {
   void *v3; // ecx
   void *v4; // esi
@@ -2866,7 +2866,7 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
   this->MPCooperative_field_0x0 = &vt_VectorClass; /*0x5c4f4a*/
   if ( this != (MPCooperative *)a2 ) /*0x5c4f50*/
   {
-    MPCooperative::ddtor((int)this); /*0x5c4f52*/
+    ((MPCooperative *)(int)this)->ddtor(); /*0x5c4f52*/
     v3 = (void *)a2[2]; /*0x5c4f58*/
     this->MPCooperative_field_0x8 = v3; /*0x5c4f5d*/
     if ( v3 ) /*0x5c4f60*/
@@ -2986,7 +2986,7 @@ int sub_5C1980()
   {
     do /*0x5c1a00*/
     {
-      Movie::GetSection((int)&g_DDrawSurfaceManager, v2, &v5); /*0x5c19a5*/
+      ((Movie *)(int)&g_DDrawSurfaceManager)->GetSection( v2, &v5); /*0x5c19a5*/
       for ( i = 0; i < 780; i += 260 ) /*0x5c19aa*/
       {
         if ( *(unsigned int *)&stru_A8B250.__pad_0[4] ) /*0x5c19b3*/
@@ -3020,7 +3020,7 @@ char MPCooperative::Write(int a2)
     if ( MPCooperative_field_0x40 ) /*0x5c1d92*/
       ((String *)(MPCooperative_field_0x40))->AssignWideToChar((char *)*dword_A8DA78, (char *)dword_A8DA78[1]); /*0x5c1da0*/
   }
-  return ScenarioClass::MissionStubReturnZero2((int *)a2); /*0x5c1db1*/
+  return ScenarioClass::MissionStubReturnZero2( (MPCooperative *)((int *)a2)); /*0x5c1db1*/
 
 }
 } // namespace gamemd
@@ -3146,7 +3146,7 @@ int MPCooperative::checkVictory()
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c4679*/
   if ( !MPCooperative_field_0x40 ) /*0x5c467e*/
     return 0; /*0x5c4681*/
-  MPCooperative::GetMovieScore(MPCooperative_field_0x40, &v5); /*0x5c468d*/
+  ((MPCooperative *)MPCooperative_field_0x40)->GetMovieScore( &v5); /*0x5c468d*/
   ((Movie *)((int *)this->MPCooperative_field_0x40))->GetState(&v6); /*0x5c469a*/
   if ( v5 == v6 ) /*0x5c46a9*/
   {
@@ -3222,7 +3222,7 @@ DynamicVector * MPCooperative::saveGameState(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5c4fc3*/
-  *Block = &vt_VectorClass; /*0x5c4fc6*/
+  *Block = (unsigned int)&vt_VectorClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c4fd0*/
   {
     __3_YAXPAX_Z(v3); /*0x5c4fd8*/
@@ -3704,7 +3704,7 @@ VectorClass_flat * MPCooperative::verifyGameIntegrity(unsigned int * Block, char
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5c5853*/
-  *Block = &vt_VectorClass; /*0x5c5856*/
+  *Block = (unsigned int)&vt_VectorClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c5860*/
   {
     __3_YAXPAX_Z(v3); /*0x5c5868*/
@@ -3727,7 +3727,7 @@ VectorClass_flat * MPCooperative::processVote(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5c58a3*/
-  *Block = &vt_VectorClass; /*0x5c58a6*/
+  *Block = (unsigned int)&vt_VectorClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c58b0*/
   {
     __3_YAXPAX_Z(v3); /*0x5c58b8*/
@@ -3750,7 +3750,7 @@ DynamicVector * MPCooperative::tallyVotes(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5c5993*/
-  *Block = &vt_VectorClass; /*0x5c5996*/
+  *Block = (unsigned int)&vt_VectorClass;
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c59a0*/
   {
     __3_YAXPAX_Z(v3); /*0x5c59a8*/

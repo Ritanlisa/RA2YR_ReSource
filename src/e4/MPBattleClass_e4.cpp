@@ -91,7 +91,7 @@ namespace gamemd {
 int MPBattleClass::vt_entry_18()
 {
 
-  return ScenarioClass::createStartingForces((MultiplayerGameMode *)this);
+  return ScenarioClass::createStartingForces( (void)((MultiplayerGameMode *)this));
 
 }
 }
@@ -308,7 +308,7 @@ unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyA
 {
 
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/
-  *(unsigned int *)this->MPGameModeClass = &vt_UnholyAlliance; /*0x5cb3c8*/
+  *(unsigned int *)this->MPGameModeClass = (unsigned int)&vt_UnholyAlliance;
   return this->MPGameModeClass; /*0x5cb3d0*/
 
 }
@@ -496,7 +496,7 @@ int MPBattleClass::onDialogDestroyed()
   dword_ABFC98 = 0; /*0x5d4c5c*/
   byte_ABFC9C = 1; /*0x5d4c61*/
   byte_ABFC9D = 0; /*0x5d4c68*/
-  dword_ABFC90 = (int)&vt_DynamicVectorClass; /*0x5d4c6d*/
+  dword_ABFC90 = (unsigned int)(int)&vt_DynamicVectorClass;
   dword_ABFCA4 = 10; /*0x5d4c77*/
   dword_ABFCA0 = 0; /*0x5d4c81*/
   return atexit(sub_5D4C90); /*0x5d4c8c*/
@@ -512,7 +512,7 @@ int MPBattleClass::unfixAlliances()
   dword_ABFCC0 = 0; /*0x5d4cdc*/
   byte_ABFCC4 = 1; /*0x5d4ce1*/
   byte_ABFCC5 = 0; /*0x5d4ce8*/
-  dword_ABFCB8 = (int)&vt_DynamicVectorClass; /*0x5d4ced*/
+  dword_ABFCB8 = (unsigned int)(int)&vt_DynamicVectorClass;
   dword_ABFCCC = 10; /*0x5d4cf7*/
   dword_ABFCC8 = 0; /*0x5d4d01*/
   return atexit(sub_5D4D10); /*0x5d4d0c*/

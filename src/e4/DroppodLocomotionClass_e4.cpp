@@ -132,7 +132,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
           v35 = (unsigned int)(v25[2]); /*0x4b5f8d*/
           v27 = ((Random *)(&Randomizer_Global))->State(); /*0x4b5f91*/
           StartAudioControllerAt(*(unsigned int *)(v20[48] + 4 * (v27 % v26)),(unsigned int *)(&v36), 0); /*0x4b5fa8*/
-          PlaySoundEffectAt(v34, 2 * v20[41], &((unsigned int *)a1)[0]->TechnoClass, v20[43], 1, 0); /*0x4b5fc7*/
+          PlaySoundEffectAt( v34, 2 * v20[41], (unsigned int *)(&((unsigned int *)a1)[0]->TechnoClass), v20[43], 1, 0); /*0x4b5fc7*/
           v28 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5fd6*/
           if ( v28 ) /*0x4b5fdd*/
           {
@@ -158,7 +158,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
     if ( *locomotor ) /*0x4b5cd3*/
       (*(void (**)(int))(*(unsigned int *)*locomotor + 8))(*locomotor); /*0x4b5cdd*/
     *locomotor = 0; /*0x4b5ce3*/
-    (*(void (**)(int *, int *))(((unsigned int *)a1)[0] + 16))(&((unsigned int *)a1)[0], locomotor); /*0x4b5cee*/
+    (*(void (**)(int *, int *))(((unsigned int *)a1)[0] + 16))( (int *)(&((unsigned int *)a1)[0]), locomotor); /*0x4b5cee*/
     if ( (*((uint8_t (**)(FootClass *, int *, unsigned int))v11->vtable1 + 54))(v11, &v36, 0) ) /*0x4b5cfc*/
     {
       v17 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5dae*/
@@ -258,11 +258,11 @@ HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x4b625a*/
   {
     a1->Piggybackee = 0; /*0x4b625c*/
-    *(unsigned int *)a1->LocomotionClass = &vt_DropPodLocomotionClass; /*0x4b6263*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &vt_DropPodLocomotionClass; /*0x4b6269*/
-    *(unsigned int *)a1->__pad_18 = &vt_DropPodLocomotionClass; /*0x4b6270*/
+    *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_DropPodLocomotionClass;
+    *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_DropPodLocomotionClass;
+    *(unsigned int *)a1->__pad_18 = (unsigned int)&vt_DropPodLocomotionClass;
   }
-  (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4b6283*/
+  (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))( v2, (int **)(&pStm), 1, 0); /*0x4b6283*/
   if ( !(unsigned char)pStm ) /*0x4b628c*/
     return v3; /*0x4b62b8*/
   Piggybackee = a1->Piggybackee; /*0x4b628e*/
@@ -298,7 +298,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
     {
       v6 = *(unsigned int *)((gamemd::IStream*)v3)->__pad_0; /*0x4b62e9*/
       LOBYTE(a3) = 1; /*0x4b62f5*/
-      (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x4b62fa*/
+      (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))( v3, (int *)(&a3), 1, 0); /*0x4b62fa*/
       Piggybackee = v4->Piggybackee; /*0x4b62fd*/
       pPStm = 0; /*0x4b6300*/
       if ( Piggybackee ) /*0x4b630a*/
@@ -311,7 +311,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
         {
           v9 = (int *)a1; /*0x4b6339*/
           if ( pPStm ) /*0x4b633f*/
-            (*(void (**)(int *))(*pPStm + 8))(pPStm); /*0x4b6344*/
+            (*(void (**)(int *))(*pPStm + 8))( (int *)(pPStm)); /*0x4b6344*/
           pPStm = v9; /*0x4b6347*/
         }
         else
@@ -324,14 +324,14 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
       }
       v10 = OleSaveToStream((LPPERSISTSTREAM)pPStm, v3); /*0x4b636a*/
       if ( pPStm ) /*0x4b6372*/
-        (*(void (**)(int *))(*pPStm + 8))(pPStm); /*0x4b6377*/
+        (*(void (**)(int *))(*pPStm + 8))( (int *)(pPStm)); /*0x4b6377*/
       return v10; /*0x4b637a*/
     }
     else
     {
       v11 = *(unsigned int *)((gamemd::IStream*)v3)->__pad_0; /*0x4b6381*/
       LOBYTE(a3) = 0; /*0x4b638d*/
-      return (*(int (**)(IStream *, int *, int, unsigned int))(v11 + 16))(v3, &a3, 1, 0); /*0x4b6392*/
+      return (*(int (**)(IStream *, int *, int, unsigned int))(v11 + 16))( v3, (int *)(&a3), 1, 0); /*0x4b6392*/
     }
   }
   return result; /*0x4b637c*/
@@ -353,13 +353,13 @@ void * DroppodLocomotionClass::ProcessMove(void ** Block, char a2)
 {
     ILocomotion *Piggybackee; // eax
 
-    *(unsigned int *)this->LocomotionClass = &DropPodLocomotionClass::`vftable'; /*0x4b66f3*/
-    *(unsigned int *)&this->LocomotionClass[4] = &DropPodLocomotionClass::`vftable'; /*0x4b66f9*/
-    *(unsigned int *)this->__pad_18 = &DropPodLocomotionClass::`vftable'; /*0x4b6700*/
+    *(unsigned int *)this->LocomotionClass = (void*)&DropPodLocomotionClass_vftable; /*0x4b66f3*/
+    *(unsigned int *)&this->LocomotionClass[4] = (void*)&DropPodLocomotionClass_vftable; /*0x4b66f9*/
+    *(unsigned int *)this->__pad_18 = (void*)&DropPodLocomotionClass_vftable; /*0x4b6700*/
     Piggybackee = this->Piggybackee; /*0x4b6707*/
     if ( Piggybackee ) /*0x4b670c*/
       (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b6711*/
-    LocomotionClass::Construct((LocomotionClass *)this); /*0x4b6716*/
+    ((LocomotionClass *)(LocomotionClass *)this)->Construct(); /*0x4b6716*/
     if ( (a2 & 1) != 0 ) /*0x4b6720*/
       RA2_OPDEL(this); /*0x4b6723*/
     return this->LocomotionClass; /*0x4b672d*/

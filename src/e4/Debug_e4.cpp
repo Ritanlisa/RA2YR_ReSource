@@ -72,7 +72,7 @@ char Debug::ScrollText(const char * aP1)
           break; /*0x5bd1d1*/
       }
     }
-    return Text::DrawRepeated((Text *)this, v5, v13, v7 - v5, 1); /*0x5bd1e0*/
+    return ((Text *)(Text *)this)->DrawRepeated( v5, v13, v7 - v5, 1); /*0x5bd1e0*/
   }
   return result; /*0x5bd1e8*/
 
@@ -134,7 +134,7 @@ char Debug::Printf()
   {
     vsprintf(Buffer,(const char *const )(Format), va); /*0x5bd214*/
     Buffer[255] = 0; /*0x5bd227*/
-    return Debug::ScrollText((const char *)(int)(Buffer)); /*0x5bd230*/
+    return Debug::ScrollText( (const char)((const char *)(int)(Buffer))); /*0x5bd230*/
   }
   return result; /*0x5bd235*/
 

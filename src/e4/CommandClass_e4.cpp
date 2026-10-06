@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Array_e4.hpp"
@@ -83,7 +84,7 @@ int CommandClass::BuildBar()
     v4 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v3);
     if ( v4 ) /*0x6d1256*/
     {
-      Struct::Zero25(&v37); /*0x6d125c*/
+      Struct::Zero25( &v37); /*0x6d125c*/
       v5 = *(unsigned int *)v4[1].__pad_0; /*0x6d1264*/
       v6 = *(unsigned int *)v4[3].__pad_0; /*0x6d1267*/
       ShapeButtonClass_field_0x04 = v4[1].ShapeButtonClass_field_0x04; /*0x6d126a*/
@@ -104,7 +105,7 @@ int CommandClass::BuildBar()
     v10 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v9);
     if ( v10 ) /*0x6d12cb*/
     {
-      Struct::Zero25(&v37); /*0x6d12d1*/
+      Struct::Zero25( &v37); /*0x6d12d1*/
       v11 = v10[1].ShapeButtonClass_field_0x04; /*0x6d12d9*/
       v12 = *(unsigned int *)v10[3].__pad_0; /*0x6d12dc*/
       v38 = *(unsigned int *)v10[1].__pad_0; /*0x6d12df*/
@@ -125,7 +126,7 @@ int CommandClass::BuildBar()
     v16 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v15);
     if ( v16 ) /*0x6d1341*/
     {
-      Struct::Zero25(&v37); /*0x6d1347*/
+      Struct::Zero25( &v37); /*0x6d1347*/
       v17 = *(unsigned int *)v16[1].__pad_0; /*0x6d134f*/
       v18 = *(unsigned int *)v16[3].__pad_0; /*0x6d1352*/
       ShapeButtonClass_field_0x04 = v16[1].ShapeButtonClass_field_0x04; /*0x6d1355*/
@@ -146,7 +147,7 @@ int CommandClass::BuildBar()
     v22 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v21);
     if ( v22 ) /*0x6d13b6*/
     {
-      Struct::Zero25(&v37); /*0x6d13bc*/
+      Struct::Zero25( &v37); /*0x6d13bc*/
       v23 = v22[1].ShapeButtonClass_field_0x04; /*0x6d13c4*/
       v24 = *(unsigned int *)v22[3].__pad_0; /*0x6d13c7*/
       v38 = *(unsigned int *)v22[1].__pad_0; /*0x6d13ca*/
@@ -166,24 +167,24 @@ int CommandClass::BuildBar()
     v28 = 0; /*0x6d142e*/
   else
     v28 = &stru_B0C1C0 + 8 * v27; /*0x6d1426*/
-  PushCommandClass::Execute((unsigned int *)(v28), (int)aTipGuard); /*0x6d1435*/
+  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v28)), (int)aTipGuard); /*0x6d1435*/
   v29 = (&g_ObjectTrackingPool)[dword_B0CC1C]; /*0x6d1440*/
   if ( v29 > 0x18 ) /*0x6d1449*/
     v30 = 0; /*0x6d145e*/
   else
     v30 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v29); /*0x6d1456*/
-  PushCommandClass::Execute((unsigned int *)(v30), (int)aTipPlanningmod); /*0x6d1465*/
+  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v30)), (int)aTipPlanningmod); /*0x6d1465*/
   FontClassEntry = GetFontClassEntry(dword_B0CB6C); /*0x6d1470*/
-  PushCommandClass::Execute((unsigned int *)(FontClassEntry), (int)aTipStop); /*0x6d147c*/
+  PushCommandClass::Execute( (unsigned int)((unsigned int *)(FontClassEntry)), (int)aTipStop); /*0x6d147c*/
   v32 = GetFontClassEntry(dword_B0CC20); /*0x6d1487*/
-  PushCommandClass::Execute((unsigned int *)(v32), (int)aTipTeam01); /*0x6d1493*/
+  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v32)), (int)aTipTeam01); /*0x6d1493*/
   v33 = GetFontClassEntry(dword_B0CC28); /*0x6d149e*/
-  PushCommandClass::Execute((unsigned int *)(v33), (int)aTipTeam02); /*0x6d14aa*/
+  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v33)), (int)aTipTeam02); /*0x6d14aa*/
   v34 = GetFontClassEntry(dword_B0CD28); /*0x6d14b5*/
-  PushCommandClass::Execute((unsigned int *)(v34), (int)aTipTeam03); /*0x6d14c1*/
+  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v34)), (int)aTipTeam03); /*0x6d14c1*/
   v35 = GetFontClassEntry(dword_B0CB38); /*0x6d14cc*/
-  PushCommandClass::Execute((unsigned int *)(v35), (int)aTipTypeselect); /*0x6d14d8*/
-  return PushCommandClass::Execute((unsigned int *)(&stru_B0CCB0), (int)aTipThumbopen); /*0x6d14ec*/
+  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v35)), (int)aTipTypeselect); /*0x6d14d8*/
+  return PushCommandClass::Execute( (unsigned int)((unsigned int *)(&stru_B0CCB0)), (int)aTipThumbopen); /*0x6d14ec*/
 
 }
 } // namespace gamemd
@@ -211,9 +212,9 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
   aP1 = (gamemd::ToolTipManager *)(*(unsigned int *)aP1);
   if ( *((char *)this + 148) ) /*0x724596*/
   {
-    if ( CommandClass::executeAction((char *)this + 147, &aP1) ) /*0x7245a4*/
+    if ( ((CommandClass *)(char *)this + 147)->executeAction( &aP1) ) /*0x7245a4*/
       goto LABEL_22; /*0x7245ab*/
-    result = CommandClass::BinarySearchAction((char **)v4, (unsigned int *)&aP1); /*0x7245b8*/
+    result = ((CommandClass *)(char **)v4)->BinarySearchAction( (unsigned int *)&aP1); /*0x7245b8*/
     if ( result ) /*0x7245bf*/
     {
       v4[4] = result; /*0x7245c1*/
@@ -264,7 +265,7 @@ LABEL_19:
         aP1 = (gamemd::ToolTipManager *)(10);
       }
       v11 = (gamemd::ToolTipManager *)((int)(result + aP1));
-      result = __2_YAPAXI_Z(8 * (result + aP1)); /*0x724695*/
+      result = (unsigned int)__2_YAPAXI_Z(8 * (result + aP1)); /*0x724695*/
       v12 = result; /*0x72469a*/
       if ( result ) /*0x7246a1*/
       {

@@ -539,3 +539,4 @@ char MixFileClass::Bootstrap()
     SetSoundWarning(v17); /*0x530445*/
     return 1; /*0x5302e4*/
 }
+}

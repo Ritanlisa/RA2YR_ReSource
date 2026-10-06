@@ -57,7 +57,7 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   hWnda = hWnd; /*0x6149c7*/
   if ( dword_AC1B4C ) /*0x6149cb*/
   {
-    v5 = dword_AC1B60(&hWnda); /*0x6149d1*/
+    v5 = (*(unsigned int (*)(void *))&dword_AC1B60)(&hWnda); /*0x6149d1*/
     hWnd = hWnda; /*0x6149e4*/
     v6 = *((unsigned int *)dword_AC1B48 + (v5 & ((1 << dword_AC1B54) - 1))); /*0x6149f0*/
     if ( v6 ) /*0x6149f5*/

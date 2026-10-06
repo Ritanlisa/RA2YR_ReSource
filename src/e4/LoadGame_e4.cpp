@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_LoadGame 1  // G57b: e4 flat-carrier opt-in (suppress core/aux twin)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Audio_e4.hpp"
@@ -63,7 +64,7 @@ int LoadGame::LoadTriggerEvents()
       if ( v5 ) /*0x660863*/
       {
         v12 = *(int *)(LoadGame_field_0x04 + 4 * v2); /*0x660875*/
-        v6 = (*(int (__thiscall **)(LoadGame *, int *))(*(unsigned int *)((LoadGame *)&stru_B04DA8)->__pad_0 + 16))((LoadGame *)&stru_B04DA8, &v12); /*0x660879*/
+        v6 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)((LoadGame *)&stru_B04DA8)->__pad_0 + 16))( (LoadGame *)&stru_B04DA8, (int *)(&v12)); /*0x660879*/
         if ( v6 != -1 ) /*0x66087f*/
           ((LoadGame *)&stru_B04DA8)->RemoveItem(v6); /*0x660887*/
         __3_YAXPAX_Z(v5); /*0x66088d*/
@@ -226,7 +227,7 @@ int LoadGame::LoadBlock300(int a2)
   result = 0; /*0x69b5f3*/
   if ( a2 ) /*0x69b5ba*/
   {
-    if ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->__pad_030)(a2, &a2, 4, 0) >= 0 && a2 == 300 ) /*0x69b5d7*/
+    if ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->__pad_030))( a2, (int *)(&a2), 4, 0) >= 0 && a2 == 300 ) /*0x69b5d7*/
     {
       v4 = (*(int (**)(int, LoadGame *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, this, 300, 0); /*0x69b5e4*/
       this->LoadGame_field_0x04 = -1; /*0x69b5e9*/
@@ -269,7 +270,7 @@ int LoadGame::RestoreAudioState()
     {
       NextAlt = ((AudioQueue *)((AudioQueue *)Next))->GetNextAlt(); /*0x751737*/
       ((AudioController *)((AudioController *)(Next + 12)))->Stop(); /*0x751739*/
-      LinkedList::Init((LinkedList *)Next); /*0x751740*/
+      LinkedList::Init( (void)((LinkedList *)Next)); /*0x751740*/
       PushFrontLinkedListAlt((unsigned int *)(dword_B1D3A4), Next); /*0x75174d*/
       Next = NextAlt; /*0x751758*/
       --dword_B1D3A8; /*0x75175d*/
@@ -277,7 +278,7 @@ int LoadGame::RestoreAudioState()
     while ( NextAlt ); /*0x751763*/
   }
   AudioMixer::Shutdown(); /*0x751765*/
-  result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)v1->__pad_0 + 12))(v1, &v14, 4, 0); /*0x751776*/
+  result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)v1->__pad_0 + 12))( v1, (int *)(&v14), 4, 0); /*0x751776*/
   if ( result >= 0 ) /*0x75177b*/
   {
     v13 = 0; /*0x751785*/
@@ -302,7 +303,7 @@ int LoadGame::RestoreAudioState()
               v15 = v18[0]; /*0x751807*/
               if ( v18[0] >= 0 ) /*0x75180b*/
               {
-                v8 = LinkedList::Next((LinkedList *)dword_B1D3A4); /*0x751813*/
+                v8 = LinkedList::Next( (void)((LinkedList *)dword_B1D3A4)); /*0x751813*/
                 v9 = v8; /*0x751818*/
                 if ( v8 ) /*0x75181c*/
                 {
@@ -351,10 +352,10 @@ int LoadGame::LoadMagicAndAudio()
   if ( g_InfantryDrawState ) /*0x753418*/
     ((Audio *)(g_InfantryDrawState))->Release(); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
-  result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v3, 4, 0); /*0x753430*/
+  result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( this, (int *)(&v3), 4, 0); /*0x753430*/
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
   {
-    result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v3, 4, 0); /*0x753455*/
+    result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( this, (int *)(&v3), 4, 0); /*0x753455*/
     if ( result >= 0 ) /*0x75345a*/
     {
       while ( v3 != 1450145861 ) /*0x753466*/
@@ -403,14 +404,14 @@ int LoadGame::LoadPointArray(int a2)
   int v13; // [esp+34h] [ebp+4h]
 
   v12 = this; /*0x54e7ba*/
-  v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->__pad_030)(a2, &v11, 4, 0); /*0x54e7cf*/
+  v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->__pad_030))( a2, (int *)(&v11), 4, 0);  /*0x54e7cf*/
   if ( v3 >= 0 ) /*0x54e7d3*/
   {
     v13 = 0; /*0x54e7dd*/
     while ( v13 < v11 ) /*0x54e7e7*/
     {
       v4 = (int *)__2_YAPAXI_Z(8u); /*0x54e7fa*/
-      v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->__pad_030)(a2, v4, 8, 0); /*0x54e805*/
+      v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->__pad_030))(a2, v4, 8, 0);  /*0x54e805*/
       if ( v3 < 0 ) /*0x54e809*/
         break; /*0x54e809*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4); /*0x54e811*/
@@ -452,10 +453,10 @@ int sub_721040(int a1)
   int v5; // [esp+20h] [ebp-4h] BYREF
 
   v1 = a1; /*0x721042*/
-  v2 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a1 + 12))(a1, &a1, 4, 0); /*0x721056*/
+  v2 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a1 + 12))( a1, (int *)(&a1), 4, 0); /*0x721056*/
   if ( v2 >= 0 ) /*0x72105a*/
   {
-    v2 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v1 + 12))(v1, &v5, 4, 0); /*0x72106f*/
+    v2 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v1 + 12))( v1, (int *)(&v5), 4, 0); /*0x72106f*/
     if ( v2 >= 0 ) /*0x721073*/
     {
       if ( byte_A8EBA5 ) /*0x721080*/

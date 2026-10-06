@@ -290,7 +290,7 @@ char sub_626AB0(const char * a1, int a2)
     }
   }
   v9 = (char *)RA2_OPNEW(0x100u); /*0x626b9c*/
-  strcpy(v9, a1); /*0x626bb5*/
+  strcpy( v9, (const char *)(a1)); /*0x626bb5*/
   v10 = *((unsigned int *)g_FileExtensionState + 1); /*0x626bc4*/
   v11 = *(unsigned int *)(v10 + 8); /*0x626bc7*/
   if ( *(unsigned int *)(v10 + 16) < v11 /*0x626bec*/
@@ -351,7 +351,7 @@ void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, i
   v5 = (*v4)(a1, &unk_7F7CD0, &v8); /*0x7a2ec7*/
   if ( v5 >= 0 ) /*0x7a2ecb*/
   {
-    v5 = (*(int (**)(int, int, int *))(*(unsigned int *)v8 + 16))(v8, a3, &v7); /*0x7a2ee1*/
+    v5 = (*(int (**)(int, int, int *))(*(unsigned int *)v8 + 16))( v8, a3, (int *)(&v7)); /*0x7a2ee1*/
     if ( v5 >= 0 ) /*0x7a2ee5*/
       v5 = (*(int (**)(int, int, int))(*(unsigned int *)v7 + 20))(v7, a2, a4); /*0x7a2efb*/
   }
@@ -458,7 +458,7 @@ char sub_72C9C0()
   {
     if ( g_DisplayWidth == 800 ) /*0x72c9d3*/
       dword_B0FA60 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D7C),(gamemd::ConvertClass *)((bool *)&byte_B0FCF0))); /*0x72c9e5*/
-    result = LoadPaletteSimple((char *)(off_844D80),(int *)(&dword_B0FCF4), &dword_B0FCF8); /*0x72c9fa*/
+    result = LoadPaletteSimple( (char *)(off_844D80), (int *)(&dword_B0FCF4), (unsigned int *)(&dword_B0FCF8)); /*0x72c9fa*/
     byte_B0FCF1 = 1; /*0x72c9ff*/
   }
   return result; /*0x72ca06*/
@@ -537,7 +537,7 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
   ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x7668be*/
   *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char_vftable; /*0x7668c5*/
   ((ComPtr *)((ComPtr *)a1))->Set((int)inited); /*0x7668cc*/
-  DeleteAndZero((ObjectClass *)&a4); /*0x7668d5*/
+  j_DeleteAndZero((ObjectClass *)&a4); /*0x7668d5*/
   return a1; /*0x7668dc*/
 }
 } // namespace gamemd

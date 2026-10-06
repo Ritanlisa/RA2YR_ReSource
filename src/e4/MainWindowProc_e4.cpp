@@ -16,7 +16,7 @@
 
 // 0x777420
 namespace gamemd {
-AbstractClass * * sub_777420()
+AbstractClass * * sub_777420(ObjectClass *self)
 {
   int v1; // ecx
   AsyncIO *v2; // ecx
@@ -28,7 +28,7 @@ AbstractClass * * sub_777420()
   sub_407040(v1); /*0x77742d*/
     ((Debug *)0)->Log();
   if ( stru_887598.lineTrailer && byte_B73560 == 1 && !((unsigned int *)&stru_A8EB00)[391] ) /*0x77746d*/
-    (*(void (**)(void))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_60)(); /*0x777471*/
+    (*(void (**)(void))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_60))();  /*0x777471*/
   if ( !g_DDraw_Initialized ) /*0x77747c*/
   {
     if ( DSurface_Alternate ) /*0x77748a*/
@@ -71,17 +71,17 @@ AbstractClass * * sub_777420()
         0);
     }
   }
-  MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x77757c*/
+  MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 2); /*0x77757c*/
   InvalidateRect((HWND)(g_hWnd), 0, 0); /*0x77758c*/
   IDA_LOBYTE(v2) = 0; /*0x777592*/
   ((AsyncIO *)(v2))->Read(); /*0x777594*/
-    result = ((Dialog *)this)->GetCurrent();
+    result = ((Dialog *)self)->GetCurrent();
   if ( result ) /*0x7775a1*/
   {
     unsigned int v4 = 0;  /* G37 hoist */
-        Current = ((Dialog *)this)->GetCurrent();
+        Current = ((Dialog *)self)->GetCurrent();
     SetActiveWindow(Current); /*0x7775a9*/
-        v4 = ((Dialog *)this)->GetCurrent();
+        v4 = ((Dialog *)self)->GetCurrent();
     return (gamemd::AbstractClass **)((int)SetFocus(v5)); /*0x7775b5*/
   }
   return (gamemd::AbstractClass **)(result); /*0x7775bb*/

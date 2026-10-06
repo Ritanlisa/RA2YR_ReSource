@@ -24,7 +24,7 @@
 
 // 0x786EF0
 namespace gamemd {
-char sub_786EF0()
+char sub_786EF0(ObjectClass *self)
 {
   const unsigned int v2;
   int v3; // [esp-4h] [ebp-10Ch]
@@ -88,7 +88,7 @@ char sub_72BCA0()
   {
     if ( g_DisplayWidth == 800 ) /*0x72bcb3*/
       dword_B0FA98 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844DB4),(gamemd::ConvertClass *)((bool *)&byte_B0FD44))); /*0x72bcc5*/
-    result = LoadPaletteSimple((char *)(off_844DB8),(int *)(&dword_B0FD48), &dword_B0FD4C); /*0x72bcda*/
+    result = LoadPaletteSimple( (char *)(off_844DB8), (int *)(&dword_B0FD48), (unsigned int *)(&dword_B0FD4C)); /*0x72bcda*/
     byte_B0FD45 = 1; /*0x72bcdf*/
   }
   return result; /*0x72bce6*/
@@ -142,7 +142,7 @@ char sub_72C600()
   {
     if ( g_DisplayWidth == 800 ) /*0x72c613*/
       dword_B0FB0C = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D8C),(gamemd::ConvertClass *)((bool *)&byte_B0FD08))); /*0x72c625*/
-    result = LoadPaletteSimple((char *)(off_844D90),(int *)(&dword_B0FD0C), &dword_B0FD10); /*0x72c63a*/
+    result = LoadPaletteSimple( (char *)(off_844D90), (int *)(&dword_B0FD0C), (unsigned int *)(&dword_B0FD10)); /*0x72c63a*/
     byte_B0FD09 = 1; /*0x72c63f*/
   }
   return result; /*0x72c646*/
@@ -207,7 +207,7 @@ int sub_786390(void * a1)
   {
     if ( strlen((const char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven)) ) /*0x7863da*/
     {
-      strcpy(SubKey,(const char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven)); /*0x786405*/
+      strcpy( (char *)(SubKey), (const char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven)); /*0x786405*/
       if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) ) /*0x786420*/
       {
         cbData = 4; /*0x786445*/

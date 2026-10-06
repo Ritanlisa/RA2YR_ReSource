@@ -204,7 +204,7 @@ float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
     *v4 |= ((unsigned int)((*((ProgressTimer *)((ProgressTimer *)((unsigned int *)v3->Owner)[0]))->GetValue(&a1) >> 10) + 1) >> 1) & 0x1F; /*0x55a7b4*/
   }
   result = a2; /*0x55a7b6*/
-  qmemcpy(a2, &v8, 0x30u); /*0x55a7c5*/
+  qmemcpy( (void *)(a2), &v8, 0x30u); /*0x55a7c5*/
   return result; /*0x55a7c7*/
 
 }

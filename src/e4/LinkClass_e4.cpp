@@ -22,8 +22,8 @@ namespace gamemd {
 int LinkClass::Destroy(void *a1)
 {
 
-  (*(void (**))(*(unsigned int *)this->__pad_0 + 84))(this); /*0x4e1485*/
-  return LinkedList::RemoveNode((LinkClass *)this); /*0x4e148f*/
+  (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 84))(this); /*0x4e1485*/
+  return LinkedList::RemoveNode( (void)((LinkClass *)this)); /*0x4e148f*/
 
 }
 } // namespace gamemd
@@ -59,10 +59,10 @@ namespace gamemd {
 LinkClass * LinkClass::Destru_vt00(unsigned int * Block, char a2)
 {
 
-  ((LinkClass*)Block)->Destruct(); /*0x4e1ad3*/
+  ((LinkClass*)this)->Destruct(); /*0x4e1ad3*/
   if ( (a2 & 1) != 0 ) /*0x4e1add*/
-    __3_YAXPAX_Z(Block); /*0x4e1ae0*/
-  return Block->__pad_0; /*0x4e1aea*/
+    __3_YAXPAX_Z(this); /*0x4e1ae0*/
+  return this->__pad_0; /*0x4e1aea*/
 
 }
 } // namespace gamemd

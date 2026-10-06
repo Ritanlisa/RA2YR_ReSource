@@ -8,6 +8,16 @@ v7 use errors too. Supply = class forward declarations appended to
 e4_protos.h (included by every e4 TU); `class X;` is idempotent with a
 later full definition in the same TU.
 
+G57a2 CAVEAT: the idempotence claim is FALSE when the later full
+definition is a TEMPLATE (C2989 "class template already declared as
+non-class template" -- the 2026-10-05 G42.55 tree-truth bridges pulled
+core/vector.hpp into 21 bridged e4 TUs and this supply block poisoned
+VectorClass/DynamicVectorClass there, ~1.9K-error cascade). Template-
+family names are therefore emitted under
+#ifndef GAMEMD_E4_VECTOR_TREE_TRUTH, which .omo/g57a2_vector_family_fix.py
+defines at the top of every e4 TU whose closure contains both
+core/vector.hpp and a flat vector decl site.
+
 Input: .omo/g119_c2065_names.json (use-form classification).
 Skips names already declared in e4_protos.h / e4_globals.hpp.
 Dry-run default; --apply writes.
@@ -73,8 +83,16 @@ block = ['',
          '// G41.46 C2065 supply: class forward declarations for names the',
          '// cache-typed bodies reference but the TU closure never declared.',
          '// Idempotent with full definitions included later in any TU.']
+# G57a2: tree template families must yield to core/vector.hpp templates
+# in bridged TUs (see module docstring caveat).
+VEC_TMPL = {'VectorClass', 'DynamicVectorClass', 'TypeList'}
 for name in fwd:
-    block.append('%s %s;' % (tag_of.get(name, 'class'), name))
+    if name in VEC_TMPL:
+        block.append('#ifndef GAMEMD_E4_VECTOR_TREE_TRUTH')
+        block.append('%s %s;' % (tag_of.get(name, 'class'), name))
+        block.append('#endif // G57a2 tree template truth')
+    else:
+        block.append('%s %s;' % (tag_of.get(name, 'class'), name))
 txt = open(PROTOS, encoding='utf-8', errors='replace').read()
 if 'G41.46 C2065 supply' not in txt:
     open(PROTOS, 'a', encoding='utf-8', newline='\n').write(

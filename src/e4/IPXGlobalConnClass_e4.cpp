@@ -311,7 +311,7 @@ namespace gamemd {
 int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
 {
 
-  return ConnectionClass::sendAck((gamemd::AnimClass *)((int)this),(gamemd::AnimClass *)(a1), aP2,(gamemd::AnimClass *)(aP3),(void *)(aP4)); /*0x540629*/
+  return ConnectionClass::sendAck( (gamemd::AnimClass *)((int)this), (gamemd::AnimClass *)(a1), (AnimClass *)(aP2), (gamemd::AnimClass *)(aP3), (void)((void *)(aP4))); /*0x540629*/
 
 }
 } // namespace gamemd
@@ -340,23 +340,23 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*((unsigned int *)Block + 52); /*0x540673*/
-  *(unsigned int *)Block->__pad_0 = &vt_IPXGlobalConnClass; /*0x540679*/
+  v3 = (void *)*((unsigned int *)this + 52); /*0x540673*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_IPXGlobalConnClass;
   if ( v3 ) /*0x540681*/
   {
     __3_YAXPAX_Z(v3); /*0x540684*/
-    *((unsigned int *)Block + 52) = 0; /*0x54068c*/
+    *((unsigned int *)this + 52) = 0; /*0x54068c*/
   }
-  if ( *((unsigned int *)Block + 51) ) /*0x540696*/
+  if ( *((unsigned int *)this + 51) ) /*0x540696*/
   {
-    __3_YAXPAX_Z(*((void **)Block + 51)); /*0x5406a1*/
-    *((unsigned int *)Block + 51) = 0; /*0x5406a9*/
+    __3_YAXPAX_Z(*((void **)this + 51)); /*0x5406a1*/
+    *((unsigned int *)this + 51) = 0; /*0x5406a9*/
   }
-  *(unsigned int *)Block->__pad_0 = &vt_IPXConnClass; /*0x5406b5*/
-  ((ConnectionClass *)((ConnectionClass *)Block))->dtor(); /*0x5406bb*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_IPXConnClass;
+  ((ConnectionClass *)((ConnectionClass *)this))->dtor(); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
-    __3_YAXPAX_Z(Block); /*0x5406c8*/
-  return Block->__pad_0; /*0x5406d2*/
+    __3_YAXPAX_Z(this); /*0x5406c8*/
+  return this->__pad_0; /*0x5406d2*/
 
 }
 } // namespace gamemd

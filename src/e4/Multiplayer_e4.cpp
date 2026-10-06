@@ -303,7 +303,7 @@ void Multiplayer::ShowProgress(int a2)
           *(int *)((char *)&v16[6] + 1) = v10; /*0x69b0c0*/
           LOBYTE(v16[6]) = dword_A8DB30; /*0x69b0d5*/
           ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v16, 250, 0); /*0x69b0d9*/
-          Stream::ReadPacket((int)&unk_A8EA70); /*0x69b0e3*/
+          ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x69b0e3*/
           while ( ((Count *)((Count *)&unk_A8EA70))->GetCountQueue() > 5 ) /*0x69b0f5*/
           {
             v11 = 240; /*0x69b101*/
@@ -318,7 +318,7 @@ void Multiplayer::ShowProgress(int a2)
               break; /*0x69b11e*/
             Sleep(0x14u); /*0x69b122*/
             ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x69b12a*/
-            Stream::ReadPacket((int)&unk_A8EA70); /*0x69b134*/
+            ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x69b134*/
           }
           break; /*0x69b146*/
         case 3: /*0x69af3e*/
@@ -331,7 +331,7 @@ void Multiplayer::ShowProgress(int a2)
           __asm { fmul ds:dbl_7E2AC0 } /*0x69af69*/
           LOWORD(v5) = Math::RoundToInt(v3); /*0x69af6f*/
           *(int *)((char *)&v16[11] + 3) = v5; /*0x69af7a*/
-          strcpy((char *)&v16[1], ToWideStringChar((char *)*dword_A8DA78)); /*0x69af9e*/
+          strcpy((char *)&v16[1], ToWideStringChar( (IUnknown *)((char *)*dword_A8DA78))); /*0x69af9e*/
           __asm /*0x69afa7*/
           {
             fild [esp+1E8h+var_199]
@@ -340,14 +340,14 @@ void Multiplayer::ShowProgress(int a2)
           }
           if ( (_AX & 0x100) != 0 ) /*0x69afb6*/
           {
-            Network::SendMessage(&unk_A8E9C0.Socket, (int)v16, 51, 0, 0, 0, 0); /*0x69afcc*/
+            ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v16, 51, 0, 0, 0, 0); /*0x69afcc*/
           }
           else
           {
             for ( i = 1; i < dword_A8DA84; ++i ) /*0x69afdf*/
             {
               Debug::Log(); /*0x69afe6*/
-              Network::SendToPlayer((int)&unk_A8E9C0, (int)v16, 51, 1, (wchar_t *)dword_A8DA78[i]); /*0x69b006*/
+              Network::SendToPlayer( (int)&unk_A8E9C0, (int)v16, 51, 1, (void)((wchar_t *)dword_A8DA78[i])); /*0x69b006*/
             }
           }
           Event::Dispatch(); /*0x69b015*/

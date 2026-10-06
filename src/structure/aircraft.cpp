@@ -11,7 +11,6 @@
 #include "ui/power.hpp"  // G42.42d: PowerClass FlagProcess/TimerProcess
 #include "house/house.hpp"  // G42.42d: owner->IsHumanPlayer (CanEnterCell)
 #include "system/cell.hpp"  // G42.42e: CellClass::FindOpenNeighbor (ProcessReturnToBase)
-#include "e4/classes/Random_e4.hpp"  // G42.42e: Random::Range (ProcessMissionTimeout)
 #include "team/team.hpp"  // G42.42e: TeamClass::LiberateMember (ProcessMissionTimeout)
 #include "e4/classes/Cell_e4.hpp"  // G42.42f: CellClass::GetGroundHeight static (MoveTo)
 #include "e4/classes/E4Recv_5785F0_e4.hpp"  // G42.42f: IsCoordVisibleMap (MoveTo)

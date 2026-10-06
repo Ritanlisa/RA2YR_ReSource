@@ -22,7 +22,7 @@ char sub_72CBA0()
   if ( !byte_B0FC7C ) /*0x72cba7*/
   {
     dword_B0FAD0 = (int)LoadFileSHP((gamemd::ConvertClass *)(aWaitcyloShp),(gamemd::ConvertClass *)((bool *)&byte_B0FC73)); /*0x72cbc7*/
-    result = LoadPaletteSimple((char *)(aWaitcyloPal),(int *)(&dword_B0FC74), &dword_B0FC78); /*0x72cbcc*/
+    result = LoadPaletteSimple( (char *)(aWaitcyloPal), (int *)(&dword_B0FC74), (unsigned int *)(&dword_B0FC78)); /*0x72cbcc*/
     byte_B0FC7C = 1; /*0x72cbd1*/
   }
   return result; /*0x72cbd8*/

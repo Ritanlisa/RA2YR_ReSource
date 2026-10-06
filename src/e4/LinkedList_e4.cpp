@@ -197,7 +197,7 @@ LABEL_61:
   }
   g_MixFile_THEME = 0; /*0x4795c2*/
 LABEL_58:
-  Audio::LoadWAVFiles((Audio *)&unk_A83D10); /*0x4795c8*/
+  Audio::LoadWAVFiles( (void)((Audio *)&unk_A83D10)); /*0x4795c8*/
   sprintf(Source, "MOVMD%02d.MIX", a3); /*0x4795e4*/
   v19 = ((CCFileClass*)((CCFileClass *)((char *)&v24)))->Construct(Source); /*0x4795f5*/
   v20 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v19 + 20))(v19, 0)); /*0x479609*/
@@ -237,7 +237,7 @@ void * LinkedList_flat::MoveNode(void * a2)
   if ( a2 != this ) /*0x55660a*/
   {
     (*(void (**)(LinkedList *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x55660e*/
-    (*(void (**)(LinkedList *, void *))(*(unsigned int *)this->__pad_0 + 12))(this, a2); /*0x556616*/
+    (*(void (**)(LinkedList *, void *))(*(unsigned int *)this->__pad_0 + 12))( this, (void *)(a2)); /*0x556616*/
   }
   return this; /*0x55661b*/
 
@@ -273,14 +273,14 @@ LinkClass * * LinkedList_flat::InsertAfter(int a2)
 
   LinkedList_flat * v3;
 
-  (*(void (**))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x5566a5*/
+  (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x5566a5*/
   v3 = (gamemd::LinkedList_flat *)(*(LinkClass **)(a2 + 4)); /*0x5566ac*/
   *(unsigned int *)(a2 + 4) = (unsigned int)(this); /*0x5566af*/
   this->m_Prev = (unsigned int)((LinkClass *)a2); /*0x5566b4*/
   this->m_Next = (unsigned int)(v3); /*0x5566b7*/
   if ( v3 ) /*0x5566ba*/
     v3->m_Prev = (unsigned int)(this); /*0x5566bc*/
-  return (*(int (**))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x5566c6*/
+  return (*(int (**)(void *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x5566c6*/
 
 }
 } // namespace gamemd
@@ -292,7 +292,7 @@ unsigned int * LinkedList_flat::Attach(int a2)
   LinkClass *v3; // eax
 
   (*(void (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x5566d5*/
-  v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)&a2->q_60)(a2); /*0x5566de*/
+  v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)&a2->q_60))(a2);  /*0x5566de*/
   v3->m_Prev = this; /*0x5566e1*/
   this->m_Next = v3; /*0x5566e4*/
   this->m_Prev = 0; /*0x5566e7*/
@@ -308,13 +308,13 @@ LinkClass * * LinkedList_flat::Append(int a2, void *a2_2)
   LinkClass *v3; // eax
   int v4; // eax
 
-  (*(void (**))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x556705*/
-  v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)&a2->q_70)(a2); /*0x55670e*/
+  (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x556705*/
+  v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)&a2->q_70))(a2);  /*0x55670e*/
   v3->m_Next = (gamemd::LinkClass *)(this); /*0x556711*/
   this->m_Prev = (unsigned int)(v3); /*0x556714*/
   v4 = *(unsigned int *)this->__pad_0; /*0x556717*/
   this->m_Next = 0; /*0x55671b*/
-  return (*(int (**))(v4 + 24))(this); /*0x556725*/
+  return (*(int (**)(void *))(v4 + 24))(this); /*0x556725*/
 
 }
 } // namespace gamemd
@@ -495,13 +495,13 @@ int LinkedList_flat::Prepend(int a2)
       }
     }
   }
-  v5 = this->Tail[0]; /*0x40e371*/
+  v5 = (&this->Tail)[0]; /*0x40e371*/
   *(unsigned int *)(a2 + 8) =(unsigned int)this; /*0x40e374*/
   *(unsigned int *)(a2 + 4) = v5; /*0x40e377*/
-  v6 = this->Tail[0]; /*0x40e37a*/
+  v6 = (&this->Tail)[0]; /*0x40e37a*/
   if ( v6 ) /*0x40e380*/
     *(unsigned int *)(v6 + 8) = a2; /*0x40e382*/
-  this->Tail[0] = a2; /*0x40e385*/
+  (&this->Tail)[0] = a2; /*0x40e385*/
   return result; /*0x40e37f*/
 
 }
@@ -513,10 +513,10 @@ int LinkedList_flat::Pop()
 
   int result; // eax
 
-  result = this->Tail[0]; /*0x473430*/
+  result = (&this->Tail)[0]; /*0x473430*/
   if ( result ) /*0x473435*/
   {
-    this->Tail[0] = *(unsigned int *)(result + 48); /*0x47343b*/
+    (&this->Tail)[0] = *(unsigned int *)(result + 48); /*0x47343b*/
     *(unsigned int *)(result + 48) = 0; /*0x47343e*/
     --*(unsigned int *)this->__pad_0; /*0x473445*/
   }
@@ -552,8 +552,8 @@ namespace gamemd {
 int LinkedList_flat::PushFront(int aP1)
 {
 
-  *(unsigned int *)(aP1 + 12) = this->Tail[0]; /*0x625ae7*/
-  this->Tail[0] = aP1; /*0x625aea*/
+  *(unsigned int *)(aP1 + 12) = (&this->Tail)[0]; /*0x625ae7*/
+  (&this->Tail)[0] = aP1; /*0x625aea*/
   return aP1; /*0x625aed*/
 
 }

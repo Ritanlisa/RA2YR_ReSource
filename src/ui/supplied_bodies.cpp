@@ -78,6 +78,12 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Debug_e4.hpp"  // G42.35: Debug::Log 体表词汇
 #include "e4/classes/Vector_e4.hpp"  // G42.35: Vector::Clear 体表词汇
 #include "e4/classes/Audio_e4.hpp"  // G42.35: Audio::IsSoundEnabled 体表词汇
+// ---- g57b5 W5: qualified-call free-form vocab ----
+namespace gamemd {
+int FindDialogTemplate(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int LookupDialogHash(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+} // namespace gamemd
+// ---- g57b5 W5 end ----
 
 // G42.33 b3: 本地缺席全局/原型载体 (team R1 前例)
 extern unsigned int stru_A8EB00;      // data: 0xA8EB00
@@ -3619,4 +3625,3 @@ char EditControl::GrowBuffer(wchar_t a2, size_t a3) {
     }
 }
 } // namespace gamemd
-

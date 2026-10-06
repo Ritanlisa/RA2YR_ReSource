@@ -28,7 +28,7 @@ public:
     static uint32_t ComputeHashSHA1(const void* data, uint32_t size);  // 0x476D80
 
     // IDA 0x52B720
-    static void InsertOrdered(void* table, const void* entry);  // 0x4F4410
+    static void InsertOrdered(void* table, const void* entry, int a2);  // 0x4F4410
 
     // IDA 0x69D8C0 area
     void Reset();

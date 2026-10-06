@@ -99,7 +99,7 @@ int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       SetCellClassOccupancyFlags((int)v6, v8, 0, 0); /*0x56efdd*/
       v6[286] = 0; /*0x56efe5*/
       *((unsigned int *)v6 + 17) = -1; /*0x56eff2*/
-      BuildingClass::AddUpgrade((int)&dword_87F7E8, (int)(v6 + 36)); /*0x56eff9*/
+      ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)(v6 + 36)); /*0x56eff9*/
     }
   }
   v9 = *((unsigned int *)v6 + 14) - g_TerrainBridgeIndex + 1; /*0x56f018*/
@@ -267,7 +267,7 @@ int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       SetCellClassOccupancyFlags((int)v6, v8, 0, 0); /*0x56f37d*/
       v6[286] = 0; /*0x56f385*/
       *((unsigned int *)v6 + 17) = -1; /*0x56f392*/
-      BuildingClass::AddUpgrade((int)&dword_87F7E8, (int)(v6 + 36)); /*0x56f399*/
+      ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)(v6 + 36)); /*0x56f399*/
     }
   }
   v9 = *((unsigned int *)v6 + 14) - g_TerrainBridgeIndex + 1; /*0x56f3b8*/
@@ -436,7 +436,7 @@ int CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
         SetCellClassOccupancyFlags((int)v6, v8, 6u, 0); /*0x56f941*/
         v6[286] = 0; /*0x56f949*/
         *((unsigned int *)v6 + 17) = -1; /*0x56f956*/
-        BuildingClass::AddUpgrade((int)&dword_87F7E8, (int)(v6 + 36)); /*0x56f95d*/
+        ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)(v6 + 36)); /*0x56f95d*/
       }
     }
   }
@@ -605,7 +605,7 @@ int CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
         SetCellClassOccupancyFlags((int)v6, v8, 6u, 0); /*0x56fd11*/
         v6[286] = 0; /*0x56fd19*/
         *((unsigned int *)v6 + 17) = -1; /*0x56fd26*/
-        BuildingClass::AddUpgrade((int)&dword_87F7E8, (int)(v6 + 36)); /*0x56fd2d*/
+        ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)(v6 + 36)); /*0x56fd2d*/
       }
     }
   }
@@ -773,7 +773,7 @@ int CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
       UpdateCellClassNeighborTerrain((int)v6, v8, 0, 0); /*0x5724cd*/
       v6[286] = 0; /*0x5724d5*/
       *((unsigned int *)v6 + 17) = -1; /*0x5724e2*/
-      BuildingClass::AddUpgrade((int)&dword_87F7E8, (int)(v6 + 36)); /*0x5724e9*/
+      ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)(v6 + 36)); /*0x5724e9*/
     }
   }
   v9 = *((unsigned int *)v6 + 14) - g_Cell_BuildabilityLUT + 1; /*0x572508*/
@@ -941,7 +941,7 @@ int CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
       UpdateCellClassNeighborTerrain((int)v6, v8, 0, 0); /*0x57286d*/
       v6[286] = 0; /*0x572875*/
       *((unsigned int *)v6 + 17) = -1; /*0x572882*/
-      BuildingClass::AddUpgrade((int)&dword_87F7E8, (int)(v6 + 36)); /*0x572889*/
+      ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)(v6 + 36)); /*0x572889*/
     }
   }
   v9 = *((unsigned int *)v6 + 14) - g_Cell_BuildabilityLUT + 1; /*0x5728a8*/
@@ -1110,7 +1110,7 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
         UpdateCellClassNeighborTerrain((int)v6, v8, 6u, 0); /*0x572e31*/
         v6[286] = 0; /*0x572e39*/
         *((unsigned int *)v6 + 17) = -1; /*0x572e46*/
-        BuildingClass::AddUpgrade((int)&dword_87F7E8, (int)(v6 + 36)); /*0x572e4d*/
+        ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)(v6 + 36)); /*0x572e4d*/
       }
     }
   }
@@ -1279,7 +1279,7 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
         UpdateCellClassNeighborTerrain((int)v6, v8, 6u, 0); /*0x573201*/
         v6[286] = 0; /*0x573209*/
         *((unsigned int *)v6 + 17) = -1; /*0x573216*/
-        BuildingClass::AddUpgrade((int)&dword_87F7E8, (int)(v6 + 36)); /*0x57321d*/
+        ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)(v6 + 36)); /*0x57321d*/
       }
     }
   }

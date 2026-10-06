@@ -70,8 +70,8 @@ _DWORD * BSurface::Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a
   a2 = 0; /*0x410d66*/
   a3 = 0; /*0x410d6a*/
   a4 = v14; /*0x410d6e*/
-  (*(void (**)(void *, int *, int))(*(unsigned int *)v13 + 20))(v13, &a2, 127); /*0x410d7b*/
-  v15 = (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)this->Buffer + 92))(this->Buffer, 0, 0); /*0x410d89*/
+  (*(void (**)(void *, int *, int))(*(unsigned int *)v13 + 20))( v13, (int *)(&a2), 127); /*0x410d7b*/
+  v15 = (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)this->Buffer + 92))( (void *)(this->Buffer), 0, 0); /*0x410d89*/
   v16 = *((unsigned int *)this + 11); /*0x410d8c*/
   *((unsigned int *)this + 6) = v15; /*0x410d8f*/
   v17 = *((unsigned int *)this + 10) * v16; /*0x410d92*/
@@ -282,8 +282,8 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   a2 = 0; /*0x7bc9f6*/
   a3 = 0; /*0x7bc9fa*/
   a4 = v14; /*0x7bc9fe*/
-  (*(void (**)(void *, int *, int))(*(unsigned int *)v13 + 20))(v13, &a2, 0xFFFF); /*0x7bca0e*/
-  v15 = (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)this->Buffer + 92))(this->Buffer, 0, 0); /*0x7bca1c*/
+  (*(void (**)(void *, int *, int))(*(unsigned int *)v13 + 20))( v13, (int *)(&a2), 0xFFFF); /*0x7bca0e*/
+  v15 = (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)this->Buffer + 92))( (void *)(this->Buffer), 0, 0); /*0x7bca1c*/
   v16 = *((unsigned int *)this + 11); /*0x7bca1f*/
   *((unsigned int *)this + 6) = v15; /*0x7bca22*/
   v17 = *((unsigned int *)this + 10) * v16; /*0x7bca25*/
@@ -331,11 +331,11 @@ namespace gamemd {
 BSurface * BSurface::ScalarDtor(char * Block, char a2)
 {
 
-  ((Vector *)((int)&Block->Buffer))->Clear(); /*0x411656*/
-  *(unsigned int *)Block->XSurface = &Surface_Vtable; /*0x41165f*/
+  ((Vector *)((int)&this->Buffer))->Clear(); /*0x411656*/
+  *(unsigned int *)this->XSurface = &Surface_Vtable; /*0x41165f*/
   if ( (a2 & 1) != 0 ) /*0x411667*/
-    __3_YAXPAX_Z(Block); /*0x41166a*/
-  return Block->XSurface; /*0x411674*/
+    __3_YAXPAX_Z(this); /*0x41166a*/
+  return this->XSurface; /*0x411674*/
 
 }
 } // namespace gamemd

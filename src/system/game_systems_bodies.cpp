@@ -2,19 +2,118 @@
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "game_systems.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
+extern int InitDegToRad;  // 词表 (canon 无条目, int 兜底) L315
+extern int Tooltip;  // 词表 (canon 无条目, int 兜底) L508
+extern int g_INI_Key_A1;  // 词表 (canon 无条目, int 兜底) L356
+extern int g_NetworkOptionsState;  // 词表 (canon 无条目, int 兜底) L328
+extern int32_t g_RulesInitConfig;  // 0x822CF4 (csp_canon/globals.hpp)
+extern int g_Str_TXT_OK;  // 词表 (canon 无条目, int 兜底) L654
+// g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int stru_82BA00;  // 词表 (canon 无条目, int 兜底) L654
+// g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int stru_87F5F0;  // 词表 (canon 无条目, int 兜底) L488
+// g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int stru_A8B250;  // 词表 (canon 无条目, int 兜底) L645
+// g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int stru_A8D600;  // 词表 (canon 无条目, int 兜底) L422
+// ---- g57b5 W6 end ----
+// ---- g57b5 W5: qualified-call free-form vocab ----
+namespace gamemd {
+int GameOptions_Load_6829A0(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int PropertyBagReadCOM(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int ReadStringCOM(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int SetBufferParamsCOM(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Dialog_ShowMessageBox(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ShowMessageBox(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int CopyWideToChar(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Debug_Log(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int EventClass_Add2(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int ReadPlayerCountMap(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int SetGlobalFlag(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int TacticalClass_Initialize(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int timeGetTime(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int AssignPlayerColor(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int AssignPlayerSide(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int CountryCombo_IDToIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int EnablePlayerSlotControls(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+wchar_t *GameClass_GetDifficultyString(void *a1);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GameLobby_Setup(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GameSetup_DisplayPlayers(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+wchar_t *GameSetup_GetColorTooltip(void *a1);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetComboBoxSelected(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetComboBoxSelectedDefault(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetComboBoxSelectedRaw(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetComboBoxSelectedRaw2(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetResourceID2CSF(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetResourceID3CSF(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetResourceID4CSF(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetResourceIDCSF(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int InitGameDropdownColors(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int InitSkirmishDialogControls(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int LoadScenarioClassByIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int MapSkirmishDialogPlayerToControl(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int ProcessNetworkLobbyOption(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int ReadChatMessage(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int RefreshLobbyPlayerSlots(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int SelectLobbyCountry(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int SendNetworkLobbyChatMessage(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int SetComboBoxSelection(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int SetGameSetupPlayerState(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int SetupSkirmishDialogPlayerSlot(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+wchar_t *SideClass_GetName(void *a1);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int SkirmishDialog_FillComboBoxes(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int StartCombo_IDToIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int ToWideStringChar(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int WOLobby_Play(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int DeleteAndZero_Alt(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
+int Dialog_MapPlayerIDToIndex(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
+int Dialog_OptionIDToIndex(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
+int Dialog_SideIDToIndex(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
+void GDlg_LoadLetterStrings(void);   // g57b5 W5: raw 词表 (自由形)
+int Lobby_FillPlayerFactions(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
+int Lobby_InvalidateFactionCombos(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
+int Lobby_InvalidatePlayerSlots(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
+int Network_SendOptionsGame(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
+int NetworkLobby_UpdatePlayerList(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
+} // namespace gamemd
+// ---- g57b5 W5 end ----
+// ---- g57b5 W4r2: TU-local vocab ----
+class StartCombo;   // 指针局部词表
+class SideClass;    // 指针局部词表
+class GameClass;    // 指针局部词表
+namespace gamemd {
+void VtableStub_643E70(void *a1);
+extern void *g_UIControlState;               // data: 0xAC1154 (globals_core.hpp:985 真形)
+extern wchar_t g_TypeClass_DefaultString;         // 词表 (取址形 wchar_t*)
+extern const char g_Str_File_netdlg2_cpp[];      // 词表 (g_Str_File_* 家族)
+char *DlgSkirmishMenuProc(HWND a1, void *a2);       // raw 0x5e1def 家族 (返回 char*)
+wchar_t *GetStringCSF(const wchar_t *a1, int a2, const char *a3, int a4);  // raw 0x56082d 真形
+void *LoadScreen_Render(int a1, int a2, int a3, double a4);  // raw 0x5e1d71 (4 参自由形)
+void WideString_Assign_Alt(void **a1, void *a2);  // raw 0x5e2209 WideString::Assign_Alt
+              // raw 0x5e1cea VtableStub::643E70 (数字段名非法, 改自由形)
+struct stru_AC4B30_host {                      // 0xAC4B30 宿主 (G42.35 C8 同款)
+    unsigned char __pad_EC[0x240 - 0xEC];      // 覆盖 __pad_EC[828] = +0x240
+};
+} // namespace gamemd
+// ---- g57b5 W4r2 end ----
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    void Dialog_DrawBackground(void *a1);             // raw 0x5e1d41;
+    void Dialog_StopBink(void *a1);                    // raw 0x5e1d78;
+    void Dialog_EnumAndCleanup(void *a1);             // raw 0x5e22e6;
+    void Dialog_Resize(void *a1);                      // raw 0x5e1d27 (char* 形);
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 // gC supply: extern declarations from src/e4/e4_globals_decls.hpp
 extern unsigned int stru_A8EB00;
 
 namespace gamemd {
 // 0x5d86d0
-void GameInit::InitMultiplayerModes()
+void GameInit::InitMultiplayerModes(int a2, int a3)  // g57b5 W4: raw 真值补参 (a2,a3)
 {
     *((unsigned int *)this + 1) = 0; /*0x5d86d9*/
     *((unsigned int *)this + 2) = a2; /*0x5d86e0*/
     *((unsigned char *)this + 12) = 1; /*0x5d86e3*/
     *((unsigned char *)this + 13) = 0; /*0x5d86e7*/
-    *this = (GameInit)(void *)&VectorClass_MultiplayerGameMode___vftable; /*0x5d86eb*/
+    *(void **)this = (void *)&VectorClass_MultiplayerGameMode___vftable;  /* g57b5: vtable 装载 (GameInit 载体标量形) */ /*0x5d86eb*/
     if ( a2 ) /*0x5d86f1*/
     {
       if ( a3 ) /*0x5d86f9*/
@@ -23,18 +122,18 @@ void GameInit::InitMultiplayerModes()
       }
       else
       {
-        *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x5d870c*/
+        *((unsigned int *)this + 1) = (unsigned int)RA2_OPNEW(4 * a2); /*0x5d870c*/
         *((unsigned char *)this + 13) = 1; /*0x5d870f*/
       }
     }
-    *this = (GameInit)(void *)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d8713*/
+    *(void **)this = (void *)&DynamicVectorClass_MultiplayerGameMode___vftable;  /* g57b5: vtable 装载 (GameInit 载体标量形) */ /*0x5d8713*/
     *((unsigned int *)this + 5) = 10; /*0x5d8719*/
     *((unsigned int *)this + 4) = 0; /*0x5d8720*/
-    return this; /*0x5d8729*/
+    return ; /* g57b5: raw 返回 this; 声明 void, 弃值 */
 }
 
 // 0x5e1ca0
-void GameLobby::DlgProc()
+void GameLobby::DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6)  // g57b5 W4: raw 真值补参 (a2,hWnd,a4,a5,a6)
 {
     int v6; // ebx
     Skirmish *v7; // esi
@@ -90,9 +189,9 @@ void GameLobby::DlgProc()
         switch ( (unsigned int)hWnd ) /*0x5e1cd0*/
         {
           case 2u: /*0x5e1cd0*/
-            if ( (unsigned __int8)LoadScreen::IsActive((LoadScreen *)&stru_AC4B30.__pad_EC[828]) ) /*0x5e1cdc*/
-              VtableStub::643E70(&stru_AC4B30.__pad_EC[828]); /*0x5e1cea*/
-            v7 = g_UIControlState; /*0x5e1cef*/
+            if ( (unsigned __int8)((LoadScreen *)&((stru_AC4B30_host *)(void *)&stru_AC4B30)->__pad_EC[828])->IsActive() ) /*0x5e1cdc*/
+              VtableStub_643E70((void *)&((stru_AC4B30_host *)(void *)&stru_AC4B30)->__pad_EC[828]); /*0x5e1cea*/
+            v7 = (Skirmish *)g_UIControlState; /*0x5e1cef*/
             if ( !g_UIControlState ) /*0x5e1cf7*/
               return 0; /*0x5e1cf7*/
             ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5e1cff*/
@@ -100,18 +199,18 @@ void GameLobby::DlgProc()
             g_UIControlState = 0; /*0x5e1d0d*/
             return 0; /*0x5e1d20*/
           case 0xFu: /*0x5e1cd0*/
-            Dialog::DrawBackground((Dialog *)this); /*0x5e1d41*/
+            Dialog_DrawBackground((void *)this); /*0x5e1d41*/
             if ( g_UIControlState ) /*0x5e1d4e*/
-              Skirmish::RenderPreview(g_UIControlState, (HWND)this); /*0x5e1d51*/
-            if ( (unsigned __int8)LoadScreen::IsActive((LoadScreen *)&stru_AC4B30.__pad_EC[828]) ) /*0x5e1d5b*/
-              LoadScreen::Render((int)&stru_AC4B30.__pad_EC[828], v6, a2, NAN); /*0x5e1d71*/
-            Dialog::StopBink((Dialog *)this); /*0x5e1d78*/
+              ((Skirmish *)g_UIControlState)->RenderPreview(); /*0x5e1d51*/
+            if ( (unsigned __int8)((LoadScreen *)&((stru_AC4B30_host *)(void *)&stru_AC4B30)->__pad_EC[828])->IsActive() ) /*0x5e1d5b*/
+              LoadScreen_Render((int)&((stru_AC4B30_host *)(void *)&stru_AC4B30)->__pad_EC[828], v6, a2, NAN); /*0x5e1d71*/
+            Dialog_StopBink((void *)this); /*0x5e1d78*/
             ValidateRect((HWND)this, 0); /*0x5e1d80*/
             return 0; /*0x5e1d8f*/
           case 0x14u: /*0x5e1cd0*/
             goto LABEL_9;
           case 0x2Bu: /*0x5e1cd0*/
-            Dialog::Resize((char *)a5); /*0x5e1d27*/
+            Dialog_Resize((void *)a5); /*0x5e1d27*/
   LABEL_9:
             result = 1; /*0x5e1d2c*/
             break; /*0x5e1d38*/
@@ -144,26 +243,26 @@ void GameLobby::DlgProc()
     if ( (unsigned int)hWnd > 0x4E9 ) /*0x5e1e31*/
     {
       if ( hWnd == (HWND)1260 ) /*0x5e22e0*/
-        Dialog::EnumAndCleanup((Dialog *)this); /*0x5e22e6*/
+        Dialog_EnumAndCleanup((void *)this); /*0x5e22e6*/
       return 0; /*0x5e22e6*/
     }
     if ( hWnd == (HWND)1257 ) /*0x5e1e37*/
     {
       v35 = a5; /*0x5e21fe*/
       v36 = (void **)(a5 + 8); /*0x5e2204*/
-      WideString::Assign_Alt((void **)(a5 + 8), 0); /*0x5e2209*/
+      WideString_Assign_Alt((void **)(a5 + 8), 0); /*0x5e2209*/
       if ( *(unsigned int *)v35 && *(unsigned int *)(v35 + 4) != -1 ) /*0x5e221c*/
       {
         DlgCtrlID = (StartCombo *)GetDlgCtrlID(*(HWND *)v35); /*0x5e2229*/
-        if ( Dialog::MapPlayerIDToIndex((Dialog *)DlgCtrlID) == -1 ) /*0x5e2235*/
+        if ( Dialog_MapPlayerIDToIndex((void *)DlgCtrlID) == -1 ) /*0x5e2235*/
         {
-          if ( CountryCombo::IDToIndex((CountryCombo *)DlgCtrlID) == -1 ) /*0x5e2241*/
+          if ( CountryCombo_IDToIndex((void *)DlgCtrlID) == -1 ) /*0x5e2241*/
           {
-            if ( StartCombo::IDToIndex(DlgCtrlID) != -1 ) /*0x5e224d*/
+            if ( StartCombo_IDToIndex(DlgCtrlID) != -1 ) /*0x5e224d*/
             {
               ComboBoxSelectedRaw = (GameSetup *)GetComboBoxSelectedRaw((HWND)this, (int)DlgCtrlID, *(unsigned int *)(v35 + 4)); /*0x5e2259*/
-              ColorTooltip = GameSetup::GetColorTooltip(ComboBoxSelectedRaw); /*0x5e2260*/
-              WideString::Assign_Alt(v36, ColorTooltip); /*0x5e2268*/
+              ColorTooltip = GameSetup_GetColorTooltip(ComboBoxSelectedRaw); /*0x5e2260*/
+              WideString_Assign_Alt(v36, ColorTooltip); /*0x5e2268*/
               return 1; /*0x5e2279*/
             }
           }
@@ -172,8 +271,8 @@ void GameLobby::DlgProc()
             ComboBoxSelected = (SideClass *)GetComboBoxSelected((HWND)this, (int)DlgCtrlID, *(unsigned int *)(v35 + 4)); /*0x5e2286*/
             if ( ComboBoxSelected != (SideClass *)-1 ) /*0x5e228e*/
             {
-              Name = SideClass::GetName(ComboBoxSelected); /*0x5e2292*/
-              WideString::Assign_Alt(v36, Name); /*0x5e229a*/
+              Name = SideClass_GetName(ComboBoxSelected); /*0x5e2292*/
+              WideString_Assign_Alt(v36, Name); /*0x5e229a*/
               return 1; /*0x5e22ab*/
             }
           }
@@ -184,8 +283,8 @@ void GameLobby::DlgProc()
                                                    (HWND)this,
                                                    (int)DlgCtrlID,
                                                    *(unsigned int *)(v35 + 4));
-          DifficultyString = GameClass::GetDifficultyString(ComboBoxSelectedDefault); /*0x5e22bf*/
-          WideString::Assign_Alt(v36, DifficultyString); /*0x5e22c7*/
+          DifficultyString = GameClass_GetDifficultyString(ComboBoxSelectedDefault); /*0x5e22bf*/
+          WideString_Assign_Alt(v36, DifficultyString); /*0x5e22c7*/
         }
       }
       return 1; /*0x5e22d8*/
@@ -194,14 +293,14 @@ void GameLobby::DlgProc()
     {
       if ( hWnd == (HWND)1175 ) /*0x5e1e4d*/
       {
-        SkirmishDialog::FillComboBoxes((SkirmishDialog *)this); /*0x5e1e59*/
+        SkirmishDialog_FillComboBoxes((void *)this); /*0x5e1e59*/
         InitGameDropdownColors(v45); /*0x5e1e5e*/
-        Lobby::FillPlayerFactions((Lobby *)this); /*0x5e1e65*/
+        Lobby_FillPlayerFactions((void *)this); /*0x5e1e65*/
         _cfltcvt_init(); /*0x5e1e6a*/
-        Lobby::InvalidateFactionCombos((Lobby *)this); /*0x5e1e71*/
-        GDlg::LoadLetterStrings(); /*0x5e1e76*/
+        Lobby_InvalidateFactionCombos((void *)this); /*0x5e1e71*/
+        GDlg_LoadLetterStrings(); /*0x5e1e76*/
         memset32(&stru_A8B250.__pad_0[172], -2, 8u); /*0x5e1e8a*/
-        Lobby::InvalidatePlayerSlots((Lobby *)this); /*0x5e1e8e*/
+        Lobby_InvalidatePlayerSlots((void *)this); /*0x5e1e8e*/
         RefreshLobbyPlayerSlots(0xFFFFFFFF); /*0x5e1e96*/
         GameLobby_Setup((HWND)this, dword_A8DA8C); /*0x5e1ea3*/
         SetupSkirmishDialogPlayerSlot((HWND)this, (int)dword_A8DA8C); /*0x5e1eb0*/
@@ -210,8 +309,8 @@ void GameLobby::DlgProc()
         EnableWindow(DlgItem, 0); /*0x5e1ed1*/
         byte_AC11C2 = 0; /*0x5e1edb*/
         SetGameSetupPlayerState(0, 0, v46); /*0x5e1ee2*/
-        GameSetup::DisplayPlayers(v47); /*0x5e1ee9*/
-        NetworkLobby::UpdatePlayerList(); /*0x5e1eee*/
+        GameSetup_DisplayPlayers(v47); /*0x5e1ee9*/
+        NetworkLobby_UpdatePlayerList(); /*0x5e1eee*/
         InitSkirmishDialogControls((HWND)this, 1); /*0x5e1efa*/
         LoadScenarioClassByIndex(-1); /*0x5e1f02*/
         dword_A8BB0C = 8; /*0x5e1f0a*/
@@ -226,7 +325,7 @@ void GameLobby::DlgProc()
       if ( (unsigned __int16)a4 == 1344 ) /*0x5e1f35*/
       {
         ReadChatMessage((wchar_t **)&hWnd, (HWND)a5); /*0x5e1fb8*/
-        DeleteAndZero::Alt((DeleteAndZero *)&hWnd); /*0x5e1fc1*/
+        DeleteAndZero_Alt((void *)&hWnd); /*0x5e1fc1*/
         if ( IDA_HIWORD(v16) == 1281 ) /*0x5e1fcf*/
         {
           SendNetworkLobbyChatMessage((HWND)this, (int)Math::InitDegToRad, 61680); /*0x5e1fe6*/
@@ -271,13 +370,13 @@ void GameLobby::DlgProc()
         {
           *(unsigned int *)(*dword_A8DA78 + 119) = 1; /*0x5e204d*/
           sprintf(Buffer, g_INI_Key_A1); /*0x5e2054*/
-          Network::SendOptionsGame(Buffer); /*0x5e2060*/
+          Network_SendOptionsGame(Buffer); /*0x5e2060*/
           EnablePlayerSlotControls((HWND)this, 0); /*0x5e206d*/
           v19 = GetDlgItem((HWND)this, 1439); /*0x5e207e*/
           EnableWindow(v19, 0); /*0x5e2083*/
           InvalidateRect(v19, 0, 0); /*0x5e208e*/
           SendMessageA(v19, 0x4DCu, 0, 0); /*0x5e209e*/
-          GameSetup::DisplayPlayers((GameSetup *)v45); /*0x5e20a6*/
+          GameSetup_DisplayPlayers((void *)v45); /*0x5e20a6*/
           return 0; /*0x5e20b4*/
         }
         return 0; /*0x5e2035*/
@@ -292,13 +391,13 @@ void GameLobby::DlgProc()
   LABEL_49:
     if ( IDA_HIWORD(a4) != 1 ) /*0x5e20d5*/
       return 0; /*0x5e20d5*/
-    v20 = CountryCombo::IDToIndex((CountryCombo *)(unsigned __int16)a4); /*0x5e20e2*/
+    v20 = CountryCombo_IDToIndex((void *)(unsigned __int16)a4); /*0x5e20e2*/
     a5 = v20; /*0x5e20e6*/
-    v21 = StartCombo::IDToIndex(v17); /*0x5e20ef*/
+    v21 = StartCombo_IDToIndex(v17); /*0x5e20ef*/
     a4 = v21; /*0x5e20f3*/
-    v22 = Dialog::SideIDToIndex((Dialog *)v17); /*0x5e20fc*/
+    v22 = Dialog_SideIDToIndex((void *)v17); /*0x5e20fc*/
     v48 = (ObjectClass *)v22; /*0x5e2100*/
-    v23 = Dialog::OptionIDToIndex((Dialog *)v17); /*0x5e2104*/
+    v23 = Dialog_OptionIDToIndex((void *)v17); /*0x5e2104*/
     v24 = (ObjectClass *)v20; /*0x5e210b*/
     if ( v20 <= v21 ) /*0x5e210d*/
       v24 = (ObjectClass *)v21; /*0x5e210f*/
@@ -348,7 +447,7 @@ void GameOption_WorldDominationTour::QueryInterface() {}
 void GameOption_WorldDominationTour::Constructor() {}
 
 // 0x4e1de0
-void GameOptions::GameSpeedChanged()
+void GameOptions_GameSpeedChanged()
 {
     HWND (__stdcall *v2)(HWND, int); // edi
     HWND DlgItem; // eax
@@ -373,7 +472,7 @@ void GameOptions::GameSpeedChanged()
       {
         if ( byte_A8E9A0 == 1 && *(unsigned int *)&dword_A8B238 && *(unsigned int *)&dword_A8B238 != 5 ) /*0x4e1e41*/
         {
-          v5 = EventClass::Add2(v15, (int)dword_A83D4C->Object_field_0x30, 0xDu, v4); /*0x4e1e54*/
+          v5 = EventClass_Add2(v15, (int)dword_A83D4C->Object_field_0x30, 0xDu, v4); /*0x4e1e54*/
           if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4e1e63*/
           {
             qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v5, 0x6Fu); /*0x4e1e7f*/
@@ -402,7 +501,7 @@ void GameOptions::GameSpeedChanged()
       if ( stru_A8EB00.ObjectTypeClass[30] != v8 ) /*0x4e1f09*/
       {
         stru_A8EB00.ObjectTypeClass[30] = v8; /*0x4e1f10*/
-        TacticalClass::Initialize((TacticalClass *)&stru_87F5F0.__pad_58[416]); /*0x4e1f15*/
+        TacticalClass_Initialize((void *)&stru_87F5F0.__pad_58[416]); /*0x4e1f15*/
       }
     }
     v9 = v2(*(HWND *)this->__pad_0, 1537); /*0x4e1f23*/
@@ -422,7 +521,7 @@ void GameOptions::GameSpeedChanged()
       if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x4e1f9b*/
       {
         if ( byte_A8E9A0 == 1 ) /*0x4e1fa4*/
-          Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], v12); /*0x4e1fa9*/
+          Tooltip_Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], v12); /*0x4e1fa9*/
       }
     }
     IDA_LOBYTE(v13) = byte_A8E9A0; /*0x4e1fae*/
@@ -471,7 +570,7 @@ void GameOptions::ReadSettings()
     char lParam[40]; // [esp+14h] [ebp-228h] BYREF
     int Buffer[128]; // [esp+3Ch] [ebp-200h] BYREF
 
-    Debug::Log(); /*0x5b8cf1*/
+    Debug_Log(); /*0x5b8cf1*/
     Format = (wchar_t *)ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5b8d0a*/
     v2 = 2; /*0x5b8d16*/
     DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1362); /*0x5b8d1b*/
@@ -485,11 +584,11 @@ void GameOptions::ReadSettings()
         SendMessageA(v7, 0x4B3u, 0x14u, (LPARAM)lParam); /*0x5b8dc0*/
         CopyWideToChar(unk_A8B380, lParam, -1); /*0x5b8dcd*/
       }
-      Debug::Log(); /*0x5b8ddc*/
+      Debug_Log(); /*0x5b8ddc*/
       v8 = GetDlgItem(*(HWND *)this->__pad_0, 1029); /*0x5b8dec*/
       if ( v8 ) /*0x5b8df0*/
         dword_A8B394 = SendMessageA(v8, 0x147u, 0, 0); /*0x5b8dfe*/
-      Debug::Log(); /*0x5b8e0e*/
+      Debug_Log(); /*0x5b8e0e*/
       v9 = GetDlgItem(*(HWND *)this->__pad_0, 1639); /*0x5b8e1e*/
       v10 = v9; /*0x5b8e20*/
       if ( v9 ) /*0x5b8e24*/
@@ -500,68 +599,68 @@ void GameOptions::ReadSettings()
       v12 = GetDlgItem(*(HWND *)this->__pad_0, 1641); /*0x5b8e4a*/
       if ( v12 ) /*0x5b8e4e*/
         *(unsigned int *)&stru_A8B250.__pad_0[32] = SendMessageA(v12, 0x400u, 0, 0); /*0x5b8e5c*/
-      Debug::Log(); /*0x5b8e6c*/
+      Debug_Log(); /*0x5b8e6c*/
       v13 = GetDlgItem(*(HWND *)this->__pad_0, 1360); /*0x5b8e7c*/
       if ( v13 ) /*0x5b8e80*/
         g_RulesInitConfig = SendMessageA(v13, 0x400u, 0, 0); /*0x5b8e8e*/
-      Debug::Log(); /*0x5b8e9f*/
+      Debug_Log(); /*0x5b8e9f*/
       v14 = GetDlgItem(*(HWND *)this->__pad_0, 1026); /*0x5b8eaf*/
       if ( v14 ) /*0x5b8eb3*/
         *(unsigned int *)&stru_A8B250.__pad_0[12] = SendMessageA(v14, 0x400u, 0, 0); /*0x5b8ec1*/
-      Debug::Log(); /*0x5b8ed2*/
+      Debug_Log(); /*0x5b8ed2*/
       v15 = GetDlgItem(*(HWND *)this->__pad_0, 1362); /*0x5b8ee2*/
       if ( v15 ) /*0x5b8ee6*/
         *(unsigned int *)&stru_A8B250.__pad_0[36] = SendMessageA(v15, 0x400u, 0, 0); /*0x5b8ef4*/
-      Debug::Log(); /*0x5b8f04*/
+      Debug_Log(); /*0x5b8f04*/
       v16 = GetDlgItem(*(HWND *)this->__pad_0, 1321); /*0x5b8f14*/
       if ( v16 ) /*0x5b8f18*/
         *(unsigned int *)&stru_A8B250.__pad_0[24] = 6 - SendMessageA(v16, 0x400u, 0, 0); /*0x5b8f2d*/
-      Debug::Log(); /*0x5b8f41*/
+      Debug_Log(); /*0x5b8f41*/
       v17 = GetDlgItem(*(HWND *)this->__pad_0, 1363); /*0x5b8f51*/
       if ( v17 ) /*0x5b8f55*/
         *(unsigned int *)&stru_A8B250.__pad_0[40] = SendMessageA(v17, 0x400u, 0, 0); /*0x5b8f63*/
-      Debug::Log(); /*0x5b8f73*/
+      Debug_Log(); /*0x5b8f73*/
       v18 = GetDlgItem(*(HWND *)this->__pad_0, 1643); /*0x5b8f83*/
       if ( v18 ) /*0x5b8f87*/
         dword_A8B320 = SendMessageA(v18, 0xF0u, 0, 0) == 1; /*0x5b8f98*/
-      Debug::Log(); /*0x5b8fb8*/
+      Debug_Log(); /*0x5b8fb8*/
       v19 = GetDlgItem(*(HWND *)this->__pad_0, 1642); /*0x5b8fc8*/
       if ( v19 ) /*0x5b8fcc*/
         stru_A8B250.__pad_0[8] = SendMessageA(v19, 0xF0u, 0, 0) == 1; /*0x5b8fdd*/
-      Debug::Log(); /*0x5b8ffd*/
+      Debug_Log(); /*0x5b8ffd*/
       v20 = GetDlgItem(*(HWND *)this->__pad_0, 1356); /*0x5b900d*/
       if ( v20 ) /*0x5b9011*/
         stru_A8B250.__pad_0[17] = SendMessageA(v20, 0xF0u, 0, 0) == 1; /*0x5b9022*/
-      Debug::Log(); /*0x5b9042*/
+      Debug_Log(); /*0x5b9042*/
       v21 = GetDlgItem(*(HWND *)this->__pad_0, 1357); /*0x5b9052*/
       if ( v21 ) /*0x5b9056*/
         byte_A8B31F = SendMessageA(v21, 0xF0u, 0, 0) == 1; /*0x5b9067*/
-      Debug::Log(); /*0x5b9087*/
+      Debug_Log(); /*0x5b9087*/
       v22 = GetDlgItem(*(HWND *)this->__pad_0, 1572); /*0x5b9097*/
       if ( v22 ) /*0x5b909b*/
         stru_A8B250.__pad_0[16] = SendMessageA(v22, 0xF0u, 0, 0) == 1; /*0x5b90ac*/
-      Debug::Log(); /*0x5b90cc*/
+      Debug_Log(); /*0x5b90cc*/
       v23 = GetDlgItem(*(HWND *)this->__pad_0, 1430); /*0x5b90dc*/
       if ( v23 ) /*0x5b90e0*/
         byte_A8B31D = SendMessageA(v23, 0xF0u, 0, 0) == 1; /*0x5b90f1*/
-      Debug::Log(); /*0x5b9111*/
+      Debug_Log(); /*0x5b9111*/
       v24 = GetDlgItem(*(HWND *)this->__pad_0, 1358); /*0x5b9121*/
       if ( v24 ) /*0x5b9125*/
         stru_A8B250.__pad_0[18] = SendMessageA(v24, 0xF0u, 0, 0) == 1; /*0x5b9136*/
-      Debug::Log(); /*0x5b9156*/
+      Debug_Log(); /*0x5b9156*/
       v25 = GetDlgItem(*(HWND *)this->__pad_0, 1690); /*0x5b9166*/
       if ( v25 ) /*0x5b916a*/
         stru_A8B250.__pad_0[19] = SendMessageA(v25, 0xF0u, 0, 0) == 1; /*0x5b917e*/
-      Debug::Log(); /*0x5b919c*/
+      Debug_Log(); /*0x5b919c*/
       v26 = GetDlgItem(*(HWND *)this->__pad_0, 1693); /*0x5b91ac*/
       if ( v26 ) /*0x5b91b0*/
         stru_A8B250.__pad_0[20] = SendMessageA(v26, 0xF0u, 0, 0) == 1; /*0x5b91c4*/
-      Debug::Log(); /*0x5b91e3*/
+      Debug_Log(); /*0x5b91e3*/
       v27 = GetDlgItem(*(HWND *)this->__pad_0, 1361); /*0x5b91f3*/
       if ( v27 ) /*0x5b91f7*/
         stru_A8B250.__pad_0[28] = SendMessageA(v27, 0xF0u, 0, 0) == 1; /*0x5b9208*/
-      Debug::Log(); /*0x5b9228*/
-      Debug::Log(); /*0x5b9232*/
+      Debug_Log(); /*0x5b9228*/
+      Debug_Log(); /*0x5b9232*/
       return 1; /*0x5b923a*/
     }
     else
@@ -569,7 +668,7 @@ void GameOptions::ReadSettings()
       StringCSF = GetStringCSF((wchar_t *)&stru_82BA00.__pad_F70[140], 0, &stru_82BA00.__pad_F70[52], 759); /*0x5b8d52*/
       swprintf((wchar_t *const)Buffer, (const size_t)StringCSF, Format); /*0x5b8d5d*/
       v5 = GetStringCSF(g_Str_TXT_OK, 0, &stru_82BA00.__pad_F70[52], 760); /*0x5b8d84*/
-      Dialog::ShowMessageBox(Buffer, v5, 0, 0, 0, v28); /*0x5b8d93*/
+      Dialog_ShowMessageBox(Buffer, v5, 0, 0, 0, v28); /*0x5b8d93*/
       return 0; /*0x5b8d9b*/
     }
 }
@@ -1012,8 +1111,8 @@ void GameScreen::DlgProc()
     int v28; // eax
     int v29; // edi
     int v30; // eax
-    __int16 *v31; // esi
-    __int16 v32; // cx
+    short *v31; // esi
+    short v32; // cx
     bool v33; // zf
     int v34; // eax
     int v35; // eax
@@ -1064,7 +1163,7 @@ void GameScreen::DlgProc()
     int v80; // eax
     signed int v81; // eax
     int v82; // ecx
-    unsigned __int16 v83; // si
+    unsigned short v83; // si
     HWND v84; // ecx
     char *v85; // ecx
     HWND *v86; // esi
@@ -1260,7 +1359,7 @@ void GameScreen::DlgProc()
     v184.DeleteAndZero_field_0x08 = v11 + 4; /*0x60d6b9*/
     if ( v11 == -4 ) /*0x60d6bd*/
   LABEL_19:
-      Debug::Log(); /*0x60d6bf*/
+      Debug_Log(); /*0x60d6bf*/
     result = g_GameScreenManager; /*0x60d6cc*/
     *(unsigned int *)dy.__pad_0 = 0; /*0x60d6d1*/
     if ( g_GameScreenManager ) /*0x60d6d7*/
@@ -1366,7 +1465,7 @@ void GameScreen::DlgProc()
           g_GameScreenManager = *(HWND *)wParam; /*0x60e101*/
           v56 = GetParent(g_GameScreenManager); /*0x60e106*/
           sprintf(Buffer, "Dropd=%p  Master=%p  Dlg=%p", this, g_GameScreenManager, v56); /*0x60e128*/
-          Debug::Log(); /*0x60e135*/
+          Debug_Log(); /*0x60e135*/
           SetTimer((HWND)this, 0, 0x14u, 0); /*0x60e149*/
           return 0; /*0x60e15b*/
         }
@@ -1433,7 +1532,7 @@ void GameScreen::DlgProc()
               v30 = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v24 + 92))(v24, 0, 0); /*0x60d9a9*/
               if ( v29 > 0 ) /*0x60d9ae*/
               {
-                v31 = (__int16 *)v30; /*0x60d9b4*/
+                v31 = (short *)v30; /*0x60d9b4*/
                 v188 = v29; /*0x60d9b6*/
                 do /*0x60da40*/
                 {
@@ -1611,7 +1710,7 @@ void GameScreen::DlgProc()
                 }
                 PrintFontLayout( /*0x60dfc8*/
                   (int)DSurface_Alternate,
-                  (unsigned __int16 *)&v214[16],
+                  (unsigned short *)&v214[16],
                   v199,
                   DeleteAndZero_field_0x08,
                   HashTable_field_0x4C,
@@ -2319,7 +2418,7 @@ void GameScreen::DlgProc()
               WideString::AssignFromPtr(&v189, (const wchar_t **)&v184); /*0x60e30a*/
               DeleteAndZero::Alt(&v184); /*0x60e313*/
               WideString::Reassign_Alt((void **)&dy, (const wchar_t **)&v189); /*0x60e321*/
-              DeleteAndZero::Alt((DeleteAndZero *)&v189); /*0x60e32a*/
+              DeleteAndZero_Alt((void *)&v189); /*0x60e32a*/
               v67 = WideString::GetOrEmpty((wchar_t **)&dy); /*0x60e338*/
               if ( wcscmp(v67, &g_TypeClass_DefaultString) ) /*0x60e33e*/
                 goto LABEL_137; /*0x60e33e*/
@@ -2332,7 +2431,7 @@ void GameScreen::DlgProc()
               WideString::AssignFromPtr((wchar_t **)&dy.DeleteAndZero_field_0x04, (const wchar_t **)&v184); /*0x60e39c*/
               DeleteAndZero::Alt(&v184); /*0x60e3a5*/
               WideString::Reassign_Alt((void **)&dy, (const wchar_t **)&dy.DeleteAndZero_field_0x04); /*0x60e3b3*/
-              DeleteAndZero::Alt((DeleteAndZero *)&dy.DeleteAndZero_field_0x04); /*0x60e3bc*/
+              DeleteAndZero_Alt((void *)&dy.DeleteAndZero_field_0x04); /*0x60e3bc*/
               v70 = WideString::GetOrEmpty((wchar_t **)&dy); /*0x60e3ca*/
               if ( wcscmp(v70, &g_TypeClass_DefaultString) ) /*0x60e3d0*/
               {
@@ -2382,7 +2481,7 @@ void GameSetup::ParseCoordTriple()
     char *v7; // eax
     char *v8; // eax
     char String[509]; // [esp+4h] [ebp-200h] BYREF
-    __int16 v10; // [esp+201h] [ebp-3h]
+    short v10; // [esp+201h] [ebp-3h]
     char v11; // [esp+203h] [ebp-1h]
 
     String[0] = g_INI_DefaultBuffer; /*0x47744e*/
@@ -2412,7 +2511,7 @@ void GameSetup::ParseCoordTriple()
 void GameSetup::FormatToString()
 {
     char Buffer[509]; // [esp+8h] [ebp-200h] BYREF
-    __int16 v9; // [esp+205h] [ebp-3h]
+    short v9; // [esp+205h] [ebp-3h]
     char v10; // [esp+207h] [ebp-1h]
 
     Buffer[0] = g_INI_DefaultBuffer; /*0x47751f*/
@@ -2424,7 +2523,7 @@ void GameSetup::FormatToString()
 }
 
 // 0x4e42a0
-void GameSetup::GetColorTooltip()
+void GameSetup_GetColorTooltip()
 {
     if ( this == (GameSetup *)-2 ) /*0x4e42a3*/
       return GetStringCSF(aSttPlayercolor, 0, g_Str_File_GDlgSupp_cpp, 449); /*0x4e42b6*/
@@ -2450,7 +2549,7 @@ void GameSetup::GetColorTooltip()
 }
 
 // 0x5dafe0
-void GameSetup::DisplayPlayers()
+void GameSetup_DisplayPlayers()
 {
     char v1; // cl
     char v2; // bl
@@ -2713,7 +2812,7 @@ void GameSetup::DisplayPlayers()
         while ( v39 > v48 ); /*0x5db5a8*/
       }
       RA2_OPDEL(Block); /*0x5db5b3*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v35.DeleteAndZero_field_0x04); /*0x5db5bf*/
+      DeleteAndZero_Alt((void *)&v35.DeleteAndZero_field_0x04); /*0x5db5bf*/
       DeleteAndZero::Alt(&v35); /*0x5db5c8*/
     }
 }
@@ -3119,7 +3218,7 @@ void LoadSaveDialog::FillList()
     struct _FILETIME LocalFileTime; // [esp+50h] [ebp-2C8h] BYREF
     CHAR FileName[128]; // [esp+58h] [ebp-2C0h] BYREF
     wchar_t WideCharStr[127]; // [esp+D8h] [ebp-240h] BYREF
-    __int16 v47; // [esp+1D6h] [ebp-142h]
+    short v47; // [esp+1D6h] [ebp-142h]
     struct _WIN32_FIND_DATAA FindFileData; // [esp+1D8h] [ebp-140h] BYREF
 
     v2 = this; /*0x5596a9*/
@@ -3328,7 +3427,7 @@ void LoadSaveDialog::FillList()
       }
     }
   LABEL_55:
-    DeleteAndZero::Alt((DeleteAndZero *)&v42.DeleteAndZero_field_0x04); /*0x559bf5*/
+    DeleteAndZero_Alt((void *)&v42.DeleteAndZero_field_0x04); /*0x559bf5*/
     DeleteAndZero::Alt(&v42); /*0x559c02*/
 }
 
@@ -3493,13 +3592,13 @@ void LoadScreen::RenderLoop()
     unsigned int v156; // ebx
     signed int v157; // esi
     int v158; // eax
-    __int16 *v159; // ecx
+    short *v159; // ecx
     int v160; // esi
     int v161; // ecx
     int v162; // ebx
     int v166; // esi
     int v167; // esi
-    unsigned __int16 v168; // ax
+    unsigned short v168; // ax
     int v169; // eax
     int v170; // ebp
     int v171; // edx
@@ -3601,8 +3700,8 @@ void LoadScreen::RenderLoop()
     int v270; // [esp+4Ah] [ebp-660h]
     bool v271; // [esp+51h] [ebp-659h]
     int v272; // [esp+52h] [ebp-658h]
-    __int16 Blocka; // [esp+56h] [ebp-654h]
-    __int16 Blockb; // [esp+56h] [ebp-654h]
+    short Blocka; // [esp+56h] [ebp-654h]
+    short Blockb; // [esp+56h] [ebp-654h]
     unsigned int *Block; // [esp+56h] [ebp-654h]
     bool v276; // [esp+5Ch] [ebp-64Eh]
     bool v277; // [esp+5Dh] [ebp-64Dh]
@@ -3622,7 +3721,7 @@ void LoadScreen::RenderLoop()
     unsigned int v291; // [esp+6Ah] [ebp-640h]
     double v292; // [esp+6Ah] [ebp-640h]
     int v293; // [esp+6Ah] [ebp-640h]
-    __int16 v294; // [esp+73h] [ebp-637h]
+    short v294; // [esp+73h] [ebp-637h]
     char v295; // [esp+75h] [ebp-635h]
     int v296; // [esp+76h] [ebp-634h]
     int v297; // [esp+76h] [ebp-634h]
@@ -3750,8 +3849,8 @@ void LoadScreen::RenderLoop()
     v9 = RA2_OPNEW(0x20u); /*0x4b6d90*/
     if ( v9 ) /*0x4b6d97*/
     {
-      v10 = *(__int16 *)(v7 + 4); /*0x4b6d99*/
-      v11 = *(__int16 *)(v7 + 2); /*0x4b6d9d*/
+      v10 = *(short *)(v7 + 4); /*0x4b6d99*/
+      v11 = *(short *)(v7 + 2); /*0x4b6d9d*/
       SubFile = MixFileClass::GetSubFile((MixFileClass *)v7, 0); /*0x4b6dae*/
       Surface::Construct((Surface *)v9, v11, v10); /*0x4b6db5*/
       v249 = SubFile; /*0x4b6dc5*/
@@ -3766,8 +3865,8 @@ void LoadScreen::RenderLoop()
     {
       v304 = 0; /*0x4b6dee*/
     }
-    v12 = *(__int16 *)(v7 + 4); /*0x4b6dfc*/
-    v13 = *(__int16 *)(v7 + 2); /*0x4b6e02*/
+    v12 = *(short *)(v7 + 4); /*0x4b6dfc*/
+    v13 = *(short *)(v7 + 2); /*0x4b6e02*/
     v272 = ((*((int (**)(void))g_DSurface_Hidden->AbstractClass + 32))() - v12) / 2; /*0x4b6e1b*/
     v14 = v388; /*0x4b6e24*/
     v15 = (*((int (__thiscall **)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 31))(g_DSurface_Hidden) - v13; /*0x4b6e2b*/
@@ -4117,10 +4216,10 @@ void LoadScreen::RenderLoop()
       v377[0] = v305; /*0x4b76c9*/
       v70 = 0; /*0x4b76d6*/
       v377[1] = v272; /*0x4b76d9*/
-      v377[2] = *(__int16 *)(v320 + 2); /*0x4b76fe*/
+      v377[2] = *(short *)(v320 + 2); /*0x4b76fe*/
       IDA_LOBYTE(v294) = 0; /*0x4b771f*/
       v254 = 1; /*0x4b7727*/
-      v377[3] = *(__int16 *)(v320 + 4); /*0x4b772c*/
+      v377[3] = *(short *)(v320 + 4); /*0x4b772c*/
       v346[0] = 0; /*0x4b7733*/
       v346[1] = 0; /*0x4b773a*/
       DrawToSurfaceSHP((int)g_DSurface_Hidden, (int)v278, v320, 0, v346, v377, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x4b7741*/
@@ -4235,8 +4334,8 @@ void LoadScreen::RenderLoop()
             v87 = RA2_OPNEW(0x20u); /*0x4b79c5*/
             if ( v87 ) /*0x4b79cc*/
             {
-              v88 = *(__int16 *)(v86 + 2); /*0x4b79d2*/
-              v279 = *(__int16 *)(v86 + 4); /*0x4b79da*/
+              v88 = *(short *)(v86 + 2); /*0x4b79d2*/
+              v279 = *(short *)(v86 + 4); /*0x4b79da*/
               v285 = MixFileClass::GetSubFile((MixFileClass *)v86, 0); /*0x4b79e7*/
               Surface::Construct((Surface *)v87, v88, v279); /*0x4b79ef*/
               *(unsigned int *)(v87 + 12) = 0; /*0x4b79f7*/
@@ -4257,8 +4356,8 @@ void LoadScreen::RenderLoop()
               v90 = v85[3]; /*0x4b7a51*/
               v91 = v85[4]; /*0x4b7a58*/
               v286 = v85[5]; /*0x4b7a5b*/
-              v92 = *(__int16 *)(v86 + 4); /*0x4b7a5f*/
-              v349 = *(__int16 *)(v86 + 2); /*0x4b7a67*/
+              v92 = *(short *)(v86 + 4); /*0x4b7a5f*/
+              v349 = *(short *)(v86 + 2); /*0x4b7a67*/
               v350 = v92; /*0x4b7a72*/
               v93 = v85[6]; /*0x4b7a79*/
               v348 = 0; /*0x4b7a86*/
@@ -4555,8 +4654,8 @@ void LoadScreen::RenderLoop()
               v127 = RA2_OPNEW(0x20u); /*0x4b80f4*/
               if ( v127 ) /*0x4b80fb*/
               {
-                v128 = *(__int16 *)(v126 + 4); /*0x4b8101*/
-                v287 = *(__int16 *)(v126 + 2); /*0x4b8109*/
+                v128 = *(short *)(v126 + 4); /*0x4b8101*/
+                v287 = *(short *)(v126 + 2); /*0x4b8109*/
                 v129 = MixFileClass::GetSubFile((MixFileClass *)v126, 0); /*0x4b810d*/
                 *(unsigned int *)(v127 + 8) = v128; /*0x4b8112*/
                 *(unsigned int *)(v127 + 12) = 0; /*0x4b8115*/
@@ -4580,8 +4679,8 @@ void LoadScreen::RenderLoop()
               v131 = RA2_OPNEW(0x20u); /*0x4b8173*/
               if ( v131 ) /*0x4b817a*/
               {
-                v132 = *(__int16 *)(v130 + 2); /*0x4b8180*/
-                v288 = *(__int16 *)(v130 + 4); /*0x4b8184*/
+                v132 = *(short *)(v130 + 2); /*0x4b8180*/
+                v288 = *(short *)(v130 + 4); /*0x4b8184*/
                 v133 = MixFileClass::GetSubFile((MixFileClass *)v130, 0); /*0x4b818c*/
                 *(unsigned int *)(v131 + 4) = v132; /*0x4b8191*/
                 *(unsigned int *)(v131 + 12) = 0; /*0x4b8194*/
@@ -4650,8 +4749,8 @@ void LoadScreen::RenderLoop()
           v143 = RA2_OPNEW(0x20u); /*0x4b82e2*/
           if ( v143 ) /*0x4b82e9*/
           {
-            v144 = *(__int16 *)(v142 + 2); /*0x4b82ef*/
-            v289 = *(__int16 *)(v142 + 4); /*0x4b82f3*/
+            v144 = *(short *)(v142 + 2); /*0x4b82ef*/
+            v289 = *(short *)(v142 + 4); /*0x4b82f3*/
             v145 = MixFileClass::GetSubFile((MixFileClass *)v142, 0); /*0x4b82fb*/
             *(unsigned int *)(v143 + 4) = v144; /*0x4b8300*/
             *(unsigned int *)(v143 + 12) = 0; /*0x4b8303*/
@@ -4673,8 +4772,8 @@ void LoadScreen::RenderLoop()
             v290 = v141[5]; /*0x4b8360*/
             v303 = v141[6]; /*0x4b8367*/
             v283 = v141[4]; /*0x4b8373*/
-            v378 = *(__int16 *)(v142 + 2); /*0x4b837d*/
-            v379 = *(__int16 *)(v142 + 4); /*0x4b8388*/
+            v378 = *(short *)(v142 + 2); /*0x4b837d*/
+            v379 = *(short *)(v142 + 4); /*0x4b8388*/
             *(unsigned int *)(v146 + 56) = 0; /*0x4b8393*/
             *(unsigned int *)v146 = 0; /*0x4b839a*/
             *(unsigned int *)(v146 + 4) = 0; /*0x4b839d*/
@@ -4741,7 +4840,7 @@ void LoadScreen::RenderLoop()
           if ( v157 != v156 || v263 ) /*0x4b8527*/
           {
             v158 = v272 + *(int *)((char *)&dword_7E84D0 + n); /*0x4b853b*/
-            v159 = *(__int16 **)((char *)v380 + n); /*0x4b853d*/
+            v159 = *(short **)((char *)v380 + n); /*0x4b853d*/
             if ( v157 <= v159[3] ) /*0x4b8550*/
             {
               v367[1] = v272 + *(int *)((char *)&dword_7E84D0 + n); /*0x4b85fd*/
@@ -4995,18 +5094,18 @@ void LoadScreen::RenderLoop()
       }
       v184 = timeGetTime(); /*0x4b8aa4*/
       v185 = v343; /*0x4b8aad*/
-      v186 = *(__int16 *)(v343 + 6); /*0x4b8ab6*/
+      v186 = *(short *)(v343 + 6); /*0x4b8ab6*/
       v271 = v184 - v337 < 0x12C; /*0x4b8abf*/
       v187 = (timeGetTime() - Time) / 0xFA % v186; /*0x4b8adf*/
       if ( v187 != v332 ) /*0x4b8ae8*/
       {
         v375[0] = v305 + 45; /*0x4b8af8*/
         v375[1] = v272; /*0x4b8b0a*/
-        v188 = *(__int16 *)(v185 + 2); /*0x4b8b12*/
+        v188 = *(short *)(v185 + 2); /*0x4b8b12*/
         v360[0] = 0; /*0x4b8b18*/
         v360[1] = 0; /*0x4b8b1f*/
         v375[2] = v188; /*0x4b8b2e*/
-        v189 = *(__int16 *)(v185 + 4); /*0x4b8b3c*/
+        v189 = *(short *)(v185 + 4); /*0x4b8b3c*/
         v332 = v187; /*0x4b8b48*/
         v375[3] = v189; /*0x4b8b55*/
         DrawToSurfaceSHP((int)g_DSurface_Hidden, (int)v278, v185, v187, v360, v375, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x4b8b5c*/
@@ -5095,8 +5194,8 @@ void LoadScreen::RenderLoop()
             v338 = timeGetTime(); /*0x4b8edb*/
             v368[0] = v197 + 284; /*0x4b8eea*/
             v368[1] = v272 + 151; /*0x4b8efa*/
-            v368[2] = *(__int16 *)(v331 + 2); /*0x4b8f1f*/
-            v368[3] = *(__int16 *)(v331 + 4); /*0x4b8f40*/
+            v368[2] = *(short *)(v331 + 2); /*0x4b8f1f*/
+            v368[3] = *(short *)(v331 + 4); /*0x4b8f40*/
             v357[0] = 0; /*0x4b8f47*/
             v357[1] = 0; /*0x4b8f4e*/
             DrawToSurfaceSHP((int)g_DSurface_Hidden, (int)v278, v331, 0, v357, v368, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x4b8f55*/
@@ -5114,11 +5213,11 @@ void LoadScreen::RenderLoop()
         v200 = (timeGetTime() - v338) / 0x96; /*0x4b8cd3*/
         if ( v200 != v308 ) /*0x4b8cd8*/
         {
-          if ( v200 >= *(__int16 *)(v331 + 6) ) /*0x4b8ceb*/
+          if ( v200 >= *(short *)(v331 + 6) ) /*0x4b8ceb*/
           {
             v371[1] = v272 + 151; /*0x4b8d7c*/
-            v201 = *(__int16 *)(v331 + 2); /*0x4b8d84*/
-            v372 = *(__int16 *)(v331 + 4); /*0x4b8d92*/
+            v201 = *(short *)(v331 + 2); /*0x4b8d84*/
+            v372 = *(short *)(v331 + 4); /*0x4b8d92*/
             v373[3] = v372; /*0x4b8d99*/
             v371[0] = v197 + 284; /*0x4b8dad*/
             v371[2] = v201; /*0x4b8db5*/
@@ -5139,8 +5238,8 @@ void LoadScreen::RenderLoop()
           {
             v370[0] = v197 + 284; /*0x4b8cf9*/
             v370[1] = v272 + 151; /*0x4b8d06*/
-            v370[2] = *(__int16 *)(v331 + 2); /*0x4b8d13*/
-            v370[3] = *(__int16 *)(v331 + 4); /*0x4b8d1f*/
+            v370[2] = *(short *)(v331 + 2); /*0x4b8d13*/
+            v370[3] = *(short *)(v331 + 4); /*0x4b8d1f*/
             v308 = v200; /*0x4b8d46*/
             v356[0] = 0; /*0x4b8d58*/
             v356[1] = 0; /*0x4b8d5f*/
@@ -5447,7 +5546,7 @@ void LoadScreen::InitVtable()
         this->LoadScreen_field_0x04 = a3; /*0x4ba318*/
         return this->__pad_0; /*0x4ba31e*/
       }
-      this->LoadScreen_field_0x04 = RA2_OPNEW(4 * a2); /*0x4ba32d*/
+      this->LoadScreen_field_0x04 = (unsigned int)RA2_OPNEW(4 * a2); /*0x4ba32d*/
       IDA_BYTE1(this->LoadScreen_field_0x0C) = 1; /*0x4ba330*/
     }
     return this->__pad_0; /*0x4ba31d*/
@@ -5468,7 +5567,7 @@ void LoadScreen::Constructor()
         this->LoadScreen_field_0x04 = a3; /*0x4ba368*/
         return this->__pad_0; /*0x4ba36e*/
       }
-      this->LoadScreen_field_0x04 = RA2_OPNEW(4 * a2); /*0x4ba37d*/
+      this->LoadScreen_field_0x04 = (unsigned int)RA2_OPNEW(4 * a2); /*0x4ba37d*/
       IDA_BYTE1(this->LoadScreen_field_0x0C) = 1; /*0x4ba380*/
     }
     return this->__pad_0; /*0x4ba36d*/
@@ -5489,7 +5588,7 @@ void LoadScreen::RenderProgressBackground()
     struct tagRECT *v15; // [esp+0h] [ebp-58h]
     int v16; // [esp+4h] [ebp-54h]
     int v17; // [esp+8h] [ebp-50h]
-    __int16 v18; // [esp+10h] [ebp-48h]
+    short v18; // [esp+10h] [ebp-48h]
     int v19; // [esp+18h] [ebp-40h]
     unsigned int v20[4]; // [esp+28h] [ebp-30h] BYREF
     int v21[2]; // [esp+38h] [ebp-20h] BYREF
@@ -5560,7 +5659,7 @@ void LoadScreen::RenderProgressBackground()
 }
 
 // 0x643ae0
-void LoadScreen::Render()
+void LoadScreen_Render()
 {
     int result; // eax
     HWND v6; // eax
@@ -5692,7 +5791,7 @@ void LoadingScreen::Render()
     int v35; // edx
     Color *ColorScheme; // eax
     int v37; // eax
-    unsigned __int16 *StringCSF; // edi
+    unsigned short *StringCSF; // edi
     int v39; // ecx
     int v40; // esi
     int *v41; // eax
@@ -5708,12 +5807,12 @@ void LoadingScreen::Render()
     int v51; // esi
     int v52; // edi
     unsigned char *v53; // eax
-    unsigned __int16 *v54; // esi
+    unsigned short *v54; // esi
     int *v55; // eax
     int v56; // edi
     int v57; // ebx
     int v58; // ecx
-    unsigned __int16 *v59; // esi
+    unsigned short *v59; // esi
     int *v60; // eax
     int *v61; // eax
     struct tagRECT *v62; // [esp+14h] [ebp-1268h]
@@ -5726,7 +5825,7 @@ void LoadingScreen::Render()
     int v69; // [esp+1Ch] [ebp-1260h]
     int v70; // [esp+1Ch] [ebp-1260h]
     int *v71; // [esp+20h] [ebp-125Ch]
-    __int16 v72; // [esp+24h] [ebp-1258h]
+    short v72; // [esp+24h] [ebp-1258h]
     int v73; // [esp+24h] [ebp-1258h]
     Text *v74; // [esp+24h] [ebp-1258h]
     int v75; // [esp+24h] [ebp-1258h]
@@ -5873,7 +5972,7 @@ void LoadingScreen::Render()
           if ( v35 ) /*0x5535ce*/
             DrawToSurfaceSHP(*((unsigned int *)this + 24), v30, v35, 0, &v82, v84, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x5535fe*/
         }
-        ColorScheme = (Color *)LoadingScreen::GetColorScheme((LoadingScreen *)&stru_AC4B30.__pad_EC[828]); /*0x553608*/
+        ColorScheme = (Color *)LoadingScreen::GetColorScheme((LoadingScreen *)&((stru_AC4B30_host *)(void *)&stru_AC4B30)->__pad_EC[828]); /*0x553608*/
         v37 = Color::ConvertToRGB(ColorScheme + 194, (int)&v80); /*0x553618*/
         v81.LoadingScreen_field_0x18 = ((unsigned __int8)*(unsigned short *)v37 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x55367f*/
                                      | ((unsigned __int8)IDA_HIBYTE(*(unsigned short *)v37) >> g_BitMask_Blue << g_BitMask_Green)
@@ -6231,7 +6330,7 @@ void LoadingScreen::Render()
                                        0,
                                        g_Str_File_LdPrgMgr_cpp,
                                        667);
-          Value = LoadingScreen::GetValue((LoadingScreen *)&stru_AC4B30.__pad_EC[828]); /*0x552f0d*/
+          Value = LoadingScreen::GetValue((LoadingScreen *)&((stru_AC4B30_host *)(void *)&stru_AC4B30)->__pad_EC[828]); /*0x552f0d*/
           BackgroundImage = LoadingScreen::GetBackgroundImage(g_DisplayWidth, Value); /*0x552f22*/
           OverlayImage = LoadingScreen::GetOverlayImage(g_DisplayWidth, Value); /*0x552f2e*/
           *((unsigned int *)this + 17) = LoadFileSHP(BackgroundImage, (bool *)this + 80); /*0x552f3a*/
@@ -6317,7 +6416,7 @@ void LoadingScreen::Render()
           v17 = this->LoadingScreen_field_0x10 + 10; /*0x55305f*/
           *(unsigned int *)v81.__pad_0 = this->LoadingScreen_field_0x0C + 10; /*0x553062*/
           v81.LoadingScreen_field_0x04 = v17; /*0x55306b*/
-          LoadScreenAnim = (Color *)LoadingScreen::FindLoadScreenAnim((LoadingScreen *)&stru_AC4B30.__pad_EC[828]); /*0x553074*/
+          LoadScreenAnim = (Color *)LoadingScreen::FindLoadScreenAnim((LoadingScreen *)&((stru_AC4B30_host *)(void *)&stru_AC4B30)->__pad_EC[828]); /*0x553074*/
           LoadingScreen_field_0x3C = this->LoadingScreen_field_0x3C; /*0x553076*/
           if ( LoadingScreen_field_0x3C ) /*0x55307b*/
             TextRenderer::DrawText( /*0x553096*/
@@ -6553,8 +6652,8 @@ void MultiplayerGameMode::Dtor()
       (**v4)(v4, 1); /*0x5d5d64*/
     DeleteAndZero((ObjectClass *)((char *)this + 48)); /*0x5d5d69*/
     DeleteAndZero((ObjectClass *)((char *)this + 44)); /*0x5d5d71*/
-    DeleteAndZero::Alt((DeleteAndZero *)this + 3); /*0x5d5d79*/
-    DeleteAndZero::Alt((DeleteAndZero *)((char *)this + 32)); /*0x5d5d81*/
+    DeleteAndZero_Alt((void *)this + 3); /*0x5d5d79*/
+    DeleteAndZero_Alt((void *)((char *)this + 32)); /*0x5d5d81*/
     MultiplayerGameMode_field_0x0C = (void *)this->MultiplayerGameMode_field_0x0C; /*0x5d5d86*/
     this->MultiplayerGameMode_field_0x08 = (int)(void *)&VectorClass_MultiplayerTeam___vftable; /*0x5d5d89*/
     if ( MultiplayerGameMode_field_0x0C && IDA_BYTE1(this->MultiplayerGameMode_field_0x14) ) /*0x5d5d93*/
@@ -6750,7 +6849,7 @@ void SaveLoadDialog::DlgProc()
         {
           StringCSF = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_LoadDlg_CPP, 432); /*0x558e88*/
           v6 = (int *)GetStringCSF(aTxtDiskfull, 0, g_Str_File_LoadDlg_CPP, 432); /*0x558e9a*/
-          Dialog::ShowMessageBox(v6, StringCSF, 0, 0, 0, v55); /*0x558ea4*/
+          Dialog_ShowMessageBox(v6, StringCSF, 0, 0, 0, v55); /*0x558ea4*/
           return 0; /*0x558eb5*/
         }
         Dialog = (Dialog *)CreateDialog(0x2B4u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_558B90, 0); /*0x558ecc*/
@@ -6855,7 +6954,7 @@ void SaveLoadDialog::DlgProc()
               ShowWindow((HWND)Dialog, 5); /*0x55954d*/
               v51 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_LoadDlg_CPP, 550); /*0x559573*/
               v45 = (int *)GetStringCSF(aTxtErrorLoadin, 0, g_Str_File_LoadDlg_CPP, 550); /*0x559585*/
-              Dialog::ShowMessageBox(v45, v51, 0, 0, 0, v55); /*0x55958f*/
+              Dialog_ShowMessageBox(v45, v51, 0, 0, 0, v55); /*0x55958f*/
               ShowWindow((HWND)Dialog, 0); /*0x559597*/
             }
             else
@@ -6880,7 +6979,7 @@ void SaveLoadDialog::DlgProc()
             {
               v48 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_LoadDlg_CPP, 574); /*0x559240*/
               v31 = (int *)GetStringCSF(aTxtMustenterDe, 0, g_Str_File_LoadDlg_CPP, 574); /*0x559252*/
-              Dialog::ShowMessageBox(v31, v48, 0, 0, 0, v55); /*0x55925c*/
+              Dialog_ShowMessageBox(v31, v48, 0, 0, 0, v55); /*0x55925c*/
               v32 = GetDlgItem((HWND)Dialog, 1318); /*0x559267*/
               SetFocus(v32); /*0x55926a*/
               v33 = GetDlgItem((HWND)Dialog, 1318); /*0x55927f*/
@@ -6920,7 +7019,7 @@ void SaveLoadDialog::DlgProc()
                 && (v53 = GetStringCSF(g_Str_TXT_NO, 0, g_Str_File_LoadDlg_CPP, 594),
                     v49 = GetStringCSF(g_Str_TXT_YES, 0, g_Str_File_LoadDlg_CPP, 594),
                     v38 = (int *)GetStringCSF(aTxtConfirmSave, 0, g_Str_File_LoadDlg_CPP, 594),
-                    Dialog::ShowMessageBox(v38, v49, v53, 0, 0, v55)) )
+                    Dialog_ShowMessageBox(v38, v49, v53, 0, 0, v55)) )
               {
                 *((unsigned int *)this + 6) = -1; /*0x5593b3*/
               }
@@ -6936,7 +7035,7 @@ void SaveLoadDialog::DlgProc()
                   SaveLoadDialog::FindDialogTemplate((SaveLoadDialog *)Dialog); /*0x559435*/
                   v40 = (int *)(*(int (__thiscall **)(SaveLoadDialog *))(*(unsigned int *)this->__pad_0 + 32))(this); /*0x559458*/
                   v41 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_LoadDlg_CPP, 617); /*0x559462*/
-                  Dialog::ShowMessageBox(v40, v41, 0, 0, 0, v55); /*0x55946d*/
+                  Dialog_ShowMessageBox(v40, v41, 0, 0, 0, v55); /*0x55946d*/
                   SaveLoadDialog::LookupDialogHash((SaveLoadDialog *)Dialog); /*0x559474*/
                   ShowWindow((HWND)Dialog, 0); /*0x55947c*/
                   if ( *((unsigned int *)this + 3) ) /*0x55947e*/
@@ -6947,7 +7046,7 @@ void SaveLoadDialog::DlgProc()
                   ShowWindow((HWND)Dialog, 5); /*0x5593e1*/
                   v50 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_LoadDlg_CPP, 609); /*0x559407*/
                   v39 = (int *)GetStringCSF(aTxtErrorSaving, 0, g_Str_File_LoadDlg_CPP, 609); /*0x559419*/
-                  Dialog::ShowMessageBox(v39, v50, 0, 0, 0, v55); /*0x559423*/
+                  Dialog_ShowMessageBox(v39, v50, 0, 0, 0, v55); /*0x559423*/
                   *((unsigned int *)this + 6) = -1; /*0x559428*/
                 }
               }
@@ -6969,7 +7068,7 @@ void SaveLoadDialog::DlgProc()
             }
             v52 = GetStringCSF(g_Str_TXT_NO, 0, g_Str_File_LoadDlg_CPP, 646); /*0x559113*/
             v27 = GetStringCSF(g_Str_TXT_YES, 0, g_Str_File_LoadDlg_CPP, 646); /*0x559125*/
-            if ( Dialog::ShowMessageBox(lParam, v27, v52, 0, 0, v55) /*0x559187*/
+            if ( Dialog_ShowMessageBox(lParam, v27, v52, 0, 0, v55) /*0x559187*/
               || ((*(void (__thiscall **)(SaveLoadDialog *, int))(*(unsigned int *)this->__pad_0 + 12))(this, v22 + 256),
                   SendMessageA(hWnd, 0x182u, wParam, 0),
                   SendMessageA(hWnd, 0x186u, 0, 0),
@@ -7145,7 +7244,7 @@ void SkirmishDialog::HandleGameStart()
     char v10[132]; // [esp+10h] [ebp-188h] BYREF
     wchar_t Destination[130]; // [esp+94h] [ebp-104h] BYREF
 
-    Debug::Log(); /*0x5b9a71*/
+    Debug_Log(); /*0x5b9a71*/
     v2 = *(unsigned int *)&stru_A8B250.__pad_0[4]; /*0x5b9a8a*/
     strcpy(v10, byte_A8B8E0); /*0x5b9a9e*/
     wcscpy(Destination, MEMORY[0xA8B322]); /*0x5b9aaf*/
@@ -7195,7 +7294,7 @@ void SkirmishDialog::HandleGameStart()
         }
         else
         {
-          v7 = g_UIControlState; /*0x5b9bfd*/
+          v7 = (Skirmish *)g_UIControlState; /*0x5b9bfd*/
           if ( g_UIControlState ) /*0x5b9c05*/
           {
             ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5b9c09*/
@@ -7207,7 +7306,7 @@ void SkirmishDialog::HandleGameStart()
               v9 = 0; /*0x5b9c2e*/
             g_UIControlState = v9; /*0x5b9c37*/
             Surface::LoadToSurfaceSHP((Surface *)v9, ExistingFileName); /*0x5b9c3c*/
-            v7 = g_UIControlState; /*0x5b9c41*/
+            v7 = (Skirmish *)g_UIControlState; /*0x5b9c41*/
           }
           if ( !*(unsigned int *)v7 ) /*0x5b9c47*/
             Session::PrepareGame(*(Session **)this->__pad_0); /*0x5b9c4e*/
@@ -7220,7 +7319,7 @@ void SkirmishDialog::HandleGameStart()
       }
     }
     IDA_BYTE1(this->SkirmishDialog_field_0x08) = 1; /*0x5b9c76*/
-    Debug::Log(); /*0x5b9c7a*/
+    Debug_Log(); /*0x5b9c7a*/
 }
 
 // 0x5e68a0
@@ -7363,7 +7462,7 @@ void SkirmishMapGen::DlgProc()
             Skirmish::RenderPreview(dword_ABE154, hWnd); /*0x596acd*/
         }
         if ( LoadScreen::IsActive(dword_AC4F58) ) /*0x596ad7*/
-          LoadScreen::Render((int)dword_AC4F58, a3, (int)hWnd, NAN); /*0x596aed*/
+          LoadScreen_Render((int)dword_AC4F58, a3, (int)hWnd, NAN); /*0x596aed*/
         ValidateRect(hWnd, 0); /*0x596af5*/
         return 0; /*0x596afe*/
       case 0x111u: /*0x596342*/
@@ -7835,3 +7934,4 @@ void SyncDelayClass::ProcessNetworkSync()
     return v2; /*0x55e072*/
 
 } // namespace gamemd
+}

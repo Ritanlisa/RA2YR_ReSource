@@ -10,13 +10,11 @@ using ra2::game::AbstractClass;
 // 自动生成 by tools/move_hpp_bodies.py — 函数体自 src/structure/building.hpp 迁出
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "building.hpp"
-#include "e4/classes/SuperWeapon_e4.hpp"
 #include "e4/classes/SuperClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "core/globals_core.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "structure/globals_structure.hpp"
-#include "e4/classes/unknown_e4.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
 #include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
 

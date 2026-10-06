@@ -2,16 +2,226 @@
 // (gen_tree_full_e4.py) — namespace-isolated C2027 fix,
 // zero tree dependencies. Bodies access these via e4 TUs only.
 #pragma once
+// G57a1: e4-universe marker battery -- gap2 twins in core/utility_ext.hpp
+// (math.hpp type aliases CellStruct/Point2D/CoordStruct, the ra2::game::
+// ObjectClass using-bridge, and the HashTable/ComPtr/Random/Compare/Flag/
+// Buffer/StringVector/VectorCursor_uint_DynamicVectorClass_uint class
+// twins) are suppressed; the e4 flat carriers in src/e4/classes/ are the
+// single truth in e4 TUs. gap2 TUs never include this header (verified),
+// so their utility_ext.hpp view is unchanged.
+#ifndef GAMEMD_E4_UNIVERSE
+#define GAMEMD_E4_UNIVERSE 1
+#endif
+
+// G57c1: battery extension -- utility_ext twins that collide with e4 flat carriers / TU-local defs (C2011 family)
+#ifndef GAMEMD_E4_AllocCallback
+#define GAMEMD_E4_AllocCallback 1
+#endif
+#ifndef GAMEMD_E4_COM
+#define GAMEMD_E4_COM 1
+#endif
+#ifndef GAMEMD_E4_COMClass
+#define GAMEMD_E4_COMClass 1
+#endif
+#ifndef GAMEMD_E4_COMObject
+#define GAMEMD_E4_COMObject 1
+#endif
+#ifndef GAMEMD_E4_Config
+#define GAMEMD_E4_Config 1
+#endif
+#ifndef GAMEMD_E4_Delegate
+#define GAMEMD_E4_Delegate 1
+#endif
+#ifndef GAMEMD_E4_EnumConnectionPointsClass
+#define GAMEMD_E4_EnumConnectionPointsClass 1
+#endif
+#ifndef GAMEMD_E4_EnumConnectionsClass
+#define GAMEMD_E4_EnumConnectionsClass 1
+#endif
+#ifndef GAMEMD_E4_EventQueue
+#define GAMEMD_E4_EventQueue 1
+#endif
+#ifndef GAMEMD_E4_Event_Dispatch
+#define GAMEMD_E4_Event_Dispatch 1
+#endif
+#ifndef GAMEMD_E4_Float
+#define GAMEMD_E4_Float 1
+#endif
+#ifndef GAMEMD_E4_Float4
+#define GAMEMD_E4_Float4 1
+#endif
+#ifndef GAMEMD_E4_GraphicMenuAnimItem
+#define GAMEMD_E4_GraphicMenuAnimItem 1
+#endif
+#ifndef GAMEMD_E4_GraphicMenuItem
+#define GAMEMD_E4_GraphicMenuItem 1
+#endif
+#ifndef GAMEMD_E4_Hash
+#define GAMEMD_E4_Hash 1
+#endif
+#ifndef GAMEMD_E4_Helper
+#define GAMEMD_E4_Helper 1
+#endif
+#ifndef GAMEMD_E4_LoadGame
+#define GAMEMD_E4_LoadGame 1
+#endif
+#ifndef GAMEMD_E4_Main
+#define GAMEMD_E4_Main 1
+#endif
+#ifndef GAMEMD_E4_MoveFeedback
+#define GAMEMD_E4_MoveFeedback 1
+#endif
+#ifndef GAMEMD_E4_Player
+#define GAMEMD_E4_Player 1
+#endif
+#ifndef GAMEMD_E4_PlayerClass
+#define GAMEMD_E4_PlayerClass 1
+#endif
+#ifndef GAMEMD_E4_Process
+#define GAMEMD_E4_Process 1
+#endif
+#ifndef GAMEMD_E4_PtrVector
+#define GAMEMD_E4_PtrVector 1
+#endif
+#ifndef GAMEMD_E4_Queue
+#define GAMEMD_E4_Queue 1
+#endif
+#ifndef GAMEMD_E4_Rect
+#define GAMEMD_E4_Rect 1
+#endif
+#ifndef GAMEMD_E4_Rect_Point
+#define GAMEMD_E4_Rect_Point 1
+#endif
+#ifndef GAMEMD_E4_RefCount
+#define GAMEMD_E4_RefCount 1
+#endif
+#ifndef GAMEMD_E4_Return
+#define GAMEMD_E4_Return 1
+#endif
+#ifndef GAMEMD_E4_SHA1
+#define GAMEMD_E4_SHA1 1
+#endif
+#ifndef GAMEMD_E4_Selection
+#define GAMEMD_E4_Selection 1
+#endif
+#ifndef GAMEMD_E4_Settings
+#define GAMEMD_E4_Settings 1
+#endif
+#ifndef GAMEMD_E4_StringList
+#define GAMEMD_E4_StringList 1
+#endif
+#ifndef GAMEMD_E4_Struct
+#define GAMEMD_E4_Struct 1
+#endif
+#ifndef GAMEMD_E4_Time
+#define GAMEMD_E4_Time 1
+#endif
+#ifndef GAMEMD_E4_Type
+#define GAMEMD_E4_Type 1
+#endif
+#ifndef GAMEMD_E4_Value
+#define GAMEMD_E4_Value 1
+#endif
+#ifndef GAMEMD_E4_Vector2
+#define GAMEMD_E4_Vector2 1
+#endif
+#ifndef GAMEMD_E4_Vector3
+#define GAMEMD_E4_Vector3 1
+#endif
+#ifndef GAMEMD_E4_VectorCursor
+#define GAMEMD_E4_VectorCursor 1
+#endif
+#ifndef GAMEMD_E4_WinMain
+#define GAMEMD_E4_WinMain 1
+#endif
+#ifndef GAMEMD_E4_unknown
+#define GAMEMD_E4_unknown 1
+#endif
+
+#ifndef GAMEMD_E4_HashTable
+#define GAMEMD_E4_HashTable 1
+#endif
+#ifndef GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint
+#define GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint 1
+#endif
+#ifndef GAMEMD_E4_Buffer
+#define GAMEMD_E4_Buffer 1
+#endif
+#ifndef GAMEMD_E4_ComPtr
+#define GAMEMD_E4_ComPtr 1
+#endif
+#ifndef GAMEMD_E4_Random
+#define GAMEMD_E4_Random 1
+#endif
+#ifndef GAMEMD_E4_Compare
+#define GAMEMD_E4_Compare 1
+#endif
+#ifndef GAMEMD_E4_Flag
+#define GAMEMD_E4_Flag 1
+#endif
+#ifndef GAMEMD_E4_StringVector
+#define GAMEMD_E4_StringVector 1
+#endif
 
 #include "e4/classes/_fwd_e4.hpp"
 #include "core/utility_ext.hpp"  // G42.55 tree truth
+#include "e4/classes/LinkedList_flat_e4.hpp"  // G57c8 promoted (corpus static-form LinkedList:: vocab)
+#include "e4/classes/AllocCallback_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Buffer_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/COM_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/COMClass_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/COMObject_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/ComPtr_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Compare_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Config_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Delegate_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/EnumConnectionPointsClass_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/EnumConnectionsClass_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/EventQueue_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Event_Dispatch_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Flag_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Float_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Float4_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/GraphicMenuAnimItem_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/GraphicMenuItem_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Hash_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Helper_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/LoadGame_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Main_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/MoveFeedback_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Player_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/PlayerClass_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Process_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/PtrVector_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Queue_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Random_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Rect_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Rect_Point_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/RefCount_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Return_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/SHA1_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Selection_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Settings_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/StringVector_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Struct_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Time_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Type_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Value_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Vector2_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/Vector3_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/VectorCursor_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+// G57c1: VectorCursor_uint_DynamicVectorClass_uint promotion EXCLUDED -- this
+// header defines that flat class itself (line ~989); a promoted carrier
+// twin would C2011 against it.
+#include "e4/classes/WinMain_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
+#include "e4/classes/unknown_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
 
 namespace gamemd {
 
 struct AudioChannel;
 struct CampaignScore;
 struct DialogControl_OwnerDraw;
-#ifndef GAMEMD_TREE_UNIVERSE
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct DynamicVectorClass;
 #endif
 struct FractalNoise;
@@ -26,7 +236,7 @@ struct MSShapeAnim;
 struct ReferenceCounted;
 struct ShapeButtonClass;
 struct State;
-#ifndef GAMEMD_TREE_UNIVERSE
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct VectorClass;
 #endif
 struct VectorCursor_uint_DynamicVectorClass_uint;
@@ -62,7 +272,7 @@ struct DialogControl_OwnerDraw {
     unsigned char __pad_9[4];  // 0x9
 };
 
-#ifndef GAMEMD_TREE_UNIVERSE
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct DynamicVectorClass {
     void* vtable1;  // 0x0 (no offset truth)
     void* vfptr;
@@ -349,9 +559,9 @@ struct HashTable {
     static int LookupString(void *aP0, const char **a2, unsigned int *a3);  // G42.33 b2 static-form sync
     static int ComputeIndex_2(int *aP1, int aP2);  // G42.33 b2 static-form sync (HashMap vocab)
     static int Grow2(void *aP0);  // A_c2039 R5 static-form sync
-    void* CleanupAndResize;  // 0x0 (no offset truth)
+    // G57a1: CleanupAndResize/RebuildEx/FindString vocab fields moved to
+    // static-method form below -- corpus calls them static-style.
     unsigned char q01C;  // 0x1C
-    void* RebuildEx;  // 0x0 (no offset truth)
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
@@ -366,7 +576,6 @@ struct HashTable {
     void* Reset;  // 0x0 (no offset truth)
     unsigned char q044;  // 0x44
     unsigned char q048;  // 0x48
-    void* FindString;  // 0x0 (no offset truth)
     void* Constructor;  // 0x0 (no offset truth)
     unsigned char q04C;  // 0x4C
     void* FindOrCreate2;  // 0x0 (no offset truth)
@@ -381,6 +590,15 @@ struct HashTable {
     static int FindChunk(void *aP0, char * Str1, void * a2, CCINIClass * aP3);  // A_c2039 R5 static-form sync
     static int Remove(void *aP0, int a2);  // A_c2039 R5 static-form sync
     static int Find(void *aP0, const char * a1, ConvertClass * aP2);  // A_c2039 R5 static-form sync
+    static int Lookup(void *aP0, const char **aP1, unsigned int *aP2);  // G57a1 static-form sync (CComObject 0x7ab9xx sites)
+    static int Grow(void *aP0);  // G57a1 static-form sync (CComObject 0x7ab9d7+)
+    static int Rebuild2(void *aP0);  // G57a1 static-form sync (Dialog 0x624fa9)
+    static int Clear(int aP0);  // G57a1 static-form sync (addr60 0x600555)
+    static int RemoveHashTableEntry(void *aP0, int aP2);  // G57a1 static-form sync (addr6B 0x6ba01c)
+    static int FindWOLHashTableEntry(void *aP0, const char **aP1, unsigned int *aP2);  // G57a1 static-form sync (addr79 0x79ccf4)
+    static int CleanupAndResize(void *aP0);  // G57a1 field->static-form sync (addr79 0x79e755)
+    static int RebuildEx(void *aP0);  // G57a1 field->static-form sync (HashTable_e4 0x6b9718)
+    static int FindString(void *aP0, const char *aP1, unsigned int *aP2);  // G57a1 field->static-form sync (File_e4 0x76ad45+)
     unsigned char __pad_0;  // 0x0
 };
 #endif  // GAMEMD_TREE_UNIVERSE (HashTable)
@@ -739,7 +957,7 @@ struct State {
     void* vt_Anim;  // 0x0 (no offset truth)
 };
 
-#ifndef GAMEMD_TREE_UNIVERSE
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct VectorClass {
     void* Items;  // 0x4
     int Capacity;  // 0x8

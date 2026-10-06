@@ -127,7 +127,7 @@ void PsyDom::Fire()
           && !(*(uint8_t (**)(int))(*(unsigned int *)i + 84))(i) )
         {
           if ( *(unsigned int *)(i + 704) ) /*0x53b276*/
-            CaptureManagerClass::FreeUnit((IUnknown *)((CaptureManagerClass *)i), 0,(IUnknown *)((int)v11),(IUnknown *)(v26), v27,(IUnknown **)(v28)); /*0x53b287*/
+            ((CaptureManagerClass *)(IUnknown *)((CaptureManagerClass *)i))->FreeUnit( 0,(IUnknown *)((int)v11),(IUnknown *)(v26), v27,(IUnknown **)(v28)); /*0x53b287*/
           (*(void (**)(int, House *, int))(*(unsigned int *)i + 980))(i, (House *)PsyDom_Owner, 1); /*0x53b298*/
           v15 = *(unsigned int *)i; /*0x53b29e*/
           *(unsigned char *)(i + 708) = 1; /*0x53b2a2*/
@@ -147,7 +147,7 @@ void PsyDom::Fire()
             v22 = 0; /*0x53b30d*/
           *(unsigned int *)(i + 712) = (unsigned int)(v22); /*0x53b311*/
           if ( v22 ) /*0x53b317*/
-            BuildingClass::AimTurret(v22, (unsigned char *)i); /*0x53b31c*/
+            ((BuildingClass *)v22)->AimTurret( (unsigned char *)i); /*0x53b31c*/
           if ( v40 < v38 /*0x53b34b*/
             || (BYTE1(v39) || !v38)
             && v41 > 0

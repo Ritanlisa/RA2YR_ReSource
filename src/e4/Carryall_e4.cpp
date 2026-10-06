@@ -103,7 +103,7 @@ LABEL_18:
         (*(void (**)(Carryall *, void *, int))(Carryall_field_00 + 1152))(this, NearbyCell, 1); /*0x416ede*/
         v10 = *((unsigned int *)this + 373); /*0x416ee4*/
         if ( v10 ) /*0x416eec*/
-          TeamClass::SelectMember((gamemd::AbstractClass *)(v10),(void *)(*((unsigned int *)this + 361))); /*0x416ef5*/
+          TeamClass::SelectMember( (gamemd::AbstractClass *)(v10), (void)((void *)(*((unsigned int *)this + 361)))); /*0x416ef5*/
         *((unsigned int *)this + 47) = 1; /*0x416eff*/
         ((gamemd::Debug *)this)->Log(); /*0x416f09*/
       }
@@ -113,14 +113,14 @@ LABEL_18:
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 3); /*0x416ea4*/
         (*(void (**)(Carryall *, unsigned int, int))(this->Carryall_field_00 + 1156))(this, 0, 1); /*0x416eb2*/
       }
-LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl((MissionClass *)this));
+LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl( (MissionClass *)this));
       LOWORD(v4) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dad*/
       return (gamemd::FootClass **)(v4 + Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 2));
     case 1: /*0x416d64*/
       v11 = *((unsigned int *)this + 361); /*0x416f29*/
       if ( v11 ) /*0x416f31*/
       {
-        v12 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)&v11->q_120)(v11, v29); /*0x416f54*/
+        v12 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)&v11->q_120))(v11, v29);  /*0x416f54*/
         if ( !*((unsigned int *)this + 413) ) /*0x416f5f*/
           WinAPI::Wrapper(-2147467261); /*0x416f6e*/
         (*(void (**)(unsigned int, unsigned int, unsigned int, unsigned int))(**((unsigned int **)this + 413) + 68))( /*0x416f89*/
@@ -202,7 +202,7 @@ LABEL_44:
         else
         {
           (*(void (**)(Carryall *, unsigned int))(this->Carryall_field_00 + 292))(this, 0); /*0x41719c*/
-          FootClass::MissionMoveCarryallLand((FootClass *)this); /*0x4171a4*/
+          FootClass::MissionMoveCarryallLand( (FootClass *)this); /*0x4171a4*/
           (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 292))(this, 1); /*0x4171af*/
           *((unsigned int *)this + 47) = 0; /*0x4171b5*/
         }

@@ -91,6 +91,9 @@ void sub_6CFC20();
 void sub_6CFC60();
 }
 }
+#ifndef GAMEMD_E4_TU_rc_ptr_base
+#define GAMEMD_E4_TU_rc_ptr_base 1  // G57c6: suppress minimal_carriers.hpp twin (TU-local def below)
+#endif
 namespace gamemd { struct rc_ptr_base { void *vfptr; }; }  // fwd-only in _fwd_e4.hpp; minimal E2 (v264 storage)
 namespace gamemd { struct NetMessage { static char * Pack4(void *aP0, const void *aP1, int aP2); static char * Pack(void *aP0, const void *aP1, void *aP2, int aP3); }; }  // 0x4CB700/0x4CB830 thiscall static-form (G42.33 b3)
 
@@ -227,7 +230,7 @@ int ProcessGameResults(char a1)
   v2 = dword_B779D4;
   char * v3 = (char *)operator new(0x10u);
   if ( v3 )
-    inited = TerrainInitMap(v3,(char *)((RandomStruct *)&stru_830620[72452]), v2);
+    inited = TerrainInitMap( (char*)(v3), (char *)((RandomStruct *)&stru_830620[72452]), v2);
   else
     inited = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)inited);
@@ -250,14 +253,14 @@ int ProcessGameResults(char a1)
   }
   char * v9 = (char *)operator new(0x10u);
   if ( v9 )
-    v10 = TerrainInitMap(v9,(char *)((RandomStruct *)&stru_830620[72436]),(int)((IUnknown *)v8));
+    v10 = TerrainInitMap( (char*)(v9), (char *)((RandomStruct *)&stru_830620[72436]), (int)((IUnknown *)v8));
   else
     v10 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v10);
   v11 = dword_B779C4;
   char * v12 = (char *)operator new(0x10u);
   if ( v12 )
-    v13 = TerrainInitMap(v12,(char *)((RandomStruct *)&stru_830620[72428]), v11);
+    v13 = TerrainInitMap( (char*)(v12), (char *)((RandomStruct *)&stru_830620[72428]), v11);
   else
     v13 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v13);
@@ -287,35 +290,35 @@ int ProcessGameResults(char a1)
   v21 = (IUnknown *)g_Rules_Bases;
   char * v22 = (char *)operator new(0x10u);
   if ( v22 )
-    v23 = TerrainInitMap(v22,(char *)((RandomStruct *)&stru_830620[72396]), (int)v21);
+    v23 = TerrainInitMap( (char*)(v22), (char *)((RandomStruct *)&stru_830620[72396]), (int)v21);
   else
     v23 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v23);
   bool v24 = (unsigned char)ShortGame != 0;
   char * v25 = (char *)operator new(0x10u);
   if ( v25 )
-    v26 = TerrainInitMap(v25,(char *)((RandomStruct *)&stru_830620[72388]), (int)(IUnknown *)v24);
+    v26 = TerrainInitMap( (char*)(v25), (char *)((RandomStruct *)&stru_830620[72388]), (int)(IUnknown *)v24);
   else
     v26 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v26);
   bool v27 = (unsigned char)SWAllowed != 0;
   char * v28 = (char *)operator new(0x10u);
   if ( v28 )
-    v29 = TerrainInitMap(v28,(char *)((RandomStruct *)&stru_830620[72380]), (int)(IUnknown *)v27);
+    v29 = TerrainInitMap( (char*)(v28), (char *)((RandomStruct *)&stru_830620[72380]), (int)(IUnknown *)v27);
   else
     v29 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v29);
   v30 = g_ScenarioFlags;
   char * v31 = (char *)operator new(0x10u);
   if ( v31 )
-    v32 = TerrainInitMap(v31,(char *)((RandomStruct *)&stru_830620[72372]), v30);
+    v32 = TerrainInitMap( (char*)(v31), (char *)((RandomStruct *)&stru_830620[72372]), v30);
   else
     v32 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v32);
   v33 = (IUnknown *)(((unsigned char)MCVRedeploy == 1) + 2 * ((unsigned char)g_Rules_ShortGame == 1));
   char * v34 = (char *)operator new(0x10u);
   if ( v34 )
-    v35 = TerrainInitMap(v34, (char *)(RandomStruct *)&stru_830620[72364], (int)(void *)((int)v33));
+    v35 = TerrainInitMap( (char*)(v34), (char *)(RandomStruct *)&stru_830620[72364], (int)(void *)((int)v33));
   else
     v35 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v35);
@@ -329,41 +332,41 @@ int ProcessGameResults(char a1)
   bool v38 = (unsigned char)Crates != 0;
   char * v39 = (char *)operator new(0x10u);
   if ( v39 )
-    v40 = TerrainInitMap(v39, (char *)(RandomStruct *)&stru_830620[72348], (int)(void *)((int)(IUnknown *)v38));
+    v40 = TerrainInitMap( (char*)(v39), (char *)(RandomStruct *)&stru_830620[72348], (int)(void *)((int)(IUnknown *)v38));
   else
     v40 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v40);
   v41 = (IUnknown *)g_Rules_AlliesAllowed;
   char * v42 = (char *)operator new(0x10u);
   if ( v42 )
-    v43 = TerrainInitMap(v42, (char *)(RandomStruct *)&stru_830620[72340], (int)(void *)((int)v41));
+    v43 = TerrainInitMap( (char*)(v42), (char *)(RandomStruct *)&stru_830620[72340], (int)(void *)((int)v41));
   else
     v43 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v43);
   v44 = (IUnknown *)g_Rules_MultiEngineer;
   char * v45 = (char *)operator new(0x10u);
   if ( v45 )
-    v46 = TerrainInitMap(v45, (char *)(RandomStruct *)&stru_830620[59868], (int)(void *)((int)v44));
+    v46 = TerrainInitMap( (char*)(v45), (char *)(RandomStruct *)&stru_830620[59868], (int)(void *)((int)v44));
   else
     v46 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v46);
   char * v47 = (char *)operator new(0x10u);
   if ( v47 )
-    v48 = BuildResultPacket(v47, &stru_830620[72332], (IUnknown *)&Destination);
+    v48 = BuildResultPacket( (char*)(v47), &stru_830620[72332], (IUnknown *)&Destination);
   else
     v48 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v48);
   v49 = (IUnknown *)dword_B77780;
   char * v50 = (char *)operator new(0x10u);
   if ( v50 )
-    v51 = TerrainInitMap(v50, (char *)(RandomStruct *)&stru_830620[72324], (int)(void *)((int)v49));
+    v51 = TerrainInitMap( (char*)(v50), (char *)(RandomStruct *)&stru_830620[72324], (int)(void *)((int)v49));
   else
     v51 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v51);
   v52 = (IUnknown *)dword_B77CE0;
   char * v53 = (char *)operator new(0x10u);
   if ( v53 )
-    v54 = TerrainInitMap(v53, (RandomStruct *)&stru_830620[72316], (int)(void *)(v52));
+    v54 = TerrainInitMap( (char*)(v53), (RandomStruct *)&stru_830620[72316], (int)(void *)(v52));
   else
     v54 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v54);
@@ -455,13 +458,13 @@ int ProcessGameResults(char a1)
 LABEL_95:
   char * v75 = (char *)operator new(0x10u);
   if ( v75 )
-    v76 = TerrainInitMap(v75, (RandomStruct *)&stru_830620[72308], (int)(void *)(v68));
+    v76 = TerrainInitMap( (char*)(v75), (RandomStruct *)&stru_830620[72308], (int)(void *)(v68));
   else
     v76 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v76);
   char * v77 = (char *)operator new(0x10u);
   if ( v77 )
-    v78 = TerrainInitMap(v77, (RandomStruct *)&stru_830620[72300], (int)(void *)(v269));
+    v78 = TerrainInitMap( (char*)(v77), (RandomStruct *)&stru_830620[72300], (int)(void *)(v269));
   else
     v78 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v78);
@@ -578,7 +581,7 @@ LABEL_135:
   v280 = 0;
   v281 = 0;
   v272 = (const CHAR *)&vt_RawFileClass;
-  FileClass::SetName(&v272, Filename);
+  FileClass::SetName( &v272, (char *)(Filename));
   ((FileClass *)(&v272))->Open2((const CHAR *)1);
   if ( hFile != (HANDLE)-1 && GetFileTime(hFile, 0, 0, &LastWriteTime) )
   {
@@ -626,7 +629,7 @@ LABEL_157:
 LABEL_158:
   if ( g_GameStateFlags )
   {
-    v101 = (IUnknown *)(*(int (__thiscall **)(void *))(*(unsigned int *)(void *)(unsigned int)g_GameStateFlags + 184))((void *)(unsigned int)g_GameStateFlags);  // G42.33 b9 truth 0x6C6F50+LABEL_158
+    v101 = (IUnknown *)(*(int (**)(void *))(*(unsigned int *)(void *)(unsigned int)g_GameStateFlags + 184))((void *)(unsigned int)g_GameStateFlags);  // G42.33 b9 truth 0x6C6F50+LABEL_158
     v102 = (char *)operator new(0x10u);
     if ( v102 )
       v103 = TerrainInitMap(v102, (RandomStruct *)&stru_830620[72240], (int)(void *)(v101));
@@ -730,10 +733,10 @@ LABEL_158:
       stru_830620[72051] = v106;
       stru_830620[72067] = v106;
       stru_830620[72075] = v106;
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 2864));
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 4920));
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 808));
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 6976));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 2864)));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 4920)));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 808)));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 6976)));
       int v135 = *(unsigned int *)(v105 + 4912);
       int v136 = 0;
       for ( v264.vfptr = 0; v136 < v135; ++v136 )
@@ -806,19 +809,19 @@ LABEL_158:
       else
         v154 = 0;
       ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v154);
-      Array::ByteSwap((u_long *)(v105 + 2864));
-      Array::ByteSwap((u_long *)(v105 + 4920));
-      Array::ByteSwap((u_long *)(v105 + 808));
-      Array::ByteSwap((u_long *)(v105 + 6976));
-      Array::Zero((unsigned int *)(v105 + 2864));
-      Array::Zero((unsigned int *)(v105 + 808));
-      Array::Zero((unsigned int *)(v105 + 4920));
-      Array::Zero((unsigned int *)(v105 + 6976));
+      ((Array *)(u_long *)(v105 + 2864))->ByteSwap();
+      ((Array *)(u_long *)(v105 + 4920))->ByteSwap();
+      ((Array *)(u_long *)(v105 + 808))->ByteSwap();
+      ((Array *)(u_long *)(v105 + 6976))->ByteSwap();
+      Array::Zero( (void)((unsigned int *)(v105 + 2864)));
+      Array::Zero( (void)((unsigned int *)(v105 + 808)));
+      Array::Zero( (void)((unsigned int *)(v105 + 4920)));
+      Array::Zero( (void)((unsigned int *)(v105 + 6976)));
       for ( i = 0; i < *(int *)((char *)&g_CellDirectionOffsets + 84616); ++i )
       {
         int v156 = *(unsigned int *)(*(unsigned int *)((char *)&g_CellDirectionOffsets + 84604) + 4 * i);
         if ( v105 == *(unsigned int *)(v156 + 540) )
-          HouseClass::IncrementStat((unsigned int *)(v105 + 4920), *(unsigned int *)(*(unsigned int *)(v156 + 1732) + 3576));
+          HouseClass::IncrementStat( (void)((unsigned int *)(v105 + 4920)), *(unsigned int *)(*(unsigned int *)(v156 + 1732) + 3576));
       }
       for ( j = 0; j < (int)g_BuildingClass_Count; ++j )
       {
@@ -827,24 +830,24 @@ LABEL_158:
         {
           int v159 = *(unsigned int *)(v158 + 1728);
           if ( !*(unsigned char *)(v159 + 3777) )
-            HouseClass::IncrementStat((unsigned int *)(v105 + 2864), *(unsigned int *)(v159 + 3576));
+            HouseClass::IncrementStat( (void)((unsigned int *)(v105 + 2864)), *(unsigned int *)(v159 + 3576));
         }
       }
       for ( k = 0; k < *(int *)((char *)&g_NetworkPlayerBuffer + 3428); ++k )
       {
         int v161 = *(unsigned int *)(*(unsigned int *)((char *)&g_NetworkPlayerBuffer + 3416) + 4 * k);
         if ( v105 == *(unsigned int *)(v161 + 540) )
-          HouseClass::IncrementStat((unsigned int *)(v105 + 808), *(unsigned int *)(*(unsigned int *)(v161 + 1732) + 3576));
+          HouseClass::IncrementStat( (void)((unsigned int *)(v105 + 808)), *(unsigned int *)(*(unsigned int *)(v161 + 1732) + 3576));
       }
       int v162 = *(unsigned int *)(v105 + 120);
       for ( m = 0; m < v162; ++m )
         HouseClass::IncrementStat(
           (unsigned int *)(v105 + 6976),
           *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v105 + 108) + 4 * m) + 1312) + 3576));
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 2864));
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 4920));
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 808));
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 6976));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 2864)));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 4920)));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 808)));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 6976)));
       stru_830620[72027] = v106;
       stru_830620[72019] = v106;
       stru_830620[72035] = v106;
@@ -909,10 +912,10 @@ LABEL_158:
       else
         v186 = 0;
       ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v186);
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 11088));
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 13144));
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 9032));
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 15200));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 11088)));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 13144)));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 9032)));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 15200)));
       int v187 = 0;
       stru_830620[72091] = v263;
       stru_830620[72083] = v263;
@@ -984,7 +987,7 @@ LABEL_158:
         v209 = 0;
       ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v209);
       stru_830620[72115] = v263;
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 17256));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 17256)));
       int v210 = *(unsigned int *)(v105 + 19304);
       int v211 = 0;
       for ( v264.vfptr = 0; v211 < v210; ++v211 )
@@ -1004,7 +1007,7 @@ LABEL_158:
         v214 = 0;
       ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v214);
       stru_830620[72123] = v263;
-      HouseClass::NetworkConvert((unsigned int *)(v105 + 19312));
+      HouseClass::NetworkConvert( (void)((unsigned int *)(v105 + 19312)));
       int v215 = *(unsigned int *)(v105 + 21360);
       int v216 = 0;
       for ( v264.vfptr = 0; v216 < v215; ++v216 )
@@ -1178,7 +1181,7 @@ LABEL_343:
     unsigned int * v246 = &v290[v245 + 2];
     IDA_LOBYTE(v245) = v244;
     int v248 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17756);
-    qmemcpy(v246, v247, v245 & 3);
+    qmemcpy( (void *)(v246), v247, v245 & 3);
     int v249 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
     v269 = *(IUnknown **)((char *)&g_OverlayTypeConfig + 17752);
     if ( *(int *)((char *)&g_OverlayTypeConfig + 17752) < v248 )
@@ -1230,10 +1233,10 @@ LABEL_343:
       }
       if ( (int)v269 < v249 )
       {
-        memcpy(
-          &v255[32776 * ((unsigned int)(char *)v269 + 1)],
-          &v255[32776 * (unsigned int)v269],
-          32776 * v249 - 32776 * (unsigned int)v269);
+memcpy( (void *)(&v255[32776 * ((unsigned int)(char *)v269 + 1)]), (const void *)(&v255[32776 * (unsigned int)v269]), 32776 * v249 - 32776 * (unsigned int)v269);
+
+
+
         v255 = *(char **)((char *)&g_OverlayTypeConfig + 17760);
         v249 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
       }
@@ -1332,7 +1335,7 @@ int DlgProcScoreScreen(HWND hWnd, UINT a2, WPARAM wParam, LPARAM a4)
         if ( dword_B0BF64 ) /*0x6c906e*/
         {
           AudioFile::Stop((void *)&stru_B0BF28); /*0x6c9079*/
-          AudioFileClass::Release((void *)&stru_B0BF28); /*0x6c9083*/
+          AudioFileClass::Release( (void *)&stru_B0BF28); /*0x6c9083*/
           dword_B0BF64 = 0; /*0x6c908a*/
           return 0; /*0x6c909a*/
         }
@@ -1399,7 +1402,7 @@ int DlgProcScoreScreen(HWND hWnd, UINT a2, WPARAM wParam, LPARAM a4)
       v14 = (wchar_t *)((char *)dword_A8B230 + 13744); /*0x6c9235*/
       v15 = (wchar_t *)((char *)dword_A8B230 + 13775); /*0x6c923b*/
     }
-    String = GetStringCSF(v14, 0, (const char *)aDRa2mdpostStls, 138); /*0x6c926e*/
+    String = (unsigned int)GetStringCSF(v14, 0, (const char *)aDRa2mdpostStls, 138); /*0x6c926e*/
     v17 = GetStringCSF(v15, 0, (const char *)aDRa2mdpostStls, 139); /*0x6c927b*/
     v18 = GetDlgItem(hWnd, 1779); /*0x6c927d*/
     v33 = (LPARAM)String; /*0x6c927f*/
@@ -1475,7 +1478,7 @@ int E4Recv_6CA1E0::sub_6CA1E0(char * Source)
       v5 = p_vtable1; /*0x6ca20f*/
       vtable0 = v15->AbstractClass; /*0x6ca211*/
       *p_vtable1 = 0; /*0x6ca213*/
-      while ( (*(int (**)(void *, wchar_t *, int))(*(unsigned int *)vtable0 + 8))(vtable0, &v14, 2) == 2 ) /*0x6ca22a*/
+      while ( (*(int (**)(void *, wchar_t *, int))(*(unsigned int *)vtable0 + 8))( vtable0, (wchar_t *)(&v14), 2) == 2 ) /*0x6ca22a*/
       {
         if ( v14 != 10 ) /*0x6ca235*/
         {
@@ -1730,12 +1733,12 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
 
   int Instance; // ebx
 
-  GadgetClass::Construct((ShpButtonClass *)this, aP1, aP5, aP3, aP4, 0, 0); /*0x6c6560*/
+  GadgetClass::Construct( (void)((ShpButtonClass *)this), aP1, (int)(aP5), aP3, aP4, 0, 0); /*0x6c6560*/
   ((Buffer*)((Buffer *)((char *)this + 36)))->Init(0, 0); /*0x6c656c*/
   *((unsigned int *)this + 12) = 0; /*0x6c657e*/
   *((unsigned int *)this + 13) = a4; /*0x6c6585*/
   *(unsigned int *)this = (unsigned int)&vt_StaticButtonClass; /*0x6c6588 G42.33 b9 truth: mov [esi], offset vt*/
-  StaticButtonClass::Draw(this, String, 0); /*0x6c658e*/
+  StaticButtonClass::Draw( this, (wchar_t *)(String), 0); /*0x6c658e*/
   if ( aP3 == -1 || aP4 == -1 ) /*0x6c659b*/
   {
     Instance = (int)TextRenderer::GetInstance(); /*0x6c65a8*/
@@ -2025,7 +2028,7 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
   *((unsigned int *)vtable2 + 2) = ((unsigned int *)this)[0]; /*0x6c8b70*/
   v8 = CellStruct::Copy((CellStruct *)a3, &v13); /*0x6c8b73*/
   v9 = a2; /*0x6c8b7a*/
-  v14 = (unsigned char *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)&a2->q_170)(a2, *v8, v8[1]); /*0x6c8b92*/
+  v14 = (unsigned char *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)&a2->q_170))(a2, *v8, v8[1]);  /*0x6c8b92*/
   v15 = 0; /*0x6c8b9b*/
   if ( *(int *)(a3 + 12) > 0 ) /*0x6c8ba3*/
   {
@@ -2040,7 +2043,7 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
       }
       qmemcpy(v11, (char *)&g_SidebarButtonState + 128, v10); /*0x6c8be0 G42.33 b9 truth: +0x80*/
       ++v15; /*0x6c8bf4*/
-      v14 += (*(int (**)(int))(*(unsigned int *)&a2->q_1D0)(a2); /*0x6c8c06*/
+      v14 += (*(int (**)(int))(*(unsigned int *)&a2->q_1D0))(a2);  /*0x6c8c06*/
       if ( v15 >= *(unsigned int *)(a3 + 12) ) /*0x6c8c0a*/
         break; /*0x6c8c0a*/
       v9 = a2; /*0x6c8c0c*/
@@ -2570,7 +2573,7 @@ unsigned int sub_6CA670(wchar_t * a1, unsigned int * a2)
 {
   unsigned int result; // eax
 
-  result = E4Recv_6CA5A0::sub_6CA5A0(a1); /*0x6ca673 G42.33 b9 static-form*/
+  result = E4Recv_6CA5A0::sub_6CA5A0( (wchar_t *)(a1)); /*0x6ca673 G42.33 b9 static-form*/
   *a2 = result; /*0x6ca678*/
   return result; /*0x6ca67a*/
 }
@@ -2582,7 +2585,7 @@ unsigned int sub_6CA680(wchar_t * a1, int a2)
 {
   unsigned int result; // eax
 
-  result = E4Recv_6CA5A0::sub_6CA5A0(a1); /*0x6ca683 G42.33 b9 static-form*/
+  result = E4Recv_6CA5A0::sub_6CA5A0( (wchar_t *)(a1)); /*0x6ca683 G42.33 b9 static-form*/
   if ( result ) /*0x6ca68a*/
     *(unsigned int *)(a2 + 4) = result; /*0x6ca68c*/
   return result; /*0x6ca68f*/

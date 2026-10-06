@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_MoveFeedback 1  // G57a3: e4 flat-carrier opt-in (suppress core utility_ext/stream_ext twin)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
@@ -200,11 +201,11 @@ DynamicVector * MoveFeedback::QueryInterface(char a2, int a1, int a3, int a4, in
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x40bcb3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40bcb6*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
   if ( v3 && BYTE1(this->m_C) ) /*0x40bcc0*/
   {
     __3_YAXPAX_Z(v3); /*0x40bcc8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40bcd0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40bcd0*/
   }
   BYTE1(this->m_C) = 0; /*0x40bcdb*/
   this->m_8 = 0; /*0x40bce1*/
@@ -322,18 +323,18 @@ void MoveFeedback::Constructor(unsigned int * Block, char a2, void *a3, void *a4
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40c163*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40c166*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x40c170*/
+  v3 = *(void **)&this->m_1[3]; /*0x40c163*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x40c170*/
   {
     __3_YAXPAX_Z(v3); /*0x40c178*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x40c180*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40c180*/
   }
-  BYTE1(Block->m_C) = 0; /*0x40c18b*/
-  Block->m_8 = 0; /*0x40c191*/
+  BYTE1(this->m_C) = 0; /*0x40c18b*/
+  this->m_8 = 0; /*0x40c191*/
   if ( (a2 & 1) != 0 ) /*0x40c198*/
-    __3_YAXPAX_Z(Block); /*0x40c19b*/
-  return Block->__pad_0; /*0x40c1a5*/
+    __3_YAXPAX_Z(this); /*0x40c19b*/
+  return this->__pad_0; /*0x40c1a5*/
 
 }
 } // namespace gamemd

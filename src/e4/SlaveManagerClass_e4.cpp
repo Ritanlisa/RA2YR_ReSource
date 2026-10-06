@@ -236,7 +236,7 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   (*(void (**)(int))(*((unsigned int *)this + 14) + 12))((int)(char *)this + 56); /*0x6af4e8*/
   (*(void (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((int)(char *)this + 56, v3, 0); /*0x6af4f2*/
   v6 = (int)(this); /*0x6af505*/
-  v4 = (*(int (**)(int *, int *))(SlaveManagerClass_Array + 16))(&SlaveManagerClass_Array, &v6); /*0x6af509*/
+  v4 = (*(int (**)(int *, int *))(SlaveManagerClass_Array + 16))( (int *)(&SlaveManagerClass_Array), (int *)(&v6)); /*0x6af509*/
   if ( v4 != -1 && v4 < dword_B0B600 && v4 < --dword_B0B600 ) /*0x6af525*/
   {
     do /*0x6af53d*/
@@ -467,9 +467,9 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
                              (int)a3);
           if ( v81 == dword_B0B5B8 )
           {
-            TechnoClass::SetFocus(v8, 0); /*0x6af7c5*/
+            ((TechnoClass *)v8)->SetFocus( 0); /*0x6af7c5*/
             v11 = a1[9]; /*0x6af7ca*/
-            if ( v11 && (*(int (**)(int))(v11->fallRate)(v11) == 6 )
+            if ( v11 && (*(int (**)(int))(v11->fallRate))(v11) == 6 )
             {
               v79 = a1[9]; /*0x6af7e4*/
               if ( v79 )
@@ -483,7 +483,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
               FoundationHeight = ((BuildingTypeClass *)(v14))->GetFoundationHeight(0); /*0x6af817*/
               v16 = a1[9]; /*0x6af81f*/
               v76 = ((CellStruct *)(v100))->Set(v79 - 1, FoundationHeight / 2); /*0x6af839*/
-              v17 = (unsigned short *)(*(int (**)(int, char *))(v16->airstrikeTintTimer)(v16, v89); /*0x6af849*/
+              v17 = (unsigned short *)(*(int (**)(int, char *))(v16->airstrikeTintTimer))(v16, v89);  /*0x6af849*/
               v18 = ((CellStruct *)(v17))->Add(&v99, v76); /*0x6af851*/
             }
             else
@@ -510,9 +510,9 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
           goto LABEL_62; /*0x6af89f*/
         case 2:
           v20 = (unsigned int *)(*(int (**)(int *))(*v8 + 444))(v8); /*0x6af8a8*/
-          if ( Cell::IsBridge2(v20) ) /*0x6af8b0*/
+          if ( ((Cell *)v20)->IsBridge2() ) /*0x6af8b0*/
           {
-            SlaveManagerClass::Check(v8); /*0x6af8bb*/
+            ((SlaveManagerClass *)v8)->Check(); /*0x6af8bb*/
             *(unsigned int *)(v7 + 4) = 3; /*0x6af8c0*/
           }
           else if ( !v8[361] ) /*0x6af8cc*/
@@ -521,12 +521,12 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
           }
           goto LABEL_62; /*0x6af8c7*/
         case 3:
-          if ( (uint8_t)SlaveManagerClass::CheckIsOne(v8) ) /*0x6af8e6*/
+          if ( (uint8_t)((SlaveManagerClass *)v8)->CheckIsOne() ) /*0x6af8e6*/
           {
-            v21 = (*(int (**)(int *, int *, int))(*v8 + 444))(v8, a2, a3); /*0x6af8f7*/
-            TechnoClass::SetFocus(v8, v21); /*0x6af900*/
+            v21 = (*(int (**)(int *, int *, int))(*v8 + 444))( v8, (int *)(a2), (int)(a3)); /*0x6af8f7*/
+            ((TechnoClass *)v8)->SetFocus( v21); /*0x6af900*/
             v22 = a1[9]; /*0x6af905*/
-            if ( v22 && (*(int (**)(int))(v22->fallRate)(v22) == 6 ) /*0x6af914*/
+            if ( v22 && (*(int (**)(int))(v22->fallRate))(v22) == 6 ) /*0x6af914*/
             {
               IsBuildingType = IsObjectTypeBuildingType(a1[9]); /*0x6af91e*/
               v24 = BuildingTypeClass::GetFoundationWidth(*(unsigned int **)(IsBuildingType + 1312)); /*0x6af926*/
@@ -535,7 +535,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
               v26 = ((BuildingTypeClass *)(v25))->GetFoundationHeight(0); /*0x6af939*/
               v27 = a1[9]; /*0x6af93f*/
               v84[1] = v26 / 2; /*0x6af946*/
-              v28 = (unsigned short *)(*(int (**)(int, unsigned short *))(v27->airstrikeTintTimer)(v27, v87); /*0x6af95c*/
+              v28 = (unsigned short *)(*(int (**)(int, unsigned short *))(v27->airstrikeTintTimer))(v27, v87);  /*0x6af95c*/
               v82 = *((CellStruct *)(v28))->Add(&v91, v84); /*0x6af96b*/
             }
             else
@@ -552,14 +552,14 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
           else
           {
             v30 = (unsigned int *)(*(int (**)(int *))(*v8 + 444))(v8); /*0x6af9c1*/
-            if ( Cell::IsBridge2(v30) ) /*0x6af9c9*/
+            if ( ((Cell *)v30)->IsBridge2() ) /*0x6af9c9*/
             {
-              if ( !(uint8_t)SlaveManagerClass::IsMasterHarvester(v8) ) /*0x6af9e5*/
+              if ( !(uint8_t)((SlaveManagerClass *)v8)->IsMasterHarvester() ) /*0x6af9e5*/
                 *(unsigned int *)(v7 + 4) = 1; /*0x6af9f2*/
             }
             else
             {
-              SlaveManagerClass::VtableDispatch(v8); /*0x6af9d4*/
+              ((SlaveManagerClass *)v8)->VtableDispatch(); /*0x6af9d4*/
               *(unsigned int *)(v7 + 4) = 1; /*0x6af9d9*/
             }
           }
@@ -570,7 +570,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
           if ( v31 ) /*0x6afa0b*/
           {
             v32 = a1[9]; /*0x6afa11*/
-            if ( v32 && (*(int (**)(int))(v32->fallRate)(v32) == 6 ) /*0x6afa20*/
+            if ( v32 && (*(int (**)(int))(v32->fallRate))(v32) == 6 ) /*0x6afa20*/
             {
               v33 = IsObjectTypeBuildingType(a1[9]); /*0x6afa2a*/
               v34 = BuildingTypeClass::GetFoundationWidth(v33->q520); /*0x6afa32*/
@@ -579,12 +579,12 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
               v36 = ((BuildingTypeClass *)(v35))->GetFoundationHeight(0); /*0x6afa43*/
               v37 = a1[9]; /*0x6afa4c*/
               v72 = ((CellStruct *)(v97))->Set(v77 - 1, v36 / 2); /*0x6afa67*/
-              v38 = (unsigned short *)(*(int (**)(int, int *, unsigned char *))(v37->airstrikeTintTimer)(v37, &v99, v93); /*0x6afa75*/
+              v38 = (unsigned short *)(*(int (**)(int, int *, unsigned char *))(v37->airstrikeTintTimer))( v37, (int *)(&v99), v93);  /*0x6afa75*/
               v39 = ((CellStruct *)(v38))->Add(v72, a2); /*0x6afa7d*/
             }
             else
             {
-              v39 = (int *)(*(int (**)(int, int *, int *))(*(unsigned int *)a1[9] + 440))(a1[9], &v94, a2); /*0x6afa8e*/
+              v39 = (int *)(*(int (**)(int, int *, int *))(*(unsigned int *)a1[9] + 440))( a1[9], (int *)(&v94), (int *)(a2)); /*0x6afa8e*/
             }
             v40 = v8[361]; /*0x6afa94*/
             v85 = *v39; /*0x6afaa3*/
@@ -595,11 +595,11 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
             IDA_LOWORD(v79) = IDA_LOWORD(v100[0]) - v85; /*0x6afaef*/
             IDA_HIWORD(v79) = IDA_HIWORD(v100[0]) - v84[3]; /*0x6afaf4*/
             v77 = v79; /*0x6afb01*/
-            if ( (int16_t)SlaveManagerClass::Calc2DDistance(&v77) > *((unsigned int *)g_RulesClass_Instance + 894) ) /*0x6afb19*/
+            if ( (int16_t)((SlaveManagerClass *)&v77)->Calc2DDistance() > *((unsigned int *)g_RulesClass_Instance + 894) ) /*0x6afb19*/
               IDA_HIBYTE(v78) = 1; /*0x6afb1b*/
           }
           v43 = a1[9]; /*0x6afb20*/
-          if ( v43 && (*(int (**)(int))(v43->fallRate)(v43) == 6 ) /*0x6afb2f*/
+          if ( v43 && (*(int (**)(int))(v43->fallRate))(v43) == 6 ) /*0x6afb2f*/
           {
             v44 = IsObjectTypeBuildingType(a1[9]); /*0x6afb39*/
             v45 = BuildingTypeClass::GetFoundationWidth(v44->q520); /*0x6afb41*/
@@ -608,12 +608,12 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
             v47 = ((BuildingTypeClass *)(v46))->GetFoundationHeight(0); /*0x6afb52*/
             v48 = a1[9]; /*0x6afb5a*/
             v73 = ((CellStruct *)(v87))->Set(v77 - 1, v47 / 2); /*0x6afb71*/
-            v49 = (unsigned short *)(*(int (**)(int, char *, char *))(v48->airstrikeTintTimer)(v48, v90, v88); /*0x6afb7e*/
+            v49 = (unsigned short *)(*(int (**)(int, char *, char *))(v48->airstrikeTintTimer))(v48, v90, v88);  /*0x6afb7e*/
             v50 = ((CellStruct *)(v49))->Add(v73, a2); /*0x6afb86*/
           }
           else
           {
-            v50 = (int *)(*(int (**)(int, char *, int *))(*(unsigned int *)a1[9] + 440))(a1[9], v92, a2); /*0x6afb97*/
+            v50 = (int *)(*(int (**)(int, char *, int *))(*(unsigned int *)a1[9] + 440))( a1[9], v92, (int *)(a2)); /*0x6afb97*/
           }
           v52 = *v8; /*0x6afb9f*/
           a2 = &v94; /*0x6afba7*/
@@ -653,7 +653,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
             v61 = ((BuildingTypeClass *)(v60))->GetFoundationHeight(0); /*0x6afc4c*/
             v62 = a1[9]; /*0x6afc52*/
             v80[1] = v61 / 2; /*0x6afc59*/
-            v63 = (unsigned short *)(*(int (**)(int, char *, char *, unsigned short *))(v62->airstrikeTintTimer)( /*0x6afc72*/
+            v63 = (unsigned short *)(*(int (**)(int, char *, char *, unsigned short *))(v62->airstrikeTintTimer))(  /*0x6afc72*/
                              v62,
                              v96,
                              v95,
@@ -662,7 +662,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
           }
           else
           {
-            v64 = (int *)(*(int (**)(int, char *, int *, int))(v57->airstrikeTintTimer)(v57, v98, &v94, a3); /*0x6afc8b*/
+            v64 = (int *)(*(int (**)(int, char *, int *, int))(v57->airstrikeTintTimer))( v57, v98, (int *)(&v94), (int)(a3));  /*0x6afc8b*/
           }
           v65 = *v8; /*0x6afc93*/
           v83 = *v64; /*0x6afc99*/
@@ -674,7 +674,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
           v71 = a1[18]; /*0x6afd20*/
           result = ++v83; /*0x6afd27*/
           if ( v83 >= v71 ) /*0x6afd2e*/
-            return result; /*0x6afd2e*/
+            return (TechnoClass * *)result; /*0x6afd2e*/
           v4 = 0; /*0x6af6e1*/
           break; /*0x6af6e1*/
         case 5:
@@ -706,14 +706,14 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
   LABEL_60:
           if ( !v70 ) /*0x6afd16*/
   LABEL_61:
-            SlaveManagerClass::CreateSlave(v7); /*0x6afd1b*/
+            SlaveManagerClass::CreateSlave( (wchar_t **)(v7)); /*0x6afd1b*/
           goto LABEL_62; /*0x6afd1b*/
         default:
           goto LABEL_62;
       }
     }
   }
-  return result; /*0x6afd36*/
+  return (TechnoClass * *)result; /*0x6afd36*/
 }
 }
 // 0x6B0A20
@@ -788,7 +788,7 @@ int SlaveManagerClass::AssignTask(AbstractClass * aP1)
   int result; // eax
   int i; // esi
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x6b10fa*/
+  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x6b10fa*/
   result = Power::TimerProcess(this->SlaveManagerClass_field_5C); /*0x6b1105*/
   for ( i = *(unsigned int *)this->__pad_48 - 1; i >= 0; --i ) /*0x6b110e*/
     result = Power::TimerProcess(*(unsigned int *)(*(unsigned int *)(this->slaveVectorCount + 4 * i) + 4)); /*0x6b111c*/
@@ -819,14 +819,14 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
 
   v2 = a2; /*0x6b1174*/
   v3 = a1; /*0x6b1179*/
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x6b1184*/
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(a1), (AbstractClass *)(a2)); /*0x6b1184*/
   v5 = 0; /*0x6b1186*/
   if ( Prefix_0 >= 0 ) /*0x6b118a*/
   {
     if ( v3 ) /*0x6b1192*/
     {
-      AbstractClass::InitVtables((AbstractClass *)v3, (int)&a1); /*0x6b119b*/
-      SlaveControlVector::Constructor((SlaveControlVector *)v3->slaves, 0, 0); /*0x6b11a7*/
+      ((AbstractClass *)(AbstractClass *)v3)->InitVtables( (int)&a1); /*0x6b119b*/
+      SlaveControlVector::Constructor( (int)((SlaveControlVector *)v3->slaves), 0, 0); /*0x6b11a7*/
       v3->slaves[0] = (int)&vt_DynamicVectorClass; /*0x6b11b0*/
       *(unsigned int *)&v3->__pad_48[4] = 10; /*0x6b11b6*/
       *(unsigned int *)v3->__pad_48 = 0; /*0x6b11bd*/
@@ -837,13 +837,13 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       ((unsigned int *)v3)[0] = &vt_SlaveManagerClass; /*0x6b11d6*/
       ((unsigned int *)v3)[0] = &vt_SlaveManagerClass; /*0x6b11dd*/
     }
-    Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, &v16, 4, 0); /*0x6b11f2*/
+    Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))( v2, (int *)(&v16), 4, 0); /*0x6b11f2*/
     if ( Prefix_0 >= 0 ) /*0x6b11f6*/
     {
       slaves = v3->slaves; /*0x6b11fc*/
       if ( v3 != (SlaveManagerClass *)-56 ) /*0x6b1201*/
       {
-        SlaveControlVector::Constructor((SlaveControlVector *)v3->slaves, 0, 0); /*0x6b1207*/
+        SlaveControlVector::Constructor( (int)((SlaveControlVector *)v3->slaves), 0, 0); /*0x6b1207*/
         *slaves = (int)&vt_DynamicVectorClass; /*0x6b120c*/
         *(unsigned int *)&v3->__pad_48[4] = 10; /*0x6b1212*/
         *(unsigned int *)v3->__pad_48 = 0; /*0x6b1219*/
@@ -869,7 +869,7 @@ LABEL_20:
       {
         while ( 1 ) /*0x6b1232*/
         {
-          v8 = __2_YAPAXI_Z(0x14u); /*0x6b1232*/
+          v8 = (unsigned int)__2_YAPAXI_Z(0x14u); /*0x6b1232*/
           if ( v8 ) /*0x6b123c*/
           {
             v9 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b123e*/
@@ -903,7 +903,7 @@ LABEL_20:
       }
     }
   }
-  return Prefix_0; /*0x6b12f1*/
+  return (AbstractClass * *)Prefix_0; /*0x6b12f1*/
 
 }
 } // namespace ra2
@@ -998,12 +998,12 @@ int SlaveManagerClass::SaveManager(TechnoTypeClass * aP0, int * a1, int aP2)
   int v4; // edx
   int i; // edi
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6b1312*/
+  result = AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)aP0), (ObjectTypeClass *)(a1), (ObjectTypeClass *)(aP2)); /*0x6b1312*/
   if ( result >= 0 ) /*0x6b1319*/
   {
     v4 = *a1; /*0x6b131e*/
     aP2 = *(unsigned int *)aP0->__pad_48; /*0x6b132a*/
-    result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x6b132e*/
+    result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))( (int *)(a1), (int *)(&aP2), 4, 0); /*0x6b132e*/
     if ( result >= 0 ) /*0x6b1333*/
     {
       for ( i = 0; i < aP2; ++i ) /*0x6b133d*/
@@ -1048,10 +1048,10 @@ namespace gamemd {
 SlaveManagerClass * SlaveManagerClass::ProcessOrders(void * Block, char a2)
 {
 
-  SlaveManagerClass::Constructor_SlaveManagerClass((int)Block); /*0x6b1393*/
+  ((SlaveManagerClass *)(int)this)->Constructor_SlaveManagerClass(); /*0x6b1393*/
   if ( (a2 & 1) != 0 ) /*0x6b139d*/
-    __3_YAXPAX_Z(Block); /*0x6b13a0*/
-  return Block; /*0x6b13aa*/
+    __3_YAXPAX_Z(this); /*0x6b13a0*/
+  return this; /*0x6b13aa*/
 
 }
 } // namespace gamemd
@@ -1208,18 +1208,18 @@ DynamicVector * SlaveManagerClass_25::QueryInterface(unsigned int * Block, char 
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x6b1983*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6b1986*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6b1990*/
+  v3 = *(void **)&this->m_1[3]; /*0x6b1983*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x6b1990*/
   {
     __3_YAXPAX_Z(v3); /*0x6b1998*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6b19a0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6b19a0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6b19ab*/
-  Block->m_8 = 0; /*0x6b19b1*/
+  BYTE1(this->m_C) = 0; /*0x6b19ab*/
+  this->m_8 = 0; /*0x6b19b1*/
   if ( (a2 & 1) != 0 ) /*0x6b19b8*/
-    __3_YAXPAX_Z(Block); /*0x6b19bb*/
-  return Block->__pad_0; /*0x6b19c5*/
+    __3_YAXPAX_Z(this); /*0x6b19bb*/
+  return this->__pad_0; /*0x6b19c5*/
 
 }
 } // namespace gamemd

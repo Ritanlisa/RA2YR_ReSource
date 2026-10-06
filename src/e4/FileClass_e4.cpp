@@ -42,7 +42,7 @@ const char* FileClass::SetFileName(char *aP1)
 {
 
   *((unsigned int *)this + 26) = 0; /*0x473fc4*/
-  return FileClass::OpenWithCDSearch((CDFileClass *)this, aP1); /*0x473fd1*/
+  return ((FileClass *)(CDFileClass *)this)->OpenWithCDSearch( aP1); /*0x473fd1*/
 
 }
 } // namespace gamemd
@@ -61,7 +61,7 @@ int FileClass::Open(int a2)
       IDA_LOBYTE(result) = 0; /*0x65cbfc*/
       return result; /*0x65cbff*/
     }
-    result = (*(int (__thiscall **)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this); /*0x65cc06*/
+    result = (*(int (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this); /*0x65cc06*/
     if ( (unsigned char)result ) /*0x65cc0b*/
       goto LABEL_14; /*0x65cc0b*/
     if ( !a2 ) /*0x65cc17*/
@@ -80,8 +80,8 @@ int FileClass::Open(int a2)
       v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65cc7e*/
       goto LABEL_12; /*0x65cc7e*/
     }
-    FileClass::Open2(this, (const CHAR *)1); /*0x65cc1d*/
-    result = (*(int (__thiscall **)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this); /*0x65cc26*/
+    ((FileClass *)this)->Open2( (const CHAR *)1); /*0x65cc1d*/
+    result = (*(int (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this); /*0x65cc26*/
     if ( (unsigned char)result ) /*0x65cc2b*/
     {
       result = CloseHandle(*(HANDLE *)this->FileTimeDateLo); /*0x65cc31*/
@@ -95,7 +95,7 @@ int FileClass::Open(int a2)
       v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65cc40*/
   LABEL_12:
       LastError = GetLastError(); /*0x65cc7f*/
-      result = (*(int (__thiscall **)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65cc8a*/
+      result = (*(int (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65cc8a*/
       goto LABEL_13; /*0x65cc8a*/
     }
   LABEL_14:
@@ -206,7 +206,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
   int v26; // [esp-Ch] [ebp-14h]
   int v27; // [esp-4h] [ebp-Ch]
 
-  FileName = (char *)this->FileName; /*0x65cf04*/
+  FileName = (unsigned int)(char *)this->FileName; /*0x65cf04*/
   if ( FileName != (char *)-1 ) /*0x65cf0a*/
   {
     v5 = dwMoveMethod; /*0x65cf10*/

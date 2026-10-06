@@ -56,7 +56,7 @@ int Stream::ReadIntArray(int a2)
   int v6; // ebx
 
   v2 = a2; /*0x49fb72*/
-  result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->q_40)( /*0x49fb84*/
+  result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->q_40))(  /*0x49fb84*/
              a2,
              (int *)&this->Stream_field_10,
              4,
@@ -65,7 +65,7 @@ int Stream::ReadIntArray(int a2)
   {
     v5 = *(unsigned int *)v2; /*0x49fb8e*/
     a2 =(int)this->a2; /*0x49fb9a*/
-    result = (*(int (**)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
+    result = (*(int (**)(int, int *, int, unsigned int))(v5 + 16))( v2, (int *)(&a2), 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
     {
       v6 = 0; /*0x49fba9*/
@@ -106,11 +106,11 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
 
   v3 = *(int *)aP1;
   Stream_field_10 = this->Stream_field_10; /*0x67a4b9*/
-  (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))((int *)aP1, &Stream_field_10, 4, 0); /*0x67a4bd*/
+  (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))( (int *)aP1, (int *)(&Stream_field_10), 4, 0); /*0x67a4bd*/
   result = Stream_field_10; /*0x67a4c0*/
   for ( i = 0; i < Stream_field_10; ++i ) /*0x67a4c8*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->Stream_field_04 + 4 * i, 4, 0); /*0x67a4d8*/
+    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))( (int *)(aP1), this->Stream_field_04 + 4 * i, 4, 0); /*0x67a4d8*/
     result = Stream_field_10; /*0x67a4db*/
   }
   return result; /*0x67a4e4*/
@@ -134,7 +134,7 @@ void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int 
   char v19; // [esp+13h] [ebp-1h] BYREF
 
   CCFileClass::Construct3((int)((unsigned char *)this + 4)); /*0x75926a*/
-  Stream::CopyFromTemplate((unsigned char *)this + 376); /*0x759275*/
+  Stream::CopyFromTemplate( (unsigned char *)this + 376); /*0x759275*/
   *((unsigned int *)this + 331) = (unsigned int)(aP2); /*0x759282*/
   *((unsigned int *)this + 121) = (unsigned int)(this); /*0x759288*/
   *((unsigned int *)this + 101) = (unsigned int)(&v19); /*0x75928e*/
@@ -225,7 +225,7 @@ LABEL_14:
   *((unsigned int *)this + 321) = 0; /*0x759477*/
   *((unsigned int *)this + 339) = 0; /*0x75947d*/
   *((unsigned int *)this + 322) = 0; /*0x759483*/
-  strcpy((char *)((unsigned char *)this + 113), a1); /*0x75949f*/
+  strcpy( (char *)((unsigned char *)this + 113), (const char *)(a1)); /*0x75949f*/
   *((unsigned int *)this + 338) = (unsigned int)(aP5); /*0x7594b0*/
   *((unsigned int *)this + 326) = 0; /*0x7594b7*/
   *((unsigned int *)this + 327) = 0; /*0x7594bd*/

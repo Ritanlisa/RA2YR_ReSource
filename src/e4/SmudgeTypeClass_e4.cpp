@@ -319,7 +319,7 @@ int SmudgeTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0), aP1, (gamemd::TechnoTypeClass *)aP2); /*0x6b58bf*/
+  result = AbstractClass::SaveLoad_PrefixWrapper( (gamemd::TechnoTypeClass *)((AbstractClass *)aP0), (ObjectTypeClass *)(aP1), (gamemd::TechnoTypeClass *)aP2); /*0x6b58bf*/
   if ( result >= 0 ) /*0x6b58c6*/
     return 0; /*0x6b58c8*/
   return result; /*0x6b58ca*/

@@ -63,33 +63,12 @@ int State::SetIfChanged(int a1) {
     return (*(int (**)(int))(v3 + 16))(a1); /*0x4f3aa1*/
   }
 }
-// 0x4F28B0
-namespace gamemd { namespace wdt { 
-// 0x4f28b0
-bool Map::CanScroll() {
-  return this->Height < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x4f28bd*/
 }
-}
-}
-// 0x4F3A90
-namespace gamemd { namespace wdt { 
-// 0x4f3a90
-int State::SetIfChanged(int a1) {
-  int result; // eax
-  int v3; // edx
-
-  result = a1; /*0x4f3a90*/
-  if ( (unsigned char)a1 != IDA_LOBYTE(this->AIPlayers) ) /*0x4f3a99*/
-  {
-    v3 = *(unsigned int *)this->__pad_0; /*0x4f3a9b*/
-    IDA_LOBYTE(this->AIPlayers) = a1; /*0x4f3a9e*/
-    return (*(int (**)(int))(v3 + 16))(a1); /*0x4f3aa1*/
-  }
-}
+} // g57a5 W2b: 补 SetIfChunk ns 收口 (G31 漏}病)
 // 0x5C2500
 namespace gamemd { namespace wdt { 
 // 0x5c2500
-void Campaign::SetupMovie() {
+void Campaign::SetupMovie(HWND hDlg) {  // g57b5 W4: raw 真值补参 (hDlg)
   int result; // eax
   HWND v3; // ebx
   ObjectClass *v4; // edi
@@ -180,6 +159,8 @@ void Campaign::SetupMovie() {
     }
   }
 }
+}
+} // g57a5 W2b: 补 SetupMovie ns 收口 (G31 漏}病)
 // 0x76BFE0
 namespace gamemd { namespace wdt { 
 int GetOwnerHouse()

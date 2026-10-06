@@ -245,7 +245,7 @@ int LoadingScreen::ReleaseAnimObjects(char * Source)
     __3_YAXPAX_Z((void *)(dword_B0FB84)); /*0x72b3b7*/
     dword_B0FB84 = 0; /*0x72b3bf*/
   }
-  return LoadPaletteSimple(Source,(int *)(&dword_B0FB84), &dword_B0FB88); /*0x72b3da*/
+  return LoadPaletteSimple( (char *)(Source), (int *)(&dword_B0FB84), (unsigned int *)(&dword_B0FB88)); /*0x72b3da*/
 
 }
 } // namespace gamemd
@@ -261,7 +261,7 @@ char LoadingScreen::Init()
   {
     if ( g_DisplayWidth == 800 ) /*0x72cf53*/
       dword_B0FA18 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D6C),(gamemd::ConvertClass *)((bool *)&byte_B0FCD8))); /*0x72cf65*/
-    result = LoadPaletteSimple((char *)(off_844D70),(int *)(&dword_B0FCDC), &dword_B0FCE0); /*0x72cf7a*/
+    result = LoadPaletteSimple( (char *)(off_844D70), (int *)(&dword_B0FCDC), (unsigned int *)(&dword_B0FCE0)); /*0x72cf7a*/
     byte_B0FCD9 = 1; /*0x72cf7f*/
   }
   return result; /*0x72cf86*/

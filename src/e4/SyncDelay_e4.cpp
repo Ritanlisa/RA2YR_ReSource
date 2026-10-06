@@ -94,7 +94,7 @@ LABEL_23:
     {
       ((InputManager_ProcessEvents *)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Vtable(&v24, v26, &v25); /*0x55e253*/
       ((SyncDelayClass*)&v24)->ProcessNetworkSync(); /*0x55e25c*/
-      (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_170)(g_TacticalClass_Instance); /*0x55e269*/
+      (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_170))(g_TacticalClass_Instance);  /*0x55e269*/
       ((TacticalMap*)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x55e271*/
       goto LABEL_19; /*0x55e276*/
     }
@@ -123,7 +123,7 @@ LABEL_19:
   }
   if ( v12 ) /*0x55e2d6*/
   {
-    DDraw::WaitForIdle((gamemd::DDraw *)(v1)); /*0x55e2d8*/
+    ((DDraw *)(gamemd::DDraw *)(v1))->WaitForIdle(); /*0x55e2d8*/
     while ( 1 ) /*0x55e317*/
     {
       while ( 1 ) /*0x55e2e3*/

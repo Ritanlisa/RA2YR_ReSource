@@ -119,6 +119,7 @@ public:
     unsigned char __pad_7C[21];  // 0x7C
     unsigned char __pad_B0[1];  // 0xB0
     unsigned char __pad_C;  // 0xC
+    unsigned char q41C[107];  // 0x41C (ml AnimClass@0x41C=q41C unsigned char 107B; g57b5 W2r2 词表内补洞)
     unsigned char __pad_C4;  // 0xC4
     unsigned char __pad_D8;  // 0xD8
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---

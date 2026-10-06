@@ -6,7 +6,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-#ifndef GAMEMD_TREE_UNIVERSE  // G42.34j: full suppression in tree TUs -- two downstream
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_MATH_ALIASES)  // G42.34j + G57a1
 // conventions exist (using-bridge TUs vs independent gamemd:: fwd TUs like
 // utility_ext.hpp:23); a static decl cannot satisfy both. Tree TUs must order
 // this header AFTER their tree headers (render/structure TU pattern).
@@ -16,7 +16,7 @@ struct HouseClass;  // fix_fwd_type_supply
 struct CellStruct;  // fix_fwd_type_supply
 struct TechnoClass;  // fix_fwd_type_supply
 struct Coord;  // fix_fwd_type_supply
-#endif
+#endif  // GAMEMD_TREE_UNIVERSE / GAMEMD_E4_MATH_ALIASES (Cell fwd block)
 
 struct Cell {
 // --- flat members (BEGIN) ---

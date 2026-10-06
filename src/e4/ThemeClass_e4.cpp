@@ -53,7 +53,7 @@ int ThemeClass::ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, 
   char v8; // [esp-Ch] [ebp-14h]
 
   ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x72048a*/
-  if ( !INIClass::BinarySearchSection((gamemd::INIClass *)((int)a2), (uint8_t *)this) ) /*0x720492*/
+  if ( !((INIClass *)(gamemd::INIClass *)((int)a2))->BinarySearchSection( (uint8_t *)this) ) /*0x720492*/
     return 0; /*0x720584*/
   v3 = (const char *)((char *)this + 256); /*0x7204a6*/
   ((INIClass*)(INIClass *)a2)->GetString((uint8_t *)this, aSound, &g_INI_DefaultBuffer, (char *)((char *)this + 256), 256); /*0x7204bf*/
@@ -107,18 +107,18 @@ void * ThemeClass::InitializeThemes(char * a2)
   char Destination[32]; // [esp+18h] [ebp-20h] BYREF
 
   v2 = (char *)((int)(a2));
-  KeyCount = (int)(INIClass::GetKeyCount((gamemd::INIClass *)(a2), (uint8_t *)g_INI_Key_Themes));
+  KeyCount = (int)(INIClass::GetKeyCount( (gamemd::INIClass *)(a2), (void)((uint8_t *)g_INI_Key_Themes)));
   v5 = 0; /*0x7205ab*/
   v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)(v2),(gamemd::CCINIClass *)((uint8_t *)g_INI_Key_Themes),(void *)(v5)); /*0x7205d1*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex( (gamemd::CCINIClass *)(v2), (gamemd::CCINIClass *)((uint8_t *)g_INI_Key_Themes), (void)((void *)(v5))); /*0x7205d1*/
     if ( /*0x7205de*/
            ((INIClass*)((uint8_t ***)v2))->GetString(/*0x7205de*/ (uint8_t *)g_INI_Key_Themes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       if ( &v16 == (int *)-24 ) /*0x7205f1*/
         goto LABEL_10; /*0x7205f1*/
-      if ( !strlen(Destination) ) /*0x7205f7*/
+      if ( !strlen( (const char *)(Destination)) ) /*0x7205f7*/
         goto LABEL_10; /*0x7205f7*/
       v7 = 0; /*0x720606*/
       if ( *((int *)this + 9) <= 0 ) /*0x72060a*/
@@ -146,7 +146,7 @@ LABEL_10:
           *((unsigned char *)v8 + 256) = 0; /*0x72067f*/
           v9 = (char *)v8; /*0x720686*/
         }
-        strcpy(v9, Destination); /*0x7206a0*/
+        strcpy( v9, (const char *)(Destination)); /*0x7206a0*/
         v10 = *((unsigned int *)this + 7); /*0x7206a9*/
         if ( *((unsigned int *)this + 9) < v10 /*0x7206d1*/
           || (*((unsigned char *)this + 33) || !v10)
@@ -209,13 +209,13 @@ int ThemeClass::ClearQueues()
     }
     for ( i = ((AudioQueue *)(&stru_B1D3F0))->GetNext(); i; i = ((AudioQueue *)(&stru_B1D3F0))->GetNext() ) /*0x7523bb*/
     {
-      LinkedList::Init((unsigned int **)i); /*0x7523bf*/
+      LinkedList::Init( (void)((unsigned int **)i)); /*0x7523bf*/
       *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x7523c8*/
       __3_YAXPAX_Z((void *)i); /*0x7523cb*/
     }
     for ( j = ((AudioQueue *)(&stru_B1D3C8))->GetNext(); j; j = ((AudioQueue *)(&stru_B1D3C8))->GetNext() ) /*0x7523f1*/
     {
-      LinkedList::Init((unsigned int **)j); /*0x7523f5*/
+      LinkedList::Init( (void)((unsigned int **)j)); /*0x7523f5*/
       *(unsigned int *)(*(unsigned int *)(j + 12) + 80) = 2; /*0x7523fe*/
       __3_YAXPAX_Z((void *)j); /*0x752401*/
     }
@@ -225,7 +225,7 @@ int ThemeClass::ClearQueues()
       result = ((AudioQueue *)(v3))->GetNext(); /*0x752420*/
       for ( k = result; result; k = result ) /*0x752429*/
       {
-        LinkedList::Init((unsigned int **)k); /*0x75242d*/
+        LinkedList::Init( (void)((unsigned int **)k)); /*0x75242d*/
         *(unsigned int *)(*(unsigned int *)(k + 12) + 80) = 2; /*0x752436*/
         __3_YAXPAX_Z((void *)k); /*0x752439*/
         result = ((AudioQueue *)(v3))->GetNext(); /*0x752443*/

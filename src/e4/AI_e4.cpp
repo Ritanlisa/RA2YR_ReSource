@@ -13,7 +13,7 @@
 
 // 0x5D7030
 namespace gamemd {
-char AI_CreateMCV()
+char AI_CreateMCV(MultiplayerGameMode *self)
 {
   HouseClass *v3; // edi
   int v4; // esi
@@ -27,8 +27,8 @@ char AI_CreateMCV()
 
   if ( !stru_A8B250.__pad_0[8] ) /*0x5d703c*/
     return 1; /*0x5d7045*/
-  v3 = (HouseClass *)this; /*0x5d704d*/
-  v4 = BuildingClass::FindBySWType((BuildingClass *)this, *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2848); /*0x5d705e*/
+  v3 = (HouseClass *)self; /*0x5d704d*/
+  v4 = ((BuildingClass *)(BuildingClass *)self)->FindBySWType( *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2848); /*0x5d705e*/
   if ( v4 ) /*0x5d7062*/
   {
     v5 = (int *)RA2_OPNEW(0x8E8u); /*0x5d7069*/
@@ -38,11 +38,11 @@ char AI_CreateMCV()
       v7 = v6; /*0x5d707e*/
       if ( v6 ) /*0x5d7082*/
       {
-        v8 = (unsigned int *)((int)((unsigned int *)(*v6)));
-        StartCoords = (unsigned int *)(HouseClass::GetStartCoords(v3, v11));
+        v8 = (unsigned int *)((int)((*v6)));
+        StartCoords = (unsigned int *)(((HouseClass *)v3)->GetStartCoords( v11));
         if ( (*(uint8_t (**)(int *, unsigned int *, unsigned int))(v8 + 216))(v7, StartCoords, 0) ) /*0x5d7098*/
           return 1; /*0x5d70aa*/
-        CurrentOption = (int16_t *)HouseClass::GetCurrentOption(v3, &this); /*0x5d70b6*/
+        CurrentOption = (int16_t *)((HouseClass *)v3)->GetCurrentOption( &self); /*0x5d70b6*/
         if ( FindInfantryDeployPosition(v7,(gamemd::RadarClass *)(CurrentOption), 1) ) /*0x5d70bf*/
           return 1; /*0x5d70cf*/
         (*(void (**)(int *, int))(*v7 + 32))(v7, 1); /*0x5d70d8*/

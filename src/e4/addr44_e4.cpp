@@ -65,7 +65,7 @@ int INIClass::sub_44FE60()
   {
     v4 = *((unsigned int *)dword_A8EB44 + i); /*0x44fe82*/
     if ( !*(unsigned char *)(v4 + 129) && !*(unsigned char *)(*(unsigned int *)(v4 + 1312) + 5823) ) /*0x44fe95*/
-      BuildingClass::ReadConstructionData(v4, this); /*0x44fea0*/
+      ((BuildingClass *)v4)->ReadConstructionData( this); /*0x44fea0*/
     result = dword_A8EB50; /*0x44fea5*/
   }
   return result; /*0x44feaf*/

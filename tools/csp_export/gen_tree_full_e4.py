@@ -116,11 +116,37 @@ EXCLUDE = tree_special | MATHNAMES | {'CellCoord'}  # CellCoord owned by
 # include-isolated from core headers (0 non-e4 TUs see _tree_full), so flat
 # defs cannot C2011-clash.  Pointer members still degrade via tree_special.
 FLAT_OK = {'VectorClass', 'HashTable', 'DynamicVectorClass'}
+# G57a2: the G42.4 include-isolation premise was BROKEN by the G42.55
+# tree-truth bridges (e4 hpps now #include main-tree headers whose closure
+# reaches core/vector.hpp). Where both meet in one TU, the flat non-template
+# decl and the tree template collide (C2989/C2990, ~1.9K-error cascade).
+# Guard the flat decls so they yield whenever the TU opted into tree
+# template truth (GAMEMD_E4_VECTOR_TREE_TRUTH, inserted by
+# .omo/g57a2_vector_family_fix.py into every e4 TU whose closure contains
+# both core/vector.hpp and this header / e4_protos.h).
+VEC_TMPL = {'VectorClass', 'DynamicVectorClass'}
+VEC_GUARD = ('#if !defined(GAMEMD_TREE_UNIVERSE) && '
+             '!defined(GAMEMD_E4_VECTOR_TREE_TRUTH)')
 # G42.9: static-method decls injected into generated flat structs. WinAPI::
 # Wrapper is the COM error trampoline -- 350+ corpus sites, all uniform
 # 1-arg (`WinAPI::Wrapper(-2147467261)` = 0x80004005), no ida_cache entry.
 STATIC_DECLS = {
     'WinAPI': ['static int Wrapper(int a2);  // consensus: 350+ uniform 1-arg sites'],
+    # G57a1: HashTable corpus call vocabulary -- utility_ext.hpp's gap2 twin
+    # is suppressed in e4 TUs (GAMEMD_E4_HashTable battery), so the flat
+    # carrier must carry every static form the bodies use. The three former
+    # vocab FIELDS (CleanupAndResize/RebuildEx/FindString) are methods now.
+    'HashTable': [
+        'static int Lookup(void *aP0, const char **aP1, unsigned int *aP2);',
+        'static int Grow(void *aP0);',
+        'static int Rebuild2(void *aP0);',
+        'static int Clear(int aP0);',
+        'static int RemoveHashTableEntry(void *aP0, int aP2);',
+        'static int FindWOLHashTableEntry(void *aP0, const char **aP1, unsigned int *aP2);',
+        'static int CleanupAndResize(void *aP0);',
+        'static int RebuildEx(void *aP0);',
+        'static int FindString(void *aP0, const char *aP1, unsigned int *aP2);',
+    ],
 }
 def cpptype(t, size, own):
     t = (t or '').strip()
@@ -168,7 +194,13 @@ lines = ['// GENERATED full flat definitions for tree-owned classes',
          'namespace gamemd {', '']
 # fwd-decl all targets first: members may point at classes defined later
 all_targets = sorted(set(targets))
-lines += ['struct %s;' % n for n in all_targets]
+for n in all_targets:
+    if n in VEC_TMPL:
+        lines.append(VEC_GUARD)
+        lines.append('struct %s;' % n)
+        lines.append('#endif')
+    else:
+        lines.append('struct %s;' % n)
 lines.append('')
 
 n_cls = n_mem = 0
@@ -198,6 +230,8 @@ for cls in targets:
         else:
             body.append('    %s %s;  // 0x%X' % (ty, nm, o))
         n_mem += 1
+    if cls in VEC_TMPL:
+        lines.append(VEC_GUARD)
     lines.append('struct %s {' % cls)
     lines += body
     # G42.9: corpus-consensus static-method decls (call-site-uniform anchors;
@@ -205,6 +239,8 @@ for cls in targets:
     for extra in STATIC_DECLS.get(cls, ()):
         lines.append('    ' + extra)
     lines.append('};')
+    if cls in VEC_TMPL:
+        lines.append('#endif')
     lines.append('')
     n_cls += 1
 

@@ -89,12 +89,12 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
   int Prefix_0; // edi
   int v3; // edx
 
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); /*0x65b3e1*/
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(aP0), (gamemd::AbstractClass *)(aP1)); /*0x65b3e1*/
   if ( Prefix_0 >= 0 ) /*0x65b3e5*/
   {
     if ( aP0 ) /*0x65b3e9*/
     {
-      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x65b3f2*/
+      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x65b3f2*/
       v3 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b3f7*/
       (&aP0->RadLevelTimer)[2] = 0; /*0x65b3fd*/
       (&aP0->RadLevelTimer)[0] = v3; /*0x65b404*/

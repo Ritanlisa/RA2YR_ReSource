@@ -137,7 +137,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
   {
     while ( 1 ) /*0x6e824d*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, v6); /*0x6e824d*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex( a1->__pad_0, (CCINIClass *)(g_INI_Key_TaskForces), v6); /*0x6e824d*/
       result = ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 24); /*0x6e8266*/
       if ( result > 0 ) /*0x6e826d*/
         break; /*0x6e826d*/
@@ -184,13 +184,13 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
   int v3; // eax
   TaskForceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block->__pad_0 = &vt_TaskForceClass; /*0x6e87f6*/
-  Block->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e87fc*/
-  *(unsigned int *)Block->__pad_8 = &vt_TaskForceClass; /*0x6e8803*/
-  *(unsigned int *)&Block->__pad_8[4] = &vt_TaskForceClass; /*0x6e880a*/
-  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)Block),(int)((gamemd::AbstractClass *)(1))); /*0x6e8811*/
-  v5 = (gamemd::TaskForceClass *)(Block); /*0x6e8826*/
-  v3 = (*(int (**)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))(&dword_A8E8D0, &v5); /*0x6e882a*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_TaskForceClass;
+  this->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e87fc*/
+  *(unsigned int *)this->__pad_8 = (unsigned int)&vt_TaskForceClass;
+  *(unsigned int *)&this->__pad_8[4] = (unsigned int)&vt_TaskForceClass;
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)this),(int)((gamemd::AbstractClass *)(1))); /*0x6e8811*/
+  v5 = (gamemd::TaskForceClass *)(this); /*0x6e8826*/
+  v3 = (*(int (**)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))( (unsigned int *)(&dword_A8E8D0), (TaskForceClass **)(&v5)); /*0x6e882a*/
   if ( v3 != -1 && v3 < dword_A8E8E0 && v3 < --dword_A8E8E0 ) /*0x6e8845*/
   {
     do /*0x6e885d*/
@@ -200,10 +200,10 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
     }
     while ( v3 < dword_A8E8E0 ); /*0x6e885d*/
   }
-  ((AbstractTypeClass *)((AbstractTypeClass *)Block))->Dtor(); /*0x6e8861*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->Dtor(); /*0x6e8861*/
   if ( (a2 & 1) != 0 ) /*0x6e886b*/
-    __3_YAXPAX_Z(Block); /*0x6e886e*/
-  return (void **)Block; /*0x6e8878*/
+    __3_YAXPAX_Z(this); /*0x6e886e*/
+  return (void **)this; /*0x6e8878*/
 
 }
 }
@@ -285,7 +285,7 @@ char TaskForceClass::GetUnitType(char * a2)
     else
     {
       v5 = (char *)(((TaskForceClass *)((TaskForceClass *)p_TaskForceClass_field_0xA4))->Check()); /*0x6e854e*/
-      INIClass::SetString(a2, (uint8_t *)&this->TaskForceClass_field_0x24, Buffer, v5); /*0x6e855f*/
+      ((INIClass *)a2)->SetString( (uint8_t *)&this->TaskForceClass_field_0x24, Buffer, v5); /*0x6e855f*/
     }
     ++v3; /*0x6e8576*/
     p_TaskForceClass_field_0xA4 += 2; /*0x6e8577*/

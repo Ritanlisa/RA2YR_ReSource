@@ -147,3 +147,4 @@ bool LocomotionClass::Process()
     *((unsigned int *)this + 6) = &off_7F2D68; /*0x69ecdf*/
     return (int)this->ILocomotion; /*0x69ece8*/
 } // namespace gamemd
+}

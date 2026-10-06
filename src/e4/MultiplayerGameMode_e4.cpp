@@ -53,32 +53,32 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char * Block, char a2)
   void *MultiplayerGameMode_field_0x0C; // eax
 
   v3 = 0; /*0x5d7f24*/
-  for ( *(unsigned int *)Block->__pad_0 = &vt_MultiplayerGameMode; v3 < Block->MultiplayerGameMode_field_0x18; ++v3 ) /*0x5d7f31*/
+  for ( *(unsigned int *)this->__pad_0 = &vt_MultiplayerGameMode; v3 < this->MultiplayerGameMode_field_0x18; ++v3 ) /*0x5d7f31*/
   {
-    v4 = *(void (****)(unsigned int, int))(Block->MultiplayerGameMode_field_0x0C + 4 * v3); /*0x5d7f36*/
+    v4 = *(void (****)(unsigned int, int))(this->MultiplayerGameMode_field_0x0C + 4 * v3); /*0x5d7f36*/
     if ( v4 ) /*0x5d7f3b*/
       (**v4)((unsigned int)v4, 1); /*0x5d7f41*/
   }
-  (*(void (**)(int *))(Block->MultiplayerGameMode_field_0x08 + 12))(&Block->MultiplayerGameMode_field_0x08); /*0x5d7f53*/
-  v5 = (void (***)(unsigned int, int))*((unsigned int *)Block + 14); /*0x5d7f56*/
+  (*(void (**)(int *))(this->MultiplayerGameMode_field_0x08 + 12))( (int *)(&this->MultiplayerGameMode_field_0x08)); /*0x5d7f53*/
+  v5 = (void (***)(unsigned int, int))*((unsigned int *)this + 14); /*0x5d7f56*/
   if ( v5 ) /*0x5d7f5b*/
     (**v5)((unsigned int)v5, 1); /*0x5d7f61*/
-  j_DeleteAndZero((ObjectClass *)((char *)Block + 48)); /*0x5d7f66*/
-  j_DeleteAndZero((ObjectClass *)((char *)Block + 44)); /*0x5d7f6e*/
-  ((DeleteAndZero*)(DeleteAndZero *)Block + 3)->Alt(); /*0x5d7f76*/
-  ((DeleteAndZero*)(DeleteAndZero *)((char *)Block + 32))->Alt(); /*0x5d7f7e*/
-  MultiplayerGameMode_field_0x0C = (void *)Block->MultiplayerGameMode_field_0x0C; /*0x5d7f83*/
-  Block->MultiplayerGameMode_field_0x08 = (int)&vt_VectorClass; /*0x5d7f86*/
-  if ( MultiplayerGameMode_field_0x0C && BYTE1(Block->MultiplayerGameMode_field_0x14) ) /*0x5d7f90*/
+  j_DeleteAndZero((ObjectClass *)((char *)this + 48)); /*0x5d7f66*/
+  j_DeleteAndZero((ObjectClass *)((char *)this + 44)); /*0x5d7f6e*/
+  ((DeleteAndZero*)(DeleteAndZero *)this + 3)->Alt(); /*0x5d7f76*/
+  ((DeleteAndZero*)(DeleteAndZero *)((char *)this + 32))->Alt(); /*0x5d7f7e*/
+  MultiplayerGameMode_field_0x0C = (void *)this->MultiplayerGameMode_field_0x0C; /*0x5d7f83*/
+  this->MultiplayerGameMode_field_0x08 = (int)&vt_VectorClass; /*0x5d7f86*/
+  if ( MultiplayerGameMode_field_0x0C && BYTE1(this->MultiplayerGameMode_field_0x14) ) /*0x5d7f90*/
   {
     __3_YAXPAX_Z(MultiplayerGameMode_field_0x0C); /*0x5d7f98*/
-    Block->MultiplayerGameMode_field_0x0C = 0; /*0x5d7fa0*/
+    this->MultiplayerGameMode_field_0x0C = 0; /*0x5d7fa0*/
   }
-  BYTE1(Block->MultiplayerGameMode_field_0x14) = 0; /*0x5d7fab*/
-  Block->MultiplayerGameMode_field_0x10 = 0; /*0x5d7fb1*/
+  BYTE1(this->MultiplayerGameMode_field_0x14) = 0; /*0x5d7fab*/
+  this->MultiplayerGameMode_field_0x10 = 0; /*0x5d7fb1*/
   if ( (a2 & 1) != 0 ) /*0x5d7fb8*/
-    __3_YAXPAX_Z(Block); /*0x5d7fbb*/
-  return Block->__pad_0; /*0x5d7fc5*/
+    __3_YAXPAX_Z(this); /*0x5d7fbb*/
+  return this->__pad_0; /*0x5d7fc5*/
 
 }
 } // namespace gamemd

@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
@@ -456,12 +457,12 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsi
   if ( !*((unsigned int *)this + 6) ) /*0x7b22ee*/
     return 0; /*0x7b22f5*/
   v8 = **((unsigned int **)this + 3); /*0x7b2304*/
-  qmemcpy(a2, (const void *)(v8 + 32), *(unsigned int *)(v8 + 16)); /*0x7b2311*/
+  qmemcpy( (void *)(a2), (const void *)(v8 + 32), *(unsigned int *)(v8 + 16)); /*0x7b2311*/
   v9 = *a5; /*0x7b231e*/
   if ( *a5 > 0x10 ) /*0x7b2323*/
     v9 = 16; /*0x7b2325*/
   *a5 = v9; /*0x7b232e*/
-  qmemcpy(a4, (const void *)v8, v9); /*0x7b2337*/
+  qmemcpy( (void *)(a4), (const void *)v8, v9); /*0x7b2337*/
   *a6 = *(unsigned short *)(v8 + 26); /*0x7b234c*/
   *(unsigned int *)a3 = *(unsigned int *)(v8 + 16); /*0x7b2352*/
   v10 = *((unsigned int *)this + 6); /*0x7b2354*/
@@ -507,13 +508,13 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   UINT v19; // eax
 
   v9 = ((AudioQueue *)((AudioQueue *)this))->AllocBuffer((char)(aP5)); /*0x7b23c4*/
-  qmemcpy(v9 + 32, aP1, arg4); /*0x7b23d5*/
+  qmemcpy( v9 + 32, (const void *)(aP1), arg4); /*0x7b23d5*/
   *((unsigned int *)v9 + 4) = arg4; /*0x7b23e6*/
   v9[20] = 0; /*0x7b23f4*/
   v9[24] = a7; /*0x7b23f8*/
-  qmemcpy(v9, a3, a5); /*0x7b23fb*/
+  qmemcpy( v9, (const void *)(a3), a5); /*0x7b23fb*/
   *((unsigned short *)v9 + 13) = a8; /*0x7b2409*/
-  (*(void (**)(WinsockInterfaceClass *, unsigned char *))(this->Socket + 84))((WinsockInterfaceClass *)this, v9); /*0x7b2411*/
+  (*(void (**)(WinsockInterfaceClass *, unsigned char *))((char *)this->Socket + 84))((WinsockInterfaceClass *)this, v9); /*0x7b2411*/
   if ( aP5 ) /*0x7b241a*/
   {
     v10 = *((unsigned int *)this + 16); /*0x7b241c*/
@@ -550,7 +551,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
     }
     v14 = *((unsigned int *)this + 64539); /*0x7b24a0*/
   }
-  v19 = (*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))((WinsockInterfaceClass *)this, v14); /*0x7b24af*/
+  v19 = (*(int (**)(WinsockInterfaceClass *, int))((char *)this->Socket + 56))((WinsockInterfaceClass *)this, v14); /*0x7b24af*/
   SendMessageA((HWND)(g_hWnd), v19, 0, 2); /*0x7b24b9*/
   return ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x7b24ca*/
 
@@ -805,7 +806,7 @@ int AudioQueue::DrainAll()
     {
       Next_Alt = (gamemd::Init)(((AudioQueue *)(v1))->GetNextAlt()); /*0x750fbc*/
       ((AudioController *)(v1 + 3))->Stop(); /*0x750fbe*/
-      LinkedList::Init((unsigned int **)v1); /*0x750fc5*/
+      LinkedList::Init( (void)((unsigned int **)v1)); /*0x750fc5*/
       result = PushFrontLinkedListAlt((unsigned int *)(dword_B1D3A4), (int)v1); /*0x750fd2*/
       v1 = (int *)Next_Alt; /*0x750fdd*/
       --dword_B1D3A8; /*0x750fe2*/

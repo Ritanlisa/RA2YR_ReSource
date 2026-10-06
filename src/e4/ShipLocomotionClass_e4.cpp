@@ -36,11 +36,11 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x69eeaa*/
   {
     a1->Piggybackee = 0; /*0x69eeac*/
-    *(unsigned int *)a1->LocomotionClass = &vt_ShipLocomotionClass; /*0x69eeb3*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &vt_ShipLocomotionClass; /*0x69eeb9*/
-    *(unsigned int *)a1->__pad_18 = &off_7F2D68; /*0x69eec0*/
+    *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_ShipLocomotionClass;
+    *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_ShipLocomotionClass;
+    *(unsigned int *)a1->__pad_18 = (unsigned int)&off_7F2D68;
   }
-  (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x69eed3*/
+  (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))( v2, (int **)(&pStm), 1, 0); /*0x69eed3*/
   if ( !(unsigned char)pStm ) /*0x69eedc*/
     return v3; /*0x69ef08*/
   Piggybackee = a1->Piggybackee; /*0x69eede*/
@@ -76,12 +76,12 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   {
     v12 = *(unsigned int *)v3->__pad_0; /*0x69efd3*/
     LOBYTE(a3) = 0; /*0x69efdf*/
-    (*(void (**)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x69efe4*/
+    (*(void (**)(IStream *, int *, int, unsigned int))(v12 + 16))( v3, (int *)(&a3), 1, 0); /*0x69efe4*/
     return IPersistStream; /*0x69efe8*/
   }
   v6 = *(unsigned int *)v3->__pad_0; /*0x69ef3c*/
   LOBYTE(a3) = 1; /*0x69ef48*/
-  (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x69ef4d*/
+  (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))( v3, (int *)(&a3), 1, 0); /*0x69ef4d*/
   Piggybackee =(gamemd::ILocomotion *)v4->Piggybackee; /*0x69ef50*/
   pPStm = 0; /*0x69ef53*/
   if ( Piggybackee ) /*0x69ef5d*/
@@ -94,7 +94,7 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     {
       v9 = (int *)a1; /*0x69ef8b*/
       if ( pPStm ) /*0x69ef91*/
-        (*(void (**)(int *))(*pPStm + 8))(pPStm); /*0x69ef96*/
+        (*(void (**)(int *))(*pPStm + 8))( (int *)(pPStm)); /*0x69ef96*/
       pPStm = v9; /*0x69ef99*/
     }
     else
@@ -107,7 +107,7 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   }
   v10 = OleSaveToStream((LPPERSISTSTREAM)pPStm, v3); /*0x69efbb*/
   if ( pPStm ) /*0x69efc3*/
-    (*(void (**)(int *))(*pPStm + 8))(pPStm); /*0x69efc8*/
+    (*(void (**)(int *))(*pPStm + 8))( (int *)(pPStm)); /*0x69efc8*/
   return v10; /*0x69efcd*/
 
 }
@@ -141,16 +141,16 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, cha
 
   ILocomotion *Piggybackee; // eax
 
-  *(unsigned int *)Block->LocomotionClass = &vt_ShipLocomotionClass; /*0x6a42b3*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &vt_ShipLocomotionClass; /*0x6a42b9*/
-  *(unsigned int *)Block->__pad_18 = &off_7F2D68; /*0x6a42c0*/
-  Piggybackee = Block->Piggybackee; /*0x6a42c7*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_ShipLocomotionClass;
+  *(unsigned int *)(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_ShipLocomotionClass;
+  *(unsigned int *)this->__pad_18 = (unsigned int)&off_7F2D68;
+  Piggybackee = this->Piggybackee; /*0x6a42c7*/
   if ( Piggybackee ) /*0x6a42cc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x6a42d1*/
-  ((LocomotionClass*)(gamemd::LocomotionClass *)Block)->Construct(); /*0x6a42d6*/
+  ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x6a42d6*/
   if ( (a2 & 1) != 0 ) /*0x6a42e0*/
-    __3_YAXPAX_Z(Block); /*0x6a42e3*/
-  return Block->LocomotionClass; /*0x6a42ed*/
+    __3_YAXPAX_Z(this); /*0x6a42e3*/
+  return this->LocomotionClass; /*0x6a42ed*/
 
 }
 } // namespace gamemd

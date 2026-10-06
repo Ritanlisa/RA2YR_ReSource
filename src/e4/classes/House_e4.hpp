@@ -7,11 +7,13 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 #ifndef GAMEMD_USING_AbstractClass
-#define GAMEMD_USING_AbstractClass
+#define GAMEMD_USING_AbstractClass 1
+// G57c4: e4 TUs have the native flat gamemd::AbstractClass
+// (AbstractClass_e4.hpp); the using-bridge double-declared it (C2874 x38).
+// Marker stays defined so the Dialog/SessionClass bridge twins (which
+// share this macro) stay suppressed. ra2::game fwd kept for the 1
+// qualified corpus use.
 namespace ra2 { namespace game { class AbstractClass; } }
-namespace gamemd {
-using ::ra2::game::AbstractClass;
-}
 #endif
 namespace gamemd {
 struct HouseClass;  // fix_fwd_type_supply

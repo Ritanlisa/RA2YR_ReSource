@@ -27,10 +27,10 @@ int AlphaShapeClass::SD_vt13(int a2)
 {
 
   ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x420da9*/
-  Power::TimerProcess((int)((void *)(*((unsigned int *)this + 10)))); 
-  Power::TimerProcess((int)((void *)(*((unsigned int *)this + 11)))); 
-  Power::TimerProcess((int)((void *)(*((unsigned int *)this + 12)))); 
-  return Pow  return Power::TimerProcess((int)((void *)(*((unsigned int *)this + 13)))); 
+  Power::TimerProcess((int)((*((unsigned int *)this + 10)))); 
+  Power::TimerProcess((int)((*((unsigned int *)this + 11)))); 
+  Power::TimerProcess((int)((*((unsigned int *)this + 12)))); 
+  return Pow  return Power::TimerProcess((int)((*((unsigned int *)this + 13)))); 
 
 }
 } // namespace gamemd
@@ -69,12 +69,12 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
   int v4; // eax
   AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block->__pad_0 = &vt_AlphaShapeClass; /*0x42173d*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_AlphaShapeClass;
   this->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x421743*/
   this->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x42174a*/
   this->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x421751*/
   v6 = (gamemd::AlphaShapeClass *)(this); /*0x42175f*/
-  v3 = ((int *)(*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16)))(&dword_88A0F0, &v6); 
+  v3 = ((*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16)))( (int *)(&dword_88A0F0), (AlphaShapeClass **)(&v6)); 
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
   {
     do /*0x421796*/

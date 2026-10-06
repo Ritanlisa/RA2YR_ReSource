@@ -490,7 +490,7 @@ int ProcessAudioStreamPlayback(int a1, unsigned int aP1, int arg0, char a4, char
     v35 = *(unsigned int *)(a1 + 1792); /*0x7c0b40*/
     if ( v35 ) /*0x7c0b48*/
     {
-      v34 = (gamemd::DSurface *)(v35 + *(unsigned int *)(a1 + 1788) <= 2 * (*(unsigned int *)(v31 + 4 * *(unsigned int *)(a1 + 300)) & 0xFFFFFFF));
+      v34 = (unsigned int)(gamemd::DSurface *)(v35 + *(unsigned int *)(a1 + 1788) <= 2 * (*(unsigned int *)(v31 + 4 * *(unsigned int *)(a1 + 300)) & 0xFFFFFFF));
       *(unsigned int *)(a1 + 1796) = 0; /*0x7c0b6c*/
   LABEL_75:
       if ( (int)v32 > 0 /*0x7c0bc2*/
@@ -577,7 +577,7 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** 
   v9 = (unsigned int *)(v7 + 32); /*0x7c2635*/
   memset(v7, 0, 0x7DCu); /*0x7c2641*/
   *((unsigned int *)v7 + 12) = 2012; /*0x7c264a*/
-  qmemcpy(v7 + 32, a1, 0x88u); /*0x7c2654*/
+  qmemcpy( v7 + 32, (const void *)(a1), 0x88u); /*0x7c2654*/
   if ( !*((unsigned int *)v7 + 17) ) /*0x7c2656*/
     *((unsigned int *)v7 + 17) = (unsigned int)(AllocCallback::Dispatch); /*0x7c265d*/
   if ( !*v9 ) /*0x7c2664*/
@@ -591,7 +591,7 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** 
   v10 = strlen(v25) - 31; /*0x7c26b6*/
   if ( v10 < 0 ) /*0x7c26b9*/
     v10 = 0; /*0x7c26bb*/
-  strcpy((char *)v7 + 200, &v25[v10]); /*0x7c26e0*/
+  strcpy( (char *)v7 + 200, (const char *)(&v25[v10])); /*0x7c26e0*/
   if ( ((int (*)(unsigned short *, int, unsigned int *, int))*v9)(v7, 5, &v27, 8) ) /*0x7c26f1*/
     goto LABEL_21; /*0x7c26f9*/
   if ( v27 != 1297239878 || !v28 ) /*0x7c2721*/
@@ -4469,7 +4469,7 @@ unsigned int fread(void * Buffer, size_t ElementSize, size_t ElementCount, FILE 
         v10 = v6; /*0x7c953f*/
         if ( v6 >= cnt ) /*0x7c9541*/
           v10 = ((_iobuf_msvc6 *)Stream)->_cnt; /*0x7c9543*/
-        memcpy_0(Buffer, ((_iobuf_msvc6 *)Stream)->_ptr, v10); /*0x7c9549*/
+        memcpy_0( (void *)(Buffer), ((_iobuf_msvc6 *)Stream)->_ptr, v10); /*0x7c9549*/
         Buffera -= v10; /*0x7c954e*/
         ((_iobuf_msvc6 *)Stream)->_cnt -= v10; /*0x7c9551*/
         ((_iobuf_msvc6 *)Stream)->_ptr += v10; /*0x7c9554*/
@@ -4480,7 +4480,7 @@ unsigned int fread(void * Buffer, size_t ElementSize, size_t ElementCount, FILE 
     }
     if ( v6 >= Streama ) /*0x7c9563*/
       break; /*0x7c9563*/
-    v13 = _filbuf(Stream); /*0x7c9594*/
+    v13 = _filbuf( (FILE *)(Stream)); /*0x7c9594*/
     if ( v13 == -1 ) /*0x7c959d*/
       return (v4 - Buffera) / ElementSize; /*0x7c959d*/
     *(unsigned char *)Buffer = v13; /*0x7c959f*/
@@ -4495,7 +4495,7 @@ unsigned int fread(void * Buffer, size_t ElementSize, size_t ElementCount, FILE 
   v11 = v6; /*0x7c9569*/
   if ( Streama ) /*0x7c956b*/
     v11 = v6 - v6 % Streama; /*0x7c9574*/
-  v12 = _read(((_iobuf_msvc6 *)Stream)->_file, Buffer, v11); /*0x7c957b*/
+  v12 = _read( ((_iobuf_msvc6 *)Stream)->_file, (void *)(Buffer), v11); /*0x7c957b*/
   if ( !v12 ) /*0x7c9585*/
   {
     ((_iobuf_msvc6 *)Stream)->_flag |= 0x10u; /*0x7c95bd*/
@@ -4542,7 +4542,7 @@ unsigned int fwrite(const void * Buffer, size_t ElementSize, size_t ElementCount
         v9 = v5; /*0x7c9654*/
         if ( v5 >= cnt ) /*0x7c9656*/
           v9 = ((_iobuf_msvc6 *)Stream)->_cnt; /*0x7c9658*/
-        memcpy_0(((_iobuf_msvc6 *)Stream)->_ptr, Buffer, v9); /*0x7c9660*/
+        memcpy_0( ((_iobuf_msvc6 *)Stream)->_ptr, (const void *)(Buffer), v9); /*0x7c9660*/
         ((_iobuf_msvc6 *)Stream)->_cnt -= v9; /*0x7c9665*/
         ((_iobuf_msvc6 *)Stream)->_ptr += v9; /*0x7c9668*/
         v5 -= v9; /*0x7c966d*/
@@ -4571,7 +4571,7 @@ unsigned int fwrite(const void * Buffer, size_t ElementSize, size_t ElementCount
       v10 = v5 - v5 % Streama; /*0x7c9697*/
     else
       v10 = v5; /*0x7c969b*/
-    v11 = _write(((_iobuf_msvc6 *)Stream)->_file, Buffer, v10); /*0x7c96a4*/
+    v11 = _write( ((_iobuf_msvc6 *)Stream)->_file, (const void *)(Buffer), v10); /*0x7c96a4*/
     if ( v11 == -1 || (Buffer = (char *)Buffer + v11, v5 -= v11, v11 < v10) ) /*0x7c96b8*/
     {
       ((_iobuf_msvc6 *)Stream)->_flag |= 0x20u; /*0x7c96f8*/
@@ -4974,8 +4974,8 @@ double atof(const char * aP0)
         ? *((unsigned char *)off_87C590 + 2 * *(uint8_t *)aP0) & 8
         : _isctype(*(uint8_t *)aP0, 8) )
     ++aP0; /*0x7c9d9b*/
-  strlen(aP0); /*0x7c9da3*/
-  return _fltin2(v4, aP0); /*0x7c9dba*/
+  strlen( (const char *)(aP0)); /*0x7c9da3*/
+  return _fltin2( v4, (const char *)(aP0)); /*0x7c9dba*/
 }
 }
 // 0x7C9DD4
@@ -5235,7 +5235,7 @@ void * memcpy(void * a0, const void * aP1, size_t Size)
             goto TrailUp3;
         }
       default:
-        qmemcpy(a0, aP1, 4 * v5); /*0x7ca0c3*/
+        qmemcpy( (void *)(a0), (const void *)(aP1), 4 * v5); /*0x7ca0c3*/
         v3 = (char *)aP1 + 4 * v5; /*0x7ca0c3*/
         v4 = (char *)a0 + 4 * v5; /*0x7ca0c3*/
         switch ( Size & 3 ) /*0x7ca0c5*/
@@ -5802,7 +5802,7 @@ int flsall(int aP0)
           if ( _fflush_lk((int)v5) != -1 ) /*0x7cb2b3 G42.33 b24: int truth*/
             ++v1; /*0x7cb2b5*/
         }
-        else if ( !aP0 && (v6 & 2) != 0 && _fflush_lk((int)(*(unsigned int *)(dword_B78BC4 + 4 * i))) == -1 ) /*0x7cb2ce G42.33 b24: int truth*/
+        else if ( !aP0 && (v6 & 2) != 0 && _fflush_lk((*(unsigned int *)(dword_B78BC4 + 4 * i))) == -1 ) /*0x7cb2ce G42.33 b24: int truth*/
         {
           v2 = -1; /*0x7cb2d0*/
         }
@@ -6085,7 +6085,7 @@ void _splitpath(const char * FullPath, char * Drive, char * Dir, char * aP3, cha
 
   Source = 0; /*0x7cb677*/
   v5 = FullPath; /*0x7cb67c*/
-  if ( strlen(FullPath) && FullPath[1] == 58 ) /*0x7cb691*/
+  if ( strlen( (const char *)(FullPath)) && FullPath[1] == 58 ) /*0x7cb691*/
   {
     if ( Drive ) /*0x7cb698*/
     {
@@ -6117,7 +6117,7 @@ void _splitpath(const char * FullPath, char * Drive, char * Dir, char * aP3, cha
     }
     else if ( v8 == 46 ) /*0x7cb6e9*/
     {
-      Source = (uint8_t *)v6; /*0x7cb6eb*/
+      Source = (unsigned int)(uint8_t *)v6; /*0x7cb6eb*/
     }
     ++v6; /*0x7cb6f6*/
   }
@@ -6456,7 +6456,7 @@ unsigned int _mbstowcs_lk(LPWSTR lpWideCharStr, LPCCH lpMultiByteStr, unsigned i
   if ( !lpWideCharStr ) /*0x7cc318*/
   {
     if ( !dword_B782A0 ) /*0x7cc3dd*/
-      return strlen(lpMultiByteStr); /*0x7cc3e8*/
+      return strlen( (const char *)(lpMultiByteStr)); /*0x7cc3e8*/
     v6 = MultiByteToWideChar(CodePage, 9u, lpMultiByteStr, -1, 0, 0); /*0x7cc3f9*/
     if ( !v6 ) /*0x7cc401*/
     {
@@ -6825,8 +6825,8 @@ char * * _Gettnames()
   if ( v10 ) /*0x7cc8c2*/
   {
     v12 = v10 + 172; /*0x7cc8cd*/
-    memcpy_0(v10, off_87C1E0, 0xACu); /*0x7cc8da*/
-    v40 = (char *)v11 - (char *)v0; /*0x7cc8e8*/
+    memcpy_0( v10, (const void *)(off_87C1E0), 0xACu); /*0x7cc8da*/
+    v40 = (unsigned int)(char *)v11 - (char *)v0; /*0x7cc8e8*/
     v36 = (char **)v11; /*0x7cc8eb*/
     v41 = v0 + 7; /*0x7cc8ee*/
     v32 = 7; /*0x7cc8f1*/
@@ -7989,7 +7989,7 @@ int _setlocale_set_cat(void * a0, char * aP1)  // G42.33 b17: truth int (MSVC6 s
 
   if ( !_expandlocale(aP1, Str, Src, &v7) ) /*0x7cdd7c*/
     return 0; /*0x7cdd7c*/
-  v3 = strlen(Str); /*0x7cdd93*/
+  v3 = strlen( (const char *)(Str)); /*0x7cdd93*/
   Blocka = (char *)malloc(v3 + 1); /*0x7cdda0*/
   if ( !Blocka ) /*0x7cdda6*/
     return 0; /*0x7cdda6*/
@@ -7998,9 +7998,9 @@ int _setlocale_set_cat(void * a0, char * aP1)  // G42.33 b17: truth int (MSVC6 s
   v10 = (void *)(6 * (unsigned int)a0 + 12027168); /*0x7cddd3*/
   memcpy_0(v6, v10, 6u); /*0x7cdddb*/
   v11 = CodePage; /*0x7cdde5*/
-  (&aP1)[3 * (unsigned int)a0] = strcpy(Blocka, Str); /*0x7cddf7*/
+  (&aP1)[3 * (unsigned int)a0] = strcpy( Blocka, (const char *)(Str)); /*0x7cddf7*/
   dword_B78298[(unsigned int)a0] = Src[0]; /*0x7cde03*/
-  memcpy_0(v10, Src, 6u); /*0x7cde0c*/
+  memcpy_0( v10, (const void *)(Src), 6u); /*0x7cde0c*/
   if ( a0 == (void *)2 ) /*0x7cde1a*/
     CodePage = v7; /*0x7cde1c*/
   if ( a0 == (void *)1 ) /*0x7cde24*/
@@ -8116,14 +8116,14 @@ int _flsbuf(int Ch, FILE * File)  // G42.33 b16 truth int (TU9 fwd sync)
     }
     else
     {
-      File = (FILE *)_write(v4, base, v7); /*0x7ce22a*/
+      File = (unsigned int)(FILE *)_write(v4, base, v7); /*0x7ce22a*/
     }
     *((_iobuf_msvc6 *)v2)->_base = Ch; /*0x7ce26b*/
   }
   else
   {
     v7 = 1; /*0x7ce274*/
-    File = (FILE *)_write(v4, &Ch, 1u); /*0x7ce280*/
+    File = (unsigned int)(FILE *)_write(v4, &Ch, 1u); /*0x7ce280*/
   }
   if ( File == (FILE *)v7 ) /*0x7ce287*/
     return (uint8_t)Ch; /*0x7ce297*/
@@ -9767,7 +9767,7 @@ int ProcessAudioStreamBuffer(int a1, signed int a2, int a3)
     }
     *(unsigned int *)(a1 + 384) = a2; /*0x7c3165*/
     IDA_LOBYTE(v12) = (~*(unsigned char *)(a1 + 234) & 8) != 0; /*0x7c317d*/
-    v6 = ProcessAudioStreamPlayback(a1, a2, *(uint8_t *)(a1 + 245), v12, 1, &v11); /*0x7c319b*/
+    v6 = ProcessAudioStreamPlayback( a1, a2, *(uint8_t *)(a1 + 245), v12, 1, (char *)(&v11)); /*0x7c319b*/
     if ( v6 == -1 ) /*0x7c31a0*/
     {
       v7 = *(unsigned int *)(a1 + 368); /*0x7c31a2*/
@@ -12531,7 +12531,7 @@ char * strrchr(const char * Str, int Ch)
   bool v4; // zf
   char *v5; // edi
 
-  v2 = strlen(Str) + 1; /*0x7c8dff*/
+  v2 = strlen( (const char *)(Str)) + 1; /*0x7c8dff*/
   v3 = &Str[v2 - 1]; /*0x7c8e01*/
   do /*0x7c8e06*/
   {
@@ -13931,7 +13931,7 @@ char * getenv(const char * VarName)
     {
       if ( VarName ) /*0x7cbc69*/
       {
-        v2 = strlen(VarName); /*0x7cbc72*/
+        v2 = strlen( (const char *)(VarName)); /*0x7cbc72*/
         while ( *v1 ) /*0x7cbc78*/
         {
           if ( strlen(*v1) > v2 /*0x7cbc9a*/
@@ -14399,7 +14399,7 @@ wchar_t * wcsstr(CampaignScore * aP0, const wchar_t * SubStr)
   for ( result = (wchar_t *)aP0; *result; ++result ) /*0x7cc682*/
   {
     v3 = SubStr; /*0x7cc690*/
-    v4 = (char *)result - (char *)SubStr; /*0x7cc696*/
+    v4 = (unsigned int)(char *)result - (char *)SubStr; /*0x7cc696*/
     do /*0x7cc6ad*/
     {
       if ( !*v3 ) /*0x7cc698*/
@@ -14761,7 +14761,7 @@ char * _strcats(char * aP0, int a2)  // G42.33 b25: truth (ida_cache 0x7CE049)
     {
       v5 = (const char *)v3[1]; /*0x7ce057*/
       ++v3; /*0x7ce05a*/
-      result = strcat(aP0, v5); /*0x7ce061*/
+      result = strcat( (char *)(aP0), v5); /*0x7ce061*/
       --v2; /*0x7ce067*/
     }
     while ( v2 ); /*0x7ce069*/
@@ -14783,7 +14783,7 @@ int __lc_strtolc(char * a0, char * aP1)  // G42.33 b25: truth (ida_cache 0x7CE06
   size_t v9; // [esp-4h] [ebp-10h]
   char *Sourcea; // [esp+18h] [ebp+Ch]
 
-  memset(a0, 0, 0x88u); /*0x7ce07f*/
+  memset( (void *)(a0), 0, 0x88u); /*0x7ce07f*/
   v2 = aP1; /*0x7ce084*/
   if ( !*aP1 ) /*0x7ce08e*/
     return 0; /*0x7ce08e*/
@@ -14823,7 +14823,7 @@ int __lc_strtolc(char * a0, char * aP1)  // G42.33 b25: truth (ida_cache 0x7CE06
     {
       if ( v4 >= 64 || v5 == 46 ) /*0x7ce0dc*/
         return -1; /*0x7ce0dc*/
-      strncpy(a0, v2, v4); /*0x7ce0e3*/
+      strncpy( (char *)(a0), v2, v4); /*0x7ce0e3*/
     }
     if ( v5 == 44 || !v5 ) /*0x7ce128*/
       return 0; /*0x7ce128*/
@@ -14839,7 +14839,7 @@ char * __lc_lctostr(char * Destination, char * Source)
 {
   char *result; // eax
 
-  strcpy(Destination, Source); /*0x7ce144*/
+  strcpy( (char *)(Destination), (const char *)(Source)); /*0x7ce144*/
   if ( Source[64] ) /*0x7ce149*/
     _strcats(Destination, 2); /*0x7ce160*/
   result = Source + 128; /*0x7ce16f*/
@@ -15176,8 +15176,8 @@ void _shift(const char * Src, int a2)
 
   if ( a2 ) /*0x7cef30*/
   {
-    v2 = strlen(Src); /*0x7cef38*/
-    memcpy((void *)&Src[a2], Src, v2 + 1); /*0x7cef43*/
+    v2 = strlen( (const char *)(Src)); /*0x7cef38*/
+    memcpy( (void *)&Src[a2], (const void *)(Src), v2 + 1); /*0x7cef43*/
   }
 }
 } // namespace gamemd

@@ -31,7 +31,7 @@
 
 // 0x73C5F0
 namespace gamemd {
-void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
+void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9, int a10, int a11, char a12)
 {
   void * v13;
   void * v14;
@@ -94,7 +94,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   unsigned char v73[48]; // [esp+1B4h] [ebp-30h] BYREF
 
   v13 = (void *)((int)((void *)((*(int (**)(unsigned char *))(*(unsigned int *)a1 + 108))((unsigned char *)a1))));
-  v14 = (void *)((int)((void *)(*((unsigned int *)a1 + 433))));
+  v14 = (void *)((int)((*((unsigned int *)a1 + 433))));
   v15 = (void *)((unsigned int)(v13));
   v61 = v13; /*0x73c60a*/
   v52 = 1; /*0x73c60e*/
@@ -191,7 +191,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
                             *((unsigned int *)a1 + 413),
                             v73,
                             &v66);
-      Transform::Copy(v70,(void *)(v29)); /*0x73c885*/
+      Transform::Copy( v70, (void)((void *)(v29))); /*0x73c885*/
       v46 = (float)(*(unsigned int *)(*((unsigned int *)a1 + 433) + 1824) / 8); /*0x73c8af*/
       ((Matrix3x4 *)(v70))->Translate(v46); /*0x73c8b2*/
       v54 = (double)(int)((((unsigned int)((*(unsigned int *)((ProgressTimer*)((unsigned (unsigned int)(short)*)a1 + 464))->GetValue(&v56) >> 10) + 1) >> 1) & 0x1F) /*0x73c8ee*/
@@ -281,7 +281,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       10240);
     if ( *(unsigned int *)(*((unsigned int *)a1 + 433) + 192) && *(unsigned int *)(*((unsigned int *)a1 + 433) + 196) && !v52 ) /*0x73cc59*/
     {
-      v34 = (float *)((int)((float *)(*(unsigned int *)a1)));
+      v34 = (float *)((int)((*(unsigned int *)a1)));
       inited = (float *)((AudioConfig *)(v73))->InitDefault(); /*0x73cc75*/
       v36 = MultiplyMatrix3x4(v70, inited, v71); /*0x73cc83*/
       (*(void (**)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v34 + 1296))( /*0x73cca8*/
@@ -320,7 +320,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     {
       if ( v52 ) /*0x73cd2b*/
       {
-        v38 = (float *)((int)((float *)(*(unsigned int *)a1)));
+        v38 = (float *)((int)((*(unsigned int *)a1)));
         v39 = (float *)((AudioConfig *)(v73))->InitDefault(); /*0x73cd47*/
         v40 = MultiplyMatrix3x4(v70, v39, v71); /*0x73cd55*/
         (*(void (**)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v38 + 1296))( /*0x73cd7a*/
@@ -350,7 +350,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       (int)a7,
       v41,
       (int)a9);
-    result = (*(int (**)(int, int *, unsigned int))(g_DSurface_Hidden_2->abstractFlags)( /*0x73cdf0*/
+    result = (*(int (**)(int, int *, unsigned int))(g_DSurface_Hidden_2->abstractFlags))(  /*0x73cdf0*/
                g_DSurface_Hidden_2,
                &dword_B1CFA8,
                0);

@@ -9,9 +9,9 @@ namespace gamemd {
 struct ObjectClass;  // fix_fwd_type_supply
 struct AbstractClass;  // fix_fwd_type_supply
 struct HashTable_flat;  // fix_fwd_type_supply
-#ifndef GAMEMD_TREE_UNIVERSE
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_MATH_ALIASES)  // G57a1
 struct CellStruct;  // fix_fwd_type_supply
-#endif // GAMEMD_TREE_UNIVERSE
+#endif // GAMEMD_TREE_UNIVERSE / GAMEMD_E4_MATH_ALIASES (Game fwd)
 struct Coord;  // fix_fwd_type_supply
 struct Game {
 // --- flat members (BEGIN) ---

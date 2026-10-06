@@ -15,7 +15,7 @@ namespace gamemd {
 int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 {
 
-  return (*(int (**)(unsigned int, char *, unsigned int))(**((unsigned int **)this + 5) + 20))(this->u32_14, &a3, a2); /*0x411328*/
+  return (*(int (**)(unsigned int, char *, unsigned int))(**((unsigned int **)this + 5) + 20))( this->u32_14, (char *)(&a3), a2); /*0x411328*/
 
 }
 } // namespace gamemd
@@ -132,7 +132,7 @@ namespace gamemd {
 int StreamClass::Vt32Thunk(int a1)
 {
 
-  return (*(int (**)(IUnknown *))(a1->field_0 + 128))(a1); /*0x4b4c5d*/
+  return (*(int (**)(IUnknown *))(a1->field_0 + 128))( (IUnknown *)(a1)); /*0x4b4c5d*/
 
 }
 } // namespace gamemd
@@ -153,7 +153,7 @@ int StreamClass::SetDirty(unsigned char * a1)
 {
 
   LOBYTE(a1->field_C) = 1; /*0x55a8f5*/
-  return (*(int (**)(IUnknown *))(a1->field_0 + 96))(a1); /*0x55a8fe*/
+  return (*(int (**)(IUnknown *))(a1->field_0 + 96))( (IUnknown *)(a1)); /*0x55a8fe*/
 
 }
 } // namespace gamemd
@@ -163,7 +163,7 @@ int StreamClass::ClearDirty(unsigned char * a1)
 {
 
   LOBYTE(a1->field_C) = 0; /*0x55a915*/
-  return (*(int (**)(IUnknown *))(a1->field_0 + 96))(a1); /*0x55a91e*/
+  return (*(int (**)(IUnknown *))(a1->field_0 + 96))( (IUnknown *)(a1)); /*0x55a91e*/
 
 }
 } // namespace gamemd

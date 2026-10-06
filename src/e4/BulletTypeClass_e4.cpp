@@ -175,11 +175,11 @@ unsigned char * BulletTypeClass::Construct(char *aP1)
   *((unsigned char *)this + 757) = 0; /*0x46bcd4*/
   *((unsigned char *)this + 758) = 0; /*0x46bcda*/
   *((unsigned char *)this + 759) = 0; /*0x46bce0*/
-  *(unsigned int *)this->vtable1 = (unsigned int)(&vt_BulletTypeClass); /*0x46bce6*/
+  *(unsigned int *)this->vtable1 = (void *)(&vt_BulletTypeClass);
   *(unsigned int *)this[4] = (unsigned int *)(&vt_BulletTypeClass); /*0x46bcec*/
   *(unsigned int *)this[8] = (unsigned int *)(&vt_BulletTypeClass); /*0x46bcf2*/
   *(unsigned int *)this[12] = (unsigned int *)(&vt_BulletTypeClass); /*0x46bcf9*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)this[4]); /*0x46bd00*/
+  AbstractClass::GenerateUniqueID( (int)((AbstractClass *)this[4])); /*0x46bd00*/
   *((unsigned char *)this + 564) = 1; /*0x46bd05*/
   *((unsigned char *)this + 559) = 1; /*0x46bd0c*/
   *((unsigned char *)this + 560) = 0; /*0x46bd13*/
@@ -207,7 +207,7 @@ unsigned char * BulletTypeClass::Construct(char *aP1)
          0) )
   {
     v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x46bdc5*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x46bdd4*/
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = (unsigned int)this;
   }
   return this->ObjectTypeClass; /*0x46bdd9*/
 
@@ -594,10 +594,10 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
   int v4; // eax
   BulletTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block->vtable1 = &vt_BulletTypeClass; /*0x46c896*/
-  *(unsigned int *)Block[4] = (unsigned int)(&vt_BulletTypeClass); /*0x46c89c*/
-  *(unsigned int *)Block[8] = (unsigned int)(&vt_BulletTypeClass); /*0x46c8a3*/
-  *(unsigned int *)Block[12] = (unsigned int)(&vt_BulletTypeClass); /*0x46c8aa*/
+  *(unsigned int *)this->vtable1 = (unsigned int)&vt_BulletTypeClass;
+  *(unsigned int *)this[4] = (unsigned int)(&vt_BulletTypeClass); /*0x46c89c*/
+  *(unsigned int *)this[8] = (unsigned int)(&vt_BulletTypeClass); /*0x46c8a3*/
+  *(unsigned int *)this[12] = (unsigned int)(&vt_BulletTypeClass); /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)this), 1); /*0x46c8b1*/
   v6 = (gamemd::BulletTypeClass *)(this); /*0x46c8c6*/
   v3 = (*(int (**)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/
@@ -615,7 +615,7 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
     }
   }
   v6 = (gamemd::BulletTypeClass *)(this); /*0x46c90f*/
-  v4 = (*(int (**)(unsigned int *, BulletTypeClass **))(dword_A83C80 + 16))(&dword_A83C80, &v6); /*0x46c913*/
+  v4 = (*(int (**)(unsigned int *, BulletTypeClass **))(dword_A83C80 + 16))( (unsigned int *)(&dword_A83C80), (BulletTypeClass **)(&v6)); /*0x46c913*/
   if ( v4 != -1 && v4 < dword_A83C90 && v4 < --dword_A83C90 ) /*0x46c92e*/
   {
     do /*0x46c946*/
@@ -664,7 +664,7 @@ int BulletTypeClass::ProcessImpact(int a1)
 
   v1 = (gamemd::ShipLocomotionClass *)(a1); /*0x69fc16*/
   v2 = (char *)a1 - 4; /*0x69fc28*/
-  v3 = *(uint8_t *)((*((int (**)(FootClass *))((unsigned int *)a1)[0]->vtable1 + 111))(((unsigned int *)a1)[0]) + 284); /*0x69fc31*/
+  v3 = *(uint8_t *)((*((int (**)(FootClass *))((FootClass *)((unsigned int *)a1))[0]->vtable1 + 111))(((unsigned int *)a1)[0]) + 284); /*0x69fc31*/
   v4 = *((unsigned int *)v2 + 7); /*0x69fc33*/
   if ( v3 != v4 ) /*0x69fc38*/
   {
@@ -714,9 +714,9 @@ int BulletTypeClass::ProcessImpact(int a1)
           if ( !((unsigned int *)v16)[0] || ((unsigned int *)v16)[0] || ((unsigned int *)v16)[0] ) /*0x69ff84*/
             return 0; /*0x69ff95*/
         }
-        if ( (*((int (**)(FootClass *))((unsigned int *)v1)[0]->vtable1 + 97))(((unsigned int *)v1)[0]) == 5 /*0x69ffc4*/
+        if ( (*((int (**)(FootClass *))((FootClass *)((unsigned int *)v1))[0]->vtable1 + 97))(((unsigned int *)v1)[0]) == 5 /*0x69ffc4*/
           && !(*(uint8_t (**)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
-          || (*((int (**)(FootClass *))((unsigned int *)v1)[0]->vtable1 + 97))(((unsigned int *)v1)[0]) == 16 )
+          || (*((int (**)(FootClass *))((FootClass *)((unsigned int *)v1))[0]->vtable1 + 97))(((unsigned int *)v1)[0]) == 16 )
         {
           goto LABEL_32; /*0x69ffc4*/
         }
@@ -789,7 +789,7 @@ int BulletTypeClass::ProcessImpact(int a1)
           goto LABEL_32; /*0x6a0108*/
         }
         LOBYTE(a1) = 0; /*0x6a013e*/
-        WalkLocomotion::Update((int)&v1[-1].Piggybackee, &a1, 1, 0); /*0x6a0142*/
+        WalkLocomotion::Update( (int)&v1[-1].Piggybackee, (int)(&a1), 1, 0); /*0x6a0142*/
         if ( (unsigned char)a1 ) /*0x6a014b*/
           return 0; /*0x6a0156*/
         if ( !((unsigned int *)v1)[0] ) /*0x6a015c*/
@@ -814,12 +814,12 @@ LABEL_20:
   if ( v1->MovementSpeed[1] != -1 /*0x69fcd4*/
     || !(*(uint8_t (**)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
     && ((unsigned int *)v1)[0]->pathDirections[0] == -1
-    || (*((int (**)(FootClass *))((unsigned int *)v1)[0]->vtable1 + 11))(((unsigned int *)v1)[0]) == 1 && BYTE1(((unsigned int *)v1)[1]) )
+    || (*((int (**)(FootClass *))((FootClass *)((unsigned int *)v1))[0]->vtable1 + 11))(((unsigned int *)v1)[0]) == 1 && BYTE1(((unsigned int *)v1)[1]) )
   {
     goto LABEL_32; /*0x69fcda*/
   }
   LOBYTE(a1) = 0; /*0x69fcea*/
-  WalkLocomotion::Update((int)&v1[-1].Piggybackee, &a1, 1, 0); /*0x69fcee*/
+  WalkLocomotion::Update( (int)&v1[-1].Piggybackee, (int)(&a1), 1, 0); /*0x69fcee*/
   if ( (unsigned char)a1 || !((unsigned int *)v1)[0] ) /*0x69fd00*/
     return 0; /*0x69fd06*/
   v22 = 1; /*0x69fd0c*/
@@ -831,7 +831,7 @@ LABEL_32:
   if ( (*(uint8_t (**)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))(v1) ) /*0x69fe3c*/
   {
     if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 8) /*0x69fe6e*/
-      && !*(unsigned char *)((*((int (**)(FootClass *))((unsigned int *)v1)[0]->vtable1 + 33))(((unsigned int *)v1)[0]) + 3433) )
+      && !*(unsigned char *)((*((int (**)(FootClass *))((FootClass *)((unsigned int *)v1))[0]->vtable1 + 33))(((unsigned int *)v1)[0]) + 3433) )
     {
       v12 = ((unsigned int *)v1)[0]; /*0x69fe76*/
       if ( !((unsigned int *)v12)[0] && *(unsigned int *)((*((int (**)(FootClass *))v12->vtable1 + 111))(v12) + 236) == 2 ) /*0x69fe90*/
@@ -886,10 +886,10 @@ unsigned int * BulletTypeClass::GetROF(unsigned int * a1, int * a2)
   v5 = *a2; /*0x46c4f9*/
   v6 = a2[1]; /*0x46c50a*/
   v7 = a2[2]; /*0x46c511*/
-  GroundHeight = Cell::GetGroundHeight(&v5); /*0x46c515*/
+  GroundHeight = Cell::GetGroundHeight( &v5); /*0x46c515*/
   v3 = v7; /*0x46c51a*/
   if ( v7 <= GroundHeight ) /*0x46c520*/
-    v3 = Cell::GetGroundHeight(&v5) + 1; /*0x46c533*/
+    v3 = Cell::GetGroundHeight( &v5) + 1; /*0x46c533*/
   *(unsigned int *)a1->ObjectTypeClass = v5; /*0x46c53f*/
   *(unsigned int *)a1[4] = v6; /*0x46c545*/
   *(unsigned int *)a1[8] = v3; /*0x46c549*/
@@ -904,16 +904,16 @@ int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1); /*0x46c6ab*/
+  result = ObjectTypeClass::LoadCleanup( (IUnknown *)((ObjectTypeClass *)aP0), (ObjectTypeClass *)(aP1)); /*0x46c6ab*/
   if ( result >= 0 ) /*0x46c6b2*/
   {
     if ( aP0 ) /*0x46c6b6*/
     {
       ((ObjectTypeClass*)((ObjectTypeClass *)aP0))->Construct((int)&aP1); /*0x46c6bf*/
-      *(unsigned int *)aP0->vtable1 = &vt_BulletTypeClass; /*0x46c6c4*/
-      *(unsigned int *)aP0[4] = &vt_BulletTypeClass; /*0x46c6ca*/
-      *(unsigned int *)aP0[8] = &vt_BulletTypeClass; /*0x46c6d1*/
-      *(unsigned int *)aP0[12] = &vt_BulletTypeClass; /*0x46c6d8*/
+      *(unsigned int *)aP0->vtable1 = (unsigned int)&vt_BulletTypeClass;
+      *(unsigned int *)aP0[4] = (unsigned int)&vt_BulletTypeClass;
+      *(unsigned int *)aP0[8] = (unsigned int)&vt_BulletTypeClass;
+      *(unsigned int *)aP0[12] = (unsigned int)&vt_BulletTypeClass;
     }
     ((VoxelAnimType*)(aP0->ObjectTypeClass))->LoadAnim(); /*0x46c6e1*/
     ((ObjectTypeClass*)(aP0->ObjectTypeClass))->Load2DArt(); /*0x46c6e8*/
@@ -933,7 +933,7 @@ int BulletTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * 
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x46c73f*/
+  result = AbstractClass::SaveLoad_PrefixWrapper( (TechnoTypeClass *)((AbstractClass *)aP0), (ObjectTypeClass *)(aP1), (TechnoTypeClass *)(aP2)); /*0x46c73f*/
   if ( result >= 0 ) /*0x46c746*/
     return 0; /*0x46c748*/
   return result; /*0x46c74a*/
@@ -1028,8 +1028,8 @@ char BulletTypeClass::ReadTrajectoryFlags(unsigned char * Block, char * a3, int 
     if ( ((1 << *(unsigned int *)(*(unsigned int *)v5 + 184)) & a4) != 0 ) /*0x4751a3*/
     {
       if ( v4 ) /*0x4751a7*/
-        strcat(Source, Str); /*0x4751ce*/
-      strcat(Source, (const char *)(v6 + 36)); /*0x4751fa*/
+        strcat( (char *)(Source), (char *)&::Delimiter); /*0x4751ce*/
+      strcat( (char *)(Source), (const char *)(v6 + 36)); /*0x4751fa*/
       v4 = Source[0]; /*0x475203*/
     }
     v5 += 4; /*0x47520b*/
@@ -1037,7 +1037,7 @@ char BulletTypeClass::ReadTrajectoryFlags(unsigned char * Block, char * a3, int 
   }
   while ( v8 ); /*0x475213*/
   if ( v4 ) /*0x47521e*/
-    return INIClass::SetString(this->ObjectTypeClass, Block, a3, Source); /*0x475239*/
+    return ((INIClass *)this->ObjectTypeClass)->SetString( this, a3, Source); /*0x475239*/
   else
     return 1; /*0x475248*/
 

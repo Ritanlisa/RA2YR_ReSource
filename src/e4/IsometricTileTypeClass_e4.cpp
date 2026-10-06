@@ -85,7 +85,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
       *((unsigned int *)a1 + 169) = (unsigned int)(&vt_DynamicVectorClass); /*0x549cee*/
       *((unsigned int *)a1 + 174) = 10; /*0x549cf4*/
       *((unsigned int *)a1 + 173) = 0; /*0x549cfb*/
-      *(unsigned int *)a1->__pad_0 = &vt_IsometricTileTypeClass; /*0x549d02*/
+      *(unsigned int *)a1->__pad_0 = (unsigned int)&vt_IsometricTileTypeClass;
       a1->IsometricTileTypeClass_field_0x04 = (int)&vt_IsometricTileTypeClass; /*0x549d08*/
       a1->IsometricTileTypeClass_field_0x08 = (int)&vt_IsometricTileTypeClass; /*0x549d0f*/
       a1->IsometricTileTypeClass_field_0x0C = (int)&vt_IsometricTileTypeClass; /*0x549d16*/
@@ -132,7 +132,7 @@ int IsometricTileTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * a
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0), aP1,(gamemd::TechnoTypeClass *)(aP2)); /*0x549d7f*/
+  result = AbstractClass::SaveLoad_PrefixWrapper( (gamemd::TechnoTypeClass *)((AbstractClass *)aP0), (ObjectTypeClass *)(aP1), (gamemd::TechnoTypeClass *)(aP2)); /*0x549d7f*/
   if ( result >= 0 ) /*0x549d86*/
     return 0; /*0x549d88*/
   return result; /*0x549d8a*/
@@ -177,10 +177,10 @@ namespace gamemd {
 IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2, int a1, int a3, int a4, int a5)
 {
 
-  IsometricTileTypeClass::CleanupMembers((int)Block); /*0x54a173*/
+  IsometricTileTypeClass::CleanupMembers((int)this); /*0x54a173*/
   if ( (a2 & 1) != 0 ) /*0x54a17d*/
-    __3_YAXPAX_Z(Block); /*0x54a180*/
-  return Block; /*0x54a18a*/
+    __3_YAXPAX_Z(this); /*0x54a180*/
+  return this; /*0x54a18a*/
 
 }
 } // namespace gamemd
@@ -292,18 +292,18 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x54a763*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x54a766*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x54a770*/
+  v3 = *(void **)&this->m_1[3]; /*0x54a763*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x54a770*/
   {
     __3_YAXPAX_Z(v3); /*0x54a778*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x54a780*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x54a780*/
   }
-  BYTE1(Block->m_C) = 0; /*0x54a78b*/
-  Block->m_8 = 0; /*0x54a791*/
+  BYTE1(this->m_C) = 0; /*0x54a78b*/
+  this->m_8 = 0; /*0x54a791*/
   if ( (a2 & 1) != 0 ) /*0x54a798*/
-    __3_YAXPAX_Z(Block); /*0x54a79b*/
-  return Block->__pad_0; /*0x54a7a5*/
+    __3_YAXPAX_Z(this); /*0x54a79b*/
+  return this->__pad_0; /*0x54a7a5*/
 
 }
 } // namespace gamemd

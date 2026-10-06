@@ -48,7 +48,7 @@ int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, 
   {
     if ( Size >= 0x10000 - CStreamClass_field_0x14 ) /*0x4a2d52*/
       v5 = 0x10000 - CStreamClass_field_0x14; /*0x4a2d54*/
-    memcpy((void *)(a1->CStreamClass_field_0x18 + a1->CStreamClass_field_0x14), Src, v5); /*0x4a2d61*/
+    memcpy( (void *)(a1->CStreamClass_field_0x18 + a1->CStreamClass_field_0x14), (const void *)(Src), v5); /*0x4a2d61*/
     v9 = v5 + a1->CStreamClass_field_0x14; /*0x4a2d72*/
     v4 = (IStream *)((char *)Src + v5); /*0x4a2d74*/
     v6 = Size - v5; /*0x4a2d76*/
@@ -77,7 +77,7 @@ LABEL_23:
   }
   while ( 1 ) /*0x4a2db1*/
   {
-    result = ((IStream *)(v4))->Read((void *)0x10000, v10); /*0x4a2db1*/
+    result = IStream::Read((v4),(void *)0x10000, v10); /*0x4a2db1*/
     if ( result < 0 ) /*0x4a2db8*/
       return result; /*0x4a2ce2*/
     v6 -= 0x10000; /*0x4a2dba*/
@@ -459,18 +459,18 @@ VectorClass_flat * CStreamClass_16::QueryInterface(unsigned int * Block, char a2
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4a4d93*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4a4d96*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x4a4da0*/
+  v3 = *(void **)&this->m_1[3]; /*0x4a4d93*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x4a4da0*/
   {
     __3_YAXPAX_Z(v3); /*0x4a4da8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4a4db0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4a4db0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x4a4dbb*/
-  Block->m_8 = 0; /*0x4a4dc1*/
+  BYTE1(this->m_C) = 0; /*0x4a4dbb*/
+  this->m_8 = 0; /*0x4a4dc1*/
   if ( (a2 & 1) != 0 ) /*0x4a4dc8*/
-    __3_YAXPAX_Z(Block); /*0x4a4dcb*/
-  return Block->__pad_0; /*0x4a4dd5*/
+    __3_YAXPAX_Z(this); /*0x4a4dcb*/
+  return this->__pad_0; /*0x4a4dd5*/
 
 }
 } // namespace gamemd

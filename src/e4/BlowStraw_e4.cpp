@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BlowStraw_29_e4.hpp"
@@ -94,13 +95,13 @@ LABEL_6:
         {
           FontClassEntry = GetFontClassEntry(i); /*0x6d088a*/
           if ( FontClassEntry ) /*0x6d0891*/
-            HashTable::Remove((HashTable *)dword_887368, *((unsigned int *)FontClassEntry + 9)); /*0x6d089d*/
+            HashTable::Remove( (void)((HashTable *)dword_887368), *((unsigned int *)FontClassEntry + 9)); /*0x6d089d*/
         }
-        HashTable::Remove((HashTable *)dword_887368, 240); /*0x6d08b3*/
+        HashTable::Remove( (void)((HashTable *)dword_887368), 240); /*0x6d08b3*/
         v16 = this->TabClass_field_0x0; /*0x6d08b8*/
         *((unsigned char *)this + 21828) = 0; /*0x6d08c1*/
         (*(void (**)(TabClass *, GadgetClass *))(v16 + 48))((TabClass *)this, (GadgetClass *)&stru_B0CC40); /*0x6d08c8*/
-        PushCommandClass::Execute((unsigned int *)(&stru_B0CC40), (int)g_Str_Tip_ThumbClosed); /*0x6d08d5*/
+        PushCommandClass::Execute( (unsigned int)((unsigned int *)(&stru_B0CC40)), (int)g_Str_Tip_ThumbClosed); /*0x6d08d5*/
         v17 = this->TabClass_field_0x0; /*0x6d08da*/
         *((unsigned char *)this + 21829) = 1; /*0x6d08e0*/
         (*(void (**)(TabClass *, unsigned int))(v17 + 56))((TabClass *)this, 0); /*0x6d08e6*/
@@ -114,7 +115,7 @@ LABEL_6:
         if ( !*((unsigned char *)this + 21828) ) /*0x6d091f*/
         {
           (*(void (**)(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))((TabClass *)this, (GadgetClass *)&stru_B0CC40); /*0x6d0932*/
-          HashTable::Remove((HashTable *)dword_887368, 241); /*0x6d0940*/
+          HashTable::Remove( (void)((HashTable *)dword_887368), 241); /*0x6d0940*/
           *((unsigned char *)this + 21828) = 1; /*0x6d0947*/
           ((CommandClass*)(gamemd::CommandClass *)this)->BuildBar(); /*0x6d094d*/
           v18 = this->TabClass_field_0x0; /*0x6d0952*/
@@ -278,7 +279,7 @@ TabClass * BlowStraw_29::Read(char * Block, char a2)
   int *v3; // esi
   int v4; // edi
 
-  v3 = (int *)((char *)Block + 21484); /*0x5be9e5*/
+  v3 = (int *)((char *)this + 21484); /*0x5be9e5*/
   v4 = 4; /*0x5be9eb*/
   do /*0x5bea06*/
   {
@@ -287,10 +288,10 @@ TabClass * BlowStraw_29::Read(char * Block, char a2)
     --v4; /*0x5bea05*/
   }
   while ( v4 ); /*0x5bea06*/
-  ((RadarClass *)((RadarClass *)Block))->Destruct(); /*0x5bea0a*/
+  ((RadarClass *)((RadarClass *)this))->Destruct(); /*0x5bea0a*/
   if ( (a2 & 1) != 0 ) /*0x5bea14*/
-    __3_YAXPAX_Z(Block); /*0x5bea17*/
-  return (gamemd::TabClass *)((RadarClass *)Block); /*0x5bea1f*/
+    __3_YAXPAX_Z(this); /*0x5bea17*/
+  return (gamemd::TabClass *)((RadarClass *)this); /*0x5bea1f*/
 
 }
 } // namespace gamemd

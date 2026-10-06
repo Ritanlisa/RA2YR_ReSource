@@ -121,8 +121,8 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
     AnimClass::FreeRenderBuffer(v8); /*0x422a22*/
   ((Mixer*)((Mixer *)a2->AnimClass_field_0x1A0))->ReleaseChannel(); /*0x422a2f*/
   ((Mixer*)((Mixer *)&a2->AnimClass_field_0x1B4))->ReleaseChannel(); /*0x422a3c*/
-  AudioFileClass::Release((AudioFileClass *)a2->AnimClass_field_0x1A0); /*0x422a43*/
-  AudioFileClass::Release((AudioFileClass *)&a2->AnimClass_field_0x1B4); /*0x422a4a*/
+  AudioFileClass::Release( (AudioFileClass *)a2->AnimClass_field_0x1A0); /*0x422a43*/
+  AudioFileClass::Release( (AudioFileClass *)&a2->AnimClass_field_0x1B4); /*0x422a4a*/
   a2->AnimClass_field_0xCC = 0; /*0x422a52*/
   a2->AnimClass_field_0xC8 = 0; /*0x422a59*/
   if ( AbstractClass::GetVtable3((AbstractClass *)&a2->AnimClass_field_0x4) == -2 ) /*0x422a67*/
@@ -146,7 +146,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
   else
   {
     v12 = (gamemd::AnimClass *)(a2);
-    v10 = (*(int (**)(unsigned int *, AnimClass **))(dword_A8E9A8 + 16))(&dword_A8E9A8, &v12); /*0x422ad9*/
+    v10 = (*(int (**)(unsigned int *, AnimClass **))(dword_A8E9A8 + 16))( (unsigned int *)(&dword_A8E9A8), (AnimClass **)(&v12)); /*0x422ad9*/
     if ( v10 != -1 && v10 < dword_A8E9B8 && v10 < --dword_A8E9B8 ) /*0x422af4*/
     {
       do /*0x422b0c*/
@@ -359,7 +359,7 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v18 = v88; /*0x422ee6*/
     *(float *)v100 = (float)*(int *)v101; /*0x422eef*/
     v19 = *(unsigned int *)v100; /*0x422ef3*/
-    ((Tactical*)v110.__pad_0)->SetCellTransform(0, *(int *)v100, v88, v104, 0, 0); /*0x422efa*/
+    ((Tactical*)v110.__pad_0)->SetCellTransform( 0, *(int *)v100, (void *)(v88), v104, 0, 0); /*0x422efa*/
     *(float *)v100 = (float)v107; /*0x422f0f*/
     ((Tactical*)(v110.__pad_0))->SetCellTransform(1, v19, *(int *)v100, v103, 0, 1065353216); /*0x422f1f*/
     *(float *)&v89 = (float)v106; /*0x422f37*/
@@ -1310,7 +1310,7 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
   v13 = *v3; /*0x729901*/
   v14 = v3[1]; /*0x72990d*/
   v15 = v3[2]; /*0x729919*/
-  GroundHeight = Cell::GetGroundHeight(&v13); /*0x729922*/
+  GroundHeight = Cell::GetGroundHeight( &v13); /*0x729922*/
   if ( v15 >= GroundHeight ) /*0x72992a*/
   {
     (*(void (**)(unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1[3] + 288))(a1[3], 0, 0); /*0x729a43*/
@@ -1334,7 +1334,7 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
     v16 += v6; /*0x729971*/
     if ( v16 > GroundHeight ) /*0x729975*/
       v16 = GroundHeight; /*0x729977*/
-    result = (*(int (**)(unsigned int, int *))(*(unsigned int *)a1[3] + 436))(a1[3], &v14); /*0x729985*/
+    result = (*(int (**)(unsigned int, int *))(*(unsigned int *)a1[3] + 436))( a1[3], (int *)(&v14)); /*0x729985*/
     if ( v5 <= -50 ) /*0x72998f*/
     {
       result = (*(int (**)(unsigned int))(*(unsigned int *)a1[3] + 456))(a1[3]); /*0x72999a*/
@@ -1380,13 +1380,13 @@ int AnimClass::ProcessFrame()
   ((Voxel *)(int)this)->TransformMatrix(); /*0x761037*/
   for ( i = 0; i < *(unsigned int *)&this->__pad_1B8[72]; ++i ) /*0x761046*/
   {
-    Coords = CellClass::GetCoords(*(CellClass **)(*(unsigned int *)&this->__pad_1B8[60] + 4 * i), v6); /*0x761056*/
+    Coords = ((CellClass *)*(CellClass **)(*(unsigned int *)&this->__pad_1B8[60] + 4 * i))->GetCoords( v6); /*0x761056*/
     ((WaveClass *)this)->DamageArea((ObjectClass *)Coords); /*0x76105e*/
   }
   v4 = *(unsigned int *)&this->__pad_120[16] - 1; /*0x761074*/
   *(unsigned int *)&this->__pad_120[16] = v4; /*0x761075*/
   if ( v4 >= 0 ) /*0x76107b*/
-    return ObjectClass::DetectCloaked((UnitClass *)this); /*0x76108f*/
+    return ObjectClass::DetectCloaked( (void)((UnitClass *)this)); /*0x76108f*/
   else
     return (*(int (**)(AnimClass *))(this->AnimClass_field_0x0 + 248))(this); /*0x761081*/
 
@@ -1420,7 +1420,7 @@ char AnimClass::ProcessAreaEffect(AnimClass * a1)
 
   v1 = ((Input *)((Input *)a1))->OffsetToDirection(); /*0x426314*/
   v2 = (gamemd::CellClass *)((gamemd::Coord *)((char *)&stru_87F5F0 + 0x1F8))->To_Cell((unsigned int *)a1); /*0x426321*/
-  if ( Cell::GetGroundHeight((unsigned int *)a1) + Map_MaxHeight > (int)a1->AnimClass_field_0x8 ) /*0x426335*/
+  if ( Cell::GetGroundHeight( (unsigned int *)a1) + Map_MaxHeight > (int)a1->AnimClass_field_0x8 ) /*0x426335*/
   {
     result = ~(1 << v1) & LOBYTE(v2->occupationFlags); /*0x426370*/
     LOBYTE(v2->occupationFlags) = result; /*0x426372*/

@@ -210,7 +210,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Audio3D() = default;
 
-    virtual void ComputeRotation(); // 0x55A7D0
+    virtual void ComputeRotation(float *a2, unsigned int *a3); // 0x55A7D0  // g57b5 W4
 
 };
 // 1 methods in IDA

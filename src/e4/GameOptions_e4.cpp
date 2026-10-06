@@ -41,13 +41,13 @@ int sub_682780(int a1, int a2, wchar_t * String)
   }
   v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
-  v6 = (*(int (**)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v9); /*0x6827a6*/
+  v6 = (*(int (**)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))( a1, v5, 18, 0, 0, (int *)(&v9)); /*0x6827a6*/
   if ( v6 >= 0 ) /*0x6827c4*/
   {
     if ( !v9 ) /*0x6827e6*/
       WinAPI::Wrapper(-2147467261); /*0x6827ed*/
     v7 = wcslen(String); /*0x682803*/
-    v6 = (*(int (**)(int, wchar_t *, size_t, unsigned int))(*(unsigned int *)v9 + 16))(v9, String, 2 * v7 + 2, 0); /*0x682815*/
+    v6 = (*(int (**)(int, wchar_t *, size_t, unsigned int))(*(unsigned int *)v9 + 16))( v9, (wchar_t *)(String), 2 * v7 + 2, 0); /*0x682815*/
     if ( v6 >= 0 ) /*0x68281f*/
     {
       if ( !v9 ) /*0x682834*/
@@ -89,13 +89,13 @@ int sub_6829A0(int * a1, int a2, int a3)
   int v9; // [esp+40h] [ebp-8h]
 
   v6 = 0; /*0x6829ac*/
-  if ( (*(int (**)(int *, void *, int, int *))(*a1 + 16))(a1, &unk_7F7D10, 18, &v6) >= 0 ) /*0x6829c4*/
+  if ( (*(int (**)(int *, void *, int, int *))(*a1 + 16))( (int *)(a1), (void *)(&unk_7F7D10), 18, (int *)(&v6)) >= 0 ) /*0x6829c4*/
     goto LABEL_7; /*0x6829c4*/
   if ( v6 ) /*0x6829cc*/
     (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x6829d1*/
   v3 = *a1; /*0x6829d4*/
   v6 = 0; /*0x6829ea*/
-  v4 = (*(int (**)(int *, void *, unsigned int, unsigned int, int, int *))(v3 + 12))(a1, &unk_7F7D10, 0, 0, 4114, &v6); /*0x6829f5*/
+  v4 = (*(int (**)(int *, void *, unsigned int, unsigned int, int, int *))(v3 + 12))( (int *)(a1), (void *)(&unk_7F7D10), 0, 0, 4114, (int *)(&v6)); /*0x6829f5*/
   if ( v4 >= 0 ) /*0x6829f9*/
   {
   LABEL_7:

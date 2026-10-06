@@ -98,10 +98,10 @@ MSPCXAnim * MSPCXAnim::QueryInterface(char a2, int a3)
   void (***v3)(unsigned int, int); // ecx
 
   v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 9); /*0x5ced73*/
-  *(unsigned int *)Block->__pad_0 = &vt_MSPCXAnim; /*0x5ced76*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSPCXAnim;
   if ( v3 ) /*0x5ced7e*/
     (**v3)((unsigned int)v3, 1); /*0x5ced84*/
-  *(unsigned int *)Block->__pad_0 = &vt_MSAnim; /*0x5ced8a*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSAnim;
   if ( (a2 & 1) != 0 ) /*0x5ced92*/
     __3_YAXPAX_Z(this); /*0x5ced95*/
   return this->__pad_0; /*0x5ced9f*/
@@ -986,18 +986,18 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(unsigned int * Bl
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d1713*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d1716*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d1720*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d1713*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d1720*/
   {
     __3_YAXPAX_Z(v3); /*0x5d1728*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d1730*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d1730*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d173b*/
-  Block->m_8 = 0; /*0x5d1741*/
+  BYTE1(this->m_C) = 0; /*0x5d173b*/
+  this->m_8 = 0; /*0x5d1741*/
   if ( (a2 & 1) != 0 ) /*0x5d1748*/
-    __3_YAXPAX_Z(Block); /*0x5d174b*/
-  return Block->__pad_0; /*0x5d1755*/
+    __3_YAXPAX_Z(this); /*0x5d174b*/
+  return this->__pad_0; /*0x5d1755*/
 
 }
 } // namespace gamemd
@@ -1009,18 +1009,18 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(unsigned in
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d17b3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d17b6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d17c0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d17b3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d17c0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d17c8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d17d0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d17d0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d17db*/
-  Block->m_8 = 0; /*0x5d17e1*/
+  BYTE1(this->m_C) = 0; /*0x5d17db*/
+  this->m_8 = 0; /*0x5d17e1*/
   if ( (a2 & 1) != 0 ) /*0x5d17e8*/
-    __3_YAXPAX_Z(Block); /*0x5d17eb*/
-  return Block->__pad_0; /*0x5d17f5*/
+    __3_YAXPAX_Z(this); /*0x5d17eb*/
+  return this->__pad_0; /*0x5d17f5*/
 
 }
 } // namespace gamemd
@@ -1032,18 +1032,18 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(unsigned i
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d1853*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d1856*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d1860*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d1853*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d1860*/
   {
     __3_YAXPAX_Z(v3); /*0x5d1868*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d1870*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d1870*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d187b*/
-  Block->m_8 = 0; /*0x5d1881*/
+  BYTE1(this->m_C) = 0; /*0x5d187b*/
+  this->m_8 = 0; /*0x5d1881*/
   if ( (a2 & 1) != 0 ) /*0x5d1888*/
-    __3_YAXPAX_Z(Block); /*0x5d188b*/
-  return Block->__pad_0; /*0x5d1895*/
+    __3_YAXPAX_Z(this); /*0x5d188b*/
+  return this->__pad_0; /*0x5d1895*/
 
 }
 } // namespace gamemd
@@ -1055,18 +1055,18 @@ VectorClass_flat * MSPCXAnim_26::Constructor_VectorClass_MapStage___(unsigned in
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d18a3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d18a6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d18b0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d18a3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d18b0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d18b8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d18c0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d18c0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d18cb*/
-  Block->m_8 = 0; /*0x5d18d1*/
+  BYTE1(this->m_C) = 0; /*0x5d18cb*/
+  this->m_8 = 0; /*0x5d18d1*/
   if ( (a2 & 1) != 0 ) /*0x5d18d8*/
-    __3_YAXPAX_Z(Block); /*0x5d18db*/
-  return Block->__pad_0; /*0x5d18e5*/
+    __3_YAXPAX_Z(this); /*0x5d18db*/
+  return this->__pad_0; /*0x5d18e5*/
 
 }
 } // namespace gamemd
@@ -1078,18 +1078,18 @@ DynamicVector * MSPCXAnim_26::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d18f3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d18f6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d1900*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d18f3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d1900*/
   {
     __3_YAXPAX_Z(v3); /*0x5d1908*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d1910*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d1910*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d191b*/
-  Block->m_8 = 0; /*0x5d1921*/
+  BYTE1(this->m_C) = 0; /*0x5d191b*/
+  this->m_8 = 0; /*0x5d1921*/
   if ( (a2 & 1) != 0 ) /*0x5d1928*/
-    __3_YAXPAX_Z(Block); /*0x5d192b*/
-  return Block->__pad_0; /*0x5d1935*/
+    __3_YAXPAX_Z(this); /*0x5d192b*/
+  return this->__pad_0; /*0x5d1935*/
 
 }
 } // namespace gamemd
@@ -1101,18 +1101,18 @@ VectorClass_flat * MSPCXAnim_42::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d1943*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d1946*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d1950*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d1943*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d1950*/
   {
     __3_YAXPAX_Z(v3); /*0x5d1958*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d1960*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d1960*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d196b*/
-  Block->m_8 = 0; /*0x5d1971*/
+  BYTE1(this->m_C) = 0; /*0x5d196b*/
+  this->m_8 = 0; /*0x5d1971*/
   if ( (a2 & 1) != 0 ) /*0x5d1978*/
-    __3_YAXPAX_Z(Block); /*0x5d197b*/
-  return Block->__pad_0; /*0x5d1985*/
+    __3_YAXPAX_Z(this); /*0x5d197b*/
+  return this->__pad_0; /*0x5d1985*/
 
 }
 } // namespace gamemd
@@ -1124,18 +1124,18 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(unsigned in
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d1993*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d1996*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d19a0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d1993*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d19a0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d19a8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d19b0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d19b0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d19bb*/
-  Block->m_8 = 0; /*0x5d19c1*/
+  BYTE1(this->m_C) = 0; /*0x5d19bb*/
+  this->m_8 = 0; /*0x5d19c1*/
   if ( (a2 & 1) != 0 ) /*0x5d19c8*/
-    __3_YAXPAX_Z(Block); /*0x5d19cb*/
-  return Block->__pad_0; /*0x5d19d5*/
+    __3_YAXPAX_Z(this); /*0x5d19cb*/
+  return this->__pad_0; /*0x5d19d5*/
 
 }
 } // namespace gamemd
@@ -1147,18 +1147,18 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(unsigned int
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d1a33*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d1a36*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d1a40*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d1a33*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d1a40*/
   {
     __3_YAXPAX_Z(v3); /*0x5d1a48*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d1a50*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d1a50*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d1a5b*/
-  Block->m_8 = 0; /*0x5d1a61*/
+  BYTE1(this->m_C) = 0; /*0x5d1a5b*/
+  this->m_8 = 0; /*0x5d1a61*/
   if ( (a2 & 1) != 0 ) /*0x5d1a68*/
-    __3_YAXPAX_Z(Block); /*0x5d1a6b*/
-  return Block->__pad_0; /*0x5d1a75*/
+    __3_YAXPAX_Z(this); /*0x5d1a6b*/
+  return this->__pad_0; /*0x5d1a75*/
 
 }
 } // namespace gamemd

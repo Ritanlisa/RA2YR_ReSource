@@ -108,7 +108,7 @@ LABEL_11:
           v8 = DlgItem; /*0x4f1268*/
           if ( DlgItem ) /*0x4f126c*/
           {
-            String = (wchar_t *)(GetStringCSF(v6, 0,(const char *)(g_Str_File_GOptions_CPP), 196));
+            String = (unsigned int)(wchar_t *)(GetStringCSF(v6, 0,(const char *)(g_Str_File_GOptions_CPP), 196));
             SendMessageA(v8, 0x4B2u, 0, (LPARAM)String); /*0x4f128e*/
             return 0; /*0x4f12a0*/
           }
@@ -521,7 +521,7 @@ int Options::GrowBuffer()
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
   if ( this->field_8 ) /*0x625403*/
   {
-    qmemcpy(v5, this->field_8, 4 * *(unsigned int *)this->__pad_0); /*0x625418*/
+    qmemcpy( v5, (const void *)(this->field_8), 4 * *(unsigned int *)this->__pad_0); /*0x625418*/
     v4 = v6; /*0x625421*/
   }
   __3_YAXPAX_Z((void *)(this->field_8)); /*0x625429*/
@@ -574,12 +574,12 @@ AbstractClass * * Options::DestroyComposite(void * Block, char a2)
   unsigned int *v5; // edx
   void *v6; // esi
 
-  if ( *(unsigned int *)&Block->__pad_14[24] ) /*0x625563*/
+  if ( *(unsigned int *)&this->__pad_14[24] ) /*0x625563*/
   {
-    __3_YAXPAX_Z(*(void **)&Block->__pad_14[24]); /*0x62556b*/
-    *(unsigned int *)&Block->__pad_14[24] = 0; /*0x625573*/
+    __3_YAXPAX_Z(*(void **)&this->__pad_14[24]); /*0x62556b*/
+    *(unsigned int *)&this->__pad_14[24] = 0; /*0x625573*/
   }
-  for ( i = *(unsigned int **)&Block->__pad_34[4]; i; i = *(unsigned int **)&Block->__pad_34[4] ) /*0x62557f*/
+  for ( i = *(unsigned int **)&this->__pad_34[4]; i; i = *(unsigned int **)&this->__pad_34[4] ) /*0x62557f*/
   {
     v4 = i; /*0x625581*/
     v5 = 0; /*0x625583*/
@@ -593,20 +593,20 @@ AbstractClass * * Options::DestroyComposite(void * Block, char a2)
     if ( v5 ) /*0x62559d*/
       *v5 = *v4; /*0x6255a1*/
     else
-      *(unsigned int *)&Block->__pad_34[4] = *v4; /*0x6255a7*/
+      *(unsigned int *)&this->__pad_34[4] = *v4; /*0x6255a7*/
     __3_YAXPAX_Z(v4); /*0x6255ab*/
 LABEL_12:
     ; /*0x6255b3*/
   }
-  v6 = *(void **)&Block->__pad_34[12]; /*0x6255bb*/
+  v6 = *(void **)&this->__pad_34[12]; /*0x6255bb*/
   if ( v6 ) /*0x6255c0*/
   {
-    ((DeleteAndZero*)(*(DeleteAndZero **)&Block->__pad_34[12]))->Alt(); /*0x6255c4*/
+    ((DeleteAndZero*)(*(DeleteAndZero **)&this->__pad_34[12]))->Alt(); /*0x6255c4*/
     __3_YAXPAX_Z(v6); /*0x6255ca*/
   }
   if ( (a2 & 1) != 0 ) /*0x6255d9*/
-    __3_YAXPAX_Z(Block); /*0x6255dc*/
-  return (gamemd::AbstractClass **)(Block); /*0x6255e6*/
+    __3_YAXPAX_Z(this); /*0x6255dc*/
+  return (gamemd::AbstractClass **)(this); /*0x6255e6*/
 
 }
 }

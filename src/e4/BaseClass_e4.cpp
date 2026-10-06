@@ -55,19 +55,19 @@ int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
     }
     v3 = *(unsigned int *)v2; /*0x42ee96*/
     a2 = 0; /*0x42eea2*/
-    if ( (*(int (**)(int, int *, int, unsigned int))(v3 + 12))(v2, &a2, 4, 0) >= 0 ) /*0x42eeaf*/
+    if ( (*(int (**)(int, int *, int, unsigned int))(v3 + 12))( v2, (int *)(&a2), 4, 0) >= 0 ) /*0x42eeaf*/
     {
       v4 = 0; /*0x42eeb9*/
       if ( a2 <= 0 ) /*0x42eebd*/
       {
 LABEL_14:
-        if ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, &a2, 4, 0) >= 0 ) /*0x42ef4f*/
+        if ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))( v2, (int *)(&a2), 4, 0) >= 0 ) /*0x42ef4f*/
         {
           v10 = 0; /*0x42ef59*/
           if ( a2 <= 0 ) /*0x42ef5d*/
           {
 LABEL_24:
-            if ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, &a2, 4, 0) >= 0 ) /*0x42efd6*/
+            if ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))( v2, (int *)(&a2), 4, 0) >= 0 ) /*0x42efd6*/
             {
               v15 = 0; /*0x42efdc*/
               if ( a2 <= 0 ) /*0x42efe0*/
@@ -77,7 +77,7 @@ LABEL_34:
               }
               else
               {
-                while ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, &v21, 4, 0) >= 0 ) /*0x42eff3*/
+                while ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))( v2, (int *)(&v21), 4, 0) >= 0 ) /*0x42eff3*/
                 {
                   v16 = (&aP0->unknown54)[5]; /*0x42eff9*/
                   if ( (&aP0->unknown54)[7] < v16 /*0x42f021*/
@@ -101,7 +101,7 @@ LABEL_34:
           }
           else
           {
-            while ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, &v21, 4, 0) >= 0 ) /*0x42ef70*/
+            while ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))( v2, (int *)(&v21), 4, 0) >= 0 ) /*0x42ef70*/
             {
               v11 = (&aP0->center)[0]; /*0x42ef7a*/
               if ( (&aP0->unknown54)[1] < v11 /*0x42efa2*/
@@ -175,7 +175,7 @@ int BaseClass::LoadArrayFields(unsigned int * a1, int a2)
   {
     v3 = *(unsigned int *)v2; /*0x42f092*/
     a2 = a1->a2; /*0x42f09e*/
-    if ( (*(int (**)(int, int *, int, unsigned int))(v3 + 16))(v2, &a2, 4, 0) >= 0 ) /*0x42f0a7*/
+    if ( (*(int (**)(int, int *, int, unsigned int))(v3 + 16))( v2, (int *)(&a2), 4, 0) >= 0 ) /*0x42f0a7*/
     {
       v4 = 0; /*0x42f0b1*/
       if ( a2 <= 0 ) /*0x42f0b5*/
@@ -183,7 +183,7 @@ int BaseClass::LoadArrayFields(unsigned int * a1, int a2)
 LABEL_7:
         v6 = *(unsigned int *)v2; /*0x42f0dd*/
         a2 = a1->unknown54[1]; /*0x42f0ec*/
-        if ( (*(int (**)(int, int *, int, unsigned int))(v6 + 16))(v2, &a2, 4, 0) >= 0 ) /*0x42f0f5*/
+        if ( (*(int (**)(int, int *, int, unsigned int))(v6 + 16))( v2, (int *)(&a2), 4, 0) >= 0 ) /*0x42f0f5*/
         {
           v7 = 0; /*0x42f0fb*/
           if ( a2 <= 0 ) /*0x42f0ff*/
@@ -191,7 +191,7 @@ LABEL_7:
 LABEL_11:
             v8 = *(unsigned int *)v2; /*0x42f11f*/
             a2 = a1->unknown54[7]; /*0x42f12e*/
-            result = (*(int (**)(int, int *, int, unsigned int))(v8 + 16))(v2, &a2, 4, 0); /*0x42f132*/
+            result = (*(int (**)(int, int *, int, unsigned int))(v8 + 16))( v2, (int *)(&a2), 4, 0); /*0x42f132*/
             if ( result >= 0 ) /*0x42f137*/
             {
               v10 = 0; /*0x42f13d*/

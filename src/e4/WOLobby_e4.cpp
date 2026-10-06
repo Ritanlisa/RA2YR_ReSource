@@ -53,8 +53,8 @@ v2 = (LPVOID)(ppv);
   if ( ppv ) /*0x5e3864*/
   {
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/
-    strcpy(&v7[36],(const char *)(a1)); /*0x5e3892*/
-    return (*(int (**)(LPVOID, char *, const char *))(*(unsigned int *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
+    strcpy( (char *)(&v7[36]), (const char *)(a1)); /*0x5e3892*/
+    return (*(int (**)(LPVOID, char *, const char *))(*(unsigned int *)v2 + 56))( v2, v7, (const char *)(a2)); /*0x5e38a3*/
   }
   else
   {
@@ -73,7 +73,7 @@ v2 = (LPVOID)(ppv);
       if ( !_strcmpi(v6,(const char *)(a1)) ) /*0x5e3959*/
       {
         ((gamemd::Debug *)this)->Log(); /*0x5e3974*/
-        Network::SendMessage((int)unk_A8E9C0, (int)v8, 455, 1, *(unsigned int *)(dword_A8DA78 + 4 * i) + 40, 0, 0); /*0x5e39a0*/
+        ((Network *)(int)unk_A8E9C0)->SendMessage( (int)v8, 455, 1, *(unsigned int *)(dword_A8DA78 + 4 * i) + 40, 0, 0); /*0x5e39a0*/
         ((gamemd::Event *)this)->Dispatch(); /*0x5e39a5*/
       }
       result = dword_A8DA84; /*0x5e39aa*/
@@ -182,7 +182,7 @@ int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
 
 // 0x603F60
 namespace gamemd {
-wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM)
+wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM a3)
 {
   LPARAM lParam[2]; // [esp+8h] [ebp-Ch] BYREF
   wchar_t *v7; // [esp+10h] [ebp-4h] BYREF
@@ -208,7 +208,7 @@ char sub_72BAC0()
   {
     if ( g_DisplayWidth == 800 ) /*0x72bad3*/
       dword_B0FB2C = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844DBC),(gamemd::ConvertClass *)((bool *)&byte_B0FD50))); /*0x72bae5*/
-    result = LoadPaletteSimple((char *)(off_844DC0),(int *)(&dword_B0FD54), &dword_B0FD58); /*0x72bafa*/
+    result = LoadPaletteSimple( (char *)(off_844DC0), (int *)(&dword_B0FD54), (unsigned int *)(&dword_B0FD58)); /*0x72bafa*/
     byte_B0FD51 = 1; /*0x72baff*/
   }
   return result; /*0x72bb06*/
@@ -269,7 +269,7 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
     if ( v5 >= 0 && v5 < (int)dword_B77900 ) /*0x7810c1*/
     {
       qmemcpy(v7, (char *)dword_B77908 + 108 * v5, sizeof(v7)); /*0x7810ee*/
-      FormatWOLPlayerInfo(a1, v7); /*0x7810f2*/
+      FormatWOLPlayerInfo( (wchar_t **)(a1), v7); /*0x7810f2*/
       return (gamemd::CampaignScore *)(a1); /*0x7810ff*/
     }
     StringCSF = GetStringCSF((wchar_t *)(aSttLobbylistus), 0,(const char *)(g_Str_File_wonline_cpp), 3055); /*0x781113*/

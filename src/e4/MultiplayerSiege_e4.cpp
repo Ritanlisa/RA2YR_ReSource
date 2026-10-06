@@ -69,7 +69,7 @@ int MultiplayerSiege::Write(void ** a1)
   wchar_t *v10; // eax
   wchar_t *v11; // eax
 
-  result = ScenarioClass::MissionStubReturnZero2(&a1->MultiplayerSiege_field_00); /*0x5ca6d9*/
+  result = ScenarioClass::MissionStubReturnZero2( (MPCooperative *)(&a1->MultiplayerSiege_field_00)); /*0x5ca6d9*/
   if ( result ) /*0x5ca6e0*/
   {
     v2 = 0; /*0x5ca6ef*/
@@ -364,10 +364,10 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   if ( !v7 ) /*0x5cab69*/
     return 0; /*0x5cab69*/
   v9 = *v7; /*0x5cab6b*/
-  StartCoords = HouseClass::GetStartCoords((HouseClass *)ppv, v12); /*0x5cab76*/
+  StartCoords = ((HouseClass *)(HouseClass *)ppv)->GetStartCoords( v12); /*0x5cab76*/
   if ( (*(uint8_t (**)(int *, unsigned int *, unsigned int))(v9 + 216))(v8, StartCoords, 0) ) /*0x5cab7e*/
     return 1; /*0x5cab7e*/
-  CurrentOption = (int16_t *)HouseClass::GetCurrentOption((HouseClass *)ppv, &a2); /*0x5cab91*/
+  CurrentOption = (int16_t *)((HouseClass *)(HouseClass *)ppv)->GetCurrentOption( &a2); /*0x5cab91*/
   if ( FindInfantryDeployPosition(v8,(gamemd::RadarClass *)(CurrentOption), 1) ) /*0x5cab9a*/
     return 1; /*0x5cabbb*/
   (*(void (**)(int *, int))(*v8 + 32))(v8, 1); /*0x5caba9*/
@@ -381,7 +381,7 @@ MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
 {
 
   this->MultiplayerSiege_field_00 = (int)&vt_MultiplayerSiege; /*0x5cabd3*/
-  MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5cabd9*/
+  MultiplayerGameMode::Dtor( (MultiplayerGameMode *)this); /*0x5cabd9*/
   if ( (a2 & 1) != 0 ) /*0x5cabe3*/
     __3_YAXPAX_Z(this); /*0x5cabe6*/
 return (gamemd::MultiplayerSiege *)&this->MultiplayerSiege_field_00; /*0x5cabf0*/

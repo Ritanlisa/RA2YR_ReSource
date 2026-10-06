@@ -140,7 +140,7 @@ int BombClass::InitPool()
   dword_89C670 = 0; /*0x43855c*/
   byte_89C674 = 1; /*0x438561*/
   byte_89C675 = 0; /*0x438568*/
-  dword_89C668 = (int)&vt_DynamicVectorClass; /*0x43856d*/
+  dword_89C668 = (unsigned int)(int)&vt_DynamicVectorClass;
   dword_89C67C = 10; /*0x438577*/
   dword_89C678 = 0; /*0x438581*/
   return atexit((void (__cdecl *)(void))globalHelper_038590); /*0x43858c*/
@@ -186,7 +186,7 @@ int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
   {
     if ( aP0 ) /*0x438b59*/
     {
-      AbstractClass::InitVtables((gamemd::AbstractClass *)aP0, (int)&aP1); /*0x438b62*/
+      ((AbstractClass *)(gamemd::AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x438b62*/
       aP0->vtable1 = &vt_BombClass; /*0x438b67*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_BombClass); /*0x438b6d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_BombClass); /*0x438b74*/
@@ -225,9 +225,9 @@ BombClass * BombClass::CopyTo(char a2)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x4393fd*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x439404*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_BombClass); /*0x43940b*/
-  AudioFileClass::Release((AudioFileClass *)&this->audioController[3]); /*0x439412*/
+  AudioFileClass::Release( (AudioFileClass *)&(&this->audioController)[3]); /*0x439412*/
   v5 = (gamemd::BombClass *)(this); /*0x439427*/
-  v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))((int *)&dword_89C668, &v5); /*0x43942b*/
+  v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))( (int *)&dword_89C668, (BombClass **)(&v5)); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
   {
     do /*0x43945e*/

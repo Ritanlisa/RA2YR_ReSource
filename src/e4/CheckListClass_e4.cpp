@@ -34,9 +34,9 @@ size_t CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void *
 
   v8 = v7; /*0x488527*/
   result = (size_t *)(*(int (**)(void))(*(unsigned int *)v7->__pad_0 + 148))(); /*0x48852b*/
-  if ( (int)this < (int)result )
+  if ( (int)self < (int)result )
   {
-    result = (size_t *)((Array *)(v8))->GetClamped((int)this); /*0x488543*/
+    result = (size_t *)((Array *)(v8))->GetClamped((int)self); /*0x488543*/
     if ( result )
     {
       memset(&v22[1], 0, 198); /*0x488560*/
@@ -101,7 +101,7 @@ int CheckListClass::ddtor(int a2)
     (*(void (**)(char *, int))(*((unsigned int *)this + 46) + 12))((char *)this + 184, a2); /*0x557e3c*/
     (*(void (**)(char *, int))(*((unsigned int *)this + 22) + 12))((char *)this + 88, a2); /*0x557e46*/
   }
-  return LinkedList::InsertAfter((LinkClass *)this, a2); /*0x557e51*/
+  return LinkedList::InsertAfter( (void)((LinkClass *)this), a2); /*0x557e51*/
 
 }
 }  // G42.18c ns repair

@@ -1764,7 +1764,7 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
   int v15; // [esp+18h] [ebp-8h]
   int v16; // [esp+1Ch] [ebp-4h]
 
-  result = *aP0; /*0x5a7262*/
+  result = *(unsigned int *)aP0;
   v5 = (int16_t)*aP0; /*0x5a7268*/
   v14 = aP0[1]; /*0x5a726f*/
   v15 = (int16_t)v14 + v5; /*0x5a7278*/
@@ -1827,7 +1827,7 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
                 goto LABEL_31; /*0x5a73fd*/
             }
             v6 = aP0[2]; /*0x5a73ff*/
-            result = *aP0; /*0x5a7402*/
+            result = *(unsigned int *)aP0;
             ++v11; /*0x5a7405*/
           }
           while ( v11 < v6 + *aP0 ); /*0x5a73a3*/
@@ -2234,7 +2234,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
         v6 = RA2_OPNEW(0x6F0u); /*0x5a87cf*/
         if ( !v6 ) /*0x5a87d6*/
           goto LABEL_13; /*0x5a87d6*/
-        ExitCellByNameFactory = Factory::FindExitCellByName(*(&off_82B240 + v5)); /*0x5a87df*/
+        ExitCellByNameFactory = ((Factory *)*(&off_82B240 + v5))->FindExitCellByName(); /*0x5a87df*/
         v8 = (unsigned int *)InfantryClass::Construct( /*0x5a87f6*/
                          (int)v6,
                          *((unsigned int *)dword_A8E34C + ExitCellByNameFactory),
@@ -2424,7 +2424,7 @@ void MapSeed_ScheduleBuildings(int * a1)
       DrawIsoTile(v11, &v39[3], 0); /*0x5a8b4a*/
       v9 = v39[0]; /*0x5a8b4f*/
     }
-    PlaceMapSeedClassBuildings(v9, &v39[1], -1, -1); /*0x5a8b5b*/
+    PlaceMapSeedClassBuildings( v9, (ObjectClass *)(&v39[1]), -1, -1); /*0x5a8b5b*/
     v9 = v39[0]; /*0x5a8b60*/
     if ( v39[0] < dword_ABC1D4 || v39[0] >= dword_ABC1D4 + 101 ) /*0x5a8b73*/
     {
@@ -2545,7 +2545,7 @@ void MapSeed_ScheduleBuildings(int * a1)
         v11 = v39[2]; /*0x5a8e21*/
       }
       if ( v11 != 0xFFFF ) /*0x5a8e2b*/
-        PlaceMapSeedClassBuildings(v11, &v39[3], -1, -1); /*0x5a8e37*/
+        PlaceMapSeedClassBuildings( v11, (ObjectClass *)(&v39[3]), -1, -1); /*0x5a8e37*/
   LABEL_59:
       if ( Block ) /*0x5a8e42*/
         RA2_OPDEL(Block); /*0x5a8e45*/
@@ -2598,7 +2598,7 @@ void MapSeed_ScheduleBuildings(int * a1)
     v39[2] = v36[2]; /*0x5a8ea1*/
     v39[3] = v36[3]; /*0x5a8ea8*/
     v39[4] = v36[4]; /*0x5a8eb3*/
-    PlaceMapSeedClassBuildings(v39[2], &v39[3], -1, -1); /*0x5a8eb7*/
+    PlaceMapSeedClassBuildings( v39[2], (ObjectClass *)(&v39[3]), -1, -1); /*0x5a8eb7*/
     if ( !v52 ) /*0x5a8ec2*/
       break; /*0x5a8ec2*/
     v33 = ((unsigned short)v53 + 1) & 0x3FF; /*0x5a8ecf*/
@@ -2654,7 +2654,7 @@ void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned in
   do /*0x5a8fab*/
   {
     do /*0x5a8fa0*/
-      v7 = Random::Gaussian((double *)&byte_ABDFB8) * v27 + v25; /*0x5a8f91*/
+      v7 = Random::Gaussian( (void)((double *)&byte_ABDFB8)) * v27 + v25; /*0x5a8f91*/
     while ( v7 < 2.0 ); /*0x5a8fa0*/
   }
   while ( v7 > v23 ); /*0x5a8fab*/
@@ -2887,7 +2887,7 @@ unsigned int * InitializePathData()
   {
     v2 = 0;
   }
-  dword_ABE374 = (TechnoTypeClass *)v2;
+  dword_ABE374 = (unsigned int)(TechnoTypeClass *)v2;
   *(unsigned int *)v2 = 0;
   *(unsigned int *)(v2 + 4) = 0;
   *(unsigned int *)&dword_ABE374->vtable1[8] = v118;
@@ -2906,7 +2906,7 @@ unsigned int * InitializePathData()
   {
     v5 = 0;
   }
-  dword_ABE380 = (TechnoTypeClass *)v5;
+  dword_ABE380 = (unsigned int)(TechnoTypeClass *)v5;
   *(unsigned int *)v5 = v118;
   v5->u32_4 = 0;
   *(unsigned int *)&dword_ABE380->vtable1[8] = 1;
@@ -2926,7 +2926,7 @@ unsigned int * InitializePathData()
   {
     v7 = 0;
   }
-  dword_ABE38C = (TechnoTypeClass *)v7;
+  dword_ABE38C = (unsigned int)(TechnoTypeClass *)v7;
   v7->vfptr = 0;
   v7[1].vfptr = 0;
   *(unsigned int *)&dword_ABE38C->vtable1[8] = v120;
@@ -2945,7 +2945,7 @@ unsigned int * InitializePathData()
   {
     v9 = 0;
   }
-  dword_ABE398 = (TechnoTypeClass *)v9;
+  dword_ABE398 = (unsigned int)(TechnoTypeClass *)v9;
   v9->vfptr = v118;
   v9[1].vfptr = 0;
   *(unsigned int *)&dword_ABE398->vtable1[8] = 1;
@@ -2964,7 +2964,7 @@ unsigned int * InitializePathData()
   {
     v11 = 0;
   }
-  dword_ABE3A4 = (TechnoTypeClass *)v11;
+  dword_ABE3A4 = (unsigned int)(TechnoTypeClass *)v11;
   v11->vfptr = v118;
   v11[1].vfptr = 0;
   *(unsigned int *)&dword_ABE3A4->vtable1[8] = 0;
@@ -2983,7 +2983,7 @@ unsigned int * InitializePathData()
   {
     v13 = 0;
   }
-  dword_ABE3B0 = (TechnoTypeClass *)v13;
+  dword_ABE3B0 = (unsigned int)(TechnoTypeClass *)v13;
   v13->vfptr = v118;
   v13[1].vfptr = 0;
   *(unsigned int *)&dword_ABE3B0->vtable1[8] = 65537;
@@ -3002,7 +3002,7 @@ unsigned int * InitializePathData()
   {
     v15 = 0;
   }
-  dword_ABE3BC = (TechnoTypeClass *)v15;
+  dword_ABE3BC = (unsigned int)(TechnoTypeClass *)v15;
   v15->vfptr = v118;
   v15[1].vfptr = (void *)1;
   *(unsigned int *)&dword_ABE3BC->vtable1[8] = 65537;
@@ -3021,7 +3021,7 @@ unsigned int * InitializePathData()
   {
     v17 = 0;
   }
-  dword_ABE3C8 = (TechnoTypeClass *)v17;
+  dword_ABE3C8 = (unsigned int)(TechnoTypeClass *)v17;
   v17->vfptr = v118;
   v17[1].vfptr = (void *)1;
   *(unsigned int *)&dword_ABE3C8->vtable1[8] = 65537;
@@ -3040,7 +3040,7 @@ unsigned int * InitializePathData()
   {
     v19 = 0;
   }
-  dword_ABE3D4 = (TechnoTypeClass *)v19;
+  dword_ABE3D4 = (unsigned int)(TechnoTypeClass *)v19;
   v19->vfptr = v118;
   v19[1].vfptr = (void *)1;
   *(unsigned int *)&dword_ABE3D4->vtable1[8] = 0x10000;
@@ -3059,7 +3059,7 @@ unsigned int * InitializePathData()
   {
     v21 = 0;
   }
-  dword_ABE3E0 = (TechnoTypeClass *)v21;
+  dword_ABE3E0 = (unsigned int)(TechnoTypeClass *)v21;
   v21->vfptr = v118;
   v21[1].vfptr = (void *)1;
   *(unsigned int *)&dword_ABE3E0->vtable1[8] = 0;
@@ -3078,7 +3078,7 @@ unsigned int * InitializePathData()
   {
     v23 = 0;
   }
-  dword_ABE3EC = (TechnoTypeClass *)v23;
+  dword_ABE3EC = (unsigned int)(TechnoTypeClass *)v23;
   v23->vfptr = v118;
   v23[1].vfptr = (void *)1;
   *(unsigned int *)&dword_ABE3EC->vtable1[8] = 65537;
@@ -3097,7 +3097,7 @@ unsigned int * InitializePathData()
   {
     v25 = 0;
   }
-  dword_ABE3F8 = (TechnoTypeClass *)v25;
+  dword_ABE3F8 = (unsigned int)(TechnoTypeClass *)v25;
   v25->vfptr = v118;
   v25[1].vfptr = (void *)1;
   *(unsigned int *)&dword_ABE3F8->vtable1[8] = 0;
@@ -3116,7 +3116,7 @@ unsigned int * InitializePathData()
   {
     v27 = 0;
   }
-  dword_ABE404 = (TechnoTypeClass *)v27;
+  dword_ABE404 = (unsigned int)(TechnoTypeClass *)v27;
   v27->vfptr = v118;
   v27[1].vfptr = (void *)2;
   *(unsigned int *)&dword_ABE404->vtable1[8] = 131073;
@@ -3135,7 +3135,7 @@ unsigned int * InitializePathData()
   {
     v29 = 0;
   }
-  dword_ABE410 = (TechnoTypeClass *)v29;
+  dword_ABE410 = (unsigned int)(TechnoTypeClass *)v29;
   v29->vfptr = v118;
   v29[1].vfptr = (void *)2;
   *(unsigned int *)&dword_ABE410->vtable1[8] = 0x10000;
@@ -3154,7 +3154,7 @@ unsigned int * InitializePathData()
   {
     v31 = 0;
   }
-  dword_ABE41C = (TechnoTypeClass *)v31;
+  dword_ABE41C = (unsigned int)(TechnoTypeClass *)v31;
   v31->vfptr = v118;
   v31[1].vfptr = (void *)2;
   *(unsigned int *)&dword_ABE41C->vtable1[8] = 1;
@@ -3173,7 +3173,7 @@ unsigned int * InitializePathData()
   {
     v33 = 0;
   }
-  dword_ABE428 = (TechnoTypeClass *)v33;
+  dword_ABE428 = (unsigned int)(TechnoTypeClass *)v33;
   v33->vfptr = v118;
   v33[1].vfptr = (void *)2;
   *(unsigned int *)&dword_ABE428->vtable1[8] = 65537;
@@ -3192,7 +3192,7 @@ unsigned int * InitializePathData()
   {
     v35 = 0;
   }
-  dword_ABE434 = (TechnoTypeClass *)v35;
+  dword_ABE434 = (unsigned int)(TechnoTypeClass *)v35;
   v35->vfptr = v118;
   v35[1].vfptr = (void *)3;
   *(unsigned int *)&dword_ABE434->vtable1[8] = 0x10000;
@@ -3211,7 +3211,7 @@ unsigned int * InitializePathData()
   {
     v37 = 0;
   }
-  dword_ABE440 = (TechnoTypeClass *)v37;
+  dword_ABE440 = (unsigned int)(TechnoTypeClass *)v37;
   v37->vfptr = v118;
   v37[1].vfptr = (void *)3;
   *(unsigned int *)&dword_ABE440->vtable1[8] = 1;
@@ -3230,7 +3230,7 @@ unsigned int * InitializePathData()
   {
     v39 = 0;
   }
-  dword_ABE44C = (TechnoTypeClass *)v39;
+  dword_ABE44C = (unsigned int)(TechnoTypeClass *)v39;
   v39->vfptr = v118;
   v39[1].vfptr = (void *)3;
   *(unsigned int *)&dword_ABE44C->vtable1[8] = 0;
@@ -3249,7 +3249,7 @@ unsigned int * InitializePathData()
   {
     v41 = 0;
   }
-  dword_ABE458 = (TechnoTypeClass *)v41;
+  dword_ABE458 = (unsigned int)(TechnoTypeClass *)v41;
   v41->vfptr = v118;
   v41[1].vfptr = (void *)4;
   *(unsigned int *)&dword_ABE458->vtable1[8] = 1;
@@ -3268,7 +3268,7 @@ unsigned int * InitializePathData()
   {
     v43 = 0;
   }
-  dword_ABE464 = (TechnoTypeClass *)v43;
+  dword_ABE464 = (unsigned int)(TechnoTypeClass *)v43;
   v43->vfptr = v118;
   v43[1].vfptr = (void *)4;
   *(unsigned int *)&dword_ABE464->vtable1[8] = 0;
@@ -3287,7 +3287,7 @@ unsigned int * InitializePathData()
   {
     v45 = 0;
   }
-  dword_ABE470 = (TechnoTypeClass *)v45;
+  dword_ABE470 = (unsigned int)(TechnoTypeClass *)v45;
   v45->vfptr = v118;
   v45[1].vfptr = (void *)4;
   *(unsigned int *)&dword_ABE470->vtable1[8] = 65537;
@@ -3306,7 +3306,7 @@ unsigned int * InitializePathData()
   {
     v47 = 0;
   }
-  dword_ABE47C = (TechnoTypeClass *)v47;
+  dword_ABE47C = (unsigned int)(TechnoTypeClass *)v47;
   v47->vfptr = v118;
   v47[1].vfptr = (void *)5;
   *(unsigned int *)&dword_ABE47C->vtable1[8] = 65537;
@@ -3325,7 +3325,7 @@ unsigned int * InitializePathData()
   {
     v49 = 0;
   }
-  dword_ABE488 = (TechnoTypeClass *)v49;
+  dword_ABE488 = (unsigned int)(TechnoTypeClass *)v49;
   v49->vfptr = v118;
   v49[1].vfptr = (void *)6;
   *(unsigned int *)&dword_ABE488->vtable1[8] = 65537;
@@ -3346,7 +3346,7 @@ unsigned int * InitializePathData()
   {
     v51 = 0;
   }
-  dword_ABE494 = (TechnoTypeClass *)v51;
+  dword_ABE494 = (unsigned int)(TechnoTypeClass *)v51;
   v51->vfptr = v118;
   v51[1].vfptr = 0;
   *(unsigned int *)&dword_ABE494->vtable1[8] = 1;
@@ -3756,7 +3756,7 @@ unsigned int * InitializePathData()
   *(unsigned int *)&dword_ABE560->vtable1[12] = 5;
   IDA_HIWORD(aP2.vfptr) = 2;
   dword_ABE570 = 0;
-  dword_ABE568 = (IUnknown *)1;
+  dword_ABE568 = (unsigned int)(IUnknown *)1;
   v90 = (void *)operator new(8u);
   aP1.vfptr = v90;
   if ( v90 )
@@ -3773,7 +3773,7 @@ unsigned int * InitializePathData()
   v91[1].vfptr = (void *)5;
   aP2.vfptr = (void *)65537;
   dword_ABE57C = 0;
-  dword_ABE574 = (IUnknown *)1;
+  dword_ABE574 = (unsigned int)(IUnknown *)1;
   v92 = (void *)operator new(8u);
   aP1.vfptr = v92;
   if ( v92 )
@@ -3790,7 +3790,7 @@ unsigned int * InitializePathData()
   v93[1].vfptr = (void *)5;
   aP2.vfptr = (void *)65537;
   dword_ABE588 = 0;
-  dword_ABE580 = (IUnknown *)1;
+  dword_ABE580 = (unsigned int)(IUnknown *)1;
   v94 = (void *)operator new(8u);
   aP1.vfptr = v94;
   if ( v94 )
@@ -3807,7 +3807,7 @@ unsigned int * InitializePathData()
   v95[1].vfptr = (void *)5;
   aP2.vfptr = (void *)3;
   dword_ABE594 = 0;
-  dword_ABE58C = (IUnknown *)1;
+  dword_ABE58C = (unsigned int)(IUnknown *)1;
   v96 = (void *)operator new(8u);
   aP1.vfptr = v96;
   if ( v96 )
@@ -3824,7 +3824,7 @@ unsigned int * InitializePathData()
   v97[1].vfptr = (void *)1;
   aP2.vfptr = (void *)2;
   dword_ABE5A0 = 0;
-  dword_ABE598 = (IUnknown *)1;
+  dword_ABE598 = (unsigned int)(IUnknown *)1;
   v98 = (void *)operator new(8u);
   aP1.vfptr = v98;
   if ( v98 )
@@ -3841,7 +3841,7 @@ unsigned int * InitializePathData()
   v99[1].vfptr = (void *)1;
   aP2.vfptr = (void *)2;
   dword_ABE5AC = 0;
-  dword_ABE5A4 = (IUnknown *)1;
+  dword_ABE5A4 = (unsigned int)(IUnknown *)1;
   v100 = (void *)operator new(8u);
   aP1.vfptr = v100;
   if ( v100 )
@@ -5334,7 +5334,7 @@ double E4Recv_5AF2C0::sub_5AF2C0()
   float v3[3]; // [esp+18h] [ebp-Ch] BYREF
 
   memset(v2, 0, sizeof(v2)); /*0x5af2ce*/
-  return *TransformMatrix3x4Point(v3, (float *)this, v2); /*0x5af303*/
+  return *TransformMatrix3x4Point( v3, (IUnknown *)((float *)this), v2); /*0x5af303*/
 
 }
 } // namespace gamemd
@@ -5349,7 +5349,7 @@ double E4Recv_5AF310::sub_5AF310()
   float v4[3]; // [esp+18h] [ebp-Ch] BYREF
 
   memset(v3, 0, 12); /*0x5af31e*/
-  v1 = TransformMatrix3x4Point(v4, (float *)this, v3); /*0x5af336*/
+  v1 = TransformMatrix3x4Point( v4, (IUnknown *)((float *)this), v3); /*0x5af336*/
   v3[3] = *v1; /*0x5af33d*/
   return v1[1]; /*0x5af353*/
 
@@ -5366,7 +5366,7 @@ double E4Recv_5AF360::sub_5AF360()
   float v4[3]; // [esp+18h] [ebp-Ch] BYREF
 
   memset(v3, 0, 12); /*0x5af36e*/
-  v1 = TransformMatrix3x4Point(v4, (float *)this, v3); /*0x5af386*/
+  v1 = TransformMatrix3x4Point( v4, (IUnknown *)((float *)this), v3); /*0x5af386*/
   v3[3] = *v1; /*0x5af38d*/
   v3[4] = v1[1]; /*0x5af394*/
   return v1[2]; /*0x5af3a3*/
@@ -5386,8 +5386,8 @@ double E4Recv_5AF3B0::sub_5AF3B0()
   v2[0] = 0.0; /*0x5af3be*/
   v2[1] = 1.0; /*0x5af3c6*/
   v2[2] = 0.0; /*0x5af3ce*/
-  v1 = TransformMatrix3x4Point(v3, (float *)this, v2); /*0x5af3d6*/
-  Math::CalcAngle(v1[2], v1[1]); /*0x5af404*/
+  v1 = TransformMatrix3x4Point( v3, (IUnknown *)((float *)this), v2); /*0x5af3d6*/
+  ((Math *)v1[2])->CalcAngle( v1[1]); /*0x5af404*/
 
 }
 } // namespace gamemd
@@ -5404,8 +5404,8 @@ int E4Recv_5AF470::sub_5AF470()
   v2[0] = 1.0; /*0x5af47e*/
   v2[1] = 0.0; /*0x5af486*/
   v2[2] = 0.0; /*0x5af48e*/
-  v1 = TransformMatrix3x4Point(v3, (float *)this, v2); /*0x5af496*/
-  Math::CalcAngle(v1[1], *v1); /*0x5af4c4*/
+  v1 = TransformMatrix3x4Point( v3, (IUnknown *)((float *)this), v2); /*0x5af496*/
+  ((Math *)v1[1])->CalcAngle( *v1); /*0x5af4c4*/
 
 }
 }
@@ -5455,7 +5455,7 @@ float * Matrix3x3_InvertSigns(float * a1, float * a2)
   v7[3] = -(v5 + v6); /*0x5afc85*/
   v7[7] = -(v7[4] * a2[3] + v7[6] * a2[11] + v7[5] * a2[7]); /*0x5afcaa*/
   v7[11] = -(v7[8] * a2[3] + v7[10] * a2[11] + v7[9] * a2[7]); /*0x5afcc9*/
-  qmemcpy(a1, v7, 0x30u); /*0x5afccd*/
+  qmemcpy( (void *)(a1), v7, 0x30u); /*0x5afccd*/
   return a1; /*0x5afccf*/
 }
 } // namespace gamemd
@@ -5602,9 +5602,9 @@ namespace gamemd {
 void E4Recv_5AFF50::sub_5AFF50()
 {
 
-  *(unsigned int *)this->LocomotionClass = &vt_MechLocomotionClass; /*0x5aff50*/
-  *(unsigned int *)&this->LocomotionClass[4] = &vt_MechLocomotionClass; /*0x5aff56*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x5aff5d*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_MechLocomotionClass;
+  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_MechLocomotionClass;
+  ((LocomotionClass *)(LocomotionClass *)this)->Construct(); /*0x5aff5d*/
 
 }
 } // namespace gamemd

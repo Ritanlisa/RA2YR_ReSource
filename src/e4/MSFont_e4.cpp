@@ -124,10 +124,10 @@ namespace gamemd {  // G42.18c ns repair
 MSFont * MSFont::QueryInterface(char a2, int a3)
 {
 
-  MSFont::Constructor_MSFont(Block); /*0x5d3453*/
+  MSFont::Constructor_MSFont(this); /*0x5d3453*/
   if ( (a2 & 1) != 0 ) /*0x5d345d*/
-    __3_YAXPAX_Z(Block); /*0x5d3460*/
-  return Block; /*0x5d346a*/
+    __3_YAXPAX_Z(this); /*0x5d3460*/
+  return this; /*0x5d346a*/
 
 }
 }  // G42.18c ns repair
@@ -443,18 +443,18 @@ VectorClass_flat * MSFont_18::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d56e3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d56e6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d56f0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d56e3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d56f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d56f8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d5700*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d5700*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d570b*/
-  Block->m_8 = 0; /*0x5d5711*/
+  BYTE1(this->m_C) = 0; /*0x5d570b*/
+  this->m_8 = 0; /*0x5d5711*/
   if ( (a2 & 1) != 0 ) /*0x5d5718*/
-    __3_YAXPAX_Z(Block); /*0x5d571b*/
-  return Block->__pad_0; /*0x5d5725*/
+    __3_YAXPAX_Z(this); /*0x5d571b*/
+  return this->__pad_0; /*0x5d5725*/
 
 }
 } // namespace gamemd
@@ -466,18 +466,18 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Bloc
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d5733*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d5736*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d5740*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d5733*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d5740*/
   {
     __3_YAXPAX_Z(v3); /*0x5d5748*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d5750*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d5750*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d575b*/
-  Block->m_8 = 0; /*0x5d5761*/
+  BYTE1(this->m_C) = 0; /*0x5d575b*/
+  this->m_8 = 0; /*0x5d5761*/
   if ( (a2 & 1) != 0 ) /*0x5d5768*/
-    __3_YAXPAX_Z(Block); /*0x5d576b*/
-  return Block->__pad_0; /*0x5d5775*/
+    __3_YAXPAX_Z(this); /*0x5d576b*/
+  return this->__pad_0; /*0x5d5775*/
 
 }
 } // namespace gamemd
@@ -489,18 +489,18 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned 
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x5d57d3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d57d6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x5d57e0*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d57d3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x5d57e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d57e8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x5d57f0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5d57f0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x5d57fb*/
-  Block->m_8 = 0; /*0x5d5801*/
+  BYTE1(this->m_C) = 0; /*0x5d57fb*/
+  this->m_8 = 0; /*0x5d5801*/
   if ( (a2 & 1) != 0 ) /*0x5d5808*/
-    __3_YAXPAX_Z(Block); /*0x5d580b*/
-  return Block->__pad_0; /*0x5d5815*/
+    __3_YAXPAX_Z(this); /*0x5d580b*/
+  return this->__pad_0; /*0x5d5815*/
 
 }
 } // namespace gamemd

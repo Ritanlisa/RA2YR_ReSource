@@ -288,7 +288,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
       268 * *(unsigned int *)this->__pad_0 - 268 * v4);
   v14 = (gamemd::AbstractClass **)((void *)(*(unsigned int *)this->__pad_8 + 268 * v4));
   if ( v14 ) /*0x7ad90c*/
-    qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
+    qmemcpy( v14, (const void *)(a1), 0x10Cu); /*0x7ad917*/
   ++*(unsigned int *)this->__pad_0; /*0x7ad91e*/
   return (gamemd::AbstractClass **)(1); /*0x7ad91b*/
 
@@ -408,7 +408,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 
   if ( aP0 ) /*0x55b887*/
   {
-    if ( (*(    if ((int)((*(int (**)(int))(*(unsigned int *)aP0 + 44))(aP0) == 44)) 
+    if ( (*(    if ((int)((*(int (**)(int))(*(unsigned int *)aP0 + 44))( (int)(aP0)) == 44)) 
     {
       v2 = (unsigned int *)(dword_8B40D8);
       v3 = 0; /*0x55b89b*/

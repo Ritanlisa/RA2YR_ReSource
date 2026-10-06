@@ -37,7 +37,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
         v5 = 0; /*0x5023e2*/
       *(unsigned int *)i = v5; /*0x5023e4*/
     }
-    v6 = (unsigned int *)((int)(*(unsigned int **)i));
+    v6 = (unsigned int *)((*(unsigned int **)i));
     v7 = 0; /*0x5023e8*/
     if ( *(int *)(*(unsigned int *)i + 56) > 0 ) /*0x5023ef*/
       break; /*0x5023ef*/

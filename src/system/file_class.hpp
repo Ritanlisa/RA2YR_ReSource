@@ -109,6 +109,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (END) ===
 };
 
+#ifndef GAMEMD_G2_RawFileClass_DEF  // g57a5 W2d: twin-definition guard (file_class RawFileClass)
+#define GAMEMD_G2_RawFileClass_DEF 1
 class RawFileClass : public FileClass
 {
     int SetName(int, ...); // vtable slot +8
@@ -169,5 +171,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Dtor(); // N_fix R5 supply (cache truth)
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_G2_RawFileClass_DEF
+
 
 } // namespace gamemd

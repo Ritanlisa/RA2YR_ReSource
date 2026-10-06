@@ -162,7 +162,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
       }
       while ( v6 < 25 ); /*0x5bc219*/
       v5[10036] = 1; /*0x5bc223*/
-      Text::DrawRepeated(v5, 0, 0, 80, 25); /*0x5bc22a*/
+      ((Text *)v5)->DrawRepeated( 0, 0, 80, 25); /*0x5bc22a*/
       v3 = v19; /*0x5bc22f*/
     }
     else
@@ -200,7 +200,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
     }
     while ( v13 < 25 ); /*0x5bc293*/
     v12[10036] = 1; /*0x5bc29d*/
-    Text::DrawRepeated(v12, 0, 0, 80, 25); /*0x5bc2a4*/
+    ((Text *)v12)->DrawRepeated( 0, 0, 80, 25); /*0x5bc2a4*/
     ++v11; /*0x5bc2a9*/
   }
   while ( (int)v11 < (int)&dword_ABF188 ); /*0x5bc2b2*/
@@ -237,7 +237,7 @@ int WinMain::Constructor_VectorClass_Wstring_()
     if ( v3 ) /*0x69a20d*/
     {
       *(unsigned int *)(v3 + 420) = (unsigned int)(&vt_VectorClass); /*0x69a215*/
-      VectorClass_Wstring::ddtor((_VectorClass_VWstring *)(v3 + 420)); /*0x69a21b*/
+      VectorClass_Wstring::ddtor( (void)((_VectorClass_VWstring *)(v3 + 420))); /*0x69a21b*/
       v4 = *(void **)(v3 + 396); /*0x69a220*/
       *(unsigned int *)(v3 + 392) = (unsigned int)(&vt_VectorClass); /*0x69a226*/
       if ( v4 && *(unsigned char *)(v3 + 405) ) /*0x69a234*/
@@ -421,7 +421,7 @@ void* sub_7B84F0()
       }
     }
   }
-  return result; /*0x7b85fe*/
+  return (void*)result; /*0x7b85fe*/
 }
 }
 // 0x49F8B0

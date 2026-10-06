@@ -101,16 +101,16 @@ char Team_Start(void * a1, void * a2, void * a3, void * a4)
   v20 = v4; /*0x561191*/
   dwNewLong = -1; /*0x561195*/
     ((Debug *)0)->Log();
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x5611ad*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x5611ad*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5611ba*/
-  Frame::Present((void *)((int)g_DSurface_Hidden), a3,(void *)(yBottom), a4, 0,(void *)(v13),(void *)(v15), v17); /*0x5611c7*/
+  Frame::Present( (void *)((int)g_DSurface_Hidden), (void *)(a3), (void *)(yBottom), (void *)(a4), 0, (void *)(v13), (void *)(v15), v17); /*0x5611c7*/
   result = ChangeVideoMode(v6, yBottom); /*0x5611d0*/
   if ( result ) /*0x5611d7*/
   {
     (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5611ea*/
-    Frame::Present((void *)((int)g_DSurface_Hidden), a3,(void *)(yBottom), a4, 0,(void *)(v14),(void *)(v16), v18); /*0x5611f7*/
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x561204*/
-    Screen::Capture(1, 0, a3, yBottom); /*0x56120b*/
+    Frame::Present( (void *)((int)g_DSurface_Hidden), (void *)(a3), (void *)(yBottom), (void *)(a4), 0, (void *)(v14), (void *)(v16), v18); /*0x5611f7*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x561204*/
+    Screen::Capture( 1, 0, (int)(a3), yBottom); /*0x56120b*/
     Dialog = (Dialog *)CreateDialog(0xD9u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_561350, 0); /*0x561221*/
     if ( !Dialog ) /*0x561225*/
       goto LABEL_13; /*0x561225*/
@@ -180,7 +180,7 @@ int Team::ReleaseAll(ObjectClass * aP1)
     do /*0x5d26e4*/
     {
       v5 = *(unsigned int *)(*(unsigned int *)&this->__pad_0[28] + 4 * v3); /*0x5d26d6*/
-      (*(void (**)(int, int))(*(unsigned int *)v5 + 32))(v5, aP1); /*0x5d26db*/
+      (*(void (**)(int, int))(*(unsigned int *)v5 + 32))( v5, (int)(aP1)); /*0x5d26db*/
       result = *(unsigned int *)&this->__pad_0[40]; /*0x5d26de*/
       ++v3; /*0x5d26e1*/
     }
@@ -418,7 +418,7 @@ void ** E4Recv_637640::sub_637640()
       ++v1; /*0x637678*/
     }
   }
-  v2 = (*(int (**)(Array *, void **))(*(unsigned int *)stru_AC4B30.__pad_0 + 16))(&stru_AC4B30, &retaddr); /*0x63769a*/
+  v2 = (*(int (**)(Array *, void **))(*(unsigned int *)stru_AC4B30.__pad_0 + 16))( (Array *)(&stru_AC4B30), (void **)(&retaddr)); /*0x63769a*/
   if ( v2 != -1 && v2 < (int)stru_AC4B30.Array_field_0x10 ) /*0x6376aa*/
   {
     --stru_AC4B30.Array_field_0x10; /*0x6376af*/
@@ -470,10 +470,10 @@ char sub_638B70(int * a1, int a2, char a3, char a4)
     return 1; /*0x638b8d*/
   if ( !a1 ) /*0x638b92*/
     return 0; /*0x638b92*/
-  v6 = *(unsigned int *)(*(int (**)(int *, int *))(*a1 + 440))(a1, &v6); /*0x638ba4*/
+  v6 = *(unsigned int *)(*(int (**)(int *, int *))(*a1 + 440))( (int *)(a1), (int *)(&v6)); /*0x638ba4*/
   v7 = *a1; /*0x638ba6*/
   v6 = v6; /*0x638baf*/
-  v8 = *(unsigned int *)(*(int (**)(int *, int *))(v7 + 440))(a1, &v11); /*0x638bb9*/
+  v8 = *(unsigned int *)(*(int (**)(int *, int *))(v7 + 440))( (int *)(a1), (int *)(&v11)); /*0x638bb9*/
   v11 = v8; /*0x638bbf*/
   v9 = Network_Process_6E7C20(&a3); /*0x638bc3*/
   if ( v9 ) /*0x638bca*/
@@ -486,7 +486,7 @@ char sub_638B70(int * a1, int a2, char a3, char a4)
   v10 = ((BuildingLoadQueue *)(&a3))->Find(); /*0x638bd5*/
   if ( v10 ) /*0x638bdc*/
   {
-    v8 = *(unsigned int *)(*(int (**)(void *, int *))(v10->u32_1B8)(v10, &v11); /*0x638bed*/
+    v8 = *(unsigned int *)(*(int (**)(void *, int *))(v10->u32_1B8))( v10, (int *)(&v11));  /*0x638bed*/
     goto LABEL_9; /*0x638bed*/
   }
   return (unsigned short)v6 == (unsigned short)v8 && IDA_HIWORD(v6) == IDA_HIWORD(v11); /*0x638b89*/
@@ -582,7 +582,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
   ((ScoreText *)(v13))->ShowAlt((const wchar_t **)(State + 20), 0); /*0x76ed4c*/
   StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_WDT_TerritorySelectToolTip), 0,(const char *)(g_Str_File_WDTSel_cpp), 1230)); /*0x76ed62*/
   ((WideString *)((wchar_t **)&v9))->Assign(StringCSF); /*0x76ed6c*/
-  ScoreText::Show(v13, (const wchar_t **)&v9); /*0x76ed7a*/
+  ScoreText::Show( v13, (void *a1 =)((const wchar_t **)&v9)); /*0x76ed7a*/
   ((DeleteAndZero*)(void **)&v9)->Alt(); /*0x76ed83*/
   Team_Start_76E2F0((int)v13, a2); /*0x76ed8d*/
   ShowWDTTerritorySelection(v13, (int)&v11); /*0x76ed9b*/
@@ -640,9 +640,9 @@ int Team_Start_7AFAD0(void * a1, void * a2)
   sprintf(Buffer, "TheaterChoice%sMenu", *v2); /*0x7afae9*/
   ((String *)((char **)&v6))->Assign(Buffer); /*0x7afafa*/
   ((String *)((char **)&v7))->Assign((const char *)(aWdtchoicemdIni)); /*0x7afb08*/
-  v3 = (char **)(sub_4F1B80((char **)&v6, (char **)&v7, a2)); /*0x7afb1e*/
-  DeleteAndZero(&v7); /*0x7afb20*/
-  DeleteAndZero(&v6); /*0x7afb29*/
+  v3 = (char **)(sub_4F1B80( (char **)&v6, (char **)&v7, (void *)(a2))); /*0x7afb1e*/
+  j_DeleteAndZero(&v7); /*0x7afb20*/
+  j_DeleteAndZero(&v6); /*0x7afb29*/
   if ( !v3 ) /*0x7afb30*/
     return 0; /*0x7afb32*/
   v5 = ProcessGraphicMenu((int)v3); /*0x7afb44*/

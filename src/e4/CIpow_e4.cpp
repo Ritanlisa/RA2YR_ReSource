@@ -55,17 +55,17 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
   {
     if ( (unsigned int)(a3)| v4 & 0xFFFFF ) /*0x7c90a0*/
     {
-      v9 = _fload_withFB(0, &this); /*0x7c906d*/
+      v9 = _fload_withFB(0, &self); /*0x7c906d*/
       if ( ((unsigned int)(a4)& 0x80000) != 0 ) /*0x7c9077*/
         goto LABEL_15; /*0x7c9077*/
       v14 = v13 + 1; /*0x7c9079*/
     }
     else
     {
-      v9 = _fload_withFB(0, &this); /*0x7c90aa*/
+      v9 = _fload_withFB(0, &self); /*0x7c90aa*/
     }
   LABEL_21:
-    if ( ((unsigned int)(a2)& 0x7FF00000) != 0x7FF00000 || !((unsigned int)this | (unsigned int)(a2)& 0xFFFFF) ) /*0x7c90c7*/
+    if ( ((unsigned int)(a2)& 0x7FF00000) != 0x7FF00000 || !((unsigned int)self | (unsigned int)(a2)& 0xFFFFF) ) /*0x7c90c7*/
     {
       if ( !v14 ) /*0x7c90cf*/
       {
@@ -91,13 +91,13 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
     result = v9 + v5; /*0x7c907c*/
     goto LABEL_11; /*0x7c9083*/
   }
-  v9 = _fload_withFB(v7, &this); /*0x7c8ffc*/
+  v9 = _fload_withFB(v7, &self); /*0x7c8ffc*/
   if ( v10 ) /*0x7c9001*/
   {
     v14 = 0; /*0x7c9095*/
     goto LABEL_21; /*0x7c9097*/
   }
-  if ( (v8 & 0x7FF00000) != 0 || (unsigned int)this | (unsigned int)(a2)& 0xFFFFF ) /*0x7c9111*/
+  if ( (v8 & 0x7FF00000) != 0 || (unsigned int)self | (unsigned int)(a2)& 0xFFFFF ) /*0x7c9111*/
   {
     if ( a2 >= 0 || (CIpow_Helper_Helper(v9), v5 = -v5, v19) ) /*0x7c918b*/
     {

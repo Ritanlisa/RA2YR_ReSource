@@ -96,7 +96,7 @@ int LocomotionClass::CheckBridgeBlock()
   unsigned int *v5; // eax
 
   if ( (*((int (**)(FootClass *))this->LinkedTo->vtable1 + 97))(this->LinkedTo) == 7 /*0x4cfa8e*/
-    || (LOBYTE(vtable1) = BuildingClass::GetType_Thunk(&this->LinkedTo->TechnoClass), !(unsigned char)vtable1) )
+    || (LOBYTE(vtable1) = BuildingClass::GetType_Thunk( &this->LinkedTo->TechnoClass), !(unsigned char)vtable1) )
   {
     vtable1 = (*((int (**)(FootClass *))this->LinkedTo->vtable1 + 11))(this->LinkedTo); /*0x4cfa95*/
     if ( vtable1 == 2 /*0x4cfacc*/
@@ -195,7 +195,7 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   this->LocomotionClass[1] = (int)&vt_JumpjetLocomotionClass; /*0x54acc9*/
   this->TurnRate = (int)&vt_JumpjetLocomotionClass; /*0x54acd0*/
   LOWORD(v4) = 0x4000; /*0x54acd7*/
-  FacingClass::Update((unsigned short *)(&this->__pad_50[4]), &v4); /*0x54acdc*/
+  ((FacingClass *)(unsigned short *)(&this->__pad_50[4]))->Update( &v4); /*0x54acdc*/
   LOWORD(v4) = 0x4000; /*0x54ace8*/
   ((FacingClass*)&this->__pad_50[4])->Set_SyncLog(&v4); /*0x54aced*/
   return (int)this->LocomotionClass; /*0x54acf4*/
@@ -213,7 +213,7 @@ int LocomotionClass::Init()
   this->Dirty = 1; /*0x55a6cf*/
   this->RefCount = 0; /*0x55a6d2*/
   *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_LocomotionClass); /*0x55a6d5*/
-  *(unsigned int *)&this->ILocomotion[4] = &vt_LocomotionClass; /*0x55a6db*/
+  *(unsigned int *)&(&this->ILocomotion)[4] = (unsigned int)&vt_LocomotionClass;
   return this->ILocomotion; /*0x55a6e2*/
 
 }
@@ -234,10 +234,10 @@ namespace gamemd {
 LocomotionClass * LocomotionClass::ProcessMove(char a2)
 {
 
-  LocomotionClass::Construct(Block); /*0x5172f3*/
+  ((LocomotionClass *)this)->Construct(); /*0x5172f3*/
   if ( (a2 & 1) != 0 ) /*0x5172fd*/
-    __3_YAXPAX_Z(Block); /*0x517300*/
-  return Block->ILocomotion; /*0x51730a*/
+    __3_YAXPAX_Z(this); /*0x517300*/
+  return this->ILocomotion; /*0x51730a*/
 
 }
 } // namespace gamemd

@@ -68,7 +68,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
     else
     {
       if ( ((CChatEventSink*)((CChatEventSink *)&stru_B76510.StringVector_field_0x10))->Check(&v33[8], 0) ) /*0x7aa8e4*/
-        CChatEventSink::EnsureCapacity((CChatEventSink *)&stru_B76510.StringVector_field_0x10, 0); /*0x7aa8f3*/
+        ((CChatEventSink *)(CChatEventSink *)&stru_B76510.StringVector_field_0x10)->EnsureCapacity( 0); /*0x7aa8f3*/
       if ( a2 < 0 ) /*0x7aa8fa*/
       {
 LABEL_103:
@@ -225,10 +225,10 @@ LABEL_51:
                     goto LABEL_51; /*0x7aab94*/
                 }
               }
-              DeleteAndZero((char)((ObjectClass *)&v33[24])); /*0x7aac1e*/
+              j_DeleteAndZero((char)((ObjectClass *)&v33[24])); /*0x7aac1e*/
             }
             v20 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 /*0x7aac42*/
-                            + 4 * (dword_B76548(v33) & ((1 << SLOBYTE(g_WOL_ConnectionPool.HashMap_field_0x0C)) - 1)));
+                            + 4 * ((*(unsigned int (*)(unsigned int))&dword_B76548)(v33) & ((1 << SLOBYTE(g_WOL_ConnectionPool.HashMap_field_0x0C)) - 1)));
             if ( v20 ) /*0x7aac47*/
             {
               while ( !(uint8_t)((String *)((String *)v20))->Compare((const char **)v33) ) /*0x7aac57*/
@@ -289,7 +289,7 @@ LABEL_72:
                     goto LABEL_72; /*0x7aacb1*/
                 }
               }
-              DeleteAndZero((char)((ObjectClass *)&v33[28])); /*0x7aad3b*/
+              j_DeleteAndZero((char)((ObjectClass *)&v33[28])); /*0x7aad3b*/
             }
             v25 =(gamemd::HashTable *)g_WOL_HashTable; /*0x7aad40*/
             v26 = *(unsigned int *)(*(unsigned int *)v25->__pad_0 /*0x7aad5c*/
@@ -395,7 +395,7 @@ LABEL_88:
   *(unsigned int *)&v33[12] = 0; /*0x7aa8af*/
   __3_YAXPAX_Z(0); /*0x7aa8b4*/
 LABEL_104:
-  DeleteAndZero((char)((ObjectClass *)v33)); /*0x7aaf8e*/
+  j_DeleteAndZero((char)((ObjectClass *)v33)); /*0x7aaf8e*/
   return 0; /*0x7aaf9a*/
 
 }
@@ -480,10 +480,10 @@ namespace gamemd {
 ObjectClass * CChatEventSink::DeleteAndZero(char a2)
 {
 
-  DeleteAndZero((char)((ObjectClass *)Block)); /*0x7ad353*/
+  j_DeleteAndZero((char)((ObjectClass *)this)); /*0x7ad353*/
   if ( (a2 & 1) != 0 ) /*0x7ad35d*/
-    __3_YAXPAX_Z(Block); /*0x7ad360*/
-  return (void **)Block; /*0x7ad36a*/
+    __3_YAXPAX_Z(this); /*0x7ad360*/
+  return (void **)this; /*0x7ad36a*/
 
 }
 } // namespace gamemd
@@ -492,7 +492,7 @@ namespace gamemd {
 int CChatEventSink::ComputeBucketMask(int a2)
 {
 
-  return (*(int (**)(int))((char *)&this->u32_84))(a2) & ((1 << this->q00C) - 1); /*0x7aecc4*/
+  return (*(int (**)(int))((int)((char *)&this->u32_84)))(a2) & ((1 << this->q00C) - 1); /*0x7aecc4*/
 
 }
 } // namespace gamemd

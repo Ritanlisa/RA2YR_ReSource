@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_7B2E50_e4.hpp"
@@ -200,14 +201,14 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
   v54[3] = 8; /*0x7b05e3*/
   v55 = 0; /*0x7b05e8*/
   v56 = 0; /*0x7b05ed*/
-  v7 = (*(int (**)(int *))(v6 + 124))(a2); /*0x7b05f2*/
+  v7 = (*(int (**)(int *))(v6 + 124))( (int *)(a2)); /*0x7b05f2*/
   v8 = *a2; /*0x7b05f5*/
   v57 = v7 - 1; /*0x7b05fa*/
-  v58 = (*(int (**)(int *))(v8 + 128))(a2) - 1; /*0x7b0608*/
-  v9 = (*(int (**)(int *))(*a2 + 124))(a2); /*0x7b060f*/
+  v58 = (*(int (**)(int *))(v8 + 128))( (int *)(a2)) - 1; /*0x7b0608*/
+  v9 = (*(int (**)(int *))(*a2 + 124))( (int *)(a2)); /*0x7b060f*/
   v10 = *a2; /*0x7b0612*/
   v9 = v9; /*0x7b0616*/
-  v60 = (*(int (**)(int *))(v10 + 128))(a2); /*0x7b0621*/
+  v60 = (*(int (**)(int *))(v10 + 128))( (int *)(a2)); /*0x7b0621*/
   v11 = *a2; /*0x7b0626*/
   v61 = 0; /*0x7b0628*/
   v62 = 0; /*0x7b062c*/
@@ -255,33 +256,33 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
   v104 = 0; /*0x7b06e0*/
   v105 = 0; /*0x7b06e4*/
   v106 = 0; /*0x7b06e8*/
-  v12 = (*(int (**)(int *))(v11 + 112))(a2); /*0x7b06ee*/
+  v12 = (*(int (**)(int *))(v11 + 112))( (int *)(a2)); /*0x7b06ee*/
   v13 = *a2; /*0x7b06f4*/
   v107 = v12 != 2 ? 1 : 3;
-  v108 = (*(int (**)(int *))(v13 + 124))(a2); /*0x7b0707*/
+  v108 = (*(int (**)(int *))(v13 + 124))( (int *)(a2)); /*0x7b0707*/
   v14 = *a2; /*0x7b070c*/
   v109 = 1; /*0x7b0710*/
-  v15 = (*(int (**)(int *))(v14 + 124))(a2); /*0x7b0717*/
+  v15 = (*(int (**)(int *))(v14 + 124))( (int *)(a2)); /*0x7b0717*/
   v16 = *a2; /*0x7b071a*/
   v15 = v15; /*0x7b071e*/
-  v111 = (*(int (**)(int *))(v16 + 128))(a2); /*0x7b0729*/
+  v111 = (*(int (**)(int *))(v16 + 128))( (int *)(a2)); /*0x7b0729*/
   v112 = 0; /*0x7b0739*/
   v45 = 0; /*0x7b073d*/
   memset(v113, 0, sizeof(v113)); /*0x7b0741*/
-  if ( !(*(uint8_t (**)(int *))(*a1 + 24))(a1) ) /*0x7b0749*/
+  if ( !(*(uint8_t (**)(int *))(*a1 + 24))( (int *)(a1)) ) /*0x7b0749*/
   {
-    (*(void (**)(int *, int))(*a1 + 28))(a1, 2); /*0x7b0757*/
+    (*(void (**)(int *, int))(*a1 + 28))( (int *)(a1), 2); /*0x7b0757*/
     v45 = 1; /*0x7b075a*/
   }
-  (*(void (**)(int *, unsigned char *, int))(*a1 + 48))(a1, v54, 128); /*0x7b076e*/
-  if ( (*(int (**)(int *))(*a2 + 112))(a2) != 2 ) /*0x7b077b*/
+  (*(void (**)(int *, unsigned char *, int))(*a1 + 48))( (int *)(a1), v54, 128); /*0x7b076e*/
+  if ( (*(int (**)(int *))(*a2 + 112))( (int *)(a2)) != 2 ) /*0x7b077b*/
   {
     if ( v58 + 1 <= 0 ) /*0x7b097c*/
       goto LABEL_33; /*0x7b097c*/
     v116 = 0; /*0x7b0982*/
     while ( 1 ) /*0x7b0999*/
     {
-      v35 = (char *)(*(int (**)(int *, char *, int))(*a2 + 92))(a2, v116, v5); /*0x7b0999*/
+      v35 = (char *)(*(int (**)(int *, char *, int))(*a2 + 92))( (int *)(a2), v116, v5); /*0x7b0999*/
       v36 = 1; /*0x7b099b*/
       v37 = *v35; /*0x7b09a1*/
       v43 = *v35; /*0x7b09ac*/
@@ -296,8 +297,8 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
           {
             if ( ++v36 == 47 ) /*0x7b09cb*/
             {
-              (*(void (**)(int *, char *, int))(*a1 + 48))(a1, &byte_7F7930, 1); /*0x7b09d9*/
-              (*(void (**)(int *, char *, int))(*a1 + 48))(a1, &v38, 1); /*0x7b09e8*/
+              (*(void (**)(int *, char *, int))(*a1 + 48))( (int *)(a1), (char *)(&byte_7F7930), 1); /*0x7b09d9*/
+              (*(void (**)(int *, char *, int))(*a1 + 48))( (int *)(a1), (char *)(&v38), 1); /*0x7b09e8*/
               v36 = 0; /*0x7b09eb*/
               v37 = v43; /*0x7b09ed*/
             }
@@ -312,7 +313,7 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
                 v44 = v36 | 0xC0; /*0x7b0a08*/
                 a1->vt_slot_48(&v44, 1); /*0x7b0a15*/
               }
-              (*(void (**)(int *, char *, int))(*a1 + 48))(a1, &v43, 1); /*0x7b0a24*/
+              (*(void (**)(int *, char *, int))(*a1 + 48))( (int *)(a1), (char *)(&v43), 1); /*0x7b0a24*/
             }
             v37 = v38; /*0x7b0a27*/
             v36 = 1; /*0x7b0a2b*/
@@ -333,24 +334,24 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
         v44 = v36 | 0xC0; /*0x7b0a55*/
         a1->vt_slot_48(&v44, 1); /*0x7b0a62*/
       }
-      (*(void (**)(int *, char *, int))(*a1 + 48))(a1, &v43, 1); /*0x7b0a71*/
+      (*(void (**)(int *, char *, int))(*a1 + 48))( (int *)(a1), (char *)(&v43), 1); /*0x7b0a71*/
   LABEL_32:
-      (*(void (**)(int *))(*a2 + 96))(a2); /*0x7b0a74*/
+      (*(void (**)(int *))(*a2 + 96))( (int *)(a2)); /*0x7b0a74*/
       if ( ++v5 >= v58 + 1 ) /*0x7b0a88*/
         goto LABEL_33; /*0x7b0a88*/
     }
   }
-  v17 = (*(int (**)(int *))(*a2 + 124))(a2); /*0x7b0785*/
+  v17 = (*(int (**)(int *))(*a2 + 124))( (int *)(a2)); /*0x7b0785*/
   v18 = RA2_OPNEW(v17); /*0x7b0789*/
   v19 = *a2; /*0x7b078e*/
   Block = v18; /*0x7b0795*/
-  v20 = (*(int (**)(int *))(v19 + 124))(a2); /*0x7b0799*/
+  v20 = (*(int (**)(int *))(v19 + 124))( (int *)(a2)); /*0x7b0799*/
   v49 = RA2_OPNEW(v20); /*0x7b07a2*/
-  v21 = (*(int (**)(int *))(*a2 + 124))(a2); /*0x7b07ad*/
+  v21 = (*(int (**)(int *))(*a2 + 124))( (int *)(a2)); /*0x7b07ad*/
   v22 = RA2_OPNEW(v21); /*0x7b07b1*/
   v23 = *a2; /*0x7b07b6*/
   v22 = v22; /*0x7b07bd*/
-  v24 = (*(int (**)(int *))(v23 + 124))(a2); /*0x7b07c1*/
+  v24 = (*(int (**)(int *))(v23 + 124))( (int *)(a2)); /*0x7b07c1*/
   v25 = (char *)RA2_OPNEW(10 * v24); /*0x7b07dc*/
   v116 = v25; /*0x7b07df*/
   v50 = 0; /*0x7b07e8*/
@@ -365,23 +366,23 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
     v41 = *a1; /*0x7b0a8e*/
     v47 = 12; /*0x7b0a9a*/
     a1->vt_slot_48(&v47, 1); /*0x7b0a9f*/
-    if ( (*(int (**)(int *))(*a2 + 112))(a2) == 1 ) /*0x7b0aac*/
+    if ( (*(int (**)(int *))(*a2 + 112))( (int *)(a2)) == 1 ) /*0x7b0aac*/
     {
-      memcpy(v117, Src, sizeof(v117)); /*0x7b0ac3*/
-      (*(void (**)(int *, unsigned char *, int))(*a1 + 48))(a1, v117, 768); /*0x7b0add*/
+      memcpy( v117, (const void *)(Src), sizeof(v117)); /*0x7b0ac3*/
+      (*(void (**)(int *, unsigned char *, int))(*a1 + 48))( (int *)(a1), v117, 768); /*0x7b0add*/
     }
     if ( v45 ) /*0x7b0ae6*/
-      (*(void (**)(int *))(*a1 + 52))(a1); /*0x7b0aed*/
+      (*(void (**)(int *))(*a1 + 52))( (int *)(a1)); /*0x7b0aed*/
     return 0; /*0x7b0af3*/
   }
   while ( 1 ) /*0x7b0807*/
   {
-    v52 = (uint16_t *)((gamemd::AbstractClass **)((uint16_t *)((gamemd::AbstractClass **)((uint16_t *)(*(int (**)(int *, unsigned int, int))(*a2 + 92))(a2, 0, v50)))));
+    v52 = (uint16_t *)((gamemd::AbstractClass **)((uint16_t *)((gamemd::AbstractClass **)((uint16_t *)(*(int (**)(int *, unsigned int, int))(*a2 + 92))( (int *)(a2), 0, v50)))));
     if ( !v52 ) /*0x7b080b*/
       return (gamemd::AbstractClass **)(1); /*0x7b0960*/
     v26 = *a2; /*0x7b0811*/
     v48 = 0; /*0x7b0815*/
-    if ( (*(int (**)(int *))(v26 + 124))(a2) > 0 ) /*0x7b0822*/
+    if ( (*(int (**)(int *))(v26 + 124))( (int *)(a2)) > 0 ) /*0x7b0822*/
     {
       v27 = (unsigned char *)(v49);
       v114 = (unsigned char *)Block - (unsigned char *)v49; /*0x7b0834*/
@@ -399,17 +400,17 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
         ++v48; /*0x7b08af*/
         ++v27; /*0x7b08b3*/
       }
-      while ( v48 < (*(int (**)(int *))(v31 + 124))(a2) ); /*0x7b08b9*/
+      while ( v48 < (*(int (**)(int *))(v31 + 124))( (int *)(a2)) ); /*0x7b08b9*/
       v25 = v116; /*0x7b08bb*/
     }
-    (*(void (**)(int *))(*a2 + 96))(a2); /*0x7b08c6*/
-    (*(void (**)(int *, char *))(*a2 + 124))(a2, v25); /*0x7b08ce*/
+    (*(void (**)(int *))(*a2 + 96))( (int *)(a2)); /*0x7b08c6*/
+    (*(void (**)(int *, char *))(*a2 + 124))( (int *)(a2), v25); /*0x7b08ce*/
     v32 = EncodeScreenshotRLE(v42); /*0x7b08de*/
-    (*(void (**)(int *))(*a2 + 124))(a2); /*0x7b08e6*/
+    (*(void (**)(int *))(*a2 + 124))( (int *)(a2)); /*0x7b08e6*/
     v33 = EncodeScreenshotRLE(&v25[v32]) + v32; /*0x7b08f6*/
-    (*(void (**)(int *))(*a2 + 124))(a2); /*0x7b08fe*/
+    (*(void (**)(int *))(*a2 + 124))( (int *)(a2)); /*0x7b08fe*/
     v42 = EncodeScreenshotRLE(&v25[v33]) + v33; /*0x7b0911*/
-    (*(void (**)(int *, char *))(*a1 + 48))(a1, v25); /*0x7b0915*/
+    (*(void (**)(int *, char *))(*a1 + 48))( (int *)(a1), v25); /*0x7b0915*/
     if ( ++v50 >= v58 + 1 ) /*0x7b092e*/
       goto LABEL_11; /*0x7b092e*/
   }
@@ -675,8 +676,8 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
   Block = 0; /*0x7b6412*/
   if ( v6 ) /*0x7b641a*/
   {
-    Block = (char *)RA2_OPNEW(strlen(v6) + 1); /*0x7b6439*/
-    strcpy(Block, v6); /*0x7b644c*/
+    Block = (unsigned int)(char *)RA2_OPNEW(strlen(v6) + 1); /*0x7b6439*/
+    strcpy( (char *)(Block), v6); /*0x7b644c*/
   }
   v7 = (char *)(*a2);
   if ( !*a2 ) /*0x7b6459*/
@@ -685,9 +686,9 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
   *(unsigned int *)aP0 = 0; /*0x7b6472*/
   if ( Block ) /*0x7b647b*/
   {
-    v8 = (char *)RA2_OPNEW(strlen(Block) + 1); /*0x7b6490*/
+    v8 = (char *)RA2_OPNEW(strlen( (const char *)(Block)) + 1); /*0x7b6490*/
     *aP0 = v8; /*0x7b649a*/
-    strcpy(v8, Block); /*0x7b64ac*/
+    strcpy( v8, (const char *)(Block)); /*0x7b64ac*/
     RA2_OPDEL(Block); /*0x7b64be*/
   }
   if ( v6 ) /*0x7b64c8*/
@@ -1085,7 +1086,7 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
     || *(int *)&((gamemd::Building*)aP5)->__pad_8[4] <= 0
     || *(int *)((gamemd::Building*)a4)->__pad_8 <= 0
     || *(int *)&((gamemd::Building*)a4)->__pad_8[4] <= 0
-    || !(uint8_t)IntersectSurfaceRects(&((gamemd::Building*)aP2)->field_0, (int)a1, &aP5->field_0, (int)a4) )
+    || !(uint8_t)IntersectSurfaceRects( (IUnknown *)(&((gamemd::Building*)aP2)->field_0), (int)a1, (XSurface *)(&aP5->field_0), (int)a4) )
   {
     return 0; /*0x7bc0d8*/
   }
@@ -1109,15 +1110,15 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
     }
     v9 = v25[0]; /*0x7bc137*/
   }
-  v23 = CellStruct::Copy(aP2, v26); /*0x7bc14f*/
+  v23 = CellStruct::Copy( (void *)(aP2), v26); /*0x7bc14f*/
   v16 = (Coord2D *)CellStruct::Copy(v10, v27); /*0x7bc154*/
   v17 = ((Coord2D *)(v16))->Add(v25, v23); /*0x7bc15b*/
   v18 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)v9 + 92))(v9, *v17, v17[1]); /*0x7bc173*/
   *a7 = v18; /*0x7bc17c*/
   if ( !v18 ) /*0x7bc17e*/
     return 0; /*0x7bc17e*/
-  v24 = CellStruct::Copy(aP5, v27); /*0x7bc190*/
-  v19 = (Coord2D *)CellStruct::Copy(a4, v25); /*0x7bc19b*/
+  v24 = CellStruct::Copy( (void *)(aP5), v27); /*0x7bc190*/
+  v19 = (Coord2D *)CellStruct::Copy( (void *)(a4), v25); /*0x7bc19b*/
   v20 = ((Coord2D *)(v19))->Add(v26, v24); /*0x7bc1a2*/
   v21 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)arg4 + 92))(arg4, *v20, v20[1]); /*0x7bc1bc*/
   *a8 = v21; /*0x7bc1c5*/
@@ -1135,7 +1136,7 @@ char sub_7BC1F0(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 {
   void **v7; // [esp+8h] [ebp-4h] BYREF
 
-  if ( (*(int (**)(int *))(*a1 + 112))(a1) == 1 ) /*0x7bc1ff*/
+  if ( (*(int (**)(int *))(*a1 + 112))( (int *)(a1)) == 1 ) /*0x7bc1ff*/
   {
     v7 = (void*)&BlitPlain_unsigned_char_vftable; /*0x7bc20a*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc218*/
@@ -1153,7 +1154,7 @@ char sub_7BC250(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 {
   void **v7; // [esp+8h] [ebp-4h] BYREF
 
-  if ( (*(int (**)(int *))(*a1 + 112))(a1) == 1 ) /*0x7bc25f*/
+  if ( (*(int (**)(int *))(*a1 + 112))( (int *)(a1)) == 1 ) /*0x7bc25f*/
   {
     v7 = (void*)&BlitTrans_unsigned_char_vftable; /*0x7bc26a*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc278*/
@@ -1391,7 +1392,7 @@ AbstractClass * * ObjectClass::sub_7BC580( ObjectClass * aP1, double a3)
     return v3 | 4; /*0x7bc5e2*/
   if ( (double)(int)vtable1 > a3 ) /*0x7bc5f7*/
     return v3 | 8; /*0x7bc5f9*/
-  return v3; /*0x7bc5e4*/
+  return (AbstractClass * *)v3; /*0x7bc5e4*/
 
 }
 }
@@ -1625,7 +1626,7 @@ int AudioStream_FillBuffer(int a1, int a2)
           {
             if ( v9 >= *(unsigned int *)(a1 + 16) - 1 ) /*0x7bf552*/
             {
-              if ( (*(int (**)(int, int, int *, unsigned int))(a1 + 64))(a1, 9, &v23, 0) ) /*0x7bf579*/
+              if ( (*(int (**)(int, int, int *, unsigned int))(a1 + 64))( a1, 9, (int *)(&v23), 0) ) /*0x7bf579*/
                 break; /*0x7bf581*/
               v10 = *(unsigned int *)(a1 + 300); /*0x7bf583*/
               v3 += v23 - 2 * (*(unsigned int *)(v22 + 4 * v10) & 0xFFFFFFF); /*0x7bf59e*/
@@ -1655,7 +1656,7 @@ int AudioStream_FillBuffer(int a1, int a2)
           goto LABEL_40; /*0x7bf60e*/
         if ( v6 >= *(unsigned int *)(a1 + 16) - 1 ) /*0x7bf61a*/
         {
-          if ( (*(int (**)(int, int, int *, unsigned int))(a1 + 64))(a1, 9, &v23, 0) ) /*0x7bf636*/
+          if ( (*(int (**)(int, int, int *, unsigned int))(a1 + 64))( a1, 9, (int *)(&v23), 0) ) /*0x7bf636*/
             goto LABEL_39; /*0x7bf63e*/
           v6 = v20; /*0x7bf644*/
           v12 = v23 - v7; /*0x7bf648*/
@@ -2453,7 +2454,7 @@ char E4Recv_7B50F0::sub_7B50F0(char a2)
   {
     do /*0x7b5157*/
     {
-      memcpy(v7, v7 + 1, (char *)this->AbstractClass - (char *)v7 + v6-- - 1); /*0x7b513b*/
+      memcpy( v7, v7 + 1, (size_t)((char *)this->AbstractClass - (char *)v7 + v6-- - 1)); /*0x7b513b*/
       *((unsigned char *)this->AbstractClass + v6) = 0; /*0x7b5145*/
       v7 = strchr((const char *)this->AbstractClass, a2); /*0x7b514d*/
     }
@@ -2497,7 +2498,7 @@ unsigned int E4Recv_7B53B0::sub_7B53B0(ObjectClass * aP1, size_t Count)
   unsigned int v4; // kr08_4
   unsigned int result; // eax
 
-  strncpy(aP1, (const char *)this->AbstractClass, Count); /*0x7b53c2*/
+  strncpy( (char *)(aP1), (const char *)this->AbstractClass, Count); /*0x7b53c2*/
   v4 = strlen((const char *)this->AbstractClass) + 1; /*0x7b53d1*/
   result = v4 - 1; /*0x7b53d6*/
   if ( v4 - 1 < Count ) /*0x7b53da*/
@@ -2542,11 +2543,11 @@ char E4Recv_7B54D0::sub_7B54D0(const char * Src, unsigned int a3)
   {
     if ( a3 > strlen((const char *)this->AbstractClass) ) /*0x7b5542*/
       a3 = strlen(vtable0); /*0x7b5550*/
-    v8 = (char *)__2_YAPAXI_Z(strlen(vtable0) + 1 + strlen(Src)); /*0x7b557d*/
-    memset(v8, 0, strlen((const char *)this->AbstractClass) + 1 + strlen(Src)); /*0x7b55a0*/
+    v8 = (char *)__2_YAPAXI_Z(strlen(vtable0) + 1 + strlen( (const char *)(Src))); /*0x7b557d*/
+    memset(v8, 0, strlen((const char *)this->AbstractClass) + 1 + strlen( (const char *)(Src))); /*0x7b55a0*/
     strcpy(v8, (const char *)this->AbstractClass); /*0x7b55c3*/
-    memcpy(&v8[strlen(Src) + a3], &v8[a3], strlen((const char *)this->AbstractClass) + 1 - a3); /*0x7b55ff*/
-    memcpy(&v8[a3], Src, strlen(Src)); /*0x7b5617*/
+    memcpy(&v8[strlen( (const char *)(Src)) + a3], &v8[a3], strlen((const char *)this->AbstractClass) + 1 - a3); /*0x7b55ff*/
+    memcpy( &v8[a3], (const void *)(Src), strlen( (const char *)(Src))); /*0x7b5617*/
     __3_YAXPAX_Z(this->AbstractClass); /*0x7b561f*/
     this->AbstractClass = v8; /*0x7b5627*/
     return 1; /*0x7b5629*/
@@ -2555,14 +2556,14 @@ char E4Recv_7B54D0::sub_7B54D0(const char * Src, unsigned int a3)
   {
     this->AbstractClass = 0; /*0x7b54df*/
     if ( Src ) /*0x7b54e3*/
-      v5 = strlen(Src) + 1; /*0x7b54ec*/
+      v5 = strlen( (const char *)(Src)) + 1; /*0x7b54ec*/
     else
       v5 = 1; /*0x7b54f2*/
     v6 = (unsigned char *)__2_YAPAXI_Z(v5); /*0x7b54f8*/
     this->AbstractClass = v6; /*0x7b5500*/
     *v6 = 0; /*0x7b5504*/
     if ( Src ) /*0x7b5507*/
-      strcpy((char *)this->AbstractClass, Src); /*0x7b551f*/
+      strcpy( (char *)this->AbstractClass, (const char *)(Src)); /*0x7b551f*/
     return 1; /*0x7b552a*/
   }
 
@@ -2599,7 +2600,7 @@ char E4Recv_7B5640::sub_7B5640(char a2, unsigned int a3)
     strcpy(v8, (const char *)this->AbstractClass); /*0x7b5708*/
     *((unsigned char *)this->AbstractClass + a3) = v11; /*0x7b571c*/
     v13 = a2; /*0x7b5723*/
-    strcat(v8, &v13); /*0x7b5743*/
+    strcat( v8, (const char *)(&v13)); /*0x7b5743*/
     strcat(v8, (const char *)this->AbstractClass + a3); /*0x7b5771*/
     __3_YAXPAX_Z(this->AbstractClass); /*0x7b577e*/
     this->AbstractClass = v10; /*0x7b5786*/
@@ -2613,12 +2614,12 @@ char E4Recv_7B5640::sub_7B5640(char a2, unsigned int a3)
     if ( &v12 == (int *)-14 ) /*0x7b5663*/
       v4 = 1; /*0x7b5674*/
     else
-      v4 = strlen(&v13) + 1; /*0x7b566e*/
+      v4 = strlen( (const char *)(&v13)) + 1; /*0x7b566e*/
     v5 = (unsigned char *)__2_YAPAXI_Z(v4); /*0x7b567a*/
     this->AbstractClass = v5; /*0x7b5686*/
     *v5 = 0; /*0x7b5689*/
     if ( &v13 ) /*0x7b568e*/
-      strcpy((char *)this->AbstractClass, &v13); /*0x7b56a9*/
+      strcpy( (char *)this->AbstractClass, (const char *)(&v13)); /*0x7b56a9*/
     return 1; /*0x7b56b4*/
   }
 
@@ -2742,7 +2743,7 @@ bool String_ValidateContains(const char ** a1, const char * a2, char * Control)
   int result; // eax
 
   if ( Control && *a1 ) /*0x7b6639*/
-    return strcspn(*a1, Control) < strlen(a2); /*0x7b665f*/
+    return strcspn(*a1, Control) < strlen( (const char *)(a2)); /*0x7b665f*/
   IDA_LOBYTE(result) = 0; /*0x7b6665*/
   return result; /*0x7b6661*/
 }
@@ -2833,7 +2834,7 @@ short E4Recv_7B6EE0::sub_7B6EE0(const wchar_t ** a2)
       break; /*0x7b6f1b*/
   }
   if ( i ) /*0x7b6f22*/
-    LOWORD(vtable0) = WideString::Erase((WideString *)this, 0, i); /*0x7b6f29*/
+    LOWORD(vtable0) = WideString::Erase( (int)((WideString *)this), 0, i); /*0x7b6f29*/
   return (int16_t)vtable0; /*0x7b6f2e*/
 
 }
@@ -3011,7 +3012,7 @@ wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar
   if ( v7 ) /*0x7b80d7*/
   {
     v8 = wcslen(v7); /*0x7b80da*/
-    String = (wchar_t *)RA2_OPNEW(2 * v8 + 2); /*0x7b80eb*/
+    String = (unsigned int)(wchar_t *)RA2_OPNEW(2 * v8 + 2); /*0x7b80eb*/
     wcscpy(String, v7); /*0x7b80ef*/
   }
   v9 = *a2; /*0x7b80fb*/
@@ -3191,7 +3192,7 @@ char sub_7BBFF0(int a1, int a2, int * a4, int arg4, unsigned char * a6, int * a7
   unsigned char v12[20]; // [esp+Ch] [ebp-20h] BYREF
   int v13[3]; // [esp+20h] [ebp-Ch] BYREF
 
-  v11 = (int *)(*(int (**)(int *, unsigned char *, int))(*arg4 + 120))(arg4, v12, arg4); /*0x7bc022*/
+  v11 = (int *)(*(int (**)(int *, unsigned char *, int))(*arg4 + 120))( (int *)(arg4), v12, arg4); /*0x7bc022*/
   v9 = (*(int (**)(int))(*(unsigned int *)a1 + 120))(a1); /*0x7bc02a*/
   return CalcSurfaceBlitRects(a1, v9, v13, a2, arg4, v11, a8, a8, a8); /*0x7bc036*/
 }
@@ -3223,7 +3224,7 @@ namespace gamemd {
 BlitPlain * E4Recv_7BC640::___Gfacet_locale_std__UAEPAXI_Z_148(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_Blitter; /*0x7bc649*/
+  *Block = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x7bc64f*/
     __3_YAXPAX_Z(Block); /*0x7bc652*/
   return Block; /*0x7bc65c*/
@@ -3236,7 +3237,7 @@ namespace gamemd {
 BlitPlain * E4Recv_7BC660::___Gfacet_locale_std__UAEPAXI_Z_149(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_Blitter; /*0x7bc669*/
+  *Block = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x7bc66f*/
     __3_YAXPAX_Z(Block); /*0x7bc672*/
   return Block; /*0x7bc67c*/
@@ -3249,7 +3250,7 @@ namespace gamemd {
 BlitTrans * E4Recv_7BC680::___Gfacet_locale_std__UAEPAXI_Z_150(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_Blitter; /*0x7bc689*/
+  *Block = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x7bc68f*/
     __3_YAXPAX_Z(Block); /*0x7bc692*/
   return Block; /*0x7bc69c*/
@@ -3262,7 +3263,7 @@ namespace gamemd {
 BlitTrans * E4Recv_7BC6A0::___Gfacet_locale_std__UAEPAXI_Z_151(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_Blitter; /*0x7bc6a9*/
+  *Block = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x7bc6af*/
     __3_YAXPAX_Z(Block); /*0x7bc6b2*/
   return Block; /*0x7bc6bc*/
@@ -3340,7 +3341,7 @@ unsigned int sub_7BC750(void * a0, const void * a1, BlitPlain * aP2, int a4, int
 namespace gamemd {
 void * sub_7BC780(BlowStraw * aP0, void * Src, ModemGame * aP2, int a4, int a5, int a6, int a7)
 {
-  return memcpy(Src, (const void *)aP2, a4); /*0x7bc797*/
+  return memcpy( (void *)(Src), (const void *)aP2, a4); /*0x7bc797*/
 }
 } // namespace gamemd
 
@@ -3357,7 +3358,7 @@ unsigned int sub_7BC7A0(void * a0, const void * a1, BlitPlain * aP2, int a4, int
 namespace gamemd {
 void * sub_7BC7D0(BlowStraw * aP0, void * Src, ModemGame * aP2, int a4, int a5, int a6, int a7, int a8)
 {
-  return memcpy(Src, (const void *)aP2, a4); /*0x7bc7e7*/
+  return memcpy( (void *)(Src), (const void *)aP2, a4); /*0x7bc7e7*/
 }
 } // namespace gamemd
 
@@ -3374,7 +3375,7 @@ int sub_7BC7F0(void * a1, const void * a2, int a3, int a4, int a5, int a6, int a
 namespace gamemd {
 void * sub_7BC820(BlowStraw * aP0, BombClass * aP1, int a3, int a4, int a5, int a6, int a7)
 {
-  return memcpy(aP1, (const void *)a3, 2 * a4); /*0x7bc83a*/
+  return memcpy( (void *)(aP1), (const void *)a3, 2 * a4); /*0x7bc83a*/
 }
 } // namespace gamemd
 
@@ -3391,7 +3392,7 @@ int sub_7BC840(void * a1, const void * a2, int a3, int a4, int a5, int a6, int a
 namespace gamemd {
 void * sub_7BC870(BlowStraw * aP0, BombClass * aP1, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return memcpy(aP1, (const void *)a3, 2 * a4); /*0x7bc88a*/
+  return memcpy( (void *)(aP1), (const void *)a3, 2 * a4); /*0x7bc88a*/
 }
 } // namespace gamemd
 
@@ -3503,9 +3504,9 @@ int E4Recv_7BCA50::sub_7BCA50(int a2, int a3, int a4, int a5, int a6)
   int16_t v14; // dx
   int v16; // [esp+14h] [ebp+4h]
 
-  v8 = (unsigned short *)(*(int (**)(int, int, int))(*(unsigned int *)&a2->q_170)(a2, a3, a4); /*0x7bca72*/
+  v8 = (unsigned short *)(*(int (**)(int, int, int))(*(unsigned int *)&a2->q_170))(a2, a3, a4);  /*0x7bca72*/
   v9 = (int16_t *)(((unsigned int *)this)[0] + ((unsigned int *)this)[0]); /*0x7bca79*/
-  v10 = (*(int (**)(int))(*(unsigned int *)&a2->q_1D0)(a2); /*0x7bca7b*/
+  v10 = (*(int (**)(int))(*(unsigned int *)&a2->q_1D0))(a2);  /*0x7bca7b*/
   v11 = a5; /*0x7bca81*/
   v12 = v10 / 2 - a5; /*0x7bca87*/
   if ( v8 && a6 > 0 ) /*0x7bca93*/
@@ -3532,7 +3533,7 @@ int E4Recv_7BCA50::sub_7BCA50(int a2, int a3, int a4, int a5, int a6)
     }
     while ( v16 ); /*0x7bcac8*/
   }
-  return (*(int (**)(int))(*(unsigned int *)&a2->q_180)(a2); /*0x7bcad2*/
+  return (*(int (**)(int))(*(unsigned int *)&a2->q_180))(a2);  /*0x7bcad2*/
 
 }
 } // namespace gamemd
@@ -3683,7 +3684,7 @@ int E4Recv_7BEA40::sub_7BEA40()
   int result; // eax
   int v3; // eax
 
-  result = AudioStream::ProcessStream((int)this); /*0x7bea43*/
+  result = ((AudioStream *)(int)this)->ProcessStream(); /*0x7bea43*/
   if ( result == -1 ) /*0x7bea4b*/
   {
     sub_7BEFE0((int)this); /*0x7bea4f*/
@@ -3749,7 +3750,7 @@ int E4Recv_7BF140::sub_7BF140()
   int result; // eax
   int *v3; // edi
 
-  result = AudioStream::ProcessStream((int)this); /*0x7bf143*/
+  result = ((AudioStream *)(int)this)->ProcessStream(); /*0x7bf143*/
   if ( result == -1 ) /*0x7bf14b*/
   {
     sub_7BEFE0((int)this); /*0x7bf150*/
@@ -3852,7 +3853,7 @@ int sub_7BF240(int a1, int a2, char * DstBuf, int MaxCharCount)
       return 0; /*0x7bf36d*/
     case 5: /*0x7bf25c*/
       v6 = MaxCharCount; /*0x7bf289*/
-      return _read(v5, DstBuf, MaxCharCount) != v6; /*0x7bf2a7*/
+      return _read( v5, (void *)(DstBuf), MaxCharCount) != v6; /*0x7bf2a7*/
     case 6: /*0x7bf25c*/
       return 1; /*0x7bf2af*/
     case 7: /*0x7bf25c*/
@@ -3909,7 +3910,7 @@ int sub_7BF3A0(unsigned int * a1, int a2, void * a3, signed int a4)
       v5 = a1[449]; /*0x7bf3bd*/
       if ( v5 + a4 > a1[448] ) /*0x7bf3d2*/
         return 1; /*0x7bf3d2*/
-      qmemcpy(a3, (const void *)(v5 + a1[445]), a4); /*0x7bf3e8*/
+      qmemcpy( (void *)(a3), (const void *)(v5 + a1[445]), a4); /*0x7bf3e8*/
       a1[449] += a4; /*0x7bf3fd*/
       return 0; /*0x7bf404*/
     case 6: /*0x7bf3b6*/

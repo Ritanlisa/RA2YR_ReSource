@@ -485,7 +485,7 @@ LABEL_42:
       }
       v3 = (char *)dword_B1CF74; /*0x734a53*/
       (&byte_B1BF38)[v2] = 0; /*0x734a59*/
-      strcpy(&v3[v1],(const char *)(byte_B1BF38)); /*0x734a7b*/
+      strcpy( (char *)(&v3[v1]), (const char *)(byte_B1BF38)); /*0x734a7b*/
       if ( (int)Size > dword_B1CF58 ) /*0x734a90*/
         dword_B1CF58 = Size; /*0x734a92*/
       v4 = v19; /*0x734a9d*/
@@ -615,7 +615,7 @@ unsigned int * File::LoadFileVXL(int a2, int a3)
   *(unsigned int *)&this->__pad_6[10] = 0; /*0x755ce4*/
   *(unsigned int *)&this->__pad_6[14] = 0; /*0x755ce7*/
   *(unsigned int *)&this->__pad_6[18] = 0; /*0x755cea*/
-  if ( !Voxel::SortDepth((gamemd::ObjectClass *)((int)this), a2,(void *)(a3)) ) /*0x755cf5*/
+  if ( !Voxel::SortDepth( (gamemd::ObjectClass *)((int)this), a2, (void)((void *)(a3))) ) /*0x755cf5*/
     this->__pad_0[0] = 1; /*0x755cfe*/
   return this->__pad_0; /*0x755d03*/
 
@@ -675,7 +675,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   *((unsigned int *)this + 9) = 0; /*0x76ad1e*/
   *((unsigned int *)this + 10) = 0; /*0x76ad21*/
   *((unsigned int *)this + 17) = 0; /*0x76ad24*/
-  if ( (uint8_t)HashTable::FindChunk((HashTable *)PaletteData, aNack, 0, &v19) ) /*0x76ad27*/
+  if ( (uint8_t)HashTable::FindChunk( (void)((HashTable *)PaletteData), (char *)(aNack), 0, (CCINIClass *)(&v19)) ) /*0x76ad27*/
   {
     if ( PaletteData ) /*0x76ad32*/
     {
@@ -686,7 +686,7 @@ LABEL_25:
   }
   else
   {
-    if ( (uint8_t)HashTable::FindString((HashTable *)PaletteData, aTotk, (unsigned int *)this + 7) ) /*0x76ad45*/
+    if ( (uint8_t)HashTable::FindString( (void)((HashTable *)PaletteData), (const char)(aTotk), (unsigned int)((unsigned int *)this + 7)) ) /*0x76ad45*/
     {
       v6 = *(unsigned int *)v5; /*0x76ad4e*/
       *((unsigned char *)this + 72) = 1; /*0x76ad50*/
@@ -696,17 +696,17 @@ LABEL_25:
     else
     {
       *((unsigned char *)this + 72) = 0; /*0x76ad69*/
-      HashTable::FindString((HashTable *)PaletteData, aCrtk, (unsigned int *)this + 9); /*0x76ad6c*/
+      HashTable::FindString( (void)((HashTable *)PaletteData), (const char)(aCrtk), (unsigned int)((unsigned int *)this + 9)); /*0x76ad6c*/
       ++*((unsigned int *)this + 9); /*0x76ad7d*/
-      HashTable::FindString((HashTable *)PaletteData, aCyln, (unsigned int *)this + 7); /*0x76ad80*/
+      HashTable::FindString( (void)((HashTable *)PaletteData), (const char)(aCyln), (unsigned int)((unsigned int *)this + 7)); /*0x76ad80*/
       ++*(unsigned int *)v5; /*0x76ad85*/
     }
-    HashTable::FindChunk((HashTable *)PaletteData, (char *)aWurl, 0, &v17); /*0x76ad94*/
-    HashTable::FindChunk((HashTable *)PaletteData, (char *)aSdsc, 0, &Size); /*0x76ada6*/
-    HashTable::FindChunk((HashTable *)PaletteData, (char *)aLdsc, 0, &v16); /*0x76adb8*/
+    HashTable::FindChunk( (void)((HashTable *)PaletteData), (char *)aWurl, 0, (CCINIClass *)(&v17)); /*0x76ad94*/
+    HashTable::FindChunk( (void)((HashTable *)PaletteData), (char *)aSdsc, 0, (CCINIClass *)(&Size)); /*0x76ada6*/
+    HashTable::FindChunk( (void)((HashTable *)PaletteData), (char *)aLdsc, 0, (CCINIClass *)(&v16)); /*0x76adb8*/
     if ( !*((unsigned char *)this + 72) ) /*0x76adbd*/
-      HashTable::FindChunk((HashTable *)PaletteData, (char *)aMpvc, 0, &v13); /*0x76adcf*/
-    HashTable::FindChunk((HashTable *)PaletteData, (char *)aHsvc, 0, &v14); /*0x76ade1*/
+      HashTable::FindChunk( (void)((HashTable *)PaletteData), (char *)aMpvc, 0, (CCINIClass *)(&v13)); /*0x76adcf*/
+    HashTable::FindChunk( (void)((HashTable *)PaletteData), (char *)aHsvc, 0, (CCINIClass *)(&v14)); /*0x76ade1*/
     *((unsigned int *)this + 2) = (unsigned int)(__2_YAPAXI_Z(Size)); /*0x76adf0*/
     v7 = (int)(__2_YAPAXI_Z(v16)); /*0x76adf8*/
     v8 = v17; /*0x76adfd*/
@@ -714,7 +714,7 @@ LABEL_25:
     v9 = (int)(__2_YAPAXI_Z(v8)); /*0x76ae05*/
     v10 = v14; /*0x76ae0a*/
     *((unsigned int *)this + 4) = v9; /*0x76ae0e*/
-    Block = (void *)__2_YAPAXI_Z(v10); /*0x76ae17*/
+    Block = (unsigned int)(void *)__2_YAPAXI_Z(v10); /*0x76ae17*/
     v20 = 0; /*0x76ae23*/
     if ( !*((unsigned char *)this + 72) ) /*0x76ae1b*/
     {
@@ -724,20 +724,20 @@ LABEL_25:
     memset(*((void **)this + 2), 0, Size); /*0x76ae5e*/
     memset(*((void **)this + 3), 0, v16); /*0x76ae75*/
     memset(*((void **)this + 4), 0, v17); /*0x76ae8c*/
-    memset(Block, 0, v14); /*0x76aea4*/
+    memset( (void *)(Block), 0, v14); /*0x76aea4*/
     ((File *)((File *)PaletteData))->FindByPrefix((char *)(aCmid), (unsigned char *)this + 20); /*0x76aeb8*/
-    HashTable::FindString((HashTable *)PaletteData, aCyid, (unsigned int *)this + 6); /*0x76aec8*/
+    HashTable::FindString( (void)((HashTable *)PaletteData), (const char)(aCyid), (unsigned int)((unsigned int *)this + 6)); /*0x76aec8*/
     if ( *((unsigned char *)this + 72) ) /*0x76aecd*/
       *((unsigned int *)this + 10) = 0; /*0x76aed2*/
     else
-      HashTable::FindString((HashTable *)PaletteData, aTicc, (unsigned int *)this + 10); /*0x76aee2*/
-    HashTable::FindChunk((HashTable *)PaletteData, (char *)aSdsc, *((void **)this + 2), &Size); /*0x76aef7*/
-    HashTable::FindChunk((HashTable *)PaletteData, (char *)aLdsc, *((void **)this + 3), &v16); /*0x76af0c*/
-    HashTable::FindChunk((HashTable *)PaletteData, (char *)aWurl, *((void **)this + 4), &v17); /*0x76af21*/
+      HashTable::FindString( (void)((HashTable *)PaletteData), (const char)(aTicc), (unsigned int)((unsigned int *)this + 10)); /*0x76aee2*/
+    HashTable::FindChunk( (void)((HashTable *)PaletteData), (char *)aSdsc, *((void **)this + 2), (CCINIClass *)(&Size)); /*0x76aef7*/
+    HashTable::FindChunk( (void)((HashTable *)PaletteData), (char *)aLdsc, *((void **)this + 3), (CCINIClass *)(&v16)); /*0x76af0c*/
+    HashTable::FindChunk( (void)((HashTable *)PaletteData), (char *)aWurl, *((void **)this + 4), (CCINIClass *)(&v17)); /*0x76af21*/
     if ( !*((unsigned char *)this + 72) ) /*0x76af26*/
-      HashTable::FindChunk((HashTable *)PaletteData, (char *)aMpvc, v20, &v13); /*0x76af3c*/
+      HashTable::FindChunk( (void)((HashTable *)PaletteData), (char *)aMpvc, v20, (CCINIClass *)(&v13)); /*0x76af3c*/
     v11 = Block; /*0x76af41*/
-    HashTable::FindChunk((HashTable *)PaletteData, (char *)aHsvc, Block, &v14); /*0x76af52*/
+    HashTable::FindChunk( (void)((HashTable *)PaletteData), (char *)aHsvc, (void *)(Block), (CCINIClass *)(&v14)); /*0x76af52*/
     if ( *((unsigned char *)this + 72) ) /*0x76af57*/
       *((unsigned int *)this + 8) = 30; /*0x76af6f*/
     else

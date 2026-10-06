@@ -88,8 +88,8 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   BitMask_Green = GetBitMask_Green(); /*0x560c39*/
   BitMask_Red = GetBitMask_Red(); /*0x560c42*/
   BitShift_Blue = GetBitShift_Blue(); /*0x560c51*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x560c57*/
-  DDraw::WaitForIdle(v18); /*0x560c5a*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x560c57*/
+  ((DDraw *)v18)->WaitForIdle(); /*0x560c5a*/
   if ( g_DDraw_Initialized == 1 ) /*0x560c66*/
   {
     *(unsigned int *)&DSurface_ViewBounds.__pad_8[8] = 0; /*0x560c73*/
@@ -177,7 +177,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     sub_491100((gamemd::ObjectClass *)(BitShift_Red), BitShift_Green, 0,(gamemd::ObjectClass *)(BitMask_Blue), BitMask_Green, BitMask_Red,(short)(BitShift_Blue)); /*0x561046*/
     if ( stru_887598.lineTrailer ) /*0x561053*/
     {
-      MouseClass::CalcConfiningRect((MouseClass *)stru_887598.lineTrailer); /*0x5610dd*/
+      MouseClass::CalcConfiningRect( (MouseClass *)stru_887598.lineTrailer); /*0x5610dd*/
     }
     else
     {
@@ -191,28 +191,28 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
       {
         BitShift_Red = 0; /*0x56109f*/
         v26 = 0; /*0x5610aa*/
-        (*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_10)( /*0x5610b5*/
+        (*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_10))(  /*0x5610b5*/
           stru_887598.lineTrailer,
           &BitShift_Red,
           v14,
           0);
       }
-      Mission::SetAndCall((MouseClass *)&stru_87F5F0.__pad_58[416], 0, 0); /*0x5610bf*/
+      Mission::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x5610bf*/
       ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x5610cb*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x5610d8*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x5610d8*/
     }
-    TacticalClass::SetViewDimensions((DisplayClass *)v31); /*0x5610ec*/
+    TacticalClass::SetViewDimensions( (DisplayClass *)v31); /*0x5610ec*/
     ChangeVideoMode_Setup((int)g_DisplayWidth, (int)*(&g_DisplayWidth + 1)); /*0x5610fd*/
     SidebarClass::InitButtons((TabClass *)&stru_87F5F0.__pad_58[416]); /*0x561107*/
     TacticalClass::BuildCommandBar((TabClass *)1, v2, v19); /*0x561113*/
     SidebarClass::LoadResources(v20); /*0x56111d*/
-    MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x561129*/
+    MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 2); /*0x561129*/
         for ( i = (MouseClass *)Dialog::GetCurrent(); i; i = (MouseClass *)((Dialog*)i)->FindByPtr() )
     {
       DestroyDialog((ObjectClass *)i); /*0x56113b*/
       ResizeDialogAndEnum((HWND)i,(void *)((LPARAM)&lParam)); /*0x561146*/
     }
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x561160*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x561160*/
         Debug::Log();
     return 1; /*0x561170*/
   }
@@ -253,15 +253,15 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   {
     BitShift_Red = 0; /*0x560d88*/
     v26 = 0; /*0x560d94*/
-    (*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_10)( /*0x560d9f*/
+    (*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_10))(  /*0x560d9f*/
       stru_887598.lineTrailer,
       &BitShift_Red,
       v5,
       0);
   }
-  Mission::SetAndCall((MouseClass *)&stru_87F5F0.__pad_58[416], 0, 0); /*0x560da9*/
+  Mission::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x560da9*/
   ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x560db5*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x560dc2*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x560dc2*/
   return 0; /*0x560dc7*/
 }
 }
@@ -363,7 +363,7 @@ int VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, unsi
           wParama = v21; /*0x5614f2*/
         sprintf(Buffer, "%d x %d x 16", v10, v11); /*0x561502*/
         v12 = SendMessageA(v6, 0x4C8u, 0, (LPARAM)Buffer); /*0x561517*/
-        SendMessageA(v6, 0x19Au, v12, v8); /*0x561521*/
+        SendMessageA( v6, 0x19Au, v12, (LPARAM)(v8)); /*0x561521*/
         ++v21; /*0x561523*/
       }
       ++v8; /*0x56152a*/
@@ -548,7 +548,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
     --v12; /*0x56b0c6*/
   }
   while ( v12 ); /*0x56b0c7*/
-  (*(void (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))(&v17); /*0x56b0d1*/
+  (*(void (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))( (Pipe *)(&v17)); /*0x56b0d1*/
   ((LCWPipe *)((LCWPipe *)&v17))->Dtor(); /*0x56b0d8*/
   return (gamemd::BombClass **)(v11); /*0x56b0df*/
 
@@ -621,7 +621,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
   }
   v16 = *(unsigned int *)&g_MissionQueueFrame.waypoints[2134]; /*0x56b3b5*/
   v11 = Compression::Read((int *)v17.__pad_0, (int)&v16, 4) + v3; /*0x56b3c6*/
-  v12 = (gamemd::BombClass **)((*(int (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))(&v17)); /*0x56b3cf*/
+  v12 = (gamemd::BombClass **)((*(int (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))( (Pipe *)(&v17))); /*0x56b3cf*/
   LZOPipe::Destructor((LZOPipe *)&v17); /*0x56b3d1*/
   return (gamemd::BombClass **)(v12 + v11); /*0x56b3d9*/
 
@@ -969,7 +969,7 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
             && (int *)v5 != &g_MissionQueueFrame.briefing[130]
             && (*(unsigned int *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
           {
-            v10 = (*(int (**)(int *, int **, int))(*v4 + 16))(v4, &a2, 4) + v2; /*0x56b1d8*/
+            v10 = (*(int (**)(int *, int **, int))(*v4 + 16))( v4, (int **)(&a2), 4) + v2; /*0x56b1d8*/
             v11 = (*(int (**)(int *, int, int))(*v4 + 16))(v4, v5 + 56, 4) + v10; /*0x56b1e3*/
             v12 = (*(int (**)(int *, int, int))(*v4 + 16))(v4, v5 + 282, 1) + v11; /*0x56b1fc*/
             v2 = (*(int (**)(int *, int, int))(*v4 + 16))(v4, v5 + 283, 1) + v12; /*0x56b201*/
@@ -982,7 +982,7 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
   }
   v13 = *v4; /*0x56b225*/
   v17 = *(unsigned int *)&g_MissionQueueFrame.waypoints[2134]; /*0x56b227*/
-  return v2 + (*(int (**)(int *, int *, int))(v13 + 16))(v4, &v17, 4); /*0x56b239*/
+  return v2 + (*(int (**)(int *, int *, int))(v13 + 16))( v4, (int *)(&v17), 4); /*0x56b239*/
 
 }
 } // namespace gamemd

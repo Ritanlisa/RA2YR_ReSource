@@ -99,6 +99,11 @@ LightConvertClass::LightConvertClass(
 #include "core/ddraw_init.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "core/ddraw_init.hpp"
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    int Math_RoundToInt(double a1);                    // raw fn_49 Math::RoundToInt 家族 (16 处跨 TU);
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 namespace gamemd {
 
@@ -203,9 +208,9 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
       }
       this->u8_1B0 = 0; /*0x55618b*/
     }
-    v32 = Math::RoundToInt((double)(1000 * v7) * 0.065536); /*0x5561b1*/
-    v34 = Math::RoundToInt((double)(1000 * v11) * 0.065536); /*0x5561d5*/
-    v35 = Math::RoundToInt((double)(1000 * v12) * 0.065536); /*0x5561f8*/
+    v32 = Math_RoundToInt((double)(1000 * v7) * 0.065536); /*0x5561b1*/
+    v34 = Math_RoundToInt((double)(1000 * v11) * 0.065536); /*0x5561d5*/
+    v35 = Math_RoundToInt((double)(1000 * v12) * 0.065536); /*0x5561f8*/
     v13 = 0; /*0x556202*/
     v30 = v6 - 1; /*0x55620e*/
     v14 = *(unsigned short **)(((unsigned char *)(this) + 0x0908)); /*0x55621e*/
@@ -332,4 +337,5 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
       goto LABEL_31; /*0x5562c9*/
     }
   }
+}
 }

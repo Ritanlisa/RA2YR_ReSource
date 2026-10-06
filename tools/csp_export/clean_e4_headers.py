@@ -39,6 +39,10 @@ BARE_METHOD = re.compile(r'^[ \t]*unsigned int (\w+);\s*$')
 JUNK_RETURN = re.compile(r'^[ \t]*return [^\n]*// def-aligned\s*$')
 LABEL_RE = re.compile(r'^[ \t]*LABEL_\d+:.*// def-aligned\s*$')
 STUB_DECL = re.compile(r'^[ \t]*static double (\w+)\(\.\.\.\);[^\n]*$')
+# G57c4 (d): stray pseudocode statement inside a class body (a G42.44 wave-1
+# fixer leaked `if ( ! Bootstrap());` into MixFileClass_e4.hpp -> C2059 x51
+# across 34 consumer TUs)
+STRAY_STMT = re.compile(r'^[ \t]*(if|for|while|return|switch|goto|else)\s*\([^;{]*\)\s*;$')
 
 n_off = n_method = n_junk = n_dup = n_files = 0
 for p in sorted(E4C.glob('*_e4.hpp')):
@@ -68,6 +72,9 @@ for p in sorted(E4C.glob('*_e4.hpp')):
         if b and (b.group(1) in METHODS or b.group(1) in stub_names):
             # method name misregistered as data member (CSP call-site noise)
             n_method += 1
+            continue
+        if STRAY_STMT.match(ln) and 'G57c4' not in ln:  # G57c4 (d)
+            n_junk += 1
             continue
         if JUNK_RETURN.match(ln) or LABEL_RE.match(ln):
             n_junk += 1

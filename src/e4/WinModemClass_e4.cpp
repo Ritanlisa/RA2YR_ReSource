@@ -214,7 +214,7 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
   v6 = 0; /*0x774ce6*/
   ((gamemd::Timer *)this)->GetTicks(); /*0x774ce1*/
   ((gamemd::Timer *)this)->GetTicks(); /*0x774cf4*/
-  memset(Str, 0, a4); /*0x774d0e*/
+  memset( (void *)(Str), 0, a4); /*0x774d0e*/
   v7 = aP4; /*0x774d24*/
   Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x774d28*/
   v21 = aP4; /*0x774d30*/
@@ -284,7 +284,7 @@ LABEL_38:
               ++v15; /*0x774ec1*/
             if ( v15 != Str ) /*0x774ec6*/
             {
-              memcpy(Str, v15, a4 - (v15 - Str)); /*0x774ed5*/
+              memcpy( (void *)(Str), v15, a4 - (v15 - Str)); /*0x774ed5*/
               v6 -= v15 - Str; /*0x774edd*/
               v7 = aP4; /*0x774edf*/
             }
@@ -334,7 +334,7 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
     ((gamemd::Debug *)this)->Log(); /*0x774fc6*/
   }
   ((gamemd::Debug *)this)->Log(); /*0x775010*/
-  strcat(Buffer, NumberOfBytesWritten); /*0x77503e*/
+  strcat( Buffer, (const char *)(NumberOfBytesWritten)); /*0x77503e*/
   ((gamemd::Debug *)this)->Log(); /*0x775047*/
   strcat(Buffer, (const char *)&word_8327A0); /*0x775071*/
   ((gamemd::Debug *)this)->Log(); /*0x775084*/
@@ -383,7 +383,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
   unsigned char v32[80]; // [esp+C8h] [ebp-50h] BYREF
 
   LOWORD(i) = a3; /*0x77512a*/
-  strcpy(Buffer, a2); /*0x77514b*/
+  strcpy( Buffer, (const char *)(a2)); /*0x77514b*/
   strcat(Buffer, (const char *)&i); /*0x77517a*/
   ((WinModemClass*)this)->ReadBytes(v32, 80); /*0x77518d*/
   Sleep(0x64u); /*0x775194*/
@@ -452,7 +452,7 @@ LABEL_16:
         v11 = v20 - v21; /*0x7752be*/
     }
 LABEL_21:
-    memset(Str, 0, sizeof(Str)); /*0x7752cf*/
+    memset( (void *)(Str), 0, sizeof(Str)); /*0x7752cf*/
     (*(void (**)(WinModemClass *, int, char *, int, int))(*(unsigned int *)this->__pad_0 + 20))( /*0x7752e6*/
       this,
       v11,
@@ -465,7 +465,7 @@ LABEL_21:
       return (gamemd::AbstractClass **)(2); /*0x775337*/
     if ( strstr(Str, aError) ) /*0x775347*/
       return (gamemd::AbstractClass **)(1); /*0x775449*/
-    if ( strlen(Str) == 3 /*0x77538a*/
+    if ( strlen( (const char *)(Str)) == 3 /*0x77538a*/
       && Str[0] >= 48
       && Str[0] <= 57
       && Str[1] >= 48
@@ -476,13 +476,13 @@ LABEL_21:
       v24 = Count; /*0x77544c*/
       if ( Count >= 80 ) /*0x775456*/
         v24 = 80; /*0x775458*/
-      strncpy(Destination, Str, v24); /*0x77546b*/
+      strncpy( (char *)(Destination), (const char *)(Str), v24); /*0x77546b*/
       return (gamemd::AbstractClass **)(2); /*0x775482*/
     }
     v22 = Count; /*0x775390*/
     if ( Count >= 80 ) /*0x77539a*/
       v22 = 80; /*0x77539c*/
-    strncpy(Destination, Str, v22); /*0x7753af*/
+    strncpy( (char *)(Destination), (const char *)(Str), v22); /*0x7753af*/
     Sleep(0x64u); /*0x7753bf*/
     ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x7753c3*/
     if ( !WriteFile(*((HANDLE *)this + 23), &word_8327A0, 1u, &v28, (LPOVERLAPPED)(unsigned int *)this + 3) ) /*0x7753dc*/
@@ -592,19 +592,19 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
 
   int v3; // eax
 
-  v3 = *((unsigned int *)Block + 23); /*0x775613*/
-  *(unsigned int *)Block->__pad_0 = &vt_WinModemClass; /*0x775616*/
+  v3 = *((unsigned int *)this + 23); /*0x775613*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_WinModemClass;
   if ( v3 != -1 ) /*0x77561f*/
   {
     ((gamemd::Debug *)this)->Log(); /*0x775626*/
-    CloseHandle(*((HANDLE *)Block + 23)); /*0x775632*/
-    *((unsigned int *)Block + 23) = -1; /*0x775638*/
+    CloseHandle(*((HANDLE *)this + 23)); /*0x775632*/
+    *((unsigned int *)this + 23) = -1; /*0x775638*/
   }
-  if ( Block->WinModemClass_field_0x24 ) /*0x77563f*/
-    __3_YAXPAX_Z((void *)Block->WinModemClass_field_0x24); /*0x775647*/
+  if ( this->WinModemClass_field_0x24 ) /*0x77563f*/
+    __3_YAXPAX_Z((void *)this->WinModemClass_field_0x24); /*0x775647*/
   if ( (a2 & 1) != 0 ) /*0x775654*/
-    __3_YAXPAX_Z(Block); /*0x775657*/
-  return Block; /*0x775661*/
+    __3_YAXPAX_Z(this); /*0x775657*/
+  return this; /*0x775661*/
 
 }
 } // namespace gamemd

@@ -1,5 +1,8 @@
 // GENERATED flat e4 class (mechanical, supply_e4_class_decls)
 #pragma once
+#ifndef GAMEMD_E4_FLAT_MouseClass
+#define GAMEMD_E4_FLAT_MouseClass 1  // G57c2: suppress minimal_carriers.hpp twin
+#endif
 
 
 

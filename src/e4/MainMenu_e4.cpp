@@ -64,12 +64,12 @@ long MainMenu_Screen(void * a1, void * a2)
     }
     do /*0x531f04*/
     {
-            if ( (uint8_t)((Dialog *)this)->PumpMessages() )
+            if ( (uint8_t)((Dialog *)self)->PumpMessages() )
         dwNewLong = 7; /*0x531dbb*/
       if ( g_LoadScreenFlag ) /*0x531dca*/
       {
         g_LoadScreenFlag = 0; /*0x531dd0*/
-        Screen::Capture(1, 0, a1, a2); /*0x531dd7*/
+        Screen::Capture( 1, 0, (int)(a1), (int)(a2)); /*0x531dd7*/
         Frame::Present(0, unsigned int a1, unsigned int a2); /*0x531de6*/
       }
       if ( (uint16_t)((EventQueue *)(dword_87F770))->Process() ) /*0x531df1*/
@@ -81,7 +81,7 @@ long MainMenu_Screen(void * a1, void * a2)
           a2 = (void *)((char)v6);
           if ( !isalnum((char)v6) || (unsigned char)a1 == 126 ) /*0x531e33*/
           {
-            memset(byte_A8F7B8, 0, sizeof(byte_A8F7B8, unsigned int a1)); /*0x531f3e*/
+            memset( (void *)(byte_A8F7B8), 0, sizeof(byte_A8F7B8, unsigned int a1)); /*0x531f3e*/
           }
           else
           {
@@ -108,7 +108,7 @@ long MainMenu_Screen(void * a1, void * a2)
             memset((void *)(byte_A8F7B8), 0, sizeof(byte_A8F7B8)); /*0x531ec8*/
             PlayVocClass(1.0, 0); /*0x531edb*/
             g_LoadScreenFlag = 0; /*0x531ee4*/
-            Screen::Capture(1, 0, a1, a2); /*0x531eeb*/
+            Screen::Capture( 1, 0, (int)(a1), (int)(a2)); /*0x531eeb*/
             ((Frame *)(0))->Present(); /*0x531efa*/
           }
         }

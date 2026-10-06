@@ -47,7 +47,7 @@ namespace gamemd {  // G42.18c ns repair
 wchar_t * DeleteCommandClass::Release(void *a1)
 {
 
-  return GetStringCSF((wchar_t *)(aCmndDelete), 0, g_Str_File_Init_CPP, 6559); /*0x537f46*/
+  return GetStringCSF( (wchar_t *)(aCmndDelete), 0, (const char *)(g_Str_File_Init_CPP), 6559); /*0x537f46*/
 
 }
 }  // G42.18c ns repair
@@ -56,7 +56,7 @@ namespace gamemd {  // G42.18c ns repair
 wchar_t * DeleteCommandClass::ddtor(void *a1)
 {
 
-  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 6561); /*0x537f66*/
+  return GetStringCSF( (wchar_t *)(g_Str_TXT_INTERFACE), 0, (const char *)(g_Str_File_Init_CPP), 6561); /*0x537f66*/
 
 }
 }  // G42.18c ns repair
@@ -65,7 +65,7 @@ namespace gamemd {  // G42.18c ns repair
 wchar_t * DeleteCommandClass::Read(void *a1, void *a2)
 {
 
-  return GetStringCSF((wchar_t *)(aCmndDeletedesc), 0, g_Str_File_Init_CPP, 6563); /*0x537f86*/
+  return GetStringCSF( (wchar_t *)(aCmndDeletedesc), 0, (const char *)(g_Str_File_Init_CPP), 6563); /*0x537f86*/
 
 }
 }  // G42.18c ns repair
@@ -326,18 +326,18 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x53c783*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x53c786*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x53c790*/
+  v3 = *(void **)&this->m_1[3]; /*0x53c783*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x53c790*/
   {
     __3_YAXPAX_Z(v3); /*0x53c798*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x53c7a0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x53c7a0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x53c7ab*/
-  Block->m_8 = 0; /*0x53c7b1*/
+  BYTE1(this->m_C) = 0; /*0x53c7ab*/
+  this->m_8 = 0; /*0x53c7b1*/
   if ( (a2 & 1) != 0 ) /*0x53c7b8*/
-    __3_YAXPAX_Z(Block); /*0x53c7bb*/
-  return Block->__pad_0; /*0x53c7c5*/
+    __3_YAXPAX_Z(this); /*0x53c7bb*/
+  return this->__pad_0; /*0x53c7c5*/
 
 }
 } // namespace gamemd
@@ -349,18 +349,18 @@ int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x53c7d3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x53c7d6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x53c7e0*/
+  v3 = *(void **)&this->m_1[3]; /*0x53c7d3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x53c7e0*/
   {
     __3_YAXPAX_Z(v3); /*0x53c7e8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x53c7f0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x53c7f0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x53c7fb*/
-  Block->m_8 = 0; /*0x53c801*/
+  BYTE1(this->m_C) = 0; /*0x53c7fb*/
+  this->m_8 = 0; /*0x53c801*/
   if ( (a2 & 1) != 0 ) /*0x53c808*/
-    __3_YAXPAX_Z(Block); /*0x53c80b*/
-  return Block->__pad_0; /*0x53c815*/
+    __3_YAXPAX_Z(this); /*0x53c80b*/
+  return this->__pad_0; /*0x53c815*/
 
 }
 } // namespace gamemd

@@ -65,18 +65,18 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x724f43*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x724f46*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x724f50*/
+  v3 = *(void **)&this->m_1[3]; /*0x724f43*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x724f50*/
   {
     __3_YAXPAX_Z(v3); /*0x724f58*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x724f60*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x724f60*/
   }
-  BYTE1(Block->m_C) = 0; /*0x724f6b*/
-  Block->m_8 = 0; /*0x724f71*/
+  BYTE1(this->m_C) = 0; /*0x724f6b*/
+  this->m_8 = 0; /*0x724f71*/
   if ( (a2 & 1) != 0 ) /*0x724f78*/
-    __3_YAXPAX_Z(Block); /*0x724f7b*/
-  return Block->__pad_0; /*0x724f85*/
+    __3_YAXPAX_Z(this); /*0x724f7b*/
+  return this->__pad_0; /*0x724f85*/
 
 }
 } // namespace gamemd

@@ -6,6 +6,11 @@
 #include "core/globals_core.hpp"
 #include "core/globals_core.hpp"
 #include "e4/e4_globals_decls.hpp"
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    int UpdateSurfaceAnimations(int a1, int a2, int a3, int a4);  // raw 0x53988c;
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 namespace gamemd
 {
@@ -269,3 +274,4 @@ void ScenarioClass::RecalcLighting(int r, int g, int b, uint32_t unk)
 
 } // namespace gamemd
 }  // L-fix: close namespace tail 1
+}

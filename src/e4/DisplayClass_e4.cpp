@@ -113,10 +113,10 @@ int DisplayClass::LoadTypeData()
   unsigned int v6[4]; // [esp+4h] [ebp-20h] BYREF
   int v7[4]; // [esp+14h] [ebp-10h] BYREF
 
-  MapClass::Destru_vt05((MapClass *)this); /*0x4a8856*/
+  ((MapClass *)(MapClass *)this)->Destru_vt05(); /*0x4a8856*/
   stru_8A0390.health = SearchMIXFile((char *)(aPlaceShp), 0); /*0x4a886e*/
-  dword_8A072C = SearchMIXFile(aShadowShp, 0); /*0x4a887c*/
-  Viewport = Display::GetViewport(v7); /*0x4a8881*/
+  dword_8A072C = (unsigned int)SearchMIXFile(aShadowShp, 0); /*0x4a887c*/
+  Viewport = ((Display *)v7)->GetViewport(); /*0x4a8881*/
   v6[0] = *Viewport; /*0x4a8888*/
   v6[1] = Viewport[1]; /*0x4a888f*/
   v6[2] = Viewport[2]; /*0x4a8896*/
@@ -657,13 +657,13 @@ void * DisplayClass::Draw(int a2)
   }
   v3 = (int)((void *)(DSurface_ViewBounds.field_0)); /*0x4ae524*/
   v4 = (void *)(DSurface_ViewBounds.field_4); /*0x4ae531*/
-  v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_D0)( /*0x4ae538*/
+  v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_D0))(  /*0x4ae538*/
                    stru_887598.lineTrailer,
                    v18);
   v6 = v5[1]; /*0x4ae54a*/
   v17[0] = *v5 - v3; /*0x4ae54d*/
   v17[1] = v6 - (unsigned int)v4; /*0x4ae557*/
-  Tactical::MouseOver((gamemd::MouseClass *)(v17),(gamemd::MouseClass *)(v16),(gamemd::MouseClass *)(v19), &v15, &v14[3], (bool *)&a2); /*0x4ae571*/
+  Tactical::MouseOver( (gamemd::MouseClass *)(v17), (gamemd::MouseClass *)(v16), (gamemd::MouseClass *)(v19), (MouseClass *)(&v15), (MouseClass *)(&v14[3]), (MouseClass *)((bool *)&a2)); /*0x4ae571*/
   if ( LOBYTE(stru_A8EB00.__pad_CD4[1]) ) /*0x4ae57e*/
   {
     swprintf(&word_8A0630, (const size_t)aDD_2, (const wchar_t *const)(v19[0] / 256), v19[1] / 256); /*0x4ae5ac*/
@@ -800,7 +800,7 @@ int DisplayClass::checkScreenBounds(int a2)
 
   int v3; // edi
 
-  v3 = (*(int (**)(int))(*(unsigned int *)&a2->q_2E0)(a2); /*0x5f6234*/
+  v3 = (*(int (**)(int))(*(unsigned int *)&a2->q_2E0))(a2);  /*0x5f6234*/
   return (*((int (**)(DisplayClass *))this->DisplayClass_field_0x0 + 46))(this) > v3; /*0x5f623e*/
 
 }
@@ -937,7 +937,7 @@ int DisplayClass::ReadFromBuffer(void * a1, signed int Size)
         v7 = v8; /*0x7ba502*/
     }
     if ( v7 > 0 ) /*0x7ba506*/
-      memcpy(a1, (const void *)(v5 + *((unsigned int *)this + 6)), v7); /*0x7ba510*/
+      memcpy( (void *)(a1), (const void *)(v5 + *((unsigned int *)this + 6)), v7); /*0x7ba510*/
     *((unsigned int *)this + 6) += v7; /*0x7ba51d*/
     return v7; /*0x7ba520*/
   }
@@ -950,7 +950,7 @@ namespace gamemd {
 void DisplayClass::Update(PowerClass * aP1, int a3, void *a3_2, void *a4)
 {
 
-  VectorCursor_uint_DynamicVectorClass_uint____13::Count((int *)this, aP1, a3); /*0x4a970a*/
+  ((VectorCursor_uint_DynamicVectorClass_uint____13 *)(int *)this)->Count( aP1, a3); /*0x4a970a*/
 
 }
 } // namespace gamemd
@@ -961,7 +961,7 @@ bool DisplayClass::SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3)
 
   int result; // eax
 
-  result = *aP1; /*0x4a9848*/
+  result = *(unsigned int *)aP1;
   if ( *aP1 ) /*0x4a9848*/
   {
     if ( !a3 ) /*0x4a9859*/
@@ -1008,8 +1008,8 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
   }
   else
   {
-    (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 44))(dword_887640); /*0x4aac52*/
-    (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 48))(dword_887640); /*0x4aac5d*/
+    (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 44))( (MouseClass *)(dword_887640)); /*0x4aac52*/
+    (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 48))( (MouseClass *)(dword_887640)); /*0x4aac5d*/
     v6 = (int *)(*(int (**)(MouseClass *, unsigned int *))(dword_887640->MouseClass_field_0x0 + 52))( /*0x4aac6d*/
                   dword_887640,
                   v11);
@@ -1019,7 +1019,7 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
   TacticalClass::TransformPixel((TacticalClass *)g_TacticalClass_Instance, v11, &v12); /*0x4aac8d*/
   v12 -= DSurface_ViewBounds.field_0; /*0x4aaca3*/
   v13 = (HWND)((char *)v13 - dword_886FA4); /*0x4aacb1*/
-  Tactical::MouseOver((gamemd::MouseClass *)(&v12), v9, v14, &v10, &v8[1], &a2); /*0x4aacd4*/
+  Tactical::MouseOver( (gamemd::MouseClass *)(&v12), v9, v14, (MouseClass *)(&v10), (MouseClass *)(&v8[1]), (MouseClass *)(&a2)); /*0x4aacd4*/
   if ( *(unsigned int *)v9 != dword_88095C ) /*0x4aace5*/
     ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove(v11,(unsigned int *)(v9)); /*0x4aad04*/
   return ((COMObject *)((GadgetClass *)this))->ActivateThunk(0, a3, 0); /*0x4aad19*/
@@ -1073,7 +1073,7 @@ int DisplayClass::GetSurface(unsigned int * a1)
   v1 = (gamemd::LayerClass *)(&stru_8A0360); /*0x4ae726*/
   do /*0x4ae740*/
   {
-    result = LayerClass::Save(v1, a1); /*0x4ae72e*/
+    result = ((LayerClass *)v1)->Save( a1); /*0x4ae72e*/
     if ( result < 0 ) /*0x4ae735*/
       break; /*0x4ae735*/
     v1 += 2; /*0x4ae737*/
@@ -1094,7 +1094,7 @@ unsigned int * DisplayClass::loc_4AEB50(MouseClass * aP1)
   *((unsigned int *)this + 1128) = (unsigned int)(aP1); /*0x4aeb36*/
   LOBYTE(result) = aP1 != 0; /*0x4aeb3c*/
   *((unsigned char *)this + 4508) = aP1 != 0; /*0x4aeb3f*/
-  return result; /*0x4aeb45*/
+  return (unsigned int *)result; /*0x4aeb45*/
 
 }
 } // namespace gamemd
@@ -1116,10 +1116,10 @@ namespace gamemd {
 DisplayClass * DisplayClass::Read(char * Block, char a2)
 {
 
-  ((MapClass*)(char *)Block)->Destruct(); /*0x4aebf3*/
+  ((MapClass*)(char *)this)->Destruct(); /*0x4aebf3*/
   if ( (a2 & 1) != 0 ) /*0x4aebfd*/
-    __3_YAXPAX_Z(Block); /*0x4aec00*/
-  return (char *)Block; /*0x4aec0a*/
+    __3_YAXPAX_Z(this); /*0x4aec00*/
+  return (char *)this; /*0x4aec0a*/
 
 }
 } // namespace gamemd
@@ -1129,7 +1129,7 @@ int * DisplayClass::processDisplayMode(char a2)
 {
 
   ((Vector *)((int)((unsigned int *)this + 1)))->Clear(); /*0x4aec36*/
-  Straw::Dtor((Straw *)this); /*0x4aec3d*/
+  Straw::Dtor( (void *a1 =)((Straw *)this)); /*0x4aec3d*/
   if ( (a2 & 1) != 0 ) /*0x4aec47*/
     __3_YAXPAX_Z(this); /*0x4aec4a*/
   return (int *)this->vtable1; /*0x4aec54*/

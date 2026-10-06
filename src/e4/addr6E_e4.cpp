@@ -140,9 +140,9 @@ char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
               v8 = (unsigned int *)v7[13]; /*0x6e209b*/
               if ( v8 ) /*0x6e20a0*/
               {
-                if ( LinkedList::Contains(v8, v4) ) /*0x6e20a3*/
+                if ( LinkedList::Contains( v8, (IUnknown)(v4)) ) /*0x6e20a3*/
                 {
-                  v9 = (void *)((int)((void *)(*v7)));
+                  v9 = (void *)((int)((*v7)));
                   a3 = (void *)(v7[27]);
                   (*(void (**)(int *, int *, unsigned int, int, unsigned int, int, unsigned int, unsigned int))((unsigned int)(v9)+ 364))( /*0x6e20d2*/
                     v7,
@@ -171,11 +171,11 @@ char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
   if ( *(unsigned int *)a4 != dword_B0E680 ) /*0x6e2100*/
   {
     v11 = 3; /*0x6e2119*/
-    if ( !CellClass::SetTerrainType(&dword_87F7E8, a4) ) /*0x6e211e*/
+    if ( !((CellClass *)&dword_87F7E8)->SetTerrainType( a4) ) /*0x6e211e*/
     {
       do /*0x6e213b*/
         v12 = v11--; /*0x6e2127*/
-      while ( v12 > 0 && !CellClass::SetTerrainType(&dword_87F7E8, v10) ); /*0x6e213b*/
+      while ( v12 > 0 && !((CellClass *)&dword_87F7E8)->SetTerrainType( v10) ); /*0x6e213b*/
     }
     v13 = *v10 << 8; /*0x6e2147*/
     v17[1] = (v10[1] << 8) + 128; /*0x6e2157*/
@@ -201,7 +201,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   GroundHeight = 0; /*0x6e27af*/
   v8[1] = (v6[1] << 8) + 128; /*0x6e27d0*/
   v8[0] = (v6[0] << 8) + 128; /*0x6e27da*/
-  GroundHeight = Cell::GetGroundHeight((unsigned int *)(v8)); /*0x6e27e3*/
+  GroundHeight = Cell::GetGroundHeight( (unsigned int *)(v8)); /*0x6e27e3*/
   if ( (*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v6) + 80) & 0x100) != 0 /*0x6e2819*/
     || (*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v6) + 80) & 0x400) != 0 )
   {
@@ -257,7 +257,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   GroundHeight = 0; /*0x6e339f*/
   v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
   v8 = ((int16_t)v7 << 8) + 128; /*0x6e33ca*/
-  GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v8)); /*0x6e33d5*/
+  GroundHeight = Cell::GetGroundHeight( (unsigned int *)(&v8)); /*0x6e33d5*/
   v5 = (unsigned int *)(__2_YAPAXI_Z(0x14u)); /*0x6e33d9*/
   if ( v5 ) /*0x6e33e3*/
     ((ActionQueue *)(v5))->PushEntry(v8, v9, GroundHeight); /*0x6e3400*/
@@ -479,7 +479,7 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
     else
     {
       v9 = aP2; /*0x6eec3e*/
-      if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(aP2 + 540), v8) /*0x6eec62*/
+      if ( (uint8_t)(((HouseClass *)(*(void **)(aP2 + 540)))->IsAlliedWith(v8)) /*0x6eec62*/
         && !*(unsigned char *)(*(unsigned int *)(v7[135] + 52) + 422) )
       {
         goto LABEL_19; /*0x6eec62*/
@@ -725,7 +725,7 @@ char E4Recv_6E0080::sub_6E0080(int a2, int a3, int a4, int a5)
     v8 = (unsigned char *)*((unsigned int *)dword_A8020C + v6); /*0x6e00b5*/
     if ( v8[144] ) /*0x6e00b8*/
     {
-      v9 = (unsigned short *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)v8 + 440))(v8, &v11); /*0x6e00cb*/
+      v9 = (unsigned short *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)v8 + 440))( v8, (int *)(&v11)); /*0x6e00cb*/
       if ( *v9 == (unsigned short)v5 && v9[1] == v7 ) /*0x6e00da*/
         (*(void (**)(unsigned char *))(*(unsigned int *)v8 + 248))(v8); /*0x6e00e0*/
     }
@@ -837,7 +837,7 @@ char E4Recv_6E1180::sub_6E1180(int a2, int a3, int a4, int a5)
   int v7; // [esp+4h] [ebp-4h] BYREF
 
   v6 = *((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location(&v7, *(unsigned int *)&this->isAliveFlag); /*0x6e11a6*/
-  MapClass::TriggerEVA((int16_t *)&v6); /*0x6e11aa*/
+  MapClass::TriggerEVA( (IUnknown *)((int16_t *)&v6)); /*0x6e11aa*/
   return 1; /*0x6e11b1*/
 
 }
@@ -895,7 +895,7 @@ namespace gamemd {
 char globalHelper_0E2C20(int a1, int a2, int a3, IUnknown * aP3)
 {
   LayerClass::ClearFactoryCellAssignments(&dword_87F7E8); /*0x6e2c25*/
-  MapClass::MarkForRedraw(&dword_87F7E8, 1); /*0x6e2c31*/
+  MapClass::MarkForRedraw( (int)(&dword_87F7E8), 1); /*0x6e2c31*/
   return 1; /*0x6e2c38*/
 }
 } // namespace gamemd
@@ -915,7 +915,7 @@ char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
   GroundHeight = 0; /*0x6e360f*/
   v9 = (v6[1] << 8) + 128; /*0x6e3630*/
   v8 = (v6[0] << 8) + 128; /*0x6e363a*/
-  GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e3643*/
+  GroundHeight = Cell::GetGroundHeight( &v8); /*0x6e3643*/
   if ( (*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v6) + 80) & 0x100) != 0 ) /*0x6e365f*/
     GroundHeight += dword_B0E6D4; /*0x6e366d*/
   LOWORD(v7) = v8 / 256; /*0x6e3681*/
@@ -989,18 +989,18 @@ unsigned int * Tactical_42::loc_6E4B00(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x6e4ab3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6e4ab6*/
-  if ( v3 && BYTE1(Block->m_C) ) /*0x6e4ac0*/
+  v3 = *(void **)&this->m_1[3]; /*0x6e4ab3*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->m_C) ) /*0x6e4ac0*/
   {
     __3_YAXPAX_Z(v3); /*0x6e4ac8*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x6e4ad0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6e4ad0*/
   }
-  BYTE1(Block->m_C) = 0; /*0x6e4adb*/
-  Block->m_8 = 0; /*0x6e4ae1*/
+  BYTE1(this->m_C) = 0; /*0x6e4adb*/
+  this->m_8 = 0; /*0x6e4ae1*/
   if ( (a2 & 1) != 0 ) /*0x6e4ae8*/
-    __3_YAXPAX_Z(Block); /*0x6e4aeb*/
-  return Block->__pad_0; /*0x6e4af5*/
+    __3_YAXPAX_Z(this); /*0x6e4aeb*/
+  return this->__pad_0; /*0x6e4af5*/
 
 }
 } // namespace gamemd
@@ -1984,7 +1984,7 @@ void E4Recv_6EDF10::sub_6EDF10(int a2, int a3)
     LOWORD(v6) = *v5 / 256; /*0x6edf3a*/
     HIWORD(v6) = v5[1] / 256; /*0x6edf53*/
     v7 = v6; /*0x6edf60*/
-    MapClass::TriggerEVA((int16_t *)&v7); /*0x6edf65*/
+    MapClass::TriggerEVA( (IUnknown *)((int16_t *)&v7)); /*0x6edf65*/
   }
   this->needsRedraw = 1; /*0x6edf74*/
 

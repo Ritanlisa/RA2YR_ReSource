@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_Struct 1  // G57b: e4 flat-carrier opt-in (suppress core/aux twin)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Struct_e4.hpp"
@@ -131,7 +132,7 @@ namespace gamemd {
 int Struct::ZeroInitAndSetup_0()
 {
 
-  return Struct::ZeroInitAndSetup((ConnectionClass *)this);
+  return Struct::ZeroInitAndSetup( (void)((ConnectionClass *)this));
 
 }
 }
@@ -140,7 +141,7 @@ namespace gamemd {
 int Struct::ZeroInitAndSetup_0_0()
 {
 
-  return Struct::ZeroInitAndSetup((ConnectionClass *)this);
+  return Struct::ZeroInitAndSetup( (void)((ConnectionClass *)this));
 
 }
 }

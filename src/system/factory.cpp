@@ -81,3 +81,4 @@ bool * FactoryClass::AbandonProduction()
     --dword_A8E7AC; /*0x4ca109*/
     return 1; /*0x4ca108*/
 }
+}

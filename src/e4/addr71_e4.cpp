@@ -126,7 +126,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
         v19 = (*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718b23*/
         v20 = this->vtable3; /*0x718b2f*/
         *(unsigned int *)v23 = *(unsigned int *)(v19 + 160); /*0x718b32*/
-        LOBYTE(v12) = (*(char (**)(int, int16_t *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)&v20->q5B0)( /*0x718b53*/
+        LOBYTE(v12) = (*(char (**)(int, int16_t *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)&v20->q5B0))(  /*0x718b53*/
                         v20,
                         v23,
                         0,

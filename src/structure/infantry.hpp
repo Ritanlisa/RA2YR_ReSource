@@ -47,7 +47,7 @@ public:
     bool CanInitiateDeploy();  // 0x521B60
     bool CanDeployAtCell();  // 0x5221D0
     bool CheckDeployPath();  // 0x521EB0
-    int CreateDeployLocomotor();  // 0x522FE0
+    int CreateDeployLocomotor(int a2, int a3, int a4);  // 0x522FE0
     bool StartBombDeploy();  // 0x522C00
     bool IsBombDeployMission();  // 0x5228D0
     int DeployAnimation();  // 0x514310

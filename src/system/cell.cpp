@@ -25,7 +25,6 @@ using ra2::game::AbstractClass;
 #include <cstring>
 #include <limits>
 #include "e4/e4_globals_decls.hpp"
-#include "e4/classes/COMObject_e4.hpp"
 #include "e4/classes/Isometric_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Object_e4.hpp"

@@ -55,7 +55,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   *((unsigned int *)this + 13) = 0; /*0x41d874*/
   v4 = *(unsigned int *)(v3 + 3576); /*0x41d881*/
   v17 = *(unsigned int *)(*(unsigned int *)((unsigned int *)dword_8871E0)[0] + 3576); /*0x41d895*/
-  if ( Audio::IsLoud((float *)(*((unsigned int *)this + 19) + 336)) ) /*0x41d8a2*/
+  if ( Audio::IsLoud((*((unsigned int *)this + 19) + 336)) ) /*0x41d8a2*/
   {
     v5 = *((unsigned int *)this + 10); /*0x41d8ae*/
     v4 = *(unsigned int *)(*((unsigned int *)this + 22) + 3576); /*0x41d8b1*/
@@ -64,7 +64,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   {
     v5 = *((unsigned int *)this + 9); /*0x41d8b9*/
   }
-  v7 = (unsigned int *)((int)((unsigned int *)(*(int (**)(int *, unsigned int *))(*a2 + 72))(a2, v18)));
+  v7 = (unsigned int *)((int)((*(int (**)(int *, unsigned int *))(*a2 + 72))( (int *)(a2), v18)));
   LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
   HIWORD(v19) = v7[1] / 256; /*0x41d8f5*/
   v16 = v19; /*0x41d902*/
@@ -89,12 +89,12 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
     *((unsigned int *)this + 20) = (unsigned int)(a2); /*0x41d972*/
     if ( a2 ) /*0x41d975*/
     {
-      result = (*(int (**)(int *))(*a2 + 44))(a2); /*0x41d97f*/
+      result = (*(int (**)(int *))(*a2 + 44))( (int *)(a2)); /*0x41d97f*/
       if ( result == 6 ) /*0x41d985*/
       {
         v12 = (int)(*a2);
         a2[165] = (int)(this);
-        (*(void (**)(int *, int))(v12 + 348))(a2, 100000); /*0x41d99a*/
+        (*(void (**)(int *, int))(v12 + 348))( (int *)(a2), 100000); /*0x41d99a*/
         *((unsigned char *)a2 + 1784) = *((unsigned char *)&((unsigned int *)&((unsigned int *)(dword_8871E0))[1])[12] + 2 * ((unsigned int *)&(&dword_8871E0)[1])[10] + ((unsigned int *)&(&dword_8871E0)[1])[10]); /*0x41d9b8*/
         *((unsigned char *)a2 + 1785) = *((unsigned char *)&((unsigned int *)&((unsigned int *)(dword_8871E0))[1])[12] + 2 * ((unsigned int *)&(&dword_8871E0)[1])[10] /*0x41d9d5*/
                                                                   + ((unsigned int *)&(&dword_8871E0)[1])[10]
@@ -104,7 +104,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
                                                                   + ((unsigned int *)&(&dword_8871E0)[1])[10]
                                                                   + 2);
         a2[447] = 1; /*0x41d9fb*/
-        return (*(int (**)(int *, int))(v13 + 292))(a2, 2); /*0x41da05*/
+        return (*(int (**)(int *, int))(v13 + 292))( (int *)(a2), 2); /*0x41da05*/
       }
     }
   }
@@ -256,7 +256,7 @@ void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd6a*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41dd71*/
   v5 = (gamemd::AirstrikeClass *)(this); /*0x41dd7f*/
-  v3 = ((int *)(*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16)))(&dword_889FB8, &v5); 
+  v3 = ((*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16)))( (int *)(&dword_889FB8), (AirstrikeClass **)(&v5)); 
   if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/
   {
     do /*0x41ddb6*/
@@ -415,12 +415,12 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
 
   int Prefix_0; // edi
 
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); 
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(aP0), (gamemd::AbstractClass *)(aP1)); 
   if ( Prefix_0 >= 0 ) /*0x41d705*/
   {
     if ( aP0 ) /*0x41d709*/
     {
-      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x41d712*/
+      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x41d712*/
       aP0->vtable1 = &vt_AirstrikeClass; /*0x41d717*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d71d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d724*/
@@ -473,8 +473,8 @@ char AirstrikeClass::StartMission(int * a2)
   result = (char)a2; /*0x41d835*/
   if ( !*((unsigned char *)this + 60) ) /*0x41d830*/
     return AirstrikeClass::SpawnAircraft(a2) ; /*0x41d83c*/
-  if ( a2 != *(int **)((char *)a1 + 80) ) /*0x41d847*/
-    return A    return AirstrikeClass::ReassignTarget(a1,(void *)((int)a2)); 
+  if ( a2 != *(int **)((char *)this + 80) ) /*0x41d847*/
+    return A    return AirstrikeClass::ReassignTarget( a1, (void)((void *)((int)a2))); 
   return result; /*0x41d841*/
 
 }

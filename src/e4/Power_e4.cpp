@@ -87,21 +87,21 @@ unsigned int * Power::UpdateAll()
   v53 = 0; /*0x67c6f2*/
   v54 = 0; /*0x67c6fa*/
   v55 = 0; /*0x67c702*/
-  Power::ComputeHousePowerChecksum((unsigned int *)((int)dword_A8B230), (unsigned int *)&v53); /*0x67c70a*/
+  Power::ComputeHousePowerChecksum( (unsigned int *)((int)dword_A8B230), (void)((unsigned int *)&v53)); /*0x67c70a*/
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x67c718*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C9C + i) + 52))(*((unsigned int *)dword_A83C9C + i), &v53); /*0x67c72a*/
+    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C9C + i) + 52))( *((unsigned int *)dword_A83C9C + i), (int *)(&v53)); /*0x67c72a*/
   for ( j = 0; j < ((char *)&stru_A80220); ++j ) /*0x67c740*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)((char *)&stru_A80220) + j) + 52))( /*0x67c752*/
       *((unsigned int *)((char *)&stru_A80220) + j),
       &v53);
   for ( k = 0; k < dword_A83CF0; ++k ) /*0x67c768*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83CE4 + k) + 52))(*((unsigned int *)dword_A83CE4 + k), &v53); /*0x67c77a*/
+    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83CE4 + k) + 52))( *((unsigned int *)dword_A83CE4 + k), (int *)(&v53)); /*0x67c77a*/
   for ( m = 0; m < *((unsigned int *)((char *)&FootClass_Array + 2)); ++m ) /*0x67c790*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(((char *)&FootClass_Array) + 4 * m) + 52))( /*0x67c7a2*/
       *(unsigned int *)(((char *)&FootClass_Array) + 4 * m),
       &v53);
   for ( n = 0; n < dword_A8E358; ++n ) /*0x67c7b8*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E34C + n) + 52))(*((unsigned int *)dword_A8E34C + n), &v53); /*0x67c7ca*/
+    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E34C + n) + 52))( *((unsigned int *)dword_A8E34C + n), (int *)(&v53)); /*0x67c7ca*/
   for ( ii = 0; ii < *(int *)&stru_A83D50.__pad_80[40]; ++ii ) /*0x67c7e0*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * ii) + 52))( /*0x67c7f2*/
       *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * ii),
@@ -510,7 +510,7 @@ int Power::FlagProcess(int Power_field_0x8, int a2, int a1)
 
 // 0x4A1D50
 namespace gamemd {
-int Power::TimerProcess(int a1, int a2)
+int ((Power *)this)->TimerProcess( int a2)
 {
 
   return Checksummer::Add_Buffer(&a1, 4); /*0x4a1d64*/

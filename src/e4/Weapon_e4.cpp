@@ -76,7 +76,7 @@ bool Weapon_Update(void * a1, void * a2)
     {
       do /*0x659e01*/
       {
-        updated = (void *)(Weapon_Update_Update_659FF0(v3));
+        updated = (unsigned int)(void *)(Weapon_Update_Update_659FF0(v3));
         IDA_LOWORD(a2) = (uint8_t)(*(unsigned char *)(v3 + 194) >> g_BitMask_Red); /*0x659d13*/
         IDA_LOWORD(updated) = (uint8_t)(*(unsigned char *)(v3 + 193) >> g_BitMask_Blue); /*0x659d28*/
         IDA_LODWORD(updated) = (unsigned int)updated << g_BitMask_Green; /*0x659d30*/
@@ -175,7 +175,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   Color v74[3]; // [esp+D0h] [ebp-Ch] BYREF
 
   v64 = this; /*0x70c6a0*/
-  v5 = (int *)(*(int (**)(int *, float *))(*aP3 + 72))(aP3, &v68); /*0x70c6b2*/
+  v5 = (int *)(*(int (**)(int *, float *))(*aP3 + 72))( (int *)(aP3), (float *)(&v68)); /*0x70c6b2*/
   v55 = *v5; /*0x70c6ba*/
   v56 = v5[1]; /*0x70c6c4*/
   _ECX = aP2; /*0x70c6c8*/
@@ -225,8 +225,8 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
     fsub [esp+0C8h+var_48]
     fstp [esp+0C8h+var_88]
   }
-  ObjectVector::Construct(&v43, 0, 0); /*0x70c777*/
-  *(unsigned int *)v43.__pad_0 = &vt_DynamicVectorClass; /*0x70c77c*/
+  ((ObjectVector *)&v43)->Construct( 0, 0); /*0x70c777*/
+  *(unsigned int *)v43.__pad_0 = (unsigned int)&vt_DynamicVectorClass;
   v43.ObjectVector_field_0x14 = 10; /*0x70c784*/
   v43.ObjectVector_field_0x10 = 0; /*0x70c78c*/
   v42 = 0; /*0x70c790*/
@@ -238,7 +238,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
       fmul ds:flt_7F4E88
       fstp [esp+0C4h+var_C4]; float
     }
-    v12 = Color::RGBFromFloat(v74, (int)&v55, v39); /*0x70c7b0*/
+    v12 = ((Color *)v74)->RGBFromFloat( (int)&v55, v39); /*0x70c7b0*/
     v49 = *v12; /*0x70c7b9*/
     v50 = v12[1]; /*0x70c7c0*/
     v51 = v12[2]; /*0x70c7c7*/
@@ -397,7 +397,7 @@ LABEL_24:
 LABEL_31:
         v14 = *(unsigned int *)(v14 + 48); /*0x70ca59*/
       }
-      GroundHeight = Cell::GetGroundHeight(&v49); /*0x70ca6e*/
+      GroundHeight = Cell::GetGroundHeight( &v49); /*0x70ca6e*/
       if ( GroundHeight > v51 ) /*0x70ca77*/
         break; /*0x70ca77*/
     }
@@ -460,7 +460,7 @@ LABEL_55:
         }
         while ( v33 < v43.ObjectVector_field_0x10 ); /*0x70cbf5*/
       }
-      if ( (*(int (**)(int *))(*aP3 + 44))(aP3) == 11 ) /*0x70cc01*/
+      if ( (*(int (**)(int *))(*aP3 + 44))( (int *)(aP3)) == 11 ) /*0x70cc01*/
       {
         if ( (uint8_t)((CellClass *)((CellClass *)aP3))->IsActiveOrNext() ) /*0x70cc05*/
         {
@@ -470,7 +470,7 @@ LABEL_55:
         }
       }
       v36 = v56; /*0x70cc45*/
-      *(unsigned int *)v43.__pad_0 = &vt_VectorClass; /*0x70cc4b*/
+      *(unsigned int *)v43.__pad_0 = (unsigned int)&vt_VectorClass;
       *a1 = v55; /*0x70cc53*/
       v37 = v57; /*0x70cc55*/
       a1[1] = v36; /*0x70cc59*/
@@ -494,12 +494,12 @@ LABEL_55:
     }
   }
   v30 = v50; /*0x70cb37*/
-  *(unsigned int *)v43.__pad_0 = &vt_VectorClass; /*0x70cb3d*/
+  *(unsigned int *)v43.__pad_0 = (unsigned int)&vt_VectorClass;
   *a1 = v49; /*0x70cb45*/
   v31 = v51; /*0x70cb47*/
   a1[1] = v30; /*0x70cb4b*/
   a1[2] = v31; /*0x70cb4e*/
-  ObjectVector::ddtor((_VectorClass_PAVObjectClass *)&v43); /*0x70cb55*/
+  ObjectVector::ddtor( (_VectorClass_PAVObjectClass *)&v43); /*0x70cb55*/
   return a1; /*0x70cb5c*/
 
 }

@@ -152,14 +152,14 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
     v75 = (int *)(v9[39]);
     v76 = (int *)(v9[40]);
     v77 = (int *)(v9[41]);
-    (*(void (**))(*v9 + 244))(&v75); /*0x718bcf*/
+    (*(void (**)(void *))(*v9 + 244))( (void *)(&v75)); /*0x718bcf*/
   }
   else
   {
     (*(void (**)(unsigned int *))(*(unsigned int *)v6[3] + 244))(v6 + 10); /*0x718ba5*/
   }
-  v73[0] = (unsigned int)((void *)(*(unsigned int *)aP0->__pad_0));
-  v11 = (void *)((int)((void *)(*(unsigned int *)aP0->__pad_0)));
+  v73[0] = (unsigned int)((*(unsigned int *)aP0->__pad_0));
+  v11 = (void *)((int)((*(unsigned int *)aP0->__pad_0)));
   v73[1] = (unsigned int)((void *)(aP0->field_4));
   v74 = (void *)(aP0->field_8);
   if ( v11 == ((char *)&g_BuildingLoadQueue_Array) /*0x718c13*/
@@ -196,7 +196,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
         *(unsigned int *)v71 = *(unsigned int *)(v6[3] + 1444); /*0x718cf4*/
         if ( *(unsigned int *)v71 ) /*0x718cf8*/
         {
-          if ( (*(int (**)(unsigned int))(*v71->fallRate)(*(unsigned int *)v71) == 1 ) /*0x718d02*/
+          if ( (*(int (**)(unsigned int))(*v71->fallRate))(*(unsigned int *)v71) == 1 ) /*0x718d02*/
           {
             v15 = *(unsigned int *)aP0->__pad_0; /*0x718d13*/
             v70 = (int)aP0->field_4 / 256; /*0x718d28*/
@@ -229,7 +229,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
           }
         }
       }
-      v77 = (int *)((gamemd::CellClass *)((int *)(*v8)));
+      v77 = (int *)((gamemd::CellClass *)((*v8)));
       v78 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(v6[11])));
       a5 = (gamemd::CellClass *)(a5);
       v79 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(v6[12])));
@@ -263,7 +263,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
           if ( (v29[20] & 2) != 0 ) /*0x718f10*/
           {
             v30 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(*(unsigned int *)((*(int (**)(unsigned int *))(*v28 + 132))(v28) + 1460))));
-            v31 = (unsigned int *)((gamemd::CellClass *)((unsigned int *)(*(int (**)(unsigned char *, int *, unsigned int))(*(unsigned int *)v29 + 76))(v29, (int *)&v78, 0)));
+            v31 = (unsigned int *)((gamemd::CellClass *)((*(int (**)(unsigned char *, int *, unsigned int))(*(unsigned int *)v29 + 76))(v29, (int *)&v78, 0)));
             *(unsigned short *)v67 = *v31 / 256; /*0x718f45*/
             v32 = v6[3]; /*0x718f54*/
             *(unsigned short *)&v67[2] = v31[1] / 256; /*0x718f5c*/
@@ -386,7 +386,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
     v75 = v56[39]; /*0x719295*/
     v76 = v56[40]; /*0x71929c*/
     v77 = v56[41]; /*0x7192a3*/
-    (*(void (**)(unsigned int *, int *))(*v56 + 240))(v56, &v75); /*0x7192ae*/
+    (*(void (**)(unsigned int *, int *))(*v56 + 240))( v56, (int *)(&v75)); /*0x7192ae*/
     return 0; /*0x7192b5*/
   }
   else
@@ -410,7 +410,7 @@ int Factory::FindExitCellByName()
   v2 = 0; /*0x523cbd*/
   if ( dword_A8E358 <= 0 ) /*0x523cc1*/
     return -1; /*0x523ce6*/
-  while ( _strcmpi((char *)(*((unsigned int *)dword_A8E34C + v2) + 36), this->__pad_0) ) /*0x523cda*/
+  while ( _strcmpi((*((unsigned int *)dword_A8E34C + v2) + 36), this->__pad_0) ) /*0x523cda*/
   {
     if ( ++v2 >= dword_A8E358 ) /*0x523ce4*/
       return -1; /*0x523ce4*/

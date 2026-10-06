@@ -39,7 +39,7 @@ int ColorListClass::Clear(unsigned int a2)
   else
   {
     *((unsigned int *)this + 91) = a2; /*0x557f4c*/
-    (*(void (**))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x557f56*/
+    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x557f56*/
     if ( *((unsigned int *)this + 91) < *((unsigned int *)this + 92) ) /*0x557f67*/
       (*(void (**)(ListClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 192))((ListClass *)this, *((unsigned int *)this + 91)); /*0x557f6e*/
     v4 = *((unsigned int *)this + 20); /*0x557f74*/
@@ -89,11 +89,11 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
   char *v4; // esi
   void *v5; // eax
 
-  v3 = *((unsigned int *)Block + 93); /*0x488f05*/
-  v4 = (char *)Block + 372; /*0x488f0b*/
-  *(unsigned int *)Block->__pad_0 = &vt_ColorListClass; /*0x488f13*/
-  (*(void (**)(char *))(v3 + 12))((char *)Block + 372); /*0x488f19*/
-  *((unsigned int *)Block + 100) = 0; /*0x488f1e*/
+  v3 = *((unsigned int *)this + 93); /*0x488f05*/
+  v4 = (char *)this + 372; /*0x488f0b*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ColorListClass;
+  (*(void (**)(char *))(v3 + 12))((char *)this + 372); /*0x488f19*/
+  *((unsigned int *)this + 100) = 0; /*0x488f1e*/
   v5 = (void *)*((unsigned int *)v4 + 1); /*0x488f24*/
   *(unsigned int *)v4 = (unsigned int)(&vt_VectorClass); /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/
@@ -103,10 +103,10 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
   }
   v4[13] = 0; /*0x488f44*/
   *((unsigned int *)v4 + 2) = 0; /*0x488f47*/
-  ((ListClass *)((ListClass *)Block))->Destruct(); /*0x488f4a*/
+  ((ListClass *)((ListClass *)this))->Destruct(); /*0x488f4a*/
   if ( (a2 & 1) != 0 ) /*0x488f54*/
-    __3_YAXPAX_Z(Block); /*0x488f57*/
-  return Block->__pad_0; /*0x488f61*/
+    __3_YAXPAX_Z(this); /*0x488f57*/
+  return this->__pad_0; /*0x488f61*/
 
 }
 } // namespace gamemd

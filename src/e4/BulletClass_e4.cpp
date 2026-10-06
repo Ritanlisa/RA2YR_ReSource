@@ -113,7 +113,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
   this->BulletClass_field_0xB0 = 0; /*0x4665f3*/
   this->BulletClass_field_0x154 = 0; /*0x4665fd*/
   v5 = this; /*0x466617*/
-  v3 = (*(int (**)(unsigned char *, BulletClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 348) + 16))((unsigned char *)&(unsigned int *)((char *)&stru_A8EB00 + 348), &v5); /*0x46661b*/
+  v3 = (*(int (**)(unsigned char *, BulletClass **))(*(unsigned int *)((char *)&stru_A8EB00 + 348) + 16))( (unsigned char *)((char *)&stru_A8EB00 + 348), (BulletClass **)(&v5)); /*0x46661b*/
   if ( v3 != -1 && v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 364) ) /*0x46662b*/
   {
     --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 364); /*0x466630*/

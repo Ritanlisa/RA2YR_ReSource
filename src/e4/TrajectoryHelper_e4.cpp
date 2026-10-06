@@ -90,7 +90,7 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   {
     v14 = *aP0 + v19; /*0x4cc254*/
     v15 = v20 + aP0[1]; /*0x4cc259*/
-    result = TrajectoryHelper::GetObstacle(v28, v27, (int)v13, v14, v15, aP0[2] + v22, arg0, a3); /*0x4cc281*/
+    result = TrajectoryHelper::GetObstacle( v28, v27, (int)v13, v14, v15, aP0[2] + v22, arg0, (void *)(a3)); /*0x4cc281*/
     if ( result ) /*0x4cc288*/
       break; /*0x4cc288*/
     LOWORD(v23) = v14 / 256; /*0x4cc2a2*/
@@ -179,10 +179,10 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
       && a1[283] <= v8[283]
       && (!LOBYTE((&dword_8871E0)[1][3])
        || (v15 = *(void **)(&dword_A8022C)[4 * v10[20]]) == 0
-       || !(uint8_t)HouseClass::IsAlliedWith(v15, other)) )
+       || !(uint8_t)(((HouseClass *)(v15))->IsAlliedWith(other))) )
     {
 LABEL_16:
-      v16 = (unsigned int *)(*(int (**)(unsigned int *, int *))(*v10 + 72))(v10, &v45); /*0x4cc489*/
+      v16 = (unsigned int *)(*(int (**)(unsigned int *, int *))(*v10 + 72))( v10, (int *)(&v45)); /*0x4cc489*/
       v17 = a4 - *v16; /*0x4cc49c*/
       v18 = v16[1]; /*0x4cc4a2*/
       v19 = v16[2]; /*0x4cc4a7*/
@@ -195,13 +195,13 @@ LABEL_16:
             + (double)(a5 - v18) * (double)(a5 - v18));
       if ( (int)Math::RoundToInt(v20) <= 85 ) /*0x4cc4f1*/
         return v10; /*0x4cc665*/
-      v21 = (int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)a1 + 72))(a1, &v45); /*0x4cc501*/
+      v21 = (int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)a1 + 72))( (unsigned char *)(a1), (int *)(&v45)); /*0x4cc501*/
       v22 = *v21; /*0x4cc504*/
       v23 = v21[1]; /*0x4cc50a*/
       v24 = v21[2]; /*0x4cc50d*/
       v25 = *(unsigned int *)a2; /*0x4cc510*/
       v47 = v24; /*0x4cc512*/
-      v26 = (int *)(*(int (**)(unsigned char *, char *))(v25 + 72))(a2, v48); /*0x4cc51b*/
+      v26 = (int *)(*(int (**)(unsigned char *, char *))(v25 + 72))( (unsigned char *)(a2), v48); /*0x4cc51b*/
       v27 = *v26; /*0x4cc51e*/
       v46 = v26[1]; /*0x4cc523*/
       v47 = v26[2]; /*0x4cc52a*/
@@ -235,7 +235,7 @@ LABEL_22:
               if ( !LOBYTE((&dword_8871E0)[1][3]) ) /*0x4cc627*/
                 return v42; /*0x4cc627*/
               v39 = *(void **)(&dword_A8022C)[4 * v33[20]]; /*0x4cc639*/
-              if ( !v39 || !(uint8_t)HouseClass::IsAlliedWith(v39, other) ) /*0x4cc645*/
+              if ( !v39 || !(uint8_t)(((HouseClass *)(v39))->IsAlliedWith(other)) ) /*0x4cc645*/
                 return v42; /*0x4cc64c*/
             }
           }
@@ -260,7 +260,7 @@ unsigned int * TrajectoryHelper::FindFirstImpenetrableObstacle(IUnknown * aP0, i
   unsigned int *FirstObstacle; // eax
   unsigned int *v5; // esi
 
-  FirstObstacle = TrajectoryHelper::FindFirstObstacle(aP0, a1, *(unsigned int *)(arg0 + 160), a3); /*0x4cc322*/
+  FirstObstacle = TrajectoryHelper::FindFirstObstacle( (IUnknown *)(aP0), (int *)(a1), *(unsigned int *)(arg0 + 160), (void *)(a3)); /*0x4cc322*/
   v5 = FirstObstacle; /*0x4cc327*/
   if ( FirstObstacle /*0x4cc342*/
     && BuildingPlacement::ValidateType(FirstObstacle, -1, -1)

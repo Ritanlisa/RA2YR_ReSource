@@ -36,7 +36,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual void  OnMessageReceived(const NetworkEvent&);
     // wrapper: delegates to IPXManagerClass::GetAddress at 0x542350
-    virtual void  Flush();
+    virtual void  Flush(char a2);
     // unmatched: no callgraph reference and no git history record
     virtual bool  IsHost() const;
 

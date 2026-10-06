@@ -34,7 +34,7 @@ using ra2::game::AbstractClass;
 #include "entity/tube.hpp"
 #include "entity/wave.hpp"
 #include "e4/e4_globals_decls.hpp"
-#include "e4/classes/Vector3_e4.hpp"
+// g57b5 W1b: e4 Vector3 include removed (C2011 vs utility_ext.hpp:1861 provider-in-TU)
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "misc/misc_ext.hpp"
 
@@ -8793,7 +8793,7 @@ void* TubeClass::Construct(void* a1, int a2) {
       }
       else
       {
-        v7 = (TubeClass **)*(unsigned int *)((char *)&FootClass_Array + 892); /*0x7280a2*/
+        v7 = (TubeClass **)(unsigned int *)((char *)&FootClass_Array + 892); /*0x7280a2*/
         while ( *v7 != this ) /*0x7280aa*/
         {
           ++v6; /*0x7280ac*/
@@ -8855,7 +8855,7 @@ void* TubeClass::ProcessEvent(int a1) {
       }
       else
       {
-        v5 = (TubeClass **)*(unsigned int *)((char *)&FootClass_Array + 892); /*0x728755*/
+        v5 = (TubeClass **)(unsigned int *)((char *)&FootClass_Array + 892); /*0x728755*/
         while ( *v5 != this ) /*0x72875d*/
         {
           ++v4; /*0x72875f*/

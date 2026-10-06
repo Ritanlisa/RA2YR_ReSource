@@ -111,44 +111,44 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
   void *v5; // eax
   void *v6; // eax
 
-  v3 = *((unsigned char *)Block + 258152); /*0x7b2786*/
-  Block->Socket = (int)&vt_WinsockInterfaceClass; /*0x7b278c*/
+  v3 = *((unsigned char *)this + 258152); /*0x7b2786*/
+  this->Socket = (int)&vt_WinsockInterfaceClass; /*0x7b278c*/
   if ( v3 ) /*0x7b2794*/
   {
-    ((NetworkClass*)Block)->UnregisterAsync(); /*0x7b2796*/
-    (*(void (**)(WinsockInterfaceClass *))(Block->Socket + 4))(Block); /*0x7b27a0*/
+    ((NetworkClass*)this)->UnregisterAsync(); /*0x7b2796*/
+    (*(void (**)(WinsockInterfaceClass *))(this->Socket + 4))(this); /*0x7b27a0*/
     WSACleanup(); /*0x7b27a3*/
-    *((unsigned char *)Block + 258152) = 0; /*0x7b27a8*/
+    *((unsigned char *)this + 258152) = 0; /*0x7b27a8*/
   }
-  v4 = (void *)*((unsigned int *)Block + 15); /*0x7b27ae*/
-  *((unsigned int *)Block + 14) = &vt_VectorClass; /*0x7b27b1*/
-  if ( v4 && *((unsigned char *)Block + 69) ) /*0x7b27bc*/
+  v4 = (void *)*((unsigned int *)this + 15); /*0x7b27ae*/
+  *((unsigned int *)this + 14) = &vt_VectorClass; /*0x7b27b1*/
+  if ( v4 && *((unsigned char *)this + 69) ) /*0x7b27bc*/
   {
     __3_YAXPAX_Z(v4); /*0x7b27c2*/
-    *((unsigned int *)Block + 15) = 0; /*0x7b27ca*/
+    *((unsigned int *)this + 15) = 0; /*0x7b27ca*/
   }
-  *((unsigned char *)Block + 69) = 0; /*0x7b27cd*/
-  *((unsigned int *)Block + 16) = 0; /*0x7b27d0*/
-  v5 = (void *)*((unsigned int *)Block + 9); /*0x7b27d3*/
-  *((unsigned int *)Block + 8) = &vt_VectorClass; /*0x7b27d6*/
-  if ( v5 && *((unsigned char *)Block + 45) ) /*0x7b27e1*/
+  *((unsigned char *)this + 69) = 0; /*0x7b27cd*/
+  *((unsigned int *)this + 16) = 0; /*0x7b27d0*/
+  v5 = (void *)*((unsigned int *)this + 9); /*0x7b27d3*/
+  *((unsigned int *)this + 8) = &vt_VectorClass; /*0x7b27d6*/
+  if ( v5 && *((unsigned char *)this + 45) ) /*0x7b27e1*/
   {
     __3_YAXPAX_Z(v5); /*0x7b27e7*/
-    *((unsigned int *)Block + 9) = 0; /*0x7b27ef*/
+    *((unsigned int *)this + 9) = 0; /*0x7b27ef*/
   }
-  *((unsigned char *)Block + 45) = 0; /*0x7b27f2*/
-  *((unsigned int *)Block + 10) = 0; /*0x7b27f5*/
-  v6 = (void *)*((unsigned int *)Block + 3); /*0x7b27f8*/
-  Block->LocalAddress = (int)&vt_VectorClass; /*0x7b27fb*/
-  if ( v6 && *((unsigned char *)Block + 21) ) /*0x7b2806*/
+  *((unsigned char *)this + 45) = 0; /*0x7b27f2*/
+  *((unsigned int *)this + 10) = 0; /*0x7b27f5*/
+  v6 = (void *)*((unsigned int *)this + 3); /*0x7b27f8*/
+  this->LocalAddress = (int)&vt_VectorClass; /*0x7b27fb*/
+  if ( v6 && *((unsigned char *)this + 21) ) /*0x7b2806*/
   {
     __3_YAXPAX_Z(v6); /*0x7b280c*/
-    *((unsigned int *)Block + 3) = 0; /*0x7b2814*/
+    *((unsigned int *)this + 3) = 0; /*0x7b2814*/
   }
-  *((unsigned char *)Block + 21) = 0; /*0x7b281b*/
-  *((unsigned int *)Block + 4) = 0; /*0x7b2820*/
+  *((unsigned char *)this + 21) = 0; /*0x7b281b*/
+  *((unsigned int *)this + 4) = 0; /*0x7b2820*/
   if ( (a2 & 1) != 0 ) /*0x7b2823*/
-    __3_YAXPAX_Z(Block); /*0x7b2826*/
-  return (SOCKET *)Block; /*0x7b2830*/
+    __3_YAXPAX_Z(this); /*0x7b2826*/
+  return (SOCKET *)this; /*0x7b2830*/
 
 }

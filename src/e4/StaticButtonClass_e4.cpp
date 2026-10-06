@@ -19,15 +19,15 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*((unsigned int *)Block + 12); /*0x6c6883*/
-  *(unsigned int *)Block->__pad_0 = &vt_StaticButtonClass; /*0x6c6886*/
+  v3 = (void *)*((unsigned int *)this + 12); /*0x6c6883*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_StaticButtonClass;
   if ( v3 ) /*0x6c688e*/
     __3_YAXPAX_Z(v3); /*0x6c6891*/
-  ((Vector *)((int)Block + 36))->Clear(); /*0x6c689c*/
-  ((GadgetClass *)((ShpButtonClass *)Block))->Dtor(); /*0x6c68a3*/
+  ((Vector *)((int)this + 36))->Clear(); /*0x6c689c*/
+  ((GadgetClass *)((ShpButtonClass *)this))->Dtor(); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
-    __3_YAXPAX_Z(Block); /*0x6c68b0*/
-  return Block->__pad_0; /*0x6c68ba*/
+    __3_YAXPAX_Z(this); /*0x6c68b0*/
+  return this->__pad_0; /*0x6c68ba*/
 
 }
 } // namespace gamemd

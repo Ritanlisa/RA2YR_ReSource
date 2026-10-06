@@ -304,7 +304,7 @@ void sub_65FD50()
     if ( v2 ) /*0x65fd6a*/
     {
       v4 = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x65fd7b*/
-      v3 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v4); /*0x65fd7f*/
+      v3 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))( (LoadGame *)(&stru_B04DA8), (int *)(&v4)); /*0x65fd7f*/
       if ( v3 != -1 && v3 < stru_B04DA8.LoadGame_field_0x10 ) /*0x65fd8f*/
       {
         --stru_B04DA8.LoadGame_field_0x10; /*0x65fd94*/

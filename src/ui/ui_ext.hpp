@@ -695,7 +695,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* QueryInterface(int a1);  // 0x4B55F0
     int Constructor();  // 0x4C30B0
     static int Constructor(void *aP0);  // 0x4C30B0 G42.35 static-form sync (ui/supplied site 0x4B57D3)
-    int SelectItem(void* a1, int a2);  // 0x4C30E0
+    int SelectItem(void* a1, int a2, wchar_t *String, int a3);  // 0x4C30E0  // g57b5 W4: raw 真值补参
     int GetItem(int a1);  // 0x4C3110
     int GetCount(int a1, void* a2, int a3);  // 0x4C3190
     int GetSelected();  // 0x4C32A0
@@ -976,6 +976,8 @@ public:
 };
 // 1 methods in IDA
 #ifndef GAMEMD_TREE_UNIVERSE
+#ifndef GAMEMD_G2_Main_DEF  // g57a5 W2d: twin-definition guard (ui_ext Main)
+#define GAMEMD_G2_Main_DEF 1
 class Main
 {
 public:
@@ -985,6 +987,8 @@ public:
     virtual void CreateDialogMain();  // 0x4E1D00
 
 };
+#endif  // GAMEMD_G2_Main_DEF
+
 #endif  // G42.32u: e4 flat struct wins in marker TUs
 // 1 methods in IDA
 class ProgressAnim

@@ -42,6 +42,9 @@
 #include "e4/classes/ScriptAction_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "team/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
+// g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int result;  // 词表 (canon 无条目, int 兜底) L1328
+// ---- g57b5 W6 end ----
 
 // G42.33 批 2: e4 命名全局 + 串标签载体 (ida_globals.h 只覆盖裸名; 全局域)
 extern int FootClass_Array;               // data: 0x8B3DC0 (e4_globals 名)
@@ -328,7 +331,7 @@ char TriggerClass::ValidateTeamTriggerConditions(int a2) {
             return 0; /*0x509684*/
           while ( 1 ) /*0x50968c*/
           {
-            v7 = (TriggerClass **)*((unsigned int *)FootClass_Array + v6); /*0x50968c*/
+            v7 = (TriggerClass **)((unsigned int *)FootClass_Array + v6); /*0x50968c*/
             if ( v7[135] == this /*0x5096ab*/
               && v5 == ((int (__thiscall *)(unsigned int))(*(unsigned int **)*v7 + 33))(*((unsigned int *)FootClass_Array + v6)) /*0x50968c vt+0x84*/
               && ((TriggerClass *)a2)->EvaluateObjectForTrigger((int)v7, (int)this) )

@@ -34,8 +34,8 @@ BuildingTypeClass * Techno::StartInvulnerability(int a2, int aP1, int a1)
 
   int v3; // eax
 
-  v3 = TechnoClass::InvulnerabilityIntensity_SetContext(this, aP1); /*0x70e368*/
-  return ((TechnoClass *)(int a1))->CalcFlashAlpha(v3) ; /*0x70e375*/
+  v3 = ((TechnoClass *)this)->InvulnerabilityIntensity_SetContext( aP1); /*0x70e368*/
+  return (( TechnoClass *)this)->CalcFlashAlpha(v3) ; /*0x70e375*/
 
 }
 } // namespace gamemd

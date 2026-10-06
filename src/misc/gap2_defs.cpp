@@ -31,6 +31,58 @@ using ra2::game::ObjectClass;
 #include "misc/super_weapon.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
+extern int aColoradd;  // 词表 (canon 无条目, int 兜底) L1404
+extern int aCountries;  // 词表 (canon 无条目, int 兜底) L1416
+// ---- g57b5 W6 end ----
+// ---- g57b5 W5: qualified-call free-form vocab ----
+namespace gamemd {
+int INIClass_GetCoord(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int INIClass_GetKeyCount(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int INIClass_GetStringByIndex(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int INIEntry_Exists(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Palette_SixBitTo16Bit(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int RulesClass_ReadColors(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ArcTan2(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int CalcAngle(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int SinCos(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int CellClass_DamageAllObjects(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Coord_Length(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Coord_Subtract(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int FootClass_ClearSomeVector2(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int FootClass_MovementStep(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int MovementAI_MainFootClass(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int MovementAI_MarkOccupiedPathCell(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int MovementAI_StepFootClass(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int ObjectClass_GetLandHeight(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int AllMembersValid(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int ApplyDamage(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int FindClosestObjectCell(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int FindObjectCell(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetNeighbourContent(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int IsAlliedWithObjectHouse(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int IsInRange(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int IsInRange2(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int IsPassableAllied(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int IsWithinUsableArea(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int PlayVocClass(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int WakeUpAllMembers(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+} // namespace gamemd
+// ---- g57b5 W5 end ----
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+namespace gamemd {
+    int Math_RoundToInt(double a1);                    // raw fn_49 Math::RoundToInt 家族 (16 处跨 TU);
+    double Math_Sqrt(double a1);                       // raw 0x516463 Math::Sqrt;
+    void *CellCoord_To_CellObj(void *a1, void *a2);    // 0x5657A0 真形 (core/cellcoord.hpp 单源);
+    int Cell_GetGroundHeight(void *a1, int *a2);       // 0x578080 真形 (object/supplied_bodies:94);
+    int StartAudioControllerAt(int aP0, unsigned int *a2, int **a1);  // 0x7509E0 真形;
+    struct stru_87F5F0_host {                      // 0x87F5F0 宿主 (object/supplied_bodies:106 同款)
+        unsigned char __pad_0[0x58];
+        unsigned char __pad_58[0x280 - 0x58];      // 覆盖 __pad_58[416] = +0x1F8
+    };
+    extern stru_87F5F0_host stru_87F5F0;          // data: 0x87F5F0
+} // namespace gamemd
+// ---- g57b5 W3 end ----
 
 // gC supply: extern declarations from src/e4/e4_globals_decls.hpp
 extern int FootClass_Array;
@@ -159,7 +211,7 @@ int AudioMixer::SetupChannels() {
 }
 // 0x514F70
 namespace gamemd { 
-int MovementAI::MainFootClass(int a1) {
+int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 (a2)
     MovementAI *v3; // esi
     int result; // eax
     int *m_State; // ecx
@@ -349,7 +401,7 @@ int MovementAI::MainFootClass(int a1) {
         v96[0] += IDA_LOWORD(g_DDrawSurfaceManager.scenario[v12 + 82]); /*0x51519b*/
         v14 = (v96[1] << 8) + 128; /*0x5151aa*/
         v96[1] = v95[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v12 + 82]); /*0x5151b5*/
-        v15 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v96); /*0x5151d1*/
+        v15 = (CellClass *)CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v96); /*0x5151d1*/
         Coords = CellClass::GetCoords(v15, &v108); /*0x5151d8*/
         v17 = Coords[1]; /*0x5151df*/
         v18 = *Coords - (v13 + 128); /*0x5151e5*/
@@ -372,20 +424,20 @@ int MovementAI::MainFootClass(int a1) {
         v102 = *v27; /*0x515240*/
         v103 = v27[1]; /*0x51524c*/
         v104 = v27[2]; /*0x515253*/
-        GroundHeight = Cell::GetGroundHeight(&v102); /*0x515261*/
+        GroundHeight = Cell_GetGroundHeight(&v102); /*0x515261*/
         v104 = 0; /*0x515267*/
         v29 = *(unsigned int *)(*(unsigned int *)v97 + 40); /*0x51526f*/
         *(unsigned int *)v97 = *(unsigned int *)(*(unsigned int *)v97 + 448); /*0x51528d*/
         v102 = ((__int16)v29 << 8) + 128; /*0x515291*/
         v103 = (IDA_SHIWORD(v29) << 8) + 128; /*0x5152a8*/
-        v30 = Cell::GetGroundHeight(&v102); /*0x5152ac*/
+        v30 = Cell_GetGroundHeight(&v102); /*0x5152ac*/
         *(unsigned int *)(this->m_State + 1392) = v26 + (v30 - GroundHeight) / *(unsigned int *)v97; /*0x5152bd*/
         return 7; /*0x5152c3*/
       }
     }
     if ( *(unsigned int *)v96 == -1 ) /*0x51533f*/
     {
-      MovementAI::StepFootClass(this, 0); /*0x515df2*/
+      MovementAI_StepFootClass(this, 0); /*0x515df2*/
       return 0; /*0x515df9*/
     }
     v33 = (unsigned short *)(*(int (__thiscall **)(int *, char *))(*m_State + 440))(m_State, v97); /*0x51534c*/
@@ -394,7 +446,7 @@ int MovementAI::MainFootClass(int a1) {
     v3->m_Target.X = ((__int16)(IDA_LOWORD(g_DDrawSurfaceManager.scenario[v34 + 82]) + *v33) << 8) + 128; /*0x515380*/
     *((unsigned int *)this + 10) = (v35 << 8) + 128; /*0x51538a*/
     *((unsigned int *)this + 11) = 0; /*0x515392*/
-    v36 = Cell::GetGroundHeight((unsigned int *)this + 9); /*0x515395*/
+    v36 = Cell_GetGroundHeight((unsigned int *)this + 9); /*0x515395*/
     v37 = (int *)this->m_State; /*0x51539a*/
     *((unsigned int *)this + 11) = v36; /*0x51539d*/
     v37 += 39; /*0x5153a0*/
@@ -430,7 +482,7 @@ int MovementAI::MainFootClass(int a1) {
     v40 = this->m_State; /*0x51547b*/
     if ( !*(unsigned char *)(v40 + 144) || *(unsigned char *)(v40 + 129) || *(unsigned char *)(v40 + 141) ) /*0x51549a*/
       return 7; /*0x5158ff*/
-    v41 = Coord::Subtract( /*0x5154d0*/
+    v41 = Coord_Subtract( /*0x5154d0*/
             (Coord *)&v108,
             g_DDrawSurfaceManager.scenario[2 * v34 + 102] + *(unsigned int *)(v40 + 156),
             *(unsigned int *)(v40 + 160) + g_DDrawSurfaceManager.scenario[2 * v34 + 103],
@@ -447,9 +499,9 @@ int MovementAI::MainFootClass(int a1) {
     *(unsigned int *)v95 = *(unsigned int *)v97; /*0x515549*/
     v44 = (ObjectClass *)this->m_State; /*0x51554d*/
     vtable0 = (int (__thiscall **)(int, void *, int, int, unsigned int, int))v44->AbstractClass; /*0x515550*/
-    LandHeight = ObjectClass::GetLandHeight(v44); /*0x51555b*/
+    LandHeight = ObjectClass_GetLandHeight(v44); /*0x51555b*/
     v91 = *(unsigned int *)v96; /*0x515560*/
-    v46 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95); /*0x515567*/
+    v46 = CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95); /*0x515567*/
     *(unsigned int *)v96 = vtable0[107](this->m_State, v46, v91, LandHeight, 0, 1); /*0x515579*/
     switch ( *(unsigned int *)v96 ) /*0x515583*/
     {
@@ -470,7 +522,7 @@ int MovementAI::MainFootClass(int a1) {
       case 1: /*0x515583*/
       case 7: /*0x515583*/
         v47 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)this + 9); /*0x515590*/
-        CellClass::DamageAllObjects(v47); /*0x515597*/
+        CellClass_DamageAllObjects(v47); /*0x515597*/
         if ( a2 ) /*0x5155a1*/
         {
           v48 = this->m_State; /*0x5155a7*/
@@ -493,8 +545,8 @@ int MovementAI::MainFootClass(int a1) {
           v49[1] = v109; /*0x515622*/
           v49[2] = 0; /*0x515625*/
           *(unsigned int *)(this->m_State + 1504) = -1; /*0x51562d*/
-          MovementAI::StepFootClass(this, 0); /*0x515637*/
-          *(unsigned int *)v96 = MovementAI::MainFootClass(this, 0); /*0x515644*/
+          MovementAI_StepFootClass(this, 0); /*0x515637*/
+          *(unsigned int *)v96 = MovementAI_MainFootClass(this, 0); /*0x515644*/
         }
         if ( *(unsigned int *)v96 ) /*0x515650*/
         {
@@ -582,7 +634,7 @@ int MovementAI::MainFootClass(int a1) {
         else
   LABEL_97:
           v90 = 1; /*0x515dcb*/
-        MovementAI::StepFootClass(this, (v90 != 0) + 1); /*0x515ddc*/
+        MovementAI_StepFootClass(this, (v90 != 0) + 1); /*0x515ddc*/
         return *(unsigned int *)v96; /*0x515ddc*/
       case 3: /*0x515583*/
         v3->m_Target.X = *(unsigned int *)((char *)&stru_A8EB00 + 1436); /*0x5156e6*/
@@ -628,19 +680,19 @@ int MovementAI::MainFootClass(int a1) {
           v68[1] = v113; /*0x515b68*/
           v68[2] = 0; /*0x515b6b*/
           *(unsigned int *)(this->m_State + 1504) = -1; /*0x515b71*/
-          MovementAI::StepFootClass(this, 0); /*0x515b7d*/
-          result = MovementAI::MainFootClass(this, 0); /*0x515b85*/
+          MovementAI_StepFootClass(this, 0); /*0x515b7d*/
+          result = MovementAI_MainFootClass(this, 0); /*0x515b85*/
           *(unsigned int *)v96 = result; /*0x515b8a*/
           return result; /*0x515b94*/
         }
         v98[0] = 0; /*0x515ba9*/
         v98[1] = 0; /*0x515bad*/
-        v69 = (Object *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95); /*0x515bb1*/
+        v69 = (Object *)CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95); /*0x515bb1*/
         if ( Object::FindObjectCell(v69, v98, 0) ) /*0x515bb8*/
         {
           v99 = 0; /*0x515bd1*/
           v100 = 0; /*0x515bd5*/
-          v70 = (Object *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95); /*0x515bd9*/
+          v70 = (Object *)CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95); /*0x515bd9*/
           ObjectCell = Object::FindObjectCell(v70, &v99, 0); /*0x515be0*/
           if ( (unsigned __int8)Object::IsAlliedWithObjectHouse(*(Object **)(this->m_State + 540), ObjectCell) ) /*0x515bef*/
             return *(unsigned int *)v96; /*0x515bf6*/
@@ -648,19 +700,19 @@ int MovementAI::MainFootClass(int a1) {
           v102 = 0; /*0x515c04*/
           v103 = 0; /*0x515c08*/
           v73 = *v72; /*0x515c0c*/
-          v74 = (Object *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95); /*0x515c1a*/
+          v74 = (Object *)CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95); /*0x515c1a*/
           v75 = Object::FindObjectCell(v74, &v102, 0); /*0x515c21*/
           (*(void (__thiscall **)(int, int, int, unsigned int))(v73 + 500))(this->m_State, 1, v75, 0); /*0x515c2c*/
           return *(unsigned int *)v96; /*0x515c3c*/
         }
-        if ( *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95) + 17) != -1 /*0x515c73*/
+        if ( *((unsigned int *)CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95) + 17) != -1 /*0x515c73*/
           && *(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
                                   + 4
-                                  * *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95) + 17))
+                                  * *((unsigned int *)CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95) + 17))
                       + 680) )
         {
           v76 = *(unsigned int *)this->m_State; /*0x515c8a*/
-          v77 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95); /*0x515c91*/
+          v77 = CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v95); /*0x515c91*/
           (*(void (__thiscall **)(int, int, void *, unsigned int))(v76 + 500))(this->m_State, 1, v77, 0); /*0x515c9c*/
           return *(unsigned int *)v96; /*0x515cac*/
         }
@@ -669,7 +721,7 @@ int MovementAI::MainFootClass(int a1) {
         if ( !a2 ) /*0x515752*/
         {
           v56 = (unsigned int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)this->m_State + 72))(this->m_State, v111); /*0x515827*/
-          v57 = Coord::Subtract( /*0x515848*/
+          v57 = Coord_Subtract( /*0x515848*/
                   (Coord *)&v112,
                   *v56 - this->MovementAI_field_18,
                   v56[1] - *((unsigned int *)this + 7),
@@ -677,7 +729,7 @@ int MovementAI::MainFootClass(int a1) {
           v105 = *v57; /*0x51584f*/
           v106 = v57[1]; /*0x51585a*/
           v107 = v57[2]; /*0x515861*/
-          if ( (int)Coord::Length((Coord *)&v105) < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5912) ) /*0x515876*/
+          if ( (int)Coord_Length((void *)&v105) < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5912) ) /*0x515876*/
           {
             v58 = (int *)(this->m_State + 156); /*0x51587f*/
             v105 = *v58; /*0x515889*/
@@ -757,8 +809,8 @@ int MovementAI::MainFootClass(int a1) {
         v55[1] = v109; /*0x5157ee*/
         v55[2] = 0; /*0x5157f1*/
         *(unsigned int *)(this->m_State + 1504) = -1; /*0x5157f7*/
-        MovementAI::StepFootClass(this, 0); /*0x515803*/
-        result = MovementAI::MainFootClass(this, 0); /*0x51580b*/
+        MovementAI_StepFootClass(this, 0); /*0x515803*/
+        result = MovementAI_MainFootClass(this, 0); /*0x51580b*/
         *(unsigned int *)v96 = result; /*0x515810*/
         break; /*0x51581a*/
       default:
@@ -795,11 +847,11 @@ int MovementAI::MarkOccupiedPathCell() {
       v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)this->m_State + 72))(this->m_State, v13); /*0x516415*/
       v11 = v6[1] - *((unsigned int *)this + 7); /*0x516436*/
       v12 = v6[2] - *((unsigned int *)this + 8); /*0x51643a*/
-      Math::Sqrt( /*0x516463*/
+      Math_Sqrt( /*0x516463*/
         (double)(*v6 - this->MovementAI_field_18) * (double)(*v6 - this->MovementAI_field_18)
       + (double)v11 * (double)v11
       + (double)v12 * (double)v12);
-      IDA_LOWORD(v7) = Math::RoundToInt(v1); /*0x51646b*/
+      IDA_LOWORD(v7) = Math_RoundToInt(v1); /*0x51646b*/
       v8 = v7 / 256; /*0x516479*/
       if ( v8 < 24 ) /*0x51647f*/
       {
@@ -817,7 +869,7 @@ int MovementAI::MarkOccupiedPathCell() {
 
 // 0x5164D0
 namespace gamemd { 
-int MovementAI::StepFootClass(int a1) {
+int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (a2)
     unsigned int *m_State; // ecx
     int *p_MovementAI_field_18; // edi
     int result; // eax
@@ -885,7 +937,7 @@ int MovementAI::StepFootClass(int a1) {
     int v67; // [esp+58h] [ebp-10h]
     unsigned int v68[3]; // [esp+5Ch] [ebp-Ch] BYREF
 
-    MovementAI::MarkOccupiedPathCell(this); /*0x5164d9*/
+    MovementAI_MarkOccupiedPathCell(this); /*0x5164d9*/
     m_State = (unsigned int *)this->m_State; /*0x5164de*/
     p_MovementAI_field_18 = &this->MovementAI_field_18; /*0x5164e4*/
     *(unsigned int *)v58 = m_State[376]; /*0x5164ed*/
@@ -950,11 +1002,11 @@ int MovementAI::StepFootClass(int a1) {
   LABEL_19:
     IDA_LOWORD(v59) = *p_MovementAI_field_18 / 256; /*0x51664b*/
     IDA_HIWORD(v59) = *((unsigned int *)this + 7) / 256; /*0x51666d*/
-    if ( (unsigned __int8)FootClass::MovementStep(v13, (int)p_MovementAI_field_18, v59, 0, a2, v57) ) /*0x51667e*/
+    if ( (unsigned __int8)FootClass_MovementStep(v13, (int)p_MovementAI_field_18, v59, 0, a2, v57) ) /*0x51667e*/
     {
       v29 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x5168d6*/
       v30 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5984) * 900.0; /*0x5168e2*/
-      IDA_LOWORD(v31) = Math::RoundToInt(v30); /*0x5168e8*/
+      IDA_LOWORD(v31) = Math_RoundToInt(v30); /*0x5168e8*/
       v32 = v68[1]; /*0x5168f0*/
       v33 = (unsigned int *)(this->m_State + 1600); /*0x5168f4*/
       *v33 = v29; /*0x5168fa*/
@@ -969,12 +1021,12 @@ int MovementAI::StepFootClass(int a1) {
       {
         v36 = (ObjectClass *)this->m_State; /*0x516981*/
         vtable0 = (int (__thiscall **)(ObjectClass *, void *, int, int, unsigned int, int))v36->AbstractClass; /*0x51698a*/
-        LandHeight = ObjectClass::GetLandHeight(v36); /*0x516994*/
+        LandHeight = ObjectClass_GetLandHeight(v36); /*0x516994*/
         v55 = *(unsigned int *)(this->m_State + 1504); /*0x5169a4*/
-        v38 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&a2); /*0x5169a6*/
+        v38 = CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&a2); /*0x5169a6*/
         if ( vtable0[107](v36, v38, v55, LandHeight, 0, 1) == 6 ) /*0x5169b7*/
         {
-          v39 = (Object *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&a2); /*0x5169cf*/
+          v39 = (Object *)CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&a2); /*0x5169cf*/
           v40 = (int *)(this->m_State + 156); /*0x5169d1*/
           v65 = *v40; /*0x5169d9*/
           v66 = v40[1]; /*0x5169e5*/
@@ -984,7 +1036,7 @@ int MovementAI::StepFootClass(int a1) {
           v67 = 0; /*0x516a17*/
           v62 = 0; /*0x516a1b*/
           v63 = 0; /*0x516a1f*/
-          GroundHeight = Cell::GetGroundHeight(&v65); /*0x516a23*/
+          GroundHeight = Cell_GetGroundHeight(&v65); /*0x516a23*/
           ClosestObjectCell = Object::FindClosestObjectCell( /*0x516a41*/
                                 v39,
                                 &v62,
@@ -1003,8 +1055,8 @@ int MovementAI::StepFootClass(int a1) {
               v49 = v48 - *((unsigned int *)this + 8); /*0x516a8a*/
               v63 = v47 - v45; /*0x516a8c*/
               v64 = v49; /*0x516a90*/
-              Math::Sqrt((double)v46 * (double)v46 + (double)v49 * (double)v49 + (double)(v47 - v45) * (double)(v47 - v45)); /*0x516abc*/
-              IDA_LOWORD(v50) = Math::RoundToInt(v30); /*0x516ac4*/
+              Math_Sqrt((double)v46 * (double)v46 + (double)v49 * (double)v49 + (double)(v47 - v45) * (double)(v47 - v45)); /*0x516abc*/
+              IDA_LOWORD(v50) = Math_RoundToInt(v30); /*0x516ac4*/
               if ( v50 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5912) /*0x516ade*/
                 && !(unsigned __int8)Team::AllMembersValid((Team *)this->m_State) )
               {
@@ -1049,7 +1101,7 @@ int MovementAI::StepFootClass(int a1) {
     {
       v15 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x516690*/
       v16 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5984) * 900.0; /*0x51669c*/
-      IDA_LOWORD(v17) = Math::RoundToInt(v16); /*0x5166a2*/
+      IDA_LOWORD(v17) = Math_RoundToInt(v16); /*0x5166a2*/
       v18 = v66; /*0x5166aa*/
       v19 = (unsigned int *)(this->m_State + 1600); /*0x5166ae*/
       *v19 = v15; /*0x5166b5*/
@@ -1059,10 +1111,10 @@ int MovementAI::StepFootClass(int a1) {
               this->m_State,
               &this->MovementAI_field_18) )
         return (*(int (__thiscall **)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5166ca*/
-      if ( (unsigned __int8)FootClass::ClearSomeVector2((FootClass *)this->m_State) ) /*0x5166ea*/
+      if ( (unsigned __int8)FootClass_ClearSomeVector2((void *)this->m_State) ) /*0x5166ea*/
         goto LABEL_28; /*0x5166ea*/
       v20 = (unsigned int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)this->m_State + 72))(this->m_State, &v65); /*0x516701*/
-      v21 = Coord::Subtract( /*0x516721*/
+      v21 = Coord_Subtract( /*0x516721*/
               (Coord *)v68,
               *v20 - *p_MovementAI_field_18,
               v20[1] - *((unsigned int *)this + 7),
@@ -1072,8 +1124,8 @@ int MovementAI::StepFootClass(int a1) {
       v23 = v21[2]; /*0x516736*/
       v63 = v22; /*0x516739*/
       v64 = v23; /*0x516741*/
-      Math::Sqrt((double)v23 * (double)v23 + (double)v22 * (double)v22 + (double)v62 * (double)v62); /*0x516762*/
-      IDA_LOWORD(v24) = Math::RoundToInt(v16); /*0x51676a*/
+      Math_Sqrt((double)v23 * (double)v23 + (double)v22 * (double)v22 + (double)v62 * (double)v62); /*0x516762*/
+      IDA_LOWORD(v24) = Math_RoundToInt(v16); /*0x51676a*/
       if ( v24 >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5912) ) /*0x51677b*/
         goto LABEL_28; /*0x51677b*/
       if ( (*(int (__thiscall **)(int))(*(unsigned int *)this->m_State + 388))(this->m_State) == 2 /*0x51679b*/
@@ -1298,11 +1350,11 @@ void Movement::UpdateLocomotion(void* a1) {
     double v5; // [esp+18h] [ebp-10h]
     double v6; // [esp+20h] [ebp-8h]
 
-    v3 = Math::Sqrt(*this * *this + *(this + 1) * *(this + 1)); /*0x5b2a57*/
+    v3 = Math_Sqrt(*this * *this + *(this + 1) * *(this + 1)); /*0x5b2a57*/
     v4 = Math::CalcAngle(*(this + 2), v3); /*0x5b2a72*/
-    v5 = (double)((__int16)Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427) - 0x3FFF) /*0x5b2aa2*/
+    v5 = (double)((__int16)Math_RoundToInt((v4 - 1.570796326794897) * -10430.06004058427) - 0x3FFF) /*0x5b2aa2*/
        * -0.00009587672516830327;
-    v6 = Math::Sqrt(*(this + 2) * *(this + 2) + *this * *this + *(this + 1) * *(this + 1)); /*0x5b2acc*/
+    v6 = Math_Sqrt(*(this + 2) * *(this + 2) + *this * *this + *(this + 1) * *(this + 1)); /*0x5b2acc*/
     if ( v5 != 0.0 ) /*0x5b2ae2*/
     {
       *this = *this / Math::ArcTan2(v5); /*0x5b2af7*/
@@ -1350,19 +1402,19 @@ int RulesClass::Addition() {
     Palette v33; // [esp+40h] [ebp+4h] BYREF
 
     v1 = *(INIClass **)v33.m_Colors; /*0x668bf6*/
-    RulesClass::ReadColors(this); /*0x668bfe*/
-    if ( INIEntry::Exists((INIEntry *)v1, (unsigned __int8 *)aColoradd, 0) ) /*0x668c0d*/
+    RulesClass_ReadColors(this); /*0x668bfe*/
+    if ( INIEntry_Exists((void *)v1, (unsigned __int8 *)aColoradd, 0) ) /*0x668c0d*/
     {
       v3 = 0; /*0x668c24*/
-      KeyCount = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)aColoradd); /*0x668c26*/
+      KeyCount = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)aColoradd); /*0x668c26*/
       if ( KeyCount > 0 ) /*0x668c2c*/
       {
         v4 = (char *)this + 6260; /*0x668c2e*/
         do /*0x668c89*/
         {
-          StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aColoradd, v3); /*0x668c4d*/
-          v5 = Palette::SixBitTo16Bit(&v33, 0, 0, 0); /*0x668c51*/
-          Coord = INIClass::GetCoord(v1, (int)v29, (unsigned __int8 *)aColoradd, StringByIndex, v5); /*0x668c6a*/
+          StringByIndex = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aColoradd, v3); /*0x668c4d*/
+          v5 = Palette_SixBitTo16Bit(&v33, 0, 0, 0); /*0x668c51*/
+          Coord = INIClass_GetCoord(v1, (int)v29, (unsigned __int8 *)aColoradd, StringByIndex, v5); /*0x668c6a*/
           v7 = v4; /*0x668c71*/
           ++v3; /*0x668c73*/
           v4 += 3; /*0x668c74*/
@@ -1374,46 +1426,46 @@ int RulesClass::Addition() {
         while ( v9 ); /*0x668c89*/
       }
     }
-    v10 = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)aCountries); /*0x668c98*/
+    v10 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)aCountries); /*0x668c98*/
     for ( i = 0; i < v10; ++i ) /*0x668c9e*/
     {
-      v12 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aCountries, i); /*0x668cb6*/
+      v12 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aCountries, i); /*0x668cb6*/
       if ( INIClass::GetString(v1, (unsigned __int8 *)aCountries, v12, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668cc4*/
         WeaponTypeClass::Create(Destination); /*0x668cd1*/
     }
     RulesClass::ReadDataList(this); /*0x668cde*/
-    v13 = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)aOverlaytypes); /*0x668cf1*/
+    v13 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)aOverlaytypes); /*0x668cf1*/
     for ( j = 0; j < v13; ++j ) /*0x668cf7*/
     {
-      v15 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aOverlaytypes, j); /*0x668d0e*/
+      v15 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aOverlaytypes, j); /*0x668d0e*/
       if ( INIClass::GetString(v1, (unsigned __int8 *)aOverlaytypes, v15, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668d1d*/
         BuildingTypeClass::FindOrCreate2(Destination); /*0x668d2a*/
     }
-    v16 = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)aSuperweapontyp); /*0x668d42*/
+    v16 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)aSuperweapontyp); /*0x668d42*/
     for ( k = 0; k < v16; ++k ) /*0x668d48*/
     {
-      v18 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aSuperweapontyp, k); /*0x668d60*/
+      v18 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aSuperweapontyp, k); /*0x668d60*/
       if ( INIClass::GetString(v1, (unsigned __int8 *)aSuperweapontyp, v18, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668d6f*/
         WeaponTypeClass::Process(Destination); /*0x668d7c*/
     }
-    v19 = INIClass::GetKeyCount(v1->__pad_0, g_INI_Key_Warheads); /*0x668d92*/
+    v19 = INIClass_GetKeyCount(v1->__pad_0, g_INI_Key_Warheads); /*0x668d92*/
     for ( m = 0; m < v19; ++m ) /*0x668d98*/
     {
-      v21 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, g_INI_Key_Warheads, m); /*0x668dae*/
+      v21 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, g_INI_Key_Warheads, m); /*0x668dae*/
       if ( INIClass::GetString(v1, g_INI_Key_Warheads, v21, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668dbb*/
         WarheadTypeClass::FindOrCreate(Destination); /*0x668dc8*/
     }
-    v22 = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)aSmudgetypes); /*0x668de0*/
+    v22 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)aSmudgetypes); /*0x668de0*/
     for ( n = 0; n < v22; ++n ) /*0x668de6*/
     {
-      v24 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aSmudgetypes, n); /*0x668dfd*/
+      v24 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aSmudgetypes, n); /*0x668dfd*/
       if ( INIClass::GetString(v1, (unsigned __int8 *)aSmudgetypes, v24, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668e0c*/
         FactoryClass::FindOrCreate(Destination); /*0x668e19*/
     }
-    v25 = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)aTerraintypes); /*0x668e31*/
+    v25 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)aTerraintypes); /*0x668e31*/
     for ( ii = 0; ii < v25; ++ii ) /*0x668e37*/
     {
-      v27 = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aTerraintypes, ii); /*0x668e4f*/
+      v27 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aTerraintypes, ii); /*0x668e4f*/
       if ( INIClass::GetString(v1, (unsigned __int8 *)aTerraintypes, v27, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668e5e*/
         TerrainTypeClass::FindOrCreate(Destination); /*0x668e6b*/
     }
@@ -1661,7 +1713,7 @@ int RulesClass::ReadCountryList() {
       INIClass::ReadDouble_Overwrite((double *)v19->__pad_0, aRadiation, aRadtintfactor, v11); /*0x66d0a5*/
       __asm { fstp qword ptr [esi+1828h] } /*0x66d0aa*/
       *(double *)&this->ColorAdd[5] = _RT1; /*0x66d0aa*/
-      Coord = INIClass::GetCoord(v19, (int)&v17, aRadiation, aRadcolor, (unsigned __int8 *)&this->ColorAdd[7]); /*0x66d0ca*/
+      Coord = INIClass_GetCoord(v19, (int)&v17, aRadiation, aRadcolor, (unsigned __int8 *)&this->ColorAdd[7]); /*0x66d0ca*/
       IDA_LOWORD(this->ColorAdd[7]) = *(unsigned short *)Coord; /*0x66d0d2*/
       IDA_BYTE2(this->ColorAdd[7]) = *(unsigned char *)(Coord + 2); /*0x66d0e1*/
       v15 = this->ColorAdd[8]; /*0x66d0ea*/
@@ -4423,7 +4475,7 @@ int RulesClass::LoadFromINI() {
       }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aPrismsupportmo, *(double *)v331); /*0x671169*/
       __asm { fmul ds:dbl_7E2AC0 } /*0x67116e*/
-      IDA_LOWORD(v279) = Math::RoundToInt(v1); /*0x671174*/
+      IDA_LOWORD(v279) = Math_RoundToInt(v1); /*0x671174*/
       *(unsigned int *)&_ESI->__pad_240[604] = v279; /*0x671179*/
       *(unsigned int *)&_ESI->__pad_240[608] = INIClass::ReadInt_Overwrite( /*0x671199*/
                                            (bool *)v338,
@@ -4473,7 +4525,7 @@ int RulesClass::LoadFromINI() {
       __asm { fild dword ptr [esi+4C4h] } /*0x6712ab*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketraiser, *(double *)v331); /*0x6712c4*/
-      IDA_LOWORD(v280) = Math::RoundToInt(v1); /*0x6712c9*/
+      IDA_LOWORD(v280) = Math_RoundToInt(v1); /*0x6712c9*/
       *(unsigned int *)&_ESI->__pad_240[644] = v280; /*0x6712ce*/
       __asm { fld dword ptr [esi+4C8h] } /*0x6712da*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
@@ -4538,7 +4590,7 @@ int RulesClass::LoadFromINI() {
       __asm { fild dword ptr [esi+4F8h] } /*0x671464*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislraiserate, *(double *)v331); /*0x67147e*/
-      IDA_LOWORD(v281) = Math::RoundToInt(v1); /*0x671483*/
+      IDA_LOWORD(v281) = Math_RoundToInt(v1); /*0x671483*/
       *(unsigned int *)&_ESI->__pad_240[696] = v281; /*0x671488*/
       __asm { fld dword ptr [esi+4FCh] } /*0x671493*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
@@ -4603,7 +4655,7 @@ int RulesClass::LoadFromINI() {
       __asm { fild dword ptr [esi+52Ch] } /*0x67161d*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislraiserate, *(double *)v331); /*0x671637*/
-      IDA_LOWORD(v282) = Math::RoundToInt(v1); /*0x67163c*/
+      IDA_LOWORD(v282) = Math_RoundToInt(v1); /*0x67163c*/
       *(unsigned int *)&_ESI->__pad_240[748] = v282; /*0x671641*/
       __asm { fld dword ptr [esi+4FCh] } /*0x67164d*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
@@ -4944,7 +4996,7 @@ int RulesClass::LoadFromINI() {
       }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aTalkbubbletime, *(double *)v331); /*0x671e71*/
       __asm { fmul ds:dbl_7E1728 } /*0x671e76*/
-      IDA_LOWORD(result) = Math::RoundToInt(v1); /*0x671e7c*/
+      IDA_LOWORD(result) = Math_RoundToInt(v1); /*0x671e7c*/
       *(unsigned int *)_ESI->LocalRadarColor = result; /*0x671e81*/
       IDA_LOBYTE(result) = 1; /*0x671e83*/
     }
@@ -4965,10 +5017,10 @@ int RulesClass::LoadCountries() {
     char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
     INIClass *v6; // [esp+30h] [ebp+4h]
 
-    KeyCount = INIClass::GetKeyCount(v6->__pad_0, (unsigned __int8 *)aCountries); /*0x672307*/
+    KeyCount = INIClass_GetKeyCount(v6->__pad_0, (unsigned __int8 *)aCountries); /*0x672307*/
     for ( i = 0; i < KeyCount; ++i ) /*0x67230d*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6->__pad_0, (unsigned __int8 *)aCountries, i); /*0x672325*/
+      StringByIndex = (unsigned __int8 *)INIClass_GetStringByIndex(v6->__pad_0, (unsigned __int8 *)aCountries, i); /*0x672325*/
       if ( INIClass::GetString(v6, (unsigned __int8 *)aCountries, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x672333*/
         WeaponTypeClass::Create(Destination); /*0x672340*/
     }
@@ -5007,7 +5059,7 @@ int RulesClass::ReadDataList() {
     char v27; // [esp+25h] [ebp-Fh]
     INIClass *v28; // [esp+38h] [ebp+4h]
 
-    KeyCount = INIClass::GetKeyCount(v28->__pad_0, (unsigned __int8 *)aSides); /*0x672456*/
+    KeyCount = INIClass_GetKeyCount(v28->__pad_0, (unsigned __int8 *)aSides); /*0x672456*/
     v21 = aProcessingSide; /*0x672458*/
     v23 = KeyCount; /*0x67245d*/
     Debug::Log(); /*0x672461*/
@@ -5017,7 +5069,7 @@ int RulesClass::ReadDataList() {
     {
       while ( 1 ) /*0x67248e*/
       {
-        StringByIndex = (HouseTypeClass *)INIClass::GetStringByIndex(v28->__pad_0, (unsigned __int8 *)aSides, v2); /*0x67248e*/
+        StringByIndex = (HouseTypeClass *)INIClass_GetStringByIndex(v28->__pad_0, (unsigned __int8 *)aSides, v2); /*0x67248e*/
         v4 = HouseTypeClass::Find(StringByIndex); /*0x672492*/
         if ( v4 == -1 ) /*0x67249a*/
         {
@@ -5113,10 +5165,10 @@ int RulesClass::LoadBuildingTypes() {
     char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
     INIClass *v6; // [esp+30h] [ebp+4h]
 
-    KeyCount = INIClass::GetKeyCount(v6->__pad_0, (unsigned __int8 *)aBuildingtypes); /*0x672677*/
+    KeyCount = INIClass_GetKeyCount(v6->__pad_0, (unsigned __int8 *)aBuildingtypes); /*0x672677*/
     for ( i = 0; i < KeyCount; ++i ) /*0x67267d*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6->__pad_0, (unsigned __int8 *)aBuildingtypes, i); /*0x672695*/
+      StringByIndex = (unsigned __int8 *)INIClass_GetStringByIndex(v6->__pad_0, (unsigned __int8 *)aBuildingtypes, i); /*0x672695*/
       if ( INIClass::GetString( /*0x6726a3*/
              v6,
              (unsigned __int8 *)aBuildingtypes,
@@ -5142,10 +5194,10 @@ int RulesClass::ReadSideData() {
     char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
     INIClass *v7; // [esp+90h] [ebp+4h]
 
-    KeyCount = INIClass::GetKeyCount(v7->__pad_0, (unsigned __int8 *)aTeams); /*0x67275d*/
+    KeyCount = INIClass_GetKeyCount(v7->__pad_0, (unsigned __int8 *)aTeams); /*0x67275d*/
     for ( i = 0; i < KeyCount; ++i ) /*0x672763*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v7->__pad_0, (unsigned __int8 *)aTeams, i); /*0x67276f*/
+      StringByIndex = (unsigned __int8 *)INIClass_GetStringByIndex(v7->__pad_0, (unsigned __int8 *)aTeams, i); /*0x67276f*/
       if ( INIClass::GetString(v7, (unsigned __int8 *)aTeams, StringByIndex, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67278c*/
         v4 = TechnoClass::Create(Destination); /*0x672799*/
       else
@@ -5165,10 +5217,10 @@ int RulesClass::LoadAnimTypes() {
     char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
     INIClass *v6; // [esp+30h] [ebp+4h]
 
-    KeyCount = INIClass::GetKeyCount(v6->__pad_0, g_INI_Key_Animations); /*0x6728c6*/
+    KeyCount = INIClass_GetKeyCount(v6->__pad_0, g_INI_Key_Animations); /*0x6728c6*/
     for ( i = 0; i < KeyCount; ++i ) /*0x6728cc*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6->__pad_0, g_INI_Key_Animations, i); /*0x6728e2*/
+      StringByIndex = (unsigned __int8 *)INIClass_GetStringByIndex(v6->__pad_0, g_INI_Key_Animations, i); /*0x6728e2*/
       if ( INIClass::GetString(v6, g_INI_Key_Animations, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x6728ef*/
         AnimTypeClass::FindOrCreate(Destination); /*0x6728fc*/
     }
@@ -5185,10 +5237,10 @@ int RulesClass::readColors() {
     char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
     INIClass *v6; // [esp+30h] [ebp+4h]
 
-    KeyCount = INIClass::GetKeyCount(v6->__pad_0, g_INI_Key_Particles); /*0x672a16*/
+    KeyCount = INIClass_GetKeyCount(v6->__pad_0, g_INI_Key_Particles); /*0x672a16*/
     for ( i = 0; i < KeyCount; ++i ) /*0x672a1c*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6->__pad_0, g_INI_Key_Particles, i); /*0x672a32*/
+      StringByIndex = (unsigned __int8 *)INIClass_GetStringByIndex(v6->__pad_0, g_INI_Key_Particles, i); /*0x672a32*/
       if ( INIClass::GetString(v6, g_INI_Key_Particles, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x672a3f*/
         NetworkEventClass::Process(Destination); /*0x672a4c*/
     }
@@ -8144,8 +8196,8 @@ int RulesClass::Reset() {
                 fstp st
                 fstp st
               }
-              Math::Sqrt(v23); /*0x74e7af*/
-              IDA_LOWORD(v10) = Math::RoundToInt(v1); /*0x74e7b7*/
+              Math_Sqrt(v23); /*0x74e7af*/
+              IDA_LOWORD(v10) = Math_RoundToInt(v1); /*0x74e7b7*/
               v11 = *(unsigned int *)&this->__pad_A0[20]; /*0x74e7bc*/
               v12 = 1000 - v10; /*0x74e7c7*/
               v13 = *(unsigned int *)&this->__pad_A0[12]; /*0x74e7c9*/
